@@ -218,9 +218,282 @@
       '<div class="proximamente">Esta sección está en construcción.</div>';
   }
 
+  // ---------- Programación ----------
+  var DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+  var prog = { cursos: [], filas: [], finAnio: null, uid: null, ocupado: false };
+
+  function fechaLarga(d) {
+    return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function textoLecciones(n) { return n + (n === 1 ? ' lección' : ' lecciones'); }
+
+  function cursoPorId(id) {
+    return prog.cursos.filter(function (c) { return c.id === id; })[0];
+  }
+
+  // Día en que se terminan las lecciones que faltan, siguiendo el programa (de lunes a viernes)
+  function fechaFin(restantes, porDia) {
+    var d = new Date();
+    d.setHours(12, 0, 0, 0);
+    for (var i = 0; i < 3650; i++) {
+      var wd = d.getDay();
+      if (wd >= 1 && wd <= 5) {
+        restantes -= porDia[wd];
+        if (restantes <= 0) return new Date(d);
+      }
+      d.setDate(d.getDate() + 1);
+    }
+    return null;
+  }
+
+  function semanasDeRetraso(fin, limite) {
+    return Math.ceil((fin - limite) / 86400000 / 7);
+  }
+
+  function trayectoria() {
+    var filasCursos = [];
+    var finGlobal = null;
+    var sinProgramar = [];
+    var restantesTotal = 0;
+    var hayLecciones = false;
+
+    prog.cursos.forEach(function (c) {
+      var porDia = [0, 0, 0, 0, 0, 0];
+      var semanal = 0;
+      prog.filas.forEach(function (f) {
+        if (f.subject_id === c.id) { porDia[f.weekday] += f.lessons_target; semanal += f.lessons_target; }
+      });
+      var restantes = Math.max(0, c.total - c.completas);
+      var r = { curso: c, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
+
+      if (c.total === 0) {
+        r.texto = 'Todavía no tiene lecciones cargadas';
+      } else {
+        hayLecciones = true;
+        restantesTotal += restantes;
+        if (restantes === 0) {
+          r.estado = 'Completada'; r.clase = 'ok';
+        } else if (semanal === 0) {
+          r.texto = 'No está en la programación'; r.clase = 'atraso';
+          sinProgramar.push(c.nombre);
+        } else {
+          var fin = fechaFin(restantes, porDia);
+          if (!fin) {
+            r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
+          } else {
+            if (!finGlobal || fin > finGlobal) finGlobal = fin;
+            r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
+            if (prog.finAnio && fin > prog.finAnio) {
+              r.estado = 'Se retrasa ' + semanasDeRetraso(fin, prog.finAnio) + ' sem.'; r.clase = 'atraso';
+            } else {
+              r.estado = 'A tiempo'; r.clase = 'ok';
+            }
+          }
+        }
+      }
+      filasCursos.push(r);
+    });
+
+    return { filas: filasCursos, finGlobal: finGlobal, sinProgramar: sinProgramar,
+             restantesTotal: restantesTotal, hayLecciones: hayLecciones };
+  }
+
+  function htmlResumen(t) {
+    var limite = prog.finAnio ? fechaLarga(prog.finAnio) : null;
+    if (!t.hayLecciones) {
+      return '<p>Todavía no hay lecciones cargadas en tus materias. Cuando las haya, acá vas a ver cuándo terminarías tu año siguiendo este programa.</p>';
+    }
+    if (t.restantesTotal === 0) {
+      return '<p><b>¡Completaste todas las lecciones de tu año!</b></p>';
+    }
+    var html = '<p>Te faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.</p>';
+    if (t.finGlobal) {
+      html += '<p>Siguiendo este programa, terminarías el <b>' + fechaLarga(t.finGlobal) + '</b>.</p>';
+      if (limite) {
+        if (t.finGlobal > prog.finAnio) {
+          html += '<p class="resumen-atraso">Eso es <b>' + semanasDeRetraso(t.finGlobal, prog.finAnio) +
+            ' semanas después</b> del fin del año escolar (' + esc(limite) + '). Para llegar a tiempo, sumá lecciones por día.</p>';
+        } else {
+          html += '<p class="resumen-ok">Llegás a tiempo: el año escolar termina el ' + esc(limite) + '.</p>';
+        }
+      }
+    }
+    if (t.sinProgramar.length) {
+      html += '<p class="resumen-atraso">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>';
+    }
+    return html;
+  }
+
+  function pintarProgramacion() {
+    var cont = document.getElementById('prog');
+    if (!cont) return;
+
+    var dias = DIAS.map(function (nombre, i) {
+      var wd = i + 1;
+      var delDia = prog.filas.filter(function (f) { return f.weekday === wd; })
+        .sort(function (a, b) { return a.position - b.position; });
+      var usadas = {};
+      delDia.forEach(function (f) { usadas[f.subject_id] = true; });
+
+      var items = delDia.map(function (f) {
+        var c = cursoPorId(f.subject_id);
+        if (!c) return '';
+        return '<div class="prog-item" style="--c:' + c.color + '">' +
+          '<div class="prog-item-top"><span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
+          '<b>' + esc(c.nombre) + '</b>' +
+          '<button type="button" class="prog-x" data-a="quitar" data-id="' + f.id + '" aria-label="Quitar materia">×</button></div>' +
+          '<div class="prog-cant">' +
+          '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
+          '<span>' + textoLecciones(f.lessons_target) + '</span>' +
+          '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
+          '</div></div>';
+      }).join('');
+
+      var opciones = prog.cursos.filter(function (c) { return !usadas[c.id]; }).map(function (c) {
+        return '<option value="' + c.id + '">' + esc(c.nombre) + '</option>';
+      }).join('');
+
+      var agregar = opciones
+        ? '<select class="prog-agregar" data-a="agregar" data-dia="' + wd + '" aria-label="Agregar materia el ' + nombre + '">' +
+          '<option value="">+ Agregar materia</option>' + opciones + '</select>'
+        : '';
+
+      return '<section class="dia"><h2>' + nombre + '</h2>' + items + agregar + '</section>';
+    }).join('');
+
+    var sugerir = prog.filas.length === 0
+      ? '<div class="prog-sugerir"><p>Todavía no armaste tu programa.</p>' +
+        '<button type="button" data-a="sugerir">Armar programa sugerido</button></div>'
+      : '';
+
+    var t = trayectoria();
+    var filasT = t.filas.map(function (r) {
+      return '<div class="tray-fila" style="--c:' + r.curso.color + '">' +
+        '<span class="tray-punto"></span>' +
+        '<div class="tray-info"><b>' + esc(r.curso.nombre) + '</b><span>' +
+        (r.texto ? esc(r.texto) : (r.restantes === 0 ? 'Sin lecciones pendientes' : '')) + '</span></div>' +
+        (r.estado ? '<span class="tray-estado ' + r.clase + '">' + esc(r.estado) + '</span>' : '') +
+        '</div>';
+    }).join('');
+
+    cont.className = '';
+    cont.innerHTML = sugerir +
+      '<div class="semana">' + dias + '</div>' +
+      '<h2 class="vista-subtitulo">Trayectoria</h2>' +
+      '<div class="tray"><div class="tray-resumen">' + htmlResumen(t) + '</div>' + filasT + '</div>';
+  }
+
+  async function guardar(fn) {
+    if (prog.ocupado) return;
+    prog.ocupado = true;
+    try { await fn(); }
+    catch (e) { alert('No pudimos guardar el cambio. Probá de nuevo.'); }
+    prog.ocupado = false;
+    pintarProgramacion();
+  }
+
+  function filaPorId(id) {
+    return prog.filas.filter(function (f) { return String(f.id) === String(id); })[0];
+  }
+
+  async function cambiarCantidad(id, delta) {
+    var f = filaPorId(id);
+    if (!f) return;
+    var n = Math.max(1, Math.min(20, f.lessons_target + delta));
+    if (n === f.lessons_target) return;
+    var r = await sb.from('study_schedule').update({ lessons_target: n, updated_by: prog.uid })
+      .eq('id', f.id).select('id');
+    if (r.error || !r.data.length) throw (r.error || new Error('sin permiso'));
+    f.lessons_target = n;
+  }
+
+  async function quitarFila(id) {
+    var r = await sb.from('study_schedule').delete().eq('id', id).select('id');
+    if (r.error || !r.data.length) throw (r.error || new Error('sin permiso'));
+    prog.filas = prog.filas.filter(function (f) { return String(f.id) !== String(id); });
+  }
+
+  async function agregarFila(dia, materiaId) {
+    var pos = prog.filas.filter(function (f) { return f.weekday === dia; }).length;
+    var r = await sb.from('study_schedule').insert({
+      student_id: estudianteId, weekday: dia, subject_id: materiaId,
+      lessons_target: 1, position: pos, updated_by: prog.uid
+    }).select('id, weekday, subject_id, lessons_target, position');
+    if (r.error) throw r.error;
+    prog.filas = prog.filas.concat(r.data);
+  }
+
+  // Reparte las materias rotando: cada día tiene hasta 3 y todas aparecen parejo en la semana
+  async function sugerirPrograma() {
+    var n = prog.cursos.length;
+    var porDia = Math.min(3, n);
+    var filas = [];
+    for (var d = 0; d < 5; d++) {
+      for (var k = 0; k < porDia; k++) {
+        var c = prog.cursos[(d * porDia + k) % n];
+        filas.push({ student_id: estudianteId, weekday: d + 1, subject_id: c.id,
+                     lessons_target: 1, position: k, updated_by: prog.uid });
+      }
+    }
+    var r = await sb.from('study_schedule').insert(filas)
+      .select('id, weekday, subject_id, lessons_target, position');
+    if (r.error) throw r.error;
+    prog.filas = prog.filas.concat(r.data);
+  }
+
+  function engancharProgramacion(cont) {
+    cont.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button[data-a]');
+      if (!b) return;
+      var a = b.getAttribute('data-a');
+      var id = b.getAttribute('data-id');
+      if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
+      else if (a === 'menos') guardar(function () { return cambiarCantidad(id, -1); });
+      else if (a === 'quitar') guardar(function () { return quitarFila(id); });
+      else if (a === 'sugerir') guardar(sugerirPrograma);
+    });
+    cont.addEventListener('change', function (ev) {
+      var s = ev.target;
+      if (s.getAttribute('data-a') !== 'agregar' || !s.value) return;
+      var dia = Number(s.getAttribute('data-dia'));
+      var materia = s.value;
+      guardar(function () { return agregarFila(dia, materia); });
+    });
+  }
+
+  async function vistaProgramacion() {
+    vista.innerHTML = '<h1 class="vista-titulo">Programación</h1><div id="prog"><div class="vacio">Cargando tu programación…</div></div>';
+    var cont = document.getElementById('prog');
+    try {
+      prog.cursos = await cargarCursos();
+      if (!prog.cursos.length || !estudianteId) {
+        cont.innerHTML = '<div class="vacio">Todavía no tenés materias habilitadas.</div>';
+        return;
+      }
+      var ses = await sb.auth.getSession();
+      prog.uid = ses.data.session.user.id;
+
+      var r = await sb.from('study_schedule')
+        .select('id, weekday, subject_id, lessons_target, position')
+        .eq('student_id', estudianteId).order('position');
+      if (r.error) throw r.error;
+      prog.filas = r.data || [];
+
+      var cfg = await sb.from('app_settings').select('value').eq('key', 'school_year_end').maybeSingle();
+      prog.finAnio = (cfg.data && cfg.data.value) ? new Date(String(cfg.data.value) + 'T12:00:00') : null;
+      if (prog.finAnio && isNaN(prog.finAnio.getTime())) prog.finAnio = null;
+
+      engancharProgramacion(cont);
+      pintarProgramacion();
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar tu programación. Probá recargar la página.</div>';
+    }
+  }
+
   var VISTAS = {
     cursos: vistaCursos,
-    programacion: function () { vistaProximamente('Programación'); },
+    programacion: vistaProgramacion,
     estadisticas: function () { vistaProximamente('Estadísticas'); },
     perfil: function () { vistaProximamente('Perfil'); }
   };
