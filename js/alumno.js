@@ -123,7 +123,8 @@
         return '<article class="curso" style="--c:' + c.color + '">' +
           '<div class="curso-cabeza"><div class="curso-icono">' + iconoMateria(c.nombre) + '</div>' +
           '<h2>' + esc(c.nombre) + '</h2></div>' +
-          '<div class="curso-fila"><span>Progreso</span><b>' + c.completas + ' de ' + c.total + ' · ' + pct + '%</b></div>' +
+          '<p class="curso-lecciones">' + c.completas + ' de ' + c.total + ' lecciones</p>' +
+          '<div class="curso-fila"><span>Progreso</span><b>' + pct + '%</b></div>' +
           '<div class="curso-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
           '</article>';
       }).join('');
