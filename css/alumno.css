@@ -87,11 +87,16 @@ body.panel.alumno .barra {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 800;
 }
 
-.curso-fila b { font-size: 1.1rem; }
+.curso-fila span {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.curso-fila b { font-size: 1.15rem; font-weight: 800; }
 
 .curso-barra {
   height: 12px;
