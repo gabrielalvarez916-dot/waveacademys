@@ -177,7 +177,8 @@
                total: total[m.id] || 0, completas: completas[m.id] || 0,
                promedio: st.n ? Math.round(st.suma / st.n) : null,
                examenes: st.ex, examenesAprob: st.exAprob,
-               actividades: st.act, actividadesHechas: st.actHechas };
+               actividades: st.act, actividadesHechas: st.actHechas,
+               suma: st.suma, notas: st.n };
     });
   }
 
@@ -553,10 +554,122 @@
     }
   }
 
+  // ---------- Estadísticas ----------
+  var DIAS_CORTOS = ['L', 'M', 'M', 'J', 'V'];
+
+  function fechaISO(d) {
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var dd = String(d.getDate()).padStart(2, '0');
+    return d.getFullYear() + '-' + m + '-' + dd;
+  }
+
+  function textoTiempo(seg) {
+    var min = Math.round(seg / 60);
+    if (min < 60) return min + ' min';
+    var h = Math.floor(min / 60), r = min % 60;
+    return r ? h + ' h ' + r + ' min' : h + ' h';
+  }
+
+  async function cargarEstadisticas() {
+    var cursos = await cargarCursos();
+    var hoy = new Date();
+    var lunes = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    lunes.setDate(lunes.getDate() - ((lunes.getDay() + 6) % 7));
+    var viernes = new Date(lunes); viernes.setDate(lunes.getDate() + 4);
+    var manana = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + 1);
+    var inicioHoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+
+    var tiempo = { dias: [0, 0, 0, 0, 0], total: 0 };
+    var lecciones = 0;
+    if (estudianteId) {
+      var t = await sb.from('student_study_time').select('study_date, seconds')
+        .eq('student_id', estudianteId)
+        .gte('study_date', fechaISO(lunes)).lte('study_date', fechaISO(viernes));
+      if (t.error) throw t.error;
+      (t.data || []).forEach(function (r) {
+        var i = Math.round((new Date(r.study_date + 'T00:00:00') - lunes) / 86400000);
+        if (i >= 0 && i <= 4) { tiempo.dias[i] += r.seconds; tiempo.total += r.seconds; }
+      });
+
+      var l = await sb.from('student_lesson_progress')
+        .select('lesson_id', { count: 'exact', head: true })
+        .eq('student_id', estudianteId)
+        .gte('completed_at', inicioHoy.toISOString()).lt('completed_at', manana.toISOString());
+      if (l.error) throw l.error;
+      lecciones = l.count || 0;
+    }
+
+    var suma = 0, notas = 0;
+    cursos.forEach(function (c) { suma += c.suma; notas += c.notas; });
+    return { cursos: cursos, tiempo: tiempo, lecciones: lecciones,
+             promedio: notas ? Math.round(suma / notas) : null,
+             hoyIdx: (hoy.getDay() + 6) % 7 };
+  }
+
+  async function vistaEstadisticas() {
+    vista.innerHTML = '<h1 class="vista-titulo">Estadísticas</h1><div id="estad"></div>';
+    var cont = document.getElementById('estad');
+    cont.innerHTML = '<div class="vacio">Cargando tus estadísticas…</div>';
+    try {
+      var d = await cargarEstadisticas();
+      var max = Math.max.apply(null, d.tiempo.dias.concat([1]));
+      var barras = d.tiempo.dias.map(function (seg, i) {
+        var alto = seg ? Math.max(10, Math.round((seg / max) * 100)) : 4;
+        return '<div class="est-dia' + (d.hoyIdx === i ? ' hoy' : '') + '">' +
+          '<span class="est-dia-barra"><i style="height:' + alto + '%"></i></span>' +
+          '<small>' + DIAS_CORTOS[i] + '</small></div>';
+      }).join('');
+
+      var r = 34, circ = 2 * Math.PI * r;
+      var frac = d.promedio == null ? 0 : d.promedio / 100;
+      var anillo = '<svg class="est-anillo" viewBox="0 0 80 80" width="92" height="92" aria-hidden="true">' +
+        '<circle cx="40" cy="40" r="' + r + '" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="8"/>' +
+        '<circle cx="40" cy="40" r="' + r + '" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"' +
+        ' stroke-dasharray="' + (circ * frac).toFixed(1) + ' ' + circ.toFixed(1) + '" transform="rotate(-90 40 40)"/></svg>';
+
+      var resumen =
+        '<div class="est-resumen">' +
+          '<article class="est-card tiempo">' +
+            '<p class="est-rotulo">Tiempo de estudio · esta semana</p>' +
+            '<p class="est-valor">' + textoTiempo(d.tiempo.total) + '</p>' +
+            '<div class="est-dias" aria-hidden="true">' + barras + '</div>' +
+          '</article>' +
+          '<article class="est-card hoy">' +
+            '<p class="est-rotulo">Hoy</p>' +
+            '<p class="est-valor">' + d.lecciones + '</p>' +
+            '<p class="est-sub">' + (d.lecciones === 1 ? 'lección completada' : 'lecciones completadas') + '</p>' +
+          '</article>' +
+          '<article class="est-card prom">' +
+            '<p class="est-rotulo">Promedio general</p>' +
+            '<div class="est-prom-fila">' + anillo +
+              '<p class="est-valor">' + (d.promedio == null ? '—' : d.promedio + '%') + '</p></div>' +
+            '<p class="est-sub">Actividades, finales y exámenes</p>' +
+          '</article>' +
+        '</div>';
+
+      var materias = d.cursos.length ? d.cursos.map(function (c) {
+        var pct = c.promedio == null ? 0 : c.promedio;
+        return '<article class="est-materia" style="--c:' + c.color + '">' +
+          '<div class="est-materia-cab"><span class="est-materia-ico">' + iconoMateria(c.nombre) + '</span>' +
+          '<div class="est-materia-tit"><h3>' + esc(c.nombre) + '</h3>' +
+          '<small>' + (c.notas ? c.notas + (c.notas === 1 ? ' nota' : ' notas') : 'Sin notas todavía') + '</small></div>' +
+          '<b>' + (c.promedio == null ? '—' : c.promedio + '%') + '</b></div>' +
+          '<div class="est-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
+          '</article>';
+      }).join('') : '<div class="vacio">Todavía no tenés materias habilitadas.</div>';
+
+      cont.innerHTML = resumen +
+        '<h2 class="vista-subtitulo">Promedio por materia</h2>' +
+        '<div class="est-materias">' + materias + '</div>';
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar tus estadísticas. Probá recargar la página.</div>';
+    }
+  }
+
   var VISTAS = {
     cursos: vistaCursos,
     programacion: vistaProgramacion,
-    estadisticas: function () { vistaProximamente('Estadísticas'); },
+    estadisticas: vistaEstadisticas,
     perfil: function () { vistaProximamente('Perfil'); }
   };
 
