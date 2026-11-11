@@ -647,20 +647,20 @@
           '</article>' +
         '</div>';
 
-      var materias = d.cursos.length ? d.cursos.map(function (c) {
+      var ordenadas = d.cursos.slice().sort(function (x, y) {
+        return (y.promedio == null ? -1 : y.promedio) - (x.promedio == null ? -1 : x.promedio);
+      });
+      var filas = ordenadas.map(function (c) {
         var pct = c.promedio == null ? 0 : c.promedio;
-        return '<article class="est-materia" style="--c:' + c.color + '">' +
-          '<div class="est-materia-cab"><span class="est-materia-ico">' + iconoMateria(c.nombre) + '</span>' +
-          '<div class="est-materia-tit"><h3>' + esc(c.nombre) + '</h3>' +
-          '<small>' + (c.notas ? c.notas + (c.notas === 1 ? ' nota' : ' notas') : 'Sin notas todavía') + '</small></div>' +
-          '<b>' + (c.promedio == null ? '—' : c.promedio + '%') + '</b></div>' +
+        return '<div class="est-fila" style="--c:' + c.color + '">' +
+          '<span class="est-fila-nombre">' + esc(c.nombre) + '</span>' +
           '<div class="est-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
-          '</article>';
-      }).join('') : '<div class="vacio">Todavía no tenés materias habilitadas.</div>';
+          '<b class="est-fila-pct">' + (c.promedio == null ? '—' : c.promedio + '%') + '</b></div>';
+      }).join('');
 
       cont.innerHTML = resumen +
-        '<h2 class="vista-subtitulo">Promedio por materia</h2>' +
-        '<div class="est-materias">' + materias + '</div>';
+        '<section class="est-panel"><h2 class="est-panel-tit">Promedio por materia</h2>' +
+        (filas || '<div class="vacio">Todavía no tenés materias habilitadas.</div>') + '</section>';
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar tus estadísticas. Probá recargar la página.</div>';
     }
