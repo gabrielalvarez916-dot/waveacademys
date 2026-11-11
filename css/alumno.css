@@ -570,27 +570,27 @@ body.panel.alumno .barra {
 
 .est-panel {
   margin-top: 28px;
-  padding: 22px 24px;
+  padding: 30px 32px;
   background: #fff;
-  border-radius: 22px;
+  border-radius: 24px;
   box-shadow: 0 10px 30px -14px rgba(37, 54, 56, 0.35);
 }
 
-.est-panel-tit { margin: 0 0 14px; font-size: 1.2rem; font-weight: 800; }
+.est-panel-tit { margin: 0 0 20px; font-size: 1.5rem; font-weight: 800; }
 
 .est-fila {
   --c: #6366F1;
   display: grid;
-  grid-template-columns: minmax(96px, 170px) 1fr 52px;
+  grid-template-columns: minmax(110px, 220px) 1fr 64px;
   align-items: center;
-  gap: 14px;
-  padding: 7px 0;
+  gap: 18px;
+  padding: 12px 0;
 }
 
-.est-fila-nombre { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
-.est-fila-pct { text-align: right; font-size: 0.95rem; font-weight: 800; }
+.est-fila-nombre { font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+.est-fila-pct { text-align: right; font-size: 1.2rem; font-weight: 800; }
 
-.est-barra { height: 10px; background: var(--menta); border-radius: 999px; overflow: hidden; }
+.est-barra { height: 16px; background: var(--menta); border-radius: 999px; overflow: hidden; }
 
 .est-barra span {
   display: block;
@@ -602,6 +602,10 @@ body.panel.alumno .barra {
 
 @media (max-width: 640px) {
   .est-card { min-height: 0; }
-  .est-panel { padding: 18px 16px; }
-  .est-fila { grid-template-columns: minmax(84px, 38%) 1fr 44px; gap: 10px; }
+  .est-panel { padding: 22px 18px; }
+  .est-panel-tit { font-size: 1.3rem; }
+  .est-fila { grid-template-columns: minmax(92px, 38%) 1fr 50px; gap: 12px; padding: 10px 0; }
+  .est-fila-nombre { font-size: 1rem; }
+  .est-fila-pct { font-size: 1.05rem; }
+  .est-barra { height: 14px; }
 }
