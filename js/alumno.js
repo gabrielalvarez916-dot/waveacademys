@@ -299,89 +299,113 @@
              restantesTotal: restantesTotal, hayLecciones: hayLecciones };
   }
 
-  function htmlResumen(t) {
-    var limite = prog.finAnio ? fechaLarga(prog.finAnio) : null;
+  function fechaCorta(d) {
+    return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function htmlHero(t) {
+    var hoy = new Date();
+    hoy.setHours(12, 0, 0, 0);
+    var nota = t.sinProgramar.length
+      ? '<p class="tray-nota">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>' : '';
+
     if (!t.hayLecciones) {
-      return '<p>Todavía no hay lecciones cargadas en tus materias. Cuando las haya, acá vas a ver cuándo terminarías tu año siguiendo este programa.</p>';
+      return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay lecciones cargadas en tus materias. ' +
+        'Cuando las haya, acá vas a ver cuándo terminarías tu año con este programa.</p></div>';
     }
     if (t.restantesTotal === 0) {
-      return '<p><b>¡Completaste todas las lecciones de tu año!</b></p>';
+      return '<div class="tray-hero ok"><b class="tray-fecha">¡Completaste todas las lecciones de tu año!</b></div>';
     }
-    var html = '<p>Te faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.</p>';
-    if (t.finGlobal) {
-      html += '<p>Siguiendo este programa, terminarías el <b>' + fechaLarga(t.finGlobal) + '</b>.</p>';
-      if (limite) {
-        if (t.finGlobal > prog.finAnio) {
-          html += '<p class="resumen-atraso">Eso es <b>' + semanasDeRetraso(t.finGlobal, prog.finAnio) +
-            ' semanas después</b> del fin del año escolar (' + esc(limite) + '). Para llegar a tiempo, sumá lecciones por día.</p>';
-        } else {
-          html += '<p class="resumen-ok">Llegás a tiempo: el año escolar termina el ' + esc(limite) + '.</p>';
-        }
-      }
+    if (!t.finGlobal) {
+      return '<div class="tray-hero atraso"><b class="tray-fecha">Programá tus materias para calcular cuándo terminás</b>' + nota + '</div>';
     }
-    if (t.sinProgramar.length) {
-      html += '<p class="resumen-atraso">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>';
+
+    var atrasado = prog.finAnio && t.finGlobal > prog.finAnio;
+    var pill = '';
+    if (prog.finAnio) {
+      pill = atrasado
+        ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, prog.finAnio) + ' semanas de retraso</span>'
+        : '<span class="tray-pill ok">Llegás a tiempo</span>';
     }
-    return html;
+
+    var linea = '';
+    if (prog.finAnio && prog.finAnio > hoy) {
+      var pos = Math.min(100, Math.max(0, ((t.finGlobal - hoy) / (prog.finAnio - hoy)) * 100));
+      linea = '<div class="tray-linea"><div class="tray-relleno" style="width:' + pos.toFixed(1) + '%"></div>' +
+        '<span class="tray-pin" style="left:' + pos.toFixed(1) + '%"></span></div>' +
+        '<div class="tray-extremos"><span>Hoy</span><span>Fin del año escolar · ' + esc(fechaCorta(prog.finAnio)) + '</span></div>';
+    }
+
+    return '<div class="tray-hero ' + (atrasado ? 'atraso' : 'ok') + '">' +
+      '<div class="tray-hero-top"><div><span class="tray-etiqueta">Terminarías tu año el</span>' +
+      '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
+      linea +
+      '<p class="tray-faltan">Te faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
+      (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
   }
 
   function pintarProgramacion() {
     var cont = document.getElementById('prog');
     if (!cont) return;
+    var hoySemana = new Date().getDay();
 
     var dias = DIAS.map(function (nombre, i) {
       var wd = i + 1;
       var delDia = prog.filas.filter(function (f) { return f.weekday === wd; })
         .sort(function (a, b) { return a.position - b.position; });
       var usadas = {};
-      delDia.forEach(function (f) { usadas[f.subject_id] = true; });
+      var suma = 0;
+      delDia.forEach(function (f) { usadas[f.subject_id] = true; suma += f.lessons_target; });
 
       var items = delDia.map(function (f) {
         var c = cursoPorId(f.subject_id);
         if (!c) return '';
         return '<div class="prog-item" style="--c:' + c.color + '">' +
-          '<div class="prog-item-top"><span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
-          '<b>' + esc(c.nombre) + '</b>' +
-          '<button type="button" class="prog-x" data-a="quitar" data-id="' + f.id + '" aria-label="Quitar materia">×</button></div>' +
+          '<button type="button" class="prog-x" data-a="quitar" data-id="' + f.id + '" aria-label="Quitar ' + esc(c.nombre) + '">×</button>' +
+          '<span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
+          '<b class="prog-nombre">' + esc(c.nombre) + '</b>' +
           '<div class="prog-cant">' +
           '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
-          '<span>' + textoLecciones(f.lessons_target) + '</span>' +
+          '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'lección' : 'lecciones') + '</span>' +
           '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
           '</div></div>';
       }).join('');
 
-      var opciones = prog.cursos.filter(function (c) { return !usadas[c.id]; }).map(function (c) {
-        return '<option value="' + c.id + '">' + esc(c.nombre) + '</option>';
-      }).join('');
-
-      var agregar = opciones
-        ? '<select class="prog-agregar" data-a="agregar" data-dia="' + wd + '" aria-label="Agregar materia el ' + nombre + '">' +
-          '<option value="">+ Agregar materia</option>' + opciones + '</select>'
+      var libres = prog.cursos.filter(function (c) { return !usadas[c.id]; });
+      var agregar = libres.length
+        ? '<div class="prog-add"><button type="button" class="prog-add-btn" data-a="menu">+ Agregar materia</button>' +
+          '<div class="prog-menu" hidden>' + libres.map(function (c) {
+            return '<button type="button" data-a="agregar" data-dia="' + wd + '" data-mat="' + c.id + '">' +
+              '<i style="background:' + c.color + '"></i>' + esc(c.nombre) + '</button>';
+          }).join('') + '</div></div>'
         : '';
 
-      return '<section class="dia"><h2>' + nombre + '</h2>' + items + agregar + '</section>';
+      return '<section class="dia' + (hoySemana === wd ? ' hoy' : '') + '">' +
+        '<header class="dia-cab"><h2>' + nombre + '</h2>' +
+        (hoySemana === wd ? '<span class="dia-hoy">Hoy</span>' : '') +
+        '<small>' + (suma ? textoLecciones(suma) : 'Sin lecciones') + '</small></header>' +
+        '<div class="dia-cuerpo">' + items + agregar + '</div></section>';
     }).join('');
-
-    var sugerir = prog.filas.length === 0
-      ? '<div class="prog-sugerir"><p>Todavía no armaste tu programa.</p>' +
-        '<button type="button" data-a="sugerir">Armar programa sugerido</button></div>'
-      : '';
 
     var t = trayectoria();
     var filasT = t.filas.map(function (r) {
-      return '<div class="tray-fila" style="--c:' + r.curso.color + '">' +
-        '<span class="tray-punto"></span>' +
-        '<div class="tray-info"><b>' + esc(r.curso.nombre) + '</b><span>' +
-        (r.texto ? esc(r.texto) : (r.restantes === 0 ? 'Sin lecciones pendientes' : '')) + '</span></div>' +
+      var c = r.curso;
+      var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
+      var info = r.texto || (r.restantes === 0 ? 'Sin lecciones pendientes' : '');
+      return '<div class="tray-fila" style="--c:' + c.color + '">' +
+        '<span class="tray-ico">' + iconoMateria(c.nombre) + '</span>' +
+        '<div class="tray-info"><b>' + esc(c.nombre) + '</b>' +
+        (info ? '<span>' + esc(info) + '</span>' : '') +
+        (c.total ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
         (r.estado ? '<span class="tray-estado ' + r.clase + '">' + esc(r.estado) + '</span>' : '') +
         '</div>';
     }).join('');
 
-    cont.className = '';
-    cont.innerHTML = sugerir +
+    cont.innerHTML =
       '<div class="semana">' + dias + '</div>' +
       '<h2 class="vista-subtitulo">Trayectoria</h2>' +
-      '<div class="tray"><div class="tray-resumen">' + htmlResumen(t) + '</div>' + filasT + '</div>';
+      htmlHero(t) +
+      '<div class="tray-lista">' + filasT + '</div>';
   }
 
   async function guardar(fn) {
@@ -445,20 +469,27 @@
   function engancharProgramacion(cont) {
     cont.addEventListener('click', function (ev) {
       var b = ev.target.closest('button[data-a]');
+      var cerrar = !b || b.getAttribute('data-a') !== 'menu';
+      if (cerrar) {
+        cont.querySelectorAll('.prog-menu').forEach(function (m) { m.hidden = true; });
+      }
       if (!b) return;
       var a = b.getAttribute('data-a');
       var id = b.getAttribute('data-id');
-      if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
+      if (a === 'menu') {
+        var menu = b.nextElementSibling;
+        var abrir = menu.hidden;
+        cont.querySelectorAll('.prog-menu').forEach(function (m) { m.hidden = true; });
+        menu.hidden = !abrir;
+      }
+      else if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
       else if (a === 'menos') guardar(function () { return cambiarCantidad(id, -1); });
       else if (a === 'quitar') guardar(function () { return quitarFila(id); });
-      else if (a === 'sugerir') guardar(sugerirPrograma);
-    });
-    cont.addEventListener('change', function (ev) {
-      var s = ev.target;
-      if (s.getAttribute('data-a') !== 'agregar' || !s.value) return;
-      var dia = Number(s.getAttribute('data-dia'));
-      var materia = s.value;
-      guardar(function () { return agregarFila(dia, materia); });
+      else if (a === 'agregar') {
+        var dia = Number(b.getAttribute('data-dia'));
+        var mat = b.getAttribute('data-mat');
+        guardar(function () { return agregarFila(dia, mat); });
+      }
     });
   }
 
@@ -474,11 +505,18 @@
       var ses = await sb.auth.getSession();
       prog.uid = ses.data.session.user.id;
 
-      var r = await sb.from('study_schedule')
-        .select('id, weekday, subject_id, lessons_target, position')
-        .eq('student_id', estudianteId).order('position');
+      var cols = 'id, weekday, subject_id, lessons_target, position';
+      var r = await sb.from('study_schedule').select(cols).eq('student_id', estudianteId).order('position');
       if (r.error) throw r.error;
       prog.filas = r.data || [];
+
+      // Primera vez: el programa viene armado, después se edita
+      if (!prog.filas.length) {
+        try {
+          var otra = await sb.from('study_schedule').select('id', { count: 'exact', head: true }).eq('student_id', estudianteId);
+          if (!otra.error && !otra.count) await sugerirPrograma();
+        } catch (e) { /* si no puede armarlo, queda vacío y se agrega a mano */ }
+      }
 
       var cfg = await sb.from('app_settings').select('value').eq('key', 'school_year_end').maybeSingle();
       prog.finAnio = (cfg.data && cfg.data.value) ? new Date(String(cfg.data.value) + 'T12:00:00') : null;
