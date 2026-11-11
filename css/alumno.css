@@ -119,6 +119,40 @@ body.panel.alumno .barra {
   transition: width 0.4s ease;
 }
 
+.ruedas {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.rueda {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rueda b {
+  position: absolute;
+  top: 0;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.rueda span {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
 .vacio, .proximamente {
   padding: 28px;
   background: #fff;
