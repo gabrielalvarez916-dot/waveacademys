@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <defs>
+    <!-- Tubo de ensayo -->
+    <g id="tubo">
+      <path d="M-4 0 H32"/>
+      <path d="M3 0 V66 a11 11 0 0 0 22 0 V0"/>
+      <path d="M3 44 q5.5 -5 11 0 t11 0"/>
+      <circle cx="11" cy="58" r="2.6"/>
+      <circle cx="18" cy="52" r="1.8"/>
+    </g>
+    <!-- Mapa plegado -->
+    <g id="mapa">
+      <path d="M0 8 L26 0 L54 8 L80 0 V48 L54 56 L26 48 L0 56 Z"/>
+      <path d="M26 0 V48 M54 8 V56"/>
+      <path d="M8 42 C20 22 34 42 44 26 S64 20 70 12" stroke-dasharray="3 6"/>
+      <path d="M62 30 l8 8 m0 -8 l-8 8"/>
+    </g>
+  </defs>
+
+  <g fill="none" stroke="#D7F0E9" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Letras -->
+    <g font-family="Nunito, 'Arial Rounded MT Bold', Arial, sans-serif" font-weight="800" stroke-width="2.6">
+      <text x="22" y="96" font-size="64" transform="rotate(-12 22 96)">A</text>
+      <text x="190" y="252" font-size="66" transform="rotate(12 190 252)">b</text>
+      <text x="250" y="392" font-size="62" transform="rotate(8 250 392)">C</text>
+      <text x="14" y="408" font-size="50" transform="rotate(-6 14 408)">ñ</text>
+
+      <!-- Numeros -->
+      <text x="300" y="96" font-size="60" transform="rotate(10 300 96)">3</text>
+      <text x="130" y="200" font-size="44" transform="rotate(-6 130 200)">2</text>
+      <text x="330" y="262" font-size="58" transform="rotate(-10 330 262)">7</text>
+    </g>
+
+    <!-- Tubos de ensayo -->
+    <use href="#tubo" transform="translate(168 18) rotate(18)"/>
+    <use href="#tubo" transform="translate(100 292) rotate(-22)"/>
+
+    <!-- Mapas -->
+    <use href="#mapa" transform="translate(24 160) rotate(-8) scale(1.1)"/>
+    <use href="#mapa" transform="translate(318 322) rotate(10) scale(0.9)"/>
+
+    <!-- Signos matematicos -->
+    <path d="M205 166 v22 M194 177 h22"/>
+    <path d="M330 150 h26 M330 164 h26"/>
+    <path d="M60 262 l16 16 m0 -16 l-16 16"/>
+
+    <!-- Puntitos -->
+    <circle cx="140" cy="130" r="3"/>
+    <circle cx="272" cy="160" r="3"/>
+    <circle cx="60" cy="340" r="3"/>
+    <circle cx="392" cy="56" r="3"/>
+    <circle cx="228" cy="330" r="3"/>
+    <circle cx="396" cy="210" r="3"/>
+  </g>
+</svg>

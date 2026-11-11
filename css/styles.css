@@ -1,0 +1,272 @@
+/* ============================================================
+   Wave Academy's — estilos
+   Paleta: turquesa #087E83 · menta #D7F0E9 · petróleo #253638
+   ============================================================ */
+
+:root {
+  --turquesa: #087E83;
+  --turquesa-oscuro: #066A6E;
+  --menta: #D7F0E9;
+  --petroleo: #253638;
+  --texto-suave: #587072;
+  --error-fondo: #F8E6E1;
+  --error-texto: #8F3326;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--petroleo);
+  line-height: 1.4;
+}
+
+img { max-width: 100%; height: auto; }
+
+[hidden] { display: none !important; }
+
+/* ------------------------------------------------------------
+   Pantalla de ingreso (login y cambio de clave)
+   ------------------------------------------------------------ */
+
+body.entrada {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+  background-color: var(--turquesa);
+  background-image:
+    radial-gradient(circle at 50% 38%, rgba(215, 240, 233, 0.18), transparent 58%),
+    url('/assets/doodles.svg');
+  background-size: auto, 400px 400px;
+  background-position: center, center top;
+}
+
+.tarjeta {
+  width: min(100%, 410px);
+  padding: 26px 26px 28px;
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 24px 50px -12px rgba(37, 54, 56, 0.45);
+}
+
+.logo {
+  display: block;
+  width: min(230px, 72%);
+  margin: 0 auto 6px;
+}
+
+.tarjeta h1 {
+  margin: 6px 0 2px;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.bajada {
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.campo { margin-bottom: 14px; }
+
+.campo label {
+  display: block;
+  margin: 0 0 6px 4px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.campo input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 1rem; /* 16px: evita el zoom automático en iPhone */
+  color: var(--petroleo);
+  background: rgba(215, 240, 233, 0.55);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  outline: none;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.campo input::placeholder { color: #7D9395; }
+
+.campo input:focus {
+  background: #fff;
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 4px rgba(8, 126, 131, 0.15);
+}
+
+.con-ojo { position: relative; }
+.con-ojo input { padding-right: 54px; }
+
+.ojo {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  color: var(--turquesa);
+  cursor: pointer;
+}
+
+.ojo:hover { background: rgba(8, 126, 131, 0.1); }
+.ojo:focus-visible { outline: 2px solid var(--turquesa); }
+
+.ojo svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ojo .i-ocultar { display: none; }
+.ojo.viendo .i-ocultar { display: block; }
+.ojo.viendo .i-ver { display: none; }
+
+.ayuda {
+  margin: -6px 0 14px 4px;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.mensaje {
+  margin: 4px 0 14px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: var(--error-fondo);
+  color: var(--error-texto);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.boton {
+  width: 100%;
+  height: 54px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--turquesa);
+  color: #fff;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.boton:hover { background: var(--turquesa-oscuro); }
+.boton:active { transform: scale(0.99); }
+.boton:focus-visible { outline: 3px solid var(--petroleo); outline-offset: 2px; }
+.boton[disabled] { opacity: 0.7; cursor: progress; }
+
+.enlace {
+  display: block;
+  margin: 16px auto 0;
+  padding: 4px 8px;
+  background: none;
+  border: 0;
+  color: var(--turquesa);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* El cambio de clave espera a verificar la sesión antes de mostrarse */
+body.cambio:not(.listo) .tarjeta { visibility: hidden; }
+
+@media (max-width: 480px) {
+  body.entrada { background-size: auto, 300px 300px; }
+  .tarjeta { padding: 22px 20px 24px; border-radius: 22px; }
+}
+
+/* ------------------------------------------------------------
+   Paneles (por ahora solo la base)
+   ------------------------------------------------------------ */
+
+body.panel {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--menta);
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: var(--turquesa);
+  color: #fff;
+}
+
+.barra img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1); /* logo en blanco sobre el turquesa */
+}
+
+.barra .saludo {
+  margin-left: auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.barra .salir {
+  flex: none;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.barra .salir:hover { background: rgba(255, 255, 255, 0.3); }
+
+.panel-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  visibility: hidden;
+}
+
+body.panel.listo .panel-main { visibility: visible; }
+
+.panel-tarjeta {
+  padding: 28px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px -14px rgba(37, 54, 56, 0.35);
+}
+
+.panel-tarjeta h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.panel-tarjeta p { margin: 0; color: var(--texto-suave); }
+
+@media (max-width: 480px) {
+  .barra { padding: 8px 12px; }
+  .barra img { height: 36px; }
+  .panel-tarjeta { padding: 22px 18px; }
+}
