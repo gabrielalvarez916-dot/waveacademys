@@ -11,24 +11,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/alumno.css">
 </head>
-<body class="panel" data-rol="student">
+<body class="panel alumno" data-rol="student">
   <header class="barra">
     <img src="/assets/logo.png" alt="Wave Academy's">
+    <nav class="nav-alumno" aria-label="Secciones">
+      <a href="#cursos" class="activo">Cursos</a>
+      <a href="#programacion">Programación</a>
+      <a href="#estadisticas">Estadísticas</a>
+      <a href="#perfil">Perfil</a>
+    </nav>
     <span id="saludo" class="saludo"></span>
     <button id="btn-salir" class="salir" type="button">Salir</button>
   </header>
 
   <main class="panel-main">
-    <div class="panel-tarjeta">
-      <h1>Mi aula</h1>
-      <p>Estamos armando tu aula. Muy pronto vas a encontrar acá tus materias y tus clases.</p>
-    </div>
+    <div id="vista"></div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/config.js"></script>
   <script src="/js/auth.js"></script>
   <script src="/js/panel.js"></script>
+  <script src="/js/alumno.js"></script>
 </body>
 </html>
