@@ -82,6 +82,12 @@ body.panel.alumno .barra {
   line-height: 1.2;
 }
 
+.curso-lecciones {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
 .curso-fila {
   display: flex;
   justify-content: space-between;
@@ -90,13 +96,13 @@ body.panel.alumno .barra {
 }
 
 .curso-fila span {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.curso-fila b { font-size: 1.15rem; font-weight: 800; }
+.curso-fila b { font-size: 1.1rem; font-weight: 800; }
 
 .curso-barra {
   height: 12px;
