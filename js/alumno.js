@@ -79,10 +79,11 @@
       cont.innerHTML = cursos.map(function (c) {
         var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
         return '<article class="curso" style="--c:' + c.color + '">' +
-          '<div class="curso-icono">' + esc(c.nombre.charAt(0)) + '</div>' +
-          '<h2>' + esc(c.nombre) + '</h2>' +
-          '<p class="curso-detalle">' + c.completas + ' de ' + c.total + ' lecciones</p>' +
+          '<div class="curso-cabeza"><div class="curso-icono">' + esc(c.nombre.charAt(0)) + '</div>' +
+          '<h2>' + esc(c.nombre) + '</h2></div>' +
+          '<div class="curso-fila"><span>Progreso</span><b>' + c.completas + ' de ' + c.total + ' · ' + pct + '%</b></div>' +
           '<div class="curso-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
+          '<p class="curso-pie">lecciones completadas</p>' +
           '</article>';
       }).join('');
     } catch (e) {
