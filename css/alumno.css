@@ -173,14 +173,20 @@ body.panel.alumno .barra {
 
 .vista-subtitulo { margin: 36px 0 16px; font-size: 1.4rem; }
 
+/* Lunes a Viernes siempre en una sola línea; en pantallas chicas se desliza de costado */
 .semana {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(5, minmax(190px, 1fr));
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
 .dia {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
   overflow: visible;
   background: #fff;
   border: 2px solid transparent;
@@ -226,7 +232,7 @@ body.panel.alumno .barra {
   text-transform: uppercase;
 }
 
-.dia-cuerpo { padding: 12px; }
+.dia-cuerpo { flex: 1; padding: 12px; }
 
 .prog-item {
   --c: #6366F1;
