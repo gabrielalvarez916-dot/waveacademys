@@ -57,6 +57,19 @@
     return '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + P[clave] + '</svg>';
   }
 
+
+  // Rueda de progreso: frac entre 0 y 1, texto dentro y rótulo abajo
+  function rueda(frac, texto, rotulo) {
+    var r = 17, c = 2 * Math.PI * r;
+    var f = Math.max(0, Math.min(1, frac || 0));
+    return '<div class="rueda">' +
+      '<svg viewBox="0 0 44 44" width="58" height="58" aria-hidden="true">' +
+      '<circle cx="22" cy="22" r="' + r + '" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="4"/>' +
+      '<circle cx="22" cy="22" r="' + r + '" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"' +
+      ' stroke-dasharray="' + (c * f).toFixed(1) + ' ' + c.toFixed(1) + '" transform="rotate(-90 22 22)"/>' +
+      '</svg><b>' + texto + '</b><span>' + rotulo + '</span></div>';
+  }
+
   // ---------- Datos ----------
   async function cargarCursos() {
     var ses = await sb.auth.getSession();
@@ -100,9 +113,71 @@
       if (hechas[l.id]) completas[sid] = (completas[sid] || 0) + 1;
     });
 
+    // Actividades (interactivas y finales) de cada materia
+    var pasos = await sb.from('lesson_steps')
+      .select('id, lessons!inner(topics!inner(subject_id))')
+      .in('step_type', ['interactive_activity', 'final_activity'])
+      .in('lessons.topics.subject_id', ids);
+    if (pasos.error) throw pasos.error;
+
+    var pp = await sb.from('student_step_progress')
+      .select('lesson_step_id, score')
+      .eq('student_id', estudianteId);
+    if (pp.error) throw pp.error;
+    var puntajePaso = {};
+    (pp.data || []).forEach(function (p) { puntajePaso[p.lesson_step_id] = p.score; });
+
+    // Exámenes de cada materia y los intentos del alumno
+    var exs = await sb.from('exams')
+      .select('id, topics!inner(subject_id)')
+      .in('topics.subject_id', ids);
+    if (exs.error) throw exs.error;
+
+    var ints = await sb.from('exam_attempts')
+      .select('exam_id, score, passed, grading_status')
+      .eq('student_id', estudianteId);
+    if (ints.error) throw ints.error;
+
+    var examenMateria = {};
+    var stats = {};
+    ids.forEach(function (id) {
+      stats[id] = { act: 0, actHechas: 0, ex: 0, exAprob: 0, suma: 0, n: 0 };
+    });
+
+    (pasos.data || []).forEach(function (s) {
+      var st = stats[s.lessons.topics.subject_id];
+      st.act++;
+      if (s.id in puntajePaso) {
+        st.actHechas++;
+        if (puntajePaso[s.id] != null) { st.suma += Number(puntajePaso[s.id]); st.n++; }
+      }
+    });
+
+    (exs.data || []).forEach(function (e) {
+      examenMateria[e.id] = e.topics.subject_id;
+      stats[e.topics.subject_id].ex++;
+    });
+
+    var aprobados = {};
+    (ints.data || []).forEach(function (i) {
+      var sid = examenMateria[i.exam_id];
+      if (!sid) return;
+      if (i.grading_status === 'graded' && i.score != null) {
+        stats[sid].suma += Number(i.score); stats[sid].n++;
+      }
+      if (i.passed && !aprobados[i.exam_id]) {
+        aprobados[i.exam_id] = true;
+        stats[sid].exAprob++;
+      }
+    });
+
     return materias.map(function (m) {
+      var st = stats[m.id];
       return { id: m.id, nombre: m.name, color: colorSeguro(m.color),
-               total: total[m.id] || 0, completas: completas[m.id] || 0 };
+               total: total[m.id] || 0, completas: completas[m.id] || 0,
+               promedio: st.n ? Math.round(st.suma / st.n) : null,
+               examenes: st.ex, examenesAprob: st.exAprob,
+               actividades: st.act, actividadesHechas: st.actHechas };
     });
   }
 
@@ -126,6 +201,11 @@
           '<p class="curso-lecciones">' + c.completas + ' de ' + c.total + ' lecciones</p>' +
           '<div class="curso-fila"><span>Progreso</span><b>' + pct + '%</b></div>' +
           '<div class="curso-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
+          '<div class="ruedas">' +
+            rueda(c.promedio == null ? 0 : c.promedio / 100, c.promedio == null ? '—' : c.promedio + '%', 'Promedio') +
+            rueda(c.examenes ? c.examenesAprob / c.examenes : 0, c.examenesAprob + '/' + c.examenes, 'Exámenes') +
+            rueda(c.actividades ? c.actividadesHechas / c.actividades : 0, c.actividadesHechas + '/' + c.actividades, 'Actividades') +
+          '</div>' +
           '</article>';
       }).join('');
     } catch (e) {
