@@ -448,18 +448,42 @@
     prog.filas = prog.filas.concat(r.data);
   }
 
-  // Reparte las materias rotando: cada día tiene hasta 3 y todas aparecen parejo en la semana
-  async function sugerirPrograma() {
-    var n = prog.cursos.length;
-    var porDia = Math.min(3, n);
+  // Cuántas veces por semana va cada materia: Lengua y Matemática 3, el resto 2
+  function vecesPorSemana(nombre) {
+    var n = String(nombre || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    if (n.indexOf('lengua') !== -1 || n.indexOf('matemat') !== -1) return 3;
+    return 2;
+  }
+
+  // Reparte las materias en la semana: cada una con sus días, parejo y evitando días seguidos
+  function armarSemana(cursos) {
+    var carga = [0, 0, 0, 0, 0, 0];
+    var orden = cursos.map(function (c, i) { return { c: c, i: i, v: vecesPorSemana(c.nombre) }; })
+      .sort(function (a, b) { return b.v - a.v || a.i - b.i; });
     var filas = [];
-    for (var d = 0; d < 5; d++) {
-      for (var k = 0; k < porDia; k++) {
-        var c = prog.cursos[(d * porDia + k) % n];
-        filas.push({ student_id: estudianteId, weekday: d + 1, subject_id: c.id,
-                     lessons_target: 1, position: k, updated_by: prog.uid });
+    orden.forEach(function (o) {
+      var elegidos = [];
+      for (var k = 0; k < Math.min(o.v, 5); k++) {
+        var mejor = 0, mejorPuntaje = Infinity;
+        for (var d = 1; d <= 5; d++) {
+          if (elegidos.indexOf(d) !== -1) continue;
+          var vecinos = (elegidos.indexOf(d - 1) !== -1 ? 1 : 0) + (elegidos.indexOf(d + 1) !== -1 ? 1 : 0);
+          var puntaje = carga[d] * 100 + vecinos * 10 + d;
+          if (puntaje < mejorPuntaje) { mejorPuntaje = puntaje; mejor = d; }
+        }
+        elegidos.push(mejor);
+        filas.push({ weekday: mejor, subject_id: o.c.id, position: carga[mejor] });
+        carga[mejor]++;
       }
-    }
+    });
+    return filas;
+  }
+
+  async function sugerirPrograma() {
+    var filas = armarSemana(prog.cursos).map(function (f) {
+      return { student_id: estudianteId, weekday: f.weekday, subject_id: f.subject_id,
+               lessons_target: 1, position: f.position, updated_by: prog.uid };
+    });
     var r = await sb.from('study_schedule').insert(filas)
       .select('id, weekday, subject_id, lessons_target, position');
     if (r.error) throw r.error;
