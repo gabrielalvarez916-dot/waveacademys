@@ -666,11 +666,184 @@
     }
   }
 
+  // ---------- Perfil ----------
+  function fechaNac(iso) {
+    if (!iso) return null;
+    var p = String(iso).split('-');
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  }
+
+  function edadDe(d) {
+    var hoy = new Date();
+    var e = hoy.getFullYear() - d.getFullYear();
+    if (hoy.getMonth() < d.getMonth() || (hoy.getMonth() === d.getMonth() && hoy.getDate() < d.getDate())) e--;
+    return e;
+  }
+
+  async function cargarPerfil() {
+    var ses = await sb.auth.getSession();
+    var uid = ses.data.session.user.id;
+    var est = await sb.from('students')
+      .select('id, first_name, last_name, birth_date, document_number, grades(name, year_number, levels(slug, name))')
+      .eq('profile_id', uid).maybeSingle();
+    if (est.error) throw est.error;
+    var pf = await sb.from('profiles').select('avatar_config').eq('id', uid).maybeSingle();
+    if (pf.error) throw pf.error;
+    var g = est.data && est.data.grades;
+    var nivel = g && g.levels ? g.levels.slug : null;
+    return { uid: uid, est: est.data, nivel: nivel, grado: g,
+             avatar: Wave.avatar.limpiar(pf.data && pf.data.avatar_config, nivel) };
+  }
+
+  function dato(icono, rotulo, valor, extra) {
+    return '<div class="perfil-dato"><span class="perfil-dato-ico">' + icono + '</span>' +
+      '<div><small>' + rotulo + '</small><b>' + (valor ? esc(valor) : '—') + '</b>' +
+      (extra ? '<em>' + esc(extra) + '</em>' : '') + '</div></div>';
+  }
+
+  var ICO = {
+    user: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>',
+    id: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M15 10h3M15 14h3"/></svg>',
+    cap: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>',
+    lapiz: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>'
+  };
+
+  function pintarPerfil(cont, d) {
+    var e = d.est || {};
+    var nombreCompleto = ((e.first_name || '') + ' ' + (e.last_name || '')).trim();
+    var g = d.grado;
+    var nivelTxt = g && g.levels ? g.levels.name : '';
+    var gradoTxt = g ? (g.levels && g.levels.slug === 'inicial' ? g.levels.name : g.name + ' · ' + nivelTxt) : '';
+    var nac = fechaNac(e.birth_date);
+    var nacTxt = nac ? nac.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    var edadTxt = nac ? edadDe(nac) + ' años' : '';
+
+    cont.innerHTML =
+      '<section class="perfil-hero">' +
+        '<div class="perfil-avatar-wrap"><div class="perfil-avatar" id="perfil-avatar">' + Wave.avatar.svg(d.avatar, d.nivel, 132) + '</div>' +
+        '<button type="button" class="perfil-avatar-btn" id="perfil-cambiar" aria-label="Cambiar avatar">' + ICO.lapiz + '</button></div>' +
+        '<div class="perfil-hero-txt">' +
+          '<h2>' + esc(nombreCompleto || 'Mi perfil') + '</h2>' +
+          (gradoTxt ? '<span class="perfil-chip">' + esc(gradoTxt) + '</span>' : '') +
+          '<button type="button" class="perfil-cambiar-txt" id="perfil-cambiar-2">Cambiar mi avatar</button>' +
+        '</div>' +
+      '</section>' +
+      '<h2 class="vista-subtitulo">Mis datos</h2>' +
+      '<div class="perfil-datos">' +
+        dato(ICO.user, 'Nombre', e.first_name) +
+        dato(ICO.user, 'Apellido', e.last_name) +
+        dato(ICO.cal, 'Fecha de nacimiento', nacTxt, edadTxt) +
+        dato(ICO.id, 'Documento', e.document_number) +
+        dato(ICO.cap, 'Año', g ? (g.levels && g.levels.slug === 'inicial' ? g.levels.name : g.name) : '', g && g.levels && g.levels.slug !== 'inicial' ? nivelTxt : '') +
+      '</div>' +
+      '<p class="perfil-nota">Estos datos los completa tu familia. Si ves algo para corregir, avisales a ellos.</p>';
+
+    var abrir = function () { abrirEditorAvatar(d, function (nuevo) {
+      d.avatar = nuevo;
+      document.getElementById('perfil-avatar').innerHTML = Wave.avatar.svg(nuevo, d.nivel, 132);
+    }); };
+    document.getElementById('perfil-cambiar').addEventListener('click', abrir);
+    document.getElementById('perfil-cambiar-2').addEventListener('click', abrir);
+  }
+
+  function swatches(nombre, colores, actual) {
+    return '<div class="av-swatches">' + colores.map(function (c, i) {
+      return '<button type="button" class="av-sw' + (actual === i || actual === c ? ' sel' : '') + '" data-k="' + nombre + '" data-v="' + (typeof actual === 'string' ? c : i) + '" style="background:' + c + '" aria-label="Opción ' + (i + 1) + '"></button>';
+    }).join('') + '</div>';
+  }
+
+  function abrirEditorAvatar(d, alGuardar) {
+    var A = Wave.avatar;
+    var cfg = JSON.parse(JSON.stringify(d.avatar));
+    var veil = document.createElement('div');
+    veil.className = 'av-veil';
+    veil.innerHTML = '<div class="av-modal" role="dialog" aria-modal="true" aria-label="Elegí tu avatar"></div>';
+    document.body.appendChild(veil);
+    document.body.classList.add('av-abierto');
+    var modal = veil.firstChild;
+
+    function cerrar() { document.body.classList.remove('av-abierto'); veil.remove(); }
+
+    function dibujar() {
+      var cuerpo = '';
+      if (cfg.t === 'animal') {
+        cuerpo += '<p class="av-rotulo">Elegí tu animalito</p><div class="av-grilla">' +
+          A.ANIMALES.map(function (a) {
+            var c = { t: 'animal', a: a[0], f: cfg.f };
+            return '<button type="button" class="av-op' + (cfg.a === a[0] ? ' sel' : '') + '" data-k="a" data-v="' + a[0] + '">' +
+              A.svg(c, d.nivel, 64) + '<span>' + a[1] + '</span></button>';
+          }).join('') + '</div>';
+      } else {
+        cuerpo += '<p class="av-rotulo">Peinado</p><div class="av-grilla">' +
+          A.ESTILOS.map(function (n, i) {
+            var c = JSON.parse(JSON.stringify(cfg)); c.estilo = i;
+            return '<button type="button" class="av-op' + (cfg.estilo === i ? ' sel' : '') + '" data-k="estilo" data-v="' + i + '">' +
+              A.svg(c, d.nivel, 64) + '<span>' + n + '</span></button>';
+          }).join('') + '</div>' +
+          '<p class="av-rotulo">Piel</p>' + swatches('piel', A.PIELES, cfg.piel) +
+          '<p class="av-rotulo">Color de pelo</p>' + swatches('pelo', A.PELOS, cfg.pelo) +
+          '<p class="av-rotulo">Ropa</p>' + swatches('ropa', A.ROPAS, cfg.ropa);
+      }
+      cuerpo += '<p class="av-rotulo">Fondo</p>' + swatches('f', A.FONDOS, cfg.f);
+
+      modal.innerHTML =
+        '<div class="av-cab"><h3>Elegí tu avatar</h3><button type="button" class="av-x" data-a="cerrar" aria-label="Cerrar">×</button></div>' +
+        '<div class="av-previa">' + A.svg(cfg, d.nivel, 120) + '</div>' +
+        '<div class="av-cuerpo">' + cuerpo + '</div>' +
+        '<p class="av-error" id="av-error" hidden></p>' +
+        '<div class="av-pie"><button type="button" class="av-btn sec" data-a="cerrar">Cancelar</button>' +
+        '<button type="button" class="av-btn" data-a="guardar" id="av-guardar">Guardar</button></div>';
+    }
+
+    veil.addEventListener('click', async function (ev) {
+      if (ev.target === veil) { cerrar(); return; }
+      var b = ev.target.closest('[data-k],[data-a]');
+      if (!b) return;
+      if (b.hasAttribute('data-k')) {
+        var k = b.getAttribute('data-k'), v = b.getAttribute('data-v');
+        cfg[k] = (k === 'a' || k === 'f') ? v : Number(v);
+        var sc = modal.querySelector('.av-cuerpo').scrollTop;
+        dibujar();
+        modal.querySelector('.av-cuerpo').scrollTop = sc;
+        return;
+      }
+      var acc = b.getAttribute('data-a');
+      if (acc === 'cerrar') { cerrar(); return; }
+      if (acc === 'guardar') {
+        var btn = document.getElementById('av-guardar');
+        btn.disabled = true; btn.textContent = 'Guardando…';
+        var limpio = A.limpiar(cfg, d.nivel);
+        var r = await sb.from('profiles').update({ avatar_config: limpio }).eq('id', d.uid);
+        if (r.error) {
+          var er = document.getElementById('av-error');
+          er.textContent = 'No pudimos guardar tu avatar. Probá de nuevo.'; er.hidden = false;
+          btn.disabled = false; btn.textContent = 'Guardar';
+          return;
+        }
+        cerrar();
+        alGuardar(limpio);
+      }
+    });
+    dibujar();
+  }
+
+  async function vistaPerfil() {
+    vista.innerHTML = '<h1 class="vista-titulo">Perfil</h1><div id="perfil"></div>';
+    var cont = document.getElementById('perfil');
+    cont.innerHTML = '<div class="vacio">Cargando tu perfil…</div>';
+    try {
+      pintarPerfil(cont, await cargarPerfil());
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar tu perfil. Probá recargar la página.</div>';
+    }
+  }
+
   var VISTAS = {
     cursos: vistaCursos,
     programacion: vistaProgramacion,
     estadisticas: vistaEstadisticas,
-    perfil: function () { vistaProximamente('Perfil'); }
+    perfil: vistaPerfil
   };
 
   function ruta() {
