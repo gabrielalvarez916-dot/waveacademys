@@ -164,7 +164,7 @@ body.panel.alumno .barra {
 
 @media (max-width: 640px) {
   body.panel.alumno .barra { grid-template-columns: 1fr auto; }
-  .nav-alumno { grid-column: 1 / -1; order: 3; overflow-x: auto; justify-content: flex-start; }
+  .nav-alumno { grid-column: 1 / -1; order: 3; overflow-x: auto; justify-content: safe center; }
   .nav-alumno a { padding: 8px 12px; white-space: nowrap; }
   .barra-der .saludo { display: none; }
 }
