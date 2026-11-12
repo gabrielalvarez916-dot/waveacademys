@@ -194,3 +194,20 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-pegar textarea:focus { outline: 0; border-color: var(--turquesa); }
 .wv-prox-mini { padding: 6px 12px; background: #E6ECEC; color: #4B6062; border-radius: 999px; font-size: 0.8rem; font-weight: 800; }
 @media (max-width: 640px) { .wv-item { flex-wrap: wrap; } .wv-item-b { justify-content: flex-start; width: 100%; } }
+
+/* Editor de preguntas */
+.wv-modal-caja.ancha { width: min(100%, 780px); }
+.wv-preg { margin-bottom: 12px; padding: 14px; border: 2px solid var(--menta); border-radius: 18px; }
+.wv-preg-cab { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.wv-preg-herr { margin-left: auto; display: flex; gap: 4px; }
+.wv-preg-herr .wv-ico { width: 30px; height: 28px; }
+.wv-puntos { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 0.9rem; }
+.wv-puntos input { width: 64px; height: 34px; padding: 0 8px; border: 2px solid #C9DBD8; border-radius: 10px; font: inherit; }
+.wv-pasa { margin-bottom: 14px; }
+.wv-preg textarea, .wv-opc input[type=text] { width: 100%; padding: 10px 12px; border: 2px solid #C9DBD8; border-radius: 12px; font: inherit; box-sizing: border-box; }
+.wv-preg textarea:focus, .wv-opc input[type=text]:focus { outline: 0; border-color: var(--turquesa); }
+.wv-opc { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.wv-opc input[type=text] { flex: 1; }
+.wv-tf { display: inline-flex; align-items: center; gap: 6px; margin-right: 16px; font-weight: 700; }
+.wv-ayuda-e, .wv-lbl-e { display: block; margin: 8px 0 4px; color: var(--texto-suave); font-weight: 700; font-size: 0.85rem; }
+.wv-ed-nuevo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 14px 0 4px; }

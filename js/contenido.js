@@ -235,7 +235,7 @@
       }).join('');
       var examen = (S.info[R.topic] || {}).tiene_examen;
       h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
-        '<small>Se arma dentro de la plataforma (se aprueba con 70 o más)</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + '</div></div>';
+        '<small>Se arma acá mismo, con preguntas de opción múltiple, verdadero/falso o abiertas</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + '</div></div>';
       cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>' + h;
     } catch (e) {
       console.error(e);
@@ -322,7 +322,7 @@
 
     // 4 · Consigna
     var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
-      '<span class="wv-prox-mini">Editor próximamente</span>');
+      boton('consignas', L.preguntas ? 'Editar consignas' : 'Armar consignas', L.preguntas ? 'suave' : ''));
     h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
 
     var tit = nombre('lesson', R.lesson);
@@ -457,6 +457,12 @@
         await guardarPaso('complementary_activity', { content: { files: fs } });
         return pintarLeccion();
       }
+      if (a === 'consignas') return abrirEditor({ kind: 'step', stepId: L.pasos.final_activity.id, sub: nombre('lesson', R.lesson) });
+      if (a === 'examen') {
+        var ex = await sb.from('exams').select('id, passing_score').eq('topic_id', R.topic).maybeSingle();
+        if (ex.error) throw ex.error;
+        return abrirEditor({ kind: 'exam', exam: ex.data, sub: nombre('topic', R.topic) });
+      }
       if (a === 'mov') return mover(p[1], p[2], +p[3]);
       if (a === 'ren') return renombrar(p[1], p[2]);
       if (a === 'nuevo') return nuevo(p[1]);
@@ -504,6 +510,208 @@
       await refrescarEstados();
     }
     pintar();
+  }
+
+  // ---------- Editor de preguntas (consignas de la lección y examen del tema) ----------
+  var ED = null;
+  var TIPOS_PREG = { open: 'Respuesta abierta', short_answer: 'Respuesta corta', multiple_choice: 'Opción múltiple', true_false: 'Verdadero / Falso' };
+
+  function pregVacia(tipo) {
+    return {
+      id: null, type: tipo, prompt: '', points: 1, correct: -1, ref: '', expl: '', rubric: '',
+      options: tipo === 'multiple_choice' ? ['', '', ''] : tipo === 'true_false' ? ['Verdadero', 'Falso'] : []
+    };
+  }
+
+  async function abrirEditor(ctx) {
+    var col = ctx.kind === 'exam' ? 'exam_id' : 'lesson_step_id';
+    var id = ctx.kind === 'exam' ? (ctx.exam && ctx.exam.id) : ctx.stepId;
+    var qs = [];
+    if (id) {
+      var r = await sb.from('questions').select('id, question_type, prompt, options, points, position').eq(col, id).order('position');
+      if (r.error) throw r.error;
+      var ids = r.data.map(function (x) { return x.id; });
+      var rb = ids.length ? await sb.from('question_rubrics').select('question_id, reference_answer, explanation, rubric').in('question_id', ids) : { data: [] };
+      if (rb.error) throw rb.error;
+      var mapa = {};
+      rb.data.forEach(function (x) { mapa[x.question_id] = x; });
+      qs = r.data.map(function (q) {
+        var u = mapa[q.id] || {};
+        var ref = typeof u.reference_answer === 'string' ? u.reference_answer : '';
+        var o = Array.isArray(q.options) ? q.options.map(String) : [];
+        var cerrada = q.question_type === 'multiple_choice' || q.question_type === 'true_false';
+        return { id: q.id, type: q.question_type, prompt: q.prompt, points: q.points, options: o,
+          correct: cerrada ? o.indexOf(ref) : -1, ref: cerrada ? '' : ref, expl: u.explanation || '', rubric: u.rubric || '' };
+      });
+    }
+    ED = { ctx: ctx, qs: qs, quitadas: [], pasa: ctx.kind === 'exam' && ctx.exam ? ctx.exam.passing_score : 70 };
+    ED.el = document.createElement('div');
+    ED.el.className = 'wv-modal';
+    ED.caja = document.createElement('div');
+    ED.caja.className = 'wv-modal-caja ancha';
+    ED.el.appendChild(ED.caja);
+    document.body.appendChild(ED.el);
+    ED.caja.addEventListener('input', editorCambio);
+    ED.caja.addEventListener('change', editorCambio);
+    ED.caja.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-acc]');
+      if (b && !b.disabled) editorAccion(b.getAttribute('data-acc'));
+    });
+    pintarEditor();
+  }
+
+  function cerrarEditor() { if (ED && ED.el) ED.el.remove(); ED = null; }
+
+  function editorCambio(ev) {
+    var t = ev.target;
+    if (t.dataset.ed === 'pasa') { ED.pasa = +t.value; return; }
+    if (t.dataset.q === undefined) return;
+    var q = ED.qs[+t.dataset.q], f = t.dataset.f;
+    if (f === 'points') q.points = Math.max(1, Math.round(+t.value) || 1);
+    else if (f === 'opt') q.options[+t.dataset.j] = t.value;
+    else if (f === 'correct') q.correct = +t.value;
+    else q[f] = t.value;
+  }
+
+  function cardPreg(q, i, n) {
+    var cerrada = q.type === 'multiple_choice' || q.type === 'true_false';
+    var h = '<div class="wv-preg"><div class="wv-preg-cab"><b>' + (i + 1) + '.</b><span class="wv-etq vacia">' + TIPOS_PREG[q.type] + '</span>' +
+      '<label class="wv-puntos">Puntos <input type="number" min="1" max="100" data-q="' + i + '" data-f="points" value="' + q.points + '"></label>' +
+      '<span class="wv-preg-herr"><button type="button" class="wv-ico" data-acc="ed-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
+      '<button type="button" class="wv-ico" data-acc="ed-mov:' + i + ':1"' + (i === n - 1 ? ' disabled' : '') + '>▼</button>' +
+      '<button type="button" class="wv-ico" title="Quitar pregunta" data-acc="ed-del:' + i + '">🗑</button></span></div>' +
+      '<textarea rows="2" data-q="' + i + '" data-f="prompt" placeholder="Escribí la pregunta o la consigna">' + esc(q.prompt) + '</textarea>';
+    if (q.type === 'multiple_choice') {
+      h += '<small class="wv-ayuda-e">Marcá con el círculo cuál es la respuesta correcta.</small>';
+      q.options.forEach(function (o, j) {
+        h += '<div class="wv-opc"><input type="radio" name="c' + i + '" data-q="' + i + '" data-f="correct" value="' + j + '"' + (q.correct === j ? ' checked' : '') + '>' +
+          '<input type="text" data-q="' + i + '" data-f="opt" data-j="' + j + '" value="' + esc(o) + '" placeholder="Opción ' + (j + 1) + '">' +
+          '<button type="button" class="wv-ico" data-acc="ed-optdel:' + i + ':' + j + '"' + (q.options.length <= 2 ? ' disabled' : '') + '>✕</button></div>';
+      });
+      h += '<button type="button" class="wv-btn mini suave" data-acc="ed-optadd:' + i + '">+ Agregar opción</button>';
+    } else if (q.type === 'true_false') {
+      h += '<small class="wv-ayuda-e">¿Cuál es la respuesta correcta?</small><div class="wv-opc">';
+      q.options.forEach(function (o, j) {
+        h += '<label class="wv-tf"><input type="radio" name="c' + i + '" data-q="' + i + '" data-f="correct" value="' + j + '"' + (q.correct === j ? ' checked' : '') + '> ' + esc(o) + '</label>';
+      });
+      h += '</div>';
+    }
+    if (!cerrada) {
+      h += '<label class="wv-lbl-e">Respuesta de referencia (opcional, la usa la IA para corregir)</label>' +
+        '<textarea rows="2" data-q="' + i + '" data-f="ref">' + esc(q.ref) + '</textarea>';
+    }
+    h += '<details class="wv-pegar"><summary>Criterios y explicación (opcional)</summary>' +
+      '<label class="wv-lbl-e">Criterios de corrección para la IA</label><textarea rows="2" data-q="' + i + '" data-f="rubric">' + esc(q.rubric) + '</textarea>' +
+      '<label class="wv-lbl-e">Explicación de la respuesta</label><textarea rows="2" data-q="' + i + '" data-f="expl">' + esc(q.expl) + '</textarea></details></div>';
+    return h;
+  }
+
+  function pintarEditor() {
+    var c = ED.ctx, exam = c.kind === 'exam';
+    var h = '<h2>' + (exam ? 'Examen del tema' : 'Actividad por consigna') + '</h2><p>' + esc(c.sub) + '</p>';
+    if (exam) h += '<label class="wv-puntos wv-pasa">Nota mínima para aprobar <input type="number" min="0" max="100" data-ed="pasa" value="' + ED.pasa + '"></label>';
+    h += ED.qs.map(function (q, i) { return cardPreg(q, i, ED.qs.length); }).join('') ||
+      '<div class="wv-vacio">Todavía no hay preguntas. Agregá la primera.</div>';
+    h += '<div class="wv-ed-nuevo"><b>Agregar:</b> ' + Object.keys(TIPOS_PREG).map(function (k) { return boton('ed-add:' + k, '+ ' + TIPOS_PREG[k], 'suave'); }).join('') + '</div>';
+    h += '<div class="wv-modal-pie">' + boton('ed-cancel', 'Cancelar', 'suave') + boton('ed-save', 'Guardar', '') + '</div>';
+    ED.caja.innerHTML = h;
+  }
+
+  function editorAccion(acc) {
+    var p = acc.split(':'), a = p[0], i = +p[1];
+    if (a === 'ed-cancel') return cerrarEditor();
+    if (a === 'ed-save') return guardarEditor();
+    if (a === 'ed-add') {
+      ED.qs.push(pregVacia(p[1]));
+      pintarEditor();
+      var cards = ED.caja.querySelectorAll('.wv-preg');
+      if (cards.length) cards[cards.length - 1].scrollIntoView({ block: 'center' });
+      return;
+    }
+    var q = ED.qs[i];
+    if (a === 'ed-del') {
+      if (!confirm('¿Quitar esta pregunta?')) return;
+      if (q.id) ED.quitadas.push(q.id);
+      ED.qs.splice(i, 1);
+    } else if (a === 'ed-mov') {
+      var j = i + (+p[2]);
+      if (j < 0 || j >= ED.qs.length) return;
+      ED.qs[i] = ED.qs[j]; ED.qs[j] = q;
+    } else if (a === 'ed-optadd') {
+      q.options.push('');
+    } else if (a === 'ed-optdel') {
+      var k = +p[2];
+      q.options.splice(k, 1);
+      if (q.correct === k) q.correct = -1; else if (q.correct > k) q.correct--;
+    }
+    pintarEditor();
+  }
+
+  async function guardarEditor() {
+    var c = ED.ctx, qs = ED.qs, exam = c.kind === 'exam';
+    for (var i = 0; i < qs.length; i++) {
+      var q = qs[i], n = i + 1;
+      if (!q.prompt.trim()) return toast('La pregunta ' + n + ' está vacía', true);
+      if (q.type === 'multiple_choice') {
+        if (q.options.filter(function (o) { return o.trim(); }).length < 2) return toast('La pregunta ' + n + ' necesita al menos 2 opciones', true);
+        if (q.correct < 0 || !(q.options[q.correct] || '').trim()) return toast('Marcá la respuesta correcta en la pregunta ' + n, true);
+      }
+      if (q.type === 'true_false' && q.correct < 0) return toast('Marcá la respuesta correcta en la pregunta ' + n, true);
+    }
+    if (exam && !qs.length) return toast('El examen necesita al menos una pregunta', true);
+    var btn = ED.caja.querySelector('[data-acc="ed-save"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Guardando…'; }
+    try {
+      var clave, col;
+      if (exam) {
+        var pasa = Math.min(100, Math.max(0, Math.round(ED.pasa)));
+        if (isNaN(pasa)) pasa = 70;
+        col = 'exam_id';
+        if (c.exam && c.exam.id) {
+          clave = c.exam.id;
+          var u = await sb.from('exams').update({ passing_score: pasa }).eq('id', clave);
+          if (u.error) throw u.error;
+        } else {
+          var e = await sb.from('exams').insert({ topic_id: R.topic, title: 'Examen: ' + nombre('topic', R.topic), passing_score: pasa }).select('id').single();
+          if (e.error) throw e.error;
+          clave = e.data.id;
+          c.exam = { id: clave, passing_score: pasa };
+        }
+      } else { col = 'lesson_step_id'; clave = c.stepId; }
+
+      if (ED.quitadas.length) {
+        var d1 = await sb.from('question_rubrics').delete().in('question_id', ED.quitadas);
+        if (d1.error) throw d1.error;
+        var d2 = await sb.from('questions').delete().in('id', ED.quitadas);
+        if (d2.error) throw d2.error;
+        ED.quitadas = [];
+      }
+      for (var k = 0; k < qs.length; k++) {
+        var x = qs[k], cerrada = x.type === 'multiple_choice' || x.type === 'true_false';
+        var ref = cerrada ? (x.options[x.correct] || '').trim() : x.ref.trim();
+        var opts = cerrada ? x.options.map(function (o) { return o.trim(); }).filter(Boolean) : [];
+        var fila = { question_type: x.type, prompt: x.prompt.trim(), options: opts.length ? opts : null, points: x.points, position: k + 1 };
+        if (x.id) {
+          var up = await sb.from('questions').update(fila).eq('id', x.id);
+          if (up.error) throw up.error;
+        } else {
+          fila[col] = clave;
+          var ins = await sb.from('questions').insert(fila).select('id').single();
+          if (ins.error) throw ins.error;
+          x.id = ins.data.id;
+        }
+        var rb = await sb.from('question_rubrics').upsert({ question_id: x.id, reference_answer: ref || null, explanation: x.expl.trim() || null, rubric: x.rubric.trim() || null }, { onConflict: 'question_id' });
+        if (rb.error) throw rb.error;
+      }
+      toast(exam ? 'Examen guardado' : 'Consignas guardadas');
+      cerrarEditor();
+      if (exam) { await refrescarEstados(); pintar(); }
+      else { L.preguntas = qs.length; pintarLeccion(); }
+    } catch (err) {
+      console.error(err);
+      toast((err && (err.message || err.details)) || 'No se pudo guardar', true);
+      if (btn) { btn.disabled = false; btn.textContent = 'Guardar'; }
+    }
   }
 
   // ---------- Entrada ----------
