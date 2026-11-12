@@ -358,7 +358,10 @@
 
     // 1 · Clase
     var v = p.video, tieneV = !!v.stream_uid;
-    var vEst = !tieneV ? 'Sin video' : (L.video && L.video.ready ? 'Video listo' : 'Procesando… (puede tardar unos minutos)');
+    var ESTADOS = ['creado, sin archivo', 'archivo recibido', 'procesando', 'convirtiendo', 'listo', 'ERROR al procesar', 'ERROR: falló la subida'];
+    var det = L.video && L.video.state != null ? ' · Bunny: ' + (ESTADOS[L.video.state] || ('estado ' + L.video.state)) +
+      (L.video.size != null ? ', recibió ' + (L.video.size / 1048576).toFixed(2) + ' MB' : '') + (L.video.progress != null ? ', progreso ' + L.video.progress + '%' : '') : '';
+    var vEst = !tieneV ? 'Sin video' : (L.video && L.video.ready ? 'Video listo' : 'Procesando…') + det;
     var pdf = p.pdf, tieneP = !!pdf.r2_key;
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
     var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
