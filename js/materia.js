@@ -133,8 +133,8 @@
         mejor: graded.length ? Math.max.apply(null, graded.map(function (i) { return Number(i.score); })) : null };
     });
 
-    var sus = await sb.from('subscriptions').select('status').eq('student_id', sid);
-    var susOk = !sus.error && (sus.data || []).some(function (x) { return x.status === 'active' || x.status === 'past_due'; });
+    var acc = await sb.rpc('my_content_access');
+    var susOk = !acc.error && acc.data === true;
 
     return {
       sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, progreso: progreso, hechas: hechas, examen: examen,
