@@ -347,7 +347,7 @@
       '<p class="ad-sub">Estado de cuota, último acceso y acciones de cada cuenta.</p>' +
       '<div class="ad-resumen" id="ad-resumen"></div>' +
       '<div class="ad-tools">' +
-        '<input id="ad-buscar" class="ad-buscar" type="search" placeholder="Buscar familia, alumno o correo" autocomplete="off">' +
+        '<input id="ad-buscar" class="ad-buscar" type="text" name="filtro-lista" placeholder="Buscar familia, alumno o correo" autocomplete="off" autocapitalize="off" spellcheck="false" readonly>' +
         '<div class="ad-filtros" id="ad-filtros">' +
           [['todas', 'Todas'], ['aldia', 'Al día'], ['deuda', 'Con deuda'], ['sin', 'Sin cuota activa'], ['susp', 'Suspendidas']].map(function (x) {
             return '<button type="button" class="ad-chip' + (estado.filtro === x[0] ? ' on' : '') + '" data-f="' + x[0] + '">' + x[1] + '</button>';
@@ -358,8 +358,15 @@
       '<div id="ad-lista"><div class="ad-vacio">Cargando…</div></div>';
 
     var buscar = document.getElementById('ad-buscar');
-    buscar.value = estado.busqueda;
-    buscar.oninput = function () { estado.busqueda = buscar.value; pintarLista(); };
+    // Evita que el navegador lo autocomplete con el correo guardado (filtraba la lista y la dejaba vacía)
+    estado.busqueda = '';
+    buscar.value = '';
+    buscar.addEventListener('focus', function () { buscar.removeAttribute('readonly'); });
+    buscar.oninput = function () {
+      // Solo filtra si lo está escribiendo la persona (un autocompletado no tiene el foco)
+      if (document.activeElement !== buscar) { buscar.value = estado.busqueda; return; }
+      estado.busqueda = buscar.value; pintarLista();
+    };
     document.getElementById('ad-nueva').onclick = nuevaFamilia;
     document.getElementById('ad-filtros').onclick = function (ev) {
       var b = ev.target.closest('[data-f]'); if (!b) return;
