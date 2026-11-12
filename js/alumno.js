@@ -205,7 +205,7 @@
       cont.className = 'cursos-grilla';
       cont.innerHTML = cursos.map(function (c) {
         var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
-        return '<article class="curso" style="--c:' + c.color + '">' +
+        return '<a class="curso" href="#materia/' + c.id + '" style="--c:' + c.color + '">' +
           '<div class="curso-cabeza"><div class="curso-icono">' + iconoMateria(c.nombre) + '</div>' +
           '<h2>' + esc(c.nombre) + '</h2></div>' +
           '<p class="curso-lecciones">' + c.completas + ' de ' + c.total + (c.total === 1 ? ' tema' : ' temas') + '</p>' +
@@ -216,7 +216,7 @@
             rueda(c.examenes ? c.examenesAprob / c.examenes : 0, c.examenesAprob + '/' + c.examenes, 'Exámenes') +
             rueda(c.actividades ? c.actividadesHechas / c.actividades : 0, c.actividadesHechas + '/' + c.actividades, 'Actividades') +
           '</div>' +
-          '</article>';
+          '</a>';
       }).join('');
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar tus cursos. Probá recargar la página.</div>';
@@ -869,8 +869,16 @@
     perfil: vistaPerfil
   };
 
+  window.WaveIconos = { materia: iconoMateria };
+
   function ruta() {
     var nombre = (location.hash || '#cursos').slice(1);
+    var m = /^materia\/([0-9a-f-]{36})$/i.exec(nombre);
+    if (m) {
+      enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#cursos'); });
+      window.scrollTo(0, 0);
+      return WaveMateria.abrir(vista, m[1]);
+    }
     if (!VISTAS[nombre]) nombre = 'cursos';
     enlaces.forEach(function (a) {
       a.classList.toggle('activo', a.getAttribute('href') === '#' + nombre);

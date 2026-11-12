@@ -26,7 +26,7 @@
   }
 
   function abrirPdf(opts) {
-    var pdf = null, total = 0, n = 1, zoom = 1, tarea = null, ficha = 0, cerrado = false;
+    var pdf = null, total = 0, n = 1, zoom = 1, tarea = null, ficha = 0, cerrado = false, avisado = false;
 
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -98,6 +98,7 @@
         tarea = pagina.render({ canvasContext: ctx, viewport: vp });
         await tarea.promise;
         cuerpo.scrollTo(0, 0);
+        if (n === total && !avisado && opts.alTerminar) { avisado = true; try { opts.alTerminar(); } catch (e2) { /* nada */ } }
       } catch (e) {
         if (e && e.name === 'RenderingCancelledException') return;
         console.error(e);

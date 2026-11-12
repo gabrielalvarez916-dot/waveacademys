@@ -55,7 +55,7 @@
       marco.innerHTML = '';
       marco.appendChild(f);
       barra.hidden = false;
-      cargarSdk().then(function () { player = window.Stream(f); }).catch(function () { barra.hidden = true; });
+      cargarSdk().then(function () { player = window.Stream(f); if (opts.alTerminar) player.addEventListener('ended', function () { try { opts.alTerminar(); } catch (e2) { /* nada */ } }); }).catch(function () { barra.hidden = true; });
     }).catch(function (e) {
       console.error(e);
       error((e && e.message) || 'No se pudo cargar el video.');
