@@ -11,24 +11,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/familia.css">
 </head>
-<body class="panel" data-rol="family">
+<body class="panel familia" data-rol="family">
   <header class="barra">
     <img src="/assets/logo.png" alt="Wave Academy's">
-    <span id="saludo" class="saludo"></span>
-    <button id="btn-salir" class="salir" type="button">Salir</button>
+    <nav class="nav-familia" aria-label="Secciones">
+      <a href="#altas" class="activo">Altas</a>
+      <a href="#progreso">Progreso</a>
+      <a href="#programacion">Programación</a>
+      <a href="#facturacion">Facturación</a>
+    </nav>
+    <div class="barra-der">
+      <span id="saludo" class="saludo"></span>
+      <button id="btn-salir" class="salir" type="button">Salir</button>
+    </div>
   </header>
 
   <main class="panel-main">
-    <div class="panel-tarjeta">
-      <h1>Panel de familia</h1>
-      <p>Estamos armando este panel. Muy pronto vas a encontrar acá todo lo que necesitás.</p>
-    </div>
+    <div id="vista"></div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/config.js"></script>
   <script src="/js/auth.js"></script>
   <script src="/js/panel.js"></script>
+  <script src="/js/familia.js"></script>
 </body>
 </html>
