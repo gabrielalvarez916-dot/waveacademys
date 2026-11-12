@@ -43,7 +43,7 @@
       sb.from('levels').select('id, slug, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
       todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position, intro_video_uid').order('position').order('id'); }),
-      todo(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); }),
+      todo(function () { return sb.from('topics').select('id, subject_id, title, position, is_published').order('position').order('id'); }),
       todo(function () { return sb.from('subject_load_config').select('subject_id, tier, hours_total, topics_total').order('subject_id'); }),
       sb.from('load_tiers').select('tier, label')
     ]);
@@ -219,9 +219,13 @@
     h += '<div class="wv-intro">' + fila('🎬', 'Introducción de la materia', tieneIntro ? 'Video cargado' : 'Sin video: el alumno ve "Próximamente"',
       (tieneIntro ? boton('intro-ver', 'Ver') : '') + boton('intro-up', tieneIntro ? 'Reemplazar' : 'Subir video', tieneIntro ? 'suave' : '') + (tieneIntro ? boton('intro-del', 'Quitar', 'peligro') : ''), 'wv-i-intro') + '</div>';
     if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene temas.</div>';
+    var nPub = ts.filter(function (t) { return t.is_published; }).length;
+    h += '<div class="wv-rango">Visibles para el alumno: <b>' + nPub + ' de ' + ts.length + ' temas</b>. Lo que está oculto el alumno no lo ve. ' +
+      boton('pub-todo:1', 'Publicar todos') + ' ' + boton('pub-todo:0', 'Ocultar todos') + '</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
-      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length));
+      var pub = '<button type="button" class="wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="Visible para el alumno">' + (t.is_published ? '● Publicado' : '○ Oculto') + '</button>';
+      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), pub + herr('topic', t.id, i, ts.length));
     }).join('') + '</div>';
   }
   function vLecciones() {
@@ -539,7 +543,29 @@
       if (a === 'ren') return renombrar(p[1], p[2]);
       if (a === 'nuevo') return nuevaLeccion();
       if (a === 'temas-completar') return completarTemas();
+      if (a === 'pub') return publicarTema(p[2]);
+      if (a === 'pub-todo') return publicarTodos(p[1] === '1');
     } catch (e) { console.error(e); toast((e && e.message) || 'No se pudo completar', true); }
+  }
+
+  async function fijarPublicado(ids, valor) {
+    chk(await sb.from('topics').update({ is_published: valor }).in('id', ids));
+    chk(await sb.from('lessons').update({ is_published: valor }).in('topic_id', ids));
+    S.topics.forEach(function (t) { if (ids.indexOf(t.id) >= 0) t.is_published = valor; });
+    pintar();
+  }
+  async function publicarTema(id) {
+    var t = S.topics.filter(function (x) { return x.id === id; })[0];
+    if (!t) return;
+    await fijarPublicado([id], !t.is_published);
+    toast(t.is_published ? 'Tema publicado: el alumno ya lo ve' : 'Tema oculto para el alumno');
+  }
+  async function publicarTodos(valor) {
+    var ids = temasDe(R.subject).map(function (t) { return t.id; });
+    if (!ids.length) return;
+    if (!confirm((valor ? 'Publicar' : 'Ocultar') + ' los ' + ids.length + ' temas de esta materia (con todas sus lecciones)?')) return;
+    await fijarPublicado(ids, valor);
+    toast(valor ? 'Materia publicada' : 'Materia oculta para el alumno');
   }
 
   async function mover(tipo, id, dir) {
@@ -585,7 +611,7 @@
     if (!confirm('Se van a crear ' + faltan + ' temas, cada uno con ' + LEC_POR_TEMA + ' lecciones, para completar el rango. ¿Seguimos?')) return;
     var filas = [];
     for (var k = 0; k < faltan; k++) filas.push({ subject_id: R.subject, title: 'Tema ' + (ts.length + k + 1), position: ts.length + k + 1 });
-    var t = await sb.from('topics').insert(filas).select('id, subject_id, title, position');
+    var t = await sb.from('topics').insert(filas).select('id, subject_id, title, position, is_published');
     if (t.error) throw t.error;
     var lecs = [];
     t.data.forEach(function (tp) { for (var j = 1; j <= LEC_POR_TEMA; j++) lecs.push({ topic_id: tp.id, title: 'Lección ' + j, position: j }); });
