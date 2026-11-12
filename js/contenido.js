@@ -42,7 +42,7 @@
     var res = await Promise.all([
       sb.from('levels').select('id, slug, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
-      todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position').order('position').order('id'); }),
+      todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position, intro_video_uid').order('position').order('id'); }),
       todo(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); }),
       todo(function () { return sb.from('subject_load_config').select('subject_id, tier, hours_total, topics_total').order('subject_id'); }),
       sb.from('load_tiers').select('tier, label')
@@ -214,6 +214,10 @@
         h += '<div class="wv-aviso">Hay ' + (ts.length - c.topics_total) + ' temas de más respecto del rango.</div>';
       }
     }
+    var sj = S.subjects.filter(function (x) { return x.id === R.subject; })[0] || {};
+    var tieneIntro = !!sj.intro_video_uid;
+    h += '<div class="wv-intro">' + fila('🎬', 'Introducción de la materia', tieneIntro ? 'Video cargado' : 'Sin video: el alumno ve "Próximamente"',
+      (tieneIntro ? boton('intro-ver', 'Ver') : '') + boton('intro-up', tieneIntro ? 'Reemplazar' : 'Subir video', tieneIntro ? 'suave' : '') + (tieneIntro ? boton('intro-del', 'Quitar', 'peligro') : ''), 'wv-i-intro') + '</div>';
     if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene temas.</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
@@ -452,6 +456,25 @@
           token: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).token; }
         });
       }
+      if (a === 'intro-up') return elegirArchivo('video/*', false, function (fs) { subirIntro(fs[0]); });
+      if (a === 'intro-ver') {
+        var sj0 = S.subjects.filter(function (x) { return x.id === R.subject; })[0];
+        var sti = await subidas({ action: 'stream_status', uid: sj0.intro_video_uid });
+        if (!sti.ready) return toast('El video todavía se está procesando. Probá en unos minutos.', true);
+        return WaveVisor.abrirVideo({
+          titulo: 'Introducción · ' + nombre('subject', R.subject),
+          token: async function () { return (await subidas({ action: 'stream_token', uid: sj0.intro_video_uid })).token; }
+        });
+      }
+      if (a === 'intro-del') {
+        if (!confirm('¿Quitar el video de introducción de esta materia?')) return;
+        var sj1 = S.subjects.filter(function (x) { return x.id === R.subject; })[0];
+        var uid1 = sj1.intro_video_uid;
+        chk(await sb.from('subjects').update({ intro_video_uid: null }).eq('id', R.subject));
+        sj1.intro_video_uid = null;
+        try { await subidas({ action: 'stream_delete', uid: uid1 }); } catch (e) { /* queda huérfano */ }
+        return pintar();
+      }
       if (a === 'video-up') return elegirArchivo('video/*', false, function (fs) { subirVideo(fs[0]); });
       if (a === 'video-del') {
         if (!confirm('¿Quitar el video de esta lección?')) return;
@@ -575,6 +598,24 @@
     S.topics = S.topics.concat(t.data);
     await refrescarEstados();
     toast('Temas creados');
+    pintar();
+  }
+
+  // Video de introducción de la materia
+  async function subirIntro(f) {
+    var sj = S.subjects.filter(function (x) { return x.id === R.subject; })[0];
+    try {
+      msg('wv-i-intro', 'Preparando subida…');
+      var d = await subidas({ action: 'stream_upload_url', name: 'Introducción · ' + nombre('subject', R.subject) });
+      var fd = new FormData(); fd.append('file', f);
+      await enviar(d.upload_url, 'POST', fd, function (p) { msg('wv-i-intro', 'Subiendo… ' + p + '%'); });
+      var viejo = sj.intro_video_uid;
+      var u = await sb.from('subjects').update({ intro_video_uid: d.uid }).eq('id', R.subject);
+      if (u.error) throw u.error;
+      sj.intro_video_uid = d.uid;
+      if (viejo) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* huérfano */ } }
+      toast('Introducción subida');
+    } catch (e) { toast(e.message || 'No se pudo subir', true); }
     pintar();
   }
 

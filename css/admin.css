@@ -216,3 +216,5 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-aviso .wv-btn { margin-left: 8px; }
 
 .wv-herr { display: grid; grid-template-columns: 28px 28px; gap: 2px; align-content: center; }
+
+.wv-intro { margin-bottom: 14px; padding: 2px 18px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px -18px rgba(37, 54, 56, 0.4); }
