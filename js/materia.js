@@ -133,9 +133,12 @@
         mejor: graded.length ? Math.max.apply(null, graded.map(function (i) { return Number(i.score); })) : null };
     });
 
+    var sus = await sb.from('subscriptions').select('status').eq('student_id', sid);
+    var susOk = !sus.error && (sus.data || []).some(function (x) { return x.status === 'active' || x.status === 'past_due'; });
+
     return {
       sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, progreso: progreso, hechas: hechas, examen: examen,
-      sinAcceso: temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length
+      sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
 
@@ -237,7 +240,7 @@
       : '<div class="mt-intro pronto"><span class="mt-intro-disco">' + ico('play', 30) + '</span>' +
         '<span class="mt-intro-t"><b>Introducción</b><small>Próximamente</small></span></div>';
     var banner = D.sinAcceso
-      ? '<div class="mt-banner">' + ico('lock', 20, 2.6) + '<span>Para ver el contenido, la suscripción tiene que estar al día. Pedile a tu familia que revise la sección Facturación.</span></div>' : '';
+      ? '<div class="mt-banner">' + ico('lock', 20, 2.6) + '<span><b>Hay un problema con la suscripción.</b> Para ver el contenido tiene que estar al día. Pedile a tu familia que revise la sección Facturación.</span></div>' : '';
     vista.innerHTML =
       '<div class="mt" style="--c:' + color + '">' +
         '<a class="mt-volver" href="#cursos">' + ico('back', 20, 3) + ' Mis cursos</a>' +
