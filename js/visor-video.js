@@ -24,8 +24,19 @@
     var marco = cont.querySelector('.wvv-marco');
     var barra = cont.querySelector('.wvv-barra');
     var video = null, vivo = true, avisado = false;
-    // Recorte: se muestra solo el tramo [ini, fin] (en segundos); sin valores, el video entero
-    var ini = Math.max(0, Number(opts.inicio) || 0), fin = Number(opts.fin) > ini ? Number(opts.fin) : 0;
+    // Recorte: se muestran solo los tramos indicados (en segundos), uno detrás del otro; sin tramos, el video entero
+    var segs = (opts.tramos && opts.tramos.length ? opts.tramos : (opts.inicio || opts.fin ? [{ i: opts.inicio, f: opts.fin }] : []))
+      .map(function (s) { var i = Math.max(0, Number(s.i) || 0), f = Number(s.f) > i ? Number(s.f) : 0; return { i: i, f: f }; })
+      .sort(function (a, b) { return a.i - b.i; });
+    var ini = segs.length ? segs[0].i : 0, fin = segs.length ? segs[segs.length - 1].f : 0;
+    // Dónde tiene que estar el video si está en el segundo t: {t: segundo permitido, fin: true si ya pasó el último tramo}
+    function ubicar(t, m) {
+      for (var k = 0; k < segs.length; k++) {
+        var s = segs[k];
+        if (!s.f || t < s.f) return { t: t < s.i - m ? s.i : t, fin: false };
+      }
+      return { t: fin, fin: true };
+    }
 
     function error(msg) {
       marco.innerHTML = '<div class="wvv-estado error">' + esc(msg) + '</div>';
@@ -41,15 +52,16 @@
       fr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       fr.allowFullscreen = true;
       fr.referrerPolicy = 'strict-origin-when-cross-origin';
-      fr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(opts.youtube) + '?enablejsapi=1&rel=0&modestbranding=1&playsinline=1' + (ini ? '&start=' + Math.floor(ini) : '') + (fin ? '&end=' + Math.ceil(fin) : '') + '&origin=' + encodeURIComponent(location.origin);
+      fr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(opts.youtube) + '?enablejsapi=1&rel=0&modestbranding=1&playsinline=1' + (ini ? '&start=' + Math.floor(ini) : '') + (fin && segs.length === 1 ? '&end=' + Math.ceil(fin) : '') + '&origin=' + encodeURIComponent(location.origin);
       var oir = function (ev) {
         if (ev.source !== fr.contentWindow) return;
         try { var d = typeof ev.data === 'string' ? JSON.parse(ev.data) : ev.data; if (d && d.info && d.info.playerState === 0) terminar();
           var ct = d && d.info ? d.info.currentTime : null;
           if (typeof ct === 'number') {
             var man = function (f, a) { fr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: f, args: a || [] }), '*'); };
-            if (ini && ct < ini - 1.5) man('seekTo', [ini, true]);
-            else if (fin && ct >= fin) { man('pauseVideo'); if (ct > fin + 1.5) man('seekTo', [fin, true]); terminar(); }
+            var u = segs.length ? ubicar(ct, 1.5) : null;
+            if (u && u.fin) { man('pauseVideo'); if (ct > fin + 1.5) man('seekTo', [fin, true]); terminar(); }
+            else if (u && u.t !== ct) man('seekTo', [u.t, true]);
           } } catch (e1) { /* otro mensaje */ }
       };
       window.addEventListener('message', oir);
@@ -66,7 +78,7 @@
     Promise.resolve().then(function () { return opts.url(); }).then(function (enlace) {
       if (!vivo) return;
       video = document.createElement('video');
-      video.src = enlace + ((ini || fin) ? '#t=' + ini + (fin ? ',' + fin : '') : '');
+      video.src = enlace + (segs.length ? '#t=' + ini + (fin && segs.length === 1 ? ',' + fin : '') : '');
       video.controls = true;
       video.playsInline = true;
       video.preload = 'metadata';
@@ -81,16 +93,17 @@
         try { opts.alTerminar(); } catch (e2) { /* nada */ }
       };
       video.addEventListener('ended', alFinal);
-      if (ini || fin) {
+      if (segs.length) {
         video.addEventListener('loadedmetadata', function () { if (ini && video.currentTime < ini) video.currentTime = ini; });
         var cuidar = function () {
-          if (ini && video.currentTime < ini - 0.3) video.currentTime = ini;
-          if (fin && video.currentTime >= fin) { if (video.currentTime > fin + 0.3) video.currentTime = fin; if (!video.paused) video.pause(); alFinal(); }
+          var u = ubicar(video.currentTime, 0.3);
+          if (u.fin) { if (video.currentTime > fin + 0.3) video.currentTime = fin; if (!video.paused) video.pause(); alFinal(); }
+          else if (u.t !== video.currentTime) video.currentTime = u.t;
         };
         video.addEventListener('timeupdate', cuidar);
         video.addEventListener('seeking', function () {
-          if (ini && video.currentTime < ini - 0.3) video.currentTime = ini;
-          else if (fin && video.currentTime > fin + 0.3) video.currentTime = fin;
+          var u = ubicar(video.currentTime, 0.3);
+          if (u.fin ? video.currentTime > fin + 0.3 : u.t !== video.currentTime) video.currentTime = u.t;
         });
         video.addEventListener('play', function () { if (fin && video.currentTime >= fin - 0.2) video.currentTime = ini; });
       }
@@ -105,8 +118,14 @@
     barra.addEventListener('click', function (ev) {
       var b = ev.target.closest('[data-v]');
       if (!b || !video) return;
-      var nt = Math.max(ini, (video.currentTime || 0) + (b.getAttribute('data-v') === 'adelante' ? 10 : -10));
-      video.currentTime = fin ? Math.min(fin, nt) : nt;
+      var atras = b.getAttribute('data-v') !== 'adelante', nt = Math.max(0, (video.currentTime || 0) + (atras ? -10 : 10));
+      if (segs.length) {
+        if (atras) { // si cae en una parte quitada, va al final del tramo anterior
+          for (var k = segs.length - 1; k >= 0; k--) { if (nt >= segs[k].i) { if (segs[k].f && nt >= segs[k].f) nt = Math.max(segs[k].i, segs[k].f - 3); break; } }
+          if (nt < ini) nt = ini;
+        } else nt = ubicar(nt, 0).t;
+      }
+      video.currentTime = nt;
     });
 
     return { destruir: function () { vivo = false; if (video) { try { video.pause(); video.removeAttribute('src'); video.load(); } catch (e3) { /* nada */ } } cont.innerHTML = ''; } };

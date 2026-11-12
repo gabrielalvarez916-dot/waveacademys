@@ -106,6 +106,28 @@
     s = Math.round(Number(s)); var m = Math.floor(s / 60), r = s % 60;
     return (m >= 60 ? Math.floor(m / 60) + ':' + ('0' + (m % 60)).slice(-2) : m) + ':' + ('0' + r).slice(-2);
   }
+  // Recorte del video: una fila "desde / hasta" por tramo
+  function tramosDe(ct) { return ct.tramos && ct.tramos.length ? ct.tramos : (ct.inicio || ct.fin ? [{ i: ct.inicio || 0, f: ct.fin || 0 }] : []); }
+  function recorteHtml(ct) {
+    var filas = L.recTmp || tramosDe(ct).map(function (t) { return [t.i ? aReloj(t.i) : '', t.f ? aReloj(t.f) : '']; });
+    var n = Math.max(1, L.recN || 0, filas.length), h = '<div class="wv-recorte"><b>✂️ Mostrar solo estas partes del video</b>';
+    for (var i = 0; i < n; i++) {
+      var f = filas[i] || ['', ''];
+      h += '<div class="wv-rec-fila"><span>' + (n > 1 ? 'Parte ' + (i + 1) + ': desde' : 'Desde') + '</span><input class="wv-rec-i" type="text" inputmode="numeric" placeholder="0:00" value="' + esc(f[0]) + '"><span>hasta</span><input class="wv-rec-f" type="text" inputmode="numeric" placeholder="final" value="' + esc(f[1]) + '"></div>';
+    }
+    return h + '<div class="wv-rec-b">' + boton('video-rec-mas', '+ Agregar otra parte') + boton('video-rec', 'Guardar recorte', '') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
+  }
+  function leerRecorte() {
+    var r = { tramos: [], crudo: [], mal: false };
+    [].forEach.call(document.querySelectorAll('.wv-rec-fila'), function (fl) {
+      var a = fl.querySelector('.wv-rec-i').value, b = fl.querySelector('.wv-rec-f').value, i = aSeg(a), f = aSeg(b);
+      r.crudo.push([a, b]);
+      if (i !== i || f !== f) { r.mal = true; return; }
+      if (i == null && f == null) return;
+      r.tramos.push({ i: i || 0, f: f || 0 });
+    });
+    return r;
+  }
   function esYt(uid) { return /^yt:/.test(uid || ''); }
   function idYoutube(t) {
     t = String(t || '').trim();
@@ -349,7 +371,7 @@
     var pdf = p.pdf, tieneP = !!pdf.r2_key;
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
     var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
-      (tieneV ? '<div class="wv-recorte"><span>✂️ Mostrar solo desde</span><input id="wv-rec-ini" type="text" inputmode="numeric" placeholder="0:00" value="' + esc(aReloj((v.content || {}).inicio)) + '"><span>hasta</span><input id="wv-rec-fin" type="text" inputmode="numeric" placeholder="final" value="' + esc(aReloj((v.content || {}).fin)) + '">' + boton('video-rec', 'Guardar recorte', '') + '<small>Minutos:segundos. Vacío = video entero.</small></div>' : '') +
+      (tieneV ? recorteHtml(v.content || {}) : '') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
     var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
     h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
@@ -476,13 +498,18 @@
   async function accion(acc) {
     var p = acc.split(':'), a = p[0];
     try {
+      if (a === 'video-rec-mas') { L.recN = document.querySelectorAll('.wv-rec-fila').length + 1; L.recTmp = leerRecorte().crudo; return pintarLeccion(); }
       if (a === 'video-rec') {
-        var ri = aSeg(document.getElementById('wv-rec-ini').value), rf = aSeg(document.getElementById('wv-rec-fin').value);
-        if (ri !== ri || rf !== rf) return toast('Escribí los tiempos como minutos:segundos, por ejemplo 0:25', true);
-        if (ri != null && rf != null && rf <= ri) return toast('El final tiene que ser después del inicio.', true);
-        var ctv = {}; if (ri) ctv.inicio = ri; if (rf) ctv.fin = rf;
-        await guardarPaso('video', { content: ctv });
-        toast(ri || rf ? 'Recorte guardado' : 'Se muestra el video entero');
+        var lr = leerRecorte(), tr = lr.tramos;
+        if (lr.mal) return toast('Escribí los tiempos como minutos:segundos, por ejemplo 0:25', true);
+        tr.sort(function (x, y) { return x.i - y.i; });
+        for (var q = 0; q < tr.length; q++) {
+          if (tr[q].f && tr[q].f <= tr[q].i) return toast('En cada tramo, el final tiene que ser después del inicio.', true);
+          if (q < tr.length - 1 && (!tr[q].f || tr[q].f > tr[q + 1].i)) return toast('Los tramos no se pueden pisar: cada uno tiene que terminar antes de que empiece el siguiente.', true);
+        }
+        L.recN = 0; L.recTmp = null;
+        await guardarPaso('video', { content: tr.length ? { tramos: tr } : {} });
+        toast(tr.length ? (tr.length > 1 ? 'Recorte guardado (' + tr.length + ' tramos)' : 'Recorte guardado') : 'Se muestra el video entero');
         return pintarLeccion();
       }
       if (a === 'video-yt') {
@@ -499,11 +526,11 @@
       if (a === 'video-ver') {
         var uidv = L.pasos.video.stream_uid;
         var rc = L.pasos.video.content || {};
-        if (esYt(uidv)) return WaveVisor.abrirVideo({ titulo: nombre('lesson', R.lesson), youtube: uidv.slice(3), inicio: rc.inicio, fin: rc.fin });
+        if (esYt(uidv)) return WaveVisor.abrirVideo({ titulo: nombre('lesson', R.lesson), youtube: uidv.slice(3), inicio: rc.inicio, fin: rc.fin, tramos: rc.tramos });
         var stv = await subidas({ action: 'stream_status', uid: uidv });
         if (!stv.ready) return toast('No se encontró el archivo del video.', true);
         return WaveVisor.abrirVideo({
-          titulo: nombre('lesson', R.lesson), inicio: rc.inicio, fin: rc.fin,
+          titulo: nombre('lesson', R.lesson), inicio: rc.inicio, fin: rc.fin, tramos: rc.tramos,
           url: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).url; }
         });
       }

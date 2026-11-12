@@ -79,7 +79,7 @@
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
     var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, inicio:content->inicio, fin:content->fin, lessons!inner(topics!inner(subject_id))')
+      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, inicio:content->inicio, fin:content->fin, tramos:content->tramos, lessons!inner(topics!inner(subject_id))')
       .eq('lessons.topics.subject_id', materiaId);
     if (pasos.error) throw pasos.error;
 
@@ -379,9 +379,9 @@
     try {
       if (k === 'video') {
         if (/^yt:/.test(paso.stream_uid || '')) {
-          WaveVisor.abrirVideo({ titulo: f.l.titulo, youtube: paso.stream_uid.slice(3), inicio: paso.inicio, fin: paso.fin, alTerminar: function () { marcar(paso); } });
+          WaveVisor.abrirVideo({ titulo: f.l.titulo, youtube: paso.stream_uid.slice(3), inicio: paso.inicio, fin: paso.fin, tramos: paso.tramos, alTerminar: function () { marcar(paso); } });
         } else {
-          WaveVisor.abrirVideo({ titulo: f.l.titulo, inicio: paso.inicio, fin: paso.fin, alTerminar: function () { marcar(paso); },
+          WaveVisor.abrirVideo({ titulo: f.l.titulo, inicio: paso.inicio, fin: paso.fin, tramos: paso.tramos, alTerminar: function () { marcar(paso); },
             url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
         }
       } else if (k === 'pdf') {
