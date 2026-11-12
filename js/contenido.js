@@ -159,8 +159,8 @@
       '<span class="wv-carp-ico">📁</span><span class="wv-carp-t"><b>' + esc(titulo) + '</b><small>' + esc(detalle) + '</small></span>' +
       etiqueta(estado) + '</button>' + (extra || '') + '</div>';
   }
-  function herr(tipo, id, i, n) {
-    return '<span class="wv-herr">' +
+  function herr(tipo, id, i, n, extra) {
+    return '<span class="wv-herr">' + (extra || '') +
       '<button type="button" class="wv-ico" title="Subir" data-acc="mov:' + tipo + ':' + id + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
       '<button type="button" class="wv-ico" title="Bajar" data-acc="mov:' + tipo + ':' + id + ':1"' + (i === n - 1 ? ' disabled' : '') + '>▼</button>' +
       '<button type="button" class="wv-ico" title="Renombrar" data-acc="ren:' + tipo + ':' + id + '">✎</button>' +
@@ -224,8 +224,8 @@
       boton('pub-todo:1', 'Publicar todos') + ' ' + boton('pub-todo:0', 'Ocultar todos') + '</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
-      var pub = '<button type="button" class="wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="Visible para el alumno">' + (t.is_published ? '● Visible' : '○ Oculto') + '</button>';
-      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), pub + herr('topic', t.id, i, ts.length));
+      var pub = '<button type="button" class="wv-ico wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="' + (t.is_published ? 'Visible para el alumno (tocá para ocultar)' : 'Oculto para el alumno (tocá para publicar)') + '">' + (t.is_published ? '👁 Visible' : '🚫 Oculto') + '</button>';
+      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length, pub));
     }).join('') + '</div>';
   }
   function vLecciones() {

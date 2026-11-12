@@ -219,5 +219,5 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 
 .wv-intro { margin-bottom: 14px; padding: 2px 18px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px -18px rgba(37, 54, 56, 0.4); }
 
-.wv-pub { flex: none; align-self: center; margin: 0 4px; padding: 5px 10px; line-height: 1.2; border: 2px solid #D5E0DE; border-radius: 999px; background: #fff; color: #7E9391; font: inherit; font-weight: 800; font-size: .72rem; cursor: pointer; white-space: nowrap; }
-.wv-pub.on { border-color: #1FB57A; background: #E4F6EE; color: #138A5B; }
+.wv-herr .wv-pub { grid-column: 1 / -1; width: auto; height: 22px; padding: 0 6px; font-size: .68rem; white-space: nowrap; background: #EDF3F2; color: #7E9391; }
+.wv-herr .wv-pub.on { background: #E4F6EE; color: #138A5B; }
