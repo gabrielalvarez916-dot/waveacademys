@@ -181,6 +181,112 @@
     }
   }
 
+  // ---------- Progreso ----------
+  function colorSeguro(c) {
+    return /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : '#6366F1';
+  }
+
+  // "Hoy, 20:43" · "Ayer, 09:10" · "Hace 3 días" · "Todavía no ingresó"
+  function textoConexion(iso) {
+    if (!iso) return 'Todavía no ingresó';
+    var f = new Date(iso);
+    if (isNaN(f.getTime())) return 'Sin datos';
+    var ahora = new Date();
+    var d0 = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+    var d1 = new Date(f.getFullYear(), f.getMonth(), f.getDate());
+    var dias = Math.round((d0 - d1) / 86400000);
+    var hora = String(f.getHours()).padStart(2, '0') + ':' + String(f.getMinutes()).padStart(2, '0');
+    if (dias <= 0) return 'Hoy, ' + hora;
+    if (dias === 1) return 'Ayer, ' + hora;
+    if (dias < 7) return 'Hace ' + dias + ' días';
+    return f.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  async function cargarProgreso() {
+    var res = await Promise.all([
+      sb.from('students')
+        .select('id, first_name, last_name, created_at, grades(name, levels(name)), profiles!students_profile_id_fkey(last_seen_at)')
+        .order('created_at', { ascending: true }),
+      sb.rpc('family_progress')
+    ]);
+    res.forEach(function (r) { if (r.error) throw r.error; });
+
+    var porHijo = {};
+    (res[1].data || []).forEach(function (r) {
+      (porHijo[r.student_id] = porHijo[r.student_id] || []).push(r);
+    });
+
+    return (res[0].data || []).map(function (h) {
+      var materias = (porHijo[h.id] || []).map(function (r) {
+        return {
+          nombre: r.subject_name, color: colorSeguro(r.color), orden: r.subject_position,
+          total: r.total_lessons, hechas: r.done_lessons,
+          suma: Number(r.score_sum), notas: r.score_count,
+          promedio: r.score_count ? Math.round(Number(r.score_sum) / r.score_count) : null
+        };
+      }).sort(function (a, b) { return a.orden - b.orden; });
+
+      var total = 0, hechas = 0, suma = 0, notas = 0;
+      materias.forEach(function (m) { total += m.total; hechas += m.hechas; suma += m.suma; notas += m.notas; });
+
+      return {
+        id: h.id, nombre: h.first_name + ' ' + h.last_name,
+        anio: h.grades ? etiquetaAnio(h.grades) : '',
+        conexion: h.profiles ? h.profiles.last_seen_at : null,
+        materias: materias,
+        pct: total ? Math.round((hechas / total) * 100) : 0,
+        promedio: notas ? Math.round(suma / notas) : null
+      };
+    });
+  }
+
+  function pintarProgreso(cont, hijos) {
+    if (!hijos.length) {
+      cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo. Cuando lo hagas, acá vas a ver cómo avanza.</div>';
+      return;
+    }
+
+    cont.innerHTML = hijos.map(function (h) {
+      var ini = h.nombre.split(' ').map(function (p) { return p.charAt(0); }).slice(0, 2).join('').toUpperCase();
+
+      var filas = h.materias.map(function (m) {
+        var pct = m.total ? Math.round((m.hechas / m.total) * 100) : 0;
+        return '<div class="pm-fila" style="--c:' + m.color + '">' +
+          '<div class="pm-cab"><span class="pm-nombre">' + esc(m.nombre) + '</span>' +
+            '<span class="pm-prom"><small>Promedio</small><b>' + (m.promedio == null ? '—' : m.promedio + '%') + '</b></span></div>' +
+          '<div class="pm-barra" role="progressbar" aria-label="Progreso en ' + esc(m.nombre) + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
+          '<div class="pm-pie"><span>' + m.hechas + ' de ' + m.total + ' lecciones</span><b>' + pct + '%</b></div>' +
+        '</div>';
+      }).join('');
+
+      return '<section class="pr-hijo">' +
+        '<div class="pr-hero">' +
+          '<div class="pr-hero-top"><div class="hijo-ini pr-ini">' + esc(ini) + '</div>' +
+            '<div><h2>' + esc(h.nombre) + '</h2><span class="pr-anio">' + esc(h.anio) + '</span></div></div>' +
+          '<div class="pr-stats">' +
+            '<div class="pr-stat"><small>Última conexión</small><b>' + esc(textoConexion(h.conexion)) + '</b></div>' +
+            '<div class="pr-stat"><small>Progreso</small><b>' + h.pct + '%</b></div>' +
+            '<div class="pr-stat"><small>Promedio general</small><b>' + (h.promedio == null ? '—' : h.promedio + '%') + '</b></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pr-materias">' +
+          (filas || '<div class="vacio">Todavía no tiene materias habilitadas.</div>') +
+        '</div>' +
+      '</section>';
+    }).join('');
+  }
+
+  async function vistaProgreso() {
+    vista.innerHTML = '<h1 class="vista-titulo">Progreso</h1><div id="progreso"></div>';
+    var cont = document.getElementById('progreso');
+    cont.innerHTML = '<div class="vacio">Cargando…</div>';
+    try {
+      pintarProgreso(cont, await cargarProgreso());
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar el progreso. Probá recargar la página.</div>';
+    }
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -191,7 +297,7 @@
 
   var VISTAS = {
     altas: vistaAltas,
-    progreso: proximamente('Progreso'),
+    progreso: vistaProgreso,
     programacion: proximamente('Programación'),
     facturacion: proximamente('Facturación')
   };
