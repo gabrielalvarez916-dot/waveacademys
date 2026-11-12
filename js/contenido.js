@@ -224,7 +224,7 @@
       boton('pub-todo:1', 'Publicar todos') + ' ' + boton('pub-todo:0', 'Ocultar todos') + '</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
-      var pub = '<button type="button" class="wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="Visible para el alumno">' + (t.is_published ? '● Publicado' : '○ Oculto') + '</button>';
+      var pub = '<button type="button" class="wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="Visible para el alumno">' + (t.is_published ? '● Visible' : '○ Oculto') + '</button>';
       return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), pub + herr('topic', t.id, i, ts.length));
     }).join('') + '</div>';
   }
