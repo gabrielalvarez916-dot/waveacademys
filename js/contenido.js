@@ -117,6 +117,36 @@
     });
   }
 
+  // Subida de video a Bunny por TUS (reanudable, ideal para archivos grandes)
+  var promesaTus = null;
+  function cargarTus() {
+    if (window.tus) return Promise.resolve();
+    if (promesaTus) return promesaTus;
+    promesaTus = new Promise(function (ok, mal) {
+      var sc = document.createElement('script');
+      sc.src = 'https://cdn.jsdelivr.net/npm/tus-js-client@4.1.0/dist/tus.min.js';
+      sc.onload = function () { window.tus ? ok() : mal(new Error('tus')); };
+      sc.onerror = function () { promesaTus = null; mal(new Error('No se pudo cargar el subidor de videos. Revisá tu conexión.')); };
+      document.head.appendChild(sc);
+    });
+    return promesaTus;
+  }
+  async function subirTus(archivo, d, onProg) {
+    await cargarTus();
+    return new Promise(function (ok, mal) {
+      var up = new window.tus.Upload(archivo, {
+        endpoint: d.tus.endpoint,
+        retryDelays: [0, 3000, 5000, 10000, 20000],
+        headers: d.tus.headers,
+        metadata: { filetype: archivo.type || 'video/mp4', title: archivo.name },
+        onError: function (e) { mal(new Error('No se pudo subir el video: ' + (e && e.message ? e.message : 'error de conexión'))); },
+        onProgress: function (a, t) { if (onProg) onProg(Math.round(a * 100 / t)); },
+        onSuccess: function () { ok(); }
+      });
+      up.start();
+    });
+  }
+
   // ---------- Navegación ----------
   function nombre(tipo, id) {
     var l;
@@ -386,8 +416,7 @@
     try {
       msg('wv-i-video', 'Preparando subida…');
       var d = await subidas({ action: 'stream_upload_url', name: nombre('lesson', R.lesson) });
-      var fd = new FormData(); fd.append('file', f);
-      await enviar(d.upload_url, 'POST', fd, function (p) { msg('wv-i-video', 'Subiendo… ' + p + '%'); });
+      await subirTus(f, d, function (p) { msg('wv-i-video', 'Subiendo… ' + p + '%'); });
       var viejo = L.pasos.video.stream_uid;
       await guardarPaso('video', { stream_uid: d.uid });
       if (viejo) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* queda huérfano */ } }
@@ -457,7 +486,7 @@
         if (!stv.ready) return toast('El video todavía se está procesando. Probá en unos minutos.', true);
         return WaveVisor.abrirVideo({
           titulo: nombre('lesson', R.lesson),
-          token: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).token; }
+          url: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).url; }
         });
       }
       if (a === 'intro-up') return elegirArchivo('video/*', false, function (fs) { subirIntro(fs[0]); });
@@ -467,7 +496,7 @@
         if (!sti.ready) return toast('El video todavía se está procesando. Probá en unos minutos.', true);
         return WaveVisor.abrirVideo({
           titulo: 'Introducción · ' + nombre('subject', R.subject),
-          token: async function () { return (await subidas({ action: 'stream_token', uid: sj0.intro_video_uid })).token; }
+          url: async function () { return (await subidas({ action: 'stream_token', uid: sj0.intro_video_uid })).url; }
         });
       }
       if (a === 'intro-del') {
@@ -633,8 +662,7 @@
     try {
       msg('wv-i-intro', 'Preparando subida…');
       var d = await subidas({ action: 'stream_upload_url', name: 'Introducción · ' + nombre('subject', R.subject) });
-      var fd = new FormData(); fd.append('file', f);
-      await enviar(d.upload_url, 'POST', fd, function (p) { msg('wv-i-intro', 'Subiendo… ' + p + '%'); });
+      await subirTus(f, d, function (p) { msg('wv-i-intro', 'Subiendo… ' + p + '%'); });
       var viejo = sj.intro_video_uid;
       var u = await sb.from('subjects').update({ intro_video_uid: d.uid }).eq('id', R.subject);
       if (u.error) throw u.error;

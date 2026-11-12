@@ -379,7 +379,7 @@
     try {
       if (k === 'video') {
         WaveVisor.abrirVideo({ titulo: f.l.titulo, alTerminar: function () { marcar(paso); },
-          token: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).token; } });
+          url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
           url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc })).url; } });
@@ -560,7 +560,7 @@
   // ---------- Introducción ----------
   function abrirIntro() {
     WaveVisor.abrirVideo({ titulo: 'Introducción · ' + D.materia.name,
-      token: async function () { return (await llamar('content-access', { action: 'intro', subject_id: D.materia.id })).token; } });
+      url: async function () { return (await llamar('content-access', { action: 'intro', subject_id: D.materia.id })).url; } });
   }
 
   // ---------- Entrada ----------
