@@ -211,3 +211,6 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-tf { display: inline-flex; align-items: center; gap: 6px; margin-right: 16px; font-weight: 700; }
 .wv-ayuda-e, .wv-lbl-e { display: block; margin: 8px 0 4px; color: var(--texto-suave); font-weight: 700; font-size: 0.85rem; }
 .wv-ed-nuevo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 14px 0 4px; }
+
+.wv-rango { margin: 0 0 14px; padding: 10px 16px; background: var(--menta); color: var(--turquesa-oscuro); border-radius: 14px; font-weight: 700; }
+.wv-aviso .wv-btn { margin-left: 8px; }

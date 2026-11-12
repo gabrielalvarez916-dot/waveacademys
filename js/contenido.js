@@ -4,10 +4,11 @@
 (function () {
   var sb = Wave.sb;
   var vista = null;
-  var S = { listo: false, levels: [], grades: [], subjects: [], topics: [], info: {}, lessons: {}, cfg: null };
+  var S = { cargas: {}, tiers: {}, listo: false, levels: [], grades: [], subjects: [], topics: [], info: {}, lessons: {}, cfg: null };
   var R = { level: null, grade: null, subject: null, topic: null, lesson: null };
   var pendiente = null;
 
+  var LEC_POR_TEMA = 4; // según la tabla de rangos: 4 lecciones por tema
   var TIPOS = ['video', 'pdf', 'interactive_activity', 'complementary_activity', 'final_activity'];
 
   function esc(t) {
@@ -42,10 +43,15 @@
       sb.from('levels').select('id, slug, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
       todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position').order('position').order('id'); }),
-      todo(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); })
+      todo(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); }),
+      todo(function () { return sb.from('subject_load_config').select('subject_id, tier, hours_total, topics_total').order('subject_id'); }),
+      sb.from('load_tiers').select('tier, label')
     ]);
     if (res[0].error) throw res[0].error;
     if (res[1].error) throw res[1].error;
+    if (res[5].error) throw res[5].error;
+    S.cargas = {}; res[4].forEach(function (c) { S.cargas[c.subject_id] = c; });
+    S.tiers = {}; res[5].data.forEach(function (t) { S.tiers[t.tier] = t.label; });
     S.levels = res[0].data; S.grades = res[1].data; S.subjects = res[2]; S.topics = res[3];
     await cargarInfo();
     S.listo = true;
@@ -60,7 +66,7 @@
   function estadoTema(tid) {
     var f = S.info[tid];
     if (!f || !f.lessons) return 'vacia';
-    if (f.completas === f.lessons && f.tiene_examen) return 'ok';
+    if (f.lessons >= LEC_POR_TEMA && f.completas >= LEC_POR_TEMA && f.tiene_examen) return 'ok';
     if (f.completas === 0 && f.con_algo === 0 && !f.tiene_examen) return 'vacia';
     return 'falta';
   }
@@ -71,7 +77,13 @@
     return 'falta';
   }
   function temasDe(sid) { return S.topics.filter(function (t) { return t.subject_id === sid; }); }
-  function estadoMateria(sid) { return rollup(temasDe(sid).map(function (t) { return estadoTema(t.id); })); }
+  function estadoMateria(sid) {
+    var ts = temasDe(sid), c = S.cargas[sid];
+    var e = rollup(ts.map(function (t) { return estadoTema(t.id); }));
+    // Si faltan temas respecto del rango, la materia no puede estar completa
+    if (c && ts.length < c.topics_total && e === 'ok') return 'falta';
+    return e;
+  }
   function materiasDe(gid) { return S.subjects.filter(function (s) { return s.grade_id === gid; }); }
   function estadoAnio(gid) { return rollup(materiasDe(gid).map(function (s) { return estadoMateria(s.id); })); }
   function aniosDe(lid) { return S.grades.filter(function (g) { return g.level_id === lid; }); }
@@ -183,12 +195,24 @@
     return '<div class="wv-carps">' + ms.map(function (s) {
       var ts = temasDe(s.id);
       var ls = ts.reduce(function (a, t) { return a + ((S.info[t.id] || {}).lessons || 0); }, 0);
-      return carpeta('subject', s.id, s.name, ts.length + ' temas · ' + ls + ' lecciones', estadoMateria(s.id));
+      var c = S.cargas[s.id];
+      var det = (c ? S.tiers[c.tier] + ' · ' : '') + ts.length + (c ? ' de ' + c.topics_total : '') + ' temas · ' + ls + ' lecciones';
+      return carpeta('subject', s.id, s.name, det, estadoMateria(s.id));
     }).join('') + '</div>';
   }
   function vTemas() {
     var ts = temasDe(R.subject);
-    var h = '<div class="wv-barra-c"><button class="wv-btn suave mini" type="button" data-acc="nuevo:topic">+ Nuevo tema</button></div>';
+    var c = S.cargas[R.subject], h = '';
+    if (c) {
+      h += '<div class="wv-rango">Rango <b>' + esc(S.tiers[c.tier]) + '</b>: ' + c.hours_total + ' horas · ' + c.topics_total + ' temas · ' +
+        c.topics_total * LEC_POR_TEMA + ' lecciones (' + LEC_POR_TEMA + ' por tema)</div>';
+      if (ts.length < c.topics_total) {
+        h += '<div class="wv-aviso">Faltan ' + (c.topics_total - ts.length) + ' temas para completar el rango. ' +
+          '<button class="wv-btn mini" type="button" data-acc="temas-completar">Crear los temas que faltan</button></div>';
+      } else if (ts.length > c.topics_total) {
+        h += '<div class="wv-aviso">Hay ' + (ts.length - c.topics_total) + ' temas de más respecto del rango.</div>';
+      }
+    }
     if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene temas.</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
@@ -196,7 +220,10 @@
     }).join('') + '</div>';
   }
   function vLecciones() {
-    var h = '<div class="wv-barra-c"><button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nueva lección</button></div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
+    var nl = (S.info[R.topic] || {}).lessons || 0;
+    var h = '<div class="wv-rango">' + LEC_POR_TEMA + ' lecciones por tema (según el rango)' +
+      (nl < LEC_POR_TEMA ? ' · faltan ' + (LEC_POR_TEMA - nl) + ' <button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nueva lección</button>' : '') +
+      (nl > LEC_POR_TEMA ? ' · hay ' + (nl - LEC_POR_TEMA) + ' de más' : '') + '</div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
     setTimeout(cargarLecciones, 0);
     return h;
   }
@@ -465,7 +492,8 @@
       }
       if (a === 'mov') return mover(p[1], p[2], +p[3]);
       if (a === 'ren') return renombrar(p[1], p[2]);
-      if (a === 'nuevo') return nuevo(p[1]);
+      if (a === 'nuevo') return nuevaLeccion();
+      if (a === 'temas-completar') return completarTemas();
     } catch (e) { console.error(e); toast((e && e.message) || 'No se pudo completar', true); }
   }
 
@@ -491,24 +519,40 @@
     pintar();
   }
 
-  async function nuevo(tipo) {
-    var t = prompt(tipo === 'topic' ? 'Nombre del nuevo tema:' : 'Nombre de la nueva lección:');
+  async function nuevaLeccion() {
+    var n = (S.info[R.topic] || {}).lessons || 0;
+    if (n >= LEC_POR_TEMA) return toast('Este tema ya tiene sus ' + LEC_POR_TEMA + ' lecciones', true);
+    var t = prompt('Nombre de la nueva lección:', 'Lección ' + (n + 1));
     if (!t || !t.trim()) return;
-    if (tipo === 'topic') {
-      var pos = temasDe(R.subject).length + 1;
-      var r = await sb.from('topics').insert({ subject_id: R.subject, title: t.trim(), position: pos }).select('id, subject_id, title, position').single();
-      if (r.error) throw r.error;
-      S.topics.push(r.data);
-      await refrescarEstados();
-    } else {
-      var n = (S.lessons[R.topic] || []).length + 1;
-      var l = await sb.from('lessons').insert({ topic_id: R.topic, title: t.trim(), position: n }).select('id').single();
-      if (l.error) throw l.error;
-      var pasos = TIPOS.map(function (s, i) { return { lesson_id: l.data.id, step_type: s, position: i + 1 }; });
-      var ps = await sb.from('lesson_steps').insert(pasos);
-      if (ps.error) throw ps.error;
-      await refrescarEstados();
-    }
+    var l = await sb.from('lessons').insert({ topic_id: R.topic, title: t.trim(), position: n + 1 }).select('id').single();
+    if (l.error) throw l.error;
+    var ps = await sb.from('lesson_steps').insert(TIPOS.map(function (s, i) { return { lesson_id: l.data.id, step_type: s, position: i + 1 }; }));
+    if (ps.error) throw ps.error;
+    await refrescarEstados();
+    pintar();
+  }
+
+  // Crea los temas que faltan para llegar a lo que define el rango de la materia (cada uno con sus 4 lecciones)
+  async function completarTemas() {
+    var ts = temasDe(R.subject), c = S.cargas[R.subject];
+    var faltan = c ? c.topics_total - ts.length : 0;
+    if (faltan <= 0) return;
+    if (!confirm('Se van a crear ' + faltan + ' temas, cada uno con ' + LEC_POR_TEMA + ' lecciones, para completar el rango. ¿Seguimos?')) return;
+    var filas = [];
+    for (var k = 0; k < faltan; k++) filas.push({ subject_id: R.subject, title: 'Tema ' + (ts.length + k + 1), position: ts.length + k + 1 });
+    var t = await sb.from('topics').insert(filas).select('id, subject_id, title, position');
+    if (t.error) throw t.error;
+    var lecs = [];
+    t.data.forEach(function (tp) { for (var j = 1; j <= LEC_POR_TEMA; j++) lecs.push({ topic_id: tp.id, title: 'Lección ' + j, position: j }); });
+    var l = await sb.from('lessons').insert(lecs).select('id');
+    if (l.error) throw l.error;
+    var pasos = [];
+    l.data.forEach(function (le) { TIPOS.forEach(function (s, i) { pasos.push({ lesson_id: le.id, step_type: s, position: i + 1 }); }); });
+    var p = await sb.from('lesson_steps').insert(pasos);
+    if (p.error) throw p.error;
+    S.topics = S.topics.concat(t.data);
+    await refrescarEstados();
+    toast('Temas creados');
     pintar();
   }
 
