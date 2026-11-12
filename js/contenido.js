@@ -257,9 +257,9 @@
       S.lessons[R.topic] = r.data;
       var est = r.data.length ? await lecEstados(r.data.map(function (l) { return l.id; })) : {};
       var h = r.data.map(function (l, i) {
-        var e = est[l.id], n = e.v + e.p + e.i + e.c + e.f;
-        var estado = n === 5 ? 'ok' : n === 0 ? 'vacia' : 'falta';
-        return carpeta('lesson', l.id, l.title, n + ' de 5 partes cargadas', estado, herr('lesson', l.id, i, r.data.length));
+        var e = est[l.id], n = e.v + e.p + e.i + e.f;
+        var estado = n === 4 ? 'ok' : (n === 0 && !e.c) ? 'vacia' : 'falta';
+        return carpeta('lesson', l.id, l.title, n + ' de 4 partes' + (e.c ? ' · con complementarios' : ''), estado, herr('lesson', l.id, i, r.data.length));
       }).join('');
       var examen = (S.info[R.topic] || {}).tiene_examen;
       h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
@@ -346,7 +346,7 @@
         boton('desc-get:' + i, 'Ver') + boton('desc-del:' + i, 'Quitar', 'peligro') + '</div></div>';
     }).join('') : '<div class="wv-item"><span class="wv-item-ico">📎</span><div class="wv-item-t"><b>Sin archivos</b><small>Podés subir uno o más</small></div></div>';
     desc += '<div class="wv-pie-cas">' + boton('desc-up', '+ Subir archivos', fs.length ? 'suave' : '') + '<small id="wv-i-desc"></small></div>';
-    h += casillero(3, '📎', 'Actividades descargables', 'Uno o más archivos para imprimir o completar', fs.length ? 'ok' : 'vacia', desc);
+    h += casillero(3, '📎', 'Actividades descargables', 'Opcional · archivos extra para practicar (uno o más)', fs.length ? 'ok' : 'vacia', desc);
 
     // 4 · Consigna
     var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
