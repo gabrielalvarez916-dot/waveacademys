@@ -1,30 +1,15 @@
-// Reproductor de video reutilizable (Bunny Stream, con la API Player.js para los saltos de 10 s y el aviso de fin).
-// Trae pausa, barra para adelantar/atrasar, volumen, velocidad y pantalla completa (PC y celular), sin botón de descarga.
-// Los videos son privados: "url" devuelve el enlace de reproducción firmado y temporal del video.
-// Uso: WaveVisor.abrirVideo({ titulo: 'Clase 1', url: async function () { return 'https://...'; } })
-//      WaveVisor.montarVideo(elemento, { titulo, url }) para mostrarlo dentro de una página.
+// Reproductor de video reutilizable (archivo de video en R2, sin botón de descarga).
+// Trae pausa, barra para adelantar/atrasar, volumen, velocidad y pantalla completa (PC y celular).
+// Los videos son privados: "url" devuelve el enlace temporal y firmado del archivo.
+// Uso: WaveVisor.abrirVideo({ titulo: 'Clase 1', url: async function () { return 'https://...'; }, alTerminar })
+//      WaveVisor.montarVideo(elemento, { titulo, url, alTerminar }) para mostrarlo dentro de una página.
 (function () {
-  var SDK = 'https://assets.mediadelivery.net/playerjs/player-0.1.0.min.js';
-  var promesaSdk = null;
   window.WaveVisor = window.WaveVisor || {};
 
   function esc(t) {
     return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
-  }
-
-  function cargarSdk() {
-    if (window.playerjs) return Promise.resolve();
-    if (promesaSdk) return promesaSdk;
-    promesaSdk = new Promise(function (ok, mal) {
-      var s = document.createElement('script');
-      s.src = SDK;
-      s.onload = function () { window.playerjs ? ok() : mal(new Error('sdk')); };
-      s.onerror = function () { promesaSdk = null; mal(new Error('sdk')); };
-      document.head.appendChild(s);
-    });
-    return promesaSdk;
   }
 
   function montarVideo(cont, opts) {
@@ -38,7 +23,7 @@
       '</div>';
     var marco = cont.querySelector('.wvv-marco');
     var barra = cont.querySelector('.wvv-barra');
-    var player = null, vivo = true;
+    var video = null, vivo = true, avisado = false;
 
     function error(msg) {
       marco.innerHTML = '<div class="wvv-estado error">' + esc(msg) + '</div>';
@@ -47,18 +32,24 @@
 
     Promise.resolve().then(function () { return opts.url(); }).then(function (enlace) {
       if (!vivo) return;
-      var f = document.createElement('iframe');
-      f.src = enlace;
-      f.title = opts.titulo || 'Video';
-      f.setAttribute('allow', 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen');
-      f.setAttribute('allowfullscreen', '');
+      video = document.createElement('video');
+      video.src = enlace;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('controlslist', 'nodownload noremoteplayback');
+      video.setAttribute('disablepictureinpicture', '');
+      video.title = opts.titulo || 'Video';
+      video.addEventListener('contextmenu', function (ev) { ev.preventDefault(); });
+      video.addEventListener('error', function () { error('No se pudo reproducir el video. Puede que todavía no esté disponible; probá de nuevo en un momento.'); });
+      video.addEventListener('ended', function () {
+        if (avisado || !opts.alTerminar) return;
+        avisado = true;
+        try { opts.alTerminar(); } catch (e2) { /* nada */ }
+      });
       marco.innerHTML = '';
-      marco.appendChild(f);
+      marco.appendChild(video);
       barra.hidden = false;
-      cargarSdk().then(function () {
-        player = new window.playerjs.Player(f);
-        if (opts.alTerminar) player.on('ended', function () { try { opts.alTerminar(); } catch (e2) { /* nada */ } });
-      }).catch(function () { barra.hidden = true; });
     }).catch(function (e) {
       console.error(e);
       error((e && e.message) || 'No se pudo cargar el video.');
@@ -66,12 +57,11 @@
 
     barra.addEventListener('click', function (ev) {
       var b = ev.target.closest('[data-v]');
-      if (!b || !player) return;
-      var delta = b.getAttribute('data-v') === 'adelante' ? 10 : -10;
-      player.getCurrentTime(function (t) { player.setCurrentTime(Math.max(0, (t || 0) + delta)); });
+      if (!b || !video) return;
+      video.currentTime = Math.max(0, (video.currentTime || 0) + (b.getAttribute('data-v') === 'adelante' ? 10 : -10));
     });
 
-    return { destruir: function () { vivo = false; cont.innerHTML = ''; } };
+    return { destruir: function () { vivo = false; if (video) { try { video.pause(); video.removeAttribute('src'); video.load(); } catch (e3) { /* nada */ } } cont.innerHTML = ''; } };
   }
 
   function abrirVideo(opts) {
