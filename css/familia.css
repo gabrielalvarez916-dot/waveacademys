@@ -389,3 +389,50 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 }
 
 .pg-hijo .vista-subtitulo { margin-top: 30px; font-size: 1.25rem; }
+
+/* ---------- Fecha objetivo (solo familia) ---------- */
+
+.meta {
+  margin-bottom: 22px;
+  padding: 22px 24px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -14px rgba(37, 54, 56, 0.35);
+}
+
+.meta-rot {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta-preg { margin: 6px 0 14px; font-size: 1.1rem; font-weight: 800; }
+
+.meta-opc { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.meta-btn {
+  flex: 1 1 140px;
+  padding: 14px 18px;
+  background: var(--menta);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  color: var(--petroleo);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.meta-btn:hover { background: #c6eadf; }
+
+.meta-btn.sel {
+  background: var(--turquesa);
+  border-color: var(--turquesa);
+  color: #fff;
+}
+
+.meta-estado { margin: 14px 2px 0; color: var(--texto-suave); font-size: 0.95rem; font-weight: 600; line-height: 1.5; }
+.meta-estado b { color: var(--petroleo); font-weight: 800; }

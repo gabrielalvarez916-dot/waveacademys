@@ -220,7 +220,7 @@
       var materias = (porHijo[h.id] || []).map(function (r) {
         return {
           nombre: r.subject_name, color: colorSeguro(r.color), orden: r.subject_position,
-          total: r.total_lessons, hechas: r.done_lessons,
+          total: r.total_topics, hechas: r.done_topics,
           suma: Number(r.score_sum), notas: r.score_count,
           promedio: r.score_count ? Math.round(Number(r.score_sum) / r.score_count) : null
         };
@@ -255,7 +255,7 @@
           '<div class="pm-cab"><span class="pm-nombre">' + esc(m.nombre) + '</span>' +
             '<span class="pm-prom"><small>Promedio</small><b>' + (m.promedio == null ? '—' : m.promedio + '%') + '</b></span></div>' +
           '<div class="pm-barra" role="progressbar" aria-label="Progreso en ' + esc(m.nombre) + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div>' +
-          '<div class="pm-pie"><span>' + m.hechas + ' de ' + m.total + ' lecciones</span><b>' + pct + '%</b></div>' +
+          '<div class="pm-pie"><span>' + m.hechas + ' de ' + m.total + (m.total === 1 ? ' tema' : ' temas') + '</span><b>' + pct + '%</b></div>' +
         '</div>';
       }).join('');
 
@@ -335,17 +335,30 @@
   function fechaCorta(d) {
     return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
   }
-  function textoLecciones(n) { return n + (n === 1 ? ' lección' : ' lecciones'); }
+  function textoTemas(n) { return n + (n === 1 ? ' tema' : ' temas'); }
 
-  // Día en que se terminan las lecciones que faltan, siguiendo el programa (de lunes a viernes)
+  // Día en que se terminan los temas que faltan, siguiendo el programa (de lunes a viernes)
+  // Se cuentan 40 semanas activas por año (hay vacaciones y feriados): el calendario real es 52/40 más largo
+  var FACTOR_CALENDARIO = 52 / 40;
+
+  // Inicio (primer ingreso) + plazo elegido = fecha objetivo
+  function fechaObjetivo(inicio, meses) {
+    if (!inicio || !meses) return null;
+    var f = new Date(inicio);
+    f.setMonth(f.getMonth() + meses);
+    f.setHours(12, 0, 0, 0);
+    return isNaN(f.getTime()) ? null : f;
+  }
+
   function fechaFin(restantes, porDia) {
-    var d = new Date();
-    d.setHours(12, 0, 0, 0);
+    var hoy = new Date();
+    hoy.setHours(12, 0, 0, 0);
+    var d = new Date(hoy);
     for (var i = 0; i < 3650; i++) {
       var wd = d.getDay();
       if (wd >= 1 && wd <= 5) {
         restantes -= porDia[wd];
-        if (restantes <= 0) return new Date(d);
+        if (restantes <= 0) return new Date(hoy.getTime() + (d - hoy) * FACTOR_CALENDARIO);
       }
       d.setDate(d.getDate() + 1);
     }
@@ -395,22 +408,18 @@
 
     var res = await Promise.all([
       sb.from('students')
-        .select('id, first_name, last_name, created_at, grades(name, levels(name))')
+        .select('id, first_name, last_name, created_at, started_at, target_months, grades(name, levels(name))')
         .order('created_at', { ascending: true }),
       sb.rpc('family_progress'),
-      sb.from('study_schedule').select('student_id, ' + COLS_PROG).order('position'),
-      sb.from('app_settings').select('value').eq('key', 'school_year_end').maybeSingle()
+      sb.from('study_schedule').select('student_id, ' + COLS_PROG).order('position')
     ]);
-    for (var i = 0; i < 3; i++) if (res[i].error) throw res[i].error;
-
-    var finAnio = (res[3].data && res[3].data.value) ? new Date(String(res[3].data.value) + 'T12:00:00') : null;
-    if (finAnio && isNaN(finAnio.getTime())) finAnio = null;
+    res.forEach(function (r) { if (r.error) throw r.error; });
 
     var cursosDe = {}, filasDe = {};
     (res[1].data || []).forEach(function (r) {
       (cursosDe[r.student_id] = cursosDe[r.student_id] || []).push({
         id: r.subject_id, nombre: r.subject_name, color: colorSeguro(r.color), orden: r.subject_position,
-        total: r.total_lessons, completas: r.done_lessons
+        total: r.total_topics, completas: r.done_topics
       });
     });
     (res[2].data || []).forEach(function (f) {
@@ -421,15 +430,17 @@
       return {
         id: h.id, nombre: h.first_name + ' ' + h.last_name, primerNombre: h.first_name,
         anio: h.grades ? etiquetaAnio(h.grades) : '',
+        iniciado: h.started_at, meses: h.target_months,
+        finAnio: fechaObjetivo(h.started_at, h.target_months),
         cursos: (cursosDe[h.id] || []).sort(function (a, b) { return a.orden - b.orden; }),
         filas: filasDe[h.id] || []
       };
     });
-    return { hijos: hijos, finAnio: finAnio, uid: uid };
+    return { hijos: hijos, uid: uid };
   }
 
   // Programación de un hijo: dibuja y edita sobre su propio contenedor
-  function crearProgramacion(cont, hijo, finAnio, uid) {
+  function crearProgramacion(cont, hijo, uid) {
     var prog = { cursos: hijo.cursos, filas: hijo.filas, ocupado: false };
 
     function cursoPorId(id) {
@@ -437,6 +448,7 @@
     }
 
     function trayectoria() {
+      var finAnio = hijo.finAnio;
       var filasCursos = [], finGlobal = null, sinProgramar = [], restantesTotal = 0, hayLecciones = false;
 
       prog.cursos.forEach(function (c) {
@@ -448,7 +460,7 @@
         var r = { curso: c, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
 
         if (c.total === 0) {
-          r.texto = 'Todavía no tiene lecciones cargadas';
+          r.texto = 'Todavía no tiene temas cargados';
         } else {
           hayLecciones = true;
           restantesTotal += restantes;
@@ -463,7 +475,7 @@
               r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
             } else {
               if (!finGlobal || fin > finGlobal) finGlobal = fin;
-              r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
+              r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoTemas(semanal) + ' por semana';
               if (finAnio && fin > finAnio) {
                 r.estado = 'Se retrasa ' + semanasDeRetraso(fin, finAnio) + ' sem.'; r.clase = 'atraso';
               } else {
@@ -480,17 +492,18 @@
     }
 
     function htmlHero(t) {
+      var finAnio = hijo.finAnio;
       var hoy = new Date();
       hoy.setHours(12, 0, 0, 0);
       var nota = t.sinProgramar.length
         ? '<p class="tray-nota">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>' : '';
 
       if (!t.hayLecciones) {
-        return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay lecciones cargadas en sus materias. ' +
+        return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay temas cargados en sus materias. ' +
           'Cuando las haya, acá vas a ver cuándo terminaría el año con este programa.</p></div>';
       }
       if (t.restantesTotal === 0) {
-        return '<div class="tray-hero ok"><b class="tray-fecha">¡Completó todas las lecciones del año!</b></div>';
+        return '<div class="tray-hero ok"><b class="tray-fecha">¡Completó todos los temas del año!</b></div>';
       }
       if (!t.finGlobal) {
         return '<div class="tray-hero atraso"><b class="tray-fecha">Programá sus materias para calcular cuándo termina</b>' + nota + '</div>';
@@ -509,15 +522,52 @@
         var pos = Math.min(100, Math.max(0, ((t.finGlobal - hoy) / (finAnio - hoy)) * 100));
         linea = '<div class="tray-linea"><div class="tray-relleno" style="width:' + pos.toFixed(1) + '%"></div>' +
           '<span class="tray-pin" style="left:' + pos.toFixed(1) + '%"></span></div>' +
-          '<div class="tray-extremos"><span>Hoy</span><span>Fin del año escolar · ' + esc(fechaCorta(finAnio)) + '</span></div>';
+          '<div class="tray-extremos"><span>Hoy</span><span>Fecha objetivo · ' + esc(fechaCorta(finAnio)) + '</span></div>';
       }
 
       return '<div class="tray-hero ' + (atrasado ? 'atraso' : 'ok') + '">' +
         '<div class="tray-hero-top"><div><span class="tray-etiqueta">Terminaría el año el</span>' +
         '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
         linea +
-        '<p class="tray-faltan">Le faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
-        (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
+        '<p class="tray-faltan">Le faltan <b>' + textoTemas(t.restantesTotal) + '</b> en total.' +
+        (atrasado ? ' Para llegar a tiempo, sumá temas por día.' : '') + '</p>' + nota + '</div>';
+    }
+
+    // Fecha objetivo de finalización: la elige solo la familia
+    function htmlMeta(t) {
+      var OPC = [[12, 'Un año'], [18, 'Año y medio'], [24, 'Dos años']];
+      var botones = OPC.map(function (o) {
+        var sel = hijo.meses === o[0];
+        return '<button type="button" class="meta-btn' + (sel ? ' sel' : '') + '" data-a="plazo" data-m="' + o[0] + '" aria-pressed="' + sel + '">' + o[1] + '</button>';
+      }).join('');
+
+      var estado;
+      if (!hijo.iniciado) {
+        estado = 'El plazo empieza a correr cuando ' + esc(hijo.primerNombre) + ' ingrese por primera vez.';
+      } else if (!hijo.meses || !hijo.finAnio) {
+        estado = 'Elegí un plazo para ver si llega a tiempo.';
+      } else {
+        estado = 'Fecha objetivo: <b>' + esc(fechaLarga(hijo.finAnio)) + '</b> · contando desde su primer ingreso (' + esc(fechaCorta(new Date(hijo.iniciado))) + ').';
+        var hoy = new Date();
+        var semanas = ((hijo.finAnio - hoy) / 86400000 / 7) / FACTOR_CALENDARIO;
+        if (t.restantesTotal > 0) {
+          if (semanas <= 0) {
+            estado += ' <b>El plazo ya venció.</b>';
+          } else {
+            var necesario = t.restantesTotal / semanas;
+            var programado = 0;
+            t.filas.forEach(function (r) { if (r.restantes > 0) programado += r.semanal; });
+            estado += ' Para llegar a tiempo necesita unos <b>' + necesario.toLocaleString('es-AR', { maximumFractionDigits: 1 }) +
+              ' temas por semana</b> en total; hoy tiene programados <b>' + programado + '</b>.';
+          }
+        }
+      }
+
+      return '<section class="meta">' +
+        '<div><span class="meta-rot">Fecha objetivo de finalización</span>' +
+        '<p class="meta-preg">¿En cuánto tiempo querés que ' + esc(hijo.primerNombre) + ' termine el año completo?</p></div>' +
+        '<div class="meta-opc" role="group" aria-label="Plazo">' + botones + '</div>' +
+        '<p class="meta-estado">' + estado + '</p></section>';
     }
 
     function pintar() {
@@ -538,9 +588,9 @@
             '<span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
             '<b class="prog-nombre">' + esc(c.nombre) + '</b>' +
             '<div class="prog-cant">' +
-            '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
-            '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'lección' : 'lecciones') + '</span>' +
-            '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
+            '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Un tema menos">−</button>' +
+            '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'tema' : 'temas') + '</span>' +
+            '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Un tema más">+</button>' +
             '</div></div>';
         }).join('');
 
@@ -556,7 +606,7 @@
         return '<section class="dia' + (hoySemana === wd ? ' hoy' : '') + '">' +
           '<header class="dia-cab"><h2>' + nombre + '</h2>' +
           (hoySemana === wd ? '<span class="dia-hoy">Hoy</span>' : '') +
-          '<small>' + (suma ? textoLecciones(suma) : 'Sin lecciones') + '</small></header>' +
+          '<small>' + (suma ? textoTemas(suma) : 'Sin temas') + '</small></header>' +
           '<div class="dia-cuerpo">' + items + agregar + '</div></section>';
       }).join('');
 
@@ -564,7 +614,7 @@
       var filasT = t.filas.map(function (r) {
         var c = r.curso;
         var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
-        var info = r.texto || (r.restantes === 0 ? 'Sin lecciones pendientes' : '');
+        var info = r.texto || (r.restantes === 0 ? 'Sin temas pendientes' : '');
         return '<div class="tray-fila" style="--c:' + c.color + '">' +
           '<span class="tray-ico">' + iconoMateria(c.nombre) + '</span>' +
           '<div class="tray-info"><b>' + esc(c.nombre) + '</b>' +
@@ -575,6 +625,7 @@
       }).join('');
 
       cont.innerHTML =
+        htmlMeta(t) +
         '<div class="semana">' + dias + '</div>' +
         '<h3 class="vista-subtitulo">Trayectoria</h3>' +
         htmlHero(t) +
@@ -609,6 +660,13 @@
       var r = await sb.from('study_schedule').delete().eq('id', id).select('id');
       if (r.error || !r.data.length) throw (r.error || new Error('sin permiso'));
       prog.filas = prog.filas.filter(function (f) { return String(f.id) !== String(id); });
+    }
+
+    async function elegirPlazo(meses) {
+      var r = await sb.rpc('set_student_target', { p_student: hijo.id, p_months: meses });
+      if (r.error) throw r.error;
+      hijo.meses = meses;
+      hijo.finAnio = fechaObjetivo(hijo.iniciado, meses);
     }
 
     async function agregarFila(dia, materiaId) {
@@ -649,6 +707,10 @@
       else if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
       else if (a === 'menos') guardar(function () { return cambiarCantidad(id, -1); });
       else if (a === 'quitar') guardar(function () { return quitarFila(id); });
+      else if (a === 'plazo') {
+        var meses = Number(b.getAttribute('data-m'));
+        guardar(function () { return elegirPlazo(meses); });
+      }
       else if (a === 'agregar') {
         var dia = Number(b.getAttribute('data-dia'));
         var mat = b.getAttribute('data-mat');
@@ -689,7 +751,7 @@
       for (var i = 0; i < d.hijos.length; i++) {
         var h = d.hijos[i];
         if (!h.cursos.length) continue;
-        await crearProgramacion(document.getElementById('prog-' + i), h, d.finAnio, d.uid).iniciar();
+        await crearProgramacion(document.getElementById('prog-' + i), h, d.uid).iniciar();
       }
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar la programación. Probá recargar la página.</div>';
