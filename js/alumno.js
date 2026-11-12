@@ -230,13 +230,13 @@
 
   // ---------- Programación ----------
   var DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
-  var prog = { cursos: [], filas: [], finAnio: null, uid: null, ocupado: false, inicio: null, meses: null, lecciones: {} };
+  var prog = { cursos: [], filas: [], finAnio: null, uid: null, ocupado: false, inicio: null, meses: null, lecciones: {}, hechasLecc: {} };
 
   function fechaLarga(d) {
     return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
   }
 
-  function textoTemas(n) { return n + (n === 1 ? ' tema' : ' temas'); }
+  function textoLecciones(n) { return n + (n === 1 ? ' lección' : ' lecciones'); }
 
   function cursoPorId(id) {
     return prog.cursos.filter(function (c) { return c.id === id; })[0];
@@ -299,11 +299,13 @@
       prog.filas.forEach(function (f) {
         if (f.subject_id === c.id) { porDia[f.weekday] += f.lessons_target; semanal += f.lessons_target; }
       });
-      var restantes = Math.max(0, c.total - c.completas);
-      var r = { curso: c, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
+      var tot = prog.lecciones[c.id] || 0;
+        var hechasL = prog.hechasLecc[c.id] || 0;
+        var restantes = Math.max(0, tot - hechasL);
+      var r = { curso: c, tot: tot, hechas: hechasL, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
 
-      if (c.total === 0) {
-        r.texto = 'Todavía no tiene temas cargados';
+      if (tot === 0) {
+        r.texto = 'Todavía no tiene lecciones cargadas';
       } else {
         hayLecciones = true;
         restantesTotal += restantes;
@@ -318,7 +320,7 @@
             r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
           } else {
             if (!finGlobal || fin > finGlobal) finGlobal = fin;
-            r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoTemas(semanal) + ' por semana';
+            r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
             if (prog.finAnio && fin > prog.finAnio) {
               r.estado = 'Se retrasa ' + semanasDeRetraso(fin, prog.finAnio) + ' sem.'; r.clase = 'atraso';
             } else {
@@ -345,11 +347,11 @@
       ? '<p class="tray-nota">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>' : '';
 
     if (!t.hayLecciones) {
-      return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay temas cargados en tus materias.' +
+      return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay lecciones cargadas en tus materias. ' +
         'Cuando las haya, acá vas a ver cuándo terminarías tu año con este programa.</p></div>';
     }
     if (t.restantesTotal === 0) {
-      return '<div class="tray-hero ok"><b class="tray-fecha">¡Completaste todos los temas de tu año!</b></div>';
+      return '<div class="tray-hero ok"><b class="tray-fecha">¡Completaste todas las lecciones de tu año!</b></div>';
     }
     if (!t.finGlobal) {
       return '<div class="tray-hero atraso"><b class="tray-fecha">Programá tus materias para calcular cuándo terminás</b>' + nota + '</div>';
@@ -375,8 +377,8 @@
       '<div class="tray-hero-top"><div><span class="tray-etiqueta">Terminarías tu año el</span>' +
       '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
       linea +
-      '<p class="tray-faltan">Te faltan <b>' + textoTemas(t.restantesTotal) + '</b> en total.' +
-      (atrasado ? ' Para llegar a tiempo, sumá temas por día.' : '') + '</p>' + nota + '</div>';
+      '<p class="tray-faltan">Te faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
+      (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
   }
 
   function pintarProgramacion() {
@@ -401,9 +403,9 @@
           '<span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
           '<b class="prog-nombre">' + esc(c.nombre) + '</b>' +
           '<div class="prog-cant">' +
-          '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Un tema menos">−</button>' +
-          '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'tema' : 'temas') + '</span>' +
-          '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Un tema más">+</button>' +
+          '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
+          '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'lección' : 'lecciones') + '</span>' +
+          '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
           '</div></div>';
       }).join('');
 
@@ -419,20 +421,20 @@
       return '<section class="dia' + (hoySemana === wd ? ' hoy' : '') + '">' +
         '<header class="dia-cab"><h2>' + nombre + '</h2>' +
         (hoySemana === wd ? '<span class="dia-hoy">Hoy</span>' : '') +
-        '<small>' + (suma ? textoTemas(suma) : 'Sin temas') + '</small></header>' +
+        '<small>' + (suma ? textoLecciones(suma) : 'Sin lecciones') + '</small></header>' +
         '<div class="dia-cuerpo">' + items + agregar + '</div></section>';
     }).join('');
 
     var t = trayectoria();
     var filasT = t.filas.map(function (r) {
       var c = r.curso;
-      var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
-      var info = r.texto || (r.restantes === 0 ? 'Sin temas pendientes' : '');
+      var pct = r.tot ? Math.min(100, Math.round((r.hechas / r.tot) * 100)) : 0;
+      var info = r.texto || (r.restantes === 0 ? 'Sin lecciones pendientes' : '');
       return '<div class="tray-fila" style="--c:' + c.color + '">' +
         '<span class="tray-ico">' + iconoMateria(c.nombre) + '</span>' +
         '<div class="tray-info"><b>' + esc(c.nombre) + '</b>' +
         (info ? '<span>' + esc(info) + '</span>' : '') +
-        (c.total ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
+        (r.tot ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
         (r.estado ? '<span class="tray-estado ' + r.clase + '">' + esc(r.estado) + '</span>' : '') +
         '</div>';
     }).join('');
@@ -558,6 +560,10 @@
       var cfg = await sb.from('subject_load_config').select('subject_id, lessons_total');
       prog.lecciones = {};
       (cfg.data || []).forEach(function (x) { prog.lecciones[x.subject_id] = x.lessons_total; });
+
+      var avance = await sb.from('student_subject_progress').select('subject_id, completed_lessons').eq('student_id', estudianteId);
+      prog.hechasLecc = {};
+      (avance.data || []).forEach(function (x) { prog.hechasLecc[x.subject_id] = x.completed_lessons; });
 
       // Primera vez: el programa viene armado por la base, después se edita
       if (!prog.filas.length) {

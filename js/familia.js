@@ -335,7 +335,7 @@
   function fechaCorta(d) {
     return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
   }
-  function textoTemas(n) { return n + (n === 1 ? ' tema' : ' temas'); }
+  function textoLecciones(n) { return n + (n === 1 ? ' lección' : ' lecciones'); }
 
   // Día en que se terminan los temas que faltan, siguiendo el programa (de lunes a viernes)
   // Se cuentan 40 semanas activas por año (hay vacaciones y feriados): el calendario real es 52/40 más largo
@@ -381,12 +381,18 @@
         .order('created_at', { ascending: true }),
       sb.rpc('family_progress'),
       sb.from('study_schedule').select('student_id, ' + COLS_PROG).order('position'),
-      sb.from('subject_load_config').select('subject_id, lessons_total')
+      sb.from('subject_load_config').select('subject_id, lessons_total'),
+      sb.from('student_subject_progress').select('student_id, subject_id, completed_lessons')
     ]);
-    res.forEach(function (r) { if (r.error) throw r.error; });
+    res.slice(0, 4).forEach(function (r) { if (r.error) throw r.error; });
 
     var lecciones = {};
     (res[3].data || []).forEach(function (x) { lecciones[x.subject_id] = x.lessons_total; });
+
+    var hechasDe = {};
+    (res[4].data || []).forEach(function (r) {
+      (hechasDe[r.student_id] = hechasDe[r.student_id] || {})[r.subject_id] = r.completed_lessons;
+    });
 
     var cursosDe = {}, filasDe = {};
     (res[1].data || []).forEach(function (r) {
@@ -404,7 +410,7 @@
         id: h.id, nombre: h.first_name + ' ' + h.last_name, primerNombre: h.first_name,
         anio: h.grades ? etiquetaAnio(h.grades) : '',
         iniciado: h.started_at, meses: h.target_months,
-        finAnio: null, lecciones: lecciones,
+        finAnio: null, lecciones: lecciones, hechasLecc: hechasDe[h.id] || {},
         cursos: (cursosDe[h.id] || []).sort(function (a, b) { return a.orden - b.orden; }),
         filas: filasDe[h.id] || []
       };
@@ -450,11 +456,13 @@
         prog.filas.forEach(function (f) {
           if (f.subject_id === c.id) { porDia[f.weekday] += f.lessons_target; semanal += f.lessons_target; }
         });
-        var restantes = Math.max(0, c.total - c.completas);
-        var r = { curso: c, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
+        var tot = hijo.lecciones[c.id] || 0;
+        var hechasL = hijo.hechasLecc[c.id] || 0;
+        var restantes = Math.max(0, tot - hechasL);
+        var r = { curso: c, tot: tot, hechas: hechasL, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
 
-        if (c.total === 0) {
-          r.texto = 'Todavía no tiene temas cargados';
+        if (tot === 0) {
+          r.texto = 'Todavía no tiene lecciones cargadas';
         } else {
           hayLecciones = true;
           restantesTotal += restantes;
@@ -469,7 +477,7 @@
               r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
             } else {
               if (!finGlobal || fin > finGlobal) finGlobal = fin;
-              r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoTemas(semanal) + ' por semana';
+              r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
               if (finAnio && fin > finAnio) {
                 r.estado = 'Se retrasa ' + semanasDeRetraso(fin, finAnio) + ' sem.'; r.clase = 'atraso';
               } else {
@@ -493,11 +501,11 @@
         ? '<p class="tray-nota">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>' : '';
 
       if (!t.hayLecciones) {
-        return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay temas cargados en sus materias. ' +
+        return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay lecciones cargadas en sus materias. ' +
           'Cuando las haya, acá vas a ver cuándo terminaría el año con este programa.</p></div>';
       }
       if (t.restantesTotal === 0) {
-        return '<div class="tray-hero ok"><b class="tray-fecha">¡Completó todos los temas del año!</b></div>';
+        return '<div class="tray-hero ok"><b class="tray-fecha">¡Completó todas las lecciones del año!</b></div>';
       }
       if (!t.finGlobal) {
         return '<div class="tray-hero atraso"><b class="tray-fecha">Programá sus materias para calcular cuándo termina</b>' + nota + '</div>';
@@ -523,8 +531,8 @@
         '<div class="tray-hero-top"><div><span class="tray-etiqueta">Terminaría el año el</span>' +
         '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
         linea +
-        '<p class="tray-faltan">Le faltan <b>' + textoTemas(t.restantesTotal) + '</b> en total.' +
-        (atrasado ? ' Para llegar a tiempo, sumá temas por día.' : '') + '</p>' + nota + '</div>';
+        '<p class="tray-faltan">Le faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
+        (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
     }
 
     // Fecha objetivo de finalización: la elige solo la familia
@@ -552,7 +560,7 @@
             var programado = 0;
             t.filas.forEach(function (r) { if (r.restantes > 0) programado += r.semanal; });
             estado += ' Para llegar a tiempo necesita unos <b>' + necesario.toLocaleString('es-AR', { maximumFractionDigits: 1 }) +
-              ' temas por semana</b> en total; hoy tiene programados <b>' + programado + '</b>.';
+              ' lecciones por semana</b> en total; hoy tiene programados <b>' + programado + '</b>.';
           }
         }
       }
@@ -584,9 +592,9 @@
             '<span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
             '<b class="prog-nombre">' + esc(c.nombre) + '</b>' +
             '<div class="prog-cant">' +
-            '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Un tema menos">−</button>' +
-            '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'tema' : 'temas') + '</span>' +
-            '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Un tema más">+</button>' +
+            '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
+            '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'lección' : 'lecciones') + '</span>' +
+            '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
             '</div></div>';
         }).join('');
 
@@ -602,20 +610,20 @@
         return '<section class="dia' + (hoySemana === wd ? ' hoy' : '') + '">' +
           '<header class="dia-cab"><h2>' + nombre + '</h2>' +
           (hoySemana === wd ? '<span class="dia-hoy">Hoy</span>' : '') +
-          '<small>' + (suma ? textoTemas(suma) : 'Sin temas') + '</small></header>' +
+          '<small>' + (suma ? textoLecciones(suma) : 'Sin lecciones') + '</small></header>' +
           '<div class="dia-cuerpo">' + items + agregar + '</div></section>';
       }).join('');
 
       var t = trayectoria();
       var filasT = t.filas.map(function (r) {
         var c = r.curso;
-        var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
-        var info = r.texto || (r.restantes === 0 ? 'Sin temas pendientes' : '');
+        var pct = r.tot ? Math.min(100, Math.round((r.hechas / r.tot) * 100)) : 0;
+        var info = r.texto || (r.restantes === 0 ? 'Sin lecciones pendientes' : '');
         return '<div class="tray-fila" style="--c:' + c.color + '">' +
           '<span class="tray-ico">' + iconoMateria(c.nombre) + '</span>' +
           '<div class="tray-info"><b>' + esc(c.nombre) + '</b>' +
           (info ? '<span>' + esc(info) + '</span>' : '') +
-          (c.total ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
+          (r.tot ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
           (r.estado ? '<span class="tray-estado ' + r.clase + '">' + esc(r.estado) + '</span>' : '') +
           '</div>';
       }).join('');
