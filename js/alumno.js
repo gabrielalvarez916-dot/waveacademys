@@ -873,11 +873,10 @@
 
   function ruta() {
     var nombre = (location.hash || '#cursos').slice(1);
-    var m = /^materia\/([0-9a-f-]{36})$/i.exec(nombre);
+    var m = /^materia\/([0-9a-f-]{36})(?:\/([0-9a-f-]{36}))?(?:\/([0-9a-f-]{36}))?$/i.exec(nombre);
     if (m) {
       enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#cursos'); });
-      window.scrollTo(0, 0);
-      return WaveMateria.abrir(vista, m[1]);
+      return WaveMateria.abrir(vista, m[1], m[2], m[3]);
     }
     if (!VISTAS[nombre]) nombre = 'cursos';
     enlaces.forEach(function (a) {

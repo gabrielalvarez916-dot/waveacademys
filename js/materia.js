@@ -4,7 +4,7 @@
   var sb = Wave.sb;
   var vista = null;
   var D = null;          // datos de la materia abierta
-  var hojaAbierta = null; // id de la lección cuyo detalle está abierto
+  var hojaAbierta = null; // id de la lección que se está viendo
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
   var TIPO_PASO = { video: 'video', pdf: 'pdf', interactive_activity: 'interactive', complementary_activity: 'complementary', final_activity: 'final' };
@@ -25,6 +25,7 @@
     clip: '<path d="M21 12.5l-8.6 8.6a5 5 0 0 1-7.1-7.1l9.2-9.2a3.3 3.3 0 0 1 4.7 4.7l-9.2 9.2a1.7 1.7 0 0 1-2.4-2.4l8.5-8.5"/>',
     lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
     check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a2 2 0 0 0 2 4M16 6h3a2 2 0 0 1-2 4M12 13v4M8 20h8M10 17h4v3h-4z"/>',
     star: '<path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor"/>',
     chevron: '<path d="M9 6l6 6-6 6"/>',
     back: '<path d="M15 6l-6 6 6 6"/>',
@@ -183,76 +184,102 @@
     D.actual = actual;
   }
 
-  // ---------- Pantalla de la materia ----------
-  function aro(frac, grande) {
+  // ---------- Pantallas ----------
+  // 1) #materia/<id>              → Introducción + un rectángulo por tema
+  // 2) #materia/<id>/<tema>       → las lecciones en círculos
+  // 3) #materia/<id>/<tema>/<lec> → los recuadros de archivos de la lección
+  var TONOS = ['#087E83', '#7C5CE0', '#E4572E', '#D6457F', '#2F7BD9', '#E59A1B'];
+  function tono(i) { return TONOS[i % TONOS.length]; }
+  function base() { return '#materia/' + D.materia.id; }
+
+  function aro(frac) {
     var r = 44, c = 2 * Math.PI * r, f = Math.max(0, Math.min(1, frac || 0));
     return '<svg class="mt-anillo" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="' + r + '" class="mt-pista"/>' +
       (f > 0 ? '<circle cx="50" cy="50" r="' + r + '" class="mt-avance" stroke-dasharray="' + (c * f).toFixed(1) + ' ' + c.toFixed(1) + '" transform="rotate(-90 50 50)"/>' : '') + '</svg>';
   }
 
-  function nodoLeccion(l, i) {
-    var e = l.est, cls, contenido, ayuda = '';
-    if (l.bloqueada && !e.vacia) { cls = 'bloq'; contenido = ico('lock', 30, 2.6); }
-    else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 30, 3.2); }
-    else if (e.completa) { cls = 'hecha'; contenido = ico('check', 38, 3.4); }
-    else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = '<span class="mt-num">' + (i + 1) + '</span>'; }
+  function banner() {
+    return D.sinAcceso
+      ? '<div class="mt-banner">' + ico('lock', 20, 2.6) + '<span><b>Hay un problema con la suscripción.</b> Para ver el contenido tiene que estar al día. Pedile a tu familia que revise la sección Facturación.</span></div>' : '';
+  }
+
+  // ----- Pantalla 1: temas -----
+  function tarjeta(o) {
+    var cls = 'mt-card' + (o.estado ? ' ' + o.estado : '');
+    var interior =
+      '<div class="mt-card-t"><h2>' + esc(o.titulo) + '</h2><p>' + esc(o.texto) + '</p>' +
+      (o.boton ? '<span class="mt-card-btn">' + o.boton + '</span>' : '') + '</div>' +
+      '<div class="mt-card-fig">' + (o.figura || '') + '</div>' +
+      (o.trofeo ? '<span class="mt-trofeo">' + ico('trophy', 34, 1.8) + '</span>' : '') +
+      (o.estado === 'bloq' ? '<span class="mt-cand">' + ico('lock', 26, 2.8) + '</span>' : '');
+    var estilo = ' style="--k:' + o.color + '"';
+    if (o.href) return '<a class="' + cls + '" href="' + o.href + '"' + estilo + '>' + interior + '</a>';
+    return '<button type="button" class="' + cls + '"' + estilo + (o.aviso ? ' data-aviso="' + esc(o.aviso) + '"' : '') + (o.intro ? ' data-intro="1"' : '') + '>' + interior + '</button>';
+  }
+
+  function pantallaTemas() {
+    var m = D.materia, icono = window.WaveIconos ? WaveIconos.materia(m.name) : '';
+    var cards = [];
+    cards.push(m.intro_video_uid
+      ? tarjeta({ titulo: 'Introducción', texto: 'Conocé la materia antes de empezar', boton: 'VER VIDEO', color: colorSeguro(m.color), figura: icono, intro: true })
+      : tarjeta({ titulo: 'Introducción', texto: 'El video de introducción estará disponible muy pronto', color: colorSeguro(m.color), figura: icono, estado: 'pronto' }));
+    D.temas.forEach(function (t, i) {
+      var c = tono(i), o = { titulo: t.titulo, color: c, figura: icono };
+      var nl = t.lecciones.length;
+      if (t.vacio) { o.texto = 'Estamos preparando este tema'; o.estado = 'pronto'; }
+      else if (t.bloqueado) { o.texto = nl + (nl === 1 ? ' lección' : ' lecciones') + (t.examen ? ' y examen' : ''); o.estado = 'bloq'; o.aviso = D.sinAcceso ? 'La suscripción tiene que estar al día para ver el contenido.' : 'Terminá el tema anterior y aprobá su examen para abrir este.'; }
+      else {
+        o.texto = t.completo ? '¡Tema completo! ' + t.hechas + ' de ' + t.conContenido + ' lecciones' + (t.examen ? ' y examen aprobado' : '')
+          : t.hechas + ' de ' + t.conContenido + ' lecciones' + (t.examen ? ' · examen al final' : '');
+        o.boton = t.completo ? 'REPASAR' : t.hechas ? 'SEGUIR' : 'EMPEZAR';
+        o.trofeo = t.completo; o.href = base() + '/' + t.id;
+      }
+      cards.push(tarjeta(o));
+    });
+    vista.innerHTML = '<div class="mt mt-p1" style="--c:' + colorSeguro(m.color) + '">' +
+      '<div class="mt-top"><a class="mt-volver" href="#cursos">' + ico('back', 20, 3) + ' Mis cursos</a><h1>' + esc(m.name) + '</h1></div>' +
+      banner() + '<div class="mt-cards">' + (D.temas.length ? cards.join('') : '<div class="mt-vacio">Esta materia todavía no tiene temas.</div>') + '</div></div>';
+  }
+
+  // ----- Pantalla 2: lecciones en círculos -----
+  function nodoLeccion(l, i, t) {
+    var e = l.est, cls, contenido, href = null, aviso = '';
+    if (D.sinAcceso) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'La suscripción tiene que estar al día para ver el contenido.'; }
+    else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 40, 3.2); aviso = 'Esta lección está en preparación.'; }
+    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'Primero terminá la lección anterior.'; }
+    else if (e.completa) { cls = 'hecha'; contenido = ico('check', 56, 3.2); href = base() + '/' + t.id + '/' + l.id; }
+    else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
     var burbuja = D.actual === l.id ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
-    return '<button type="button" class="mt-nodo ' + cls + '" data-leccion="' + l.id + '" aria-label="' + esc(l.titulo) + '">' +
-      burbuja + '<span class="mt-aro">' + aro(e.completa ? 1 : e.frac) + '<span class="mt-disco">' + contenido + '</span></span>' +
-      '<span class="mt-nombre">' + esc(l.titulo) + '</span>' + ayuda + '</button>';
+    var interior = burbuja + '<span class="mt-aro">' + aro(e.completa ? 1 : e.frac) + '<span class="mt-disco">' + contenido + '</span></span>' +
+      '<span class="mt-nombre">' + esc(l.titulo) + '</span>';
+    return href ? '<a class="mt-nodo ' + cls + '" href="' + href + '">' + interior + '</a>'
+      : '<button type="button" class="mt-nodo ' + cls + '" data-aviso="' + esc(aviso) + '">' + interior + '</button>';
   }
 
   function nodoExamen(t) {
     var ex = t.examen, cls, contenido;
-    if (ex.aprobado) { cls = 'hecha'; contenido = ico('star', 34, 1.5); }
-    else if (t.examenDisponible) { cls = 'libre actual'; contenido = ico('star', 34, 1.5); }
-    else { cls = 'bloq'; contenido = ico('lock', 30, 2.6); }
-    var burbuja = t.examenDisponible && !ex.aprobado && D.actual === 'examen:' + t.id ? '<span class="mt-burbuja">¡Examen!</span>' : '';
-    return '<button type="button" class="mt-nodo examen ' + cls + '" data-examen="' + t.id + '" aria-label="Examen del tema">' +
-      burbuja + '<span class="mt-aro">' + aro(ex.aprobado ? 1 : 0) + '<span class="mt-disco">' + contenido + '</span></span>' +
+    if (ex.aprobado) { cls = 'hecha'; contenido = ico('star', 44, 1.5); }
+    else if (t.examenDisponible) { cls = 'libre actual'; contenido = ico('star', 44, 1.5); }
+    else { cls = 'bloq'; contenido = ico('lock', 34, 2.6); }
+    var burbuja = t.examenDisponible && !ex.aprobado ? '<span class="mt-burbuja">¡Examen!</span>' : '';
+    var data = t.examenDisponible ? ' data-examen="' + t.id + '"' : ' data-aviso="Primero terminá todas las lecciones del tema."';
+    return '<button type="button" class="mt-nodo examen ' + cls + '"' + data + '>' + burbuja +
+      '<span class="mt-aro">' + aro(ex.aprobado ? 1 : 0) + '<span class="mt-disco">' + contenido + '</span></span>' +
       '<span class="mt-nombre">Examen' + (ex.aprobado && ex.mejor != null ? ' · ' + Math.round(ex.mejor) : '') + '</span></button>';
   }
 
-  function htmlTema(t, i) {
-    var estado = t.vacio ? 'pronto' : t.bloqueado ? 'bloq' : t.completo ? 'hecho' : '';
-    var chip = t.vacio ? '<span class="mt-chip">Próximamente</span>'
-      : t.bloqueado ? '<span class="mt-chip">' + ico('lock', 14, 2.8) + ' Bloqueado</span>'
-      : t.completo ? '<span class="mt-chip ok">' + ico('check', 14, 3.2) + ' Completo</span>'
-      : '<span class="mt-chip">' + t.hechas + ' de ' + t.conContenido + '</span>';
-    var camino = t.lecciones.map(nodoLeccion).join('') + (t.examen ? nodoExamen(t) : '');
-    var aviso = t.bloqueado && !D.sinAcceso
-      ? '<p class="mt-aviso">' + ico('lock', 16, 2.6) + ' Terminá el tema anterior y aprobá su examen para abrir este.</p>' : '';
-    return '<article class="mt-tema ' + estado + '">' +
-      '<header class="mt-tema-cab"><div><span class="mt-tema-num">Tema ' + (i + 1) + '</span><h2>' + esc(t.titulo) + '</h2></div>' + chip + '</header>' +
-      (t.vacio ? '<p class="mt-pronto-txt">Estamos preparando las lecciones de este tema.</p>' : '<div class="mt-camino">' + camino + '</div>') + aviso + '</article>';
+  function pantallaTema(t) {
+    var idx = D.temas.indexOf(t), c = tono(idx);
+    var nodos = t.lecciones.map(function (l, i) { return nodoLeccion(l, i, t); }).join('') + (t.examen ? nodoExamen(t) : '');
+    vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
+      '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
+      '<div class="mt-escena-tit"><span>Tema ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div></div>' +
+      '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
+    var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.actual');
+    if (fila && act) setTimeout(function () { fila.scrollLeft = Math.max(0, act.offsetLeft - fila.clientWidth / 2 + act.offsetWidth / 2); }, 0);
   }
 
-  function pintar() {
-    calcular();
-    var m = D.materia, color = colorSeguro(m.color);
-    var total = D.temas.filter(function (t) { return !t.vacio; }).length;
-    var comp = D.temas.filter(function (t) { return t.completo; }).length;
-    var pct = total ? Math.round(comp / total * 100) : 0;
-    var icono = window.WaveIconos ? WaveIconos.materia(m.name) : '';
-    var intro = m.intro_video_uid
-      ? '<button type="button" class="mt-intro" data-intro="1"><span class="mt-intro-disco">' + ico('play', 30) + '</span>' +
-        '<span class="mt-intro-t"><b>Introducción</b><small>Mirá este video antes de empezar</small></span><span class="mt-intro-flecha">' + ico('chevron', 22, 3) + '</span></button>'
-      : '<div class="mt-intro pronto"><span class="mt-intro-disco">' + ico('play', 30) + '</span>' +
-        '<span class="mt-intro-t"><b>Introducción</b><small>Próximamente</small></span></div>';
-    var banner = D.sinAcceso
-      ? '<div class="mt-banner">' + ico('lock', 20, 2.6) + '<span><b>Hay un problema con la suscripción.</b> Para ver el contenido tiene que estar al día. Pedile a tu familia que revise la sección Facturación.</span></div>' : '';
-    vista.innerHTML =
-      '<div class="mt" style="--c:' + color + '">' +
-        '<a class="mt-volver" href="#cursos">' + ico('back', 20, 3) + ' Mis cursos</a>' +
-        '<header class="mt-hero"><div class="mt-hero-ico">' + icono + '</div><div class="mt-hero-t"><h1>' + esc(m.name) + '</h1>' +
-          '<p>' + comp + ' de ' + total + (total === 1 ? ' tema completo' : ' temas completos') + '</p>' +
-          '<div class="mt-hero-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></div></div></header>' +
-        banner + intro +
-        (D.temas.length ? D.temas.map(htmlTema).join('') : '<div class="mt-vacio">Esta materia todavía no tiene temas.</div>') +
-      '</div>';
-  }
-
-  // ---------- Detalle de la lección (recuadros de archivos) ----------
+  // ----- Pantalla 3: la lección -----
   var TIPOS = {
     video:         { icono: 'play',   color: '#087E83', titulo: 'Clase explicativa', sub: 'Video de la clase' },
     pdf:           { icono: 'doc',    color: '#E4572E', titulo: 'PDF de la clase', sub: 'Leelo en pantalla o descargalo' },
@@ -269,14 +296,10 @@
     return null;
   }
 
-  var hojaEl = null, comp_abierto = false;
+  var comp_abierto = false;
 
-  function pintarHoja() {
-    if (!hojaAbierta) return;
-    var f = buscarLeccion(hojaAbierta);
-    if (!f) return cerrarHoja();
+  function pantallaLeccion(f) {
     var l = f.l, p = D.pasos[l.id] || {}, e = l.est;
-    var color = colorSeguro(D.materia.color);
     var siguiente = null;
     ORDEN.forEach(function (k) { if (!siguiente && k !== 'complementary' && p[k] && p[k].tiene && !hecho(p[k])) siguiente = k; });
     var cards = ORDEN.map(function (k) {
@@ -289,51 +312,39 @@
         : k === 'interactive' && pr && pr.score != null ? 'Hecha · ' + Math.round(pr.score) + ' puntos' : 'Hecho'; }
       else if (k === siguiente) cls = ' siguiente';
       var derecha = !paso || !paso.tiene ? '' : listo ? '<span class="mt-rec-check">' + ico('check', 18, 3.6) + '</span>' : '<span class="mt-rec-flecha">' + ico('chevron', 20, 3) + '</span>';
-      var tarjeta = '<button type="button" class="mt-rec' + cls + '" data-paso="' + k + '"' + (!paso || !paso.tiene ? ' disabled' : '') + ' style="--k:' + t.color + '">' +
-        '<span class="mt-rec-ico">' + ico(t.icono, 26) + '</span><span class="mt-rec-t"><b>' + t.titulo + '</b><small>' + sub + '</small></span>' + derecha + '</button>';
+      var html = '<button type="button" class="mt-rec' + cls + '" data-paso="' + k + '"' + (!paso || !paso.tiene ? ' disabled' : '') + ' style="--k:' + t.color + '">' +
+        '<span class="mt-rec-ico">' + ico(t.icono, 28) + '</span><span class="mt-rec-t"><b>' + t.titulo + '</b><small>' + sub + '</small></span>' + derecha + '</button>';
       if (k === 'complementary' && paso && paso.tiene && comp_abierto) {
-        tarjeta += '<div class="mt-archivos">' + paso.files.map(function (a, i) {
+        html += '<div class="mt-archivos">' + paso.files.map(function (a, i) {
           return '<div class="mt-archivo"><span class="mt-archivo-n">' + esc(a.name || 'Archivo') + '</span>' +
             '<button type="button" class="mt-desc" data-bajar="' + i + '">' + ico('down', 18, 2.6) + ' Descargar</button></div>';
         }).join('') + '</div>';
       }
-      return tarjeta;
+      return '<div class="mt-rec-c' + (k === 'complementary' ? ' ancho' : '') + '">' + html + '</div>';
     }).join('');
     var estadoTxt = e.completa ? '¡Lección completa!' : e.total ? e.hechos + ' de ' + e.total + ' partes listas' : 'Próximamente';
-    hojaEl.querySelector('.mt-hoja').innerHTML =
-      '<button type="button" class="mt-cerrar" data-cerrar="1" aria-label="Cerrar">' + ico('close', 20, 3) + '</button>' +
-      '<div class="mt-hoja-cab"><span class="mt-aro grande ' + (e.completa ? 'hecha' : '') + '">' + aro(e.completa ? 1 : e.frac) +
-        '<span class="mt-disco">' + (e.completa ? ico('check', 40, 3.4) : '<span class="mt-num">' + f.n + '</span>') + '</span></span>' +
-        '<div><small>' + esc(f.t.titulo) + '</small><h3>' + esc(l.titulo) + '</h3><span class="mt-hoja-est">' + estadoTxt + '</span></div></div>' +
-      '<div class="mt-recs">' + cards + '</div>';
+    vista.innerHTML = '<div class="mt mt-p3" style="--c:' + tono(D.temas.indexOf(f.t)) + '">' +
+      '<a class="mt-volver" href="' + base() + '/' + f.t.id + '">' + ico('back', 20, 3) + ' ' + esc(f.t.titulo) + '</a>' +
+      '<header class="mt-lec-cab"><span class="mt-aro grande ' + (e.completa ? 'hecha' : '') + '">' + aro(e.completa ? 1 : e.frac) +
+        '<span class="mt-disco">' + (e.completa ? ico('check', 52, 3.4) : '<span class="mt-num">' + f.n + '</span>') + '</span></span>' +
+        '<div><small>Lección ' + f.n + '</small><h1>' + esc(l.titulo) + '</h1><span class="mt-lec-est">' + estadoTxt + '</span></div></header>' +
+      '<div class="mt-recs">' + cards + '</div></div>';
   }
 
-  function abrirHoja(id) {
-    hojaAbierta = id;
-    comp_abierto = false;
-    if (!hojaEl) {
-      hojaEl = document.createElement('div');
-      hojaEl.className = 'mt-hoja-fondo';
-      hojaEl.style.setProperty('--c', colorSeguro(D.materia.color));
-      hojaEl.innerHTML = '<div class="mt-hoja" role="dialog" aria-modal="true"></div>';
-      document.body.appendChild(hojaEl);
-      document.body.classList.add('mt-bloqueado');
-      hojaEl.addEventListener('click', function (ev) {
-        if (ev.target === hojaEl || ev.target.closest('[data-cerrar]')) return cerrarHoja();
-        var b = ev.target.closest('[data-paso]');
-        if (b && !b.disabled) return abrirPaso(b.getAttribute('data-paso'));
-        var d = ev.target.closest('[data-bajar]');
-        if (d) return descargar(+d.getAttribute('data-bajar'));
-      });
-    }
-    pintarHoja();
-  }
-
-  function cerrarHoja() {
+  // ----- Router interno -----
+  var ruta = { tema: null, leccion: null };
+  function pintar() {
+    calcular();
     hojaAbierta = null;
-    if (hojaEl) { hojaEl.remove(); hojaEl = null; }
-    document.body.classList.remove('mt-bloqueado');
+    var t = ruta.tema ? D.temas.filter(function (x) { return x.id === ruta.tema; })[0] : null;
+    if (t && (t.bloqueado || t.vacio || D.sinAcceso)) { t = null; ruta.leccion = null; location.replace(base()); }
+    var f = t && ruta.leccion ? buscarLeccion(ruta.leccion) : null;
+    if (f && (f.t.id !== t.id || f.l.bloqueada || f.l.est.vacia)) { f = null; location.replace(base() + '/' + t.id); }
+    if (f) { hojaAbierta = f.l.id; pantallaLeccion(f); }
+    else if (t) pantallaTema(t);
+    else pantallaTemas();
   }
+  function refrescar() { var y = window.scrollY; pintar(); window.scrollTo(0, y); }
 
   // ---------- Avance ----------
   async function marcar(paso, puntaje) {
@@ -358,8 +369,6 @@
       await sb.from('student_lesson_progress').insert({ student_id: D.sid, lesson_id: lessonId });
     }
   }
-
-  function refrescar() { pintar(); if (hojaAbierta) pintarHoja(); }
 
   // ---------- Abrir cada recuadro ----------
   function pasoActual(k) { var f = buscarLeccion(hojaAbierta); return f && (D.pasos[f.l.id] || {})[k]; }
@@ -390,7 +399,7 @@
         });
       } else if (k === 'complementary') {
         comp_abierto = !comp_abierto;
-        pintarHoja();
+        refrescar();
       }
     } catch (e) { toast(e.message || 'No se pudo abrir.', true); }
   }
@@ -561,26 +570,26 @@
     enlazado = true;
     vista.addEventListener('click', function (ev) {
       if (!D || !vista.querySelector('.mt')) return;
-      var n = ev.target.closest('[data-leccion]');
-      if (n) {
-        var f = buscarLeccion(n.getAttribute('data-leccion'));
-        if (!f) return;
-        if (D.sinAcceso) return toast('La suscripción tiene que estar al día para ver el contenido.', true);
-        if (f.l.bloqueada) return toast(f.t.bloqueado ? 'Primero terminá el tema anterior y aprobá su examen.' : 'Primero terminá la lección anterior.', true);
-        if (f.l.est.vacia) return toast('Esta lección está en preparación.');
-        return abrirHoja(f.l.id);
-      }
+      var av = ev.target.closest('[data-aviso]');
+      if (av) return toast(av.getAttribute('data-aviso'), true);
       var x = ev.target.closest('[data-examen]');
       if (x) return abrirExamen(x.getAttribute('data-examen'));
       if (ev.target.closest('[data-intro]')) return abrirIntro();
+      var b = ev.target.closest('[data-paso]');
+      if (b && !b.disabled) return abrirPaso(b.getAttribute('data-paso'));
+      var d = ev.target.closest('[data-bajar]');
+      if (d) return descargar(+d.getAttribute('data-bajar'));
     });
   }
 
-  async function abrir(el, materiaId) {
+  async function abrir(el, materiaId, temaId, leccionId) {
     vista = el;
-    cerrarHoja();
-    vista.innerHTML = '<div class="mt"><div class="mt-vacio">Cargando tu materia…</div></div>';
     enlazar();
+    ruta = { tema: temaId || null, leccion: leccionId || null };
+    comp_abierto = false;
+    window.scrollTo(0, 0);
+    if (D && D.materia.id === materiaId) { pintar(); return; }
+    vista.innerHTML = '<div class="mt"><div class="mt-vacio">Cargando tu materia…</div></div>';
     try {
       D = await cargar(materiaId);
       pintar();
@@ -593,7 +602,7 @@
   }
 
   // Solo para pruebas visuales con datos de ejemplo
-  function _probar(el, datos) { vista = el; D = datos; enlazar(); pintar(); }
+  function _probar(el, datos, r) { vista = el; D = datos; ruta = r || { tema: null, leccion: null }; enlazar(); pintar(); }
 
   window.WaveMateria = { abrir: abrir, _probar: _probar };
 })();
