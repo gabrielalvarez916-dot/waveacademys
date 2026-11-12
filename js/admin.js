@@ -376,7 +376,11 @@
     };
 
     try { await recargar(); }
-    catch (e) { document.getElementById('ad-lista').innerHTML = '<div class="ad-vacio">No pudimos cargar los datos. Probá recargar la página.</div>'; }
+    catch (e) {
+      console.error(e);
+      var lista = document.getElementById('ad-lista');
+      if (lista) lista.innerHTML = '<div class="ad-vacio">No pudimos cargar los datos.<br><small>' + esc((e && (e.message || e.details)) || e) + '</small></div>';
+    }
   }
 
   // ---------- Secciones que vienen después ----------
@@ -399,9 +403,19 @@
     var nombre = (location.hash || '#familias').slice(1);
     if (!VISTAS[nombre]) nombre = 'familias';
     enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#' + nombre); });
-    VISTAS[nombre]();
+    try { Promise.resolve(VISTAS[nombre]()).catch(mostrarFallo); } catch (e) { mostrarFallo(e); }
   }
+
+  // Si algo falla, lo mostramos en pantalla en vez de dejarla en blanco
+  function mostrarFallo(e) {
+    console.error(e);
+    vista.innerHTML = '<div class="ad-vacio">Ocurrió un error al armar el panel.<br><small>' + esc((e && (e.message || e)) || 'Error') + '</small></div>';
+  }
+  window.addEventListener('error', function (ev) { if (!vista.innerHTML.trim()) mostrarFallo(ev.error || ev.message); });
+  window.addEventListener('unhandledrejection', function (ev) { if (!vista.innerHTML.trim()) mostrarFallo(ev.reason); });
 
   window.addEventListener('hashchange', ruta);
   ruta();
+  // Red de seguridad: si por cualquier motivo la vista quedó vacía, se vuelve a armar
+  setTimeout(function () { if (!vista.innerHTML.trim()) ruta(); }, 1500);
 })();

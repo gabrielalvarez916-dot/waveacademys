@@ -108,3 +108,7 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 
 .ad-toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 60; padding: 12px 20px; background: var(--petroleo); color: #fff; border-radius: 999px; font-weight: 700; max-width: 92vw; }
 .ad-toast.error { background: var(--error-texto); }
+
+/* El contenido del admin no espera a la guardia para mostrarse (la guardia igual redirige si no es admin) */
+.ad-main { visibility: visible !important; }
+.ad-vacio small { display: block; margin-top: 8px; font-weight: 600; word-break: break-word; }
