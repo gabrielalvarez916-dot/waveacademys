@@ -25,7 +25,7 @@
 
   function toast(texto, error) {
     var t = document.createElement('div');
-    t.className = 'ad-toast' + (error ? ' error' : '');
+    t.className = 'wv-toast' + (error ? ' error' : '');
     t.textContent = texto;
     document.body.appendChild(t);
     setTimeout(function () { t.remove(); }, 3500);
@@ -57,20 +57,20 @@
   function abrirModal(html) {
     cerrarModal();
     modalEl = document.createElement('div');
-    modalEl.className = 'ad-modal';
-    modalEl.innerHTML = '<div class="ad-modal-caja" role="dialog" aria-modal="true">' + html + '</div>';
+    modalEl.className = 'wv-modal';
+    modalEl.innerHTML = '<div class="wv-modal-caja" role="dialog" aria-modal="true">' + html + '</div>';
     modalEl.addEventListener('mousedown', function (ev) { if (ev.target === modalEl) cerrarModal(); });
     document.body.appendChild(modalEl);
     document.addEventListener('keydown', teclaModal);
-    return modalEl.querySelector('.ad-modal-caja');
+    return modalEl.querySelector('.wv-modal-caja');
   }
 
   function confirmar(titulo, texto, textoBoton, peligro, alAceptar) {
     var caja = abrirModal(
       '<h2>' + esc(titulo) + '</h2><p>' + esc(texto) + '</p>' +
       '<p class="mensaje" id="m-error" hidden></p>' +
-      '<div class="ad-modal-pie"><button type="button" class="ad-btn suave" data-no>Cancelar</button>' +
-      '<button type="button" class="ad-btn' + (peligro ? ' peligro' : '') + '" data-si>' + esc(textoBoton) + '</button></div>');
+      '<div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button>' +
+      '<button type="button" class="wv-btn' + (peligro ? ' peligro' : '') + '" data-si>' + esc(textoBoton) + '</button></div>');
     caja.querySelector('[data-no]').onclick = cerrarModal;
     var si = caja.querySelector('[data-si]');
     si.onclick = async function () {
@@ -87,11 +87,11 @@
     var caja = abrirModal(
       '<h2>' + esc(titulo) + '</h2>' +
       '<p>Pasale estos datos. Al ingresar por primera vez le va a pedir que cambie la contraseña.</p>' +
-      '<div class="ad-cred-fila"><div><small>Usuario</small><b>' + esc(usuario) + '</b></div>' +
-        '<button type="button" class="ad-btn mini" data-copiar="' + esc(usuario) + '">Copiar</button></div>' +
-      '<div class="ad-cred-fila"><div><small>Contraseña inicial</small><b>' + esc(clave) + '</b></div>' +
-        '<button type="button" class="ad-btn mini" data-copiar="' + esc(clave) + '">Copiar</button></div>' +
-      '<div class="ad-modal-pie"><button type="button" class="ad-btn" data-no>Listo</button></div>');
+      '<div class="wv-cred-fila"><div><small>Usuario</small><b>' + esc(usuario) + '</b></div>' +
+        '<button type="button" class="wv-btn mini" data-copiar="' + esc(usuario) + '">Copiar</button></div>' +
+      '<div class="wv-cred-fila"><div><small>Contraseña inicial</small><b>' + esc(clave) + '</b></div>' +
+        '<button type="button" class="wv-btn mini" data-copiar="' + esc(clave) + '">Copiar</button></div>' +
+      '<div class="wv-modal-pie"><button type="button" class="wv-btn" data-no>Listo</button></div>');
     caja.onclick = function (ev) {
       if (ev.target.closest('[data-no]')) { cerrarModal(); return; }
       var b = ev.target.closest('[data-copiar]');
@@ -114,8 +114,8 @@
 
   function pill(status) {
     var e = ESTADO[status];
-    if (!e) return '<span class="ad-pill off">Sin suscripción</span>';
-    return '<span class="ad-pill ' + e.cls + '">' + e.txt + '</span>';
+    if (!e) return '<span class="wv-pill off">Sin suscripción</span>';
+    return '<span class="wv-pill ' + e.cls + '">' + e.txt + '</span>';
   }
 
   // El estado de la familia es el más urgente entre sus suscripciones
@@ -184,46 +184,46 @@
 
   function htmlAlumno(a, f) {
     var susp = a.perfil.is_suspended;
-    return '<div class="ad-alu">' +
-      '<div><div class="ad-nombre">' + esc(a.nombre) + (susp ? '<span class="ad-pill susp">Suspendido</span>' : '') + '</div>' +
-        '<div class="ad-dato">' + esc(a.anio) + (a.perfil.email ? ' · ' + esc(a.perfil.email) : '') + '</div></div>' +
-      '<div><span class="ad-rot">Cuota</span>' + (a.sub ? pill(a.sub.status) : '<span class="ad-pill off">Sin cupo vinculado</span>') + '</div>' +
-      '<div><span class="ad-rot">Último acceso</span><span class="ad-dato">' + esc(haceCuanto(a.perfil.last_seen_at)) + '</span></div>' +
-      '<div class="ad-acc">' +
-        (!a.sub ? '<button type="button" class="ad-btn mini suave" data-vincular="' + a.id + '" data-fam="' + f.id + '">Vincular cupo</button>' : '') +
-        (a.perfil.id ? '<button type="button" class="ad-btn mini suave" data-reset="' + a.perfil.id + '" data-nom="' + esc(a.nombre) + '">Resetear clave</button>' +
-          '<button type="button" class="ad-btn mini ' + (susp ? '' : 'peligro') + '" data-susp="' + a.perfil.id + '" data-a="' + (susp ? 0 : 1) + '" data-nom="' + esc(a.nombre) + '">' + (susp ? 'Reactivar' : 'Suspender') + '</button>' : '') +
+    return '<div class="wv-alu">' +
+      '<div><div class="wv-nombre">' + esc(a.nombre) + (susp ? '<span class="wv-pill susp">Suspendido</span>' : '') + '</div>' +
+        '<div class="wv-dato">' + esc(a.anio) + (a.perfil.email ? ' · ' + esc(a.perfil.email) : '') + '</div></div>' +
+      '<div><span class="wv-rot">Cuota</span>' + (a.sub ? pill(a.sub.status) : '<span class="wv-pill off">Sin cupo vinculado</span>') + '</div>' +
+      '<div><span class="wv-rot">Último acceso</span><span class="wv-dato">' + esc(haceCuanto(a.perfil.last_seen_at)) + '</span></div>' +
+      '<div class="wv-acc">' +
+        (!a.sub ? '<button type="button" class="wv-btn mini suave" data-vincular="' + a.id + '" data-fam="' + f.id + '">Vincular cupo</button>' : '') +
+        (a.perfil.id ? '<button type="button" class="wv-btn mini suave" data-reset="' + a.perfil.id + '" data-nom="' + esc(a.nombre) + '">Resetear clave</button>' +
+          '<button type="button" class="wv-btn mini ' + (susp ? '' : 'peligro') + '" data-susp="' + a.perfil.id + '" data-a="' + (susp ? 0 : 1) + '" data-nom="' + esc(a.nombre) + '">' + (susp ? 'Reactivar' : 'Suspender') + '</button>' : '') +
       '</div></div>';
   }
 
   function htmlFamilia(f) {
     var p = f.perfil, susp = p.is_suspended;
     var nombre = p.full_name || p.email || 'Sin nombre';
-    return '<section class="ad-fam' + (susp ? ' susp' : '') + '">' +
-      '<div class="ad-fam-cab">' +
-        '<div><div class="ad-nombre">' + esc(nombre) + (susp ? '<span class="ad-pill susp">Suspendida</span>' : '') + '</div>' +
-          '<div class="ad-dato">' + esc(p.email || '') + (f.phone ? ' · ' + esc(f.phone) : '') + '</div></div>' +
-        '<div><span class="ad-rot">Cuota</span>' + pill(f.estado) +
-          '<div class="ad-dato" style="margin-top:4px">' + f.subs.length + (f.subs.length === 1 ? ' cupo' : ' cupos') +
+    return '<section class="wv-fam' + (susp ? ' susp' : '') + '">' +
+      '<div class="wv-fam-cab">' +
+        '<div><div class="wv-nombre">' + esc(nombre) + (susp ? '<span class="wv-pill susp">Suspendida</span>' : '') + '</div>' +
+          '<div class="wv-dato">' + esc(p.email || '') + (f.phone ? ' · ' + esc(f.phone) : '') + '</div></div>' +
+        '<div><span class="wv-rot">Cuota</span>' + pill(f.estado) +
+          '<div class="wv-dato" style="margin-top:4px">' + f.subs.length + (f.subs.length === 1 ? ' cupo' : ' cupos') +
           (f.libres.length ? ' · ' + f.libres.length + (f.libres.length === 1 ? ' libre' : ' libres') : '') + '</div></div>' +
-        '<div><span class="ad-rot">Último acceso</span><span class="ad-dato">' + esc(haceCuanto(p.last_seen_at)) + '</span></div>' +
-        '<div class="ad-acc">' +
-          '<button type="button" class="ad-btn mini suave" data-cupo="' + f.id + '">Agregar cupo</button>' +
-          '<button type="button" class="ad-btn mini suave" data-reset="' + p.id + '" data-nom="' + esc(nombre) + '">Resetear clave</button>' +
-          '<button type="button" class="ad-btn mini ' + (susp ? '' : 'peligro') + '" data-susp="' + p.id + '" data-a="' + (susp ? 0 : 1) + '" data-nom="' + esc(nombre) + '" data-fam-susp="1">' + (susp ? 'Reactivar' : 'Suspender') + '</button>' +
+        '<div><span class="wv-rot">Último acceso</span><span class="wv-dato">' + esc(haceCuanto(p.last_seen_at)) + '</span></div>' +
+        '<div class="wv-acc">' +
+          '<button type="button" class="wv-btn mini suave" data-cupo="' + f.id + '">Agregar cupo</button>' +
+          '<button type="button" class="wv-btn mini suave" data-reset="' + p.id + '" data-nom="' + esc(nombre) + '">Resetear clave</button>' +
+          '<button type="button" class="wv-btn mini ' + (susp ? '' : 'peligro') + '" data-susp="' + p.id + '" data-a="' + (susp ? 0 : 1) + '" data-nom="' + esc(nombre) + '" data-fam-susp="1">' + (susp ? 'Reactivar' : 'Suspender') + '</button>' +
         '</div>' +
       '</div>' +
-      '<div class="ad-alumnos">' +
+      '<div class="wv-alumnos">' +
         (f.alumnos.length ? f.alumnos.map(function (a) { return htmlAlumno(a, f); }).join('')
-          : '<div class="ad-sin">Todavía no dio de alta a ningún alumno.</div>') +
+          : '<div class="wv-sin">Todavía no dio de alta a ningún alumno.</div>') +
       '</div></section>';
   }
 
   function pintarLista() {
-    var cont = document.getElementById('ad-lista');
+    var cont = document.getElementById('wv-lista');
     var vis = estado.datos.filter(coincide);
     cont.innerHTML = vis.length ? vis.map(htmlFamilia).join('')
-      : '<div class="ad-vacio">' + (estado.datos.length ? 'No hay resultados para esa búsqueda.' : 'Todavía no hay familias. Creá la primera con “Nueva familia”.') + '</div>';
+      : '<div class="wv-vacio">' + (estado.datos.length ? 'No hay resultados para esa búsqueda.' : 'Todavía no hay familias. Creá la primera con “Nueva familia”.') + '</div>';
   }
 
   function pintarResumen() {
@@ -232,9 +232,9 @@
       alumnos += f.alumnos.length; libres += f.libres.length;
       if (f.estado === 'past_due') deuda++;
     });
-    document.getElementById('ad-resumen').innerHTML =
+    document.getElementById('wv-resumen').innerHTML =
       [['Familias', d.length], ['Alumnos', alumnos], ['Con deuda', deuda], ['Cupos libres', libres]].map(function (x) {
-        return '<div class="ad-stat"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>';
+        return '<div class="wv-stat"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>';
       }).join('');
   }
 
@@ -252,7 +252,7 @@
       '<div class="campo"><label for="nf-nom">Nombre y apellido</label><input id="nf-nom" type="text" autocomplete="off" maxlength="80" placeholder="Nombre del padre, madre o tutor"></div>' +
       '<div class="campo"><label for="nf-tel">Teléfono (opcional)</label><input id="nf-tel" type="tel" autocomplete="off" maxlength="30" placeholder="+54 9 ..."></div>' +
       '<p class="mensaje" id="m-error" hidden></p>' +
-      '<div class="ad-modal-pie"><button type="button" class="ad-btn suave" data-no>Cancelar</button><button type="button" class="ad-btn" data-si>Crear familia</button></div>');
+      '<div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button><button type="button" class="wv-btn" data-si>Crear familia</button></div>');
     caja.querySelector('[data-no]').onclick = cerrarModal;
     var si = caja.querySelector('[data-si]'), er = caja.querySelector('#m-error');
     si.onclick = async function () {
@@ -276,7 +276,7 @@
       '<div class="campo"><label for="cu-monto">Monto mensual (opcional)</label><input id="cu-monto" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ej: 25000"></div>' +
       '<div class="campo"><label for="cu-est">Estado</label><select id="cu-est"><option value="active">Al día</option><option value="pending">Pendiente</option></select></div>' +
       '<p class="mensaje" id="m-error" hidden></p>' +
-      '<div class="ad-modal-pie"><button type="button" class="ad-btn suave" data-no>Cancelar</button><button type="button" class="ad-btn" data-si>Agregar cupo</button></div>');
+      '<div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button><button type="button" class="wv-btn" data-si>Agregar cupo</button></div>');
     caja.querySelector('[data-no]').onclick = cerrarModal;
     var si = caja.querySelector('[data-si]'), er = caja.querySelector('#m-error');
     si.onclick = async function () {
@@ -295,7 +295,7 @@
     if (!f || !a) return;
     if (!f.libres.length) {
       abrirModal('<h2>No hay cupos libres</h2><p>Esta familia no tiene suscripciones sin alumno. Agregá un cupo primero y después vinculalo.</p>' +
-        '<div class="ad-modal-pie"><button type="button" class="ad-btn" data-no>Entendido</button></div>')
+        '<div class="wv-modal-pie"><button type="button" class="wv-btn" data-no>Entendido</button></div>')
         .querySelector('[data-no]').onclick = cerrarModal;
       return;
     }
@@ -307,7 +307,7 @@
       '<h2>Vincular cupo</h2><p>Elegí qué suscripción le corresponde a ' + esc(a.nombre) + '.</p>' +
       '<div class="campo"><label for="vi-sub">Cupo libre</label><select id="vi-sub">' + opts + '</select></div>' +
       '<p class="mensaje" id="m-error" hidden></p>' +
-      '<div class="ad-modal-pie"><button type="button" class="ad-btn suave" data-no>Cancelar</button><button type="button" class="ad-btn" data-si>Vincular</button></div>');
+      '<div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button><button type="button" class="wv-btn" data-si>Vincular</button></div>');
     caja.querySelector('[data-no]').onclick = cerrarModal;
     var si = caja.querySelector('[data-si]'), er = caja.querySelector('#m-error');
     si.onclick = async function () {
@@ -343,21 +343,21 @@
 
   async function vistaFamilias() {
     vista.innerHTML =
-      '<h1 class="ad-titulo">Familias y alumnos</h1>' +
-      '<p class="ad-sub">Estado de cuota, último acceso y acciones de cada cuenta.</p>' +
-      '<div class="ad-resumen" id="ad-resumen"></div>' +
-      '<div class="ad-tools">' +
-        '<input id="ad-buscar" class="ad-buscar" type="text" name="filtro-lista" placeholder="Buscar familia, alumno o correo" autocomplete="off" autocapitalize="off" spellcheck="false" readonly>' +
-        '<div class="ad-filtros" id="ad-filtros">' +
+      '<h1 class="wv-titulo">Familias y alumnos</h1>' +
+      '<p class="wv-sub">Estado de cuota, último acceso y acciones de cada cuenta.</p>' +
+      '<div class="wv-resumen" id="wv-resumen"></div>' +
+      '<div class="wv-tools">' +
+        '<input id="wv-buscar" class="wv-buscar" type="text" name="filtro-lista" placeholder="Buscar familia, alumno o correo" autocomplete="off" autocapitalize="off" spellcheck="false" readonly>' +
+        '<div class="wv-filtros" id="wv-filtros">' +
           [['todas', 'Todas'], ['aldia', 'Al día'], ['deuda', 'Con deuda'], ['sin', 'Sin cuota activa'], ['susp', 'Suspendidas']].map(function (x) {
-            return '<button type="button" class="ad-chip' + (estado.filtro === x[0] ? ' on' : '') + '" data-f="' + x[0] + '">' + x[1] + '</button>';
+            return '<button type="button" class="wv-chip' + (estado.filtro === x[0] ? ' on' : '') + '" data-f="' + x[0] + '">' + x[1] + '</button>';
           }).join('') +
         '</div>' +
-        '<button type="button" class="ad-btn" id="ad-nueva">+ Nueva familia</button>' +
+        '<button type="button" class="wv-btn" id="wv-nueva">+ Nueva familia</button>' +
       '</div>' +
-      '<div id="ad-lista"><div class="ad-vacio">Cargando…</div></div>';
+      '<div id="wv-lista"><div class="wv-vacio">Cargando…</div></div>';
 
-    var buscar = document.getElementById('ad-buscar');
+    var buscar = document.getElementById('wv-buscar');
     // Evita que el navegador lo autocomplete con el correo guardado (filtraba la lista y la dejaba vacía)
     estado.busqueda = '';
     buscar.value = '';
@@ -367,14 +367,14 @@
       if (document.activeElement !== buscar) { buscar.value = estado.busqueda; return; }
       estado.busqueda = buscar.value; pintarLista();
     };
-    document.getElementById('ad-nueva').onclick = nuevaFamilia;
-    document.getElementById('ad-filtros').onclick = function (ev) {
+    document.getElementById('wv-nueva').onclick = nuevaFamilia;
+    document.getElementById('wv-filtros').onclick = function (ev) {
       var b = ev.target.closest('[data-f]'); if (!b) return;
       estado.filtro = b.getAttribute('data-f');
-      document.querySelectorAll('#ad-filtros .ad-chip').forEach(function (c) { c.classList.toggle('on', c === b); });
+      document.querySelectorAll('#wv-filtros .wv-chip').forEach(function (c) { c.classList.toggle('on', c === b); });
       pintarLista();
     };
-    document.getElementById('ad-lista').onclick = function (ev) {
+    document.getElementById('wv-lista').onclick = function (ev) {
       var b;
       if ((b = ev.target.closest('[data-cupo]'))) return agregarCupo(b.getAttribute('data-cupo'));
       if ((b = ev.target.closest('[data-vincular]'))) return vincular(b.getAttribute('data-vincular'), b.getAttribute('data-fam'));
@@ -385,15 +385,15 @@
     try { await recargar(); }
     catch (e) {
       console.error(e);
-      var lista = document.getElementById('ad-lista');
-      if (lista) lista.innerHTML = '<div class="ad-vacio">No pudimos cargar los datos.<br><small>' + esc((e && (e.message || e.details)) || e) + '</small></div>';
+      var lista = document.getElementById('wv-lista');
+      if (lista) lista.innerHTML = '<div class="wv-vacio">No pudimos cargar los datos.<br><small>' + esc((e && (e.message || e.details)) || e) + '</small></div>';
     }
   }
 
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
-      vista.innerHTML = '<h1 class="ad-titulo">' + titulo + '</h1><div class="ad-prox">Estamos armando esta sección. Muy pronto vas a encontrarla acá.</div>';
+      vista.innerHTML = '<h1 class="wv-titulo">' + titulo + '</h1><div class="wv-prox">Estamos armando esta sección. Muy pronto vas a encontrarla acá.</div>';
     };
   }
 
@@ -416,7 +416,7 @@
   // Si algo falla, lo mostramos en pantalla en vez de dejarla en blanco
   function mostrarFallo(e) {
     console.error(e);
-    vista.innerHTML = '<div class="ad-vacio">Ocurrió un error al armar el panel.<br><small>' + esc((e && (e.message || e)) || 'Error') + '</small></div>';
+    vista.innerHTML = '<div class="wv-vacio">Ocurrió un error al armar el panel.<br><small>' + esc((e && (e.message || e)) || 'Error') + '</small></div>';
   }
   window.addEventListener('error', function (ev) { if (!vista.innerHTML.trim()) mostrarFallo(ev.error || ev.message); });
   window.addEventListener('unhandledrejection', function (ev) { if (!vista.innerHTML.trim()) mostrarFallo(ev.reason); });
