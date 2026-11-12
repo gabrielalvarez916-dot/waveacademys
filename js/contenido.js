@@ -452,7 +452,13 @@
         await refrescarEstados(); return abrirLeccion();
       }
       if (a === 'pdf-up') return elegirArchivo('application/pdf,.pdf', false, function (fs) { subirPdf(fs[0]); });
-      if (a === 'pdf-get') return abrirLink(L.pasos.pdf.r2_key);
+      if (a === 'pdf-get') {
+        var kp = L.pasos.pdf.r2_key;
+        return WaveVisor.abrirPdf({
+          titulo: L.pasos.pdf.title || 'PDF de la clase',
+          url: async function () { return (await subidas({ action: 'r2_download_url', key: kp })).url; }
+        });
+      }
       if (a === 'pdf-del') {
         if (!confirm('¿Quitar el PDF de esta lección?')) return;
         var k = L.pasos.pdf.r2_key;
