@@ -214,3 +214,5 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 
 .wv-rango { margin: 0 0 14px; padding: 10px 16px; background: var(--menta); color: var(--turquesa-oscuro); border-radius: 14px; font-weight: 700; }
 .wv-aviso .wv-btn { margin-left: 8px; }
+
+.wv-herr { display: grid; grid-template-columns: 28px 28px; gap: 2px; align-content: center; }

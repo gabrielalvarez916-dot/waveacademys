@@ -163,7 +163,8 @@
     return '<span class="wv-herr">' +
       '<button type="button" class="wv-ico" title="Subir" data-acc="mov:' + tipo + ':' + id + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
       '<button type="button" class="wv-ico" title="Bajar" data-acc="mov:' + tipo + ':' + id + ':1"' + (i === n - 1 ? ' disabled' : '') + '>▼</button>' +
-      '<button type="button" class="wv-ico" title="Renombrar" data-acc="ren:' + tipo + ':' + id + '">✎</button></span>';
+      '<button type="button" class="wv-ico" title="Renombrar" data-acc="ren:' + tipo + ':' + id + '">✎</button>' +
+      '<button type="button" class="wv-ico" title="Eliminar" data-acc="del:' + tipo + ':' + id + '">🗑</button></span>';
   }
 
   // ---------- Vistas de carpetas ----------
@@ -262,7 +263,7 @@
       }).join('');
       var examen = (S.info[R.topic] || {}).tiene_examen;
       h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
-        '<small>Se arma acá mismo, con preguntas de opción múltiple, verdadero/falso o abiertas</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + '</div></div>';
+        '<small>Se arma acá mismo, con preguntas de opción múltiple, verdadero/falso o abiertas</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + (examen ? boton('examen-del', 'Quitar examen', 'peligro') : '') + '</div></div>';
       cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>' + h;
     } catch (e) {
       console.error(e);
@@ -349,7 +350,7 @@
 
     // 4 · Consigna
     var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
-      boton('consignas', L.preguntas ? 'Editar consignas' : 'Armar consignas', L.preguntas ? 'suave' : ''));
+      boton('consignas', L.preguntas ? 'Editar consignas' : 'Armar consignas', L.preguntas ? 'suave' : '') + (L.preguntas ? boton('consignas-del', 'Quitar todas', 'peligro') : ''));
     h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
 
     var tit = nombre('lesson', R.lesson);
@@ -487,6 +488,9 @@
         await guardarPaso('complementary_activity', { content: { files: fs } });
         return pintarLeccion();
       }
+      if (a === 'consignas-del') return quitarConsignas();
+      if (a === 'examen-del') return quitarExamen();
+      if (a === 'del') return eliminar(p[1], p[2]);
       if (a === 'consignas') return abrirEditor({ kind: 'step', stepId: L.pasos.final_activity.id, sub: nombre('lesson', R.lesson) });
       if (a === 'examen') {
         var ex = await sb.from('exams').select('id, passing_score').eq('topic_id', R.topic).maybeSingle();
@@ -556,6 +560,94 @@
     S.topics = S.topics.concat(t.data);
     await refrescarEstados();
     toast('Temas creados');
+    pintar();
+  }
+
+  // ---------- Eliminar ----------
+  function chk(r) {
+    if (r.error) throw new Error(r.error.code === '23503' ? 'No se puede eliminar: tiene avance o respuestas de alumnos asociados.' : (r.error.message || 'No se pudo eliminar'));
+    return r;
+  }
+
+  // Borra las preguntas (y sus guías) de una actividad o de un examen
+  async function borrarPreguntas(col, id) {
+    var q = chk(await sb.from('questions').select('id').eq(col, id));
+    var ids = q.data.map(function (x) { return x.id; });
+    if (!ids.length) return;
+    chk(await sb.from('question_rubrics').delete().in('question_id', ids));
+    chk(await sb.from('questions').delete().in('id', ids));
+  }
+
+  async function borrarArchivos(pasos) {
+    for (var i = 0; i < pasos.length; i++) {
+      var st = pasos[i], claves = [];
+      if (st.r2_key) claves.push(st.r2_key);
+      ((st.content && st.content.files) || []).forEach(function (f) { if (f.key) claves.push(f.key); });
+      if (st.stream_uid) { try { await subidas({ action: 'stream_delete', uid: st.stream_uid }); } catch (e) { /* queda huérfano */ } }
+      for (var k = 0; k < claves.length; k++) { try { await subidas({ action: 'r2_delete', key: claves[k] }); } catch (e) { /* queda huérfano */ } }
+    }
+  }
+
+  async function quitarConsignas() {
+    if (!confirm('¿Quitar todas las consignas de esta lección?')) return;
+    await borrarPreguntas('lesson_step_id', L.pasos.final_activity.id);
+    L.preguntas = 0;
+    await refrescarEstados();
+    toast('Consignas quitadas');
+    pintarLeccion();
+  }
+
+  async function quitarExamen() {
+    if (!confirm('¿Quitar el examen de este tema con todas sus preguntas?')) return;
+    var ex = chk(await sb.from('exams').select('id').eq('topic_id', R.topic).maybeSingle());
+    if (ex.data) {
+      await borrarPreguntas('exam_id', ex.data.id);
+      chk(await sb.from('exams').delete().eq('id', ex.data.id));
+    }
+    await refrescarEstados();
+    toast('Examen quitado');
+    pintar();
+  }
+
+  async function eliminarLeccion(id) {
+    var st = chk(await sb.from('lesson_steps').select('id, step_type, stream_uid, r2_key, content').eq('lesson_id', id));
+    var ids = st.data.map(function (x) { return x.id; });
+    if (ids.length) {
+      var q = chk(await sb.from('questions').select('id').in('lesson_step_id', ids));
+      var qids = q.data.map(function (x) { return x.id; });
+      if (qids.length) {
+        chk(await sb.from('question_rubrics').delete().in('question_id', qids));
+        chk(await sb.from('questions').delete().in('id', qids));
+      }
+    }
+    chk(await sb.from('lesson_steps').delete().eq('lesson_id', id));
+    chk(await sb.from('lessons').delete().eq('id', id));
+    await borrarArchivos(st.data);
+  }
+
+  async function eliminar(tipo, id) {
+    if (tipo === 'lesson') {
+      if (!confirm('¿Eliminar esta lección y todo lo que tiene cargado? No se puede deshacer.')) return;
+      await eliminarLeccion(id);
+      var restantes = (S.lessons[R.topic] || []).filter(function (x) { return x.id !== id; });
+      S.lessons[R.topic] = restantes;
+      await renumerar('lessons', restantes);
+      toast('Lección eliminada');
+    } else {
+      if (!confirm('¿Eliminar este tema con sus lecciones, el examen y todo lo cargado? No se puede deshacer.')) return;
+      var ls = chk(await sb.from('lessons').select('id').eq('topic_id', id));
+      for (var i = 0; i < ls.data.length; i++) await eliminarLeccion(ls.data[i].id);
+      var ex = chk(await sb.from('exams').select('id').eq('topic_id', id).maybeSingle());
+      if (ex.data) {
+        await borrarPreguntas('exam_id', ex.data.id);
+        chk(await sb.from('exams').delete().eq('id', ex.data.id));
+      }
+      chk(await sb.from('topics').delete().eq('id', id));
+      S.topics = S.topics.filter(function (x) { return x.id !== id; });
+      await renumerar('topics', temasDe(R.subject));
+      toast('Tema eliminado');
+    }
+    await refrescarEstados();
     pintar();
   }
 
