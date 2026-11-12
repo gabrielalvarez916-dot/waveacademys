@@ -353,7 +353,10 @@
     h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
 
     var tit = nombre('lesson', R.lesson);
-    document.getElementById('wv-les').outerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2></div>' + aviso + '<div class="wv-cass">' + h + '</div>';
+    var cont = document.getElementById('wv-les');
+    if (!cont) return;
+    cont.className = '';
+    cont.innerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2></div>' + aviso + '<div class="wv-cass">' + h + '</div>';
   }
 
   // ---------- Acciones ----------
