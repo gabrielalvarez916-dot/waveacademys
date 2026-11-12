@@ -139,3 +139,58 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-fila .wv-dato { overflow-wrap: break-word; word-break: normal; }
 .wv-resumen#wv-resumen-fac { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 .wv-stat small { min-height: 1.9em; }
+
+/* Contenido: explorador de carpetas y casilleros de lección */
+.wv-migas { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0 18px; font-weight: 700; color: var(--texto-suave); }
+.wv-migas a { color: var(--turquesa-oscuro); cursor: pointer; text-decoration: none; }
+.wv-migas a:hover { text-decoration: underline; }
+.wv-migas b { color: var(--petroleo); }
+.wv-barra-c { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+.wv-carps { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+.wv-carp { position: relative; display: flex; align-items: stretch; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px -18px rgba(37, 54, 56, 0.4); }
+.wv-carp-b { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 16px 18px; background: none; border: 0; border-radius: 20px; font: inherit; color: var(--petroleo); text-align: left; cursor: pointer; }
+.wv-carp-b:hover { background: #F6FBF9; }
+.wv-carp-b.static { cursor: default; }
+.wv-carp-b.static:hover { background: none; }
+.wv-carp-ico { font-size: 1.6rem; }
+.wv-carp-t { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.wv-carp-t b { overflow-wrap: anywhere; }
+.wv-carp-t small { color: var(--texto-suave); font-weight: 600; }
+.wv-carp.examen { grid-column: 1 / -1; border: 2px dashed var(--turquesa); box-shadow: none; background: #F6FBF9; }
+.wv-etq { padding: 4px 11px; border-radius: 999px; font-size: 0.78rem; font-weight: 800; white-space: nowrap; }
+.wv-etq.ok { background: #D4EFD9; color: #1E6B33; }
+.wv-etq.falta { background: #FBF0CF; color: #7A5A00; }
+.wv-etq.vacia { background: #E6ECEC; color: #4B6062; }
+.wv-herr { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 6px 8px 6px 0; }
+.wv-herr .wv-ico { width: 28px; height: 22px; }
+.wv-ico { background: var(--menta); color: var(--turquesa-oscuro); border: 0; border-radius: 8px; font-size: 0.8rem; font-weight: 800; cursor: pointer; }
+.wv-ico:disabled { opacity: 0.35; cursor: not-allowed; }
+.wv-lec-cab h2 { margin: 0 0 14px; }
+.wv-aviso { margin-bottom: 14px; padding: 12px 16px; background: #FBF0CF; color: #7A5A00; border-radius: 14px; font-weight: 700; }
+.wv-cass { display: grid; gap: 14px; }
+.wv-cas { background: #fff; border-radius: 22px; box-shadow: 0 10px 30px -18px rgba(37, 54, 56, 0.4); overflow: hidden; border-left: 6px solid #E6ECEC; }
+.wv-cas.ok { border-left-color: #4FB36B; }
+.wv-cas.falta { border-left-color: #E3B53B; }
+.wv-cas > header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--menta); }
+.wv-cas > header > div { flex: 1; min-width: 0; }
+.wv-cas h3 { margin: 0; font-size: 1.05rem; }
+.wv-cas header small { color: var(--texto-suave); font-weight: 600; }
+.wv-num { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--turquesa); color: #fff; font-weight: 800; }
+.wv-cas-ico { font-size: 1.4rem; }
+.wv-cas-c { padding: 6px 18px 14px; }
+.wv-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EEF5F3; }
+.wv-item:last-child { border-bottom: 0; }
+.wv-item-ico { font-size: 1.3rem; }
+.wv-item-t { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.wv-item-t b { overflow-wrap: anywhere; }
+.wv-item-t small { color: var(--texto-suave); font-weight: 600; }
+.wv-item-b { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.wv-item-b .wv-ico { width: 28px; height: 28px; }
+.wv-pie-cas { display: flex; align-items: center; gap: 12px; padding-top: 10px; }
+.wv-pie-cas small { color: var(--texto-suave); font-weight: 700; }
+.wv-pegar { margin-top: 8px; }
+.wv-pegar summary { cursor: pointer; font-weight: 800; color: var(--turquesa-oscuro); }
+.wv-pegar textarea { display: block; width: 100%; margin: 10px 0; padding: 12px; border: 2px solid var(--menta); border-radius: 14px; font: 0.85rem/1.4 monospace; box-sizing: border-box; }
+.wv-pegar textarea:focus { outline: 0; border-color: var(--turquesa); }
+.wv-prox-mini { padding: 6px 12px; background: #E6ECEC; color: #4B6062; border-radius: 999px; font-size: 0.8rem; font-weight: 800; }
+@media (max-width: 640px) { .wv-item { flex-wrap: wrap; } .wv-item-b { justify-content: flex-start; width: 100%; } }

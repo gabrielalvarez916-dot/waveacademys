@@ -674,7 +674,7 @@
   var VISTAS = {
     familias: vistaFamilias,
     facturacion: vistaFacturacion,
-    contenido: proximamente('Contenido'),
+    contenido: function () { return WaveContenido.abrir(vista); },
     seguimiento: proximamente('Seguimiento de alumnos'),
     registro: proximamente('Registro de actividad')
   };

@@ -1,0 +1,530 @@
+// Panel admin · Contenido: explorador de carpetas Nivel › Año › Materia › Tema › Lección.
+// Cada lección tiene 4 casilleros fijos: Clase (video + PDF), Actividad interactiva,
+// Actividades descargables y Actividad por consigna. El examen es una tarjeta aparte del tema.
+(function () {
+  var sb = Wave.sb;
+  var vista = null;
+  var S = { listo: false, levels: [], grades: [], subjects: [], topics: [], info: {}, lessons: {}, cfg: null };
+  var R = { level: null, grade: null, subject: null, topic: null, lesson: null };
+  var pendiente = null;
+
+  var TIPOS = ['video', 'pdf', 'interactive_activity', 'complementary_activity', 'final_activity'];
+
+  function esc(t) {
+    return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function toast(texto, error) {
+    var t = document.createElement('div');
+    t.className = 'wv-toast' + (error ? ' error' : '');
+    t.textContent = texto;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 3500);
+  }
+  function kb(n) { return n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+
+  // ---------- Datos ----------
+  async function todo(armar) {
+    var out = [], desde = 0;
+    for (;;) {
+      var r = await armar().range(desde, desde + 999);
+      if (r.error) throw r.error;
+      out = out.concat(r.data || []);
+      if (!r.data || r.data.length < 1000) break;
+      desde += 1000;
+    }
+    return out;
+  }
+
+  async function cargarBase() {
+    var res = await Promise.all([
+      sb.from('levels').select('id, slug, name, position').order('position'),
+      sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
+      todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position').order('position').order('id'); }),
+      todo(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); })
+    ]);
+    if (res[0].error) throw res[0].error;
+    if (res[1].error) throw res[1].error;
+    S.levels = res[0].data; S.grades = res[1].data; S.subjects = res[2]; S.topics = res[3];
+    await cargarInfo();
+    S.listo = true;
+  }
+
+  async function cargarInfo() {
+    var filas = await todo(function () { return sb.rpc('content_overview'); });
+    S.info = {};
+    filas.forEach(function (f) { S.info[f.topic_id] = f; });
+  }
+
+  function estadoTema(tid) {
+    var f = S.info[tid];
+    if (!f || !f.lessons) return 'vacia';
+    if (f.completas === f.lessons && f.tiene_examen) return 'ok';
+    if (f.completas === 0 && f.con_algo === 0 && !f.tiene_examen) return 'vacia';
+    return 'falta';
+  }
+  function rollup(estados) {
+    if (!estados.length) return 'vacia';
+    if (estados.every(function (e) { return e === 'ok'; })) return 'ok';
+    if (estados.every(function (e) { return e === 'vacia'; })) return 'vacia';
+    return 'falta';
+  }
+  function temasDe(sid) { return S.topics.filter(function (t) { return t.subject_id === sid; }); }
+  function estadoMateria(sid) { return rollup(temasDe(sid).map(function (t) { return estadoTema(t.id); })); }
+  function materiasDe(gid) { return S.subjects.filter(function (s) { return s.grade_id === gid; }); }
+  function estadoAnio(gid) { return rollup(materiasDe(gid).map(function (s) { return estadoMateria(s.id); })); }
+  function aniosDe(lid) { return S.grades.filter(function (g) { return g.level_id === lid; }); }
+  function estadoNivel(lid) { return rollup(aniosDe(lid).map(function (g) { return estadoAnio(g.id); })); }
+
+  function etiqueta(e) {
+    var t = e === 'ok' ? 'Completa' : e === 'falta' ? 'Falta algo' : 'Vacía';
+    return '<span class="wv-etq ' + e + '">' + t + '</span>';
+  }
+
+  // ---------- Llamada a las funciones de subida ----------
+  async function subidas(body) {
+    var r = await sb.functions.invoke('content-upload', { body: body });
+    if (r.error) {
+      var msg = 'No se pudo completar. Intentá de nuevo.';
+      try { var c = await r.error.context.json(); if (c && c.error) msg = c.error; } catch (e) { /* genérico */ }
+      throw new Error(msg);
+    }
+    if (r.data && r.data.error) throw new Error(r.data.error);
+    return r.data;
+  }
+
+  function enviar(url, metodo, cuerpo, onProg) {
+    return new Promise(function (ok, mal) {
+      var x = new XMLHttpRequest();
+      x.open(metodo, url);
+      x.upload.onprogress = function (ev) { if (ev.lengthComputable && onProg) onProg(Math.round(ev.loaded * 100 / ev.total)); };
+      x.onload = function () { (x.status >= 200 && x.status < 300) ? ok() : mal(new Error('El servidor rechazó el archivo (' + x.status + ').')); };
+      x.onerror = function () { mal(new Error('No se pudo subir el archivo. Revisá tu conexión (y que R2 permita subidas desde este sitio).')); };
+      x.send(cuerpo);
+    });
+  }
+
+  // ---------- Navegación ----------
+  function nombre(tipo, id) {
+    var l;
+    if (tipo === 'level') { l = S.levels.filter(function (x) { return x.id === id; })[0]; return l ? l.name : ''; }
+    if (tipo === 'grade') { l = S.grades.filter(function (x) { return x.id === id; })[0]; return l ? l.name : ''; }
+    if (tipo === 'subject') { l = S.subjects.filter(function (x) { return x.id === id; })[0]; return l ? l.name : ''; }
+    if (tipo === 'topic') { l = S.topics.filter(function (x) { return x.id === id; })[0]; return l ? l.title : ''; }
+    if (tipo === 'lesson') { var ls = S.lessons[R.topic] || []; l = ls.filter(function (x) { return x.id === id; })[0]; return l ? l.title : ''; }
+    return '';
+  }
+
+  function migas() {
+    var orden = ['level', 'grade', 'subject', 'topic', 'lesson'];
+    var h = '<nav class="wv-migas"><a data-ir="raiz">Contenido</a>';
+    var hasta = -1;
+    orden.forEach(function (k, i) { if (R[k]) hasta = i; });
+    orden.forEach(function (k, i) {
+      if (i > hasta) return;
+      h += '<span>›</span>';
+      h += i === hasta ? '<b>' + esc(nombre(k, R[k])) + '</b>'
+        : '<a data-ir="' + k + ':' + R[k] + '">' + esc(nombre(k, R[k])) + '</a>';
+    });
+    return h + '</nav>';
+  }
+
+  function ir(spec) {
+    var p = spec.split(':'), k = p[0];
+    var orden = ['level', 'grade', 'subject', 'topic', 'lesson'];
+    if (k === 'raiz') { orden.forEach(function (o) { R[o] = null; }); }
+    else {
+      var i = orden.indexOf(k);
+      R[k] = p[1];
+      orden.forEach(function (o, j) { if (j > i) R[o] = null; });
+    }
+    pintar();
+  }
+
+  function carpeta(tipo, id, titulo, detalle, estado, extra) {
+    return '<div class="wv-carp"><button type="button" class="wv-carp-b" data-ir="' + tipo + ':' + id + '">' +
+      '<span class="wv-carp-ico">📁</span><span class="wv-carp-t"><b>' + esc(titulo) + '</b><small>' + esc(detalle) + '</small></span>' +
+      etiqueta(estado) + '</button>' + (extra || '') + '</div>';
+  }
+  function herr(tipo, id, i, n) {
+    return '<span class="wv-herr">' +
+      '<button type="button" class="wv-ico" title="Subir" data-acc="mov:' + tipo + ':' + id + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
+      '<button type="button" class="wv-ico" title="Bajar" data-acc="mov:' + tipo + ':' + id + ':1"' + (i === n - 1 ? ' disabled' : '') + '>▼</button>' +
+      '<button type="button" class="wv-ico" title="Renombrar" data-acc="ren:' + tipo + ':' + id + '">✎</button></span>';
+  }
+
+  // ---------- Vistas de carpetas ----------
+  function pintar() {
+    if (!S.listo) return;
+    var h = '<h1 class="wv-titulo">Contenido</h1>' + migas();
+    if (!R.level) h += vNiveles();
+    else if (!R.grade) h += vAnios();
+    else if (!R.subject) h += vMaterias();
+    else if (!R.topic) h += vTemas();
+    else if (!R.lesson) h += vLecciones();
+    else { vista.innerHTML = h + '<div id="wv-les" class="wv-vacio">Cargando lección…</div>'; abrirLeccion(); return; }
+    vista.innerHTML = h;
+  }
+
+  function vNiveles() {
+    return '<p class="wv-sub">Elegí un nivel para entrar.</p><div class="wv-carps">' + S.levels.map(function (l) {
+      return carpeta('level', l.id, l.name, aniosDe(l.id).length + (aniosDe(l.id).length === 1 ? ' año' : ' años'), estadoNivel(l.id));
+    }).join('') + '</div>';
+  }
+  function vAnios() {
+    return '<div class="wv-carps">' + aniosDe(R.level).map(function (g) {
+      return carpeta('grade', g.id, g.name, materiasDe(g.id).length + ' materias', estadoAnio(g.id));
+    }).join('') + '</div>';
+  }
+  function vMaterias() {
+    var ms = materiasDe(R.grade);
+    if (!ms.length) return '<div class="wv-vacio">Este año todavía no tiene materias.</div>';
+    return '<div class="wv-carps">' + ms.map(function (s) {
+      var ts = temasDe(s.id);
+      var ls = ts.reduce(function (a, t) { return a + ((S.info[t.id] || {}).lessons || 0); }, 0);
+      return carpeta('subject', s.id, s.name, ts.length + ' temas · ' + ls + ' lecciones', estadoMateria(s.id));
+    }).join('') + '</div>';
+  }
+  function vTemas() {
+    var ts = temasDe(R.subject);
+    var h = '<div class="wv-barra-c"><button class="wv-btn suave mini" type="button" data-acc="nuevo:topic">+ Nuevo tema</button></div>';
+    if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene temas.</div>';
+    return h + '<div class="wv-carps">' + ts.map(function (t, i) {
+      var f = S.info[t.id] || {};
+      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length));
+    }).join('') + '</div>';
+  }
+  function vLecciones() {
+    var h = '<div class="wv-barra-c"><button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nueva lección</button></div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
+    setTimeout(cargarLecciones, 0);
+    return h;
+  }
+
+  async function lecEstados(ids) {
+    var r = await sb.from('lesson_steps').select('lesson_id, step_type, stream_uid, r2_key, content, id').in('lesson_id', ids);
+    if (r.error) throw r.error;
+    var fin = r.data.filter(function (s) { return s.step_type === 'final_activity'; }).map(function (s) { return s.id; });
+    var q = fin.length ? await sb.from('questions').select('lesson_step_id').in('lesson_step_id', fin) : { data: [] };
+    var conP = {};
+    (q.data || []).forEach(function (x) { conP[x.lesson_step_id] = true; });
+    var m = {};
+    ids.forEach(function (id) { m[id] = { v: 0, p: 0, i: 0, c: 0, f: 0 }; });
+    r.data.forEach(function (s) {
+      var x = m[s.lesson_id];
+      if (s.step_type === 'video' && s.stream_uid) x.v = 1;
+      if (s.step_type === 'pdf' && s.r2_key) x.p = 1;
+      if (s.step_type === 'interactive_activity' && s.content && Object.keys(s.content).length) x.i = 1;
+      if (s.step_type === 'complementary_activity' && s.content && s.content.files && s.content.files.length) x.c = 1;
+      if (s.step_type === 'final_activity' && conP[s.id]) x.f = 1;
+    });
+    return m;
+  }
+
+  async function cargarLecciones() {
+    var cont = document.getElementById('wv-lec-lista');
+    try {
+      var r = await sb.from('lessons').select('id, title, position').eq('topic_id', R.topic).order('position').order('created_at');
+      if (r.error) throw r.error;
+      S.lessons[R.topic] = r.data;
+      var est = r.data.length ? await lecEstados(r.data.map(function (l) { return l.id; })) : {};
+      var h = r.data.map(function (l, i) {
+        var e = est[l.id], n = e.v + e.p + e.i + e.c + e.f;
+        var estado = n === 5 ? 'ok' : n === 0 ? 'vacia' : 'falta';
+        return carpeta('lesson', l.id, l.title, n + ' de 5 partes cargadas', estado, herr('lesson', l.id, i, r.data.length));
+      }).join('');
+      var examen = (S.info[R.topic] || {}).tiene_examen;
+      h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
+        '<small>Se arma dentro de la plataforma (se aprueba con 70 o más)</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + '</div></div>';
+      cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>' + h;
+    } catch (e) {
+      console.error(e);
+      cont.innerHTML = '<div class="wv-vacio">No pudimos cargar las lecciones.<br><small>' + esc(e.message || e) + '</small></div>';
+    }
+  }
+
+  // ---------- Lección ----------
+  var L = null; // { pasos: {tipo: fila}, preguntas: n }
+
+  async function abrirLeccion() {
+    try {
+      if (!S.cfg) { try { S.cfg = await subidas({ action: 'config' }); } catch (e) { S.cfg = { error: e.message }; } }
+      var r = await sb.from('lesson_steps').select('id, step_type, stream_uid, r2_key, content, title').eq('lesson_id', R.lesson);
+      if (r.error) throw r.error;
+      var pasos = {};
+      r.data.forEach(function (s) { pasos[s.step_type] = s; });
+      var faltan = [];
+      TIPOS.forEach(function (t, i) { if (!pasos[t]) faltan.push({ lesson_id: R.lesson, step_type: t, position: i + 1 }); });
+      if (faltan.length) {
+        var ins = await sb.from('lesson_steps').insert(faltan).select('id, step_type, stream_uid, r2_key, content, title');
+        if (ins.error) throw ins.error;
+        ins.data.forEach(function (s) { pasos[s.step_type] = s; });
+      }
+      var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
+      L = { pasos: pasos, preguntas: q.count || 0, video: null };
+      if (pasos.video.stream_uid) {
+        try { L.video = await subidas({ action: 'stream_status', uid: pasos.video.stream_uid }); } catch (e) { L.video = null; }
+      }
+      pintarLeccion();
+    } catch (e) {
+      console.error(e);
+      document.getElementById('wv-les').innerHTML = 'No pudimos cargar la lección.<br><small>' + esc(e.message || e) + '</small>';
+    }
+  }
+
+  function casillero(num, icono, titulo, ayuda, estado, cuerpo) {
+    return '<section class="wv-cas ' + estado + '"><header><span class="wv-num">' + num + '</span><span class="wv-cas-ico">' + icono + '</span>' +
+      '<div><h3>' + titulo + '</h3><small>' + ayuda + '</small></div>' + etiqueta(estado === 'ok' ? 'ok' : estado === 'falta' ? 'falta' : 'vacia') + '</header>' +
+      '<div class="wv-cas-c">' + cuerpo + '</div></section>';
+  }
+  function fila(icono, nom, estadoTxt, botones, id) {
+    return '<div class="wv-item"' + (id ? ' id="' + id + '"' : '') + '><span class="wv-item-ico">' + icono + '</span><div class="wv-item-t"><b>' + nom + '</b><small>' + estadoTxt + '</small></div><div class="wv-item-b">' + botones + '</div></div>';
+  }
+  function boton(acc, txt, cls) { return '<button type="button" class="wv-btn mini ' + (cls || 'suave') + '" data-acc="' + acc + '">' + txt + '</button>'; }
+
+  function pintarLeccion() {
+    var p = L.pasos, h = '';
+    var aviso = '';
+    if (S.cfg && S.cfg.error) aviso = '<div class="wv-aviso">No pudimos comprobar la configuración de subidas: ' + esc(S.cfg.error) + '</div>';
+    else if (S.cfg && (!S.cfg.archivos || !S.cfg.videos)) {
+      aviso = '<div class="wv-aviso">Falta configurar en Supabase: ' + esc((S.cfg.faltan_archivos || []).concat(S.cfg.faltan_videos || []).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ')) + '. Hasta entonces esas subidas no van a funcionar.</div>';
+    }
+
+    // 1 · Clase
+    var v = p.video, tieneV = !!v.stream_uid;
+    var vEst = !tieneV ? 'Sin video' : (L.video && L.video.ready ? 'Video listo' : 'Procesando… (puede tardar unos minutos)');
+    var pdf = p.pdf, tieneP = !!pdf.r2_key;
+    var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
+    var clase = fila('🎬', 'Video de la clase', vEst, boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
+      fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
+    var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
+    h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
+
+    // 2 · Interactiva
+    var ct = p.interactive_activity.content || {};
+    var tieneI = Object.keys(ct).length > 0;
+    var iTxt = !tieneI ? 'Sin actividad' : ct.kind === 'html' ? 'Código HTML cargado (' + kb((ct.html || '').length) + ')' : 'Actividad de prueba (quiz de ejemplo)';
+    var inter = fila('🧩', 'Actividad interactiva', iTxt,
+      (ct.kind === 'html' ? boton('html-ver', 'Probar') : '') + boton('html-up', tieneI ? 'Reemplazar .html' : 'Subir .html', tieneI ? 'suave' : '') + (tieneI ? boton('html-del', 'Quitar', 'peligro') : ''), 'wv-i-html') +
+      '<details class="wv-pegar"><summary>O pegá el código acá</summary><textarea id="wv-html-txt" rows="7" placeholder="Pegá el código HTML completo de la actividad"></textarea>' + boton('html-save', 'Guardar código', '') + '</details>';
+    h += casillero(2, '🧩', 'Actividad interactiva', 'Archivo .html que se usa tal cual', tieneI ? 'ok' : 'vacia', inter);
+
+    // 3 · Descargables
+    var fs = (p.complementary_activity.content || {}).files || [];
+    var desc = fs.length ? fs.map(function (f, i) {
+      return '<div class="wv-item"><span class="wv-item-ico">📎</span><div class="wv-item-t"><b>' + esc(f.name) + '</b><small>' + kb(f.size || 0) + '</small></div><div class="wv-item-b">' +
+        '<button type="button" class="wv-ico" data-acc="desc-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
+        '<button type="button" class="wv-ico" data-acc="desc-mov:' + i + ':1"' + (i === fs.length - 1 ? ' disabled' : '') + '>▼</button>' +
+        boton('desc-get:' + i, 'Ver') + boton('desc-del:' + i, 'Quitar', 'peligro') + '</div></div>';
+    }).join('') : '<div class="wv-item"><span class="wv-item-ico">📎</span><div class="wv-item-t"><b>Sin archivos</b><small>Podés subir uno o más</small></div></div>';
+    desc += '<div class="wv-pie-cas">' + boton('desc-up', '+ Subir archivos', fs.length ? 'suave' : '') + '<small id="wv-i-desc"></small></div>';
+    h += casillero(3, '📎', 'Actividades descargables', 'Uno o más archivos para imprimir o completar', fs.length ? 'ok' : 'vacia', desc);
+
+    // 4 · Consigna
+    var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
+      '<span class="wv-prox-mini">Editor próximamente</span>');
+    h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
+
+    var tit = nombre('lesson', R.lesson);
+    document.getElementById('wv-les').outerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2></div>' + aviso + '<div class="wv-cass">' + h + '</div>';
+  }
+
+  // ---------- Acciones ----------
+  function elegirArchivo(accept, multiple, alElegir) {
+    var inp = document.getElementById('wv-file');
+    if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'wv-file'; inp.hidden = true; document.body.appendChild(inp); inp.addEventListener('change', function () { var f = inp.files; if (f && f.length && pendiente) pendiente(Array.prototype.slice.call(f)); inp.value = ''; }); }
+    inp.accept = accept; inp.multiple = !!multiple; pendiente = alElegir; inp.click();
+  }
+  function msg(id, txt) { var e = document.getElementById(id); if (e) { var s = e.querySelector('small') || e; s.textContent = txt; } }
+  async function guardarPaso(tipo, campos) {
+    var r = await sb.from('lesson_steps').update(campos).eq('id', L.pasos[tipo].id).select('id, step_type, stream_uid, r2_key, content, title').single();
+    if (r.error) throw r.error;
+    L.pasos[tipo] = r.data;
+  }
+  async function refrescarEstados() { try { await cargarInfo(); } catch (e) { /* se actualiza al volver */ } }
+
+  async function subirVideo(f) {
+    try {
+      msg('wv-i-video', 'Preparando subida…');
+      var d = await subidas({ action: 'stream_upload_url', name: nombre('lesson', R.lesson) });
+      var fd = new FormData(); fd.append('file', f);
+      await enviar(d.upload_url, 'POST', fd, function (p) { msg('wv-i-video', 'Subiendo… ' + p + '%'); });
+      var viejo = L.pasos.video.stream_uid;
+      await guardarPaso('video', { stream_uid: d.uid });
+      if (viejo) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* queda huérfano */ } }
+      toast('Video subido');
+      await refrescarEstados(); await abrirLeccion();
+    } catch (e) { toast(e.message, true); pintarLeccion(); }
+  }
+  async function subirPdf(f) {
+    try {
+      msg('wv-i-pdf', 'Subiendo…');
+      var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
+      await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-pdf', 'Subiendo… ' + p + '%'); });
+      var viejo = L.pasos.pdf.r2_key;
+      await guardarPaso('pdf', { r2_key: d.key, title: f.name });
+      if (viejo) { try { await subidas({ action: 'r2_delete', key: viejo }); } catch (e) { /* huérfano */ } }
+      toast('PDF subido');
+      await refrescarEstados(); pintarLeccion();
+    } catch (e) { toast(e.message, true); pintarLeccion(); }
+  }
+  async function guardarHtml(texto) {
+    if (!texto || !texto.trim()) { toast('No hay código para guardar', true); return; }
+    if (texto.length > 2000000) { toast('El archivo es demasiado grande (máximo 2 MB)', true); return; }
+    try {
+      await guardarPaso('interactive_activity', { content: { kind: 'html', html: texto } });
+      toast('Actividad guardada');
+      await refrescarEstados(); pintarLeccion();
+    } catch (e) { toast(e.message || 'No se pudo guardar', true); }
+  }
+  async function subirDescargables(archivos) {
+    var fs = ((L.pasos.complementary_activity.content || {}).files || []).slice();
+    try {
+      for (var i = 0; i < archivos.length; i++) {
+        var f = archivos[i];
+        msg('wv-i-desc', 'Subiendo ' + (i + 1) + ' de ' + archivos.length + '…');
+        var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
+        await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-desc', 'Subiendo ' + (i + 1) + ' de ' + archivos.length + '… ' + p + '%'); });
+        fs.push({ key: d.key, name: f.name, size: f.size });
+        await guardarPaso('complementary_activity', { content: { files: fs } });
+      }
+      toast(archivos.length === 1 ? 'Archivo subido' : 'Archivos subidos');
+    } catch (e) { toast(e.message, true); }
+    await refrescarEstados(); pintarLeccion();
+  }
+
+  async function abrirLink(key) {
+    var w = window.open('', '_blank');
+    try { var d = await subidas({ action: 'r2_download_url', key: key }); if (w) w.location = d.url; }
+    catch (e) { if (w) w.close(); toast(e.message, true); }
+  }
+
+  async function renumerar(tabla, lista) {
+    for (var i = 0; i < lista.length; i++) {
+      if (lista[i].position !== i + 1) {
+        var r = await sb.from(tabla).update({ position: i + 1 }).eq('id', lista[i].id);
+        if (r.error) throw r.error;
+        lista[i].position = i + 1;
+      }
+    }
+  }
+
+  async function accion(acc) {
+    var p = acc.split(':'), a = p[0];
+    try {
+      if (a === 'video-up') return elegirArchivo('video/*', false, function (fs) { subirVideo(fs[0]); });
+      if (a === 'video-del') {
+        if (!confirm('¿Quitar el video de esta lección?')) return;
+        var uid = L.pasos.video.stream_uid;
+        await guardarPaso('video', { stream_uid: null });
+        try { await subidas({ action: 'stream_delete', uid: uid }); } catch (e) { /* huérfano */ }
+        await refrescarEstados(); return abrirLeccion();
+      }
+      if (a === 'pdf-up') return elegirArchivo('application/pdf,.pdf', false, function (fs) { subirPdf(fs[0]); });
+      if (a === 'pdf-get') return abrirLink(L.pasos.pdf.r2_key);
+      if (a === 'pdf-del') {
+        if (!confirm('¿Quitar el PDF de esta lección?')) return;
+        var k = L.pasos.pdf.r2_key;
+        await guardarPaso('pdf', { r2_key: null, title: null });
+        try { await subidas({ action: 'r2_delete', key: k }); } catch (e) { /* huérfano */ }
+        await refrescarEstados(); return pintarLeccion();
+      }
+      if (a === 'html-up') return elegirArchivo('.html,.htm,text/html', false, function (fs) { fs[0].text().then(guardarHtml); });
+      if (a === 'html-save') return guardarHtml((document.getElementById('wv-html-txt') || {}).value);
+      if (a === 'html-ver') {
+        var u = URL.createObjectURL(new Blob([L.pasos.interactive_activity.content.html || ''], { type: 'text/html' }));
+        window.open(u, '_blank'); return;
+      }
+      if (a === 'html-del') {
+        if (!confirm('¿Quitar la actividad interactiva?')) return;
+        await guardarPaso('interactive_activity', { content: {} });
+        await refrescarEstados(); return pintarLeccion();
+      }
+      var fs = ((L && L.pasos.complementary_activity.content) || {}).files || [];
+      if (a === 'desc-up') return elegirArchivo('*/*', true, subirDescargables);
+      if (a === 'desc-get') return abrirLink(fs[+p[1]].key);
+      if (a === 'desc-del') {
+        if (!confirm('¿Quitar este archivo?')) return;
+        var q = fs.splice(+p[1], 1)[0];
+        await guardarPaso('complementary_activity', { content: { files: fs } });
+        try { await subidas({ action: 'r2_delete', key: q.key }); } catch (e) { /* huérfano */ }
+        await refrescarEstados(); return pintarLeccion();
+      }
+      if (a === 'desc-mov') {
+        var i = +p[1], j = i + (+p[2]);
+        if (j < 0 || j >= fs.length) return;
+        var t = fs[i]; fs[i] = fs[j]; fs[j] = t;
+        await guardarPaso('complementary_activity', { content: { files: fs } });
+        return pintarLeccion();
+      }
+      if (a === 'mov') return mover(p[1], p[2], +p[3]);
+      if (a === 'ren') return renombrar(p[1], p[2]);
+      if (a === 'nuevo') return nuevo(p[1]);
+    } catch (e) { console.error(e); toast((e && e.message) || 'No se pudo completar', true); }
+  }
+
+  async function mover(tipo, id, dir) {
+    var tabla = tipo === 'topic' ? 'topics' : 'lessons';
+    var lista = tipo === 'topic' ? temasDe(R.subject) : S.lessons[R.topic];
+    var i = lista.map(function (x) { return x.id; }).indexOf(id), j = i + dir;
+    if (i < 0 || j < 0 || j >= lista.length) return;
+    var t = lista[i]; lista[i] = lista[j]; lista[j] = t;
+    await renumerar(tabla, lista);
+    if (tipo === 'topic') { S.topics.sort(function (a, b) { return a.subject_id === b.subject_id ? a.position - b.position : 0; }); }
+    pintar();
+  }
+
+  async function renombrar(tipo, id) {
+    var lista = tipo === 'topic' ? S.topics : S.lessons[R.topic];
+    var it = lista.filter(function (x) { return x.id === id; })[0];
+    var nuevoT = prompt('Nuevo nombre:', it.title);
+    if (!nuevoT || !nuevoT.trim() || nuevoT.trim() === it.title) return;
+    var r = await sb.from(tipo === 'topic' ? 'topics' : 'lessons').update({ title: nuevoT.trim() }).eq('id', id);
+    if (r.error) throw r.error;
+    it.title = nuevoT.trim();
+    pintar();
+  }
+
+  async function nuevo(tipo) {
+    var t = prompt(tipo === 'topic' ? 'Nombre del nuevo tema:' : 'Nombre de la nueva lección:');
+    if (!t || !t.trim()) return;
+    if (tipo === 'topic') {
+      var pos = temasDe(R.subject).length + 1;
+      var r = await sb.from('topics').insert({ subject_id: R.subject, title: t.trim(), position: pos }).select('id, subject_id, title, position').single();
+      if (r.error) throw r.error;
+      S.topics.push(r.data);
+      await refrescarEstados();
+    } else {
+      var n = (S.lessons[R.topic] || []).length + 1;
+      var l = await sb.from('lessons').insert({ topic_id: R.topic, title: t.trim(), position: n }).select('id').single();
+      if (l.error) throw l.error;
+      var pasos = TIPOS.map(function (s, i) { return { lesson_id: l.data.id, step_type: s, position: i + 1 }; });
+      var ps = await sb.from('lesson_steps').insert(pasos);
+      if (ps.error) throw ps.error;
+      await refrescarEstados();
+    }
+    pintar();
+  }
+
+  // ---------- Entrada ----------
+  var enlazado = false;
+  async function abrir(el) {
+    vista = el;
+    if (!enlazado) {
+      enlazado = true;
+      vista.addEventListener('click', function (ev) {
+        var a = ev.target.closest('[data-ir]');
+        if (a) { ev.preventDefault(); ir(a.getAttribute('data-ir')); return; }
+        var b = ev.target.closest('[data-acc]');
+        if (b && !b.disabled) accion(b.getAttribute('data-acc'));
+      });
+    }
+    if (!S.listo) {
+      vista.innerHTML = '<h1 class="wv-titulo">Contenido</h1><div class="wv-vacio">Cargando…</div>';
+      await cargarBase();
+    }
+    pintar();
+  }
+
+  window.WaveContenido = { abrir: abrir };
+})();
