@@ -191,5 +191,6 @@
     return { cerrar: cerrar };
   }
 
-  window.WaveVisor = { abrirPdf: abrirPdf };
+  window.WaveVisor = window.WaveVisor || {};
+  window.WaveVisor.abrirPdf = abrirPdf;
 })();

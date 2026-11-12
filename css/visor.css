@@ -22,3 +22,15 @@ body.wvp-abierto { overflow: hidden; }
   .wvp-caja { height: 100dvh; border-radius: 0; }
   .wvp-titulo { flex-basis: 100%; order: -1; }
 }
+
+/* Reproductor de video */
+.wvv-caja { height: auto; max-height: 100dvh; }
+.wvv-cuerpo { background: #000; }
+.wvv { width: 100%; }
+.wvv-marco { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; display: grid; place-items: center; }
+.wvv-marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.wvv-estado { padding: 20px; color: #fff; font-weight: 700; text-align: center; }
+.wvv-estado.error { color: #FFC9BD; }
+.wvv-barra { display: flex; justify-content: center; gap: 10px; padding: 10px; background: var(--menta, #DDF1EA); }
+.wvv-barra[hidden] { display: none; }
+@media (max-width: 640px) { .wvv-caja { height: auto; border-radius: 0; } }

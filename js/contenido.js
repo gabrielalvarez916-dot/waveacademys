@@ -323,7 +323,7 @@
     var vEst = !tieneV ? 'Sin video' : (L.video && L.video.ready ? 'Video listo' : 'Procesando… (puede tardar unos minutos)');
     var pdf = p.pdf, tieneP = !!pdf.r2_key;
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
-    var clase = fila('🎬', 'Video de la clase', vEst, boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
+    var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
     var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
     h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
@@ -443,6 +443,15 @@
   async function accion(acc) {
     var p = acc.split(':'), a = p[0];
     try {
+      if (a === 'video-ver') {
+        var uidv = L.pasos.video.stream_uid;
+        var stv = await subidas({ action: 'stream_status', uid: uidv });
+        if (!stv.ready) return toast('El video todavía se está procesando. Probá en unos minutos.', true);
+        return WaveVisor.abrirVideo({
+          titulo: nombre('lesson', R.lesson),
+          token: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).token; }
+        });
+      }
       if (a === 'video-up') return elegirArchivo('video/*', false, function (fs) { subirVideo(fs[0]); });
       if (a === 'video-del') {
         if (!confirm('¿Quitar el video de esta lección?')) return;
