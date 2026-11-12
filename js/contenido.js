@@ -95,6 +95,12 @@
   }
 
   // ---------- Llamada a las funciones de subida ----------
+  function esYt(uid) { return /^yt:/.test(uid || ''); }
+  function idYoutube(t) {
+    t = String(t || '').trim();
+    var m = t.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([A-Za-z0-9_-]{11})/) || t.match(/^([A-Za-z0-9_-]{11})$/);
+    return m ? m[1] : null;
+  }
   async function subidas(body) {
     var r = await sb.functions.invoke('content-upload', { body: body });
     if (r.error) {
@@ -298,7 +304,7 @@
       }
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
       L = { pasos: pasos, preguntas: q.count || 0, video: null };
-      if (pasos.video.stream_uid) {
+      if (pasos.video.stream_uid && !esYt(pasos.video.stream_uid)) {
         try { L.video = await subidas({ action: 'stream_status', uid: pasos.video.stream_uid }); } catch (e) { L.video = null; }
       }
       pintarLeccion();
@@ -328,10 +334,10 @@
 
     // 1 · Clase
     var v = p.video, tieneV = !!v.stream_uid;
-    var vEst = !tieneV ? 'Sin video' : (L.video && L.video.size != null ? 'Video cargado (' + (L.video.size / 1048576).toFixed(1) + ' MB)' : 'Video cargado');
+    var vEst = !tieneV ? 'Sin video' : esYt(v.stream_uid) ? 'Video de YouTube incrustado' : (L.video && L.video.size != null ? 'Video cargado (' + (L.video.size / 1048576).toFixed(1) + ' MB)' : 'Video cargado');
     var pdf = p.pdf, tieneP = !!pdf.r2_key;
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
-    var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
+    var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
     var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
     h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
@@ -390,7 +396,7 @@
       d.uid = d.key;
       var viejo = L.pasos.video.stream_uid;
       await guardarPaso('video', { stream_uid: d.uid });
-      if (viejo) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* queda huérfano */ } }
+      if (viejo && !esYt(viejo)) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* queda huérfano */ } }
       toast('Video subido');
       await refrescarEstados(); await abrirLeccion();
     } catch (e) { toast(e.message, true); pintarLeccion(); }
@@ -458,8 +464,20 @@
   async function accion(acc) {
     var p = acc.split(':'), a = p[0];
     try {
+      if (a === 'video-yt') {
+        var enl = prompt('Pegá el enlace del video de YouTube:');
+        if (enl == null) return;
+        var idy = idYoutube(enl);
+        if (!idy) return toast('Ese enlace no parece de un video de YouTube.', true);
+        var ant = L.pasos.video.stream_uid;
+        await guardarPaso('video', { stream_uid: 'yt:' + idy });
+        if (ant && !esYt(ant)) { try { await subidas({ action: 'stream_delete', uid: ant }); } catch (e) { /* huérfano */ } }
+        toast('Video de YouTube guardado');
+        await refrescarEstados(); return abrirLeccion();
+      }
       if (a === 'video-ver') {
         var uidv = L.pasos.video.stream_uid;
+        if (esYt(uidv)) return WaveVisor.abrirVideo({ titulo: nombre('lesson', R.lesson), youtube: uidv.slice(3) });
         var stv = await subidas({ action: 'stream_status', uid: uidv });
         if (!stv.ready) return toast('No se encontró el archivo del video.', true);
         return WaveVisor.abrirVideo({
@@ -491,7 +509,7 @@
         if (!confirm('¿Quitar el video de esta lección?')) return;
         var uid = L.pasos.video.stream_uid;
         await guardarPaso('video', { stream_uid: null });
-        try { await subidas({ action: 'stream_delete', uid: uid }); } catch (e) { /* huérfano */ }
+        if (!esYt(uid)) { try { await subidas({ action: 'stream_delete', uid: uid }); } catch (e) { /* huérfano */ } }
         await refrescarEstados(); return abrirLeccion();
       }
       if (a === 'pdf-up') return elegirArchivo('application/pdf,.pdf', false, function (fs) { subirPdf(fs[0]); });
@@ -647,7 +665,7 @@
       var u = await sb.from('subjects').update({ intro_video_uid: d.uid }).eq('id', R.subject);
       if (u.error) throw u.error;
       sj.intro_video_uid = d.uid;
-      if (viejo) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* huérfano */ } }
+      if (viejo && !esYt(viejo)) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* huérfano */ } }
       toast('Introducción subida');
     } catch (e) { toast(e.message || 'No se pudo subir', true); }
     pintar();
@@ -673,7 +691,7 @@
       var st = pasos[i], claves = [];
       if (st.r2_key) claves.push(st.r2_key);
       ((st.content && st.content.files) || []).forEach(function (f) { if (f.key) claves.push(f.key); });
-      if (st.stream_uid) { try { await subidas({ action: 'stream_delete', uid: st.stream_uid }); } catch (e) { /* queda huérfano */ } }
+      if (st.stream_uid && !esYt(st.stream_uid)) { try { await subidas({ action: 'stream_delete', uid: st.stream_uid }); } catch (e) { /* queda huérfano */ } }
       for (var k = 0; k < claves.length; k++) { try { await subidas({ action: 'r2_delete', key: claves[k] }); } catch (e) { /* queda huérfano */ } }
     }
   }

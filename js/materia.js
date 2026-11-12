@@ -378,8 +378,12 @@
     if (!f || !paso) return;
     try {
       if (k === 'video') {
-        WaveVisor.abrirVideo({ titulo: f.l.titulo, alTerminar: function () { marcar(paso); },
-          url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
+        if (/^yt:/.test(paso.stream_uid || '')) {
+          WaveVisor.abrirVideo({ titulo: f.l.titulo, youtube: paso.stream_uid.slice(3), alTerminar: function () { marcar(paso); } });
+        } else {
+          WaveVisor.abrirVideo({ titulo: f.l.titulo, alTerminar: function () { marcar(paso); },
+            url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
+        }
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
           chat: function (mensaje, conv) { return llamar('chat-tutor', { message: mensaje, lesson_step_id: paso.id, conversation_id: conv || undefined }); },

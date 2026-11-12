@@ -30,6 +30,31 @@
       barra.hidden = true;
     }
 
+    // Video de YouTube incrustado (no se descarga ni se copia: se reproduce desde YouTube)
+    if (opts.youtube) {
+      var terminar = function () { if (avisado || !opts.alTerminar) return; avisado = true; try { opts.alTerminar(); } catch (e0) { /* nada */ } };
+      var fr = document.createElement('iframe');
+      fr.className = 'wvv-yt';
+      fr.title = opts.titulo || 'Video';
+      fr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      fr.allowFullscreen = true;
+      fr.referrerPolicy = 'strict-origin-when-cross-origin';
+      fr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(opts.youtube) + '?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&origin=' + encodeURIComponent(location.origin);
+      var oir = function (ev) {
+        if (ev.source !== fr.contentWindow) return;
+        try { var d = typeof ev.data === 'string' ? JSON.parse(ev.data) : ev.data; if (d && d.info && d.info.playerState === 0) terminar(); } catch (e1) { /* otro mensaje */ }
+      };
+      window.addEventListener('message', oir);
+      fr.addEventListener('load', function () { try { fr.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), '*'); } catch (e2) { /* nada */ } });
+      marco.innerHTML = ''; marco.classList.add('yt'); marco.appendChild(fr);
+      if (opts.alTerminar) {
+        barra.innerHTML = '<button type="button" class="wvp-b wvv-listo">✔ Ya vi el video</button>';
+        barra.hidden = false;
+        barra.querySelector('.wvv-listo').addEventListener('click', function (ev) { terminar(); ev.currentTarget.disabled = true; ev.currentTarget.textContent = '✔ ¡Listo!'; });
+      }
+      return { destruir: function () { vivo = false; window.removeEventListener('message', oir); cont.innerHTML = ''; } };
+    }
+
     Promise.resolve().then(function () { return opts.url(); }).then(function (enlace) {
       if (!vivo) return;
       video = document.createElement('video');
