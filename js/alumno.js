@@ -230,7 +230,7 @@
 
   // ---------- Programación ----------
   var DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
-  var prog = { cursos: [], filas: [], finAnio: null, uid: null, ocupado: false };
+  var prog = { cursos: [], filas: [], finAnio: null, uid: null, ocupado: false, inicio: null, meses: null, lecciones: {} };
 
   function fechaLarga(d) {
     return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -245,6 +245,27 @@
   // Día en que se terminan los temas que faltan, siguiendo el programa (de lunes a viernes)
   // Se cuentan 40 semanas activas por año (hay vacaciones y feriados): el calendario real es 52/40 más largo
   var FACTOR_CALENDARIO = 52 / 40;
+
+  // Fecha objetivo = primer ingreso + semanas que pide la tabla del año con la programación semanal:
+  // lecciones del año de cada materia ÷ lecciones por semana (manda la materia que más tarda)
+  function recalcularObjetivo() {
+    prog.finAnio = null;
+    if (!prog.inicio || !prog.meses) return;
+    var semanas = 0;
+    prog.cursos.forEach(function (c) {
+      var total = prog.lecciones[c.id];
+      if (!total) return;
+      var sem = 0;
+      prog.filas.forEach(function (f) { if (f.subject_id === c.id) sem += f.lessons_target; });
+      if (sem > 0) semanas = Math.max(semanas, Math.ceil(total / sem));
+    });
+    var f = new Date(prog.inicio);
+    f.setHours(12, 0, 0, 0);
+    if (isNaN(f.getTime())) return;
+    if (semanas) f.setDate(f.getDate() + Math.round(semanas * 7 * FACTOR_CALENDARIO));
+    else f.setMonth(f.getMonth() + prog.meses);
+    prog.finAnio = f;
+  }
 
   function fechaFin(restantes, porDia) {
     var hoy = new Date();
@@ -361,6 +382,7 @@
   function pintarProgramacion() {
     var cont = document.getElementById('prog');
     if (!cont) return;
+    recalcularObjetivo();
     var hoySemana = new Date().getDay();
 
     var dias = DIAS.map(function (nombre, i) {
@@ -416,6 +438,7 @@
     }).join('');
 
     cont.innerHTML =
+      '<div class="prog-acciones"><button type="button" class="prog-reset" data-a="restablecer">Restablecer programación recomendada</button></div>' +
       '<div class="semana">' + dias + '</div>' +
       '<h2 class="vista-subtitulo">Trayectoria</h2>' +
       htmlHero(t) +
@@ -462,46 +485,24 @@
     prog.filas = prog.filas.concat(r.data);
   }
 
-  // Cuántas veces por semana va cada materia: Lengua y Matemática 3, el resto 2
-  function vecesPorSemana(nombre) {
-    var n = String(nombre || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    if (n.indexOf('lengua') !== -1 || n.indexOf('matemat') !== -1) return 3;
-    return 2;
-  }
-
-  // Reparte las materias en la semana: cada una con sus días, parejo y evitando días seguidos
-  function armarSemana(cursos) {
-    var carga = [0, 0, 0, 0, 0, 0];
-    var orden = cursos.map(function (c, i) { return { c: c, i: i, v: vecesPorSemana(c.nombre) }; })
-      .sort(function (a, b) { return b.v - a.v || a.i - b.i; });
-    var filas = [];
-    orden.forEach(function (o) {
-      var elegidos = [];
-      for (var k = 0; k < Math.min(o.v, 5); k++) {
-        var mejor = 0, mejorPuntaje = Infinity;
-        for (var d = 1; d <= 5; d++) {
-          if (elegidos.indexOf(d) !== -1) continue;
-          var vecinos = (elegidos.indexOf(d - 1) !== -1 ? 1 : 0) + (elegidos.indexOf(d + 1) !== -1 ? 1 : 0);
-          var puntaje = carga[d] * 100 + vecinos * 10 + d;
-          if (puntaje < mejorPuntaje) { mejorPuntaje = puntaje; mejor = d; }
-        }
-        elegidos.push(mejor);
-        filas.push({ weekday: mejor, subject_id: o.c.id, position: carga[mejor] });
-        carga[mejor]++;
-      }
-    });
-    return filas;
-  }
-
-  async function sugerirPrograma() {
-    var filas = armarSemana(prog.cursos).map(function (f) {
-      return { student_id: estudianteId, weekday: f.weekday, subject_id: f.subject_id,
-               lessons_target: 1, position: f.position, updated_by: prog.uid };
-    });
-    var r = await sb.from('study_schedule').insert(filas)
-      .select('id, weekday, subject_id, lessons_target, position');
+  // Trae de nuevo la programación guardada
+  async function recargarFilas() {
+    var r = await sb.from('study_schedule').select('id, weekday, subject_id, lessons_target, position')
+      .eq('student_id', estudianteId).order('position');
     if (r.error) throw r.error;
-    prog.filas = prog.filas.concat(r.data);
+    prog.filas = r.data || [];
+  }
+
+  // Programa recomendado: lo arma la base según la carga de cada materia y el plazo elegido
+  async function armarProgramaRecomendado() {
+    var r = await sb.rpc('apply_recommended_schedule', { p_student: estudianteId });
+    if (r.error) throw r.error;
+    await recargarFilas();
+  }
+
+  async function restablecer() {
+    if (prog.filas.length && !confirm('Se reemplaza tu programación actual por la recomendada. ¿Seguimos?')) return;
+    await armarProgramaRecomendado();
   }
 
   function engancharProgramacion(cont) {
@@ -523,6 +524,7 @@
       else if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
       else if (a === 'menos') guardar(function () { return cambiarCantidad(id, -1); });
       else if (a === 'quitar') guardar(function () { return quitarFila(id); });
+      else if (a === 'restablecer') guardar(restablecer);
       else if (a === 'agregar') {
         var dia = Number(b.getAttribute('data-dia'));
         var mat = b.getAttribute('data-mat');
@@ -548,22 +550,18 @@
       if (r.error) throw r.error;
       prog.filas = r.data || [];
 
-      // Primera vez: el programa viene armado, después se edita
-      if (!prog.filas.length) {
-        try {
-          var otra = await sb.from('study_schedule').select('id', { count: 'exact', head: true }).eq('student_id', estudianteId);
-          if (!otra.error && !otra.count) await sugerirPrograma();
-        } catch (e) { /* si no puede armarlo, queda vacío y se agrega a mano */ }
-      }
-
-      // Fecha objetivo: primer ingreso + plazo que eligió la familia (si no eligió, no se compara)
+      // Fecha objetivo: primer ingreso + semanas de la tabla del año según la programación (si la familia no eligió plazo, no se compara)
       var yo = await sb.from('students').select('started_at, target_months').eq('id', estudianteId).maybeSingle();
-      prog.finAnio = null;
-      if (yo.data && yo.data.started_at && yo.data.target_months) {
-        var f = new Date(yo.data.started_at);
-        f.setMonth(f.getMonth() + yo.data.target_months);
-        f.setHours(12, 0, 0, 0);
-        if (!isNaN(f.getTime())) prog.finAnio = f;
+      prog.inicio = yo.data ? yo.data.started_at : null;
+      prog.meses = yo.data ? yo.data.target_months : null;
+
+      var cfg = await sb.from('subject_load_config').select('subject_id, lessons_total');
+      prog.lecciones = {};
+      (cfg.data || []).forEach(function (x) { prog.lecciones[x.subject_id] = x.lessons_total; });
+
+      // Primera vez: el programa viene armado por la base, después se edita
+      if (!prog.filas.length) {
+        try { await armarProgramaRecomendado(); } catch (e) { /* queda vacío y se agrega a mano */ }
       }
 
       engancharProgramacion(cont);

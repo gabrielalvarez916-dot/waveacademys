@@ -436,3 +436,19 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 
 .meta-estado { margin: 14px 2px 0; color: var(--texto-suave); font-size: 0.95rem; font-weight: 600; line-height: 1.5; }
 .meta-estado b { color: var(--petroleo); font-weight: 800; }
+
+/* Botón para volver al programa recomendado */
+.meta-acciones { display: flex; justify-content: flex-end; margin-top: 12px; }
+.meta-reset {
+  padding: 9px 16px;
+  background: transparent;
+  border: 2px solid var(--menta);
+  border-radius: 999px;
+  color: var(--turquesa-oscuro);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.meta-reset:hover { background: var(--menta); }
