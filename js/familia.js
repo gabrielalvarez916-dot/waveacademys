@@ -774,6 +774,132 @@
     }
   }
 
+  // ---------- Facturación (una suscripción de Mercado Pago por hijo) ----------
+  var ESTADO_SUSC = {
+    active: ['Activa', 'ok'],
+    pending: ['Pendiente de activación', 'pend'],
+    past_due: ['Pago pendiente', 'atraso'],
+    suspended: ['Suspendida', 'atraso'],
+    cancelled: ['Cancelada', 'neutro']
+  };
+
+  var ESTADO_PAGO = {
+    approved: ['Pagado', 'ok'], authorized: ['Pagado', 'ok'],
+    pending: ['En proceso', 'pend'], in_process: ['En proceso', 'pend'],
+    rejected: ['Rechazado', 'atraso'], charged_back: ['Contracargo', 'atraso'],
+    cancelled: ['Cancelado', 'neutro'], refunded: ['Reembolsado', 'neutro']
+  };
+
+  function dinero(n, moneda) {
+    if (n == null || Number(n) === 0) return '—';
+    try {
+      return new Intl.NumberFormat('es-AR', { style: 'currency', currency: moneda || 'ARS',
+        minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(Number(n));
+    } catch (e) {
+      return '$ ' + Number(n).toLocaleString('es-AR');
+    }
+  }
+
+  function fechaODash(v) {
+    if (!v) return '—';
+    var d = new Date(v);
+    return isNaN(d.getTime()) ? '—' : fechaCorta(d);
+  }
+
+  function htmlPagos(pagos) {
+    if (!pagos || !pagos.length) {
+      return '<p class="fa-sin-pagos">Todavía no hay pagos registrados.</p>';
+    }
+    return '<ul class="fa-hist">' + pagos.map(function (p) {
+      var e = ESTADO_PAGO[p.status] || ['Otro', 'neutro'];
+      return '<li><span class="fa-h-fecha">' + esc(fechaODash(p.paid_at || p.created_at)) + '</span>' +
+        '<b class="fa-h-monto">' + esc(dinero(p.amount, 'ARS')) + '</b>' +
+        '<span class="fa-pill ' + e[1] + '">' + esc(e[0]) + '</span></li>';
+    }).join('') + '</ul>';
+  }
+
+  function htmlSuscripcion(s) {
+    var est = ESTADO_SUSC[s.status] || [String(s.status || ''), 'neutro'];
+    var aviso = '';
+    if (s.status === 'past_due') {
+      aviso = '<p class="fa-aviso atraso">No pudimos cobrar la última cuota.' +
+        (s.grace_until ? ' Tenés hasta el <b>' + esc(fechaLarga(new Date(s.grace_until))) + '</b> para regularizarlo.' : '') + '</p>';
+    } else if (s.status === 'suspended') {
+      aviso = '<p class="fa-aviso atraso">La suscripción está suspendida.</p>';
+    } else if (s.status === 'cancelled') {
+      aviso = '<p class="fa-aviso">Suscripción cancelada' + (s.cancelled_at ? ' el ' + esc(fechaODash(s.cancelled_at)) : '') + '.</p>';
+    } else if (s.status === 'pending') {
+      aviso = '<p class="fa-aviso">Todavía no se confirmó el primer pago.</p>';
+    }
+    var cobra = s.status === 'active' || s.status === 'past_due';
+    return '<div class="fa-top"><span class="fa-pill ' + est[1] + '">' + esc(est[0]) + '</span></div>' +
+      '<div class="fa-datos">' +
+        '<div class="fa-dato"><small>Monto mensual</small><b>' + esc(dinero(s.amount, s.currency)) + '</b></div>' +
+        '<div class="fa-dato"><small>Próximo cobro</small><b>' + esc(cobra ? fechaODash(s.next_payment_date) : '—') + '</b></div>' +
+        '<div class="fa-dato"><small>Último pago</small><b>' + esc(fechaODash(s.last_payment_at)) + '</b></div>' +
+      '</div>' + aviso +
+      '<h3 class="fa-sub">Historial de pagos</h3>' + htmlPagos(s.payments);
+  }
+
+  async function vistaFacturacion() {
+    vista.innerHTML = '<h1 class="vista-titulo">Facturación</h1><div id="facturacion"></div>';
+    var cont = document.getElementById('facturacion');
+    cont.innerHTML = '<div class="vacio">Cargando…</div>';
+    try {
+      var res = await Promise.all([
+        sb.from('students')
+          .select('id, first_name, last_name, created_at, grades(name, levels(name))')
+          .order('created_at', { ascending: true }),
+        sb.rpc('family_billing')
+      ]);
+      res.forEach(function (r) { if (r.error) throw r.error; });
+
+      var hijos = res[0].data || [];
+      var susc = res[1].data || [];
+      var porHijo = {}, sueltas = [];
+      susc.forEach(function (s) {
+        if (s.student_id) porHijo[s.student_id] = s; else sueltas.push(s);
+      });
+
+      if (!hijos.length && !sueltas.length) {
+        cont.innerHTML = '<div class="vacio">Todavía no tenés suscripciones. Cuando des de alta a un hijo, acá vas a ver su suscripción y sus pagos.</div>';
+        return;
+      }
+
+      var total = 0, moneda = 'ARS';
+      susc.forEach(function (s) {
+        if ((s.status === 'active' || s.status === 'past_due') && s.amount) { total += Number(s.amount); moneda = s.currency || moneda; }
+      });
+
+      var html = '<p class="fa-intro">Cada hijo tiene su propia suscripción mensual de Mercado Pago.</p>';
+      if (total > 0) {
+        html += '<div class="fa-total"><small>Total mensual</small><b>' + esc(dinero(total, moneda)) + '</b></div>';
+      }
+
+      html += hijos.map(function (h) {
+        var nombre = h.first_name + ' ' + h.last_name;
+        var ini = nombre.split(' ').map(function (p) { return p.charAt(0); }).slice(0, 2).join('').toUpperCase();
+        var s = porHijo[h.id];
+        return '<section class="fa-card">' +
+          '<div class="pg-cab"><div class="hijo-ini">' + esc(ini) + '</div>' +
+          '<div><h2>' + esc(nombre) + '</h2><span>' + esc(h.grades ? etiquetaAnio(h.grades) : '') + '</span></div></div>' +
+          (s ? htmlSuscripcion(s) : '<p class="fa-aviso">Todavía no tiene una suscripción asociada.</p>') +
+        '</section>';
+      }).join('');
+
+      var libres = sueltas.filter(function (s) { return s.status === 'active' || s.status === 'past_due'; });
+      if (libres.length) {
+        html += '<section class="fa-card"><h2 class="fa-libre">Suscripciones sin hijo asignado</h2>' +
+          '<p class="fa-aviso">Tenés ' + libres.length + (libres.length === 1 ? ' suscripción disponible' : ' suscripciones disponibles') +
+          '. Podés usarla para dar de alta a un hijo en <a href="#altas">Altas</a>.</p></section>';
+      }
+
+      cont.innerHTML = html;
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar la facturación. Probá recargar la página.</div>';
+    }
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -786,7 +912,7 @@
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
-    facturacion: proximamente('Facturación')
+    facturacion: vistaFacturacion
   };
 
   function ruta() {
