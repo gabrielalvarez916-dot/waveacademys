@@ -382,6 +382,7 @@
           url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
+          chat: function (mensaje, conv) { return llamar('chat-tutor', { message: mensaje, lesson_step_id: paso.id, conversation_id: conv || undefined }); },
           url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc })).url; } });
       } else if (k === 'interactive') {
         var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();

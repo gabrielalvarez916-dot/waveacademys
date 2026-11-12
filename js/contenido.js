@@ -402,6 +402,13 @@
       await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-pdf', 'Subiendo… ' + p + '%'); });
       var viejo = L.pasos.pdf.r2_key;
       await guardarPaso('pdf', { r2_key: d.key, title: f.name });
+      await sb.from('lesson_steps').update({ extracted_text: null }).eq('id', L.pasos.pdf.id);
+      // El tutor lee el PDF a través de su texto: se extrae en segundo plano
+      msg('wv-i-pdf', 'Preparando el tutor con este PDF…');
+      sb.functions.invoke('extract-pdf-text', { body: { lesson_step_id: L.pasos.pdf.id } }).then(function (x) {
+        var m = x.error ? 'El PDF se subió, pero no se pudo preparar el tutor. Volvé a subirlo.' : (x.data && x.data.error);
+        if (m) toast(m, true); else toast('Tutor listo con este PDF');
+      });
       if (viejo) { try { await subidas({ action: 'r2_delete', key: viejo }); } catch (e) { /* huérfano */ } }
       toast('PDF subido');
       await refrescarEstados(); pintarLeccion();
@@ -499,6 +506,7 @@
         if (!confirm('¿Quitar el PDF de esta lección?')) return;
         var k = L.pasos.pdf.r2_key;
         await guardarPaso('pdf', { r2_key: null, title: null });
+        await sb.from('lesson_steps').update({ extracted_text: null }).eq('id', L.pasos.pdf.id);
         try { await subidas({ action: 'r2_delete', key: k }); } catch (e) { /* huérfano */ }
         await refrescarEstados(); return pintarLeccion();
       }
