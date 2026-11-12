@@ -112,3 +112,30 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 /* El contenido del admin no espera a la guardia para mostrarse (la guardia igual redirige si no es admin) */
 .wv-main { visibility: visible !important; }
 .wv-vacio small { display: block; margin-top: 8px; font-weight: 600; word-break: break-word; }
+
+/* Facturación */
+.wv-stat.alerta b { color: var(--error-texto); }
+.wv-resumen#wv-resumen-fac { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.wv-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.wv-tab { padding: 10px 18px; background: transparent; border: 2px solid var(--turquesa); border-radius: 999px; font: inherit; font-weight: 800; color: var(--turquesa-oscuro); cursor: pointer; }
+.wv-tab.on { background: var(--turquesa); color: #fff; }
+
+.wv-fila { display: grid; grid-template-columns: 1.5fr 1.1fr 0.8fr 1.3fr 1.2fr; gap: 10px 18px; align-items: start; padding: 16px 20px; margin-bottom: 10px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px -18px rgba(37, 54, 56, 0.4); }
+.wv-fila.pago { grid-template-columns: 1.5fr 1fr 0.9fr 1.3fr 1.3fr; align-items: center; }
+.wv-fila.evento { grid-template-columns: 1.3fr 0.9fr 1.2fr 3fr; }
+.wv-monto { display: block; font-size: 1.15rem; font-weight: 800; }
+.wv-dato-fuerte { display: block; font-weight: 700; font-size: 0.95rem; }
+.wv-mora { color: var(--error-texto); font-weight: 700; margin-top: 4px; }
+.wv-error-txt { padding: 8px 12px; background: var(--error-fondo); color: var(--error-texto); border-radius: 12px; font-weight: 700; font-size: 0.9rem; overflow-wrap: anywhere; }
+.wv-fila details { margin-top: 8px; }
+.wv-fila summary { cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--turquesa-oscuro); }
+.wv-json { max-height: 220px; overflow: auto; margin: 8px 0 0; padding: 10px 12px; background: #F2F7F6; border-radius: 12px; font-size: 0.78rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .wv-fila, .wv-fila.pago, .wv-fila.evento { grid-template-columns: 1fr 1fr; padding: 14px 16px; }
+  .wv-fila > :first-child, .wv-fila .wv-ancho { grid-column: 1 / -1; }
+}
+.wv-fila { grid-template-columns: 1.8fr 1.1fr 0.8fr 1.3fr 1.2fr; }
+.wv-fila .wv-dato { overflow-wrap: break-word; word-break: normal; }
+.wv-resumen#wv-resumen-fac { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.wv-stat small { min-height: 1.9em; }

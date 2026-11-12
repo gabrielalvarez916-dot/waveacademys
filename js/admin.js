@@ -390,6 +390,280 @@
     }
   }
 
+
+  // ---------- Facturación ----------
+  var fac = { tab: 'subs', filtro: 'todas', busqueda: '', subs: [], pagos: [], eventos: [], gracia: 15 };
+
+  function dinero(n, moneda) {
+    if (n == null || n === '') return '—';
+    var t = '$' + Number(n).toLocaleString('es-AR', { maximumFractionDigits: 2 });
+    return moneda && moneda !== 'ARS' ? t + ' ' + moneda : t;
+  }
+  function fechaCorta(iso) { return iso ? new Date(iso).toLocaleDateString('es-AR') : '—'; }
+  function fechaHora(iso) {
+    if (!iso) return '—';
+    var d = new Date(iso);
+    return d.toLocaleDateString('es-AR') + ' ' + d.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+  }
+  function diasHasta(iso) {
+    var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+    var f = new Date(iso); f.setHours(0, 0, 0, 0);
+    return Math.round((f - hoy) / 86400000);
+  }
+  function textoProximo(sub) {
+    if (!sub.next_payment_date || sub.status === 'cancelled' || sub.status === 'suspended') return '—';
+    var d = diasHasta(sub.next_payment_date);
+    var rel = d < 0 ? 'venció hace ' + (-d) + (d === -1 ? ' día' : ' días') : d === 0 ? 'hoy' : d === 1 ? 'mañana' : 'en ' + d + ' días';
+    return fechaCorta(sub.next_payment_date) + ' · ' + rel;
+  }
+
+  var ESTADO_PAGO = {
+    approved:   { txt: 'Aprobado',  cls: 'ok' },
+    processed:  { txt: 'Aprobado',  cls: 'ok' },
+    rejected:   { txt: 'Rechazado', cls: 'deuda' },
+    cancelled:  { txt: 'Cancelado', cls: 'off' },
+    refunded:   { txt: 'Reintegrado', cls: 'off' },
+    charged_back: { txt: 'Contracargo', cls: 'deuda' },
+    pending:    { txt: 'Pendiente', cls: 'pend' },
+    in_process: { txt: 'En proceso', cls: 'pend' },
+    scheduled:  { txt: 'Programado', cls: 'pend' }
+  };
+  function pillPago(st) {
+    var e = ESTADO_PAGO[st];
+    return '<span class="wv-pill ' + (e ? e.cls : 'off') + '">' + esc(e ? e.txt : (st || '—')) + '</span>';
+  }
+  function esAprobado(st) { return st === 'approved' || st === 'processed'; }
+
+  function quien(sub) {
+    var fam = sub && sub.families && sub.families.profiles ? sub.families.profiles : {};
+    var alu = sub && sub.students ? sub.students.first_name + ' ' + sub.students.last_name : null;
+    return { familia: fam.full_name || fam.email || 'Familia sin nombre', correo: fam.email || '', alumno: alu };
+  }
+
+  async function cargarFacturacion() {
+    var res = await Promise.all([
+      sb.from('subscriptions')
+        .select('id, status, amount, currency, mp_preapproval_id, next_payment_date, last_payment_at, past_due_since, cancelled_at, created_at, families(profiles!families_profile_id_fkey(full_name, email)), students(first_name, last_name)')
+        .order('created_at', { ascending: false }),
+      sb.from('payments')
+        .select('id, mp_payment_id, status, amount, paid_at, created_at, subscriptions(families(profiles!families_profile_id_fkey(full_name, email)), students(first_name, last_name))')
+        .order('created_at', { ascending: false }).limit(200),
+      sb.from('mp_webhook_events')
+        .select('id, topic, resource_id, received_at, processed_at, error, payload')
+        .order('received_at', { ascending: false }).limit(100),
+      sb.from('app_settings').select('value').eq('key', 'grace_days').maybeSingle()
+    ]);
+    if (res[0].error) throw res[0].error;
+    if (res[1].error) throw res[1].error;
+    if (res[2].error) throw res[2].error;
+    fac.subs = res[0].data || [];
+    fac.pagos = res[1].data || [];
+    fac.eventos = res[2].data || [];
+    if (res[3].data && Number(res[3].data.value) > 0) fac.gracia = Number(res[3].data.value);
+  }
+
+  function pintarResumenFac() {
+    var activas = 0, deuda = 0, pend = 0, esperado = 0, prox7 = 0, cobradoMes = 0, errores = 0;
+    var ahora = new Date();
+    fac.subs.forEach(function (s) {
+      if (s.status === 'active') activas++;
+      if (s.status === 'past_due') deuda++;
+      if (s.status === 'pending') pend++;
+      if (s.status === 'active' || s.status === 'past_due') esperado += Number(s.amount || 0);
+      if (s.status === 'active' && s.next_payment_date) {
+        var d = diasHasta(s.next_payment_date);
+        if (d >= 0 && d <= 7) prox7++;
+      }
+    });
+    fac.pagos.forEach(function (p) {
+      if (!esAprobado(p.status) || !p.paid_at) return;
+      var f = new Date(p.paid_at);
+      if (f.getFullYear() === ahora.getFullYear() && f.getMonth() === ahora.getMonth()) cobradoMes += Number(p.amount || 0);
+    });
+    fac.eventos.forEach(function (e) { if (e.error) errores++; });
+
+    document.getElementById('wv-resumen-fac').innerHTML = [
+      ['Activas', activas, ''], ['Con deuda', deuda, deuda ? 'alerta' : ''], ['Pendientes', pend, ''],
+      ['Ingreso mensual esperado', dinero(esperado), ''], ['Cobrado este mes', dinero(cobradoMes), ''],
+      ['Cobros en 7 días', prox7, ''], ['Avisos con error', errores, errores ? 'alerta' : '']
+    ].map(function (x) {
+      return '<div class="wv-stat' + (x[2] ? ' ' + x[2] : '') + '"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>';
+    }).join('');
+  }
+
+  function subCoincide(s) {
+    var q = fac.busqueda.trim().toLowerCase();
+    if (q) {
+      var w = quien(s);
+      var t = [w.familia, w.correo, w.alumno || '', s.mp_preapproval_id || '', s.id].join(' ').toLowerCase();
+      if (t.indexOf(q) === -1) return false;
+    }
+    switch (fac.filtro) {
+      case 'activas': return s.status === 'active';
+      case 'deuda': return s.status === 'past_due';
+      case 'pend': return s.status === 'pending';
+      case 'baja': return s.status === 'cancelled' || s.status === 'suspended';
+      default: return true;
+    }
+  }
+
+  function htmlSub(s) {
+    var w = quien(s);
+    var mora = '';
+    if (s.status === 'past_due' && s.past_due_since) {
+      var dias = Math.floor((Date.now() - new Date(s.past_due_since).getTime()) / 86400000);
+      var quedan = fac.gracia - dias;
+      mora = '<div class="wv-dato wv-mora">En mora hace ' + dias + (dias === 1 ? ' día' : ' días') +
+        (quedan > 0 ? ' · quedan ' + quedan + ' de gracia' : ' · gracia vencida') + '</div>';
+    }
+    return '<div class="wv-fila">' +
+      '<div><div class="wv-nombre">' + esc(w.familia) + '</div>' +
+        '<div class="wv-dato">' + esc(w.correo) + '</div>' +
+        '<div class="wv-dato">' + (w.alumno ? 'Alumno: ' + esc(w.alumno) : '<i>Cupo sin alumno vinculado</i>') + '</div></div>' +
+      '<div><span class="wv-rot">Estado</span>' + pill(s.status) + mora +
+        (s.status === 'cancelled' && s.cancelled_at ? '<div class="wv-dato">Desde ' + fechaCorta(s.cancelled_at) + '</div>' : '') + '</div>' +
+      '<div><span class="wv-rot">Monto</span><span class="wv-monto">' + esc(dinero(s.amount, s.currency)) + '</span><div class="wv-dato">por mes</div></div>' +
+      '<div><span class="wv-rot">Próximo cobro</span><span class="wv-dato-fuerte">' + esc(textoProximo(s)) + '</span>' +
+        '<div class="wv-dato">Último pago: ' + (s.last_payment_at ? fechaCorta(s.last_payment_at) : 'ninguno') + '</div></div>' +
+      '<div><span class="wv-rot">Mercado Pago</span><span class="wv-dato">' + (s.mp_preapproval_id ? 'ID ' + esc(s.mp_preapproval_id) : 'Sin vincular') + '</span>' +
+        '<div class="wv-dato">Alta: ' + fechaCorta(s.created_at) + '</div>' +
+        '<button type="button" class="wv-btn mini suave" style="margin-top:6px" data-copiar-id="' + esc(s.id) + '">Copiar ID de cupo</button></div>' +
+      '</div>';
+  }
+
+  function htmlPago(p) {
+    var w = quien(p.subscriptions);
+    return '<div class="wv-fila pago">' +
+      '<div><div class="wv-nombre">' + esc(w.familia) + '</div><div class="wv-dato">' + (w.alumno ? esc(w.alumno) : esc(w.correo)) + '</div></div>' +
+      '<div><span class="wv-rot">Estado</span>' + pillPago(p.status) + '</div>' +
+      '<div><span class="wv-rot">Monto</span><span class="wv-monto">' + esc(dinero(p.amount)) + '</span></div>' +
+      '<div><span class="wv-rot">Fecha</span><span class="wv-dato-fuerte">' + esc(fechaHora(p.paid_at || p.created_at)) + '</span></div>' +
+      '<div><span class="wv-rot">ID de pago</span><span class="wv-dato">' + esc(p.mp_payment_id || '—') + '</span></div>' +
+      '</div>';
+  }
+
+  var TOPICS = {
+    subscription_preapproval: 'Suscripción', preapproval: 'Suscripción',
+    subscription_authorized_payment: 'Cobro de suscripción', authorized_payment: 'Cobro de suscripción',
+    payment: 'Pago'
+  };
+  function htmlEvento(e) {
+    var estadoE = e.error ? '<span class="wv-pill deuda">Revisar</span>'
+      : e.processed_at ? '<span class="wv-pill ok">Procesado</span>' : '<span class="wv-pill pend">Pendiente</span>';
+    var json = '';
+    try { json = JSON.stringify(e.payload, null, 2); } catch (x) { json = ''; }
+    return '<div class="wv-fila evento">' +
+      '<div><div class="wv-nombre">' + esc(TOPICS[e.topic] || e.topic || '(sin tipo)') + '</div><div class="wv-dato">ID ' + esc(e.resource_id || '—') + '</div></div>' +
+      '<div><span class="wv-rot">Estado</span>' + estadoE + '</div>' +
+      '<div><span class="wv-rot">Recibido</span><span class="wv-dato-fuerte">' + esc(fechaHora(e.received_at)) + '</span></div>' +
+      '<div class="wv-ancho">' + (e.error ? '<div class="wv-error-txt">' + esc(e.error) + '</div>' : '<div class="wv-dato">Sin errores</div>') +
+        '<details><summary>Ver contenido del aviso</summary><pre class="wv-json">' + esc(json) + '</pre></details></div>' +
+      '</div>';
+  }
+
+  function pintarListaFac() {
+    var cont = document.getElementById('wv-lista-fac');
+    var vacio = function (t) { return '<div class="wv-vacio">' + t + '</div>'; };
+    if (fac.tab === 'subs') {
+      var orden = { past_due: 0, pending: 1, active: 2, suspended: 3, cancelled: 4 };
+      var vis = fac.subs.filter(subCoincide).sort(function (a, b) {
+        var o = (orden[a.status] != null ? orden[a.status] : 9) - (orden[b.status] != null ? orden[b.status] : 9);
+        if (o) return o;
+        var fa = a.next_payment_date ? new Date(a.next_payment_date).getTime() : Infinity;
+        var fb = b.next_payment_date ? new Date(b.next_payment_date).getTime() : Infinity;
+        return fa - fb;
+      });
+      cont.innerHTML = vis.length ? vis.map(htmlSub).join('')
+        : vacio(fac.subs.length ? 'No hay suscripciones con ese filtro.' : 'Todavía no hay suscripciones. Aparecen acá cuando una familia se suscribe en Mercado Pago o cuando agregás un cupo.');
+    } else if (fac.tab === 'pagos') {
+      cont.innerHTML = fac.pagos.length ? fac.pagos.map(htmlPago).join('') : vacio('Todavía no se registró ningún pago.');
+    } else {
+      var evs = fac.filtro === 'errores' ? fac.eventos.filter(function (e) { return e.error; }) : fac.eventos;
+      cont.innerHTML = evs.length ? evs.map(htmlEvento).join('')
+        : vacio(fac.eventos.length ? 'No hay avisos con errores.' : 'Todavía no llegó ningún aviso de Mercado Pago.');
+    }
+  }
+
+  function pintarControlesFac() {
+    var cont = document.getElementById('wv-tools-fac');
+    var chips = function (lista, actual) {
+      return lista.map(function (x) {
+        return '<button type="button" class="wv-chip' + (actual === x[0] ? ' on' : '') + '" data-ff="' + x[0] + '">' + x[1] + '</button>';
+      }).join('');
+    };
+    var filtros = '';
+    if (fac.tab === 'subs') {
+      filtros = '<input id="wv-buscar-fac" class="wv-buscar" type="text" name="filtro-facturacion" placeholder="Buscar familia, alumno, correo o ID" autocomplete="off" autocapitalize="off" spellcheck="false" readonly>' +
+        '<div class="wv-filtros">' + chips([['todas', 'Todas'], ['activas', 'Al día'], ['deuda', 'Con deuda'], ['pend', 'Pendientes'], ['baja', 'Canceladas']], fac.filtro) + '</div>';
+    } else if (fac.tab === 'avisos') {
+      filtros = '<div class="wv-filtros">' + chips([['todas', 'Todos'], ['errores', 'Solo con error']], fac.filtro) + '</div>';
+    }
+    cont.innerHTML = filtros + '<button type="button" class="wv-btn suave" id="wv-act-fac">Actualizar</button>';
+
+    var b = document.getElementById('wv-buscar-fac');
+    if (b) {
+      b.value = fac.busqueda;
+      b.addEventListener('focus', function () { b.removeAttribute('readonly'); });
+      b.oninput = function () {
+        if (document.activeElement !== b) { b.value = fac.busqueda; return; }
+        fac.busqueda = b.value; pintarListaFac();
+      };
+    }
+    document.getElementById('wv-act-fac').onclick = async function () {
+      this.disabled = true;
+      try { await cargarFacturacion(); pintarResumenFac(); pintarListaFac(); toast('Datos actualizados'); }
+      catch (e) { toast('No se pudo actualizar', true); }
+      this.disabled = false;
+    };
+  }
+
+  async function vistaFacturacion() {
+    vista.innerHTML =
+      '<h1 class="wv-titulo">Facturación</h1>' +
+      '<p class="wv-sub">Suscripciones, próximos cobros, pagos y avisos de Mercado Pago.</p>' +
+      '<div class="wv-resumen" id="wv-resumen-fac"></div>' +
+      '<div class="wv-tabs" id="wv-tabs-fac">' +
+        [['subs', 'Suscripciones'], ['pagos', 'Pagos'], ['avisos', 'Avisos de Mercado Pago']].map(function (x) {
+          return '<button type="button" class="wv-tab' + (fac.tab === x[0] ? ' on' : '') + '" data-tab="' + x[0] + '">' + x[1] + '</button>';
+        }).join('') +
+      '</div>' +
+      '<div class="wv-tools" id="wv-tools-fac"></div>' +
+      '<div id="wv-lista-fac"><div class="wv-vacio">Cargando…</div></div>';
+
+    document.getElementById('wv-tabs-fac').onclick = function (ev) {
+      var t = ev.target.closest('[data-tab]'); if (!t) return;
+      fac.tab = t.getAttribute('data-tab'); fac.filtro = 'todas';
+      document.querySelectorAll('#wv-tabs-fac .wv-tab').forEach(function (x) { x.classList.toggle('on', x === t); });
+      pintarControlesFac(); pintarListaFac();
+    };
+    document.getElementById('wv-tools-fac').onclick = function (ev) {
+      var b = ev.target.closest('[data-ff]'); if (!b) return;
+      fac.filtro = b.getAttribute('data-ff');
+      document.querySelectorAll('#wv-tools-fac .wv-chip').forEach(function (c) { c.classList.toggle('on', c === b); });
+      pintarListaFac();
+    };
+    document.getElementById('wv-lista-fac').onclick = function (ev) {
+      var b = ev.target.closest('[data-copiar-id]'); if (!b) return;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(b.getAttribute('data-copiar-id')).then(function () {
+          b.textContent = '¡Copiado!'; setTimeout(function () { b.textContent = 'Copiar ID de cupo'; }, 1500);
+        }, function () {});
+      }
+    };
+
+    fac.busqueda = '';
+    pintarControlesFac();
+    try {
+      await cargarFacturacion();
+      pintarResumenFac();
+      pintarListaFac();
+    } catch (e) {
+      console.error(e);
+      var l = document.getElementById('wv-lista-fac');
+      if (l) l.innerHTML = '<div class="wv-vacio">No pudimos cargar la facturación.<br><small>' + esc((e && (e.message || e.details)) || e) + '</small></div>';
+    }
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -399,7 +673,7 @@
 
   var VISTAS = {
     familias: vistaFamilias,
-    facturacion: proximamente('Facturación'),
+    facturacion: vistaFacturacion,
     contenido: proximamente('Contenido'),
     seguimiento: proximamente('Seguimiento de alumnos'),
     registro: proximamente('Registro de actividad')
