@@ -24,6 +24,8 @@
     var marco = cont.querySelector('.wvv-marco');
     var barra = cont.querySelector('.wvv-barra');
     var video = null, vivo = true, avisado = false;
+    // Recorte: se muestra solo el tramo [ini, fin] (en segundos); sin valores, el video entero
+    var ini = Math.max(0, Number(opts.inicio) || 0), fin = Number(opts.fin) > ini ? Number(opts.fin) : 0;
 
     function error(msg) {
       marco.innerHTML = '<div class="wvv-estado error">' + esc(msg) + '</div>';
@@ -39,10 +41,16 @@
       fr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       fr.allowFullscreen = true;
       fr.referrerPolicy = 'strict-origin-when-cross-origin';
-      fr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(opts.youtube) + '?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&origin=' + encodeURIComponent(location.origin);
+      fr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(opts.youtube) + '?enablejsapi=1&rel=0&modestbranding=1&playsinline=1' + (ini ? '&start=' + Math.floor(ini) : '') + (fin ? '&end=' + Math.ceil(fin) : '') + '&origin=' + encodeURIComponent(location.origin);
       var oir = function (ev) {
         if (ev.source !== fr.contentWindow) return;
-        try { var d = typeof ev.data === 'string' ? JSON.parse(ev.data) : ev.data; if (d && d.info && d.info.playerState === 0) terminar(); } catch (e1) { /* otro mensaje */ }
+        try { var d = typeof ev.data === 'string' ? JSON.parse(ev.data) : ev.data; if (d && d.info && d.info.playerState === 0) terminar();
+          var ct = d && d.info ? d.info.currentTime : null;
+          if (typeof ct === 'number') {
+            var man = function (f, a) { fr.contentWindow.postMessage(JSON.stringify({ event: 'command', func: f, args: a || [] }), '*'); };
+            if (ini && ct < ini - 1.5) man('seekTo', [ini, true]);
+            else if (fin && ct >= fin) { man('pauseVideo'); if (ct > fin + 1.5) man('seekTo', [fin, true]); terminar(); }
+          } } catch (e1) { /* otro mensaje */ }
       };
       window.addEventListener('message', oir);
       fr.addEventListener('load', function () { try { fr.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), '*'); } catch (e2) { /* nada */ } });
@@ -58,7 +66,7 @@
     Promise.resolve().then(function () { return opts.url(); }).then(function (enlace) {
       if (!vivo) return;
       video = document.createElement('video');
-      video.src = enlace;
+      video.src = enlace + ((ini || fin) ? '#t=' + ini + (fin ? ',' + fin : '') : '');
       video.controls = true;
       video.playsInline = true;
       video.preload = 'metadata';
@@ -67,11 +75,25 @@
       video.title = opts.titulo || 'Video';
       video.addEventListener('contextmenu', function (ev) { ev.preventDefault(); });
       video.addEventListener('error', function () { error('No se pudo reproducir el video. Puede que todavía no esté disponible; probá de nuevo en un momento.'); });
-      video.addEventListener('ended', function () {
+      var alFinal = function () {
         if (avisado || !opts.alTerminar) return;
         avisado = true;
         try { opts.alTerminar(); } catch (e2) { /* nada */ }
-      });
+      };
+      video.addEventListener('ended', alFinal);
+      if (ini || fin) {
+        video.addEventListener('loadedmetadata', function () { if (ini && video.currentTime < ini) video.currentTime = ini; });
+        var cuidar = function () {
+          if (ini && video.currentTime < ini - 0.3) video.currentTime = ini;
+          if (fin && video.currentTime >= fin) { if (video.currentTime > fin + 0.3) video.currentTime = fin; if (!video.paused) video.pause(); alFinal(); }
+        };
+        video.addEventListener('timeupdate', cuidar);
+        video.addEventListener('seeking', function () {
+          if (ini && video.currentTime < ini - 0.3) video.currentTime = ini;
+          else if (fin && video.currentTime > fin + 0.3) video.currentTime = fin;
+        });
+        video.addEventListener('play', function () { if (fin && video.currentTime >= fin - 0.2) video.currentTime = ini; });
+      }
       marco.innerHTML = '';
       marco.appendChild(video);
       barra.hidden = false;
@@ -83,7 +105,8 @@
     barra.addEventListener('click', function (ev) {
       var b = ev.target.closest('[data-v]');
       if (!b || !video) return;
-      video.currentTime = Math.max(0, (video.currentTime || 0) + (b.getAttribute('data-v') === 'adelante' ? 10 : -10));
+      var nt = Math.max(ini, (video.currentTime || 0) + (b.getAttribute('data-v') === 'adelante' ? 10 : -10));
+      video.currentTime = fin ? Math.min(fin, nt) : nt;
     });
 
     return { destruir: function () { vivo = false; if (video) { try { video.pause(); video.removeAttribute('src'); video.load(); } catch (e3) { /* nada */ } } cont.innerHTML = ''; } };
