@@ -287,6 +287,415 @@
     }
   }
 
+  // ---------- Programación (una por cada hijo, igual a la del panel estudiante) ----------
+  var DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+
+  var P = {
+    mate: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
+    lengua: '<path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>',
+    natural: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/>',
+    fisica: '<circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>',
+    quimica: '<path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/>',
+    historia: '<path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M2 10l10-6 10 6z"/>',
+    geografia: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/>',
+    ingles: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/>',
+    arte: '<path d="M12 22a10 10 0 1 1 10-10c0 3-2 4-4 4h-2a2 2 0 0 0-1.5 3.3c.6.7.4 2.7-2.5 2.7z"/><path d="M7.5 11h.01M10.5 7h.01M15.5 8h.01"/>',
+    bienestar: '<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/>',
+    ciudadania: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
+    economia: '<path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+    tecnologia: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+    oficios: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/>',
+    proyecto: '<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/>'
+  };
+
+  var REGLAS = [
+    ['fisico', 'quimica'], ['quimic', 'quimica'], ['fisic', 'fisica'],
+    ['biolog', 'natural'], ['naturales', 'natural'],
+    ['sociales', 'historia'], ['histor', 'historia'],
+    ['geograf', 'geografia'], ['ingles', 'ingles'],
+    ['matemat', 'mate'], ['lengua', 'lengua'], ['literatura', 'lengua'],
+    ['arte', 'arte'], ['bienestar', 'bienestar'],
+    ['ciudadan', 'ciudadania'], ['filosof', 'ciudadania'],
+    ['econom', 'economia'], ['tecnolog', 'tecnologia'],
+    ['oficio', 'oficios'], ['taller', 'oficios'], ['proyecto', 'proyecto']
+  ];
+
+  function iconoMateria(nombre) {
+    var n = String(nombre || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    var clave = 'lengua';
+    for (var i = 0; i < REGLAS.length; i++) {
+      if (n.indexOf(REGLAS[i][0]) !== -1) { clave = REGLAS[i][1]; break; }
+    }
+    return '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + P[clave] + '</svg>';
+  }
+
+  function fechaLarga(d) {
+    return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+  function fechaCorta(d) {
+    return d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function textoLecciones(n) { return n + (n === 1 ? ' lección' : ' lecciones'); }
+
+  // Día en que se terminan las lecciones que faltan, siguiendo el programa (de lunes a viernes)
+  function fechaFin(restantes, porDia) {
+    var d = new Date();
+    d.setHours(12, 0, 0, 0);
+    for (var i = 0; i < 3650; i++) {
+      var wd = d.getDay();
+      if (wd >= 1 && wd <= 5) {
+        restantes -= porDia[wd];
+        if (restantes <= 0) return new Date(d);
+      }
+      d.setDate(d.getDate() + 1);
+    }
+    return null;
+  }
+
+  function semanasDeRetraso(fin, limite) {
+    return Math.ceil((fin - limite) / 86400000 / 7);
+  }
+
+  // Cuántas veces por semana va cada materia: Lengua y Matemática 3, el resto 2
+  function vecesPorSemana(nombre) {
+    var n = String(nombre || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    if (n.indexOf('lengua') !== -1 || n.indexOf('matemat') !== -1) return 3;
+    return 2;
+  }
+
+  // Reparte las materias en la semana: cada una con sus días, parejo y evitando días seguidos
+  function armarSemana(cursos) {
+    var carga = [0, 0, 0, 0, 0, 0];
+    var orden = cursos.map(function (c, i) { return { c: c, i: i, v: vecesPorSemana(c.nombre) }; })
+      .sort(function (a, b) { return b.v - a.v || a.i - b.i; });
+    var filas = [];
+    orden.forEach(function (o) {
+      var elegidos = [];
+      for (var k = 0; k < Math.min(o.v, 5); k++) {
+        var mejor = 0, mejorPuntaje = Infinity;
+        for (var d = 1; d <= 5; d++) {
+          if (elegidos.indexOf(d) !== -1) continue;
+          var vecinos = (elegidos.indexOf(d - 1) !== -1 ? 1 : 0) + (elegidos.indexOf(d + 1) !== -1 ? 1 : 0);
+          var puntaje = carga[d] * 100 + vecinos * 10 + d;
+          if (puntaje < mejorPuntaje) { mejorPuntaje = puntaje; mejor = d; }
+        }
+        elegidos.push(mejor);
+        filas.push({ weekday: mejor, subject_id: o.c.id, position: carga[mejor] });
+        carga[mejor]++;
+      }
+    });
+    return filas;
+  }
+
+  var COLS_PROG = 'id, weekday, subject_id, lessons_target, position';
+
+  async function cargarProgramaciones() {
+    var ses = await sb.auth.getSession();
+    var uid = ses.data.session.user.id;
+
+    var res = await Promise.all([
+      sb.from('students')
+        .select('id, first_name, last_name, created_at, grades(name, levels(name))')
+        .order('created_at', { ascending: true }),
+      sb.rpc('family_progress'),
+      sb.from('study_schedule').select('student_id, ' + COLS_PROG).order('position'),
+      sb.from('app_settings').select('value').eq('key', 'school_year_end').maybeSingle()
+    ]);
+    for (var i = 0; i < 3; i++) if (res[i].error) throw res[i].error;
+
+    var finAnio = (res[3].data && res[3].data.value) ? new Date(String(res[3].data.value) + 'T12:00:00') : null;
+    if (finAnio && isNaN(finAnio.getTime())) finAnio = null;
+
+    var cursosDe = {}, filasDe = {};
+    (res[1].data || []).forEach(function (r) {
+      (cursosDe[r.student_id] = cursosDe[r.student_id] || []).push({
+        id: r.subject_id, nombre: r.subject_name, color: colorSeguro(r.color), orden: r.subject_position,
+        total: r.total_lessons, completas: r.done_lessons
+      });
+    });
+    (res[2].data || []).forEach(function (f) {
+      (filasDe[f.student_id] = filasDe[f.student_id] || []).push(f);
+    });
+
+    var hijos = (res[0].data || []).map(function (h) {
+      return {
+        id: h.id, nombre: h.first_name + ' ' + h.last_name, primerNombre: h.first_name,
+        anio: h.grades ? etiquetaAnio(h.grades) : '',
+        cursos: (cursosDe[h.id] || []).sort(function (a, b) { return a.orden - b.orden; }),
+        filas: filasDe[h.id] || []
+      };
+    });
+    return { hijos: hijos, finAnio: finAnio, uid: uid };
+  }
+
+  // Programación de un hijo: dibuja y edita sobre su propio contenedor
+  function crearProgramacion(cont, hijo, finAnio, uid) {
+    var prog = { cursos: hijo.cursos, filas: hijo.filas, ocupado: false };
+
+    function cursoPorId(id) {
+      return prog.cursos.filter(function (c) { return c.id === id; })[0];
+    }
+
+    function trayectoria() {
+      var filasCursos = [], finGlobal = null, sinProgramar = [], restantesTotal = 0, hayLecciones = false;
+
+      prog.cursos.forEach(function (c) {
+        var porDia = [0, 0, 0, 0, 0, 0], semanal = 0;
+        prog.filas.forEach(function (f) {
+          if (f.subject_id === c.id) { porDia[f.weekday] += f.lessons_target; semanal += f.lessons_target; }
+        });
+        var restantes = Math.max(0, c.total - c.completas);
+        var r = { curso: c, restantes: restantes, semanal: semanal, estado: '', clase: 'neutro', texto: '' };
+
+        if (c.total === 0) {
+          r.texto = 'Todavía no tiene lecciones cargadas';
+        } else {
+          hayLecciones = true;
+          restantesTotal += restantes;
+          if (restantes === 0) {
+            r.estado = 'Completada'; r.clase = 'ok';
+          } else if (semanal === 0) {
+            r.texto = 'No está en la programación'; r.clase = 'atraso';
+            sinProgramar.push(c.nombre);
+          } else {
+            var fin = fechaFin(restantes, porDia);
+            if (!fin) {
+              r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
+            } else {
+              if (!finGlobal || fin > finGlobal) finGlobal = fin;
+              r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
+              if (finAnio && fin > finAnio) {
+                r.estado = 'Se retrasa ' + semanasDeRetraso(fin, finAnio) + ' sem.'; r.clase = 'atraso';
+              } else {
+                r.estado = 'A tiempo'; r.clase = 'ok';
+              }
+            }
+          }
+        }
+        filasCursos.push(r);
+      });
+
+      return { filas: filasCursos, finGlobal: finGlobal, sinProgramar: sinProgramar,
+               restantesTotal: restantesTotal, hayLecciones: hayLecciones };
+    }
+
+    function htmlHero(t) {
+      var hoy = new Date();
+      hoy.setHours(12, 0, 0, 0);
+      var nota = t.sinProgramar.length
+        ? '<p class="tray-nota">Falta programar: ' + esc(t.sinProgramar.join(', ')) + '.</p>' : '';
+
+      if (!t.hayLecciones) {
+        return '<div class="tray-hero"><p class="tray-vacio">Todavía no hay lecciones cargadas en sus materias. ' +
+          'Cuando las haya, acá vas a ver cuándo terminaría el año con este programa.</p></div>';
+      }
+      if (t.restantesTotal === 0) {
+        return '<div class="tray-hero ok"><b class="tray-fecha">¡Completó todas las lecciones del año!</b></div>';
+      }
+      if (!t.finGlobal) {
+        return '<div class="tray-hero atraso"><b class="tray-fecha">Programá sus materias para calcular cuándo termina</b>' + nota + '</div>';
+      }
+
+      var atrasado = finAnio && t.finGlobal > finAnio;
+      var pill = '';
+      if (finAnio) {
+        pill = atrasado
+          ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, finAnio) + ' semanas de retraso</span>'
+          : '<span class="tray-pill ok">Llega a tiempo</span>';
+      }
+
+      var linea = '';
+      if (finAnio && finAnio > hoy) {
+        var pos = Math.min(100, Math.max(0, ((t.finGlobal - hoy) / (finAnio - hoy)) * 100));
+        linea = '<div class="tray-linea"><div class="tray-relleno" style="width:' + pos.toFixed(1) + '%"></div>' +
+          '<span class="tray-pin" style="left:' + pos.toFixed(1) + '%"></span></div>' +
+          '<div class="tray-extremos"><span>Hoy</span><span>Fin del año escolar · ' + esc(fechaCorta(finAnio)) + '</span></div>';
+      }
+
+      return '<div class="tray-hero ' + (atrasado ? 'atraso' : 'ok') + '">' +
+        '<div class="tray-hero-top"><div><span class="tray-etiqueta">Terminaría el año el</span>' +
+        '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
+        linea +
+        '<p class="tray-faltan">Le faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
+        (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
+    }
+
+    function pintar() {
+      var hoySemana = new Date().getDay();
+
+      var dias = DIAS.map(function (nombre, i) {
+        var wd = i + 1;
+        var delDia = prog.filas.filter(function (f) { return f.weekday === wd; })
+          .sort(function (a, b) { return a.position - b.position; });
+        var usadas = {}, suma = 0;
+        delDia.forEach(function (f) { usadas[f.subject_id] = true; suma += f.lessons_target; });
+
+        var items = delDia.map(function (f) {
+          var c = cursoPorId(f.subject_id);
+          if (!c) return '';
+          return '<div class="prog-item" style="--c:' + c.color + '">' +
+            '<button type="button" class="prog-x" data-a="quitar" data-id="' + f.id + '" aria-label="Quitar ' + esc(c.nombre) + '">×</button>' +
+            '<span class="prog-ico">' + iconoMateria(c.nombre) + '</span>' +
+            '<b class="prog-nombre">' + esc(c.nombre) + '</b>' +
+            '<div class="prog-cant">' +
+            '<button type="button" data-a="menos" data-id="' + f.id + '" aria-label="Una lección menos">−</button>' +
+            '<span><strong>' + f.lessons_target + '</strong> ' + (f.lessons_target === 1 ? 'lección' : 'lecciones') + '</span>' +
+            '<button type="button" data-a="mas" data-id="' + f.id + '" aria-label="Una lección más">+</button>' +
+            '</div></div>';
+        }).join('');
+
+        var libres = prog.cursos.filter(function (c) { return !usadas[c.id]; });
+        var agregar = libres.length
+          ? '<div class="prog-add"><button type="button" class="prog-add-btn" data-a="menu">+ Agregar materia</button>' +
+            '<div class="prog-menu" hidden>' + libres.map(function (c) {
+              return '<button type="button" data-a="agregar" data-dia="' + wd + '" data-mat="' + c.id + '">' +
+                '<i style="background:' + c.color + '"></i>' + esc(c.nombre) + '</button>';
+            }).join('') + '</div></div>'
+          : '';
+
+        return '<section class="dia' + (hoySemana === wd ? ' hoy' : '') + '">' +
+          '<header class="dia-cab"><h2>' + nombre + '</h2>' +
+          (hoySemana === wd ? '<span class="dia-hoy">Hoy</span>' : '') +
+          '<small>' + (suma ? textoLecciones(suma) : 'Sin lecciones') + '</small></header>' +
+          '<div class="dia-cuerpo">' + items + agregar + '</div></section>';
+      }).join('');
+
+      var t = trayectoria();
+      var filasT = t.filas.map(function (r) {
+        var c = r.curso;
+        var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
+        var info = r.texto || (r.restantes === 0 ? 'Sin lecciones pendientes' : '');
+        return '<div class="tray-fila" style="--c:' + c.color + '">' +
+          '<span class="tray-ico">' + iconoMateria(c.nombre) + '</span>' +
+          '<div class="tray-info"><b>' + esc(c.nombre) + '</b>' +
+          (info ? '<span>' + esc(info) + '</span>' : '') +
+          (c.total ? '<div class="tray-mini"><span style="width:' + pct + '%"></span></div>' : '') + '</div>' +
+          (r.estado ? '<span class="tray-estado ' + r.clase + '">' + esc(r.estado) + '</span>' : '') +
+          '</div>';
+      }).join('');
+
+      cont.innerHTML =
+        '<div class="semana">' + dias + '</div>' +
+        '<h3 class="vista-subtitulo">Trayectoria</h3>' +
+        htmlHero(t) +
+        '<div class="tray-lista">' + filasT + '</div>';
+    }
+
+    function filaPorId(id) {
+      return prog.filas.filter(function (f) { return String(f.id) === String(id); })[0];
+    }
+
+    async function guardar(fn) {
+      if (prog.ocupado) return;
+      prog.ocupado = true;
+      try { await fn(); }
+      catch (e) { alert('No pudimos guardar el cambio. Probá de nuevo.'); }
+      prog.ocupado = false;
+      pintar();
+    }
+
+    async function cambiarCantidad(id, delta) {
+      var f = filaPorId(id);
+      if (!f) return;
+      var n = Math.max(1, Math.min(20, f.lessons_target + delta));
+      if (n === f.lessons_target) return;
+      var r = await sb.from('study_schedule').update({ lessons_target: n, updated_by: uid })
+        .eq('id', f.id).select('id');
+      if (r.error || !r.data.length) throw (r.error || new Error('sin permiso'));
+      f.lessons_target = n;
+    }
+
+    async function quitarFila(id) {
+      var r = await sb.from('study_schedule').delete().eq('id', id).select('id');
+      if (r.error || !r.data.length) throw (r.error || new Error('sin permiso'));
+      prog.filas = prog.filas.filter(function (f) { return String(f.id) !== String(id); });
+    }
+
+    async function agregarFila(dia, materiaId) {
+      var pos = prog.filas.filter(function (f) { return f.weekday === dia; }).length;
+      var r = await sb.from('study_schedule').insert({
+        student_id: hijo.id, weekday: dia, subject_id: materiaId,
+        lessons_target: 1, position: pos, updated_by: uid
+      }).select(COLS_PROG);
+      if (r.error) throw r.error;
+      prog.filas = prog.filas.concat(r.data);
+    }
+
+    // Primera vez: el programa viene armado, después se edita
+    async function sugerirPrograma() {
+      var filas = armarSemana(prog.cursos).map(function (f) {
+        return { student_id: hijo.id, weekday: f.weekday, subject_id: f.subject_id,
+                 lessons_target: 1, position: f.position, updated_by: uid };
+      });
+      var r = await sb.from('study_schedule').insert(filas).select(COLS_PROG);
+      if (r.error) throw r.error;
+      prog.filas = prog.filas.concat(r.data);
+    }
+
+    cont.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button[data-a]');
+      if (!b || b.getAttribute('data-a') !== 'menu') {
+        cont.querySelectorAll('.prog-menu').forEach(function (m) { m.hidden = true; });
+      }
+      if (!b) return;
+      var a = b.getAttribute('data-a');
+      var id = b.getAttribute('data-id');
+      if (a === 'menu') {
+        var menu = b.nextElementSibling;
+        var abrir = menu.hidden;
+        cont.querySelectorAll('.prog-menu').forEach(function (m) { m.hidden = true; });
+        menu.hidden = !abrir;
+      }
+      else if (a === 'mas') guardar(function () { return cambiarCantidad(id, 1); });
+      else if (a === 'menos') guardar(function () { return cambiarCantidad(id, -1); });
+      else if (a === 'quitar') guardar(function () { return quitarFila(id); });
+      else if (a === 'agregar') {
+        var dia = Number(b.getAttribute('data-dia'));
+        var mat = b.getAttribute('data-mat');
+        guardar(function () { return agregarFila(dia, mat); });
+      }
+    });
+
+    return {
+      iniciar: async function () {
+        if (!prog.filas.length && prog.cursos.length) {
+          try { await sugerirPrograma(); } catch (e) { /* queda vacío y se agrega a mano */ }
+        }
+        pintar();
+      }
+    };
+  }
+
+  async function vistaProgramacion() {
+    vista.innerHTML = '<h1 class="vista-titulo">Programación</h1><div id="programacion"></div>';
+    var cont = document.getElementById('programacion');
+    cont.innerHTML = '<div class="vacio">Cargando…</div>';
+    try {
+      var d = await cargarProgramaciones();
+      if (!d.hijos.length) {
+        cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo. Cuando lo hagas, acá vas a armar su programación.</div>';
+        return;
+      }
+      cont.innerHTML = d.hijos.map(function (h, i) {
+        var ini = h.nombre.split(' ').map(function (p) { return p.charAt(0); }).slice(0, 2).join('').toUpperCase();
+        return '<section class="pg-hijo">' +
+          '<div class="pg-cab"><div class="hijo-ini">' + esc(ini) + '</div>' +
+          '<div><h2>' + esc(h.nombre) + '</h2><span>' + esc(h.anio) + '</span></div></div>' +
+          '<div id="prog-' + i + '">' +
+            (h.cursos.length ? '' : '<div class="vacio">Todavía no tiene materias habilitadas.</div>') +
+          '</div></section>';
+      }).join('');
+
+      for (var i = 0; i < d.hijos.length; i++) {
+        var h = d.hijos[i];
+        if (!h.cursos.length) continue;
+        await crearProgramacion(document.getElementById('prog-' + i), h, d.finAnio, d.uid).iniciar();
+      }
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar la programación. Probá recargar la página.</div>';
+    }
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -298,7 +707,7 @@
   var VISTAS = {
     altas: vistaAltas,
     progreso: vistaProgreso,
-    programacion: proximamente('Programación'),
+    programacion: vistaProgramacion,
     facturacion: proximamente('Facturación')
   };
 

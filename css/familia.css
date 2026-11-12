@@ -366,3 +366,26 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
   .pr-materias { padding: 14px 18px 6px; }
   .pm-cab { flex-wrap: wrap; }
 }
+
+/* ---------- Programación (un bloque por hijo) ---------- */
+
+.pg-hijo { margin-bottom: 44px; }
+
+.pg-cab {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.pg-cab h2 { margin: 0; font-size: 1.4rem; font-weight: 800; line-height: 1.15; overflow-wrap: anywhere; }
+
+.pg-cab span {
+  display: block;
+  margin-top: 2px;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pg-hijo .vista-subtitulo { margin-top: 30px; font-size: 1.25rem; }
