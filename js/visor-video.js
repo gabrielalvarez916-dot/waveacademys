@@ -131,23 +131,44 @@
     return { destruir: function () { vivo = false; if (video) { try { video.pause(); video.removeAttribute('src'); video.load(); } catch (e3) { /* nada */ } } cont.innerHTML = ''; } };
   }
 
+  // opts.lista = [{ url | youtube, tramos }]: varios videos que se ven en orden. alTerminar se avisa cuando se vieron todos.
   function abrirVideo(opts) {
+    var lista = opts.lista && opts.lista.length ? opts.lista : [opts];
+    var varios = lista.length > 1, actual = 0, vistos = {}, avisado = false, mont = null;
     var el = document.createElement('div');
     el.className = 'wvp';
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'Reproductor de video');
     el.innerHTML =
       '<div class="wvp-caja wvv-caja">' +
-        '<div class="wvp-barra"><b class="wvp-titulo">' + esc(opts.titulo || 'Video') + '</b>' +
+        '<div class="wvp-barra"><b class="wvp-titulo"></b>' +
+        (varios ? '<button type="button" class="wvp-b" data-v="ant">‹ Anterior</button><button type="button" class="wvp-b" data-v="sig">Siguiente ›</button>' : '') +
         '<button type="button" class="wvp-b wvp-x" data-v="cerrar" aria-label="Cerrar">✕</button></div>' +
         '<div class="wvv-cuerpo"></div>' +
       '</div>';
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
-    var mont = montarVideo(el.querySelector('.wvv-cuerpo'), opts);
+
+    function poner(n) {
+      if (mont) mont.destruir();
+      actual = n;
+      el.querySelector('.wvp-titulo').textContent = (opts.titulo || 'Video') + (varios ? ' · Video ' + (n + 1) + ' de ' + lista.length : '');
+      if (varios) { el.querySelector('[data-v="ant"]').disabled = n === 0; el.querySelector('[data-v="sig"]').disabled = n === lista.length - 1; }
+      var it = lista[n];
+      mont = montarVideo(el.querySelector('.wvv-cuerpo'), {
+        titulo: opts.titulo, url: it.url, youtube: it.youtube, tramos: it.tramos, inicio: it.inicio, fin: it.fin,
+        alTerminar: !(opts.alTerminar || varios) ? null : function () {
+          vistos[n] = true;
+          var todos = lista.every(function (_, k) { return vistos[k]; });
+          if (todos && !avisado && opts.alTerminar) { avisado = true; try { opts.alTerminar(); } catch (e) { /* nada */ } }
+          if (n < lista.length - 1 && actual === n) setTimeout(function () { if (actual === n && document.body.contains(el)) poner(n + 1); }, 1200);
+        }
+      });
+    }
+    poner(0);
 
     function cerrar() {
-      mont.destruir();
+      if (mont) mont.destruir();
       document.removeEventListener('keydown', tecla);
       document.body.classList.remove('wvp-abierto');
       el.remove();
@@ -155,7 +176,9 @@
     function tecla(ev) { if (ev.key === 'Escape') cerrar(); }
     document.addEventListener('keydown', tecla);
     el.addEventListener('click', function (ev) {
-      if (ev.target === el || ev.target.closest('[data-v="cerrar"]')) cerrar();
+      if (ev.target === el || ev.target.closest('[data-v="cerrar"]')) return cerrar();
+      if (ev.target.closest('[data-v="ant"]') && actual > 0) poner(actual - 1);
+      else if (ev.target.closest('[data-v="sig"]') && actual < lista.length - 1) poner(actual + 1);
     });
     return { cerrar: cerrar };
   }

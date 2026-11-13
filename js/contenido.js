@@ -108,18 +108,28 @@
   }
   // Recorte del video: una fila "desde / hasta" por tramo
   function tramosDe(ct) { return ct.tramos && ct.tramos.length ? ct.tramos : (ct.inicio || ct.fin ? [{ i: ct.inicio || 0, f: ct.fin || 0 }] : []); }
-  function recorteHtml(ct) {
-    var filas = L.recTmp || tramosDe(ct).map(function (t) { return [t.i ? aReloj(t.i) : '', t.f ? aReloj(t.f) : '']; });
-    var n = Math.max(1, L.recN || 0, filas.length), h = '<div class="wv-recorte"><b>✂️ Mostrar solo estas partes del video</b>';
+  // Lista de videos del paso (formato nuevo: content.videos; formato viejo: un solo video en stream_uid)
+  function videosDe(v) {
+    var c = (v && v.content) || {};
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { return { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; });
+    return v && v.stream_uid ? [{ uid: v.stream_uid, nombre: '', tramos: tramosDe(c) }] : [];
+  }
+  async function guardarVideos(lista) {
+    await guardarPaso('video', { stream_uid: lista.length ? lista[0].uid : null, content: lista.length ? { videos: lista } : {} });
+  }
+  function recorteHtml(x, vi) {
+    var tmp = (L.recTmp || {})[vi], nn = (L.recN || {})[vi] || 0;
+    var filas = tmp || (x.tramos || []).map(function (t) { return [t.i ? aReloj(t.i) : '', t.f ? aReloj(t.f) : '']; });
+    var n = Math.max(1, nn, filas.length), h = '<div class="wv-recorte" data-vi="' + vi + '"><b>✂️ Mostrar solo estas partes del video</b>';
     for (var i = 0; i < n; i++) {
       var f = filas[i] || ['', ''];
       h += '<div class="wv-rec-fila"><span>' + (n > 1 ? 'Parte ' + (i + 1) + ': desde' : 'Desde') + '</span><input class="wv-rec-i" type="text" inputmode="numeric" placeholder="0:00" value="' + esc(f[0]) + '"><span>hasta</span><input class="wv-rec-f" type="text" inputmode="numeric" placeholder="final" value="' + esc(f[1]) + '"></div>';
     }
-    return h + '<div class="wv-rec-b">' + boton('video-rec-mas', '+ Agregar otra parte') + boton('video-rec', 'Guardar recorte', '') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
+    return h + '<div class="wv-rec-b">' + boton('video-rec-mas:' + vi, '+ Agregar otra parte') + boton('video-rec:' + vi, 'Guardar recorte', '') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
   }
-  function leerRecorte() {
+  function leerRecorte(vi) {
     var r = { tramos: [], crudo: [], mal: false };
-    [].forEach.call(document.querySelectorAll('.wv-rec-fila'), function (fl) {
+    [].forEach.call(document.querySelectorAll('.wv-recorte[data-vi="' + vi + '"] .wv-rec-fila'), function (fl) {
       var a = fl.querySelector('.wv-rec-i').value, b = fl.querySelector('.wv-rec-f').value, i = aSeg(a), f = aSeg(b);
       r.crudo.push([a, b]);
       if (i !== i || f !== f) { r.mal = true; return; }
@@ -336,10 +346,7 @@
         ins.data.forEach(function (s) { pasos[s.step_type] = s; });
       }
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
-      L = { pasos: pasos, preguntas: q.count || 0, video: null };
-      if (pasos.video.stream_uid && !esYt(pasos.video.stream_uid)) {
-        try { L.video = await subidas({ action: 'stream_status', uid: pasos.video.stream_uid }); } catch (e) { L.video = null; }
-      }
+      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {} };
       pintarLeccion();
     } catch (e) {
       console.error(e);
@@ -366,12 +373,19 @@
     }
 
     // 1 · Clase
-    var v = p.video, tieneV = !!v.stream_uid;
-    var vEst = !tieneV ? 'Sin video' : esYt(v.stream_uid) ? 'Video de YouTube incrustado' : (L.video && L.video.size != null ? 'Video cargado (' + (L.video.size / 1048576).toFixed(1) + ' MB)' : 'Video cargado');
+    var vids = videosDe(p.video), tieneV = vids.length > 0;
     var pdf = p.pdf, tieneP = !!pdf.r2_key;
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
-    var clase = fila('🎬', 'Video de la clase', vEst, (tieneV ? boton('video-ver', 'Ver') : '') + boton('video-up', tieneV ? 'Reemplazar' : 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave') + (tieneV ? boton('video-del', 'Quitar', 'peligro') : ''), 'wv-i-video') +
-      (tieneV ? recorteHtml(v.content || {}) : '') +
+    var clase = '';
+    vids.forEach(function (x, i) {
+      var nom = esYt(x.uid) ? 'Video de YouTube incrustado' : (x.nombre || x.uid.split('/').pop().replace(/^[a-z0-9]{8}-/, ''));
+      clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom),
+        boton('video-ver:' + i, 'Ver') +
+        (vids.length > 1 ? '<button type="button" class="wv-ico" title="Subir" data-acc="video-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button><button type="button" class="wv-ico" title="Bajar" data-acc="video-mov:' + i + ':1"' + (i === vids.length - 1 ? ' disabled' : '') + '>▼</button>' : '') +
+        boton('video-del:' + i, 'Quitar', 'peligro')) + recorteHtml(x, i);
+    });
+    clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
+      boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
     var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
     h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
@@ -400,6 +414,8 @@
     var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
       boton('consignas', L.preguntas ? 'Editar consignas' : 'Armar consignas', L.preguntas ? 'suave' : '') + (L.preguntas ? boton('consignas-del', 'Quitar todas', 'peligro') : ''));
     h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
+    h += casillero(5, '🔁', 'Repaso obligatorio', 'Automático · no hay que cargar nada', 'ok',
+      '<div class="wv-item"><span class="wv-item-ico">🤖</span><div class="wv-item-t"><b>Lo arma la IA para cada alumno</b><small>6 preguntas distintas cada vez: 1 de esta lección y 5 de lecciones anteriores de la materia, priorizando las que ese alumno tiene más flojas. Sin preguntas abiertas. Usa el texto de los PDF, así que las lecciones sin PDF no entran. La primera lección de la materia no tiene repaso.</small></div></div>');
 
     var tit = nombre('lesson', R.lesson);
     var cont = document.getElementById('wv-les');
@@ -428,9 +444,7 @@
       var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
       await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-video', 'Subiendo… ' + p + '%'); });
       d.uid = d.key;
-      var viejo = L.pasos.video.stream_uid;
-      await guardarPaso('video', { stream_uid: d.uid, content: {} });
-      if (viejo && !esYt(viejo)) { try { await subidas({ action: 'stream_delete', uid: viejo }); } catch (e) { /* queda huérfano */ } }
+      await guardarVideos(videosDe(L.pasos.video).concat([{ uid: d.uid, nombre: f.name, tramos: [] }]));
       toast('Video subido');
       await refrescarEstados(); await abrirLeccion();
     } catch (e) { toast(e.message, true); pintarLeccion(); }
@@ -498,17 +512,20 @@
   async function accion(acc) {
     var p = acc.split(':'), a = p[0];
     try {
-      if (a === 'video-rec-mas') { L.recN = document.querySelectorAll('.wv-rec-fila').length + 1; L.recTmp = leerRecorte().crudo; return pintarLeccion(); }
+      if (a === 'video-rec-mas') { var vm = +p[1]; L.recN[vm] = document.querySelectorAll('.wv-recorte[data-vi="' + vm + '"] .wv-rec-fila').length + 1; L.recTmp[vm] = leerRecorte(vm).crudo; return pintarLeccion(); }
       if (a === 'video-rec') {
-        var lr = leerRecorte(), tr = lr.tramos;
+        var vr = +p[1], lr = leerRecorte(vr), tr = lr.tramos;
         if (lr.mal) return toast('Escribí los tiempos como minutos:segundos, por ejemplo 0:25', true);
         tr.sort(function (x, y) { return x.i - y.i; });
         for (var q = 0; q < tr.length; q++) {
           if (tr[q].f && tr[q].f <= tr[q].i) return toast('En cada tramo, el final tiene que ser después del inicio.', true);
           if (q < tr.length - 1 && (!tr[q].f || tr[q].f > tr[q + 1].i)) return toast('Los tramos no se pueden pisar: cada uno tiene que terminar antes de que empiece el siguiente.', true);
         }
-        L.recN = 0; L.recTmp = null;
-        await guardarPaso('video', { content: tr.length ? { tramos: tr } : {} });
+        var lv = videosDe(L.pasos.video);
+        if (!lv[vr]) return;
+        lv[vr].tramos = tr;
+        L.recN[vr] = 0; L.recTmp[vr] = null;
+        await guardarVideos(lv);
         toast(tr.length ? (tr.length > 1 ? 'Recorte guardado (' + tr.length + ' tramos)' : 'Recorte guardado') : 'Se muestra el video entero');
         return pintarLeccion();
       }
@@ -517,21 +534,27 @@
         if (enl == null) return;
         var idy = idYoutube(enl);
         if (!idy) return toast('Ese enlace no parece de un video de YouTube.', true);
-        var ant = L.pasos.video.stream_uid;
-        await guardarPaso('video', { stream_uid: 'yt:' + idy, content: {} });
-        if (ant && !esYt(ant)) { try { await subidas({ action: 'stream_delete', uid: ant }); } catch (e) { /* huérfano */ } }
-        toast('Video de YouTube guardado');
+        await guardarVideos(videosDe(L.pasos.video).concat([{ uid: 'yt:' + idy, nombre: '', tramos: [] }]));
+        toast('Video de YouTube agregado');
         await refrescarEstados(); return abrirLeccion();
       }
+      if (a === 'video-mov') {
+        var lm = videosDe(L.pasos.video), de = +p[1], a2 = de + (+p[2]);
+        if (!lm[de] || !lm[a2]) return;
+        var tmpv = lm[de]; lm[de] = lm[a2]; lm[a2] = tmpv;
+        L.recTmp = {}; L.recN = {};
+        await guardarVideos(lm);
+        return pintarLeccion();
+      }
       if (a === 'video-ver') {
-        var uidv = L.pasos.video.stream_uid;
-        var rc = L.pasos.video.content || {};
-        if (esYt(uidv)) return WaveVisor.abrirVideo({ titulo: nombre('lesson', R.lesson), youtube: uidv.slice(3), inicio: rc.inicio, fin: rc.fin, tramos: rc.tramos });
-        var stv = await subidas({ action: 'stream_status', uid: uidv });
+        var xv = videosDe(L.pasos.video)[+p[1]];
+        if (!xv) return;
+        if (esYt(xv.uid)) return WaveVisor.abrirVideo({ titulo: nombre('lesson', R.lesson), youtube: xv.uid.slice(3), tramos: xv.tramos });
+        var stv = await subidas({ action: 'stream_status', uid: xv.uid });
         if (!stv.ready) return toast('No se encontró el archivo del video.', true);
         return WaveVisor.abrirVideo({
-          titulo: nombre('lesson', R.lesson), inicio: rc.inicio, fin: rc.fin, tramos: rc.tramos,
-          url: async function () { return (await subidas({ action: 'stream_token', uid: uidv })).url; }
+          titulo: nombre('lesson', R.lesson), tramos: xv.tramos,
+          url: async function () { return (await subidas({ action: 'stream_token', uid: xv.uid })).url; }
         });
       }
       if (a === 'intro-up') return elegirArchivo('video/*', false, function (fs) { subirIntro(fs[0]); });
@@ -555,10 +578,12 @@
       }
       if (a === 'video-up') return elegirArchivo('video/*', false, function (fs) { subirVideo(fs[0]); });
       if (a === 'video-del') {
-        if (!confirm('¿Quitar el video de esta lección?')) return;
-        var uid = L.pasos.video.stream_uid;
-        await guardarPaso('video', { stream_uid: null, content: {} });
-        if (!esYt(uid)) { try { await subidas({ action: 'stream_delete', uid: uid }); } catch (e) { /* huérfano */ } }
+        var ld = videosDe(L.pasos.video), xd = ld[+p[1]];
+        if (!xd || !confirm(ld.length > 1 ? '¿Quitar el video ' + (+p[1] + 1) + ' de esta lección?' : '¿Quitar el video de esta lección?')) return;
+        ld.splice(+p[1], 1);
+        L.recTmp = {}; L.recN = {};
+        await guardarVideos(ld);
+        if (!esYt(xd.uid)) { try { await subidas({ action: 'stream_delete', uid: xd.uid }); } catch (e) { /* huérfano */ } }
         await refrescarEstados(); return abrirLeccion();
       }
       if (a === 'pdf-up') return elegirArchivo('application/pdf,.pdf', false, function (fs) { subirPdf(fs[0]); });
@@ -740,7 +765,8 @@
       var st = pasos[i], claves = [];
       if (st.r2_key) claves.push(st.r2_key);
       ((st.content && st.content.files) || []).forEach(function (f) { if (f.key) claves.push(f.key); });
-      if (st.stream_uid && !esYt(st.stream_uid)) { try { await subidas({ action: 'stream_delete', uid: st.stream_uid }); } catch (e) { /* queda huérfano */ } }
+      var vs = st.step_type === 'video' ? videosDe(st) : [];
+      for (var j = 0; j < vs.length; j++) { if (!esYt(vs[j].uid)) { try { await subidas({ action: 'stream_delete', uid: vs[j].uid }); } catch (e) { /* queda huérfano */ } } }
       for (var k = 0; k < claves.length; k++) { try { await subidas({ action: 'r2_delete', key: claves[k] }); } catch (e) { /* queda huérfano */ } }
     }
   }
@@ -1030,5 +1056,8 @@
     pintar();
   }
 
-  window.WaveContenido = { abrir: abrir };
+  // Solo para pruebas visuales de la pantalla de una lección con datos de ejemplo
+  function _probar(el, pasos) { vista = el; L = { pasos: pasos, preguntas: 0, recTmp: {}, recN: {} }; el.innerHTML = '<div id="wv-les"></div>'; el.onclick = function (ev) { var b = ev.target.closest('[data-acc]'); if (b && !b.disabled) accion(b.getAttribute('data-acc')); }; pintarLeccion(); }
+
+  window.WaveContenido = { abrir: abrir, _probar: _probar };
 })();

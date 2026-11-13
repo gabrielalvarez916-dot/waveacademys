@@ -7,6 +7,7 @@
   var hojaAbierta = null; // id de la lección que se está viendo
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
+  // El repaso obligatorio no es un paso cargado: lo arma la IA. Cuenta para completar la lección cuando corresponde.
   var TIPO_PASO = { video: 'video', pdf: 'pdf', interactive_activity: 'interactive', complementary_activity: 'complementary', final_activity: 'final' };
 
   function esc(t) {
@@ -31,7 +32,8 @@
     back: '<path d="M15 6l-6 6 6 6"/>',
     close: '<path d="M6 6l12 12M18 6L6 18"/>',
     down: '<path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/>',
-    dots: '<path d="M6 12h.01M12 12h.01M18 12h.01"/>'
+    dots: '<path d="M6 12h.01M12 12h.01M18 12h.01"/>',
+    repaso: '<path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/>'
   };
   function ico(k, px, grosor) {
     return '<svg viewBox="0 0 24 24" width="' + (px || 24) + '" height="' + (px || 24) + '" fill="none" stroke="currentColor" stroke-width="' + (grosor || 2.4) +
@@ -79,7 +81,7 @@
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
     var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, inicio:content->inicio, fin:content->fin, tramos:content->tramos, lessons!inner(topics!inner(subject_id))')
+      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, lessons!inner(topics!inner(subject_id))')
       .eq('lessons.topics.subject_id', materiaId);
     if (pasos.error) throw pasos.error;
 
@@ -116,6 +118,8 @@
         : !!conPreg[p.id];
       (porLeccion[p.lesson_id] = porLeccion[p.lesson_id] || {})[k] = {
         id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene,
+        videos: k !== 'video' || !p.stream_uid ? [] : (Array.isArray(p.videos) && p.videos.length ? p.videos
+          : [{ uid: p.stream_uid, tramos: p.tramos || (p.inicio || p.fin ? [{ i: p.inicio || 0, f: p.fin || 0 }] : []) }]),
         files: k === 'complementary' && Array.isArray(p.files) ? p.files : []
       };
     });
@@ -134,17 +138,28 @@
         mejor: graded.length ? Math.max.apply(null, graded.map(function (i) { return Number(i.score); })) : null };
     });
 
+    // Repaso obligatorio: en qué lecciones corresponde y cuáles ya hizo
+    var rep = await sb.rpc('my_review_status', { p_subject: materiaId });
+    var repaso = {};
+    (rep.error ? [] : rep.data || []).forEach(function (r) { repaso[r.lesson_id] = { req: !!r.required, done: !!r.done, score: r.last_score }; });
+    Object.keys(porLeccion).forEach(function (lid) {
+      var p = porLeccion[lid];
+      var conContenido = CLAVES.some(function (k) { return p[k] && p[k].tiene; });
+      p.review = { id: 'repaso:' + lid, lesson_id: lid, step_type: 'review', titulo: 'Repaso', tiene: conContenido && !!(repaso[lid] && repaso[lid].req), files: [] };
+    });
+
     var acc = await sb.rpc('my_content_access');
     var susOk = !acc.error && acc.data === true;
 
     return {
-      sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, progreso: progreso, hechas: hechas, examen: examen,
+      sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
 
   // ---------- Estados ----------
   function hecho(p) {
+    if (p.step_type === 'review') return !!(D.repaso && D.repaso[p.lesson_id] && D.repaso[p.lesson_id].done);
     var pr = D.progreso[p.id];
     if (!pr) return false;
     return p.step_type === 'final_activity' ? pr.estado === 'graded' : true;
@@ -152,7 +167,7 @@
 
   function estadoLeccion(l) {
     var p = D.pasos[l.id] || {};
-    var req = CLAVES.filter(function (k) { return p[k] && p[k].tiene; });
+    var req = CLAVES.concat(['review']).filter(function (k) { return p[k] && p[k].tiene; });
     var hs = req.filter(function (k) { return hecho(p[k]); }).length;
     return { total: req.length, hechos: hs, vacia: req.length === 0, completa: req.length > 0 && hs === req.length,
       frac: req.length ? hs / req.length : 0, req: req };
@@ -285,9 +300,10 @@
     pdf:           { icono: 'doc',    color: '#E4572E', titulo: 'PDF de la clase', sub: 'Leelo en pantalla o descargalo' },
     interactive:   { icono: 'puzzle', color: '#7C5CE0', titulo: 'Actividad interactiva', sub: 'Practicá jugando' },
     final:         { icono: 'pencil', color: '#E59A1B', titulo: 'Actividad', sub: 'Respondé las consignas' },
+    review:        { icono: 'repaso', color: '#2F7BD9', titulo: 'Repaso obligatorio', sub: '6 preguntas de esta lección y de las anteriores' },
     complementary: { icono: 'clip',   color: '#5B7C80', titulo: 'Actividades complementarias', sub: 'Opcional · para practicar más' }
   };
-  var ORDEN = ['video', 'pdf', 'interactive', 'final', 'complementary'];
+  var ORDEN = ['video', 'pdf', 'interactive', 'final', 'review', 'complementary'];
 
   function buscarLeccion(id) {
     for (var i = 0; i < D.temas.length; i++) for (var j = 0; j < D.temas[i].lecciones.length; j++) {
@@ -307,12 +323,16 @@
       var listo = paso && paso.tiene && k !== 'complementary' && hecho(paso);
       var pr = paso ? D.progreso[paso.id] : null;
       var sub = t.sub, cls = '';
-      if (!paso || !paso.tiene) { cls = ' pronto'; sub = 'Próximamente'; }
-      else if (listo) { cls = ' hecho'; sub = k === 'final' && pr && pr.score != null ? 'Hecha · nota ' + Math.round(pr.score)
+      if (k === 'review' && (!paso || !paso.tiene)) return '';
+      var faltaAntes = k === 'review' && CLAVES.some(function (c) { return p[c] && p[c].tiene && !hecho(p[c]); });
+      if (faltaAntes) { cls = ' pronto'; sub = 'Se habilita cuando termines lo anterior'; }
+      else if (!paso || !paso.tiene) { cls = ' pronto'; sub = 'Próximamente'; }
+      else if (listo) { cls = ' hecho'; sub = k === 'review' ? 'Hecho' + (D.repaso[l.id].score != null ? ' · ' + Math.round(D.repaso[l.id].score) + ' de 100' : '')
+        : k === 'final' && pr && pr.score != null ? 'Hecha · nota ' + Math.round(pr.score)
         : k === 'interactive' && pr && pr.score != null ? 'Hecha · ' + Math.round(pr.score) + ' puntos' : 'Hecho'; }
       else if (k === siguiente) cls = ' siguiente';
-      var derecha = !paso || !paso.tiene ? '' : listo ? '<span class="mt-rec-check">' + ico('check', 18, 3.6) + '</span>' : '<span class="mt-rec-flecha">' + ico('chevron', 20, 3) + '</span>';
-      var html = '<button type="button" class="mt-rec' + cls + '" data-paso="' + k + '"' + (!paso || !paso.tiene ? ' disabled' : '') + ' style="--k:' + t.color + '">' +
+      var derecha = !paso || !paso.tiene || faltaAntes ? '' : listo ? '<span class="mt-rec-check">' + ico('check', 18, 3.6) + '</span>' : '<span class="mt-rec-flecha">' + ico('chevron', 20, 3) + '</span>';
+      var html = '<button type="button" class="mt-rec' + cls + '" data-paso="' + k + '"' + (!paso || !paso.tiene || faltaAntes ? ' disabled' : '') + ' style="--k:' + t.color + '">' +
         '<span class="mt-rec-ico">' + ico(t.icono, 28) + '</span><span class="mt-rec-t"><b>' + t.titulo + '</b><small>' + sub + '</small></span>' + derecha + '</button>';
       if (k === 'complementary' && paso && paso.tiene && comp_abierto) {
         html += '<div class="mt-archivos">' + paso.files.map(function (a, i) {
@@ -378,12 +398,11 @@
     if (!f || !paso) return;
     try {
       if (k === 'video') {
-        if (/^yt:/.test(paso.stream_uid || '')) {
-          WaveVisor.abrirVideo({ titulo: f.l.titulo, youtube: paso.stream_uid.slice(3), inicio: paso.inicio, fin: paso.fin, tramos: paso.tramos, alTerminar: function () { marcar(paso); } });
-        } else {
-          WaveVisor.abrirVideo({ titulo: f.l.titulo, inicio: paso.inicio, fin: paso.fin, tramos: paso.tramos, alTerminar: function () { marcar(paso); },
-            url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id })).url; } });
-        }
+        WaveVisor.abrirVideo({ titulo: f.l.titulo, alTerminar: function () { marcar(paso); },
+          lista: paso.videos.map(function (v, n) {
+            return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
+              : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
+          }) });
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
           chat: function (mensaje, conv) { return llamar('chat-tutor', { message: mensaje, lesson_step_id: paso.id, conversation_id: conv || undefined }); },
@@ -400,6 +419,18 @@
           alTerminar: function (res) {
             D.progreso[paso.id] = { score: res.score, estado: 'graded' };
             revisarLeccion(paso.lesson_id).then(refrescar);
+          }
+        });
+      } else if (k === 'review') {
+        var intento = null;
+        abrirCuestionario({
+          titulo: 'Repaso · ' + f.l.titulo, examen: false, repaso: true,
+          cargando: 'Estamos armando tu repaso…', cargandoSub: 'Son 6 preguntas nuevas, de esta lección y de las anteriores. Tené tu carpeta a mano.',
+          cargar: async function () { var d = await llamar('review', { action: 'start', lesson_id: f.l.id }); intento = d.attempt_id; return d.questions; },
+          enviar: function (resp) { return llamar('review', { action: 'submit', attempt_id: intento, answers: resp }); },
+          alTerminar: function (res) {
+            D.repaso[f.l.id] = { req: true, done: true, score: res.score };
+            revisarLeccion(f.l.id).then(refrescar);
           }
         });
       } else if (k === 'complementary') {
@@ -464,17 +495,17 @@
     el.className = 'wvp';
     el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(op.titulo) + '</b>' +
       '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
-      '<div class="mt-cuest"><div class="mt-cuest-estado">Cargando…</div></div></div>';
+      '<div class="mt-cuest"></div></div>';
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var cuerpo = el.querySelector('.mt-cuest');
-    var lista = [], enviando = false;
+    var lista = [], enviando = false, entregado = false;
 
     function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
     el.addEventListener('click', function (ev) {
       if (ev.target === el || ev.target.closest('[data-cerrar]')) { if (!enviando) cerrar(); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
-      else if (ev.target.closest('[data-otra]')) formulario();
+      else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
     });
 
     function campo(q, i) {
@@ -508,7 +539,7 @@
       cuerpo.innerHTML = '<div class="mt-cuest-estado"><div class="mt-girar"></div><b>Estamos corrigiendo tus respuestas…</b><small>Puede tardar unos segundos. No cierres esta ventana.</small></div>';
       try {
         var res = await op.enviar(resp);
-        enviando = false;
+        enviando = false; entregado = true;
         resultado(res, resp);
         op.alTerminar(res);
       } catch (e) {
@@ -536,14 +567,19 @@
             '<p class="mt-res-tu"><small>Tu respuesta</small>' + esc(mias[q.id] || '(sin responder)') + '</p>' +
             (r.feedback ? '<p class="mt-res-dev">' + esc(r.feedback) + '</p>' : '') + '</div>';
         }).join('') + '</div>' +
-        '<div class="mt-cuest-pie">' + (ok && op.examen ? '' : '<button type="button" class="mt-boton suave" data-otra="1">Intentar de nuevo</button>') +
+        '<div class="mt-cuest-pie">' + (ok && op.examen ? '' : '<button type="button" class="mt-boton suave" data-otra="1">' + (op.repaso ? 'Hacer otro repaso' : 'Intentar de nuevo') + '</button>') +
         '<button type="button" class="mt-boton" data-cerrar="1">Listo</button></div>';
       cuerpo.scrollTo(0, 0);
     }
 
-    op.cargar().then(function (qs) { lista = qs; formulario(); }).catch(function (e) {
-      cuerpo.innerHTML = '<div class="mt-cuest-estado error"><b>' + esc(e.message || 'No se pudo cargar.') + '</b></div>';
-    });
+    function traer() {
+      entregado = false;
+      cuerpo.innerHTML = '<div class="mt-cuest-estado">' + (op.cargando ? '<div class="mt-girar"></div><b>' + esc(op.cargando) + '</b><small>' + esc(op.cargandoSub || '') + '</small>' : 'Cargando…') + '</div>';
+      op.cargar().then(function (qs) { lista = qs; formulario(); }).catch(function (e) {
+        cuerpo.innerHTML = '<div class="mt-cuest-estado error"><b>' + esc(e.message || 'No se pudo cargar.') + '</b></div>';
+      });
+    }
+    traer();
   }
 
   function abrirExamen(temaId) {
