@@ -598,20 +598,21 @@
     var hoy = new Date();
     var lunes = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
     lunes.setDate(lunes.getDate() - ((lunes.getDay() + 6) % 7));
-    var viernes = new Date(lunes); viernes.setDate(lunes.getDate() + 4);
+    var domingo = new Date(lunes); domingo.setDate(lunes.getDate() + 6);
     var manana = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + 1);
     var inicioHoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
 
-    var tiempo = { dias: [0, 0, 0, 0, 0], total: 0 };
+    var tiempo = { dias: [0, 0, 0, 0, 0, 0, 0], total: 0, hoy: 0 };
     var lecciones = 0;
     if (estudianteId) {
       var t = await sb.from('student_study_time').select('study_date, seconds')
         .eq('student_id', estudianteId)
-        .gte('study_date', fechaISO(lunes)).lte('study_date', fechaISO(viernes));
+        .gte('study_date', fechaISO(lunes)).lte('study_date', fechaISO(domingo));
       if (t.error) throw t.error;
       (t.data || []).forEach(function (r) {
         var i = Math.round((new Date(r.study_date + 'T00:00:00') - lunes) / 86400000);
-        if (i >= 0 && i <= 4) { tiempo.dias[i] += r.seconds; tiempo.total += r.seconds; }
+        if (i >= 0 && i <= 6) { tiempo.dias[i] += r.seconds; tiempo.total += r.seconds; }
+        if (r.study_date === fechaISO(hoy)) tiempo.hoy += r.seconds;
       });
 
       var l = await sb.from('student_lesson_progress')
@@ -640,7 +641,7 @@
         var alto = seg ? Math.max(10, Math.round((seg / max) * 100)) : 4;
         return '<div class="est-dia' + (d.hoyIdx === i ? ' hoy' : '') + '">' +
           '<span class="est-dia-barra"><i style="height:' + alto + '%"></i></span>' +
-          '<small>' + DIAS_CORTOS[i] + '</small></div>';
+          '<small>' + ['L', 'M', 'M', 'J', 'V', 'S', 'D'][i] + '</small></div>';
       }).join('');
 
       var r = 34, circ = 2 * Math.PI * r;
@@ -659,8 +660,8 @@
           '</article>' +
           '<article class="est-card hoy">' +
             '<p class="est-rotulo">Hoy</p>' +
-            '<p class="est-valor">' + d.lecciones + '</p>' +
-            '<p class="est-sub">' + (d.lecciones === 1 ? 'lección completada' : 'lecciones completadas') + '</p>' +
+            '<p class="est-valor">' + textoTiempo(d.tiempo.hoy) + '</p>' +
+            '<p class="est-sub">de estudio · ' + d.lecciones + (d.lecciones === 1 ? ' lección completada' : ' lecciones completadas') + '</p>' +
           '</article>' +
           '<article class="est-card prom">' +
             '<p class="est-rotulo">Promedio general</p>' +
@@ -887,6 +888,33 @@
 
   // Marca el primer ingreso: desde ahí corre el plazo objetivo (la base lo guarda solo una vez)
   sb.rpc('mark_student_started').then(function () {}, function () {});
+
+  // ---------- Tiempo de estudio ----------
+  // Cuenta los segundos con la pestaña a la vista y actividad reciente (o un video reproduciéndose) y los guarda cada minuto.
+  (function () {
+    var acumulado = 0, ultimaAccion = Date.now(), ultimoTic = Date.now();
+    ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'].forEach(function (ev) {
+      window.addEventListener(ev, function () { ultimaAccion = Date.now(); }, { passive: true, capture: true });
+    });
+    function viendoVideo() {
+      var v = document.querySelector('video');
+      return (v && !v.paused && !v.ended) || !!document.querySelector('.wvv-yt, .mt-marco iframe');
+    }
+    function guardar() {
+      var seg = Math.floor(acumulado);
+      if (seg < 5) return;
+      acumulado -= seg;
+      sb.rpc('registrar_tiempo_estudio', { p_seconds: Math.min(seg, 120) }).then(function (r) { if (r && r.error) console.warn('tiempo de estudio', r.error.message); }, function () {});
+    }
+    setInterval(function () {
+      var ahora = Date.now(), paso = Math.min(15, (ahora - ultimoTic) / 1000);
+      ultimoTic = ahora;
+      if (document.visibilityState === 'visible' && (ahora - ultimaAccion < 180000 || viendoVideo())) acumulado += paso;
+      if (acumulado >= 60) guardar();
+    }, 5000);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') guardar(); });
+    window.addEventListener('pagehide', guardar);
+  })();
 
   window.addEventListener('hashchange', ruta);
   ruta();
