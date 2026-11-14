@@ -262,3 +262,18 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-tr-barra i { display: block; height: 100%; border-radius: 8px; }
 .wv-tr-barra i.ok { background: #19A39F; } .wv-tr-barra i.med { background: #E5A21B; } .wv-tr-barra i.bajo { background: #E4572E; }
 @media (max-width: 640px) { .wv-tr-dos { grid-template-columns: 1fr; } .wv-tr-chips { margin-left: 0; } }
+
+/* Correcciones del revisor */
+.wv-lec-cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.wv-lec-cab h2 { margin: 0; }
+.wv-corr-estado { margin: 10px 0 14px; padding: 12px 16px; border-radius: 14px; font-weight: 800; }
+.wv-corr-estado.ok { background: #DDF3EA; color: #0E6B52; }
+.wv-corr-estado.no { background: #FBE3DE; color: #9B2D1C; }
+#wv-corr h3 { margin: 18px 0 8px; font-size: 1rem; font-weight: 800; }
+.wv-corr-item { margin-bottom: 10px; padding: 12px 14px; border-radius: 14px; background: #F3F8F7; border-left: 5px solid var(--turquesa, #0e7c7b); }
+.wv-corr-item.g-alta { border-left-color: #D8452E; background: #FDEFEC; }
+.wv-corr-item.g-media { border-left-color: #F4B63F; background: #FFF6DD; }
+.wv-corr-h { display: flex; justify-content: space-between; gap: 10px; font-size: .9rem; }
+.wv-corr-h span { font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; opacity: .75; }
+.wv-corr-item p { margin: 6px 0 0; font-size: .92rem; }
+.wv-corr-fix { color: var(--texto-suave, #5b6b6e); }

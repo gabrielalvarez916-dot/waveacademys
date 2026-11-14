@@ -346,12 +346,46 @@
         ins.data.forEach(function (s) { pasos[s.step_type] = s; });
       }
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
-      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {} };
+      var bd = await sb.from('lesson_drafts').select('status, paso, revision, revision_inicial, updated_at').eq('lesson_id', R.lesson).maybeSingle();
+      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data };
       pintarLeccion();
     } catch (e) {
       console.error(e);
       document.getElementById('wv-les').innerHTML = 'No pudimos cargar la lección.<br><small>' + esc(e.message || e) + '</small>';
     }
+  }
+
+  // ---------- Correcciones del revisor (lecciones armadas por la máquina) ----------
+  var GRAVEDAD = { alta: 'Grave', media: 'Importante', baja: 'Menor' };
+  function pendientes() { var r = (L && L.borrador && L.borrador.revision) || {}; return Array.isArray(r.problemas) ? r.problemas : []; }
+  function botonCorrecciones() {
+    if (!L || !L.borrador || !L.borrador.revision) return '';
+    var n = pendientes().length, ini = L.borrador.revision_inicial && L.borrador.revision_inicial.problemas ? L.borrador.revision_inicial.problemas.length : 0;
+    var txt = n ? '⚠ Correcciones (' + n + ' pendientes)' : (ini ? '✔ Correcciones (' + ini + ' arregladas solas)' : '✔ Correcciones (sin observaciones)');
+    return '<button type="button" class="wv-btn mini ' + (n ? '' : 'suave') + ' wv-corr-btn" data-acc="correcciones">' + txt + '</button>';
+  }
+  function listaProblemas(ps) {
+    return ps.map(function (p) {
+      return '<div class="wv-corr-item g-' + esc(p.gravedad) + '"><div class="wv-corr-h"><b>' + esc(p.donde) + '</b><span>' + esc(GRAVEDAD[p.gravedad] || p.gravedad) + '</span></div>' +
+        '<p>' + esc(p.descripcion) + '</p>' + (p.correccion ? '<p class="wv-corr-fix"><b>Cómo debería decir:</b> ' + esc(p.correccion) + '</p>' : '') + '</div>';
+    }).join('');
+  }
+  function abrirCorrecciones() {
+    var b = L && L.borrador; if (!b || !b.revision) return;
+    var fin = pendientes(), ini = (b.revision_inicial && b.revision_inicial.problemas) || [];
+    var h = '<h2>Correcciones del revisor</h2><p>Esta lección la escribió la máquina. Otra IA la revisó, recalculó las cuentas y controló el vocabulario. <b>No reemplaza tu lectura:</b> sirve para saber dónde mirar con más cuidado.</p>';
+    h += '<div class="wv-corr-estado ' + (b.revision.apto ? 'ok' : 'no') + '">' + (b.revision.apto ? '✔ El revisor la considera apta' : '⚠ El revisor la marcó como NO apta: revisala antes de publicar') + '</div>';
+    if (b.revision.resumen) h += '<h3>Opinión del revisor</h3><p>' + esc(b.revision.resumen) + '</p>';
+    if (b.revision_inicial) {
+      h += '<h3>Qué encontró al principio y se corrigió sola (' + ini.length + ')</h3>' + (ini.length ? listaProblemas(ini) : '<p>Nada.</p>');
+      h += '<h3>Qué sigue marcado después de corregir (' + fin.length + ')</h3>' + (fin.length ? listaProblemas(fin) : '<p>Nada: la segunda revisión no encontró problemas.</p>');
+    } else {
+      h += '<h3>Observaciones (' + fin.length + ')</h3>' + (fin.length ? listaProblemas(fin) : '<p>El revisor no encontró nada para corregir.</p>');
+    }
+    var el = document.createElement('div'); el.className = 'wv-modal'; el.id = 'wv-corr';
+    el.innerHTML = '<div class="wv-modal-caja ancha">' + h + '<div class="wv-modal-pie">' + boton('corr-cerrar', 'Cerrar', '') + '</div></div>';
+    el.addEventListener('click', function (ev) { if (ev.target === el || ev.target.closest('[data-acc="corr-cerrar"]')) el.remove(); });
+    document.body.appendChild(el);
   }
 
   function casillero(num, icono, titulo, ayuda, estado, cuerpo) {
@@ -421,7 +455,7 @@
     var cont = document.getElementById('wv-les');
     if (!cont) return;
     cont.className = '';
-    cont.innerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2></div>' + aviso + '<div class="wv-cass">' + h + '</div>';
+    cont.innerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2>' + botonCorrecciones() + '</div>' + aviso + '<div class="wv-cass">' + h + '</div>';
   }
 
   // ---------- Acciones ----------
@@ -633,6 +667,7 @@
       if (a === 'consignas-del') return quitarConsignas();
       if (a === 'examen-del') return quitarExamen();
       if (a === 'del') return eliminar(p[1], p[2]);
+      if (a === 'correcciones') return abrirCorrecciones();
       if (a === 'consignas') return abrirEditor({ kind: 'step', stepId: L.pasos.final_activity.id, sub: nombre('lesson', R.lesson) });
       if (a === 'examen') {
         var ex = await sb.from('exams').select('id, passing_score').eq('topic_id', R.topic).maybeSingle();
