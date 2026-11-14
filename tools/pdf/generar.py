@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from render_leccion import render
 
 URL = os.environ.get("WAVE_FN_URL", "https://ndglmonqpqpfgeoxatcb.supabase.co/functions/v1/fabrica-pdf")
-TOKEN = os.environ["WAVE_GEN_TOKEN"]
+TOKEN = os.environ["WAVE_GEN_TOKEN"].strip()
 
 def llamar(body):
     req = urllib.request.Request(URL, data=json.dumps(body).encode(), method="POST",
