@@ -70,7 +70,7 @@ async function plantilla() {
   return cache;
 }
 function armarHtml(spec: unknown, p: { css: string; js: string }) {
-  const j = JSON.stringify(spec).replace(/</g, "\\u003c").replace(/ /g, "\\u2028").replace(/ /g, "\\u2029");
+  const j = JSON.stringify(spec).replace(/</g, "\\u003c").split(String.fromCharCode(8232)).join("\\u2028").split(String.fromCharCode(8233)).join("\\u2029");
   const titulo = String((spec as any).titulo || "Actividad").replace(/[<>&"]/g, "");
   return `<!doctype html>\n<html lang="es"><head><meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<title>${titulo}</title>\n<style>\n${p.css}</style>\n</head><body><div id="app"></div>\n<script>window.SPEC=${j};</script>\n<script>\n${p.js}</script></body></html>\n`;
 }
