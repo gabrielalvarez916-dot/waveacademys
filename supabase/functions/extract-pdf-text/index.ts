@@ -30,8 +30,8 @@ async function claudeTool(system: string, user: string, tool: any, max_tokens: n
     method: "POST",
     headers: { "content-type": "application/json", "x-api-key": Deno.env.get("ANTHROPIC_API_KEY")!, "anthropic-version": "2023-06-01" },
     body: JSON.stringify({
-      model: MODEL, max_tokens, system, messages: [{ role: "user", content: user }],
-      tools: [tool], tool_choice: { type: "tool", name: tool.name },
+      model: MODEL, max_tokens, system: system + `\n\nIMPORTANTE: entregá el resultado ÚNICAMENTE llamando a la herramienta "${tool.name}". No escribas texto fuera de la herramienta.`, messages: [{ role: "user", content: user }],
+      tools: [tool], tool_choice: { type: "auto" },
     }),
   });
   if (!r.ok) throw new Error("Claude API " + r.status + ": " + (await r.text()));
