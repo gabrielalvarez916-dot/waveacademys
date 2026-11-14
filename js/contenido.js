@@ -872,6 +872,9 @@
   // ---------- Editor de preguntas (consignas de la lección y examen del tema) ----------
   var ED = null;
   var TIPOS_PREG = { open: 'Respuesta abierta', short_answer: 'Respuesta corta', multiple_choice: 'Opción múltiple', true_false: 'Verdadero / Falso' };
+  // Tipos que arma la máquina: se editan el enunciado, la respuesta y los criterios; la estructura (opciones, pares, tabla) se ve y edita como texto.
+  var TIPOS_MAQ = { fill_blank: 'Completar espacios', ordering: 'Ordenar pasos', matching: 'Unir columnas', classify: 'Clasificar', table_fill: 'Completar tabla', multi_select: 'Selección múltiple', solve_complete: 'Resolver y completar', odd_one_out: 'Encontrar el intruso' };
+  function nombreTipo(t) { return TIPOS_PREG[t] || TIPOS_MAQ[t] || t; }
 
   function pregVacia(tipo) {
     return {
@@ -897,8 +900,10 @@
         var ref = typeof u.reference_answer === 'string' ? u.reference_answer : '';
         var o = Array.isArray(q.options) ? q.options.map(String) : [];
         var cerrada = q.question_type === 'multiple_choice' || q.question_type === 'true_false';
+        var maq = !!TIPOS_MAQ[q.question_type];
         return { id: q.id, type: q.question_type, prompt: q.prompt, points: q.points, options: o,
-          correct: cerrada ? o.indexOf(ref) : -1, ref: cerrada ? '' : ref, expl: u.explanation || '', rubric: u.rubric || '' };
+          correct: cerrada ? o.indexOf(ref) : -1, ref: cerrada ? '' : ref, expl: u.explanation || '', rubric: u.rubric || '',
+          maq: maq, estructura: maq && q.options != null ? JSON.stringify(q.options, null, 1) : '' };
       });
     }
     ED = { ctx: ctx, qs: qs, quitadas: [], pasa: ctx.kind === 'exam' && ctx.exam ? ctx.exam.passing_score : 70 };
@@ -932,7 +937,7 @@
 
   function cardPreg(q, i, n) {
     var cerrada = q.type === 'multiple_choice' || q.type === 'true_false';
-    var h = '<div class="wv-preg"><div class="wv-preg-cab"><b>' + (i + 1) + '.</b><span class="wv-etq vacia">' + TIPOS_PREG[q.type] + '</span>' +
+    var h = '<div class="wv-preg"><div class="wv-preg-cab"><b>' + (i + 1) + '.</b><span class="wv-etq vacia">' + nombreTipo(q.type) + '</span>' +
       '<label class="wv-puntos">Puntos <input type="number" min="1" max="100" data-q="' + i + '" data-f="points" value="' + q.points + '"></label>' +
       '<span class="wv-preg-herr"><button type="button" class="wv-ico" data-acc="ed-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
       '<button type="button" class="wv-ico" data-acc="ed-mov:' + i + ':1"' + (i === n - 1 ? ' disabled' : '') + '>▼</button>' +
@@ -952,6 +957,10 @@
         h += '<label class="wv-tf"><input type="radio" name="c' + i + '" data-q="' + i + '" data-f="correct" value="' + j + '"' + (q.correct === j ? ' checked' : '') + '> ' + esc(o) + '</label>';
       });
       h += '</div>';
+    }
+    if (q.maq) {
+      h += '<label class="wv-lbl-e">Estructura de la consigna (opciones, pares o tabla). Si no estás segura, no la toques.</label>' +
+        '<textarea rows="4" data-q="' + i + '" data-f="estructura" spellcheck="false">' + esc(q.estructura) + '</textarea>';
     }
     if (!cerrada) {
       h += '<label class="wv-lbl-e">Respuesta de referencia (opcional, la usa la IA para corregir)</label>' +
@@ -1014,6 +1023,7 @@
         if (q.correct < 0 || !(q.options[q.correct] || '').trim()) return toast('Marcá la respuesta correcta en la pregunta ' + n, true);
       }
       if (q.type === 'true_false' && q.correct < 0) return toast('Marcá la respuesta correcta en la pregunta ' + n, true);
+      if (q.maq && q.estructura.trim()) { try { JSON.parse(q.estructura); } catch (e1) { return toast('La estructura de la pregunta ' + n + ' no está bien escrita', true); } }
     }
     if (exam && !qs.length) return toast('El examen necesita al menos una pregunta', true);
     var btn = ED.caja.querySelector('[data-acc="ed-save"]');
@@ -1048,6 +1058,7 @@
         var ref = cerrada ? (x.options[x.correct] || '').trim() : x.ref.trim();
         var opts = cerrada ? x.options.map(function (o) { return o.trim(); }).filter(Boolean) : [];
         var fila = { question_type: x.type, prompt: x.prompt.trim(), options: opts.length ? opts : null, points: x.points, position: k + 1 };
+        if (x.maq) fila.options = x.estructura.trim() ? JSON.parse(x.estructura) : null;
         if (x.id) {
           var up = await sb.from('questions').update(fila).eq('id', x.id);
           if (up.error) throw up.error;
