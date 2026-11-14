@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Fábrica de Alfajores</title>
+<style>
+:root{--bg:#0c1f21;--bg2:#123336;--card:#17383b;--card2:#1e474b;--linea:#2c5a5e;--aqua:#7FD3C4;--tq:#19a39f;--sol:#F4B63F;--coral:#ff7a66;--txt:#eaf7f4;--suave:#9dbdb9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 80% -10%,#1b5a5c 0%,transparent 60%),radial-gradient(900px 600px at -10% 110%,#16484b 0%,transparent 55%),var(--bg);color:var(--txt);overflow:hidden;user-select:none;-webkit-user-select:none}
+#app{position:relative;height:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;padding:10px 14px 12px}
+.hud{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.9rem;min-height:40px}
+.hud .pasos{display:flex;gap:6px;flex:1}
+.hud .pasos i{flex:1;height:8px;border-radius:9px;background:var(--linea);overflow:hidden;position:relative}
+.hud .pasos i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--tq),var(--aqua));border-radius:9px;transition:width .4s}
+.chip{background:var(--card);border:1px solid var(--linea);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.chip.racha{color:var(--sol)}.chip.racha.off{opacity:.35}
+.escena{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;animation:entra .35s ease both;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;padding:4px 2px}
+.escena>:first-child{margin-top:auto}.escena>:last-child{margin-bottom:auto}
+.escena.confb{padding-bottom:104px}
+.escena>*{flex:none}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.etq{font-size:.72rem;letter-spacing:.28em;font-weight:900;color:var(--aqua);text-transform:uppercase}
+h1{font-size:clamp(1.6rem,6vw,2.6rem);line-height:1.1;margin:4px 0;font-weight:900}
+h2{font-size:clamp(1.15rem,4.4vw,1.55rem);line-height:1.25;margin:0;font-weight:900;text-wrap:balance}
+p{margin:0;color:var(--suave);font-weight:600;line-height:1.45}
+.mat{font-family:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;font-weight:400}
+.op .mat,.fb .mat,h2 .mat{font-size:1.22em}
+.btn{appearance:none;border:0;border-radius:16px;font:inherit;font-weight:900;font-size:1.05rem;padding:15px 20px;min-height:54px;color:#06282a;background:linear-gradient(180deg,#9be8da,var(--aqua));box-shadow:0 5px 0 #3e9488;cursor:pointer;transition:transform .08s,box-shadow .08s,opacity .2s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3e9488}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btn.sec{background:var(--card2);color:var(--txt);box-shadow:0 5px 0 #0e2a2c;border:1px solid var(--linea)}
+.ops{display:grid;gap:10px}
+.ops.dos{grid-template-columns:1fr 1fr}
+.op{appearance:none;font:inherit;font-weight:800;font-size:clamp(1rem,4vw,1.25rem);text-align:center;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-radius:16px;padding:14px;min-height:58px;cursor:pointer;transition:transform .1s,border-color .15s,background .15s}
+.op:active{transform:scale(.97)}
+.op.sel{border-color:var(--aqua);background:#1f5054}
+.op.bien{border-color:var(--aqua);background:#1d5a55;color:#d8fff7;animation:pop .35s}
+.op.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.op.gris{opacity:.45}
+@keyframes pop{50%{transform:scale(1.05)}}
+@keyframes temblar{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+.tarjeta{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--linea);border-radius:22px;padding:22px 16px;text-align:center;font-size:clamp(1.9rem,9vw,3.2rem);font-weight:900;min-height:118px;display:grid;place-items:center;box-shadow:0 14px 30px -18px #000}
+.tarjeta.chica{font-size:clamp(1.3rem,6vw,2rem)}
+.tiempo{height:8px;border-radius:9px;background:var(--linea);overflow:hidden}
+.tiempo b{display:block;height:100%;width:100%;background:var(--sol);border-radius:9px}
+.fb{position:absolute;left:16px;right:16px;bottom:16px;border-radius:18px;padding:14px 16px;font-weight:800;display:flex;gap:12px;align-items:center;transform:translateY(140%);transition:transform .28s cubic-bezier(.2,1.2,.4,1);z-index:5;box-shadow:0 18px 40px -12px #000}
+.fb.ver{transform:none}
+.fb.bien{background:#1d6b63;border:2px solid var(--aqua)}
+.fb.mal{background:#5a2f2b;border:2px solid var(--coral)}
+.fb div{flex:1;line-height:1.35}.fb small{display:block;font-weight:600;opacity:.92;margin-top:2px}
+.fb .btn{padding:10px 16px;min-height:44px;font-size:.95rem}
+.ranuras{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:70px;padding:12px;border:2px dashed var(--linea);border-radius:18px;background:rgba(0,0,0,.18)}
+.ranuras:empty::before{content:"Tocá las piezas en orden";color:var(--suave);font-weight:700;align-self:center}
+.piezas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pz{appearance:none;font:inherit;font-size:clamp(1.3rem,6vw,1.9rem);font-weight:800;color:var(--txt);background:var(--card2);border:2px solid var(--linea);border-bottom-width:5px;border-radius:14px;min-width:54px;min-height:56px;padding:6px 14px;cursor:pointer}
+.pz.usada{visibility:hidden}
+.ranuras .pz{border-color:var(--aqua)}
+.mapa{display:grid;gap:8px}
+.mapa.mini{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));width:100%}
+.mapa.mini .nodo{padding:8px 10px;gap:9px;font-size:.92rem;text-align:left}.mapa.mini .nodo i{width:30px;height:30px;font-size:.85rem}.mapa.mini .nodo small{font-size:.78rem}
+.nodo{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--linea);border-radius:16px;padding:12px 14px;font-weight:800}
+.nodo i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;background:var(--linea);color:var(--suave);font-weight:900;flex:none}
+.nodo.hecho i{background:var(--aqua);color:#06282a}.nodo.act{border-color:var(--aqua);box-shadow:0 0 0 3px rgba(127,211,196,.18)}
+.nodo.act i{background:var(--sol);color:#3a2a00}.nodo small{display:block;color:var(--suave);font-weight:600}
+.nodo em{margin-left:auto;font-style:normal;color:var(--sol);letter-spacing:2px}
+.gran{font-size:clamp(3rem,16vw,5rem);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--aqua),#d9fff7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.estrellas{font-size:2.4rem;letter-spacing:8px;color:var(--sol)}.estrellas s{text-decoration:none;opacity:.2}
+.centro{text-align:center;align-items:center}
+.conf{position:absolute;inset:0;pointer-events:none;overflow:hidden}.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;animation:cae linear forwards}
+@keyframes cae{to{transform:translateY(110vh) rotate(720deg)}}
+@media (max-height:600px){.escena{gap:8px}.tarjeta{min-height:70px;padding:10px;font-size:clamp(1.5rem,7vw,2.3rem)}.btn{padding:11px 16px;min-height:46px}.op{padding:10px;min-height:48px}.pz{min-height:48px;min-width:46px}.ranuras{min-height:58px;padding:8px}.gran{font-size:clamp(2.4rem,12vw,3.4rem)}.estrellas{font-size:1.7rem}h1{font-size:clamp(1.4rem,5vw,2rem)}.hud{min-height:32px}.chip{padding:4px 10px}}
+@media (max-height:640px){.mapa.mini .nodo small{display:none}.centro p{font-size:.9rem}}
+@media (max-width:420px){.mapa.mini .nodo{font-size:.84rem;padding:7px 8px}.mapa.mini .nodo em{letter-spacing:0}}
+.tabla{display:flex;gap:6px;width:100%}
+.clase{flex:1;border:1px solid var(--linea);border-radius:16px;padding:6px;background:rgba(0,0,0,.18)}
+.clase-t{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--suave);text-align:center;margin-bottom:5px}
+.slots{display:flex;gap:4px}
+.slot{flex:1;min-width:0;min-height:60px;border:2px solid var(--linea);border-bottom-width:4px;border-radius:12px;background:var(--card);color:var(--txt);font:inherit;font-weight:900;font-size:1.45rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2px 0;cursor:pointer}
+.slot small{font-size:.52rem;color:var(--aqua);letter-spacing:.04em;font-weight:900}
+.slot.act{border-color:var(--sol);box-shadow:0 0 0 3px rgba(244,182,63,.22)}
+.slot.bien{border-color:var(--aqua);background:#1d5a55}
+.slot.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.teclado{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.teclado .pz{min-width:0;padding:4px 0;font-size:1.35rem}
+.teclado .pz.borrar{color:var(--coral)}
+.perillas{display:flex;gap:6px;justify-content:center;width:100%}
+.perilla{flex:1;max-width:84px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.perilla small{font-size:.6rem;color:var(--aqua);font-weight:900;letter-spacing:.04em}
+.perilla em{font-style:normal;font-size:.5rem;color:var(--suave);font-weight:700;margin-top:-3px}
+.perilla .fl{width:100%;min-height:42px;border-radius:10px;border:2px solid var(--linea);border-bottom-width:4px;background:var(--card2);color:var(--txt);font-size:1rem;font-weight:900;cursor:pointer}
+.perilla .fl:active{transform:translateY(2px)}
+.perilla .dig{width:100%;min-height:56px;display:grid;place-items:center;background:#0a1a1c;border:2px solid var(--sol);border-radius:12px;font-size:1.8rem;font-weight:900;color:var(--sol)}
+.perilla .dig.mal{border-color:var(--coral);color:var(--coral);animation:temblar .35s}
+.perilla .dig.bien{border-color:var(--aqua);color:var(--aqua)}
+.visor{background:#0a1a1c;border:2px solid var(--linea);border-radius:18px;padding:12px;text-align:center;font-weight:900;font-size:clamp(1.8rem,8vw,2.8rem);color:var(--aqua);letter-spacing:.04em}
+.visor small{display:block;font-size:.62rem;letter-spacing:.26em;color:var(--suave);margin-bottom:2px}
+.cifras{display:flex;gap:6px;justify-content:center;width:100%}
+.cifra{flex:1;max-width:62px;min-width:38px;min-height:70px;border-radius:14px;border:2px solid var(--linea);border-bottom-width:5px;background:var(--card2);color:var(--txt);font:inherit;font-size:2.1rem;font-weight:900;cursor:pointer;transition:transform .1s}
+.cifra:active{transform:translateY(2px)}
+.cifra.tach{opacity:.55;text-decoration:line-through;border-color:var(--coral);color:var(--coral);background:#3a2220}
+.cifra.bien{border-color:var(--aqua)}
+.pedido{background:linear-gradient(160deg,var(--card2),var(--card));border:1px dashed var(--aqua);border-radius:18px;padding:14px 16px;font-weight:700;line-height:1.45}
+.pedido b{color:var(--sol)}
+.tip{background:rgba(127,211,196,.1);border-left:4px solid var(--aqua);border-radius:12px;padding:10px 14px;color:var(--txt);font-weight:600;font-size:.92rem;line-height:1.45;text-align:left}
+.tip b{color:var(--aqua)}
+.fb .bt{display:flex;gap:8px;flex:none}
+@media (max-width:420px){.slot{font-size:1.2rem;min-height:54px}.slot small{font-size:.46rem}.perilla small{font-size:.52rem}.perilla em{font-size:.44rem}.perilla .dig{font-size:1.5rem}}
+@media (max-height:640px){.slot{min-height:48px}.cifra{min-height:56px}.perilla .dig{min-height:44px}.perilla .fl{min-height:34px}}
+</style></head><body><div id="app"></div>
+<script>
+(function(){
+var app=document.getElementById('app');
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function baraja(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function pad(n,len){n=String(n);while(n.length<len)n='0'+n;return n}
+var ABR=['CMill','DMill','UMill','CM','DM','UM','C','D','U'];
+var VAL=['100.000.000','10.000.000','1.000.000','100.000','10.000','1.000','100','10','1'];
+var DES=[
+ {ico:'📋',nom:'La tabla de pedidos',sub:'Leer y escribir números grandes',
+  como:'Llegan pedidos por teléfono. Escribí cada número en la <b>tabla de posiciones</b>: tocá un lugar y después un dígito. Los lugares vacíos de la izquierda no se escriben, pero los <b>ceros del medio sí</b>.'},
+ {ico:'⚙️',nom:'La máquina de descomponer',sub:'Armar el número con sus valores',
+  como:'La máquina arma el número a partir de una suma. Girá cada <b>perilla</b> con ▲ y ▼ hasta que cada dígito quede en el lugar que le toca. Cuidá los lugares que no se nombran: ahí va un <b>0</b>.'},
+ {ico:'📦',nom:'El depósito de cajas',sub:'¿Cuántas decenas, centenas… hay?',
+  como:'Para saber cuántas decenas completas hay en un número, <b>se tachan las cifras de la derecha</b>. Tocá la cifra desde donde querés tachar: se tachan esa y todas las que están a su derecha.'}];
+var ACT=[
+ [{t:'tabla',q:'Pedido por teléfono: <b>“dos millones seiscientos setenta mil ciento diez”</b>. Escribilo en la tabla.',num:'2670110',
+   pista:'Las clases se leen de a tres lugares: primero los millones, después los miles y al final las unidades.',
+   exp:'2.670.110 → 2 en unidades de millón; 670 en la clase de los miles; 110 en la clase de las unidades.'},
+  {t:'tabla',q:'Otro pedido: <b>“tres millones veinte”</b>. Ojo con los ceros.',num:'3000020',
+   pista:'Después de “tres millones” no se nombran ni los miles ni las centenas: esos lugares se completan con ceros.',
+   exp:'3.000.020 → el 3 va en los millones, el 2 en las decenas y todos los lugares que no se nombran llevan 0.'},
+  {t:'leer',q:'La tabla muestra un número. ¿Cómo se lee?',num:'450300',
+   ops:['cuatrocientos cincuenta mil trescientos','cuatro millones quinientos mil trescientos','cuarenta y cinco mil trescientos','cuatrocientos cincuenta mil tres'],ok:0,
+   pista:'Leé primero la clase de los miles y después la de las unidades.',
+   exp:'450.300 → “cuatrocientos cincuenta mil” (clase de los miles) y “trescientos” (clase de las unidades).'}],
+ [{t:'perillas',q:'Orden de la máquina: <b>50.000 + 9.000 + 200 + 10</b>',num:'59210',
+   pista:'Ubicá cada sumando en su lugar. El lugar de las unidades no se nombra: ahí va un 0.',
+   exp:'59.210 → 5 decenas de millar, 9 unidades de millar, 2 centenas, 1 decena y 0 unidades.'},
+  {t:'perillas',q:'Orden de la máquina: <b>7.000 + 400 + 8</b>',num:'7408',
+   pista:'No hay decenas: ese lugar tiene que quedar en 0, o el número se corre de lugar.',
+   exp:'7.408 → 7 unidades de millar, 4 centenas, 0 decenas y 8 unidades.'},
+  {t:'perillas',q:'Orden de la máquina (desordenada): <b>5.000 + 2.000.000 + 40 + 300.000</b>',num:'2305040',
+   pista:'Aunque la suma esté desordenada, cada sumando va en su lugar: millones, centenas de millar, unidades de millar y decenas. Lo demás es 0.',
+   exp:'2.305.040 → 2 unidades de millón, 3 centenas de millar, 0 decenas de millar, 5 unidades de millar, 0 centenas, 4 decenas y 0 unidades.'}],
+ [{t:'tachar',q:'Hay <b>4.360</b> alfajores sueltos. ¿Cuántas <b>cajas chicas</b> (decenas) completas se pueden armar?',num:'4360',k:1,unidad:'decenas',
+   pista:'Para pasar a decenas se tacha 1 cifra: la de las unidades.',
+   exp:'Se tacha el 0 y queda 436. Hay 436 decenas en total (la cifra de las decenas es 6, pero no es lo mismo que la cantidad total).'},
+  {t:'tachar',q:'En el depósito hay <b>52.718</b> alfajores. ¿Cuántos <b>packs</b> (centenas) completos se pueden armar?',num:'52718',k:2,unidad:'centenas',
+   pista:'Para pasar a centenas se tachan 2 cifras: las unidades y las decenas.',
+   exp:'Se tachan el 1 y el 8 y queda 527. Hay 527 centenas completas; sobran 18 alfajores.'},
+  {t:'tachar',q:'Un camión descarga <b>380.450</b> alfajores. ¿Cuántas <b>cajas grandes</b> (unidades de millar) completas se pueden armar?',num:'380450',k:3,unidad:'unidades de millar',
+   pista:'Para pasar a unidades de millar se tachan 3 cifras: unidades, decenas y centenas.',
+   exp:'Se tachan el 4, el 5 y el 0 y queda 380. Hay 380 unidades de millar completas; sobran 450 alfajores.'}]];
+var E={};
+
+// ---------- base de pantalla ----------
+function hud(){var h='<div class="hud"><div class="pasos">';
+ for(var d=0;d<3;d++){var w=E.cred&&E.cred[d]?Math.round(E.cred[d].length/3*100):0;h+='<i><b style="width:'+w+'%"></b></i>'}
+ return h+'</div><span class="chip">⭐ '+(E.pts||0)+'</span></div>'}
+function pintar(h,cls){app.innerHTML=hud()+'<div class="escena '+(cls||'')+'">'+h+'</div><div class="fb" id="fb"></div>'}
+function fb(tipo,html,botones){
+ var f=document.getElementById('fb');f.className='fb ver '+tipo;
+ f.innerHTML='<div>'+html+'</div><span class="bt">'+botones.map(function(b,i){return '<button class="btn" data-b="'+i+'">'+b[0]+'</button>'}).join('')+'</span>';
+ [].forEach.call(f.querySelectorAll('[data-b]'),function(el){el.onclick=function(){botones[+el.dataset.b][1]()}});
+ var es=app.querySelector('.escena');if(es){es.classList.add('confb');es.scrollTop=es.scrollHeight}}
+function sinFb(){var f=document.getElementById('fb');if(f)f.className='fb';var es=app.querySelector('.escena');if(es)es.classList.remove('confb')}
+function cab(){return '<div><div class="etq">'+DES[E.d].ico+' Desafío '+(E.d+1)+' · '+(E.a+1)+' de 3</div></div>'}
+
+// ---------- veredicto común: 2 intentos ----------
+function veredicto(A,ok,h){
+ if(ok){var c=E.int===1?1:.5;h.bloquear();
+  fb('bien',(c===1?'¡Perfecto!':'¡Bien, a la segunda!')+'<small>'+A.exp+'</small>',[['Seguir ➜',function(){anotar(c)}]]);return}
+ if(E.int===1){E.int=2;h.marcar();
+  fb('mal','Casi. Tenés otra oportunidad (vale medio punto).<small>'+A.pista+'</small>',[['Probar de nuevo',function(){h.reintento();sinFb()}]]);return}
+ h.revelar();
+ fb('mal','Esta vez no salió. Mirá cómo se resuelve:<small>'+A.exp+'</small>',[['Seguir ➜',function(){anotar(0)}]])}
+function anotar(c){E.cred[E.d].push(c);E.pts+=Math.round(c*10);E.a++;if(E.a>=3)finDesafio();else jugar()}
+
+// ---------- A · tabla de posiciones ----------
+function tablaHTML(sl,act,err,lock,ok,editable){
+ var h='<div class="tabla">',nombres=['Millones','Miles','Unidades'];
+ for(var g=0;g<3;g++){h+='<div class="clase"><div class="clase-t">'+nombres[g]+'</div><div class="slots">';
+  for(var j=0;j<3;j++){var i=g*3+j,c='slot'+(i===act&&!lock&&editable?' act':'')+(err.indexOf(i)>=0?' mal':'')+(lock&&ok?' bien':'');
+   h+='<button class="slot '+c+'" data-s="'+i+'"'+(editable&&!lock?'':' disabled')+'><small>'+ABR[i]+'</small>'+(sl[i]===''?'&nbsp;':sl[i])+'</button>'}
+  h+='</div></div>'}
+ return h+'</div>'}
+function esperado(num){var p=pad(num,9),n=String(num).length;return p.split('').map(function(c,i){return i>=9-n?c:''})}
+function pTabla(A){
+ var exp=esperado(A.num),sl=['','','','','','','','',''],act=0,err=[],lock=false,ok=false;
+ function dib(){
+  var h=cab()+'<h2>'+A.q+'</h2>'+tablaHTML(sl,act,err,lock,ok,true)+
+   '<div class="teclado">'+'0123456789'.split('').map(function(d){return '<button class="pz" data-d="'+d+'"'+(lock?' disabled':'')+'>'+d+'</button>'}).join('')+
+   '<button class="pz borrar" data-d="x"'+(lock?' disabled':'')+'>⌫</button><button class="pz borrar" data-d="xx"'+(lock?' disabled':'')+' title="Borrar todo">🗑</button></div>'+
+   '<button class="btn" id="ok"'+(lock||!sl.some(function(v){return v!==''})?' disabled':'')+'>Comprobar</button>';
+  pintar(h);
+  [].forEach.call(app.querySelectorAll('[data-s]'),function(b){b.onclick=function(){act=+b.dataset.s;err=[];dib()}});
+  [].forEach.call(app.querySelectorAll('[data-d]'),function(b){b.onclick=function(){var d=b.dataset.d;err=[];
+   if(d==='xx'){sl=['','','','','','','','',''];act=0}
+   else if(d==='x'){sl[act]=''}
+   else{sl[act]=d;if(act<8)act++}
+   dib()}});
+  document.getElementById('ok').onclick=function(){
+   var mal=[];sl.forEach(function(v,i){if(v!==exp[i])mal.push(i)});
+   veredicto(A,!mal.length,{
+    bloquear:function(){lock=true;ok=true;dib()},
+    marcar:function(){err=mal;dib()},
+    reintento:function(){err=[];dib()},
+    revelar:function(){sl=exp.slice();lock=true;ok=false;err=[];dib()}})}}
+ dib()}
+function pLeer(A){
+ var exp=esperado(A.num),opts=baraja(A.ops.map(function(t,i){return{t:t,ok:i===A.ok}})),sel=-1,malas=[],lock=false,mostrarOk=false;
+ function dib(){
+  var h=cab()+'<h2>'+A.q+'</h2>'+tablaHTML(exp,-1,[],false,false,false)+'<div class="ops">'+opts.map(function(o,i){
+   var c='op'+(i===sel?' sel':'')+(malas.indexOf(i)>=0?' mal':'')+(mostrarOk&&o.ok?' bien':'')+(lock&&!o.ok&&malas.indexOf(i)<0?' gris':'');
+   return '<button class="'+c+'" data-o="'+i+'"'+(lock||malas.indexOf(i)>=0?' disabled':'')+'>'+o.t+'</button>'}).join('')+'</div>'+
+   '<button class="btn" id="ok"'+(lock||sel<0?' disabled':'')+'>Comprobar</button>';
+  pintar(h);
+  [].forEach.call(app.querySelectorAll('[data-o]'),function(b){b.onclick=function(){sel=+b.dataset.o;dib()}});
+  document.getElementById('ok').onclick=function(){var bien=opts[sel].ok;
+   veredicto(A,bien,{
+    bloquear:function(){lock=true;mostrarOk=true;dib()},
+    marcar:function(){malas.push(sel);sel=-1;dib()},
+    reintento:function(){},
+    revelar:function(){malas.push(sel);lock=true;mostrarOk=true;sel=-1;dib()}})}}
+ dib()}
+
+// ---------- B · perillas ----------
+function pPerillas(A){
+ var exp=pad(A.num,7).split('').map(Number),v=[0,0,0,0,0,0,0],err=[],lock=false,ok=false;
+ function numero(){var s=v.join('').replace(/^0+/,'');return s===''?'0':fmt(s)}
+ function dib(){
+  var h=cab()+'<h2>'+A.q+'</h2><div class="visor"><small>LA MÁQUINA ARMÓ</small>'+numero()+'</div><div class="perillas">';
+  for(var i=0;i<7;i++){var k=i+2;
+   h+='<div class="perilla"><small>'+ABR[k]+'</small><em>'+VAL[k]+'</em><button class="fl" data-u="'+i+'"'+(lock?' disabled':'')+'>▲</button><div class="dig'+(err.indexOf(i)>=0?' mal':'')+(lock&&ok?' bien':'')+'">'+v[i]+'</div><button class="fl" data-w="'+i+'"'+(lock?' disabled':'')+'>▼</button></div>'}
+  h+='</div><button class="btn" id="ok"'+(lock?' disabled':'')+'>Comprobar</button>';
+  pintar(h);
+  [].forEach.call(app.querySelectorAll('[data-u]'),function(b){b.onclick=function(){var i=+b.dataset.u;v[i]=(v[i]+1)%10;err=[];dib()}});
+  [].forEach.call(app.querySelectorAll('[data-w]'),function(b){b.onclick=function(){var i=+b.dataset.w;v[i]=(v[i]+9)%10;err=[];dib()}});
+  document.getElementById('ok').onclick=function(){
+   var mal=[];v.forEach(function(x,i){if(x!==exp[i])mal.push(i)});
+   veredicto(A,!mal.length,{
+    bloquear:function(){lock=true;ok=true;dib()},
+    marcar:function(){err=mal;dib()},
+    reintento:function(){err=[];dib()},
+    revelar:function(){v=exp.slice();lock=true;ok=false;err=[];dib()}})}}
+ dib()}
+
+// ---------- C · tachar cifras ----------
+function pTachar(A){
+ var n=A.num.length,cut=n,lock=false,ok=false;
+ function dib(){
+  var rest=A.num.slice(0,cut);
+  var h=cab()+'<div class="pedido">'+A.q+'</div><div class="cifras">'+A.num.split('').map(function(c,i){
+   return '<button class="cifra'+(i>=cut?' tach':'')+(lock&&ok&&i<cut?' bien':'')+'" data-c="'+i+'"'+(lock?' disabled':'')+'>'+c+'</button>'}).join('')+'</div>'+
+   '<div class="visor"><small>CANTIDAD DE '+A.unidad.toUpperCase()+'</small>'+(cut>0&&cut<n?fmt(rest):'—')+'</div>'+
+   '<p style="text-align:center">Tocá la cifra desde donde querés tachar. Tocala de nuevo para deshacer.</p>'+
+   '<button class="btn" id="ok"'+(lock||cut===n?' disabled':'')+'>Comprobar</button>';
+  pintar(h);
+  [].forEach.call(app.querySelectorAll('[data-c]'),function(b){b.onclick=function(){var i=+b.dataset.c;cut=(cut===i)?n:i;dib()}});
+  document.getElementById('ok').onclick=function(){
+   var bien=cut===n-A.k;
+   veredicto(A,bien,{
+    bloquear:function(){lock=true;ok=true;dib()},
+    marcar:function(){dib()},
+    reintento:function(){cut=n;dib()},
+    revelar:function(){cut=n-A.k;lock=true;ok=false;dib()}})}}
+ dib()}
+
+// ---------- flujo ----------
+function estrellas(p){var n=p>=.9?3:p>=.6?2:p>0?1:0;return '★★★'.slice(0,n)+'<s>'+'★★★'.slice(n)+'</s>'}
+function suma(a){return a.reduce(function(x,y){return x+y},0)}
+function mapa(extra){
+ var h='<div class="mapa mini">';
+ DES.forEach(function(d,i){var hecho=!!(E.cred&&E.cred[i]&&E.cred[i].length>=3);var act=!hecho&&i===E.d;
+  h+='<div class="nodo'+(hecho?' hecho':act?' act':'')+'"><i>'+(hecho?'✓':d.ico)+'</i><div>'+d.nom+'<small>'+d.sub+'</small></div>'+(hecho?'<em class="estrellas" style="font-size:1rem">'+estrellas(suma(E.cred[i])/3)+'</em>':'')+'</div>'});
+ return h+'</div>'}
+function jugar(){var A=ACT[E.d][E.a];E.int=1;({tabla:pTabla,leer:pLeer,perillas:pPerillas,tachar:pTachar})[A.t](A)}
+function introDesafio(){
+ var d=DES[E.d];
+ pintar('<div class="etq">Desafío '+(E.d+1)+' de 3</div><h1>'+d.ico+' '+d.nom+'</h1><div class="tip"><b>Cómo funciona.</b> '+d.como+'</div><p style="max-width:520px">Tenés 2 intentos por actividad: si acertás a la primera vale 1 punto; a la segunda, medio punto.</p><button class="btn" style="min-width:220px">Empezar ➜</button>','centro');
+ app.querySelector('.escena .btn').onclick=function(){E.a=0;jugar()}}
+function finDesafio(){
+ var c=suma(E.cred[E.d])/3,ult=E.d>=2,msgs=['¡Desafío superado!','Muy buen trabajo.','Lo importante es que lo intentaste.'];
+ var h='<div class="etq">Desafío '+(E.d+1)+' completo</div><div class="gran">'+Math.round(c*100)+'%</div><div class="estrellas">'+estrellas(c)+'</div><h2>'+(c>=.9?msgs[0]:c>=.5?msgs[1]:msgs[2])+'</h2>'+mapa()+'<button class="btn">'+(ult?'Ver resultado final':'Siguiente desafío ➜')+'</button>';
+ pintar(h,'centro');
+ app.querySelector('.escena .btn').onclick=function(){if(ult)final();else{E.d++;introDesafio()}}}
+function final(){
+ var pct=Math.round(suma(E.cred.map(suma))/9*100);
+ var msg=pct>=90?'¡Fábrica a pleno! Dominás el sistema decimal.':pct>=60?'¡Muy bien! Repasá lo que falló en el PDF.':'Buen intento. Volvé al PDF y jugá otra vez.';
+ var h='<div class="etq">Fábrica de alfajores · resultado</div><div class="gran">'+pct+'%</div><div class="estrellas">'+estrellas(pct/100)+'</div><h2>'+msg+'</h2><p>⭐ '+E.pts+' puntos</p>'+mapa()+'<button class="btn sec">Jugar de nuevo</button>';
+ pintar(h,'centro');app.querySelector('.escena .btn').onclick=inicio;
+ if(pct>=60){var c=document.createElement('div');c.className='conf';var col=['#7FD3C4','#F4B63F','#ff7a66','#fff','#19a39f'];for(var i=0;i<70;i++){var p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.background=col[i%5];p.style.animationDuration=(2+Math.random()*2.5)+'s';p.style.animationDelay=Math.random()*1.2+'s';c.appendChild(p)}app.appendChild(c)}
+ try{window.parent.postMessage({tipo:'wave-resultado',puntaje:pct},'*')}catch(e){}}
+function inicio(){
+ E={d:0,a:0,int:1,pts:0,cred:[[],[],[]]};
+ pintar('<div class="etq">Matemática I · Lección 3</div><h1>La Fábrica de Alfajores</h1><p style="max-width:520px">Trabajás en una fábrica donde todo se agrupa de a diez. Pasá por tres puestos y demostrá que dominás el sistema decimal: leer y escribir números grandes, descomponerlos y contar cuántas decenas o centenas hay.</p>'+mapa()+'<button class="btn" style="min-width:220px">Entrar a la fábrica ➜</button>','centro');
+ app.querySelector('.escena .btn').onclick=introDesafio}
+inicio();
+})();
+</script></body></html>
