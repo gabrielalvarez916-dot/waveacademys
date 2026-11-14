@@ -735,6 +735,7 @@
     familias: vistaFamilias,
     facturacion: vistaFacturacion,
     contenido: function () { return WaveContenido.abrir(vista); },
+    fabrica: function () { return WaveFabrica.abrir(vista); },
     seguimiento: proximamente('Seguimiento de alumnos'),
     registro: proximamente('Registro de actividad')
   };
