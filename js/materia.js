@@ -503,12 +503,120 @@
 
     function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
     el.addEventListener('click', function (ev) {
+      var fl = ev.target.closest('[data-mov]');
+      if (fl) {
+        var li = fl.closest('li'), ol = li && li.parentNode;
+        if (fl.getAttribute('data-mov') === 'up' && li.previousElementSibling) ol.insertBefore(li, li.previousElementSibling);
+        else if (fl.getAttribute('data-mov') === 'down' && li.nextElementSibling) ol.insertBefore(li.nextElementSibling, li);
+        return;
+      }
       if (ev.target === el || ev.target.closest('[data-cerrar]')) { if (!enviando) cerrar(); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
       else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
     });
 
+    var NUEVOS = ['fill_blank', 'ordering', 'matching', 'classify', 'table_fill', 'multi_select', 'solve_complete', 'odd_one_out'];
+    function listaOp(o) { return Array.isArray(o) ? o.map(String) : []; }
+    function selectDe(i, k, opciones) {
+      return '<select class="mt-sel" data-w="' + i + '" data-k="' + k + '"><option value="">Elegí…</option>' +
+        opciones.map(function (x) { return '<option value="' + esc(x) + '">' + esc(x) + '</option>'; }).join('') + '</select>';
+    }
+    // Devuelve el HTML del cuerpo del campo para los tipos nuevos, o null si la estructura no sirve (se muestra como respuesta libre)
+    function campoNuevo(q, i) {
+      var t = q.question_type, o = q.options, w = ' data-w="' + i + '"';
+      if (t === 'fill_blank') {
+        var partes = esc(q.prompt).split('___');
+        if (partes.length < 2) partes.push('');
+        var n = 0;
+        return '<p class="mt-hueco-p"' + w + '>' + partes.map(function (x, k) {
+          return k < partes.length - 1 ? x + '<input type="text" class="mt-hueco" data-h="' + (n++) + '" maxlength="80" autocomplete="off">' : x;
+        }).join('') + '</p>';
+      }
+      var enun = '<p>' + esc(q.prompt) + '</p>';
+      if (t === 'multi_select' && listaOp(o).length) {
+        return enun + '<small class="mt-ayuda">Marcá todas las que sean correctas.</small>' + listaOp(o).map(function (x) {
+          return '<label class="mt-op"><input type="checkbox"' + w + ' value="' + esc(x) + '"><span>' + esc(x) + '</span></label>';
+        }).join('');
+      }
+      if (t === 'odd_one_out' && listaOp(o).length) {
+        return enun + listaOp(o).map(function (x) {
+          return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(x) + '"><span>' + esc(x) + '</span></label>';
+        }).join('');
+      }
+      if (t === 'ordering' && listaOp(o).length) {
+        return enun + '<small class="mt-ayuda">Usá las flechas para poner los elementos en orden.</small><ol class="mt-orden"' + w + '>' +
+          listaOp(o).map(function (x) {
+            return '<li data-v="' + esc(x) + '"><span class="mt-orden-t">' + esc(x) + '</span><span class="mt-orden-b"><button type="button" class="mt-flecha" data-mov="up" aria-label="Subir">▲</button><button type="button" class="mt-flecha" data-mov="down" aria-label="Bajar">▼</button></span></li>';
+          }).join('') + '</ol>';
+      }
+      if (t === 'matching' && o && listaOp(o.izquierda).length && listaOp(o.derecha).length) {
+        return enun + '<small class="mt-ayuda">Elegí la pareja de cada elemento.</small><div class="mt-pares">' + listaOp(o.izquierda).map(function (x, k) {
+          return '<div class="mt-par"><span>' + esc(x) + '</span>' + selectDe(i, k, listaOp(o.derecha)) + '</div>';
+        }).join('') + '</div>';
+      }
+      if (t === 'classify' && o && listaOp(o.elementos).length && listaOp(o.categorias).length) {
+        return enun + '<small class="mt-ayuda">Elegí la categoría de cada elemento.</small><div class="mt-pares">' + listaOp(o.elementos).map(function (x, k) {
+          return '<div class="mt-par"><span>' + esc(x) + '</span>' + selectDe(i, k, listaOp(o.categorias)) + '</div>';
+        }).join('') + '</div>';
+      }
+      if (t === 'table_fill' && o && listaOp(o.columnas).length && Array.isArray(o.filas) && o.filas.length) {
+        return enun + '<small class="mt-ayuda">Completá las celdas vacías.</small><div class="mt-tabla-w"><table class="mt-tabla"' + w + '><thead><tr>' +
+          listaOp(o.columnas).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          o.filas.map(function (f, r) {
+            return '<tr>' + listaOp(f).map(function (c, k) {
+              return c === '' ? '<td><input type="text" class="mt-celda" data-r="' + r + '" data-c="' + k + '" maxlength="40" autocomplete="off"></td>' : '<td>' + esc(c) + '</td>';
+            }).join('') + '</tr>';
+          }).join('') + '</tbody></table></div>';
+      }
+      if (t === 'solve_complete') {
+        return enun + '<label class="mt-lbl">Procedimiento</label><textarea class="mt-txt" data-w="' + i + '" data-k="proc" rows="3" maxlength="2000" placeholder="Escribí cómo lo resolviste"></textarea>' +
+          '<label class="mt-lbl">Resultado</label><input type="text" class="mt-txt" data-w="' + i + '" data-k="res" maxlength="200" placeholder="Tu resultado">';
+      }
+      return null;
+    }
+
+    // Lee lo que respondió el alumno y lo pasa a texto (así lo recibe el corrector)
+    function leerNuevo(q, i) {
+      var t = q.question_type, o = q.options, sel = '[data-w="' + i + '"]', out = [];
+      if (t === 'fill_blank') {
+        var hs = Array.prototype.slice.call(cuerpo.querySelectorAll(sel + ' .mt-hueco'));
+        var llenos = hs.some(function (h) { return h.value.trim(); });
+        return llenos ? hs.map(function (h, k) { return (k + 1) + ') ' + h.value.trim(); }).join(' | ') : '';
+      }
+      if (t === 'multi_select') {
+        return Array.prototype.map.call(cuerpo.querySelectorAll(sel + ':checked'), function (c) { return c.value; }).join(' | ');
+      }
+      if (t === 'odd_one_out') { var c1 = cuerpo.querySelector('[name="q' + i + '"]:checked'); return c1 ? c1.value : ''; }
+      if (t === 'ordering') {
+        return Array.prototype.map.call(cuerpo.querySelectorAll(sel + ' li'), function (li) { return li.getAttribute('data-v'); }).join(' → ');
+      }
+      if (t === 'matching' || t === 'classify') {
+        var izq = t === 'matching' ? listaOp(o.izquierda) : listaOp(o.elementos), sep = t === 'matching' ? ' = ' : ' → ', alguno = false;
+        izq.forEach(function (x, k) {
+          var s = cuerpo.querySelector('select' + sel + '[data-k="' + k + '"]');
+          var v = s ? s.value : '';
+          if (v) alguno = true;
+          out.push(x + sep + (v || '(sin elegir)'));
+        });
+        return alguno ? out.join('\n') : '';
+      }
+      if (t === 'table_fill') {
+        Array.prototype.forEach.call(cuerpo.querySelectorAll(sel + ' .mt-celda'), function (c) {
+          if (c.value.trim()) out.push('Fila ' + (+c.dataset.r + 1) + ', columna ' + listaOp(o.columnas)[+c.dataset.c] + ': ' + c.value.trim());
+        });
+        return out.join('\n');
+      }
+      if (t === 'solve_complete') {
+        var pr = cuerpo.querySelector('textarea' + sel), rs = cuerpo.querySelector('input' + sel);
+        var a = pr ? pr.value.trim() : '', b = rs ? rs.value.trim() : '';
+        return (a || b) ? 'Procedimiento: ' + (a || '(vacío)') + '\nResultado: ' + (b || '(vacío)') : '';
+      }
+      return null;
+    }
+
     function campo(q, i) {
+      var nuevo = NUEVOS.indexOf(q.question_type) >= 0 ? campoNuevo(q, i) : null;
+      if (nuevo !== null) return '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + nuevo + '</div></div>';
       var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c"><p>' + esc(q.prompt) + '</p>';
       if (q.question_type === 'multiple_choice' || q.question_type === 'true_false') {
         h += (q.options || []).map(function (o, j) {
@@ -530,6 +638,7 @@
 
     async function enviar() {
       var resp = lista.map(function (q, i) {
+        if (NUEVOS.indexOf(q.question_type) >= 0 && campoNuevo(q, i) !== null) return { question_id: q.id, answer: leerNuevo(q, i) };
         var c = cuerpo.querySelector('[name="q' + i + '"]:checked') || cuerpo.querySelector('.mt-txt[name="q' + i + '"]');
         return { question_id: q.id, answer: c ? c.value : '' };
       });

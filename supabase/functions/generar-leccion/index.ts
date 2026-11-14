@@ -286,7 +286,7 @@ async function pasoRevision(c: Ctx, contenido: any, consignas: any[]) {
   const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS:\n` +
     consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones?.length ? "\n   Opciones: " + q.opciones.join(" / ") : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
-  return await claudeTool(system, user, TOOL_REVISION, 5000);
+  return await claudeTool(system, user, TOOL_REVISION, 12000);
 }
 
 const GRAV = { alta: 0, media: 1, baja: 2 } as Record<string, number>;
