@@ -100,6 +100,23 @@ const TOOL_CONTENIDO = {
   },
 };
 
+const TIPOS_CONSIGNA = ["true_false", "multiple_choice", "odd_one_out", "multi_select", "fill_blank", "ordering", "matching", "classify", "table_fill", "short_answer", "solve_complete", "open"];
+const arrStr = (d: string) => ({ type: "array", items: { type: "string" }, description: d });
+
+const FORMATOS = `FORMATOS DE CONSIGNA (completá solo los campos del formato elegido):
+- true_false: "enunciado" es una afirmación; "respuesta" es "Verdadero" o "Falso".
+- multiple_choice: "opciones" con 4 opciones y una sola correcta; "respuesta" es el texto exacto de la correcta.
+- odd_one_out (encontrar el intruso): "opciones" con 4 o 5 elementos, uno solo no cumple la característica que pide el enunciado; "respuesta" es ese elemento, texto exacto.
+- multi_select (selección múltiple): "opciones" con 5 afirmaciones u opciones; "correctas" lista, con el texto exacto, las que son correctas (al menos 2 y no todas).
+- fill_blank (completar espacios): el "enunciado" contiene entre 1 y 4 huecos marcados con ___ (tres guiones bajos); "respuesta" lista lo que va en cada hueco, en orden: "1) ... | 2) ...".
+- ordering (ordenar pasos): "opciones" con entre 3 y 6 elementos EN EL ORDEN CORRECTO (el sistema los desordena al mostrarlos); "respuesta" no hace falta.
+- matching (unir columnas): "izquierda" y "derecha" con entre 3 y 6 elementos cada una, alineadas: derecha[i] es la pareja correcta de izquierda[i] (el sistema desordena la derecha); "respuesta" no hace falta.
+- classify (clasificar): "elementos" (3 a 8), "categorias" (2 a 4) y "categoria_de" (misma cantidad que elementos; categoria_de[i] es el texto exacto de la categoría de elementos[i]).
+- table_fill (completar tabla): "columnas" (2 a 6), "filas" con TODAS las celdas completas y correctas (cada fila tiene tantas celdas como columnas) y "celdas_vacias": entre 1 y 6 objetos {fila, columna} (empiezan en 1) que el alumno debe completar.
+- short_answer (respuesta corta): una palabra, cifra o frase breve verificable; "respuesta" es esa respuesta.
+- solve_complete (resolver y completar): una cuenta o problema; "respuesta" tiene la forma "Procedimiento: ... Resultado: ...".
+- open (respuesta abierta): pide explicar con varias oraciones; "respuesta" es un ejemplo completo de respuesta.`;
+
 const TOOL_CONSIGNAS = {
   name: "guardar_consignas",
   description: "Guarda las 8 consignas de la actividad por consigna.",
@@ -111,15 +128,23 @@ const TOOL_CONSIGNAS = {
         items: {
           type: "object",
           properties: {
-            tipo: { type: "string", enum: ["true_false", "multiple_choice", "short_answer", "open"] },
+            tipo: { type: "string", enum: TIPOS_CONSIGNA },
             enunciado: { type: "string" },
-            opciones: { type: "array", items: { type: "string" }, description: "multiple_choice: 4 opciones. true_false: [\"Verdadero\",\"Falso\"]. Resto: omitir." },
-            respuesta: { type: "string", description: "Respuesta correcta o de referencia. En multiple_choice y true_false, idéntica a una de las opciones." },
-            puntos: { type: "integer" },
+            opciones: arrStr("Ver formatos: multiple_choice, odd_one_out, multi_select, ordering."),
+            correctas: arrStr("Solo multi_select: las opciones correctas, texto exacto."),
+            izquierda: arrStr("Solo matching."),
+            derecha: arrStr("Solo matching: derecha[i] es la pareja de izquierda[i]."),
+            elementos: arrStr("Solo classify."),
+            categorias: arrStr("Solo classify."),
+            categoria_de: arrStr("Solo classify: categoria_de[i] es la categoría de elementos[i]."),
+            columnas: arrStr("Solo table_fill."),
+            filas: { type: "array", items: { type: "array", items: { type: "string" } }, description: "Solo table_fill: todas las celdas completas." },
+            celdas_vacias: { type: "array", items: { type: "object", properties: { fila: { type: "integer" }, columna: { type: "integer" } }, required: ["fila", "columna"] }, description: "Solo table_fill: celdas que completa el alumno (desde 1)." },
+            respuesta: { type: "string", description: "Respuesta correcta o de referencia, según el formato." },
             criterios: { type: "string", description: "Cómo corregir, con puntaje parcial EXPRESADO EN PORCENTAJE de la consigna (0 a 100), por ejemplo: \"100 si ...; 50 si ...; 0 si ...\". Nunca en puntos." },
             explicacion: { type: "string", description: "Por qué es esa la respuesta (didáctica)" },
           },
-          required: ["tipo", "enunciado", "respuesta", "puntos", "criterios", "explicacion"],
+          required: ["tipo", "enunciado", "criterios", "explicacion"],
         },
       },
     },
@@ -223,20 +248,100 @@ async function pasoContenido(c: Ctx) {
   return r;
 }
 
+const INSTR_VARIEDAD = `Arm\u00e1 exactamente 8 consignas, ordenadas de la m\u00e1s simple a la m\u00e1s pensada (el sistema les asigna 1, 1, 1, 2, 2, 2, 3 y 3 puntos en ese orden). Us\u00e1 VARIEDAD de formatos: al menos 5 tipos distintos, como m\u00e1ximo 1 verdadero/falso y 2 de opci\u00f3n m\u00faltiple, y al menos una de producci\u00f3n (respuesta corta, resolver y completar, o abierta) entre las \u00faltimas tres. Eleg\u00ed el formato que mejor encaje con el contenido: ordering para procedimientos o pasos de una cuenta; matching para unir t\u00e9rmino con definici\u00f3n o cuenta con resultado; classify para agrupar n\u00fameros o situaciones; table_fill para tablas de valores; fill_blank para completar frases o cuentas; multi_select cuando hay varias afirmaciones correctas; odd_one_out para encontrar el que no cumple; solve_complete para una cuenta o problema con procedimiento y resultado. Al menos dos consignas deben apuntar a los errores t\u00edpicos. Los distractores son errores plausibles, nunca absurdos. Cada consigna debe tener una \u00fanica respuesta correcta y poder resolverse con lo que dice el material. Los criterios de correcci\u00f3n expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma punt\u00faa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ..."; en los formatos de varias partes, proporcional a las partes acertadas. Nunca uses puntos ("1 punto") en los criterios.`;
+
 async function pasoConsignas(c: Ctx, contenido: any) {
-  const system = ESTILO + `\nAhora escribís la actividad por consigna de la lección. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.`;
-  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\nArmá exactamente 8 consignas, de lo más simple a lo más pensado, con esta distribución y estos puntos: 1 verdadero/falso (1 punto), 2 de opción múltiple con 4 opciones y una sola correcta (1 punto cada una), 3 de respuesta corta con respuesta verificable (2 puntos cada una), 2 abiertas (3 puntos cada una). Al menos dos consignas deben apuntar a los errores típicos. Las opciones incorrectas tienen que ser errores plausibles, nunca absurdas. En "respuesta" de multiple_choice y true_false va el texto exacto de una opción. En las abiertas, la respuesta de referencia es un ejemplo completo y los criterios dividen el puntaje en ideas. Los criterios de corrección expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma puntúa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto", "0,5 punto") en los criterios.`;
-  const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
+  const system = ESTILO + `\nAhora escrib\u00eds la actividad por consigna de la lecci\u00f3n. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.\n\n${FORMATOS}`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCI\u00d3N (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\n${INSTR_VARIEDAD}`;
+  const r = await claudeTool(system, user, TOOL_CONSIGNAS, 10000);
   return validarConsignas(r.consignas);
 }
 
-function validarConsignas(cs: any) {
-  if (!Array.isArray(cs) || cs.length !== 8) throw new Error("La IA no devolvió exactamente 8 consignas");
-  for (const q of cs) {
-    if (q.tipo === "multiple_choice" && (!Array.isArray(q.opciones) || q.opciones.length !== 4 || !q.opciones.includes(q.respuesta))) throw new Error("Una consigna de opción múltiple quedó mal armada");
-    if (q.tipo === "true_false") q.opciones = ["Verdadero", "Falso"];
+const PUNTOS = [1, 1, 1, 2, 2, 2, 3, 3];
+const strs = (x: unknown): string[] => Array.isArray(x) ? x.map((v) => String(v ?? "").trim()).filter(Boolean) : [];
+function desordenar(a: string[]): string[] {
+  if (a.length < 2) return [...a];
+  const orig = a.join("\u0001");
+  for (let t = 0; t < 12; t++) {
+    const b = [...a];
+    for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; }
+    if (b.join("\u0001") !== orig) return b;
   }
-  return cs;
+  return [...a].reverse();
+}
+const unicos = (a: string[]) => new Set(a).size === a.length;
+
+// Valida una consigna y la pasa a la forma que se guarda: { tipo, enunciado, opciones (listo para la base), respuesta, puntos, criterios, explicacion, raw }
+function normalizarConsigna(q: any, pos: number) {
+  const t = q?.tipo, n = pos + 1, mal = (m: string) => { throw new Error(`Consigna ${n} (${t}): ${m}`); };
+  if (!TIPOS_CONSIGNA.includes(t)) mal("tipo desconocido");
+  const enunciado = String(q.enunciado || "").trim();
+  if (!enunciado) mal("sin enunciado");
+  let opciones: unknown = null, respuesta = String(q.respuesta ?? "").trim();
+  if (t === "true_false") {
+    opciones = ["Verdadero", "Falso"];
+    if (!["Verdadero", "Falso"].includes(respuesta)) mal("la respuesta debe ser Verdadero o Falso");
+  } else if (t === "multiple_choice" || t === "odd_one_out") {
+    const o = strs(q.opciones);
+    if (t === "multiple_choice" ? o.length !== 4 : (o.length < 4 || o.length > 5)) mal("cantidad de opciones incorrecta");
+    if (!unicos(o) || !o.includes(respuesta)) mal("la respuesta no coincide con una opci\u00f3n");
+    opciones = o;
+  } else if (t === "multi_select") {
+    const o = strs(q.opciones), ok = strs(q.correctas);
+    if (o.length < 4 || o.length > 6 || !unicos(o)) mal("opciones mal armadas");
+    if (ok.length < 2 || ok.length >= o.length || !ok.every((x) => o.includes(x)) || !unicos(ok)) mal("las correctas no coinciden con las opciones");
+    opciones = o; respuesta = o.filter((x) => ok.includes(x)).join(" | ");
+  } else if (t === "fill_blank") {
+    const huecos = (enunciado.match(/___/g) || []).length;
+    const partes = respuesta.split("|").map((x) => x.trim().replace(/^\d+\)\s*/, "")).filter(Boolean);
+    if (huecos < 1 || huecos > 4) mal("tiene que haber entre 1 y 4 huecos (___)");
+    if (partes.length !== huecos) mal("la cantidad de respuestas no coincide con los huecos");
+    respuesta = partes.map((x, k) => `${k + 1}) ${x}`).join(" | ");
+  } else if (t === "ordering") {
+    const o = strs(q.opciones);
+    if (o.length < 3 || o.length > 6 || !unicos(o)) mal("necesita entre 3 y 6 elementos distintos");
+    respuesta = o.join(" \u2192 "); opciones = desordenar(o);
+  } else if (t === "matching") {
+    const iz = strs(q.izquierda), de = strs(q.derecha);
+    if (iz.length < 3 || iz.length > 6 || iz.length !== de.length || !unicos(iz) || !unicos(de)) mal("las columnas deben tener la misma cantidad (3 a 6) y no repetirse");
+    respuesta = iz.map((x, k) => `${x} = ${de[k]}`).join("\n"); opciones = { izquierda: iz, derecha: desordenar(de) };
+  } else if (t === "classify") {
+    const el = strs(q.elementos), ca = strs(q.categorias), cd = strs(q.categoria_de);
+    if (el.length < 3 || el.length > 8 || !unicos(el) || ca.length < 2 || ca.length > 4 || !unicos(ca)) mal("cantidad de elementos o categor\u00edas incorrecta");
+    if (cd.length !== el.length || !cd.every((x) => ca.includes(x))) mal("categoria_de no coincide con los elementos o categor\u00edas");
+    respuesta = el.map((x, k) => `${x} \u2192 ${cd[k]}`).join("\n"); opciones = { elementos: el, categorias: ca };
+  } else if (t === "table_fill") {
+    const co = strs(q.columnas), fi = Array.isArray(q.filas) ? q.filas.map((f: unknown) => (Array.isArray(f) ? f.map((v) => String(v ?? "").trim()) : [])) : [];
+    const va = Array.isArray(q.celdas_vacias) ? q.celdas_vacias : [];
+    if (co.length < 2 || co.length > 6 || fi.length < 2 || fi.length > 6 || !fi.every((f: string[]) => f.length === co.length)) mal("tabla mal armada");
+    if (fi.some((f: string[]) => f.some((x) => !x))) mal("la tabla tiene celdas vac\u00edas en los datos completos");
+    if (va.length < 1 || va.length > 6) mal("tiene que haber entre 1 y 6 celdas para completar");
+    const clave = new Set<string>(), lineas: string[] = [], filas = fi.map((f: string[]) => [...f]);
+    for (const v of va) {
+      const r = Number(v.fila) - 1, c = Number(v.columna) - 1;
+      if (!(r >= 0 && r < fi.length && c >= 0 && c < co.length) || clave.has(r + "," + c)) mal("celda para completar inv\u00e1lida");
+      clave.add(r + "," + c); lineas.push(`Fila ${r + 1}, columna ${co[c]}: ${fi[r][c]}`); filas[r][c] = "";
+    }
+    respuesta = lineas.join("\n"); opciones = { columnas: co, filas };
+  } else if (t === "solve_complete") {
+    if (!/Resultado\s*:/i.test(respuesta)) mal('la respuesta debe incluir "Resultado:"');
+  } else if (!respuesta) mal("sin respuesta de referencia");
+  return { tipo: t, enunciado, opciones, respuesta, puntos: PUNTOS[pos], criterios: String(q.criterios || "").trim(), explicacion: String(q.explicacion || "").trim(), raw: q };
+}
+
+function validarConsignas(cs: any) {
+  if (!Array.isArray(cs) || cs.length !== 8) throw new Error("La IA no devolvi\u00f3 exactamente 8 consignas");
+  const out = cs.map((q, i) => normalizarConsigna(q, i));
+  if (new Set(out.map((q) => q.tipo)).size < 4) throw new Error("Las consignas tienen muy poca variedad de formatos");
+  return out;
+}
+
+// texto plano de cualquier estructura (para controlar vocabulario)
+function textosDe(x: unknown): string[] {
+  if (typeof x === "string") return [x];
+  if (Array.isArray(x)) return x.flatMap(textosDe);
+  if (x && typeof x === "object") return Object.values(x as object).flatMap(textosDe);
+  return [];
 }
 
 // ---- control de vocabulario (sin IA: busca las palabras prohibidas de la materia) ----
@@ -259,7 +364,7 @@ function textosConLugar(contenido: any, consignas: any[]): { donde: string; text
   (contenido.glosario || []).forEach((g: any) => { add("Glosario", g.palabra); add("Glosario", g.significado); });
   (consignas || []).forEach((q, i) => {
     const lugar = `Consigna ${i + 1}`;
-    add(lugar, q.enunciado); (q.opciones || []).forEach((x: string) => add(lugar, x));
+    add(lugar, q.enunciado); textosDe(q.opciones).forEach((x: string) => add(lugar, x));
     add(lugar, q.respuesta); add(lugar, q.criterios); add(lugar, q.explicacion);
   });
   return out;
@@ -283,9 +388,9 @@ function controlVocabulario(c: Ctx, contenido: any, consignas: any[]) {
 }
 
 async function pasoRevision(c: Ctx, contenido: any, consignas: any[]) {
-  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
+  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Algunas consignas usan formatos especiales (ordering: la respuesta es el orden correcto y las opciones se muestran desordenadas; matching: pares con la respuesta; classify; table_fill: las celdas vac\u00edas las completa el alumno; multi_select; fill_blank con ___; solve_complete): verific\u00e1 que cada una se pueda resolver sin ambig\u00fcedad y que su respuesta de referencia sea correcta. Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS:\n` +
-    consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones?.length ? "\n   Opciones: " + q.opciones.join(" / ") : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
+    consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones ? "\n   Opciones: " + (Array.isArray(q.opciones) ? q.opciones.join(" / ") : JSON.stringify(q.opciones)) : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
   return await claudeTool(system, user, TOOL_REVISION, 12000);
 }
 
@@ -300,9 +405,9 @@ async function pasoCorregirContenido(c: Ctx, contenido: any, problemas: any[]) {
 }
 
 async function pasoCorregirConsignas(c: Ctx, contenido: any, consignas: any[], problemas: any[]) {
-  const system = ESTILO + `\nCorregís una actividad por consigna que tiene errores marcados por un revisor.`;
-  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé las 8 consignas COMPLETAS corregidas, con la misma distribución de tipos y puntos. Cambiá solo lo necesario. Recalculá cada cuenta que toques y revisá que la respuesta, los criterios y la explicación sigan coincidiendo. Los criterios de corrección expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma puntúa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto", "0,5 punto") en los criterios.`;
-  const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
+  const system = ESTILO + `\nCorreg\u00eds una actividad por consigna que tiene errores marcados por un revisor.\n\n${FORMATOS}`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCI\u00d3N:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas.map((q: any) => q.raw ?? q))}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolv\u00e9 las 8 consignas COMPLETAS corregidas, con el mismo orden y los mismos formatos (tipos), salvo que un problema exija cambiar el formato. Cambi\u00e1 solo lo necesario. Recalcul\u00e1 cada cuenta que toques y revis\u00e1 que la respuesta, los criterios y la explicaci\u00f3n sigan coincidiendo. Los criterios de correcci\u00f3n expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma punt\u00faa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto") en los criterios.`;
+  const r = await claudeTool(system, user, TOOL_CONSIGNAS, 10000);
   return validarConsignas(r.consignas);
 }
 
@@ -382,7 +487,7 @@ async function cargarConsignas(draftId: string) {
   if (cs.length !== 8) return { ok: false, motivo: "El borrador no tiene 8 consignas" };
   const rows = cs.map((q, i) => ({
     lesson_step_id: paso.id, question_type: q.tipo, prompt: q.enunciado,
-    options: q.tipo === "multiple_choice" || q.tipo === "true_false" ? q.opciones : null,
+    options: q.opciones ?? null,
     points: q.puntos, position: i + 1,
   }));
   const ins = await admin.from("questions").insert(rows).select("id, position");
