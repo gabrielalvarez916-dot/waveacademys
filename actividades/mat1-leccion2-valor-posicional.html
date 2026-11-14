@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Misión Valor Posicional</title>
+<style>
+:root{--bg:#0c1f21;--bg2:#123336;--card:#17383b;--card2:#1e474b;--linea:#2c5a5e;--aqua:#7FD3C4;--tq:#19a39f;--sol:#F4B63F;--coral:#ff7a66;--txt:#eaf7f4;--suave:#9dbdb9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 80% -10%,#1b5a5c 0%,transparent 60%),radial-gradient(900px 600px at -10% 110%,#16484b 0%,transparent 55%),var(--bg);color:var(--txt);overflow:hidden;user-select:none;-webkit-user-select:none}
+#app{position:relative;height:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;padding:10px 14px 12px}
+.hud{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.9rem;min-height:40px}
+.hud .pasos{display:flex;gap:6px;flex:1}
+.hud .pasos i{flex:1;height:8px;border-radius:9px;background:var(--linea);overflow:hidden;position:relative}
+.hud .pasos i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--tq),var(--aqua));border-radius:9px;transition:width .4s}
+.chip{background:var(--card);border:1px solid var(--linea);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.chip.racha{color:var(--sol)}.chip.racha.off{opacity:.35}
+.escena{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;animation:entra .35s ease both;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;padding:4px 2px}
+.escena>:first-child{margin-top:auto}.escena>:last-child{margin-bottom:auto}
+.escena.confb{padding-bottom:104px}
+.escena>*{flex:none}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.etq{font-size:.72rem;letter-spacing:.28em;font-weight:900;color:var(--aqua);text-transform:uppercase}
+h1{font-size:clamp(1.6rem,6vw,2.6rem);line-height:1.1;margin:4px 0;font-weight:900}
+h2{font-size:clamp(1.15rem,4.4vw,1.55rem);line-height:1.25;margin:0;font-weight:900;text-wrap:balance}
+p{margin:0;color:var(--suave);font-weight:600;line-height:1.45}
+.mat{font-family:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;font-weight:400}
+.op .mat,.fb .mat,h2 .mat{font-size:1.22em}
+.btn{appearance:none;border:0;border-radius:16px;font:inherit;font-weight:900;font-size:1.05rem;padding:15px 20px;min-height:54px;color:#06282a;background:linear-gradient(180deg,#9be8da,var(--aqua));box-shadow:0 5px 0 #3e9488;cursor:pointer;transition:transform .08s,box-shadow .08s,opacity .2s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3e9488}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btn.sec{background:var(--card2);color:var(--txt);box-shadow:0 5px 0 #0e2a2c;border:1px solid var(--linea)}
+.ops{display:grid;gap:10px}
+.ops.dos{grid-template-columns:1fr 1fr}
+.op{appearance:none;font:inherit;font-weight:800;font-size:clamp(1rem,4vw,1.25rem);text-align:center;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-radius:16px;padding:14px;min-height:58px;cursor:pointer;transition:transform .1s,border-color .15s,background .15s}
+.op:active{transform:scale(.97)}
+.op.sel{border-color:var(--aqua);background:#1f5054}
+.op.bien{border-color:var(--aqua);background:#1d5a55;color:#d8fff7;animation:pop .35s}
+.op.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.op.gris{opacity:.45}
+@keyframes pop{50%{transform:scale(1.05)}}
+@keyframes temblar{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+.tarjeta{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--linea);border-radius:22px;padding:22px 16px;text-align:center;font-size:clamp(1.9rem,9vw,3.2rem);font-weight:900;min-height:118px;display:grid;place-items:center;box-shadow:0 14px 30px -18px #000}
+.tarjeta.chica{font-size:clamp(1.3rem,6vw,2rem)}
+.tiempo{height:8px;border-radius:9px;background:var(--linea);overflow:hidden}
+.tiempo b{display:block;height:100%;width:100%;background:var(--sol);border-radius:9px}
+.fb{position:absolute;left:16px;right:16px;bottom:16px;border-radius:18px;padding:14px 16px;font-weight:800;display:flex;gap:12px;align-items:center;transform:translateY(140%);transition:transform .28s cubic-bezier(.2,1.2,.4,1);z-index:5;box-shadow:0 18px 40px -12px #000}
+.fb.ver{transform:none}
+.fb.bien{background:#1d6b63;border:2px solid var(--aqua)}
+.fb.mal{background:#5a2f2b;border:2px solid var(--coral)}
+.fb div{flex:1;line-height:1.35}.fb small{display:block;font-weight:600;opacity:.92;margin-top:2px}
+.fb .btn{padding:10px 16px;min-height:44px;font-size:.95rem}
+.ranuras{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:70px;padding:12px;border:2px dashed var(--linea);border-radius:18px;background:rgba(0,0,0,.18)}
+.ranuras:empty::before{content:"Tocá las piezas en orden";color:var(--suave);font-weight:700;align-self:center}
+.piezas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pz{appearance:none;font:inherit;font-size:clamp(1.3rem,6vw,1.9rem);font-weight:800;color:var(--txt);background:var(--card2);border:2px solid var(--linea);border-bottom-width:5px;border-radius:14px;min-width:54px;min-height:56px;padding:6px 14px;cursor:pointer}
+.pz.usada{visibility:hidden}
+.ranuras .pz{border-color:var(--aqua)}
+.mapa{display:grid;gap:8px}
+.mapa.mini{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));width:100%}
+.mapa.mini .nodo{padding:8px 10px;gap:9px;font-size:.92rem;text-align:left}.mapa.mini .nodo i{width:30px;height:30px;font-size:.85rem}.mapa.mini .nodo small{font-size:.78rem}
+.nodo{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--linea);border-radius:16px;padding:12px 14px;font-weight:800}
+.nodo i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;background:var(--linea);color:var(--suave);font-weight:900;flex:none}
+.nodo.hecho i{background:var(--aqua);color:#06282a}.nodo.act{border-color:var(--aqua);box-shadow:0 0 0 3px rgba(127,211,196,.18)}
+.nodo.act i{background:var(--sol);color:#3a2a00}.nodo small{display:block;color:var(--suave);font-weight:600}
+.nodo em{margin-left:auto;font-style:normal;color:var(--sol);letter-spacing:2px}
+.gran{font-size:clamp(3rem,16vw,5rem);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--aqua),#d9fff7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.estrellas{font-size:2.4rem;letter-spacing:8px;color:var(--sol)}.estrellas s{text-decoration:none;opacity:.2}
+.centro{text-align:center;align-items:center}
+.conf{position:absolute;inset:0;pointer-events:none;overflow:hidden}.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;animation:cae linear forwards}
+@keyframes cae{to{transform:translateY(110vh) rotate(720deg)}}
+@media (max-height:600px){.escena{gap:8px}.tarjeta{min-height:70px;padding:10px;font-size:clamp(1.5rem,7vw,2.3rem)}.btn{padding:11px 16px;min-height:46px}.op{padding:10px;min-height:48px}.pz{min-height:48px;min-width:46px}.ranuras{min-height:58px;padding:8px}.gran{font-size:clamp(2.4rem,12vw,3.4rem)}.estrellas{font-size:1.7rem}h1{font-size:clamp(1.4rem,5vw,2rem)}.hud{min-height:32px}.chip{padding:4px 10px}}
+@media (max-height:640px){.mapa.mini .nodo small{display:none}.centro p{font-size:.9rem}}
+@media (max-width:420px){.mapa.mini .nodo{font-size:.84rem;padding:7px 8px}.mapa.mini .nodo em{letter-spacing:0}}
+</style></head><body><div id="app"></div>
+<script>
+(function(){
+var app=document.getElementById('app');
+function M(t){return '<span class="mat">'+t+'</span>'}
+function B(n,b){return n+'<sub style="font-size:.6em">'+b+'</sub>'}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function baraja(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+var NIVELES=[
+ {nom:'Agrupá de a diez',sub:'Cómo se arma el sistema decimal'},
+ {nom:'Cada dígito, su lugar',sub:'Las posiciones'},
+ {nom:'Valor posicional',sub:'Dígito × valor del lugar'},
+ {nom:'El cero ocupa lugar',sub:'35, 305 y 350'},
+ {nom:'Otras bases',sub:'Binario, octal y hexadecimal'}];
+var E={niv:0,paso:0,pts:0,max:0,racha:0,mejor:0,porNivel:[],okN:0,totN:0};
+var POSN=['unidades','decenas','centenas','unidades de millar','decenas de millar','centenas de millar'];
+
+// ---------- pasos de cada nivel ----------
+function lvlPosiciones(){
+ var P=[1,10,100,1000,10000,100000];
+ var dos=baraja([0,1,2,3,4,5]).slice(0,2).map(function(k){
+  var ops=[P[k]];baraja(P).forEach(function(v){if(ops.length<4&&ops.indexOf(v)<0)ops.push(v)});
+  return{t:'op',q:'¿Cuánto vale la posición de las <b>'+POSN[k]+'</b>?',ops:ops.map(fmt),ok:0,mezclar:1,exp:'Las '+POSN[k]+' valen '+fmt(P[k])+'.'}});
+ return[
+  {t:'op',q:'¿Hacia dónde se cuentan las posiciones de un número?',ops:['De derecha a izquierda','De izquierda a derecha'],dos:1,ok:0,mezclar:1,exp:'La primera, la de más a la derecha, es la de las unidades.'},
+  dos[0],dos[1],
+  {t:'op',q:'Cada lugar vale… lo que vale el que tiene a su derecha.',ops:['Diez veces','El doble','Mil veces'],ok:0,mezclar:1,exp:'Es el agrupar de a diez: 1 · 10 · 100 · 1.000 · 10.000…'}]}
+function lvlValor(){
+ var gen=baraja(['581','396','2534','7419','54222','63805','123456']).slice(0,3).map(function(s){
+  var idx=[];for(var i=0;i<s.length;i++)if(s[i]!=='0')idx.push(i);
+  var i=idx[Math.floor(Math.random()*idx.length)],d=+s[i],k=s.length-1-i,val=d*Math.pow(10,k);
+  var ops=[val];baraja([0,1,2,3,4,5]).forEach(function(x){var v=d*Math.pow(10,x);if(x!==k&&ops.length<4&&ops.indexOf(v)<0)ops.push(v)});
+  var h='';for(var j=0;j<s.length;j++){if(j>0&&(s.length-j)%3===0)h+='.';h+=(j===i?'<span style="color:var(--sol)">'+s[j]+'</span>':s[j])}
+  return{t:'op',q:'¿Cuánto vale el dígito marcado?',tarjeta:h,ops:ops.map(fmt),ok:0,mezclar:1,exp:'El '+d+' está en las '+POSN[k]+': '+d+' × '+fmt(Math.pow(10,k))+' = '+fmt(val)+'.'}});
+ return[gen[0],gen[1],gen[2],
+  {t:'armar',q:'Armá el número: 5 centenas, 8 decenas y 1 unidad',piezas:['5','8','1'],extra:['2','0'],sol:'581',exp:'Va 5 en las centenas, 8 en las decenas y 1 en las unidades: 5 × 100 + 8 × 10 + 1 × 1.'},
+  {t:'op',q:'En el 54.222 el dígito 2 aparece tres veces. ¿Valen lo mismo?',ops:['No: valen 200, 20 y 2','Sí: siempre vale 2','Valen 2, 22 y 222'],ok:0,mezclar:1,exp:'Lo que cambia es la posición: 2 × 100, 2 × 10 y 2 × 1.'}]}
+function lvlCero(){return[
+ {t:'op',q:'¿Qué número tiene 3 centenas, 0 decenas y 5 unidades?',ops:['305','35','350','3.005'],ok:0,mezclar:1,exp:'El cero mantiene al 3 en las centenas y al 5 en las unidades.'},
+ {t:'op',q:'¿Cuánto vale el dígito 0 en 4.070?',tarjeta:'4.070',ops:['0','4.000','70'],ok:0,mezclar:1,exp:'El cero vale 0, pero sin él el 4 y el 7 quedarían en otros lugares: 47 no es 4.070.'},
+ {t:'armar',q:'Armá el número: 4 UM, 0 C, 7 D y 0 U',piezas:['4','0','7','0'],extra:['5','1'],sol:'4.070',exp:'Los dos ceros ocupan las centenas y las unidades. Sin ellos, el número cambia por completo.'},
+ {t:'multi',q:'¿En qué números el 3 vale 30? Marcá todos.',ops:['35','305','132','3.050','43'],ok:[0,2],exp:'En 35 y en 132 el 3 está en las decenas: 3 × 10 = 30. En 305 vale 300, en 3.050 vale 3.000 y en 43 vale 3.'}]}
+function lvlBases(){return[
+ {t:'op',q:'Un sistema de base 2 usa solo los dígitos…',ops:['0 y 1','1 y 2','0, 1 y 2'],ok:0,mezclar:1,exp:'La base es la cantidad de dígitos distintos: en el binario son dos.'},
+ {t:'op',q:'En el octal, después del 7 viene…',tarjeta:B('7',8)+' ➜ ?',ops:['10','8','9'],ok:0,mezclar:1,exp:'En octal los dígitos van del 0 al 7. Cuando se acaban, se agrega un lugar a la izquierda: 10.'},
+ {t:'op',q:'En hexadecimal, ¿cuánto vale la letra F?',ops:['15','6','16'],ok:0,mezclar:1,exp:'A, B, C, D, E y F valen 10, 11, 12, 13, 14 y 15.'},
+ {t:'op',tiempo:10,q:'¿Cuánto vale '+B('10',2)+' (diez en base 2)?',ops:['2','10','1'],ok:0,mezclar:1,exp:'El "10" aparece en cada base, pero vale distinto: '+B('10',2)+' vale 2, '+B('10',8)+' vale 8 y '+B('10',16)+' vale 16.'},
+ {t:'multi',q:'¿Cuáles representan la cantidad trece? Marcá todos.',ops:['13 en decimal','1101 en binario','D en hexadecimal','10 en octal','31 en decimal'],ok:[0,1,2],exp:'El número es el mismo, cambia el numeral: 13 = 1101 (binario) = 15 (octal) = D (hexa).'}]}
+function lvlAgrupar(){return[
+ {t:'op',q:'Llegás al 9 y sumás 1. ¿Qué pasa?',ops:['Se forma 1 decena: aparece el 10','Vuelve a 0 y no pasa nada','Aparece el dígito 10'],ok:0,mezclar:1,exp:'Diez unidades forman 1 decena. Se acabaron los dígitos y se agrega un lugar.'},
+ {t:'op',q:'Diez decenas forman…',ops:['1 centena','1 unidad de millar','1 decena más'],ok:0,mezclar:1,exp:'Pasás del 99 al 100: diez decenas forman 1 centena.'},
+ {t:'op',q:'¿Cuántos dígitos tiene el sistema decimal?',ops:['10, del 0 al 9','9, del 1 al 9','100'],ok:0,mezclar:1,exp:'Por eso es un sistema de base 10: agrupa de a diez.'},
+ {t:'op',tiempo:10,q:'¿Qué número viene después?',tarjeta:'999',ops:['1.000','910','1.999'],ok:0,mezclar:1,exp:'Diez centenas forman 1 unidad de millar.'}]}
+function pasosNivel(n){return[lvlAgrupar,lvlPosiciones,lvlValor,lvlCero,lvlBases][n]()}
+
+// ---------- pantalla ----------
+function hud(){var h='<div class="hud"><div class="pasos">';for(var i=0;i<5;i++)h+='<i><b style="width:'+(i<E.niv?100:i===E.niv?Math.round(E.paso/E.lista.length*100):0)+'%"></b></i>';
+ return h+'</div><span class="chip racha'+(E.racha<2?' off':'')+'">🔥 '+E.racha+'</span><span class="chip">⭐ '+E.pts+'</span></div>'}
+function pintar(html,cl){app.innerHTML=(E.lista?hud():'')+'<div class="escena '+(cl||'')+'">'+html+'</div><div class="fb"></div>'}
+function fb(bien,exp,sig){var f=app.querySelector('.fb');var es=app.querySelector('.escena');es.classList.add('confb');f.className='fb ver '+(bien?'bien':'mal');
+ f.innerHTML='<div>'+(bien?['¡Bien!','¡Exacto!','¡Así se hace!','¡Correcto!'][Math.floor(Math.random()*4)]:'Casi…')+'<small>'+exp+'</small></div><button class="btn">Seguir</button>';
+ f.querySelector('button').onclick=sig}
+function anotar(bien,valor){valor=valor||10;E.max+=valor;E.totN++;if(bien){E.racha++;E.mejor=Math.max(E.mejor,E.racha);E.pts+=valor+(E.racha>=3?2:0);E.okN++}else E.racha=0;
+ var c=app.querySelectorAll('.chip');if(c[0]){c[0].textContent='🔥 '+E.racha;c[0].className='chip racha'+(E.racha<2?' off':'');c[1].textContent='⭐ '+E.pts}}
+function siguiente(){E.paso++;if(E.paso>=E.lista.length)return finNivel();jugar()}
+function jugar(){var s=E.lista[E.paso];({op:pOp,armar:pArmar,multi:pMulti})[s.t](s)}
+function cab(s){return '<div><div class="etq">Nivel '+(E.niv+1)+' · '+NIVELES[E.niv].nom+'</div><h2>'+s.q+'</h2></div>'}
+
+function pOp(s){
+ var orden=s.ops.map(function(_,i){return i});if(s.mezclar)orden=baraja(orden);
+ var h=cab(s)+(s.tarjeta?'<div class="tarjeta mat'+(s.chica?' chica':'')+'">'+s.tarjeta+'</div>':'')+(s.tiempo?'<div class="tiempo"><b></b></div>':'')+'<div class="ops'+(s.dos?' dos':'')+'">';
+ orden.forEach(function(i){h+='<button class="op" data-i="'+i+'">'+M(s.ops[i])+'</button>'});pintar(h+'</div>');
+ var hecho=false,reloj=null;
+ function resolver(i,btn){if(hecho)return;hecho=true;clearTimeout(reloj);var bien=i===s.ok;
+  [].forEach.call(app.querySelectorAll('.op'),function(b){var k=+b.dataset.i;b.disabled=true;if(k===s.ok)b.classList.add('bien');else if(b===btn)b.classList.add('mal');else b.classList.add('gris')});
+  var tb=app.querySelector('.tiempo b');if(tb){tb.style.transition='none';tb.style.width=getComputedStyle(tb).width}
+  anotar(bien);fb(bien,i<0?'Se acabó el tiempo. '+s.exp:s.exp,siguiente)}
+ [].forEach.call(app.querySelectorAll('.op'),function(b){b.onclick=function(){resolver(+b.dataset.i,b)}});
+ if(s.tiempo){var tb=app.querySelector('.tiempo b');requestAnimationFrame(function(){requestAnimationFrame(function(){tb.style.transition='width '+s.tiempo+'s linear';tb.style.width='0%'})});reloj=setTimeout(function(){resolver(-1,null)},s.tiempo*1000)}}
+
+function pArmar(s){
+ var todas=baraja(s.piezas.concat(s.extra)),puestas=[];
+ function dib(){var h=cab(s)+'<div class="ranuras mat">'+puestas.map(function(i){return '<button class="pz" data-q="'+i+'">'+todas[i]+'</button>'}).join('')+'</div><div class="piezas mat">'+todas.map(function(p,i){return '<button class="pz'+(puestas.indexOf(i)>=0?' usada':'')+'" data-p="'+i+'">'+p+'</button>'}).join('')+'</div><p style="text-align:center">Tocá una pieza para ponerla. Tocala arriba para sacarla. Ojo: sobran piezas.</p><button class="btn" id="ok"'+(puestas.length<s.piezas.length?' disabled':'')+'>Comprobar</button>';
+  pintar(h);
+  [].forEach.call(app.querySelectorAll('[data-p]'),function(b){b.onclick=function(){puestas.push(+b.dataset.p);dib()}});
+  [].forEach.call(app.querySelectorAll('[data-q]'),function(b){b.onclick=function(){puestas.splice(puestas.indexOf(+b.dataset.q),1);dib()}});
+  document.getElementById('ok').onclick=function(){var bien=puestas.map(function(i){return todas[i]}).join('|')===s.piezas.join('|');
+   [].forEach.call(app.querySelectorAll('.pz,#ok'),function(b){b.disabled=true});app.querySelector('.ranuras').style.borderColor=bien?'var(--aqua)':'var(--coral)';
+   anotar(bien,20);fb(bien,(bien?'':'Lo correcto es '+M(s.sol)+'. ')+s.exp,siguiente)}}
+ dib()}
+
+function pMulti(s){
+ var sel={};pintar(cab(s)+'<div class="ops dos">'+s.ops.map(function(o,i){return '<button class="op" data-i="'+i+'">'+M(o)+'</button>'}).join('')+'</div><button class="btn" id="ok" disabled>Comprobar</button>');
+ [].forEach.call(app.querySelectorAll('.op'),function(b){b.onclick=function(){var i=+b.dataset.i;sel[i]=!sel[i];b.classList.toggle('sel',sel[i]);document.getElementById('ok').disabled=!Object.keys(sel).some(function(k){return sel[k]})}});
+ document.getElementById('ok').onclick=function(){var bien=s.ops.every(function(_,i){return !!sel[i]===(s.ok.indexOf(i)>=0)});
+  [].forEach.call(app.querySelectorAll('.op'),function(b){var i=+b.dataset.i;b.disabled=true;b.classList.remove('sel');if(s.ok.indexOf(i)>=0)b.classList.add('bien');else if(sel[i])b.classList.add('mal');else b.classList.add('gris')});
+  this.disabled=true;anotar(bien,20);fb(bien,s.exp,siguiente)}}
+
+// ---------- flujo ----------
+function estrellas(p){var n=p>=.9?3:p>=.6?2:p>0?1:0;return '★★★'.slice(0,n)+'<s>'+'★★★'.slice(n)+'</s>'}
+function mapa(titulo,boton,alSeguir){
+ var h='<div><div class="etq">Misión Valor Posicional</div><h2>'+titulo+'</h2></div><div class="mapa mini">';
+ NIVELES.forEach(function(n,i){var hecho=i<E.porNivel.length;h+='<div class="nodo'+(hecho?' hecho':i===E.porNivel.length?' act':'')+'"><i>'+(hecho?'✓':i+1)+'</i><div>'+n.nom+'<small>'+n.sub+'</small></div>'+(hecho?'<em class="estrellas" style="font-size:1rem">'+estrellas(E.porNivel[i])+'</em>':'')+'</div>'});
+ var l=E.lista;E.lista=null;pintar(h+'</div><button class="btn">'+boton+'</button>');E.lista=l;app.querySelector('.escena .btn').onclick=alSeguir}
+function empezarNivel(){E.lista=pasosNivel(E.niv);E.paso=0;E.okN=0;E.totN=0;jugar()}
+function finNivel(){E.porNivel.push(E.totN?E.okN/E.totN:0);E.niv++;E.lista=null;
+ if(E.niv>=5)return final();mapa('¡Nivel '+E.niv+' completado!','Siguiente nivel ➜',empezarNivel)}
+function final(){
+ var pct=Math.round(E.porNivel.reduce(function(a,b){return a+b},0)/5*100);
+ var msg=pct>=90?'¡Misión cumplida! Dominás el valor posicional.':pct>=60?'¡Muy bien! Ya tenés la base; repasá lo que falló.':'Buen intento. Repasá el PDF y volvé a jugar.';
+ var h='<div class="etq">Misión terminada</div><div class="gran">'+pct+'%</div><div class="estrellas">'+estrellas(pct/100)+'</div><h2>'+msg+'</h2><p>⭐ '+E.pts+' puntos · 🔥 mejor racha: '+E.mejor+'</p><div class="mapa mini">'+NIVELES.map(function(n,i){return '<div class="nodo hecho"><i>'+(i+1)+'</i><div>'+n.nom+'</div><em class="estrellas" style="font-size:1rem">'+estrellas(E.porNivel[i])+'</em></div>'}).join('')+'</div><button class="btn sec">Jugar de nuevo</button>';
+ pintar(h,'centro');app.querySelector('.escena .btn').onclick=inicio;
+ if(pct>=60){var c=document.createElement('div');c.className='conf';var col=['#7FD3C4','#F4B63F','#ff7a66','#fff','#19a39f'];for(var i=0;i<70;i++){var p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.background=col[i%5];p.style.animationDuration=(2+Math.random()*2.5)+'s';p.style.animationDelay=Math.random()*1.2+'s';c.appendChild(p)}app.appendChild(c)}
+ try{window.parent.postMessage({tipo:'wave-resultado',puntaje:pct},'*')}catch(e){}}
+function inicio(){E={niv:0,paso:0,pts:0,max:0,racha:0,mejor:0,porNivel:[],okN:0,totN:0};E.lista=null;
+ pintar('<div class="etq">Matemática I · Lección 2</div><h1>Misión Valor Posicional</h1><p style="max-width:520px">Cinco niveles para demostrar que entendiste cómo se arman los números y cuánto vale cada dígito según su lugar. Sumá puntos, armá rachas y llegá al 100%.</p><div class="mapa mini">'+NIVELES.map(function(n,i){return '<div class="nodo'+(i===0?' act':'')+'"><i>'+(i+1)+'</i><div>'+n.nom+'<small>'+n.sub+'</small></div></div>'}).join('')+'</div><button class="btn" style="min-width:220px">Empezar ➜</button>','centro');
+ app.querySelector('.escena .btn').onclick=empezarNivel}
+inicio();
+})();
+</script></body></html>
