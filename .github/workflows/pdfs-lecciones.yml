@@ -1,0 +1,30 @@
+name: PDF de lecciones armadas por la máquina
+
+# Cada 20 minutos (y a mano desde la pestaña Actions) busca borradores listos sin PDF,
+# arma el PDF con el diseño de Wave Academy y lo carga en la lección SIN publicarla.
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: pdfs-lecciones
+  cancel-in-progress: false
+
+jobs:
+  pdfs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fuentes y librerías
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y fonts-dejavu-core
+          pip install reportlab pillow
+      - name: Armar y cargar PDFs
+        env:
+          WAVE_GEN_TOKEN: ${{ secrets.WAVE_GEN_TOKEN }}
+        run: python tools/pdf/generar.py
