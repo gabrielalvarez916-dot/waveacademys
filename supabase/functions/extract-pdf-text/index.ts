@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { AwsClient } from "npm:aws4fetch@1";
 import { encodeBase64 } from "jsr:@std/encoding@1/base64";
+import { extractText, getDocumentProxy } from "npm:unpdf@1";
 
 // 1) Extrae el texto del PDF de la lección.
 // 2) Arma AUTOMÁTICAMENTE el banco de preguntas del repaso de esa lección (tabla review_bank), en segundo plano:
@@ -205,7 +206,23 @@ Deno.serve(async (req) => {
     const bytes = new Uint8Array(await file.arrayBuffer());
     if (bytes.length > MAX_PDF_BYTES) return json({ error: "El PDF supera los 30 MB" }, 400);
 
-    // 2) Extraer el texto con Claude (lee PDF directamente)
+    // 2a) Primero, gratis: copiar el texto que ya trae el PDF (sin IA). Solo se usa si el texto sale completo.
+    let textoLibre = "";
+    try {
+      const pdf = await getDocumentProxy(new Uint8Array(bytes));
+      const { totalPages, text } = await extractText(pdf, { mergePages: true });
+      const t = String(text ?? "").trim();
+      if (t.length >= 300 && t.length / Math.max(1, totalPages) >= 150) textoLibre = t;
+    } catch (e) { console.error("extracción gratuita falló, se usa la IA", e); }
+    if (textoLibre) {
+      const { error: e0 } = await admin.from("lesson_steps").update({ extracted_text: textoLibre }).eq("id", step.id);
+      if (e0) throw e0;
+      const t0 = enSegundoPlano(generarBanco(admin, step.lesson_id, textoLibre));
+      if (typeof EdgeRuntime === "undefined") await t0;
+      return json({ ok: true, characters: textoLibre.length, truncated: false, banco: "armando", fuente: "texto del PDF (sin IA)" });
+    }
+
+    // 2b) Si el PDF es una imagen o un escaneo (sin texto), se extrae con Claude (lee el PDF directamente)
     const r = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
