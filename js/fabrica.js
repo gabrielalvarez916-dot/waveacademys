@@ -32,11 +32,15 @@
   function estadoTexto(f) {
     if (!f.draft_id) return f.ficha ? '<span class="fb-tag">Sin empezar</span>' : '<span class="fb-tag fb-no">Falta la ficha</span>';
     if (f.estado === 'error') return '<span class="fb-tag fb-err" title="' + esc(f.error) + '">Error (' + f.intentos + ' intentos)</span>';
+    if (f.estado === 'borrador' && f.paso === 'listo' && f.interactiva_estado === 'generando') return '<span class="fb-tag fb-work">Armando el juego interactivo…</span>';
+    if (f.estado === 'borrador' && f.paso === 'listo' && f.interactiva_estado === 'error') return '<span class="fb-tag fb-err" title="' + esc(f.interactiva_error) + '">Falló el juego interactivo</span>';
     if (f.estado === 'borrador' && f.paso === 'listo') return '<span class="fb-tag fb-ok">Lista para revisar</span>';
     return '<span class="fb-tag fb-work">' + esc(PASOS[f.paso] || f.paso) + '…</span>';
   }
   function marca(v) { return v ? '<span class="fb-si">✓</span>' : '<span class="fb-nada">—</span>'; }
   function elegible(f) { return f.ficha && (!f.draft_id || f.estado === 'error'); }
+  function sinJuego(f) { return f.draft_id && f.estado === 'borrador' && f.paso === 'listo' && !f.interactiva && f.interactiva_estado !== 'generando'; }
+  function idsElegidos(filtro) { return (E.filas || []).filter(function (f) { return E.elegidas[f.id] && filtro(f); }).map(function (f) { return f.id; }); }
 
   async function resumen() {
     var r = await sb.rpc('fabrica_resumen');
@@ -56,31 +60,33 @@
     var r = await sb.rpc('fabrica_panel', { p_topic_id: E.topic });
     if (r.error) throw r.error;
     E.filas = r.data || [];
-    var trabajando = E.filas.some(function (f) { return f.estado === 'en_cola' || f.estado === 'generando'; });
+    var trabajando = E.filas.some(function (f) { return f.estado === 'en_cola' || f.estado === 'generando' || f.interactiva_estado === 'generando'; });
     clearTimeout(timer);
     if (trabajando) timer = setTimeout(function () { if (document.getElementById('fb-tabla')) refrescar(); }, 20000);
     if (!E.filas.length) { cont.innerHTML = '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>'; return; }
-    cont.innerHTML = '<table class="fb-t"><thead><tr><th></th><th>Lección</th><th>Estado</th><th>Consignas</th><th>Repaso</th><th>PDF</th><th>Gasto</th></tr></thead><tbody>' +
+    cont.innerHTML = '<table class="fb-t"><thead><tr><th></th><th>Lección</th><th>Estado</th><th>Consignas</th><th>Repaso</th><th>Interactiva</th><th>PDF</th><th>Gasto</th></tr></thead><tbody>' +
       E.filas.map(function (f) {
-        var puede = elegible(f);
+        var puede = elegible(f) || sinJuego(f);
         return '<tr><td>' + (puede ? '<input type="checkbox" data-el="' + f.id + '"' + (E.elegidas[f.id] ? ' checked' : '') + '>' : '') + '</td>' +
           '<td><b>' + esc(f.posicion) + '.</b> ' + esc(f.titulo) + (f.publicada ? ' <span class="fb-tag fb-ok">Publicada</span>' : '') + '</td>' +
-          '<td>' + estadoTexto(f) + '</td><td>' + marca(f.consignas_cargadas) + '</td><td>' + marca(f.repaso_cargado) + '</td><td>' + marca(f.pdf) + '</td>' +
+          '<td>' + estadoTexto(f) + '</td><td>' + marca(f.consignas_cargadas) + '</td><td>' + marca(f.repaso_cargado) + '</td><td>' + marca(f.interactiva) + '</td><td>' + marca(f.pdf) + '</td>' +
           '<td title="' + (f.tokens_in || 0) + ' tokens de entrada, ' + (f.tokens_out || 0) + ' de salida, ' + (f.llamadas || 0) + ' llamadas">' + usd3(f.costo_usd) + '</td></tr>';
       }).join('') + '</tbody></table>';
     contar();
   }
 
   function contar() {
-    var n = Object.keys(E.elegidas).filter(function (k) { return E.elegidas[k]; }).length;
+    var n = idsElegidos(elegible).length, j = idsElegidos(sinJuego).length;
     var b = document.getElementById('fb-lanzar');
     if (b) { b.disabled = !n; b.textContent = n ? 'Generar ' + n + (n === 1 ? ' lección' : ' lecciones') : 'Generar las seleccionadas'; }
+    var bj = document.getElementById('fb-juego');
+    if (bj) { bj.disabled = !j; bj.textContent = j ? 'Armar juego interactivo de ' + j + (j === 1 ? ' lección' : ' lecciones') : 'Armar juego interactivo'; }
   }
 
   async function refrescar() { try { await Promise.all([resumen(), lecciones()]); } catch (e) { toast('No se pudo actualizar: ' + (e.message || e), true); } }
 
   async function lanzar() {
-    var ids = Object.keys(E.elegidas).filter(function (k) { return E.elegidas[k]; });
+    var ids = idsElegidos(elegible);
     if (!ids.length) return;
     if (ids.length > 10) return toast('Elegí hasta 10 lecciones por vez.', true);
     var s = (await sb.rpc('fabrica_resumen')).data || {};
@@ -106,12 +112,25 @@
       '<select id="fb-tema">' + opciones(temas.map(function (x) { return { id: x.id, nombre: x.position + '. ' + x.title }; }), E.topic, 'Tema') + '</select>';
   }
 
+  async function juego() {
+    var ids = idsElegidos(sinJuego);
+    if (!ids.length) return;
+    if (ids.length > 10) return toast('Elegí hasta 10 lecciones por vez.', true);
+    if (!confirm('Vas a pedir el juego interactivo de ' + ids.length + (ids.length === 1 ? ' lección' : ' lecciones') + '. Usa la IA (dos llamadas por lección, un guion y su revisión) y se cobra de tu saldo de Anthropic.\n\nEl juego queda cargado sin publicar.\n\n¿Seguimos?')) return;
+    var bj = document.getElementById('fb-juego'); bj.disabled = true;
+    var r = await sb.rpc('fabrica_pedir_interactiva', { p_lesson_ids: ids });
+    if (r.error) { toast(r.error.message || 'No se pudo pedir', true); return contar(); }
+    E.elegidas = {};
+    toast('Pedidos: ' + ((r.data || {}).pedidas || 0));
+    setTimeout(refrescar, 1500);
+  }
+
   async function abrir(el) {
     vista = el; clearTimeout(timer);
     vista.innerHTML = '<h1 class="wv-titulo">Fábrica de lecciones</h1>' +
-      '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Cada una pasa sola por todo el proceso: borrador, revisión, actividad con consignas, repaso y PDF. Usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
+      '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Cada una pasa sola por todo el proceso: borrador, revisión, actividad con consignas, repaso, juego interactivo y PDF. Usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
       '<div id="fb-resumen" class="fb-resumen"></div><div id="fb-sel" class="fb-sel"></div>' +
-      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
+      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-juego" class="wv-chip" type="button" disabled>Armar juego interactivo</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
       '<div id="fb-tabla"></div>';
     await cargarBase();
     pintarFiltros();
@@ -126,6 +145,7 @@
     vista.onclick = function (ev) {
       var t = ev.target.closest('button'); if (!t) return;
       if (t.id === 'fb-lanzar') lanzar().catch(function (e) { toast(e.message || e, true); });
+      if (t.id === 'fb-juego') juego().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-act') refrescar();
     };
     await refrescar();
