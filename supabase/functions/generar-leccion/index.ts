@@ -4,7 +4,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 // Toma la ficha de una lección (lesson_fichas) y genera, en 3 pasos encadenados, un BORRADOR en lesson_drafts:
 //   1) contenido de la lección  2) las 8 consignas con criterios  3) revisión crítica de errores.
 // Nunca publica nada: el borrador lo revisa la admin.
-// Acciones (POST, header x-gen-token): { action:"encolar", tema_id } | { action:"procesar", draft_id } | { action:"reintentar", draft_id } | { action:"estado", tema_id }
+// Acciones (POST, header x-gen-token): { action:"encolar", tema_id } | { action:"procesar", draft_id } | { action:"reintentar", draft_id } | { action:"estado", tema_id } | { action:"cargar", draft_id }
 declare const EdgeRuntime: { waitUntil(p: Promise<unknown>): void } | undefined;
 
 const MODEL = "claude-sonnet-5-5";
@@ -109,7 +109,7 @@ const TOOL_CONSIGNAS = {
             opciones: { type: "array", items: { type: "string" }, description: "multiple_choice: 4 opciones. true_false: [\"Verdadero\",\"Falso\"]. Resto: omitir." },
             respuesta: { type: "string", description: "Respuesta correcta o de referencia. En multiple_choice y true_false, idéntica a una de las opciones." },
             puntos: { type: "integer" },
-            criterios: { type: "string", description: "Cómo corregir, con puntaje parcial" },
+            criterios: { type: "string", description: "Cómo corregir, con puntaje parcial EXPRESADO EN PORCENTAJE de la consigna (0 a 100), por ejemplo: \"100 si ...; 50 si ...; 0 si ...\". Nunca en puntos." },
             explicacion: { type: "string", description: "Por qué es esa la respuesta (didáctica)" },
           },
           required: ["tipo", "enunciado", "respuesta", "puntos", "criterios", "explicacion"],
@@ -218,7 +218,7 @@ async function pasoContenido(c: Ctx) {
 
 async function pasoConsignas(c: Ctx, contenido: any) {
   const system = ESTILO + `\nAhora escribís la actividad por consigna de la lección. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.`;
-  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\nArmá exactamente 8 consignas, de lo más simple a lo más pensado, con esta distribución y estos puntos: 1 verdadero/falso (1 punto), 2 de opción múltiple con 4 opciones y una sola correcta (1 punto cada una), 3 de respuesta corta con respuesta verificable (2 puntos cada una), 2 abiertas (3 puntos cada una). Al menos dos consignas deben apuntar a los errores típicos. Las opciones incorrectas tienen que ser errores plausibles, nunca absurdas. En "respuesta" de multiple_choice y true_false va el texto exacto de una opción. En las abiertas, la respuesta de referencia es un ejemplo completo y los criterios dividen el puntaje en ideas.`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\nArmá exactamente 8 consignas, de lo más simple a lo más pensado, con esta distribución y estos puntos: 1 verdadero/falso (1 punto), 2 de opción múltiple con 4 opciones y una sola correcta (1 punto cada una), 3 de respuesta corta con respuesta verificable (2 puntos cada una), 2 abiertas (3 puntos cada una). Al menos dos consignas deben apuntar a los errores típicos. Las opciones incorrectas tienen que ser errores plausibles, nunca absurdas. En "respuesta" de multiple_choice y true_false va el texto exacto de una opción. En las abiertas, la respuesta de referencia es un ejemplo completo y los criterios dividen el puntaje en ideas. Los criterios de corrección expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma puntúa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto", "0,5 punto") en los criterios.`;
   const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
   return validarConsignas(r.consignas);
 }
@@ -276,7 +276,7 @@ function controlVocabulario(c: Ctx, contenido: any, consignas: any[]) {
 }
 
 async function pasoRevision(c: Ctx, contenido: any, consignas: any[]) {
-  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
+  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS:\n` +
     consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones?.length ? "\n   Opciones: " + q.opciones.join(" / ") : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
   return await claudeTool(system, user, TOOL_REVISION, 5000);
@@ -294,7 +294,7 @@ async function pasoCorregirContenido(c: Ctx, contenido: any, problemas: any[]) {
 
 async function pasoCorregirConsignas(c: Ctx, contenido: any, consignas: any[], problemas: any[]) {
   const system = ESTILO + `\nCorregís una actividad por consigna que tiene errores marcados por un revisor.`;
-  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé las 8 consignas COMPLETAS corregidas, con la misma distribución de tipos y puntos. Cambiá solo lo necesario. Recalculá cada cuenta que toques y revisá que la respuesta, los criterios y la explicación sigan coincidiendo.`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé las 8 consignas COMPLETAS corregidas, con la misma distribución de tipos y puntos. Cambiá solo lo necesario. Recalculá cada cuenta que toques y revisá que la respuesta, los criterios y la explicación sigan coincidiendo. Los criterios de corrección expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma puntúa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto", "0,5 punto") en los criterios.`;
   const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
   return validarConsignas(r.consignas);
 }
@@ -357,6 +357,40 @@ async function llamarSeMismo(body: unknown) {
   });
 }
 
+// ---------------- carga en la lección (sin publicar) ----------------
+// Pasa las 8 consignas del borrador a la actividad por consigna de la lección. Reglas de seguridad:
+// solo si el borrador está listo, la lección NO está publicada y no tiene consignas cargadas (nunca pisa nada).
+async function cargarConsignas(draftId: string) {
+  const { data: d } = await admin.from("lesson_drafts").select("id, lesson_id, status, paso, consignas, cargada_at").eq("id", draftId).maybeSingle();
+  if (!d) return { ok: false, motivo: "No existe el borrador" };
+  if (d.status !== "borrador" || d.paso !== "listo") return { ok: false, motivo: "El borrador todavía no está listo" };
+  if (d.cargada_at) return { ok: false, motivo: "Ya se cargó antes" };
+  const { data: l } = await admin.from("lessons").select("id, is_published").eq("id", d.lesson_id).single();
+  if (l!.is_published) return { ok: false, motivo: "La lección está publicada: no se toca" };
+  const { data: paso } = await admin.from("lesson_steps").select("id").eq("lesson_id", d.lesson_id).eq("step_type", "final_activity").maybeSingle();
+  if (!paso) return { ok: false, motivo: "La lección no tiene el paso de actividad por consigna (abrila una vez en Contenidos)" };
+  const { count } = await admin.from("questions").select("id", { count: "exact", head: true }).eq("lesson_step_id", paso.id);
+  if (count) return { ok: false, motivo: "La lección ya tiene consignas cargadas: no se pisan" };
+  const cs: any[] = d.consignas || [];
+  if (cs.length !== 8) return { ok: false, motivo: "El borrador no tiene 8 consignas" };
+  const rows = cs.map((q, i) => ({
+    lesson_step_id: paso.id, question_type: q.tipo, prompt: q.enunciado,
+    options: q.tipo === "multiple_choice" || q.tipo === "true_false" ? q.opciones : null,
+    points: q.puntos, position: i + 1,
+  }));
+  const ins = await admin.from("questions").insert(rows).select("id, position");
+  if (ins.error) return { ok: false, motivo: "No se pudieron cargar las consignas: " + ins.error.message };
+  const idPor = new Map((ins.data || []).map((x: any) => [x.position, x.id]));
+  const rub = cs.map((q, i) => ({ question_id: idPor.get(i + 1), reference_answer: q.respuesta, explanation: q.explicacion || null, rubric: q.criterios }));
+  const r2 = await admin.from("question_rubrics").insert(rub);
+  if (r2.error) {
+    await admin.from("questions").delete().in("id", (ins.data || []).map((x: any) => x.id)); // deshace si falló la mitad
+    return { ok: false, motivo: "No se pudieron cargar los criterios: " + r2.error.message };
+  }
+  await admin.from("lesson_drafts").update({ cargada_at: new Date().toISOString() }).eq("id", draftId);
+  return { ok: true, consignas: cs.length };
+}
+
 function enSegundoPlano(p: Promise<unknown>) {
   if (typeof EdgeRuntime !== "undefined") EdgeRuntime.waitUntil(p); else p.catch(() => {});
 }
@@ -385,6 +419,9 @@ Deno.serve(async (req) => {
     if (b.action === "procesar") {
       enSegundoPlano(correrPaso(b.draft_id));
       return json({ ok: true });
+    }
+    if (b.action === "cargar") {
+      return json(await cargarConsignas(b.draft_id));
     }
     if (b.action === "reintentar") {
       await admin.from("lesson_drafts").update({ status: "en_cola", error: null }).eq("id", b.draft_id).eq("status", "error");
