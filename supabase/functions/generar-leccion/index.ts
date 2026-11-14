@@ -152,7 +152,7 @@ Escribís para chicos y chicas de 12 a 13 años. Español rioplatense con voseo 
 Notación argentina: punto para separar miles (1.250) y coma para los decimales (3,5). Las cuentas se muestran paso a paso.
 Reglas de contenido: 1) Todo lo que afirmás tiene que ser matemáticamente correcto: recalculá cada cuenta antes de escribirla. 2) Respetá la ficha: tratá solo los contenidos indicados y NO incluyas lo que figura como "no entra". 3) Usá lo que el alumno ya vio, sin volver a explicarlo y sin adelantar lo que se ve en lecciones posteriores. 4) No incluyas ejercicios para resolver (hay actividades aparte): sí ejemplos resueltos. 5) No inventes datos históricos ni anécdotas; si no estás seguro, no lo pongas. 6) Texto plano; solo se permite <b>negrita</b> en términos clave.`;
 
-type Ctx = { ficha: any; titulo: string; tema: string; materia: string; anio: number; vistas: string[]; siguientes: string[] };
+type Ctx = { ficha: any; titulo: string; tema: string; materia: string; anio: number; vistas: string[]; siguientes: string[]; vocab: { reglas: string; prohibidos: string[] } | null };
 
 function aTextoFicha(c: Ctx) {
   const f = c.ficha;
@@ -166,6 +166,7 @@ function aTextoFicha(c: Ctx) {
     c.vistas.length ? `LECCIONES YA VISTAS (en orden): ${c.vistas.join(" | ")}` : "",
     c.siguientes.length ? `LECCIONES QUE VIENEN DESPUÉS (no adelantes su contenido): ${c.siguientes.join(" | ")}` : "",
     f.notas ? `NOTAS: ${f.notas}` : "",
+    c.vocab?.reglas ? `\n${c.vocab.reglas}` : "",
   ].filter(Boolean).join("\n");
 }
 
@@ -192,6 +193,7 @@ async function contexto(lessonId: string): Promise<Ctx> {
   const { data: t } = await admin.from("topics").select("id, title, position, subject_id").eq("id", l!.topic_id).single();
   const { data: su } = await admin.from("subjects").select("name, grade_id").eq("id", t!.subject_id).single();
   const { data: g } = await admin.from("grades").select("year_number").eq("id", su!.grade_id).single();
+  const { data: voc } = await admin.from("subject_vocab").select("reglas, prohibidos").eq("subject_id", t!.subject_id).maybeSingle();
   const { data: temas } = await admin.from("topics").select("id, title, position").eq("subject_id", t!.subject_id).order("position");
   const { data: lecs } = await admin.from("lessons").select("title, position, topic_id").in("topic_id", temas!.map((x: any) => x.id));
   const orden = (temas as any[]).flatMap((tm) =>
@@ -202,6 +204,7 @@ async function contexto(lessonId: string): Promise<Ctx> {
     ficha: f, titulo: l!.title, tema: t!.title, materia: su!.name, anio: g!.year_number,
     vistas: orden.slice(0, i).map((x) => `${x.tema}: ${x.titulo}`),
     siguientes: orden.slice(i + 1, i + 7).map((x) => `${x.tema}: ${x.titulo}`),
+    vocab: voc ? { reglas: voc.reglas, prohibidos: voc.prohibidos || [] } : null,
   };
 }
 
@@ -217,7 +220,10 @@ async function pasoConsignas(c: Ctx, contenido: any) {
   const system = ESTILO + `\nAhora escribís la actividad por consigna de la lección. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\nArmá exactamente 8 consignas, de lo más simple a lo más pensado, con esta distribución y estos puntos: 1 verdadero/falso (1 punto), 2 de opción múltiple con 4 opciones y una sola correcta (1 punto cada una), 3 de respuesta corta con respuesta verificable (2 puntos cada una), 2 abiertas (3 puntos cada una). Al menos dos consignas deben apuntar a los errores típicos. Las opciones incorrectas tienen que ser errores plausibles, nunca absurdas. En "respuesta" de multiple_choice y true_false va el texto exacto de una opción. En las abiertas, la respuesta de referencia es un ejemplo completo y los criterios dividen el puntaje en ideas.`;
   const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
-  const cs = r.consignas;
+  return validarConsignas(r.consignas);
+}
+
+function validarConsignas(cs: any) {
   if (!Array.isArray(cs) || cs.length !== 8) throw new Error("La IA no devolvió exactamente 8 consignas");
   for (const q of cs) {
     if (q.tipo === "multiple_choice" && (!Array.isArray(q.opciones) || q.opciones.length !== 4 || !q.opciones.includes(q.respuesta))) throw new Error("Una consigna de opción múltiple quedó mal armada");
@@ -226,11 +232,79 @@ async function pasoConsignas(c: Ctx, contenido: any) {
   return cs;
 }
 
+// ---- control de vocabulario (sin IA: busca las palabras prohibidas de la materia) ----
+function textosConLugar(contenido: any, consignas: any[]): { donde: string; texto: string }[] {
+  const out: { donde: string; texto: string }[] = [];
+  const add = (donde: string, t: unknown) => { if (typeof t === "string" && t) out.push({ donde, texto: t }); };
+  add("Objetivo", contenido.objetivo);
+  (contenido.vas_a_ver || []).forEach((x: string) => add("Vas a ver", x));
+  (contenido.secciones || []).forEach((sec: any, i: number) => {
+    add(`Sección ${i + 1} (título)`, sec.titulo);
+    (sec.bloques || []).forEach((b: any) => {
+      const lugar = `Sección ${i + 1}, bloque ${b.tipo}`;
+      add(lugar, b.titulo); add(lugar, b.texto);
+      (b.items || []).forEach((x: string) => add(lugar, x));
+      (b.columnas || []).forEach((x: string) => add(lugar, x));
+      (b.filas || []).forEach((f: string[]) => f.forEach((x) => add(lugar, x)));
+    });
+  });
+  (contenido.resumen || []).forEach((r: any) => { add("Resumen", r.titulo); add("Resumen", r.texto); });
+  (contenido.glosario || []).forEach((g: any) => { add("Glosario", g.palabra); add("Glosario", g.significado); });
+  (consignas || []).forEach((q, i) => {
+    const lugar = `Consigna ${i + 1}`;
+    add(lugar, q.enunciado); (q.opciones || []).forEach((x: string) => add(lugar, x));
+    add(lugar, q.respuesta); add(lugar, q.criterios); add(lugar, q.explicacion);
+  });
+  return out;
+}
+
+function controlVocabulario(c: Ctx, contenido: any, consignas: any[]) {
+  const problemas: any[] = [];
+  for (const pat of c.vocab?.prohibidos || []) {
+    let re: RegExp;
+    try { re = new RegExp(pat, "i"); } catch { continue; }
+    for (const { donde, texto } of textosConLugar(contenido, consignas)) {
+      const m = texto.match(re);
+      if (m) problemas.push({
+        donde, gravedad: "media",
+        descripcion: `Usa "${m[0]}", que no es el vocabulario de las lecciones de Wave Academy.`,
+        correccion: "Reemplazar por el término oficial indicado en el vocabulario (por ejemplo: unidades/decenas/centenas de millar).",
+      });
+    }
+  }
+  return problemas;
+}
+
 async function pasoRevision(c: Ctx, contenido: any, consignas: any[]) {
-  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
+  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS:\n` +
     consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones?.length ? "\n   Opciones: " + q.opciones.join(" / ") : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
   return await claudeTool(system, user, TOOL_REVISION, 5000);
+}
+
+const GRAV = { alta: 0, media: 1, baja: 2 } as Record<string, number>;
+const textoProblemas = (ps: any[]) => ps.map((p, i) => `${i + 1}. [${p.gravedad}] En: ${p.donde}\n   Problema: ${p.descripcion}${p.correccion ? "\n   Cómo corregirlo: " + p.correccion : ""}`).join("\n");
+
+async function pasoCorregirContenido(c: Ctx, contenido: any, problemas: any[]) {
+  const user = `${aTextoFicha(c)}\n\nMATERIAL ACTUAL (JSON):\n${JSON.stringify(contenido)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé el material COMPLETO corregido, con la misma estructura. Cambiá solo lo necesario para resolver los problemas: no reescribas lo que está bien ni cambies el largo. Recalculá cada cuenta que toques. Si corregís algo que se repite en otro lugar (resumen, glosario, ejemplos), corregilo también ahí.`;
+  const r = await claudeTool(ESTILO, user, TOOL_CONTENIDO, 10000);
+  if (!Array.isArray(r.secciones) || r.secciones.length < 3) throw new Error("La corrección del contenido salió con muy pocas secciones");
+  return r;
+}
+
+async function pasoCorregirConsignas(c: Ctx, contenido: any, consignas: any[], problemas: any[]) {
+  const system = ESTILO + `\nCorregís una actividad por consigna que tiene errores marcados por un revisor.`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCIÓN:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé las 8 consignas COMPLETAS corregidas, con la misma distribución de tipos y puntos. Cambiá solo lo necesario. Recalculá cada cuenta que toques y revisá que la respuesta, los criterios y la explicación sigan coincidiendo.`;
+  const r = await claudeTool(system, user, TOOL_CONSIGNAS, 8000);
+  return validarConsignas(r.consignas);
+}
+
+async function revisarTodo(c: Ctx, contenido: any, consignas: any[]) {
+  const rev = await pasoRevision(c, contenido, consignas);
+  const voc = controlVocabulario(c, contenido, consignas);
+  const problemas = [...(rev.problemas || []), ...voc].sort((a: any, b: any) => (GRAV[a.gravedad] ?? 3) - (GRAV[b.gravedad] ?? 3));
+  const apto = !!rev.apto && !problemas.some((p: any) => p.gravedad === "alta" || p.gravedad === "media");
+  return { ...rev, apto, problemas };
 }
 
 async function correrPaso(draftId: string) {
@@ -246,8 +320,22 @@ async function correrPaso(draftId: string) {
     } else if (tomado.paso === "consignas") {
       const consignas = await pasoConsignas(c, tomado.contenido);
       patch = { consignas, paso: "revision", status: "en_cola" };
+    } else if (tomado.paso === "revision") {
+      const revision = await revisarTodo(c, tomado.contenido, tomado.consignas);
+      patch = revision.problemas.length
+        ? { revision, revision_inicial: revision, paso: "correccion", status: "en_cola" }
+        : { revision, paso: "listo", status: "borrador" };
+    } else if (tomado.paso === "correccion") {
+      // una sola vuelta de corrección automática (después queda para la persona que revisa)
+      const ps: any[] = tomado.revision?.problemas || [];
+      const deConsigna = ps.filter((p) => /consigna/i.test(p.donde) || !/secci|recuadro|tabla|glosario|resumen|ejemplo|objetivo|vas a ver|bloque/i.test(p.donde));
+      const deContenido = ps.filter((p) => /secci|recuadro|tabla|glosario|resumen|ejemplo|objetivo|vas a ver|bloque/i.test(p.donde) || !/consigna/i.test(p.donde));
+      let contenido = tomado.contenido, consignas = tomado.consignas;
+      if (deContenido.length) contenido = await pasoCorregirContenido(c, contenido, deContenido);
+      if (deConsigna.length) consignas = await pasoCorregirConsignas(c, contenido, consignas, deConsigna);
+      patch = { contenido, consignas, paso: "revision2", status: "en_cola" };
     } else {
-      const revision = await pasoRevision(c, tomado.contenido, tomado.consignas);
+      const revision = await revisarTodo(c, tomado.contenido, tomado.consignas);
       patch = { revision, paso: "listo", status: "borrador" };
     }
     await admin.from("lesson_drafts").update({ ...patch, modelo: MODEL, error: null, updated_at: new Date().toISOString() }).eq("id", draftId);
