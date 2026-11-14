@@ -45,7 +45,9 @@
     document.getElementById('fb-resumen').innerHTML =
       '<div class="fb-card"><small>Gasto medido en total</small><b>' + usd(s.gasto_total) + '</b></div>' +
       '<div class="fb-card"><small>Promedio por lección completa</small><b>' + (Number(s.lecciones_completas_medidas) ? usd(s.promedio_completas) : '—') + '</b><span>' + (s.lecciones_completas_medidas || 0) + ' lecciones medidas</span></div>' +
-      '<div class="fb-card"><small>Trabajando ahora</small><b>' + (s.en_marcha || 0) + '</b></div>';
+      '<div class="fb-card"><small>Trabajando ahora</small><b>' + (s.en_marcha || 0) + '</b></div>' +
+      '<div class="fb-card"><small>Lecciones listas sin PDF</small><b>' + (s.pdf_pendientes || 0) + '</b></div>';
+    E.pdfPend = Number(s.pdf_pendientes) || 0;
   }
 
   async function lecciones() {
@@ -73,6 +75,20 @@
     var n = Object.keys(E.elegidas).filter(function (k) { return E.elegidas[k]; }).length;
     var b = document.getElementById('fb-lanzar');
     if (b) { b.disabled = !n; b.textContent = n ? 'Generar ' + n + (n === 1 ? ' lección' : ' lecciones') : 'Generar las seleccionadas'; }
+  }
+
+  async function armarPdfs() {
+    if (!E.pdfPend) return toast('No hay lecciones listas sin PDF.');
+    if (!confirm('Se van a armar los PDF de ' + E.pdfPend + (E.pdfPend === 1 ? ' lección' : ' lecciones') + '. No usa la IA de Anthropic y no gasta tu saldo. Tarda unos 2 o 3 minutos.\n\n¿Seguimos?')) return;
+    var b = document.getElementById('fb-pdf'); b.disabled = true;
+    try {
+      var r = await sb.functions.invoke('fabrica-pdf-lanzar', { body: {} });
+      var msg = r.error && r.error.context && r.error.context.json ? (await r.error.context.json().catch(function () { return null; })) : null;
+      if (r.error) toast((msg && msg.error) || r.error.message || 'No se pudo pedir el armado', true);
+      else if (r.data && r.data.error) toast(r.data.error, true);
+      else toast('Pedido enviado. Los PDF aparecen en 2 o 3 minutos: apretá Actualizar.');
+    } catch (e) { toast(e.message || 'No se pudo pedir el armado', true); }
+    b.disabled = false;
   }
 
   async function refrescar() { try { await Promise.all([resumen(), lecciones()]); } catch (e) { toast('No se pudo actualizar: ' + (e.message || e), true); } }
@@ -109,7 +125,7 @@
     vista.innerHTML = '<h1 class="wv-titulo">Fábrica de lecciones</h1>' +
       '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Cada una usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
       '<div id="fb-resumen" class="fb-resumen"></div><div id="fb-sel" class="fb-sel"></div>' +
-      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
+      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-pdf" class="wv-btn suave" type="button">Armar PDFs de las lecciones listas</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
       '<div id="fb-tabla"></div>';
     await cargarBase();
     pintarFiltros();
@@ -125,6 +141,7 @@
       var t = ev.target.closest('button'); if (!t) return;
       if (t.id === 'fb-lanzar') lanzar().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-act') refrescar();
+      if (t.id === 'fb-pdf') armarPdfs();
     };
     await refrescar();
   }
