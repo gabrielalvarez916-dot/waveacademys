@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Misión de las Piezas</title>
+<style>
+:root{--bg:#0c1f21;--bg2:#123336;--card:#17383b;--card2:#1e474b;--linea:#2c5a5e;--aqua:#7FD3C4;--tq:#19a39f;--sol:#F4B63F;--coral:#ff7a66;--txt:#eaf7f4;--suave:#9dbdb9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 80% -10%,#1b5a5c 0%,transparent 60%),radial-gradient(900px 600px at -10% 110%,#16484b 0%,transparent 55%),var(--bg);color:var(--txt);overflow:hidden;user-select:none;-webkit-user-select:none}
+#app{position:relative;height:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;padding:10px 14px 12px}
+.hud{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.9rem;min-height:40px}
+.hud .pasos{display:flex;gap:6px;flex:1}
+.hud .pasos i{flex:1;height:8px;border-radius:9px;background:var(--linea);overflow:hidden;position:relative}
+.hud .pasos i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--tq),var(--aqua));border-radius:9px;transition:width .4s}
+.chip{background:var(--card);border:1px solid var(--linea);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.chip.racha{color:var(--sol)}.chip.racha.off{opacity:.35}
+.escena{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;animation:entra .35s ease both;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;padding:4px 2px}
+.escena>:first-child{margin-top:auto}.escena>:last-child{margin-bottom:auto}
+.escena.confb{padding-bottom:104px}
+.escena>*{flex:none}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.etq{font-size:.72rem;letter-spacing:.28em;font-weight:900;color:var(--aqua);text-transform:uppercase}
+h1{font-size:clamp(1.6rem,6vw,2.6rem);line-height:1.1;margin:4px 0;font-weight:900}
+h2{font-size:clamp(1.15rem,4.4vw,1.55rem);line-height:1.25;margin:0;font-weight:900;text-wrap:balance}
+p{margin:0;color:var(--suave);font-weight:600;line-height:1.45}
+.mat{font-family:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;font-weight:400}
+.op .mat,.fb .mat,h2 .mat{font-size:1.22em}
+.btn{appearance:none;border:0;border-radius:16px;font:inherit;font-weight:900;font-size:1.05rem;padding:15px 20px;min-height:54px;color:#06282a;background:linear-gradient(180deg,#9be8da,var(--aqua));box-shadow:0 5px 0 #3e9488;cursor:pointer;transition:transform .08s,box-shadow .08s,opacity .2s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3e9488}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btn.sec{background:var(--card2);color:var(--txt);box-shadow:0 5px 0 #0e2a2c;border:1px solid var(--linea)}
+.ops{display:grid;gap:10px}
+.ops.dos{grid-template-columns:1fr 1fr}
+.op{appearance:none;font:inherit;font-weight:800;font-size:clamp(1rem,4vw,1.25rem);text-align:center;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-radius:16px;padding:14px;min-height:58px;cursor:pointer;transition:transform .1s,border-color .15s,background .15s}
+.op:active{transform:scale(.97)}
+.op.sel{border-color:var(--aqua);background:#1f5054}
+.op.bien{border-color:var(--aqua);background:#1d5a55;color:#d8fff7;animation:pop .35s}
+.op.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.op.gris{opacity:.45}
+@keyframes pop{50%{transform:scale(1.05)}}
+@keyframes temblar{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+.tarjeta{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--linea);border-radius:22px;padding:22px 16px;text-align:center;font-size:clamp(1.9rem,9vw,3.2rem);font-weight:900;min-height:118px;display:grid;place-items:center;box-shadow:0 14px 30px -18px #000}
+.tarjeta.chica{font-size:clamp(1.3rem,6vw,2rem)}
+.tiempo{height:8px;border-radius:9px;background:var(--linea);overflow:hidden}
+.tiempo b{display:block;height:100%;width:100%;background:var(--sol);border-radius:9px}
+.fb{position:absolute;left:16px;right:16px;bottom:16px;border-radius:18px;padding:14px 16px;font-weight:800;display:flex;gap:12px;align-items:center;transform:translateY(140%);transition:transform .28s cubic-bezier(.2,1.2,.4,1);z-index:5;box-shadow:0 18px 40px -12px #000}
+.fb.ver{transform:none}
+.fb.bien{background:#1d6b63;border:2px solid var(--aqua)}
+.fb.mal{background:#5a2f2b;border:2px solid var(--coral)}
+.fb div{flex:1;line-height:1.35}.fb small{display:block;font-weight:600;opacity:.92;margin-top:2px}
+.fb .btn{padding:10px 16px;min-height:44px;font-size:.95rem}
+.ranuras{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:70px;padding:12px;border:2px dashed var(--linea);border-radius:18px;background:rgba(0,0,0,.18)}
+.ranuras:empty::before{content:"Tocá las piezas en orden";color:var(--suave);font-weight:700;align-self:center}
+.piezas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pz{appearance:none;font:inherit;font-size:clamp(1.3rem,6vw,1.9rem);font-weight:800;color:var(--txt);background:var(--card2);border:2px solid var(--linea);border-bottom-width:5px;border-radius:14px;min-width:54px;min-height:56px;padding:6px 14px;cursor:pointer}
+.pz.usada{visibility:hidden}
+.ranuras .pz{border-color:var(--aqua)}
+.mapa{display:grid;gap:8px}
+.mapa.mini{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));width:100%}
+.mapa.mini .nodo{padding:8px 10px;gap:9px;font-size:.92rem;text-align:left}.mapa.mini .nodo i{width:30px;height:30px;font-size:.85rem}.mapa.mini .nodo small{font-size:.78rem}
+.nodo{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--linea);border-radius:16px;padding:12px 14px;font-weight:800}
+.nodo i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;background:var(--linea);color:var(--suave);font-weight:900;flex:none}
+.nodo.hecho i{background:var(--aqua);color:#06282a}.nodo.act{border-color:var(--aqua);box-shadow:0 0 0 3px rgba(127,211,196,.18)}
+.nodo.act i{background:var(--sol);color:#3a2a00}.nodo small{display:block;color:var(--suave);font-weight:600}
+.nodo em{margin-left:auto;font-style:normal;color:var(--sol);letter-spacing:2px}
+.gran{font-size:clamp(3rem,16vw,5rem);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--aqua),#d9fff7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.estrellas{font-size:2.4rem;letter-spacing:8px;color:var(--sol)}.estrellas s{text-decoration:none;opacity:.2}
+.centro{text-align:center;align-items:center}
+.conf{position:absolute;inset:0;pointer-events:none;overflow:hidden}.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;animation:cae linear forwards}
+@keyframes cae{to{transform:translateY(110vh) rotate(720deg)}}
+@media (max-height:600px){.escena{gap:8px}.tarjeta{min-height:70px;padding:10px;font-size:clamp(1.5rem,7vw,2.3rem)}.btn{padding:11px 16px;min-height:46px}.op{padding:10px;min-height:48px}.pz{min-height:48px;min-width:46px}.ranuras{min-height:58px;padding:8px}.gran{font-size:clamp(2.4rem,12vw,3.4rem)}.estrellas{font-size:1.7rem}h1{font-size:clamp(1.4rem,5vw,2rem)}.hud{min-height:32px}.chip{padding:4px 10px}}
+@media (max-height:640px){.mapa.mini .nodo small{display:none}.centro p{font-size:.9rem}}
+@media (max-width:420px){.mapa.mini .nodo{font-size:.84rem;padding:7px 8px}.mapa.mini .nodo em{letter-spacing:0}}
+.tabla{display:flex;gap:6px;width:100%}
+.clase{flex:1;border:1px solid var(--linea);border-radius:16px;padding:6px;background:rgba(0,0,0,.18)}
+.clase-t{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--suave);text-align:center;margin-bottom:5px}
+.slots{display:flex;gap:4px}
+.slot{flex:1;min-width:0;min-height:60px;border:2px solid var(--linea);border-bottom-width:4px;border-radius:12px;background:var(--card);color:var(--txt);font:inherit;font-weight:900;font-size:1.45rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2px 0;cursor:pointer}
+.slot small{font-size:.52rem;color:var(--aqua);letter-spacing:.04em;font-weight:900}
+.slot.act{border-color:var(--sol);box-shadow:0 0 0 3px rgba(244,182,63,.22)}
+.slot.bien{border-color:var(--aqua);background:#1d5a55}
+.slot.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.teclado{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.teclado .pz{min-width:0;padding:4px 0;font-size:1.35rem}
+.teclado .pz.borrar{color:var(--coral)}
+.perillas{display:flex;gap:6px;justify-content:center;width:100%}
+.perilla{flex:1;max-width:84px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.perilla small{font-size:.6rem;color:var(--aqua);font-weight:900;letter-spacing:.04em}
+.perilla em{font-style:normal;font-size:.5rem;color:var(--suave);font-weight:700;margin-top:-3px}
+.perilla .fl{width:100%;min-height:42px;border-radius:10px;border:2px solid var(--linea);border-bottom-width:4px;background:var(--card2);color:var(--txt);font-size:1rem;font-weight:900;cursor:pointer}
+.perilla .fl:active{transform:translateY(2px)}
+.perilla .dig{width:100%;min-height:56px;display:grid;place-items:center;background:#0a1a1c;border:2px solid var(--sol);border-radius:12px;font-size:1.8rem;font-weight:900;color:var(--sol)}
+.perilla .dig.mal{border-color:var(--coral);color:var(--coral);animation:temblar .35s}
+.perilla .dig.bien{border-color:var(--aqua);color:var(--aqua)}
+.visor{background:#0a1a1c;border:2px solid var(--linea);border-radius:18px;padding:12px;text-align:center;font-weight:900;font-size:clamp(1.8rem,8vw,2.8rem);color:var(--aqua);letter-spacing:.04em}
+.visor small{display:block;font-size:.62rem;letter-spacing:.26em;color:var(--suave);margin-bottom:2px}
+.cifras{display:flex;gap:6px;justify-content:center;width:100%}
+.cifra{flex:1;max-width:62px;min-width:38px;min-height:70px;border-radius:14px;border:2px solid var(--linea);border-bottom-width:5px;background:var(--card2);color:var(--txt);font:inherit;font-size:2.1rem;font-weight:900;cursor:pointer;transition:transform .1s}
+.cifra:active{transform:translateY(2px)}
+.cifra.tach{opacity:.55;text-decoration:line-through;border-color:var(--coral);color:var(--coral);background:#3a2220}
+.cifra.bien{border-color:var(--aqua)}
+.pedido{background:linear-gradient(160deg,var(--card2),var(--card));border:1px dashed var(--aqua);border-radius:18px;padding:14px 16px;font-weight:700;line-height:1.45}
+.pedido b{color:var(--sol)}
+.tip{background:rgba(127,211,196,.1);border-left:4px solid var(--aqua);border-radius:12px;padding:10px 14px;color:var(--txt);font-weight:600;font-size:.92rem;line-height:1.45;text-align:left}
+.tip b{color:var(--aqua)}
+.fb .bt{display:flex;gap:8px;flex:none}
+@media (max-width:420px){.slot{font-size:1.2rem;min-height:54px}.slot small{font-size:.46rem}.perilla small{font-size:.52rem}.perilla em{font-size:.44rem}.perilla .dig{font-size:1.5rem}}
+@media (max-height:640px){.slot{min-height:48px}.cifra{min-height:56px}.perilla .dig{min-height:44px}.perilla .fl{min-height:34px}}
+
+/* ---- tipos de paso nuevos del catálogo ---- */
+.vf{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vf .op{font-size:1.3rem;min-height:76px}
+.cmp{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.cmp .tarjeta{min-height:96px;font-size:clamp(1.4rem,7vw,2.4rem)}
+.cmp .sig{font-size:2rem;font-weight:900;color:var(--sol)}
+.simbolos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.simbolos .op{font-size:2rem;min-height:64px}
+.fila-ord{display:flex;align-items:center;gap:12px;background:var(--card);border:2px solid var(--linea);border-radius:16px;padding:12px 14px;font-weight:800;font-size:1.05rem;text-align:left;color:var(--txt);font-family:inherit;cursor:pointer;width:100%;min-height:54px}
+.fila-ord i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;flex:none;background:var(--linea);color:var(--suave)}
+.fila-ord.puesta{border-color:var(--aqua);background:#1f5054}
+.fila-ord.puesta i{background:var(--sol);color:#3a2a00}
+.fila-ord.bien{border-color:var(--aqua);background:#1d5a55}
+.fila-ord.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.pares{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.par{appearance:none;font:inherit;font-weight:800;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-radius:14px;padding:12px 10px;min-height:52px;cursor:pointer;text-align:center;position:relative}
+.par.sel{border-color:var(--sol);box-shadow:0 0 0 3px rgba(244,182,63,.22)}
+.par.c0{border-color:#7FD3C4;background:#1d4d49}.par.c1{border-color:#F4B63F;background:#4a3c14}.par.c2{border-color:#ff9a8b;background:#4a2a28}.par.c3{border-color:#a9b8ff;background:#2a3052}.par.c4{border-color:#c6f27a;background:#34431c}.par.c5{border-color:#ffb6e6;background:#4a2a40}
+.par.mal{animation:temblar .35s;outline:2px solid var(--coral)}
+.cajas{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.caja{border:2px dashed var(--linea);border-radius:16px;padding:8px;min-height:92px;background:rgba(0,0,0,.18);cursor:pointer}
+.caja.lista{border-color:var(--sol)}
+.caja h3{margin:0 0 6px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua);text-align:center;font-weight:900}
+.caja .dentro{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.chipi{appearance:none;font:inherit;font-weight:800;color:var(--txt);background:var(--card2);border:2px solid var(--linea);border-bottom-width:4px;border-radius:12px;padding:8px 12px;min-height:42px;cursor:pointer}
+.chipi.sel{border-color:var(--sol);box-shadow:0 0 0 3px rgba(244,182,63,.22)}
+.chipi.bien{border-color:var(--aqua)}.chipi.mal{border-color:var(--coral);animation:temblar .35s}
+.suelto{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:52px}
+.frase{font-size:clamp(1.05rem,4.4vw,1.4rem);font-weight:800;line-height:2.1;text-align:center}
+.hueco{display:inline-block;min-width:74px;border-bottom:3px solid var(--sol);margin:0 4px;padding:0 8px;color:var(--sol);cursor:pointer;line-height:1.5;border-radius:6px 6px 0 0}
+.hueco.act{background:rgba(244,182,63,.16)}.hueco.bien{color:var(--aqua);border-color:var(--aqua)}.hueco.mal{color:var(--coral);border-color:var(--coral);animation:temblar .35s}
+.teclan{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.teclan .pz{min-width:0;font-size:1.5rem}
+.teclan .pz.borrar{color:var(--coral)}
+.vis-num{background:#0a1a1c;border:2px solid var(--linea);border-radius:18px;padding:12px;text-align:center;font-weight:900;font-size:clamp(1.8rem,8vw,2.8rem);color:var(--aqua);min-height:68px;word-break:break-all}
+.vis-num.bien{border-color:var(--aqua)}.vis-num.mal{border-color:var(--coral);color:var(--coral);animation:temblar .35s}
+.vis-num small{font-size:.9rem;color:var(--suave);margin-left:6px}
+.linea-det{appearance:none;display:block;width:100%;text-align:left;font:inherit;font-weight:700;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-radius:14px;padding:12px 14px;cursor:pointer;line-height:1.4}
+.linea-det.sel{border-color:var(--sol);background:#4a3c14}
+.linea-det.bien{border-color:var(--aqua);background:#1d5a55}.linea-det.mal{border-color:var(--coral);background:#4a2a28;animation:temblar .35s}
+.linea-det b{color:var(--sol);margin-right:8px}
+.recta{padding:10px 4px}
+.recta input[type=range]{width:100%;accent-color:#F4B63F;height:36px}
+.recta .eje{display:flex;justify-content:space-between;color:var(--suave);font-weight:800;font-size:.85rem}
+.memo{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.carta{appearance:none;font:inherit;font-weight:800;font-size:.95rem;min-height:74px;border-radius:14px;border:2px solid var(--linea);background:linear-gradient(160deg,#1e474b,#123336);color:transparent;cursor:pointer;padding:4px;transition:transform .2s}
+.carta.arriba{color:var(--txt);background:var(--card2);border-color:var(--sol)}
+.carta.ok{color:var(--txt);background:#1d5a55;border-color:var(--aqua);pointer-events:none}
+.carta:not(.arriba):not(.ok)::after{content:"?";color:var(--aqua);font-size:1.6rem;font-weight:900}
+@media (max-width:420px){.memo{grid-template-columns:repeat(3,1fr)}.pares{gap:8px}.fila-ord{font-size:.95rem}}
+</style>
+</head><body><div id="app"></div>
+<script>window.SPEC={"etiqueta":"Catálogo de juegos · demostración","titulo":"La Misión de las Piezas","historia":"Una demostración con todos los tipos de actividad del catálogo. Cada desafío mezcla formatos distintos para que nunca se sienta repetido.","boton":"Empezar la misión ➜","cierre":{"alto":"¡Misión cumplida!","medio":"¡Muy bien! Repasá lo que falló en el PDF.","bajo":"Buen intento. Volvé al PDF y jugá otra vez."},"desafios":[{"ico":"🎯","nom":"Puntería","sub":"Elegir y decidir","como":"Elegí la opción correcta. En el relámpago, el tiempo corre: tenés un solo intento.","pasos":[{"t":"op","q":"¿Cuánto es \u003cb>6 × 7\u003c/b>?","ops":["36","42","48","54"],"ok":1,"pista":"Pensá en la tabla del 6: 6 × 6 = 36 y sumá un 6 más.","exp":"6 × 7 = 42."},{"t":"vf","q":"El resultado de una multiplicación siempre es mayor que cada uno de los factores.","ok":false,"pista":"Probá con un factor igual a 1.","exp":"Falso: 5 × 1 = 5 y no es mayor que 5."},{"t":"multi","q":"¿Cuáles de estos números son múltiplos de 5?","ops":["15","22","30","47","100"],"oks":[0,2,4],"pista":"Los múltiplos de 5 terminan en 0 o en 5.","exp":"15, 30 y 100 terminan en 0 o en 5."}]},{"ico":"🧩","nom":"Armar y ordenar","sub":"Piezas, pasos y parejas","como":"Tocá las piezas para armar, ordená los pasos y unilos con su pareja.","pasos":[{"t":"armar","q":"Armá el número: \u003cb>3 centenas, 0 decenas y 5 unidades\u003c/b>","piezas":["3","0","5"],"extra":["8"],"sol":"305","pista":"Primero van las centenas, después las decenas y al final las unidades.","exp":"3 centenas + 0 decenas + 5 unidades = 305."},{"t":"ordenar","q":"Ordená los pasos para resolver \u003cb>48 + 27\u003c/b>","items":["Sumo las unidades: 8 + 7 = 15","Escribo 5 y me llevo 1","Sumo las decenas: 4 + 2 + 1 = 7","El resultado es 75"],"pista":"Se empieza siempre por las unidades.","exp":"Unidades, me llevo 1, decenas y resultado."},{"t":"unir","q":"Uní cada cuenta con su resultado","pares":[["9 × 3","27"],["40 : 8","5"],["12 + 19","31"],["50 − 18","32"]],"pista":"Resolvé primero las que te salgan más rápido.","exp":"9 × 3 = 27; 40 : 8 = 5; 12 + 19 = 31; 50 − 18 = 32."}]},{"ico":"📦","nom":"Clasificar y completar","sub":"Cajas, frases y cuentas","como":"Tocá un elemento y después la caja o el hueco donde va.","pasos":[{"t":"clasificar","q":"Poné cada número en su caja","cajas":["Pares","Impares"],"items":[{"t":"14","c":0},{"t":"27","c":1},{"t":"50","c":0},{"t":"63","c":1},{"t":"88","c":0}],"pista":"Un número par termina en 0, 2, 4, 6 u 8.","exp":"Pares: 14, 50 y 88. Impares: 27 y 63."},{"t":"completar","q":"Completá la frase","texto":"En una suma, los números que se suman se llaman ___ y el resultado se llama ___.","banco":["sumandos","suma","factores","cociente"],"sol":["sumandos","suma"],"pista":"Los números de una multiplicación son factores; los de una suma, otros.","exp":"Los sumandos se suman y dan la suma."},{"t":"numero","q":"Resolvé: \u003cb>345 × 12\u003c/b>","sol":"4140","aceptadas":["4.140"],"pista":"345 × 10 = 3.450 y 345 × 2 = 690; sumalos.","exp":"3.450 + 690 = 4.140."}]},{"ico":"🔎","nom":"Detective y estimación","sub":"Errores, rectas y comparaciones","como":"Buscá el error, ubicá el valor y compará.","pasos":[{"t":"detective","q":"Marta resolvió \u003cb>26 × 3\u003c/b>. ¿En qué paso se equivocó?","pasos":["20 × 3 = 60","6 × 3 = 21","60 + 21 = 81"],"error":1,"pista":"Revisá cada cuenta chica.","exp":"6 × 3 = 18, no 21. El resultado correcto es 78."},{"t":"recta","q":"Ubicá el número \u003cb>70\u003c/b> en la recta","min":0,"max":100,"paso":5,"sol":70,"tol":5,"pista":"70 está entre 50 y 100, bastante cerca de 75.","exp":"70 queda a 7 décimos del camino entre 0 y 100."},{"t":"comparar","q":"¿Qué signo va entre las dos cuentas?","a":"8 × 6","b":"7 × 7","ok":"\u003c","pista":"Resolvé las dos cuentas y compará.","exp":"8 × 6 = 48 y 7 × 7 = 49; 48 es menor que 49."}]},{"ico":"⚡","nom":"Memoria y reflejos","sub":"Parejas y relámpagos","como":"Encontrá las parejas dadas vuelta y respondé a contrarreloj.","pasos":[{"t":"memoria","q":"Encontrá cada cuenta con su resultado","pares":[["2 × 8","16"],["3 × 9","27"],["5 × 6","30"]],"exp":"2 × 8 = 16; 3 × 9 = 27; 5 × 6 = 30."},{"t":"op","q":"¡Relámpago! ¿Cuánto es \u003cb>9 × 4\u003c/b>?","ops":["32","36","40"],"ok":1,"seg":8,"exp":"9 × 4 = 36."},{"t":"tachar","q":"¿Cuántas decenas completas hay en \u003cb>45.678\u003c/b>?","num":"45678","k":1,"unidad":"decenas","pista":"Se tacha la cifra de las unidades.","exp":"Se tacha el 8: quedan 4.567 decenas."}]}]};</script>
+<script>
+/* MOTOR DE JUEGOS INTERACTIVOS DE WAVE ACADEMY
+   Toma un SPEC (historia + desafíos + pasos) y arma el juego completo. Cada paso tiene un "t" (tipo) del catálogo T.
+   Cada paso vale 1 punto a la primera, 0,5 a la segunda y 0 si falla; al final avisa el porcentaje a la plataforma. */
+(function () {
+  var SPEC = window.SPEC, app = document.getElementById('app'), E = {};
+
+  // ---------- utilidades ----------
+  function S(t) { // texto de la IA: se escapa todo y se permiten solo unas pocas marcas
+    return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/&lt;(\/?)(b|i|sub|sup|br)&gt;/g, '<$1$2>');
+  }
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function baraja(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function suma(a) { return a.reduce(function (x, y) { return x + y; }, 0); }
+  function pad(n, len) { n = String(n); while (n.length < len) n = '0' + n; return n; }
+  function on(sel, ev, fn) { [].forEach.call(app.querySelectorAll(sel), function (el) { el['on' + ev] = function () { fn(el); }; }); }
+  function igualArr(a, b) { return a.length === b.length && a.every(function (x, i) { return x === b[i]; }); }
+  var DES = SPEC.desafios, ND = DES.length;
+  function nPasos(d) { return DES[d].pasos.length; }
+
+  // ---------- pantalla base ----------
+  function hud() {
+    var h = '<div class="hud"><div class="pasos">';
+    for (var d = 0; d < ND; d++) { var w = E.cred && E.cred[d] ? Math.round(E.cred[d].length / nPasos(d) * 100) : 0; h += '<i><b style="width:' + w + '%"></b></i>'; }
+    return h + '</div><span class="chip">⭐ ' + (E.pts || 0) + '</span></div>';
+  }
+  function pintar(h, cls) { clearTimeout(E.tm); app.innerHTML = hud() + '<div class="escena ' + (cls || '') + '">' + h + '</div><div class="fb" id="fb"></div>'; }
+  function fb(tipo, html, botones) {
+    var f = document.getElementById('fb'); f.className = 'fb ver ' + tipo;
+    f.innerHTML = '<div>' + html + '</div><span class="bt">' + botones.map(function (b, i) { return '<button class="btn" data-b="' + i + '">' + b[0] + '</button>'; }).join('') + '</span>';
+    [].forEach.call(f.querySelectorAll('[data-b]'), function (el) { el.onclick = function () { botones[+el.dataset.b][1](); }; });
+    var es = app.querySelector('.escena'); if (es) { es.classList.add('confb'); es.scrollTop = es.scrollHeight; }
+  }
+  function sinFb() { var f = document.getElementById('fb'); if (f) f.className = 'fb'; var es = app.querySelector('.escena'); if (es) es.classList.remove('confb'); }
+  function cab() { var d = DES[E.d]; return '<div><div class="etq">' + S(d.ico || '⭐') + ' Desafío ' + (E.d + 1) + ' · ' + (E.a + 1) + ' de ' + nPasos(E.d) + '</div></div>'; }
+
+  // ---------- veredicto común: 2 intentos (A.uno = un solo intento) ----------
+  function veredicto(A, ok, h) {
+    if (ok) {
+      var c = E.int === 1 ? 1 : .5; h.bloquear();
+      fb('bien', (c === 1 ? '¡Perfecto!' : '¡Bien, a la segunda!') + '<small>' + S(A.exp || '') + '</small>', [['Seguir ➜', function () { anotar(c); }]]); return;
+    }
+    if (E.int === 1 && !A.uno) {
+      E.int = 2; h.marcar();
+      fb('mal', 'Casi. Tenés otra oportunidad (vale medio punto).<small>' + S(A.pista || '') + '</small>', [['Probar de nuevo', function () { h.reintento(); sinFb(); }]]); return;
+    }
+    h.revelar();
+    fb('mal', 'Esta vez no salió. Mirá cómo se resuelve:<small>' + S(A.exp || '') + '</small>', [['Seguir ➜', function () { anotar(0); }]]);
+  }
+  function anotar(c) { E.cred[E.d].push(c); E.pts += Math.round(c * 10); E.a++; if (E.a >= nPasos(E.d)) finDesafio(); else jugar(); }
+  function botonComprobar(lock, habilitado) { return '<button class="btn" id="ok"' + (lock || !habilitado ? ' disabled' : '') + '>Comprobar</button>'; }
+
+  var T = {};
+
+  // ================= TIPOS GENÉRICOS (sirven para cualquier materia) =================
+  // op: elegir una opción. {q, tarjeta?, ops[], ok, mezclar?, seg? (relámpago con tiempo, un solo intento)}
+  T.op = function (A) {
+    var opts = A.ops.map(function (t, i) { return { t: t, ok: i === A.ok }; }); if (A.mezclar !== false) opts = baraja(opts);
+    var sel = -1, malas = [], lock = false, mostrarOk = false, rapido = !!A.seg; if (rapido) A.uno = true;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2>' + (A.tarjeta ? '<div class="tarjeta' + (String(A.tarjeta).length > 14 ? ' chica' : '') + '">' + S(A.tarjeta) + '</div>' : '') +
+        (rapido && !lock ? '<div class="tiempo"><b id="tb"></b></div>' : '') +
+        '<div class="ops' + (A.ops.length === 2 ? ' dos' : '') + '">' + opts.map(function (o, i) {
+          var c = 'op' + (i === sel ? ' sel' : '') + (malas.indexOf(i) >= 0 ? ' mal' : '') + (mostrarOk && o.ok ? ' bien' : '') + (lock && !o.ok && malas.indexOf(i) < 0 ? ' gris' : '');
+          return '<button class="' + c + '" data-o="' + i + '"' + (lock || malas.indexOf(i) >= 0 ? ' disabled' : '') + '>' + S(o.t) + '</button>';
+        }).join('') + '</div>' + (rapido ? '' : botonComprobar(lock, sel >= 0));
+      pintar(h);
+      var hk = {
+        bloquear: function () { lock = true; mostrarOk = true; dib(); },
+        marcar: function () { malas.push(sel); sel = -1; dib(); }, reintento: function () { },
+        revelar: function () { if (sel >= 0) malas.push(sel); lock = true; mostrarOk = true; sel = -1; dib(); }
+      };
+      if (rapido && !lock) {
+        var tb = document.getElementById('tb'); tb.style.transition = 'width ' + A.seg + 's linear'; setTimeout(function () { tb.style.width = '0%'; }, 30);
+        E.tm = setTimeout(function () { veredicto(A, false, hk); }, A.seg * 1000);
+      }
+      on('[data-o]', 'click', function (b) {
+        sel = +b.dataset.o;
+        if (rapido) { clearTimeout(E.tm); veredicto(A, opts[sel].ok, hk); } else dib();
+      });
+      var ok = document.getElementById('ok');
+      if (ok) ok.onclick = function () { veredicto(A, opts[sel].ok, hk); };
+    }
+    dib();
+  };
+
+  // vf: verdadero o falso. {q, ok:true|false, uno?}
+  T.vf = function (A) {
+    var lock = false, sel = null, ver = null;
+    function dib() {
+      var h = cab() + '<h2>Verdadero o falso</h2><div class="tarjeta chica">' + S(A.q) + '</div><div class="vf">' + [true, false].map(function (v) {
+        var c = 'op' + (lock && v === A.ok ? ' bien' : '') + (sel === v && ver === false ? ' mal' : '');
+        return '<button class="' + c + '" data-v="' + v + '"' + (lock ? ' disabled' : '') + '>' + (v ? '✔ Verdadero' : '✘ Falso') + '</button>';
+      }).join('') + '</div>';
+      pintar(h);
+      on('[data-v]', 'click', function (b) {
+        sel = b.dataset.v === 'true'; ver = sel === A.ok;
+        veredicto(A, ver, { bloquear: function () { lock = true; dib(); }, marcar: function () { dib(); sel = null; }, reintento: function () { dib(); }, revelar: function () { lock = true; dib(); } });
+      });
+    }
+    dib();
+  };
+
+  // multi: marcar todas las correctas. {q, ops[], oks[indices]}
+  T.multi = function (A) {
+    var opts = baraja(A.ops.map(function (t, i) { return { t: t, ok: A.oks.indexOf(i) >= 0 }; })), sel = [], err = [], lock = false, rev = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><p style="text-align:center">Puede haber más de una correcta.</p><div class="ops">' + opts.map(function (o, i) {
+        var c = 'op' + (sel.indexOf(i) >= 0 ? ' sel' : '') + (err.indexOf(i) >= 0 ? ' mal' : '') + (rev && o.ok ? ' bien' : '') + (lock && !rev && sel.indexOf(i) >= 0 ? ' bien' : '');
+        return '<button class="' + c + '" data-o="' + i + '"' + (lock ? ' disabled' : '') + '>' + S(o.t) + '</button>';
+      }).join('') + '</div>' + botonComprobar(lock, sel.length);
+      pintar(h);
+      on('[data-o]', 'click', function (b) { var i = +b.dataset.o, k = sel.indexOf(i); if (k >= 0) sel.splice(k, 1); else sel.push(i); err = []; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = []; opts.forEach(function (o, i) { if ((sel.indexOf(i) >= 0) !== o.ok) mal.push(i); });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { err = []; dib(); }, revelar: function () { lock = true; rev = true; err = []; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // armar: armar una palabra, número o frase tocando piezas en orden. {q, piezas[], extra[]?, sol (texto unido), union?:'' (separador, '' para cifras/letras, ' ' para palabras)}
+  T.armar = function (A) {
+    var uni = A.union == null ? '' : A.union, base = baraja(A.piezas.concat(A.extra || [])).map(function (t, i) { return { t: t, i: i }; }), puestas = [], lock = false, ok = false, mal = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="ranuras" style="' + (mal ? 'border-color:var(--coral)' : ok ? 'border-color:var(--aqua)' : '') + '">' + puestas.map(function (p) { return '<button class="pz" data-q="' + p.i + '"' + (lock ? ' disabled' : '') + '>' + S(p.t) + '</button>'; }).join('') + '</div>' +
+        '<div class="piezas">' + base.map(function (p) { return '<button class="pz' + (puestas.indexOf(p) >= 0 ? ' usada' : '') + '" data-p="' + p.i + '"' + (lock ? ' disabled' : '') + '>' + S(p.t) + '</button>'; }).join('') + '</div>' + botonComprobar(lock, puestas.length);
+      pintar(h);
+      on('[data-p]', 'click', function (b) { var p = base.filter(function (x) { return x.i === +b.dataset.p; })[0]; puestas.push(p); mal = false; dib(); });
+      on('[data-q]', 'click', function (b) { puestas = puestas.filter(function (x) { return x.i !== +b.dataset.q; }); mal = false; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var v = puestas.map(function (p) { return p.t; }).join(uni) === String(A.sol);
+        veredicto(A, v, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { mal = true; dib(); }, reintento: function () { puestas = []; mal = false; dib(); }, revelar: function () { lock = true; mal = false; puestas = String(A.sol).split(uni).map(function (t) { return base.filter(function (x) { return x.t === t; })[0] || { t: t, i: -1 }; }); dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // ordenar: ordenar elementos tocándolos en el orden correcto. {q, items[] (en orden correcto)}
+  T.ordenar = function (A) {
+    var base = baraja(A.items.map(function (t, i) { return { t: t, k: i }; })), orden = [], err = false, lock = false, ok = false;
+    if (base.every(function (x, i) { return x.k === i; }) && base.length > 1) base.reverse();
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><p style="text-align:center">Tocalos en el orden correcto. Tocá uno puesto para sacarlo.</p><div class="ops">' + base.map(function (x) {
+        var pos = orden.indexOf(x), c = 'fila-ord' + (pos >= 0 ? ' puesta' : '') + (lock && ok ? ' bien' : '') + (err && pos >= 0 && orden[pos].k !== pos ? ' mal' : '');
+        return '<button class="' + c + '" data-x="' + x.k + '"' + (lock ? ' disabled' : '') + '><i>' + (pos >= 0 ? pos + 1 : '·') + '</i>' + S(x.t) + '</button>';
+      }).join('') + '</div>' + botonComprobar(lock, orden.length === base.length);
+      pintar(h);
+      on('[data-x]', 'click', function (b) { var x = base.filter(function (y) { return y.k === +b.dataset.x; })[0], p = orden.indexOf(x); if (p >= 0) orden.splice(p, 1); else orden.push(x); err = false; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, orden.every(function (x, i) { return x.k === i; }), { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { err = true; dib(); }, reintento: function () { orden = []; err = false; dib(); }, revelar: function () { lock = true; err = false; orden = base.slice().sort(function (a, b) { return a.k - b.k; }); dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // unir: unir cada elemento de la izquierda con el de la derecha. {q, pares:[[izq,der],...]}
+  T.unir = function (A) {
+    var izq = A.pares.map(function (p, i) { return { t: p[0], k: i }; }), der = baraja(A.pares.map(function (p, i) { return { t: p[1], k: i }; })), un = {}, selI = -1, err = [], lock = false;
+    function dib() {
+      var claves = Object.keys(un);
+      var cI = function (k) { var p = claves.indexOf(String(k)); return p >= 0 ? ' c' + (p % 6) : ''; };
+      var cD = function (k) { var dueno = claves.filter(function (i) { return un[i] === k; })[0]; return dueno != null ? cI(dueno) : ''; };
+      var filas = '';
+      izq.forEach(function (x, n) {
+        filas += '<button class="par' + (selI === x.k ? ' sel' : '') + cI(x.k) + (err.indexOf(x.k) >= 0 ? ' mal' : '') + '" data-i="' + x.k + '"' + (lock ? ' disabled' : '') + '>' + S(x.t) + '</button>' +
+          '<button class="par' + cD(der[n].k) + '" data-d="' + der[n].k + '"' + (lock ? ' disabled' : '') + '>' + S(der[n].t) + '</button>';
+      });
+      var h = cab() + '<h2>' + S(A.q) + '</h2><p style="text-align:center">Tocá uno de la izquierda y después su pareja de la derecha.</p><div class="pares">' + filas + '</div>' + botonComprobar(lock, claves.length === izq.length);
+      pintar(h);
+      on('[data-i]', 'click', function (b) { var k = +b.dataset.i; if (un[k] != null && selI !== k) { delete un[k]; } selI = k; err = []; dib(); });
+      on('[data-d]', 'click', function (b) { if (selI < 0) return; var k = +b.dataset.d; Object.keys(un).forEach(function (i) { if (un[i] === k) delete un[i]; }); un[selI] = k; selI = -1; err = []; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = izq.filter(function (x) { return un[x.k] !== x.k; }).map(function (x) { return x.k; });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { err = []; dib(); }, revelar: function () { lock = true; un = {}; izq.forEach(function (x) { un[x.k] = x.k; }); err = []; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // clasificar: tocar un elemento y después la caja donde va. {q, cajas[], items:[{t, c (índice de caja)}]}
+  T.clasificar = function (A) {
+    var its = baraja(A.items.map(function (x, i) { return { t: x.t, c: x.c, k: i }; })), puesto = {}, sel = -1, err = [], lock = false;
+    function chipi(x, cl) { return '<button class="chipi' + (sel === x.k ? ' sel' : '') + (cl || '') + '" data-c="' + x.k + '"' + (lock ? ' disabled' : '') + '>' + S(x.t) + '</button>'; }
+    function dib() {
+      var sueltos = its.filter(function (x) { return puesto[x.k] == null; });
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="suelto">' + (sueltos.length ? sueltos.map(function (x) { return chipi(x); }).join('') : '<p>¡Todo clasificado! Tocá Comprobar.</p>') + '</div><div class="cajas">' +
+        A.cajas.map(function (nom, ci) {
+          return '<div class="caja' + (sel >= 0 ? ' lista' : '') + '" data-box="' + ci + '"><h3>' + S(nom) + '</h3><div class="dentro">' + its.filter(function (x) { return puesto[x.k] === ci; }).map(function (x) { return chipi(x, err.indexOf(x.k) >= 0 ? ' mal' : lock ? ' bien' : ''); }).join('') + '</div></div>';
+        }).join('') + '</div>' + botonComprobar(lock, !sueltos.length);
+      pintar(h);
+      on('[data-c]', 'click', function (b) { var k = +b.dataset.c; if (puesto[k] != null) { delete puesto[k]; sel = -1; } else sel = sel === k ? -1 : k; err = []; dib(); });
+      on('[data-box]', 'click', function (b) { if (sel < 0) return; puesto[sel] = +b.dataset.box; sel = -1; err = []; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = its.filter(function (x) { return puesto[x.k] !== x.c; }).map(function (x) { return x.k; });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { mal.forEach(function (k) { delete puesto[k]; }); err = []; dib(); }, revelar: function () { lock = true; its.forEach(function (x) { puesto[x.k] = x.c; }); err = []; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // completar: completar huecos (___) con palabras de un banco. {q, texto con ___, banco[], sol[]}
+  T.completar = function (A) {
+    var partes = String(A.texto).split('___'), n = partes.length - 1, ban = baraja(A.banco.map(function (t, i) { return { t: t, k: i }; })), val = [], act = 0, err = [], lock = false, ok = false;
+    for (var i = 0; i < n; i++) val.push(null);
+    function dib() {
+      var frase = ''; partes.forEach(function (p, i) { frase += S(p); if (i < n) frase += '<span class="hueco' + (i === act && !lock ? ' act' : '') + (err.indexOf(i) >= 0 ? ' mal' : '') + (lock && ok ? ' bien' : '') + '" data-h="' + i + '">' + (val[i] ? S(val[i].t) : '&nbsp;&nbsp;&nbsp;&nbsp;') + '</span>'; });
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="tarjeta chica" style="font-weight:800"><div class="frase">' + frase + '</div></div><div class="suelto">' + ban.map(function (x) { return '<button class="chipi" data-w="' + x.k + '"' + (lock || val.indexOf(x) >= 0 ? ' style="visibility:hidden"' : '') + (lock ? ' disabled' : '') + '>' + S(x.t) + '</button>'; }).join('') + '</div>' + botonComprobar(lock, val.every(Boolean));
+      pintar(h);
+      on('[data-h]', 'click', function (b) { var i = +b.dataset.h; if (val[i]) val[i] = null; act = i; err = []; dib(); });
+      on('[data-w]', 'click', function (b) { var x = ban.filter(function (y) { return y.k === +b.dataset.w; })[0], i = val[act] == null ? act : val.indexOf(null); if (i < 0) return; val[i] = x; act = val.indexOf(null) >= 0 ? val.indexOf(null) : i; err = []; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = []; val.forEach(function (x, i) { if (x.t !== A.sol[i]) mal.push(i); });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { mal.forEach(function (i) { val[i] = null; }); act = val.indexOf(null); err = []; dib(); }, revelar: function () { lock = true; err = []; val = A.sol.map(function (t) { return { t: t }; }); dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // numero: escribir una respuesta numérica con el teclado de la pantalla. {q, sol (texto), aceptadas?[], unidad?}
+  T.numero = function (A) {
+    var v = '', lock = false, ok = false, mal = false;
+    var norm = function (s) { return String(s).replace(/[\s.]/g, '').replace(',', '.'); };
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="vis-num' + (mal ? ' mal' : '') + (lock && ok ? ' bien' : '') + '">' + (v === '' ? '<small>Tu respuesta</small>' : S(v)) + (A.unidad && v !== '' ? '<small>' + S(A.unidad) + '</small>' : '') + '</div><div class="teclan">' +
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '0', '⌫'].map(function (d) { return '<button class="pz' + (d === '⌫' ? ' borrar' : '') + '" data-k="' + d + '"' + (lock ? ' disabled' : '') + '>' + d + '</button>'; }).join('') + '</div>' + botonComprobar(lock, v !== '');
+      pintar(h);
+      on('[data-k]', 'click', function (b) { var d = b.dataset.k; mal = false; if (d === '⌫') v = v.slice(0, -1); else if (v.length < 14) v += d; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var aceptadas = [A.sol].concat(A.aceptadas || []).map(norm);
+        veredicto(A, aceptadas.indexOf(norm(v)) >= 0, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { mal = true; dib(); }, reintento: function () { v = ''; mal = false; dib(); }, revelar: function () { lock = true; mal = false; v = String(A.sol); dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // detective: encontrar el paso con el error en una resolución. {q, pasos[], error (índice)}
+  T.detective = function (A) {
+    var sel = -1, mal = [], lock = false, rev = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><p style="text-align:center">🔎 Hay un solo paso con un error. Tocalo.</p><div class="ops">' + A.pasos.map(function (p, i) {
+        var c = 'linea-det' + (sel === i ? ' sel' : '') + (mal.indexOf(i) >= 0 ? ' mal' : '') + (rev && i === A.error ? ' bien' : '');
+        return '<button class="' + c + '" data-l="' + i + '"' + (lock || mal.indexOf(i) >= 0 ? ' disabled' : '') + '><b>' + (i + 1) + '</b>' + S(p) + '</button>';
+      }).join('') + '</div>' + botonComprobar(lock, sel >= 0);
+      pintar(h);
+      on('[data-l]', 'click', function (b) { sel = +b.dataset.l; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, sel === A.error, { bloquear: function () { lock = true; rev = true; dib(); }, marcar: function () { mal.push(sel); sel = -1; dib(); }, reintento: function () { }, revelar: function () { lock = true; rev = true; if (sel >= 0) mal.push(sel); sel = -1; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // recta: ubicar un valor en una recta numérica. {q, min, max, paso?, sol, tol?, unidad?}
+  T.recta = function (A) {
+    var paso = A.paso || 1, tol = A.tol == null ? 0 : A.tol, v = Math.round((A.min + A.max) / 2 / paso) * paso, lock = false, ok = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="vis-num' + (lock ? (ok ? ' bien' : ' mal') : '') + '">' + fmt(v).replace('.', ',') + (A.unidad ? '<small>' + S(A.unidad) + '</small>' : '') + '</div><div class="recta"><input type="range" id="rg" min="' + A.min + '" max="' + A.max + '" step="' + paso + '" value="' + v + '"' + (lock ? ' disabled' : '') + '><div class="eje"><span>' + fmt(A.min) + '</span><span>' + fmt(A.max) + '</span></div></div>' + botonComprobar(lock, true);
+      pintar(h);
+      document.getElementById('rg').oninput = function (e) { v = +e.target.value; app.querySelector('.vis-num').firstChild.nodeValue = fmt(v).replace('.', ','); };
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, Math.abs(v - A.sol) <= tol, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { }, reintento: function () { }, revelar: function () { lock = true; v = A.sol; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // comparar: elegir <, = o > entre dos expresiones. {q?, a, b, ok:'<'|'='|'>'}
+  T.comparar = function (A) {
+    var sel = null, malas = [], lock = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q || '¿Qué signo va entre los dos?') + '</h2><div class="cmp"><div class="tarjeta">' + S(A.a) + '</div><div class="sig">' + (lock ? A.ok : '?') + '</div><div class="tarjeta">' + S(A.b) + '</div></div><div class="simbolos">' +
+        ['<', '=', '>'].map(function (s) { var c = 'op' + (sel === s ? ' sel' : '') + (malas.indexOf(s) >= 0 ? ' mal' : '') + (lock && s === A.ok ? ' bien' : ''); return '<button class="' + c + '" data-s="' + s + '"' + (lock || malas.indexOf(s) >= 0 ? ' disabled' : '') + '>' + (s === '<' ? '&lt;' : s === '>' ? '&gt;' : s) + '</button>'; }).join('') + '</div>' + botonComprobar(lock, sel != null);
+      pintar(h);
+      on('[data-s]', 'click', function (b) { sel = b.dataset.s; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, sel === A.ok, { bloquear: function () { lock = true; dib(); }, marcar: function () { malas.push(sel); sel = null; dib(); }, reintento: function () { }, revelar: function () { if (sel) malas.push(sel); lock = true; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // memoria: encontrar las parejas dadas vuelta. {q, pares:[[a,b],...]} (3 o 4 parejas). Un solo intento: se puntúa por errores.
+  T.memoria = function (A) {
+    var cartas = baraja([].concat.apply([], A.pares.map(function (p, i) { return [{ t: p[0], k: i, id: i * 2 }, { t: p[1], k: i, id: i * 2 + 1 }]; }))), arriba = [], hechas = [], fallos = 0, bloqueo = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><p style="text-align:center">Dadas vuelta, encontrá cada pareja. Errores: <b>' + fallos + '</b></p><div class="memo">' + cartas.map(function (c) {
+        return '<button class="carta' + (hechas.indexOf(c.k) >= 0 ? ' ok' : arriba.indexOf(c) >= 0 ? ' arriba' : '') + '" data-m="' + c.id + '">' + S(c.t) + '</button>';
+      }).join('') + '</div>';
+      pintar(h);
+      on('[data-m]', 'click', function (b) {
+        if (bloqueo) return; var c = cartas.filter(function (x) { return x.id === +b.dataset.m; })[0]; if (arriba.indexOf(c) >= 0 || hechas.indexOf(c.k) >= 0) return;
+        arriba.push(c); dib();
+        if (arriba.length === 2) {
+          bloqueo = true;
+          if (arriba[0].k === arriba[1].k) { hechas.push(arriba[0].k); arriba = []; bloqueo = false; setTimeout(function () { dib(); fin(); }, 250); }
+          else { fallos++; setTimeout(function () { arriba = []; bloqueo = false; dib(); }, 800); }
+        }
+      });
+    }
+    function fin() {
+      if (hechas.length < A.pares.length) return;
+      var cr = fallos <= 1 ? 1 : fallos <= 3 ? .5 : 0;
+      fb(cr > 0 ? 'bien' : 'mal', (fallos === 0 ? '¡Memoria de elefante!' : '¡Las encontraste todas!') + ' (' + fallos + ' error' + (fallos === 1 ? '' : 'es') + ')<small>' + S(A.exp || '') + '</small>', [['Seguir ➜', function () { anotar(cr); }]]);
+    }
+    dib();
+  };
+
+  // ================= MÓDULOS DE NUMERACIÓN (Matemática: sistema decimal hasta los millones) =================
+  var ABR = ['CMill', 'DMill', 'UMill', 'CM', 'DM', 'UM', 'C', 'D', 'U'];
+  var VAL = ['100.000.000', '10.000.000', '1.000.000', '100.000', '10.000', '1.000', '100', '10', '1'];
+  function esperado(num) { var p = pad(num, 9), n = String(num).length; return p.split('').map(function (c, i) { return i >= 9 - n ? c : ''; }); }
+  function tablaHTML(sl, act, err, lock, ok, editable) {
+    var h = '<div class="tabla">', nombres = ['Millones', 'Miles', 'Unidades'];
+    for (var g = 0; g < 3; g++) {
+      h += '<div class="clase"><div class="clase-t">' + nombres[g] + '</div><div class="slots">';
+      for (var j = 0; j < 3; j++) {
+        var i = g * 3 + j, c = 'slot' + (i === act && !lock && editable ? ' act' : '') + (err.indexOf(i) >= 0 ? ' mal' : '') + (lock && ok ? ' bien' : '');
+        h += '<button class="slot ' + c + '" data-s="' + i + '"' + (editable && !lock ? '' : ' disabled') + '><small>' + ABR[i] + '</small>' + (sl[i] === '' ? '&nbsp;' : sl[i]) + '</button>';
+      }
+      h += '</div></div>';
+    }
+    return h + '</div>';
+  }
+  // tabla: escribir un número en la tabla de posiciones. {q, num}
+  T.tabla = function (A) {
+    var exp = esperado(A.num), sl = ['', '', '', '', '', '', '', '', ''], act = 0, err = [], lock = false, ok = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2>' + tablaHTML(sl, act, err, lock, ok, true) +
+        '<div class="teclado">' + '0123456789'.split('').map(function (d) { return '<button class="pz" data-d="' + d + '"' + (lock ? ' disabled' : '') + '>' + d + '</button>'; }).join('') +
+        '<button class="pz borrar" data-d="x"' + (lock ? ' disabled' : '') + '>⌫</button><button class="pz borrar" data-d="xx"' + (lock ? ' disabled' : '') + ' title="Borrar todo">🗑</button></div>' +
+        botonComprobar(lock, sl.some(function (v) { return v !== ''; }));
+      pintar(h);
+      on('[data-s]', 'click', function (b) { act = +b.dataset.s; err = []; dib(); });
+      on('[data-d]', 'click', function (b) { var d = b.dataset.d; err = []; if (d === 'xx') { sl = ['', '', '', '', '', '', '', '', '']; act = 0; } else if (d === 'x') { sl[act] = ''; } else { sl[act] = d; if (act < 8) act++; } dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = []; sl.forEach(function (v, i) { if (v !== exp[i]) mal.push(i); });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { err = []; dib(); }, revelar: function () { sl = exp.slice(); lock = true; ok = false; err = []; dib(); } });
+      };
+    }
+    dib();
+  };
+  // leer: leer un número mostrado en la tabla. {q, num, ops[], ok}
+  T.leer = function (A) {
+    var exp = esperado(A.num), opts = baraja(A.ops.map(function (t, i) { return { t: t, ok: i === A.ok }; })), sel = -1, malas = [], lock = false, mostrarOk = false;
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2>' + tablaHTML(exp, -1, [], false, false, false) + '<div class="ops">' + opts.map(function (o, i) {
+        var c = 'op' + (i === sel ? ' sel' : '') + (malas.indexOf(i) >= 0 ? ' mal' : '') + (mostrarOk && o.ok ? ' bien' : '') + (lock && !o.ok && malas.indexOf(i) < 0 ? ' gris' : '');
+        return '<button class="' + c + '" data-o="' + i + '"' + (lock || malas.indexOf(i) >= 0 ? ' disabled' : '') + '>' + S(o.t) + '</button>';
+      }).join('') + '</div>' + botonComprobar(lock, sel >= 0);
+      pintar(h);
+      on('[data-o]', 'click', function (b) { sel = +b.dataset.o; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, opts[sel].ok, { bloquear: function () { lock = true; mostrarOk = true; dib(); }, marcar: function () { malas.push(sel); sel = -1; dib(); }, reintento: function () { }, revelar: function () { malas.push(sel); lock = true; mostrarOk = true; sel = -1; dib(); } });
+      };
+    }
+    dib();
+  };
+  // perillas: armar un número girando perillas ▲▼ (hasta 7 lugares). {q, num}
+  T.perillas = function (A) {
+    var exp = pad(A.num, 7).split('').map(Number), v = [0, 0, 0, 0, 0, 0, 0], err = [], lock = false, ok = false;
+    function numero() { var s = v.join('').replace(/^0+/, ''); return s === '' ? '0' : fmt(s); }
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q) + '</h2><div class="visor"><small>LA MÁQUINA ARMÓ</small>' + numero() + '</div><div class="perillas">';
+      for (var i = 0; i < 7; i++) {
+        var k = i + 2;
+        h += '<div class="perilla"><small>' + ABR[k] + '</small><em>' + VAL[k] + '</em><button class="fl" data-u="' + i + '"' + (lock ? ' disabled' : '') + '>▲</button><div class="dig' + (err.indexOf(i) >= 0 ? ' mal' : '') + (lock && ok ? ' bien' : '') + '">' + v[i] + '</div><button class="fl" data-w="' + i + '"' + (lock ? ' disabled' : '') + '>▼</button></div>';
+      }
+      h += '</div>' + botonComprobar(lock, true);
+      pintar(h);
+      on('[data-u]', 'click', function (b) { var i = +b.dataset.u; v[i] = (v[i] + 1) % 10; err = []; dib(); });
+      on('[data-w]', 'click', function (b) { var i = +b.dataset.w; v[i] = (v[i] + 9) % 10; err = []; dib(); });
+      document.getElementById('ok').onclick = function () {
+        var mal = []; v.forEach(function (x, i) { if (x !== exp[i]) mal.push(i); });
+        veredicto(A, !mal.length, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { err = []; dib(); }, revelar: function () { v = exp.slice(); lock = true; ok = false; err = []; dib(); } });
+      };
+    }
+    dib();
+  };
+  // tachar: tachar cifras de la derecha para contar decenas, centenas, etc. {q, num, k (cuántas cifras se tachan), unidad}
+  T.tachar = function (A) {
+    var n = A.num.length, cut = n, lock = false, ok = false;
+    function dib() {
+      var rest = A.num.slice(0, cut);
+      var h = cab() + '<div class="pedido">' + S(A.q) + '</div><div class="cifras">' + A.num.split('').map(function (c, i) {
+        return '<button class="cifra' + (i >= cut ? ' tach' : '') + (lock && ok && i < cut ? ' bien' : '') + '" data-c="' + i + '"' + (lock ? ' disabled' : '') + '>' + c + '</button>';
+      }).join('') + '</div><div class="visor"><small>CANTIDAD DE ' + S(String(A.unidad || '').toUpperCase()) + '</small>' + (cut > 0 && cut < n ? fmt(rest) : '—') + '</div><p style="text-align:center">Tocá la cifra desde donde querés tachar. Tocala de nuevo para deshacer.</p>' + botonComprobar(lock, cut !== n);
+      pintar(h);
+      on('[data-c]', 'click', function (b) { var i = +b.dataset.c; cut = (cut === i) ? n : i; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto(A, cut === n - A.k, { bloquear: function () { lock = true; ok = true; dib(); }, marcar: function () { dib(); }, reintento: function () { cut = n; dib(); }, revelar: function () { cut = n - A.k; lock = true; ok = false; dib(); } });
+      };
+    }
+    dib();
+  };
+
+  // ================= flujo del juego =================
+  function estrellas(p) { var n = p >= .9 ? 3 : p >= .6 ? 2 : p > 0 ? 1 : 0; return '★★★'.slice(0, n) + '<s>' + '★★★'.slice(n) + '</s>'; }
+  function mapa() {
+    var h = '<div class="mapa mini">';
+    DES.forEach(function (d, i) {
+      var hecho = !!(E.cred && E.cred[i] && E.cred[i].length >= nPasos(i)), act = !hecho && i === E.d;
+      h += '<div class="nodo' + (hecho ? ' hecho' : act ? ' act' : '') + '"><i>' + (hecho ? '✓' : S(d.ico || '⭐')) + '</i><div>' + S(d.nom) + '<small>' + S(d.sub || '') + '</small></div>' + (hecho ? '<em class="estrellas" style="font-size:1rem">' + estrellas(suma(E.cred[i]) / nPasos(i)) + '</em>' : '') + '</div>';
+    });
+    return h + '</div>';
+  }
+  function jugar() { var A = DES[E.d].pasos[E.a]; E.int = 1; if (!T[A.t]) { anotar(1); return; } T[A.t](A); }
+  function introDesafio() {
+    var d = DES[E.d];
+    pintar('<div class="etq">Desafío ' + (E.d + 1) + ' de ' + ND + '</div><h1>' + S(d.ico || '⭐') + ' ' + S(d.nom) + '</h1><div class="tip"><b>Cómo funciona.</b> ' + S(d.como || '') + '</div><p style="max-width:520px">Tenés 2 intentos por actividad: si acertás a la primera vale 1 punto; a la segunda, medio punto.</p><button class="btn" style="min-width:220px">Empezar ➜</button>', 'centro');
+    app.querySelector('.escena .btn').onclick = function () { E.a = 0; jugar(); };
+  }
+  function finDesafio() {
+    var c = suma(E.cred[E.d]) / nPasos(E.d), ult = E.d >= ND - 1, msgs = ['¡Desafío superado!', 'Muy buen trabajo.', 'Lo importante es que lo intentaste.'];
+    var h = '<div class="etq">Desafío ' + (E.d + 1) + ' completo</div><div class="gran">' + Math.round(c * 100) + '%</div><div class="estrellas">' + estrellas(c) + '</div><h2>' + (c >= .9 ? msgs[0] : c >= .5 ? msgs[1] : msgs[2]) + '</h2>' + mapa() + '<button class="btn">' + (ult ? 'Ver resultado final' : 'Siguiente desafío ➜') + '</button>';
+    pintar(h, 'centro');
+    app.querySelector('.escena .btn').onclick = function () { if (ult) final(); else { E.d++; introDesafio(); } };
+  }
+  function final() {
+    var total = 0, cant = 0; E.cred.forEach(function (c) { total += suma(c); cant += c.length; });
+    var pct = Math.round(total / cant * 100), cie = SPEC.cierre || {};
+    var msg = pct >= 90 ? (cie.alto || '¡Excelente trabajo!') : pct >= 60 ? (cie.medio || '¡Muy bien! Repasá lo que falló en el PDF.') : (cie.bajo || 'Buen intento. Volvé al PDF y jugá otra vez.');
+    var h = '<div class="etq">' + S(SPEC.titulo) + ' · resultado</div><div class="gran">' + pct + '%</div><div class="estrellas">' + estrellas(pct / 100) + '</div><h2>' + S(msg) + '</h2><p>⭐ ' + E.pts + ' puntos</p>' + mapa() + '<button class="btn sec">Jugar de nuevo</button>';
+    pintar(h, 'centro'); app.querySelector('.escena .btn').onclick = inicio;
+    if (pct >= 60) { var c = document.createElement('div'); c.className = 'conf'; var col = ['#7FD3C4', '#F4B63F', '#ff7a66', '#fff', '#19a39f']; for (var i = 0; i < 70; i++) { var p = document.createElement('i'); p.style.left = Math.random() * 100 + '%'; p.style.background = col[i % 5]; p.style.animationDuration = (2 + Math.random() * 2.5) + 's'; p.style.animationDelay = Math.random() * 1.2 + 's'; c.appendChild(p); } app.appendChild(c); }
+    try { window.parent.postMessage({ tipo: 'wave-resultado', puntaje: pct }, '*'); } catch (e) { }
+  }
+  function inicio() {
+    E = { d: 0, a: 0, int: 1, pts: 0, cred: DES.map(function () { return []; }) };
+    pintar('<div class="etq">' + S(SPEC.etiqueta || '') + '</div><h1>' + S(SPEC.titulo) + '</h1><p style="max-width:520px">' + S(SPEC.historia || '') + '</p>' + mapa() + '<button class="btn" style="min-width:220px">' + S(SPEC.boton || 'Empezar ➜') + '</button>', 'centro');
+    app.querySelector('.escena .btn').onclick = introDesafio;
+  }
+  window.WaveMotor = { tipos: Object.keys(T), T: T, inicio: inicio };
+  inicio();
+})();
+</script></body></html>

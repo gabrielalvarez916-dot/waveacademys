@@ -1,0 +1,39 @@
+{
+ "etiqueta": "Catálogo de juegos · demostración",
+ "titulo": "La Misión de las Piezas",
+ "historia": "Una demostración con todos los tipos de actividad del catálogo. Cada desafío mezcla formatos distintos para que nunca se sienta repetido.",
+ "boton": "Empezar la misión ➜",
+ "cierre": {"alto": "¡Misión cumplida!", "medio": "¡Muy bien! Repasá lo que falló en el PDF.", "bajo": "Buen intento. Volvé al PDF y jugá otra vez."},
+ "desafios": [
+  {"ico": "🎯", "nom": "Puntería", "sub": "Elegir y decidir", "como": "Elegí la opción correcta. En el relámpago, el tiempo corre: tenés un solo intento.",
+   "pasos": [
+    {"t": "op", "q": "¿Cuánto es <b>6 × 7</b>?", "ops": ["36", "42", "48", "54"], "ok": 1, "pista": "Pensá en la tabla del 6: 6 × 6 = 36 y sumá un 6 más.", "exp": "6 × 7 = 42."},
+    {"t": "vf", "q": "El resultado de una multiplicación siempre es mayor que cada uno de los factores.", "ok": false, "pista": "Probá con un factor igual a 1.", "exp": "Falso: 5 × 1 = 5 y no es mayor que 5."},
+    {"t": "multi", "q": "¿Cuáles de estos números son múltiplos de 5?", "ops": ["15", "22", "30", "47", "100"], "oks": [0, 2, 4], "pista": "Los múltiplos de 5 terminan en 0 o en 5.", "exp": "15, 30 y 100 terminan en 0 o en 5."}
+   ]},
+  {"ico": "🧩", "nom": "Armar y ordenar", "sub": "Piezas, pasos y parejas", "como": "Tocá las piezas para armar, ordená los pasos y unilos con su pareja.",
+   "pasos": [
+    {"t": "armar", "q": "Armá el número: <b>3 centenas, 0 decenas y 5 unidades</b>", "piezas": ["3", "0", "5"], "extra": ["8"], "sol": "305", "pista": "Primero van las centenas, después las decenas y al final las unidades.", "exp": "3 centenas + 0 decenas + 5 unidades = 305."},
+    {"t": "ordenar", "q": "Ordená los pasos para resolver <b>48 + 27</b>", "items": ["Sumo las unidades: 8 + 7 = 15", "Escribo 5 y me llevo 1", "Sumo las decenas: 4 + 2 + 1 = 7", "El resultado es 75"], "pista": "Se empieza siempre por las unidades.", "exp": "Unidades, me llevo 1, decenas y resultado."},
+    {"t": "unir", "q": "Uní cada cuenta con su resultado", "pares": [["9 × 3", "27"], ["40 : 8", "5"], ["12 + 19", "31"], ["50 − 18", "32"]], "pista": "Resolvé primero las que te salgan más rápido.", "exp": "9 × 3 = 27; 40 : 8 = 5; 12 + 19 = 31; 50 − 18 = 32."}
+   ]},
+  {"ico": "📦", "nom": "Clasificar y completar", "sub": "Cajas, frases y cuentas", "como": "Tocá un elemento y después la caja o el hueco donde va.",
+   "pasos": [
+    {"t": "clasificar", "q": "Poné cada número en su caja", "cajas": ["Pares", "Impares"], "items": [{"t": "14", "c": 0}, {"t": "27", "c": 1}, {"t": "50", "c": 0}, {"t": "63", "c": 1}, {"t": "88", "c": 0}], "pista": "Un número par termina en 0, 2, 4, 6 u 8.", "exp": "Pares: 14, 50 y 88. Impares: 27 y 63."},
+    {"t": "completar", "q": "Completá la frase", "texto": "En una suma, los números que se suman se llaman ___ y el resultado se llama ___.", "banco": ["sumandos", "suma", "factores", "cociente"], "sol": ["sumandos", "suma"], "pista": "Los números de una multiplicación son factores; los de una suma, otros.", "exp": "Los sumandos se suman y dan la suma."},
+    {"t": "numero", "q": "Resolvé: <b>345 × 12</b>", "sol": "4140", "aceptadas": ["4.140"], "pista": "345 × 10 = 3.450 y 345 × 2 = 690; sumalos.", "exp": "3.450 + 690 = 4.140."}
+   ]},
+  {"ico": "🔎", "nom": "Detective y estimación", "sub": "Errores, rectas y comparaciones", "como": "Buscá el error, ubicá el valor y compará.",
+   "pasos": [
+    {"t": "detective", "q": "Marta resolvió <b>26 × 3</b>. ¿En qué paso se equivocó?", "pasos": ["20 × 3 = 60", "6 × 3 = 21", "60 + 21 = 81"], "error": 1, "pista": "Revisá cada cuenta chica.", "exp": "6 × 3 = 18, no 21. El resultado correcto es 78."},
+    {"t": "recta", "q": "Ubicá el número <b>70</b> en la recta", "min": 0, "max": 100, "paso": 5, "sol": 70, "tol": 5, "pista": "70 está entre 50 y 100, bastante cerca de 75.", "exp": "70 queda a 7 décimos del camino entre 0 y 100."},
+    {"t": "comparar", "q": "¿Qué signo va entre las dos cuentas?", "a": "8 × 6", "b": "7 × 7", "ok": "<", "pista": "Resolvé las dos cuentas y compará.", "exp": "8 × 6 = 48 y 7 × 7 = 49; 48 es menor que 49."}
+   ]},
+  {"ico": "⚡", "nom": "Memoria y reflejos", "sub": "Parejas y relámpagos", "como": "Encontrá las parejas dadas vuelta y respondé a contrarreloj.",
+   "pasos": [
+    {"t": "memoria", "q": "Encontrá cada cuenta con su resultado", "pares": [["2 × 8", "16"], ["3 × 9", "27"], ["5 × 6", "30"]], "exp": "2 × 8 = 16; 3 × 9 = 27; 5 × 6 = 30."},
+    {"t": "op", "q": "¡Relámpago! ¿Cuánto es <b>9 × 4</b>?", "ops": ["32", "36", "40"], "ok": 1, "seg": 8, "exp": "9 × 4 = 36."},
+    {"t": "tachar", "q": "¿Cuántas decenas completas hay en <b>45.678</b>?", "num": "45678", "k": 1, "unidad": "decenas", "pista": "Se tacha la cifra de las unidades.", "exp": "Se tacha el 8: quedan 4.567 decenas."}
+   ]}
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "etiqueta": "Matemática I · Lección 3",
+ "titulo": "La Fábrica de Alfajores",
+ "historia": "Trabajás en una fábrica donde todo se agrupa de a diez. Pasá por tres puestos y demostrá que dominás el sistema decimal: leer y escribir números grandes, descomponerlos y contar cuántas decenas o centenas hay.",
+ "boton": "Entrar a la fábrica ➜",
+ "cierre": {
+  "alto": "¡Fábrica a pleno! Dominás el sistema decimal.",
+  "medio": "¡Muy bien! Repasá lo que falló en el PDF.",
+  "bajo": "Buen intento. Volvé al PDF y jugá otra vez."
+ },
+ "desafios": [
+  {
+   "ico": "📋",
+   "nom": "La tabla de pedidos",
+   "sub": "Leer y escribir números grandes",
+   "como": "Llegan pedidos por teléfono. Escribí cada número en la <b>tabla de posiciones</b>: tocá un lugar y después un dígito. Los lugares vacíos de la izquierda no se escriben, pero los <b>ceros del medio sí</b>.",
+   "pasos": [
+    {
+     "t": "tabla",
+     "q": "Pedido por teléfono: <b>“dos millones seiscientos setenta mil ciento diez”</b>. Escribilo en la tabla.",
+     "num": "2670110",
+     "pista": "Las clases se leen de a tres lugares: primero los millones, después los miles y al final las unidades.",
+     "exp": "2.670.110 → 2 en unidades de millón; 670 en la clase de los miles; 110 en la clase de las unidades."
+    },
+    {
+     "t": "tabla",
+     "q": "Otro pedido: <b>“tres millones veinte”</b>. Ojo con los ceros.",
+     "num": "3000020",
+     "pista": "Después de “tres millones” no se nombran ni los miles ni las centenas: esos lugares se completan con ceros.",
+     "exp": "3.000.020 → el 3 va en los millones, el 2 en las decenas y todos los lugares que no se nombran llevan 0."
+    },
+    {
+     "t": "leer",
+     "q": "La tabla muestra un número. ¿Cómo se lee?",
+     "num": "450300",
+     "ops": [
+      "cuatrocientos cincuenta mil trescientos",
+      "cuatro millones quinientos mil trescientos",
+      "cuarenta y cinco mil trescientos",
+      "cuatrocientos cincuenta mil tres"
+     ],
+     "ok": 0,
+     "pista": "Leé primero la clase de los miles y después la de las unidades.",
+     "exp": "450.300 → “cuatrocientos cincuenta mil” (clase de los miles) y “trescientos” (clase de las unidades)."
+    }
+   ]
+  },
+  {
+   "ico": "⚙️",
+   "nom": "La máquina de descomponer",
+   "sub": "Armar el número con sus valores",
+   "como": "La máquina arma el número a partir de una suma. Girá cada <b>perilla</b> con ▲ y ▼ hasta que cada dígito quede en el lugar que le toca. Cuidá los lugares que no se nombran: ahí va un <b>0</b>.",
+   "pasos": [
+    {
+     "t": "perillas",
+     "q": "Orden de la máquina: <b>50.000 + 9.000 + 200 + 10</b>",
+     "num": "59210",
+     "pista": "Ubicá cada sumando en su lugar. El lugar de las unidades no se nombra: ahí va un 0.",
+     "exp": "59.210 → 5 decenas de millar, 9 unidades de millar, 2 centenas, 1 decena y 0 unidades."
+    },
+    {
+     "t": "perillas",
+     "q": "Orden de la máquina: <b>7.000 + 400 + 8</b>",
+     "num": "7408",
+     "pista": "No hay decenas: ese lugar tiene que quedar en 0, o el número se corre de lugar.",
+     "exp": "7.408 → 7 unidades de millar, 4 centenas, 0 decenas y 8 unidades."
+    },
+    {
+     "t": "perillas",
+     "q": "Orden de la máquina (desordenada): <b>5.000 + 2.000.000 + 40 + 300.000</b>",
+     "num": "2305040",
+     "pista": "Aunque la suma esté desordenada, cada sumando va en su lugar: millones, centenas de millar, unidades de millar y decenas. Lo demás es 0.",
+     "exp": "2.305.040 → 2 unidades de millón, 3 centenas de millar, 0 decenas de millar, 5 unidades de millar, 0 centenas, 4 decenas y 0 unidades."
+    }
+   ]
+  },
+  {
+   "ico": "📦",
+   "nom": "El depósito de cajas",
+   "sub": "¿Cuántas decenas, centenas… hay?",
+   "como": "Para saber cuántas decenas completas hay en un número, <b>se tachan las cifras de la derecha</b>. Tocá la cifra desde donde querés tachar: se tachan esa y todas las que están a su derecha.",
+   "pasos": [
+    {
+     "t": "tachar",
+     "q": "Hay <b>4.360</b> alfajores sueltos. ¿Cuántas <b>cajas chicas</b> (decenas) completas se pueden armar?",
+     "num": "4360",
+     "k": 1,
+     "unidad": "decenas",
+     "pista": "Para pasar a decenas se tacha 1 cifra: la de las unidades.",
+     "exp": "Se tacha el 0 y queda 436. Hay 436 decenas en total (la cifra de las decenas es 6, pero no es lo mismo que la cantidad total)."
+    },
+    {
+     "t": "tachar",
+     "q": "En el depósito hay <b>52.718</b> alfajores. ¿Cuántos <b>packs</b> (centenas) completos se pueden armar?",
+     "num": "52718",
+     "k": 2,
+     "unidad": "centenas",
+     "pista": "Para pasar a centenas se tachan 2 cifras: las unidades y las decenas.",
+     "exp": "Se tachan el 1 y el 8 y queda 527. Hay 527 centenas completas; sobran 18 alfajores."
+    },
+    {
+     "t": "tachar",
+     "q": "Un camión descarga <b>380.450</b> alfajores. ¿Cuántas <b>cajas grandes</b> (unidades de millar) completas se pueden armar?",
+     "num": "380450",
+     "k": 3,
+     "unidad": "unidades de millar",
+     "pista": "Para pasar a unidades de millar se tachan 3 cifras: unidades, decenas y centenas.",
+     "exp": "Se tachan el 4, el 5 y el 0 y queda 380. Hay 380 unidades de millar completas; sobran 450 alfajores."
+    }
+   ]
+  }
+ ]
+}
