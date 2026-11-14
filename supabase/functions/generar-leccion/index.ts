@@ -21,14 +21,21 @@ const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE
 async function claudeTool(system: string, user: string, tool: any, max_tokens: number) {
   let ultimo = "";
   for (let intento = 0; intento < 2; intento++) {
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
+    let r: Response;
+    try {
+      r = await fetch("https://api.anthropic.com/v1/messages", {
+      signal: AbortSignal.timeout(130000),
       method: "POST",
       headers: { "content-type": "application/json", "x-api-key": Deno.env.get("ANTHROPIC_API_KEY")!, "anthropic-version": "2023-06-01" },
       body: JSON.stringify({
         model: MODEL, max_tokens, system: system + `\n\nIMPORTANTE: entregá el resultado ÚNICAMENTE llamando a la herramienta "${tool.name}". No escribas texto fuera de la herramienta.`, messages: [{ role: "user", content: user }],
         tools: [tool], tool_choice: { type: "auto" },
       }),
-    });
+      });
+    } catch (e) {
+      ultimo = "La IA no respondió a tiempo: " + String((e as Error).message || e);
+      continue;
+    }
     if (!r.ok) {
       ultimo = "Claude API " + r.status + ": " + (await r.text());
       if (r.status === 429 || r.status >= 500) { await new Promise((ok) => setTimeout(ok, 4000)); continue; }
@@ -427,6 +434,14 @@ Deno.serve(async (req) => {
       await admin.from("lesson_drafts").update({ status: "en_cola", error: null }).eq("id", b.draft_id).eq("status", "error");
       enSegundoPlano(llamarSeMismo({ action: "procesar", draft_id: b.draft_id }));
       return json({ ok: true });
+    }
+    if (b.action === "rescatar") {
+      // borradores que se quedaron "generando" más de 6 minutos: se vuelven a poner en cola y se relanzan
+      const limite = new Date(Date.now() - 6 * 60 * 1000).toISOString();
+      const { data: trabados } = await admin.from("lesson_drafts").update({ status: "en_cola", error: null, updated_at: new Date().toISOString() })
+        .eq("status", "generando").lt("updated_at", limite).select("id");
+      for (const d of trabados || []) enSegundoPlano(llamarSeMismo({ action: "procesar", draft_id: d.id }));
+      return json({ ok: true, rescatados: (trabados || []).length });
     }
     if (b.action === "estado") {
       const { data: lecs } = await admin.from("lessons").select("id, title, position").eq("topic_id", b.tema_id).order("position");
