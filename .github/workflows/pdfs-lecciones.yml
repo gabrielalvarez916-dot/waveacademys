@@ -1,10 +1,9 @@
 name: PDF de lecciones armadas por la máquina
 
-# Cada 20 minutos (y a mano desde la pestaña Actions) busca borradores listos sin PDF,
+# SOLO A MANO (pestaña Actions > Run workflow): busca borradores listos sin PDF,
 # arma el PDF con el diseño de Wave Academy y lo carga en la lección SIN publicarla.
+# Ya no corre por horario.
 on:
-  schedule:
-    - cron: "*/20 * * * *"
   workflow_dispatch:
 
 concurrency:
