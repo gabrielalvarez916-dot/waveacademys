@@ -67,6 +67,8 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-nombre { font-weight: 800; font-size: 1.05rem; overflow-wrap: anywhere; }
 .wv-dato { color: var(--texto-suave); font-weight: 600; font-size: 0.9rem; overflow-wrap: anywhere; }
 .wv-rot { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texto-suave); margin-bottom: 2px; }
+.wv-cur { font: inherit; font-weight: 700; font-size: 0.85rem; color: var(--petroleo); padding: 6px 28px 6px 12px; border: 1.5px solid var(--menta); border-radius: 999px; background: #fff; cursor: pointer; }
+.wv-cur:focus-visible { outline: 3px solid var(--petroleo); outline-offset: 2px; }
 .wv-acc { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
 
 .wv-pill { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; }
@@ -77,7 +79,7 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .wv-pill.susp { background: var(--petroleo); color: #fff; margin-left: 6px; }
 
 .wv-alumnos { border-top: 1px solid var(--menta); background: #F6FBF9; }
-.wv-alu { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap: 8px 18px; align-items: center; padding: 12px 20px 12px 36px; border-bottom: 1px solid var(--menta); }
+.wv-alu { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr auto; gap: 8px 18px; align-items: center; padding: 12px 20px 12px 36px; border-bottom: 1px solid var(--menta); }
 .wv-alu:last-child { border-bottom: 0; }
 .wv-sin { padding: 14px 20px 14px 36px; color: var(--texto-suave); font-weight: 600; }
 

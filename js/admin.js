@@ -134,7 +134,7 @@
         .select('id, phone, created_at, profiles!families_profile_id_fkey(id, full_name, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: false }),
       sb.from('students')
-        .select('id, family_id, first_name, last_name, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
+        .select('id, family_id, first_name, last_name, curriculum, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: true }),
       sb.from('subscriptions')
         .select('id, family_id, student_id, status, amount, currency, created_at')
@@ -151,7 +151,7 @@
         libres: misSubs.filter(function (s) { return !s.student_id; }),
         alumnos: alumnos.filter(function (a) { return a.family_id === f.id; }).map(function (a) {
           return {
-            id: a.id, nombre: a.first_name + ' ' + a.last_name,
+            id: a.id, nombre: a.first_name + ' ' + a.last_name, curriculum: a.curriculum || 'argentina',
             anio: a.grades ? ((a.grades.levels && a.grades.levels.name !== a.grades.name ? a.grades.levels.name + ' · ' : '') + a.grades.name) : '',
             perfil: a.profiles || {},
             sub: misSubs.filter(function (s) { return s.student_id === a.id; })[0] || null
@@ -189,6 +189,11 @@
         '<div class="wv-dato">' + esc(a.anio) + (a.perfil.email ? ' · ' + esc(a.perfil.email) : '') + '</div></div>' +
       '<div><span class="wv-rot">Cuota</span>' + (a.sub ? pill(a.sub.status) : '<span class="wv-pill off">Sin cupo vinculado</span>') + '</div>' +
       '<div><span class="wv-rot">Último acceso</span><span class="wv-dato">' + esc(haceCuanto(a.perfil.last_seen_at)) + '</span></div>' +
+      '<div><span class="wv-rot">Currículo</span>' +
+        '<select class="wv-cur" data-cur="' + a.id + '" data-nom="' + esc(a.nombre) + '" aria-label="Currículo de ' + esc(a.nombre) + '">' +
+          '<option value="argentina"' + (a.curriculum === 'argentina' ? ' selected' : '') + '>Argentino</option>' +
+          '<option value="internacional"' + (a.curriculum === 'internacional' ? ' selected' : '') + '>Internacional</option>' +
+        '</select></div>' +
       '<div class="wv-acc">' +
         '<button type="button" class="wv-btn mini suave" data-tray="' + a.id + '" data-nom="' + esc(a.nombre) + '">Trayectoria</button>' +
         (!a.sub ? '<button type="button" class="wv-btn mini suave" data-vincular="' + a.id + '" data-fam="' + f.id + '">Vincular cupo</button>' : '') +
@@ -378,6 +383,20 @@
     };
   }
 
+  function cambiarCurriculo(sel) {
+    var id = sel.getAttribute('data-cur'), nom = sel.getAttribute('data-nom'), nuevo = sel.value;
+    var previo = nuevo === 'argentina' ? 'internacional' : 'argentina';
+    sel.value = previo;
+    var txt = nuevo === 'argentina'
+      ? 'Va a pasar a la versión argentina de Ciencias Sociales (con historia y geografía de la Argentina).'
+      : 'Va a pasar a la versión internacional de Ciencias Sociales (Latinoamérica y mundo).';
+    confirmar('Cambiar currículo de ' + nom, txt + ' El avance que ya tenga en Ciencias Sociales de la otra versión no se traslada, porque las lecciones son distintas.', 'Cambiar', false, async function () {
+      var r = await sb.rpc('set_student_curriculum', { p_student: id, p_curriculum: nuevo });
+      if (r.error) throw r.error;
+      await recargar(); cerrarModal(); toast('Currículo actualizado');
+    });
+  }
+
   function resetear(profileId, nombre) {
     confirmar('Resetear contraseña', 'Se le va a asignar la contraseña inicial a ' + nombre + ' y tendrá que cambiarla al ingresar.', 'Resetear', false, async function () {
       var r = await accion({ action: 'reset_password', profile_id: profileId });
@@ -432,6 +451,9 @@
       estado.filtro = b.getAttribute('data-f');
       document.querySelectorAll('#wv-filtros .wv-chip').forEach(function (c) { c.classList.toggle('on', c === b); });
       pintarLista();
+    };
+    document.getElementById('wv-lista').onchange = function (ev) {
+      var c = ev.target.closest('[data-cur]'); if (c) cambiarCurriculo(c);
     };
     document.getElementById('wv-lista').onclick = function (ev) {
       var b;
