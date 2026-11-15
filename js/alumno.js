@@ -202,6 +202,12 @@
         cont.innerHTML = '<div class="vacio">Todavía no tenés materias habilitadas.</div>';
         return;
       }
+      var stE = elegirEstado;
+      if (stE && (stE.oficios_disponibles > 0 || stE.trayectos_disponibles > 0)) {
+        var tituloE = document.querySelector('.vista-titulo');
+        if (tituloE) tituloE.insertAdjacentHTML('afterend', '<p class="elegir-atajo"><a href="#elegir">' +
+          (stE.oficios_disponibles > 0 ? 'Elegir o sumar oficios' : 'Ver mi trayecto de oficios') + '</a></p>');
+      }
       cont.className = 'cursos-grilla';
       cont.innerHTML = cursos.map(function (c) {
         var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
@@ -220,6 +226,93 @@
       }).join('');
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar tus cursos. Probá recargar la página.</div>';
+    }
+  }
+
+
+  // ---------- Elección de oficios y trayecto ----------
+  var elegirEstado = null;
+
+  async function estadoEleccion() {
+    var r = await sb.rpc('eleccion_pendiente');
+    elegirEstado = r.error ? null : r.data;
+    return elegirEstado;
+  }
+
+  function nombreCorto(n) { return String(n || '').replace(/^Taller:\s*/, ''); }
+
+  async function vistaElegir() {
+    vista.innerHTML = '<h1 class="vista-titulo">Elegí tu oficio</h1><div id="elegir"></div>';
+    var cont = document.getElementById('elegir');
+    cont.innerHTML = '<div class="vacio">Cargando…</div>';
+    try {
+      var ses = await sb.auth.getSession();
+      var uid = ses.data.session.user.id;
+      var est = await sb.from('students').select('id, grade_id, trayecto_clave').eq('profile_id', uid).maybeSingle();
+      if (est.error || !est.data) throw (est.error || new Error('sin alumno'));
+      var subs = await sb.from('subjects')
+        .select('id, name, color, eleccion, oficio_clave, position')
+        .eq('grade_id', est.data.grade_id).not('eleccion', 'is', null).order('position');
+      if (subs.error) throw subs.error;
+      var mias = await sb.from('student_subjects').select('subject_id').eq('student_id', est.data.id);
+      if (mias.error) throw mias.error;
+      var elegidas = {};
+      (mias.data || []).forEach(function (r) { elegidas[r.subject_id] = true; });
+      var lista = subs.data || [];
+      var hayTrayecto = lista.some(function (m) { return m.eleccion === 'trayecto'; });
+      var st = await estadoEleccion();
+      var pendiente = !!(st && st.pendiente);
+
+      if (!lista.length) {
+        cont.innerHTML = '<div class="vacio">Este año no tenés oficios para elegir.</div>';
+        return;
+      }
+
+      var intro = hayTrayecto
+        ? (est.data.trayecto_clave
+            ? 'Ya elegiste tu trayecto. Lo vas a seguir hasta el último año de oficios. Si querés cambiarlo, hablá con tu tutor.'
+            : 'Elegí el oficio que vas a estudiar de ahora en más. Es uno solo y lo vas a seguir hasta el último año, así que elegilo con calma.')
+        : 'Elegí al menos un oficio de este año. Podés sumar los que quieras.';
+      var html = '<p class="elegir-intro">' + intro + '</p>' +
+        (pendiente ? '<p class="elegir-aviso">Para seguir tenés que elegir ' + (hayTrayecto ? 'tu trayecto.' : 'al menos un oficio.') + '</p>' : '') +
+        '<div class="cursos-grilla">';
+      html += lista.map(function (m) {
+        var esta = hayTrayecto ? (est.data.trayecto_clave === m.oficio_clave) : !!elegidas[m.id];
+        var bloqueado = hayTrayecto && est.data.trayecto_clave && !esta;
+        var etiqueta = hayTrayecto ? 'Trayecto' : 'Taller corto';
+        var boton;
+        if (esta && hayTrayecto) boton = '<span class="elegir-tag">Tu trayecto</span>';
+        else if (esta) boton = '<span class="elegir-tag">Elegido</span><button type="button" class="elegir-quitar" data-quitar="' + m.id + '">Quitar</button>';
+        else if (bloqueado) boton = '<span class="elegir-tag opaco">No disponible</span>';
+        else boton = '<button type="button" class="elegir-boton" data-elegir="' + m.id + '">Elegir</button>';
+        return '<div class="curso elegir-card' + (bloqueado ? ' bloqueada' : '') + '" style="--c:' + colorSeguro(m.color) + '">' +
+          '<div class="curso-cabeza"><div class="curso-icono">' + iconoMateria(m.name) + '</div>' +
+          '<h2>' + esc(nombreCorto(m.name)) + '</h2></div>' +
+          '<p class="curso-lecciones">' + etiqueta + '</p>' +
+          '<div class="elegir-acciones">' + boton + '</div></div>';
+      }).join('');
+      html += '</div>';
+      if (!pendiente) html += '<p class="elegir-volver"><a href="#cursos">Ir a mis cursos</a></p>';
+      cont.innerHTML = html;
+
+      cont.querySelectorAll('[data-elegir]').forEach(function (b) {
+        b.addEventListener('click', async function () {
+          b.disabled = true;
+          var r = await sb.rpc('elegir_materia', { p_subject: b.getAttribute('data-elegir') });
+          if (r.error) { b.disabled = false; alert(r.error.message); return; }
+          vistaElegir();
+        });
+      });
+      cont.querySelectorAll('[data-quitar]').forEach(function (b) {
+        b.addEventListener('click', async function () {
+          b.disabled = true;
+          var r = await sb.rpc('quitar_materia_optativa', { p_subject: b.getAttribute('data-quitar') });
+          if (r.error) { b.disabled = false; alert(r.error.message); return; }
+          vistaElegir();
+        });
+      });
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar los oficios. Probá recargar la página.</div>';
     }
   }
 
@@ -865,6 +958,7 @@
 
   var VISTAS = {
     cursos: vistaCursos,
+    elegir: vistaElegir,
     programacion: vistaProgramacion,
     estadisticas: vistaEstadisticas,
     perfil: vistaPerfil
@@ -872,8 +966,13 @@
 
   window.WaveIconos = { materia: iconoMateria };
 
-  function ruta() {
+  async function ruta() {
     var nombre = (location.hash || '#cursos').slice(1);
+    // Si todavía le falta elegir un oficio o su trayecto, lo llevamos a la pantalla de elección
+    if (nombre !== 'elegir' && nombre !== 'perfil') {
+      var st = await estadoEleccion();
+      if (st && st.pendiente) { location.hash = '#elegir'; return; }
+    }
     var m = /^materia\/([0-9a-f-]{36})(?:\/([0-9a-f-]{36}))?(?:\/([0-9a-f-]{36}))?$/i.exec(nombre);
     if (m) {
       enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#cursos'); });

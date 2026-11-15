@@ -852,3 +852,18 @@ body.av-abierto { overflow: hidden; }
   transition: background 0.15s;
 }
 .prog-reset:hover { background: #c6eadf; }
+
+/* ---------- Elección de oficios ---------- */
+.elegir-intro { margin: 0 0 14px; color: var(--texto-suave); max-width: 60ch; }
+.elegir-aviso { margin: 0 0 18px; padding: 10px 14px; background: #fff7e0; border-radius: 12px; font-weight: 700; max-width: 60ch; }
+.elegir-card { min-height: 200px; }
+.elegir-card.bloqueada { opacity: 0.55; filter: grayscale(0.4); }
+.elegir-acciones { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+.elegir-boton { flex: 1; padding: 12px 16px; border: 0; border-radius: 12px; background: #fff; color: #253638; font: inherit; font-weight: 800; cursor: pointer; }
+.elegir-boton:hover { background: #f1f1f1; }
+.elegir-boton[disabled], .elegir-quitar[disabled] { opacity: 0.6; cursor: progress; }
+.elegir-tag { padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.28); font-weight: 800; }
+.elegir-tag.opaco { background: rgba(255,255,255,0.15); font-weight: 700; }
+.elegir-quitar { margin-left: auto; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.7); border-radius: 10px; background: transparent; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.elegir-volver { margin: 18px 0 0; font-weight: 700; }
+.elegir-atajo { margin: -8px 0 16px; font-weight: 700; }
