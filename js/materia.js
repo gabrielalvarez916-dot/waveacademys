@@ -695,10 +695,17 @@
     var t = D.temas.filter(function (x) { return x.id === temaId; })[0];
     if (!t || !t.examen) return;
     if (!t.examenDisponible) { toast('Primero terminá todas las lecciones del tema.', true); return; }
+    var sorteo = null; // cada vez que se abre, el examen sortea preguntas distintas del banco del tema
     abrirCuestionario({
       titulo: 'Examen · ' + t.titulo, examen: true,
-      cargar: function () { return preguntas('exam_id', t.examen.id); },
-      enviar: function (resp) { return llamar('grade-exam', { exam_id: t.examen.id, answers: resp }); },
+      cargar: async function () {
+        var r = await sb.rpc('sortear_examen', { p_exam: t.examen.id });
+        if (r.error) throw new Error(r.error.message || 'No se pudo armar el examen.');
+        sorteo = r.data.sorteo_id || null;
+        if (!r.data.questions || !r.data.questions.length) throw new Error('Todavía no hay preguntas cargadas.');
+        return r.data.questions;
+      },
+      enviar: function (resp) { return llamar('grade-exam', { exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
       alTerminar: function (res) {
         t.examen.mejor = Math.max(t.examen.mejor || 0, res.score);
         if (res.passed) t.examen.aprobado = true;
