@@ -18,12 +18,25 @@
     return '<option value="">' + vacio + '</option>' + lista.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === actual ? ' selected' : '') + '>' + esc(x.nombre) + '</option>'; }).join('');
   }
 
+  // La API devuelve como mucho 1000 filas por pedido: se pide de a páginas para traer todos los temas.
+  async function todos(armar) {
+    var out = [], desde = 0;
+    for (;;) {
+      var r = await armar().range(desde, desde + 999);
+      if (r.error) throw r.error;
+      out = out.concat(r.data || []);
+      if (!r.data || r.data.length < 1000) break;
+      desde += 1000;
+    }
+    return { data: out, error: null };
+  }
+
   async function cargarBase() {
     var r = await Promise.all([
       sb.from('levels').select('id, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
-      sb.from('subjects').select('id, grade_id, name, position').order('position').limit(1000),
-      sb.from('topics').select('id, subject_id, title, position').order('position').limit(1000)
+      sb.from('subjects').select('id, grade_id, name, position').order('position').order('id'),
+      todos(function () { return sb.from('topics').select('id, subject_id, title, position').order('position').order('id'); })
     ]);
     r.forEach(function (x) { if (x.error) throw x.error; });
     B.levels = r[0].data; B.grades = r[1].data; B.subjects = r[2].data; B.topics = r[3].data;
