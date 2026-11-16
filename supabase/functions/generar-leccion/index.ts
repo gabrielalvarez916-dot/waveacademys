@@ -1,10 +1,11 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-// FÁBRICA DE LECCIONES (versión mínima)
-// Toma la ficha de una lección (lesson_fichas) y genera, en 3 pasos encadenados, un BORRADOR en lesson_drafts:
-//   1) contenido de la lección  2) las 8 consignas con criterios  3) revisión crítica de errores.
+// FÁBRICA DE LECCIONES
+// Toma la ficha de una lección (lesson_fichas) y genera, en pasos encadenados, un BORRADOR en lesson_drafts:
+//   contenido → consignas → revisión → (corrección con parches → segunda revisión, solo si hay problemas graves) → repaso (12 preguntas, modelo barato).
 // Nunca publica nada: el borrador lo revisa la admin.
-// Acciones (POST, header x-gen-token): { action:"encolar", tema_id } | { action:"procesar", draft_id } | { action:"reintentar", draft_id } | { action:"estado", tema_id } | { action:"cargar", draft_id }
+// Dos modos: directo (precio completo, inmediato) y LOTE (Batch API, mitad de precio, tarda minutos u horas; solo sale cuando la admin toca el botón).
+// Acciones (POST, header x-gen-token): encolar | procesar | reintentar | estado | cargar | cargar_repaso | armar_repaso | rescatar | lote_enviar | lote_revisar
 declare const EdgeRuntime: { waitUntil(p: Promise<unknown>): void } | undefined;
 
 const MODEL = "claude-sonnet-5-5";
