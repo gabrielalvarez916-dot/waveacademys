@@ -17,7 +17,7 @@ import requests
 import yt_dlp
 
 URL = os.environ["SUPABASE_URL"].rstrip("/")
-KEY = os.environ["SUPABASE_SERVICE_KEY"]
+KEY = os.environ["SUPABASE_SERVICE_KEY"].strip()
 LOTE = int(os.environ.get("LOTE", "250"))
 PAUSA_MIN = float(os.environ.get("PAUSA_MIN", "4"))
 PAUSA_MAX = float(os.environ.get("PAUSA_MAX", "8"))
@@ -26,9 +26,10 @@ ERRORES_SEGUIDOS_MAX = 3
 
 HEADERS = {
     "apikey": KEY,
-    "Authorization": f"Bearer {KEY}",
     "Content-Type": "application/json",
 }
+if KEY.startswith("eyJ"):  # clave clásica (JWT); las nuevas sb_secret_ van solo en apikey
+    HEADERS["Authorization"] = f"Bearer {KEY}"
 
 
 def pendientes():
