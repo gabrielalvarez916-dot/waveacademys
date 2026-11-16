@@ -83,7 +83,78 @@
     if (bj) { bj.disabled = !j; bj.textContent = j ? 'Armar juego interactivo de ' + j + (j === 1 ? ' lección' : ' lecciones') : 'Armar juego interactivo'; }
   }
 
-  async function refrescar() { try { await Promise.all([resumen(), lecciones()]); } catch (e) { toast('No se pudo actualizar: ' + (e.message || e), true); } }
+  var BUCKET = 'lesson-images';
+  var TIPO_IMG = { mapa: 'Mapa', foto: 'Foto', ilustracion: 'Ilustración', diagrama: 'Diagrama', esquema: 'Esquema', grafico: 'Gráfico', linea_de_tiempo: 'Línea de tiempo', figura_geometrica: 'Figura', obra_de_arte: 'Obra de arte', otro: 'Imagen' };
+
+  // Imágenes que pidió la máquina en cada lección: se carga la imagen y el PDF se rearma solo
+  async function imagenes() {
+    var cont = document.getElementById('fb-imagenes'); if (!cont) return;
+    if (!E.topic) { cont.innerHTML = ''; return; }
+    var r = await sb.rpc('fabrica_imagenes', { p_topic_id: E.topic });
+    if (r.error) throw r.error;
+    var lista = r.data || [];
+    var titulo = '<h2 class="fb-h2">Imágenes de las lecciones</h2>';
+    if (!lista.length) { cont.innerHTML = titulo + '<div class="wv-vacio">Ninguna lección lista de este tema pide imágenes.</div>'; return; }
+    var paths = [];
+    lista.forEach(function (l) { (l.imagenes || []).forEach(function (im) { if (im.path) paths.push(im.path); }); });
+    var urls = {};
+    if (paths.length) {
+      var sg = await sb.storage.from(BUCKET).createSignedUrls(paths, 3600);
+      (sg.data || []).forEach(function (x) { if (x.signedUrl) urls[x.path] = x.signedUrl; });
+    }
+    var total = 0, faltan = 0;
+    var html = lista.map(function (l) {
+      return '<div class="fb-lec"><h3>Lección ' + esc(l.posicion) + ' · ' + esc(l.titulo) + (l.publicada ? ' <span class="fb-tag fb-no">Publicada: su PDF no se toca</span>' : '') + '</h3>' +
+        (l.imagenes || []).map(function (im) {
+          total++; if (!im.path) faltan++;
+          var datos = 'data-d="' + esc(l.draft_id) + '" data-s="' + im.sec + '" data-b="' + im.bloque + '" data-p="' + esc(im.path || '') + '"';
+          return '<div class="fb-img">' +
+            '<div class="fb-img-txt"><b>' + esc(TIPO_IMG[im.tipo] || 'Imagen') + (im.titulo ? ': ' + esc(im.titulo) : '') + '</b>' +
+            '<p><b>Qué tiene que mostrar:</b> ' + esc(im.descripcion) + '</p>' +
+            (im.fuente ? '<p><b>Dónde conseguirla:</b> ' + esc(im.fuente) + '</p>' : '') +
+            (im.pie ? '<p class="fb-img-pie">Pie: ' + esc(im.pie) + '</p>' : '') + '</div>' +
+            '<div class="fb-img-acc">' +
+              (im.path && urls[im.path] ? '<img class="fb-img-vista" src="' + esc(urls[im.path]) + '" alt="Imagen cargada">' : '<div class="fb-img-falta">Falta la imagen</div>') +
+              '<label class="wv-chip fb-img-subir">' + (im.path ? 'Cambiar imagen' : 'Cargar imagen') + '<input type="file" class="fb-file" accept="image/png,image/jpeg" hidden ' + datos + '></label>' +
+              (im.path ? '<button type="button" class="wv-chip fb-img-quitar" ' + datos + '>Quitar</button>' : '') +
+            '</div></div>';
+        }).join('') + '</div>';
+    }).join('');
+    cont.innerHTML = titulo + '<p class="fb-ayuda">Cargá una imagen PNG o JPG (hasta 5 MB) por cada recuadro. Al cargarla, el PDF de la lección se rearma solo en unos minutos y la imagen aparece en el lugar que pidió la máquina. ' + faltan + ' de ' + total + ' todavía sin imagen.</p>' + html;
+  }
+
+  function avisoImagen(d) {
+    if (d && d.rearma_pdf) toast('Listo. El PDF se rearma solo en unos minutos.');
+    else if (d && d.publicada) toast('Imagen guardada. La lección ya está publicada, así que su PDF no se modificó.');
+    else toast('Listo.');
+  }
+
+  async function subirImagen(inp) {
+    var f = inp.files && inp.files[0]; if (!f) return;
+    if (!/^image\/(png|jpeg)$/.test(f.type)) { inp.value = ''; return toast('La imagen tiene que ser PNG o JPG.', true); }
+    if (f.size > 5 * 1024 * 1024) { inp.value = ''; return toast('La imagen pesa más de 5 MB.', true); }
+    var d = inp.dataset, ext = f.type === 'image/png' ? 'png' : 'jpg';
+    var path = d.d + '/' + d.s + '-' + d.b + '-' + Date.now() + '.' + ext;
+    var up = await sb.storage.from(BUCKET).upload(path, f, { contentType: f.type });
+    if (up.error) throw up.error;
+    var g = await sb.rpc('fabrica_imagen_guardar', { p_draft: d.d, p_sec: Number(d.s), p_bloque: Number(d.b), p_path: path });
+    if (g.error) { await sb.storage.from(BUCKET).remove([path]); throw g.error; }
+    if (g.data && g.data.anterior) sb.storage.from(BUCKET).remove([g.data.anterior]);
+    avisoImagen(g.data);
+    await Promise.all([imagenes(), lecciones(), resumen()]);
+  }
+
+  async function quitarImagen(btn) {
+    var d = btn.dataset;
+    if (!confirm('¿Quitar esta imagen? El PDF se va a rearmar sin ella.')) return;
+    var g = await sb.rpc('fabrica_imagen_quitar', { p_draft: d.d, p_sec: Number(d.s), p_bloque: Number(d.b) });
+    if (g.error) throw g.error;
+    if (g.data && g.data.anterior) sb.storage.from(BUCKET).remove([g.data.anterior]);
+    avisoImagen(g.data);
+    await Promise.all([imagenes(), lecciones(), resumen()]);
+  }
+
+  async function refrescar() { try { await Promise.all([resumen(), lecciones(), imagenes()]); } catch (e) { toast('No se pudo actualizar: ' + (e.message || e), true); } }
 
   async function lanzar() {
     var ids = idsElegidos(elegible);
@@ -131,15 +202,16 @@
       '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Cada una pasa sola por todo el proceso: borrador, revisión, actividad con consignas, repaso, juego interactivo y PDF. Usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
       '<div id="fb-resumen" class="fb-resumen"></div><div id="fb-sel" class="fb-sel"></div>' +
       '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-juego" class="wv-chip" type="button" disabled>Armar juego interactivo</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
-      '<div id="fb-tabla"></div>';
+      '<div id="fb-tabla"></div><div id="fb-imagenes"></div>';
     await cargarBase();
     pintarFiltros();
     vista.onchange = function (ev) {
       var t = ev.target;
-      if (t.id === 'fb-nivel') { E.level = t.value; E.grade = E.subject = E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().catch(function (e) { toast(e.message, true); }); }
-      else if (t.id === 'fb-grado') { E.grade = t.value; E.subject = E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().catch(function (e) { toast(e.message, true); }); }
-      else if (t.id === 'fb-materia') { E.subject = t.value; E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().catch(function (e) { toast(e.message, true); }); }
-      else if (t.id === 'fb-tema') { E.topic = t.value; E.elegidas = {}; lecciones().catch(function (e) { toast(e.message, true); }); }
+      if (t.id === 'fb-nivel') { E.level = t.value; E.grade = E.subject = E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().then(imagenes).catch(function (e) { toast(e.message, true); }); }
+      else if (t.id === 'fb-grado') { E.grade = t.value; E.subject = E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().then(imagenes).catch(function (e) { toast(e.message, true); }); }
+      else if (t.id === 'fb-materia') { E.subject = t.value; E.topic = ''; E.elegidas = {}; pintarFiltros(); lecciones().then(imagenes).catch(function (e) { toast(e.message, true); }); }
+      else if (t.id === 'fb-tema') { E.topic = t.value; E.elegidas = {}; lecciones().then(imagenes).catch(function (e) { toast(e.message, true); }); }
+      else if (t.classList && t.classList.contains('fb-file')) { subirImagen(t).catch(function (e) { toast(e.message || e, true); }); }
       else if (t.dataset && t.dataset.el) { E.elegidas[t.dataset.el] = t.checked; contar(); }
     };
     vista.onclick = function (ev) {
@@ -147,6 +219,7 @@
       if (t.id === 'fb-lanzar') lanzar().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-juego') juego().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-act') refrescar();
+      if (t.classList.contains('fb-img-quitar')) quitarImagen(t).catch(function (e) { toast(e.message || e, true); });
     };
     await refrescar();
   }

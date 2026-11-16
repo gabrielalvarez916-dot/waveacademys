@@ -31,7 +31,18 @@ def main():
         try:
             with tempfile.TemporaryDirectory() as tmp:
                 entrada = os.path.join(tmp, "e.json"); salida = os.path.join(tmp, "s.pdf")
-                json.dump({"meta": m, "contenido": p["contenido"]}, open(entrada, "w", encoding="utf8"))
+                contenido = p["contenido"]
+                # imágenes cargadas desde el admin: se guardan como archivo y se enganchan al bloque de imagen que corresponde
+                for k, im in enumerate(p.get("imagenes") or []):
+                    try:
+                        blk = contenido["secciones"][im["sec"]]["bloques"][im["bloque"]]
+                        ext = ".jpg" if "jpeg" in (im.get("mime") or "") else ".png"
+                        ruta = os.path.join(tmp, f"img{k}{ext}")
+                        open(ruta, "wb").write(base64.b64decode(im["b64"]))
+                        blk["archivo"] = ruta
+                    except Exception as e:
+                        print("  (imagen no usada:", repr(e), ")")
+                json.dump({"meta": m, "contenido": contenido}, open(entrada, "w", encoding="utf8"))
                 render(entrada, salida)
                 pdf = open(salida, "rb").read()
             st, r = llamar({"action": "subir", "draft_id": p["draft_id"], "pdf_base64": base64.b64encode(pdf).decode()})

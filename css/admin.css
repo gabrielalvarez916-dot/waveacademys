@@ -356,3 +356,16 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
   .dc-mat { box-shadow: none; border: 1px solid #ccd; break-inside: avoid-page; }
   .dc-tema { break-inside: avoid; }
 }
+
+/* Fábrica: imágenes de las lecciones */
+.fb-h2 { margin: 26px 0 6px; color: var(--turquesa-oscuro); }
+.fb-lec { background: #fff; border-radius: 14px; padding: 12px 16px; margin: 10px 0; }
+.fb-lec h3 { margin: 0 0 8px; font-size: 1rem; }
+.fb-img { display: flex; gap: 16px; align-items: flex-start; padding: 10px 0; border-top: 1px solid #e3eeee; flex-wrap: wrap; }
+.fb-img-txt { flex: 1 1 340px; min-width: 260px; }
+.fb-img-txt p { margin: 5px 0 0; font-size: .92rem; line-height: 1.4; }
+.fb-img-pie { color: #577; font-style: italic; }
+.fb-img-acc { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; flex: 0 0 220px; }
+.fb-img-vista { max-width: 220px; max-height: 160px; border-radius: 10px; border: 2px solid var(--turquesa); object-fit: contain; background: #f6fbfb; }
+.fb-img-falta { width: 220px; padding: 22px 10px; text-align: center; border: 2px dashed #f4b63f; border-radius: 10px; background: #fff4d6; color: #7a5600; font-weight: 700; font-size: .85rem; }
+.fb-img-subir { cursor: pointer; }

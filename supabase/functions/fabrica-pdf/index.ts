@@ -1,13 +1,13 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { AwsClient } from "npm:aws4fetch@1";
-import { decodeBase64 } from "jsr:@std/encoding@1/base64";
+import { decodeBase64, encodeBase64 } from "jsr:@std/encoding@1/base64";
 
 // FÁBRICA DE LECCIONES · PDF
 // El proceso de GitHub (tools/pdf/generar.py) arma el PDF de cada borrador listo y lo sube por acá.
 // Nunca publica: carga el PDF en el paso "PDF" de la lección SOLO si la lección no está publicada y ese paso está vacío.
 // Acciones (POST, header x-gen-token):
 //   { action: "pendientes" }                       -> borradores listos sin PDF, con todo lo necesario para armarlo
-//   { action: "subir", draft_id, pdf_base64 }      -> guarda el PDF en R2 y lo carga en la lección
+//   { action: "subir", draft_id, pdf_base64 }      -> guarda el PDF en R2 y lo carga en la lección (si el PDF actual lo armó la máquina, lo reemplaza: así entran las imágenes cargadas desde el admin)
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-gen-token",
@@ -51,6 +51,21 @@ async function numeroDeLeccion(lessonId: string) {
   };
 }
 
+// imágenes cargadas desde el admin para los bloques de imagen del borrador (solo si siguen siendo las del bloque actual)
+async function imagenesDe(draftId: string, contenido: any) {
+  const { data: ims } = await admin.from("lesson_draft_images").select("sec, bloque, descripcion, path").eq("draft_id", draftId);
+  const out: any[] = [];
+  for (const im of ims || []) {
+    const blk = contenido?.secciones?.[im.sec]?.bloques?.[im.bloque];
+    if (!blk || blk.tipo !== "imagen" || (blk.imagen_descripcion || "") !== im.descripcion) continue;
+    const { data: f, error } = await admin.storage.from("lesson-images").download(im.path);
+    if (error || !f) continue;
+    const bytes = new Uint8Array(await f.arrayBuffer());
+    out.push({ sec: im.sec, bloque: im.bloque, mime: f.type || "image/png", b64: encodeBase64(bytes) });
+  }
+  return out;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
   try {
@@ -59,22 +74,22 @@ Deno.serve(async (req) => {
     const b = await req.json().catch(() => ({}));
 
     if (b.action === "pendientes") {
-      const { data: ds } = await admin.from("lesson_drafts").select("id, lesson_id, contenido")
+      const { data: ds } = await admin.from("lesson_drafts").select("id, lesson_id, contenido, pdf_draft_key")
         .eq("status", "borrador").eq("paso", "listo").is("pdf_at", null).order("created_at");
       const out: any[] = [];
       for (const d of ds || []) {
         const meta = await numeroDeLeccion(d.lesson_id);
         if (meta.publicada) continue; // una lección ya publicada no se toca
         const { data: paso } = await admin.from("lesson_steps").select("r2_key").eq("lesson_id", d.lesson_id).eq("step_type", "pdf").maybeSingle();
-        if (paso?.r2_key) continue; // ya tiene un PDF: no se pisa
+        if (paso?.r2_key && paso.r2_key !== d.pdf_draft_key) continue; // tiene un PDF que no armó la máquina: no se pisa
         delete (meta as any).publicada;
-        out.push({ draft_id: d.id, meta, contenido: d.contenido });
+        out.push({ draft_id: d.id, meta, contenido: d.contenido, imagenes: await imagenesDe(d.id, d.contenido) });
       }
       return json({ pendientes: out });
     }
 
     if (b.action === "subir") {
-      const { data: d } = await admin.from("lesson_drafts").select("id, lesson_id, status, paso, contenido, pdf_at").eq("id", b.draft_id).maybeSingle();
+      const { data: d } = await admin.from("lesson_drafts").select("id, lesson_id, status, paso, contenido, pdf_at, pdf_draft_key").eq("id", b.draft_id).maybeSingle();
       if (!d) return json({ ok: false, motivo: "No existe el borrador" }, 404);
       if (d.status !== "borrador" || d.paso !== "listo") return json({ ok: false, motivo: "El borrador no está listo" }, 409);
       if (d.pdf_at) return json({ ok: false, motivo: "Ya tiene PDF cargado" }, 409);
@@ -82,7 +97,7 @@ Deno.serve(async (req) => {
       if (meta.publicada) return json({ ok: false, motivo: "La lección está publicada: no se toca" }, 409);
       const { data: paso } = await admin.from("lesson_steps").select("id, r2_key").eq("lesson_id", d.lesson_id).eq("step_type", "pdf").maybeSingle();
       if (!paso) return json({ ok: false, motivo: "La lección no tiene el paso PDF (abrila una vez en Contenidos)" }, 409);
-      if (paso.r2_key) return json({ ok: false, motivo: "El paso PDF ya tiene un archivo: no se pisa" }, 409);
+      if (paso.r2_key && paso.r2_key !== d.pdf_draft_key) return json({ ok: false, motivo: "El paso PDF ya tiene un archivo que no armó la máquina: no se pisa" }, 409);
 
       const bytes = decodeBase64(String(b.pdf_base64 || ""));
       if (bytes.length < 5000 || bytes.length > 20 * 1024 * 1024) return json({ ok: false, motivo: "El PDF no tiene un tamaño razonable" }, 400);
@@ -99,9 +114,15 @@ Deno.serve(async (req) => {
       if (!put.ok) return json({ ok: false, motivo: `R2 rechazó la subida (${put.status})` }, 502);
 
       // se carga en el paso PDF sin pisar nada (condición: sigue vacío)
-      const up = await admin.from("lesson_steps").update({ r2_key: key, extracted_text: aTexto(d.contenido) }).eq("id", paso.id).is("r2_key", null).select("id");
+      let q = admin.from("lesson_steps").update({ r2_key: key, extracted_text: aTexto(d.contenido) }).eq("id", paso.id);
+      q = paso.r2_key ? q.eq("r2_key", paso.r2_key) : q.is("r2_key", null);
+      const up = await q.select("id");
       if (up.error || !up.data?.length) return json({ ok: false, motivo: "No se pudo cargar el PDF en la lección" }, 500);
       await admin.from("lesson_drafts").update({ pdf_draft_key: key, pdf_at: new Date().toISOString() }).eq("id", d.id);
+      if (paso.r2_key) { // se reemplazó un PDF armado por la máquina: se borra el anterior
+        const viejo = `https://${Deno.env.get("R2_ACCOUNT_ID")}.r2.cloudflarestorage.com/${Deno.env.get("R2_BUCKET")}/${paso.r2_key.split("/").map(encodeURIComponent).join("/")}`;
+        await aws.fetch(viejo, { method: "DELETE" }).catch(() => {});
+      }
       return json({ ok: true, key, bytes: bytes.length });
     }
     return json({ error: "Acción desconocida" }, 400);
