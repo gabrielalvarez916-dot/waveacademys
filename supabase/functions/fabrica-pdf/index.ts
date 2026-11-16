@@ -23,7 +23,9 @@ function aTexto(c: any): string {
   (c.secciones || []).forEach((s: any, i: number) => {
     out.push(`\n${i + 1}. ${s.titulo}`);
     (s.bloques || []).forEach((b: any) => {
-      let t = (b.titulo ? b.titulo + ". " : "") + (b.texto || "");
+      let t = b.tipo === "imagen"
+        ? `Imagen${b.titulo ? " (" + b.titulo + ")" : ""}: ${b.imagen_descripcion || ""}${b.texto ? " " + b.texto : ""}`
+        : (b.titulo ? b.titulo + ". " : "") + (b.texto || "");
       if (b.items?.length) t += "\n" + b.items.map((x: string, k: number) => `${k + 1}. ${x}`).join("\n");
       if (b.columnas?.length) t += "\n" + b.columnas.join(" | ") + "\n" + (b.filas || []).map((f: string[]) => f.join(" | ")).join("\n");
       out.push(t.replace(/<\/?b>/g, ""));

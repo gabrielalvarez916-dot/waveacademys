@@ -76,12 +76,15 @@ const TOOL_CONTENIDO = {
               items: {
                 type: "object",
                 properties: {
-                  tipo: { type: "string", enum: ["parrafo", "definicion", "importante", "tip", "ojo", "ejemplo", "pasos", "lista", "tabla"] },
-                  titulo: { type: "string", description: "Para importante, ejemplo y tabla (opcional en los demás)" },
-                  texto: { type: "string", description: "Texto del bloque. Se permite <b>negrita</b> para términos clave. En ejemplo: el planteo del ejemplo. En tabla: pie explicativo." },
+                  tipo: { type: "string", enum: ["parrafo", "definicion", "importante", "tip", "ojo", "ejemplo", "pasos", "lista", "tabla", "imagen"] },
+                  titulo: { type: "string", description: "Para importante, ejemplo, tabla e imagen (opcional en los demás). En imagen: título corto de la figura." },
+                  texto: { type: "string", description: "Texto del bloque. Se permite <b>negrita</b> para términos clave. En ejemplo: el planteo del ejemplo. En tabla: pie explicativo. En imagen: pie de 1 oración que dice qué mirar." },
                   items: { type: "array", items: { type: "string" }, description: "Para pasos, lista y ejemplo (los pasos de resolución)" },
                   columnas: { type: "array", items: { type: "string" }, description: "Solo tabla" },
                   filas: { type: "array", items: { type: "array", items: { type: "string" } }, description: "Solo tabla" },
+                  imagen_tipo: { type: "string", enum: ["mapa", "foto", "ilustracion", "diagrama", "esquema", "grafico", "linea_de_tiempo", "figura_geometrica", "obra_de_arte", "otro"], description: "Solo imagen" },
+                  imagen_descripcion: { type: "string", description: "Solo imagen. Descripción EXACTA de lo que debe mostrar: qué se representa, elementos, rótulos y nombres que deben figurar, medidas o valores, zona/época/escala, convenciones y qué NO debe aparecer. Debe alcanzar para conseguirla o dibujarla sin ver el resto de la lección." },
+                  imagen_fuente: { type: "string", description: "Solo imagen. Dónde conseguirla o cómo hacerla (por ejemplo: Wikimedia Commons, IGN, dibujo propio con regla y compás). No inventes enlaces ni nombres de archivo." },
                 },
                 required: ["tipo"],
               },
@@ -184,10 +187,14 @@ const TOOL_REVISION = {
 };
 
 // ---------------- instrucciones ----------------
-const ESTILO = `Sos un docente de matemática argentino, muy claro, que escribe material de estudio para Wave Academy, una escuela de educación en casa (homeschooling).
-Escribís para chicos y chicas de 12 a 13 años. Español rioplatense con voseo (podés, fijate, mirá, hacé). Tono cálido y directo, sin infantilizar ni usar jerga innecesaria.
-Notación argentina: punto para separar miles (1.250) y coma para los decimales (3,5). Las cuentas se muestran paso a paso.
-Reglas de contenido: 1) Todo lo que afirmás tiene que ser matemáticamente correcto: recalculá cada cuenta antes de escribirla. 2) Respetá la ficha: tratá solo los contenidos indicados y NO incluyas lo que figura como "no entra". 3) Usá lo que el alumno ya vio, sin volver a explicarlo y sin adelantar lo que se ve en lecciones posteriores. 4) No incluyas ejercicios para resolver (hay actividades aparte): sí ejemplos resueltos. 5) No inventes datos históricos ni anécdotas; si no estás seguro, no lo pongas. 6) Texto plano; solo se permite <b>negrita</b> en términos clave.`;
+function estiloDe(materia: string, anio?: number): string {
+  const mate = /matem/i.test(materia);
+  const edad = anio ? `${11 + anio} a ${12 + anio}` : "12 a 17";
+  return `Sos un docente argentino de ${materia}, muy claro, que escribe material de estudio para Wave Academy, una escuela de educación en casa (homeschooling).
+Escribís para chicos y chicas de ${edad} años. Español rioplatense con voseo (podés, fijate, mirá, hacé). Tono cálido y directo, sin infantilizar ni usar jerga innecesaria.
+Notación argentina: punto para separar miles (1.250) y coma para los decimales (3,5).${mate ? " Las cuentas se muestran paso a paso." : ""}
+Reglas de contenido: 1) Todo lo que afirmás tiene que ser correcto y verificable${mate ? ": recalculá cada cuenta antes de escribirla" : ": nombres, fechas, lugares, cifras y conceptos exactos; si no estás seguro de un dato, no lo pongas"}. 2) Respetá la ficha: tratá solo los contenidos indicados y NO incluyas lo que figura como "no entra". 3) Usá lo que el alumno ya vio, sin volver a explicarlo y sin adelantar lo que se ve en lecciones posteriores. 4) No incluyas ejercicios para resolver (hay actividades aparte): sí ejemplos resueltos o casos trabajados. 5) No inventes datos históricos ni anécdotas; si no estás seguro, no lo pongas. 6) Texto plano; solo se permite <b>negrita</b> en términos clave.`;
+}
 
 type Ctx = { uso?: Uso; ficha: any; titulo: string; tema: string; materia: string; anio: number; vistas: string[]; siguientes: string[]; vocab: { reglas: string; prohibidos: string[] } | null };
 
@@ -213,7 +220,9 @@ function aTextoLeccion(c: any): string {
     out.push(`\n## ${i + 1}. ${s.titulo}`);
     (s.bloques || []).forEach((b: any) => {
       const cab = b.titulo ? `[${b.tipo}: ${b.titulo}] ` : `[${b.tipo}] `;
-      let t = cab + (b.texto || "");
+      let t = b.tipo === "imagen"
+        ? `[imagen${b.imagen_tipo ? " " + b.imagen_tipo : ""}${b.titulo ? ": " + b.titulo : ""}] ${b.imagen_descripcion || ""}${b.texto ? " (pie: " + b.texto + ")" : ""}`
+        : cab + (b.texto || "");
       if (b.items?.length) t += "\n" + b.items.map((x: string) => "  - " + x).join("\n");
       if (b.columnas?.length) t += "\n  | " + b.columnas.join(" | ") + " |\n" + (b.filas || []).map((f: string[]) => "  | " + f.join(" | ") + " |").join("\n");
       out.push(t);
@@ -246,18 +255,36 @@ async function contexto(lessonId: string): Promise<Ctx> {
 }
 
 // ---------------- pasos ----------------
-async function pasoContenido(c: Ctx) {
-  const user = `${aTextoFicha(c)}\n\nEscribí el material de estudio de esta lección: de 4 a 6 secciones, con ejemplos resueltos paso a paso, recuadros de "importante", "tip" y "ojo con esto" (error común, tomado de los errores típicos), al menos una definición y, si ayuda, una tabla. Largo total: entre 1.100 y 1.700 palabras. Terminá con un resumen en tarjetas y un glosario.`;
-  const r = await claudeTool(ESTILO, user, TOOL_CONTENIDO, 10000, c.uso);
-  if (!Array.isArray(r.secciones) || r.secciones.length < 3) throw new Error("El contenido salió con muy pocas secciones");
+const INSTR_IMAGENES = `IMÁGENES: incluí un bloque de tipo "imagen" SOLO donde la imagen sea realmente necesaria para entender (por ejemplo: un mapa en Geografía, una figura con vértices y medidas en Geometría, un esquema de un proceso en Ciencias, una foto u obra en Historia o Arte, una línea de tiempo, un gráfico con datos). No todas las lecciones las necesitan: muchas no llevan ninguna. Máximo 4 por lección y nada decorativo. Para cada una completá: imagen_tipo; imagen_descripcion con el detalle EXACTO de lo que debe mostrar (qué se representa, qué elementos, qué rótulos y nombres tienen que figurar, medidas o valores si los hay, zona o época, qué NO debe aparecer), de modo que alguien pueda conseguirla o dibujarla sin ver el resto de la lección; imagen_fuente: dónde conseguirla o cómo hacerla, sin inventar enlaces; titulo: título corto; texto: pie de 1 oración que diga qué mirar. Ubicá el bloque justo después del párrafo que la necesita. El texto de la lección tiene que entenderse también sin la imagen: describí con palabras lo esencial.`;
+
+// quita imágenes mal formadas y limita la cantidad
+function limpiarImagenes(r: any) {
+  let n = 0;
+  for (const sec of r.secciones || []) {
+    sec.bloques = (sec.bloques || []).filter((b: any) => {
+      if (b.tipo !== "imagen") return true;
+      const ok = String(b.imagen_descripcion || "").trim().length >= 40 && n < 4;
+      if (ok) n++;
+      return ok;
+    });
+  }
   return r;
+}
+
+async function pasoContenido(c: Ctx) {
+  const user = `${aTextoFicha(c)}\n\nEscribí el material de estudio de esta lección: de 4 a 6 secciones, con ejemplos resueltos paso a paso, recuadros de "importante", "tip" y "ojo con esto" (error común, tomado de los errores típicos), al menos una definición y, si ayuda, una tabla. Largo total: entre 1.100 y 1.700 palabras. Terminá con un resumen en tarjetas y un glosario.
+
+${INSTR_IMAGENES}`;
+  const r = await claudeTool(estiloDe(c.materia, c.anio), user, TOOL_CONTENIDO, 10000, c.uso);
+  if (!Array.isArray(r.secciones) || r.secciones.length < 3) throw new Error("El contenido salió con muy pocas secciones");
+  return limpiarImagenes(r);
 }
 
 const INSTR_VARIEDAD = `Arm\u00e1 exactamente 8 consignas, ordenadas de la m\u00e1s simple a la m\u00e1s pensada (el sistema les asigna 1, 1, 1, 2, 2, 2, 3 y 3 puntos en ese orden). Us\u00e1 VARIEDAD de formatos: al menos 5 tipos distintos, como m\u00e1ximo 1 verdadero/falso y 2 de opci\u00f3n m\u00faltiple, y al menos una de producci\u00f3n (respuesta corta, resolver y completar, o abierta) entre las \u00faltimas tres. Eleg\u00ed el formato que mejor encaje con el contenido: ordering para procedimientos o pasos de una cuenta; matching para unir t\u00e9rmino con definici\u00f3n o cuenta con resultado; classify para agrupar n\u00fameros o situaciones; table_fill para tablas de valores; fill_blank para completar frases o cuentas; multi_select cuando hay varias afirmaciones correctas; odd_one_out para encontrar el que no cumple; solve_complete para una cuenta o problema con procedimiento y resultado. Al menos dos consignas deben apuntar a los errores t\u00edpicos. Los distractores son errores plausibles, nunca absurdos. Cada consigna debe tener una \u00fanica respuesta correcta y poder resolverse con lo que dice el material. Los criterios de correcci\u00f3n expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma punt\u00faa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ..."; en los formatos de varias partes, proporcional a las partes acertadas. Nunca uses puntos ("1 punto") en los criterios.`;
 
 async function pasoConsignas(c: Ctx, contenido: any) {
-  const system = ESTILO + `\nAhora escrib\u00eds la actividad por consigna de la lecci\u00f3n. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.\n\n${FORMATOS}`;
-  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCI\u00d3N (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\n${INSTR_VARIEDAD}`;
+  const system = estiloDe(c.materia, c.anio) + `\nAhora escrib\u00eds la actividad por consigna de la lecci\u00f3n. Las respuestas las corrige luego una IA, por eso cada consigna lleva criterios claros con puntaje parcial.\n\n${FORMATOS}`;
+  const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCI\u00d3N (las consignas se apoyan SOLO en esto):\n${aTextoLeccion(contenido)}\n\n${INSTR_VARIEDAD} Ninguna consigna puede depender de ver una imagen: lo que se necesite para resolverla tiene que estar escrito en el enunciado.`;
   const r = await claudeTool(system, user, TOOL_CONSIGNAS, 10000, c.uso);
   return validarConsignas(r.consignas);
 }
@@ -359,7 +386,7 @@ function textosConLugar(contenido: any, consignas: any[]): { donde: string; text
     add(`Sección ${i + 1} (título)`, sec.titulo);
     (sec.bloques || []).forEach((b: any) => {
       const lugar = `Sección ${i + 1}, bloque ${b.tipo}`;
-      add(lugar, b.titulo); add(lugar, b.texto);
+      add(lugar, b.titulo); add(lugar, b.texto); add(lugar, b.imagen_descripcion);
       (b.items || []).forEach((x: string) => add(lugar, x));
       (b.columnas || []).forEach((x: string) => add(lugar, x));
       (b.filas || []).forEach((f: string[]) => f.forEach((x) => add(lugar, x)));
@@ -393,7 +420,7 @@ function controlVocabulario(c: Ctx, contenido: any, consignas: any[]) {
 }
 
 async function pasoRevision(c: Ctx, contenido: any, consignas: any[]) {
-  const system = `Sos un revisor de matemática de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia. Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Algunas consignas usan formatos especiales (ordering: la respuesta es el orden correcto y las opciones se muestran desordenadas; matching: pares con la respuesta; classify; table_fill: las celdas vac\u00edas las completa el alumno; multi_select; fill_blank con ___; solve_complete): verific\u00e1 que cada una se pueda resolver sin ambig\u00fcedad y que su respuesta de referencia sea correcta. Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
+  const system = `Sos un revisor de ${c.materia} de secundaria, exigente y desconfiado. Tu trabajo es encontrar errores, no elogiar. ${/matem/i.test(c.materia) ? "Recalculá TODAS las cuentas, una por una, y verificá cada respuesta de referencia." : "Verificá cada dato (nombres, fechas, lugares, cifras y conceptos) y cada respuesta de referencia; si algo no se puede confirmar, marcalo como problema."} Si hay bloques de imagen, controlá que cada uno sea necesario (no decorativo), que su descripción sea lo bastante exacta para conseguir o dibujar la imagen y que no contradiga el texto (rótulos, medidas, lugares, fechas). Controlá además: que cada consigna tenga una única respuesta correcta, que la respuesta de referencia y los criterios coincidan con el material, que el material no incluya nada de "NO ENTRA", que no adelante lecciones posteriores, y que la notación sea la argentina (punto en los miles, coma en los decimales). Algunas consignas usan formatos especiales (ordering: la respuesta es el orden correcto y las opciones se muestran desordenadas; matching: pares con la respuesta; classify; table_fill: las celdas vac\u00edas las completa el alumno; multi_select; fill_blank con ___; solve_complete): verific\u00e1 que cada una se pueda resolver sin ambig\u00fcedad y que su respuesta de referencia sea correcta. Si el prompt trae un VOCABULARIO OFICIAL, verificá que se use exactamente ese vocabulario. Los criterios de las consignas deben expresar el puntaje parcial en porcentaje (100 / 50 / 0), no en puntos: si usan puntos, marcalo como problema de gravedad media. Si todo está bien, devolvé la lista de problemas vacía y apto=true. "apto" solo es true si no hay problemas de gravedad alta ni media.`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS:\n` +
     consignas.map((q, i) => `${i + 1}. [${q.tipo}, ${q.puntos} pts] ${q.enunciado}${q.opciones ? "\n   Opciones: " + (Array.isArray(q.opciones) ? q.opciones.join(" / ") : JSON.stringify(q.opciones)) : ""}\n   Respuesta: ${q.respuesta}\n   Criterios: ${q.criterios}\n   Explicación: ${q.explicacion}`).join("\n");
   return await claudeTool(system, user, TOOL_REVISION, 12000, c.uso);
@@ -404,13 +431,13 @@ const textoProblemas = (ps: any[]) => ps.map((p, i) => `${i + 1}. [${p.gravedad}
 
 async function pasoCorregirContenido(c: Ctx, contenido: any, problemas: any[]) {
   const user = `${aTextoFicha(c)}\n\nMATERIAL ACTUAL (JSON):\n${JSON.stringify(contenido)}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolvé el material COMPLETO corregido, con la misma estructura. Cambiá solo lo necesario para resolver los problemas: no reescribas lo que está bien ni cambies el largo. Recalculá cada cuenta que toques. Si corregís algo que se repite en otro lugar (resumen, glosario, ejemplos), corregilo también ahí.`;
-  const r = await claudeTool(ESTILO, user, TOOL_CONTENIDO, 10000, c.uso);
+  const r = await claudeTool(estiloDe(c.materia, c.anio), user, TOOL_CONTENIDO, 10000, c.uso);
   if (!Array.isArray(r.secciones) || r.secciones.length < 3) throw new Error("La corrección del contenido salió con muy pocas secciones");
   return r;
 }
 
 async function pasoCorregirConsignas(c: Ctx, contenido: any, consignas: any[], problemas: any[]) {
-  const system = ESTILO + `\nCorreg\u00eds una actividad por consigna que tiene errores marcados por un revisor.\n\n${FORMATOS}`;
+  const system = estiloDe(c.materia, c.anio) + `\nCorreg\u00eds una actividad por consigna que tiene errores marcados por un revisor.\n\n${FORMATOS}`;
   const user = `${aTextoFicha(c)}\n\nMATERIAL DE LA LECCI\u00d3N:\n${aTextoLeccion(contenido)}\n\nCONSIGNAS ACTUALES (JSON):\n${JSON.stringify(consignas.map((q: any) => q.raw ?? q))}\n\nPROBLEMAS ENCONTRADOS POR EL REVISOR (corregilos todos):\n${textoProblemas(problemas)}\n\nDevolv\u00e9 las 8 consignas COMPLETAS corregidas, con el mismo orden y los mismos formatos (tipos), salvo que un problema exija cambiar el formato. Cambi\u00e1 solo lo necesario. Recalcul\u00e1 cada cuenta que toques y revis\u00e1 que la respuesta, los criterios y la explicaci\u00f3n sigan coincidiendo. Los criterios de correcci\u00f3n expresan el puntaje parcial como PORCENTAJE de la consigna (la plataforma punt\u00faa cada consigna de 0 a 100): por ejemplo "100 si ...; 50 si ...; 0 si ...". Nunca uses puntos ("1 punto") en los criterios.`;
   const r = await claudeTool(system, user, TOOL_CONSIGNAS, 10000, c.uso);
   return validarConsignas(r.consignas);

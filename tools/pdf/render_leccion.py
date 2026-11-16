@@ -104,6 +104,56 @@ def page(c, doc):
     c.setFillColor(white); c.setFont("DV-B", 7); c.drawCentredString(PW - RM - 10, 34, str(doc.page))
     c.restoreState()
 
+# ---------------- imágenes ----------------
+TIPOS_IMG = {"mapa": "MAPA", "foto": "FOTO", "ilustracion": "ILUSTRACIÓN", "diagrama": "DIAGRAMA", "esquema": "ESQUEMA",
+             "grafico": "GRÁFICO", "linea_de_tiempo": "LÍNEA DE TIEMPO", "figura_geometrica": "FIGURA", "obra_de_arte": "OBRA DE ARTE", "otro": "IMAGEN"}
+FIG = [0]
+
+def _archivo_imagen(b):
+    """Devuelve la ruta de una imagen real si el bloque trae 'archivo' (ruta local) o 'url' descargable; si no, None."""
+    ruta = b.get("archivo")
+    if ruta and os.path.isfile(ruta): return ruta
+    url = b.get("url")
+    if url and str(url).startswith("https://"):
+        try:
+            import urllib.request, tempfile
+            ext = os.path.splitext(str(url).split("?")[0])[1].lower()
+            if ext not in (".png", ".jpg", ".jpeg"): return None
+            tmp = tempfile.NamedTemporaryFile(delete=False, suffix=ext)
+            with urllib.request.urlopen(url, timeout=20) as r: tmp.write(r.read())
+            tmp.close(); return tmp.name
+        except Exception:
+            return None
+    return None
+
+def imagen_bloque(b):
+    """Bloque de imagen. Si hay archivo o url, la inserta; si no, deja un recuadro con la descripción EXACTA de la imagen que falta."""
+    FIG[0] += 1
+    n = FIG[0]
+    tipo = TIPOS_IMG.get(b.get("imagen_tipo"), "IMAGEN")
+    titulo = limpio(b.get("titulo")); pie = limpio(b.get("texto"))
+    desc = limpio(b.get("imagen_descripcion")); fuente = limpio(b.get("imagen_fuente"))
+    cab = P(f"<b>Figura {n}</b>" + (f" · {titulo}" if titulo else ""), S("fg", fontName="DV-B", fontSize=8.8, textColor=TEAL, spaceAfter=3))
+    real = _archivo_imagen(b)
+    if real:
+        try:
+            from reportlab.platypus import Image as RLImage
+            iw, ih = ImageReader(real).getSize()
+            w = min(W * 0.8, iw); h = w * ih / iw
+            if h > 300: h = 300; w = h * iw / ih
+            im = RLImage(real, width=w, height=h); im.hAlign = "CENTER"
+            out = [cab, im] + ([P(pie, cap)] if pie else [spc(6)])
+            return [KeepTogether(out)]
+        except Exception:
+            pass
+    cuerpo = [Label(f"{tipo} A INSERTAR", color=AMBERD, size=5.8), spc(3), P(f"<b>Qué tiene que mostrar:</b> {desc}", bodyc)]
+    if fuente: cuerpo += [spc(3), P(f"<b>Dónde conseguirla:</b> {fuente}", small)]
+    caja = Table([[cuerpo]], colWidths=[W])
+    caja.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), CREAM), ("BOX", (0, 0), (-1, -1), 0.8, AMBER, None, (3, 2)),
+                              ("LEFTPADDING", (0, 0), (-1, -1), 12), ("RIGHTPADDING", (0, 0), (-1, -1), 12),
+                              ("TOPPADDING", (0, 0), (-1, -1), 9), ("BOTTOMPADDING", (0, 0), (-1, -1), 10)]))
+    return [KeepTogether([cab, caja] + ([P(pie, cap)] if pie else [spc(6)]))]
+
 # ---------------- bloques ----------------
 def tabla_bloque(b):
     cols = [limpio(x) for x in b.get("columnas", [])]
@@ -136,6 +186,7 @@ def bloque(b):
         out += [Paragraph(x, stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items)]
         return [KeepTogether(out), spc(6)]
     if t == "tabla": return tabla_bloque(b)
+    if t == "imagen": return imagen_bloque(b)
     return [P(tx)] if tx else []
 
 # ---------------- documento ----------------
@@ -188,6 +239,7 @@ def render(entrada, salida):
     m["minutos"] = m.get("minutos") or max(10, 5 * round(words(c) / 110 / 5))
     m["subtitulo"] = m.get("subtitulo") or c["objetivo"]
     META.clear(); META.update(m)
+    FIG[0] = 0
     doc = BaseDocTemplate(salida, pagesize=A4, title=f"{m['materia']} · Lección {m['leccion_num']} · {m['titulo']}", author="Wave Academy",
                           leftMargin=LM, rightMargin=RM, topMargin=64, bottomMargin=56)
     cv = PageTemplate(id="cover", frames=[Frame(0, 0, 40, 40, id="c0", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)], onPage=cover)
