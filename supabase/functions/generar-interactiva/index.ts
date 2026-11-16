@@ -203,6 +203,28 @@ const TOOL_JUEGO = {
     }, required: ["ico", "nom", "sub", "como", "pasos"] } },
   }, required: ["titulo", "historia", "boton", "cierre", "desafios"] },
 };
+const TOOL_PLAN = {
+  name: "guardar_plan",
+  description: "Guarda el plan del juego interactivo.",
+  input_schema: { type: "object", properties: {
+    titulo: { type: "string", description: "Nombre de la misión (corto, con gancho)" },
+    historia: { type: "string", description: "2 o 3 oraciones que ponen al alumno en una misión" },
+    boton: { type: "string", description: "Texto del botón de inicio, ej. 'Entrar a la fábrica ➜'" },
+    cierre: { type: "object", properties: { alto: { type: "string" }, medio: { type: "string" }, bajo: { type: "string" } }, required: ["alto", "medio", "bajo"] },
+    desafios: { type: "array", items: { type: "object", properties: {
+      ico: { type: "string", description: "Un solo emoji" }, nom: { type: "string" }, sub: { type: "string" },
+      como: { type: "string", description: "Una o dos oraciones: cómo funcionan las actividades de este desafío" },
+      tipos: { type: "array", items: { type: "string" }, description: "3 o 4 tipos de paso, de menos a más difíciles" },
+    }, required: ["ico", "nom", "sub", "como", "tipos"] } },
+  }, required: ["titulo", "historia", "boton", "cierre", "desafios"] },
+};
+const TOOL_DESAFIO = {
+  name: "guardar_desafio",
+  description: "Guarda los pasos de un desafío.",
+  input_schema: { type: "object", properties: {
+    pasos: { type: "array", items: { type: "object", properties: { t: { type: "string" }, datos: { type: "object" } }, required: ["t", "datos"] } },
+  }, required: ["pasos"] },
+};
 const TOOL_VEREDICTO = {
   name: "guardar_veredicto", description: "Guarda el resultado de la revisión de cada paso.",
   input_schema: { type: "object", properties: { resultados: { type: "array", items: { type: "object", properties: { n: { type: "integer" }, valida: { type: "boolean" }, motivo: { type: "string" } }, required: ["n", "valida"] } } }, required: ["resultados"] },
@@ -279,18 +301,14 @@ async function armar(draftId: string) {
     const permitidos = esMate ? GENERICOS.concat(NUMERACION) : GENERICOS;
     const prev = await tiposUsados(t!.subject_id, d.id);
 
-    const system = `Sos diseñador de juegos educativos de Wave Academy, una plataforma para estudiantes de Argentina. Escribís el GUION de un juego interactivo de repaso en formato de misión, basado SOLO en el material de la lección. Un programa arma el juego a partir de tu guion.
+    const reglas = `Sos diseñador de juegos educativos de Wave Academy, una plataforma para estudiantes de Argentina. Escribís el GUION de un juego interactivo de repaso en formato de misión, basado SOLO en el material de la lección. Un programa arma el juego a partir de tu guion.
 Reglas:
 - Español rioplatense (vos), claro y apropiado para la edad. Decimales con coma y miles con punto en lo que ve el alumno. Sin markdown.
-- Una historia breve con una misión que tenga relación con el tema (un lugar, un oficio, un desafío). Entre 3 y 4 desafíos; cada desafío es un puesto o etapa de la misión, con nombre propio y un emoji distinto.
-- Cada desafío lleva 3 o 4 pasos. Total entre 10 y 14 pasos, de menos a más difíciles.
-- VARIEDAD: usá al menos 6 tipos de paso distintos en el juego; dentro de un desafío no repitas el mismo tipo más de una vez. Elegí el tipo que mejor encaje con cada contenido (ordenar para procedimientos, unir para término-definición o cuenta-resultado, clasificar para agrupar, detective para el error típico, etc.).
-- Al menos dos pasos deben apuntar a los errores típicos de la lección. Los distractores son errores plausibles, nunca absurdos.
+- Los distractores son errores plausibles, nunca absurdos. Al menos dos pasos del juego deben apuntar a los errores típicos de la lección.
 - Cada paso tiene UNA sola respuesta correcta, verificable con lo que dice el material. Resolvé las cuentas con cuidado: un error de cálculo arruina el juego.
 - No uses ni mezcles contenidos que no entran en la lección.
-${prev.combos.length ? `- Otras lecciones de la materia ya usaron estos juegos (no repitas su historia ni la misma combinación de tipos; elegí otros tipos y otro escenario):\n  ${prev.combos.join("\n  ")}` : ""}
-
-${catalogo(esMate)}`;
+- Sé conciso: textos breves y explicaciones (exp) de una o dos oraciones.`;
+    const previas = prev.combos.length ? `\n- Otras lecciones de la materia ya usaron estos juegos (no repitas su historia ni la misma combinación de tipos; elegí otros tipos y otro escenario):\n  ${prev.combos.join("\n  ")}` : "";
     const user = `Materia: ${su!.name} (${g!.year_number}.º año). Tema: ${t!.title}. Lección: ${l!.title}.
 OBJETIVO: ${f.objetivo}
 CONTENIDOS QUE ENTRAN: ${(f.contenidos || []).join("; ")}
@@ -298,14 +316,50 @@ ${f.no_entra ? "NO ENTRA: " + f.no_entra + "\n" : ""}ERRORES TÍPICOS: ${(f.erro
 
 MATERIAL DE LA LECCIÓN:
 ${textoLeccion(d.contenido)}`;
-    const gen = await claudeTool(system, user, TOOL_JUEGO, 12000, uso);
 
-    // validación por código
-    const desafios: any[] = [];
-    for (const ds of (gen.desafios || []).slice(0, 4)) {
-      const pasos = (ds.pasos || []).map((p: any) => permitidos.includes(String(p.t)) ? validarPaso(String(p.t), p.datos, esMate) : null).filter(Boolean);
-      desafios.push({ ico: str(ds.ico, 8) || "⭐", nom: str(ds.nom, 40), sub: str(ds.sub, 50), como: str(ds.como, 240), pasos: pasos.slice(0, 4) });
+    // El juego se arma POR PARTES chicas (plan + un pedido por desafío) y cada parte hecha se guarda:
+    // si algo falla, al reintentar solo se rehace lo que faltó y no se vuelve a pagar lo ya hecho.
+    const parcial: any = (d.interactiva_parcial && typeof d.interactiva_parcial === "object") ? d.interactiva_parcial : {};
+    parcial.desafios = parcial.desafios || {};
+    const guardar = () => admin.from("lesson_drafts").update({ interactiva_parcial: parcial, ...medida(), updated_at: new Date().toISOString() }).eq("id", d.id);
+
+    if (!parcial.plan) {
+      const planSystem = reglas + previas + `\n\nAhora hacés SOLO el PLAN del juego (no los ejercicios):
+- Una historia breve con una misión que tenga relación con el tema (un lugar, un oficio, un desafío).
+- Entre 3 y 4 desafíos; cada desafío es un puesto o etapa de la misión, con nombre propio y un emoji distinto.
+- Para cada desafío, "tipos": entre 3 y 4 tipos de paso, de menos a más difíciles. Total entre 10 y 14 pasos en el juego.
+- VARIEDAD: al menos 6 tipos distintos en todo el juego; dentro de un desafío no repitas el mismo tipo. Elegí el tipo que mejor encaje con cada contenido (ordenar para procedimientos, unir para término-definición o cuenta-resultado, clasificar para agrupar, detective para el error típico, etc.).
+TIPOS DISPONIBLES: ${permitidos.join(", ")}`;
+      const plan = await claudeTool(planSystem, user, TOOL_PLAN, 3000, uso);
+      const dsPlan = (plan.desafios || []).slice(0, 4).map((ds: any) => ({
+        ico: str(ds.ico, 8) || "⭐", nom: str(ds.nom, 40), sub: str(ds.sub, 50), como: str(ds.como, 240),
+        tipos: strs(ds.tipos, 20).filter((x) => permitidos.includes(x)).slice(0, 4),
+      }));
+      if (dsPlan.length < 3 || dsPlan.some((x: any) => !x.nom || x.tipos.length < 3)) throw new Error("El plan del juego salió incompleto");
+      parcial.plan = {
+        titulo: str(plan.titulo, 60) || l!.title, historia: str(plan.historia, 420), boton: str(plan.boton, 40) || "Empezar ➜",
+        cierre: { alto: str(plan.cierre?.alto, 120), medio: str(plan.cierre?.medio, 120), bajo: str(plan.cierre?.bajo, 120) },
+        desafios: dsPlan,
+      };
+      await guardar();
     }
+    const plan = parcial.plan;
+    const faltan: number[] = plan.desafios.map((_: any, i: number) => i).filter((i: number) => !(parcial.desafios[i] && parcial.desafios[i].length >= 2));
+    const desSystem = reglas + `\n\nAhora escribís SOLO los pasos de UN desafío del juego, con exactamente los tipos indicados y en ese orden.\n\n${catalogo(esMate)}`;
+    const resultados = await Promise.allSettled(faltan.map(async (i: number) => {
+      const ds = plan.desafios[i];
+      const pedido = `${user}\n\nPLAN DEL JUEGO (para que el desafío encaje): ${JSON.stringify({ titulo: plan.titulo, historia: plan.historia, desafios: plan.desafios.map((x: any) => ({ nom: x.nom, sub: x.sub, tipos: x.tipos })) })}\n\nEscribí los pasos del desafío ${i + 1} ("${ds.nom}") con estos tipos, en este orden: ${ds.tipos.join(", ")}.`;
+      const gen = await claudeTool(desSystem, pedido, TOOL_DESAFIO, 4000, uso);
+      const pasos = (gen.pasos || []).map((p: any) => permitidos.includes(String(p.t)) ? validarPaso(String(p.t), p.datos, esMate) : null).filter(Boolean).slice(0, 4);
+      if (pasos.length < 2) throw new Error(`El desafío ${i + 1} salió sin pasos válidos`);
+      return { i, pasos };
+    }));
+    let fallo: unknown = null;
+    for (const r of resultados) { if (r.status === "fulfilled") parcial.desafios[r.value.i] = r.value.pasos; else fallo = fallo || r.reason; }
+    await guardar();
+    if (fallo) throw fallo;
+    const gen = plan;
+    const desafios: any[] = plan.desafios.map((ds: any, i: number) => ({ ico: ds.ico, nom: ds.nom, sub: ds.sub, como: ds.como, pasos: parcial.desafios[i] }));
     // revisión de respuestas por una segunda pasada
     const plano: any[] = []; desafios.forEach((ds, di) => ds.pasos.forEach((p: any, pi: number) => plano.push({ n: plano.length + 1, di, pi, p })));
     if (plano.length < 8) throw new Error(`Solo ${plano.length} pasos del juego pasaron la validación`);
@@ -340,7 +394,7 @@ ${textoLeccion(d.contenido)}`;
       if (up.error) motivo = "No se pudo cargar el juego: " + up.error.message;
     }
     await admin.from("lesson_drafts").update({
-      interactiva: spec, interactiva_estado: "ok", interactiva_error: motivo, interactiva_cargada_at: motivo ? null : new Date().toISOString(), ...medida(), updated_at: new Date().toISOString(),
+      interactiva: spec, interactiva_parcial: null, interactiva_estado: "ok", interactiva_error: motivo, interactiva_cargada_at: motivo ? null : new Date().toISOString(), ...medida(), updated_at: new Date().toISOString(),
     }).eq("id", d.id);
   } catch (e) {
     await admin.from("lesson_drafts").update({ interactiva_estado: "error", interactiva_error: String((e as Error).message || e).slice(0, 600), ...medida(), updated_at: new Date().toISOString() }).eq("id", d.id);
