@@ -330,25 +330,33 @@ ${textoLeccion(d.contenido)}`;
 - Para cada desafío, "tipos": entre 3 y 4 tipos de paso, de menos a más difíciles. Total entre 10 y 14 pasos en el juego.
 - VARIEDAD: al menos 6 tipos distintos en todo el juego; dentro de un desafío no repitas el mismo tipo. Elegí el tipo que mejor encaje con cada contenido (ordenar para procedimientos, unir para término-definición o cuenta-resultado, clasificar para agrupar, detective para el error típico, etc.).
 TIPOS DISPONIBLES: ${permitidos.join(", ")}`;
-      const plan = await claudeTool(planSystem, user, TOOL_PLAN, 3000, uso);
+      // lo que devuelve la IA se guarda ANTES de validar: si mi validación lo rechaza, se corrige sin volver a pagar
+      if (!parcial.raw_plan) { parcial.raw_plan = await claudeTool(planSystem, user, TOOL_PLAN, 3000, uso); await guardar(); }
+      const plan = parcial.raw_plan;
+      const tiposDe = (x: unknown): string[] => (Array.isArray(x) ? x : typeof x === "string" ? x.split(/[,+|;\s]+/) : [])
+        .map((y: unknown) => String(y).trim().toLowerCase()).filter((y: string) => permitidos.includes(y)).slice(0, 4);
       const dsPlan = (plan.desafios || []).slice(0, 4).map((ds: any) => ({
-        ico: str(ds.ico, 8) || "⭐", nom: str(ds.nom, 40), sub: str(ds.sub, 50), como: str(ds.como, 240),
-        tipos: strs(ds.tipos, 20).filter((x) => permitidos.includes(x)).slice(0, 4),
-      }));
-      if (dsPlan.length < 3 || dsPlan.some((x: any) => !x.nom || x.tipos.length < 3)) throw new Error("El plan del juego salió incompleto");
+        ico: str(ds.ico, 8) || "⭐", nom: str(ds.nom, 40), sub: str(ds.sub, 50), como: str(ds.como, 240), tipos: tiposDe(ds.tipos),
+      })).filter((x: any) => x.nom);
+      if (dsPlan.length < 3) {
+        // plan inservible: se descarta (para poder pedir otro) pero queda a la vista lo que devolvió la IA
+        delete parcial.raw_plan; await guardar();
+        throw new Error(`El plan del juego salió incompleto (${dsPlan.length} desafíos con nombre). La IA devolvió: ${JSON.stringify(plan).slice(0, 300)}`);
+      }
       parcial.plan = {
         titulo: str(plan.titulo, 60) || l!.title, historia: str(plan.historia, 420), boton: str(plan.boton, 40) || "Empezar ➜",
         cierre: { alto: str(plan.cierre?.alto, 120), medio: str(plan.cierre?.medio, 120), bajo: str(plan.cierre?.bajo, 120) },
         desafios: dsPlan,
       };
+      delete parcial.raw_plan;
       await guardar();
     }
     const plan = parcial.plan;
     const faltan: number[] = plan.desafios.map((_: any, i: number) => i).filter((i: number) => !(parcial.desafios[i] && parcial.desafios[i].length >= 2));
-    const desSystem = reglas + `\n\nAhora escribís SOLO los pasos de UN desafío del juego, con exactamente los tipos indicados y en ese orden.\n\n${catalogo(esMate)}`;
+    const desSystem = reglas + `\n\nAhora escribís SOLO los pasos de UN desafío del juego, con los tipos indicados y en ese orden (si no se indican, elegilos vos).\n\n${catalogo(esMate)}`;
     const resultados = await Promise.allSettled(faltan.map(async (i: number) => {
       const ds = plan.desafios[i];
-      const pedido = `${user}\n\nPLAN DEL JUEGO (para que el desafío encaje): ${JSON.stringify({ titulo: plan.titulo, historia: plan.historia, desafios: plan.desafios.map((x: any) => ({ nom: x.nom, sub: x.sub, tipos: x.tipos })) })}\n\nEscribí los pasos del desafío ${i + 1} ("${ds.nom}") con estos tipos, en este orden: ${ds.tipos.join(", ")}.`;
+      const pedido = `${user}\n\nPLAN DEL JUEGO (para que el desafío encaje): ${JSON.stringify({ titulo: plan.titulo, historia: plan.historia, desafios: plan.desafios.map((x: any) => ({ nom: x.nom, sub: x.sub, tipos: x.tipos })) })}\n\nEscribí los pasos del desafío ${i + 1} ("${ds.nom}") ${ds.tipos.length >= 3 ? `con estos tipos, en este orden: ${ds.tipos.join(", ")}` : `elegí vos 3 o 4 tipos distintos entre los disponibles, distintos de los que usan los otros desafíos`}.`;
       const gen = await claudeTool(desSystem, pedido, TOOL_DESAFIO, 4000, uso);
       const pasos = (gen.pasos || []).map((p: any) => permitidos.includes(String(p.t)) ? validarPaso(String(p.t), p.datos, esMate) : null).filter(Boolean).slice(0, 4);
       if (pasos.length < 2) throw new Error(`El desafío ${i + 1} salió sin pasos válidos`);
@@ -373,7 +381,7 @@ TIPOS DISPONIBLES: ${permitidos.join(", ")}`;
     const total = buenos.reduce((s, ds) => s + ds.pasos.length, 0);
     const tipos = new Set(buenos.flatMap((ds) => ds.pasos.map((p: any) => p.t)));
     if (buenos.length < 3 || total < 8) throw new Error(`Después de revisar quedaron pocos pasos válidos (${total} en ${buenos.length} desafíos)`);
-    if (tipos.size < 4) throw new Error(`El juego salió con poca variedad (${tipos.size} tipos distintos)`);
+    if (tipos.size < 3) throw new Error(`El juego salió con muy poca variedad (${tipos.size} tipos distintos)`);
     const spec = {
       etiqueta: `${su!.name} · ${l!.title}`, titulo: str(gen.titulo, 60) || l!.title, historia: str(gen.historia, 420),
       boton: str(gen.boton, 40) || "Empezar ➜",
