@@ -318,9 +318,11 @@
         var estado = n === 4 ? 'ok' : (n === 0 && !e.c) ? 'vacia' : 'falta';
         return carpeta('lesson', l.id, l.title, n + ' de 4 partes' + (e.c ? ' · con complementarios' : ''), estado, herr('lesson', l.id, i, r.data.length));
       }).join('');
-      var examen = (S.info[R.topic] || {}).tiene_examen;
+      var examen = (S.info[R.topic] || {}).tiene_examen, borrador = examen && !(S.info[R.topic] || {}).examen_publicado;
       h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
-        '<small>Se arma acá mismo, con preguntas de opción múltiple, verdadero/falso o abiertas</small></span>' + etiqueta(examen ? 'ok' : 'vacia') + boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + (examen ? boton('examen-del', 'Quitar examen', 'peligro') : '') + '</div></div>';
+        '<small>' + (borrador ? 'Borrador: los alumnos todavía no lo ven. Revisalo y publicalo. Cada intento sortea 8 preguntas del banco.' : 'Se arma acá mismo o con IA. Cada intento sortea 8 preguntas distintas del banco, con preguntas de opción múltiple, verdadero/falso o abiertas') + '</small></span>' + etiqueta(examen ? 'ok' : 'vacia') +
+        (borrador ? boton('examen-pub', 'Publicar examen', '') : '') + (!examen ? boton('examen-ia', 'Armar con IA', 'suave') : '') +
+        boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + (examen ? boton('examen-del', 'Quitar examen', 'peligro') : '') + '</div></div>';
       cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>' + h;
     } catch (e) {
       console.error(e);
@@ -666,6 +668,18 @@
       }
       if (a === 'consignas-del') return quitarConsignas();
       if (a === 'examen-del') return quitarExamen();
+      if (a === 'examen-pub') {
+        var ex0 = chk(await sb.from('exams').select('id').eq('topic_id', R.topic).maybeSingle());
+        if (!ex0.data) return;
+        if (!confirm('¿Publicar el examen? Desde ahora lo van a ver los alumnos del tema.')) return;
+        chk(await sb.rpc('fabrica_publicar_examen', { p_exam: ex0.data.id, p_publicado: true }));
+        await refrescarEstados(); toast('Examen publicado'); return pintar();
+      }
+      if (a === 'examen-ia') {
+        if (!confirm('La IA arma un banco de preguntas con el material de las lecciones del tema (un pedido, cobra uso). Queda como borrador hasta que lo publiques. ¿Seguir?')) return;
+        chk(await sb.rpc('fabrica_pedir_examen', { p_topic: R.topic }));
+        return toast('Pedido enviado. En unos minutos aparece como borrador (si falla, queda el motivo en examen_generacion).');
+      }
       if (a === 'del') return eliminar(p[1], p[2]);
       if (a === 'correcciones') return abrirCorrecciones();
       if (a === 'consignas') return abrirEditor({ kind: 'step', stepId: L.pasos.final_activity.id, sub: nombre('lesson', R.lesson) });
