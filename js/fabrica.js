@@ -185,7 +185,7 @@
     if (!ids.length) return;
     var s = (await sb.rpc('fabrica_resumen')).data || {};
     var aprox = ids.length * COSTO_LOTE_APROX;
-    if (!confirm('Vas a enviar un LOTE de ' + ids.length + (ids.length === 1 ? ' lección' : ' lecciones') + '.\n\nEl lote se cobra a mitad de precio, pero tarda: Anthropic lo devuelve en minutos u horas (hasta 24). Una vez enviado sigue solo, etapa por etapa, hasta dejar los borradores listos. No publica nada ni arma el juego interactivo.\n\nCosto estimado: unos ' + usd(aprox) + ' en total (estimación; el primer lote sirve para medir el costo real). Se cobra de tu saldo de Anthropic.\n\n¿Enviamos?')) return;
+    if (!confirm('Vas a enviar un LOTE de ' + ids.length + (ids.length === 1 ? ' lección' : ' lecciones') + '.\n\nEl lote se cobra a mitad de precio, pero tarda: Anthropic lo devuelve en minutos u horas (hasta 24). Una vez enviado sigue solo, etapa por etapa, hasta dejar los borradores listos. Al terminar arma solo el juego interactivo (eso se cobra a precio completo, fuera del lote) y después el PDF. No publica nada.\n\nCosto estimado: unos ' + usd(aprox) + ' en total SIN el juego interactivo; el juego suma aparte, y todo queda medido por lección (estimación; el primer lote sirve para medir el costo real). Se cobra de tu saldo de Anthropic.\n\n¿Enviamos?')) return;
     var b = document.getElementById('fb-lote'); b.disabled = true;
     var r = await sb.rpc('fabrica_lote_enviar', { p_lesson_ids: ids });
     if (r.error) { toast(r.error.message || 'No se pudo enviar el lote', true); return contar(); }
