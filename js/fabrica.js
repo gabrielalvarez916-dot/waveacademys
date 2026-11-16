@@ -52,6 +52,10 @@
       '<div class="fb-card"><small>Trabajando ahora</small><b>' + (s.en_marcha || 0) + '</b></div>' +
       '<div class="fb-card"><small>Lecciones listas sin PDF</small><b>' + (s.pdf_pendientes || 0) + '</b></div>';
     E.pdfPend = Number(s.pdf_pendientes) || 0;
+    var lt = await sb.rpc('fabrica_lotes_estado');
+    if (!lt.error && lt.data && Number(lt.data.lotes)) {
+      document.getElementById('fb-resumen').insertAdjacentHTML('beforeend', '<div class="fb-card"><small>Esperando en lote</small><b>' + lt.data.lecciones + '</b><span>Anthropic los devuelve en minutos u horas; se siguen solos</span></div>');
+    }
   }
 
   async function lecciones() {
@@ -79,6 +83,8 @@
     var n = idsElegidos(elegible).length, j = idsElegidos(sinJuego).length;
     var b = document.getElementById('fb-lanzar');
     if (b) { b.disabled = !n; b.textContent = n ? 'Generar ' + n + (n === 1 ? ' lección' : ' lecciones') : 'Generar las seleccionadas'; }
+    var bl = document.getElementById('fb-lote');
+    if (bl) { bl.disabled = !n; bl.textContent = n ? 'Enviar lote de ' + n + (n === 1 ? ' lección' : ' lecciones') + ' (mitad de precio)' : 'Enviar lote (mitad de precio)'; }
     var bj = document.getElementById('fb-juego');
     if (bj) { bj.disabled = !j; bj.textContent = j ? 'Armar juego interactivo de ' + j + (j === 1 ? ' lección' : ' lecciones') : 'Armar juego interactivo'; }
   }
@@ -172,6 +178,23 @@
     setTimeout(refrescar, 1500);
   }
 
+  var COSTO_LOTE_APROX = 0.3; // USD por lección en lote: estimación hasta tener el primer lote medido
+
+  async function lote() {
+    var ids = idsElegidos(elegible);
+    if (!ids.length) return;
+    var s = (await sb.rpc('fabrica_resumen')).data || {};
+    var aprox = ids.length * COSTO_LOTE_APROX;
+    if (!confirm('Vas a enviar un LOTE de ' + ids.length + (ids.length === 1 ? ' lección' : ' lecciones') + '.\n\nEl lote se cobra a mitad de precio, pero tarda: Anthropic lo devuelve en minutos u horas (hasta 24). Una vez enviado sigue solo, etapa por etapa, hasta dejar los borradores listos. No publica nada ni arma el juego interactivo.\n\nCosto estimado: unos ' + usd(aprox) + ' en total (estimación; el primer lote sirve para medir el costo real). Se cobra de tu saldo de Anthropic.\n\n¿Enviamos?')) return;
+    var b = document.getElementById('fb-lote'); b.disabled = true;
+    var r = await sb.rpc('fabrica_lote_enviar', { p_lesson_ids: ids });
+    if (r.error) { toast(r.error.message || 'No se pudo enviar el lote', true); return contar(); }
+    E.elegidas = {};
+    var d = r.data || {};
+    toast('Lote enviado: ' + d.enviadas + (d.sin_ficha ? ' · sin ficha: ' + d.sin_ficha : '') + (d.ya_hechas_o_en_marcha ? ' · ya hechas o en marcha: ' + d.ya_hechas_o_en_marcha : '') + '. Los resultados aparecen solos.');
+    setTimeout(refrescar, 1500);
+  }
+
   function pintarFiltros() {
     var grados = B.grades.filter(function (g) { return !E.level || g.level_id === E.level; });
     var mats = B.subjects.filter(function (m) { return E.grade && m.grade_id === E.grade; });
@@ -199,9 +222,9 @@
   async function abrir(el) {
     vista = el; clearTimeout(timer);
     vista.innerHTML = '<h1 class="wv-titulo">Fábrica de lecciones</h1>' +
-      '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Cada una pasa sola por todo el proceso: borrador, revisión, actividad con consignas, repaso, juego interactivo y PDF. Usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
+      '<p class="fb-ayuda">Elegí las lecciones que querés que arme la máquina. <b>No hace nada por su cuenta</b>: solo trabaja las que marcás acá. Podés generarlas ya (precio completo) o enviarlas en lote (mitad de precio, tarda minutos u horas). Cada una pasa sola por todo el proceso: borrador, revisión, actividad con consignas, repaso, juego interactivo y PDF. Usa la IA y se cobra de tu saldo de Anthropic; el gasto que ves es el medido por la propia máquina, para que lo compares con tu saldo.</p>' +
       '<div id="fb-resumen" class="fb-resumen"></div><div id="fb-sel" class="fb-sel"></div>' +
-      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-juego" class="wv-chip" type="button" disabled>Armar juego interactivo</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
+      '<div class="fb-barra"><button id="fb-lanzar" class="wv-btn" type="button" disabled>Generar las seleccionadas</button><button id="fb-lote" class="wv-btn" type="button" disabled>Enviar lote (mitad de precio)</button><button id="fb-juego" class="wv-chip" type="button" disabled>Armar juego interactivo</button><button id="fb-act" class="wv-chip" type="button">Actualizar</button></div>' +
       '<div id="fb-tabla"></div><div id="fb-imagenes"></div>';
     await cargarBase();
     pintarFiltros();
@@ -217,6 +240,7 @@
     vista.onclick = function (ev) {
       var t = ev.target.closest('button'); if (!t) return;
       if (t.id === 'fb-lanzar') lanzar().catch(function (e) { toast(e.message || e, true); });
+      if (t.id === 'fb-lote') lote().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-juego') juego().catch(function (e) { toast(e.message || e, true); });
       if (t.id === 'fb-act') refrescar();
       if (t.classList.contains('fb-img-quitar')) quitarImagen(t).catch(function (e) { toast(e.message || e, true); });
