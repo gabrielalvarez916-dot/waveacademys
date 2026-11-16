@@ -237,18 +237,30 @@ const TOOL_JUEGO = {
 };
 const TOOL_PLAN = {
   name: "guardar_plan",
-  description: "Guarda el plan del juego interactivo.",
+  description: "Guarda el plan del juego interactivo. Todos los campos son textos simples (sin listas ni objetos).",
   input_schema: { type: "object", properties: {
     titulo: { type: "string", description: "Nombre de la misión (corto, con gancho)" },
     historia: { type: "string", description: "2 o 3 oraciones que ponen al alumno en una misión" },
     boton: { type: "string", description: "Texto del botón de inicio, ej. 'Entrar a la fábrica ➜'" },
-    cierre: { type: "object", properties: { alto: { type: "string" }, medio: { type: "string" }, bajo: { type: "string" } }, required: ["alto", "medio", "bajo"] },
-    desafios: { type: "array", items: { type: "object", properties: {
-      ico: { type: "string", description: "Un solo emoji" }, nom: { type: "string" }, sub: { type: "string" },
-      como: { type: "string", description: "Una o dos oraciones: cómo funcionan las actividades de este desafío" },
-      tipos: { type: "array", items: { type: "string" }, description: "2 o 3 tipos de paso, de menos a más difíciles" },
-    }, required: ["ico", "nom", "sub", "como", "tipos"] } },
-  }, required: ["titulo", "historia", "boton", "cierre", "desafios"] },
+    cierre_alto: { type: "string", description: "Mensaje final si le fue muy bien" },
+    cierre_medio: { type: "string", description: "Mensaje final si le fue más o menos" },
+    cierre_bajo: { type: "string", description: "Mensaje final si le fue mal, alentador" },
+    desafio1_ico: { type: "string", description: "Un solo emoji" },
+    desafio1_nombre: { type: "string", description: "Nombre corto del desafío 1" },
+    desafio1_sub: { type: "string", description: "Subtítulo de una línea" },
+    desafio1_como: { type: "string", description: "Una o dos oraciones: cómo funcionan las actividades de este desafío" },
+    desafio1_tipos: { type: "string", description: "2 o 3 tipos de paso separados por coma, de menos a más difíciles. Ej: op, ordenar, detective" },
+    desafio2_ico: { type: "string", description: "Un solo emoji" },
+    desafio2_nombre: { type: "string", description: "Nombre corto del desafío 2" },
+    desafio2_sub: { type: "string", description: "Subtítulo de una línea" },
+    desafio2_como: { type: "string", description: "Una o dos oraciones: cómo funcionan las actividades de este desafío" },
+    desafio2_tipos: { type: "string", description: "2 o 3 tipos de paso separados por coma, de menos a más difíciles. Ej: op, ordenar, detective" },
+    desafio3_ico: { type: "string", description: "Un solo emoji" },
+    desafio3_nombre: { type: "string", description: "Nombre corto del desafío 3" },
+    desafio3_sub: { type: "string", description: "Subtítulo de una línea" },
+    desafio3_como: { type: "string", description: "Una o dos oraciones: cómo funcionan las actividades de este desafío" },
+    desafio3_tipos: { type: "string", description: "2 o 3 tipos de paso separados por coma, de menos a más difíciles. Ej: op, ordenar, detective" },
+  }, required: ["titulo", "historia", "boton", "cierre_alto", "cierre_medio", "cierre_bajo", "desafio1_nombre", "desafio1_tipos", "desafio2_nombre", "desafio2_tipos"] },
 };
 const TOOL_DESAFIO = {
   name: "guardar_desafio",
@@ -358,29 +370,34 @@ ${textoLeccion(d.contenido)}`;
     if (!parcial.plan) {
       const planSystem = reglas + previas + `\n\nAhora hacés SOLO el PLAN del juego (no los ejercicios):
 - Una historia breve con una misión que tenga relación con el tema (un lugar, un oficio, un desafío).
-- Entre 2 y 3 desafíos; cada desafío es un puesto o etapa de la misión, con nombre propio y un emoji distinto.
-- Para cada desafío, "tipos": 2 o 3 tipos de paso, de menos a más difíciles. Total entre 6 y 8 pasos en el juego: es un repaso corto y ágil, no un examen.
+- Entre 2 y 3 desafíos; cada desafío es un puesto o etapa de la misión, con nombre propio y un emoji distinto. Completá los campos desafio1_*, desafio2_* y, si hacen falta tres, desafio3_*.
+- En desafioN_tipos escribí 2 o 3 tipos de paso separados por coma, de menos a más difíciles. Total entre 6 y 8 pasos en el juego: es un repaso corto y ágil, no un examen.
 - VARIEDAD: al menos 4 tipos distintos en todo el juego; dentro de un desafío no repitas el mismo tipo. Elegí el tipo que mejor encaje con cada contenido (ordenar para procedimientos, unir para término-definición o cuenta-resultado, clasificar para agrupar, detective para el error típico, etc.).
 TIPOS DISPONIBLES: ${permitidos.join(", ")}`;
       // lo que devuelve la IA se guarda ANTES de validar: si mi validación lo rechaza, se corrige sin volver a pagar
       if (!parcial.raw_plan) { parcial.raw_plan = await claudeTool(planSystem, user, TOOL_PLAN, 3000, uso); await guardar(); }
-      const plan = deep(parcial.raw_plan);
+      const plan0 = deep(parcial.raw_plan);
       const tiposDe = (x: unknown): string[] => (Array.isArray(x) ? x : typeof x === "string" ? x.split(/[,+|;\s]+/) : [])
         .map((y: unknown) => String(y).trim().toLowerCase()).filter((y: string) => permitidos.includes(y)).slice(0, 3);
-      const dsPlan = (plan.desafios || []).slice(0, 3).map((ds: any) => ({
+      const crudos: any[] = [];
+      for (const n of [1, 2, 3]) crudos.push({ ico: plan0?.[`desafio${n}_ico`], nom: plan0?.[`desafio${n}_nombre`], sub: plan0?.[`desafio${n}_sub`], como: plan0?.[`desafio${n}_como`], tipos: plan0?.[`desafio${n}_tipos`] });
+      const anidados = Array.isArray(plan0?.desafios) ? plan0.desafios : [];
+      for (const a of anidados) crudos.push({ ico: a?.ico, nom: a?.nom ?? a?.nombre ?? a?.name, sub: a?.sub, como: a?.como, tipos: a?.tipos });
+      const dsPlan = crudos.map((ds: any) => ({
         ico: str(ds.ico, 8) || "⭐", nom: str(ds.nom, 40), sub: str(ds.sub, 50), como: str(ds.como, 240), tipos: tiposDe(ds.tipos),
-      })).filter((x: any) => x.nom);
+      })).filter((x: any) => x.nom).slice(0, 3);
+      const plan = { ...plan0, cierre: { alto: plan0?.cierre_alto ?? plan0?.cierre?.alto, medio: plan0?.cierre_medio ?? plan0?.cierre?.medio, bajo: plan0?.cierre_bajo ?? plan0?.cierre?.bajo } };
       if (dsPlan.length < 2) {
-        // plan inservible: se descarta (para poder pedir otro) pero queda a la vista lo que devolvió la IA
-        delete parcial.raw_plan; await guardar();
-        throw new Error(`El plan del juego salió incompleto (${dsPlan.length} desafíos con nombre). La IA devolvió: ${JSON.stringify(plan).slice(0, 300)}`);
+        // plan inservible: queda guardado COMPLETO (raw_rechazado) para ver qué devolvió la IA, y se descarta para poder pedir otro
+        parcial.raw_rechazado = parcial.raw_plan; delete parcial.raw_plan; await guardar();
+        throw new Error(`El plan del juego salió incompleto (${dsPlan.length} desafíos con nombre). La IA devolvió: ${JSON.stringify(plan0).slice(0, 900)}`);
       }
       parcial.plan = {
         titulo: str(plan.titulo, 60) || l!.title, historia: str(plan.historia, 420), boton: str(plan.boton, 40) || "Empezar ➜",
         cierre: { alto: str(plan.cierre?.alto, 120), medio: str(plan.cierre?.medio, 120), bajo: str(plan.cierre?.bajo, 120) },
         desafios: dsPlan,
       };
-      delete parcial.raw_plan;
+      delete parcial.raw_plan; delete parcial.raw_rechazado;
       await guardar();
     }
     const plan = parcial.plan;
