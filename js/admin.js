@@ -759,6 +759,7 @@
     contenido: function () { return WaveContenido.abrir(vista); },
     curricular: function () { return WaveCurricular.abrir(vista); },
     fabrica: function () { return WaveFabrica.abrir(vista); },
+    videos: function () { return WaveVideos.abrir(vista); },
     seguimiento: proximamente('Seguimiento de alumnos'),
     registro: proximamente('Registro de actividad')
   };
