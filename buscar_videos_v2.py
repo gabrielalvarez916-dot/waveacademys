@@ -49,7 +49,10 @@ ES = set(
 )
 EN = set(
     "the of and to how what is for with in you your this that from explained learn beginners "
-    "course lesson introduction why are vs free guide tutorial class lecture".split()
+    "course lesson introduction why are vs free guide tutorial class lecture "
+    "solving problems problem example fractions fraction combined operation operations "
+    "calculations square root power addition subtraction multiplication numbers number "
+    "math maths equations equation worksheet grade".split()
 )
 PT = set("voce nao uma aula exercicios ensino fundamental explicacao".split())
 ES_EXCLUSIVAS = {"el", "los", "las", "del", "un"}
