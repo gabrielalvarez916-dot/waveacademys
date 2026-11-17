@@ -72,8 +72,9 @@ body.wvp-abierto { overflow: hidden; }
 /* ---- Editor visual de recorte de video (admin) ---- */
 .wve-caja { height: auto; max-height: calc(100dvh - 24px); overflow-y: auto; }
 .wve-cuerpo { display: grid; gap: 12px; padding: 14px; color: var(--petroleo, #253638); }
-.wve-marco { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 46dvh; background: #000; border-radius: 14px; overflow: hidden; display: grid; place-items: center; }
-.wve-marco video, .wve-marco iframe { width: 100%; height: 100%; border: 0; background: #000; }
+.wve-marco { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; max-height: 46dvh; min-height: 200px; background: #000; border-radius: 14px; overflow: hidden; }
+.wve-marco video, .wve-marco iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; background: #000; object-fit: contain; }
+.wve-marco .wvv-estado { position: absolute; inset: 0; display: grid; place-items: center; }
 .wve-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .wve-ctl .wvp-b { background: var(--menta, #D7F0E9); }
 .wve-ctl .wvp-b:hover:not(:disabled) { background: var(--turquesa, #087E83); color: #fff; }
