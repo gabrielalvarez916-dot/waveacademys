@@ -277,14 +277,20 @@ def main():
     if key.startswith("eyJ"):
         headers["Authorization"] = f"Bearer {key}"
 
-    r = requests.get(
-        f"{url}/rest/v1/video_pendientes_v2",
-        headers=headers,
-        params={"select": "*", "limit": str(lote)},
-        timeout=60,
-    )
-    r.raise_for_status()
-    lista = r.json()
+    # Supabase devuelve como máximo 1000 filas por pedido: se pide por páginas hasta juntar el lote
+    lista = []
+    while len(lista) < lote:
+        r = requests.get(
+            f"{url}/rest/v1/video_pendientes_v2",
+            headers=headers,
+            params={"select": "*", "limit": str(min(1000, lote - len(lista))), "offset": str(len(lista))},
+            timeout=60,
+        )
+        r.raise_for_status()
+        pagina = r.json()
+        lista += pagina
+        if len(pagina) < 1000:
+            break
     print(f"Lecciones a buscar en esta corrida: {len(lista)} (hilos: {hilos}, prueba: {dry})")
 
     def guardar(l, consulta, videos):
