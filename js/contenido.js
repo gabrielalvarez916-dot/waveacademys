@@ -354,10 +354,25 @@
       var rr = await sb.from('video_renders').select('id, status, error, created_at').eq('lesson_id', R.lesson).order('created_at', { ascending: false }).limit(1).maybeSingle();
       L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
+      vigilarRender();
     } catch (e) {
       console.error(e);
       document.getElementById('wv-les').innerHTML = 'No pudimos cargar la lección.<br><small>' + esc(e.message || e) + '</small>';
     }
+  }
+
+  // Mientras un video final se está generando, revisa cada 20 s y recién recarga la lección cuando cambia el estado
+  var sondeo = null;
+  function vigilarRender() {
+    if (sondeo) { clearTimeout(sondeo); sondeo = null; }
+    if (!L || !L.render || (L.render.status !== 'pendiente' && L.render.status !== 'procesando')) return;
+    var lec = R.lesson, id = L.render.id, antes = L.render.status;
+    sondeo = setTimeout(async function () {
+      sondeo = null;
+      if (R.lesson !== lec || !document.getElementById('wv-i-render')) return;
+      var r = await sb.from('video_renders').select('status').eq('id', id).maybeSingle();
+      if (r.data && r.data.status !== antes) abrirLeccion(); else vigilarRender();
+    }, 20000);
   }
 
   // ---------- Correcciones del revisor (lecciones armadas por la máquina) ----------
@@ -428,7 +443,7 @@
       var rn = L.render, enCola = rn && (rn.status === 'pendiente' || rn.status === 'procesando');
       var armado = vids.length > 1 || vids.some(function (x) { return (x.tramos && x.tramos.length) || x.intro; });
       var pesado = vids.some(function (x) { return !esYt(x.uid) && !x.final; });
-      var rTxt = enCola ? (rn.status === 'procesando' ? 'Se está generando… (puede tardar unos minutos)' : 'En cola: falta correr "Video final" en GitHub (Actions → Run workflow)')
+      var rTxt = enCola ? (rn.status === 'procesando' ? 'Se está generando… (puede tardar unos minutos)' : 'En cola: arranca solo en un momento')
         : rn && rn.status === 'error' ? 'El último intento falló: ' + esc(rn.error || '') : rn && rn.status === 'listo' && !armado ? 'Video final generado ✔ (un solo archivo, carga rápido)' : armado ? 'Une los cortes y la intro en UN solo video que carga rápido' : pesado ? 'Si el video es pesado o tarda en cargar: lo comprime y lo deja listo para internet' : 'Ya es un solo video';
       if (armado || pesado || enCola || (rn && rn.status !== 'listo')) clase += fila('🎞️', 'Video final', rTxt, (enCola ? '' : boton('render-pedir', 'Generar video final', '')) + boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
       else if (rn && rn.status === 'listo') clase += fila('🎞️', 'Video final', rTxt, boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
@@ -592,10 +607,10 @@
           var tr = x.tramos && x.tramos.length ? x.tramos : [{ i: 0, f: 0 }];
           tr.forEach(function (t) { plan.push({ key: x.uid, i: Number(t.i) || 0, f: Number(t.f) || 0 }); });
         });
-        if (!confirm('Se va a generar UN solo video con los cortes y la intro, listo para internet. Reemplaza los videos de esta lección cuando termine.\n\nDespués tenés que correr "Video final" en GitHub (Actions → Run workflow). ¿Pedirlo?')) return;
-        var ins = await sb.from('video_renders').insert({ lesson_id: R.lesson, step_id: L.pasos.video.id, plan: plan });
-        if (ins.error) throw new Error('No se pudo pedir: ' + ins.error.message);
-        toast('Pedido guardado. Falta correr "Video final" en GitHub.');
+        if (!confirm('Se va a generar UN solo video con los cortes y la intro, listo para internet. Reemplaza los videos de esta lección cuando termine y puede tardar unos minutos. ¿Pedirlo?')) return;
+        var ped = await sb.functions.invoke('render-videos', { body: { action: 'pedir', lesson_id: R.lesson, step_id: L.pasos.video.id, plan: plan } });
+        if (ped.error) { var mp = 'No se pudo pedir. Intentá de nuevo.'; try { var cj = await ped.error.context.json(); if (cj && cj.error) mp = cj.error; } catch (e0) { /* genérico */ } throw new Error(mp); }
+        toast(ped.data && ped.data.lanzado ? 'Pedido enviado: se está generando solo.' : 'Pedido guardado, pero no se pudo arrancar solo (' + ((ped.data && ped.data.aviso) || 'sin detalle') + '). Corré "Video final" en GitHub.', !(ped.data && ped.data.lanzado));
         await abrirLeccion(); return;
       }
       if (a === 'introw-up') return elegirArchivo('video/*', false, function (fs) { subirIntroWave(fs[0]); });

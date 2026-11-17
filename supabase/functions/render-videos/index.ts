@@ -6,6 +6,8 @@ import { AwsClient } from "npm:aws4fetch@1";
 //   { action: "siguiente" }            -> toma el pedido pendiente más viejo y devuelve enlaces firmados (bajar partes, subir el resultado)
 //   { action: "listo", id }            -> el video final ya está subido: reemplaza los videos de la lección por ese único archivo
 //   { action: "error", id, error }     -> marca el pedido con error
+// Desde el panel (sesión de administrador, sin x-gen-token):
+//   { action: "pedir", lesson_id, step_id, plan } -> guarda el pedido y lanza solo el proceso de GitHub (workflow render-videos.yml)
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-gen-token",
@@ -30,14 +32,49 @@ async function firmar(method: string, key: string, segundos: number) {
 }
 const claveOk = (k: unknown) => String(k ?? "").startsWith("lessons/");
 
+const REPO = "gabrielalvarez916-dot/waveacademys";
+async function lanzarProceso(): Promise<string | null> {
+  const tk = Deno.env.get("GITHUB_TOKEN_RENDER") || Deno.env.get("GITHUB_TOKEN_PDF");
+  if (!tk) return "Falta el token de GitHub en Supabase";
+  const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/render-videos.yml/dispatches`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${tk.trim()}`, Accept: "application/vnd.github+json", "Content-Type": "application/json", "User-Agent": "wave-academy" },
+    body: JSON.stringify({ ref: "main" }),
+  });
+  return r.status === 204 ? null : `GitHub respondió ${r.status}`;
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
   try {
+    // ---- Pedido desde el panel de administración ----
+    if (req.headers.get("x-gen-token") == null) {
+      const userClient = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } });
+      const { data: { user } } = await userClient.auth.getUser();
+      if (!user) return json({ error: "No autenticado" }, 401);
+      const { data: me } = await admin.from("profiles").select("role").eq("id", user.id).maybeSingle();
+      if (me?.role !== "admin") return json({ error: "Solo administradores" }, 403);
+      const q = await req.json().catch(() => ({}));
+      if (q.action !== "pedir") return json({ error: "Acción desconocida" }, 400);
+      const plan = Array.isArray(q.plan) ? q.plan : [];
+      if (!plan.length || plan.length > 60 || plan.some((p: any) => !claveOk(p?.key))) return json({ error: "El pedido no es válido (solo se unen archivos cargados en la plataforma)" }, 400);
+      const { data: paso } = await admin.from("lesson_steps").select("id, lesson_id, step_type").eq("id", q.step_id).maybeSingle();
+      if (!paso || paso.lesson_id !== q.lesson_id || paso.step_type !== "video") return json({ error: "Paso inválido" }, 400);
+      const { data: previo } = await admin.from("video_renders").select("id").eq("lesson_id", q.lesson_id).in("status", ["pendiente", "procesando"]).limit(1);
+      if (previo?.length) return json({ error: "Esta lección ya tiene un pedido en curso" }, 409);
+      const ins = await admin.from("video_renders").insert({ lesson_id: q.lesson_id, step_id: q.step_id, plan: plan.map((p: any) => ({ key: p.key, i: Number(p.i) || 0, f: Number(p.f) || 0 })) });
+      if (ins.error) return json({ error: ins.error.message }, 500);
+      const falla = await lanzarProceso().catch((e) => String(e?.message || e));
+      return json({ ok: true, lanzado: !falla, aviso: falla });
+    }
+
     const { data: cfg } = await admin.from("gen_config").select("valor").eq("clave", "token").single();
     if (!cfg || req.headers.get("x-gen-token") !== cfg.valor) return json({ error: "No autorizado" }, 401);
     const b = await req.json().catch(() => ({}));
 
     if (b.action === "siguiente") {
+      // un pedido que quedó "procesando" hace más de 3 horas se vuelve a poner en cola
+      await admin.from("video_renders").update({ status: "pendiente" }).eq("status", "procesando").lt("updated_at", new Date(Date.now() - 3 * 3600 * 1000).toISOString());
       const { data: r } = await admin.from("video_renders").select("id, lesson_id, plan").eq("status", "pendiente").order("created_at").limit(1).maybeSingle();
       if (!r) return json({ pedido: null });
       const plan = [];
