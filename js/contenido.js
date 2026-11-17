@@ -125,7 +125,7 @@
       var f = filas[i] || ['', ''];
       h += '<div class="wv-rec-fila"><span>' + (n > 1 ? 'Parte ' + (i + 1) + ': desde' : 'Desde') + '</span><input class="wv-rec-i" type="text" inputmode="numeric" placeholder="0:00" value="' + esc(f[0]) + '"><span>hasta</span><input class="wv-rec-f" type="text" inputmode="numeric" placeholder="final" value="' + esc(f[1]) + '"></div>';
     }
-    return h + '<div class="wv-rec-b">' + boton('video-rec-mas:' + vi, '+ Agregar otra parte') + boton('video-rec:' + vi, 'Guardar recorte', '') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
+    return h + '<div class="wv-rec-b">' + boton('video-editar:' + vi, '🎞️ Editar mirando el video', '') + boton('video-rec-mas:' + vi, '+ Agregar otra parte', 'suave') + boton('video-rec:' + vi, 'Guardar recorte', 'suave') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
   }
   function leerRecorte(vi) {
     var r = { tramos: [], crudo: [], mal: false };
@@ -549,6 +549,23 @@
     var p = acc.split(':'), a = p[0];
     try {
       if (a === 'video-rec-mas') { var vm = +p[1]; L.recN[vm] = document.querySelectorAll('.wv-recorte[data-vi="' + vm + '"] .wv-rec-fila').length + 1; L.recTmp[vm] = leerRecorte(vm).crudo; return pintarLeccion(); }
+      if (a === 'video-editar') {
+        var ve = +p[1], xe = videosDe(L.pasos.video)[ve];
+        if (!xe) return;
+        var guardarEd = async function (tr) {
+          var le = videosDe(L.pasos.video);
+          if (!le[ve]) return;
+          le[ve].tramos = tr; L.recN[ve] = 0; L.recTmp[ve] = null;
+          await guardarVideos(le);
+          toast(tr.length ? 'Recorte guardado' : 'Se muestra el video entero');
+          pintarLeccion();
+        };
+        if (esYt(xe.uid)) return WaveEditor.abrir({ titulo: nombre('lesson', R.lesson), youtube: xe.uid.slice(3), tramos: xe.tramos, guardar: guardarEd });
+        var ste = await subidas({ action: 'stream_status', uid: xe.uid });
+        if (!ste.ready) return toast('No se encontró el archivo del video.', true);
+        return WaveEditor.abrir({ titulo: nombre('lesson', R.lesson), tramos: xe.tramos, guardar: guardarEd,
+          url: async function () { return (await subidas({ action: 'stream_token', uid: xe.uid })).url; } });
+      }
       if (a === 'video-rec') {
         var vr = +p[1], lr = leerRecorte(vr), tr = lr.tramos;
         if (lr.mal) return toast('Escribí los tiempos como minutos:segundos, por ejemplo 0:25', true);
