@@ -1,0 +1,22 @@
+name: Video final (une cortes e intro en un solo video)
+
+# SOLO A MANO (pestaña Actions > Run workflow): procesa los pedidos que hiciste desde Contenido con "Generar video final".
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: render-videos
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: ffmpeg
+        run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - name: Generar videos finales
+        env:
+          WAVE_GEN_TOKEN: ${{ secrets.WAVE_GEN_TOKEN }}
+        run: python3 tools/render/render.py

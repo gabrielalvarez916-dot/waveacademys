@@ -351,7 +351,8 @@
       }
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
       var bd = await sb.from('lesson_drafts').select('status, paso, revision, revision_inicial, updated_at').eq('lesson_id', R.lesson).maybeSingle();
-      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data };
+      var rr = await sb.from('video_renders').select('id, status, error, created_at').eq('lesson_id', R.lesson).order('created_at', { ascending: false }).limit(1).maybeSingle();
+      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
     } catch (e) {
       console.error(e);
@@ -423,6 +424,14 @@
         (x.intro ? '' : boton('video-introdef:' + i, '⭐ Usar como intro', 'suave')) +
         boton('video-del:' + i, 'Quitar', 'peligro')) + recorteHtml(x, i);
     });
+    if (tieneV) {
+      var rn = L.render, enCola = rn && (rn.status === 'pendiente' || rn.status === 'procesando');
+      var armado = vids.length > 1 || vids.some(function (x) { return (x.tramos && x.tramos.length) || x.intro; });
+      var rTxt = enCola ? (rn.status === 'procesando' ? 'Se está generando… (puede tardar unos minutos)' : 'En cola: falta correr "Video final" en GitHub (Actions → Run workflow)')
+        : rn && rn.status === 'error' ? 'El último intento falló: ' + esc(rn.error || '') : rn && rn.status === 'listo' && !armado ? 'Video final generado ✔ (un solo archivo, carga rápido)' : armado ? 'Une los cortes y la intro en UN solo video que carga rápido' : 'Ya es un solo video';
+      if (armado || enCola || (rn && rn.status !== 'listo')) clase += fila('🎞️', 'Video final', rTxt, (enCola ? '' : boton('render-pedir', 'Generar video final', '')) + boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
+      else if (rn && rn.status === 'listo') clase += fila('🎞️', 'Video final', rTxt, boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
+    }
     clase += S.introWave
       ? fila('⭐', 'Intro de Wave', 'Agregala al principio, o ubicala donde quieras con "Editar mirando el video"', boton('video-intro', 'Agregar al principio', ''), 'wv-i-introwave')
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro (se sube una sola vez y sirve para todas las lecciones)', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
@@ -573,6 +582,21 @@
     var p = acc.split(':'), a = p[0];
     try {
       if (a === 'video-rec-mas') { var vm = +p[1]; L.recN[vm] = document.querySelectorAll('.wv-recorte[data-vi="' + vm + '"] .wv-rec-fila').length + 1; L.recTmp[vm] = leerRecorte(vm).crudo; return pintarLeccion(); }
+      if (a === 'render-estado') { await abrirLeccion(); return; }
+      if (a === 'render-pedir') {
+        var lr = videosDe(L.pasos.video);
+        if (lr.some(function (x) { return esYt(x.uid); })) return toast('Hay videos de YouTube: no se pueden unir. Reemplazalos primero por el archivo del dueño (Videos → Subir archivo del dueño).', true);
+        var plan = [];
+        lr.forEach(function (x) {
+          var tr = x.tramos && x.tramos.length ? x.tramos : [{ i: 0, f: 0 }];
+          tr.forEach(function (t) { plan.push({ key: x.uid, i: Number(t.i) || 0, f: Number(t.f) || 0 }); });
+        });
+        if (!confirm('Se va a generar UN solo video con los cortes y la intro, listo para internet. Reemplaza los videos de esta lección cuando termine.\n\nDespués tenés que correr "Video final" en GitHub (Actions → Run workflow). ¿Pedirlo?')) return;
+        var ins = await sb.from('video_renders').insert({ lesson_id: R.lesson, step_id: L.pasos.video.id, plan: plan });
+        if (ins.error) throw new Error('No se pudo pedir: ' + ins.error.message);
+        toast('Pedido guardado. Falta correr "Video final" en GitHub.');
+        await abrirLeccion(); return;
+      }
       if (a === 'introw-up') return elegirArchivo('video/*', false, function (fs) { subirIntroWave(fs[0]); });
       if (a === 'video-introdef') {
         var xi = videosDe(L.pasos.video)[+p[1]];
