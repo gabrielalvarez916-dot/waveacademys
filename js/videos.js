@@ -1,5 +1,6 @@
 // Panel admin · Videos: revisar los videos candidatos de cada lección y elegir el mejor.
-// Lee video_candidatos (los llena el script buscar_videos.py). Solo marca el elegido, no toca las lecciones.
+// Lee video_candidatos (los llena el script buscar_videos.py). Se pueden elegir uno o más videos por lección:
+// los elegidos pasan solos a la clase de la lección (Contenido) y desde acá se pueden editar (recortar) antes de publicar.
 (function () {
   var sb = Wave.sb;
   var vista = null;
@@ -113,7 +114,7 @@
       '<div class="vd-ccanal">' + esc(c.canal) + '</div>' +
       '<div class="vd-cacc">' +
         (c.elegido
-          ? '<button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
+          ? '<button type="button" class="wv-btn mini" data-editar="' + c.id + '">✂️ Editar</button><button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
           : '<button type="button" class="wv-btn mini" data-elegir="' + c.id + '">Elegir este</button>') +
         '<a class="vd-yt" href="https://www.youtube.com/watch?v=' + esc(c.youtube_id) + '" target="_blank" rel="noopener">Abrir en YouTube</a>' +
       '</div></div>';
@@ -170,17 +171,62 @@
     btn.replaceWith(caja);
   }
 
+  // ---- Conexión con la lección: lo elegido pasa a la Clase explicativa ----
+  async function pasoVideo(lecId, crear) {
+    var r = await sb.from('lesson_steps').select('id, stream_uid, content').eq('lesson_id', lecId).eq('step_type', 'video').maybeSingle();
+    if (r.error) throw r.error;
+    if (r.data || !crear) return r.data;
+    var ins = await sb.from('lesson_steps').insert({ lesson_id: lecId, step_type: 'video', position: 1 }).select('id, stream_uid, content').single();
+    if (ins.error) throw ins.error;
+    return ins.data;
+  }
+  function listaDe(paso) {
+    var c = (paso && paso.content) || {};
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { return { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; });
+    return paso && paso.stream_uid ? [{ uid: paso.stream_uid, nombre: '', tramos: (c.tramos && c.tramos.length ? c.tramos : (c.inicio || c.fin ? [{ i: c.inicio || 0, f: c.fin || 0 }] : [])) }] : [];
+  }
+  async function guardarLista(paso, lista) {
+    var r = await sb.from('lesson_steps').update({ stream_uid: lista.length ? lista[0].uid : null, content: lista.length ? { videos: lista } : {} }).eq('id', paso.id);
+    if (r.error) throw r.error;
+  }
+  async function pasarALeccion(lecId, ytId, poner) {
+    var uid = 'yt:' + ytId, paso = await pasoVideo(lecId, poner);
+    if (!paso) return;
+    var lista = listaDe(paso), pos = -1;
+    lista.forEach(function (x, i) { if (x.uid === uid) pos = i; });
+    if (poner && pos < 0) lista.push({ uid: uid, nombre: '', tramos: [] });
+    else if (!poner && pos >= 0) lista.splice(pos, 1);
+    else return;
+    await guardarLista(paso, lista);
+  }
+  async function editar(candId) {
+    var cand = null, lecId = null;
+    Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
+    if (!cand) return;
+    await pasarALeccion(lecId, cand.youtube_id, true);
+    var uid = 'yt:' + cand.youtube_id, paso = await pasoVideo(lecId, false), lista = listaDe(paso);
+    var item = lista.filter(function (x) { return x.uid === uid; })[0];
+    WaveEditor.abrir({
+      titulo: cand.titulo, youtube: cand.youtube_id, tramos: item ? item.tramos : [],
+      guardar: async function (tramos) {
+        var p2 = await pasoVideo(lecId, false), l2 = listaDe(p2);
+        l2.forEach(function (x) { if (x.uid === uid) x.tramos = tramos; });
+        await guardarLista(p2, l2);
+        aviso(tramos.length ? 'Recorte guardado' : 'Se muestra el video entero');
+      }
+    });
+  }
+
   async function elegir(candId) {
     var cand = null, lecId = null;
     Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
     if (!cand) return;
-    var r1 = await sb.from('video_candidatos').update({ elegido: false }).eq('lesson_id', lecId).eq('elegido', true);
-    if (r1.error) throw r1.error;
     var r2 = await sb.from('video_candidatos').update({ elegido: true }).eq('id', candId);
     if (r2.error) throw r2.error;
-    D.cands[lecId].forEach(function (c) { c.elegido = (c.id === candId); });
+    cand.elegido = true;
+    await pasarALeccion(lecId, cand.youtube_id, true);
     repintarLeccion(lecId);
-    aviso('Video elegido');
+    aviso('Video elegido y agregado a la lección');
     refrescarTotales();
   }
 
@@ -191,8 +237,9 @@
     var r = await sb.from('video_candidatos').update({ elegido: false }).eq('id', candId);
     if (r.error) throw r.error;
     cand.elegido = false;
+    await pasarALeccion(lecId, cand.youtube_id, false);
     repintarLeccion(lecId);
-    aviso('Elección quitada');
+    aviso('Elección quitada (también de la lección)');
     refrescarTotales();
   }
 
@@ -238,6 +285,10 @@
       if (b.hasAttribute('data-elegir')) {
         b.disabled = true;
         elegir(b.getAttribute('data-elegir')).catch(function (e) { console.error(e); b.disabled = false; aviso('No se pudo guardar: ' + ((e && e.message) || e), true); });
+        return;
+      }
+      if (b.hasAttribute('data-editar')) {
+        editar(b.getAttribute('data-editar')).catch(function (e) { console.error(e); aviso('No se pudo abrir el editor: ' + ((e && e.message) || e), true); });
         return;
       }
       if (b.hasAttribute('data-quitar')) {
