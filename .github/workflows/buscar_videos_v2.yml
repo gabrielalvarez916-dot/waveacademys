@@ -1,6 +1,8 @@
 name: Buscar videos v2
 
 on:
+  schedule:
+    - cron: "20 */3 * * *"   # para lecciones nuevas que vaya generando la fábrica
   workflow_dispatch:
     inputs:
       prueba:
@@ -29,10 +31,10 @@ jobs:
         env:
           SUPABASE_URL: https://ndglmonqpqpfgeoxatcb.supabase.co
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          LOTE: ${{ inputs.prueba && '40' || '1200' }}
+          LOTE: ${{ inputs.prueba && '40' || '6500' }}
           DRY_RUN: ${{ inputs.prueba && '1' || '0' }}
           HILOS: "6"
-          MAX_MIN: "40"
+          MAX_MIN: "45"
         run: python buscar_videos_v2.py
       - name: Guardar resultado de la prueba
         if: ${{ inputs.prueba }}
