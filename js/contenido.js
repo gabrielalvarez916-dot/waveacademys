@@ -427,9 +427,10 @@
     if (tieneV) {
       var rn = L.render, enCola = rn && (rn.status === 'pendiente' || rn.status === 'procesando');
       var armado = vids.length > 1 || vids.some(function (x) { return (x.tramos && x.tramos.length) || x.intro; });
+      var pesado = vids.some(function (x) { return !esYt(x.uid) && !x.final; });
       var rTxt = enCola ? (rn.status === 'procesando' ? 'Se está generando… (puede tardar unos minutos)' : 'En cola: falta correr "Video final" en GitHub (Actions → Run workflow)')
-        : rn && rn.status === 'error' ? 'El último intento falló: ' + esc(rn.error || '') : rn && rn.status === 'listo' && !armado ? 'Video final generado ✔ (un solo archivo, carga rápido)' : armado ? 'Une los cortes y la intro en UN solo video que carga rápido' : 'Ya es un solo video';
-      if (armado || enCola || (rn && rn.status !== 'listo')) clase += fila('🎞️', 'Video final', rTxt, (enCola ? '' : boton('render-pedir', 'Generar video final', '')) + boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
+        : rn && rn.status === 'error' ? 'El último intento falló: ' + esc(rn.error || '') : rn && rn.status === 'listo' && !armado ? 'Video final generado ✔ (un solo archivo, carga rápido)' : armado ? 'Une los cortes y la intro en UN solo video que carga rápido' : pesado ? 'Si el video es pesado o tarda en cargar: lo comprime y lo deja listo para internet' : 'Ya es un solo video';
+      if (armado || pesado || enCola || (rn && rn.status !== 'listo')) clase += fila('🎞️', 'Video final', rTxt, (enCola ? '' : boton('render-pedir', 'Generar video final', '')) + boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
       else if (rn && rn.status === 'listo') clase += fila('🎞️', 'Video final', rTxt, boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
     }
     clase += S.introWave
