@@ -309,6 +309,7 @@ def main():
             timeout=60,
         ).raise_for_status()
 
+    reporte = []
     lock = threading.Lock()
     estado = {"hechas": 0, "con": 0, "sin": 0, "errores": 0, "seguidos": 0, "corte": False}
     inicio = time.time()
@@ -329,8 +330,10 @@ def main():
             top = videos[0]["titulo"][:70] if videos else "-"
             print(f"[{n}/{len(lista)}] {l['materia']} · {l['leccion'][:45]} -> {len(videos)} | {top}")
             if dry:
-                for v in videos:
-                    print(f"      · {v['titulo'][:80]} [{v['canal']}]")
+                bloque = [f"### {l['materia']} ({l['nivel']}) · {l['leccion']}", f"consulta: {consulta}"]
+                bloque += [f"- {v['titulo']} [{v['canal']}] {v['duracion_seg']}s" for v in videos] or ["- (sin resultados)"]
+                with lock:
+                    reporte.append("\n".join(bloque))
         except Exception as ex:  # noqa: BLE001
             with lock:
                 estado["errores"] += 1
@@ -345,6 +348,9 @@ def main():
         for _ in as_completed(futs):
             pass
 
+    if dry:
+        with open("prueba_videos.md", "w", encoding="utf-8") as f:
+            f.write("\n\n".join(reporte) + "\n")
     print(
         f"Listo. Procesadas: {estado['hechas']} | con videos: {estado['con']} | "
         f"sin resultados: {estado['sin']} | errores: {estado['errores']} | "

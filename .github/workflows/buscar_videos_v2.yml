@@ -16,6 +16,8 @@ jobs:
   buscar:
     runs-on: ubuntu-latest
     timeout-minutes: 50
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,3 +34,11 @@ jobs:
           HILOS: "6"
           MAX_MIN: "40"
         run: python buscar_videos_v2.py
+      - name: Guardar resultado de la prueba
+        if: ${{ inputs.prueba }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add prueba_videos.md
+          git commit -m "Prueba de búsqueda de videos (resultado, no guarda nada en la base)" || true
+          git push
