@@ -72,6 +72,11 @@ SUPERIOR = re.compile(
     r"\b(secundaria|bachillerato|universidad|universitario|preparatoria|selectividad|ebau|"
     r"licenciatura|facultad|cbc|ingreso a la universidad|ingenieria|calculo diferencial)\b"
 )
+# preparación para la universidad: se descarta también en secundaria
+PREUNIVERSITARIO = re.compile(
+    r"\b(preparacion universitaria|preuniversitario|pre universitario|unmsm|unalm|uni unmsm|"
+    r"examen de admision|ingreso a la universidad|selectividad|ebau)\b"
+)
 # solo para inicial: también se descarta lo de primaria en adelante
 PRIMARIA = re.compile(r"\b(primer grado|segundo grado|tercer grado|cuarto grado|quinto grado|sexto grado|primaria)\b")
 # no educativo (todos los niveles)
@@ -173,6 +178,8 @@ def evaluar(video, l):
         return None, "no educativo"
     if nivel == "avanzado" and INFANTIL.search(texto):
         return None, "infantil en secundaria"
+    if nivel == "avanzado" and PREUNIVERSITARIO.search(texto):
+        return None, "preparación universitaria"
     if nivel == "medio" and SUPERIOR.search(texto):
         return None, "nivel superior en primaria"
     if nivel == "inicial" and (SUPERIOR.search(texto) or PRIMARIA.search(texto)):
