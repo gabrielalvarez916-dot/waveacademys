@@ -97,3 +97,9 @@ body.wvp-abierto { overflow: hidden; }
 .wve-fila .wvp-b { height: 34px; font-size: 0.85rem; background: var(--menta, #D7F0E9); }
 .wve-fila .wve-x { background: #FBE9E5; color: var(--error-texto, #8F3326); }
 .wve-btn[hidden] { display: none; }
+
+.wve-acc-intro b { margin-right: 4px; }
+.wve-banda { position: absolute; top: -3px; bottom: -3px; width: 4px; margin-left: -2px; background: #F0AA3C; border-radius: 3px; z-index: 1; }
+.wve-base { overflow: visible; }
+.wve-quitado:first-child { border-radius: 8px 0 0 8px; }
+.wve-lista:empty { display: none; }

@@ -182,7 +182,7 @@
   }
   function listaDe(paso) {
     var c = (paso && paso.content) || {};
-    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; if (x.yt) o.yt = x.yt; return o; });
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = Object.assign({}, x); o.nombre = x.nombre || ''; o.tramos = x.tramos || []; return o; });
     return paso && paso.stream_uid ? [{ uid: paso.stream_uid, nombre: '', tramos: (c.tramos && c.tramos.length ? c.tramos : (c.inicio || c.fin ? [{ i: c.inicio || 0, f: c.fin || 0 }] : [])) }] : [];
   }
   async function guardarLista(paso, lista) {
@@ -191,7 +191,7 @@
   }
   // Posición de un video elegido dentro de la lección: incrustado (yt:ID) o ya reemplazado por el archivo del dueño
   function posDe(lista, ytId) {
-    for (var i = 0; i < lista.length; i++) { if (lista[i].uid === 'yt:' + ytId || lista[i].yt === ytId) return i; }
+    for (var i = 0; i < lista.length; i++) { if (!lista[i].intro && (lista[i].uid === 'yt:' + ytId || lista[i].yt === ytId)) return i; }
     return -1;
   }
   async function subidas(body) {
@@ -238,8 +238,10 @@
     var lista = listaDe(paso), pos = posDe(lista, ytId);
     if (poner && pos < 0) lista.push({ uid: 'yt:' + ytId, nombre: '', tramos: [] });
     else if (!poner && pos >= 0) {
-      var quitado = lista.splice(pos, 1)[0];
-      if (quitado.yt && !/^yt:/.test(quitado.uid)) { try { await subidas({ action: 'stream_delete', uid: quitado.uid }); } catch (e) { /* archivo huérfano */ } }
+      var quitado = lista[pos], key = quitado.uid;
+      lista = lista.filter(function (x) { return !((x.uid === key && !x.intro) || (x.intro && x.grp === key)); });
+      var sigue = lista.some(function (x) { return x.uid === key; });
+      if (quitado.yt && !/^yt:/.test(key) && !sigue) { try { await subidas({ action: 'stream_delete', uid: key }); } catch (e) { /* archivo huérfano */ } }
     } else return;
     await guardarLista(paso, lista);
   }
@@ -249,16 +251,28 @@
     if (!cand) return;
     await pasarALeccion(lecId, cand.youtube_id, true);
     var paso = await pasoVideo(lecId, false), lista = listaDe(paso), item = lista[posDe(lista, cand.youtube_id)];
-    var conf = {
-      titulo: cand.titulo, tramos: item ? item.tramos : [],
-      guardar: async function (tramos) {
-        var p2 = await pasoVideo(lecId, false), l2 = listaDe(p2), q = posDe(l2, cand.youtube_id);
-        if (q >= 0) l2[q].tramos = tramos;
-        await guardarLista(p2, l2);
-        aviso(tramos.length ? 'Recorte guardado' : 'Se muestra el video entero');
-      }
+    if (!item) return;
+    var key = item.uid, blq = WaveEditor.bloque(lista, key);
+    var ri = await sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle();
+    var introW = ri.data && ri.data.value && ri.data.value.uid ? ri.data.value : null;
+    var itemVisor = function (e) {
+      return /^yt:/.test(e.uid) ? { youtube: e.uid.slice(3), tramos: e.tramos }
+        : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid })).url; } };
     };
-    if (item && !/^yt:/.test(item.uid)) conf.url = async function () { return (await subidas({ action: 'stream_token', uid: item.uid })).url; };
+    var conf = {
+      titulo: cand.titulo, tramos: blq.tramos, inserts: blq.inserts, intro: !!introW,
+      guardar: async function (tramos, ins, dur) {
+        var p2 = await pasoVideo(lecId, false), l2 = listaDe(p2), q = posDe(l2, cand.youtube_id);
+        if (q < 0) return;
+        var src = { uid: l2[q].uid, nombre: l2[q].nombre, yt: l2[q].yt };
+        var nuevas = WaveEditor.secuencia(src, tramos, ins, dur, introW || { uid: '', tramos: [] });
+        if (!ins.length) nuevas.forEach(function (n) { delete n.grp; });
+        await guardarLista(p2, WaveEditor.reemplazar(l2, src.uid, nuevas));
+        aviso(ins.length ? 'Guardado, con la intro en ' + ins.length + (ins.length > 1 ? ' lugares' : ' lugar') : (tramos.length ? 'Recorte guardado' : 'Se muestra el video entero'));
+      },
+      vistaPrevia: function (tr, ins, dur) { return WaveEditor.secuencia({ uid: key }, tr, ins, dur, introW).map(itemVisor); }
+    };
+    if (!/^yt:/.test(key)) conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key })).url; };
     else conf.youtube = cand.youtube_id;
     WaveEditor.abrir(conf);
   }

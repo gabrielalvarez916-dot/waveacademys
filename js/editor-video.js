@@ -53,6 +53,68 @@
     });
   }
 
+
+  // ---- Secuencia: un mismo video partido en tramos con la intro intercalada donde se quiera ----
+  // Cada entrada de la lista de la lección es { uid, nombre, tramos, [yt], [intro: true, grp: uid del video] }
+  function esDelBloque(x, key) { return (x.uid === key && !x.intro) || (x.intro && x.grp === key); }
+  // Lee de la lista cómo está armado un video: tramos que se muestran + momentos donde va la intro
+  function bloque(lista, key) {
+    var idx = [], tramos = [], inserts = [], fin = 0, hay = false;
+    lista.forEach(function (x, i) {
+      if (!esDelBloque(x, key)) return;
+      idx.push(i);
+      if (x.intro) { inserts.push(hay ? fin : 0); return; }
+      var tr = x.tramos && x.tramos.length ? x.tramos : [{ i: 0, f: 0 }];
+      tr.forEach(function (t) { tramos.push({ i: Number(t.i) || 0, f: Number(t.f) || 0 }); });
+      var u = tr[tr.length - 1]; fin = Number(u.f) || 1e9; hay = true;
+    });
+    // un solo tramo "entero" = sin recorte
+    if (tramos.length === 1 && !tramos[0].i && !tramos[0].f) tramos = [];
+    else if (tramos.length > 1) {
+      var m = [];
+      tramos.forEach(function (t) { var u = m[m.length - 1]; if (u && u.f && Math.abs(u.f - t.i) < 0.05) u.f = t.f; else m.push({ i: t.i, f: t.f }); });
+      tramos = m.length === 1 && !m[0].i && !m[0].f ? [] : m;
+    }
+    return { idx: idx, tramos: tramos, inserts: inserts };
+  }
+  // Arma las entradas nuevas de un video a partir de los tramos que se muestran y los momentos de la intro
+  function secuencia(src, tramos, inserts, dur, intro) {
+    var piezas = (tramos && tramos.length ? tramos : [{ i: 0, f: 0 }]).map(function (t) { return { i: Number(t.i) || 0, f: Number(t.f) > 0 ? Number(t.f) : dur }; });
+    var ins = (inserts || []).map(function (t) { return Math.max(0, Math.min(dur, t)); }).sort(function (a, b) { return a - b; });
+    var out = [], cur = [], k = 0;
+    function cierre(x) { return { i: x.i < 0.5 ? 0 : Math.round(x.i * 10) / 10, f: x.f >= dur - 0.5 ? 0 : Math.round(x.f * 10) / 10 }; }
+    function volcar() {
+      if (!cur.length) return;
+      var tr = cur.map(cierre);
+      if (tr.length === 1 && !tr[0].i && !tr[0].f) tr = [];
+      var e = { uid: src.uid, nombre: src.nombre || '', tramos: tr, grp: src.uid };
+      if (src.yt) e.yt = src.yt;
+      out.push(e); cur = [];
+    }
+    function poner() { volcar(); out.push({ uid: intro.uid, nombre: 'Intro de Wave', tramos: intro.tramos || [], intro: true, grp: src.uid }); }
+    piezas.forEach(function (p) {
+      while (k < ins.length && ins[k] <= p.i) { poner(); k++; }
+      var ini = p.i;
+      while (k < ins.length && ins[k] < p.f) { cur.push({ i: ini, f: ins[k] }); poner(); ini = ins[k]; k++; }
+      cur.push({ i: ini, f: p.f });
+    });
+    volcar();
+    while (k < ins.length) { poner(); k++; }
+    // sin intros y sin recorte: se deja la entrada tal cual era
+    if (out.length === 1 && !out[0].intro && !ins.length) { delete out[0].grp; }
+    return out;
+  }
+  // Reemplaza en la lista el bloque del video por las entradas nuevas (en el lugar del primero)
+  function reemplazar(lista, key, nuevas) {
+    var b = bloque(lista, key), res = [], puesto = false;
+    lista.forEach(function (x, i) {
+      if (b.idx.indexOf(i) >= 0) { if (!puesto) { nuevas.forEach(function (n) { res.push(n); }); puesto = true; } return; }
+      res.push(x);
+    });
+    if (!puesto) nuevas.forEach(function (n) { res.push(n); });
+    return res;
+  }
+
   function abrir(opts) {
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -78,6 +140,11 @@
             '<button type="button" class="wve-btn suave" data-e="principio">Quitar el principio hasta acá</button>' +
             '<button type="button" class="wve-btn suave" data-e="final">Quitar desde acá hasta el final</button>' +
           '</div>' +
+          (opts.intro ? '<div class="wve-acc wve-acc-intro"><b>🎬 Intro de Wave:</b>' +
+            '<button type="button" class="wve-btn suave" data-e="intro-aca">Ponerla acá</button>' +
+            '<button type="button" class="wve-btn suave" data-e="intro-ini">Al principio</button>' +
+            '<button type="button" class="wve-btn suave" data-e="intro-fin">Al final</button></div>' : '') +
+          '<div class="wve-lista wve-lista-intro"></div>' +
           '<div class="wve-lista"></div>' +
           '<div class="wve-pie">' +
             '<span class="wve-resumen"></span>' +
@@ -93,13 +160,14 @@
     var base = el.querySelector('.wve-base'), cab = el.querySelector('.wve-cabezal');
     var reloj$ = el.querySelector('.wve-reloj'), lista = el.querySelector('.wve-lista'), resumen = el.querySelector('.wve-resumen');
     var bIni = el.querySelector('[data-e="ini"]'), bCan = el.querySelector('[data-e="cancelar"]'), bPlay = el.querySelector('.wve-play');
-    var dur = 0, ahora = 0, suena = false, cuts = [], pend = null, vivo = true, player = null, tramosIni = opts.tramos || [];
+    var dur = 0, ahora = 0, suena = false, cuts = [], ins = (opts.inserts || []).slice(), listaIntro = el.querySelector('.wve-lista-intro'), pend = null, vivo = true, player = null, tramosIni = opts.tramos || [];
 
     function listo() { return dur > 0; }
     function pintar() {
       if (!listo()) return;
       var pct = function (s) { return (Math.max(0, Math.min(dur, s)) / dur * 100).toFixed(3) + '%'; };
       base.innerHTML = cuts.map(function (c) { return '<i class="wve-quitado" style="left:' + pct(c.a) + ';width:' + ((c.b - c.a) / dur * 100).toFixed(3) + '%"></i>'; }).join('') +
+        ins.map(function (t) { return '<i class="wve-banda" style="left:' + pct(t) + '"></i>'; }).join('') +
         (pend != null ? '<i class="wve-pend" style="left:' + pct(pend) + ';width:' + (Math.max(0, ahora - pend) / dur * 100).toFixed(3) + '%"></i>' : '');
       cab.style.left = pct(ahora);
       reloj$.textContent = reloj(ahora) + ' / ' + reloj(dur);
@@ -108,6 +176,14 @@
       bCan.hidden = pend == null;
       var quit = cuts.reduce(function (a, c) { return a + (c.b - c.a); }, 0);
       resumen.textContent = cuts.length ? 'Queda de ' + reloj(dur - quit) + ' (se quitan ' + reloj(quit) + ' de ' + reloj(dur) + ')' : 'Sin recortes: se muestra el video entero (' + reloj(dur) + ')';
+      listaIntro.innerHTML = ins.length
+        ? '<b>Intro de Wave en estos momentos</b>' + ins.map(function (t, i) {
+            return '<div class="wve-fila"><span>🎬 ' + reloj(t) + '</span>' +
+              '<button type="button" class="wvp-b" data-e="iir" data-i="' + i + '">Ir ahí</button>' +
+              '<button type="button" class="wvp-b" data-e="imover" data-i="' + i + '">Cambiar momento</button>' +
+              '<button type="button" class="wvp-b wve-x" data-e="iquitar" data-i="' + i + '">Quitar</button></div>';
+          }).join('')
+        : '';
       lista.innerHTML = cuts.length
         ? '<b>Partes quitadas</b>' + cuts.map(function (c, i) {
             return '<div class="wve-fila"><span>' + reloj(c.a) + ' → ' + reloj(c.b) + '</span>' +
@@ -120,6 +196,7 @@
     function alListo() {
       if (!listo()) return;
       cuts = cortesDe(tramosIni, dur);
+      ins = ins.map(function (t) { return Math.min(t, dur); }).sort(function (a, b) { return a - b; });
       pintar();
     }
     // Reproductor: se maneja igual con YouTube que con archivo de video
@@ -233,15 +310,26 @@
         if (!(x === x && y === y) || y <= x) return toast('Escribilo así: 1:20 - 2:05 (el final tiene que ser después del inicio).');
         cuts.splice(i, 1); cuts = limpiar(cuts.concat([{ a: x, b: y }]), dur); return pintar();
       }
+      if (a === 'intro-aca') { ins.push(ahora); ins.sort(function (x, y) { return x - y; }); return pintar(); }
+      if (a === 'intro-ini') { ins.push(0); ins.sort(function (x, y) { return x - y; }); return pintar(); }
+      if (a === 'intro-fin') { ins.push(dur); ins.sort(function (x, y) { return x - y; }); return pintar(); }
+      if (a === 'iir' && ins[i] != null) return ir(Math.max(0, ins[i] - 2));
+      if (a === 'iquitar' && ins[i] != null) { ins.splice(i, 1); return pintar(); }
+      if (a === 'imover' && ins[i] != null) {
+        var tt = aSeg(prompt('¿En qué momento va la intro? (minutos:segundos)', reloj(ins[i])));
+        if (tt !== tt || tt == null) return;
+        ins[i] = Math.max(0, Math.min(dur, tt)); ins.sort(function (x, y) { return x - y; }); return pintar();
+      }
       if (a === 'probar') {
         if (player) player.pause();
         var tr = tramosDe(cuts, dur);
+        if (ins.length && opts.vistaPrevia) return window.WaveVisor.abrirVideo({ titulo: opts.titulo, lista: opts.vistaPrevia(tr, ins, dur) });
         return window.WaveVisor.abrirVideo({ titulo: opts.titulo, youtube: opts.youtube, url: opts.url, tramos: tr });
       }
       if (a === 'guardar') {
         if (pend != null) return toast('Falta terminar la parte que empezaste a quitar (o tocá Cancelar).');
         b.disabled = true; b.textContent = 'Guardando…';
-        try { await opts.guardar(tramosDe(cuts, dur)); cerrar(); }
+        try { await opts.guardar(tramosDe(cuts, dur), ins.slice(), dur); cerrar(); }
         catch (e) { b.disabled = false; b.textContent = 'Guardar'; toast((e && e.message) || 'No se pudo guardar.'); }
       }
     });
@@ -249,5 +337,6 @@
   }
 
   window.WaveEditor.abrir = abrir;
+  window.WaveEditor.bloque = bloque; window.WaveEditor.secuencia = secuencia; window.WaveEditor.reemplazar = reemplazar;
   window.WaveEditor._calc = { limpiar: limpiar, cortesDe: cortesDe, tramosDe: tramosDe };
 })();

@@ -113,7 +113,7 @@
   // Lista de videos del paso (formato nuevo: content.videos; formato viejo: un solo video en stream_uid)
   function videosDe(v) {
     var c = (v && v.content) || {};
-    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; if (x.yt) o.yt = x.yt; return o; });
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = Object.assign({}, x); o.nombre = x.nombre || ''; o.tramos = x.tramos || []; return o; });
     return v && v.stream_uid ? [{ uid: v.stream_uid, nombre: '', tramos: tramosDe(c) }] : [];
   }
   async function guardarVideos(lista) {
@@ -127,7 +127,7 @@
       var f = filas[i] || ['', ''];
       h += '<div class="wv-rec-fila"><span>' + (n > 1 ? 'Parte ' + (i + 1) + ': desde' : 'Desde') + '</span><input class="wv-rec-i" type="text" inputmode="numeric" placeholder="0:00" value="' + esc(f[0]) + '"><span>hasta</span><input class="wv-rec-f" type="text" inputmode="numeric" placeholder="final" value="' + esc(f[1]) + '"></div>';
     }
-    return h + '<div class="wv-rec-b">' + boton('video-editar:' + vi, '🎞️ Editar mirando el video', '') + boton('video-rec-mas:' + vi, '+ Agregar otra parte', 'suave') + boton('video-rec:' + vi, 'Guardar recorte', 'suave') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
+    return h + '<div class="wv-rec-b">' + (x.intro ? '' : boton('video-editar:' + vi, '🎞️ Editar mirando el video', '')) + boton('video-rec-mas:' + vi, '+ Agregar otra parte', 'suave') + boton('video-rec:' + vi, 'Guardar recorte', 'suave') + '</div><small>Minutos:segundos. Todo vacío = video entero. Para quitar una parte, dejá su fila vacía y guardá.</small></div>';
   }
   function leerRecorte(vi) {
     var r = { tramos: [], crudo: [], mal: false };
@@ -416,16 +416,16 @@
     var pdfNom = tieneP ? (pdf.title || pdf.r2_key.split('/').pop().replace(/^[a-z0-9]{8}-/, '')) : '';
     var clase = '';
     vids.forEach(function (x, i) {
-      var nom = esYt(x.uid) ? 'Video de YouTube incrustado' : (x.nombre || x.uid.split('/').pop().replace(/^[a-z0-9]{8}-/, ''));
+      var nom = x.intro ? '🎬 Intro de Wave' : esYt(x.uid) ? 'Video de YouTube incrustado' : (x.nombre || x.uid.split('/').pop().replace(/^[a-z0-9]{8}-/, ''));
       clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom),
         boton('video-ver:' + i, 'Ver') +
         (vids.length > 1 ? '<button type="button" class="wv-ico" title="Subir" data-acc="video-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button><button type="button" class="wv-ico" title="Bajar" data-acc="video-mov:' + i + ':1"' + (i === vids.length - 1 ? ' disabled' : '') + '>▼</button>' : '') +
-        (esYt(x.uid) ? boton('video-introdef:' + i, '⭐ Usar como intro', 'suave') : '') +
+        (x.intro ? '' : boton('video-introdef:' + i, '⭐ Usar como intro', 'suave')) +
         boton('video-del:' + i, 'Quitar', 'peligro')) + recorteHtml(x, i);
     });
-    if (S.introWave && !(vids[0] && vids[0].uid === S.introWave.uid)) {
-      clase += fila('⭐', 'Intro de Wave', 'Se agrega al principio de la clase, antes de los demás videos', boton('video-intro', 'Agregar intro', ''), 'wv-i-introwave');
-    }
+    clase += S.introWave
+      ? fila('⭐', 'Intro de Wave', 'Agregala al principio, o ubicala donde quieras con "Editar mirando el video"', boton('video-intro', 'Agregar al principio', ''), 'wv-i-introwave')
+      : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro (se sube una sola vez y sirve para todas las lecciones)', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
       boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
@@ -491,6 +491,20 @@
       await refrescarEstados(); await abrirLeccion();
     } catch (e) { toast(e.message, true); pintarLeccion(); }
   }
+  // Intro de Wave: se sube una sola vez y queda disponible para cualquier lección
+  async function subirIntroWave(f) {
+    try {
+      msg('wv-i-introwave', 'Preparando subida…');
+      var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
+      await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-introwave', 'Subiendo… ' + p + '%'); });
+      var val = { uid: d.key, nombre: f.name, tramos: [] };
+      var ri = await sb.from('app_settings').upsert({ key: 'intro_wave', value: val }, { onConflict: 'key' });
+      if (ri.error) throw new Error('El archivo se subió pero no se pudo guardar como intro: ' + ri.error.message);
+      S.introWave = val;
+      toast('Intro de Wave guardada. Ya la podés agregar a cualquier lección.');
+    } catch (e) { toast(e.message, true); }
+    pintarLeccion();
+  }
   async function subirPdf(f) {
     try {
       msg('wv-i-pdf', 'Subiendo…');
@@ -555,9 +569,10 @@
     var p = acc.split(':'), a = p[0];
     try {
       if (a === 'video-rec-mas') { var vm = +p[1]; L.recN[vm] = document.querySelectorAll('.wv-recorte[data-vi="' + vm + '"] .wv-rec-fila').length + 1; L.recTmp[vm] = leerRecorte(vm).crudo; return pintarLeccion(); }
+      if (a === 'introw-up') return elegirArchivo('video/*', false, function (fs) { subirIntroWave(fs[0]); });
       if (a === 'video-introdef') {
         var xi = videosDe(L.pasos.video)[+p[1]];
-        if (!xi || !esYt(xi.uid)) return;
+        if (!xi || xi.intro) return;
         if (!confirm('¿Usar este video como la intro de Wave? Después la podés agregar con un clic al principio de cualquier lección (con el recorte que tenga ahora).')) return;
         var ri = await sb.from('app_settings').upsert({ key: 'intro_wave', value: { uid: xi.uid, tramos: xi.tramos || [] } }, { onConflict: 'key' });
         if (ri.error) throw new Error('No se pudo guardar la intro: ' + ri.error.message);
@@ -568,29 +583,45 @@
       if (a === 'video-intro') {
         if (!S.introWave) return toast('Todavía no elegiste la intro de Wave.', true);
         var lw = videosDe(L.pasos.video);
-        if (lw[0] && lw[0].uid === S.introWave.uid) return toast('Esta lección ya empieza con la intro.');
-        lw.unshift({ uid: S.introWave.uid, nombre: 'Intro de Wave', tramos: S.introWave.tramos || [] });
+        if (lw[0] && lw[0].intro) return toast('Esta lección ya empieza con la intro.');
+        lw.unshift({ uid: S.introWave.uid, nombre: 'Intro de Wave', tramos: S.introWave.tramos || [], intro: true });
         L.recTmp = {}; L.recN = {};
         await guardarVideos(lw);
         toast('Intro agregada al principio');
         await refrescarEstados(); return abrirLeccion();
       }
       if (a === 'video-editar') {
-        var ve = +p[1], xe = videosDe(L.pasos.video)[ve];
-        if (!xe) return;
-        var guardarEd = async function (tr) {
-          var le = videosDe(L.pasos.video);
-          if (!le[ve]) return;
-          le[ve].tramos = tr; L.recN[ve] = 0; L.recTmp[ve] = null;
-          await guardarVideos(le);
-          toast(tr.length ? 'Recorte guardado' : 'Se muestra el video entero');
+        var ve = +p[1], lista0 = videosDe(L.pasos.video), xe = lista0[ve];
+        if (!xe || xe.intro) return;
+        var key = xe.uid, blq = WaveEditor.bloque(lista0, key);
+        var itemVisor = function (e) {
+          return esYt(e.uid) ? { youtube: e.uid.slice(3), tramos: e.tramos }
+            : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid })).url; } };
+        };
+        var guardarEd = async function (tr, ins, dur) {
+          var le = videosDe(L.pasos.video), src = le.filter(function (x) { return x.uid === key && !x.intro; })[0];
+          if (!src) return;
+          var srcLimpio = { uid: src.uid, nombre: src.nombre, yt: src.yt };
+          var nuevas = WaveEditor.secuencia(srcLimpio, tr, ins, dur, S.introWave || { uid: '', tramos: [] });
+          if (!ins.length) nuevas.forEach(function (n) { delete n.grp; });
+          L.recN = {}; L.recTmp = {};
+          await guardarVideos(WaveEditor.reemplazar(le, key, nuevas));
+          toast(ins.length ? 'Guardado, con la intro en ' + ins.length + (ins.length > 1 ? ' lugares' : ' lugar') : (tr.length ? 'Recorte guardado' : 'Se muestra el video entero'));
           pintarLeccion();
         };
-        if (esYt(xe.uid)) return WaveEditor.abrir({ titulo: nombre('lesson', R.lesson), youtube: xe.uid.slice(3), tramos: xe.tramos, guardar: guardarEd });
-        var ste = await subidas({ action: 'stream_status', uid: xe.uid });
+        var conf = {
+          titulo: nombre('lesson', R.lesson), tramos: blq.tramos, inserts: blq.inserts, guardar: guardarEd,
+          intro: !!S.introWave,
+          vistaPrevia: function (tr, ins, dur) {
+            var src = { uid: key, nombre: '', yt: null };
+            return WaveEditor.secuencia(src, tr, ins, dur, S.introWave).map(itemVisor);
+          }
+        };
+        if (esYt(key)) { conf.youtube = key.slice(3); return WaveEditor.abrir(conf); }
+        var ste = await subidas({ action: 'stream_status', uid: key });
         if (!ste.ready) return toast('No se encontró el archivo del video.', true);
-        return WaveEditor.abrir({ titulo: nombre('lesson', R.lesson), tramos: xe.tramos, guardar: guardarEd,
-          url: async function () { return (await subidas({ action: 'stream_token', uid: xe.uid })).url; } });
+        conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key })).url; };
+        return WaveEditor.abrir(conf);
       }
       if (a === 'video-rec') {
         var vr = +p[1], lr = leerRecorte(vr), tr = lr.tramos;
@@ -662,7 +693,8 @@
         ld.splice(+p[1], 1);
         L.recTmp = {}; L.recN = {};
         await guardarVideos(ld);
-        if (!esYt(xd.uid)) { try { await subidas({ action: 'stream_delete', uid: xd.uid }); } catch (e) { /* huérfano */ } }
+        var enUso = xd.intro || (S.introWave && S.introWave.uid === xd.uid) || ld.some(function (o) { return o.uid === xd.uid; });
+        if (!esYt(xd.uid) && !enUso) { try { await subidas({ action: 'stream_delete', uid: xd.uid }); } catch (e) { /* huérfano */ } }
         await refrescarEstados(); return abrirLeccion();
       }
       if (a === 'pdf-up') return elegirArchivo('application/pdf,.pdf', false, function (fs) { subirPdf(fs[0]); });
