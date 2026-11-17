@@ -114,7 +114,7 @@
       '<div class="vd-ccanal">' + esc(c.canal) + '</div>' +
       '<div class="vd-cacc">' +
         (c.elegido
-          ? '<button type="button" class="wv-btn mini" data-editar="' + c.id + '">✂️ Editar</button><button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
+          ? '<button type="button" class="wv-btn mini" data-editar="' + c.id + '">✂️ Editar</button><button type="button" class="wv-btn mini suave" data-archivo="' + c.id + '" title="Reemplaza el video incrustado por el archivo que te dio el dueño">' + (c.conArchivo ? '⬆ Cambiar archivo' : '⬆ Subir archivo del dueño') + '</button><button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
           : '<button type="button" class="wv-btn mini" data-elegir="' + c.id + '">Elegir este</button>') +
         '<a class="vd-yt" href="https://www.youtube.com/watch?v=' + esc(c.youtube_id) + '" target="_blank" rel="noopener">Abrir en YouTube</a>' +
       '</div></div>';
@@ -182,21 +182,65 @@
   }
   function listaDe(paso) {
     var c = (paso && paso.content) || {};
-    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { return { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; });
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; if (x.yt) o.yt = x.yt; return o; });
     return paso && paso.stream_uid ? [{ uid: paso.stream_uid, nombre: '', tramos: (c.tramos && c.tramos.length ? c.tramos : (c.inicio || c.fin ? [{ i: c.inicio || 0, f: c.fin || 0 }] : [])) }] : [];
   }
   async function guardarLista(paso, lista) {
     var r = await sb.from('lesson_steps').update({ stream_uid: lista.length ? lista[0].uid : null, content: lista.length ? { videos: lista } : {} }).eq('id', paso.id);
     if (r.error) throw r.error;
   }
+  // Posición de un video elegido dentro de la lección: incrustado (yt:ID) o ya reemplazado por el archivo del dueño
+  function posDe(lista, ytId) {
+    for (var i = 0; i < lista.length; i++) { if (lista[i].uid === 'yt:' + ytId || lista[i].yt === ytId) return i; }
+    return -1;
+  }
+  async function subidas(body) {
+    var r = await sb.functions.invoke('content-upload', { body: body });
+    if (r.error) {
+      var msg = 'No se pudo completar. Intentá de nuevo.';
+      try { var c = await r.error.context.json(); if (c && c.error) msg = c.error; } catch (e) { /* genérico */ }
+      throw new Error(msg);
+    }
+    if (r.data && r.data.error) throw new Error(r.data.error);
+    return r.data;
+  }
+  function enviar(url, cuerpo, onProg) {
+    return new Promise(function (ok, mal) {
+      var x = new XMLHttpRequest();
+      x.open('PUT', url);
+      x.upload.onprogress = function (ev) { if (ev.lengthComputable && onProg) onProg(Math.round(ev.loaded * 100 / ev.total)); };
+      x.onload = function () { (x.status >= 200 && x.status < 300) ? ok() : mal(new Error('El servidor rechazó el archivo (' + x.status + ').')); };
+      x.onerror = function () { mal(new Error('No se pudo subir el archivo. Revisá tu conexión.')); };
+      x.send(cuerpo);
+    });
+  }
+  // Reemplaza el video incrustado por el archivo que te dio el dueño (sin anuncios, con los mismos recortes)
+  async function subirArchivo(candId, archivo, btn) {
+    var cand = null, lecId = null;
+    Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
+    if (!cand) return;
+    var d = await subidas({ action: 'r2_upload_url', lesson_id: lecId, filename: archivo.name });
+    await enviar(d.url, archivo, function (pc) { btn.textContent = 'Subiendo… ' + pc + '%'; });
+    var paso = await pasoVideo(lecId, true), lista = listaDe(paso), pos = posDe(lista, cand.youtube_id);
+    var nuevo = { uid: d.key, nombre: archivo.name, tramos: pos >= 0 ? lista[pos].tramos : [], yt: cand.youtube_id };
+    var viejo = pos >= 0 ? lista[pos] : null;
+    if (pos >= 0) lista[pos] = nuevo; else lista.push(nuevo);
+    await guardarLista(paso, lista);
+    if (viejo && viejo.yt && !/^yt:/.test(viejo.uid)) { try { await subidas({ action: 'stream_delete', uid: viejo.uid }); } catch (e) { /* huérfano */ } }
+    cand.conArchivo = true;
+    repintarLeccion(lecId);
+    aviso('Archivo subido: esta lección ya usa el video del dueño, sin anuncios');
+  }
+
   async function pasarALeccion(lecId, ytId, poner) {
-    var uid = 'yt:' + ytId, paso = await pasoVideo(lecId, poner);
+    var paso = await pasoVideo(lecId, poner);
     if (!paso) return;
-    var lista = listaDe(paso), pos = -1;
-    lista.forEach(function (x, i) { if (x.uid === uid) pos = i; });
-    if (poner && pos < 0) lista.push({ uid: uid, nombre: '', tramos: [] });
-    else if (!poner && pos >= 0) lista.splice(pos, 1);
-    else return;
+    var lista = listaDe(paso), pos = posDe(lista, ytId);
+    if (poner && pos < 0) lista.push({ uid: 'yt:' + ytId, nombre: '', tramos: [] });
+    else if (!poner && pos >= 0) {
+      var quitado = lista.splice(pos, 1)[0];
+      if (quitado.yt && !/^yt:/.test(quitado.uid)) { try { await subidas({ action: 'stream_delete', uid: quitado.uid }); } catch (e) { /* archivo huérfano */ } }
+    } else return;
     await guardarLista(paso, lista);
   }
   async function editar(candId) {
@@ -204,17 +248,19 @@
     Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
     if (!cand) return;
     await pasarALeccion(lecId, cand.youtube_id, true);
-    var uid = 'yt:' + cand.youtube_id, paso = await pasoVideo(lecId, false), lista = listaDe(paso);
-    var item = lista.filter(function (x) { return x.uid === uid; })[0];
-    WaveEditor.abrir({
-      titulo: cand.titulo, youtube: cand.youtube_id, tramos: item ? item.tramos : [],
+    var paso = await pasoVideo(lecId, false), lista = listaDe(paso), item = lista[posDe(lista, cand.youtube_id)];
+    var conf = {
+      titulo: cand.titulo, tramos: item ? item.tramos : [],
       guardar: async function (tramos) {
-        var p2 = await pasoVideo(lecId, false), l2 = listaDe(p2);
-        l2.forEach(function (x) { if (x.uid === uid) x.tramos = tramos; });
+        var p2 = await pasoVideo(lecId, false), l2 = listaDe(p2), q = posDe(l2, cand.youtube_id);
+        if (q >= 0) l2[q].tramos = tramos;
         await guardarLista(p2, l2);
         aviso(tramos.length ? 'Recorte guardado' : 'Se muestra el video entero');
       }
-    });
+    };
+    if (item && !/^yt:/.test(item.uid)) conf.url = async function () { return (await subidas({ action: 'stream_token', uid: item.uid })).url; };
+    else conf.youtube = cand.youtube_id;
+    WaveEditor.abrir(conf);
   }
 
   async function elegir(candId) {
@@ -285,6 +331,17 @@
       if (b.hasAttribute('data-elegir')) {
         b.disabled = true;
         elegir(b.getAttribute('data-elegir')).catch(function (e) { console.error(e); b.disabled = false; aviso('No se pudo guardar: ' + ((e && e.message) || e), true); });
+        return;
+      }
+      if (b.hasAttribute('data-archivo')) {
+        var idc = b.getAttribute('data-archivo'), inp = document.createElement('input');
+        inp.type = 'file'; inp.accept = 'video/*';
+        inp.addEventListener('change', function () {
+          var f = inp.files && inp.files[0]; if (!f) return;
+          var txt = b.textContent; b.disabled = true; b.textContent = 'Preparando…';
+          subirArchivo(idc, f, b).catch(function (e) { console.error(e); b.disabled = false; b.textContent = txt; aviso('No se pudo subir: ' + ((e && e.message) || e), true); });
+        });
+        inp.click();
         return;
       }
       if (b.hasAttribute('data-editar')) {

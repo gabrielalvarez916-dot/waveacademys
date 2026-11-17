@@ -113,7 +113,7 @@
   // Lista de videos del paso (formato nuevo: content.videos; formato viejo: un solo video en stream_uid)
   function videosDe(v) {
     var c = (v && v.content) || {};
-    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { return { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; });
+    if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = { uid: x.uid, nombre: x.nombre || '', tramos: x.tramos || [] }; if (x.yt) o.yt = x.yt; return o; });
     return v && v.stream_uid ? [{ uid: v.stream_uid, nombre: '', tramos: tramosDe(c) }] : [];
   }
   async function guardarVideos(lista) {
