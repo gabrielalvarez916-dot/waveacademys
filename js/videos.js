@@ -219,6 +219,8 @@
     var cand = null, lecId = null;
     Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
     if (!cand) return;
+    var rv = await WaveEditor.revisarMp4(archivo);
+    if (!rv.ok && !confirm(WaveEditor.avisoMp4)) throw new Error('Subida cancelada');
     var d = await subidas({ action: 'r2_upload_url', lesson_id: lecId, filename: archivo.name });
     await enviar(d.url, archivo, function (pc) { btn.textContent = 'Subiendo… ' + pc + '%'; });
     var paso = await pasoVideo(lecId, true), lista = listaDe(paso), pos = posDe(lista, cand.youtube_id);

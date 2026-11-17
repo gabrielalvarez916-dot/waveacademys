@@ -482,6 +482,8 @@
 
   async function subirVideo(f) {
     try {
+      var rv = await WaveEditor.revisarMp4(f);
+      if (!rv.ok && !confirm(WaveEditor.avisoMp4)) return;
       msg('wv-i-video', 'Preparando subida…');
       var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
       await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-video', 'Subiendo… ' + p + '%'); });
@@ -494,6 +496,8 @@
   // Intro de Wave: se sube una sola vez y queda disponible para cualquier lección
   async function subirIntroWave(f) {
     try {
+      var rw = await WaveEditor.revisarMp4(f);
+      if (!rw.ok && !confirm(WaveEditor.avisoMp4)) return;
       msg('wv-i-introwave', 'Preparando subida…');
       var d = await subidas({ action: 'r2_upload_url', lesson_id: R.lesson, filename: f.name });
       await enviar(d.url, 'PUT', f, function (p) { msg('wv-i-introwave', 'Subiendo… ' + p + '%'); });

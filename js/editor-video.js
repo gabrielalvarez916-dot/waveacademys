@@ -115,6 +115,28 @@
     return res;
   }
 
+  // Revisa si un MP4 está "optimizado para web" (la información de inicio va antes de las imágenes).
+  // Si no lo está, el navegador tiene que bajar casi todo el archivo antes de poder reproducirlo.
+  async function revisarMp4(f) {
+    try {
+      if (!f || !/\.(mp4|m4v|mov)$/i.test(f.name || '')) return { ok: true, desconocido: true };
+      var pos = 0, vistoMdat = false, n = 0;
+      while (pos < f.size && n++ < 40) {
+        var b = new DataView(await f.slice(pos, pos + 16).arrayBuffer());
+        if (b.byteLength < 8) break;
+        var tam = b.getUint32(0), tipo = String.fromCharCode(b.getUint8(4), b.getUint8(5), b.getUint8(6), b.getUint8(7));
+        if (tam === 1) { if (b.byteLength < 16) break; tam = b.getUint32(8) * 4294967296 + b.getUint32(12); }
+        else if (tam === 0) tam = f.size - pos;
+        if (tipo === 'moov') return { ok: !vistoMdat };
+        if (tipo === 'mdat') vistoMdat = true;
+        if (tam < 8) break;
+        pos += tam;
+      }
+      return { ok: true, desconocido: true };
+    } catch (e) { return { ok: true, desconocido: true }; }
+  }
+  var AVISO_MP4 = 'Este video no está optimizado para internet: va a tardar mucho en empezar a reproducirse y el editor se va a sentir lento.\\n\\nConviene pasarlo antes por HandBrake (tildando "Web optimized") o por ffmpeg con -movflags +faststart, y subir el resultado.\\n\\n¿Subirlo igual?';
+
   function abrir(opts) {
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -160,7 +182,7 @@
     var base = el.querySelector('.wve-base'), cab = el.querySelector('.wve-cabezal');
     var reloj$ = el.querySelector('.wve-reloj'), lista = el.querySelector('.wve-lista'), resumen = el.querySelector('.wve-resumen');
     var bIni = el.querySelector('[data-e="ini"]'), bCan = el.querySelector('[data-e="cancelar"]'), bPlay = el.querySelector('.wve-play');
-    var dur = 0, ahora = 0, suena = false, cuts = [], ins = (opts.inserts || []).slice(), listaIntro = el.querySelector('.wve-lista-intro'), pend = null, vivo = true, player = null, tramosIni = opts.tramos || [];
+    var inicial = '', dur = 0, ahora = 0, suena = false, cuts = [], ins = (opts.inserts || []).slice(), listaIntro = el.querySelector('.wve-lista-intro'), pend = null, vivo = true, player = null, tramosIni = opts.tramos || [];
 
     function listo() { return dur > 0; }
     function pintar() {
@@ -197,6 +219,7 @@
       if (!listo()) return;
       cuts = cortesDe(tramosIni, dur);
       ins = ins.map(function (t) { return Math.min(t, dur); }).sort(function (a, b) { return a - b; });
+      inicial = JSON.stringify([cuts, ins]);
       pintar();
     }
     // Reproductor: se maneja igual con YouTube que con archivo de video
@@ -256,6 +279,7 @@
     // Si YouTube no informa la duración, se pide a mano
     var espera = setTimeout(function () {
       if (listo() || !vivo) return;
+      if (!opts.youtube) { resumen.textContent = 'Cargando el video… si tarda mucho es porque el archivo no está optimizado para internet o es muy pesado.'; return; }
       var t = prompt('No pudimos leer la duración del video. Escribila (minutos:segundos), por ejemplo 12:30:');
       var d = aSeg(t);
       if (d === d && d > 0) { dur = d; alListo(); }
@@ -268,6 +292,8 @@
       pend = null; pintar();
     }
     function toast(t) { try { window.alert(t); } catch (e) { /* nada */ } }
+    function sucio() { return listo() && JSON.stringify([cuts, ins]) !== inicial; }
+    function pedirCerrar() { if (sucio() && !confirm('Tenés cambios sin guardar. ¿Cerrar igual y perderlos?')) return; cerrar(); }
     function cerrar() {
       vivo = false; clearTimeout(espera); detener();
       document.removeEventListener('keydown', tecla);
@@ -276,7 +302,7 @@
     }
     function tecla(ev) {
       var tag = (ev.target && ev.target.tagName) || '';
-      if (ev.key === 'Escape' && !document.querySelector('.wvp ~ .wvp')) cerrar();
+      if (ev.key === 'Escape' && !document.querySelector('.wvp ~ .wvp')) pedirCerrar();
       else if (ev.key === 'ArrowLeft' && !/INPUT|TEXTAREA/.test(tag)) ir(ahora - 5);
       else if (ev.key === 'ArrowRight' && !/INPUT|TEXTAREA/.test(tag)) ir(ahora + 5);
     }
@@ -290,9 +316,9 @@
 
     el.addEventListener('click', async function (ev) {
       var b = ev.target.closest('[data-e]');
-      if (!b) { if (ev.target === el) cerrar(); return; }
+      if (!b) return;
       var a = b.getAttribute('data-e'), i = +b.getAttribute('data-i');
-      if (a === 'cerrar') return cerrar();
+      if (a === 'cerrar') return pedirCerrar();
       if (!listo()) return;
       if (a === 'play') return suena ? player.pause() : player.play();
       if (a === 'atras') return ir(ahora - 5);
@@ -337,6 +363,6 @@
   }
 
   window.WaveEditor.abrir = abrir;
-  window.WaveEditor.bloque = bloque; window.WaveEditor.secuencia = secuencia; window.WaveEditor.reemplazar = reemplazar;
+  window.WaveEditor.revisarMp4 = revisarMp4; window.WaveEditor.avisoMp4 = AVISO_MP4; window.WaveEditor.bloque = bloque; window.WaveEditor.secuencia = secuencia; window.WaveEditor.reemplazar = reemplazar;
   window.WaveEditor._calc = { limpiar: limpiar, cortesDe: cortesDe, tramosDe: tramosDe };
 })();
