@@ -45,11 +45,13 @@
       todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position, intro_video_uid').order('position').order('id'); }),
       todo(function () { return sb.from('topics').select('id, subject_id, title, position, is_published').order('position').order('id'); }),
       todo(function () { return sb.from('subject_load_config').select('subject_id, tier, hours_total, topics_total').order('subject_id'); }),
-      sb.from('load_tiers').select('tier, label')
+      sb.from('load_tiers').select('tier, label'),
+      sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle()
     ]);
     if (res[0].error) throw res[0].error;
     if (res[1].error) throw res[1].error;
     if (res[5].error) throw res[5].error;
+    S.introWave = res[6] && res[6].data && res[6].data.value && res[6].data.value.uid ? res[6].data.value : null;
     S.cargas = {}; res[4].forEach(function (c) { S.cargas[c.subject_id] = c; });
     S.tiers = {}; res[5].data.forEach(function (t) { S.tiers[t.tier] = t.label; });
     S.levels = res[0].data; S.grades = res[1].data; S.subjects = res[2]; S.topics = res[3];
@@ -418,8 +420,12 @@
       clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom),
         boton('video-ver:' + i, 'Ver') +
         (vids.length > 1 ? '<button type="button" class="wv-ico" title="Subir" data-acc="video-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button><button type="button" class="wv-ico" title="Bajar" data-acc="video-mov:' + i + ':1"' + (i === vids.length - 1 ? ' disabled' : '') + '>▼</button>' : '') +
+        (esYt(x.uid) ? boton('video-introdef:' + i, '⭐ Usar como intro', 'suave') : '') +
         boton('video-del:' + i, 'Quitar', 'peligro')) + recorteHtml(x, i);
     });
+    if (S.introWave && !(vids[0] && vids[0].uid === S.introWave.uid)) {
+      clase += fila('⭐', 'Intro de Wave', 'Se agrega al principio de la clase, antes de los demás videos', boton('video-intro', 'Agregar intro', ''), 'wv-i-introwave');
+    }
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
       boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video') +
       fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
@@ -549,6 +555,26 @@
     var p = acc.split(':'), a = p[0];
     try {
       if (a === 'video-rec-mas') { var vm = +p[1]; L.recN[vm] = document.querySelectorAll('.wv-recorte[data-vi="' + vm + '"] .wv-rec-fila').length + 1; L.recTmp[vm] = leerRecorte(vm).crudo; return pintarLeccion(); }
+      if (a === 'video-introdef') {
+        var xi = videosDe(L.pasos.video)[+p[1]];
+        if (!xi || !esYt(xi.uid)) return;
+        if (!confirm('¿Usar este video como la intro de Wave? Después la podés agregar con un clic al principio de cualquier lección (con el recorte que tenga ahora).')) return;
+        var ri = await sb.from('app_settings').upsert({ key: 'intro_wave', value: { uid: xi.uid, tramos: xi.tramos || [] } }, { onConflict: 'key' });
+        if (ri.error) throw new Error('No se pudo guardar la intro: ' + ri.error.message);
+        S.introWave = { uid: xi.uid, tramos: xi.tramos || [] };
+        toast('Intro de Wave guardada');
+        return pintarLeccion();
+      }
+      if (a === 'video-intro') {
+        if (!S.introWave) return toast('Todavía no elegiste la intro de Wave.', true);
+        var lw = videosDe(L.pasos.video);
+        if (lw[0] && lw[0].uid === S.introWave.uid) return toast('Esta lección ya empieza con la intro.');
+        lw.unshift({ uid: S.introWave.uid, nombre: 'Intro de Wave', tramos: S.introWave.tramos || [] });
+        L.recTmp = {}; L.recN = {};
+        await guardarVideos(lw);
+        toast('Intro agregada al principio');
+        await refrescarEstados(); return abrirLeccion();
+      }
       if (a === 'video-editar') {
         var ve = +p[1], xe = videosDe(L.pasos.video)[ve];
         if (!xe) return;
