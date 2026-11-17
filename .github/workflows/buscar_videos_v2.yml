@@ -1,12 +1,15 @@
-name: Buscar videos candidatos
+name: Buscar videos v2
 
 on:
-  schedule:
-    - cron: "0 */2 * * *"
   workflow_dispatch:
+    inputs:
+      prueba:
+        description: "Prueba: busca pocas lecciones y NO guarda nada"
+        type: boolean
+        default: false
 
 concurrency:
-  group: buscar-videos
+  group: buscar-videos-v2
   cancel-in-progress: false
 
 jobs:
@@ -24,5 +27,8 @@ jobs:
         env:
           SUPABASE_URL: https://ndglmonqpqpfgeoxatcb.supabase.co
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          LOTE: "300"
-        run: python buscar_videos.py
+          LOTE: ${{ inputs.prueba && '40' || '1200' }}
+          DRY_RUN: ${{ inputs.prueba && '1' || '0' }}
+          HILOS: "6"
+          MAX_MIN: "40"
+        run: python buscar_videos_v2.py
