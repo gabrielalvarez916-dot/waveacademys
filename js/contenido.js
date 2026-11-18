@@ -68,7 +68,7 @@
   function estadoTema(tid) {
     var f = S.info[tid];
     if (!f || !f.lessons) return 'vacia';
-    if (f.lessons >= LEC_POR_TEMA && f.completas >= LEC_POR_TEMA && f.tiene_examen && f.tiene_video) return 'ok';
+    if (f.lessons >= LEC_POR_TEMA && f.completas >= f.lessons && f.tiene_examen && f.tiene_video) return 'ok';
     if (f.completas === 0 && f.con_algo === 0 && !f.tiene_examen && !f.tiene_video) return 'vacia';
     return 'falta';
   }
@@ -257,7 +257,7 @@
     var c = S.cargas[R.subject], h = '';
     if (c) {
       h += '<div class="wv-rango">Rango <b>' + esc(S.tiers[c.tier]) + '</b>: ' + c.hours_total + ' horas · ' + c.topics_total + ' misiones · ' +
-        c.topics_total * LEC_POR_TEMA + ' niveles (' + LEC_POR_TEMA + ' por misión: 3 niveles y las 4 generales)</div>';
+        'cada misión: 3 o 4 niveles y las 4 generales</div>';
       if (ts.length < c.topics_total) {
         h += '<div class="wv-aviso">Faltan ' + (c.topics_total - ts.length) + ' misiones para completar el rango. ' +
           '<button class="wv-btn mini" type="button" data-acc="temas-completar">Crear las misiones que faltan</button></div>';
@@ -281,9 +281,9 @@
   }
   function vLecciones() {
     var nl = (S.info[R.topic] || {}).lessons || 0;
-    var h = '<div class="wv-rango">' + LEC_POR_TEMA + ' niveles por misión: Nivel 1, 2 y 3 (PDF, carpeta y 2 actividades cada uno) y las 4 generales. Los videos de la misión se cargan en el Nivel 1.' +
+    var h = '<div class="wv-rango">' + 'Cada misión tiene 3 o 4 niveles (PDF, carpeta y 2 actividades cada uno) y, como última lección, las 4 generales (no cuentan como nivel). Los videos de la misión se cargan en el Nivel 1.' +
       (nl < LEC_POR_TEMA ? ' · faltan ' + (LEC_POR_TEMA - nl) + ' <button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nuevo nivel</button>' : '') +
-      (nl > LEC_POR_TEMA ? ' · hay ' + (nl - LEC_POR_TEMA) + ' de más' : '') + '</div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
+      (nl > LEC_POR_TEMA + 1 ? ' · hay ' + (nl - LEC_POR_TEMA - 1) + ' de más' : '') + '</div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
     setTimeout(cargarLecciones, 0);
     return h;
   }
@@ -479,7 +479,7 @@
     var esperadas = L.gen ? 4 : 2;
     var cons = fila('🧩', L.gen ? 'Las 4 generales' : 'Actividades del nivel', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' actividad armada' : ' actividades armadas') + (L.preguntas !== esperadas ? ' · el plan son ' + esperadas : '') : 'Sin actividades',
       boton('consignas', L.preguntas ? 'Editar' : 'Armar', L.preguntas ? 'suave' : '') + (L.preguntas ? boton('consignas-del', 'Quitar todas', 'peligro') : ''));
-    h += casillero(++num, '🧩', L.gen ? 'Las 4 generales' : 'Las 2 actividades', L.gen ? 'Mezclan los 3 niveles y repasan misiones anteriores. Se arman acá mismo' : 'Preguntas sobre el PDF de este nivel. Se arman acá mismo', L.preguntas ? 'ok' : 'vacia', cons);
+    h += casillero(++num, '🧩', L.gen ? 'Las 4 generales' : 'Las 2 actividades', L.gen ? 'Mezclan los niveles y repasan misiones anteriores. Se arman acá mismo' : 'Preguntas sobre el PDF de este nivel. Se arman acá mismo', L.preguntas ? 'ok' : 'vacia', cons);
 
     var tit = nombre('lesson', R.lesson);
     var cont = document.getElementById('wv-les');
@@ -858,7 +858,7 @@
 
   async function nuevaLeccion() {
     var n = (S.info[R.topic] || {}).lessons || 0;
-    if (n >= LEC_POR_TEMA) return toast('Este tema ya tiene sus ' + LEC_POR_TEMA + ' lecciones', true);
+    if (n >= LEC_POR_TEMA + 1) return toast('Esta misión ya tiene el máximo de niveles más las generales', true);
     var t = prompt('Nombre de la nueva lección:', 'Lección ' + (n + 1));
     if (!t || !t.trim()) return;
     var l = await sb.from('lessons').insert({ topic_id: R.topic, title: t.trim(), position: n + 1 }).select('id').single();
