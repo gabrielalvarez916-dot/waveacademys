@@ -28,7 +28,7 @@ Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `regl
 - Al terminar el PDF, el alumno entrega en la app las respuestas de la carpeta. La app las valida; si hay errores marca cuáles están mal, sin mostrar la solución, y deja reintentar. Con todas bien, avanza.
 - Recién después de entregar, la app muestra las soluciones de la carpeta con el paso a paso.
 - Los ejemplos NO se entregan: la respuesta del ejemplo incompleto y del hacelo solo va chica, abajo de todo en el PDF ("Respuestas de los ejemplos"), para que el alumno se corrija solo.
-- La clave sale del campo `soluciones.carpeta` del JSON de la lección. Sin API.
+- La clave sale del mismo borrador del PDF: `carpeta` (consignas), `respuestas_carpeta` (respuestas válidas) y `soluciones.carpeta` (solución que se muestra después). Cuando GitHub sube el PDF, la función `fabrica-pdf` carga también la carpeta del nivel (consignas + clave). No hay que cargar nada a mano; el admin sirve para revisar o editar. Sin API.
 
 ## Formato del PDF
 
@@ -86,6 +86,7 @@ Opcionales (un borrador viejo sin ellos se dibuja como antes):
 - `ejemplo_completo`, `ejemplo_incompleto`, `ejemplo_solo`: cada uno con `titulo`, `planteo`, `pasos[]` y, opcional, una tabla (`columnas`, `filas`, `iguales`).
 - `tip`: `{titulo, texto}`. `ojo`: lista de textos.
 - `carpeta`: lista de consignas.
+- `respuestas_carpeta`: lista paralela a `carpeta`; cada elemento es la lista de respuestas válidas de esa consigna (ej. `[["40.382"], ["6.000", "6000"]]`). Cortas y únicas; la app ignora mayúsculas, espacios y puntos. No se imprime en el PDF.
 - `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`. `incompleto` y `solo` se imprimen chicos al final del PDF; `carpeta` es la clave que usa la app para validar la entrega y mostrar la solución después, y el PDF NO la imprime.
 
 ## Qué hay de esto en el código
