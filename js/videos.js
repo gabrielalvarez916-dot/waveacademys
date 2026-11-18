@@ -421,7 +421,7 @@
     vista.innerHTML = '<h1 class="wv-titulo">Videos de las lecciones</h1>' +
       '<p class="wv-sub">Para cada lección, el sistema encontró hasta 4 videos de YouTube. Mirá cada uno y elegí el mejor.</p>' +
       '<div class="wv-resumen" id="vd-resumen">' + htmlResumen() + '</div>' +
-      '<div class="wv-tools" id="vd-optimizar"><button type="button" class="wv-btn" id="vd-opt-btn">⚡ Optimizar videos subidos</button> <span id="vd-opt-txt" class="wv-sub">Revisando…</span></div>' +
+      '<div class="wv-tools" id="vd-optimizar"><button type="button" class="wv-btn" id="vd-opt-btn">⚡ Optimizar MIS videos cargados (no toca los de YouTube)</button> <span id="vd-opt-txt" class="wv-sub">Revisando…</span></div>' +
       '<div class="wv-tools vd-tools" id="vd-controles"></div>' +
       '<div id="vd-lista"></div>';
     pintarControles();
