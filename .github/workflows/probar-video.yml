@@ -1,0 +1,23 @@
+name: PRUEBA - bajar, transcribir y detectar frases que sobran (no sube nada)
+
+# SOLO A MANO. Es una prueba de factibilidad: no toca la plataforma ni cuesta plata.
+on:
+  workflow_dispatch:
+    inputs:
+      youtube_id:
+        description: "ID del video de YouTube (lo que va después de v=)"
+        required: true
+        default: "OwcbKpwJnyA"
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Herramientas
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+          pip install -U yt-dlp faster-whisper
+      - name: Probar
+        run: python3 tools/probar/probar.py "${{ github.event.inputs.youtube_id }}"
