@@ -464,7 +464,7 @@
       ? fila('⭐', 'Intro de Wave', 'Ya cargada: aparece sola al principio de los videos de todas las misiones. No hace falta agregarla acá.', boton('introw-up', 'Reemplazar intro', 'suave'), 'wv-i-introwave')
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro. Se sube una sola vez y aparece sola al principio de los videos de todas las misiones.', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
-      boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
+      boton('video-up', 'Subir videos', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
     var num = 0;
     if (L.primera) h += casillero(++num, '🎬', 'Videos de la misión', 'Se ven todos juntos al principio de la misión, en este orden', tieneV ? 'ok' : 'vacia', clase);
     if (!L.gen) {
@@ -727,7 +727,7 @@
         try { await subidas({ action: 'stream_delete', uid: uid1 }); } catch (e) { /* queda huérfano */ }
         return pintar();
       }
-      if (a === 'video-up') return elegirArchivo('video/*', false, function (fs) { subirVideo(fs[0]); });
+      if (a === 'video-up') return elegirArchivo('video/*', true, async function (fs) { for (var k = 0; k < fs.length; k++) await subirVideo(fs[k]); });
       if (a === 'video-del') {
         var ld = videosDe(L.pasos.video), xd = ld[+p[1]];
         if (!xd || !confirm(ld.length > 1 ? '¿Quitar el video ' + (+p[1] + 1) + ' de esta lección?' : '¿Quitar el video de esta lección?')) return;
