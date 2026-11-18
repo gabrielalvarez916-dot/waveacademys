@@ -118,6 +118,14 @@ def _archivo_imagen(b):
     """Devuelve la ruta de una imagen real si el bloque trae 'archivo' (ruta local) o 'url' descargable; si no, None."""
     ruta = b.get("archivo")
     if ruta and os.path.isfile(ruta): return ruta
+    b64 = b.get("png_base64")  # figura creada por Claude en sesión y guardada dentro del propio borrador
+    if b64:
+        try:
+            import base64, tempfile
+            tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
+            tmp.write(base64.b64decode(b64)); tmp.close(); return tmp.name
+        except Exception:
+            return None
     url = b.get("url")
     if url and str(url).startswith("https://"):
         try:
