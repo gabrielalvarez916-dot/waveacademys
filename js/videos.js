@@ -371,6 +371,41 @@
     });
   }
 
+  // ---- Optimizar videos: reordena los MP4 subidos para que abran al instante en el editor (sin recodificar, sin costo de IA) ----
+  async function contarOpt() {
+    var r = await sb.functions.invoke('optimizar-videos', { body: { action: 'contar' } });
+    if (r.error || !r.data || r.data.error) throw new Error((r.data && r.data.error) || (r.error && r.error.message) || 'No se pudo consultar');
+    return r.data;
+  }
+  function textoOpt(c) {
+    return c.pendientes ? c.pendientes + ' de ' + c.total + ' videos subidos sin revisar. Tocá el botón para optimizarlos de una vez.' : (c.total ? 'Todos los videos subidos están optimizados ✔' : 'Todavía no hay videos subidos como archivo.');
+  }
+  async function iniciarOptimizar() {
+    var btn = document.getElementById('vd-opt-btn'), txt = document.getElementById('vd-opt-txt');
+    if (!btn || !txt) return;
+    try { var c = await contarOpt(); txt.textContent = textoOpt(c); btn.disabled = !c.pendientes; }
+    catch (e) { txt.textContent = 'No se pudo consultar: ' + ((e && e.message) || e); }
+    btn.onclick = async function () {
+      btn.disabled = true; txt.textContent = 'Lanzando…';
+      try {
+        var r = await sb.functions.invoke('optimizar-videos', { body: { action: 'pedir' } });
+        if (r.error || !r.data || r.data.error) throw new Error((r.data && r.data.error) || (r.error && r.error.message) || 'No se pudo lanzar');
+        if (!r.data.pendientes) { txt.textContent = 'No hay videos para optimizar ✔'; return; }
+        if (!r.data.lanzado) { txt.textContent = 'No se pudo lanzar solo (' + (r.data.aviso || 'error') + '). Hacelo a mano: GitHub > Actions > "Optimizar videos" > Run workflow.'; btn.disabled = false; return; }
+        txt.textContent = 'Optimizando ' + r.data.pendientes + ' video(s)… tarda unos minutos. Podés seguir trabajando.';
+        var vueltas = 0, t = setInterval(async function () {
+          vueltas++;
+          try {
+            var c2 = await contarOpt();
+            if (!c2.pendientes) { clearInterval(t); txt.textContent = 'Listo: todos los videos subidos están optimizados ✔'; }
+            else txt.textContent = 'Optimizando… quedan ' + c2.pendientes + ' por revisar.';
+          } catch (e) { /* sigue */ }
+          if (vueltas > 80) { clearInterval(t); btn.disabled = false; }
+        }, 15000);
+      } catch (e) { txt.textContent = 'Error: ' + ((e && e.message) || e); btn.disabled = false; }
+    };
+  }
+
   async function abrir(contenedor) {
     vista = contenedor;
     vista.innerHTML = '<h1 class="wv-titulo">Videos de las lecciones</h1>' +
@@ -386,9 +421,11 @@
     vista.innerHTML = '<h1 class="wv-titulo">Videos de las lecciones</h1>' +
       '<p class="wv-sub">Para cada lección, el sistema encontró hasta 4 videos de YouTube. Mirá cada uno y elegí el mejor.</p>' +
       '<div class="wv-resumen" id="vd-resumen">' + htmlResumen() + '</div>' +
+      '<div class="wv-tools" id="vd-optimizar"><button type="button" class="wv-btn" id="vd-opt-btn">⚡ Optimizar videos subidos</button> <span id="vd-opt-txt" class="wv-sub">Revisando…</span></div>' +
       '<div class="wv-tools vd-tools" id="vd-controles"></div>' +
       '<div id="vd-lista"></div>';
     pintarControles();
+    iniciarOptimizar();
     D = { temas: [], cands: {}, busq: {} };
     if (E.subject) { cambiarMateria(); } else { pintarLista(); }
     if (!vista.__vdEnlazado) { enlazar(); vista.__vdEnlazado = true; }

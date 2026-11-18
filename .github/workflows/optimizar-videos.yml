@@ -1,0 +1,22 @@
+name: Optimizar videos (para que abran rápido)
+
+# SOLO A MANO: lo lanza el botón "Optimizar videos" del admin (o Actions > Run workflow).
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: optimizar-videos
+  cancel-in-progress: false
+
+jobs:
+  optimizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: ffmpeg
+        run: sudo apt-get update -y && sudo apt-get install -y ffmpeg
+      - name: Optimizar videos
+        env:
+          WAVE_GEN_TOKEN: ${{ secrets.WAVE_GEN_TOKEN }}
+        run: python3 tools/optimizar/optimizar.py
