@@ -97,6 +97,20 @@ CANALES_BUENOS = [
     "educatina", "happy learning", "aprendemos juntos", "paka paka",
 ]
 
+# Matemática: canales preferidos, en orden de prioridad. Para cada misión se elige el canal que
+# cubre más lecciones y se ponen primero sus videos, así toda la misión queda con el mismo profe.
+CANALES_MATE = [
+    ("Matemáticas con Grajeda", "grajeda"), ("Susi Profe", "susi profe"),
+    ("Matemáticas profe Alex", "profe alex"), ("Clases Particulares en Ávila", "particulares en avila"),
+    ("Sapere Aude", "sapere aude"), ("Daniel Carreón", "carreon"),
+    ("Matemáticas con Juan", "matematicas con juan"), ("Academia JAF", "academia jaf"),
+]
+
+
+def es_mate(l):
+    return "matem" in norm(l.get("materia") or "")
+
+
 STOP = set(
     "para como cual cuales cuando donde desde hasta entre sobre segun tambien porque pero sino "
     "esta este estos estas esas esos aquel aquella clase explicacion tema temas leccion video "
@@ -263,6 +277,43 @@ def buscar_leccion(l):
     return consulta, videos
 
 
+def buscar_mision_mate(lecs):
+    """Busca las lecciones de una misión de Matemática priorizando los canales preferidos
+    y un mismo canal para toda la misión."""
+    por_canal = []  # (canal, {lesson_id: [videos]})
+    for nombre, clave in CANALES_MATE:
+        encontrados = {}
+        for l in lecs:
+            try:
+                ent = buscar_en_youtube(f"{l['leccion']} {nombre}")
+            except Exception:  # noqa: BLE001
+                ent = []
+            ent = [e for e in ent if clave in norm(e.get("channel") or e.get("uploader") or "")]
+            vs = elegir(ent, l)
+            if vs:
+                encontrados[l["lesson_id"]] = vs
+        if encontrados:
+            por_canal.append((nombre, encontrados))
+    # gana el canal que cubre más lecciones; si empatan, el de mayor prioridad
+    por_canal.sort(key=lambda x: -len(x[1]))
+    res = {}
+    for l in lecs:
+        lid, out, ids = l["lesson_id"], [], set()
+        for _, enc in por_canal:
+            for v in enc.get(lid, [])[:1 if out else 2]:
+                if v["youtube_id"] not in ids and len(out) < CANDIDATOS_POR_LECCION:
+                    out.append(v); ids.add(v["youtube_id"])
+        consulta = "canales preferidos" + (f" ({por_canal[0][0]})" if por_canal else "")
+        if len(out) < CANDIDATOS_POR_LECCION:
+            c2, extra = buscar_leccion(l)
+            for v in extra:
+                if v["youtube_id"] not in ids and len(out) < CANDIDATOS_POR_LECCION:
+                    out.append(v); ids.add(v["youtube_id"])
+            consulta += " || " + c2
+        res[lid] = (consulta, out)
+    return res
+
+
 def main():
     import requests
 
@@ -358,6 +409,32 @@ def main():
                     estado["corte"] = True
             print(f"ERROR en '{l['leccion'][:45]}': {ex}")
         return None
+
+    # Matemática: se busca por misión (todas sus lecciones juntas) para que salgan del mismo canal
+    misiones = {}
+    for l in lista:
+        if es_mate(l):
+            misiones.setdefault((l.get("anio"), l["materia"], l.get("tema") or l["leccion"]), []).append(l)
+    resueltos = {}
+
+    def trabajo_mision(lecs):
+        if estado["corte"] or time.time() - inicio > max_seg:
+            return
+        try:
+            resueltos.update(buscar_mision_mate(lecs))
+        except Exception as ex:  # noqa: BLE001
+            print(f"ERROR misión '{lecs[0].get('tema')}': {ex}")
+
+    with ThreadPoolExecutor(max_workers=hilos) as ex:
+        for _ in as_completed([ex.submit(trabajo_mision, m) for m in misiones.values()]):
+            pass
+
+    _buscar = buscar_leccion
+
+    def buscar_leccion_o_mision(l):
+        return resueltos.get(l["lesson_id"]) or _buscar(l)
+
+    globals()["buscar_leccion"] = buscar_leccion_o_mision
 
     with ThreadPoolExecutor(max_workers=hilos) as ex:
         futs = [ex.submit(trabajo, l) for l in lista]
