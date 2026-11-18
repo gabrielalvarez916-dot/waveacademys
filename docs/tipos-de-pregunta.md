@@ -42,3 +42,10 @@ Operadores de las fórmulas y reglas: `+ - * / % ^ == != < > <= >= && ||`, funci
 ## Modo Relámpago
 
 Se activa poniendo `tiempo_seg` (3 a 300) a las preguntas de un set (actividad o examen). Una pregunta por vez; si se acaba el tiempo pasa sola a la siguiente (cuenta como respondida con lo que haya).
+
+## Examen (nivel jefe): 5 preguntas
+- Cada intento sortea **5 preguntas**: 4 del banco del examen de la misión actual + 1 del banco del examen de la misión anterior (misma materia). En la primera misión, las 5 son de la actual.
+- Actual: se reparte entre lecciones (`questions.lesson_id`), primero las menos vistas, y deja para el final las que tienen el mismo enunciado que una pregunta de las actividades de esa misión.
+- Anterior: prioriza lo que al alumno le fue mal (promedio en exámenes y nota de las actividades de esa lección); si no hay datos, las no vistas.
+- `corregir` (modo examen) siempre exige `sorteo_id`; lee las preguntas del sorteo con permisos de servidor.
+- Para que el "tema flojo" funcione, cargá `lesson_id` en las preguntas del banco del examen (la lección que evalúa).
