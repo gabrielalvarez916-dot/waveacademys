@@ -1,0 +1,27 @@
+name: Transcribir videos de las misiones
+
+# Lo lanza solo la base (cada 5 minutos, si hay videos sin transcribir) o a mano desde Actions.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: transcribir
+  cancel-in-progress: false
+
+jobs:
+  transcribir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ffmpeg y librerías
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+          pip install faster-whisper yt-dlp
+      - name: Transcribir
+        env:
+          WAVE_GEN_TOKEN: ${{ secrets.WAVE_GEN_TOKEN }}
+        run: python tools/transcribir/transcribir.py
