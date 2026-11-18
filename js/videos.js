@@ -259,7 +259,7 @@
     var introW = ri.data && ri.data.value && ri.data.value.uid ? ri.data.value : null;
     var itemVisor = function (e) {
       return /^yt:/.test(e.uid) ? { youtube: e.uid.slice(3), tramos: e.tramos }
-        : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid })).url; } };
+        : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid, preview: true })).url; } };
     };
     var conf = {
       titulo: cand.titulo, tramos: blq.tramos, inserts: blq.inserts, intro: !!introW,
@@ -274,7 +274,7 @@
       },
       vistaPrevia: function (tr, ins, dur) { return WaveEditor.secuencia({ uid: key }, tr, ins, dur, introW).map(itemVisor); }
     };
-    if (!/^yt:/.test(key)) conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key })).url; };
+    if (!/^yt:/.test(key)) conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key, preview: true })).url; };
     else conf.youtube = cand.youtube_id;
     WaveEditor.abrir(conf);
   }
@@ -378,7 +378,7 @@
     return r.data;
   }
   function textoOpt(c) {
-    return c.pendientes ? c.pendientes + ' de ' + c.total + ' videos subidos sin revisar. Tocá el botón para optimizarlos de una vez.' : (c.total ? 'Todos los videos subidos están optimizados ✔' : 'Todavía no hay videos subidos como archivo.');
+    return c.pendientes ? c.pendientes + ' de ' + c.total + ' videos subidos sin revisar. Tocá el botón para preparar la copia liviana de una vez.' : (c.total ? 'Todos los videos subidos están optimizados ✔' : 'Todavía no hay videos subidos como archivo.');
   }
   async function iniciarOptimizar() {
     var btn = document.getElementById('vd-opt-btn'), txt = document.getElementById('vd-opt-txt');

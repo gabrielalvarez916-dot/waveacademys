@@ -1,7 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { AwsClient } from "npm:aws4fetch@1";
 
-// OPTIMIZAR VIDEOS · reordena los MP4 cargados para que abran al instante (ffmpeg -c copy -movflags +faststart, sin recodificar, sin perder calidad).
+// OPTIMIZAR VIDEOS · deja cada MP4 cargado listo para internet (índice al principio, sin recodificar) y genera una copia liviana de edición (720p) que usa el editor. El video original no se toca.
 // Lo hace GitHub Actions (tools/optimizar/optimizar.py) y SOLO cuando el admin toca el botón en Videos.
 // Desde el panel (sesión de administrador): { action: "contar" } | { action: "pedir" }
 // Desde el proceso (header x-gen-token):    { action: "lote" } | { action: "listo", key, estado, nota }
@@ -28,6 +28,8 @@ async function firmar(method: string, key: string, segundos: number) {
   return (await aws.sign(new Request(u, { method }), { aws: { signQuery: true } })).url;
 }
 const claveOk = (k: unknown) => typeof k === "string" && k.startsWith("lessons/");
+// Copia liviana de edición (misma convención que content-upload): lessons/<lec>/_edicion/<nombre>.mp4
+const proxyDe = (key: string) => key.replace(/^(lessons\/[^/]+\/)(.*?)(\.[^./]+)?$/, "$1_edicion/$2.mp4");
 
 // Todos los archivos de video cargados en la plataforma (no los de YouTube) que todavía no se revisaron
 async function pendientes(): Promise<{ total: number; faltan: string[] }> {
@@ -39,8 +41,8 @@ async function pendientes(): Promise<{ total: number; faltan: string[] }> {
     const vs = (p as any).content?.videos;
     if (Array.isArray(vs)) for (const v of vs) if (claveOk(v?.uid)) claves.add(v.uid);
   }
-  const { data: hechos } = await admin.from("video_optimizados").select("key").limit(20000);
-  const ya = new Set((hechos ?? []).map((h: any) => h.key));
+  const { data: hechos } = await admin.from("video_optimizados").select("key, estado, proxy").limit(20000);
+  const ya = new Set((hechos ?? []).filter((h: any) => h.proxy || h.estado === "omitido" || h.estado === "error").map((h: any) => h.key));
   const faltan = [...claves].filter((k) => !ya.has(k)).sort();
   return { total: claves.size, faltan };
 }
@@ -90,7 +92,7 @@ Deno.serve(async (req) => {
       const p = await pendientes();
       const lote = [];
       for (const key of p.faltan.slice(0, 10)) {
-        lote.push({ key, get_url: await firmar("GET", key, 4 * 3600), put_url: await firmar("PUT", key, 4 * 3600) });
+        lote.push({ key, get_url: await firmar("GET", key, 4 * 3600), put_url: await firmar("PUT", key, 4 * 3600), proxy_put_url: await firmar("PUT", proxyDe(key), 4 * 3600) });
       }
       return json({ lote, quedan: p.faltan.length });
     }
@@ -98,7 +100,7 @@ Deno.serve(async (req) => {
     if (b.action === "listo") {
       if (!claveOk(b.key)) return json({ error: "Clave inválida" }, 400);
       const estado = ["ok", "optimizado", "omitido", "error"].includes(b.estado) ? b.estado : "error";
-      const { error } = await admin.from("video_optimizados").upsert({ key: b.key, estado, nota: String(b.nota ?? "").slice(0, 500), updated_at: new Date().toISOString() });
+      const { error } = await admin.from("video_optimizados").upsert({ key: b.key, estado, proxy: b.proxy === true, nota: String(b.nota ?? "").slice(0, 500), updated_at: new Date().toISOString() });
       if (error) return json({ error: error.message }, 500);
       return json({ ok: true });
     }

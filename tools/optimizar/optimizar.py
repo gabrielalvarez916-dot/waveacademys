@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Optimiza para internet los videos MP4 cargados en la plataforma: mueve el índice del archivo al principio
-(ffmpeg -c copy -movflags +faststart). NO recodifica, así que no pierde calidad y tarda segundos por video.
+"""Prepara los videos MP4 cargados en la plataforma: (1) si hace falta, mueve el índice del original al principio (sin recodificar)
+y (2) genera una copia liviana de edición (720p) que abre el editor. El video que ven los alumnos es siempre el original.
 Lo ejecuta GitHub Actions (.github/workflows/optimizar-videos.yml) cuando el admin toca "Optimizar videos".
 Variables: WAVE_GEN_TOKEN (secreto), WAVE_FN_URL (opcional)."""
 import os, sys, json, struct, subprocess, tempfile, urllib.request, urllib.error
@@ -46,22 +46,37 @@ def dur(ruta):
 def procesar(v, tmp):
     key = v["key"]
     if not key.lower().endswith(EXT_OK):
-        return "omitido", "Formato que no necesita este paso"
-    ya = indice_al_principio(v["get_url"])
-    if ya:
-        return "ok", "Ya estaba optimizado"
-    orig = os.path.join(tmp, "orig.mp4"); sal = os.path.join(tmp, "web.mp4")
+        return "omitido", False, "Formato que no necesita este paso"
+    orig = os.path.join(tmp, "orig.mp4")
     print("  bajando…", flush=True)
     sh(["curl", "-fsSL", "--retry", "3", "-o", orig, v["get_url"]])
-    sh(["ffmpeg", "-y", "-v", "error", "-i", orig, "-c", "copy", "-movflags", "+faststart", sal])
-    d0, d1 = dur(orig), dur(sal)
-    if d1 < 1 or abs(d0 - d1) > 1.0:
-        raise RuntimeError(f"El resultado no coincide (duración {d0:.1f}s -> {d1:.1f}s); no se reemplazó")
-    if indice_al_principio_local(sal) is not True:
-        raise RuntimeError("El resultado quedó sin optimizar; no se reemplazó")
-    print(f"  subiendo ({os.path.getsize(sal) // 1048576} MB)…", flush=True)
-    sh(["curl", "-fsS", "--retry", "3", "-X", "PUT", "-H", "content-type: video/mp4", "-T", sal, v["put_url"]])
-    return "optimizado", f"{int(d1)} s"
+    d0 = dur(orig)
+    if d0 < 1: raise RuntimeError("No se pudo leer el video")
+    estado = "ok"; nota = ""
+    # 1) el original: índice al principio (sin recodificar)
+    if indice_al_principio_local(orig) is False:
+        web = os.path.join(tmp, "web.mp4")
+        sh(["ffmpeg", "-y", "-v", "error", "-i", orig, "-c", "copy", "-movflags", "+faststart", web])
+        d1 = dur(web)
+        if abs(d0 - d1) > 1.0 or indice_al_principio_local(web) is not True:
+            raise RuntimeError(f"El reordenado no coincide ({d0:.1f}s -> {d1:.1f}s); no se reemplazó")
+        print("  subiendo el original reordenado…", flush=True)
+        sh(["curl", "-fsS", "--retry", "3", "-X", "PUT", "-H", "content-type: video/mp4", "-T", web, v["put_url"]])
+        estado = "optimizado"
+    # 2) copia liviana para el editor: 720p, H.264, un cuadro clave por segundo (para saltar rápido), con índice al principio
+    prx = os.path.join(tmp, "liviano.mp4")
+    print("  generando la copia liviana de edición…", flush=True)
+    sh(["ffmpeg", "-y", "-v", "error", "-i", orig, "-map", "0:v:0", "-map", "0:a:0?",
+        "-vf", "scale=-2:'min(720,ih)',fps=30,format=yuv420p",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "28", "-maxrate", "1800k", "-bufsize", "3600k", "-g", "30", "-keyint_min", "30",
+        "-c:a", "aac", "-b:a", "96k", "-ac", "2", "-movflags", "+faststart", prx])
+    d2 = dur(prx)
+    if abs(d0 - d2) > 1.5 or indice_al_principio_local(prx) is not True:
+        raise RuntimeError(f"La copia liviana no coincide ({d0:.1f}s -> {d2:.1f}s)")
+    print(f"  subiendo la copia liviana ({os.path.getsize(prx) // 1048576} MB; original {os.path.getsize(orig) // 1048576} MB)…", flush=True)
+    sh(["curl", "-fsS", "--retry", "3", "-X", "PUT", "-H", "content-type: video/mp4", "-T", prx, v["proxy_put_url"]])
+    nota = f"{int(d0)} s · original {os.path.getsize(orig) // 1048576} MB -> liviana {os.path.getsize(prx) // 1048576} MB"
+    return estado, True, nota
 
 def indice_al_principio_local(ruta):
     with open(ruta, "rb") as f:
@@ -89,8 +104,8 @@ def main():
             print(f"Video {v['key']}", flush=True)
             try:
                 with tempfile.TemporaryDirectory() as tmp:
-                    estado, nota = procesar(v, tmp)
-                llamar({"action": "listo", "key": v["key"], "estado": estado, "nota": nota})
+                    estado, proxy, nota = procesar(v, tmp)
+                llamar({"action": "listo", "key": v["key"], "estado": estado, "proxy": proxy, "nota": nota})
                 if estado == "optimizado": opt += 1
                 else: ok += 1
                 print(f"  {estado}: {nota}")

@@ -640,7 +640,7 @@
         var key = xe.uid, blq = WaveEditor.bloque(lista0, key);
         var itemVisor = function (e) {
           return esYt(e.uid) ? { youtube: e.uid.slice(3), tramos: e.tramos }
-            : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid })).url; } };
+            : { tramos: e.tramos, url: async function () { return (await subidas({ action: 'stream_token', uid: e.uid, preview: true })).url; } };
         };
         var guardarEd = async function (tr, ins, dur) {
           var le = videosDe(L.pasos.video), src = le.filter(function (x) { return x.uid === key && !x.intro; })[0];
@@ -664,7 +664,7 @@
         if (esYt(key)) { conf.youtube = key.slice(3); return WaveEditor.abrir(conf); }
         var ste = await subidas({ action: 'stream_status', uid: key });
         if (!ste.ready) return toast('No se encontró el archivo del video.', true);
-        conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key })).url; };
+        conf.url = async function () { return (await subidas({ action: 'stream_token', uid: key, preview: true })).url; };
         return WaveEditor.abrir(conf);
       }
       if (a === 'video-rec') {
