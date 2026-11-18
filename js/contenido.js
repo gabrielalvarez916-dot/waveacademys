@@ -68,8 +68,8 @@
   function estadoTema(tid) {
     var f = S.info[tid];
     if (!f || !f.lessons) return 'vacia';
-    if (f.lessons >= LEC_POR_TEMA && f.completas >= LEC_POR_TEMA && f.tiene_examen) return 'ok';
-    if (f.completas === 0 && f.con_algo === 0 && !f.tiene_examen) return 'vacia';
+    if (f.lessons >= LEC_POR_TEMA && f.completas >= LEC_POR_TEMA && f.tiene_examen && f.tiene_video) return 'ok';
+    if (f.completas === 0 && f.con_algo === 0 && !f.tiene_examen && !f.tiene_video) return 'vacia';
     return 'falta';
   }
   function rollup(estados) {
@@ -248,7 +248,7 @@
       var ts = temasDe(s.id);
       var ls = ts.reduce(function (a, t) { return a + ((S.info[t.id] || {}).lessons || 0); }, 0);
       var c = S.cargas[s.id];
-      var det = (c ? S.tiers[c.tier] + ' · ' : '') + ts.length + (c ? ' de ' + c.topics_total : '') + ' temas · ' + ls + ' lecciones';
+      var det = (c ? S.tiers[c.tier] + ' · ' : '') + ts.length + (c ? ' de ' + c.topics_total : '') + ' misiones · ' + ls + ' niveles';
       return carpeta('subject', s.id, s.name, det, estadoMateria(s.id));
     }).join('') + '</div>';
   }
@@ -256,33 +256,33 @@
     var ts = temasDe(R.subject);
     var c = S.cargas[R.subject], h = '';
     if (c) {
-      h += '<div class="wv-rango">Rango <b>' + esc(S.tiers[c.tier]) + '</b>: ' + c.hours_total + ' horas · ' + c.topics_total + ' temas · ' +
-        c.topics_total * LEC_POR_TEMA + ' lecciones (' + LEC_POR_TEMA + ' por tema)</div>';
+      h += '<div class="wv-rango">Rango <b>' + esc(S.tiers[c.tier]) + '</b>: ' + c.hours_total + ' horas · ' + c.topics_total + ' misiones · ' +
+        c.topics_total * LEC_POR_TEMA + ' niveles (' + LEC_POR_TEMA + ' por misión: 3 niveles y las 4 generales)</div>';
       if (ts.length < c.topics_total) {
-        h += '<div class="wv-aviso">Faltan ' + (c.topics_total - ts.length) + ' temas para completar el rango. ' +
-          '<button class="wv-btn mini" type="button" data-acc="temas-completar">Crear los temas que faltan</button></div>';
+        h += '<div class="wv-aviso">Faltan ' + (c.topics_total - ts.length) + ' misiones para completar el rango. ' +
+          '<button class="wv-btn mini" type="button" data-acc="temas-completar">Crear las misiones que faltan</button></div>';
       } else if (ts.length > c.topics_total) {
-        h += '<div class="wv-aviso">Hay ' + (ts.length - c.topics_total) + ' temas de más respecto del rango.</div>';
+        h += '<div class="wv-aviso">Hay ' + (ts.length - c.topics_total) + ' misiones de más respecto del rango.</div>';
       }
     }
     var sj = S.subjects.filter(function (x) { return x.id === R.subject; })[0] || {};
     var tieneIntro = !!sj.intro_video_uid;
     h += '<div class="wv-intro">' + fila('🎬', 'Introducción de la materia', tieneIntro ? 'Video cargado' : 'Sin video: el alumno ve "Próximamente"',
       (tieneIntro ? boton('intro-ver', 'Ver') : '') + boton('intro-up', tieneIntro ? 'Reemplazar' : 'Subir video', tieneIntro ? 'suave' : '') + (tieneIntro ? boton('intro-del', 'Quitar', 'peligro') : ''), 'wv-i-intro') + '</div>';
-    if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene temas.</div>';
+    if (!ts.length) return h + '<div class="wv-vacio">Esta materia todavía no tiene misiones.</div>';
     var nPub = ts.filter(function (t) { return t.is_published; }).length;
-    h += '<div class="wv-rango">Visibles para el alumno: <b>' + nPub + ' de ' + ts.length + ' temas</b>. Lo que está oculto el alumno no lo ve. ' +
+    h += '<div class="wv-rango">Visibles para el alumno: <b>' + nPub + ' de ' + ts.length + ' misiones</b>. Lo que está oculto el alumno no lo ve. ' +
       boton('pub-todo:1', 'Publicar todos') + ' ' + boton('pub-todo:0', 'Ocultar todos') + '</div>';
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
       var pub = '<button type="button" class="wv-ico wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="' + (t.is_published ? 'Visible para el alumno (tocá para ocultar)' : 'Oculto para el alumno (tocá para publicar)') + '">' + (t.is_published ? '👁 Visible' : '🚫 Oculto') + '</button>';
-      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' lecciones · examen ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length, pub));
+      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' niveles · videos ' + (f.tiene_video ? 'cargados' : 'sin cargar') + ' · nivel jefe ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length, pub));
     }).join('') + '</div>';
   }
   function vLecciones() {
     var nl = (S.info[R.topic] || {}).lessons || 0;
-    var h = '<div class="wv-rango">' + LEC_POR_TEMA + ' lecciones por tema (según el rango)' +
-      (nl < LEC_POR_TEMA ? ' · faltan ' + (LEC_POR_TEMA - nl) + ' <button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nueva lección</button>' : '') +
+    var h = '<div class="wv-rango">' + LEC_POR_TEMA + ' niveles por misión: Nivel 1, 2 y 3 (PDF, carpeta y 2 actividades cada uno) y las 4 generales. Los videos de la misión se cargan en el Nivel 1.' +
+      (nl < LEC_POR_TEMA ? ' · faltan ' + (LEC_POR_TEMA - nl) + ' <button class="wv-btn suave mini" type="button" data-acc="nuevo:lesson">+ Nuevo nivel</button>' : '') +
       (nl > LEC_POR_TEMA ? ' · hay ' + (nl - LEC_POR_TEMA) + ' de más' : '') + '</div><div id="wv-lec-lista" class="wv-carps"><div class="wv-vacio">Cargando…</div></div>';
     setTimeout(cargarLecciones, 0);
     return h;
@@ -296,13 +296,16 @@
     var conP = {};
     (q.data || []).forEach(function (x) { conP[x.lesson_step_id] = true; });
     var m = {};
-    ids.forEach(function (id) { m[id] = { v: 0, p: 0, i: 0, c: 0, f: 0 }; });
+    ids.forEach(function (id) { m[id] = { v: 0, p: 0, k: 0, f: 0 }; });
+    var pdfIds = r.data.filter(function (s) { return s.step_type === 'pdf'; }).map(function (s) { return s.id; });
+    var cl = pdfIds.length ? await sb.from('carpeta_claves').select('lesson_step_id, items').in('lesson_step_id', pdfIds) : { data: [] };
+    var conClave = {};
+    (cl.data || []).forEach(function (x) { if (Array.isArray(x.items) && x.items.length) conClave[x.lesson_step_id] = true; });
     r.data.forEach(function (s) {
       var x = m[s.lesson_id];
+      if (s.step_type === 'pdf' && conClave[s.id] && s.content && Array.isArray(s.content.carpeta) && s.content.carpeta.length) x.k = 1;
       if (s.step_type === 'video' && s.stream_uid) x.v = 1;
       if (s.step_type === 'pdf' && s.r2_key) x.p = 1;
-      if (s.step_type === 'interactive_activity' && s.content && Object.keys(s.content).length) x.i = 1;
-      if (s.step_type === 'complementary_activity' && s.content && s.content.files && s.content.files.length) x.c = 1;
       if (s.step_type === 'final_activity' && conP[s.id]) x.f = 1;
     });
     return m;
@@ -315,17 +318,21 @@
       if (r.error) throw r.error;
       S.lessons[R.topic] = r.data;
       var est = r.data.length ? await lecEstados(r.data.map(function (l) { return l.id; })) : {};
+      var nn = r.data.length;
       var h = r.data.map(function (l, i) {
-        var e = est[l.id], n = e.v + e.p + e.i + e.f;
-        var estado = n === 4 ? 'ok' : (n === 0 && !e.c) ? 'vacia' : 'falta';
-        return carpeta('lesson', l.id, l.title, n + ' de 4 partes' + (e.c ? ' · con complementarios' : ''), estado, herr('lesson', l.id, i, r.data.length));
+        var e = est[l.id], gen = nn >= 4 && i === nn - 1;
+        var partes = gen ? e.f : e.p + e.k + e.f, tot = gen ? 1 : 3;
+        var estado = partes === tot ? 'ok' : partes === 0 ? 'vacia' : 'falta';
+        var det = gen ? 'Las 4 generales · ' + (e.f ? 'actividades cargadas' : 'sin actividades')
+          : 'Nivel ' + (i + 1) + ' · ' + partes + ' de 3 partes (PDF, carpeta, actividades)' + (i === 0 ? ' · videos ' + (e.v ? 'cargados' : 'sin cargar') : '');
+        return carpeta('lesson', l.id, l.title, det, estado, herr('lesson', l.id, i, nn));
       }).join('');
       var examen = (S.info[R.topic] || {}).tiene_examen, borrador = examen && !(S.info[R.topic] || {}).examen_publicado;
-      h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Examen del tema</b>' +
-        '<small>' + (borrador ? 'Borrador: los alumnos todavía no lo ven. Revisalo y publicalo. Cada intento sortea 8 preguntas del banco.' : 'Se arma acá mismo o con IA. Cada intento sortea 8 preguntas distintas del banco, con preguntas de opción múltiple, verdadero/falso o abiertas') + '</small></span>' + etiqueta(examen ? 'ok' : 'vacia') +
-        (borrador ? boton('examen-pub', 'Publicar examen', '') : '') + (!examen ? boton('examen-ia', 'Armar con IA', 'suave') : '') +
-        boton('examen', examen ? 'Editar examen' : 'Armar examen', examen ? 'suave' : '') + (examen ? boton('examen-del', 'Quitar examen', 'peligro') : '') + '</div></div>';
-      cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Este tema todavía no tiene lecciones.</div>' + h;
+      h += '<div class="wv-carp examen"><div class="wv-carp-b static"><span class="wv-carp-ico">📝</span><span class="wv-carp-t"><b>Nivel jefe (examen corto)</b>' +
+        '<small>' + (borrador ? 'Borrador: los alumnos todavía no lo ven. Revisalo y publicalo. Cada intento sortea preguntas del banco.' : 'Se arma acá mismo. Cada intento sortea preguntas distintas del banco: es el jefe final de la misión.') + '</small></span>' + etiqueta(examen ? 'ok' : 'vacia') +
+        (borrador ? boton('examen-pub', 'Publicar examen', '') : '') +
+        boton('examen', examen ? 'Editar nivel jefe' : 'Armar nivel jefe', examen ? 'suave' : '') + (examen ? boton('examen-del', 'Quitar nivel jefe', 'peligro') : '') + '</div></div>';
+      cont.innerHTML = r.data.length ? h : '<div class="wv-vacio">Esta misión todavía no tiene niveles.</div>' + h;
     } catch (e) {
       console.error(e);
       cont.innerHTML = '<div class="wv-vacio">No pudimos cargar las lecciones.<br><small>' + esc(e.message || e) + '</small></div>';
@@ -349,10 +356,15 @@
         if (ins.error) throw ins.error;
         ins.data.forEach(function (s) { pasos[s.step_type] = s; });
       }
+      var lst = S.lessons[R.topic];
+      if (!lst) { var rl = await sb.from('lessons').select('id, title, position').eq('topic_id', R.topic).order('position').order('created_at'); if (rl.error) throw rl.error; lst = S.lessons[R.topic] = rl.data; }
+      var idx = lst.map(function (x) { return x.id; }).indexOf(R.lesson);
+      var gen = lst.length >= 4 && idx === lst.length - 1;
+      var kc = await sb.from('carpeta_claves').select('items').eq('lesson_step_id', pasos.pdf.id).maybeSingle();
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
       var bd = await sb.from('lesson_drafts').select('status, paso, revision, revision_inicial, updated_at').eq('lesson_id', R.lesson).maybeSingle();
       var rr = await sb.from('video_renders').select('id, status, error, created_at').eq('lesson_id', R.lesson).order('created_at', { ascending: false }).limit(1).maybeSingle();
-      L = { pasos: pasos, preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
+      L = { pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
       vigilarRender();
     } catch (e) {
@@ -452,37 +464,22 @@
       ? fila('⭐', 'Intro de Wave', 'Agregala al principio, o ubicala donde quieras con "Editar mirando el video"', boton('video-intro', 'Agregar al principio', ''), 'wv-i-introwave')
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro (se sube una sola vez y sirve para todas las lecciones)', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
-      boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video') +
-      fila('📄', 'PDF descargable', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
-    var cE = tieneV && tieneP ? 'ok' : (tieneV || tieneP) ? 'falta' : 'vacia';
-    h += casillero(1, '🎬', 'Clase explicativa', 'Video + PDF de la clase', cE, clase);
+      boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
+    var num = 0;
+    if (L.primera) h += casillero(++num, '🎬', 'Videos de la misión', 'Se ven todos juntos al principio de la misión, en este orden', tieneV ? 'ok' : 'vacia', clase);
+    if (!L.gen) {
+      var filaPdf = fila('📄', 'PDF del nivel', tieneP ? esc(pdfNom) : 'Sin PDF', (tieneP ? boton('pdf-get', 'Ver') : '') + boton('pdf-up', tieneP ? 'Reemplazar' : 'Subir PDF', tieneP ? 'suave' : '') + (tieneP ? boton('pdf-del', 'Quitar', 'peligro') : ''), 'wv-i-pdf');
+      h += casillero(++num, '📄', 'PDF del nivel', 'Máximo 4 hojas más la portada. Trae las consignas de la carpeta, sin las soluciones', tieneP ? 'ok' : 'vacia', filaPdf);
+      var nc = (pdf.content && Array.isArray(pdf.content.carpeta)) ? pdf.content.carpeta.length : 0, okC = nc > 0 && L.claves.length >= nc;
+      var filaCar = fila('✏️', 'Actividad de carpeta', nc ? nc + (nc === 1 ? ' consigna' : ' consignas') + (okC ? ' con su clave de corrección' : ' · falta la clave de alguna') : 'Sin consignas',
+        boton('carpeta-ed', nc ? 'Editar carpeta' : 'Armar carpeta', nc ? 'suave' : ''), 'wv-i-carpeta');
+      h += casillero(++num, '✏️', 'Carpeta: consignas y clave', 'Lo que el alumno entrega en la app. Se corrige sin IA y las soluciones se muestran recién después de entregar', okC ? 'ok' : nc ? 'falta' : 'vacia', filaCar);
+    }
 
-    // 2 · Interactiva
-    var ct = p.interactive_activity.content || {};
-    var tieneI = Object.keys(ct).length > 0;
-    var iTxt = !tieneI ? 'Sin actividad' : ct.kind === 'html' ? 'Código HTML cargado (' + kb((ct.html || '').length) + ')' : 'Actividad de prueba (quiz de ejemplo)';
-    var inter = fila('🧩', 'Actividad interactiva', iTxt,
-      (ct.kind === 'html' ? boton('html-ver', 'Probar') : '') + boton('html-up', tieneI ? 'Reemplazar .html' : 'Subir .html', tieneI ? 'suave' : '') + (tieneI ? boton('html-del', 'Quitar', 'peligro') : ''), 'wv-i-html') +
-      '<details class="wv-pegar"><summary>O pegá el código acá</summary><textarea id="wv-html-txt" rows="7" placeholder="Pegá el código HTML completo de la actividad"></textarea>' + boton('html-save', 'Guardar código', '') + '</details>';
-    h += casillero(2, '🧩', 'Actividad interactiva', 'Archivo .html que se usa tal cual', tieneI ? 'ok' : 'vacia', inter);
-
-    // 3 · Descargables
-    var fs = (p.complementary_activity.content || {}).files || [];
-    var desc = fs.length ? fs.map(function (f, i) {
-      return '<div class="wv-item"><span class="wv-item-ico">📎</span><div class="wv-item-t"><b>' + esc(f.name) + '</b><small>' + kb(f.size || 0) + '</small></div><div class="wv-item-b">' +
-        '<button type="button" class="wv-ico" data-acc="desc-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
-        '<button type="button" class="wv-ico" data-acc="desc-mov:' + i + ':1"' + (i === fs.length - 1 ? ' disabled' : '') + '>▼</button>' +
-        boton('desc-get:' + i, 'Ver') + boton('desc-del:' + i, 'Quitar', 'peligro') + '</div></div>';
-    }).join('') : '<div class="wv-item"><span class="wv-item-ico">📎</span><div class="wv-item-t"><b>Sin archivos</b><small>Podés subir uno o más</small></div></div>';
-    desc += '<div class="wv-pie-cas">' + boton('desc-up', '+ Subir archivos', fs.length ? 'suave' : '') + '<small id="wv-i-desc"></small></div>';
-    h += casillero(3, '📎', 'Actividades descargables', 'Opcional · archivos extra para practicar (uno o más)', fs.length ? 'ok' : 'vacia', desc);
-
-    // 4 · Consigna
-    var cons = fila('✏️', 'Actividad por consigna', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' consigna armada' : ' consignas armadas') : 'Sin consignas',
-      boton('consignas', L.preguntas ? 'Editar consignas' : 'Armar consignas', L.preguntas ? 'suave' : '') + (L.preguntas ? boton('consignas-del', 'Quitar todas', 'peligro') : ''));
-    h += casillero(4, '✏️', 'Actividad por consigna', 'Se arma dentro de la plataforma; la corrige la IA', L.preguntas ? 'ok' : 'vacia', cons);
-    h += casillero(5, '🔁', 'Repaso obligatorio', 'Automático · no hay que cargar nada', 'ok',
-      '<div class="wv-item"><span class="wv-item-ico">🤖</span><div class="wv-item-t"><b>Lo arma la IA para cada alumno</b><small>6 preguntas distintas cada vez: 1 de esta lección y 5 de lecciones anteriores de la materia, priorizando las que ese alumno tiene más flojas. Sin preguntas abiertas. Usa el texto de los PDF, así que las lecciones sin PDF no entran. La primera lección de la materia no tiene repaso.</small></div></div>');
+    var esperadas = L.gen ? 4 : 2;
+    var cons = fila('🧩', L.gen ? 'Las 4 generales' : 'Actividades del nivel', L.preguntas ? L.preguntas + (L.preguntas === 1 ? ' actividad armada' : ' actividades armadas') + (L.preguntas !== esperadas ? ' · el plan son ' + esperadas : '') : 'Sin actividades',
+      boton('consignas', L.preguntas ? 'Editar' : 'Armar', L.preguntas ? 'suave' : '') + (L.preguntas ? boton('consignas-del', 'Quitar todas', 'peligro') : ''));
+    h += casillero(++num, '🧩', L.gen ? 'Las 4 generales' : 'Las 2 actividades', L.gen ? 'Mezclan los 3 niveles y repasan misiones anteriores. Se arman acá mismo' : 'Preguntas sobre el PDF de este nivel. Se arman acá mismo', L.preguntas ? 'ok' : 'vacia', cons);
 
     var tit = nombre('lesson', R.lesson);
     var cont = document.getElementById('wv-les');
@@ -801,6 +798,7 @@
       }
       if (a === 'del') return eliminar(p[1], p[2]);
       if (a === 'correcciones') return abrirCorrecciones();
+      if (a === 'carpeta-ed') return abrirCarpetaEd();
       if (a === 'consignas') return abrirEditor({ kind: 'step', stepId: L.pasos.final_activity.id, sub: nombre('lesson', R.lesson) });
       if (a === 'examen') {
         var ex = await sb.from('exams').select('id, passing_score').eq('topic_id', R.topic).maybeSingle();
@@ -1002,7 +1000,82 @@
     pintar();
   }
 
-  // ---------- Editor de preguntas (consignas de la lección y examen del tema) ----------
+  // ---------- Carpeta: consignas que ve el alumno + clave con la que la app las corrige (sin IA) ----------
+  var CE = null;
+  function carpetaItems() {
+    var cs = (L.pasos.pdf.content && Array.isArray(L.pasos.pdf.content.carpeta)) ? L.pasos.pdf.content.carpeta : [];
+    return cs.map(function (c, i) {
+      var k = L.claves[i] || {};
+      return { consigna: typeof c === 'string' ? c : (c && c.consigna) || '', acepta: (k.acepta || []).join(' | '), solucion: k.solucion || '' };
+    });
+  }
+  function abrirCarpetaEd() {
+    CE = { items: carpetaItems() };
+    if (!CE.items.length) CE.items.push({ consigna: '', acepta: '', solucion: '' });
+    CE.el = document.createElement('div'); CE.el.className = 'wv-modal';
+    CE.caja = document.createElement('div'); CE.caja.className = 'wv-modal-caja ancha';
+    CE.el.appendChild(CE.caja); document.body.appendChild(CE.el);
+    CE.caja.addEventListener('input', function (ev) { var t = ev.target; if (t.dataset.ci !== undefined) CE.items[+t.dataset.ci][t.dataset.f] = t.value; });
+    CE.caja.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-acc]'); if (!b || b.disabled) return;
+      carpetaAccion(b.getAttribute('data-acc'));
+    });
+    pintarCarpetaEd();
+  }
+  function cerrarCarpetaEd() { if (CE && CE.el) CE.el.remove(); CE = null; }
+  function pintarCarpetaEd() {
+    var h = '<h2>Carpeta del nivel</h2><p>' + esc(nombre('lesson', R.lesson)) + '</p>' +
+      '<p class="wv-ayuda-e">El alumno ve la consigna y escribe una respuesta corta. La app la compara con las respuestas válidas (no importan mayúsculas, espacios ni puntos: 4.205 = 4205). Si hay más de una forma correcta, separalas con |. La solución se muestra cuando entrega todo bien.</p>';
+    h += CE.items.map(function (it, i) {
+      return '<div class="wv-preg"><div class="wv-preg-cab"><b>' + (i + 1) + '.</b><span class="wv-preg-herr">' +
+        '<button type="button" class="wv-ico" data-acc="ce-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
+        '<button type="button" class="wv-ico" data-acc="ce-mov:' + i + ':1"' + (i === CE.items.length - 1 ? ' disabled' : '') + '>▼</button>' +
+        '<button type="button" class="wv-ico" title="Quitar" data-acc="ce-del:' + i + '">🗑</button></span></div>' +
+        '<label class="wv-lbl-e">Consigna (lo que ve el alumno)</label><textarea rows="2" data-ci="' + i + '" data-f="consigna">' + esc(it.consigna) + '</textarea>' +
+        '<label class="wv-lbl-e">Respuestas válidas (separadas con |)</label><input type="text" data-ci="' + i + '" data-f="acepta" value="' + esc(it.acepta) + '">' +
+        '<label class="wv-lbl-e">Solución que se muestra después de entregar</label><textarea rows="2" data-ci="' + i + '" data-f="solucion">' + esc(it.solucion) + '</textarea></div>';
+    }).join('');
+    h += '<div class="wv-ed-nuevo">' + boton('ce-add', '+ Agregar consigna', 'suave') + '</div>' +
+      '<details class="wv-pegar"><summary>Cargar todo pegando un JSON</summary><textarea id="wv-ce-json" rows="6" placeholder=\'[{"consigna":"...","acepta":["11"],"solucion":"..."}]\'></textarea>' + boton('ce-json', 'Cargar JSON', 'suave') + '</details>' +
+      '<div class="wv-modal-pie">' + boton('ce-cancel', 'Cancelar', 'suave') + boton('ce-save', 'Guardar', '') + '</div>';
+    CE.caja.innerHTML = h;
+  }
+  async function carpetaAccion(acc) {
+    var p = acc.split(':'), a = p[0], i = +p[1];
+    if (a === 'ce-cancel') return cerrarCarpetaEd();
+    if (a === 'ce-add') { CE.items.push({ consigna: '', acepta: '', solucion: '' }); return pintarCarpetaEd(); }
+    if (a === 'ce-del') { if (!confirm('¿Quitar esta consigna?')) return; CE.items.splice(i, 1); return pintarCarpetaEd(); }
+    if (a === 'ce-mov') { var j = i + (+p[2]); if (j < 0 || j >= CE.items.length) return; var x = CE.items[i]; CE.items[i] = CE.items[j]; CE.items[j] = x; return pintarCarpetaEd(); }
+    if (a === 'ce-json') {
+      try {
+        var arr = JSON.parse((document.getElementById('wv-ce-json') || {}).value || '[]');
+        if (!Array.isArray(arr) || !arr.length) throw new Error('vacío');
+        CE.items = arr.map(function (o) { return { consigna: String(o.consigna || ''), acepta: [].concat(o.acepta || []).join(' | '), solucion: String(o.solucion || '') }; });
+        return pintarCarpetaEd();
+      } catch (e) { return toast('El JSON no es válido. Tiene que ser una lista de {consigna, acepta, solucion}.', true); }
+    }
+    if (a === 'ce-save') {
+      var items = CE.items.filter(function (it) { return it.consigna.trim() || it.acepta.trim() || it.solucion.trim(); });
+      if (!items.length) return toast('Agregá al menos una consigna.', true);
+      for (var k = 0; k < items.length; k++) {
+        if (!items[k].consigna.trim()) return toast('La consigna ' + (k + 1) + ' no tiene texto.', true);
+        if (!items[k].acepta.split('|').some(function (s) { return s.trim(); })) return toast('La consigna ' + (k + 1) + ' no tiene respuesta válida.', true);
+      }
+      try {
+        var claves = items.map(function (it) { return { acepta: it.acepta.split('|').map(function (s) { return s.trim(); }).filter(Boolean), solucion: it.solucion.trim() }; });
+        await guardarPaso('pdf', { content: Object.assign({}, L.pasos.pdf.content || {}, { carpeta: items.map(function (it) { return it.consigna.trim(); }) }) });
+        var r = await sb.from('carpeta_claves').upsert({ lesson_step_id: L.pasos.pdf.id, items: claves, updated_at: new Date().toISOString() });
+        if (r.error) throw r.error;
+        L.claves = claves;
+        cerrarCarpetaEd();
+        await refrescarEstados();
+        pintarLeccion();
+        toast('Carpeta guardada');
+      } catch (e) { console.error(e); toast('No pudimos guardar la carpeta: ' + (e.message || e), true); }
+    }
+  }
+
+  // ---------- Editor de preguntas (actividades de cada nivel y nivel jefe) ----------
   var ED = null;
   var TIPOS_PREG = { open: 'Respuesta abierta', short_answer: 'Respuesta corta', multiple_choice: 'Opción múltiple', true_false: 'Verdadero / Falso' };
   // Tipos que arma la máquina: se editan el enunciado, la respuesta y los criterios; la estructura (opciones, pares, tabla) se ve y edita como texto.
@@ -1107,7 +1180,7 @@
 
   function pintarEditor() {
     var c = ED.ctx, exam = c.kind === 'exam';
-    var h = '<h2>' + (exam ? 'Examen del tema' : 'Actividad por consigna') + '</h2><p>' + esc(c.sub) + '</p>';
+    var h = '<h2>' + (exam ? 'Nivel jefe (examen corto)' : (L && L.gen ? 'Las 4 generales' : 'Las 2 actividades del nivel')) + '</h2><p>' + esc(c.sub) + '</p>';
     if (exam) h += '<label class="wv-puntos wv-pasa">Nota mínima para aprobar <input type="number" min="0" max="100" data-ed="pasa" value="' + ED.pasa + '"></label>';
     h += ED.qs.map(function (q, i) { return cardPreg(q, i, ED.qs.length); }).join('') ||
       '<div class="wv-vacio">Todavía no hay preguntas. Agregá la primera.</div>';
