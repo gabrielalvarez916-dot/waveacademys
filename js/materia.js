@@ -33,6 +33,7 @@
     close: '<path d="M6 6l12 12M18 6L6 18"/>',
     down: '<path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/>',
     dots: '<path d="M6 12h.01M12 12h.01M18 12h.01"/>',
+    bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="currentColor" stroke="none"/>',
     repaso: '<path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/>'
   };
   function ico(k, px, grosor) {
@@ -81,7 +82,7 @@
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
     var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, lessons!inner(topics!inner(subject_id))')
+      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, lessons!inner(topics!inner(subject_id))')
       .eq('lessons.topics.subject_id', materiaId);
     if (pasos.error) throw pasos.error;
 
@@ -120,7 +121,8 @@
         id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene,
         videos: k !== 'video' || !p.stream_uid ? [] : (Array.isArray(p.videos) && p.videos.length ? p.videos
           : [{ uid: p.stream_uid, tramos: p.tramos || (p.inicio || p.fin ? [{ i: p.inicio || 0, f: p.fin || 0 }] : []) }]),
-        files: k === 'complementary' && Array.isArray(p.files) ? p.files : []
+        files: k === 'complementary' && Array.isArray(p.files) ? p.files : [],
+        carpeta: k === 'pdf' && Array.isArray(p.carpeta) ? p.carpeta : []
       };
     });
 
@@ -148,11 +150,20 @@
       p.review = { id: 'repaso:' + lid, lesson_id: lid, step_type: 'review', titulo: 'Repaso', tiene: conContenido && !!(repaso[lid] && repaso[lid].req), files: [] };
     });
 
+    // Carpeta ya entregada (el alumno carga sus respuestas y la app las corrige sin IA)
+    var pdfIds = [];
+    Object.keys(porLeccion).forEach(function (lid) { var pp = porLeccion[lid].pdf; if (pp && pp.tiene && pp.carpeta.length) pdfIds.push(pp.id); });
+    var carpeta = {};
+    if (pdfIds.length) {
+      var ce = await sb.rpc('carpeta_estado', { p_steps: pdfIds });
+      (ce.error ? [] : ce.data || []).forEach(function (c) { if (c.entregada) carpeta[c.lesson_step_id] = true; });
+    }
+
     var acc = await sb.rpc('my_content_access');
     var susOk = !acc.error && acc.data === true;
 
     return {
-      sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
+      sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -165,10 +176,22 @@
     return p.step_type === 'final_activity' ? pr.estado === 'graded' : true;
   }
 
-  function estadoLeccion(l) {
+  // Un nivel = PDF, entrega de la carpeta y actividades (las "generales" son solo actividades)
+  function pasosNivel(l) {
+    var p = D.pasos[l.id] || {}, r = [];
+    if (p.pdf && p.pdf.tiene) r.push('pdf');
+    if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
+    if (p.final && p.final.tiene) r.push('final');
+    return r;
+  }
+  function hechoK(l, k) {
     var p = D.pasos[l.id] || {};
-    var req = CLAVES.concat(['review']).filter(function (k) { return p[k] && p[k].tiene; });
-    var hs = req.filter(function (k) { return hecho(p[k]); }).length;
+    if (k === 'carpeta') return !!(p.pdf && D.carpeta[p.pdf.id]);
+    return !!(p[k] && hecho(p[k]));
+  }
+  function estadoLeccion(l) {
+    var req = pasosNivel(l);
+    var hs = req.filter(function (k) { return hechoK(l, k); }).length;
     return { total: req.length, hechos: hs, vacia: req.length === 0, completa: req.length > 0 && hs === req.length,
       frac: req.length ? hs / req.length : 0, req: req };
   }
@@ -178,6 +201,14 @@
     D.temas.forEach(function (t) {
       t.bloqueado = !previoOk || D.sinAcceso;
       var ok = true;
+      var ls = t.lecciones, conGen = ls.length >= 4;
+      t.niveles = conGen ? ls.slice(0, ls.length - 1) : ls;
+      t.generales = conGen ? ls[ls.length - 1] : null;
+      t.videoPaso = null;
+      ls.forEach(function (l) { var pp = D.pasos[l.id] || {}; if (!t.videoPaso && pp.video && pp.video.tiene) t.videoPaso = pp.video; });
+      t.videoHecho = !!t.videoPaso && hecho(t.videoPaso);
+      if (t.videoPaso && !t.videoHecho) ok = false;
+      if (t.videoPaso && !t.videoHecho && !t.bloqueado && !actual) actual = 'video:' + t.id;
       t.lecciones.forEach(function (l) {
         l.est = estadoLeccion(l);
         if (D.sinAcceso) l.est.vacia = false;
@@ -189,7 +220,7 @@
       t.examen = ex && ex.tienePreguntas ? ex : null;
       t.examenDisponible = !!t.examen && !t.bloqueado && ok;
       var todasVacias = t.lecciones.every(function (l) { return l.est.vacia; });
-      t.vacio = !D.sinAcceso && todasVacias && !t.examen;
+      t.vacio = !D.sinAcceso && todasVacias && !t.examen && !t.videoPaso;
       t.completo = !t.vacio && ok && t.lecciones.length > 0 && (!t.examen || t.examen.aprobado);
       if (t.examenDisponible && !t.examen.aprobado && !actual) actual = 'examen:' + t.id;
       t.hechas = t.lecciones.filter(function (l) { return l.est.completa; }).length;
@@ -241,11 +272,11 @@
     D.temas.forEach(function (t, i) {
       var c = tono(i), o = { titulo: t.titulo, color: c, figura: icono };
       var nl = t.lecciones.length;
-      if (t.vacio) { o.texto = 'Estamos preparando este tema'; o.estado = 'pronto'; }
-      else if (t.bloqueado) { o.texto = nl + (nl === 1 ? ' lección' : ' lecciones') + (t.examen ? ' y examen' : ''); o.estado = 'bloq'; o.aviso = D.sinAcceso ? 'La suscripción tiene que estar al día para ver el contenido.' : 'Terminá el tema anterior y aprobá su examen para abrir este.'; }
+      if (t.vacio) { o.texto = 'Estamos preparando esta misión'; o.estado = 'pronto'; }
+      else if (t.bloqueado) { o.texto = nl + (nl === 1 ? ' nivel' : ' niveles') + (t.examen ? ' y nivel jefe' : ''); o.estado = 'bloq'; o.aviso = D.sinAcceso ? 'La suscripción tiene que estar al día para ver el contenido.' : 'Terminá la misión anterior y superá su nivel jefe para abrir esta.'; }
       else {
-        o.texto = t.completo ? '¡Tema completo! ' + t.hechas + ' de ' + t.conContenido + ' lecciones' + (t.examen ? ' y examen aprobado' : '')
-          : t.hechas + ' de ' + t.conContenido + ' lecciones' + (t.examen ? ' · examen al final' : '');
+        o.texto = t.completo ? '¡Misión cumplida! ' + t.hechas + ' de ' + t.conContenido + ' niveles' + (t.examen ? ' y nivel jefe superado' : '')
+          : t.hechas + ' de ' + t.conContenido + ' niveles' + (t.examen ? ' · nivel jefe al final' : '');
         o.boton = t.completo ? 'REPASAR' : t.hechas ? 'SEGUIR' : 'EMPEZAR';
         o.trofeo = t.completo; o.href = base() + '/' + t.id;
       }
@@ -256,54 +287,79 @@
       banner() + '<div class="mt-cards">' + (D.temas.length ? cards.join('') : '<div class="mt-vacio">Esta materia todavía no tiene temas.</div>') + '</div></div>';
   }
 
-  // ----- Pantalla 2: lecciones en círculos -----
-  function nodoLeccion(l, i, t) {
+  // ----- Pantalla 2: la misión (círculos) -----
+  function discoNodo(cls, contenido, frac) {
+    return '<span class="mt-aro">' + aro(cls.indexOf('hecha') >= 0 ? 1 : frac) + '<span class="mt-disco">' + contenido + '</span></span>';
+  }
+  function nodo(cls, interior, href, aviso, extra) {
+    return href ? '<a class="mt-nodo ' + cls + '" href="' + href + '"' + (extra || '') + '>' + interior + '</a>'
+      : '<button type="button" class="mt-nodo ' + cls + '"' + (extra || '') + (aviso ? ' data-aviso="' + esc(aviso) + '"' : '') + '>' + interior + '</button>';
+  }
+
+  function nodoVideo(t) {
+    var cls, contenido, aviso = '', extra = '';
+    if (t.videoHecho) { cls = 'hecha'; contenido = ico('check', 56, 3.2); extra = ' data-video="1"'; }
+    else if (t.bloqueado) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = D.sinAcceso ? 'La suscripción tiene que estar al día.' : 'Terminá la misión anterior.'; }
+    else { cls = 'libre' + (D.actual === 'video:' + t.id ? ' actual' : ''); contenido = ico('play', 52, 2.4); extra = ' data-video="1"'; }
+    var burbuja = cls.indexOf('actual') >= 0 ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
+    return nodo(cls, burbuja + discoNodo(cls, contenido, 0) + '<span class="mt-nombre">Videos de la misión</span>', null, aviso, extra);
+  }
+
+  function nodoNivel(l, i, t, esGen) {
     var e = l.est, cls, contenido, href = null, aviso = '';
     if (D.sinAcceso) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'La suscripción tiene que estar al día para ver el contenido.'; }
-    else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 40, 3.2); aviso = 'Esta lección está en preparación.'; }
-    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'Primero terminá la lección anterior.'; }
+    else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 40, 3.2); aviso = 'Este nivel está en preparación.'; }
+    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = t.videoPaso && !t.videoHecho ? 'Primero mirá los videos de la misión.' : 'Primero superá el nivel anterior.'; }
     else if (e.completa) { cls = 'hecha'; contenido = ico('check', 56, 3.2); href = base() + '/' + t.id + '/' + l.id; }
-    else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
+    else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = esGen ? ico('bolt', 50) : '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
     var burbuja = D.actual === l.id ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
-    var interior = burbuja + '<span class="mt-aro">' + aro(e.completa ? 1 : e.frac) + '<span class="mt-disco">' + contenido + '</span></span>' +
-      '<span class="mt-nombre">' + esc(l.titulo) + '</span>';
-    return href ? '<a class="mt-nodo ' + cls + '" href="' + href + '">' + interior + '</a>'
-      : '<button type="button" class="mt-nodo ' + cls + '" data-aviso="' + esc(aviso) + '">' + interior + '</button>';
+    var nombre = esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + l.titulo;
+    return nodo(cls, burbuja + discoNodo(cls, contenido, e.completa ? 1 : e.frac) + '<span class="mt-nombre">' + esc(nombre) + '</span>', href, aviso);
   }
 
   function nodoExamen(t) {
     var ex = t.examen, cls, contenido;
-    if (ex.aprobado) { cls = 'hecha'; contenido = ico('star', 44, 1.5); }
-    else if (t.examenDisponible) { cls = 'libre actual'; contenido = ico('star', 44, 1.5); }
+    if (ex.aprobado) { cls = 'hecha'; contenido = ico('trophy', 46, 1.8); }
+    else if (t.examenDisponible) { cls = 'libre actual'; contenido = ico('trophy', 46, 1.8); }
     else { cls = 'bloq'; contenido = ico('lock', 34, 2.6); }
-    var burbuja = t.examenDisponible && !ex.aprobado ? '<span class="mt-burbuja">¡Examen!</span>' : '';
-    var data = t.examenDisponible ? ' data-examen="' + t.id + '"' : ' data-aviso="Primero terminá todas las lecciones del tema."';
+    var burbuja = t.examenDisponible && !ex.aprobado ? '<span class="mt-burbuja">¡Nivel jefe!</span>' : '';
+    var data = t.examenDisponible ? ' data-examen="' + t.id + '"' : ' data-aviso="Primero superá todos los niveles de la misión."';
     return '<button type="button" class="mt-nodo examen ' + cls + '"' + data + '>' + burbuja +
       '<span class="mt-aro">' + aro(ex.aprobado ? 1 : 0) + '<span class="mt-disco">' + contenido + '</span></span>' +
-      '<span class="mt-nombre">Examen' + (ex.aprobado && ex.mejor != null ? ' · ' + Math.round(ex.mejor) : '') + '</span></button>';
+      '<span class="mt-nombre">Nivel jefe' + (ex.aprobado && ex.mejor != null ? ' · ' + Math.round(ex.mejor) : '') + '</span></button>';
+  }
+
+  function nodoSiguiente(t, idx) {
+    var sig = D.temas[idx + 1];
+    if (!sig) return '';
+    var abierto = t.completo && !sig.vacio;
+    var cls = abierto ? 'libre actual' : 'bloq', contenido = ico('chevron', 52, 3.2);
+    if (!abierto) contenido = ico('lock', 34, 2.6);
+    var burbuja = abierto ? '<span class="mt-burbuja">¡Misión cumplida!</span>' : '';
+    return nodo(cls, burbuja + discoNodo(cls, contenido, 0) + '<span class="mt-nombre">Siguiente misión</span>',
+      abierto ? base() + '/' + sig.id : null, abierto ? '' : (sig.vacio ? 'La próxima misión está en preparación.' : 'Superá el nivel jefe para pasar a la siguiente misión.'));
   }
 
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
-    var nodos = t.lecciones.map(function (l, i) { return nodoLeccion(l, i, t); }).join('') + (t.examen ? nodoExamen(t) : '');
+    var nodos = (t.videoPaso ? nodoVideo(t) : '') +
+      t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
+      (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
+      (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
-      '<div class="mt-escena-tit"><span>Tema ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div></div>' +
+      '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div></div>' +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
     var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.actual');
     if (fila && act) setTimeout(function () { fila.scrollLeft = Math.max(0, act.offsetLeft - fila.clientWidth / 2 + act.offsetWidth / 2); }, 0);
   }
 
-  // ----- Pantalla 3: la lección -----
-  var TIPOS = {
-    video:         { icono: 'play',   color: '#087E83', titulo: 'Clase explicativa', sub: 'Video de la clase' },
-    pdf:           { icono: 'doc',    color: '#E4572E', titulo: 'PDF de la clase', sub: 'Leelo en pantalla o descargalo' },
-    interactive:   { icono: 'puzzle', color: '#7C5CE0', titulo: 'Actividad interactiva', sub: 'Practicá jugando' },
-    final:         { icono: 'pencil', color: '#E59A1B', titulo: 'Actividad', sub: 'Respondé las consignas' },
-    review:        { icono: 'repaso', color: '#2F7BD9', titulo: 'Repaso obligatorio', sub: '6 preguntas de esta lección y de las anteriores' },
-    complementary: { icono: 'clip',   color: '#5B7C80', titulo: 'Actividades complementarias', sub: 'Opcional · para practicar más' }
+  // ----- Pantalla 3: el nivel, paso por paso (como un juego: una pantalla, un botón) -----
+  var PASO_UI = {
+    pdf:     { icono: 'doc',    color: '#E4572E', titulo: 'Leé el PDF', sub: 'Con la explicación, los ejemplos y las consignas de tu carpeta. Tené la carpeta a mano.', boton: 'ABRIR EL PDF' },
+    carpeta: { icono: 'pencil', color: '#7C5CE0', titulo: 'Entregá tu carpeta', sub: 'Escribí lo que te dio en cada consigna. Las soluciones aparecen cuando entregás todo bien.', boton: 'ENTREGAR RESPUESTAS' },
+    final:   { icono: 'puzzle', color: '#E59A1B', titulo: 'Actividades', sub: 'Practicá lo que aprendiste en este nivel.', boton: 'EMPEZAR' }
   };
-  var ORDEN = ['video', 'pdf', 'interactive', 'final', 'review', 'complementary'];
 
   function buscarLeccion(id) {
     for (var i = 0; i < D.temas.length; i++) for (var j = 0; j < D.temas[i].lecciones.length; j++) {
@@ -312,43 +368,47 @@
     return null;
   }
 
-  var comp_abierto = false;
+  function consigna(x) { return typeof x === 'string' ? x : (x && (x.consigna || x.texto)) || ''; }
 
-  function pantallaLeccion(f) {
-    var l = f.l, p = D.pasos[l.id] || {}, e = l.est;
-    var siguiente = null;
-    ORDEN.forEach(function (k) { if (!siguiente && k !== 'complementary' && p[k] && p[k].tiene && !hecho(p[k])) siguiente = k; });
-    var cards = ORDEN.map(function (k) {
-      var t = TIPOS[k], paso = p[k];
-      var listo = paso && paso.tiene && k !== 'complementary' && hecho(paso);
-      var pr = paso ? D.progreso[paso.id] : null;
-      var sub = t.sub, cls = '';
-      if (k === 'review' && (!paso || !paso.tiene)) return '';
-      var faltaAntes = k === 'review' && CLAVES.some(function (c) { return p[c] && p[c].tiene && !hecho(p[c]); });
-      if (faltaAntes) { cls = ' pronto'; sub = 'Se habilita cuando termines lo anterior'; }
-      else if (!paso || !paso.tiene) { cls = ' pronto'; sub = 'Próximamente'; }
-      else if (listo) { cls = ' hecho'; sub = k === 'review' ? 'Hecho' + (D.repaso[l.id].score != null ? ' · ' + Math.round(D.repaso[l.id].score) + ' de 100' : '')
-        : k === 'final' && pr && pr.score != null ? 'Hecha · nota ' + Math.round(pr.score)
-        : k === 'interactive' && pr && pr.score != null ? 'Hecha · ' + Math.round(pr.score) + ' puntos' : 'Hecho'; }
-      else if (k === siguiente) cls = ' siguiente';
-      var derecha = !paso || !paso.tiene || faltaAntes ? '' : listo ? '<span class="mt-rec-check">' + ico('check', 18, 3.6) + '</span>' : '<span class="mt-rec-flecha">' + ico('chevron', 20, 3) + '</span>';
-      var html = '<button type="button" class="mt-rec' + cls + '" data-paso="' + k + '"' + (!paso || !paso.tiene || faltaAntes ? ' disabled' : '') + ' style="--k:' + t.color + '">' +
-        '<span class="mt-rec-ico">' + ico(t.icono, 28) + '</span><span class="mt-rec-t"><b>' + t.titulo + '</b><small>' + sub + '</small></span>' + derecha + '</button>';
-      if (k === 'complementary' && paso && paso.tiene && comp_abierto) {
-        html += '<div class="mt-archivos">' + paso.files.map(function (a, i) {
-          return '<div class="mt-archivo"><span class="mt-archivo-n">' + esc(a.name || 'Archivo') + '</span>' +
-            '<button type="button" class="mt-desc" data-bajar="' + i + '">' + ico('down', 18, 2.6) + ' Descargar</button></div>';
-        }).join('') + '</div>';
-      }
-      return '<div class="mt-rec-c' + (k === 'complementary' ? ' ancho' : '') + '">' + html + '</div>';
-    }).join('');
-    var estadoTxt = e.completa ? '¡Lección completa!' : e.total ? e.hechos + ' de ' + e.total + ' partes listas' : 'Próximamente';
-    vista.innerHTML = '<div class="mt mt-p3" style="--c:' + tono(D.temas.indexOf(f.t)) + '">' +
-      '<a class="mt-volver" href="' + base() + '/' + f.t.id + '">' + ico('back', 20, 3) + ' ' + esc(f.t.titulo) + '</a>' +
-      '<header class="mt-lec-cab"><span class="mt-aro grande ' + (e.completa ? 'hecha' : '') + '">' + aro(e.completa ? 1 : e.frac) +
-        '<span class="mt-disco">' + (e.completa ? ico('check', 52, 3.4) : '<span class="mt-num">' + f.n + '</span>') + '</span></span>' +
-        '<div><small>Lección ' + f.n + '</small><h1>' + esc(l.titulo) + '</h1><span class="mt-lec-est">' + estadoTxt + '</span></div></header>' +
-      '<div class="mt-recs">' + cards + '</div></div>';
+  function pantallaPaso(k, f, esGen, n, total) {
+    var u = PASO_UI[k], l = f.l, p = D.pasos[l.id] || {};
+    var titulo = u.titulo, sub = u.sub, icono = u.icono;
+    if (k === 'final' && esGen) { titulo = 'Las 4 generales'; sub = 'Mezclan todo lo de la misión y repasan lo anterior.'; icono = 'bolt'; }
+    var extra = '';
+    if (k === 'carpeta') {
+      extra = '<div class="rc-items">' + p.pdf.carpeta.map(function (x, i) {
+        return '<label class="rc-item"><span class="mt-preg-n">' + (i + 1) + '</span><span class="rc-item-c"><span class="rc-consigna">' + esc(consigna(x)) +
+          '</span><input type="text" class="rc-in" data-i="' + i + '" maxlength="120" autocomplete="off" placeholder="Tu respuesta"></span></label>';
+      }).join('') + '</div>';
+    }
+    return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:' + u.color + '">' + ico(icono, 56, 2.2) + '</span>' +
+      '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(sub) + '</p>' + extra +
+      '<div class="rc-pie"><button type="button" class="rc-btn" style="--k:' + u.color + '" data-rc="' + (k === 'carpeta' ? 'entregar' : 'abrir') + '" data-k="' + k + '">' + u.boton + '</button></div></div>';
+  }
+
+  function pantallaFin(f, esGen) {
+    var t = f.t, l = f.l, sig = null, boton;
+    if (esGen) boton = '<a class="rc-btn amber" href="' + base() + '/' + t.id + '">' + (t.examen ? 'IR AL NIVEL JEFE' : 'VOLVER A LA MISIÓN') + '</a>';
+    else {
+      var pos = t.niveles.indexOf(l), prox = t.niveles[pos + 1] || t.generales;
+      boton = prox && !prox.est.vacia
+        ? '<a class="rc-btn amber" href="' + base() + '/' + t.id + '/' + prox.id + '">' + (t.niveles[pos + 1] ? 'SEGUIR AL NIVEL ' + (pos + 2) : 'IR A LAS GENERALES') + '</a>'
+        : '<a class="rc-btn amber" href="' + base() + '/' + t.id + '">VOLVER A LA MISIÓN</a>';
+    }
+    var nombre = esGen ? '¡Generales superadas!' : '¡Nivel ' + (t.niveles.indexOf(l) + 1) + ' superado!';
+    return '<div class="rc-cuerpo"><span class="rc-disco fin">' + ico('trophy', 64, 1.8) + '</span><small class="rc-kick">LO LOGRASTE</small><h1>' + nombre + '</h1>' +
+      '<p class="rc-sub">Completaste todos los pasos. Se abre lo que sigue.</p><div class="rc-pie">' + boton + '</div></div>';
+  }
+
+  function pantallaNivel(f) {
+    var l = f.l, t = f.t, esGen = !!t.generales && t.generales.id === l.id;
+    var ks = pasosNivel(l);
+    var pend = ks.filter(function (k) { return !hechoK(l, k); });
+    var i = pend.length ? ks.indexOf(pend[0]) : ks.length;
+    var segs = ks.concat(['fin']).map(function (k, j) { return '<i class="rc-seg ' + (j < i ? 'on' : j === i ? 'cur' : '') + '"></i>'; }).join('');
+    var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length);
+    vista.innerHTML = '<div class="mt mt-rc" style="--c:' + tono(D.temas.indexOf(t)) + '">' +
+      '<div class="rc-top"><a class="rc-x" href="' + base() + '/' + t.id + '" aria-label="Volver a la misión">' + ico('close', 22, 3) + '</a><div class="rc-bar">' + segs + '</div></div>' + cuerpo + '</div>';
   }
 
   // ----- Router interno -----
@@ -360,7 +420,7 @@
     if (t && (t.bloqueado || t.vacio || D.sinAcceso)) { t = null; ruta.leccion = null; location.replace(base()); }
     var f = t && ruta.leccion ? buscarLeccion(ruta.leccion) : null;
     if (f && (f.t.id !== t.id || f.l.bloqueada || f.l.est.vacia)) { f = null; location.replace(base() + '/' + t.id); }
-    if (f) { hojaAbierta = f.l.id; pantallaLeccion(f); }
+    if (f) { hojaAbierta = f.l.id; pantallaNivel(f); }
     else if (t) pantallaTema(t);
     else pantallaTemas();
   }
@@ -385,7 +445,7 @@
     var e = estadoLeccion(f.l);
     if (e.completa && !D.hechas[lessonId]) {
       D.hechas[lessonId] = true;
-      toast('¡Lección completada! 🎉');
+      toast('¡Nivel superado! 🎉');
       await sb.from('student_lesson_progress').insert({ student_id: D.sid, lesson_id: lessonId });
     }
   }
@@ -438,6 +498,52 @@
         refrescar();
       }
     } catch (e) { toast(e.message || 'No se pudo abrir.', true); }
+  }
+
+  function abrirVideoMision(temaId) {
+    var tm = D.temas.filter(function (x) { return x.id === temaId; })[0], paso = tm && tm.videoPaso;
+    if (!paso) return;
+    WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); },
+      lista: paso.videos.map(function (v, n) {
+        return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
+          : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
+      }) });
+  }
+
+  // Entrega de la carpeta: se corrige acá, sin IA. Si está todo bien se muestran las soluciones.
+  async function entregarCarpeta(btn) {
+    var f = buscarLeccion(hojaAbierta), paso = f && (D.pasos[f.l.id] || {}).pdf;
+    if (!paso) return;
+    var inputs = Array.prototype.slice.call(vista.querySelectorAll('.rc-in'));
+    var resp = inputs.map(function (x) { return x.value.trim(); });
+    if (resp.some(function (x) { return !x; })) { toast('Completá todas las respuestas antes de entregar.', true); return; }
+    btn.disabled = true;
+    var r = await sb.rpc('entregar_carpeta', { p_step: paso.id, p_respuestas: resp });
+    btn.disabled = false;
+    if (r.error) { toast(r.error.message || 'No pudimos entregar. Probá de nuevo.', true); return; }
+    var d = r.data;
+    inputs.forEach(function (x, i) {
+      var fila = x.closest('.rc-item');
+      fila.classList.toggle('ok', !!d.items[i]); fila.classList.toggle('no', !d.items[i]);
+      if (d.items[i]) x.readOnly = true;
+    });
+    var aviso = vista.querySelector('.rc-aviso');
+    if (aviso) aviso.remove();
+    if (!d.todas) {
+      var mal = d.items.map(function (o, i) { return o ? null : i + 1; }).filter(Boolean);
+      var m = document.createElement('div');
+      m.className = 'rc-aviso no';
+      m.textContent = (mal.length === 1 ? 'La consigna ' + mal[0] + ' no coincide' : 'Las consignas ' + mal.join(' y ') + ' no coinciden') + '. Volvé a tu carpeta, revisá el procedimiento y probá de nuevo.';
+      vista.querySelector('.rc-pie').before(m);
+      return;
+    }
+    D.carpeta[paso.id] = true;
+    var sols = (d.soluciones || []).map(function (s, i) { return s ? '<li><b>' + (i + 1) + '.</b> ' + esc(s) + '</li>' : ''; }).join('');
+    var ok = document.createElement('div');
+    ok.className = 'rc-aviso ok';
+    ok.innerHTML = '<b>¡Todas correctas!</b>' + (sols ? '<ul class="rc-sols">' + sols + '</ul>' : '');
+    vista.querySelector('.rc-pie').before(ok);
+    btn.textContent = 'CONTINUAR'; btn.setAttribute('data-rc', 'continuar');
   }
 
   async function descargar(i) {
@@ -694,10 +800,10 @@
   function abrirExamen(temaId) {
     var t = D.temas.filter(function (x) { return x.id === temaId; })[0];
     if (!t || !t.examen) return;
-    if (!t.examenDisponible) { toast('Primero terminá todas las lecciones del tema.', true); return; }
+    if (!t.examenDisponible) { toast('Primero superá todos los niveles de la misión.', true); return; }
     var sorteo = null; // cada vez que se abre, el examen sortea preguntas distintas del banco del tema
     abrirCuestionario({
-      titulo: 'Examen · ' + t.titulo, examen: true,
+      titulo: 'Nivel jefe · ' + t.titulo, examen: true,
       cargar: async function () {
         var r = await sb.rpc('sortear_examen', { p_exam: t.examen.id });
         if (r.error) throw new Error(r.error.message || 'No se pudo armar el examen.');
@@ -729,6 +835,15 @@
       if (!D || !vista.querySelector('.mt')) return;
       var av = ev.target.closest('[data-aviso]');
       if (av) return toast(av.getAttribute('data-aviso'), true);
+      var rc = ev.target.closest('[data-rc]');
+      if (rc) {
+        var a = rc.getAttribute('data-rc');
+        if (a === 'abrir') return abrirPaso(rc.getAttribute('data-k'));
+        if (a === 'entregar') return entregarCarpeta(rc);
+        if (a === 'continuar') return refrescar();
+      }
+      var vd = ev.target.closest('[data-video]');
+      if (vd) return abrirVideoMision(ruta.tema);
       var x = ev.target.closest('[data-examen]');
       if (x) return abrirExamen(x.getAttribute('data-examen'));
       if (ev.target.closest('[data-intro]')) return abrirIntro();

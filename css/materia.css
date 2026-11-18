@@ -226,3 +226,42 @@
 .mt-tabla th { background: var(--menta); }
 .mt-celda { width: 100%; min-width: 64px; padding: 6px 8px; border: 0; border-bottom: 3px solid var(--turquesa); border-radius: 8px 8px 0 0; background: var(--menta); font: inherit; font-weight: 800; text-align: center; box-sizing: border-box; }
 .mt-celda:focus { outline: none; background: #fff; box-shadow: 0 0 0 2px var(--turquesa); }
+
+/* ---------- El nivel, paso por paso ---------- */
+.panel-main:has(.mt-rc) { max-width: 760px; }
+.mt-rc { max-width: 560px; display: flex; flex-direction: column; min-height: calc(100dvh - 120px); }
+.rc-top { display: flex; align-items: center; gap: 14px; padding: 6px 0 4px; }
+.rc-x { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; color: var(--texto-suave); text-decoration: none; }
+.rc-x:hover { background: var(--menta); color: var(--turquesa-oscuro); }
+.rc-bar { flex: 1; display: flex; gap: 6px; }
+.rc-seg { flex: 1; height: 12px; border-radius: 8px; background: #E3ECEA; }
+.rc-seg.on { background: #1FB57A; }
+.rc-seg.cur { background: var(--c); }
+.rc-cuerpo { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 26px 6px 10px; }
+.rc-disco { --k: #087E83; display: grid; place-items: center; width: 132px; height: 132px; border-radius: 50%; color: #fff;
+  background: radial-gradient(circle at 35% 28%, color-mix(in srgb, var(--k) 55%, #fff), var(--k) 68%); box-shadow: 0 8px 0 color-mix(in srgb, var(--k) 58%, #000); }
+.rc-disco.fin { background: radial-gradient(circle at 35% 28%, #FFE08A, #F5B72C 65%); box-shadow: 0 8px 0 #C98F0C; animation: mt-latido 1.8s ease-in-out infinite; }
+.rc-kick { margin-top: 26px; font-weight: 800; letter-spacing: .12em; font-size: .78rem; color: var(--texto-suave); }
+.rc-cuerpo h1 { margin: 6px 0 8px; font-size: 1.8rem; font-weight: 800; line-height: 1.15; }
+.rc-sub { margin: 0; max-width: 420px; font-weight: 600; line-height: 1.45; color: var(--texto-suave); }
+.rc-items { width: 100%; margin-top: 22px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.rc-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; border: 2px solid #E3ECEA; border-bottom-width: 5px; border-radius: 20px; background: #fff; }
+.rc-item-c { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.rc-consigna { font-weight: 700; line-height: 1.35; }
+.rc-in { width: 100%; padding: 10px 12px; border: 0; border-bottom: 3px solid var(--turquesa); border-radius: 10px 10px 0 0; background: var(--menta); font: inherit; font-weight: 800; box-sizing: border-box; }
+.rc-in:focus { outline: none; background: #fff; box-shadow: 0 0 0 2px var(--turquesa); }
+.rc-item.ok { background: #F3FBF7; border-color: #BFE9D5; }
+.rc-item.ok .rc-in { border-bottom-color: #1FB57A; color: #14774F; }
+.rc-item.no { background: #FFF6F4; border-color: #F3B8AE; }
+.rc-item.no .rc-in { border-bottom-color: #E4572E; background: #FDE9E4; }
+.rc-aviso { width: 100%; margin-top: 14px; padding: 12px 14px; border-radius: 16px; font-weight: 700; text-align: left; line-height: 1.4; }
+.rc-aviso.no { background: #FFF1EE; color: #B23A1B; }
+.rc-aviso.ok { background: #F3FBF7; color: #14774F; border: 2px solid #BFE9D5; }
+.rc-sols { margin: 8px 0 0; padding: 0; list-style: none; color: var(--petroleo); font-weight: 600; }
+.rc-sols li { margin-top: 6px; }
+.rc-pie { width: 100%; margin-top: auto; padding-top: 26px; position: sticky; bottom: 0; }
+.rc-btn { --k: #087E83; display: block; width: 100%; padding: 16px; border: 0; border-radius: 999px; background: var(--k); color: #fff; font: inherit; font-weight: 800; letter-spacing: .06em; font-size: 1rem; text-align: center; text-decoration: none; cursor: pointer;
+  box-shadow: 0 5px 0 color-mix(in srgb, var(--k) 58%, #000); box-sizing: border-box; }
+.rc-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 color-mix(in srgb, var(--k) 58%, #000); }
+.rc-btn:disabled { opacity: .6; cursor: default; }
+.rc-btn.amber { background: #F5B72C; color: #5A3E00; box-shadow: 0 5px 0 #C98F0C; }
