@@ -82,10 +82,21 @@ def cover(c, doc):
     c.setFillColor(white); c.setFont("DV-I", 10.5)
     for i, ln in enumerate(wrap_lines(m["subtitulo"], "DV-I", 10.5, 400, 4)):
         c.drawString(62, ybar - 36 - i * 18.5, ln)
+    vv = [limpio(x) for x in (META.get("_vas_a_ver") or [])][:6]
+    if vv:
+        y0 = ybar - 36 - 18.5 * min(4, len(wrap_lines(m["subtitulo"], "DV-I", 10.5, 400, 4))) - 26
+        spaced(c, 62, y0, "LO QUE VAS A VER", "DV-B", 7, MINT, 2.6); y0 -= 20
+        for x in vv:
+            ls = simpleSplit(x, "DV", 9.6, 420)[:2]
+            c.setFillColor(AMBER); c.circle(66, y0 + 3, 2.2, stroke=0, fill=1)
+            c.setFillColor(white); c.setFont("DV", 9.6)
+            for ln in ls:
+                c.drawString(78, y0, ln); y0 -= 13
+            y0 -= 5
     for txt, x in (("LECTURA", 62), ("INCLUYE", 145)):
         spaced(c, x, PH - 726, txt, "DV-B", 5.8, MINT, 2)
     c.setFillColor(white); c.setFont("DV-B", 8.2)
-    c.drawString(62, PH - 741, f"{m['minutos']} minutos"); c.drawString(145, PH - 741, "Video · Ejemplos · Carpeta · Resumen · Glosario")
+    c.drawString(62, PH - 741, f"{m['minutos']} minutos"); c.drawString(145, PH - 741, "Ejemplos · Carpeta · Resumen · Glosario")
     def wave(color, y0, a, ph):
         c.setFillColor(color); p = c.beginPath(); p.moveTo(0, 0); p.lineTo(0, y0)
         p.curveTo(PW * 0.22, y0 + a, PW * 0.38, y0 - a * 0.9, PW * 0.58, y0 + a * 0.2 + ph)
@@ -228,13 +239,13 @@ def ejemplos_fijos(c):
         if inc.get("planteo"): o.append(P(limpio(inc["planteo"])))
         if inc.get("columnas"): o += tabla_bloque({**inc, "titulo": None, "texto": None})
         o += _pasos(inc.get("pasos"))
-        o.append(P("Completá los espacios ___ en tu carpeta. La respuesta está al final del PDF.", cap))
+        o.append(P("Completá los espacios ___ en tu carpeta. Después entregá tu respuesta en la app.", cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     if solo:
         o = [subbar("Hacelo solo" + (": " + limpio(solo.get("titulo")) if solo.get("titulo") else ""))]
         if solo.get("planteo"): o.append(P(limpio(solo["planteo"])))
         o += _pasos(solo.get("pasos"))
-        o.append(P("Resolvelo en tu carpeta, sin mirar la respuesta. Después comparala con la del final.", cap))
+        o.append(P("Resolvelo en tu carpeta. Después entregá tu respuesta en la app.", cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     return s
 
@@ -253,7 +264,7 @@ def carpeta_fija(c):
     items = [limpio(x) for x in (c.get("carpeta") or [])]
     if not items: return []
     s = [barra("✎", "Actividad de carpeta"),
-         P("Hacé estas consignas en tu carpeta. Cuando termines, corregite con las soluciones del final del PDF.")]
+         P("Hacé estas consignas en tu carpeta. Cuando termines, entregá tus respuestas en la app: ahí las revisamos y recién después ves las soluciones.")]
     s += [Paragraph(x, stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items)]
     return [KeepTogether(s), spc(10)]
 
@@ -272,67 +283,68 @@ def soluciones_fijas(c):
             table(["ACTIVIDAD", "RESPUESTA"], rows, [W * 0.27, W * 0.73])])]
 
 # ---------------- documento ----------------
-def story(c):
+def story(c, nivel="full"):
+    """nivel: full | sin_glosario | sin_resumen (se omite lo que no entre en 4 hojas)."""
     s = [NextPageTemplate("main"), PageBreak()]
-    s += [P("En esta lección", h1), box_note("OBJETIVO", limpio(c["objetivo"]), "tip"), P("Qué vas a ver", h2)]
-    s += bullets([limpio(x) for x in c["vas_a_ver"]])
-    s += [P("Cómo está organizada", h2)]
-    vt = META.get("video_titulo") or "Video de la lección"
-    vm = META.get("video_min")
-    org = Table([[[Label("VIDEO", color=TEAL, size=5.8), P(f"<b>{limpio(vt)}</b>" + (f"<br/>{vm} min" if vm else ""), cell)],
-                  [Label("LECTURA", color=TEAL, size=5.8), P(f"<b>Este material</b><br/>{META['minutos']} min", cell)],
-                  [Label("DESPUÉS", color=TEAL, size=5.8), P("<b>Actividades</b><br/>de la lección", cell)]]], colWidths=[W / 3] * 3)
-    org.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), LIGHT), ("ROUNDEDCORNERS", [8, 8, 8, 8]),
-                             ("LEFTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 9), ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
-                             ("VALIGN", (0, 0), (-1, -1), "TOP")]))
-    s += [org, spc(10),
-          box_note("✦ ANTES DE EMPEZAR", "Mirá primero el video y después leé este material con la carpeta al lado. Cuando llegues a los ejemplos, "
-                   "completá y resolvé vos antes de mirar las respuestas, que están al final: se aprende haciendo."), spc(6),
-          box_note("¿TENÉS DUDAS?", "Abrí el Tutor desde este mismo PDF y preguntale lo que no te quede claro. Leyó este material y te lo explica de otra forma."),
-          PageBreak()]
     etapa_actual = None
     for i, sec in enumerate(c["secciones"], 1):
         if sec.get("etapa") and sec.get("etapa") != etapa_actual:
             etapa_actual = sec["etapa"]; s += [CondPageBreak(120), etapa_banner(etapa_actual)]
         s.append(bar(i, limpio(sec["titulo"])))
         for b in sec.get("bloques", []): s += bloque(b)
-        s.append(spc(10))
+        s.append(spc(8))
     s += ejemplos_fijos(c) + tip_y_ojo(c)
-    # resumen en tarjetas
-    s += [CondPageBreak(160), barra("★", "Resumen")]
-    cards = []
-    for r in c["resumen"]:
-        cards.append([Label(limpio(r["titulo"]).upper()[:40], color=TEAL, size=5.8, space=1.4), spc(2), P(limpio(r["texto"]), small)])
-    rows = []
-    for i in range(0, len(cards), 2):
-        pair = cards[i:i + 2]
-        if len(pair) < 2: pair.append("")
-        rows.append(pair)
-    span = [("SPAN", (0, len(rows) - 1), (1, len(rows) - 1))] if len(cards) % 2 else []
-    rt = Table(rows, colWidths=[W / 2, W / 2])
-    rt.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), LIGHT), ("ROUNDEDCORNERS", [8, 8, 8, 8]),
-                            ("LEFTPADDING", (0, 0), (-1, -1), 12), ("RIGHTPADDING", (0, 0), (-1, -1), 12),
-                            ("TOPPADDING", (0, 0), (-1, -1), 9), ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
-                            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, -2), 4, white),
-                            ("LINEAFTER", (0, 0), (0, -1), 4, white)] + span))
-    s += [rt, spc(12), CondPageBreak(120), barra("Aa", "Glosario")]
-    s += [table(["PALABRA", "QUÉ SIGNIFICA"], [[limpio(g["palabra"]), limpio(g["significado"])] for g in c["glosario"]], [W * 0.26, W * 0.74])]
-    s += [spc(12)] + carpeta_fija(c) + soluciones_fijas(c)
+    if nivel in ("full", "sin_glosario") and c.get("resumen"):
+        s += [CondPageBreak(120), barra("★", "Resumen")]
+        cards = []
+        for r in c["resumen"]:
+            cards.append([Label(limpio(r["titulo"]).upper()[:40], color=TEAL, size=5.8, space=1.2), spc(1), P(limpio(r["texto"]), small)])
+        rows = []
+        for i in range(0, len(cards), 2):
+            pair = cards[i:i + 2]
+            if len(pair) < 2: pair.append("")
+            rows.append(pair)
+        span = [("SPAN", (0, len(rows) - 1), (1, len(rows) - 1))] if len(cards) % 2 else []
+        rt = Table(rows, colWidths=[W / 2, W / 2])
+        rt.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), LIGHT), ("ROUNDEDCORNERS", [8, 8, 8, 8]),
+                                ("LEFTPADDING", (0, 0), (-1, -1), 10), ("RIGHTPADDING", (0, 0), (-1, -1), 10),
+                                ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                                ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, -2), 3, white),
+                                ("LINEAFTER", (0, 0), (0, -1), 3, white)] + span))
+        s += [rt, spc(8)]
+    if nivel == "full" and c.get("glosario"):
+        s += [CondPageBreak(100), barra("Aa", "Glosario")]
+        s += [table(["PALABRA", "QUÉ SIGNIFICA"], [[limpio(g["palabra"]), limpio(g["significado"])] for g in c["glosario"]], [W * 0.26, W * 0.74])]
+    # las soluciones NO se imprimen: la app las valida y las muestra después de entregar
+    s += [spc(8)] + carpeta_fija(c)
     return s
 
-def render(entrada, salida):
-    data = json.load(open(entrada, encoding="utf8"))
-    c = data["contenido"]; m = data["meta"]
-    m["minutos"] = m.get("minutos") or max(10, 5 * round(words(c) / 110 / 5))
-    m["subtitulo"] = m.get("subtitulo") or c["objetivo"]
-    META.clear(); META.update(m)
+MAX_HOJAS_CONTENIDO = 4
+
+def _construir(c, m, salida, nivel):
     FIG[0] = 0
     doc = BaseDocTemplate(salida, pagesize=A4, title=f"{m['materia']} · Lección {m['leccion_num']} · {m['titulo']}", author="Wave Academy",
                           leftMargin=LM, rightMargin=RM, topMargin=64, bottomMargin=56)
     cv = PageTemplate(id="cover", frames=[Frame(0, 0, 40, 40, id="c0", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)], onPage=cover)
     mn = PageTemplate(id="main", frames=[Frame(LM, 56, W, PH - 56 - 64, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)], onPage=page)
     doc.addPageTemplates([cv, mn])
-    doc.build([Spacer(1, 1)] + story(c))
+    doc.build([Spacer(1, 1)] + story(c, nivel))
+    return doc.page
+
+def render(entrada, salida):
+    data = json.load(open(entrada, encoding="utf8"))
+    c = data["contenido"]; m = data["meta"]
+    m["minutos"] = m.get("minutos") or max(10, 5 * round(words(c) / 110 / 5))
+    m["subtitulo"] = m.get("subtitulo") or c["objetivo"]
+    META.clear(); META.update(m); META["_vas_a_ver"] = c.get("vas_a_ver") or []
+    # portada (1 hoja) + hasta 4 hojas de contenido; si no entra, se omite glosario y luego resumen. Nunca se recorta contenido.
+    for nivel in ("full", "sin_glosario", "sin_resumen"):
+        paginas = _construir(c, m, salida, nivel)
+        if paginas - 1 <= MAX_HOJAS_CONTENIDO: break
+    aviso = "" if nivel == "full" else f" (omitido para entrar en {MAX_HOJAS_CONTENIDO} hojas: {'glosario' if nivel == 'sin_glosario' else 'glosario y resumen'})"
+    if paginas - 1 > MAX_HOJAS_CONTENIDO:
+        aviso += f" ATENCIÓN: el contenido ocupa {paginas - 1} hojas; hay que acortarlo"
+    print(f"páginas: {paginas} (portada + {paginas - 1}){aviso}")
 
 if __name__ == "__main__":
     render(sys.argv[1], sys.argv[2]); print("ok")
