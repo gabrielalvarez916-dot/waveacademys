@@ -26,6 +26,32 @@ def sonda(ruta):
     a = next((s for s in j["streams"] if s["codec_type"] == "audio"), None)
     return {"alto": int(v["height"]) if v else 0, "audio": a is not None, "dur": float(j["format"].get("duration") or 0)}
 
+FUNDIDO = 0.5  # segundos de fundido cruzado entre partes (imagen y sonido)
+
+def unir_con_fundido(listado, final):
+    """Une las partes con un fundido cruzado corto para que no se note el corte.
+    Devuelve False si no se puede (una sola parte, partes muy cortas o error): entonces se pegan sin transición."""
+    if len(listado) < 2: return False
+    durs = [sonda(r)["dur"] for r in listado]
+    if any(d < 2 * FUNDIDO + 0.3 for d in durs): return False
+    cmd = ["ffmpeg", "-y", "-v", "error"]
+    for r in listado: cmd += ["-i", r]
+    f, v, a, acum = [], "[0:v]", "[0:a]", durs[0]
+    for k in range(1, len(listado)):
+        off = acum - FUNDIDO * k
+        f.append(f"{v}[{k}:v]xfade=transition=fade:duration={FUNDIDO}:offset={off:.3f}[v{k}]")
+        f.append(f"{a}[{k}:a]acrossfade=d={FUNDIDO}:c1=tri:c2=tri[a{k}]")
+        v, a, acum = f"[v{k}]", f"[a{k}]", acum + durs[k]
+    cmd += ["-filter_complex", ";".join(f), "-map", v, "-map", a,
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", final]
+    print("  uniendo con fundidos…", flush=True)
+    try:
+        sh(cmd); return True
+    except subprocess.CalledProcessError as e:
+        print("  (no se pudo hacer el fundido, se unen sin transición)", (e.stderr or "")[-300:], flush=True)
+        return False
+
 def procesar(p, tmp):
     partes = []
     for k, parte in enumerate(p["plan"]):
@@ -54,11 +80,12 @@ def procesar(p, tmp):
         print(f"  procesando parte {k + 1} de {len(partes)}…", flush=True)
         sh(cmd)
         listado.append(sal)
-    lista = os.path.join(tmp, "lista.txt")
-    with open(lista, "w") as fh:
-        fh.write("".join(f"file '{r}'\n" for r in listado))
     final = os.path.join(tmp, "final.mp4")
-    sh(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", "-movflags", "+faststart", final])
+    if not unir_con_fundido(listado, final):
+        lista = os.path.join(tmp, "lista.txt")
+        with open(lista, "w") as fh:
+            fh.write("".join(f"file '{r}'\n" for r in listado))
+        sh(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", "-movflags", "+faststart", final])
     dur = sonda(final)["dur"]
     if dur < 1: raise RuntimeError("El video final salió vacío")
     print(f"  subiendo el video final ({os.path.getsize(final) // 1048576} MB, {int(dur)} s)…", flush=True)
