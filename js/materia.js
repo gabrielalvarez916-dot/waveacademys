@@ -72,6 +72,8 @@
     var mat = await sb.from('subjects').select('id, name, color, intro_video_uid').eq('id', materiaId).maybeSingle();
     if (mat.error) throw mat.error;
     if (!mat.data) throw new Error('No encontramos esta materia.');
+    var iw = await sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle();
+    var introWave = iw.data && iw.data.value && iw.data.value.uid ? iw.data.value : null;
 
     var tem = await sb.from('topics').select('id, title, position, lessons(id, title, position)').eq('subject_id', materiaId).order('position');
     if (tem.error) throw tem.error;
@@ -163,7 +165,7 @@
     var susOk = !acc.error && acc.data === true;
 
     return {
-      sid: sid, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
+      sid: sid, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -503,11 +505,15 @@
   function abrirVideoMision(temaId) {
     var tm = D.temas.filter(function (x) { return x.id === temaId; })[0], paso = tm && tm.videoPaso;
     if (!paso) return;
-    WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); },
-      lista: paso.videos.map(function (v, n) {
-        return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
-          : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
-      }) });
+    // La intro de Wave se carga una sola vez (admin) y va siempre delante de todos los videos de la misión
+    var lista = paso.videos.map(function (v, n) {
+      return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
+        : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
+    });
+    if (D.introWave && !(paso.videos[0] && paso.videos[0].intro)) {
+      lista.unshift({ tramos: D.introWave.tramos || [], url: async function () { return (await llamar('content-access', { action: 'intro_wave' })).url; } });
+    }
+    WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); }, lista: lista });
   }
 
   // Entrega de la carpeta: se corrige acá, sin IA. Si está todo bien se muestran las soluciones.

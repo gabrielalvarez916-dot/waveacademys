@@ -461,8 +461,8 @@
       else if (rn && rn.status === 'listo') clase += fila('🎞️', 'Video final', rTxt, boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
     }
     clase += S.introWave
-      ? fila('⭐', 'Intro de Wave', 'Agregala al principio, o ubicala donde quieras con "Editar mirando el video"', boton('video-intro', 'Agregar al principio', ''), 'wv-i-introwave')
-      : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro (se sube una sola vez y sirve para todas las lecciones)', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
+      ? fila('⭐', 'Intro de Wave', 'Ya cargada: aparece sola al principio de los videos de todas las misiones. No hace falta agregarla acá.', boton('introw-up', 'Reemplazar intro', 'suave'), 'wv-i-introwave')
+      : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro. Se sube una sola vez y aparece sola al principio de los videos de todas las misiones.', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
       boton('video-up', 'Subir video', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
     var num = 0;
