@@ -285,6 +285,15 @@ SINON = {"expon": "poten", "poten": "expon", "radic": "raiz", "raiz": "radic", "
          "produ": "multi", "multi": "produ", "adici": "suma", "suma": "adici", "sustr": "resta", "resta": "sustr"}
 
 
+# palabras que marcan un TEMA de matemática: si el video nombra uno que la lección no tiene, es de otro tema
+TEMAS = {"decim", "fracc", "radic", "raiz", "poten", "expon", "enter", "negat", "porce", "propo", "ecuac", "polin",
+         "monom", "binom", "matri", "compl", "deriv", "integ", "limit", "funci", "graf", "grafi", "angul", "trian",
+         "circu", "area", "perim", "volum", "proba", "estad", "logar", "trigo", "vecto", "conju", "notac", "cient",
+         "binar", "hexad", "sexag", "roman", "prim", "primo", "divis", "multi", "mcm", "facto", "suces", "secue",
+         "algeb", "letra", "varia", "irrac", "reale", "racio", "medid", "unida", "gramo", "litro", "metro", "tiemp",
+         "horas", "minut", "segun", "plano", "coord", "cuadr", "cubo", "cubos", "inter", "media", "moda", "simet"}
+
+
 def con_sinonimos(ts):
     return ts | {SINON[t] for t in ts if t in SINON}
 
@@ -296,6 +305,9 @@ def relevancia(e, l):
         return None
     titulo = norm(e.get("title") or "")
     if AVANZADO.search(titulo) and not AVANZADO.search(norm(l["leccion"] + " " + " ".join(l.get("contenidos") or []))):
+        return None
+    vocab = con_sinonimos(tokens(" ".join([l["leccion"], l.get("tema") or "", " ".join(l.get("contenidos") or [])])))
+    if (tokens(titulo) & TEMAS) - vocab:
         return None
     v = con_sinonimos(tokens(titulo))
     tl = tokens(l["leccion"]) - {"sistem", "numer", "parte", "intro"}
