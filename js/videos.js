@@ -378,36 +378,50 @@
     return r.data;
   }
   function textoOpt(c) {
-    return c.pendientes ? c.pendientes + ' de ' + c.total + ' videos subidos sin revisar. Tocá el botón para preparar la copia liviana de una vez.' : (c.total ? 'Todos los videos subidos están optimizados ✔' : 'Todavía no hay videos subidos como archivo.');
+    return c.pendientes ? c.pendientes + ' de ' + c.total + ' videos todavía sin preparar. Tocá el botón UNA vez y esperá.' : (c.total ? 'Todos los videos subidos están preparados ✔ (el editor abre rápido)' : 'Todavía no hay videos subidos como archivo.');
+  }
+  var _optT = null;
+  // Mientras corre en GitHub: el botón queda bloqueado y se muestra el avance
+  function vigilarOpt(total0, inicio) {
+    var btn = document.getElementById('vd-opt-btn'), txt = document.getElementById('vd-opt-txt');
+    if (!btn || !txt) return;
+    if (_optT) clearInterval(_optT);
+    btn.disabled = true;
+    var LINK = ' <a href="https://github.com/gabrielalvarez916-dot/waveacademys/actions/workflows/optimizar-videos.yml" target="_blank" rel="noopener">Ver el avance en GitHub</a>';
+    var pinta = function (hechos) {
+      var min = Math.floor((Date.now() - inicio) / 60000);
+      txt.innerHTML = '⏳ Procesando en segundo plano: ' + hechos + ' de ' + total0 + ' terminados (hace ' + (min < 1 ? 'menos de 1' : min) + ' min). No toques nada: el número sube cuando termina cada video. Podés seguir trabajando.' + LINK;
+    };
+    var vueltas = 0;
+    var tic = async function () {
+      vueltas++;
+      try {
+        var c2 = await contarOpt();
+        if (!c2.pendientes) { clearInterval(_optT); _optT = null; txt.textContent = 'Listo: ' + total0 + ' video(s) preparados ✔ Ya podés abrir el editor.'; return; }
+        if (!c2.corriendo && vueltas > 2) { clearInterval(_optT); _optT = null; txt.innerHTML = 'El proceso terminó pero quedaron ' + c2.pendientes + ' sin preparar (puede haber fallado alguno).' + LINK; btn.disabled = false; return; }
+        pinta(Math.max(0, total0 - c2.pendientes));
+      } catch (e) { /* sigue */ }
+      if (vueltas > 120) { clearInterval(_optT); _optT = null; btn.disabled = false; }
+    };
+    pinta(0);
+    _optT = setInterval(tic, 15000);
   }
   async function iniciarOptimizar() {
     var btn = document.getElementById('vd-opt-btn'), txt = document.getElementById('vd-opt-txt');
     if (!btn || !txt) return;
-    try { var c = await contarOpt(); txt.textContent = textoOpt(c); btn.disabled = !c.pendientes; }
-    catch (e) { txt.textContent = 'No se pudo consultar: ' + ((e && e.message) || e); }
+    try {
+      var c = await contarOpt();
+      if (c.corriendo && c.pendientes) { vigilarOpt(c.total, Date.now()); }
+      else { txt.textContent = textoOpt(c); btn.disabled = !c.pendientes; }
+    } catch (e) { txt.textContent = 'No se pudo consultar: ' + ((e && e.message) || e); }
     btn.onclick = async function () {
       btn.disabled = true; txt.textContent = 'Lanzando…';
       try {
         var r = await sb.functions.invoke('optimizar-videos', { body: { action: 'pedir' } });
         if (r.error || !r.data || r.data.error) throw new Error((r.data && r.data.error) || (r.error && r.error.message) || 'No se pudo lanzar');
-        if (!r.data.pendientes) { txt.textContent = 'No hay videos para optimizar ✔'; return; }
+        if (!r.data.pendientes) { txt.textContent = 'No hay videos para preparar ✔'; return; }
         if (!r.data.lanzado) { txt.textContent = 'No se pudo lanzar solo (' + (r.data.aviso || 'error') + '). Hacelo a mano: GitHub > Actions > "Optimizar videos" > Run workflow.'; btn.disabled = false; return; }
-        var inicio = Date.now(), total0 = r.data.pendientes;
-        var LINK = ' <a href="https://github.com/gabrielalvarez916-dot/waveacademys/actions/workflows/optimizar-videos.yml" target="_blank" rel="noopener">Ver el avance en GitHub</a>';
-        var pinta = function (hechos) {
-          var min = Math.floor((Date.now() - inicio) / 60000);
-          txt.innerHTML = 'Procesando en segundo plano: ' + hechos + ' de ' + total0 + ' terminados (hace ' + (min < 1 ? 'menos de 1' : min) + ' min). Podés seguir trabajando o cerrar la página. El número sube cuando termina cada video.' + LINK;
-        };
-        pinta(0);
-        var vueltas = 0, t = setInterval(async function () {
-          vueltas++;
-          try {
-            var c2 = await contarOpt();
-            if (!c2.pendientes) { clearInterval(t); txt.textContent = 'Listo: ' + total0 + ' video(s) preparados ✔ Ya podés abrir el editor.'; }
-            else pinta(Math.max(0, total0 - c2.pendientes));
-          } catch (e) { /* sigue */ }
-          if (vueltas > 80) { clearInterval(t); btn.disabled = false; }
-        }, 15000);
+        vigilarOpt(r.data.pendientes, Date.now());
       } catch (e) { txt.textContent = 'Error: ' + ((e && e.message) || e); btn.disabled = false; }
     };
   }

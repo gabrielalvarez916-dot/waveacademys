@@ -59,6 +59,20 @@ async function lanzarProceso(): Promise<string | null> {
   return r.status === 204 ? null : `GitHub respondió ${r.status}`;
 }
 
+// ¿Hay una ejecución en curso en GitHub? (para que el botón no deje lanzar otra encima)
+async function enCurso(): Promise<boolean> {
+  const tk = Deno.env.get("GITHUB_TOKEN_RENDER") || Deno.env.get("GITHUB_TOKEN_PDF");
+  if (!tk) return false;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/optimizar-videos.yml/runs?per_page=5`, {
+      headers: { Authorization: `Bearer ${tk.trim()}`, Accept: "application/vnd.github+json", "User-Agent": "wave-academy" },
+    });
+    if (!r.ok) return false;
+    const j = await r.json();
+    return (j.workflow_runs ?? []).some((x: any) => ["queued", "in_progress", "waiting", "pending", "requested"].includes(x.status));
+  } catch { return false; }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
   try {
@@ -72,11 +86,12 @@ Deno.serve(async (req) => {
       const q = await req.json().catch(() => ({}));
       if (q.action === "contar") {
         const p = await pendientes();
-        return json({ total: p.total, pendientes: p.faltan.length });
+        return json({ total: p.total, pendientes: p.faltan.length, corriendo: await enCurso() });
       }
       if (q.action === "pedir") {
         const p = await pendientes();
         if (!p.faltan.length) return json({ ok: true, lanzado: false, pendientes: 0 });
+        if (await enCurso()) return json({ ok: true, lanzado: true, ya_corriendo: true, pendientes: p.faltan.length });
         const falla = await lanzarProceso().catch((e) => String(e?.message || e));
         return json({ ok: true, lanzado: !falla, aviso: falla, pendientes: p.faltan.length });
       }
