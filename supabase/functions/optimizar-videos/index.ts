@@ -31,7 +31,7 @@ const claveOk = (k: unknown) => typeof k === "string" && k.startsWith("lessons/"
 
 // Todos los archivos de video cargados en la plataforma (no los de YouTube) que todavía no se revisaron
 async function pendientes(): Promise<{ total: number; faltan: string[] }> {
-  const { data: pasos, error } = await admin.from("lesson_steps").select("stream_uid, content").eq("step_type", "video");
+  const { data: pasos, error } = await admin.from("lesson_steps").select("stream_uid, content").eq("step_type", "video").like("stream_uid", "lessons/%").limit(5000);
   if (error) throw error;
   const claves = new Set<string>();
   for (const p of pasos ?? []) {
@@ -39,7 +39,7 @@ async function pendientes(): Promise<{ total: number; faltan: string[] }> {
     const vs = (p as any).content?.videos;
     if (Array.isArray(vs)) for (const v of vs) if (claveOk(v?.uid)) claves.add(v.uid);
   }
-  const { data: hechos } = await admin.from("video_optimizados").select("key");
+  const { data: hechos } = await admin.from("video_optimizados").select("key").limit(20000);
   const ya = new Set((hechos ?? []).map((h: any) => h.key));
   const faltan = [...claves].filter((k) => !ya.has(k)).sort();
   return { total: claves.size, faltan };
