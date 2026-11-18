@@ -277,16 +277,31 @@ def buscar_leccion(l):
     return consulta, videos
 
 
+# temas de otro nivel que no queremos en secundaria básica
+AVANZADO = re.compile(r"\b(complej|matric|polinom|derivad|integral|diferencial|cuadratic|logaritm|trigonom|limite|vector|"
+                      r"algebr|ecuacion|inecuac|funcion|letras|variable|fraccion|enteros|negativ|irracional|reales)", re.I)
+# sinónimos (México / España / Argentina) recortados a 5 letras como tokens()
+SINON = {"expon": "poten", "poten": "expon", "radic": "raiz", "raiz": "radic", "divid": "divis", "divis": "divid",
+         "produ": "multi", "multi": "produ", "adici": "suma", "suma": "adici", "sustr": "resta", "resta": "sustr"}
+
+
+def con_sinonimos(ts):
+    return ts | {SINON[t] for t in ts if t in SINON}
+
+
 def relevancia(e, l):
-    """Puntaje estricto: el título del video tiene que hablar de esta lección."""
+    """Puntaje estricto: el título del video tiene que hablar de esta lección y ser de este nivel."""
     p, _ = evaluar(e, l)
     if p is None:
         return None
-    v = tokens(e.get("title") or "")
+    titulo = norm(e.get("title") or "")
+    if AVANZADO.search(titulo) and not AVANZADO.search(norm(l["leccion"] + " " + " ".join(l.get("contenidos") or []))):
+        return None
+    v = con_sinonimos(tokens(titulo))
     tl = tokens(l["leccion"]) - {"sistem", "numer", "parte", "intro"}
     tc = tokens(" ".join(l.get("contenidos") or []))
     ol, oc = len(tl & v), len((tc - tl) & v)
-    if ol < 1 or ol + oc < 2:
+    if ol < 1 or (ol + oc < 2 and len(tl) > 2):
         return None
     return 3.0 * ol + 1.5 * oc + 0.2 * math.log10((e.get("view_count") or 0) + 1)
 
@@ -314,7 +329,9 @@ def buscar_mision_mate(lecs):
                 enc[l["lesson_id"]] = sorted(vs, key=lambda x: -x[0])
         if enc:
             ranking.append((len(enc), sum(v[0][0] for v in enc.values()), -prio, nombre, enc))
-    ranking.sort(key=lambda x: (-x[0], -x[1], -x[2]))
+    # gana el PRIMERO de tu lista que cubra al menos la mitad de las lecciones; si ninguno, el que más cubra
+    mitad = max(1, (len(lecs_b) + 1) // 2)
+    ranking.sort(key=lambda x: (0, -x[2], 0) if x[0] >= mitad else (1, -x[0], -x[1]))
     res = {}
     for l in lecs:
         lid, out = l["lesson_id"], []
