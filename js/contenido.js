@@ -377,6 +377,7 @@
       L = { tr: tr, fichas: fichas, opt: opt, pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
       vigilarRender();
+      vigilarTrans();
     } catch (e) {
       console.error(e);
       document.getElementById('wv-les').innerHTML = 'No pudimos cargar la lección.<br><small>' + esc(e.message || e) + '</small>';
@@ -535,6 +536,20 @@
     if (t.estado !== 'ok') return fila('📝', 'Transcripción', '⏳ Transcribiendo…', '', 'wv-i-trans');
     var c = cobertura(t.texto, L.fichas);
     return fila('📝', 'Cubre ' + c.pct + '% de la misión', veredicto(c.pct) + (c.falta.length ? ' · Falta: ' + esc(c.falta.slice(0, 4).join(' · ')) + (c.falta.length > 4 ? '…' : '') : ''), boton('trans-ver', 'Ver detalle', 'suave'), 'wv-i-trans');
+  }
+  // Mientras no hay transcripción lista, revisa cada 30 s y actualiza solo esa fila
+  var sondeoT = null;
+  function vigilarTrans() {
+    clearTimeout(sondeoT);
+    if (!L || !L.primera || !videosDe(L.pasos.video).length || (L.tr && (L.tr.estado === 'ok' || L.tr.estado === 'error'))) return;
+    var lid = R.lesson, sid = L.pasos.video.id;
+    sondeoT = setTimeout(async function () {
+      if (R.lesson !== lid) return;
+      var rt = await sb.from('video_transcripciones').select('estado, texto, nota').eq('step_id', sid).maybeSingle();
+      if (R.lesson !== lid) return;
+      if (!rt.error && rt.data) { L.tr = rt.data; var e = document.getElementById('wv-i-trans'); if (e) e.outerHTML = filaTranscripcion(); }
+      vigilarTrans();
+    }, 30000);
   }
   function verTranscripcion() {
     var el = document.createElement('div');
