@@ -1,0 +1,529 @@
+{
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "Calculá con compensación: {a} + {c}.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 150,
+       "max": 850
+      },
+      "k": {
+       "min": 2,
+       "max": 6
+      },
+      "d": {
+       "min": 1,
+       "max": 3
+      }
+     },
+     "calculadas": {
+      "c": "k*100-d"
+     }
+    },
+    "r": {
+     "formula": "a+c"
+    },
+    "e": "Se suma el número redondo y después se resta lo que se agregó de más."
+   },
+   {
+    "t": "multi_select",
+    "p": "¿Cuáles de estas igualdades son verdaderas?",
+    "o": [
+     "34 + 19 = 19 + 34",
+     "50 − 20 = 20 − 50",
+     "(12 + 8) + 5 = 12 + (8 + 5)",
+     "100 − 30 − 10 = 100 − (30 − 10)",
+     "25 + 75 + 40 = 100 + 40"
+    ],
+    "r": {
+     "correctas": [
+      "34 + 19 = 19 + 34",
+      "(12 + 8) + 5 = 12 + (8 + 5)",
+      "25 + 75 + 40 = 100 + 40"
+     ]
+    },
+    "e": "La suma es conmutativa y asociativa; la resta no: 100 − 30 − 10 = 60, pero 100 − (30 − 10) = 80."
+   }
+  ],
+  "2": [
+   {
+    "t": "tap_text",
+    "p": "Detective del error: un compañero aplicó la distributiva así. Tocá la parte que está mal y escribí cómo se corrige.",
+    "o": {
+     "modo": "palabras",
+     "segmentos": [
+      "4 × (5 + 3)",
+      "=",
+      "20",
+      "+",
+      "3",
+      "=",
+      "23"
+     ],
+     "pide_correccion": "Escribí el valor correcto"
+    },
+    "r": {
+     "tocar": [
+      4
+     ],
+     "correccion": [
+      "12"
+     ]
+    },
+    "e": "El 4 multiplica a los dos sumandos: 4 × 3 = 12. El resultado correcto es 20 + 12 = 32."
+   },
+   {
+    "t": "numeric",
+    "p": "Calculá {a} × 99 con la distributiva.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 12,
+       "max": 85
+      }
+     }
+    },
+    "r": {
+     "formula": "a*99"
+    },
+    "e": "a × 99 = a × 100 − a."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "En una división, el divisor es {d}, el cociente es {c} y el resto es {r}. ¿Cuál es el dividendo?",
+    "o": {
+     "vars": {
+      "d": {
+       "min": 4,
+       "max": 9
+      },
+      "c": {
+       "min": 11,
+       "max": 60
+      },
+      "r": {
+       "min": 1,
+       "max": 8
+      }
+     },
+     "reglas": [
+      "r<d"
+     ]
+    },
+    "r": {
+     "formula": "d*c+r"
+    },
+    "e": "Dividendo = divisor × cociente + resto."
+   },
+   {
+    "t": "multiple_choice",
+    "o": [
+     "0",
+     "3",
+     "5",
+     "6"
+    ],
+    "r": {
+     "correcta": "6"
+    },
+    "p": "En una división por 6, ¿cuál de estos números NO puede ser el resto?",
+    "e": "El resto siempre es menor que el divisor: con divisor 6, el resto va de 0 a 5."
+   }
+  ],
+  "4": [
+   {
+    "t": "multiple_choice",
+    "o": [
+     "2.000",
+     "20.000",
+     "200.000",
+     "2.000.000"
+    ],
+    "r": {
+     "correcta": "20.000"
+    },
+    "p": "¿Cuál es la mejor estimación de 403 × 49?",
+    "e": "403 es casi 400 y 49 es casi 50: 400 × 50 = 20.000."
+   },
+   {
+    "t": "numeric",
+    "p": "Una escuela compra 14 cajas de lápices de $3.250 cada una. La escuela tiene 320 alumnos. ¿Cuánto gasta en total?",
+    "o": {},
+    "r": {
+     "acepta": [
+      45500
+     ]
+    },
+    "e": "Los 320 alumnos son un dato de más. 3.250 × 14 = 45.500."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "tiempo": 25,
+    "o": [
+     "Conmutativa y asociativa",
+     "Distributiva",
+     "Relación fundamental",
+     "Compensación"
+    ],
+    "r": {
+     "correcta": "Conmutativa y asociativa"
+    },
+    "p": "Relámpago. ¿Qué propiedades se usaron en 25 × 7 × 4 = (25 × 4) × 7 = 700?",
+    "e": "Se cambió el orden de los factores (conmutativa) y se agruparon (asociativa)."
+   },
+   {
+    "t": "numeric",
+    "tiempo": 40,
+    "p": "Relámpago. Dividendo 100 y divisor 7. ¿Cuál es el resto?",
+    "o": {},
+    "r": {
+     "acepta": [
+      2
+     ]
+    },
+    "e": "7 × 14 = 98 y 100 − 98 = 2."
+   },
+   {
+    "t": "true_false",
+    "tiempo": 20,
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "p": "Relámpago. 498 + 237 se puede calcular como 500 + 237 − 2.",
+    "e": "498 = 500 − 2: se suma el redondo y se resta lo que se agregó de más."
+   },
+   {
+    "t": "numeric",
+    "tiempo": 35,
+    "p": "Relámpago. Calculá 6 × 10³ + 4 × 10².",
+    "o": {},
+    "r": {
+     "acepta": [
+      6400
+     ]
+    },
+    "e": "6 × 1.000 + 4 × 100 = 6.000 + 400 = 6.400 (repaso de la misión 1)."
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "Clasificá cada igualdad según la propiedad de la suma que muestra.",
+    "o": {
+     "elementos": [
+      "37 + 58 = 58 + 37",
+      "(14 + 6) + 9 = 14 + (6 + 9)",
+      "120 + 45 = 45 + 120",
+      "(30 + 70) + 8 = 30 + (70 + 8)"
+     ],
+     "categorias": [
+      "Conmutativa",
+      "Asociativa"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "37 + 58 = 58 + 37": "Conmutativa",
+      "(14 + 6) + 9 = 14 + (6 + 9)": "Asociativa",
+      "120 + 45 = 45 + 120": "Conmutativa",
+      "(30 + 70) + 8 = 30 + (70 + 8)": "Asociativa"
+     }
+    },
+    "e": "Conmutativa: cambia el orden. Asociativa: cambia cómo se agrupa."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "Calculá con compensación: {a} − {c}.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 400,
+       "max": 999
+      },
+      "k": {
+       "min": 1,
+       "max": 3
+      }
+     },
+     "calculadas": {
+      "c": "k*100-1"
+     },
+     "reglas": [
+      "a>c+50"
+     ]
+    },
+    "r": {
+     "formula": "a-c"
+    },
+    "e": "Se resta el número redondo y se devuelve el 1 que se restó de más."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "fill_blank",
+    "p": "Si 456 + 289 = 745, entonces 745 − 289 = ___.",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "456"
+      ]
+     ]
+    },
+    "e": "La resta es la operación inversa de la suma."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "tap_text",
+    "p": "Detective del error: tocá la parte que está mal y escribí cómo se corrige.",
+    "o": {
+     "modo": "palabras",
+     "segmentos": [
+      "6 × (10 + 5)",
+      "=",
+      "60",
+      "+",
+      "5",
+      "=",
+      "65"
+     ],
+     "pide_correccion": "Escribí el valor correcto"
+    },
+    "r": {
+     "tocar": [
+      4
+     ],
+     "correccion": [
+      "30"
+     ]
+    },
+    "e": "El 6 multiplica a los dos sumandos: 6 × 5 = 30. El resultado es 90."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Calculá {a} × {b} aplicando la distributiva.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 11,
+       "max": 19
+      },
+      "b": {
+       "min": 11,
+       "max": 19
+      }
+     }
+    },
+    "r": {
+     "formula": "a*b"
+    },
+    "e": "Se parte un factor en 10 + unidades y se distribuye."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "matching",
+    "p": "Uní cada multiplicación con la forma de calcularla con la distributiva.",
+    "o": {
+     "izquierda": [
+      "14 × 11",
+      "25 × 19",
+      "8 × 99",
+      "12 × 15"
+     ],
+     "derecha": [
+      "14 × 10 + 14",
+      "25 × 20 − 25",
+      "8 × 100 − 8",
+      "12 × 10 + 12 × 5"
+     ]
+    },
+    "r": {
+     "pares": {
+      "14 × 11": "14 × 10 + 14",
+      "25 × 19": "25 × 20 − 25",
+      "8 × 99": "8 × 100 − 8",
+      "12 × 15": "12 × 10 + 12 × 5"
+     }
+    },
+    "e": "Cada una parte un factor en un número redondo más o menos un número chico."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "table_fill",
+    "p": "Completá la tabla de divisiones.",
+    "o": {
+     "columnas": [
+      "Dividendo",
+      "Divisor",
+      "Cociente",
+      "Resto"
+     ],
+     "filas": [
+      [
+       "47",
+       "5",
+       "9",
+       "2"
+      ],
+      [
+       "100",
+       "8",
+       "",
+       ""
+      ],
+      [
+       "",
+       "7",
+       "52",
+       "1"
+      ]
+     ]
+    },
+    "r": {
+     "celdas": {
+      "2|Cociente": [
+       "12"
+      ],
+      "2|Resto": [
+       "4"
+      ],
+      "3|Dividendo": [
+       "365"
+      ]
+     }
+    },
+    "e": "100 ÷ 8 = 12, resto 4. Dividendo = 7 × 52 + 1 = 365."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "p": "En una división por 9, el resto puede ser 9.",
+    "e": "El resto siempre es menor que el divisor: si sobran 9, el 9 entra una vez más."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "¿Cuántos micros de {c} asientos hacen falta para llevar a {n} personas?",
+    "o": {
+     "vars": {
+      "c": {
+       "min": 30,
+       "max": 50
+      },
+      "n": {
+       "min": 100,
+       "max": 400
+      }
+     },
+     "reglas": [
+      "n%c!=0"
+     ]
+    },
+    "r": {
+     "formula": "ceil(n/c)"
+    },
+    "e": "Se divide y, como sobran personas, hace falta un micro más."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "o": [
+     "900",
+     "1.000",
+     "1.100",
+     "10.000"
+    ],
+    "r": {
+     "correcta": "1.000"
+    },
+    "p": "¿Cuál es la mejor estimación de 612 + 389?",
+    "e": "600 + 400 = 1.000. El resultado exacto es 1.001."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Redondeá 8.463 a la centena.",
+    "o": {},
+    "r": {
+     "acepta": [
+      8500
+     ]
+    },
+    "e": "La cifra de las decenas es 6: la centena sube. 8.463 ≈ 8.500."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Una librería recibe 6 cajas con 48 cuadernos cada una y vende 197 cuadernos. El local abre a las 9. ¿Cuántos cuadernos le quedan?",
+    "o": {},
+    "r": {
+     "acepta": [
+      91
+     ]
+    },
+    "e": "La hora es un dato de más. 6 × 48 = 288 y 288 − 197 = 91."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "o": [
+     "199",
+     "1.989",
+     "19.890",
+     "198.900"
+    ],
+    "r": {
+     "correcta": "1.989"
+    },
+    "p": "Un chico calculó 39 × 51. Estimando, ¿cuál es el resultado razonable?",
+    "e": "40 × 50 = 2.000, así que el resultado tiene que estar cerca de 2.000: 39 × 51 = 1.989."
+   }
+  ]
+ ]
+}
