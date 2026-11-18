@@ -477,7 +477,7 @@
         abrirCuestionario({
           titulo: 'Actividad · ' + f.l.titulo, examen: false,
           cargar: function () { return preguntas('lesson_step_id', paso.id); },
-          enviar: function (resp) { return llamar('grade-final-activity', { lesson_step_id: paso.id, answers: resp }); },
+          enviar: function (resp) { return llamar('corregir', { modo: 'actividad', lesson_step_id: paso.id, answers: resp }); },
           alTerminar: function (res) {
             D.progreso[paso.id] = { score: res.score, estado: 'graded' };
             revisarLeccion(paso.lesson_id).then(refrescar);
@@ -596,7 +596,7 @@
 
   // ---------- Cuestionario (actividad por consigna y examen) ----------
   async function preguntas(col, id) {
-    var r = await sb.from('questions').select('id, prompt, question_type, options, points, position').eq(col, id).order('position');
+    var r = await sb.from('questions').select('id, prompt, question_type, options, points, position, tiempo_seg').eq(col, id).order('position');
     if (r.error) throw r.error;
     if (!r.data.length) throw new Error('Todavía no hay preguntas cargadas.');
     return r.data;
@@ -611,9 +611,22 @@
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var cuerpo = el.querySelector('.mt-cuest');
-    var lista = [], enviando = false, entregado = false;
+    var lista = [], enviando = false, entregado = false, relamp = null;
+    if (window.WaveTipos) WaveTipos.enlazar(cuerpo);
+    // Enunciado que ve el alumno: si la pregunta tiene números al azar, ya viene con los números sorteados
+    function pr(q) { return q._prompt != null ? q._prompt : q.prompt; }
+    function sembrar() {
+      lista.forEach(function (q) {
+        q._seed = Math.random().toString(36).slice(2, 10);
+        q._prompt = null;
+        if (q.options && q.options.vars && window.WaveCalc) {
+          var v = WaveCalc.instanciar(q.options, q._seed);
+          q._prompt = v ? WaveCalc.plantilla(q.prompt, v) : q.prompt;
+        }
+      });
+    }
 
-    function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
+    function cerrar() { if (relamp) clearInterval(relamp.t); document.body.classList.remove('wvp-abierto'); el.remove(); }
     el.addEventListener('click', function (ev) {
       var fl = ev.target.closest('[data-mov]');
       if (fl) {
@@ -623,11 +636,12 @@
         return;
       }
       if (ev.target === el || ev.target.closest('[data-cerrar]')) { if (!enviando) cerrar(); return; }
+      if (ev.target.closest('[data-rel]')) { siguienteRel(); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
       else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
     });
 
-    var NUEVOS = ['fill_blank', 'ordering', 'matching', 'classify', 'table_fill', 'multi_select', 'solve_complete', 'odd_one_out'];
+    var NUEVOS = ['fill_blank', 'ordering', 'matching', 'classify', 'table_fill', 'multi_select', 'solve_complete', 'odd_one_out', 'numeric', 'tap_text', 'tokens', 'keywords', 'label_image'];
     function listaOp(o) { return Array.isArray(o) ? o.map(String) : []; }
     function selectDe(i, k, opciones) {
       return '<select class="mt-sel" data-w="' + i + '" data-k="' + k + '"><option value="">Elegí…</option>' +
@@ -636,15 +650,16 @@
     // Devuelve el HTML del cuerpo del campo para los tipos nuevos, o null si la estructura no sirve (se muestra como respuesta libre)
     function campoNuevo(q, i) {
       var t = q.question_type, o = q.options, w = ' data-w="' + i + '"';
+      if (window.WaveTipos && WaveTipos.soporta(t)) return WaveTipos.html(q, i, pr(q));
       if (t === 'fill_blank') {
-        var partes = esc(q.prompt).split('___');
+        var partes = esc(pr(q)).split('___');
         if (partes.length < 2) partes.push('');
         var n = 0;
         return '<p class="mt-hueco-p"' + w + '>' + partes.map(function (x, k) {
           return k < partes.length - 1 ? x + '<input type="text" class="mt-hueco" data-h="' + (n++) + '" maxlength="80" autocomplete="off">' : x;
         }).join('') + '</p>';
       }
-      var enun = '<p>' + esc(q.prompt) + '</p>';
+      var enun = '<p>' + esc(pr(q)) + '</p>';
       if (t === 'multi_select' && listaOp(o).length) {
         return enun + '<small class="mt-ayuda">Marcá todas las que sean correctas.</small>' + listaOp(o).map(function (x) {
           return '<label class="mt-op"><input type="checkbox"' + w + ' value="' + esc(x) + '"><span>' + esc(x) + '</span></label>';
@@ -690,6 +705,7 @@
     // Lee lo que respondió el alumno y lo pasa a texto (así lo recibe el corrector)
     function leerNuevo(q, i) {
       var t = q.question_type, o = q.options, sel = '[data-w="' + i + '"]', out = [];
+      if (window.WaveTipos && WaveTipos.soporta(t)) return WaveTipos.leer(q, i, cuerpo);
       if (t === 'fill_blank') {
         var hs = Array.prototype.slice.call(cuerpo.querySelectorAll(sel + ' .mt-hueco'));
         var llenos = hs.some(function (h) { return h.value.trim(); });
@@ -729,7 +745,7 @@
     function campo(q, i) {
       var nuevo = NUEVOS.indexOf(q.question_type) >= 0 ? campoNuevo(q, i) : null;
       if (nuevo !== null) return '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + nuevo + '</div></div>';
-      var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c"><p>' + esc(q.prompt) + '</p>';
+      var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c"><p>' + esc(pr(q)) + '</p>';
       if (q.question_type === 'multiple_choice' || q.question_type === 'true_false') {
         h += (q.options || []).map(function (o, j) {
           return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(o) + '"><span>' + esc(o) + '</span></label>';
@@ -742,20 +758,55 @@
       return h + '</div></div>';
     }
 
+    function leerResp(q, i) {
+      if (NUEVOS.indexOf(q.question_type) >= 0 && campoNuevo(q, i) !== null) { var a = leerNuevo(q, i); return a == null ? '' : a; }
+      var c = cuerpo.querySelector('[name="q' + i + '"]:checked') || cuerpo.querySelector('.mt-txt[name="q' + i + '"]');
+      return c ? c.value : '';
+    }
+    function mostrarResp(q, a) { return window.WaveTipos && WaveTipos.soporta(q.question_type) ? WaveTipos.mostrar(q, a) : a; }
+
     function formulario() {
+      sembrar();
+      if (relamp) clearInterval(relamp.t);
+      relamp = null;
+      if (lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
       cuerpo.innerHTML = lista.map(campo).join('') +
         '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-enviar="1">Entregar</button></div>';
       cuerpo.scrollTo(0, 0);
     }
 
-    async function enviar() {
-      var resp = lista.map(function (q, i) {
-        if (NUEVOS.indexOf(q.question_type) >= 0 && campoNuevo(q, i) !== null) return { question_id: q.id, answer: leerNuevo(q, i) };
-        var c = cuerpo.querySelector('[name="q' + i + '"]:checked') || cuerpo.querySelector('.mt-txt[name="q' + i + '"]');
-        return { question_id: q.id, answer: c ? c.value : '' };
-      });
+    // Modo Relámpago: una pregunta por vez, con cronómetro. Si se acaba el tiempo pasa sola a la siguiente.
+    function relampago() {
+      relamp = { i: 0, resp: [], t: null };
+      mostrarRel();
+    }
+    function mostrarRel() {
+      var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg;
+      cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">⚡ Relámpago · ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
+        '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
+        '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-rel="1">' + (i === lista.length - 1 ? 'Terminar' : 'Siguiente') + '</button></div>';
+      cuerpo.scrollTo(0, 0);
+      var num = cuerpo.querySelector('.rl-seg b');
+      clearInterval(relamp.t);
+      relamp.t = setInterval(function () {
+        resto--;
+        if (num) num.textContent = Math.max(resto, 0);
+        if (resto <= 0 && !enviando) siguienteRel();
+      }, 1000);
+    }
+    function siguienteRel() {
+      if (!relamp) return;
+      clearInterval(relamp.t);
+      var i = relamp.i, q = lista[i];
+      relamp.resp.push({ question_id: q.id, answer: leerResp(q, i), seed: q._seed });
+      relamp.i++;
+      if (relamp.i < lista.length) mostrarRel(); else enviar(relamp.resp);
+    }
+
+    async function enviar(pre) {
+      var resp = pre || lista.map(function (q, i) { return { question_id: q.id, answer: leerResp(q, i), seed: q._seed }; });
       var vacias = resp.filter(function (r) { return !String(r.answer).trim(); }).length;
-      if (vacias && !confirm('Te quedaron ' + vacias + (vacias === 1 ? ' pregunta' : ' preguntas') + ' sin responder. ¿Entregar igual?')) return;
+      if (!pre && vacias && !confirm('Te quedaron ' + vacias + (vacias === 1 ? ' pregunta' : ' preguntas') + ' sin responder. ¿Entregar igual?')) return;
       enviando = true;
       cuerpo.innerHTML = '<div class="mt-cuest-estado"><div class="mt-girar"></div><b>Estamos corrigiendo tus respuestas…</b><small>Puede tardar unos segundos. No cierres esta ventana.</small></div>';
       try {
@@ -784,8 +835,8 @@
         (detalle ? '<p>' + detalle + '</p>' : '') + (res.overall_feedback ? '<p class="mt-res-fb">' + esc(res.overall_feedback) + '</p>' : '') + '</div>' +
         '<div class="mt-res-lista">' + lista.map(function (q, i) {
           var r = porId[q.id] || {}, sc = Math.round(r.score || 0);
-          return '<div class="mt-res-item"><div class="mt-res-cab"><span class="mt-preg-n">' + (i + 1) + '</span><b>' + esc(q.prompt) + '</b><span class="mt-chip-n ' + (sc >= 70 ? 'ok' : sc >= 40 ? 'med' : 'bajo') + '">' + sc + '</span></div>' +
-            '<p class="mt-res-tu"><small>Tu respuesta</small>' + esc(mias[q.id] || '(sin responder)') + '</p>' +
+          return '<div class="mt-res-item"><div class="mt-res-cab"><span class="mt-preg-n">' + (i + 1) + '</span><b>' + esc(pr(q)) + '</b><span class="mt-chip-n ' + (sc >= 70 ? 'ok' : sc >= 40 ? 'med' : 'bajo') + '">' + sc + '</span></div>' +
+            '<p class="mt-res-tu"><small>Tu respuesta</small>' + esc(mostrarResp(q, mias[q.id]) || '(sin responder)') + '</p>' +
             (r.feedback ? '<p class="mt-res-dev">' + esc(r.feedback) + '</p>' : '') + '</div>';
         }).join('') + '</div>' +
         '<div class="mt-cuest-pie">' + (ok && op.examen ? '' : '<button type="button" class="mt-boton suave" data-otra="1">' + (op.repaso ? 'Hacer otro repaso' : 'Intentar de nuevo') + '</button>') +
@@ -817,7 +868,7 @@
         if (!r.data.questions || !r.data.questions.length) throw new Error('Todavía no hay preguntas cargadas.');
         return r.data.questions;
       },
-      enviar: function (resp) { return llamar('grade-exam', { exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
+      enviar: function (resp) { return llamar('corregir', { modo: 'examen', exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
       alTerminar: function (res) {
         t.examen.mejor = Math.max(t.examen.mejor || 0, res.score);
         if (res.passed) t.examen.aprobado = true;
@@ -882,5 +933,5 @@
   // Solo para pruebas visuales con datos de ejemplo
   function _probar(el, datos, r) { vista = el; D = datos; ruta = r || { tema: null, leccion: null }; enlazar(); pintar(); }
 
-  window.WaveMateria = { abrir: abrir, _probar: _probar };
+  window.WaveMateria = { abrir: abrir, _probar: _probar, _cuest: abrirCuestionario };
 })();

@@ -265,3 +265,51 @@
 .rc-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 color-mix(in srgb, var(--k) 58%, #000); }
 .rc-btn:disabled { opacity: .6; cursor: default; }
 .rc-btn.amber { background: #F5B72C; color: #5A3E00; box-shadow: 0 5px 0 #C98F0C; }
+
+/* ---------- Preguntas de piezas nuevas (numérica, tocar texto, fichas, palabras clave, rotular) ---------- */
+.mt-boton.chico { padding: 8px 18px; font-size: .88rem; border-radius: 14px; }
+.nu-fila { display: flex; align-items: center; gap: 10px; }
+.nu-in { max-width: 260px; font-size: 1.15rem; font-weight: 800; text-align: center; }
+.nu-un { font-weight: 800; color: var(--texto-suave); }
+
+.tp-cats { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.tp-cat { padding: 8px 14px; border: 2px solid #E3ECEA; border-radius: 999px; background: #fff; font: inherit; font-weight: 800; font-size: .88rem; cursor: pointer; color: var(--petroleo); }
+.tp-cat.on { border-color: var(--turquesa); background: var(--menta); box-shadow: 0 0 0 2px var(--turquesa) inset; }
+.tp-cat.c1.on { border-color: #E08A00; background: #FFF1D6; box-shadow: 0 0 0 2px #E08A00 inset; }
+.tp-cat.c2.on { border-color: #C2456B; background: #FDE3EB; box-shadow: 0 0 0 2px #C2456B inset; }
+.tp-cat.c3.on { border-color: #5B5BD6; background: #E6E6FB; box-shadow: 0 0 0 2px #5B5BD6 inset; }
+.tp-cat.c4.on { border-color: #6A8F00; background: #EBF4CC; box-shadow: 0 0 0 2px #6A8F00 inset; }
+.tp-texto { margin-top: 10px; line-height: 2.2; font-weight: 700; }
+.tp-texto.lineas { display: grid; gap: 8px; line-height: 1.5; }
+.tp-seg { display: inline-block; padding: 2px 8px; border: 2px solid transparent; border-radius: 10px; cursor: pointer; transition: background .1s; }
+.tp-texto.lineas .tp-seg { display: block; padding: 10px 14px; border-color: #E3ECEA; border-radius: 14px; background: #fff; }
+.tp-seg:hover { background: #F1F7F6; }
+.tp-seg:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 1px; }
+.tp-seg.on { border-color: var(--turquesa); background: var(--menta); }
+.tp-seg.on.c1 { border-color: #E08A00; background: #FFF1D6; }
+.tp-seg.on.c2 { border-color: #C2456B; background: #FDE3EB; }
+.tp-seg.on.c3 { border-color: #5B5BD6; background: #E6E6FB; }
+.tp-seg.on.c4 { border-color: #6A8F00; background: #EBF4CC; }
+
+.tk-obj { margin-top: 10px; padding: 10px 14px; border-radius: 14px; background: #FFF1D6; font-weight: 800; display: inline-block; }
+.tk-arm { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; min-height: 58px; margin-top: 12px; padding: 10px; border: 2px dashed #B9D5D2; border-radius: 18px; background: #F7FBFA; }
+.tk-arm:empty::before { content: 'Tocá las fichas para armar acá'; color: var(--texto-suave); font-size: .85rem; font-weight: 700; align-self: center; }
+.tk-val { min-height: 26px; margin-top: 6px; font-weight: 800; font-size: 1.1rem; color: var(--turquesa-oscuro); text-align: right; }
+.tk-banco, .tk-ops { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tk-f { min-width: 44px; padding: 10px 14px; border: 2px solid #E3ECEA; border-bottom-width: 4px; border-radius: 14px; background: #fff; font: inherit; font-weight: 800; font-size: 1.05rem; color: var(--petroleo); cursor: pointer; }
+.tk-f:active { transform: translateY(2px); }
+.tk-f:disabled { opacity: .35; cursor: default; }
+.tk-f.op { background: #F1F7F6; color: var(--turquesa-oscuro); }
+.tk-f.en { border-color: var(--turquesa); background: var(--menta); }
+.tk-pie { margin-top: 12px; }
+
+.li-wrap { position: relative; margin-top: 10px; border: 2px solid #E3ECEA; border-radius: 18px; overflow: hidden; background: #fff; }
+.li-img { display: block; width: 100%; height: auto; }
+.li-pt { position: absolute; display: grid; place-items: center; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: #E08A00; color: #fff; font-weight: 800; font-size: .85rem; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: pointer; }
+.li-n { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #E08A00; color: #fff; }
+
+.rl-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 800; }
+.rl-seg { padding: 4px 12px; border-radius: 999px; background: #FFF1D6; color: #9A5B00; }
+.rl-barra { height: 10px; margin-bottom: 14px; border-radius: 999px; background: #E3ECEA; overflow: hidden; }
+.rl-barra i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #E08A00, #F2B544); transform-origin: left; animation: rlbar linear forwards; }
+@keyframes rlbar { from { transform: scaleX(1); } to { transform: scaleX(0); } }
