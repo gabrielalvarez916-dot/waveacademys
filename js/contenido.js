@@ -470,6 +470,7 @@
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro. Se sube una sola vez y aparece sola al principio de los videos de todas las misiones.', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
       boton('video-up', 'Subir videos', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
+    clase += fila('🔎', 'Revisar un video', 'Pegá la transcripción y te dice si encaja con los PDF de la misión (sin IA, no gasta créditos)', boton('video-revisar', 'Revisar transcripción', 'suave'), 'wv-i-revisar');
     var num = 0;
     if (L.primera) h += casillero(++num, '🎬', 'Videos de la misión', 'Se ven todos juntos al principio de la misión, en este orden', tieneV ? 'ok' : 'vacia', clase);
     if (!L.gen) {
@@ -491,6 +492,55 @@
     if (!cont) return;
     cont.className = '';
     cont.innerHTML = '<div class="wv-lec-cab"><h2>' + esc(tit) + '</h2>' + botonCorrecciones() + '</div>' + aviso + '<div class="wv-cass">' + h + '</div>';
+  }
+
+  // ---------- Revisar la transcripción de un video contra los PDF de la misión (sin IA) ----------
+  var VACIAS = ' de la las los el en y a un una unos unas por para con del al que se su sus es son o como mas más entre sin sobre lo le cada otro otra este esta '.split(' ');
+  function normT(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/<[^>]+>/g, ' ').replace(/[^a-z0-9ñ ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+  function raices(t) { return normT(t).split(' ').filter(function (w) { return w.length > 2 && VACIAS.indexOf(w) < 0; }).map(function (w) { return w.slice(0, 6); }); }
+  function aparece(frase, bolsa) { var r = raices(frase); if (!r.length) return false; var n = r.filter(function (x) { return bolsa[x]; }).length; return n / r.length >= 0.6; }
+  async function revisarTranscripcion() {
+    var el = document.createElement('div');
+    el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px';
+    el.innerHTML = '<div style="background:#fff;border-radius:14px;max-width:760px;width:100%;max-height:90vh;overflow:auto;padding:20px">' +
+      '<h3 style="margin:0 0 8px">Revisar transcripción del video</h3><p class="wv-sub" style="margin:0 0 10px">Pegá el texto del video. Se compara con los conceptos de los PDF de esta misión.</p>' +
+      '<textarea id="wv-tr" style="width:100%;min-height:180px;padding:10px;border-radius:10px;border:1px solid #ccd"></textarea>' +
+      '<div style="display:flex;gap:8px;margin:10px 0"><button type="button" class="wv-btn" id="wv-tr-ok">Revisar</button><button type="button" class="wv-btn suave" id="wv-tr-x">Cerrar</button></div><div id="wv-tr-res"></div></div>';
+    document.body.appendChild(el);
+    el.querySelector('#wv-tr-x').onclick = function () { el.remove(); };
+    el.querySelector('#wv-tr-ok').onclick = async function () {
+      var res = el.querySelector('#wv-tr-res'), txt = el.querySelector('#wv-tr').value;
+      if (txt.trim().length < 100) { res.innerHTML = '<p>Pegá una transcripción más larga.</p>'; return; }
+      res.innerHTML = '<p>Revisando…</p>';
+      try {
+        var lst = S.lessons[R.topic] || [], ids = lst.map(function (x) { return x.id; });
+        var dr = await sb.from('lesson_drafts').select('lesson_id, contenido').in('lesson_id', ids);
+        var fi = await sb.from('lesson_fichas').select('lesson_id, no_entra').in('lesson_id', ids);
+        var bolsa = {}; raices(txt).forEach(function (r) { bolsa[r] = 1; });
+        var h = '', tot = 0, ok = 0, fuera = [];
+        lst.forEach(function (l, i) {
+          var d = (dr.data || []).filter(function (x) { return x.lesson_id === l.id; })[0];
+          if (!d || !d.contenido) return;
+          var c = d.contenido, terms = [];
+          (c.glosario || []).forEach(function (g) { terms.push(g.palabra); });
+          (c.resumen || []).forEach(function (r) { terms.push(r.titulo); });
+          (c.secciones || []).forEach(function (s) { terms.push(s.titulo); });
+          terms = terms.filter(function (t, k, a) { return t && a.indexOf(t) === k; });
+          var si = terms.filter(function (t) { return aparece(t, bolsa); }), no = terms.filter(function (t) { return !aparece(t, bolsa); });
+          tot += terms.length; ok += si.length;
+          h += '<div style="margin:10px 0"><b>Nivel ' + (i + 1) + ' · ' + esc(l.title) + '</b> — ' + si.length + ' de ' + terms.length + ' conceptos<br>' +
+            (si.length ? '<small>✅ ' + si.map(esc).join(' · ') + '</small><br>' : '') + (no.length ? '<small>❌ ' + no.map(esc).join(' · ') + '</small>' : '') + '</div>';
+        });
+        (fi.data || []).forEach(function (f) {
+          String(f.no_entra || '').split(/[.;]/).forEach(function (fr) { fr = fr.replace(/\(.*?\)/g, '').trim(); if (fr.length > 4 && aparece(fr, bolsa)) fuera.push(fr); });
+        });
+        var pct = tot ? Math.round(ok * 100 / tot) : 0;
+        var ver = pct >= 50 ? '✅ Encaja bien con la misión' : pct >= 25 ? '🟡 Encaja en parte: cubre algunos niveles' : '❌ No encaja: habla de otra cosa o muy por arriba';
+        res.innerHTML = '<p style="font-size:1.1rem"><b>' + ver + '</b> (' + pct + '% de los conceptos)</p>' +
+          (fuera.length ? '<p>⚠️ Menciona temas que la ficha deja afuera: ' + fuera.map(esc).join(' · ') + '</p>' : '') + h +
+          '<p class="wv-sub">Es una comparación de palabras: sirve para descartar rápido. Si un video sirve solo para un nivel, igual puede valer.</p>';
+      } catch (e) { res.innerHTML = '<p>No se pudo revisar: ' + esc(e.message || e) + '</p>'; }
+    };
   }
 
   // ---------- Acciones ----------
@@ -690,6 +740,7 @@
         toast(tr.length ? (tr.length > 1 ? 'Recorte guardado (' + tr.length + ' tramos)' : 'Recorte guardado') : 'Se muestra el video entero');
         return pintarLeccion();
       }
+      if (a === 'video-revisar') return revisarTranscripcion();
       if (a === 'video-yt') {
         var enl = prompt('Pegá el enlace del video de YouTube:');
         if (enl == null) return;
