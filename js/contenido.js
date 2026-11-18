@@ -364,7 +364,9 @@
       var q = await sb.from('questions').select('id', { count: 'exact', head: true }).eq('lesson_step_id', pasos.final_activity.id);
       var bd = await sb.from('lesson_drafts').select('status, paso, revision, revision_inicial, updated_at').eq('lesson_id', R.lesson).maybeSingle();
       var rr = await sb.from('video_renders').select('id, status, error, created_at').eq('lesson_id', R.lesson).order('created_at', { ascending: false }).limit(1).maybeSingle();
-      L = { pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
+      var claves = videosDe(pasos.video).map(function (x) { return x.uid; }).filter(function (k) { return /^lessons\//.test(k || ''); }), opt = {};
+      if (claves.length) { var ro = await sb.from('video_optimizados').select('key, estado, nota').in('key', claves); (ro.data || []).forEach(function (o) { opt[o.key] = o; }); }
+      L = { opt: opt, pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
       vigilarRender();
     } catch (e) {
@@ -445,7 +447,9 @@
     var clase = '';
     vids.forEach(function (x, i) {
       var nom = x.intro ? '🎬 Intro de Wave' : esYt(x.uid) ? 'Video de YouTube incrustado' : (x.nombre || x.uid.split('/').pop().replace(/^[a-z0-9]{8}-/, ''));
-      clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom),
+      var ob = (L.opt || {})[x.uid];
+      var est = x.intro || esYt(x.uid) ? '' : !ob ? ' · ⏳ Sin optimizar todavía (se hace solo en unos minutos)' : ob.estado === 'ok' ? ' · ✅ Optimizado' : ob.estado === 'error' ? ' · ⚠️ No se pudo optimizar' : ' · ⏳ Optimizando…';
+      clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom) + est,
         boton('video-ver:' + i, 'Ver') +
         (vids.length > 1 ? '<button type="button" class="wv-ico" title="Subir" data-acc="video-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button><button type="button" class="wv-ico" title="Bajar" data-acc="video-mov:' + i + ':1"' + (i === vids.length - 1 ? ' disabled' : '') + '>▼</button>' : '') +
         (x.intro ? '' : boton('video-introdef:' + i, '⭐ Usar como intro', 'suave')) +
