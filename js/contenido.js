@@ -497,7 +497,7 @@
   // ---------- Revisar la transcripción de un video contra los PDF de la misión (sin IA) ----------
   var VACIAS = ' de la las los el en y a un una unos unas por para con del al que se su sus es son o como mas más entre sin sobre lo le cada otro otra este esta '.split(' ');
   function normT(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/<[^>]+>/g, ' ').replace(/[^a-z0-9ñ ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
-  function raices(t) { return normT(t).split(' ').filter(function (w) { return w.length > 2 && VACIAS.indexOf(w) < 0; }).map(function (w) { return w.slice(0, 6); }); }
+  function raices(t) { return normT(t).split(' ').filter(function (w) { return w.length > 2 && VACIAS.indexOf(w) < 0; }).map(function (w) { return w.replace(/(es|s)$/, '').replace(/z/g, 'c').slice(0, 6); }); }
   function aparece(frase, bolsa) { var r = raices(frase); if (!r.length) return false; var n = r.filter(function (x) { return bolsa[x]; }).length; return n / r.length >= 0.6; }
   async function revisarTranscripcion() {
     var el = document.createElement('div');
