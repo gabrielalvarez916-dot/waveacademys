@@ -52,6 +52,40 @@ def unir_con_fundido(listado, final):
         print("  (no se pudo hacer el fundido, se unen sin transición)", (e.stderr or "")[-300:], flush=True)
         return False
 
+def una_pasada(partes, vf, final):
+    """Recorta, ajusta y une todas las partes con fundidos en UNA sola codificación (mucho más rápido).
+    Devuelve False si no se puede; entonces se usa el camino de antes (parte por parte)."""
+    durs = [((x["f"] if x["f"] > x["i"] else x["dur"]) - x["i"]) for x in partes]
+    if any(d <= 0 for d in durs): return False
+    fund = len(partes) > 1 and all(d >= 2 * FUNDIDO + 0.3 for d in durs)
+    cmd, f = ["ffmpeg", "-y", "-v", "error"], []
+    for k, x in enumerate(partes):
+        if x["i"] > 0: cmd += ["-ss", str(x["i"])]
+        cmd += ["-t", f"{durs[k]:.3f}", "-i", x["ruta"]]
+        f.append(f"[{k}:v]{vf},setpts=PTS-STARTPTS[v{k}]")
+        f.append((f"[{k}:a]" if x["audio"] else f"anullsrc=r=48000:cl=stereo,atrim=duration={durs[k]:.3f},") +
+                 f"aresample=48000,aformat=channel_layouts=stereo,asetpts=PTS-STARTPTS[a{k}]")
+    if len(partes) == 1:
+        v, a = "[v0]", "[a0]"
+    elif fund:
+        v, a, acum = "[v0]", "[a0]", durs[0]
+        for k in range(1, len(partes)):
+            f.append(f"{v}[v{k}]xfade=transition=fade:duration={FUNDIDO}:offset={acum - FUNDIDO * k:.3f}[xv{k}]")
+            f.append(f"{a}[a{k}]acrossfade=d={FUNDIDO}:c1=tri:c2=tri[xa{k}]")
+            v, a, acum = f"[xv{k}]", f"[xa{k}]", acum + durs[k]
+    else:
+        f.append("".join(f"[v{k}][a{k}]" for k in range(len(partes))) + f"concat=n={len(partes)}:v=1:a=1[cv][ca]")
+        v, a = "[cv]", "[ca]"
+    cmd += ["-filter_complex", ";".join(f), "-map", v, "-map", a,
+            "-c:v", "libx264", "-preset", "superfast", "-crf", "23", "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", final]
+    print("  generando en una sola pasada…", flush=True)
+    try:
+        sh(cmd); return True
+    except subprocess.CalledProcessError as e:
+        print("  (una sola pasada falló, se hace parte por parte)", (e.stderr or "")[-300:], flush=True)
+        return False
+
 def procesar(p, tmp):
     partes = []
     for k, parte in enumerate(p["plan"]):
@@ -59,11 +93,14 @@ def procesar(p, tmp):
         print(f"  bajando parte {k + 1} de {len(p['plan'])}…", flush=True)
         sh(["curl", "-fsSL", "--retry", "3", "-o", ruta, parte["url"]])
         partes.append({"ruta": ruta, "i": float(parte.get("i") or 0), "f": float(parte.get("f") or 0), **sonda(ruta)})
-    alto = max(2, min(1080, max(x["alto"] for x in partes) or 720))
+    alto = max(2, min(720, max(x["alto"] for x in partes) or 720))  # 720p: alcanza para clases y codifica mucho más rápido
     alto -= alto % 2
     ancho = int(round(alto * 16 / 9)); ancho -= ancho % 2
     vf = (f"scale={ancho}:{alto}:force_original_aspect_ratio=decrease,pad={ancho}:{alto}:(ow-iw)/2:(oh-ih)/2:black,"
           "setsar=1,fps=30,format=yuv420p")
+    final = os.path.join(tmp, "final.mp4")
+    if una_pasada(partes, vf, final):
+        return subir(final, p)
     listado = []
     for k, x in enumerate(partes):
         sal = os.path.join(tmp, f"p{k}.mp4")
@@ -80,12 +117,14 @@ def procesar(p, tmp):
         print(f"  procesando parte {k + 1} de {len(partes)}…", flush=True)
         sh(cmd)
         listado.append(sal)
-    final = os.path.join(tmp, "final.mp4")
     if not unir_con_fundido(listado, final):
         lista = os.path.join(tmp, "lista.txt")
         with open(lista, "w") as fh:
             fh.write("".join(f"file '{r}'\n" for r in listado))
         sh(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", "-movflags", "+faststart", final])
+    subir(final, p)
+
+def subir(final, p):
     dur = sonda(final)["dur"]
     if dur < 1: raise RuntimeError("El video final salió vacío")
     print(f"  subiendo el video final ({os.path.getsize(final) // 1048576} MB, {int(dur)} s)…", flush=True)
