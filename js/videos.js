@@ -382,7 +382,7 @@
   }
   var _optT = null;
   // Mientras corre en GitHub: el botón queda bloqueado y se muestra el avance
-  function vigilarOpt(total0, inicio) {
+  function vigilarOpt(total0, inicio, hechos0) {
     var btn = document.getElementById('vd-opt-btn'), txt = document.getElementById('vd-opt-txt');
     if (!btn || !txt) return;
     if (_optT) clearInterval(_optT);
@@ -403,7 +403,8 @@
       } catch (e) { /* sigue */ }
       if (vueltas > 120) { clearInterval(_optT); _optT = null; btn.disabled = false; }
     };
-    pinta(0);
+    pinta(hechos0 || 0);
+    tic();
     _optT = setInterval(tic, 15000);
   }
   async function iniciarOptimizar() {
@@ -411,7 +412,7 @@
     if (!btn || !txt) return;
     try {
       var c = await contarOpt();
-      if (c.corriendo && c.pendientes) { vigilarOpt(c.total, Date.now()); }
+      if (c.corriendo && c.pendientes) { vigilarOpt(c.total, Date.now(), c.total - c.pendientes); }
       else { txt.textContent = textoOpt(c); btn.disabled = !c.pendientes; }
     } catch (e) { txt.textContent = 'No se pudo consultar: ' + ((e && e.message) || e); }
     btn.onclick = async function () {
