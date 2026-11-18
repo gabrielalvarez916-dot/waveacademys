@@ -40,6 +40,11 @@ def words(c):
         for b in s.get("bloques", []):
             out += [b.get("titulo", ""), b.get("texto", "")] + list(b.get("items", []) or [])
             for f in b.get("filas", []) or []: out += f
+    for k in ("ejemplo_completo", "ejemplo_incompleto", "ejemplo_solo"):
+        e = c.get(k) or {}
+        out += [e.get("titulo", ""), e.get("planteo", "")] + list(e.get("pasos", []) or [])
+    t = c.get("tip") or {}
+    out += [t.get("titulo", ""), t.get("texto", "")] + list(c.get("ojo", []) or []) + list(c.get("carpeta", []) or [])
     return len(re.findall(r"\w+", " ".join(map(str, out))))
 
 def wrap_lines(text, font, size, maxw, maxlines):
@@ -80,7 +85,7 @@ def cover(c, doc):
     for txt, x in (("LECTURA", 62), ("INCLUYE", 145)):
         spaced(c, x, PH - 726, txt, "DV-B", 5.8, MINT, 2)
     c.setFillColor(white); c.setFont("DV-B", 8.2)
-    c.drawString(62, PH - 741, f"{m['minutos']} minutos"); c.drawString(145, PH - 741, "Video · Ejemplos · Resumen · Glosario")
+    c.drawString(62, PH - 741, f"{m['minutos']} minutos"); c.drawString(145, PH - 741, "Video · Ejemplos · Carpeta · Resumen · Glosario")
     def wave(color, y0, a, ph):
         c.setFillColor(color); p = c.beginPath(); p.moveTo(0, 0); p.lineTo(0, y0)
         p.curveTo(PW * 0.22, y0 + a, PW * 0.38, y0 - a * 0.9, PW * 0.58, y0 + a * 0.2 + ph)
@@ -160,7 +165,7 @@ def tabla_bloque(b):
     filas = [[limpio(x) for x in f] for f in b.get("filas", [])]
     n = max(len(cols), 1)
     # primera columna un poco más angosta si hay 3 o más
-    if n >= 3: widths = [W * 0.26] + [W * 0.74 / (n - 1)] * (n - 1)
+    if n >= 3 and not b.get("iguales"): widths = [W * 0.26] + [W * 0.74 / (n - 1)] * (n - 1)
     else: widths = [W / n] * n
     out = []
     if b.get("titulo"): out.append(P(f"<b>{limpio(b['titulo'])}</b>", S("tt", fontName="DV-B", fontSize=8.8, textColor=TEAL, spaceAfter=3)))
@@ -189,6 +194,75 @@ def bloque(b):
     if t == "imagen": return imagen_bloque(b)
     return [P(tx)] if tx else []
 
+# ---------------- bloques fijos (etapas, ejemplos, carpeta, soluciones) ----------------
+ETAPAS = {1: "Etapa 1 · Los conceptos principales", 2: "Etapa 2 · Profundizamos"}
+
+def etapa_banner(n):
+    return subbar(ETAPAS.get(n, f"Etapa {n}"))
+
+def _pasos(items):
+    return [Paragraph(limpio(x), stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items or [])]
+
+def ejemplos_fijos(c):
+    """Ejemplo completo, incompleto y 'hacelo solo'. Devuelve [] si el borrador no los trae (borradores viejos)."""
+    comp, inc, solo = c.get("ejemplo_completo"), c.get("ejemplo_incompleto"), c.get("ejemplo_solo")
+    if not (comp or inc or solo): return []
+    cab = barra("▶", "Ejemplos: mirá, completá y hacelo solo")
+    s = []
+    if comp:
+        o = [subbar("Ejemplo completo" + (": " + limpio(comp.get("titulo")) if comp.get("titulo") else ""))]
+        if comp.get("planteo"): o.append(P(limpio(comp["planteo"])))
+        if comp.get("columnas"): o += tabla_bloque({**comp, "titulo": None, "texto": None})
+        o += _pasos(comp.get("pasos"))
+        s += [KeepTogether([cab] + o), spc(8)]; cab = None
+    if inc:
+        o = [subbar("Ejemplo incompleto: completalo vos" + (" · " + limpio(inc.get("titulo")) if inc.get("titulo") else ""))]
+        if inc.get("planteo"): o.append(P(limpio(inc["planteo"])))
+        if inc.get("columnas"): o += tabla_bloque({**inc, "titulo": None, "texto": None})
+        o += _pasos(inc.get("pasos"))
+        o.append(P("Completá los espacios ___ en tu carpeta. La respuesta está al final del PDF.", cap))
+        s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
+    if solo:
+        o = [subbar("Hacelo solo" + (": " + limpio(solo.get("titulo")) if solo.get("titulo") else ""))]
+        if solo.get("planteo"): o.append(P(limpio(solo["planteo"])))
+        o += _pasos(solo.get("pasos"))
+        o.append(P("Resolvelo en tu carpeta, sin mirar la respuesta. Después comparala con la del final.", cap))
+        s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
+    return s
+
+def tip_y_ojo(c):
+    s = []
+    t = c.get("tip")
+    if t and (t.get("texto") or t.get("titulo")):
+        s += [box_note("TIP" + (": " + sin_prefijo(t.get("titulo")).upper() if t.get("titulo") else ""), limpio(t.get("texto")), "tip"), spc(8)]
+    ojo = [limpio(x) for x in (c.get("ojo") or [])]
+    if ojo:
+        html = "<br/>".join(f"• {x}" for x in ojo)
+        s += [box_note("OJO CON ESTO", html, "ojo"), spc(8)]
+    return s
+
+def carpeta_fija(c):
+    items = [limpio(x) for x in (c.get("carpeta") or [])]
+    if not items: return []
+    s = [barra("✎", "Actividad de carpeta"),
+         P("Hacé estas consignas en tu carpeta. Cuando termines, corregite con las soluciones del final del PDF.")]
+    s += [Paragraph(x, stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items)]
+    return [KeepTogether(s), spc(10)]
+
+def soluciones_fijas(c):
+    sol = c.get("soluciones")
+    if not sol: return []
+    sm = S("solp", fontSize=7.4, leading=10, textColor=GRAY)
+    smb = S("solb", fontName="DV-B", fontSize=7.4, leading=10, textColor=DARK)
+    rows = []
+    if sol.get("incompleto"): rows.append([Paragraph("Ejemplo incompleto", smb), Paragraph(limpio(sol["incompleto"]), sm)])
+    if sol.get("solo"): rows.append([Paragraph("Hacelo solo", smb), Paragraph(limpio(sol["solo"]), sm)])
+    for i, x in enumerate(sol.get("carpeta") or [], 1): rows.append([Paragraph(f"Carpeta, consigna {i}", smb), Paragraph(limpio(x), sm)])
+    if not rows: return []
+    return [KeepTogether([barra("✓", "Soluciones"),
+            P("Mirá esto recién cuando hayas terminado.", S("solnota", fontName="DV-I", fontSize=7.4, leading=10, textColor=GRAY, spaceAfter=4)),
+            table(["ACTIVIDAD", "RESPUESTA"], rows, [W * 0.27, W * 0.73])])]
+
 # ---------------- documento ----------------
 def story(c):
     s = [NextPageTemplate("main"), PageBreak()]
@@ -204,14 +278,18 @@ def story(c):
                              ("LEFTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 9), ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
                              ("VALIGN", (0, 0), (-1, -1), "TOP")]))
     s += [org, spc(10),
-          box_note("✦ ANTES DE EMPEZAR", "Mirá primero el video y después leé este material con un cuaderno al lado. Cuando aparezca un ejemplo, "
-                   "tapá la solución, resolvelo vos y después compará: se aprende haciendo."), spc(6),
+          box_note("✦ ANTES DE EMPEZAR", "Mirá primero el video y después leé este material con la carpeta al lado. Cuando llegues a los ejemplos, "
+                   "completá y resolvé vos antes de mirar las respuestas, que están al final: se aprende haciendo."), spc(6),
           box_note("¿TENÉS DUDAS?", "Abrí el Tutor desde este mismo PDF y preguntale lo que no te quede claro. Leyó este material y te lo explica de otra forma."),
           PageBreak()]
+    etapa_actual = None
     for i, sec in enumerate(c["secciones"], 1):
+        if sec.get("etapa") and sec.get("etapa") != etapa_actual:
+            etapa_actual = sec["etapa"]; s += [CondPageBreak(120), etapa_banner(etapa_actual)]
         s.append(bar(i, limpio(sec["titulo"])))
         for b in sec.get("bloques", []): s += bloque(b)
         s.append(spc(10))
+    s += ejemplos_fijos(c) + tip_y_ojo(c)
     # resumen en tarjetas
     s += [CondPageBreak(160), barra("★", "Resumen")]
     cards = []
@@ -231,6 +309,7 @@ def story(c):
                             ("LINEAFTER", (0, 0), (0, -1), 4, white)] + span))
     s += [rt, spc(12), CondPageBreak(120), barra("Aa", "Glosario")]
     s += [table(["PALABRA", "QUÉ SIGNIFICA"], [[limpio(g["palabra"]), limpio(g["significado"])] for g in c["glosario"]], [W * 0.26, W * 0.74])]
+    s += [spc(12)] + carpeta_fija(c) + soluciones_fijas(c)
     return s
 
 def render(entrada, salida):
