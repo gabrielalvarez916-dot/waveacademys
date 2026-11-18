@@ -367,7 +367,14 @@
       var rr = await sb.from('video_renders').select('id, status, error, created_at').eq('lesson_id', R.lesson).order('created_at', { ascending: false }).limit(1).maybeSingle();
       var claves = videosDe(pasos.video).map(function (x) { return x.uid; }).filter(function (k) { return /^lessons\//.test(k || ''); }), opt = {};
       if (claves.length) { var ro = await sb.from('video_optimizados').select('key, estado, nota').in('key', claves); (ro.data || []).forEach(function (o) { opt[o.key] = o; }); }
-      L = { opt: opt, pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
+      var tr = null, fichas = [];
+      if (idx === 0) {
+        var rt = await sb.from('video_transcripciones').select('estado, texto, nota').eq('step_id', pasos.video.id).maybeSingle();
+        tr = rt.error ? null : rt.data;
+        var rf = await sb.from('lesson_fichas').select('lesson_id, contenidos, no_entra').in('lesson_id', lst.map(function (x) { return x.id; }));
+        fichas = lst.map(function (l) { return (rf.data || []).filter(function (f) { return f.lesson_id === l.id; })[0] || null; });
+      }
+      L = { tr: tr, fichas: fichas, opt: opt, pasos: pasos, idx: idx, gen: gen, primera: idx === 0, claves: (kc.data && Array.isArray(kc.data.items)) ? kc.data.items : [], preguntas: q.count || 0, recTmp: {}, recN: {}, borrador: bd.error ? null : bd.data, render: rr.error ? null : rr.data };
       pintarLeccion();
       vigilarRender();
     } catch (e) {
@@ -470,7 +477,8 @@
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro. Se sube una sola vez y aparece sola al principio de los videos de todas las misiones.', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
       boton('video-up', 'Subir videos', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
-    clase += fila('🔎', 'Revisar un video', 'Pegá la transcripción y te dice si encaja con los PDF de la misión (sin IA, no gasta créditos)', boton('video-revisar', 'Revisar transcripción', 'suave'), 'wv-i-revisar');
+    if (tieneV) clase += filaTranscripcion();
+    clase += fila('🔎', 'Revisar otro video', 'Pegá una transcripción y te dice cuánto de la misión cubre (sin IA, no gasta créditos)', boton('video-revisar', 'Revisar transcripción', 'suave'), 'wv-i-revisar');
     var num = 0;
     if (L.primera) h += casillero(++num, '🎬', 'Videos de la misión', 'Se ven todos juntos al principio de la misión, en este orden', tieneV ? 'ok' : 'vacia', clase);
     if (!L.gen) {
@@ -499,11 +507,48 @@
   function normT(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/<[^>]+>/g, ' ').replace(/[^a-z0-9ñ ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
   function raices(t) { return normT(t).split(' ').filter(function (w) { return w.length > 2 && VACIAS.indexOf(w) < 0; }).map(function (w) { return w.replace(/(es|s)$/, '').replace(/z/g, 'c').slice(0, 6); }); }
   function aparece(frase, bolsa) { var r = raices(frase); if (!r.length) return false; var n = r.filter(function (x) { return bolsa[x]; }).length; return n / r.length >= 0.6; }
+  // Compara un texto con los contenidos de las fichas (lo que pide el mapa curricular) de las 4 lecciones
+  function cobertura(txt, fichas) {
+    var bolsa = {}; raices(txt).forEach(function (r) { bolsa[r] = 1; });
+    var lst = S.lessons[R.topic] || [], tot = 0, ok = 0, falta = [], fuera = [], niveles = [];
+    (fichas || []).forEach(function (f, i) {
+      if (!f || !Array.isArray(f.contenidos)) return;
+      var si = [], no = [];
+      f.contenidos.forEach(function (c) { var t = String(c).replace(/\(.*?\)/g, '').trim(); if (!t) return; (aparece(t, bolsa) ? si : no).push(t); });
+      tot += si.length + no.length; ok += si.length; falta = falta.concat(no);
+      niveles.push({ n: i + 1, tit: (lst[i] || {}).title || '', si: si, no: no });
+      String(f.no_entra || '').split(/[.;]/).forEach(function (fr) { fr = fr.replace(/\(.*?\)/g, '').trim(); if (fr.length > 4 && aparece(fr, bolsa)) fuera.push(fr); });
+    });
+    return { pct: tot ? Math.round(ok * 100 / tot) : 0, falta: falta, fuera: fuera, niveles: niveles };
+  }
+  function veredicto(p) { return p >= 60 ? '✅ El video sirve' : p >= 40 ? '🟡 Sirve, el PDF completa lo que falta (si lo que falta es difícil, sumá un video corto)' : '❌ Probablemente no es el video de esta misión'; }
+  function detalleCobertura(c) {
+    return '<p style="font-size:1.1rem"><b>' + veredicto(c.pct) + '</b> — cubre ' + c.pct + '% de la misión</p>' +
+      (c.fuera.length ? '<p>⚠️ Habla de temas que no son de esta misión: ' + c.fuera.map(esc).join(' · ') + '</p>' : '') +
+      c.niveles.map(function (n) { return '<div style="margin:10px 0"><b>Lección ' + n.n + ' · ' + esc(n.tit) + '</b> — ' + n.si.length + ' de ' + (n.si.length + n.no.length) + '<br>' + (n.si.length ? '<small>✅ ' + n.si.map(esc).join(' · ') + '</small><br>' : '') + (n.no.length ? '<small>❌ ' + n.no.map(esc).join(' · ') + '</small>' : '') + '</div>'; }).join('') +
+      '<p class="wv-sub">Compara palabras con lo que pide el mapa curricular: sirve para decidir rápido.</p>';
+  }
+  function filaTranscripcion() {
+    var t = L.tr;
+    if (!t) return fila('📝', 'Transcripción', '⏳ Se transcribe sola en unos minutos (cuando el video esté subido o generado)', '', 'wv-i-trans');
+    if (t.estado === 'error') return fila('📝', 'Transcripción', '⚠️ No se pudo transcribir: ' + esc(t.nota || ''), '', 'wv-i-trans');
+    if (t.estado !== 'ok') return fila('📝', 'Transcripción', '⏳ Transcribiendo…', '', 'wv-i-trans');
+    var c = cobertura(t.texto, L.fichas);
+    return fila('📝', 'Cubre ' + c.pct + '% de la misión', veredicto(c.pct) + (c.falta.length ? ' · Falta: ' + esc(c.falta.slice(0, 4).join(' · ')) + (c.falta.length > 4 ? '…' : '') : ''), boton('trans-ver', 'Ver detalle', 'suave'), 'wv-i-trans');
+  }
+  function verTranscripcion() {
+    var el = document.createElement('div');
+    el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px';
+    el.innerHTML = '<div style="background:#fff;border-radius:14px;max-width:760px;width:100%;max-height:90vh;overflow:auto;padding:20px"><h3 style="margin:0 0 8px">Cuánto de la misión cubre el video</h3>' + detalleCobertura(cobertura(L.tr.texto, L.fichas)) +
+      '<details><summary>Ver transcripción</summary><p style="white-space:pre-wrap">' + esc(L.tr.texto) + '</p></details><button type="button" class="wv-btn suave" style="margin-top:10px">Cerrar</button></div>';
+    document.body.appendChild(el);
+    el.querySelector('button').onclick = function () { el.remove(); };
+  }
   async function revisarTranscripcion() {
     var el = document.createElement('div');
     el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px';
     el.innerHTML = '<div style="background:#fff;border-radius:14px;max-width:760px;width:100%;max-height:90vh;overflow:auto;padding:20px">' +
-      '<h3 style="margin:0 0 8px">Revisar transcripción del video</h3><p class="wv-sub" style="margin:0 0 10px">Pegá el texto del video. Se compara con los conceptos de los PDF de esta misión.</p>' +
+      '<h3 style="margin:0 0 8px">Revisar transcripción del video</h3><p class="wv-sub" style="margin:0 0 10px">Pegá el texto del video. Se compara con lo que pide el mapa curricular para esta misión.</p>' +
       '<textarea id="wv-tr" style="width:100%;min-height:180px;padding:10px;border-radius:10px;border:1px solid #ccd"></textarea>' +
       '<div style="display:flex;gap:8px;margin:10px 0"><button type="button" class="wv-btn" id="wv-tr-ok">Revisar</button><button type="button" class="wv-btn suave" id="wv-tr-x">Cerrar</button></div><div id="wv-tr-res"></div></div>';
     document.body.appendChild(el);
@@ -513,32 +558,8 @@
       if (txt.trim().length < 100) { res.innerHTML = '<p>Pegá una transcripción más larga.</p>'; return; }
       res.innerHTML = '<p>Revisando…</p>';
       try {
-        var lst = S.lessons[R.topic] || [], ids = lst.map(function (x) { return x.id; });
-        var dr = await sb.from('lesson_drafts').select('lesson_id, contenido').in('lesson_id', ids);
-        var fi = await sb.from('lesson_fichas').select('lesson_id, no_entra').in('lesson_id', ids);
-        var bolsa = {}; raices(txt).forEach(function (r) { bolsa[r] = 1; });
-        var h = '', tot = 0, ok = 0, fuera = [];
-        lst.forEach(function (l, i) {
-          var d = (dr.data || []).filter(function (x) { return x.lesson_id === l.id; })[0];
-          if (!d || !d.contenido) return;
-          var c = d.contenido, terms = [];
-          (c.glosario || []).forEach(function (g) { terms.push(g.palabra); });
-          (c.resumen || []).forEach(function (r) { terms.push(r.titulo); });
-          (c.secciones || []).forEach(function (s) { terms.push(s.titulo); });
-          terms = terms.filter(function (t, k, a) { return t && a.indexOf(t) === k; });
-          var si = terms.filter(function (t) { return aparece(t, bolsa); }), no = terms.filter(function (t) { return !aparece(t, bolsa); });
-          tot += terms.length; ok += si.length;
-          h += '<div style="margin:10px 0"><b>Nivel ' + (i + 1) + ' · ' + esc(l.title) + '</b> — ' + si.length + ' de ' + terms.length + ' conceptos<br>' +
-            (si.length ? '<small>✅ ' + si.map(esc).join(' · ') + '</small><br>' : '') + (no.length ? '<small>❌ ' + no.map(esc).join(' · ') + '</small>' : '') + '</div>';
-        });
-        (fi.data || []).forEach(function (f) {
-          String(f.no_entra || '').split(/[.;]/).forEach(function (fr) { fr = fr.replace(/\(.*?\)/g, '').trim(); if (fr.length > 4 && aparece(fr, bolsa)) fuera.push(fr); });
-        });
-        var pct = tot ? Math.round(ok * 100 / tot) : 0;
-        var ver = pct >= 50 ? '✅ Encaja bien con la misión' : pct >= 25 ? '🟡 Encaja en parte: cubre algunos niveles' : '❌ No encaja: habla de otra cosa o muy por arriba';
-        res.innerHTML = '<p style="font-size:1.1rem"><b>' + ver + '</b> (' + pct + '% de los conceptos)</p>' +
-          (fuera.length ? '<p>⚠️ Menciona temas que la ficha deja afuera: ' + fuera.map(esc).join(' · ') + '</p>' : '') + h +
-          '<p class="wv-sub">Es una comparación de palabras: sirve para descartar rápido. Si un video sirve solo para un nivel, igual puede valer.</p>';
+        if (!L.fichas || !L.fichas.length) { var lst = S.lessons[R.topic] || []; var rf = await sb.from('lesson_fichas').select('lesson_id, contenidos, no_entra').in('lesson_id', lst.map(function (x) { return x.id; })); L.fichas = lst.map(function (l) { return (rf.data || []).filter(function (f) { return f.lesson_id === l.id; })[0] || null; }); }
+        res.innerHTML = detalleCobertura(cobertura(txt, L.fichas));
       } catch (e) { res.innerHTML = '<p>No se pudo revisar: ' + esc(e.message || e) + '</p>'; }
     };
   }
@@ -741,6 +762,7 @@
         return pintarLeccion();
       }
       if (a === 'video-revisar') return revisarTranscripcion();
+      if (a === 'trans-ver') return verTranscripcion();
       if (a === 'video-yt') {
         var enl = prompt('Pegá el enlace del video de YouTube:');
         if (enl == null) return;

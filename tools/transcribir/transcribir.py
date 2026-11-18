@@ -28,7 +28,10 @@ def modelo():
     return _modelo
 
 def whisper(wav):
-    segs, _ = modelo().transcribe(wav, language="es", beam_size=1, vad_filter=True)
+    import wave, numpy as np
+    with wave.open(wav) as w:
+        audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768.0
+    segs, _ = modelo().transcribe(audio, language="es", beam_size=1, vad_filter=True)
     return " ".join(s.text.strip() for s in segs)
 
 def tramos_de(t):
