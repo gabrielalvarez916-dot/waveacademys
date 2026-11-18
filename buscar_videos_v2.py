@@ -421,7 +421,16 @@ def main():
         if estado["corte"] or time.time() - inicio > max_seg:
             return
         try:
-            resueltos.update(buscar_mision_mate(lecs))
+            res = buscar_mision_mate(lecs)
+            for l in lecs:
+                consulta, videos = res[l["lesson_id"]]
+                if not dry:
+                    guardar(l, consulta, videos)
+                with lock:
+                    estado["hechas"] += 1
+                    estado["con" if videos else "sin"] += 1
+            print(f"Misión '{lecs[0].get('tema')}' -> {res[lecs[0]['lesson_id']][0][:60]}", flush=True)
+            resueltos.update(res)
         except Exception as ex:  # noqa: BLE001
             print(f"ERROR misión '{lecs[0].get('tema')}': {ex}")
 
@@ -437,7 +446,7 @@ def main():
     globals()["buscar_leccion"] = buscar_leccion_o_mision
 
     with ThreadPoolExecutor(max_workers=hilos) as ex:
-        futs = [ex.submit(trabajo, l) for l in lista]
+        futs = [ex.submit(trabajo, l) for l in lista if not es_mate(l)]
         for _ in as_completed(futs):
             pass
 
