@@ -277,40 +277,58 @@ def buscar_leccion(l):
     return consulta, videos
 
 
+def relevancia(e, l):
+    """Puntaje estricto: el título del video tiene que hablar de esta lección."""
+    p, _ = evaluar(e, l)
+    if p is None:
+        return None
+    v = tokens(e.get("title") or "")
+    tl = tokens(l["leccion"]) - {"sistem", "numer", "parte", "intro"}
+    tc = tokens(" ".join(l.get("contenidos") or []))
+    ol, oc = len(tl & v), len((tc - tl) & v)
+    if ol < 1 or ol + oc < 2:
+        return None
+    return 3.0 * ol + 1.5 * oc + 0.2 * math.log10((e.get("view_count") or 0) + 1)
+
+
 def buscar_mision_mate(lecs):
-    """Busca las lecciones de una misión de Matemática priorizando los canales preferidos
-    y un mismo canal para toda la misión."""
-    por_canal = []  # (canal, {lesson_id: [videos]})
-    for nombre, clave in CANALES_MATE:
-        encontrados = {}
-        for l in lecs:
+    """Una misión de Matemática: se elige UN canal preferido (el que cubre más lecciones con videos
+    que de verdad hablan del tema) y todas las lecciones toman videos de ese canal."""
+    lecs_b = [l for l in lecs if not re.match(r"^\s*(pr[aá]ctica general|nivel jefe)", l["leccion"], re.I)]
+    ranking = []  # (cubiertas, puntaje, -prioridad, nombre, {lesson_id: [(p, e)]})
+    for prio, (nombre, clave) in enumerate(CANALES_MATE):
+        enc = {}
+        for l in lecs_b:
             try:
                 ent = buscar_en_youtube(f"{l['leccion']} {nombre}")
             except Exception:  # noqa: BLE001
                 ent = []
-            ent = [e for e in ent if clave in norm(e.get("channel") or e.get("uploader") or "")]
-            vs = elegir(ent, l)
+            vs = []
+            for e in ent:
+                if not e.get("id") or clave not in norm(e.get("channel") or e.get("uploader") or ""):
+                    continue
+                p = relevancia(e, l)
+                if p is not None:
+                    vs.append((p, e))
             if vs:
-                encontrados[l["lesson_id"]] = vs
-        if encontrados:
-            por_canal.append((nombre, encontrados))
-    # gana el canal que cubre más lecciones; si empatan, el de mayor prioridad
-    por_canal.sort(key=lambda x: -len(x[1]))
+                enc[l["lesson_id"]] = sorted(vs, key=lambda x: -x[0])
+        if enc:
+            ranking.append((len(enc), sum(v[0][0] for v in enc.values()), -prio, nombre, enc))
+    ranking.sort(key=lambda x: (-x[0], -x[1], -x[2]))
     res = {}
     for l in lecs:
-        lid, out, ids = l["lesson_id"], [], set()
-        for _, enc in por_canal:
-            for v in enc.get(lid, [])[:1 if out else 2]:
-                if v["youtube_id"] not in ids and len(out) < CANDIDATOS_POR_LECCION:
-                    out.append(v); ids.add(v["youtube_id"])
-        consulta = "canales preferidos" + (f" ({por_canal[0][0]})" if por_canal else "")
-        if len(out) < CANDIDATOS_POR_LECCION:
-            c2, extra = buscar_leccion(l)
-            for v in extra:
-                if v["youtube_id"] not in ids and len(out) < CANDIDATOS_POR_LECCION:
-                    out.append(v); ids.add(v["youtube_id"])
-            consulta += " || " + c2
-        res[lid] = (consulta, out)
+        lid, out = l["lesson_id"], []
+        canal = None
+        for _, _, _, nombre, enc in ranking:  # primero el canal elegido; otro solo si ese no tiene nada para esta lección
+            if enc.get(lid):
+                canal = nombre
+                for p, e in enc[lid][:CANDIDATOS_POR_LECCION]:
+                    dur = e.get("duration")
+                    out.append({"youtube_id": e["id"], "titulo": e.get("title"), "canal": e.get("channel") or e.get("uploader"),
+                                "duracion_seg": int(dur) if dur else None, "miniatura": f"https://i.ytimg.com/vi/{e['id']}/hqdefault.jpg"})
+                break
+        elegido = ranking[0][3] if ranking else "ninguno"
+        res[lid] = (f"misión con {elegido}" + (f" (esta lección: {canal})" if canal and canal != elegido else ""), out)
     return res
 
 
