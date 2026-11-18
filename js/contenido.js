@@ -1080,11 +1080,32 @@
   var TIPOS_PREG = { open: 'Respuesta abierta', short_answer: 'Respuesta corta', multiple_choice: 'Opción múltiple', true_false: 'Verdadero / Falso' };
   // Tipos que arma la máquina: se editan el enunciado, la respuesta y los criterios; la estructura (opciones, pares, tabla) se ve y edita como texto.
   var TIPOS_MAQ = { fill_blank: 'Completar espacios', ordering: 'Ordenar pasos', matching: 'Unir columnas', classify: 'Clasificar', table_fill: 'Completar tabla', multi_select: 'Selección múltiple', solve_complete: 'Resolver y completar', odd_one_out: 'Encontrar el intruso' };
-  function nombreTipo(t) { return TIPOS_PREG[t] || TIPOS_MAQ[t] || t; }
+  // Tipos nuevos: se corrigen sin IA. La estructura (lo que ve el alumno) y la clave (lo correcto, que el alumno nunca ve) se escriben como JSON.
+  var TIPOS_AUTO = { numeric: 'Número (resultado)', tap_text: 'Tocá el texto / Subrayá y clasificá / Detective del error', tokens: 'Armá con fichas / Reto de armado', keywords: 'Palabras clave', label_image: 'Rotulá el dibujo' };
+  var AYUDA_TIPO = {
+    numeric: { est: '{"unidad":"min"}  ·  números al azar: {"vars":{"a":{"min":12,"max":90},"b":{"min":3,"max":9}},"reglas":["a%10!=0"]} y en el enunciado usá {a} y {b}',
+      clave: '{"acepta":[6000]}  ·  con azar: {"formula":"a*b"}  ·  opcional "tolerancia":0.5, "unidad":"min", "modo":"texto" (para binario: {"acepta":["1101"],"modo":"texto"})' },
+    tap_text: { est: '{"segmentos":["palabra1","palabra2"],"modo":"palabras"}  ·  clasificar: sumá "categorias":["Sujeto","Predicado"]  ·  detective: "modo":"lineas","categorias":["Error de cuenta","No hay error"],"pide_correccion":"¿Cuál es el valor correcto?"',
+      clave: '{"tocar":[1,3]}  ·  con categorías: {"categorias":{"1":"Sujeto","2":"Predicado"}}  ·  detective: {"categorias":{"1":"Error de cuenta"},"correccion":["60"]}  (los números son la posición del segmento, empezando en 0)' },
+    tokens: { est: 'Armar en orden: {"fichas":["4","×","1.000","+","2","×","100","10"]}  ·  Reto: {"fichas":["8","8","3","3"],"objetivo":24,"usar_todas":true}',
+      clave: 'Armar en orden: {"soluciones":[["4","×","1.000","+","2","×","100"]]}  ·  Reto: {"ejemplo":"8 ÷ ( 3 − 8 ÷ 3 )"} (solo para mostrar; cualquier cuenta que dé el objetivo vale)' },
+    keywords: { est: '{"ayuda":"Una o dos oraciones."}',
+      clave: '{"grupos":[["lugar","posicion*"],["valor"],["diez","10"]],"minimo":3}  (cada grupo son sinónimos; con * acepta cualquier terminación)' },
+    label_image: { est: '{"imagen":"data:image/png;base64,...","alt":"descripción","puntos":[{"id":"1","x":50,"y":50}],"rotulos":["Núcleo","Membrana"]}  (x e y en % de la imagen)',
+      clave: '{"puntos":{"1":"Núcleo","2":"Membrana"}}' }
+  };
+  // Los tipos de arriba y estos viejos tienen su clave en JSON (reference_answer); open y solve_complete siguen con la IA
+  var CLAVE_JSON = { numeric: 1, tap_text: 1, tokens: 1, keywords: 1, label_image: 1, fill_blank: 1, ordering: 1, matching: 1, classify: 1, table_fill: 1, multi_select: 1, short_answer: 1 };
+  var CLAVE_VIEJOS = {
+    fill_blank: '{"huecos":[["2.000","2000"],["400"]]}', ordering: '{"orden":["paso 1","paso 2","paso 3"]}', matching: '{"pares":{"izquierda 1":"derecha 1"}}',
+    classify: '{"categorias":{"elemento":"categoría"}}', table_fill: '{"celdas":{"1|Valor":["200"]}}  (fila|columna)', multi_select: '{"correctas":["opción A","opción C"]}', short_answer: '{"acepta":["respuesta","otra forma"]}'
+  };
+  function nombreTipo(t) { return TIPOS_PREG[t] || TIPOS_MAQ[t] || TIPOS_AUTO[t] || t; }
 
+  function jsonOTexto(s, tolerante) { try { return JSON.parse(s); } catch (e) { if (tolerante) return s; throw e; } }
   function pregVacia(tipo) {
     return {
-      id: null, type: tipo, prompt: '', points: 1, correct: -1, ref: '', expl: '', rubric: '',
+      id: null, type: tipo, prompt: '', points: 1, correct: -1, ref: '', expl: '', rubric: '', tiempo: '', maq: !!TIPOS_AUTO[tipo], estructura: '',
       options: tipo === 'multiple_choice' ? ['', '', ''] : tipo === 'true_false' ? ['Verdadero', 'Falso'] : []
     };
   }
@@ -1094,7 +1115,7 @@
     var id = ctx.kind === 'exam' ? (ctx.exam && ctx.exam.id) : ctx.stepId;
     var qs = [];
     if (id) {
-      var r = await sb.from('questions').select('id, question_type, prompt, options, points, position').eq(col, id).order('position');
+      var r = await sb.from('questions').select('id, question_type, prompt, options, points, position, tiempo_seg').eq(col, id).order('position');
       if (r.error) throw r.error;
       var ids = r.data.map(function (x) { return x.id; });
       var rb = ids.length ? await sb.from('question_rubrics').select('question_id, reference_answer, explanation, rubric').in('question_id', ids) : { data: [] };
@@ -1103,13 +1124,13 @@
       rb.data.forEach(function (x) { mapa[x.question_id] = x; });
       qs = r.data.map(function (q) {
         var u = mapa[q.id] || {};
-        var ref = typeof u.reference_answer === 'string' ? u.reference_answer : '';
+        var ref = typeof u.reference_answer === 'string' ? u.reference_answer : (u.reference_answer ? JSON.stringify(u.reference_answer, null, 1) : '');
         var o = Array.isArray(q.options) ? q.options.map(String) : [];
         var cerrada = q.question_type === 'multiple_choice' || q.question_type === 'true_false';
-        var maq = !!TIPOS_MAQ[q.question_type];
+        var maq = !!TIPOS_MAQ[q.question_type] || !!TIPOS_AUTO[q.question_type];
         return { id: q.id, type: q.question_type, prompt: q.prompt, points: q.points, options: o,
           correct: cerrada ? o.indexOf(ref) : -1, ref: cerrada ? '' : ref, expl: u.explanation || '', rubric: u.rubric || '',
-          maq: maq, estructura: maq && q.options != null ? JSON.stringify(q.options, null, 1) : '' };
+          tiempo: q.tiempo_seg || '', maq: maq, estructura: maq && q.options != null ? JSON.stringify(q.options, null, 1) : '' };
       });
     }
     ED = { ctx: ctx, qs: qs, quitadas: [], pasa: ctx.kind === 'exam' && ctx.exam ? ctx.exam.passing_score : 70 };
@@ -1168,10 +1189,17 @@
       h += '<label class="wv-lbl-e">Estructura de la consigna (opciones, pares o tabla). Si no estás segura, no la toques.</label>' +
         '<textarea rows="4" data-q="' + i + '" data-f="estructura" spellcheck="false">' + esc(q.estructura) + '</textarea>';
     }
-    if (!cerrada) {
+    var ay = AYUDA_TIPO[q.type];
+    if (q.maq && ay) h += '<small class="wv-ayuda-e">Ejemplo de estructura: ' + esc(ay.est) + '</small>';
+    if (CLAVE_JSON[q.type]) {
+      h += '<label class="wv-lbl-e">Clave de corrección (JSON). La app corrige sola con esto, sin IA; el alumno nunca la ve.</label>' +
+        '<textarea rows="3" data-q="' + i + '" data-f="ref" spellcheck="false">' + esc(q.ref) + '</textarea>' +
+        '<small class="wv-ayuda-e">Ejemplo: ' + esc(ay ? ay.clave : CLAVE_VIEJOS[q.type] || '') + '</small>';
+    } else if (!cerrada) {
       h += '<label class="wv-lbl-e">Respuesta de referencia (opcional, la usa la IA para corregir)</label>' +
         '<textarea rows="2" data-q="' + i + '" data-f="ref">' + esc(q.ref) + '</textarea>';
     }
+    h += '<label class="wv-puntos">⚡ Relámpago: segundos para responder (vacío = sin tiempo) <input type="number" min="3" max="300" data-q="' + i + '" data-f="tiempo" value="' + esc(q.tiempo) + '"></label>';
     h += '<details class="wv-pegar"><summary>Criterios y explicación (opcional)</summary>' +
       '<label class="wv-lbl-e">Criterios de corrección para la IA</label><textarea rows="2" data-q="' + i + '" data-f="rubric">' + esc(q.rubric) + '</textarea>' +
       '<label class="wv-lbl-e">Explicación de la respuesta</label><textarea rows="2" data-q="' + i + '" data-f="expl">' + esc(q.expl) + '</textarea></details></div>';
@@ -1184,7 +1212,8 @@
     if (exam) h += '<label class="wv-puntos wv-pasa">Nota mínima para aprobar <input type="number" min="0" max="100" data-ed="pasa" value="' + ED.pasa + '"></label>';
     h += ED.qs.map(function (q, i) { return cardPreg(q, i, ED.qs.length); }).join('') ||
       '<div class="wv-vacio">Todavía no hay preguntas. Agregá la primera.</div>';
-    h += '<div class="wv-ed-nuevo"><b>Agregar:</b> ' + Object.keys(TIPOS_PREG).map(function (k) { return boton('ed-add:' + k, '+ ' + TIPOS_PREG[k], 'suave'); }).join('') + '</div>';
+    h += '<div class="wv-ed-nuevo"><b>Agregar:</b> ' + Object.keys(TIPOS_PREG).map(function (k) { return boton('ed-add:' + k, '+ ' + TIPOS_PREG[k], 'suave'); }).join('') + '</div>' +
+      '<div class="wv-ed-nuevo"><b>Sin IA:</b> ' + Object.keys(TIPOS_AUTO).map(function (k) { return boton('ed-add:' + k, '+ ' + TIPOS_AUTO[k].split(' / ')[0], 'suave'); }).join('') + '</div>';
     h += '<div class="wv-modal-pie">' + boton('ed-cancel', 'Cancelar', 'suave') + boton('ed-save', 'Guardar', '') + '</div>';
     ED.caja.innerHTML = h;
   }
@@ -1230,6 +1259,9 @@
       }
       if (q.type === 'true_false' && q.correct < 0) return toast('Marcá la respuesta correcta en la pregunta ' + n, true);
       if (q.maq && q.estructura.trim()) { try { JSON.parse(q.estructura); } catch (e1) { return toast('La estructura de la pregunta ' + n + ' no está bien escrita', true); } }
+      if (TIPOS_AUTO[q.type] && !q.estructura.trim()) return toast('Falta la estructura de la pregunta ' + n, true);
+      if (CLAVE_JSON[q.type] && q.type !== 'short_answer' && q.ref.trim()) { try { JSON.parse(q.ref); } catch (e2) { return toast('La clave de corrección de la pregunta ' + n + ' no está bien escrita', true); } }
+      if (CLAVE_JSON[q.type] && !q.ref.trim() && TIPOS_AUTO[q.type]) return toast('Falta la clave de corrección de la pregunta ' + n, true);
     }
     if (exam && !qs.length) return toast('El examen necesita al menos una pregunta', true);
     var btn = ED.caja.querySelector('[data-acc="ed-save"]');
@@ -1263,7 +1295,7 @@
         var x = qs[k], cerrada = x.type === 'multiple_choice' || x.type === 'true_false';
         var ref = cerrada ? (x.options[x.correct] || '').trim() : x.ref.trim();
         var opts = cerrada ? x.options.map(function (o) { return o.trim(); }).filter(Boolean) : [];
-        var fila = { question_type: x.type, prompt: x.prompt.trim(), options: opts.length ? opts : null, points: x.points, position: k + 1 };
+        var fila = { question_type: x.type, prompt: x.prompt.trim(), options: opts.length ? opts : null, points: x.points, position: k + 1, tiempo_seg: x.tiempo ? +x.tiempo : null };
         if (x.maq) fila.options = x.estructura.trim() ? JSON.parse(x.estructura) : null;
         if (x.id) {
           var up = await sb.from('questions').update(fila).eq('id', x.id);
@@ -1274,7 +1306,7 @@
           if (ins.error) throw ins.error;
           x.id = ins.data.id;
         }
-        var rb = await sb.from('question_rubrics').upsert({ question_id: x.id, reference_answer: ref || null, explanation: x.expl.trim() || null, rubric: x.rubric.trim() || null }, { onConflict: 'question_id' });
+        var rb = await sb.from('question_rubrics').upsert({ question_id: x.id, reference_answer: !ref ? null : (CLAVE_JSON[x.type] ? jsonOTexto(ref, x.type === 'short_answer') : ref), explanation: x.expl.trim() || null, rubric: x.rubric.trim() || null }, { onConflict: 'question_id' });
         if (rb.error) throw rb.error;
       }
       toast(exam ? 'Examen guardado' : 'Consignas guardadas');
