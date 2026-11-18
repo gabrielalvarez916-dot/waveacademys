@@ -24,9 +24,10 @@ Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `regl
 
 ## Entrega de respuestas
 
-- Las soluciones NO van en el PDF. El PDF trae solo las consignas de carpeta.
+- Lo único que el alumno entrega es la actividad de carpeta. El PDF trae las consignas de carpeta sin soluciones.
 - Al terminar el PDF, el alumno entrega en la app las respuestas de la carpeta. La app las valida; si hay errores marca cuáles están mal, sin mostrar la solución, y deja reintentar. Con todas bien, avanza.
-- Recién después de entregar, la app muestra las soluciones con el paso a paso.
+- Recién después de entregar, la app muestra las soluciones de la carpeta con el paso a paso.
+- Los ejemplos NO se entregan: la respuesta del ejemplo incompleto y del hacelo solo va chica, abajo de todo en el PDF ("Respuestas de los ejemplos"), para que el alumno se corrija solo.
 - La clave sale del campo `soluciones.carpeta` del JSON de la lección. Sin API.
 
 ## Formato del PDF
@@ -51,7 +52,7 @@ Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `regl
 10. Glosario (franja compacta): 5 a 8 términos que aparecen en el PDF, en lenguaje del alumno.
 11. Actividad de carpeta: 3 o 4 consignas, de simple a pensada, una apunta a un error típico. Sin soluciones.
 
-El ejemplo incompleto y el "hacelo solo" también se resuelven en la app después de entregar; sus respuestas van en `soluciones`.
+Abajo de todo, en letra chica: respuestas del ejemplo incompleto y del hacelo solo.
 
 ## Reglas de contenido: explicar todo
 
@@ -85,12 +86,12 @@ Opcionales (un borrador viejo sin ellos se dibuja como antes):
 - `ejemplo_completo`, `ejemplo_incompleto`, `ejemplo_solo`: cada uno con `titulo`, `planteo`, `pasos[]` y, opcional, una tabla (`columnas`, `filas`, `iguales`).
 - `tip`: `{titulo, texto}`. `ojo`: lista de textos.
 - `carpeta`: lista de consignas.
-- `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`. La app las usa para validar la entrega y mostrarlas después; el PDF NO las imprime.
+- `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`. `incompleto` y `solo` se imprimen chicos al final del PDF; `carpeta` es la clave que usa la app para validar la entrega y mostrar la solución después, y el PDF NO la imprime.
 
 ## Qué hay de esto en el código
 
 - Dibujo del PDF: `tools/pdf/render_leccion.py` (commits del 18/11/2026).
-- Falta ajustar el render a esta versión: portada de una hoja (con "lo que vas a ver"), tope de 4 hojas de contenido, resumen y glosario compactos, y no imprimir las soluciones. Hoy sale de unas 8 páginas e imprime las soluciones al final.
+- Render ya ajustado a esta versión (commit del 18/11/2026): portada de una hoja con "lo que vas a ver", hasta 4 hojas de contenido (si no entra se omite glosario y luego resumen; avisa si igual se pasa) y sin imprimir la clave de la carpeta.
 - No se toca: la fábrica de IA `generar-leccion` (no se usa).
 - Pendiente: el texto para el Tutor (`aTexto` en `fabrica-pdf`) todavía no incluye los campos nuevos; confirmar antes de tocarlo.
 

@@ -239,13 +239,13 @@ def ejemplos_fijos(c):
         if inc.get("planteo"): o.append(P(limpio(inc["planteo"])))
         if inc.get("columnas"): o += tabla_bloque({**inc, "titulo": None, "texto": None})
         o += _pasos(inc.get("pasos"))
-        o.append(P("Completá los espacios ___ en tu carpeta. Después entregá tu respuesta en la app.", cap))
+        o.append(P("Completá los espacios ___ en tu carpeta. La respuesta está al final del PDF.", cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     if solo:
         o = [subbar("Hacelo solo" + (": " + limpio(solo.get("titulo")) if solo.get("titulo") else ""))]
         if solo.get("planteo"): o.append(P(limpio(solo["planteo"])))
         o += _pasos(solo.get("pasos"))
-        o.append(P("Resolvelo en tu carpeta. Después entregá tu respuesta en la app.", cap))
+        o.append(P("Resolvelo en tu carpeta, sin mirar la respuesta. Después comparala con la del final.", cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     return s
 
@@ -264,7 +264,7 @@ def carpeta_fija(c):
     items = [limpio(x) for x in (c.get("carpeta") or [])]
     if not items: return []
     s = [barra("✎", "Actividad de carpeta"),
-         P("Hacé estas consignas en tu carpeta. Cuando termines, entregá tus respuestas en la app: ahí las revisamos y recién después ves las soluciones.")]
+         P("Hacé estas consignas en tu carpeta. Cuando termines, entregá tus respuestas en la app.")]
     s += [Paragraph(x, stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items)]
     return [KeepTogether(s), spc(10)]
 
@@ -276,9 +276,8 @@ def soluciones_fijas(c):
     rows = []
     if sol.get("incompleto"): rows.append([Paragraph("Ejemplo incompleto", smb), Paragraph(limpio(sol["incompleto"]), sm)])
     if sol.get("solo"): rows.append([Paragraph("Hacelo solo", smb), Paragraph(limpio(sol["solo"]), sm)])
-    for i, x in enumerate(sol.get("carpeta") or [], 1): rows.append([Paragraph(f"Carpeta, consigna {i}", smb), Paragraph(limpio(x), sm)])
     if not rows: return []
-    return [KeepTogether([barra("✓", "Soluciones"),
+    return [KeepTogether([barra("✓", "Respuestas de los ejemplos"),
             P("Mirá esto recién cuando hayas terminado.", S("solnota", fontName="DV-I", fontSize=7.4, leading=10, textColor=GRAY, spaceAfter=4)),
             table(["ACTIVIDAD", "RESPUESTA"], rows, [W * 0.27, W * 0.73])])]
 
@@ -315,8 +314,8 @@ def story(c, nivel="full"):
     if nivel == "full" and c.get("glosario"):
         s += [CondPageBreak(100), barra("Aa", "Glosario")]
         s += [table(["PALABRA", "QUÉ SIGNIFICA"], [[limpio(g["palabra"]), limpio(g["significado"])] for g in c["glosario"]], [W * 0.26, W * 0.74])]
-    # las soluciones NO se imprimen: la app las valida y las muestra después de entregar
-    s += [spc(8)] + carpeta_fija(c)
+    # al final: carpeta (se entrega en la app) y, abajo de todo, la respuesta chica de los ejemplos. La clave de la carpeta NO se imprime.
+    s += [spc(8)] + carpeta_fija(c) + soluciones_fijas(c)
     return s
 
 MAX_HOJAS_CONTENIDO = 4
