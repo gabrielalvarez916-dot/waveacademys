@@ -112,6 +112,14 @@ Deno.serve(async (req) => {
       return json({ lote, quedan: p.faltan.length });
     }
 
+    // la base lo llama sola (cada 5 minutos) si hay videos sin optimizar
+    if (b.action === "pedir") {
+      const p = await pendientes();
+      if (!p.faltan.length || await enCurso()) return json({ ok: true, lanzado: false, pendientes: p.faltan.length });
+      const falla = await lanzarProceso().catch((e) => String(e?.message || e));
+      return json({ ok: true, lanzado: !falla, aviso: falla, pendientes: p.faltan.length });
+    }
+
     if (b.action === "listo") {
       if (!claveOk(b.key)) return json({ error: "Clave inválida" }, 400);
       const estado = ["ok", "optimizado", "omitido", "error"].includes(b.estado) ? b.estado : "error";
