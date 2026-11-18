@@ -1,6 +1,6 @@
 # Reglas fijas del PDF de Wave Academy
 
-Versión del 18/11/2026. Copia también guardada en Supabase, tabla `reglas_fijas`, nombre "Reglas fijas del PDF".
+Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `reglas_fijas`, nombre "Reglas fijas del PDF".
 
 ## Quién hace qué
 
@@ -9,21 +9,49 @@ Versión del 18/11/2026. Copia también guardada en Supabase, tabla `reglas_fija
 - GitHub dibuja el PDF con `tools/pdf/render_leccion.py` (lo llama `tools/pdf/generar.py`, workflow `pdfs-lecciones.yml`) y lo sube a la lección sin publicarla. GitHub no crea contenido: solo dibuja lo que está en el JSON.
 - Por eso todo lo que el PDF necesite (texto, tablas, figuras) tiene que venir ya dentro del JSON.
 
-## Estructura fija, en este orden
+## Cómo es una misión (tema)
 
-1. Portada: título y objetivo (qué va a poder hacer el alumno).
-2. Lo que vas a ver: 4 a 6 puntos, en el orden en que aparecen.
-3. Etapa 1, los conceptos principales: 2 a 3 conceptos, cada uno con definición y ejemplo.
-4. Etapa 2, profundizamos: 2 a 3 ideas que amplían la etapa 1, cada una con ejemplo. Solo usa lo definido en la etapa 1.
-5. Ejemplo completo: problema resuelto paso a paso, integrando las dos etapas.
-6. Ejemplo incompleto: mismo tipo de problema con 2 a 4 huecos `___`, que se completan con lo ya explicado.
-7. Hacelo solo: mismo tipo, un poco más difícil, una única respuesta.
-8. Tip: consejo práctico, no repite nada.
-9. Ojo con esto: 1 o 2 errores típicos de la ficha.
-10. Resumen: 4 a 6 tarjetas, cada una con una frase y un mini ejemplo.
-11. Glosario: 5 a 8 términos que aparecen en el PDF, en lenguaje del alumno.
-12. Actividad de carpeta: 3 o 4 consignas, de simple a pensada, una apunta a un error típico.
-13. Soluciones: al final de todo, letra chica: hueco(s) del incompleto, hacelo solo y cada consigna de carpeta. Cortas, sin volver a explicar. Es solo para que el alumno se corrija: la plataforma no las lee ni las usa para corregir.
+1. Videos: uno o varios, se cargan y se ven todos al principio.
+2. PDF 1, actividad de carpeta del PDF 1, entrega de respuestas, 2 preguntas de práctica sobre ese PDF.
+3. PDF 2, con lo mismo.
+4. PDF 3, con lo mismo.
+5. Práctica general: 4 preguntas que mezclan los 3 PDF y repasan temas de misiones anteriores (en la primera misión solo mezclan los 3 PDF).
+6. Pase al siguiente nivel.
+
+- Total de práctica por misión: 10 preguntas (6 de PDF + 4 generales). Salen del banco de actividades y se escriben junto con el contenido; las 4 generales al final.
+- Proyecto: uno cada 5 misiones. Integra lo de esas 5 misiones y se arma cuando existen. Recorrido propio: consigna, borrador, devolución, entrega.
+- Examen del tema: banco aparte, pendiente de armar.
+
+## Entrega de respuestas
+
+- Las soluciones NO van en el PDF. El PDF trae solo las consignas de carpeta.
+- Al terminar el PDF, el alumno entrega en la app las respuestas de la carpeta. La app las valida; si hay errores marca cuáles están mal, sin mostrar la solución, y deja reintentar. Con todas bien, avanza.
+- Recién después de entregar, la app muestra las soluciones con el paso a paso.
+- La clave sale del campo `soluciones.carpeta` del JSON de la lección. Sin API.
+
+## Formato del PDF
+
+- Portada: ocupa una hoja entera (título, objetivo, "lo que vas a ver").
+- Contenido: máximo 4 hojas sin contar la portada.
+- La tipografía queda como está (legible). No se achica para entrar.
+- Lo que ocupe lugar y no sea explicación ni ejemplo (resumen, glosario) va en una franja compacta; si no entra, se omite en ese PDF. Nunca se recorta contenido ni ejemplos para hacerle lugar.
+- Mismo estilo estético de siempre.
+
+## Estructura del contenido de cada PDF, en este orden
+
+1. Portada: título, objetivo y lo que vas a ver (4 a 6 puntos).
+2. Etapa 1, conceptos principales: 2 a 3 conceptos, cada uno con definición y ejemplo.
+3. Etapa 2, profundizamos: 2 a 3 ideas que amplían la etapa 1, cada una con ejemplo. Solo usa lo definido en la etapa 1.
+4. Ejemplo completo: problema resuelto paso a paso, integrando las dos etapas.
+5. Ejemplo incompleto: mismo tipo de problema con 2 a 4 huecos `___`, que se completan con lo ya explicado.
+6. Hacelo solo: mismo tipo, un poco más difícil, una única respuesta.
+7. Tip: consejo práctico, no repite nada.
+8. Ojo con esto: 1 o 2 errores típicos de la ficha.
+9. Resumen (franja compacta): 4 a 6 tarjetas.
+10. Glosario (franja compacta): 5 a 8 términos que aparecen en el PDF, en lenguaje del alumno.
+11. Actividad de carpeta: 3 o 4 consignas, de simple a pensada, una apunta a un error típico. Sin soluciones.
+
+El ejemplo incompleto y el "hacelo solo" también se resuelven en la app después de entregar; sus respuestas van en `soluciones`.
 
 ## Reglas de contenido: explicar todo
 
@@ -36,6 +64,7 @@ Cada concepto principal se explica siempre así: (1) qué es, definición corta 
 - En matemática se muestran todas las cuentas, paso por paso, recalculadas una por una.
 - Se respeta la ficha: lo que "no entra" no aparece y no se adelantan lecciones posteriores.
 - Voseo rioplatense, tono cálido y directo. Notación argentina (punto en los miles, coma en los decimales). Negrita solo en términos clave. No se inventan datos ni anécdotas.
+- Con el tope de 4 hojas, se prioriza explicación y ejemplos sobre todo lo demás.
 
 ## Cuadros e imágenes
 
@@ -51,25 +80,22 @@ Los de siempre: `objetivo`, `vas_a_ver`, `secciones[]` (con `titulo` y `bloques[
 
 Tipos de bloque: `parrafo`, `definicion`, `importante`, `tip`, `ojo`, `ejemplo` (con `titulo`, `texto`, `items`), `pasos`, `lista`, `tabla` (`columnas`, `filas`, `iguales` para columnas del mismo ancho), `imagen` (`imagen_tipo`, `titulo`, `texto`, `imagen_descripcion`, `imagen_fuente`, `png_base64`).
 
-Nuevos (todos opcionales; un borrador viejo sin ellos se dibuja como antes):
+Opcionales (un borrador viejo sin ellos se dibuja como antes):
 - `secciones[].etapa`: 1 o 2. Muestra el banner "Etapa 1 / Etapa 2" al cambiar.
 - `ejemplo_completo`, `ejemplo_incompleto`, `ejemplo_solo`: cada uno con `titulo`, `planteo`, `pasos[]` y, opcional, una tabla (`columnas`, `filas`, `iguales`).
 - `tip`: `{titulo, texto}`. `ojo`: lista de textos.
 - `carpeta`: lista de consignas.
-- `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`.
-
-## Largo real
-
-Con el diseño actual, una lección completa sale de unas 8 páginas: portada, página de inicio y unas 6 de contenido. Entre 1.800 y 2.600 palabras.
+- `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`. La app las usa para validar la entrega y mostrarlas después; el PDF NO las imprime.
 
 ## Qué hay de esto en el código
 
-- Dibujo del PDF: `tools/pdf/render_leccion.py` (commit del 18/11/2026).
-- Lo que NO se toca todavía: la fábrica de IA `generar-leccion` (no se usa), la actividad por consigna y el repaso, que se reemplazarán por los bancos de práctica y examen.
-- Pendiente: el texto para el Tutor (`aTexto` en `fabrica-pdf`) todavía no incluye los campos nuevos.
+- Dibujo del PDF: `tools/pdf/render_leccion.py` (commits del 18/11/2026).
+- Falta ajustar el render a esta versión: portada de una hoja (con "lo que vas a ver"), tope de 4 hojas de contenido, resumen y glosario compactos, y no imprimir las soluciones. Hoy sale de unas 8 páginas e imprime las soluciones al final.
+- No se toca: la fábrica de IA `generar-leccion` (no se usa).
+- Pendiente: el texto para el Tutor (`aTexto` en `fabrica-pdf`) todavía no incluye los campos nuevos; confirmar antes de tocarlo.
 
 ## Pendiente de diseñar
 
-- Frontend: cómo se ve por dentro un tema (misión con 4 niveles, cada nivel como máquina con 5 estaciones).
-- Bancos de práctica y de examen.
-- Nivel 4, proyecto, rehecho según aprendizaje basado en proyectos.
+- Frontend: recorrido de la misión (videos, 3 bloques PDF + entrega + 2 preguntas, 4 generales, pase) y guardado de cada entrega.
+- Bancos de práctica (con repaso de misiones anteriores) y de examen.
+- Proyecto cada 5 misiones, según aprendizaje basado en proyectos.
