@@ -727,7 +727,11 @@
         try { await subidas({ action: 'stream_delete', uid: uid1 }); } catch (e) { /* queda huérfano */ }
         return pintar();
       }
-      if (a === 'video-up') return elegirArchivo('video/*', true, async function (fs) { for (var k = 0; k < fs.length; k++) await subirVideo(fs[k]); });
+      if (a === 'video-up') return elegirArchivo('video/*', true, async function (fs) {
+        for (var k = 0; k < fs.length; k++) await subirVideo(fs[k]);
+        // optimiza solo lo recién subido (copia liviana para editar y versión que abre rápido)
+        try { await sb.functions.invoke('optimizar-videos', { body: { action: 'pedir' } }); toast('Videos subidos: se están optimizando solos (unos minutos).'); } catch (e) { /* queda el botón manual */ }
+      });
       if (a === 'video-del') {
         var ld = videosDe(L.pasos.video), xd = ld[+p[1]];
         if (!xd || !confirm(ld.length > 1 ? '¿Quitar el video ' + (+p[1] + 1) + ' de esta lección?' : '¿Quitar el video de esta lección?')) return;
