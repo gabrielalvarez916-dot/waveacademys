@@ -221,6 +221,7 @@
   // ---------- Vistas de carpetas ----------
   function pintar() {
     if (!S.listo) return;
+    try { localStorage.setItem('wv-contenido-ruta', JSON.stringify(R)); } catch (e) { /* sin almacenamiento: no pasa nada */ }
     var h = '<h1 class="wv-titulo">Contenido</h1>' + migas();
     if (!R.level) h += vNiveles();
     else if (!R.grade) h += vAnios();
@@ -1344,6 +1345,8 @@
     if (!S.listo) {
       vista.innerHTML = '<h1 class="wv-titulo">Contenido</h1><div class="wv-vacio">Cargando…</div>';
       await cargarBase();
+      // al recargar la página (F5) se vuelve a la carpeta donde estabas
+      try { var g = JSON.parse(localStorage.getItem('wv-contenido-ruta') || 'null'); if (g) Object.keys(R).forEach(function (k) { R[k] = g[k] || null; }); } catch (e) { /* ruta guardada inválida: se arranca de cero */ }
     }
     pintar();
   }
