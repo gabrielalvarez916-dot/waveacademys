@@ -516,7 +516,7 @@
     WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); }, lista: lista });
   }
 
-  // Entrega de la carpeta: se corrige acá, sin IA. Si está todo bien se muestran las soluciones.
+  // Entrega de la carpeta: se corrige acá, sin IA. Se aprueba con hasta 1 mal; al aprobar se muestran las soluciones.
   async function entregarCarpeta(btn) {
     var f = buscarLeccion(hojaAbierta), paso = f && (D.pasos[f.l.id] || {}).pdf;
     if (!paso) return;
@@ -547,7 +547,8 @@
     var sols = (d.soluciones || []).map(function (s, i) { return s ? '<li><b>' + (i + 1) + '.</b> ' + esc(s) + '</li>' : ''; }).join('');
     var ok = document.createElement('div');
     ok.className = 'rc-aviso ok';
-    ok.innerHTML = '<b>¡Todas correctas!</b>' + (sols ? '<ul class="rc-sols">' + sols + '</ul>' : '');
+    var titOk = d.errores ? '¡Aprobada! Tuviste una sola mal: mirá su solución abajo.' : '¡Todas correctas!';
+    ok.innerHTML = '<b>' + titOk + '</b>' + (sols ? '<ul class="rc-sols">' + sols + '</ul>' : '');
     vista.querySelector('.rc-pie').before(ok);
     btn.textContent = 'CONTINUAR'; btn.setAttribute('data-rc', 'continuar');
   }

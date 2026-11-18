@@ -25,7 +25,7 @@ Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `regl
 ## Entrega de respuestas
 
 - Lo único que el alumno entrega es la actividad de carpeta. El PDF trae las consignas de carpeta sin soluciones.
-- Al terminar el PDF, el alumno entrega en la app las respuestas de la carpeta. La app las valida; si hay errores marca cuáles están mal, sin mostrar la solución, y deja reintentar. Con todas bien, avanza.
+- Al terminar el PDF, el alumno entrega en la app las respuestas de la carpeta. La app las valida; si hay errores marca cuáles están mal, sin mostrar la solución, y deja reintentar. Aprueba con hasta 1 respuesta mal (por ejemplo, 3 de 4) y avanza.
 - Recién después de entregar, la app muestra las soluciones de la carpeta con el paso a paso.
 - Los ejemplos NO se entregan: la respuesta del ejemplo incompleto y del hacelo solo va chica, abajo de todo en el PDF ("Respuestas de los ejemplos"), para que el alumno se corrija solo.
 - La clave sale del mismo borrador del PDF: `carpeta` (consignas), `respuestas_carpeta` (respuestas válidas) y `soluciones.carpeta` (solución que se muestra después). Cuando GitHub sube el PDF, la función `fabrica-pdf` carga también la carpeta del nivel (consignas + clave). No hay que cargar nada a mano; el admin sirve para revisar o editar. Sin API.
