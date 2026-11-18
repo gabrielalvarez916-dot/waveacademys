@@ -392,13 +392,19 @@
         if (r.error || !r.data || r.data.error) throw new Error((r.data && r.data.error) || (r.error && r.error.message) || 'No se pudo lanzar');
         if (!r.data.pendientes) { txt.textContent = 'No hay videos para optimizar ✔'; return; }
         if (!r.data.lanzado) { txt.textContent = 'No se pudo lanzar solo (' + (r.data.aviso || 'error') + '). Hacelo a mano: GitHub > Actions > "Optimizar videos" > Run workflow.'; btn.disabled = false; return; }
-        txt.textContent = 'Optimizando ' + r.data.pendientes + ' video(s)… tarda unos minutos. Podés seguir trabajando.';
+        var inicio = Date.now(), total0 = r.data.pendientes;
+        var LINK = ' <a href="https://github.com/gabrielalvarez916-dot/waveacademys/actions/workflows/optimizar-videos.yml" target="_blank" rel="noopener">Ver el avance en GitHub</a>';
+        var pinta = function (hechos) {
+          var min = Math.floor((Date.now() - inicio) / 60000);
+          txt.innerHTML = 'Procesando en segundo plano: ' + hechos + ' de ' + total0 + ' terminados (hace ' + (min < 1 ? 'menos de 1' : min) + ' min). Podés seguir trabajando o cerrar la página. El número sube cuando termina cada video.' + LINK;
+        };
+        pinta(0);
         var vueltas = 0, t = setInterval(async function () {
           vueltas++;
           try {
             var c2 = await contarOpt();
-            if (!c2.pendientes) { clearInterval(t); txt.textContent = 'Listo: todos los videos subidos están optimizados ✔'; }
-            else txt.textContent = 'Optimizando… quedan ' + c2.pendientes + ' por revisar.';
+            if (!c2.pendientes) { clearInterval(t); txt.textContent = 'Listo: ' + total0 + ' video(s) preparados ✔ Ya podés abrir el editor.'; }
+            else pinta(Math.max(0, total0 - c2.pendientes));
           } catch (e) { /* sigue */ }
           if (vueltas > 80) { clearInterval(t); btn.disabled = false; }
         }, 15000);
