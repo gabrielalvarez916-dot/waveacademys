@@ -1,0 +1,155 @@
+# -*- coding: utf-8 -*-
+"""Matemática I · Misión 17 · Ángulos y construcciones. Genera mision-17.json (se carga con cargar_mision)."""
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "mision-4"))
+from base import *
+NO=["no"]
+N1={
+"objetivo":"Vas a poder medir ángulos con el transportador, clasificarlos y usar las relaciones entre ángulos consecutivos, adyacentes y opuestos por el vértice.",
+"vas_a_ver":["Qué es un ángulo y cómo se mide","Clasificación de ángulos","Ángulos consecutivos y adyacentes","Ángulos opuestos por el vértice","Grados y minutos"],
+"secciones":[
+ S(1,"Medir con el transportador",[
+  D("Ángulo","Un <b>ángulo</b> está formado por dos semirrectas que salen del mismo punto, el <b>vértice</b>. Las semirrectas son sus <b>lados</b>. Se mide en <b>grados</b> (°)."),
+  P("Para medir: el centro del transportador va justo sobre el vértice, un lado sobre la línea del 0, y se lee en la escala que <b>empieza en 0</b> sobre ese lado. El transportador tiene dos escalas: leer la otra da el ángulo equivocado."),
+ ]),
+ S(1,"Clasificación",[
+  T("Tipos de ángulos",["Tipo","Medida"],[["Agudo","Menos de 90°"],["Recto","Exactamente 90°"],["Obtuso","Más de 90° y menos de 180°"],["Llano","Exactamente 180°"]],"Una vuelta completa mide 360°."),
+ ]),
+ S(2,"Relaciones entre ángulos",[
+  D("Consecutivos, adyacentes y opuestos","<b>Consecutivos:</b> comparten el vértice y un lado. <b>Adyacentes:</b> son consecutivos y sus otros lados forman una recta; por eso <b>suman 180°</b>. <b>Opuestos por el vértice:</b> se forman al cruzarse dos rectas, uno enfrente del otro; <b>son iguales</b>."),
+  E("Dos rectas que se cruzan","Uno de los ángulos mide 65°.",["Su adyacente mide 180° − 65° = 115°.","Su opuesto por el vértice mide 65°.","El cuarto ángulo, opuesto al de 115°, mide 115°."]),
+ ]),
+ S(2,"Grados y minutos",[
+  P("Los ángulos usan el sistema sexagesimal: 1° = 60′ (minutos). Al sumar, si los minutos pasan de 60, se canjean: 35°40′ + 20°30′ = 55°70′ = 56°10′."),
+ ]),
+],
+"ejemplo_completo":{"titulo":"rectas que se cortan","planteo":"Dos rectas se cortan y uno de los ángulos mide 65°. Calculá los otros tres.","pasos":["El adyacente: 180° − 65° = 115°.","El opuesto por el vértice al de 65° también mide 65°.","El opuesto al de 115° mide 115°.","Control: 65° + 115° + 65° + 115° = 360°, una vuelta."]},
+"ejemplo_incompleto":{"titulo":"un ángulo de 47°","planteo":"Completá los espacios.","pasos":["Su adyacente: 180° − 47° = ___ .","Su opuesto por el vértice: ___ ."]},
+"ejemplo_solo":{"titulo":"sumar ángulos","planteo":"Calculá 48°35′ + 27°50′."},
+"tip":{"titulo":"Estimá antes de medir","texto":"Mirá si el ángulo es más chico o más grande que un recto. Así sabés qué escala del transportador leer."},
+"ojo":["Leer la escala equivocada: un ángulo agudo no puede medir 130°.","No poner el centro del transportador sobre el vértice."],
+"resumen":[{"titulo":"Tipos","texto":"Agudo, recto (90°), obtuso, llano (180°)."},{"titulo":"Adyacentes","texto":"Suman 180°."},{"titulo":"Opuestos","texto":"Son iguales."},{"titulo":"Minutos","texto":"1° = 60′."}],
+"glosario":[{"palabra":"Vértice","significado":"Punto donde se juntan los lados del ángulo."},{"palabra":"Transportador","significado":"Instrumento para medir ángulos."},{"palabra":"Adyacentes","significado":"Ángulos consecutivos que suman 180°."},{"palabra":"Opuestos por el vértice","significado":"Ángulos enfrentados al cruzarse dos rectas."}],
+"carpeta":["¿Cuánto mide el adyacente de un ángulo de 72°?","Un ángulo mide 125°. ¿Es agudo, recto u obtuso?","¿Cuánto mide el opuesto por el vértice de un ángulo de 38°?","Un compañero leyó 130° en un ángulo agudo porque usó la otra escala. ¿Cuánto mide en realidad?"],
+"respuestas_carpeta":[["108","108°"],["obtuso"],["38","38°"],["50","50°"]],
+"soluciones":{"incompleto":"133°. 47°.","solo":"75°85′ = 76°25′.","carpeta":["108°: 180° − 72°.","Obtuso: está entre 90° y 180°.","38°: los opuestos son iguales.","50°: 180° − 130°."]}
+}
+N2={
+"objetivo":"Vas a poder reconocer y trazar rectas paralelas y perpendiculares con regla y escuadra, y medir la distancia entre rectas.",
+"vas_a_ver":["Rectas paralelas, perpendiculares y secantes","Trazar con regla y escuadra","Distancia de un punto a una recta","Distancia entre paralelas"],
+"secciones":[
+ S(1,"Posiciones de dos rectas",[
+  D("Paralelas, secantes y perpendiculares","Dos rectas son <b>paralelas</b> si nunca se cortan y siempre están a la misma distancia. Son <b>secantes</b> si se cortan en un punto. Son <b>perpendiculares</b> si se cortan formando cuatro ángulos rectos (90°)."),
+  P("Las vías del tren son paralelas; los bordes de una esquina de la hoja son perpendiculares. Toda perpendicular es secante, pero no toda secante es perpendicular."),
+ ]),
+ S(1,"Trazar con instrumentos",[
+  D("Con regla y escuadra","<b>Perpendicular:</b> se apoya un lado del ángulo recto de la escuadra sobre la recta y se traza por el otro lado. <b>Paralela:</b> se apoya la escuadra sobre la recta, se pone la regla contra la escuadra y se desliza la escuadra sobre la regla hasta el punto."),
+ ]),
+ S(2,"Distancia",[
+  P("La <b>distancia de un punto a una recta</b> se mide sobre la <b>perpendicular</b> que pasa por el punto: es el camino más corto. Entre dos paralelas, esa distancia es la misma en cualquier lugar."),
+ ]),
+ S(2,"Ángulos entre secantes",[
+  P("Dos rectas secantes forman cuatro ángulos: dos pares de opuestos iguales, y los vecinos son adyacentes (suman 180°). Si uno mide 70°, los otros miden 110°, 70° y 110°."),
+ ]),
+],
+"ejemplo_completo":{"titulo":"una perpendicular por P","planteo":"Explicá cómo trazar la perpendicular a una recta r que pasa por un punto P.","pasos":["Apoyar un lado del ángulo recto de la escuadra sobre r.","Deslizar la escuadra sobre r hasta que el otro lado del ángulo recto toque P.","Trazar la recta por ese lado.","Verificar con el transportador que el ángulo mide 90°."]},
+"ejemplo_incompleto":{"titulo":"rectas que se cortan a 90°","planteo":"Completá los espacios.","pasos":["Si dos rectas se cortan formando un ángulo de 90°, son ___ .","Forman cuatro ángulos de ___ cada uno."]},
+"ejemplo_solo":{"titulo":"una paralela por P","planteo":"Escribí los pasos para trazar una paralela a una recta r que pase por un punto P."},
+"tip":{"titulo":"La regla no se mueve","texto":"Para trazar paralelas, lo que se desliza es la escuadra. Si se mueve la regla, la recta sale torcida."},
+"ojo":["Confundir perpendicular con paralela: las perpendiculares se cortan; las paralelas no.","Medir la distancia en diagonal: siempre se mide sobre una perpendicular."],
+"resumen":[{"titulo":"Paralelas","texto":"No se cortan; misma distancia."},{"titulo":"Perpendiculares","texto":"Se cortan a 90°."},{"titulo":"Secantes","texto":"Se cortan en un punto."},{"titulo":"Distancia","texto":"Sobre la perpendicular."}],
+"glosario":[{"palabra":"Paralelas","significado":"Rectas que nunca se cortan."},{"palabra":"Perpendiculares","significado":"Rectas que se cortan formando ángulos rectos."},{"palabra":"Secantes","significado":"Rectas que se cortan en un punto."},{"palabra":"Escuadra","significado":"Instrumento con un ángulo recto."}],
+"carpeta":["Dos rectas perpendiculares forman cuatro ángulos. ¿Cuánto mide cada uno, en grados?","r y s son paralelas y en un lugar están a 3 cm. ¿A cuántos cm están en otro lugar?","Dos rectas secantes forman un ángulo de 70°. ¿Cuánto mide el ángulo adyacente?","Un compañero dice que dos rectas que forman un ángulo de 90° son paralelas. ¿En cuántos puntos se cortan?"],
+"respuestas_carpeta":[["90","90°"],["3","3cm"],["110","110°"],["1"]],
+"soluciones":{"incompleto":"Perpendiculares. 90°.","solo":"Apoyar la escuadra sobre r, poner la regla contra la escuadra, deslizar la escuadra sobre la regla hasta P y trazar.","carpeta":["90°: son ángulos rectos.","3 cm: la distancia entre paralelas es siempre la misma.","110°: 180° − 70°.","1: se cortan en un punto, son perpendiculares, no paralelas."]}
+}
+N3={
+"objetivo":"Vas a poder construir la bisectriz de un ángulo y la mediatriz de un segmento con regla y compás, y usar sus propiedades.",
+"vas_a_ver":["Qué es la bisectriz","Cómo se construye","Qué es la mediatriz","Cómo se construye","Para qué sirven"],
+"secciones":[
+ S(1,"Bisectriz",[
+  D("Bisectriz","La <b>bisectriz</b> de un ángulo es la semirrecta que lo divide en <b>dos ángulos iguales</b>. Sus puntos están a la misma distancia de los dos lados del ángulo."),
+  P("Construcción: 1) con centro en el vértice, un arco que corte los dos lados; 2) desde esos dos puntos, dos arcos con la misma abertura que se corten; 3) unir el vértice con ese punto de corte."),
+ ]),
+ S(1,"Mediatriz",[
+  D("Mediatriz","La <b>mediatriz</b> de un segmento es la recta <b>perpendicular</b> que pasa por su <b>punto medio</b>. Sus puntos están a la misma distancia de los dos extremos."),
+  P("Construcción: 1) con centro en un extremo y una abertura mayor que la mitad del segmento, un arco arriba y otro abajo; 2) con la <b>misma abertura</b>, lo mismo desde el otro extremo; 3) unir los dos puntos donde se cortan los arcos."),
+ ]),
+ S(2,"No confundirlas",[
+  T("Bisectriz y mediatriz",["","Bisectriz","Mediatriz"],[["Se traza en","un ángulo","un segmento"],["Divide en","dos ángulos iguales","dos segmentos iguales"],["Sus puntos están","a igual distancia de los lados","a igual distancia de los extremos"]]),
+ ]),
+ S(2,"Para qué sirven",[
+  P("Si dos casas están en A y B y se quiere una plaza a la misma distancia de las dos, hay que buscar el lugar sobre la mediatriz del segmento AB."),
+ ]),
+],
+"ejemplo_completo":{"titulo":"bisectriz de 80°","planteo":"Se traza la bisectriz de un ángulo de 80°. ¿Cuánto mide cada parte? ¿Cómo se verifica?","pasos":["La bisectriz divide en dos partes iguales.","80° ÷ 2 = 40°.","Cada ángulo mide 40°.","Verificación: se mide cada parte con el transportador."]},
+"ejemplo_incompleto":{"titulo":"mediatriz de AB","planteo":"El segmento AB mide 10 cm. Completá los espacios.","pasos":["La mediatriz corta a AB a ___ cm de A.","Forma con AB un ángulo de ___ ."]},
+"ejemplo_solo":{"titulo":"describir la mediatriz","planteo":"Escribí los pasos para trazar la mediatriz de un segmento de 8 cm."},
+"tip":{"titulo":"No toques el compás","texto":"Entre los arcos de una misma construcción la abertura del compás no se cambia. Si se mueve, la construcción sale mal."},
+"ojo":["Cambiar la abertura del compás entre los arcos.","Confundir bisectriz con mediatriz: una es de un ángulo, la otra de un segmento."],
+"resumen":[{"titulo":"Bisectriz","texto":"Divide un ángulo en dos iguales."},{"titulo":"Mediatriz","texto":"Perpendicular por el punto medio de un segmento."},{"titulo":"Propiedad","texto":"Mediatriz: igual distancia a los extremos."},{"titulo":"Compás","texto":"Misma abertura en los arcos."}],
+"glosario":[{"palabra":"Bisectriz","significado":"Semirrecta que divide un ángulo en dos iguales."},{"palabra":"Mediatriz","significado":"Perpendicular a un segmento por su punto medio."},{"palabra":"Punto medio","significado":"El punto que divide un segmento en dos partes iguales."},{"palabra":"Compás","significado":"Instrumento para trazar arcos y copiar medidas."}],
+"carpeta":["La bisectriz de un ángulo de 130° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?","Un segmento mide 14 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?","Un punto P está sobre la mediatriz de AB y PA = 6 cm. ¿Cuánto mide PB, en cm?","Un compañero cambió la abertura del compás entre los arcos de la mediatriz. ¿Qué ángulo tiene que formar la mediatriz con el segmento?"],
+"respuestas_carpeta":[["65","65°"],["7","7cm"],["6","6cm"],["90","90°"]],
+"soluciones":{"incompleto":"5 cm. 90°.","solo":"Con centro en un extremo y abertura mayor que 4 cm, un arco arriba y otro abajo. Con la misma abertura, lo mismo desde el otro extremo. Unir los dos puntos de corte.","carpeta":["65°: 130° ÷ 2.","7 cm: la mitad de 14.","6 cm: sus puntos están a igual distancia de A y de B.","90°: la mediatriz es perpendicular."]}
+}
+N4={
+"objetivo":"Vas a poder copiar segmentos y ángulos, construir triángulos con regla y compás, escribir los pasos y verificar la construcción.",
+"vas_a_ver":["Copiar un segmento","Copiar un ángulo","Construir un triángulo con sus tres lados","Cuándo se puede construir un triángulo","Escribir y verificar los pasos"],
+"secciones":[
+ S(1,"Copiar segmentos y ángulos",[
+  D("Copiar con el compás","<b>Segmento:</b> se abre el compás del largo del segmento y se traslada esa medida sobre una recta. <b>Ángulo:</b> se traza un arco en el ángulo original y el mismo arco desde el nuevo vértice; con el compás se toma la distancia entre los cortes del arco original y se marca sobre el nuevo arco; se une el vértice con esa marca."),
+ ]),
+ S(1,"Triángulo con tres lados",[
+  D("Construcción","Para un triángulo de lados 6, 5 y 4 cm: 1) trazar un segmento de 6 cm; 2) desde un extremo, un arco de radio 5 cm; 3) desde el otro, un arco de radio 4 cm; 4) unir el punto donde se cortan con los dos extremos."),
+ ]),
+ S(2,"¿Siempre se puede?",[
+  P("No. Cada lado tiene que ser <b>menor que la suma de los otros dos</b>. Con 3, 4 y 9 cm: 3 + 4 = 7, que es menor que 9; los arcos no se cortan y el triángulo no existe."),
+ ]),
+ S(2,"Escribir y verificar",[
+  P("Una construcción se describe con pasos numerados, nombrando cada punto y cada medida. Al terminar, se <b>verifica</b> midiendo los lados con la regla y los ángulos con el transportador."),
+ ]),
+],
+"ejemplo_completo":{"titulo":"triángulo de 6, 5 y 4 cm","planteo":"Escribí los pasos para construir un triángulo de lados 6 cm, 5 cm y 4 cm y verificá que se puede.","pasos":["Control: 6 < 5 + 4 = 9; 5 < 6 + 4; 4 < 6 + 5. Se puede.","Trazar AB de 6 cm.","Con centro en A, arco de radio 5 cm. Con centro en B, arco de radio 4 cm.","Llamar C al punto de corte y unir C con A y con B.","Verificar midiendo AC = 5 cm y BC = 4 cm."]},
+"ejemplo_incompleto":{"titulo":"3, 4 y 9 cm","planteo":"¿Se puede construir un triángulo con lados de 3, 4 y 9 cm? Completá los espacios.","pasos":["3 + 4 = ___ .","7 es menor que 9: ¿se puede? ___ ."]},
+"ejemplo_solo":{"titulo":"el equilátero","planteo":"Escribí los pasos para construir un triángulo equilátero de 5 cm de lado."},
+"tip":{"titulo":"Nombrá todo","texto":"Poné nombre a cada punto (A, B, C) y escribí cada medida. Así otra persona puede seguir tus pasos."},
+"ojo":["No escribir los pasos: una construcción sin instrucciones no se puede revisar.","Mover el compás sin darse cuenta: verificá siempre midiendo al final."],
+"resumen":[{"titulo":"Copiar","texto":"La abertura del compás traslada la medida."},{"titulo":"Triángulo","texto":"Un lado y dos arcos con las otras medidas."},{"titulo":"Condición","texto":"Cada lado menor que la suma de los otros dos."},{"titulo":"Verificar","texto":"Medir lados y ángulos al final."}],
+"glosario":[{"palabra":"Construir","significado":"Dibujar una figura con instrumentos y medidas exactas."},{"palabra":"Equilátero","significado":"Triángulo con los tres lados iguales."},{"palabra":"Radio","significado":"La abertura del compás al trazar un arco."}],
+"carpeta":["¿Se puede construir un triángulo con lados de 4, 5 y 12 cm? Respondé sí o no.","¿Cuántos grados mide cada ángulo de un triángulo equilátero?","Para un triángulo de lados 7, 5 y 4 cm se traza el lado de 7 cm y desde un extremo un arco de radio 5 cm. ¿De qué radio es el arco desde el otro extremo, en cm?","Un compañero quiere un triángulo de lados 2, 3 y 5 cm y los arcos no se cortan. ¿Cuánto da 2 + 3?"],
+"respuestas_carpeta":[NO,["60","60°"],["4","4cm"],["5"]],
+"soluciones":{"incompleto":"7. No.","solo":"Trazar AB de 5 cm. Con centro en A y en B, arcos de radio 5 cm. Unir el punto de corte C con A y con B. Verificar que los tres lados miden 5 cm.","carpeta":["No: 4 + 5 = 9, menor que 12.","60°: los tres son iguales y suman 180°.","4 cm: es la medida que falta.","5: no es mayor que 5, así que el triángulo no existe."]}
+}
+ACT={
+"1":[MC("Un ángulo de 90° es…",["Agudo","Recto","Obtuso","Llano"],"Recto","Mide exactamente 90°."),
+     N("¿Cuánto mide el adyacente de un ángulo de {a}°?",{"formula":"180-a"},"Los adyacentes suman 180°.",{"vars":{"a":{"min":20,"max":160}}})],
+"2":[MC("Dos rectas que nunca se cortan y están siempre a la misma distancia son…",["Paralelas","Perpendiculares","Secantes"],"Paralelas","Como las vías del tren."),
+     VF("Dos rectas perpendiculares también son secantes.","Verdadero","Se cortan en un punto, formando ángulos rectos.")],
+"3":[N("La bisectriz de un ángulo de {d}° lo divide en dos ángulos iguales. ¿Cuántos grados mide cada uno?",{"formula":"h"},"Se divide por 2.",{"vars":{"h":{"min":10,"max":85}},"calculadas":{"d":"2*h"}}),
+     MC("¿Qué recta tiene todos sus puntos a igual distancia de los extremos de un segmento?",["La bisectriz","La mediatriz","Una paralela al segmento","Cualquier perpendicular"],"La mediatriz","Es la perpendicular por el punto medio.")],
+"4":[MC("¿Con cuál de estas medidas se puede construir un triángulo?",["2, 3 y 6 cm","4, 5 y 7 cm","1, 2 y 3 cm","3, 3 y 7 cm"],"4, 5 y 7 cm","Cada lado es menor que la suma de los otros dos: 7 < 9."),
+     {"t":"ordering","p":"Ordená los pasos para construir un triángulo de lados 6, 5 y 4 cm.","o":["Desde un extremo, trazar un arco de radio 5 cm","Trazar un segmento de 6 cm","Unir el punto de corte con los extremos","Desde el otro extremo, trazar un arco de radio 4 cm"],"r":{"orden":["Trazar un segmento de 6 cm","Desde un extremo, trazar un arco de radio 5 cm","Desde el otro extremo, trazar un arco de radio 4 cm","Unir el punto de corte con los extremos"]},"e":"Primero un lado, después los dos arcos y al final se une."}],
+"5":[MC("Relámpago. Un ángulo de 120° es…",["Agudo","Recto","Obtuso"],"Obtuso","Está entre 90° y 180°.",tiempo=20),
+     N("Relámpago. ¿Cuánto mide el opuesto por el vértice de un ángulo de 55°?",{"acepta":[55]},"Los opuestos son iguales.",tiempo=20),
+     N("Relámpago. La bisectriz de un ángulo recto forma dos ángulos de…",{"acepta":[45]},"90° ÷ 2.",tiempo=20),
+     N("Relámpago. Resolvé 2x + 4 = 18.",{"acepta":[7]},"Repaso de la misión 16.",tiempo=30)],
+}
+EXAMEN=[
+ [1,N("¿Cuánto mide el adyacente de un ángulo de 37°?",{"acepta":[143]},"180° − 37°.")],
+ [1,{"t":"classify","p":"Clasificá cada ángulo.","o":{"elementos":["30°","90°","150°","180°","89°"],"categorias":["Agudo","Recto","Obtuso","Llano"]},"r":{"categorias":{"30°":"Agudo","90°":"Recto","150°":"Obtuso","180°":"Llano","89°":"Agudo"}},"e":"Agudo: menos de 90°. Obtuso: entre 90° y 180°."}],
+ [1,MC("¿Cuánto da 48°35′ + 27°50′?",["75°85′","76°25′","75°25′","76°85′"],"76°25′","85′ = 1°25′.")],
+ [2,MC("¿Cómo son entre sí las vías de un tren?",["Paralelas","Perpendiculares","Secantes"],"Paralelas","Nunca se cortan y mantienen la distancia.")],
+ [2,VF("La distancia de un punto a una recta se mide sobre una perpendicular.","Verdadero","Es el camino más corto.")],
+ [2,N("Dos rectas secantes forman un ángulo de 65°. ¿Cuánto mide su ángulo adyacente?",{"acepta":[115]},"180° − 65°.")],
+ [3,N("La bisectriz de un ángulo de 150° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?",{"acepta":[75]},"150° ÷ 2.")],
+ [3,N("Un segmento mide 18 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?",{"acepta":[9]},"Pasa por el punto medio.")],
+ [3,MC("Para ubicar una plaza a igual distancia de dos casas, ¿sobre qué línea hay que buscar el lugar?",["La bisectriz","La mediatriz del segmento entre las casas","Una paralela","Cualquier perpendicular"],"La mediatriz del segmento entre las casas","Sus puntos equidistan de los extremos.")],
+ [4,VF("Con lados de 3, 4 y 8 cm se puede construir un triángulo.","Falso","3 + 4 = 7, menor que 8.")],
+ [4,N("¿Cuántos grados mide cada ángulo de un triángulo equilátero?",{"acepta":[60]},"180° ÷ 3.")],
+ [4,MC("Para copiar un segmento con el compás, la abertura tiene que ser…",["Igual al segmento","El doble del segmento","Cualquiera","La mitad del segmento"],"Igual al segmento","El compás traslada esa medida.")],
+ [4,MC("¿Para qué se mide con regla y transportador al terminar una construcción?",["Para verificarla","Para empezarla","No sirve para nada","Para borrarla"],"Para verificarla","Confirma que las medidas son las pedidas.")],
+]
+M={"subject_id":"1260de30-041b-4324-b819-2de1a344f189","tema":17,"practica":"Práctica general: ángulos y construcciones","examen_titulo":"Nivel jefe: ángulos y construcciones",
+   "niveles":{"1":N1,"2":N2,"3":N3,"4":N4},"act":ACT,"examen":EXAMEN}
+json.dump(M,open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"mision-17.json"),"w"),ensure_ascii=False)
+print("ok")
