@@ -65,7 +65,19 @@ def cover(c, doc):
         c.rect(0, PH - (i + 1) * PH / n - 0.6, PW, PH / n + 1.2, stroke=0, fill=1)
     c.setFillColor(MINT); c.setFillAlpha(0.13); c.setFont("DV-B", 158); c.drawString(300, PH - 432, f"{int(m['tema_num']):02d}"); c.setFillAlpha(1)
     spaced(c, 62, PH - 95, f"{m['materia'].upper()} · {m['anio']}.º AÑO", "DV-B", 7.4, MINT, 2.4)
-    spaced(c, 62, PH - 111, f"TEMA {m['tema_num']} · {m['tema'].upper()}"[:58], "DV-B", 7.4, MINT, 2.4)
+    # el tema no puede llegar al logo (x = 426): se parte en hasta 2 líneas
+    from reportlab.pdfbase.pdfmetrics import stringWidth
+    ancho = lambda t: stringWidth(t, "DV-B", 7.4) + 2.4 * len(t)
+    lineas, act = [], ""
+    for w in f"TEMA {m['tema_num']} · {m['tema'].upper()}".split():
+        prueba = (act + " " + w).strip()
+        if act and ancho(prueba) > 350: lineas.append(act); act = w
+        else: act = prueba
+    lineas.append(act)
+    if len(lineas) > 2: lineas = [lineas[0], " ".join(lineas[1:])]
+    while ancho(lineas[-1]) > 350: lineas[-1] = lineas[-1][:-2].rstrip() + "…"
+    for i, ln in enumerate(lineas):
+        spaced(c, 62, PH - 111 - 14 * i, ln, "DV-B", 7.4, MINT, 2.4)
     c.setFillColor(white); c.roundRect(426, PH - 124, 112, 72, 14, stroke=0, fill=1)
     c.drawImage(ImageReader(LOGO), 432, PH - 119, width=100, height=60, mask="auto", preserveAspectRatio=True, anchor="c")
     spaced(c, 62, PH - 238, "LECCIÓN", "DV-B", 7, MINT, 2.6)
