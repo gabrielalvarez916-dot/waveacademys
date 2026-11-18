@@ -510,7 +510,7 @@
       return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
         : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
     });
-    if (D.introWave && !(paso.videos[0] && paso.videos[0].intro)) {
+    if (D.introWave && !(paso.videos[0] && (paso.videos[0].intro || paso.videos[0].final))) {
       lista.unshift({ tramos: D.introWave.tramos || [], url: async function () { return (await llamar('content-access', { action: 'intro_wave' })).url; } });
     }
     WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); }, lista: lista });

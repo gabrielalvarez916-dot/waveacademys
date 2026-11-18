@@ -609,6 +609,11 @@
           var tr = x.tramos && x.tramos.length ? x.tramos : [{ i: 0, f: 0 }];
           tr.forEach(function (t) { plan.push({ key: x.uid, i: Number(t.i) || 0, f: Number(t.f) || 0 }); });
         });
+        // la intro de Wave va adentro del video final (así el alumno no tiene que volver a darle play)
+        if (S.introWave && !(lr[0] && lr[0].intro)) {
+          var ti = S.introWave.tramos && S.introWave.tramos.length ? S.introWave.tramos : [{ i: 0, f: 0 }];
+          plan = ti.map(function (t) { return { key: S.introWave.uid, i: Number(t.i) || 0, f: Number(t.f) || 0 }; }).concat(plan);
+        }
         if (!confirm('Se va a generar UN solo video con los cortes y la intro, listo para internet. Reemplaza los videos de esta lección cuando termine y puede tardar unos minutos. ¿Pedirlo?')) return;
         var ped = await sb.functions.invoke('render-videos', { body: { action: 'pedir', lesson_id: R.lesson, step_id: L.pasos.video.id, plan: plan } });
         if (ped.error) { var mp = 'No se pudo pedir. Intentá de nuevo.'; try { var cj = await ped.error.context.json(); if (cj && cj.error) mp = cj.error; } catch (e0) { /* genérico */ } throw new Error(mp); }
