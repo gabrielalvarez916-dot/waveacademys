@@ -75,7 +75,7 @@ async function enCurso(wf = "optimizar-videos.yml"): Promise<boolean> {
 
 // ---- Transcripciones: un texto por paso de video (los videos de la misión) ----
 async function transPendientes() {
-  const { data: pasos, error } = await admin.from("lesson_steps").select("id, lesson_id, content").eq("step_type", "video").limit(5000);
+  const { data: pasos, error } = await admin.from("lesson_steps").select("id, lesson_id, content").eq("step_type", "video").not("stream_uid", "is", null).limit(5000);
   if (error) throw error;
   const { data: hechas } = await admin.from("video_transcripciones").select("step_id, firma").limit(20000);
   const firmaDe = new Map((hechas ?? []).map((h: any) => [h.step_id, h.firma]));
