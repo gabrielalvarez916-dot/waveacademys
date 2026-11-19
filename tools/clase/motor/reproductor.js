@@ -24,7 +24,7 @@
     if (a !== marcar.a) { marcar.a = a; gsap.fromTo(t, { scale: .82, transformOrigin: '960px 105px' }, { scale: 1, duration: .22, ease: 'back.out(3)' }); }
   }
   // voz: un audio por frase (window.VOZ_AUDIO). Sin audio: solo subtítulos con tiempo estimado.
-  var AUD = new Audio(); AUD.preload = 'auto';
+  var AUD = new Audio(); AUD.preload = 'auto'; MUSICA.hablando = function () { return !AUD.paused; };
   function cortar() { st.gen++; try { AUD.pause(); } catch (_) {} }
   function decir(txt, g, fin, k) {
     var n = txt.split(' ').length, v = window.VOZ_AUDIO && VOZ_AUDIO[st.e] && VOZ_AUDIO[st.e][k], hecho = false;
@@ -38,7 +38,7 @@
   }
   function frase(k) {
     var e = E[st.e], g = st.gen;
-    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 150);
+    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; MUSICA.pausa(); barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 150);
     st.f = k; barra(); subs(e.voz[k]);
     if (tl.labels['b' + k] != null) tl.play('b' + k);
     decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 30); }, k);
@@ -52,9 +52,10 @@
     gsap.fromTo(esc, { opacity: 0, scale: 1.04, transformOrigin: '960px 560px' }, { opacity: 1, scale: 1, duration: .3, delay: vieja ? .12 : 0, ease: 'power2.out' });
   }
   function irA(i) { cortar(); st.e = i; st.f = 0; gsap.set('#cam', { x: 0 }); $('flash').setAttribute('opacity', 0); armarEscena(i); barra(); if (st.play) setTimeout(function () { frase(0); }, 220); else subs(E[i].voz[0]); }
-  function pausa() { st.play = false; cortar(); if (tl) tl.pause(); barra(); }
-  function seguir() { st.play = true; var k = st.f; tl.pause(); if (tl.labels['b' + k] != null) tl.seek('b' + k); frase(k); }
-  $('go').onclick = function () { $('ui').remove(); $('ctl').classList.add('ver'); setTimeout(function () { $('ctl').classList.remove('ver'); }, 2500); st.play = true; AUD.play().catch(function () {}); irA(0); };
+  function pausa() { st.play = false; MUSICA.pausa(); cortar(); if (tl) tl.pause(); barra(); }
+  function seguir() { st.play = true; MUSICA.seguir(); var k = st.f; tl.pause(); if (tl.labels['b' + k] != null) tl.seek('b' + k); frase(k); }
+  $('go').onclick = function () { $('ui').remove(); $('ctl').classList.add('ver'); setTimeout(function () { $('ctl').classList.remove('ver'); }, 2500); st.play = true; AUD.play().catch(function () {}); MUSICA.iniciar(); irA(0); };
+  $('mus').onclick = function () { $('mus').style.opacity = MUSICA.alternar() ? 1 : .4; };
   $('pp').onclick = function () { st.play ? pausa() : seguir(); };
   $('ant').onclick = function () { irA(Math.max(0, st.e - (st.f <= 1 ? 1 : 0))); };
   $('sig').onclick = function () { if (st.e < E.length - 1) irA(st.e + 1); };
