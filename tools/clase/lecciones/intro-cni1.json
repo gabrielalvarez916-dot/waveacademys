@@ -1,0 +1,53 @@
+{
+ "slug": "intro-cni1",
+ "subject_id": "9fa85d7b-ee7a-4853-8486-a69f9b539c12",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Bienvenido a Ciencias Naturales",
+ "sub": "Introducción · Nivel avanzado",
+ "escenas": [
+  { "t": "mundo", "fondo": "espacio",
+    "pasos": [ { "acc": [ { "pon": "t", "e": "🌍", "x": 960, "y": 520, "s": 430 }, { "pon": "l", "e": "🌙", "x": 1500, "y": 300, "s": 110 } ], "txt": "Un planeta lleno de preguntas" },
+               { "acc": [ { "mueve": "l", "ruta": [[1500, 300], [1560, 620], [420, 640], [380, 300], [1500, 300]], "dur": 6, "loop": true } ], "txt": "¿Por qué hay día y noche?" },
+               { "acc": [ { "zoom": [960, 520, 3.2] } ], "txt": "Bajemos a mirar de cerca…" } ],
+    "voz": ["Este planeta está lleno de *preguntas*.",
+            "¿Por qué hay día y noche? ¿Por qué llueve? ¿De qué estamos hechos?",
+            "Las *Ciencias Naturales* buscan esas respuestas. Bajemos a mirar de cerca."] },
+
+  { "t": "mundo", "fondo": "jardin", "entrada": "zoom",
+    "pasos": [ { "acc": [ { "pon": "a", "e": "🌳", "x": 380, "y": 560, "s": 330 }, { "pon": "f", "e": "🌻", "x": 900, "y": 720, "s": 130 }, { "pon": "b", "e": "🐝", "x": 1100, "y": 500, "s": 80 }, { "mueve": "b", "ruta": [[1100, 500], [940, 640], [1250, 420], [1100, 500]], "dur": 4, "loop": true } ], "txt": "Seres vivos y sus relaciones" },
+               { "acc": [ { "pon": "h", "e": "🧊", "x": 1400, "y": 760, "s": 100, "etq": "materia" }, { "pon": "s", "e": "☀️", "x": 1600, "y": 220, "s": 160, "etq": "energía" } ], "txt": "Materia y energía" },
+               { "acc": [ { "pon": "m", "e": "🔬", "x": 760, "y": 780, "s": 120 }, { "zoom": [900, 720, 2.6] } ], "txt": "Y lo que no se ve a simple vista" } ],
+    "voz": ["Acá todo está conectado: la abeja, la flor, el árbol. Son *seres vivos* que se relacionan.",
+            "El hielo que se derrite y el sol que lo calienta: *materia* y *energía*.",
+            "Y con un microscopio, aparece lo que *no se ve*: las células."] },
+
+  { "t": "linea", "titulo": "TU VIAJE: 20 MISIONES",
+    "eventos": [ { "fecha": "Misión 1-2", "txt": "Ciencia y laboratorio", "emoji": "🔬" },
+                 { "fecha": "3-5", "txt": "Seres vivos y células", "emoji": "🦠" },
+                 { "fecha": "6-9", "txt": "Ecosistemas y ambiente", "emoji": "🌳" },
+                 { "fecha": "10-16", "txt": "Materia y energía", "emoji": "⚛️" },
+                 { "fecha": "17-20", "txt": "Movimiento, Tierra y universo", "emoji": "🪐" } ],
+    "voz": ["Tu viaje tiene *20 misiones*. Arrancás como científico: el *método* y el *laboratorio*.",
+            "Después, los *seres vivos*: qué los hace vivos, sus células y su diversidad.",
+            "Siguen los *ecosistemas argentinos*, las cadenas alimentarias y cómo cuidamos el ambiente.",
+            "Ahí entrás en la *materia*: estados, mezclas, átomos, y la *energía*, el calor y la temperatura.",
+            "Y cerrás mirando lejos: el *movimiento*, la *Tierra* y el *universo*, con un proyecto final."] },
+
+  { "t": "pasos", "titulo": "CÓMO SE JUEGA CADA NIVEL",
+    "items": [ { "txt": "Mirá la clase animada", "emoji": "🎬" }, { "txt": "Leé el PDF con tu carpeta", "emoji": "📄" }, { "txt": "Resolvé las consignas y entregalas", "emoji": "✏️" }, { "txt": "Practicá con las actividades", "emoji": "🧩" } ],
+    "voz": ["¿Cómo se juega? Cada misión tiene *niveles*, y cada nivel tiene cuatro pasos.",
+            "Primero mirás una *clase animada*, como esta.",
+            "Después leés el *PDF*, con tu carpeta al lado.",
+            "Resolvés las consignas y las *entregás*.",
+            "Y practicás con *actividades* para sumar puntos."] },
+
+  { "t": "frase", "texto": "Al final de cada misión te espera el NIVEL JEFE", "emoji": "👑", "color": "#F4B63F",
+    "voz": ["Y al final de cada misión te espera el *nivel jefe*: el desafío para pasar a la siguiente."] },
+
+  { "t": "consejo", "titulo": "UN CONSEJO", "texto": "Mirá todo con curiosidad y preguntate siempre ¿por qué?", "emoji": "🧐",
+    "voz": ["Un consejo: mirá todo con *curiosidad*. Cada vez que algo te llame la atención, preguntate *¿por qué?*"] },
+
+  { "t": "frase", "texto": "Misión 1: ciencia y método. ¡Vamos!", "emoji": "🚀",
+    "voz": ["¿Listo? Tu primera misión te espera: *ciencia y método*. ¡Vamos!"] }
+ ]
+}
