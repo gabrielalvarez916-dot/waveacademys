@@ -420,7 +420,7 @@
     var ks = pasosNivel(l);
     var pend = ks.filter(function (k) { return !hechoK(l, k); });
     var hasta = pend.length ? ks.indexOf(pend[0]) : ks.length; // hasta dónde llegó (abre acá)
-    var tope = D.prueba ? ks.length : hasta; // la cuenta de prueba puede ir a cualquier paso
+    var tope = hasta;
     var i = verPaso[l.id] != null && verPaso[l.id] <= tope ? verPaso[l.id] : hasta; // o el paso anterior que eligió mirar
     var segs = ks.concat(['fin']).map(function (k, j) {
       var cls = 'rc-seg ' + (j === i ? 'cur' : j < hasta ? 'on' : '');
@@ -428,7 +428,7 @@
     }).join('');
     var nav = '<div class="rc-nav" style="display:flex;justify-content:space-between;gap:10px;margin:8px 0 0">' +
       (i > 0 ? '<button type="button" class="rc-b2" data-ver="' + (i - 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">‹ Paso anterior</button>' : '<span></span>') +
-      (i < tope ? '<button type="button" class="rc-b2" data-ver="' + (i + 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">' + (D.prueba && i >= hasta ? 'Saltar paso (prueba) ›' : i + 1 === hasta ? 'Seguir donde quedé ›' : 'Paso siguiente ›') + '</button>' : '<span></span>') + '</div>';
+      (i < tope ? '<button type="button" class="rc-b2" data-ver="' + (i + 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">' + (i + 1 === hasta ? 'Seguir donde quedé ›' : 'Paso siguiente ›') + '</button>' : '<span></span>') + '</div>';
     var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length, hechoK(l, ks[i]));
     vista.innerHTML = '<div class="mt mt-rc" style="--c:' + tono(D.temas.indexOf(t)) + '">' +
       '<div class="rc-top"><a class="rc-x" href="' + base() + '/' + t.id + '" aria-label="Volver a la misión">' + ico('close', 22, 3) + '</a><div class="rc-bar">' + segs + '</div></div>' + nav + cuerpo + '</div>';
@@ -482,6 +482,7 @@
   async function abrirPaso(k) {
     var f = buscarLeccion(hojaAbierta), paso = pasoActual(k);
     if (!f || !paso) return;
+    if (D.prueba && !hecho(paso) && k !== 'complementary' && k !== 'review') marcar(paso, k === 'final' ? 100 : null); // cuenta de prueba: avanza sin completar
     try {
       if (k === 'video' && paso.clase) {
         abrirClase(paso, f.l.titulo);
@@ -548,6 +549,7 @@
   async function entregarCarpeta(btn) {
     var f = buscarLeccion(hojaAbierta), paso = f && (D.pasos[f.l.id] || {}).pdf;
     if (!paso) return;
+    if (D.prueba) { D.carpeta[paso.id] = true; delete verPaso[f.l.id]; await revisarLeccion(f.l.id); return refrescar(); } // cuenta de prueba: pasa sin responder
     var inputs = Array.prototype.slice.call(vista.querySelectorAll('.rc-in'));
     var resp = inputs.map(function (x) { return x.value.trim(); });
     if (resp.some(function (x) { return !x; })) { toast('Completá todas las respuestas antes de entregar.', true); return; }
