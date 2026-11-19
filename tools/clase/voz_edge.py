@@ -44,9 +44,9 @@ def decir_numeros(s):
     s = re.sub(r'\b[MDCLXVI]{2,}\b', lambda m: ', '.join(LETRA[c] for c in m.group(0)), s)  # romanos: letra por letra
     def num(m):
         n = int(m.group(0).replace('.', ''))
-        sig = s[m.end():m.end() + 2]
+        sig = s[m.end():m.end() + 3]
         w = en_letras(n)
-        return 'un' if n == 1 and re.match(r' [a-záéíóú]', sig) else w  # "1 grupo" -> "un grupo"
+        return 'un' if n == 1 and re.match(r' (?![yoeu]\b|[a-z]\b)[a-záéíóú]', sig) else w  # "1 grupo" -> "un grupo"
     return re.sub(r'\d{1,3}(?:\.\d{3})+(?!\d)|\d+', num, s)
 
 
@@ -69,6 +69,8 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = re.sub(r'\s*−\s*', ' menos ', s)
     s = re.sub(r'\s*÷\s*', ' dividido ', s)
     s = re.sub(r'\s*%', ' por ciento', s)
+    s = re.sub(r'\s*=\s*', ' igual a ', s)
+    s = re.sub(r'(\d)([a-zA-Z])\b', r'\1 \2', s)  # 3n -> 3 n
     s = re.sub(r'\s*\+\s*', ' más ', s)
     s = re.sub(r'\s*×\s*', ' por ', s)
     return decir_numeros(s.replace('\\u2026', '…')).strip()

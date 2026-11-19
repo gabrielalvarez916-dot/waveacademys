@@ -1,0 +1,202 @@
+{
+ "slug": "mat1-m15-n4",
+ "step_id": "c8d5b29f-d4ee-44bf-a9a0-3c2814a3c850",
+ "materia": "Matemática I",
+ "titulo": "Expresiones equivalentes",
+ "sub": "Matemática I · Misión 15 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: dos chicos discuten. Uno dice que *x + x* y *x por x* son lo mismo, porque con 2 dan 4 las dos.",
+    "¡Pero con 3 dan 6 y 9! *No son equivalentes*. Un solo valor no alcanza.",
+    "Hoy: *expresiones equivalentes*."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Polémica: ¿x + x es lo mismo que x · x?",
+   "bajada": "Con 2 dan igual… con 3, no",
+   "emoji": "🤯",
+   "titulo": "EXPRESIONES EQUIVALENTES",
+   "sub": "mismo valor, siempre"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Dos expresiones son *equivalentes* si dan el mismo valor *para cualquier número*.",
+    "No para uno: ¡para *todos*!"
+   ],
+   "palabra": "Equivalentes",
+   "texto": "Mismo valor para cualquier número que reemplace a la letra",
+   "emoji": "🟰"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "2, paréntesis, x + 3, contra 2x + 6.",
+    "Con x igual a 1: 8 y 8.",
+    "Con 5: 16 y 16.",
+    "Con 10: 26 y 26. Son equivalentes por la *distributiva*."
+   ],
+   "titulo": "2(x + 3) Y 2x + 6",
+   "columnas": [
+    "x",
+    "2(x + 3)",
+    "2x + 6"
+   ],
+   "filas": [
+    [
+     "1",
+     "8",
+     "8"
+    ],
+    [
+     "5",
+     "16",
+     "16"
+    ],
+    [
+     "10",
+     "26",
+     "26"
+    ]
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "La regla clave: *un solo valor no alcanza* para decir que son equivalentes.",
+    "Pero para decir que *no* lo son, alcanza un valor que dé distinto.",
+    "x + x contra x por x, con 3: 6 contra 9. ¡No son equivalentes!"
+   ],
+   "izq": {
+    "cab": "x + x",
+    "items": [
+     "x = 3 → 6"
+    ]
+   },
+   "der": {
+    "cab": "x · x",
+    "items": [
+     "x = 3 → 9"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "*Términos semejantes*: tienen la misma parte de letras. Esos se suman.",
+    "3a + 5a: semejantes, *8a*. 4n + 2n − n: *5n*.",
+    "Pero 3a + 5 *no se junta*: son términos distintos."
+   ],
+   "cajas": [
+    {
+     "cab": "SE JUNTAN",
+     "emoji": "🤝"
+    },
+    {
+     "cab": "NO SE JUNTAN",
+     "emoji": "🙅"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "3a + 5a = 8a",
+     "caja": 0
+    },
+    {
+     "txt": "4n + 2n − n = 5n",
+     "caja": 0
+    },
+    {
+     "txt": "3a + 5",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Simplificar: 2, paréntesis, a + 4, más a.",
+    "Distributiva: 2a + 8 + a.",
+    "Juntamos las a: ¡*3a + 8*!"
+   ],
+   "pasos": [
+    "2(a + 4) + a",
+    "2a + 8 + a",
+    "3a + 8"
+   ],
+   "notas": [
+    "",
+    "distributiva",
+    "semejantes"
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: ¿3, paréntesis, n − 2, más n, es equivalente a 4n − 6?",
+    "Distributiva: 3n − 6.",
+    "Más n: *4n − 6*. ¡Son equivalentes!",
+    "Comprobamos con n igual a 5: 14 y 14."
+   ],
+   "titulo": "3(n − 2) + n ¿= 4n − 6?",
+   "items": [
+    "3(n − 2) = 3n − 6",
+    "3n − 6 + n = 4n − 6 ",
+    "n = 5: 14 y 14"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Probar *un solo valor*: puede coincidir de casualidad.",
+    "Y distribuir solo el primero: 4, paréntesis, y + 5, es *4y + 20*, no 4y + 5."
+   ],
+   "items": [
+    {
+     "mal": "Con x = 2 coinciden → equivalentes",
+     "bien": "Un valor no alcanza"
+    },
+    {
+     "mal": "4(y + 5) = 4y + 5",
+     "bien": "4y + 20"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Equivalentes*: mismo valor para todo número.",
+    "*Un valor* no alcanza para el sí; alcanza para el no.",
+    "*Semejantes* se suman.",
+    "Y simplificar: *distributiva y semejantes*.",
+    "¡Misión 15 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EQUIVALENTES",
+     "mismo valor siempre"
+    ],
+    [
+     "UN VALOR",
+     "no alcanza para el sí"
+    ],
+    [
+     "SEMEJANTES",
+     "3a + 5a = 8a"
+    ],
+    [
+     "SIMPLIFICAR",
+     "2(a + 4) + a = 3a + 8"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

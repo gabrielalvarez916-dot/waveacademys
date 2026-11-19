@@ -1,0 +1,197 @@
+{
+ "slug": "mat1-m16-n4",
+ "step_id": "a919e81a-fd3c-47c2-a648-62fc9ccace56",
+ "materia": "Matemática I",
+ "titulo": "Problemas con ecuaciones",
+ "sub": "Matemática I · Misión 16 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: un número sumado con su doble da 45. ¿Cuál es? 5 segundos.",
+    "¡El *15*! 15 más 30, 45.",
+    "Hoy: *resolver problemas con ecuaciones*."
+   ],
+   "texto": "Un número más su doble da 45. ¿Cuál es?",
+   "segundos": 5,
+   "respuesta": "15",
+   "emoji": "🕵️",
+   "titulo": "PROBLEMAS CON ECUACIONES",
+   "sub": "del enunciado a la x"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Los cinco pasos.",
+    "Elegir *qué es x*.",
+    "Escribir los otros datos *con x*.",
+    "*Plantear* la ecuación.",
+    "*Resolver y verificar*.",
+    "Y *responder* la pregunta, con la unidad."
+   ],
+   "titulo": "CINCO PASOS",
+   "items": [
+    {
+     "txt": "¿Qué es x?",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Los datos con x",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Plantear la ecuación",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Resolver y verificar",
+     "emoji": "4️⃣"
+    },
+    {
+     "txt": "Responder con unidad",
+     "emoji": "5️⃣"
+    }
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Edades: Juan tiene el triple que su hermano, y juntos suman 32. x es la edad del hermano; Juan, *3x*.",
+    "Ecuación: x + 3x igual a 32, o sea 4x igual a 32.",
+    "x igual a 8.",
+    "El hermano tiene *8 años*, y Juan, *24*."
+   ],
+   "titulo": "JUAN Y SU HERMANO",
+   "items": [
+    {
+     "txt": "Hermano x · Juan 3x",
+     "emoji": "👦"
+    },
+    {
+     "txt": "x + 3x = 32",
+     "emoji": "🟰"
+    },
+    {
+     "txt": "x = 8",
+     "emoji": "🔑"
+    },
+    {
+     "txt": "8 y 24 años",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Plata: pagué 5.300 por 3 cuadernos iguales y una lapicera de 800. x es el precio de un cuaderno.",
+    "3x + 800 igual a 5.300.",
+    "3x igual a 4.500: ¡cada cuaderno, *1.500 pesos*!"
+   ],
+   "pasos": [
+    "3x + 800 = 5.300",
+    "3x = 4.500",
+    "x = 1.500"
+   ],
+   "notas": [
+    "x: un cuaderno",
+    "− 800",
+    "÷ 3"
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Geometría: un rectángulo cuyo largo mide 4 más que el ancho, con perímetro 40. Ancho x, largo x + 4.",
+    "Perímetro: 4x + 8 igual a 40, 4x igual a 32, x igual a 8. Ancho *8 centímetros*, largo *12*."
+   ],
+   "tipo": "rectangulo",
+   "etiquetas": [
+    "ancho x = 8 cm",
+    "largo x + 4 = 12 cm",
+    "perímetro 40 cm"
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Siempre *interpretá* el resultado: una edad, un precio o un largo *no pueden ser negativos*. Si te da eso, revisá."
+   ],
+   "titulo": "¿TIENE SENTIDO?",
+   "texto": "Edad, precio o largo negativos → revisar",
+   "emoji": "🧠"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "El reto del principio: x es el número; su doble, 2x.",
+    "x + 2x igual a 45, o sea 3x igual a 45.",
+    "x igual a *15*.",
+    "Verificamos: 15 más 30, 45. ¡El número es 15!"
+   ],
+   "pasos": [
+    "x + 2x = 45",
+    "3x = 45",
+    "x = 15",
+    "15 + 30 = 45 ✓"
+   ],
+   "notas": [
+    "",
+    "semejantes",
+    "÷ 3",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Dar la solución *sin interpretarla*: si x es el hermano, Juan es *3x*.",
+    "Y no controlar el sentido: *una edad no puede ser negativa*."
+   ],
+   "items": [
+    {
+     "mal": "Responder solo x = 8",
+     "bien": "Hermano 8, Juan 24"
+    },
+    {
+     "mal": "Aceptar un largo negativo",
+     "bien": "Revisar el planteo"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Elegí *qué es x*.",
+    "Escribí los datos y *planteá*.",
+    "*Resolvé y verificá*.",
+    "Y *respondé* con la unidad.",
+    "¡Misión 16 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PASO 1",
+     "elegir x"
+    ],
+    [
+     "PASOS 2 Y 3",
+     "datos con x y ecuación"
+    ],
+    [
+     "PASO 4",
+     "resolver y verificar"
+    ],
+    [
+     "PASO 5",
+     "responder con unidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

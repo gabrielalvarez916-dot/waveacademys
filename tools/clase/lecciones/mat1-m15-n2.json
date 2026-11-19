@@ -1,0 +1,195 @@
+{
+ "slug": "mat1-m15-n2",
+ "step_id": "95e7ed9c-1391-4f9e-9f75-a094d45504e3",
+ "materia": "Matemática I",
+ "titulo": "Patrones y regularidades",
+ "sub": "Matemática I · Misión 15 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: armás cuadraditos en fila con fósforos. 1 cuadrado, 4 fósforos; 2, 7; 3, 10. ¿Cuántos para *50 cuadrados*? 5 segundos.",
+    "¡*151 fósforos*! Y sin contar uno por uno.",
+    "Hoy: *patrones y regularidades*."
+   ],
+   "texto": "1 cuadrado: 4 fósforos · 2: 7 · 3: 10 … ¿y 50 cuadrados?",
+   "segundos": 5,
+   "respuesta": "151 fósforos",
+   "emoji": "🔥",
+   "titulo": "PATRONES",
+   "sub": "reglas que se repiten"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un *patrón* es una secuencia que sigue una *regla*.",
+    "Cada número es un *término*, y cada término tiene una *posición*: primero, segundo, tercero…"
+   ],
+   "palabra": "Patrón",
+   "texto": "Secuencia que sigue una regla · término y posición",
+   "emoji": "🔁"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Los fósforos, en tabla.",
+    "1 cuadrado: 4.",
+    "2 cuadrados: 7.",
+    "3 cuadrados: 10.",
+    "4 cuadrados: 13. Cada cuadrado nuevo suma *3*, porque comparte un lado."
+   ],
+   "titulo": "CUADRADOS CON FÓSFOROS",
+   "columnas": [
+    "Cuadrados (n)",
+    "Fósforos"
+   ],
+   "filas": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "7"
+    ],
+    [
+     "3",
+     "10"
+    ],
+    [
+     "4",
+     "13"
+    ]
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La regla se puede dar de dos formas.",
+    "*Recursiva*: cómo pasar al siguiente. Se suman 3.",
+    "*Explícita*: una fórmula con la posición. Fósforos: *3n + 1*."
+   ],
+   "a": {
+    "cab": "RECURSIVA",
+    "texto": "se suman 3",
+    "emoji": "🪜"
+   },
+   "b": {
+    "cab": "EXPLÍCITA",
+    "texto": "3n + 1",
+    "emoji": "🚀"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Comprobamos la fórmula 3n + 1. Con n igual a 1: 4. ",
+    "Con n igual a 2: 7. ",
+    "Con n igual a 3: 10. ¡Funciona con todos!"
+   ],
+   "titulo": "COMPROBAR 3n + 1",
+   "items": [
+    {
+     "txt": "n = 1 → 4 ",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "n = 2 → 7 ",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "n = 3 → 10 ",
+     "emoji": "3️⃣"
+    }
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Momento sorpresa: con la recursiva, para el término 50 tendrías que calcular *los 49 anteriores*.",
+    "Con la explícita: 3 por 50, más 1. ¡*151*, en un segundo!"
+   ],
+   "numero": 151,
+   "texto": "3 × 50 + 1 = 151 fósforos",
+   "emoji": "⚡"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Ojo: no confundas *posición* con *valor*. En 4, 7, 10, 13, el de la posición 3 *vale 10*. La n es la posición."
+   ],
+   "titulo": "POSICIÓN ≠ VALOR",
+   "texto": "Posición 3 → vale 10 · la n es la posición",
+   "emoji": "📍"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: la secuencia 5, 9, 13, 17. ¿Fórmula?",
+    "Se suman 4: la fórmula empieza con *4n*.",
+    "Con n igual a 1, 4n da 4, pero el término es 5: *sumamos 1*.",
+    "Fórmula: *4n + 1*. Comprobamos: n igual a 2 da 9. ",
+    "Término 20: 4 por 20, más 1: ¡*81*!"
+   ],
+   "titulo": "5, 9, 13, 17, …",
+   "items": [
+    "Se suman 4 → 4n",
+    "n = 1: 4n = 4, falta 1",
+    "Fórmula: 4n + 1",
+    "Término 20: 81"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Dar la regla *solo con palabras*: para llegar lejos hace falta la fórmula.",
+    "Y armar una fórmula que sirve para un solo término: *comprobala con varios*."
+   ],
+   "items": [
+    {
+     "mal": "Solo \"se suman 3\"",
+     "bien": "Fórmula: 3n + 1"
+    },
+    {
+     "mal": "Probar con un solo término",
+     "bien": "Comprobar con varios"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Patrón*: secuencia con regla.",
+    "*Recursiva*: de uno al siguiente.",
+    "*Explícita*: fórmula con la posición.",
+    "Y la explícita llega *lejos* en un segundo.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PATRÓN",
+     "secuencia con regla"
+    ],
+    [
+     "RECURSIVA",
+     "se suman 3"
+    ],
+    [
+     "EXPLÍCITA",
+     "3n + 1"
+    ],
+    [
+     "LEJOS",
+     "término 50 = 151"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

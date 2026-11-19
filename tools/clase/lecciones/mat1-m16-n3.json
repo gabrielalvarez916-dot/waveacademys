@@ -1,0 +1,194 @@
+{
+ "slug": "mat1-m16-n3",
+ "step_id": "fe5a67e9-ba8f-4c03-a601-890238c3e6ef",
+ "materia": "Matemática I",
+ "titulo": "Incógnita en ambos miembros",
+ "sub": "Matemática I · Misión 16 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Lu le escribe a Tomi: tengo x en los dos lados, 5x + 3 igual a 2x + 18. ¿Qué hago?",
+    "Tomi: ¡juntá todas las x de un lado y los números del otro!",
+    "Lu: ¡me dio x igual a 5! Tomi: verificá… ¡da 28 y 28!",
+    "Hoy: ecuaciones con la *incógnita en ambos miembros*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "5x + 3 = 2x + 18 · ¡x en los dos lados! 😵"
+    },
+    {
+     "yo": true,
+     "txt": "Juntá las x de un lado y los números del otro"
+    },
+    {
+     "yo": false,
+     "txt": "¡x = 5! 🎉"
+    }
+   ],
+   "titulo": "x EN LOS DOS LADOS",
+   "sub": "ecuaciones"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "La estrategia: términos con x *en un miembro*…",
+    "… y los números *en el otro*. Siempre haciendo lo mismo en los dos lados."
+   ],
+   "antes": {
+    "cab": "UN LADO",
+    "emoji": "🅧",
+    "texto": "todas las x"
+   },
+   "despues": {
+    "cab": "OTRO LADO",
+    "emoji": "🔢",
+    "texto": "todos los números"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "5x + 3 igual a 2x + 18.",
+    "Restamos 2x en los dos miembros: 3x + 3 igual a 18.",
+    "Restamos 3: 3x igual a 15.",
+    "Dividimos por 3: ¡*x igual a 5*!"
+   ],
+   "pasos": [
+    "5x + 3 = 2x + 18",
+    "3x + 3 = 18",
+    "3x = 15",
+    "x = 5"
+   ],
+   "notas": [
+    "",
+    "− 2x",
+    "− 3",
+    "÷ 3"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "El atajo: decir que un término *pasa al otro miembro con la operación contraria*. Un más 2x pasa como menos 2x. Es lo mismo, más corto."
+   ],
+   "texto": "+2x pasa como −2x",
+   "emoji": "🔁"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Truco: juntá las x *donde quedan positivas*. 2x + 9 igual a 5x − 3.",
+    "Restamos 2x: 9 igual a 3x − 3.",
+    "Sumamos 3: 12 igual a 3x.",
+    "Dividimos por 3: ¡*x igual a 4*!"
+   ],
+   "pasos": [
+    "2x + 9 = 5x − 3",
+    "9 = 3x − 3",
+    "12 = 3x",
+    "x = 4"
+   ],
+   "notas": [
+    "",
+    "− 2x",
+    "+ 3",
+    "÷ 3"
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Verificar es clave: calculá *cada miembro por separado*. Con x igual a 4, el primero: 2 por 4 más 9, *17*.",
+    "El segundo: 5 por 4 menos 3, *17*.",
+    "¡Iguales! La balanza queda en equilibrio."
+   ],
+   "izq": {
+    "cab": "2x + 9",
+    "items": [
+     "8 + 9 = 17"
+    ]
+   },
+   "der": {
+    "cab": "5x − 3",
+    "items": [
+     "20 − 3 = 17"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 6x − 5 igual a 2x + 7.",
+    "Restamos 2x: 4x − 5 igual a 7.",
+    "Sumamos 5: 4x igual a 12.",
+    "Dividimos por 4: *x igual a 3*.",
+    "Verificamos: 13 y 13. ¡Listo!"
+   ],
+   "titulo": "6x − 5 = 2x + 7",
+   "items": [
+    "− 2x: 4x − 5 = 7",
+    "+ 5: 4x = 12",
+    "÷ 4: x = 3",
+    "13 = 13 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Cambiar mal el signo al pasar: en 6x + 2 igual a 4x + 10, el 4x pasa *restando*: 2x igual a 8.",
+    "Y sumar términos distintos: 3x + 3 *no es 6x*."
+   ],
+   "items": [
+    {
+     "mal": "6x + 4x = 10 − 2",
+     "bien": "6x − 4x = 10 − 2"
+    },
+    {
+     "mal": "3x + 3 = 6x",
+     "bien": "No son semejantes"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*x de un lado*, números del otro.",
+    "*Pasar* es hacer lo mismo en los dos lados.",
+    "Juntá las x donde quedan *positivas*.",
+    "Y *verificá* cada miembro.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ESTRATEGIA",
+     "x de un lado, números del otro"
+    ],
+    [
+     "PASAR",
+     "+2x pasa como −2x"
+    ],
+    [
+     "TRUCO",
+     "juntar donde quedan positivas"
+    ],
+    [
+     "VERIFICAR",
+     "cada miembro por separado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

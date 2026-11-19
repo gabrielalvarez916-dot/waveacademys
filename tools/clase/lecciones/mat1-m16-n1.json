@@ -1,0 +1,191 @@
+{
+ "slug": "mat1-m16-n1",
+ "step_id": "03f6d420-0490-4bfa-b5c1-303808c4d781",
+ "materia": "Matemática I",
+ "titulo": "Qué es una ecuación",
+ "sub": "Matemática I · Misión 16 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Un número misterioso, más 4, da 7. ¿Cuál es?",
+    "¡El *3*! Acabás de resolver tu primera ecuación.",
+    "Hoy: *qué es una ecuación*."
+   ],
+   "grande": "x + 4 = 7",
+   "final": "x = 3",
+   "titulo": "ECUACIONES",
+   "sub": "el número misterioso"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Una *ecuación* es una igualdad con un número desconocido…",
+    "… la *incógnita*, que se escribe con una letra: x + 4 igual a 7."
+   ],
+   "palabra": "Ecuación",
+   "texto": "Igualdad con una incógnita: x + 4 = 7",
+   "emoji": "❓"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿Qué es cada cosa?",
+    "*Igualdad numérica*: 3 + 4 igual a 7. No hay letras.",
+    "*Ecuación*: x + 4 igual a 7. Hay letra y signo igual.",
+    "*Expresión*: 2x + 1. ¡No tiene igual!"
+   ],
+   "cajas": [
+    {
+     "cab": "IGUALDAD",
+     "emoji": "🟰"
+    },
+    {
+     "cab": "ECUACIÓN",
+     "emoji": "❓"
+    },
+    {
+     "cab": "EXPRESIÓN",
+     "emoji": "✏️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "3 + 4 = 7",
+     "caja": 0
+    },
+    {
+     "txt": "x + 4 = 7",
+     "caja": 1
+    },
+    {
+     "txt": "2x + 1",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "partes",
+   "voz": [
+    "Las partes de una ecuación.",
+    "Cada lado del igual es un *miembro*: primer miembro…",
+    "… y segundo miembro. El igual no dice da como resultado: dice que *los dos lados valen lo mismo*."
+   ],
+   "emoji": "⚖️",
+   "titulo": "x + 4 = 7",
+   "partes": [
+    {
+     "txt": "1.er miembro: x + 4",
+     "x": -0.6,
+     "y": -0.4
+    },
+    {
+     "txt": "2.º miembro: 7",
+     "x": 0.6,
+     "y": -0.4
+    }
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *solución* es el valor de la incógnita que *hace verdadera* la igualdad.",
+    "En x + 4 igual a 7, la solución es *x igual a 3*."
+   ],
+   "palabra": "Solución",
+   "texto": "El valor que hace verdadera la igualdad: x = 3",
+   "emoji": "🔑"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "¿Cómo saber si un número es solución? *Reemplazás y verificás*. Ecuación: 3x − 5 igual a 7.",
+    "Con 4: 12 − 5, da *7*. ¡Es solución!",
+    "Con 5: 15 − 5, da 10. *No* es solución."
+   ],
+   "a": {
+    "cab": "x = 4",
+    "texto": "3 × 4 − 5 = 7 ",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "x = 5",
+    "texto": "3 × 5 − 5 = 10 ✗",
+    "emoji": "❌"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Una ecuación es como una *balanza en equilibrio*. 3 bolsitas iguales y una pesa de 2 kilos pesan lo mismo que 14 kilos.",
+    "Si sacamos 2 kilos *de los dos lados*, sigue equilibrada: 3 bolsitas, 12 kilos.",
+    "Repartimos en 3: ¡cada bolsita pesa *4 kilos*!",
+    "Verificamos: 3 por 4, más 2, da 14. *¡Equilibrio!*"
+   ],
+   "pasos": [
+    "3x + 2 = 14",
+    "3x = 12",
+    "x = 4",
+    "3 × 4 + 2 = 14 ✓"
+   ],
+   "notas": [
+    "",
+    "sacamos 2 de cada lado",
+    "repartimos en 3",
+    "verificación"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir ecuación con expresión: *sin igual no hay ecuación*.",
+    "Y *no verificar*: un error de cuenta pasa sin que lo veas."
+   ],
+   "items": [
+    {
+     "mal": "2x + 1 es una ecuación",
+     "bien": "Es una expresión: no tiene ="
+    },
+    {
+     "mal": "No verificar",
+     "bien": "Reemplazar y comprobar"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Ecuación*: igualdad con incógnita.",
+    "*Miembros*: los lados del igual.",
+    "*Solución*: el valor que la hace verdadera.",
+    "Y la *balanza*: lo mismo de los dos lados.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ECUACIÓN",
+     "igualdad con incógnita"
+    ],
+    [
+     "MIEMBROS",
+     "los dos lados del ="
+    ],
+    [
+     "SOLUCIÓN",
+     "hace verdadera la igualdad"
+    ],
+    [
+     "BALANZA",
+     "lo mismo de los dos lados"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

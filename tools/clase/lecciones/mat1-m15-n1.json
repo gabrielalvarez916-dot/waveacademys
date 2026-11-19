@@ -1,0 +1,221 @@
+{
+ "slug": "mat1-m15-n1",
+ "step_id": "a4e425e5-11bf-49b9-a43a-453802a66ac4",
+ "materia": "Matemática I",
+ "titulo": "Del lenguaje común al algebraico",
+ "sub": "Matemática I · Misión 15 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Ana tiene una edad que no dice. Su hermano tiene *3 años más* que ella, y su papá, *el triple*.",
+    "¿Cómo escribís eso si no sabés la edad de Ana? ¡Con una *letra*!",
+    "Si Ana tiene a años, el hermano tiene a + 3, y el papá, 3 a.",
+    "Hoy: pasar del *lenguaje común al algebraico*."
+   ],
+   "personaje": {
+    "nombre": "Ana",
+    "emoji": "👧"
+   },
+   "lugar": "🎂",
+   "lineas": [
+    "No dice su edad",
+    "Su hermano: 3 años más",
+    "Su papá: el triple"
+   ],
+   "titulo": "LENGUAJE ALGEBRAICO",
+   "sub": "números con letras"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Dos palabras nuevas.",
+    "Una *variable* es una letra que representa un número que *puede cambiar*.",
+    "Una *constante* es un número *fijo*. En 3n + 5, la n es la variable; el 3 y el 5, constantes."
+   ],
+   "a": {
+    "cab": "VARIABLE",
+    "texto": "n · puede cambiar",
+    "emoji": "🔀"
+   },
+   "b": {
+    "cab": "CONSTANTE",
+    "texto": "3 y 5 · fijos",
+    "emoji": "📌"
+   },
+   "signo": "·"
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Detalle: entre un número y una letra *no se escribe el por*. 3n quiere decir 3 por n."
+   ],
+   "texto": "3n = 3 × n",
+   "emoji": "✍️"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "El diccionario del álgebra.",
+    "El doble de un número: *2n*.",
+    "Un número aumentado en 5: *n + 5*.",
+    "El triple menos 1: *3n − 1*.",
+    "La mitad: *n sobre 2*.",
+    "El consecutivo: *n + 1*.",
+    "El cuadrado: *n al cuadrado*."
+   ],
+   "titulo": "TRADUCIR",
+   "columnas": [
+    "Lenguaje común",
+    "Algebraico"
+   ],
+   "filas": [
+    [
+     "El doble de un número",
+     "2n"
+    ],
+    [
+     "Aumentado en 5",
+     "n + 5"
+    ],
+    [
+     "El triple menos 1",
+     "3n − 1"
+    ],
+    [
+     "La mitad",
+     "n/2"
+    ],
+    [
+     "El consecutivo",
+     "n + 1"
+    ],
+    [
+     "El cuadrado",
+     "n²"
+    ]
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: ¿cómo se escribe *el doble de un número*?",
+    "¿n + 2 o 2n?",
+    "¡*2n*! El doble es *multiplicar* por 2, no sumar 2."
+   ],
+   "pregunta": "El doble de un número",
+   "opciones": [
+    "n + 2",
+    "2n"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "También se lee al revés: 4t + 1 es *el cuádruple de un número, más uno*.",
+    "Y a + b, todo sobre 2, es *la mitad de la suma* de dos números."
+   ],
+   "antes": {
+    "cab": "4t + 1",
+    "emoji": "📖",
+    "texto": "el cuádruple de un número más uno"
+   },
+   "despues": {
+    "cab": "(a + b)/2",
+    "emoji": "📖",
+    "texto": "la mitad de la suma de dos números"
+   }
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "El superpoder de las letras: decir algo que vale *para todos los números*. Un número más su consecutivo: n + n + 1.",
+    "Con 4 da 9; con 10 da 21; ¡con *cualquier* número funciona!"
+   ],
+   "numero": 21,
+   "texto": "n + (n + 1) → con n = 10: 10 + 11 = 21",
+   "emoji": "♾️"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Volvamos a Ana. Ana tiene a años.",
+    "Hermano: *a + 3*.",
+    "Papá: *3 a*.",
+    "Si Ana tiene 12: hermano, 12 + 3, *15*.",
+    "Papá: 3 por 12, ¡*36 años*!"
+   ],
+   "titulo": "LAS EDADES",
+   "items": [
+    {
+     "txt": "Ana: a",
+     "emoji": "👧"
+    },
+    {
+     "txt": "Hermano: a + 3",
+     "emoji": "👦"
+    },
+    {
+     "txt": "Papá: 3a",
+     "emoji": "👨"
+    },
+    {
+     "txt": "a = 12 → 15 y 36",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Traducir *el doble* como n + 2: es 2n.",
+    "Y creer que la letra es una etiqueta fija: n puede valer *cualquier número*."
+   ],
+   "items": [
+    {
+     "mal": "El doble: n + 2",
+     "bien": "2n"
+    },
+    {
+     "mal": "n es siempre lo mismo",
+     "bien": "n puede valer cualquier número"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Variable*: una letra que cambia.",
+    "*3n* es 3 por n.",
+    "*Traducir*: cada frase, una operación.",
+    "Y las letras sirven para *generalizar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VARIABLE",
+     "letra que cambia"
+    ],
+    [
+     "3n",
+     "= 3 × n"
+    ],
+    [
+     "TRADUCIR",
+     "doble 2n · consecutivo n + 1"
+    ],
+    [
+     "GENERALIZAR",
+     "vale para todo n"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

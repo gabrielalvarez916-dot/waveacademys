@@ -1,0 +1,201 @@
+{
+ "slug": "mat1-m16-n2",
+ "step_id": "a41240cc-f366-4194-a2da-e9d47f8d4b06",
+ "materia": "Matemática I",
+ "titulo": "Ecuaciones de la forma ax + b = c",
+ "sub": "Matemática I · Misión 16 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Juan se pone las medias y después las zapatillas. A la noche, ¿qué se saca primero?",
+    "¡Las *zapatillas*! Para deshacer, vas *al revés*.",
+    "Con las ecuaciones pasa igual: se deshacen las operaciones en orden inverso.",
+    "Hoy: ecuaciones de la forma *a x + b igual a c*."
+   ],
+   "personaje": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "lugar": "👟",
+   "lineas": [
+    "Primero medias, después zapatillas",
+    "A la noche… ¿qué se saca primero?",
+    "¡Deshacer va al revés!"
+   ],
+   "titulo": "DESPEJAR",
+   "sub": "ax + b = c"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Para encontrar x, *deshacés* las operaciones con su inversa: suma con resta, multiplicación con división.",
+    "Siempre *lo mismo en los dos miembros*. Primero lo que se suma o resta; después, lo que multiplica."
+   ],
+   "palabra": "Despejar",
+   "texto": "Deshacer con la inversa, igual en los dos miembros",
+   "emoji": "🔓"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "3x + 5 igual a 20.",
+    "Restamos 5 en los dos miembros: *3x igual a 15*.",
+    "Dividimos por 3: ¡*x igual a 5*!",
+    "Verificamos: 3 por 5, más 5, da 20."
+   ],
+   "pasos": [
+    "3x + 5 = 20",
+    "3x = 15",
+    "x = 5",
+    "3 × 5 + 5 = 20 ✓"
+   ],
+   "notas": [
+    "",
+    "− 5 en los dos",
+    "÷ 3 en los dos",
+    ""
+   ]
+  },
+  {
+   "t": "ciclo",
+   "voz": [
+    "La receta de siempre.",
+    "Sacar lo que *suma o resta*.",
+    "Sacar lo que *multiplica*.",
+    "*Verificar* en la ecuación original."
+   ],
+   "titulo": "LA RECETA",
+   "items": [
+    {
+     "txt": "Sacar + o −",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sacar × (dividir)",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Verificar",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¡Con soluciones negativas! 2x − 7 igual a menos 13.",
+    "Para sacar el menos 7, *sumamos 7*: 2x igual a menos 6.",
+    "Dividimos por 2: ¡*x igual a menos 3*!"
+   ],
+   "pasos": [
+    "2x − 7 = −13",
+    "2x = −6",
+    "x = −3"
+   ],
+   "notas": [
+    "",
+    "+ 7 en los dos",
+    "÷ 2"
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Otra: menos 4x + 1 igual a 9.",
+    "Restamos 1: menos 4x igual a 8.",
+    "Dividimos por *menos 4*: ¡x igual a *menos 2*!"
+   ],
+   "pasos": [
+    "−4x + 1 = 9",
+    "−4x = 8",
+    "x = −2"
+   ],
+   "notas": [
+    "",
+    "− 1",
+    "÷ (−4)"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: en 2x − 7 igual a menos 13, ¿qué hacés primero para sacar el menos 7?",
+    "¿Restar 7 o sumar 7?",
+    "¡*Sumar 7*! La inversa de restar es sumar."
+   ],
+   "pregunta": "2x − 7 = −13 · ¿cómo saco el −7?",
+   "opciones": [
+    "Resto 7",
+    "Sumo 7"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 5x − 8 igual a 27.",
+    "Sumamos 8 en los dos miembros: 5x igual a 35.",
+    "Dividimos por 5: *x igual a 7*.",
+    "Verificamos: 35 − 8, da 27. ¡Perfecto!"
+   ],
+   "titulo": "5x − 8 = 27",
+   "items": [
+    "+ 8: 5x = 35",
+    "÷ 5: x = 7",
+    "5 × 7 − 8 = 27 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Operar *de un solo lado*: si restás 6 a la izquierda, restás 6 a la derecha.",
+    "Y *equivocar el signo*: para sacar un menos 7, se suma 7."
+   ],
+   "items": [
+    {
+     "mal": "Restar solo de un lado",
+     "bien": "Lo mismo en los dos"
+    },
+    {
+     "mal": "Sacar −7 restando 7",
+     "bien": "Sumando 7"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Deshacer* con la inversa.",
+    "Siempre en *los dos miembros*.",
+    "Primero *suma y resta*, después *multiplicación*.",
+    "Y *verificá* en la ecuación original.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DESHACER",
+     "con la operación inversa"
+    ],
+    [
+     "DOS MIEMBROS",
+     "lo mismo a los dos lados"
+    ],
+    [
+     "ORDEN",
+     "primero + −, después × ÷"
+    ],
+    [
+     "VERIFICAR",
+     "en la original"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
