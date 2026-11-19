@@ -589,6 +589,40 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
       for (var r2 = 0; r2 < h.fila; r2++) tl.to(celdas[r2 + ',' + h.col], { attr: { fill: 'rgba(127,211,196,.35)' }, duration: .12 }, '<.04');
       if (h.txt) { var t = w.chip(g, 960, 960, h.txt.length * 26 + 100, 76, h.txt, { size: 38, stroke: col }); w.IN(tl, t, '>'); } });
   } };
+
+  function esPrimo(v) { if (v < 2) return false; for (var i = 2; i * i <= v; i++) if (v % i === 0) return false; return true; }
+
+  // criba: {hasta:50, cols:10, tachar:[2,3,5,7], txt} — 2 + tachar pasos: el tablero, se tachan los múltiplos de cada primo, brillan los primos
+  T.criba = { n: function (d) { return 2 + d.tachar.length; }, armar: function (g, tl, B, d) {
+    var N = d.hasta || 50, nc = d.cols || 10, nf = Math.ceil(N / nc), s = Math.min(112, 560 / nf, 1400 / nc), x0 = 960 - (nc - 1) * s / 2, y0 = 590 - (nf - 1) * s / 2 - 40;
+    var G = w.pieza(g, 0, 0), R = {}, X = {}, fuera = {}, v, j, yb = y0 + (nf - 1) * s + s / 2 + 70;
+    for (v = 1; v <= N; v++) { var x = x0 + ((v - 1) % nc) * s, y = y0 + Math.floor((v - 1) / nc) * s;
+      R[v] = w.el('rect', { x: x - s / 2 + 5, y: y - s / 2 + 5, width: s - 10, height: s - 10, rx: 14, fill: '#17383b', stroke: C.linea, 'stroke-width': 3 }, G); X[v] = w.txt(G, x, y, String(v), s * .42, C.txt); }
+    B(0); w.IN(tl, G, 0, { scale: .92, y: 0 }); tl.to([R[1], X[1]], { opacity: .25, duration: .3 }, '>');
+    var prev = null;
+    d.tachar.forEach(function (p, k) { B(k + 1); var col = W.PAL[(k + 1) % W.PAL.length], ch = w.chip(g, 960, yb, 520, 76, 'Múltiplos de ' + p, { size: 38, stroke: col });
+      if (prev) w.OUT(tl, prev, 0); w.IN(tl, ch, prev ? '<' : 0); prev = ch;
+      tl.to(R[p], { attr: { fill: col, stroke: '#fff', 'stroke-width': 6 }, duration: .3 }, '<'); tl.to(X[p], { attr: { fill: '#06282a' }, duration: .3 }, '<');
+      for (var m = 2 * p, j = 0; m <= N; m += p) if (!fuera[m]) { fuera[m] = 1; tl.to(R[m], { attr: { fill: 'rgba(0,0,0,.3)', stroke: col }, duration: .12 }, j++ ? '<.05' : '>'); tl.to(X[m], { opacity: .22, duration: .12 }, '<'); } });
+    B(d.tachar.length + 1); if (prev) w.OUT(tl, prev, 0);
+    for (v = 2, j = 0; v <= N; v++) if (!fuera[v]) { tl.to(R[v], { attr: { fill: C.sol, stroke: '#ffe7a8', 'stroke-width': 5 }, duration: .15 }, j++ ? '<.06' : '>'); tl.to(X[v], { attr: { fill: '#3a2a00' }, duration: .15 }, '<'); }
+    if (d.txt) { var fin = w.etiqueta(g, 960, yb, d.txt); w.IN(tl, fin, '>.1'); }
+  } };
+
+  // arbol: {numero:72, ramas:[[2,36],[2,18],[2,9],[3,3]], resultado:'72 = 2³ × 3²'} — 2 + ramas pasos: el número, cada división (primo a la izquierda, sigue el cociente), el resultado
+  T.arbol = { n: function (d) { return 2 + d.ramas.length; }, armar: function (g, tl, B, d) {
+    var L = d.ramas.length, dy = Math.min(135, 560 / L), dx = Math.min(150, 640 / L), x = 960 - L * dx / 2 - 60, y = 300;
+    function nodo(nx, ny, val) { var p = w.pieza(g, nx, ny), pr = esPrimo(val);
+      if (pr) w.el('circle', { r: 56, fill: 'url(#gSol)', stroke: '#ffe7a8', 'stroke-width': 5 }, p); else w.caja(p, 0, 0, Math.max(130, String(val).length * 42 + 60), 100, 'url(#gCard)', C.aqua, 24, 5);
+      w.txt(p, 0, 0, String(val), 54, pr ? '#3a2a00' : C.txt); return p; }
+    B(0); w.IN(tl, nodo(x, y, d.numero), 0, { scale: .5, y: 0 });
+    d.ramas.forEach(function (r, k) { B(k + 1); var yn = y + dy, ra = w.pieza(g, 0, 0);
+      w.el('line', { x1: x - 20, y1: y + 50, x2: x - dx + 20, y2: yn - 56, stroke: C.suave, 'stroke-width': 6, 'stroke-linecap': 'round' }, ra);
+      w.el('line', { x1: x + 20, y1: y + 50, x2: x + dx - 20, y2: yn - 50, stroke: C.suave, 'stroke-width': 6, 'stroke-linecap': 'round' }, ra);
+      w.IN(tl, ra, 0, { y: -20 }); w.IN(tl, nodo(x - dx, yn, r[0]), '>-.1', { y: -120, ease: 'bounce.out', d: .6 }); w.IN(tl, nodo(x + dx, yn, r[1]), '<.15', { y: -120, ease: 'bounce.out', d: .6 });
+      x += dx; y = yn; });
+    B(L + 1); var res = w.chip(g, 1470, 300, Math.min(560, String(d.resultado).length * 30 + 110), 96, d.resultado, { size: 46, stroke: C.verde, r: 30 }); w.IN(tl, res, 0, { scale: .6, y: 0 }); w.pop(tl, res, '>');
+  } };
 })();
 
 /* PLANTILLAS · CIENCIAS, LENGUA E INGLÉS */
