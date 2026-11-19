@@ -37,6 +37,35 @@
    "emoji": "➗"
   },
   {
+   "t": "saltos",
+   "voz": [
+    "Pensalo así: menos 20 repartido en *4 saltos iguales*. ¿De cuánto es cada salto?",
+    "Menos 5…",
+    "… menos 10…",
+    "… menos 15…",
+    "… ¡y menos 20! Cada salto es de *menos 5*."
+   ],
+   "titulo": "(−20) ÷ 4 EN LA RECTA",
+   "min": -22,
+   "max": 2,
+   "cada": 5,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": -5
+    },
+    {
+     "a": -5
+    },
+    {
+     "a": -5
+    },
+    {
+     "a": -5
+    }
+   ]
+  },
+  {
    "t": "tabla",
    "voz": [
     "Tres ejemplos.",

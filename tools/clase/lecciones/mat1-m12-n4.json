@@ -123,6 +123,24 @@
    ]
   },
   {
+   "t": "saltos",
+   "voz": [
+    "Mirá el termómetro acostado: a la mañana, *menos 7*.",
+    "Al mediodía, 9: subió *16 grados*, 7 hasta el cero y 9 más."
+   ],
+   "titulo": "DE −7 °C A 9 °C",
+   "min": -10,
+   "max": 10,
+   "cada": 1,
+   "inicio": -7,
+   "saltos": [
+    {
+     "a": 16,
+     "txt": "+ 16 °C"
+    }
+   ]
+  },
+  {
    "t": "frase",
    "voz": [
     "Importante: un resultado *negativo no es un error*. Puede ser una deuda, una temperatura bajo cero o un subsuelo. Respondé siempre *con la unidad*."

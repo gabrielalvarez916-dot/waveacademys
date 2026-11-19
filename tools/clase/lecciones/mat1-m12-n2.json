@@ -75,6 +75,24 @@
    ]
   },
   {
+   "t": "saltos",
+   "voz": [
+    "Restar en la recta: partimos del 5…",
+    "… y restar 8 es *sumar menos 8*: 8 pasos a la izquierda. ¡Llegamos a *menos 3*!"
+   ],
+   "titulo": "5 − 8 EN LA RECTA",
+   "min": -5,
+   "max": 10,
+   "cada": 1,
+   "inicio": 5,
+   "saltos": [
+    {
+     "a": -8,
+     "txt": "− 8"
+    }
+   ]
+  },
+  {
    "t": "linea",
    "voz": [
     "¿Por qué restar un negativo *agranda*? Mirá el patrón: 4 menos 2, da 2.",
@@ -103,6 +121,24 @@
      "fecha": "4 − (−1)",
      "txt": "= 5",
      "emoji": "🤯"
+    }
+   ]
+  },
+  {
+   "t": "saltos",
+   "voz": [
+    "Y restar un negativo: partimos del 4…",
+    "… restar menos 6 es *sumar 6*: ¡6 pasos a la derecha, llegamos a *10*!"
+   ],
+   "titulo": "4 − (−6) EN LA RECTA",
+   "min": -2,
+   "max": 12,
+   "cada": 1,
+   "inicio": 4,
+   "saltos": [
+    {
+     "a": 6,
+     "txt": "− (−6) = + 6"
     }
    ]
   },

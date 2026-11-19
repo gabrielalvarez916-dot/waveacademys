@@ -58,6 +58,31 @@
    ]
   },
   {
+   "t": "saltos",
+   "voz": [
+    "Recorramos la suma algebraica en la recta: arrancamos en 5.",
+    "Menos 8: llegamos a menos 3.",
+    "Más 3: volvemos al 0.",
+    "Menos 2: ¡terminamos en *menos 2*!"
+   ],
+   "titulo": "5 − 8 + 3 − 2 EN LA RECTA",
+   "min": -5,
+   "max": 7,
+   "cada": 1,
+   "inicio": 5,
+   "saltos": [
+    {
+     "a": -8
+    },
+    {
+     "a": 3
+    },
+    {
+     "a": -2
+    }
+   ]
+  },
+  {
    "t": "clasificar",
    "voz": [
     "Para resolver: juntá los positivos y los negativos.",

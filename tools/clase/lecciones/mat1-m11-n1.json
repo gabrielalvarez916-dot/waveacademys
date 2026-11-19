@@ -75,6 +75,32 @@
    ]
   },
   {
+   "t": "recta",
+   "voz": [
+    "Todo eso vive en *una sola recta*: el cero en el medio.",
+    "3 grados bajo cero: *menos 3*, a la izquierda.",
+    "El segundo subsuelo: *menos 2*.",
+    "Y el piso 4: *4*, a la derecha."
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": -3,
+     "txt": "−3 °C"
+    },
+    {
+     "v": -2,
+     "txt": "subsuelo 2"
+    },
+    {
+     "v": 4,
+     "txt": "piso 4"
+    }
+   ]
+  },
+  {
    "t": "clasificar",
    "voz": [
     "A clasificar.",

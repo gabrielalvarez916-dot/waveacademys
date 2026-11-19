@@ -52,6 +52,66 @@
    }
   },
   {
+   "t": "platillos",
+   "voz": [
+    "Bolsitas de los dos lados: 5 bolsitas y 3 kilos contra 2 bolsitas y 18 kilos.",
+    "Sacamos *2 bolsitas de cada lado*: quedan 3 bolsitas y 3 kilos contra 18.",
+    "Sacamos 3 kilos de cada lado: 3 bolsitas, 15 kilos.",
+    "Repartimos: ¡cada bolsita, *5 kilos*!"
+   ],
+   "titulo": "x EN LOS DOS PLATILLOS",
+   "estados": [
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "3 kg"
+     ],
+     "der": [
+      "🛍️",
+      "🛍️",
+      "18 kg"
+     ],
+     "txt": "5x + 3 = 2x + 18"
+    },
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "3 kg"
+     ],
+     "der": [
+      "18 kg"
+     ],
+     "txt": "3x + 3 = 18"
+    },
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️"
+     ],
+     "der": [
+      "15 kg"
+     ],
+     "txt": "3x = 15"
+    },
+    {
+     "izq": [
+      "🛍️"
+     ],
+     "der": [
+      "5 kg"
+     ],
+     "txt": "x = 5"
+    }
+   ]
+  },
+  {
    "t": "ecuacion",
    "voz": [
     "5x + 3 igual a 2x + 18.",

@@ -35,25 +35,29 @@
    "sub": "la regla de los signos"
   },
   {
-   "t": "agrupar",
+   "t": "saltos",
    "voz": [
-    "Multiplicar por un positivo es *sumar varias veces*. 3 por menos 4…",
-    "… es menos 4, más menos 4, más menos 4…",
-    "… ¡*menos 12*! Tres deudas de 4 son una deuda de 12."
+    "Multiplicar por un positivo es *sumar varias veces*. 3 por menos 4: tres saltos de menos 4 desde el cero.",
+    "Uno: menos 4.",
+    "Dos: menos 8.",
+    "Tres: ¡*menos 12*! Tres deudas de 4 son una deuda de 12."
    ],
-   "niveles": [
+   "titulo": "3 × (−4) EN LA RECTA",
+   "min": -14,
+   "max": 2,
+   "cada": 1,
+   "inicio": 0,
+   "saltos": [
     {
-     "nombre": "Una deuda de $4",
-     "valor": "−4",
-     "icono": "💸"
+     "a": -4
     },
     {
-     "nombre": "Tres deudas",
-     "valor": "3 × (−4)",
-     "icono": "🧾"
+     "a": -4
+    },
+    {
+     "a": -4
     }
-   ],
-   "salto": "= −12"
+   ]
   },
   {
    "t": "matriz",

@@ -46,6 +46,143 @@
    "signo": "·"
   },
   {
+   "t": "geo",
+   "voz": [
+    "Pensá la letra como una *cajita* con un número adentro que todavía no sabemos: la edad de Ana.",
+    "Con esa cajita escribimos todo: el hermano, *a + 3*; el papá, *3a*. ¡Y cuando abrís la cajita, sale todo!"
+   ],
+   "titulo": "LA LETRA ES UNA CAJITA",
+   "vista": [
+    0,
+    16,
+    0,
+    5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         1
+        ],
+        [
+         5,
+         1
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         1,
+         4
+        ]
+       ]
+      },
+      {
+       "txt": [
+        3,
+        2.5
+       ],
+       "s": "a",
+       "size": 90,
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        3,
+        0.4
+       ],
+       "s": "edad de Ana",
+       "size": 34
+      }
+     ],
+     "txt": "a: un número que no sabemos"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         6.5,
+         1
+        ],
+        [
+         10.5,
+         1
+        ],
+        [
+         10.5,
+         4
+        ],
+        [
+         6.5,
+         4
+        ]
+       ]
+      },
+      {
+       "txt": [
+        8.5,
+        2.5
+       ],
+       "s": "a + 3",
+       "size": 64,
+       "color": "#8be38f"
+      },
+      {
+       "txt": [
+        8.5,
+        0.4
+       ],
+       "s": "hermano",
+       "size": 34
+      },
+      {
+       "pol": [
+        [
+         11.8,
+         1
+        ],
+        [
+         15.5,
+         1
+        ],
+        [
+         15.5,
+         4
+        ],
+        [
+         11.8,
+         4
+        ]
+       ]
+      },
+      {
+       "txt": [
+        13.65,
+        2.5
+       ],
+       "s": "3a",
+       "size": 72,
+       "color": "#b9a6ff"
+      },
+      {
+       "txt": [
+        13.65,
+        0.4
+       ],
+       "s": "papá",
+       "size": 34
+      }
+     ],
+     "txt": "Con la cajita escribimos todo lo demás"
+    }
+   ]
+  },
+  {
    "t": "frase",
    "voz": [
     "Detalle: entre un número y una letra *no se escribe el por*. 3n quiere decir 3 por n."

@@ -37,6 +37,49 @@
    "emoji": "🔓"
   },
   {
+   "t": "platillos",
+   "voz": [
+    "Mirá la balanza: 3 bolsitas y 5 kilos de un lado, 20 kilos del otro.",
+    "Sacamos 5 kilos *de cada lado*: 3 bolsitas pesan 15.",
+    "Repartimos en 3: ¡cada bolsita, *5 kilos*!"
+   ],
+   "titulo": "3x + 5 = 20 EN LA BALANZA",
+   "estados": [
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "5 kg"
+     ],
+     "der": [
+      "20 kg"
+     ],
+     "txt": "3x + 5 = 20"
+    },
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️"
+     ],
+     "der": [
+      "15 kg"
+     ],
+     "txt": "3x = 15"
+    },
+    {
+     "izq": [
+      "🛍️"
+     ],
+     "der": [
+      "5 kg"
+     ],
+     "txt": "x = 5"
+    }
+   ]
+  },
+  {
    "t": "ecuacion",
    "voz": [
     "3x + 5 igual a 20.",

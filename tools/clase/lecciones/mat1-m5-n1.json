@@ -28,6 +28,35 @@
    "emoji": "✖️"
   },
   {
+   "t": "saltos",
+   "voz": [
+    "Los múltiplos son *saltos iguales* desde el cero. Saltos de 3:",
+    "3…",
+    "6…",
+    "9…",
+    "12. ¡Los múltiplos de 3!"
+   ],
+   "titulo": "MÚLTIPLOS DE 3: SALTOS DE 3",
+   "min": 0,
+   "max": 15,
+   "cada": 1,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 3
+    },
+    {
+     "a": 3
+    },
+    {
+     "a": 3
+    },
+    {
+     "a": 3
+    }
+   ]
+  },
+  {
    "t": "fichas",
    "voz": [
     "Los múltiplos de 6: 0, 6, 12, 18, 24, 30…",

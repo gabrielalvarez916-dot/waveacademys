@@ -116,24 +116,59 @@
    "signo": "vs"
   },
   {
-   "t": "ecuacion",
+   "t": "platillos",
    "voz": [
-    "Una ecuación es como una *balanza en equilibrio*. 3 bolsitas iguales y una pesa de 2 kilos pesan lo mismo que 14 kilos.",
-    "Si sacamos 2 kilos *de los dos lados*, sigue equilibrada: 3 bolsitas, 12 kilos.",
+    "Una ecuación es como una *balanza en equilibrio*: 3 bolsitas iguales y una pesa de 2 kilos pesan lo mismo que 14 kilos.",
+    "Sacamos 2 kilos *de los dos lados*: sigue equilibrada. 3 bolsitas, 12 kilos.",
     "Repartimos en 3: ¡cada bolsita pesa *4 kilos*!",
     "Verificamos: 3 por 4, más 2, da 14. *¡Equilibrio!*"
    ],
-   "pasos": [
-    "3x + 2 = 14",
-    "3x = 12",
-    "x = 4",
-    "3 × 4 + 2 = 14 ✓"
-   ],
-   "notas": [
-    "",
-    "sacamos 2 de cada lado",
-    "repartimos en 3",
-    "verificación"
+   "titulo": "LA BALANZA",
+   "estados": [
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "2 kg"
+     ],
+     "der": [
+      "14 kg"
+     ],
+     "txt": "3x + 2 = 14"
+    },
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️"
+     ],
+     "der": [
+      "12 kg"
+     ],
+     "txt": "3x = 12"
+    },
+    {
+     "izq": [
+      "🛍️"
+     ],
+     "der": [
+      "4 kg"
+     ],
+     "txt": "x = 4"
+    },
+    {
+     "izq": [
+      "🛍️",
+      "🛍️",
+      "🛍️",
+      "2 kg"
+     ],
+     "der": [
+      "14 kg"
+     ],
+     "txt": "3 × 4 + 2 = 14 ✓"
+    }
    ]
   },
   {

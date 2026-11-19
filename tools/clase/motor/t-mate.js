@@ -248,6 +248,41 @@
     });
   } };
 
+  // saltos: {titulo, min, max, cada (cada cuánto se rotula, 1 por defecto), inicio, saltos:[{a, txt}]} — 1 + saltos pasos. Flechas curvas sobre la recta: positivas arriba (verdes), negativas abajo (coral).
+  T.saltos = { n: function (d) { return 1 + d.saltos.length; }, armar: function (g, tl, B, d) {
+    var X0 = 220, X1 = 1700, Y = 660, sx = function (v) { return X0 + (v - d.min) / (d.max - d.min) * (X1 - X0); }, cada = d.cada || 1;
+    var ti = d.titulo ? w.titulo(g, d.titulo, 290) : null, eje = w.pieza(g, 0, 0);
+    w.el('line', { x1: X0 - 40, y1: Y, x2: X1 + 40, y2: Y, stroke: C.txt, 'stroke-width': 6, 'stroke-linecap': 'round' }, eje);
+    for (var v = d.min; v <= d.max; v++) { var rot = v % cada === 0; w.el('line', { x1: sx(v), y1: Y - (rot ? 20 : 11), x2: sx(v), y2: Y + (rot ? 20 : 11), stroke: v === 0 ? C.sol : C.suave, 'stroke-width': v === 0 ? 6 : 4 }, eje);
+      if (rot) w.txt(eje, sx(v), Y + 58, String(v).replace('-', '−'), (d.max - d.min) / cada > 24 ? 26 : 32, v === 0 ? C.sol : C.suave); }
+    var pos = d.inicio, dot = w.pieza(g, sx(pos), Y); w.el('circle', { r: 22, fill: C.sol, stroke: '#fff', 'stroke-width': 5 }, dot);
+    var et = w.pieza(g, sx(pos), Y); w.caja(et, 0, -70, 110, 58, 'rgba(6,20,22,.9)', C.sol, 20, 3); var etT = w.txt(et, 0, -70, String(pos).replace('-', '−'), 34, C.sol);
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, eje, ti ? '<' : 0, { scaleX: 0, y: 0 }); w.IN(tl, dot, '>', { scale: 0, y: 0 }); w.IN(tl, et, '<');
+    d.saltos.forEach(function (s, k) { B(k + 1); var a = sx(pos), b = sx(pos + s.a), arriba = s.a >= 0, col = arriba ? C.verde : C.coral, h = Math.min(230, 70 + Math.abs(b - a) * 0.35) * (arriba ? -1 : 1);
+      var arc = w.el('path', { d: 'M' + a + ' ' + Y + ' Q' + (a + b) / 2 + ' ' + (Y + h * 2) + ' ' + b + ' ' + Y, fill: 'none', stroke: col, 'stroke-width': 7, 'stroke-linecap': 'round', 'stroke-dasharray': 3000, 'stroke-dashoffset': 3000 }, g);
+      var lab = w.pieza(g, (a + b) / 2, Y + h + (arriba ? -45 : 45)); w.txt(lab, 0, 0, s.txt || ((s.a > 0 ? '+' : '−') + Math.abs(s.a)), 46, col);
+      var hasta = pos + s.a; pos = hasta;
+      tl.set(arc, { opacity: 1 }, '>'); tl.to(arc, { attr: { 'stroke-dashoffset': 0 }, duration: .8, ease: 'power2.inOut' }, '>'); w.IN(tl, lab, '<.3', { scale: .5, y: 0 });
+      tl.to([dot.parentNode, et.parentNode], { attr: { transform: 'translate(' + b + ' ' + Y + ')' }, duration: .8, ease: 'power2.inOut' }, '<-.3');
+      tl.call(function () { etT.textContent = String(hasta).replace('-', '−'); }, null, '>'); w.pop(tl, et, '>'); });
+  } };
+
+  // platillos: balanza con objetos. {titulo, estados:[{izq:['🛍️','🛍️','2 kg'], der:['14 kg'], txt:'3x + 2 = 14'}]} — n = estados (cada paso cambia lo que hay en los platillos; la balanza queda en equilibrio)
+  T.platillos = { n: function (d) { return d.estados.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 270) : null, base = w.pieza(g, 960, 560);
+    w.el('path', { d: 'M-60 380 L60 380 L0 40 Z', fill: C.linea }, base); w.el('circle', { cx: 0, cy: 40, r: 22, fill: C.sol }, base);
+    w.el('rect', { x: -620, y: 28, width: 1240, height: 24, rx: 12, fill: C.sol }, base);
+    [-470, 470].forEach(function (x) { w.el('line', { x1: x, y1: 52, x2: x, y2: 230, stroke: C.suave, 'stroke-width': 4 }, base); w.el('path', { d: 'M' + (x - 230) + ' 230 Q' + x + ' 300 ' + (x + 230) + ' 230 Z', fill: 'rgba(127,211,196,.18)', stroke: C.aqua, 'stroke-width': 5 }, base); });
+    function lado(items, x0) { var p = w.pieza(g, 960 + x0, 740), n = items.length, gap = Math.min(110, 440 / Math.max(1, n));
+      items.forEach(function (it, k) { var x = (k - (n - 1) / 2) * gap; if (/^\p{Extended_Pictographic}/u.test(it)) w.emoji(p, x, -10, it, Math.min(100, gap * 0.95)); else { w.caja(p, x, -10, Math.max(gap - 10, String(it).length * 24 + 30), 80, 'url(#gSol)', '#ffe7a8', 18, 3); w.txt(p, x, -10, it, 36, '#3a2a00'); } }); return p; }
+    var prev = null;
+    d.estados.forEach(function (e, k) { B(k); var L = lado(e.izq, -470), R = lado(e.der, 470), cap = e.txt ? w.chip(g, 960, 420, Math.min(1200, e.txt.length * 32 + 120), 96, e.txt, { size: 50, stroke: C.verde, r: 30 }) : null;
+      if (!k) { if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<' : 0); }
+      if (prev) w.OUT(tl, prev, k ? 0 : '<', { y: -60 });
+      var nuevos = [L, R].concat(cap ? [cap] : []); nuevos.forEach(function (q, j) { w.IN(tl, q, j ? '<.1' : '>', { y: -120, ease: 'bounce.out', d: .6 }); });
+      tl.to(base, { rotation: 2, svgOrigin: '960 600', duration: .15, yoyo: true, repeat: 1 }, '>-.2'); prev = nuevos; });
+  } };
+
   // arbol: {numero:72, ramas:[[2,36],[2,18],[2,9],[3,3]], resultado:'72 = 2³ × 3²'} — 2 + ramas pasos: el número, cada división (primo a la izquierda, sigue el cociente), el resultado
   T.arbol = { n: function (d) { return 2 + d.ramas.length; }, armar: function (g, tl, B, d) {
     var L = d.ramas.length, dy = Math.min(135, 560 / L), dx = Math.min(150, 640 / L), x = 960 - L * dx / 2 - 60, y = 300;

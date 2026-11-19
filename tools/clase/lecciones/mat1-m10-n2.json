@@ -39,6 +39,38 @@
    "signo": "≠"
   },
   {
+   "t": "tabla",
+   "voz": [
+    "Mirá por qué 1 dividido 3 no termina. Bajamos un cero: 10 dividido 3 da 3, y sobra 1.",
+    "Otra vez 10: da 3, sobra 1.",
+    "Otra vez: 3, sobra 1…",
+    "¡El resto *se repite siempre*! Por eso el 3 sigue para siempre: *0,333…*"
+   ],
+   "titulo": "1 ÷ 3: EL RESTO SE REPITE",
+   "columnas": [
+    "Dividimos",
+    "Cifra",
+    "Resto"
+   ],
+   "filas": [
+    [
+     "10 ÷ 3",
+     "3",
+     "1"
+    ],
+    [
+     "10 ÷ 3",
+     "3",
+     "1"
+    ],
+    [
+     "10 ÷ 3",
+     "3",
+     "1 … y sigue"
+    ]
+   ]
+  },
+  {
    "t": "frase",
    "voz": [
     "Ojo: la calculadora corta la pantalla, pero el número sigue. *0,333 no es lo mismo que 0,333…*"

@@ -85,6 +85,188 @@
    "emoji": "💡"
   },
   {
+   "t": "geo",
+   "voz": [
+    "Mirá las dos luces en una línea de tiempo. La A titila cada 6: 6, 12, 18…",
+    "La B, cada 8: 8, 16…",
+    "¡Y la primera vez que titilan juntas es a los *24*, el MCM!"
+   ],
+   "titulo": "¿CUÁNDO COINCIDEN?",
+   "vista": [
+    -1,
+    26,
+    0,
+    4.4
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0,
+         1.2
+        ],
+        [
+         25,
+         1.2
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        -0.2,
+        0.4
+       ],
+       "s": "0",
+       "size": 36
+      },
+      {
+       "pt": [
+        6,
+        1.2
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "pt": [
+        12,
+        1.2
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "pt": [
+        18,
+        1.2
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        6,
+        0.4
+       ],
+       "s": "6",
+       "color": "#F4B63F",
+       "size": 36
+      },
+      {
+       "txt": [
+        12,
+        0.4
+       ],
+       "s": "12",
+       "color": "#F4B63F",
+       "size": 36
+      },
+      {
+       "txt": [
+        18,
+        0.4
+       ],
+       "s": "18",
+       "color": "#F4B63F",
+       "size": 36
+      }
+     ],
+     "txt": "Luz A: cada 6 s"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0,
+         2.4
+        ],
+        [
+         25,
+         2.4
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pt": [
+        8,
+        2.4
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pt": [
+        16,
+        2.4
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "txt": [
+        8,
+        3.2
+       ],
+       "s": "8",
+       "color": "#7FD3C4",
+       "size": 36
+      },
+      {
+       "txt": [
+        16,
+        3.2
+       ],
+       "s": "16",
+       "color": "#7FD3C4",
+       "size": 36
+      }
+     ],
+     "txt": "Luz B: cada 8 s"
+    },
+    {
+     "el": [
+      {
+       "pt": [
+        24,
+        1.2
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "pt": [
+        24,
+        2.4
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "seg": [
+        [
+         24,
+         0.8
+        ],
+        [
+         24,
+         2.8
+        ]
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "txt": [
+        24,
+        3.8
+       ],
+       "s": "¡24!",
+       "color": "#8be38f",
+       "size": 56
+      }
+     ],
+     "txt": "Coinciden en el MCM: 24 s"
+    }
+   ]
+  },
+  {
    "t": "antesdespues",
    "voz": [
     "Cortar: tablas de 90 y 120 centímetros en trozos iguales, lo más largos posible. MCD: *30 centímetros*. Salen 3 más 4, *7 trozos*.",
