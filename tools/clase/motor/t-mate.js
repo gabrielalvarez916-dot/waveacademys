@@ -137,10 +137,11 @@
 
   // cuenta: {filas:['4.205','1.380'], op:'+', resultado:'5.585'} — 2 pasos: la cuenta, el resultado
   T.cuenta = { n: function () { return 2; }, armar: function (g, tl, B, d) {
-    var p = w.pieza(g, 960, 560), n = d.filas.length, xr = 230, h = 130;
-    d.filas.forEach(function (f, k) { w.txt(p, xr, (k - n / 2) * h, f, 120, C.txt, { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace' }); });
-    w.txt(p, -330, (n - 1 - n / 2) * h, d.op || '+', 110, C.sol); var yl = (n - n / 2) * h - 55; w.el('line', { x1: -360, y1: yl, x2: xr + 20, y2: yl, stroke: C.sol, 'stroke-width': 8 }, p);
-    var r = w.pieza(g, 960, 560); var rt = w.txt(r, xr, yl + 85, d.resultado, 120, C.verde, { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace', filter: 'url(#brillo)' });
+    var L = Math.max.apply(null, d.filas.concat([d.resultado]).map(function (f) { return String(f).length; })), size = Math.min(120, Math.floor(1100 / (L * .6))), cw = size * .6;
+    var p = w.pieza(g, 960, 560), n = d.filas.length, xr = L * cw / 2 + 40, h = size * 1.08, xo = xr - L * cw - 70;
+    d.filas.forEach(function (f, k) { w.txt(p, xr, (k - n / 2) * h, f, size, C.txt, { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace' }); });
+    w.txt(p, xo, (n - 1 - n / 2) * h, d.op || '+', size * .9, C.sol); var yl = (n - n / 2) * h - size * .45; w.el('line', { x1: xo - 40, y1: yl, x2: xr + 20, y2: yl, stroke: C.sol, 'stroke-width': 8 }, p);
+    var r = w.pieza(g, 960, 560); w.txt(r, xr, yl + size * .7, d.resultado, size, C.verde, { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace', filter: 'url(#brillo)' });
     B(0); w.IN(tl, p, 0); B(1); w.IN(tl, r, 0, { y: 60 });
   } };
 

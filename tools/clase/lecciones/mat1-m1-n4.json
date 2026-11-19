@@ -1,0 +1,239 @@
+{
+ "slug": "mat1-m1-n4",
+ "step_id": "36d59283-15e8-45bb-a561-425beb51f7c7",
+ "materia": "Matemática I",
+ "titulo": "El sistema sexagesimal: horas y ángulos",
+ "sub": "Matemática I · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Viste alguna vez un reloj que marque *75 minutos*?",
+    "No existe: 75 minutos son *una hora y 15*.",
+    "Bienvenido al *sistema sexagesimal*: el que agrupa de a 60."
+   ],
+   "grande": "75 min",
+   "final": "1 h 15 min",
+   "titulo": "EL SISTEMA SEXAGESIMAL",
+   "sub": "horas y ángulos"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *sistema sexagesimal* agrupa *de a 60*, no de a 10.",
+    "60 segundos forman un minuto, y 60 minutos forman una hora. Lo usamos para el *tiempo* y los *ángulos*."
+   ],
+   "palabra": "Sistema sexagesimal",
+   "texto": "Agrupa de a 60: 60 segundos forman 1 minuto y 60 minutos forman 1 hora.",
+   "emoji": "⏰"
+  },
+  {
+   "t": "agrupar",
+   "voz": [
+    "Pensá en un reloj. Cada segundo es una *unidad*.",
+    "Juntás 60 segundos y formás *un minuto*.",
+    "Juntás 60 minutos y formás *una hora*.",
+    "Cada unidad vale *60 veces* la anterior. Una hora son 3.600 segundos."
+   ],
+   "niveles": [
+    {
+     "nombre": "SEGUNDO",
+     "valor": "1 s",
+     "icono": "⏱️"
+    },
+    {
+     "nombre": "MINUTO",
+     "valor": "60 s",
+     "icono": "⏲️"
+    },
+    {
+     "nombre": "HORA",
+     "valor": "60 min",
+     "icono": "🕐"
+    }
+   ],
+   "salto": "×60"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Para pasar a una unidad más grande, *dividís por 60*. Probemos con 150 minutos.",
+    "150 dividido 60 da 2, y sobran 30.",
+    "Entonces 150 minutos son *2 horas y 30 minutos*. Y para ir al revés, *multiplicás por 60*."
+   ],
+   "pasos": [
+    "150 min ÷ 60",
+    "= 2, resto 30",
+    "150 min = 2 h 30 min"
+   ],
+   "notas": [
+    "para pasar a horas, dividimos por 60",
+    "2 horas enteras y sobran 30 minutos",
+    ""
+   ]
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Para sumar tiempos, sumás *horas con horas* y *minutos con minutos*.",
+    "Una hora 45 más dos horas 30: da 3 horas y *75 minutos*."
+   ],
+   "filas": [
+    "1 h 45 min",
+    "2 h 30 min"
+   ],
+   "op": "+",
+   "resultado": "3 h 75 min"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "¡Pero 75 minutos no se pueden dejar así!",
+    "Canjeás 60 minutos por *una hora*: quedan *4 horas y 15 minutos*."
+   ],
+   "antes": {
+    "cab": "SIN CANJEAR",
+    "emoji": "❌",
+    "texto": "3 h 75 min"
+   },
+   "despues": {
+    "cab": "CANJEANDO",
+    "emoji": "✅",
+    "texto": "4 h 15 min"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¿Y para restar? 3 horas 10 menos una hora 40.",
+    "10 minutos no alcanzan: pedís *una hora prestada*, que son 60 minutos, y te quedan 2 horas 70.",
+    "Ahora sí: *una hora y 30 minutos*."
+   ],
+   "pasos": [
+    "3 h 10 min − 1 h 40 min",
+    "2 h 70 min − 1 h 40 min",
+    "= 1 h 30 min"
+   ],
+   "notas": [
+    "10 no alcanza para restar 40",
+    "pedimos 1 h prestada = 60 min",
+    ""
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Los *ángulos* usan el mismo sistema: se miden en *grados*.",
+    "Un grado son *60 minutos*, y un minuto son *60 segundos*. ¡Igual que el reloj!"
+   ],
+   "tipo": "angulo",
+   "grados": 35,
+   "etiquetas": [
+    "1° = 60′",
+    "1′ = 60″"
+   ]
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Por ejemplo: 25 grados 40, más 10 grados 35.",
+    "Da 35 grados 75… y canjeando, *36 grados 15 minutos*."
+   ],
+   "filas": [
+    "25° 40′",
+    "10° 35′"
+   ],
+   "op": "+",
+   "resultado": "36° 15′"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Problema real: una película dura 135 minutos y empieza a las veinte y cincuenta. ¿A qué hora termina?",
+    "135 dividido 60 da 2, resto 15: dura *2 horas y 15 minutos*.",
+    "Sumamos: 20 horas 50, más 2 horas 15.",
+    "Da 22 horas 65… canjeamos: *23 horas y 5 minutos*.",
+    "¡Termina a las *veintitrés y cinco*! Justo para ir a dormir."
+   ],
+   "titulo": "¿A QUÉ HORA TERMINA LA PELÍCULA?",
+   "items": [
+    {
+     "txt": "Dura 135 min = 2 h 15 min",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Empieza 20:50 → 20 h 50 min + 2 h 15 min",
+     "emoji": "➕"
+    },
+    {
+     "txt": "= 22 h 65 min = 23 h 05 min",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "¡Termina a las 23:05!",
+     "emoji": "🍿"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* clásicos.",
+    "Una hora 50 más 20 minutos no da una hora 70: da *2 horas 10*.",
+    "Y al restar, una hora prestada son *60 minutos*, no 100."
+   ],
+   "items": [
+    {
+     "mal": "1 h 50 min + 20 min = 1 h 70 min",
+     "bien": "= 2 h 10 min"
+    },
+    {
+     "mal": "1 h prestada = 100 min",
+     "bien": "1 h prestada = 60 min"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: *pensá en el reloj*. Cuando los minutos llegan a 60, suma una hora y vuelve a cero."
+   ],
+   "titulo": "PENSÁ EN EL RELOJ",
+   "texto": "Cuando los minutos llegan a 60, el reloj suma una hora y vuelve a 0",
+   "emoji": "🕰️"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El sexagesimal agrupa *de a 60*.",
+    "A una unidad más chica, *por 60*; a una más grande, *dividido 60*.",
+    "Se suma y se resta *por columnas*, canjeando de a 60.",
+    "Y en los ángulos, un grado son *60 minutos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "BASE 60",
+     "60 s = 1 min · 60 min = 1 h"
+    ],
+    [
+     "PASAR DE UNIDAD",
+     "× 60 o ÷ 60"
+    ],
+    [
+     "SUMAR Y RESTAR",
+     "por columnas, canjeando"
+    ],
+    [
+     "ÁNGULOS",
+     "1° = 60′ · 1′ = 60″"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

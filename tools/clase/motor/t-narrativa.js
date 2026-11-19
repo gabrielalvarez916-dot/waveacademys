@@ -4,7 +4,7 @@
 
   // gancho: {grande:'2' | emoji, final:'200' (opcional), titulo, sub} — 3 pasos: aparece, se transforma, título
   T.gancho = { n: function () { return 3; }, armar: function (g, tl, B, d) {
-    var a = w.pieza(g, 960, 600), t = d.emoji ? w.emoji(a, 0, 0, d.emoji, 340) : w.txt(a, 0, 0, d.grande, 420, C.txt, { filter: 'url(#brillo)' });
+    var largo = Math.max(String(d.grande || '').length, d.emoji ? 0 : String(d.final || '').length), a = w.pieza(g, 960, 600), t = d.emoji ? w.emoji(a, 0, 0, d.emoji, 340) : w.txt(a, 0, 0, d.grande, Math.min(420, Math.floor(1500 / (largo * .6))), C.txt, { filter: 'url(#brillo)' });
     var tt = w.pieza(g, 960, 600); w.tarjeta(tt, 0, 0, 1200, 260, C.aqua); w.txt(tt, 0, -45, d.titulo, 70, C.txt); if (d.sub) w.txt(tt, 0, 50, d.sub, 42, C.aqua);
     B(0); w.IN(tl, a, 0, { scale: 0, rotation: -20, y: 0, d: 1, ease: 'elastic.out(1,.55)' });
     B(1); w.temblar(tl, a, 0);

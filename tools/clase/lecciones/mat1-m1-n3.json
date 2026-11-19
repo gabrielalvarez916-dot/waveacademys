@@ -1,0 +1,261 @@
+{
+ "slug": "mat1-m1-n3",
+ "step_id": "8adb3243-e8a5-43c2-ba1d-df230f29f38b",
+ "materia": "Matemática I",
+ "titulo": "El sistema binario",
+ "sub": "Matemática I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Cómo puede ser que *uno, cero, uno* valga *5*?",
+    "No es magia: está escrito en *otro idioma*, el que hablan las computadoras.",
+    "Hoy aprendés el *sistema binario*."
+   ],
+   "grande": "101",
+   "final": "5",
+   "titulo": "EL SISTEMA BINARIO",
+   "sub": "el idioma de las computadoras"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Cada circuito de tu celular puede estar *apagado*: eso es un 0.",
+    "O *encendido*: eso es un 1.",
+    "Nada más. Dos estados, *dos cifras*.",
+    "Por eso las computadoras usan el *sistema binario*: solo 0 y 1."
+   ],
+   "a": {
+    "cab": "APAGADO",
+    "texto": "0",
+    "emoji": "🌑"
+   },
+   "b": {
+    "cab": "ENCENDIDO",
+    "texto": "1",
+    "emoji": "💡"
+   },
+   "signo": "o",
+   "def": {
+    "cab": "SISTEMA BINARIO",
+    "texto": "Solo dos cifras, 0 y 1: el idioma de las computadoras"
+   }
+  },
+  {
+   "t": "estante",
+   "voz": [
+    "Igual que el decimal, el binario es *posicional*. Mirá este número en base 2.",
+    "Cada cifra ocupa un lugar.",
+    "Pero acá se agrupa *de a 2*: cada lugar vale el *doble* que el de su derecha.",
+    "Los lugares valen 8, 4, 2 y 1. Un 1 cuenta su lugar; un 0 no cuenta nada.",
+    "Son las *potencias de 2*."
+   ],
+   "numero": "1011₂",
+   "cab": [
+    "LUGAR DE 8",
+    "LUGAR DE 4",
+    "LUGAR DE 2",
+    "LUGAR DE 1"
+   ],
+   "dig": [
+    "1",
+    "0",
+    "1",
+    "1"
+   ],
+   "val": [
+    "8",
+    "0",
+    "2",
+    "1"
+   ],
+   "flechas": "×2",
+   "etiqueta": "POTENCIAS DE 2"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Ojo cómo se escribe: la *base* va chiquita, abajo a la derecha.",
+    "Y se lee cifra por cifra: uno, cero, uno *en base 2*. Nunca ciento uno: centena y decena son palabras de la base 10."
+   ],
+   "palabra": "101₂",
+   "texto": "Se lee «uno, cero, uno en base 2». No se dice «ciento uno».",
+   "emoji": "🗣️"
+  },
+  {
+   "t": "descomponer",
+   "voz": [
+    "De binario a decimal: tomá el *1110* en base 2.",
+    "Multiplicás cada cifra por el *valor de su lugar*.",
+    "1 por 8, más 1 por 4, más 1 por 2, más 0 por 1.",
+    "El 0 no suma nada.",
+    "8 más 4 más 2: ¡*14*!"
+   ],
+   "numero": "1110",
+   "titulo": "DE BINARIO A DECIMAL",
+   "partes": [
+    "1 × 8",
+    "1 × 4",
+    "1 × 2",
+    "0 × 1"
+   ],
+   "tachar": 3,
+   "resultado": "= 14  ✓"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Al revés, de decimal a binario: *dividís por 2* una y otra vez.",
+    "11 dividido 2 da 5, y sobra *1*.",
+    "5 dividido 2 da 2, y sobra *1*.",
+    "2 dividido 2 da 1, y sobra *0*.",
+    "1 dividido 2 da 0, y sobra *1*. Llegamos a cero."
+   ],
+   "titulo": "PASAR 11 A BINARIO",
+   "items": [
+    "11 ÷ 2 = 5, resto 1",
+    "5 ÷ 2 = 2, resto 1",
+    "2 ÷ 2 = 1, resto 0",
+    "1 ÷ 2 = 0, resto 1"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Y ahora el truco: los restos se leen *de abajo hacia arriba*. ¡11 es uno, cero, uno, uno en base 2!"
+   ],
+   "texto": "Restos de abajo hacia arriba: 11 = 1011₂",
+   "emoji": "⬆️",
+   "color": "#F4B63F"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Otra forma: restás la *potencia de 2* más grande que entra. A 20 le entra 16, y quedan 4.",
+    "El 4 entra justo. Donde pudiste restar va un 1, donde no, un 0: 20 es *uno, cero, uno, cero, cero*."
+   ],
+   "titulo": "RESTAS SUCESIVAS · 20 = 16 + 4",
+   "columnas": [
+    "16",
+    "8",
+    "4",
+    "2",
+    "1"
+   ],
+   "filas": [
+    [
+     "1",
+     "0",
+     "1",
+     "0",
+     "0"
+    ]
+   ]
+  },
+  {
+   "t": "ejemplo",
+   "voz": [
+    "Desafío completo: pasá el *19* a binario.",
+    "Ubicamos las cifras en los lugares: 16, 8, 4, 2 y 1.",
+    "Hay un 1 en el lugar de 16, en el de 2 y en el de 1.",
+    "Lo sacamos dividiendo por 2: los restos fueron 1, 1, 0, 0 y 1.",
+    "Leídos de abajo hacia arriba: *uno, cero, cero, uno, uno*.",
+    "Comprobamos: 16… más 2, 18… más 1, *19*. ¡Perfecto!",
+    "El 1 de la izquierda vale *16*: es el lugar más grande."
+   ],
+   "numero": "19 = 10011₂",
+   "cab": [
+    "16",
+    "8",
+    "4",
+    "2",
+    "1"
+   ],
+   "dig": [
+    "1",
+    "0",
+    "0",
+    "1",
+    "1"
+   ],
+   "val": [
+    "16",
+    "0",
+    "0",
+    "2",
+    "1"
+   ],
+   "lineas": [
+    "19÷2 r1 · 9÷2 r1 · 4÷2 r0 · 2÷2 r0 · 1÷2 r1",
+    "De abajo hacia arriba: 10011₂"
+   ],
+   "suma": [
+    16,
+    18,
+    19
+   ],
+   "destacar": 0,
+   "etiqueta": "19 = 10011₂"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado con dos *errores*.",
+    "Leer los restos de arriba hacia abajo: para 6 da cero, uno, uno, y es *uno, uno, cero*.",
+    "Y leer uno, cero, uno en base 2 como ciento uno: vale *5*."
+   ],
+   "items": [
+    {
+     "mal": "6 = 011₂",
+     "bien": "6 = 110₂"
+    },
+    {
+     "mal": "101₂ = ciento uno",
+     "bien": "101₂ = uno, cero, uno = 5"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: antes de empezar, escribí *1, 2, 4, 8, 16, 32* de derecha a izquierda."
+   ],
+   "titulo": "ARMÁ LA TABLA",
+   "texto": "Escribí 1, 2, 4, 8, 16, 32 de derecha a izquierda antes de empezar",
+   "emoji": "📝"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El binario usa solo *0 y 1*: el idioma de las computadoras.",
+    "Sus lugares valen *1, 2, 4, 8, 16*…",
+    "De decimal a binario: *dividís por 2* y leés los restos de abajo hacia arriba.",
+    "De binario a decimal: cada cifra *por su lugar*, y sumás.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "BASE 2",
+     "solo 0 y 1"
+    ],
+    [
+     "LUGARES",
+     "1, 2, 4, 8, 16, 32…"
+    ],
+    [
+     "DECIMAL → BINARIO",
+     "÷ 2, restos de abajo arriba"
+    ],
+    [
+     "BINARIO → DECIMAL",
+     "1110₂ = 8 + 4 + 2 = 14"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
