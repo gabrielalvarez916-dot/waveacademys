@@ -1,0 +1,357 @@
+{
+ "slug": "leccion-mat1-m1-n1",
+ "step_id": "e483b694-dd4d-4d51-bd8a-10ddbf425418",
+ "materia": "Matemática I",
+ "titulo": "El sistema decimal y el valor posicional",
+ "sub": "Matemática I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Cómo puede ser que un *2* valga *200*?",
+    "Es el mismo 2… pero ubicado en otro *lugar*.",
+    "Hoy vas a descubrir el secreto de nuestros números: el *sistema decimal*."
+   ],
+   "grande": "2",
+   "final": "200",
+   "titulo": "EL SISTEMA DECIMAL",
+   "sub": "y el valor posicional"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Los romanos escribían el año 2026 así: *MMXXVI*.",
+    "Nosotros lo escribimos *2.026*.",
+    "Es el *mismo número*. Lo que cambia es el sistema.",
+    "Un *sistema de numeración* es el conjunto de símbolos y reglas que usamos para escribir y nombrar los números."
+   ],
+   "a": {
+    "cab": "SISTEMA ROMANO",
+    "texto": "MMXXVI",
+    "estilo": "piedra"
+   },
+   "b": {
+    "cab": "SISTEMA DECIMAL",
+    "texto": "2.026"
+   },
+   "signo": "=",
+   "def": {
+    "cab": "SISTEMA DE NUMERACIÓN",
+    "texto": "Símbolos y reglas para escribir y nombrar los números"
+   }
+  },
+  {
+   "t": "fichas",
+   "voz": [
+    "Nuestro sistema usa solo *10 cifras*: del 0 al 9.",
+    "Con esas diez escribimos *cualquier número*, por más grande que sea.",
+    "¿El truco? *Agrupar de a 10*."
+   ],
+   "fichas": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "grande": "7.093.582.461",
+   "etiqueta": "GRUPOS DE 10"
+  },
+  {
+   "t": "agrupar",
+   "voz": [
+    "Imaginá una fábrica de *alfajores*. Cada alfajor suelto es una *unidad*.",
+    "Cuando juntás 10 alfajores se arma un paquete: una *decena*.",
+    "Con 10 paquetes se llena una caja: una *centena*.",
+    "Y 10 cajas llenan un camión: una *unidad de mil*.",
+    "Cada orden vale *10 veces* el anterior."
+   ],
+   "niveles": [
+    {
+     "nombre": "UNIDAD",
+     "valor": "1",
+     "icono": "alf"
+    },
+    {
+     "nombre": "DECENA",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CENTENA",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "UNIDAD DE MIL",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10"
+  },
+  {
+   "t": "estante",
+   "voz": [
+    "Ahora mirá el número *4.205*.",
+    "Cada cifra ocupa un *lugar*: unidades de mil, centenas, decenas y unidades.",
+    "Y cada lugar vale *10 veces* más que el de su derecha.",
+    "Por eso el 4 vale *4.000*, el 2 vale *200*, el 0 vale *0* y el 5 vale *5*.",
+    "El valor de una cifra depende del lugar que ocupa. Eso es el *valor posicional*."
+   ],
+   "numero": "4.205",
+   "cab": [
+    "UNIDAD DE MIL",
+    "CENTENA",
+    "DECENA",
+    "UNIDAD"
+   ],
+   "dig": [
+    "4",
+    "2",
+    "0",
+    "5"
+   ],
+   "val": [
+    "4.000",
+    "200",
+    "0",
+    "5"
+   ],
+   "flechas": "×10",
+   "destacar": 1,
+   "etiqueta": "VALOR POSICIONAL"
+  },
+  {
+   "t": "quitar",
+   "voz": [
+    "Ojo con esto: la *cifra* es el símbolo que escribís. El 2.",
+    "El *valor* es lo que ese símbolo representa en su lugar: 200.",
+    "¿Y el cero? Parece que no hace nada… pero mirá qué pasa si lo *sacamos*.",
+    "¡Se convierte en *425*! Es otro número.",
+    "El cero *marca un lugar vacío*, y mantiene a cada cifra en su lugar."
+   ],
+   "tarjetas": [
+    {
+     "cab": "CIFRA",
+     "val": "2"
+    },
+    {
+     "cab": "VALOR",
+     "val": "200"
+    }
+   ],
+   "cab": [
+    "UNIDAD DE MIL",
+    "CENTENA",
+    "DECENA",
+    "UNIDAD"
+   ],
+   "dig": [
+    "4",
+    "2",
+    "0",
+    "5"
+   ],
+   "quitar": 2,
+   "resultado": "425",
+   "sello": "¡OTRO NÚMERO!",
+   "etiqueta": "LUGAR VACÍO"
+  },
+  {
+   "t": "descomponer",
+   "voz": [
+    "Ahora vamos a *descomponer* el número: escribirlo con una operación que muestre el valor de cada cifra.",
+    "En la *descomposición aditiva* sumamos los valores de las cifras.",
+    "4.000, más 200, más 0, más 5.",
+    "El 0 no se escribe, porque *no suma nada*.",
+    "Comprobamos: 4.000 más 200 más 5 da *4.205*. ¡Perfecto!"
+   ],
+   "numero": "4.205",
+   "titulo": "DESCOMPOSICIÓN ADITIVA",
+   "partes": [
+    "4.000",
+    "200",
+    "0",
+    "5"
+   ],
+   "tachar": 2,
+   "resultado": "= 4.205  ✓"
+  },
+  {
+   "t": "multiplicar",
+   "voz": [
+    "La otra forma es la *descomposición multiplicativa*.",
+    "Cada cifra se multiplica por el valor de su lugar: mil, cien, diez o uno.",
+    "El 4 está en las unidades de mil: *4 por 1.000*.",
+    "El 2 está en las centenas: *2 por 100*.",
+    "El 0 por 10 da 0, así que no se escribe. Y el 5 queda *5*.",
+    "Entonces 4.205 es igual a *4 por 1.000, más 2 por 100, más 5*."
+   ],
+   "titulo": "DESCOMPOSICIÓN MULTIPLICATIVA",
+   "cab": [
+    "× 1.000",
+    "× 100",
+    "× 10",
+    "× 1"
+   ],
+   "dig": [
+    "4",
+    "2",
+    "0",
+    "5"
+   ],
+   "val": [
+    "4 × 1.000",
+    "2 × 100",
+    "0 × 10",
+    "5"
+   ],
+   "apagar": 2,
+   "ecuacion": "4.205 = 4 × 1.000 + 2 × 100 + 5"
+  },
+  {
+   "t": "canje",
+   "voz": [
+    "Último secreto: los *canjes*.",
+    "Un canje es cambiar 1 grupo por *10 del orden anterior*.",
+    "Si abrimos una caja de mil… adentro hay *10 de cien*.",
+    "Así que 4.205 también es *3.000 + 1.200 + 5*.",
+    "Es el *mismo número*, escrito de otra forma."
+   ],
+   "titulo": "CANJES",
+   "grande": {
+    "n": 4,
+    "txt": "1.000"
+   },
+   "chico": {
+    "n": 2,
+    "txt": "100"
+   },
+   "sueltos": 5,
+   "ec1": "4.000 + 200 + 5",
+   "ec2": "3.000 + 1.200 + 5"
+  },
+  {
+   "t": "ejemplo",
+   "voz": [
+    "Hagamos uno completo, con el número *53.608*.",
+    "Ubicamos cada cifra en su lugar.",
+    "El 5 vale 50.000, el 3 vale 3.000, el 6 vale 600, el 0 vale 0 y el 8 vale 8.",
+    "Aditiva: *50.000 + 3.000 + 600 + 8*.",
+    "Multiplicativa: *5 por 10.000, más 3 por 1.000, más 6 por 100, más 8*.",
+    "Comprobamos sumando: 53.000… 53.600… *53.608*.",
+    "¿Y cuánto vale el 3? Está en las unidades de mil: vale *3.000*."
+   ],
+   "numero": "53.608",
+   "cab": [
+    "DECENA DE MIL",
+    "UNIDAD DE MIL",
+    "CENTENA",
+    "DECENA",
+    "UNIDAD"
+   ],
+   "dig": [
+    "5",
+    "3",
+    "6",
+    "0",
+    "8"
+   ],
+   "val": [
+    "50.000",
+    "3.000",
+    "600",
+    "0",
+    "8"
+   ],
+   "lineas": [
+    "Aditiva: 50.000 + 3.000 + 600 + 8",
+    "Multiplicativa: 5 × 10.000 + 3 × 1.000 + 6 × 100 + 8"
+   ],
+   "suma": [
+    50000,
+    53000,
+    53600,
+    53608
+   ],
+   "destacar": 1,
+   "etiqueta": "EL 3 VALE 3.000"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Un consejo: *chequeá siempre*. Sumá los sumandos: te tiene que dar el número original."
+   ],
+   "titulo": "CHEQUEÁ SIEMPRE",
+   "texto": "Sumá los sumandos: tiene que darte el número original",
+   "emoji": "✅"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Y cuidado con estos dos *errores comunes*.",
+    "En 4.205, el 2 no vale 2: vale *200*.",
+    "5.060 no es 5.000 + 600. El 6 está en las decenas, vale 60: es *5.000 + 60*."
+   ],
+   "items": [
+    {
+     "mal": "En 4.205 el 2 vale 2",
+     "bien": "En 4.205 el 2 vale 200"
+    },
+    {
+     "mal": "5.060 = 5.000 + 600",
+     "bien": "5.060 = 5.000 + 60"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos lo más importante.",
+    "Un *sistema de numeración* son los símbolos y reglas para escribir números.",
+    "El *sistema decimal* usa 10 cifras y agrupa de a 10.",
+    "Por el *valor posicional*, en 4.205 el 2 vale 200.",
+    "La *descomposición aditiva* suma los valores: 4.000 + 200 + 5.",
+    "La *multiplicativa* multiplica cada cifra por su lugar: 4 por 1.000, más 2 por 100, más 5.",
+    "Y con los *canjes*, el mismo número se escribe de varias formas.",
+    "¡Terminaste la clase! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NUMERACIÓN",
+     "MMXXVI = 2.026"
+    ],
+    [
+     "DECIMAL",
+     "10 cifras, grupos de 10"
+    ],
+    [
+     "VALOR POSICIONAL",
+     "en 4.205 el 2 vale 200"
+    ],
+    [
+     "ADITIVA",
+     "4.000 + 200 + 5"
+    ],
+    [
+     "MULTIPLICATIVA",
+     "4 × 1.000 + 2 × 100 + 5"
+    ],
+    [
+     "CANJES",
+     "3.000 + 1.200 + 5"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

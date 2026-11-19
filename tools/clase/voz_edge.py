@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Genera la voz de una clase animada como AUDIO (voces neuronales de Microsoft vía edge-tts, gratis).
-Lee las frases de tools/clase/<leccion>.src.html y guarda tools/clase/voz/<leccion>.json con un mp3 por frase
+Lee las frases de tools/clase/lecciones/<slug>.json y guarda tools/clase/voz/<leccion>.json con un mp3 por frase
 y el momento de cada palabra (para los subtítulos). No repite frases que ya tienen audio con la misma voz.
 Lo corre GitHub Actions (.github/workflows/voz-clases.yml). Variables: VOZ (es-MX-JorgeNeural), RATE (+8%)."""
 import asyncio, base64, glob, hashlib, json, os, re, sys
@@ -57,11 +57,8 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     return decir_numeros(s.replace('\\u2026', '…')).strip()
 
 
-def frases(src):
-    out = []
-    for m in re.finditer(r"voz: \[(.*?)\],\s*\n\s*armar", src, re.S):
-        out.append([limpio(x) for x in re.findall(r"'((?:[^'\\]|\\.)*)'", m.group(1))])
-    return out
+def frases(L):
+    return [[limpio(x) for x in e['voz']] for e in L['escenas']]
 
 
 async def tts(texto):
@@ -81,11 +78,12 @@ async def tts(texto):
 
 
 async def una(src_path):
-    nombre = os.path.basename(src_path).replace('.src.html', '')
+    L = json.load(open(src_path, encoding='utf-8'))
+    nombre = L.get('slug') or os.path.basename(src_path)[:-5]
     destino = os.path.join(AQUI, 'voz', nombre + '.json')
     viejo = json.load(open(destino)) if os.path.exists(destino) else []
     cache = {f.get('h'): f for esc in viejo for f in esc if isinstance(f, dict)}
-    F = frases(open(src_path, encoding='utf-8').read())
+    F = frases(L)
     res, nuevas = [], 0
     for esc in F:
         fila = []
@@ -108,9 +106,7 @@ async def una(src_path):
 
 
 async def main():
-    for p in (sys.argv[1:] or sorted(glob.glob(os.path.join(AQUI, '*.src.html')))):
-        if 'demo-' in os.path.basename(p):
-            continue
+    for p in (sys.argv[1:] or sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json')))):
         await una(p)
 
 asyncio.run(main())

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wave · {{TITULO}}</title>
+<style>
+html,body{margin:0;height:100%;background:#050f10;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,Roboto,Arial,sans-serif;color:#eaf7f4}
+#marco{position:relative;width:min(100vw,177.78vh);aspect-ratio:16/9;overflow:hidden;border-radius:6px}
+svg{width:100%;height:100%;display:block}
+text{font-family:inherit;font-weight:900}
+#ui{position:absolute;inset:0;display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center;background:rgba(5,15,16,.82);z-index:3;text-align:center}
+#ui h1{margin:0;font-size:clamp(1.4rem,4vw,2.6rem)}
+#ui p{margin:0;color:#9dbdb9;font-weight:700}
+.btn{appearance:none;border:0;border-radius:18px;font:inherit;font-weight:900;font-size:1.2rem;padding:16px 30px;color:#06282a;background:linear-gradient(180deg,#9be8da,#7FD3C4);box-shadow:0 6px 0 #3e9488;cursor:pointer}
+#ctl{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;padding:10px 16px;background:linear-gradient(0deg,rgba(5,15,16,.85),transparent);opacity:0;transition:opacity .3s;z-index:2}
+#marco:hover #ctl,#ctl.ver{opacity:1}
+#ctl button{appearance:none;border:0;border-radius:50%;width:40px;height:40px;background:rgba(255,255,255,.14);color:#fff;font-size:.95rem;cursor:pointer;flex:none}
+#barra{flex:1;display:flex;gap:4px}
+#barra i{flex:1;height:6px;border-radius:9px;background:rgba(255,255,255,.18);cursor:pointer;overflow:hidden}
+#barra i b{display:block;height:100%;width:0;background:#7FD3C4}
+</style></head><body>
+<div id="marco">
+<svg id="s" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="fondo" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#17585a"/><stop offset=".55" stop-color="#0c292b"/><stop offset="1" stop-color="#050f10"/></radialGradient>
+  <radialGradient id="gAlf" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#8a5634"/><stop offset=".7" stop-color="#5a3219"/><stop offset="1" stop-color="#3b1f0e"/></radialGradient>
+  <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d474a"/><stop offset="1" stop-color="#132f31"/></linearGradient>
+  <linearGradient id="gPack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a85"/><stop offset="1" stop-color="#e2553f"/></linearGradient>
+  <linearGradient id="gCaja" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcaa62"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+  <linearGradient id="gSol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd877"/><stop offset="1" stop-color="#eaa52b"/></linearGradient>
+  <linearGradient id="gAqua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7efe2"/><stop offset="1" stop-color="#5fc2b2"/></linearGradient>
+  <linearGradient id="gPiedra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9b2a4"/><stop offset="1" stop-color="#857e70"/></linearGradient>
+  <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="sombra" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#000" flood-opacity=".4"/></filter>
+  <g id="alf"><circle r="46" fill="#f3e3c3"/><circle r="40" fill="url(#gAlf)"/><ellipse cx="-12" cy="-16" rx="14" ry="7" fill="#fff" opacity=".18"/></g>
+  <g id="pack"><rect x="-70" y="-34" width="140" height="68" rx="14" fill="url(#gPack)" stroke="#ffd0c4" stroke-width="4"/><rect x="-9" y="-34" width="18" height="68" fill="#F4B63F"/><text y="12" text-anchor="middle" font-size="34" fill="#fff">10</text></g>
+  <g id="caja"><rect x="-80" y="-60" width="160" height="120" rx="16" fill="url(#gCaja)" stroke="#f3d29a" stroke-width="5"/><path d="M-80 -28 H80" stroke="#7a4f1c" stroke-width="6" opacity=".5"/><text y="34" text-anchor="middle" font-size="44" fill="#fff8ea">100</text></g>
+  <g id="camion"><rect x="-150" y="-80" width="200" height="130" rx="16" fill="url(#gAqua)" stroke="#d8fff7" stroke-width="5"/><text x="-50" y="5" text-anchor="middle" font-size="48" fill="#06282a">1.000</text><rect x="58" y="-40" width="92" height="90" rx="14" fill="#2c7f78" stroke="#d8fff7" stroke-width="5"/><rect x="78" y="-26" width="50" height="34" rx="6" fill="#bff3ea"/><circle cx="-90" cy="62" r="24" fill="#0b1c1d" stroke="#9dbdb9" stroke-width="6"/><circle cx="100" cy="62" r="24" fill="#0b1c1d" stroke="#9dbdb9" stroke-width="6"/></g>
+ </defs>
+ <rect width="1920" height="1080" fill="url(#fondo)"/>
+ <g id="piso" opacity=".55"></g>
+ <g id="particulas"></g>
+ <g id="cam"><g id="escena"></g></g>
+ <rect id="flash" width="1920" height="1080" fill="#ff7a66" opacity="0" pointer-events="none"/>
+ <g id="subs" font-size="64" text-anchor="middle"></g>
+</svg>
+<div id="ctl"><button id="ant" aria-label="Anterior">⏮</button><button id="pp" aria-label="Pausa">❚❚</button><button id="sig" aria-label="Siguiente">⏭</button><div id="barra"></div></div>
+<div id="ui"><h1>{{TITULO}}</h1><p>{{SUB}}</p><button class="btn" id="go">▶ Empezar la clase</button></div>
+</div>
+{{SCRIPTS}}
+</body></html>
