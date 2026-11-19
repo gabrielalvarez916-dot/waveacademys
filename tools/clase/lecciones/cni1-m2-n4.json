@@ -72,6 +72,76 @@
    "entrada": "zoom"
   },
   {
+   "t": "tabla",
+   "voz": [
+    "Antes, una herramienta: las *potencias de diez*. El numerito de arriba dice *cuántas veces se multiplica el diez*.",
+    "Diez a la uno: diez.",
+    "Diez a la dos: diez por diez, *cien*.",
+    "Diez a la tres: diez por diez por diez, *mil*.",
+    "Diez a la seis: *un millón*. ¡El exponente es la cantidad de ceros!"
+   ],
+   "titulo": "POTENCIAS DE 10",
+   "columnas": [
+    "Potencia",
+    "Cuenta",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "10¹",
+     "10",
+     "10"
+    ],
+    [
+     "10²",
+     "10 × 10",
+     "100"
+    ],
+    [
+     "10³",
+     "10 × 10 × 10",
+     "1000"
+    ],
+    [
+     "10⁶",
+     "seis veces 10",
+     "1 000 000"
+    ]
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "¿Y con exponente *negativo*? El menos significa *dividir* por diez.",
+    "Diez a la menos uno: *cero coma uno*, un décimo.",
+    "Diez a la menos dos: *cero coma cero uno*, un centésimo.",
+    "Diez a la menos tres: *cero coma cero cero uno*, un milésimo."
+   ],
+   "titulo": "EXPONENTE NEGATIVO",
+   "columnas": [
+    "Potencia",
+    "Cuenta",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "10⁻¹",
+     "1 ÷ 10",
+     "0,1"
+    ],
+    [
+     "10⁻²",
+     "1 ÷ 100",
+     "0,01"
+    ],
+    [
+     "10⁻³",
+     "1 ÷ 1000",
+     "0,001"
+    ]
+   ]
+  },
+  {
    "t": "matriz",
    "voz": [
     "Primero, las unidades: todo el mundo científico usa el *Sistema Internacional*.",
@@ -147,6 +217,53 @@
    "palabra": "Notación científica",
    "texto": "Un número entre 1 y 10 × una potencia de 10",
    "emoji": "🔟"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 300,
+       "s": "3 0 0 0",
+       "size": 90
+      }
+     ],
+     "txt": "Tres mil"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 480,
+       "s": "3 , 0 0 0   ← la coma saltó 3 lugares",
+       "size": 56
+      }
+     ],
+     "txt": "Corremos la coma hasta dejar un solo número adelante"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 680,
+       "s": "3 × 10³",
+       "size": 100
+      }
+     ],
+     "txt": "3 × 1000 = 3000 ✔"
+    }
+   ],
+   "voz": [
+    "Veámoslo paso a paso con *tres mil*.",
+    "Corremos la coma hasta que quede *un solo número* adelante: el tres. Saltó *tres lugares*.",
+    "Entonces es *tres por diez a la tres*. Comprobamos: tres por mil, ¡tres mil!"
+   ]
   },
   {
    "t": "bloques",

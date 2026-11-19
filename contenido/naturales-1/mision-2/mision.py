@@ -81,11 +81,13 @@ N3={"objetivo":"Vas a poder expresar una medición con su incertidumbre y su uni
 "respuestas_carpeta":[["11","11 cm","11cm"],["28","28 °C","28°C"],["1 mm","1mm","mm"],["a la altura","a la altura de la marca","altura"]],
 "soluciones":{"incompleto":"mm. 51.","solo":"41 ml: (40 + 42 + 41) ÷ 3.","carpeta":["11 cm.","28 °C.","1 mm.","A la altura de la marca."]}}
 N4={"objetivo":"Vas a poder usar las unidades del Sistema Internacional, sus prefijos, y escribir números en notación científica.",
-"vas_a_ver":["El Sistema Internacional","Los prefijos","Qué es la notación científica","Números grandes","Números chicos"],
+"vas_a_ver":["El Sistema Internacional","Los prefijos","Potencias de 10","Qué es la notación científica","Números grandes","Números chicos"],
 "secciones":[
  S(1,"El Sistema Internacional",[D("Sistema Internacional (SI)","Conjunto de unidades que usan los científicos de todo el mundo para entenderse."),
   T("Unidades básicas",["Magnitud","Unidad","Símbolo"],[["Longitud","metro","m"],["Masa","kilogramo","kg"],["Tiempo","segundo","s"],["Temperatura","kelvin (y °C en la vida diaria)","K"]])]),
  S(1,"Los prefijos",[T("Prefijos",["Prefijo","Significa","Ejemplo"],[["kilo (k)","1000 veces","1 km = 1000 m"],["centi (c)","la centésima parte","1 m = 100 cm"],["mili (m)","la milésima parte","1 m = 1000 mm"],["micro (µ)","la millonésima parte","1 m = 1 000 000 µm"]])]),
+ S(1,"Potencias de 10",[P("Una <b>potencia de 10</b> indica cuántas veces se multiplica el 10: 10² = 10 × 10 = 100; 10³ = 10 × 10 × 10 = 1000. El exponente es la <b>cantidad de ceros</b>. Con exponente <b>negativo</b> se divide: 10⁻¹ = 0,1; 10⁻² = 0,01; 10⁻³ = 0,001."),
+  T("Potencias de 10",["Potencia","Valor"],[["10³","1000"],["10²","100"],["10¹","10"],["10⁻¹","0,1"],["10⁻²","0,01"],["10⁻³","0,001"]])]),
  S(2,"Notación científica",[D("Notación científica","Se escribe un número entre 1 y 10 multiplicado por una <b>potencia de 10</b>. El exponente indica cuántos lugares se corrió la coma."),
   E("Un número grande","Distancia Tierra–Sol: 150 000 000 000 m.",["La coma se corre a la izquierda hasta dejar 1,5.","Saltó 11 lugares.","Resultado: 1,5 × 10¹¹ m (exponente positivo)."])]),
  S(2,"Números chicos",[E("Una bacteria","Mide 0,000 002 m.",["La coma se corre a la derecha hasta dejar 2.","Saltó 6 lugares.","Resultado: 2 × 10⁻⁶ m (exponente negativo)."]),
