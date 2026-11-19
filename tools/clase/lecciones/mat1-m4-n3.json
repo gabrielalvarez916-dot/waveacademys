@@ -1,0 +1,214 @@
+{
+ "slug": "mat1-m4-n3",
+ "step_id": "4794b1ef-d360-4dd3-8f11-9057291a0e72",
+ "materia": "Matemática I",
+ "titulo": "Cálculos con potencias y raíces",
+ "sub": "Matemática I · Misión 4 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Cuánto es 3 más 2 al cuadrado? ¿25?",
+    "¡No! Es *7*. La potencia solo afecta al 2.",
+    "Hoy: cálculos con *potencias y raíces*."
+   ],
+   "grande": "3 + 2²",
+   "final": "7",
+   "titulo": "POTENCIAS Y RAÍCES",
+   "sub": "en cálculos combinados"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Ahora la *jerarquía completa*, en cuatro escalones.",
+    "Primero, lo que está entre *paréntesis*.",
+    "Segundo, *potencias y raíces*.",
+    "Tercero, *multiplicar y dividir*.",
+    "Y último, *sumar y restar*."
+   ],
+   "titulo": "EL ORDEN COMPLETO",
+   "items": [
+    {
+     "txt": "Paréntesis",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Potencias y raíces",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Multiplicaciones y divisiones",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Sumas y restas",
+     "emoji": "4️⃣"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Clave: la potencia se aplica *solo al número que tiene pegado*.",
+    "3 más 2 al cuadrado: 3 más 4, *7*.",
+    "Pero con paréntesis, 3 más 2, todo al cuadrado: 5 al cuadrado, *25*.",
+    "Y 3 más 2 al cubo por 5: 3 más 8 por 5, 3 más 40, *43*."
+   ],
+   "titulo": "¿A QUIÉN SE PEGA LA POTENCIA?",
+   "columnas": [
+    "Cálculo",
+    "Se resuelve",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "3 + 2²",
+     "3 + 4",
+     "7"
+    ],
+    [
+     "(3 + 2)²",
+     "5²",
+     "25"
+    ],
+    [
+     "3 + 2³ × 5",
+     "3 + 8 × 5 = 3 + 40",
+     "43"
+    ]
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La *raíz* también agrupa: lo de abajo se resuelve primero. Raíz de 16 más 9, raíz de 25: *5*.",
+    "Si sacás la raíz de cada uno, 4 más 3, da 7.",
+    "¡Es otra cosa!",
+    "Lo que está debajo de la raíz es como un *paréntesis*."
+   ],
+   "a": {
+    "cab": "√(16 + 9)",
+    "texto": "√25 = 5"
+   },
+   "b": {
+    "cab": "√16 + √9",
+    "texto": "4 + 3 = 7"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "LA RAÍZ AGRUPA",
+    "texto": "Lo de abajo de la raíz se resuelve primero, como un paréntesis"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Un cálculo largo, *una igualdad por línea*: 5 al cuadrado, menos raíz de 36 por 2, más 10 dividido 2.",
+    "Potencias y raíces: 25, menos 6 por 2, más 10 dividido 2.",
+    "Multiplicar y dividir: 25 menos 12 más 5.",
+    "Sumar y restar: *18*."
+   ],
+   "pasos": [
+    "5² − √36 × 2 + 10 ÷ 2",
+    "25 − 6 × 2 + 10 ÷ 2",
+    "25 − 12 + 5",
+    "= 18"
+   ],
+   "notas": [
+    "",
+    "potencias y raíces",
+    "multiplicar y dividir",
+    "sumar y restar"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Para *verificar*, repasá cada línea: ¿resolviste lo que tocaba? ¿copiaste bien lo demás?"
+   ],
+   "texto": "Cada línea tiene que valer lo mismo que la anterior",
+   "emoji": "🔍"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: 4 más 2, al cuadrado, dividido 4, menos raíz de 50 menos 1.",
+    "Paréntesis y debajo de la raíz: 6 al cuadrado dividido 4, menos raíz de 49.",
+    "Potencia y raíz: 36 dividido 4, menos 7.",
+    "9 menos 7: *2*."
+   ],
+   "pasos": [
+    "(4 + 2)² ÷ 4 − √(50 − 1)",
+    "6² ÷ 4 − √49",
+    "36 ÷ 4 − 7",
+    "9 − 7 = 2"
+   ],
+   "notas": [
+    "",
+    "paréntesis y debajo de la raíz",
+    "potencia y raíz",
+    "dividir y restar"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* frecuentes.",
+    "Sacar la raíz de cada término: raíz de 9 más 16 es *5*, no 7.",
+    "Y encadenar igualdades falsas: no escribas 3 más 4 igual 7 por 2 igual 14. *Una igualdad por línea*."
+   ],
+   "items": [
+    {
+     "mal": "√(9 + 16) = 3 + 4 = 7",
+     "bien": "√(9 + 16) = √25 = 5"
+    },
+    {
+     "mal": "3 + 4 = 7 × 2 = 14",
+     "bien": "Una igualdad por línea"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: en cada línea, *subrayá* lo que te toca resolver. Lo demás se copia igual."
+   ],
+   "titulo": "SUBRAYÁ LO QUE TOCA",
+   "texto": "En cada línea subrayá lo que vas a resolver; lo demás se copia igual",
+   "emoji": "🖍️"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El orden: *paréntesis, potencias y raíces, multiplicar y dividir, sumar y restar*.",
+    "La potencia va solo al número *pegado*.",
+    "La raíz *agrupa* lo de abajo.",
+    "Y *una igualdad por línea*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORDEN",
+     "( ) → potencias → × ÷ → + −"
+    ],
+    [
+     "POTENCIA",
+     "3 + 2² = 7 · (3 + 2)² = 25"
+    ],
+    [
+     "RAÍZ",
+     "√(16 + 9) = 5"
+    ],
+    [
+     "PASO A PASO",
+     "una igualdad por línea"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

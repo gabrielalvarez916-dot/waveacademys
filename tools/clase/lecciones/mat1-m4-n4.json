@@ -1,0 +1,204 @@
+{
+ "slug": "mat1-m4-n4",
+ "step_id": "1a2de59e-7fe0-4dc8-8a5b-ed2e838676f6",
+ "materia": "Matemática I",
+ "titulo": "Calculadora y control del resultado",
+ "sub": "Matemática I · Misión 4 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Dos calculadoras, la misma cuenta: 5 más 3 por 4. Una dice 17, la otra 32.",
+    "¿Cuál tiene razón? La que *respeta la jerarquía*: 17.",
+    "Hoy: la *calculadora* y cómo controlarla."
+   ],
+   "grande": "17 o 32",
+   "final": "17 ✓",
+   "titulo": "LA CALCULADORA",
+   "sub": "y el control del resultado"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La *calculadora científica* respeta la jerarquía: multiplica primero. *17*.",
+    "Muchas calculadoras *comunes* van resolviendo a medida que tipeás: 32.",
+    "¡Mismo cálculo, distinto resultado!",
+    "Con una común, tenés que hacer vos *la multiplicación primero*."
+   ],
+   "a": {
+    "cab": "CIENTÍFICA",
+    "texto": "17",
+    "emoji": "🧮"
+   },
+   "b": {
+    "cab": "COMÚN",
+    "texto": "32",
+    "emoji": "📟"
+   },
+   "signo": "vs",
+   "def": {
+    "cab": "OJO",
+    "texto": "La científica respeta la jerarquía; muchas comunes calculan de izquierda a derecha"
+   }
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La calculadora *no adivina* qué querés agrupar.",
+    "120 dividido, paréntesis, 4 más 2: *20*.",
+    "Si te olvidás los paréntesis: 120 dividido 4 más 2, *32*.",
+    "Los paréntesis se *tipean*, igual que en la carpeta."
+   ],
+   "a": {
+    "cab": "CON PARÉNTESIS",
+    "texto": "120 ÷ (4 + 2) = 20"
+   },
+   "b": {
+    "cab": "SIN PARÉNTESIS",
+    "texto": "120 ÷ 4 + 2 = 32"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "TIPEALOS",
+    "texto": "La calculadora no adivina qué querés agrupar"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "La calculadora no reemplaza tu cabeza: *estimá antes*. 498 por 21.",
+    "Es casi 500 por 20: *10.000*.",
+    "Si la pantalla dice 10.458, está cerca: *razonable*.",
+    "Si dijera 4.980, ¡muy lejos! Algo se *tipeó mal*."
+   ],
+   "pasos": [
+    "498 × 21",
+    "≈ 500 × 20 = 10.000",
+    "Pantalla: 10.458 ✓",
+    "Pantalla: 4.980 ❌"
+   ],
+   "notas": [
+    "",
+    "estimamos antes",
+    "cerca: razonable",
+    "muy lejos: algo se tipeó mal"
+   ]
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "Los *errores de tipeo* más comunes.",
+    "Confundir la tecla de *potencia* con la de multiplicar: 3 a la cuarta es 81, pero 3 por 4 es 12.",
+    "*Olvidarte un paréntesis*.",
+    "O apretar *un número de más*."
+   ],
+   "causa": {
+    "txt": "Errores de tipeo",
+    "emoji": "⌨️"
+   },
+   "items": [
+    {
+     "txt": "Potencia o multiplicar",
+     "emoji": "🔀"
+    },
+    {
+     "txt": "Paréntesis olvidado",
+     "emoji": "🙈"
+    },
+    {
+     "txt": "Un número de más",
+     "emoji": "➕"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 365 menos 89, entre paréntesis, por 12.",
+    "Estimamos: casi 300 por 10, *3.000*.",
+    "Tipeamos *con paréntesis*.",
+    "La pantalla dice 3.312: cerca de 3.000. ¡Bien!",
+    "Sin paréntesis daría un número *negativo*: esa es la alarma de que falta el paréntesis."
+   ],
+   "titulo": "(365 − 89) × 12",
+   "items": [
+    {
+     "txt": "Estimo: 300 × 10 = 3.000",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Tipeo con paréntesis: (365 − 89) × 12",
+     "emoji": "⌨️"
+    },
+    {
+     "txt": "Pantalla: 3.312 → cerca de 3.000 ✓",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "Sin paréntesis daría negativo: ¡alarma!",
+     "emoji": "🚨"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para evitar.",
+    "Confiar en la calculadora *sin estimar*: si tipeaste mal, el resultado está mal aunque lo diga la pantalla.",
+    "Y confundir potencia con multiplicar: 2 a la quinta es *32*, no 10."
+   ],
+   "items": [
+    {
+     "mal": "«Lo dice la calculadora»",
+     "bien": "Estimá y controlá siempre"
+    },
+    {
+     "mal": "2⁵ = 10",
+     "bien": "2⁵ = 32"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: *estimá primero, tipeá después*. Si ya sabés más o menos cuánto da, el error salta a la vista."
+   ],
+   "titulo": "ESTIMÁ PRIMERO",
+   "texto": "Si ya sabés más o menos cuánto da, un error salta a la vista",
+   "emoji": "🧠"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *científica* respeta la jerarquía.",
+    "Los *paréntesis* se tipean.",
+    "*Estimá* antes de calcular.",
+    "Y cuidado con los *errores de tipeo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CIENTÍFICA",
+     "5 + 3 × 4 = 17"
+    ],
+    [
+     "PARÉNTESIS",
+     "120 ÷ (4 + 2) = 20"
+    ],
+    [
+     "ESTIMAR",
+     "498 × 21 ≈ 10.000"
+    ],
+    [
+     "ERRORES",
+     "tecla, paréntesis, número de más"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

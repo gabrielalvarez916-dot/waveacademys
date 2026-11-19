@@ -1,0 +1,196 @@
+{
+ "slug": "mat1-m4-n2",
+ "step_id": "e3ba59fe-c466-4c1f-a965-4d453997b853",
+ "materia": "Matemática I",
+ "titulo": "Paréntesis, corchetes y llaves",
+ "sub": "Matemática I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Esto parece un monstruo. ¿Por dónde se empieza?",
+    "Con un truco, sale fácil: da *14*.",
+    "Hoy: *paréntesis, corchetes y llaves*."
+   ],
+   "grande": "2 × {30 − [4 × (6 − 1) + 3]}",
+   "final": "14",
+   "titulo": "PARÉNTESIS, CORCHETES Y LLAVES",
+   "sub": "de adentro hacia afuera"
+  },
+  {
+   "t": "zoom",
+   "voz": [
+    "Son como *muñecas rusas*: una adentro de otra. Afuera, las *llaves*.",
+    "Adentro, los *corchetes*.",
+    "Y en el centro, los *paréntesis*."
+   ],
+   "niveles": [
+    {
+     "emoji": "🪆",
+     "txt": "{ } llaves: afuera"
+    },
+    {
+     "emoji": "🪆",
+     "txt": "[ ] corchetes: en el medio"
+    },
+    {
+     "emoji": "🪆",
+     "txt": "( ) paréntesis: adentro"
+    }
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La regla: se resuelve *de adentro hacia afuera*.",
+    "Primero el paréntesis, después el corchete, al final la llave. Y adentro de cada uno, la *jerarquía* de siempre."
+   ],
+   "palabra": "De adentro hacia afuera",
+   "texto": "Primero ( ), después [ ], al final { }. Adentro de cada uno, la jerarquía de siempre.",
+   "emoji": "🧅"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Probemos: 3 más 5 entre paréntesis, por 2, menos 4, todo dividido 3.",
+    "Paréntesis: 3 más 5, *8*.",
+    "Corchete: 8 por 2 menos 4, *12*.",
+    "Afuera: 12 dividido 3, *4*."
+   ],
+   "pasos": [
+    "[(3 + 5) × 2 − 4] ÷ 3",
+    "[8 × 2 − 4] ÷ 3",
+    "12 ÷ 3",
+    "= 4"
+   ],
+   "notas": [
+    "",
+    "paréntesis: 3 + 5 = 8",
+    "corchete: 16 − 4 = 12",
+    ""
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Desafío: ¿dónde ponés paréntesis para que 12 menos 4 dividido 2 dé *4*?",
+    "Sin paréntesis da 10. ¿Y con paréntesis?",
+    "¡Así: 12 menos 4, entre paréntesis, dividido 2! 8 dividido 2, *4*."
+   ],
+   "pregunta": "¿Dónde van los paréntesis para que 12 − 4 ÷ 2 dé 4?",
+   "opciones": [
+    "12 − (4 ÷ 2)",
+    "(12 − 4) ÷ 2",
+    "No hacen falta"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Las palabras también dicen qué se *agrupa*.",
+    "El doble de la suma de 7 y 8: la suma va entre paréntesis. 2 por 15, *30*.",
+    "A 50 restale el triple de 6: no hace falta paréntesis. 50 menos 18, *32*."
+   ],
+   "titulo": "DE PALABRAS A CÁLCULO",
+   "columnas": [
+    "Enunciado",
+    "Cálculo",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "El doble de la suma de 7 y 8",
+     "2 × (7 + 8)",
+     "30"
+    ],
+    [
+     "A 50 restale el triple de 6",
+     "50 − 3 × 6",
+     "32"
+    ]
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Volvamos al monstruo del principio.",
+    "Paréntesis: 6 menos 1, *5*.",
+    "Corchete: 4 por 5, más 3, *23*.",
+    "Llave: 30 menos 23, 7. Y 2 por 7: *14*. ¡Domado!"
+   ],
+   "pasos": [
+    "2 × {30 − [4 × (6 − 1) + 3]}",
+    "2 × {30 − [4 × 5 + 3]}",
+    "2 × {30 − 23}",
+    "2 × 7 = 14"
+   ],
+   "notas": [
+    "el monstruo del principio",
+    "paréntesis: 6 − 1 = 5",
+    "corchete: 20 + 3 = 23",
+    "llave: 30 − 23 = 7"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para evitar.",
+    "Resolver afuera antes que adentro: en 2 por 10 menos 3 más 1, primero va el paréntesis. Da *12*, no 16.",
+    "Y saltearte el paréntesis que está *adentro* del corchete: siempre va primero."
+   ],
+   "items": [
+    {
+     "mal": "2 × [10 − (3 + 1)] = 20 − 4 = 16",
+     "bien": "2 × [10 − 4] = 2 × 6 = 12"
+    },
+    {
+     "mal": "Saltear el ( ) de adentro",
+     "bien": "El ( ) va siempre primero"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: cada vez que resolvés un signo, *copiá el cálculo de nuevo*. Así no te salteás nada."
+   ],
+   "titulo": "REESCRIBÍ EN CADA PASO",
+   "texto": "Cada vez que resolvés un signo, copiá el cálculo de nuevo",
+   "emoji": "📝"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Paréntesis* adentro, *corchetes* en el medio, *llaves* afuera.",
+    "Se resuelve de *adentro hacia afuera*.",
+    "Agregar paréntesis *cambia el resultado*.",
+    "Y las palabras te dicen *qué agrupar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SIGNOS",
+     "( ) adentro · [ ] medio · { } afuera"
+    ],
+    [
+     "ORDEN",
+     "de adentro hacia afuera"
+    ],
+    [
+     "AGREGAR PARÉNTESIS",
+     "(12 − 4) ÷ 2 = 4"
+    ],
+    [
+     "ENUNCIADOS",
+     "el doble de la suma: 2 × (7 + 8)"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
