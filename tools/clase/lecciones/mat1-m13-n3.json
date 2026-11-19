@@ -1,0 +1,195 @@
+{
+ "slug": "mat1-m13-n3",
+ "step_id": "a8dd7e3d-c4fb-40a4-a447-391803936fc8",
+ "materia": "Matemática I",
+ "titulo": "Regla de los signos en cálculos combinados",
+ "sub": "Matemática I · Misión 13 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: ¿cuánto es menos 3 más 4 por menos 2? Tenés 5 segundos.",
+    "¡*Menos 11*! Primero la multiplicación: 4 por menos 2 es menos 8. Y menos 3 más menos 8, menos 11.",
+    "Hoy: *cálculos combinados con signos*."
+   ],
+   "texto": "(−3) + 4 × (−2) = ?",
+   "segundos": 5,
+   "respuesta": "−11",
+   "emoji": "🧮",
+   "titulo": "CÁLCULOS COMBINADOS",
+   "sub": "con la regla de los signos"
+  },
+  {
+   "t": "ciclo",
+   "voz": [
+    "El orden *de siempre*.",
+    "Primero, *paréntesis*.",
+    "Después, *potencias*.",
+    "Después, *por y dividido*, con la regla de los signos.",
+    "Al final, *más y menos*."
+   ],
+   "titulo": "JERARQUÍA",
+   "items": [
+    {
+     "txt": "Paréntesis",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Potencias",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "× y ÷ (signos)",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "+ y −",
+     "emoji": "4️⃣"
+    }
+   ]
+  },
+  {
+   "t": "descomponer",
+   "voz": [
+    "La *distributiva* con negativos: menos 2 por, paréntesis, 5 menos 3.",
+    "El menos 2 multiplica *a cada término*, con su signo.",
+    "Menos 2 por 5 es menos 10; menos 2 por menos 3 es *más 6*.",
+    "Sumamos todo…",
+    "¡*Menos 4*! Y comprobamos: menos 2 por 2, menos 4."
+   ],
+   "numero": "−2(5−3)",
+   "titulo": "DISTRIBUIR UN NEGATIVO",
+   "partes": [
+    "−10",
+    "+6"
+   ],
+   "signo": " ",
+   "resultado": "= −4 ✓"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "El momento más tramposo: *menos 3 al cuadrado* contra *menos 3 entre paréntesis al cuadrado*.",
+    "Con paréntesis, la base es menos 3: menos 3 por menos 3, *9*.",
+    "Sin paréntesis, la base es 3 y el menos queda afuera: *menos 9*.",
+    "La potencia afecta *solo a lo que tiene pegado*."
+   ],
+   "a": {
+    "cab": "(−3)²",
+    "texto": "(−3) × (−3) = 9",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "−3²",
+    "texto": "−(3 × 3) = −9",
+    "emoji": "⚠️"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "CLAVE",
+    "texto": "La potencia afecta solo a lo que tiene pegado"
+   }
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Un cálculo largo: menos 12 dividido menos 4, menos 2 por menos 5.",
+    "Menos 12 dividido menos 4: *3*.",
+    "2 por menos 5: menos 10. Y restar menos 10 es *sumar 10*.",
+    "3 más 10: ¡*13*!"
+   ],
+   "titulo": "(−12) ÷ (−4) − 2 × (−5)",
+   "items": [
+    "(−12) ÷ (−4) = 3",
+    "− 2 × (−5) = + 10",
+    "3 + 10 = 13"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuánto es menos 4 por, paréntesis, 3 menos 5?",
+    "¿Menos 8 u 8?",
+    "¡*8*! Menos 4 por 3, menos 12; menos 4 por menos 5, *más 20*. Total: 8."
+   ],
+   "pregunta": "−4 × (3 − 5) = ?",
+   "opciones": [
+    "−8",
+    "8"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío final: 5 menos 3 por menos 4, más menos 20 dividido 5.",
+    "Primero por y dividido: 3 por menos 4 es menos 12, y menos 20 dividido 5, menos 4.",
+    "Queda 5 menos menos 12, más menos 4: o sea 5 más 12 menos 4.",
+    "¡*13*!"
+   ],
+   "pasos": [
+    "5 − 3 × (−4) + (−20) ÷ 5",
+    "5 − (−12) + (−4)",
+    "5 + 12 − 4",
+    "= 13"
+   ],
+   "notas": [
+    "",
+    "× y ÷ primero",
+    "doble signo",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Perder el signo al distribuir: menos 4 por, paréntesis, 3 menos 5, da *8*.",
+    "Y confundir menos 3 al cuadrado con menos 3 entre paréntesis al cuadrado: *menos 9 y 9*."
+   ],
+   "items": [
+    {
+     "mal": "−4 × (3 − 5) = −12 − 20",
+     "bien": "−12 + 20 = 8"
+    },
+    {
+     "mal": "−3² = 9",
+     "bien": "−3² = −9 · (−3)² = 9"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Orden*: paréntesis, potencias, por y dividido, más y menos.",
+    "*Distributiva*: el factor multiplica cada término con su signo.",
+    "La potencia afecta *a lo que tiene pegado*.",
+    "Y restar un negativo *suma*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORDEN",
+     "( ) → potencias → × ÷ → + −"
+    ],
+    [
+     "DISTRIBUTIVA",
+     "−2 × (5 − 3) = −10 + 6"
+    ],
+    [
+     "POTENCIA",
+     "−3² = −9 · (−3)² = 9"
+    ],
+    [
+     "DOBLE SIGNO",
+     "− (−10) = + 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

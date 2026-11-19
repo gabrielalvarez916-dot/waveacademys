@@ -1,0 +1,196 @@
+{
+ "slug": "mat1-m13-n4",
+ "step_id": "0446c896-4747-49a4-8b61-a58eca86765e",
+ "materia": "Matemática I",
+ "titulo": "Potencias y raíces de enteros",
+ "sub": "Matemática I · Misión 13 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Menos 2 elevado a la cuarta. ¿Positivo o negativo?",
+    "¡*16*, positivo! Cuatro negativos multiplicados se emparejan.",
+    "Hoy: *potencias y raíces de enteros*."
+   ],
+   "grande": "(−2)⁴",
+   "final": "16",
+   "titulo": "POTENCIAS Y RAÍCES",
+   "sub": "de enteros"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Mirá las potencias de menos 2.",
+    "Al cuadrado: menos 2 por menos 2, *4*.",
+    "Al cubo: tres factores negativos, *menos 8*.",
+    "A la cuarta: cuatro factores, *16*."
+   ],
+   "titulo": "POTENCIAS DE −2",
+   "columnas": [
+    "Potencia",
+    "Producto",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "(−2)²",
+     "(−2) × (−2)",
+     "4"
+    ],
+    [
+     "(−2)³",
+     "(−2) × (−2) × (−2)",
+     "−8"
+    ],
+    [
+     "(−2)⁴",
+     "(−2) × (−2) × (−2) × (−2)",
+     "16"
+    ]
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "La regla: base negativa con exponente *par*, resultado *positivo*.",
+    "Con exponente *impar*, resultado *negativo*. ¡Es contar negativos!"
+   ],
+   "antes": {
+    "cab": "EXPONENTE PAR",
+    "emoji": "✌️",
+    "texto": "(−2)⁴ = 16 · positivo"
+   },
+   "despues": {
+    "cab": "EXPONENTE IMPAR",
+    "emoji": "☝️",
+    "texto": "(−2)³ = −8 · negativo"
+   }
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Y otra vez, ojo con los paréntesis: menos 2 al cuadrado sin paréntesis es *menos 4*; con paréntesis, *4*."
+   ],
+   "texto": "−2² = −4 · (−2)² = 4",
+   "emoji": "⚠️"
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "Raíces de enteros. La *raíz cúbica* de un negativo *existe* y es negativa.",
+    "Raíz cúbica de menos 8: *menos 2*, porque menos 2 al cubo es menos 8.",
+    "Pero la *raíz cuadrada* de un negativo *no existe*: ningún número al cuadrado da negativo."
+   ],
+   "causa": {
+    "txt": "Raíces de negativos",
+    "emoji": "🌱"
+   },
+   "items": [
+    {
+     "txt": "∛(−8) = −2 ✓",
+     "emoji": "✅"
+    },
+    {
+     "txt": "√(−4) no existe ✗",
+     "emoji": "🚫"
+    }
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Sorpresa: el *menos 1* es el más fácil de elevar.",
+    "A cualquier exponente par da *1*; a cualquier impar, *menos 1*. ¡Menos 1 a la 100 es 1!"
+   ],
+   "numero": 1,
+   "texto": "(−1)¹⁰⁰ = 1 · (−1)¹⁰¹ = −1",
+   "emoji": "🎢"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Las propiedades valen igual: menos 2 al cubo por menos 2 al cuadrado…",
+    "… es menos 2 a la quinta: *se suman los exponentes*.",
+    "Quinta, impar: ¡*menos 32*!"
+   ],
+   "pasos": [
+    "(−2)³ × (−2)²",
+    "(−2)⁵",
+    "= −32"
+   ],
+   "notas": [
+    "",
+    "3 + 2 = 5",
+    "impar → negativo"
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: menos 3 al cubo, más menos 2 a la cuarta, menos raíz cúbica de menos 64.",
+    "Menos 3 al cubo: impar, *menos 27*.",
+    "Menos 2 a la cuarta: par, *16*.",
+    "Raíz cúbica de menos 64: *menos 4*.",
+    "Menos 27 más 16 menos menos 4: menos 27 más 16 más 4. ¡*Menos 7*!"
+   ],
+   "titulo": "(−3)³ + (−2)⁴ − ∛(−64)",
+   "items": [
+    "(−3)³ = −27",
+    "(−2)⁴ = 16",
+    "∛(−64) = −4",
+    "−27 + 16 + 4 = −7"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que menos 2 a la cuarta es negativo: es *16*, exponente par.",
+    "Y pensar que menos 2 al cuadrado, sin paréntesis, da 4: da *menos 4*."
+   ],
+   "items": [
+    {
+     "mal": "(−2)⁴ = −16",
+     "bien": "= 16 (par)"
+    },
+    {
+     "mal": "−2² = 4",
+     "bien": "−2² = −4"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Base negativa: exponente *par, positivo*; *impar, negativo*.",
+    "*Paréntesis*: cambian todo.",
+    "*Raíz cúbica* de negativo: existe. *Cuadrada*: no.",
+    "Las *propiedades* valen igual.",
+    "¡Misión 13 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PAR / IMPAR",
+     "(−2)⁴ = 16 · (−2)³ = −8"
+    ],
+    [
+     "PARÉNTESIS",
+     "−2² = −4 · (−2)² = 4"
+    ],
+    [
+     "RAÍCES",
+     "∛(−8) = −2 · √(−4) ✗"
+    ],
+    [
+     "PROPIEDADES",
+     "(−2)³ × (−2)² = −32"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

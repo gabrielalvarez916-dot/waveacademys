@@ -1,0 +1,193 @@
+{
+ "slug": "mat1-m13-n2",
+ "step_id": "c475ee14-76de-4cb0-a518-28a985a16f2e",
+ "materia": "Matemática I",
+ "titulo": "División de enteros",
+ "sub": "Matemática I · Misión 13 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Tomi y 3 amigos rompieron una ventana jugando a la pelota: deben *20.000 pesos* entre los 4.",
+    "Cada uno se lleva una deuda de… *5.000*. Menos 20.000 dividido 4: menos 5.000.",
+    "Un amigo propone: ¿y si lo dividimos entre 0 personas? ¡*Imposible*!",
+    "Hoy: *dividir enteros*, y por qué no se divide por cero."
+   ],
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧒"
+   },
+   "lugar": "⚽",
+   "lineas": [
+    "Rompieron una ventana: deuda de $20.000",
+    "Son 4 amigos",
+    "¿Cuánto debe cada uno?"
+   ],
+   "titulo": "DIVISIÓN DE ENTEROS",
+   "sub": "misma regla de signos"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Para dividir enteros, dividís los valores absolutos…",
+    "… y el signo sigue *la misma regla que la multiplicación*: iguales, positivo; distintos, negativo."
+   ],
+   "palabra": "Dividir enteros",
+   "texto": "Dividir valores absolutos · signos: misma regla que ×",
+   "emoji": "➗"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Tres ejemplos.",
+    "Menos 20 dividido 4: distintos, *menos 5*.",
+    "Menos 18 dividido menos 3: iguales, *6*.",
+    "15 dividido menos 5: distintos, *menos 3*."
+   ],
+   "titulo": "DIVIDIR CON SIGNOS",
+   "columnas": [
+    "División",
+    "Signos",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "(−20) ÷ 4",
+     "distintos",
+     "−5"
+    ],
+    [
+     "(−18) ÷ (−3)",
+     "iguales",
+     "6"
+    ],
+    [
+     "15 ÷ (−5)",
+     "distintos",
+     "−3"
+    ]
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Siempre podés *comprobar multiplicando*: 4 por menos 5 da menos 20. ¡Cierra!"
+   ],
+   "titulo": "COMPROBÁ",
+   "texto": "(−20) ÷ 4 = −5 porque 4 × (−5) = −20",
+   "emoji": "✅"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Dos casos con el cero.",
+    "Cero dividido cualquier número da *cero*: 0 dividido menos 7, 0.",
+    "Pero *dividir por cero no se puede*: ningún número por 0 da menos 7."
+   ],
+   "a": {
+    "cab": "0 ÷ (−7)",
+    "texto": "= 0 ✓",
+    "emoji": "🙂"
+   },
+   "b": {
+    "cab": "(−7) ÷ 0",
+    "texto": "¡No existe! ✗",
+    "emoji": "🚫"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Momento difícil: menos 17 dividido 5, *con resto*. El resto tiene que ser *positivo o cero*, y menor que 5.",
+    "Probamos cociente menos 3: 5 por menos 3 es menos 15. Para llegar a menos 17 habría que *restar*: no sirve.",
+    "Probamos menos 4: 5 por menos 4 es menos 20, y de menos 20 a menos 17 *sumamos 3*.",
+    "Cociente *menos 4*, resto *3*."
+   ],
+   "titulo": "(−17) ÷ 5 CON RESTO",
+   "items": [
+    {
+     "txt": "Resto ≥ 0 y < 5",
+     "emoji": "📏"
+    },
+    {
+     "txt": "5 × (−3) = −15 ✗",
+     "emoji": "❌"
+    },
+    {
+     "txt": "5 × (−4) = −20, +3",
+     "emoji": "✅"
+    },
+    {
+     "txt": "−17 = 5 × (−4) + 3",
+     "emoji": "🎯"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuánto es menos 84 dividido menos 7?",
+    "¿Menos 12 o 12?",
+    "¡*12*! Signos iguales, positivo. Comprobamos: menos 7 por 12, menos 84."
+   ],
+   "pregunta": "(−84) ÷ (−7) = ?",
+   "opciones": [
+    "−12",
+    "12"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Dividir por cero*: no tiene resultado.",
+    "Y dar un *resto negativo*: el resto siempre es positivo o cero."
+   ],
+   "items": [
+    {
+     "mal": "(−7) ÷ 0 = 0",
+     "bien": "No se puede dividir por 0"
+    },
+    {
+     "mal": "(−17) ÷ 5: resto −2",
+     "bien": "Cociente −4, resto 3"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Signos*: misma regla que la multiplicación.",
+    "*Comprobá* multiplicando.",
+    "Cero dividido algo, *cero*; *por cero, nunca*.",
+    "Con resto: *resto positivo o cero*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SIGNOS",
+     "(−18) ÷ (−3) = 6"
+    ],
+    [
+     "COMPROBAR",
+     "4 × (−5) = −20"
+    ],
+    [
+     "CERO",
+     "0 ÷ a = 0 · a ÷ 0 ✗"
+    ],
+    [
+     "RESTO",
+     "−17 = 5 × (−4) + 3"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "slug": "mat1-m13-n1",
+ "step_id": "66499c11-f9eb-4bd6-a06e-1e2b227294f8",
+ "materia": "Matemática I",
+ "titulo": "Multiplicación de enteros",
+ "sub": "Matemática I · Misión 13 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Lu le escribe a Juan: ¿menos por menos da menos, no?",
+    "Juan: ¡No! Da *más*. Es como el enemigo de mi enemigo… *es mi amigo*.",
+    "Lu: ¿y eso tiene explicación? Juan: ¡obvio! Mirá la clase.",
+    "Hoy: *multiplicar enteros* y la famosa regla de los signos."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Menos por menos da menos? 🤔"
+    },
+    {
+     "yo": true,
+     "txt": "¡Da MÁS! El enemigo de mi enemigo es mi amigo 😎"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y por qué? 🧐"
+    }
+   ],
+   "titulo": "MULTIPLICAR ENTEROS",
+   "sub": "la regla de los signos"
+  },
+  {
+   "t": "agrupar",
+   "voz": [
+    "Multiplicar por un positivo es *sumar varias veces*. 3 por menos 4…",
+    "… es menos 4, más menos 4, más menos 4…",
+    "… ¡*menos 12*! Tres deudas de 4 son una deuda de 12."
+   ],
+   "niveles": [
+    {
+     "nombre": "Una deuda de $4",
+     "valor": "−4",
+     "icono": "💸"
+    },
+    {
+     "nombre": "Tres deudas",
+     "valor": "3 × (−4)",
+     "icono": "🧾"
+    }
+   ],
+   "salto": "= −12"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "La *regla de los signos*: multiplicás los valores absolutos y elegís el signo.",
+    "Más por más: *más*. 3 por 4, 12.",
+    "Menos por menos: *más*. Menos 3 por menos 4, 12.",
+    "Más por menos: *menos*. 3 por menos 4, menos 12.",
+    "Menos por más: *menos*. Menos 3 por 4, menos 12."
+   ],
+   "titulo": "LA REGLA DE LOS SIGNOS",
+   "celdas": [
+    {
+     "cab": "+ × + = +",
+     "txt": "3 × 4 = 12"
+    },
+    {
+     "cab": "− × − = +",
+     "txt": "(−3) × (−4) = 12"
+    },
+    {
+     "cab": "+ × − = −",
+     "txt": "3 × (−4) = −12"
+    },
+    {
+     "cab": "− × + = −",
+     "txt": "(−3) × 4 = −12"
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Para memorizar: *signos iguales, positivo*. *Signos distintos, negativo*."
+   ],
+   "texto": "Iguales → + · Distintos → −",
+   "emoji": "🧠"
+  },
+  {
+   "t": "linea",
+   "voz": [
+    "¿Por qué menos por menos da más? Mirá el patrón. Menos 3 por 2: menos 6. Por 1: menos 3.",
+    "Menos 3 por 0: *0*. Cada vez que el segundo baja 1, el resultado *sube 3*.",
+    "Seguimos: menos 3 por menos 1… ¡*3*!",
+    "Y menos 3 por menos 2: ¡*6*! El patrón no miente."
+   ],
+   "titulo": "EL PATRÓN",
+   "eventos": [
+    {
+     "fecha": "(−3) × 2 · × 1",
+     "txt": "−6 · −3",
+     "emoji": "⬆️"
+    },
+    {
+     "fecha": "(−3) × 0",
+     "txt": "0",
+     "emoji": "⬆️"
+    },
+    {
+     "fecha": "(−3) × (−1)",
+     "txt": "3",
+     "emoji": "⬆️"
+    },
+    {
+     "fecha": "(−3) × (−2)",
+     "txt": "6",
+     "emoji": "🤯"
+    }
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Con varios factores: *contá los negativos*.",
+    "Cantidad *par*: positivo. Menos 2 por 3 por menos 5: dos negativos, *30*.",
+    "Cantidad *impar*: negativo. Menos 1 por menos 2 por menos 3: tres negativos, *menos 6*."
+   ],
+   "cajas": [
+    {
+     "cab": "PAR DE NEGATIVOS → +",
+     "emoji": "✌️"
+    },
+    {
+     "cab": "IMPAR → −",
+     "emoji": "☝️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "(−2) × 3 × (−5) = 30",
+     "caja": 0
+    },
+    {
+     "txt": "(−1) × (−2) × (−3) = −6",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuánto es menos 3 por menos 4?",
+    "¿Menos 7, menos 12 o 12?",
+    "¡*12*! Signos iguales, positivo. Y es *por*, no más: no es menos 7."
+   ],
+   "pregunta": "(−3) × (−4) = ?",
+   "opciones": [
+    "−7",
+    "−12",
+    "12"
+   ],
+   "correcta": 2
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: menos 4, por 5, por menos 2, por menos 1. Contamos negativos: menos 4, menos 2 y menos 1. Son *tres*: impar.",
+    "El resultado será *negativo*.",
+    "Valores absolutos: 4 por 5 por 2 por 1, *40*. Resultado: ¡*menos 40*!"
+   ],
+   "pasos": [
+    "(−4) × 5 × (−2) × (−1)",
+    "3 negativos → −",
+    "4 × 5 × 2 × 1 = 40 → −40"
+   ],
+   "notas": [
+    "",
+    "impar",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que menos por menos es menos: menos 5 por menos 2 da *10*.",
+    "Y sumar en vez de multiplicar: menos 3 por menos 4 *no es menos 7*."
+   ],
+   "items": [
+    {
+     "mal": "(−5) × (−2) = −10",
+     "bien": "= 10"
+    },
+    {
+     "mal": "(−3) × (−4) = −7",
+     "bien": "= 12"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Por un positivo: *suma repetida*.",
+    "*Iguales*, positivo; *distintos*, negativo.",
+    "El *patrón* explica por qué menos por menos da más.",
+    "Varios factores: *contá los negativos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUMA REPETIDA",
+     "3 × (−4) = −12"
+    ],
+    [
+     "SIGNOS",
+     "iguales + · distintos −"
+    ],
+    [
+     "PATRÓN",
+     "(−3) × (−1) = 3"
+    ],
+    [
+     "VARIOS",
+     "negativos par → + · impar → −"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
