@@ -11,11 +11,50 @@ RATE = os.environ.get('RATE', '+25%')
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
 
+U = 'cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete veintiocho veintinueve'.split()
+D = {3: 'treinta', 4: 'cuarenta', 5: 'cincuenta', 6: 'sesenta', 7: 'setenta', 8: 'ochenta', 9: 'noventa'}
+C = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos']
+
+
+def _menos_de_mil(n):
+    if n == 100: return 'cien'
+    c, r = divmod(n, 100); out = [C[c]] if c else []
+    if r:
+        if r < 30: out.append(U[r])
+        else:
+            d, u = divmod(r, 10); out.append(D[d] + (' y ' + U[u] if u else ''))
+    return ' '.join(out)
+
+
+def en_letras(n):  # 4205 -> cuatro mil doscientos cinco
+    if n < 1000: return U[n] if n < 30 else _menos_de_mil(n)
+    if n < 1_000_000:
+        m, r = divmod(n, 1000)
+        pre = 'mil' if m == 1 else re.sub(r'uno$', 'ún', en_letras(m)).replace('veintiún', 'veintiún') + ' mil'
+        return pre + (' ' + en_letras(r) if r else '')
+    m, r = divmod(n, 1_000_000)
+    pre = 'un millón' if m == 1 else re.sub(r'uno$', 'ún', en_letras(m)) + ' millones'
+    return pre + (' ' + en_letras(r) if r else '')
+
+
+LETRA = {'M': 'eme', 'D': 'de', 'C': 'ce', 'L': 'ele', 'X': 'equis', 'V': 've', 'I': 'i'}
+
+
+def decir_numeros(s):
+    s = re.sub(r'\b[MDCLXVI]{2,}\b', lambda m: ', '.join(LETRA[c] for c in m.group(0)), s)  # romanos: letra por letra
+    def num(m):
+        n = int(m.group(0).replace('.', ''))
+        sig = s[m.end():m.end() + 2]
+        w = en_letras(n)
+        return 'un' if n == 1 and re.match(r' [a-záéíóú]', sig) else w  # "1 grupo" -> "un grupo"
+    return re.sub(r'\d{1,3}(?:\.\d{3})+(?!\d)|\d+', num, s)
+
+
 def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = s.replace('*', '')
     s = re.sub(r'\s*\+\s*', ' más ', s)
     s = re.sub(r'\s*×\s*', ' por ', s)
-    return s.replace('\\u2026', '…').strip()
+    return decir_numeros(s.replace('\\u2026', '…')).strip()
 
 
 def frases(src):
