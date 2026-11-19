@@ -357,7 +357,8 @@
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div></div>' +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
-    var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.actual');
+    // arranca en el primer círculo abierto y sin terminar de ESTA misión (nivel 1 si nunca se tocó; si no, donde quedó)
+    var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.libre');
     if (fila && act) setTimeout(function () { fila.scrollLeft = Math.max(0, act.offsetLeft - fila.clientWidth / 2 + act.offsetWidth / 2); }, 0);
   }
 
