@@ -1,6 +1,6 @@
 # Clases animadas de Wave — guía para armar una lección
 
-Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a `main`, GitHub graba la voz (Jorge, Microsoft, +25 %) y arma el HTML (`tools/clase/dist/<slug>.html`). Después se carga en el paso de video de su nivel (`lesson_steps.content.clase_html`, `clase: true`).
+Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a `main`, GitHub graba la voz (Jorge, Microsoft, +25 %) y arma el HTML (`tools/clase/dist/<slug>.html`). Después **la carga sola en la plataforma** (`tools/clase/cargar.py` → función `cargar_clase`): en el paso de video del nivel si la lección tiene `step_id`, o en la introducción de la materia si tiene `subject_id`.
 
 ## Formato
 
