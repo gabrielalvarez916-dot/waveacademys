@@ -1,0 +1,204 @@
+{
+ "slug": "mat1-m14-n4",
+ "step_id": "6e6f05bf-9f3a-40a5-a182-5d909d5aa158",
+ "materia": "Matemática I",
+ "titulo": "Porcentajes",
+ "sub": "Matemática I · Misión 14 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: unas zapatillas de 45.000 pesos tienen *20% de descuento*. ¿Cuánto pagás? 5 segundos.",
+    "¡*36.000*! Te descuentan 9.000.",
+    "Hoy: *porcentajes*, para no caer en ninguna oferta trucha."
+   ],
+   "texto": "Zapatillas de $45.000 con 20% OFF. ¿Cuánto pagás?",
+   "segundos": 5,
+   "respuesta": "$36.000",
+   "emoji": "👟",
+   "titulo": "PORCENTAJES",
+   "sub": "cuántos de cada 100"
+  },
+  {
+   "t": "porcentaje",
+   "voz": [
+    "Un *porcentaje* es una razón con denominador 100. 25% es 25 de cada 100…",
+    "… o sea, 25/100: *un cuarto*."
+   ],
+   "valor": 25,
+   "txt": "25% = 25/100 = 1/4",
+   "emoji": "🍕"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Equivalencias que conviene saber de memoria.",
+    "50%: la mitad, 0,5.",
+    "25%: un cuarto, 0,25.",
+    "75%: tres cuartos, 0,75.",
+    "10%: un décimo, 0,1.",
+    "20%: un quinto, 0,2."
+   ],
+   "titulo": "EQUIVALENCIAS ÚTILES",
+   "columnas": [
+    "Porcentaje",
+    "Fracción",
+    "Decimal"
+   ],
+   "filas": [
+    [
+     "50%",
+     "1/2",
+     "0,5"
+    ],
+    [
+     "25%",
+     "1/4",
+     "0,25"
+    ],
+    [
+     "75%",
+     "3/4",
+     "0,75"
+    ],
+    [
+     "10%",
+     "1/10",
+     "0,1"
+    ],
+    [
+     "20%",
+     "1/5",
+     "0,2"
+    ]
+   ]
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Porcentaje de una cantidad: multiplicás por el decimal. 20% de 50: 50 por 0,2.",
+    "¡Da *10*! No es 20 por 50."
+   ],
+   "filas": [
+    "50",
+    "0,2"
+   ],
+   "op": "×",
+   "resultado": "10"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Descuentos y aumentos.",
+    "*Descuento*: calculás el porcentaje y *restás*. 8.000 con 15% de descuento: 8.000 menos 1.200, *6.800*.",
+    "*Aumento*: calculás y *sumás*. 4.500 con 10% de aumento: 4.500 más 450, *4.950*."
+   ],
+   "a": {
+    "cab": "DESCUENTO",
+    "texto": "$8.000 − 15% = $6.800",
+    "emoji": "🏷️"
+   },
+   "b": {
+    "cab": "AUMENTO",
+    "texto": "$4.500 + 10% = $4.950",
+    "emoji": "📈"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "¿Qué porcentaje es? En un curso de 25 alumnos, 5 usan anteojos. Razón: 5/25.",
+    "Llevada a 100: 20/100, ¡el *20%*!"
+   ],
+   "num": 1,
+   "den": 5,
+   "forma": "barra",
+   "txt": "5/25 = 20/100 = 20%"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco pro: con 20% de descuento pagás el *80%*. 45.000 por 0,8: 36.000, en una sola cuenta."
+   ],
+   "titulo": "PAGÁS EL RESTO",
+   "texto": "20% OFF → pagás el 80% → × 0,8",
+   "emoji": "⚡"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Las zapatillas del principio, paso a paso.",
+    "20% de 45.000: 45.000 por 0,2, *9.000*.",
+    "45.000 menos 9.000: *36.000*.",
+    "O directo: 45.000 por 0,8, *36.000*. ¡Mismo resultado!"
+   ],
+   "titulo": "LAS ZAPATILLAS",
+   "items": [
+    {
+     "txt": "20% de 45.000 = 9.000",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "45.000 − 9.000 = 36.000",
+     "emoji": "➖"
+    },
+    {
+     "txt": "45.000 × 0,8 = 36.000",
+     "emoji": "⚡"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Multiplicar por el porcentaje entero: el 20% de 50 *no es 1.000*: es 10.",
+    "Y confundir porcentaje con cantidad: el 25% de 80 es *20*, no 25."
+   ],
+   "items": [
+    {
+     "mal": "20% de 50 = 20 × 50",
+     "bien": "50 × 0,2 = 10"
+    },
+    {
+     "mal": "25% de 80 = 25",
+     "bien": "80 × 0,25 = 20"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Porcentaje*: de cada 100.",
+    "*De una cantidad*: multiplicar por el decimal.",
+    "*Descuento* resta, *aumento* suma.",
+    "*Qué porcentaje es*: parte sobre total, llevado a 100.",
+    "¡Misión 14 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PORCENTAJE",
+     "25% = 1/4 = 0,25"
+    ],
+    [
+     "DE UNA CANTIDAD",
+     "20% de 50 = 10"
+    ],
+    [
+     "DESCUENTO / AUMENTO",
+     "− / +"
+    ],
+    [
+     "QUÉ % ES",
+     "5/25 = 20%"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

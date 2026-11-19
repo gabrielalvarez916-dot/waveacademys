@@ -1,0 +1,205 @@
+{
+ "slug": "mat1-m14-n1",
+ "step_id": "6f81ff45-6e42-4366-86da-31ebb209fbcd",
+ "materia": "Matemática I",
+ "titulo": "Razones y proporciones",
+ "sub": "Matemática I · Misión 14 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Marta prepara jugo: 6 vasos de agua por cada 2 de concentrado. ¡Queda perfecto!",
+    "Para el cumple necesita el triple. ¿Le agrega 4 vasos de agua más? ¡No!",
+    "Tiene que mantener *la razón*: 3 vasos de agua por cada vaso de jugo.",
+    "Hoy: *razones y proporciones*."
+   ],
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👩"
+   },
+   "lugar": "🧃",
+   "lineas": [
+    "6 vasos de agua · 2 de jugo",
+    "Para el cumple: ¡el triple!",
+    "¿Cómo mantiene el sabor?"
+   ],
+   "titulo": "RAZONES Y PROPORCIONES",
+   "sub": "comparar con divisiones"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *razón* entre dos cantidades es su *cociente*: cuántas veces una contiene a la otra.",
+    "Agua sobre jugo: 6 sobre 2, *3*. Hay 3 vasos de agua por cada vaso de jugo."
+   ],
+   "palabra": "Razón",
+   "texto": "Cociente entre dos cantidades: agua/jugo = 6/2 = 3",
+   "emoji": "⚖️"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Ojo: la razón *no es la diferencia*.",
+    "6 menos 2 da 4, pero eso no dice nada del sabor.",
+    "Y el orden importa: jugo sobre agua es 2 sobre 6, *un tercio*."
+   ],
+   "a": {
+    "cab": "RAZÓN",
+    "texto": "6/2 = 3 ✓",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "DIFERENCIA",
+    "texto": "6 − 2 = 4 ✗",
+    "emoji": "❌"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "partes",
+   "voz": [
+    "Una *proporción* es una igualdad entre dos razones: 2/3 igual a 4/6.",
+    "Los de las puntas, 2 y 6, son los *extremos*.",
+    "Los del medio, 3 y 4, son los *medios*."
+   ],
+   "emoji": "🟰",
+   "titulo": "2/3 = 4/6",
+   "partes": [
+    {
+     "txt": "Extremos: 2 y 6",
+     "x": -0.6,
+     "y": -0.5
+    },
+    {
+     "txt": "Medios: 3 y 4",
+     "x": 0.6,
+     "y": 0.5
+    }
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "La *propiedad fundamental*: el producto de los extremos es igual al de los medios.",
+    "2 por 6, 12.",
+    "3 por 4, 12. ¡Equilibrio! Por eso es una proporción."
+   ],
+   "izq": {
+    "cab": "EXTREMOS",
+    "items": [
+     "2 × 6 = 12"
+    ]
+   },
+   "der": {
+    "cab": "MEDIOS",
+    "items": [
+     "3 × 4 = 12"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Superpoder: calcular *lo que falta*. 3/5 igual a x/20.",
+    "Extremos: 3 por 20, 60. Medios: 5 por x.",
+    "5 por x es 60: x es 60 dividido 5…",
+    "… ¡*12*! Comprobamos: 3/5 igual a 12/20."
+   ],
+   "pasos": [
+    "3/5 = x/20",
+    "5 × x = 3 × 20 = 60",
+    "x = 60 ÷ 5",
+    "x = 12"
+   ],
+   "notas": [
+    "",
+    "medios = extremos",
+    "",
+    "3/5 = 12/20 ✓"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuál es la razón entre 10 y 5?",
+    "¿5 o 2?",
+    "¡*2*! Es el cociente, no la diferencia."
+   ],
+   "pregunta": "Razón entre 10 y 5",
+   "opciones": [
+    "5",
+    "2"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: una receta lleva 3 tazas de harina por cada 2 de leche. Con 9 de harina, ¿cuánta leche?",
+    "Proporción: 3/2 igual a 9/x.",
+    "Extremos: 3 por x. Medios: 2 por 9, 18.",
+    "3 por x es 18: *x es 6*.",
+    "¡*6 tazas de leche*! Comprobamos: 3 por 6 y 2 por 9, 18 los dos."
+   ],
+   "titulo": "LA RECETA",
+   "items": [
+    "3/2 = 9/x",
+    "3 × x = 2 × 9 = 18",
+    "x = 6",
+    "3 × 6 = 2 × 9 = 18 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir razón con *diferencia*: la razón entre 10 y 5 es 2.",
+    "E *invertir el orden*: varones sobre mujeres no es lo mismo que mujeres sobre varones."
+   ],
+   "items": [
+    {
+     "mal": "Razón 10 y 5 = 5",
+     "bien": "10/5 = 2"
+    },
+    {
+     "mal": "Dar vuelta el orden",
+     "bien": "a/b ≠ b/a"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Razón*: cociente entre dos cantidades.",
+    "*Proporción*: igualdad de dos razones.",
+    "*Extremos por extremos, igual a medios por medios*.",
+    "Y así calculás *lo que falta*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RAZÓN",
+     "6/2 = 3"
+    ],
+    [
+     "PROPORCIÓN",
+     "2/3 = 4/6"
+    ],
+    [
+     "PROPIEDAD",
+     "2 × 6 = 3 × 4"
+    ],
+    [
+     "LO QUE FALTA",
+     "3/5 = 12/20"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

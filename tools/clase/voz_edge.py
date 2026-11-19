@@ -68,6 +68,7 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = re.sub(r'(\d),(0*)(?=\d)', lambda m: m.group(1) + ' coma ' + 'cero ' * len(m.group(2)), s)  # 0,075 -> 0 coma cero 75
     s = re.sub(r'\s*−\s*', ' menos ', s)
     s = re.sub(r'\s*÷\s*', ' dividido ', s)
+    s = re.sub(r'\s*%', ' por ciento', s)
     s = re.sub(r'\s*\+\s*', ' más ', s)
     s = re.sub(r'\s*×\s*', ' por ', s)
     return decir_numeros(s.replace('\\u2026', '…')).strip()
