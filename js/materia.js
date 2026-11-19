@@ -181,6 +181,7 @@
   // Un nivel = PDF, entrega de la carpeta y actividades (las "generales" son solo actividades)
   function pasosNivel(l) {
     var p = D.pasos[l.id] || {}, r = [];
+    if (p.video && p.video.tiene) r.push('video');
     if (p.pdf && p.pdf.tiene) r.push('pdf');
     if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
@@ -206,18 +207,13 @@
       var ls = t.lecciones, conGen = ls.length >= 4;
       t.niveles = conGen ? ls.slice(0, ls.length - 1) : ls;
       t.generales = conGen ? ls[ls.length - 1] : null;
-      // Cada nivel tiene su propio video (clase animada) antes del nivel: hay que verlo para entrar al nivel
+      // El video (clase animada) es el primer paso de cada nivel (ver pasosNivel)
       t.videoPaso = null;
       t.lecciones.forEach(function (l) {
         var pp = D.pasos[l.id] || {};
-        l.videoPaso = pp.video && pp.video.tiene ? pp.video : null;
-        if (l.videoPaso && !t.videoPaso) t.videoPaso = l.videoPaso;
-        l.videoHecho = !!l.videoPaso && hecho(l.videoPaso);
+        if (pp.video && pp.video.tiene && !t.videoPaso) t.videoPaso = pp.video;
         l.est = estadoLeccion(l);
         if (D.sinAcceso) l.est.vacia = false;
-        l.videoBloq = t.bloqueado || !ok;
-        if (l.videoPaso && !l.videoHecho && !l.videoBloq && !actual) actual = 'video:' + l.id;
-        if (l.videoPaso && !l.videoHecho) ok = false;
         l.bloqueada = t.bloqueado || !ok;
         if (!l.bloqueada && !l.est.completa && !l.est.vacia && !actual) { actual = l.id; }
         if (!l.est.vacia && !l.est.completa) ok = false;
@@ -315,7 +311,7 @@
     var e = l.est, cls, contenido, href = null, aviso = '';
     if (D.sinAcceso) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'La suscripción tiene que estar al día para ver el contenido.'; }
     else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 40, 3.2); aviso = 'Este nivel está en preparación.'; }
-    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = l.videoPaso && !l.videoHecho && !l.videoBloq ? 'Primero mirá el video del nivel.' : 'Primero superá el nivel anterior.'; }
+    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'Primero superá el nivel anterior.'; }
     else if (e.completa) { cls = 'hecha'; contenido = ico('check', 56, 3.2); href = base() + '/' + t.id + '/' + l.id; }
     else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = esGen ? ico('bolt', 50) : '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
     var burbuja = D.actual === l.id ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
@@ -348,8 +344,8 @@
 
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
-    var nodos = t.niveles.map(function (l, i) { return (l.videoPaso ? nodoVideo(l, i, t, false) : '') + nodoNivel(l, i, t, false); }).join('') +
-      (t.generales ? (t.generales.videoPaso ? nodoVideo(t.generales, 0, t, true) : '') + nodoNivel(t.generales, 0, t, true) : '') +
+    var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
+      (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
       (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
@@ -361,6 +357,7 @@
 
   // ----- Pantalla 3: el nivel, paso por paso (como un juego: una pantalla, un botón) -----
   var PASO_UI = {
+    video:   { icono: 'play',   color: '#087E83', titulo: 'Mirá la clase', sub: 'Una clase animada que te explica todo el nivel. Después vas a leer el PDF y practicar.', boton: 'VER LA CLASE' },
     pdf:     { icono: 'doc',    color: '#E4572E', titulo: 'Leé el PDF', sub: 'Con la explicación, los ejemplos y las consignas de tu carpeta. Tené la carpeta a mano.', boton: 'ABRIR EL PDF' },
     carpeta: { icono: 'pencil', color: '#7C5CE0', titulo: 'Entregá tu carpeta', sub: 'Escribí lo que te dio en cada consigna. Las soluciones aparecen cuando entregás todo bien.', boton: 'ENTREGAR RESPUESTAS' },
     final:   { icono: 'puzzle', color: '#E59A1B', titulo: 'Actividades', sub: 'Practicá lo que aprendiste en este nivel.', boton: 'EMPEZAR' }
