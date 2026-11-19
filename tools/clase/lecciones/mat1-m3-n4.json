@@ -1,234 +1,212 @@
 {
  "slug": "mat1-m3-n4",
- "step_id": "e700460b-bc65-4cb3-9d57-a5e0d09305ae",
+ "step_id": "c427f6f8-7b83-4bfc-9f15-e5480cc6ce77",
  "materia": "Matemática I",
- "titulo": "Cuadrados y cubos perfectos en problemas",
+ "titulo": "Operaciones con potencias y raíces",
  "sub": "Matemática I · Misión 3 · Nivel 4",
  "escenas": [
   {
    "t": "gancho",
    "voz": [
-    "Un patio cuadrado tiene 36 metros cuadrados. ¿Cuánto mide cada lado?",
-    "*6 metros*. La raíz cuadrada te lo dice.",
-    "Hoy: cuadrados y cubos en *problemas reales*."
+    "¿Raíz de 9 más 16 es 3 más 4? ¿Da 7?",
+    "*No.* Da 5. Y casi todo el mundo se equivoca.",
+    "Hoy: cómo se *opera* con potencias y raíces."
    ],
-   "grande": "36 m²",
-   "final": "6 m",
-   "titulo": "CUADRADOS Y CUBOS",
-   "sub": "en problemas"
+   "grande": "√(9 + 16)",
+   "final": "5",
+   "titulo": "POTENCIAS Y RAÍCES",
+   "sub": "cómo se opera"
   },
   {
-   "t": "comparar",
+   "t": "frase",
    "voz": [
-    "En un cuadrado de lado 7 centímetros, el *área* es lo de adentro: 7 al cuadrado, 49 centímetros cuadrados.",
-    "El *perímetro* es el borde: 4 por 7, 28 centímetros.",
-    "¡Son cosas distintas!",
-    "Y al revés: si el área es 81, el lado es *raíz de 81*: 9."
+    "Pensá la raíz como un *repartidor*: hay cuentas donde puede repartirse, y cuentas donde tiene que esperar."
    ],
-   "a": {
-    "cab": "ÁREA",
-    "texto": "7² = 49 cm²",
-    "emoji": "🟩"
-   },
-   "b": {
-    "cab": "PERÍMETRO",
-    "texto": "4 × 7 = 28 cm",
-    "emoji": "🔲"
-   },
-   "signo": "vs",
-   "def": {
-    "cab": "NO CONFUNDIR",
-    "texto": "El área es lo de adentro; el perímetro, el borde"
-   }
+   "texto": "La raíz se reparte… a veces",
+   "emoji": "🛵"
   },
   {
    "t": "definicion",
    "voz": [
-    "En un cubo, el *volumen* es lo que ocupa: la arista al cubo.",
-    "Arista 5 centímetros: 5 al cubo, *125 centímetros cúbicos*. Y al revés, se saca *raíz cúbica*."
+    "En una *multiplicación*, la raíz se reparte: raíz de 4 por 9 es raíz de 4 por raíz de 9.",
+    "2 por 3: *6*. Y raíz de 36 también da 6. ¡Mismo resultado!"
    ],
-   "palabra": "Volumen del cubo",
-   "texto": "arista³ · arista 5 cm → 5³ = 125 cm³",
-   "emoji": "📦"
+   "palabra": "Raíz de un producto",
+   "texto": "√(4 × 9) = √4 × √9 = 2 × 3 = 6",
+   "emoji": "✖️"
   },
   {
    "t": "tabla",
    "voz": [
-    "¿Cuadrado, cubo, o los dos?",
-    "36: cuadrado, porque es 6 al cuadrado.",
-    "27: cubo, porque es 3 al cubo.",
-    "64: ¡las dos cosas! 8 al cuadrado y 4 al cubo.",
-    "Y 50: ninguna de las dos."
+    "Con la *división* pasa lo mismo, y también con la raíz cúbica.",
+    "Las dos columnas siempre dan *igual*."
    ],
-   "titulo": "¿CUADRADO, CUBO O LOS DOS?",
+   "titulo": "DOS CAMINOS, MISMO RESULTADO",
    "columnas": [
-    "Número",
-    "Cuadrado perfecto",
-    "Cubo perfecto"
+    "Cálculo",
+    "Directo",
+    "Repartiendo"
    ],
    "filas": [
     [
-     "36",
-     "Sí (6²)",
-     "No"
-    ],
-    [
-     "27",
-     "No",
-     "Sí (3³)"
-    ],
-    [
-     "64",
-     "Sí (8²)",
-     "Sí (4³)"
-    ],
-    [
-     "50",
-     "No",
-     "No"
+     "√(100 ÷ 4)",
+     "√25 = 5",
+     "10 ÷ 2 = 5"
     ]
    ]
   },
   {
-   "t": "pasos",
+   "t": "comparar",
    "voz": [
-    "La clave: fijate *qué te dan* y *qué te piden*.",
-    "De lado a área: elevás *al cuadrado*.",
-    "De área a lado: *raíz cuadrada*.",
-    "De arista a volumen: *al cubo*.",
-    "Y de volumen a arista: *raíz cúbica*."
+    "Pero en una *suma*, el repartidor tiene que esperar.",
+    "Raíz de 9 más 16: primero sumás, 25, y la raíz es *5*.",
+    "Si repartís, te da 7. *Mal.*"
    ],
-   "titulo": "QUÉ TE DAN Y QUÉ TE PIDEN",
-   "items": [
-    {
-     "txt": "Lado → área: al cuadrado",
-     "emoji": "⬆️"
-    },
-    {
-     "txt": "Área → lado: raíz cuadrada",
-     "emoji": "⬇️"
-    },
-    {
-     "txt": "Arista → volumen: al cubo",
-     "emoji": "📦"
-    },
-    {
-     "txt": "Volumen → arista: raíz cúbica",
-     "emoji": "🧊"
-    }
+   "a": {
+    "cab": "√(9 + 16)",
+    "texto": "√25 = 5 ✓"
+   },
+   "b": {
+    "cab": "√9 + √16",
+    "texto": "3 + 4 = 7 ✗"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Ahora, un truco: la raíz y la potencia *se deshacen*.",
+    "Raíz de 5 al cuadrado es *5*. Y raíz de 9, al cuadrado, es 9. Una deshace a la otra."
+   ],
+   "palabra": "Se deshacen",
+   "texto": "√(5²) = 5  ·  (√9)² = 9  ·  ∛(4³) = 4",
+   "emoji": "🔄"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¿Y si sumás potencias? *No hay atajo*.",
+    "Calculás cada una: 8 más 4.",
+    "*12*. No es 2 a la quinta, que da 32."
+   ],
+   "pasos": [
+    "2³ + 2²",
+    "8 + 4",
+    "12"
+   ],
+   "notas": [
+    "no se suman los exponentes",
+    "calculá cada potencia",
+    "✓ y no 2⁵ = 32"
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "En cambio, si *multiplicás* potencias de igual base, sí: sumás los exponentes.",
+    "3 al cuadrado por 3 al cubo es 3 a la quinta: *243*."
+   ],
+   "pasos": [
+    "3² × 3³",
+    "3⁵ = 243"
+   ],
+   "notas": [
+    "igual base, se multiplican",
+    "se suman los exponentes"
    ]
   },
   {
    "t": "pasos",
    "voz": [
-    "Problema: un patio cuadrado de 36 metros cuadrados, con baldosas de un metro de lado.",
-    "El lado: raíz de 36, *6 metros*.",
-    "Las baldosas: cada una ocupa un metro cuadrado, así que van *36*.",
-    "Y para el zócalo, el borde: 4 por 6, *24 metros*."
+    "Juntemos todo en una cuenta.",
+    "Raíz de 16 por 25: repartís, 4 por 5, *20*.",
+    "2 al cubo: 8.",
+    "Raíz de 5 al cuadrado: se deshace, 5.",
+    "20 más 8 menos 5:",
+    "*23*. ¡Listo!"
    ],
-   "titulo": "EL PATIO DE 36 m²",
+   "titulo": "√(16 × 25) + 2³ − √(5²)",
    "items": [
-    {
-     "txt": "Lado: √36 = 6 m",
-     "emoji": "📏"
-    },
-    {
-     "txt": "Baldosas de 1 m²: hacen falta 36",
-     "emoji": "🟫"
-    },
-    {
-     "txt": "Zócalo: perímetro = 4 × 6 = 24 m",
-     "emoji": "🔲"
-    }
+    "√16 × √25 = 4 × 5 = 20",
+    "2³ = 8",
+    "√(5²) = 5",
+    "20 + 8 − 5",
+    "= 23 ✓"
    ]
   },
   {
-   "t": "pasos",
+   "t": "pregunta",
    "voz": [
-    "Desafío: una caja cúbica de 343 centímetros cúbicos. ¿Cuánto mide la arista?",
-    "Te dan el volumen y piden la arista: *raíz cúbica*.",
-    "Raíz cúbica de 343: *7*, porque 7 por 7 por 7 da 343.",
-    "Cada cara es un cuadrado de lado 7.",
-    "Su área: 7 al cuadrado, *49 centímetros cuadrados*."
+    "Tu turno: ¿cuánto es 5 al cuadrado menos 3 al cuadrado?",
+    "Pensalo…",
+    "*16*. 25 menos 9. No es 2 al cuadrado."
    ],
-   "titulo": "LA CAJA CÚBICA DE 343 cm³",
-   "items": [
-    {
-     "txt": "Dan el volumen, piden la arista: raíz cúbica",
-     "emoji": "🤔"
-    },
-    {
-     "txt": "∛343 = 7 cm (7 × 7 × 7 = 343)",
-     "emoji": "📦"
-    },
-    {
-     "txt": "Cada cara es un cuadrado de lado 7 cm",
-     "emoji": "🟩"
-    },
-    {
-     "txt": "Área de una cara: 7² = 49 cm²",
-     "emoji": "✅"
-    }
-   ]
+   "pregunta": "5² − 3² = ?",
+   "opciones": [
+    "4",
+    "16",
+    "2"
+   ],
+   "correcta": "16"
   },
   {
    "t": "errores",
    "voz": [
-    "Dos *errores* para evitar.",
-    "Confundir perímetro con área: lado 6, el área es *36*, no 24.",
-    "Y confundir lado con área: si el área es 49, el lado es *7*, no 49."
+    "Los dos errores más comunes:",
+    "Repartir la raíz en una *suma*.",
+    "Sumar los exponentes cuando *sumás* potencias."
    ],
    "items": [
     {
-     "mal": "Lado 6 cm → área 24 cm²",
-     "bien": "Área = 6² = 36 cm²"
+     "mal": "√(9 + 16) = 3 + 4",
+     "bien": "√(9 + 16) = √25 = 5"
     },
     {
-     "mal": "Área 49 m² → lado 49 m",
-     "bien": "Lado = √49 = 7 m"
+     "mal": "2³ + 2² = 2⁵",
+     "bien": "2³ + 2² = 8 + 4 = 12"
     }
    ]
   },
   {
    "t": "consejo",
    "voz": [
-    "Truco: *mirá la unidad*. Centímetros es largo, centímetros cuadrados es área, y cúbicos es volumen."
+    "Acordate: *producto sí, suma no*. Ante la duda, calculá cada parte por separado."
    ],
-   "titulo": "MIRÁ LA UNIDAD",
-   "texto": "cm es largo · cm² es área · cm³ es volumen",
-   "emoji": "📐"
+   "titulo": "PRODUCTO SÍ, SUMA NO",
+   "texto": "Con + y − calculá cada parte primero",
+   "emoji": "💡"
   },
   {
    "t": "resumen",
    "voz": [
     "Repasemos.",
-    "*Área* del cuadrado: lado al cuadrado.",
-    "*Volumen* del cubo: arista al cubo.",
-    "*Al revés*: raíz cuadrada o raíz cúbica.",
-    "El *perímetro* es el borde, no el área.",
-    "Y hay números que son *cuadrado y cubo* a la vez, como el 64.",
-    "¡Clase terminada! Ahora, *a practicar*."
+    "Raíz de un producto: se reparte.",
+    "Raíz de un cociente: también.",
+    "Con sumas y restas: *no*.",
+    "Raíz y potencia se deshacen.",
+    "Sumar potencias: calculás cada una.",
+    "¡Ahora a practicar!"
    ],
    "items": [
     [
-     "ÁREA",
-     "lado² · 7² = 49 cm²"
+     "PRODUCTO",
+     "√(4 × 9) = 2 × 3"
     ],
     [
-     "VOLUMEN",
-     "arista³ · 5³ = 125 cm³"
+     "COCIENTE",
+     "√(100 ÷ 4) = 10 ÷ 2"
     ],
     [
-     "AL REVÉS",
-     "lado = √área"
+     "SUMA",
+     "√(9 + 16) = 5, no 7"
     ],
     [
-     "PERÍMETRO",
-     "4 × lado"
+     "SE DESHACEN",
+     "√(5²) = 5"
     ],
     [
-     "PERFECTOS",
-     "64 = 8² = 4³"
+     "SUMAR POTENCIAS",
+     "2³ + 2² = 12"
     ]
    ],
    "fin": {

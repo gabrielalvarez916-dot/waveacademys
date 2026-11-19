@@ -1,0 +1,240 @@
+{
+ "slug": "mat1-m19-n4",
+ "step_id": "e700460b-bc65-4cb3-9d57-a5e0d09305ae",
+ "materia": "Matemática I",
+ "titulo": "Cuadrados y cubos perfectos en problemas",
+ "sub": "Matemática I · Misión 19 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Un patio cuadrado tiene 36 metros cuadrados. ¿Cuánto mide cada lado?",
+    "*6 metros*. La raíz cuadrada te lo dice.",
+    "Hoy: cuadrados y cubos en *problemas reales*."
+   ],
+   "grande": "36 m²",
+   "final": "6 m",
+   "titulo": "CUADRADOS Y CUBOS",
+   "sub": "en problemas"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "En un cuadrado de lado 7 centímetros, el *área* es lo de adentro: 7 al cuadrado, 49 centímetros cuadrados.",
+    "El *perímetro* es el borde: 4 por 7, 28 centímetros.",
+    "¡Son cosas distintas!",
+    "Y al revés: si el área es 81, el lado es *raíz de 81*: 9."
+   ],
+   "a": {
+    "cab": "ÁREA",
+    "texto": "7² = 49 cm²",
+    "emoji": "🟩"
+   },
+   "b": {
+    "cab": "PERÍMETRO",
+    "texto": "4 × 7 = 28 cm",
+    "emoji": "🔲"
+   },
+   "signo": "vs",
+   "def": {
+    "cab": "NO CONFUNDIR",
+    "texto": "El área es lo de adentro; el perímetro, el borde"
+   }
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "En un cubo, el *volumen* es lo que ocupa: la arista al cubo.",
+    "Arista 5 centímetros: 5 al cubo, *125 centímetros cúbicos*. Y al revés, se saca *raíz cúbica*."
+   ],
+   "palabra": "Volumen del cubo",
+   "texto": "arista³ · arista 5 cm → 5³ = 125 cm³",
+   "emoji": "📦"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "¿Cuadrado, cubo, o los dos?",
+    "36: cuadrado, porque es 6 al cuadrado.",
+    "27: cubo, porque es 3 al cubo.",
+    "64: ¡las dos cosas! 8 al cuadrado y 4 al cubo.",
+    "Y 50: ninguna de las dos."
+   ],
+   "titulo": "¿CUADRADO, CUBO O LOS DOS?",
+   "columnas": [
+    "Número",
+    "Cuadrado perfecto",
+    "Cubo perfecto"
+   ],
+   "filas": [
+    [
+     "36",
+     "Sí (6²)",
+     "No"
+    ],
+    [
+     "27",
+     "No",
+     "Sí (3³)"
+    ],
+    [
+     "64",
+     "Sí (8²)",
+     "Sí (4³)"
+    ],
+    [
+     "50",
+     "No",
+     "No"
+    ]
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "La clave: fijate *qué te dan* y *qué te piden*.",
+    "De lado a área: elevás *al cuadrado*.",
+    "De área a lado: *raíz cuadrada*.",
+    "De arista a volumen: *al cubo*.",
+    "Y de volumen a arista: *raíz cúbica*."
+   ],
+   "titulo": "QUÉ TE DAN Y QUÉ TE PIDEN",
+   "items": [
+    {
+     "txt": "Lado → área: al cuadrado",
+     "emoji": "⬆️"
+    },
+    {
+     "txt": "Área → lado: raíz cuadrada",
+     "emoji": "⬇️"
+    },
+    {
+     "txt": "Arista → volumen: al cubo",
+     "emoji": "📦"
+    },
+    {
+     "txt": "Volumen → arista: raíz cúbica",
+     "emoji": "🧊"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Problema: un patio cuadrado de 36 metros cuadrados, con baldosas de un metro de lado.",
+    "El lado: raíz de 36, *6 metros*.",
+    "Las baldosas: cada una ocupa un metro cuadrado, así que van *36*.",
+    "Y para el zócalo, el borde: 4 por 6, *24 metros*."
+   ],
+   "titulo": "EL PATIO DE 36 m²",
+   "items": [
+    {
+     "txt": "Lado: √36 = 6 m",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Baldosas de 1 m²: hacen falta 36",
+     "emoji": "🟫"
+    },
+    {
+     "txt": "Zócalo: perímetro = 4 × 6 = 24 m",
+     "emoji": "🔲"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: una caja cúbica de 343 centímetros cúbicos. ¿Cuánto mide la arista?",
+    "Te dan el volumen y piden la arista: *raíz cúbica*.",
+    "Raíz cúbica de 343: *7*, porque 7 por 7 por 7 da 343.",
+    "Cada cara es un cuadrado de lado 7.",
+    "Su área: 7 al cuadrado, *49 centímetros cuadrados*."
+   ],
+   "titulo": "LA CAJA CÚBICA DE 343 cm³",
+   "items": [
+    {
+     "txt": "Dan el volumen, piden la arista: raíz cúbica",
+     "emoji": "🤔"
+    },
+    {
+     "txt": "∛343 = 7 cm (7 × 7 × 7 = 343)",
+     "emoji": "📦"
+    },
+    {
+     "txt": "Cada cara es un cuadrado de lado 7 cm",
+     "emoji": "🟩"
+    },
+    {
+     "txt": "Área de una cara: 7² = 49 cm²",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para evitar.",
+    "Confundir perímetro con área: lado 6, el área es *36*, no 24.",
+    "Y confundir lado con área: si el área es 49, el lado es *7*, no 49."
+   ],
+   "items": [
+    {
+     "mal": "Lado 6 cm → área 24 cm²",
+     "bien": "Área = 6² = 36 cm²"
+    },
+    {
+     "mal": "Área 49 m² → lado 49 m",
+     "bien": "Lado = √49 = 7 m"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: *mirá la unidad*. Centímetros es largo, centímetros cuadrados es área, y cúbicos es volumen."
+   ],
+   "titulo": "MIRÁ LA UNIDAD",
+   "texto": "cm es largo · cm² es área · cm³ es volumen",
+   "emoji": "📐"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Área* del cuadrado: lado al cuadrado.",
+    "*Volumen* del cubo: arista al cubo.",
+    "*Al revés*: raíz cuadrada o raíz cúbica.",
+    "El *perímetro* es el borde, no el área.",
+    "Y hay números que son *cuadrado y cubo* a la vez, como el 64.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ÁREA",
+     "lado² · 7² = 49 cm²"
+    ],
+    [
+     "VOLUMEN",
+     "arista³ · 5³ = 125 cm³"
+    ],
+    [
+     "AL REVÉS",
+     "lado = √área"
+    ],
+    [
+     "PERÍMETRO",
+     "4 × lado"
+    ],
+    [
+     "PERFECTOS",
+     "64 = 8² = 4³"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
