@@ -1,0 +1,203 @@
+{
+ "slug": "mat1-m17-n2",
+ "step_id": "9ef34781-c4bc-46bb-86ea-a9e801308a93",
+ "materia": "Matemática I",
+ "titulo": "Rectas paralelas y perpendiculares",
+ "sub": "Matemática I · Misión 17 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Lu le escribe a Juan: ¿las vías del tren se juntan allá lejos? Se ve que sí.",
+    "Juan: ¡no! Son *paralelas*: nunca se cortan, aunque parezca.",
+    "Lu: ¿y las calles de una esquina? Juan: esas son *perpendiculares*.",
+    "Hoy: *rectas paralelas y perpendiculares*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Las vías del tren se juntan a lo lejos? 🚆"
+    },
+    {
+     "yo": true,
+     "txt": "¡Nunca! Son paralelas"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y las calles de una esquina? 🏙️"
+    }
+   ],
+   "titulo": "PARALELAS Y PERPENDICULARES",
+   "sub": "posiciones de dos rectas"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Dos rectas pueden estar así.",
+    "*Paralelas*: nunca se cortan y siempre están a la misma distancia.",
+    "*Secantes*: se cortan en un punto.",
+    "*Perpendiculares*: se cortan formando cuatro ángulos *rectos*.",
+    "Ojo: toda perpendicular es secante, pero no toda secante es perpendicular."
+   ],
+   "titulo": "POSICIONES DE DOS RECTAS",
+   "celdas": [
+    {
+     "cab": "PARALELAS",
+     "txt": "nunca se cortan 🚆"
+    },
+    {
+     "cab": "SECANTES",
+     "txt": "se cortan en un punto ✂️"
+    },
+    {
+     "cab": "PERPENDICULARES",
+     "txt": "se cortan a 90° ➕"
+    },
+    {
+     "cab": "OJO",
+     "txt": "perpendicular → secante, no al revés"
+    }
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Las perpendiculares forman ángulos *rectos*…",
+    "… de exactamente *90 grados*, como la esquina de una hoja."
+   ],
+   "tipo": "angulo",
+   "grados": 90,
+   "etiquetas": [
+    "90°",
+    "perpendiculares"
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Trazar una *perpendicular* con la escuadra.",
+    "Apoyá un lado del ángulo recto de la escuadra sobre la recta.",
+    "Deslizala hasta que el otro lado toque el punto.",
+    "Trazá por ese lado. ¡Y verificá con el transportador que mida 90!"
+   ],
+   "titulo": "PERPENDICULAR CON ESCUADRA",
+   "items": [
+    {
+     "txt": "Ángulo recto sobre la recta",
+     "emoji": "📐"
+    },
+    {
+     "txt": "Deslizar hasta el punto",
+     "emoji": "↔️"
+    },
+    {
+     "txt": "Trazar y verificar 90°",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Trazar una *paralela*: apoyá la escuadra sobre la recta.",
+    "Poné la *regla* contra la escuadra.",
+    "*Deslizá* la escuadra sobre la regla hasta el punto, y trazá."
+   ],
+   "titulo": "PARALELA CON REGLA Y ESCUADRA",
+   "items": [
+    {
+     "txt": "Escuadra sobre la recta",
+     "emoji": "📐"
+    },
+    {
+     "txt": "Regla contra la escuadra",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Deslizar y trazar",
+     "emoji": "✏️"
+    }
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "La *distancia* de un punto a una recta se mide sobre la *perpendicular*: es el camino más corto.",
+    "Y entre dos paralelas, esa distancia es *la misma* en cualquier lugar."
+   ],
+   "numero": 90,
+   "despues": "°",
+   "texto": "La distancia se mide siempre sobre la perpendicular",
+   "emoji": "📏"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: dos secantes forman un ángulo de 70 grados. ¿Cuánto mide su vecino?",
+    "¿70 o 110?",
+    "¡*110*! Son adyacentes: suman 180."
+   ],
+   "pregunta": "Secantes: un ángulo de 70°. ¿Y el vecino?",
+   "opciones": [
+    "70°",
+    "110°"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir perpendicular con paralela: las perpendiculares *se cortan*; las paralelas, no.",
+    "Y medir la distancia *en diagonal*: siempre sobre una perpendicular."
+   ],
+   "items": [
+    {
+     "mal": "Las perpendiculares no se cortan",
+     "bien": "Se cortan a 90°"
+    },
+    {
+     "mal": "Distancia en diagonal",
+     "bien": "Sobre la perpendicular"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Paralelas*: nunca se cortan.",
+    "*Perpendiculares*: se cortan a 90.",
+    "Se trazan con *regla y escuadra*.",
+    "La *distancia* va sobre la perpendicular.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARALELAS",
+     "nunca se cortan"
+    ],
+    [
+     "PERPENDICULARES",
+     "se cortan a 90°"
+    ],
+    [
+     "TRAZAR",
+     "regla y escuadra"
+    ],
+    [
+     "DISTANCIA",
+     "sobre la perpendicular"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,201 @@
+{
+ "slug": "mat1-m17-n3",
+ "step_id": "638a786e-9668-4c17-ae90-a6e3c5a8e17c",
+ "materia": "Matemática I",
+ "titulo": "Bisectriz y mediatriz",
+ "sub": "Matemática I · Misión 17 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: dos familias, en las casas A y B, quieren una plaza *a la misma distancia* de las dos.",
+    "La solución está en una recta especial: la *mediatriz* del segmento AB.",
+    "Hoy: *bisectriz y mediatriz*."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Dos vecinos quieren una plaza a igual distancia de sus casas",
+   "bajada": "La respuesta: una recta llamada mediatriz",
+   "emoji": "🏡",
+   "titulo": "BISECTRIZ Y MEDIATRIZ",
+   "sub": "construcciones con compás"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *bisectriz* de un ángulo es la semirrecta que lo divide en *dos ángulos iguales*.",
+    "Sus puntos están a la misma distancia de los dos lados del ángulo."
+   ],
+   "palabra": "Bisectriz",
+   "texto": "Divide un ángulo en dos ángulos iguales",
+   "emoji": "✂️"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Construir la bisectriz con compás.",
+    "Con centro en el vértice, un *arco* que corte los dos lados.",
+    "Desde esos dos cortes, dos arcos *con la misma abertura* que se crucen.",
+    "Uní el vértice con ese cruce. ¡Bisectriz lista!"
+   ],
+   "titulo": "CONSTRUIR LA BISECTRIZ",
+   "items": [
+    {
+     "txt": "Arco desde el vértice",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Dos arcos iguales desde los cortes",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Unir el vértice con el cruce",
+     "emoji": "3️⃣"
+    }
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Una bisectriz en un ángulo de 70 grados…",
+    "… lo parte en dos de *35*."
+   ],
+   "tipo": "angulo",
+   "grados": 70,
+   "etiquetas": [
+    "70°",
+    "bisectriz → 35° + 35°"
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *mediatriz* de un segmento es la recta *perpendicular* que pasa por su *punto medio*.",
+    "Sus puntos están a la misma distancia de los dos extremos. ¡Ahí va la plaza!"
+   ],
+   "palabra": "Mediatriz",
+   "texto": "Perpendicular al segmento por su punto medio",
+   "emoji": "📍"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Construir la mediatriz.",
+    "Desde un extremo, con abertura *mayor que la mitad*, un arco arriba y otro abajo.",
+    "Desde el otro extremo, *con la misma abertura*, lo mismo.",
+    "Uní los dos cruces de los arcos. ¡Mediatriz!"
+   ],
+   "titulo": "CONSTRUIR LA MEDIATRIZ",
+   "items": [
+    {
+     "txt": "Arcos desde A (más de la mitad)",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Mismos arcos desde B",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Unir los cruces",
+     "emoji": "3️⃣"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "No las confundas.",
+    "La bisectriz se traza en un *ángulo*; la mediatriz, en un *segmento*.",
+    "Una divide en dos ángulos iguales; la otra, en dos segmentos iguales.",
+    "Los puntos de la bisectriz equidistan de los *lados*; los de la mediatriz, de los *extremos*."
+   ],
+   "titulo": "BISECTRIZ VS MEDIATRIZ",
+   "columnas": [
+    "",
+    "Bisectriz",
+    "Mediatriz"
+   ],
+   "filas": [
+    [
+     "Se traza en",
+     "un ángulo",
+     "un segmento"
+    ],
+    [
+     "Divide en",
+     "2 ángulos iguales",
+     "2 segmentos iguales"
+    ],
+    [
+     "Sus puntos",
+     "igual distancia a los lados",
+     "igual distancia a los extremos"
+    ]
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: trazás la bisectriz de un ángulo de 80 grados. ¿Cuánto mide cada parte?",
+    "¿40 u 80?",
+    "¡*40*! 80 dividido 2. Y se verifica midiendo con el transportador."
+   ],
+   "pregunta": "Bisectriz de 80°: cada parte mide…",
+   "opciones": [
+    "40°",
+    "80°"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Cambiar la abertura* del compás entre los arcos.",
+    "Y confundirlas: la bisectriz es de un *ángulo*; la mediatriz, de un *segmento*."
+   ],
+   "items": [
+    {
+     "mal": "Cambiar la abertura",
+     "bien": "Misma abertura en los arcos"
+    },
+    {
+     "mal": "Bisectriz de un segmento",
+     "bien": "Mediatriz del segmento"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Bisectriz*: parte un ángulo en dos iguales.",
+    "*Mediatriz*: perpendicular por el punto medio.",
+    "Siempre con *la misma abertura*.",
+    "Y sirven para encontrar puntos *a igual distancia*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "BISECTRIZ",
+     "ángulo en dos iguales"
+    ],
+    [
+     "MEDIATRIZ",
+     "perpendicular por el punto medio"
+    ],
+    [
+     "COMPÁS",
+     "misma abertura"
+    ],
+    [
+     "PARA QUÉ",
+     "plaza a igual distancia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

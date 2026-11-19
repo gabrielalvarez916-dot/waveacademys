@@ -1,0 +1,228 @@
+{
+ "slug": "mat1-m17-n1",
+ "step_id": "0b4bcfaf-0b72-4bea-8917-0993081799bd",
+ "materia": "Matemática I",
+ "titulo": "Ángulos y su medición",
+ "sub": "Matemática I · Misión 17 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Tomi midió un ángulo agudo con el transportador y le dio… *130 grados*.",
+    "¡Imposible! Un agudo mide menos de 90.",
+    "Leyó la escala equivocada: el transportador tiene *dos*. Era de *50 grados*.",
+    "Hoy: *ángulos y su medición*."
+   ],
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧒"
+   },
+   "lugar": "📐",
+   "lineas": [
+    "Midió un ángulo agudo",
+    "Le dio 130°",
+    "¿Qué pasó?"
+   ],
+   "titulo": "ÁNGULOS",
+   "sub": "y su medición"
+  },
+  {
+   "t": "partes",
+   "voz": [
+    "Un *ángulo* son dos semirrectas que salen del mismo punto.",
+    "Ese punto es el *vértice*.",
+    "Las semirrectas son los *lados*. Y se mide en *grados*."
+   ],
+   "emoji": "📐",
+   "titulo": "LAS PARTES DEL ÁNGULO",
+   "partes": [
+    {
+     "txt": "Vértice",
+     "x": -0.7,
+     "y": 0.6
+    },
+    {
+     "txt": "Lados",
+     "x": 0.5,
+     "y": -0.5
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Medir con el transportador, en tres pasos.",
+    "El *centro* del transportador, justo sobre el *vértice*.",
+    "Un lado sobre la *línea del cero*.",
+    "Leer en la escala que *empieza en 0* sobre ese lado. ¡Si leés la otra, te da el ángulo equivocado!"
+   ],
+   "titulo": "MEDIR",
+   "items": [
+    {
+     "txt": "Centro sobre el vértice",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Un lado sobre el 0",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Leer la escala que empieza en 0",
+     "emoji": "👀"
+    }
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Los tipos de ángulos.",
+    "*Agudo*: menos de 90 grados.",
+    "*Recto*: exactamente 90.",
+    "*Obtuso*: más de 90 y menos de 180.",
+    "*Llano*: exactamente 180. ¡Y una vuelta completa son 360!"
+   ],
+   "titulo": "TIPOS DE ÁNGULOS",
+   "celdas": [
+    {
+     "cab": "AGUDO",
+     "txt": "menos de 90°"
+    },
+    {
+     "cab": "RECTO",
+     "txt": "90°"
+    },
+    {
+     "cab": "OBTUSO",
+     "txt": "entre 90° y 180°"
+    },
+    {
+     "cab": "LLANO",
+     "txt": "180°"
+    }
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Este ángulo, ¿de qué tipo es?",
+    "Mide 50 grados: es *agudo*. Justo el de Tomi."
+   ],
+   "tipo": "angulo",
+   "grados": 50,
+   "etiquetas": [
+    "50°",
+    "agudo"
+   ]
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Relaciones entre ángulos.",
+    "*Consecutivos*: comparten el vértice y un lado.",
+    "*Adyacentes*: consecutivos que forman una recta. *Suman 180*.",
+    "*Opuestos por el vértice*: al cruzarse dos rectas, uno enfrente del otro. *Son iguales*."
+   ],
+   "titulo": "RELACIONES",
+   "items": [
+    {
+     "cab": "CONSECUTIVOS",
+     "txt": "comparten vértice y un lado"
+    },
+    {
+     "cab": "ADYACENTES",
+     "txt": "forman una recta · suman 180°"
+    },
+    {
+     "cab": "OPUESTOS POR EL VÉRTICE",
+     "txt": "uno enfrente del otro · son iguales"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Dos rectas se cruzan y un ángulo mide 65 grados. ¿Los otros tres?",
+    "El adyacente: 180 menos 65, *115*.",
+    "El opuesto al de 65: *65*.",
+    "El opuesto al de 115: *115*.",
+    "Control: 65 + 115 + 65 + 115, ¡*360*, una vuelta!"
+   ],
+   "titulo": "RECTAS QUE SE CORTAN",
+   "items": [
+    "Adyacente: 180° − 65° = 115°",
+    "Opuesto: 65°",
+    "Opuesto: 115°",
+    "Suma: 360° ✓"
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Sorpresa: los ángulos se cuentan de a *60*. 1 grado son 60 minutos. Sumemos 35 grados 40 minutos más 20 grados 30.",
+    "Da 55 grados 70 minutos… ¡pero 70 minutos se pasan de 60!",
+    "Canjeamos 60 minutos por 1 grado: *56 grados 10 minutos*."
+   ],
+   "pasos": [
+    "35°40′ + 20°30′",
+    "55°70′",
+    "56°10′"
+   ],
+   "notas": [
+    "",
+    "¡70′ > 60′!",
+    "60′ = 1°"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Leer la *escala equivocada*: un agudo no puede medir 130.",
+    "Y no poner el *centro sobre el vértice*."
+   ],
+   "items": [
+    {
+     "mal": "Agudo de 130°",
+     "bien": "Leer la escala que empieza en 0"
+    },
+    {
+     "mal": "Centro corrido",
+     "bien": "Centro sobre el vértice"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Ángulo*: vértice y dos lados.",
+    "*Medir*: centro en el vértice, lado en el 0.",
+    "*Tipos*: agudo, recto, obtuso y llano.",
+    "*Adyacentes* suman 180; *opuestos* son iguales.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ÁNGULO",
+     "vértice y dos lados"
+    ],
+    [
+     "MEDIR",
+     "centro, 0, escala correcta"
+    ],
+    [
+     "TIPOS",
+     "agudo, recto, obtuso, llano"
+    ],
+    [
+     "RELACIONES",
+     "adyacentes 180° · opuestos iguales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

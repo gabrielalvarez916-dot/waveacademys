@@ -69,6 +69,7 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = re.sub(r'\s*−\s*', ' menos ', s)
     s = re.sub(r'\s*÷\s*', ' dividido ', s)
     s = re.sub(r'\s*%', ' por ciento', s)
+    s = s.replace('°', ' grados').replace('′', ' minutos')
     s = re.sub(r'\s*=\s*', ' igual a ', s)
     s = re.sub(r'(\d)([a-zA-Z])\b', r'\1 \2', s)  # 3n -> 3 n
     s = re.sub(r'\s*\+\s*', ' más ', s)

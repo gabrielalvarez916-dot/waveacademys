@@ -1,0 +1,218 @@
+{
+ "slug": "mat1-m17-n4",
+ "step_id": "ac17b769-ead0-419b-abf4-5b11d2d453d2",
+ "materia": "Matemática I",
+ "titulo": "Construcciones con regla y compás",
+ "sub": "Matemática I · Misión 17 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Con palitos de 3, 4 y 9 centímetros, ¿podés armar un triángulo?",
+    "¡*No*! 3 + 4 da 7, que no llega a 9. Los palitos no se tocan.",
+    "Hoy: *construcciones con regla y compás*."
+   ],
+   "grande": "3 · 4 · 9",
+   "final": "¡NO!",
+   "titulo": "CONSTRUCCIONES",
+   "sub": "con regla y compás"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "El compás sirve para *copiar*.",
+    "Un *segmento*: abrís el compás del largo y lo trasladás.",
+    "Un *ángulo*: arco en el original, el mismo arco en el nuevo vértice, copiás la abertura entre los cortes y unís."
+   ],
+   "a": {
+    "cab": "COPIAR SEGMENTO",
+    "texto": "abrir el compás y trasladar",
+    "emoji": "📏"
+   },
+   "b": {
+    "cab": "COPIAR ÁNGULO",
+    "texto": "mismo arco, misma abertura",
+    "emoji": "📐"
+   },
+   "signo": "·"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Triángulo de lados 6, 5 y 4 centímetros.",
+    "Trazá un segmento AB de *6 centímetros*.",
+    "Desde A, un arco de radio *5*.",
+    "Desde B, un arco de radio *4*.",
+    "Donde se cortan, *C*. Uní C con A y con B. ¡Triángulo!"
+   ],
+   "titulo": "TRIÁNGULO DE 6, 5 Y 4 cm",
+   "items": [
+    {
+     "txt": "AB = 6 cm",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Arco de 5 cm desde A",
+     "emoji": "🧭"
+    },
+    {
+     "txt": "Arco de 4 cm desde B",
+     "emoji": "🧭"
+    },
+    {
+     "txt": "Cruce = C · unir",
+     "emoji": "🔺"
+    }
+   ]
+  },
+  {
+   "t": "figura",
+   "voz": [
+    "Así queda el triángulo…",
+    "… con lados de 6, 5 y 4 centímetros."
+   ],
+   "tipo": "triangulo",
+   "etiquetas": [
+    "AB = 6 cm",
+    "AC = 5 cm",
+    "BC = 4 cm"
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "¿Siempre se puede? *No*. Cada lado tiene que ser *menor que la suma* de los otros dos.",
+    "Con 3, 4 y 9: 3 más 4 da 7…",
+    "… y 7 no le gana a 9. Los arcos *no se cortan*: el triángulo no existe."
+   ],
+   "izq": {
+    "cab": "3 + 4",
+    "items": [
+     "= 7"
+    ]
+   },
+   "der": {
+    "cab": "LADO MAYOR",
+    "items": [
+     "9"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar: ¿se puede o no se puede?",
+    "*Se puede*: 6, 5 y 4; 3, 4 y 5.",
+    "*No se puede*: 3, 4 y 9; 2, 2 y 5."
+   ],
+   "cajas": [
+    {
+     "cab": "SE PUEDE",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO SE PUEDE",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "6, 5, 4",
+     "caja": 0
+    },
+    {
+     "txt": "3, 4, 5",
+     "caja": 0
+    },
+    {
+     "txt": "3, 4, 9",
+     "caja": 1
+    },
+    {
+     "txt": "2, 2, 5",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Una construcción se *escribe* con pasos numerados, nombrando cada punto y cada medida. Y al final, *verificás* midiendo."
+   ],
+   "titulo": "ESCRIBIR Y VERIFICAR",
+   "texto": "Pasos numerados · nombrar puntos · medir al final",
+   "emoji": "📝"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: escribí los pasos del triángulo de 6, 5 y 4.",
+    "Primero, el control: 6 es menor que 5 + 4. Se puede.",
+    "Trazar AB de 6.",
+    "Arco de 5 desde A, arco de 4 desde B.",
+    "C en el cruce, y unir.",
+    "Verificar: AC mide 5, BC mide 4. ¡Listo!"
+   ],
+   "titulo": "ESCRIBIR LA CONSTRUCCIÓN",
+   "items": [
+    "Control: 6 < 5 + 4 ✓",
+    "AB = 6 cm",
+    "Arcos de 5 y 4 cm",
+    "C en el cruce · unir",
+    "Verificar midiendo"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*No escribir los pasos*: una construcción sin instrucciones no se puede revisar.",
+    "Y *mover el compás* sin darte cuenta: verificá siempre al final."
+   ],
+   "items": [
+    {
+     "mal": "Construir sin escribir pasos",
+     "bien": "Pasos numerados"
+    },
+    {
+     "mal": "No verificar",
+     "bien": "Medir al terminar"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Copiar* segmentos y ángulos con el compás.",
+    "*Triángulo*: una base y dos arcos.",
+    "Cada lado, *menor que la suma* de los otros dos.",
+    "Y siempre, *verificar*.",
+    "¡Misión 17 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COPIAR",
+     "segmentos y ángulos con compás"
+    ],
+    [
+     "TRIÁNGULO",
+     "base + dos arcos"
+    ],
+    [
+     "CONDICIÓN",
+     "cada lado < suma de los otros"
+    ],
+    [
+     "VERIFICAR",
+     "medir al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
