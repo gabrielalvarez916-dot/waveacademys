@@ -698,6 +698,7 @@
       }
       if (ev.target === el || ev.target.closest('[data-cerrar]')) { if (!enviando) cerrar(); return; }
       if (ev.target.closest('[data-rel]')) { siguienteRel(); return; }
+      var cn = ev.target.closest('[data-cn]'); if (cn) { verConsigna((cuerpo._cn || 0) + Number(cn.getAttribute('data-cn'))); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
       else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
     });
@@ -831,8 +832,24 @@
       if (relamp) clearInterval(relamp.t);
       relamp = null;
       if (lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
-      cuerpo.innerHTML = lista.map(campo).join('') +
-        '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-enviar="1">Entregar</button></div>';
+      // Una consigna por pantalla: todas quedan armadas (así se entregan juntas) y se muestra solo la actual
+      cuerpo.innerHTML = '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(campo).join('') +
+        '<div class="mt-cuest-pie" style="display:flex;justify-content:space-between;gap:12px">' +
+        '<button type="button" class="mt-boton" data-cn="-1" style="background:transparent;color:inherit;box-shadow:none;border:2px solid currentColor;opacity:.75">‹ Anterior</button>' +
+        '<button type="button" class="mt-boton" data-cn="1">Siguiente ›</button>' +
+        '<button type="button" class="mt-boton" data-enviar="1">Entregar</button></div>';
+      verConsigna(0);
+    }
+    function verConsigna(n) {
+      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length;
+      if (!tot) return;
+      n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n;
+      [].forEach.call(ps, function (p, k) { p.style.display = k === n ? '' : 'none'; });
+      var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = 'Consigna ' + (n + 1) + ' de ' + tot;
+      var ant = cuerpo.querySelector('[data-cn="-1"]'), sig = cuerpo.querySelector('[data-cn="1"]'), env = cuerpo.querySelector('[data-enviar]');
+      if (ant) ant.style.visibility = n ? '' : 'hidden';
+      if (sig) sig.style.display = n < tot - 1 ? '' : 'none';
+      if (env) env.style.display = n === tot - 1 ? '' : 'none';
       cuerpo.scrollTo(0, 0);
     }
 
