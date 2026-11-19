@@ -206,14 +206,18 @@
       var ls = t.lecciones, conGen = ls.length >= 4;
       t.niveles = conGen ? ls.slice(0, ls.length - 1) : ls;
       t.generales = conGen ? ls[ls.length - 1] : null;
+      // Cada nivel tiene su propio video (clase animada) antes del nivel: hay que verlo para entrar al nivel
       t.videoPaso = null;
-      ls.forEach(function (l) { var pp = D.pasos[l.id] || {}; if (!t.videoPaso && pp.video && pp.video.tiene) t.videoPaso = pp.video; });
-      t.videoHecho = !!t.videoPaso && hecho(t.videoPaso);
-      if (t.videoPaso && !t.videoHecho) ok = false;
-      if (t.videoPaso && !t.videoHecho && !t.bloqueado && !actual) actual = 'video:' + t.id;
       t.lecciones.forEach(function (l) {
+        var pp = D.pasos[l.id] || {};
+        l.videoPaso = pp.video && pp.video.tiene ? pp.video : null;
+        if (l.videoPaso && !t.videoPaso) t.videoPaso = l.videoPaso;
+        l.videoHecho = !!l.videoPaso && hecho(l.videoPaso);
         l.est = estadoLeccion(l);
         if (D.sinAcceso) l.est.vacia = false;
+        l.videoBloq = t.bloqueado || !ok;
+        if (l.videoPaso && !l.videoHecho && !l.videoBloq && !actual) actual = 'video:' + l.id;
+        if (l.videoPaso && !l.videoHecho) ok = false;
         l.bloqueada = t.bloqueado || !ok;
         if (!l.bloqueada && !l.est.completa && !l.est.vacia && !actual) { actual = l.id; }
         if (!l.est.vacia && !l.est.completa) ok = false;
@@ -298,20 +302,20 @@
       : '<button type="button" class="mt-nodo ' + cls + '"' + (extra || '') + (aviso ? ' data-aviso="' + esc(aviso) + '"' : '') + '>' + interior + '</button>';
   }
 
-  function nodoVideo(t) {
+  function nodoVideo(l, i, t, esGen) {
     var cls, contenido, aviso = '', extra = '';
-    if (t.videoHecho) { cls = 'hecha'; contenido = ico('check', 56, 3.2); extra = ' data-video="1"'; }
-    else if (t.bloqueado) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = D.sinAcceso ? 'La suscripción tiene que estar al día.' : 'Terminá la misión anterior.'; }
-    else { cls = 'libre' + (D.actual === 'video:' + t.id ? ' actual' : ''); contenido = ico('play', 52, 2.4); extra = ' data-video="1"'; }
+    if (l.videoHecho) { cls = 'hecha'; contenido = ico('check', 56, 3.2); extra = ' data-video="' + l.id + '"'; }
+    else if (l.videoBloq) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = D.sinAcceso ? 'La suscripción tiene que estar al día.' : t.bloqueado ? 'Terminá la misión anterior.' : 'Primero superá el nivel anterior.'; }
+    else { cls = 'libre' + (D.actual === 'video:' + l.id ? ' actual' : ''); contenido = ico('play', 52, 2.4); extra = ' data-video="' + l.id + '"'; }
     var burbuja = cls.indexOf('actual') >= 0 ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
-    return nodo(cls, burbuja + discoNodo(cls, contenido, 0) + '<span class="mt-nombre">Videos de la misión</span>', null, aviso, extra);
+    return nodo(cls, burbuja + discoNodo(cls, contenido, 0) + '<span class="mt-nombre">' + (esGen ? 'Video de las generales' : 'Video del nivel ' + (i + 1)) + '</span>', null, aviso, extra);
   }
 
   function nodoNivel(l, i, t, esGen) {
     var e = l.est, cls, contenido, href = null, aviso = '';
     if (D.sinAcceso) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = 'La suscripción tiene que estar al día para ver el contenido.'; }
     else if (e.vacia) { cls = 'pronto'; contenido = ico('dots', 40, 3.2); aviso = 'Este nivel está en preparación.'; }
-    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = t.videoPaso && !t.videoHecho ? 'Primero mirá los videos de la misión.' : 'Primero superá el nivel anterior.'; }
+    else if (l.bloqueada) { cls = 'bloq'; contenido = ico('lock', 40, 2.6); aviso = l.videoPaso && !l.videoHecho && !l.videoBloq ? 'Primero mirá el video del nivel.' : 'Primero superá el nivel anterior.'; }
     else if (e.completa) { cls = 'hecha'; contenido = ico('check', 56, 3.2); href = base() + '/' + t.id + '/' + l.id; }
     else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = esGen ? ico('bolt', 50) : '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
     var burbuja = D.actual === l.id ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
@@ -344,9 +348,8 @@
 
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
-    var nodos = (t.videoPaso ? nodoVideo(t) : '') +
-      t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
-      (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
+    var nodos = t.niveles.map(function (l, i) { return (l.videoPaso ? nodoVideo(l, i, t, false) : '') + nodoNivel(l, i, t, false); }).join('') +
+      (t.generales ? (t.generales.videoPaso ? nodoVideo(t.generales, 0, t, true) : '') + nodoNivel(t.generales, 0, t, true) : '') +
       (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
@@ -504,19 +507,20 @@
     } catch (e) { toast(e.message || 'No se pudo abrir.', true); }
   }
 
-  function abrirVideoMision(temaId) {
-    var tm = D.temas.filter(function (x) { return x.id === temaId; })[0], paso = tm && tm.videoPaso;
+  function abrirVideoMision(temaId, lecId) {
+    var tm = D.temas.filter(function (x) { return x.id === temaId; })[0];
+    var lec = tm && tm.lecciones.filter(function (x) { return x.id === lecId; })[0], paso = lec && lec.videoPaso;
     if (!paso) return;
-    if (paso.clase) return abrirClase(paso, tm.titulo).catch(function (e) { toast(e.message || 'No se pudo abrir.', true); });
+    if (paso.clase) return abrirClase(paso, lec.titulo).catch(function (e) { toast(e.message || 'No se pudo abrir.', true); });
     // La intro de Wave se carga una sola vez (admin) y va siempre delante de todos los videos de la misión
     var lista = paso.videos.map(function (v, n) {
       return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
         : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
     });
-    if (D.introWave && !(paso.videos[0] && (paso.videos[0].intro || paso.videos[0].final))) {
+    if (D.introWave && tm.lecciones[0] === lec && !(paso.videos[0] && (paso.videos[0].intro || paso.videos[0].final))) {
       lista.unshift({ tramos: D.introWave.tramos || [], url: async function () { return (await llamar('content-access', { action: 'intro_wave' })).url; } });
     }
-    WaveVisor.abrirVideo({ titulo: 'Videos · ' + tm.titulo, alTerminar: function () { marcar(paso); }, lista: lista });
+    WaveVisor.abrirVideo({ titulo: 'Video · ' + lec.titulo, alTerminar: function () { marcar(paso); }, lista: lista });
   }
 
   // Entrega de la carpeta: se corrige acá, sin IA. Se aprueba con hasta 1 mal; al aprobar se muestran las soluciones.
@@ -933,7 +937,7 @@
         if (a === 'continuar') return refrescar();
       }
       var vd = ev.target.closest('[data-video]');
-      if (vd) return abrirVideoMision(ruta.tema);
+      if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
       var x = ev.target.closest('[data-examen]');
       if (x) return abrirExamen(x.getAttribute('data-examen'));
       if (ev.target.closest('[data-intro]')) return abrirIntro();
