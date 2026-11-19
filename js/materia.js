@@ -70,7 +70,7 @@
     if (!est.data) throw new Error('Esta cuenta no es de un estudiante.');
     var sid = est.data.id;
 
-    var mat = await sb.from('subjects').select('id, name, color, intro_video_uid').eq('id', materiaId).maybeSingle();
+    var mat = await sb.from('subjects').select('id, name, color, intro_video_uid, intro_clase').eq('id', materiaId).maybeSingle();
     if (mat.error) throw mat.error;
     if (!mat.data) throw new Error('No encontramos esta materia.');
     var iw = await sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle();
@@ -269,7 +269,7 @@
   function pantallaTemas() {
     var m = D.materia, icono = window.WaveIconos ? WaveIconos.materia(m.name) : '';
     var cards = [];
-    cards.push(m.intro_video_uid
+    cards.push(m.intro_video_uid || m.intro_clase
       ? tarjeta({ titulo: 'Introducción', texto: 'Conocé la materia antes de empezar', boton: 'VER VIDEO', color: colorSeguro(m.color), figura: icono, intro: true })
       : tarjeta({ titulo: 'Introducción', texto: 'El video de introducción estará disponible muy pronto', color: colorSeguro(m.color), figura: icono, estado: 'pronto' }));
     D.temas.forEach(function (t, i) {
@@ -586,8 +586,9 @@
   }
 
   // ---------- Clase animada (reemplaza al video): HTML en un marco aislado, con voz del dispositivo ----------
-  async function abrirClase(paso, titulo) {
-    var r = await sb.from('lesson_steps').select('html:content->>clase_html').eq('id', paso.id).maybeSingle();
+  async function abrirClase(paso, titulo) { // paso null = introducción de la materia
+    var r = paso ? await sb.from('lesson_steps').select('html:content->>clase_html').eq('id', paso.id).maybeSingle()
+      : await sb.from('subjects').select('html:intro_clase_html').eq('id', D.materia.id).maybeSingle();
     if (r.error || !r.data || !r.data.html) throw new Error('No pudimos abrir la clase.');
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -608,7 +609,7 @@
     }
     function alMensaje(ev) {
       if (ev.source !== frame.contentWindow || !ev.data || ev.data.tipo !== 'wave-clase-fin') return;
-      marcar(paso); toast('¡Clase terminada! 🎉');
+      if (paso) marcar(paso); toast(paso ? '¡Clase terminada! 🎉' : '¡Listo! Ahora empezá la misión 1 🚀');
     }
     window.addEventListener('message', alMensaje);
     el.addEventListener('click', function (ev) { if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar(); });
@@ -931,6 +932,7 @@
 
   // ---------- Introducción ----------
   function abrirIntro() {
+    if (D.materia.intro_clase) return abrirClase(null, 'Introducción · ' + D.materia.name).catch(function (e) { toast(e.message || 'No se pudo abrir.', true); });
     WaveVisor.abrirVideo({ titulo: 'Introducción · ' + D.materia.name,
       url: async function () { return (await llamar('content-access', { action: 'intro', subject_id: D.materia.id })).url; } });
   }
