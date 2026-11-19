@@ -1,0 +1,831 @@
+{
+ "slug": "mat1-m19-n2",
+ "step_id": "14d3f7b3-1909-4dc0-ac87-5b7f5d6ef44f",
+ "materia": "Matemática I",
+ "titulo": "Áreas de figuras planas",
+ "sub": "Matemática I · Misión 19 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Lu le escribe a Tomi: ¿cuánta pintura compro para una pared de 4 por 2,5 metros?",
+    "Tomi: ¡13 metros! 4 más 2,5, dos veces.",
+    "Lu: ¡eso es el borde! Para pintar hace falta el *área*: 10 metros cuadrados.",
+    "Hoy: *áreas de figuras planas*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cuánta pintura para una pared de 4 × 2,5 m? 🎨"
+    },
+    {
+     "yo": true,
+     "txt": "¡13 metros!"
+    },
+    {
+     "yo": false,
+     "txt": "Eso es el borde 🙄 necesito el área"
+    }
+   ],
+   "titulo": "ÁREAS",
+   "sub": "lo que se cubre"
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "El *área* es la superficie que ocupa una figura: se cuentan cuadraditos de 1 centímetro cuadrado.",
+    "6 cuadraditos por fila, 4 filas: *24 centímetros cuadrados*. ¡Base por altura!"
+   ],
+   "titulo": "QUÉ ES EL ÁREA",
+   "vista": [
+    0,
+    9,
+    0,
+    5.4
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1.5,
+         0.6
+        ],
+        [
+         2.5,
+         0.6
+        ],
+        [
+         2.5,
+         1.6
+        ],
+        [
+         1.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         1.5,
+         1.6
+        ],
+        [
+         2.5,
+         1.6
+        ],
+        [
+         2.5,
+         2.6
+        ],
+        [
+         1.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         1.5,
+         2.6
+        ],
+        [
+         2.5,
+         2.6
+        ],
+        [
+         2.5,
+         3.6
+        ],
+        [
+         1.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         1.5,
+         3.6
+        ],
+        [
+         2.5,
+         3.6
+        ],
+        [
+         2.5,
+         4.6
+        ],
+        [
+         1.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         2.5,
+         0.6
+        ],
+        [
+         3.5,
+         0.6
+        ],
+        [
+         3.5,
+         1.6
+        ],
+        [
+         2.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         2.5,
+         1.6
+        ],
+        [
+         3.5,
+         1.6
+        ],
+        [
+         3.5,
+         2.6
+        ],
+        [
+         2.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         2.5,
+         2.6
+        ],
+        [
+         3.5,
+         2.6
+        ],
+        [
+         3.5,
+         3.6
+        ],
+        [
+         2.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         2.5,
+         3.6
+        ],
+        [
+         3.5,
+         3.6
+        ],
+        [
+         3.5,
+         4.6
+        ],
+        [
+         2.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         3.5,
+         0.6
+        ],
+        [
+         4.5,
+         0.6
+        ],
+        [
+         4.5,
+         1.6
+        ],
+        [
+         3.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         3.5,
+         1.6
+        ],
+        [
+         4.5,
+         1.6
+        ],
+        [
+         4.5,
+         2.6
+        ],
+        [
+         3.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         3.5,
+         2.6
+        ],
+        [
+         4.5,
+         2.6
+        ],
+        [
+         4.5,
+         3.6
+        ],
+        [
+         3.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         3.5,
+         3.6
+        ],
+        [
+         4.5,
+         3.6
+        ],
+        [
+         4.5,
+         4.6
+        ],
+        [
+         3.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         4.5,
+         0.6
+        ],
+        [
+         5.5,
+         0.6
+        ],
+        [
+         5.5,
+         1.6
+        ],
+        [
+         4.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         4.5,
+         1.6
+        ],
+        [
+         5.5,
+         1.6
+        ],
+        [
+         5.5,
+         2.6
+        ],
+        [
+         4.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         4.5,
+         2.6
+        ],
+        [
+         5.5,
+         2.6
+        ],
+        [
+         5.5,
+         3.6
+        ],
+        [
+         4.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         4.5,
+         3.6
+        ],
+        [
+         5.5,
+         3.6
+        ],
+        [
+         5.5,
+         4.6
+        ],
+        [
+         4.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         5.5,
+         0.6
+        ],
+        [
+         6.5,
+         0.6
+        ],
+        [
+         6.5,
+         1.6
+        ],
+        [
+         5.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         5.5,
+         1.6
+        ],
+        [
+         6.5,
+         1.6
+        ],
+        [
+         6.5,
+         2.6
+        ],
+        [
+         5.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         5.5,
+         2.6
+        ],
+        [
+         6.5,
+         2.6
+        ],
+        [
+         6.5,
+         3.6
+        ],
+        [
+         5.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         5.5,
+         3.6
+        ],
+        [
+         6.5,
+         3.6
+        ],
+        [
+         6.5,
+         4.6
+        ],
+        [
+         5.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         6.5,
+         0.6
+        ],
+        [
+         7.5,
+         0.6
+        ],
+        [
+         7.5,
+         1.6
+        ],
+        [
+         6.5,
+         1.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         6.5,
+         1.6
+        ],
+        [
+         7.5,
+         1.6
+        ],
+        [
+         7.5,
+         2.6
+        ],
+        [
+         6.5,
+         2.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         6.5,
+         2.6
+        ],
+        [
+         7.5,
+         2.6
+        ],
+        [
+         7.5,
+         3.6
+        ],
+        [
+         6.5,
+         3.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      },
+      {
+       "pol": [
+        [
+         6.5,
+         3.6
+        ],
+        [
+         7.5,
+         3.6
+        ],
+        [
+         7.5,
+         4.6
+        ],
+        [
+         6.5,
+         4.6
+        ]
+       ],
+       "color": "#7FD3C4"
+      }
+     ],
+     "txt": "Cuadraditos de 1 cm²"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        4.5,
+        5
+       ],
+       "s": "6 × 4 = 24 cm²",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "Rectángulo: base × altura"
+    }
+   ]
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "Un rectángulo de 8 por 5: *40*.",
+    "El triángulo con la misma base y altura ocupa *justo la mitad*.",
+    "Por eso: base por altura, *dividido 2*. ¡20 centímetros cuadrados!"
+   ],
+   "titulo": "EL TRIÁNGULO ES LA MITAD",
+   "vista": [
+    -0.5,
+    9,
+    -1,
+    5.8
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0,
+         0
+        ],
+        [
+         8,
+         0
+        ],
+        [
+         8,
+         5
+        ],
+        [
+         0,
+         5
+        ]
+       ],
+       "fill": "rgba(255,255,255,.03)"
+      }
+     ],
+     "txt": "Rectángulo de 8 × 5 = 40 cm²"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0,
+         0
+        ],
+        [
+         8,
+         0
+        ],
+        [
+         3,
+         5
+        ]
+       ],
+       "color": "#F4B63F",
+       "fill": "rgba(244,182,63,.35)"
+      },
+      {
+       "seg": [
+        [
+         3,
+         0
+        ],
+        [
+         3,
+         5
+        ]
+       ],
+       "dash": true
+      }
+     ],
+     "txt": "El triángulo ocupa la mitad"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        4,
+        -0.6
+       ],
+       "s": "8 × 5 ÷ 2 = 20 cm²",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "Triángulo: base × altura ÷ 2"
+    }
+   ]
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Las otras fórmulas.",
+    "*Paralelogramo*: base por altura, como un rectángulo inclinado.",
+    "*Rombo*: diagonal mayor por diagonal menor, dividido 2.",
+    "*Trapecio*: base mayor más base menor, por la altura, dividido 2."
+   ],
+   "titulo": "MÁS FÓRMULAS",
+   "items": [
+    {
+     "cab": "PARALELOGRAMO",
+     "txt": "b × h"
+    },
+    {
+     "cab": "ROMBO",
+     "txt": "D × d ÷ 2"
+    },
+    {
+     "cab": "TRAPECIO",
+     "txt": "(B + b) × h ÷ 2"
+    }
+   ]
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "Momento sorpresa: ¿cuántos centímetros cuadrados tiene *1 metro cuadrado*?",
+    "Tiene 100 por 100: ¡*10.000*! Entre unidades de superficie se salta *de a 100*."
+   ],
+   "titulo": "1 m² = 10.000 cm²",
+   "vista": [
+    0,
+    10,
+    0,
+    6
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         2.5,
+         0.5
+        ],
+        [
+         7.5,
+         0.5
+        ],
+        [
+         7.5,
+         5.5
+        ],
+        [
+         2.5,
+         5.5
+        ]
+       ]
+      },
+      {
+       "txt": [
+        5,
+        3
+       ],
+       "s": "1 m²",
+       "size": 70
+      }
+     ],
+     "txt": "Un cuadrado de 1 m de lado"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        5,
+        0
+       ],
+       "s": "100 cm",
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        8.6,
+        3
+       ],
+       "s": "100 cm",
+       "color": "#F4B63F"
+      }
+     ],
+     "txt": "100 × 100 = 10.000 cm²"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "La pared de Lu: 4 por 2,5, *10 metros cuadrados*.",
+    "Tiene una ventana de 1,2 por 1: *1,2 metros cuadrados*.",
+    "Se pinta: 10 menos 1,2, ¡*8,8 metros cuadrados*!"
+   ],
+   "pasos": [
+    "4 × 2,5 = 10 m²",
+    "1,2 × 1 = 1,2 m²",
+    "10 − 1,2 = 8,8 m²"
+   ],
+   "notas": [
+    "pared",
+    "ventana",
+    "se pinta"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Olvidar el *dividido 2* del triángulo.",
+    "Y creer que 1 metro cuadrado son 100 centímetros cuadrados: *son 10.000*."
+   ],
+   "items": [
+    {
+     "mal": "Triángulo: b × h",
+     "bien": "b × h ÷ 2"
+    },
+    {
+     "mal": "1 m² = 100 cm²",
+     "bien": "1 m² = 10.000 cm²"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Área*: cuadraditos que entran.",
+    "Rectángulo: *base por altura*.",
+    "Triángulo: *la mitad*.",
+    "Y las unidades saltan *de a 100*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ÁREA",
+     "cuadraditos que entran"
+    ],
+    [
+     "RECTÁNGULO",
+     "b × h"
+    ],
+    [
+     "TRIÁNGULO",
+     "b × h ÷ 2"
+    ],
+    [
+     "UNIDADES",
+     "de a 100: 1 m² = 10.000 cm²"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

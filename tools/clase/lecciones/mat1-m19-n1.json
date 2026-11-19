@@ -1,0 +1,358 @@
+{
+ "slug": "mat1-m19-n1",
+ "step_id": "67767001-4465-4621-9dae-1a04814f843b",
+ "materia": "Matemática I",
+ "titulo": "Perímetros",
+ "sub": "Matemática I · Misión 19 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Juan quiere cercar la huerta de la abuela: un rectángulo de 25 por 12 metros, con un portón de 3.",
+    "Compra 37 metros de alambre: 25 más 12.",
+    "¡Le falta un montón! El borde tiene *cuatro* lados: 74 metros, menos el portón, *71*.",
+    "Hoy: el *perímetro*, el largo del borde."
+   ],
+   "personaje": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "lugar": "🌱",
+   "lineas": [
+    "Cercar una huerta de 25 × 12 m",
+    "Compró 37 m de alambre",
+    "¿Le alcanza?"
+   ],
+   "titulo": "PERÍMETROS",
+   "sub": "el largo del borde"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *perímetro* es el largo del *borde* de una figura…",
+    "… la suma de *todos* sus lados."
+   ],
+   "palabra": "Perímetro",
+   "texto": "La suma de las medidas de todos los lados del borde",
+   "emoji": "🧵"
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "Recorramos el borde de un rectángulo de 8 por 5.",
+    "Lado por lado: 8, 5, 8 y 5. ¡*26 centímetros*!"
+   ],
+   "titulo": "RECORRER EL BORDE",
+   "vista": [
+    0,
+    12,
+    -1,
+    6
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         0.5
+        ],
+        [
+         9,
+         0.5
+        ],
+        [
+         9,
+         5.5
+        ],
+        [
+         1,
+         5.5
+        ]
+       ]
+      }
+     ],
+     "txt": "Rectángulo de 8 × 5 cm"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        5,
+        0
+       ],
+       "s": "8",
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        9.6,
+        3
+       ],
+       "s": "5",
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        5,
+        6
+       ],
+       "s": "8",
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        0.4,
+        3
+       ],
+       "s": "5",
+       "color": "#F4B63F"
+      }
+     ],
+     "txt": "8 + 5 + 8 + 5 = 26 cm"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Las *unidades de longitud*: cada una es 10 veces la que sigue.",
+    "1 kilómetro son *1.000 metros*.",
+    "1 metro son *100 centímetros*.",
+    "1 centímetro son *10 milímetros*."
+   ],
+   "titulo": "UNIDADES DE LONGITUD",
+   "columnas": [
+    "Unidad",
+    "Equivale a"
+   ],
+   "filas": [
+    [
+     "1 km",
+     "1.000 m"
+    ],
+    [
+     "1 m",
+     "100 cm"
+    ],
+    [
+     "1 cm",
+     "10 mm"
+    ]
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Para pasar a una unidad *más chica*, multiplicás: 3,5 metros son 350 centímetros.",
+    "Para pasar a una *más grande*, dividís: 2.400 metros son 2,4 kilómetros.",
+    "¡Siempre con 10, 100 o 1.000!"
+   ],
+   "titulo": "CAMBIAR DE UNIDAD",
+   "items": [
+    {
+     "txt": "3,5 m × 100 = 350 cm",
+     "emoji": "⬇️"
+    },
+    {
+     "txt": "2.400 m ÷ 1.000 = 2,4 km",
+     "emoji": "⬆️"
+    },
+    {
+     "txt": "de a 10, 100, 1.000",
+     "emoji": "🔟"
+    }
+   ]
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "Una figura en forma de *L*: se suman solo los lados del borde.",
+    "Si falta una medida, se calcula: el lado de 4 sale de 10 menos 6.",
+    "Sumamos los seis: ¡*32 centímetros*!"
+   ],
+   "titulo": "UNA FIGURA EN L",
+   "vista": [
+    -1.5,
+    11.5,
+    -1.2,
+    7
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0,
+         0
+        ],
+        [
+         10,
+         0
+        ],
+        [
+         10,
+         3
+        ],
+        [
+         6,
+         3
+        ],
+        [
+         6,
+         6
+        ],
+        [
+         0,
+         6
+        ]
+       ]
+      }
+     ],
+     "txt": "Una figura compuesta"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        5,
+        -0.6
+       ],
+       "s": "10"
+      },
+      {
+       "txt": [
+        10.7,
+        1.5
+       ],
+       "s": "3"
+      },
+      {
+       "txt": [
+        8,
+        3.6
+       ],
+       "s": "4",
+       "color": "#ff7a66"
+      },
+      {
+       "txt": [
+        6.6,
+        4.5
+       ],
+       "s": "3"
+      },
+      {
+       "txt": [
+        3,
+        6.6
+       ],
+       "s": "6"
+      },
+      {
+       "txt": [
+        -0.7,
+        3
+       ],
+       "s": "6"
+      }
+     ],
+     "txt": "El 4 sale de 10 − 6"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        3,
+        2.5
+       ],
+       "s": "32 cm",
+       "size": 64,
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "10 + 3 + 4 + 3 + 6 + 6 = 32 cm"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: un rectángulo de 2 metros por 45 centímetros. ¿Perímetro?",
+    "¿94 o 490 centímetros?",
+    "¡*490*! Primero todo en la misma unidad: 2 metros son 200 centímetros."
+   ],
+   "pregunta": "Rectángulo de 2 m × 45 cm",
+   "opciones": [
+    "94 cm",
+    "490 cm"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Bonus: la vuelta a un círculo mide *un poco más de 3 veces* su diámetro.",
+    "Con un diámetro de 10 centímetros, la vuelta mide algo más de *30*."
+   ],
+   "numero": 3,
+   "antes": "un poco más de ",
+   "despues": " veces el diámetro",
+   "texto": "La vuelta a un círculo (la cuenta exacta, en 2.º año)",
+   "emoji": "⭕"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Sumar *unidades distintas*: 3 metros más 50 centímetros *no es 53*.",
+    "Y en figuras compuestas, sumar lados *de adentro*."
+   ],
+   "items": [
+    {
+     "mal": "3 m + 50 cm = 53",
+     "bien": "300 + 50 = 350 cm"
+    },
+    {
+     "mal": "Sumar lados de adentro",
+     "bien": "Solo el borde"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Perímetro*: suma del borde.",
+    "*Unidades*: de a 10.",
+    "En compuestas, *solo el borde*.",
+    "Y todo en la *misma unidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PERÍMETRO",
+     "suma del borde"
+    ],
+    [
+     "UNIDADES",
+     "km, m, cm, mm"
+    ],
+    [
+     "COMPUESTAS",
+     "solo el borde"
+    ],
+    [
+     "MISMA UNIDAD",
+     "antes de sumar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
