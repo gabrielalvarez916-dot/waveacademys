@@ -233,8 +233,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   T.tabla = { n: function (d) { return 1 + d.filas.length; }, armar: function (g, tl, B, d) {
     var nc = d.columnas.length, cw = Math.min(420, 1560 / nc), x0 = 960 - (nc - 1) * cw / 2, nf = d.filas.length, rh = Math.min(110, 560 / (nf + 1)), y0 = 420;
     var ti = d.titulo ? w.titulo(g, d.titulo) : null, H = w.pieza(g, 0, 0);
-    d.columnas.forEach(function (c, k) { w.caja(H, x0 + k * cw, y0, cw - 12, rh - 14, 'url(#gAqua)', '#d8fff7', 16, 3); w.txt(H, x0 + k * cw, y0, c, 30, '#06282a', { 'letter-spacing': 1 }); });
-    var R = d.filas.map(function (f, r) { var p = w.pieza(g, 0, 0); f.forEach(function (c, k) { w.caja(p, x0 + k * cw, y0 + (r + 1) * rh, cw - 12, rh - 14, 'url(#gCard)', C.linea, 16, 3); w.txt(p, x0 + k * cw, y0 + (r + 1) * rh, c, Math.min(40, rh * .38), C.txt); }); return p; });
+    d.columnas.forEach(function (c, k) { w.caja(H, x0 + k * cw, y0, cw - 12, rh - 14, 'url(#gAqua)', '#d8fff7', 16, 3); w.txt(H, x0 + k * cw, y0, c, Math.min(30, (cw - 30) / (String(c).length * .58)), '#06282a', { 'letter-spacing': 1 }); });
+    var R = d.filas.map(function (f, r) { var p = w.pieza(g, 0, 0); f.forEach(function (c, k) { w.caja(p, x0 + k * cw, y0 + (r + 1) * rh, cw - 12, rh - 14, 'url(#gCard)', C.linea, 16, 3); w.txt(p, x0 + k * cw, y0 + (r + 1) * rh, c, Math.min(40, rh * .38, (cw - 30) / (String(c).length * .55)), C.txt); }); return p; });
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, H, ti ? '<.1' : 0);
     R.forEach(function (p, r) { B(r + 1); w.IN(tl, p, 0, { x: -80, y: 0 }); });
   } };
