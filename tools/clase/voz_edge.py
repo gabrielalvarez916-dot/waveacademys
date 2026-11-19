@@ -50,8 +50,23 @@ def decir_numeros(s):
     return re.sub(r'\d{1,3}(?:\.\d{3})+(?!\d)|\d+', num, s)
 
 
+ORD = {2: 'medio', 3: 'tercio', 4: 'cuarto', 5: 'quinto', 6: 'sexto', 7: 'séptimo', 8: 'octavo', 9: 'noveno', 10: 'décimo'}
+
+
+def fraccion(m):  # 3/4 -> tres cuartos · 1/2 -> un medio · 5/12 -> cinco doceavos
+    a, b = int(m.group(1)), int(m.group(2))
+    if b == 1 or ' ' in en_letras(b) and b not in (100, 1000):
+        return en_letras(a) + ' sobre ' + en_letras(b)
+    den = ORD.get(b) or {100: 'centésimo', 1000: 'milésimo'}.get(b) or (en_letras(b) + 'avo')
+    return ('un ' + den) if a == 1 else (en_letras(a) + ' ' + den + 's')
+
+
 def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = s.replace('*', '')
+    s = re.sub(r'\b(\d+) (?=\d+/\d+)', r'\1 y ', s)  # 1 3/4 -> 1 y tres cuartos
+    s = re.sub(r'\b(\d+)/(\d+)\b', fraccion, s)
+    s = re.sub(r'\s*−\s*', ' menos ', s)
+    s = re.sub(r'\s*÷\s*', ' dividido ', s)
     s = re.sub(r'\s*\+\s*', ' más ', s)
     s = re.sub(r'\s*×\s*', ' por ', s)
     return decir_numeros(s.replace('\\u2026', '…')).strip()

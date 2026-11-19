@@ -1,0 +1,211 @@
+{
+ "slug": "mat1-m9-n1",
+ "step_id": "5960e7fe-3901-4770-8a90-fd4203f1bf1e",
+ "materia": "Matemática I",
+ "titulo": "Suma y resta de fracciones",
+ "sub": "Matemática I · Misión 9 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Ana se comió 1/3 de la torta y Beto 1/4. ¿Cuánta torta desapareció?",
+    "¡*7/12*! Y quedan 5/12 para el resto.",
+    "Hoy: *sumar y restar fracciones* sin que se te desarme la torta."
+   ],
+   "emoji": "🎂",
+   "final": "7/12",
+   "titulo": "SUMAR Y RESTAR",
+   "sub": "fracciones"
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "Caso fácil: *mismo denominador*. 2/7 más 3/7.",
+    "Porciones del mismo tamaño: 2 séptimos más 3 séptimos son *5 séptimos*. El denominador no se toca."
+   ],
+   "num": 5,
+   "den": 7,
+   "forma": "pizza",
+   "txt": "2/7 + 3/7 = 5/7"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Restar es igual: 5/8 menos 1/8.",
+    "Restamos los numeradores: *4/8*.",
+    "Y al final, siempre simplificar: ¡*1/2*!"
+   ],
+   "pasos": [
+    "5/8 − 1/8",
+    "= 4/8",
+    "= 1/2"
+   ],
+   "notas": [
+    "",
+    "restamos arriba",
+    "simplificamos"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: ¿cuánto es 1/2 más 1/4?",
+    "¿2/6 o 3/4?",
+    "¡*3/4*! No se suman los denominadores: 1/2 es 2/4, y 2/4 más 1/4 da 3/4."
+   ],
+   "pregunta": "1/2 + 1/4 = ?",
+   "opciones": [
+    "2/6",
+    "3/4"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La regla: con *distinto denominador*, primero hay que *igualar las porciones*. Si no, sumás peras con manzanas."
+   ],
+   "texto": "Distinto denominador → primero denominador común",
+   "emoji": "🍐🍎"
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "El denominador más cómodo es el *MCM*. Sumemos 1/4 más 1/6: MCM de 4 y 6, *12*.",
+    "1/4 se convierte en *3/12*.",
+    "1/6 se convierte en *2/12*.",
+    "Y ahora sí: 3/12 más 2/12, *5/12*."
+   ],
+   "titulo": "1/4 + 1/6",
+   "items": [
+    {
+     "txt": "MCM(4, 6) = 12",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "1/4 = 3/12",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "1/6 = 2/12",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "= 5/12",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "¿Con números mixtos? Dos caminos para 2 1/3 más 1 1/2.",
+    "Camino uno: pasar a impropias. 7/3 más 3/2 es 14/6 más 9/6: *23/6*.",
+    "Camino dos: enteros por un lado, 2 más 1, *3*; fracciones por otro, 1/3 más 1/2, *5/6*. ¡Los dos dan 3 5/6!"
+   ],
+   "a": {
+    "cab": "IMPROPIAS",
+    "texto": "14/6 + 9/6 = 23/6",
+    "emoji": "🔀"
+   },
+   "b": {
+    "cab": "POR PARTES",
+    "texto": "3 + 5/6 = 3 5/6",
+    "emoji": "🧩"
+   },
+   "signo": "="
+  },
+  {
+   "t": "torta",
+   "voz": [
+    "Volvamos a la torta. Ana 1/3 y Beto 1/4: 4/12 más 3/12, *7/12*.",
+    "La torta entera es 12/12.",
+    "Comieron 7/12…",
+    "… y quedan *5/12*."
+   ],
+   "titulo": "LA TORTA EN DOCEAVOS",
+   "items": [
+    {
+     "txt": "Ana 4/12",
+     "valor": 4
+    },
+    {
+     "txt": "Beto 3/12",
+     "valor": 3
+    },
+    {
+     "txt": "Queda 5/12",
+     "valor": 5
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 5/6 menos 3/8.",
+    "MCM de 6 y 8: *24*.",
+    "5/6 es 20/24, y 3/8 es 9/24.",
+    "20/24 menos 9/24: *11/24*.",
+    "¿Se simplifica? No: ya es *irreducible*."
+   ],
+   "titulo": "5/6 − 3/8",
+   "items": [
+    "MCM(6, 8) = 24",
+    "5/6 = 20/24 · 3/8 = 9/24",
+    "20/24 − 9/24 = 11/24",
+    "Irreducible ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Sumar arriba con arriba y abajo con abajo: 1/2 más 1/4 *no es 2/6*.",
+    "Y usar un denominador que no sirve: para cuartos y sextos, *10 no es múltiplo de los dos*."
+   ],
+   "items": [
+    {
+     "mal": "1/2 + 1/4 = 2/6",
+     "bien": "2/4 + 1/4 = 3/4"
+    },
+    {
+     "mal": "Denominador 10 para 1/4 y 1/6",
+     "bien": "Un múltiplo de los dos: 12"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Mismo denominador*: se operan los numeradores.",
+    "*Distinto*: denominador común, mejor el MCM.",
+    "*Mixtos*: a impropias, o por partes.",
+    "Y al final, *simplificar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "IGUAL DENOMINADOR",
+     "2/7 + 3/7 = 5/7"
+    ],
+    [
+     "DISTINTO",
+     "MCM → 1/4 + 1/6 = 5/12"
+    ],
+    [
+     "MIXTOS",
+     "impropias o por partes"
+    ],
+    [
+     "AL FINAL",
+     "simplificar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

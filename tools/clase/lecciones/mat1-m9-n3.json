@@ -1,0 +1,180 @@
+{
+ "slug": "mat1-m9-n3",
+ "step_id": "9a9592c5-ef4a-4144-b0b0-f46008ba2249",
+ "materia": "Matemática I",
+ "titulo": "División de fracciones",
+ "sub": "Matemática I · Misión 9 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Dividís 3 por algo… ¡y te da *12*! ¿Cómo puede ser que dividir agrande?",
+    "Porque dividiste por *1/4*: en 3 enteros entran 12 cuartos.",
+    "Hoy: *dividir fracciones*, con un truco que da vuelta todo."
+   ],
+   "grande": "3 ÷ 1/4",
+   "final": "12",
+   "titulo": "DIVIDIR",
+   "sub": "fracciones"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Primero, el *inverso*: es la fracción *dada vuelta*. El inverso de 3/4 es 4/3.",
+    "Una fracción por su inverso da *1*: 3/4 por 4/3 es 12/12. Y ojo: el 0 no tiene inverso."
+   ],
+   "palabra": "Inverso",
+   "texto": "Dar vuelta la fracción: el inverso de 3/4 es 4/3",
+   "emoji": "🔄"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "El truco para dividir: *se multiplica por el inverso de la segunda*.",
+    "3/4 dividido 2/5 se convierte en 3/4 por 5/2: ¡*15/8*!"
+   ],
+   "antes": {
+    "cab": "DIVISIÓN",
+    "emoji": "➗",
+    "texto": "3/4 ÷ 2/5"
+   },
+   "despues": {
+    "cab": "MULTIPLICACIÓN",
+    "emoji": "✖️",
+    "texto": "3/4 × 5/2 = 15/8"
+   }
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Importante: se da vuelta *solo la segunda*, la que divide. La primera se queda quieta."
+   ],
+   "titulo": "SOLO LA SEGUNDA",
+   "texto": "La primera queda igual · la que divide se da vuelta",
+   "emoji": "🙃"
+  },
+  {
+   "t": "agrupar",
+   "voz": [
+    "Dividir también es preguntar *cuántas veces entra*.",
+    "¿Cuántos cuartos entran en 3 enteros? 3 por 4: ¡*12 cuartos*!",
+    "Por eso dividir por una fracción menor que 1 *agranda*."
+   ],
+   "niveles": [
+    {
+     "nombre": "3 enteros",
+     "valor": "3",
+     "icono": "🍫"
+    },
+    {
+     "nombre": "12 cuartos",
+     "valor": "12",
+     "icono": "🟫"
+    }
+   ],
+   "salto": "÷ 1/4 = × 4"
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Problema: una botella tiene 3/4 litro. ¿Cuántos vasos de 1/8 litro llena? 3/4 dividido 1/8 es 3/4 por 8/1.",
+    "Da 24/4: ¡*6 vasos*!"
+   ],
+   "filas": [
+    "3/4",
+    "8/1"
+   ],
+   "op": "×",
+   "resultado": "24/4 = 6 vasos"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Con mixtos y enteros, lo de siempre. 2 1/2 dividido 5/4.",
+    "2 1/2 es 5/2, y lo multiplicamos por 4/5.",
+    "Da 20/10: ¡*2*!",
+    "Y 6/7 dividido 3 es 6/7 por 1/3: 6/21, que es *2/7*."
+   ],
+   "pasos": [
+    "2 1/2 ÷ 5/4",
+    "5/2 × 4/5",
+    "= 20/10 = 2",
+    "6/7 ÷ 3 = 6/7 × 1/3 = 2/7"
+   ],
+   "notas": [
+    "",
+    "mixto a impropia · inverso",
+    "",
+    "el 3 es 3/1"
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 1 1/3 dividido 2/9.",
+    "1 1/3 es *4/3*.",
+    "4/3 por el inverso: *9/2*.",
+    "Simplificamos 4 con 2 y 9 con 3: queda 2 por 3, ¡*6*!",
+    "Comprobamos: 6 por 2/9 da 12/9, que es 4/3. *¡Cierra!*"
+   ],
+   "titulo": "1 1/3 ÷ 2/9",
+   "items": [
+    "1 1/3 = 4/3",
+    "4/3 × 9/2",
+    "Simplificar → 2 × 3 = 6",
+    "6 × 2/9 = 12/9 = 4/3 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado.",
+    "Dar vuelta la equivocada: en 4/5 dividido 2/3 se invierte *el 2/3*.",
+    "Y creer que dividir siempre achica: 3 dividido 1/4 da *12*."
+   ],
+   "items": [
+    {
+     "mal": "4/5 ÷ 2/3 = 5/4 × 2/3",
+     "bien": "4/5 × 3/2"
+    },
+    {
+     "mal": "Dividir siempre achica",
+     "bien": "3 ÷ 1/4 = 12"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Inverso*: dar vuelta la fracción.",
+    "*Dividir*: multiplicar por el inverso de la segunda.",
+    "Dividir es *cuántas veces entra*.",
+    "Mixtos a impropias, enteros con denominador 1.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INVERSO",
+     "3/4 → 4/3"
+    ],
+    [
+     "DIVIDIR",
+     "a/b ÷ c/d = a/b × d/c"
+    ],
+    [
+     "CUÁNTAS VECES",
+     "3 ÷ 1/4 = 12"
+    ],
+    [
+     "MIXTOS",
+     "pasar a impropias"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
