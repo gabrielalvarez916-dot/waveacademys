@@ -31,4 +31,4 @@ jobs:
           git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
           git add tools/clase/voz tools/clase/dist actividades/clases
           git diff --cached --quiet || git commit -m "Voz de clases animadas (automático)"
-          git pull --rebase origin main && git push origin HEAD:main
+          for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
