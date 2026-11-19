@@ -1,0 +1,242 @@
+{
+ "slug": "mat1-m2-n1",
+ "step_id": "9509a4a1-581c-48d1-9289-7695a005bcf4",
+ "materia": "Matemática I",
+ "titulo": "Suma y resta: propiedades y cálculo mental",
+ "sub": "Matemática I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Podés hacer 523 menos 99 en dos segundos?",
+    "Con un atajo, sí: *424*. Sin papel ni calculadora.",
+    "Hoy: los *atajos* del cálculo mental."
+   ],
+   "grande": "523 − 99",
+   "final": "424",
+   "titulo": "SUMA Y RESTA",
+   "sub": "propiedades y cálculo mental"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Primer atajo: 27 más 48 da 75.",
+    "Y 48 más 27… también 75.",
+    "El *orden* no cambia la suma: es la propiedad *conmutativa*.",
+    "Sirve para arrancar por el número más *cómodo*."
+   ],
+   "a": {
+    "cab": "27 + 48",
+    "texto": "75"
+   },
+   "b": {
+    "cab": "48 + 27",
+    "texto": "75"
+   },
+   "signo": "=",
+   "def": {
+    "cab": "CONMUTATIVA",
+    "texto": "El orden de los sumandos no cambia la suma"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Segundo atajo: 36 más 25 más 75.",
+    "Agrupá los que juntos dan *redondo*: 25 más 75 es 100.",
+    "Y 36 más 100: *136*. Eso es la propiedad *asociativa*."
+   ],
+   "pasos": [
+    "36 + 25 + 75",
+    "36 + (25 + 75)",
+    "36 + 100 = 136"
+   ],
+   "notas": [
+    "buscamos los que dan redondo",
+    "25 + 75 = 100",
+    ""
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Ojo: en la *resta* el orden importa. 9 menos 4 no es lo mismo que 4 menos 9."
+   ],
+   "texto": "En la resta el orden importa: 9 − 4 ≠ 4 − 9",
+   "emoji": "⚠️",
+   "color": "#ff7a66"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "La resta es la *operación inversa* de la suma: deshace lo que hizo.",
+    "Si 45 más 30 da 75, ya sabés dos restas: 75 menos 30 es 45, y 75 menos 45 es 30."
+   ],
+   "titulo": "UNA SUMA Y SUS DOS RESTAS",
+   "columnas": [
+    "Suma",
+    "Primera resta",
+    "Segunda resta"
+   ],
+   "filas": [
+    [
+     "45 + 30 = 75",
+     "75 − 30 = 45",
+     "75 − 45 = 30"
+    ]
+   ]
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Otra forma de restar: *contar hacia arriba*. ¿Cuánto le falta a 637 para llegar a 1.000?",
+    "Arrancás en 637.",
+    "Más 3, llegás a 640.",
+    "Más 60, llegás a 700.",
+    "Más 300, llegás a 1.000. Faltaron 3 más 60 más 300: *363*."
+   ],
+   "min": 600,
+   "max": 1000,
+   "paso": 50,
+   "marcas": [
+    {
+     "v": 637,
+     "txt": "637"
+    },
+    {
+     "v": 640,
+     "txt": "+3"
+    },
+    {
+     "v": 700,
+     "txt": "+60"
+    },
+    {
+     "v": 1000,
+     "txt": "+300 = 363"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Tercer atajo: *descomponer*. Partís los números y sumás por partes: 346 más 238.",
+    "Centenas: 300 más 200, 500.",
+    "Decenas: 40 más 30, 70.",
+    "Unidades: 6 más 8, 14.",
+    "Juntás todo: *584*."
+   ],
+   "titulo": "DESCOMPONER: 346 + 238",
+   "items": [
+    "300 + 200 = 500",
+    "40 + 30 = 70",
+    "6 + 8 = 14",
+    "500 + 70 + 14 = 584"
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Cuarto atajo, el más poderoso: la *compensación*. 198 más 357.",
+    "198 es casi 200: sumás 200 y da 557.",
+    "Pero te pasaste 2: los sacás. *555*."
+   ],
+   "pasos": [
+    "198 + 357",
+    "200 + 357 = 557",
+    "557 − 2 = 555"
+   ],
+   "notas": [
+    "198 está cerca de 200",
+    "sumamos 2 de más",
+    "devolvemos los 2"
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: 1.250 menos 398.",
+    "398 es casi 400: 1.250 menos 400 da 850.",
+    "Restaste 2 de más, así que los *devolvés*: 852.",
+    "Y comprobás con la inversa: 852 más 398 da *1.250*. ¡Perfecto!"
+   ],
+   "pasos": [
+    "1.250 − 398",
+    "1.250 − 400 = 850",
+    "850 + 2 = 852",
+    "852 + 398 = 1.250 ✓"
+   ],
+   "notas": [
+    "398 = 400 − 2",
+    "restamos 2 de más",
+    "los devolvemos",
+    "comprobamos con la suma"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para evitar.",
+    "Cambiar el orden en una resta: 15 menos 8 *no* es 8 menos 15.",
+    "Y olvidarte de compensar: 523 menos 99 da *424*, no 423."
+   ],
+   "items": [
+    {
+     "mal": "15 − 8 = 8 − 15",
+     "bien": "La conmutativa es solo de la suma"
+    },
+    {
+     "mal": "523 − 99 = 423",
+     "bien": "523 − 100 + 1 = 424"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: antes de calcular, *mirá los números*. Si hay uno cerca de un redondo, compensá; si dos juntos dan redondo, asocialos."
+   ],
+   "titulo": "MIRÁ LOS NÚMEROS",
+   "texto": "Cerca de un redondo: compensá. Si dos juntos dan redondo: asocialos",
+   "emoji": "👀"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Conmutativa*: el orden no cambia la suma.",
+    "*Asociativa*: agrupás como te convenga.",
+    "La resta es la *inversa* de la suma.",
+    "*Descomponer*: sumás por partes.",
+    "*Compensar*: redondeás y corregís.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONMUTATIVA",
+     "27 + 48 = 48 + 27"
+    ],
+    [
+     "ASOCIATIVA",
+     "36 + (25 + 75)"
+    ],
+    [
+     "INVERSA",
+     "75 − 30 = 45"
+    ],
+    [
+     "DESCOMPONER",
+     "500 + 70 + 14"
+    ],
+    [
+     "COMPENSAR",
+     "523 − 100 + 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

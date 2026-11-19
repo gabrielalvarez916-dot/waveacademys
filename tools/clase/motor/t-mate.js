@@ -130,7 +130,7 @@
     var eje = w.pieza(g, 0, 0); w.el('line', { x1: X0 - 40, y1: Y, x2: X1 + 40, y2: Y, stroke: C.txt, 'stroke-width': 6, 'stroke-linecap': 'round' }, eje);
     for (var v = d.min; v <= d.max + 1e-9; v += d.paso) { w.el('line', { x1: sx(v), y1: Y - 22, x2: sx(v), y2: Y + 22, stroke: C.suave, 'stroke-width': 4 }, eje); w.txt(eje, sx(v), Y + 60, String(+v.toFixed(4)).replace('.', ','), 30, C.suave); }
     var M = d.marcas.map(function (m, k) { var p = w.pieza(g, sx(m.v), Y), col = W.PAL[(k + 1) % W.PAL.length]; w.el('circle', { r: 20, fill: col, stroke: '#fff', 'stroke-width': 5 }, p);
-      var tw = String(m.txt).length * 19 + 50; w.caja(p, 0, -90, tw, 70, 'rgba(6,20,22,.88)', col, 30, 4); w.txt(p, 0, -90, m.txt, 34, '#fff'); return p; });
+      var tw = String(m.txt).length * 19 + 50, ly = k % 2 ? -175 : -90; if (k % 2) w.el('line', { x1: 0, y1: -20, x2: 0, y2: ly + 35, stroke: col, 'stroke-width': 3 }, p); w.caja(p, 0, ly, tw, 70, 'rgba(6,20,22,.88)', col, 30, 4); w.txt(p, 0, ly, m.txt, 34, '#fff'); return p; });
     B(0); w.IN(tl, eje, 0, { scaleX: 0, y: 0, ease: 'power2.out' });
     M.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { y: -200, ease: 'bounce.out', d: .7 }); });
   } };
@@ -159,7 +159,7 @@
   T.ecuacion = { n: function (d) { return d.pasos.length; }, armar: function (g, tl, B, d) {
     var bal = w.pieza(g, 960, 760); w.el('path', { d: 'M-50 200 L50 200 L0 20 Z', fill: C.linea }, bal); w.el('rect', { x: -520, y: 0, width: 1040, height: 20, rx: 10, fill: C.sol }, bal);
     w.caja(bal, -400, -40, 300, 70, 'rgba(127,211,196,.2)', C.aqua, 16, 4); w.caja(bal, 400, -40, 300, 70, 'rgba(244,182,63,.2)', C.sol, 16, 4);
-    var E = d.pasos.map(function (s, k) { var p = w.pieza(g, 960, 420); w.txt(p, 0, 0, s, 120, k === d.pasos.length - 1 ? C.verde : C.txt); if (d.notas && d.notas[k]) w.txt(p, 0, 110, d.notas[k], 40, C.sol); return p; });
+    var E = d.pasos.map(function (s, k) { var p = w.pieza(g, 960, 420); w.txt(p, 0, 0, s, Math.min(120, Math.floor(1500 / (String(s).length * .58))), k === d.pasos.length - 1 ? C.verde : C.txt); if (d.notas && d.notas[k]) w.txt(p, 0, 110, d.notas[k], 40, C.sol); return p; });
     E.forEach(function (p, k) { B(k); if (!k) w.IN(tl, bal, 0); else w.OUT(tl, E[k - 1], 0, { y: -80 }); w.IN(tl, p, k ? '>' : '<', { y: 80 }); tl.to(bal, { rotation: 3, svgOrigin: '960 760', duration: .15, yoyo: true, repeat: 1 }, '<'); });
   } };
 

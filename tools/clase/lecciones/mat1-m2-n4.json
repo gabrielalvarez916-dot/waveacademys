@@ -1,0 +1,294 @@
+{
+ "slug": "mat1-m2-n4",
+ "step_id": "f1c40898-d8af-4160-b1ea-5d8b4b024146",
+ "materia": "Matemática I",
+ "titulo": "Estimación y problemas de cálculo",
+ "sub": "Matemática I · Misión 2 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Un compañero dice que 48 por 21 da 1.808. ¿Le creés?",
+    "Sin hacer la cuenta, ya sabemos que *está mal*.",
+    "Hoy aprendés el superpoder de *estimar*."
+   ],
+   "grande": "48 × 21",
+   "final": "1.808?",
+   "titulo": "ESTIMACIÓN",
+   "sub": "y problemas de cálculo"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Primero, *redondear*: cambiar un número por uno redondo cercano.",
+    "Mirás la cifra de la derecha: si es de 0 a 4, *queda*; si es de 5 a 9, *sube*."
+   ],
+   "palabra": "Redondear",
+   "texto": "Mirás la cifra de la derecha: de 0 a 4 queda igual; de 5 a 9 sube 1.",
+   "emoji": "🎯"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Redondeemos el *4.372*.",
+    "A la decena: miro el 2, queda. *4.370*.",
+    "A la centena: miro el 7, sube. *4.400*.",
+    "A la unidad de mil: miro el 3, queda. *4.000*."
+   ],
+   "titulo": "REDONDEAR 4.372",
+   "columnas": [
+    "A la",
+    "Cifra que mirás",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "decena",
+     "2 (queda)",
+     "4.370"
+    ],
+    [
+     "centena",
+     "7 (sube)",
+     "4.400"
+    ],
+    [
+     "unidad de mil",
+     "3 (queda)",
+     "4.000"
+    ]
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "*Estimar* es calcular con números redondos: 389 más 512 es parecido a 400 más 500, 900.",
+    "La cuenta exacta da 901.",
+    "¡Casi lo mismo!",
+    "La estimación no da el resultado exacto, pero te dice *cuánto más o menos* tiene que dar."
+   ],
+   "a": {
+    "cab": "ESTIMADO",
+    "texto": "400 + 500 = 900"
+   },
+   "b": {
+    "cab": "EXACTO",
+    "texto": "389 + 512 = 901"
+   },
+   "signo": "≈",
+   "def": {
+    "cab": "ESTIMAR",
+    "texto": "Calcular con números redondos para saber más o menos cuánto da"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Volvamos al compañero: 48 por 21 es casi 50 por 20, o sea *1.000*.",
+    "1.808 está *muy lejos* de 1.000: algo falló.",
+    "La cuenta bien hecha: 960 más 48, *1.008*. Ahora sí, cerca."
+   ],
+   "pasos": [
+    "48 × 21 ≈ 50 × 20 = 1.000",
+    "1.808 está lejos de 1.000 ❌",
+    "48 × 20 + 48 = 1.008 ✓"
+   ],
+   "notas": [
+    "estimamos",
+    "algo falló",
+    "calculamos bien"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿Cómo elegir la operación? Pensá *qué pasa* en la situación.",
+    "Si se *juntan* cantidades, sumás.",
+    "Si se *quita* o se compara, restás.",
+    "Si se *repite* una cantidad, multiplicás.",
+    "Y si se *reparte*, dividís."
+   ],
+   "cajas": [
+    {
+     "cab": "SUMAR",
+     "emoji": "➕"
+    },
+    {
+     "cab": "RESTAR",
+     "emoji": "➖"
+    },
+    {
+     "cab": "MULTIPLICAR",
+     "emoji": "✖️"
+    },
+    {
+     "cab": "DIVIDIR",
+     "emoji": "➗"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Juntar",
+     "caja": 0
+    },
+    {
+     "txt": "Quitar",
+     "caja": 1
+    },
+    {
+     "txt": "Comparar",
+     "caja": 1
+    },
+    {
+     "txt": "Repetir",
+     "caja": 2
+    },
+    {
+     "txt": "Repartir",
+     "caja": 3
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Y ojo: algunos problemas traen *datos de más*, que no se usan."
+   ],
+   "texto": "Algunos problemas traen DATOS DE MÁS",
+   "emoji": "🕵️"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Problema: una familia compra 3 entradas de 4.500 pesos, paga con 20.000, y el cine está a 12 cuadras. ¿Cuánto vuelto recibe?",
+    "Los datos: 3 entradas de 4.500 y un billete de 20.000.",
+    "Las 12 cuadras no importan: es un *dato de más*.",
+    "Se repite el precio 3 veces: *13.500*.",
+    "Se lo quitás al billete: *6.500*.",
+    "Control: 3 por 5.000 es 15.000, así que un vuelto cerca de 5.000 tiene sentido. Recibe *6.500 pesos*."
+   ],
+   "titulo": "LAS ENTRADAS DEL CINE",
+   "items": [
+    {
+     "txt": "3 entradas de $4.500, paga con $20.000",
+     "emoji": "🎟️"
+    },
+    {
+     "txt": "Las 12 cuadras: dato de más",
+     "emoji": "🚫"
+    },
+    {
+     "txt": "3 × 4.500 = 13.500",
+     "emoji": "✖️"
+    },
+    {
+     "txt": "20.000 − 13.500 = 6.500",
+     "emoji": "➖"
+    },
+    {
+     "txt": "Vuelto: $6.500 ✓",
+     "emoji": "💵"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: un club quiere 18 pelotas de 7.850 pesos y tiene 150.000. ¿Le alcanza?",
+    "Los datos: 18 pelotas, 7.850 cada una, 150.000 en la caja.",
+    "Estimamos: 20 por 8.000, 160.000. Está cerca: hay que hacer la *cuenta exacta*.",
+    "7.850 por 18, con la distributiva: *141.300*.",
+    "Le restamos eso a lo que tiene: 8.700.",
+    "¡Le *alcanza*, y le sobran *8.700 pesos*!"
+   ],
+   "titulo": "LAS PELOTAS DEL CLUB",
+   "items": [
+    {
+     "txt": "18 pelotas de $7.850 · tiene $150.000",
+     "emoji": "⚽"
+    },
+    {
+     "txt": "Estimo: 20 × 8.000 = 160.000",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "7.850 × 18 = 78.500 + 62.800 = 141.300",
+     "emoji": "✖️"
+    },
+    {
+     "txt": "150.000 − 141.300 = 8.700",
+     "emoji": "➖"
+    },
+    {
+     "txt": "¡Alcanza y sobran $8.700!",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* a evitar.",
+    "Elegir la operación por una *palabra suelta*: «más» no siempre es sumar.",
+    "Y aceptar un resultado *sin controlarlo*: la estimación te avisa."
+   ],
+   "items": [
+    {
+     "mal": "«más» → siempre sumar",
+     "bien": "Leé qué pasa en la situación"
+    },
+    {
+     "mal": "48 × 21 = 1.808 sin controlar",
+     "bien": "Estimá ≈ 1.000 y revisá"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: *estimá antes de calcular*. Así sabés qué esperar y cazás el error al instante."
+   ],
+   "titulo": "ESTIMÁ ANTES",
+   "texto": "Así sabés qué resultado esperar y detectás errores al instante",
+   "emoji": "🧠"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Redondear*: de 0 a 4 queda, de 5 a 9 sube.",
+    "*Estimar*: calcular con números redondos.",
+    "*Controlar*: si el resultado está lejos de la estimación, algo falló.",
+    "Elegís la operación según *qué pasa*.",
+    "Y cuidado con los *datos de más*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REDONDEAR",
+     "4.372 ≈ 4.400"
+    ],
+    [
+     "ESTIMAR",
+     "389 + 512 ≈ 900"
+    ],
+    [
+     "CONTROLAR",
+     "lejos de la estimación = error"
+    ],
+    [
+     "ELEGIR LA OPERACIÓN",
+     "juntar, quitar, repetir, repartir"
+    ],
+    [
+     "DATOS DE MÁS",
+     "las 12 cuadras del cine"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

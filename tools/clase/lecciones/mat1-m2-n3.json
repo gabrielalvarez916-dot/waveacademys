@@ -1,0 +1,242 @@
+{
+ "slug": "mat1-m2-n3",
+ "step_id": "1e60c63e-2aa3-44bb-bf84-a456497d49d2",
+ "materia": "Matemática I",
+ "titulo": "División, resto y relación fundamental",
+ "sub": "Matemática I · Misión 2 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Cuántos micros de 12 lugares necesitan 50 chicos?",
+    "¿4? ¡No! Con 4, dos chicos se quedan en la escuela. Hacen falta *5*.",
+    "Hoy: la *división* y el poder del *resto*."
+   ],
+   "grande": "50 ÷ 12",
+   "final": "5 🚌",
+   "titulo": "LA DIVISIÓN",
+   "sub": "resto y relación fundamental"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Dividir es *repartir en partes iguales*, o ver cuántas veces entra un número en otro.",
+    "Si repartís 47 caramelos entre 5 amigos, a cada uno le tocan 9… y sobran 2."
+   ],
+   "palabra": "División",
+   "texto": "Repartir en partes iguales o ver cuántas veces entra un número en otro.",
+   "emoji": "🍬"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Cada número tiene su nombre: 47 es el *dividendo*, 5 el *divisor*.",
+    "9 es el *cociente*, y lo que sobra, 2, es el *resto*."
+   ],
+   "titulo": "LAS PARTES DE 47 ÷ 5",
+   "columnas": [
+    "Dividendo",
+    "Divisor",
+    "Cociente",
+    "Resto"
+   ],
+   "filas": [
+    [
+     "47",
+     "5",
+     "9",
+     "2"
+    ]
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Regla de oro: el resto siempre es *menor que el divisor*. Si sobraran 5, ¡entraría una vez más!"
+   ],
+   "texto": "El resto siempre es MENOR que el divisor",
+   "emoji": "☝️",
+   "color": "#F4B63F"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Si el resto es cero, la división es *exacta*: 45 dividido 5 da 9.",
+    "Y algo prohibido: *nunca* se divide por cero.",
+    "Ningún número multiplicado por cero da 47."
+   ],
+   "a": {
+    "cab": "EXACTA",
+    "texto": "45 ÷ 5 = 9",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "PROHIBIDO",
+    "texto": "47 ÷ 0",
+    "emoji": "🚫"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Ahora, la fórmula mágica: la *relación fundamental*.",
+    "Dividendo es igual a divisor por cociente, más el resto. 5 por 9, más 2: *47*."
+   ],
+   "palabra": "Relación fundamental",
+   "texto": "Dividendo = divisor × cociente + resto",
+   "emoji": "🔗"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Sirve para *comprobar*. 365 dividido 7 da 52, y sobra 1.",
+    "7 por 52: 364.",
+    "Más el resto, 1: *365*. ¡Está bien!"
+   ],
+   "pasos": [
+    "365 ÷ 7 = 52, resto 1",
+    "7 × 52 = 364",
+    "364 + 1 = 365 ✓"
+   ],
+   "notas": [
+    "dividimos",
+    "divisor por cociente",
+    "más el resto: volvemos al dividendo"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Pregunta trampa: ¿cuánto es 824 dividido 4?",
+    "¿26? ¿206? ¿260?",
+    "¡*206*! El 2 no alcanza para dividir por 4, y ahí va un *cero* en el cociente."
+   ],
+   "pregunta": "¿Cuánto es 824 ÷ 4?",
+   "opciones": [
+    "26",
+    "206",
+    "260",
+    "2.006"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Con la relación hallás un *dato que falta*: divisor 6, cociente 15, resto 4. ¿Cuál era el dividendo?",
+    "6 por 15, más 4.",
+    "*94*."
+   ],
+   "pasos": [
+    "? ÷ 6 = 15, resto 4",
+    "6 × 15 + 4",
+    "= 94"
+   ],
+   "notas": [
+    "¿cuál es el dividendo?",
+    "relación fundamental",
+    ""
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Volvamos a la excursión.",
+    "50 dividido 12 da 4, y el resto es 2.",
+    "Con 4 micros, *2 chicos se quedan afuera*.",
+    "Por eso el resto obliga a sumar uno: *5 micros*."
+   ],
+   "titulo": "LA EXCURSIÓN",
+   "items": [
+    {
+     "txt": "50 ÷ 12 = 4, resto 2",
+     "emoji": "➗"
+    },
+    {
+     "txt": "4 micros: quedan 2 chicos afuera",
+     "emoji": "😟"
+    },
+    {
+     "txt": "¡Hacen falta 5 micros!",
+     "emoji": "🚌"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío final: 1.537 dividido 12.",
+    "15 dividido 12: 1, y sobran 3.",
+    "Bajamos el 3: 33 dividido 12, 2, y sobran 9.",
+    "Bajamos el 7: 97 dividido 12, 8, y sobra 1.",
+    "Cociente *128*, resto *1*.",
+    "Comprobamos: 12 por 128 más 1 da *1.537*. ¡Perfecto!"
+   ],
+   "titulo": "1.537 ÷ 12",
+   "items": [
+    "15 ÷ 12 = 1, resto 3",
+    "33 ÷ 12 = 2, resto 9",
+    "97 ÷ 12 = 8, resto 1",
+    "Cociente 128, resto 1",
+    "12 × 128 + 1 = 1.537 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* clásicos.",
+    "Dejar un resto más grande que el divisor: en 47 dividido 5, un resto de 7 *no puede ser*.",
+    "Y olvidar el *cero* del cociente: 824 dividido 4 es 206, no 26."
+   ],
+   "items": [
+    {
+     "mal": "47 ÷ 5 = 8, resto 7",
+     "bien": "47 ÷ 5 = 9, resto 2"
+    },
+    {
+     "mal": "824 ÷ 4 = 26",
+     "bien": "824 ÷ 4 = 206"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Las partes: *dividendo, divisor, cociente y resto*.",
+    "El resto es *menor* que el divisor.",
+    "Si el resto es cero, es *exacta*.",
+    "*Dividendo* igual a divisor por cociente, más resto.",
+    "Con esa relación *comprobás* y hallás datos que faltan.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTES",
+     "47 ÷ 5 = 9, resto 2"
+    ],
+    [
+     "RESTO",
+     "menor que el divisor"
+    ],
+    [
+     "EXACTA",
+     "resto 0: 45 ÷ 5 = 9"
+    ],
+    [
+     "RELACIÓN",
+     "47 = 5 × 9 + 2"
+    ],
+    [
+     "DATO QUE FALTA",
+     "6 × 15 + 4 = 94"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

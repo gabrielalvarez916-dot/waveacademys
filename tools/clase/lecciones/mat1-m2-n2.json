@@ -1,0 +1,233 @@
+{
+ "slug": "mat1-m2-n2",
+ "step_id": "4745ce85-23f1-4be9-a020-960784032ebb",
+ "materia": "Matemática I",
+ "titulo": "Multiplicación y propiedad distributiva",
+ "sub": "Matemática I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿8 por 99 de cabeza? Parece difícil…",
+    "Pero sale en un segundo: *792*.",
+    "El secreto: la propiedad *distributiva*."
+   ],
+   "grande": "8 × 99",
+   "final": "792",
+   "titulo": "MULTIPLICACIÓN",
+   "sub": "y propiedad distributiva"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Multiplicar es *sumar el mismo número* varias veces.",
+    "4 por 6 es 6 más 6 más 6 más 6: 24. Los números son los *factores*, y el resultado, el *producto*."
+   ],
+   "palabra": "Multiplicación",
+   "texto": "4 × 6 = 6 + 6 + 6 + 6 = 24. Los que se multiplican son factores; el resultado, el producto.",
+   "emoji": "✖️"
+  },
+  {
+   "t": "grilla",
+   "voz": [
+    "También es un *rectángulo*: 4 filas de 6 cuadraditos.",
+    "Contalos: 24. Multiplicar es calcular un *área*."
+   ],
+   "filas": 4,
+   "cols": 6,
+   "titulo": "4 × 6 COMO RECTÁNGULO",
+   "resaltar": [
+    {
+     "fila": 4,
+     "col": 6,
+     "txt": "4 × 6 = 24"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Como en la suma, el orden y los grupos no cambian el producto.",
+    "25 por 7 por 4: juntá el 25 con el 4, que dan *100*.",
+    "Y 100 por 7: *700*. Facilísimo."
+   ],
+   "pasos": [
+    "25 × 7 × 4",
+    "(25 × 4) × 7",
+    "100 × 7 = 700"
+   ],
+   "notas": [
+    "cambiamos el orden",
+    "25 × 4 = 100",
+    ""
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Y ahora la estrella: la propiedad *distributiva*.",
+    "Multiplicar por una suma es multiplicar *por cada parte* y después sumar."
+   ],
+   "palabra": "Distributiva",
+   "texto": "a × (b + c) = a × b + a × c",
+   "emoji": "🍫"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Mirá: 12 por 17.",
+    "Partí el 17 en *10 más 7*.",
+    "Es como cortar el rectángulo en dos: 12 por 10, más 12 por 7.",
+    "120 más 84: *204*."
+   ],
+   "pasos": [
+    "12 × 17",
+    "12 × (10 + 7)",
+    "12 × 10 + 12 × 7",
+    "120 + 84 = 204"
+   ],
+   "notas": [
+    "",
+    "partimos el 17",
+    "dos rectángulos más fáciles",
+    ""
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¡Y también funciona con la *resta*! 6 por 10 menos 2.",
+    "6 por 10, menos 6 por 2.",
+    "60 menos 12: *48*. Lo mismo que 6 por 8."
+   ],
+   "pasos": [
+    "6 × (10 − 2)",
+    "6 × 10 − 6 × 2",
+    "60 − 12 = 48"
+   ],
+   "notas": [
+    "también vale con la resta",
+    "multiplicamos cada uno",
+    "y restamos"
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "El truco del cálculo mental: partí un factor en un *redondo* más o menos algo chico.",
+    "14 por 11: 14 por 10 más 14. *154*.",
+    "25 por 19: 25 por 20 menos 25. *475*.",
+    "Y el del principio, 8 por 99: 800 menos 8. *792*."
+   ],
+   "titulo": "MULTIPLICAR DE CABEZA",
+   "columnas": [
+    "Cuenta",
+    "Partimos",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "14 × 11",
+     "14 × (10 + 1)",
+     "154"
+    ],
+    [
+     "25 × 19",
+     "25 × (20 − 1)",
+     "475"
+    ],
+    [
+     "8 × 99",
+     "8 × (100 − 1)",
+     "792"
+    ]
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: 24 por 99.",
+    "99 es 100 menos 1.",
+    "Entonces: 2.400 menos 24.",
+    "Da *2.376*. ¡Sin calculadora!"
+   ],
+   "pasos": [
+    "24 × 99",
+    "24 × (100 − 1)",
+    "2.400 − 24",
+    "= 2.376"
+   ],
+   "notas": [
+    "",
+    "99 = 100 − 1",
+    "24 × 100 y 24 × 1",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* típicos.",
+    "Distribuir solo sobre un sumando: 2 por 3 más 4 no es 6 más 4; es 6 más 8, *14*.",
+    "Y usar la distributiva en un producto: 2 por 3 por 4 es simplemente *24*."
+   ],
+   "items": [
+    {
+     "mal": "2 × (3 + 4) = 6 + 4",
+     "bien": "2 × 3 + 2 × 4 = 14"
+    },
+    {
+     "mal": "2 × (3 × 4) = 6 × 8",
+     "bien": "2 × 3 × 4 = 24"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: buscá el factor que está *cerca de un redondo* y partilo: 99 es 100 menos 1, 48 es 50 menos 2."
+   ],
+   "titulo": "PARTÍ EL FACTOR",
+   "texto": "99 = 100 − 1 · 21 = 20 + 1 · 48 = 50 − 2",
+   "emoji": "✂️"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Multiplicar es *sumar repetido*.",
+    "El orden y los grupos *no cambian* el producto.",
+    "*Distributiva*: multiplicás por cada parte y sumás.",
+    "También vale con la *resta*.",
+    "Y para calcular de cabeza, *partí un factor*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MULTIPLICACIÓN",
+     "4 × 6 = 6 + 6 + 6 + 6"
+    ],
+    [
+     "ORDEN Y GRUPOS",
+     "25 × 7 × 4 = 100 × 7"
+    ],
+    [
+     "DISTRIBUTIVA",
+     "12 × 17 = 120 + 84"
+    ],
+    [
+     "CON LA RESTA",
+     "6 × (10 − 2) = 60 − 12"
+    ],
+    [
+     "CÁLCULO MENTAL",
+     "25 × 19 = 500 − 25"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
