@@ -1,0 +1,194 @@
+{
+ "slug": "mat1-m5-n4",
+ "step_id": "44f60a93-08b2-4582-8b8d-610d99b2e238",
+ "materia": "Matemática I",
+ "titulo": "Repartos y agrupamientos exactos",
+ "sub": "Matemática I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Tenés 48 alfajores y 36 chocolates para armar bolsitas iguales, sin que sobre nada. ¿Cuántas armás?",
+    "Hasta *12* bolsitas. Los divisores te lo dicen.",
+    "Hoy: *repartos y agrupamientos* exactos."
+   ],
+   "grande": "48 y 36",
+   "final": "12 bolsitas",
+   "titulo": "REPARTOS EXACTOS",
+   "sub": "divisores y múltiplos en problemas"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Para repartir en partes iguales *sin que sobre*, la cantidad de partes tiene que ser *divisor* del total.",
+    "30 caramelos se reparten exacto entre 1, 2, 3, 5, 6, 10, 15 o 30 chicos. Entre 4, no: sobran 2."
+   ],
+   "palabra": "Reparto exacto",
+   "texto": "Se puede repartir sin que sobre solo si la cantidad de partes es divisor del total",
+   "emoji": "🍬"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La gran pregunta: ¿busco *divisores* o *múltiplos*? Si el *total* está fijo, como 24 alumnos para armar grupos…",
+    "…buscás divisores. Si el *grupo* está fijo, como maples de 12 huevos llenos…",
+    "…buscás múltiplos: 12, 24, 36 huevos.",
+    "Esa pregunta *ordena* todo el problema."
+   ],
+   "a": {
+    "cab": "TOTAL FIJO",
+    "texto": "24 alumnos en grupos",
+    "emoji": "👥"
+   },
+   "b": {
+    "cab": "GRUPO FIJO",
+    "texto": "maples de 12 huevos",
+    "emoji": "🥚"
+   },
+   "signo": "vs",
+   "def": {
+    "cab": "CÓMO DECIDIR",
+    "texto": "Total fijo → divisores · Tamaño del grupo fijo → múltiplos"
+   }
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Problema: 40 sillas en filas iguales, con más de 5 y menos de 10 por fila.",
+    "El total está fijo: buscamos *divisores* de 40.",
+    "Entre 6 y 9 sillas por fila, solo está el *8*.",
+    "Se arman *5 filas de 8 sillas*."
+   ],
+   "titulo": "LAS 40 SILLAS",
+   "items": [
+    {
+     "txt": "Divisores de 40: 1, 2, 4, 5, 8, 10, 20, 40",
+     "emoji": "📋"
+    },
+    {
+     "txt": "Más de 5 y menos de 10 por fila: solo el 8",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "5 filas de 8 sillas",
+     "emoji": "🪑"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Con varias pistas, las aplicás *una por una* y vas tachando.",
+    "Pista 1: son entre 20 y 40 alumnos.",
+    "Pista 2: se agrupan de a 4 y de a 6 sin que sobre nadie. Múltiplos comunes: *24 y 36*.",
+    "Pista 3: son más de 30. ¡Son *36 alumnos*!"
+   ],
+   "titulo": "¿CUÁNTOS ALUMNOS?",
+   "items": [
+    {
+     "txt": "Entre 20 y 40",
+     "emoji": "🔢"
+    },
+    {
+     "txt": "De a 4 y de a 6: múltiplos comunes → 24 y 36",
+     "emoji": "👥"
+    },
+    {
+     "txt": "Más de 30 → 36 alumnos",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "venn",
+   "voz": [
+    "Volvamos a las bolsitas: la cantidad de bolsitas tiene que dividir a 48 *y* a 36.",
+    "Divisores de 48: 1, 2, 3, 4, 6, 8, 12, 16, 24 y 48.",
+    "Divisores de 36: 1, 2, 3, 4, 6, 9, 12, 18 y 36.",
+    "Comunes: *1, 2, 3, 4, 6 y 12*. Esas son todas las opciones."
+   ],
+   "a": "DIVISORES DE 48",
+   "b": "DIVISORES DE 36",
+   "itemsA": [
+    "8, 16",
+    "24, 48"
+   ],
+   "itemsB": [
+    "9, 18",
+    "36"
+   ],
+   "ambos": [
+    "1, 2, 3",
+    "4, 6, 12"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La de más bolsitas: *12*, con 4 alfajores y 3 chocolates cada una. ¡Sin que sobre nada!"
+   ],
+   "texto": "12 bolsitas: 4 alfajores y 3 chocolates en cada una",
+   "emoji": "🎁"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* típicos.",
+    "Tomar un *múltiplo* cuando hace falta un divisor: para repartir 24 en grupos iguales, 48 no sirve.",
+    "Y probar pocos casos: *revisá todas* las opciones antes de responder."
+   ],
+   "items": [
+    {
+     "mal": "Repartir 24 en grupos de 48",
+     "bien": "Los grupos tienen que dividir a 24"
+    },
+    {
+     "mal": "Quedarse con la primera opción",
+     "bien": "Revisá todas las opciones"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: preguntate *qué está fijo*. Total fijo, divisores. Grupo fijo, múltiplos."
+   ],
+   "titulo": "¿QUÉ ESTÁ FIJO?",
+   "texto": "Total fijo → divisores · Grupo fijo → múltiplos",
+   "emoji": "📌"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "En un *reparto exacto*, las partes dividen al total.",
+    "*Total fijo*: buscás divisores.",
+    "*Grupo fijo*: buscás múltiplos.",
+    "Con varias *pistas*, aplicás una por una y tachás.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REPARTO EXACTO",
+     "las partes dividen al total"
+    ],
+    [
+     "TOTAL FIJO",
+     "divisores"
+    ],
+    [
+     "GRUPO FIJO",
+     "múltiplos"
+    ],
+    [
+     "PISTAS",
+     "de a una, tachando opciones"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

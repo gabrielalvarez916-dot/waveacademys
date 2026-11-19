@@ -1,0 +1,222 @@
+{
+ "slug": "mat1-m5-n1",
+ "step_id": "e935725e-88b4-4c59-8dd6-9d0cce0ad59f",
+ "materia": "Matemática I",
+ "titulo": "Múltiplos y su regularidad",
+ "sub": "Matemática I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Ana va a natación cada 4 días, Beto cada 6. Hoy coincidieron. ¿Cuándo vuelven a cruzarse?",
+    "Dentro de *12 días*.",
+    "Hoy: los *múltiplos* y sus secretos."
+   ],
+   "grande": "4 y 6",
+   "final": "12",
+   "titulo": "MÚLTIPLOS",
+   "sub": "y su regularidad"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un número es *múltiplo* de otro si sale de multiplicarlo por algo.",
+    "84 es múltiplo de 7, porque 7 por 12 da 84."
+   ],
+   "palabra": "Múltiplo",
+   "texto": "a es múltiplo de b si a = b × k. Ej.: 84 = 7 × 12.",
+   "emoji": "✖️"
+  },
+  {
+   "t": "fichas",
+   "voz": [
+    "Los múltiplos de 6: 0, 6, 12, 18, 24, 30…",
+    "¿Cuántos hay? ¡*Infinitos*! Siempre podés multiplicar por uno más grande.",
+    "Saltan de 6 en 6, como una *escalera*."
+   ],
+   "fichas": [
+    "0",
+    "6",
+    "12",
+    "18",
+    "24",
+    "30",
+    "…"
+   ],
+   "grande": "¡INFINITOS!",
+   "etiqueta": "MÚLTIPLOS DE 6"
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Dato curioso: el *0* es múltiplo de todos los números, porque cualquier número por 0 da 0."
+   ],
+   "texto": "El 0 es múltiplo de TODOS: 0 = b × 0",
+   "emoji": "0️⃣",
+   "color": "#F4B63F"
+  },
+  {
+   "t": "venn",
+   "voz": [
+    "Un *múltiplo común* es múltiplo de dos números a la vez. Mirá el 4 y el 6.",
+    "Múltiplos de 4: 4, 8, 12, 16, 20, 24…",
+    "Múltiplos de 6: 6, 12, 18, 24, 30…",
+    "¡En el medio, los que comparten: *12, 24, 36*!"
+   ],
+   "a": "MÚLTIPLOS DE 4",
+   "b": "MÚLTIPLOS DE 6",
+   "itemsA": [
+    "4, 8, 16",
+    "20, 28, 32"
+   ],
+   "itemsB": [
+    "6, 18",
+    "30"
+   ],
+   "ambos": [
+    "0, 12",
+    "24, 36"
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Un secreto: las *últimas cifras* de los múltiplos se repiten en ciclos.",
+    "Los de 5 terminan siempre en *0 o 5*.",
+    "Los de 4, en 4, 8, 2, 6, 0… y vuelve a empezar. Por eso 1.003 *no puede* ser múltiplo de 5."
+   ],
+   "titulo": "LAS ÚLTIMAS CIFRAS SE REPITEN",
+   "columnas": [
+    "Múltiplos de",
+    "Terminan en"
+   ],
+   "filas": [
+    [
+     "5",
+     "0, 5, 0, 5…"
+    ],
+    [
+     "4",
+     "4, 8, 2, 6, 0…"
+    ]
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Problema: un colectivo sale cada 15 minutos desde las 8. ¿Sale uno a las nueve y media?",
+    "De las 8 a las nueve y media pasan 90 minutos.",
+    "90 es 15 por 6: ¡es *múltiplo* de 15!",
+    "Entonces sí: sale uno a las nueve y media, el sexto después del de las 8."
+   ],
+   "titulo": "EL COLECTIVO CADA 15 MINUTOS",
+   "items": [
+    {
+     "txt": "De 8:00 a 9:30 pasan 90 minutos",
+     "emoji": "🕗"
+    },
+    {
+     "txt": "90 = 15 × 6: es múltiplo de 15",
+     "emoji": "✖️"
+    },
+    {
+     "txt": "¡Sí! Sale uno a las 9:30",
+     "emoji": "🚌"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Volvamos a la natación.",
+    "Ana va los días múltiplos de 4: 4, 8, 12, 16, 20, 24.",
+    "Beto, los múltiplos de 6: 6, 12, 18, 24.",
+    "Coinciden en los *múltiplos comunes*: dentro de *12 días*, y después a los 24."
+   ],
+   "titulo": "ANA Y BETO EN NATACIÓN",
+   "columnas": [
+    "",
+    "Días"
+   ],
+   "filas": [
+    [
+     "Ana (cada 4)",
+     "4, 8, 12, 16, 20, 24"
+    ],
+    [
+     "Beto (cada 6)",
+     "6, 12, 18, 24"
+    ],
+    [
+     "Coinciden",
+     "12 y 24"
+    ]
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* comunes.",
+    "Confundir múltiplo con divisor: 24 es múltiplo de 6, y 6 es *divisor* de 24.",
+    "Y creer que el 0 no es múltiplo: 0 es 5 por 0, así que *sí* lo es."
+   ],
+   "items": [
+    {
+     "mal": "6 es múltiplo de 24",
+     "bien": "24 es múltiplo de 6"
+    },
+    {
+     "mal": "El 0 no es múltiplo",
+     "bien": "0 = 5 × 0: es múltiplo de 5"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: para buscar múltiplos comunes, *listá de más*. Si te quedás en los primeros, capaz no aparece ninguno."
+   ],
+   "titulo": "LISTÁ DE MÁS",
+   "texto": "Para buscar múltiplos comunes, escribí varios de cada número",
+   "emoji": "📜"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Múltiplo*: sale de multiplicar.",
+    "Cada número tiene *infinitos* múltiplos.",
+    "El *0* es múltiplo de todos.",
+    "Los *comunes* son múltiplos de los dos.",
+    "Y las últimas cifras forman *patrones*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MÚLTIPLO",
+     "84 = 7 × 12"
+    ],
+    [
+     "INFINITOS",
+     "6, 12, 18, 24…"
+    ],
+    [
+     "EL 0",
+     "0 = b × 0"
+    ],
+    [
+     "COMUNES",
+     "4 y 6 → 12, 24, 36"
+    ],
+    [
+     "PATRONES",
+     "los de 5 terminan en 0 o 5"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

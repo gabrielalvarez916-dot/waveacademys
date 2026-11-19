@@ -1,0 +1,222 @@
+{
+ "slug": "mat1-m5-n2",
+ "step_id": "0db0c29b-b00c-4107-8352-987a9773327a",
+ "materia": "Matemática I",
+ "titulo": "Hallar todos los divisores",
+ "sub": "Matemática I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿De cuántas formas podés armar filas iguales con 36 sillas?",
+    "¡De *9* formas! Porque 36 tiene 9 divisores.",
+    "Hoy: cómo encontrar *todos los divisores*, sin que se escape ninguno."
+   ],
+   "grande": "36",
+   "final": "9 divisores",
+   "titulo": "DIVISORES",
+   "sub": "hallarlos todos"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un número es *divisor* de otro si lo divide *exacto*, sin resto.",
+    "6 es divisor de 24, porque 24 dividido 6 da 4 justo."
+   ],
+   "palabra": "Divisor",
+   "texto": "b es divisor de a si a ÷ b es exacta (resto 0)",
+   "emoji": "➗"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Ojo: *divisor* y *múltiplo* son la misma relación mirada al revés.",
+    "24 es 6 por 4: entonces 24 es múltiplo de 6…",
+    "… y 6 es divisor de 24."
+   ],
+   "a": {
+    "cab": "MÚLTIPLO",
+    "texto": "24 es múltiplo de 6"
+   },
+   "b": {
+    "cab": "DIVISOR",
+    "texto": "6 es divisor de 24"
+   },
+   "signo": "⇄"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "El método infalible: buscar *por parejas*. Probás 1, 2, 3… en orden.",
+    "1 por 36.",
+    "2 por 18.",
+    "3 por 12.",
+    "4 por 9. El 5 no divide: lo salteamos.",
+    "Y 6 por 6: ¡las parejas *se encontraron*! Terminamos."
+   ],
+   "titulo": "DIVISORES DE 36 · POR PAREJAS",
+   "columnas": [
+    "Pareja",
+    "Producto"
+   ],
+   "filas": [
+    [
+     "1 y 36",
+     "1 × 36"
+    ],
+    [
+     "2 y 18",
+     "2 × 18"
+    ],
+    [
+     "3 y 12",
+     "3 × 12"
+    ],
+    [
+     "4 y 9",
+     "4 × 9"
+    ],
+    [
+     "6 y 6",
+     "6 × 6"
+    ]
+   ]
+  },
+  {
+   "t": "fichas",
+   "voz": [
+    "Juntamos todos: 1, 2, 3, 4, 6, 9, 12, 18 y 36.",
+    "¡*9 divisores*! Ninguno se escapó.",
+    "Un número impar de divisores, porque la pareja 6 por 6 tiene *dos números iguales*."
+   ],
+   "fichas": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6",
+    "9",
+    "12",
+    "18",
+    "36"
+   ],
+   "grande": "9 divisores",
+   "etiqueta": "DIVISORES DE 36"
+  },
+  {
+   "t": "venn",
+   "voz": [
+    "¿Y los *divisores comunes*? Comparemos 18 y 24.",
+    "Divisores de 18: 1, 2, 3, 6, 9 y 18.",
+    "Divisores de 24: 1, 2, 3, 4, 6, 8, 12 y 24.",
+    "Los que comparten: *1, 2, 3 y 6*."
+   ],
+   "a": "DIVISORES DE 18",
+   "b": "DIVISORES DE 24",
+   "itemsA": [
+    "9",
+    "18"
+   ],
+   "itemsB": [
+    "4, 8",
+    "12, 24"
+   ],
+   "ambos": [
+    "1, 2",
+    "3, 6"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Y siempre: todo número mayor que 1 tiene al menos *dos divisores*, el 1 y él mismo."
+   ],
+   "texto": "Todo número mayor que 1 tiene al menos 2 divisores: el 1 y él mismo",
+   "emoji": "👯"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: todos los divisores de 60.",
+    "1 por 60 y 2 por 30.",
+    "3 por 20 y 4 por 15.",
+    "5 por 12 y 6 por 10.",
+    "7, 8 y 9 no dividen, y el 10 ya apareció: *terminamos*.",
+    "Son *12 divisores*."
+   ],
+   "titulo": "DIVISORES DE 60",
+   "items": [
+    "1 × 60 · 2 × 30",
+    "3 × 20 · 4 × 15",
+    "5 × 12 · 6 × 10",
+    "7, 8 y 9 no dividen; el 10 ya apareció",
+    "1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* frecuentes.",
+    "Olvidar el 1 y el propio número: los divisores de 15 son *1, 3, 5 y 15*.",
+    "Y parar antes de tiempo: hay que probar *hasta que las parejas se encuentren*."
+   ],
+   "items": [
+    {
+     "mal": "Divisores de 15: 3 y 5",
+     "bien": "1, 3, 5 y 15"
+    },
+    {
+     "mal": "Parar antes de tiempo",
+     "bien": "Seguir hasta que las parejas se encuentren"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: cuando encontrás un divisor, *anotá su pareja enseguida*. Así no se te escapa ninguno."
+   ],
+   "titulo": "ANOTÁ LA PAREJA",
+   "texto": "Cuando encontrás un divisor, escribí enseguida su pareja",
+   "emoji": "💃"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Divisor*: divide exacto.",
+    "Divisor y múltiplo, la *misma relación* al revés.",
+    "Se buscan *por parejas*.",
+    "Los *comunes* dividen a los dos.",
+    "Y la cantidad es *impar* solo si hay una pareja de iguales.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DIVISOR",
+     "6 divide a 24"
+    ],
+    [
+     "RELACIÓN",
+     "24 múltiplo de 6 ⇄ 6 divisor de 24"
+    ],
+    [
+     "POR PAREJAS",
+     "36: 1×36, 2×18, 3×12, 4×9, 6×6"
+    ],
+    [
+     "COMUNES",
+     "18 y 24 → 1, 2, 3, 6"
+    ],
+    [
+     "CANTIDAD",
+     "impar si hay pareja de iguales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

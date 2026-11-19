@@ -1,0 +1,217 @@
+{
+ "slug": "mat1-m5-n3",
+ "step_id": "35bc0ad5-c7a6-4b61-a418-5807dfbcde3d",
+ "materia": "Matemática I",
+ "titulo": "Problemas de divisibilidad con varias condiciones",
+ "sub": "Matemática I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿La suma de tres números seguidos es *siempre* múltiplo de 3?",
+    "Para saberlo no alcanza con probar: hay que *demostrarlo*.",
+    "Hoy te convertís en *detective* de la divisibilidad."
+   ],
+   "emoji": "🤔",
+   "final": "🕵️",
+   "titulo": "JUSTIFICAR Y REFUTAR",
+   "sub": "problemas de divisibilidad"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Primera propiedad: si un número divide a dos números, *divide a su suma*. Mirá 14 más 21.",
+    "14 es 7 por 2, y 21 es 7 por 3.",
+    "Por la distributiva, la suma es 7 por 5: ¡*múltiplo de 7*!"
+   ],
+   "pasos": [
+    "14 + 21",
+    "7 × 2 + 7 × 3",
+    "7 × (2 + 3) = 35"
+   ],
+   "notas": [
+    "7 divide a 14 y a 21",
+    "sacamos el 7",
+    "¡7 divide a la suma!"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Pero *al revés no vale*: 3 divide a 4 más 5, que es 9, pero no divide ni a 4 ni a 5."
+   ],
+   "texto": "3 divide a 4 + 5 = 9, pero no a 4 ni a 5",
+   "emoji": "🔄",
+   "color": "#ff7a66"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Segunda propiedad: si un número divide a otro, divide a *todos sus múltiplos*.",
+    "6 divide a 12, así que divide a 12 por 5, *60*, sin hacer la cuenta."
+   ],
+   "palabra": "Divide a los múltiplos",
+   "texto": "Si 6 divide a 12, divide a 12 × 5 = 60 sin hacer la cuenta",
+   "emoji": "🔗"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Ojo: *justificar* no es probar con un ejemplo. 4 más 5 más 6 da 15, múltiplo de 3… ¿pero siempre?",
+    "Una *propiedad* explica por qué vale *siempre*.",
+    "Por eso pesa más la propiedad."
+   ],
+   "izq": {
+    "cab": "UN EJEMPLO",
+    "items": [
+     "4 + 5 + 6 = 15 ✓",
+     "¿y los demás?"
+    ]
+   },
+   "der": {
+    "cab": "UNA PROPIEDAD",
+    "items": [
+     "vale siempre",
+     "¡demuestra!"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Demostremos lo del principio.",
+    "En tres números seguidos, el del medio es uno más que el primero…",
+    "…y el último es uno más que el del medio.",
+    "Si le sacás 1 al último y se lo das al primero, quedan *tres números iguales* al del medio.",
+    "¡La suma es 3 veces el del medio! *Siempre* es múltiplo de 3."
+   ],
+   "titulo": "TRES NÚMEROS SEGUIDOS",
+   "items": [
+    {
+     "txt": "El del medio es uno más que el primero",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El último es uno más que el del medio",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Pasamos 1 del último al primero: quedan 3 iguales",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "La suma es 3 veces el del medio: ¡múltiplo de 3!",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "¿Y para mostrar que algo es *falso*? Alcanza con *un solo caso* que falle.",
+    "Eso se llama *contraejemplo*."
+   ],
+   "palabra": "Contraejemplo",
+   "texto": "Un solo caso que falla alcanza para mostrar que algo es falso",
+   "emoji": "🧨"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Probemos: ¿si un número es divisible por 4 y por 6, es divisible por 24?",
+    "El 24 cumple… pero ¿y el 12?",
+    "12 es divisible por 4 y por 6, pero *no por 24*. ¡Contraejemplo! La afirmación es *falsa*."
+   ],
+   "pregunta": "Divisible por 4 y por 6, ¿es divisible por 24?",
+   "opciones": [
+    "Sí, siempre",
+    "No: el 12 falla"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: ¿5 divide a 35 más 40 más 15? Sin hacer la suma.",
+    "Cada uno es múltiplo de 5: 5 por 7, 5 por 8, 5 por 3.",
+    "Entonces la suma es 5 por 18: *sí*, 5 la divide."
+   ],
+   "pasos": [
+    "35 + 40 + 15",
+    "5 × 7 + 5 × 8 + 5 × 3",
+    "5 × (7 + 8 + 3) = 5 × 18"
+   ],
+   "notas": [
+    "¿es divisible por 5?",
+    "5 divide a cada sumando",
+    "¡5 divide a la suma! (90 ÷ 5 = 18)"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para evitar.",
+    "Responder sin justificar: decir *sí* no alcanza, hay que explicar *por qué*.",
+    "Y generalizar con un solo ejemplo: que 24 funcione *no prueba* que funcione siempre."
+   ],
+   "items": [
+    {
+     "mal": "«Sí.» (sin explicar)",
+     "bien": "Sí, porque… (con una propiedad)"
+    },
+    {
+     "mal": "Funciona con 24 → vale siempre",
+     "bien": "Un ejemplo no alcanza"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: para *probar* que algo vale siempre, usá una propiedad. Para *refutarlo*, buscá un solo caso que falle."
+   ],
+   "titulo": "PROBAR O REFUTAR",
+   "texto": "Para probar: una propiedad. Para refutar: un contraejemplo.",
+   "emoji": "🕵️"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Si divide a dos números, divide a su *suma*.",
+    "Pero *al revés no* vale.",
+    "Si divide a un número, divide a sus *múltiplos*.",
+    "*Justificar* es explicar con propiedades.",
+    "Y un *contraejemplo* alcanza para refutar.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUMA",
+     "7 divide a 14 + 21"
+    ],
+    [
+     "AL REVÉS NO",
+     "3 divide a 4 + 5, no a 4"
+    ],
+    [
+     "MÚLTIPLOS",
+     "6 divide a 12 × 5"
+    ],
+    [
+     "JUSTIFICAR",
+     "con propiedades"
+    ],
+    [
+     "CONTRAEJEMPLO",
+     "un caso que falla alcanza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
