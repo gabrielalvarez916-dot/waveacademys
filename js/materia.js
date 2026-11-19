@@ -84,7 +84,7 @@
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
     var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, lessons!inner(topics!inner(subject_id))')
+      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, clase:content->clase, lessons!inner(topics!inner(subject_id))')
       .eq('lessons.topics.subject_id', materiaId);
     if (pasos.error) throw pasos.error;
 
@@ -114,13 +114,13 @@
     pasos.data.forEach(function (p) {
       var k = TIPO_PASO[p.step_type];
       if (!k) return;
-      var tiene = k === 'video' ? !!p.stream_uid
+      var tiene = k === 'video' ? (!!p.stream_uid || p.clase === true)
         : k === 'pdf' ? !!p.r2_key
         : k === 'interactive' ? p.kind === 'html'
         : k === 'complementary' ? (Array.isArray(p.files) && p.files.length > 0)
         : !!conPreg[p.id];
       (porLeccion[p.lesson_id] = porLeccion[p.lesson_id] || {})[k] = {
-        id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene,
+        id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene, clase: k === 'video' && p.clase === true,
         videos: k !== 'video' || !p.stream_uid ? [] : (Array.isArray(p.videos) && p.videos.length ? p.videos
           : [{ uid: p.stream_uid, tramos: p.tramos || (p.inicio || p.fin ? [{ i: p.inicio || 0, f: p.fin || 0 }] : []) }]),
         files: k === 'complementary' && Array.isArray(p.files) ? p.files : [],
@@ -459,7 +459,9 @@
     var f = buscarLeccion(hojaAbierta), paso = pasoActual(k);
     if (!f || !paso) return;
     try {
-      if (k === 'video') {
+      if (k === 'video' && paso.clase) {
+        abrirClase(paso, f.l.titulo);
+      } else if (k === 'video') {
         WaveVisor.abrirVideo({ titulo: f.l.titulo, alTerminar: function () { marcar(paso); },
           lista: paso.videos.map(function (v, n) {
             return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
@@ -505,6 +507,7 @@
   function abrirVideoMision(temaId) {
     var tm = D.temas.filter(function (x) { return x.id === temaId; })[0], paso = tm && tm.videoPaso;
     if (!paso) return;
+    if (paso.clase) return abrirClase(paso, tm.titulo).catch(function (e) { toast(e.message || 'No se pudo abrir.', true); });
     // La intro de Wave se carga una sola vez (admin) y va siempre delante de todos los videos de la misión
     var lista = paso.videos.map(function (v, n) {
       return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
@@ -561,6 +564,34 @@
       a.href = d.url; a.rel = 'noopener'; a.download = '';
       document.body.appendChild(a); a.click(); a.remove();
     } catch (e) { toast(e.message || 'No se pudo descargar.', true); }
+  }
+
+  // ---------- Clase animada (reemplaza al video): HTML en un marco aislado, con voz del dispositivo ----------
+  async function abrirClase(paso, titulo) {
+    var r = await sb.from('lesson_steps').select('html:content->>clase_html').eq('id', paso.id).maybeSingle();
+    if (r.error || !r.data || !r.data.html) throw new Error('No pudimos abrir la clase.');
+    var el = document.createElement('div');
+    el.className = 'wvp';
+    el.innerHTML =
+      '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(titulo) + ' · Clase</b>' +
+      '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
+      '<div class="mt-marco"><iframe title="Clase" allow="autoplay; fullscreen" sandbox="allow-scripts allow-forms"></iframe></div></div>';
+    document.body.appendChild(el);
+    document.body.classList.add('wvp-abierto');
+    var frame = el.querySelector('iframe');
+    frame.srcdoc = r.data.html;
+    function cerrar() {
+      window.removeEventListener('message', alMensaje);
+      try { frame.contentWindow.speechSynthesis.cancel(); } catch (_) {}
+      document.body.classList.remove('wvp-abierto');
+      el.remove();
+    }
+    function alMensaje(ev) {
+      if (ev.source !== frame.contentWindow || !ev.data || ev.data.tipo !== 'wave-clase-fin') return;
+      marcar(paso); toast('¡Clase terminada! 🎉');
+    }
+    window.addEventListener('message', alMensaje);
+    el.addEventListener('click', function (ev) { if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar(); });
   }
 
   // ---------- Actividad interactiva (HTML en un marco aislado) ----------

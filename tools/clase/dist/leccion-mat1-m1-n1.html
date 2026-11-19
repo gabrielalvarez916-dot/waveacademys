@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wave · El sistema decimal</title>
+<style>
+html,body{margin:0;height:100%;background:#050f10;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,Roboto,Arial,sans-serif;color:#eaf7f4}
+#marco{position:relative;width:min(100vw,177.78vh);aspect-ratio:16/9;overflow:hidden;border-radius:6px}
+svg{width:100%;height:100%;display:block}
+text{font-family:inherit;font-weight:900}
+#ui{position:absolute;inset:0;display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center;background:rgba(5,15,16,.82);z-index:3;text-align:center}
+#ui h1{margin:0;font-size:clamp(1.4rem,4vw,2.6rem)}
+#ui p{margin:0;color:#9dbdb9;font-weight:700}
+.btn{appearance:none;border:0;border-radius:18px;font:inherit;font-weight:900;font-size:1.2rem;padding:16px 30px;color:#06282a;background:linear-gradient(180deg,#9be8da,#7FD3C4);box-shadow:0 6px 0 #3e9488;cursor:pointer}
+#ctl{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;padding:10px 16px;background:linear-gradient(0deg,rgba(5,15,16,.85),transparent);opacity:0;transition:opacity .3s;z-index:2}
+#marco:hover #ctl,#ctl.ver{opacity:1}
+#ctl button{appearance:none;border:0;border-radius:50%;width:40px;height:40px;background:rgba(255,255,255,.14);color:#fff;font-size:.95rem;cursor:pointer;flex:none}
+#barra{flex:1;display:flex;gap:4px}
+#barra i{flex:1;height:6px;border-radius:9px;background:rgba(255,255,255,.18);cursor:pointer;overflow:hidden}
+#barra i b{display:block;height:100%;width:0;background:#7FD3C4}
+</style></head><body>
+<div id="marco">
+<svg id="s" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="fondo" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#17585a"/><stop offset=".55" stop-color="#0c292b"/><stop offset="1" stop-color="#050f10"/></radialGradient>
+  <radialGradient id="gAlf" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#8a5634"/><stop offset=".7" stop-color="#5a3219"/><stop offset="1" stop-color="#3b1f0e"/></radialGradient>
+  <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d474a"/><stop offset="1" stop-color="#132f31"/></linearGradient>
+  <linearGradient id="gPack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a85"/><stop offset="1" stop-color="#e2553f"/></linearGradient>
+  <linearGradient id="gCaja" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcaa62"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+  <linearGradient id="gSol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd877"/><stop offset="1" stop-color="#eaa52b"/></linearGradient>
+  <linearGradient id="gAqua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7efe2"/><stop offset="1" stop-color="#5fc2b2"/></linearGradient>
+  <linearGradient id="gPiedra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9b2a4"/><stop offset="1" stop-color="#857e70"/></linearGradient>
+  <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="sombra" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#000" flood-opacity=".4"/></filter>
+  <g id="alf"><circle r="46" fill="#f3e3c3"/><circle r="40" fill="url(#gAlf)"/><ellipse cx="-12" cy="-16" rx="14" ry="7" fill="#fff" opacity=".18"/></g>
+  <g id="pack"><rect x="-70" y="-34" width="140" height="68" rx="14" fill="url(#gPack)" stroke="#ffd0c4" stroke-width="4"/><rect x="-9" y="-34" width="18" height="68" fill="#F4B63F"/><text y="12" text-anchor="middle" font-size="34" fill="#fff">10</text></g>
+  <g id="caja"><rect x="-80" y="-60" width="160" height="120" rx="16" fill="url(#gCaja)" stroke="#f3d29a" stroke-width="5"/><path d="M-80 -28 H80" stroke="#7a4f1c" stroke-width="6" opacity=".5"/><text y="34" text-anchor="middle" font-size="44" fill="#fff8ea">100</text></g>
+  <g id="camion"><rect x="-150" y="-80" width="200" height="130" rx="16" fill="url(#gAqua)" stroke="#d8fff7" stroke-width="5"/><text x="-50" y="5" text-anchor="middle" font-size="48" fill="#06282a">1.000</text><rect x="58" y="-40" width="92" height="90" rx="14" fill="#2c7f78" stroke="#d8fff7" stroke-width="5"/><rect x="78" y="-26" width="50" height="34" rx="6" fill="#bff3ea"/><circle cx="-90" cy="62" r="24" fill="#0b1c1d" stroke="#9dbdb9" stroke-width="6"/><circle cx="100" cy="62" r="24" fill="#0b1c1d" stroke="#9dbdb9" stroke-width="6"/></g>
+ </defs>
+ <rect width="1920" height="1080" fill="url(#fondo)"/>
+ <g id="piso" opacity=".55"></g>
+ <g id="particulas"></g>
+ <g id="cam"><g id="escena"></g></g>
+ <rect id="flash" width="1920" height="1080" fill="#ff7a66" opacity="0" pointer-events="none"/>
+ <g id="subs" font-size="64" text-anchor="middle"></g>
+</svg>
+<div id="ctl"><button id="ant" aria-label="Anterior">⏮</button><button id="pp" aria-label="Pausa">❚❚</button><button id="sig" aria-label="Siguiente">⏭</button><div id="barra"></div></div>
+<div id="ui"><h1>El sistema decimal y el valor posicional</h1><p>Matemática I · Misión 1 · Nivel 1</p><button class="btn" id="go">▶ Empezar la clase</button></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg', $ = function (id) { return document.getElementById(id); };
+  var C = { aqua: '#7FD3C4', sol: '#F4B63F', coral: '#ff7a66', verde: '#8be38f', txt: '#eaf7f4', suave: '#9dbdb9', linea: '#2c5a5e' };
+  // ZONA SEGURA: todo el contenido va entre x 160–1760 e y 230–980 (los subtítulos usan la franja de arriba)
+  function el(tag, at, p) { var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (p) p.appendChild(e); return e; }
+  function txt(p, x, y, s, size, fill, extra) { var t = el('text', Object.assign({ x: x, y: y, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': size, fill: fill || C.txt }, extra || {}), p); t.textContent = s; return t; }
+  function caja(p, x, y, w, h, fill, stroke, r, sw) { return el('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: r == null ? 24 : r, fill: fill || 'url(#gCard)', stroke: stroke || C.linea, 'stroke-width': sw || 4 }, p); }
+  function pieza(p, x, y) { var w = el('g', { transform: 'translate(' + x + ' ' + y + ')' }, p); return el('g', { 'data-c': 1, opacity: 0 }, w); }
+  function usar(p, id, s) { return el('use', { href: '#' + id, transform: s ? 'scale(' + s + ')' : '' }, p); }
+  function chip(p, x, y, w, h, s, o) { o = o || {}; var g = pieza(p, x, y); caja(g, 0, 0, w, h, o.fill || 'url(#gCard)', o.stroke || C.linea, o.r == null ? h / 2 : o.r, o.sw || 4).setAttribute('filter', 'url(#sombra)'); g.t = txt(g, 0, 2, s, o.size || 44, o.color || C.txt, o.ls ? { 'letter-spacing': o.ls } : null); return g; }
+  function etiqueta(p, x, y, s) { return chip(p, x, y, Math.max(260, s.length * 26 + 80), 70, s, { fill: 'url(#gSol)', stroke: '#ffe7a8', color: '#3a2a00', size: 34, ls: 3 }); }
+  function titulo(p, s) { return chip(p, 960, 280, Math.max(420, s.length * 30 + 110), 84, s, { fill: 'url(#gAqua)', stroke: '#d8fff7', color: '#06282a', size: 38, ls: 4 }); }
+  // ---- entradas y salidas (suaves, profesionales) ----
+  function IN(tl, g, pos, f) { f = f || {}; if (pos === 0) pos = '>'; var fr = Object.assign({ opacity: 0, y: 40, scale: .92 }, f); delete fr.d; delete fr.ease; return tl.fromTo(g, fr, { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: f.d || .6, ease: f.ease || 'back.out(1.5)' }, pos); }
+  function OUT(tl, g, pos, f) { if (pos === 0) pos = '>'; return tl.to(g, Object.assign({ opacity: 0, scale: .9, duration: .35, ease: 'power2.in' }, f || {}), pos); }
+  function pop(tl, g, pos) { if (pos === 0) pos = '>'; return tl.to(g, { scale: 1.12, duration: .18, yoyo: true, repeat: 1, ease: 'power2.out' }, pos); }
+  function fila(p, cx, y, cab, dig, w, vy) { // estante de lugares
+    w = w || 190; var gap = 26, n = cab.length, x0 = cx - ((n - 1) * (w + gap)) / 2, R = { slots: [], digs: [], vals: [], cabs: [], xs: [] };
+    cab.forEach(function (c, k) {
+      var x = x0 + k * (w + gap); R.xs.push(x);
+      var hc = pieza(p, x, y - 150); txt(hc, 0, 0, c, w < 180 ? 19 : 24, C.aqua, { 'letter-spacing': 2 }); R.cabs.push(hc);
+      var s = pieza(p, x, y); var r = caja(s, 0, 0, w, 220, 'url(#gCard)', C.linea, 28, 6); s.r = r; R.slots.push(s);
+      var d = pieza(p, x, y); txt(d, 0, 6, dig[k], 170, C.txt); R.digs.push(d);
+      var v = pieza(p, x, y + (vy || 160)); v.t = txt(v, 0, 0, '', 50, C.sol); R.vals.push(v);
+    });
+    return R;
+  }
+  function contador(tl, t, desde, hasta, pos, dur) { var o = { v: desde }; return tl.to(o, { v: hasta, duration: dur || 1, ease: 'power2.inOut', onUpdate: function () { t.textContent = Math.round(o.v).toLocaleString('es-AR'); } }, pos); }
+
+  // ================= LA LECCIÓN =================
+  // voz: lo que se dice (entre *asteriscos* las palabras clave). armar(g, tl, B): B(k) marca dónde arranca la animación de la frase k.
+  var E = [];
+
+  E.push({ voz: ['¿Cómo puede ser que un *2* valga *200*?', 'Es el mismo 2… pero ubicado en otro *lugar*.', 'Hoy vas a descubrir el secreto de nuestros números: el *sistema decimal*.'],
+    armar: function (g, tl, B) {
+      var dos = pieza(g, 960, 600); var t = txt(dos, 0, 0, '2', 420, C.txt, { filter: 'url(#brillo)' });
+      B(0); IN(tl, dos, 0, { scale: 0, rotation: -20, y: 0, d: 1, ease: 'elastic.out(1,.55)' });
+      B(1); tl.to(dos, { x: -10, duration: .05, repeat: 5, yoyo: true }); contador(tl, t, 2, 200, '>', 1.2); tl.to(t, { attr: { fill: C.sol }, duration: .4 }, '<.6').to(dos, { scale: .8, duration: .4 }, '<');
+      var tt = pieza(g, 960, 600); caja(tt, 0, 0, 1100, 260, 'url(#gCard)', C.aqua, 40, 6).setAttribute('filter', 'url(#sombra)');
+      txt(tt, 0, -45, 'EL SISTEMA DECIMAL', 74, C.txt); txt(tt, 0, 50, 'y el valor posicional', 44, C.aqua);
+      B(2); OUT(tl, dos, 0, { scale: 1.6 }); IN(tl, tt, '<.2', { scale: .6, y: 0 });
+    } });
+
+  E.push({ voz: ['Los romanos escribían el año 2026 así: *MMXXVI*.', 'Nosotros lo escribimos *2.026*.', 'Es el *mismo número*. Lo que cambia es el sistema.', 'Un *sistema de numeración* es el conjunto de símbolos y reglas que usamos para escribir y nombrar los números.'],
+    armar: function (g, tl, B) {
+      var pi = pieza(g, 560, 520); caja(pi, 0, 0, 560, 300, 'url(#gPiedra)', '#d8d0c0', 30, 6).setAttribute('filter', 'url(#sombra)');
+      var letras = 'MMXXVI'.split('').map(function (l, k) { return txt(pi, -175 + k * 70, 10, l, 96, '#3d382f', { 'font-family': 'Georgia,serif', opacity: 0 }); });
+      txt(pi, 0, -115, 'SISTEMA ROMANO', 26, '#4a4438', { 'letter-spacing': 4 });
+      var di = pieza(g, 1360, 520); caja(di, 0, 0, 560, 300, 'url(#gCard)', C.aqua, 30, 6).setAttribute('filter', 'url(#sombra)');
+      txt(di, 0, 10, '2.026', 120, C.txt); txt(di, 0, -115, 'SISTEMA DECIMAL', 26, C.aqua, { 'letter-spacing': 4 });
+      var ig = pieza(g, 960, 520); txt(ig, 0, 0, '=', 140, C.sol, { filter: 'url(#brillo)' });
+      var de = pieza(g, 960, 840); caja(de, 0, 0, 1400, 170, 'url(#gCard)', C.sol, 30, 5).setAttribute('filter', 'url(#sombra)');
+      txt(de, 0, -38, 'SISTEMA DE NUMERACIÓN', 34, C.sol, { 'letter-spacing': 4 }); txt(de, 0, 30, 'Símbolos y reglas para escribir y nombrar los números', 40, C.txt);
+      B(0); IN(tl, pi, 0, { x: -200, y: 0 }); tl.to(letras, { opacity: 1, duration: .25, stagger: .15 });
+      B(1); IN(tl, di, 0, { x: 200, y: 0 });
+      B(2); IN(tl, ig, 0, { scale: 0, y: 0 }); pop(tl, pi, '>'); pop(tl, di, '<');
+      B(3); tl.to([pi, di, ig], { y: -60, scale: .85, duration: .5, ease: 'power2.inOut' }); IN(tl, de, '<.1');
+    } });
+
+  E.push({ voz: ['Nuestro sistema usa solo *10 cifras*: del 0 al 9.', 'Con esas diez escribimos *cualquier número*, por más grande que sea.', '¿El truco? *Agrupar de a 10*.'],
+    armar: function (g, tl, B) {
+      var cif = []; for (var k = 0; k < 10; k++) { var c = chip(g, 960 + (k - 4.5) * 140, 520, 116, 150, String(k), { r: 26, size: 86, stroke: C.aqua }); cif.push(c); }
+      var gr = pieza(g, 960, 800); var gt = txt(gr, 0, 0, '7.093.582.461', 110, C.sol, { filter: 'url(#brillo)' });
+      var anillo = pieza(g, 960, 520); el('rect', { x: -720, y: -110, width: 1440, height: 220, rx: 110, fill: 'none', stroke: C.sol, 'stroke-width': 8, 'stroke-dasharray': '24 18' }, anillo);
+      var x10 = etiqueta(g, 960, 790, 'GRUPOS DE 10');
+      B(0); cif.forEach(function (c, k) { IN(tl, c, k ? '<.09' : 0, { y: -300, ease: 'bounce.out', d: .7 }); });
+      B(1); IN(tl, gr, 0, { scale: .4, y: 0 }); tl.to(cif, { y: -20, duration: .25, stagger: { each: .05, yoyo: true, repeat: 1 } }, '<');
+      B(2); OUT(tl, gr, 0); IN(tl, anillo, '<.2', { scale: 1.2, y: 0 }); tl.to(anillo, { rotation: 0, duration: .1 }); IN(tl, x10, '<.3');
+    } });
+
+  E.push({ voz: ['Imaginá una fábrica de *alfajores*. Cada alfajor suelto es una *unidad*.', 'Cuando juntás 10 alfajores se arma un paquete: una *decena*.', 'Con 10 paquetes se llena una caja: una *centena*.', 'Y 10 cajas llenan un camión: una *unidad de mil*.', 'Cada orden vale *10 veces* el anterior.'],
+    armar: function (g, tl, B) {
+      var X = [370, 770, 1170, 1570], Y = 560, nom = [['UNIDAD', '1'], ['DECENA', '10'], ['CENTENA', '100'], ['UNIDAD DE MIL', '1.000']];
+      var lab = X.map(function (x, k) { var p = pieza(g, x, 820); caja(p, 0, 0, 340, 120, 'url(#gCard)', C.linea, 24, 4); txt(p, 0, -22, nom[k][0], 28, C.aqua, { 'letter-spacing': 3 }); txt(p, 0, 28, nom[k][1], 48, C.txt); return p; });
+      var u = pieza(g, X[0], Y); usar(u, 'alf', 1.9);
+      var mini = []; for (var k = 0; k < 10; k++) { var m = pieza(g, X[1] + (k % 5 - 2) * 56, Y - 30 + Math.floor(k / 5) * 60); usar(m, 'alf', .55); mini.push(m); }
+      var pk = pieza(g, X[1], Y); usar(pk, 'pack', 2);
+      var mp = []; for (k = 0; k < 10; k++) { var q = pieza(g, X[2] + (k % 2 - .5) * 132, Y - 128 + Math.floor(k / 2) * 64); usar(q, 'pack', .85); mp.push(q); }
+      var bx = pieza(g, X[2], Y); usar(bx, 'caja', 1.8);
+      var mc = []; for (k = 0; k < 10; k++) { var b = pieza(g, X[3] + (k % 5 - 2) * 62, Y - 40 + Math.floor(k / 5) * 64); usar(b, 'caja', .36); mc.push(b); }
+      var cm = pieza(g, X[3], Y); usar(cm, 'camion', 1.1);
+      var fl = [0, 1, 2].map(function (k) { var f = pieza(g, (X[k] + X[k + 1]) / 2, Y); el('circle', { r: 46, fill: C.sol }, f); txt(f, 0, 2, '×10', 34, '#3a2a00'); return f; });
+      B(0); IN(tl, u, 0, { scale: 0, y: 0, ease: 'back.out(2.2)' }); IN(tl, lab[0], '<.3');
+      B(1); mini.forEach(function (m, k) { IN(tl, m, k ? '<.07' : 0, { x: -400, y: -100, scale: .3, ease: 'power3.out', d: .55 }); }); IN(tl, pk, '>.1', { scaleY: 0, y: 0 }); tl.to(mini, { opacity: 0, duration: .2 }, '<.2'); IN(tl, lab[1], '<.2');
+      B(2); mp.forEach(function (m, k) { IN(tl, m, k ? '<.07' : 0, { x: -400, y: -100, scale: .3, ease: 'power3.out', d: .55 }); }); IN(tl, bx, '>.1', { y: -500, ease: 'bounce.out', d: .8 }); tl.to(mp, { opacity: 0, duration: .2 }, '<.3'); IN(tl, lab[2], '<.2');
+      B(3); mc.forEach(function (m, k) { IN(tl, m, k ? '<.07' : 0, { x: -400, y: -100, scale: .3, ease: 'power3.out', d: .55 }); }); IN(tl, cm, '>.1', { x: 500, y: 0, ease: 'power3.out', d: .8 }); tl.to(mc, { opacity: 0, duration: .2 }, '<.4'); IN(tl, lab[3], '<.2');
+      B(4); fl.forEach(function (f, k) { IN(tl, f, k ? '<.25' : 0, { scale: 0, y: 0, ease: 'back.out(3)' }); });
+    } });
+
+  E.push({ voz: ['Ahora mirá el número *4.205*.', 'Cada cifra ocupa un *lugar*: unidades de mil, centenas, decenas y unidades.', 'Y cada lugar vale *10 veces* más que el de su derecha.', 'Por eso el 4 vale *4.000*, el 2 vale *200*, el 0 vale *0* y el 5 vale *5*.', 'El valor de una cifra depende del lugar que ocupa. Eso es el *valor posicional*.'],
+    armar: function (g, tl, B) {
+      var n = pieza(g, 960, 300); txt(n, 0, 0, '4.205', 130, C.txt);
+      var F = fila(g, 960, 580, ['UNIDAD DE MIL', 'CENTENA', 'DECENA', 'UNIDAD'], ['4', '2', '0', '5']);
+      var fl = [0, 1, 2].map(function (k) { var f = pieza(g, (F.xs[k] + F.xs[k + 1]) / 2, 700); el('circle', { r: 30, fill: C.sol }, f); txt(f, 0, 2, '×10', 22, '#3a2a00'); return f; });
+      ['4.000', '200', '0', '5'].forEach(function (v, k) { F.vals[k].t.textContent = v; });
+      var vp = etiqueta(g, 960, 930, 'VALOR POSICIONAL');
+      B(0); IN(tl, n, 0, { scale: .5, y: 0 });
+      B(1); F.slots.forEach(function (s, k) { IN(tl, s, k ? '<.08' : 0); IN(tl, F.cabs[k], '<'); }); F.digs.forEach(function (d, k) { IN(tl, d, k ? '<.25' : '>-.1', { y: -500, ease: 'bounce.out', d: .7 }); });
+      B(2); [2, 1, 0].forEach(function (k, j) { IN(tl, fl[k], j ? '<.35' : 0, { scale: 0, y: 0, ease: 'back.out(3)' }); });
+      B(3); OUT(tl, fl, 0); F.vals.forEach(function (v, k) { IN(tl, v, k ? '<.9' : '<.2', { y: -60 }); tl.to(F.slots[k].r, { attr: { stroke: C.sol }, duration: .2, yoyo: true, repeat: 1 }, '<'); });
+      B(4); tl.to(F.slots[1].r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .3 }); pop(tl, F.digs[1], '<'); IN(tl, vp, '<.2');
+    } });
+
+  E.push({ voz: ['Ojo con esto: la *cifra* es el símbolo que escribís. El 2.', 'El *valor* es lo que ese símbolo representa en su lugar: 200.', '¿Y el cero? Parece que no hace nada… pero mirá qué pasa si lo *sacamos*.', '¡Se convierte en *425*! Es otro número.', 'El cero *marca un lugar vacío*, y mantiene a cada cifra en su lugar.'],
+    armar: function (g, tl, B) {
+      function tarj(x, cab, val, col) { var p = pieza(g, x, 580); caja(p, 0, 0, 560, 440, 'url(#gCard)', col, 40, 6).setAttribute('filter', 'url(#sombra)'); txt(p, 0, -150, cab, 40, col, { 'letter-spacing': 6 }); txt(p, 0, 30, val, 190, C.txt); return p; }
+      var c1 = tarj(620, 'CIFRA', '2', C.aqua), c2 = tarj(1300, 'VALOR', '200', C.sol);
+      var F = fila(g, 960, 560, ['UNIDAD DE MIL', 'CENTENA', 'DECENA', 'UNIDAD'], ['4', '2', '0', '5']);
+      var r = pieza(g, 960, 580); var rt = txt(r, 0, 0, '425', 260, C.coral, { filter: 'url(#brillo)' });
+      var se = pieza(g, 960, 850); caja(se, 0, 0, 620, 120, 'none', C.coral, 20, 10); txt(se, 0, 4, '¡OTRO NÚMERO!', 64, C.coral, { 'letter-spacing': 4 });
+      var lv = etiqueta(g, F.xs[2], 880, 'LUGAR VACÍO');
+      B(0); IN(tl, c1, 0, { x: -200, y: 0 });
+      B(1); IN(tl, c2, 0, { x: 200, y: 0 });
+      B(2); OUT(tl, [c1, c2], 0); F.slots.forEach(function (s, k) { IN(tl, s, '<.05'); IN(tl, F.cabs[k], '<'); IN(tl, F.digs[k], '<'); }); tl.to(F.slots[2].r, { attr: { stroke: C.coral, 'stroke-width': 10 }, duration: .3 }); tl.to(F.digs[2], { rotation: 8, duration: .1, yoyo: true, repeat: 7 });
+      B(3); tl.to(F.digs[2], { y: -700, rotation: 360, opacity: 0, duration: .6, ease: 'power3.in' }); OUT(tl, F.slots.concat(F.cabs, F.digs[0], F.digs[1], F.digs[3]), '>', { duration: .2 });
+      IN(tl, r, '>', { scale: 2, y: 0, ease: 'power4.in', d: .3 }); tl.fromTo('#flash', { opacity: .45 }, { opacity: 0, duration: .5, immediateRender: false }, '>'); tl.to('#cam', { x: 18, duration: .05, repeat: 7, yoyo: true }, '<'); IN(tl, se, '<.3', { scale: 2.5, rotation: -10, y: 0, ease: 'power4.in', d: .3 }); tl.set(se, { rotation: -4 }); tl.set('#cam', { x: 0 });
+      B(4); OUT(tl, [r, se], 0); F.slots.concat(F.cabs, F.digs[0], F.digs[1], F.digs[3]).forEach(function (q) { tl.to(q, { opacity: 1, scale: 1, duration: .3 }, '<'); });
+      tl.to(F.digs[2], { y: 0, rotation: 0, opacity: 1, duration: .7, ease: 'bounce.out' }); tl.to(F.slots[2].r, { attr: { stroke: C.verde }, duration: .3 }, '<.4'); IN(tl, lv, '<');
+    } });
+
+  E.push({ voz: ['Ahora vamos a *descomponer* el número: escribirlo con una operación que muestre el valor de cada cifra.', 'En la *descomposición aditiva* sumamos los valores de las cifras.', '4.000, más 200, más 0, más 5.', 'El 0 no se escribe, porque *no suma nada*.', 'Comprobamos: 4.000 más 200 más 5 da *4.205*. ¡Perfecto!'],
+    armar: function (g, tl, B) {
+      var dg = ['4', '.', '2', '0', '5'], xs = [-160, -95, -30, 60, 150], nd = pieza(g, 960, 470), D = dg.map(function (d, k) { return txt(nd, xs[k], 0, d, 170, C.txt); });
+      var ti = titulo(g, 'DESCOMPOSICIÓN ADITIVA');
+      var V = ['4.000', '200', '0', '5'], W = [300, 220, 160, 160], cx = [-470, -110, 160, 400], ch = [], mas = [];
+      V.forEach(function (v, k) { ch.push(chip(g, 960 + cx[k], 740, W[k], 120, v, { size: 64, stroke: C.sol, r: 28 })); if (k < 3) { var m = pieza(g, 960 + (cx[k] + cx[k + 1]) / 2 + (k === 0 ? 20 : 0), 740); txt(m, 0, 0, '+', 80, C.sol); mas.push(m); } });
+      var ok = pieza(g, 960, 470); var okt = txt(ok, 0, 0, '= 4.205  ✓', 90, C.verde, { filter: 'url(#brillo)' });
+      B(0); IN(tl, nd, 0, { scale: .5, y: 0 }); tl.to(D[0], { attr: { x: -260 }, duration: .5 }, '>.3').to(D[2], { attr: { x: -60 }, duration: .5 }, '<').to(D[3], { attr: { x: 100 }, duration: .5 }, '<').to(D[4], { attr: { x: 260 }, duration: .5 }, '<').to(D[1], { opacity: 0, duration: .3 }, '<');
+      B(1); IN(tl, ti, 0);
+      B(2); [0, 1, 2, 3].forEach(function (k) { IN(tl, ch[k], k ? '<.5' : 0, { y: -260, scale: .5 }); if (k) IN(tl, mas[k - 1], '<'); });
+      B(3); tl.to(ch[2], { rotation: 12, duration: .1, yoyo: true, repeat: 5 }); OUT(tl, [ch[2], mas[2]], '>', { scale: 0 }); tl.to(ch[0].parentNode, { attr: { transform: 'translate(' + (960 - 330) + ' 740)' }, duration: .5, ease: 'power3.inOut' }, '>').to(mas[0].parentNode, { attr: { transform: 'translate(' + (960 - 145) + ' 740)' }, duration: .5 }, '<').to(ch[1].parentNode, { attr: { transform: 'translate(' + 1000 + ' 740)' }, duration: .5 }, '<').to(mas[1].parentNode, { attr: { transform: 'translate(' + 1185 + ' 740)' }, duration: .5 }, '<').to(ch[3].parentNode, { attr: { transform: 'translate(' + 1350 + ' 740)' }, duration: .5 }, '<');
+      B(4); OUT(tl, nd, 0); IN(tl, ok, '<.2', { scale: .5, y: 0 }); tl.to([ch[0], ch[1], ch[3]], { y: -10, duration: .2, stagger: .1, yoyo: true, repeat: 1 }, '<');
+    } });
+
+  E.push({ voz: ['La otra forma es la *descomposición multiplicativa*.', 'Cada cifra se multiplica por el valor de su lugar: mil, cien, diez o uno.', 'El 4 está en las unidades de mil: *4 por 1.000*.', 'El 2 está en las centenas: *2 por 100*.', 'El 0 por 10 da 0, así que no se escribe. Y el 5 queda *5*.', 'Entonces 4.205 es igual a *4 por 1.000, más 2 por 100, más 5*.'],
+    armar: function (g, tl, B) {
+      var ti = titulo(g, 'DESCOMPOSICIÓN MULTIPLICATIVA');
+      var F = fila(g, 960, 560, ['× 1.000', '× 100', '× 10', '× 1'], ['4', '2', '0', '5'], 170);
+      F.cabs.forEach(function (c) { c.querySelector('text').setAttribute('font-size', 34); c.querySelector('text').setAttribute('fill', C.sol); });
+      F.vals.forEach(function (v) { v.t.setAttribute('font-size', 40); }); ['4 × 1.000', '2 × 100', '0 × 10', '5'].forEach(function (s, k) { F.vals[k].t.textContent = s; });
+      var eq = chip(g, 960, 900, 1260, 120, '4.205 = 4 × 1.000 + 2 × 100 + 5', { size: 58, stroke: C.verde, r: 30 });
+      B(0); IN(tl, ti, 0);
+      B(1); F.slots.forEach(function (s, k) { IN(tl, s, k ? '<.08' : 0); IN(tl, F.digs[k], '<'); IN(tl, F.cabs[k], '<.1', { scale: 0, y: 0, ease: 'back.out(3)' }); });
+      B(2); tl.to(F.slots[0].r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .3 }); IN(tl, F.vals[0], '<', { y: -50 });
+      B(3); tl.to(F.slots[1].r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .3 }); IN(tl, F.vals[1], '<', { y: -50 });
+      B(4); IN(tl, F.vals[2], 0, { y: -50 }); tl.to(F.vals[2], { opacity: .25, duration: .4 }, '>.6'); tl.to(F.slots[2], { opacity: .4, duration: .4 }, '<'); tl.to(F.slots[3].r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .3 }); IN(tl, F.vals[3], '<', { y: -50 });
+      B(5); IN(tl, eq, 0, { scale: .6, y: 0 });
+    } });
+
+  E.push({ voz: ['Último secreto: los *canjes*.', 'Un canje es cambiar 1 grupo por *10 del orden anterior*.', 'Si abrimos una caja de mil… adentro hay *10 de cien*.', 'Así que 4.205 también es *3.000 + 1.200 + 5*.', 'Es el *mismo número*, escrito de otra forma.'],
+    armar: function (g, tl, B) {
+      var ti = titulo(g, 'CANJES');
+      var mil = [0, 1, 2, 3].map(function (k) { var p = pieza(g, 330 + k * 200, 560); caja(p, 0, 0, 170, 170, 'url(#gAqua)', '#d8fff7', 26, 5); txt(p, 0, 4, '1.000', 44, '#06282a'); return p; });
+      var cien = []; for (var k = 0; k < 12; k++) { var p = pieza(g, 1210 + (k % 4) * 125, 440 + Math.floor(k / 4) * 120); caja(p, 0, 0, 108, 100, 'url(#gCaja)', '#f3d29a', 18, 4); txt(p, 0, 3, '100', 36, '#fff8ea'); cien.push(p); }
+      var uno = pieza(g, 960, 790); [0, 1, 2, 3, 4].forEach(function (j) { el('circle', { cx: (j - 2) * 46, cy: 0, r: 18, fill: C.sol }, uno); });
+      var e1 = chip(g, 960, 790, 760, 100, '4.000 + 200 + 5', { size: 54, stroke: C.linea, r: 30 });
+      var e2 = chip(g, 960, 920, 760, 100, '3.000 + 1.200 + 5', { size: 60, stroke: C.sol, r: 30 });
+      B(0); IN(tl, ti, 0);
+      B(1); mil.forEach(function (m, k) { IN(tl, m, k ? '<.12' : 0); }); IN(tl, cien[0], '>-.2'); IN(tl, cien[1], '<.12'); IN(tl, uno, '<.2');
+      B(2); tl.to(mil[3], { rotation: 6, duration: .08, yoyo: true, repeat: 7 }); OUT(tl, mil[3], '>', { scale: 1.5, duration: .3 });
+      cien.slice(2).forEach(function (c, j) { tl.fromTo(c, { opacity: 0, x: 930 - (1210 + ((j + 2) % 4) * 125) + 0, y: 560 - (440 + Math.floor((j + 2) / 4) * 120), scale: .3 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: .6, ease: 'power3.out' }, j ? '<.06' : '>-.1'); });
+      B(3); OUT(tl, uno, 0); IN(tl, e1, '<'); IN(tl, e2, '>.4');
+      B(4); tl.to(e1, { opacity: .45, duration: .4 }); pop(tl, e2, '>');
+    } });
+
+  E.push({ voz: ['Hagamos uno completo, con el número *53.608*.', 'Ubicamos cada cifra en su lugar.', 'El 5 vale 50.000, el 3 vale 3.000, el 6 vale 600, el 0 vale 0 y el 8 vale 8.', 'Aditiva: *50.000 + 3.000 + 600 + 8*.', 'Multiplicativa: *5 por 10.000, más 3 por 1.000, más 6 por 100, más 8*.', 'Comprobamos sumando: 53.000… 53.600… *53.608*.', '¿Y cuánto vale el 3? Está en las unidades de mil: vale *3.000*.'],
+    armar: function (g, tl, B) {
+      var n = pieza(g, 960, 260); txt(n, 0, 0, '53.608', 110, C.txt);
+      var F = fila(g, 960, 520, ['DECENA DE MIL', 'UNIDAD DE MIL', 'CENTENA', 'DECENA', 'UNIDAD'], ['5', '3', '6', '0', '8'], 170, 135);
+      F.slots.forEach(function (s) { s.r.setAttribute('height', 190); s.r.setAttribute('y', -95); }); F.digs.forEach(function (d) { d.querySelector('text').setAttribute('font-size', 140); }); F.vals.forEach(function (v) { v.t.setAttribute('font-size', 42); });
+      ['50.000', '3.000', '600', '0', '8'].forEach(function (s, k) { F.vals[k].t.textContent = s; });
+      var a = chip(g, 960, 790, 1240, 100, 'Aditiva: 50.000 + 3.000 + 600 + 8', { size: 50, stroke: C.sol, r: 26 });
+      var m = chip(g, 960, 910, 1240, 100, 'Multiplicativa: 5 × 10.000 + 3 × 1.000 + 6 × 100 + 8', { size: 44, stroke: C.aqua, r: 26 });
+      var cu = pieza(g, 960, 850); caja(cu, 0, 0, 760, 170, 'url(#gCard)', C.verde, 34, 6); var ct = txt(cu, 0, 4, '50.000', 110, C.verde);
+      var tr = etiqueta(g, 960, 940, 'EL 3 VALE 3.000');
+      B(0); IN(tl, n, 0, { scale: .5, y: 0 });
+      B(1); F.slots.forEach(function (s, k) { IN(tl, s, k ? '<.06' : 0); IN(tl, F.cabs[k], '<'); }); F.digs.forEach(function (d, k) { IN(tl, d, k ? '<.2' : '>-.1', { y: -400, ease: 'bounce.out', d: .6 }); });
+      B(2); F.vals.forEach(function (v, k) { IN(tl, v, k ? '<.7' : 0, { y: -40 }); });
+      B(3); IN(tl, a, 0);
+      B(4); IN(tl, m, 0);
+      B(5); OUT(tl, [a, m], 0); IN(tl, cu, '>'); contador(tl, ct, 50000, 53000, '>.1', .8); contador(tl, ct, 53000, 53600, '>.5', .8); contador(tl, ct, 53600, 53608, '>.5', .8); pop(tl, cu, '>');
+      B(6); OUT(tl, cu, 0); tl.to(F.slots[1].r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .3 }); pop(tl, F.digs[1], '<'); IN(tl, tr, '<.2');
+    } });
+
+  E.push({ voz: ['Un consejo: *chequeá siempre*. Sumá los sumandos: te tiene que dar el número original.', 'Y cuidado con estos dos *errores comunes*.', 'En 4.205, el 2 no vale 2: vale *200*.', '5.060 no es 5.000 + 600. El 6 está en las decenas, vale 60: es *5.000 + 60*.'],
+    armar: function (g, tl, B) {
+      var tip = pieza(g, 960, 560); caja(tip, 0, 0, 1300, 300, 'url(#gCard)', C.sol, 40, 6).setAttribute('filter', 'url(#sombra)');
+      el('circle', { cx: -520, cy: 0, r: 80, fill: 'url(#gSol)' }, tip); txt(tip, -520, 6, '✓', 90, '#3a2a00');
+      txt(tip, 90, -50, 'CHEQUEÁ SIEMPRE', 40, C.sol, { 'letter-spacing': 5 }); txt(tip, 90, 30, 'Sumá los sumandos:', 48, C.txt); txt(tip, 90, 92, 'tiene que darte el número original', 40, C.suave);
+      function err(y, mal, bien) { var p = pieza(g, 960, y); caja(p, 0, 0, 1400, 220, 'url(#gCard)', C.coral, 36, 5).setAttribute('filter', 'url(#sombra)'); el('circle', { cx: -600, cy: 0, r: 52, fill: C.coral }, p); txt(p, -600, 4, '✗', 60, '#3a0f08'); var m = txt(p, 60, -40, mal, 46, C.txt); var tach = el('line', { x1: 60 - mal.length * 12, y1: -40, x2: 60 + mal.length * 12, y2: -40, stroke: C.coral, 'stroke-width': 8, 'stroke-dasharray': 1400, 'stroke-dashoffset': 1400 }, p); var b = txt(p, 60, 45, bien, 46, C.verde, { opacity: 0 }); p.tach = tach; p.b = b; return p; }
+      var e1 = err(470, 'En 4.205 el 2 vale 2', '✓ En 4.205 el 2 vale 200'), e2 = err(760, '5.060 = 5.000 + 600', '✓ 5.060 = 5.000 + 60');
+      B(0); IN(tl, tip, 0, { scale: .7, y: 0 });
+      B(1); OUT(tl, tip, 0); IN(tl, e1, '>', { x: -300, y: 0 }); IN(tl, e2, '<.25', { x: 300, y: 0 });
+      B(2); tl.to(e1.tach, { attr: { 'stroke-dashoffset': 0 }, duration: .5 }); tl.to(e1.b, { opacity: 1, duration: .4 }, '>');
+      B(3); tl.to(e2.tach, { attr: { 'stroke-dashoffset': 0 }, duration: .5 }); tl.to(e2.b, { opacity: 1, duration: .4 }, '>');
+    } });
+
+  E.push({ voz: ['Repasemos lo más importante.', 'Un *sistema de numeración* son los símbolos y reglas para escribir números.', 'El *sistema decimal* usa 10 cifras y agrupa de a 10.', 'Por el *valor posicional*, en 4.205 el 2 vale 200.', 'La *descomposición aditiva* suma los valores: 4.000 + 200 + 5.', 'La *multiplicativa* multiplica cada cifra por su lugar: 4 por 1.000, más 2 por 100, más 5.', 'Y con los *canjes*, el mismo número se escribe de varias formas.', '¡Terminaste la clase! Ahora, *a practicar*.'],
+    armar: function (g, tl, B) {
+      var ti = titulo(g, 'RESUMEN');
+      var R = [['NUMERACIÓN', 'MMXXVI = 2.026'], ['DECIMAL', '10 cifras, grupos de 10'], ['VALOR POSICIONAL', 'en 4.205 el 2 vale 200'], ['ADITIVA', '4.000 + 200 + 5'], ['MULTIPLICATIVA', '4 × 1.000 + 2 × 100 + 5'], ['CANJES', '3.000 + 1.200 + 5']];
+      var T = R.map(function (r, k) { var p = pieza(g, 460 + (k % 3) * 500, 520 + Math.floor(k / 3) * 250); caja(p, 0, 0, 460, 210, 'url(#gCard)', k % 2 ? C.sol : C.aqua, 30, 5).setAttribute('filter', 'url(#sombra)'); txt(p, 0, -45, r[0], 30, k % 2 ? C.sol : C.aqua, { 'letter-spacing': 3 }); txt(p, 0, 30, r[1], 38, C.txt); return p; });
+      var fin = pieza(g, 960, 600); caja(fin, 0, 0, 1000, 300, 'url(#gSol)', '#ffe7a8', 50, 6).setAttribute('filter', 'url(#sombra)'); txt(fin, 0, -40, '¡CLASE TERMINADA!', 80, '#3a2a00'); txt(fin, 0, 60, 'Ahora, a practicar 🚀', 48, '#3a2a00');
+      B(0); IN(tl, ti, 0);
+      T.forEach(function (t, k) { B(k + 1); IN(tl, t, 0, { scale: .6, y: 0 }); });
+      B(7); OUT(tl, T.concat(ti), 0, { stagger: .05 }); IN(tl, fin, '>', { scale: .3, y: 0, ease: 'elastic.out(1,.6)', d: 1.1 });
+    } });
+
+  // ================= REPRODUCTOR =================
+  var st = { e: -1, f: 0, play: false, gen: 0 }, esc = null, tl = null, vozDisp = null;
+  // ambiente
+  for (var i = 0; i < 9; i++) { var yy = 830 + i * i * 3.2; el('line', { x1: 0, y1: yy, x2: 1920, y2: yy, stroke: C.aqua, 'stroke-opacity': .06 + i * .012, 'stroke-width': 2 }, $('piso')); }
+  for (i = -10; i <= 10; i++) el('line', { x1: 960 + i * 70, y1: 830, x2: 960 + i * 420, y2: 1080, stroke: C.aqua, 'stroke-opacity': .09, 'stroke-width': 2 }, $('piso'));
+  for (i = 0; i < 16; i++) { var pp = el('circle', { cx: Math.random() * 1920, cy: Math.random() * 1080, r: 2 + Math.random() * 3.5, fill: i % 4 ? C.aqua : C.sol, opacity: .12 + Math.random() * .3 }, $('particulas')); gsap.to(pp, { attr: { cy: '-=' + (150 + Math.random() * 250) }, opacity: 0, duration: 7 + Math.random() * 6, repeat: -1, delay: -Math.random() * 12, ease: 'none' }); }
+  $('barra').innerHTML = E.map(function (_, k) { return '<i data-ir="' + k + '"><b></b></i>'; }).join('');
+  [].forEach.call(document.querySelectorAll('#barra i'), function (b) { b.onclick = function () { irA(+b.dataset.ir); }; });
+
+  function barra() { [].forEach.call(document.querySelectorAll('#barra b'), function (b, k) { b.style.width = k < st.e ? '100%' : k > st.e ? '0' : Math.round(st.f / E[k].voz.length * 100) + '%'; }); $('pp').textContent = st.play ? '❚❚' : '▶'; }
+  function limpio(s) { return s.replace(/\*/g, '').replace(/\s*\+\s*/g, ' más ').replace(/\s*×\s*/g, ' por '); }
+  // subtítulos: de a 5 palabras, la clave en amarillo
+  var palabras = [];
+  function subs(frase) { palabras = frase.split(' ').map(function (w) { return { w: w.replace(/\*/g, ''), k: /\*/.test(w) }; }); var cl = false; palabras.forEach(function (p, j) { var raw = frase.split(' ')[j]; if (raw[0] === '*') cl = true; p.k = cl; if (raw.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; }); marcar(0); }
+  function marcar(w) {
+    var s = $('subs'); s.innerHTML = ''; if (!palabras.length) return;
+    w = Math.max(0, Math.min(w, palabras.length - 1)); var a = Math.floor(w / 5) * 5, t = el('text', { x: 960, y: 125 }, s);
+    palabras.slice(a, a + 5).forEach(function (p, j) { var sp = el('tspan', { fill: p.k ? C.sol : '#fff', opacity: a + j <= w ? 1 : .28 }, t); sp.textContent = (j ? ' ' : '') + p.w; });
+  }
+  function cortar() { st.gen++; if (window.speechSynthesis) speechSynthesis.cancel(); }
+  function elegirVoz() {
+    if (!window.speechSynthesis) return null;
+    var vs = speechSynthesis.getVoices().filter(function (v) { return /^es/i.test(v.lang); });
+    var pref = function (re) { return vs.filter(function (v) { return re.test(v.lang + ' ' + v.name); })[0]; };
+    return pref(/es-AR/i) || pref(/natural|online|google/i) || pref(/es-(419|MX|US)/i) || vs[0] || null;
+  }
+  function decir(txt, g, fin) {
+    var n = txt.split(' ').length;
+    if (!window.speechSynthesis) { var w = 0, iv0 = setInterval(function () { if (g !== st.gen) return clearInterval(iv0); marcar(w++); if (w > n) { clearInterval(iv0); fin(); } }, 330); return; }
+    var u = new SpeechSynthesisUtterance(txt), t0 = Date.now(), ev = false, iv;
+    u.lang = 'es-AR'; if (vozDisp || (vozDisp = elegirVoz())) u.voice = vozDisp; u.rate = 1.3;
+    u.onboundary = function (e) { if (e.name && e.name !== 'word') return; ev = true; marcar(txt.slice(0, e.charIndex).split(' ').length - 1); };
+    iv = setInterval(function () { if (g !== st.gen) return clearInterval(iv); if (!ev) marcar(Math.floor((Date.now() - t0) / 260)); }, 80);
+    u.onend = u.onerror = function () { clearInterval(iv); if (g === st.gen) { marcar(999); fin(); } };
+    speechSynthesis.speak(u);
+  }
+  function frase(k) {
+    var e = E[st.e], g = st.gen;
+    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 500);
+    st.f = k; barra(); subs(e.voz[k]);
+    if (tl.labels['b' + k] != null) tl.play('b' + k);
+    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 120); });
+  }
+  function armarEscena(i) {
+    var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .35, onComplete: function () { vieja.remove(); } });
+    esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); var n = 0;
+    E[i].armar(esc, tl, function (k) { if (n++) tl.addPause(); tl.addLabel('b' + k); });
+    gsap.set(esc.querySelectorAll('[data-c]'), { transformOrigin: '50% 50%', smoothOrigin: false });
+    gsap.fromTo(esc, { opacity: 0 }, { opacity: 1, duration: .4, delay: vieja ? .25 : 0 });
+  }
+  function irA(i) { cortar(); st.e = i; st.f = 0; gsap.set('#cam', { x: 0 }); $('flash').setAttribute('opacity', 0); armarEscena(i); barra(); if (st.play) setTimeout(function () { frase(0); }, 450); else subs(E[i].voz[0]); }
+  function pausa() { st.play = false; cortar(); tl.pause(); barra(); }
+  function seguir() { st.play = true; var k = st.f; tl.pause(); if (tl.labels['b' + k] != null) tl.seek('b' + k); frase(k); }
+  $('go').onclick = function () { $('ui').remove(); $('ctl').classList.add('ver'); setTimeout(function () { $('ctl').classList.remove('ver'); }, 2500); st.play = true; vozDisp = elegirVoz(); irA(0); };
+  $('pp').onclick = function () { st.play ? pausa() : seguir(); };
+  $('ant').onclick = function () { irA(Math.max(0, st.e - (st.f <= 1 ? 1 : 0))); };
+  $('sig').onclick = function () { if (st.e < E.length - 1) irA(st.e + 1); };
+  if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { vozDisp = elegirVoz(); };
+  window.LECCION = { E: E, irA: irA, tl: function () { return tl; } };
+})();
+</script>
+</body></html>
