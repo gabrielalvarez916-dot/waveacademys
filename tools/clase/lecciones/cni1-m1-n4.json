@@ -148,15 +148,15 @@
    ],
    "fichas": [
     {
-     "txt": "Si recibe más calor, se derrite más rápido",
+     "txt": "Calor = más rápido",
      "caja": 0
     },
     {
-     "txt": "Un cubito con lámpara y otro sin",
+     "txt": "Con y sin lámpara",
      "caja": 1
     },
     {
-     "txt": "Con lámpara: 6 min · sin: 15 min",
+     "txt": "6 min contra 15 min",
      "caja": 2
     }
    ]
@@ -170,12 +170,12 @@
    ],
    "a": {
     "cab": "BUENA",
-    "texto": "El calor acelera el derretimiento: la hipótesis se confirmó (6 min contra 15)",
+    "texto": "Se confirmó: 6 min contra 15",
     "emoji": "✅"
    },
    "b": {
     "cab": "MALA",
-    "texto": "El experimento salió bien",
+    "texto": "Salió bien",
     "emoji": "❌"
    },
    "signo": "vs"
