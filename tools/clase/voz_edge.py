@@ -109,12 +109,12 @@ async def una(src_path):
             if h in cache:
                 fila.append(cache[h])
             else:
-                for intento in range(3):
+                for intento in range(6):
                     try:
                         r = await tts(t); break
                     except Exception as e:
-                        if intento == 2: raise
-                        await asyncio.sleep(3)
+                        if intento == 5: raise
+                        await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos
                 r['h'] = h; fila.append(r); nuevas += 1
         res.append(fila)
     os.makedirs(os.path.dirname(destino), exist_ok=True)
@@ -124,6 +124,9 @@ async def una(src_path):
 
 async def main():
     for p in (sys.argv[1:] or sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json')))):
-        await una(p)
+        try:
+            await una(p)
+        except Exception as e:  # una clase que falla no frena a las demás: queda sin voz y se graba en la próxima corrida
+            print('ERROR', os.path.basename(p), ':', e)
 
 asyncio.run(main())
