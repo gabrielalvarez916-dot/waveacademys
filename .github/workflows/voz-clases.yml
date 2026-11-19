@@ -1,0 +1,34 @@
+name: Voz de las clases animadas
+# Genera el audio (voces neuronales de Microsoft, gratis) de cada clase y arma el HTML final.
+on:
+  push:
+    branches: [main]
+    paths: ['tools/clase/*.src.html', 'tools/clase/voz_edge.py', 'tools/clase/armar.py', '.github/workflows/voz-clases.yml']
+  workflow_dispatch:
+    inputs:
+      voz: { description: 'Voz (ej. es-MX-JorgeNeural, es-AR-TomasNeural)', default: 'es-MX-JorgeNeural' }
+      rate: { description: 'Velocidad (ej. +8%, +15%)', default: '+8%' }
+permissions:
+  contents: write
+concurrency: { group: voz-clases, cancel-in-progress: false }
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install edge-tts
+      - name: Generar voz
+        env:
+          VOZ: ${{ github.event.inputs.voz || 'es-MX-JorgeNeural' }}
+          RATE: ${{ github.event.inputs.rate || '+8%' }}
+        run: python tools/clase/voz_edge.py
+      - run: python tools/clase/armar.py
+      - name: Guardar
+        run: |
+          git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
+          git add tools/clase/voz tools/clase/dist actividades/clases
+          git diff --cached --quiet || git commit -m "Voz de clases animadas (automático)"
+          git pull --rebase origin main && git push origin HEAD:main
