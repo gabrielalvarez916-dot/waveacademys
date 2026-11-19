@@ -1,0 +1,250 @@
+{
+ "slug": "mat1-m3-n3",
+ "step_id": "83c4cf29-c12b-4ba8-8c3d-152e2828ce07",
+ "materia": "Matemática I",
+ "titulo": "Raíz cuadrada y raíz cúbica exactas",
+ "sub": "Matemática I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Qué número, multiplicado por sí mismo, da 49?",
+    "¡*7*! Porque 7 por 7 es 49.",
+    "Hoy: la *raíz*, que deshace la potencia."
+   ],
+   "grande": "√49",
+   "final": "7",
+   "titulo": "RAÍZ CUADRADA Y CÚBICA",
+   "sub": "exactas"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *raíz cuadrada* de un número es el que, al cuadrado, da ese número.",
+    "Raíz de 49 es 7, porque 7 al cuadrado es 49. El 49 se llama *radicando*."
+   ],
+   "palabra": "Raíz cuadrada",
+   "texto": "√49 = 7 porque 7² = 49. El número de adentro es el radicando.",
+   "emoji": "⏪"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Estos son los *cuadrados perfectos*: los que tienen raíz exacta.",
+    "1, 4, 9, 16, 25… hasta 100. ¡Conviene sabérselos!"
+   ],
+   "titulo": "CUADRADOS PERFECTOS",
+   "columnas": [
+    "n",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ],
+   "filas": [
+    [
+     "n²",
+     "1",
+     "4",
+     "9",
+     "16",
+     "25",
+     "36",
+     "49",
+     "64",
+     "81",
+     "100"
+    ]
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *raíz cúbica* es lo mismo, pero con el cubo.",
+    "Raíz cúbica de 64 es 4, porque 4 al cubo es 64."
+   ],
+   "palabra": "Raíz cúbica",
+   "texto": "∛64 = 4 porque 4³ = 64",
+   "emoji": "🧊"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Los *cubos perfectos*: 1, 8, 27, 64, 125, 216.",
+    "La raíz es la *operación inversa* de la potencia: deshace lo que hizo."
+   ],
+   "titulo": "CUBOS PERFECTOS",
+   "columnas": [
+    "n",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "filas": [
+    [
+     "n³",
+     "1",
+     "8",
+     "27",
+     "64",
+     "125",
+     "216"
+    ]
+   ]
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "¿Y si el número no es cuadrado perfecto? *Estimás*. Raíz de 50.",
+    "49 es 7 al cuadrado.",
+    "Y 50 está apenas pasando el 49…",
+    "…y 64 es 8 al cuadrado. Entonces raíz de 50 está *entre 7 y 8*, muy cerca de 7."
+   ],
+   "min": 6,
+   "max": 9,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 7,
+     "txt": "√49 = 7"
+    },
+    {
+     "v": 7.07,
+     "txt": "√50"
+    },
+    {
+     "v": 8,
+     "txt": "√64 = 8"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Para números grandes, *partís* en factores con raíz conocida. Raíz de 3.600.",
+    "Es 36 por 100.",
+    "Raíz de 36 es 6, raíz de 100 es 10: *60*."
+   ],
+   "pasos": [
+    "√3.600",
+    "√(36 × 100)",
+    "6 × 10 = 60"
+   ],
+   "notas": [
+    "un número grande",
+    "partimos en raíces conocidas",
+    "✓ 60² = 3.600"
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Pero ojo: la raíz *no se reparte en una suma*. Raíz de 9 más 16 es raíz de 25: 5.",
+    "Y raíz de 9 más raíz de 16 da 7.",
+    "¡No es lo mismo!"
+   ],
+   "a": {
+    "cab": "√(9 + 16)",
+    "texto": "5"
+   },
+   "b": {
+    "cab": "√9 + √16",
+    "texto": "7"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: raíz de 1.600.",
+    "Partimos: 16 por 100.",
+    "Raíz de 16: 4.",
+    "Raíz de 100: 10.",
+    "4 por 10: *40*.",
+    "Comprobamos: 40 por 40, *1.600*. ¡Perfecto!"
+   ],
+   "titulo": "√1.600",
+   "items": [
+    "1.600 = 16 × 100",
+    "√16 = 4",
+    "√100 = 10",
+    "√1.600 = 4 × 10 = 40",
+    "40 × 40 = 1.600 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* típicos.",
+    "Dividir por 2: raíz de 36 *no* es 18, es 6.",
+    "Y repartir la raíz en una suma: raíz de 9 más 16 es *5*, no 7."
+   ],
+   "items": [
+    {
+     "mal": "√36 = 18",
+     "bien": "√36 = 6 (6² = 36)"
+    },
+    {
+     "mal": "√(9 + 16) = 3 + 4",
+     "bien": "√(9 + 16) = √25 = 5"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: para saber si una raíz está bien, *elevá el resultado*: tiene que darte el número de adentro."
+   ],
+   "titulo": "COMPROBÁ ELEVANDO",
+   "texto": "Elevá el resultado: tiene que darte el radicando",
+   "emoji": "🔁"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Raíz cuadrada*: el número que al cuadrado da el radicando.",
+    "*Raíz cúbica*: el que al cubo lo da.",
+    "La raíz *deshace* la potencia.",
+    "Si no es exacta, la *estimás* entre dos naturales.",
+    "Y los grandes, los *partís* en factores.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RAÍZ CUADRADA",
+     "√49 = 7"
+    ],
+    [
+     "RAÍZ CÚBICA",
+     "∛64 = 4"
+    ],
+    [
+     "INVERSA",
+     "la raíz deshace la potencia"
+    ],
+    [
+     "ESTIMAR",
+     "√50 está entre 7 y 8"
+    ],
+    [
+     "GRANDES",
+     "√3.600 = 6 × 10 = 60"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

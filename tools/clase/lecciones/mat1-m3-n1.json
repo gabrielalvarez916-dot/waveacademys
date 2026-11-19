@@ -1,0 +1,242 @@
+{
+ "slug": "mat1-m3-n1",
+ "step_id": "272a49a5-bb71-4293-9a2e-193ccfeb0177",
+ "materia": "Matemática I",
+ "titulo": "Potencias de números naturales",
+ "sub": "Matemática I · Misión 3 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Una bacteria se divide en 2 cada hora. ¿Cuántas hay después de 10 horas?",
+    "¡*1.024*! Crece rapidísimo.",
+    "Hoy: las *potencias*."
+   ],
+   "grande": "1",
+   "final": "1.024",
+   "titulo": "POTENCIAS",
+   "sub": "de números naturales"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Una *potencia* es multiplicar un número por sí mismo varias veces.",
+    "Dos a la tres es 2 por 2 por 2: *8*. El 2 es la *base*, y el 3, el *exponente*: cuántas veces se repite."
+   ],
+   "palabra": "Potencia",
+   "texto": "2³ = 2 × 2 × 2 = 8. La base se repite; el exponente dice cuántas veces.",
+   "emoji": "🔁"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Mirá estos ejemplos.",
+    "Cinco al cuadrado: 5 por 5, *25*.",
+    "Dos a la quinta: cinco veces 2, *32*.",
+    "Tres a la cuarta: cuatro veces 3, *81*."
+   ],
+   "titulo": "BASE, EXPONENTE Y RESULTADO",
+   "columnas": [
+    "Potencia",
+    "Base",
+    "Exponente",
+    "Producto",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "5²",
+     "5",
+     "2",
+     "5 × 5",
+     "25"
+    ],
+    [
+     "2⁵",
+     "2",
+     "5",
+     "2 × 2 × 2 × 2 × 2",
+     "32"
+    ],
+    [
+     "3⁴",
+     "3",
+     "4",
+     "3 × 3 × 3 × 3",
+     "81"
+    ]
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Con exponente 2 se dice *al cuadrado*: un cuadrado de lado 4 tiene 16 cuadraditos.",
+    "Con exponente 3, *al cubo*: un cubo de arista 3 tiene 27 cubitos.",
+    "Por eso se llaman así.",
+    "Y para los demás se dice *elevado a*: dos elevado a la quinta."
+   ],
+   "a": {
+    "cab": "AL CUADRADO",
+    "texto": "4² = 16",
+    "emoji": "🟩"
+   },
+   "b": {
+    "cab": "AL CUBO",
+    "texto": "3³ = 27",
+    "emoji": "🧊"
+   },
+   "signo": "y",
+   "def": {
+    "cab": "CÓMO SE LEE",
+    "texto": "Exponente 2: al cuadrado · exponente 3: al cubo · los demás: elevado a"
+   }
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Ahora un misterio: mirá qué pasa al *bajar el exponente*.",
+    "8, 4, 2… cada vez la *mitad*. Entonces dos a la cero da… *1*."
+   ],
+   "titulo": "BAJANDO EL EXPONENTE",
+   "columnas": [
+    "2³",
+    "2²",
+    "2¹",
+    "2⁰"
+   ],
+   "filas": [
+    [
+     "8",
+     "4",
+     "2",
+     "1"
+    ]
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Dos reglas para siempre: elevado a 1 da *el mismo número*; elevado a 0 da *1*."
+   ],
+   "texto": "Elevado a 1: el mismo número · Elevado a 0: da 1",
+   "emoji": "💡",
+   "color": "#F4B63F"
+  },
+  {
+   "t": "barras",
+   "voz": [
+    "Por eso las potencias cuentan cosas que se *duplican*.",
+    "Después de una hora: 2 bacterias.",
+    "Dos horas: 4.",
+    "Tres horas: 8.",
+    "Cuatro horas: 16.",
+    "Cinco horas: *32*. ¡Mirá cómo se dispara!"
+   ],
+   "titulo": "BACTERIAS QUE SE DUPLICAN",
+   "items": [
+    {
+     "txt": "1 h",
+     "valor": 2
+    },
+    {
+     "txt": "2 h",
+     "valor": 4
+    },
+    {
+     "txt": "3 h",
+     "valor": 8
+    },
+    {
+     "txt": "4 h",
+     "valor": 16
+    },
+    {
+     "txt": "5 h",
+     "valor": 32
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Desafío: ¿qué es mayor, cuatro al cubo o tres a la cuarta?",
+    "Cuatro al cubo: 4 por 4 por 4, *64*. Tres a la cuarta: 9, 27, *81*.",
+    "¡Gana el de la *base más chica*!"
+   ],
+   "a": {
+    "cab": "4³",
+    "texto": "64"
+   },
+   "b": {
+    "cab": "3⁴",
+    "texto": "81"
+   },
+   "signo": "<"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *errores* para no cometer.",
+    "Multiplicar base por exponente: dos a la tres *no* es 6, es 8.",
+    "Y pensar que elevado a cero da cero: cinco a la cero es *1*."
+   ],
+   "items": [
+    {
+     "mal": "2³ = 2 × 3 = 6",
+     "bien": "2³ = 2 × 2 × 2 = 8"
+    },
+    {
+     "mal": "5⁰ = 0",
+     "bien": "5⁰ = 1"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: multiplicá *de a dos*. Tres a la cuarta: 9, después 27, después 81."
+   ],
+   "titulo": "MULTIPLICÁ DE A DOS",
+   "texto": "3⁴: 9, después 27, después 81",
+   "emoji": "✌️"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Potencia*: multiplicar factores iguales.",
+    "La *base* se repite tantas veces como dice el *exponente*.",
+    "Exponente 2, *al cuadrado*; exponente 3, *al cubo*.",
+    "Elevado a 1 da *la base*.",
+    "Elevado a 0 da *1*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POTENCIA",
+     "2³ = 2 × 2 × 2 = 8"
+    ],
+    [
+     "BASE Y EXPONENTE",
+     "la base se repite"
+    ],
+    [
+     "CUADRADO Y CUBO",
+     "4² = 16 · 3³ = 27"
+    ],
+    [
+     "EXPONENTE 1",
+     "7¹ = 7"
+    ],
+    [
+     "EXPONENTE 0",
+     "7⁰ = 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
