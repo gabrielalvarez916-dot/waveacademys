@@ -657,6 +657,46 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     if (d.txt) { var fin = w.etiqueta(g, 960, yb, d.txt); w.IN(tl, fin, '>.1'); }
   } };
 
+  // geo: dibujo geométrico paso a paso. {titulo, vista:[xmin,xmax,ymin,ymax], pasos:[{el:[...], txt}]} — n = pasos (cada paso dibuja sus elementos y muestra su texto abajo)
+  // elementos (coordenadas en unidades de la vista, y hacia arriba):
+  //  {seg:[[x,y],[x,y]], color, dash, flechas}  {pol:[[x,y],...], fill}  {pt:[x,y], txt, dx, dy}  {txt:[x,y], s:'texto', color, size}
+  //  {ang:[x,y], a1, a2, r, txt, recto, color} (grados, antihorario desde el eje x)  {arco:[x,y], r, a1, a2} (arco de compás, punteado)  {marca:[[x,y],[x,y]], n}
+  T.geo = { n: function (d) { return d.pasos.length; }, armar: function (g, tl, B, d) {
+    var v = d.vista || [0, 10, 0, 6], top = d.titulo ? 340 : 270, bot = 880, s = Math.min(1440 / (v[1] - v[0]), (bot - top) / (v[3] - v[2]));
+    var cx = 960 - (v[0] + v[1]) / 2 * s, cy = (top + bot) / 2 + (v[2] + v[3]) / 2 * s;
+    function X(p) { return cx + p[0] * s; } function Y(p) { return cy - p[1] * s; }
+    var ti = d.titulo ? w.titulo(g, d.titulo, 270) : null, cap = null;
+    function linea(G, a, b, col, dash, ancho) { return w.el('line', { x1: X(a), y1: Y(a), x2: X(b), y2: Y(b), stroke: col || C.txt, 'stroke-width': ancho || 6, 'stroke-linecap': 'round', 'stroke-dasharray': dash ? '16 12' : null }, G); }
+    function arcoPath(c, r, a1, a2) { var R = r * s, p1 = [X(c) + R * Math.cos(a1 * Math.PI / 180), Y(c) - R * Math.sin(a1 * Math.PI / 180)], p2 = [X(c) + R * Math.cos(a2 * Math.PI / 180), Y(c) - R * Math.sin(a2 * Math.PI / 180)];
+      return 'M' + p1[0] + ' ' + p1[1] + ' A' + R + ' ' + R + ' 0 ' + (((a2 - a1) % 360 + 360) % 360 > 180 ? 1 : 0) + ' 0 ' + p2[0] + ' ' + p2[1]; }
+    var grupos = d.pasos.map(function (p, k) { var G = w.pieza(g, 0, 0), trazos = [], textos = [];
+      (p.el || []).forEach(function (e) { var col = e.color || (k ? W.PAL[k % W.PAL.length] : C.txt), t;
+        if (e.pol) { t = w.el('polygon', { points: e.pol.map(function (q) { return X(q) + ',' + Y(q); }).join(' '), fill: e.fill || 'rgba(127,211,196,.16)', stroke: e.color || C.aqua, 'stroke-width': 6, 'stroke-linejoin': 'round' }, G); trazos.push(t); }
+        else if (e.seg) { t = linea(G, e.seg[0], e.seg[1], col, e.dash, e.ancho); trazos.push(t);
+          if (e.flechas) e.seg.forEach(function (q, j) { var o = e.seg[1 - j], a = Math.atan2(Y(q) - Y(o), X(q) - X(o)); var h = w.el('path', { d: 'M0 0 L-26 -13 L-26 13 Z', fill: col, transform: 'translate(' + X(q) + ' ' + Y(q) + ') rotate(' + a * 180 / Math.PI + ')' }, G); textos.push(h); }); }
+        else if (e.arco) { t = w.el('path', { d: arcoPath(e.arco, e.r, e.a1, e.a2), fill: 'none', stroke: e.color || C.sol, 'stroke-width': 4, 'stroke-dasharray': '14 10' }, G); textos.push(t); }
+        else if (e.ang) { var r = e.r || 0.8, col2 = e.color || C.sol;
+          if (e.recto) { var u = [Math.cos(e.a1 * Math.PI / 180), Math.sin(e.a1 * Math.PI / 180)], q = [Math.cos(e.a2 * Math.PI / 180), Math.sin(e.a2 * Math.PI / 180)], m = r * 0.6, c0 = e.ang;
+            t = w.el('path', { d: 'M' + X([c0[0] + u[0] * m, c0[1] + u[1] * m]) + ' ' + Y([c0[0] + u[0] * m, c0[1] + u[1] * m]) + ' L' + X([c0[0] + (u[0] + q[0]) * m, c0[1] + (u[1] + q[1]) * m]) + ' ' + Y([c0[0] + (u[0] + q[0]) * m, c0[1] + (u[1] + q[1]) * m]) + ' L' + X([c0[0] + q[0] * m, c0[1] + q[1] * m]) + ' ' + Y([c0[0] + q[0] * m, c0[1] + q[1] * m]), fill: 'none', stroke: col2, 'stroke-width': 5 }, G); }
+          else t = w.el('path', { d: arcoPath(e.ang, r, e.a1, e.a2), fill: 'none', stroke: col2, 'stroke-width': 6 }, G);
+          textos.push(t);
+          if (e.txt) { var am = (e.a1 + e.a2) / 2 * Math.PI / 180, rt = r + (e.dt || 0.55); textos.push(w.txt(G, X(e.ang) + rt * s * Math.cos(am), Y(e.ang) - rt * s * Math.sin(am), e.txt, e.size || 46, col2)); } }
+        else if (e.marca) { var a0 = e.marca[0], b0 = e.marca[1], mx = (a0[0] + b0[0]) / 2, my = (a0[1] + b0[1]) / 2, dx = b0[0] - a0[0], dy = b0[1] - a0[1], L = Math.hypot(dx, dy), nx = -dy / L, ny = dx / L, ux = dx / L, uy = dy / L, n = e.n || 1, h2 = 0.18;
+          for (var j = 0; j < n; j++) { var o = (j - (n - 1) / 2) * 0.16; textos.push(linea(G, [mx + ux * o - nx * h2, my + uy * o - ny * h2], [mx + ux * o + nx * h2, my + uy * o + ny * h2], e.color || C.sol, false, 5)); } }
+        else if (e.pt) { textos.push(w.el('circle', { cx: X(e.pt), cy: Y(e.pt), r: 11, fill: e.color || C.sol }, G)); if (e.txt) textos.push(w.txt(G, X(e.pt) + (e.dx == null ? -34 : e.dx * s), Y(e.pt) + (e.dy == null ? 34 : -e.dy * s), e.txt, 44, e.color || C.txt)); }
+        else if (e.txt) textos.push(w.txt(G, X(e.txt), Y(e.txt), e.s, e.size || 44, e.color || C.txt));
+      });
+      return { G: G, trazos: trazos, textos: textos, txt: p.txt }; });
+    grupos.forEach(function (q, k) { B(k);
+      if (!k && ti) w.IN(tl, ti, 0);
+      tl.set(q.G, { opacity: 1 }, k ? '>' : '<');
+      q.trazos.forEach(function (t, j) { var L = 4000; t.setAttribute('stroke-dasharray', L); t.setAttribute('stroke-dashoffset', L); tl.to(t, { attr: { 'stroke-dashoffset': 0 }, duration: .7, ease: 'power2.inOut' }, j ? '<.15' : '>'); });
+      if (q.textos.length) tl.fromTo(q.textos, { opacity: 0 }, { opacity: 1, duration: .35, stagger: .08 }, q.trazos.length ? '>-.2' : '>');
+      if (cap) w.OUT(tl, cap, '<'); cap = null;
+      if (q.txt) { cap = w.chip(g, 960, 960, Math.min(1500, q.txt.length * 24 + 110), 80, q.txt, { size: 40, stroke: W.PAL[(k + 1) % W.PAL.length] }); w.IN(tl, cap, '<.1'); }
+    });
+  } };
+
   // arbol: {numero:72, ramas:[[2,36],[2,18],[2,9],[3,3]], resultado:'72 = 2³ × 3²'} — 2 + ramas pasos: el número, cada división (primo a la izquierda, sigue el cociente), el resultado
   T.arbol = { n: function (d) { return 2 + d.ramas.length; }, armar: function (g, tl, B, d) {
     var L = d.ramas.length, dy = Math.min(135, 560 / L), dx = Math.min(150, 640 / L), x = 960 - L * dx / 2 - 60, y = 300;
