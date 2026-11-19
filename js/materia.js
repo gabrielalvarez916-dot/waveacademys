@@ -261,7 +261,7 @@
   function tarjeta(o) {
     var cls = 'mt-card' + (o.estado ? ' ' + o.estado : '');
     var interior =
-      '<div class="mt-card-t"><h2>' + esc(o.titulo) + '</h2><p>' + esc(o.texto) + '</p>' +
+      '<div class="mt-card-t">' + (o.kicker ? '<span class="mt-card-k">' + esc(o.kicker) + '</span>' : '') + '<h2>' + esc(o.titulo) + '</h2><p>' + esc(o.texto) + '</p>' +
       (o.boton ? '<span class="mt-card-btn">' + o.boton + '</span>' : '') + '</div>' +
       '<div class="mt-card-fig">' + (o.figura || '') + '</div>' +
       (o.trofeo ? '<span class="mt-trofeo">' + ico('trophy', 34, 1.8) + '</span>' : '') +
@@ -278,7 +278,7 @@
       ? tarjeta({ titulo: 'Introducción', texto: 'Conocé la materia antes de empezar', boton: 'VER VIDEO', color: colorSeguro(m.color), figura: icono, intro: true })
       : tarjeta({ titulo: 'Introducción', texto: 'El video de introducción estará disponible muy pronto', color: colorSeguro(m.color), figura: icono, estado: 'pronto' }));
     D.temas.forEach(function (t, i) {
-      var c = tono(i), o = { titulo: t.titulo, color: c, figura: icono };
+      var c = tono(i), o = { titulo: t.titulo, kicker: 'Misión ' + (i + 1), color: c, figura: icono };
       var nl = t.lecciones.length;
       if (t.vacio) { o.texto = 'Estamos preparando esta misión'; o.estado = 'pronto'; }
       else if (t.bloqueado) { o.texto = nl + (nl === 1 ? ' nivel' : ' niveles') + (t.examen ? ' y nivel jefe' : ''); o.estado = 'bloq'; o.aviso = D.sinAcceso ? 'La suscripción tiene que estar al día para ver el contenido.' : 'Terminá la misión anterior y superá su nivel jefe para abrir esta.'; }
