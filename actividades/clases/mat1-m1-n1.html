@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El sistema decimal y el valor posicional</title>
+<style>
+:root{--bg:#0c1f21;--card:#17383b;--card2:#1e474b;--linea:#2c5a5e;--aqua:#7FD3C4;--tq:#19a39f;--sol:#F4B63F;--coral:#ff7a66;--txt:#eaf7f4;--suave:#9dbdb9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,Roboto,Arial,sans-serif;background:radial-gradient(1100px 700px at 85% -10%,#1b5a5c 0%,transparent 60%),radial-gradient(900px 600px at -10% 110%,#16484b 0%,transparent 55%),var(--bg);color:var(--txt);overflow:hidden;user-select:none}
+#app{position:relative;height:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;padding:12px 16px}
+.barra{display:flex;gap:4px;min-height:8px}
+.barra i{flex:1;height:6px;border-radius:9px;background:var(--linea);overflow:hidden;position:relative;cursor:pointer}
+.barra i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--tq),var(--aqua))}
+.subs{min-height:112px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 4px 6px;font-size:clamp(1.15rem,4.6vw,1.7rem);font-weight:900;line-height:1.25;text-wrap:balance}
+.subs span{color:rgba(234,247,244,.32);transition:color .12s}
+.subs span.ya{color:var(--txt)}
+.subs span.ahora{color:var(--sol)}
+.escena{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden;padding:4px 2px}
+[data-i]{opacity:0;transform:translateY(18px) scale(.97);transition:opacity .45s,transform .45s cubic-bezier(.2,1.4,.4,1)}
+[data-i].on{opacity:1;transform:none}
+.etq{font-size:.75rem;letter-spacing:.28em;font-weight:900;color:var(--aqua);text-transform:uppercase;text-align:center}
+.grande{font-size:clamp(2rem,9vw,3.4rem);font-weight:900;line-height:1.05;text-align:center;text-wrap:balance}
+.sub{color:var(--suave);font-weight:700;text-align:center;font-size:1.1rem;line-height:1.4;text-wrap:balance}
+.tarjeta{background:var(--card);border:2px solid var(--linea);border-radius:20px;padding:16px 18px;font-weight:700;font-size:1.12rem;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.tarjeta b{color:var(--sol)}
+.tarjeta h3{margin:0 0 6px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--aqua)}
+.palabra{display:inline-block;margin:0 auto;background:linear-gradient(180deg,#ffd36e,var(--sol));color:#3a2a00;font-weight:900;font-size:clamp(1.5rem,6.5vw,2.4rem);padding:10px 22px;border-radius:18px;box-shadow:0 6px 0 #a87a1c;text-align:center}
+.alerta{border-color:var(--sol);background:#3b3418}
+.alerta .ico{font-size:2rem;float:left;margin:0 10px 0 0}
+.item{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:2px solid var(--linea);border-radius:16px;padding:12px 14px;font-weight:800;font-size:1.05rem;line-height:1.35}
+.item>i{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;background:var(--tq);color:#06282a}
+.item.mal>i{background:var(--coral);color:#3a0f08}
+.item.mal{border-color:#6b3a34}
+.lista{display:flex;flex-direction:column;gap:8px}
+.tabla{width:100%;border-collapse:separate;border-spacing:6px;table-layout:fixed}
+.tabla th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--aqua);font-weight:900;padding:4px}
+.tabla td{background:var(--card2);border-radius:12px;padding:12px 6px;text-align:center;font-weight:900;font-size:clamp(1rem,4.4vw,1.5rem)}
+.tabla tr.on td{animation:pop .5s}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.res .tarjeta{padding:10px 12px;font-size:.92rem}
+@keyframes pop{0%{background:var(--sol);color:#3a2a00}100%{}}
+.control{display:flex;align-items:center;justify-content:center;gap:14px;padding:8px 0 4px}
+.cb{appearance:none;border:0;border-radius:50%;width:52px;height:52px;font-size:1.3rem;font-weight:900;background:var(--card);color:var(--txt);border:2px solid var(--linea);cursor:pointer}
+.cb.play{width:64px;height:64px;background:linear-gradient(180deg,#9be8da,var(--aqua));color:#06282a;border:0;box-shadow:0 5px 0 #3e9488}
+.inicio{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(12,31,33,.92);z-index:5;padding:24px;text-align:center}
+.btn{appearance:none;border:0;border-radius:16px;font:inherit;font-weight:900;font-size:1.15rem;padding:16px 28px;color:#06282a;background:linear-gradient(180deg,#9be8da,var(--aqua));box-shadow:0 5px 0 #3e9488;cursor:pointer}
+.ola{font-size:4rem;animation:flota 2s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){[data-i]{transition:opacity .2s;transform:none}}
+</style>
+</head><body><div id="app"></div>
+<script>window.CLASE={"titulo":"El sistema decimal y el valor posicional","escenas":[{"t":"portada","titulo":"El sistema decimal y el valor posicional","sub":"Vas a poder explicar cómo funciona el sistema decimal y escribir cualquier número como suma de los valores de sus cifras o como suma de productos.","voz":["El sistema decimal y el valor posicional.","Vas a poder explicar cómo funciona el sistema decimal y escribir cualquier número como suma de los valores de sus cifras o como suma de productos."],"id":"e01"},{"t":"lista","titulo":"Hoy vas a ver","items":["Qué es un sistema de numeración","Cómo funciona el sistema decimal: 10 cifras y agrupamientos de a 10","El valor posicional: por qué el lugar de una cifra cambia su valor","La descomposición aditiva de un número","La descomposición multiplicativa de un número","Los canjes: un mismo número escrito de varias formas"],"voz":["Hoy vas a ver:","Qué es un sistema de numeración.","Cómo funciona el sistema decimal: 10 cifras y agrupamientos de a 10.","El valor posicional: por qué el lugar de una cifra cambia su valor.","La descomposición aditiva de un número.","La descomposición multiplicativa de un número.","Los canjes: un mismo número escrito de varias formas."],"id":"e02"},{"t":"seccion","titulo":"¿Qué es un sistema de numeración?","voz":["¿Qué es un sistema de numeración?"],"id":"e03"},{"t":"definicion","palabra":"Sistema de numeración","texto":"Un \u003cb>sistema de numeración\u003c/b> es el conjunto de símbolos y reglas que usamos para escribir y nombrar los números.","voz":["Sistema de numeración.","Un sistema de numeración es el conjunto de símbolos y reglas que usamos para escribir y nombrar los números."],"id":"e04"},{"t":"parrafo","texto":"Hay muchas formas de escribir un mismo número: los romanos escribían 2026 como MMXXVI y nosotros 2.026. El número es el mismo; cambia el sistema.","voz":["Hay muchas formas de escribir un mismo número:","los romanos escribían 2026 como MMXXVI y nosotros 2.026.","El número es el mismo;","cambia el sistema."],"id":"e05"},{"t":"seccion","titulo":"El sistema decimal","voz":["El sistema decimal"],"id":"e06"},{"t":"definicion","palabra":"Sistema decimal","texto":"El \u003cb>sistema decimal\u003c/b> usa \u003cb>10 cifras\u003c/b>: 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. Con ellas escribimos cualquier número, y siempre se \u003cb>agrupa de a 10\u003c/b>.","voz":["Sistema decimal.","El sistema decimal usa 10 cifras:","0, 1, 2, 3, 4, 5, 6, 7, 8 y 9.","Con ellas escribimos cualquier número, y siempre se agrupa de a 10."],"id":"e07"},{"t":"tabla","titulo":"Cómo se agrupa","columnas":["Si juntás","Formás","Equivale a"],"filas":[["10 unidades","1 decena","10"],["10 decenas","1 centena","100"],["10 centenas","1 unidad de mil","1.000"]],"nota":"Cada orden vale 10 veces el anterior.","voz":["Cómo se agrupa.","10 unidades, 1 decena, 10.","10 decenas, 1 centena, 100.","10 centenas, 1 unidad de mil, 1.000.","Cada orden vale 10 veces el anterior."],"id":"e08"},{"t":"seccion","titulo":"El valor posicional","voz":["El valor posicional"],"id":"e09"},{"t":"definicion","palabra":"Valor posicional","texto":"En el sistema decimal, el \u003cb>valor de una cifra depende del lugar\u003c/b> que ocupa. Cada lugar vale 10 veces el lugar que tiene a su derecha.","voz":["Valor posicional.","En el sistema decimal, el valor de una cifra depende del lugar que ocupa.","Cada lugar vale 10 veces el lugar que tiene a su derecha."],"id":"e10"},{"t":"tabla","titulo":"El número 4.205 en la tabla de lugares","columnas":["Unidad de mil","Centena","Decena","Unidad"],"filas":[["4","2","0","5"],["vale 4.000","vale 200","vale 0","vale 5"]],"nota":"La fila de arriba son las cifras; la de abajo, lo que vale cada una en su lugar.","voz":["El número 4.205 en la tabla de lugares.","4, 2, 0, 5.","vale 4.000, vale 200, vale 0, vale 5.","La fila de arriba son las cifras;","la de abajo, lo que vale cada una en su lugar."],"id":"e11"},{"t":"importante","titulo":"Cifra y valor","texto":"La \u003cb>cifra\u003c/b> es el símbolo que escribimos (el 2). El \u003cb>valor\u003c/b> es lo que ese símbolo representa en su lugar (200). El \u003cb>cero\u003c/b> marca un lugar vacío: sin él, el 4.205 se confundiría con el 425.","voz":["Atención: Cifra y valor.","La cifra es el símbolo que escribimos (el 2).","El valor es lo que ese símbolo representa en su lugar (200).","El cero marca un lugar vacío:","sin él, el 4.205 se confundiría con el 425."],"id":"e12"},{"t":"seccion","titulo":"Descomposición aditiva y multiplicativa","voz":["Descomposición aditiva y multiplicativa"],"id":"e13"},{"t":"definicion","palabra":"Descomposición aditiva","texto":"\u003cb>Descomponer\u003c/b> un número es escribirlo con una operación que muestra el valor de cada cifra. En la \u003cb>descomposición aditiva\u003c/b> se suman esos valores.","voz":["Descomposición aditiva.","Descomponer un número es escribirlo con una operación que muestra el valor de cada cifra.","En la descomposición aditiva se suman esos valores."],"id":"e14"},{"t":"pasos","etq":"Ejemplo","titulo":"4.205","items":["Valores de las cifras: 4.000, 200, 0 y 5.","Sumamos los valores: 4.000 + 200 + 5.","El lugar con 0 no se escribe, porque no suma nada.","Comprobamos: 4.000 + 200 + 5 = 4.205."],"voz":["Veamos un ejemplo con 4.205.","Valores de las cifras: 4.000, 200, 0 y 5.","Sumamos los valores: 4.000 más 200 más 5.","El lugar con 0 no se escribe, porque no suma nada.","Comprobamos: 4.000 más 200 más 5 es igual a 4.205."],"id":"e15"},{"t":"definicion","palabra":"Descomposición multiplicativa","texto":"En la \u003cb>descomposición multiplicativa\u003c/b> cada cifra se multiplica por el valor de su lugar (1, 10, 100, 1.000...) y se suman los productos.","voz":["Descomposición multiplicativa.","En la descomposición multiplicativa cada cifra se multiplica por el valor de su lugar (1, 10, 100, 1.000...) y se suman los productos."],"id":"e16"},{"t":"pasos","etq":"Ejemplo","titulo":"4.205","items":["El 4 está en las unidades de mil: 4 × 1.000.","El 2 está en las centenas: 2 × 100.","El 0 está en las decenas: 0 × 10 = 0, no suma y no se escribe.","El 5 está en las unidades: 5.","Entonces 4.205 = 4 × 1.000 + 2 × 100 + 5."],"voz":["Veamos un ejemplo con 4.205.","El 4 está en las unidades de mil: 4 por 1.000.","El 2 está en las centenas: 2 por 100.","El 0 está en las decenas: 0 por 10 es igual a 0, no suma y no se escribe.","El 5 está en las unidades: 5.","Entonces 4.205 es igual a 4 por 1.000 más 2 por 100 más 5."],"id":"e17"},{"t":"seccion","titulo":"Canjes y agrupamientos","voz":["Canjes y agrupamientos"],"id":"e18"},{"t":"parrafo","texto":"Un \u003cb>canje\u003c/b> es cambiar 1 grupo por 10 del orden anterior (o al revés). Por eso un mismo número se escribe de varias formas: 4.205 = 4.000 + 200 + 5 = 3.000 + 1.200 + 5, porque 1 unidad de mil se canjea por 10 centenas.","voz":["Un canje es cambiar 1 grupo por 10 del orden anterior (o al revés).","Por eso un mismo número se escribe de varias formas:","4.205 es igual a 4.000 más 200 más 5 es igual a 3.000 más 1.200 más 5, porque 1 unidad de mil se canjea por 10 centenas."],"id":"e19"},{"t":"tabla","titulo":"Ejemplo: descomponer 53.608","columnas":["Decena de mil","Unidad de mil","Centena","Decena","Unidad"],"filas":[["5","3","6","0","8"]],"nota":"Descomponé 53.608 de forma aditiva y de forma multiplicativa, y decí cuánto vale la cifra 3.","voz":["Hagamos un ejemplo completo.","Descomponé 53.608 de forma aditiva y de forma multiplicativa, y decí cuánto vale la cifra 3.","5, 3, 6, 0, 8."],"id":"e20"},{"t":"pasos","etq":"Paso a paso","titulo":"descomponer 53.608","items":["Ubicamos cada cifra en su lugar: el 5 en las decenas de mil, el 3 en las unidades de mil, el 6 en las centenas, el 0 en las decenas y el 8 en las unidades.","Valor de cada cifra: el 5 vale 50.000, el 3 vale 3.000, el 6 vale 600, el 0 vale 0 y el 8 vale 8.","Aditiva: sumamos los valores. 53.608 = 50.000 + 3.000 + 600 + 8. El 0 no se escribe.","Multiplicativa: 53.608 = 5 × 10.000 + 3 × 1.000 + 6 × 100 + 8.","Comprobamos: 50.000 + 3.000 = 53.000; 53.000 + 600 = 53.600; 53.600 + 8 = 53.608.","La cifra 3 está en las unidades de mil, así que vale 3.000."],"voz":["Vamos paso a paso.","Ubicamos cada cifra en su lugar: el 5 en las decenas de mil, el 3 en las unidades de mil, el 6 en las centenas, el 0 en las decenas y el 8 en las unidades.","Valor de cada cifra: el 5 vale 50.000, el 3 vale 3.000, el 6 vale 600, el 0 vale 0 y el 8 vale 8.","Aditiva: sumamos los valores. 53.608 es igual a 50.000 más 3.000 más 600 más 8. El 0 no se escribe.","Multiplicativa: 53.608 es igual a 5 por 10.000 más 3 por 1.000 más 6 por 100 más 8.","Comprobamos: 50.000 más 3.000 es igual a 53.000; 53.000 más 600 es igual a 53.600; 53.600 más 8 es igual a 53.608.","La cifra 3 está en las unidades de mil, así que vale 3.000."],"id":"e21"},{"t":"importante","icono":"💡","titulo":"Chequeá siempre","texto":"Para comprobar una descomposición, sumá los sumandos: tiene que darte el número original. Los ceros no se escriben en la descomposición, pero sí ocupan lugar cuando armás el número.","voz":["Un consejo: Chequeá siempre.","Para comprobar una descomposición, sumá los sumandos:","tiene que darte el número original.","Los ceros no se escriben en la descomposición, pero sí ocupan lugar cuando armás el número."],"id":"e22"},{"t":"ojo","titulo":"Errores comunes","items":["Confundir cifra con valor: en 4.205 el 2 vale 200, no 2.","Escribir 5.060 como 5.000 + 600. El 6 está en las decenas, así que vale 60: 5.000 + 60."],"voz":["Ojo con estos errores comunes.","Confundir cifra con valor: en 4.205 el 2 vale 200, no 2.","Escribir 5.060 como 5.000 más 600. El 6 está en las decenas, así que vale 60: 5.000 más 60."],"id":"e23"},{"t":"resumen","titulo":"Resumen","items":[{"titulo":"Sistema de numeración","texto":"Símbolos y reglas para escribir números. Ej.: 2.026 y MMXXVI son el mismo número."},{"titulo":"Sistema decimal","texto":"10 cifras y agrupamientos de a 10. Ej.: 10 decenas forman 1 centena."},{"titulo":"Valor posicional","texto":"El valor de una cifra depende de su lugar. Ej.: en 4.205 el 2 vale 200."},{"titulo":"Descomposición aditiva","texto":"Suma de los valores de las cifras. Ej.: 4.205 = 4.000 + 200 + 5."},{"titulo":"Descomposición multiplicativa","texto":"Cada cifra por el valor de su lugar. Ej.: 4.205 = 4 × 1.000 + 2 × 100 + 5."},{"titulo":"Canjes","texto":"1 grupo se cambia por 10 del orden anterior. Ej.: 4.205 = 3.000 + 1.200 + 5."}],"voz":["Repasemos lo más importante.","Sistema de numeración: Símbolos y reglas para escribir números. Por ejemplo: 2.026 y MMXXVI son el mismo número.","Sistema decimal: 10 cifras y agrupamientos de a 10. Por ejemplo: 10 decenas forman 1 centena.","Valor posicional: El valor de una cifra depende de su lugar. Por ejemplo: en 4.205 el 2 vale 200.","Descomposición aditiva: Suma de los valores de las cifras. Por ejemplo: 4.205 es igual a 4.000 más 200 más 5.","Descomposición multiplicativa: Cada cifra por el valor de su lugar. Por ejemplo: 4.205 es igual a 4 por 1.000 más 2 por 100 más 5.","Canjes: 1 grupo se cambia por 10 del orden anterior. Por ejemplo: 4.205 es igual a 3.000 más 1.200 más 5."],"id":"e24"},{"t":"cierre","titulo":"¡Clase terminada!","sub":"Ahora pasá a practicar con las actividades.","voz":["¡Muy bien! Terminaste la clase. Ahora pasá a practicar con las actividades."],"id":"e25"}]};</script>
+<script>
+/* REPRODUCTOR DE CLASES ANIMADAS DE WAVE ACADEMY
+   Toma window.CLASE (de tools/clase/convertir.mjs) y la reproduce como un video: escenas animadas + voz + subtítulos palabra por palabra.
+   Voz: si la escena trae "audio" (ElevenLabs, ver voz.mjs) usa ese archivo con sus tiempos exactos;
+   si no, usa la voz gratis del dispositivo (speechSynthesis). Al terminar avisa a la plataforma con postMessage. */
+(function () {
+  var C = window.CLASE, E = C.escenas, app = document.getElementById('app');
+  var st = { e: 0, f: -1, play: false, gen: 0 }, audio = null, vozDisp = null;
+
+  function S(t) {
+    return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/&lt;(\/?)(b|i|sub|sup|br)&gt;/g, '<$1$2>');
+  }
+  function di(i, html, cls, tag) { tag = tag || 'div'; return '<' + tag + ' class="' + (cls || '') + '" data-i="' + i + '">' + html + '</' + tag + '>'; }
+
+  // ---------- cómo se dibuja cada tipo de escena (data-i = con qué frase aparece) ----------
+  var V = {
+    portada: function (e) { return '<div class="ola" data-i="0">🌊</div>' + di(0, S(e.titulo), 'grande') + di(1, S(e.sub), 'sub'); },
+    seccion: function (e) { return di(0, 'Nuevo tema', 'etq') + di(0, S(e.titulo), 'grande'); },
+    lista: function (e) { return di(0, S(e.titulo), 'etq') + '<div class="lista">' + e.items.map(function (x, j) { return di(j + 1, '<i>' + (j + 1) + '</i><span>' + S(x) + '</span>', 'item'); }).join('') + '</div>'; },
+    definicion: function (e) { return di(0, 'Definición', 'etq') + '<div style="text-align:center">' + di(0, S(e.palabra), 'palabra') + '</div>' + di(1, S(e.texto), 'tarjeta'); },
+    parrafo: function (e) { return di(0, S(e.texto), 'tarjeta'); },
+    importante: function (e) { return di(0, '<span class="ico">' + (e.icono || '⚠️') + '</span><h3>' + S(e.titulo) + '</h3>' + S(e.texto), 'tarjeta alerta'); },
+    tabla: function (e) {
+      var h = '<table class="tabla"><tr>' + e.columnas.map(function (c) { return '<th>' + S(c) + '</th>'; }).join('') + '</tr>';
+      e.filas.forEach(function (f, r) { h += '<tr data-i="' + (r + 1) + '">' + f.map(function (c) { return '<td>' + S(c) + '</td>'; }).join('') + '</tr>'; });
+      return di(0, S(e.titulo), 'etq') + h + '</table>' + (e.nota ? di(e.filas.length + 1, S(e.nota), 'sub') : '');
+    },
+    pasos: function (e) { return di(0, S(e.etq || 'Ejemplo') + ' · ' + S(e.titulo), 'etq') + '<div class="lista">' + e.items.map(function (x, j) { return di(j + 1, '<i>' + (j + 1) + '</i><span>' + S(x) + '</span>', 'item'); }).join('') + '</div>'; },
+    ojo: function (e) { return di(0, '👀 ' + S(e.titulo), 'etq') + '<div class="lista">' + e.items.map(function (x, j) { return di(j + 1, '<i>✗</i><span>' + S(x) + '</span>', 'item mal'); }).join('') + '</div>'; },
+    resumen: function (e) { return di(0, S(e.titulo), 'etq') + '<div class="res">' + e.items.map(function (x, j) { return di(j + 1, '<h3>' + S(x.titulo) + '</h3>' + S(x.texto), 'tarjeta'); }).join('') + '</div>'; },
+    cierre: function (e) { return '<div class="ola" data-i="0">🏆</div>' + di(0, S(e.titulo), 'grande') + di(0, S(e.sub), 'sub'); }
+  };
+
+  // ---------- pantalla ----------
+  function base() {
+    app.innerHTML = '<div class="barra">' + E.map(function (_, i) { return '<i data-ir="' + i + '"><b></b></i>'; }).join('') + '</div>' +
+      '<div class="subs" id="subs"></div><div class="escena" id="esc"></div>' +
+      '<div class="control"><button class="cb" id="ant" aria-label="Anterior">⏮</button><button class="cb play" id="pp" aria-label="Pausa">❚❚</button><button class="cb" id="sig" aria-label="Siguiente">⏭</button></div>' +
+      '<div class="inicio" id="ini"><div class="ola">🌊</div><div class="grande" style="font-size:1.8rem">' + S(C.titulo) + '</div><button class="btn" id="go">▶ Empezar clase</button></div>';
+    document.getElementById('go').onclick = function () { document.getElementById('ini').remove(); st.play = true; irA(0); };
+    document.getElementById('pp').onclick = function () { st.play ? pausa() : seguir(); };
+    document.getElementById('ant').onclick = function () { irA(Math.max(0, st.e - (st.f <= 0 ? 1 : 0))); };
+    document.getElementById('sig').onclick = function () { if (st.e < E.length - 1) irA(st.e + 1); };
+    [].forEach.call(app.querySelectorAll('[data-ir]'), function (b) { b.onclick = function () { irA(+b.dataset.ir); }; });
+  }
+  function barra() {
+    [].forEach.call(app.querySelectorAll('.barra b'), function (b, i) {
+      b.style.width = i < st.e ? '100%' : i > st.e ? '0' : Math.round((st.f + 1) / E[i].voz.length * 100) + '%';
+    });
+    document.getElementById('pp').textContent = st.play ? '❚❚' : '▶';
+  }
+  function mostrar(k) { [].forEach.call(document.querySelectorAll('#esc [data-i]'), function (el) { el.classList.toggle('on', +el.dataset.i <= k); }); }
+  function subs(txt) { document.getElementById('subs').innerHTML = '<div>' + txt.split(' ').map(function (w) { return '<span>' + S(w) + '</span>'; }).join(' ') + '</div>'; }
+  function marcar(w) { [].forEach.call(document.querySelectorAll('#subs span'), function (s, i) { s.className = i < w ? 'ya' : i === w ? 'ahora' : ''; }); }
+
+  // ---------- voz ----------
+  function cortar() { st.gen++; if (audio) { audio.pause(); } if (window.speechSynthesis) speechSynthesis.cancel(); }
+  function elegirVoz() {
+    if (!window.speechSynthesis) return null;
+    var vs = speechSynthesis.getVoices().filter(function (v) { return /^es/i.test(v.lang); });
+    var pref = function (re) { return vs.filter(function (v) { return re.test(v.lang + ' ' + v.name); })[0]; };
+    return pref(/es-AR/i) || pref(/natural|online|google/i) || pref(/es-(419|MX|US)/i) || vs[0] || null;
+  }
+  // frase k de la escena con voz del dispositivo; marca palabras por evento o por estimación
+  function decirDispositivo(txt, g, fin) {
+    var u = new SpeechSynthesisUtterance(txt), n = txt.split(' ').length, t0 = Date.now(), porEvento = false, iv;
+    u.lang = 'es-AR'; if (vozDisp) u.voice = vozDisp; u.rate = 1;
+    u.onboundary = function (ev) { if (ev.name !== 'word' && ev.name) return; porEvento = true; marcar(txt.slice(0, ev.charIndex).split(' ').length - 1); };
+    iv = setInterval(function () { if (g !== st.gen) return clearInterval(iv); if (!porEvento) marcar(Math.min(n - 1, Math.floor((Date.now() - t0) / 330))); }, 80);
+    u.onend = u.onerror = function () { clearInterval(iv); if (g === st.gen) { marcar(n); fin(); } };
+    speechSynthesis.speak(u);
+  }
+  function decirSinVoz(txt, g, fin) { // último recurso: solo subtítulos con tiempo estimado
+    var n = txt.split(' ').length, w = 0, iv = setInterval(function () { if (g !== st.gen) return clearInterval(iv); marcar(w++); if (w > n) { clearInterval(iv); fin(); } }, 330);
+  }
+
+  function frase(k) { // reproduce la frase k de la escena actual
+    var e = E[st.e], g = st.gen;
+    if (k >= e.voz.length) return siguienteEscena();
+    st.f = k; mostrar(k); subs(e.voz[k]); barra();
+    var sigue = function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 250); };
+    if (e.audio) return; // con audio, el reloj del archivo maneja todo (ver tic)
+    if (window.speechSynthesis && (vozDisp || (vozDisp = elegirVoz()))) decirDispositivo(e.voz[k], g, sigue);
+    else decirSinVoz(e.voz[k], g, sigue);
+  }
+  function tic(g) { // modo audio: sincroniza frase y palabra con el tiempo del archivo
+    if (g !== st.gen || !audio) return;
+    var e = E[st.e], t = audio.currentTime, A = e.audio.frases, k = 0;
+    while (k + 1 < A.length && t >= A[k + 1].t0) k++;
+    if (k !== st.f) { st.f = k; mostrar(k); subs(e.voz[k]); barra(); }
+    var w = 0, W = A[k].w || []; while (w + 1 < W.length && t >= W[w + 1]) w++;
+    marcar(t >= A[k].t1 ? 999 : w);
+    if (!audio.ended) requestAnimationFrame(function () { tic(g); });
+  }
+  function arrancarEscena(desde) {
+    var e = E[st.e], g = st.gen;
+    if (!e.audio) return frase(desde || 0);
+    audio = new Audio(e.audio.src); audio.currentTime = desde ? e.audio.frases[desde].t0 : 0;
+    audio.onended = function () { if (g === st.gen) setTimeout(function () { if (g === st.gen && st.play) siguienteEscena(); }, 400); };
+    st.f = -1; audio.play().catch(function () { pausa(); }); tic(g);
+  }
+  function irA(i) {
+    cortar(); st.e = i; st.f = -1;
+    var esc = document.getElementById('esc'); esc.innerHTML = (V[E[i].t] || V.parrafo)(E[i]);
+    esc.style.animation = 'none'; void esc.offsetWidth; esc.style.animation = '';
+    barra(); if (st.play) arrancarEscena(0); else { mostrar(0); subs(E[i].voz[0] || ''); }
+  }
+  function siguienteEscena() {
+    if (st.e < E.length - 1) return irA(st.e + 1);
+    st.play = false; barra(); marcar(999);
+    try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {}
+  }
+  function pausa() { st.play = false; if (audio && E[st.e].audio) { st.gen++; audio.pause(); } else cortar(); barra(); }
+  function seguir() {
+    st.play = true;
+    if (audio && E[st.e].audio && !audio.ended) { var g = ++st.gen; audio.onended = function () { if (g === st.gen) setTimeout(function () { if (g === st.gen && st.play) siguienteEscena(); }, 400); }; audio.play(); tic(g); }
+    else arrancarEscena(Math.max(0, st.f));
+    barra();
+  }
+
+  if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { vozDisp = elegirVoz(); };
+  base(); irA(0);
+})();
+</script></body></html>
