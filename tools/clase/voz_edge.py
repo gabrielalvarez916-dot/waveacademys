@@ -7,7 +7,7 @@ import asyncio, base64, glob, hashlib, json, os, re, sys
 import edge_tts
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
-RATE = os.environ.get('RATE', '+8%')
+RATE = os.environ.get('RATE', '+25%')
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
 

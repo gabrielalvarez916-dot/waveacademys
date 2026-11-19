@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       voz: { description: 'Voz (ej. es-MX-JorgeNeural, es-AR-TomasNeural)', default: 'es-MX-JorgeNeural' }
-      rate: { description: 'Velocidad (ej. +8%, +15%)', default: '+8%' }
+      rate: { description: 'Velocidad (ej. +8%, +15%)', default: '+25%' }
 permissions:
   contents: write
 concurrency: { group: voz-clases, cancel-in-progress: false }
@@ -23,7 +23,7 @@ jobs:
       - name: Generar voz
         env:
           VOZ: ${{ github.event.inputs.voz || 'es-MX-JorgeNeural' }}
-          RATE: ${{ github.event.inputs.rate || '+8%' }}
+          RATE: ${{ github.event.inputs.rate || '+25%' }}
         run: python tools/clase/voz_edge.py
       - run: python tools/clase/armar.py
       - name: Guardar

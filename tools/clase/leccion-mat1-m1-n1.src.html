@@ -270,11 +270,12 @@ text{font-family:inherit;font-weight:900}
   function limpio(s) { return s.replace(/\*/g, '').replace(/\s*\+\s*/g, ' más ').replace(/\s*×\s*/g, ' por '); }
   // subtítulos: de a 5 palabras, la clave en amarillo
   var palabras = [];
-  function subs(frase) { palabras = frase.split(' ').map(function (w) { return { w: w.replace(/\*/g, ''), k: /\*/.test(w) }; }); var cl = false; palabras.forEach(function (p, j) { var raw = frase.split(' ')[j]; if (raw[0] === '*') cl = true; p.k = cl; if (raw.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; }); marcar(0); }
+  function subs(frase) { marcar.a = -1; palabras = frase.split(' ').map(function (w) { return { w: w.replace(/\*/g, ''), k: /\*/.test(w) }; }); var cl = false; palabras.forEach(function (p, j) { var raw = frase.split(' ')[j]; if (raw[0] === '*') cl = true; p.k = cl; if (raw.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; }); marcar(0); }
   function marcar(w) {
     var s = $('subs'); s.innerHTML = ''; if (!palabras.length) return;
-    w = Math.max(0, Math.min(w, palabras.length - 1)); var a = Math.floor(w / 5) * 5, t = el('text', { x: 960, y: 125 }, s);
-    palabras.slice(a, a + 5).forEach(function (p, j) { var sp = el('tspan', { fill: p.k ? C.sol : '#fff', opacity: a + j <= w ? 1 : .28 }, t); sp.textContent = (j ? ' ' : '') + p.w; });
+    w = Math.max(0, Math.min(w, palabras.length - 1)); var a = Math.floor(w / 3) * 3, t = el('text', { x: 960, y: 125, 'font-size': 76 }, s);
+    palabras.slice(a, a + 3).forEach(function (p, j) { var sp = el('tspan', { fill: p.k ? C.sol : '#fff', opacity: a + j <= w ? 1 : 0 }, t); sp.textContent = (j ? ' ' : '') + p.w; });
+    if (a !== marcar.a) { marcar.a = a; gsap.fromTo(t, { scale: .82, transformOrigin: '960px 105px' }, { scale: 1, duration: .22, ease: 'back.out(3)' }); }
   }
   // VOZ = archivo de audio por frase (window.VOZ_AUDIO, lo arma tools/clase/armar.py). Sin audio: solo subtítulos.
   var AUD = new Audio(); AUD.preload = 'auto';
@@ -293,19 +294,19 @@ text{font-family:inherit;font-weight:900}
   }
   function frase(k) {
     var e = E[st.e], g = st.gen;
-    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 500);
+    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 150);
     st.f = k; barra(); subs(e.voz[k]);
     if (tl.labels['b' + k] != null) tl.play('b' + k);
-    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 120); }, k);
+    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 30); }, k);
   }
   function armarEscena(i) {
-    var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .35, onComplete: function () { vieja.remove(); } });
-    esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); var n = 0;
+    var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
+    esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); tl.timeScale(1.45); var n = 0;
     E[i].armar(esc, tl, function (k) { if (n++) tl.addPause(); tl.addLabel('b' + k); });
     gsap.set(esc.querySelectorAll('[data-c]'), { transformOrigin: '50% 50%', smoothOrigin: false });
-    gsap.fromTo(esc, { opacity: 0 }, { opacity: 1, duration: .4, delay: vieja ? .25 : 0 });
+    gsap.fromTo(esc, { opacity: 0, scale: 1.04, transformOrigin: '960px 560px' }, { opacity: 1, scale: 1, duration: .3, delay: vieja ? .12 : 0, ease: 'power2.out' });
   }
-  function irA(i) { cortar(); st.e = i; st.f = 0; gsap.set('#cam', { x: 0 }); $('flash').setAttribute('opacity', 0); armarEscena(i); barra(); if (st.play) setTimeout(function () { frase(0); }, 450); else subs(E[i].voz[0]); }
+  function irA(i) { cortar(); st.e = i; st.f = 0; gsap.set('#cam', { x: 0 }); $('flash').setAttribute('opacity', 0); armarEscena(i); barra(); if (st.play) setTimeout(function () { frase(0); }, 220); else subs(E[i].voz[0]); }
   function pausa() { st.play = false; cortar(); tl.pause(); barra(); }
   function seguir() { st.play = true; var k = st.f; tl.pause(); if (tl.labels['b' + k] != null) tl.seek('b' + k); frase(k); }
   $('go').onclick = function () { $('ui').remove(); $('ctl').classList.add('ver'); setTimeout(function () { $('ctl').classList.remove('ver'); }, 2500); st.play = true; AUD.play().catch(function () {}); irA(0); };
