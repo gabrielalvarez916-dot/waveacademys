@@ -16,7 +16,7 @@ var MUSICA = (function () {
     bateria: rnd() < .75, hats: rnd() < .6
   };
 
-  var ctx = null, maestro = null, sonando = false, silencio = false, prox = 0, paso = 0, timer = null, VOL = .07, VOL_VOZ = .028;
+  var ctx = null, maestro = null, sonando = false, silencio = false, prox = 0, paso = 0, timer = null, VOL = .12, VOL_VOZ = .045;
   function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
   function nota(t, m, dur, tipo, vol, corte) {
     var o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
