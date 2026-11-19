@@ -6,14 +6,31 @@
  "sub": "Matemática I · Misión 9 · Nivel 2",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "chat",
    "voz": [
-    "La mitad de tres cuartos de pizza. ¿Cuánto es?",
-    "¡*3/8*! Y para saberlo no hace falta ningún denominador común.",
+    "Juan le escribe a su hermana: che, ¿me guardás pizza?",
+    "Ella contesta: quedan 3/4, te guardo la mitad.",
+    "Juan no entiende nada: ¿cuánto es la mitad de 3/4? Spoiler: *3/8*.",
     "Hoy: *multiplicar fracciones*, la operación más fácil de todas."
    ],
-   "grande": "1/2 de 3/4",
-   "final": "3/8",
+   "contacto": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Che, ¿me guardás pizza? 🍕"
+    },
+    {
+     "yo": true,
+     "txt": "Quedan 3/4. Te guardo la mitad"
+    },
+    {
+     "yo": false,
+     "txt": "¿¿Y eso cuánto es?? 🤔"
+    }
+   ],
    "titulo": "MULTIPLICAR",
    "sub": "fracciones"
   },

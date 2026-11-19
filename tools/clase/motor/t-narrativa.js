@@ -15,6 +15,54 @@
     B(2); w.OUT(tl, a, 0, { scale: 1.6 }); w.IN(tl, tt, '<.2', { scale: .6, y: 0 });
   } };
 
+  // ---- GANCHOS VARIADOS (todos terminan con la tarjeta del título) ----
+  function tarjetaTitulo(g, d) { var tt = w.pieza(g, 960, 600); w.tarjeta(tt, 0, 0, 1200, 260, C.aqua); w.txt(tt, 0, -45, d.titulo, 70, C.txt); if (d.sub) w.txt(tt, 0, 50, d.sub, 42, C.aqua); return tt; }
+
+  // historia: {personaje:{nombre, emoji}, lugar: emoji (opcional), lineas:['Juan fue al kiosco…', ...] (1-3), titulo, sub} — lineas + 1 pasos
+  T.historia = { n: function (d) { return d.lineas.length + 1; }, armar: function (g, tl, B, d) {
+    var pj = w.pieza(g, 450, 600); if (d.lugar) w.emoji(pj, 120, -170, d.lugar, 130); w.emoji(pj, 0, 0, d.personaje.emoji, 300);
+    w.caja(pj, 0, 230, Math.max(220, d.personaje.nombre.length * 34 + 80), 76, 'url(#gSol)', '#ffe7a8', 38, 4); w.txt(pj, 0, 230, d.personaje.nombre, 40, '#3a2a00');
+    var n = d.lineas.length, L = d.lineas.map(function (s, k) { var p = w.pieza(g, 1240, 600 + (k - (n - 1) / 2) * 200); w.caja(p, 0, 0, 900, 170, 'url(#gCard)', W.PAL[(k + 1) % W.PAL.length], 30, 5).setAttribute('filter', 'url(#sombra)'); w.multi(p, 0, 0, s, 44, C.txt, 820); return p; });
+    var tt = tarjetaTitulo(g, d);
+    L.forEach(function (p, k) { B(k); if (!k) w.IN(tl, pj, 0, { x: -300, y: 0, ease: 'back.out(1.6)', d: .7 }); w.IN(tl, p, k ? 0 : '<.3', { x: 120, y: 0 }); if (k === n - 1) w.temblar(tl, pj, '>'); });
+    B(n); w.OUT(tl, [pj].concat(L), 0, { scale: .8 }); w.IN(tl, tt, '>-.1', { scale: .6, y: 0 });
+  } };
+
+  // chat: {contacto:{nombre, emoji}, mensajes:[{yo: true|false, txt}] (2-5), titulo, sub} — mensajes + 1 pasos (un chat de celular)
+  T.chat = { n: function (d) { return d.mensajes.length + 1; }, armar: function (g, tl, B, d) {
+    var tel = w.pieza(g, 960, 610); w.caja(tel, 0, 0, 760, 760, '#0b1f21', C.linea, 56, 8); w.caja(tel, 0, -320, 760, 120, '#14403f', 'none', 50, 0);
+    w.emoji(tel, -300, -320, d.contacto.emoji, 64); w.txt(tel, -240, -320, d.contacto.nombre, 40, C.txt, { 'text-anchor': 'start' }); w.txt(tel, 300, -320, '💬', 40, C.txt);
+    var n = d.mensajes.length, h = Math.min(140, 560 / n), M = d.mensajes.map(function (m, k) { var ww = Math.min(560, Math.max(220, m.txt.length * 22 + 70)), x = m.yo ? 340 - ww / 2 : -340 + ww / 2;
+      var p = w.pieza(g, 960 + x, 370 + h / 2 + k * h); w.caja(p, 0, 0, ww, h - 26, m.yo ? '#1f6b52' : '#22393b', 'none', 28, 0); w.multi(p, 0, 0, m.txt, 32, '#fff', ww - 50); return p; });
+    var tt = tarjetaTitulo(g, d);
+    M.forEach(function (p, k) { B(k); if (!k) w.IN(tl, tel, 0, { y: 300, ease: 'back.out(1.4)', d: .6 }); w.IN(tl, p, k ? 0 : '>-.1', { scale: .5, y: 20, ease: 'back.out(2.5)' }); });
+    B(n); w.OUT(tl, [tel].concat(M), 0, { y: 200 }); w.IN(tl, tt, '>-.1', { scale: .6, y: 0 });
+  } };
+
+  // noticia: {cinta:'ÚLTIMO MOMENTO', titular, bajada, emoji, titulo, sub} — 3 pasos (placa de noticiero)
+  T.noticia = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ci = w.pieza(g, 960, 330); w.caja(ci, 0, 0, 1500, 110, C.coral, '#ffd2c9', 14, 4); w.txt(ci, 0, 0, '🔴 ' + (d.cinta || 'ÚLTIMO MOMENTO'), 52, '#fff', { 'letter-spacing': 6 });
+    var e = w.pieza(g, 960, 540); w.emoji(e, 0, 0, d.emoji || '📰', 200);
+    var tit = w.pieza(g, 960, 790); w.caja(tit, 0, 0, 1600, 190, 'rgba(6,20,22,.92)', C.sol, 18, 5); w.multi(tit, 0, d.bajada ? -28 : 0, d.titular, 54, C.txt, 1500); if (d.bajada) w.txt(tit, 0, 58, d.bajada, 34, C.sol);
+    var tt = tarjetaTitulo(g, d);
+    B(0); w.IN(tl, ci, 0, { scaleX: 0, y: 0, ease: 'power3.out' }); w.IN(tl, e, '<.2', { scale: 0, y: 0, ease: 'back.out(2)' }); tl.to(ci, { opacity: .6, duration: .25, yoyo: true, repeat: 3 }, '>');
+    B(1); w.IN(tl, tit, 0, { y: 120 }); w.pop(tl, e, '>');
+    B(2); w.OUT(tl, [ci, e, tit], 0, { scale: .8 }); w.IN(tl, tt, '>-.1', { scale: .6, y: 0 });
+  } };
+
+  // reto: {texto, segundos: 5, respuesta, emoji, titulo, sub} — 3 pasos: el desafío con cuenta regresiva, la respuesta, el título
+  T.reto = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var tx = w.pieza(g, 960, 400); w.multi(tx, 0, 0, d.texto, 60, C.txt, 1500);
+    var s = d.segundos || 5, re = w.pieza(g, 960, 720), cir = w.el('circle', { r: 130, fill: 'none', stroke: C.sol, 'stroke-width': 16, 'stroke-dasharray': 817, 'stroke-dashoffset': 0, transform: 'rotate(-90)' }, re);
+    var num = w.txt(re, 0, 0, String(s), 130, C.sol);
+    var rs = w.pieza(g, 960, 720); w.caja(rs, 0, 0, Math.min(1500, Math.max(500, String(d.respuesta).length * 40 + 140)), 180, 'url(#gCard)', C.verde, 40, 6); w.txt(rs, 0, 0, (d.emoji ? d.emoji + ' ' : '') + d.respuesta, 64, C.verde, { filter: 'url(#brillo)' });
+    var tt = tarjetaTitulo(g, d);
+    B(0); w.IN(tl, tx, 0, { y: -60 }); w.IN(tl, re, '<.2', { scale: 0, y: 0, ease: 'back.out(2)' }); tl.to(cir, { attr: { 'stroke-dashoffset': 817 }, duration: s, ease: 'none' }, '>');
+    w.contador(tl, num, s, 0, '<', s);
+    B(1); w.OUT(tl, re, 0, { scale: 0 }); w.IN(tl, rs, '>', { scale: .4, y: 0, ease: 'back.out(2)' }); w.sacudir(tl, '<.2');
+    B(2); w.OUT(tl, [tx, rs], 0, { scale: .8 }); w.IN(tl, tt, '>-.1', { scale: .6, y: 0 });
+  } };
+
   // portada: {texto, sub, emoji} — 1 paso
   T.portada = { n: function () { return 1; }, armar: function (g, tl, B, d) {
     var e = d.emoji ? w.pieza(g, 960, 470) : null; if (e) w.emoji(e, 0, 0, d.emoji, 200);

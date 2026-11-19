@@ -6,14 +6,31 @@
  "sub": "Matemática I · Misión 8 · Nivel 2",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "chat",
    "voz": [
-    "¿Qué preferís: 1/2 chocolate o 3/6 de chocolate?",
-    "¡Es *exactamente lo mismo*!",
+    "Sofi te escribe: ¿querés 1/2 chocolate o 3/6?",
+    "Y vos, rapidísimo: ¡3/6, que es más!",
+    "Sofi se ríe: *es exactamente lo mismo*.",
     "Hoy: *fracciones equivalentes*, distinto nombre, misma cantidad."
    ],
-   "grande": "1/2 = 3/6",
-   "final": "¡IGUALES!",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Querés 1/2 chocolate o 3/6? 🍫"
+    },
+    {
+     "yo": true,
+     "txt": "¡3/6! Es más 😎"
+    },
+    {
+     "yo": false,
+     "txt": "jaja es lo mismo 🙃"
+    }
+   ],
    "titulo": "EQUIVALENTES",
    "sub": "mismo chocolate, otro nombre"
   },

@@ -16,7 +16,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 
 ## Estilo (lo que hace que funcione)
 
-1. **Gancho** en los primeros 5 segundos: una pregunta o una paradoja ("¿Cómo puede un 2 valer 200?").
+1. **Gancho** en los primeros 5 segundos, y **variado**: rotar entre `gancho` (pregunta o paradoja con números), `historia` (algo que le pasó a Juan, a Marta…), `chat` (mensajes de celular), `noticia` (placa de "último momento") y `reto` (desafío con cuenta regresiva). Nunca el mismo tipo en dos niveles seguidos.
 2. **Una metáfora que atraviesa la lección** (la fábrica de alfajores). Concreta, cotidiana y argentina.
 3. Recorrer **todo** el contenido del PDF, pero explicado (no leído): definición → ejemplo visual → por qué importa.
 4. Frases cortas (6 a 14 palabras), ritmo de TikTok, segunda persona ("mirá", "fijate").
@@ -29,6 +29,10 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | t | pasos | datos |
 |---|---|---|
 | gancho | 3 | grande \| emoji, final, titulo, sub |
+| historia | lineas + 1 | personaje:{nombre, emoji}, lugar (emoji), lineas (1-3), titulo, sub — gancho con un personaje: "A Marta le pasó…" |
+| chat | mensajes + 1 | contacto:{nombre, emoji}, mensajes:[{yo, txt}] (2-5), titulo, sub — gancho como chat de celular |
+| noticia | 3 | cinta, titular, bajada, emoji, titulo, sub — gancho como placa de noticiero |
+| reto | 3 | texto, segundos, respuesta, emoji, titulo, sub — desafío con cuenta regresiva |
 | portada | 1 | texto, sub, emoji |
 | definicion | 2 | palabra, texto, emoji |
 | dato | 2 | numero, antes, despues, texto, emoji |

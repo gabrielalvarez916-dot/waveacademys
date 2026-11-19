@@ -6,14 +6,16 @@
  "sub": "Matemática I · Misión 9 · Nivel 4",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "noticia",
    "voz": [
-    "1/2 más 1/3 por 3/4. ¿Da 5/8 o 3/4?",
-    "¡*3/4*! Primero se multiplica, como siempre.",
-    "Hoy: *cálculos combinados y problemas* con fracciones."
+    "Último momento: Juan gastó 1/3 de su plata en libros, y 1/4 de lo que le quedó en comida.",
+    "¿Cuánto le queda? Nadie se pone de acuerdo… y la respuesta es *la mitad*.",
+    "Hoy: *problemas combinados con fracciones*, y el orden que no perdona."
    ],
-   "grande": "1/2 + 1/3 × 3/4",
-   "final": "3/4",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Juan gastó su plata y no sabe cuánto le queda",
+   "bajada": "1/3 en libros y 1/4 de lo que le quedó en comida",
+   "emoji": "💸",
    "titulo": "COMBINADOS",
    "sub": "fracciones"
   },

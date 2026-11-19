@@ -6,14 +6,16 @@
  "sub": "Matemática I · Misión 9 · Nivel 3",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "reto",
    "voz": [
-    "Dividís 3 por algo… ¡y te da *12*! ¿Cómo puede ser que dividir agrande?",
-    "Porque dividiste por *1/4*: en 3 enteros entran 12 cuartos.",
+    "Desafío: dividís 3 por un número y te da *12*. ¿Cuál es? Tenés 5 segundos.",
+    "¡Por *1/4*! En 3 enteros entran 12 cuartos: dividir puede *agrandar*.",
     "Hoy: *dividir fracciones*, con un truco que da vuelta todo."
    ],
-   "grande": "3 ÷ 1/4",
-   "final": "12",
+   "texto": "Dividís 3 por un número y te da 12. ¿Por cuál?",
+   "segundos": 5,
+   "respuesta": "3 ÷ 1/4 = 12",
+   "emoji": "🤯",
    "titulo": "DIVIDIR",
    "sub": "fracciones"
   },

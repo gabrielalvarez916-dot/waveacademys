@@ -6,14 +6,16 @@
  "sub": "Matemática I · Misión 8 · Nivel 3",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "reto",
    "voz": [
-    "¿Entre 1/4 y 2/4 hay alguna fracción?",
-    "¡Sí! Y no una: *infinitas*.",
+    "Desafío: ¿cuántas fracciones hay entre 1/4 y 2/4? Tenés 5 segundos.",
+    "¡*Infinitas*! Siempre hay otra en el medio.",
     "Hoy ubicamos fracciones en la *recta numérica*, como paradas en una ruta."
    ],
-   "emoji": "🛣️",
-   "final": "∞ fracciones",
+   "texto": "¿Cuántas fracciones hay entre 1/4 y 2/4?",
+   "segundos": 5,
+   "respuesta": "¡Infinitas!",
+   "emoji": "♾️",
    "titulo": "LA RECTA",
    "sub": "fracciones en su lugar"
   },

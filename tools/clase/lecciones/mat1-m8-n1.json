@@ -6,14 +6,23 @@
  "sub": "Matemática I · Misión 8 · Nivel 1",
  "escenas": [
   {
-   "t": "gancho",
+   "t": "historia",
    "voz": [
-    "Tres pizzas para cuatro amigos. ¿Cuánto le toca a cada uno?",
-    "¡*Tres cuartos* de pizza! Sin pelear.",
+    "Tomi pidió 3 pizzas para él y 3 amigos.",
+    "Y ya sabés: nadie quiere quedarse con menos.",
+    "¿Cuánto le toca a cada uno? ¡*Tres cuartos* de pizza!",
     "Hoy arrancamos con las *fracciones*: partes de un todo."
    ],
-   "emoji": "🍕",
-   "final": "3/4",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧒"
+   },
+   "lugar": "🍕",
+   "lineas": [
+    "Pidió 3 pizzas para 4 amigos",
+    "Nadie quiere quedarse con menos",
+    "¿Cuánto le toca a cada uno?"
+   ],
    "titulo": "FRACCIONES",
    "sub": "partes de un todo"
   },
