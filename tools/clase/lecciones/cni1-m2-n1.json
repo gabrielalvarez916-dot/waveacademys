@@ -1,0 +1,347 @@
+{
+ "slug": "cni1-m2-n1",
+ "step_id": "b64fa2da-d693-48d1-93d6-32b5afa6b161",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Instrumentos de laboratorio",
+ "sub": "Ciencias Naturales Integradas I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: para medir *50 mililitros* de agua justos, ¿usás un vaso o una probeta? 5 segundos.",
+    "¡La *probeta*! El vaso de precipitado solo da una medida aproximada.",
+    "Hoy: *los instrumentos de laboratorio*."
+   ],
+   "texto": "¿Vaso o probeta para medir 50 ml justos?",
+   "segundos": 5,
+   "respuesta": "La probeta",
+   "emoji": "🧪",
+   "titulo": "INSTRUMENTOS",
+   "sub": "de laboratorio"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "puerta",
+       "e": "🚪",
+       "x": 300,
+       "y": 620,
+       "s": 260
+      },
+      {
+       "pon": "cient",
+       "e": "🧑‍🔬",
+       "x": 560,
+       "y": 680,
+       "s": 190
+      }
+     ],
+     "txt": "Entramos al laboratorio"
+    },
+    {
+     "acc": [
+      {
+       "mueve": "cient",
+       "ruta": [
+        [
+         560,
+         680
+        ],
+        [
+         900,
+         680
+        ]
+       ],
+       "dur": 1.2
+      },
+      {
+       "pon": "tubo",
+       "e": "🧪",
+       "x": 1150,
+       "y": 640,
+       "s": 130,
+       "etq": "tubo de ensayo"
+      },
+      {
+       "pon": "mat",
+       "e": "⚗️",
+       "x": 1450,
+       "y": 640,
+       "s": 140,
+       "etq": "matraz"
+      }
+     ],
+     "txt": "Cada cosa tiene su nombre"
+    },
+    {
+     "acc": [
+      {
+       "pon": "bal",
+       "e": "⚖️",
+       "x": 1150,
+       "y": 330,
+       "s": 130,
+       "etq": "balanza"
+      },
+      {
+       "pon": "ter",
+       "e": "🌡️",
+       "x": 1450,
+       "y": 330,
+       "s": 130,
+       "etq": "termómetro"
+      }
+     ],
+     "txt": "…y su función"
+    }
+   ],
+   "voz": [
+    "Abramos la puerta del laboratorio.",
+    "Acá cada objeto tiene *un nombre* y *una función*: el tubo de ensayo, el matraz…",
+    "… la balanza, el termómetro. Usar el instrumento correcto es la mitad del experimento."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Los instrumentos para *medir*.",
+    "*Probeta*: mide volumen de líquidos con precisión.",
+    "*Balanza*: mide la masa, en gramos.",
+    "*Termómetro*: mide la temperatura.",
+    "*Cronómetro*: mide el tiempo."
+   ],
+   "titulo": "PARA MEDIR",
+   "celdas": [
+    {
+     "cab": "PROBETA",
+     "txt": "volumen (ml)"
+    },
+    {
+     "cab": "BALANZA",
+     "txt": "masa (g)"
+    },
+    {
+     "cab": "TERMÓMETRO",
+     "txt": "temperatura (°C)"
+    },
+    {
+     "cab": "CRONÓMETRO",
+     "txt": "tiempo (s)"
+    }
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Los instrumentos para *contener y calentar*.",
+    "*Vaso de precipitado*: contiene y calienta líquidos; su medida es aproximada.",
+    "*Tubo de ensayo*: para mezclas chiquitas.",
+    "*Mechero*: da calor con una llama.",
+    "*Gradilla*: sostiene los tubos parados."
+   ],
+   "titulo": "PARA CONTENER Y CALENTAR",
+   "celdas": [
+    {
+     "cab": "VASO DE PRECIPITADO",
+     "txt": "contener y calentar"
+    },
+    {
+     "cab": "TUBO DE ENSAYO",
+     "txt": "mezclas chicas"
+    },
+    {
+     "cab": "MECHERO",
+     "txt": "dar calor"
+    },
+    {
+     "cab": "GRADILLA",
+     "txt": "sostener tubos"
+    }
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "mic",
+       "e": "🔬",
+       "x": 700,
+       "y": 620,
+       "s": 230,
+       "etq": "microscopio"
+      }
+     ],
+     "txt": "Para ver lo muy chiquito"
+    },
+    {
+     "acc": [
+      {
+       "zoom": [
+        700,
+        560,
+        2.4
+       ]
+      }
+     ],
+     "txt": "Adentro de una gota…"
+    },
+    {
+     "acc": [
+      {
+       "pon": "c1",
+       "e": "🦠",
+       "x": 640,
+       "y": 540,
+       "s": 40
+      },
+      {
+       "pon": "c2",
+       "e": "🦠",
+       "x": 760,
+       "y": 590,
+       "s": 34
+      },
+      {
+       "mueve": "c1",
+       "ruta": [
+        [
+         640,
+         540
+        ],
+        [
+         690,
+         520
+        ],
+        [
+         660,
+         580
+        ]
+       ],
+       "dur": 3,
+       "loop": true
+      }
+     ],
+     "txt": "¡seres vivos que no se ven a simple vista!"
+    }
+   ],
+   "voz": [
+    "Y para ver lo *muy chiquito*: el *microscopio*. La *lupa* aumenta un poco; el microscopio, cientos de veces.",
+    "Si miramos una gota de agua de un charco…",
+    "… aparecen seres vivos diminutos que a simple vista *no se ven*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿Sirve para medir o para contener?",
+    "*Medir*: la balanza, el termómetro, la probeta.",
+    "*Contener*: el tubo de ensayo, el vaso de precipitado."
+   ],
+   "cajas": [
+    {
+     "cab": "MEDIR",
+     "emoji": "📏"
+    },
+    {
+     "cab": "CONTENER",
+     "emoji": "🫙"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Balanza",
+     "caja": 0
+    },
+    {
+     "txt": "Termómetro",
+     "caja": 0
+    },
+    {
+     "txt": "Probeta",
+     "caja": 0
+    },
+    {
+     "txt": "Tubo de ensayo",
+     "caja": 1
+    },
+    {
+     "txt": "Vaso precipitado",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: querés saber cuánto *pesa* una piedra. ¿Qué usás?",
+    "¿Probeta o balanza?",
+    "¡La *balanza*! La masa se mide en gramos."
+   ],
+   "pregunta": "¿Con qué medís la masa de una piedra?",
+   "opciones": [
+    "Probeta",
+    "Balanza"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Medir volumen con el *vaso de precipitado*: es solo aproximado.",
+    "Y calentar un tubo *apuntando hacia una persona*."
+   ],
+   "items": [
+    {
+     "mal": "Medir 50 ml con el vaso",
+     "bien": "Usar la probeta"
+    },
+    {
+     "mal": "Tubo apuntando a alguien",
+     "bien": "Apuntar a la pared"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Medir*: probeta, balanza y termómetro.",
+    "*Contener*: vaso, tubo y matraz.",
+    "*Calentar*: el mechero.",
+    "*Ver lo chiquito*: lupa y microscopio.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MEDIR",
+     "probeta, balanza, termómetro"
+    ],
+    [
+     "CONTENER",
+     "vaso, tubo, matraz"
+    ],
+    [
+     "CALENTAR",
+     "mechero"
+    ],
+    [
+     "VER",
+     "lupa y microscopio"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

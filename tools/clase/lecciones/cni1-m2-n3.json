@@ -1,0 +1,258 @@
+{
+ "slug": "cni1-m2-n3",
+ "step_id": "831430b5-c152-42c0-9204-fc86f9201ec7",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Mediciones con incertidumbre",
+ "sub": "Ciencias Naturales Integradas I · Misión 2 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Marta le escribe a Juan: medí la mesa y me dio 120 centímetros.",
+    "Juan: ¡a mí me dio 121!",
+    "Marta: ¿quién se equivocó? Juan: capaz que ninguno… ninguna medida es perfecta.",
+    "Hoy: *mediciones con incertidumbre*."
+   ],
+   "contacto": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "La mesa mide 120 cm 📏"
+    },
+    {
+     "yo": false,
+     "txt": "¡A mí me dio 121!"
+    },
+    {
+     "yo": true,
+     "txt": "¿Quién se equivocó? 🤔"
+    }
+   ],
+   "titulo": "INCERTIDUMBRE",
+   "sub": "ninguna medida es perfecta"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Toda medición tiene una *incertidumbre*: un margen de duda.",
+    "Depende del instrumento, de quien mide y de cómo mide."
+   ],
+   "palabra": "Incertidumbre",
+   "texto": "El margen de duda que tiene toda medición",
+   "emoji": "🎯"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "dib": "rect",
+       "x": 360,
+       "y": 560,
+       "w": 1200,
+       "h": 90,
+       "fill": "#f4e3b5",
+       "color": "#8a6a2a"
+      },
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 520,
+       "s": "regla con marcas cada 1 mm",
+       "size": 38
+      }
+     ],
+     "txt": "Una regla común"
+    },
+    {
+     "acc": [
+      {
+       "pon": "lap",
+       "e": "✏️",
+       "x": 1020,
+       "y": 700,
+       "s": 110
+      }
+     ],
+     "txt": "El lápiz cae entre dos marcas"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 330,
+       "s": "12,3 ± 0,1 cm",
+       "size": 60
+      }
+     ],
+     "txt": "Valor ± incertidumbre"
+    }
+   ],
+   "voz": [
+    "Medimos un lápiz con una regla común: la marca más chica es de *un milímetro*.",
+    "La punta del lápiz cae entre dos marcas…",
+    "… así que escribimos *doce coma tres, más o menos cero coma uno centímetros*. La regla no puede dar más precisión que eso."
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *apreciación* de un instrumento es la medida más chica que puede marcar.",
+    "Regla: un milímetro. Balanza de cocina: un gramo. Esa suele ser la incertidumbre."
+   ],
+   "palabra": "Apreciación",
+   "texto": "La menor medida que marca el instrumento",
+   "emoji": "📏"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Para achicar la duda, se *mide varias veces* y se saca el *promedio*.",
+    "Primera medida: 12,2 centímetros.",
+    "Segunda: 12,4.",
+    "Tercera: 12,3.",
+    "Promedio: se suman y se divide por tres. Da *12,3*."
+   ],
+   "titulo": "TRES MEDICIONES DEL LÁPIZ",
+   "columnas": [
+    "Medición",
+    "Largo (cm)"
+   ],
+   "filas": [
+    [
+     "1.ª",
+     "12,2"
+    ],
+    [
+     "2.ª",
+     "12,4"
+    ],
+    [
+     "3.ª",
+     "12,3"
+    ],
+    [
+     "Promedio",
+     "12,3"
+    ]
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "pro",
+       "e": "🧪",
+       "x": 960,
+       "y": 620,
+       "s": 240
+      },
+      {
+       "pon": "ojo1",
+       "e": "👁️",
+       "x": 620,
+       "y": 360,
+       "s": 90,
+       "etq": "desde arriba: mal"
+      }
+     ],
+     "txt": "Mirar desde arriba engaña"
+    },
+    {
+     "acc": [
+      {
+       "sale": "ojo1"
+      },
+      {
+       "pon": "ojo2",
+       "e": "👁️",
+       "x": 620,
+       "y": 600,
+       "s": 90,
+       "etq": "a la altura: bien"
+      }
+     ],
+     "txt": "Ojos a la altura de la marca"
+    }
+   ],
+   "voz": [
+    "Otro cuidado: si leés la probeta *desde arriba*, el número te da mal. Se llama *error de paralaje*.",
+    "Hay que poner *los ojos a la altura* del líquido."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿qué medición es más confiable?",
+    "¿Una sola, o el promedio de cinco?",
+    "¡El *promedio de cinco*! Repetir achica la duda."
+   ],
+   "pregunta": "¿Qué es más confiable?",
+   "opciones": [
+    "Una sola medida",
+    "Promedio de cinco"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Dar un resultado *sin incertidumbre* ni unidad.",
+    "Y leer la probeta *desde arriba*."
+   ],
+   "items": [
+    {
+     "mal": "El lápiz mide 12,3",
+     "bien": "12,3 ± 0,1 cm"
+    },
+    {
+     "mal": "Leer desde arriba",
+     "bien": "Ojos a la altura"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Incertidumbre*: el margen de duda.",
+    "*Apreciación*: la marca más chica del instrumento.",
+    "*Promedio*: medir varias veces.",
+    "Y el resultado: *valor, más o menos la duda, con unidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INCERTIDUMBRE",
+     "margen de duda"
+    ],
+    [
+     "APRECIACIÓN",
+     "marca más chica"
+    ],
+    [
+     "PROMEDIO",
+     "medir varias veces"
+    ],
+    [
+     "RESULTADO",
+     "valor ± duda + unidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

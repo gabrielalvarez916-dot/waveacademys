@@ -1,0 +1,276 @@
+{
+ "slug": "cni1-m2-n4",
+ "step_id": "f3174f10-b9ea-42dd-957b-742027e7b0f1",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Notación científica y unidades",
+ "sub": "Ciencias Naturales Integradas I · Misión 2 · Nivel 4",
+ "escenas": [
+  {
+   "t": "mundo",
+   "fondo": "espacio",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "t",
+       "e": "🌍",
+       "x": 520,
+       "y": 560,
+       "s": 200
+      },
+      {
+       "pon": "s",
+       "e": "☀️",
+       "x": 1500,
+       "y": 520,
+       "s": 300
+      },
+      {
+       "dib": "flecha",
+       "de": [
+        640,
+        560
+       ],
+       "a": [
+        1330,
+        540
+       ]
+      }
+     ],
+     "txt": "La Tierra y el Sol"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 330,
+       "s": "150 000 000 000 m",
+       "size": 56
+      }
+     ],
+     "txt": "¡Cuántos ceros!"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 820,
+       "s": "= 1,5 × 10¹¹ m",
+       "size": 64
+      }
+     ],
+     "txt": "Más corto: notación científica"
+    }
+   ],
+   "voz": [
+    "La distancia de la Tierra al Sol es enorme…",
+    "… ciento cincuenta mil millones de metros. ¡Escribirlo es un lío de ceros!",
+    "Los científicos lo escriben así: *uno coma cinco por diez a la once*. Hoy: *notación científica y unidades*."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Primero, las unidades: todo el mundo científico usa el *Sistema Internacional*.",
+    "Longitud: el *metro*.",
+    "Masa: el *kilogramo*.",
+    "Tiempo: el *segundo*.",
+    "Temperatura: el *grado Celsius* en la vida diaria, y el *kelvin* en ciencia."
+   ],
+   "titulo": "SISTEMA INTERNACIONAL",
+   "celdas": [
+    {
+     "cab": "LONGITUD",
+     "txt": "metro (m)"
+    },
+    {
+     "cab": "MASA",
+     "txt": "kilogramo (kg)"
+    },
+    {
+     "cab": "TIEMPO",
+     "txt": "segundo (s)"
+    },
+    {
+     "cab": "TEMPERATURA",
+     "txt": "°C y kelvin (K)"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Los *prefijos* agrandan o achican la unidad.",
+    "*Kilo*: mil veces. Un kilómetro son mil metros.",
+    "*Centi*: la centésima parte. Cien centímetros hacen un metro.",
+    "*Mili*: la milésima parte. Mil milímetros hacen un metro.",
+    "*Micro*: la millonésima parte. Así se miden las células."
+   ],
+   "titulo": "PREFIJOS",
+   "columnas": [
+    "Prefijo",
+    "Significa",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "kilo (k)",
+     "× 1000",
+     "1 km = 1000 m"
+    ],
+    [
+     "centi (c)",
+     "÷ 100",
+     "1 m = 100 cm"
+    ],
+    [
+     "mili (m)",
+     "÷ 1000",
+     "1 m = 1000 mm"
+    ],
+    [
+     "micro (µ)",
+     "÷ 1 000 000",
+     "células"
+    ]
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *notación científica* escribe un número como uno entre 1 y 10, multiplicado por una *potencia de diez*.",
+    "El exponente dice cuántos lugares se corre la coma."
+   ],
+   "palabra": "Notación científica",
+   "texto": "Un número entre 1 y 10 × una potencia de 10",
+   "emoji": "🔟"
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Cómo se pasa.",
+    "*Números grandes*: la coma se corre a la izquierda y el exponente es *positivo*. Tres mil es tres por diez a la tres.",
+    "*Números chicos*: la coma se corre a la derecha y el exponente es *negativo*. Cero coma cero cero dos es dos por diez a la menos tres.",
+    "Contá los lugares que *saltó la coma*: ese es el exponente."
+   ],
+   "titulo": "CÓMO SE ESCRIBE",
+   "items": [
+    {
+     "cab": "GRANDES",
+     "txt": "3000 = 3 × 10³"
+    },
+    {
+     "cab": "CHICOS",
+     "txt": "0,002 = 2 × 10⁻³"
+    },
+    {
+     "cab": "TRUCO",
+     "txt": "contá los saltos de la coma"
+    }
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "celula",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "c",
+       "e": "🦠",
+       "x": 960,
+       "y": 560,
+       "s": 300
+      }
+     ],
+     "txt": "Una bacteria"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 300,
+       "s": "0,000 002 m = 2 × 10⁻⁶ m",
+       "size": 54
+      }
+     ],
+     "txt": "Tan chica que el exponente es negativo"
+    }
+   ],
+   "voz": [
+    "Ahora al revés: una bacteria mide *cero coma cero cero cero cero cero dos metros*.",
+    "En notación científica: *dos por diez a la menos seis*. Es decir, dos micrómetros."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cómo se escribe *cinco mil* en notación científica?",
+    "¿Cinco por diez a la tres, o cinco por diez a la menos tres?",
+    "¡*Cinco por diez a la tres*! Es un número grande: exponente positivo."
+   ],
+   "pregunta": "5000 en notación científica:",
+   "opciones": [
+    "5 × 10³",
+    "5 × 10⁻³"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Poner un número *mayor que 10* adelante.",
+    "Y confundir el *signo* del exponente."
+   ],
+   "items": [
+    {
+     "mal": "30 × 10²",
+     "bien": "3 × 10³"
+    },
+    {
+     "mal": "0,004 = 4 × 10³",
+     "bien": "4 × 10⁻³"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Sistema Internacional*: metro, kilogramo y segundo.",
+    "*Prefijos*: kilo, centi, mili y micro.",
+    "*Notación científica*: un número entre uno y diez, por una potencia de diez.",
+    "Exponente *positivo* para grandes, *negativo* para chicos.",
+    "¡Misión 2 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SI",
+     "metro, kilogramo, segundo"
+    ],
+    [
+     "PREFIJOS",
+     "kilo, centi, mili, micro"
+    ],
+    [
+     "NOTACIÓN",
+     "entre 1 y 10 × 10ⁿ"
+    ],
+    [
+     "EXPONENTE",
+     "+ grandes · − chicos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

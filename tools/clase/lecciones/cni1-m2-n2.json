@@ -1,0 +1,313 @@
+{
+ "slug": "cni1-m2-n2",
+ "step_id": "745585cd-de41-46e9-b9fc-4d95373a2bb5",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Normas y señales de seguridad",
+ "sub": "Ciencias Naturales Integradas I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: un chico olió directo un frasco en el laboratorio y terminó tosiendo y mareado.",
+    "Por suerte no fue grave… pero había una forma segura de hacerlo, ¡y una etiqueta que avisaba!",
+    "Hoy: *normas y señales de seguridad*."
+   ],
+   "cinta": "EN LA ESCUELA",
+   "titular": "Olió un frasco y se mareó",
+   "bajada": "La etiqueta avisaba: tóxico",
+   "emoji": "😵",
+   "titulo": "SEGURIDAD",
+   "sub": "normas y señales"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "c",
+       "e": "🧑‍🔬",
+       "x": 960,
+       "y": 640,
+       "s": 260
+      }
+     ],
+     "txt": "Antes de empezar…"
+    },
+    {
+     "acc": [
+      {
+       "pon": "g",
+       "e": "🥽",
+       "x": 960,
+       "y": 470,
+       "s": 110,
+       "etq": "antiparras"
+      }
+     ],
+     "txt": "Protegé los ojos"
+    },
+    {
+     "acc": [
+      {
+       "pon": "gu",
+       "e": "🥼",
+       "x": 600,
+       "y": 640,
+       "s": 150,
+       "etq": "guardapolvo"
+      },
+      {
+       "pon": "m",
+       "e": "🧤",
+       "x": 1320,
+       "y": 640,
+       "s": 130,
+       "etq": "guantes"
+      }
+     ],
+     "txt": "Protegé el cuerpo y las manos"
+    }
+   ],
+   "voz": [
+    "Antes de tocar cualquier cosa en el laboratorio, hay que *vestirse para la ocasión*.",
+    "*Antiparras*, para proteger los ojos de salpicaduras.",
+    "*Guardapolvo* y *guantes*, para la ropa, la piel y las manos. Y el pelo largo, *atado*."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Las normas de oro.",
+    "*Nunca* comer, beber ni probar nada en el laboratorio.",
+    "*Oler abanicando* con la mano, nunca directo.",
+    "*Avisar* enseguida si algo se rompe o te lastimás."
+   ],
+   "titulo": "NORMAS DE ORO",
+   "items": [
+    {
+     "cab": "NO PROBAR",
+     "txt": "ni comer ni beber"
+    },
+    {
+     "cab": "ABANICAR",
+     "txt": "nunca oler directo"
+    },
+    {
+     "cab": "AVISAR",
+     "txt": "cualquier accidente"
+    }
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "f",
+       "e": "⚗️",
+       "x": 800,
+       "y": 640,
+       "s": 170
+      },
+      {
+       "pon": "mano",
+       "e": "🖐️",
+       "x": 1000,
+       "y": 520,
+       "s": 120
+      }
+     ],
+     "txt": "Cómo oler bien"
+    },
+    {
+     "acc": [
+      {
+       "mueve": "mano",
+       "ruta": [
+        [
+         1000,
+         520
+        ],
+        [
+         900,
+         480
+        ],
+        [
+         1000,
+         520
+        ],
+        [
+         900,
+         480
+        ]
+       ],
+       "dur": 1.6
+      },
+      {
+       "dib": "flecha",
+       "de": [
+        860,
+        520
+       ],
+       "a": [
+        1180,
+        420
+       ]
+      },
+      {
+       "pon": "nariz",
+       "e": "👃",
+       "x": 1240,
+       "y": 400,
+       "s": 110
+      }
+     ],
+     "txt": "Abanicando: llega poquito"
+    }
+   ],
+   "voz": [
+    "¿Cómo se huele bien una sustancia? Con la mano sobre el recipiente…",
+    "… se *abanica* el aire hacia la nariz. Así llega solo un poquito y no hay riesgo."
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Las *señales de peligro* de las etiquetas.",
+    "La *llama*: inflamable, se prende fuego fácil.",
+    "La *calavera*: tóxico, es veneno.",
+    "La mano corroída: *corrosivo*, quema la piel.",
+    "La explosión: *explosivo*."
+   ],
+   "titulo": "SEÑALES DE PELIGRO",
+   "celdas": [
+    {
+     "cab": "🔥 INFLAMABLE",
+     "txt": "se prende fácil"
+    },
+    {
+     "cab": "☠️ TÓXICO",
+     "txt": "veneno"
+    },
+    {
+     "cab": "🧪 CORROSIVO",
+     "txt": "quema la piel"
+    },
+    {
+     "cab": "💥 EXPLOSIVO",
+     "txt": "puede explotar"
+    }
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿Seguro o peligroso?",
+    "*Seguro*: usar antiparras, abanicar para oler, atarse el pelo.",
+    "*Peligroso*: probar una sustancia, correr en el laboratorio."
+   ],
+   "cajas": [
+    {
+     "cab": "SEGURO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "PELIGROSO",
+     "emoji": "⛔"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Usar antiparras",
+     "caja": 0
+    },
+    {
+     "txt": "Abanicar al oler",
+     "caja": 0
+    },
+    {
+     "txt": "Atarse el pelo",
+     "caja": 0
+    },
+    {
+     "txt": "Probar sustancias",
+     "caja": 1
+    },
+    {
+     "txt": "Correr",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: una etiqueta tiene una *llama*. ¿Qué no podés hacer?",
+    "¿Acercarla al mechero o guardarla cerrada?",
+    "¡No acercarla al fuego! Es *inflamable*."
+   ],
+   "pregunta": "Etiqueta con llama: ¿qué está prohibido?",
+   "opciones": [
+    "Acercarla al mechero",
+    "Guardarla cerrada"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Oler un frasco *directo*.",
+    "Y *no avisar* un accidente por vergüenza."
+   ],
+   "items": [
+    {
+     "mal": "Oler directo",
+     "bien": "Abanicar con la mano"
+    },
+    {
+     "mal": "Esconder un vaso roto",
+     "bien": "Avisar enseguida"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Protección*: antiparras, guardapolvo y guantes.",
+    "*Normas*: no probar, abanicar y avisar.",
+    "*Señales*: siempre leer la etiqueta.",
+    "Y ante la duda, *preguntar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PROTECCIÓN",
+     "antiparras y guardapolvo"
+    ],
+    [
+     "NORMAS",
+     "no probar, abanicar, avisar"
+    ],
+    [
+     "SEÑALES",
+     "leer la etiqueta"
+    ],
+    [
+     "ANTE DUDAS",
+     "preguntar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
