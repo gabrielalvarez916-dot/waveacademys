@@ -19,7 +19,7 @@
   function subs(frase) { marcar.a = -1; var raw = frase.split(' '), cl = false; palabras = raw.map(function (r) { if (r[0] === '*') cl = true; var p = { w: r.replace(/\*/g, ''), k: cl }; if (r.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; return p; }); marcar(0); }
   function marcar(k) {
     var s = $('subs'); s.innerHTML = ''; if (!palabras.length) return;
-    k = Math.max(0, Math.min(k, palabras.length - 1)); var a = Math.floor(k / 3) * 3, t = el('text', { x: 960, y: 125, 'font-size': 76 }, s);
+    k = Math.max(0, Math.min(k, palabras.length - 1)); var a = Math.floor(k / 3) * 3, t = el('text', { x: 960, y: 125, 'font-size': 76, stroke: 'rgba(0,0,0,.55)', 'stroke-width': 12, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, s);
     palabras.slice(a, a + 3).forEach(function (p, j) { var sp = el('tspan', { fill: p.k ? C.sol : '#fff', opacity: a + j <= k ? 1 : 0 }, t); sp.textContent = (j ? ' ' : '') + p.w; });
     if (a !== marcar.a) { marcar.a = a; gsap.fromTo(t, { scale: .82, transformOrigin: '960px 105px' }, { scale: 1, duration: .22, ease: 'back.out(3)' }); }
   }

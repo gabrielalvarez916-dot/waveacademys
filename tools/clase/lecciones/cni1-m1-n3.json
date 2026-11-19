@@ -1,0 +1,289 @@
+{
+ "slug": "cni1-m1-n3",
+ "step_id": "7ae2448e-6959-4ef8-8dca-60dc80ad4779",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Registrar y graficar los datos del experimento",
+ "sub": "Ciencias Naturales Integradas I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: en una escuela midieron cómo se enfría una taza de té cada 5 minutos.",
+    "Sin anotar nada, nadie se acuerda… ¡con una tabla y un gráfico, se ve todo de un vistazo!",
+    "Hoy: *registrar y graficar los datos*."
+   ],
+   "cinta": "EN EL LABORATORIO",
+   "titular": "¿Cuánto tarda en enfriarse un té?",
+   "bajada": "Midieron cada 5 minutos y lo graficaron",
+   "emoji": "🍵",
+   "titulo": "REGISTRAR Y GRAFICAR",
+   "sub": "los datos del experimento"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "taza",
+       "e": "🍵",
+       "x": 760,
+       "y": 640,
+       "s": 190
+      },
+      {
+       "pon": "ter",
+       "e": "🌡️",
+       "x": 980,
+       "y": 560,
+       "s": 170,
+       "etq": "80 °C"
+      },
+      {
+       "pon": "rel",
+       "e": "⏱️",
+       "x": 1400,
+       "y": 380,
+       "s": 130,
+       "etq": "0 min"
+      }
+     ],
+     "txt": "Minuto 0: 80 °C"
+    },
+    {
+     "acc": [
+      {
+       "etq": "rel",
+       "txt": "10 min"
+      },
+      {
+       "etq": "ter",
+       "txt": "60 °C"
+      }
+     ],
+     "txt": "Minuto 10: 60 °C"
+    },
+    {
+     "acc": [
+      {
+       "etq": "rel",
+       "txt": "20 min"
+      },
+      {
+       "etq": "ter",
+       "txt": "47 °C"
+      }
+     ],
+     "txt": "Minuto 20: 47 °C"
+    },
+    {
+     "acc": [
+      {
+       "etq": "rel",
+       "txt": "30 min"
+      },
+      {
+       "etq": "ter",
+       "txt": "38 °C"
+      },
+      {
+       "pon": "cu",
+       "e": "📓",
+       "x": 1400,
+       "y": 700,
+       "s": 150,
+       "etq": "¡todo anotado!"
+      }
+     ],
+     "txt": "Cada medida, al cuaderno"
+    }
+   ],
+   "voz": [
+    "Medimos la temperatura del té con un termómetro: al principio, *80 grados*.",
+    "A los 10 minutos, *60*.",
+    "A los 20, *47*.",
+    "Y a los 30, *38*. Cada medida va *al cuaderno*, en el momento."
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Los datos, en una *tabla*: cada columna con su nombre y su *unidad*.",
+    "Minuto 0: 80 grados.",
+    "Minuto 10: 60.",
+    "Minuto 20: 47.",
+    "Minuto 30: 38."
+   ],
+   "titulo": "TEMPERATURA DEL TÉ",
+   "columnas": [
+    "Tiempo (min)",
+    "Temperatura (°C)"
+   ],
+   "filas": [
+    [
+     "0",
+     "80"
+    ],
+    [
+     "10",
+     "60"
+    ],
+    [
+     "20",
+     "47"
+    ],
+    [
+     "30",
+     "38"
+    ]
+   ]
+  },
+  {
+   "t": "curva",
+   "voz": [
+    "Y en un *gráfico*: el tiempo abajo, la temperatura al costado.",
+    "La línea baja rápido al principio…",
+    "… y cada vez más despacio. ¡Eso no se veía en la tabla!"
+   ],
+   "titulo": "CÓMO SE ENFRÍA EL TÉ",
+   "x": "tiempo (min)",
+   "y": "°C",
+   "puntos": [
+    [
+     0,
+     80
+    ],
+    [
+     5,
+     69
+    ],
+    [
+     10,
+     60
+    ],
+    [
+     15,
+     53
+    ],
+    [
+     20,
+     47
+    ],
+    [
+     25,
+     42
+    ],
+    [
+     30,
+     38
+    ]
+   ],
+   "marcas": [
+    {
+     "x": 30,
+     "y": 38,
+     "txt": "38 °C"
+    }
+   ]
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Reglas para que el gráfico se entienda.",
+    "*Título*: qué muestra.",
+    "*Ejes con nombre y unidad*: minutos, grados.",
+    "*Escala pareja*: los saltos, siempre iguales."
+   ],
+   "titulo": "UN BUEN GRÁFICO",
+   "items": [
+    {
+     "cab": "TÍTULO",
+     "txt": "qué se muestra"
+    },
+    {
+     "cab": "EJES",
+     "txt": "nombre y unidad"
+    },
+    {
+     "cab": "ESCALA",
+     "txt": "saltos iguales"
+    }
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: anotá *en el momento*, no después de memoria. Y siempre con la *unidad*: 60 solo no dice nada; 60 grados, sí."
+   ],
+   "titulo": "ANOTÁ EN EL MOMENTO",
+   "texto": "Siempre con unidad: 60 °C, no 60",
+   "emoji": "✍️"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: mirando el gráfico, ¿cuándo se enfrió *más rápido* el té?",
+    "¿Al principio o al final?",
+    "¡*Al principio*! La línea baja más empinada."
+   ],
+   "pregunta": "¿Cuándo se enfrió más rápido?",
+   "opciones": [
+    "Al principio",
+    "Al final"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Anotar *sin unidades*.",
+    "Y hacer un gráfico con *escala despareja* o sin nombre en los ejes."
+   ],
+   "items": [
+    {
+     "mal": "Temperatura: 60",
+     "bien": "60 °C"
+    },
+    {
+     "mal": "Ejes sin nombre",
+     "bien": "Tiempo (min) · Temperatura (°C)"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Registrar* en el momento.",
+    "*Tabla*: columnas con unidad.",
+    "*Gráfico*: título, ejes y escala pareja.",
+    "Y el gráfico muestra *cómo cambia* algo.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REGISTRAR",
+     "en el momento"
+    ],
+    [
+     "TABLA",
+     "columnas con unidad"
+    ],
+    [
+     "GRÁFICO",
+     "título, ejes, escala"
+    ],
+    [
+     "LEER",
+     "ver cómo cambia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

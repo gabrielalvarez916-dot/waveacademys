@@ -1,0 +1,300 @@
+{
+ "slug": "cni1-m1-n2",
+ "step_id": "310e66e8-af19-4c1f-8509-82cf00e3cea4",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Variables y diseño experimental",
+ "sub": "Ciencias Naturales Integradas I · Misión 1 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Juan le escribe a Lu: puse una planta al lado de la ventana y otra en el placard. La del placard está amarilla y torcida.",
+    "Lu: ¿y las regaste igual? Juan: no, a la del placard la regué menos…",
+    "Lu: ¡entonces no sabés si fue por la luz o por el agua!",
+    "Hoy: *variables y diseño experimental*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "La planta del placard se puso amarilla 🌱"
+    },
+    {
+     "yo": false,
+     "txt": "¿Las regaste igual?"
+    },
+    {
+     "yo": true,
+     "txt": "Ehh… no 😬"
+    }
+   ],
+   "titulo": "DISEÑO EXPERIMENTAL",
+   "sub": "cambiar una sola cosa"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Una *variable* es algo que *puede cambiar* en un experimento.",
+    "La luz, el agua, la temperatura, el tamaño de la planta… todo eso son variables."
+   ],
+   "palabra": "Variable",
+   "texto": "Algo que puede cambiar en un experimento",
+   "emoji": "🎚️"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "p1",
+       "e": "🪴",
+       "x": 620,
+       "y": 650,
+       "s": 150
+      },
+      {
+       "pon": "p2",
+       "e": "🪴",
+       "x": 1300,
+       "y": 650,
+       "s": 150
+      }
+     ],
+     "txt": "Dos plantas iguales"
+    },
+    {
+     "acc": [
+      {
+       "pon": "sol",
+       "e": "☀️",
+       "x": 420,
+       "y": 330,
+       "s": 150
+      },
+      {
+       "dib": "rect",
+       "x": 1170,
+       "y": 460,
+       "w": 260,
+       "h": 300,
+       "fill": "rgba(30,20,10,.75)",
+       "color": "#3c2a1a"
+      },
+      {
+       "pon": "g1",
+       "e": "💧",
+       "x": 760,
+       "y": 520,
+       "s": 70
+      },
+      {
+       "pon": "g2",
+       "e": "💧",
+       "x": 1440,
+       "y": 520,
+       "s": 70
+      }
+     ],
+     "txt": "Una con luz, otra en una caja · el mismo riego"
+    },
+    {
+     "acc": [
+      {
+       "crece": "p1",
+       "s": 1.5
+      },
+      {
+       "etq": "p1",
+       "txt": "verde y alta"
+      },
+      {
+       "etq": "p2",
+       "txt": "amarilla"
+      }
+     ],
+     "txt": "Cambió solo la luz… y se nota"
+    }
+   ],
+   "voz": [
+    "Hagámoslo bien: dos plantas *iguales*, en macetas iguales, con la misma tierra.",
+    "Una recibe luz y la otra queda dentro de una caja. Las dos, *con la misma agua*.",
+    "A la semana, la de la luz creció verde; la de la caja, amarilla. Como cambió *una sola cosa*, sabemos que fue la luz."
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Las variables tienen nombres.",
+    "*Independiente*: la que cambiás a propósito. Acá, la luz.",
+    "*Dependiente*: la que medís para ver el efecto. El crecimiento.",
+    "*Controladas*: las que dejás iguales. Agua, tierra, maceta, tipo de planta.",
+    "Y el *grupo control*: el que no recibe el cambio, para comparar."
+   ],
+   "titulo": "LAS VARIABLES",
+   "celdas": [
+    {
+     "cab": "INDEPENDIENTE",
+     "txt": "la luz (la cambio yo)"
+    },
+    {
+     "cab": "DEPENDIENTE",
+     "txt": "el crecimiento (lo mido)"
+    },
+    {
+     "cab": "CONTROLADAS",
+     "txt": "agua, tierra, maceta"
+    },
+    {
+     "cab": "GRUPO CONTROL",
+     "txt": "la que no cambia, para comparar"
+    }
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "a",
+       "e": "🧊",
+       "x": 560,
+       "y": 660,
+       "s": 100,
+       "etq": "agua fría"
+      },
+      {
+       "pon": "b",
+       "e": "🧊",
+       "x": 1360,
+       "y": 660,
+       "s": 100,
+       "etq": "agua tibia"
+      },
+      {
+       "pon": "va",
+       "e": "🥛",
+       "x": 560,
+       "y": 760,
+       "s": 120
+      },
+      {
+       "pon": "vb",
+       "e": "🥛",
+       "x": 1360,
+       "y": 760,
+       "s": 120
+      }
+     ],
+     "txt": "Otro experimento: ¿la temperatura del agua importa?"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 330,
+       "s": "Igual: vaso, cantidad de agua, tamaño del cubito",
+       "size": 40
+      }
+     ],
+     "txt": "Todo lo demás, igual"
+    }
+   ],
+   "voz": [
+    "Otro ejemplo: ¿un cubito se derrite más rápido en agua tibia que en agua fría? Variable independiente: *la temperatura del agua*.",
+    "Todo lo demás, *igual*: el mismo vaso, la misma cantidad de agua, cubitos del mismo tamaño."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: si cambiás la luz *y* el agua al mismo tiempo, ¿podés saber cuál hizo efecto?",
+    "¿Sí o no?",
+    "¡*No*! Por eso se cambia *una sola variable* por vez."
+   ],
+   "pregunta": "Cambio luz y agua a la vez: ¿sé cuál influyó?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Un experimento *bien diseñado* contra uno *mal diseñado*.",
+    "Bien: cambia una sola cosa y hay un grupo control.",
+    "Mal: cambian varias cosas a la vez y no se puede sacar ninguna conclusión."
+   ],
+   "a": {
+    "cab": "BIEN DISEÑADO",
+    "texto": "una variable · grupo control",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "MAL DISEÑADO",
+    "texto": "varias cosas cambian a la vez",
+    "emoji": "❌"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Cambiar *más de una variable* por vez.",
+    "Y no tener *grupo control* para comparar."
+   ],
+   "items": [
+    {
+     "mal": "Cambiar luz y agua juntas",
+     "bien": "Una variable por vez"
+    },
+    {
+     "mal": "Probar con una sola planta",
+     "bien": "Una con cambio y otra de control"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Variable*: algo que cambia.",
+    "*Independiente*: la que cambio yo.",
+    "*Dependiente*: la que mido.",
+    "*Controladas*: todo lo demás, igual.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VARIABLE",
+     "algo que puede cambiar"
+    ],
+    [
+     "INDEPENDIENTE",
+     "la que cambio"
+    ],
+    [
+     "DEPENDIENTE",
+     "la que mido"
+    ],
+    [
+     "CONTROLADAS",
+     "las que dejo iguales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

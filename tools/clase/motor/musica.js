@@ -15,6 +15,7 @@ var MUSICA = (function () {
     patron: elegir([[0, 1, 2, 1, 3, 2, 1, 2], [0, 2, 1, 3, 2, 1, 3, 2], [3, 2, 1, 0, 1, 2, 3, 2], [0, 1, 2, 3, 2, 1, 0, null]]),
     bateria: rnd() < .75, hats: rnd() < .6
   };
+  if (/natural|biolog/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 62 + Math.floor(rnd() * 14); est.pad = 'sine'; est.arpa = elegir(['sine', 'triangle']); est.bateria = false; est.hats = false; est.raiz += 5; } // Naturales: más calma, sin batería
 
   var ctx = null, maestro = null, sonando = false, silencio = false, prox = 0, paso = 0, timer = null, VOL = .12, VOL_VOZ = .045;
   function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }

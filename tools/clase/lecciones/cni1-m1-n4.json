@@ -1,0 +1,244 @@
+{
+ "slug": "cni1-m1-n4",
+ "step_id": "f8e6c295-530d-42f0-9cd9-15decaaa7499",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Escribo un informe de laboratorio",
+ "sub": "Ciencias Naturales Integradas I · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: en un informe, ¿qué va primero, la *hipótesis* o los *resultados*? 5 segundos.",
+    "¡La *hipótesis*! Se escribe *antes* de experimentar.",
+    "Hoy: *escribir un informe de laboratorio*."
+   ],
+   "texto": "¿Qué va primero: la hipótesis o los resultados?",
+   "segundos": 5,
+   "respuesta": "La hipótesis",
+   "emoji": "📓",
+   "titulo": "EL INFORME",
+   "sub": "de laboratorio"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un *informe de laboratorio* cuenta un experimento *para que otra persona pueda entenderlo*…",
+    "… y hasta *repetirlo* igual."
+   ],
+   "palabra": "Informe",
+   "texto": "Cuenta un experimento para que otro lo entienda y lo pueda repetir",
+   "emoji": "📝"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "cu",
+       "e": "📓",
+       "x": 960,
+       "y": 600,
+       "s": 230
+      },
+      {
+       "pon": "cient",
+       "e": "🧑‍🔬",
+       "x": 520,
+       "y": 640,
+       "s": 200
+      }
+     ],
+     "txt": "El cuaderno de laboratorio"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 1420,
+       "y": 300,
+       "s": "1. Título",
+       "size": 38
+      },
+      {
+       "dib": "texto",
+       "x": 1420,
+       "y": 390,
+       "s": "2. Pregunta",
+       "size": 38
+      },
+      {
+       "dib": "texto",
+       "x": 1420,
+       "y": 480,
+       "s": "3. Hipótesis",
+       "size": 38
+      }
+     ],
+     "txt": "Antes de experimentar"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 1420,
+       "y": 570,
+       "s": "4. Materiales",
+       "size": 38
+      },
+      {
+       "dib": "texto",
+       "x": 1420,
+       "y": 660,
+       "s": "5. Procedimiento",
+       "size": 38
+      }
+     ],
+     "txt": "Cómo se hizo"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 500,
+       "y": 300,
+       "s": "6. Resultados",
+       "size": 38
+      },
+      {
+       "dib": "texto",
+       "x": 500,
+       "y": 390,
+       "s": "7. Conclusión",
+       "size": 38
+      }
+     ],
+     "txt": "Qué pasó y qué significa"
+    }
+   ],
+   "voz": [
+    "Abrimos el cuaderno de laboratorio.",
+    "Primero, lo que se escribe *antes* de experimentar: el *título*, la *pregunta* y la *hipótesis*.",
+    "Después, *cómo se hizo*: los *materiales* y el *procedimiento*, paso por paso.",
+    "Y al final, *qué pasó*: los *resultados*, y la *conclusión*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿En qué parte va cada cosa? Del experimento del hielo.",
+    "*Hipótesis*: si recibe más calor, se derrite más rápido.",
+    "*Procedimiento*: pusimos un cubito bajo la lámpara y otro sin lámpara.",
+    "*Resultados*: con lámpara tardó 6 minutos; sin lámpara, 15."
+   ],
+   "cajas": [
+    {
+     "cab": "HIPÓTESIS",
+     "emoji": "💡"
+    },
+    {
+     "cab": "PROCEDIMIENTO",
+     "emoji": "🧪"
+    },
+    {
+     "cab": "RESULTADOS",
+     "emoji": "📊"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Si recibe más calor, se derrite más rápido",
+     "caja": 0
+    },
+    {
+     "txt": "Un cubito con lámpara y otro sin",
+     "caja": 1
+    },
+    {
+     "txt": "Con lámpara: 6 min · sin: 15 min",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "La parte más importante: la *conclusión*.",
+    "Una conclusión buena *responde la pregunta* y dice si la hipótesis *se confirmó*, usando los datos.",
+    "Una mala solo dice \"salió bien\" o repite los resultados."
+   ],
+   "a": {
+    "cab": "BUENA",
+    "texto": "El calor acelera el derretimiento: la hipótesis se confirmó (6 min contra 15)",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "MALA",
+    "texto": "El experimento salió bien",
+    "emoji": "❌"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: escribí el procedimiento como *una receta*, con pasos numerados. Si alguien lo sigue, tiene que poder repetir tu experimento."
+   ],
+   "titulo": "COMO UNA RECETA",
+   "texto": "Pasos numerados que otro pueda repetir",
+   "emoji": "🧾"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Cambiar la hipótesis* después de ver los resultados: si no se confirmó, se dice, ¡y eso también es ciencia!",
+    "Y una conclusión que *no usa los datos*."
+   ],
+   "items": [
+    {
+     "mal": "Corregir la hipótesis al final",
+     "bien": "Decir si se confirmó o no"
+    },
+    {
+     "mal": "\"Salió bien\"",
+     "bien": "Conclusión con datos"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Antes*: título, pregunta e hipótesis.",
+    "*Cómo*: materiales y procedimiento.",
+    "*Después*: resultados y conclusión.",
+    "Y la conclusión *responde con datos*.",
+    "¡Misión 1 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ANTES",
+     "título, pregunta, hipótesis"
+    ],
+    [
+     "CÓMO",
+     "materiales y procedimiento"
+    ],
+    [
+     "DESPUÉS",
+     "resultados y conclusión"
+    ],
+    [
+     "CONCLUSIÓN",
+     "responde con datos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

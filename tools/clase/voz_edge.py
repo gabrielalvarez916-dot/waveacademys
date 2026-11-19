@@ -81,11 +81,19 @@ def frases(L):
     return [[limpio(x) for x in e['voz']] for e in L['escenas']]
 
 
-async def tts(texto):
+VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural'}  # cada materia con su voz (Matemática: Jorge)
+
+
+def voz_de(L):
+    m = (L.get('materia') or '').lower()
+    return L.get('voz') or (VOZ_MATERIA['naturales'] if ('natural' in m or 'biolog' in m) else VOZ)
+
+
+async def tts(texto, voz=None):
     try:
-        c = edge_tts.Communicate(texto, VOZ, rate=RATE, boundary='WordBoundary')
+        c = edge_tts.Communicate(texto, voz or VOZ, rate=RATE, boundary='WordBoundary')
     except TypeError:
-        c = edge_tts.Communicate(texto, VOZ, rate=RATE)
+        c = edge_tts.Communicate(texto, voz or VOZ, rate=RATE)
     audio, w = b'', []
     async for ch in c.stream():
         if ch['type'] == 'audio':
@@ -103,18 +111,18 @@ async def una(src_path):
     destino = os.path.join(AQUI, 'voz', nombre + '.json')
     viejo = json.load(open(destino)) if os.path.exists(destino) else []
     cache = {f.get('h'): f for esc in viejo for f in esc if isinstance(f, dict)}
-    F = frases(L)
+    F = frases(L); vz = voz_de(L)
     res, nuevas = [], 0
     for esc in F:
         fila = []
         for t in esc:
-            h = hashlib.md5((VOZ + RATE + t).encode()).hexdigest()[:12]
+            h = hashlib.md5((vz + RATE + t).encode()).hexdigest()[:12]
             if h in cache:
                 fila.append(cache[h])
             else:
                 for intento in range(6):
                     try:
-                        r = await tts(t); break
+                        r = await tts(t, vz); break
                     except Exception as e:
                         if intento == 5: raise
                         await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos

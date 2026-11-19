@@ -1,0 +1,387 @@
+{
+ "slug": "cni1-m1-n1",
+ "step_id": "d02b4ce6-bedc-4abf-8713-2ab05c78213e",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "De la pregunta a la hipótesis",
+ "sub": "Ciencias Naturales Integradas I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "mundo",
+   "fondo": "espacio",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "t",
+       "e": "🌍",
+       "x": 960,
+       "y": 520,
+       "s": 430
+      }
+     ],
+     "txt": "Todo empieza mirando"
+    },
+    {
+     "acc": [
+      {
+       "zoom": [
+        960,
+        520,
+        3.2
+       ]
+      }
+     ],
+     "txt": "Vamos a un lugar cualquiera…"
+    }
+   ],
+   "voz": [
+    "Las ciencias naturales estudian todo lo que pasa en este planeta. Y todo empieza con algo muy simple: *mirar con atención*.",
+    "Bajemos a un lugar cualquiera… un patio, una tarde de verano."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "jardin",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "arbol",
+       "e": "🌳",
+       "x": 1560,
+       "y": 560,
+       "s": 330
+      },
+      {
+       "pon": "nena",
+       "e": "👧",
+       "x": 420,
+       "y": 700,
+       "s": 170
+      },
+      {
+       "pon": "v1",
+       "e": "🧊",
+       "x": 1050,
+       "y": 760,
+       "s": 90,
+       "etq": "al sol"
+      },
+      {
+       "pon": "v2",
+       "e": "🧊",
+       "x": 1500,
+       "y": 760,
+       "s": 90,
+       "etq": "a la sombra"
+      }
+     ],
+     "txt": "Dos cubitos de hielo"
+    },
+    {
+     "acc": [
+      {
+       "pon": "a1",
+       "e": "💧",
+       "x": 1050,
+       "y": 820,
+       "s": 70
+      },
+      {
+       "sale": "v1"
+      },
+      {
+       "etq": "v2",
+       "txt": "¡todavía está!"
+      }
+     ],
+     "txt": "Uno se derritió mucho más rápido"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 560,
+       "y": 430,
+       "s": "¿Por qué?",
+       "size": 56
+      }
+     ],
+     "txt": "Observar hace aparecer preguntas"
+    }
+   ],
+   "voz": [
+    "Sofi deja dos cubitos de hielo en el patio: uno *al sol* y otro *a la sombra*.",
+    "A los pocos minutos, el del sol ya es un charquito… ¡y el de la sombra *sigue entero*!",
+    "Sofi se pregunta: *¿por qué?* Así empieza la ciencia."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "portada",
+   "voz": [
+    "Hoy: *de la pregunta a la hipótesis*."
+   ],
+   "texto": "De la pregunta a la hipótesis",
+   "sub": "Ciencia y método · Nivel 1",
+   "emoji": "🔬"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "*Observar* no es solo mirar: es prestar atención a los detalles y *anotarlos*.",
+    "Qué cambió, cuánto tardó, dónde estaba. Esos registros son el punto de partida."
+   ],
+   "palabra": "Observar",
+   "texto": "Mirar con atención los detalles y registrarlos",
+   "emoji": "👀"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "lupa",
+       "e": "🔍",
+       "x": 700,
+       "y": 560,
+       "s": 200
+      },
+      {
+       "pon": "cuad",
+       "e": "📓",
+       "x": 1250,
+       "y": 620,
+       "s": 180,
+       "etq": "registro"
+      }
+     ],
+     "txt": "Mirar y anotar"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 1250,
+       "y": 330,
+       "s": "sol: 6 min · sombra: 15 min",
+       "size": 40
+      }
+     ],
+     "txt": "Datos concretos, no opiniones"
+    }
+   ],
+   "voz": [
+    "Con una lupa y un cuaderno, se anota lo que se ve.",
+    "No vale \"se derritió rápido\": vale *\"al sol tardó 6 minutos y a la sombra 15\"*. Datos concretos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "De la observación salen preguntas. Pero no todas sirven: una *pregunta investigable*…",
+    "… es la que se puede responder *observando o haciendo un experimento*."
+   ],
+   "palabra": "Pregunta investigable",
+   "texto": "Se puede responder con observaciones o experimentos",
+   "emoji": "❓"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar preguntas.",
+    "*Investigables*: ¿el hielo se derrite más rápido al sol? ¿Cuánto tarda en derretirse un cubito?",
+    "*No investigables*: ¿el hielo es lindo? ¿Qué color de hielo es mejor? Son gustos, no se pueden medir."
+   ],
+   "cajas": [
+    {
+     "cab": "INVESTIGABLES",
+     "emoji": "🔬"
+    },
+    {
+     "cab": "NO INVESTIGABLES",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "¿Se derrite más rápido al sol?",
+     "caja": 0
+    },
+    {
+     "txt": "¿Cuánto tarda un cubito?",
+     "caja": 0
+    },
+    {
+     "txt": "¿El hielo es lindo?",
+     "caja": 1
+    },
+    {
+     "txt": "¿Qué hielo es mejor?",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Y llega la *hipótesis*: una *posible respuesta* a la pregunta, que se puede poner a prueba.",
+    "Se suele escribir así: *si… entonces…*"
+   ],
+   "palabra": "Hipótesis",
+   "texto": "Posible respuesta que se pone a prueba: \"Si…, entonces…\"",
+   "emoji": "💡"
+  },
+  {
+   "t": "mundo",
+   "fondo": "lab",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 300,
+       "s": "Si el hielo recibe más calor, entonces se derrite más rápido",
+       "size": 40
+      }
+     ],
+     "txt": "La hipótesis de Sofi"
+    },
+    {
+     "acc": [
+      {
+       "pon": "lam",
+       "e": "💡",
+       "x": 640,
+       "y": 470,
+       "s": 150
+      },
+      {
+       "pon": "h1",
+       "e": "🧊",
+       "x": 640,
+       "y": 700,
+       "s": 100,
+       "etq": "con lámpara"
+      },
+      {
+       "pon": "h2",
+       "e": "🧊",
+       "x": 1280,
+       "y": 700,
+       "s": 100,
+       "etq": "sin lámpara"
+      }
+     ],
+     "txt": "Para probarla, un experimento"
+    },
+    {
+     "acc": [
+      {
+       "pon": "c1",
+       "e": "💧",
+       "x": 640,
+       "y": 740,
+       "s": 80
+      },
+      {
+       "sale": "h1"
+      },
+      {
+       "etq": "h2",
+       "txt": "más lento"
+      }
+     ],
+     "txt": "¡Se cumplió lo que predijo!"
+    }
+   ],
+   "voz": [
+    "Sofi escribe su hipótesis: *si el hielo recibe más calor, entonces se derrite más rápido*.",
+    "Para ponerla a prueba, arma un experimento: un cubito bajo una lámpara y otro sin lámpara.",
+    "El de la lámpara se derrite primero. ¡La hipótesis *se confirmó*!"
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "El camino completo: primero, *observar*.",
+    "Hacer una *pregunta investigable*.",
+    "Proponer una *hipótesis*.",
+    "Y *ponerla a prueba*."
+   ],
+   "titulo": "EL CAMINO DE LA CIENCIA",
+   "items": [
+    {
+     "txt": "Observar",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Preguntar",
+     "emoji": "❓"
+    },
+    {
+     "txt": "Hipótesis",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Poner a prueba",
+     "emoji": "🧪"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Escribir la hipótesis *como pregunta*: tiene que ser una respuesta posible.",
+    "Y confundir hipótesis con *opinión*: la hipótesis se puede comprobar."
+   ],
+   "items": [
+    {
+     "mal": "¿El calor derrite el hielo?",
+     "bien": "Si recibe más calor, se derrite más rápido"
+    },
+    {
+     "mal": "El hielo al sol es más lindo",
+     "bien": "Eso es una opinión, no se puede probar"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Observar*: mirar y registrar.",
+    "*Pregunta investigable*: se responde probando.",
+    "*Hipótesis*: si… entonces…",
+    "Y después, *ponerla a prueba*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "OBSERVAR",
+     "mirar y registrar"
+    ],
+    [
+     "PREGUNTA INVESTIGABLE",
+     "se responde probando"
+    ],
+    [
+     "HIPÓTESIS",
+     "si…, entonces…"
+    ],
+    [
+     "PONER A PRUEBA",
+     "experimento"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
