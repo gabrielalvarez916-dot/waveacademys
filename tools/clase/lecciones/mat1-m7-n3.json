@@ -1,0 +1,216 @@
+{
+ "slug": "mat1-m7-n3",
+ "step_id": "ac33b9eb-8102-45e5-97a3-fc3863fa30be",
+ "materia": "Matemática I",
+ "titulo": "Problemas de coincidencias con MCD y MCM",
+ "sub": "Matemática I · Misión 7 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Tenés 24 lápices y 36 gomas para armar cajitas iguales. ¿Cuántas como máximo?",
+    "¡*12 cajitas*, y no sobra nada!",
+    "Hoy: problemas de la vida real que se resuelven con *MCD y MCM*."
+   ],
+   "grande": "24 · 36",
+   "final": "12 cajitas",
+   "titulo": "PROBLEMAS",
+   "sub": "repartir y coincidir"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Cuatro tipos de problemas, dos herramientas.",
+    "*Repartir* en grupos iguales, la mayor cantidad: *MCD*.",
+    "*Coincidir*: cuándo vuelven a pasar juntas dos cosas: *MCM*.",
+    "*Cortar* en trozos iguales lo más largos posible: *MCD*.",
+    "*Embaldosar* el cuadrado más chico: *MCM*."
+   ],
+   "titulo": "¿MCD O MCM?",
+   "celdas": [
+    {
+     "cab": "REPARTIR → MCD",
+     "txt": "mayor cantidad de grupos iguales"
+    },
+    {
+     "cab": "COINCIDIR → MCM",
+     "txt": "cuándo vuelven a pasar juntas"
+    },
+    {
+     "cab": "CORTAR → MCD",
+     "txt": "trozos iguales lo más largos"
+    },
+    {
+     "cab": "EMBALDOSAR → MCM",
+     "txt": "el menor cuadrado"
+    }
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Volvamos a las cajitas: repartir es *MCD*. MCD de 24 y 36: *12*.",
+    "Se arman *12 cajitas*.",
+    "Cada una con 24 dividido 12: *2 lápices*…",
+    "… y 36 dividido 12: *3 gomas*. ¡No sobra nada!"
+   ],
+   "titulo": "LÁPICES Y GOMAS",
+   "items": [
+    {
+     "txt": "MCD(24, 36) = 12",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "12 cajitas",
+     "emoji": "📦"
+    },
+    {
+     "txt": "2 lápices c/u",
+     "emoji": "✏️"
+    },
+    {
+     "txt": "3 gomas c/u",
+     "emoji": "🧽"
+    }
+   ]
+  },
+  {
+   "t": "porcentaje",
+   "voz": [
+    "Ahora una coincidencia: una luz titila cada 6 segundos y otra cada 8. Titilaron *juntas*.",
+    "¿Cuándo de nuevo? MCM de 6 y 8: ¡a los *24 segundos*!"
+   ],
+   "valor": 24,
+   "txt": "segundos hasta volver a coincidir",
+   "emoji": "💡"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Cortar: tablas de 90 y 120 centímetros en trozos iguales, lo más largos posible. MCD: *30 centímetros*. Salen 3 más 4, *7 trozos*.",
+    "Embaldosar: con baldosas de 12 por 18, el cuadrado más chico mide el MCM: *36 centímetros* de lado."
+   ],
+   "antes": {
+    "cab": "CORTAR · MCD",
+    "emoji": "🪚",
+    "texto": "90 y 120 cm → trozos de 30 cm"
+   },
+   "despues": {
+    "cab": "EMBALDOSAR · MCM",
+    "emoji": "🧱",
+    "texto": "12 × 18 cm → cuadrado de 36 cm"
+   }
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La pista para no equivocarte: *repartir siempre da un número más chico* que los datos. Coincidir, *uno más grande*."
+   ],
+   "texto": "Repartir → más chico (MCD) · Coincidir → más grande (MCM)",
+   "emoji": "🧭"
+  },
+  {
+   "t": "linea",
+   "voz": [
+    "Tres colectivos salen juntos: cada 10, 15 y 20 minutos. El de 10 pasa a los 10, 20, 30…",
+    "El de 15 pasa a los 15, 30, 45…",
+    "El de 20 pasa a los 20, 40, 60…",
+    "¡Los tres juntos a los *60 minutos*: el MCM de 10, 15 y 20!"
+   ],
+   "titulo": "TRES COLECTIVOS",
+   "eventos": [
+    {
+     "fecha": "0'",
+     "txt": "Salen juntos",
+     "emoji": "🚌"
+    },
+    {
+     "fecha": "30'",
+     "txt": "Coinciden 10 y 15",
+     "emoji": "🚏"
+    },
+    {
+     "fecha": "40'",
+     "txt": "Coinciden 10 y 20",
+     "emoji": "🚏"
+    },
+    {
+     "fecha": "60'",
+     "txt": "¡Los tres!",
+     "emoji": "🎉"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío final: tres *faros* se encienden cada 12, 18 y 30 segundos. Se encendieron juntos.",
+    "Es una coincidencia: buscamos el *MCM*.",
+    "12 es 2 al cuadrado por 3; 18 es 2 por 3 al cuadrado; 30 es 2 por 3 por 5.",
+    "MCM: 2 al cuadrado por 3 al cuadrado por 5, da *180*.",
+    "Vuelven a coincidir a los 180 segundos: *¡3 minutos!*"
+   ],
+   "titulo": "LOS FAROS",
+   "items": [
+    {
+     "txt": "Coincidir → MCM",
+     "emoji": "🗼"
+    },
+    "12 = 2² × 3 · 18 = 2 × 3² · 30 = 2 × 3 × 5",
+    "MCM = 2² × 3² × 5 = 180",
+    "180 segundos = 3 minutos"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado con esto.",
+    "Usar el MCM para repartir: si te da *más que los datos*, algo está mal.",
+    "Y responder sin comprobar: fijate que el reparto *no deje resto*."
+   ],
+   "items": [
+    {
+     "mal": "Repartir con el MCM",
+     "bien": "Repartir da menos: MCD"
+    },
+    {
+     "mal": "No comprobar",
+     "bien": "Verificar que no sobre nada"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Repartir* en grupos iguales: MCD.",
+    "*Coincidir*: MCM.",
+    "*Cortar* lo más largo posible: MCD.",
+    "*Embaldosar* el menor cuadrado: MCM.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REPARTIR",
+     "MCD"
+    ],
+    [
+     "COINCIDIR",
+     "MCM"
+    ],
+    [
+     "CORTAR",
+     "MCD"
+    ],
+    [
+     "EMBALDOSAR",
+     "MCM"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

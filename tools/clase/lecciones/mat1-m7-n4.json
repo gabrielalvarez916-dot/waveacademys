@@ -1,0 +1,253 @@
+{
+ "slug": "mat1-m7-n4",
+ "step_id": "31812ba9-a888-4ab9-8250-d59153ab5e09",
+ "materia": "Matemática I",
+ "titulo": "Elegir entre MCD y MCM",
+ "sub": "Matemática I · Misión 7 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Un problema dice *menor*. ¿Usás el mínimo común múltiplo?",
+    "¡No siempre! A veces *menor* esconde un MCD, y al revés.",
+    "Hoy te convertís en *detective*: ¿se reparte o se junta?"
+   ],
+   "emoji": "🕵️",
+   "final": "¿MCD o MCM?",
+   "titulo": "DETECTIVE",
+   "sub": "elegir la herramienta"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "La pregunta clave: ¿la respuesta tiene que *dividir* a los datos, o ser *múltiplo* de ellos?",
+    "Si divide, la respuesta es *más chica*: es MCD. Si es múltiplo, es *más grande*: es MCM.",
+    "Lo que decide es *la situación*, no una palabra suelta."
+   ],
+   "izq": {
+    "cab": "SE REPARTE",
+    "items": [
+     "divide a los datos",
+     "más chica → MCD"
+    ]
+   },
+   "der": {
+    "cab": "SE JUNTA",
+    "items": [
+     "múltiplo de los datos",
+     "más grande → MCM"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Mismos números, dos preguntas: cintas de 8 y 12 centímetros.",
+    "¿El mayor largo de trozos para cortarlas sin que sobre? Divide: MCD, *4 centímetros*.",
+    "¿El menor largo de una cinta que se pueda cortar en trozos de 8 y de 12? Múltiplo: MCM, *24 centímetros*."
+   ],
+   "titulo": "MISMOS NÚMEROS, DOS PREGUNTAS",
+   "columnas": [
+    "Pregunta",
+    "Respuesta",
+    "Se usa"
+   ],
+   "filas": [
+    [
+     "Mayor trozo para cortar 8 y 12 cm",
+     "4 cm",
+     "MCD"
+    ],
+    [
+     "Menor cinta cortable en 8 y 12 cm",
+     "24 cm",
+     "MCM"
+    ]
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "¿Viste? La pregunta con *menor* se resolvió con el MCM.",
+    "Las palabras *ayudan*, pero no deciden. Pensá qué pasa en la situación."
+   ],
+   "numero": 24,
+   "despues": " cm",
+   "texto": "\"Menor\" y aun así es un MCM",
+   "emoji": "😮"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar como detective.",
+    "*MCD*: repartir caramelos en bolsitas iguales, y cortar sogas en trozos iguales.",
+    "*MCM*: cuándo coinciden dos alarmas, y el menor cuadrado con baldosas."
+   ],
+   "cajas": [
+    {
+     "cab": "MCD · SE REPARTE",
+     "emoji": "✂️"
+    },
+    {
+     "cab": "MCM · SE JUNTA",
+     "emoji": "🔗"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Bolsitas de caramelos",
+     "caja": 0
+    },
+    {
+     "txt": "Cortar sogas",
+     "caja": 0
+    },
+    {
+     "txt": "Alarmas que coinciden",
+     "caja": 1
+    },
+    {
+     "txt": "Cuadrado con baldosas",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "dialogo",
+   "voz": [
+    "Un problema con *las dos* cosas: Juan va al club cada 6 días y Sofía cada 8.",
+    "¿Cada cuánto coinciden? MCM de 6 y 8: *cada 24 días*.",
+    "Ese día llevan 18 gaseosas y 24 sándwiches para bandejas iguales: MCD de 18 y 24, *6 bandejas*.",
+    "Cada bandeja: *3 gaseosas y 4 sándwiches*."
+   ],
+   "personas": [
+    {
+     "nombre": "Juan",
+     "emoji": "👦"
+    },
+    {
+     "nombre": "Sofía",
+     "emoji": "👧"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "Voy cada 6 días",
+     "trad": "Sofía cada 8"
+    },
+    {
+     "quien": 1,
+     "txt": "Coincidimos cada 24 días",
+     "trad": "MCM(6, 8)"
+    },
+    {
+     "quien": 0,
+     "txt": "¡Armemos 6 bandejas!",
+     "trad": "MCD(18, 24)"
+    },
+    {
+     "quien": 1,
+     "txt": "3 gaseosas y 4 sándwiches",
+     "trad": "en cada una"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: una florista tiene 36 rosas y 48 tulipanes, y quiere la *mayor cantidad* de ramos iguales. ¿Qué usás?",
+    "¿MCD o MCM?",
+    "¡*MCD*! Se reparte: la respuesta tiene que dividir a 36 y a 48."
+   ],
+   "pregunta": "36 rosas y 48 tulipanes en ramos iguales",
+   "opciones": [
+    "MCD",
+    "MCM"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "36 es 2 al cuadrado por 3 al cuadrado, y 48 es 2 a la cuarta por 3.",
+    "MCD: 2 al cuadrado por 3, da *12 ramos*.",
+    "Cada ramo: 36 dividido 12, *3 rosas*, y 48 dividido 12, *4 tulipanes*.",
+    "Verificamos: 12 por 3 da 36, y 12 por 4 da 48. *¡Perfecto!*"
+   ],
+   "pasos": [
+    "36 = 2² × 3² · 48 = 2⁴ × 3",
+    "MCD = 2² × 3 = 12 ramos",
+    "3 rosas + 4 tulipanes",
+    "12 × 3 = 36 · 12 × 4 = 48 ✓"
+   ],
+   "notas": [
+    "",
+    "",
+    "por ramo",
+    "verificación"
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco final: *verificá siempre*. El MCD tiene que dividir a todos los datos, y el MCM tiene que ser múltiplo de todos."
+   ],
+   "titulo": "VERIFICÁ",
+   "texto": "MCD divide a todos · MCM es múltiplo de todos",
+   "emoji": "✅"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores de detective novato.",
+    "Decidir *solo por una palabra*: menor puede pedir un MCM.",
+    "Y olvidar que hay muchos múltiplos comunes: el MCM es *el menor*."
+   ],
+   "items": [
+    {
+     "mal": "Decidir por la palabra \"menor\"",
+     "bien": "Pensar: ¿se reparte o se junta?"
+    },
+    {
+     "mal": "Cualquier múltiplo común",
+     "bien": "El MCM es el menor"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*MCD*: la respuesta divide a los datos. Repartir, cortar.",
+    "*MCM*: la respuesta es múltiplo. Coincidir, juntar.",
+    "Las *palabras* ayudan, pero no deciden.",
+    "Y siempre, *verificá*.",
+    "¡Misión 7 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MCD",
+     "divide a los datos: repartir, cortar"
+    ],
+    [
+     "MCM",
+     "múltiplo de los datos: coincidir, juntar"
+    ],
+    [
+     "PALABRAS",
+     "ayudan, no deciden"
+    ],
+    [
+     "VERIFICAR",
+     "divide a todos / múltiplo de todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,222 @@
+{
+ "slug": "mat1-m7-n2",
+ "step_id": "7af57ba1-03ac-4866-8f2d-55a88b6de8c1",
+ "materia": "Matemática I",
+ "titulo": "Mínimo común múltiplo",
+ "sub": "Matemática I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Dos amigos corren en una pista: uno da la vuelta en 4 minutos y el otro en 6.",
+    "Salen juntos. ¿Cuándo se vuelven a cruzar en la largada? ¡A los *12 minutos*!",
+    "Hoy: el *MCM*, el primer punto de encuentro de los múltiplos."
+   ],
+   "grande": "4 · 6",
+   "final": "MCM = 12",
+   "titulo": "MCM",
+   "sub": "mínimo común múltiplo"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *mínimo común múltiplo* es el *menor* de los múltiplos que comparten dos números.",
+    "Sin contar el cero, que es múltiplo de todos y no nos dice nada."
+   ],
+   "palabra": "MCM",
+   "texto": "El menor múltiplo común de dos números (sin contar el 0)",
+   "emoji": "🏁"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Mirá la recta: los pasos del 4 y los pasos del 6.",
+    "El 4 pisa 4, 8, 12, 16, 20, 24…",
+    "El 6 pisa 6, 12, 18, 24…",
+    "¡El primer lugar donde *los dos pisan* es el *12*!"
+   ],
+   "min": 0,
+   "max": 24,
+   "paso": 2,
+   "marcas": [
+    {
+     "v": 8,
+     "txt": "solo el 4"
+    },
+    {
+     "v": 18,
+     "txt": "solo el 6"
+    },
+    {
+     "v": 12,
+     "txt": "¡los dos! MCM"
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Ojo, no los confundas: el MCD *achica*, el MCM *agranda*.",
+    "El MCD es más chico o igual que los números; el MCM, *más grande o igual*.",
+    "Por eso la regla del MCM es al revés."
+   ],
+   "a": {
+    "cab": "MCD",
+    "texto": "Divide a los dos · comunes, menor exponente",
+    "emoji": "🔽"
+   },
+   "b": {
+    "cab": "MCM",
+    "texto": "Múltiplo de los dos · todos, mayor exponente",
+    "emoji": "🔼"
+   },
+   "signo": "⇄"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "MCM por descomposición: *todos los factores*, con el *mayor exponente*. Probemos con 12 y 18.",
+    "12 es 2 al cuadrado por 3.",
+    "18 es 2 por 3 al cuadrado.",
+    "Del 2, el mayor: 2 al cuadrado. Del 3, el mayor: 3 al cuadrado. MCM: *36*."
+   ],
+   "titulo": "MCM DE 12 Y 18",
+   "columnas": [
+    "Número",
+    "Descomposición"
+   ],
+   "filas": [
+    [
+     "12",
+     "2² × 3"
+    ],
+    [
+     "18",
+     "2 × 3²"
+    ],
+    [
+     "MCM",
+     "2² × 3² = 36"
+    ]
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Momento magia: multiplicá 12 por 18. Da *216*.",
+    "Ahora multiplicá su MCD por su MCM: 6 por 36… ¡*216*!",
+    "Siempre pasa: *a por b es igual a MCD por MCM*."
+   ],
+   "izq": {
+    "cab": "12 × 18",
+    "items": [
+     "216"
+    ]
+   },
+   "der": {
+    "cab": "MCD × MCM",
+    "items": [
+     "6 × 36 = 216"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Con tres números: *4, 6 y 10*. Juntamos todos los factores: 2 al cuadrado, 3 y 5.",
+    "Multiplicamos: 4 por 3 por 5. ¡MCM *60*!"
+   ],
+   "filas": [
+    "4 = 2²",
+    "6 = 2 × 3",
+    "10 = 2 × 5"
+   ],
+   "op": "→",
+   "resultado": "2² × 3 × 5 = 60"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Pregunta: ¿cuál es el MCM de 6 y 9?",
+    "¿54, 18 o 3?",
+    "¡*18*! 54 es múltiplo común, pero no el menor. Y 3 es el MCD."
+   ],
+   "pregunta": "MCM de 6 y 9",
+   "opciones": [
+    "54",
+    "18",
+    "3"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: MCM de *24 y 90*.",
+    "24 es 2 al cubo por 3, y 90 es 2 por 3 al cuadrado por 5.",
+    "Todos con el mayor exponente: 2 al cubo, 3 al cuadrado y 5.",
+    "8 por 9 por 5: MCM *360*.",
+    "Comprobamos: el MCD es 6, y 6 por 360 da 2.160, igual que 24 por 90. *¡Cierra!*"
+   ],
+   "titulo": "MCM DE 24 Y 90",
+   "items": [
+    "24 = 2³ × 3 · 90 = 2 × 3² × 5",
+    "Todos, mayor exponente: 2³, 3², 5",
+    "MCM = 8 × 9 × 5 = 360",
+    "6 × 360 = 2.160 = 24 × 90 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Tomar el menor exponente: en el MCM va *el mayor*.",
+    "Y multiplicar los números sin pensar: 6 por 9 da 54, pero el MCM es *18*."
+   ],
+   "items": [
+    {
+     "mal": "Menor exponente",
+     "bien": "En el MCM va el mayor"
+    },
+    {
+     "mal": "MCM de 6 y 9 = 54",
+     "bien": "Es 18: 54 no es el menor"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*MCM*: el menor múltiplo común.",
+    "Regla: *todos* los factores con el *mayor* exponente.",
+    "12 y 18 dan *36*.",
+    "Y siempre: *a por b es MCD por MCM*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MCM",
+     "4 y 6 → 12"
+    ],
+    [
+     "REGLA",
+     "todos · mayor exponente"
+    ],
+    [
+     "EJEMPLO",
+     "12 y 18 → 2² × 3² = 36"
+    ],
+    [
+     "RELACIÓN",
+     "a × b = MCD × MCM"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

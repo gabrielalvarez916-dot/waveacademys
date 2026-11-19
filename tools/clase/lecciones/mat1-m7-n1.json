@@ -1,0 +1,228 @@
+{
+ "slug": "mat1-m7-n1",
+ "step_id": "b4245b1f-b8fb-430f-89e8-c347117a95d8",
+ "materia": "Matemática I",
+ "titulo": "Máximo común divisor",
+ "sub": "Matemática I · Misión 7 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "12 y 18 tienen *amigos en común*. ¿Cuál es el más grande?",
+    "¡El *6*! Es el máximo común divisor.",
+    "Hoy: el *MCD*, el divisor más grande que comparten dos números."
+   ],
+   "grande": "12 · 18",
+   "final": "MCD = 6",
+   "titulo": "MCD",
+   "sub": "máximo común divisor"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *máximo común divisor* es el *mayor* de los divisores que comparten dos números.",
+    "Se escribe *MCD*: máximo, común, divisor. Las tres palabras dicen lo que es."
+   ],
+   "palabra": "MCD",
+   "texto": "El mayor de los divisores comunes de dos números",
+   "emoji": "🤝"
+  },
+  {
+   "t": "venn",
+   "voz": [
+    "Busquemos los amigos de cada uno.",
+    "Divisores de 12: 1, 2, 3, 4, 6 y 12.",
+    "Divisores de 18: 1, 2, 3, 6, 9 y 18.",
+    "En común: 1, 2, 3 y 6. El más grande, *el 6*, es el MCD."
+   ],
+   "a": "DIVISORES DE 12",
+   "b": "DIVISORES DE 18",
+   "itemsA": [
+    "4",
+    "12"
+   ],
+   "itemsB": [
+    "9",
+    "18"
+   ],
+   "ambos": [
+    "1, 2",
+    "3, 6"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Listar divisores funciona con números chicos… pero con números grandes *es eterno*.",
+    "El atajo: usar la *descomposición en primos* de la misión anterior."
+   ],
+   "antes": {
+    "cab": "LISTAR",
+    "emoji": "🐌",
+    "texto": "Escribir todos los divisores"
+   },
+   "despues": {
+    "cab": "DESCOMPONER",
+    "emoji": "⚡",
+    "texto": "Usar los factores primos"
+   }
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "La regla de oro del MCD: *solo los factores comunes*, cada uno con su *menor exponente*."
+   ],
+   "titulo": "REGLA DEL MCD",
+   "texto": "Factores comunes · con el menor exponente",
+   "emoji": "🔑"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Probemos con *72 y 60*.",
+    "72 es 2 al cubo por 3 al cuadrado.",
+    "60 es 2 al cuadrado por 3 por 5.",
+    "El 5 no es común: afuera. Del 2, el menor: 2 al cuadrado. Del 3, el menor: 3. MCD: *12*."
+   ],
+   "titulo": "MCD DE 72 Y 60",
+   "columnas": [
+    "Número",
+    "Descomposición"
+   ],
+   "filas": [
+    [
+     "72",
+     "2³ × 3²"
+    ],
+    [
+     "60",
+     "2² × 3 × 5"
+    ],
+    [
+     "MCD",
+     "2² × 3 = 12"
+    ]
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "¿Por qué el *menor* exponente? Porque el MCD tiene que *entrar en los dos*: no puede pedir más de lo que cada uno tiene."
+   ],
+   "texto": "El MCD tiene que entrar en los dos números",
+   "emoji": "🧩"
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Momento sorpresa: 8 y 15 no tienen *ningún* primo en común.",
+    "Su MCD es *1*. Se llaman *coprimos*… ¡y ninguno de los dos es primo!"
+   ],
+   "numero": 1,
+   "antes": "MCD = ",
+   "texto": "8 = 2³ y 15 = 3 × 5 son coprimos: no comparten ningún factor primo",
+   "emoji": "🙅"
+  },
+  {
+   "t": "ciclo",
+   "voz": [
+    "Con tres números es igual: el factor tiene que estar *en los tres*.",
+    "24 es 2 al cubo por 3.",
+    "36 es 2 al cuadrado por 3 al cuadrado.",
+    "60 es 2 al cuadrado por 3 por 5.",
+    "Comunes a los tres: el 2 y el 3, con el menor exponente. MCD: *12*."
+   ],
+   "titulo": "MCD DE 24, 36 Y 60",
+   "items": [
+    {
+     "txt": "24 = 2³ × 3",
+     "emoji": "🔵"
+    },
+    {
+     "txt": "36 = 2² × 3²",
+     "emoji": "🟢"
+    },
+    {
+     "txt": "60 = 2² × 3 × 5",
+     "emoji": "🟡"
+    },
+    {
+     "txt": "MCD = 2² × 3 = 12",
+     "emoji": "🏆"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: MCD de *84 y 126*. 84 es 2 al cuadrado por 3 por 7.",
+    "126 es 2 por 3 al cuadrado por 7.",
+    "Comunes con el menor exponente: 2, 3 y 7. ¡MCD *42*!",
+    "Comprobamos: 84 dividido 42 da 2, y 126 dividido 42 da 3. *Exacto*."
+   ],
+   "pasos": [
+    "84 = 2² × 3 × 7",
+    "126 = 2 × 3² × 7",
+    "MCD = 2 × 3 × 7 = 42",
+    "84 ÷ 42 = 2 · 126 ÷ 42 = 3 ✓"
+   ],
+   "notas": [
+    "",
+    "",
+    "comunes, menor exponente",
+    "comprobación"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Las dos *trampas* del MCD.",
+    "Meter *todos* los factores: en el MCD van *solo los comunes*.",
+    "Y tomar el exponente mayor: en el MCD va *el menor*."
+   ],
+   "items": [
+    {
+     "mal": "Usar todos los factores",
+     "bien": "Solo los comunes"
+    },
+    {
+     "mal": "Tomar el mayor exponente",
+     "bien": "Tomar el menor"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*MCD*: el mayor divisor común.",
+    "Regla: factores *comunes* con el *menor* exponente.",
+    "72 y 60 dan *12*.",
+    "Y si el MCD es 1, son *coprimos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MCD",
+     "12 y 18 → 6"
+    ],
+    [
+     "REGLA",
+     "comunes · menor exponente"
+    ],
+    [
+     "EJEMPLO",
+     "72 y 60 → 2² × 3 = 12"
+    ],
+    [
+     "COPRIMOS",
+     "MCD = 1 · 8 y 15"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
