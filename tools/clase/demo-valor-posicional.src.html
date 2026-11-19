@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wave · ¿Cómo puede un 2 valer 200?</title>
+<style>
+html,body{margin:0;height:100%;background:#061416;overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,Roboto,Arial,sans-serif}
+#marco{position:relative;width:min(100vw,177.78vh);aspect-ratio:16/9}
+svg{width:100%;height:100%;display:block}
+text{font-family:inherit;font-weight:900}
+#ui{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,20,22,.75);z-index:3}
+#ui button{appearance:none;border:0;border-radius:20px;font:inherit;font-weight:900;font-size:1.3rem;padding:18px 30px;color:#06282a;background:linear-gradient(180deg,#9be8da,#7FD3C4);box-shadow:0 6px 0 #3e9488;cursor:pointer}
+#pp{position:absolute;right:12px;bottom:12px;z-index:2;appearance:none;border:0;border-radius:50%;width:44px;height:44px;background:rgba(255,255,255,.12);color:#fff;font-size:1rem;cursor:pointer}
+</style></head><body>
+<div id="marco">
+<svg id="s" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="fondo" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#1c5f60"/><stop offset=".55" stop-color="#0d2b2d"/><stop offset="1" stop-color="#061416"/></radialGradient>
+  <radialGradient id="gAlf" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#8a5634"/><stop offset=".7" stop-color="#5a3219"/><stop offset="1" stop-color="#3b1f0e"/></radialGradient>
+  <linearGradient id="gPack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a85"/><stop offset="1" stop-color="#e2553f"/></linearGradient>
+  <linearGradient id="gCaja" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a35b"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+  <linearGradient id="gSlot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f4c50"/><stop offset="1" stop-color="#12302f"/></linearGradient>
+  <linearGradient id="gPiso" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FD3C4" stop-opacity="0"/><stop offset="1" stop-color="#7FD3C4" stop-opacity=".35"/></linearGradient>
+  <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="sombra" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".45"/></filter>
+  <g id="alf"><circle r="46" fill="#f3e3c3"/><circle r="40" fill="url(#gAlf)"/><ellipse cx="-12" cy="-16" rx="14" ry="7" fill="#fff" opacity=".18"/><circle cx="10" cy="8" r="3" fill="#2b1406" opacity=".5"/><circle cx="-6" cy="14" r="2.5" fill="#2b1406" opacity=".5"/></g>
+  <g id="pack"><rect x="-86" y="-40" width="172" height="80" rx="16" fill="url(#gPack)" stroke="#ffd0c4" stroke-width="4"/><rect x="-10" y="-40" width="20" height="80" fill="#F4B63F"/><text y="14" text-anchor="middle" font-size="40" fill="#fff">10</text></g>
+ </defs>
+
+ <rect width="1920" height="1080" fill="url(#fondo)"/>
+ <g id="piso" opacity=".6"></g>
+ <g id="particulas"></g>
+
+ <g id="lienzo" transform="translate(447 -359) scale(0.95)"><g id="cam">
+  <!-- 1. el 2 que vale 200 -->
+  <text id="dos" x="540" y="1180" text-anchor="middle" font-size="560" fill="#eaf7f4" filter="url(#brillo)" opacity="0">2</text>
+
+  <!-- 2. la fábrica -->
+  <g id="fabrica" opacity="0">
+   <rect x="90" y="1010" width="900" height="300" rx="34" fill="#12302f" stroke="#2c5a5e" stroke-width="6"/>
+   <rect x="160" y="1060" width="150" height="110" rx="18" fill="#F4B63F" opacity=".85"/><rect x="465" y="1060" width="150" height="110" rx="18" fill="#F4B63F" opacity=".85"/><rect x="770" y="1060" width="150" height="110" rx="18" fill="#F4B63F" opacity=".85"/>
+   <rect x="180" y="880" width="80" height="140" fill="#1e474b"/><rect x="820" y="840" width="80" height="180" fill="#1e474b"/>
+   <g id="humo"><circle cx="220" cy="850" r="34" fill="#9dbdb9" opacity=".35"/><circle cx="860" cy="805" r="40" fill="#9dbdb9" opacity=".35"/></g>
+   <rect x="300" y="930" width="480" height="64" rx="32" fill="#7FD3C4"/><text x="540" y="975" text-anchor="middle" font-size="36" fill="#06282a" letter-spacing="4">FÁBRICA WAVE</text>
+   <rect x="-420" y="1380" width="1920" height="64" rx="32" fill="#0b1c1d" stroke="#2c5a5e" stroke-width="5"/>
+   <line id="cinta" x1="-380" y1="1412" x2="1460" y2="1412" stroke="#2c5a5e" stroke-width="10" stroke-dasharray="40 30"/>
+   <circle cx="-392" cy="1412" r="26" fill="#2c5a5e"/><circle cx="1472" cy="1412" r="26" fill="#2c5a5e"/>
+   <g id="enCinta"></g>
+  </g>
+
+  <!-- 3. unidad / decena / centena -->
+  <g id="heroe" opacity="0"><use href="#alf"/></g>
+  <g id="diez"></g>
+  <g id="paqGrande" opacity="0" filter="url(#sombra)">
+   <rect x="230" y="880" width="620" height="260" rx="40" fill="url(#gPack)" stroke="#ffd0c4" stroke-width="8"/>
+   <rect x="510" y="880" width="60" height="260" fill="#F4B63F"/>
+   <text x="380" y="1050" text-anchor="middle" font-size="130" fill="#fff">10</text>
+   <text x="720" y="1035" text-anchor="middle" font-size="44" fill="#fff" opacity=".9">alfajores</text>
+  </g>
+  <g id="paquetes"></g>
+  <g id="caja" opacity="0" filter="url(#sombra)">
+   <rect x="60" y="850" width="960" height="330" rx="36" fill="url(#gCaja)" stroke="#f3d29a" stroke-width="8"/>
+   <path d="M60 930 H1020" stroke="#7a4f1c" stroke-width="10" opacity=".5"/>
+   <text x="540" y="1110" text-anchor="middle" font-size="170" fill="#fff8ea">100</text>
+  </g>
+  <g id="badge" opacity="0"><rect id="badgeR" x="340" y="1260" width="400" height="96" rx="48" fill="#F4B63F" filter="url(#sombra)"/><text id="badgeT" x="540" y="1324" text-anchor="middle" font-size="50" fill="#3a2a00" letter-spacing="3">UNIDAD</text></g>
+
+  <!-- 4. el estante de lugares -->
+  <g id="estante" opacity="0">
+   <text id="numGrande" x="540" y="760" text-anchor="middle" font-size="150" fill="#eaf7f4">4.205</text>
+   <g id="slots"></g>
+  </g>
+  <text id="n425" x="540" y="1180" text-anchor="middle" font-size="300" fill="#ff7a66" opacity="0" filter="url(#brillo)">425</text>
+  <g id="sello" opacity="0"><rect x="190" y="1300" width="700" height="140" rx="22" fill="none" stroke="#ff7a66" stroke-width="12"/><text x="540" y="1395" text-anchor="middle" font-size="76" fill="#ff7a66" letter-spacing="4">¡OTRO NÚMERO!</text></g>
+
+  <!-- 5. cierre -->
+  <g id="cierre" opacity="0">
+   <g id="c1"><rect x="110" y="800" width="860" height="200" rx="40" fill="#17383b" stroke="#7FD3C4" stroke-width="6"/><text x="540" y="880" text-anchor="middle" font-size="44" fill="#7FD3C4" letter-spacing="6">CIFRA</text><text x="540" y="955" text-anchor="middle" font-size="58" fill="#eaf7f4">lo que ves</text></g>
+   <g id="c2"><rect x="110" y="1060" width="860" height="200" rx="40" fill="#3b3418" stroke="#F4B63F" stroke-width="6"/><text x="540" y="1140" text-anchor="middle" font-size="44" fill="#F4B63F" letter-spacing="6">VALOR</text><text x="540" y="1215" text-anchor="middle" font-size="58" fill="#eaf7f4">dónde está</text></g>
+  </g>
+ </g></g>
+
+ <rect id="flash" width="1920" height="1080" fill="#ff7a66" opacity="0"/>
+ <g id="subs" font-size="78" text-anchor="middle"></g>
+</svg>
+<div id="ui"><button id="go">▶ Ver escena</button></div>
+<button id="pp" aria-label="Pausa">❚❚</button>
+</div>
+<audio id="voz" preload="auto" src="/*AUDIO*/"></audio>
+<script>/*GSAP*/</script>
+<script>window.VOZ=/*VOZ*/;</script>
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg', $ = function (id) { return document.getElementById(id); };
+  function el(tag, at, padre) { var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); (padre || $('cam')).appendChild(e); return e; }
+  function usar(id, x, y, padre) { var g = el('g', { transform: 'translate(' + x + ' ' + y + ')' }, padre); el('use', { href: '#' + id }, g); return g; }
+
+  // ---------- ambiente: piso en perspectiva y partículas ----------
+  for (var i = 0; i < 9; i++) { var y = 830 + i * i * 3.2; el('line', { x1: 0, y1: y, x2: 1920, y2: y, stroke: '#7FD3C4', 'stroke-opacity': .08 + i * .015, 'stroke-width': 2 }, $('piso')); }
+  for (i = -10; i <= 10; i++) el('line', { x1: 960 + i * 70, y1: 830, x2: 960 + i * 420, y2: 1080, stroke: '#7FD3C4', 'stroke-opacity': .12, 'stroke-width': 2 }, $('piso'));
+  for (i = 0; i < 34; i++) {
+    var p = el('circle', { cx: Math.random() * 1920, cy: Math.random() * 1080, r: 2 + Math.random() * 4, fill: i % 4 ? '#7FD3C4' : '#F4B63F', opacity: .15 + Math.random() * .35 }, $('particulas'));
+    gsap.to(p, { attr: { cy: '-=' + (200 + Math.random() * 300) }, opacity: 0, duration: 6 + Math.random() * 6, repeat: -1, delay: -Math.random() * 10, ease: 'none' });
+  }
+
+  // ---------- piezas ----------
+  var enCinta = []; for (i = 0; i < 9; i++) enCinta.push(usar('alf', -80, 1340, $('enCinta')));
+  var diez = [], grilla = []; for (i = 0; i < 10; i++) { var c = i % 5, r = Math.floor(i / 5); grilla.push([540 + (c - 2) * 112, 950 + r * 112]); diez.push(usar('alf', 0, 0, $('diez'))); }
+  var paq = [], lugPaq = []; for (i = 0; i < 10; i++) { c = i % 5; r = Math.floor(i / 5); lugPaq.push([540 + (c - 2) * 186, 960 + r * 104]); paq.push(usar('pack', 0, 0, $('paquetes'))); }
+  var CAB = ['UNIDAD DE MIL', 'CENTENA', 'DECENA', 'UNIDAD'], DIG = ['4', '2', '0', '5'], VAL = ['4.000', '200', '0', '5'], slot = [], dig = [], val = [];
+  CAB.forEach(function (t, k) {
+    var x = 75 + k * 240, g = el('g', {}, $('slots'));
+    el('text', { x: x + 105, y: 890, 'text-anchor': 'middle', 'font-size': 26, fill: '#7FD3C4', 'letter-spacing': 2 }, g).textContent = t;
+    slot.push(el('rect', { x: x, y: 920, width: 210, height: 300, rx: 30, fill: 'url(#gSlot)', stroke: '#2c5a5e', 'stroke-width': 6 }, g));
+    dig.push(el('text', { x: x + 105, y: 1150, 'text-anchor': 'middle', 'font-size': 230, fill: '#eaf7f4', opacity: 0 }, g)); dig[k].textContent = DIG[k];
+    val.push(el('text', { x: x + 105, y: 1310, 'text-anchor': 'middle', 'font-size': 56, fill: '#F4B63F', opacity: 0 }, g)); val[k].textContent = VAL[k];
+  });
+
+  // ---------- guion: [inicio, fin, texto, palabras clave] (cuando pongas tu voz, solo se ajustan estos tiempos) ----------
+  var G = [
+    [0.3, 4.8, '¿Cómo puede ser que un 2 valga 200?', ['200?']],
+    [5.4, 10.4, 'La respuesta está en una fábrica… de alfajores.', ['alfajores.']],
+    [11.0, 16.2, 'Cada alfajor suelto es una unidad.', ['unidad.']],
+    [17.0, 23.4, 'Pero cuando juntás diez, se empaquetan: eso es una decena.', ['diez,', 'decena.']],
+    [24.0, 30.0, 'Y diez paquetes llenan una caja: una centena.', ['caja:', 'centena.']],
+    [31.0, 37.2, 'Ahora mirá el número cuatro mil doscientos cinco.', ['cuatro', 'mil', 'doscientos', 'cinco.']],
+    [38.0, 44.4, 'El 2 cae en las centenas. Ya no es un 2: vale 200.', ['centenas.', '200.']],
+    [45.0, 47.4, '¿Y el cero? Parece que no hace nada…', ['cero?']],
+    [47.6, 51.6, 'Sacalo. ¡Y el número se rompe!', ['Sacalo.', 'rompe!']],
+    [52.2, 57.4, 'El cero cuida el lugar vacío.', ['cuida', 'lugar']],
+    [58.0, 63.5, 'La cifra es lo que ves. El valor, es dónde está.', ['cifra', 'valor,']]
+  ];
+  var V = window.VOZ; // tiempos de la voz (los arma el script de voz)
+  if (V) G.forEach(function (g, i) { var W = (i + 1 < G.length ? G[i + 1][0] : V.fin) - g[0]; g[1] = g[0] + V.dur[i] * W / V.aw[i]; });
+  function tAnim(ta) { // tiempo del audio -> tiempo de la animación (cada frase se estira o se comprime a la voz)
+    var i = 0; while (i + 1 < V.a0.length && ta >= V.a0[i + 1]) i++;
+    if (ta < V.a0[0]) return ta;
+    var W = (i + 1 < V.t0.length ? V.t0[i + 1] : V.fin) - V.t0[i];
+    return V.t0[i] + Math.min(V.aw[i], ta - V.a0[i]) * W / V.aw[i];
+  }
+  var trozos = []; // de a 3 palabras, como en los videos de referencia
+  G.forEach(function (g) {
+    var w = g[2].split(' '), dt = (g[1] - g[0]) / w.length;
+    for (var a = 0; a < w.length; a += 3) trozos.push({ t0: g[0] + a * dt, t1: g[0] + Math.min(w.length, a + 3) * dt + (a + 3 >= w.length ? .5 : 0), w: w.slice(a, a + 3), dt: dt, clave: g[3] });
+  });
+  var subs = $('subs'), actual = null;
+  function pintarSubs(t) {
+    var tr = trozos.filter(function (x) { return t >= x.t0 && t < x.t1; })[0];
+    if (tr !== actual) {
+      actual = tr; subs.innerHTML = '';
+      if (tr) { var tx = el('text', { x: 960, y: 160 }, subs); tr.w.forEach(function (w, k) { var sp = el('tspan', { fill: tr.clave.indexOf(w) >= 0 ? '#F4B63F' : '#ffffff', opacity: 0 }, tx); sp.textContent = (k ? ' ' : '') + w; }); gsap.fromTo(tx, { scale: .9, transformOrigin: '960px 140px' }, { scale: 1, duration: .25, ease: 'back.out(3)' }); }
+    }
+    if (tr) [].forEach.call(subs.querySelectorAll('tspan'), function (sp, k) { sp.setAttribute('opacity', t >= tr.t0 + k * tr.dt ? 1 : .0); });
+  }
+
+  // ---------- la animación ----------
+  var tl = gsap.timeline({ paused: true, onUpdate: function () { pintarSubs(tl.time()); } });
+  var cam = $('cam'), O = { transformOrigin: '50% 50%' };
+  tl.set(cam, { transformOrigin: '540px 1000px' }).set(['#heroe', '#badge'].concat(diez, paq), { transformOrigin: '50% 50%' });
+  // 1 · el 2
+  tl.fromTo('#dos', { opacity: 0, scale: 0, rotation: -25, transformOrigin: '540px 980px' }, { opacity: 1, scale: 1, rotation: 0, duration: 1.1, ease: 'elastic.out(1,.5)' }, 0.3)
+    .to('#dos', { x: -14, duration: .06, repeat: 7, yoyo: true }, 2.2)
+    .add(function () {}, 2.6)
+    .to({ v: 2 }, { v: 200, duration: 1.3, ease: 'power2.in', onUpdate: function () { $('dos').textContent = Math.round(this.targets()[0].v); }, onReverseComplete: function () { $('dos').textContent = '2'; } }, 2.7)
+    .to('#dos', { fill: '#F4B63F', scale: .62, duration: .5, ease: 'back.out(3)' }, 3.6)
+    .to(cam, { scale: 1.06, duration: 4.5, ease: 'sine.inOut' }, 0)
+    .to('#dos', { opacity: 0, scale: 1.6, duration: .5, ease: 'power2.in' }, 4.9)
+  // 2 · la fábrica
+    .set(cam, { scale: 1 }, 5.4)
+    .fromTo('#fabrica', { opacity: 0, y: 700 }, { opacity: 1, y: 0, duration: 1, ease: 'back.out(1.4)' }, 5.4)
+    .fromTo('#cinta', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -700 }, duration: 10, ease: 'none' }, 5.4)
+    .to('#humo circle', { attr: { cy: '-=80' }, opacity: 0, scale: 1.8, transformOrigin: '50% 50%', duration: 2.4, repeat: 3, stagger: .6 }, 5.6);
+  enCinta.forEach(function (a, k) { tl.fromTo(a, { x: -470, rotation: 0, transformOrigin: '50% 50%' }, { x: 1550, rotation: 720, duration: 5.4, ease: 'none' }, 5.8 + k * .6); });
+  // 3 · unidad
+  tl.to('#fabrica', { opacity: .18, scale: .9, transformOrigin: '540px 1300px', duration: .6 }, 11)
+    .fromTo('#heroe', { opacity: 0, x: 540, y: 1340, scale: .5, transformOrigin: '50% 50%' }, { opacity: 1, x: 540, y: 1000, scale: 3.2, duration: 1, ease: 'back.out(2)' }, 11.1)
+    .to('#heroe', { rotation: 15, duration: .5, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 12.2)
+    .fromTo('#badge', { opacity: 0, scale: 0, transformOrigin: '540px 1308px' }, { opacity: 1, scale: 1, duration: .6, ease: 'back.out(3)' }, 14.4)
+    .to(['#heroe', '#badge'], { opacity: 0, scale: 0, duration: .4 }, 16.6)
+  // 3b · decena
+  diez.forEach(function (a, k) { tl.fromTo(a, { x: 540 + (k - 5) * 120, y: 1340, opacity: 0, scale: .4 }, { x: grilla[k][0], y: grilla[k][1], opacity: 1, scale: 1, duration: .7, ease: 'back.out(2)' }, 17.2 + k * .2); });
+  tl.fromTo('#paqGrande', { opacity: 0, scaleY: 0, transformOrigin: '540px 1140px' }, { opacity: 1, scaleY: 1, duration: .6, ease: 'back.out(2)' }, 20.4)
+    .to('#diez', { opacity: 0, duration: .3 }, 20.8)
+    .call(function () { $('badgeT').textContent = 'DECENA'; }, null, 21.4)
+    .fromTo('#badge', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .6, ease: 'back.out(3)' }, 21.4)
+    .to('#paqGrande', { scale: 1.06, duration: .25, yoyo: true, repeat: 1 }, 21.6)
+    .to(['#paqGrande', '#badge'], { opacity: 0, scale: .25, duration: .5, ease: 'power2.in' }, 23.6);
+  // 3c · centena
+  paq.forEach(function (a, k) { tl.fromTo(a, { x: k % 2 ? 1300 : -220, y: 700 + k * 60, opacity: 1, rotation: k % 2 ? 40 : -40 }, { x: lugPaq[k][0], y: lugPaq[k][1], rotation: 0, duration: .7, ease: 'power3.out' }, 24.1 + k * .22); });
+  tl.fromTo('#caja', { opacity: 0, y: -900 }, { opacity: 1, y: 0, duration: .7, ease: 'bounce.out' }, 27)
+    .to('#paquetes', { opacity: 0, duration: .2 }, 27.6)
+    .call(function () { $('badgeT').textContent = 'CENTENA'; }, null, 28)
+    .fromTo('#badge', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .6, ease: 'back.out(3)' }, 28)
+    .to(cam, { scale: 1.05, duration: 2, ease: 'sine.inOut' }, 28)
+    .to(['#caja', '#badge', '#fabrica'], { opacity: 0, y: 600, duration: .6, ease: 'power2.in' }, 30.3)
+    .set(cam, { scale: 1 }, 30.9)
+  // 4 · estante 4.205
+    .fromTo('#estante', { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }, 31)
+    .fromTo('#numGrande', { opacity: 0, scale: .4, transformOrigin: '540px 720px' }, { opacity: 1, scale: 1, duration: .6, ease: 'back.out(2.5)' }, 31.3);
+  dig.forEach(function (d, k) { tl.fromTo(d, { opacity: 0, y: -900 }, { opacity: 1, y: 0, duration: .8, ease: 'bounce.out' }, 32.2 + k * .55).to(slot[k], { attr: { stroke: '#7FD3C4' }, duration: .15, yoyo: true, repeat: 1 }, 32.9 + k * .55); });
+  tl.to(slot[1], { attr: { stroke: '#F4B63F', 'stroke-width': 12 }, duration: .4 }, 39)
+    .to(dig[1], { fill: '#F4B63F', scale: 1.15, transformOrigin: '50% 50%', duration: .5, ease: 'back.out(3)' }, 39)
+    .to([slot[0], slot[2], slot[3], dig[0], dig[2], dig[3]], { opacity: .3, duration: .4 }, 39)
+    .fromTo(val[1], { opacity: 0, y: -120, scale: .3, transformOrigin: '50% 50%' }, { opacity: 1, y: 0, scale: 1.3, duration: .7, ease: 'back.out(3)' }, 41.8)
+    .to(cam, { scale: 1.12, duration: 2, ease: 'sine.inOut' }, 41.6)
+    .to(cam, { scale: 1, duration: .6 }, 44.4)
+    .to([slot[0], slot[2], slot[3], dig[0], dig[2], dig[3]], { opacity: 1, duration: .3 }, 44.6)
+    .to(val, { opacity: 1, scale: 1, duration: .4, stagger: .1 }, 44.6)
+  // 4b · el cero
+    .to(slot[2], { attr: { stroke: '#ff7a66', 'stroke-width': 12 }, duration: .3 }, 45.4)
+    .to(dig[2], { rotation: 10, transformOrigin: '50% 50%', duration: .12, yoyo: true, repeat: 9, ease: 'sine.inOut' }, 45.6)
+    .to(dig[2], { y: -1200, rotation: 540, opacity: 0, duration: .8, ease: 'power3.in' }, 47.7)
+    .to('#estante', { opacity: 0, duration: .25 }, 48.5)
+    .fromTo('#n425', { opacity: 0, scale: 2.2, transformOrigin: '540px 1080px' }, { opacity: 1, scale: 1, duration: .35, ease: 'power4.in' }, 48.6)
+    .fromTo('#flash', { opacity: .55 }, { opacity: 0, duration: .5 }, 48.95)
+    .to(cam, { x: 24, duration: .05, repeat: 9, yoyo: true }, 48.95)
+    .fromTo('#sello', { opacity: 0, scale: 3, rotation: -12, transformOrigin: '540px 1370px' }, { opacity: 1, scale: 1, rotation: -6, duration: .35, ease: 'power4.in' }, 49.6)
+    .to(cam, { x: 0, duration: .05 }, 50.1)
+    .to(['#n425', '#sello'], { opacity: 0, scale: .6, duration: .4 }, 51.9)
+  // 4c · el cero vuelve
+    .to('#estante', { opacity: 1, duration: .3 }, 52.2)
+    .to(dig[2], { y: 0, rotation: 0, opacity: 1, duration: .8, ease: 'bounce.out' }, 52.4)
+    .to(slot[2], { attr: { stroke: '#7FD3C4', 'stroke-width': 12 }, duration: .3 }, 53.2)
+    .to(slot[2], { attr: { stroke: '#2c5a5e', 'stroke-width': 6 }, duration: .4 }, 57)
+    .fromTo(slot[2], { scale: 1, transformOrigin: '50% 50%' }, { scale: 1.08, duration: .4, yoyo: true, repeat: 3, ease: 'sine.inOut' }, 53.3)
+    .to('#estante', { opacity: 0, y: -200, duration: .5, ease: 'power2.in' }, 57.5)
+  // 5 · cierre
+    .set('#cierre', { opacity: 1 }, 58)
+    .fromTo('#c1', { opacity: 0, x: -900 }, { opacity: 1, x: 0, duration: .6, ease: 'back.out(1.6)' }, 58.1)
+    .fromTo('#c2', { opacity: 0, x: 900 }, { opacity: 1, x: 0, duration: .6, ease: 'back.out(1.6)' }, 60.6)
+    .to(cam, { scale: 1.04, duration: 3, ease: 'sine.inOut' }, 60.6)
+    .to({}, { duration: 1 }, 63.5);
+
+  window.ESCENA = tl; // para grabarla a MP4 cuadro por cuadro
+  var voz = $('voz');
+  function loop() { if (!voz.paused && !voz.ended) { tl.time(tAnim(voz.currentTime)); requestAnimationFrame(loop); } else if (voz.ended) tl.play(); }
+  $('go').onclick = function () { $('ui').remove(); if (V && voz) { voz.currentTime = 0; voz.play().then(loop, function () { tl.play(0); }); } else tl.play(0); };
+  $('pp').onclick = function () {
+    if (V && voz && !voz.ended) { if (voz.paused) { voz.play(); loop(); } else voz.pause(); $('pp').textContent = voz.paused ? '▶' : '❚❚'; }
+    else { tl.paused(!tl.paused()); $('pp').textContent = tl.paused() ? '▶' : '❚❚'; }
+  };
+})();
+</script>
+</body></html>
