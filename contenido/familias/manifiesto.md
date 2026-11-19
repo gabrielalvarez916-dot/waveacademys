@@ -48,7 +48,23 @@ Misiones, niveles, puntos, desafíos. No para distraer del estudio, sino para qu
 
 ## Lo aprendido tiene que servir para algo
 
-Saber no es acumular: es poder hacer algo con lo que se sabe. Por eso, cada tantas misiones, llega un proyecto. Un problema real donde todo lo aprendido se junta, se discute y se pone a trabajar.
+Saber no es acumular: es poder hacer algo con lo que se sabe. Por eso nuestras materias terminan en un proyecto real: una acción ambiental en el barrio, un plan financiero personal, un sistema automático que resuelve un problema, una muestra de arte colectiva. Es el aprendizaje basado en proyectos, que la investigación asocia con más compromiso y mejores resultados que estudiar solo para la prueba.
+
+## Lo que la escuela no suele enseñar
+
+Hay cosas que todos vamos a necesitar y que casi nadie nos enseñó. Cómo armar un presupuesto, para qué sirve ahorrar, qué preguntar antes de firmar un crédito. Cómo convertir una idea en un emprendimiento. Cómo cuidar el cuerpo, las emociones y los vínculos. Cómo vivir solo, cocinar, hacer un trámite o leer las condiciones de un trabajo. Cómo cuidar el lugar donde vivimos.
+
+En Wave eso no es una charla de un día: son materias con el mismo peso que Matemática o Lengua. En Bienestar, los chicos recorren el ambiente de su propia zona, el dinero y el emprendimiento, la salud integral y la convivencia, la autonomía para la vida adulta y la educación sexual integral. Economía les muestra cómo funciona el mundo en el que van a trabajar y consumir. Tecnología los pone a programar y a construir robots y sistemas conectados. Arte y Comunicación les enseña a mirar y a expresarse.
+
+No es una moda. Un metaanálisis de más de 200 programas escolares de aprendizaje socioemocional (Durlak y colegas, 2011) encontró que, además de mejorar la convivencia y el bienestar, mejoraban el rendimiento académico. Una revisión de 76 estudios experimentales sobre educación financiera (Kaiser, Lusardi, Menkhoff y Urban, 2022) mostró que mejora tanto lo que las personas saben como lo que después hacen con su dinero. La Organización Mundial de la Salud pide desde los años noventa que la escuela enseñe habilidades para la vida, y la Unión Europea considera el espíritu emprendedor una competencia clave. En la Argentina, la Educación Sexual Integral y la Educación Ambiental Integral son ley; para nosotros, son parte del corazón del programa.
+
+Y el ambiente lo empezamos por lo cercano: el arroyo, el compost, la biodiversidad de la propia zona. Es el aprendizaje basado en el lugar, que parte de una idea simple: se cuida lo que se conoce.
+
+## Aprender con las manos
+
+También creemos que la inteligencia está en las manos. Por eso Wave ofrece oficios: carpintería, cocina y pastelería, costura e indumentaria, barbería y peluquería, cerámica y velas, joyería, sublimación y estampado, pintura y terminaciones de obra, reparación de celulares y de computadoras. Cada uno con su recorrido de niveles, como cualquier otra materia.
+
+John Dewey lo dijo hace más de un siglo: se aprende haciendo. David Kolb lo convirtió en un ciclo, hacer, observar, pensar y volver a probar, y Seymour Papert mostró que se aprende mejor cuando se construye algo real que se puede mostrar. Un oficio es eso en estado puro. Y le da a cada chico algo que pocas escuelas dan: una habilidad concreta, una salida laboral y la experiencia de crear con sus propias manos algo que antes no existía.
 
 ## La familia, al lado
 
