@@ -1,0 +1,181 @@
+{
+ "slug": "mat1-m20-n4",
+ "step_id": "840ecb32-8b65-41ce-b5af-93d6a670771a",
+ "materia": "Matemática I",
+ "titulo": "Probabilidad de sucesos simples",
+ "sub": "Matemática I · Misión 20 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: una caja con 5 caramelos de menta, 3 de frutilla y 2 de limón. Sacás uno sin mirar: ¿qué chance hay de menta? 5 segundos.",
+    "¡*La mitad*! 5 de 10: 50 por ciento.",
+    "Hoy: la *probabilidad*."
+   ],
+   "texto": "5 de menta, 3 de frutilla y 2 de limón. ¿Probabilidad de menta?",
+   "segundos": 5,
+   "respuesta": "5/10 = 1/2 = 50%",
+   "emoji": "🍬",
+   "titulo": "PROBABILIDAD",
+   "sub": "qué tan posible es"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *probabilidad* de un suceso: *casos favorables* dividido *casos posibles*.",
+    "Siempre que todos los resultados tengan la misma chance."
+   ],
+   "palabra": "Probabilidad",
+   "texto": "Casos favorables ÷ casos posibles",
+   "emoji": "🎯"
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "Sacar un par con un dado: 6 posibles, 3 favorables.",
+    "3 de 6: ¡*un medio*!"
+   ],
+   "num": 3,
+   "den": 6,
+   "forma": "pizza",
+   "txt": "pares: 3 de 6 = 1/2"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "La misma probabilidad, *tres formas*. Bolsa con 3 rojas, 1 azul y 4 verdes: 8 bolitas.",
+    "Roja: 3/8, 0,375, 37,5 por ciento.",
+    "Azul: 1/8, 0,125, 12,5 por ciento.",
+    "Verde: 4/8, la mitad: 0,5, *50 por ciento*."
+   ],
+   "titulo": "BOLSA DE 8 BOLITAS",
+   "columnas": [
+    "Sacar",
+    "Fracción",
+    "Decimal",
+    "%"
+   ],
+   "filas": [
+    [
+     "Roja",
+     "3/8",
+     "0,375",
+     "37,5%"
+    ],
+    [
+     "Azul",
+     "1/8",
+     "0,125",
+     "12,5%"
+    ],
+    [
+     "Verde",
+     "1/2",
+     "0,5",
+     "50%"
+    ]
+   ]
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "La probabilidad vive *entre 0 y 1*.",
+    "0: imposible.",
+    "La mitad: tanto como no.",
+    "1: seguro. ¡Nunca más que 1!"
+   ],
+   "min": 0,
+   "max": 1,
+   "paso": 0.25,
+   "marcas": [
+    {
+     "v": 0,
+     "txt": "imposible"
+    },
+    {
+     "v": 0.5,
+     "txt": "1/2"
+    },
+    {
+     "v": 1,
+     "txt": "seguro"
+    }
+   ]
+  },
+  {
+   "t": "porcentaje",
+   "voz": [
+    "Sorpresa: si tirás un dado *600 veces*, el 6 sale *cerca de 100*.",
+    "Con muchas repeticiones, la frecuencia se acerca a la probabilidad: 1 de cada 6."
+   ],
+   "valor": 17,
+   "txt": "el 6 sale cerca de 1 de cada 6 veces",
+   "emoji": "🎲"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: 3 bolitas rojas y 5 blancas. ¿Probabilidad de roja?",
+    "¿3/5 o 3/8?",
+    "¡*3/8*! Abajo van *todos* los posibles, no solo los que no sirven."
+   ],
+   "pregunta": "3 rojas y 5 blancas: ¿probabilidad de roja?",
+   "opciones": [
+    "3/5",
+    "3/8"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Poner favorables sobre *desfavorables*.",
+    "Y que te dé *más que 1*: imposible, revisá la cuenta."
+   ],
+   "items": [
+    {
+     "mal": "3 rojas, 5 blancas: 3/5",
+     "bien": "3/8"
+    },
+    {
+     "mal": "Probabilidad 1,5",
+     "bien": "Va de 0 a 1"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Probabilidad*: favorables sobre posibles.",
+    "*Tres formas*: fracción, decimal, porcentaje.",
+    "Siempre *entre 0 y 1*.",
+    "Y con muchas tiradas, la frecuencia *se acerca*.",
+    "¡Misión 20 terminada… y *Matemática I completa*! A practicar."
+   ],
+   "items": [
+    [
+     "PROBABILIDAD",
+     "favorables ÷ posibles"
+    ],
+    [
+     "FORMAS",
+     "1/2 = 0,5 = 50%"
+    ],
+    [
+     "RANGO",
+     "de 0 a 1"
+    ],
+    [
+     "MUCHAS VECES",
+     "frecuencia ≈ probabilidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "slug": "mat1-m20-n1",
+ "step_id": "c5ed88d9-c794-4762-8de5-61b620c59306",
+ "materia": "Matemática I",
+ "titulo": "Datos, tablas y gráficos",
+ "sub": "Matemática I · Misión 20 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: encuesta en el curso. ¿Cuál es el deporte favorito? Votaron *25 alumnos*.",
+    "Ganó el fútbol con 10 votos: *el 40 por ciento*. ¿Cómo se ordena y se muestra eso?",
+    "Hoy: *datos, tablas y gráficos*."
+   ],
+   "cinta": "ENCUESTA",
+   "titular": "El fútbol gana con 10 de 25 votos",
+   "bajada": "Vóley 6 · Básquet 5 · Natación 4",
+   "emoji": "📊",
+   "titulo": "DATOS Y GRÁFICOS",
+   "sub": "ordenar y mostrar información"
+  },
+  {
+   "t": "partes",
+   "voz": [
+    "Tres palabras clave.",
+    "La *variable*: lo que se pregunta, el deporte favorito.",
+    "La *frecuencia*: cuántas veces aparece cada respuesta. Fútbol: 10."
+   ],
+   "emoji": "📋",
+   "titulo": "VARIABLE Y FRECUENCIA",
+   "partes": [
+    {
+     "txt": "Variable: deporte favorito",
+     "x": -0.5,
+     "y": -0.6
+    },
+    {
+     "txt": "Frecuencia de fútbol: 10",
+     "x": 0.5,
+     "y": 0.6
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "La *tabla de frecuencias* ordena todo.",
+    "Fútbol: 10, el 40 por ciento.",
+    "Vóley: 6, el 24.",
+    "Básquet: 5, el 20.",
+    "Natación: 4, el 16. ¡Total, 25 y 100 por ciento!"
+   ],
+   "titulo": "DEPORTE FAVORITO (25)",
+   "columnas": [
+    "Deporte",
+    "Frecuencia",
+    "%"
+   ],
+   "filas": [
+    [
+     "Fútbol",
+     "10",
+     "40%"
+    ],
+    [
+     "Vóley",
+     "6",
+     "24%"
+    ],
+    [
+     "Básquet",
+     "5",
+     "20%"
+    ],
+    [
+     "Natación",
+     "4",
+     "16%"
+    ]
+   ]
+  },
+  {
+   "t": "barras",
+   "voz": [
+    "El *gráfico de barras*: cada barra mide la frecuencia.",
+    "Fútbol, 10.",
+    "Vóley, 6.",
+    "Básquet, 5.",
+    "Natación, 4. ¡Se ve de un vistazo quién gana!"
+   ],
+   "titulo": "GRÁFICO DE BARRAS",
+   "unidad": "",
+   "items": [
+    {
+     "txt": "Fútbol",
+     "valor": 10
+    },
+    {
+     "txt": "Vóley",
+     "valor": 6
+    },
+    {
+     "txt": "Básquet",
+     "valor": 5
+    },
+    {
+     "txt": "Natación",
+     "valor": 4
+    }
+   ]
+  },
+  {
+   "t": "torta",
+   "voz": [
+    "El *gráfico circular*: cada porción es una parte del total.",
+    "Todo el círculo es el 100 por ciento.",
+    "Fútbol se lleva el 40 por ciento.",
+    "Vóley, el 24; básquet, el 20.",
+    "Y natación, el 16."
+   ],
+   "titulo": "GRÁFICO CIRCULAR",
+   "items": [
+    {
+     "txt": "Fútbol",
+     "valor": 40
+    },
+    {
+     "txt": "Vóley",
+     "valor": 24
+    },
+    {
+     "txt": "Básquet",
+     "valor": 20
+    },
+    {
+     "txt": "Natación",
+     "valor": 16
+    }
+   ]
+  },
+  {
+   "t": "curva",
+   "voz": [
+    "El *gráfico de líneas* muestra cómo algo *cambia en el tiempo*: la temperatura de una mañana.",
+    "A las 8, 12 grados; a las 10, 15; a las 12, 19. ¡La línea sube: aumentó!",
+    "Y donde más sube, entre las 10 y las 12, fue el cambio más grande."
+   ],
+   "titulo": "TEMPERATURA DE LA MAÑANA",
+   "x": "hora",
+   "y": "°C",
+   "puntos": [
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     10,
+     15
+    ],
+    [
+     11,
+     17
+    ],
+    [
+     12,
+     19
+    ]
+   ],
+   "marcas": [
+    {
+     "x": 12,
+     "y": 19,
+     "txt": "19 °C"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: de 20 alumnos, 5 eligieron natación. ¿Qué porcentaje es?",
+    "¿5 o 25 por ciento?",
+    "¡*25*! 5 sobre 20 es 25 sobre 100."
+   ],
+   "pregunta": "5 de 20 alumnos: ¿qué %?",
+   "opciones": [
+    "5%",
+    "25%"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir *frecuencia con valor*: fútbol es el valor, 10 su frecuencia.",
+    "Y barras con *escala desigual* o sin rotular los ejes."
+   ],
+   "items": [
+    {
+     "mal": "El valor más elegido es 10",
+     "bien": "Es fútbol; 10 es su frecuencia"
+    },
+    {
+     "mal": "Escala desigual",
+     "bien": "Saltos iguales y ejes rotulados"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Variable*: lo que se pregunta.",
+    "*Frecuencia*: cuántas veces aparece.",
+    "Barras comparan; el círculo muestra *partes del total*.",
+    "Y las líneas, *cambios en el tiempo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VARIABLE",
+     "lo que se pregunta"
+    ],
+    [
+     "FRECUENCIA",
+     "cuántas veces"
+    ],
+    [
+     "BARRAS / CIRCULAR",
+     "comparar / partes del total"
+    ],
+    [
+     "LÍNEAS",
+     "cambios en el tiempo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

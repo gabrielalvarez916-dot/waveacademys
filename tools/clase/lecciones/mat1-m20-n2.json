@@ -1,0 +1,205 @@
+{
+ "slug": "mat1-m20-n2",
+ "step_id": "3929c22d-dd42-40af-a10b-7ea2d8163e4d",
+ "materia": "Matemática I",
+ "titulo": "Media y moda",
+ "sub": "Matemática I · Misión 20 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Sofi le escribe a Juan: mis notas son 6, 8, 7, 9 y 10. ¿Cuál es mi promedio?",
+    "Juan: ¡10! Es la más alta.",
+    "Sofi: ¡no! Sumás todo y dividís: 40 dividido 5, *8*.",
+    "Hoy: *media y moda*."
+   ],
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Notas: 6, 8, 7, 9 y 10. ¿Mi promedio? 📚"
+    },
+    {
+     "yo": true,
+     "txt": "¡10! La más alta 😎"
+    },
+    {
+     "yo": false,
+     "txt": "Nooo 🙈"
+    }
+   ],
+   "titulo": "MEDIA Y MODA",
+   "sub": "dos formas de resumir datos"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La *media*, o promedio: *sumás todos los datos*…",
+    "… y *dividís por la cantidad de datos*."
+   ],
+   "palabra": "Media",
+   "texto": "Suma de los datos ÷ cantidad de datos",
+   "emoji": "⚖️"
+  },
+  {
+   "t": "barras",
+   "voz": [
+    "Pongamos las notas de Sofi en barras.",
+    "6…",
+    "8…",
+    "7…",
+    "9…",
+    "… y 10. Si emparejamos las barras, todas quedan en *8*: ¡la media!"
+   ],
+   "titulo": "NOTAS DE SOFI",
+   "unidad": "",
+   "items": [
+    {
+     "txt": "1.ª",
+     "valor": 6
+    },
+    {
+     "txt": "2.ª",
+     "valor": 8
+    },
+    {
+     "txt": "3.ª",
+     "valor": 7
+    },
+    {
+     "txt": "4.ª",
+     "valor": 9
+    },
+    {
+     "txt": "5.ª",
+     "valor": 10
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "La cuenta: 6 + 8 + 7 + 9 + 10.",
+    "Da *40*.",
+    "40 dividido 5 datos: ¡*8*!"
+   ],
+   "pasos": [
+    "6 + 8 + 7 + 9 + 10",
+    "= 40",
+    "40 ÷ 5 = 8"
+   ],
+   "notas": [
+    "",
+    "suma",
+    "5 datos"
+   ]
+  },
+  {
+   "t": "fichas",
+   "voz": [
+    "La *moda*: el valor que *más se repite*. Talles: 38, 39, 38, 40, 38, 39.",
+    "El 38 aparece tres veces: ¡*la moda es 38*!",
+    "Sirve para saber qué es lo más común: qué talle comprar más."
+   ],
+   "fichas": [
+    "38",
+    "39",
+    "38",
+    "40",
+    "38",
+    "39"
+   ],
+   "grande": "moda = 38",
+   "etiqueta": "TALLES DE ZAPATILLAS"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Sorpresa: un valor extremo *arrastra la media*. Sueldos: 300, 320, 310… y uno de 2.070.",
+    "La media da *750*, aunque tres de cuatro cobran cerca de 300.",
+    "Por eso, cuando hay extremos, la media puede engañar."
+   ],
+   "izq": {
+    "cab": "TRES SUELDOS",
+    "items": [
+     "300 · 320 · 310"
+    ]
+   },
+   "der": {
+    "cab": "UNO EXTREMO",
+    "items": [
+     "2.070"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuál es la media de 2, 2, 2 y 10?",
+    "¿2 o 4?",
+    "¡*4*! 16 dividido 4. El 2 es *la moda*, no la media."
+   ],
+   "pregunta": "Media de 2, 2, 2 y 10",
+   "opciones": [
+    "2",
+    "4"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Dividir mal*: hay que contar todos los datos, también los repetidos.",
+    "Y confundir *media con moda*."
+   ],
+   "items": [
+    {
+     "mal": "Contar solo los distintos",
+     "bien": "Contar todos los datos"
+    },
+    {
+     "mal": "Media = el más repetido",
+     "bien": "Eso es la moda"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Media*: suma dividido cantidad.",
+    "*Moda*: el más repetido.",
+    "Media para comparar; moda para *lo más común*.",
+    "Y ojo: los *extremos* arrastran la media.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MEDIA",
+     "suma ÷ cantidad"
+    ],
+    [
+     "MODA",
+     "el más repetido"
+    ],
+    [
+     "PARA QUÉ",
+     "comparar / lo más común"
+    ],
+    [
+     "EXTREMOS",
+     "arrastran la media"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

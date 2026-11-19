@@ -1,0 +1,191 @@
+{
+ "slug": "mat1-m20-n3",
+ "step_id": "762e12e8-f8e0-4341-af43-97a4ed6637cf",
+ "materia": "Matemática I",
+ "titulo": "Azar y casos posibles",
+ "sub": "Matemática I · Misión 20 · Nivel 3",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Tomi tiró una moneda 5 veces y salió *cara las 5*.",
+    "Apuesta todo: ¡la próxima tiene que ser ceca!",
+    "Error: la moneda *no tiene memoria*. La próxima puede ser cara o ceca, igual que siempre.",
+    "Hoy: *el azar y los casos posibles*."
+   ],
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧒"
+   },
+   "lugar": "🪙",
+   "lineas": [
+    "5 caras seguidas",
+    "\"¡Ahora sale ceca!\"",
+    "¿Tiene razón?"
+   ],
+   "titulo": "EL AZAR",
+   "sub": "casos posibles"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Dos tipos de experimentos.",
+    "*Aleatorio*: no sabés qué va a salir. Tirar un dado.",
+    "*Determinista*: sabés el resultado. Soltar una piedra: cae."
+   ],
+   "a": {
+    "cab": "ALEATORIO",
+    "texto": "tirar un dado 🎲",
+    "emoji": "❓"
+   },
+   "b": {
+    "cab": "DETERMINISTA",
+    "texto": "soltar una piedra: cae",
+    "emoji": "🪨"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "fichas",
+   "voz": [
+    "El *espacio muestral*: todos los resultados posibles. Con un dado: 1, 2, 3, 4, 5 y 6.",
+    "*6 resultados*.",
+    "Con una moneda, solo 2: cara y ceca."
+   ],
+   "fichas": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "grande": "6 resultados",
+   "etiqueta": "ESPACIO MUESTRAL DEL DADO"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Los *sucesos* con un dado.",
+    "*Seguro*: pasa siempre. Sacar menos de 7.",
+    "*Imposible*: no pasa nunca. Sacar un 8.",
+    "*Posible*: a veces sí. Sacar un par."
+   ],
+   "cajas": [
+    {
+     "cab": "SEGURO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "IMPOSIBLE",
+     "emoji": "🚫"
+    },
+    {
+     "cab": "POSIBLE",
+     "emoji": "🎲"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Menos de 7",
+     "caja": 0
+    },
+    {
+     "txt": "Sacar un 8",
+     "caja": 1
+    },
+    {
+     "txt": "Sacar un par",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Contar casos con *dos monedas*: armamos una tabla.",
+    "Cara con cara, y cara con ceca. Ceca con cara, y ceca con ceca.",
+    "¡Son *4*, no 3! Una cara y una ceca sale de *dos maneras*."
+   ],
+   "titulo": "DOS MONEDAS",
+   "columnas": [
+    "1.ª \\ 2.ª",
+    "Cara",
+    "Ceca"
+   ],
+   "filas": [
+    [
+     "Cara",
+     "cara-cara",
+     "cara-ceca"
+    ],
+    [
+     "Ceca",
+     "ceca-cara",
+     "ceca-ceca"
+    ]
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Un dado y una moneda: 6 por 2…",
+    "… ¡*12 resultados* posibles! Multiplicar ahorra contar uno por uno."
+   ],
+   "numero": 12,
+   "texto": "dado (6) × moneda (2) = 12 resultados",
+   "emoji": "🎲"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Olvidar casos*: con dos monedas son 4, no 3.",
+    "Y pensar que el azar *tiene memoria*, como Tomi."
+   ],
+   "items": [
+    {
+     "mal": "Dos monedas: 3 casos",
+     "bien": "Son 4"
+    },
+    {
+     "mal": "\"Ahora le toca ceca\"",
+     "bien": "Cada tirada es nueva"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Aleatorio*: no se sabe qué sale.",
+    "*Espacio muestral*: todos los resultados.",
+    "Sucesos *seguros, imposibles o posibles*.",
+    "Y para contar, *tablas*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ALEATORIO",
+     "no se sabe el resultado"
+    ],
+    [
+     "ESPACIO MUESTRAL",
+     "todos los resultados"
+    ],
+    [
+     "SUCESOS",
+     "seguro · imposible · posible"
+    ],
+    [
+     "CONTAR",
+     "tablas, sin olvidar casos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
