@@ -315,6 +315,12 @@ text{font-family:inherit;font-weight:900}
   $('ant').onclick = function () { irA(Math.max(0, st.e - (st.f <= 1 ? 1 : 0))); };
   $('sig').onclick = function () { if (st.e < E.length - 1) irA(st.e + 1); };
   if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { vozDisp = elegirVoz(); };
+  // cortar la voz siempre: al salir de la página, al ocultarla, con Escape o cuando la plataforma cierra la clase
+  function apagar() { if (st.play) pausa(); else cortar(); }
+  window.addEventListener('pagehide', apagar); window.addEventListener('beforeunload', apagar);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) apagar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') apagar(); if (e.key === ' ') { e.preventDefault(); st.play ? pausa() : seguir(); } });
+  window.addEventListener('message', function (e) { if (e.data && e.data.tipo === 'wave-clase-stop') apagar(); });
   window.LECCION = { E: E, irA: irA, tl: function () { return tl; } };
 })();
 </script>

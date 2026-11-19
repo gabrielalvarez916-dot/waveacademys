@@ -582,9 +582,10 @@
     frame.srcdoc = r.data.html;
     function cerrar() {
       window.removeEventListener('message', alMensaje);
-      try { frame.contentWindow.speechSynthesis.cancel(); } catch (_) {}
+      try { frame.contentWindow.postMessage({ tipo: 'wave-clase-stop' }, '*'); } catch (_) {}
+      try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (_) {}
       document.body.classList.remove('wvp-abierto');
-      el.remove();
+      setTimeout(function () { frame.src = 'about:blank'; el.remove(); }, 150);
     }
     function alMensaje(ev) {
       if (ev.source !== frame.contentWindow || !ev.data || ev.data.tipo !== 'wave-clase-fin') return;
