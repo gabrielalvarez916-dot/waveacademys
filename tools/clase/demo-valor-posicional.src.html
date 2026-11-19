@@ -57,7 +57,7 @@ text{font-family:inherit;font-weight:900}
    <text x="380" y="1050" text-anchor="middle" font-size="130" fill="#fff">10</text>
    <text x="720" y="1035" text-anchor="middle" font-size="44" fill="#fff" opacity=".9">alfajores</text>
   </g>
-  <g id="paquetes"></g>
+  <g id="paquetes" opacity="0"></g>
   <g id="caja" opacity="0" filter="url(#sombra)">
    <rect x="60" y="850" width="960" height="330" rx="36" fill="url(#gCaja)" stroke="#f3d29a" stroke-width="8"/>
    <path d="M60 930 H1020" stroke="#7a4f1c" stroke-width="10" opacity=".5"/>
@@ -170,7 +170,7 @@ text{font-family:inherit;font-weight:900}
     .fromTo('#fabrica', { opacity: 0, y: 700 }, { opacity: 1, y: 0, duration: 1, ease: 'back.out(1.4)' }, 5.4)
     .fromTo('#cinta', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -700 }, duration: 10, ease: 'none' }, 5.4)
     .to('#humo circle', { attr: { cy: '-=80' }, opacity: 0, scale: 1.8, transformOrigin: '50% 50%', duration: 2.4, repeat: 3, stagger: .6 }, 5.6);
-  enCinta.forEach(function (a, k) { tl.fromTo(a, { x: -470, rotation: 0, transformOrigin: '50% 50%' }, { x: 1550, rotation: 720, duration: 5.4, ease: 'none' }, 5.8 + k * .6); });
+  enCinta.forEach(function (a, k) { tl.fromTo(a, { x: -540, rotation: 0, transformOrigin: '50% 50%' }, { x: 1620, rotation: 720, duration: 5.4, ease: 'none' }, 5.8 + k * .6); });
   // 3 · unidad
   tl.to('#fabrica', { opacity: .18, scale: .9, transformOrigin: '540px 1300px', duration: .6 }, 11)
     .fromTo('#heroe', { opacity: 0, x: 540, y: 1340, scale: .5, transformOrigin: '50% 50%' }, { opacity: 1, x: 540, y: 1000, scale: 3.2, duration: 1, ease: 'back.out(2)' }, 11.1)
@@ -186,7 +186,8 @@ text{font-family:inherit;font-weight:900}
     .to('#paqGrande', { scale: 1.06, duration: .25, yoyo: true, repeat: 1 }, 21.6)
     .to(['#paqGrande', '#badge'], { opacity: 0, scale: .25, duration: .5, ease: 'power2.in' }, 23.6);
   // 3c · centena
-  paq.forEach(function (a, k) { tl.fromTo(a, { x: k % 2 ? 1300 : -220, y: 700 + k * 60, opacity: 1, rotation: k % 2 ? 40 : -40 }, { x: lugPaq[k][0], y: lugPaq[k][1], rotation: 0, duration: .7, ease: 'power3.out' }, 24.1 + k * .22); });
+  paq.forEach(function (a, k) { tl.fromTo(a, { x: k % 2 ? 1800 : -720, y: 700 + k * 60, opacity: 1, rotation: k % 2 ? 40 : -40 }, { x: lugPaq[k][0], y: lugPaq[k][1], rotation: 0, duration: .7, ease: 'power3.out' }, 24.1 + k * .22); });
+  tl.set('#paquetes', { opacity: 1 }, 24.1);
   tl.fromTo('#caja', { opacity: 0, y: -900 }, { opacity: 1, y: 0, duration: .7, ease: 'bounce.out' }, 27)
     .to('#paquetes', { opacity: 0, duration: .2 }, 27.6)
     .call(function () { $('badgeT').textContent = 'CENTENA'; }, null, 28)
@@ -212,7 +213,7 @@ text{font-family:inherit;font-weight:900}
     .to(dig[2], { y: -1200, rotation: 540, opacity: 0, duration: .8, ease: 'power3.in' }, 47.7)
     .to('#estante', { opacity: 0, duration: .25 }, 48.5)
     .fromTo('#n425', { opacity: 0, scale: 2.2, transformOrigin: '540px 1080px' }, { opacity: 1, scale: 1, duration: .35, ease: 'power4.in' }, 48.6)
-    .fromTo('#flash', { opacity: .55 }, { opacity: 0, duration: .5 }, 48.95)
+    .fromTo('#flash', { opacity: .55 }, { opacity: 0, duration: .5, immediateRender: false }, 48.95)
     .to(cam, { x: 24, duration: .05, repeat: 9, yoyo: true }, 48.95)
     .fromTo('#sello', { opacity: 0, scale: 3, rotation: -12, transformOrigin: '540px 1370px' }, { opacity: 1, scale: 1, rotation: -6, duration: .35, ease: 'power4.in' }, 49.6)
     .to(cam, { x: 0, duration: .05 }, 50.1)
