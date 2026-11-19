@@ -1,0 +1,202 @@
+{
+ "slug": "mat1-m8-n2",
+ "step_id": "a1d97d5d-1036-4a09-acca-db696432059c",
+ "materia": "Matemática I",
+ "titulo": "Fracciones equivalentes y simplificación",
+ "sub": "Matemática I · Misión 8 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Qué preferís: 1/2 chocolate o 3/6 de chocolate?",
+    "¡Es *exactamente lo mismo*!",
+    "Hoy: *fracciones equivalentes*, distinto nombre, misma cantidad."
+   ],
+   "grande": "1/2 = 3/6",
+   "final": "¡IGUALES!",
+   "titulo": "EQUIVALENTES",
+   "sub": "mismo chocolate, otro nombre"
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "Media barra de chocolate…",
+    "… es la mitad, la cortes como la cortes."
+   ],
+   "num": 1,
+   "den": 2,
+   "forma": "barra",
+   "txt": "1/2"
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "Ahora la misma barra cortada en *6 cuadraditos*…",
+    "… y tomamos 3. ¡Mismo pedazo de chocolate!"
+   ],
+   "num": 3,
+   "den": 6,
+   "forma": "barra",
+   "txt": "3/6 = 1/2"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Dos fracciones son *equivalentes* si representan la *misma cantidad*.",
+    "1/2, 2/4 y 3/6: escritas distinto, *valen lo mismo*."
+   ],
+   "palabra": "Equivalentes",
+   "texto": "Representan la misma cantidad aunque se escriban distinto",
+   "emoji": "🟰"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Dos movimientos para fabricarlas.",
+    "*Amplificar*: multiplicar arriba y abajo por lo mismo. 2/3 por 4 da 8/12.",
+    "*Simplificar*: dividir arriba y abajo por lo mismo. 8/12 dividido 4 vuelve a 2/3."
+   ],
+   "a": {
+    "cab": "AMPLIFICAR",
+    "texto": "2/3 → 8/12 (× 4)",
+    "emoji": "🔍"
+   },
+   "b": {
+    "cab": "SIMPLIFICAR",
+    "texto": "8/12 → 2/3 (÷ 4)",
+    "emoji": "✂️"
+   },
+   "signo": "⇄"
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La regla de oro: *lo mismo arriba que abajo*, y solo *multiplicando o dividiendo*. ¡Nunca sumando!"
+   ],
+   "texto": "Lo mismo arriba y abajo · solo × o ÷",
+   "emoji": "⚖️"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: si a 1/2 le sumo 1 arriba y 1 abajo, ¿queda equivalente?",
+    "¿Sí o no?",
+    "¡*No*! Queda 2/3, que es más grande que 1/2. *Sumar rompe todo*."
+   ],
+   "pregunta": "1/2 → sumo 1 arriba y abajo → 2/3. ¿Son equivalentes?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Simplificar *de una*: con el MCD. Simplifiquemos 18/24.",
+    "MCD de 18 y 24: *6*.",
+    "18 dividido 6 da 3, y 24 dividido 6 da 4: ¡*3/4*! Ya no se simplifica más: es *irreducible*."
+   ],
+   "pasos": [
+    "18/24",
+    "MCD(18, 24) = 6",
+    "18/24 = 3/4"
+   ],
+   "notas": [
+    "",
+    "",
+    "irreducible"
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Truco para comprobar: los *productos cruzados*. ¿3/4 y 9/12 son equivalentes?",
+    "3 por 12 da 36, y 4 por 9 da 36.",
+    "¡Iguales! Entonces *son equivalentes*."
+   ],
+   "izq": {
+    "cab": "3 × 12",
+    "items": [
+     "36"
+    ]
+   },
+   "der": {
+    "cab": "4 × 9",
+    "items": [
+     "36"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Desafío: 36/48 a la irreducible. MCD de 36 y 48: *12*. Dividimos los dos por 12.",
+    "¡Da *3/4*! Y comprobamos: 36 por 4 y 48 por 3 dan *144* los dos."
+   ],
+   "filas": [
+    "36 ÷ 12 = 3",
+    "48 ÷ 12 = 4"
+   ],
+   "op": "÷",
+   "resultado": "36/48 = 3/4"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "*Sumar* el mismo número arriba y abajo: no da equivalentes.",
+    "Y parar antes de tiempo: 12/18 es 6/9, pero *todavía se simplifica* a 2/3."
+   ],
+   "items": [
+    {
+     "mal": "1/2 → 2/3 sumando 1",
+     "bien": "Solo multiplicar o dividir"
+    },
+    {
+     "mal": "12/18 = 6/9 y listo",
+     "bien": "Seguir hasta 2/3"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Equivalentes*: la misma cantidad.",
+    "*Amplificar*: multiplicar arriba y abajo.",
+    "*Simplificar*: dividir arriba y abajo.",
+    "*Irreducible*: dividir por el MCD.",
+    "Y para comprobar, *productos cruzados*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EQUIVALENTES",
+     "1/2 = 2/4 = 3/6"
+    ],
+    [
+     "AMPLIFICAR",
+     "× arriba y abajo"
+    ],
+    [
+     "SIMPLIFICAR",
+     "÷ arriba y abajo"
+    ],
+    [
+     "IRREDUCIBLE",
+     "÷ MCD · 18/24 = 3/4"
+    ],
+    [
+     "CRUZADOS",
+     "a × d = b × c"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

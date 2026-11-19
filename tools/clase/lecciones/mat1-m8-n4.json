@@ -1,0 +1,231 @@
+{
+ "slug": "mat1-m8-n4",
+ "step_id": "63d899ec-30f4-4950-80c0-44e91fc4786b",
+ "materia": "Matemática I",
+ "titulo": "Comparar y ordenar fracciones",
+ "sub": "Matemática I · Misión 8 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Qué es más: 3/4 o 4/5 de pizza?",
+    "Parecido… pero *4/5 gana* por un pedacito.",
+    "Hoy: cómo *comparar y ordenar fracciones* sin adivinar."
+   ],
+   "grande": "3/4 ? 4/5",
+   "final": "4/5 gana",
+   "titulo": "COMPARAR",
+   "sub": "¿cuál es más grande?"
+  },
+  {
+   "t": "barras",
+   "voz": [
+    "Caso fácil uno: *mismo denominador*. Gana el de mayor numerador.",
+    "3/8…",
+    "… contra 5/8: *5/8 es más*."
+   ],
+   "titulo": "MISMO DENOMINADOR (OCTAVOS)",
+   "unidad": "/8",
+   "items": [
+    {
+     "txt": "3/8",
+     "valor": 3
+    },
+    {
+     "txt": "5/8",
+     "valor": 5
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Caso fácil dos: *mismo numerador*. Ahí gana el de *menor* denominador.",
+    "3/4 contra 3/5: los cuartos son *más grandes* que los quintos.",
+    "Así que *3/4 es más*. ¡Menos partes, partes más grandes!"
+   ],
+   "a": {
+    "cab": "3/4",
+    "texto": "cuartos: partes más grandes",
+    "emoji": "🍕"
+   },
+   "b": {
+    "cab": "3/5",
+    "texto": "quintos: partes más chicas",
+    "emoji": "🍕"
+   },
+   "signo": ">"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¿Y si no comparten nada? Buscamos *denominador común*. 2/3 contra 3/5.",
+    "Pasamos a quinceavos: 2/3 es *10/15* y 3/5 es *9/15*.",
+    "10 le gana a 9: *2/3 es mayor*."
+   ],
+   "pasos": [
+    "2/3 ? 3/5",
+    "10/15 ? 9/15",
+    "2/3 > 3/5"
+   ],
+   "notas": [
+    "",
+    "denominador común 15",
+    ""
+   ]
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "Atajo ninja: comparar con *1/2* y con *1*.",
+    "5/8 es más que 1/2, porque 5 es más que la mitad de 8.",
+    "3/7 es menos que 1/2: 3 no llega a la mitad de 7.",
+    "Y toda impropia, como 7/6, es *más que 1*."
+   ],
+   "causa": {
+    "txt": "Referentes: 1/2 y 1",
+    "emoji": "🎯"
+   },
+   "items": [
+    {
+     "txt": "5/8 > 1/2",
+     "emoji": "⬆️"
+    },
+    {
+     "txt": "3/7 < 1/2",
+     "emoji": "⬇️"
+    },
+    {
+     "txt": "7/6 > 1 > 9/10",
+     "emoji": "🚀"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: ¿2/5 es mayor que 3/4 porque 5 es más grande que 4?",
+    "¿Sí o no?",
+    "¡*No*! 2/5 ni llega a la mitad, y 3/4 la pasa. Mirar solo los denominadores *engaña*."
+   ],
+   "pregunta": "¿2/5 > 3/4 porque 5 > 4?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "linea",
+   "voz": [
+    "Ordenemos cuatro: 1/2, 3/4, 2/3 y 5/12. Todo a *doceavos*: 5/12 es el más chico.",
+    "1/2 es 6/12.",
+    "2/3 es 8/12.",
+    "Y 3/4 es 9/12: *el más grande*."
+   ],
+   "titulo": "DE MENOR A MAYOR",
+   "eventos": [
+    {
+     "fecha": "5/12",
+     "txt": "5 doceavos",
+     "emoji": "🥉"
+    },
+    {
+     "fecha": "1/2",
+     "txt": "6 doceavos",
+     "emoji": "🥈"
+    },
+    {
+     "fecha": "2/3",
+     "txt": "8 doceavos",
+     "emoji": "🥇"
+    },
+    {
+     "fecha": "3/4",
+     "txt": "9 doceavos",
+     "emoji": "🏆"
+    }
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Desafío: ordená 3/4, 5/6 y 2/3.",
+    "Denominador común: *12*.",
+    "3/4 es 9/12, 5/6 es 10/12 y 2/3 es 8/12.",
+    "Numeradores: 8, 9, 10.",
+    "Orden: *2/3, después 3/4, después 5/6*."
+   ],
+   "titulo": "ORDENAR 3/4, 5/6 Y 2/3",
+   "celdas": [
+    {
+     "cab": "COMÚN",
+     "txt": "12"
+    },
+    {
+     "cab": "EN DOCEAVOS",
+     "txt": "9/12 · 10/12 · 8/12"
+    },
+    {
+     "cab": "NUMERADORES",
+     "txt": "8 < 9 < 10"
+    },
+    {
+     "cab": "ORDEN",
+     "txt": "2/3 < 3/4 < 5/6"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado.",
+    "Mirar *solo los numeradores*: 3/4 es menor que 4/5, pero hay que comprobarlo: 15/20 contra 16/20.",
+    "Y mirar *solo los denominadores*: 2/5 no le gana a 3/4."
+   ],
+   "items": [
+    {
+     "mal": "Comparar solo arriba",
+     "bien": "Igualar: 15/20 < 16/20"
+    },
+    {
+     "mal": "2/5 > 3/4 porque 5 > 4",
+     "bien": "2/5 < 1/2 < 3/4"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Mismo denominador*: gana el mayor numerador.",
+    "*Mismo numerador*: gana el menor denominador.",
+    "Si no, *denominador común*.",
+    "Y los atajos: comparar con *1/2 y con 1*.",
+    "¡Misión 8 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MISMO DENOMINADOR",
+     "mayor numerador gana"
+    ],
+    [
+     "MISMO NUMERADOR",
+     "menor denominador gana"
+    ],
+    [
+     "DENOMINADOR COMÚN",
+     "igualar y comparar"
+    ],
+    [
+     "REFERENTES",
+     "1/2 y 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

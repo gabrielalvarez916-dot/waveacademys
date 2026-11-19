@@ -1,0 +1,269 @@
+{
+ "slug": "mat1-m8-n1",
+ "step_id": "77c05f4d-c8ac-417d-9fb6-e29611b8f603",
+ "materia": "Matemática I",
+ "titulo": "Qué es una fracción y cómo se representa",
+ "sub": "Matemática I · Misión 8 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Tres pizzas para cuatro amigos. ¿Cuánto le toca a cada uno?",
+    "¡*Tres cuartos* de pizza! Sin pelear.",
+    "Hoy arrancamos con las *fracciones*: partes de un todo."
+   ],
+   "emoji": "🍕",
+   "final": "3/4",
+   "titulo": "FRACCIONES",
+   "sub": "partes de un todo"
+  },
+  {
+   "t": "partes",
+   "voz": [
+    "Una fracción tiene dos pisos.",
+    "Abajo, el *denominador*: en cuántas partes iguales se corta el entero.",
+    "Arriba, el *numerador*: cuántas de esas partes tomás."
+   ],
+   "emoji": "🍕",
+   "titulo": "LAS PARTES DE 3/4",
+   "partes": [
+    {
+     "txt": "Denominador: 4 partes iguales",
+     "x": 0.5,
+     "y": 0.6
+    },
+    {
+     "txt": "Numerador: tomo 3",
+     "x": -0.5,
+     "y": -0.6
+    }
+   ]
+  },
+  {
+   "t": "fraccion",
+   "voz": [
+    "Mirá: cortamos la pizza en *4 porciones iguales*…",
+    "… y nos comemos *3*. Eso es tres cuartos."
+   ],
+   "num": 3,
+   "den": 4,
+   "forma": "pizza",
+   "txt": "3 de 4 porciones"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Ojo con esto: si las partes *no son iguales*, no es una fracción.",
+    "Un cuarto de verdad es *una de cuatro partes iguales*, no un pedazo cualquiera."
+   ],
+   "antes": {
+    "cab": "PARTES DESPAREJAS",
+    "emoji": "❌",
+    "texto": "No es una fracción"
+   },
+   "despues": {
+    "cab": "PARTES IGUALES",
+    "emoji": "✅",
+    "texto": "Ahora sí: cuartos"
+   }
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Sorpresa: una fracción también es *una división*.",
+    "Tres cuartos es *3 dividido 4*: repartir 3 pizzas entre 4.",
+    "Por eso 6 tercios es 6 dividido 3: ¡*2 enteros*! Y 4 cuartos es *1*."
+   ],
+   "a": {
+    "cab": "FRACCIÓN",
+    "texto": "3/4",
+    "emoji": "🍕"
+   },
+   "b": {
+    "cab": "DIVISIÓN",
+    "texto": "3 ÷ 4",
+    "emoji": "➗"
+   },
+   "signo": "="
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Dos familias de fracciones.",
+    "*Propias*: el numerador es más chico. Valen *menos que 1*: 3/4, 2/5, 1/8.",
+    "*Impropias*: el numerador es mayor o igual. Valen *1 o más*: 7/4, 5/5, 9/2."
+   ],
+   "cajas": [
+    {
+     "cab": "PROPIAS · < 1",
+     "emoji": "🤏"
+    },
+    {
+     "cab": "IMPROPIAS · ≥ 1",
+     "emoji": "🙌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "3/4",
+     "caja": 0
+    },
+    {
+     "txt": "2/5",
+     "caja": 0
+    },
+    {
+     "txt": "1/8",
+     "caja": 0
+    },
+    {
+     "txt": "7/4",
+     "caja": 1
+    },
+    {
+     "txt": "5/5",
+     "caja": 1
+    },
+    {
+     "txt": "9/2",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Una impropia se puede escribir como *número mixto*. Probemos con 7/4.",
+    "Dividimos: 7 dividido 4 da *1*, y sobran *3*.",
+    "Entonces 7/4 es *1 entero y 3 cuartos*."
+   ],
+   "titulo": "DE IMPROPIA A MIXTO",
+   "items": [
+    {
+     "txt": "7/4",
+     "emoji": "🍕"
+    },
+    {
+     "txt": "7 ÷ 4 = 1, resto 3",
+     "emoji": "➗"
+    },
+    {
+     "txt": "1 3/4",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Y de vuelta: 2 enteros y 1 tercio.",
+    "2 enteros son *6 tercios*: 2 por 3.",
+    "Más 1 tercio: *7 tercios*."
+   ],
+   "pasos": [
+    "2 1/3",
+    "2 × 3 = 6 tercios",
+    "6/3 + 1/3 = 7/3"
+   ],
+   "notas": [
+    "",
+    "enteros a tercios",
+    "sumamos el tercio"
+   ]
+  },
+  {
+   "t": "agrupar",
+   "voz": [
+    "Fracción de una cantidad: *2/3 de 12 caramelos*.",
+    "Repartimos en 3 grupos: 12 dividido 3, *4 caramelos* por grupo.",
+    "Tomamos 2 grupos: 2 por 4, ¡*8 caramelos*!"
+   ],
+   "niveles": [
+    {
+     "nombre": "12 caramelos",
+     "valor": "12",
+     "icono": "🍬"
+    },
+    {
+     "nombre": "3 grupos de 4",
+     "valor": "÷ 3",
+     "icono": "🫙"
+    }
+   ],
+   "salto": "× 2 → 8"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: 17/5 como número mixto.",
+    "Es impropia: 17 es mayor que 5.",
+    "17 dividido 5 da 3, resto 2.",
+    "Entonces es *3 enteros y 2 quintos*.",
+    "Comprobamos: 3 por 5 más 2 da 17. *¡Cierra!*"
+   ],
+   "titulo": "17/5 COMO MIXTO",
+   "items": [
+    "Impropia: 17 > 5",
+    "17 ÷ 5 = 3, resto 2",
+    "17/5 = 3 2/5",
+    "(3 × 5 + 2)/5 = 17/5 ✓"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores clásicos.",
+    "Dibujar partes *que no son iguales*.",
+    "Y confundir los pisos: en 5/8, el *denominador es 8*."
+   ],
+   "items": [
+    {
+     "mal": "Partes de distinto tamaño",
+     "bien": "Siempre partes iguales"
+    },
+    {
+     "mal": "En 5/8 el denominador es 5",
+     "bien": "Es 8: el de abajo"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Fracción*: b partes iguales, tomo a.",
+    "También es una *división*: a dividido b.",
+    "*Propias* menos que 1; *impropias*, 1 o más.",
+    "*Mixto*: 7/4 es 1 y 3/4.",
+    "Y 2/3 de 12 son *8*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FRACCIÓN",
+     "b partes iguales, tomo a"
+    ],
+    [
+     "COCIENTE",
+     "3/4 = 3 ÷ 4"
+    ],
+    [
+     "PROPIA / IMPROPIA",
+     "< 1 / ≥ 1"
+    ],
+    [
+     "MIXTO",
+     "7/4 = 1 3/4"
+    ],
+    [
+     "DE UNA CANTIDAD",
+     "2/3 de 12 = 8"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
