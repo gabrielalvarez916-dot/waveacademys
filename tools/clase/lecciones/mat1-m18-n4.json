@@ -73,29 +73,315 @@
    ]
   },
   {
-   "t": "causas",
+   "t": "geo",
    "voz": [
-    "¿Cuánto suman los ángulos de un cuadrilátero? Trazá una diagonal.",
-    "Se arman *dos triángulos*.",
-    "Cada uno suma 180…",
-    "… así que el cuadrilátero suma *360*."
+    "Mirá el *rectángulo*: sus diagonales miden lo mismo.",
+    "En el *rombo*, se cruzan formando ángulos rectos.",
+    "Y en el *cuadrado*, pasan las dos cosas."
    ],
-   "causa": {
-    "txt": "Una diagonal",
-    "emoji": "✏️"
-   },
-   "items": [
+   "titulo": "LAS DIAGONALES",
+   "vista": [
+    0,
+    16,
+    0,
+    4.2
+   ],
+   "pasos": [
     {
-     "txt": "Dos triángulos",
-     "emoji": "🔺"
+     "el": [
+      {
+       "pol": [
+        [
+         0.5,
+         0.5
+        ],
+        [
+         5.5,
+         0.5
+        ],
+        [
+         5.5,
+         3.5
+        ],
+        [
+         0.5,
+         3.5
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         0.5,
+         0.5
+        ],
+        [
+         5.5,
+         3.5
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "seg": [
+        [
+         5.5,
+         0.5
+        ],
+        [
+         0.5,
+         3.5
+        ]
+       ],
+       "color": "#F4B63F"
+      }
+     ],
+     "txt": "Rectángulo: iguales"
     },
     {
-     "txt": "180° + 180°",
-     "emoji": "➕"
+     "el": [
+      {
+       "pol": [
+        [
+         9,
+         0.2
+        ],
+        [
+         11,
+         2
+        ],
+        [
+         9,
+         3.8
+        ],
+        [
+         7,
+         2
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         9,
+         0.2
+        ],
+        [
+         9,
+         3.8
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "seg": [
+        [
+         7,
+         2
+        ],
+        [
+         11,
+         2
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "ang": [
+        9,
+        2
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.5,
+       "recto": true
+      }
+     ],
+     "txt": "Rombo: perpendiculares"
     },
     {
-     "txt": "= 360°",
-     "emoji": "🎯"
+     "el": [
+      {
+       "pol": [
+        [
+         12.5,
+         0.5
+        ],
+        [
+         15.5,
+         0.5
+        ],
+        [
+         15.5,
+         3.5
+        ],
+        [
+         12.5,
+         3.5
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         12.5,
+         0.5
+        ],
+        [
+         15.5,
+         3.5
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "seg": [
+        [
+         15.5,
+         0.5
+        ],
+        [
+         12.5,
+         3.5
+        ]
+       ],
+       "color": "#F4B63F"
+      },
+      {
+       "ang": [
+        14,
+        2
+       ],
+       "a1": 45,
+       "a2": 135,
+       "r": 0.5,
+       "recto": true
+      }
+     ],
+     "txt": "Cuadrado: las dos cosas"
+    }
+   ]
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "¿Cuánto suman los ángulos de un cuadrilátero?",
+    "Trazá una diagonal.",
+    "Se arma un triángulo: *180*.",
+    "Y otro triángulo: 180 más. ¡*360*!"
+   ],
+   "titulo": "¿POR QUÉ 360°?",
+   "vista": [
+    0,
+    8,
+    0,
+    4.6
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         0.5
+        ],
+        [
+         7,
+         0.5
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         2.2,
+         3.4
+        ]
+       ]
+      }
+     ],
+     "txt": "Un cuadrilátero cualquiera"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         1,
+         0.5
+        ],
+        [
+         6,
+         4
+        ]
+       ],
+       "color": "#F4B63F"
+      }
+     ],
+     "txt": "Una diagonal"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         0.5
+        ],
+        [
+         7,
+         0.5
+        ],
+        [
+         6,
+         4
+        ]
+       ],
+       "fill": "rgba(244,182,63,.25)",
+       "color": "#F4B63F"
+      },
+      {
+       "txt": [
+        5,
+        1.6
+       ],
+       "s": "180°",
+       "color": "#F4B63F"
+      }
+     ],
+     "txt": "Un triángulo: 180°"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         0.5
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         2.2,
+         3.4
+        ]
+       ],
+       "fill": "rgba(139,227,143,.25)",
+       "color": "#8be38f"
+      },
+      {
+       "txt": [
+        3,
+        2.7
+       ],
+       "s": "180°",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "180° + 180° = 360°"
     }
    ]
   },
@@ -118,25 +404,106 @@
    ]
   },
   {
-   "t": "flujo",
+   "t": "geo",
    "voz": [
-    "Construir un rombo con diagonales de 6 y 4: trazás dos segmentos *perpendiculares*.",
-    "Que se corten en sus *puntos medios*: a 3 y a 2 de cada punta.",
-    "Y unís los cuatro extremos. ¡Rombo listo!"
+    "Construir un rombo con diagonales de 6 y 4: primero, la de 6.",
+    "Después, la de 4, *perpendicular*, y que se corten *en sus puntos medios*.",
+    "Unís los cuatro extremos. ¡Rombo listo!"
    ],
    "titulo": "UN ROMBO DESDE SUS DIAGONALES",
-   "items": [
+   "vista": [
+    0,
+    8,
+    0,
+    5
+   ],
+   "pasos": [
     {
-     "txt": "Dos segmentos perpendiculares",
-     "emoji": "➕"
+     "el": [
+      {
+       "seg": [
+        [
+         1,
+         2.5
+        ],
+        [
+         7,
+         2.5
+        ]
+       ]
+      },
+      {
+       "txt": [
+        5.5,
+        2.0
+       ],
+       "s": "6 cm",
+       "size": 38
+      }
+     ],
+     "txt": "Diagonal de 6 cm"
     },
     {
-     "txt": "Cortados por la mitad",
-     "emoji": "✂️"
+     "el": [
+      {
+       "seg": [
+        [
+         4,
+         0.5
+        ],
+        [
+         4,
+         4.5
+        ]
+       ]
+      },
+      {
+       "ang": [
+        4,
+        2.5
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.5,
+       "recto": true
+      },
+      {
+       "txt": [
+        4.7,
+        4.1
+       ],
+       "s": "4 cm",
+       "size": 38
+      }
+     ],
+     "txt": "Perpendicular de 4 cm, cortadas a la mitad"
     },
     {
-     "txt": "Unir los extremos",
-     "emoji": "🔷"
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         2.5
+        ],
+        [
+         4,
+         0.5
+        ],
+        [
+         7,
+         2.5
+        ],
+        [
+         4,
+         4.5
+        ]
+       ],
+       "fill": "rgba(139,227,143,.18)",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "Unir los extremos: ¡rombo!"
     }
    ]
   },

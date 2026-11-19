@@ -37,7 +37,7 @@
    "signo": "·"
   },
   {
-   "t": "pasos",
+   "t": "geo",
    "voz": [
     "Triángulo de lados 6, 5 y 4 centímetros.",
     "Trazá un segmento AB de *6 centímetros*.",
@@ -46,58 +46,236 @@
     "Donde se cortan, *C*. Uní C con A y con B. ¡Triángulo!"
    ],
    "titulo": "TRIÁNGULO DE 6, 5 Y 4 cm",
-   "items": [
+   "vista": [
+    -1,
+    7,
+    -1,
+    4.5
+   ],
+   "pasos": [
     {
-     "txt": "AB = 6 cm",
-     "emoji": "📏"
+     "el": [
+      {
+       "seg": [
+        [
+         0,
+         0
+        ],
+        [
+         6,
+         0
+        ]
+       ]
+      }
+     ],
+     "txt": "La base"
     },
     {
-     "txt": "Arco de 5 cm desde A",
-     "emoji": "🧭"
+     "el": [
+      {
+       "pt": [
+        0,
+        0
+       ],
+       "txt": "A",
+       "dx": -0.4,
+       "dy": -0.5
+      },
+      {
+       "pt": [
+        6,
+        0
+       ],
+       "txt": "B",
+       "dx": 0.4,
+       "dy": -0.5
+      },
+      {
+       "txt": [
+        3,
+        -0.6
+       ],
+       "s": "6 cm"
+      }
+     ],
+     "txt": "AB = 6 cm"
     },
     {
-     "txt": "Arco de 4 cm desde B",
-     "emoji": "🧭"
+     "el": [
+      {
+       "arco": [
+        0,
+        0
+       ],
+       "r": 5,
+       "a1": 25,
+       "a2": 58
+      }
+     ],
+     "txt": "Arco de 5 cm desde A"
     },
     {
-     "txt": "Cruce = C · unir",
-     "emoji": "🔺"
+     "el": [
+      {
+       "arco": [
+        6,
+        0
+       ],
+       "r": 4,
+       "a1": 108,
+       "a2": 140
+      }
+     ],
+     "txt": "Arco de 4 cm desde B"
+    },
+    {
+     "el": [
+      {
+       "pt": [
+        3.75,
+        3.307
+       ],
+       "txt": "C",
+       "dx": 0,
+       "dy": 0.55,
+       "color": "#ff7a66"
+      },
+      {
+       "seg": [
+        [
+         0,
+         0
+        ],
+        [
+         3.75,
+         3.307
+        ]
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "seg": [
+        [
+         6,
+         0
+        ],
+        [
+         3.75,
+         3.307
+        ]
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "txt": [
+        1.3,
+        2.1
+       ],
+       "s": "5 cm",
+       "color": "#8be38f"
+      },
+      {
+       "txt": [
+        5.4,
+        1.9
+       ],
+       "s": "4 cm",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "C en el cruce: unir"
     }
    ]
   },
   {
-   "t": "figura",
+   "t": "geo",
    "voz": [
-    "Así queda el triángulo…",
-    "… con lados de 6, 5 y 4 centímetros."
+    "¿Siempre se puede? *No*. Probemos con 3, 4 y 9: base de 9.",
+    "Arco de 3 desde una punta y de 4 desde la otra…",
+    "… ¡*no se tocan*! 3 más 4 da 7, y no llega a 9."
    ],
-   "tipo": "triangulo",
-   "etiquetas": [
-    "AB = 6 cm",
-    "AC = 5 cm",
-    "BC = 4 cm"
+   "titulo": "3, 4 Y 9 cm",
+   "vista": [
+    -0.5,
+    9.5,
+    -0.5,
+    4.5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0,
+         0
+        ],
+        [
+         9,
+         0
+        ]
+       ]
+      },
+      {
+       "pt": [
+        0,
+        0
+       ]
+      },
+      {
+       "pt": [
+        9,
+        0
+       ]
+      },
+      {
+       "txt": [
+        4.5,
+        -0.4
+       ],
+       "s": "9 cm"
+      }
+     ],
+     "txt": "Base de 9 cm"
+    },
+    {
+     "el": [
+      {
+       "arco": [
+        0,
+        0
+       ],
+       "r": 3,
+       "a1": 0,
+       "a2": 90
+      },
+      {
+       "arco": [
+        9,
+        0
+       ],
+       "r": 4,
+       "a1": 90,
+       "a2": 180
+      }
+     ],
+     "txt": "Arcos de 3 y 4 cm"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        4.5,
+        2.6
+       ],
+       "s": "¡no se tocan!",
+       "color": "#ff7a66",
+       "size": 56
+      }
+     ],
+     "txt": "3 + 4 = 7 < 9: no hay triángulo"
+    }
    ]
-  },
-  {
-   "t": "balanza",
-   "voz": [
-    "¿Siempre se puede? *No*. Cada lado tiene que ser *menor que la suma* de los otros dos.",
-    "Con 3, 4 y 9: 3 más 4 da 7…",
-    "… y 7 no le gana a 9. Los arcos *no se cortan*: el triángulo no existe."
-   ],
-   "izq": {
-    "cab": "3 + 4",
-    "items": [
-     "= 7"
-    ]
-   },
-   "der": {
-    "cab": "LADO MAYOR",
-    "items": [
-     "9"
-    ]
-   },
-   "gana": "der"
   },
   {
    "t": "clasificar",

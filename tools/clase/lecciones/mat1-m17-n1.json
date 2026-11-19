@@ -27,24 +27,71 @@
    "sub": "y su medición"
   },
   {
-   "t": "partes",
+   "t": "geo",
    "voz": [
-    "Un *ángulo* son dos semirrectas que salen del mismo punto.",
-    "Ese punto es el *vértice*.",
-    "Las semirrectas son los *lados*. Y se mide en *grados*."
+    "Un *ángulo* son dos semirrectas que salen del mismo punto: el *vértice*. Las semirrectas son los *lados*.",
+    "Y la abertura entre los lados se mide en *grados*: este mide 50."
    ],
-   "emoji": "📐",
-   "titulo": "LAS PARTES DEL ÁNGULO",
-   "partes": [
+   "titulo": "EL ÁNGULO",
+   "vista": [
+    0,
+    10,
+    0,
+    6
+   ],
+   "pasos": [
     {
-     "txt": "Vértice",
-     "x": -0.7,
-     "y": 0.6
+     "el": [
+      {
+       "seg": [
+        [
+         2,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         2,
+         1
+        ],
+        [
+         6.178,
+         5.979
+        ]
+       ]
+      },
+      {
+       "pt": [
+        2,
+        1
+       ],
+       "txt": "vértice",
+       "dx": -0.2,
+       "dy": -0.6
+      }
+     ],
+     "txt": "Dos lados que salen del vértice"
     },
     {
-     "txt": "Lados",
-     "x": 0.5,
-     "y": -0.5
+     "el": [
+      {
+       "ang": [
+        2,
+        1
+       ],
+       "a1": 0,
+       "a2": 50,
+       "r": 1.4,
+       "txt": "50°"
+      }
+     ],
+     "txt": "La abertura se mide en grados"
     }
    ]
   },
@@ -102,6 +149,168 @@
    ]
   },
   {
+   "t": "geo",
+   "voz": [
+    "Así se ve un *agudo*: más cerrado que una esquina.",
+    "El *recto* es la esquina justa: 90 grados.",
+    "El *obtuso* está más abierto que la esquina.",
+    "Y el *llano* es una línea recta: 180 grados."
+   ],
+   "titulo": "CÓMO SE VEN",
+   "vista": [
+    0,
+    20,
+    0,
+    5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0.5,
+         1
+        ],
+        [
+         4.5,
+         1
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         0.5,
+         1
+        ],
+        [
+         3.564,
+         3.571
+        ]
+       ]
+      },
+      {
+       "ang": [
+        0.5,
+        1
+       ],
+       "a1": 0,
+       "a2": 40,
+       "r": 1.2,
+       "txt": "40°"
+      }
+     ],
+     "txt": "Agudo: menos de 90°"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         6,
+         1
+        ],
+        [
+         9.5,
+         1
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         6,
+         1
+        ],
+        [
+         6,
+         4.5
+        ]
+       ]
+      },
+      {
+       "ang": [
+        6,
+        1
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 1.2,
+       "recto": true
+      }
+     ],
+     "txt": "Recto: 90°, la esquina de una hoja"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         12.5,
+         1
+        ],
+        [
+         15.5,
+         1
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         12.5,
+         1
+        ],
+        [
+         10.25,
+         3.681
+        ]
+       ]
+      },
+      {
+       "ang": [
+        12.5,
+        1
+       ],
+       "a1": 0,
+       "a2": 130,
+       "r": 1,
+       "txt": "130°"
+      }
+     ],
+     "txt": "Obtuso: entre 90° y 180°"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         16,
+         1
+        ],
+        [
+         19.8,
+         1
+        ]
+       ]
+      },
+      {
+       "ang": [
+        17.9,
+        1
+       ],
+       "a1": 0,
+       "a2": 180,
+       "r": 1,
+       "txt": "180°"
+      }
+     ],
+     "txt": "Llano: 180°, una línea recta"
+    }
+   ]
+  },
+  {
    "t": "figura",
    "voz": [
     "Este ángulo, ¿de qué tipo es?",
@@ -139,20 +348,107 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "geo",
    "voz": [
-    "Dos rectas se cruzan y un ángulo mide 65 grados. ¿Los otros tres?",
-    "El adyacente: 180 menos 65, *115*.",
-    "El opuesto al de 65: *65*.",
-    "El opuesto al de 115: *115*.",
-    "Control: 65 + 115 + 65 + 115, ¡*360*, una vuelta!"
+    "Dos rectas se cruzan y un ángulo mide 65 grados. ¿Y los otros tres?",
+    "Este es el de *65*.",
+    "Su vecino, el adyacente: 180 menos 65, *115*.",
+    "Y enfrente, los *opuestos por el vértice*: 65 y 115. Todo suma *360*, una vuelta."
    ],
-   "titulo": "RECTAS QUE SE CORTAN",
-   "items": [
-    "Adyacente: 180° − 65° = 115°",
-    "Opuesto: 65°",
-    "Opuesto: 115°",
-    "Suma: 360° ✓"
+   "titulo": "DOS RECTAS QUE SE CORTAN",
+   "vista": [
+    0,
+    10,
+    0,
+    6
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0.8,
+         3
+        ],
+        [
+         9.2,
+         3
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         3.605,
+         0.009
+        ],
+        [
+         6.395,
+         5.991
+        ]
+       ]
+      }
+     ],
+     "txt": "Dos rectas se cortan"
+    },
+    {
+     "el": [
+      {
+       "ang": [
+        5,
+        3
+       ],
+       "a1": 0,
+       "a2": 65,
+       "r": 1,
+       "txt": "65°"
+      }
+     ],
+     "txt": "Un ángulo mide 65°"
+    },
+    {
+     "el": [
+      {
+       "ang": [
+        5,
+        3
+       ],
+       "a1": 65,
+       "a2": 180,
+       "r": 0.8,
+       "txt": "115°",
+       "color": "#7FD3C4"
+      }
+     ],
+     "txt": "Su adyacente: 180° − 65° = 115°"
+    },
+    {
+     "el": [
+      {
+       "ang": [
+        5,
+        3
+       ],
+       "a1": 180,
+       "a2": 245,
+       "r": 1,
+       "txt": "65°"
+      },
+      {
+       "ang": [
+        5,
+        3
+       ],
+       "a1": 245,
+       "a2": 360,
+       "r": 0.8,
+       "txt": "115°",
+       "color": "#7FD3C4"
+      }
+     ],
+     "txt": "Opuestos iguales · total 360°"
+    }
    ]
   },
   {

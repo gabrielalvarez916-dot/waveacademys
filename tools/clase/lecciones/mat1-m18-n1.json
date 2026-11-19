@@ -57,6 +57,148 @@
    ]
   },
   {
+   "t": "geo",
+   "voz": [
+    "Mirá las marquitas: en el *equilátero*, los tres lados iguales.",
+    "En el *isósceles*, dos.",
+    "Y el *escaleno* no tiene ninguno igual."
+   ],
+   "titulo": "SEGÚN SUS LADOS",
+   "vista": [
+    0,
+    18,
+    0,
+    5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0.5,
+         0.5
+        ],
+        [
+         4.5,
+         0.5
+        ],
+        [
+         2.5,
+         3.964
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         0.5,
+         0.5
+        ],
+        [
+         4.5,
+         0.5
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         4.5,
+         0.5
+        ],
+        [
+         2.5,
+         3.964
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         2.5,
+         3.964
+        ],
+        [
+         0.5,
+         0.5
+        ]
+       ]
+      }
+     ],
+     "txt": "Equilátero: 3 marcas iguales"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         6.5,
+         0.5
+        ],
+        [
+         10.5,
+         0.5
+        ],
+        [
+         8.5,
+         4.6
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         10.5,
+         0.5
+        ],
+        [
+         8.5,
+         4.6
+        ]
+       ],
+       "n": 2
+      },
+      {
+       "marca": [
+        [
+         8.5,
+         4.6
+        ],
+        [
+         6.5,
+         0.5
+        ]
+       ],
+       "n": 2
+      }
+     ],
+     "txt": "Isósceles: 2 lados iguales"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         12.5,
+         0.5
+        ],
+        [
+         17.5,
+         0.5
+        ],
+        [
+         13.8,
+         3.5
+        ]
+       ]
+      }
+     ],
+     "txt": "Escaleno: todos distintos"
+    }
+   ]
+  },
+  {
    "t": "matriz",
    "voz": [
     "Por sus *ángulos*, otras tres.",
@@ -82,6 +224,107 @@
     {
      "cab": "TRUCO",
      "txt": "mirar el ángulo mayor"
+    }
+   ]
+  },
+  {
+   "t": "geo",
+   "voz": [
+    "Así se ven: el *acutángulo*, con los tres ángulos agudos.",
+    "El *rectángulo*, con su esquina de 90.",
+    "Y el *obtusángulo*, con un ángulo bien abierto."
+   ],
+   "titulo": "SEGÚN SUS ÁNGULOS",
+   "vista": [
+    0,
+    18,
+    0,
+    4.5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0.5,
+         0.5
+        ],
+        [
+         4.5,
+         0.5
+        ],
+        [
+         2.2,
+         3.6
+        ]
+       ]
+      }
+     ],
+     "txt": "Acutángulo: todos agudos"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         6.5,
+         0.5
+        ],
+        [
+         10.5,
+         0.5
+        ],
+        [
+         6.5,
+         3.6
+        ]
+       ]
+      },
+      {
+       "ang": [
+        6.5,
+        0.5
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.8,
+       "recto": true
+      }
+     ],
+     "txt": "Rectángulo: uno de 90°"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         12.5,
+         0.5
+        ],
+        [
+         17.5,
+         0.5
+        ],
+        [
+         13.3,
+         2
+        ]
+       ]
+      },
+      {
+       "ang": [
+        13.3,
+        2
+       ],
+       "a1": 241.9,
+       "a2": 340.4,
+       "r": 0.6,
+       "txt": "98°",
+       "dt": 0.6
+      }
+     ],
+     "txt": "Obtusángulo: uno de más de 90°"
     }
    ]
   },
@@ -113,25 +356,94 @@
    "signo": "·"
   },
   {
-   "t": "balanza",
+   "t": "geo",
    "voz": [
-    "Momento sorpresa: *no con cualquier medida* se arma un triángulo. 3, 4 y 8 centímetros…",
-    "3 más 4 da 7…",
-    "… y 7 no le gana a 8. ¡Los palitos no se tocan! Es la *desigualdad triangular*."
+    "Momento sorpresa: *no con cualquier medida* se arma un triángulo. Base de 8.",
+    "Arcos de 3 y de 4 desde las puntas…",
+    "… ¡*no se tocan*! 3 más 4 da 7, y no llega a 8. Es la *desigualdad triangular*."
    ],
-   "izq": {
-    "cab": "3 + 4",
-    "items": [
-     "= 7"
-    ]
-   },
-   "der": {
-    "cab": "LADO MAYOR",
-    "items": [
-     "8"
-    ]
-   },
-   "gana": "der"
+   "titulo": "3, 4 Y 8 cm",
+   "vista": [
+    -0.5,
+    8.5,
+    -0.5,
+    4.5
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0,
+         0
+        ],
+        [
+         8,
+         0
+        ]
+       ]
+      },
+      {
+       "pt": [
+        0,
+        0
+       ]
+      },
+      {
+       "pt": [
+        8,
+        0
+       ]
+      },
+      {
+       "txt": [
+        4,
+        -0.4
+       ],
+       "s": "8 cm"
+      }
+     ],
+     "txt": "Base de 8 cm"
+    },
+    {
+     "el": [
+      {
+       "arco": [
+        0,
+        0
+       ],
+       "r": 3,
+       "a1": 0,
+       "a2": 90
+      },
+      {
+       "arco": [
+        8,
+        0
+       ],
+       "r": 4,
+       "a1": 90,
+       "a2": 180
+      }
+     ],
+     "txt": "Arcos de 3 y 4 cm"
+    },
+    {
+     "el": [
+      {
+       "txt": [
+        4,
+        3.2
+       ],
+       "s": "¡no se tocan!",
+       "color": "#ff7a66",
+       "size": 56
+      }
+     ],
+     "txt": "3 + 4 = 7 < 8: no hay triángulo"
+    }
+   ]
   },
   {
    "t": "consejo",

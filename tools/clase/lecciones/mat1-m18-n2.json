@@ -55,21 +55,100 @@
    ]
   },
   {
-   "t": "antesdespues",
+   "t": "geo",
    "voz": [
-    "Si *prolongás un lado*, aparece el *ángulo exterior*: es el adyacente de un interior, suman 180.",
-    "Y el truco: el exterior es igual a *la suma de los dos interiores que no están pegados*. Con 50, 60 y 70, el exterior junto al 70 mide *110*: ¡50 + 60!"
+    "Mirá el triángulo de 50, 60 y 70: suman *180*. Si *prolongás un lado*, aparece el *ángulo exterior*.",
+    "Mide 180 menos 70: *110*. ¡Y es justo 50 más 60, los dos que no están pegados!"
    ],
-   "antes": {
-    "cab": "POR ADYACENTE",
-    "emoji": "➖",
-    "texto": "180° − 70° = 110°"
-   },
-   "despues": {
-    "cab": "POR LA PROPIEDAD",
-    "emoji": "➕",
-    "texto": "50° + 60° = 110°"
-   }
+   "titulo": "EL ÁNGULO EXTERIOR",
+   "vista": [
+    -0.5,
+    7.5,
+    -0.6,
+    4.3
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0,
+         0
+        ],
+        [
+         4.5,
+         0
+        ],
+        [
+         3.139,
+         3.74
+        ]
+       ]
+      },
+      {
+       "ang": [
+        0,
+        0
+       ],
+       "a1": 0,
+       "a2": 50,
+       "r": 0.7,
+       "txt": "50°"
+      },
+      {
+       "ang": [
+        3.139,
+        3.74
+       ],
+       "a1": 230,
+       "a2": 290,
+       "r": 0.6,
+       "txt": "60°"
+      },
+      {
+       "ang": [
+        4.5,
+        0
+       ],
+       "a1": 110,
+       "a2": 180,
+       "r": 0.6,
+       "txt": "70°"
+      }
+     ],
+     "txt": "50° + 60° + 70° = 180°"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         4.5,
+         0
+        ],
+        [
+         7.2,
+         0
+        ]
+       ],
+       "dash": true
+      },
+      {
+       "ang": [
+        4.5,
+        0
+       ],
+       "a1": 0,
+       "a2": 110,
+       "r": 1,
+       "txt": "110°",
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "Exterior: 110° = 50° + 60°"
+    }
+   ]
   },
   {
    "t": "bloques",

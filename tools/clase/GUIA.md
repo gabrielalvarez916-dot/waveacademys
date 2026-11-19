@@ -72,6 +72,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | ecuacion | pasos | pasos:[...], notas:[...] |
 | figura | 2 | tipo:'triangulo'\|'cuadrado'\|'rectangulo'\|'circulo'\|'angulo', grados, etiquetas |
 | grilla | 1 + resaltar | filas, cols, titulo, resaltar:[{fila, col, txt}] |
+| geo | pasos | titulo, vista:[xmin,xmax,ymin,ymax], pasos:[{el:[...], txt}] — geometría paso a paso. Elementos: `{seg:[[x,y],[x,y]], dash, flechas, color}`, `{pol:[[x,y]...]}`, `{pt:[x,y], txt}`, `{txt:[x,y], s}`, `{ang:[x,y], a1, a2, r, txt, recto}` (grados), `{arco:[x,y], r, a1, a2}` (compás), `{marca:[[x,y],[x,y]], n}`. Usar en TODA lección de geometría: cada figura que se nombra, se dibuja |
 | criba | 2 + tachar | hasta, cols, tachar:[2,3,5,7], txt (criba de Eratóstenes: tacha múltiplos, brillan los primos) |
 | arbol | 2 + ramas | numero, ramas:[[primo, cociente]...], resultado (árbol de factores primos) |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |

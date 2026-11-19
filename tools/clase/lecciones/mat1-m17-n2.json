@@ -35,31 +35,143 @@
    "sub": "posiciones de dos rectas"
   },
   {
-   "t": "matriz",
+   "t": "geo",
    "voz": [
-    "Dos rectas pueden estar así.",
-    "*Paralelas*: nunca se cortan y siempre están a la misma distancia.",
-    "*Secantes*: se cortan en un punto.",
-    "*Perpendiculares*: se cortan formando cuatro ángulos *rectos*.",
+    "Dos rectas *paralelas* nunca se cortan y están siempre a la misma distancia.",
+    "Las *secantes* se cortan en un punto.",
+    "Las *perpendiculares* se cortan formando ángulos *rectos*.",
     "Ojo: toda perpendicular es secante, pero no toda secante es perpendicular."
    ],
    "titulo": "POSICIONES DE DOS RECTAS",
-   "celdas": [
+   "vista": [
+    0,
+    19,
+    0,
+    6
+   ],
+   "pasos": [
     {
-     "cab": "PARALELAS",
-     "txt": "nunca se cortan 🚆"
+     "el": [
+      {
+       "seg": [
+        [
+         0.3,
+         4
+        ],
+        [
+         5.3,
+         4
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         0.3,
+         2
+        ],
+        [
+         5.3,
+         2
+        ]
+       ]
+      },
+      {
+       "txt": [
+        2.8,
+        0.8
+       ],
+       "s": "paralelas"
+      }
+     ],
+     "txt": "Paralelas: nunca se cortan"
     },
     {
-     "cab": "SECANTES",
-     "txt": "se cortan en un punto ✂️"
+     "el": [
+      {
+       "seg": [
+        [
+         6.8,
+         1.5
+        ],
+        [
+         11.8,
+         4.5
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         6.8,
+         4.2
+        ],
+        [
+         11.8,
+         1.8
+        ]
+       ]
+      },
+      {
+       "txt": [
+        9.3,
+        0.8
+       ],
+       "s": "secantes"
+      }
+     ],
+     "txt": "Secantes: se cortan en un punto"
     },
     {
-     "cab": "PERPENDICULARES",
-     "txt": "se cortan a 90° ➕"
+     "el": [
+      {
+       "seg": [
+        [
+         13.3,
+         3
+        ],
+        [
+         18.7,
+         3
+        ]
+       ]
+      },
+      {
+       "seg": [
+        [
+         16,
+         0.6
+        ],
+        [
+         16,
+         5.4
+        ]
+       ]
+      },
+      {
+       "ang": [
+        16,
+        3
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.9,
+       "recto": true
+      },
+      {
+       "txt": [
+        16,
+        0.1
+       ],
+       "s": "perpendiculares",
+       "size": 38
+      }
+     ],
+     "txt": "Perpendiculares: se cortan a 90°"
     },
     {
-     "cab": "OJO",
-     "txt": "perpendicular → secante, no al revés"
+     "el": [],
+     "txt": "Toda perpendicular es secante"
     }
    ]
   },
@@ -124,15 +236,98 @@
    ]
   },
   {
-   "t": "dato",
+   "t": "geo",
    "voz": [
-    "La *distancia* de un punto a una recta se mide sobre la *perpendicular*: es el camino más corto.",
-    "Y entre dos paralelas, esa distancia es *la misma* en cualquier lugar."
+    "La *distancia* de un punto a una recta… ¿en diagonal? No: ese camino es *más largo*.",
+    "Se mide sobre la *perpendicular*: es el camino más corto."
    ],
-   "numero": 90,
-   "despues": "°",
-   "texto": "La distancia se mide siempre sobre la perpendicular",
-   "emoji": "📏"
+   "titulo": "LA DISTANCIA",
+   "vista": [
+    0,
+    10,
+    0,
+    6
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         0.5,
+         1
+        ],
+        [
+         9.5,
+         1
+        ]
+       ]
+      },
+      {
+       "pt": [
+        4,
+        4.5
+       ],
+       "txt": "P",
+       "dx": -0.5,
+       "dy": 0.4
+      },
+      {
+       "seg": [
+        [
+         4,
+         4.5
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       "dash": true,
+       "color": "#ff7a66"
+      },
+      {
+       "txt": [
+        7.3,
+        3.2
+       ],
+       "s": "más largo",
+       "color": "#ff7a66",
+       "size": 38
+      }
+     ],
+     "txt": "En diagonal: más largo"
+    },
+    {
+     "el": [
+      {
+       "seg": [
+        [
+         4,
+         4.5
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       "color": "#8be38f"
+      },
+      {
+       "ang": [
+        4,
+        1
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.8,
+       "recto": true,
+       "color": "#8be38f"
+      }
+     ],
+     "txt": "Sobre la perpendicular: la distancia"
+    }
+   ]
   },
   {
    "t": "pregunta",

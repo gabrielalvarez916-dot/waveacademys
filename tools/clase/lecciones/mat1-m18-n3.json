@@ -73,6 +73,258 @@
    ]
   },
   {
+   "t": "geo",
+   "voz": [
+    "Veámoslos. El *paralelogramo*: dos pares de lados paralelos.",
+    "El *rectángulo*: paralelogramo con 4 ángulos rectos.",
+    "El *rombo*: paralelogramo con 4 lados iguales.",
+    "El *cuadrado*: tiene las dos cosas.",
+    "Y el *trapecio*: un solo par de lados paralelos."
+   ],
+   "titulo": "LOS CUADRILÁTEROS",
+   "vista": [
+    0,
+    20,
+    0,
+    4
+   ],
+   "pasos": [
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         0.2,
+         0.5
+        ],
+        [
+         3,
+         0.5
+        ],
+        [
+         3.8,
+         2.5
+        ],
+        [
+         1,
+         2.5
+        ]
+       ]
+      },
+      {
+       "txt": [
+        2,
+        3.3
+       ],
+       "s": "paralelogramo",
+       "size": 34
+      }
+     ],
+     "txt": "Paralelogramo: 2 pares paralelos"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         4.6,
+         0.5
+        ],
+        [
+         7.8,
+         0.5
+        ],
+        [
+         7.8,
+         2.5
+        ],
+        [
+         4.6,
+         2.5
+        ]
+       ]
+      },
+      {
+       "ang": [
+        4.6,
+        0.5
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.5,
+       "recto": true
+      },
+      {
+       "txt": [
+        6.2,
+        3.3
+       ],
+       "s": "rectángulo",
+       "size": 34
+      }
+     ],
+     "txt": "Rectángulo: 4 ángulos rectos"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         10,
+         0.2
+        ],
+        [
+         11.6,
+         1.5
+        ],
+        [
+         10,
+         2.8
+        ],
+        [
+         8.4,
+         1.5
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         10,
+         0.2
+        ],
+        [
+         11.6,
+         1.5
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         11.6,
+         1.5
+        ],
+        [
+         10,
+         2.8
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         10,
+         2.8
+        ],
+        [
+         8.4,
+         1.5
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         8.4,
+         1.5
+        ],
+        [
+         10,
+         0.2
+        ]
+       ]
+      },
+      {
+       "txt": [
+        10,
+        3.4
+       ],
+       "s": "rombo",
+       "size": 34
+      }
+     ],
+     "txt": "Rombo: 4 lados iguales"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         12.6,
+         0.5
+        ],
+        [
+         14.9,
+         0.5
+        ],
+        [
+         14.9,
+         2.8
+        ],
+        [
+         12.6,
+         2.8
+        ]
+       ]
+      },
+      {
+       "ang": [
+        12.6,
+        0.5
+       ],
+       "a1": 0,
+       "a2": 90,
+       "r": 0.5,
+       "recto": true
+      },
+      {
+       "txt": [
+        13.75,
+        3.5
+       ],
+       "s": "cuadrado",
+       "size": 34
+      }
+     ],
+     "txt": "Cuadrado: las dos cosas"
+    },
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         15.8,
+         0.5
+        ],
+        [
+         19.8,
+         0.5
+        ],
+        [
+         18.8,
+         2.5
+        ],
+        [
+         16.8,
+         2.5
+        ]
+       ]
+      },
+      {
+       "txt": [
+        17.8,
+        3.3
+       ],
+       "s": "trapecio",
+       "size": 34
+      }
+     ],
+     "txt": "Trapecio: un solo par paralelo"
+    }
+   ]
+  },
+  {
    "t": "venn",
    "voz": [
     "La familia de los paralelogramos.",
@@ -115,21 +367,147 @@
    ]
   },
   {
-   "t": "ecuacion",
+   "t": "geo",
    "voz": [
-    "En todo paralelogramo: *lados opuestos iguales*, *ángulos opuestos iguales*, y *consecutivos suman 180*. Si un ángulo mide 70…",
-    "… su opuesto mide 70, y su consecutivo, 180 menos 70…",
-    "¡*110*! Los cuatro: 70, 110, 70 y 110."
+    "En todo paralelogramo, los *lados opuestos son iguales*.",
+    "Los *ángulos opuestos* también: si uno mide 70, el de enfrente mide 70.",
+    "Y los *consecutivos suman 180*: 110 y 110."
+   ],
+   "titulo": "EL PARALELOGRAMO",
+   "vista": [
+    0,
+    8.5,
+    0,
+    4.6
    ],
    "pasos": [
-    "Un ángulo: 70°",
-    "Opuesto: 70° · consecutivo: 110°",
-    "70°, 110°, 70°, 110°"
-   ],
-   "notas": [
-    "",
-    "180° − 70°",
-    ""
+    {
+     "el": [
+      {
+       "pol": [
+        [
+         1,
+         1
+        ],
+        [
+         6,
+         1
+        ],
+        [
+         6.958,
+         3.631
+        ],
+        [
+         1.958,
+         3.631
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         1,
+         1
+        ],
+        [
+         6,
+         1
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         1.958,
+         3.631
+        ],
+        [
+         6.958,
+         3.631
+        ]
+       ]
+      },
+      {
+       "marca": [
+        [
+         1,
+         1
+        ],
+        [
+         1.958,
+         3.631
+        ]
+       ],
+       "n": 2
+      },
+      {
+       "marca": [
+        [
+         6,
+         1
+        ],
+        [
+         6.958,
+         3.631
+        ]
+       ],
+       "n": 2
+      }
+     ],
+     "txt": "Lados opuestos iguales"
+    },
+    {
+     "el": [
+      {
+       "ang": [
+        1,
+        1
+       ],
+       "a1": 0,
+       "a2": 70,
+       "r": 0.7,
+       "txt": "70°"
+      },
+      {
+       "ang": [
+        6.958,
+        3.631
+       ],
+       "a1": 180,
+       "a2": 250,
+       "r": 0.7,
+       "txt": "70°"
+      }
+     ],
+     "txt": "Ángulos opuestos iguales"
+    },
+    {
+     "el": [
+      {
+       "ang": [
+        6,
+        1
+       ],
+       "a1": 70,
+       "a2": 180,
+       "r": 0.6,
+       "txt": "110°",
+       "color": "#7FD3C4"
+      },
+      {
+       "ang": [
+        1.958,
+        3.631
+       ],
+       "a1": 250,
+       "a2": 360,
+       "r": 0.6,
+       "txt": "110°",
+       "color": "#7FD3C4"
+      }
+     ],
+     "txt": "Consecutivos: 180° − 70° = 110°"
+    }
    ]
   },
   {
