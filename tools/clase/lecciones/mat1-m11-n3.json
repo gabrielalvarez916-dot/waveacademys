@@ -1,0 +1,216 @@
+{
+ "slug": "mat1-m11-n3",
+ "step_id": "e7375e35-76ab-4cab-8c4b-7f6c922efb26",
+ "materia": "Matemática I",
+ "titulo": "Comparación y orden de enteros",
+ "sub": "Matemática I · Misión 11 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: ola polar. El jueves marcó *menos 6 grados* y el martes, menos 1.",
+    "Un vecino jura que menos 6 es más que menos 1 porque 6 es más grande… ¡error! *Menos 6 es más frío*: es menor.",
+    "Hoy: *comparar y ordenar enteros*."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Ola polar: −6 °C el jueves y −1 °C el martes",
+   "bajada": "¿Cuál es el número más chico?",
+   "emoji": "🥶",
+   "titulo": "COMPARAR ENTEROS",
+   "sub": "¿cuál es mayor?"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "La regla de oro: en la recta, *es mayor el que está más a la derecha*.",
+    "2 está a la derecha del 0: 2 es mayor que 0.",
+    "Y menos 3 está a la izquierda: *menos 3 es menor que 0*."
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 2,
+     "txt": "2 > 0"
+    },
+    {
+     "v": -3,
+     "txt": "−3 < 0"
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Consecuencia: *todo positivo es mayor que 0*, y *0 es mayor que todo negativo*."
+   ],
+   "texto": "negativos < 0 < positivos",
+   "emoji": "🏔️"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Entre dos negativos, es menor el que está *más lejos del cero*.",
+    "Menos 5 está más lejos que menos 2…",
+    "… entonces *menos 5 es menor que menos 2*. ¡Más frío, más chico!"
+   ],
+   "a": {
+    "cab": "−5",
+    "texto": "más lejos del cero · más frío",
+    "emoji": "🥶"
+   },
+   "b": {
+    "cab": "−2",
+    "texto": "más cerca del cero",
+    "emoji": "🧥"
+   },
+   "signo": "<"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Las temperaturas de la semana.",
+    "Lunes: menos 4.",
+    "Martes: menos 1.",
+    "Miércoles: 2.",
+    "Jueves: menos 6. El más frío, el *jueves*; el más templado, el *miércoles*."
+   ],
+   "titulo": "TEMPERATURAS DE LA SEMANA",
+   "columnas": [
+    "Día",
+    "Temperatura"
+   ],
+   "filas": [
+    [
+     "Lunes",
+     "−4 °C"
+    ],
+    [
+     "Martes",
+     "−1 °C"
+    ],
+    [
+     "Miércoles",
+     "2 °C"
+    ],
+    [
+     "Jueves",
+     "−6 °C 🥶"
+    ]
+   ]
+  },
+  {
+   "t": "linea",
+   "voz": [
+    "A ordenar: 3, menos 8, 0, menos 1, menos 12 y 5. Primero los negativos, del más lejano al cero: menos 12, menos 8, menos 1.",
+    "Después el *0*.",
+    "Después los positivos: 3…",
+    "… y 5. ¡Listo!"
+   ],
+   "titulo": "DE MENOR A MAYOR",
+   "eventos": [
+    {
+     "fecha": "−12 · −8 · −1",
+     "txt": "Negativos",
+     "emoji": "🥶"
+    },
+    {
+     "fecha": "0",
+     "txt": "Referencia",
+     "emoji": "⚪"
+    },
+    {
+     "fecha": "3",
+     "txt": "Positivo",
+     "emoji": "🙂"
+    },
+    {
+     "fecha": "5",
+     "txt": "El mayor",
+     "emoji": "🔥"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuáles son los enteros mayores que menos 3 y menores que 2?",
+    "¿Menos 2, menos 1 y 1? ¿O falta alguno?",
+    "¡Falta el *0*! Son menos 2, menos 1, *0* y 1."
+   ],
+   "pregunta": "Enteros entre −3 y 2",
+   "opciones": [
+    "−2, −1, 1",
+    "−2, −1, 0, 1"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: ordenar las temperaturas menos 4, menos 1, 2 y menos 6.",
+    "Negativos, del más lejano al cero: menos 6, menos 4, menos 1.",
+    "Después el positivo: 2.",
+    "Orden: *menos 6, menos 4, menos 1, 2*."
+   ],
+   "titulo": "ORDENAR TEMPERATURAS",
+   "items": [
+    "Negativos: −6, −4, −1",
+    "Positivo: 2",
+    "−6 < −4 < −1 < 2"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Ordenar los negativos como positivos: *menos 6 es menor que menos 2*, aunque 6 sea más que 2.",
+    "Y *olvidar el cero* al listar enteros."
+   ],
+   "items": [
+    {
+     "mal": "−6 > −2",
+     "bien": "−6 < −2"
+    },
+    {
+     "mal": "Entre −3 y 2: −2, −1, 1",
+     "bien": "No olvidar el 0"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Mayor*: el que está más a la derecha.",
+    "Negativos, menores que 0, menor que positivos.",
+    "Entre negativos: *más lejos del cero, más chico*.",
+    "Y al listar, *no olvides el cero*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MAYOR",
+     "más a la derecha"
+    ],
+    [
+     "ORDEN",
+     "negativos < 0 < positivos"
+    ],
+    [
+     "NEGATIVOS",
+     "−5 < −2"
+    ],
+    [
+     "INTERVALOS",
+     "¡el 0 también!"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

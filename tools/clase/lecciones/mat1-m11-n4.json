@@ -1,0 +1,210 @@
+{
+ "slug": "mat1-m11-n4",
+ "step_id": "60951025-6a59-4cc6-94e2-d4d9481cd264",
+ "materia": "Matemática I",
+ "titulo": "Valor absoluto y opuesto",
+ "sub": "Matemática I · Misión 11 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "Menos 7 es un número negativo… pero ¿*a cuánto está* del cero?",
+    "¡A *7 unidades*! Las distancias nunca son negativas.",
+    "Hoy: el *valor absoluto* y el *opuesto*, dos ideas que se confunden mucho."
+   ],
+   "grande": "−7",
+   "final": "7",
+   "titulo": "VALOR ABSOLUTO",
+   "sub": "y opuesto"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *valor absoluto* de un número es su *distancia al cero*. Se escribe entre dos barritas.",
+    "El valor absoluto de menos 7 es 7, y el de 7 también es 7. Como es una distancia, *nunca es negativo*."
+   ],
+   "palabra": "Valor absoluto",
+   "texto": "|−7| = 7 · |7| = 7 · |0| = 0",
+   "emoji": "📏"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Mirá en la recta: menos 3 está a *3 unidades* del cero.",
+    "Su valor absoluto es *3*, no menos 3."
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": -3,
+     "txt": "|−3| = 3"
+    }
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *opuesto* es el número que está del otro lado del cero, a la misma distancia.",
+    "El opuesto de 5 es menos 5, y el de menos 8 es 8."
+   ],
+   "palabra": "Opuesto",
+   "texto": "Del otro lado del cero: 5 ↔ −5 · −8 ↔ 8",
+   "emoji": "🪞"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "¿Son lo mismo? Mirá la tabla.",
+    "Para menos 3: valor absoluto 3, opuesto 3. *Coinciden*.",
+    "Para 5: valor absoluto 5, pero opuesto *menos 5*. ¡No coinciden!",
+    "Y el 0: todo da 0."
+   ],
+   "titulo": "NO SON LO MISMO",
+   "columnas": [
+    "Número",
+    "Valor absoluto",
+    "Opuesto"
+   ],
+   "filas": [
+    [
+     "−3",
+     "3",
+     "3"
+    ],
+    [
+     "5",
+     "5",
+     "−5"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La diferencia clave: el valor absoluto *nunca* da negativo. El opuesto *sí puede*."
+   ],
+   "texto": "Valor absoluto: nunca negativo · Opuesto: puede serlo",
+   "emoji": "🔑"
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "Problema: un buzo está a menos 12 metros y otro a menos 30. ¿Cuánto los separa?",
+    "Valores absolutos: 12 y 30.",
+    "Están del *mismo lado* del cero.",
+    "Restamos: 30 menos 12, *18 metros*."
+   ],
+   "causa": {
+    "txt": "Buzos a −12 m y −30 m",
+    "emoji": "🤿"
+   },
+   "items": [
+    {
+     "txt": "|−12| = 12 · |−30| = 30",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Mismo lado del cero",
+     "emoji": "⬇️"
+    },
+    {
+     "txt": "30 − 12 = 18 m",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Sorpresa: compará menos 9 y 4. En la recta, *menos 9 es menor*.",
+    "Pero sus valores absolutos: 9 contra 4. ¡*El de menos 9 es mayor*!",
+    "El número más chico está *más lejos del cero*. ¡Se dio vuelta todo!"
+   ],
+   "izq": {
+    "cab": "NÚMEROS",
+    "items": [
+     "−9 < 4"
+    ]
+   },
+   "der": {
+    "cab": "VALORES ABSOLUTOS",
+    "items": [
+     "|−9| = 9 > |4| = 4"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuánto es el valor absoluto de 5?",
+    "¿5 o menos 5?",
+    "¡*5*! El valor absoluto no siempre cambia el signo: mide distancia."
+   ],
+   "pregunta": "|5| = ?",
+   "opciones": [
+    "5",
+    "−5"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que el valor absoluto *siempre cambia el signo*: el de 5 es 5.",
+    "Y confundir opuesto con valor absoluto: el opuesto de 5 es *menos 5*, pero su valor absoluto es 5."
+   ],
+   "items": [
+    {
+     "mal": "|5| = −5",
+     "bien": "|5| = 5"
+    },
+    {
+     "mal": "Opuesto = valor absoluto",
+     "bien": "Opuesto de 5: −5 · |5| = 5"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Valor absoluto*: distancia al cero.",
+    "*Nunca negativo*.",
+    "*Opuesto*: del otro lado del cero.",
+    "Para positivos *no coinciden*.",
+    "¡Misión 11 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VALOR ABSOLUTO",
+     "|−7| = 7"
+    ],
+    [
+     "NUNCA NEGATIVO",
+     "es una distancia"
+    ],
+    [
+     "OPUESTO",
+     "5 ↔ −5"
+    ],
+    [
+     "DIFERENCIA",
+     "|5| = 5 · opuesto −5"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

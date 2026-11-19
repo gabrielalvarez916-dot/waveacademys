@@ -1,0 +1,265 @@
+{
+ "slug": "mat1-m11-n1",
+ "step_id": "f46ba481-0edd-4355-bcd6-ca13cdde43d3",
+ "materia": "Matemática I",
+ "titulo": "Por qué hacen falta los negativos",
+ "sub": "Matemática I · Misión 11 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Juan entra al ascensor de un shopping y ve un botón raro: *menos 2*.",
+    "Afuera hace 3 grados *bajo cero*, y en la billetera… debe 500 pesos.",
+    "¿Cómo se escriben esas cosas? ¡Con números que van *por debajo del cero*!",
+    "Hoy: los *números negativos*, y por qué hacen falta."
+   ],
+   "personaje": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "lugar": "🛗",
+   "lineas": [
+    "Ve un botón que dice −2",
+    "Hace 3 °C bajo cero",
+    "Debe $500"
+   ],
+   "titulo": "NÚMEROS NEGATIVOS",
+   "sub": "por debajo del cero"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Los *números negativos* indican cantidades por debajo de un *punto de referencia*: el cero.",
+    "Se escriben con el signo menos adelante: *menos 3*."
+   ],
+   "palabra": "Negativo",
+   "texto": "Número menor que 0: está por debajo de la referencia. Se escribe −3",
+   "emoji": "⬇️"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Mirá cuántas situaciones los usan.",
+    "3 grados bajo cero: *menos 3*.",
+    "Deber 500 pesos: *menos 500*.",
+    "Segundo subsuelo: *menos 2*.",
+    "Nivel del mar: *0*.",
+    "Y el piso 4: *4*, positivo."
+   ],
+   "titulo": "EL CERO ES LA REFERENCIA",
+   "columnas": [
+    "Situación",
+    "Número"
+   ],
+   "filas": [
+    [
+     "3 °C bajo cero",
+     "−3"
+    ],
+    [
+     "Debo $500",
+     "−500"
+    ],
+    [
+     "Segundo subsuelo",
+     "−2"
+    ],
+    [
+     "Nivel del mar",
+     "0"
+    ],
+    [
+     "Piso 4",
+     "4"
+    ]
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar.",
+    "*Positivos*: mayores que 0. 4, 12 y 1.000.",
+    "*Negativos*: menores que 0. Menos 3, menos 15 y menos 1.",
+    "¿Y el *0*? No es ni positivo ni negativo: *es la referencia*."
+   ],
+   "cajas": [
+    {
+     "cab": "POSITIVOS",
+     "emoji": "⬆️"
+    },
+    {
+     "cab": "NEGATIVOS",
+     "emoji": "⬇️"
+    },
+    {
+     "cab": "NINGUNO",
+     "emoji": "⚪"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "4",
+     "caja": 0
+    },
+    {
+     "txt": "12",
+     "caja": 0
+    },
+    {
+     "txt": "1.000",
+     "caja": 0
+    },
+    {
+     "txt": "−3",
+     "caja": 1
+    },
+    {
+     "txt": "−15",
+     "caja": 1
+    },
+    {
+     "txt": "−1",
+     "caja": 1
+    },
+    {
+     "txt": "0",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Ojo: el signo menos tiene *dos trabajos*.",
+    "En 8 menos 3, es una *resta*. No hay ningún negativo ahí.",
+    "En menos 3 solito, dice que el número *es negativo*."
+   ],
+   "a": {
+    "cab": "8 − 3",
+    "texto": "Resta: no hay negativos",
+    "emoji": "➖"
+   },
+   "b": {
+    "cab": "−3",
+    "texto": "Número negativo",
+    "emoji": "🥶"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "El *opuesto* de un número está a la misma distancia del cero, pero *del otro lado*.",
+    "El opuesto de 5 es menos 5. El de menos 3 es 3. Ganar 200 y perder 200: ¡*opuestos*!"
+   ],
+   "antes": {
+    "cab": "GANAR $200",
+    "emoji": "🤑",
+    "texto": "+200"
+   },
+   "despues": {
+    "cab": "PERDER $200",
+    "emoji": "💸",
+    "texto": "−200"
+   }
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Momento sorpresa: si contás para la derecha, los números no terminan nunca.",
+    "¡Y para la izquierda *tampoco*! Los enteros no tienen ni principio ni fin."
+   ],
+   "numero": 0,
+   "texto": "…, −3, −2, −1, 0, 1, 2, 3, … sin principio ni fin",
+   "emoji": "♾️"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Naturales, cero y negativos juntos forman los *números enteros*.",
+    "Es un conjunto *infinito para los dos lados*."
+   ],
+   "palabra": "Enteros",
+   "texto": "…, −2, −1, 0, 1, 2, … naturales, cero y negativos",
+   "emoji": "🧱"
+  },
+  {
+   "t": "zoom",
+   "voz": [
+    "Desafío: el nivel del mar es la referencia: *0*.",
+    "Un buzo a 15 metros bajo el agua: *menos 15*.",
+    "Un avión a 3.000 metros: *3.000*. Y sus opuestos: 15, menos 3.000, y el 0 es su propio opuesto."
+   ],
+   "niveles": [
+    {
+     "emoji": "🌊",
+     "txt": "Nivel del mar: 0"
+    },
+    {
+     "emoji": "🤿",
+     "txt": "Buzo: −15 · opuesto 15"
+    },
+    {
+     "emoji": "✈️",
+     "txt": "Avión: 3.000 · opuesto −3.000"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que el *0 es negativo*: no es ni una cosa ni la otra.",
+    "Y ver negativos donde hay una *resta*: en 8 menos 3, no hay ninguno."
+   ],
+   "items": [
+    {
+     "mal": "El 0 es negativo",
+     "bien": "Ni positivo ni negativo"
+    },
+    {
+     "mal": "En 8 − 3 hay un negativo",
+     "bien": "Es una resta"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Negativos*: por debajo del cero.",
+    "El *0* es la referencia: ni positivo ni negativo.",
+    "El signo menos: *resta* o *negativo*.",
+    "*Opuesto*: misma distancia, otro lado.",
+    "Y los *enteros*, sin principio ni fin.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NEGATIVOS",
+     "−3 °C, deber $500"
+    ],
+    [
+     "EL 0",
+     "referencia, sin signo"
+    ],
+    [
+     "SIGNO −",
+     "resta o negativo"
+    ],
+    [
+     "OPUESTO",
+     "5 y −5"
+    ],
+    [
+     "ENTEROS",
+     "…, −1, 0, 1, …"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

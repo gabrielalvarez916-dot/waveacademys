@@ -1,0 +1,218 @@
+{
+ "slug": "mat1-m11-n2",
+ "step_id": "220174d5-a96a-4bf1-bbbc-a126da6c0097",
+ "materia": "Matemática I",
+ "titulo": "La recta numérica de los enteros",
+ "sub": "Matemática I · Misión 11 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Sofi le escribe a Tomi: estoy en el subsuelo menos 2, ¿vos?",
+    "Tomi contesta: en el piso 5. ¿Cuántos pisos nos separan?",
+    "Sofi: ¿3? ¡No! Son *7*: 2 hasta la planta baja y 5 más.",
+    "Hoy: la *recta numérica de los enteros*, para no perderse."
+   ],
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Estoy en el subsuelo −2 🅿️"
+    },
+    {
+     "yo": true,
+     "txt": "Yo en el piso 5. ¿Cuántos pisos nos separan?"
+    },
+    {
+     "yo": false,
+     "txt": "¿3? 🤔"
+    }
+   ],
+   "titulo": "LA RECTA ENTERA",
+   "sub": "positivos y negativos"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Marcás el *0* y dejás espacios *iguales* para los dos lados.",
+    "A la derecha, los *positivos*: 1, 2, 3…",
+    "A la izquierda, los *negativos*: primero menos 1, después menos 2, alejándose del cero."
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 3,
+     "txt": "positivos →"
+    },
+    {
+     "v": -3,
+     "txt": "← negativos"
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Si los espacios no son iguales, *la recta engaña*. Siempre la misma distancia entre número y número."
+   ],
+   "texto": "Espacios iguales, siempre",
+   "emoji": "📏"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Mirá la *simetría*: menos 4 y 4 están a la misma distancia del cero.",
+    "Menos 4, a 4 unidades del cero hacia la izquierda.",
+    "Y 4, a 4 unidades hacia la derecha. ¡*Espejo perfecto*!"
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": -4,
+     "txt": "−4"
+    },
+    {
+     "v": 4,
+     "txt": "4"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "La *distancia* entre dos enteros: contás las unidades en la recta. Siempre da positiva.",
+    "Del mismo lado: de menos 8 a menos 2, *6 unidades*.",
+    "Cruzando el cero: de menos 3 a 4, 3 hasta el cero y 4 más: *7*.",
+    "Y del 0 a menos 5: *5 unidades*."
+   ],
+   "titulo": "DISTANCIA EN LA RECTA",
+   "items": [
+    {
+     "txt": "De −8 a −2: 6",
+     "emoji": "↔️"
+    },
+    {
+     "txt": "De −3 a 4: 3 + 4 = 7",
+     "emoji": "🔀"
+    },
+    {
+     "txt": "De 0 a −5: 5",
+     "emoji": "📍"
+    }
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "El ascensor de Sofi: del subsuelo menos 2 a la planta baja, *2 pisos*.",
+    "De la planta baja al piso 5, *5 pisos*.",
+    "Total: *7 pisos*. ¡Por eso no eran 3!"
+   ],
+   "titulo": "EL ASCENSOR",
+   "items": [
+    {
+     "txt": "−2 → 0: 2 pisos",
+     "emoji": "⬆️"
+    },
+    {
+     "txt": "0 → 5: 5 pisos",
+     "emoji": "⬆️"
+    },
+    {
+     "txt": "Total: 7 pisos",
+     "emoji": "🛗"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿qué distancia hay entre menos 3 y 5?",
+    "¿2 u 8?",
+    "¡*8*! Cruzás el cero: 3 más 5."
+   ],
+   "pregunta": "Distancia entre −3 y 5",
+   "opciones": [
+    "2",
+    "8"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: distancia de menos 5 a 3. Están de lados distintos del cero.",
+    "De menos 5 a 0: *5 unidades*.",
+    "De 0 a 3: *3 unidades*. Total: ¡*8*!"
+   ],
+   "pasos": [
+    "De −5 a 3",
+    "−5 → 0: 5",
+    "5 + 3 = 8"
+   ],
+   "notas": [
+    "lados distintos",
+    "0 → 3: 3",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado.",
+    "Numerar los negativos al revés: a la izquierda del 0 va *primero el menos 1*.",
+    "Y contar mal al cruzar el cero: de menos 3 a 5 hay *8*, no 2."
+   ],
+   "items": [
+    {
+     "mal": "… −1, −2, −3, 0",
+     "bien": "−3, −2, −1, 0"
+    },
+    {
+     "mal": "De −3 a 5 hay 2",
+     "bien": "Hay 3 + 5 = 8"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Recta*: 0 en el medio, espacios iguales.",
+    "*Derecha* positivos, *izquierda* negativos.",
+    "Un número y su opuesto son *simétricos*.",
+    "*Distancia*: contar unidades; si cruzás el cero, sumás.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RECTA",
+     "espacios iguales"
+    ],
+    [
+     "LADOS",
+     "← negativos · positivos →"
+    ],
+    [
+     "SIMETRÍA",
+     "−4 y 4"
+    ],
+    [
+     "DISTANCIA",
+     "−3 a 4 = 7"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
