@@ -518,3 +518,21 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .fa-hist li:first-child { border-top: 0; }
 .fa-h-fecha { color: var(--texto-suave); font-weight: 700; }
 .fa-h-monto { font-weight: 800; }
+
+/* ---------- Nuestra propuesta (manifiesto) ---------- */
+.mf-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 0 0 22px; padding: 16px 20px; border-radius: 18px;
+  background: linear-gradient(120deg, #087E83, #0aa3a0); color: #fff; text-decoration: none; box-shadow: 0 8px 22px rgba(8,126,131,.22); }
+.mf-banner b { font-size: 1.08rem; }
+.mf-banner-k { width: 100%; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.mf-banner-ir { margin-left: auto; font-weight: 800; background: rgba(255,255,255,.18); padding: 6px 12px; border-radius: 999px; }
+.mf-banner:hover .mf-banner-ir { background: rgba(255,255,255,.3); }
+.manifiesto { max-width: 720px; margin: 0 auto; padding: 34px 38px 40px; background: #fff; border-radius: 22px; box-shadow: 0 10px 30px rgba(15,40,45,.08);
+  font-size: 1.06rem; line-height: 1.7; color: #23383b; }
+.manifiesto .mf-k { margin: 0; font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #087E83; }
+.manifiesto .mf-titulo { margin: 6px 0 22px; font-size: 1.9rem; line-height: 1.2; color: #0b3b3e; }
+.manifiesto h2 { margin: 32px 0 8px; font-size: 1.25rem; color: #087E83; }
+.manifiesto p { margin: 0 0 14px; }
+.manifiesto ol { margin: 0 0 14px; padding-left: 22px; }
+.manifiesto li { margin-bottom: 6px; }
+.manifiesto > p:last-child { margin-top: 26px; font-size: 1.3rem; text-align: center; color: #087E83; }
+@media (max-width: 640px) { .manifiesto { padding: 24px 20px 30px; } .manifiesto .mf-titulo { font-size: 1.5rem; } }

@@ -171,7 +171,9 @@
   }
 
   async function vistaAltas() {
-    vista.innerHTML = '<h1 class="vista-titulo">Altas</h1><div id="altas"></div>';
+    vista.innerHTML = '<a class="mf-banner" href="#propuesta"><span class="mf-banner-k">Nuestra propuesta</span>' +
+      '<b>Cómo enseñamos en Wave y por qué</b><span class="mf-banner-ir">Leer el manifiesto →</span></a>' +
+      '<h1 class="vista-titulo">Altas</h1><div id="altas"></div>';
     var cont = document.getElementById('altas');
     cont.innerHTML = '<div class="vacio">Cargando…</div>';
     try {
@@ -908,7 +910,14 @@
     };
   }
 
+  // ---------- Nuestra propuesta (manifiesto) ----------
+  function vistaPropuesta() {
+    vista.innerHTML = '<article class="manifiesto"><p class="mf-k">Nuestra propuesta</p>' +
+      '<h1 class="mf-titulo">Cómo enseñamos en Wave Academy</h1>' + (window.MANIFIESTO_HTML || '') + '</article>';
+  }
+
   var VISTAS = {
+    propuesta: vistaPropuesta,
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
