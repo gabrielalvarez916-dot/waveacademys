@@ -1,0 +1,242 @@
+{
+ "slug": "mat1-m6-n1",
+ "step_id": "09667c29-7da3-4575-b5c5-d2ef2e7c05f8",
+ "materia": "Matemática I",
+ "titulo": "Criterios por 2, 3, 5, 9 y 10",
+ "sub": "Matemática I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿123.456.789 se puede dividir exacto por 9? Tenés tres segundos.",
+    "¡Sí! Y lo supe *sin hacer la cuenta*.",
+    "Hoy te doy *rayos X* para números: los criterios de divisibilidad."
+   ],
+   "grande": "123.456.789",
+   "final": "÷ 9 ✓",
+   "titulo": "CRITERIOS",
+   "sub": "por 2, 3, 5, 9 y 10"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un *criterio* es una regla rápida: mirás el número y ya sabés.",
+    "*Divisible* quiere decir que se divide exacto, con resto cero."
+   ],
+   "palabra": "Criterio",
+   "texto": "Regla rápida para saber si un número es divisible, sin dividir",
+   "emoji": "🔍"
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Primer rayo X: *la última cifra*. Con ella sola decidís tres cosas.",
+    "*Por 2*: termina en 0, 2, 4, 6 u 8. O sea, es *par*.",
+    "*Por 5*: termina en 0 o en 5.",
+    "*Por 10*: termina en 0. Nada más."
+   ],
+   "titulo": "RAYO X · LA ÚLTIMA CIFRA",
+   "items": [
+    {
+     "cab": "POR 2",
+     "txt": "termina en 0, 2, 4, 6 u 8"
+    },
+    {
+     "cab": "POR 5",
+     "txt": "termina en 0 o 5"
+    },
+    {
+     "cab": "POR 10",
+     "txt": "termina en 0"
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "A ver vos: ¿725 por cuál de estos es divisible?",
+    "¿Por 2, por 5 o por 10?",
+    "¡*Por 5*! Termina en 5: no es par y no termina en 0."
+   ],
+   "pregunta": "¿725 es divisible por…?",
+   "opciones": [
+    "Por 2",
+    "Por 5",
+    "Por 10"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "¿Por qué alcanza con la última cifra? Mirá: 618 es 61 por 10, más 8.",
+    "La parte de *61 por 10* siempre se divide por 2 y por 5, porque el 10 se divide.",
+    "Entonces *decide la última cifra*: el 8 es par, así que 618 es divisible por 2."
+   ],
+   "causa": {
+    "txt": "618 = 61 × 10 + 8",
+    "emoji": "🧱"
+   },
+   "items": [
+    {
+     "txt": "61 × 10 siempre se divide por 2 y por 5",
+     "emoji": "✅"
+    },
+    {
+     "txt": "Decide la última cifra: 8",
+     "emoji": "👀"
+    }
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Pero ojo: con el 3 y el 9 *la última cifra no sirve*. 13 termina en 3 y no es múltiplo de 3.",
+    "Para el 3 y el 9 cambiamos de rayo X: *sumás todas las cifras*."
+   ],
+   "antes": {
+    "cab": "PARA 2, 5 Y 10",
+    "emoji": "👀",
+    "texto": "Mirás la última cifra"
+   },
+   "despues": {
+    "cab": "PARA 3 Y 9",
+    "emoji": "➕",
+    "texto": "Sumás todas las cifras"
+   }
+  },
+  {
+   "t": "descomponer",
+   "voz": [
+    "Probemos con *2.457*.",
+    "Rayo X de la *suma de cifras*.",
+    "Separamos: 2 + 4 + 5 + 7.",
+    "Sumamos todo con calma…",
+    "¡Da *18*! Múltiplo de 9 y de 3: 2.457 es divisible por los dos."
+   ],
+   "numero": "2.457",
+   "titulo": "SUMA DE CIFRAS",
+   "partes": [
+    "2",
+    "4",
+    "5",
+    "7"
+   ],
+   "signo": "+",
+   "resultado": "= 18 ✓"
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "¿Por qué funciona la suma? El secreto: *10 es 9 + 1*.",
+    "100 es 99 + 1, y 1.000 es 999 + 1. Siempre un múltiplo de 9, *más uno*.",
+    "Por eso lo que sobra al dividir por 9 depende *solo de la suma de las cifras*."
+   ],
+   "titulo": "EL SECRETO DEL 9",
+   "items": [
+    {
+     "txt": "10 = 9 + 1",
+     "emoji": "🔟"
+    },
+    {
+     "txt": "100 = 99 + 1",
+     "emoji": "💯"
+    },
+    {
+     "txt": "1.000 = 999 + 1",
+     "emoji": "🧮"
+    }
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Volvamos al gancho: 123.456.789. Sumamos 1 + 2 + 3… hasta el 9.",
+    "Da *45*. Y 4 + 5 da 9: ¡es divisible por 9 y por 3!"
+   ],
+   "numero": 45,
+   "texto": "1 + 2 + 3 + … + 9 = 45 → 123.456.789 es divisible por 9 y por 3",
+   "emoji": "🤯"
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Dos *trampas* clásicas.",
+    "Confundir 3 y 9: todo múltiplo de 9 es múltiplo de 3, pero *no al revés*. 12 no es múltiplo de 9.",
+    "Y terminar en 5 sirve para el 5, *no para el 10*: 345 no es divisible por 10."
+   ],
+   "items": [
+    {
+     "mal": "12 es divisible por 9 porque lo es por 3",
+     "bien": "Múltiplo de 3 no siempre es de 9"
+    },
+    {
+     "mal": "345 es divisible por 10",
+     "bien": "Para el 10 tiene que terminar en 0"
+    }
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Último escaneo: *7.320*.",
+    "Termina en 0: divisible *por 2*…",
+    "… y también *por 5 y por 10*.",
+    "Suma de cifras: 7 + 3 + 2 + 0, da 12. *Por 3, sí*.",
+    "Pero 12 no es múltiplo de 9: *por 9, no*."
+   ],
+   "titulo": "7.320 BAJO LOS RAYOS X",
+   "celdas": [
+    {
+     "cab": "POR 2 ✓",
+     "txt": "termina en 0"
+    },
+    {
+     "cab": "POR 5 Y 10 ✓",
+     "txt": "termina en 0"
+    },
+    {
+     "cab": "POR 3 ✓",
+     "txt": "7 + 3 + 2 + 0 = 12"
+    },
+    {
+     "cab": "POR 9 ✗",
+     "txt": "12 no es múltiplo de 9"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Por 2*: termina en cifra par.",
+    "*Por 5*: en 0 o 5. *Por 10*: en 0.",
+    "*Por 3 y por 9*: la suma de las cifras.",
+    "Y todo funciona porque *10 es 9 + 1*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POR 2",
+     "termina en cifra par"
+    ],
+    [
+     "POR 5 · POR 10",
+     "en 0 o 5 · en 0"
+    ],
+    [
+     "POR 3 · POR 9",
+     "suma de cifras"
+    ],
+    [
+     "POR QUÉ",
+     "10 = 9 + 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

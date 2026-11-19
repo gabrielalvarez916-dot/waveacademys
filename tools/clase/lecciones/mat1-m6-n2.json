@@ -1,0 +1,280 @@
+{
+ "slug": "mat1-m6-n2",
+ "step_id": "6487c745-42f5-4a4d-857f-35097473922d",
+ "materia": "Matemática I",
+ "titulo": "Criterios por 4, 6, 8, 10 y 11",
+ "sub": "Matemática I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "18 es divisible por 2 y por 6. ¿Entonces es divisible por 12?",
+    "¡*No*! 18 dividido 12 no da exacto.",
+    "Hoy: criterios por *4, 6, 8, 10 y 11*, y cómo *combinarlos* sin caer en la trampa."
+   ],
+   "grande": "18",
+   "final": "÷ 12 ✗",
+   "titulo": "MÁS CRITERIOS",
+   "sub": "por 4, 6, 8, 10 y 11"
+  },
+  {
+   "t": "zoom",
+   "voz": [
+    "*Por 4*: no alcanza con la última cifra. Mirás 3.716…",
+    "… y hacés zoom a las *dos últimas*: 16.",
+    "16 es 4 × 4: ¡3.716 es divisible por 4!"
+   ],
+   "niveles": [
+    {
+     "emoji": "🔢",
+     "txt": "3.716"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "16"
+    },
+    {
+     "emoji": "✅",
+     "txt": "16 = 4 × 4"
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "¿Por qué las dos últimas? Porque *100 es 4 × 25*: lo de adelante siempre se divide.",
+    "Con el 8 pasa igual, pero un piso más: *1.000 es 8 × 125*.",
+    "Entonces para el 8 mirás las *tres últimas*: 5.240 → 240, que es 8 × 30."
+   ],
+   "a": {
+    "cab": "POR 4",
+    "texto": "2 últimas cifras · 100 = 4 × 25",
+    "emoji": "4️⃣"
+   },
+   "b": {
+    "cab": "POR 8",
+    "texto": "3 últimas cifras · 1.000 = 8 × 125",
+    "emoji": "8️⃣"
+   },
+   "signo": "→"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "*Por 6*: necesitás *dos llaves* a la vez, la del 2 y la del 3.",
+    "234 es par, y sus cifras suman 9, múltiplo de 3.",
+    "¡Las dos llaves abren! 234 es 6 × 39."
+   ],
+   "izq": {
+    "cab": "LLAVE DEL 2",
+    "items": [
+     "234 es par ✓"
+    ]
+   },
+   "der": {
+    "cab": "LLAVE DEL 3",
+    "items": [
+     "2 + 3 + 4 = 9 ✓"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "En cambio, 410 es par, pero sus cifras suman *5*.",
+    "Una llave sola *no abre*: 410 no es divisible por 6."
+   ],
+   "antes": {
+    "cab": "410",
+    "emoji": "🔑",
+    "texto": "Par ✓ · suma 5 ✗"
+   },
+   "despues": {
+    "cab": "RESULTADO",
+    "emoji": "🔒",
+    "texto": "No es divisible por 6"
+   }
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Y *por 10* ya lo sabés: tiene que terminar en 0."
+   ],
+   "texto": "Por 10: termina en 0",
+   "emoji": "🔟"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Y ahora el más raro: *el 11*. Sumás las cifras *salteando*, desde la derecha.",
+    "2.728: 8 + 7 da 15, y 2 + 2 da 4. Diferencia *11*: ¡divisible!",
+    "5.137: 7 + 1 da 8, y 3 + 5 da 8. Diferencia *cero*: ¡también!",
+    "3.528: 13 y 5, diferencia 8. *No* es divisible por 11."
+   ],
+   "titulo": "POR 11 · SUMAS ALTERNADAS",
+   "columnas": [
+    "Número",
+    "1.ª, 3.ª…",
+    "2.ª, 4.ª…",
+    "Diferencia"
+   ],
+   "filas": [
+    [
+     "2.728",
+     "8 + 7 = 15",
+     "2 + 2 = 4",
+     "11 ✓"
+    ],
+    [
+     "5.137",
+     "7 + 1 = 8",
+     "3 + 5 = 8",
+     "0 ✓"
+    ],
+    [
+     "3.528",
+     "8 + 5 = 13",
+     "2 + 3 = 5",
+     "8 ✗"
+    ]
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuál de estos es divisible por 4?",
+    "¿314, 516 o 722?",
+    "¡*516*! Porque 16 es múltiplo de 4. 14 y 22, no."
+   ],
+   "pregunta": "¿Cuál es divisible por 4?",
+   "opciones": [
+    "314",
+    "516",
+    "722"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Combinar llaves: ¿cuáles sirven?",
+    "*6* con 2 y 3, *15* con 3 y 5, y *12* con 3 y 4: ¡sí alcanza!",
+    "Pero *12 con 2 y 6* es trampa: 18 pasa las dos y no es divisible por 12."
+   ],
+   "cajas": [
+    {
+     "cab": "SÍ ALCANZA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "TRAMPA",
+     "emoji": "⚠️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "6 → 2 y 3",
+     "caja": 0
+    },
+    {
+     "txt": "15 → 3 y 5",
+     "caja": 0
+    },
+    {
+     "txt": "12 → 3 y 4",
+     "caja": 0
+    },
+    {
+     "txt": "12 → 2 y 6",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Gran final: probamos todas las llaves con *7.392*.",
+    "Es par y sus cifras suman 21: divisible *por 2, por 3 y por 6*. Por 9, no.",
+    "Dos últimas: 92, que es 4 × 23. *Por 4, sí*.",
+    "Tres últimas: 392, que es 8 × 49. *Por 8, sí*.",
+    "Y alternadas: 5 y 16, diferencia 11. *¡Por 11 también!*"
+   ],
+   "titulo": "7.392 · TODAS LAS LLAVES",
+   "items": [
+    {
+     "txt": "Par y suma 21 → por 2, 3 y 6 ✓ · por 9 ✗",
+     "emoji": "🔑"
+    },
+    {
+     "txt": "92 = 4 × 23 → por 4 ✓",
+     "emoji": "4️⃣"
+    },
+    {
+     "txt": "392 = 8 × 49 → por 8 ✓",
+     "emoji": "8️⃣"
+    },
+    {
+     "txt": "Sumas 5 y 16, diferencia 11 → por 11 ✓",
+     "emoji": "🎯"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "*Errores* que vemos siempre.",
+    "Usar solo el 2 para el 6: 1.034 es par, pero sus cifras suman 8. *No* es divisible por 6.",
+    "Y para el 4, mirar una sola cifra: en 3.716 se mira *16*, no el 6."
+   ],
+   "items": [
+    {
+     "mal": "1.034 es par → divisible por 6",
+     "bien": "Suma 8: no es por 3, no es por 6"
+    },
+    {
+     "mal": "3.716: miro solo el 6",
+     "bien": "Mirar 16, las dos últimas"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos las llaves.",
+    "*Por 4*: las dos últimas cifras.",
+    "*Por 8*: las tres últimas.",
+    "*Por 6*: el 2 y el 3 juntos.",
+    "*Por 11*: sumas alternadas, diferencia 0 o múltiplo de 11.",
+    "Y al combinar, para el 12 usá *3 y 4*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POR 4",
+     "2 últimas cifras"
+    ],
+    [
+     "POR 8",
+     "3 últimas cifras"
+    ],
+    [
+     "POR 6",
+     "2 y 3 a la vez"
+    ],
+    [
+     "POR 11",
+     "sumas alternadas"
+    ],
+    [
+     "COMBINAR",
+     "12 → 3 y 4, no 2 y 6"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

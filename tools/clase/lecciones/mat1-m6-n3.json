@@ -1,0 +1,271 @@
+{
+ "slug": "mat1-m6-n3",
+ "step_id": "10cb2f51-1918-4a64-9a29-d73c3cef0ebc",
+ "materia": "Matemática I",
+ "titulo": "Números primos y compuestos",
+ "sub": "Matemática I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "voz": [
+    "¿Podés armar 97 como multiplicación de dos números más chicos?",
+    "¡*No se puede*! 97 es un número primo.",
+    "Hoy: los *primos*, las piezas que no se pueden desarmar."
+   ],
+   "grande": "97",
+   "final": "PRIMO",
+   "titulo": "NÚMEROS PRIMOS",
+   "sub": "las piezas que no se desarman"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un número es *primo* si tiene *exactamente dos divisores*: el 1 y él mismo.",
+    "Si tiene *más de dos*, es *compuesto*: se puede desarmar en piezas más chicas."
+   ],
+   "palabra": "Primo",
+   "texto": "Tiene exactamente dos divisores: el 1 y él mismo",
+   "emoji": "💎"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar piezas.",
+    "*Primos*: 2, 7 y 13. Solo los dividen el 1 y ellos mismos.",
+    "*Compuestos*: 9 es 3 × 3, 15 es 3 × 5, 12 es 3 × 4.",
+    "¿Y el *1*? Tiene un solo divisor: *no es ni primo ni compuesto*."
+   ],
+   "cajas": [
+    {
+     "cab": "PRIMOS",
+     "emoji": "💎"
+    },
+    {
+     "cab": "COMPUESTOS",
+     "emoji": "🧱"
+    },
+    {
+     "cab": "NINGUNO",
+     "emoji": "🤷"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "2",
+     "caja": 0
+    },
+    {
+     "txt": "7",
+     "caja": 0
+    },
+    {
+     "txt": "13",
+     "caja": 0
+    },
+    {
+     "txt": "9",
+     "caja": 1
+    },
+    {
+     "txt": "15",
+     "caja": 1
+    },
+    {
+     "txt": "12",
+     "caja": 1
+    },
+    {
+     "txt": "1",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Dato loco: hay un primo que es *par*.",
+    "Es el *2*, y es el único: todos los demás pares tienen al 2 como divisor."
+   ],
+   "numero": 2,
+   "texto": "El 2 es el único primo par",
+   "emoji": "🦄"
+  },
+  {
+   "t": "criba",
+   "voz": [
+    "Llegó la *criba de Eratóstenes*: escribimos del 1 al 50. El 1 queda afuera.",
+    "El 2 es primo. Tachamos *todos sus múltiplos*: ¡chau a todos los pares!",
+    "El 3 es primo: tachamos 6, 9, 12, 15…",
+    "El 5: tachamos los que terminan en 0 y en 5.",
+    "El 7: el único nuevo que cae es el *49*, que es 7 × 7.",
+    "¡Lo que sobrevive son *los primos*! Hay quince hasta el 50."
+   ],
+   "hasta": 50,
+   "cols": 10,
+   "tachar": [
+    2,
+    3,
+    5,
+    7
+   ],
+   "txt": "15 PRIMOS HASTA EL 50"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "¿Por qué paramos en el 7? Porque el siguiente primo, 11 × 11, da *121*: ya se pasó del 50."
+   ],
+   "titulo": "PARÁ A TIEMPO",
+   "texto": "Si el cuadrado del primo supera al número, ya está: 11 × 11 = 121",
+   "emoji": "✋"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Pregunta trampa: ¿51 es primo?",
+    "Mucha gente dice que sí porque es impar…",
+    "¡Pero *no*! Sus cifras suman 6: es 3 × 17. *Compuesto*."
+   ],
+   "pregunta": "¿51 es primo?",
+   "opciones": [
+    "Sí, porque es impar",
+    "No: 51 = 3 × 17"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Para saber si es primo, dividís por los primos en orden. ¿91? Por 2, no: es impar.",
+    "Por 3, no: sus cifras suman 10.",
+    "Por 5, no: termina en 1.",
+    "Por 7… ¡*sí*! 91 es 7 × 13. *Compuesto*, ¡y parecía primo!"
+   ],
+   "titulo": "¿ES PRIMO 91?",
+   "items": [
+    {
+     "txt": "÷ 2 ✗",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "÷ 3 ✗",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "÷ 5 ✗",
+     "emoji": "5️⃣"
+    },
+    {
+     "txt": "÷ 7 ✓ → 7 × 13",
+     "emoji": "7️⃣"
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Y el *97* del principio: no lo dividen ni 2, ni 3, ni 5, ni 7.",
+    "¿Seguimos con el 11? No hace falta: 11 × 11 es 121, más que 97.",
+    "Así que 97 es *primo*. Parecidos, pero 91 y 97 son *muy distintos*."
+   ],
+   "a": {
+    "cab": "91",
+    "texto": "7 × 13 · compuesto",
+    "emoji": "🧱"
+   },
+   "b": {
+    "cab": "97",
+    "texto": "ni 2, ni 3, ni 5, ni 7 · primo",
+    "emoji": "💎"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "Bonus: los *primos gemelos*, primos que están a 2 de distancia.",
+    "11 y 13.",
+    "17 y 19.",
+    "29 y 31.",
+    "41 y 43. ¡Y nadie sabe todavía si se terminan *alguna vez*!"
+   ],
+   "min": 0,
+   "max": 50,
+   "paso": 5,
+   "marcas": [
+    {
+     "v": 12,
+     "txt": "11 y 13"
+    },
+    {
+     "v": 18,
+     "txt": "17 y 19"
+    },
+    {
+     "v": 30,
+     "txt": "29 y 31"
+    },
+    {
+     "v": 42,
+     "txt": "41 y 43"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Los *errores* de siempre.",
+    "Decir que el *1* es primo: tiene un solo divisor.",
+    "Y creer que todo impar es primo: *9, 15 y 21* son compuestos."
+   ],
+   "items": [
+    {
+     "mal": "El 1 es primo",
+     "bien": "Tiene un solo divisor: no es primo"
+    },
+    {
+     "mal": "Impar = primo",
+     "bien": "9, 15 y 21 son impares y compuestos"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Primo*: exactamente dos divisores.",
+    "*Compuesto*: más de dos.",
+    "El 1 no es ninguno, y el 2 es el *único primo par*.",
+    "La *criba* tacha múltiplos y deja los primos.",
+    "Y para saber si es primo, dividís por primos *hasta que el cuadrado se pase*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRIMO",
+     "exactamente 2 divisores"
+    ],
+    [
+     "COMPUESTO",
+     "más de 2 divisores"
+    ],
+    [
+     "EL 1 Y EL 2",
+     "ninguno · único primo par"
+    ],
+    [
+     "CRIBA",
+     "tachar múltiplos"
+    ],
+    [
+     "¿ES PRIMO?",
+     "dividir hasta que el cuadrado supere"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
