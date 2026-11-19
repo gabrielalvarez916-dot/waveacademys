@@ -1,0 +1,223 @@
+{
+ "slug": "mat1-m10-n4",
+ "step_id": "60d64ea8-71a4-49d1-a454-c79ee0f887e5",
+ "materia": "Matemática I",
+ "titulo": "Problemas con racionales positivos",
+ "sub": "Matemática I · Misión 10 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: un almacén cobró 360 pesos por 2,4 kilos de pan a 1.500 el kilo.",
+    "¡Imposible! Estimando, tiene que dar unos *3.600*. Alguien corrió mal la coma.",
+    "Hoy: *problemas con fracciones y decimales*, de la vida real."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Almacén cobra $360 por 2,4 kg de pan a $1.500 el kilo",
+   "bajada": "¿Error de la coma? Los vecinos sacan cuentas",
+   "emoji": "🥖",
+   "titulo": "PROBLEMAS",
+   "sub": "fracciones y decimales en la vida real"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Un mismo número, dos trajes: fracción o decimal. ¿Cuál conviene?",
+    "1/4 kilo o 0,25 kilos: *cualquiera*.",
+    "1/3 de torta: mejor la *fracción*, porque el decimal no termina.",
+    "15/2 pesos: mejor el *decimal*, 7,50."
+   ],
+   "titulo": "¿FRACCIÓN O DECIMAL?",
+   "columnas": [
+    "Fracción",
+    "Decimal",
+    "Conviene"
+   ],
+   "filas": [
+    [
+     "1/4 kg",
+     "0,25 kg",
+     "cualquiera"
+    ],
+    [
+     "1/3 de torta",
+     "0,333…",
+     "fracción"
+    ],
+    [
+     "$15/2",
+     "$7,50",
+     "decimal"
+    ]
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Si algo tiene precio *por kilo* o *por metro*…",
+    "… el total es *precio por cantidad*, aunque la cantidad sea un decimal o una fracción."
+   ],
+   "palabra": "Precio × cantidad",
+   "texto": "Total = precio por kilo × kilos (aunque sean 2,5 o 3/4)",
+   "emoji": "🏷️"
+  },
+  {
+   "t": "barras",
+   "voz": [
+    "En el almacén, compramos dos cosas.",
+    "2,5 kilos de pan a 1.840 el kilo: *4.600 pesos*.",
+    "Y 3/4 kilo de queso a 9.200 el kilo: dividido 4, por 3: *6.900 pesos*."
+   ],
+   "titulo": "LA COMPRA ($)",
+   "unidad": "$",
+   "items": [
+    {
+     "txt": "Pan 2,5 kg",
+     "valor": 4600
+    },
+    {
+     "txt": "Queso 3/4 kg",
+     "valor": 6900
+    }
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "La plata se redondea a *centavos*, y siempre *al final*. Si redondeás en el medio, el error se acumula.",
+    "Repartir 1.000 pesos entre 3 da 333,333…: cada uno recibe *333,33* y sobra 1 centavo."
+   ],
+   "antes": {
+    "cab": "REDONDEAR EN EL MEDIO",
+    "emoji": "❌",
+    "texto": "El error se acumula"
+   },
+   "despues": {
+    "cab": "REDONDEAR AL FINAL",
+    "emoji": "✅",
+    "texto": "$1.000 ÷ 3 = $333,33"
+   }
+  },
+  {
+   "t": "dialogo",
+   "voz": [
+    "Una receta para 4 personas lleva 1 1/2 tazas de leche. Pero vienen *6*.",
+    "6 personas es 1,5 veces 4.",
+    "1,5 por 1,5: *2,25 tazas*, o sea 2 1/4.",
+    "Control: para 8 serían 3 tazas. ¡Tiene sentido!"
+   ],
+   "personas": [
+    {
+     "nombre": "Abu",
+     "emoji": "👵"
+    },
+    {
+     "nombre": "Nieto",
+     "emoji": "🧒"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "La receta es para 4…",
+     "trad": "y vienen 6"
+    },
+    {
+     "quien": 1,
+     "txt": "6 es 1,5 veces 4",
+     "trad": ""
+    },
+    {
+     "quien": 0,
+     "txt": "1,5 × 1,5 = 2,25 tazas",
+     "trad": "2 1/4"
+    },
+    {
+     "quien": 1,
+     "txt": "Para 8 serían 3: ¡cierra!",
+     "trad": ""
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío final: 1,5 kilos de tomate a 1.200, y 3/4 de queso a 8.400. Pagás con 10.000.",
+    "Tomates: 1.200 por 1,5, *1.800*.",
+    "Queso: 8.400 dividido 4, por 3: *6.300*.",
+    "Total: *8.100*. Vuelto: *1.900 pesos*.",
+    "Control: unos 2.000 más 6.000, cerca de 8.000. *¡Razonable!*"
+   ],
+   "titulo": "¿CUÁNTO VUELTO?",
+   "items": [
+    {
+     "txt": "Tomates: 1.200 × 1,5 = 1.800",
+     "emoji": "🍅"
+    },
+    {
+     "txt": "Queso: 8.400 ÷ 4 × 3 = 6.300",
+     "emoji": "🧀"
+    },
+    {
+     "txt": "Total 8.100 → vuelto 1.900",
+     "emoji": "💵"
+    },
+    {
+     "txt": "Control: ≈ 8.000 ✓",
+     "emoji": "🧠"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores caros.",
+    "*Redondear antes de terminar*: el error se acumula en cada paso.",
+    "Y aceptar un resultado absurdo: 2,4 kilos a 1.500 *no pueden costar 360*."
+   ],
+   "items": [
+    {
+     "mal": "Redondear en el medio",
+     "bien": "Redondear al final"
+    },
+    {
+     "mal": "2,4 kg × $1.500 = $360",
+     "bien": "Estimar: ≈ $3.600"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Fracción o decimal*: elegí el que convenga.",
+    "*Total*: precio por cantidad.",
+    "*Redondeá al final*, a centavos.",
+    "Y *estimá* para detectar absurdos.",
+    "¡Misión 10 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FORMA",
+     "dinero → decimal · 1/3 → fracción"
+    ],
+    [
+     "TOTAL",
+     "precio × cantidad"
+    ],
+    [
+     "REDONDEO",
+     "al final, a centavos"
+    ],
+    [
+     "CONTROL",
+     "estimar siempre"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -65,6 +65,7 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     s = s.replace('*', '')
     s = re.sub(r'\b(\d+) (?=\d+/\d+)', r'\1 y ', s)  # 1 3/4 -> 1 y tres cuartos
     s = re.sub(r'\b(\d+)/(\d+)\b', fraccion, s)
+    s = re.sub(r'(\d),(0*)(?=\d)', lambda m: m.group(1) + ' coma ' + 'cero ' * len(m.group(2)), s)  # 0,075 -> 0 coma cero 75
     s = re.sub(r'\s*−\s*', ' menos ', s)
     s = re.sub(r'\s*÷\s*', ' dividido ', s)
     s = re.sub(r'\s*\+\s*', ' más ', s)

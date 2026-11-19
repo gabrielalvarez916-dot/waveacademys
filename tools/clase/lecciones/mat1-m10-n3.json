@@ -1,0 +1,210 @@
+{
+ "slug": "mat1-m10-n3",
+ "step_id": "cad0156f-1e30-4568-85b7-85a2d9251e7f",
+ "materia": "Matemática I",
+ "titulo": "Operaciones con decimales",
+ "sub": "Matemática I · Misión 10 · Nivel 3",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Marta hizo una cuenta en el súper: 3,9 por 2,1.",
+    "La calculadora le tiró *81,9*.",
+    "Marta frunce la nariz: ¡imposible! Si es casi 4 por 2, tiene que dar cerca de 8. Da *8,19*.",
+    "Hoy: *operar con decimales* sin que la coma se escape."
+   ],
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👩"
+   },
+   "lugar": "🛒",
+   "lineas": [
+    "Cuenta: 3,9 × 2,1",
+    "La calculadora dice 81,9",
+    "¿Puede ser?"
+   ],
+   "titulo": "OPERAR CON DECIMALES",
+   "sub": "la coma en su lugar"
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Sumar y restar: *coma con coma*. 3,5 más 12,48: completamos 3,5 con un cero, 3,50.",
+    "Décimos con décimos, centésimos con centésimos: *15,98*."
+   ],
+   "filas": [
+    "3,50",
+    "12,48"
+   ],
+   "op": "+",
+   "resultado": "15,98"
+  },
+  {
+   "t": "cuenta",
+   "voz": [
+    "Restar igual: 10 menos 4,37. El 10 se escribe *10,00*.",
+    "Y da *5,63*."
+   ],
+   "filas": [
+    "10,00",
+    "4,37"
+   ],
+   "op": "−",
+   "resultado": "5,63"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Multiplicar: *como si no hubiera coma*. 2,4 por 0,3.",
+    "24 por 3: 72.",
+    "Contamos los decimales de los dos factores: 1 más 1, *2 decimales*.",
+    "Entonces: *0,72*."
+   ],
+   "titulo": "2,4 × 0,3",
+   "items": [
+    {
+     "txt": "Sin comas: 24 × 3 = 72",
+     "emoji": "✖️"
+    },
+    {
+     "txt": "Decimales: 1 + 1 = 2",
+     "emoji": "🔢"
+    },
+    {
+     "txt": "Resultado: 0,72",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Dividir: si el divisor tiene coma, *corremos la coma* en los dos, los mismos lugares. 7,5 dividido 0,25.",
+    "Corremos dos lugares: 750 dividido 25.",
+    "¡Da *30*! Correr la coma en los dos es como *amplificar*."
+   ],
+   "pasos": [
+    "7,5 ÷ 0,25",
+    "750 ÷ 25",
+    "= 30"
+   ],
+   "notas": [
+    "",
+    "× 100 a los dos",
+    ""
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Mirá qué curioso: dividiste 7,5 por algo menor que 1…",
+    "… ¡y dio 30! Dividir por un decimal menor que 1 *agranda*, igual que con fracciones."
+   ],
+   "numero": 30,
+   "texto": "7,5 ÷ 0,25 = 30: dividir por menos de 1 agranda",
+   "emoji": "😮"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "El superpoder anti errores: *estimar*. 3,9 por 2,1 es casi 4 por 2.",
+    "La estimación dice *cerca de 8*.",
+    "Si te da 81,9 o 0,819, la coma *quedó mal*. Lo correcto: 8,19."
+   ],
+   "izq": {
+    "cab": "ESTIMACIÓN",
+    "items": [
+     "4 × 2 = 8"
+    ]
+   },
+   "der": {
+    "cab": "RESULTADO",
+    "items": [
+     "8,19 ✓",
+     "81,9 ✗"
+    ]
+   },
+   "gana": null
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Desafío: 12,6 por 0,15.",
+    "Sin comas: 126 por 15, *1.890*.",
+    "Decimales: 1 más 2, tres. Queda *1,89*.",
+    "Estimamos: un poco menos que 12 por 0,2, que es 2,4.",
+    "1,89 es *razonable*. ¡Listo!"
+   ],
+   "titulo": "12,6 × 0,15",
+   "celdas": [
+    {
+     "cab": "SIN COMAS",
+     "txt": "126 × 15 = 1.890"
+    },
+    {
+     "cab": "DECIMALES",
+     "txt": "1 + 2 = 3 → 1,890"
+    },
+    {
+     "cab": "ESTIMACIÓN",
+     "txt": "menos de 12 × 0,2 = 2,4"
+    },
+    {
+     "cab": "CONTROL",
+     "txt": "1,89 es razonable ✓"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Alinear a la derecha: al sumar se alinean *las comas*, no las últimas cifras.",
+    "Y contar mal los decimales: 2,5 por 1,2 da *3*, no 30."
+   ],
+   "items": [
+    {
+     "mal": "Alinear las últimas cifras",
+     "bien": "Alinear coma con coma"
+    },
+    {
+     "mal": "2,5 × 1,2 = 30",
+     "bien": "= 3,00 = 3"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Sumar y restar*: coma con coma.",
+    "*Multiplicar*: sin comas, y después contar decimales.",
+    "*Dividir*: correr la coma en los dos.",
+    "Y siempre, *estimar* para controlar.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUMAR / RESTAR",
+     "coma con coma"
+    ],
+    [
+     "MULTIPLICAR",
+     "contar decimales"
+    ],
+    [
+     "DIVIDIR",
+     "correr la coma"
+    ],
+    [
+     "ESTIMAR",
+     "3,9 × 2,1 ≈ 8"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

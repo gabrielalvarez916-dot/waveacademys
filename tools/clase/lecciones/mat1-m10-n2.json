@@ -1,0 +1,234 @@
+{
+ "slug": "mat1-m10-n2",
+ "step_id": "442dd98b-040b-4944-939d-021315447b9a",
+ "materia": "Matemática I",
+ "titulo": "Decimales exactos y periódicos",
+ "sub": "Matemática I · Misión 10 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: hacé 1 dividido 3 en la calculadora. ¿Cuándo termina? 5 segundos.",
+    "¡*Nunca*! Da 0,3333… y el 3 sigue para siempre.",
+    "Hoy: decimales *exactos y periódicos*."
+   ],
+   "texto": "1 ÷ 3 en la calculadora… ¿cuándo termina?",
+   "segundos": 5,
+   "respuesta": "¡Nunca! 0,333…",
+   "emoji": "♾️",
+   "titulo": "EXACTOS Y PERIÓDICOS",
+   "sub": "decimales que terminan… y que no"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Dos tipos de decimales.",
+    "*Exacto*: la división termina. 3/4 es 0,75 y listo.",
+    "*Periódico*: una cifra o un grupo *se repite sin fin*. 1/3 es 0,333… El grupo que se repite es el *período*."
+   ],
+   "a": {
+    "cab": "EXACTO",
+    "texto": "3/4 = 0,75 · termina",
+    "emoji": "🛑"
+   },
+   "b": {
+    "cab": "PERIÓDICO",
+    "texto": "1/3 = 0,333… · no termina",
+    "emoji": "🔁"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Ojo: la calculadora corta la pantalla, pero el número sigue. *0,333 no es lo mismo que 0,333…*"
+   ],
+   "texto": "0,333 ≠ 0,333…",
+   "emoji": "🧮"
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Los periódicos pueden ser *puros*: el período arranca justo después de la coma, como 0,2727…",
+    "O *mixtos*: antes hay cifras que no se repiten, el *anteperíodo*. En 0,1666…, el anteperíodo es 1 y el período es 6."
+   ],
+   "antes": {
+    "cab": "PURO",
+    "emoji": "💎",
+    "texto": "0,2727… · período 27"
+   },
+   "despues": {
+    "cab": "MIXTO",
+    "emoji": "🧩",
+    "texto": "0,1666… · anteperíodo 1, período 6"
+   }
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "Momento sorpresa: podés saber si es exacto *sin dividir*. Mirás el denominador de la irreducible.",
+    "Si solo tiene factores *2 y 5*: exacto. 3/40, con 40 igual a 2 al cubo por 5, da 0,075.",
+    "Si aparece *otro primo*: periódico. 5/12 tiene un 3: da 0,41666…"
+   ],
+   "causa": {
+    "txt": "Denominador irreducible",
+    "emoji": "🔍"
+   },
+   "items": [
+    {
+     "txt": "Solo 2 y 5 → exacto",
+     "emoji": "🛑"
+    },
+    {
+     "txt": "Otro primo → periódico",
+     "emoji": "🔁"
+    }
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "A clasificar sin dividir.",
+    "*Exactos*: 3/8, 7/20 y 1/25. Solo 2 y 5 abajo.",
+    "*Periódicos*: 2/3, 5/6 y 1/7. Aparecen el 3 y el 7."
+   ],
+   "cajas": [
+    {
+     "cab": "EXACTOS",
+     "emoji": "🛑"
+    },
+    {
+     "cab": "PERIÓDICOS",
+     "emoji": "🔁"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "3/8",
+     "caja": 0
+    },
+    {
+     "txt": "7/20",
+     "caja": 0
+    },
+    {
+     "txt": "1/25",
+     "caja": 0
+    },
+    {
+     "txt": "2/3",
+     "caja": 1
+    },
+    {
+     "txt": "5/6",
+     "caja": 1
+    },
+    {
+     "txt": "1/7",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "De periódico puro a fracción: arriba el período, abajo *tantos 9 como cifras* tiene el período.",
+    "0,333… es 3/9, que es *1/3*.",
+    "0,2727… es 27/99, que es *3/11*.",
+    "Y 1,555… es 1 más 5/9: *14/9*."
+   ],
+   "titulo": "LA FRACCIÓN GENERATRIZ",
+   "items": [
+    {
+     "cab": "0,333…",
+     "txt": "3/9 = 1/3"
+    },
+    {
+     "cab": "0,2727…",
+     "txt": "27/99 = 3/11"
+    },
+    {
+     "cab": "1,555…",
+     "txt": "1 + 5/9 = 14/9"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: 0,4545… a fracción. Es puro, con período 45: dos cifras.",
+    "Entonces es *45/99*.",
+    "MCD 9: queda *5/11*.",
+    "Comprobamos: 5 dividido 11 da 0,4545… *¡Exacto, digo, periódico!*"
+   ],
+   "pasos": [
+    "0,4545…",
+    "45/99",
+    "5/11",
+    "5 ÷ 11 = 0,4545… ✓"
+   ],
+   "notas": [
+    "período 45",
+    "dos 9 abajo",
+    "÷ 9",
+    ""
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado.",
+    "Redondear un periódico y creerlo exacto: *0,33 no es 1/3*.",
+    "Y confundir período con anteperíodo: en 0,1666…, *el período es 6*."
+   ],
+   "items": [
+    {
+     "mal": "0,33 = 1/3",
+     "bien": "0,333… = 1/3"
+    },
+    {
+     "mal": "En 0,1666… el período es 16",
+     "bien": "Anteperíodo 1, período 6"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Exacto*: la división termina.",
+    "*Periódico*: algo se repite sin fin.",
+    "*Puro o mixto*, según el anteperíodo.",
+    "Denominador con *solo 2 y 5*: exacto.",
+    "Y periódico puro a fracción: *período sobre nueves*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EXACTO",
+     "3/4 = 0,75"
+    ],
+    [
+     "PERIÓDICO",
+     "1/3 = 0,333…"
+    ],
+    [
+     "PURO / MIXTO",
+     "0,2727… / 0,1666…"
+    ],
+    [
+     "¿CUÁL ES?",
+     "solo 2 y 5 → exacto"
+    ],
+    [
+     "A FRACCIÓN",
+     "0,2727… = 27/99"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
