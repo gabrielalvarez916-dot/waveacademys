@@ -3,7 +3,7 @@ name: Voz de las clases animadas
 on:
   push:
     branches: [main]
-    paths: ['tools/clase/lecciones/*.json', 'tools/clase/motor/**', 'tools/clase/voz_edge.py', 'tools/clase/armar.py', '.github/workflows/voz-clases.yml']
+    paths: ['tools/clase/lecciones/*.json', 'tools/clase/cargar.py', 'tools/clase/motor/**', 'tools/clase/voz_edge.py', 'tools/clase/armar.py', '.github/workflows/voz-clases.yml']
   workflow_dispatch:
     inputs:
       voz: { description: 'Voz (ej. es-MX-JorgeNeural, es-AR-TomasNeural)', default: 'es-MX-JorgeNeural' }
@@ -26,6 +26,8 @@ jobs:
           RATE: ${{ github.event.inputs.rate || '+25%' }}
         run: python tools/clase/voz_edge.py
       - run: python tools/clase/armar.py
+      - name: Cargar en la plataforma
+        run: python tools/clase/cargar.py
       - name: Guardar
         run: |
           git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
