@@ -1,0 +1,216 @@
+{
+ "slug": "mat1-m18-n3",
+ "step_id": "d5285318-0790-4dd4-874d-1b266df49ec6",
+ "materia": "Matemática I",
+ "titulo": "Cuadriláteros y paralelogramos",
+ "sub": "Matemática I · Misión 18 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Tomi le escribe a Lu: ¿un cuadrado es un rectángulo?",
+    "Lu: ¡obvio que no! Uno es cuadrado y el otro es largo.",
+    "Tomi: ¡error! El cuadrado tiene *4 ángulos rectos*: también es rectángulo.",
+    "Hoy: *cuadriláteros y paralelogramos*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "¿Un cuadrado es un rectángulo? 🤔"
+    },
+    {
+     "yo": false,
+     "txt": "¡Obvio que no! 🙄"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! Tiene 4 ángulos rectos 😎"
+    }
+   ],
+   "titulo": "CUADRILÁTEROS",
+   "sub": "familias y propiedades"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un *cuadrilátero* es un polígono de *4 lados*, con 4 vértices y 4 ángulos.",
+    "Se clasifican según cuántos pares de *lados paralelos* tienen."
+   ],
+   "palabra": "Cuadrilátero",
+   "texto": "Polígono de 4 lados, 4 vértices y 4 ángulos",
+   "emoji": "⬛"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Según los lados paralelos.",
+    "Dos pares: *paralelogramo*.",
+    "Un par: *trapecio*.",
+    "Ninguno: *trapezoide*."
+   ],
+   "titulo": "SEGÚN LOS LADOS PARALELOS",
+   "columnas": [
+    "Pares paralelos",
+    "Se llama"
+   ],
+   "filas": [
+    [
+     "Dos",
+     "Paralelogramo"
+    ],
+    [
+     "Uno",
+     "Trapecio"
+    ],
+    [
+     "Ninguno",
+     "Trapezoide"
+    ]
+   ]
+  },
+  {
+   "t": "venn",
+   "voz": [
+    "La familia de los paralelogramos.",
+    "El *rectángulo*: 4 ángulos rectos.",
+    "El *rombo*: 4 lados iguales.",
+    "¿Y el *cuadrado*? Tiene las dos cosas: ¡es rectángulo *y* rombo!"
+   ],
+   "a": "RECTÁNGULOS",
+   "b": "ROMBOS",
+   "itemsA": [
+    "4 ángulos rectos"
+   ],
+   "itemsB": [
+    "4 lados iguales"
+   ],
+   "ambos": [
+    "CUADRADO"
+   ]
+  },
+  {
+   "t": "zoom",
+   "voz": [
+    "Las familias se meten una dentro de otra. Todo cuadrado es rectángulo…",
+    "… todo rectángulo es paralelogramo…",
+    "… y todo paralelogramo es cuadrilátero. ¡Al revés no!"
+   ],
+   "niveles": [
+    {
+     "emoji": "⬛",
+     "txt": "Cuadrado"
+    },
+    {
+     "emoji": "▬",
+     "txt": "Rectángulo"
+    },
+    {
+     "emoji": "▱",
+     "txt": "Paralelogramo"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "En todo paralelogramo: *lados opuestos iguales*, *ángulos opuestos iguales*, y *consecutivos suman 180*. Si un ángulo mide 70…",
+    "… su opuesto mide 70, y su consecutivo, 180 menos 70…",
+    "¡*110*! Los cuatro: 70, 110, 70 y 110."
+   ],
+   "pasos": [
+    "Un ángulo: 70°",
+    "Opuesto: 70° · consecutivo: 110°",
+    "70°, 110°, 70°, 110°"
+   ],
+   "notas": [
+    "",
+    "180° − 70°",
+    ""
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿un rombo es siempre un cuadrado?",
+    "¿Sí o no?",
+    "¡*No*! El rombo no necesita ángulos rectos. Solo si los tiene, es cuadrado."
+   ],
+   "pregunta": "¿Todo rombo es un cuadrado?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: dos pares de lados paralelos, 4 lados de 5 centímetros y ángulos de 60 y 120. ¿Qué es?",
+    "Dos pares paralelos: *paralelogramo*.",
+    "4 lados iguales: *rombo*.",
+    "Sin ángulos rectos: *no es cuadrado*. ¡Es un rombo!"
+   ],
+   "titulo": "¿QUÉ CUADRILÁTERO ES?",
+   "items": [
+    "Dos pares paralelos → paralelogramo",
+    "4 lados iguales → rombo",
+    "Sin ángulos rectos → no es cuadrado"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que el cuadrado *no es rectángulo*: sí lo es.",
+    "Y clasificar por *la apariencia*: un cuadrado girado sigue siendo cuadrado."
+   ],
+   "items": [
+    {
+     "mal": "El cuadrado no es rectángulo",
+     "bien": "Tiene 4 ángulos rectos: lo es"
+    },
+    {
+     "mal": "Clasificar por cómo se ve",
+     "bien": "Mirar lados y ángulos"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Paralelogramo*: dos pares paralelos.",
+    "*Trapecio*: un par.",
+    "El *cuadrado* es rectángulo y rombo.",
+    "Ángulos *opuestos iguales*, consecutivos *suman 180*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARALELOGRAMO",
+     "2 pares paralelos"
+    ],
+    [
+     "TRAPECIO",
+     "1 par paralelo"
+    ],
+    [
+     "CUADRADO",
+     "rectángulo y rombo"
+    ],
+    [
+     "ÁNGULOS",
+     "opuestos iguales · consecutivos 180°"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

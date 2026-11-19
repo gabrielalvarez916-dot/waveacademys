@@ -1,0 +1,212 @@
+{
+ "slug": "mat1-m18-n4",
+ "step_id": "f5c364b8-9844-4665-b706-c40f28fd041e",
+ "materia": "Matemática I",
+ "titulo": "Diagonales y propiedades",
+ "sub": "Matemática I · Misión 18 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: un carpintero arma un marco y quiere saber si quedó *bien cuadrado*. Mide las dos diagonales…",
+    "¡Y miden lo mismo! Por eso sabe que es un *rectángulo*. Las diagonales delatan a cada cuadrilátero.",
+    "Hoy: *diagonales y propiedades*."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Carpintero descubre el truco de las diagonales",
+   "bajada": "Si miden igual, el marco es un rectángulo",
+   "emoji": "🪚",
+   "titulo": "DIAGONALES",
+   "sub": "y propiedades"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Una *diagonal* une dos vértices *que no son consecutivos*.",
+    "Todo cuadrilátero tiene *2 diagonales*."
+   ],
+   "palabra": "Diagonal",
+   "texto": "Segmento entre dos vértices no consecutivos",
+   "emoji": "✖️"
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "En todo paralelogramo, las diagonales *se cortan en su punto medio*.",
+    "Una diagonal de 10 centímetros queda partida en dos de *5*."
+   ],
+   "numero": 5,
+   "despues": " cm",
+   "texto": "Diagonal de 10 cm → dos mitades de 5 cm",
+   "emoji": "✂️"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Lo que delata a cada uno.",
+    "*Rectángulo*: diagonales *iguales*.",
+    "*Rombo*: diagonales *perpendiculares*.",
+    "*Cuadrado*: ¡las dos cosas!"
+   ],
+   "titulo": "SUS DIAGONALES",
+   "columnas": [
+    "Cuadrilátero",
+    "Iguales",
+    "Perpendiculares"
+   ],
+   "filas": [
+    [
+     "Rectángulo",
+     "Sí",
+     "No"
+    ],
+    [
+     "Rombo",
+     "No",
+     "Sí"
+    ],
+    [
+     "Cuadrado",
+     "Sí",
+     "Sí"
+    ]
+   ]
+  },
+  {
+   "t": "causas",
+   "voz": [
+    "¿Cuánto suman los ángulos de un cuadrilátero? Trazá una diagonal.",
+    "Se arman *dos triángulos*.",
+    "Cada uno suma 180…",
+    "… así que el cuadrilátero suma *360*."
+   ],
+   "causa": {
+    "txt": "Una diagonal",
+    "emoji": "✏️"
+   },
+   "items": [
+    {
+     "txt": "Dos triángulos",
+     "emoji": "🔺"
+    },
+    {
+     "txt": "180° + 180°",
+     "emoji": "➕"
+    },
+    {
+     "txt": "= 360°",
+     "emoji": "🎯"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Tres ángulos miden 80, 95 y 110. ¿El cuarto?",
+    "Suman 285.",
+    "360 menos 285: ¡*75 grados*!"
+   ],
+   "pasos": [
+    "80° + 95° + 110° + ? = 360°",
+    "285° + ? = 360°",
+    "? = 75°"
+   ],
+   "notas": [
+    "",
+    "sumamos",
+    "restamos de 360°"
+   ]
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Construir un rombo con diagonales de 6 y 4: trazás dos segmentos *perpendiculares*.",
+    "Que se corten en sus *puntos medios*: a 3 y a 2 de cada punta.",
+    "Y unís los cuatro extremos. ¡Rombo listo!"
+   ],
+   "titulo": "UN ROMBO DESDE SUS DIAGONALES",
+   "items": [
+    {
+     "txt": "Dos segmentos perpendiculares",
+     "emoji": "➕"
+    },
+    {
+     "txt": "Cortados por la mitad",
+     "emoji": "✂️"
+    },
+    {
+     "txt": "Unir los extremos",
+     "emoji": "🔷"
+    }
+   ]
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: diagonales de 8 centímetros las dos, cortadas en su punto medio y perpendiculares. ¿Qué es?",
+    "Se cortan en el punto medio: *paralelogramo*.",
+    "Son iguales: *rectángulo*.",
+    "Son perpendiculares: *rombo*.",
+    "Las dos cosas: ¡*cuadrado*! Y cada mitad mide 4."
+   ],
+   "titulo": "DIAGONALES DE 8 cm",
+   "items": [
+    "Punto medio → paralelogramo",
+    "Iguales → rectángulo",
+    "Perpendiculares → rombo",
+    "Las dos → cuadrado"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Pensar que las diagonales *siempre son perpendiculares*: en el rectángulo, no.",
+    "Y olvidar los *360*: el cuadrilátero no suma 180."
+   ],
+   "items": [
+    {
+     "mal": "Diagonales siempre perpendiculares",
+     "bien": "Solo en rombo y cuadrado"
+    },
+    {
+     "mal": "Cuadrilátero suma 180°",
+     "bien": "Suma 360°"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Diagonal*: une vértices no consecutivos.",
+    "En el paralelogramo, *se cortan a la mitad*.",
+    "Rectángulo *iguales*, rombo *perpendiculares*.",
+    "Y el cuadrilátero suma *360*.",
+    "¡Misión 18 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DIAGONAL",
+     "vértices no consecutivos"
+    ],
+    [
+     "PARALELOGRAMO",
+     "se cortan a la mitad"
+    ],
+    [
+     "RECTÁNGULO / ROMBO",
+     "iguales / perpendiculares"
+    ],
+    [
+     "ÁNGULOS",
+     "suman 360°"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

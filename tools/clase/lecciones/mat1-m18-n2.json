@@ -1,0 +1,197 @@
+{
+ "slug": "mat1-m18-n2",
+ "step_id": "0286504c-30f5-4f11-b7a2-3cf360d6a9fa",
+ "materia": "Matemática I",
+ "titulo": "Suma de ángulos interiores",
+ "sub": "Matemática I · Misión 18 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Sofi recortó un triángulo de papel y le arrancó *las tres puntas*.",
+    "Las juntó una al lado de la otra…",
+    "… ¡y formaron una *línea recta*! Un ángulo llano: 180 grados.",
+    "Hoy: la *suma de los ángulos interiores*."
+   ],
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "✂️",
+   "lineas": [
+    "Recortó un triángulo de papel",
+    "Arrancó las tres puntas",
+    "Las juntó… ¿qué formaron?"
+   ],
+   "titulo": "ÁNGULOS DEL TRIÁNGULO",
+   "sub": "siempre suman 180°"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "En *todo* triángulo, los tres ángulos interiores *suman 180 grados*.",
+    "Grande, chico, raro o perfecto: siempre 180."
+   ],
+   "palabra": "Suma interior",
+   "texto": "Los tres ángulos interiores suman 180°",
+   "emoji": "🔺"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Calcular el que falta: dos ángulos de 45 y 75.",
+    "Los sumamos: *120*.",
+    "180 menos 120: ¡*60 grados*!"
+   ],
+   "pasos": [
+    "45° + 75° + ? = 180°",
+    "120° + ? = 180°",
+    "? = 60°"
+   ],
+   "notas": [
+    "",
+    "sumamos",
+    "restamos de 180°"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Si *prolongás un lado*, aparece el *ángulo exterior*: es el adyacente de un interior, suman 180.",
+    "Y el truco: el exterior es igual a *la suma de los dos interiores que no están pegados*. Con 50, 60 y 70, el exterior junto al 70 mide *110*: ¡50 + 60!"
+   ],
+   "antes": {
+    "cab": "POR ADYACENTE",
+    "emoji": "➖",
+    "texto": "180° − 70° = 110°"
+   },
+   "despues": {
+    "cab": "POR LA PROPIEDAD",
+    "emoji": "➕",
+    "texto": "50° + 60° = 110°"
+   }
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "Casos especiales.",
+    "*Equilátero*: los tres ángulos iguales, 180 dividido 3, *60 cada uno*.",
+    "*Isósceles*: los dos ángulos frente a los lados iguales *son iguales*.",
+    "Si el desigual mide 40: quedan 140, repartidos en dos, *70 y 70*."
+   ],
+   "titulo": "ISÓSCELES Y EQUILÁTEROS",
+   "items": [
+    {
+     "cab": "EQUILÁTERO",
+     "txt": "60°, 60° y 60°"
+    },
+    {
+     "cab": "ISÓSCELES",
+     "txt": "dos ángulos iguales"
+    },
+    {
+     "cab": "EJEMPLO",
+     "txt": "40° → 70° y 70°"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Con ecuaciones: los ángulos miden x, 2x y 3x.",
+    "Suman 180: *6x igual a 180*.",
+    "x vale 30. ¡Los ángulos son *30, 60 y 90*!"
+   ],
+   "pasos": [
+    "x + 2x + 3x = 180",
+    "6x = 180",
+    "x = 30 → 30°, 60°, 90°"
+   ],
+   "notas": [
+    "suman 180°",
+    "",
+    "÷ 6"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: ¿un triángulo puede tener *dos ángulos rectos*?",
+    "¿Sí o no?",
+    "¡*No*! Ya sumarían 180, y el tercero mediría 0."
+   ],
+   "pregunta": "¿Dos ángulos rectos en un triángulo?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: un isósceles con ángulo desigual de 36. ¿Los otros dos?",
+    "Los otros dos son iguales.",
+    "Entre los dos: 180 menos 36, *144*.",
+    "Cada uno: 144 dividido 2, ¡*72*!"
+   ],
+   "titulo": "EL ISÓSCELES DE 36°",
+   "items": [
+    "Los otros dos son iguales",
+    "180° − 36° = 144°",
+    "144° ÷ 2 = 72°"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir *interior con exterior*: el exterior está afuera, pegado al lado prolongado.",
+    "Y restar de 360: en el triángulo, *es 180*."
+   ],
+   "items": [
+    {
+     "mal": "Exterior = interior",
+     "bien": "El exterior está afuera"
+    },
+    {
+     "mal": "Restar de 360°",
+     "bien": "En el triángulo, 180°"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los interiores suman *180*.",
+    "El que falta: *180 menos los otros dos*.",
+    "*Exterior*: la suma de los dos no pegados.",
+    "Equilátero: *60, 60 y 60*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUMA",
+     "180°"
+    ],
+    [
+     "EL QUE FALTA",
+     "180° − los otros dos"
+    ],
+    [
+     "EXTERIOR",
+     "suma de los no pegados"
+    ],
+    [
+     "EQUILÁTERO",
+     "60° cada uno"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

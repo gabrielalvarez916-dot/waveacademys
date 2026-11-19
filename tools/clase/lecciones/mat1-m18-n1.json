@@ -1,0 +1,214 @@
+{
+ "slug": "mat1-m18-n1",
+ "step_id": "155cfcaa-db52-4d92-b21f-b0c78ea9a089",
+ "materia": "Matemática I",
+ "titulo": "Clasificación de triángulos",
+ "sub": "Matemática I · Misión 18 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: un triángulo con ángulos de 90, 45 y 45 grados. ¿Cómo se llama? 5 segundos.",
+    "¡*Rectángulo isósceles*! Tiene *dos* nombres: uno por los ángulos y otro por los lados.",
+    "Hoy: *clasificación de triángulos*."
+   ],
+   "texto": "Ángulos de 90°, 45° y 45°. ¿Cómo se llama?",
+   "segundos": 5,
+   "respuesta": "Rectángulo isósceles",
+   "emoji": "📐",
+   "titulo": "TRIÁNGULOS",
+   "sub": "clasificación"
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Por sus *lados*, tres familias.",
+    "*Equilátero*: los tres lados iguales. 5, 5 y 5.",
+    "*Isósceles*: dos lados iguales. 5, 5 y 3.",
+    "*Escaleno*: los tres distintos. 4, 5 y 6."
+   ],
+   "cajas": [
+    {
+     "cab": "EQUILÁTERO",
+     "emoji": "🔺"
+    },
+    {
+     "cab": "ISÓSCELES",
+     "emoji": "🔻"
+    },
+    {
+     "cab": "ESCALENO",
+     "emoji": "📐"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "5, 5 y 5",
+     "caja": 0
+    },
+    {
+     "txt": "5, 5 y 3",
+     "caja": 1
+    },
+    {
+     "txt": "4, 5 y 6",
+     "caja": 2
+    }
+   ]
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Por sus *ángulos*, otras tres.",
+    "*Acutángulo*: los tres agudos.",
+    "*Rectángulo*: uno recto, de 90.",
+    "*Obtusángulo*: uno obtuso, de más de 90.",
+    "El truco: mirá *el ángulo más grande*."
+   ],
+   "titulo": "SEGÚN SUS ÁNGULOS",
+   "celdas": [
+    {
+     "cab": "ACUTÁNGULO",
+     "txt": "60°, 60°, 60°"
+    },
+    {
+     "cab": "RECTÁNGULO",
+     "txt": "90°, 45°, 45°"
+    },
+    {
+     "cab": "OBTUSÁNGULO",
+     "txt": "120°, 30°, 30°"
+    },
+    {
+     "cab": "TRUCO",
+     "txt": "mirar el ángulo mayor"
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "La clave: *todo triángulo tiene dos nombres a la vez*, uno por los lados y otro por los ángulos."
+   ],
+   "texto": "Un triángulo, dos nombres",
+   "emoji": "🏷️"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Mirá estos dos.",
+    "90, 45 y 45, con dos lados iguales: *rectángulo isósceles*.",
+    "100, 50 y 30, con los lados distintos: *obtusángulo escaleno*."
+   ],
+   "a": {
+    "cab": "90° · 45° · 45°",
+    "texto": "rectángulo isósceles",
+    "emoji": "📐"
+   },
+   "b": {
+    "cab": "100° · 50° · 30°",
+    "texto": "obtusángulo escaleno",
+    "emoji": "📏"
+   },
+   "signo": "·"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Momento sorpresa: *no con cualquier medida* se arma un triángulo. 3, 4 y 8 centímetros…",
+    "3 más 4 da 7…",
+    "… y 7 no le gana a 8. ¡Los palitos no se tocan! Es la *desigualdad triangular*."
+   ],
+   "izq": {
+    "cab": "3 + 4",
+    "items": [
+     "= 7"
+    ]
+   },
+   "der": {
+    "cab": "LADO MAYOR",
+    "items": [
+     "8"
+    ]
+   },
+   "gana": "der"
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: no pruebes los tres lados. Si *el más largo* es menor que la suma de los otros dos, ¡ya está!"
+   ],
+   "titulo": "EMPEZÁ POR EL MÁS LARGO",
+   "texto": "Lado mayor < suma de los otros dos",
+   "emoji": "📏"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: lados de 5, 5 y 8. ¿Se puede? ¿Cómo se llama?",
+    "Lado más largo: 8. Los otros suman 10: *se puede*.",
+    "Dos lados iguales: *isósceles*.",
+    "Su ángulo mayor mide unos 106 grados: *obtusángulo*.",
+    "¡Isósceles obtusángulo!"
+   ],
+   "titulo": "5, 5 Y 8 cm",
+   "items": [
+    "8 < 5 + 5 = 10: se puede",
+    "Dos lados iguales: isósceles",
+    "Ángulo de unos 106°: obtusángulo",
+    "Isósceles obtusángulo"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que un triángulo tiene *un solo nombre*.",
+    "Y aceptar tres medidas *sin probar*: con 3, 4 y 8 no hay triángulo."
+   ],
+   "items": [
+    {
+     "mal": "Un solo nombre",
+     "bien": "Uno por lados y otro por ángulos"
+    },
+    {
+     "mal": "3, 4 y 8 forman triángulo",
+     "bien": "3 + 4 = 7 < 8: no"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Por lados*: equilátero, isósceles, escaleno.",
+    "*Por ángulos*: acutángulo, rectángulo, obtusángulo.",
+    "Todo triángulo, *dos nombres*.",
+    "Y la *desigualdad triangular*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POR LADOS",
+     "equilátero, isósceles, escaleno"
+    ],
+    [
+     "POR ÁNGULOS",
+     "acutángulo, rectángulo, obtusángulo"
+    ],
+    [
+     "DOS NOMBRES",
+     "rectángulo isósceles"
+    ],
+    [
+     "DESIGUALDAD",
+     "mayor < suma de los otros"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
