@@ -5,6 +5,7 @@
   var vista = null;
   var D = null;          // datos de la materia abierta
   var hojaAbierta = null; // id de la lección que se está viendo
+  var verPaso = {}; // paso que el alumno eligió mirar dentro de un nivel (para volver atrás)
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
   // El repaso obligatorio no es un paso cargado: lo arma la IA. Cuenta para completar la lección cuando corresponde.
@@ -372,9 +373,16 @@
 
   function consigna(x) { return typeof x === 'string' ? x : (x && (x.consigna || x.texto)) || ''; }
 
-  function pantallaPaso(k, f, esGen, n, total) {
+  function pantallaPaso(k, f, esGen, n, total, yaHecho) {
     var u = PASO_UI[k], l = f.l, p = D.pasos[l.id] || {};
     var titulo = u.titulo, sub = u.sub, icono = u.icono;
+    if (yaHecho) { // repaso de un paso terminado: se puede volver a ver, sin rehacer la entrega
+      var hechoTxt = k === 'carpeta' ? 'Ya entregaste tu carpeta ✓ Podés volver a mirar el PDF.' : 'Ya hiciste este paso ✓ Podés volver a verlo cuando quieras.';
+      var kk = k === 'carpeta' ? 'pdf' : k, bt = k === 'carpeta' ? 'VER EL PDF' : u.boton.replace('EMPEZAR', 'VOLVER A HACERLAS');
+      return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:#1FB57A">' + ico('check', 56, 3) + '</span>' +
+        '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(hechoTxt) + '</p>' +
+        '<div class="rc-pie"><button type="button" class="rc-btn" style="--k:' + u.color + '" data-rc="abrir" data-k="' + kk + '">' + bt + '</button></div></div>';
+    }
     if (k === 'final' && esGen) { titulo = 'Las 4 generales'; sub = 'Mezclan todo lo de la misión y repasan lo anterior.'; icono = 'bolt'; }
     var extra = '';
     if (k === 'carpeta') {
@@ -406,11 +414,18 @@
     var l = f.l, t = f.t, esGen = !!t.generales && t.generales.id === l.id;
     var ks = pasosNivel(l);
     var pend = ks.filter(function (k) { return !hechoK(l, k); });
-    var i = pend.length ? ks.indexOf(pend[0]) : ks.length;
-    var segs = ks.concat(['fin']).map(function (k, j) { return '<i class="rc-seg ' + (j < i ? 'on' : j === i ? 'cur' : '') + '"></i>'; }).join('');
-    var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length);
+    var hasta = pend.length ? ks.indexOf(pend[0]) : ks.length; // hasta dónde llegó (abre acá)
+    var i = verPaso[l.id] != null && verPaso[l.id] <= hasta ? verPaso[l.id] : hasta; // o el paso anterior que eligió mirar
+    var segs = ks.concat(['fin']).map(function (k, j) {
+      var cls = 'rc-seg ' + (j === i ? 'cur' : j < hasta ? 'on' : '');
+      return j <= hasta ? '<i class="' + cls + '" data-ver="' + j + '" style="cursor:pointer" title="' + (j < ks.length ? esc(PASO_UI[k].titulo) : 'Final') + '"></i>' : '<i class="' + cls + '"></i>';
+    }).join('');
+    var nav = '<div class="rc-nav" style="display:flex;justify-content:space-between;gap:10px;margin:8px 0 0">' +
+      (i > 0 ? '<button type="button" class="rc-b2" data-ver="' + (i - 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">‹ Paso anterior</button>' : '<span></span>') +
+      (i < hasta ? '<button type="button" class="rc-b2" data-ver="' + (i + 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">' + (i + 1 === hasta ? 'Seguir donde quedé ›' : 'Paso siguiente ›') + '</button>' : '<span></span>') + '</div>';
+    var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length, i < hasta);
     vista.innerHTML = '<div class="mt mt-rc" style="--c:' + tono(D.temas.indexOf(t)) + '">' +
-      '<div class="rc-top"><a class="rc-x" href="' + base() + '/' + t.id + '" aria-label="Volver a la misión">' + ico('close', 22, 3) + '</a><div class="rc-bar">' + segs + '</div></div>' + cuerpo + '</div>';
+      '<div class="rc-top"><a class="rc-x" href="' + base() + '/' + t.id + '" aria-label="Volver a la misión">' + ico('close', 22, 3) + '</a><div class="rc-bar">' + segs + '</div></div>' + nav + cuerpo + '</div>';
   }
 
   // ----- Router interno -----
@@ -422,6 +437,8 @@
     if (t && (t.bloqueado || t.vacio || D.sinAcceso)) { t = null; ruta.leccion = null; location.replace(base()); }
     var f = t && ruta.leccion ? buscarLeccion(ruta.leccion) : null;
     if (f && (f.t.id !== t.id || f.l.bloqueada || f.l.est.vacia)) { f = null; location.replace(base() + '/' + t.id); }
+    if (!f) pintar.ult = null;
+    else if (pintar.ult !== f.l.id) { delete verPaso[f.l.id]; pintar.ult = f.l.id; } // al entrar a un nivel abre donde quedó
     if (f) { hojaAbierta = f.l.id; pantallaNivel(f); }
     else if (t) pantallaTema(t);
     else pantallaTemas();
@@ -437,6 +454,7 @@
     var r = await sb.from('student_step_progress').upsert(fila, { onConflict: 'student_id,lesson_step_id' });
     if (r.error) { toast('No pudimos guardar tu avance. Revisá tu conexión.', true); return; }
     D.progreso[paso.id] = { score: fila.score, estado: 'graded' };
+    delete verPaso[paso.lesson_id]; // al terminar un paso, sigue donde quedó
     await revisarLeccion(paso.lesson_id);
     refrescar();
   }
@@ -933,6 +951,8 @@
         if (a === 'entregar') return entregarCarpeta(rc);
         if (a === 'continuar') return refrescar();
       }
+      var vp = ev.target.closest('[data-ver]');
+      if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
       var x = ev.target.closest('[data-examen]');
