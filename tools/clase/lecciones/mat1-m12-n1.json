@@ -1,0 +1,267 @@
+{
+ "slug": "mat1-m12-n1",
+ "step_id": "218698b2-4434-49b1-b85e-65b78a5fcc06",
+ "materia": "Matemática I",
+ "titulo": "Suma de enteros",
+ "sub": "Matemática I · Misión 12 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "voz": [
+    "Desafío: estás parado en el 3 y das 5 pasos *para atrás*. ¿Dónde quedás? 5 segundos.",
+    "¡En el *menos 2*! Eso es 3 más menos 5.",
+    "Hoy: *sumar enteros*, positivos y negativos juntos."
+   ],
+   "texto": "Estás en el 3 y das 5 pasos para atrás. ¿Dónde quedás?",
+   "segundos": 5,
+   "respuesta": "3 + (−5) = −2",
+   "emoji": "👣",
+   "titulo": "SUMA DE ENTEROS",
+   "sub": "positivos y negativos"
+  },
+  {
+   "t": "recta",
+   "voz": [
+    "En la recta: partís del primer número y avanzás el segundo.",
+    "Si es *positivo*, vas a la *derecha*. Si es *negativo*, a la *izquierda*. Partimos del 3…",
+    "… y nos movemos 5 a la izquierda: ¡*menos 2*!"
+   ],
+   "min": -5,
+   "max": 5,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 3,
+     "txt": "partimos"
+    },
+    {
+     "v": -2,
+     "txt": "3 + (−5) = −2"
+    }
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Detalle de escritura: un negativo que va después de un signo se pone *entre paréntesis*: 3 más, paréntesis, menos 5."
+   ],
+   "texto": "3 + (−5) · el negativo va entre paréntesis",
+   "emoji": "🧷"
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Sin recta, dos reglas.",
+    "*Igual signo*: sumás los valores absolutos y dejás el signo. Menos 4 más menos 6: *menos 10*.",
+    "*Distinto signo*: restás, mayor menos menor, y gana el signo del más grande. Menos 9 más 4: *menos 5*."
+   ],
+   "a": {
+    "cab": "IGUAL SIGNO",
+    "texto": "(−4) + (−6) = −10 · sumo y dejo el signo",
+    "emoji": "🤝"
+   },
+   "b": {
+    "cab": "DISTINTO SIGNO",
+    "texto": "(−9) + 4 = −5 · resto y gana el mayor",
+    "emoji": "⚔️"
+   },
+   "signo": "·"
+  },
+  {
+   "t": "balanza",
+   "voz": [
+    "Pensalo como una *pulseada*: menos 9 contra 4.",
+    "Los negativos tiran con 9, los positivos con 4.",
+    "Ganan los negativos por 5: *menos 5*."
+   ],
+   "izq": {
+    "cab": "NEGATIVOS",
+    "items": [
+     "−9"
+    ]
+   },
+   "der": {
+    "cab": "POSITIVOS",
+    "items": [
+     "+4"
+    ]
+   },
+   "gana": "izq"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Tres ejemplos para fijar.",
+    "Menos 4 más menos 6: iguales, 4 más 6, *menos 10*.",
+    "Menos 9 más 4: distintos, 9 menos 4, *menos 5*.",
+    "9 más menos 4: distintos, gana el 9: *5 positivo*."
+   ],
+   "titulo": "LAS REGLAS EN ACCIÓN",
+   "columnas": [
+    "Suma",
+    "Signos",
+    "Cuenta",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "(−4) + (−6)",
+     "iguales",
+     "4 + 6",
+     "−10"
+    ],
+    [
+     "(−9) + 4",
+     "distintos",
+     "9 − 4",
+     "−5"
+    ],
+    [
+     "9 + (−4)",
+     "distintos",
+     "9 − 4",
+     "5"
+    ]
+   ]
+  },
+  {
+   "t": "dato",
+   "voz": [
+    "Sorpresa: un número más su *opuesto* siempre da…",
+    "… ¡*cero*! 7 más menos 7: se anulan."
+   ],
+   "numero": 0,
+   "texto": "7 + (−7) = 0 · se anulan",
+   "emoji": "💥"
+  },
+  {
+   "t": "bloques",
+   "voz": [
+    "La suma de enteros tiene propiedades amigas.",
+    "*Conmutativa*: el orden no cambia el resultado.",
+    "*Asociativa*: podés agrupar como quieras.",
+    "Y el *0* no cambia nada."
+   ],
+   "titulo": "PROPIEDADES",
+   "items": [
+    {
+     "cab": "CONMUTATIVA",
+     "txt": "(−3) + 5 = 5 + (−3)"
+    },
+    {
+     "cab": "ASOCIATIVA",
+     "txt": "agrupar como quieras"
+    },
+    {
+     "cab": "EL 0",
+     "txt": "a + 0 = a"
+    }
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Truco con muchos sumandos: menos 12, más 7, más menos 5, más 10. *Agrupá por signo*.",
+    "Positivos: 7 más 10, *17*.",
+    "Negativos: menos 12 y menos 5, *menos 17*. ¡17 y menos 17 se anulan: da *0*!"
+   ],
+   "cajas": [
+    {
+     "cab": "POSITIVOS · 17",
+     "emoji": "⬆️"
+    },
+    {
+     "cab": "NEGATIVOS · −17",
+     "emoji": "⬇️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "7",
+     "caja": 0
+    },
+    {
+     "txt": "10",
+     "caja": 0
+    },
+    {
+     "txt": "−12",
+     "caja": 1
+    },
+    {
+     "txt": "−5",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Desafío: menos 15, más menos 7, más 20.",
+    "Menos 15 más menos 7: igual signo, *menos 22*.",
+    "Menos 22 más 20: distinto signo, 22 menos 20 es 2, y gana el negativo: ¡*menos 2*!"
+   ],
+   "pasos": [
+    "(−15) + (−7) + 20",
+    "(−22) + 20",
+    "= −2"
+   ],
+   "notas": [
+    "",
+    "igual signo",
+    "gana el negativo"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Sumar siempre los valores absolutos: menos 7 más 3 *no es menos 10*, es menos 4.",
+    "Y poner el signo del menor: en 9 más menos 4 *gana el 9*: da positivo."
+   ],
+   "items": [
+    {
+     "mal": "(−7) + 3 = −10",
+     "bien": "(−7) + 3 = −4"
+    },
+    {
+     "mal": "9 + (−4) = −5",
+     "bien": "9 + (−4) = 5"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "En la recta: *positivo a la derecha, negativo a la izquierda*.",
+    "*Igual signo*: sumo y dejo el signo.",
+    "*Distinto signo*: resto y gana el mayor.",
+    "Un número más su opuesto: *cero*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RECTA",
+     "+ derecha · − izquierda"
+    ],
+    [
+     "IGUAL SIGNO",
+     "(−4) + (−6) = −10"
+    ],
+    [
+     "DISTINTO SIGNO",
+     "(−9) + 4 = −5"
+    ],
+    [
+     "OPUESTOS",
+     "7 + (−7) = 0"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,233 @@
+{
+ "slug": "mat1-m12-n3",
+ "step_id": "4c1a7663-8451-4304-bf53-3c17c9489352",
+ "materia": "Matemática I",
+ "titulo": "Suma algebraica y supresión de paréntesis",
+ "sub": "Matemática I · Misión 12 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "voz": [
+    "Tomi tenía 10 pesos y le escribe a Lu: te devuelvo lo de la vaquita, que eran 4 menos 7 más 2.",
+    "Lu hace la cuenta: 10 menos 4 menos 7 menos 2… ¡y le da *menos 3*!",
+    "Tomi: ¡no! Al sacar el paréntesis con menos, *se cambian todos los signos*. Le quedan *11*.",
+    "Hoy: *suma algebraica y supresión de paréntesis*."
+   ],
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "Te devuelvo lo de la vaquita: 10 − (4 − 7 + 2)"
+    },
+    {
+     "yo": false,
+     "txt": "Me da −3 😬"
+    },
+    {
+     "yo": true,
+     "txt": "¡Cambiá todos los signos! Da 11"
+    }
+   ],
+   "titulo": "SUMA ALGEBRAICA",
+   "sub": "y paréntesis"
+  },
+  {
+   "t": "texto",
+   "voz": [
+    "Una *suma algebraica* mezcla sumas y restas. Cada número con su signo es un *término*.",
+    "En 5 menos 8 más 3 menos 2, los términos son: más 5 y menos 8…",
+    "… más 3 y menos 2."
+   ],
+   "oracion": "+5 −8 +3 −2",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 1,
+     "etiqueta": "TÉRMINOS",
+     "color": "#7FD3C4"
+    },
+    {
+     "desde": 2,
+     "hasta": 3,
+     "etiqueta": "TÉRMINOS",
+     "color": "#F4B63F"
+    }
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "Para resolver: juntá los positivos y los negativos.",
+    "Positivos: 5 más 3, *8*.",
+    "Negativos: menos 8 y menos 2, *menos 10*. Total: 8 más menos 10, ¡*menos 2*!"
+   ],
+   "cajas": [
+    {
+     "cab": "POSITIVOS · 8",
+     "emoji": "⬆️"
+    },
+    {
+     "cab": "NEGATIVOS · −10",
+     "emoji": "⬇️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "+5",
+     "caja": 0
+    },
+    {
+     "txt": "+3",
+     "caja": 0
+    },
+    {
+     "txt": "−8",
+     "caja": 1
+    },
+    {
+     "txt": "−2",
+     "caja": 1
+    }
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "voz": [
+    "Suprimir paréntesis: si tiene un *más* adelante, lo sacás y los signos *quedan igual*.",
+    "Si tiene un *menos* adelante, lo sacás y *cambiás todos* los signos de adentro."
+   ],
+   "antes": {
+    "cab": "+( … )",
+    "emoji": "😌",
+    "texto": "+(4 − 7) → +4 − 7"
+   },
+   "despues": {
+    "cab": "−( … )",
+    "emoji": "🔄",
+    "texto": "−(4 − 7) → −4 + 7"
+   }
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "La vaquita de Tomi: 10 menos, paréntesis, 4 menos 7 más 2.",
+    "El menos de afuera cambia todo: 10 menos 4 *más* 7 *menos* 2.",
+    "Resultado: *11*. Y comprobamos: adentro daba menos 1, y 10 menos menos 1 es 11. ¡Cierra!"
+   ],
+   "pasos": [
+    "10 − (4 − 7 + 2)",
+    "10 − 4 + 7 − 2",
+    "= 11"
+   ],
+   "notas": [
+    "",
+    "cambian todos los signos",
+    "comprobado"
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Con corchetes: 8 menos, corchete, 3 menos, paréntesis, 5 menos 9. *Dos caminos*.",
+    "Camino uno, de adentro hacia afuera: 5 menos 9 es menos 4; 3 menos menos 4 es 7; 8 menos 7: *1*.",
+    "Camino dos, suprimiendo: 8 menos 3 más 5 menos 9: ¡también *1*!"
+   ],
+   "a": {
+    "cab": "RESOLVER ADENTRO",
+    "texto": "8 − [3 − (−4)] = 8 − 7 = 1",
+    "emoji": "🎯"
+   },
+   "b": {
+    "cab": "SUPRIMIR",
+    "texto": "8 − 3 + 5 − 9 = 1",
+    "emoji": "✂️"
+   },
+   "signo": "="
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Trampa: ¿cuánto es 12 menos, paréntesis, 4 más 6?",
+    "¿14 o 2?",
+    "¡*2*! El menos cambia los dos: 12 menos 4 menos 6."
+   ],
+   "pregunta": "12 − (4 + 6) = ?",
+   "opciones": [
+    "14",
+    "2"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: menos 6 más, paréntesis, 2 menos 9, menos, paréntesis, menos 4 más 1 menos 3.",
+    "El primer paréntesis tiene más: queda 2 menos 9.",
+    "El segundo tiene menos: cambian todos: más 4 menos 1 más 3.",
+    "Positivos: 2, 4 y 3, *9*. Negativos: menos 6, menos 9, menos 1: *menos 16*.",
+    "9 más menos 16: ¡*menos 7*!"
+   ],
+   "titulo": "−6 + (2 − 9) − (−4 + 1 − 3)",
+   "items": [
+    "+( ): 2 − 9",
+    "−( ): + 4 − 1 + 3",
+    "Positivos 9 · negativos −16",
+    "9 + (−16) = −7"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Mantener los signos con un menos adelante: 12 menos, paréntesis, 4 más 6, *no es 14*.",
+    "Y cambiar *solo el primer* signo: en menos, paréntesis, 5 menos 2 más 1, cambian *todos*."
+   ],
+   "items": [
+    {
+     "mal": "12 − (4 + 6) = 12 − 4 + 6",
+     "bien": "12 − 4 − 6 = 2"
+    },
+    {
+     "mal": "−(5 − 2 + 1) = −5 − 2 + 1",
+     "bien": "−5 + 2 − 1"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Término*: cada número con su signo.",
+    "Agrupá *positivos y negativos*.",
+    "Paréntesis con *más*: quedan igual.",
+    "Paréntesis con *menos*: *cambian todos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TÉRMINOS",
+     "+5 −8 +3 −2"
+    ],
+    [
+     "AGRUPAR",
+     "positivos · negativos"
+    ],
+    [
+     "+( )",
+     "quedan igual"
+    ],
+    [
+     "−( )",
+     "cambian todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

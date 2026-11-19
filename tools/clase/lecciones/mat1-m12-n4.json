@@ -1,0 +1,214 @@
+{
+ "slug": "mat1-m12-n4",
+ "step_id": "85c07d98-de80-4243-a58a-d7a9eb50b9dd",
+ "materia": "Matemática I",
+ "titulo": "Problemas con temperaturas, deudas y alturas",
+ "sub": "Matemática I · Misión 12 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "voz": [
+    "Último momento: en un pueblo de la Patagonia, a las 6 de la mañana hacía *menos 7 grados*, y al mediodía, *9*.",
+    "¿Cuánto subió? Los vecinos dicen 2… pero fueron *16 grados*.",
+    "Hoy: *problemas con enteros*, temperaturas, deudas y alturas."
+   ],
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "De −7 °C a la mañana a 9 °C al mediodía",
+   "bajada": "¿Cuántos grados subió la temperatura?",
+   "emoji": "🌡️",
+   "titulo": "PROBLEMAS CON ENTEROS",
+   "sub": "temperaturas, deudas y alturas"
+  },
+  {
+   "t": "matriz",
+   "voz": [
+    "Primero, *traducir*. Elegís el cero de la situación.",
+    "*Subir* suma.",
+    "*Ganar, cobrar, depositar*: suman.",
+    "*Bajar* resta.",
+    "*Perder, pagar, gastar*: restan."
+   ],
+   "titulo": "DEL ENUNCIADO AL CÁLCULO",
+   "celdas": [
+    {
+     "cab": "SUBIR",
+     "txt": "+"
+    },
+    {
+     "cab": "GANAR · COBRAR",
+     "txt": "+"
+    },
+    {
+     "cab": "BAJAR",
+     "txt": "−"
+    },
+    {
+     "cab": "PAGAR · GASTAR",
+     "txt": "−"
+    }
+   ]
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Dos traducciones.",
+    "Hacía menos 5 y subió 12 grados: menos 5 más 12, *7 grados*.",
+    "Estaba en el piso 2 y bajó 5: 2 menos 5, *subsuelo menos 3*."
+   ],
+   "titulo": "TRADUCIR",
+   "columnas": [
+    "Situación",
+    "Cálculo"
+   ],
+   "filas": [
+    [
+     "−5 °C y subió 12°",
+     "−5 + 12 = 7"
+    ],
+    [
+     "Piso 2 y bajó 5",
+     "2 − 5 = −3"
+    ]
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *saldo* es lo que hay en una cuenta.",
+    "Si es *negativo*, es una *deuda*: menos 1.500 quiere decir que debés 1.500 pesos."
+   ],
+   "palabra": "Saldo",
+   "texto": "Lo que hay en la cuenta · negativo = deuda",
+   "emoji": "🏦"
+  },
+  {
+   "t": "flujo",
+   "voz": [
+    "Tenés 2.000 pesos.",
+    "Pagás 3.500: 2.000 menos 3.500, quedás en *menos 1.500*. ¡Deuda!",
+    "Depositás 4.000: menos 1.500 más 4.000, *2.500*. ¡Salvado!"
+   ],
+   "titulo": "LA CUENTA",
+   "items": [
+    {
+     "txt": "$2.000",
+     "emoji": "💵"
+    },
+    {
+     "txt": "− 3.500 → −1.500",
+     "emoji": "😰"
+    },
+    {
+     "txt": "+ 4.000 → 2.500",
+     "emoji": "😅"
+    }
+   ]
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "¿Cuánto *cambió* algo? *Valor final menos valor inicial*. La temperatura de la noticia: 9 menos menos 7.",
+    "Restar menos 7 es sumar 7: 9 más 7.",
+    "¡*Subió 16 grados*! Si el cambio da positivo, subió; si da negativo, bajó."
+   ],
+   "pasos": [
+    "9 − (−7)",
+    "9 + 7",
+    "= 16 °C"
+   ],
+   "notas": [
+    "final − inicial",
+    "",
+    "subió"
+   ]
+  },
+  {
+   "t": "frase",
+   "voz": [
+    "Importante: un resultado *negativo no es un error*. Puede ser una deuda, una temperatura bajo cero o un subsuelo. Respondé siempre *con la unidad*."
+   ],
+   "texto": "Negativo ≠ error · respondé con la unidad",
+   "emoji": "📌"
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: una cuenta tiene 1.200. Se paga una factura de 3.000, se cobran 5.000 y se pagan 1.700.",
+    "1.200 menos 3.000: *menos 1.800*, en deuda.",
+    "Menos 1.800 más 5.000: *3.200*.",
+    "3.200 menos 1.700: *1.500*.",
+    "Saldo final: ¡*1.500 pesos*!"
+   ],
+   "titulo": "EL SALDO FINAL",
+   "items": [
+    {
+     "txt": "1.200 − 3.000 = −1.800",
+     "emoji": "🧾"
+    },
+    {
+     "txt": "−1.800 + 5.000 = 3.200",
+     "emoji": "💰"
+    },
+    {
+     "txt": "3.200 − 1.700 = 1.500",
+     "emoji": "🧾"
+    },
+    {
+     "txt": "Saldo: $1.500",
+     "emoji": "✅"
+    }
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Creer que un negativo es *imposible*: menos 700 pesos es una deuda.",
+    "Y armar mal el cálculo: de menos 10 a 5 grados se sube *15*, no 5."
+   ],
+   "items": [
+    {
+     "mal": "−$700 es imposible",
+     "bien": "Es una deuda"
+    },
+    {
+     "mal": "De −10 °C a 5 °C: subió 5",
+     "bien": "5 − (−10) = 15"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Traducí*: subir y cobrar suman; bajar y pagar restan.",
+    "*Saldo negativo*: deuda.",
+    "*Cambio*: final menos inicial.",
+    "Y respondé *con la unidad*.",
+    "¡Misión 12 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TRADUCIR",
+     "subir + · bajar −"
+    ],
+    [
+     "SALDO",
+     "negativo = deuda"
+    ],
+    [
+     "CAMBIO",
+     "final − inicial"
+    ],
+    [
+     "RESPUESTA",
+     "con unidad: °C, $, pisos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "slug": "mat1-m12-n2",
+ "step_id": "f02d3abb-a403-442e-af0f-4fa90e5390d3",
+ "materia": "Matemática I",
+ "titulo": "Resta de enteros",
+ "sub": "Matemática I · Misión 12 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "voz": [
+    "Marta vive en la montaña. Ayer la máxima fue 6 grados y la mínima, *menos 4*.",
+    "Su hermano dice: hubo 2 grados de diferencia, 6 menos 4.",
+    "Marta se ríe: ¡fueron *10*! Porque 6 menos menos 4 es 6 *más* 4.",
+    "Hoy: *restar enteros*, y por qué restar un negativo suma."
+   ],
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👩"
+   },
+   "lugar": "🏔️",
+   "lineas": [
+    "Máxima: 6 °C · mínima: −4 °C",
+    "Su hermano: \"2 grados de diferencia\"",
+    "¿Tiene razón?"
+   ],
+   "titulo": "RESTA DE ENTEROS",
+   "sub": "restar es sumar el opuesto"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "La regla de oro: *restar es sumar el opuesto*.",
+    "a menos b es lo mismo que a más el opuesto de b."
+   ],
+   "palabra": "Restar",
+   "texto": "a − b = a + (−b) · se suma el opuesto",
+   "emoji": "🔄"
+  },
+  {
+   "t": "tabla",
+   "voz": [
+    "Mirá cómo se transforman.",
+    "5 menos 8: 5 más menos 8, *menos 3*.",
+    "4 menos menos 6: 4 más 6, *10*.",
+    "Menos 3 menos menos 7: menos 3 más 7, *4*.",
+    "Menos 2 menos 5: menos 2 más menos 5, *menos 7*."
+   ],
+   "titulo": "DE RESTA A SUMA",
+   "columnas": [
+    "Resta",
+    "Como suma",
+    "Resultado"
+   ],
+   "filas": [
+    [
+     "5 − 8",
+     "5 + (−8)",
+     "−3"
+    ],
+    [
+     "4 − (−6)",
+     "4 + 6",
+     "10"
+    ],
+    [
+     "(−3) − (−7)",
+     "(−3) + 7",
+     "4"
+    ],
+    [
+     "(−2) − 5",
+     "(−2) + (−5)",
+     "−7"
+    ]
+   ]
+  },
+  {
+   "t": "linea",
+   "voz": [
+    "¿Por qué restar un negativo *agranda*? Mirá el patrón: 4 menos 2, da 2.",
+    "4 menos 1, da 3. 4 menos 0, da 4.",
+    "Lo que restás baja 1, el resultado sube 1…",
+    "… así que 4 menos menos 1 da *5*. ¡Restar un negativo suma!"
+   ],
+   "titulo": "EL PATRÓN",
+   "eventos": [
+    {
+     "fecha": "4 − 2",
+     "txt": "= 2",
+     "emoji": "1️⃣"
+    },
+    {
+     "fecha": "4 − 1 · 4 − 0",
+     "txt": "= 3 · = 4",
+     "emoji": "2️⃣"
+    },
+    {
+     "fecha": "baja 1",
+     "txt": "sube 1",
+     "emoji": "📈"
+    },
+    {
+     "fecha": "4 − (−1)",
+     "txt": "= 5",
+     "emoji": "🤯"
+    }
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "Ojo: la resta *no es conmutativa*.",
+    "3 menos 5 da menos 2.",
+    "Pero 5 menos 3 da 2. Si das vuelta el orden, ¡dan *opuestos*!"
+   ],
+   "a": {
+    "cab": "3 − 5",
+    "texto": "−2",
+    "emoji": "⬅️"
+   },
+   "b": {
+    "cab": "5 − 3",
+    "texto": "2",
+    "emoji": "➡️"
+   },
+   "signo": "≠"
+  },
+  {
+   "t": "ecuacion",
+   "voz": [
+    "Volvamos a la montaña de Marta. Diferencia: máxima menos mínima, 6 menos menos 4.",
+    "Restar menos 4 es sumar 4: 6 más 4.",
+    "¡*10 grados* de diferencia! Marta tenía razón."
+   ],
+   "pasos": [
+    "6 − (−4)",
+    "6 + 4",
+    "= 10 °C"
+   ],
+   "notas": [
+    "máxima − mínima",
+    "sumamos el opuesto",
+    ""
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿cuánto es 2 menos menos 3?",
+    "¿Menos 1 o 5?",
+    "¡*5*! 2 más 3. Restar un negativo *suma*."
+   ],
+   "pregunta": "2 − (−3) = ?",
+   "opciones": [
+    "−1",
+    "5"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "pasos",
+   "voz": [
+    "Desafío: menos 8, menos menos 3, menos 6.",
+    "Cada resta, a suma del opuesto: menos 8 más 3 más menos 6.",
+    "Menos 8 más 3: *menos 5*.",
+    "Menos 5 más menos 6: ¡*menos 11*!"
+   ],
+   "titulo": "(−8) − (−3) − 6",
+   "items": [
+    "(−8) + 3 + (−6)",
+    "(−8) + 3 = −5",
+    "(−5) + (−6) = −11"
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Cuidado.",
+    "Restar un negativo y achicar: 2 menos menos 3 *no es menos 1*, es 5.",
+    "Y perder el doble signo: en 6 menos menos 4, *hay que cambiar el signo del 4*."
+   ],
+   "items": [
+    {
+     "mal": "2 − (−3) = −1",
+     "bien": "2 + 3 = 5"
+    },
+    {
+     "mal": "6 − (−4) = 6 − 4",
+     "bien": "6 + 4 = 10"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Restar es sumar el opuesto*.",
+    "Restar un negativo *agranda*.",
+    "La resta *no es conmutativa*.",
+    "Diferencia: *mayor menos menor*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REGLA",
+     "a − b = a + (−b)"
+    ],
+    [
+     "DOBLE SIGNO",
+     "4 − (−6) = 10"
+    ],
+    [
+     "ORDEN",
+     "3 − 5 ≠ 5 − 3"
+    ],
+    [
+     "DIFERENCIA",
+     "6 − (−4) = 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
