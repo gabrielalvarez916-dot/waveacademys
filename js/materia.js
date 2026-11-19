@@ -998,10 +998,16 @@
     ruta = { tema: temaId || null, leccion: leccionId || null };
     comp_abierto = false;
     window.scrollTo(0, 0);
-    if (D && D.materia.id === materiaId) { pintar(); return; }
+    if (D && D.materia.id === materiaId) {
+      pintar();
+      // si los datos tienen más de 1 minuto, se vuelven a leer en segundo plano (así aparecen las clases nuevas sin recargar)
+      if (Date.now() - (D.leido || 0) > 60000 && !document.querySelector('.wvp')) cargar(materiaId).then(function (d) { if (D && D.materia.id === materiaId) { d.leido = Date.now(); D = d; pintar(); } }).catch(function () {});
+      return;
+    }
     vista.innerHTML = '<div class="mt"><div class="mt-vacio">Cargando tu materia…</div></div>';
     try {
       D = await cargar(materiaId);
+      D.leido = Date.now();
       pintar();
     } catch (e) {
       console.error(e);
