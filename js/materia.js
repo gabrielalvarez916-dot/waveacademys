@@ -5,7 +5,8 @@
   var vista = null;
   var D = null;          // datos de la materia abierta
   var hojaAbierta = null; // id de la lección que se está viendo
-  var verPaso = {}; // paso que el alumno eligió mirar dentro de un nivel (para volver atrás)
+  var verPaso = {};
+  var CUENTAS_PRUEBA = ['c7cce4c1-587d-42e1-8406-5a68b6a27194']; // Alumno Primero: todo desbloqueado y puede saltear pasos (cuenta de prueba) // paso que el alumno eligió mirar dentro de un nivel (para volver atrás)
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
   // El repaso obligatorio no es un paso cargado: lo arma la IA. Cuenta para completar la lección cuando corresponde.
@@ -166,7 +167,7 @@
     var susOk = !acc.error && acc.data === true;
 
     return {
-      sid: sid, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
+      sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -231,6 +232,10 @@
       previoOk = previoOk && (t.vacio || t.completo);
     });
     D.actual = actual;
+    if (D.prueba) D.temas.forEach(function (t) { // cuenta de prueba: todo abierto
+      t.bloqueado = false; t.examenDisponible = !!t.examen;
+      t.lecciones.forEach(function (l) { l.bloqueada = false; });
+    });
   }
 
   // ---------- Pantallas ----------
@@ -335,7 +340,7 @@
   function nodoSiguiente(t, idx) {
     var sig = D.temas[idx + 1];
     if (!sig) return '';
-    var abierto = t.completo && !sig.vacio;
+    var abierto = (t.completo || D.prueba) && !sig.vacio;
     var cls = abierto ? 'libre actual' : 'bloq', contenido = ico('chevron', 52, 3.2);
     if (!abierto) contenido = ico('lock', 34, 2.6);
     var burbuja = abierto ? '<span class="mt-burbuja">¡Misión cumplida!</span>' : '';
@@ -415,15 +420,16 @@
     var ks = pasosNivel(l);
     var pend = ks.filter(function (k) { return !hechoK(l, k); });
     var hasta = pend.length ? ks.indexOf(pend[0]) : ks.length; // hasta dónde llegó (abre acá)
-    var i = verPaso[l.id] != null && verPaso[l.id] <= hasta ? verPaso[l.id] : hasta; // o el paso anterior que eligió mirar
+    var tope = D.prueba ? ks.length : hasta; // la cuenta de prueba puede ir a cualquier paso
+    var i = verPaso[l.id] != null && verPaso[l.id] <= tope ? verPaso[l.id] : hasta; // o el paso anterior que eligió mirar
     var segs = ks.concat(['fin']).map(function (k, j) {
       var cls = 'rc-seg ' + (j === i ? 'cur' : j < hasta ? 'on' : '');
-      return j <= hasta ? '<i class="' + cls + '" data-ver="' + j + '" style="cursor:pointer" title="' + (j < ks.length ? esc(PASO_UI[k].titulo) : 'Final') + '"></i>' : '<i class="' + cls + '"></i>';
+      return j <= tope ? '<i class="' + cls + '" data-ver="' + j + '" style="cursor:pointer" title="' + (j < ks.length ? esc(PASO_UI[k].titulo) : 'Final') + '"></i>' : '<i class="' + cls + '"></i>';
     }).join('');
     var nav = '<div class="rc-nav" style="display:flex;justify-content:space-between;gap:10px;margin:8px 0 0">' +
       (i > 0 ? '<button type="button" class="rc-b2" data-ver="' + (i - 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">‹ Paso anterior</button>' : '<span></span>') +
-      (i < hasta ? '<button type="button" class="rc-b2" data-ver="' + (i + 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">' + (i + 1 === hasta ? 'Seguir donde quedé ›' : 'Paso siguiente ›') + '</button>' : '<span></span>') + '</div>';
-    var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length, i < hasta);
+      (i < tope ? '<button type="button" class="rc-b2" data-ver="' + (i + 1) + '" style="border:0;background:none;font:inherit;font-weight:800;color:var(--c);cursor:pointer;padding:6px 0">' + (D.prueba && i >= hasta ? 'Saltar paso (prueba) ›' : i + 1 === hasta ? 'Seguir donde quedé ›' : 'Paso siguiente ›') + '</button>' : '<span></span>') + '</div>';
+    var cuerpo = i >= ks.length ? pantallaFin(f, esGen) : pantallaPaso(ks[i], f, esGen, i + 1, ks.length, hechoK(l, ks[i]));
     vista.innerHTML = '<div class="mt mt-rc" style="--c:' + tono(D.temas.indexOf(t)) + '">' +
       '<div class="rc-top"><a class="rc-x" href="' + base() + '/' + t.id + '" aria-label="Volver a la misión">' + ico('close', 22, 3) + '</a><div class="rc-bar">' + segs + '</div></div>' + nav + cuerpo + '</div>';
   }
