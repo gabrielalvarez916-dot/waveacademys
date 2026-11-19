@@ -186,7 +186,10 @@
     return paso && paso.stream_uid ? [{ uid: paso.stream_uid, nombre: '', tramos: (c.tramos && c.tramos.length ? c.tramos : (c.inicio || c.fin ? [{ i: c.inicio || 0, f: c.fin || 0 }] : [])) }] : [];
   }
   async function guardarLista(paso, lista) {
-    var r = await sb.from('lesson_steps').update({ stream_uid: lista.length ? lista[0].uid : null, content: lista.length ? { videos: lista } : {} }).eq('id', paso.id);
+    var ct = Object.assign({}, paso.content || {}); // conserva la clase animada si la hay
+    if (lista.length) ct.videos = lista; else delete ct.videos;
+    delete ct.tramos; delete ct.inicio; delete ct.fin;
+    var r = await sb.from('lesson_steps').update({ stream_uid: lista.length ? lista[0].uid : null, content: ct }).eq('id', paso.id);
     if (r.error) throw r.error;
   }
   // Posición de un video elegido dentro de la lección: incrustado (yt:ID) o ya reemplazado por el archivo del dueño

@@ -116,8 +116,11 @@
     if (Array.isArray(c.videos) && c.videos.length) return c.videos.map(function (x) { var o = Object.assign({}, x); o.nombre = x.nombre || ''; o.tramos = x.tramos || []; return o; });
     return v && v.stream_uid ? [{ uid: v.stream_uid, nombre: '', tramos: tramosDe(c) }] : [];
   }
-  async function guardarVideos(lista) {
-    await guardarPaso('video', { stream_uid: lista.length ? lista[0].uid : null, content: lista.length ? { videos: lista } : {} });
+  async function guardarVideos(lista) { // conserva la clase animada (content.clase / clase_html) si la hay
+    var ct = Object.assign({}, (L.pasos.video && L.pasos.video.content) || {});
+    if (lista.length) ct.videos = lista; else delete ct.videos;
+    delete ct.tramos; delete ct.inicio; delete ct.fin;
+    await guardarPaso('video', { stream_uid: lista.length ? lista[0].uid : null, content: ct });
   }
   function recorteHtml(x, vi) {
     var tmp = (L.recTmp || {})[vi], nn = (L.recN || {})[vi] || 0;
@@ -290,7 +293,7 @@
   }
 
   async function lecEstados(ids) {
-    var r = await sb.from('lesson_steps').select('lesson_id, step_type, stream_uid, r2_key, content, id').in('lesson_id', ids);
+    var r = await sb.from('lesson_steps').select('lesson_id, step_type, stream_uid, r2_key, id, carpeta:content->carpeta, clase:content->clase').in('lesson_id', ids);
     if (r.error) throw r.error;
     var fin = r.data.filter(function (s) { return s.step_type === 'final_activity'; }).map(function (s) { return s.id; });
     var q = fin.length ? await sb.from('questions').select('lesson_step_id').in('lesson_step_id', fin) : { data: [] };
@@ -304,8 +307,8 @@
     (cl.data || []).forEach(function (x) { if (Array.isArray(x.items) && x.items.length) conClave[x.lesson_step_id] = true; });
     r.data.forEach(function (s) {
       var x = m[s.lesson_id];
-      if (s.step_type === 'pdf' && conClave[s.id] && s.content && Array.isArray(s.content.carpeta) && s.content.carpeta.length) x.k = 1;
-      if (s.step_type === 'video' && s.stream_uid) x.v = 1;
+      if (s.step_type === 'pdf' && conClave[s.id] && Array.isArray(s.carpeta) && s.carpeta.length) x.k = 1;
+      if (s.step_type === 'video' && (s.stream_uid || s.clase === true)) x.v = 1;
       if (s.step_type === 'pdf' && s.r2_key) x.p = 1;
       if (s.step_type === 'final_activity' && conP[s.id]) x.f = 1;
     });
@@ -325,7 +328,7 @@
         var partes = gen ? e.f : e.p + e.k + e.f, tot = gen ? 1 : 3;
         var estado = partes === tot ? 'ok' : partes === 0 ? 'vacia' : 'falta';
         var det = gen ? 'Las 4 generales · ' + (e.f ? 'actividades cargadas' : 'sin actividades')
-          : 'Nivel ' + (i + 1) + ' · ' + partes + ' de 3 partes (PDF, carpeta, actividades)' + (i === 0 ? ' · videos ' + (e.v ? 'cargados' : 'sin cargar') : '');
+          : 'Nivel ' + (i + 1) + ' · ' + partes + ' de 3 partes (PDF, carpeta, actividades)' + ' · clase ' + (e.v ? 'cargada' : 'sin cargar');
         return carpeta('lesson', l.id, l.title, det, estado, herr('lesson', l.id, i, nn));
       }).join('');
       var examen = (S.info[R.topic] || {}).tiene_examen, borrador = examen && !(S.info[R.topic] || {}).examen_publicado;
