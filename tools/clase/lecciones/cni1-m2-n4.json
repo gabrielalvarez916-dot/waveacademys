@@ -7,7 +7,7 @@
  "escenas": [
   {
    "t": "mundo",
-   "fondo": "espacio",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -68,8 +68,7 @@
     "La distancia de la Tierra al Sol es enorme…",
     "… ciento cincuenta mil millones de metros. ¡Escribirlo es un lío de ceros!",
     "Los científicos lo escriben así: *uno coma cinco por diez a la once*. Hoy: *notación científica y unidades*."
-   ],
-   "entrada": "zoom"
+   ]
   },
   {
    "t": "tabla",
@@ -220,7 +219,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -291,7 +290,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "celula",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -321,8 +320,7 @@
    "voz": [
     "Ahora al revés: una bacteria mide *cero coma cero cero cero cero cero dos metros*.",
     "En notación científica: *dos por diez a la menos seis*. Es decir, dos micrómetros."
-   ],
-   "entrada": "zoom"
+   ]
   },
   {
    "t": "pregunta",

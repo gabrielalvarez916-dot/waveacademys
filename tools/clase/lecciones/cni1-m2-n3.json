@@ -45,55 +45,14 @@
    "emoji": "🎯"
   },
   {
-   "t": "mundo",
-   "fondo": "lab",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "dib": "rect",
-       "x": 360,
-       "y": 670,
-       "w": 1200,
-       "h": 90,
-       "fill": "#f4e3b5",
-       "color": "#8a6a2a"
-      },
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 470,
-       "s": "regla con marcas cada 1 mm",
-       "size": 38
-      }
-     ],
-     "txt": "Una regla común"
-    },
-    {
-     "acc": [
-      {
-       "pon": "lap",
-       "e": "✏️",
-       "x": 1020,
-       "y": 600,
-       "s": 110
-      }
-     ],
-     "txt": "El lápiz cae entre dos marcas"
-    },
-    {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 330,
-       "s": "12,3 ± 0,1 cm",
-       "size": 60
-      }
-     ],
-     "txt": "Valor ± incertidumbre"
-    }
-   ],
+   "t": "medidor",
+   "titulo": "MEDIR CON UNA REGLA",
+   "tipo": "regla",
+   "min": 11,
+   "max": 14,
+   "valor": 12.3,
+   "unidad": "cm",
+   "nota": "12,3 ± 0,1 cm",
    "voz": [
     "Medimos un lápiz con una regla común: la marca más chica es de *un milímetro*.",
     "La punta del lápiz cae entre dos marcas…",
@@ -145,7 +104,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [

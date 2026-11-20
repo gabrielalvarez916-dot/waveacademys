@@ -45,81 +45,27 @@
    "emoji": "🎚️"
   },
   {
-   "t": "mundo",
-   "fondo": "lab",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "p1",
-       "e": "🪴",
-       "x": 620,
-       "y": 685,
-       "s": 150
-      },
-      {
-       "pon": "p2",
-       "e": "🪴",
-       "x": 1300,
-       "y": 685,
-       "s": 150
-      }
-     ],
-     "txt": "Dos plantas iguales"
-    },
-    {
-     "acc": [
-      {
-       "pon": "sol",
-       "e": "☀️",
-       "x": 420,
-       "y": 330,
-       "s": 150
-      },
-      {
-       "dib": "rect",
-       "x": 1160,
-       "y": 590,
-       "w": 280,
-       "h": 170,
-       "fill": "rgba(30,20,10,.75)",
-       "color": "#3c2a1a"
-      },
-      {
-       "pon": "g1",
-       "e": "💧",
-       "x": 790,
-       "y": 720,
-       "s": 60
-      },
-      {
-       "pon": "g2",
-       "e": "💧",
-       "x": 1490,
-       "y": 720,
-       "s": 60
-      }
-     ],
-     "txt": "Una con luz, otra en una caja · el mismo riego"
-    },
-    {
-     "acc": [
-      {
-       "crece": "p1",
-       "s": 1.5
-      },
-      {
-       "etq": "p1",
-       "txt": "verde y alta"
-      },
-      {
-       "etq": "p2",
-       "txt": "amarilla"
-      }
-     ],
-     "txt": "Cambió solo la luz… y se nota"
-    }
-   ],
+   "t": "experimento",
+   "titulo": "LUZ Y PLANTAS",
+   "variable": "cambia solo la luz",
+   "a": {
+    "cab": "CON LUZ",
+    "emojis": [
+     "☀️",
+     "🪴"
+    ],
+    "txt": "mismo riego",
+    "res": "verde y alta"
+   },
+   "b": {
+    "cab": "EN UNA CAJA",
+    "emojis": [
+     "📦",
+     "🪴"
+    ],
+    "txt": "mismo riego",
+    "res": "amarilla"
+   },
    "voz": [
     "Hagámoslo bien: dos plantas *iguales*, en macetas iguales, con la misma tierra.",
     "Una recibe luz y la otra queda dentro de una caja. Las dos, *con la misma agua*.",
@@ -157,7 +103,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [

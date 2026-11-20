@@ -82,6 +82,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | ficha | 1 + campos | titulo, campos:[[cab, valor]] — ficha bibliográfica que se completa |
 | orden | 3 | titulo, items:[{txt, emoji}] en orden cronológico, relato:[índices en el orden en que se cuenta] — reordena tarjetas: así se cuenta → así pasó (flashback, in medias res) |
 | corrige | 1 + cambios | titulo, cambios:[{antes, despues, motivo}] (máx 3) — tacha lo incorrecto y escribe lo correcto (revisión de textos) |
+| experimento | 3 | titulo, variable, a:{cab, emojis, txt, res}, b:{…} — grupo control vs grupo con cambio: montajes, variable, resultados (Naturales) |
+| medidor | 3 | titulo, tipo:'termometro'\|'regla'\|'probeta', min, max, valor, unidad, nota — instrumento dibujado con su lectura (Naturales) |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |
@@ -98,3 +100,6 @@ Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en u
 ## Cuándo va una imagen
 
 Si la explicación habla de **las partes de algo** (un libro, una célula, una planta, una máquina) o de **cómo está ubicado algo** (un plano, un túnel, un mapa), la escena tiene que mostrarlo con una plantilla visual (`libro`, `partes`, `mapa`, `geo`, `figura`, `mundo`) y no solo con texto. Lo mismo en el PDF: una figura cuando sin ella no se entiende.
+
+
+**Formato simple (decidido):** en todas las materias, `mundo` solo con `fondo:'nada'`, sin zoom ni movimientos; para Naturales preferir `experimento`, `medidor`, `partes`, `ciclo`, `molecula`.

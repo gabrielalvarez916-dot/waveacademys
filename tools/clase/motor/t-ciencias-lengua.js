@@ -92,6 +92,39 @@
       tl.to(f._t, { attr: { 'stroke-dashoffset': 0 }, duration: .5 }, '>'); tl.to([f._b, f._m].filter(Boolean), { opacity: 1, duration: .4 }, '>'); });
   } };
 
+  // experimento: {titulo, variable, a:{cab, emojis:[...], txt, res}, b:{...}} — control vs cambio (3 pasos: montajes, variable, resultados)
+  T.experimento = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null;
+    function lado(o, x, col) { var gr = w.pieza(g, x, 560); w.caja(gr, 0, 0, 640, 380, 'rgba(10,25,12,.55)', col, 30, 4); w.chip(gr, 0, -160, Math.max(240, o.cab.length * 22 + 70), 62, o.cab, { size: 30, stroke: col });
+      (o.emojis || []).forEach(function (e, k, arr) { w.emoji(gr, (k - (arr.length - 1) / 2) * 150, -10, e, 120); });
+      if (o.txt) w.txt(gr, 0, 120, o.txt, 30, '#efffdc'); var r = o.res ? w.pieza(g, x, 820) : null; if (r) { w.caja(r, 0, 0, Math.max(300, o.res.length * 20 + 60), 70, 'rgba(14,30,10,.92)', col, 30, 4); w.txt(r, 0, 0, o.res, 32, '#fff'); } return [gr, r]; }
+    var A = lado(d.a, 560, C.aqua), Bb = lado(d.b, 1360, C.sol);
+    var v = d.variable ? w.etiqueta(g, 960, 950, d.variable) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, A[0], ti ? '<.1' : 0, { y: 0 }); w.IN(tl, Bb[0], '<.15', { y: 0 });
+    B(1); if (v) w.IN(tl, v, 0, { scale: .6, y: 0 });
+    B(2); [A[1], Bb[1]].forEach(function (r, k) { if (r) w.IN(tl, r, k ? '<.2' : 0, { y: 20 }); });
+  } };
+
+  // medidor: {titulo, tipo:'termometro'|'regla'|'probeta', min, max, valor, unidad, nota} — instrumento dibujado con su lectura (3 pasos: instrumento, lectura, nota)
+  T.medidor = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), mk = w.pieza(g, 0, 0), lo = d.min || 0, hi = d.max || 100, f = (d.valor - lo) / (hi - lo), tipo = d.tipo || 'termometro', px, py;
+    if (tipo === 'regla') { var x0 = 360, x1 = 1560, y = 600; w.el('rect', { x: x0 - 20, y: y - 70, width: x1 - x0 + 40, height: 110, rx: 10, fill: '#f4e3b5', stroke: '#8a6a2a', 'stroke-width': 3 }, o);
+      var n = Math.round((hi - lo) * 10); for (var i = 0; i <= n; i++) { var x = x0 + (x1 - x0) * i / n, h = i % 10 === 0 ? 50 : (i % 5 === 0 ? 34 : 20); w.el('line', { x1: x, y1: y - 70, x2: x, y2: y - 70 + h, stroke: '#3a2a10', 'stroke-width': 2 }, o); if (i % 10 === 0) w.txt(o, x, y + 10, String(lo + i / 10), 26, '#3a2a10'); }
+      px = x0 + (x1 - x0) * f; py = y - 70; w.el('rect', { x: x0 - 20, y: y - 140, width: px - x0 + 20, height: 46, rx: 8, fill: '#f2b33d', stroke: '#3a2a10', 'stroke-width': 3 }, mk); }
+    else if (tipo === 'probeta') { var cx = 960, top = 330, bot = 860, wd = 160; w.el('rect', { x: cx - wd / 2, y: top, width: wd, height: bot - top, rx: 14, fill: 'rgba(255,255,255,.12)', stroke: '#d8f0ea', 'stroke-width': 5 }, o);
+      for (var j = 0; j <= 10; j++) { var yy = bot - (bot - top) * j / 10; w.el('line', { x1: cx + wd / 2 - 40, y1: yy, x2: cx + wd / 2, y2: yy, stroke: '#d8f0ea', 'stroke-width': 3 }, o); w.txt(o, cx + wd / 2 + 50, yy, String(Math.round(lo + (hi - lo) * j / 10)), 26, '#d8f0ea'); }
+      py = bot - (bot - top) * f; px = cx; w.el('rect', { x: cx - wd / 2 + 6, y: py, width: wd - 12, height: bot - py - 6, rx: 8, fill: '#4fb3dc', opacity: .85 }, mk); }
+    else { var cx2 = 960, top2 = 300, bot2 = 820; w.el('rect', { x: cx2 - 34, y: top2, width: 68, height: bot2 - top2, rx: 34, fill: 'rgba(255,255,255,.15)', stroke: '#fff', 'stroke-width': 5 }, o); w.el('circle', { cx: cx2, cy: bot2 + 40, r: 62, fill: '#e2453c', stroke: '#fff', 'stroke-width': 5 }, o);
+      for (var k = 0; k <= 10; k++) { var y3 = bot2 - (bot2 - top2 - 30) * k / 10; w.el('line', { x1: cx2 + 40, y1: y3, x2: cx2 + 70, y2: y3, stroke: '#fff', 'stroke-width': 3 }, o); w.txt(o, cx2 + 120, y3, String(Math.round(lo + (hi - lo) * k / 10)), 26, '#fff'); }
+      py = bot2 - (bot2 - top2 - 30) * f; px = cx2; w.el('rect', { x: cx2 - 18, y: py, width: 36, height: bot2 - py + 20, fill: '#e2453c' }, mk); }
+    var lec = w.pieza(g, 0, 0), lx = tipo === 'regla' ? px : px - 330, ly = tipo === 'regla' ? py - 170 : py;
+    w.caja(lec, lx, ly, 280, 76, 'rgba(14,30,10,.92)', C.sol, 30, 4); w.txt(lec, lx, ly, String(d.valor).replace('.', ',') + ' ' + (d.unidad || ''), 38, '#fff');
+    var nt = d.nota ? w.etiqueta(g, 960, 960, d.nota) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { y: 0 });
+    B(1); w.IN(tl, mk, 0, { y: 0, d: .8 }); w.IN(tl, lec, '>-.2', { y: 0 });
+    B(2); if (nt) w.IN(tl, nt, 0, { y: 0 });
+  } };
+
   // molecula: {titulo, atomos:[{el:'C', x, y}] (x, y en px desde el centro), enlaces:[[i, j, orden]], nombre} — 3 pasos
   T.molecula = { n: function () { return 3; }, armar: function (g, tl, B, d) {
     var COL = { C: '#3a3a3a', H: '#f0f0f0', O: '#ff5a4f', N: '#5f8bff', Cl: '#5fd35f', S: '#ffd34f', P: '#ff9f40', Na: '#b48cff' }, cx = 960, cy = 600;

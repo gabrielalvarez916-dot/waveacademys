@@ -21,7 +21,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -74,8 +74,7 @@
     "Antes de tocar cualquier cosa en el laboratorio, hay que *vestirse para la ocasión*.",
     "*Antiparras*, para proteger los ojos de salpicaduras.",
     "*Guardapolvo* y *guantes*, para la ropa, la piel y las manos. Y el pelo largo, *atado*."
-   ],
-   "entrada": "zoom"
+   ]
   },
   {
    "t": "bloques",
@@ -103,7 +102,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -126,28 +125,6 @@
     },
     {
      "acc": [
-      {
-       "mueve": "mano",
-       "ruta": [
-        [
-         1000,
-         540
-        ],
-        [
-         900,
-         500
-        ],
-        [
-         1000,
-         540
-        ],
-        [
-         900,
-         500
-        ]
-       ],
-       "dur": 1.6
-      },
       {
        "dib": "flecha",
        "de": [

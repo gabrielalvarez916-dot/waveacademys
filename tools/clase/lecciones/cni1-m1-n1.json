@@ -7,7 +7,7 @@
  "escenas": [
   {
    "t": "mundo",
-   "fondo": "espacio",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -24,11 +24,11 @@
     {
      "acc": [
       {
-       "zoom": [
-        960,
-        520,
-        3.2
-       ]
+       "dib": "texto",
+       "x": 960,
+       "y": 540,
+       "s": "Vamos a un lugar cualquiera…",
+       "size": 44
       }
      ],
      "txt": "Vamos a un lugar cualquiera…"
@@ -41,7 +41,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "jardin",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -114,8 +114,7 @@
     "Sofi deja dos cubitos de hielo en el patio: uno *al sol* y otro *a la sombra*.",
     "A los pocos minutos, el del sol ya es un charquito… ¡y el de la sombra *sigue entero*!",
     "Sofi se pregunta: *¿por qué?* Así empieza la ciencia."
-   ],
-   "entrada": "zoom"
+   ]
   },
   {
    "t": "portada",
@@ -138,7 +137,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -235,69 +234,26 @@
    "emoji": "💡"
   },
   {
-   "t": "mundo",
-   "fondo": "lab",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 300,
-       "s": "Si el hielo recibe más calor, entonces se derrite más rápido",
-       "size": 40
-      }
-     ],
-     "txt": "La hipótesis de Sofi"
-    },
-    {
-     "acc": [
-      {
-       "pon": "lam",
-       "e": "💡",
-       "x": 640,
-       "y": 470,
-       "s": 150
-      },
-      {
-       "pon": "h1",
-       "e": "🧊",
-       "x": 640,
-       "y": 710,
-       "s": 90,
-       "etq": "con lámpara"
-      },
-      {
-       "pon": "h2",
-       "e": "🧊",
-       "x": 1280,
-       "y": 710,
-       "s": 90,
-       "etq": "sin lámpara"
-      }
-     ],
-     "txt": "Para probarla, un experimento"
-    },
-    {
-     "acc": [
-      {
-       "pon": "c1",
-       "e": "💧",
-       "x": 640,
-       "y": 725,
-       "s": 70
-      },
-      {
-       "sale": "h1"
-      },
-      {
-       "etq": "h2",
-       "txt": "más lento"
-      }
-     ],
-     "txt": "¡Se cumplió lo que predijo!"
-    }
-   ],
+   "t": "experimento",
+   "titulo": "PONER A PRUEBA",
+   "variable": "cambia: el calor",
+   "a": {
+    "cab": "CON LÁMPARA",
+    "emojis": [
+     "💡",
+     "🧊"
+    ],
+    "txt": "recibe más calor",
+    "res": "se derrite en 6 min"
+   },
+   "b": {
+    "cab": "SIN LÁMPARA",
+    "emojis": [
+     "🧊"
+    ],
+    "txt": "control",
+    "res": "tarda 15 min"
+   },
    "voz": [
     "Sofi escribe su hipótesis: *si el hielo recibe más calor, entonces se derrite más rápido*.",
     "Para ponerla a prueba, arma un experimento: un cubito bajo una lámpara y otro sin lámpara.",

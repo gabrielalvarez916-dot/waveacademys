@@ -21,7 +21,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -44,20 +44,6 @@
     },
     {
      "acc": [
-      {
-       "mueve": "cient",
-       "ruta": [
-        [
-         560,
-         665
-        ],
-        [
-         740,
-         665
-        ]
-       ],
-       "dur": 1.2
-      },
       {
        "pon": "tubo",
        "e": "🧪",
@@ -103,8 +89,7 @@
     "Abramos la puerta del laboratorio.",
     "Acá cada objeto tiene *un nombre* y *una función*: el tubo de ensayo, el matraz…",
     "… la balanza, el termómetro. Usar el instrumento correcto es la mitad del experimento."
-   ],
-   "entrada": "zoom"
+   ]
   },
   {
    "t": "matriz",
@@ -166,7 +151,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "lab",
+   "fondo": "nada",
    "pasos": [
     {
      "acc": [
@@ -184,11 +169,11 @@
     {
      "acc": [
       {
-       "zoom": [
-        700,
-        560,
-        2.4
-       ]
+       "dib": "texto",
+       "x": 960,
+       "y": 540,
+       "s": "Adentro de una gota…",
+       "size": 44
       }
      ],
      "txt": "Adentro de una gota…"
@@ -208,25 +193,6 @@
        "x": 760,
        "y": 590,
        "s": 34
-      },
-      {
-       "mueve": "c1",
-       "ruta": [
-        [
-         640,
-         540
-        ],
-        [
-         690,
-         520
-        ],
-        [
-         660,
-         580
-        ]
-       ],
-       "dur": 3,
-       "loop": true
       }
      ],
      "txt": "¡seres vivos que no se ven a simple vista!"
