@@ -61,8 +61,14 @@ def fraccion(m):  # 3/4 -> tres cuartos · 1/2 -> un medio · 5/12 -> cinco doce
     return ('un ' + den) if a == 1 else (en_letras(a) + ' ' + den + 's')
 
 
+# Nombres extranjeros: cómo se dicen en castellano (solo cambia la voz, no el subtítulo)
+PRONUNCIA = {'Sherlock Holmes': 'Shérlok Jolms', 'Holmes': 'Jolms', 'Watson': 'Uátson', 'Conan Doyle': 'Conan Doil', 'Oscar Wilde': 'Óscar Uáild', 'Wilde': 'Uáild', 'Baker Street': 'Béiker Strit', 'Canterville': 'Cánterwil', 'Jabez Wilson': 'Yábez Uílson', 'Wilson': 'Uílson', 'John Clay': 'Yon Cléi', 'Clay': 'Cléi', 'Spaulding': 'Spólding'}
+def pronuncia(s):
+    for a, b in PRONUNCIA.items(): s = re.sub(r'\b' + re.escape(a) + r'\b', b, s)
+    return s
+
 def limpio(s):  # igual que en el reproductor: lo que se DICE
-    s = s.replace('*', '')
+    s = pronuncia(s.replace('*', ''))
     s = re.sub(r'\b(\d+) (?=\d+/\d+)', r'\1 y ', s)  # 1 3/4 -> 1 y tres cuartos
     s = re.sub(r'\b(\d+)/(\d+)\b', fraccion, s)
     s = re.sub(r'(\d),(0*)(?=\d)', lambda m: m.group(1) + ' coma ' + 'cero ' * len(m.group(2)), s)  # 0,075 -> 0 coma cero 75
