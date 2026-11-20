@@ -47,7 +47,7 @@ img { max-width: 100%; display: block; }
 .cab-acc { justify-self: end; }
 .cab-logo { display: flex; background: #FFFFFF; border-radius: 16px; padding: 6px 12px; }
 .cab-logo img { height: 92px; width: auto; }
-.cab nav { display: flex; gap: 26px; font-weight: 600; }
+.cab nav { display: flex; gap: 34px; font-weight: 600; }
 .cab nav a { color: inherit; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 .cab nav a:hover, .cab nav a[aria-current="page"] { border-bottom-color: currentColor; }
 .cab-acc { display: flex; gap: 8px; align-items: center; }
@@ -181,8 +181,8 @@ img { max-width: 100%; display: block; }
 .pie a { color: #FFFFFF; }
 
 @media (max-width: 980px) {
-  .cab { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 4px; }
-  .cab nav { order: 3; flex: 0 0 100%; flex-wrap: wrap; justify-content: center; gap: 6px 20px; padding-bottom: 12px; font-size: 1.05em; }
+  .cab { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 16px; }
+  .cab nav { order: 3; flex: 0 0 100%; flex-wrap: wrap; justify-content: center; gap: 8px 22px; padding: 6px 0 16px; font-size: 1.05em; }
   .plat-fila, .plat-fila.al-reves { grid-template-columns: 1fr; }
   .plat-fila.al-reves .plat-texto { order: 0; }
   .cab-logo img { height: 64px; }
