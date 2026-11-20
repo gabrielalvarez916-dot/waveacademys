@@ -3,7 +3,7 @@
 Lee las frases de tools/clase/lecciones/<slug>.json y guarda tools/clase/voz/<leccion>.json con un mp3 por frase
 y el momento de cada palabra (para los subtítulos). No repite frases que ya tienen audio con la misma voz.
 Lo corre GitHub Actions (.github/workflows/voz-clases.yml). Variables: VOZ (es-MX-JorgeNeural), RATE (+8%)."""
-import asyncio, base64, glob, hashlib, json, os, re, sys
+import variar, asyncio, base64, glob, hashlib, json, os, re, sys
 import edge_tts
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
@@ -117,6 +117,7 @@ async def tts(texto, voz=None):
 
 async def una(src_path):
     L = json.load(open(src_path, encoding='utf-8'))
+    variar.preparar(L)
     nombre = L.get('slug') or os.path.basename(src_path)[:-5]
     destino = os.path.join(AQUI, 'voz', nombre + '.json')
     viejo = json.load(open(destino)) if os.path.exists(destino) else []

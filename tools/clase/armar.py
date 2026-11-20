@@ -2,7 +2,7 @@
 """Arma el HTML final de cada clase: motor + plantillas + lección (lecciones/<slug>.json) + audio (voz/<slug>.json).
 Salidas: actividades/clases/<slug>.html y tools/clase/dist/<slug>.html (la que se carga en la plataforma).
 Uso: python tools/clase/armar.py [slug ...]   (sin argumentos arma todas)"""
-import glob, json, os, sys
+import variar, glob, json, os, sys
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(os.path.dirname(AQUI))
@@ -39,6 +39,7 @@ pedidas = sys.argv[1:]
 for path in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json'))) + (sorted(glob.glob(os.path.join(AQUI, 'pruebas', '*.json'))) if pedidas else []):
     L = json.load(open(path, encoding='utf-8'))
     slug = L.get('slug') or os.path.basename(path)[:-5]
+    variar.preparar(L)
     if pedidas and slug not in pedidas:
         continue
     voz = os.path.join(AQUI, 'voz', slug + '.json')
