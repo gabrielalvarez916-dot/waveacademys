@@ -847,6 +847,59 @@
       '<h3 class="fa-sub">Historial de pagos</h3>' + htmlPagos(s.payments);
   }
 
+  // ---------- Pagar: matrícula anual y nuevas suscripciones (precios de la tabla tarifas, vía mp-cobros) ----------
+  var NOMBRE_NIVEL = { inicial: 'Nivel Inicial', medio: 'Nivel Medio', avanzado: 'Nivel Avanzado' };
+  var NOMBRE_MOD = { libre: 'Libre', guiada: 'Guiada', completa: 'Completa', personalizada: 'Personalizada' };
+  var ORDEN_NIVEL = ['inicial', 'medio', 'avanzado'], ORDEN_MOD = ['libre', 'guiada', 'completa', 'personalizada'];
+  function usd(n) { return 'US$ ' + Number(n).toLocaleString('es-AR', { maximumFractionDigits: 2 }); }
+
+  async function cargarCompra() {
+    var box = document.getElementById('fa-compra');
+    if (!box) return;
+    box.innerHTML = '<div class="vacio">Cargando precios…</div>';
+    var r = await sb.functions.invoke('mp-cobros', { body: { action: 'precios' } });
+    if (r.error || !r.data || r.data.error) { box.innerHTML = ''; return; }
+    var P = r.data, m = P.matricula;
+    var porNivel = {};
+    (P.tarifas || []).forEach(function (t) { (porNivel[t.nivel] = porNivel[t.nivel] || []).push(t); });
+    var niveles = ORDEN_NIVEL.filter(function (n) { return porNivel[n]; });
+    box.innerHTML =
+      '<section class="fa-card"><h2>Matrícula ' + new Date().getFullYear() + '</h2>' +
+        (m.pagada ? '<p class="fa-aviso">✓ La matrícula de este año ya está paga.</p>'
+          : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año (' + esc(dinero(m.monto_ars, 'ARS')) + '), en hasta ' + m.cuotas_max + ' cuotas con tarjeta.</p>' +
+            '<button type="button" class="boton fa-boton" id="fa-pagar-mat">Pagar la matrícula con Mercado Pago</button>') +
+      '</section>' +
+      '<section class="fa-card"><h2>Sumar una suscripción</h2>' +
+        '<p class="fa-intro">Cada hijo necesita una suscripción mensual del nivel que va a cursar. Elegí el nivel y la modalidad:</p>' +
+        '<div class="fa-compra"><select id="fa-nivel" aria-label="Nivel">' + niveles.map(function (n) { return '<option value="' + n + '">' + NOMBRE_NIVEL[n] + '</option>'; }).join('') + '</select>' +
+        '<select id="fa-mod" aria-label="Modalidad"></select></div>' +
+        '<p class="fa-precio" id="fa-precio"></p>' +
+        '<button type="button" class="boton fa-boton" id="fa-pagar-sus">Pagar con Mercado Pago</button>' +
+        '<p class="fa-aviso" id="fa-err" hidden></p>' +
+      '</section>';
+    var selN = document.getElementById('fa-nivel'), selM = document.getElementById('fa-mod'), precio = document.getElementById('fa-precio'), err = document.getElementById('fa-err');
+    function tarifa() { return (porNivel[selN.value] || []).filter(function (t) { return t.modalidad === selM.value; })[0]; }
+    function mods() {
+      var ts = (porNivel[selN.value] || []).slice().sort(function (a, b) { return ORDEN_MOD.indexOf(a.modalidad) - ORDEN_MOD.indexOf(b.modalidad); });
+      selM.innerHTML = ts.map(function (t) { return '<option value="' + t.modalidad + '">' + NOMBRE_MOD[t.modalidad] + '</option>'; }).join('');
+      verPrecio();
+    }
+    function verPrecio() { var t = tarifa(); precio.innerHTML = t ? '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b> · se cobran ' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes' : ''; }
+    selN.addEventListener('change', mods); selM.addEventListener('change', verPrecio); mods();
+    async function ir(body, btn) {
+      err.hidden = true; btn.disabled = true; var txt = btn.textContent; btn.textContent = 'Preparando el pago…';
+      var x = await sb.functions.invoke('mp-cobros', { body: body });
+      if (x.error || !x.data || x.data.error || !x.data.url) {
+        err.textContent = (x.data && x.data.error) || (x.error ? await mensajeDeError(x.error) : 'No se pudo preparar el pago.'); err.hidden = false;
+        btn.disabled = false; btn.textContent = txt; return;
+      }
+      window.location.href = x.data.url;
+    }
+    document.getElementById('fa-pagar-sus').addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this); });
+    var bm = document.getElementById('fa-pagar-mat');
+    if (bm) bm.addEventListener('click', function () { ir({ action: 'matricula' }, this); });
+  }
+
   async function vistaFacturacion() {
     vista.innerHTML = '<h1 class="vista-titulo">Facturación</h1><div id="facturacion"></div>';
     var cont = document.getElementById('facturacion');
@@ -868,7 +921,8 @@
       });
 
       if (!hijos.length && !sueltas.length) {
-        cont.innerHTML = '<div class="vacio">Todavía no tenés suscripciones. Cuando des de alta a un hijo, acá vas a ver su suscripción y sus pagos.</div>';
+        cont.innerHTML = '<div id="fa-compra"></div><div class="vacio">Todavía no tenés suscripciones. Cuando pagues una, acá vas a ver su estado y sus pagos.</div>';
+        cargarCompra();
         return;
       }
 
@@ -900,7 +954,8 @@
           '. Podés usarla para dar de alta a un hijo en <a href="#altas">Altas</a>.</p></section>';
       }
 
-      cont.innerHTML = html;
+      cont.innerHTML = '<div id="fa-compra"></div>' + html;
+      cargarCompra();
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar la facturación. Probá recargar la página.</div>';
     }

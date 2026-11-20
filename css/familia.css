@@ -536,3 +536,10 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .manifiesto li { margin-bottom: 6px; }
 .manifiesto > p:last-child { margin-top: 26px; font-size: 1.3rem; text-align: center; color: #087E83; }
 @media (max-width: 640px) { .manifiesto { padding: 24px 20px 30px; } .manifiesto .mf-titulo { font-size: 1.5rem; } }
+
+/* Pagar matrícula y sumar suscripción */
+.fa-boton { width: auto; min-width: 260px; padding: 0 24px; margin-top: 12px; }
+.fa-compra { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.fa-compra select { min-height: 44px; padding: 0 12px; border: 2px solid var(--borde, #cfdcdb); border-radius: 12px; font: inherit; background: #fff; }
+.fa-precio { margin: 12px 2px 0; color: var(--petroleo, #253638); }
+@media (max-width: 600px) { .fa-boton { width: 100%; min-width: 0; } .fa-compra select { flex: 1 1 100%; } }
