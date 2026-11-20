@@ -221,3 +221,9 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 600px) { .barra-fija .barra-ingresar { display: none; } }
 @media (prefers-reduced-motion: reduce) { .rev { opacity: 1; translate: none; transition: none; } .barra-fija, .barra-fija.on { transition: none; } }
+
+/* Encabezado: rectángulo del mismo blanco que el fondo del logo */
+.cab { background: #FFFFFF; color: var(--petroleo); padding-bottom: 8px; margin-bottom: 16px; box-shadow: 0 0 0 100vmax #FFFFFF; clip-path: inset(0 -100vmax); }
+.cab-logo { background: transparent; padding: 0; border-radius: 0; }
+.cab-acc .btn { background: var(--petroleo); color: #FFFFFF; }
+.cab-acc .btn:hover { background: #0E2A2C; color: #FFFFFF; }
