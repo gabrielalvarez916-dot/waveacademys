@@ -9,10 +9,16 @@ var W = (function () {
   var EMO = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
   function el(tag, at, p) { var e = document.createElementNS(NS, tag); for (var k in at) if (at[k] != null) e.setAttribute(k, at[k]); if (p) p.appendChild(e); return e; }
   function txt(p, x, y, s, size, fill, extra) { var t = el('text', Object.assign({ x: x, y: y, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': size, fill: fill || C.txt }, extra || {}), p); t.textContent = s; return t; }
-  function multi(p, x, y, s, size, fill, ancho, extra) { // texto en varias líneas (corta por palabras)
-    var max = Math.max(8, Math.floor((ancho || 1200) / (size * .52))), w = String(s).split(' '), L = [], cur = '';
-    w.forEach(function (x2) { if ((cur + ' ' + x2).trim().length > max) { L.push(cur.trim()); cur = x2; } else cur += ' ' + x2; }); if (cur.trim()) L.push(cur.trim());
-    var g = el('g', {}, p); L.forEach(function (l, i) { txt(g, x, y + (i - (L.length - 1) / 2) * size * 1.22, l, size, fill, extra); }); g.lineas = L.length; return g;
+  function multi(p, x, y, s, size, fill, ancho, extra) { // texto en varias líneas (corta por palabras y mide el ancho real para no salirse)
+    ancho = ancho || 1200; var max = Math.max(8, Math.floor(ancho / (size * .52))), g;
+    function armar(max, size) { var w = String(s).split(' '), L = [], cur = '';
+      w.forEach(function (x2) { if ((cur + ' ' + x2).trim().length > max && cur.trim()) { L.push(cur.trim()); cur = x2; } else cur += ' ' + x2; }); if (cur.trim()) L.push(cur.trim());
+      var gg = el('g', {}, p); L.forEach(function (l, i) { txt(gg, x, y + (i - (L.length - 1) / 2) * size * 1.22, l, size, fill, extra); }); gg.lineas = L.length; return gg; }
+    function ancho_real(gg) { var m = 0; [].forEach.call(gg.childNodes, function (t) { try { m = Math.max(m, t.getComputedTextLength()); } catch (e) {} }); return m; }
+    g = armar(max, size);
+    for (var i = 0; i < 6; i++) { var r = ancho_real(g) / ancho; if (!(r > 1)) break; p.removeChild(g);
+      if (i < 3 && g.lineas < 4) max = Math.max(4, Math.floor(max / r) - 1); else size = size * .9; g = armar(max, size); }
+    return g;
   }
   function emoji(p, x, y, e, size) { return txt(p, x, y, e, size, '#fff', { 'font-family': EMO, 'font-weight': 400 }); }
   function caja(p, x, y, w, h, fill, stroke, r, sw) { return el('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: r == null ? 24 : r, fill: fill || 'url(#gCard)', stroke: stroke || C.linea, 'stroke-width': sw || 4 }, p); }
