@@ -80,6 +80,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | libro | 1 + partes | titulo, libro:{titulo, autor, editorial, emoji}, partes:[{parte:'contratapa'\|'lomo'\|'tapa'\|'indice', txt}] — dibuja un libro y marca sus partes (paratexto) |
 | parrafo | 1 + marcas | titulo, lineas:[...], marcas:[{linea, pos:'inicio'\|'fin'\|'sangria', txt}] — párrafo real con marcas (sangría, mayúscula, punto) |
 | ficha | 1 + campos | titulo, campos:[[cab, valor]] — ficha bibliográfica que se completa |
+| orden | 3 | titulo, items:[{txt, emoji}] en orden cronológico, relato:[índices en el orden en que se cuenta] — reordena tarjetas: así se cuenta → así pasó (flashback, in medias res) |
+| corrige | 1 + cambios | titulo, cambios:[{antes, despues, motivo}] (máx 3) — tacha lo incorrecto y escribe lo correcto (revisión de textos) |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |
