@@ -162,11 +162,17 @@
 
   // texto: {oracion:'El perro de mi vecino ladra fuerte.', marcas:[{desde, hasta, etiqueta, color}] (índices de palabras)} — 1 + marcas pasos
   T.texto = { n: function (d) { return 1 + d.marcas.length; }, armar: function (g, tl, B, d) {
-    var pal = d.oracion.split(' '), size = pal.length > 9 ? 64 : 80, cw = size * .52, tot = d.oracion.length * cw, x = 960 - tot / 2, Y = 560, X = [];
-    var o = w.pieza(g, 0, 0); pal.forEach(function (p) { X.push([x, x + p.length * cw]); w.txt(o, x + p.length * cw / 2, Y, p, size, C.txt); x += (p.length + 1) * cw; });
+    var pal = d.oracion.split(' '), size = Math.min(80, Math.floor(1720 / (d.oracion.length * .52))), cw = size * .52, tot = d.oracion.length * cw, x = 960 - tot / 2, Y = 560, X = [];
+    var o = w.pieza(g, 0, 0), T0 = pal.map(function (p) { var t = w.txt(o, 0, Y, p, size, C.txt); t.setAttribute('text-anchor', 'start'); var lw = 0; try { lw = t.getComputedTextLength(); } catch (e) {} return [t, lw > 0 ? lw : p.length * cw]; });
+    var esp = size * .32, total = T0.reduce(function (a, r) { return a + r[1]; }, 0) + esp * (T0.length - 1); x = 960 - total / 2;
+    T0.forEach(function (r) { r[0].setAttribute('x', x); X.push([x, x + r[1]]); x += r[1] + esp; });
+    var FA = [], FB = [];
     var M = d.marcas.map(function (m, k) { var col = m.color || W.PAL[k % W.PAL.length], x0 = X[m.desde][0] - 10, x1 = X[m.hasta][1] + 10, arriba = k % 2 === 1, gp = w.pieza(g, 0, 0);
       w.el('path', { d: arriba ? 'M' + x0 + ' ' + (Y - 60) + ' Q' + (x0 + x1) / 2 + ' ' + (Y - 110) + ' ' + x1 + ' ' + (Y - 60) : 'M' + x0 + ' ' + (Y + 60) + ' L' + x1 + ' ' + (Y + 60), fill: 'none', stroke: col, 'stroke-width': 10, 'stroke-linecap': 'round' }, gp);
-      var lw = m.etiqueta.length * 19 + 50; w.caja(gp, (x0 + x1) / 2, arriba ? Y - 160 : Y + 130, lw, 66, 'rgba(6,20,22,.9)', col, 30, 4); w.txt(gp, (x0 + x1) / 2, arriba ? Y - 160 : Y + 130, m.etiqueta, 32, col); return gp; });
+      var lw = m.etiqueta.length * 19 + 50, cx = Math.max(lw / 2 + 20, Math.min(1900 - lw / 2, (x0 + x1) / 2)), lado = arriba ? FA : FB, fila = 0;
+      while (lado.some(function (r) { return r[2] === fila && cx - lw / 2 < r[1] + 12 && cx + lw / 2 > r[0] - 12; })) fila++;
+      lado.push([cx - lw / 2, cx + lw / 2, fila]); var ly = arriba ? Y - 160 - fila * 78 : Y + 130 + fila * 78;
+      w.caja(gp, cx, ly, lw, 66, 'rgba(6,20,22,.9)', col, 30, 4); w.txt(gp, cx, ly, m.etiqueta, 32, col); return gp; });
     B(0); w.IN(tl, o, 0); M.forEach(function (m, k) { B(k + 1); w.IN(tl, m, 0, { scaleX: 0, y: 0, d: .4, ease: 'power2.out' }); });
   } };
 

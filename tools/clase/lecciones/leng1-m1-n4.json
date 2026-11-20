@@ -50,24 +50,24 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "CÓMO ELEGIR",
    "items": [
     {
-     "cab": "GÉNERO",
-     "txt": "¿qué tengo ganas de leer?"
+     "txt": "Género: ¿qué tengo ganas de leer?",
+     "emoji": "🔹"
     },
     {
-     "cab": "RECOMENDACIÓN",
-     "txt": "¿quién me lo aconsejó?"
+     "txt": "Recomendación: ¿quién me lo aconsejó?",
+     "emoji": "🔸"
     },
     {
-     "cab": "PRIMERA PÁGINA",
-     "txt": "¿me engancha?"
+     "txt": "Primera página: ¿me engancha?",
+     "emoji": "🟣"
     },
     {
-     "cab": "LARGO",
-     "txt": "¿me da el tiempo?"
+     "txt": "Largo: ¿me da el tiempo?",
+     "emoji": "🟡"
     }
    ],
    "voz": [

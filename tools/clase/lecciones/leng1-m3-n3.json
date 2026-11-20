@@ -33,28 +33,28 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "LOS CINCO SENTIDOS",
    "items": [
     {
-     "cab": "VISTA",
-     "txt": "la luz amarilla del farol"
+     "txt": "Vista: la luz amarilla del farol",
+     "emoji": "🔹"
     },
     {
-     "cab": "OÍDO",
-     "txt": "el crujido de la escalera"
+     "txt": "Oído: el crujido de la escalera",
+     "emoji": "🔸"
     },
     {
-     "cab": "OLFATO",
-     "txt": "olor a tierra mojada"
+     "txt": "Olfato: olor a tierra mojada",
+     "emoji": "🟣"
     },
     {
-     "cab": "TACTO",
-     "txt": "la baranda helada"
+     "txt": "Tacto: la baranda helada",
+     "emoji": "🟡"
     },
     {
-     "cab": "GUSTO",
-     "txt": "sabor a óxido"
+     "txt": "Gusto: sabor a óxido",
+     "emoji": "🟢"
     }
    ],
    "voz": [
