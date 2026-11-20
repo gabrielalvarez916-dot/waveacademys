@@ -899,6 +899,36 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { y: 0, d: .4 }); });
   } };
 
+  // globo: {titulo, marcas:[{tipo:'ecuador'|'greenwich'|'paralelo'|'meridiano'|'punto', lat, lon, txt}]} — la Tierra con su red de coordenadas (1 + marcas pasos)
+  T.globo = { n: function (d) { return 1 + d.marcas.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, cx = 960, cy = 590, R = 300, o = w.pieza(g, 0, 0), rad = Math.PI / 180;
+    w.el('circle', { cx: cx, cy: cy, r: R, fill: '#2f6fa8', stroke: '#9fd0f5', 'stroke-width': 5 }, o);
+    for (var la = -60; la <= 60; la += 30) { var y = cy - R * Math.sin(la * rad), hw = R * Math.cos(la * rad); w.el('line', { x1: cx - hw, y1: y, x2: cx + hw, y2: y, stroke: '#d6ecff', 'stroke-width': 1.5, opacity: .5 }, o); }
+    for (var lo = -60; lo <= 60; lo += 30) w.el('ellipse', { cx: cx, cy: cy, rx: Math.abs(R * Math.sin(lo * rad)) || 1, ry: R, fill: 'none', stroke: '#d6ecff', 'stroke-width': 1.5, opacity: .5 }, o);
+    var n = 0, P = d.marcas.map(function (m, k) { var col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), ax, ay;
+      if (m.tipo === 'ecuador' || m.tipo === 'paralelo') { var lat = m.tipo === 'ecuador' ? 0 : m.lat, yy = cy - R * Math.sin(lat * rad), h2 = R * Math.cos(lat * rad); w.el('line', { x1: cx - h2, y1: yy, x2: cx + h2, y2: yy, stroke: col, 'stroke-width': 7 }, gr); ax = cx + h2; ay = yy; }
+      else if (m.tipo === 'greenwich' || m.tipo === 'meridiano') { var lon = m.tipo === 'greenwich' ? 0 : m.lon, rx = Math.abs(R * Math.sin(lon * rad));
+        if (rx < 2) w.el('line', { x1: cx, y1: cy - R, x2: cx, y2: cy + R, stroke: col, 'stroke-width': 7 }, gr); else w.el('path', { d: 'M' + cx + ' ' + (cy - R) + ' A' + rx + ' ' + R + ' 0 0 ' + (lon > 0 ? 1 : 0) + ' ' + cx + ' ' + (cy + R), fill: 'none', stroke: col, 'stroke-width': 7 }, gr);
+        ax = cx + (lon >= 0 ? rx : -rx); ay = cy - R * .55; }
+      else { ax = cx + R * Math.cos(m.lat * rad) * Math.sin(m.lon * rad); ay = cy - R * Math.sin(m.lat * rad); w.el('circle', { cx: ax, cy: ay, r: 13, fill: col, stroke: '#fff', 'stroke-width': 4 }, gr); }
+      var der = (k % 2 === 0), tw = Math.max(220, m.txt.length * 17 + 50), lx = der ? Math.min(1905 - tw / 2, cx + R + 40 + tw / 2) : Math.max(15 + tw / 2, cx - R - 40 - tw / 2), ly = Math.max(340, Math.min(860, ay));
+      w.el('polyline', { points: ax + ',' + ay + ' ' + (der ? lx - tw / 2 : lx + tw / 2) + ',' + ly, fill: 'none', stroke: col, 'stroke-width': 3 }, gr);
+      w.caja(gr, lx, ly, tw, 66, 'rgba(20,12,8,.92)', col, 28, 4); w.txt(gr, lx, ly, m.txt, 27, '#fff'); return gr; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .85, y: 0 });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { y: 0, d: .4 }); });
+  } };
+
+  // orbita: {titulo, posiciones:[{ang, txt}] (ang en grados, 0 = derecha)} — Sol al centro y la Tierra en su órbita (1 + posiciones pasos)
+  T.orbita = { n: function (d) { return 1 + d.posiciones.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, cx = 960, cy = 590, RX = 560, RY = 230, o = w.pieza(g, 0, 0);
+    w.el('ellipse', { cx: cx, cy: cy, rx: RX, ry: RY, fill: 'none', stroke: '#ffd9b8', 'stroke-width': 3, 'stroke-dasharray': '14 10', opacity: .7 }, o); w.emoji(o, cx, cy, '☀️', 170);
+    var P = d.posiciones.map(function (p, k) { var a = p.ang * Math.PI / 180, x = cx + RX * Math.cos(a), y = cy - RY * Math.sin(a), gr = w.pieza(g, 0, 0), col = W.PAL[k % W.PAL.length];
+      w.emoji(gr, x, y, '🌍', 90); var tw = Math.max(200, p.txt.length * 17 + 50), arr = Math.abs(Math.sin(a)) > .7, ly = arr ? y : Math.min(880, y + 85), lx = arr ? x + 70 + tw / 2 : Math.max(tw / 2 + 15, Math.min(1905 - tw / 2, x)); lx = Math.min(1905 - tw / 2, lx);
+      w.caja(gr, lx, ly, tw, 62, 'rgba(20,12,8,.92)', col, 28, 4); w.txt(gr, lx, ly, p.txt, 26, '#fff'); return gr; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .9, y: 0 });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { scale: .6, y: 0, d: .5 }); });
+  } };
+
   // molecula: {titulo, atomos:[{el:'C', x, y}] (x, y en px desde el centro), enlaces:[[i, j, orden]], nombre} — 3 pasos
   T.molecula = { n: function () { return 3; }, armar: function (g, tl, B, d) {
     var COL = { C: '#3a3a3a', H: '#f0f0f0', O: '#ff5a4f', N: '#5f8bff', Cl: '#5fd35f', S: '#ffd34f', P: '#ff9f40', Na: '#b48cff' }, cx = 960, cy = 600;
