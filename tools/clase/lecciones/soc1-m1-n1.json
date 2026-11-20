@@ -1,0 +1,171 @@
+{
+ "slug": "soc1-m1-n1",
+ "step_id": "9a60444a-d90f-4085-8067-da8cca31c6ed",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "¿Qué estudian las ciencias sociales?",
+ "sub": "Ciencias Sociales Integradas I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Tu celular: ¿cuántos países participaron en fabricarlo?",
+   "segundos": 5,
+   "respuesta": "Muchos: minerales, piezas y armado vienen de distintos lugares",
+   "emoji": "📱",
+   "titulo": "LAS CIENCIAS",
+   "sub": "sociales",
+   "voz": [
+    "Desafío: tu celular. ¿Cuántos países participaron en fabricarlo? 5 segundos.",
+    "*Muchos*: el litio puede venir de la Puna, los chips de Asia, el diseño de otro continente. Detrás de un objeto hay *personas, trabajos, lugares y decisiones*.",
+    "Eso estudian las *ciencias sociales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Ciencias sociales",
+   "texto": "Estudian cómo viven, se organizan y cambian las sociedades, en el tiempo y en el espacio",
+   "emoji": "🌎",
+   "voz": [
+    "Las *ciencias sociales* estudian cómo viven, se organizan y cambian las *sociedades*.",
+    "Siempre en dos dimensiones: el *tiempo*, cuándo pasó, y el *espacio*, dónde pasó."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "UNA FAMILIA DE DISCIPLINAS",
+   "celdas": [
+    {
+     "cab": "HISTORIA",
+     "txt": "las sociedades en el tiempo"
+    },
+    {
+     "cab": "GEOGRAFÍA",
+     "txt": "las sociedades en el espacio"
+    },
+    {
+     "cab": "ECONOMÍA",
+     "txt": "cómo producen y reparten"
+    },
+    {
+     "cab": "ANTROPOLOGÍA",
+     "txt": "culturas y modos de vida"
+    }
+   ],
+   "voz": [
+    "No es una sola ciencia: es una familia.",
+    "La *historia*: las sociedades en el tiempo.",
+    "La *geografía*: las sociedades en el espacio.",
+    "La *economía*: cómo producen, intercambian y reparten.",
+    "La *antropología*: las culturas y los modos de vida."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Actores sociales",
+   "texto": "Personas, grupos o instituciones que participan y tienen intereses en un hecho",
+   "emoji": "👥",
+   "voz": [
+    "En todo hecho social hay *actores sociales*: personas, grupos o instituciones que participan.",
+    "Cada uno con sus *intereses*, que a veces chocan. Entenderlos es clave para entender qué pasó."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Se construye una represa",
+    "emoji": "🏗️"
+   },
+   "items": [
+    {
+     "txt": "El gobierno: energía",
+     "emoji": "🏛️"
+    },
+    {
+     "txt": "Empresas: trabajo y ganancia",
+     "emoji": "🏭"
+    },
+    {
+     "txt": "Vecinos: pierden sus tierras",
+     "emoji": "🏡"
+    },
+    {
+     "txt": "Ambientalistas: impacto",
+     "emoji": "🌿"
+    }
+   ],
+   "voz": [
+    "Un ejemplo: se construye una *represa*. ¿Quiénes son los actores?",
+    "El *gobierno*: quiere generar energía.",
+    "Las *empresas*: obtienen trabajo y ganancias.",
+    "Los *vecinos* del lugar: pierden sus tierras bajo el agua.",
+    "Los *ambientalistas*: advierten sobre el impacto en el río. Un mismo hecho, muchas miradas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "UNA CAUSA",
+    "texto": "\"Pasó por culpa de…\"",
+    "emoji": "☝️"
+   },
+   "b": {
+    "cab": "MULTICAUSALIDAD",
+    "texto": "varias causas que se combinan",
+    "emoji": "🕸️"
+   },
+   "signo": "vs",
+   "voz": [
+    "En las ciencias sociales casi nunca hay *una sola causa*.",
+    "Decir pasó por culpa de una sola cosa suele ser simplificar demasiado.",
+    "Los hechos tienen *varias causas que se combinan*: económicas, políticas, culturales. Eso se llama *multicausalidad*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué pregunta es propia de las ciencias sociales?",
+   "opciones": [
+    "¿Por qué la gente migra del campo a la ciudad?",
+    "¿A qué temperatura hierve el agua?",
+    "¿Cuántas patas tiene un insecto?"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué pregunta es propia de las ciencias sociales?",
+    "¿Por qué la gente migra del campo a la ciudad, a qué temperatura hierve el agua, o cuántas patas tiene un insecto?",
+    "La primera: trata sobre *personas y sociedades*. Las otras son de ciencias naturales."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Estudian las *sociedades* en el tiempo y el espacio.",
+    "Son una familia: *historia, geografía, economía, antropología*.",
+    "En cada hecho hay *actores sociales* con intereses.",
+    "Y casi siempre, *varias causas*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SOCIEDADES",
+     "en el tiempo y el espacio"
+    ],
+    [
+     "DISCIPLINAS",
+     "historia, geografía, economía…"
+    ],
+    [
+     "ACTORES",
+     "grupos con intereses"
+    ],
+    [
+     "CAUSAS",
+     "multicausalidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

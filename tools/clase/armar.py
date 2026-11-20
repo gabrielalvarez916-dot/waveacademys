@@ -25,10 +25,14 @@ TEMAS = {
                '#a7efe2': '#e0d2ff', '#5fc2b2': '#a98bff', '#7FD3C4': '#C3A8FF', '#9be8da': '#d6c4ff', '#3e9488': '#7458c4',
                '#06282a': '#1a1030', '#d8fff7': '#f1eaff', '#2c5a5e': '#4b3c74', '#9dbdb9': '#bdb2d6', '#eaf7f4': '#f5f1fc', '#14300c': '#241a40', 'rgba(5,15,16': 'rgba(14,10,26'},
 }
+TEMAS['sociales'] = {'#050f10': '#140c08', '#17585a': '#8a4a2a', '#0c292b': '#2a160c', '#1d474a': '#5a3220', '#132f31': '#3a2014',
+                     '#a7efe2': '#ffd9b8', '#5fc2b2': '#e8955a', '#7FD3C4': '#F2A65A', '#9be8da': '#ffcf9f', '#3e9488': '#b8622f',
+                     '#06282a': '#2a140a', '#d8fff7': '#fff1e4', '#2c5a5e': '#6a4030', '#9dbdb9': '#d6bba8', '#eaf7f4': '#fdf4ec', '#14300c': '#3a2014', 'rgba(5,15,16': 'rgba(20,12,8'}
 def tema_de(materia):
     m = (materia or '').lower()
     if 'natural' in m or 'biolog' in m: return TEMAS['naturales']
     if 'lengua' in m or 'literatura' in m: return TEMAS['lengua']
+    if 'social' in m or 'historia' in m or 'geograf' in m: return TEMAS['sociales']
     return None
 
 pedidas = sys.argv[1:]

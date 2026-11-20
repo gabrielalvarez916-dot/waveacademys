@@ -1,0 +1,171 @@
+{
+ "slug": "soc1-m1-n2",
+ "step_id": "1de47af9-2983-4374-a2b4-bd386a77a786",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Historia y Geografía: dos miradas sobre el mundo",
+ "sub": "Ciencias Sociales Integradas I · Misión 1 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👵"
+   },
+   "lugar": "🏘️",
+   "lineas": [
+    "Marta vive hace 70 años en el mismo barrio.",
+    "Donde hoy hay un shopping, había un tambo.",
+    "El lugar es el mismo; todo lo demás cambió."
+   ],
+   "titulo": "DOS MIRADAS",
+   "sub": "historia y geografía",
+   "voz": [
+    "Marta vive hace setenta años en el mismo barrio.",
+    "Se acuerda de que donde hoy hay un shopping, antes había un *tambo* con vacas.",
+    "El *lugar* es el mismo, pero con el *tiempo* todo cambió.",
+    "Hoy: *historia y geografía, dos miradas sobre el mundo*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "Historia",
+   "b": "Geografía",
+   "itemsA": [
+    "el tiempo",
+    "cambios y continuidades",
+    "causas y consecuencias"
+   ],
+   "itemsB": [
+    "el espacio",
+    "paisajes y territorios",
+    "escalas"
+   ],
+   "ambos": [
+    "las sociedades",
+    "fuentes",
+    "preguntas"
+   ],
+   "voz": [
+    "Dos miradas complementarias.",
+    "La *historia* mira el *tiempo*: qué cambió, qué siguió igual, por qué.",
+    "La *geografía* mira el *espacio*: cómo las sociedades transforman los lugares.",
+    "Y las dos estudian *sociedades*, usan *fuentes* y hacen *preguntas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CAMBIO",
+    "texto": "el tambo se volvió shopping",
+    "emoji": "🔄"
+   },
+   "b": {
+    "cab": "CONTINUIDAD",
+    "texto": "la misma plaza desde 1920",
+    "emoji": "⏸️"
+   },
+   "signo": "y",
+   "voz": [
+    "La historia busca *cambios y continuidades*.",
+    "*Cambio*: lo que se transformó, como el tambo que se volvió shopping.",
+    "*Continuidad*: lo que se mantuvo, como la plaza que está igual desde hace cien años."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Espacio geográfico",
+   "texto": "El espacio transformado por las sociedades a lo largo del tiempo",
+   "emoji": "🗺️",
+   "voz": [
+    "La geografía no estudia la naturaleza sola: estudia el *espacio geográfico*, el espacio *transformado por las sociedades*.",
+    "Un campo sembrado, una ruta, una ciudad: todo eso lo construyeron personas."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "Argentina"
+     ],
+     "texto": "Escala nacional: el país"
+    },
+    {
+     "resaltar": [
+      "Argentina",
+      "Brasil",
+      "Uruguay",
+      "Paraguay",
+      "Bolivia",
+      "Chile"
+     ],
+     "texto": "Escala regional: Sudamérica"
+    },
+    {
+     "resaltar": [
+      "China",
+      "Estados Unidos",
+      "Alemania",
+      "Argentina"
+     ],
+     "texto": "Escala mundial: todo conectado"
+    }
+   ],
+   "voz": [
+    "Y la geografía mira los hechos en distintas *escalas*.",
+    "*Nacional*: lo que pasa en todo el país.",
+    "*Regional*: los países vecinos, como en el Mercosur.",
+    "*Mundial*: hoy todo está conectado, como en la fabricación de tu celular."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "\"¿Qué cambió en la ciudad entre 1900 y hoy?\" ¿Qué mirada usa sobre todo?",
+   "opciones": [
+    "Historia: el tiempo",
+    "Geografía: el espacio",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué cambió en la ciudad entre 1900 y hoy? ¿Qué mirada usa sobre todo?",
+    "¿Historia, geografía, o ninguna?",
+    "*Historia*: compara dos momentos. Igual, para responderla bien, también vas a necesitar la geografía."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Historia*: el tiempo.",
+    "*Geografía*: el espacio transformado.",
+    "*Cambios y continuidades*.",
+    "Y las *escalas*: local, nacional, regional y mundial.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "HISTORIA",
+     "el tiempo"
+    ],
+    [
+     "GEOGRAFÍA",
+     "el espacio"
+    ],
+    [
+     "CAMBIOS",
+     "y continuidades"
+    ],
+    [
+     "ESCALAS",
+     "local, nacional, mundial"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

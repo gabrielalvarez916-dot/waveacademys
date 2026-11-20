@@ -20,7 +20,7 @@ def textos(x):
 for slug in args:
     L = json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8'))
     tit = (L.get('titulo') or '').lower()
-    todo = ' '.join(textos(L['escenas']))
+    todo = re.sub(r'(Revolución|Plaza|Avenida) de Mayo', '', ' '.join(textos(L['escenas'])))
     if re.search(MESES, todo, re.I) and 'Julio Verne' not in todo: E(slug, 'nombra meses: los alumnos entran en cualquier fecha')
     for k, e in enumerate(L['escenas']):
         t = e['t']

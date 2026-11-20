@@ -1,0 +1,195 @@
+{
+ "slug": "soc1-m1-n3",
+ "step_id": "472ec699-e9b1-4682-8ce4-d4ff2dfc564a",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Fuentes y datos: de dónde sale lo que sabemos",
+ "sub": "Ciencias Sociales Integradas I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ARCHIVO",
+   "titular": "Encuentran cartas de 1810 en un altillo",
+   "bajada": "Los historiadores ya las estudian",
+   "emoji": "📜",
+   "titulo": "LAS FUENTES",
+   "sub": "de dónde sale lo que sabemos",
+   "voz": [
+    "Último momento: en un altillo encontraron *cartas escritas en 1810*.",
+    "¿Por qué emociona a los historiadores? Porque son *fuentes*: rastros del pasado para saber qué pasó.",
+    "Hoy: *fuentes y datos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PRIMARIA",
+    "texto": "de la época: una carta de 1810",
+    "emoji": "📜"
+   },
+   "b": {
+    "cab": "SECUNDARIA",
+    "texto": "posterior: un libro que la analiza",
+    "emoji": "📚"
+   },
+   "signo": "vs",
+   "voz": [
+    "Hay dos grandes tipos de fuentes.",
+    "*Primarias*: producidas en la época que se estudia, como una carta de 1810, una foto o un objeto.",
+    "*Secundarias*: elaboradas después, analizando las primarias, como un libro de historia o un documental."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "TIPOS DE FUENTES",
+   "celdas": [
+    {
+     "cab": "ESCRITAS",
+     "txt": "cartas, diarios, leyes"
+    },
+    {
+     "cab": "MATERIALES",
+     "txt": "herramientas, edificios, ruinas"
+    },
+    {
+     "cab": "ORALES",
+     "txt": "testimonios, entrevistas"
+    },
+    {
+     "cab": "ICONOGRÁFICAS",
+     "txt": "fotos, pinturas, mapas"
+    }
+   ],
+   "voz": [
+    "Según su forma.",
+    "*Escritas*: cartas, diarios, leyes.",
+    "*Materiales*: objetos, herramientas, ruinas.",
+    "*Orales*: lo que cuentan las personas, como la abuela Marta.",
+    "*Iconográficas*: imágenes, fotos, pinturas y mapas."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PRIMARIA",
+     "emoji": "📜"
+    },
+    {
+     "cab": "SECUNDARIA",
+     "emoji": "📚"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Foto de 1930",
+     "caja": 0
+    },
+    {
+     "txt": "Diario de soldado",
+     "caja": 0
+    },
+    {
+     "txt": "Manual de historia",
+     "caja": 1
+    },
+    {
+     "txt": "Documental actual",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Primaria o secundaria?",
+    "*Primarias*: una foto tomada en 1930, el diario de un soldado.",
+    "*Secundarias*: un manual escolar, un documental de hoy."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "POBLACIÓN DE ARGENTINA (CENSOS)",
+   "unidad": "millones",
+   "items": [
+    {
+     "txt": "1914",
+     "valor": 8
+    },
+    {
+     "txt": "1960",
+     "valor": 20
+    },
+    {
+     "txt": "2010",
+     "valor": 40
+    },
+    {
+     "txt": "2022",
+     "valor": 46
+    }
+   ],
+   "voz": [
+    "También usamos *datos*: números que se pueden comparar, como los de un *censo*.",
+    "En 1914, Argentina tenía unos *ocho millones* de habitantes.",
+    "En 1960, unos *veinte*.",
+    "En 2010, unos *cuarenta*.",
+    "Y en el censo de 2022, unos *cuarenta y seis millones*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Contrastar fuentes",
+   "texto": "Comparar varias fuentes y preguntarse quién la hizo, cuándo y para qué",
+   "emoji": "⚖️",
+   "voz": [
+    "Ninguna fuente dice toda la verdad: cada una tiene un *autor* con una mirada y una intención.",
+    "Por eso se *contrastan*: se comparan varias y se pregunta quién la hizo, cuándo y para qué."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un diario de 1890 elogia a un gobernador. ¿Qué conviene hacer?",
+   "opciones": [
+    "Compararlo con otras fuentes de la época",
+    "Creerle todo",
+    "Descartarlo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un diario de 1890 elogia muchísimo a un gobernador. ¿Qué conviene hacer?",
+    "¿Compararlo con otras fuentes, creerle todo, o descartarlo?",
+    "*Compararlo con otras fuentes*: quizás el diario era amigo del gobernador. No se descarta: también nos dice qué pensaban algunos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Primarias*: de la época.",
+    "*Secundarias*: posteriores, que las analizan.",
+    "Escritas, materiales, orales e iconográficas.",
+    "Y siempre, *contrastar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRIMARIAS",
+     "de la época"
+    ],
+    [
+     "SECUNDARIAS",
+     "posteriores"
+    ],
+    [
+     "TIPOS",
+     "escritas, materiales, orales, imágenes"
+    ],
+    [
+     "CONTRASTAR",
+     "quién, cuándo, para qué"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

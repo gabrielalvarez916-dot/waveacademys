@@ -1,0 +1,181 @@
+{
+ "slug": "soc1-m1-n4",
+ "step_id": "b5a40aa9-84eb-44e7-94ed-77f5211527d2",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Cronologías y períodos: cómo ordenamos el pasado",
+ "sub": "Ciencias Sociales Integradas I · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos años pasaron entre el 500 a.C. y el 200 d.C.?",
+   "segundos": 7,
+   "respuesta": "700 años",
+   "emoji": "⏳",
+   "titulo": "ORDENAR",
+   "sub": "el pasado",
+   "voz": [
+    "Desafío: ¿cuántos años pasaron entre el quinientos antes de Cristo y el doscientos después de Cristo? 7 segundos.",
+    "*Setecientos*: quinientos hasta el comienzo de la cuenta, más doscientos después.",
+    "Hoy: *cómo ordenamos el pasado*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": -600,
+   "max": 600,
+   "paso": 200,
+   "marcas": [
+    {
+     "v": 0,
+     "txt": "inicio de la cuenta"
+    },
+    {
+     "v": -500,
+     "txt": "500 a.C."
+    },
+    {
+     "v": 200,
+     "txt": "200 d.C."
+    }
+   ],
+   "voz": [
+    "Nuestra cuenta de los años tiene un punto de partida, que en Occidente se fijó en el nacimiento de Cristo.",
+    "Hacia atrás, *antes de Cristo*: los números crecen hacia el pasado. El 500 a.C. es más antiguo que el 100 a.C.",
+    "Hacia adelante, *después de Cristo*: los años que usamos hoy.",
+    "Para la distancia entre los dos lados, se *suman*: quinientos más doscientos, setecientos."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS SIGLOS",
+   "columnas": [
+    "Años",
+    "Siglo"
+   ],
+   "filas": [
+    [
+     "1 al 100",
+     "I"
+    ],
+    [
+     "1501 al 1600",
+     "XVI"
+    ],
+    [
+     "1801 al 1900",
+     "XIX"
+    ],
+    [
+     "2001 al 2100",
+     "XXI"
+    ]
+   ],
+   "voz": [
+    "Un *siglo* son cien años, y se escribe en números romanos.",
+    "Del año uno al cien: siglo uno.",
+    "Del mil quinientos uno al mil seiscientos: siglo dieciséis.",
+    "Del mil ochocientos uno al mil novecientos: siglo diecinueve.",
+    "Y ahora vivimos en el siglo *veintiuno*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TRUCO DEL SIGLO",
+   "texto": "Tapá las dos últimas cifras y sumá 1: 1810 → 18 + 1 = siglo XIX",
+   "emoji": "🎩",
+   "voz": [
+    "Truco: tapá las dos últimas cifras del año y sumale uno. Mil ochocientos diez: dieciocho más uno, *siglo diecinueve*. Ojo con los años redondos: el 1900 todavía es del siglo diecinueve."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LOS GRANDES PERÍODOS",
+   "eventos": [
+    {
+     "fecha": "3500 a.C.",
+     "txt": "Escritura: fin de la Prehistoria",
+     "emoji": "✍️"
+    },
+    {
+     "fecha": "476",
+     "txt": "Cae Roma: Edad Media",
+     "emoji": "🏰"
+    },
+    {
+     "fecha": "1492",
+     "txt": "Colón llega a América: Edad Moderna",
+     "emoji": "⛵"
+    },
+    {
+     "fecha": "1789",
+     "txt": "Revolución Francesa: Edad Contemporánea",
+     "emoji": "🗽"
+    }
+   ],
+   "voz": [
+    "Los historiadores agrupan los años en *períodos*. Con la invención de la *escritura*, hacia el 3500 antes de Cristo, termina la Prehistoria y empieza la *Antigüedad*.",
+    "En el 476, cae el Imperio romano de Occidente: empieza la *Edad Media*.",
+    "En 1492, Colón llega a América: empieza la *Edad Moderna*.",
+    "En 1789, la Revolución Francesa: empieza la *Edad Contemporánea*, que llega hasta hoy."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Periodización",
+   "texto": "Una forma de ordenar el pasado: depende de quién la hace y desde dónde",
+   "emoji": "🧭",
+   "voz": [
+    "Ojo: esta *periodización* se pensó desde Europa. Para los pueblos originarios de América, 1492 no fue un nuevo comienzo, sino una conquista.",
+    "Por eso los períodos son *herramientas* para ordenar, no verdades absolutas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué siglo fue la Revolución de Mayo, en 1810?",
+   "opciones": [
+    "Siglo XIX",
+    "Siglo XVIII",
+    "Siglo XX"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿en qué siglo fue la Revolución de Mayo, en 1810?",
+    "¿Siglo diecinueve, dieciocho, o veinte?",
+    "*Diecinueve*: dieciocho más uno. El error típico es decir dieciocho."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Antes y después de Cristo*: a la distancia se la suma.",
+    "Los *siglos*: cien años, en números romanos.",
+    "Los *períodos*: de la Antigüedad a la Edad Contemporánea.",
+    "Y periodizar es una *mirada*, no la única.",
+    "¡Misión 1 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "a.C. / d.C.",
+     "antes y después"
+    ],
+    [
+     "SIGLOS",
+     "cien años, en romanos"
+    ],
+    [
+     "PERÍODOS",
+     "Antigüedad a Contemporánea"
+    ],
+    [
+     "MIRADA",
+     "periodizar es elegir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

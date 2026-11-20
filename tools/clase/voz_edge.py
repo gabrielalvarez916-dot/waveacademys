@@ -87,7 +87,7 @@ def frases(L):
     return [[limpio(x) for x in e['voz']] for e in L['escenas']]
 
 
-VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural', 'lengua': 'es-AR-TomasNeural'}  # cada materia con su voz (Matemática: Jorge)
+VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural', 'lengua': 'es-AR-TomasNeural', 'sociales': 'es-UY-MateoNeural'}  # cada materia con su voz (Matemática: Jorge)
 
 
 def voz_de(L):
@@ -95,6 +95,7 @@ def voz_de(L):
     if L.get('voz'): return L['voz']
     if 'natural' in m or 'biolog' in m: return VOZ_MATERIA['naturales']
     if 'lengua' in m or 'literatura' in m: return VOZ_MATERIA['lengua']
+    if 'social' in m or 'historia' in m or 'geograf' in m: return VOZ_MATERIA['sociales']
     return VOZ
 
 
