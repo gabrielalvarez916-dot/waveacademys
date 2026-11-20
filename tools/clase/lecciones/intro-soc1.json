@@ -1,0 +1,140 @@
+{
+ "slug": "intro-soc1",
+ "subject_id": "a5f9b6fc-7f3b-4743-977d-da7f4f3a37bb",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Bienvenido a Ciencias Sociales",
+ "sub": "Introducción · Nivel avanzado",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🌎",
+   "final": "🤩",
+   "titulo": "CIENCIAS SOCIALES I",
+   "sub": "nivel avanzado · primer año",
+   "voz": [
+    "¿Por qué tu ciudad está donde está, y no cien kilómetros más allá?",
+    "¿Y por qué en tu casa se come, se habla y se festeja como se festeja?",
+    "Bienvenido a *Ciencias Sociales*: acá vamos a entender cómo viven las sociedades."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Todo tiene una historia y un lugar",
+    "emoji": "🧭"
+   },
+   "items": [
+    {
+     "txt": "Tu barrio",
+     "emoji": "🏘️"
+    },
+    {
+     "txt": "Lo que comés",
+     "emoji": "🍞"
+    },
+    {
+     "txt": "Las leyes",
+     "emoji": "⚖️"
+    },
+    {
+     "txt": "Las noticias",
+     "emoji": "📰"
+    }
+   ],
+   "voz": [
+    "Nada de lo que te rodea apareció de la nada: *todo tiene una historia y un lugar*.",
+    "Tu barrio,",
+    "lo que comés,",
+    "las leyes que seguimos",
+    "y las noticias que ves."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 20 MISIONES",
+   "eventos": [
+    {
+     "fecha": "Misión 1-2",
+     "txt": "Sociedades y planeta",
+     "emoji": "🌍"
+    },
+    {
+     "fecha": "3-8",
+     "txt": "Mapas, ambientes, población",
+     "emoji": "🗺️"
+    },
+    {
+     "fecha": "9-15",
+     "txt": "De los primeros humanos a Roma",
+     "emoji": "🏛️"
+    },
+    {
+     "fecha": "16-20",
+     "txt": "Feudalismo, sociedad y proyecto",
+     "emoji": "🤝"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *veinte misiones*: primero, pensar las sociedades y el planeta.",
+    "Después, mapas, ambientes y población.",
+    "Viajamos de los primeros humanos hasta Egipto, Grecia y Roma.",
+    "Y cerramos con el mundo feudal, cómo vivimos en sociedad y un proyecto tuyo."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE JUEGA CADA NIVEL",
+   "items": [
+    {
+     "txt": "Mirá la clase animada",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Leé el PDF con tu carpeta",
+     "emoji": "📄"
+    },
+    {
+     "txt": "Resolvé las consignas y entregalas",
+     "emoji": "✏️"
+    },
+    {
+     "txt": "Practicá con las actividades",
+     "emoji": "🧩"
+    }
+   ],
+   "voz": [
+    "¿Cómo se juega cada nivel?",
+    "Primero, mirá la *clase animada*.",
+    "Después, leé el *PDF* con tu carpeta al lado.",
+    "Resolvé las consignas y entregalas.",
+    "Y practicá con las *actividades*."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión te espera el NIVEL JEFE",
+   "emoji": "👑",
+   "color": "#F4B63F",
+   "voz": [
+    "Y al final de cada misión te espera el *nivel jefe*: el desafío para pasar a la siguiente."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Tené un mapa a mano y preguntate siempre dónde y cuándo",
+   "emoji": "🗺️",
+   "voz": [
+    "Un consejo: tené un *mapa* a mano y preguntate siempre *dónde* y *cuándo* pasó cada cosa."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Misión 1: pensar las sociedades. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listo? Tu primera misión te espera: *pensar las sociedades*. ¡Vamos!"
+   ]
+  }
+ ]
+}
