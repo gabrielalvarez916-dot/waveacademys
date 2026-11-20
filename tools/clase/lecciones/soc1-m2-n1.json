@@ -1,0 +1,147 @@
+{
+ "slug": "soc1-m2-n1",
+ "step_id": "25d8f824-0f26-4099-a1b0-35cffd323579",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Rotación y traslación: día, noche y estaciones",
+ "sub": "Ciencias Sociales Integradas I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Por qué en Navidad hace calor en Argentina y nieva en Europa?",
+   "segundos": 6,
+   "respuesta": "Por la inclinación del eje de la Tierra",
+   "emoji": "🎄",
+   "titulo": "LA TIERRA",
+   "sub": "se mueve",
+   "voz": [
+    "Desafío: ¿por qué en Navidad acá hace calor y en Europa nieva? 6 segundos.",
+    "No es por la distancia al Sol: es por la *inclinación del eje* de la Tierra.",
+    "Hoy: *rotación y traslación*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ROTACIÓN",
+    "texto": "gira sobre su eje: 24 horas",
+    "emoji": "🔄"
+   },
+   "b": {
+    "cab": "TRASLACIÓN",
+    "texto": "gira alrededor del Sol: 365 días",
+    "emoji": "☀️"
+   },
+   "signo": "y",
+   "voz": [
+    "La Tierra tiene dos movimientos principales.",
+    "*Rotación*: gira sobre su propio eje y tarda unas *24 horas*. Por eso hay *día y noche*.",
+    "*Traslación*: da una vuelta alrededor del Sol en *365 días* y casi 6 horas. Cada cuatro años esas horas suman un día: el año *bisiesto*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Eje inclinado",
+   "texto": "El eje de la Tierra está inclinado unos 23,5°: por eso los rayos del Sol llegan distinto a cada hemisferio",
+   "emoji": "🌐",
+   "voz": [
+    "El eje de la Tierra no está derecho: está *inclinado* unos veintitrés grados y medio.",
+    "Por eso, mientras la Tierra viaja alrededor del Sol, cada hemisferio recibe los rayos *más directos* en distintos momentos del año."
+   ]
+  },
+  {
+   "t": "orbita",
+   "titulo": "LAS ESTACIONES EN EL SUR",
+   "posiciones": [
+    {
+     "ang": 270,
+     "txt": "21 de diciembre: verano"
+    },
+    {
+     "ang": 0,
+     "txt": "21 de marzo: otoño"
+    },
+    {
+     "ang": 90,
+     "txt": "21 de junio: invierno"
+    },
+    {
+     "ang": 180,
+     "txt": "21 de septiembre: primavera"
+    }
+   ],
+   "voz": [
+    "Así cambian las estaciones en el hemisferio sur, donde está Argentina.",
+    "Hacia el 21 de diciembre, el sur recibe los rayos más directos: empieza el *verano*.",
+    "Hacia el 21 de marzo, empieza el *otoño*.",
+    "Hacia el 21 de junio, el *invierno*.",
+    "Y hacia el 21 de septiembre, la *primavera*. En el hemisferio norte, todo al revés."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Cuando en Argentina es invierno, en España es…",
+   "opciones": [
+    "Verano",
+    "Invierno",
+    "Otoño"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: cuando en Argentina es invierno, ¿qué estación es en España?",
+    "¿Verano, invierno u otoño?",
+    "*Verano*: España está en el hemisferio norte, que en ese momento recibe los rayos más directos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Verano = Tierra más cerca del Sol",
+     "bien": "Es por la inclinación del eje"
+    },
+    {
+     "mal": "La noche es por la traslación",
+     "bien": "Es por la rotación"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que en verano la Tierra está *más cerca* del Sol: la causa es la *inclinación del eje*. Si fuera la distancia, sería verano en todo el planeta a la vez.",
+    "Y confundir los movimientos: el día y la noche son por la *rotación*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Rotación*: veinticuatro horas, día y noche.",
+    "*Traslación*: un año alrededor del Sol.",
+    "El *eje inclinado* causa las estaciones.",
+    "Y los *hemisferios* tienen estaciones opuestas.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ROTACIÓN",
+     "24 h: día y noche"
+    ],
+    [
+     "TRASLACIÓN",
+     "365 días alrededor del Sol"
+    ],
+    [
+     "EJE",
+     "inclinado: estaciones"
+    ],
+    [
+     "HEMISFERIOS",
+     "estaciones opuestas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

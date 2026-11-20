@@ -1,0 +1,184 @@
+{
+ "slug": "soc1-m2-n4",
+ "step_id": "326f5c35-e843-42f6-bb1b-b53d40a7a429",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Del globo al planisferio: leer y usar mapas",
+ "sub": "Ciencias Sociales Integradas I · Misión 2 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "MAPAS",
+   "titular": "Groenlandia no es tan grande como parece",
+   "bajada": "África es 14 veces más grande",
+   "emoji": "🗺️",
+   "titulo": "LOS MAPAS",
+   "sub": "leer y usar",
+   "voz": [
+    "Dato que sorprende: en muchos mapas, Groenlandia parece tan grande como África.",
+    "En realidad, *África es unas 14 veces más grande*. El mapa nos engaña.",
+    "Hoy: *del globo al planisferio*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GLOBO TERRÁQUEO",
+    "texto": "forma y tamaños reales, pero no se ve todo",
+    "emoji": "🌐"
+   },
+   "b": {
+    "cab": "PLANISFERIO",
+    "texto": "todo a la vista, pero deformado",
+    "emoji": "🗺️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Pasar de una esfera a un papel plano tiene un costo.",
+    "El *globo*: respeta formas y tamaños, pero no ves todo el planeta a la vez.",
+    "El *planisferio*: muestra todo, pero *deforma*. En el más usado, las zonas cerca de los polos se ven mucho más grandes."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "ELEMENTOS DE UN MAPA",
+   "celdas": [
+    {
+     "cab": "TÍTULO",
+     "txt": "qué muestra"
+    },
+    {
+     "cab": "REFERENCIAS",
+     "txt": "qué significa cada símbolo"
+    },
+    {
+     "cab": "ESCALA",
+     "txt": "cuánto se achicó"
+    },
+    {
+     "cab": "ORIENTACIÓN",
+     "txt": "dónde está el norte"
+    }
+   ],
+   "voz": [
+    "Para leer un mapa, primero mirá sus elementos.",
+    "El *título*: qué muestra.",
+    "Las *referencias*: qué significa cada color y símbolo.",
+    "La *escala*: cuánto se achicó la realidad.",
+    "La *orientación*: dónde está el norte, con la rosa de los vientos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Escala 1:100.000",
+   "texto": "1 cm en el mapa son 100.000 cm reales: 1 km",
+   "emoji": "📏",
+   "voz": [
+    "La escala *uno en cien mil* significa que un centímetro del mapa son cien mil centímetros reales.",
+    "Cien mil centímetros son *un kilómetro*. Si dos pueblos están a cinco centímetros en el mapa, en la realidad están a *cinco kilómetros*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FÍSICO",
+     "emoji": "⛰️"
+    },
+    {
+     "cab": "POLÍTICO",
+     "emoji": "🏛️"
+    },
+    {
+     "cab": "TEMÁTICO",
+     "emoji": "📊"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Montañas y ríos",
+     "caja": 0
+    },
+    {
+     "txt": "Países y capitales",
+     "caja": 1
+    },
+    {
+     "txt": "Lluvias del año",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "Tipos de mapas.",
+    "*Físico*: muestra el relieve, montañas y ríos.",
+    "*Político*: países, provincias y capitales.",
+    "*Temático*: un solo tema, como las lluvias o la población."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Escala 1:100.000. Dos ciudades están a 8 cm en el mapa. ¿Distancia real?",
+   "opciones": [
+    "8 km",
+    "80 km",
+    "800 m"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: escala uno en cien mil. Dos ciudades están a ocho centímetros en el mapa. ¿Distancia real?",
+    "¿Ocho kilómetros, ochenta, u ochocientos metros?",
+    "*Ocho kilómetros*: cada centímetro es un kilómetro."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El mapa muestra los tamaños reales",
+     "bien": "Todo planisferio deforma"
+    },
+    {
+     "mal": "Leer sin mirar referencias",
+     "bien": "Primero las referencias"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el planisferio muestra los *tamaños reales*.",
+    "Y leer un mapa *sin mirar las referencias*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *globo*: real, pero no ves todo.",
+    "El *planisferio*: todo, pero deformado.",
+    "Elementos: *título, referencias, escala y orientación*.",
+    "Y la *escala* convierte centímetros en distancias reales.",
+    "¡Misión 2 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "GLOBO",
+     "real pero parcial"
+    ],
+    [
+     "PLANISFERIO",
+     "completo pero deformado"
+    ],
+    [
+     "ELEMENTOS",
+     "título, referencias, escala, norte"
+    ],
+    [
+     "ESCALA",
+     "1 cm = distancia real"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

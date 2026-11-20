@@ -1,0 +1,184 @@
+{
+ "slug": "soc1-m2-n2",
+ "step_id": "10ef7416-3db8-4dc0-8cb7-d249542dd7de",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Latitud y longitud: ubicarse en el planeta",
+ "sub": "Ciencias Sociales Integradas I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mandame tu ubicación 📍"
+    },
+    {
+     "yo": true,
+     "txt": "-34.6, -58.4"
+    },
+    {
+     "yo": false,
+     "txt": "¿Qué son esos números? 🤔"
+    }
+   ],
+   "titulo": "UBICARSE",
+   "sub": "latitud y longitud",
+   "voz": [
+    "Juan le pide a Lu: mandame tu ubicación.",
+    "Lu le manda dos números: menos treinta y cuatro coma seis, menos cincuenta y ocho coma cuatro.",
+    "Juan: ¿qué son esos números? Son su *latitud y longitud*.",
+    "Hoy: *ubicarse en el planeta*."
+   ]
+  },
+  {
+   "t": "globo",
+   "titulo": "LA RED DE COORDENADAS",
+   "marcas": [
+    {
+     "tipo": "ecuador",
+     "txt": "Ecuador: latitud 0°"
+    },
+    {
+     "tipo": "greenwich",
+     "txt": "Meridiano de Greenwich: 0°"
+    },
+    {
+     "tipo": "paralelo",
+     "lat": -34,
+     "txt": "Paralelo 34° S"
+    },
+    {
+     "tipo": "punto",
+     "lat": -34,
+     "lon": -58,
+     "txt": "Buenos Aires: 34° S, 58° O"
+    }
+   ],
+   "voz": [
+    "Para ubicarse, la Tierra se cubre con una red de líneas imaginarias.",
+    "El *Ecuador*: divide la Tierra en hemisferio norte y sur. Es la latitud cero.",
+    "El *meridiano de Greenwich*: divide en hemisferio este y oeste. Es la longitud cero.",
+    "Los *paralelos* van de este a oeste: cada uno marca una latitud, como el 34 sur.",
+    "Y donde se cruzan un paralelo y un meridiano, hay un punto exacto: Buenos Aires, *34 grados sur, 58 grados oeste*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "LATITUD",
+    "texto": "distancia al Ecuador: 0° a 90° N o S",
+    "emoji": "↕️"
+   },
+   "b": {
+    "cab": "LONGITUD",
+    "texto": "distancia a Greenwich: 0° a 180° E u O",
+    "emoji": "↔️"
+   },
+   "signo": "+",
+   "voz": [
+    "Las dos coordenadas.",
+    "*Latitud*: cuán lejos del Ecuador, hacia el norte o el sur. Va de cero a noventa grados.",
+    "*Longitud*: cuán lejos del meridiano de Greenwich, hacia el este o el oeste. Va de cero a ciento ochenta."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LOS HEMISFERIOS",
+   "celdas": [
+    {
+     "cab": "NORTE",
+     "txt": "sobre el Ecuador"
+    },
+    {
+     "cab": "SUR",
+     "txt": "debajo: Argentina"
+    },
+    {
+     "cab": "OESTE",
+     "txt": "a la izquierda de Greenwich: América"
+    },
+    {
+     "cab": "ESTE",
+     "txt": "a la derecha: Asia, gran parte de África"
+    }
+   ],
+   "voz": [
+    "Las líneas cero dividen cuatro hemisferios.",
+    "*Norte*: arriba del Ecuador.",
+    "*Sur*: abajo. Ahí está Argentina.",
+    "*Oeste*: a la izquierda de Greenwich. Toda América.",
+    "*Este*: a la derecha, con Asia y gran parte de África."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Argentina está en los hemisferios…",
+   "opciones": [
+    "Sur y oeste",
+    "Norte y este",
+    "Sur y este"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿en qué hemisferios está Argentina?",
+    "¿Sur y oeste, norte y este, o sur y este?",
+    "*Sur y oeste*: por eso sus coordenadas dicen S y O, o llevan signo menos en el GPS."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Coordenadas sin N, S, E u O",
+     "bien": "34° S, 58° O"
+    },
+    {
+     "mal": "Paralelos de polo a polo",
+     "bien": "Eso son meridianos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Dar una coordenada *sin la letra*: treinta y cuatro grados puede ser norte o sur.",
+    "Y confundir: los *meridianos* van de polo a polo; los *paralelos*, de este a oeste."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *Ecuador*: latitud cero.",
+    "*Greenwich*: longitud cero.",
+    "*Latitud*: norte o sur.",
+    "*Longitud*: este u oeste.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ECUADOR",
+     "latitud 0°"
+    ],
+    [
+     "GREENWICH",
+     "longitud 0°"
+    ],
+    [
+     "LATITUD",
+     "N o S, hasta 90°"
+    ],
+    [
+     "LONGITUD",
+     "E u O, hasta 180°"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

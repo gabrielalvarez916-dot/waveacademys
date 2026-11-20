@@ -1,0 +1,155 @@
+{
+ "slug": "soc1-m2-n3",
+ "step_id": "97ccadfc-6ffa-4be3-9716-6c7148d7cc31",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Husos horarios: qué hora es en otro país",
+ "sub": "Ciencias Sociales Integradas I · Misión 2 · Nivel 3",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👩"
+   },
+   "lugar": "🌏",
+   "lineas": [
+    "Marta llama a su primo en Japón al mediodía.",
+    "Él atiende dormido: allá es medianoche.",
+    "El mismo momento, otra hora."
+   ],
+   "titulo": "HUSOS",
+   "sub": "horarios",
+   "voz": [
+    "Marta llama a su primo en Japón al mediodía.",
+    "Él atiende medio dormido: allá es *medianoche*.",
+    "Es el mismo momento, pero *otra hora*. ¿Por qué?",
+    "Hoy: *los husos horarios*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Huso horario",
+   "texto": "Cada una de las 24 franjas de 15° de longitud con la misma hora",
+   "emoji": "🕐",
+   "voz": [
+    "Como la Tierra rota, el Sol no ilumina todo a la vez. Por eso el planeta se divide en *24 husos horarios*.",
+    "Trescientos sesenta grados divididos veinticuatro horas: cada huso mide *15 grados* de longitud."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HACIA EL ESTE",
+    "texto": "la hora se adelanta: +1 por huso",
+    "emoji": "⏩"
+   },
+   "b": {
+    "cab": "HACIA EL OESTE",
+    "texto": "la hora se atrasa: −1 por huso",
+    "emoji": "⏪"
+   },
+   "signo": "vs",
+   "voz": [
+    "La regla.",
+    "Hacia el *este*, donde el Sol sale antes, la hora se *adelanta*: una hora más por cada huso.",
+    "Hacia el *oeste*, se *atrasa*: una hora menos por cada huso."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "MEDIODÍA EN BUENOS AIRES",
+   "columnas": [
+    "Ciudad",
+    "Huso",
+    "Hora"
+   ],
+   "filas": [
+    [
+     "Buenos Aires",
+     "UTC −3",
+     "12 h"
+    ],
+    [
+     "Londres",
+     "UTC 0",
+     "15 h"
+    ],
+    [
+     "Madrid",
+     "UTC +1",
+     "16 h"
+    ],
+    [
+     "Tokio",
+     "UTC +9",
+     "0 h del día siguiente"
+    ]
+   ],
+   "voz": [
+    "Si en Buenos Aires son las doce, en husos sin horario de verano…",
+    "Buenos Aires está en el huso *menos tres*.",
+    "Londres, en el huso cero: tres horas más, las *quince*.",
+    "Madrid, uno más: las *dieciséis*.",
+    "Tokio, en el huso *más nueve*: doce horas más, *medianoche*, ¡y ya es el día siguiente!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Línea de cambio de fecha",
+   "texto": "Sobre el meridiano 180°: al cruzarla, se suma o se resta un día",
+   "emoji": "📅",
+   "voz": [
+    "Del otro lado del planeta, sobre el meridiano 180, está la *línea internacional de cambio de fecha*.",
+    "Al cruzarla hacia el oeste, se suma un día; hacia el este, se resta."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En Buenos Aires (UTC −3) son las 10. ¿Qué hora es en Londres (UTC 0)?",
+   "opciones": [
+    "13 h",
+    "7 h",
+    "10 h"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: en Buenos Aires son las diez. ¿Qué hora es en Londres, huso cero?",
+    "¿Trece, siete, o diez?",
+    "*Las trece*: Londres está tres husos al este, entonces se suman tres horas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*24 husos* de 15 grados.",
+    "Al *este*, la hora se adelanta.",
+    "Al *oeste*, se atrasa.",
+    "Y Argentina está en el huso *menos tres*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "24 HUSOS",
+     "de 15° cada uno"
+    ],
+    [
+     "AL ESTE",
+     "se adelanta"
+    ],
+    [
+     "AL OESTE",
+     "se atrasa"
+    ],
+    [
+     "ARGENTINA",
+     "UTC −3"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
