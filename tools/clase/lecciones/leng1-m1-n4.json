@@ -1,0 +1,268 @@
+{
+ "slug": "leng1-m1-n4",
+ "step_id": "f2d9ec97-73bc-45e2-ada0-f517606d334a",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Armo la biblioteca del año",
+ "sub": "Lengua y Literatura I · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LECTORES",
+   "titular": "Leyó 30 libros en un año",
+   "bajada": "Su secreto: una lista y un plan",
+   "emoji": "📚",
+   "titulo": "MI BIBLIOTECA",
+   "sub": "del año",
+   "voz": [
+    "Último momento: un chico de 12 años leyó *30 libros* en un año.",
+    "¿Su secreto? No leer más rápido: tener *una lista* y *un plan*.",
+    "Hoy: *armo la biblioteca del año*."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "biblioteca",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "l",
+       "e": "📘",
+       "x": 960,
+       "y": 665,
+       "s": 190
+      }
+     ],
+     "txt": "¿Cómo elijo un libro?"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 250,
+       "s": "Título · Autor · Editorial",
+       "size": 42
+      }
+     ],
+     "txt": "La tapa: título, autor y editorial"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 350,
+       "s": "Contratapa: de qué trata",
+       "size": 42
+      }
+     ],
+     "txt": "La contratapa cuenta de qué trata"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 960,
+       "y": 450,
+       "s": "Índice: los capítulos",
+       "size": 42
+      }
+     ],
+     "txt": "El índice muestra cómo está armado"
+    }
+   ],
+   "voz": [
+    "¿Cómo se elige un libro sin leerlo entero? Con el *paratexto*.",
+    "La *tapa*: título, autor y editorial.",
+    "La *contratapa*: un resumen que te dice de qué trata, sin contar el final.",
+    "Y el *índice*: los capítulos y cómo está armado."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "bloques",
+   "titulo": "CÓMO ELEGIR",
+   "items": [
+    {
+     "cab": "GÉNERO",
+     "txt": "¿qué tengo ganas de leer?"
+    },
+    {
+     "cab": "RECOMENDACIÓN",
+     "txt": "¿quién me lo aconsejó?"
+    },
+    {
+     "cab": "PRIMERA PÁGINA",
+     "txt": "¿me engancha?"
+    },
+    {
+     "cab": "LARGO",
+     "txt": "¿me da el tiempo?"
+    }
+   ],
+   "voz": [
+    "Cuatro preguntas para elegir.",
+    "*Género*: ¿qué tengo ganas de leer?",
+    "*Recomendación*: ¿alguien que me conoce me lo aconsejó?",
+    "*Primera página*: ¿me engancha?",
+    "*Largo*: ¿me da el tiempo que tengo?"
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Para registrar lo que leés, armás una *ficha bibliográfica*.",
+    "Lleva siempre: *autor, título, editorial y año*."
+   ],
+   "palabra": "Ficha bibliográfica",
+   "texto": "Autor, título, editorial y año de un libro",
+   "emoji": "🗃️"
+  },
+  {
+   "t": "tabla",
+   "titulo": "UNA FICHA DE EJEMPLO",
+   "columnas": [
+    "Dato",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Autor",
+     "Ríos, Ana"
+    ],
+    [
+     "Título",
+     "El faro de los gatos"
+    ],
+    [
+     "Editorial",
+     "Brújula"
+    ],
+    [
+     "Año",
+     "2021"
+    ]
+   ],
+   "voz": [
+    "Una ficha de ejemplo.",
+    "*Autor*: primero el apellido, después el nombre. Ríos, Ana.",
+    "*Título*: El faro de los gatos.",
+    "*Editorial*: Brújula.",
+    "*Año*: 2021."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "MI AÑO LECTOR",
+   "eventos": [
+    {
+     "fecha": "Marzo",
+     "txt": "un cuento policial",
+     "emoji": "🔍"
+    },
+    {
+     "fecha": "Mayo",
+     "txt": "El fantasma de Canterville",
+     "emoji": "👻"
+    },
+    {
+     "fecha": "Agosto",
+     "txt": "poesía",
+     "emoji": "🎵"
+    },
+    {
+     "fecha": "Octubre",
+     "txt": "teatro",
+     "emoji": "🎭"
+    },
+    {
+     "fecha": "Diciembre",
+     "txt": "¡el libro que elijas!",
+     "emoji": "📖"
+    }
+   ],
+   "voz": [
+    "Tu biblioteca del año ya tiene algunas paradas fijas. En marzo, un *cuento policial*.",
+    "En mayo, *El fantasma de Canterville*, una novela de Oscar Wilde.",
+    "En agosto, *poesía*.",
+    "En octubre, *teatro*.",
+    "Y para cerrar, *el libro que vos elijas*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Un derecho del lector: si un libro no te engancha después de un buen rato, *podés dejarlo* y elegir otro. Leer tiene que ser un gusto, no un castigo."
+   ],
+   "titulo": "DERECHO DEL LECTOR",
+   "texto": "Podés dejar un libro que no te engancha y elegir otro",
+   "emoji": "🙌"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: ¿qué dato *no* va en una ficha bibliográfica?",
+    "¿La editorial o el color de la tapa?",
+    "¡El *color de la tapa*! Autor, título, editorial y año."
+   ],
+   "pregunta": "¿Qué NO va en la ficha?",
+   "opciones": [
+    "La editorial",
+    "El color de la tapa"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Elegir un libro *solo por la tapa*.",
+    "Y hacer la ficha *sin el autor*, o con el nombre antes del apellido."
+   ],
+   "items": [
+    {
+     "mal": "Elegir solo por la tapa",
+     "bien": "Leer contratapa y 1.ª página"
+    },
+    {
+     "mal": "Ana Ríos",
+     "bien": "Ríos, Ana"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Elegir con el *paratexto*: tapa, contratapa e índice.",
+    "Cuatro preguntas: *género, recomendación, primera página y largo*.",
+    "La *ficha*: autor, título, editorial y año.",
+    "Y un *plan* para tu año lector.",
+    "¡Misión 1 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARATEXTO",
+     "tapa, contratapa, índice"
+    ],
+    [
+     "ELEGIR",
+     "género, consejo, 1.ª página"
+    ],
+    [
+     "FICHA",
+     "autor, título, editorial, año"
+    ],
+    [
+     "PLAN",
+     "mi año lector"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

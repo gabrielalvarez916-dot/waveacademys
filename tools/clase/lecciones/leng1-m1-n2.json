@@ -1,0 +1,291 @@
+{
+ "slug": "leng1-m1-n2",
+ "step_id": "e969a044-144e-4bab-afb6-eba01650594e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Mis géneros favoritos",
+ "sub": "Lengua y Literatura I · Misión 1 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "Recomendame algo para leer 📚"
+    },
+    {
+     "yo": false,
+     "txt": "¿De miedo, de detectives o de magia?"
+    },
+    {
+     "yo": true,
+     "txt": "Ni idea… ¿cuál es la diferencia? 🤔"
+    }
+   ],
+   "titulo": "LOS GÉNEROS",
+   "sub": "encontrá tus favoritos",
+   "voz": [
+    "Marta le escribe a Lu: recomendame algo para leer.",
+    "Lu le contesta: ¿de miedo, de detectives o de magia?",
+    "Marta: ni idea… ¿cuál es la diferencia?",
+    "Hoy: *los géneros*, para encontrar tus favoritos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Un *género* es una familia de textos que se parecen: en cómo están escritos y en lo que buscan.",
+    "Conocerlos te ayuda a elegir qué leer… y a saber qué esperar."
+   ],
+   "palabra": "Género",
+   "texto": "Familia de textos que se parecen en su forma y en lo que buscan",
+   "emoji": "🗂️"
+  },
+  {
+   "t": "matriz",
+   "titulo": "LAS GRANDES FAMILIAS",
+   "celdas": [
+    {
+     "cab": "NARRATIVO",
+     "txt": "cuenta una historia"
+    },
+    {
+     "cab": "POÉTICO",
+     "txt": "versos, ritmo y emociones"
+    },
+    {
+     "cab": "TEATRAL",
+     "txt": "diálogos para actuar"
+    },
+    {
+     "cab": "NO LITERARIO",
+     "txt": "informa o explica"
+    }
+   ],
+   "voz": [
+    "Las grandes familias.",
+    "*Narrativo*: cuenta una historia, como el cuento y la novela.",
+    "*Poético*: juega con versos, ritmo y emociones.",
+    "*Teatral*: diálogos escritos para ser actuados.",
+    "Y los *no literarios*: informan o explican, como la noticia o la enciclopedia."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "biblioteca",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "lect",
+       "e": "🧒",
+       "x": 960,
+       "y": 670,
+       "s": 180
+      }
+     ],
+     "txt": "Dentro de lo narrativo hay muchos mundos"
+    },
+    {
+     "acc": [
+      {
+       "pon": "a",
+       "e": "🐉",
+       "x": 640,
+       "y": 400,
+       "s": 120,
+       "etq": "maravilloso"
+      },
+      {
+       "pon": "b",
+       "e": "🚀",
+       "x": 960,
+       "y": 360,
+       "s": 120,
+       "etq": "ciencia ficción"
+      },
+      {
+       "pon": "c",
+       "e": "🔍",
+       "x": 1280,
+       "y": 400,
+       "s": 120,
+       "etq": "policial"
+      }
+     ],
+     "txt": "Magia, futuro, enigmas…"
+    },
+    {
+     "acc": [
+      {
+       "pon": "d",
+       "e": "👻",
+       "x": 700,
+       "y": 690,
+       "s": 110,
+       "etq": "terror"
+      },
+      {
+       "pon": "e",
+       "e": "🏫",
+       "x": 1220,
+       "y": 690,
+       "s": 110,
+       "etq": "realista"
+      }
+     ],
+     "txt": "…miedo, o la vida real"
+    }
+   ],
+   "voz": [
+    "Y dentro de las historias hay *muchos mundos*.",
+    "Con dragones y hechizos: *maravilloso*. Con naves y robots: *ciencia ficción*. Con un crimen y un detective: *policial*.",
+    "Para pasar miedo: *terror*. Y lo que podría pasarte a vos: *realista*."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "tabla",
+   "titulo": "HISTORIAS DE SIEMPRE",
+   "columnas": [
+    "Tipo",
+    "Qué tiene",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Mito",
+     "dioses y el origen del mundo",
+     "Prometeo y el fuego"
+    ],
+    [
+     "Leyenda",
+     "origen de algo, lugar real",
+     "la yerba mate"
+    ],
+    [
+     "Fábula",
+     "animales y moraleja",
+     "la liebre y la tortuga"
+    ],
+    [
+     "Cuento",
+     "ficción breve",
+     "un cuento de terror"
+    ]
+   ],
+   "voz": [
+    "Algunas historias vienen de muy lejos.",
+    "El *mito*: dioses y héroes que explican el origen del mundo.",
+    "La *leyenda*: explica el origen de algo, en un lugar real; como la leyenda de la yerba mate.",
+    "La *fábula*: animales que hablan y una *moraleja* al final.",
+    "Y el *cuento*: una ficción breve, de cualquier subgénero."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "voz": [
+    "¿A qué subgénero pertenece?",
+    "Un dragón y un hechizo: *maravilloso*.",
+    "Robots en Marte: *ciencia ficción*.",
+    "Un robo y un detective: *policial*.",
+    "Un fantasma en el sótano: *terror*."
+   ],
+   "cajas": [
+    {
+     "cab": "MARAVILLOSO",
+     "emoji": "🐉"
+    },
+    {
+     "cab": "CIENCIA FICCIÓN",
+     "emoji": "🚀"
+    },
+    {
+     "cab": "POLICIAL",
+     "emoji": "🔍"
+    },
+    {
+     "cab": "TERROR",
+     "emoji": "👻"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Dragón y hechizo",
+     "caja": 0
+    },
+    {
+     "txt": "Robots en Marte",
+     "caja": 1
+    },
+    {
+     "txt": "Robo y detective",
+     "caja": 2
+    },
+    {
+     "txt": "Fantasma en sótano",
+     "caja": 3
+    }
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: animales que hablan y, al final, *una enseñanza*. ¿Qué es?",
+    "¿Una fábula o una leyenda?",
+    "¡Una *fábula*! La enseñanza se llama moraleja."
+   ],
+   "pregunta": "Animales que hablan y una moraleja:",
+   "opciones": [
+    "Fábula",
+    "Leyenda"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "consejo",
+   "voz": [
+    "Truco: tené un género favorito, pero cada tanto *probá uno nuevo*. Muchos lectores descubren su libro preferido donde menos lo esperaban."
+   ],
+   "titulo": "PROBÁ UNO NUEVO",
+   "texto": "Tu próximo libro favorito puede estar en otro género",
+   "emoji": "🎲"
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Género*: una familia de textos.",
+    "*Familias*: narrativo, poético, teatral y no literario.",
+    "*Subgéneros*: maravilloso, ciencia ficción, policial, terror, realista.",
+    "Y las de siempre: *mito, leyenda y fábula*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "GÉNERO",
+     "familia de textos"
+    ],
+    [
+     "FAMILIAS",
+     "narrativo, poético, teatral"
+    ],
+    [
+     "SUBGÉNEROS",
+     "maravilloso, policial, terror…"
+    ],
+    [
+     "DE SIEMPRE",
+     "mito, leyenda, fábula"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

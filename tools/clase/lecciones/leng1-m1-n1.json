@@ -1,0 +1,304 @@
+{
+ "slug": "leng1-m1-n1",
+ "step_id": "766837fd-f800-48a1-b11f-57f3dc3c4e91",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Lo que ya sé como lector",
+ "sub": "Lengua y Literatura I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "lugar": "📦",
+   "lineas": [
+    "Ordenando la casa de su abuela, Juan encontró una caja llena de libros viejos.",
+    "Agarró uno sin ganas… y a las dos horas seguía leyendo.",
+    "Sin darse cuenta, usó todo lo que ya sabía para entenderlo."
+   ],
+   "titulo": "LO QUE YA SÉ",
+   "sub": "como lector",
+   "voz": [
+    "Ordenando la casa de su abuela, Juan encontró una caja llena de *libros viejos*.",
+    "Agarró uno sin ganas… y a las dos horas *seguía leyendo*.",
+    "Sin darse cuenta, usó un montón de cosas que *ya sabía* para entenderlo.",
+    "Hoy repasamos *lo que ya sabés como lector*."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "biblioteca",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "j",
+       "e": "🧒",
+       "x": 700,
+       "y": 660,
+       "s": 190
+      },
+      {
+       "pon": "lib",
+       "e": "📕",
+       "x": 1080,
+       "y": 690,
+       "s": 140
+      }
+     ],
+     "txt": "Antes de abrir el libro…"
+    },
+    {
+     "acc": [
+      {
+       "etq": "lib",
+       "txt": "tapa: título y autor"
+      }
+     ],
+     "txt": "…la tapa ya cuenta algo"
+    },
+    {
+     "acc": [
+      {
+       "dib": "texto",
+       "x": 1080,
+       "y": 340,
+       "s": "¿De qué tratará?",
+       "size": 44
+      }
+     ],
+     "txt": "Anticipar: imaginar de qué trata"
+    }
+   ],
+   "voz": [
+    "Antes de leer la primera palabra, ya podés averiguar mucho.",
+    "La *tapa* tiene el título, el autor y una imagen.",
+    "Con eso podés *anticipar*: imaginar de qué va a tratar."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Todo lo que rodea al texto se llama *paratexto*: tapa, contratapa, título, índice, imágenes.",
+    "Leerlo primero es como mirar el mapa antes de un viaje."
+   ],
+   "palabra": "Paratexto",
+   "texto": "Lo que acompaña al texto: tapa, contratapa, título, índice, imágenes",
+   "emoji": "📘"
+  },
+  {
+   "t": "pasos",
+   "titulo": "LEER EN TRES MOMENTOS",
+   "items": [
+    {
+     "txt": "Antes: anticipo con el paratexto",
+     "emoji": "🔮"
+    },
+    {
+     "txt": "Durante: me pregunto y deduzco",
+     "emoji": "🧐"
+    },
+    {
+     "txt": "Después: resumo y opino",
+     "emoji": "💬"
+    }
+   ],
+   "voz": [
+    "Un buen lector lee en *tres momentos*.",
+    "*Antes*: mira el paratexto y anticipa.",
+    "*Durante*: se hace preguntas y deduce lo que el texto no dice.",
+    "*Después*: resume con sus palabras y da su opinión."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "LA ESTRUCTURA DE UN RELATO",
+   "items": [
+    {
+     "txt": "Situación inicial",
+     "emoji": "🏠"
+    },
+    {
+     "txt": "Conflicto",
+     "emoji": "⚡"
+    },
+    {
+     "txt": "Desenlace",
+     "emoji": "🏁"
+    }
+   ],
+   "voz": [
+    "Casi todas las historias tienen tres partes. La *situación inicial*: quiénes son, dónde están, cómo viven.",
+    "El *conflicto*: algo pasa y rompe esa calma.",
+    "Y el *desenlace*: cómo se resuelve."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "jardin",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "t",
+       "e": "👦",
+       "x": 600,
+       "y": 700,
+       "s": 170
+      },
+      {
+       "pon": "p",
+       "e": "🐕",
+       "x": 860,
+       "y": 740,
+       "s": 130,
+       "etq": "situación inicial"
+      }
+     ],
+     "txt": "Tomi juega con su perro"
+    },
+    {
+     "acc": [
+      {
+       "mueve": "p",
+       "ruta": [
+        [
+         860,
+         740
+        ],
+        [
+         1300,
+         760
+        ],
+        [
+         1800,
+         760
+        ]
+       ],
+       "dur": 1.6
+      },
+      {
+       "etq": "t",
+       "txt": "conflicto"
+      }
+     ],
+     "txt": "¡El perro se escapa!"
+    },
+    {
+     "acc": [
+      {
+       "mueve": "p",
+       "ruta": [
+        [
+         1800,
+         760
+        ],
+        [
+         1000,
+         740
+        ]
+       ],
+       "dur": 1.4
+      },
+      {
+       "etq": "p",
+       "txt": "desenlace"
+      }
+     ],
+     "txt": "Lo encuentra en la plaza"
+    }
+   ],
+   "voz": [
+    "Un ejemplo. *Situación inicial*: Tomi juega en el patio con su perro.",
+    "*Conflicto*: se abre el portón y el perro sale corriendo.",
+    "*Desenlace*: después de buscarlo toda la tarde, lo encuentra en la plaza."
+   ]
+  },
+  {
+   "t": "comparar",
+   "voz": [
+    "¿Quién cuenta la historia? El *narrador*.",
+    "En *primera persona*, el narrador es un personaje: yo corrí, yo busqué.",
+    "En *tercera persona*, cuenta desde afuera: Tomi corrió, Tomi buscó."
+   ],
+   "a": {
+    "cab": "1.ª PERSONA",
+    "texto": "\"Yo busqué a mi perro\"",
+    "emoji": "🙋"
+   },
+   "b": {
+    "cab": "3.ª PERSONA",
+    "texto": "\"Tomi buscó a su perro\"",
+    "emoji": "👀"
+   },
+   "signo": "vs"
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca leer entre líneas: el perro volvió *con barro hasta las orejas*. ¿Dónde estuvo?",
+    "¿En un charco, o durmiendo en la cama?",
+    "¡En un *charco*! Eso es *inferir*: deducir lo que el texto no dice."
+   ],
+   "pregunta": "Volvió con barro hasta las orejas. ¿Dónde estuvo?",
+   "opciones": [
+    "En un charco",
+    "En la cama"
+   ],
+   "correcta": 0
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Empezar a leer *sin mirar* el paratexto.",
+    "Y confundir al *autor* con el *narrador*: el autor escribe; el narrador cuenta."
+   ],
+   "items": [
+    {
+     "mal": "Leer sin mirar la tapa",
+     "bien": "Anticipar primero"
+    },
+    {
+     "mal": "El autor es el narrador",
+     "bien": "El narrador cuenta"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Paratexto*: tapa, título, índice.",
+    "Leer en *tres momentos*: antes, durante y después.",
+    "*Estructura*: situación inicial, conflicto y desenlace.",
+    "Y el *narrador*, en primera o tercera persona.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARATEXTO",
+     "tapa, título, índice"
+    ],
+    [
+     "3 MOMENTOS",
+     "antes, durante, después"
+    ],
+    [
+     "ESTRUCTURA",
+     "inicio, conflicto, desenlace"
+    ],
+    [
+     "NARRADOR",
+     "1.ª o 3.ª persona"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

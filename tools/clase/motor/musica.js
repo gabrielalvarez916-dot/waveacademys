@@ -16,6 +16,7 @@ var MUSICA = (function () {
     bateria: rnd() < .75, hats: rnd() < .6
   };
   if (/natural|biolog/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 62 + Math.floor(rnd() * 14); est.pad = 'sine'; est.arpa = elegir(['sine', 'triangle']); est.bateria = false; est.hats = false; est.raiz += 5; } // Naturales: más calma, sin batería
+  else if (/lengua|literatura/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 68 + Math.floor(rnd() * 14); est.pad = 'triangle'; est.arpa = 'sine'; est.bateria = false; est.hats = rnd() < .4; est.prog = elegir([PROG[1], PROG[3], PROG[5]]); } // Lengua: tipo piano, íntima
 
   var ctx = null, maestro = null, sonando = false, silencio = false, prox = 0, paso = 0, timer = null, VOL = .12, VOL_VOZ = .045;
   function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }

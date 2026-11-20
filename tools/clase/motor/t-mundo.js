@@ -1,5 +1,5 @@
 /* PLANTILLA MUNDO: escenas vivas para Ciencias (escenario dibujado + objetos que se mueven + cámara que entra).
-   {t:'mundo', fondo:'jardin'|'suelo'|'lab'|'espacio'|'agua'|'celula'|'cielo', entrada:'zoom' (opcional, la cámara "cae" en la escena),
+   {t:'mundo', fondo:'jardin'|'suelo'|'lab'|'biblioteca'|'espacio'|'agua'|'celula'|'cielo', entrada:'zoom' (opcional, la cámara "cae" en la escena),
     tuneles:[[[x,y],...],...], camaras:[{x,y,rx,ry}] (para 'suelo'),
     pasos:[{acc:[...], txt}]}  — n = pasos. Coordenadas del escenario: 1920 × 1080.
    Acciones: {pon:id, e:'🐜', x, y, s:90, etq}  {mueve:id, ruta:[[x,y],...], dur, loop}  {etq:id, txt}  {late:id}  {crece:id, s}  {sale:id}
@@ -27,6 +27,13 @@
       (d.camaras || []).forEach(function (c) { el('ellipse', { cx: c.x, cy: c.y, rx: c.rx + 8, ry: c.ry + 8, fill: '#2e1b0d' }, g); el('ellipse', { cx: c.x, cy: c.y, rx: c.rx, ry: c.ry, fill: '#3d2512' }, g); }); },
     lab: function (g, d) { var k = 'm' + (uid++);
       el('rect', { x: 0, y: 0, width: 1920, height: 1080, fill: grad(g, k + 'w', [[0, '#e9f3ee'], [1, '#cfe3d9']]) }, g);
+      el('rect', { x: 0, y: 760, width: 1920, height: 40, fill: '#9c7550' }, g); el('rect', { x: 0, y: 800, width: 1920, height: 280, fill: grad(g, k + 'm', [[0, '#7a5a3c'], [1, '#5a4029']]) }, g); },
+    biblioteca: function (g, d) { var k = 'm' + (uid++), COL = ['#c0504d', '#4f81bd', '#9bbb59', '#8064a2', '#f2a541', '#4bacc6', '#d99694', '#6a8d73'];
+      el('rect', { x: 0, y: 0, width: 1920, height: 1080, fill: grad(g, k + 'w', [[0, '#f3ece2'], [1, '#e4d6c3']]) }, g);
+      [[40, 440], [1480, 440]].forEach(function (m, q) { el('rect', { x: m[0], y: 150, width: m[1] - 40, height: 610, rx: 10, fill: '#7a5636' }, g);
+        for (var f = 0; f < 4; f++) { var y0 = 170 + f * 148; el('rect', { x: m[0] + 16, y: y0, width: m[1] - 72, height: 128, fill: '#5a3c22' }, g);
+          for (var x = m[0] + 24, i = 0; x < m[0] + m[1] - 70; i++) { var w2 = 22 + ((i * 7 + f * 5 + q * 3) % 4) * 6, h2 = 92 + ((i * 11 + f * 3) % 4) * 9;
+            el('rect', { x: x, y: y0 + 128 - h2, width: w2, height: h2, rx: 3, fill: COL[(i * 3 + f + q * 2) % COL.length] }, g); x += w2 + 4; } } });
       el('rect', { x: 0, y: 760, width: 1920, height: 40, fill: '#9c7550' }, g); el('rect', { x: 0, y: 800, width: 1920, height: 280, fill: grad(g, k + 'm', [[0, '#7a5a3c'], [1, '#5a4029']]) }, g); },
     espacio: function (g, d) { el('rect', { x: 0, y: 0, width: 1920, height: 1080, fill: '#050818' }, g);
       for (var i = 0; i < 160; i++) el('circle', { cx: (i * 389) % 1920, cy: (i * 211) % 1080, r: (i % 5) / 2 + .6, fill: '#fff', opacity: .3 + (i % 7) / 10 }, g); },

@@ -21,10 +21,15 @@ TEMAS = {
     'naturales': {'#050f10': '#081208', '#17585a': '#2e6a35', '#0c292b': '#12301a', '#1d474a': '#25492b', '#132f31': '#17331d',
                   '#a7efe2': '#c9f2a6', '#5fc2b2': '#7dc95d', '#7FD3C4': '#9BE07A', '#9be8da': '#c3f0a0', '#3e9488': '#4f8f37',
                   '#06282a': '#14300c', '#d8fff7': '#efffdc', '#2c5a5e': '#3c6a3a', '#9dbdb9': '#b2c9a8', '#eaf7f4': '#f3fbe9', 'rgba(5,15,16': 'rgba(8,20,8'},
+    'lengua': {'#050f10': '#0e0a1a', '#17585a': '#4a3480', '#0c292b': '#1d1433', '#1d474a': '#3a2a63', '#132f31': '#241a40',
+               '#a7efe2': '#e0d2ff', '#5fc2b2': '#a98bff', '#7FD3C4': '#C3A8FF', '#9be8da': '#d6c4ff', '#3e9488': '#7458c4',
+               '#06282a': '#1a1030', '#d8fff7': '#f1eaff', '#2c5a5e': '#4b3c74', '#9dbdb9': '#bdb2d6', '#eaf7f4': '#f5f1fc', '#14300c': '#241a40', 'rgba(5,15,16': 'rgba(14,10,26'},
 }
 def tema_de(materia):
     m = (materia or '').lower()
-    return TEMAS['naturales'] if ('natural' in m or 'biolog' in m) else None
+    if 'natural' in m or 'biolog' in m: return TEMAS['naturales']
+    if 'lengua' in m or 'literatura' in m: return TEMAS['lengua']
+    return None
 
 pedidas = sys.argv[1:]
 for path in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json'))) + (sorted(glob.glob(os.path.join(AQUI, 'pruebas', '*.json'))) if pedidas else []):

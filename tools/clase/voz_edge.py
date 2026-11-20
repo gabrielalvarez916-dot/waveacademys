@@ -81,12 +81,15 @@ def frases(L):
     return [[limpio(x) for x in e['voz']] for e in L['escenas']]
 
 
-VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural'}  # cada materia con su voz (Matemática: Jorge)
+VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural', 'lengua': 'es-AR-TomasNeural'}  # cada materia con su voz (Matemática: Jorge)
 
 
 def voz_de(L):
     m = (L.get('materia') or '').lower()
-    return L.get('voz') or (VOZ_MATERIA['naturales'] if ('natural' in m or 'biolog' in m) else VOZ)
+    if L.get('voz'): return L['voz']
+    if 'natural' in m or 'biolog' in m: return VOZ_MATERIA['naturales']
+    if 'lengua' in m or 'literatura' in m: return VOZ_MATERIA['lengua']
+    return VOZ
 
 
 async def tts(texto, voz=None):

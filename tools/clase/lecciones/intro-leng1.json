@@ -1,0 +1,219 @@
+{
+ "slug": "intro-leng1",
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Bienvenido a Lengua y Literatura",
+ "sub": "Introducción · Nivel avanzado",
+ "escenas": [
+  {
+   "t": "mundo",
+   "fondo": "biblioteca",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "l",
+       "e": "📖",
+       "x": 960,
+       "y": 600,
+       "s": 240
+      }
+     ],
+     "txt": "Un libro cerrado no dice nada…"
+    },
+    {
+     "acc": [
+      {
+       "pon": "a",
+       "e": "🐉",
+       "x": 640,
+       "y": 420,
+       "s": 110
+      },
+      {
+       "pon": "b",
+       "e": "🏰",
+       "x": 960,
+       "y": 330,
+       "s": 120
+      },
+      {
+       "pon": "c",
+       "e": "🕵️",
+       "x": 1280,
+       "y": 420,
+       "s": 110
+      },
+      {
+       "mueve": "a",
+       "ruta": [
+        [
+         640,
+         420
+        ],
+        [
+         700,
+         360
+        ],
+        [
+         620,
+         300
+        ],
+        [
+         640,
+         420
+        ]
+       ],
+       "dur": 4,
+       "loop": true
+      }
+     ],
+     "txt": "…hasta que lo abrís"
+    },
+    {
+     "acc": [
+      {
+       "zoom": [
+        960,
+        600,
+        1.8
+       ]
+      }
+     ],
+     "txt": "Entrá"
+    }
+   ],
+   "voz": [
+    "Un libro cerrado es solo papel.",
+    "Pero cuando lo abrís, aparecen *castillos, dragones, detectives*… mundos enteros.",
+    "Bienvenido a *Lengua y Literatura*. Entrá."
+   ],
+   "entrada": "zoom"
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Las palabras están en todos lados",
+    "emoji": "💬"
+   },
+   "items": [
+    {
+     "txt": "Tus chats",
+     "emoji": "📱"
+    },
+    {
+     "txt": "Series y canciones",
+     "emoji": "🎧"
+    },
+    {
+     "txt": "Un reclamo o un mail",
+     "emoji": "✉️"
+    },
+    {
+     "txt": "Defender tu opinión",
+     "emoji": "🗣️"
+    }
+   ],
+   "voz": [
+    "Y no es solo leer libros: las palabras están *en todos lados*.",
+    "En tus *chats*.",
+    "En las *series y canciones* que te gustan.",
+    "En un *mail* o un reclamo que tenés que escribir bien.",
+    "Y cuando querés *defender tu opinión* y que te escuchen."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 20 MISIONES",
+   "eventos": [
+    {
+     "fecha": "Misión 1-4",
+     "txt": "Leer, narrar y la oración",
+     "emoji": "📖"
+    },
+    {
+     "fecha": "5-9",
+     "txt": "Exponer, describir y un clásico",
+     "emoji": "👻"
+    },
+    {
+     "fecha": "10-14",
+     "txt": "Cartas, poesía y argumentar",
+     "emoji": "✉️"
+    },
+    {
+     "fecha": "15-19",
+     "txt": "Noticia, teatro e investigar",
+     "emoji": "🎭"
+    },
+    {
+     "fecha": "20",
+     "txt": "El libro de tu año",
+     "emoji": "🏆"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *20 misiones*. Arrancás repasando cómo leés, el *cuento policial*, cómo narrar y la *oración*.",
+    "Después, textos que explican, la descripción y un clásico: *El fantasma de Canterville*.",
+    "Siguen las *cartas y los mails*, la *poesía* y cómo *argumentar* una opinión.",
+    "Después, la *noticia*, el *teatro*, y cómo buscar y citar información.",
+    "Y cerrás armando *el libro de tu año*, con tus mejores textos."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE JUEGA CADA NIVEL",
+   "items": [
+    {
+     "txt": "Mirá la clase animada",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Leé el PDF con tu carpeta",
+     "emoji": "📄"
+    },
+    {
+     "txt": "Resolvé las consignas y entregalas",
+     "emoji": "✏️"
+    },
+    {
+     "txt": "Practicá con las actividades",
+     "emoji": "🧩"
+    }
+   ],
+   "voz": [
+    "¿Cómo se juega? Cada misión tiene *niveles*, y cada nivel tiene cuatro pasos.",
+    "Primero mirás una *clase animada*, como esta.",
+    "Después leés el *PDF*, con tu carpeta al lado.",
+    "Resolvés las consignas y las *entregás*.",
+    "Y practicás con *actividades* para sumar puntos."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión te espera el NIVEL JEFE",
+   "emoji": "👑",
+   "color": "#F4B63F",
+   "voz": [
+    "Y al final de cada misión te espera el *nivel jefe*: el desafío para pasar a la siguiente."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Leé todos los días, aunque sean diez minutos",
+   "emoji": "📚",
+   "voz": [
+    "Un consejo: *leé todos los días*, aunque sean diez minutos. Así se forma un gran lector."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Misión 1: volver a leer. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listo? Tu primera misión te espera: *volver a leer*. ¡Vamos!"
+   ]
+  }
+ ]
+}

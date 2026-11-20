@@ -1,0 +1,300 @@
+{
+ "slug": "leng1-m1-n3",
+ "step_id": "2c60844b-9366-4fd2-9030-09182b5a8160",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escribo mi punto de partida",
+ "sub": "Lengua y Literatura I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántas oraciones hay? \"Llegué tarde. Llovía y perdí el colectivo.\"",
+   "segundos": 5,
+   "respuesta": "Dos",
+   "emoji": "✍️",
+   "titulo": "ESCRIBIR",
+   "sub": "mi punto de partida",
+   "voz": [
+    "Desafío: ¿cuántas oraciones hay en: llegué tarde. Llovía y perdí el colectivo? 5 segundos.",
+    "¡*Dos*! Cada oración empieza con mayúscula y termina en punto.",
+    "Hoy: *escribo mi punto de partida*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "ESCRIBIR ES UN PROCESO",
+   "items": [
+    {
+     "txt": "Planificar",
+     "emoji": "🗒️"
+    },
+    {
+     "txt": "Escribir el borrador",
+     "emoji": "✍️"
+    },
+    {
+     "txt": "Revisar",
+     "emoji": "🔍"
+    },
+    {
+     "txt": "Pasar en limpio",
+     "emoji": "📄"
+    }
+   ],
+   "voz": [
+    "Nadie escribe bien de una. Escribir es un *proceso*.",
+    "*Planificar*: qué quiero decir y en qué orden.",
+    "Escribir un *borrador*, sin miedo a equivocarme.",
+    "*Revisar*: leer, corregir, mejorar.",
+    "Y *pasar en limpio*. Si hace falta, se vuelve a empezar."
+   ]
+  },
+  {
+   "t": "mundo",
+   "fondo": "biblioteca",
+   "pasos": [
+    {
+     "acc": [
+      {
+       "pon": "e",
+       "e": "🧑‍🎓",
+       "x": 760,
+       "y": 660,
+       "s": 190
+      },
+      {
+       "pon": "h",
+       "e": "📝",
+       "x": 1080,
+       "y": 700,
+       "s": 120,
+       "etq": "borrador"
+      }
+     ],
+     "txt": "Primer borrador"
+    },
+    {
+     "acc": [
+      {
+       "pon": "b",
+       "e": "🗑️",
+       "x": 1320,
+       "y": 700,
+       "s": 110
+      },
+      {
+       "mueve": "h",
+       "ruta": [
+        [
+         1080,
+         700
+        ],
+        [
+         1320,
+         640
+        ]
+       ],
+       "dur": 0.8
+      },
+      {
+       "sale": "h"
+      }
+     ],
+     "txt": "No quedó bien… ¡se corrige!"
+    },
+    {
+     "acc": [
+      {
+       "pon": "h2",
+       "e": "📄",
+       "x": 1080,
+       "y": 700,
+       "s": 120,
+       "etq": "versión final"
+      },
+      {
+       "dib": "texto",
+       "x": 1080,
+       "y": 440,
+       "s": "✔ revisado",
+       "size": 44
+      }
+     ],
+     "txt": "La versión final, mucho mejor"
+    }
+   ],
+   "voz": [
+    "Sofi escribe su *primer borrador*.",
+    "Lo relee… y no la convence. No pasa nada: *se corrige*.",
+    "La segunda versión queda mucho mejor. Así escriben todos, hasta los escritores famosos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "Las ideas se ordenan en *párrafos*: cada párrafo desarrolla *una idea*.",
+    "Empieza con mayúscula, en otro renglón, y termina con punto y aparte."
+   ],
+   "palabra": "Párrafo",
+   "texto": "Grupo de oraciones sobre una misma idea; termina en punto y aparte",
+   "emoji": "📑"
+  },
+  {
+   "t": "bloques",
+   "titulo": "CONECTORES QUE UNEN IDEAS",
+   "items": [
+    {
+     "cab": "SUMAR",
+     "txt": "y, también, además"
+    },
+    {
+     "cab": "OPONER",
+     "txt": "pero, sin embargo"
+    },
+    {
+     "cab": "CAUSA",
+     "txt": "porque, ya que"
+    },
+    {
+     "cab": "CONSECUENCIA",
+     "txt": "entonces, por eso"
+    }
+   ],
+   "voz": [
+    "Para unir ideas usamos *conectores*.",
+    "Para *sumar*: y, también, además.",
+    "Para *oponer*: pero, sin embargo.",
+    "Para dar una *causa*: porque, ya que.",
+    "Para una *consecuencia*: entonces, por eso."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "Leo poco, pero quiero leer más.",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 1,
+     "etiqueta": "cómo soy hoy",
+     "color": "#C3A8FF"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "conector",
+     "color": "#F4B63F"
+    },
+    {
+     "desde": 3,
+     "hasta": 5,
+     "etiqueta": "lo que quiero",
+     "color": "#8be38f"
+    }
+   ],
+   "voz": [
+    "Mirá esta oración de un texto de punto de partida.",
+    "*Leo poco*: cómo soy hoy como lector.",
+    "*Pero*: el conector que opone las dos ideas.",
+    "*Quiero leer más*: lo que quiero lograr este año."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "MI TEXTO DE PUNTO DE PARTIDA",
+   "items": [
+    {
+     "txt": "Quién soy como lector",
+     "emoji": "🙋"
+    },
+    {
+     "txt": "Un libro que me gustó y por qué",
+     "emoji": "❤️"
+    },
+    {
+     "txt": "Qué me cuesta al leer o escribir",
+     "emoji": "🧗"
+    },
+    {
+     "txt": "Qué quiero lograr este año",
+     "emoji": "🎯"
+    }
+   ],
+   "voz": [
+    "Tu texto de punto de partida tiene *cuatro párrafos*.",
+    "Uno: *quién sos* como lector.",
+    "Dos: un libro o una historia que *te gustó*, y por qué.",
+    "Tres: qué te *cuesta* al leer o al escribir.",
+    "Cuatro: qué querés *lograr* este año."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "voz": [
+    "Te toca: me gusta leer, ___ no tengo mucho tiempo. ¿Qué conector va?",
+    "¿Porque o pero?",
+    "¡*Pero*! Las dos ideas se oponen."
+   ],
+   "pregunta": "Me gusta leer, ___ no tengo mucho tiempo.",
+   "opciones": [
+    "porque",
+    "pero"
+   ],
+   "correcta": 1
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Escribir oraciones *larguísimas*, sin un solo punto.",
+    "Empezar *sin mayúscula*.",
+    "Y repetir *y entonces, y entonces*: mejor variar los conectores."
+   ],
+   "items": [
+    {
+     "mal": "Todo en una oración",
+     "bien": "Oraciones cortas"
+    },
+    {
+     "mal": "empezar en minúscula",
+     "bien": "Mayúscula inicial"
+    },
+    {
+     "mal": "y entonces, y entonces",
+     "bien": "Variar conectores"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Escribir es un *proceso*: planificar, escribir y revisar.",
+    "Cada *párrafo*, una idea.",
+    "Los *conectores* unen ideas.",
+    "Y tu *punto de partida*: cuatro párrafos sobre vos como lector.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PROCESO",
+     "planificar, escribir, revisar"
+    ],
+    [
+     "PÁRRAFO",
+     "una idea, punto y aparte"
+    ],
+    [
+     "CONECTORES",
+     "y, pero, porque, por eso"
+    ],
+    [
+     "MI TEXTO",
+     "4 párrafos sobre mí"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
