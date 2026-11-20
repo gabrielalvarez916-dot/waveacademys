@@ -15,7 +15,7 @@ const cors = {
 const json = (b: unknown, s = 200) =>
   new Response(JSON.stringify(b), { status: s, headers: { ...cors, "content-type": "application/json" } });
 
-const NIVEL = { inicial: "Inicial", medio: "Primaria", avanzado: "Secundaria" } as Record<string, string>;
+const NIVEL = { inicial: "Nivel Inicial", medio: "Nivel Medio", avanzado: "Nivel Avanzado" } as Record<string, string>;
 const MODALIDAD = { libre: "Libre", guiada: "Guiada", completa: "Completa", personalizada: "Personalizada" } as Record<string, string>;
 
 Deno.serve(async (req) => {
