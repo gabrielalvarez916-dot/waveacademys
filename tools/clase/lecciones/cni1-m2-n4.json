@@ -326,13 +326,14 @@
    "t": "pregunta",
    "voz": [
     "Te toca: ¿cómo se escribe *cinco mil* en notación científica?",
-    "¿Cinco por diez a la tres, o cinco por diez a la menos tres?",
-    "¡*Cinco por diez a la tres*! Es un número grande: exponente positivo."
+    "¿Cinco por diez a la tres, cinco por diez a la menos tres, o cincuenta por diez a la dos?",
+    "¡*Cinco por diez a la tres*! Es un número grande: exponente positivo. Y cincuenta por diez a la dos vale lo mismo, pero no es notación científica: el número de adelante tiene que estar entre uno y diez."
    ],
    "pregunta": "5000 en notación científica:",
    "opciones": [
     "5 × 10³",
-    "5 × 10⁻³"
+    "5 × 10⁻³",
+    "50 × 10²"
    ],
    "correcta": 0
   },

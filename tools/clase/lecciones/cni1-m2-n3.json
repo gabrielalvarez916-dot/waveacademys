@@ -152,13 +152,14 @@
    "t": "pregunta",
    "voz": [
     "Te toca: ¿qué medición es más confiable?",
-    "¿Una sola, o el promedio de cinco?",
+    "¿Una sola medida, el promedio de cinco, o la medida más alta?",
     "¡El *promedio de cinco*! Repetir achica la duda."
    ],
    "pregunta": "¿Qué es más confiable?",
    "opciones": [
     "Una sola medida",
-    "Promedio de cinco"
+    "Promedio de cinco",
+    "La medida más alta"
    ],
    "correcta": 1
   },

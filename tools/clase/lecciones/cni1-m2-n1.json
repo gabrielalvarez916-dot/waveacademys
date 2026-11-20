@@ -248,13 +248,14 @@
    "t": "pregunta",
    "voz": [
     "Te toca: querés saber cuánto *pesa* una piedra. ¿Qué usás?",
-    "¿Probeta o balanza?",
+    "¿Probeta, balanza o termómetro?",
     "¡La *balanza*! La masa se mide en gramos."
    ],
    "pregunta": "¿Con qué medís la masa de una piedra?",
    "opciones": [
     "Probeta",
-    "Balanza"
+    "Balanza",
+    "Termómetro"
    ],
    "correcta": 1
   },

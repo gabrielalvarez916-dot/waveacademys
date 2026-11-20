@@ -225,13 +225,14 @@
    "t": "pregunta",
    "voz": [
     "Te toca: una etiqueta tiene una *llama*. ¿Qué no podés hacer?",
-    "¿Acercarla al mechero o guardarla cerrada?",
+    "¿Acercarla al mechero, guardarla cerrada, o leer la etiqueta antes de usarla?",
     "¡No acercarla al fuego! Es *inflamable*."
    ],
    "pregunta": "Etiqueta con llama: ¿qué está prohibido?",
    "opciones": [
     "Acercarla al mechero",
-    "Guardarla cerrada"
+    "Guardarla cerrada",
+    "Leer la etiqueta antes de usarla"
    ],
    "correcta": 0
   },

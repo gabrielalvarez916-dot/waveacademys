@@ -224,13 +224,14 @@
    "t": "pregunta",
    "voz": [
     "Te toca: mirando el gráfico, ¿cuándo se enfrió *más rápido* el té?",
-    "¿Al principio o al final?",
+    "¿Al principio, al final, o siempre a la misma velocidad?",
     "¡*Al principio*! La línea baja más empinada."
    ],
    "pregunta": "¿Cuándo se enfrió más rápido?",
    "opciones": [
     "Al principio",
-    "Al final"
+    "Al final",
+    "A velocidad pareja"
    ],
    "correcta": 0
   },

@@ -103,3 +103,10 @@ Si la explicación habla de **las partes de algo** (un libro, una célula, una p
 
 
 **Formato simple (decidido):** en todas las materias, `mundo` solo con `fondo:'nada'`, sin zoom ni movimientos; para Naturales preferir `experimento`, `medidor`, `partes`, `ciclo`, `molecula`.
+
+## Antes de subir una misión (controles automáticos, sin capturas)
+
+1. `python3 tools/clase/armar.py <slugs>`
+2. `python3 tools/clase/revisar_contenido.py <slugs> --mision contenido/<materia>/mision-N/mision-N.json` — meses, formato simple, fichas, opciones, años, pronunciación, escritura en Lengua.
+3. `python3 tools/clase/revisar_pantalla.py <slugs>` — textos que se salen o se pisan (solo los slugs nuevos: ~20 s por misión).
+Si alguno marca algo, se corrige antes de subir.

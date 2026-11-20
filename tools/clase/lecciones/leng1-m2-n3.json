@@ -21,7 +21,7 @@
   },
   {
    "t": "mundo",
-   "fondo": "suelo",
+   "fondo": "nada",
    "tuneles": [
     [
      [
@@ -74,6 +74,27 @@
        "y": 240,
        "s": 160,
        "etq": "banco"
+      },
+      {
+       "dib": "rect",
+       "x": 200,
+       "y": 330,
+       "w": 1520,
+       "h": 8,
+       "fill": "#5daa45",
+       "color": "#5daa45",
+       "r": 2
+      },
+      {
+       "dib": "flecha",
+       "de": [
+        470,
+        430
+       ],
+       "a": [
+        1430,
+        470
+       ]
       }
      ],
      "txt": "La casa de Wilson y, detrás, el banco"
@@ -87,20 +108,6 @@
        "y": 430,
        "s": 90,
        "etq": "cavando"
-      },
-      {
-       "mueve": "cl",
-       "ruta": [
-        [
-         470,
-         640
-        ],
-        [
-         1100,
-         640
-        ]
-       ],
-       "dur": 2.2
       }
      ],
      "txt": "Desde el sótano, cavaban un túnel"
