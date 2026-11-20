@@ -14,6 +14,18 @@ def IMG(t, pie, desc, b64): return {"tipo":"imagen","imagen_tipo":"diagrama","ti
 LEC="Leé el cuento «La liga de los pelirrojos», de Arthur Conan Doyle (está en la biblioteca de la plataforma o en cualquier edición de Las aventuras de Sherlock Holmes)."
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
+
+from matplotlib.patches import Rectangle, Ellipse
+def fig_tunel():
+    fig, ax = plt.subplots(figsize=(7, 3)); ax.axis("off"); ax.set_xlim(0, 14); ax.set_ylim(0, 6)
+    ax.add_patch(Rectangle((0, 4.2), 14, 1.8, color="#d8f0ff")); ax.add_patch(Rectangle((0, 0), 14, 4.2, color="#8a5a35")); ax.add_patch(Rectangle((0, 4.0), 14, .25, color="#5daa45"))
+    ax.add_patch(Rectangle((1.5, 4.25), 2.6, 1.4, color="#e9d5b0", ec=O)); ax.text(2.8, 5.0, "Casa de\nWilson", ha="center", va="center", fontsize=8, color=O)
+    ax.add_patch(Rectangle((9.6, 4.25), 3.2, 1.5, color="#c9d3df", ec=O)); ax.text(11.2, 5.0, "Banco", ha="center", va="center", fontsize=9, color=O, weight="bold")
+    ax.add_patch(Ellipse((2.8, 3.3), 2.4, 1.0, color="#3d2512")); ax.text(2.8, 3.3, "sótano", ha="center", va="center", color="white", fontsize=8)
+    ax.add_patch(Ellipse((11.2, 3.0), 2.8, 1.2, color="#3d2512")); ax.text(11.2, 3.0, "bóveda (oro)", ha="center", va="center", color="#f4b63f", fontsize=8, weight="bold")
+    ax.plot([2.8, 2.8, 11.2, 11.2], [2.8, 1.2, 1.2, 2.4], color="#2e1b0d", lw=10, solid_capstyle="round"); ax.text(7, 0.55, "túnel cavado por John Clay", ha="center", color="white", fontsize=9, weight="bold")
+    return png(fig)
+
 N1=NV("Vas a reconocer el cuento policial, sus personajes y el método de Sherlock Holmes.",["El cuento policial","Los personajes","El método de Holmes"],[
  S(1,"El cuento policial",[D("Cuento policial","Relato con un <b>enigma</b> (un misterio) que un <b>detective</b> resuelve."),P(LEC)]),
  S(1,"Los personajes",[T("Personajes",["Rol","En el cuento"],[["Detective","Sherlock Holmes"],["Ayudante y narrador","El doctor Watson"],["Cliente","Jabez Wilson, prestamista pelirrojo"],["Culpable","John Clay"]])]),
@@ -43,7 +55,7 @@ N2=NV("Vas a distinguir pistas de falsas pistas en «La liga de los pelirrojos»
  [["4","cuatro"],["8","ocho"],["sotano","sótano","en el sotano","en el sótano"],["distraccion","distracción","una distraccion","una distracción","falsa pista"]],
  {"incompleto":"Falsa. Rodillas.","solo":"Respuesta personal: nombrá la pista y qué sugiere.","carpeta":["Cuatro.","Ocho.","En el sótano.","Una distracción."]})
 N3=NV("Vas a reconstruir el caso uniendo las pistas y reconocer las dos historias del policial.",["Unir pistas","Las dos historias","La revelación"],[
- S(1,"Unir pistas",[E("La deducción de Holmes","Holmes visita la casa de Wilson.",["Golpea la vereda con el bastón: busca un hueco.","Mira las rodillas del ayudante: gastadas de excavar.","Ve que detrás está el banco.","Deduce: un túnel hasta la bóveda del banco."])]),
+ S(1,"Unir pistas",[E("La deducción de Holmes","Holmes visita la casa de Wilson.",["Golpea la vereda con el bastón: busca un hueco.","Mira las rodillas del ayudante: gastadas de excavar.","Ve que detrás está el banco.","Deduce: un túnel hasta la bóveda del banco."]),IMG("El plan de los ladrones","Del sótano de Wilson a la bóveda del banco.","Corte del terreno: la casa de Wilson con su sótano, un túnel bajo tierra y la bóveda del banco con oro.",fig_tunel())]),
  S(1,"Las dos historias",[T("Dos historias",["Historia","Qué cuenta"],[["Del crimen","Clay cava un túnel para robar el oro del banco"],["De la investigación","Holmes reúne pistas y lo descubre"]])]),
  S(2,"La revelación",[P("Holmes, Watson y la policía esperan de noche en la bóveda del banco. Atrapan a <b>John Clay</b>, el falso ayudante, cuando sale del túnel. Después Holmes explica cómo lo dedujo: esa es la <b>revelación</b>.")])],
  {"titulo":"ordenar","planteo":"Ordená la deducción de Holmes.","pasos":["El ayudante pasa horas en el sótano.","Tiene las rodillas gastadas.","El banco está detrás de la casa.","Conclusión: un túnel al banco."]},

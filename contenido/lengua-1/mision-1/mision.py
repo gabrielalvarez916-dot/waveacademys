@@ -11,10 +11,40 @@ def png(fig):
     b = io.BytesIO(); fig.savefig(b, format="png", dpi=110, bbox_inches="tight", facecolor="white"); plt.close(fig)
     im = Image.open(io.BytesIO(b.getvalue())).convert("RGB").quantize(colors=16); o = io.BytesIO(); im.save(o, format="PNG", optimize=True); return base64.b64encode(o.getvalue()).decode()
 def IMG(t, pie, desc, b64): return {"tipo":"imagen","imagen_tipo":"diagrama","titulo":t,"texto":pie,"imagen_descripcion":desc,"imagen_fuente":"Dibujo propio (matplotlib).","png_base64":b64}
+
+from matplotlib.patches import Rectangle, Polygon
+def fig_libro():
+    fig, ax = plt.subplots(figsize=(7.2, 3.3)); ax.axis("off"); ax.set_xlim(0, 14.4); ax.set_ylim(-1.4, 6)
+    ax.add_patch(Rectangle((0.2, 0), 4, 5.6, color="#5b3f8c")); [ax.plot([0.6, 3.8 if i < 7 else 2.4], [4.8 - i*.5]*2, color="#d6c4ff", lw=3) for i in range(8)]
+    ax.add_patch(Rectangle((4.3, 0), 0.7, 5.6, color="#3f2a66")); ax.text(4.65, 2.8, "EL FARO DE LOS GATOS", rotation=90, ha="center", va="center", color="white", fontsize=6)
+    ax.add_patch(Rectangle((5.1, 0), 4, 5.6, color="#7458c4")); ax.text(7.1, 4.8, "El faro de\nlos gatos", ha="center", va="center", color="white", fontsize=12, weight="bold"); ax.text(7.1, 1.1, "Ana Ríos", ha="center", color="white", fontsize=10); ax.text(7.1, 0.5, "Brújula", ha="center", color="#d6c4ff", fontsize=8)
+    ax.add_patch(Rectangle((9.6, 0), 4.3, 5.6, facecolor="white", edgecolor="#bdb2d6")); ax.text(11.75, 5, "ÍNDICE", ha="center", fontsize=10, weight="bold", color=O)
+    for i in range(5): ax.text(9.9, 4.2 - i*.75, f"{i+1}. ............", fontsize=8, color=O); ax.text(13.6, 4.2 - i*.75, str(5+i*12), fontsize=8, color=O, ha="right")
+    for x, t in ((2.2, "Contratapa:\nde qué trata"), (4.65, "Lomo"), (7.1, "Tapa: título,\nautor, editorial"), (11.75, "Índice:\nlos capítulos")):
+        ax.text(x, -0.75, t, ha="center", va="center", fontsize=8.5, color=V, weight="bold")
+    return png(fig)
+def fig_parrafo():
+    fig, ax = plt.subplots(figsize=(7, 2.4)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(0, 4)
+    ax.add_patch(Rectangle((0.1, 1.1), 9.8, 2.8, facecolor="#fbf8ff", edgecolor="#bdb2d6"))
+    L = ["      Leo poco. Me cuesta concentrarme.", "Pero este año quiero leer más novelas,", "sobre todo de misterio."]
+    for i, t in enumerate(L): ax.text(0.4, 3.4 - i*.8, t, fontsize=11, color=O, family="DejaVu Sans")
+    ax.annotate("sangría", xy=(0.7, 3.35), xytext=(0.6, 0.4), color=V, fontsize=8.5, weight="bold", arrowprops=dict(arrowstyle="->", color=V))
+    ax.annotate("mayúscula", xy=(1.15, 3.35), xytext=(2.0, 0.4), color=V, fontsize=8.5, weight="bold", arrowprops=dict(arrowstyle="->", color=V))
+    ax.annotate("punto seguido", xy=(2.65, 3.3), xytext=(3.8, 0.4), color=V, fontsize=8.5, weight="bold", arrowprops=dict(arrowstyle="->", color=V))
+    ax.annotate("punto y aparte", xy=(3.75, 1.7), xytext=(6.6, 0.4), color=V, fontsize=8.5, weight="bold", arrowprops=dict(arrowstyle="->", color=V))
+    return png(fig)
+def fig_ficha():
+    fig, ax = plt.subplots(figsize=(5.2, 2.6)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(0, 5)
+    ax.add_patch(Rectangle((0.2, 0.2), 9.6, 4.6, facecolor="#fffbea", edgecolor="#e6d38a", lw=2)); ax.add_patch(Rectangle((0.2, 4.0), 9.6, 0.8, color="#f4b63f"))
+    ax.text(5, 4.4, "FICHA BIBLIOGRÁFICA", ha="center", va="center", fontsize=10, weight="bold", color="#3a2a10")
+    for i, (a, b) in enumerate((("Autor:", "Ríos, Ana"), ("Título:", "El faro de los gatos"), ("Editorial:", "Brújula"), ("Año:", "2021"))):
+        y = 3.4 - i*.85; ax.text(0.6, y, a, fontsize=10, color="#7458c4", weight="bold", va="center"); ax.text(3.2, y, b, fontsize=10, color=O, va="center"); ax.plot([0.6, 9.4], [y-.35]*2, color="#e6d38a", lw=1)
+    return png(fig)
+
 N1={"objetivo":"Vas a repasar las estrategias de lectura: usar el paratexto, leer en tres momentos, reconocer la estructura de un relato y el narrador.",
 "vas_a_ver":["El paratexto","Leer en tres momentos","Inferir","Estructura del relato","El narrador"],
 "secciones":[
- S(1,"El paratexto",[D("Paratexto","Todo lo que acompaña al texto: <b>tapa, contratapa, título, autor, índice e imágenes</b>. Sirve para <b>anticipar</b> de qué trata antes de leer.")]),
+ S(1,"El paratexto",[D("Paratexto","Todo lo que acompaña al texto: <b>tapa, contratapa, título, autor, índice e imágenes</b>. Sirve para <b>anticipar</b> de qué trata antes de leer."),IMG("Las partes de un libro","Tapa, lomo, contratapa e índice: el paratexto.","Libro desplegado con contratapa, lomo, tapa e índice marcados.",fig_libro())]),
  S(1,"Leer en tres momentos",[T("Los tres momentos",["Momento","Qué hago"],[["Antes","Miro el paratexto y anticipo"],["Durante","Me hago preguntas, subrayo e infiero"],["Después","Resumo con mis palabras y opino"]]),
   D("Inferir","Deducir lo que el texto <b>no dice</b> a partir de pistas. Si el perro volvió con barro hasta las orejas, se infiere que estuvo en un charco.")]),
  S(2,"La estructura del relato",[T("Partes de un relato",["Parte","Qué cuenta","Ejemplo"],[["Situación inicial","Quiénes, dónde, cómo están","Tomi juega con su perro"],["Conflicto","Algo rompe la calma","El perro se escapa"],["Desenlace","Cómo se resuelve","Lo encuentra en la plaza"]])]),
@@ -53,7 +83,7 @@ N3={"objetivo":"Vas a escribir un texto de punto de partida usando el proceso de
 "vas_a_ver":["El proceso de escritura","Oración y párrafo","Conectores","Cómo armar mi punto de partida"],
 "secciones":[
  S(1,"El proceso de escritura",[T("Pasos para escribir",["Paso","Qué hago"],[["Planificar","Decido qué digo y en qué orden"],["Borrador","Escribo sin miedo a equivocarme"],["Revisar","Leo, corrijo y mejoro"],["Pasar en limpio","Escribo la versión final"]])]),
- S(1,"Oración y párrafo",[D("Oración","Empieza con <b>mayúscula</b> y termina en <b>punto</b>. Tiene sentido completo."),D("Párrafo","Grupo de oraciones sobre <b>una misma idea</b>. Termina en punto y aparte.")]),
+ S(1,"Oración y párrafo",[D("Oración","Empieza con <b>mayúscula</b> y termina en <b>punto</b>. Tiene sentido completo."),D("Párrafo","Grupo de oraciones sobre <b>una misma idea</b>. Termina en punto y aparte."),IMG("Un párrafo, marcado","Sangría, mayúscula, punto seguido y punto y aparte.","Párrafo de tres líneas con sus marcas señaladas.",fig_parrafo())]),
  S(2,"Conectores",[T("Conectores básicos",["Para…","Conectores"],[["Sumar","y, también, además"],["Oponer","pero, sin embargo"],["Dar una causa","porque, ya que"],["Dar una consecuencia","entonces, por eso"]])]),
  S(2,"Mi punto de partida",[E("Cuatro párrafos","Un texto sobre mí como lector.",["1) Quién soy como lector.","2) Un libro o historia que me gustó y por qué.","3) Qué me cuesta al leer o escribir.","4) Qué quiero lograr este año."])]),
 ],
@@ -73,7 +103,7 @@ N4={"objetivo":"Vas a elegir libros usando el paratexto, armar fichas bibliográ
  S(1,"Elegir con el paratexto",[T("Qué mirar",["Parte","Qué me dice"],[["Tapa","Título, autor, editorial"],["Contratapa","De qué trata, sin contar el final"],["Índice","Los capítulos y cómo está armado"]])]),
  S(1,"Cuatro preguntas",[P("<b>Género</b>: ¿qué tengo ganas de leer? <b>Recomendación</b>: ¿quién me lo aconsejó? <b>Primera página</b>: ¿me engancha? <b>Largo</b>: ¿me da el tiempo?")]),
  S(2,"La ficha bibliográfica",[D("Ficha bibliográfica","Registra un libro con <b>autor</b> (apellido, nombre), <b>título</b>, <b>editorial</b> y <b>año</b>."),
-  T("Ejemplo",["Dato","Ejemplo"],[["Autor","Ríos, Ana"],["Título","El faro de los gatos"],["Editorial","Brújula"],["Año","2021"]])]),
+  IMG("Una ficha bibliográfica","Autor, título, editorial y año.","Ficha de cartulina con los cuatro datos de un libro.",fig_ficha())]),
  S(2,"Mi plan de lectura",[P("Tu año ya tiene paradas: un cuento policial, la novela <b>El fantasma de Canterville</b> de Oscar Wilde, poesía, teatro y un libro que elijas vos. Anotá en tu carpeta qué otros libros querés sumar. Y recordá: si un libro no te engancha, podés cambiarlo.")]),
 ],
 "ejemplo_completo":{"titulo":"armar una ficha","planteo":"El libro \"La isla del viento\", de Pablo Sosa, editorial Faro, año 2019. Armá la ficha.","pasos":["Autor: apellido primero, Sosa, Pablo.","Título: La isla del viento.","Editorial: Faro.","Año: 2019."]},
