@@ -12,6 +12,7 @@ JS = r"""() => {
   T.forEach(b => { if (b.x0 < -2 || b.x1 > vb.width + 2 || b.y0 < -2 || b.y1 > vb.height + 2) out.push('se sale de la pantalla: «' + b.s + '»'); });
   for (let i = 0; i < T.length; i++) for (let j = i + 1; j < T.length; j++) { const a = T[i], b = T[j];
     const w = Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0), h = Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0);
+    if (!/[a-zA-Z0-9áéíóúñ]/i.test(a.s) && !/[a-zA-Z0-9áéíóúñ]/i.test(b.s)) continue; // dos emojis juntos (cubito sobre el vaso): a propósito
     if (w > 6 && h > 6) { const m = Math.min((a.x1 - a.x0) * (a.y1 - a.y0), (b.x1 - b.x0) * (b.y1 - b.y0)); if (w * h > .15 * m) out.push('se pisan: «' + a.s + '» y «' + b.s + '»'); } }
   return out; }"""
 async def main(slugs):
