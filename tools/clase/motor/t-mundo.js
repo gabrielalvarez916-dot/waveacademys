@@ -27,8 +27,6 @@
       (d.camaras || []).forEach(function (c) { el('ellipse', { cx: c.x, cy: c.y, rx: c.rx + 8, ry: c.ry + 8, fill: '#2e1b0d' }, g); el('ellipse', { cx: c.x, cy: c.y, rx: c.rx, ry: c.ry, fill: '#3d2512' }, g); }); },
     lab: function (g, d) { var k = 'm' + (uid++);
       el('rect', { x: 0, y: 0, width: 1920, height: 1080, fill: grad(g, k + 'w', [[0, '#e9f3ee'], [1, '#cfe3d9']]) }, g);
-      for (var i = 0; i < 12; i++) el('rect', { x: i * 170, y: 0, width: 2, height: 760, fill: '#bcd3c7' }, g);
-      el('rect', { x: 120, y: 200, width: 520, height: 18, rx: 6, fill: '#8a6a4a' }, g); el('rect', { x: 1280, y: 200, width: 520, height: 18, rx: 6, fill: '#8a6a4a' }, g);
       el('rect', { x: 0, y: 760, width: 1920, height: 40, fill: '#9c7550' }, g); el('rect', { x: 0, y: 800, width: 1920, height: 280, fill: grad(g, k + 'm', [[0, '#7a5a3c'], [1, '#5a4029']]) }, g); },
     espacio: function (g, d) { el('rect', { x: 0, y: 0, width: 1920, height: 1080, fill: '#050818' }, g);
       for (var i = 0; i < 160; i++) el('circle', { cx: (i * 389) % 1920, cy: (i * 211) % 1080, r: (i % 5) / 2 + .6, fill: '#fff', opacity: .3 + (i % 7) / 10 }, g); },
