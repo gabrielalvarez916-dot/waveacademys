@@ -134,13 +134,17 @@
         .select('id, phone, created_at, profiles!families_profile_id_fkey(id, full_name, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: false }),
       sb.from('students')
-        .select('id, family_id, first_name, last_name, curriculum, pais, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
+        .select('id, family_id, first_name, last_name, curriculum, pais, modalidad, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: true }),
       sb.from('subscriptions')
-        .select('id, family_id, student_id, status, amount, currency, created_at')
-        .order('created_at', { ascending: true })
+        .select('id, family_id, student_id, status, amount, currency, created_at, modalidad, nivel, proveedor')
+        .order('created_at', { ascending: true }),
+      sb.rpc('tutores_admin'),
+      sb.from('tutor_students').select('tutor_id, student_id')
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
+    TUTORES = res[3].data || [];
+    var tutorDe = {}; (res[4].data || []).forEach(function (t) { tutorDe[t.student_id] = t.tutor_id; });
 
     var alumnos = res[1].data || [], subs = res[2].data || [];
     return (res[0].data || []).map(function (f) {
@@ -154,7 +158,8 @@
             id: a.id, nombre: a.first_name + ' ' + a.last_name, curriculum: a.curriculum || 'argentina', pais: a.pais || 'Argentina',
             anio: a.grades ? ((a.grades.levels && a.grades.levels.name !== a.grades.name ? a.grades.levels.name + ' · ' : '') + a.grades.name) : '',
             perfil: a.profiles || {},
-            sub: misSubs.filter(function (s) { return s.student_id === a.id; })[0] || null
+            sub: misSubs.filter(function (s) { return s.student_id === a.id; })[0] || null,
+            modManual: a.modalidad || null, tutor: tutorDe[a.id] || null
           };
         }),
         estado: estadoFamilia(misSubs)
@@ -182,6 +187,36 @@
     }
   }
 
+  // ---------- Modalidad (Libre / Guiada / Completa) y tutor de cada alumno ----------
+  var TUTORES = [];
+  var MODS = { libre: 'Libre', guiada: 'Guiada', completa: 'Completa', personalizada: 'Personalizada' };
+  function modalidadDe(a) { return a.modManual || (a.sub && (a.sub.status === 'active' || a.sub.status === 'past_due') && a.sub.modalidad) || 'libre'; }
+  function selModalidad(a) {
+    var auto = (a.sub && a.sub.modalidad) ? MODS[a.sub.modalidad] : 'Libre';
+    return '<select class="wv-cur" data-mod="' + a.id + '" aria-label="Modalidad de ' + esc(a.nombre) + '">' +
+      '<option value=""' + (!a.modManual ? ' selected' : '') + '>Según su cuota (' + esc(auto) + ')</option>' +
+      ['libre', 'guiada', 'completa'].map(function (m) { return '<option value="' + m + '"' + (a.modManual === m ? ' selected' : '') + '>' + MODS[m] + ' (a mano)</option>'; }).join('') +
+      '</select>';
+  }
+  function selTutor(a) {
+    var con = modalidadDe(a) !== 'libre';
+    if (!con && !a.tutor) return '<span class="wv-dato">— (Libre)</span>';
+    return '<select class="wv-cur" data-tut="' + a.id + '" aria-label="Tutor de ' + esc(a.nombre) + '">' +
+      '<option value="">Sin tutor</option>' +
+      TUTORES.map(function (t) { return '<option value="' + t.id + '"' + (a.tutor === t.id ? ' selected' : '') + '>' + esc(t.nombre || t.email) + '</option>'; }).join('') +
+      '</select>';
+  }
+  async function cambiarModalidad(sel) {
+    var r = await sb.rpc('set_student_modalidad', { p_student: sel.getAttribute('data-mod'), p_modalidad: sel.value || null });
+    if (r.error) { toast(r.error.message, true); } else toast('Modalidad actualizada');
+    await recargar();
+  }
+  async function cambiarTutor(sel) {
+    var r = await sb.rpc('asignar_tutor', { p_student: sel.getAttribute('data-tut'), p_tutor: sel.value || null });
+    if (r.error) { toast(r.error.message, true); } else toast(sel.value ? 'Tutor asignado' : 'Tutor quitado');
+    await recargar();
+  }
+
   function htmlAlumno(a, f) {
     var susp = a.perfil.is_suspended;
     return '<div class="wv-alu">' +
@@ -193,6 +228,8 @@
         '<select class="wv-cur" data-cur="' + a.id + '" data-nom="' + esc(a.nombre) + '" data-pais="' + esc(a.pais) + '" aria-label="País de ' + esc(a.nombre) + '">' +
           PAISES.concat(PAISES.indexOf(a.pais) < 0 ? [a.pais] : []).map(function (p) { return '<option' + (p === a.pais ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('') +
         '</select></div>' +
+      '<div><span class="wv-rot">Modalidad</span>' + selModalidad(a) + '</div>' +
+      '<div><span class="wv-rot">Tutor</span>' + selTutor(a) + '</div>' +
       '<div class="wv-acc">' +
         '<button type="button" class="wv-btn mini suave" data-tray="' + a.id + '" data-nom="' + esc(a.nombre) + '">Trayectoria</button>' +
         (!a.sub ? '<button type="button" class="wv-btn mini suave" data-vincular="' + a.id + '" data-fam="' + f.id + '">Vincular cupo</button>' : '') +
@@ -453,7 +490,9 @@
       pintarLista();
     };
     document.getElementById('wv-lista').onchange = function (ev) {
-      var c = ev.target.closest('[data-cur]'); if (c) cambiarCurriculo(c);
+      var c = ev.target.closest('[data-mod]'); if (c) return cambiarModalidad(c);
+      c = ev.target.closest('[data-tut]'); if (c) return cambiarTutor(c);
+      c = ev.target.closest('[data-cur]'); if (c) cambiarCurriculo(c);
     };
     document.getElementById('wv-lista').onclick = function (ev) {
       var b;
@@ -753,9 +792,38 @@
     };
   }
 
+  // ---------- Tutores ----------
+  async function vistaTutores() {
+    vista.innerHTML = '<h1 class="vista-titulo">Tutores</h1>' +
+      '<p class="wv-dato">Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
+      '<form id="wv-tut-form" class="wv-tut-form"><input id="wv-tut-nom" placeholder="Nombre y apellido" required> <input id="wv-tut-mail" type="email" placeholder="Correo" required> ' +
+      '<button class="wv-btn" type="submit">Crear tutor</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
+    async function pintar() {
+      var r = await sb.rpc('tutores_admin');
+      var l = document.getElementById('wv-tut-lista');
+      if (r.error) { l.innerHTML = '<div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
+      l.innerHTML = !r.data.length ? '<div class="wv-vacio">Todavía no hay tutores.</div>' :
+        '<div class="wv-alus">' + r.data.map(function (t) {
+          return '<div class="wv-alu"><div><div class="wv-nombre">' + esc(t.nombre) + '</div><div class="wv-dato">' + esc(t.email) + '</div></div>' +
+            '<div><span class="wv-rot">Alumnos</span><span class="wv-dato">' + t.alumnos + '</span></div></div>';
+        }).join('') + '</div>';
+    }
+    document.getElementById('wv-tut-form').onsubmit = async function (ev) {
+      ev.preventDefault();
+      var b = this.querySelector('button'); b.disabled = true;
+      var r = await sb.functions.invoke('admin-tutores', { body: { nombre: document.getElementById('wv-tut-nom').value, email: document.getElementById('wv-tut-mail').value } });
+      b.disabled = false;
+      if (r.error || (r.data && r.data.error)) { toast((r.data && r.data.error) || 'No se pudo crear el tutor', true); return; }
+      document.getElementById('wv-tut-cred').innerHTML = '<div class="wv-vacio">Tutor creado. Usuario: <b>' + esc(r.data.email) + '</b> · Clave inicial: <b>' + esc(r.data.initial_password) + '</b> (la cambia al entrar). Entra por la misma página de ingreso.</div>';
+      this.reset(); pintar();
+    };
+    pintar();
+  }
+
   var VISTAS = {
     familias: vistaFamilias,
     facturacion: vistaFacturacion,
+    tutores: vistaTutores,
     contenido: function () { return WaveContenido.abrir(vista); },
     curricular: function () { return WaveCurricular.abrir(vista); },
     fabrica: function () { return WaveFabrica.abrir(vista); },

@@ -1008,6 +1008,116 @@
     }
   }
 
+  // ---------- Tutorías y oficios (modalidades Guiada y Completa) ----------
+  var MODS = { libre: 'Libre', guiada: 'Guiada', completa: 'Completa', personalizada: 'Personalizada' };
+  function fechaTurno(v) {
+    var d = new Date(v);
+    return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + d.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' h';
+  }
+  async function vistaTutorias() {
+    vista.innerHTML = '<h1 class="vista-titulo">Tutorías y oficios</h1><div id="tuf"><div class="vacio">Cargando…</div></div>';
+    var cont = document.getElementById('tuf');
+    var h = await sb.from('students').select('id, first_name, last_name, grade_id, trayecto_clave').order('created_at');
+    if (h.error) { cont.innerHTML = '<div class="vacio">No pudimos cargar los datos.</div>'; return; }
+    if (!h.data.length) { cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo.</div>'; return; }
+    var partes = await Promise.all(h.data.map(async function (a) {
+      var t = await sb.rpc('mi_tutor', { p_student: a.id });
+      var info = (t.data && t.data[0]) || { modalidad: 'libre', nombre: null };
+      return { a: a, mod: info.modalidad, tutor: info.nombre };
+    }));
+    cont.innerHTML = partes.map(function (p) {
+      var a = p.a, nombre = a.first_name + ' ' + a.last_name;
+      var html = '<section class="fa-card" data-alu="' + a.id + '"><h2>' + esc(nombre) + '</h2><span class="tu-sub">Modalidad ' + esc(MODS[p.mod] || p.mod) + '</span>';
+      if (p.mod === 'libre') return html + '<p class="fa-intro">La modalidad Libre no incluye tutorías ni oficios. Si querés sumarlos, pasá a Guiada o Completa desde Facturación.</p></section>';
+      html += '<p class="fa-intro">' + (p.tutor ? 'Su tutor es <b>' + esc(p.tutor) + '</b>. Tiene 2 tutorías por mes para consultar dudas.' : 'Todavía no tiene tutor asignado: te avisamos apenas lo tenga.') + '</p>' +
+        '<div class="tuf-mis"></div>' + (p.tutor ? '<div class="tuf-reservar"></div>' : '');
+      if (p.mod === 'completa' || p.mod === 'personalizada') html += '<h3 class="fa-sub">Oficios</h3><div class="tuf-oficios"></div>';
+      return html + '</section>';
+    }).join('');
+    partes.forEach(function (p) {
+      if (p.mod === 'libre') return;
+      var card = cont.querySelector('[data-alu="' + p.a.id + '"]');
+      pintarMisTutorias(card, p.a.id);
+      if (p.tutor) pintarReserva(card, p.a.id);
+      if (p.mod === 'completa' || p.mod === 'personalizada') pintarOficios(card, p.a);
+    });
+  }
+  async function pintarMisTutorias(card, alu) {
+    var box = card.querySelector('.tuf-mis');
+    var r = await sb.rpc('mis_tutorias', { p_student: alu });
+    var ts = (r.data || []), ahora = Date.now();
+    var prox = ts.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() > ahora; }).reverse();
+    var pasadas = ts.filter(function (t) { return t.estado !== 'reservada'; }).slice(0, 3);
+    box.innerHTML = (prox.length ? '<h3 class="fa-sub">Próximas tutorías</h3>' + prox.map(function (t) {
+        return '<div class="tuf-turno"><b>' + esc(fechaTurno(t.inicio)) + '</b>' + (t.tema ? ' · ' + esc(t.tema) : '') +
+          '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
+          '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div></div>';
+      }).join('') : '') +
+      (pasadas.length ? '<h3 class="fa-sub">Últimas tutorías</h3>' + pasadas.map(function (t) {
+        return '<p class="tu-tema"><b>' + esc(fechaTurno(t.inicio)) + ':</b> ' + (t.estado === 'ausente' ? 'no se conectó.' : esc(t.notas_tutor || 'realizada.')) + '</p>';
+      }).join('') : '');
+    box.onclick = async function (ev) {
+      var b = ev.target.closest('[data-cancelar]'); if (!b) return;
+      if (!confirm('¿Cancelar esta tutoría?')) return;
+      var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });
+      if (x.error) { alert(x.error.message); return; }
+      pintarMisTutorias(card, alu); pintarReserva(card, alu);
+    };
+  }
+  async function pintarReserva(card, alu) {
+    var box = card.querySelector('.tuf-reservar');
+    var r = await sb.rpc('turnos_disponibles', { p_student: alu, p_dias: 21 });
+    var slots = r.data || [];
+    if (!slots.length) { box.innerHTML = '<p class="fa-aviso">No hay turnos libres en las próximas 3 semanas. Volvé a mirar en unos días.</p>'; return; }
+    var porDia = {};
+    slots.forEach(function (s) { var k = new Date(s.inicio).toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }); (porDia[k] = porDia[k] || []).push(s); });
+    box.innerHTML = '<h3 class="fa-sub">Reservar una tutoría</h3>' +
+      Object.keys(porDia).slice(0, 10).map(function (d) {
+        return '<p class="tuf-dia">' + esc(d) + '</p><div class="tu-slots">' + porDia[d].map(function (s) {
+          return '<button type="button" class="tu-slot" data-ini="' + esc(s.inicio) + '">' + new Date(s.inicio).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + '</button>';
+        }).join('') + '</div>';
+      }).join('') +
+      '<input class="tuf-tema" maxlength="300" placeholder="¿Qué dudas quiere consultar? (opcional)">' +
+      '<button type="button" class="boton fa-boton" data-reservar disabled>Reservar turno</button><p class="fa-aviso tuf-err" hidden></p>';
+    var elegido = null, btn = box.querySelector('[data-reservar]');
+    box.onclick = async function (ev) {
+      var s = ev.target.closest('.tu-slot');
+      if (s) { box.querySelectorAll('.tu-slot').forEach(function (x) { x.classList.toggle('on', x === s); }); elegido = s.getAttribute('data-ini'); btn.disabled = false; return; }
+      if (ev.target.closest('[data-reservar]') && elegido) {
+        btn.disabled = true;
+        var x = await sb.rpc('reservar_tutoria', { p_student: alu, p_inicio: elegido, p_tema: box.querySelector('.tuf-tema').value || null });
+        if (x.error) { var e = box.querySelector('.tuf-err'); e.textContent = x.error.message; e.hidden = false; btn.disabled = false; return; }
+        pintarMisTutorias(card, alu); pintarReserva(card, alu);
+      }
+    };
+  }
+  async function pintarOficios(card, a) {
+    var box = card.querySelector('.tuf-oficios');
+    var r = await Promise.all([
+      sb.from('subjects').select('id, name, eleccion, oficio_clave').eq('grade_id', a.grade_id).not('eleccion', 'is', null).order('name'),
+      sb.from('student_talleres').select('subject_id').eq('student_id', a.id),
+      sb.from('app_settings').select('value').eq('key', 'talleres_por_anio').maybeSingle()
+    ]);
+    var ofs = r[0].data || [];
+    if (!ofs.length) { box.innerHTML = '<p class="fa-intro">Los oficios empiezan en el Nivel Avanzado.</p>'; return; }
+    var elegidos = (r[1].data || []).map(function (x) { return x.subject_id; });
+    var max = (r[2].data && r[2].data.value && r[2].data.value.cantidad) || 2;
+    var trayecto = ofs[0].eleccion === 'trayecto';
+    box.innerHTML = '<p class="fa-intro">' + (trayecto ? 'Elegí el oficio que va a cursar este año.' : 'Elegí hasta ' + max + ' talleres para este año.') + '</p>' +
+      '<div class="tu-slots">' + ofs.map(function (o) {
+        var on = trayecto ? o.oficio_clave === a.trayecto_clave : elegidos.indexOf(o.id) >= 0;
+        return '<button type="button" class="tu-slot' + (on ? ' on' : '') + '" data-of="' + o.id + '" data-on="' + (on ? 1 : 0) + '">' + esc(o.name.replace(/^Taller: /, '')) + '</button>';
+      }).join('') + '</div><p class="fa-aviso tuf-err" hidden></p>';
+    box.onclick = async function (ev) {
+      var b = ev.target.closest('[data-of]'); if (!b) return;
+      var x = await sb.rpc('elegir_oficio', { p_student: a.id, p_subject: b.getAttribute('data-of'), p_elegir: b.getAttribute('data-on') !== '1' });
+      if (x.error) { var e = box.querySelector('.tuf-err'); e.textContent = x.error.message; e.hidden = false; return; }
+      var h2 = await sb.from('students').select('trayecto_clave').eq('id', a.id).maybeSingle();
+      if (h2.data) a.trayecto_clave = h2.data.trayecto_clave;
+      pintarOficios(card, a);
+    };
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -1027,7 +1137,8 @@
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
-    facturacion: vistaFacturacion
+    facturacion: vistaFacturacion,
+    tutorias: vistaTutorias
   };
 
   function ruta() {
