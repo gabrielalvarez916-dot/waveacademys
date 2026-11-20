@@ -131,7 +131,8 @@ Cada misión tiene su etiqueta en `topics.version` (copia en `tools/versiones.js
 - **Común**: se escribe una vez; la versión neutra sale sola (voseo → tuteo).
 - **Variante**: en el mismo archivo, cada bloque que cambia lleva al lado su parte para extranjeros con la clave `"neutro"`, ya escrita en neutro:
   - clase: `{"t": "definicion", "palabra": "Mar argentino", "texto": "...", "voz": [...], "neutro": {"palabra": "Mar territorial", "texto": "...", "voz": [...]}}`
-  - PDF / actividades / examen: igual, en cualquier bloque o pregunta (`"neutro": {"texto": ...}`, `"neutro": {"p": ..., "o": ..., "r": ...}`).
+  - PDF: igual, en cualquier bloque (`"neutro": {"texto": ...}`). Actividades y examen: solo el enunciado (`"neutro": {"p": ...}`); las opciones tienen que servir para los dos (si no, la corrección no coincide).
+  - La interfaz de la plataforma (botones, mensajes, consignas) se pasa sola a neutro para extranjeros con `js/neutro.js`, que se genera desde `tools/neutro.py --js`: al sumar palabras al diccionario, regenerarlo.
   - Una clase de una misión variante que es igual para todos lleva `"sin_variante": true` (decisión consciente).
 - **Alternativa**: el extranjero hace otra misión en ese lugar.
   - El archivo de la misión trae `"alternativa": {...}` con la misión entera para extranjeros (niveles, act, examen, practica, examen_titulo, titulo, lecciones).

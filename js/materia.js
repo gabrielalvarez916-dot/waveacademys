@@ -675,9 +675,10 @@
 
   // ---------- Cuestionario (actividad por consigna y examen) ----------
   async function preguntas(col, id) {
-    var r = await sb.from('questions').select('id, prompt, question_type, options, points, position, tiempo_seg').eq(col, id).order('position');
+    var r = await sb.from('questions').select('id, prompt, question_type, options, points, position, tiempo_seg, neutro').eq(col, id).order('position');
     if (r.error) throw r.error;
     if (!r.data.length) throw new Error('Todavía no hay preguntas cargadas.');
+    if (D && D.neutro) r.data.forEach(function (q) { if (q.neutro && q.neutro.p) q.prompt = q.neutro.p; }); // variante para extranjeros: el enunciado
     return r.data;
   }
 

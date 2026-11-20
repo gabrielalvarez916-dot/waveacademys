@@ -50,7 +50,7 @@ MAPA = {
  'tomás': 'tomas', 'guardás': 'guardas', 'sos': 'eres', 'vos': 'tú', 'acá': 'aquí',
  # palabras rioplatenses
  'campera': 'chaqueta', 'camperas': 'chaquetas', 'ojotas': 'sandalias', 'remera': 'camiseta', 'remeras': 'camisetas', 'pileta': 'piscina',
- 'heladera': 'refrigerador', 'frutilla': 'fresa', 'frutillas': 'fresas', 'manteca': 'mantequilla', 'hacelo': 'hazlo', 'completalo': 'complétalo', 'resolvelo': 'resuélvelo', 'comparala': 'compárala', 'comparalo': 'compáralo', 'dale': 'vamos', 'che': 'oye',
+ 'heladera': 'refrigerador', 'frutilla': 'fresa', 'frutillas': 'fresas', 'manteca': 'mantequilla', 'hacelo': 'hazlo', 'completalo': 'complétalo', 'resolvelo': 'resuélvelo', 'comparala': 'compárala', 'comparalo': 'compáralo', 'abonás': 'abonas', 'conocé': 'conoce', 'guardá': 'guarda', 'hablá': 'habla', 'intentá': 'intenta', 'programá': 'programa', 'superá': 'supera', 'terminá': 'termina', 'terminás': 'terminas', 'elegilo': 'elígelo', 'preguntame': 'pregúntame', 'dale': 'vamos', 'che': 'oye',
 }
 FRASES = [(r'\bcon vos\b', 'contigo'), (r'\b(a|para|de|por) vos\b', r'\1 ti')]
 OK = set('''abuela abuelo además allá allí ahí así atrás billete busqué caminé canadá capitales caramelos chile chocolate cocinaré cociné comerciales
@@ -61,7 +61,7 @@ nile novela novelas océanos ojalá omite orales originales pagué papá paquete
 país pasará pelo penales perdí permite pesame principales proporcionales puntuales qué quizás racionales reales regionales regué repite rete revés
 romanos sabérselos sale sé será señales siete sí sociales subsuelo subsuelos suele suelo suelos tala tela temporales terminé titila tomate totales
 tradicionales tropicales té vale vegetales veintisiete veintitrés vela venezuela veranos verbales vitales vuela yaguareté zócalo órganos apela
-animales clásica mamá jamás perú bebé café panamá bogotá josé maní aquí allá ahí sofá bambú menú también sabés'''.split()) - set(MAPA)
+animales estará guardé quedé clásica mamá jamás perú bebé café panamá bogotá josé maní aquí allá ahí sofá bambú menú también sabés'''.split()) - set(MAPA)
 
 PAL = re.compile(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜ]+")
 SOSPECHA = re.compile(r'(ás|és|ís|á|é|í)$|^(vos|sos)$|[^aeiouáéíóú](ate|ame|alo|ala|alos|alas|ale|ales|elo|ela|ele|ilo|ila|ile)$')
@@ -130,7 +130,67 @@ def revisar(o):
     return sorted(raras)
 
 
-if __name__ == '__main__':
+JS = r"""/* GENERADO por tools/neutro.py --js (no editar a mano: el diccionario vive en tools/neutro.py).
+   Interfaz en español neutro para alumnos de otros países: si el alumno (o todos los hijos de la familia) no es de la Argentina,
+   convierte en el momento los textos de la pantalla (voseo -> tuteo). Los argentinos ven todo igual que siempre.
+   No toca valores de formularios ni datos: solo lo que se lee (textos, placeholder, title, aria-label). */
+(function () {
+  var M = __MAPA__;
+  var PAL = /[A-Za-zÁÉÍÓÚáéíóúñÑüÜ]+/g;
+  function caso(o, n) { return (o.length > 1 && o === o.toUpperCase()) ? n.toUpperCase() : (o.charAt(0) !== o.charAt(0).toLowerCase() ? n.charAt(0).toUpperCase() + n.slice(1) : n); }
+  function neutro(s) {
+    if (!s || typeof s !== 'string') return s;
+    s = s.replace(/\b([Cc])on vos\b/g, function (m, c) { return c === 'C' ? 'Contigo' : 'contigo'; })
+         .replace(/\b([AaPpDd]\w*|[Pp]or) vos\b/g, function (m, w) { return /^(a|para|de|por)$/i.test(w) ? w + ' ti' : m; });
+    return s.replace(PAL, function (w) { var k = w.toLowerCase(); return (M.hasOwnProperty(k) && w !== 'Tomás') ? caso(w, M[k]) : w; });
+  }
+  window.WaveNeutro = { neutro: neutro, activo: false };
+  var ATR = ['placeholder', 'title', 'aria-label'];
+  function pasar(n) {
+    if (n.nodeType === 3) { var v = n.nodeValue, w = neutro(v); if (w !== v) n.nodeValue = w; return; }
+    if (n.nodeType !== 1 || /^(SCRIPT|STYLE|TEXTAREA|IFRAME|CODE)$/.test(n.nodeName) || n.isContentEditable) return;
+    ATR.forEach(function (a) { var v = n.getAttribute && n.getAttribute(a); if (v) { var w = neutro(v); if (w !== v) n.setAttribute(a, w); } });
+    for (var c = n.firstChild; c; c = c.nextSibling) pasar(c);
+  }
+  function activar() {
+    if (window.WaveNeutro.activo) return; window.WaveNeutro.activo = true;
+    document.title = neutro(document.title); pasar(document.body);
+    new MutationObserver(function (ms) { ms.forEach(function (m) {
+      if (m.type === 'characterData') pasar(m.target);
+      else if (m.type === 'attributes') pasar(m.target);
+      else m.addedNodes.forEach(pasar);
+    }); }).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATR });
+    var al = window.alert, cf = window.confirm;
+    window.alert = function (t) { return al.call(window, neutro(String(t))); };
+    window.confirm = function (t) { return cf.call(window, neutro(String(t))); };
+  }
+  var K = 'wave_neutro';
+  try { if (localStorage.getItem(K) === '1') document.addEventListener('DOMContentLoaded', activar); } catch (e) {}
+  async function decidir() {
+    try {
+      var sb = window.Wave && Wave.sb; if (!sb) return;
+      var ses = await sb.auth.getSession(); var u = ses.data.session && ses.data.session.user; if (!u) return;
+      var r = await sb.from('students').select('pais').eq('profile_id', u.id).maybeSingle();
+      var paises = r.data ? [r.data.pais] : [];
+      if (!r.data) {
+        var f = await sb.from('families').select('id').eq('profile_id', u.id).maybeSingle();
+        if (f.data) { var h = await sb.from('students').select('pais').eq('family_id', f.data.id); paises = (h.data || []).map(function (x) { return x.pais; }); }
+      }
+      var si = paises.length > 0 && paises.every(function (p) { return p && p !== 'Argentina'; });
+      try { localStorage.setItem(K, si ? '1' : '0'); } catch (e) {}
+      if (si) activar();
+    } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', decidir); else decidir();
+})();
+"""
+
+if __name__ == '__main__' and '--js' in __import__('sys').argv:
+    import json, os
+    destino = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'js', 'neutro.js')
+    open(destino, 'w', encoding='utf-8').write(JS.replace('__MAPA__', json.dumps(MAPA, ensure_ascii=False, sort_keys=True)))
+    print('js/neutro.js:', len(MAPA), 'palabras')
+elif __name__ == '__main__':
     import sys, json, glob
     fs = sys.argv[1:] or glob.glob('tools/clase/lecciones/*.json') + glob.glob('contenido/*/mision-*/mision-*.json')
     malas = {}
