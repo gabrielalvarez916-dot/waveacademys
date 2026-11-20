@@ -810,7 +810,12 @@
       if (nuevo !== null) return '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + nuevo + '</div></div>';
       var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c"><p>' + esc(pr(q)) + '</p>';
       if (q.question_type === 'multiple_choice' || q.question_type === 'true_false') {
-        h += (q.options || []).map(function (o, j) {
+        var ops = (q.options || []).slice();
+        if (q.question_type === 'multiple_choice') { // mezcla fija por pregunta: la correcta no queda siempre primera
+          var sem = 0; String(q.id || pr(q)).split('').forEach(function (ch) { sem = (sem * 31 + ch.charCodeAt(0)) >>> 0; });
+          for (var m = ops.length - 1; m > 0; m--) { sem = (sem * 1103515245 + 12345) >>> 0; var r = sem % (m + 1), tmp = ops[m]; ops[m] = ops[r]; ops[r] = tmp; }
+        }
+        h += ops.map(function (o, j) {
           return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(o) + '"><span>' + esc(o) + '</span></label>';
         }).join('');
       } else if (q.question_type === 'short_answer') {
