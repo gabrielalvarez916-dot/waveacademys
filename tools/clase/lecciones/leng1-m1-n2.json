@@ -74,78 +74,42 @@
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "biblioteca",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "lect",
-       "e": "🧒",
-       "x": 960,
-       "y": 670,
-       "s": 180
-      }
-     ],
-     "txt": "Dentro de lo narrativo hay muchos mundos"
-    },
-    {
-     "acc": [
-      {
-       "pon": "a",
-       "e": "🐉",
-       "x": 640,
-       "y": 400,
-       "s": 120,
-       "etq": "maravilloso"
-      },
-      {
-       "pon": "b",
-       "e": "🚀",
-       "x": 960,
-       "y": 360,
-       "s": 120,
-       "etq": "ciencia ficción"
-      },
-      {
-       "pon": "c",
-       "e": "🔍",
-       "x": 1280,
-       "y": 400,
-       "s": 120,
-       "etq": "policial"
-      }
-     ],
-     "txt": "Magia, futuro, enigmas…"
-    },
-    {
-     "acc": [
-      {
-       "pon": "d",
-       "e": "👻",
-       "x": 700,
-       "y": 690,
-       "s": 110,
-       "etq": "terror"
-      },
-      {
-       "pon": "e",
-       "e": "🏫",
-       "x": 1220,
-       "y": 690,
-       "s": 110,
-       "etq": "realista"
-      }
-     ],
-     "txt": "…miedo, o la vida real"
-    }
+   "t": "tabla",
+   "titulo": "SUBGÉNEROS NARRATIVOS",
+   "columnas": [
+    "Subgénero",
+    "Qué tiene"
+   ],
+   "filas": [
+    [
+     "Maravilloso",
+     "magia, hadas, dragones"
+    ],
+    [
+     "Ciencia ficción",
+     "futuro y tecnología"
+    ],
+    [
+     "Policial",
+     "un enigma y un detective"
+    ],
+    [
+     "Terror",
+     "busca dar miedo"
+    ],
+    [
+     "Realista",
+     "hechos que podrían pasar"
+    ]
    ],
    "voz": [
-    "Y dentro de las historias hay *muchos mundos*.",
-    "Con dragones y hechizos: *maravilloso*. Con naves y robots: *ciencia ficción*. Con un crimen y un detective: *policial*.",
-    "Para pasar miedo: *terror*. Y lo que podría pasarte a vos: *realista*."
-   ],
-   "entrada": "zoom"
+    "Dentro de las historias hay muchos mundos.",
+    "*Maravilloso*: magia, hadas y dragones.",
+    "*Ciencia ficción*: el futuro, naves y robots.",
+    "*Policial*: un enigma y un detective.",
+    "*Terror*: busca darte miedo.",
+    "*Realista*: lo que podría pasarte a vos."
+   ]
   },
   {
    "t": "tabla",

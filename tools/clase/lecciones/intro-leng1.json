@@ -6,89 +6,16 @@
  "sub": "Introducción · Nivel avanzado",
  "escenas": [
   {
-   "t": "mundo",
-   "fondo": "biblioteca",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "l",
-       "e": "📖",
-       "x": 960,
-       "y": 600,
-       "s": 240
-      }
-     ],
-     "txt": "Un libro cerrado no dice nada…"
-    },
-    {
-     "acc": [
-      {
-       "pon": "a",
-       "e": "🐉",
-       "x": 640,
-       "y": 420,
-       "s": 110
-      },
-      {
-       "pon": "b",
-       "e": "🏰",
-       "x": 960,
-       "y": 330,
-       "s": 120
-      },
-      {
-       "pon": "c",
-       "e": "🕵️",
-       "x": 1280,
-       "y": 420,
-       "s": 110
-      },
-      {
-       "mueve": "a",
-       "ruta": [
-        [
-         640,
-         420
-        ],
-        [
-         700,
-         360
-        ],
-        [
-         620,
-         300
-        ],
-        [
-         640,
-         420
-        ]
-       ],
-       "dur": 4,
-       "loop": true
-      }
-     ],
-     "txt": "…hasta que lo abrís"
-    },
-    {
-     "acc": [
-      {
-       "zoom": [
-        960,
-        600,
-        1.8
-       ]
-      }
-     ],
-     "txt": "Entrá"
-    }
-   ],
+   "t": "gancho",
+   "emoji": "📖",
+   "final": "🤩",
+   "titulo": "LENGUA Y LITERATURA I",
+   "sub": "nivel avanzado · primer año",
    "voz": [
-    "Un libro cerrado es solo papel.",
-    "Pero cuando lo abrís, aparecen *castillos, dragones, detectives*… mundos enteros.",
-    "Bienvenido a *Lengua y Literatura*. Entrá."
-   ],
-   "entrada": "zoom"
+    "¿Cuántas palabras leíste y escribiste hoy?",
+    "Seguro muchas más de las que creés: chats, carteles, series, canciones… todo son *palabras*.",
+    "Bienvenido a *Lengua y Literatura I*. Este año vas a aprender a usarlas a tu favor."
+   ]
   },
   {
    "t": "causas",

@@ -20,65 +20,28 @@
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "biblioteca",
-   "pasos": [
+   "t": "bloques",
+   "titulo": "ELEGIR CON EL PARATEXTO",
+   "items": [
     {
-     "acc": [
-      {
-       "pon": "l",
-       "e": "📘",
-       "x": 960,
-       "y": 665,
-       "s": 190
-      }
-     ],
-     "txt": "¿Cómo elijo un libro?"
+     "cab": "TAPA",
+     "txt": "título, autor, editorial"
     },
     {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 250,
-       "s": "Título · Autor · Editorial",
-       "size": 42
-      }
-     ],
-     "txt": "La tapa: título, autor y editorial"
+     "cab": "CONTRATAPA",
+     "txt": "de qué trata"
     },
     {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 350,
-       "s": "Contratapa: de qué trata",
-       "size": 42
-      }
-     ],
-     "txt": "La contratapa cuenta de qué trata"
-    },
-    {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 960,
-       "y": 450,
-       "s": "Índice: los capítulos",
-       "size": 42
-      }
-     ],
-     "txt": "El índice muestra cómo está armado"
+     "cab": "ÍNDICE",
+     "txt": "los capítulos"
     }
    ],
    "voz": [
     "¿Cómo se elige un libro sin leerlo entero? Con el *paratexto*.",
     "La *tapa*: título, autor y editorial.",
-    "La *contratapa*: un resumen que te dice de qué trata, sin contar el final.",
-    "Y el *índice*: los capítulos y cómo está armado."
-   ],
-   "entrada": "zoom"
+    "La *contratapa*: un resumen, sin contar el final.",
+    "Y el *índice*: los capítulos."
+   ]
   },
   {
    "t": "bloques",

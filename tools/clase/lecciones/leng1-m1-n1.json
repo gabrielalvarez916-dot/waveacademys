@@ -27,56 +27,28 @@
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "biblioteca",
-   "pasos": [
+   "t": "bloques",
+   "titulo": "ANTES DE ABRIR EL LIBRO",
+   "items": [
     {
-     "acc": [
-      {
-       "pon": "j",
-       "e": "🧒",
-       "x": 700,
-       "y": 660,
-       "s": 190
-      },
-      {
-       "pon": "lib",
-       "e": "📕",
-       "x": 1080,
-       "y": 690,
-       "s": 140
-      }
-     ],
-     "txt": "Antes de abrir el libro…"
+     "cab": "TAPA",
+     "txt": "título, autor, imagen"
     },
     {
-     "acc": [
-      {
-       "etq": "lib",
-       "txt": "tapa: título y autor"
-      }
-     ],
-     "txt": "…la tapa ya cuenta algo"
+     "cab": "CONTRATAPA",
+     "txt": "de qué trata"
     },
     {
-     "acc": [
-      {
-       "dib": "texto",
-       "x": 1080,
-       "y": 340,
-       "s": "¿De qué tratará?",
-       "size": 44
-      }
-     ],
-     "txt": "Anticipar: imaginar de qué trata"
+     "cab": "ÍNDICE",
+     "txt": "cómo está armado"
     }
    ],
    "voz": [
     "Antes de leer la primera palabra, ya podés averiguar mucho.",
-    "La *tapa* tiene el título, el autor y una imagen.",
-    "Con eso podés *anticipar*: imaginar de qué va a tratar."
-   ],
-   "entrada": "zoom"
+    "La *tapa*: título, autor y una imagen.",
+    "La *contratapa*: un resumen de qué trata.",
+    "El *índice*: cómo está armado. Con eso podés *anticipar*."
+   ]
   },
   {
    "t": "definicion",
@@ -136,82 +108,29 @@
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "jardin",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "t",
-       "e": "👦",
-       "x": 600,
-       "y": 700,
-       "s": 170
-      },
-      {
-       "pon": "p",
-       "e": "🐕",
-       "x": 860,
-       "y": 740,
-       "s": 130,
-       "etq": "situación inicial"
-      }
-     ],
-     "txt": "Tomi juega con su perro"
-    },
-    {
-     "acc": [
-      {
-       "mueve": "p",
-       "ruta": [
-        [
-         860,
-         740
-        ],
-        [
-         1300,
-         760
-        ],
-        [
-         1800,
-         760
-        ]
-       ],
-       "dur": 1.6
-      },
-      {
-       "etq": "t",
-       "txt": "conflicto"
-      }
-     ],
-     "txt": "¡El perro se escapa!"
-    },
-    {
-     "acc": [
-      {
-       "mueve": "p",
-       "ruta": [
-        [
-         1800,
-         760
-        ],
-        [
-         1000,
-         740
-        ]
-       ],
-       "dur": 1.4
-      },
-      {
-       "etq": "p",
-       "txt": "desenlace"
-      }
-     ],
-     "txt": "Lo encuentra en la plaza"
-    }
+   "t": "tabla",
+   "titulo": "UN EJEMPLO",
+   "columnas": [
+    "Parte",
+    "Qué pasa"
+   ],
+   "filas": [
+    [
+     "Situación inicial",
+     "Tomi juega con su perro"
+    ],
+    [
+     "Conflicto",
+     "El perro se escapa"
+    ],
+    [
+     "Desenlace",
+     "Lo encuentra en la plaza"
+    ]
    ],
    "voz": [
-    "Un ejemplo. *Situación inicial*: Tomi juega en el patio con su perro.",
+    "Un ejemplo.",
+    "*Situación inicial*: Tomi juega en el patio con su perro.",
     "*Conflicto*: se abre el portón y el perro sale corriendo.",
     "*Desenlace*: después de buscarlo toda la tarde, lo encuentra en la plaza."
    ]

@@ -49,83 +49,20 @@
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "biblioteca",
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "e",
-       "e": "🧑‍🎓",
-       "x": 760,
-       "y": 660,
-       "s": 190
-      },
-      {
-       "pon": "h",
-       "e": "📝",
-       "x": 1080,
-       "y": 700,
-       "s": 120,
-       "etq": "borrador"
-      }
-     ],
-     "txt": "Primer borrador"
-    },
-    {
-     "acc": [
-      {
-       "pon": "b",
-       "e": "🗑️",
-       "x": 1320,
-       "y": 700,
-       "s": 110
-      },
-      {
-       "mueve": "h",
-       "ruta": [
-        [
-         1080,
-         700
-        ],
-        [
-         1320,
-         640
-        ]
-       ],
-       "dur": 0.8
-      },
-      {
-       "sale": "h"
-      }
-     ],
-     "txt": "No quedó bien… ¡se corrige!"
-    },
-    {
-     "acc": [
-      {
-       "pon": "h2",
-       "e": "📄",
-       "x": 1080,
-       "y": 700,
-       "s": 120,
-       "etq": "versión final"
-      },
-      {
-       "dib": "texto",
-       "x": 1080,
-       "y": 440,
-       "s": "✔ revisado",
-       "size": 44
-      }
-     ],
-     "txt": "La versión final, mucho mejor"
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "BORRADOR",
+    "emoji": "📝",
+    "texto": "desordenado, con errores"
+   },
+   "despues": {
+    "cab": "VERSIÓN FINAL",
+    "emoji": "📄",
+    "texto": "revisada y clara"
+   },
    "voz": [
-    "Sofi escribe su *primer borrador*.",
-    "Lo relee… y no la convence. No pasa nada: *se corrige*.",
-    "La segunda versión queda mucho mejor. Así escriben todos, hasta los escritores famosos."
+    "El *primer borrador* casi nunca queda bien. No pasa nada: se relee y *se corrige*.",
+    "La *versión final* queda mucho mejor. Así escriben todos, hasta los escritores famosos."
    ]
   },
   {
