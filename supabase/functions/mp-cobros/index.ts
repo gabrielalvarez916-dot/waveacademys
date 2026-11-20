@@ -5,6 +5,8 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 //   { action: "precios" }                      -> tarifas por nivel y modalidad, matrícula y cotización, y si la familia ya pagó la matrícula del año
 //   { action: "suscribir", nivel, modalidad }  -> crea la suscripción mensual (cupo) en Mercado Pago y devuelve el link para pagar
 //   { action: "matricula" }                    -> crea el pago de la matrícula anual (hasta 2 cuotas) y devuelve el link
+//   { action: "ajustar_dolar", ars_por_usd }   -> (admin, o header x-gen-token) guarda la cotización y actualiza el monto en pesos
+//                                                  de cada suscripción de Mercado Pago que tiene precio en USD
 // Las tarifas están en USD; Mercado Pago cobra en pesos con la cotización de app_settings 'dolar'.
 // Secreto necesario: MP_ACCESS_TOKEN. Los avisos de pago los procesa mp-webhook.
 
@@ -26,6 +28,38 @@ Deno.serve(async (req) => {
     const userClient = createClient(url, Deno.env.get("SUPABASE_ANON_KEY")!, {
       global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } },
     });
+    const b0 = await req.clone().json().catch(() => ({}));
+    if (b0.action === "ajustar_dolar") {
+      const { data: g } = await admin.from("gen_config").select("valor").eq("clave", "token").maybeSingle();
+      let autorizado = !!g && req.headers.get("x-gen-token") === g.valor;
+      if (!autorizado) {
+        const { data: { user: u } } = await userClient.auth.getUser();
+        const { data: pr } = u ? await admin.from("profiles").select("role").eq("id", u.id).maybeSingle() : { data: null };
+        autorizado = pr?.role === "admin";
+      }
+      if (!autorizado) return json({ error: "Solo el administrador" }, 403);
+      const nuevo = Number(b0.ars_por_usd);
+      if (!(nuevo > 100)) return json({ error: "Cotización inválida" }, 400);
+      const { data: d0 } = await admin.from("app_settings").select("value").eq("key", "dolar").single();
+      await admin.from("app_settings").update({ value: { ...(d0?.value || {}), ars_por_usd: nuevo }, updated_at: new Date().toISOString() }).eq("key", "dolar");
+      const token0 = Deno.env.get("MP_ACCESS_TOKEN");
+      const { data: subs } = await admin.from("subscriptions").select("id, mp_preapproval_id, monto_usd, amount")
+        .eq("proveedor", "mercadopago").not("mp_preapproval_id", "is", null).not("monto_usd", "is", null).in("status", ["active", "past_due", "pending"]);
+      const res: any[] = [];
+      for (const s of subs || []) {
+        const ars = Math.round(Number(s.monto_usd) * nuevo);
+        if (Number(s.amount) === ars) { res.push({ id: s.id, igual: true }); continue; }
+        if (!token0) { res.push({ id: s.id, error: "sin MP_ACCESS_TOKEN" }); continue; }
+        const r = await fetch(`https://api.mercadopago.com/preapproval/${s.mp_preapproval_id}`, {
+          method: "PUT", headers: { Authorization: `Bearer ${token0}`, "content-type": "application/json" },
+          body: JSON.stringify({ auto_recurring: { transaction_amount: ars, currency_id: "ARS" } }),
+        });
+        if (r.ok) { await admin.from("subscriptions").update({ amount: ars }).eq("id", s.id); res.push({ id: s.id, antes: s.amount, ahora: ars }); }
+        else res.push({ id: s.id, error: `Mercado Pago ${r.status}` });
+      }
+      return json({ ok: true, ars_por_usd: nuevo, suscripciones: res });
+    }
+
     const { data: { user } } = await userClient.auth.getUser();
     if (!user) return json({ error: "No autenticado" }, 401);
     const { data: fam } = await admin.from("families").select("id").eq("profile_id", user.id).maybeSingle();

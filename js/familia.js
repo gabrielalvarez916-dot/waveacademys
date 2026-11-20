@@ -867,14 +867,17 @@
       '<section class="fa-card"><h2>Matrícula ' + new Date().getFullYear() + '</h2>' +
         (m.pagada ? '<p class="fa-aviso">✓ La matrícula de este año ya está paga.</p>'
           : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año (' + esc(dinero(m.monto_ars, 'ARS')) + '), en hasta ' + m.cuotas_max + ' cuotas con tarjeta.</p>' +
-            '<button type="button" class="boton fa-boton" id="fa-pagar-mat">Pagar la matrícula con Mercado Pago</button>') +
+            '<div class="fa-botones"><button type="button" class="boton fa-boton" id="fa-pagar-mat">En pesos con Mercado Pago</button>' +
+            '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-mat-pp">En dólares con PayPal (' + esc(usd(m.monto_usd)) + ', 1 pago)</button></div>') +
       '</section>' +
       '<section class="fa-card"><h2>Sumar una suscripción</h2>' +
         '<p class="fa-intro">Cada hijo necesita una suscripción mensual del nivel que va a cursar. Elegí el nivel y la modalidad:</p>' +
         '<div class="fa-compra"><select id="fa-nivel" aria-label="Nivel">' + niveles.map(function (n) { return '<option value="' + n + '">' + NOMBRE_NIVEL[n] + '</option>'; }).join('') + '</select>' +
         '<select id="fa-mod" aria-label="Modalidad"></select></div>' +
         '<p class="fa-precio" id="fa-precio"></p>' +
-        '<button type="button" class="boton fa-boton" id="fa-pagar-sus">Pagar con Mercado Pago</button>' +
+        '<div class="fa-botones"><button type="button" class="boton fa-boton" id="fa-pagar-sus">En pesos con Mercado Pago</button>' +
+        '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-sus-pp">En dólares con PayPal</button></div>' +
+        '<p class="fa-intro">Si vivís fuera de la Argentina, pagá en dólares con PayPal.</p>' +
         '<p class="fa-aviso" id="fa-err" hidden></p>' +
       '</section>';
     var selN = document.getElementById('fa-nivel'), selM = document.getElementById('fa-mod'), precio = document.getElementById('fa-precio'), err = document.getElementById('fa-err');
@@ -884,11 +887,11 @@
       selM.innerHTML = ts.map(function (t) { return '<option value="' + t.modalidad + '">' + NOMBRE_MOD[t.modalidad] + '</option>'; }).join('');
       verPrecio();
     }
-    function verPrecio() { var t = tarifa(); precio.innerHTML = t ? '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b> · se cobran ' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes' : ''; }
+    function verPrecio() { var t = tarifa(); precio.innerHTML = t ? '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b> · con Mercado Pago se cobran ' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes' : ''; }
     selN.addEventListener('change', mods); selM.addEventListener('change', verPrecio); mods();
-    async function ir(body, btn) {
+    async function ir(body, btn, fn) {
       err.hidden = true; btn.disabled = true; var txt = btn.textContent; btn.textContent = 'Preparando el pago…';
-      var x = await sb.functions.invoke('mp-cobros', { body: body });
+      var x = await sb.functions.invoke(fn || 'mp-cobros', { body: body });
       if (x.error || !x.data || x.data.error || !x.data.url) {
         err.textContent = (x.data && x.data.error) || (x.error ? await mensajeDeError(x.error) : 'No se pudo preparar el pago.'); err.hidden = false;
         btn.disabled = false; btn.textContent = txt; return;
@@ -896,8 +899,10 @@
       window.location.href = x.data.url;
     }
     document.getElementById('fa-pagar-sus').addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this); });
-    var bm = document.getElementById('fa-pagar-mat');
+    document.getElementById('fa-pagar-sus-pp').addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this, 'paypal'); });
+    var bm = document.getElementById('fa-pagar-mat'), bmp = document.getElementById('fa-pagar-mat-pp');
     if (bm) bm.addEventListener('click', function () { ir({ action: 'matricula' }, this); });
+    if (bmp) bmp.addEventListener('click', function () { ir({ action: 'matricula' }, this, 'paypal'); });
   }
 
   async function vistaFacturacion() {

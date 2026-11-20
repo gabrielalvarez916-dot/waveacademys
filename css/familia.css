@@ -543,3 +543,6 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .fa-compra select { min-height: 44px; padding: 0 12px; border: 2px solid var(--borde, #cfdcdb); border-radius: 12px; font: inherit; background: #fff; }
 .fa-precio { margin: 12px 2px 0; color: var(--petroleo, #253638); }
 @media (max-width: 600px) { .fa-boton { width: 100%; min-width: 0; } .fa-compra select { flex: 1 1 100%; } }
+.fa-botones { display: flex; flex-wrap: wrap; gap: 10px; }
+.fa-pp { background: #003087; }
+.fa-pp:hover { background: #001f5c; }
