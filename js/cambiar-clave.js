@@ -18,14 +18,14 @@
   // Solo puede estar acá quien tiene la sesión abierta y todavía debe cambiar la clave
   var actual = await Wave.sb.auth.getSession();
   var sesion = actual.data.session;
-  if (!sesion) { location.replace('/index.html'); return; }
+  if (!sesion) { location.replace('/ingresar.html'); return; }
 
   var perfil = null;
   try { perfil = await Wave.getProfile(sesion.user.id); } catch (e) { /* queda null */ }
 
   if (!perfil || perfil.is_suspended) {
     await Wave.sb.auth.signOut();
-    location.replace('/index.html');
+    location.replace('/ingresar.html');
     return;
   }
 

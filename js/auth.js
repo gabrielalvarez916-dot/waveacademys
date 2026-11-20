@@ -27,12 +27,12 @@
   // A dónde mandar a una persona según su perfil
   function destino(perfil) {
     if (perfil.must_change_password) return '/cambiar-clave.html';
-    return PANELES[perfil.role] || '/index.html';
+    return PANELES[perfil.role] || '/ingresar.html';
   }
 
   async function salir() {
     await sb.auth.signOut();
-    location.replace('/index.html');
+    location.replace('/ingresar.html');
   }
 
   window.Wave = { sb: sb, PANELES: PANELES, getProfile: getProfile, destino: destino, salir: salir };
