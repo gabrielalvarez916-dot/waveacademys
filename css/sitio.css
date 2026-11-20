@@ -196,6 +196,9 @@ img { max-width: 100%; display: block; }
   .tilt-a, .tilt-b, .tilt-c, .tilt-d, .plat-vista .marco { transform: none; }
   .wrap { padding: 0 20px; }
   .caja { padding: 30px; }
+  .cierre .g2 { grid-template-columns: 1fr !important; gap: 28px !important; align-items: start !important; }
+  .cierre .g2 .btn { flex: 1 1 100%; white-space: normal; text-align: center; padding: 14px 22px; }
+  .cierre { padding-top: 72px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .nivel, .btn { transition: none; } }
 .plat-vista > .marco:has(img[src*="/carpeta.webp"]) { max-width: 520px; margin: 0 auto; }
