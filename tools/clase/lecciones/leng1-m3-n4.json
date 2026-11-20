@@ -1,1 +1,170 @@
-{"slug": "leng1-m3-n4", "step_id": "4254c521-afcf-4d4d-8125-959ea313785a", "materia": "Lengua y Literatura I", "titulo": "Corrijo mi relato", "sub": "Lengua y Literatura I · Misión 3 · Nivel 4", "escenas": [{"t": "chat", "contacto": {"nombre": "Juan", "emoji": "👦"}, "mensajes": [{"yo": false, "txt": "Terminé el cuento!! 📝"}, {"yo": true, "txt": "¿Lo releíste?"}, {"yo": false, "txt": "Para qué, si ya está 😎"}], "titulo": "CORRIJO", "sub": "mi relato", "voz": ["Juan: ¡terminé el cuento!", "Lu: ¿lo releíste?", "Juan: ¿para qué, si ya está? Error: *todo texto mejora cuando se revisa*.", "Hoy: *corrijo mi relato*."]}, {"t": "pasos", "titulo": "REVISO EN CUATRO PASADAS", "items": [{"txt": "El orden: ¿se entiende qué pasó?", "emoji": "🧭"}, {"txt": "Los tiempos verbales", "emoji": "⏳"}, {"txt": "Repeticiones", "emoji": "🔁"}, {"txt": "Puntuación y diálogos", "emoji": "✒️"}], "voz": ["No se revisa todo junto: se hacen *pasadas*.", "Primera: el *orden*. ¿Se entiende qué pasó y cuándo?", "Segunda: los *tiempos verbales*. ¿Mantengo el pasado?", "Tercera: *repeticiones*. ¿Digo veinte veces la misma palabra?", "Cuarta: *puntuación y diálogos*."]}, {"t": "corrige", "titulo": "UN RELATO, CORREGIDO", "cambios": [{"antes": "Lucía entra al cuarto", "despues": "Lucía entró al cuarto", "motivo": "mantener el pasado"}, {"antes": "Lucía vio a Lucía", "despues": "vio su reflejo", "motivo": "evitar la repetición"}, {"antes": "y entonces y entonces", "despues": "de pronto", "motivo": "variar los conectores"}], "voz": ["Corrijamos un relato.", "*Lucía entra al cuarto* pasa a *entró*: mantenemos el pasado.", "*Lucía vio a Lucía en el espejo* pasa a *vio su reflejo*: evitamos la repetición.", "*Y entonces, y entonces* pasa a *de pronto*: variamos los conectores."]}, {"t": "definicion", "palabra": "Raya de diálogo", "texto": "En los diálogos, cada intervención empieza en un renglón nuevo con raya (—)", "emoji": "💬", "voz": ["Y los diálogos: cada vez que habla un personaje, va en *renglón nuevo* con una *raya*.", "—¿Hay alguien ahí? —preguntó Lucía. La segunda raya separa lo que dice del narrador."]}, {"t": "pregunta", "pregunta": "¿Cuál está bien escrito?", "opciones": ["—¿Quién es? —preguntó Lucía.", "-¿Quién es? preguntó Lucía.", "\"¿Quién es?\" —Lucía preguntó—"], "correcta": 0, "voz": ["Te toca: ¿cuál diálogo está bien escrito?", "Fijate en las rayas y en dónde van.", "El primero: raya al empezar, y otra raya antes de lo que agrega el narrador."]}, {"t": "consejo", "titulo": "LEELO EN VOZ ALTA", "texto": "El oído encuentra errores que el ojo no ve", "emoji": "🗣️", "voz": ["El mejor truco: *leé tu texto en voz alta*. El oído encuentra errores que el ojo se saltea."]}, {"t": "resumen", "voz": ["Repasemos.", "Revisá en *pasadas*.", "Mantené los *tiempos*.", "Evitá *repeticiones*.", "Y los *diálogos*, con raya.", "¡Misión 3 terminada! Ahora, *a practicar*."], "items": [["PASADAS", "orden, tiempos, repeticiones, puntuación"], ["TIEMPOS", "mantener el pasado"], ["REPETICIONES", "sinónimos y pronombres"], ["DIÁLOGOS", "renglón nuevo y raya"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "leng1-m3-n4",
+ "step_id": "4254c521-afcf-4d4d-8125-959ea313785a",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Corrijo mi relato",
+ "sub": "Lengua y Literatura I · Misión 3 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Juan",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Terminé el cuento!! 📝"
+    },
+    {
+     "yo": true,
+     "txt": "¿Lo releíste?"
+    },
+    {
+     "yo": false,
+     "txt": "Para qué, si ya está 😎"
+    }
+   ],
+   "titulo": "CORRIJO",
+   "sub": "mi relato",
+   "voz": [
+    "Juan: ¡terminé el cuento!",
+    "Lu: ¿lo releíste?",
+    "Juan: ¿para qué, si ya está? Error: *todo texto mejora cuando se revisa*.",
+    "Hoy: *corrijo mi relato*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "REVISO EN CUATRO PASADAS",
+   "items": [
+    {
+     "txt": "El orden: ¿se entiende qué pasó?",
+     "emoji": "🧭"
+    },
+    {
+     "txt": "Los tiempos verbales",
+     "emoji": "⏳"
+    },
+    {
+     "txt": "Repeticiones",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "Puntuación y diálogos",
+     "emoji": "✒️"
+    }
+   ],
+   "voz": [
+    "No se revisa todo junto: se hacen *pasadas*.",
+    "Primera: el *orden*. ¿Se entiende qué pasó y cuándo?",
+    "Segunda: los *tiempos verbales*. ¿Mantengo el pasado?",
+    "Tercera: *repeticiones*. ¿Digo veinte veces la misma palabra?",
+    "Cuarta: *puntuación y diálogos*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "UN RELATO, CORREGIDO",
+   "cambios": [
+    {
+     "antes": "Lucía entra al cuarto",
+     "despues": "Lucía entró al cuarto",
+     "motivo": "mantener el pasado"
+    },
+    {
+     "antes": "Lucía vio a Lucía",
+     "despues": "vio su reflejo",
+     "motivo": "evitar la repetición"
+    },
+    {
+     "antes": "y entonces y entonces",
+     "despues": "de pronto",
+     "motivo": "variar los conectores"
+    }
+   ],
+   "voz": [
+    "Corrijamos un relato.",
+    "*Lucía entra al cuarto* pasa a *entró*: mantenemos el pasado.",
+    "*Lucía vio a Lucía en el espejo* pasa a *vio su reflejo*: evitamos la repetición.",
+    "*Y entonces, y entonces* pasa a *de pronto*: variamos los conectores."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Raya de diálogo",
+   "texto": "En los diálogos, cada intervención empieza en un renglón nuevo con raya (—)",
+   "emoji": "💬",
+   "voz": [
+    "Y los diálogos: cada vez que habla un personaje, va en *renglón nuevo* con una *raya*.",
+    "—¿Hay alguien ahí? —preguntó Lucía. La segunda raya separa lo que dice del narrador."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está bien escrito?",
+   "opciones": [
+    "—¿Quién es? —preguntó Lucía.",
+    "-¿Quién es? preguntó Lucía.",
+    "\"¿Quién es?\" —Lucía preguntó—"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál diálogo está bien escrito?",
+    "Fijate en las rayas y en dónde van.",
+    "El primero: raya al empezar, y otra raya antes de lo que agrega el narrador."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEELO EN VOZ ALTA",
+   "texto": "El oído encuentra errores que el ojo no ve",
+   "emoji": "🗣️",
+   "voz": [
+    "El mejor truco: *leé tu texto en voz alta*. El oído encuentra errores que el ojo se saltea."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿DÓNDE LO ESCRIBO?",
+   "texto": "En las actividades de este nivel: el tutor lo corrige y te da pistas",
+   "emoji": "✍️",
+   "voz": [
+    "¿Dónde escribís tu texto? En las *actividades* de este nivel: lo escribís ahí, y el tutor lo lee, lo corrige y te da pistas para mejorarlo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Revisá en *pasadas*.",
+    "Mantené los *tiempos*.",
+    "Evitá *repeticiones*.",
+    "Y los *diálogos*, con raya.",
+    "¡Misión 3 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PASADAS",
+     "orden, tiempos, repeticiones, puntuación"
+    ],
+    [
+     "TIEMPOS",
+     "mantener el pasado"
+    ],
+    [
+     "REPETICIONES",
+     "sinónimos y pronombres"
+    ],
+    [
+     "DIÁLOGOS",
+     "renglón nuevo y raya"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

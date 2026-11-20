@@ -119,8 +119,9 @@
   // pregunta: {pregunta, opciones:[...], correcta: índice} — 3 pasos: pregunta, opciones, respuesta
   T.pregunta = { n: function () { return 3; }, armar: function (g, tl, B, d) {
     var q = w.pieza(g, 960, 330); w.multi(q, 0, 0, '🤔 ' + d.pregunta, 60, C.txt, 1500);
-    var P = W.rejilla(d.opciones.length, 960, 680, 720, 170, 2);
-    var O = d.opciones.map(function (o, k) { var c = w.chip(g, P[k][0], P[k][1], 660, 130, String.fromCharCode(65 + k) + ') ' + o, { r: 30, size: 42 }); return c; });
+    var largo = Math.max.apply(null, d.opciones.map(function (o) { return String(o).length + 3; })), una = largo > 24; // opciones largas: una debajo de otra
+    var P = una ? d.opciones.map(function (_, k) { return [960, 560 + k * 130]; }) : W.rejilla(d.opciones.length, 960, 680, 720, 170, 2);
+    var O = d.opciones.map(function (o, k) { var c = w.chip(g, P[k][0], P[k][1], una ? Math.min(1700, largo * 21 + 100) : 660, una ? 108 : 130, String.fromCharCode(65 + k) + ') ' + o, { r: 30, size: una ? 36 : 42 }); return c; });
     B(0); w.IN(tl, q, 0);
     B(1); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.12' : 0); });
     B(2); O.forEach(function (o, k) { if (k === d.correcta) { tl.to(o.r, { attr: { stroke: C.verde, 'stroke-width': 10 }, duration: .3 }, k ? '<' : '>'); w.pop(tl, o, '<'); } else tl.to(o, { opacity: .35, duration: .3 }, '<'); });

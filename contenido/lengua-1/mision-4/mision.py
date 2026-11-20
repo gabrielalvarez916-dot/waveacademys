@@ -63,7 +63,7 @@ N4=NV("Vas a analizar oraciones completas y escribir oraciones expandidas.",["An
  S(2,"Expandir",[P("Una oración pobre dice poco: \"Perro ladró\". Con modificadores se entiende y se ve: \"El perro negro del vecino ladró toda la noche\".")])],
  {"titulo":"expandir","planteo":"Expandí \"Chica canta\".","pasos":["Agrego MD: La chica.","Agrego MI: La chica de rulos.","Agrego aposición: La chica de rulos, mi prima,","Resultado: La chica de rulos, mi prima, canta en el coro."]},
  {"titulo":"completar","planteo":"Completá.","pasos":["El primer paso del análisis es marcar el ___ .","Para agregar un MI uso una ___ ."]},
- {"titulo":"tu turno","planteo":"Expandí \"Auto frenó\" con MD, MI y aposición, y analizá tu oración."},
+ {"titulo":"tu turno","planteo":"Expandí \"Auto frenó\" con MD, MI y aposición en la actividad de este nivel: ahí lo corrige el tutor."},
  {"titulo":"Empezá por el verbo","texto":"Sin el verbo no hay pregunta, y sin pregunta no aparece el sujeto."},
  ["Analizar sin encontrar primero el verbo.","Escribir oraciones sin modificadores que no se entienden."],
  RS(("Paso 1","El verbo."),("Paso 2","¿Quién? → sujeto."),("Pasos 3 y 4","Núcleo y modificadores."),("Escribir","Expandir.")),

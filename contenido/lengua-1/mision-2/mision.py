@@ -78,7 +78,7 @@ N4=NV("Vas a planificar y escribir un enigma breve con pistas y revelación.",["
  S(2,"Juego limpio",[P("Como en «La liga de los pelirrojos», la solución tiene que salir de las pistas que el lector ya vio. Nada de resolver por casualidad.")])],
  {"titulo":"la torta","planteo":"Planificá un enigma: desapareció la torta del cumpleaños.","pasos":["Misterio: la torta no está.","Detective: Juan.","Pistas: migas en el sillón y el perro escondido; falsa pista: la ventana abierta.","Revelación: el perro se la comió."]},
  {"titulo":"completar","planteo":"Completá.","pasos":["El momento en que se explica todo es la ___ .","Un enigma tiene que tener al menos dos ___ verdaderas."]},
- {"titulo":"tu enigma","planteo":"Escribí en tu carpeta un enigma de una página, con dos pistas, una falsa pista y la revelación."},
+ {"titulo":"tu enigma","planteo":"Escribí tu enigma (una página, con dos pistas, una falsa pista y la revelación) en la actividad de este nivel: ahí lo corrige el tutor."},
  {"titulo":"Empezá por el final","texto":"Decidí primero la solución y después escondé las pistas que llevan a ella."},
  ["Resolver por casualidad.","Contar la solución al principio."],
  RS(("Planificar","Misterio, detective, pistas."),("Estructura","Enigma, investigación, revelación."),("Pistas","Dos verdaderas, una falsa."),("Juego limpio","La solución en las pistas.")),

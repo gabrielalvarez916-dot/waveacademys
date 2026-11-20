@@ -89,7 +89,7 @@ N3={"objetivo":"Vas a escribir un texto de punto de partida usando el proceso de
 ],
 "ejemplo_completo":{"titulo":"un párrafo","planteo":"Escribí el párrafo 2 del punto de partida.","pasos":["Elijo una historia: un cuento de terror que leí el año pasado.","Digo por qué me gustó: me tuvo nervioso hasta el final.","Uso un conector: \"porque\".","Resultado: \"Me gustó mucho un cuento de terror porque me tuvo nervioso hasta el final.\""]},
 "ejemplo_incompleto":{"titulo":"conectores","planteo":"Completá con el conector adecuado.","pasos":["Me gusta leer, ___ no tengo mucho tiempo.","Leí mucho este verano, ___ ahora leo más rápido."]},
-"ejemplo_solo":{"titulo":"tu punto de partida","planteo":"Escribí en tu carpeta tu texto de punto de partida con los cuatro párrafos."},
+"ejemplo_solo":{"titulo":"tu punto de partida","planteo":"Escribí tu texto de punto de partida con los cuatro párrafos en la actividad de este nivel: ahí lo corrige el tutor y te da pistas."},
 "tip":{"titulo":"Leelo en voz alta","texto":"Al revisar, leé tu texto en voz alta: donde te quedás sin aire, falta un punto."},
 "ojo":["Escribir todo en una sola oración larguísima.","Repetir \"y entonces\" en lugar de variar los conectores."],
 "resumen":[{"titulo":"Proceso","texto":"Planificar, escribir, revisar, pasar en limpio."},{"titulo":"Oración","texto":"Mayúscula y punto."},{"titulo":"Párrafo","texto":"Una idea; punto y aparte."},{"titulo":"Conectores","texto":"Unen ideas: y, pero, porque, por eso."}],
