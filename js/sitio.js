@@ -52,38 +52,16 @@
         items: ['Última conexión, progreso y promedio general', 'Programación semanal y fecha objetivo', 'Turnos con dirección y tutorías', 'Facturación'],
         imgs: [['familia', 'Progreso'], ['programacion', 'Programación']] }
     ];
-    var tabs = plat.querySelector('.plat-tabs'), panel = plat.querySelector('.plat-panel');
-    tabs.innerHTML = VISTAS.map(function (v, i) {
-      return '<button type="button" role="tab" id="tab-' + v.id + '" aria-selected="' + (i ? 'false' : 'true') + '" aria-controls="plat-panel">' + v.tab + '</button>';
-    }).join('');
-    function vista(v) {
-      var texto = '<div><h3>' + v.tit + '</h3><p class="p">' + v.txt + '</p><ul>' + v.items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>';
-      var foto;
-      if (v.hojas) {
-        foto = '<div class="plat-hojas">' + v.hojas.map(function (h) { return '<img src="' + P + h + '.webp" alt="Página del PDF de la lección 1 de Matemática I" loading="lazy" width="900" height="1273">'; }).join('') + '</div>';
-      } else {
-        foto = '<div class="marco"><div class="marco-barra"><i></i><i></i><i></i></div><img id="plat-img" src="' + P + v.imgs[0][0] + '.webp" alt="' + esc(v.imgs[0][1]) + '"></div>' +
-          (v.imgs.length > 1 ? '<div class="plat-miniaturas">' + v.imgs.map(function (im, i) {
-            return '<button type="button" data-img="' + im[0] + '" data-alt="' + esc(im[1]) + '" aria-pressed="' + (i ? 'false' : 'true') + '"><img src="' + P + im[0] + '.webp" alt="" loading="lazy"><span>' + im[1] + '</span></button>';
-          }).join('') + '</div>' : '');
-      }
-      panel.innerHTML = texto + '<div class="plat-vista">' + foto + '</div>';
-      panel.setAttribute('aria-labelledby', 'tab-' + v.id);
-      panel.querySelectorAll('[data-img]').forEach(function (b) {
-        b.addEventListener('click', function () {
-          var img = document.getElementById('plat-img');
-          img.src = P + b.getAttribute('data-img') + '.webp'; img.alt = b.getAttribute('data-alt');
-          panel.querySelectorAll('[data-img]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-        });
-      });
+    function marco(im, chico) {
+      return '<figure class="marco' + (chico ? ' marco-chico' : '') + '"><div class="marco-barra"><i></i><i></i><i></i></div><img src="' + P + im[0] + '.webp" alt="' + esc(im[1]) + '" loading="lazy"><figcaption>' + esc(im[1]) + '</figcaption></figure>';
     }
-    tabs.querySelectorAll('button').forEach(function (b, i) {
-      b.addEventListener('click', function () {
-        tabs.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
-        vista(VISTAS[i]);
-      });
-    });
-    vista(VISTAS[0]);
+    plat.innerHTML = VISTAS.map(function (v, n) {
+      var texto = '<div class="plat-texto"><p class="plat-num">' + (n + 1 < 10 ? '0' : '') + (n + 1) + ' · ' + v.tab + '</p><h3>' + v.tit + '</h3><p class="p">' + v.txt + '</p><ul>' + v.items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>';
+      var foto = v.hojas
+        ? '<div class="plat-hojas">' + v.hojas.map(function (h) { return '<img src="' + P + h + '.webp" alt="Página del PDF de la lección 1 de Matemática I" loading="lazy" width="900" height="1273">'; }).join('') + '</div>'
+        : marco(v.imgs[0]) + (v.imgs.length > 1 ? '<div class="plat-extra">' + v.imgs.slice(1).map(function (im) { return marco(im, true); }).join('') + '</div>' : '');
+      return '<div class="plat-fila' + (n % 2 ? ' al-reves' : '') + '">' + texto + '<div class="plat-vista">' + foto + '</div></div>';
+    }).join('');
   }
 
   // ---------- Temario real (misiones de cada materia, por año) ----------
