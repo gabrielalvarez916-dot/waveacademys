@@ -1,0 +1,249 @@
+{
+ "slug": "soc1-m4-n4",
+ "step_id": "23dfa5fc-0c0e-4377-9f79-83c695a4c61d",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Cómo leer climogramas y mapas temáticos",
+ "sub": "Ciencias Sociales Integradas I · Misión 4 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo saber el clima de un lugar sin haber ido nunca?",
+   "segundos": 6,
+   "respuesta": "Leyendo su climograma",
+   "emoji": "📊",
+   "titulo": "CLIMOGRAMAS",
+   "sub": "y mapas temáticos",
+   "voz": [
+    "Desafío: ¿cómo saber el clima de un lugar sin haber ido nunca? 6 segundos.",
+    "Leyendo su *climograma*: un gráfico que resume temperaturas y lluvias de todo el año.",
+    "Hoy: *climogramas y mapas temáticos*."
+   ]
+  },
+  {
+   "t": "curva",
+   "titulo": "BUENOS AIRES: TEMPERATURA MEDIA",
+   "x": "mes del año (1 a 12)",
+   "y": "°C",
+   "puntos": [
+    [
+     1,
+     24
+    ],
+    [
+     2,
+     23
+    ],
+    [
+     3,
+     21
+    ],
+    [
+     4,
+     17
+    ],
+    [
+     5,
+     14
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     14
+    ],
+    [
+     10,
+     17
+    ],
+    [
+     11,
+     20
+    ],
+    [
+     12,
+     23
+    ]
+   ],
+   "marcas": [
+    {
+     "x": 12,
+     "y": 23,
+     "txt": "verano: unos 24 °C"
+    },
+    {
+     "x": 7,
+     "y": 10,
+     "txt": "mínima: 10 °C"
+    }
+   ],
+   "voz": [
+    "Primera parte del climograma: la *línea* de temperatura media de cada mes.",
+    "Abajo, los meses del uno al doce; al costado, los grados.",
+    "La más alta, en los meses doce y uno: unos *24 grados*, pleno verano.",
+    "La más baja, en el mes siete: unos *10 grados*, invierno."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Amplitud térmica",
+   "texto": "Diferencia entre la temperatura más alta y la más baja: 24 − 10 = 14 °C",
+   "emoji": "🌡️",
+   "voz": [
+    "Con esa línea se calcula la *amplitud térmica*: la diferencia entre la temperatura más alta y la más baja.",
+    "En Buenos Aires: veinticuatro menos diez, *14 grados*. Cerca del mar la amplitud es baja; lejos, mucho más alta."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "LLUVIAS POR ESTACIÓN (mm)",
+   "unidad": "mm",
+   "items": [
+    {
+     "txt": "Verano",
+     "valor": 340
+    },
+    {
+     "txt": "Otoño",
+     "valor": 320
+    },
+    {
+     "txt": "Invierno",
+     "valor": 200
+    },
+    {
+     "txt": "Primavera",
+     "valor": 300
+    }
+   ],
+   "voz": [
+    "Segunda parte: las *barras* de lluvia, en milímetros. Acá las agrupamos por estación.",
+    "*Verano*: unos 340 milímetros.",
+    "*Otoño*: unos 320.",
+    "*Invierno*: la más seca, unos 200.",
+    "*Primavera*: unos 300. Llueve todo el año: clima *templado húmedo*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO LEER UN CLIMOGRAMA",
+   "items": [
+    {
+     "txt": "Mirá el lugar y su hemisferio",
+     "emoji": "📍"
+    },
+    {
+     "txt": "Línea: temperatura",
+     "emoji": "📈"
+    },
+    {
+     "txt": "Barras: lluvias",
+     "emoji": "📊"
+    },
+    {
+     "txt": "Calculá la amplitud",
+     "emoji": "➖"
+    },
+    {
+     "txt": "Concluí el clima",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Cómo leer cualquier climograma.",
+    "Mirá el *lugar*: si está en el hemisferio norte, el verano cae en otros meses.",
+    "La *línea* es la temperatura.",
+    "Las *barras*, las lluvias.",
+    "Calculá la *amplitud térmica*.",
+    "Y concluí: ¿cálido o frío? ¿Lluvioso o seco?"
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "Brasil",
+      "Colombia",
+      "Perú",
+      "Rep. Dem. del Congo",
+      "Congo",
+      "Gabon",
+      "Indonesia",
+      "Malaysia",
+      "Papua New Guinea"
+     ],
+     "color": "#3fa07a",
+     "texto": "Mapa temático: selvas tropicales"
+    }
+   ],
+   "voz": [
+    "Un *mapa temático* muestra un solo tema. Este, dónde hay selvas tropicales.",
+    "Fijate el patrón: todas están cerca del *Ecuador*, donde hace calor y llueve todo el año. Eso no se ve en un mapa político."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En un climograma, barras muy altas significan…",
+   "opciones": [
+    "Muchas lluvias",
+    "Mucho calor",
+    "Mucha población"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: en un climograma, ¿qué significan barras muy altas?",
+    "¿Muchas lluvias, mucho calor, o mucha población?",
+    "*Muchas lluvias*: las barras son la precipitación; el calor lo muestra la línea."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *climograma* resume el clima de un lugar.",
+    "La *línea* es la temperatura.",
+    "Las *barras*, las lluvias.",
+    "La *amplitud térmica*: máxima menos mínima.",
+    "Y el *mapa temático* muestra un solo tema.",
+    "¡Misión 4 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CLIMOGRAMA",
+     "temperatura y lluvias del año"
+    ],
+    [
+     "LÍNEA",
+     "temperatura"
+    ],
+    [
+     "BARRAS",
+     "lluvias en mm"
+    ],
+    [
+     "AMPLITUD",
+     "máxima − mínima"
+    ],
+    [
+     "MAPA TEMÁTICO",
+     "un solo tema"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

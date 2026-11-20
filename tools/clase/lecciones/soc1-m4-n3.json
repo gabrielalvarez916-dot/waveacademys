@@ -1,0 +1,188 @@
+{
+ "slug": "soc1-m4-n3",
+ "step_id": "814f1b33-398d-4e41-a515-dbc8dcb7e58e",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Ambientes de América Latina vistos desde el mundo",
+ "sub": "Ciencias Sociales Integradas I · Misión 4 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "RÉCORD",
+   "titular": "En Atacama hay zonas donde casi nunca llueve",
+   "bajada": "Es el desierto no polar más seco del planeta",
+   "emoji": "🏜️",
+   "titulo": "AMÉRICA LATINA",
+   "sub": "sus ambientes",
+   "voz": [
+    "Un récord de América Latina: en el desierto de *Atacama*, en Chile, hay lugares donde casi nunca llueve.",
+    "Es el desierto no polar más seco del planeta, y a pocos cientos de kilómetros está la cordillera nevada.",
+    "Hoy: *los ambientes de América Latina*."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "sudamerica",
+   "pasos": [
+    {
+     "resaltar": [
+      "Brasil",
+      "Perú",
+      "Colombia",
+      "Venezuela",
+      "Ecuador",
+      "Bolivia",
+      "Guyana",
+      "Surinam"
+     ],
+     "color": "#3fa07a",
+     "texto": "Amazonia: la selva"
+    },
+    {
+     "resaltar": [
+      "Chile",
+      "Perú",
+      "Bolivia"
+     ],
+     "color": "#8a6bbf",
+     "marcas": [
+      {
+       "lon": -69.5,
+       "lat": -23.5,
+       "txt": "Atacama"
+      }
+     ],
+     "texto": "Andes y Atacama"
+    },
+    {
+     "resaltar": [
+      "Argentina",
+      "Uruguay"
+     ],
+     "color": "#d9a441",
+     "texto": "Pampa: pastizales"
+    }
+   ],
+   "voz": [
+    "Tres ambientes que el mundo conoce.",
+    "La *Amazonia*: la selva tropical más grande del planeta. Se reparte entre nueve países, pero casi dos tercios están en Brasil.",
+    "Los *Andes*: la cordillera más larga del mundo, con el desierto de *Atacama* a sus pies.",
+    "Y la *Pampa*: llanura de pastizales en Argentina y Uruguay, uno de los suelos más fértiles del planeta."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "AMBIENTES Y SOCIEDADES",
+   "columnas": [
+    "Ambiente",
+    "Qué se hace",
+    "Para el mundo"
+   ],
+   "filas": [
+    [
+     "Amazonia",
+     "madera, ganado, soja",
+     "biodiversidad y lluvias"
+    ],
+    [
+     "Andes",
+     "minería: cobre y litio",
+     "minerales clave"
+    ],
+    [
+     "Pampa",
+     "granos y carne",
+     "alimentos"
+    ]
+   ],
+   "voz": [
+    "Cada ambiente fue transformado por la sociedad, y le importa al mundo.",
+    "La *Amazonia*: se tala para madera, ganado y soja. Pero guarda la mayor biodiversidad y genera lluvias para toda la región.",
+    "Los *Andes*: minería de cobre y de *litio*, clave para las baterías de los celulares.",
+    "La *Pampa*: granos y carne que se exportan a todo el planeta."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🌾",
+    "texto": "pastizales y venados de las pampas"
+   },
+   "despues": {
+    "cab": "AHORA",
+    "emoji": "🚜",
+    "texto": "campos de soja, trigo y ganado"
+   },
+   "voz": [
+    "Así cambió la Pampa. Antes: un mar de *pastizales*, con venados y ñandúes.",
+    "Ahora: casi todo son *cultivos* y ganado. Es un ambiente natural, transformado por la sociedad."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué se usa sobre todo el litio de los Andes?",
+   "opciones": [
+    "Para baterías",
+    "Para construir casas",
+    "Para hacer vidrio"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿para qué se usa sobre todo el litio de los Andes?",
+    "¿Para baterías, para construir casas, o para hacer vidrio?",
+    "*Para baterías*: celulares, computadoras y autos eléctricos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La Amazonia es solo de Brasil",
+     "bien": "Se reparte en nueve países"
+    },
+    {
+     "mal": "Ambiente = solo naturaleza",
+     "bien": "Naturaleza + sociedad"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la Amazonia es solo de Brasil: se reparte en *nueve países*.",
+    "Y olvidar que un ambiente es naturaleza *y* sociedad: la Pampa de hoy la hicieron, en gran parte, las personas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *Amazonia*: la selva más grande del mundo.",
+    "Los *Andes*: cordillera, cobre y litio.",
+    "*Atacama*: el desierto no polar más seco.",
+    "Y la *Pampa*: pastizales transformados en campos.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AMAZONIA",
+     "selva más grande"
+    ],
+    [
+     "ANDES",
+     "cordillera y minería"
+    ],
+    [
+     "ATACAMA",
+     "desierto más seco"
+    ],
+    [
+     "PAMPA",
+     "pastizales hechos campos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

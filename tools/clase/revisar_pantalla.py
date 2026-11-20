@@ -29,7 +29,7 @@ async def main(slugs):
             n = await pg.evaluate("(document.getElementById('ui')||{remove(){}}).remove(); CLASE.escenas.length")
             for k in range(n):
                 await pg.evaluate("LECCION.irA(%d)" % k); await pg.wait_for_timeout(120)
-                await pg.evaluate("LECCION.tl().progress(1)"); await pg.wait_for_timeout(150)
+                await pg.evaluate("LECCION.tl().progress(1), 0"); await pg.wait_for_timeout(150)
                 for m in await pg.evaluate(JS): print(f'{slug} escena {k}: {m}'); total += 1
             await pg.close()
         await b.close()

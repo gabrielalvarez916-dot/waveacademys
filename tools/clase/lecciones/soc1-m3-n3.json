@@ -1,0 +1,209 @@
+{
+ "slug": "soc1-m3-n3",
+ "step_id": "c55d897f-d119-4747-b5f9-22aa7bf24b43",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Bloques, organismos y acuerdos entre países",
+ "sub": "Ciencias Sociales Integradas I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "🧑"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Llevo pasaporte a Uruguay? 🤔"
+    },
+    {
+     "yo": true,
+     "txt": "No hace falta, con el DNI alcanza"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y eso por qué? 😮"
+    }
+   ],
+   "titulo": "ACUERDOS",
+   "sub": "entre países",
+   "voz": [
+    "Tomi se va de viaje: ¿llevo pasaporte a Uruguay?",
+    "Le contestan: no hace falta, con el DNI alcanza.",
+    "¿Por qué? Porque Argentina y Uruguay forman parte de un *acuerdo regional*.",
+    "Hoy: *bloques y organismos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Bloque regional",
+   "texto": "Grupo de países vecinos que acuerdan comerciar con menos trabas y cooperar",
+   "emoji": "🤝",
+   "voz": [
+    "Un *bloque regional* es un grupo de países, casi siempre vecinos, que firman acuerdos.",
+    "Bajan impuestos para comerciar entre ellos, facilitan viajar y trabajar, y negocian juntos con el resto del mundo."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "sudamerica",
+   "pasos": [
+    {
+     "resaltar": [
+      "Argentina",
+      "Brasil",
+      "Paraguay",
+      "Uruguay"
+     ],
+     "color": "#e07a3f",
+     "texto": "Fundadores del Mercosur"
+    },
+    {
+     "resaltar": [
+      "Bolivia"
+     ],
+     "color": "#d9a441",
+     "texto": "Bolivia, miembro pleno más nuevo"
+    }
+   ],
+   "voz": [
+    "El bloque de la región es el *Mercosur*.",
+    "Lo fundaron *Argentina, Brasil, Paraguay y Uruguay*.",
+    "Y *Bolivia* se sumó como miembro pleno. Otros países participan como asociados."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "BLOQUES DEL MUNDO",
+   "columnas": [
+    "Bloque",
+    "Dónde",
+    "Dato"
+   ],
+   "filas": [
+    [
+     "Mercosur",
+     "América del Sur",
+     "DNI para viajar"
+    ],
+    [
+     "Unión Europea",
+     "Europa",
+     "27 países, muchos con el euro"
+    ],
+    [
+     "T-MEC",
+     "América del Norte",
+     "Canadá, Estados Unidos, México"
+    ],
+    [
+     "ASEAN",
+     "Sudeste de Asia",
+     "10 países"
+    ]
+   ],
+   "voz": [
+    "Hay bloques en todo el mundo.",
+    "El *Mercosur*, en América del Sur.",
+    "La *Unión Europea*: el más integrado. Veintisiete países, muchos con la misma moneda, el euro.",
+    "El *T-MEC*: Canadá, Estados Unidos y México.",
+    "Y la *ASEAN*, que reúne a diez países del sudeste de Asia."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "ORGANISMOS INTERNACIONALES",
+   "items": [
+    {
+     "cab": "ONU",
+     "txt": "paz y cooperación: 193 países"
+    },
+    {
+     "cab": "OMS",
+     "txt": "salud mundial"
+    },
+    {
+     "cab": "UNESCO",
+     "txt": "educación, ciencia y cultura"
+    },
+    {
+     "cab": "OEA",
+     "txt": "países de América"
+    }
+   ],
+   "voz": [
+    "Además de los bloques, hay *organismos internacionales*.",
+    "La *ONU*: busca la paz y la cooperación entre casi todos los países del mundo.",
+    "La *OMS*: coordina temas de salud, como las vacunas en una pandemia.",
+    "La *UNESCO*: educación, ciencia y cultura. Declara los sitios Patrimonio de la Humanidad.",
+    "Y la *OEA*, que reúne a los países de América."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué organismo coordina la salud a nivel mundial?",
+   "opciones": [
+    "La OMS",
+    "El Mercosur",
+    "La UNESCO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué organismo coordina la salud a nivel mundial?",
+    "¿La OMS, el Mercosur o la UNESCO?",
+    "*La OMS*, la Organización Mundial de la Salud."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La ONU gobierna el mundo",
+     "bien": "Coordina; cada Estado decide"
+    },
+    {
+     "mal": "Bloque = organismo",
+     "bien": "Bloque: vecinos que comercian"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la ONU es un *gobierno mundial*: coordina y recomienda, pero cada Estado decide.",
+    "Y confundir: un *bloque* une a países vecinos para comerciar; un *organismo* trata un tema para todo el mundo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *bloque* une a países vecinos.",
+    "El nuestro es el *Mercosur*.",
+    "La *Unión Europea* es el más integrado.",
+    "Y los *organismos* tratan temas mundiales: paz, salud, cultura.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "BLOQUE",
+     "vecinos que acuerdan"
+    ],
+    [
+     "MERCOSUR",
+     "nuestro bloque regional"
+    ],
+    [
+     "UNIÓN EUROPEA",
+     "el más integrado"
+    ],
+    [
+     "ORGANISMOS",
+     "ONU, OMS, UNESCO, OEA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

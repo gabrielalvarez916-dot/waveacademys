@@ -1,0 +1,276 @@
+{
+ "slug": "soc1-m3-n1",
+ "step_id": "b4a4cf9d-ab66-43df-b850-fbe8f9f2d645",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Continentes, océanos y países",
+ "sub": "Ciencias Sociales Integradas I · Misión 3 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos países hay en el mundo?",
+   "segundos": 6,
+   "respuesta": "193 países miembros de la ONU",
+   "emoji": "🌍",
+   "titulo": "EL MAPA",
+   "sub": "político del mundo",
+   "voz": [
+    "Desafío: ¿cuántos países hay en el mundo? Tenés 6 segundos.",
+    "La cifra más usada: *193 países*, los que forman parte de la ONU. Hay algunos más cuyo reconocimiento se discute.",
+    "Hoy: *continentes, océanos y países*."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "Canadá",
+      "Estados Unidos",
+      "México",
+      "Brasil",
+      "Argentina",
+      "Colombia",
+      "Perú",
+      "Chile",
+      "Bolivia",
+      "Venezuela",
+      "Paraguay",
+      "Uruguay",
+      "Ecuador",
+      "Guatemala",
+      "Honduras",
+      "Nicaragua",
+      "Panamá",
+      "Cuba"
+     ],
+     "color": "#e07a3f",
+     "texto": "América"
+    },
+    {
+     "resaltar": [
+      "España",
+      "Francia",
+      "Alemania",
+      "Italia",
+      "Polonia",
+      "Ucrania",
+      "Reino Unido",
+      "Noruega",
+      "Suecia",
+      "Finlandia",
+      "Portugal",
+      "Grecia",
+      "Austria",
+      "Países Bajos",
+      "Bélgica",
+      "Suiza",
+      "Irlanda"
+     ],
+     "color": "#4f8fc0",
+     "texto": "Europa"
+    },
+    {
+     "resaltar": [
+      "Argelia",
+      "Libia",
+      "Egipto",
+      "Sudán",
+      "Chad",
+      "Níger",
+      "Malí",
+      "Nigeria",
+      "Etiopía",
+      "Rep. Dem. del Congo",
+      "Angola",
+      "Sudáfrica",
+      "Kenia",
+      "Tanzania",
+      "Mozambique",
+      "Namibia",
+      "Marruecos",
+      "Mauritania",
+      "Zambia",
+      "Somalia"
+     ],
+     "color": "#d9a441",
+     "texto": "África"
+    },
+    {
+     "resaltar": [
+      "China",
+      "India",
+      "Rusia",
+      "Mongolia",
+      "Kazajistán",
+      "Irán",
+      "Arabia Saudita",
+      "Japón",
+      "Indonesia",
+      "Pakistán",
+      "Afganistán",
+      "Tailandia",
+      "Vietnam",
+      "Birmania",
+      "Turquía",
+      "Irak",
+      "Corea del Sur",
+      "Filipinas"
+     ],
+     "color": "#8a6bbf",
+     "texto": "Asia"
+    },
+    {
+     "resaltar": [
+      "Australia",
+      "Nueva Zelanda",
+      "Papua New Guinea"
+     ],
+     "color": "#3fa07a",
+     "texto": "Oceanía"
+    }
+   ],
+   "voz": [
+    "Las tierras emergidas se agrupan en *continentes*.",
+    "*América*, del Ártico hasta el sur de Argentina.",
+    "*Europa*, chica pero con muchísimos países.",
+    "*África*, con el desierto más grande del mundo, el Sahara.",
+    "*Asia*, el continente más grande y más poblado.",
+    "Y *Oceanía*, con Australia y miles de islas. Se suma la *Antártida*, sin países ni población permanente."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS OCÉANOS",
+   "columnas": [
+    "Océano",
+    "Dato"
+   ],
+   "filas": [
+    [
+     "Pacífico",
+     "el más grande y profundo"
+    ],
+    [
+     "Atlántico",
+     "entre América, Europa y África"
+    ],
+    [
+     "Índico",
+     "entre África, Asia y Oceanía"
+    ],
+    [
+     "Glacial Ártico",
+     "alrededor del polo norte"
+    ],
+    [
+     "Glacial Antártico",
+     "rodea la Antártida"
+    ]
+   ],
+   "voz": [
+    "El agua cubre más de dos tercios del planeta, repartida en cinco *océanos*.",
+    "El *Pacífico*: el más grande. Entrarían todos los continentes juntos.",
+    "El *Atlántico*: el que baña la costa argentina.",
+    "El *Índico*: entre África, Asia y Oceanía.",
+    "El *Glacial Ártico*: alrededor del polo norte, gran parte congelado.",
+    "Y el *Glacial Antártico*, que rodea la Antártida."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Estado",
+   "texto": "Territorio con población, gobierno propio y soberanía reconocida por otros Estados",
+   "emoji": "🏛️",
+   "voz": [
+    "Un país, en Sociales, se llama *Estado*.",
+    "Necesita un *territorio*, una *población*, un *gobierno* propio y que otros Estados lo *reconozcan*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "EL MÁS GRANDE",
+    "texto": "Rusia: unos 17 millones de km²",
+    "emoji": "🐻"
+   },
+   "b": {
+    "cab": "EL MÁS CHICO",
+    "texto": "Vaticano: menos de medio km²",
+    "emoji": "⛪"
+   },
+   "signo": "vs",
+   "voz": [
+    "Los Estados son muy distintos entre sí.",
+    "El más grande: *Rusia*, que ocupa parte de Europa y de Asia. Cruza once husos horarios.",
+    "El más chico: el *Vaticano*, dentro de la ciudad de Roma. Cabe varias veces en un barrio."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué continente tiene más población?",
+   "opciones": [
+    "Asia",
+    "África",
+    "América"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué continente tiene más población?",
+    "¿Asia, África o América?",
+    "*Asia*: ahí viven más de la mitad de las personas del mundo, con China e India a la cabeza."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "África es un país",
+     "bien": "Es un continente con 54 países"
+    },
+    {
+     "mal": "Continente = país",
+     "bien": "Un continente reúne muchos Estados"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Decir \"viajó a África\" como si fuera un país: África es un *continente* con *54 países*.",
+    "Y confundir continente con Estado: un continente es una gran masa de tierra que reúne a muchos Estados."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Seis *continentes*, contando la Antártida.",
+    "Cinco *océanos*, con el Pacífico como el más grande.",
+    "Un *Estado* tiene territorio, población y gobierno propio.",
+    "Y la ONU reúne a *193* países.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONTINENTES",
+     "América, Europa, África, Asia, Oceanía y Antártida"
+    ],
+    [
+     "OCÉANOS",
+     "Pacífico, Atlántico, Índico y glaciales"
+    ],
+    [
+     "ESTADO",
+     "territorio, población, gobierno"
+    ],
+    [
+     "193",
+     "países de la ONU"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

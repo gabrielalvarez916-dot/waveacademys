@@ -1,0 +1,197 @@
+{
+ "slug": "soc1-m4-n2",
+ "step_id": "0d574adc-3187-47df-869c-89baca50c6a3",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Climas y biomas: por qué el mundo no es igual en todas partes",
+ "sub": "Ciencias Sociales Integradas I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Caro",
+    "emoji": "👧"
+   },
+   "lugar": "🌡️",
+   "lineas": [
+    "Caro vive en Ushuaia y su prima en Manaos, Brasil.",
+    "Las dos se mandan fotos el mismo día.",
+    "Caro, con campera. Su prima, en ojotas."
+   ],
+   "titulo": "CLIMAS",
+   "sub": "y biomas",
+   "voz": [
+    "Caro vive en Ushuaia, y su prima en Manaos, en plena selva de Brasil.",
+    "Se mandan fotos el mismo día.",
+    "Caro, con campera y gorro. Su prima, en ojotas y transpirando.",
+    "¿Por qué el mundo no es igual en todas partes? Hoy: *climas y biomas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TIEMPO",
+    "texto": "cómo está la atmósfera hoy",
+    "emoji": "🌦️"
+   },
+   "b": {
+    "cab": "CLIMA",
+    "texto": "el promedio de muchos años",
+    "emoji": "📊"
+   },
+   "signo": "vs",
+   "voz": [
+    "Primero, dos palabras que se confunden.",
+    "El *tiempo*: cómo está la atmósfera en un momento. Hoy llueve, mañana sale el sol.",
+    "El *clima*: el promedio de muchos años, unos treinta. Que hoy nieve en un lugar cálido no cambia su clima."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Factores del clima",
+    "emoji": "🌡️"
+   },
+   "items": [
+    {
+     "txt": "Latitud",
+     "emoji": "🧭"
+    },
+    {
+     "txt": "Altura",
+     "emoji": "🏔️"
+    },
+    {
+     "txt": "Cercanía al mar",
+     "emoji": "🌊"
+    },
+    {
+     "txt": "Vientos y corrientes",
+     "emoji": "💨"
+    }
+   ],
+   "voz": [
+    "¿Qué hace que un clima sea como es?",
+    "La *latitud*: cerca del Ecuador los rayos del sol llegan más directos y hace más calor.",
+    "La *altura*: cada mil metros que subís, la temperatura baja unos seis grados.",
+    "La *cercanía al mar*: el agua modera la temperatura; lejos del mar hay más diferencia entre el día y la noche.",
+    "Y los *vientos y corrientes marinas*, que traen humedad o la quitan."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "GRANDES BIOMAS",
+   "columnas": [
+    "Bioma",
+    "Clima",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Selva",
+     "cálido y muy lluvioso",
+     "Amazonia"
+    ],
+    [
+     "Sabana",
+     "cálido, con estación seca",
+     "centro de África"
+    ],
+    [
+     "Desierto",
+     "muy seco",
+     "Sahara"
+    ],
+    [
+     "Pradera",
+     "templado",
+     "la Pampa"
+    ],
+    [
+     "Taiga",
+     "frío, con bosques de pinos",
+     "Siberia"
+    ],
+    [
+     "Tundra",
+     "helado, sin árboles",
+     "norte de Canadá"
+    ]
+   ],
+   "voz": [
+    "Cada clima tiene su *bioma*: un tipo de vegetación y fauna que se adapta a él.",
+    "*Selva*: calor y lluvia todo el año. La más grande, la Amazonia.",
+    "*Sabana*: calor, pastos altos y una estación seca. Leones, jirafas, cebras.",
+    "*Desierto*: casi sin lluvias, como el Sahara.",
+    "*Pradera*: clima templado y pastizales, como la Pampa.",
+    "*Taiga*: inviernos larguísimos y bosques de pinos.",
+    "Y la *tundra*: suelo helado, sin árboles, solo musgos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En la cumbre del Aconcagua hay nieve todo el año. ¿Por qué?",
+   "opciones": [
+    "Por la altura",
+    "Por la latitud",
+    "Por estar cerca del mar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: en la cumbre del Aconcagua hay nieve todo el año, aunque está lejos de los polos. ¿Por qué?",
+    "¿Por la altura, por la latitud, o por estar cerca del mar?",
+    "*Por la altura*: casi siete mil metros. A esa altura la temperatura está muy por debajo de cero."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Hoy hace frío: cambió el clima",
+     "bien": "Eso es el tiempo"
+    },
+    {
+     "mal": "Más al norte, más frío",
+     "bien": "En el sur, más cerca del Ecuador"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *tiempo* con *clima*: un día frío no cambia el clima.",
+    "Y pensar que el norte siempre es más frío: eso pasa en el hemisferio norte. En Argentina, ir al norte es acercarse al Ecuador, y hace *más calor*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *tiempo* es el de hoy.",
+    "El *clima*, el promedio de muchos años.",
+    "Lo explican la *latitud, la altura, el mar y los vientos*.",
+    "Y cada clima tiene su *bioma*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TIEMPO",
+     "la atmósfera ahora"
+    ],
+    [
+     "CLIMA",
+     "promedio de años"
+    ],
+    [
+     "FACTORES",
+     "latitud, altura, mar, vientos"
+    ],
+    [
+     "BIOMA",
+     "vegetación según el clima"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

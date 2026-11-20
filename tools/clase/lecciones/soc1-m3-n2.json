@@ -1,0 +1,197 @@
+{
+ "slug": "soc1-m3-n2",
+ "step_id": "a23b7ddb-2089-4cd5-b983-1db37b2cd700",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Un mapa que cambia: nuevos países y nuevas fronteras",
+ "sub": "Ciencias Sociales Integradas I · Misión 3 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO PAÍS",
+   "titular": "Sudán del Sur: el país más nuevo del mundo",
+   "bajada": "Se separó de Sudán por votación popular",
+   "emoji": "🗳️",
+   "titulo": "UN MAPA",
+   "sub": "que cambia",
+   "voz": [
+    "El mapa político no está terminado.",
+    "El país más nuevo reconocido por la ONU es *Sudán del Sur*: se separó de Sudán después de que su población votara la independencia.",
+    "Hoy: *un mapa que cambia*."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "Sudán"
+     ],
+     "color": "#d9a441",
+     "texto": "Sudán"
+    },
+    {
+     "resaltar": [
+      "S. Sudan"
+     ],
+     "color": "#e07a3f",
+     "texto": "Sudán del Sur"
+    }
+   ],
+   "voz": [
+    "Miremos África.",
+    "Antes, todo esto era *Sudán*, el país más grande del continente.",
+    "Después de una larga guerra, el sur votó separarse: nació *Sudán del Sur*, y la frontera se redibujó."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "CAMBIOS EN EL MAPA",
+   "eventos": [
+    {
+     "fecha": "1991",
+     "txt": "Se disuelve la URSS: 15 países",
+     "emoji": "🧩"
+    },
+    {
+     "fecha": "1990s",
+     "txt": "Yugoslavia se divide",
+     "emoji": "✂️"
+    },
+    {
+     "fecha": "1993",
+     "txt": "Checoslovaquia: dos países",
+     "emoji": "🤝"
+    },
+    {
+     "fecha": "2011",
+     "txt": "Nace Sudán del Sur",
+     "emoji": "🗳️"
+    }
+   ],
+   "voz": [
+    "En los últimos años del siglo veinte, el mapa cambió muchísimo. La *Unión Soviética* se disolvió y aparecieron quince países, entre ellos Rusia y Ucrania.",
+    "*Yugoslavia* se dividió entre guerras en varios Estados, como Serbia y Croacia.",
+    "*Checoslovaquia* se separó en paz: República Checa y Eslovaquia.",
+    "Y ya en este siglo, *Sudán del Sur*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "¿Por qué cambian las fronteras?",
+    "emoji": "🗺️"
+   },
+   "items": [
+    {
+     "txt": "Independencias",
+     "emoji": "🚩"
+    },
+    {
+     "txt": "Guerras",
+     "emoji": "⚔️"
+    },
+    {
+     "txt": "Acuerdos",
+     "emoji": "✍️"
+    },
+    {
+     "txt": "Votaciones",
+     "emoji": "🗳️"
+    }
+   ],
+   "voz": [
+    "¿Por qué cambian las fronteras?",
+    "Por *independencias*: un pueblo deja de depender de otro Estado.",
+    "Por *guerras*, que mueven límites por la fuerza.",
+    "Por *acuerdos* entre países, que fijan o corrigen un límite.",
+    "Y por *votaciones*: la población decide, como en Sudán del Sur."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "LÍMITE",
+    "texto": "la línea que separa dos Estados",
+    "emoji": "📏"
+   },
+   "b": {
+    "cab": "FRONTERA",
+    "texto": "la zona a los dos lados del límite",
+    "emoji": "🏘️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos palabras que parecen iguales.",
+    "El *límite* es una línea: en el mapa, la raya que separa dos Estados.",
+    "La *frontera* es una zona: el área de ambos lados, donde la gente vive, comercia y cruza todos los días, como entre Concordia y Salto."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La Unión Soviética, al disolverse, se dividió en…",
+   "opciones": [
+    "15 países",
+    "2 países",
+    "193 países"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: al disolverse la Unión Soviética, ¿en cuántos países se dividió?",
+    "¿Quince, dos o ciento noventa y tres?",
+    "*Quince*: Rusia, Ucrania, Kazajistán y otros doce."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los mapas no cambian",
+     "bien": "Las fronteras se mueven"
+    },
+    {
+     "mal": "Límite = frontera",
+     "bien": "Línea vs zona"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el mapa político es *fijo*: un mapa viejo puede tener países que ya no existen.",
+    "Y usar límite y frontera como sinónimos: el límite es la *línea*; la frontera, la *zona*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El mapa político *cambia*.",
+    "Por *independencias, guerras, acuerdos y votaciones*.",
+    "El *límite* es una línea.",
+    "Y la *frontera*, la zona donde se vive y se cruza.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MAPA VIVO",
+     "las fronteras cambian"
+    ],
+    [
+     "CAUSAS",
+     "independencias, guerras, acuerdos, votos"
+    ],
+    [
+     "LÍMITE",
+     "línea"
+    ],
+    [
+     "FRONTERA",
+     "zona"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

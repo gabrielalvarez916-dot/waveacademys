@@ -1,0 +1,179 @@
+{
+ "slug": "soc1-m3-n4",
+ "step_id": "bf398c63-6292-4151-8988-3605186aa1e6",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Soberanía y territorio: quién manda dónde",
+ "sub": "Ciencias Sociales Integradas I · Misión 3 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Hasta dónde llega Argentina en el mar?",
+   "segundos": 6,
+   "respuesta": "12 millas de mar territorial y 200 de zona económica",
+   "emoji": "🌊",
+   "titulo": "SOBERANÍA",
+   "sub": "y territorio",
+   "voz": [
+    "Desafío: ¿hasta dónde llega Argentina en el mar? 6 segundos.",
+    "No termina en la playa: tiene *12 millas* de mar territorial y *200 millas* de zona económica exclusiva.",
+    "Hoy: *soberanía y territorio*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Soberanía",
+   "texto": "Poder de un Estado para decidir y hacer cumplir sus leyes en su territorio",
+   "emoji": "🏛️",
+   "voz": [
+    "La *soberanía* es el poder de un Estado para tomar decisiones sobre su territorio.",
+    "Ahí rigen *sus leyes*, y ningún otro Estado puede mandar."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EL TERRITORIO DE UN ESTADO",
+   "items": [
+    {
+     "cab": "TERRESTRE",
+     "txt": "el suelo y el subsuelo"
+    },
+    {
+     "cab": "MARÍTIMO",
+     "txt": "el mar cercano a la costa"
+    },
+    {
+     "cab": "AÉREO",
+     "txt": "el aire sobre los dos"
+    }
+   ],
+   "voz": [
+    "El territorio tiene tres partes.",
+    "*Terrestre*: el suelo y lo que hay abajo, como el petróleo.",
+    "*Marítimo*: el mar junto a la costa.",
+    "*Aéreo*: el espacio sobre la tierra y el mar. Un avión extranjero necesita permiso para cruzarlo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EL MAR ARGENTINO",
+   "columnas": [
+    "Zona",
+    "Distancia a la costa",
+    "Qué puede hacer el Estado"
+   ],
+   "filas": [
+    [
+     "Mar territorial",
+     "hasta 12 millas",
+     "soberanía total"
+    ],
+    [
+     "Zona económica exclusiva",
+     "hasta 200 millas",
+     "explotar pesca y petróleo"
+    ],
+    [
+     "Plataforma continental",
+     "hasta 350 millas",
+     "usar el lecho y el subsuelo"
+    ]
+   ],
+   "voz": [
+    "El mar tiene zonas, fijadas por un acuerdo internacional. Una milla marina son unos 1.852 metros.",
+    "*Mar territorial*: hasta 12 millas. Ahí la soberanía es total, igual que en tierra.",
+    "*Zona económica exclusiva*: hasta 200 millas. Solo Argentina puede pescar o sacar petróleo, pero los barcos de otros países pueden pasar.",
+    "*Plataforma continental*: el fondo del mar, que Argentina extendió hasta unas 350 millas."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "argentina",
+   "pasos": [
+    {
+     "resaltar": [
+      "Argentina"
+     ],
+     "color": "#e07a3f",
+     "texto": "Territorio continental"
+    },
+    {
+     "resaltar": [
+      "Islas Malvinas"
+     ],
+     "color": "#4f8fc0",
+     "marcas": [
+      {
+       "lon": -59,
+       "lat": -51.7,
+       "txt": "Malvinas"
+      }
+     ],
+     "texto": "Islas Malvinas: reclamo de soberanía"
+    }
+   ],
+   "voz": [
+    "Miremos el mapa de Argentina.",
+    "Argentina ejerce soberanía sobre su territorio continental.",
+    "Pero hay un reclamo pendiente: las *islas Malvinas*, ocupadas por el Reino Unido desde 1833. Argentina las reclama por vía diplomática."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Antártida",
+   "texto": "Varios países la reclaman, pero el Tratado Antártico congeló los reclamos: solo ciencia y paz",
+   "emoji": "🧊",
+   "voz": [
+    "En la *Antártida*, Argentina y otros seis países tienen reclamos.",
+    "El *Tratado Antártico* los dejó en suspenso: el continente se usa solo para la *ciencia* y la *paz*. Argentina tiene ahí varias bases."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En la zona económica exclusiva, un barco pesquero extranjero…",
+   "opciones": [
+    "Necesita permiso para pescar",
+    "Puede pescar libremente",
+    "No puede ni pasar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: en la zona económica exclusiva argentina, un barco pesquero extranjero…",
+    "¿Necesita permiso para pescar, puede pescar libremente, o no puede ni pasar?",
+    "*Necesita permiso*: puede navegar, pero los recursos son de Argentina."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *soberanía* es el poder del Estado en su territorio.",
+    "El territorio es *terrestre, marítimo y aéreo*.",
+    "En el mar: *12 millas* de soberanía total y *200* de zona económica.",
+    "Y hay reclamos: *Malvinas* y la *Antártida*.",
+    "¡Misión 3 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SOBERANÍA",
+     "poder del Estado en su territorio"
+    ],
+    [
+     "TERRITORIO",
+     "terrestre, marítimo, aéreo"
+    ],
+    [
+     "MAR",
+     "12 y 200 millas"
+    ],
+    [
+     "RECLAMOS",
+     "Malvinas y Antártida"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
