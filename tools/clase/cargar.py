@@ -14,21 +14,22 @@ if not slugs:
     out = subprocess.run(['git', 'status', '--porcelain', '--', os.path.join(AQUI, 'dist')], capture_output=True, text=True).stdout
     slugs = [os.path.basename(l.split()[-1])[:-5] for l in out.splitlines() if l.strip().endswith('.html')]
 error = False
-for slug in slugs:
+for nombre in slugs:
+    neutro = nombre.endswith('.neutro'); slug = nombre[:-7] if neutro else nombre
     lp = os.path.join(AQUI, 'lecciones', slug + '.json')
     if not os.path.exists(lp):
         continue
     L = json.load(open(lp, encoding='utf-8'))
     if not (L.get('step_id') or L.get('subject_id')):
         print(slug, ': sin step_id ni subject_id, no se carga'); continue
-    html = open(os.path.join(AQUI, 'dist', slug + '.html'), encoding='utf-8').read()
+    html = open(os.path.join(AQUI, 'dist', nombre + '.html'), encoding='utf-8').read()
     if 'window.VOZ_AUDIO=' not in html:
-        print(slug, ': todavía sin voz, no se carga'); continue
-    body = json.dumps({'p_token': TOKEN, 'p_html': html, 'p_step_id': L.get('step_id'), 'p_subject_id': L.get('subject_id')}).encode()
+        print(nombre, ': todavía sin voz, no se carga'); continue
+    body = json.dumps({'p_token': TOKEN, 'p_html': html, 'p_step_id': L.get('step_id'), 'p_subject_id': L.get('subject_id'), 'p_neutro': neutro}).encode()
     req = urllib.request.Request(URL, data=body, method='POST', headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'})
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
-            print(slug, ':', r.read().decode())
+            print(nombre, ':', r.read().decode())
     except Exception as e:
-        error = True; print(slug, ': ERROR', getattr(e, 'read', lambda: b'')().decode()[:300] or e)
+        error = True; print(nombre, ': ERROR', getattr(e, 'read', lambda: b'')().decode()[:300] or e)
 sys.exit(1 if error else 0)

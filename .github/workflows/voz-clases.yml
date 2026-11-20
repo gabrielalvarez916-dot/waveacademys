@@ -3,18 +3,19 @@ name: Voz de las clases animadas
 on:
   push:
     branches: [main]
-    paths: ['tools/clase/lecciones/*.json', 'tools/clase/cargar.py', 'tools/clase/motor/**', 'tools/clase/voz_edge.py', 'tools/clase/armar.py', '.github/workflows/voz-clases.yml']
+    paths: ['tools/neutro.py', 'tools/clase/lecciones/*.json', 'tools/clase/cargar.py', 'tools/clase/motor/**', 'tools/clase/voz_edge.py', 'tools/clase/armar.py', '.github/workflows/voz-clases.yml']
   workflow_dispatch:
     inputs:
       voz: { description: 'Voz (ej. es-MX-JorgeNeural, es-AR-TomasNeural)', default: 'es-MX-JorgeNeural' }
       rate: { description: 'Velocidad (ej. +8%, +15%)', default: '+25%' }
 permissions:
   contents: write
+  actions: write
 concurrency: { group: voz-clases, cancel-in-progress: false }
 jobs:
   voz:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,6 +25,7 @@ jobs:
         env:
           VOZ: ${{ github.event.inputs.voz || 'es-MX-JorgeNeural' }}
           RATE: ${{ github.event.inputs.rate || '+25%' }}
+          VOZ_MINUTOS: '80'
         run: python tools/clase/voz_edge.py
       - run: python tools/clase/armar.py
       - name: Cargar en la plataforma
@@ -34,3 +36,7 @@ jobs:
           git add tools/clase/voz tools/clase/dist actividades/clases
           git diff --cached --quiet || git commit -m "Voz de clases animadas (automático)"
           for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
+      - name: Seguir si quedaron voces sin grabar (tope de tiempo por corrida)
+        if: hashFiles('tools/clase/voz/.pendiente') != ''
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: gh workflow run voz-clases.yml --ref main

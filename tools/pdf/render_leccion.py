@@ -238,7 +238,7 @@ def ejemplos_fijos(c):
     """Ejemplo completo, incompleto y 'hacelo solo'. Devuelve [] si el borrador no los trae (borradores viejos)."""
     comp, inc, solo = c.get("ejemplo_completo"), c.get("ejemplo_incompleto"), c.get("ejemplo_solo")
     if not (comp or inc or solo): return []
-    cab = barra("▶", "Ejemplos: mirá, completá y hacelo solo")
+    cab = barra("▶", _t("Ejemplos: mirá, completá y hacelo solo"))
     s = []
     if comp:
         o = [subbar("Ejemplo completo" + (": " + limpio(comp.get("titulo")) if comp.get("titulo") else ""))]
@@ -247,17 +247,17 @@ def ejemplos_fijos(c):
         o += _pasos(comp.get("pasos"))
         s += [KeepTogether([cab] + o), spc(8)]; cab = None
     if inc:
-        o = [subbar("Ejemplo incompleto: completalo vos" + (" · " + limpio(inc.get("titulo")) if inc.get("titulo") else ""))]
+        o = [subbar(_t("Ejemplo incompleto: completalo vos") + (" · " + limpio(inc.get("titulo")) if inc.get("titulo") else ""))]
         if inc.get("planteo"): o.append(P(limpio(inc["planteo"])))
         if inc.get("columnas"): o += tabla_bloque({**inc, "titulo": None, "texto": None})
         o += _pasos(inc.get("pasos"))
-        o.append(P("Completá los espacios ___ en tu carpeta. La respuesta está al final del PDF.", cap))
+        o.append(P(_t("Completá los espacios ___ en tu carpeta. La respuesta está al final del PDF."), cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     if solo:
-        o = [subbar("Hacelo solo" + (": " + limpio(solo.get("titulo")) if solo.get("titulo") else ""))]
+        o = [subbar(_t("Hacelo solo") + (": " + limpio(solo.get("titulo")) if solo.get("titulo") else ""))]
         if solo.get("planteo"): o.append(P(limpio(solo["planteo"])))
         o += _pasos(solo.get("pasos"))
-        o.append(P("Resolvelo en tu carpeta, sin mirar la respuesta. Después comparala con la del final.", cap))
+        o.append(P(_t("Resolvelo en tu carpeta, sin mirar la respuesta. Después comparala con la del final."), cap))
         s += [KeepTogether(([cab] if cab else []) + o), spc(8)]; cab = None
     return s
 
@@ -276,7 +276,7 @@ def carpeta_fija(c):
     items = [limpio(x) for x in (c.get("carpeta") or [])]
     if not items: return []
     s = [barra("✎", "Actividad de carpeta"),
-         P("Hacé estas consignas en tu carpeta. Cuando termines, entregá tus respuestas en la app.")]
+         P(_t("Hacé estas consignas en tu carpeta. Cuando termines, entregá tus respuestas en la app."))]
     s += [Paragraph(x, stepn, bulletText=f"{i + 1}.") for i, x in enumerate(items)]
     return [KeepTogether(s), spc(10)]
 
@@ -287,10 +287,10 @@ def soluciones_fijas(c):
     smb = S("solb", fontName="DV-B", fontSize=7.4, leading=10, textColor=DARK)
     rows = []
     if sol.get("incompleto"): rows.append([Paragraph("Ejemplo incompleto", smb), Paragraph(limpio(sol["incompleto"]), sm)])
-    if sol.get("solo"): rows.append([Paragraph("Hacelo solo", smb), Paragraph(limpio(sol["solo"]), sm)])
+    if sol.get("solo"): rows.append([Paragraph(_t("Hacelo solo"), smb), Paragraph(limpio(sol["solo"]), sm)])
     if not rows: return []
     return [KeepTogether([barra("✓", "Respuestas de los ejemplos"),
-            P("Mirá esto recién cuando hayas terminado.", S("solnota", fontName="DV-I", fontSize=7.4, leading=10, textColor=GRAY, spaceAfter=4)),
+            P(_t("Mirá esto recién cuando hayas terminado."), S("solnota", fontName="DV-I", fontSize=7.4, leading=10, textColor=GRAY, spaceAfter=4)),
             table(["ACTIVIDAD", "RESPUESTA"], rows, [W * 0.27, W * 0.73])])]
 
 # ---------------- documento ----------------
@@ -342,9 +342,17 @@ def _construir(c, m, salida, nivel):
     doc.build([Spacer(1, 1)] + story(c, nivel))
     return doc.page
 
+NEUTRO = False
+def _t(s):  # frases fijas del PDF: en la versión neutra pasan a tuteo
+    if not NEUTRO: return s
+    import sys as _s; _s.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from neutro import neutro
+    return neutro(s)
+
 def render(entrada, salida):
     data = json.load(open(entrada, encoding="utf8"))
     c = data["contenido"]; m = data["meta"]
+    global NEUTRO; NEUTRO = bool(m.get("neutro"))
     m["minutos"] = m.get("minutos") or max(10, 5 * round(words(c) / 110 / 5))
     m["subtitulo"] = m.get("subtitulo") or c["objetivo"]
     META.clear(); META.update(m); META["_vas_a_ver"] = c.get("vas_a_ver") or []

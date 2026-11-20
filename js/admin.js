@@ -134,7 +134,7 @@
         .select('id, phone, created_at, profiles!families_profile_id_fkey(id, full_name, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: false }),
       sb.from('students')
-        .select('id, family_id, first_name, last_name, curriculum, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
+        .select('id, family_id, first_name, last_name, curriculum, pais, grades(name, levels(name)), profiles!students_profile_id_fkey(id, email, is_suspended, last_seen_at)')
         .order('created_at', { ascending: true }),
       sb.from('subscriptions')
         .select('id, family_id, student_id, status, amount, currency, created_at')
@@ -151,7 +151,7 @@
         libres: misSubs.filter(function (s) { return !s.student_id; }),
         alumnos: alumnos.filter(function (a) { return a.family_id === f.id; }).map(function (a) {
           return {
-            id: a.id, nombre: a.first_name + ' ' + a.last_name, curriculum: a.curriculum || 'argentina',
+            id: a.id, nombre: a.first_name + ' ' + a.last_name, curriculum: a.curriculum || 'argentina', pais: a.pais || 'Argentina',
             anio: a.grades ? ((a.grades.levels && a.grades.levels.name !== a.grades.name ? a.grades.levels.name + ' · ' : '') + a.grades.name) : '',
             perfil: a.profiles || {},
             sub: misSubs.filter(function (s) { return s.student_id === a.id; })[0] || null
@@ -189,10 +189,9 @@
         '<div class="wv-dato">' + esc(a.anio) + (a.perfil.email ? ' · ' + esc(a.perfil.email) : '') + '</div></div>' +
       '<div><span class="wv-rot">Cuota</span>' + (a.sub ? pill(a.sub.status) : '<span class="wv-pill off">Sin cupo vinculado</span>') + '</div>' +
       '<div><span class="wv-rot">Último acceso</span><span class="wv-dato">' + esc(haceCuanto(a.perfil.last_seen_at)) + '</span></div>' +
-      '<div><span class="wv-rot">Currículo</span>' +
-        '<select class="wv-cur" data-cur="' + a.id + '" data-nom="' + esc(a.nombre) + '" aria-label="Currículo de ' + esc(a.nombre) + '">' +
-          '<option value="argentina"' + (a.curriculum === 'argentina' ? ' selected' : '') + '>Argentino</option>' +
-          '<option value="internacional"' + (a.curriculum === 'internacional' ? ' selected' : '') + '>Internacional</option>' +
+      '<div><span class="wv-rot">País</span>' +
+        '<select class="wv-cur" data-cur="' + a.id + '" data-nom="' + esc(a.nombre) + '" data-pais="' + esc(a.pais) + '" aria-label="País de ' + esc(a.nombre) + '">' +
+          PAISES.concat(PAISES.indexOf(a.pais) < 0 ? [a.pais] : []).map(function (p) { return '<option' + (p === a.pais ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('') +
         '</select></div>' +
       '<div class="wv-acc">' +
         '<button type="button" class="wv-btn mini suave" data-tray="' + a.id + '" data-nom="' + esc(a.nombre) + '">Trayectoria</button>' +
@@ -383,17 +382,18 @@
     };
   }
 
-  function cambiarCurriculo(sel) {
-    var id = sel.getAttribute('data-cur'), nom = sel.getAttribute('data-nom'), nuevo = sel.value;
-    var previo = nuevo === 'argentina' ? 'internacional' : 'argentina';
+  var PAISES = ['Argentina', 'Bolivia', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'El Salvador', 'España', 'Estados Unidos', 'Guatemala', 'Honduras', 'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Puerto Rico', 'República Dominicana', 'Uruguay', 'Venezuela', 'Otro'];
+  function cambiarCurriculo(sel) { // el país define el idioma (Argentina: voseo; otro país: español neutro) y la versión de Ciencias Sociales
+    var id = sel.getAttribute('data-cur'), nom = sel.getAttribute('data-nom'), nuevo = sel.value, previo = sel.getAttribute('data-pais');
     sel.value = previo;
-    var txt = nuevo === 'argentina'
-      ? 'Va a pasar a la versión argentina de Ciencias Sociales (con historia y geografía de la Argentina).'
-      : 'Va a pasar a la versión internacional de Ciencias Sociales (Latinoamérica y mundo).';
-    confirmar('Cambiar currículo de ' + nom, txt + ' El avance que ya tenga en Ciencias Sociales de la otra versión no se traslada, porque las lecciones son distintas.', 'Cambiar', false, async function () {
-      var r = await sb.rpc('set_student_curriculum', { p_student: id, p_curriculum: nuevo });
+    var cambiaCur = (nuevo === 'Argentina') !== (previo === 'Argentina');
+    var txt = (nuevo === 'Argentina' ? 'Va a ver las clases y los PDF con voseo argentino.' : 'Va a ver las clases y los PDF en español neutro latinoamericano.') +
+      (cambiaCur ? (nuevo === 'Argentina' ? ' También pasa a la versión argentina de Ciencias Sociales.' : ' También pasa a la versión internacional de Ciencias Sociales.') +
+        ' El avance que ya tenga en Ciencias Sociales de la otra versión no se traslada, porque las lecciones son distintas.' : '');
+    confirmar('Cambiar el país de ' + nom + ' a ' + nuevo, txt, 'Cambiar', false, async function () {
+      var r = await sb.rpc('set_student_pais', { p_student: id, p_pais: nuevo });
       if (r.error) throw r.error;
-      await recargar(); cerrarModal(); toast('Currículo actualizado');
+      await recargar(); cerrarModal(); toast('País actualizado');
     });
   }
 

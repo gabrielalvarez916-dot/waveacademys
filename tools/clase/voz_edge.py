@@ -3,7 +3,9 @@
 Lee las frases de tools/clase/lecciones/<slug>.json y guarda tools/clase/voz/<leccion>.json con un mp3 por frase
 y el momento de cada palabra (para los subtítulos). No repite frases que ya tienen audio con la misma voz.
 Lo corre GitHub Actions (.github/workflows/voz-clases.yml). Variables: VOZ (es-MX-JorgeNeural), RATE (+8%)."""
-import variar, asyncio, base64, glob, hashlib, json, os, re, sys
+import variar, asyncio, base64, glob, hashlib, json, os, re, sys, time
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from neutro import convertir
 import edge_tts
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
@@ -87,11 +89,18 @@ def frases(L):
     return [[limpio(x) for x in e['voz']] for e in L['escenas']]
 
 
+VOZ_NEUTRA = {'naturales': 'es-MX-DaliaNeural', 'lengua': 'es-CO-GonzaloNeural', 'sociales': 'es-US-AlonsoNeural', 'otra': 'es-MX-JorgeNeural'}  # versión neutra (alumnos de otros países)
 VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural', 'lengua': 'es-AR-TomasNeural', 'sociales': 'es-UY-MateoNeural'}  # cada materia con su voz (Matemática: Jorge)
 
 
-def voz_de(L):
+def voz_de(L, neutra=False):
     m = (L.get('materia') or '').lower()
+    if neutra:
+        if L.get('voz_neutra'): return L['voz_neutra']
+        if 'natural' in m or 'biolog' in m: return VOZ_NEUTRA['naturales']
+        if 'lengua' in m or 'literatura' in m: return VOZ_NEUTRA['lengua']
+        if 'social' in m or 'historia' in m or 'geograf' in m: return VOZ_NEUTRA['sociales']
+        return VOZ_NEUTRA['otra']
     if L.get('voz'): return L['voz']
     if 'natural' in m or 'biolog' in m: return VOZ_MATERIA['naturales']
     if 'lengua' in m or 'literatura' in m: return VOZ_MATERIA['lengua']
@@ -115,14 +124,17 @@ async def tts(texto, voz=None):
     return {'a': base64.b64encode(audio).decode(), 'w': w}
 
 
-async def una(src_path):
-    L = json.load(open(src_path, encoding='utf-8'))
-    variar.preparar(L)
-    nombre = L.get('slug') or os.path.basename(src_path)[:-5]
-    destino = os.path.join(AQUI, 'voz', nombre + '.json')
-    viejo = json.load(open(destino)) if os.path.exists(destino) else []
-    cache = {f.get('h'): f for esc in viejo for f in esc if isinstance(f, dict)}
-    F = frases(L); vz = voz_de(L)
+INICIO = time.time(); MINUTOS = float(os.environ.get('VOZ_MINUTOS', '0') or 0)  # tope de tiempo por corrida (0 = sin tope)
+PENDIENTES = []
+
+
+async def grabar(L, nombre, suf, vz):
+    destino = os.path.join(AQUI, 'voz', nombre + suf + '.json')
+    cache = {}
+    for v in {nombre + '.json', nombre + '.neutro.json'}:  # se reusan frases iguales entre las dos versiones (misma voz)
+        pv = os.path.join(AQUI, 'voz', v)
+        if os.path.exists(pv): cache.update({f.get('h'): f for esc in json.load(open(pv)) for f in esc if isinstance(f, dict)})
+    F = frases(L)
     res, nuevas = [], 0
     for esc in F:
         fila = []
@@ -131,6 +143,8 @@ async def una(src_path):
             if h in cache:
                 fila.append(cache[h])
             else:
+                if MINUTOS and time.time() - INICIO > MINUTOS * 60:
+                    PENDIENTES.append(nombre + suf); return
                 for intento in range(6):
                     try:
                         r = await tts(t, vz); break
@@ -141,7 +155,15 @@ async def una(src_path):
         res.append(fila)
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     json.dump(res, open(destino, 'w'), separators=(',', ':'))
-    print(nombre, ':', sum(len(e) for e in F), 'frases,', nuevas, 'nuevas, voz', VOZ, RATE)
+    print(nombre + suf, ':', sum(len(e) for e in F), 'frases,', nuevas, 'nuevas, voz', vz, RATE)
+
+
+async def una(src_path):
+    L = json.load(open(src_path, encoding='utf-8'))
+    variar.preparar(L)
+    nombre = L.get('slug') or os.path.basename(src_path)[:-5]
+    await grabar(L, nombre, '', voz_de(L))
+    await grabar(convertir(L), nombre, '.neutro', voz_de(L, True))  # versión en español neutro
 
 
 async def main():
@@ -150,5 +172,9 @@ async def main():
             await una(p)
         except Exception as e:  # una clase que falla no frena a las demás: queda sin voz y se graba en la próxima corrida
             print('ERROR', os.path.basename(p), ':', e)
+    marca = os.path.join(AQUI, 'voz', '.pendiente')
+    if PENDIENTES:
+        open(marca, 'w').write('\n'.join(PENDIENTES)); print('Quedan para la próxima corrida:', len(PENDIENTES))
+    elif os.path.exists(marca): os.remove(marca)
 
 asyncio.run(main())

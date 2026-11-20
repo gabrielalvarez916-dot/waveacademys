@@ -113,3 +113,14 @@ Si la explicación habla de **las partes de algo** (un libro, una célula, una p
 2. `python3 tools/clase/revisar_contenido.py <slugs> --mision contenido/<materia>/mision-N/mision-N.json` — meses, formato simple, fichas, opciones, años, pronunciación, escritura en Lengua.
 3. `python3 tools/clase/revisar_pantalla.py <slugs>` — textos que se salen o se pisan (solo los slugs nuevos: ~20 s por misión).
 Si alguno marca algo, se corrige antes de subir.
+
+## Dos versiones: voseo y español neutro
+
+Cada clase y cada PDF existen en dos versiones, que arma la máquina sola:
+- **Argentina** (voseo, voz de la materia): lo que se escribe.
+- **Neutra** (tuteo latinoamericano, voz neutra de la materia): `tools/neutro.py` convierte el texto con un diccionario cerrado.
+
+La ve el alumno según su **país** (`students.pais`): Argentina → voseo; otro país → neutro.
+- Clases: `armar.py` arma `dist/<slug>.html` y `dist/<slug>.neutro.html`; `voz_edge.py` graba `voz/<slug>.json` y `voz/<slug>.neutro.json`.
+- PDF: `tools/pdf/generar.py` arma también el PDF neutro de cada lección (`content.r2_key_neutro` del paso PDF).
+- Si `revisar_contenido.py` avisa "voseo sin pasar al diccionario neutro", hay que sumar la palabra a `MAPA` (si es voseo) o a `OK` (si no lo es) en `tools/neutro.py`.

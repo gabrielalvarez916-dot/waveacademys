@@ -66,10 +66,11 @@
   async function cargar(materiaId) {
     var ses = await sb.auth.getSession();
     var uid = ses.data.session.user.id;
-    var est = await sb.from('students').select('id').eq('profile_id', uid).maybeSingle();
+    var est = await sb.from('students').select('id, pais').eq('profile_id', uid).maybeSingle();
     if (est.error) throw est.error;
     if (!est.data) throw new Error('Esta cuenta no es de un estudiante.');
     var sid = est.data.id;
+    var neutro = !!est.data.pais && est.data.pais !== 'Argentina'; // alumnos de otros países: clases y PDF en español neutro
 
     var mat = await sb.from('subjects').select('id, name, color, intro_video_uid, intro_clase').eq('id', materiaId).maybeSingle();
     if (mat.error) throw mat.error;
@@ -86,7 +87,7 @@
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
     var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, clase:content->clase, lessons!inner(topics!inner(subject_id))')
+      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, carpeta_neutro:content->carpeta_neutro, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, clase:content->clase, lessons!inner(topics!inner(subject_id))')
       .eq('lessons.topics.subject_id', materiaId);
     if (pasos.error) throw pasos.error;
 
@@ -126,7 +127,7 @@
         videos: k !== 'video' || !p.stream_uid ? [] : (Array.isArray(p.videos) && p.videos.length ? p.videos
           : [{ uid: p.stream_uid, tramos: p.tramos || (p.inicio || p.fin ? [{ i: p.inicio || 0, f: p.fin || 0 }] : []) }]),
         files: k === 'complementary' && Array.isArray(p.files) ? p.files : [],
-        carpeta: k === 'pdf' && Array.isArray(p.carpeta) ? p.carpeta : []
+        carpeta: k === 'pdf' && Array.isArray(neutro && Array.isArray(p.carpeta_neutro) ? p.carpeta_neutro : p.carpeta) ? (neutro && Array.isArray(p.carpeta_neutro) ? p.carpeta_neutro : p.carpeta) : []
       };
     });
 
@@ -167,6 +168,7 @@
     var susOk = !acc.error && acc.data === true;
 
     return {
+      neutro: neutro,
       sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
@@ -496,7 +498,7 @@
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
           chat: function (mensaje, conv) { return llamar('chat-tutor', { message: mensaje, lesson_step_id: paso.id, conversation_id: conv || undefined }); },
-          url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc })).url; } });
+          url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
       } else if (k === 'interactive') {
         var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();
         if (r.error || !r.data || !r.data.content || !r.data.content.html) throw new Error('No pudimos abrir la actividad.');
@@ -596,8 +598,9 @@
 
   // ---------- Clase animada (reemplaza al video): HTML en un marco aislado, con voz del dispositivo ----------
   async function abrirClase(paso, titulo) { // paso null = introducción de la materia
-    var r = paso ? await sb.from('lesson_steps').select('html:content->>clase_html').eq('id', paso.id).maybeSingle()
-      : await sb.from('subjects').select('html:intro_clase_html').eq('id', D.materia.id).maybeSingle();
+    var r = paso ? await sb.from('lesson_steps').select(D.neutro ? 'html:content->>clase_html, neutro:content->>clase_html_neutro' : 'html:content->>clase_html').eq('id', paso.id).maybeSingle()
+      : await sb.from('subjects').select(D.neutro ? 'html:intro_clase_html, neutro:intro_clase_html_neutro' : 'html:intro_clase_html').eq('id', D.materia.id).maybeSingle();
+    if (r.data && r.data.neutro) r.data.html = r.data.neutro; // versión en español neutro
     if (r.error || !r.data || !r.data.html) throw new Error('No pudimos abrir la clase.');
     var el = document.createElement('div');
     el.className = 'wvp';

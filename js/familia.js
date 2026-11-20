@@ -111,6 +111,9 @@
           '<div class="campo"><label for="a-nac">Fecha de nacimiento</label><input id="a-nac" type="date"' + dis + '></div>' +
           '<div class="campo"><label for="a-dni">DNI</label><input id="a-dni" type="text" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="Número de documento"' + dis + '></div>' +
           '<div class="campo ancho"><label for="a-anio">Año que cursa</label><select id="a-anio"' + dis + '>' + opciones + '</select></div>' +
+          '<div class="campo ancho"><label for="a-pais">País donde vive</label><select id="a-pais"' + dis + '>' +
+            ['Argentina', 'Bolivia', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'El Salvador', 'España', 'Estados Unidos', 'Guatemala', 'Honduras', 'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Puerto Rico', 'República Dominicana', 'Uruguay', 'Venezuela', 'Otro'].map(function (p) { return '<option' + (p === 'Argentina' ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
+          '</select><small class="ayuda">Si vive fuera de la Argentina, las clases y los PDF le llegan en español neutro latinoamericano.</small></div>' +
         '</div>' +
         '<p class="mensaje" id="a-error" hidden></p>' +
         '<button class="boton" type="submit" id="a-enviar"' + dis + '>Dar de alta</button>' +
@@ -145,13 +148,14 @@
       var nac = document.getElementById('a-nac').value;
       var dni = document.getElementById('a-dni').value.trim();
       var anio = document.getElementById('a-anio').value;
+      var pais = (document.getElementById('a-pais') || {}).value || 'Argentina';
 
       if (!nombre || !apellido || !anio) { mostrarError('Completá nombre, apellido y el año que cursa.'); return; }
       if (nac && nac > new Date().toISOString().slice(0, 10)) { mostrarError('La fecha de nacimiento no puede ser futura.'); return; }
 
       btn.disabled = true; btn.textContent = 'Dando de alta…';
       var r = await sb.functions.invoke('create-student', {
-        body: { first_name: nombre, last_name: apellido, birth_date: nac || null, document_number: dni || null, grade_id: anio }
+        body: { first_name: nombre, last_name: apellido, birth_date: nac || null, document_number: dni || null, grade_id: anio, pais: pais }
       });
 
       if (r.error || !r.data || r.data.error) {

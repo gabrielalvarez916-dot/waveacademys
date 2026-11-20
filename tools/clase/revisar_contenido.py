@@ -46,5 +46,14 @@ if mis:
     for n, acts in mis['act'].items():
         for q in acts:
             if q.get('t') == 'keywords' and isinstance(q.get('r'), dict): E(f'mision {mis["tema"]} act {n}', 'escritura con palabras clave: tiene que corregirla la IA (r como texto de referencia)')
+# versión neutra: toda palabra que parezca voseo tiene que estar en el diccionario de tools/neutro.py
+sys.path.insert(0, os.path.dirname(os.path.dirname(AQUI)) + '/tools')
+from neutro import revisar as _rev_neutro
+for slug in args:
+    r = _rev_neutro(json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8')))
+    if r: E(slug, 'voseo sin pasar al diccionario neutro (agregar a MAPA u OK en tools/neutro.py): ' + ' '.join(r))
+if mis:
+    r = _rev_neutro(mis)
+    if r: E(f'mision {mis["tema"]}', 'voseo sin pasar al diccionario neutro (agregar a MAPA u OK en tools/neutro.py): ' + ' '.join(r))
 for e in err: print(e)
 print('contenido:', 'OK' if not err else f'{len(err)} problema(s)'); sys.exit(1 if err else 0)

@@ -5,8 +5,10 @@ import { decodeBase64, encodeBase64 } from "jsr:@std/encoding@1/base64";
 // FÁBRICA DE LECCIONES · PDF
 // El proceso de GitHub (tools/pdf/generar.py) arma el PDF de cada borrador listo y lo sube por acá.
 // Nunca publica: carga el PDF en el paso "PDF" de la lección SOLO si la lección no está publicada y ese paso está vacío.
+// Al subir el PDF también deja cargada la carpeta del nivel (consignas + clave de corrección) desde el mismo borrador.
 // Acciones (POST, header x-gen-token):
 //   { action: "pendientes" }                       -> borradores listos sin PDF, con todo lo necesario para armarlo
+//   { action: "pendientes_neutro", limite?, excluir? } / { action: "subir_neutro", draft_id, pdf_base64, carpeta? } -> segundo PDF en español neutro
 //   { action: "subir", draft_id, pdf_base64 }      -> guarda el PDF en R2 y lo carga en la lección (si el PDF actual lo armó la máquina, lo reemplaza: así entran las imágenes cargadas desde el admin)
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -37,7 +39,7 @@ function aTexto(c: any): string {
 }
 
 async function numeroDeLeccion(lessonId: string) {
-  const { data: l } = await admin.from("lessons").select("id, title, position, topic_id").eq("id", lessonId).single();
+  const { data: l } = await admin.from("lessons").select("id, title, position, topic_id, is_published").eq("id", lessonId).single();
   const { data: t } = await admin.from("topics").select("id, title, position, subject_id").eq("id", l!.topic_id).single();
   const { data: su } = await admin.from("subjects").select("name, grade_id").eq("id", t!.subject_id).single();
   const { data: g } = await admin.from("grades").select("year_number").eq("id", su!.grade_id).single();
@@ -65,6 +67,32 @@ async function imagenesDe(draftId: string, contenido: any) {
   }
   return out;
 }
+
+// Carpeta del nivel: consignas (las ve el alumno) + clave de corrección (solo la lee la función entregar_carpeta)
+async function cargarCarpeta(pasoId: string, c: any): Promise<string> {
+  try {
+    const cons: string[] = (c?.carpeta || []).map((x: any) => String(typeof x === "string" ? x : x?.consigna ?? "").trim());
+    if (!cons.length) return "sin carpeta en el borrador";
+    const resp: any[] = c?.respuestas_carpeta || [];
+    const sols: any[] = c?.soluciones?.carpeta || [];
+    const items = cons.map((_, i) => ({
+      acepta: ([] as any[]).concat(resp[i] ?? []).map((s) => String(s).trim()).filter(Boolean),
+      solucion: String(sols[i] ?? "").trim(),
+    }));
+    if (cons.some((x) => !x) || items.some((it) => !it.acepta.length)) return "omitida: falta alguna consigna o respuesta válida (respuestas_carpeta)";
+    const { data: ps } = await admin.from("lesson_steps").select("content").eq("id", pasoId).single();
+    const up = await admin.from("lesson_steps").update({ content: { ...((ps?.content as any) || {}), carpeta: cons } }).eq("id", pasoId);
+    if (up.error) return "error: " + up.error.message;
+    const ck = await admin.from("carpeta_claves").upsert({ lesson_step_id: pasoId, items, updated_at: new Date().toISOString() });
+    if (ck.error) return "error: " + ck.error.message;
+    return `${cons.length} consignas con su clave`;
+  } catch (e) {
+    return "error: " + String((e as Error).message || e);
+  }
+}
+
+const r2url = (key: string) => `https://${Deno.env.get("R2_ACCOUNT_ID")}.r2.cloudflarestorage.com/${Deno.env.get("R2_BUCKET")}/${key.split("/").map(encodeURIComponent).join("/")}`;
+const r2 = () => new AwsClient({ accessKeyId: Deno.env.get("R2_ACCESS_KEY_ID")!, secretAccessKey: Deno.env.get("R2_SECRET_ACCESS_KEY")!, service: "s3", region: "auto" });
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
@@ -119,10 +147,54 @@ Deno.serve(async (req) => {
       const up = await q.select("id");
       if (up.error || !up.data?.length) return json({ ok: false, motivo: "No se pudo cargar el PDF en la lección" }, 500);
       await admin.from("lesson_drafts").update({ pdf_draft_key: key, pdf_at: new Date().toISOString() }).eq("id", d.id);
+      const carpeta = await cargarCarpeta(paso.id, d.contenido);
+      { // el PDF neutro viejo ya no corresponde: se borra para que se arme de nuevo
+        const { data: ps } = await admin.from("lesson_steps").select("content").eq("id", paso.id).single();
+        const viejoN = (ps?.content as any)?.r2_key_neutro;
+        if (viejoN) {
+          const c = { ...((ps?.content as any) || {}) }; delete c.r2_key_neutro;
+          await admin.from("lesson_steps").update({ content: c }).eq("id", paso.id);
+          await aws.fetch(r2url(viejoN), { method: "DELETE" }).catch(() => {});
+        }
+      }
       if (paso.r2_key) { // se reemplazó un PDF armado por la máquina: se borra el anterior
         const viejo = `https://${Deno.env.get("R2_ACCOUNT_ID")}.r2.cloudflarestorage.com/${Deno.env.get("R2_BUCKET")}/${paso.r2_key.split("/").map(encodeURIComponent).join("/")}`;
         await aws.fetch(viejo, { method: "DELETE" }).catch(() => {});
       }
+      return json({ ok: true, key, bytes: bytes.length, carpeta });
+    }
+
+    // Versión neutra (alumnos de otros países): un segundo PDF por lección, armado por la máquina con el texto en español neutro.
+    // No toca el PDF principal ni el estado de publicación; vale también para lecciones publicadas.
+    if (b.action === "pendientes_neutro") {
+      const { data: ds } = await admin.from("lesson_drafts").select("id, lesson_id, contenido, pdf_draft_key").not("pdf_at", "is", null).order("created_at");
+      const out: any[] = [];
+      for (const d of ds || []) {
+        if (out.length >= (Number(b.limite) || 25)) break;
+        if ((b.excluir || []).includes(d.id)) continue;
+        const { data: paso } = await admin.from("lesson_steps").select("r2_key, content").eq("lesson_id", d.lesson_id).eq("step_type", "pdf").maybeSingle();
+        if (!paso?.r2_key || paso.r2_key !== d.pdf_draft_key || (paso.content as any)?.r2_key_neutro) continue;
+        const meta = await numeroDeLeccion(d.lesson_id); delete (meta as any).publicada;
+        out.push({ draft_id: d.id, meta, contenido: d.contenido, imagenes: await imagenesDe(d.id, d.contenido) });
+      }
+      return json({ pendientes: out });
+    }
+
+    if (b.action === "subir_neutro") {
+      const { data: d } = await admin.from("lesson_drafts").select("id, lesson_id, pdf_draft_key").eq("id", b.draft_id).maybeSingle();
+      if (!d) return json({ ok: false, motivo: "No existe el borrador" }, 404);
+      const { data: paso } = await admin.from("lesson_steps").select("id, r2_key, content").eq("lesson_id", d.lesson_id).eq("step_type", "pdf").maybeSingle();
+      if (!paso?.r2_key || paso.r2_key !== d.pdf_draft_key) return json({ ok: false, motivo: "El PDF principal no lo armó la máquina" }, 409);
+      const bytes = decodeBase64(String(b.pdf_base64 || ""));
+      if (bytes.length < 5000 || new TextDecoder().decode(bytes.slice(0, 5)) !== "%PDF-") return json({ ok: false, motivo: "PDF inválido" }, 400);
+      const aws = r2();
+      const key = paso.r2_key.replace(/\.pdf$/, "") + "_neutro.pdf";
+      const put = await aws.fetch(r2url(key), { method: "PUT", body: bytes, headers: { "content-type": "application/pdf" } });
+      if (!put.ok) return json({ ok: false, motivo: `R2 rechazó la subida (${put.status})` }, 502);
+      const c: any = { ...((paso.content as any) || {}), r2_key_neutro: key };
+      if (Array.isArray(b.carpeta) && b.carpeta.length) c.carpeta_neutro = b.carpeta.map((x: any) => String(x));
+      const up = await admin.from("lesson_steps").update({ content: c }).eq("id", paso.id).eq("r2_key", paso.r2_key).select("id");
+      if (up.error || !up.data?.length) return json({ ok: false, motivo: "No se pudo guardar" }, 500);
       return json({ ok: true, key, bytes: bytes.length });
     }
     return json({ error: "Acción desconocida" }, 400);
