@@ -44,7 +44,7 @@ img { max-width: 100%; display: block; }
 /* Encabezado */
 .cab { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 96px; padding-top: 8px; }
 .cab-logo { display: flex; background: #FFFFFF; border-radius: 16px; padding: 8px 14px; }
-.cab-logo img { height: 62px; width: auto; }
+.cab-logo img { height: 92px; width: auto; }
 .cab nav { display: flex; gap: 26px; font-weight: 600; }
 .cab nav a { color: inherit; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 .cab nav a:hover, .cab nav a[aria-current="page"] { border-bottom-color: currentColor; }
@@ -182,7 +182,7 @@ img { max-width: 100%; display: block; }
   .cab nav { display: none; }
   .plat-fila, .plat-fila.al-reves { grid-template-columns: 1fr; }
   .plat-fila.al-reves .plat-texto { order: 0; }
-  .cab-logo img { height: 46px; }
+  .cab-logo img { height: 64px; }
   .hero-grid, .g3, .g2, .materias, .principios { grid-template-columns: 1fr; }
   .h1 { font-size: 3em; }
   .h2 { font-size: 2.4em; }
