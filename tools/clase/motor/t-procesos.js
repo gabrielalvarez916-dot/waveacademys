@@ -105,7 +105,7 @@
     var xs = pts.map(function (p) { return p[0]; }), ys = pts.map(function (p) { return p[1]; }), mnx = Math.min.apply(null, xs.concat(d.xmin != null ? [d.xmin] : [])), mxx = Math.max.apply(null, xs), mny = Math.min.apply(null, ys.concat([0])), mxy = Math.max.apply(null, ys);
     var sx = function (v) { return X0 + (v - mnx) / (mxx - mnx || 1) * (X1 - X0); }, sy = function (v) { return Y0 - (v - mny) / (mxy - mny || 1) * (Y0 - Y1); };
     var ejes = w.pieza(g, 0, 0); w.el('line', { x1: X0, y1: Y0, x2: X1 + 30, y2: Y0, stroke: C.suave, 'stroke-width': 5 }, ejes); w.el('line', { x1: X0, y1: Y0, x2: X0, y2: Y1 - 30, stroke: C.suave, 'stroke-width': 5 }, ejes);
-    w.txt(ejes, X1, Y0 + 45, d.x || 'x', 30, C.aqua, { 'text-anchor': 'end' }); w.txt(ejes, X0 + 20, Y1 - 50, d.y || 'y', 30, C.aqua, { 'text-anchor': 'start' });
+    w.txt(ejes, X1, Y0 - 25, d.x || 'x', 30, C.aqua, { 'text-anchor': 'end' }); w.txt(ejes, X0 + 20, Y1 - 50, d.y || 'y', 30, C.aqua, { 'text-anchor': 'start' });
     var dd = pts.map(function (p, i) { return (i ? 'L' : 'M') + sx(p[0]).toFixed(1) + ' ' + sy(p[1]).toFixed(1); }).join(' ');
     var c = w.el('path', { d: dd, fill: 'none', stroke: C.sol, 'stroke-width': 9, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#brillo)' }, g); var L = 6000; c.setAttribute('stroke-dasharray', L); c.setAttribute('stroke-dashoffset', L);
     var MK = (d.marcas || []).map(function (m) { var p = w.pieza(g, sx(m.x), sy(m.y)); w.el('circle', { r: 16, fill: C.coral, stroke: '#fff', 'stroke-width': 4 }, p); var tw = m.txt.length * 17 + 40; w.caja(p, 0, -56, tw, 58, 'rgba(6,20,22,.88)', C.coral, 28, 3); w.txt(p, 0, -56, m.txt, 28, '#fff'); return p; });

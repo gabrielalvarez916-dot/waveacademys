@@ -16,7 +16,7 @@
 
   // libro: {titulo, libro:{titulo, autor, editorial, emoji}, partes:[{parte:'contratapa'|'lomo'|'tapa'|'indice', txt}]} — dibuja el libro y marca cada parte (1 + partes pasos)
   T.libro = { n: function (d) { return 1 + d.partes.length; }, armar: function (g, tl, B, d) {
-    var L = d.libro || {}, ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), y0 = 330, h = 520;
+    var L = d.libro || {}, ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), y0 = 310, h = 450;
     var Z = { contratapa: [300, 400], lomo: [712, 76], tapa: [800, 400], indice: [1250, 370] };
     w.el('rect', { x: 300, y: y0, width: 400, height: h, rx: 14, fill: '#5b3f8c' }, o);
     for (var i = 0; i < 9; i++) w.el('rect', { x: 340, y: y0 + 70 + i * 34, width: i === 8 ? 180 : 320, height: 12, rx: 6, fill: '#d6c4ff', opacity: .7 }, o);
@@ -24,11 +24,11 @@
     w.el('rect', { x: 712, y: y0, width: 76, height: h, rx: 6, fill: '#3f2a66' }, o);
     var lt = w.txt(o, 750, y0 + h / 2, (L.titulo || 'MI LIBRO').toUpperCase(), 26, '#f1eaff'); lt.setAttribute('transform', 'rotate(-90 750 ' + (y0 + h / 2) + ')');
     w.el('rect', { x: 800, y: y0, width: 400, height: h, rx: 14, fill: '#7458c4' }, o);
-    w.txt(o, 1000, y0 + 80, L.titulo || 'Mi libro', 40, '#fff'); w.emoji(o, 1000, y0 + 260, L.emoji || '📖', 170);
-    w.txt(o, 1000, y0 + 420, L.autor || 'Autor', 32, '#f1eaff'); w.txt(o, 1000, y0 + 475, L.editorial || 'Editorial', 26, '#d6c4ff');
+    w.txt(o, 1000, y0 + 80, L.titulo || 'Mi libro', 40, '#fff'); w.emoji(o, 1000, y0 + 215, L.emoji || '📖', 150);
+    w.txt(o, 1000, y0 + 355, L.autor || 'Autor', 32, '#f1eaff'); w.txt(o, 1000, y0 + 405, L.editorial || 'Editorial', 26, '#d6c4ff');
     w.el('rect', { x: 1250, y: y0, width: 370, height: h, rx: 10, fill: '#fbf8ff', stroke: '#bdb2d6', 'stroke-width': 3 }, o);
     w.txt(o, 1435, y0 + 60, 'ÍNDICE', 34, '#3a2a63');
-    for (var k = 0; k < 6; k++) { w.txt(o, 1300, y0 + 130 + k * 60, (k + 1) + '. ……………', 26, '#4b3c74').setAttribute('text-anchor', 'start'); w.txt(o, 1585, y0 + 130 + k * 60, String(5 + k * 12), 26, '#4b3c74'); }
+    for (var k = 0; k < 6; k++) { w.txt(o, 1300, y0 + 120 + k * 52, (k + 1) + '. ……………', 26, '#4b3c74').setAttribute('text-anchor', 'start'); w.txt(o, 1585, y0 + 120 + k * 52, String(5 + k * 12), 26, '#4b3c74'); }
     var P = d.partes.map(function (pt, k) { var z = Z[pt.parte] || Z.tapa, col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), cx = z[0] + z[1] / 2;
       w.el('rect', { x: z[0] - 8, y: y0 - 8, width: z[1] + 16, height: h + 16, rx: 18, fill: 'none', stroke: col, 'stroke-width': 8 }, gr);
       var tw = Math.max(220, pt.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, cx));
@@ -47,7 +47,7 @@
       if (m.tras) { var tt = w.txt(o, X[i][0], -500, m.tras, 38, '#000'); tt.setAttribute('text-anchor', 'start'); var tw0 = 0; try { tw0 = tt.getComputedTextLength(); } catch (e) {} tt.remove(); mx = X[i][0] + (tw0 > 0 ? tw0 : m.tras.length * 17.5) - 14; }
       if (m.pos === 'sangria') { mx = x0 + 35; w.el('line', { x1: x0, y1: my, x2: x0 + 60, y2: my, stroke: col, 'stroke-width': 6, 'marker-end': '' }, gr); }
       else w.el('circle', { cx: mx, cy: my + 6, r: (m.pos === 'fin' || m.tras) ? 18 : 30, fill: 'none', stroke: col, 'stroke-width': 6 }, gr);
-      var ly = 320 + 90 + d.lineas.length * 72 + 60 + k * 86, tw = Math.max(220, m.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, mx));
+      var ly = 320 + 90 + d.lineas.length * 72 + 45 + k * 74, tw = Math.max(220, m.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, mx));
       w.el('line', { x1: mx, y1: my + 32, x2: lx, y2: ly - 36, stroke: col, 'stroke-width': 4 }, gr); w.caja(gr, lx, ly, tw, 72, 'rgba(14,10,26,.92)', col, 30, 4); w.txt(gr, lx, ly, m.txt, 30, '#fff'); return gr; });
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .95, y: 0 });
     P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { scale: .95, y: 0, d: .4 }); });
@@ -99,7 +99,7 @@
       (o.emojis || []).forEach(function (e, k, arr) { w.emoji(gr, (k - (arr.length - 1) / 2) * 150, -10, e, 120); });
       if (o.txt) w.txt(gr, 0, 120, o.txt, 30, '#efffdc'); var r = o.res ? w.pieza(g, x, 820) : null; if (r) { w.caja(r, 0, 0, Math.max(300, o.res.length * 20 + 60), 70, 'rgba(14,30,10,.92)', col, 30, 4); w.txt(r, 0, 0, o.res, 32, '#fff'); } return [gr, r]; }
     var A = lado(d.a, 560, C.aqua), Bb = lado(d.b, 1360, C.sol);
-    var v = d.variable ? w.etiqueta(g, 960, 950, d.variable) : null;
+    var v = d.variable ? w.etiqueta(g, 960, 905, d.variable) : null;
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, A[0], ti ? '<.1' : 0, { y: 0 }); w.IN(tl, Bb[0], '<.15', { y: 0 });
     B(1); if (v) w.IN(tl, v, 0, { scale: .6, y: 0 });
     B(2); [A[1], Bb[1]].forEach(function (r, k) { if (r) w.IN(tl, r, k ? '<.2' : 0, { y: 20 }); });
@@ -119,7 +119,7 @@
       py = bot2 - (bot2 - top2 - 30) * f; px = cx2; w.el('rect', { x: cx2 - 18, y: py, width: 36, height: bot2 - py + 20, fill: '#e2453c' }, mk); }
     var lec = w.pieza(g, 0, 0), lx = tipo === 'regla' ? px : px - 330, ly = tipo === 'regla' ? py - 170 : py;
     w.caja(lec, lx, ly, 280, 76, 'rgba(14,30,10,.92)', C.sol, 30, 4); w.txt(lec, lx, ly, String(d.valor).replace('.', ',') + ' ' + (d.unidad || ''), 38, '#fff');
-    var nt = d.nota ? w.etiqueta(g, 960, 960, d.nota) : null;
+    var nt = d.nota ? w.etiqueta(g, 960, 905, d.nota) : null;
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { y: 0 });
     B(1); w.IN(tl, mk, 0, { y: 0, d: .8 }); w.IN(tl, lec, '>-.2', { y: 0 });
     B(2); if (nt) w.IN(tl, nt, 0, { y: 0 });

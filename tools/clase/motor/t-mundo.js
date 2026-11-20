@@ -80,7 +80,7 @@
           tl.to(gg, { opacity: 1, duration: .4 }, pos); }
       });
       if (cap) w.OUT(tl, cap, '<'); cap = null;
-      if (p.txt) { cap = w.chip(g, 960, 985, Math.min(1600, p.txt.length * 25 + 120), 84, p.txt, { size: 40, stroke: C.aqua }); w.IN(tl, cap, '<.1'); }
+      if (p.txt) { cap = w.chip(g, 960, 905, Math.min(1600, p.txt.length * 25 + 120), 84, p.txt, { size: 40, stroke: C.aqua }); w.IN(tl, cap, '<.1'); }
     });
   } };
 })();

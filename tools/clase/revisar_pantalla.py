@@ -9,7 +9,7 @@ JS = r"""() => {
   const T = [...svg.querySelectorAll('text')].filter(t => t.textContent.trim() && op(t) > 0.2 && !t.closest('#subs') ).map(t => { const r = t.getBoundingClientRect();
     return { s: t.textContent.trim().slice(0, 40), x0: (r.left - r0.left) / k, y0: (r.top - r0.top) / k, x1: (r.right - r0.left) / k, y1: (r.bottom - r0.top) / k }; }).filter(b => b.x1 - b.x0 > 4);
   const out = [];
-  T.forEach(b => { if (b.x0 < -2 || b.x1 > vb.width + 2 || b.y0 < -2 || b.y1 > vb.height + 2) out.push('se sale de la pantalla: «' + b.s + '»'); });
+  T.forEach(b => { if (b.x0 < -2 || b.x1 > vb.width + 2 || b.y0 < -2 || b.y1 > vb.height + 2) out.push('se sale de la pantalla: «' + b.s + '»'); else if (b.y1 > vb.height - 125) out.push('queda bajo los controles del reproductor: «' + b.s + '»'); });
   for (let i = 0; i < T.length; i++) for (let j = i + 1; j < T.length; j++) { const a = T[i], b = T[j];
     const w = Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0), h = Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0);
     if (!/[a-zA-Z0-9áéíóúñ]/i.test(a.s) && !/[a-zA-Z0-9áéíóúñ]/i.test(b.s)) continue; // dos emojis juntos (cubito sobre el vaso): a propósito
