@@ -79,8 +79,8 @@
    "t": "parrafo",
    "titulo": "UN PÁRRAFO, MARCADO",
    "lineas": [
-    "Leo poco. Me cuesta concentrarme.",
-    "Pero este año quiero leer más novelas,",
+    "Leo poco. Me cuesta concentrarme, pero",
+    "este año quiero leer más novelas,",
     "sobre todo de misterio."
    ],
    "marcas": [
@@ -96,7 +96,7 @@
     },
     {
      "linea": 0,
-     "pos": "fin",
+     "tras": "Leo poco.",
      "txt": "punto seguido: otra oración"
     },
     {
