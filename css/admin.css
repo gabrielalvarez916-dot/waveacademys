@@ -369,3 +369,5 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .fb-img-vista { max-width: 220px; max-height: 160px; border-radius: 10px; border: 2px solid var(--turquesa); object-fit: contain; background: #f6fbfb; }
 .fb-img-falta { width: 220px; padding: 22px 10px; text-align: center; border: 2px dashed #f4b63f; border-radius: 10px; background: #fff4d6; color: #7a5600; font-weight: 700; font-size: .85rem; }
 .fb-img-subir { cursor: pointer; }
+.wv-ag-notas { width: 100%; min-height: 64px; margin-top: 8px; padding: 8px 10px; border: 1px solid #cfdcdb; border-radius: 10px; font: inherit; }
+.wv-ag-turno { align-items: flex-start; }

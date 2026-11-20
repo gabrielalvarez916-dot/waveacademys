@@ -1015,10 +1015,11 @@
     return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + d.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' h';
   }
   async function vistaTutorias() {
-    vista.innerHTML = '<h1 class="vista-titulo">Tutorías y oficios</h1><div id="tuf"><div class="vacio">Cargando…</div></div>';
+    vista.innerHTML = '<h1 class="vista-titulo">Turnos y tutorías</h1><section class="fa-card" id="tuf-dir"><div class="vacio">Cargando…</div></section><div id="tuf"><div class="vacio">Cargando…</div></div>';
     var cont = document.getElementById('tuf');
     var h = await sb.from('students').select('id, first_name, last_name, grade_id, trayecto_clave').order('created_at');
     if (h.error) { cont.innerHTML = '<div class="vacio">No pudimos cargar los datos.</div>'; return; }
+    pintarDireccion(document.getElementById('tuf-dir'), h.data);
     if (!h.data.length) { cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo.</div>'; return; }
     var partes = await Promise.all(h.data.map(async function (a) {
       var t = await sb.rpc('mi_tutor', { p_student: a.id });
@@ -1042,6 +1043,62 @@
       if (p.mod === 'completa' || p.mod === 'personalizada') pintarOficios(card, p.a);
     });
   }
+  var AVISO_LLAMADA = '<p class="fa-aviso">La videollamada se abre en el navegador o en la app Jitsi Meet, sin crear cuenta. Si te pide que esperes al moderador, es que todavía no entró: pasás apenas se conecte.</p>';
+  var MOTIVOS = ['Inscripción', 'Pagos y facturación', 'Aprendizaje de mi hijo/a', 'Otro'];
+  async function pintarDireccion(box, hijos) {
+    var r = await Promise.all([sb.rpc('mis_turnos_direccion'), sb.rpc('turnos_direccion', { p_dias: 21 })]);
+    var ts = r[0].data || [], slots = r[1].data || [], ahora = Date.now();
+    var prox = ts.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() > ahora; }).reverse();
+    var pasadas = ts.filter(function (t) { return t.estado !== 'reservada'; }).slice(0, 3);
+    var html = '<h2>Hablar con dirección</h2><p class="fa-intro">¿Tenés una consulta sobre la inscripción, los pagos o cómo va tu hijo/a? Pedí un turno de videollamada con la dirección de la escuela.</p>';
+    if (prox.length) html += '<h3 class="fa-sub">Tus turnos</h3>' + prox.map(function (t) {
+      return '<div class="tuf-turno"><b>' + esc(fechaTurno(t.inicio)) + '</b> · ' + esc(t.motivo) + (t.tema ? ' · ' + esc(t.tema) : '') +
+        '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
+        '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div></div>';
+    }).join('') + AVISO_LLAMADA;
+    if (pasadas.length) html += '<h3 class="fa-sub">Últimos turnos</h3>' + pasadas.map(function (t) {
+      return '<p class="tu-tema"><b>' + esc(fechaTurno(t.inicio)) + ' · ' + esc(t.motivo) + ':</b> ' + (t.estado === 'ausente' ? 'no te conectaste.' : esc(t.notas || 'realizado.')) + '</p>';
+    }).join('');
+    if (prox.length >= 2) html += '<p class="fa-aviso">Ya tenés 2 turnos pedidos. Cuando pase uno, podés pedir otro.</p>';
+    else if (!slots.length) html += '<p class="fa-aviso">No hay turnos libres con dirección en las próximas 3 semanas. Volvé a mirar en unos días.</p>';
+    else {
+      var porDia = {};
+      slots.forEach(function (s) { var k = new Date(s.inicio).toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }); (porDia[k] = porDia[k] || []).push(s); });
+      html += '<h3 class="fa-sub">Pedir un turno</h3>' +
+        '<div class="tuf-campos"><select class="tuf-motivo"><option value="">Motivo…</option>' + MOTIVOS.map(function (m) { return '<option>' + m + '</option>'; }).join('') + '</select>' +
+        (hijos.length ? '<select class="tuf-hijo"><option value="">Sobre la familia en general</option>' + hijos.map(function (a) { return '<option value="' + a.id + '">Sobre ' + esc(a.first_name) + '</option>'; }).join('') + '</select>' : '') + '</div>' +
+        Object.keys(porDia).slice(0, 10).map(function (d) {
+          return '<p class="tuf-dia">' + esc(d) + '</p><div class="tu-slots">' + porDia[d].map(function (s) {
+            return '<button type="button" class="tu-slot" data-ini="' + esc(s.inicio) + '">' + new Date(s.inicio).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + '</button>';
+          }).join('') + '</div>';
+        }).join('') +
+        '<input class="tuf-tema" maxlength="500" placeholder="Contanos brevemente tu consulta (opcional)">' +
+        '<button type="button" class="boton fa-boton" data-reservar disabled>Pedir turno</button><p class="fa-aviso tuf-err" hidden></p>';
+    }
+    box.innerHTML = html;
+    var elegido = null;
+    box.onclick = async function (ev) {
+      var b;
+      if ((b = ev.target.closest('[data-cancelar]'))) {
+        if (!confirm('¿Cancelar este turno con dirección?')) return;
+        var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });
+        if (x.error) { alert(x.error.message); return; }
+        return pintarDireccion(box, hijos);
+      }
+      if ((b = ev.target.closest('.tu-slot'))) {
+        box.querySelectorAll('.tu-slot').forEach(function (s) { s.classList.toggle('on', s === b); });
+        elegido = b.getAttribute('data-ini'); box.querySelector('[data-reservar]').disabled = false; return;
+      }
+      if ((b = ev.target.closest('[data-reservar]')) && elegido) {
+        var err = box.querySelector('.tuf-err'), motivo = box.querySelector('.tuf-motivo').value, hijo = box.querySelector('.tuf-hijo');
+        if (!motivo) { err.textContent = 'Elegí el motivo de la consulta.'; err.hidden = false; return; }
+        b.disabled = true;
+        var y = await sb.rpc('reservar_direccion', { p_inicio: elegido, p_motivo: motivo, p_detalle: box.querySelector('.tuf-tema').value || null, p_student: (hijo && hijo.value) || null });
+        if (y.error) { err.textContent = y.error.message; err.hidden = false; b.disabled = false; return; }
+        pintarDireccion(box, hijos);
+      }
+    };
+  }
   async function pintarMisTutorias(card, alu) {
     var box = card.querySelector('.tuf-mis');
     var r = await sb.rpc('mis_tutorias', { p_student: alu });
@@ -1052,7 +1109,7 @@
         return '<div class="tuf-turno"><b>' + esc(fechaTurno(t.inicio)) + '</b>' + (t.tema ? ' · ' + esc(t.tema) : '') +
           '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
           '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div></div>';
-      }).join('') : '') +
+      }).join('') + AVISO_LLAMADA : '') +
       (pasadas.length ? '<h3 class="fa-sub">Últimas tutorías</h3>' + pasadas.map(function (t) {
         return '<p class="tu-tema"><b>' + esc(fechaTurno(t.inicio)) + ':</b> ' + (t.estado === 'ausente' ? 'no se conectó.' : esc(t.notas_tutor || 'realizada.')) + '</p>';
       }).join('') : '');

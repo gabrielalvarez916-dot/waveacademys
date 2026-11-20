@@ -820,10 +820,78 @@
     pintar();
   }
 
+  // ---------- Agenda de dirección: horarios y turnos con las familias ----------
+  async function vistaAgenda() {
+    var DIAS = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    function fh(v) { var d = new Date(v); return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + d.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' h'; }
+    vista.innerHTML = '<h1 class="vista-titulo">Agenda de dirección</h1>' +
+      '<p class="wv-dato">Las familias (de cualquier modalidad) piden turno de videollamada con dirección dentro de estos horarios (hora de Argentina). No descuentan de sus tutorías. Para que la sala se abra, entrá vos primero con tu cuenta de Google.</p>' +
+      '<form id="wv-ag-form" class="wv-tut-form"><select id="wv-ag-dia">' + DIAS.slice(1).map(function (d, i) { return '<option value="' + (i + 1) + '">' + d + '</option>'; }).join('') + '</select> ' +
+      'de <input id="wv-ag-desde" type="time" value="10:00" required> a <input id="wv-ag-hasta" type="time" value="13:00" required> turnos de <select id="wv-ag-dur"><option>15</option><option selected>30</option><option>45</option><option>60</option></select> min ' +
+      '<button class="wv-btn" type="submit">Agregar horario</button></form><div id="wv-ag-horas"></div><div id="wv-ag-turnos"><div class="wv-vacio">Cargando…</div></div>';
+    var ses = await sb.auth.getSession(), yo = ses.data.session.user.id;
+    async function horas() {
+      var r = await sb.from('tutor_disponibilidad').select('id, dia_semana, desde, hasta, duracion_min').eq('tutor_id', yo).order('dia_semana').order('desde');
+      var c = document.getElementById('wv-ag-horas');
+      c.innerHTML = !(r.data || []).length ? '<div class="wv-vacio">Todavía no cargaste horarios: sin horarios, las familias no pueden pedir turno.</div>' :
+        '<div class="wv-alus">' + r.data.map(function (h) {
+          return '<div class="wv-alu"><div class="wv-dato"><b>' + DIAS[h.dia_semana] + '</b> de ' + h.desde.slice(0, 5) + ' a ' + h.hasta.slice(0, 5) + ' h · turnos de ' + h.duracion_min + ' min</div>' +
+            '<button type="button" class="wv-btn" data-borrar="' + h.id + '">Quitar</button></div>';
+        }).join('') + '</div>';
+    }
+    async function turnos() {
+      var r = await sb.rpc('agenda_direccion'), c = document.getElementById('wv-ag-turnos');
+      if (r.error) { c.innerHTML = '<div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
+      var ahora = Date.now();
+      var prox = r.data.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() > ahora; });
+      var cerrar = r.data.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() <= ahora; });
+      var hechas = r.data.filter(function (t) { return t.estado !== 'reservada'; }).reverse().slice(0, 15);
+      function card(t, modo) {
+        return '<div class="wv-alu wv-ag-turno" data-id="' + t.id + '"><div style="flex:1"><div class="wv-nombre">' + esc(t.familia || t.email) + (t.alumno ? ' · ' + esc(t.alumno) : '') + '</div>' +
+          '<div class="wv-dato">' + esc(fh(t.inicio)) + ' · <b>' + esc(t.motivo) + '</b>' + (t.tema ? ' · ' + esc(t.tema) : '') + '</div>' +
+          '<div class="wv-dato">' + esc(t.email || '') + (t.telefono ? ' · ' + esc(t.telefono) : '') + '</div>' +
+          (modo === 'hecha' ? '<div class="wv-dato">' + (t.estado === 'ausente' ? 'No se presentó.' : 'Realizado.') + (t.notas ? ' ' + esc(t.notas) : '') + '</div>' : '') +
+          (modo === 'cerrar' ? '<textarea class="wv-ag-notas" placeholder="Notas (la familia las ve)"></textarea>' : '') + '</div><div>' +
+          (modo === 'prox' ? '<a class="wv-btn" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar</a> <button type="button" class="wv-btn" data-cancelar="' + t.id + '">Cancelar</button>' : '') +
+          (modo === 'cerrar' ? '<button type="button" class="wv-btn" data-cerrar="realizada">Se hizo</button> <button type="button" class="wv-btn" data-cerrar="ausente">No se presentó</button>' : '') +
+          '</div></div>';
+      }
+      c.innerHTML = (cerrar.length ? '<h2 class="wv-sub">Para cerrar</h2><div class="wv-alus">' + cerrar.map(function (t) { return card(t, 'cerrar'); }).join('') + '</div>' : '') +
+        '<h2 class="wv-sub">Próximos turnos</h2>' + (prox.length ? '<div class="wv-alus">' + prox.map(function (t) { return card(t, 'prox'); }).join('') + '</div>' : '<div class="wv-vacio">No hay turnos pedidos.</div>') +
+        (hechas.length ? '<h2 class="wv-sub">Últimos</h2><div class="wv-alus">' + hechas.map(function (t) { return card(t, 'hecha'); }).join('') + '</div>' : '');
+    }
+    document.getElementById('wv-ag-form').onsubmit = async function (ev) {
+      ev.preventDefault();
+      var r = await sb.from('tutor_disponibilidad').insert({ tutor_id: yo, dia_semana: +document.getElementById('wv-ag-dia').value,
+        desde: document.getElementById('wv-ag-desde').value, hasta: document.getElementById('wv-ag-hasta').value, duracion_min: +document.getElementById('wv-ag-dur').value });
+      if (r.error) { toast(/hasta/.test(r.error.message) ? 'La hora de fin tiene que ser después de la de inicio' : 'No se pudo guardar', true); return; }
+      toast('Horario agregado'); horas();
+    };
+    var clicAgenda = async function (ev) {
+      var b;
+      if ((b = ev.target.closest('[data-borrar]'))) {
+        var r = await sb.from('tutor_disponibilidad').delete().eq('id', b.getAttribute('data-borrar'));
+        if (r.error) toast('No se pudo quitar', true); else horas();
+      } else if ((b = ev.target.closest('[data-cancelar]'))) {
+        if (!confirm('¿Cancelar este turno? Avisale a la familia.')) return;
+        var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });
+        if (x.error) toast(x.error.message, true); else turnos();
+      } else if ((b = ev.target.closest('[data-cerrar]'))) {
+        var card = b.closest('[data-id]');
+        var y = await sb.rpc('cerrar_tutoria', { p_id: card.getAttribute('data-id'), p_estado: b.getAttribute('data-cerrar'), p_notas: card.querySelector('.wv-ag-notas').value });
+        if (y.error) toast(y.error.message, true); else turnos();
+      }
+    };
+    document.getElementById('wv-ag-horas').onclick = clicAgenda;
+    document.getElementById('wv-ag-turnos').onclick = clicAgenda;
+    horas(); turnos();
+  }
+
   var VISTAS = {
     familias: vistaFamilias,
     facturacion: vistaFacturacion,
     tutores: vistaTutores,
+    agenda: vistaAgenda,
     contenido: function () { return WaveContenido.abrir(vista); },
     curricular: function () { return WaveCurricular.abrir(vista); },
     fabrica: function () { return WaveFabrica.abrir(vista); },

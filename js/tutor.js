@@ -62,7 +62,7 @@
     }
     c.innerHTML =
       (cerrar.length ? '<h2 class="tu-h">Para cerrar</h2>' + cerrar.map(function (t) { return tarjeta(t, 'cerrar'); }).join('') : '') +
-      '<h2 class="tu-h">Próximas</h2>' + (prox.length ? prox.map(function (t) { return tarjeta(t, 'prox'); }).join('') : '<div class="vacio">No tenés tutorías reservadas.</div>') +
+      '<h2 class="tu-h">Próximas</h2><p class="fa-intro">Entrá vos primero a la videollamada, con tu cuenta de Google: hasta que entres, la sala no se abre y la familia queda esperando.</p>' + (prox.length ? prox.map(function (t) { return tarjeta(t, 'prox'); }).join('') : '<div class="vacio">No tenés tutorías reservadas.</div>') +
       (hechas.length ? '<h2 class="tu-h">Últimas realizadas</h2>' + hechas.slice(0, 15).map(function (t) { return tarjeta(t, 'hecha'); }).join('') : '');
     c.onclick = async function (ev) {
       var b;

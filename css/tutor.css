@@ -27,3 +27,6 @@
 .tuf-turno { margin: 8px 0 12px; }
 .tuf-dia { margin: 12px 0 0; font-weight: 700; text-transform: capitalize; }
 .tuf-tema { width: 100%; min-height: 44px; margin-top: 12px; padding: 0 12px; border: 2px solid var(--borde, #cfdcdb); border-radius: 12px; font: inherit; }
+.tuf-campos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.tuf-campos select { min-height: 44px; padding: 0 10px; border: 2px solid var(--borde, #cfdcdb); border-radius: 12px; font: inherit; }
+#tuf-dir { margin-bottom: 18px; }
