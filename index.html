@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#087E83">
   <title>Wave Academy · Escuela online de inicial, primaria y secundaria</title>
-  <meta name="description" content="Escuela online con el programa completo de inicial, primaria y secundaria: clases animadas, corrección inmediata, tutores y diploma de high school de los Estados Unidos.">
+  <meta name="description" content="Wave Academy es una escuela online de inicial, primaria y secundaria. La escuela se adapta al chico, no el chico a la escuela.">
   <link rel="icon" href="/assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/sitio.css?v=11201940">
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/sitio.css?v=11202300">
 </head>
 <body>
 
@@ -19,10 +18,11 @@
       <header class="cab">
         <a class="cab-logo" href="/"><img src="/assets/logo.png" alt="Wave Academy's"></a>
         <nav aria-label="Secciones">
+          <a href="/" aria-current="page">Nosotros</a>
           <a href="/inicial.html">Inicial</a>
           <a href="/primaria.html">Primaria</a>
           <a href="/secundaria.html">Secundaria</a>
-          <a href="#planes">Planes</a>
+          <a href="#plataforma">La plataforma</a>
           <a href="#titulo">Título</a>
         </nav>
         <div class="cab-acc">
@@ -30,164 +30,161 @@
           <a class="btn btn-osc" href="/ingresar.html" style="min-height: 44px">Ingresar</a>
         </div>
       </header>
-    </div>
-    <div class="wrap hero-cuerpo">
-      <p aria-hidden="true" class="giga" style="left: 50%; top: 10px; transform: translateX(-50%); font-size: 21em; color: #FFFFFF">wave</p>
-      <div style="position: relative; z-index: 2; max-width: 760px">
-        <h1 class="h1">La escuela que va al ritmo de cada estudiante.</h1>
-        <p class="p" style="font-size: 1.2em; max-width: 34em; margin-bottom: 32px">Inicial, primaria y secundaria online, con el programa completo, clases animadas, corrección inmediata y tutores. Se avanza al aprobar, no cuando lo dice el calendario.</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap">
-          <a class="btn btn-tur" href="#entrevista">Agendar una entrevista</a>
-          <a class="btn btn-bla" href="#mision" style="border: 1px solid #B9D3CF">Ver una clase real</a>
+
+      <div class="hero-grid">
+        <div>
+          <h1 class="h1">La escuela se adapta al chico, no el chico a la escuela.</h1>
+          <p class="lead" style="color: var(--texto)">Hay chicos que aprenden mirando, otros escuchando, otros con las manos. Hay chicos que necesitan ir más despacio y otros que se aburren esperando. Wave Academy es una escuela online de inicial, primaria y secundaria pensada para cada uno de ellos.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn btn-tur" href="#entrevista">Agendar una entrevista</a>
+            <a class="btn btn-bla" href="#plataforma" style="border: 1px solid #B9D3CF">Ver la plataforma por dentro</a>
+          </div>
+        </div>
+        <div class="marco tilt-b">
+          <div class="marco-barra"><i></i><i></i><i></i></div>
+          <img src="/assets/plataforma/cursos.webp" alt="Panel del alumno con sus materias, el avance y el promedio de cada una" width="1600" height="944">
         </div>
       </div>
-      <div class="pieza" style="right: 32px; top: 40px; width: 300px; padding: 18px 20px; transform: rotate(4deg)" aria-hidden="true">
-        <p style="margin: 0 0 4px; font-weight: 700; font-size: 0.85em; color: var(--turquesa)">Actividad corregida</p>
-        <p class="d" style="margin: 0 0 10px; font-weight: 800; font-size: 1.25em">Pasá 1010₂ a decimal.</p>
-        <div style="display: flex; gap: 8px; align-items: center"><span style="flex: 1; border: 1px solid var(--borde); border-radius: 10px; padding: 8px 12px; font-weight: 700">10</span><span style="background: #DDF0EA; color: #0B5E62; border-radius: 10px; padding: 8px 12px; font-weight: 700">Correcto</span></div>
-        <p style="margin: 10px 0 0; font-size: 0.85em; color: var(--texto)">0 × 1 + 1 × 2 + 0 × 4 + 1 × 8 = 10.</p>
-      </div>
-      <div class="pieza" style="right: 230px; top: 250px; width: 250px; padding: 16px 18px; transform: rotate(-5deg); background: var(--petroleo); border-color: var(--petroleo); color: #FFFFFF" aria-hidden="true">
-        <p style="margin: 0 0 4px; font-weight: 700; font-size: 0.85em; color: #9FD3CB">Examen jefe, misión 1</p>
-        <p class="d" style="margin: 0; font-weight: 800; font-size: 1.25em">Aprobado. Se abre la misión 2.</p>
-      </div>
     </div>
+    <p aria-hidden="true" class="giga-fila" style="color: var(--turquesa)">wave</p>
   </section>
 
   <div class="cinta" aria-hidden="true">
     <svg viewBox="0 0 1440 200" preserveAspectRatio="xMidYMid slice">
-      <path id="cinta1" d="M-80 150 C 200 40 420 30 700 100 C 980 170 1200 160 1520 50" fill="none" stroke="#087E83" stroke-width="56"></path>
-      <text font-size="22" fill="#E8F3F0" dominant-baseline="central"><textPath href="#cinta1">clases animadas · corrección inmediata · tutores · inglés desde primer año · programación · oficios · diploma de EE. UU. · clases animadas · corrección inmediata · tutores ·</textPath></text>
+      <path id="cinta1" d="M-80 150 C 200 40 420 30 700 100 C 980 170 1200 160 1520 50" fill="none" stroke="#D99A2B" stroke-width="56"></path>
+      <text font-size="22" fill="#16393B" dominant-baseline="central"><textPath href="#cinta1">primero la pregunta, después la respuesta · nadie avanza con huecos · equivocarse es parte de aprender · cada chico tiene su puerta · se aprende haciendo ·</textPath></text>
     </svg>
   </div>
 
   <main>
-    <section class="sec" style="padding-top: 150px">
+    <section class="sec manif" style="padding-top: 150px">
       <div class="wrap">
-        <h2 class="h2">Trece años de escuela, de inicial a secundaria.</h2>
-        <div class="g3" style="align-items: stretch">
+        <p class="manif-frase">Durante demasiado tiempo la escuela les pidió a todos lo mismo, al mismo ritmo y de la misma forma. <span>Y a los que no encajaban, les dijo que el problema eran ellos.</span></p>
+        <p class="manif-giro">Nosotros creemos lo contrario.</p>
+        <p style="margin: 0 0 64px; max-width: 40em; font-size: 1.15em; line-height: 1.65; color: var(--menta-2)">Wave Academy nació de una pregunta simple: ¿cómo aprende de verdad una persona? No qué tiene que saber, ni qué dice el programa, sino qué pasa en la cabeza de un chico cuando algo, por fin, le hace clic. Todo lo que construimos sale de ahí.</p>
+        <div class="principios">
+          <article class="principio tilt-a" style="background: #FFFFFF; color: var(--petroleo)">
+            <h3>Aprender empieza por la curiosidad.</h3>
+            <p style="color: var(--texto)">Ninguna clase arranca con una definición. Arranca con un cubito de hielo que se derrite, con un chat entre amigos, con algo que le pasó a alguien.</p>
+            <p class="ref">Aprendizaje significativo · David Ausubel</p>
+          </article>
+          <article class="principio tilt-b" style="background: var(--ambar); color: var(--petroleo)">
+            <h3>Nadie avanza con huecos.</h3>
+            <p>Un tema que hoy no se entendió es un muro mañana. Cada misión termina con un nivel jefe: el ritmo puede ser de cada uno, la comprensión no se negocia.</p>
+            <p class="ref">Aprendizaje para el dominio · Benjamin Bloom</p>
+          </article>
+          <article class="principio tilt-c" style="background: var(--turquesa); color: #FFFFFF">
+            <h3>La mente aprende mejor cuando ve y escucha.</h3>
+            <p style="color: #E0F2EE">Clases cortas y animadas, con la voz y la imagen trabajando juntas y una sola idea por vez.</p>
+            <p class="ref">Aprendizaje multimedia · Richard Mayer y John Sweller</p>
+          </article>
+          <article class="principio tilt-d" style="background: var(--arena); color: var(--petroleo)">
+            <h3>Acompañar hasta que no haga falta.</h3>
+            <p style="color: var(--texto)">Primero mostramos cómo se hace. Después lo hacemos juntos. Al final, el alumno lo hace solo. El tutor da pistas y reformula, pero nunca entrega la respuesta.</p>
+            <p class="ref">Andamiaje · Lev Vygotsky</p>
+          </article>
+          <article class="principio tilt-a" style="background: var(--menta); color: var(--petroleo)">
+            <h3>Equivocarse es parte de aprender.</h3>
+            <p style="color: var(--texto)">El error no se castiga: se usa. Cada respuesta trae su explicación. Evaluamos para aprender, no para etiquetar.</p>
+            <p class="ref">Práctica de recuperación y práctica mezclada</p>
+          </article>
+          <article class="principio tilt-b" style="background: #FFFFFF; color: var(--petroleo)">
+            <h3>Cada chico tiene su puerta.</h3>
+            <p style="color: var(--texto)">El mismo tema llega por una clase animada, un texto, actividades y la carpeta. Si una puerta no abre, abre otra.</p>
+            <p class="ref">Diseño Universal para el Aprendizaje</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec cifras">
+      <div class="wrap">
+        <h2 class="h2">Trece años de escuela, completos.</h2>
+        <p class="bajada">Desde el nivel inicial hasta el final de la secundaria, con el programa de cada año armado en misiones.</p>
+        <div class="cifras-fila">
+          <div class="cifra"><b>13</b><strong>años de escolaridad</strong><span>Inicial, seis años de primaria y seis de secundaria.</span></div>
+          <div class="cifra"><b>1.540</b><strong>misiones</strong><span>60 en inicial, 680 en primaria y 800 en secundaria.</span></div>
+          <div class="cifra"><b>640</b><strong>misiones de oficios</strong><span>Diez oficios, con su recorrido de niveles como cualquier otra materia.</span></div>
+          <div class="cifra"><b>2</b><strong>versiones de todo</strong><span>Argentina, y neutra para familias de otros países.</span></div>
+        </div>
+        <div class="g3" style="margin-top: 56px; align-items: stretch">
           <a href="/inicial.html" class="nivel tilt-a" style="background: var(--arena); color: var(--petroleo)">
             <span class="nombre">Inicial</span>
-            <span style="font-weight: 600; color: var(--arena-txt)">Antes de primaria</span>
-            <span class="p">Matemática, Lengua, Ciencias Naturales y Ciencias Sociales en 60 misiones, con clases cortas y actividades con imágenes.</span>
-            <span class="ir">Conocer el nivel</span>
+            <span style="font-weight: 700; color: var(--arena-txt)">Antes de primaria · 60 misiones</span>
+            <span class="p">Matemática, Lengua, Ciencias Naturales y Ciencias Sociales, con clases cortas y actividades con imágenes.</span>
+            <span class="ir">Ver el temario y los planes</span>
           </a>
           <a href="/primaria.html" class="nivel tilt-b" style="background: var(--turquesa); color: #FFFFFF">
             <span class="nombre">Primaria</span>
-            <span style="font-weight: 600; color: #CDEBE5">1.º a 6.º año</span>
-            <span style="font-size: 1.1em; line-height: 1.65; color: var(--menta)">720 misiones en seis años: Matemática, Lengua, Ciencias, Formación Ciudadana, Inglés desde primer año y Tecnología.</span>
-            <span class="ir">Conocer el nivel</span>
+            <span style="font-weight: 700; color: #CDEBE5">1.º a 6.º año · 680 misiones</span>
+            <span style="font-size: 1.05em; line-height: 1.65; color: var(--menta)">Matemática, Lengua, Ciencias, Formación Ciudadana, Inglés desde primer año y Tecnología.</span>
+            <span class="ir">Ver el temario y los planes</span>
           </a>
           <a href="/secundaria.html" class="nivel tilt-c" style="background: var(--petroleo); color: #FFFFFF">
             <span class="nombre">Secundaria</span>
-            <span style="font-weight: 600; color: #9FD3CB">1.º a 6.º año, con diploma de EE. UU.</span>
-            <span style="font-size: 1.1em; line-height: 1.65; color: var(--menta)">834 misiones y 640 de oficios. Programación, inteligencia artificial, arte, economía y bienestar, además de las materias de siempre.</span>
-            <span class="ir">Conocer el nivel</span>
+            <span style="font-weight: 700; color: #9FD3CB">1.º a 6.º año · 800 misiones</span>
+            <span style="font-size: 1.05em; line-height: 1.65; color: var(--menta)">Las materias de siempre, más Tecnología, Arte y Comunicación, Bienestar, Economía y oficios. Diploma de EE. UU.</span>
+            <span class="ir">Ver el temario y los planes</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section id="mision" class="sec" style="background: var(--petroleo); color: #FFFFFF">
+    <section id="plataforma" class="sec plat">
       <div class="wrap">
-        <h2 class="h2" style="color: #FFFFFF; margin-bottom: 16px">Así es una misión.</h2>
-        <p class="p" style="color: var(--menta-2); max-width: 40em; margin-bottom: 48px">Cada materia avanza en misiones de cinco lecciones. Este es el comienzo real de Matemática de 1.º año de secundaria, en las dos versiones que tiene todo el contenido.</p>
-        <div class="g2" style="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center">
-          <figure style="margin: 0">
-            <div class="clase tilt-a">
-              <div class="clase-pantalla">
-                <div style="position: absolute; left: 7%; top: 12%; right: 7%">
-                  <p style="margin: 0; color: #CDEBE5; font-weight: 600">Matemática I, misión 1</p>
-                  <p class="d" style="margin: 8px 0 0; font-weight: 800; font-size: 2.3em; line-height: 1.02; color: #FFFFFF">¿Cómo puede ser que un 2 valga 200?</p>
-                </div>
-                <p class="clase-sub" id="clase-sub">Imaginá una fábrica de alfajores. Cada alfajor suelto es una unidad. Cuando juntás 10 alfajores se arma un paquete: una decena.</p>
-              </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 8px 4px; flex-wrap: wrap">
-                <span style="color: var(--texto); font-weight: 600">Versión</span>
-                <div class="selector" role="group" aria-label="Versión de la clase">
-                  <button type="button" data-voz="ar" aria-pressed="true">Argentina</button>
-                  <button type="button" data-voz="ne" aria-pressed="false">Latinoamérica</button>
-                </div>
-              </div>
-            </div>
-          </figure>
-          <ol style="list-style: none; margin: 0; padding: 0; display: grid; gap: 14px">
-            <li style="border-top: 1px solid #2F5759; padding: 16px 0 4px"><b class="d" style="font-size: 1.2em">1. Clase animada</b><br><span style="color: var(--menta-2); line-height: 1.6">Con voz, ejemplos e imágenes. Se pausa, se repite y se ve en pantalla completa.</span></li>
-            <li style="border-top: 1px solid #2F5759; padding: 16px 0 4px"><b class="d" style="font-size: 1.2em">2. Material en PDF</b><br><span style="color: var(--menta-2); line-height: 1.6">Para leer o imprimir, con resumen, glosario y actividad de carpeta.</span></li>
-            <li style="border-top: 1px solid #2F5759; padding: 16px 0 4px"><b class="d" style="font-size: 1.2em">3. Actividades</b><br><span style="color: var(--menta-2); line-height: 1.6">Se corrigen al instante y explican el procedimiento.</span></li>
-            <li style="border-top: 1px solid #2F5759; padding: 16px 0 4px"><b class="d" style="font-size: 1.2em">4. Examen jefe</b><br><span style="color: var(--menta-2); line-height: 1.6">Preguntas sorteadas con una de repaso. Al aprobarlo, se abre la misión siguiente.</span></li>
-          </ol>
+        <h2 class="h2">Conocé la escuela por dentro.</h2>
+        <p class="bajada">Estas son pantallas reales de la plataforma, con el contenido de Matemática de 1.º año de secundaria.</p>
+        <div id="plat">
+          <div class="plat-tabs" role="tablist" aria-label="Partes de la plataforma"></div>
+          <div class="plat-panel" id="plat-panel" role="tabpanel"></div>
         </div>
+        <p class="plat-nota">Las capturas muestran un alumno de ejemplo.</p>
       </div>
     </section>
 
     <section class="sec">
-      <div class="wrap g2" style="gap: 64px; align-items: center">
-        <div>
-          <h2 class="h2" style="margin-bottom: 18px">Probá una pregunta de esa misión.</h2>
-          <p class="p">Es una actividad real de Matemática I. La plataforma corrige en el momento y muestra cómo se llega al resultado.</p>
+      <div class="wrap g2" style="align-items: stretch">
+        <div class="caja tilt-c" style="background: var(--petroleo); color: #FFFFFF">
+          <h2>Lo que la escuela no suele enseñar.</h2>
+          <p style="margin: 0; line-height: 1.65; color: var(--menta-2)">Cómo armar un presupuesto, para qué sirve ahorrar, qué preguntar antes de firmar un crédito. Cómo convertir una idea en un emprendimiento. Cómo cuidar el cuerpo, las emociones y los vínculos. En Wave eso no es una charla de un día: son materias con el mismo peso que Matemática o Lengua.</p>
+          <div class="chips"><span>Bienestar</span><span>Economía</span><span>Tecnología</span><span>Arte y Comunicación</span><span>Educación Sexual Integral</span><span>Educación Ambiental</span></div>
         </div>
-        <form id="act-form" class="caja tilt-b" style="background: var(--arena)">
-          <p class="d" id="act-consigna" style="margin: 0 0 6px; font-weight: 800; font-size: 2em; line-height: 1.08">Pasá 1010₂ a decimal.</p>
-          <p style="margin: 0 0 22px; color: var(--arena-txt)">El ₂ indica que el número está escrito en sistema binario.</p>
-          <label for="act-resp" style="display: block; font-weight: 700; margin-bottom: 8px">Tu respuesta</label>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap">
-            <input id="act-resp" class="respuesta" type="text" inputmode="numeric" autocomplete="off">
-            <button type="submit" class="btn btn-osc" style="min-height: 54px">Corregir</button>
-          </div>
-          <p id="act-devolucion" class="devolucion" role="status" hidden></p>
-        </form>
+        <div class="caja tilt-d" style="background: var(--ambar); color: var(--petroleo)">
+          <h2>Aprender con las manos.</h2>
+          <p style="margin: 0; line-height: 1.65">La inteligencia también está en las manos. Por eso Wave ofrece oficios, cada uno con su recorrido de niveles: una habilidad concreta, una salida laboral y la experiencia de crear algo que antes no existía.</p>
+          <div class="chips" style="color: var(--petroleo)"><span style="border-color: rgba(22,57,59,.35)">Carpintería</span><span style="border-color: rgba(22,57,59,.35)">Cocina y pastelería</span><span style="border-color: rgba(22,57,59,.35)">Costura</span><span style="border-color: rgba(22,57,59,.35)">Barbería</span><span style="border-color: rgba(22,57,59,.35)">Cerámica y velas</span><span style="border-color: rgba(22,57,59,.35)">Joyería</span><span style="border-color: rgba(22,57,59,.35)">Reparación de celulares y PC</span></div>
+        </div>
       </div>
     </section>
 
     <div class="cinta-bloque" aria-hidden="true">
-      <svg viewBox="0 0 1440 140" preserveAspectRatio="xMidYMid slice">
-        <path id="cinta2" d="M-80 30 C 300 130 560 130 800 70 C 1040 10 1240 20 1520 110" fill="none" stroke="#D99A2B" stroke-width="52"></path>
-        <text font-size="21" fill="#16393B" dominant-baseline="central"><textPath href="#cinta2">nadie estudia solo · tutor con inteligencia artificial · tutorías por videollamada · panel para la familia · turnos con dirección · nadie estudia solo ·</textPath></text>
+      <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
+        <path id="cinta2" d="M-80 30 C 300 140 560 140 800 75 C 1040 10 1240 20 1520 120" fill="none" stroke="#087E83" stroke-width="52"></path>
+        <text font-size="21" fill="#E8F3F0" dominant-baseline="central"><textPath href="#cinta2">tutor con inteligencia artificial · tutorías por videollamada · panel para la familia · turnos con dirección · nadie estudia solo ·</textPath></text>
       </svg>
     </div>
 
-    <section class="sec" style="padding-top: 64px">
+    <section class="sec" style="padding-top: 56px">
       <div class="wrap">
         <h2 class="h2">Estudiar a su ritmo no es estudiar solo.</h2>
+        <p class="bajada">La familia no tiene que ser maestra. Tiene que estar.</p>
         <div class="g2" style="gap: 0 56px">
-          <div class="raya"><h3>Tutor con inteligencia artificial</h3><p class="p">Dentro de cada lección, a cualquier hora. Responde sobre el material y guía con preguntas, sin resolver las actividades.</p></div>
+          <div class="raya"><h3>Tutor con inteligencia artificial</h3><p class="p">Dentro de cada lección, a cualquier hora. Explica de todas las maneras que haga falta, da pistas y busca un ejemplo de la vida diaria. Nunca entrega la respuesta.</p></div>
           <div class="raya"><h3>Tutor personal</h3><p class="p">Tutorías individuales por videollamada, con turno desde la plataforma. En Guiada y Completa, también corrige proyectos y escritura.</p></div>
-          <div class="raya"><h3>Panel de la familia</h3><p class="p">Progreso y promedio por materia, última conexión, programación semanal y facturación.</p></div>
+          <div class="raya"><h3>Panel de la familia</h3><p class="p">Avance y promedio de cada materia, última conexión, programación semanal y facturación.</p></div>
           <div class="raya"><h3>Dirección</h3><p class="p">Cada familia puede reservar una videollamada con dirección desde su panel.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="planes" class="sec" style="background: var(--menta)">
-      <div class="wrap">
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 36px">
-          <h2 class="h2" style="margin: 0">Planes y valores.</h2>
-          <div style="display: flex; flex-wrap: wrap; gap: 10px">
-            <div class="selector blanco" role="group" aria-label="País">
-              <button type="button" data-pais="ar" aria-pressed="true">Argentina</button>
-              <button type="button" data-pais="ext" aria-pressed="false">Otro país</button>
-            </div>
-            <div class="selector blanco" role="group" aria-label="Nivel">
-              <button type="button" data-nivel-btn="inicial" aria-pressed="false">Inicial</button>
-              <button type="button" data-nivel-btn="medio" aria-pressed="false">Primaria</button>
-              <button type="button" data-nivel-btn="avanzado" aria-pressed="true">Secundaria</button>
-            </div>
-          </div>
-        </div>
-        <div class="tabla-caja"><table id="planes-tabla"><tbody><tr><td>Cargando los precios…</td></tr></tbody></table></div>
-        <p id="planes-matricula" style="margin: 20px 0 0; font-weight: 600; color: var(--texto)"></p>
-      </div>
-    </section>
-
-    <section id="titulo" class="sec">
+    <section id="titulo" class="sec" style="background: var(--menta)">
       <div class="wrap g2" style="align-items: stretch">
         <div class="caja tilt-c" style="background: var(--petroleo); color: #FFFFFF">
           <h2>Diploma de high school de los Estados Unidos.</h2>
           <p style="margin: 0 0 12px; line-height: 1.65; color: var(--menta-2)">Wave Academy no está incorporada a la enseñanza oficial argentina. La certificación se realiza a través de Royal Hollow: al completar la secundaria, el estudiante recibe su diploma con certificado analítico.</p>
           <p style="margin: 0; line-height: 1.65; color: var(--menta-2)">El reconocimiento en cada país y para cada carrera tiene sus trámites. Los revisamos con cada familia en la entrevista.</p>
         </div>
-        <div class="caja tilt-d" style="background: #FFFFFF; border: 2px solid var(--petroleo)">
+        <div class="caja tilt-d" style="background: #FFFFFF">
           <h2>Se empieza en cualquier momento del año.</h2>
           <ol style="margin: 0; padding-left: 1.3em; line-height: 1.65; color: var(--texto)">
             <li style="margin-bottom: 10px"><b style="color: var(--petroleo)">Entrevista</b> con dirección, por videollamada.</li>
@@ -202,23 +199,26 @@
 
   <section id="entrevista" class="cierre">
     <div class="wrap g2" style="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: end">
-      <h2 class="d" style="margin: 0; font-weight: 800; font-size: 3.6em; line-height: 0.98; letter-spacing: -0.035em">Conocé la escuela por dentro.</h2>
       <div>
-        <p style="margin: 0 0 24px; font-size: 1.1em; line-height: 1.65; color: #E0F2EE">Escribinos para agendar una videollamada con dirección: te mostramos la plataforma y vemos qué plan le conviene a tu familia.</p>
+        <h2 class="h2" style="color: #FFFFFF; margin-bottom: 18px">Lo que prometemos.</h2>
+        <p style="margin: 0; font-size: 1.2em; line-height: 1.6; color: #E0F2EE; max-width: 30em">Cada decisión, desde una clase de tres minutos hasta un nivel jefe, responde a una sola pregunta: ¿esto ayuda a que este chico aprenda de verdad? Si la respuesta es no, lo cambiamos.</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 24px; font-size: 1.05em; line-height: 1.65; color: #E0F2EE">Escribinos para agendar una videollamada con dirección: te mostramos la plataforma y vemos qué plan le conviene a tu familia.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap">
           <a class="btn btn-bla" href="[enlace de WhatsApp]">Escribir por WhatsApp</a>
           <a class="btn btn-borde" href="mailto:[correo de contacto]" style="color: #FFFFFF">Escribir un correo</a>
         </div>
       </div>
     </div>
-    <p aria-hidden="true" class="cierre-giga">wave</p>
+    <p aria-hidden="true" class="giga-fila">wave</p>
     <footer class="pie">
       <div class="wrap">
         <nav aria-label="Pie">
+          <a href="/">Nosotros</a>
           <a href="/inicial.html">Inicial</a>
           <a href="/primaria.html">Primaria</a>
           <a href="/secundaria.html">Secundaria</a>
-          <a href="#planes">Planes</a>
           <a href="/ingresar.html">Ingresar</a>
         </nav>
         <span>Entre Ríos, Argentina</span>
@@ -227,6 +227,6 @@
   </section>
 
   <script src="/js/config.js?v=11131315"></script>
-  <script src="/js/sitio.js?v=11201945"></script>
+  <script src="/js/sitio.js?v=11202300"></script>
 </body>
 </html>

@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#087E83">
   <title>Wave Academy · Nivel Inicial</title>
-  <meta name="description" content="60 misiones con clases animadas cortas, material para imprimir y actividades con imágenes. Se recomienda que un adulto acompañe.">
+  <meta name="description" content="Clases animadas cortas, material para imprimir y actividades con imágenes. Se recomienda que un adulto acompañe.">
   <link rel="icon" href="/assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/sitio.css?v=11201940">
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/sitio.css?v=11202300">
 </head>
 <body>
 
   <section class="hero" style="background: #EFE7DA; color: #16393B">
     <div class="wrap">
       <header class="cab">
-        <a class="cab-logo fondo" href="/"><img src="/assets/logo.png" alt="Wave Academy's"></a>
+        <a class="cab-logo" href="/"><img src="/assets/logo.png" alt="Wave Academy's"></a>
         <nav aria-label="Secciones">
-          <a href="/">Inicio</a>
+          <a href="/">Nosotros</a>
           <a href="/inicial.html" aria-current="page">Inicial</a><a href="/primaria.html">Primaria</a><a href="/secundaria.html">Secundaria</a>
-          <a href="#planes">Planes</a>
+          <a href="/#plataforma">La plataforma</a>
         </nav>
         <div class="cab-acc">
           <button type="button" class="aa" aria-pressed="false" aria-label="Agrandar el texto">Aa</button>
@@ -29,15 +28,19 @@
         </div>
       </header>
     </div>
-    <div class="wrap hero-cuerpo" style="padding-top: 64px; padding-bottom: 140px">
-      <p aria-hidden="true" class="giga" style="right: 0; top: 0; font-size: 15em; color: #FFFFFF; opacity: .8">inicial</p>
-      <div style="position: relative; z-index: 2; max-width: 780px">
-        <p style="margin: 0 0 14px; font-weight: 700; color: #6B5E4A">Antes de primaria</p>
-        <h1 class="h1" style="font-size: 4em">Los primeros números, las primeras letras y el mundo que los rodea.</h1>
-        <p style="margin: 0 0 32px; font-size: 1.2em; line-height: 1.65; max-width: 34em; color: #6B5E4A">60 misiones con clases animadas cortas, material para imprimir y actividades con imágenes. Se recomienda que un adulto acompañe.</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap">
-          <a class="btn btn-osc" href="#programa">Ver el programa</a>
-          <a class="btn btn-borde" href="#planes" style="color: #16393B">Ver planes</a>
+    <p aria-hidden="true" class="giga-fila" style="color: #087E83; font-size: clamp(5.5rem, 16vw, 15rem); margin-top: 28px; letter-spacing: -0.035em">inicial</p>
+    <div class="wrap" style="padding: 40px 32px 150px">
+      <div class="g2" style="gap: 56px; align-items: end">
+        <div>
+          <p style="margin: 0 0 14px; font-weight: 700; color: #6B5E4A">Antes de primaria</p>
+          <h1 class="h1" style="margin: 0">Los primeros números, las primeras letras y el mundo que los rodea.</h1>
+        </div>
+        <div>
+          <p class="lead" style="color: #6B5E4A">Clases animadas cortas, material para imprimir y actividades con imágenes. Se recomienda que un adulto acompañe.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn btn-osc" href="#programa">Ver el temario</a>
+            <a class="btn btn-borde" href="#planes" style="color: #16393B">Ver los planes</a>
+          </div>
         </div>
       </div>
     </div>
@@ -46,29 +49,34 @@
   <div class="cinta" aria-hidden="true">
     <svg viewBox="0 0 1440 200" preserveAspectRatio="xMidYMid slice">
       <path id="cinta-n" d="M-80 60 C 260 170 520 170 780 100 C 1040 30 1240 40 1520 140" fill="none" stroke="#087E83" stroke-width="56"></path>
-      <text font-size="22" fill="#E8F3F0" dominant-baseline="central"><textPath href="#cinta-n">matemática · lengua · ciencias naturales · ciencias sociales · clases cortas · actividades con imágenes · matemática · lengua · ciencias naturales ·</textPath></text>
+      <text font-size="22" fill="#E8F3F0" dominant-baseline="central"><textPath href="#cinta-n">contar · las letras de su nombre · rimas y cuentos · el cuerpo y los sentidos · animales y plantas · la familia y el barrio · contar ·</textPath></text>
     </svg>
   </div>
 
   <main>
-    <section class="sec" style="padding-top: 140px; padding-bottom: 48px">
-      <div class="wrap g3" style="gap: 32px"><div style="border-top: 2px solid var(--petroleo); padding-top: 16px"><p class="d" style="margin: 0; font-weight: 800; font-size: 2.6em; letter-spacing: -0.03em">4</p><p style="margin: 4px 0 0; color: var(--texto); font-weight: 600">áreas</p></div><div style="border-top: 2px solid var(--petroleo); padding-top: 16px"><p class="d" style="margin: 0; font-weight: 800; font-size: 2.6em; letter-spacing: -0.03em">60</p><p style="margin: 4px 0 0; color: var(--texto); font-weight: 600">misiones</p></div><div style="border-top: 2px solid var(--petroleo); padding-top: 16px"><p class="d" style="margin: 0; font-weight: 800; font-size: 2.6em; letter-spacing: -0.03em">2</p><p style="margin: 4px 0 0; color: var(--texto); font-weight: 600">versiones: argentina y neutra</p></div></div>
-    </section>
-
-    <section id="programa" class="sec" style="padding-top: 48px">
+    <section class="sec cifras" style="padding-top: 150px">
       <div class="wrap">
-        <h2 class="h2" style="margin-bottom: 16px">Lo que aprende en el Nivel Inicial.</h2>
-        <p class="p" style="max-width: 42em; margin-bottom: 40px">Matemática y Lengua con 20 misiones cada una; Ciencias Naturales y Ciencias Sociales con 10.</p>
-        <div class="gauto"><div class="tarjeta tilt-a"><h3>Matemática</h3><p class="p" style="font-size: 1em">Contar, los números del 1 al 10, agregar y quitar, patrones, formas, medidas y el tiempo.</p></div><div class="tarjeta tilt-b"><h3>Lengua</h3><p class="p" style="font-size: 1em">Escuchar y conversar, las letras de su nombre, rimas y canciones, cuentos clásicos y primeras escrituras.</p></div><div class="tarjeta tilt-c"><h3>Ciencias Naturales</h3><p class="p" style="font-size: 1em">El cuerpo y los sentidos, animales, plantas, el agua, el aire, los materiales, la luz y el cielo.</p></div><div class="tarjeta tilt-d"><h3>Ciencias Sociales</h3><p class="p" style="font-size: 1em">La familia, la casa y el barrio, los trabajos, el transporte, antes y ahora, pueblos originarios y fiestas.</p></div></div>
+        <div class="cifras-fila"><div class="cifra"><b>4</b><strong>áreas</strong><span>Matemática, Lengua, Ciencias Naturales y Ciencias Sociales.</span></div><div class="cifra"><b>60</b><strong>misiones</strong><span>Cada una con su clase animada, su material y sus actividades.</span></div><div class="cifra"><b>20</b><strong>misiones de Matemática</strong><span>Y 20 de Lengua, 10 de Ciencias Naturales y 10 de Ciencias Sociales.</span></div><div class="cifra"><b>2</b><strong>versiones</strong><span>Argentina, y neutra para familias de otros países.</span></div></div>
+        <div class="reparto" id="reparto" data-nivel="inicial"></div>
       </div>
     </section>
 
-    <section class="sec" style="padding-top: 0"><div class="wrap g2" style="gap: 0 56px"><div class="raya"><h3>La familia ve cómo va</h3><p class="p">Desde su panel: progreso de cada área, programación de la semana y última conexión.</p></div><div class="raya"><h3>Pantalla justa</h3><p class="p">Clases animadas cortas, actividades para tocar y arrastrar, y material para imprimir con propuestas en papel.</p></div></div></section>
-    <section id="planes" class="sec" style="background: var(--menta)">
+    <section id="programa" class="sec">
+      <div class="wrap">
+        <h2 class="h2">El temario completo.</h2>
+        <p class="bajada">Estas son las misiones de cada materia, tal como están en la plataforma. Cada misión tiene su clase animada, su material, su carpeta, sus actividades y un nivel jefe al final.</p>
+        <div id="temario" data-nivel="inicial"><div class="anios" role="group" aria-label="Año"></div><div class="tem-cuerpo"><p class="tem-resumen">Cargando el temario…</p></div></div>
+      </div>
+    </section>
+<section class="sec" style="padding-top: 0"><div class="wrap g2" style="gap: 0 56px">
+<div class="raya"><h3>La familia ve cómo va</h3><p class="p">Desde su panel: avance de cada área, programación de la semana y última conexión.</p></div>
+<div class="raya"><h3>Pantalla justa</h3><p class="p">Clases animadas cortas, actividades para tocar y arrastrar, y material para imprimir con propuestas en papel.</p></div>
+</div></section>
+    <section id="planes" class="sec" style="background: var(--arena)">
       <div class="wrap">
         <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 36px">
           <h2 class="h2" style="margin: 0">Planes de Nivel Inicial.</h2>
-          <div class="selector blanco" role="group" aria-label="País">
+          <div class="selector" role="group" aria-label="País">
             <button type="button" data-pais="ar" aria-pressed="true">Argentina</button>
             <button type="button" data-pais="ext" aria-pressed="false">Otro país</button>
           </div>
@@ -81,17 +89,20 @@
 
   <section class="cierre">
     <div class="wrap g2" style="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: end">
-      <h2 class="d" style="margin: 0; font-weight: 800; font-size: 3.4em; line-height: 0.98; letter-spacing: -0.035em">Conocé la escuela por dentro.</h2>
+      <h2 class="h2" style="color: #FFFFFF; margin: 0">Conocé la escuela por dentro.</h2>
       <div>
-        <p style="margin: 0 0 24px; font-size: 1.1em; line-height: 1.65; color: #E0F2EE">Escribinos para agendar una videollamada con dirección: te mostramos la plataforma y vemos qué plan le conviene.</p>
-        <a class="btn btn-bla" href="/#entrevista">Agendar una entrevista</a>
+        <p style="margin: 0 0 24px; font-size: 1.05em; line-height: 1.65; color: #E0F2EE">Mirá pantallas reales de la plataforma o escribinos para agendar una videollamada con dirección.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a class="btn btn-bla" href="/#plataforma">Ver la plataforma</a>
+          <a class="btn btn-borde" href="/#entrevista" style="color: #FFFFFF">Agendar una entrevista</a>
+        </div>
       </div>
     </div>
-    <p aria-hidden="true" class="cierre-giga">wave</p>
+    <p aria-hidden="true" class="giga-fila">wave</p>
     <footer class="pie">
       <div class="wrap">
         <nav aria-label="Pie">
-          <a href="/">Inicio</a>
+          <a href="/">Nosotros</a>
           <a href="/inicial.html">Inicial</a>
           <a href="/primaria.html">Primaria</a>
           <a href="/secundaria.html">Secundaria</a>
@@ -103,6 +114,6 @@
   </section>
 
   <script src="/js/config.js?v=11131315"></script>
-  <script src="/js/sitio.js?v=11201945"></script>
+  <script src="/js/sitio.js?v=11202300"></script>
 </body>
 </html>
