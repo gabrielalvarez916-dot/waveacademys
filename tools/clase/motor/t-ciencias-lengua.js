@@ -32,10 +32,35 @@
     var P = d.partes.map(function (pt, k) { var z = Z[pt.parte] || Z.tapa, col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), cx = z[0] + z[1] / 2;
       w.el('rect', { x: z[0] - 8, y: y0 - 8, width: z[1] + 16, height: h + 16, rx: 18, fill: 'none', stroke: col, 'stroke-width': 8 }, gr);
       var tw = Math.max(220, pt.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, cx));
-      w.el('line', { x1: cx, y1: y0 + h + 8, x2: lx, y2: y0 + h + 52, stroke: col, 'stroke-width': 4 }, gr);
-      w.caja(gr, lx, y0 + h + 90, tw, 72, 'rgba(14,10,26,.92)', col, 30, 4); w.txt(gr, lx, y0 + h + 90, pt.txt, 30, '#fff'); return gr; });
+      var ly = y0 + h + 70 + (k % 2) * 88; w.el('line', { x1: cx, y1: y0 + h + 8, x2: lx, y2: ly - 36, stroke: col, 'stroke-width': 4 }, gr);
+      w.caja(gr, lx, ly, tw, 72, 'rgba(14,10,26,.92)', col, 30, 4); w.txt(gr, lx, ly, pt.txt, 30, '#fff'); return gr; });
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .9, y: 0 });
-    P.forEach(function (p, k) { B(k + 1); if (k) tl.to(P[k - 1], { opacity: 0, duration: .3 }, 0); w.IN(tl, p, k ? '<' : 0, { scale: .95, y: 0, d: .4 }); });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { scale: .95, y: 0, d: .4 }); });
+  } };
+
+  // parrafo: {titulo, lineas:[...], marcas:[{linea, pos:'inicio'|'fin', txt}]} — un párrafo real con sus marcas (1 + marcas pasos)
+  T.parrafo = { n: function (d) { return 1 + d.marcas.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), x0 = 380, y0 = 360;
+    w.el('rect', { x: 340, y: 320, width: 1240, height: 90 + d.lineas.length * 72, rx: 16, fill: '#fbf8ff', stroke: '#bdb2d6', 'stroke-width': 3 }, o);
+    var X = d.lineas.map(function (t, i) { var x = x0 + (d.sangria !== false && i === 0 ? 70 : 0), tx = w.txt(o, x, y0 + 40 + i * 72, t, 38, '#241a40'); tx.setAttribute('text-anchor', 'start'); return [x, x + t.length * 17.5]; });
+    var P = d.marcas.map(function (m, k) { var col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), i = m.linea, mx = m.pos === 'fin' ? X[i][1] : X[i][0] + 10, my = y0 + 30 + i * 72;
+      if (m.pos === 'sangria') { mx = x0 + 35; w.el('line', { x1: x0, y1: my, x2: x0 + 60, y2: my, stroke: col, 'stroke-width': 6, 'marker-end': '' }, gr); }
+      else w.el('circle', { cx: mx, cy: my, r: 30, fill: 'none', stroke: col, 'stroke-width': 6 }, gr);
+      var ly = 320 + 90 + d.lineas.length * 72 + 60 + k * 86, tw = Math.max(220, m.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, mx));
+      w.el('line', { x1: mx, y1: my + 32, x2: lx, y2: ly - 36, stroke: col, 'stroke-width': 4 }, gr); w.caja(gr, lx, ly, tw, 72, 'rgba(14,10,26,.92)', col, 30, 4); w.txt(gr, lx, ly, m.txt, 30, '#fff'); return gr; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .95, y: 0 });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { scale: .95, y: 0, d: .4 }); });
+  } };
+
+  // ficha: {titulo, campos:[[cab, valor]]} — una ficha de cartulina que se completa de a un dato (1 + campos pasos)
+  T.ficha = { n: function (d) { return 1 + d.campos.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), y0 = 340, hh = 110 + d.campos.length * 100;
+    w.el('rect', { x: 520, y: y0, width: 880, height: hh, rx: 18, fill: '#fffbea', stroke: '#e6d38a', 'stroke-width': 4, filter: 'url(#sombra)' }, o);
+    w.el('rect', { x: 520, y: y0, width: 880, height: 70, rx: 18, fill: '#f4b63f' }, o); w.txt(o, 960, y0 + 36, 'FICHA BIBLIOGRÁFICA', 32, '#3a2a10');
+    var P = d.campos.map(function (c, k) { var y = y0 + 130 + k * 100, gr = w.pieza(g, 0, 0); w.el('line', { x1: 570, y1: y + 30, x2: 1350, y2: y + 30, stroke: '#e6d38a', 'stroke-width': 3 }, o);
+      var a = w.txt(gr, 580, y, c[0] + ':', 34, '#7458c4'); a.setAttribute('text-anchor', 'start'); var b = w.txt(gr, 820, y, c[1], 38, '#241a40'); b.setAttribute('text-anchor', 'start'); return gr; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .95, y: 0 });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { x: -20, y: 0, d: .4 }); });
   } };
 
   // molecula: {titulo, atomos:[{el:'C', x, y}] (x, y en px desde el centro), enlaces:[[i, j, orden]], nombre} — 3 pasos

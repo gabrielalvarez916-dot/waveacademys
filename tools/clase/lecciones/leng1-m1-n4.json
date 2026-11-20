@@ -31,7 +31,7 @@
    "partes": [
     {
      "parte": "tapa",
-     "txt": "Tapa: título, autor, editorial"
+     "txt": "Tapa: título y autor"
     },
     {
      "parte": "contratapa",
@@ -89,13 +89,9 @@
    "emoji": "🗃️"
   },
   {
-   "t": "tabla",
+   "t": "ficha",
    "titulo": "UNA FICHA DE EJEMPLO",
-   "columnas": [
-    "Dato",
-    "Ejemplo"
-   ],
-   "filas": [
+   "campos": [
     [
      "Autor",
      "Ríos, Ana"

@@ -76,6 +76,44 @@
    "emoji": "📑"
   },
   {
+   "t": "parrafo",
+   "titulo": "UN PÁRRAFO, MARCADO",
+   "lineas": [
+    "Leo poco. Me cuesta concentrarme.",
+    "Pero este año quiero leer más novelas,",
+    "sobre todo de misterio."
+   ],
+   "marcas": [
+    {
+     "linea": 0,
+     "pos": "sangria",
+     "txt": "sangría al empezar"
+    },
+    {
+     "linea": 0,
+     "pos": "inicio",
+     "txt": "mayúscula inicial"
+    },
+    {
+     "linea": 0,
+     "pos": "fin",
+     "txt": "punto seguido: otra oración"
+    },
+    {
+     "linea": 2,
+     "pos": "fin",
+     "txt": "punto y aparte: fin del párrafo"
+    }
+   ],
+   "voz": [
+    "Mirá un párrafo de verdad.",
+    "Empieza con una *sangría*: un pequeño espacio al principio.",
+    "La primera palabra va con *mayúscula*.",
+    "El *punto seguido* separa oraciones dentro del mismo párrafo.",
+    "Y el *punto y aparte* cierra el párrafo: la idea siguiente va en otro renglón."
+   ]
+  },
+  {
    "t": "bloques",
    "titulo": "CONECTORES QUE UNEN IDEAS",
    "items": [

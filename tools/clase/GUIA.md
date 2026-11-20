@@ -78,6 +78,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | criba | 2 + tachar | hasta, cols, tachar:[2,3,5,7], txt (criba de Eratóstenes: tacha múltiplos, brillan los primos) |
 | arbol | 2 + ramas | numero, ramas:[[primo, cociente]...], resultado (árbol de factores primos) |
 | libro | 1 + partes | titulo, libro:{titulo, autor, editorial, emoji}, partes:[{parte:'contratapa'\|'lomo'\|'tapa'\|'indice', txt}] — dibuja un libro y marca sus partes (paratexto) |
+| parrafo | 1 + marcas | titulo, lineas:[...], marcas:[{linea, pos:'inicio'\|'fin'\|'sangria', txt}] — párrafo real con marcas (sangría, mayúscula, punto) |
+| ficha | 1 + campos | titulo, campos:[[cab, valor]] — ficha bibliográfica que se completa |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |
