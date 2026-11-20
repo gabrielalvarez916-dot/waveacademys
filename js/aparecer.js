@@ -2,6 +2,25 @@
 (function () {
   var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // ---------- Menú desplegable en celular ----------
+  var cab = document.querySelector('.cab');
+  if (cab && cab.querySelector('nav')) {
+    document.documentElement.classList.add('js-menu');
+    var mb = document.createElement('button');
+    mb.type = 'button'; mb.className = 'cab-menu-btn';
+    mb.setAttribute('aria-label', 'Abrir el menú'); mb.setAttribute('aria-expanded', 'false');
+    mb.innerHTML = '<span></span><span></span><span></span>';
+    cab.appendChild(mb);
+    mb.addEventListener('click', function () {
+      var ab = cab.classList.toggle('abierto');
+      mb.setAttribute('aria-expanded', ab ? 'true' : 'false');
+      mb.setAttribute('aria-label', ab ? 'Cerrar el menú' : 'Abrir el menú');
+    });
+    cab.querySelectorAll('nav a').forEach(function (l) {
+      l.addEventListener('click', function () { cab.classList.remove('abierto'); mb.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
   // ---------- Menú fijo que aparece al bajar ----------
   var nav = document.querySelector('.cab nav');
   if (nav) {
