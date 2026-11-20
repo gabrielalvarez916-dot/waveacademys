@@ -393,13 +393,13 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
       if (s.ruta) { var a = pro(s.ruta[0][0], s.ruta[0][1]), b = pro(s.ruta[1][0], s.ruta[1][1]), f = w.flecha(g, a[0], a[1], b[0], b[1], col, 8); w.dibujarFlecha(tl, f, first ? 0 : '<'); first = false; }
       (s.marcas || []).forEach(function (m) { var q = pro(m.lon, m.lat), p = w.pieza(g, q[0], q[1]); w.el('circle', { r: 14, fill: col, stroke: '#fff', 'stroke-width': 4 }, p);
         var tw = m.txt.length * 17 + 40; w.caja(p, 0, -50, tw, 56, 'rgba(6,20,22,.85)', col, 28, 3); w.txt(p, 0, -50, m.txt, 28, '#fff'); w.IN(tl, p, first ? 0 : '<.1', { scale: 0, y: 0, ease: 'back.out(3)' }); first = false; });
-      if (s.texto) { var t = w.chip(g, 960, 930, Math.min(1500, s.texto.length * 22 + 100), 80, s.texto, { size: 36, fill: 'rgba(6,20,22,.9)', stroke: col }); w.IN(tl, t, first ? 0 : '<.1'); }
+      if (s.texto) { if (k && tl._mapaTxt) w.OUT(tl, tl._mapaTxt, 0); var t = w.chip(g, 960, 900, Math.min(1500, s.texto.length * 22 + 100), 80, s.texto, { size: 36, fill: 'rgba(6,20,22,.9)', stroke: col }); w.IN(tl, t, first ? 0 : '<.1'); tl._mapaTxt = t; }
     });
   } };
 
   // barras: {titulo, unidad, items:[{txt, valor}] (2-7)} — 1 + n pasos (cada paso crece una barra)
   T.barras = { n: function (d) { return 1 + d.items.length; }, armar: function (g, tl, B, d) {
-    var ti = w.titulo(g, d.titulo), n = d.items.length, max = Math.max.apply(null, d.items.map(function (i) { return i.valor; })), gap = 1400 / n, x0 = 960 - (n - 1) * gap / 2, bw = Math.min(170, gap - 40), y0 = 900, H = 470;
+    var ti = w.titulo(g, d.titulo), n = d.items.length, max = Math.max.apply(null, d.items.map(function (i) { return i.valor; })), gap = 1400 / n, x0 = 960 - (n - 1) * gap / 2, bw = Math.min(170, gap - 40), y0 = 830, H = 420;
     var eje = w.pieza(g, 0, 0); w.el('line', { x1: 220, y1: y0, x2: 1700, y2: y0, stroke: C.suave, 'stroke-width': 4 }, eje);
     var I = d.items.map(function (it, k) { var x = x0 + k * gap, h = Math.max(6, it.valor / max * H), p = w.el('g', {}, g);
       var r = w.el('rect', { x: x - bw / 2, y: y0 - h, width: bw, height: h, rx: 14, fill: W.PAL[k % W.PAL.length], transform: 'translate(0 0)' }, p);
@@ -1096,6 +1096,7 @@ var MUSICA = (function () {
   };
   if (/natural|biolog/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 62 + Math.floor(rnd() * 14); est.pad = 'sine'; est.arpa = elegir(['sine', 'triangle']); est.bateria = false; est.hats = false; est.raiz += 5; } // Naturales: más calma, sin batería
   else if (/lengua|literatura/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 68 + Math.floor(rnd() * 14); est.pad = 'triangle'; est.arpa = 'sine'; est.bateria = false; est.hats = rnd() < .4; est.prog = elegir([PROG[1], PROG[3], PROG[5]]); } // Lengua: tipo piano, íntima
+  else if (/social|historia|geograf/i.test((window.CLASE && CLASE.materia) || '')) { est.bpm = 80 + Math.floor(rnd() * 14); est.pad = 'triangle'; est.arpa = elegir(['triangle', 'sine']); est.bateria = true; est.hats = false; est.raiz -= 3; } // Sociales: marcha suave, épica liviana
 
   var ctx = null, maestro = null, sonando = false, silencio = false, prox = 0, paso = 0, timer = null, VOL = .12, VOL_VOZ = .045;
   function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
