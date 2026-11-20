@@ -166,17 +166,18 @@
   },
   {
    "t": "pregunta",
-   "voz": [
-    "Te toca: ¿qué dato *no* va en una ficha bibliográfica?",
-    "¿La editorial o el color de la tapa?",
-    "¡El *color de la tapa*! Autor, título, editorial y año."
-   ],
-   "pregunta": "¿Qué NO va en la ficha?",
+   "pregunta": "¿Cuál ficha está bien escrita?",
    "opciones": [
-    "La editorial",
-    "El color de la tapa"
+    "Ríos, Ana. El faro de los gatos. Brújula, 2021.",
+    "Ana Ríos. El faro de los gatos. 2021.",
+    "El faro de los gatos. Ríos. Brújula."
    ],
-   "correcta": 1
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál de estas fichas está bien escrita?",
+    "Fijate en el orden y en que estén los cuatro datos.",
+    "La primera: *apellido, nombre*, título, editorial y año. A las otras les falta un dato o tienen el orden cambiado."
+   ]
   },
   {
    "t": "errores",

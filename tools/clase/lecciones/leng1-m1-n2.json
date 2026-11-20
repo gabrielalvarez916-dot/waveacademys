@@ -197,17 +197,18 @@
   },
   {
    "t": "pregunta",
-   "voz": [
-    "Te toca: animales que hablan y, al final, *una enseñanza*. ¿Qué es?",
-    "¿Una fábula o una leyenda?",
-    "¡Una *fábula*! La enseñanza se llama moraleja."
-   ],
-   "pregunta": "Animales que hablan y una moraleja:",
+   "pregunta": "Un relato del litoral explica por qué el hornero hace su nido de barro. ¿Qué es?",
    "opciones": [
-    "Fábula",
-    "Leyenda"
+    "Leyenda",
+    "Mito",
+    "Fábula"
    ],
-   "correcta": 0
+   "correcta": 0,
+   "voz": [
+    "Te toca: un relato del litoral cuenta *por qué el hornero* construye su nido de barro. ¿Qué es?",
+    "¿Leyenda, mito o fábula?",
+    "¡*Leyenda*! Explica el origen de algo de la naturaleza en un lugar real. No hay dioses creando el mundo ni una moraleja."
+   ]
   },
   {
    "t": "consejo",

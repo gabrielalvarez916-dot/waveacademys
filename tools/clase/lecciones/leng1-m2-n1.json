@@ -1,1 +1,262 @@
-{"slug": "leng1-m2-n1", "step_id": "a43342fa-65b1-47f7-b044-597883c9a1a2", "materia": "Lengua y Literatura I", "titulo": "El detective y su método", "sub": "Lengua y Literatura I · Misión 2 · Nivel 1", "escenas": [{"t": "historia", "personaje": {"nombre": "Sherlock Holmes", "emoji": "🕵️"}, "lugar": "🏙️", "lineas": ["Un hombre entra a Baker Street.", "Holmes lo mira dos segundos…", "…y ya sabe a qué se dedica."], "titulo": "EL DETECTIVE", "sub": "y su método", "voz": ["Londres. Un hombre entra al departamento de *Baker Street*.", "Sherlock Holmes lo mira apenas dos segundos…", "… y ya sabe a qué se dedica, sin preguntarle nada.", "Hoy: *el detective y su método*."]}, {"t": "definicion", "voz": ["El *cuento policial* gira alrededor de un *enigma*: un misterio que alguien tiene que resolver.", "Y ese alguien es el *detective*."], "palabra": "Cuento policial", "texto": "Relato con un enigma que un detective resuelve", "emoji": "🔍"}, {"t": "matriz", "titulo": "LOS PERSONAJES", "celdas": [{"cab": "DETECTIVE", "txt": "Holmes: resuelve"}, {"cab": "AYUDANTE", "txt": "Watson: cuenta y pregunta"}, {"cab": "CULPABLE", "txt": "esconde la verdad"}, {"cab": "VÍCTIMA / CLIENTE", "txt": "trae el caso"}], "voz": ["Los personajes de siempre.", "El *detective*: Sherlock Holmes.", "Su *ayudante*: el doctor Watson, que narra las historias.", "El *culpable*, que esconde la verdad.", "Y el *cliente*, que trae el caso."]}, {"t": "pasos", "titulo": "EL MÉTODO DE HOLMES", "items": [{"txt": "Observar cada detalle", "emoji": "👀"}, {"txt": "Juntar pistas", "emoji": "🧩"}, {"txt": "Deducir", "emoji": "🧠"}, {"txt": "Comprobar", "emoji": "✅"}], "voz": ["El método de Holmes.", "*Observar* cada detalle: la ropa, las manos, los zapatos.", "*Juntar pistas*.", "*Deducir*: sacar conclusiones lógicas.", "Y *comprobar* antes de acusar."]}, {"t": "dato", "numero": "1891", "antes": "", "despues": "", "texto": "Se publica «La liga de los pelirrojos», de Arthur Conan Doyle", "emoji": "📖", "voz": ["En 1891 Arthur Conan Doyle publicó *La liga de los pelirrojos*, uno de los casos más famosos de Holmes.", "Es el cuento que vamos a leer en esta misión."]}, {"t": "pregunta", "voz": ["Te toca: un hombre tiene la manga derecha gastada y brillante. ¿Qué deduce Holmes?", "¿Que escribe mucho apoyando el brazo, o que juega al fútbol?", "¡Que *escribe mucho*! Esa manga se gasta contra el escritorio."], "pregunta": "Manga derecha gastada y brillante:", "opciones": ["Escribe mucho", "Juega al fútbol"], "correcta": 0}, {"t": "errores", "voz": ["Errores típicos.", "Confundir *adivinar* con *deducir*: Holmes nunca adivina.", "Y creer que Holmes narra: el narrador es *Watson*."], "items": [{"mal": "Adivinar", "bien": "Deducir con pistas"}, {"mal": "Narra Holmes", "bien": "Narra Watson"}]}, {"t": "resumen", "voz": ["Repasemos.", "*Policial*: un enigma a resolver.", "*Detective*: Sherlock Holmes.", "*Narrador*: el doctor Watson.", "*Método*: observar, juntar pistas y deducir.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["POLICIAL", "un enigma a resolver"], ["DETECTIVE", "Sherlock Holmes"], ["NARRADOR", "Watson"], ["MÉTODO", "observar y deducir"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "leng1-m2-n1",
+ "step_id": "a43342fa-65b1-47f7-b044-597883c9a1a2",
+ "materia": "Lengua y Literatura I",
+ "titulo": "El detective y su método",
+ "sub": "Lengua y Literatura I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sherlock Holmes",
+    "emoji": "🕵️"
+   },
+   "lugar": "🏙️",
+   "lineas": [
+    "Un hombre entra a Baker Street.",
+    "Holmes lo mira dos segundos…",
+    "…y ya sabe a qué se dedica."
+   ],
+   "titulo": "EL DETECTIVE",
+   "sub": "y su método",
+   "voz": [
+    "Londres. Un hombre entra al departamento de *Baker Street*.",
+    "Sherlock Holmes lo mira apenas dos segundos…",
+    "… y ya sabe a qué se dedica, sin preguntarle nada.",
+    "Hoy: *el detective y su método*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "voz": [
+    "El *cuento policial* gira alrededor de un *enigma*: un misterio que alguien tiene que resolver.",
+    "Y ese alguien es el *detective*."
+   ],
+   "palabra": "Cuento policial",
+   "texto": "Relato con un enigma que un detective resuelve",
+   "emoji": "🔍"
+  },
+  {
+   "t": "linea",
+   "titulo": "HISTORIA DEL POLICIAL",
+   "eventos": [
+    {
+     "fecha": "1841",
+     "txt": "Poe: el detective Dupin",
+     "emoji": "🐒"
+    },
+    {
+     "fecha": "1887",
+     "txt": "Conan Doyle: Holmes",
+     "emoji": "🕵️"
+    },
+    {
+     "fecha": "1920",
+     "txt": "Christie: Poirot",
+     "emoji": "🥚"
+    },
+    {
+     "fecha": "1942",
+     "txt": "Borges y Bioy: Isidro Parodi",
+     "emoji": "🇦🇷"
+    },
+    {
+     "fecha": "1953",
+     "txt": "Walsh: Variaciones en rojo",
+     "emoji": "🎨"
+    }
+   ],
+   "voz": [
+    "El género nace en 1841, con *Los crímenes de la calle Morgue*, de Edgar Allan Poe, y su detective, *Dupin*.",
+    "En 1887, Arthur Conan Doyle crea a *Sherlock Holmes*, el detective más famoso de la historia.",
+    "Desde 1920, Agatha Christie suma a *Hércules Poirot* y sus misterios imposibles.",
+    "En la Argentina, *Borges y Bioy Casares* inventan a Isidro Parodi, que resuelve crímenes desde una celda.",
+    "Y *Rodolfo Walsh* escribe *Variaciones en rojo*, con un detective que es corrector de pruebas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "POLICIAL DE ENIGMA",
+    "texto": "razonar, como un rompecabezas",
+    "emoji": "🧩"
+   },
+   "b": {
+    "cab": "POLICIAL NEGRO",
+    "texto": "violencia, ciudad y peligro",
+    "emoji": "🌃"
+   },
+   "signo": "vs",
+   "voz": [
+    "Hay dos grandes tipos de policial.",
+    "El *de enigma*: el crimen es un rompecabezas y el detective lo resuelve *razonando*, casi sin moverse. Holmes es de este tipo.",
+    "El *negro*: el detective se mete en la ciudad, corre peligro, y el crimen muestra una sociedad corrupta."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LOS ELEMENTOS",
+   "celdas": [
+    {
+     "cab": "CRIMEN",
+     "txt": "el hecho que rompe el orden"
+    },
+    {
+     "cab": "ENIGMA",
+     "txt": "quién, cómo y por qué"
+    },
+    {
+     "cab": "SOSPECHOSOS",
+     "txt": "con motivo y oportunidad"
+    },
+    {
+     "cab": "RESOLUCIÓN",
+     "txt": "la verdad y el orden vuelven"
+    }
+   ],
+   "voz": [
+    "Los elementos del policial de enigma.",
+    "Un *crimen*: el hecho que rompe el orden.",
+    "Un *enigma*: quién lo hizo, cómo y por qué.",
+    "*Sospechosos*: cada uno con un motivo y una oportunidad.",
+    "Y la *resolución*: la verdad sale a la luz y el orden se recupera."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LOS PERSONAJES",
+   "celdas": [
+    {
+     "cab": "DETECTIVE",
+     "txt": "Holmes: resuelve"
+    },
+    {
+     "cab": "AYUDANTE",
+     "txt": "Watson: cuenta y pregunta"
+    },
+    {
+     "cab": "CULPABLE",
+     "txt": "esconde la verdad"
+    },
+    {
+     "cab": "VÍCTIMA / CLIENTE",
+     "txt": "trae el caso"
+    }
+   ],
+   "voz": [
+    "Los personajes de siempre.",
+    "El *detective*: Sherlock Holmes.",
+    "Su *ayudante*: el doctor Watson, que narra las historias.",
+    "El *culpable*, que esconde la verdad.",
+    "Y el *cliente*, que trae el caso."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL MÉTODO DE HOLMES",
+   "items": [
+    {
+     "txt": "Observar cada detalle",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Juntar pistas",
+     "emoji": "🧩"
+    },
+    {
+     "txt": "Deducir",
+     "emoji": "🧠"
+    },
+    {
+     "txt": "Comprobar",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "El método de Holmes.",
+    "*Observar* cada detalle: la ropa, las manos, los zapatos.",
+    "*Juntar pistas*.",
+    "*Deducir*: sacar conclusiones lógicas.",
+    "Y *comprobar* antes de acusar."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "1891",
+   "antes": "",
+   "despues": "",
+   "texto": "Se publica «La liga de los pelirrojos», de Arthur Conan Doyle",
+   "emoji": "📖",
+   "voz": [
+    "En 1891 Arthur Conan Doyle publicó *La liga de los pelirrojos*, uno de los casos más famosos de Holmes.",
+    "Es el cuento que vamos a leer en esta misión."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Manga derecha gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
+   "opciones": [
+    "Escribe mucho apoyando el brazo",
+    "Trabaja cargando bolsas",
+    "Es zurdo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la manga derecha está gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
+    "¿Que escribe mucho apoyando el brazo, que carga bolsas, o que es zurdo?",
+    "¡Que *escribe mucho*! Solo se gasta la manga que se apoya en el escritorio. Si fuera zurdo, sería la otra."
+   ]
+  },
+  {
+   "t": "errores",
+   "voz": [
+    "Errores típicos.",
+    "Confundir *adivinar* con *deducir*: Holmes nunca adivina.",
+    "Y creer que Holmes narra: el narrador es *Watson*."
+   ],
+   "items": [
+    {
+     "mal": "Adivinar",
+     "bien": "Deducir con pistas"
+    },
+    {
+     "mal": "Narra Holmes",
+     "bien": "Narra Watson"
+    }
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Policial*: un enigma a resolver.",
+    "*Detective*: Sherlock Holmes.",
+    "*Narrador*: el doctor Watson.",
+    "*Método*: observar, juntar pistas y deducir.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POLICIAL",
+     "un enigma a resolver"
+    ],
+    [
+     "DETECTIVE",
+     "Sherlock Holmes"
+    ],
+    [
+     "NARRADOR",
+     "Watson"
+    ],
+    [
+     "MÉTODO",
+     "observar y deducir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

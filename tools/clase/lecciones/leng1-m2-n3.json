@@ -174,6 +174,16 @@
   },
   {
    "t": "definicion",
+   "palabra": "Narrador testigo",
+   "texto": "Watson cuenta lo que ve, pero sabe menos que Holmes: eso crea el suspenso",
+   "emoji": "📓",
+   "voz": [
+    "¿Por qué narra Watson y no Holmes? Porque es un *narrador testigo*: cuenta lo que ve, pero *sabe menos* que el detective.",
+    "Así el lector descubre la verdad *al mismo tiempo* que él. Si narrara Holmes, el misterio se arruinaría."
+   ]
+  },
+  {
+   "t": "definicion",
    "voz": [
     "El momento en que el detective explica todo se llama *desenlace* o *revelación*.",
     "Holmes y la policía esperan en la bóveda y atrapan a *John Clay*, el falso ayudante."
@@ -184,17 +194,18 @@
   },
   {
    "t": "pregunta",
-   "voz": [
-    "Te toca: ¿quién era en realidad el ayudante de Wilson?",
-    "¿John Clay, un ladrón, o un empleado del banco?",
-    "¡*John Clay*, un ladrón buscado por la policía!"
-   ],
-   "pregunta": "¿Quién era el ayudante?",
+   "pregunta": "¿Por qué Holmes no le avisa antes a la policía?",
    "opciones": [
-    "John Clay, ladrón",
-    "Un empleado del banco"
+    "Necesita atraparlos en el acto",
+    "No confía en Wilson",
+    "Quiere el oro para él"
    ],
-   "correcta": 0
+   "correcta": 0,
+   "voz": [
+    "Te toca: Holmes ya sospecha del túnel. ¿Por qué no avisa enseguida a la policía?",
+    "¿Porque necesita atraparlos en el acto, porque no confía en Wilson, o porque quiere el oro?",
+    "Porque necesita *atraparlos en el acto*: sin pruebas, John Clay podría escaparse otra vez."
+   ]
   },
   {
    "t": "errores",

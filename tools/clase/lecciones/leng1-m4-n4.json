@@ -1,1 +1,182 @@
-{"slug": "leng1-m4-n4", "step_id": "8344b3c5-3c2c-417a-a231-b70ea873ce0e", "materia": "Lengua y Literatura I", "titulo": "Analizo y escribo oraciones", "sub": "Lengua y Literatura I · Misión 4 · Nivel 4", "escenas": [{"t": "historia", "personaje": {"nombre": "Marta", "emoji": "👩"}, "lugar": "📝", "lineas": ["Marta escribió: \"Perro ladró.\"", "Su hermano no entendió nada.", "Le faltaban palabras al sujeto."], "titulo": "ANALIZO", "sub": "y escribo oraciones", "voz": ["Marta le dejó una nota a su hermano: perro ladró.", "Su hermano no entendió nada: ¿qué perro? ¿A quién?", "A la oración le faltaban *modificadores*.", "Hoy: *analizo y escribo oraciones*."]}, {"t": "pasos", "titulo": "ANÁLISIS EN 5 PASOS", "items": [{"txt": "Marco el verbo (NV)", "emoji": "1️⃣"}, {"txt": "Pregunto ¿quién? → sujeto", "emoji": "2️⃣"}, {"txt": "Marco el núcleo del sujeto", "emoji": "3️⃣"}, {"txt": "MD, MI y aposición", "emoji": "4️⃣"}, {"txt": "¿Bimembre o unimembre?", "emoji": "5️⃣"}], "voz": ["El análisis, en cinco pasos.", "Uno: marco el *verbo*, el núcleo del predicado.", "Dos: pregunto *¿quién?* y encuentro el sujeto.", "Tres: marco el *núcleo* del sujeto.", "Cuatro: busco *modificadores*: directo, indirecto y aposición.", "Cinco: digo si es *bimembre* o *unimembre*."]}, {"t": "texto", "oracion": "Mi abuela, una gran cocinera, prepara empanadas.", "marcas": [{"desde": 0, "hasta": 0, "etiqueta": "MD", "color": "#7fb6ff"}, {"desde": 1, "hasta": 1, "etiqueta": "N", "color": "#C3A8FF"}, {"desde": 2, "hasta": 4, "etiqueta": "aposición", "color": "#ff9fcf"}, {"desde": 5, "hasta": 5, "etiqueta": "NV", "color": "#F4B63F"}], "voz": ["Apliquemos.", "*Mi*: modificador directo.", "*Abuela*: núcleo del sujeto.", "*Una gran cocinera*: aposición.", "*Prepara*: núcleo verbal. Es bimembre."]}, {"t": "antesdespues", "antes": {"cab": "POBRE", "emoji": "😐", "texto": "Perro ladró."}, "despues": {"cab": "EXPANDIDA", "emoji": "🤩", "texto": "El perro negro del vecino ladró toda la noche."}, "voz": ["Y para escribir mejor: *expandí* la oración. Perro ladró no dice casi nada.", "El perro negro del vecino ladró toda la noche: con modificadores, se entiende y se ve."]}, {"t": "pregunta", "pregunta": "¿Qué le agrega \"del vecino\" a \"el perro\"?", "opciones": ["Un MI", "Un MD"], "correcta": 0, "voz": ["Te toca: el perro *del vecino*. ¿Qué le agregamos?", "¿Un modificador indirecto o directo?", "¡*Indirecto*! Empieza con la preposición *de*."]}, {"t": "consejo", "titulo": "EMPEZÁ POR EL VERBO", "texto": "Si no encontrás el verbo, no podés analizar nada", "emoji": "🔑", "voz": ["Truco: *empezá siempre por el verbo*. Sin el verbo, no hay pregunta, y sin pregunta no aparece el sujeto."]}, {"t": "resumen", "voz": ["Repasemos.", "Primero, el *verbo*.", "Después, *¿quién?* para el sujeto.", "Núcleo y *modificadores*.", "Y al escribir, *expandí* tus oraciones.", "¡Misión 4 terminada! Ahora, *a practicar*."], "items": [["PASO 1", "el verbo"], ["PASO 2", "¿quién? → sujeto"], ["PASOS 3 Y 4", "núcleo y modificadores"], ["ESCRIBIR", "expandir con modificadores"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "leng1-m4-n4",
+ "step_id": "8344b3c5-3c2c-417a-a231-b70ea873ce0e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Analizo y escribo oraciones",
+ "sub": "Lengua y Literatura I · Misión 4 · Nivel 4",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Marta",
+    "emoji": "👩"
+   },
+   "lugar": "📝",
+   "lineas": [
+    "Marta escribió: \"Perro ladró.\"",
+    "Su hermano no entendió nada.",
+    "Le faltaban palabras al sujeto."
+   ],
+   "titulo": "ANALIZO",
+   "sub": "y escribo oraciones",
+   "voz": [
+    "Marta le dejó una nota a su hermano: perro ladró.",
+    "Su hermano no entendió nada: ¿qué perro? ¿A quién?",
+    "A la oración le faltaban *modificadores*.",
+    "Hoy: *analizo y escribo oraciones*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ANÁLISIS EN 5 PASOS",
+   "items": [
+    {
+     "txt": "Marco el verbo (NV)",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Pregunto ¿quién? → sujeto",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Marco el núcleo del sujeto",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "MD, MI y aposición",
+     "emoji": "4️⃣"
+    },
+    {
+     "txt": "¿Bimembre o unimembre?",
+     "emoji": "5️⃣"
+    }
+   ],
+   "voz": [
+    "El análisis, en cinco pasos.",
+    "Uno: marco el *verbo*, el núcleo del predicado.",
+    "Dos: pregunto *¿quién?* y encuentro el sujeto.",
+    "Tres: marco el *núcleo* del sujeto.",
+    "Cuatro: busco *modificadores*: directo, indirecto y aposición.",
+    "Cinco: digo si es *bimembre* o *unimembre*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "La biblioteca del barrio, un edificio antiguo, organiza talleres de escritura.",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 0,
+     "etiqueta": "MD",
+     "color": "#7fb6ff"
+    },
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "N",
+     "color": "#C3A8FF"
+    },
+    {
+     "desde": 2,
+     "hasta": 3,
+     "etiqueta": "MI",
+     "color": "#8be38f"
+    },
+    {
+     "desde": 4,
+     "hasta": 6,
+     "etiqueta": "aposición",
+     "color": "#ff9fcf"
+    },
+    {
+     "desde": 7,
+     "hasta": 7,
+     "etiqueta": "NV",
+     "color": "#F4B63F"
+    }
+   ],
+   "voz": [
+    "Apliquemos los cinco pasos.",
+    "*La*: modificador directo.",
+    "*Biblioteca*: núcleo del sujeto.",
+    "*Del barrio*: modificador indirecto.",
+    "*Un edificio antiguo*: aposición.",
+    "*Organiza*: núcleo verbal. Es bimembre."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "POBRE",
+    "emoji": "😐",
+    "texto": "Perro ladró."
+   },
+   "despues": {
+    "cab": "EXPANDIDA",
+    "emoji": "🤩",
+    "texto": "El perro negro del vecino ladró toda la noche."
+   },
+   "voz": [
+    "Y para escribir mejor: *expandí* la oración. Perro ladró no dice casi nada.",
+    "El perro negro del vecino ladró toda la noche: con modificadores, se entiende y se ve."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "\"Mi primo, el arquero del club, atajó dos penales.\" ¿Qué es \"el arquero del club\"?",
+   "opciones": [
+    "Aposición",
+    "Modificador indirecto",
+    "Núcleo del sujeto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: mi primo, *el arquero del club*, atajó dos penales. ¿Qué es *el arquero del club*?",
+    "¿Aposición, modificador indirecto o núcleo?",
+    "*Aposición*: es otro sustantivo con sus modificadores, entre comas, que aclara quién es mi primo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EMPEZÁ POR EL VERBO",
+   "texto": "Si no encontrás el verbo, no podés analizar nada",
+   "emoji": "🔑",
+   "voz": [
+    "Truco: *empezá siempre por el verbo*. Sin el verbo, no hay pregunta, y sin pregunta no aparece el sujeto."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Primero, el *verbo*.",
+    "Después, *¿quién?* para el sujeto.",
+    "Núcleo y *modificadores*.",
+    "Y al escribir, *expandí* tus oraciones.",
+    "¡Misión 4 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PASO 1",
+     "el verbo"
+    ],
+    [
+     "PASO 2",
+     "¿quién? → sujeto"
+    ],
+    [
+     "PASOS 3 Y 4",
+     "núcleo y modificadores"
+    ],
+    [
+     "ESCRIBIR",
+     "expandir con modificadores"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

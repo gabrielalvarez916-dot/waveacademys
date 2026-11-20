@@ -47,8 +47,8 @@ N1={"objetivo":"Vas a repasar las estrategias de lectura: usar el paratexto, lee
  S(1,"El paratexto",[D("Paratexto","Todo lo que acompaña al texto: <b>tapa, contratapa, título, autor, índice e imágenes</b>. Sirve para <b>anticipar</b> de qué trata antes de leer."),IMG("Las partes de un libro","Tapa, lomo, contratapa e índice: el paratexto.","Libro desplegado con contratapa, lomo, tapa e índice marcados.",fig_libro())]),
  S(1,"Leer en tres momentos",[T("Los tres momentos",["Momento","Qué hago"],[["Antes","Miro el paratexto y anticipo"],["Durante","Me hago preguntas, subrayo e infiero"],["Después","Resumo con mis palabras y opino"]]),
   D("Inferir","Deducir lo que el texto <b>no dice</b> a partir de pistas. Si el perro volvió con barro hasta las orejas, se infiere que estuvo en un charco.")]),
- S(2,"La estructura del relato",[T("Partes de un relato",["Parte","Qué cuenta","Ejemplo"],[["Situación inicial","Quiénes, dónde, cómo están","Tomi juega con su perro"],["Conflicto","Algo rompe la calma","El perro se escapa"],["Desenlace","Cómo se resuelve","Lo encuentra en la plaza"]])]),
- S(2,"El narrador",[P("El <b>narrador</b> es la voz que cuenta la historia; no es el autor. En <b>primera persona</b> es un personaje (\"yo busqué\"); en <b>tercera persona</b> cuenta desde afuera (\"Tomi buscó\").")]),
+ S(2,"La estructura del relato",[T("Partes de un relato",["Parte","Qué cuenta","Ejemplo"],[["Situación inicial","Quiénes, dónde, cómo están","Lara vive con su abuelo, guardián de un faro"],["Conflicto","Algo rompe la calma","En una tormenta el faro se apaga y un barco se acerca a las rocas"],["Desenlace","Cómo se resuelve","Lara sube los 200 escalones y enciende la luz a mano"]])]),
+ S(2,"El narrador",[P("El <b>narrador</b> es la voz que cuenta la historia; no es el autor. En <b>primera persona</b> es un personaje (\"yo busqué\"); en <b>tercera persona</b> cuenta desde afuera (\"Lara subió\"). Si conoce todo, incluso lo que piensan y sienten los personajes, es un narrador <b>omnisciente</b>.")]),
 ],
 "ejemplo_completo":{"titulo":"leer un cuento","planteo":"Un cuento se titula \"La noche del apagón\" y en la tapa hay una vela. Aplicá los tres momentos.","pasos":["Antes: anticipo que habrá una noche sin luz y quizás algo de miedo.","Durante: me pregunto qué pasará y busco pistas.","Después: resumo la historia en tres oraciones.","Opino si me gustó y por qué."]},
 "ejemplo_incompleto":{"titulo":"completar","planteo":"Completá los espacios.","pasos":["La parte del relato donde algo rompe la calma se llama ___ .","Si el narrador dice \"yo corrí\", está en ___ persona."]},
@@ -118,7 +118,7 @@ N4={"objetivo":"Vas a elegir libros usando el paratexto, armar fichas bibliográ
 "soluciones":{"incompleto":"Apellido. Contratapa.","solo":"Respuesta personal: apellido, nombre. Título. Editorial. Año.","carpeta":["La contratapa.","El apellido.","La editorial.","En el índice."]}}
 ACT={
 "1":[{"t":"ordering","p":"Ordená las partes del relato.","o":["Desenlace","Situación inicial","Conflicto"],"r":{"orden":["Situación inicial","Conflicto","Desenlace"]},"e":"Primero se presenta, después algo pasa y al final se resuelve."},
-     MC("\"Mariana llegó con la ropa llena de harina.\" ¿Qué podés inferir?",["Estuvo cocinando","Fue a nadar","Estuvo durmiendo","Leyó un libro"],"Estuvo cocinando","La harina es una pista de que cocinó.")],
+     MC("\"Al ver la carta, Tomás la guardó rápido y cambió de tema.\" ¿Qué se infiere?",["No quiere que los demás sepan qué dice","No sabe leer","La carta está en blanco","Está aburrido"],"No quiere que los demás sepan qué dice","Esconderla y cambiar de tema son pistas.")],
 "2":[{"t":"classify","p":"Clasificá cada historia.","o":{"elementos":["Dragón y hechizo","Robots en Marte","Robo y detective","Fantasma en el sótano"],"categorias":["Maravilloso","Ciencia ficción","Policial","Terror"]},"r":{"categorias":{"Dragón y hechizo":"Maravilloso","Robots en Marte":"Ciencia ficción","Robo y detective":"Policial","Fantasma en el sótano":"Terror"}},"e":"Cada subgénero tiene sus elementos."},
      MC("Animales que hablan y una enseñanza al final:",["Mito","Leyenda","Fábula","Noticia"],"Fábula","La enseñanza es la moraleja.")],
 "3":[MC("¿Qué conector completa? \"Estudié mucho, ___ me fue bien.\"",["pero","por eso","sin embargo","aunque"],"por eso","Es una consecuencia."),
@@ -132,13 +132,13 @@ ACT={
 }
 EXAMEN=[
  [1,MC("¿Para qué sirve mirar el paratexto antes de leer?",["Para anticipar de qué trata","Para saber el final","Para no leer","Para contar páginas"],"Para anticipar de qué trata","Tapa, contratapa e índice dan pistas.")],
- [1,MC("¿Cómo se llama la parte del relato donde algo rompe la calma?",["Situación inicial","Conflicto","Desenlace","Título"],"Conflicto","Es el problema de la historia.")],
+ [1,MC("\"Sabía que su hermano mentía, aunque nadie más lo notara.\" ¿Qué narrador es?",["Tercera persona omnisciente","Primera persona","Narrador testigo","No hay narrador"],"Tercera persona omnisciente","Conoce lo que piensa el personaje.")],
  [1,VF("El autor y el narrador son siempre la misma persona.","Falso","El autor escribe; el narrador es la voz que cuenta.")],
- [2,MC("Una historia con naves espaciales y robots es de…",["Terror","Ciencia ficción","Realista","Fábula"],"Ciencia ficción","Futuro y tecnología.")],
+ [2,MC("Un relato del litoral explica por qué el hornero hace su nido de barro. ¿Qué es?",["Leyenda","Mito","Fábula","Cuento policial"],"Leyenda","Explica un origen en un lugar real, sin dioses creadores ni moraleja.")],
  [2,MC("¿Qué texto es no literario?",["Un cuento","Una noticia","Un poema","Una obra de teatro"],"Una noticia","Informa sobre hechos reales.")],
  [2,VF("La leyenda explica el origen de algo y suele ubicarse en un lugar real.","Verdadero","Como la leyenda de la yerba mate.")],
  [3,MC("¿Cuál está bien escrita?",["llegué tarde porque llovía.","Llegué tarde porque llovía.","Llegué tarde porque llovía","llegué tarde porque llovía"],"Llegué tarde porque llovía.","Mayúscula al inicio y punto al final.")],
- [3,MC("¿Qué conector expresa una causa?",["pero","porque","sin embargo","entonces"],"porque","Explica por qué pasa algo.")],
+ [3,MC("\"Estudié toda la semana; ___, me fue mal.\" ¿Qué conector va?",["sin embargo","por eso","además","porque"],"sin embargo","El resultado es contrario a lo esperado.")],
  [3,MC("¿Qué se hace en el paso de revisar?",["Releer, corregir y mejorar","Elegir el tema","Tirar el texto","Copiar otro texto"],"Releer, corregir y mejorar","Es parte del proceso de escritura.")],
  [4,MC("¿Qué datos lleva una ficha bibliográfica?",["Autor, título, editorial y año","Solo el título","Color de tapa y precio","Cantidad de páginas y peso"],"Autor, título, editorial y año","Los cuatro datos básicos.")],
  [4,MC("¿Cómo se escribe el autor en la ficha?",["Ana Ríos","Ríos, Ana","ANA","Ríos"],"Ríos, Ana","Apellido, nombre.")],

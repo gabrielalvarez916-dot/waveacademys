@@ -203,17 +203,18 @@
   },
   {
    "t": "pregunta",
-   "voz": [
-    "Te toca: me gusta leer, ___ no tengo mucho tiempo. ¿Qué conector va?",
-    "¿Porque o pero?",
-    "¡*Pero*! Las dos ideas se oponen."
-   ],
-   "pregunta": "Me gusta leer, ___ no tengo mucho tiempo.",
+   "pregunta": "Estudié toda la semana; ___, me fue mal en la prueba.",
    "opciones": [
-    "porque",
-    "pero"
+    "sin embargo",
+    "por eso",
+    "además"
    ],
-   "correcta": 1
+   "correcta": 0,
+   "voz": [
+    "Te toca: estudié toda la semana; ___, me fue mal en la prueba. ¿Qué conector va?",
+    "¿Sin embargo, por eso, o además?",
+    "*Sin embargo*: el resultado es lo contrario de lo esperado. Por eso indicaría que estudiar causó el mal resultado."
+   ]
   },
   {
    "t": "errores",

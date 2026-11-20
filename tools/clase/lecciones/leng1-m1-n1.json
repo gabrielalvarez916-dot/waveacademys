@@ -123,56 +123,57 @@
    "filas": [
     [
      "Situación inicial",
-     "Tomi juega con su perro"
+     "Lara vive con su abuelo, guardián del faro"
     ],
     [
      "Conflicto",
-     "El perro se escapa"
+     "En plena tormenta, el faro se apaga y un barco se acerca a las rocas"
     ],
     [
      "Desenlace",
-     "Lo encuentra en la plaza"
+     "Lara sube los 200 escalones y enciende la luz a mano"
     ]
    ],
    "voz": [
     "Un ejemplo.",
-    "*Situación inicial*: Tomi juega en el patio con su perro.",
-    "*Conflicto*: se abre el portón y el perro sale corriendo.",
-    "*Desenlace*: después de buscarlo toda la tarde, lo encuentra en la plaza."
+    "*Situación inicial*: en un pueblo de la costa, Lara vive con su abuelo, el guardián del faro.",
+    "*Conflicto*: una noche de tormenta el faro se apaga, el abuelo está enfermo, y un barco se acerca a las rocas.",
+    "*Desenlace*: Lara sube los doscientos escalones y enciende la luz a mano, justo a tiempo."
    ]
   },
   {
    "t": "comparar",
-   "voz": [
-    "¿Quién cuenta la historia? El *narrador*.",
-    "En *primera persona*, el narrador es un personaje: yo corrí, yo busqué.",
-    "En *tercera persona*, cuenta desde afuera: Tomi corrió, Tomi buscó."
-   ],
    "a": {
     "cab": "1.ª PERSONA",
-    "texto": "\"Yo busqué a mi perro\"",
+    "texto": "\"Subí los escalones temblando\"",
     "emoji": "🙋"
    },
    "b": {
     "cab": "3.ª PERSONA",
-    "texto": "\"Tomi buscó a su perro\"",
+    "texto": "\"Lara subió los escalones\"",
     "emoji": "👀"
    },
-   "signo": "vs"
+   "signo": "vs",
+   "voz": [
+    "¿Quién cuenta la historia? El *narrador*, que no es el autor.",
+    "En *primera persona*, el narrador es un personaje: subí los escalones temblando. Solo sabe lo que él vive.",
+    "En *tercera persona*, cuenta desde afuera: Lara subió los escalones. Si sabe todo, hasta lo que piensan los personajes, es *omnisciente*."
+   ]
   },
   {
    "t": "pregunta",
-   "voz": [
-    "Te toca leer entre líneas: el perro volvió *con barro hasta las orejas*. ¿Dónde estuvo?",
-    "¿En un charco, o durmiendo en la cama?",
-    "¡En un *charco*! Eso es *inferir*: deducir lo que el texto no dice."
-   ],
-   "pregunta": "Volvió con barro hasta las orejas. ¿Dónde estuvo?",
+   "pregunta": "\"Al ver la carta, Tomás la guardó rápido y cambió de tema.\" ¿Qué inferís?",
    "opciones": [
-    "En un charco",
-    "En la cama"
+    "No quiere que otros la lean",
+    "No sabe leer",
+    "La carta está en blanco"
    ],
-   "correcta": 0
+   "correcta": 0,
+   "voz": [
+    "Te toca leer entre líneas: al ver la carta, Tomás la guardó rápido y cambió de tema. ¿Qué inferís?",
+    "¿Que no quiere que otros la lean, que no sabe leer, o que la carta está en blanco?",
+    "Que *no quiere que otros la lean*: guardarla rápido y cambiar de tema muestra que esconde algo. Eso es *inferir*."
+   ]
   },
   {
    "t": "errores",
