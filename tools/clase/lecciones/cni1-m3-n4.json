@@ -1,0 +1,188 @@
+{
+ "slug": "cni1-m3-n4",
+ "step_id": "37dbc9e9-5891-46b5-a70b-09c9d5b25026",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Del microscopio a la imagen",
+ "sub": "Ciencias Naturales Integradas I · Misión 3 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": true,
+     "txt": "Miré mi saliva al microscopio 🔬"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y? ¿Viste algo?"
+    },
+    {
+     "yo": true,
+     "txt": "Todo borroso 😩"
+    }
+   ],
+   "titulo": "EL MICROSCOPIO",
+   "sub": "de la muestra a la imagen",
+   "voz": [
+    "Juan: miré mi saliva al microscopio.",
+    "Lu: ¿y? ¿Viste algo?",
+    "Juan: todo borroso. Usar un microscopio *tiene su técnica*.",
+    "Hoy: *del microscopio a la imagen*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🔬",
+   "titulo": "PARTES DEL MICROSCOPIO",
+   "partes": [
+    {
+     "txt": "Ocular: donde mirás",
+     "x": -0.1,
+     "y": -0.95
+    },
+    {
+     "txt": "Objetivos: lentes que aumentan",
+     "x": 0.35,
+     "y": -0.2
+    },
+    {
+     "txt": "Platina: apoya el portaobjetos",
+     "x": -0.45,
+     "y": 0.25
+    },
+    {
+     "txt": "Tornillos: enfocan",
+     "x": 0.55,
+     "y": 0.35
+    },
+    {
+     "txt": "Luz: ilumina la muestra",
+     "x": -0.3,
+     "y": 0.75
+    }
+   ],
+   "voz": [
+    "Las partes del microscopio óptico.",
+    "El *ocular*: la lente por donde mirás.",
+    "Los *objetivos*: las lentes que aumentan la imagen.",
+    "La *platina*: donde se apoya la muestra.",
+    "Los *tornillos*: para enfocar.",
+    "Y la *luz*, que atraviesa la muestra."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Aumento total",
+   "texto": "Aumento del ocular × aumento del objetivo",
+   "emoji": "✖️",
+   "voz": [
+    "¿Cuánto agranda? El *aumento total* se calcula multiplicando el del *ocular* por el del *objetivo*.",
+    "Ocular de diez por objetivo de cuarenta: *cuatrocientos aumentos*. Lo ves cuatrocientas veces más grande."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PREPARAR Y OBSERVAR",
+   "items": [
+    {
+     "txt": "Muestra fina en el portaobjetos",
+     "emoji": "🧪"
+    },
+    {
+     "txt": "Una gota de agua o colorante",
+     "emoji": "💧"
+    },
+    {
+     "txt": "Cubreobjetos, sin burbujas",
+     "emoji": "🔲"
+    },
+    {
+     "txt": "Enfocar con el menor aumento",
+     "emoji": "🔍"
+    },
+    {
+     "txt": "Recién después, aumentar",
+     "emoji": "🔬"
+    }
+   ],
+   "voz": [
+    "Cómo preparar y observar.",
+    "Una muestra *bien fina* sobre el portaobjetos: la luz tiene que atravesarla.",
+    "Una *gota* de agua o de colorante.",
+    "El *cubreobjetos*, apoyado de costado para que no queden burbujas.",
+    "Se enfoca *siempre con el menor aumento*.",
+    "Y recién después se pasa a un aumento mayor."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Ocular 10× y objetivo 40×: ¿cuál es el aumento total?",
+   "opciones": [
+    "400×",
+    "50×",
+    "4000×"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ocular de diez y objetivo de cuarenta. ¿Aumento total?",
+    "¿Cuatrocientos, cincuenta, o cuatro mil?",
+    "*Cuatrocientos*: se multiplica, diez por cuarenta. Sumar daría cincuenta: ese es el error típico."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar los aumentos",
+     "bien": "Multiplicarlos"
+    },
+    {
+     "mal": "Empezar con el mayor aumento",
+     "bien": "Empezar con el menor"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Sumar* los aumentos en lugar de multiplicarlos.",
+    "Y empezar con el *mayor aumento*: así es casi imposible encontrar la muestra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Partes: *ocular, objetivos, platina, tornillos y luz*.",
+    "*Aumento total*: ocular por objetivo.",
+    "La muestra, *fina* y con cubreobjetos.",
+    "Y se enfoca *del menor al mayor aumento*.",
+    "¡Misión 3 terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTES",
+     "ocular, objetivos, platina"
+    ],
+    [
+     "AUMENTO",
+     "ocular × objetivo"
+    ],
+    [
+     "MUESTRA",
+     "fina, con cubreobjetos"
+    ],
+    [
+     "ENFOQUE",
+     "del menor al mayor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -84,6 +84,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | corrige | 1 + cambios | titulo, cambios:[{antes, despues, motivo}] (máx 3) — tacha lo incorrecto y escribe lo correcto (revisión de textos) |
 | experimento | 3 | titulo, variable, a:{cab, emojis, txt, res}, b:{…} — grupo control vs grupo con cambio: montajes, variable, resultados (Naturales) |
 | medidor | 3 | titulo, tipo:'termometro'\|'regla'\|'probeta', min, max, valor, unidad, nota — instrumento dibujado con su lectura (Naturales) |
+| celula | 1 + partes | titulo, tipo:'animal'\|'vegetal', partes:[{p:'membrana'\|'citoplasma'\|'nucleo'\|'mitocondria'\|'pared'\|'cloroplasto'\|'vacuola', txt}] — célula dibujada con sus partes marcadas (Naturales) |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |

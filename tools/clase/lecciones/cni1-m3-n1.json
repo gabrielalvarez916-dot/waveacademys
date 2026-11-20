@@ -1,0 +1,220 @@
+{
+ "slug": "cni1-m3-n1",
+ "step_id": "6d42f272-24d1-43fb-a2ad-547a396b993e",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Propiedades de los seres vivos",
+ "sub": "Ciencias Naturales Integradas I · Misión 3 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "El fuego crece, consume oxígeno y produce más fuego. ¿Está vivo?",
+   "segundos": 5,
+   "respuesta": "No: no está formado por células",
+   "emoji": "🔥",
+   "titulo": "¿QUÉ ES",
+   "sub": "un ser vivo?",
+   "voz": [
+    "Desafío: el fuego crece, consume oxígeno y hasta produce más fuego. ¿Está vivo? 5 segundos.",
+    "*No*. Le falta lo más importante: no está formado por *células*, y no tiene ninguna información que pase de un fuego a otro.",
+    "Hoy: *qué es un ser vivo*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "PROPIEDADES (I)",
+   "celdas": [
+    {
+     "cab": "CÉLULAS",
+     "txt": "todo ser vivo está formado por células"
+    },
+    {
+     "cab": "NUTRICIÓN",
+     "txt": "incorpora materia y energía"
+    },
+    {
+     "cab": "RELACIÓN",
+     "txt": "responde a estímulos"
+    },
+    {
+     "cab": "REPRODUCCIÓN",
+     "txt": "origina nuevos seres vivos"
+    }
+   ],
+   "voz": [
+    "Un ser vivo cumple *todas* estas propiedades, no solo alguna.",
+    "Está formado por una o más *células*.",
+    "Se *nutre*: incorpora materia y energía del ambiente.",
+    "Se *relaciona*: responde a estímulos, como la planta que gira hacia la luz.",
+    "Y se *reproduce*: origina nuevos seres vivos."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "EL CICLO DE VIDA",
+   "items": [
+    {
+     "txt": "Nace",
+     "emoji": "🐣"
+    },
+    {
+     "txt": "Crece y se desarrolla",
+     "emoji": "🐥"
+    },
+    {
+     "txt": "Se reproduce",
+     "emoji": "🥚"
+    },
+    {
+     "txt": "Muere",
+     "emoji": "🍂"
+    }
+   ],
+   "voz": [
+    "Además, todo ser vivo tiene un *ciclo de vida*.",
+    "*Nace* de otro ser vivo.",
+    "*Crece y se desarrolla*: cambia de forma, como el renacuajo que se vuelve rana.",
+    "Puede *reproducirse*.",
+    "Y finalmente *muere*. Sus materiales vuelven al ambiente."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Homeostasis",
+   "texto": "Mantener estable el medio interno aunque el ambiente cambie",
+   "emoji": "🌡️",
+   "voz": [
+    "Otra propiedad clave: la *homeostasis*. Es mantener el medio interno estable aunque afuera todo cambie.",
+    "Cuando hace calor transpirás: así tu cuerpo se mantiene cerca de 37 grados."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿LA VIDA SURGE SOLA?",
+   "variable": "cambia: el cuello del frasco",
+   "a": {
+    "cab": "CUELLO RECTO",
+    "emojis": [
+     "⚗️",
+     "🦠"
+    ],
+    "txt": "entra el polvo del aire",
+    "res": "aparecen microbios"
+   },
+   "b": {
+    "cab": "CUELLO CURVO",
+    "emojis": [
+     "⚗️"
+    ],
+    "txt": "el polvo queda en la curva",
+    "res": "sigue limpio"
+   },
+   "voz": [
+    "Durante siglos se creyó que la vida aparecía sola, de la nada. En 1862, Louis Pasteur lo puso a prueba con caldo hervido.",
+    "Dos frascos iguales: solo cambia el *cuello*. Uno recto, otro curvo, en forma de cuello de cisne.",
+    "En el recto aparecieron microbios; en el curvo, no. Conclusión: *todo ser vivo proviene de otro ser vivo*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SER VIVO",
+     "emoji": "🌱"
+    },
+    {
+     "cab": "NO VIVO",
+     "emoji": "🪨"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Semilla de poroto",
+     "caja": 0
+    },
+    {
+     "txt": "Hongo de la fruta",
+     "caja": 0
+    },
+    {
+     "txt": "Cristal de sal",
+     "caja": 1
+    },
+    {
+     "txt": "Una nube",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Vivo o no vivo? Ojo con las trampas.",
+    "*Vivos*: la semilla, aunque parezca quieta, está formada por células y puede germinar; y el moho de la fruta, que es un hongo.",
+    "*No vivos*: el cristal de sal crece, pero no tiene células; y la nube se mueve y crece, pero tampoco."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué propiedad muestra una planta que gira sus hojas hacia la ventana?",
+   "opciones": [
+    "Relación: responde a un estímulo",
+    "Reproducción",
+    "Homeostasis"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: una planta gira sus hojas hacia la ventana. ¿Qué propiedad muestra?",
+    "¿Relación, reproducción u homeostasis?",
+    "*Relación*: responde a un estímulo, la luz."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Se mueve, entonces vive",
+     "bien": "Tiene que cumplir todas"
+    },
+    {
+     "mal": "La semilla no está viva",
+     "bien": "Está viva, en reposo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Pensar que algo está vivo solo porque *se mueve o crece*: tiene que cumplir *todas* las propiedades.",
+    "Y creer que una semilla seca no está viva: está *en reposo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Todo ser vivo está formado por *células*.",
+    "Cumple *nutrición, relación y reproducción*.",
+    "Tiene un *ciclo de vida*.",
+    "Y *proviene de otro ser vivo*, como mostró Pasteur.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CÉLULAS",
+     "base de todo ser vivo"
+    ],
+    [
+     "FUNCIONES",
+     "nutrición, relación, reproducción"
+    ],
+    [
+     "CICLO",
+     "nace, crece, se reproduce, muere"
+    ],
+    [
+     "ORIGEN",
+     "proviene de otro ser vivo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

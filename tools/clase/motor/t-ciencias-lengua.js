@@ -125,6 +125,29 @@
     B(2); if (nt) w.IN(tl, nt, 0, { y: 0 });
   } };
 
+  // celula: {titulo, tipo:'animal'|'vegetal', partes:[{p:'membrana'|'citoplasma'|'nucleo'|'mitocondria'|'pared'|'cloroplasto'|'vacuola', txt}]} — célula dibujada y sus partes (1 + partes pasos)
+  T.celula = { n: function (d) { return 1 + d.partes.length; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), veg = d.tipo === 'vegetal', A;
+    if (veg) { w.el('rect', { x: 640, y: 350, width: 640, height: 480, rx: 34, fill: '#d9f2cf', stroke: '#3f7a3a', 'stroke-width': 16 }, o);
+      w.el('rect', { x: 660, y: 370, width: 600, height: 440, rx: 26, fill: 'none', stroke: '#86c96f', 'stroke-width': 5 }, o);
+      w.el('ellipse', { cx: 1030, cy: 590, rx: 165, ry: 140, fill: '#bfe6ff', stroke: '#5aa9d6', 'stroke-width': 4 }, o);
+      [[740, 740], [1190, 430], [1200, 760], [860, 430]].forEach(function (c) { w.el('ellipse', { cx: c[0], cy: c[1], rx: 42, ry: 22, fill: '#2e8b3a', stroke: '#1d5e26', 'stroke-width': 3 }, o); });
+      w.el('circle', { cx: 770, cy: 560, r: 70, fill: '#9c7bd6', stroke: '#5b3f8c', 'stroke-width': 5 }, o); w.el('circle', { cx: 780, cy: 555, r: 22, fill: '#5b3f8c' }, o);
+      w.el('ellipse', { cx: 900, cy: 760, rx: 42, ry: 20, fill: '#f4a259' }, o);
+      A = { pared: [640, 460], membrana: [660, 690], citoplasma: [930, 470], nucleo: [770, 560], cloroplasto: [1190, 430], vacuola: [1100, 620], mitocondria: [900, 760] }; }
+    else { w.el('ellipse', { cx: 960, cy: 590, rx: 330, ry: 245, fill: '#f8d7dd', stroke: '#c2566b', 'stroke-width': 9 }, o);
+      w.el('circle', { cx: 900, cy: 570, r: 90, fill: '#9c7bd6', stroke: '#5b3f8c', 'stroke-width': 5 }, o); w.el('circle', { cx: 915, cy: 560, r: 28, fill: '#5b3f8c' }, o);
+      [[1110, 500], [1090, 700], [790, 720], [1160, 610]].forEach(function (c) { w.el('ellipse', { cx: c[0], cy: c[1], rx: 48, ry: 22, fill: '#f4a259', stroke: '#b86a1c', 'stroke-width': 3 }, o); });
+      A = { membrana: [1286, 620], citoplasma: [1010, 420], nucleo: [900, 570], mitocondria: [1110, 500] }; }
+    var izq = [], der = [], P = d.partes.map(function (pt, k) { var a = A[pt.p] || [960, 590], lado = a[0] < 960 ? izq : der; lado.push({ k: k, a: a, txt: pt.txt }); return null; });
+    [izq, der].forEach(function (L, s) { L.sort(function (u, v) { return u.a[1] - v.a[1]; }); var y = 330; L.forEach(function (it) { it.y = Math.max(y, Math.min(870, it.a[1])); y = it.y + 92; }); L.forEach(function (it) {
+      var col = W.PAL[it.k % W.PAL.length], gr = w.pieza(g, 0, 0), tw = Math.max(200, it.txt.length * 15 + 40), lx = s ? Math.min(1905 - tw / 2, 1325 + tw / 2) : Math.max(15 + tw / 2, 595 - tw / 2), ex = s ? lx - tw / 2 : lx + tw / 2;
+      w.el('circle', { cx: it.a[0], cy: it.a[1], r: 10, fill: col, stroke: '#fff', 'stroke-width': 3 }, gr); w.el('polyline', { points: it.a[0] + ',' + it.a[1] + ' ' + ex + ',' + it.y, fill: 'none', stroke: col, 'stroke-width': 4 }, gr);
+      w.caja(gr, lx, it.y, tw, 64, 'rgba(8,20,8,.92)', col, 28, 4); w.txt(gr, lx, it.y, it.txt, 24, '#fff'); P[it.k] = gr; }); });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .9, y: 0 });
+    P.forEach(function (p, k) { B(k + 1); w.IN(tl, p, 0, { y: 0, d: .4 }); });
+  } };
+
   // molecula: {titulo, atomos:[{el:'C', x, y}] (x, y en px desde el centro), enlaces:[[i, j, orden]], nombre} — 3 pasos
   T.molecula = { n: function () { return 3; }, armar: function (g, tl, B, d) {
     var COL = { C: '#3a3a3a', H: '#f0f0f0', O: '#ff5a4f', N: '#5f8bff', Cl: '#5fd35f', S: '#ffd34f', P: '#ff9f40', Na: '#b48cff' }, cx = 960, cy = 600;
@@ -155,7 +178,7 @@
 
   // zoom: {niveles:[{emoji, txt}] (2-5)} — n pasos: cada paso "entra" al siguiente nivel (del cuerpo a la célula al ADN)
   T.zoom = { n: function (d) { return d.niveles.length; }, armar: function (g, tl, B, d) {
-    var N = d.niveles.map(function (nv) { var p = w.pieza(g, 960, 600); w.el('circle', { r: 300, fill: 'rgba(127,211,196,.08)', stroke: C.aqua, 'stroke-width': 4, 'stroke-dasharray': '16 12' }, p); w.emoji(p, 0, -20, nv.emoji, 300); var t = w.chip(g, 960, 940, nv.txt.length * 26 + 120, 84, nv.txt, { size: 40, stroke: C.sol }); return [p, t]; });
+    var N = d.niveles.map(function (nv) { var p = w.pieza(g, 960, 540); w.el('circle', { r: 280, fill: 'rgba(127,211,196,.08)', stroke: C.aqua, 'stroke-width': 4, 'stroke-dasharray': '16 12' }, p); w.emoji(p, 0, -20, nv.emoji, 280); var t = w.chip(g, 960, 880, nv.txt.length * 26 + 120, 84, nv.txt, { size: 40, stroke: C.sol }); return [p, t]; });
     N.forEach(function (q, k) { B(k); if (k) { tl.to(N[k - 1][0], { scale: 6, opacity: 0, duration: .6, ease: 'power3.in' }); w.OUT(tl, N[k - 1][1], '<'); }
       w.IN(tl, q[0], k ? '>-.2' : 0, { scale: .15, y: 0, ease: 'power3.out', d: .7 }); w.IN(tl, q[1], '<.2'); });
   } };

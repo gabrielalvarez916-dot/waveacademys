@@ -1,0 +1,212 @@
+{
+ "slug": "cni1-m3-n3",
+ "step_id": "c748f5dd-36fe-4893-8570-0ca06a60240a",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "La célula como unidad de la vida",
+ "sub": "Ciencias Naturales Integradas I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CIENCIA",
+   "titular": "Tu cuerpo tiene unos 30 billones de células",
+   "bajada": "Y empezaste siendo una sola",
+   "emoji": "🦠",
+   "titulo": "LA CÉLULA",
+   "sub": "unidad de la vida",
+   "voz": [
+    "Dato increíble: tu cuerpo tiene alrededor de *treinta billones* de células.",
+    "Y todas vienen de *una sola* célula inicial, que se fue dividiendo.",
+    "Hoy: *la célula, unidad de la vida*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "TEORÍA CELULAR",
+   "items": [
+    {
+     "txt": "Todo ser vivo está formado por células",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "La célula es la unidad de vida y función",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Toda célula proviene de otra célula",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "La *teoría celular* tiene tres ideas.",
+    "Uno: todo ser vivo está formado por *células*.",
+    "Dos: la célula es la *unidad* más pequeña con vida: en ella ocurren las funciones vitales.",
+    "Tres: toda célula *proviene de otra* célula."
+   ]
+  },
+  {
+   "t": "celula",
+   "titulo": "CÉLULA ANIMAL",
+   "tipo": "animal",
+   "partes": [
+    {
+     "p": "membrana",
+     "txt": "Membrana: controla qué entra y sale"
+    },
+    {
+     "p": "citoplasma",
+     "txt": "Citoplasma: medio interno"
+    },
+    {
+     "p": "nucleo",
+     "txt": "Núcleo: guarda el ADN"
+    },
+    {
+     "p": "mitocondria",
+     "txt": "Mitocondria: obtiene energía"
+    }
+   ],
+   "voz": [
+    "Así es una *célula animal*.",
+    "La *membrana*: controla qué entra y qué sale.",
+    "El *citoplasma*: el medio interno, donde flotan las estructuras.",
+    "El *núcleo*: guarda el material genético, el *ADN*, con las instrucciones de la célula.",
+    "Las *mitocondrias*: obtienen la energía de los nutrientes."
+   ]
+  },
+  {
+   "t": "celula",
+   "titulo": "CÉLULA VEGETAL",
+   "tipo": "vegetal",
+   "partes": [
+    {
+     "p": "pared",
+     "txt": "Pared celular: rígida, da forma"
+    },
+    {
+     "p": "cloroplasto",
+     "txt": "Cloroplastos: fotosíntesis"
+    },
+    {
+     "p": "vacuola",
+     "txt": "Vacuola: guarda agua"
+    }
+   ],
+   "voz": [
+    "La *célula vegetal* tiene lo mismo, y además…",
+    "*Pared celular*: una capa rígida que le da forma.",
+    "*Cloroplastos*: donde se hace la *fotosíntesis*, con la luz del sol.",
+    "Y una gran *vacuola*: guarda agua y sustancias."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "Animal",
+   "b": "Vegetal",
+   "itemsA": [
+    "forma variable"
+   ],
+   "itemsB": [
+    "pared celular",
+    "cloroplastos",
+    "vacuola grande"
+   ],
+   "ambos": [
+    "membrana",
+    "citoplasma",
+    "núcleo",
+    "mitocondrias"
+   ],
+   "voz": [
+    "Comparemos.",
+    "Solo la animal: *forma variable*, sin pared rígida.",
+    "Solo la vegetal: *pared celular, cloroplastos* y una *vacuola grande*.",
+    "Las dos: *membrana, citoplasma, núcleo y mitocondrias*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PROCARIOTA",
+    "texto": "sin núcleo: ADN suelto",
+    "emoji": "🦠"
+   },
+   "b": {
+    "cab": "EUCARIOTA",
+    "texto": "con núcleo: ADN protegido",
+    "emoji": "🧫"
+   },
+   "signo": "vs",
+   "voz": [
+    "Hay dos grandes tipos de células.",
+    "*Procariotas*: sin núcleo, el ADN está suelto en el citoplasma. Son las *bacterias*.",
+    "*Eucariotas*: con núcleo. Así son las células de animales, plantas y hongos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Una célula tiene pared celular y cloroplastos. ¿De dónde puede ser?",
+   "opciones": [
+    "De una hoja",
+    "De un músculo",
+    "De una bacteria"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: una célula tiene pared celular y cloroplastos. ¿De dónde puede ser?",
+    "¿De una hoja, de un músculo, o de una bacteria?",
+    "*De una hoja*: los cloroplastos son exclusivos de las células vegetales. Las bacterias tienen pared, pero no cloroplastos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Las plantas no tienen mitocondrias",
+     "bien": "Sí tienen"
+    },
+    {
+     "mal": "Todas las células tienen núcleo",
+     "bien": "Las procariotas no"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que las plantas no tienen *mitocondrias*: sí tienen, también necesitan energía.",
+    "Y que todas las células tienen *núcleo*: las procariotas no."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *teoría celular*: tres ideas.",
+    "Partes comunes: *membrana, citoplasma y núcleo*.",
+    "La vegetal suma *pared, cloroplastos y vacuola*.",
+    "Y dos tipos: *procariota y eucariota*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TEORÍA CELULAR",
+     "3 ideas"
+    ],
+    [
+     "PARTES",
+     "membrana, citoplasma, núcleo"
+    ],
+    [
+     "VEGETAL",
+     "pared, cloroplastos, vacuola"
+    ],
+    [
+     "TIPOS",
+     "procariota y eucariota"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

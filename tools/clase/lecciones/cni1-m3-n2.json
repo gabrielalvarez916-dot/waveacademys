@@ -1,0 +1,195 @@
+{
+ "slug": "cni1-m3-n2",
+ "step_id": "0c468f0e-f3e2-4868-ad9c-38319ccc978d",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Niveles de organización",
+ "sub": "Ciencias Naturales Integradas I · Misión 3 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomás",
+    "emoji": "👦"
+   },
+   "lugar": "🔬",
+   "lineas": [
+    "Tomás se raspó la rodilla.",
+    "Mirando de cerca, la piel tenía capas.",
+    "Y cada capa estaba hecha de células."
+   ],
+   "titulo": "NIVELES",
+   "sub": "de organización",
+   "voz": [
+    "Tomás se raspó la rodilla jugando al fútbol.",
+    "Con una lupa vio que la piel tenía *capas*.",
+    "Y en el microscopio de la escuela descubrió que cada capa estaba hecha de *células*, todas juntas.",
+    "Hoy: *los niveles de organización*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🧍",
+     "txt": "Organismo"
+    },
+    {
+     "emoji": "🫁",
+     "txt": "Sistema"
+    },
+    {
+     "emoji": "❤️",
+     "txt": "Órgano"
+    },
+    {
+     "emoji": "🧱",
+     "txt": "Tejido"
+    },
+    {
+     "emoji": "🦠",
+     "txt": "Célula"
+    }
+   ],
+   "voz": [
+    "Hagamos zoom en un cuerpo. El *organismo* completo: vos.",
+    "Adentro, *sistemas*: grupos de órganos que trabajan juntos, como el sistema circulatorio.",
+    "Cada sistema tiene *órganos*, como el corazón.",
+    "Cada órgano está formado por *tejidos*: grupos de células parecidas, como el músculo.",
+    "Y cada tejido, por *células*: la unidad más pequeña con vida."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "DE LO PEQUEÑO A LO GRANDE",
+   "columnas": [
+    "Nivel",
+    "Qué es",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Célula",
+     "unidad de la vida",
+     "neurona"
+    ],
+    [
+     "Tejido",
+     "células parecidas juntas",
+     "tejido muscular"
+    ],
+    [
+     "Órgano",
+     "varios tejidos",
+     "corazón"
+    ],
+    [
+     "Sistema",
+     "órganos que cooperan",
+     "circulatorio"
+    ]
+   ],
+   "voz": [
+    "Ordenado de menor a mayor.",
+    "*Célula*: la unidad de la vida, como una neurona.",
+    "*Tejido*: células parecidas que cumplen la misma función.",
+    "*Órgano*: varios tejidos juntos, como el corazón.",
+    "*Sistema*: órganos que cooperan, como el circulatorio."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "MÁS ALLÁ DEL ORGANISMO",
+   "celdas": [
+    {
+     "cab": "POBLACIÓN",
+     "txt": "misma especie, mismo lugar"
+    },
+    {
+     "cab": "COMUNIDAD",
+     "txt": "todas las poblaciones juntas"
+    },
+    {
+     "cab": "ECOSISTEMA",
+     "txt": "comunidad + ambiente"
+    },
+    {
+     "cab": "BIOSFERA",
+     "txt": "todos los ecosistemas"
+    }
+   ],
+   "voz": [
+    "Y hacia afuera los niveles siguen.",
+    "*Población*: individuos de la misma especie en un lugar, como los carpinchos de una laguna.",
+    "*Comunidad*: todas las poblaciones que viven juntas.",
+    "*Ecosistema*: la comunidad más el ambiente: agua, suelo, luz.",
+    "*Biosfera*: todos los ecosistemas del planeta."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El corazón, ¿qué nivel de organización es?",
+   "opciones": [
+    "Órgano",
+    "Tejido",
+    "Sistema"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el corazón, ¿qué nivel es?",
+    "¿Órgano, tejido o sistema?",
+    "*Órgano*: está formado por varios tejidos. El *sistema* circulatorio incluye al corazón, las venas y las arterias."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Tejido = órgano",
+     "bien": "Varios tejidos forman un órgano"
+    },
+    {
+     "mal": "Población = comunidad",
+     "bien": "Población: una sola especie"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *tejido* con *órgano*.",
+    "Y *población* con *comunidad*: la población es de *una sola especie*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La unidad: la *célula*.",
+    "En el cuerpo: *tejido, órgano y sistema*.",
+    "Afuera: *población y comunidad*.",
+    "Y el *ecosistema* y la *biosfera*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "UNIDAD",
+     "la célula"
+    ],
+    [
+     "CUERPO",
+     "tejido, órgano, sistema"
+    ],
+    [
+     "AFUERA",
+     "población, comunidad"
+    ],
+    [
+     "TODO",
+     "ecosistema y biosfera"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
