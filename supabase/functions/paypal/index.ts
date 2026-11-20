@@ -5,7 +5,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 //   { action: "suscribir", nivel, modalidad } -> suscripción mensual en USD; devuelve el link de PayPal para aprobarla
 //   { action: "matricula" }                   -> pago único de la matrícula anual en USD; devuelve el link
 // Webhook de PayPal (mismo URL, sin action): activa, suspende o cancela suscripciones, registra cobros y cobra la matrícula aprobada.
-// Secretos: PAYPAL_CLIENT_ID, PAYPAL_SECRET, PAYPAL_WEBHOOK_ID y PAYPAL_ENV ("live" o "sandbox").
+// Credenciales en gen_config: paypal_client_id, paypal_secret, paypal_webhook_id y paypal_env ("live" o "sandbox").
 // El producto y los planes de PayPal se crean solos la primera vez (uno por precio) y se guardan en tarifas.paypal_plan_id.
 
 const cors = {
@@ -22,12 +22,22 @@ const ESTADO: Record<string, string> = {
   "BILLING.SUBSCRIPTION.EXPIRED": "cancelled", "BILLING.SUBSCRIPTION.PAYMENT.FAILED": "past_due",
 };
 
-const BASE = () => (Deno.env.get("PAYPAL_ENV") === "sandbox" ? "https://api-m.sandbox.paypal.com" : "https://api-m.paypal.com");
-async function token(): Promise<string> {
-  const id = Deno.env.get("PAYPAL_CLIENT_ID"), sec = Deno.env.get("PAYPAL_SECRET");
-  if (!id || !sec) throw new Error("SIN_CONFIGURAR");
+// Credenciales: tabla gen_config (claves paypal_client_id, paypal_secret, paypal_webhook_id, paypal_env) o secretos del mismo nombre en mayúsculas
+let CFG: Record<string, string> | null = null;
+async function cfg(admin: any) {
+  if (CFG) return CFG;
+  const { data } = await admin.from("gen_config").select("clave, valor").like("clave", "paypal_%");
+  const c: Record<string, string> = {};
+  (data || []).forEach((x: any) => { c[x.clave] = x.valor; });
+  for (const k of ["paypal_client_id", "paypal_secret", "paypal_webhook_id", "paypal_env"]) c[k] = c[k] || Deno.env.get(k.toUpperCase()) || "";
+  return (CFG = c);
+}
+const BASE = () => (CFG?.paypal_env === "sandbox" ? "https://api-m.sandbox.paypal.com" : "https://api-m.paypal.com");
+async function token(admin: any): Promise<string> {
+  const c = await cfg(admin);
+  if (!c.paypal_client_id || !c.paypal_secret) throw new Error("SIN_CONFIGURAR");
   const r = await fetch(`${BASE()}/v1/oauth2/token`, {
-    method: "POST", headers: { Authorization: "Basic " + btoa(`${id}:${sec}`), "content-type": "application/x-www-form-urlencoded" },
+    method: "POST", headers: { Authorization: "Basic " + btoa(`${c.paypal_client_id}:${c.paypal_secret}`), "content-type": "application/x-www-form-urlencoded" },
     body: "grant_type=client_credentials",
   });
   if (!r.ok) throw new Error(`PayPal token ${r.status}`);
@@ -46,6 +56,7 @@ const enlace = (d: any, rel: string) => (d.links || []).find((l: any) => l.rel =
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
+  if (req.method === "GET") return json({ ok: true, servicio: "Pagos con PayPal de Wave Academy (esta dirección la usa PayPal)" });
   const url = Deno.env.get("SUPABASE_URL")!;
   const admin = createClient(url, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
   const b = await req.json().catch(() => ({}));
@@ -53,11 +64,11 @@ Deno.serve(async (req) => {
   // ---------- Webhook de PayPal ----------
   if (!b.action && req.headers.get("paypal-transmission-id")) {
     try {
-      const tk = await token();
+      const tk = await token(admin);
       const v = await pp(tk, "/v1/notifications/verify-webhook-signature", {
         auth_algo: req.headers.get("paypal-auth-algo"), cert_url: req.headers.get("paypal-cert-url"),
         transmission_id: req.headers.get("paypal-transmission-id"), transmission_sig: req.headers.get("paypal-transmission-sig"),
-        transmission_time: req.headers.get("paypal-transmission-time"), webhook_id: Deno.env.get("PAYPAL_WEBHOOK_ID"), webhook_event: b,
+        transmission_time: req.headers.get("paypal-transmission-time"), webhook_id: (await cfg(admin)).paypal_webhook_id, webhook_event: b,
       });
       if (v.verification_status !== "SUCCESS") return json({ error: "Firma inválida" }, 401);
       const tipo = String(b.event_type || ""), r = b.resource || {};
@@ -107,7 +118,7 @@ Deno.serve(async (req) => {
     const origen = req.headers.get("origin") || new URL(req.headers.get("referer") || "https://example.com").origin;
     const volver = `${origen}/familia.html#facturacion`;
     let tk: string;
-    try { tk = await token(); } catch { return json({ error: "Los pagos con PayPal todavía no están configurados. Escribinos y te ayudamos." }, 503); }
+    try { tk = await token(admin); } catch { return json({ error: "Los pagos con PayPal todavía no están configurados. Escribinos y te ayudamos." }, 503); }
 
     if (b.action === "suscribir") {
       const { data: t } = await admin.from("tarifas").select("id, cuota_mensual_usd, paypal_plan_id, paypal_plan_usd")
