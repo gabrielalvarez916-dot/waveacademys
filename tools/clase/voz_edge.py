@@ -5,7 +5,7 @@ y el momento de cada palabra (para los subtítulos). No repite frases que ya tie
 Lo corre GitHub Actions (.github/workflows/voz-clases.yml). Variables: VOZ (es-MX-JorgeNeural), RATE (+8%)."""
 import variar, asyncio, base64, glob, hashlib, json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from neutro import convertir
+from neutro import convertir, argentino
 import edge_tts
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
@@ -159,11 +159,12 @@ async def grabar(L, nombre, suf, vz):
 
 
 async def una(src_path):
-    L = json.load(open(src_path, encoding='utf-8'))
-    variar.preparar(L)
-    nombre = L.get('slug') or os.path.basename(src_path)[:-5]
+    crudo = json.load(open(src_path, encoding='utf-8'))
+    nombre = crudo.get('slug') or os.path.basename(src_path)[:-5]
+    L = argentino(crudo); variar.preparar(L)
+    N = convertir(crudo); variar.preparar(N)  # versión en español neutro, con sus partes "neutro"
     await grabar(L, nombre, '', voz_de(L))
-    await grabar(convertir(L), nombre, '.neutro', voz_de(L, True))  # versión en español neutro
+    await grabar(N, nombre, '.neutro', voz_de(L, True))
 
 
 async def main():

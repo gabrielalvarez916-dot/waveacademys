@@ -6,7 +6,7 @@ import os, sys, json, base64, tempfile, urllib.request, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from render_leccion import render
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from neutro import convertir
+from neutro import convertir, argentino
 
 URL = os.environ.get("WAVE_FN_URL", "https://ndglmonqpqpfgeoxatcb.supabase.co/functions/v1/fabrica-pdf")
 TOKEN = os.environ["WAVE_GEN_TOKEN"].strip()
@@ -71,7 +71,7 @@ def main():
         try:
             with tempfile.TemporaryDirectory() as tmp:
                 entrada = os.path.join(tmp, "e.json"); salida = os.path.join(tmp, "s.pdf")
-                contenido = p["contenido"]
+                contenido = argentino(p["contenido"])
                 # imágenes cargadas desde el admin: se guardan como archivo y se enganchan al bloque de imagen que corresponde
                 for k, im in enumerate(p.get("imagenes") or []):
                     try:

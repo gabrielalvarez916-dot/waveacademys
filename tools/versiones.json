@@ -1,0 +1,529 @@
+{
+ "_nota": "Etiqueta de cada misión que no es común (copia de topics.version). La usa revisar_contenido.py antes de subir. La base es la que manda: cargar_mision frena igual.",
+ "materias": {
+  "Ciencias Sociales 3": {
+   "id": "e6a7513a-517a-45cf-b91c-f94b9a2d7c92",
+   "misiones": {
+    "1": "variante",
+    "2": "alternativa",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante",
+    "11": "variante",
+    "12": "variante",
+    "13": "variante",
+    "14": "variante",
+    "15": "variante",
+    "16": "variante",
+    "17": "variante",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciencias Sociales Argentina 3": {
+   "id": "194f5c97-b2a2-4217-accb-8812d331fad9",
+   "misiones": {
+    "1": "variante",
+    "2": "alternativa",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante",
+    "11": "variante",
+    "12": "variante",
+    "13": "variante",
+    "14": "variante",
+    "15": "variante",
+    "16": "variante",
+    "17": "variante",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciencias Sociales 4": {
+   "id": "d6a785d2-30f8-4192-b5eb-4687743ad561",
+   "misiones": {
+    "1": "alternativa",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "11": "variante",
+    "16": "alternativa",
+    "17": "alternativa",
+    "18": "variante",
+    "19": "variante"
+   }
+  },
+  "Ciencias Sociales Argentina 4": {
+   "id": "de024e82-b14d-4b78-9e7c-bc357499a548",
+   "misiones": {
+    "1": "alternativa",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "11": "variante",
+    "16": "alternativa",
+    "17": "alternativa",
+    "18": "variante",
+    "19": "variante"
+   }
+  },
+  "Ciencias Sociales 5": {
+   "id": "79e73cb6-893a-4c24-8d5f-17d8554124ac",
+   "misiones": {
+    "1": "alternativa",
+    "2": "alternativa",
+    "3": "alternativa",
+    "4": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "9": "alternativa",
+    "11": "alternativa",
+    "12": "variante",
+    "13": "alternativa",
+    "14": "alternativa",
+    "15": "alternativa",
+    "16": "alternativa",
+    "17": "alternativa",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciencias Sociales Argentina 5": {
+   "id": "b9c2e232-3612-4bd1-b7fa-9927387b185b",
+   "misiones": {
+    "1": "alternativa",
+    "2": "alternativa",
+    "3": "alternativa",
+    "4": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "9": "alternativa",
+    "11": "alternativa",
+    "12": "variante",
+    "13": "alternativa",
+    "14": "alternativa",
+    "15": "alternativa",
+    "16": "alternativa",
+    "17": "alternativa",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciencias Sociales 6": {
+   "id": "3abb7786-f01d-43ef-8d82-35af22174712",
+   "misiones": {
+    "1": "alternativa",
+    "2": "alternativa",
+    "3": "alternativa",
+    "4": "variante",
+    "5": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "8": "alternativa",
+    "9": "variante",
+    "10": "variante",
+    "11": "variante",
+    "12": "variante",
+    "13": "variante",
+    "14": "variante",
+    "16": "variante",
+    "17": "variante",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciencias Sociales Argentina 6": {
+   "id": "bf372985-3143-4445-b673-9e3d1b1def86",
+   "misiones": {
+    "1": "alternativa",
+    "2": "alternativa",
+    "3": "alternativa",
+    "4": "variante",
+    "5": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "8": "alternativa",
+    "9": "variante",
+    "10": "variante",
+    "11": "variante",
+    "12": "variante",
+    "13": "variante",
+    "14": "variante",
+    "16": "variante",
+    "17": "variante",
+    "18": "variante",
+    "19": "variante",
+    "20": "variante"
+   }
+  },
+  "Ciudadanía I": {
+   "id": "a549d16a-c872-4df7-b243-e4b508bd8668",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciudadanía I Argentina": {
+   "id": "12ad4407-379c-40ab-9288-197c8c765bdf",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciudadanía II": {
+   "id": "1dd48a43-2dd7-47d4-908c-0d48afacc0b8",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "8": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciudadanía II Argentina": {
+   "id": "6a7c86b7-d3b2-4f27-b1c2-3a55d60bb837",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "alternativa",
+    "7": "variante",
+    "8": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciudadanía IV": {
+   "id": "b8e83e60-8b66-48ac-93da-f75bc9d47c2f",
+   "misiones": {
+    "1": "variante",
+    "2": "alternativa",
+    "3": "variante",
+    "4": "variante",
+    "5": "alternativa",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciudadanía IV Argentina": {
+   "id": "5b66a34c-f808-466d-886f-c91ffedfd2a5",
+   "misiones": {
+    "1": "variante",
+    "2": "alternativa",
+    "3": "variante",
+    "4": "variante",
+    "5": "alternativa",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "10": "variante"
+   }
+  },
+  "Historia III": {
+   "id": "3b8fc2ee-aa92-43e7-b7a2-5143dbd1b8da",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "alternativa",
+    "4": "alternativa",
+    "7": "variante",
+    "8": "variante",
+    "10": "variante"
+   }
+  },
+  "Historia III Argentina": {
+   "id": "4bdb596e-d4cd-489b-bd5b-0f5788ec083c",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "alternativa",
+    "4": "alternativa",
+    "7": "variante",
+    "8": "variante",
+    "10": "variante"
+   }
+  },
+  "Geografía IV": {
+   "id": "9bac3c5c-015d-499d-92d0-d0b0ebb2adc9",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "alternativa",
+    "10": "variante"
+   }
+  },
+  "Geografía IV Argentina": {
+   "id": "2fd27a2f-5c99-4e6c-88dd-8c5f20c17037",
+   "misiones": {
+    "1": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante",
+    "2": "alternativa",
+    "10": "variante"
+   }
+  },
+  "Ciencias Sociales": {
+   "id": "05067075-1a03-4a84-b7db-d2260a1185fe",
+   "misiones": {
+    "9": "variante",
+    "10": "variante"
+   }
+  },
+  "Ciencias Sociales 1": {
+   "id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+   "misiones": {
+    "10": "variante"
+   }
+  },
+  "Ciencias Sociales 2": {
+   "id": "dda5fe04-3df1-47cd-bcb6-a27259db9f3d",
+   "misiones": {
+    "6": "variante",
+    "7": "variante"
+   }
+  },
+  "Ciencias Sociales Integradas I": {
+   "id": "a5f9b6fc-7f3b-4743-977d-da7f4f3a37bb",
+   "misiones": {
+    "1": "variante",
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "5": "variante",
+    "6": "variante"
+   }
+  },
+  "Historia II": {
+   "id": "30ce98fb-9df6-4172-bbfd-6f9644a19d72",
+   "misiones": {
+    "5": "variante",
+    "6": "variante"
+   }
+  },
+  "Historia IV": {
+   "id": "fecef857-d1a0-4b05-a2ea-35a590d64339",
+   "misiones": {
+    "5": "variante",
+    "6": "variante",
+    "9": "variante"
+   }
+  },
+  "Historia V": {
+   "id": "58553374-6da1-46c1-b411-2a53ceb25fb5",
+   "misiones": {
+    "2": "variante",
+    "3": "variante",
+    "5": "variante",
+    "10": "variante"
+   }
+  },
+  "Biología I": {
+   "id": "9d7d5f10-978c-46ba-a22c-737fcd78d29c",
+   "misiones": {
+    "7": "variante"
+   }
+  },
+  "Biología III": {
+   "id": "12e9a76e-6082-45bb-beae-e88e12637e34",
+   "misiones": {
+    "3": "alternativa"
+   }
+  },
+  "Biología IV": {
+   "id": "735afc76-575f-4591-9017-05c91a586d30",
+   "misiones": {
+    "3": "variante"
+   }
+  },
+  "Ciencias Naturales 3": {
+   "id": "6d524570-8953-4105-9fc4-f937d67f13b3",
+   "misiones": {
+    "6": "variante"
+   }
+  },
+  "Ciencias Naturales 5": {
+   "id": "06dd61d2-a4bf-4d6d-b91a-dabb8bb63555",
+   "misiones": {
+    "4": "variante"
+   }
+  },
+  "Ciencias Naturales Aplicadas I": {
+   "id": "a9094264-f8aa-492c-9260-9a98d2693c9c",
+   "misiones": {
+    "9": "alternativa"
+   }
+  },
+  "Ciencias Naturales Integradas I": {
+   "id": "9fa85d7b-ee7a-4853-8486-a69f9b539c12",
+   "misiones": {
+    "6": "variante"
+   }
+  },
+  "Bienestar II": {
+   "id": "875f671a-23c8-4114-b85b-fb5aab03947e",
+   "misiones": {
+    "2": "variante",
+    "3": "variante",
+    "4": "variante",
+    "7": "variante",
+    "8": "variante",
+    "9": "variante"
+   }
+  },
+  "Bienestar IV": {
+   "id": "b447505a-2532-4991-aedd-40bdb1272709",
+   "misiones": {
+    "8": "variante",
+    "9": "variante"
+   }
+  },
+  "Bienestar V": {
+   "id": "65d68509-90f8-4d68-b278-e93f5da06dab",
+   "misiones": {
+    "2": "variante",
+    "4": "variante"
+   }
+  },
+  "Economía I": {
+   "id": "61fbce01-1a10-4014-ba10-29313fe306bc",
+   "misiones": {
+    "6": "variante",
+    "7": "variante",
+    "8": "variante"
+   }
+  },
+  "Lengua 2": {
+   "id": "71a9ccdf-909e-4fbd-84e4-a68e9be813c8",
+   "misiones": {
+    "18": "variante",
+    "23": "variante",
+    "24": "variante"
+   }
+  },
+  "Lengua 3": {
+   "id": "7eb3b4aa-2c61-4c92-8846-1ba7a4568825",
+   "misiones": {
+    "17": "variante"
+   }
+  },
+  "Lengua 4": {
+   "id": "25c3a7a5-618e-4433-97d6-bc7ab02d3592",
+   "misiones": {
+    "21": "variante"
+   }
+  },
+  "Lengua 5": {
+   "id": "1ed0e028-df26-4ac1-9d6d-0f222a60861f",
+   "misiones": {
+    "8": "variante"
+   }
+  },
+  "Lengua 6": {
+   "id": "e7ecd6a3-f6a2-446a-a77f-9a8ebe678874",
+   "misiones": {
+    "4": "variante",
+    "5": "variante"
+   }
+  },
+  "Lengua y Literatura V": {
+   "id": "0ba0c0bf-dd6a-41ee-977c-5ea5b94fb07c",
+   "misiones": {
+    "2": "alternativa"
+   }
+  },
+  "Lengua y Literatura VI": {
+   "id": "ef7b72a1-86cf-4695-9d47-5d8d27e59037",
+   "misiones": {
+    "2": "alternativa",
+    "7": "variante"
+   }
+  },
+  "Matemática 1": {
+   "id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3",
+   "misiones": {
+    "7": "variante"
+   }
+  },
+  "Matemática 2": {
+   "id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920",
+   "misiones": {
+    "6": "variante"
+   }
+  },
+  "Matemática 3": {
+   "id": "651eda34-d09a-45f2-82bf-e28abcc0c9ae",
+   "misiones": {
+    "4": "variante"
+   }
+  },
+  "Matemática 4": {
+   "id": "9fdd8a59-dca2-4598-b54c-67541ef50d63",
+   "misiones": {
+    "19": "variante"
+   }
+  },
+  "Matemática 5": {
+   "id": "3e41dddf-0994-43a9-9640-d89a868228c6",
+   "misiones": {
+    "19": "variante"
+   }
+  }
+ }
+}

@@ -36,7 +36,7 @@ def tema_de(materia):
     return None
 
 sys.path.insert(0, os.path.dirname(AQUI))
-from neutro import convertir
+from neutro import convertir, argentino
 
 def armar(L, slug, suf, outs):
     voz = os.path.join(AQUI, 'voz', slug + suf + '.json')
@@ -53,10 +53,11 @@ def armar(L, slug, suf, outs):
 
 pedidas = sys.argv[1:]
 for path in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json'))) + (sorted(glob.glob(os.path.join(AQUI, 'pruebas', '*.json'))) if pedidas else []):
-    L = json.load(open(path, encoding='utf-8'))
-    slug = L.get('slug') or os.path.basename(path)[:-5]
-    variar.preparar(L)
+    crudo = json.load(open(path, encoding='utf-8'))
+    slug = crudo.get('slug') or os.path.basename(path)[:-5]
     if pedidas and slug not in pedidas:
         continue
+    L = argentino(crudo); variar.preparar(L)
+    N = convertir(crudo); variar.preparar(N)  # versión en español neutro (alumnos de otros países), con sus partes "neutro"
     armar(L, slug, '', (os.path.join(RAIZ, 'actividades', 'clases', slug + '.html'), os.path.join(AQUI, 'dist', slug + '.html')))
-    armar(convertir(L), slug, '.neutro', (os.path.join(AQUI, 'dist', slug + '.neutro.html'),))  # versión en español neutro (alumnos de otros países)
+    armar(N, slug, '.neutro', (os.path.join(AQUI, 'dist', slug + '.neutro.html'),))

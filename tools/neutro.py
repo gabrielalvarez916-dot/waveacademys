@@ -85,11 +85,29 @@ NO_TOCAR = {'t', 'slug', 'step_id', 'subject_id', 'emoji', 'final', 'color', 'zo
 
 
 def convertir(o, clave=None):
+    """Versión neutra. En las misiones VARIANTE, cualquier bloque puede traer "neutro": {...} con lo que cambia para
+    alumnos de otros países (se escribe ya en neutro); acá reemplaza a lo argentino."""
     if isinstance(o, str):
         return o if clave in NO_TOCAR or o.startswith('data:') or (len(o) > 3000 and ' ' not in o[:200]) else neutro(o)
     if isinstance(o, list): return [convertir(x, clave) for x in o]
-    if isinstance(o, dict): return {k: convertir(v, k) for k, v in o.items()}
+    if isinstance(o, dict):
+        r = {k: convertir(v, k) for k, v in o.items() if k != 'neutro'}
+        if isinstance(o.get('neutro'), dict): r.update(convertir(o['neutro']))
+        return r
     return o
+
+
+def argentino(o):
+    """Versión argentina: se sacan los bloques "neutro"."""
+    if isinstance(o, list): return [argentino(x) for x in o]
+    if isinstance(o, dict): return {k: argentino(v) for k, v in o.items() if k != 'neutro'}
+    return o
+
+
+def tiene_neutro(o):
+    if isinstance(o, list): return any(tiene_neutro(x) for x in o)
+    if isinstance(o, dict): return 'neutro' in o or any(tiene_neutro(v) for v in o.values())
+    return False
 
 
 def textos(o, clave=None):
@@ -98,7 +116,8 @@ def textos(o, clave=None):
     elif isinstance(o, list):
         for x in o: yield from textos(x, clave)
     elif isinstance(o, dict):
-        for k, v in o.items(): yield from textos(v, k)
+        for k, v in o.items():
+            if k != 'neutro': yield from textos(v, k)
 
 
 def revisar(o):

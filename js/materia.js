@@ -78,9 +78,11 @@
     var iw = await sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle();
     var introWave = iw.data && iw.data.value && iw.data.value.uid ? iw.data.value : null;
 
-    var tem = await sb.from('topics').select('id, title, position, lessons(id, title, position)').eq('subject_id', materiaId).order('position');
+    var tem = await sb.from('topics').select('id, title, position, solo_para, lessons(id, title, position)').eq('subject_id', materiaId).order('position');
     if (tem.error) throw tem.error;
-    var temas = tem.data.map(function (t) {
+    var temas = tem.data.filter(function (t) { // misiones alternativas: cada alumno ve la de su país
+      return !t.solo_para || t.solo_para === (neutro ? 'internacional' : 'argentina');
+    }).map(function (t) {
       return { id: t.id, titulo: t.title, posicion: t.position,
         lecciones: (t.lessons || []).slice().sort(function (a, b) { return a.position - b.position; })
           .map(function (l) { return { id: l.id, titulo: l.title, tema: t.id }; }) };

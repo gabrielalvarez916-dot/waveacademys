@@ -48,7 +48,28 @@ if mis:
             if q.get('t') == 'keywords' and isinstance(q.get('r'), dict): E(f'mision {mis["tema"]} act {n}', 'escritura con palabras clave: tiene que corregirla la IA (r como texto de referencia)')
 # versión neutra: toda palabra que parezca voseo tiene que estar en el diccionario de tools/neutro.py
 sys.path.insert(0, os.path.dirname(os.path.dirname(AQUI)) + '/tools')
-from neutro import revisar as _rev_neutro
+from neutro import revisar as _rev_neutro, tiene_neutro
+# etiqueta de cada misión (común / variante / alternativa): la parte para alumnos de otros países no se puede olvidar
+_VER = json.load(open(os.path.join(os.path.dirname(AQUI), 'versiones.json'), encoding='utf-8'))['materias']
+def _version(materia, n):
+    return (_VER.get(materia) or {}).get('misiones', {}).get(str(n), 'comun')
+_POR_ID = {v['id']: k for k, v in _VER.items()}
+for slug in args:
+    L = json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8'))
+    m = re.search(r'Misión (\d+)', L.get('sub', ''))
+    v = _version(L.get('materia'), m.group(1)) if m else 'comun'
+    if v == 'variante' and not tiene_neutro(L) and not L.get('sin_variante'):
+        E(slug, 'la misión es VARIANTE: faltan las partes "neutro" para alumnos de otros países (o "sin_variante": true si esta clase es igual para todos)')
+    if v == 'alternativa' and not L.get('alternativa_de'):
+        alt = L.get('alternativa')
+        if not alt or not os.path.exists(os.path.join(AQUI, 'lecciones', alt + '.json')):
+            E(slug, 'la misión es ALTERNATIVA: falta la clase para alumnos de otros países ("alternativa": "<slug>" con su archivo en lecciones/)')
+if mis:
+    v = _version(_POR_ID.get(mis.get('subject_id')), mis.get('tema'))
+    if v == 'variante' and not tiene_neutro({k: x for k, x in mis.items() if k != 'alternativa'}):
+        E(f'mision {mis["tema"]}', 'la misión es VARIANTE: faltan las partes "neutro" (PDF, actividades o examen) para alumnos de otros países')
+    if v == 'alternativa' and not isinstance(mis.get('alternativa'), dict):
+        E(f'mision {mis["tema"]}', 'la misión es ALTERNATIVA: falta "alternativa" con la misión entera para alumnos de otros países')
 for slug in args:
     r = _rev_neutro(json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8')))
     if r: E(slug, 'voseo sin pasar al diccionario neutro (agregar a MAPA u OK en tools/neutro.py): ' + ' '.join(r))

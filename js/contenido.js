@@ -43,7 +43,7 @@
       sb.from('levels').select('id, slug, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
       todo(function () { return sb.from('subjects').select('id, grade_id, name, color, position, intro_video_uid').order('position').order('id'); }),
-      todo(function () { return sb.from('topics').select('id, subject_id, title, position, is_published').order('position').order('id'); }),
+      todo(function () { return sb.from('topics').select('id, subject_id, title, position, is_published, version, solo_para').order('position').order('id'); }),
       todo(function () { return sb.from('subject_load_config').select('subject_id, tier, hours_total, topics_total').order('subject_id'); }),
       sb.from('load_tiers').select('tier, label'),
       sb.from('app_settings').select('value').eq('key', 'intro_wave').maybeSingle()
@@ -213,6 +213,13 @@
       '<span class="wv-carp-ico">📁</span><span class="wv-carp-t"><b>' + esc(titulo) + '</b><small>' + esc(detalle) + '</small></span>' +
       etiqueta(estado) + '</button>' + (extra || '') + '</div>';
   }
+  // Etiqueta de la misión para alumnos de otros países (topics.version). La carga de misiones no deja subir una
+  // variante sin sus partes "neutro" ni una alternativa sin su misión para extranjeros.
+  function versionTxt(t) {
+    if (t.version === 'variante') return '🔀 VARIANTE: lleva partes distintas para extranjeros';
+    if (t.version === 'alternativa') return t.solo_para === 'internacional' ? '↔️ ALTERNATIVA: versión para extranjeros' : t.solo_para === 'argentina' ? '↔️ ALTERNATIVA: versión argentina' : '↔️ ALTERNATIVA: lleva otra misión para extranjeros';
+    return '🌎 COMÚN';
+  }
   function herr(tipo, id, i, n, extra) {
     return '<span class="wv-herr">' + (extra || '') +
       '<button type="button" class="wv-ico" title="Subir" data-acc="mov:' + tipo + ':' + id + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button>' +
@@ -252,7 +259,9 @@
       var ts = temasDe(s.id);
       var ls = ts.reduce(function (a, t) { return a + ((S.info[t.id] || {}).lessons || 0); }, 0);
       var c = S.cargas[s.id];
-      var det = (c ? S.tiers[c.tier] + ' · ' : '') + ts.length + (c ? ' de ' + c.topics_total : '') + ' misiones · ' + ls + ' niveles';
+      var nv = ts.filter(function (t) { return t.version === 'variante'; }).length, na = ts.filter(function (t) { return t.version === 'alternativa'; }).length;
+      var det = (c ? S.tiers[c.tier] + ' · ' : '') + ts.length + (c ? ' de ' + c.topics_total : '') + ' misiones · ' + ls + ' niveles' +
+        (nv || na ? ' · para extranjeros: ' + [nv ? nv + (nv === 1 ? ' variante' : ' variantes') : '', na ? na + (na === 1 ? ' alternativa' : ' alternativas') : ''].filter(Boolean).join(' y ') : ' · común para todos');
       return carpeta('subject', s.id, s.name, det, estadoMateria(s.id));
     }).join('') + '</div>';
   }
@@ -280,7 +289,7 @@
     return h + '<div class="wv-carps">' + ts.map(function (t, i) {
       var f = S.info[t.id] || {};
       var pub = '<button type="button" class="wv-ico wv-pub ' + (t.is_published ? 'on' : '') + '" data-acc="pub:topic:' + t.id + '" title="' + (t.is_published ? 'Visible para el alumno (tocá para ocultar)' : 'Oculto para el alumno (tocá para publicar)') + '">' + (t.is_published ? '👁 Visible' : '🚫 Oculto') + '</button>';
-      return carpeta('topic', t.id, t.title, (f.lessons || 0) + ' niveles · videos ' + (f.tiene_video ? 'cargados' : 'sin cargar') + ' · nivel jefe ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length, pub));
+      return carpeta('topic', t.id, t.title, versionTxt(t) + ' · ' + (f.lessons || 0) + ' niveles · videos ' + (f.tiene_video ? 'cargados' : 'sin cargar') + ' · nivel jefe ' + (f.tiene_examen ? 'creado' : 'sin crear'), estadoTema(t.id), herr('topic', t.id, i, ts.length, pub));
     }).join('') + '</div>';
   }
   function vLecciones() {

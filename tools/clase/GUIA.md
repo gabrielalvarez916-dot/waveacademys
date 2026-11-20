@@ -124,3 +124,18 @@ La ve el alumno según su **país** (`students.pais`): Argentina → voseo; otro
 - Clases: `armar.py` arma `dist/<slug>.html` y `dist/<slug>.neutro.html`; `voz_edge.py` graba `voz/<slug>.json` y `voz/<slug>.neutro.json`.
 - PDF: `tools/pdf/generar.py` arma también el PDF neutro de cada lección (`content.r2_key_neutro` del paso PDF).
 - Si `revisar_contenido.py` avisa "voseo sin pasar al diccionario neutro", hay que sumar la palabra a `MAPA` (si es voseo) o a `OK` (si no lo es) en `tools/neutro.py`.
+
+### Misiones COMÚN, VARIANTE y ALTERNATIVA (para alumnos de otros países)
+
+Cada misión tiene su etiqueta en `topics.version` (copia en `tools/versiones.json`); se ve en el panel de Contenidos.
+- **Común**: se escribe una vez; la versión neutra sale sola (voseo → tuteo).
+- **Variante**: en el mismo archivo, cada bloque que cambia lleva al lado su parte para extranjeros con la clave `"neutro"`, ya escrita en neutro:
+  - clase: `{"t": "definicion", "palabra": "Mar argentino", "texto": "...", "voz": [...], "neutro": {"palabra": "Mar territorial", "texto": "...", "voz": [...]}}`
+  - PDF / actividades / examen: igual, en cualquier bloque o pregunta (`"neutro": {"texto": ...}`, `"neutro": {"p": ..., "o": ..., "r": ...}`).
+  - Una clase de una misión variante que es igual para todos lleva `"sin_variante": true` (decisión consciente).
+- **Alternativa**: el extranjero hace otra misión en ese lugar.
+  - El archivo de la misión trae `"alternativa": {...}` con la misión entera para extranjeros (niveles, act, examen, practica, examen_titulo, titulo, lecciones).
+  - `cargar_mision` la carga sola en su par (la misión de la otra versión de la materia o una misión hermana solo para internacionales que crea en el momento).
+  - Cada clase argentina lleva `"alternativa": "<slug de la clase para extranjeros>"`, y esa clase lleva `"alternativa_de": "<slug argentino>"`.
+
+**Controles**: `revisar_contenido.py` avisa antes de subir y `cargar_mision` **no carga** una variante sin partes `"neutro"` ni una alternativa sin `"alternativa"`.
