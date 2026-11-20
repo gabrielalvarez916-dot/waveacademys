@@ -792,10 +792,10 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   T.parrafo = { n: function (d) { return 1 + d.marcas.length; }, armar: function (g, tl, B, d) {
     var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, o = w.pieza(g, 0, 0), x0 = 380, y0 = 360;
     w.el('rect', { x: 340, y: 320, width: 1240, height: 90 + d.lineas.length * 72, rx: 16, fill: '#fbf8ff', stroke: '#bdb2d6', 'stroke-width': 3 }, o);
-    var X = d.lineas.map(function (t, i) { var x = x0 + (d.sangria !== false && i === 0 ? 70 : 0), tx = w.txt(o, x, y0 + 40 + i * 72, t, 38, '#241a40'); tx.setAttribute('text-anchor', 'start'); return [x, x + t.length * 17.5]; });
-    var P = d.marcas.map(function (m, k) { var col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), i = m.linea, mx = m.pos === 'fin' ? X[i][1] : X[i][0] + 10, my = y0 + 30 + i * 72;
+    var X = d.lineas.map(function (t, i) { var x = x0 + (d.sangria !== false && i === 0 ? 70 : 0), tx = w.txt(o, x, y0 + 40 + i * 72, t, 38, '#241a40'); tx.setAttribute('text-anchor', 'start'); var lw = 0; try { lw = tx.getComputedTextLength(); } catch (e) {} return [x, x + (lw > 0 ? lw : t.length * 17.5)]; });
+    var P = d.marcas.map(function (m, k) { var col = W.PAL[k % W.PAL.length], gr = w.pieza(g, 0, 0), i = m.linea, mx = m.pos === 'fin' ? X[i][1] - 14 : X[i][0] + 12, my = y0 + 30 + i * 72;
       if (m.pos === 'sangria') { mx = x0 + 35; w.el('line', { x1: x0, y1: my, x2: x0 + 60, y2: my, stroke: col, 'stroke-width': 6, 'marker-end': '' }, gr); }
-      else w.el('circle', { cx: mx, cy: my, r: 30, fill: 'none', stroke: col, 'stroke-width': 6 }, gr);
+      else w.el('circle', { cx: mx, cy: my + 6, r: m.pos === 'fin' ? 18 : 30, fill: 'none', stroke: col, 'stroke-width': 6 }, gr);
       var ly = 320 + 90 + d.lineas.length * 72 + 60 + k * 86, tw = Math.max(220, m.txt.length * 19 + 50), lx = Math.max(tw / 2 + 20, Math.min(1900 - tw / 2, mx));
       w.el('line', { x1: mx, y1: my + 32, x2: lx, y2: ly - 36, stroke: col, 'stroke-width': 4 }, gr); w.caja(gr, lx, ly, tw, 72, 'rgba(14,10,26,.92)', col, 30, 4); w.txt(gr, lx, ly, m.txt, 30, '#fff'); return gr; });
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, o, ti ? '<.1' : 0, { scale: .95, y: 0 });
