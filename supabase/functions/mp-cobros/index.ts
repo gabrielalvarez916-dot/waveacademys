@@ -1,4 +1,12 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
+// Matrícula: desde noviembre se cobra la del año siguiente. Pagando antes de febrero de ese año, va el precio anticipado.
+function matriculaHoy(mat: any) {
+  const hoy = new Date(), mes = hoy.getMonth() + 1, anioHoy = hoy.getFullYear();
+  const anio = mes >= (Number(mat.abre_mes) || 11) ? anioHoy + 1 : anioHoy;
+  const anticipada = anio > anioHoy || mes < (Number(mat.anticipado_hasta_mes) || 2);
+  const usd = anticipada && Number(mat.monto_anticipado_usd) ? Number(mat.monto_anticipado_usd) : Number(mat.monto_usd) || 0;
+  return { anio, usd, anticipada };
+}
 
 // COBROS CON MERCADO PAGO, desde las tarifas de la base (tabla tarifas + app_settings 'matricula' y 'dolar').
 // Lo llama el panel de la familia (con su sesión). Acciones (POST):
@@ -69,7 +77,7 @@ Deno.serve(async (req) => {
     const { data: cfg } = await admin.from("app_settings").select("key, value").in("key", ["dolar", "matricula"]);
     const dolar = Number((cfg || []).find((c: any) => c.key === "dolar")?.value?.ars_por_usd) || 0;
     const mat = (cfg || []).find((c: any) => c.key === "matricula")?.value || {};
-    const anio = new Date().getFullYear();
+    const { anio, usd: matUsd, anticipada } = matriculaHoy(mat);
     const aPesos = (usd: number) => Math.round(usd * dolar);
 
     if (b.action === "precios") {
@@ -77,7 +85,7 @@ Deno.serve(async (req) => {
       const { data: m } = await admin.from("matriculas").select("status").eq("family_id", fam.id).eq("anio", anio);
       return json({
         tarifas: (t || []).map((x: any) => ({ ...x, cuota_mensual_ars: aPesos(Number(x.cuota_mensual_usd)) })),
-        matricula: { monto_usd: Number(mat.monto_usd) || 0, monto_ars: aPesos(Number(mat.monto_usd) || 0), cuotas_max: Number(mat.cuotas_max) || 1,
+        matricula: { anio, anticipada, monto_usd: matUsd, monto_ars: aPesos(matUsd), monto_lleno_usd: Number(mat.monto_usd) || 0, cuotas_max: Number(mat.cuotas_max) || 1,
           pagada: (m || []).some((x: any) => x.status === "approved") },
         dolar,
       });
@@ -124,7 +132,7 @@ Deno.serve(async (req) => {
     if (b.action === "matricula") {
       const { data: ya } = await admin.from("matriculas").select("id, status").eq("family_id", fam.id).eq("anio", anio);
       if ((ya || []).some((x: any) => x.status === "approved")) return json({ error: `La matrícula ${anio} ya está paga` }, 409);
-      const usd = Number(mat.monto_usd) || 0, ars = aPesos(usd), cuotas = Number(mat.cuotas_max) || 1;
+      const usd = matUsd, ars = aPesos(usd), cuotas = Number(mat.cuotas_max) || 1;
       if (!usd) return json({ error: "Falta el monto de la matrícula en la configuración" }, 500);
       const { data: m, error } = await admin.from("matriculas")
         .insert({ family_id: fam.id, anio, monto_usd: usd, monto_ars: ars, cuotas_max: cuotas }).select("id").single();

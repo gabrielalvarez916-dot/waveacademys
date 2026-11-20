@@ -1,4 +1,12 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
+// Matrícula: desde noviembre se cobra la del año siguiente. Pagando antes de febrero de ese año, va el precio anticipado.
+function matriculaHoy(mat: any) {
+  const hoy = new Date(), mes = hoy.getMonth() + 1, anioHoy = hoy.getFullYear();
+  const anio = mes >= (Number(mat.abre_mes) || 11) ? anioHoy + 1 : anioHoy;
+  const anticipada = anio > anioHoy || mes < (Number(mat.anticipado_hasta_mes) || 2);
+  const usd = anticipada && Number(mat.monto_anticipado_usd) ? Number(mat.monto_anticipado_usd) : Number(mat.monto_usd) || 0;
+  return { anio, usd, anticipada };
+}
 
 // COBROS CON PAYPAL, EN DÓLARES (familias de otros países). Precios de la tabla tarifas y de app_settings 'matricula'.
 // Desde el panel de la familia (con su sesión), POST:
@@ -159,11 +167,10 @@ Deno.serve(async (req) => {
     }
 
     if (b.action === "matricula") {
-      const anio = new Date().getFullYear();
+      const { data: c } = await admin.from("app_settings").select("value").eq("key", "matricula").single();
+      const { anio, usd } = matriculaHoy(c?.value || {});
       const { data: ya } = await admin.from("matriculas").select("status").eq("family_id", fam.id).eq("anio", anio);
       if ((ya || []).some((x: any) => x.status === "approved")) return json({ error: `La matrícula ${anio} ya está paga` }, 409);
-      const { data: c } = await admin.from("app_settings").select("value").eq("key", "matricula").single();
-      const usd = Number((c?.value as any)?.monto_usd) || 0;
       if (!usd) return json({ error: "Falta el monto de la matrícula en la configuración" }, 500);
       const { data: m, error } = await admin.from("matriculas")
         .insert({ family_id: fam.id, anio, monto_usd: usd, monto_ars: 0, cuotas_max: 1, proveedor: "paypal" }).select("id").single();

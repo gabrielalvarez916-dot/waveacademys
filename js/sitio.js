@@ -86,7 +86,8 @@
     }).join('');
     tabla.innerHTML = '<thead>' + head + '</thead><tbody>' + body + '</tbody>';
     var mat = document.getElementById('planes-matricula');
-    if (mat && datos.matricula) mat.textContent = 'Matrícula anual: ' + (ar ? ars(datos.matricula) + ' (USD ' + datos.matricula + ')' : 'USD ' + datos.matricula) + ', en hasta ' + (datos.cuotas_matricula || 2) + ' cuotas.';
+    function m$(u) { return ar ? ars(u) + ' (USD ' + u + ')' : 'USD ' + u; }
+    if (mat && datos.matricula) mat.textContent = 'Matrícula anual: ' + m$(datos.matricula) + (datos.matricula_anticipada ? '. Pagando antes de febrero: ' + m$(datos.matricula_anticipada) : '') + (ar ? '. Hasta ' + (datos.cuotas_matricula || 2) + ' cuotas.' : '.');
   }
   document.querySelectorAll('[data-pais],[data-nivel-btn]').forEach(function (b) {
     b.addEventListener('click', function () {

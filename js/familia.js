@@ -904,11 +904,11 @@
     box.innerHTML =
       '<p class="fa-pais">País: <b>' + esc(PAIS_FAM || 'Argentina') + '</b> · ' + (arg ? 'pagás en pesos con Mercado Pago' : 'pagás en dólares con PayPal') +
         ' · <button type="button" class="fa-link" id="fa-cambiar-pais">Cambiar</button></p>' +
-      '<section class="fa-card"><h2>Matrícula ' + new Date().getFullYear() + '</h2>' +
-        (m.pagada ? '<p class="fa-aviso">✓ La matrícula de este año ya está paga.</p>'
-          : arg ? '<p class="fa-intro">' + esc(dinero(m.monto_ars, 'ARS')) + ' por año, en hasta ' + m.cuotas_max + ' cuotas con tarjeta.</p>' +
+      '<section class="fa-card"><h2>Matrícula ' + (m.anio || new Date().getFullYear()) + '</h2>' +
+        (m.pagada ? '<p class="fa-aviso">✓ La matrícula ' + (m.anio || '') + ' ya está paga.</p>'
+          : arg ? '<p class="fa-intro">' + esc(dinero(m.monto_ars, 'ARS')) + ' por año, en hasta ' + m.cuotas_max + ' cuotas con tarjeta' + (m.anticipada ? ' (precio por pago antes de febrero)' : '') + '.</p>' +
               '<button type="button" class="boton fa-boton" id="fa-pagar-mat">Pagar con Mercado Pago</button>'
-            : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año, en un pago.</p>' +
+            : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año, en un pago' + (m.anticipada ? ' (precio por pago antes de febrero)' : '') + '.</p>' +
               '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-mat-pp">Pagar con PayPal</button>') +
       '</section>' +
       '<section class="fa-card"><h2>Sumar una suscripción</h2>' +
