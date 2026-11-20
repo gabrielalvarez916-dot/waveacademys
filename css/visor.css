@@ -104,3 +104,12 @@ body.wvp-abierto { overflow: hidden; }
 .wve-base { overflow: visible; }
 .wve-quitado:first-child { border-radius: 8px 0 0 8px; }
 .wve-lista:empty { display: none; }
+
+/* Clase a pantalla completa */
+.wvp-caja:fullscreen { width: 100vw; height: 100vh; border-radius: 0; }
+.wvp-caja:-webkit-full-screen { width: 100vw; height: 100vh; border-radius: 0; }
+.wvp.wvp-full { padding: 0; background: #000; }
+.wvp.wvp-full .wvp-caja { width: 100vw; height: 100dvh; border-radius: 0; }
+@media (orientation: portrait) and (max-width: 900px) {
+  .wvp.wvp-full .wvp-caja { width: 100dvh; height: 100vw; transform: rotate(90deg); }
+}

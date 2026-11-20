@@ -603,13 +603,25 @@
     el.className = 'wvp';
     el.innerHTML =
       '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(titulo) + ' · Clase</b>' +
+      '<button type="button" class="wvp-b" data-full="1" aria-label="Pantalla completa" title="Pantalla completa">⛶</button>' +
       '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
       '<div class="mt-marco"><iframe title="Clase" allow="autoplay; fullscreen" sandbox="allow-scripts allow-forms"></iframe></div></div>';
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
     frame.srcdoc = r.data.html;
+    function enFull() { return document.fullscreenElement || document.webkitFullscreenElement; }
+    function pantallaCompleta() { // API de pantalla completa; si no existe (iPhone), ocupa toda la pantalla y gira en vertical
+      var c = el.querySelector('.wvp-caja');
+      if (enFull()) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+      if (el.classList.contains('wvp-full')) { el.classList.remove('wvp-full'); return; }
+      var rq = c.requestFullscreen || c.webkitRequestFullscreen;
+      if (!rq) { el.classList.add('wvp-full'); return; }
+      Promise.resolve(rq.call(c)).then(function () { try { screen.orientation.lock('landscape').catch(function () {}); } catch (_) {} })
+        .catch(function () { el.classList.add('wvp-full'); });
+    }
     function cerrar() {
+      if (enFull()) try { (document.exitFullscreen || document.webkitExitFullscreen).call(document); } catch (_) {}
       window.removeEventListener('message', alMensaje);
       try { frame.contentWindow.postMessage({ tipo: 'wave-clase-stop' }, '*'); } catch (_) {}
       try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (_) {}
@@ -621,7 +633,7 @@
       if (paso) marcar(paso); toast(paso ? '¡Clase terminada! 🎉' : '¡Listo! Ahora empezá la misión 1 🚀');
     }
     window.addEventListener('message', alMensaje);
-    el.addEventListener('click', function (ev) { if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar(); });
+    el.addEventListener('click', function (ev) { if (ev.target.closest('[data-full]')) return pantallaCompleta(); if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar(); });
   }
 
   // ---------- Actividad interactiva (HTML en un marco aislado) ----------
