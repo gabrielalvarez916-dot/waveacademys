@@ -3,7 +3,7 @@ import json, sys, os, re
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 MESES = r'\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)\b'
-PROD = r'^(escribo|corrijo|reescribo)\b'  # solo producción escrita de Lengua
+PROD = r'^(escribo mi|escribo un|corrijo mi)\b'  # solo producción escrita de Lengua
 src = open(os.path.join(AQUI, 'voz_edge.py'), encoding='utf-8').read()
 PRON = set(re.findall(r"'([^']+)':", src[src.index('PRONUNCIA'):src.index('def pronuncia')]))
 EXTR = re.compile(r"\b[A-Z][a-zA-Z]*(?:w|W|sh|th|ck|y\b)[a-zA-Z]*\b")
@@ -35,8 +35,8 @@ for slug in args:
             for w in EXTR.findall(v.replace('*', '')):
                 if w not in PRON and not any(w in p for p in PRON) and w.lower() not in ('hay', 'muy', 'hoy', 'voy', 'soy', 'estoy', 'ley', 'rey', 'yo', 'ya', 'yerba', 'uruguay', 'paraguay'):
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')
-    if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == '¿DÓNDE LO ESCRIBO?' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
-        E(slug, 'nivel de producción sin escena "¿DÓNDE LO ESCRIBO?"')
+    if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == 'TU TURNO' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
+        E(slug, 'nivel de producción sin escena "TU TURNO" que diga la tarea concreta')
 if mis:
     for n, c in mis['niveles'].items():
         s = f'mision {mis["tema"]} nivel {n}'
