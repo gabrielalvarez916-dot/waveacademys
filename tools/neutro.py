@@ -144,7 +144,7 @@ JS = r"""/* GENERADO por tools/neutro.py --js (no editar a mano: el diccionario 
          .replace(/\b([AaPpDd]\w*|[Pp]or) vos\b/g, function (m, w) { return /^(a|para|de|por)$/i.test(w) ? w + ' ti' : m; });
     return s.replace(PAL, function (w) { var k = w.toLowerCase(); return (M.hasOwnProperty(k) && w !== 'Tomás') ? caso(w, M[k]) : w; });
   }
-  window.WaveNeutro = { neutro: neutro, activo: false };
+  window.WaveNeutro = { neutro: neutro, activo: false, activar: function () { activar(); } };
   var ATR = ['placeholder', 'title', 'aria-label'];
   function pasar(n) {
     if (n.nodeType === 3) { var v = n.nodeValue, w = neutro(v); if (w !== v) n.nodeValue = w; return; }
@@ -173,8 +173,9 @@ JS = r"""/* GENERADO por tools/neutro.py --js (no editar a mano: el diccionario 
       var r = await sb.from('students').select('pais').eq('profile_id', u.id).maybeSingle();
       var paises = r.data ? [r.data.pais] : [];
       if (!r.data) {
-        var f = await sb.from('families').select('id').eq('profile_id', u.id).maybeSingle();
-        if (f.data) { var h = await sb.from('students').select('pais').eq('family_id', f.data.id); paises = (h.data || []).map(function (x) { return x.pais; }); }
+        var f = await sb.from('families').select('id, pais').eq('profile_id', u.id).maybeSingle();
+        if (f.data && f.data.pais) paises = [f.data.pais]; // el país que eligió la familia manda
+        else if (f.data) { var h = await sb.from('students').select('pais').eq('family_id', f.data.id); paises = (h.data || []).map(function (x) { return x.pais; }); }
       }
       var si = paises.length > 0 && paises.every(function (p) { return p && p !== 'Argentina'; });
       try { localStorage.setItem(K, si ? '1' : '0'); } catch (e) {}

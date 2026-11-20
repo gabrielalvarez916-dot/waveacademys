@@ -546,3 +546,14 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .fa-botones { display: flex; flex-wrap: wrap; gap: 10px; }
 .fa-pp { background: #003087; }
 .fa-pp:hover { background: #001f5c; }
+
+/* Pregunta del país de la familia */
+.fp-fondo { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 16px; background: rgba(37, 54, 56, 0.6); }
+.fp-caja { width: min(100%, 460px); background: #fff; border-radius: 22px; padding: 24px; box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.45); }
+.fp-caja h2 { margin: 0 0 8px; }
+.fp-caja p { line-height: 1.5; color: var(--texto-suave, #4B6062); }
+.fp-caja select { width: 100%; min-height: 46px; margin: 8px 0; padding: 0 12px; border: 2px solid var(--borde, #cfdcdb); border-radius: 12px; font: inherit; }
+.fp-acc { display: flex; justify-content: flex-end; gap: 10px; margin-top: 12px; }
+.fp-cancelar, .fa-link { background: none; border: 0; padding: 0 6px; font: inherit; font-weight: 700; color: var(--turquesa-oscuro, #065F63); cursor: pointer; text-decoration: underline; }
+.fp-err { color: var(--error-texto, #8A2C1B) !important; font-weight: 700; }
+.fa-pais { margin: 0 2px 14px; color: var(--texto-suave, #4B6062); }

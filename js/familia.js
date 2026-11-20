@@ -17,6 +17,44 @@
     return nivel + ' · ' + g.name;
   }
 
+  var PAISES = ['Argentina', 'Bolivia', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'El Salvador', 'España', 'Estados Unidos', 'Guatemala', 'Honduras', 'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Puerto Rico', 'República Dominicana', 'Uruguay', 'Venezuela', 'Otro'];
+  var PAIS_FAM = null; // país de la familia: Argentina paga en pesos (Mercado Pago); otro país, en dólares (PayPal)
+
+  // ---------- País de la familia: se pregunta una vez, apenas entra ----------
+  function preguntarPais(obligatorio) {
+    return new Promise(function (listo) {
+      var el = document.createElement('div');
+      el.className = 'fp-fondo';
+      el.innerHTML = '<div class="fp-caja" role="dialog" aria-modal="true" aria-labelledby="fp-t">' +
+        '<h2 id="fp-t">¿En qué país viven?</h2>' +
+        '<p>Así te mostramos los precios y la forma de pago que te corresponden: en pesos con Mercado Pago si viven en la Argentina, o en dólares con PayPal si viven en otro país.</p>' +
+        '<select id="fp-pais" aria-label="País">' + PAISES.map(function (p) { return '<option' + (p === (PAIS_FAM || 'Argentina') ? ' selected' : '') + '>' + p + '</option>'; }).join('') + '</select>' +
+        '<p class="fp-err" id="fp-err" hidden></p>' +
+        '<div class="fp-acc">' + (obligatorio ? '' : '<button type="button" class="fp-cancelar" id="fp-no">Cancelar</button>') +
+        '<button type="button" class="boton" id="fp-ok">Guardar</button></div></div>';
+      document.body.appendChild(el);
+      el.querySelector('#fp-ok').addEventListener('click', async function () {
+        var v = el.querySelector('#fp-pais').value, b = this;
+        b.disabled = true;
+        var r = await sb.rpc('set_family_pais', { p_pais: v });
+        if (r.error) { var e = el.querySelector('#fp-err'); e.textContent = 'No se pudo guardar. Probá de nuevo.'; e.hidden = false; b.disabled = false; return; }
+        var antes = PAIS_FAM; PAIS_FAM = v; el.remove();
+        try { localStorage.setItem('wave_neutro', v !== 'Argentina' ? '1' : '0'); } catch (x) {}
+        if (v !== 'Argentina' && window.WaveNeutro) WaveNeutro.activar();          // interfaz en español neutro
+        else if (antes && antes !== 'Argentina' && window.WaveNeutro && WaveNeutro.activo) return location.reload(); // vuelve al voseo
+        listo(v);
+      });
+      var no = el.querySelector('#fp-no'); if (no) no.addEventListener('click', function () { el.remove(); listo(null); });
+    });
+  }
+  async function asegurarPais() {
+    try {
+      var ses = await sb.auth.getSession();
+      var f = await sb.from('families').select('pais').eq('profile_id', ses.data.session.user.id).maybeSingle();
+      if (f.data) { PAIS_FAM = f.data.pais; if (!PAIS_FAM) await preguntarPais(true); }
+    } catch (e) {}
+  }
+
   // ---------- Datos ----------
   async function cargarDatos() {
     var ses = await sb.auth.getSession();
@@ -112,7 +150,7 @@
           '<div class="campo"><label for="a-dni">DNI</label><input id="a-dni" type="text" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="Número de documento"' + dis + '></div>' +
           '<div class="campo ancho"><label for="a-anio">Año que cursa</label><select id="a-anio"' + dis + '>' + opciones + '</select></div>' +
           '<div class="campo ancho"><label for="a-pais">País donde vive</label><select id="a-pais"' + dis + '>' +
-            ['Argentina', 'Bolivia', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'El Salvador', 'España', 'Estados Unidos', 'Guatemala', 'Honduras', 'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Puerto Rico', 'República Dominicana', 'Uruguay', 'Venezuela', 'Otro'].map(function (p) { return '<option' + (p === 'Argentina' ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
+            PAISES.map(function (p) { return '<option' + (p === (PAIS_FAM || 'Argentina') ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
           '</select><small class="ayuda">Si vive fuera de la Argentina, las clases y los PDF le llegan en español neutro latinoamericano.</small></div>' +
         '</div>' +
         '<p class="mensaje" id="a-error" hidden></p>' +
@@ -859,25 +897,27 @@
     box.innerHTML = '<div class="vacio">Cargando precios…</div>';
     var r = await sb.functions.invoke('mp-cobros', { body: { action: 'precios' } });
     if (r.error || !r.data || r.data.error) { box.innerHTML = ''; return; }
-    var P = r.data, m = P.matricula;
+    var P = r.data, m = P.matricula, arg = (PAIS_FAM || 'Argentina') === 'Argentina';
     var porNivel = {};
     (P.tarifas || []).forEach(function (t) { (porNivel[t.nivel] = porNivel[t.nivel] || []).push(t); });
     var niveles = ORDEN_NIVEL.filter(function (n) { return porNivel[n]; });
     box.innerHTML =
+      '<p class="fa-pais">País: <b>' + esc(PAIS_FAM || 'Argentina') + '</b> · ' + (arg ? 'pagás en pesos con Mercado Pago' : 'pagás en dólares con PayPal') +
+        ' · <button type="button" class="fa-link" id="fa-cambiar-pais">Cambiar</button></p>' +
       '<section class="fa-card"><h2>Matrícula ' + new Date().getFullYear() + '</h2>' +
         (m.pagada ? '<p class="fa-aviso">✓ La matrícula de este año ya está paga.</p>'
-          : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año (' + esc(dinero(m.monto_ars, 'ARS')) + '), en hasta ' + m.cuotas_max + ' cuotas con tarjeta.</p>' +
-            '<div class="fa-botones"><button type="button" class="boton fa-boton" id="fa-pagar-mat">En pesos con Mercado Pago</button>' +
-            '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-mat-pp">En dólares con PayPal (' + esc(usd(m.monto_usd)) + ', 1 pago)</button></div>') +
+          : arg ? '<p class="fa-intro">' + esc(dinero(m.monto_ars, 'ARS')) + ' por año, en hasta ' + m.cuotas_max + ' cuotas con tarjeta.</p>' +
+              '<button type="button" class="boton fa-boton" id="fa-pagar-mat">Pagar con Mercado Pago</button>'
+            : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año, en un pago.</p>' +
+              '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-mat-pp">Pagar con PayPal</button>') +
       '</section>' +
       '<section class="fa-card"><h2>Sumar una suscripción</h2>' +
         '<p class="fa-intro">Cada hijo necesita una suscripción mensual del nivel que va a cursar. Elegí el nivel y la modalidad:</p>' +
         '<div class="fa-compra"><select id="fa-nivel" aria-label="Nivel">' + niveles.map(function (n) { return '<option value="' + n + '">' + NOMBRE_NIVEL[n] + '</option>'; }).join('') + '</select>' +
         '<select id="fa-mod" aria-label="Modalidad"></select></div>' +
         '<p class="fa-precio" id="fa-precio"></p>' +
-        '<div class="fa-botones"><button type="button" class="boton fa-boton" id="fa-pagar-sus">En pesos con Mercado Pago</button>' +
-        '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-sus-pp">En dólares con PayPal</button></div>' +
-        '<p class="fa-intro">Si vivís fuera de la Argentina, pagá en dólares con PayPal.</p>' +
+        (arg ? '<button type="button" class="boton fa-boton" id="fa-pagar-sus">Pagar con Mercado Pago</button>'
+          : '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-sus-pp">Pagar con PayPal</button>') +
         '<p class="fa-aviso" id="fa-err" hidden></p>' +
       '</section>';
     var selN = document.getElementById('fa-nivel'), selM = document.getElementById('fa-mod'), precio = document.getElementById('fa-precio'), err = document.getElementById('fa-err');
@@ -887,7 +927,7 @@
       selM.innerHTML = ts.map(function (t) { return '<option value="' + t.modalidad + '">' + NOMBRE_MOD[t.modalidad] + '</option>'; }).join('');
       verPrecio();
     }
-    function verPrecio() { var t = tarifa(); precio.innerHTML = t ? '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b> · con Mercado Pago se cobran ' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes' : ''; }
+    function verPrecio() { var t = tarifa(); precio.innerHTML = !t ? '' : arg ? '<b>' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes</b>' : '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b>'; }
     selN.addEventListener('change', mods); selM.addEventListener('change', verPrecio); mods();
     async function ir(body, btn, fn) {
       err.hidden = true; btn.disabled = true; var txt = btn.textContent; btn.textContent = 'Preparando el pago…';
@@ -898,8 +938,10 @@
       }
       window.location.href = x.data.url;
     }
-    document.getElementById('fa-pagar-sus').addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this); });
-    document.getElementById('fa-pagar-sus-pp').addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this, 'paypal'); });
+    var bs = document.getElementById('fa-pagar-sus'), bsp = document.getElementById('fa-pagar-sus-pp');
+    if (bs) bs.addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this); });
+    if (bsp) bsp.addEventListener('click', function () { ir({ action: 'suscribir', nivel: selN.value, modalidad: selM.value }, this, 'paypal'); });
+    document.getElementById('fa-cambiar-pais').addEventListener('click', async function () { if (await preguntarPais(false)) cargarCompra(); });
     var bm = document.getElementById('fa-pagar-mat'), bmp = document.getElementById('fa-pagar-mat-pp');
     if (bm) bm.addEventListener('click', function () { ir({ action: 'matricula' }, this); });
     if (bmp) bmp.addEventListener('click', function () { ir({ action: 'matricula' }, this, 'paypal'); });
@@ -998,5 +1040,5 @@
   }
 
   window.addEventListener('hashchange', ruta);
-  ruta();
+  asegurarPais().then(ruta);
 })();
