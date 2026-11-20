@@ -20,20 +20,26 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "libro",
    "titulo": "ELEGIR CON EL PARATEXTO",
-   "items": [
+   "libro": {
+    "titulo": "El faro de los gatos",
+    "autor": "Ana Ríos",
+    "editorial": "Brújula",
+    "emoji": "🐈"
+   },
+   "partes": [
     {
-     "cab": "TAPA",
-     "txt": "título, autor, editorial"
+     "parte": "tapa",
+     "txt": "Tapa: título, autor, editorial"
     },
     {
-     "cab": "CONTRATAPA",
-     "txt": "de qué trata"
+     "parte": "contratapa",
+     "txt": "Contratapa: de qué trata"
     },
     {
-     "cab": "ÍNDICE",
-     "txt": "los capítulos"
+     "parte": "indice",
+     "txt": "Índice: los capítulos"
     }
    ],
    "voz": [

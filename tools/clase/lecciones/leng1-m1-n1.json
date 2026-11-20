@@ -27,20 +27,26 @@
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "ANTES DE ABRIR EL LIBRO",
-   "items": [
+   "t": "libro",
+   "titulo": "EL PARATEXTO",
+   "libro": {
+    "titulo": "El faro de los gatos",
+    "autor": "Ana Ríos",
+    "editorial": "Brújula",
+    "emoji": "🐈"
+   },
+   "partes": [
     {
-     "cab": "TAPA",
-     "txt": "título, autor, imagen"
+     "parte": "tapa",
+     "txt": "Tapa: título, autor, editorial"
     },
     {
-     "cab": "CONTRATAPA",
-     "txt": "de qué trata"
+     "parte": "contratapa",
+     "txt": "Contratapa: de qué trata"
     },
     {
-     "cab": "ÍNDICE",
-     "txt": "cómo está armado"
+     "parte": "indice",
+     "txt": "Índice: los capítulos"
     }
    ],
    "voz": [

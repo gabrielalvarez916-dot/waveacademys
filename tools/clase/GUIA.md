@@ -77,6 +77,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | platillos | estados | titulo, estados:[{izq:[...], der:[...], txt}] — balanza con bolsitas (emoji) y pesas (texto), un estado por paso (ecuaciones) |
 | criba | 2 + tachar | hasta, cols, tachar:[2,3,5,7], txt (criba de Eratóstenes: tacha múltiplos, brillan los primos) |
 | arbol | 2 + ramas | numero, ramas:[[primo, cociente]...], resultado (árbol de factores primos) |
+| libro | 1 + partes | titulo, libro:{titulo, autor, editorial, emoji}, partes:[{parte:'contratapa'\|'lomo'\|'tapa'\|'indice', txt}] — dibuja un libro y marca sus partes (paratexto) |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |
@@ -88,3 +89,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | vocab | items | items:[{palabra, emoji, trad, pron}] (2-6) |
 
 Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en uso: `pruebas/prueba-banco.json` (`python tools/clase/armar.py prueba-banco`).
+
+
+## Cuándo va una imagen
+
+Si la explicación habla de **las partes de algo** (un libro, una célula, una planta, una máquina) o de **cómo está ubicado algo** (un plano, un túnel, un mapa), la escena tiene que mostrarlo con una plantilla visual (`libro`, `partes`, `mapa`, `geo`, `figura`, `mundo`) y no solo con texto. Lo mismo en el PDF: una figura cuando sin ella no se entiende.
