@@ -1,0 +1,168 @@
+{
+ "slug": "leng1-m9-n2",
+ "step_id": "b920ef72-c182-4ebd-87c6-9ffaaa804b76",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Los personajes cambian",
+ "sub": "Lengua y Literatura I · Misión 9 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Sir Simon cambia a lo largo del cuento?",
+   "segundos": 6,
+   "respuesta": "Sí: de orgulloso a agradecido",
+   "emoji": "👻",
+   "titulo": "LOS PERSONAJES CAMBIAN",
+   "sub": "dinámicos y estáticos",
+   "voz": [
+    "Desafío: ¿Sir Simon cambia a lo largo del cuento? Seis segundos.",
+    "Sí: de orgulloso a agradecido.",
+    "Hoy: *los personajes cambian*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "DINÁMICO",
+    "texto": "Cambia",
+    "emoji": "🔄"
+   },
+   "b": {
+    "cab": "ESTÁTICO",
+    "texto": "Casi no cambia",
+    "emoji": "⏸️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos clases de personajes.",
+    "El *dinámico* cambia.",
+    "El *estático* casi no cambia."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DINÁMICO",
+     "emoji": "🔄"
+    },
+    {
+     "cab": "ESTÁTICO",
+     "emoji": "⏸️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sir Simon",
+     "caja": 0
+    },
+    {
+     "txt": "Los Otis",
+     "caja": 1
+    },
+    {
+     "txt": "Virginia",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Dinámico o estático?",
+    "*Sir Simon* y *Virginia*: dinámicos.",
+    "*Los Otis*: estáticos."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "AL PRINCIPIO",
+    "emoji": "😠",
+    "texto": "Orgulloso y quiere asustar"
+   },
+   "despues": {
+    "cab": "AL FINAL",
+    "emoji": "🙏",
+    "texto": "Cansado y agradecido"
+   },
+   "voz": [
+    "Sir Simon cambia.",
+    "Al principio, *orgulloso* y quiere asustar.",
+    "Al final, *cansado* y *agradecido*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Valentía",
+   "texto": "Valor para enfrentar el miedo",
+   "emoji": "💪",
+   "voz": [
+    "*Virginia* muestra *valentía* y *compasión*.",
+    "Se atreve a acompañar al fantasma."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un personaje que cambia es…",
+   "opciones": [
+    "Dinámico",
+    "Estático",
+    "Fantasma"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un personaje que cambia es…",
+    "¿Dinámico, estático o fantasma?",
+    "*Dinámico*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todos los personajes cambian",
+     "bien": "Algunos son estáticos"
+    },
+    {
+     "mal": "Cambia sin motivo",
+     "bien": "Explicar qué lo cambia"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todos cambian*.",
+    "Y decir que cambia *sin explicar por qué*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *dinámico* cambia.",
+    "El *estático* no.",
+    "Sir Simon va del *orgullo* a la *gratitud*.",
+    "Y Virginia muestra *valentía* y *compasión*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DINÁMICO",
+     "cambia"
+    ],
+    [
+     "ESTÁTICO",
+     "no cambia"
+    ],
+    [
+     "SIR SIMON",
+     "orgullo a gratitud"
+    ],
+    [
+     "VIRGINIA",
+     "valentía"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

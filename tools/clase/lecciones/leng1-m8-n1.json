@@ -1,0 +1,188 @@
+{
+ "slug": "leng1-m8-n1",
+ "step_id": "7d3f3e86-c42b-42d3-97e8-0f7779389453",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Describir una persona",
+ "sub": "Lengua y Literatura I · Misión 8 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Describí a tu abuelo en una oración sin usar «bueno» ni «grande».",
+   "segundos": 8,
+   "respuesta": "Con un rasgo concreto, por ejemplo: manos arrugadas",
+   "emoji": "🧓",
+   "titulo": "DESCRIBIR UNA PERSONA",
+   "sub": "retrato físico y psicológico",
+   "voz": [
+    "Desafío: describí a tu abuelo en una oración, sin usar bueno ni grande. Ocho segundos.",
+    "Con un rasgo concreto, por ejemplo, manos arrugadas.",
+    "Hoy: *describir una persona*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Descripción",
+   "texto": "Muestra cómo es alguien con palabras",
+   "emoji": "🖼️",
+   "voz": [
+    "Una *descripción* muestra cómo es algo o alguien con palabras.",
+    "No es una lista: se eligen los *rasgos* que mejor lo muestran."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FÍSICO",
+    "texto": "Cómo se ve",
+    "emoji": "👀"
+   },
+   "b": {
+    "cab": "PSICOLÓGICO",
+    "texto": "Cómo es su carácter",
+    "emoji": "💭"
+   },
+   "signo": "+",
+   "voz": [
+    "Hay dos retratos.",
+    "El *físico* dice cómo se ve.",
+    "El *psicológico* dice cómo es su carácter."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FÍSICO",
+     "emoji": "👀"
+    },
+    {
+     "cab": "CARÁCTER",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pelo corto",
+     "caja": 0
+    },
+    {
+     "txt": "Generosa",
+     "caja": 1
+    },
+    {
+     "txt": "Ojos claros",
+     "caja": 0
+    },
+    {
+     "txt": "Impaciente",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Físico o carácter?",
+    "*Pelo corto* y *ojos claros*: físicos.",
+    "*Generosa* e *impaciente*: de carácter."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ORDEN",
+   "items": [
+    {
+     "txt": "Rasgos generales",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Rostro",
+     "emoji": "🙂"
+    },
+    {
+     "txt": "Forma de ser",
+     "emoji": "💭"
+    }
+   ],
+   "voz": [
+    "Conviene seguir un orden.",
+    "Primero los *rasgos generales*.",
+    "Después el *rostro*.",
+    "Y por último la *forma de ser*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conviene mostrar en lugar de un adjetivo vago?",
+   "opciones": [
+    "Algo que la persona hace",
+    "Otro adjetivo vago",
+    "Nada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: en lugar de un adjetivo vago.",
+    "¿Algo que la persona hace, otro adjetivo vago o nada?",
+    "*Algo que hace*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Describí a una persona que conozcas con un rasgo físico y uno de carácter",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: describí a una persona que conozcas.",
+    "Un *rasgo físico* y uno de *carácter*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Una lista sin orden",
+     "bien": "Rasgos elegidos y ordenados"
+    },
+    {
+     "mal": "Solo «lindo» y «bueno»",
+     "bien": "Detalles concretos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Hacer una *lista sin orden*.",
+    "Y usar solo *adjetivos vagos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Describir es *mostrar*.",
+    "Hay retrato *físico* y *psicológico*.",
+    "Se sigue un *orden*.",
+    "Y se usan detalles *concretos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DESCRIPCIÓN",
+     "mostrar"
+    ],
+    [
+     "FÍSICO",
+     "cómo se ve"
+    ],
+    [
+     "CARÁCTER",
+     "cómo es"
+    ],
+    [
+     "ORDEN",
+     "general a particular"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

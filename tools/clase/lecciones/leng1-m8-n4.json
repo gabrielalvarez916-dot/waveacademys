@@ -1,0 +1,209 @@
+{
+ "slug": "leng1-m8-n4",
+ "step_id": "d0f0e51e-61c7-48d4-8110-fb33d5c1a4ec",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Reescribo una descripción",
+ "sub": "Lengua y Literatura I · Misión 8 · Nivel 4",
+ "escenas": [
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "😐",
+    "texto": "Mi barrio es lindo y hay gente"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "😍",
+    "texto": "Mi barrio es tranquilo, con vecinos que toman mate"
+   },
+   "titulo": "REESCRIBO UNA DESCRIPCIÓN",
+   "sub": "mejorar la forma",
+   "voz": [
+    "Antes: mi barrio es lindo y hay gente.",
+    "Después: mi barrio es tranquilo, con vecinos que toman mate.",
+    "Hoy: *reescribo una descripción*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Reescribir",
+   "texto": "Conservar la idea y mejorar la forma",
+   "emoji": "✏️",
+   "voz": [
+    "*Reescribir* es conservar la idea y mejorar la forma.",
+    "No es copiar."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ FALLA",
+   "columnas": [
+    "Problema",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Vago",
+     "Casa linda"
+    ],
+    [
+     "Sin orden",
+     "Salta de lugar"
+    ],
+    [
+     "Repite",
+     "Tiene, tiene"
+    ],
+    [
+     "Un sentido",
+     "Solo vista"
+    ]
+   ],
+   "voz": [
+    "Problemas comunes.",
+    "Palabras *vagas*.",
+    "Falta de *orden*.",
+    "*Repeticiones*.",
+    "Y un solo *sentido*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "REVISAR",
+   "items": [
+    {
+     "txt": "¿Se entiende?",
+     "emoji": "❓"
+    },
+    {
+     "txt": "¿Hay orden?",
+     "emoji": "🧭"
+    },
+    {
+     "txt": "¿Más de un sentido?",
+     "emoji": "👃"
+    },
+    {
+     "txt": "¿Palabras vagas?",
+     "emoji": "✂️"
+    }
+   ],
+   "voz": [
+    "Cuatro preguntas para revisar.",
+    "¿Se *entiende*?",
+    "¿Hay *orden*?",
+    "¿Hay más de un *sentido*?",
+    "¿Quedan palabras *vagas*?"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MEJORA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO MEJORA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Lindo a luminoso",
+     "caja": 0
+    },
+    {
+     "txt": "Copiar igual",
+     "caja": 1
+    },
+    {
+     "txt": "Sumar un olor",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Mejora o no?",
+    "*Lindo a luminoso* y *sumar un olor*: mejoran.",
+    "*Copiar igual*: no mejora."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Reescribir, ¿es copiar o mejorar?",
+   "opciones": [
+    "Mejorar",
+    "Copiar",
+    "Borrar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: reescribir.",
+    "¿Mejorar, copiar o borrar?",
+    "*Mejorar*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Reescribí una descripción tuya mejorando tres cosas",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: reescribí una descripción tuya.",
+    "Mejorá *tres cosas*: lo vago, los sentidos y el orden."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Copiar el texto",
+     "bien": "Mejorar la forma"
+    },
+    {
+     "mal": "Corregir solo tildes",
+     "bien": "Mejorar el contenido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Copiar* el texto.",
+    "Y corregir *solo tildes*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Reescribir* es mejorar.",
+    "Se revisa con *preguntas*.",
+    "Se cambia lo *vago* por lo *concreto*.",
+    "Y se suman *sentidos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REESCRIBIR",
+     "mejorar"
+    ],
+    [
+     "REVISAR",
+     "preguntas"
+    ],
+    [
+     "VAGO",
+     "concreto"
+    ],
+    [
+     "SENTIDOS",
+     "sumar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

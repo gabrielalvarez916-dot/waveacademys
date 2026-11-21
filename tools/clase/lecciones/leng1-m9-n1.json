@@ -1,0 +1,171 @@
+{
+ "slug": "leng1-m9-n1",
+ "step_id": "94351222-b38d-4ae2-bdd6-915c413fecbc",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Un final que sorprende",
+ "sub": "Lengua y Literatura I · Misión 9 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMA HORA",
+   "titular": "El fantasma pide ayuda a una chica",
+   "bajada": "Está cansado y quiere descansar",
+   "emoji": "👻",
+   "titulo": "UN FINAL QUE SORPRENDE",
+   "sub": "segunda parte",
+   "voz": [
+    "Última hora: el fantasma le pide ayuda a una chica.",
+    "Está cansado y quiere descansar.",
+    "Hoy: *un final que sorprende*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Crisis",
+   "texto": "El fantasma necesita ayuda",
+   "emoji": "🆘",
+   "voz": [
+    "La *crisis* llega cuando Sir Simon *necesita ayuda*.",
+    "El tono cambia: el conflicto se vuelve serio."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Clímax",
+   "texto": "Máxima tensión",
+   "emoji": "⚡",
+   "voz": [
+    "El *clímax* es el momento de mayor tensión.",
+    "Aquí, cuando *Virginia* acompaña al fantasma."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL FINAL",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Sir Simon pide ayuda",
+     "emoji": "🆘"
+    },
+    {
+     "fecha": "2",
+     "txt": "Virginia reza por él",
+     "emoji": "🙏"
+    },
+    {
+     "fecha": "3",
+     "txt": "El fantasma descansa",
+     "emoji": "🕊️"
+    },
+    {
+     "fecha": "4",
+     "txt": "Un cofre de joyas",
+     "emoji": "💎"
+    }
+   ],
+   "voz": [
+    "Los hechos en orden.",
+    "Sir Simon *pide ayuda*.",
+    "Virginia *reza* por él.",
+    "El fantasma *descansa en paz*.",
+    "Y la familia recibe un *cofre de joyas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COMIENZO",
+    "texto": "Humor y burla",
+    "emoji": "😂"
+   },
+   "b": {
+    "cab": "FINAL",
+    "texto": "Compasión y emoción",
+    "emoji": "🥹"
+   },
+   "signo": "→",
+   "voz": [
+    "El tono cambia.",
+    "Al comienzo, *humor* y burla.",
+    "Al final, *compasión* y emoción."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién ayuda al fantasma?",
+   "opciones": [
+    "Virginia",
+    "Washington",
+    "Lord Canterville"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿quién ayuda al fantasma?",
+    "¿Virginia, Washington o Lord Canterville?",
+    "*Virginia*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí en dos oraciones por qué el final te sorprende o no",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí en dos oraciones.",
+    "Explicá por qué el *final* te sorprende o no."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sigue siendo solo una burla",
+     "bien": "Termina con compasión"
+    },
+    {
+     "mal": "Los Otis ayudan al fantasma",
+     "bien": "Ayuda Virginia"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que sigue siendo *solo burla*.",
+    "Y olvidar que ayuda *Virginia*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *crisis*: el fantasma pide ayuda.",
+    "El *clímax*: Virginia lo acompaña.",
+    "La *resolución*: descansa en paz.",
+    "Y la sorpresa: del humor a la *compasión*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CRISIS",
+     "pide ayuda"
+    ],
+    [
+     "CLÍMAX",
+     "máxima tensión"
+    ],
+    [
+     "RESOLUCIÓN",
+     "descansa"
+    ],
+    [
+     "SORPRESA",
+     "compasión"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

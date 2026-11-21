@@ -1,0 +1,215 @@
+{
+ "slug": "leng1-m8-n2",
+ "step_id": "1172a97d-f35b-4a8c-ae05-fb7bd81bb1fb",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Describir un lugar",
+ "sub": "Lengua y Literatura I · Misión 8 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "5 sentidos",
+   "emoji": "👃",
+   "final": "para describir un lugar",
+   "titulo": "DESCRIBIR UN LUGAR",
+   "sub": "orden y sentidos",
+   "voz": [
+    "Un lugar no se describe solo con los ojos.",
+    "Tenés cinco sentidos para usar.",
+    "Hoy: *describir un lugar*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Orden posible",
+    "emoji": "🧭"
+   },
+   "items": [
+    {
+     "txt": "De afuera hacia adentro",
+     "emoji": "🚪"
+    },
+    {
+     "txt": "De arriba hacia abajo",
+     "emoji": "⬇️"
+    },
+    {
+     "txt": "De izquierda a derecha",
+     "emoji": "➡️"
+    }
+   ],
+   "voz": [
+    "Para ordenar un lugar hay tres caminos.",
+    "De *afuera hacia adentro*.",
+    "De *arriba hacia abajo*.",
+    "O de *izquierda a derecha*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS SENTIDOS",
+   "columnas": [
+    "Sentido",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Vista",
+     "Paredes descascaradas"
+    ],
+    [
+     "Oído",
+     "Zumbido de la heladera"
+    ],
+    [
+     "Olfato",
+     "Olor a pan"
+    ],
+    [
+     "Tacto",
+     "Piso frío"
+    ]
+   ],
+   "voz": [
+    "Un ejemplo de cada sentido.",
+    "*Vista*: paredes descascaradas.",
+    "*Oído*: el zumbido de la heladera.",
+    "*Olfato*: olor a pan.",
+    "*Tacto*: el piso frío."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONECTORES DE LUGAR",
+   "columnas": [
+    "Función",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Cerca",
+     "junto a"
+    ],
+    [
+     "Lejos",
+     "al fondo"
+    ],
+    [
+     "Arriba",
+     "sobre"
+    ]
+   ],
+   "voz": [
+    "Conectores para ubicar.",
+    "*Junto a* para lo que está cerca.",
+    "*Al fondo* para lo lejano.",
+    "*Sobre* para lo que está arriba."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Atmósfera",
+   "texto": "El clima que transmite un lugar",
+   "emoji": "🌫️",
+   "voz": [
+    "La *atmósfera* es el clima que transmite un lugar.",
+    "Con sombras y silencio, un lugar parece misterioso."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "VISTA",
+     "emoji": "👀"
+    },
+    {
+     "cab": "OÍDO",
+     "emoji": "👂"
+    },
+    {
+     "cab": "OLFATO",
+     "emoji": "👃"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Luz amarilla",
+     "caja": 0
+    },
+    {
+     "txt": "Zumbido",
+     "caja": 1
+    },
+    {
+     "txt": "Olor a café",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué sentido?",
+    "*Luz amarilla*: vista.",
+    "*Zumbido*: oído.",
+    "*Olor a café*: olfato."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántos sentidos conviene usar al describir un lugar?",
+   "opciones": [
+    "Varios",
+    "Solo uno",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuántos sentidos conviene usar?",
+    "¿Varios, solo uno o ninguno?",
+    "*Varios*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Describí tu habitación con al menos tres sentidos",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: describí tu habitación.",
+    "Usá al menos *tres sentidos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Describí con un *orden*.",
+    "Usá varios *sentidos*.",
+    "Ubicá con *conectores*.",
+    "Y cuidá la *atmósfera*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORDEN",
+     "de afuera adentro"
+    ],
+    [
+     "SENTIDOS",
+     "cinco"
+    ],
+    [
+     "CONECTORES",
+     "junto a, al fondo"
+    ],
+    [
+     "ATMÓSFERA",
+     "clima"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

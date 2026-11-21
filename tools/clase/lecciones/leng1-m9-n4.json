@@ -1,0 +1,184 @@
+{
+ "slug": "leng1-m9-n4",
+ "step_id": "a8476b20-35d3-4d28-b1eb-aae7b765ba9b",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escribo una reseña",
+ "sub": "Lengua y Literatura I · Misión 9 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "RECOMENDADO",
+   "titular": "Una reseña te cuenta si vale la pena",
+   "bajada": "Sin arruinar el final",
+   "emoji": "⭐",
+   "titulo": "ESCRIBO UNA RESEÑA",
+   "sub": "presentar y valorar",
+   "voz": [
+    "Recomendado: una reseña te cuenta si vale la pena.",
+    "Sin arruinar el final.",
+    "Hoy: *escribo una reseña*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Reseña",
+   "texto": "Presenta una obra y da una opinión fundamentada",
+   "emoji": "⭐",
+   "voz": [
+    "Una *reseña* presenta una obra y da una opinión *fundamentada*.",
+    "Sirve para que otro decida si la quiere leer."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARTES",
+   "columnas": [
+    "Parte",
+    "Qué lleva"
+   ],
+   "filas": [
+    [
+     "Datos",
+     "Título y autor"
+    ],
+    [
+     "Resumen",
+     "Sin el final"
+    ],
+    [
+     "Valoración",
+     "Opinión con razones"
+    ],
+    [
+     "Recomendación",
+     "A quién le gusta"
+    ]
+   ],
+   "voz": [
+    "Las cuatro partes.",
+    "*Datos*: título y autor.",
+    "*Resumen*: sin el final.",
+    "*Valoración*: opinión con razones.",
+    "*Recomendación*: a quién le gusta."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Spoiler",
+   "texto": "Adelantar el final",
+   "emoji": "🚫",
+   "voz": [
+    "Un *spoiler* es adelantar el final.",
+    "En una reseña se evita."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SÍ",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Contar el comienzo",
+     "caja": 0
+    },
+    {
+     "txt": "Contar el final",
+     "caja": 1
+    },
+    {
+     "txt": "Dar un ejemplo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Va en una reseña?",
+    "*Contar el comienzo* y *dar un ejemplo*: sí.",
+    "*Contar el final*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿La valoración necesita argumentos?",
+   "opciones": [
+    "Sí",
+    "No",
+    "A veces nada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿la valoración necesita argumentos?",
+    "¿Sí, no o a veces nada?",
+    "*Sí*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí una reseña breve de un libro, película o serie que conozcas",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí una reseña breve.",
+    "Con *datos*, *resumen sin final*, *valoración* y *recomendación*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar el final",
+     "bien": "Guardar la sorpresa"
+    },
+    {
+     "mal": "Opinar sin razones",
+     "bien": "Dar un ejemplo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Contar el final*.",
+    "Y *opinar sin razones*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *reseña* presenta y valora.",
+    "Tiene *datos*, *resumen*, *valoración* y *recomendación*.",
+    "El resumen *no cuenta el final*.",
+    "Y la valoración lleva *argumentos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RESEÑA",
+     "presenta y valora"
+    ],
+    [
+     "PARTES",
+     "cuatro"
+    ],
+    [
+     "RESUMEN",
+     "sin final"
+    ],
+    [
+     "VALORACIÓN",
+     "con razones"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

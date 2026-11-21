@@ -1,0 +1,197 @@
+{
+ "slug": "leng1-m8-n3",
+ "step_id": "1ef00669-9876-46bd-b080-5eafa8fc8892",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Adjetivos que dicen más",
+ "sub": "Lengua y Literatura I · Misión 8 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mi casa es linda 🏠"
+    },
+    {
+     "yo": true,
+     "txt": "¿Linda cómo? No la veo 🤔"
+    },
+    {
+     "yo": false,
+     "txt": "Luminosa, con olor a pan"
+    }
+   ],
+   "titulo": "ADJETIVOS QUE DICEN MÁS",
+   "sub": "precisión",
+   "voz": [
+    "Lu dice que su casa es linda.",
+    "Juan: ¿linda cómo? No la veo.",
+    "Lu: luminosa y con olor a pan. Ahora sí.",
+    "Hoy: *adjetivos que dicen más*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "VAGO Y PRECISO",
+   "columnas": [
+    "Vago",
+    "Preciso"
+   ],
+   "filas": [
+    [
+     "Casa linda",
+     "Casa luminosa"
+    ],
+    [
+     "Chico malo",
+     "Chico caprichoso"
+    ],
+    [
+     "Comida rica",
+     "Comida picante"
+    ]
+   ],
+   "voz": [
+    "Del vago al preciso.",
+    "*Casa linda* pasa a *casa luminosa*.",
+    "*Chico malo* pasa a *chico caprichoso*.",
+    "*Comida rica* pasa a *comida picante*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COMPARACIÓN",
+    "texto": "Usa «como»",
+    "emoji": "🧊"
+   },
+   "b": {
+    "cab": "METÁFORA",
+    "texto": "Dice que una cosa es otra",
+    "emoji": "🧊"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos recursos.",
+    "La *comparación* usa *como*.",
+    "La *metáfora* dice que una cosa *es* otra."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "COMPARACIÓN",
+     "emoji": "➗"
+    },
+    {
+     "cab": "METÁFORA",
+     "emoji": "🔁"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Frías como el hielo",
+     "caja": 0
+    },
+    {
+     "txt": "Manos de hielo",
+     "caja": 1
+    },
+    {
+     "txt": "Luz como una moneda",
+     "caja": 0
+    },
+    {
+     "txt": "Sol, una moneda",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Comparación o metáfora?",
+    "Con *como*: comparación.",
+    "Sin *como*: metáfora."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Pocos y exactos",
+   "texto": "Un adjetivo exacto vale más que tres parecidos",
+   "emoji": "🎯",
+   "voz": [
+    "Conviene usar *pocos* adjetivos y *exactos*.",
+    "Uno exacto vale más que tres parecidos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«Sus ojos eran dos luces», ¿es una…?",
+   "opciones": [
+    "Metáfora",
+    "Comparación",
+    "Rima"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: «sus ojos eran dos luces».",
+    "¿Metáfora, comparación o rima?",
+    "Es una *metáfora*: no usa como."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Repetir lindo y bueno",
+     "bien": "Adjetivos precisos"
+    },
+    {
+     "mal": "Tres adjetivos iguales",
+     "bien": "Uno exacto"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Repetir* lindo y bueno.",
+    "Y usar *tres adjetivos iguales*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *calificativos* dicen cómo es algo.",
+    "Mejor lo *preciso* que lo vago.",
+    "La *comparación* usa como.",
+    "Y la *metáfora* dice que una cosa es otra.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CALIFICATIVO",
+     "cómo es"
+    ],
+    [
+     "VAGO",
+     "lindo, bueno"
+    ],
+    [
+     "COMPARACIÓN",
+     "como"
+    ],
+    [
+     "METÁFORA",
+     "es otra cosa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

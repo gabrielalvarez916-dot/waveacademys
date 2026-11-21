@@ -42,7 +42,7 @@ MAPA = {
  'redondeás': 'redondeas', 'reemplazá': 'reemplaza', 'reemplazás': 'reemplazas', 'reescribí': 'reescribe', 'releé': 'relee', 'repartí': 'reparte',
  'repartís': 'repartes', 'repasá': 'repasa', 'resolvé': 'resuelve', 'resolvés': 'resuelves', 'respondé': 'responde', 'restale': 'réstale',
  'restá': 'resta', 'restás': 'restas', 'revisá': 'revisa', 'sabés': 'sabes', 'sacás': 'sacas', 'salteás': 'saltas', 'seguí': 'sigue', 'señalá': 'señala',
- 'tachá': 'tacha', 'defendés': 'defiendes', 'distinguí': 'distingue', 'escuchá': 'escucha', 'oís': 'oyes', 'aprendé': 'aprende', 'revisalas': 'revísalas', 'separá': 'separa', 'usala': 'úsala', 'agradecés': 'agradeces', 'explicás': 'explicas', 'resumís': 'resumes', 'resumí': 'resume', 'generalizá': 'generaliza', 'sacá': 'saca', 'perdés': 'pierdes', 'trabás': 'trabas',
+ 'tachá': 'tacha', 'cuidá': 'cuida', 'mejorá': 'mejora', 'olés': 'hueles', 'reemplazalas': 'reemplázalas', 'tocás': 'tocas', 'comparé': 'compara', 'defendés': 'defiendes', 'distinguí': 'distingue', 'escuchá': 'escucha', 'oís': 'oyes', 'aprendé': 'aprende', 'revisalas': 'revísalas', 'separá': 'separa', 'usala': 'úsala', 'agradecés': 'agradeces', 'explicás': 'explicas', 'resumís': 'resumes', 'resumí': 'resume', 'generalizá': 'generaliza', 'sacá': 'saca', 'perdés': 'pierdes', 'trabás': 'trabas',
  'actuá': 'actúa', 'proponé': 'propón', 'estudiá': 'estudia', 'mezclás': 'mezclas', 'repetí': 'repite', 'ubicás': 'ubicas',
  'simplificá': 'simplifica', 'subrayá': 'subraya', 'subí': 'sube', 'subís': 'subes', 'sumale': 'súmale', 'sumá': 'suma', 'sumás': 'sumas',
  'tachás': 'tachas', 'tapá': 'tapa', 'tené': 'ten', 'tenés': 'tienes', 'tipealos': 'escríbelos', 'tipeá': 'escribe', 'tipeás': 'escribes', 'tirás': 'tiras',
