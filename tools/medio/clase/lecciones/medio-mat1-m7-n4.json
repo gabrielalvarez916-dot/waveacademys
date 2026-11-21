@@ -1,0 +1,166 @@
+{
+ "slug": "medio-mat1-m7-n4",
+ "step_id": "912800e8-76cc-4a36-9e18-e08de60d211b",
+ "materia": "Matemática 1",
+ "titulo": "Comparar precios",
+ "sub": "Matemática 1 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "En el kiosco todo tiene precio.",
+    "Un chupetín: $5.",
+    "Un jugo: $20."
+   ],
+   "titulo": "COMPARAR",
+   "sub": "precios",
+   "voz": [
+    "En el kiosco todo tiene *precio*.",
+    "Un chupetín cuesta *5 pesos*.",
+    "Un jugo cuesta *20 pesos*.",
+    "Hoy: *comparar precios*."
+   ],
+   "neutro": {
+    "lineas": [
+     "En el kiosco todo tiene precio.",
+     "Una paleta: $5.",
+     "Un jugo: $20."
+    ],
+    "voz": [
+     "En el kiosco todo tiene *precio*.",
+     "Una paleta cuesta *5*.",
+     "Un jugo cuesta *20*.",
+     "Hoy: *comparar precios*."
+    ]
+   }
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "$20",
+    "texto": "jugo",
+    "emoji": "🧃"
+   },
+   "b": {
+    "cab": "$5",
+    "texto": "chupetín",
+    "emoji": "🍭"
+   },
+   "signo": ">",
+   "voz": [
+    "El jugo cuesta 20.",
+    "El chupetín cuesta 5.",
+    "20 es *más* que 5: ¡el jugo es *más caro*!"
+   ],
+   "neutro": {
+    "b": {
+     "cab": "$5",
+     "texto": "paleta",
+     "emoji": "🍭"
+    },
+    "voz": [
+     "El jugo cuesta 20.",
+     "La paleta cuesta 5.",
+     "20 es *más* que 5: ¡el jugo es *más caro*!"
+    ]
+   }
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "$10",
+    "texto": "manzana",
+    "emoji": "🍎"
+   },
+   "b": {
+    "cab": "$30",
+    "texto": "pelota",
+    "emoji": "⚽"
+   },
+   "signo": "<",
+   "voz": [
+    "La manzana cuesta 10.",
+    "La pelota cuesta 30.",
+    "10 es *menos* que 30: ¡la manzana es *más barata*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es más caro?",
+   "opciones": [
+    "🍪 $8",
+    "🧃 $18"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Galletita de 8, jugo de 18.",
+    "¿Qué es *más caro*?",
+    "¡El jugo! 18 es más que 8."
+   ],
+   "neutro": {
+    "voz": [
+     "Ahora tú. Galleta de 8, jugo de 18.",
+     "¿Qué es *más caro*?",
+     "¡El jugo! 18 es más que 8."
+    ]
+   }
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es más barato?",
+   "opciones": [
+    "🍭 $5",
+    "🍎 $10"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más.",
+    "¿Qué es *más barato*?",
+    "¡El de 5! 5 es menos que 10."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MÁS CARO, MÁS BARATO",
+   "texto": "El número más grande es el más caro",
+   "emoji": "🏷️",
+   "voz": [
+    "Truco: el número más grande es el *más caro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MÁS CARO",
+     "número más grande"
+    ],
+    [
+     "MÁS BARATO",
+     "número más chico"
+    ],
+    [
+     "PRECIO",
+     "lo que cuesta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Más caro*: el número más grande.",
+    "*Más barato*: el número más chico.",
+    "El *precio* es lo que cuesta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

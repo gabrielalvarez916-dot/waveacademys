@@ -319,6 +319,21 @@
     B(2); tl.set(nums, { opacity: 1, scale: 1 }, '>+0.05'); w.IN(tl, tot, '>', { scale: .3, y: 0, ease: 'back.out(2.5)' }); w.pop(tl, nums[n - 1], '<.2');
     if (et) { w.OUT(tl, tot, '>.6'); w.IN(tl, et, '<.1'); }
   } };
+  // monedas: {titulo, items:[valores], texto, simbolo:'$'} — 3 pasos: aparecen las monedas (≤10) y billetes (≥20) · la voz cuenta sumando ("10, 20, 25") y cada una brilla con su subtotal · total
+  T.monedas = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var it = d.items, n = it.length, sim = d.simbolo || '$', ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, paso = Math.min(250, 1500 / n), x0 = 960 - (n - 1) * paso / 2, Y = 520, ac = 0;
+    var O = it.map(function (v, k) { var o = w.pieza(g, x0 + k * paso, Y), bill = v >= 20, sz = bill ? Math.min(220, paso * .9) : Math.min(170, paso * .78);
+      if (bill) { w.caja(o, 0, 0, sz, sz * .55, '#2f8f5b', '#bff0c9', 18, 5); w.txt(o, 0, 6, sim + v, sz * .26, '#ffffff'); }
+      else { w.el('circle', { r: sz / 2, fill: v >= 5 ? '#e7b53c' : '#c9ccd3', stroke: '#fff3c4', 'stroke-width': 6 }, o); w.txt(o, 0, 4, sim + v, sz * .3, '#3a2a00'); }
+      return o; });
+    var sub = it.map(function (v, k) { ac += v; var q = w.pieza(g, x0 + k * paso, Y + 170); w.el('circle', { r: 44, fill: C.sol }, q); w.txt(q, 0, 2, String(ac), ac >= 100 ? 30 : 38, '#3a2a00'); q.v = ac; return q; });
+    var tot = w.pieza(g, 960, 880); w.caja(tot, 0, 0, 520, 140, 'url(#gCard)', C.sol, 34, 6); w.txt(tot, 0, 4, d.texto || (sim + ac), 64, C.sol, { filter: 'url(#brillo)' });
+    B(0); if (ti) w.IN(tl, ti, 0); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.12' : (ti ? '<.2' : 0), { y: -240, scale: .5, ease: 'bounce.out', d: .6 }); });
+    var visto = {}; g.alDecir = function (p, pa) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); if (pa < 1) return;
+      for (var k = 0; k < n; k++) if (sub[k].v === v && !visto[k]) { visto[k] = 1; gsap.fromTo(sub[k], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .4, ease: 'back.out(3)' }); gsap.fromTo(O[k], { scale: 1 }, { scale: 1.2, duration: .2, yoyo: true, repeat: 1 }); break; } };
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(sub, { opacity: 1, scale: 1 }, '>+0.05'); w.IN(tl, tot, '>', { scale: .3, y: 0, ease: 'back.out(2.5)' });
+  } };
   // parejas: {a:{emoji, n}, b:{emoji, n}, texto} — 3 pasos: dos filas · se unen de a uno (uno con uno) · lo que sobra brilla y sale el texto ("¡HAY MÁS 🐶!" o "¡HAY IGUAL!")
   T.parejas = { n: function () { return 3; }, armar: function (g, tl, B, d) {
     var na = d.a.n, nb = d.b.n, m = Math.max(na, nb), paso = Math.min(170, 1500 / m), x0 = 960 - (m - 1) * paso / 2, YA = 380, YB = 700;

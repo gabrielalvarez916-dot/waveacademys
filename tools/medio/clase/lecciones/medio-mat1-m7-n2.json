@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat1-m7-n2",
+ "step_id": "5dbb9363-036b-4396-b501-0f541aeb3c02",
+ "materia": "Matemática 1",
+ "titulo": "Contar dinero",
+ "sub": "Matemática 1 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuánto son 2 monedas de 10?",
+   "segundos": 6,
+   "respuesta": "¡20!",
+   "emoji": "🪙",
+   "titulo": "CONTAR",
+   "sub": "dinero",
+   "voz": [
+    "Desafío: ¿cuánto son dos monedas de 10?",
+    "¡*20*! 10, 20.",
+    "Hoy: *contar dinero*."
+   ]
+  },
+  {
+   "t": "monedas",
+   "titulo": "LA CAJA DE SOFI",
+   "items": [
+    10,
+    10,
+    5,
+    1,
+    1
+   ],
+   "texto": "$27",
+   "voz": [
+    "Sofi cuenta la plata de la caja.",
+    "10, 20, 25, 26, 27.",
+    "¡Hay *27 pesos*!"
+   ],
+   "neutro": {
+    "voz": [
+     "Sofi cuenta el dinero de la caja.",
+     "10, 20, 25, 26, 27.",
+     "¡Hay *27*!"
+    ]
+   }
+  },
+  {
+   "t": "monedas",
+   "titulo": "OTRA CUENTA",
+   "items": [
+    20,
+    10,
+    5
+   ],
+   "texto": "$35",
+   "voz": [
+    "Ahora un billete y dos monedas.",
+    "20, 30, 35.",
+    "¡Son *35*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PRIMERO LO GRANDE",
+   "texto": "Empezá por el que más vale",
+   "emoji": "💵",
+   "voz": [
+    "Truco: empezá a contar por el que *más vale*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "$10 + $10 + $2, ¿cuánto es?",
+   "opciones": [
+    "12",
+    "22",
+    "30"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Dos de 10 y uno de 2.",
+    "¿Cuánto es todo?",
+    "¡*22*! 10, 20, 22."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar monedas: 3 monedas = 3",
+     "bien": "Sumar lo que vale cada una"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No contamos monedas: *sumamos lo que valen*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTAR",
+     "sumando lo que vale"
+    ],
+    [
+     "EMPEZAR",
+     "por lo que más vale"
+    ],
+    [
+     "TOTAL",
+     "10, 20, 25…"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *sumando* lo que vale cada una.",
+    "Empezamos por lo que *más vale*.",
+    "Y llegamos al *total*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "neutro": {
+    "voz": [
+     "Repasemos lo que aprendimos.",
+     "Contamos *sumando* lo que vale cada una.",
+     "Empezamos por lo que *más vale*.",
+     "Y llegamos al *total*.",
+     "¡Muy bien! Ahora, *a practicar*."
+    ]
+   }
+  }
+ ]
+}

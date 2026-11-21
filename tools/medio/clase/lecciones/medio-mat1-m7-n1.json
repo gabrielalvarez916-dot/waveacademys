@@ -1,0 +1,151 @@
+{
+ "slug": "medio-mat1-m7-n1",
+ "step_id": "fb7c3aed-d805-4941-8f09-3c6e7193d989",
+ "materia": "Matemática 1",
+ "titulo": "Monedas y billetes",
+ "sub": "Matemática 1 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "Sofi atiende el kiosco.",
+    "Los chicos pagan con pesos.",
+    "¡Hay monedas y billetes!"
+   ],
+   "titulo": "MONEDAS",
+   "sub": "y billetes",
+   "voz": [
+    "Sofi atiende el *kiosco* de la escuela.",
+    "Los chicos pagan con *pesos*.",
+    "Hay monedas y billetes.",
+    "Hoy: *monedas y billetes*."
+   ],
+   "neutro": {
+    "lineas": [
+     "Sofi atiende el kiosco.",
+     "Los chicos pagan con dinero.",
+     "¡Hay monedas y billetes!"
+    ],
+    "voz": [
+     "Sofi atiende el *kiosco* de la escuela.",
+     "Los chicos pagan con *dinero*.",
+     "Hay monedas y billetes.",
+     "Hoy: *monedas y billetes*."
+    ]
+   }
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MONEDA",
+    "texto": "redonda, de metal",
+    "emoji": "🪙"
+   },
+   "b": {
+    "cab": "BILLETE",
+    "texto": "de papel",
+    "emoji": "💵"
+   },
+   "signo": "y",
+   "voz": [
+    "La *moneda* es redonda y de metal.",
+    "El *billete* es de papel.",
+    "¡Los dos sirven para pagar!"
+   ]
+  },
+  {
+   "t": "monedas",
+   "titulo": "MONEDAS DE 10",
+   "items": [
+    10,
+    10,
+    10
+   ],
+   "texto": "$30",
+   "voz": [
+    "Sofi tiene tres monedas de 10.",
+    "10, 20, 30.",
+    "¡*30 pesos*!"
+   ],
+   "neutro": {
+    "voz": [
+     "Sofi tiene tres monedas de 10.",
+     "10, 20, 30.",
+     "¡Tiene *30*!"
+    ]
+   }
+  },
+  {
+   "t": "monedas",
+   "titulo": "UN BILLETE",
+   "items": [
+    20,
+    10
+   ],
+   "texto": "$30",
+   "voz": [
+    "Un billete de 20 y una moneda de 10.",
+    "20, 30.",
+    "¡También son *30*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL NÚMERO",
+   "texto": "El número dice cuánto vale",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: el *número* dice cuánto vale."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto vale esta moneda: $5?",
+   "opciones": [
+    "1",
+    "5",
+    "10"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá la moneda.",
+    "¿Cuánto vale?",
+    "¡*5*! Lo dice su número."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MONEDA",
+     "de metal"
+    ],
+    [
+     "BILLETE",
+     "de papel"
+    ],
+    [
+     "EL NÚMERO",
+     "dice cuánto vale"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *moneda* es de metal.",
+    "El *billete* es de papel.",
+    "El *número* dice cuánto vale.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

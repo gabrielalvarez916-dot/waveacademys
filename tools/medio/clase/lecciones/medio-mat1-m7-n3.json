@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat1-m7-n3",
+ "step_id": "d3e93bda-076c-461b-a864-5678f5b95633",
+ "materia": "Matemática 1",
+ "titulo": "Pagar justo",
+ "sub": "Matemática 1 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "Tomi quiere un alfajor.",
+    "Cuesta $15.",
+    "¿Con qué monedas paga justo?"
+   ],
+   "titulo": "PAGAR",
+   "sub": "justo",
+   "voz": [
+    "Tomi quiere comprar un *alfajor*.",
+    "El alfajor cuesta *15 pesos*.",
+    "¿Con qué monedas paga justo?",
+    "Hoy: *pagar justo*."
+   ],
+   "neutro": {
+    "lineas": [
+     "Tomi quiere una galleta.",
+     "Cuesta $15.",
+     "¿Con qué monedas paga justo?"
+    ],
+    "voz": [
+     "Tomi quiere comprar una *galleta*.",
+     "La galleta cuesta *15*.",
+     "¿Con qué monedas paga justo?",
+     "Hoy: *pagar justo*."
+    ]
+   }
+  },
+  {
+   "t": "monedas",
+   "titulo": "PAGA $15",
+   "items": [
+    10,
+    5
+   ],
+   "texto": "¡JUSTO! $15",
+   "voz": [
+    "Tomi da una moneda de 10 y una de 5.",
+    "10, 15.",
+    "¡Pagó *justo*! No sobra nada."
+   ]
+  },
+  {
+   "t": "monedas",
+   "titulo": "PAGA $20",
+   "items": [
+    10,
+    5,
+    5
+   ],
+   "texto": "¡JUSTO! $20",
+   "voz": [
+    "Lola compra una pelotita de 20.",
+    "10, 15, 20.",
+    "¡También pagó *justo*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Dar $10 para algo de $15",
+     "bien": "Falta: hay que llegar a 15"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Con 10 *no alcanza*: hay que llegar a 15."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Algo cuesta $12. ¿Qué das?",
+   "opciones": [
+    "$10 + $2",
+    "$10 + $5",
+    "$5 + $5"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Algo cuesta 12.",
+    "¿Qué monedas das para pagar justo?",
+    "¡*10 y 2*! 10, 12."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ HASTA EL PRECIO",
+   "texto": "Pagar justo es llegar al precio",
+   "emoji": "🎯",
+   "voz": [
+    "Truco: contá hasta llegar *al precio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAGAR JUSTO",
+     "ni más ni menos"
+    ],
+    [
+     "CONTAR",
+     "hasta el precio"
+    ],
+    [
+     "SI FALTA",
+     "no alcanza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Pagar justo es *ni más ni menos*.",
+    "Contamos hasta *el precio*.",
+    "Si falta, *no alcanza*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

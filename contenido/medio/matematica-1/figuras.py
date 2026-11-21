@@ -370,3 +370,31 @@ def tablero_du(numeros, vacios=()):
             v = str(num) if j == 0 else ("" if i in vacios else s[j - 1])
             ax.text(x + .75, y + .34, v, ha="center", va="center", fontsize=14, color=OSC, **F)
     return png(fig)
+
+
+def _plata(ax, x, y, v, sim="$"):
+    if v >= 20:
+        ax.add_patch(FancyBboxPatch((x - .5, y - .28), 1.0, .56, boxstyle="round,pad=0.03", fc="#2f8f5b", ec="#1d5e3b", lw=1.5))
+        ax.text(x, y, f"{sim}{v}", ha="center", va="center", fontsize=12, color="white", **F)
+    else:
+        ax.add_patch(Circle((x, y), .3, fc=AMBAR if v >= 5 else "#c9ccd3", ec=OSC, lw=1.2))
+        ax.text(x, y, f"{sim}{v}", ha="center", va="center", fontsize=10, color=OSC, **F)
+
+
+def dinero(valores, texto=None, sim="$"):
+    """Monedas (hasta 10) y billetes (20 o más) en fila, con el total abajo si se pide."""
+    n = len(valores); paso = 1.2; W = n * paso + .4
+    fig, ax = lienzo(min(6.8, W * .9 + .3), 1.9, W, 1.9, 0, 0)
+    for k, v in enumerate(valores): _plata(ax, .8 + k * paso, 1.35, v, sim)
+    if texto: cartel(ax, W / 2, .45, texto, c=VERDE, fs=13)
+    return png(fig)
+
+
+def precios(items, sim="$"):
+    """Cosas del kiosco con su cartel de precio: items = [(objeto de OBJ, precio)]."""
+    n = len(items); W = n * 1.8 + .2
+    fig, ax = lienzo(min(6.8, W * .95), 2.0, W, 2.0, 0, 0)
+    for k, (obj, p) in enumerate(items):
+        x = 1.0 + k * 1.8; OBJ[obj](ax, x, 1.3)
+        cartel(ax, x, .4, f"{sim}{p}", c=AMBAR, tc=OSC, fs=13)
+    return png(fig)
