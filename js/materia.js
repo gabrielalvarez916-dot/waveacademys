@@ -6,7 +6,7 @@
   var D = null;          // datos de la materia abierta
   var hojaAbierta = null; // id de la lección que se está viendo
   var verPaso = {};
-  var CUENTAS_PRUEBA = ['c7cce4c1-587d-42e1-8406-5a68b6a27194']; // Alumno Primero: todo desbloqueado y puede saltear pasos (cuenta de prueba) // paso que el alumno eligió mirar dentro de un nivel (para volver atrás)
+  var CUENTAS_PRUEBA = ['c7cce4c1-587d-42e1-8406-5a68b6a27194', '2b236b9d-d577-41fd-abbf-382b902e274e']; // Alumno Primero: todo desbloqueado y puede saltear pasos (cuenta de prueba) // paso que el alumno eligió mirar dentro de un nivel (para volver atrás)
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
   // El repaso obligatorio no es un paso cargado: lo arma la IA. Cuenta para completar la lección cuando corresponde.
