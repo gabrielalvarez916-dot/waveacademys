@@ -16,16 +16,16 @@ ESTILO = {"estilo": "primeros"}
 
 N1 = {**ESTILO,
 "objetivo": "Vas a contar del 1 al 30.",
-"vas_a_ver": ["El álbum del 1 al 30", "Filas de 10", "Los del veinte empiezan con 2"],
+"vas_a_ver": ["El álbum del 0 al 30", "Filas de 10", "Los del veinte empiezan con 2"],
 "secciones": [
  S(1, "El álbum de Tomi", [
   P("Tomi junta figuritas. Cada una tiene un número."),
-  P("Su álbum va <b>del 1 al 30</b>."),
-  IMG("El álbum", "Del 1 al 30, de a 10 por fila.", FG.cuadro(30)),
+  P("Su álbum va <b>del 0 al 30</b>."),
+  IMG("El álbum", "Del 0 al 30, de a 10 por fila.", FG.cuadro(30, desde=0)),
  ]),
  S(1, "Los del veinte", [
   D("Del 20 al 29", "Todos empiezan con <b>2</b>: 20, 21, 22… 29."),
-  IMG("Los del veinte", "Están todos en la misma fila.", FG.cuadro(30, resaltar=range(20, 30))),
+  IMG("Los del veinte", "Están todos en la misma fila.", FG.cuadro(30, desde=0, resaltar=range(20, 30))),
  ]),
  S(2, "Para practicar", [
   P("Mirá el tren. Lo vas a usar en la carpeta."),
@@ -50,26 +50,26 @@ N2 = {**ESTILO,
 "secciones": [
  S(1, "Hasta el 50", [
   P("El álbum de Tomi creció: ahora llega al <b>50</b>."),
-  IMG("El álbum hasta 50", "Cinco filas de 10.", FG.cuadro(50)),
+  IMG("El álbum hasta 50", "Filas de 10. Cada fila empieza con un redondo.", FG.cuadro(50, desde=0)),
  ]),
  S(1, "Secretos del cuadro", [
   D("Filas", "En una fila, todos <b>empiezan igual</b>: 31, 32, 33…"),
   D("Columnas", "En una columna, todos <b>terminan igual</b>: 5, 15, 25…"),
-  IMG("La columna del 5", "Todos terminan en 5.", FG.cuadro(50, resaltar=(5, 15, 25, 35, 45))),
+  IMG("La columna del 5", "Todos terminan en 5.", FG.cuadro(50, desde=0, resaltar=(5, 15, 25, 35, 45))),
  ]),
  S(2, "Para practicar", [
   P("Mirá el cuadro. Lo vas a usar en la carpeta."),
-  IMG("Cuadro con huecos", "Completá los números que faltan.", FG.cuadro(50, faltan=(33, 40, 46))),
+  IMG("Cuadro con huecos", "Completá los números que faltan.", FG.cuadro(50, desde=0, faltan=(33, 40, 46))),
  ]),
 ],
-"ejemplo_completo": {"titulo": "La fila del 40", "planteo": "¿Cómo empiezan los números de la fila del 40?", "pasos": ["41, 42, 43…", "Todos empiezan con 4.", "Al final está el 50."]},
+"ejemplo_completo": {"titulo": "La fila del 40", "planteo": "¿Cómo empiezan los números de la fila del 40?", "pasos": ["40, 41, 42…", "Todos empiezan con 4.", "Al final está el 49."]},
 "ejemplo_incompleto": {"titulo": "La columna del 2", "planteo": "Completá.", "pasos": ["2, 12, ___ , 32, 42.", "Todos terminan en ___ ."]},
 "ejemplo_solo": {"titulo": "Después del 39", "planteo": "¿Qué número viene después del 39?"},
 "tip": {"titulo": "Mirá filas y columnas", "texto": "Te ayudan a encontrar cualquier número."},
 "ojo": ["Después del 39 viene el 40.", "Después del 49 viene el 50."],
-"resumen": [{"titulo": "Hasta 50", "texto": "Cinco filas."}, {"titulo": "Filas", "texto": "Empiezan igual."}, {"titulo": "Columnas", "texto": "Terminan igual."}],
+"resumen": [{"titulo": "Hasta 50", "texto": "Filas de 10."}, {"titulo": "Filas", "texto": "Empiezan igual."}, {"titulo": "Columnas", "texto": "Terminan igual."}],
 "glosario": [{"palabra": "Columna", "significado": "Números uno debajo del otro."}, {"palabra": "Cincuenta", "significado": "El número 50."}],
-"carpeta": ["¿Qué número falta en la fila del 30?", "¿Qué número falta al final de la fila del 40?", "¿Qué número falta en la columna del 6?"],
+"carpeta": ["¿Qué número falta en la fila del 30?", "¿Qué número falta al principio de la fila del 40?", "¿Qué número falta en la columna del 6?"],
 "respuestas_carpeta": [["33"], ["40"], ["46"]],
 "soluciones": {"incompleto": "22. 2.", "solo": "40.", "carpeta": ["33.", "40.", "46."]},
 }
@@ -86,7 +86,7 @@ N3 = {**ESTILO,
  S(1, "En el álbum", [
   P("En el álbum, el anterior está a la <b>izquierda</b>."),
   P("El siguiente está a la <b>derecha</b>."),
-  IMG("La figurita 38", "37, 38 y 39.", FG.cuadro(40, resaltar=(37, 38, 39))),
+  IMG("La figurita 38", "37, 38 y 39.", FG.cuadro(40, desde=0, resaltar=(37, 38, 39))),
  ]),
  S(2, "Para practicar", [
   P("Mirá la recta. La vas a usar en la carpeta."),
@@ -112,7 +112,7 @@ N4 = {**ESTILO,
  S(1, "Huecos en el álbum", [
   P("A Tomi le faltan figuritas."),
   P("Para saber cuál falta, <b>contamos desde el anterior</b>."),
-  IMG("El álbum con huecos", "Faltan el 8, el 17 y el 25.", FG.cuadro(30, faltan=(8, 17, 25))),
+  IMG("El álbum con huecos", "Faltan el 8, el 17 y el 25.", FG.cuadro(30, desde=0, faltan=(8, 17, 25))),
  ]),
  S(1, "En el tren", [
   D("Qué número falta", "Decí el número de antes y <b>seguí contando</b>."),
@@ -120,7 +120,7 @@ N4 = {**ESTILO,
  ]),
  S(2, "Para practicar", [
   P("Mirá el cuadro. Lo vas a usar en la carpeta."),
-  IMG("Cuadro para completar", "Escribí los que faltan.", FG.cuadro(50, faltan=(12, 29, 41))),
+  IMG("Cuadro para completar", "Escribí los que faltan.", FG.cuadro(50, desde=0, faltan=(12, 29, 41))),
  ]),
 ],
 "ejemplo_completo": {"titulo": "23, 24, ___, 26", "planteo": "¿Qué número falta?", "pasos": ["Antes del hueco está el 24.", "Después del 24 viene el 25.", "Falta el 25."]},
