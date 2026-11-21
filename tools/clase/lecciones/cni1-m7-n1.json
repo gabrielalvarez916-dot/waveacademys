@@ -1,0 +1,160 @@
+{
+ "slug": "cni1-m7-n1",
+ "step_id": "238823cb-e109-46fd-ad59-c2a535a61cd9",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Competencia y depredación",
+ "sub": "Ciencias Naturales Integradas I · Misión 7 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Dos plantas se quitan la luz. ¿Qué relación es?",
+   "segundos": 6,
+   "respuesta": "Competencia",
+   "emoji": "🌿",
+   "titulo": "COMPETENCIA Y DEPREDACIÓN",
+   "sub": "dos relaciones",
+   "voz": [
+    "Desafío: dos plantas se quitan la luz. ¿Qué relación es? Seis segundos.",
+    "Competencia.",
+    "Hoy: *competencia y depredación*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Competencia",
+   "texto": "Disputa por un recurso limitado",
+   "emoji": "⚔️",
+   "voz": [
+    "La *competencia* es la disputa por un recurso limitado.",
+    "Puede ser por alimento, agua, luz o espacio."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "INTRAESPECÍFICA",
+    "texto": "Misma especie",
+    "emoji": "🦁"
+   },
+   "b": {
+    "cab": "INTERESPECÍFICA",
+    "texto": "Especies distintas",
+    "emoji": "🦓"
+   },
+   "signo": "vs",
+   "voz": [
+    "Hay dos tipos.",
+    "*Intraespecífica*: entre la misma especie.",
+    "*Interespecífica*: entre especies distintas."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Depredación",
+   "texto": "Un animal caza a otro para comer",
+   "emoji": "🐆",
+   "voz": [
+    "En la *depredación*, un depredador caza a una presa para alimentarse.",
+    "Como el puma que caza al guanaco."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "COMPETENCIA",
+     "emoji": "⚔️"
+    },
+    {
+     "cab": "DEPREDACIÓN",
+     "emoji": "🐆"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Dos aves, un nido",
+     "caja": 0
+    },
+    {
+     "txt": "Águila caza ratón",
+     "caja": 1
+    },
+    {
+     "txt": "Plantas por luz",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Competencia o depredación?",
+    "*Dos aves, un nido* y *plantas por luz*: competencia.",
+    "*Águila caza ratón*: depredación."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama el animal cazado?",
+   "opciones": [
+    "Presa",
+    "Depredador",
+    "Parásito"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se llama el animal cazado?",
+    "¿Presa, depredador o parásito?",
+    "La *presa*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El depredador es siempre malo",
+     "bien": "Regula las poblaciones"
+    },
+    {
+     "mal": "Competencia igual a depredación",
+     "bien": "Una lucha por recursos, otra caza"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el depredador es *siempre malo*.",
+    "Y *confundir* competencia con depredación."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *competencia* es por un recurso.",
+    "Puede ser *intra* o *interespecífica*.",
+    "La *depredación* es cazar para comer.",
+    "Y ambas *regulan* las poblaciones.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMPETENCIA",
+     "un recurso"
+    ],
+    [
+     "TIPOS",
+     "intra e inter"
+    ],
+    [
+     "DEPREDACIÓN",
+     "cazar"
+    ],
+    [
+     "EQUILIBRIO",
+     "regulan"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

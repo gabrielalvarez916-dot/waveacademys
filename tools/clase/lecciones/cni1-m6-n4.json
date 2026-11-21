@@ -1,0 +1,185 @@
+{
+ "slug": "cni1-m6-n4",
+ "step_id": "5252ebe1-d6a9-42b9-9097-194b1ee94ba9",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Ecorregiones en riesgo",
+ "sub": "Ciencias Naturales Integradas I · Misión 6 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ALERTA",
+   "titular": "Un gran felino pierde su selva",
+   "bajada": "Cada año hay menos bosque",
+   "emoji": "🚨",
+   "titulo": "ECORREGIONES EN RIESGO",
+   "sub": "amenazas y cuidado",
+   "voz": [
+    "Alerta: un gran felino pierde su selva.",
+    "Cada año hay menos bosque.",
+    "Hoy: *ecorregiones en riesgo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "AMENAZAS",
+   "columnas": [
+    "Amenaza",
+    "Daño"
+   ],
+   "filas": [
+    [
+     "Desmonte",
+     "Se tala el bosque"
+    ],
+    [
+     "Incendios",
+     "Se quema el hábitat"
+    ],
+    [
+     "Sobrepesca",
+     "Se pesca de más"
+    ],
+    [
+     "Invasoras",
+     "Compiten con las nativas"
+    ]
+   ],
+   "voz": [
+    "Las amenazas.",
+    "El *desmonte*: se tala el bosque.",
+    "Los *incendios*: se quema el hábitat.",
+    "La *sobrepesca*: se pesca de más.",
+    "Y las *invasoras*: compiten con las nativas."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Hábitat",
+   "texto": "Lugar donde vive una especie",
+   "emoji": "🏠",
+   "voz": [
+    "El *hábitat* es el lugar donde vive una especie.",
+    "Si se destruye, la especie queda en peligro."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Áreas protegidas",
+   "texto": "Parques nacionales y reservas",
+   "emoji": "🌲",
+   "voz": [
+    "Los *parques nacionales* y las *reservas* protegen ambientes y especies.",
+    "Como Iguazú y Los Glaciares en la Argentina."
+   ],
+   "neutro": {
+    "texto": "Parques nacionales y reservas",
+    "voz": [
+     "Los *parques nacionales* y las *reservas* protegen ambientes y especies.",
+     "Permiten visitas controladas y estudios científicos."
+    ]
+   }
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AYUDA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "DAÑA",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Parque nacional",
+     "caja": 0
+    },
+    {
+     "txt": "Desmonte",
+     "caja": 1
+    },
+    {
+     "txt": "Educación ambiental",
+     "caja": 0
+    },
+    {
+     "txt": "Incendio",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Ayuda o daña?",
+    "*Parque nacional* y *educación ambiental*: ayudan.",
+    "*Desmonte* e *incendio*: dañan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Talar un bosque para otros usos se llama…",
+   "opciones": [
+    "Desmonte",
+    "Reforestación",
+    "Erosión"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: talar un bosque para otros usos.",
+    "¿Desmonte, reforestación o erosión?",
+    "*Desmonte*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cuidar es solo del Estado",
+     "bien": "Cuidamos entre todos"
+    },
+    {
+     "mal": "Proteger es no usar nada",
+     "bien": "Se usa con cuidado"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que cuidar es solo del *Estado*.",
+    "Y pensar que proteger es *no usar nada*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Amenazan el *desmonte*, los *incendios* y la *sobrepesca*.",
+    "Sin *hábitat*, las especies peligran.",
+    "Los *parques* protegen.",
+    "Y cuidamos *entre todos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AMENAZAS",
+     "desmonte, incendios"
+    ],
+    [
+     "HÁBITAT",
+     "su hogar"
+    ],
+    [
+     "PARQUES",
+     "protegen"
+    ],
+    [
+     "CUIDAR",
+     "entre todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

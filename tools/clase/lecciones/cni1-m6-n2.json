@@ -1,0 +1,194 @@
+{
+ "slug": "cni1-m6-n2",
+ "step_id": "378d6b2d-2678-439f-adc8-935dd1961f9f",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Pastizal, monte y selva",
+ "sub": "Ciencias Naturales Integradas I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué ambiente tiene mucha lluvia, calor y árboles altos?",
+   "segundos": 6,
+   "respuesta": "La selva",
+   "emoji": "🌳",
+   "titulo": "PASTIZAL, MONTE Y SELVA",
+   "sub": "tres ambientes",
+   "voz": [
+    "Desafío: ¿qué ambiente tiene mucha lluvia, calor y árboles altos? Seis segundos.",
+    "La selva.",
+    "Hoy: *pastizal*, *monte* y *selva*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Pastizal pampeano",
+   "texto": "Llanura templada de suelos fértiles",
+   "emoji": "🌾",
+   "voz": [
+    "El *pastizal pampeano* es una llanura templada de suelos muy fértiles.",
+    "Viven el ñandú y la vizcacha."
+   ],
+   "neutro": {
+    "palabra": "Pastizal",
+    "texto": "Llanura templada de suelos fértiles",
+    "voz": [
+     "El *pastizal* es una llanura templada de suelos muy fértiles.",
+     "Viven aves corredoras y roedores."
+    ]
+   }
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES AMBIENTES",
+   "columnas": [
+    "Ambiente",
+    "Clima",
+    "Vegetación"
+   ],
+   "filas": [
+    [
+     "Pastizal",
+     "Templado",
+     "Pastos"
+    ],
+    [
+     "Monte",
+     "Árido",
+     "Arbustos"
+    ],
+    [
+     "Selva",
+     "Cálido y lluvioso",
+     "Árboles altos"
+    ]
+   ],
+   "voz": [
+    "Compará los tres.",
+    "*Pastizal*: templado, pastos.",
+    "*Monte*: árido, arbustos.",
+    "*Selva*: cálido y lluvioso, árboles altos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PASTIZAL",
+     "emoji": "🌾"
+    },
+    {
+     "cab": "MONTE",
+     "emoji": "🌵"
+    },
+    {
+     "cab": "SELVA",
+     "emoji": "🌳"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pastos",
+     "caja": 0
+    },
+    {
+     "txt": "Arbustos",
+     "caja": 1
+    },
+    {
+     "txt": "Lianas",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué ambiente?",
+    "*Pastos*: pastizal.",
+    "*Arbustos*: monte.",
+    "*Lianas*: selva."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Yungas y Misiones",
+   "texto": "Selvas del noroeste y del noreste",
+   "emoji": "🐆",
+   "voz": [
+    "Las *Yungas* y la selva *misionera* son selvas argentinas.",
+    "Viven el yaguareté y el tucán."
+   ],
+   "neutro": {
+    "palabra": "Selvas",
+    "texto": "Mucha lluvia, calor y gran diversidad",
+    "voz": [
+     "Las *selvas* tienen mucha lluvia y calor.",
+     "Viven grandes felinos y tucanes."
+    ]
+   }
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué ambiente tiene arbustos y poca lluvia?",
+   "opciones": [
+    "Monte",
+    "Selva",
+    "Pastizal"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué ambiente tiene arbustos y poca lluvia?",
+    "¿Monte, selva o pastizal?",
+    "El *monte*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El monte no tiene vida",
+     "bien": "Tiene plantas y animales adaptados"
+    },
+    {
+     "mal": "Pastizal igual a estepa",
+     "bien": "Son ambientes distintos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el *monte* no tiene vida.",
+    "Y confundir *pastizal* con estepa."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *pastizal* tiene pastos.",
+    "El *monte* es árido y de arbustos.",
+    "La *selva* es cálida y lluviosa.",
+    "Y la *lluvia* explica el paisaje.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PASTIZAL",
+     "pastos"
+    ],
+    [
+     "MONTE",
+     "arbustos"
+    ],
+    [
+     "SELVA",
+     "árboles altos"
+    ],
+    [
+     "CLAVE",
+     "la lluvia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

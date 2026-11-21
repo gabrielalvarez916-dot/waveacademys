@@ -1,0 +1,196 @@
+{
+ "slug": "cni1-m7-n3",
+ "step_id": "ae9b96d5-9e1f-412d-b27a-cc8df31b01de",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Parasitismo",
+ "sub": "Ciencias Naturales Integradas I · Misión 7 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "MASCOTAS",
+   "titular": "Una garrapata viaja en un perro",
+   "bajada": "Y se alimenta de su sangre",
+   "emoji": "🐕",
+   "titulo": "PARASITISMO",
+   "sub": "parásito y hospedador",
+   "voz": [
+    "Mascotas: una garrapata viaja en un perro.",
+    "Y se alimenta de su sangre.",
+    "Hoy: *parasitismo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Parasitismo",
+   "texto": "Uno se alimenta de otro y lo perjudica",
+   "emoji": "🦟",
+   "voz": [
+    "En el *parasitismo*, el parásito se alimenta del hospedador y lo perjudica.",
+    "No suele matarlo enseguida."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ECTOPARÁSITO",
+     "emoji": "🪲"
+    },
+    {
+     "cab": "ENDOPARÁSITO",
+     "emoji": "🪱"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pulga",
+     "caja": 0
+    },
+    {
+     "txt": "Tenia",
+     "caja": 1
+    },
+    {
+     "txt": "Garrapata",
+     "caja": 0
+    },
+    {
+     "txt": "Lombriz",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Dónde viven?",
+    "*Pulga* y *garrapata*: ectoparásitos, fuera del cuerpo.",
+    "*Tenia* y *lombriz*: endoparásitos, dentro del cuerpo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARÁSITO Y DEPREDADOR",
+   "columnas": [
+    "",
+    "Parásito",
+    "Depredador"
+   ],
+   "filas": [
+    [
+     "Mata",
+     "No enseguida",
+     "Sí"
+    ],
+    [
+     "Tamaño",
+     "Más chico",
+     "Más grande"
+    ],
+    [
+     "Duración",
+     "Larga",
+     "Corta"
+    ]
+   ],
+   "voz": [
+    "Diferencias.",
+    "El parásito *no mata enseguida*.",
+    "Suele ser *más chico*.",
+    "Y la relación es *larga*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PREVENCIÓN",
+   "items": [
+    {
+     "txt": "Higiene",
+     "emoji": "🧼"
+    },
+    {
+     "txt": "Agua segura",
+     "emoji": "🚰"
+    },
+    {
+     "txt": "Cocinar bien",
+     "emoji": "🍳"
+    },
+    {
+     "txt": "Desparasitar",
+     "emoji": "💊"
+    }
+   ],
+   "voz": [
+    "Para prevenir parásitos.",
+    "Mantené la *higiene*.",
+    "Tomá *agua segura*.",
+    "*Cociná bien* los alimentos.",
+    "Y *desparasitá* a las mascotas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El ser vivo que alberga al parásito es el…",
+   "opciones": [
+    "Hospedador",
+    "Depredador",
+    "Productor"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el que alberga al parásito.",
+    "¿Hospedador, depredador o productor?",
+    "El *hospedador*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El parásito mata enseguida",
+     "bien": "No suele hacerlo"
+    },
+    {
+     "mal": "Parásito igual a depredador",
+     "bien": "Se alimenta sin matar enseguida"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el parásito *mata enseguida*.",
+    "Y *confundirlo* con el depredador."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *parásito* perjudica a su *hospedador*.",
+    "Puede ser *ecto* o *endoparásito*.",
+    "No suele *matar enseguida*.",
+    "Y se previene con *higiene*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARÁSITO",
+     "perjudica"
+    ],
+    [
+     "HOSPEDADOR",
+     "lo alberga"
+    ],
+    [
+     "TIPOS",
+     "ecto y endo"
+    ],
+    [
+     "PREVENCIÓN",
+     "higiene"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

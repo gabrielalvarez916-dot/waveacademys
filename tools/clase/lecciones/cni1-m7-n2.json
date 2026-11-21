@@ -1,0 +1,192 @@
+{
+ "slug": "cni1-m7-n2",
+ "step_id": "210dfc69-9354-470d-bd0b-a25d51871286",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Mutualismo y comensalismo",
+ "sub": "Ciencias Naturales Integradas I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "La abeja toma néctar 🐝"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y la flor qué gana?"
+    },
+    {
+     "yo": false,
+     "txt": "Se poliniza 🌸"
+    }
+   ],
+   "titulo": "MUTUALISMO Y COMENSALISMO",
+   "sub": "quién gana",
+   "voz": [
+    "Lu cuenta que la abeja toma néctar.",
+    "Juan: ¿y la flor qué gana?",
+    "Lu: se poliniza.",
+    "Hoy: *mutualismo y comensalismo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Mutualismo",
+   "texto": "Ambos se benefician",
+   "emoji": "🤝",
+   "voz": [
+    "En el *mutualismo*, ambos se benefician.",
+    "Como la abeja y la flor."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Comensalismo",
+   "texto": "Uno gana y el otro no se afecta",
+   "emoji": "🦈",
+   "voz": [
+    "En el *comensalismo*, uno gana y el otro no se afecta.",
+    "Como la rémora y el tiburón."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUIÉN GANA",
+   "columnas": [
+    "Relación",
+    "A",
+    "B"
+   ],
+   "filas": [
+    [
+     "Mutualismo",
+     "Gana",
+     "Gana"
+    ],
+    [
+     "Comensalismo",
+     "Gana",
+     "Nada"
+    ],
+    [
+     "Parasitismo",
+     "Gana",
+     "Pierde"
+    ]
+   ],
+   "voz": [
+    "Quién gana en cada relación.",
+    "*Mutualismo*: ambos ganan.",
+    "*Comensalismo*: uno gana y el otro nada.",
+    "*Parasitismo*: uno gana y el otro pierde."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MUTUALISMO",
+     "emoji": "🤝"
+    },
+    {
+     "cab": "COMENSALISMO",
+     "emoji": "🦈"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Abeja y flor",
+     "caja": 0
+    },
+    {
+     "txt": "Rémora y tiburón",
+     "caja": 1
+    },
+    {
+     "txt": "Hongo y alga",
+     "caja": 0
+    },
+    {
+     "txt": "Epífita y árbol",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Qué relación?",
+    "*Abeja y flor* y *hongo y alga*: mutualismo.",
+    "*Rémora y tiburón* y *epífita y árbol*: comensalismo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Si ambos se benefician, la relación es…",
+   "opciones": [
+    "Mutualismo",
+    "Comensalismo",
+    "Parasitismo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: si ambos se benefician.",
+    "¿Mutualismo, comensalismo o parasitismo?",
+    "*Mutualismo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Toda ayuda favorece a ambos",
+     "bien": "Puede favorecer a uno"
+    },
+    {
+     "mal": "Comensalismo igual a parasitismo",
+     "bien": "En el comensalismo nadie pierde"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que toda ayuda favorece a *ambos*.",
+    "Y confundir *comensalismo* con parasitismo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *simbiosis* es una relación estrecha.",
+    "En el *mutualismo*, ambos ganan.",
+    "En el *comensalismo*, uno gana y el otro no se afecta.",
+    "Mirá siempre a *los dos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SIMBIOSIS",
+     "relación estrecha"
+    ],
+    [
+     "MUTUALISMO",
+     "ambos ganan"
+    ],
+    [
+     "COMENSALISMO",
+     "uno gana"
+    ],
+    [
+     "CLAVE",
+     "mirar a los dos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "slug": "cni1-m6-n3",
+ "step_id": "a6caf0fb-d900-405e-a4e9-13a8fec47f57",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Ambientes de montaña y de mar",
+ "sub": "Ciencias Naturales Integradas I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "4.000 m",
+   "emoji": "🏔️",
+   "final": "y la vida cambia con la altura",
+   "titulo": "MONTAÑA Y MAR",
+   "sub": "ambientes extremos",
+   "voz": [
+    "A cuatro mil metros de altura el aire casi no tiene oxígeno.",
+    "Y aun así hay vida.",
+    "Hoy: *ambientes de montaña y de mar*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Puna y estepa",
+   "texto": "Ambientes fríos y ventosos de altura y del sur",
+   "emoji": "🌬️",
+   "voz": [
+    "La *Puna* es una montaña muy alta y seca.",
+    "La *estepa* patagónica tiene arbustos bajos y viento."
+   ],
+   "neutro": {
+    "palabra": "Montaña y estepa",
+    "texto": "Ambientes fríos y ventosos",
+    "voz": [
+     "En las *montañas altas* hay poco oxígeno y mucho frío.",
+     "La *estepa* tiene arbustos bajos y viento."
+    ]
+   }
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Adaptaciones",
+    "emoji": "🧬"
+   },
+   "items": [
+    {
+     "txt": "Altura: poco oxígeno",
+     "emoji": "🏔️"
+    },
+    {
+     "txt": "Estepa: viento",
+     "emoji": "🌬️"
+    },
+    {
+     "txt": "Mar frío: grasa",
+     "emoji": "🐧"
+    }
+   ],
+   "voz": [
+    "Cada ambiente exige algo.",
+    "En la *altura*: pulmones eficientes.",
+    "En la *estepa*: plantas bajas.",
+    "En el *mar frío*: capa de grasa."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "MAR FRÍO",
+   "columnas": [
+    "Animal",
+    "Rasgo"
+   ],
+   "filas": [
+    [
+     "Ballena franca",
+     "Se alimenta de plancton"
+    ],
+    [
+     "Lobo marino",
+     "Grasa que abriga"
+    ],
+    [
+     "Pingüino",
+     "Plumas impermeables"
+    ]
+   ],
+   "voz": [
+    "Animales del mar argentino.",
+    "La *ballena franca* come plancton.",
+    "El *lobo marino* tiene grasa.",
+    "El *pingüino*, plumas impermeables."
+   ],
+   "neutro": {
+    "titulo": "MAR FRÍO",
+    "voz": [
+     "Animales de los mares fríos.",
+     "Las *ballenas* comen plancton.",
+     "El *lobo marino* tiene grasa.",
+     "El *pingüino*, plumas impermeables."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Plancton",
+   "texto": "Seres diminutos que flotan en el agua",
+   "emoji": "🔬",
+   "voz": [
+    "El *plancton* son seres diminutos que flotan en el agua.",
+    "Alimenta a muchos animales marinos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué abriga a los animales del mar frío?",
+   "opciones": [
+    "Una capa de grasa",
+    "Plumas largas",
+    "Pelo largo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué abriga a los animales del mar frío?",
+    "¿Una capa de grasa, plumas largas o pelo largo?",
+    "Una *capa de grasa*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El mar frío tiene poca vida",
+     "bien": "Es rico en plancton"
+    },
+    {
+     "mal": "La altura no cambia la vegetación",
+     "bien": "Sí la cambia"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el mar frío *tiene poca vida*.",
+    "Y pensar que la *altura* no cambia la vegetación."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "En la *montaña*, la vida cambia con la altura.",
+    "La *estepa* tiene arbustos bajos.",
+    "El *mar frío* es rico en plancton.",
+    "Y cada ambiente exige *adaptaciones*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MONTAÑA",
+     "la altura cambia todo"
+    ],
+    [
+     "ESTEPA",
+     "arbustos bajos"
+    ],
+    [
+     "MAR",
+     "plancton"
+    ],
+    [
+     "ADAPTACIÓN",
+     "grasa y viento"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

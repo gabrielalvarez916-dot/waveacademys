@@ -1,0 +1,203 @@
+{
+ "slug": "cni1-m6-n1",
+ "step_id": "dd3e77f8-2905-42a1-8c53-30863bcefdf1",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Regiones y clima",
+ "sub": "Ciencias Naturales Integradas I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Muchos climas",
+   "emoji": "🌎",
+   "final": "en un solo país",
+   "titulo": "REGIONES Y CLIMA",
+   "sub": "ecorregiones argentinas",
+   "voz": [
+    "Un país muy largo tiene selvas, desiertos, montañas y mar.",
+    "Todos esos ambientes dependen del clima.",
+    "Hoy: *regiones y clima* de la Argentina."
+   ],
+   "neutro": {
+    "sub": "ecorregiones de un país extenso",
+    "voz": [
+     "Un país muy extenso tiene selvas, desiertos, montañas y mar.",
+     "Todos esos ambientes dependen del clima.",
+     "Hoy: *regiones y clima* de un país extenso."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Ecorregión",
+   "texto": "Área con clima, relieve y vida característicos",
+   "emoji": "🗺️",
+   "voz": [
+    "Una *ecorregión* es una gran área con clima, relieve y vida característicos.",
+    "Cada una tiene sus plantas y animales."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "FACTORES DEL CLIMA",
+   "columnas": [
+    "Factor",
+    "Cómo influye"
+   ],
+   "filas": [
+    [
+     "Latitud",
+     "Más cerca del ecuador, más calor"
+    ],
+    [
+     "Altitud",
+     "Más alto, más frío"
+    ],
+    [
+     "Mar",
+     "Suaviza el clima"
+    ],
+    [
+     "Vientos",
+     "Traen humedad o aire seco"
+    ]
+   ],
+   "voz": [
+    "Cuatro factores.",
+    "La *latitud*: cerca del ecuador hace más calor.",
+    "La *altitud*: cuanto más alto, más frío.",
+    "El *mar* suaviza el clima.",
+    "Y los *vientos* traen humedad o aire seco."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CÁLIDO LLUVIOSO",
+     "emoji": "🌧️"
+    },
+    {
+     "cab": "ÁRIDO",
+     "emoji": "🏜️"
+    },
+    {
+     "cab": "FRÍO",
+     "emoji": "❄️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Selva",
+     "caja": 0
+    },
+    {
+     "txt": "Desierto",
+     "caja": 1
+    },
+    {
+     "txt": "Estepa fría",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué clima?",
+    "*Selva*: cálido y lluvioso.",
+    "*Desierto*: árido.",
+    "*Estepa fría*: frío."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Clima y vida",
+    "emoji": "🌿"
+   },
+   "items": [
+    {
+     "txt": "Mucha lluvia: selva",
+     "emoji": "🌳"
+    },
+    {
+     "txt": "Poca lluvia: arbustos",
+     "emoji": "🌵"
+    },
+    {
+     "txt": "Lluvia moderada: pastos",
+     "emoji": "🌾"
+    }
+   ],
+   "voz": [
+    "El clima decide la vida.",
+    "Con *mucha lluvia*: selva.",
+    "Con *poca lluvia*: arbustos.",
+    "Con *lluvia moderada*: pastizal."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué factor enfría un lugar cuanto más alto está?",
+   "opciones": [
+    "Altitud",
+    "Latitud",
+    "Mar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué factor enfría cuanto más alto?",
+    "¿Altitud, latitud o mar?",
+    "La *altitud*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todo el país tiene el mismo clima",
+     "bien": "Hay muchos climas"
+    },
+    {
+     "mal": "La altura no influye",
+     "bien": "La altura enfría"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Pensar que hay *un solo clima*.",
+    "Y olvidar que la *altura* enfría."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una *ecorregión* tiene clima, relieve y vida propios.",
+    "Influyen *latitud*, *altitud*, *mar* y *vientos*.",
+    "El *clima* decide la vegetación.",
+    "Y un país extenso tiene *muchos ambientes*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ECORREGIÓN",
+     "clima y vida"
+    ],
+    [
+     "FACTORES",
+     "cuatro"
+    ],
+    [
+     "CLIMA",
+     "decide la vida"
+    ],
+    [
+     "PAÍS",
+     "muchos ambientes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

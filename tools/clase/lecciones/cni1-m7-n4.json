@@ -1,0 +1,168 @@
+{
+ "slug": "cni1-m7-n4",
+ "step_id": "9eeb21c2-a038-4fe4-ab5d-e3148dff9945",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Redes de interacciones",
+ "sub": "Ciencias Naturales Integradas I · Misión 7 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Si desaparecen los zorros de un campo, ¿qué pasa con los roedores?",
+   "segundos": 6,
+   "respuesta": "Aumentan",
+   "emoji": "🦊",
+   "titulo": "REDES DE INTERACCIONES",
+   "sub": "todo está conectado",
+   "voz": [
+    "Desafío: si desaparecen los zorros de un campo, ¿qué pasa con los roedores? Seis segundos.",
+    "Aumentan.",
+    "Hoy: *redes de interacciones*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Red trófica",
+   "texto": "Cadenas alimentarias conectadas",
+   "emoji": "🕸️",
+   "voz": [
+    "Una *red trófica* son cadenas alimentarias conectadas.",
+    "Si cambia un eslabón, cambian los demás."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Desaparecen los zorros",
+    "emoji": "🦊"
+   },
+   "items": [
+    {
+     "txt": "Aumentan los roedores",
+     "emoji": "🐭"
+    },
+    {
+     "txt": "Comen más plantas",
+     "emoji": "🌱"
+    },
+    {
+     "txt": "Otros pierden alimento",
+     "emoji": "🦉"
+    }
+   ],
+   "voz": [
+    "Un efecto en cadena.",
+    "Aumentan los *roedores*.",
+    "Comen *más plantas*.",
+    "Y otros animales *pierden alimento*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SE DESEQUILIBRA",
+     "emoji": "⚠️"
+    },
+    {
+     "cab": "SE MANTIENE",
+     "emoji": "⚖️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Llega una invasora",
+     "caja": 0
+    },
+    {
+     "txt": "Todo estable",
+     "caja": 1
+    },
+    {
+     "txt": "Falta especie clave",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Se desequilibra o se mantiene?",
+    "*Una invasora* y *perder una especie clave*: se desequilibra.",
+    "*Todo estable*: se mantiene."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Equilibrio",
+   "texto": "Poblaciones estables en el tiempo",
+   "emoji": "⚖️",
+   "voz": [
+    "El *equilibrio* es cuando las poblaciones se mantienen estables.",
+    "Las relaciones lo sostienen."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Si quitás una especie, ¿afecta a las demás?",
+   "opciones": [
+    "Sí",
+    "No",
+    "Solo a las plantas"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: si quitás una especie, ¿afecta a las demás?",
+    "¿Sí, no o solo a las plantas?",
+    "*Sí*: hay efectos en cadena."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sacar una especie no afecta a otras",
+     "bien": "Todo está conectado"
+    },
+    {
+     "mal": "El equilibrio es fijo",
+     "bien": "Cambia y se ajusta"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que sacar una especie *no afecta*.",
+    "Y pensar que el equilibrio es *fijo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Las relaciones forman *redes*.",
+    "Una *red trófica* conecta cadenas.",
+    "Un cambio produce *efectos en cadena*.",
+    "Y hay que cuidar el *equilibrio*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REDES",
+     "muchas relaciones"
+    ],
+    [
+     "TRÓFICA",
+     "cadenas conectadas"
+    ],
+    [
+     "CADENA",
+     "un cambio afecta a otros"
+    ],
+    [
+     "EQUILIBRIO",
+     "poblaciones estables"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
