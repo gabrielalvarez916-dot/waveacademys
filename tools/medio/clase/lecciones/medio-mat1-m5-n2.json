@@ -1,0 +1,155 @@
+{
+ "slug": "medio-mat1-m5-n2",
+ "step_id": "c39b492e-8ae9-456c-aa2c-aaf5a0ae2bca",
+ "materia": "Matemática 1",
+ "titulo": "Ordenar de menor a mayor",
+ "sub": "Matemática 1 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Ordená de menor a mayor: 25, 52, 12",
+   "segundos": 8,
+   "respuesta": "12, 25, 52",
+   "emoji": "🏃",
+   "titulo": "DE MENOR",
+   "sub": "a mayor",
+   "voz": [
+    "Desafío: ordená de menor a mayor: 25, 52 y 12.",
+    "¡12, 25 y 52!",
+    "Hoy: *ordenar de menor a mayor*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LA CARRERA DE LA ESCUELA",
+   "etq1": "DESORDENADOS",
+   "etq2": "DE MENOR A MAYOR",
+   "items": [
+    {
+     "txt": "18",
+     "emoji": "👧"
+    },
+    {
+     "txt": "36",
+     "emoji": "👦"
+    },
+    {
+     "txt": "59",
+     "emoji": "🧒"
+    },
+    {
+     "txt": "71",
+     "emoji": "👧"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "voz": [
+    "Los corredores tienen su número.",
+    "Están desordenados: 59, 18, 71, 36.",
+    "De menor a mayor: 18, 36, 59, 71."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EMPEZÁ POR EL MÁS CHICO",
+   "texto": "Buscá el menor y ponelo primero",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: buscá el *más chico* y ponelo primero."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 0,
+   "max": 100,
+   "paso": 10,
+   "marcas": [
+    {
+     "v": 18,
+     "txt": "18"
+    },
+    {
+     "v": 36,
+     "txt": "36"
+    },
+    {
+     "v": 59,
+     "txt": "59"
+    },
+    {
+     "v": 71,
+     "txt": "71"
+    }
+   ],
+   "voz": [
+    "En la recta se ve el orden.",
+    "El *18*.",
+    "El *36*.",
+    "El *59*.",
+    "¡Y el *71*, el más grande!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "De menor a mayor, ¿cuál va primero?",
+   "opciones": [
+    "47",
+    "74",
+    "40"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Ordenamos 47, 74 y 40.",
+    "¿Cuál va *primero*, de menor a mayor?",
+    "¡El *40*! Es el más chico."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Mirar solo la última cifra",
+     "bien": "Mirar primero las decenas"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para ordenar, mirá primero las *decenas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MENOR A MAYOR",
+     "del chico al grande"
+    ],
+    [
+     "PRIMERO",
+     "el más chico"
+    ],
+    [
+     "DECENAS",
+     "se miran primero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Menor a mayor*: del chico al grande.",
+    "Primero va el *más chico*.",
+    "Mirá primero las *decenas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "slug": "medio-mat1-m5-n4",
+ "step_id": "27ce7479-66d1-42d4-afae-c3a77c150de3",
+ "materia": "Matemática 1",
+ "titulo": "La recta numérica",
+ "sub": "Matemática 1 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🟨",
+   "lineas": [
+    "Tomi juega a la rayuela gigante.",
+    "Cada casillero tiene un número.",
+    "¡Es una recta numérica!"
+   ],
+   "titulo": "LA RECTA",
+   "sub": "numérica",
+   "voz": [
+    "Tomi juega en una *rayuela gigante*.",
+    "Cada casillero tiene su número.",
+    "¡Es una *recta numérica*!",
+    "Hoy: *la recta numérica*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 0,
+   "max": 100,
+   "paso": 10,
+   "marcas": [
+    {
+     "v": 30,
+     "txt": "30"
+    },
+    {
+     "v": 70,
+     "txt": "70"
+    }
+   ],
+   "voz": [
+    "La recta va del 0 al 100.",
+    "Acá está el *30*.",
+    "Y acá el *70*: más a la derecha, más grande."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "A LA DERECHA",
+   "texto": "Más a la derecha, más grande",
+   "emoji": "➡️",
+   "voz": [
+    "Truco: *más a la derecha*, más grande."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "SALTOS DE TOMI",
+   "min": 0,
+   "max": 20,
+   "inicio": 4,
+   "saltos": [
+    {
+     "a": 3,
+     "txt": "+3"
+    },
+    {
+     "a": 5,
+     "txt": "+5"
+    },
+    {
+     "a": -2,
+     "txt": "−2"
+    }
+   ],
+   "voz": [
+    "Tomi empieza en el 4.",
+    "Salta 3: llega al *7*.",
+    "Salta 5 más: llega al *12*.",
+    "Vuelve 2: llega al *10*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 40,
+   "max": 50,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 46,
+     "txt": "46"
+    }
+   ],
+   "voz": [
+    "¿Dónde está el 46?",
+    "Entre el 40 y el 50, más cerca del *50*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está más a la derecha?",
+   "opciones": [
+    "29",
+    "92"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la recta.",
+    "¿Cuál está *más a la derecha*: 29 o 92?",
+    "¡El *92*! Es el mayor."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LA RECTA",
+     "números en orden"
+    ],
+    [
+     "DERECHA",
+     "más grande"
+    ],
+    [
+     "SALTOS",
+     "para adelante o atrás"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la recta, los números van *en orden*.",
+    "*Más a la derecha*, más grande.",
+    "Podemos *saltar* para adelante o para atrás.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "medio-mat1-m5-n1",
+ "step_id": "70ce9267-77da-470e-8099-42de1f6c27e0",
+ "materia": "Matemática 1",
+ "titulo": "Mayor y menor",
+ "sub": "Matemática 1 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🔵",
+   "lineas": [
+    "Sofi y Tomi juegan a las bolitas.",
+    "Sofi tiene 34.",
+    "Tomi tiene 43."
+   ],
+   "titulo": "MAYOR",
+   "sub": "y menor",
+   "voz": [
+    "Sofi y Tomi juegan a las *bolitas*.",
+    "Sofi tiene 34 bolitas.",
+    "Tomi tiene 43. ¿Quién tiene más?",
+    "Hoy: *mayor y menor*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "d": 3,
+   "u": 4,
+   "texto": "Sofi: 34 bolitas",
+   "cabD": "BOLSITAS DE 10",
+   "cabU": "SUELTAS",
+   "voz": [
+    "Sofi guarda sus bolitas en bolsitas de 10.",
+    "Bolsitas: 10, 20, 30.",
+    "Sueltas: 31, 32, 33, 34.",
+    "¡Sofi tiene *34*!"
+   ]
+  },
+  {
+   "t": "cdu",
+   "d": 4,
+   "u": 3,
+   "texto": "Tomi: 43 bolitas",
+   "cabD": "BOLSITAS DE 10",
+   "cabU": "SUELTAS",
+   "voz": [
+    "Ahora, las bolitas de Tomi.",
+    "Bolsitas: 10, 20, 30, 40.",
+    "Sueltas: 41, 42, 43.",
+    "¡Tomi tiene *43*!"
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "34",
+    "items": [
+     "3 bolsitas",
+     "4 sueltas"
+    ]
+   },
+   "der": {
+    "cab": "43",
+    "items": [
+     "4 bolsitas",
+     "3 sueltas"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Sofi tiene *3 bolsitas*.",
+    "Tomi tiene *4 bolsitas*.",
+    "¡Más bolsitas, más bolitas: *43 es mayor*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LAS DECENAS",
+   "texto": "Primero mirá la primera cifra",
+   "emoji": "👀",
+   "voz": [
+    "Truco: para comparar, mirá primero las *decenas*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es mayor: 56 o 65?",
+   "opciones": [
+    "56",
+    "65"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá bien estos números.",
+    "¿Cuál es *mayor*: 56 o 65?",
+    "¡*65*! Tiene 6 decenas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYOR",
+     "tiene más"
+    ],
+    [
+     "MENOR",
+     "tiene menos"
+    ],
+    [
+     "DECENAS",
+     "se miran primero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *mayor* tiene más.",
+    "El *menor* tiene menos.",
+    "Primero mirá las *decenas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

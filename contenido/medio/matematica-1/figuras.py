@@ -330,3 +330,28 @@ def cuadro(hasta, faltan=(), resaltar=()):
                                     color="white" if falta else (AMBAR if res else MENTA), ec=CORAL if falta else TEAL, lw=1.6 if falta else 1.0, ls="--" if falta else "-"))
         if not falta: ax.text(x + .5, y + .46, str(v), ha="center", va="center", fontsize=13, color=OSC, **F)
     return png(fig)
+
+
+def bolsitas(d, u, texto=None):
+    """Bolsitas de 10 y sueltas (decenas y unidades), en dos columnas con su cartel."""
+    import math
+    filas = max(1, math.ceil(max(d, u, 1) / 3)); fondo = 2.0 - (filas - 1) * .5 - .75
+    fig, ax = lienzo(6.6, 3.0, 6.6, 3.2, 0, fondo - .4)
+    for j, (n, cab, dib, dx, dy) in enumerate(((d, "BOLSITAS DE 10", _paq10, .85, .5), (u, "SUELTAS", _uno, .5, .5))):
+        x0 = .4 + j * 3.3
+        cartel(ax, x0 + 1.0, 2.75, cab, c=TEAL, fs=10)
+        for k in range(n): dib(ax, x0 + .2 + (k % 3) * dx, 2.0 - (k // 3) * dy)
+        cartel(ax, x0 + 1.0, fondo, str(n), c=AMBAR, tc=OSC, fs=13)
+    if texto: cartel(ax, 3.3, fondo, texto, c=VERDE, fs=12)
+    return png(fig)
+
+
+def chicos_numero(nums):
+    """Chicos con su número en la remera (para ordenar), en el orden dado."""
+    n = len(nums); fig, ax = lienzo(1.5 * n, 2.0, 1.5 * n, 2.0, 0, 0)
+    for i, v in enumerate(nums):
+        x = 1.5 * i + .75
+        ax.add_patch(Circle((x, 1.55), .26, color="#f6c99c", ec=OSC, lw=1.4)); ax.add_patch(Ellipse((x, 1.7), .54, .2, color="#6b4226"))
+        ax.add_patch(FancyBboxPatch((x - .42, .2), .84, .95, boxstyle="round,pad=0.02,rounding_size=0.15", color=[TEAL, CORAL, AZUL, LILA, VERDE][i % 5], ec=OSC, lw=1.4))
+        ax.text(x, .66, str(v), ha="center", va="center", fontsize=17, color="white", **F)
+    return png(fig)

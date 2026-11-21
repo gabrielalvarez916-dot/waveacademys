@@ -1,0 +1,163 @@
+{
+ "slug": "medio-mat1-m5-n3",
+ "step_id": "9386a6b9-fbdf-4f49-a16c-e3838e0e7ab3",
+ "materia": "Matemática 1",
+ "titulo": "Ordenar de mayor a menor",
+ "sub": "Matemática 1 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🏆",
+   "final": "🥇",
+   "titulo": "DE MAYOR",
+   "sub": "a menor",
+   "voz": [
+    "¡Terminó la carrera de la escuela!",
+    "¿Quién hizo más puntos? Los ordenamos.",
+    "Hoy: *ordenar de mayor a menor*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LOS PUNTOS",
+   "etq1": "DESORDENADOS",
+   "etq2": "DE MAYOR A MENOR",
+   "items": [
+    {
+     "txt": "92",
+     "emoji": "🥇"
+    },
+    {
+     "txt": "75",
+     "emoji": "🥈"
+    },
+    {
+     "txt": "48",
+     "emoji": "🥉"
+    },
+    {
+     "txt": "30",
+     "emoji": "🏅"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "voz": [
+    "Mirá los puntos de cada equipo.",
+    "Desordenados: 48, 92, 30, 75.",
+    "De mayor a menor: 92, 75, 48, 30."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MENOR A MAYOR",
+    "texto": "12, 25, 52",
+    "emoji": "📈"
+   },
+   "b": {
+    "cab": "MAYOR A MENOR",
+    "texto": "52, 25, 12",
+    "emoji": "📉"
+   },
+   "signo": "o",
+   "voz": [
+    "De menor a mayor, empezamos por el *más chico*.",
+    "De mayor a menor, empezamos por el *más grande*.",
+    "¡Es al revés!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "UNO DIFÍCIL",
+   "etq1": "DESORDENADOS",
+   "etq2": "DE MAYOR A MENOR",
+   "items": [
+    {
+     "txt": "99",
+     "emoji": "⭐"
+    },
+    {
+     "txt": "90",
+     "emoji": "⭐"
+    },
+    {
+     "txt": "19",
+     "emoji": "⭐"
+    },
+    {
+     "txt": "9",
+     "emoji": "⭐"
+    }
+   ],
+   "relato": [
+    3,
+    1,
+    2,
+    0
+   ],
+   "voz": [
+    "¡Ahora, uno difícil!",
+    "Desordenados: 9, 90, 19 y 99.",
+    "De mayor a menor: 99, 90, 19, 9."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "De mayor a menor, ¿cuál va primero?",
+   "opciones": [
+    "38",
+    "83",
+    "80"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Ordenamos 38, 83 y 80.",
+    "¿Cuál va *primero*, de mayor a menor?",
+    "¡El *83*! Es el más grande."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EMPEZÁ POR EL MÁS GRANDE",
+   "texto": "Buscá el mayor y ponelo primero",
+   "emoji": "🏆",
+   "voz": [
+    "Truco: buscá el *más grande* y ponelo primero."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYOR A MENOR",
+     "del grande al chico"
+    ],
+    [
+     "PRIMERO",
+     "el más grande"
+    ],
+    [
+     "AL REVÉS",
+     "de menor a mayor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Mayor a menor*: del grande al chico.",
+    "Primero va el *más grande*.",
+    "Es al revés que de menor a mayor.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

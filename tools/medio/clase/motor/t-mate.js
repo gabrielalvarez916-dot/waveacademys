@@ -390,20 +390,23 @@
     B(1); w.IN(tl, mas, 0, { scale: 0, y: 0 });
     B(2); tl.set(S.concat(nums), { opacity: 1, y: 0, scale: 1 }, '>+0.05'); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 });
   } };
-  // cdu: {c, d, u, texto} — 5 pasos: presentación · cajas de 100 (aparecen al decir 100, 200…) · paquetes de 10 (al decir 210, 220…) · sueltos (al decir 241, 242…) · el total
-  T.cdu = { n: function () { return 5; }, armar: function (g, tl, B, d) {
-    var COL = [{ x: 470, ic: 'caja', s: .82, n: d.c, cab: 'CENTENAS', dx: 142, dy: 112 }, { x: 960, ic: 'pack', s: .92, n: d.d, cab: 'DECENAS', dx: 138, dy: 74 }, { x: 1450, ic: 'alf', s: 1, n: d.u, cab: 'UNIDADES', dx: 104, dy: 100 }];
-    var tot = d.c * 100 + d.d * 10 + d.u, base = [0, d.c * 100, d.c * 100 + d.d * 10], salto = [100, 10, 1];
-    var cabs = COL.map(function (c) { var p = w.pieza(g, c.x, 300); w.caja(p, 0, 0, 330, 70, 'url(#gCard)', C.linea, 30, 4); w.txt(p, 0, 2, c.cab, 30, C.aqua, { 'letter-spacing': 3 }); return p; });
-    var obj = COL.map(function (c) { var arr = []; for (var k = 0; k < c.n; k++) { var cols = 3, o = w.pieza(g, c.x + ((k % cols) - 1) * c.dx, 420 + Math.floor(k / cols) * c.dy); w.usar(o, c.ic, c.s); arr.push(o); } return arr; });
-    var cnt = COL.map(function (c, j) { var p = w.pieza(g, c.x, 800); w.el('circle', { r: 46, fill: C.sol }, p); w.txt(p, 0, 4, String(c.n), 50, '#3a2a00'); return p; });
+  // cdu: {c (opcional), d, u, texto, cabD, cabU} — 5 pasos (4 sin c): presentación · cajas de 100 (aparecen al decir 100, 200…) · paquetes de 10 (al decir 210, 220…) · sueltos (al decir 241, 242…) · el total
+  T.cdu = { n: function (d) { return d.c == null ? 4 : 5; }, armar: function (g, tl, B, d) {
+    // sin "c" (primer grado): solo bolsitas de 10 y sueltos, en dos columnas
+    var sinC = d.c == null, c = sinC ? 0 : d.c;
+    var TODAS = [{ x: 470, ic: 'caja', s: .82, n: c, cab: 'CENTENAS', dx: 142, dy: 112 }, { x: 960, ic: 'pack', s: .92, n: d.d, cab: d.cabD || 'DECENAS', dx: 138, dy: 74 }, { x: 1450, ic: 'alf', s: 1, n: d.u, cab: d.cabU || 'UNIDADES', dx: 104, dy: 100 }];
+    var COL = sinC ? [Object.assign({}, TODAS[1], { x: 700 }), Object.assign({}, TODAS[2], { x: 1220 })] : TODAS;
+    var base = sinC ? [0, d.d * 10] : [0, c * 100, c * 100 + d.d * 10], salto = sinC ? [10, 1] : [100, 10, 1], NC = COL.length;
+    var cabs = COL.map(function (cl) { var p = w.pieza(g, cl.x, 300); w.caja(p, 0, 0, 330, 70, 'url(#gCard)', C.linea, 30, 4); w.txt(p, 0, 2, cl.cab, 30, C.aqua, { 'letter-spacing': 3 }); return p; });
+    var obj = COL.map(function (cl) { var arr = []; for (var k = 0; k < cl.n; k++) { var cols = 3, o = w.pieza(g, cl.x + ((k % cols) - 1) * cl.dx, 420 + Math.floor(k / cols) * cl.dy); w.usar(o, cl.ic, cl.s); arr.push(o); } return arr; });
+    var cnt = COL.map(function (cl) { var p = w.pieza(g, cl.x, 800); w.el('circle', { r: 46, fill: C.sol }, p); w.txt(p, 0, 4, String(cl.n), 50, '#3a2a00'); return p; });
     var fin = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
-    var visto = {}; g.alDecir = function (pal, f) { var j = f - 1; if (j < 0 || j > 2) return; var v = parseInt(String(pal).replace(/[^0-9]/g, ''), 10); if (!isFinite(v)) return;
+    var visto = {}; g.alDecir = function (pal, f) { var j = f - 1; if (j < 0 || j > NC - 1) return; var v = parseInt(String(pal).replace(/[^0-9]/g, ''), 10); if (!isFinite(v)) return;
       var k = (v - base[j]) / salto[j]; if (k !== Math.floor(k) || k < 1 || k > COL[j].n || visto[j + ':' + k]) return; visto[j + ':' + k] = 1;
       gsap.fromTo(obj[j][k - 1], { opacity: 0, y: -300, scale: .5 }, { opacity: 1, y: 0, scale: 1, duration: .55, ease: 'bounce.out' }); };
-    B(0); cabs.forEach(function (c, k) { w.IN(tl, c, k ? '<.15' : 0); });
-    [1, 2, 3].forEach(function (f) { B(f); if (f > 1) { tl.set(obj[f - 2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[f - 2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); } else tl.to({}, { duration: .01 }); });
-    B(4); tl.set(obj[2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (fin) w.IN(tl, fin, '>', { scale: .6, y: 0 });
+    B(0); cabs.forEach(function (cb, k) { w.IN(tl, cb, k ? '<.15' : 0); });
+    for (var f = 1; f <= NC; f++) { B(f); if (f > 1) { tl.set(obj[f - 2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[f - 2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); } else tl.to({}, { duration: .01 }); }
+    B(NC + 1); tl.set(obj[NC - 1], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[NC - 1], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (fin) w.IN(tl, fin, '>', { scale: .6, y: 0 });
   } };
   // cuadro: {hasta (10-100), faltan:[números], titulo} — cuadro de números de a 10 por fila. 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
   T.cuadro = { n: function () { return 3; }, armar: function (g, tl, B, d) {
