@@ -1,0 +1,190 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m1-n3",
+ "step_id": "afaf490e-c9d0-47c6-a89b-4e3900a05602",
+ "materia": "Ciudadanía I",
+ "titulo": "Derechos y responsabilidades en la vida pública",
+ "sub": "Ciudadanía I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mi vecino pone música a las 2 am 😩"
+    },
+    {
+     "yo": true,
+     "txt": "Es su derecho, ¿no?"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y mi derecho a dormir?"
+    }
+   ],
+   "titulo": "DERECHOS Y",
+   "sub": "responsabilidades",
+   "voz": [
+    "Lu cuenta que su vecino pone música a las dos de la mañana.",
+    "Juan: es su derecho, ¿no?",
+    "Lu: ¿y mi derecho a dormir?",
+    "Hoy: *derechos y responsabilidades*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Derecho",
+   "texto": "Facultad reconocida para vivir con dignidad",
+   "emoji": "⚖️",
+   "voz": [
+    "Un *derecho* es una facultad reconocida a todas las personas.",
+    "Sirve para vivir con dignidad y libertad."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "DERECHO Y DEBER",
+   "columnas": [
+    "Derecho",
+    "Responsabilidad"
+   ],
+   "filas": [
+    [
+     "Educación",
+     "Estudiar"
+    ],
+    [
+     "Expresarse",
+     "Sin agredir"
+    ],
+    [
+     "Circular",
+     "Respetar tránsito"
+    ],
+    [
+     "Ambiente sano",
+     "Cuidar lo común"
+    ]
+   ],
+   "voz": [
+    "Cada derecho tiene su responsabilidad.",
+    "*Educación*: estudiar.",
+    "*Expresarse*: sin agredir.",
+    "*Circular*: respetar el tránsito.",
+    "*Ambiente sano*: cuidar lo común."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Límite",
+   "texto": "Donde empiezan los derechos de otros",
+   "emoji": "🚧",
+   "voz": [
+    "Mis derechos terminan donde empiezan los de otros.",
+    "Ese es el *límite* de la libertad."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DERECHO",
+     "emoji": "⚖️"
+    },
+    {
+     "cab": "RESPONSABILIDAD",
+     "emoji": "🤲"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Estudiar",
+     "caja": 1
+    },
+    {
+     "txt": "Opinar",
+     "caja": 0
+    },
+    {
+     "txt": "Cuidar la plaza",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Derecho o responsabilidad?",
+    "*Opinar*: derecho.",
+    "*Estudiar* y *cuidar la plaza*: responsabilidades."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Mis derechos terminan donde…",
+   "opciones": [
+    "Empiezan los de otros",
+    "Termina el día",
+    "Empieza la ley"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: mis derechos terminan donde...",
+    "¿Empiezan los de otros, termina el día o empieza la ley?",
+    "Donde *empiezan los de otros*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los derechos no tienen límites",
+     "bien": "Terminan donde empiezan los de otros"
+    },
+    {
+     "mal": "Las responsabilidades son castigos",
+     "bien": "Son parte del derecho"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los derechos *no tienen límites*.",
+    "Y que las responsabilidades son *castigos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *derecho* es una facultad reconocida.",
+    "Lo acompaña una *responsabilidad*.",
+    "La libertad tiene *límites*.",
+    "Y participar es *responsabilidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DERECHO",
+     "facultad reconocida"
+    ],
+    [
+     "RESPONSABILIDAD",
+     "lo acompaña"
+    ],
+    [
+     "LÍMITE",
+     "los otros"
+    ],
+    [
+     "VIDA PÚBLICA",
+     "participar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

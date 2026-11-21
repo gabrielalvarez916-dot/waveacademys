@@ -1,0 +1,184 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m1-n2",
+ "step_id": "4adad691-2b06-476e-ab25-ad8e03b87b3e",
+ "materia": "Ciudadanía I",
+ "titulo": "Normas, leyes y costumbres",
+ "sub": "Ciudadanía I · Misión 1 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama una regla que orienta cómo comportarnos?",
+   "segundos": 5,
+   "respuesta": "Norma",
+   "emoji": "📜",
+   "titulo": "NORMAS, LEYES",
+   "sub": "y costumbres",
+   "voz": [
+    "Desafío: ¿cómo se llama una regla que orienta cómo comportarnos? Cinco segundos.",
+    "Norma.",
+    "Hoy: *normas, leyes y costumbres*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Norma",
+   "texto": "Regla que orienta la conducta",
+   "emoji": "📜",
+   "voz": [
+    "Una *norma* es una regla que orienta cómo comportarnos.",
+    "Hace posible la convivencia."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES TIPOS",
+   "columnas": [
+    "Tipo",
+    "Quién la impone"
+   ],
+   "filas": [
+    [
+     "Moral",
+     "Tu conciencia"
+    ],
+    [
+     "Social",
+     "El grupo"
+    ],
+    [
+     "Jurídica",
+     "El Estado"
+    ]
+   ],
+   "voz": [
+    "Tres tipos de normas.",
+    "La *moral*: tu conciencia.",
+    "La *social*: el grupo.",
+    "La *jurídica*: el Estado."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COSTUMBRE",
+    "texto": "Cambia con el lugar y el tiempo",
+    "emoji": "🎎"
+   },
+   "b": {
+    "cab": "LEY",
+    "texto": "Obligatoria, con sanción",
+    "emoji": "⚖️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Costumbre y ley.",
+    "La *costumbre* cambia.",
+    "La *ley* es obligatoria y tiene sanción."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MORAL",
+     "emoji": "💭"
+    },
+    {
+     "cab": "SOCIAL",
+     "emoji": "👥"
+    },
+    {
+     "cab": "JURÍDICA",
+     "emoji": "⚖️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "No mentir",
+     "caja": 0
+    },
+    {
+     "txt": "Ceder el asiento",
+     "caja": 1
+    },
+    {
+     "txt": "Pagar impuestos",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué tipo de norma?",
+    "*No mentir*: moral.",
+    "*Ceder el asiento*: social.",
+    "*Pagar impuestos*: jurídica."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué norma impone el Estado y tiene sanción?",
+   "opciones": [
+    "Jurídica",
+    "Moral",
+    "Social"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué norma impone el Estado?",
+    "¿Jurídica, moral o social?",
+    "La *jurídica*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Toda costumbre es una ley",
+     "bien": "Solo las jurídicas lo son"
+    },
+    {
+     "mal": "Las leyes valen para algunos",
+     "bien": "Valen para todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que toda *costumbre* es ley.",
+    "Y que las leyes valen solo para *algunos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Las *normas* ordenan la convivencia.",
+    "Hay *morales*, *sociales* y *jurídicas*.",
+    "Las *costumbres* cambian.",
+    "Y la *ley* es obligatoria.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NORMAS",
+     "reglas"
+    ],
+    [
+     "TIPOS",
+     "moral, social, jurídica"
+    ],
+    [
+     "COSTUMBRE",
+     "cambia"
+    ],
+    [
+     "LEY",
+     "con sanción"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,184 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m1-n4",
+ "step_id": "ab284c98-f924-4066-9efa-d0dece855c51",
+ "materia": "Ciudadanía I",
+ "titulo": "Para qué existe el poder político",
+ "sub": "Ciudadanía I · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "PODER",
+   "titular": "Nadie puede decidirlo todo",
+   "bajada": "Por eso el poder se divide",
+   "emoji": "🏛️",
+   "titulo": "EL PODER POLÍTICO",
+   "sub": "para qué existe",
+   "voz": [
+    "Noticia: nadie puede decidirlo todo.",
+    "Por eso el poder se divide.",
+    "Hoy: *para qué existe el poder político*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Poder político",
+   "texto": "Capacidad de decidir para todos",
+   "emoji": "🏛️",
+   "voz": [
+    "El *poder político* es la capacidad de tomar decisiones obligatorias para toda la sociedad.",
+    "Existe para ordenar la convivencia."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FUERZA",
+    "texto": "Se impone por violencia",
+    "emoji": "👊"
+   },
+   "b": {
+    "cab": "AUTORIDAD LEGÍTIMA",
+    "texto": "La comunidad la reconoce justa",
+    "emoji": "🤝"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de ejercer poder.",
+    "La *fuerza* se impone.",
+    "La *autoridad legítima* es reconocida."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES PODERES",
+   "columnas": [
+    "Poder",
+    "Función"
+   ],
+   "filas": [
+    [
+     "Legislativo",
+     "Hace las leyes"
+    ],
+    [
+     "Ejecutivo",
+     "Gobierna"
+    ],
+    [
+     "Judicial",
+     "Resuelve conflictos"
+    ]
+   ],
+   "voz": [
+    "Los tres poderes.",
+    "El *legislativo* hace las leyes.",
+    "El *ejecutivo* gobierna.",
+    "El *judicial* resuelve conflictos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LEGISLATIVO",
+     "emoji": "📜"
+    },
+    {
+     "cab": "EJECUTIVO",
+     "emoji": "🏛️"
+    },
+    {
+     "cab": "JUDICIAL",
+     "emoji": "⚖️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sancionar una ley",
+     "caja": 0
+    },
+    {
+     "txt": "Gobernar",
+     "caja": 1
+    },
+    {
+     "txt": "Dictar sentencia",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué poder?",
+    "*Sancionar una ley*: legislativo.",
+    "*Gobernar*: ejecutivo.",
+    "*Dictar sentencia*: judicial."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué poder hace las leyes?",
+   "opciones": [
+    "Legislativo",
+    "Judicial",
+    "Ejecutivo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué poder hace las leyes?",
+    "¿Legislativo, judicial o ejecutivo?",
+    "El *legislativo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Poder igual fuerza",
+     "bien": "Poder es decidir con legitimidad"
+    },
+    {
+     "mal": "Estado y gobierno son lo mismo",
+     "bien": "El gobierno es parte del Estado"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *poder* con fuerza.",
+    "Y *Estado* con gobierno."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *poder político* ordena la convivencia.",
+    "Necesita *legitimidad*.",
+    "El *Estado* es la organización política.",
+    "Y el poder se *divide* en tres.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PODER",
+     "decide para todos"
+    ],
+    [
+     "LEGITIMIDAD",
+     "reconocida"
+    ],
+    [
+     "ESTADO",
+     "organización"
+    ],
+    [
+     "TRES PODERES",
+     "se controlan"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

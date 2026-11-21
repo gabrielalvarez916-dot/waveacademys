@@ -1,0 +1,208 @@
+{
+ "slug": "ciud1-m1-n1",
+ "step_id": "780cd451-1abd-4408-842f-311f0d721c07",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué nos une como comunidad",
+ "sub": "Ciudadanía I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Somos muchos",
+   "emoji": "🏘️",
+   "final": "y vivimos juntos todos los días",
+   "titulo": "QUÉ NOS UNE",
+   "sub": "como comunidad argentina",
+   "voz": [
+    "Todos los días compartimos calles, escuelas y plazas.",
+    "¿Qué nos une como comunidad?",
+    "Hoy: *qué nos une como comunidad*."
+   ],
+   "neutro": {
+    "sub": "como comunidad",
+    "voz": [
+     "Todos los días compartimos calles, escuelas y plazas.",
+     "¿Qué nos une como comunidad?",
+     "Hoy: *qué nos une como comunidad*."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Comunidad",
+   "texto": "Grupo que se reconoce parte de un conjunto",
+   "emoji": "🏘️",
+   "voz": [
+    "Una *comunidad* es un grupo que comparte algo y se reconoce unido.",
+    "Puede ser chica o enorme."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LO QUE NOS UNE",
+   "columnas": [
+    "Vínculo",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Lugar",
+     "Barrio"
+    ],
+    [
+     "Intereses",
+     "Club"
+    ],
+    [
+     "Normas",
+     "Convivencia"
+    ],
+    [
+     "Cultura",
+     "Fiestas"
+    ]
+   ],
+   "voz": [
+    "Qué une a las personas.",
+    "El *lugar*.",
+    "Los *intereses*.",
+    "Las *normas*.",
+    "Y la *cultura*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Bien común",
+   "texto": "Lo que conviene a todos",
+   "emoji": "🌳",
+   "voz": [
+    "El *bien común* es lo que conviene a todos.",
+    "La plaza, la escuela y el agua son bienes comunes."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DE TODOS",
+     "emoji": "🌳"
+    },
+    {
+     "cab": "DE UNO",
+     "emoji": "🏠"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Plaza",
+     "caja": 0
+    },
+    {
+     "txt": "Mi mochila",
+     "caja": 1
+    },
+    {
+     "txt": "Escuela pública",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿De todos o de uno?",
+    "*Plaza* y *escuela pública*: de todos.",
+    "*Mi mochila*: de uno."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Convivir",
+    "emoji": "🤝"
+   },
+   "items": [
+    {
+     "txt": "Respetar diferencias",
+     "emoji": "🌈"
+    },
+    {
+     "txt": "Dialogar",
+     "emoji": "💬"
+    },
+    {
+     "txt": "Acordar normas",
+     "emoji": "📜"
+    }
+   ],
+   "voz": [
+    "Convivir se logra con tres cosas.",
+    "*Respetar* las diferencias.",
+    "*Dialogar*.",
+    "Y *acordar* normas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es el bien común?",
+   "opciones": [
+    "Lo que conviene a todos",
+    "Lo que conviene a uno",
+    "Un impuesto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué es el bien común?",
+    "¿Lo que conviene a todos, a uno o un impuesto?",
+    "*Lo que conviene a todos*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Una comunidad es solo un lugar",
+     "bien": "También intereses y normas"
+    },
+    {
+     "mal": "Cuidar lo común es tarea de otros",
+     "bien": "Es de todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que una comunidad es *solo un lugar*.",
+    "Y que cuidar lo común es *tarea de otros*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una *comunidad* se reconoce unida.",
+    "Nos une el *lugar*, los *intereses* y la *cultura*.",
+    "El *bien común* conviene a todos.",
+    "Y se convive con *diálogo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMUNIDAD",
+     "se reconoce unida"
+    ],
+    [
+     "VÍNCULOS",
+     "lugar, intereses"
+    ],
+    [
+     "BIEN COMÚN",
+     "de todos"
+    ],
+    [
+     "CONVIVIR",
+     "dialogar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
