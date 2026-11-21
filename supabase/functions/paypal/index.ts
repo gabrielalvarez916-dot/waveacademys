@@ -14,6 +14,7 @@ function matriculaHoy(mat: any) {
 // Desde el panel de la familia (con su sesión), POST:
 //   { action: "suscribir", nivel, modalidad } -> suscripción mensual en USD; devuelve el link de PayPal para aprobarla
 //   { action: "matricula" }                   -> pago único de la matrícula anual en USD; devuelve el link
+//   { action: "tutoria", tutoria_id }          -> pago de una tutoría individual (precio en USD + recargo); al cobrarse queda confirmada sola
 // Webhook de PayPal (mismo URL, sin action): activa, suspende o cancela suscripciones, registra cobros y cobra la matrícula aprobada.
 // Credenciales en gen_config: paypal_client_id, paypal_secret, paypal_webhook_id y paypal_env ("live" o "sandbox").
 // El producto y los planes de PayPal se crean solos la primera vez (uno por precio) y se guardan en tarifas.paypal_plan_id.
@@ -99,13 +100,35 @@ Deno.serve(async (req) => {
           await admin.from("subscriptions").update({ status: "active", last_payment_at: fecha, past_due_since: null }).eq("id", sub.id);
         }
       } else if (tipo === "CHECKOUT.ORDER.APPROVED") {
-        if (String(r.purchase_units?.[0]?.custom_id || "").startsWith("matricula:")) await pp(tk, `/v2/checkout/orders/${r.id}/capture`, {});
+        const cid = String(r.purchase_units?.[0]?.custom_id || "");
+        if (cid.startsWith("matricula:") || cid.startsWith("tutoria:")) await pp(tk, `/v2/checkout/orders/${r.id}/capture`, {});
       } else if (tipo === "PAYMENT.CAPTURE.COMPLETED" || tipo === "PAYMENT.CAPTURE.DENIED") {
         const ref = String(r.custom_id || "");
         if (ref.startsWith("matricula:")) {
           const ok = tipo === "PAYMENT.CAPTURE.COMPLETED";
           await admin.from("matriculas").update({ status: ok ? "approved" : "rejected", paid_at: ok ? (r.create_time || new Date().toISOString()) : null })
             .eq("id", ref.slice("matricula:".length));
+        } else if (ref.startsWith("tutoria:")) {
+          // Tutoría individual: el pago con PayPal la confirma sola (no pasa por Tesorería)
+          const id = ref.slice("tutoria:".length), ok = tipo === "PAYMENT.CAPTURE.COMPLETED";
+          const { data: t } = await admin.from("tutorias").select("id,tutor_id,family_id,estado").eq("id", id).maybeSingle();
+          if (t && ok) {
+            const { data: fam } = await admin.from("families").select("profile_id").eq("id", t.family_id).maybeSingle();
+            const { data: upd } = await admin.from("tutorias").update({ estado: "reservada", medio: "paypal", updated_at: new Date().toISOString() }).eq("id", id).eq("estado", "pendiente_pago").select("id");
+            if (upd?.length) {
+              await admin.from("notificaciones").insert([
+                { profile_id: fam?.profile_id, tipo: "pago", titulo: "Tutoría confirmada", texto: "Recibimos tu pago con PayPal y la tutoría individual quedó confirmada.", tutoria_id: id },
+                { profile_id: t.tutor_id, tipo: "tutoria", titulo: "Nueva tutoría individual", texto: "Se confirmó una tutoría individual en tu agenda.", tutoria_id: id },
+              ]);
+            } else {
+              // el horario ya se había liberado: avisamos a la familia y a Tesorería para resolverlo a mano
+              const { data: tes } = await admin.from("profiles").select("id").eq("role", "tesorero").eq("is_suspended", false);
+              await admin.from("notificaciones").insert([
+                { profile_id: fam?.profile_id, tipo: "pago", titulo: "Pago de tutoría recibido", texto: "Recibimos tu pago, pero el horario ya se había liberado. Te contactamos para darte otro.", tutoria_id: id },
+                ...(tes || []).map((x: any) => ({ profile_id: x.id, tipo: "pago", titulo: "Pago de tutoría sin horario", texto: "Entró un pago de PayPal de una tutoría cuyo horario ya se liberó. Hay que reubicarla o devolver el pago.", tutoria_id: id })),
+              ]);
+            }
+          }
         }
       }
       return json({ ok: true });
@@ -183,6 +206,24 @@ Deno.serve(async (req) => {
         application_context: { brand_name: "Wave Academy", locale: "es-419", user_action: "PAY_NOW", return_url: volver, cancel_url: volver },
       });
       await admin.from("matriculas").update({ paypal_order_id: o.id }).eq("id", m.id);
+      return json({ url: enlace(o, "approve") || enlace(o, "payer-action"), monto_usd: usd });
+    }
+
+    if (b.action === "tutoria") {
+      const { data: t } = await admin.from("tutorias").select("id,family_id,estado,tipo,precio_usd,vence_pago_at,area").eq("id", String(b.tutoria_id || "")).maybeSingle();
+      if (!t || t.family_id !== fam.id || t.tipo !== "individual") return json({ error: "No encontramos esa tutoría" }, 404);
+      if (t.estado !== "pendiente_pago") return json({ error: "Esa tutoría ya no espera el pago" }, 409);
+      if (new Date(t.vence_pago_at).getTime() < Date.now()) return json({ error: "Venció el plazo de pago de esta tutoría" }, 409);
+      const { data: c } = await admin.from("app_settings").select("value").eq("key", "tutoria_individual").maybeSingle();
+      const recargo = 1 + (Number(c?.value?.recargo_pct ?? 5) / 100);
+      const usd = Math.round(Number(t.precio_usd || 0) * recargo * 100) / 100;
+      if (!usd) return json({ error: "Falta el precio en dólares de la tutoría" }, 500);
+      const o = await pp(tk, "/v2/checkout/orders", {
+        intent: "CAPTURE",
+        purchase_units: [{ custom_id: `tutoria:${t.id}`, description: "Tutoría individual · Wave Academy", amount: { currency_code: "USD", value: usd.toFixed(2) } }],
+        application_context: { brand_name: "Wave Academy", locale: "es-419", user_action: "PAY_NOW", return_url: `${origen}/familia.html#tutorias`, cancel_url: `${origen}/familia.html#tutorias` },
+      });
+      await admin.from("tutorias").update({ paypal_order_id: o.id, medio: "paypal" }).eq("id", t.id);
       return json({ url: enlace(o, "approve") || enlace(o, "payer-action"), monto_usd: usd });
     }
 

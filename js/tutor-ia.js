@@ -2,9 +2,9 @@
 // El contexto (qué está mirando) lo da cada pantalla; el servidor solo lee esa misión.
 (function () {
   var BOTONES = {
-    pdf: [['consigna', 'No entiendo la consigna'], ['simple', 'Explicámelo más simple'], ['ejemplo', 'Un ejemplo de la vida real'], ['visual', 'Mostrámelo con un dibujo'], ['resumen', 'Resumime esto'], ['tutoria', 'Hablar con mi tutor']],
-    clase: [['simple', 'No entendí esta parte'], ['ejemplo', 'Un ejemplo de la vida real'], ['visual', 'Mostrámelo con un dibujo'], ['resumen', 'Resumime la clase'], ['tutoria', 'Hablar con mi tutor']],
-    actividad: [['consigna', 'No entiendo la consigna'], ['pista', 'Dame una pista'], ['paso', 'Un ejemplo guiado'], ['otra_forma', 'Otra forma de hacerlo'], ['concreto', 'Con objetos de casa'], ['tutoria', 'Hablar con mi tutor']]
+    pdf: [['consigna', 'No entiendo la consigna'], ['simple', 'Explicámelo más simple'], ['ejemplo', 'Un ejemplo de la vida real'], ['visual', 'Mostrámelo con un dibujo'], ['resumen', 'Resumime esto'], ['tutoria', 'Pedir tutoría individual']],
+    clase: [['simple', 'No entendí esta parte'], ['ejemplo', 'Un ejemplo de la vida real'], ['visual', 'Mostrámelo con un dibujo'], ['resumen', 'Resumime la clase'], ['tutoria', 'Pedir tutoría individual']],
+    actividad: [['consigna', 'No entiendo la consigna'], ['pista', 'Dame una pista'], ['paso', 'Un ejemplo guiado'], ['otra_forma', 'Otra forma de hacerlo'], ['concreto', 'Con objetos de casa'], ['tutoria', 'Pedir tutoría individual']]
   };
   BOTONES.practica = BOTONES.actividad;
   var PERSONALIDADES = [['calido', 'Cálido'], ['divertido', 'Divertido'], ['calmado', 'Calmado'], ['curioso', 'Curioso'], ['motivador', 'Motivador']];
@@ -38,13 +38,13 @@
     function agregar(clase, texto) { var d = document.createElement('div'); d.className = 'wvp-m ' + clase; d.textContent = texto; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d; }
     function bloquear(b) { enviando = b; envBtn.disabled = b; Array.prototype.forEach.call(cont.querySelectorAll('.wt-b[data-a]'), function (x) { x.disabled = b; }); }
 
-    function pintarTurnos(globo, turnos) {
+    function pintarTurnos(globo, turnos, area) {
       var w = document.createElement('div'); w.className = 'wt-turnos';
       turnos.forEach(function (t) {
         var b = document.createElement('button'); b.type = 'button'; b.className = 'wt-b wt-turno'; b.textContent = cuando(t.inicio);
         b.onclick = async function () {
           w.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
-          try { var r = await op.enviar({ reservar_inicio: t.inicio, tema: 'Consulta desde el tutor' }); agregar('bot', r.reply); w.remove(); }
+          try { var r = await op.enviar({ reservar_inicio: t.inicio, area: area, tema: 'Consulta desde el tutor' }); agregar('bot', r.reply); w.remove(); }
           catch (e) { agregar('bot error', e.message || 'No se pudo agendar.'); w.querySelectorAll('button').forEach(function (x) { x.disabled = false; }); }
         };
         w.appendChild(b);
@@ -52,7 +52,17 @@
       globo.appendChild(w);
     }
 
-    async function consultar(texto, accion, etiqueta) {
+    function pintarAreas(globo, areas, sugerida) {
+      var w = document.createElement('div'); w.className = 'wt-turnos';
+      areas.forEach(function (a) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'wt-b wt-turno'; b.textContent = a.nombre + (a.id === sugerida ? ' (la de esta misión)' : '');
+        b.onclick = function () { w.remove(); consultar('', 'tutoria', 'Tutoría de ' + a.nombre, { area: a.id }); };
+        w.appendChild(b);
+      });
+      globo.appendChild(w);
+    }
+
+    async function consultar(texto, accion, etiqueta, extra) {
       if (enviando) return;
       if (!texto && !accion) return;
       bloquear(true);
@@ -60,14 +70,15 @@
       campo.value = ''; campo.style.height = 'auto';
       var pensando = agregar('bot pensando', 'Pensando…');
       try {
-        var payload = Object.assign({ pantalla: op.pantalla, conversation_id: conv || undefined }, op.ctx ? op.ctx() : {}, { message: texto || '', accion: accion || undefined });
+        var payload = Object.assign({ pantalla: op.pantalla, conversation_id: conv || undefined }, op.ctx ? op.ctx() : {}, { message: texto || '', accion: accion || undefined }, extra || {});
         var r = await op.enviar(payload);
         conv = r.conversation_id || conv;
         pensando.className = 'wvp-m bot'; pensando.textContent = r.reply;
-        if (r.turnos && r.turnos.length) pintarTurnos(pensando, r.turnos);
+        if (r.areas && r.areas.length) pintarAreas(pensando, r.areas, r.area_sugerida);
+        else if (r.turnos && r.turnos.length) pintarTurnos(pensando, r.turnos, r.area);
         else if (r.ofrecer_tutoria) {
-          var o = document.createElement('button'); o.type = 'button'; o.className = 'wt-b wt-ofrecer'; o.textContent = 'Quiero hablar con mi tutor';
-          o.onclick = function () { o.remove(); consultar('', 'tutoria', 'Quiero hablar con mi tutor'); };
+          var o = document.createElement('button'); o.type = 'button'; o.className = 'wt-b wt-ofrecer'; o.textContent = 'Pedir una tutoría individual';
+          o.onclick = function () { o.remove(); consultar('', 'tutoria', 'Pedir una tutoría individual'); };
           pensando.appendChild(o);
         }
         if (typeof r.remaining === 'number') { rest.hidden = false; rest.textContent = r.remaining > 0 ? 'Te quedan ' + r.remaining + ' consultas hoy' : 'Esta fue tu última consulta de hoy'; }

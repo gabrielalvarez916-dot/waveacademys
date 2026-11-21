@@ -7,9 +7,10 @@
     tutoria: { n: 'Tutoría', c: '#087E83' },
     direccion: { n: 'Dirección', c: '#16393B' },
     admision: { n: 'Admisión', c: '#B97A12' },
-    cobranzas: { n: 'Cobranzas', c: '#7A4FA0' }
+    cobranzas: { n: 'Cobranzas', c: '#7A4FA0' },
+    individual: { n: 'Tutoría individual', c: '#C2410C' }
   };
-  var ESTADOS = { reservada: 'Pendiente', realizada: 'Realizada', ausente: 'No se presentó', cancelada: 'Cancelada' };
+  var ESTADOS = { pendiente_pago: 'Pendiente de pago', reservada: 'Pendiente', realizada: 'Realizada', ausente: 'No se presentó', cancelada: 'Cancelada' };
   var DIAS = ['lun', 'mar', 'mié', 'jue', 'vie', 'sáb', 'dom'];
 
   function esc(t) {

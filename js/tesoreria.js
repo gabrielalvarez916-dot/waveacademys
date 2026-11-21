@@ -44,7 +44,7 @@
     var c = document.getElementById('te-comp');
     if (r.error) { c.innerHTML = '<div class="te-vacio">' + esc(r.error.message) + '</div>'; return; }
     c.innerHTML = (r.data || []).length ? r.data.map(function (p) {
-      return '<div class="te-card"><div><h3>' + esc(p.familia) + ' · ' + ars(p.monto) + '</h3><p>' + (p.tipo === 'matricula' ? 'Matrícula anual · ' + esc(p.alumnos || '') : 'Cuota de ' + esc(mesTxt(new Date(p.periodo + 'T12:00:00')))) + ' · enviado el ' + fecha(p.created_at) + '</p>' +
+      return '<div class="te-card"><div><h3>' + esc(p.familia) + ' · ' + ars(p.monto) + '</h3><p>' + (p.tipo === 'tutoria' ? 'Tutoría individual · ' + esc(p.alumnos || '') : p.tipo === 'matricula' ? 'Matrícula anual · ' + esc(p.alumnos || '') : 'Cuota de ' + esc(mesTxt(new Date(p.periodo + 'T12:00:00')))) + ' · enviado el ' + fecha(p.created_at) + '</p>' +
         (p.nota_familia ? '<p>Nota de la familia: ' + esc(p.nota_familia) + '</p>' : '') + (p.nota_tesoreria ? '<p>Tesorería: ' + esc(p.nota_tesoreria) + '</p>' : '') + '</div>' +
         '<div class="te-acc">' + sello(p.estado, { pendiente: 'Por revisar', aprobado: 'Aprobado', rechazado: 'Rechazado' }[p.estado]) +
         '<button class="te-btn" data-ver="' + esc(p.comprobante_path) + '">Ver comprobante</button>' +

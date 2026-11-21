@@ -817,7 +817,7 @@
     vista.innerHTML = '<h1 class="vista-titulo">Equipo</h1>' +
       '<p class="wv-dato">Acá das de alta las cuentas del equipo: tutores, directores de nivel y tesorero. Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
       '<form id="wv-tut-form" class="wv-tut-form"><input id="wv-tut-nom" placeholder="Nombre y apellido" required> <input id="wv-tut-mail" type="email" placeholder="Correo" required> ' +
-      '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="director_primaria">Director/a de Primaria e Inicial</option><option value="director_secundaria">Director/a de Secundaria</option><option value="tesorero">Tesorero/a</option></select> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
+      '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="director_primaria">Director/a de Primaria e Inicial</option><option value="director_secundaria">Director/a de Secundaria</option><option value="tesorero">Tesorero/a</option></select>' + '<span id="wv-tut-areas" class="wv-dato" style="display:block;margin-top:8px"><b>Áreas del tutor:</b> ' + (window.WaveAreas ? WaveAreas.casillas('ar-nuevo', []) : '') + '</span> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div><div id="wv-areas"></div>';
     async function pintar() {
       var r = await sb.rpc('tutores_admin');
       var l = document.getElementById('wv-tut-lista');
@@ -837,9 +837,14 @@
       b.disabled = false;
       if (r.error || (r.data && r.data.error)) { toast((r.data && r.data.error) || 'No se pudo crear la cuenta', true); return; }
       document.getElementById('wv-tut-cred').innerHTML = '<div class="wv-vacio">Cuenta creada. Usuario: <b>' + esc(r.data.email) + '</b> · Clave inicial: <b>' + esc(r.data.initial_password) + '</b> (la cambia al entrar). Entra por la misma página de ingreso.</div>';
-      this.reset(); pintar();
+      if (document.getElementById('wv-tut-rol').value === 'tutor' && r.data.id && window.WaveAreas) {
+        var ar = await sb.rpc('tutor_areas_guardar', { p_tutor: r.data.id, p_areas: WaveAreas.leer(document.getElementById('wv-tut-areas'), 'ar-nuevo') });
+        if (ar.error) toast('El tutor se creó, pero no se pudieron guardar sus áreas: ' + ar.error.message, true);
+      }
+      this.reset(); pintar(); panelAreas();
     };
-    pintar();
+    function panelAreas() { var d = document.getElementById('wv-areas'); if (d && window.WaveAreas) WaveAreas.panel(d); }
+    pintar(); panelAreas();
   }
 
   // ---------- Agenda de dirección: horarios y turnos con las familias ----------

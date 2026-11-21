@@ -45,11 +45,18 @@ Deno.serve(async (req) => {
     const nombre = student.apodo || student.first_name;
     const tutor = student.tutor_nombre || "Tutor Wave";
 
-    // ---------- Reservar tutoría (la confirma el alumno con un botón; el tutor solo sugiere) ----------
+    const { data: cfgT } = await admin.from("app_settings").select("value").eq("key", "tutoria_individual").maybeSingle();
+    const precio = (cfgT?.value as any) ?? {};
+    const horas = Number(precio.horas_para_pagar ?? 48);
+
+    // ---------- Pedir el horario de una tutoría individual (paga): queda pendiente hasta que la familia pague ----------
     if (body.reservar_inicio) {
-      const { error } = await userClient.rpc("reservar_tutoria", { p_student: student.id, p_inicio: body.reservar_inicio, p_tema: String(body.tema ?? "Consulta desde el tutor").slice(0, 200) });
+      const area = L.AREAS[body.area as keyof typeof L.AREAS] ? body.area : null;
+      if (!area) return json({ error: "Elegí el área de la tutoría" }, 400);
+      const { data, error } = await userClient.rpc("solicitar_tutoria_individual", { p_student: student.id, p_inicio: body.reservar_inicio, p_area: area, p_tema: String(body.tema ?? "Consulta desde el tutor").slice(0, 200) });
       if (error) return json({ error: error.message }, 400);
-      return json({ reply: `Listo, ${nombre}. Tu tutoría quedó agendada. Te va a llegar el aviso.`, reservada: true });
+      const r0 = Array.isArray(data) ? data[0] : data;
+      return json({ reply: `Listo, ${nombre}. Te reservé el horario. Tu familia tiene ${horas} horas para pagar la tutoría (${L.ars(r0?.precio_ars ?? precio.precio_ars)}) desde su panel, en Tutorías individuales. Cuando se confirme el pago, queda en tu calendario. Si no se paga a tiempo, el horario se libera.`, reservada: true });
     }
 
     const message = String(body.message ?? "").trim().slice(0, 1500);
@@ -63,6 +70,7 @@ Deno.serve(async (req) => {
     let etiqueta = "";
     let material = "";
     let subjectId: string | null = null;
+    let materiaNombre = "";
 
     if (stepId) {
       const { data: st } = await userClient.from("lesson_steps").select("id,lesson_id,title,step_type").eq("id", stepId).maybeSingle();
@@ -79,6 +87,7 @@ Deno.serve(async (req) => {
       if (!lesson) return json({ error: "Sin acceso a este contenido" }, 403);
       const tp: any = uno((lesson as any).topics), sj: any = tp ? uno(tp.subjects) : null;
       subjectId = tp?.subject_id ?? null;
+      materiaNombre = sj?.name ?? "";
       etiqueta = `Materia: ${sj?.name ?? ""} | Misión: ${tp?.title ?? ""} | Lección: ${lesson.title}`;
       lessonIds = [lesson.id];
       if ((lesson as any).position > 4 && lesson.topic_id) { // práctica general: el material son las 4 lecciones de la misión
@@ -90,6 +99,7 @@ Deno.serve(async (req) => {
       if (!tp) return json({ error: "Sin acceso a este contenido" }, 403);
       const sj: any = uno((tp as any).subjects);
       subjectId = (tp as any).subject_id;
+      materiaNombre = sj?.name ?? "";
       etiqueta = `Materia: ${sj?.name ?? ""} | Misión: ${(tp as any).title}`;
       lessonIds = ((tp as any).lessons ?? []).filter((l: any) => l.position <= 4).sort((a: any, b: any) => a.position - b.position).map((l: any) => l.id);
       lessonId = lessonIds[0] ?? null;
@@ -115,13 +125,21 @@ Deno.serve(async (req) => {
       }
     }
 
-    // ---------- Tutoría con el tutor humano: sin IA ----------
-    if (accion === "tutoria" || /(tutor humano|hablar con (mi )?tutor|quiero una tutor|agendar.{0,15}tutor)/.test(L.norm(message))) {
-      const { data: turnos, error } = await userClient.rpc("turnos_disponibles", { p_student: student.id, p_dias: 14 });
-      if (error || !turnos?.length) {
-        return json({ reply: `${nombre}, por ahora no tengo horarios libres de tu tutor para ofrecerte. Pedile a tu familia que lo vea desde su panel, en Tutorías.`, remaining: null });
+    // ---------- Tutoría individual con un tutor: sin IA ----------
+    if (accion === "tutoria" || /(tutor humano|hablar con (mi )?tutor|quiero una tutor|agendar.{0,15}tutor|tutoria individual)/.test(L.norm(message))) {
+      const area = L.AREAS[body.area as keyof typeof L.AREAS] ? body.area : null;
+      const aviso = `Las tutorías individuales son pagas (${L.ars(precio.precio_ars)}) y las confirma tu familia con el pago.`;
+      if (!area) {
+        return json({ reply: `${nombre}, ${aviso} ¿De qué área querés la tutoría?`, areas: Object.entries(L.AREAS).map(([id, nombre]) => ({ id, nombre })), area_sugerida: materiaNombre ? L.areaDeMateria(materiaNombre) : null, remaining: null });
       }
-      return json({ reply: `${nombre}, estos son los próximos horarios de tu tutor. Elegí uno y lo agendamos.`, turnos: turnos.slice(0, 6), remaining: null });
+      const { data: turnos, error } = await userClient.rpc("turnos_area", { p_student: student.id, p_area: area, p_dias: 14 });
+      if (error || !turnos?.length) {
+        return json({ reply: `${nombre}, por ahora no hay horarios libres de tutores de ${L.AREAS[area as keyof typeof L.AREAS]}. Probá de nuevo más adelante.`, remaining: null });
+      }
+      // un horario por día como máximo, para que haya variedad
+      const vistos = new Set<string>(); const pocos: any[] = [];
+      for (const t of turnos) { const d = String(t.inicio).slice(0, 10); if (!vistos.has(d)) { vistos.add(d); pocos.push(t); } if (pocos.length >= 6) break; }
+      return json({ reply: `${nombre}, estos son los próximos horarios para ${L.AREAS[area as keyof typeof L.AREAS]}. Elegí uno y lo reservo mientras tu familia paga.`, turnos: pocos, area, remaining: null });
     }
 
     // ---------- Topes de uso ----------

@@ -81,3 +81,5 @@
 .cal-bloq-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid #E4EDEA; }
 .cal-toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 400; padding: 12px 20px; border-radius: 14px; background: var(--petroleo, #253638); color: #fff; font-weight: 700; }
 .cal-toast.err { background: #8A2C1B; }
+
+.cal-ev.pendiente_pago, .cal-item.pendiente_pago { opacity: .75; border: 2px dashed currentColor; }

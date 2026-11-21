@@ -18,8 +18,24 @@ export const ACCIONES = {
   otra_forma: { diag: "necesita otro procedimiento", jugada: "Mostrá otra manera equivalente de llegar al mismo resultado (otro camino, otro método o otra representación) con un ejemplo distinto al de la actividad.", senal: "no_entiende_concepto" },
   resumen: { diag: "necesita un resumen", jugada: "Resumí el material en 4 o 5 ideas claves cortas, con palabras simples, en el mismo orden en que aparecen.", senal: "texto_largo" },
   pista: { diag: "necesita una pista", jugada: "", senal: "trabado" },
-  tutoria: { diag: "quiere hablar con el tutor humano", jugada: "", senal: "pidio_tutor" },
+  tutoria: { diag: "quiere una tutoría individual con un tutor", jugada: "", senal: "pidio_tutor" },
 };
+
+// ---------- Tutorías individuales: áreas ----------
+export const AREAS = {
+  exactas: "Exactas y Tecnología",
+  humanidades: "Humanidades",
+  ingles: "Inglés",
+  creatividad: "Creatividad y Vida",
+};
+export function areaDeMateria(nombre) {
+  const n = norm(nombre);
+  if (/ingles/.test(n)) return "ingles";
+  if (/(matem|natural|biolog|fisic|quimic|tecnolog|econom)/.test(n)) return "exactas";
+  if (/(lengua|social|historia|geograf|ciudadan|filosof)/.test(n)) return "humanidades";
+  return "creatividad";
+}
+export const ars = (n) => "$ " + Number(n || 0).toLocaleString("es-AR", { maximumFractionDigits: 0 });
 
 export const NIVELES_PISTA = [
   "PISTA NIVEL 1: hacé UNA pregunta que lo oriente hacia dónde mirar o qué recordar, sin decir cómo se resuelve.",

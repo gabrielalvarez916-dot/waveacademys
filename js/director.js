@@ -72,8 +72,8 @@
   async function vistaEquipo() {
     vista.innerHTML = '<h1 class="vista-titulo">Tutores</h1>' +
       '<p class="wv-dato">Dás de alta a los tutores, que acompañan a los alumnos de las modalidades Guiada y Completa. Se les crea el usuario con una clave inicial que deben cambiar al ingresar.</p>' +
-      '<form id="dir-tut" class="wv-tut-form"><input id="dir-tut-nom" placeholder="Nombre y apellido" required> <input id="dir-tut-mail" type="email" placeholder="Correo" required> <button class="wv-btn" type="submit">Crear tutor</button></form>' +
-      '<div id="dir-cred"></div><div id="dir-tutores"><div class="wv-vacio">Cargando…</div></div>';
+      '<form id="dir-tut" class="wv-tut-form"><input id="dir-tut-nom" placeholder="Nombre y apellido" required> <input id="dir-tut-mail" type="email" placeholder="Correo" required> <span id="dir-tut-areas" class="wv-dato" style="display:block;margin-top:8px"><b>Áreas del tutor:</b> ' + (window.WaveAreas ? WaveAreas.casillas('ar-nuevo', []) : '') + '</span> <button class="wv-btn" type="submit">Crear tutor</button></form>' +
+      '<div id="dir-cred"></div><div id="dir-tutores"><div class="wv-vacio">Cargando…</div></div><div id="dir-areas"></div>';
     async function pintar() {
       var r = await sb.rpc('tutores_equipo'), c = document.getElementById('dir-tutores');
       if (r.error) { c.innerHTML = '<div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
@@ -87,9 +87,14 @@
       b.disabled = false;
       if (r.error || (r.data && r.data.error)) { toast((r.data && r.data.error) || 'No se pudo crear el tutor', true); return; }
       document.getElementById('dir-cred').innerHTML = '<div class="wv-vacio">Tutor creado. Usuario: <b>' + esc(r.data.email) + '</b> · Clave inicial: <b>' + esc(r.data.initial_password) + '</b> (anotala: no se vuelve a mostrar).</div>';
-      this.reset(); pintar();
+      if (r.data.id && window.WaveAreas) {
+        var ar = await sb.rpc('tutor_areas_guardar', { p_tutor: r.data.id, p_areas: WaveAreas.leer(document.getElementById('dir-tut-areas'), 'ar-nuevo') });
+        if (ar.error) toast('El tutor se creó, pero no se pudieron guardar sus áreas: ' + ar.error.message, true);
+      }
+      this.reset(); pintar(); panelAreas();
     };
-    pintar();
+    function panelAreas() { var d = document.getElementById('dir-areas'); if (d && window.WaveAreas) WaveAreas.panel(d); }
+    pintar(); panelAreas();
   }
 
   // ---------- Agenda propia ----------

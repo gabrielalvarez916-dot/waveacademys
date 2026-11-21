@@ -1049,11 +1049,12 @@
     return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + d.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' h';
   }
   async function vistaTutorias() {
-    vista.innerHTML = '<h1 class="vista-titulo">Turnos y tutorías</h1><section class="fa-card" id="tuf-dir"><div class="vacio">Cargando…</div></section><div id="tuf"><div class="vacio">Cargando…</div></div>';
+    vista.innerHTML = '<h1 class="vista-titulo">Turnos y tutorías</h1><section class="fa-card" id="tuf-dir"><div class="vacio">Cargando…</div></section><section class="fa-card" id="tuf-ind"></section><div id="tuf"><div class="vacio">Cargando…</div></div>';
     var cont = document.getElementById('tuf');
     var h = await sb.from('students').select('id, first_name, last_name, grade_id, trayecto_clave').order('created_at');
     if (h.error) { cont.innerHTML = '<div class="vacio">No pudimos cargar los datos.</div>'; return; }
     pintarDireccion(document.getElementById('tuf-dir'), h.data);
+    if (window.WaveTutInd) WaveTutInd.pintar(document.getElementById('tuf-ind'), (PAIS_FAM || 'Argentina') !== 'Argentina');
     if (!h.data.length) { cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo.</div>'; return; }
     var partes = await Promise.all(h.data.map(async function (a) {
       var t = await sb.rpc('mi_tutor', { p_student: a.id });
