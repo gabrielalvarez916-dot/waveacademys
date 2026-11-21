@@ -1,0 +1,114 @@
+{
+ "slug": "medio-mat1-m10-n2",
+ "step_id": "4c4f19df-f78a-4140-979c-545709dbf509",
+ "materia": "Matemática 1",
+ "titulo": "Complementos a 10",
+ "sub": "Matemática 1 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Caen 7 bolos. ¿Cuántos quedan parados?",
+   "segundos": 6,
+   "respuesta": "¡3!",
+   "emoji": "🎳",
+   "titulo": "COMPLEMENTOS",
+   "sub": "a 10",
+   "voz": [
+    "Desafío: caen 7 bolos de 10.",
+    "¡Quedan *3* parados!",
+    "Hoy: *complementos a 10*."
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🎳",
+   "n": 7,
+   "mas": 3,
+   "texto": "7 + 3 = 10",
+   "voz": [
+    "Tenemos *7*. ¿Cuánto falta para 10?",
+    "Seguimos contando: 8, 9, 10.",
+    "¡Faltan *3*! 7 más 3 es 10."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "EL AMIGO DEL 10",
+   "texto": "Lo que falta para llegar a 10",
+   "emoji": "🤝",
+   "voz": [
+    "El *amigo del 10* es lo que falta.",
+    "El amigo del 7 es el *3*."
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🎳",
+   "n": 6,
+   "mas": 4,
+   "texto": "6 + 4 = 10",
+   "voz": [
+    "Ahora tenemos *6*. ¿Cuánto falta?",
+    "Seguimos contando: 7, 8, 9, 10.",
+    "¡Faltan *4*! El amigo del 6 es el 4."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto le falta al 8 para llegar a 10?",
+   "opciones": [
+    "2",
+    "8",
+    "10"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el 8.",
+    "¿Cuánto le falta para llegar a 10?",
+    "¡*2*! 8 más 2 es 10."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar los que ya están",
+     "bien": "Contar los que faltan"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Contá *los que faltan*, no los que ya están."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FALTAN",
+     "los lugares vacíos"
+    ],
+    [
+     "AMIGO DEL 10",
+     "completa el 10"
+    ],
+    [
+     "7 Y 3",
+     "son amigos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Lo que *falta* son los vacíos.",
+    "El *amigo del 10* completa el 10.",
+    "7 y 3 son *amigos del 10*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

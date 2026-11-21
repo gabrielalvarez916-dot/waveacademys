@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat1-m10-n3",
+ "step_id": "d16dfa89-2392-46eb-93ef-f43185c451fc",
+ "materia": "Matemática 1",
+ "titulo": "Sumas hasta 10 de memoria",
+ "sub": "Matemática 1 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🧠",
+   "final": "🔟",
+   "titulo": "DE MEMORIA",
+   "sub": "sumas hasta 10",
+   "voz": [
+    "¿Podés sumar sin contar con los dedos?",
+    "¡Sí! Si lo sabés *de memoria*.",
+    "Hoy: *sumas hasta 10 de memoria*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PAREJAS DEL 10",
+   "columnas": [
+    "SUMA",
+    "DA"
+   ],
+   "filas": [
+    [
+     "1 + 9",
+     "10"
+    ],
+    [
+     "2 + 8",
+     "10"
+    ],
+    [
+     "3 + 7",
+     "10"
+    ],
+    [
+     "4 + 6",
+     "10"
+    ],
+    [
+     "5 + 5",
+     "10"
+    ]
+   ],
+   "voz": [
+    "Estas son las *parejas del 10*.",
+    "1 más 9.",
+    "2 más 8.",
+    "3 más 7.",
+    "4 más 6.",
+    "Y 5 más 5. ¡Todas dan *10*!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "3",
+    "+",
+    "7"
+   ],
+   "grande": "7 + 3 = 10",
+   "etiqueta": "DAR VUELTA NO CAMBIA",
+   "voz": [
+    "Si 3 más 7 es 10…",
+    "¡7 más 3 también es *10*!",
+    "Dar vuelta *no cambia* el resultado."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "5 + ___ = 10",
+   "opciones": [
+    "5",
+    "10",
+    "0"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Sin contar.",
+    "¿Qué número va con el 5?",
+    "¡*5*! 5 más 5 es 10."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 4 + 6?",
+   "opciones": [
+    "8",
+    "10",
+    "12"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Otra más, bien rápido.",
+    "¿Cuánto es 4 más 6?",
+    "¡*10*! Es una pareja del 10."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PRACTICÁ",
+   "texto": "Decilas en voz alta todos los días",
+   "emoji": "🗣️",
+   "voz": [
+    "Truco: decí las parejas en voz alta *todos los días*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAREJAS",
+     "1 y 9, 2 y 8…"
+    ],
+    [
+     "MEMORIA",
+     "sin contar"
+    ],
+    [
+     "VUELTA",
+     "3 + 7 = 7 + 3"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Hay cinco *parejas del 10*.",
+    "Las sabemos *de memoria*.",
+    "Y dar vuelta *no cambia* nada.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

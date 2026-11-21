@@ -448,3 +448,17 @@ def sacar(obj, n, menos, texto=None):
             ax.plot([x - .38, x + .38], [y - .38, y + .38], color=OSC, lw=3.6); ax.plot([x - .38, x + .38], [y + .38, y - .38], color=OSC, lw=3.6)
     cartel(ax, cols / 2 + .4, -.5, texto or f"QUEDAN {q}", c=AMBAR, tc=OSC, fs=14)
     return png(fig)
+
+
+# ---------------- dibujos de la misión 10 (sumas y complementos a 10) ----------------
+def marco10(n, obj="pelota", obj2=None, n2=0, texto=None):
+    """Cuadro de 10 (2 filas de 5): n objetos, después n2 de otro tipo (obj2) y el resto vacío. Abajo, el texto."""
+    fig, ax = lienzo(5.6, 3.2, 5.4, 3.0, 0, -.9)
+    ax.add_patch(FancyBboxPatch((.15, .05), 5.1, 2.2, boxstyle="round,pad=0.02,rounding_size=0.15", color="#fff4d6", ec=AMBAR, lw=2.2))
+    for k in range(10):
+        x, y = .7 + (k % 5), 1.7 - (k // 5) * 1.1
+        ax.add_patch(Rectangle((x - .45, y - .48), .9, .96, fill=False, ec=OSC, lw=1.2))
+        if k < n: OBJ[obj](ax, x, y)
+        elif k < n + n2: OBJ[obj2 or obj](ax, x, y)
+    if texto: cartel(ax, 2.7, -.55, texto, c=TEAL, fs=14)
+    return png(fig)

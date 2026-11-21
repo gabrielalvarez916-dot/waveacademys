@@ -1,0 +1,131 @@
+{
+ "slug": "medio-mat1-m10-n4",
+ "step_id": "4b39f530-b503-4bd1-8a3b-1c8e57a25a8d",
+ "materia": "Matemática 1",
+ "titulo": "Juegos de sumas",
+ "sub": "Matemática 1 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "TORNEO DE BOLOS",
+   "titular": "¡SOFI JUEGA LA FINAL!",
+   "bajada": "Tira dos veces y suma",
+   "emoji": "🏆",
+   "titulo": "JUEGOS",
+   "sub": "de sumas",
+   "voz": [
+    "¡Torneo de bolos en la plaza!",
+    "Sofi juega la *final*.",
+    "Hoy: *juegos de sumas*."
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🎳",
+   "n": 4,
+   "mas": 3,
+   "texto": "4 + 3 = 7",
+   "voz": [
+    "Primera tirada: caen *4* bolos.",
+    "Segunda tirada: 5, 6, 7.",
+    "¡Cayeron *7* bolos en total!"
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🎲",
+    "n": 5
+   },
+   "b": {
+    "emoji": "🎲",
+    "n": 2
+   },
+   "texto": "5 + 2 = 7",
+   "voz": [
+    "Ahora jugamos con dados: sale 5 y 2.",
+    "Juntamos los puntos de los dos dados.",
+    "¡5 más 2 es *7*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EMPEZÁ POR EL GRANDE",
+   "texto": "En 2 + 6, empezá en 6",
+   "emoji": "🚀",
+   "voz": [
+    "Truco: empezá por *el número más grande*."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "6",
+    "2"
+   ],
+   "op": "+",
+   "resultado": "8",
+   "voz": [
+    "Empezamos en 6 y seguimos: 7, 8.",
+    "¡6 más 2 es *8*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Sale 3 y sale 4. ¿Cuánto es?",
+   "opciones": [
+    "7",
+    "6",
+    "10"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Sale 3 y sale 4.",
+    "¿Cuántos puntos son en total?",
+    "¡*7*! Cuatro, cinco, seis, siete."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Pensar que todas dan 10",
+     "bien": "Cada suma da su número"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No todas las sumas dan *10*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BOLOS",
+     "sumamos los que caen"
+    ],
+    [
+     "DADOS",
+     "sumamos los puntos"
+    ],
+    [
+     "TRUCO",
+     "empezar por el grande"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con *bolos* sumamos los que caen.",
+    "Con *dados* sumamos los puntos.",
+    "Y empezamos por *el grande*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
