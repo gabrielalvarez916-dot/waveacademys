@@ -147,28 +147,32 @@ AD=lambda a,d,v:{"t":"antesdespues","antes":{"cab":a[0],"emoji":a[1],"texto":a[2
 DA=lambda n,a,d,t,e,v:{"t":"dato","numero":n,"antes":a,"despues":d,"texto":t,"emoji":e,"voz":v}
 RET=lambda tx,seg,resp,em,ti,sub,v:{"t":"reto","texto":tx,"segundos":seg,"respuesta":resp,"emoji":em,"titulo":ti,"sub":sub,"voz":v}
 NOT=lambda ci,ti,ba,em,tt,sub,v:{"t":"noticia","cinta":ci,"titular":ti,"bajada":ba,"emoji":em,"titulo":tt,"sub":sub,"voz":v}
+BQ=lambda t,it,v:{"t":"bloques","titulo":t,"items":[{"cab":a,"txt":b} for a,b in it],"voz":v}
+LI=lambda t,ev,v:{"t":"linea","titulo":t,"eventos":[{"fecha":a,"txt":b,"emoji":c} for a,b,c in ev],"voz":v}
+VE=lambda a,b,ia,ib,am,v:{"t":"venn","a":a,"b":b,"itemsA":ia,"itemsB":ib,"ambos":am,"voz":v}
+FL=lambda t,it,v:{"t":"flujo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+MAT=lambda t,c,v:{"t":"matriz","titulo":t,"celdas":[{"cab":a,"txt":b} for a,b in c],"voz":v}
+CIC=lambda t,it,v:{"t":"ciclo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+ZO=lambda it,v:{"t":"zoom","niveles":[{"emoji":a,"txt":b} for a,b in it],"voz":v}
 CLS={1:[
  RET("¿Cómo se llama mirar con atención y con un propósito?",6,"Observar","👁️","APRENDER A MIRAR","ver, observar y apreciar",["Desafío: ¿cómo se llama mirar con atención y con un propósito? Seis segundos.","Observar.","Hoy: *ver, observar y apreciar*."]),
- DEF("Ver","Percibir sin atención","👀",["*Ver* es percibir con los ojos de manera automática.","No hace falta esfuerzo."]),
- DEF("Observar","Mirar con atención y propósito","🔍",["*Observar* es mirar con atención y con un propósito.","Se buscan detalles y diferencias."]),
+ CMP(("VER","Percibir sin esfuerzo","👀"),("OBSERVAR","Mirar con atención y propósito","🔍"),"vs",["Dos formas de mirar.","*Ver* es percibir sin esfuerzo.","*Observar* es mirar con atención y propósito."]),
  DEF("Apreciar","Valorar y explicar por qué","🎨",["*Apreciar* es valorar lo que se observa.","Y poder explicar por qué."]),
- CL([("VER","👀"),("OBSERVAR","🔍"),("APRECIAR","🎨")],[("Pasar sin mirar",0),("Contar colores",1),("Explicar la emoción",2),("Notar detalles",1)],["¿Ver, observar o apreciar?","*Pasar sin mirar*: ver.","*Contar colores* y *notar detalles*: observar.","*Explicar la emoción*: apreciar."]),
+ FL("DE VER A APRECIAR",[("Ver","👀"),("Observar","🔍"),("Apreciar","🎨")],["Un camino de tres pasos.","Primero, *ver*.","Después, *observar*.","Y al final, *apreciar*."]),
  Q("¿Qué ayuda a entrenar la mirada?",["Mirar despacio","Mirar sin atención","Mirar rápido"],0,["Te toca: ¿qué entrena la mirada?","¿Mirar despacio, sin atención o rápido?","*Mirar despacio*."]),
  ER([("Ver y observar son lo mismo","Observar lleva atención"),("Apreciar es que guste","Es valorar y explicar")],["Errores típicos.","Creer que *ver y observar* son lo mismo.","Y que *apreciar* es solo que guste."]),
  RES(["Repasemos.","*Ver* es automático.","*Observar* busca detalles.","*Apreciar* valora y explica.","Y la mirada *se entrena*.","¡Clase terminada! Ahora, *a practicar*."],[["VER","automático"],["OBSERVAR","con propósito"],["APRECIAR","valorar y explicar"],["ENTRENAR","mirar despacio"]])],
 2:[
  NOT("ARTE","Un punto, una línea, un plano","Con tres elementos se arma una imagen","✏️","PUNTO, LÍNEA","y plano",["Noticia: con tres elementos se arma una imagen.","Un punto, una línea y un plano.","Hoy: *punto, línea y plano*."]),
  DEF("Punto","Marca mínima que atrae la mirada","⚫",["El *punto* es la marca mínima.","Atrae la mirada."]),
- DEF("Línea","Recorrido de un punto","📏",["La *línea* es el recorrido de un punto en movimiento.","Une, separa y marca dirección."]),
+ FL("DEL PUNTO AL PLANO",[("Punto","⚫"),("Línea","📏"),("Plano","🟪")],["Mirá cómo crece.","Un *punto* que se mueve deja una *línea*.","Y la línea, al cerrarse, forma un *plano*."]),
  TB("TIPOS DE LÍNEA",["Línea","Transmite"],[["Horizontal","Calma"],["Vertical","Firmeza"],["Diagonal","Movimiento"],["Curva","Suavidad"]],["Tipos de línea.","La *horizontal*: calma.","La *vertical*: firmeza.","La *diagonal*: movimiento.","Y la *curva*: suavidad."]),
- DEF("Plano","Superficie de dos dimensiones","🟪",["El *plano* es una superficie de dos dimensiones.","Al superponerse crea profundidad."]),
- CL([("PUNTO","⚫"),("LÍNEA","📏"),("PLANO","🟪")],[("Marca mínima",0),("Trazo diagonal",1),("Mancha de color",2),("Camino curvo",1)],["¿Punto, línea o plano?","*Marca mínima*: punto.","*Trazo diagonal* y *camino curvo*: líneas.","*Mancha de color*: plano."]),
+ MAT("TRES ELEMENTOS",[("PUNTO","Marca mínima"),("LÍNEA","Recorrido de un punto"),("PLANO","Superficie de dos dimensiones"),("JUNTOS","Forman imágenes")],["Los tres elementos.","El *punto*: marca mínima.","La *línea*: recorrido de un punto.","El *plano*: superficie de dos dimensiones.","Y *juntos* forman imágenes."]),
  Q("¿Qué transmite la línea diagonal?",["Movimiento","Calma","Firmeza"],0,["Te toca: la línea diagonal.","¿Movimiento, calma o firmeza?","*Movimiento*."]),
  RES(["Repasemos.","El *punto* atrae la mirada.","La *línea* guía y marca dirección.","El *plano* organiza el espacio.","Y los tres *se combinan*.","¡Clase terminada! Ahora, *a practicar*."],[["PUNTO","atrae la mirada"],["LÍNEA","guía"],["PLANO","organiza"],["JUNTOS","forman imágenes"]])],
 3:[
  RET("¿Cómo se llama la zona que rodea a la figura?",6,"Fondo","🖼️","FORMA, FIGURA","y fondo",["Desafío: ¿cómo se llama la zona que rodea a la figura? Seis segundos.","Fondo.","Hoy: *forma, figura y fondo*."]),
- DEF("Forma","Contorno de algo","🔷",["La *forma* es el contorno de algo.","Sin importar qué represente."]),
- DEF("Figura","Forma que reconocemos","🌳",["La *figura* es una forma que reconocemos.","Por ejemplo, una casa o un árbol."]),
+ VE("FORMA","FIGURA",["Contorno de algo","No hace falta que represente algo"],["Se reconoce","Una casa o un árbol"],["Tienen un borde"],["Forma y figura.","La *forma* es el contorno de algo.","La *figura* es una forma reconocible.","Y las dos tienen un *borde*."]),
  CMP(("FIGURA","Lo que se destaca","⬛"),("FONDO","Lo que la rodea","🟨"),"+",["Siempre van juntos.","La *figura* es lo que se destaca.","El *fondo* es lo que la rodea."]),
  CL([("GEOMÉTRICA","🔺"),("ORGÁNICA","🍃")],[("Círculo",0),("Hoja",1),("Cuadrado",0),("Nube",1)],["¿Geométrica u orgánica?","*Círculo* y *cuadrado*: geométricas.","*Hoja* y *nube*: orgánicas."]),
  Q("El espacio vacío que rodea a la figura es el espacio…",["Negativo","Positivo","Lleno"],0,["Te toca: el espacio vacío que rodea a la figura.","¿Negativo, positivo o lleno?","El espacio *negativo*."]),
@@ -176,9 +180,9 @@ CLS={1:[
  RES(["Repasemos.","La *forma* es el contorno.","La *figura* es reconocible.","El *fondo* la hace destacar.","Y el espacio *negativo* también cuenta.","¡Clase terminada! Ahora, *a practicar*."],[["FORMA","contorno"],["FIGURA","reconocible"],["FONDO","la hace destacar"],["NEGATIVO","espacio vacío"]])],
 4:[
  NOT("ARTE","Una obra se puede leer","En cuatro pasos","🖼️","LEER UNA OBRA","paso a paso",["Noticia: una obra se puede leer.","En cuatro pasos.","Hoy: *leer una obra paso a paso*."]),
- PA("LOS CUATRO PASOS",[("Describir","📝"),("Analizar","🔍"),("Interpretar","💭"),("Valorar","⭐")],["Cuatro pasos.","*Describir*.","*Analizar*.","*Interpretar*.","Y *valorar*."]),
+ LI("LOS CUATRO PASOS",[("1","Describir","📝"),("2","Analizar","🔍"),("3","Interpretar","💭"),("4","Valorar","⭐")],["Cuatro pasos, en orden.","Primero *describir*.","Después *analizar*.","Luego *interpretar*.","Y por último *valorar*."]),
  DEF("Describir","Decir qué se ve, sin opinar","📝",["*Describir* es decir qué se ve.","Sin opinar."]),
- TB("QUÉ ANALIZAR",["Aspecto","Pregunta"],[["Elementos","Puntos, líneas, planos"],["Color","¿Cuáles dominan?"],["Composición","¿Cómo se ordena?"],["Técnica","¿Con qué se hizo?"]],["Qué se analiza.","Los *elementos*.","El *color*.","La *composición*.","Y la *técnica*."]),
+ BQ("QUÉ ANALIZAR",[("ELEMENTOS","Puntos, líneas, planos"),("COLOR","¿Cuáles dominan?"),("COMPOSICIÓN","¿Cómo se ordena?"),("TÉCNICA","¿Con qué se hizo?")],["Qué se analiza.","Los *elementos*.","El *color*.","La *composición*.","Y la *técnica*."]),
  CL([("DESCRIBIR","📝"),("INTERPRETAR","💭")],[("Hay un puente rojo",0),("Une dos orillas",1),("Hay un río",0),("Transmite calma",1)],["¿Describir o interpretar?","*Hay un puente rojo* y *hay un río*: describir.","*Une dos orillas* y *transmite calma*: interpretar."]),
  Q("El primer paso para leer una obra es…",["Describir","Valorar","Interpretar"],0,["Te toca: el primer paso.","¿Describir, valorar o interpretar?","*Describir*."]),
  ER([("Interpretar sin mirar","Primero describir"),("Decir solo me gusta","Explicar por qué")],["Errores típicos.","*Interpretar* sin mirar bien.","Y decir solo *me gusta*."]),

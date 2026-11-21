@@ -153,19 +153,28 @@ AD=lambda a,d,v:{"t":"antesdespues","antes":{"cab":a[0],"emoji":a[1],"texto":a[2
 DA=lambda n,a,d,t,e,v:{"t":"dato","numero":n,"antes":a,"despues":d,"texto":t,"emoji":e,"voz":v}
 RET=lambda tx,seg,resp,em,ti,sub,v:{"t":"reto","texto":tx,"segundos":seg,"respuesta":resp,"emoji":em,"titulo":ti,"sub":sub,"voz":v}
 NOT=lambda ci,ti,ba,em,tt,sub,v:{"t":"noticia","cinta":ci,"titular":ti,"bajada":ba,"emoji":em,"titulo":tt,"sub":sub,"voz":v}
+BQ=lambda t,it,v:{"t":"bloques","titulo":t,"items":[{"cab":a,"txt":b} for a,b in it],"voz":v}
+LI=lambda t,ev,v:{"t":"linea","titulo":t,"eventos":[{"fecha":a,"txt":b,"emoji":c} for a,b,c in ev],"voz":v}
+VE=lambda a,b,ia,ib,am,v:{"t":"venn","a":a,"b":b,"itemsA":ia,"itemsB":ib,"ambos":am,"voz":v}
+FL=lambda t,it,v:{"t":"flujo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+MAT=lambda t,c,v:{"t":"matriz","titulo":t,"celdas":[{"cab":a,"txt":b} for a,b in c],"voz":v}
+CIC=lambda t,it,v:{"t":"ciclo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+ZO=lambda it,v:{"t":"zoom","niveles":[{"emoji":a,"txt":b} for a,b in it],"voz":v}
+BAR=lambda t,u,it,v:{"t":"barras","titulo":t,"unidad":u,"items":[{"txt":a,"valor":b} for a,b in it],"voz":v}
+BA=lambda i,d,g,v:{"t":"balanza","izq":{"cab":i[0],"items":i[1]},"der":{"cab":d[0],"items":d[1]},"gana":g,"voz":v}
 CLS={1:[
  RET("¿Cómo se llama el dibujo hecho mirando un objeto real?",6,"Dibujo de observación","✏️","DIBUJAR LO QUE VEMOS","del contorno al detalle",["Desafío: ¿cómo se llama el dibujo hecho mirando un objeto real? Seis segundos.","Dibujo de observación.","Hoy: *del contorno al detalle*."]),
  DEF("Dibujo de observación","Dibujar mirando un objeto real","👁️",["El *dibujo de observación* se hace mirando un objeto real.","Se dibuja lo que se ve, no lo que se imagina."]),
- PA("LOS CUATRO PASOS",[("Encajar","📦"),("Estructura","🧱"),("Contorno","✒️"),("Detalle","🔎")],["Cuatro pasos.","*Encajar*: el tamaño total.","*Estructura*: formas simples.","*Contorno*: el borde.","Y *detalle*: texturas."]),
+ FL("LOS CUATRO PASOS",[("Encajar","📦"),("Estructura","🧱"),("Contorno","✒️"),("Detalle","🔎")],["Cuatro pasos, de lo general a lo particular.","*Encajar*: el tamaño total.","*Estructura*: formas simples.","*Contorno*: el borde.","Y *detalle*: texturas."]),
  DEF("Lápiz extendido","Para comparar medidas","📏",["Con el *lápiz extendido* se comparan medidas.","Así se controla la proporción."]),
- CL([("SUAVE","🪶"),("FIRME","✒️")],[("Encajar",0),("Contorno",1),("Estructura",0),("Detalle",1)],["¿Trazo suave o firme?","*Encajar* y *estructura*: trazo suave.","*Contorno* y *detalle*: trazo firme."]),
+ AD(("ENCAJAR","🪶","Trazo suave, se corrige"),("CONTORNO","✒️","Trazo firme, queda"),["El trazo cambia.","Al *encajar*, es suave y se corrige.","Al hacer el *contorno*, es firme y queda."]),
  Q("El primer paso del dibujo de observación es…",["Encajar","Detallar","Pintar"],0,["Te toca: el primer paso.","¿Encajar, detallar o pintar?","*Encajar*."]),
  ER([("Empezar por el detalle","Empezar por el encaje"),("Dibujar de memoria","Mirar el objeto")],["Errores típicos.","Empezar por el *detalle*.","Y dibujar *de memoria*."]),
  RES(["Repasemos.","Se dibuja *mirando*.","Se va de lo *general* a lo particular.","Se mide con el *lápiz extendido*.","Y el trazo empieza *suave*.","¡Clase terminada! Ahora, *a practicar*."],[["OBSERVAR","dibujar mirando"],["PASOS","encajar a detalle"],["MEDIR","lápiz extendido"],["TRAZO","suave al inicio"]])],
 2:[
  NOT("DIBUJO","Un círculo plano","Se vuelve una esfera","⚪","LUZ Y SOMBRA","claroscuro y volumen",["Noticia: un círculo plano se vuelve una esfera.","Con luz y sombra.","Hoy: *luz y sombra, claroscuro y volumen*."]),
- DEF("Fuente de luz","De dónde viene la luz","💡",["La *fuente de luz* es de dónde viene la luz.","Hay que elegirla y mantenerla."]),
- TB("ZONAS",["Zona","Qué es"],[["Luz","La más clara"],["Sombra propia","En el objeto"],["Sombra proyectada","Sobre el piso"],["Luz reflejada","Brillo en la sombra"]],["Las zonas de un objeto iluminado.","La *luz*: la más clara.","La *sombra propia*: en el objeto.","La *proyectada*: sobre el piso.","Y la *luz reflejada*."]),
+ CAU(("Fuente de luz","💡"),[("Zonas claras","⚪"),("Sombras","⬛")],["Todo empieza en la *fuente de luz*.","De ella salen las *zonas claras*.","Y también las *sombras*."]),
+ MAT("ZONAS",[("LUZ","La más clara"),("SOMBRA PROPIA","En el objeto"),("SOMBRA PROYECTADA","Sobre el piso"),("LUZ REFLEJADA","Brillo en la sombra")],["Las zonas de un objeto iluminado.","La *luz*: la más clara.","La *sombra propia*: en el objeto.","La *proyectada*: sobre el piso.","Y la *luz reflejada*."]),
  DEF("Claroscuro","Contraste de claro y oscuro","🌗",["El *claroscuro* es el contraste entre claro y oscuro.","Da sensación de volumen."]),
  CL([("EN EL OBJETO","⚪"),("SOBRE EL PISO","⬛")],[("Sombra propia",0),("Sombra proyectada",1),("Luz reflejada",0),("Mancha al lado",1)],["¿En el objeto o sobre el piso?","*Sombra propia* y *luz reflejada*: en el objeto.","*Sombra proyectada*: sobre el piso."]),
  Q("La sombra proyectada cae…",["Opuesta a la luz","Hacia la luz","Siempre arriba"],0,["Te toca: la sombra proyectada.","¿Opuesta a la luz, hacia la luz o arriba?","*Opuesta a la luz*."]),
@@ -174,8 +183,8 @@ CLS={1:[
 3:[
  RET("¿Cómo se llama el punto donde se juntan las paralelas en el horizonte?",6,"Punto de fuga","🛣️","PROPORCIÓN","y perspectiva",["Desafío: ¿cómo se llama el punto donde se juntan las líneas paralelas en el horizonte? Seis segundos.","Punto de fuga.","Hoy: *proporción y perspectiva*."]),
  DEF("Proporción","Relación entre tamaños","⚖️",["La *proporción* es la relación entre tamaños.","Se controla midiendo y comparando."]),
- DEF("Perspectiva","Representar la profundidad","🛣️",["La *perspectiva* representa la profundidad.","Lo lejano se ve más pequeño."]),
- TB("ELEMENTOS",["Elemento","Qué es"],[["Horizonte","A la altura de los ojos"],["Punto de fuga","Donde se juntan las paralelas"],["Líneas de fuga","Hacia el punto de fuga"]],["Elementos de la perspectiva.","El *horizonte*: a la altura de los ojos.","El *punto de fuga*: donde se juntan las paralelas.","Y las *líneas de fuga*."]),
+ ZO([("🏠","Casa cerca: grande"),("🏘️","Casas lejos: chicas"),("⛰️","Montañas: diminutas")],["La *perspectiva* representa la profundidad.","Lo cercano se ve *grande*.","Lo lejano, *chico*.","Y lo más lejano, *diminuto*."]),
+ BQ("ELEMENTOS",[("HORIZONTE","A la altura de los ojos"),("PUNTO DE FUGA","Donde se juntan las paralelas"),("LÍNEAS DE FUGA","Hacia el punto de fuga")],["Elementos de la perspectiva.","El *horizonte*: a la altura de los ojos.","El *punto de fuga*: donde se juntan las paralelas.","Y las *líneas de fuga*."]),
  CL([("CERCA","🔍"),("LEJOS","🔭")],[("Se ve grande",0),("Se ve pequeño",1),("Más detalle",0),("Menos detalle",1)],["¿Cerca o lejos?","*Se ve grande* y *más detalle*: cerca.","*Se ve pequeño* y *menos detalle*: lejos."]),
  Q("La línea de horizonte está a la altura de…",["Los ojos","Los pies","El techo"],0,["Te toca: el horizonte.","¿Los ojos, los pies o el techo?","La altura de los *ojos*."]),
  ER([("Objetos lejanos del mismo tamaño","Más pequeños al alejarse"),("Punto de fuga fuera del horizonte","En el horizonte")],["Errores típicos.","Dibujar objetos *lejanos* del mismo tamaño.","Y poner el *punto de fuga* fuera del horizonte."]),
@@ -183,9 +192,9 @@ CLS={1:[
 4:[
  NOT("CUADERNO","Diez minutos por día","Mejoran más que una vez por semana","📓","EL CUADERNO","de artista",["Noticia: diez minutos por día mejoran más que una vez por semana.","Con un cuaderno.","Hoy: *el cuaderno de artista*."]),
  DEF("Boceto","Dibujo rápido sin terminar","✏️",["Un *boceto* es un dibujo rápido y sin terminar.","Capta una idea o un momento."]),
- TB("EJERCICIOS",["Ejercicio","Tiempo"],[["Gesto","30 segundos"],["Contorno ciego","1 minuto"],["Con valores","5 minutos"]],["Ejercicios cortos.","El *gesto*: treinta segundos.","El *contorno ciego*: un minuto.","Y el boceto *con valores*: cinco minutos."]),
+ BAR("TIEMPO DE CADA EJERCICIO","min",[("Gesto",0.5),("Contorno ciego",1),("Con valores",5)],["Ejercicios cortos.","El *gesto*: treinta segundos.","El *contorno ciego*: un minuto.","Y el boceto *con valores*: cinco minutos."]),
  DEF("Contorno ciego","Dibujar sin mirar la hoja","🙈",["El *contorno ciego* se dibuja sin mirar la hoja.","Entrena la observación."]),
- CL([("AYUDA","✅"),("NO AYUDA","❌")],[("Dibujar a diario",0),("Querer perfección",1),("Fechar páginas",0),("Esperar inspiración",1)],["¿Ayuda o no ayuda?","*Dibujar a diario* y *fechar páginas*: ayudan.","*Querer perfección* y *esperar inspiración*: no ayudan."]),
+ BA(("AYUDA",["Dibujar a diario","Fechar páginas"]),("NO AYUDA",["Querer perfección"]),"izq",["¿Qué ayuda al cuaderno?","*Dibujar a diario* y *fechar páginas* ayudan.","*Querer perfección* no ayuda."]),
  Q("Un boceto…",["No busca ser perfecto","Debe ser perfecto","No se fecha"],0,["Te toca: un boceto.","¿No busca ser perfecto, debe ser perfecto o no se fecha?","*No busca ser perfecto*."]),
  RES(["Repasemos.","El *boceto* es rápido.","El *cuaderno* sirve para practicar.","Los ejercicios son *cortos*.","Y la *constancia* mejora.","¡Clase terminada! Ahora, *a practicar*."],[["BOCETO","rápido"],["CUADERNO","practicar y registrar"],["TIEMPO","ejercicios cortos"],["HÁBITO","cada día"]])]}
 for n,es in CLS.items():
