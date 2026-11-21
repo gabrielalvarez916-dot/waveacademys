@@ -1,0 +1,179 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m8-n2",
+ "step_id": "a54d9c31-de20-47c6-b927-f6e69af0d3c0",
+ "materia": "Ciudadanía I",
+ "titulo": "Racismo, xenofobia y exclusión",
+ "sub": "Ciudadanía I · Misión 8 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ESCUELA",
+   "titular": "Rechazan a un alumno nuevo",
+   "bajada": "Por haber nacido en otro país",
+   "emoji": "🏫",
+   "titulo": "RACISMO, XENOFOBIA",
+   "sub": "y exclusión",
+   "voz": [
+    "Noticia: rechazan a un alumno nuevo.",
+    "Por haber nacido en otro país.",
+    "Hoy: *racismo, xenofobia y exclusión*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Racismo",
+   "texto": "Jerarquizar por color u origen",
+   "emoji": "🚫",
+   "voz": [
+    "El *racismo* cree que unas personas valen más que otras.",
+    "Por su color de piel u origen étnico."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Xenofobia",
+   "texto": "Rechazo a personas extranjeras",
+   "emoji": "🌍",
+   "voz": [
+    "La *xenofobia* es el rechazo a las personas extranjeras.",
+    "Se expresa en burlas, exclusión o culpas."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "OTRAS FORMAS",
+   "columnas": [
+    "Tipo",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Sexismo",
+     "Por género"
+    ],
+    [
+     "Capacitismo",
+     "Por discapacidad"
+    ],
+    [
+     "Clasismo",
+     "Por dinero"
+    ],
+    [
+     "Por apariencia",
+     "Por el aspecto"
+    ]
+   ],
+   "voz": [
+    "Otras formas de discriminar.",
+    "El *sexismo*, por género.",
+    "El *capacitismo*, por discapacidad.",
+    "El *clasismo*, por dinero.",
+    "Y por *apariencia*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DAÑA",
+     "emoji": "💔"
+    },
+    {
+     "cab": "SUMA",
+     "emoji": "🤝"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Burlarse",
+     "caja": 0
+    },
+    {
+     "txt": "Compartir culturas",
+     "caja": 1
+    },
+    {
+     "txt": "Excluir",
+     "caja": 0
+    },
+    {
+     "txt": "Valorar lo distinto",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Daña o suma?",
+    "*Burlarse* y *excluir*: dañan.",
+    "*Compartir culturas* y *valorar lo distinto*: suman."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El rechazo a personas extranjeras es…",
+   "opciones": [
+    "Xenofobia",
+    "Sexismo",
+    "Clasismo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: rechazo a personas extranjeras.",
+    "¿Xenofobia, sexismo o clasismo?",
+    "*Xenofobia*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El racismo tiene base científica",
+     "bien": "Somos una sola especie"
+    },
+    {
+     "mal": "Solo daña a la víctima",
+     "bien": "Empobrece a todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el racismo tiene *base científica*.",
+    "Y que *solo* daña a la víctima."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *racismo* jerarquiza por color u origen.",
+    "La *xenofobia* rechaza al extranjero.",
+    "Hay *sexismo*, capacitismo y clasismo.",
+    "Y *todos* perdemos con la discriminación.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RACISMO",
+     "por color u origen"
+    ],
+    [
+     "XENOFOBIA",
+     "rechazo al extranjero"
+    ],
+    [
+     "OTRAS",
+     "sexismo, clasismo"
+    ],
+    [
+     "EFECTO",
+     "daño"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m8-n1",
+ "step_id": "8b05b13a-0459-45c0-b37f-55935141b1fc",
+ "materia": "Ciudadanía I",
+ "titulo": "Del prejuicio a la discriminación",
+ "sub": "Ciudadanía I · Misión 8 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la opinión negativa formada antes de conocer a alguien?",
+   "segundos": 6,
+   "respuesta": "Prejuicio",
+   "emoji": "💭",
+   "titulo": "DEL PREJUICIO",
+   "sub": "a la discriminación",
+   "voz": [
+    "Desafío: ¿cómo se llama la opinión negativa formada antes de conocer a alguien? Seis segundos.",
+    "Prejuicio.",
+    "Hoy: *del prejuicio a la discriminación*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Prejuicio",
+   "texto": "Opinión negativa formada sin conocer",
+   "emoji": "💭",
+   "voz": [
+    "Un *prejuicio* es una opinión negativa formada sin conocer.",
+    "Se aprende en la familia, los medios y la calle."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Estereotipo",
+   "texto": "Imagen simplificada de un grupo",
+   "emoji": "🧩",
+   "voz": [
+    "Un *estereotipo* es una imagen simplificada de un grupo.",
+    "Se aplica a todas las personas que lo integran."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Discriminación",
+   "texto": "Trato desigual e injusto",
+   "emoji": "🚫",
+   "voz": [
+    "La *discriminación* es un trato desigual e injusto.",
+    "Puede ser con palabras, burlas o exclusiones."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DE LA IDEA AL HECHO",
+   "items": [
+    {
+     "txt": "Prejuicio",
+     "emoji": "💭"
+    },
+    {
+     "txt": "Estereotipo",
+     "emoji": "🧩"
+    },
+    {
+     "txt": "Discriminación",
+     "emoji": "🚫"
+    }
+   ],
+   "voz": [
+    "Cómo se llega a discriminar.",
+    "Primero, un *prejuicio*.",
+    "Luego, un *estereotipo*.",
+    "Y al final, la *discriminación*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "IDEA",
+     "emoji": "💭"
+    },
+    {
+     "cab": "ACCIÓN",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Prejuicio",
+     "caja": 0
+    },
+    {
+     "txt": "Excluir a alguien",
+     "caja": 1
+    },
+    {
+     "txt": "Estereotipo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Idea o acción?",
+    "*Prejuicio* y *estereotipo*: ideas.",
+    "*Excluir a alguien*: acción."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La imagen simplificada de todo un grupo es un…",
+   "opciones": [
+    "Estereotipo",
+    "Derecho",
+    "Aval"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la imagen simplificada de un grupo.",
+    "¿Estereotipo, derecho o aval?",
+    "Un *estereotipo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los prejuicios son inocentes",
+     "bien": "Pueden terminar en daño"
+    },
+    {
+     "mal": "Discriminar es solo insultar",
+     "bien": "Hay muchas formas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los prejuicios son *inocentes*.",
+    "Y que discriminar es *solo insultar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *prejuicio* se forma sin conocer.",
+    "Un *estereotipo* simplifica a un grupo.",
+    "La *discriminación* es trato injusto.",
+    "Conocer a las personas lo *evita*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PREJUICIO",
+     "sin conocer"
+    ],
+    [
+     "ESTEREOTIPO",
+     "imagen simple"
+    ],
+    [
+     "DISCRIMINACIÓN",
+     "trato injusto"
+    ],
+    [
+     "CAMINO",
+     "idea a hecho"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

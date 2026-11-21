@@ -1,0 +1,193 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m9-n2",
+ "step_id": "9b9cd876-f62e-4973-9322-76ad32080769",
+ "materia": "Ciudadanía I",
+ "titulo": "Relaciones afectivas respetuosas",
+ "sub": "Ciudadanía I · Misión 9 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama lo que cada persona acepta y lo que no?",
+   "segundos": 5,
+   "respuesta": "Límites",
+   "emoji": "🚧",
+   "titulo": "RELACIONES AFECTIVAS",
+   "sub": "respetuosas",
+   "voz": [
+    "Desafío: ¿cómo se llama lo que cada persona acepta y lo que no? Cinco segundos.",
+    "Límites.",
+    "Hoy: *relaciones afectivas respetuosas*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "RASGOS",
+   "columnas": [
+    "Rasgo",
+    "Significa"
+   ],
+   "filas": [
+    [
+     "Respeto",
+     "Se valora al otro"
+    ],
+    [
+     "Confianza",
+     "Sin controlar"
+    ],
+    [
+     "Igualdad",
+     "Se decide entre dos"
+    ],
+    [
+     "Libertad",
+     "Cada uno sigue con lo suyo"
+    ],
+    [
+     "Cuidado",
+     "Se busca el bienestar"
+    ]
+   ],
+   "voz": [
+    "Rasgos de una relación sana.",
+    "*Respeto*.",
+    "*Confianza*, sin controlar.",
+    "*Igualdad*.",
+    "*Libertad*.",
+    "Y *cuidado*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Límite",
+   "texto": "Lo que una persona acepta o no",
+   "emoji": "🚧",
+   "voz": [
+    "Un *límite* es lo que una persona acepta o no.",
+    "Se pone y se respeta."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SEÑAL SANA",
+     "emoji": "💚"
+    },
+    {
+     "cab": "SEÑAL DE ALERTA",
+     "emoji": "🚩"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Respeta mis tiempos",
+     "caja": 0
+    },
+    {
+     "txt": "Revisa mi celular",
+     "caja": 1
+    },
+    {
+     "txt": "Celebra mis logros",
+     "caja": 0
+    },
+    {
+     "txt": "Me aísla",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Sana o de alerta?",
+    "*Respeta mis tiempos* y *celebra mis logros*: sanas.",
+    "*Revisa mi celular* y *me aísla*: de alerta."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CONTROLAR",
+    "texto": "No es cuidar",
+    "emoji": "🔒"
+   },
+   "b": {
+    "cab": "CUIDAR",
+    "texto": "Busca el bienestar del otro",
+    "emoji": "💚"
+   },
+   "signo": "vs",
+   "voz": [
+    "No es lo mismo.",
+    "*Controlar* no es cuidar.",
+    "*Cuidar* busca el bienestar del otro."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un «no» en una relación…",
+   "opciones": [
+    "Se respeta",
+    "Se discute",
+    "Se ignora"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un no en una relación.",
+    "¿Se respeta, se discute o se ignora?",
+    "Se *respeta*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los celos son amor",
+     "bien": "Son una señal de alerta"
+    },
+    {
+     "mal": "Controlar es cuidar",
+     "bien": "No lo es"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los *celos* son amor.",
+    "Y que *controlar* es cuidar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una relación sana tiene *respeto* y *confianza*.",
+    "Se *comunica* con claridad.",
+    "Los *límites* se respetan.",
+    "Y hay señales *sanas* y de alerta.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RASGOS",
+     "respeto, confianza"
+    ],
+    [
+     "COMUNICAR",
+     "hablar y escuchar"
+    ],
+    [
+     "LÍMITES",
+     "se respetan"
+    ],
+    [
+     "SEÑALES",
+     "sanas o de alerta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

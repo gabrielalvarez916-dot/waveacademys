@@ -1,0 +1,179 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m9-n4",
+ "step_id": "9ae6ac87-287d-4baf-9f42-4785e1cd960e",
+ "materia": "Ciudadanía I",
+ "titulo": "Consentimiento y cuidado mutuo",
+ "sub": "Ciudadanía I · Misión 9 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Si alguien dice que no, ¿qué hacés?",
+   "segundos": 5,
+   "respuesta": "Paro y respeto",
+   "emoji": "🛑",
+   "titulo": "CONSENTIMIENTO",
+   "sub": "y cuidado mutuo",
+   "voz": [
+    "Desafío: si alguien dice que no, ¿qué hacés? Cinco segundos.",
+    "Paro y respeto.",
+    "Hoy: *consentimiento y cuidado mutuo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Consentimiento",
+   "texto": "Acuerdo libre y claro",
+   "emoji": "🤝",
+   "voz": [
+    "El *consentimiento* es un acuerdo libre y claro.",
+    "Vale para abrazos, fotos, secretos y planes."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "RASGOS",
+   "columnas": [
+    "Rasgo",
+    "Significa"
+   ],
+   "filas": [
+    [
+     "Libre",
+     "Sin presión"
+    ],
+    [
+     "Informado",
+     "Se sabe de qué se trata"
+    ],
+    [
+     "Específico",
+     "Vale para una cosa"
+    ],
+    [
+     "Reversible",
+     "Se puede cambiar"
+    ]
+   ],
+   "voz": [
+    "Cómo es un consentimiento válido.",
+    "*Libre*: sin presión.",
+    "*Informado*.",
+    "*Específico*: vale para una cosa.",
+    "Y *reversible*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "No es un sí",
+   "texto": "Silencio, miedo o duda",
+   "emoji": "🛑",
+   "voz": [
+    "El *silencio*, el *miedo* o la *duda* no son un sí.",
+    "Si hay duda, se frena."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ES UN SÍ",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO ES UN SÍ",
+     "emoji": "🛑"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Un sí claro y libre",
+     "caja": 0
+    },
+    {
+     "txt": "Silencio",
+     "caja": 1
+    },
+    {
+     "txt": "Duda",
+     "caja": 1
+    },
+    {
+     "txt": "Entusiasmo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Es un sí o no?",
+    "*Un sí claro y libre* y *entusiasmo*: es un sí.",
+    "*Silencio* y *duda*: no es un sí."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El silencio…",
+   "opciones": [
+    "No es un sí",
+    "Es un sí",
+    "Siempre vale"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el silencio.",
+    "¿No es un sí, es un sí o siempre vale?",
+    "*No es un sí*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El sí vale para siempre",
+     "bien": "Se puede retirar"
+    },
+    {
+     "mal": "Compartir fotos sin permiso",
+     "bien": "Hace falta permiso"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el sí *vale para siempre*.",
+    "Y *compartir* fotos sin permiso."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *consentimiento* es libre y claro.",
+    "Es *informado* y *reversible*.",
+    "El *silencio* no es un sí.",
+    "Y también cuenta *en línea*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONSENTIMIENTO",
+     "libre y claro"
+    ],
+    [
+     "RASGOS",
+     "informado, reversible"
+    ],
+    [
+     "NO ES SÍ",
+     "silencio, duda"
+    ],
+    [
+     "ONLINE",
+     "también cuenta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

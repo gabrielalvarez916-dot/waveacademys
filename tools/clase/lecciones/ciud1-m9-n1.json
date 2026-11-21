@@ -1,0 +1,175 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m9-n1",
+ "step_id": "79e3a1cb-f983-45b5-a1c0-b6aea48ac1b0",
+ "materia": "Ciudadanía I",
+ "titulo": "Identidad y cambios en la adolescencia",
+ "sub": "Ciudadanía I · Misión 9 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ADOLESCENCIAS",
+   "titular": "Cada persona la vive distinto",
+   "bajada": "No hay una sola manera",
+   "emoji": "🌱",
+   "titulo": "IDENTIDAD Y CAMBIOS",
+   "sub": "en la adolescencia",
+   "voz": [
+    "Noticia: cada persona vive la adolescencia distinto.",
+    "No hay una sola manera.",
+    "Hoy: *identidad y cambios en la adolescencia*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ CAMBIA",
+   "columnas": [
+    "Tipo",
+    "Ejemplos"
+   ],
+   "filas": [
+    [
+     "Físicos",
+     "El cuerpo"
+    ],
+    [
+     "Emocionales",
+     "Ánimo intenso"
+    ],
+    [
+     "Sociales",
+     "Los amigos pesan"
+    ],
+    [
+     "De pensamiento",
+     "Se cuestiona más"
+    ]
+   ],
+   "voz": [
+    "Los cambios.",
+    "Los *físicos*: el cuerpo.",
+    "Los *emocionales*: ánimo intenso.",
+    "Los *sociales*: los amigos pesan más.",
+    "Y los de *pensamiento*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Identidad",
+   "texto": "La idea de quién es cada persona",
+   "emoji": "🪞",
+   "voz": [
+    "La *identidad* es la idea de quién sos.",
+    "Se construye con el tiempo."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Presión de grupo",
+   "texto": "Empuje a hacer algo que uno no quiere",
+   "emoji": "👥",
+   "voz": [
+    "La *presión de grupo* empuja a hacer algo que uno no quiere.",
+    "Se puede decir que no y seguir perteneciendo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PUEDO DECIDIR",
+     "emoji": "✅"
+    },
+    {
+     "cab": "PRESIÓN",
+     "emoji": "⚠️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Elegir mis gustos",
+     "caja": 0
+    },
+    {
+     "txt": "Hacerlo por miedo",
+     "caja": 1
+    },
+    {
+     "txt": "Decir que no",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Decisión o presión?",
+    "*Elegir mis gustos* y *decir que no*: decisión.",
+    "*Hacerlo por miedo*: presión."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La idea de quién es cada persona es la…",
+   "opciones": [
+    "Identidad",
+    "Presión",
+    "Veda"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la idea de quién es cada persona.",
+    "¿Identidad, presión o veda?",
+    "La *identidad*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todas las adolescencias son iguales",
+     "bien": "Hay muchas"
+    },
+    {
+     "mal": "Decir que no es traicionar",
+     "bien": "Es cuidarse"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que todas son *iguales*.",
+    "Y que decir que no es *traicionar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La adolescencia trae *cambios*.",
+    "Hay *muchas* adolescencias.",
+    "La *identidad* se va construyendo.",
+    "Y se puede decir *que no*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CAMBIOS",
+     "físicos, emocionales"
+    ],
+    [
+     "ADOLESCENCIAS",
+     "muchas"
+    ],
+    [
+     "IDENTIDAD",
+     "quién soy"
+    ],
+    [
+     "PRESIÓN",
+     "decir que no"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

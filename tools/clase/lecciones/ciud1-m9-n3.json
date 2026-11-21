@@ -1,0 +1,202 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m9-n3",
+ "step_id": "88904d84-d7c2-4ab2-8bc4-149ff39da8f2",
+ "materia": "Ciudadanía I",
+ "titulo": "Violencia en las relaciones de pareja",
+ "sub": "Ciudadanía I · Misión 9 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ALERTA",
+   "titular": "Le pide la contraseña del celular",
+   "bajada": "Dice que es por amor",
+   "emoji": "📱",
+   "titulo": "VIOLENCIA EN EL NOVIAZGO",
+   "sub": "señales y ayuda",
+   "voz": [
+    "Alerta: le pide la contraseña del celular.",
+    "Dice que es por amor.",
+    "Hoy: *violencia en las relaciones de pareja*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Violencia",
+   "texto": "Conducta que controla, daña o humilla",
+   "emoji": "🚩",
+   "voz": [
+    "La *violencia* busca controlar, dañar o humillar.",
+    "No es amor ni es normal."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TIPOS",
+   "columnas": [
+    "Tipo",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Psicológica",
+     "Humillar"
+    ],
+    [
+     "Física",
+     "Golpes"
+    ],
+    [
+     "Digital",
+     "Revisar el celular"
+    ],
+    [
+     "Aislamiento",
+     "Alejar de amigos"
+    ]
+   ],
+   "voz": [
+    "Tipos de violencia.",
+    "La *psicológica*: humillar.",
+    "La *física*: golpes.",
+    "La *digital*: revisar el celular.",
+    "Y el *aislamiento*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "SEÑALES DE ALERTA",
+   "columnas": [
+    "Señal",
+    "Por qué preocupa"
+   ],
+   "filas": [
+    [
+     "Celos excesivos",
+     "Busca controlar"
+    ],
+    [
+     "Te aísla",
+     "Te deja sin apoyo"
+    ],
+    [
+     "Te humilla",
+     "Daña tu autoestima"
+    ],
+    [
+     "Te asusta",
+     "Es violencia"
+    ]
+   ],
+   "voz": [
+    "Señales de alerta.",
+    "*Celos excesivos*.",
+    "Te *aísla*.",
+    "Te *humilla*.",
+    "Y te *asusta*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AMOR SANO",
+     "emoji": "💚"
+    },
+    {
+     "cab": "VIOLENCIA",
+     "emoji": "🚩"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Respeta amistades",
+     "caja": 0
+    },
+    {
+     "txt": "Te insulta",
+     "caja": 1
+    },
+    {
+     "txt": "Te escucha",
+     "caja": 0
+    },
+    {
+     "txt": "Te controla",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Amor sano o violencia?",
+    "*Respeta amistades* y *te escucha*: amor sano.",
+    "*Te insulta* y *te controla*: violencia."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿A quién conviene contar una situación de violencia?",
+   "opciones": [
+    "A una persona adulta de confianza",
+    "A nadie",
+    "Solo a un grupo de amigos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿a quién conviene contar?",
+    "¿A una persona adulta de confianza, a nadie o a amigos?",
+    "A una *persona adulta de confianza*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La violencia es solo física",
+     "bien": "Hay muchos tipos"
+    },
+    {
+     "mal": "Es normal si se repite en películas",
+     "bien": "No es normal"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la violencia es *solo física*.",
+    "Y que es *normal* porque se ve en películas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *violencia* controla, daña o humilla.",
+    "Hay varios *tipos*.",
+    "Hay *señales* de alerta.",
+    "Y siempre se puede *pedir ayuda*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VIOLENCIA",
+     "controla y daña"
+    ],
+    [
+     "TIPOS",
+     "varios"
+    ],
+    [
+     "SEÑALES",
+     "celos, aislamiento"
+    ],
+    [
+     "AYUDA",
+     "adulto y líneas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

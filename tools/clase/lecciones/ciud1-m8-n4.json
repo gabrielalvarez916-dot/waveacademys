@@ -1,0 +1,199 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m8-n4",
+ "step_id": "c79ad7f3-a47b-4a1d-a7f3-fffd3cb2f2bf",
+ "materia": "Ciudadanía I",
+ "titulo": "Cómo actuar ante la discriminación",
+ "sub": "Ciudadanía I · Misión 8 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Se burlan de un compañero en el grupo 😞"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y vos qué hacés?"
+    },
+    {
+     "yo": false,
+     "txt": "No sé, no quiero problemas"
+    }
+   ],
+   "titulo": "ACTUAR ANTE",
+   "sub": "la discriminación",
+   "voz": [
+    "Lu cuenta que se burlan de un compañero en el grupo.",
+    "Juan: ¿y vos qué hacés?",
+    "Lu: no sé, no quiero problemas.",
+    "Hoy: *cómo actuar ante la discriminación*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "SI ME PASA A MÍ",
+   "items": [
+    {
+     "txt": "Frenar con calma",
+     "emoji": "✋"
+    },
+    {
+     "txt": "Guardar pruebas",
+     "emoji": "📸"
+    },
+    {
+     "txt": "Contar a un adulto",
+     "emoji": "🧑"
+    },
+    {
+     "txt": "Denunciar",
+     "emoji": "📣"
+    }
+   ],
+   "voz": [
+    "Si me pasa a mí.",
+    "*Frenar* con calma.",
+    "*Guardar* pruebas.",
+    "*Contar* a un adulto de confianza.",
+    "Y *denunciar*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Aliado",
+   "texto": "Quien acompaña a la víctima",
+   "emoji": "🤝",
+   "voz": [
+    "Un *aliado* acompaña a la víctima.",
+    "Frena la burla y avisa a un adulto."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AYUDA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "DAÑA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Acompañar",
+     "caja": 0
+    },
+    {
+     "txt": "Reírse",
+     "caja": 1
+    },
+    {
+     "txt": "Guardar capturas",
+     "caja": 0
+    },
+    {
+     "txt": "Compartir el meme",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Ayuda o daña?",
+    "*Acompañar* y *guardar capturas*: ayudan.",
+    "*Reírse* y *compartir el meme*: dañan."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CALLAR",
+    "texto": "Deja sola a la víctima",
+    "emoji": "🤐"
+   },
+   "b": {
+    "cab": "ACTUAR",
+    "texto": "Frena la discriminación",
+    "emoji": "🗣️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos opciones.",
+    "*Callar* deja sola a la víctima.",
+    "*Actuar* frena la discriminación."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Quien acompaña a la víctima y frena la burla es…",
+   "opciones": [
+    "Un aliado",
+    "Un cómplice",
+    "Un espectador"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: quien acompaña a la víctima.",
+    "¿Un aliado, un cómplice o un espectador?",
+    "Un *aliado*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Reírse no daña",
+     "bien": "Refuerza al agresor"
+    },
+    {
+     "mal": "Callar protege",
+     "bien": "Deja sola a la víctima"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *reírse* no daña.",
+    "Y que *callar* protege."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Si me pasa: *frenar*, guardar pruebas y contar.",
+    "Si lo veo: ser *aliado*.",
+    "No hay que *reírse* ni compartir.",
+    "Y la *comunidad* previene.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SI ME PASA",
+     "frenar y contar"
+    ],
+    [
+     "SI LO VEO",
+     "ser aliado"
+    ],
+    [
+     "NO HACER",
+     "reírse"
+    ],
+    [
+     "COMUNIDAD",
+     "prevenir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

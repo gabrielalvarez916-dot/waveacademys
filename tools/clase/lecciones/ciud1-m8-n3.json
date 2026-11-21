@@ -1,0 +1,187 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m8-n3",
+ "step_id": "5db2b85e-fe2c-43c0-b63d-0a6dfa2c0c5c",
+ "materia": "Ciudadanía I",
+ "titulo": "Leyes contra la discriminación",
+ "sub": "Ciudadanía I · Misión 8 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Todos iguales",
+   "emoji": "⚖️",
+   "final": "ante la ley y en dignidad",
+   "titulo": "LEYES CONTRA",
+   "sub": "la discriminación",
+   "voz": [
+    "Todas las personas son iguales en dignidad y derechos.",
+    "Las leyes lo protegen.",
+    "Hoy: *leyes contra la discriminación*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "No discriminación",
+   "texto": "Igualdad de trato",
+   "emoji": "⚖️",
+   "voz": [
+    "La *no discriminación* es un principio de derechos humanos.",
+    "El Estado debe tratar a todos con igualdad."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "NORMAS INTERNACIONALES",
+   "columnas": [
+    "Norma",
+    "Año"
+   ],
+   "filas": [
+    [
+     "Declaración Universal",
+     "1948"
+    ],
+    [
+     "Contra el racismo",
+     "1965"
+    ],
+    [
+     "Contra la discriminación de la mujer",
+     "1979"
+    ],
+    [
+     "Personas con discapacidad",
+     "2006"
+    ]
+   ],
+   "voz": [
+    "Algunos instrumentos.",
+    "La *Declaración Universal*, mil novecientos cuarenta y ocho.",
+    "La convención *contra el racismo*, sesenta y cinco.",
+    "La de la *mujer*, setenta y nueve.",
+    "Y la de *discapacidad*, dos mil seis."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "NORMA",
+    "texto": "Dice qué está prohibido",
+    "emoji": "📜"
+   },
+   "b": {
+    "cab": "EDUCACIÓN",
+    "texto": "Cambia las actitudes",
+    "emoji": "🎓"
+   },
+   "signo": "+",
+   "voz": [
+    "Se necesitan las dos cosas.",
+    "La *norma* dice qué está prohibido.",
+    "La *educación* cambia las actitudes."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LA LEY PERMITE",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO LA PERMITE",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Denunciar",
+     "caja": 0
+    },
+    {
+     "txt": "Discriminar",
+     "caja": 1
+    },
+    {
+     "txt": "Reparar el daño",
+     "caja": 0
+    },
+    {
+     "txt": "Incitar al odio",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Lo permite la ley?",
+    "*Denunciar* y *reparar el daño*: sí.",
+    "*Discriminar* e *incitar al odio*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué principio dice que todas las personas son tratadas por igual?",
+   "opciones": [
+    "Igualdad",
+    "Privilegio",
+    "Mayoría"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: tratadas por igual.",
+    "¿Igualdad, privilegio o mayoría?",
+    "La *igualdad*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Una ley alcanza por sí sola",
+     "bien": "Hace falta educación"
+    },
+    {
+     "mal": "No se puede denunciar",
+     "bien": "Se puede denunciar"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que una ley *alcanza por sí sola*.",
+    "Y que *no se puede denunciar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *igualdad* es un principio.",
+    "Hay *convenciones* internacionales.",
+    "Las leyes permiten *denunciar* y sancionar.",
+    "Y la *educación* completa la tarea.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRINCIPIO",
+     "igualdad"
+    ],
+    [
+     "INTERNACIONAL",
+     "convenciones"
+    ],
+    [
+     "LEYES",
+     "denunciar y sancionar"
+    ],
+    [
+     "EDUCACIÓN",
+     "cambia actitudes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
