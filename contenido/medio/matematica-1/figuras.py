@@ -491,3 +491,6 @@ def cuentas(pares, ocultar=()):
         ax.text(x + 1.15, 1.75, cta, ha="center", va="center", fontsize=17, color=TEAL, **F)
         ax.text(x + 1.15, .85, "___" if i in ocultar else str(res), ha="center", va="center", fontsize=32, color=OSC, **F)
     return png(fig)
+
+
+OBJ["bolsita"] = _paq10  # bolsita de 10 (misión 12): sirve en juntar, agregar y sacar

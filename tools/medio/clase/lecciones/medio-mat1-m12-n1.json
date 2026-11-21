@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat1-m12-n1",
+ "step_id": "f517e08c-77e1-4cf6-80c2-da7c3d03d246",
+ "materia": "Matemática 1",
+ "titulo": "Sumar decenas",
+ "sub": "Matemática 1 · Misión 12 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "Sofi vuelve al kiosco.",
+    "Guarda caramelos en bolsitas de 10.",
+    "¡Llega un pedido nuevo!"
+   ],
+   "titulo": "SUMAR",
+   "sub": "decenas",
+   "voz": [
+    "Sofi vuelve al *kiosco* de la escuela.",
+    "Guarda los caramelos en bolsitas de 10.",
+    "¡Y llega un pedido nuevo!",
+    "Hoy: *sumar decenas*."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🛍️",
+    "n": 2
+   },
+   "b": {
+    "emoji": "🛍️",
+    "n": 3
+   },
+   "texto": "20 + 30 = 50",
+   "voz": [
+    "Sofi tiene *2* bolsitas. Le traen *3* más.",
+    "Juntamos todas las bolsitas.",
+    "¡5 bolsitas son *50* caramelos!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "DECENA ENTERA",
+   "texto": "Termina en 0: 10, 20, 30…",
+   "emoji": "🛍️",
+   "voz": [
+    "Una *decena entera* termina en cero.",
+    "Son bolsitas *sin sueltos*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "20 + 30",
+   "min": 0,
+   "max": 100,
+   "cada": 10,
+   "inicio": 20,
+   "saltos": [
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 20 y sumamos 30.",
+    "Primer salto: ¡30!",
+    "Segundo salto: ¡40!",
+    "Tercer salto: ¡llegamos al *50*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SUMÁ LAS BOLSITAS",
+   "texto": "20 + 30 es como 2 + 3",
+   "emoji": "🛍️",
+   "voz": [
+    "Truco: sumá las *bolsitas*, como 2 más 3."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 40 + 20?",
+   "opciones": [
+    "42",
+    "60",
+    "6"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. 4 bolsitas y 2 bolsitas.",
+    "¿Cuánto es 40 más 20?",
+    "¡*60*! Seis bolsitas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BOLSITA",
+     "vale 10"
+    ],
+    [
+     "JUNTAR",
+     "2 + 3 bolsitas"
+    ],
+    [
+     "SUMA",
+     "20 + 30 = 50"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada *bolsita* vale 10.",
+    "*Juntamos* las bolsitas.",
+    "20 más 30 es *50*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

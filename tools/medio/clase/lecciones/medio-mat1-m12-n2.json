@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat1-m12-n2",
+ "step_id": "615375b1-8f2b-4292-984c-ffc13a379f5d",
+ "materia": "Matemática 1",
+ "titulo": "Restar decenas",
+ "sub": "Matemática 1 · Misión 12 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Sofi tiene 7 bolsitas y vende 2. ¿Cuántas quedan?",
+   "segundos": 6,
+   "respuesta": "¡5!",
+   "emoji": "🛍️",
+   "titulo": "RESTAR",
+   "sub": "decenas",
+   "voz": [
+    "Desafío: Sofi tiene 7 bolsitas y vende 2.",
+    "¡Le quedan *5*!",
+    "Hoy: *restar decenas*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🛍️",
+   "n": 7,
+   "menos": 2,
+   "texto": "70 − 20 = 50",
+   "voz": [
+    "Sofi tiene *70* caramelos: 7 bolsitas.",
+    "Vende 2 bolsitas.",
+    "¡Le quedan *50* caramelos!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "RESTAR DECENAS",
+   "texto": "Sacar bolsitas enteras",
+   "emoji": "➖",
+   "voz": [
+    "*Restar decenas* es sacar bolsitas enteras.",
+    "Como 7 menos 2, ¡pero con bolsitas!"
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "70 − 20",
+   "min": 0,
+   "max": 100,
+   "cada": 10,
+   "inicio": 70,
+   "saltos": [
+    {
+     "a": -10,
+     "txt": "−10"
+    },
+    {
+     "a": -10,
+     "txt": "−10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 70 y restamos 20.",
+    "Un salto para atrás: ¡60!",
+    "Otro salto: ¡llegamos al *50*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 80 − 30?",
+   "opciones": [
+    "50",
+    "11",
+    "5"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 8 bolsitas, vendemos 3.",
+    "¿Cuánto es 80 menos 30?",
+    "¡*50*! Cinco bolsitas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Olvidar el 0: 70 − 20 = 5",
+     "bien": "70 − 20 = 50"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "¡No te olvides del *cero*! Son 50."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VENDER",
+     "sacar bolsitas"
+    ],
+    [
+     "RESTAR",
+     "7 − 2 bolsitas"
+    ],
+    [
+     "RESTA",
+     "70 − 20 = 50"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Vender* es sacar bolsitas.",
+    "Restamos *como con números chicos*.",
+    "70 menos 20 es *50*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
