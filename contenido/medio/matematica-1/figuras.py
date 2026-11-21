@@ -434,3 +434,17 @@ def agregar(obj, n, mas, texto=None):
             ax.text(x + .4, y + .42, "+", ha="center", va="center", fontsize=16, color=VERDE, **F)
     cartel(ax, cols / 2 + .4, -.5, texto or f"{n} + {mas} = {tot}", c=AMBAR, tc=OSC, fs=14)
     return png(fig)
+
+
+# ---------------- dibujos de la misión 9 (quitar y comparar) ----------------
+def sacar(obj, n, menos, texto=None):
+    """Un grupo de n con los últimos `menos` tachados (los que se sacan). Abajo, lo que queda."""
+    q = n - menos; cols = min(n, 5); filas = (n + 4) // 5
+    fig, ax = lienzo(1.1 * cols + 1.0, 1.15 * filas + 1.2, cols + .8, 1.15 * filas + .5, 0, -.9)
+    for k in range(n):
+        x, y = .9 + (k % 5), 1.15 * filas - .3 - (k // 5) * 1.15
+        OBJ[obj](ax, x, y)
+        if k >= q:
+            ax.plot([x - .38, x + .38], [y - .38, y + .38], color=OSC, lw=3.6); ax.plot([x - .38, x + .38], [y + .38, y - .38], color=OSC, lw=3.6)
+    cartel(ax, cols / 2 + .4, -.5, texto or f"QUEDAN {q}", c=AMBAR, tc=OSC, fs=14)
+    return png(fig)

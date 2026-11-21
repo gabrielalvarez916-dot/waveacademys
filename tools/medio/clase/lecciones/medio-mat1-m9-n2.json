@@ -1,0 +1,123 @@
+{
+ "slug": "medio-mat1-m9-n2",
+ "step_id": "f4175551-3934-41ca-9b81-1259fb0c501e",
+ "materia": "Matemática 1",
+ "titulo": "Perder y gastar",
+ "sub": "Matemática 1 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SE VUELAN LOS GLOBOS!",
+   "bajada": "Viento fuerte en la plaza",
+   "emoji": "🎈",
+   "titulo": "PERDER",
+   "sub": "y gastar",
+   "voz": [
+    "¡Último momento! Hay viento en la plaza.",
+    "¡Se vuelan los globos de Sofi!",
+    "Hoy: *perder y gastar*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🎈",
+   "n": 6,
+   "menos": 2,
+   "texto": "LE QUEDAN 4",
+   "voz": [
+    "Sofi tenía *6* globos.",
+    "El viento se lleva 2.",
+    "¡Le quedan *4* globos!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "PERDER Y GASTAR",
+   "texto": "Nos quedan menos que antes",
+   "emoji": "📉",
+   "voz": [
+    "Cuando *perdemos* o *gastamos* algo…",
+    "¡nos quedan *menos* que antes!"
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🍬",
+   "n": 8,
+   "menos": 3,
+   "texto": "LE QUEDAN 5",
+   "voz": [
+    "Tomi tiene *8* caramelos y come 3.",
+    "Contamos para atrás: 7, 6, 5.",
+    "¡Le quedan *5* caramelos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PARA ATRÁS",
+   "texto": "Contá para atrás desde tu número",
+   "emoji": "⏪",
+   "voz": [
+    "Truco: contá *para atrás* desde tu número."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Tomi tiene 6 caramelos. Come 2. ¿Cuántos le quedan?",
+   "opciones": [
+    "8",
+    "4",
+    "2"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Tomi tiene 6 y come 2.",
+    "¿Cuántos caramelos le quedan?",
+    "¡*4*! Seis, cinco, cuatro."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar cuando se pierde algo",
+     "bien": "Perder es sacar: quedan menos"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si perdés algo, te quedan *menos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PERDER",
+     "se va algo"
+    ],
+    [
+     "GASTAR",
+     "usamos algo"
+    ],
+    [
+     "QUEDAN",
+     "menos que antes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Perder* es cuando se va algo.",
+    "*Gastar* es cuando lo usamos.",
+    "Al final quedan *menos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

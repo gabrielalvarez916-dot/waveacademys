@@ -1,0 +1,117 @@
+{
+ "slug": "medio-mat1-m9-n1",
+ "step_id": "389262b5-4821-4222-aa2f-05aa7c8f9020",
+ "materia": "Matemática 1",
+ "titulo": "Sacar elementos",
+ "sub": "Matemática 1 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🧺",
+   "lineas": [
+    "Sofi está de picnic en la plaza.",
+    "Tiene 7 manzanas en la canasta.",
+    "¡Sus amigos tienen hambre!"
+   ],
+   "titulo": "SACAR",
+   "sub": "elementos",
+   "voz": [
+    "Sofi sigue de *picnic* en la plaza.",
+    "Tiene 7 manzanas en la canasta.",
+    "¡Y sus amigos tienen hambre!",
+    "Hoy: *sacar elementos*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🍎",
+   "n": 7,
+   "menos": 3,
+   "texto": "7 MENOS 3 SON 4",
+   "voz": [
+    "En la canasta hay *7* manzanas.",
+    "Sofi saca 3 para sus amigos.",
+    "Contamos las otras: ¡quedan *4*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "SACAR",
+   "texto": "Quitar cosas de un grupo",
+   "emoji": "✋",
+   "voz": [
+    "*Sacar* es quitar cosas de un grupo.",
+    "¡El grupo se hace *más chico*!"
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "⚽",
+   "n": 5,
+   "menos": 2,
+   "texto": "5 MENOS 2 SON 3",
+   "voz": [
+    "Hay *5* pelotas en el pasto.",
+    "Tomi se lleva 2 pelotas.",
+    "¡Quedan *3* pelotas!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TACHÁ PRIMERO",
+   "texto": "Después contá las que quedan",
+   "emoji": "❌",
+   "voz": [
+    "Truco: tachá las que sacás y contá *las otras*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Hay 5 manzanas. Sacamos 2. ¿Cuántas quedan?",
+   "opciones": [
+    "7",
+    "3",
+    "2"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Hay 5 manzanas y sacamos 2.",
+    "¿Cuántas manzanas quedan?",
+    "¡*3*! Al sacar quedan menos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPO",
+     "lo que había"
+    ],
+    [
+     "SACAR",
+     "quitar algunas"
+    ],
+    [
+     "QUEDAN",
+     "contamos las otras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero hay un *grupo*.",
+    "Después *sacamos* algunas.",
+    "Y contamos las que *quedan*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

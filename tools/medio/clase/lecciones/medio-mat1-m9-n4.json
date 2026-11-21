@@ -1,0 +1,135 @@
+{
+ "slug": "medio-mat1-m9-n4",
+ "step_id": "dcdb98ae-6cc6-456e-af0b-ffb8438d13d6",
+ "materia": "Matemática 1",
+ "titulo": "Escribir la resta",
+ "sub": "Matemática 1 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cuántas manzanas quedan?"
+    },
+    {
+     "yo": true,
+     "txt": "Había 7 y comimos 3"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo lo anoto?"
+    }
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "la resta",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "Había 7 manzanas y comieron 3.",
+    "¿Cómo se anota eso?",
+    "Hoy: *escribir la resta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "−",
+   "texto": "Se lee MENOS",
+   "emoji": "➖",
+   "voz": [
+    "Este es el signo *menos*.",
+    "Lo usamos cuando *sacamos* cosas."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "7",
+    "−",
+    "3",
+    "=",
+    "4"
+   ],
+   "grande": "7 − 3 = 4",
+   "etiqueta": "SIETE MENOS TRES IGUAL A CUATRO",
+   "voz": [
+    "Primero el 7, lo que había.",
+    "Después menos 3, igual a *4*.",
+    "Se lee: *siete menos tres igual a cuatro*."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "9",
+    "5"
+   ],
+   "op": "−",
+   "resultado": "4",
+   "voz": [
+    "Otra resta: 9 pelotas menos 5.",
+    "¡9 menos 5 es igual a *4*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se escribe 8 vasos y sacamos 2?",
+   "opciones": [
+    "8 − 2 = 6",
+    "2 − 8 = 6",
+    "8 + 2 = 6"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 8 vasos y sacamos 2.",
+    "¿Cuál es la resta bien escrita?",
+    "¡*8 menos 2 igual a 6*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Poner primero lo que sacamos",
+     "bien": "Primero va lo que había"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Primero va *lo que había*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "−",
+     "se lee menos"
+    ],
+    [
+     "PRIMERO",
+     "lo que había"
+    ],
+    [
+     "RESTA",
+     "7 − 3 = 4"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El signo *menos* es para sacar.",
+    "Primero va *lo que había*.",
+    "Siete menos tres igual a *cuatro*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

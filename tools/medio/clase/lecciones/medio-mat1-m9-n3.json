@@ -1,0 +1,120 @@
+{
+ "slug": "medio-mat1-m9-n3",
+ "step_id": "0ce8ad75-f9f7-4259-b7dc-85bb80b683bb",
+ "materia": "Matemática 1",
+ "titulo": "Comparar cantidades",
+ "sub": "Matemática 1 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "6 pelotas y 4 estrellas. ¿Qué hay más?",
+   "segundos": 6,
+   "respuesta": "¡PELOTAS!",
+   "emoji": "⚽",
+   "titulo": "COMPARAR",
+   "sub": "cantidades",
+   "voz": [
+    "Desafío: ¿hay más pelotas o estrellas?",
+    "¡Hay más *pelotas*!",
+    "Hoy: *comparar cantidades*."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "⚽",
+    "n": 6
+   },
+   "b": {
+    "emoji": "⭐",
+    "n": 4
+   },
+   "texto": "¡HAY 2 ⚽ MÁS!",
+   "voz": [
+    "Arriba, pelotas. Abajo, estrellas.",
+    "Unimos uno con uno.",
+    "¡Sobran *2* pelotas: hay 2 más!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "COMPARAR",
+   "texto": "Ver cuántos más tiene un grupo",
+   "emoji": "⚖️",
+   "voz": [
+    "*Comparar* es mirar dos grupos.",
+    "Vemos cuántos *más* tiene uno."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "🧒",
+    "n": 5
+   },
+   "b": {
+    "emoji": "🥤",
+    "n": 7
+   },
+   "texto": "¡SOBRAN 2 🥤!",
+   "voz": [
+    "Cinco chicos y siete vasos.",
+    "Un vaso para cada chico.",
+    "¡Sobran *2* vasos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Sofi tiene 7 manzanas. Tomi tiene 4. ¿Cuántas más tiene Sofi?",
+   "opciones": [
+    "3",
+    "11",
+    "4"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Sofi tiene 7, Tomi 4.",
+    "¿Cuántas manzanas más tiene Sofi?",
+    "¡*3*! Las que sobran."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LO QUE SOBRA",
+   "texto": "Lo que sobra dice cuántos más",
+   "emoji": "👀",
+   "voz": [
+    "Truco: *lo que sobra* dice cuántos más hay."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNO CON UNO",
+     "unimos los grupos"
+    ],
+    [
+     "SOBRAN",
+     "los que quedan solos"
+    ],
+    [
+     "MÁS",
+     "lo que sobra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Unimos *uno con uno*.",
+    "Miramos los que *sobran*.",
+    "Eso dice cuántos *más* hay.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
