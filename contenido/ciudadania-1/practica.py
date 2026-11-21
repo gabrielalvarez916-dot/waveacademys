@@ -45,9 +45,14 @@ P={
    tf("El consentimiento se puede retirar.","Verdadero","Es reversible."),
    fb("Un consentimiento válido es ___ , sin presión.",["libre"],"Sin presión."),
    mc("La idea de quién es cada persona es la…",["Identidad","Presión","Veda"],"Identidad","Se construye con el tiempo.",15)],
+10:[cl("¿Qué fuente es cada una?",{"Encuesta propia":"Primaria","Entrevista a una persona afectada":"Primaria","Informe oficial":"Secundaria","Noticia publicada":"Secundaria"},["Primaria","Secundaria"],"Las primarias las obtiene quien investiga."),
+   tf("Un dato sin fuente convence a cualquiera.","Falso","Sin fuente no es confiable."),
+   fb("Lo que se quiere lograr con la propuesta es el ___ .",["objetivo"],"Debe ser claro y medible."),
+   od("Orden de un proyecto de participación.",["Presentar la propuesta","Investigar","Elegir un problema","Diseñar la propuesta"],["Elegir un problema","Investigar","Diseñar la propuesta","Presentar la propuesta"],"Del problema a la presentación.")],
 }
 if __name__=="__main__":
   for n,a in P.items():
+    if n>9: continue
     f=f"mision-{n}/mision-{n}.json"; d=json.load(open(f)); d["act"]["5"]=a
     json.dump(d,open(f,"w"),ensure_ascii=False,indent=1)
   def q(s): return "'"+s.replace("'","''")+"'"
