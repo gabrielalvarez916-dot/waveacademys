@@ -1,0 +1,193 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m6-n2",
+ "step_id": "40989d93-f70c-4f1b-a28a-4d98741b7457",
+ "materia": "Ciudadanía I",
+ "titulo": "La Declaración Universal de 1948",
+ "sub": "Ciudadanía I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "1948",
+   "titular": "Se aprueba la Declaración Universal",
+   "bajada": "Treinta artículos para todos",
+   "emoji": "🌍",
+   "titulo": "DECLARACIÓN UNIVERSAL",
+   "sub": "de 1948",
+   "voz": [
+    "Noticia: se aprueba la Declaración Universal.",
+    "Treinta artículos para todos.",
+    "Hoy: *la Declaración Universal de mil novecientos cuarenta y ocho*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Segunda Guerra Mundial",
+    "emoji": "💥"
+   },
+   "items": [
+    {
+     "txt": "Crímenes de guerra",
+     "emoji": "⚠️"
+    },
+    {
+     "txt": "Se crea la ONU",
+     "emoji": "🏛️"
+    },
+    {
+     "txt": "Se escribe la Declaración",
+     "emoji": "📜"
+    }
+   ],
+   "voz": [
+    "Cómo nació.",
+    "Terminó la *Segunda Guerra Mundial*.",
+    "Se conocieron los *crímenes*.",
+    "Se creó la *ONU*.",
+    "Y se escribió la *Declaración*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "IDEAS CENTRALES",
+   "columnas": [
+    "Idea",
+    "Dice"
+   ],
+   "filas": [
+    [
+     "Igualdad y dignidad",
+     "Todos nacemos iguales"
+    ],
+    [
+     "No discriminación",
+     "Sin distinción"
+    ],
+    [
+     "Vida y libertad",
+     "Sin esclavitud ni tortura"
+    ],
+    [
+     "Derechos sociales",
+     "Trabajo, salud, educación"
+    ]
+   ],
+   "voz": [
+    "Sus ideas.",
+    "*Igualdad y dignidad*.",
+    "*No discriminación*.",
+    "*Vida y libertad*.",
+    "Y *derechos sociales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Declaración",
+   "texto": "Proclama principios",
+   "emoji": "📜",
+   "voz": [
+    "Una *declaración* proclama principios.",
+    "Tiene gran valor moral y político."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DECLARACIÓN",
+     "emoji": "📜"
+    },
+    {
+     "cab": "TRATADO",
+     "emoji": "✍️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Proclama principios",
+     "caja": 0
+    },
+    {
+     "txt": "Obliga por ley",
+     "caja": 1
+    },
+    {
+     "txt": "Inspira leyes",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Declaración o tratado?",
+    "*Proclama principios* e *inspira leyes*: declaración.",
+    "*Obliga por ley*: tratado."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué año se aprobó la Declaración Universal?",
+   "opciones": [
+    "1948",
+    "1789",
+    "1994"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿en qué año se aprobó?",
+    "¿Mil novecientos cuarenta y ocho, mil setecientos ochenta y nueve o mil novecientos noventa y cuatro?",
+    "En *1948*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Es una ley obligatoria",
+     "bien": "Es una declaración"
+    },
+    {
+     "mal": "Solo trata de política",
+     "bien": "Incluye derechos sociales"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que es *ley obligatoria* por sí sola.",
+    "Y que *solo* trata de política."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Se aprobó en *1948*.",
+    "Nació tras la *guerra*.",
+    "Tiene *treinta artículos*.",
+    "Y tiene valor *moral* y político.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AÑO",
+     "1948"
+    ],
+    [
+     "ORIGEN",
+     "posguerra"
+    ],
+    [
+     "ARTÍCULOS",
+     "treinta"
+    ],
+    [
+     "VALOR",
+     "moral y político"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

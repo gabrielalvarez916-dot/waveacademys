@@ -1,0 +1,197 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m7-n4",
+ "step_id": "8798d051-e573-4726-b34e-1691caff18ed",
+ "materia": "Ciudadanía I",
+ "titulo": "Acceso a la justicia",
+ "sub": "Ciudadanía I · Misión 7 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "JUSTICIA",
+   "titular": "Sin dinero para un abogado",
+   "bajada": "Hay defensa pública gratuita",
+   "emoji": "⚖️",
+   "titulo": "ACCESO A LA JUSTICIA",
+   "sub": "derechos que se pueden reclamar",
+   "voz": [
+    "Noticia: sin dinero para un abogado.",
+    "Hay defensa pública gratuita.",
+    "Hoy: *acceso a la justicia*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Acceso a la justicia",
+   "texto": "Poder reclamar y obtener respuesta",
+   "emoji": "⚖️",
+   "voz": [
+    "El *acceso a la justicia* es poder reclamar derechos.",
+    "Y obtener una respuesta justa y a tiempo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "OBSTÁCULOS",
+   "columnas": [
+    "Obstáculo",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Económicos",
+     "Costo"
+    ],
+    [
+     "Geográficos",
+     "Distancia"
+    ],
+    [
+     "Culturales",
+     "No conocer derechos"
+    ],
+    [
+     "De tiempo",
+     "Procesos largos"
+    ]
+   ],
+   "voz": [
+    "Qué lo dificulta.",
+    "Los *económicos*: el costo.",
+    "Los *geográficos*: la distancia.",
+    "Los *culturales*: no conocer derechos.",
+    "Y los de *tiempo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "HERRAMIENTAS",
+   "columnas": [
+    "Herramienta",
+    "Qué hace"
+   ],
+   "filas": [
+    [
+     "Defensa pública",
+     "Abogados gratis"
+    ],
+    [
+     "Mediación",
+     "Sin juicio"
+    ],
+    [
+     "Asesoramiento",
+     "Orienta"
+    ]
+   ],
+   "voz": [
+    "Para facilitar el acceso.",
+    "La *defensa pública*: abogados gratis.",
+    "La *mediación*: sin juicio.",
+    "Y el *asesoramiento*: orienta."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OBSTÁCULO",
+     "emoji": "🚧"
+    },
+    {
+     "cab": "HERRAMIENTA",
+     "emoji": "🛠️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Distancia",
+     "caja": 0
+    },
+    {
+     "txt": "Defensa pública",
+     "caja": 1
+    },
+    {
+     "txt": "Costo",
+     "caja": 0
+    },
+    {
+     "txt": "Mediación",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Obstáculo o herramienta?",
+    "*Distancia* y *costo*: obstáculos.",
+    "*Defensa pública* y *mediación*: herramientas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Resolver un conflicto con ayuda neutral y sin juicio es…",
+   "opciones": [
+    "Mediación",
+    "Veto",
+    "Balotaje"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: resolver sin juicio con ayuda neutral.",
+    "¿Mediación, veto o balotaje?",
+    "La *mediación*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sin dinero no se puede reclamar",
+     "bien": "Hay defensa gratuita"
+    },
+    {
+     "mal": "Todo conflicto necesita juicio",
+     "bien": "Se puede mediar"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *sin dinero* no se puede reclamar.",
+    "Y que todo conflicto necesita *juicio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *acceso* es poder reclamar.",
+    "Hay obstáculos *económicos*, *geográficos* y culturales.",
+    "Existen *defensa pública* y *mediación*.",
+    "Y cada persona puede *informarse*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ACCESO",
+     "poder reclamar"
+    ],
+    [
+     "OBSTÁCULOS",
+     "dinero, distancia"
+    ],
+    [
+     "HERRAMIENTAS",
+     "defensa, mediación"
+    ],
+    [
+     "PERSONA",
+     "informarse"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

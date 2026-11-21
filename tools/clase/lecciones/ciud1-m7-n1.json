@@ -1,0 +1,199 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m7-n1",
+ "step_id": "9b22902c-87ed-459b-8ee1-c4e91a8fb9d2",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué son las garantías constitucionales",
+ "sub": "Ciudadanía I · Misión 7 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tengo derecho a la salud, ¿no? 🏥"
+    },
+    {
+     "yo": true,
+     "txt": "Sí, pero ¿y si te lo niegan?"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y entonces?"
+    }
+   ],
+   "titulo": "GARANTÍAS",
+   "sub": "para exigir derechos",
+   "voz": [
+    "Lu dice que tiene derecho a la salud.",
+    "Juan: sí, pero ¿y si te lo niegan?",
+    "Lu: ¿y entonces?",
+    "Hoy: *las garantías constitucionales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Garantía",
+   "texto": "Herramienta para exigir un derecho",
+   "emoji": "🛡️",
+   "voz": [
+    "Una *garantía* es una herramienta para exigir un derecho.",
+    "Permite reclamar si alguien lo viola."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES GARANTÍAS",
+   "columnas": [
+    "Garantía",
+    "Protege"
+   ],
+   "filas": [
+    [
+     "Amparo",
+     "Derechos"
+    ],
+    [
+     "Hábeas corpus",
+     "Libertad física"
+    ],
+    [
+     "Hábeas data",
+     "Datos personales"
+    ]
+   ],
+   "voz": [
+    "Tres garantías.",
+    "El *amparo*: derechos.",
+    "El *hábeas corpus*: libertad física.",
+    "El *hábeas data*: datos personales."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE USAN",
+   "items": [
+    {
+     "txt": "Se presenta ante un juez",
+     "emoji": "⚖️"
+    },
+    {
+     "txt": "El juez revisa rápido",
+     "emoji": "⏱️"
+    },
+    {
+     "txt": "Ordena cesar o reparar",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Cómo funcionan.",
+    "Se presentan ante un *juez*.",
+    "El juez revisa *rápido*.",
+    "Y ordena *cesar* o reparar."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DERECHO",
+     "emoji": "⚖️"
+    },
+    {
+     "cab": "GARANTÍA",
+     "emoji": "🛡️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Salud",
+     "caja": 0
+    },
+    {
+     "txt": "Amparo",
+     "caja": 1
+    },
+    {
+     "txt": "Hábeas corpus",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Derecho o garantía?",
+    "*Salud*: derecho.",
+    "*Amparo* y *hábeas corpus*: garantías."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La herramienta para exigir un derecho es la…",
+   "opciones": [
+    "Garantía",
+    "Veda",
+    "Banca"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: herramienta para exigir un derecho.",
+    "¿Garantía, veda o banca?",
+    "La *garantía*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Tener el derecho escrito alcanza",
+     "bien": "Hace falta una garantía"
+    },
+    {
+     "mal": "Solo para casos extremos",
+     "bien": "Sirven en muchos casos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el derecho *escrito* alcanza.",
+    "Y que son *solo* para casos extremos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una *garantía* exige un derecho.",
+    "Hay *amparo*, *hábeas corpus* y *hábeas data*.",
+    "Se presentan ante un *juez*.",
+    "Y hacen los derechos *exigibles*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "GARANTÍA",
+     "herramienta"
+    ],
+    [
+     "TIPOS",
+     "tres"
+    ],
+    [
+     "DÓNDE",
+     "ante un juez"
+    ],
+    [
+     "FIN",
+     "derechos exigibles"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

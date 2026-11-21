@@ -1,0 +1,198 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m6-n1",
+ "step_id": "5e9c7abf-9857-46bc-8c16-e449b6f3dfbc",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué son los derechos humanos",
+ "sub": "Ciudadanía I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quiénes tienen derechos humanos?",
+   "segundos": 5,
+   "respuesta": "Todas las personas",
+   "emoji": "🌍",
+   "titulo": "DERECHOS HUMANOS",
+   "sub": "qué son",
+   "voz": [
+    "Desafío: ¿quiénes tienen derechos humanos? Cinco segundos.",
+    "Todas las personas.",
+    "Hoy: *qué son los derechos humanos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Derechos humanos",
+   "texto": "Los que toda persona tiene por serlo",
+   "emoji": "🧑‍🤝‍🧑",
+   "voz": [
+    "Los *derechos humanos* son los que toda persona tiene por serlo.",
+    "Sin distinción de origen, sexo o religión."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CINCO RASGOS",
+   "columnas": [
+    "Rasgo",
+    "Significa"
+   ],
+   "filas": [
+    [
+     "Universales",
+     "Valen para todos"
+    ],
+    [
+     "Inalienables",
+     "No se quitan"
+    ],
+    [
+     "Indivisibles",
+     "No se separan"
+    ],
+    [
+     "Interdependientes",
+     "Se relacionan"
+    ],
+    [
+     "Progresivos",
+     "Se amplían"
+    ]
+   ],
+   "voz": [
+    "Sus rasgos.",
+    "*Universales*: valen para todos.",
+    "*Inalienables*: no se quitan.",
+    "*Indivisibles*: no se separan.",
+    "*Interdependientes*: se relacionan.",
+    "Y *progresivos*: se amplían."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Graves violaciones",
+    "emoji": "⚠️"
+   },
+   "items": [
+    {
+     "txt": "Guerras y genocidios",
+     "emoji": "💥"
+    },
+    {
+     "txt": "Nace la idea de protegerlos",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Se escriben en documentos",
+     "emoji": "📜"
+    }
+   ],
+   "voz": [
+    "Cómo surgieron.",
+    "Hubo *graves violaciones*.",
+    "Hubo *guerras y genocidios*.",
+    "Se pensó en *protegerlos*.",
+    "Y se escribieron *documentos*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DERECHO HUMANO",
+     "emoji": "🧑‍🤝‍🧑"
+    },
+    {
+     "cab": "NO LO ES",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Vivir con dignidad",
+     "caja": 0
+    },
+    {
+     "txt": "Un premio",
+     "caja": 1
+    },
+    {
+     "txt": "Educación",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Derecho humano o no?",
+    "*Vivir con dignidad* y *educación*: lo son.",
+    "*Un premio*: no lo es."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Los derechos que no se pueden quitar son…",
+   "opciones": [
+    "Inalienables",
+    "Temporales",
+    "Opcionales"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: los que no se pueden quitar.",
+    "¿Inalienables, temporales u opcionales?",
+    "Los *inalienables*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Se otorgan como un premio",
+     "bien": "Se tienen por ser persona"
+    },
+    {
+     "mal": "Unos valen más que otros",
+     "bien": "Son indivisibles"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que se *otorgan* como un premio.",
+    "Y que unos *valen más* que otros."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Son derechos de *toda persona*.",
+    "Son *universales* e *inalienables*.",
+    "También *indivisibles*.",
+    "Y se protegen para evitar *abusos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DERECHOS",
+     "de toda persona"
+    ],
+    [
+     "RASGOS",
+     "universales"
+    ],
+    [
+     "ORIGEN",
+     "graves violaciones"
+    ],
+    [
+     "PROTECCIÓN",
+     "evitar abusos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m7-n3",
+ "step_id": "8f97ce25-0b9e-46d2-aef1-3565b1c577ba",
+ "materia": "Ciudadanía I",
+ "titulo": "Hábeas corpus y hábeas data",
+ "sub": "Ciudadanía I · Misión 7 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué garantía protege contra una detención ilegal?",
+   "segundos": 6,
+   "respuesta": "Hábeas corpus",
+   "emoji": "⛓️",
+   "titulo": "HÁBEAS CORPUS",
+   "sub": "y hábeas data",
+   "voz": [
+    "Desafío: ¿qué garantía protege contra una detención ilegal? Seis segundos.",
+    "Hábeas corpus.",
+    "Hoy: *hábeas corpus y hábeas data*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Hábeas corpus",
+   "texto": "Protege la libertad física",
+   "emoji": "⛓️",
+   "voz": [
+    "El *hábeas corpus* protege la libertad física.",
+    "Permite revisar una detención ilegal."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Hábeas data",
+   "texto": "Protege los datos personales",
+   "emoji": "🗂️",
+   "voz": [
+    "El *hábeas data* protege los datos personales.",
+    "Permite corregirlos o suprimirlos."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HÁBEAS CORPUS",
+    "texto": "Contra detenciones ilegales",
+    "emoji": "⛓️"
+   },
+   "b": {
+    "cab": "HÁBEAS DATA",
+    "texto": "Sobre datos personales",
+    "emoji": "🗂️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos garantías.",
+    "El *corpus* protege la libertad.",
+    "El *data* protege la información."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CORPUS",
+     "emoji": "⛓️"
+    },
+    {
+     "cab": "DATA",
+     "emoji": "🗂️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Detención sin orden",
+     "caja": 0
+    },
+    {
+     "txt": "Dato falso",
+     "caja": 1
+    },
+    {
+     "txt": "Traslado ilegal",
+     "caja": 0
+    },
+    {
+     "txt": "Información privada",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Corpus o data?",
+    "*Detención sin orden* y *traslado ilegal*: corpus.",
+    "*Dato falso* e *información privada*: data."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué garantía permite corregir datos personales falsos?",
+   "opciones": [
+    "Hábeas data",
+    "Hábeas corpus",
+    "Amparo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: corregir datos personales falsos.",
+    "¿Hábeas data, hábeas corpus o amparo?",
+    "El *hábeas data*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir corpus con data",
+     "bien": "Corpus es libertad; data es información"
+    },
+    {
+     "mal": "Los datos no tienen protección",
+     "bien": "Se protegen"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *corpus* con *data*.",
+    "Y creer que los datos *no se protegen*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *corpus* protege la libertad.",
+    "El *data* protege los datos personales.",
+    "Se presentan ante un *juez*.",
+    "Y cuidan la *intimidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CORPUS",
+     "libertad física"
+    ],
+    [
+     "DATA",
+     "datos personales"
+    ],
+    [
+     "DÓNDE",
+     "ante un juez"
+    ],
+    [
+     "FIN",
+     "intimidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m7-n2",
+ "step_id": "d57e0bb7-af1d-4f4c-9f08-132cc8a1dbf3",
+ "materia": "Ciudadanía I",
+ "titulo": "El amparo",
+ "sub": "Ciudadanía I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "SALUD",
+   "titular": "Niegan un medicamento",
+   "bajada": "Una familia presenta un amparo",
+   "emoji": "💊",
+   "titulo": "EL AMPARO",
+   "sub": "protege derechos",
+   "voz": [
+    "Noticia: niegan un medicamento.",
+    "Una familia presenta un amparo.",
+    "Hoy: *el amparo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Amparo",
+   "texto": "Protege derechos frente a actos ilegales",
+   "emoji": "🛡️",
+   "voz": [
+    "El *amparo* protege derechos frente a actos ilegales.",
+    "Del Estado o de particulares."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CUÁNDO SE USA",
+   "columnas": [
+    "Situación",
+    "Derecho"
+   ],
+   "filas": [
+    [
+     "Niegan tratamiento",
+     "Salud"
+    ],
+    [
+     "Impiden escolarizar",
+     "Educación"
+    ],
+    [
+     "Contaminan un río",
+     "Ambiente sano"
+    ],
+    [
+     "Censuran",
+     "Expresión"
+    ]
+   ],
+   "voz": [
+    "Casos de amparo.",
+    "Niegan un tratamiento: *salud*.",
+    "Impiden la escuela: *educación*.",
+    "Contaminan un río: *ambiente sano*.",
+    "Censuran: *expresión*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE PRESENTA",
+   "items": [
+    {
+     "txt": "Reunir pruebas",
+     "emoji": "📁"
+    },
+    {
+     "txt": "Escribir el reclamo",
+     "emoji": "✍️"
+    },
+    {
+     "txt": "Presentarlo ante un juez",
+     "emoji": "⚖️"
+    }
+   ],
+   "voz": [
+    "Para presentarlo.",
+    "*Reuní* pruebas.",
+    "*Escribí* el reclamo.",
+    "Y *presentalo* ante un juez."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CONVIENE AMPARO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO CONVIENE",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Salud negada",
+     "caja": 0
+    },
+    {
+     "txt": "Cambiar de cancha",
+     "caja": 1
+    },
+    {
+     "txt": "Censura",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Conviene amparo?",
+    "*Salud negada* y *censura*: sí.",
+    "*Cambiar de cancha*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Ante quién se presenta un amparo?",
+   "opciones": [
+    "Un juez",
+    "Un partido",
+    "Un medio"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿ante quién se presenta?",
+    "¿Un juez, un partido o un medio?",
+    "Ante *un juez*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Solo contra el Estado",
+     "bien": "También contra particulares"
+    },
+    {
+     "mal": "Tarda años",
+     "bien": "Se tramita rápido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que es *solo contra el Estado*.",
+    "Y que *tarda años*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *amparo* protege derechos.",
+    "Se usa ante *actos ilegales*.",
+    "Se presenta ante un *juez*.",
+    "Y busca que *cese* o se cumpla.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AMPARO",
+     "protege derechos"
+    ],
+    [
+     "USO",
+     "actos ilegales"
+    ],
+    [
+     "CÓMO",
+     "ante un juez"
+    ],
+    [
+     "RESULTADO",
+     "cesa o se cumple"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

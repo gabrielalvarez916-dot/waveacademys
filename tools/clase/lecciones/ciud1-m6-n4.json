@@ -1,0 +1,184 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m6-n4",
+ "step_id": "31a8e3df-9a2c-4b31-b309-ac46928e395f",
+ "materia": "Ciudadanía I",
+ "titulo": "Tratados y pactos internacionales",
+ "sub": "Ciudadanía I · Misión 6 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama aceptar obligarse por un tratado?",
+   "segundos": 6,
+   "respuesta": "Ratificar",
+   "emoji": "✍️",
+   "titulo": "TRATADOS Y PACTOS",
+   "sub": "internacionales",
+   "voz": [
+    "Desafío: ¿cómo se llama aceptar obligarse por un tratado? Seis segundos.",
+    "Ratificar.",
+    "Hoy: *tratados y pactos internacionales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Tratado internacional",
+   "texto": "Acuerdo escrito entre Estados",
+   "emoji": "✍️",
+   "voz": [
+    "Un *tratado internacional* es un acuerdo escrito entre Estados.",
+    "Los obliga jurídicamente."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EJEMPLOS",
+   "columnas": [
+    "Tratado",
+    "Protege"
+   ],
+   "filas": [
+    [
+     "Pacto civil (1966)",
+     "Libertades"
+    ],
+    [
+     "Pacto social (1966)",
+     "Trabajo y salud"
+    ],
+    [
+     "Convención Niño (1989)",
+     "Niñez"
+    ],
+    [
+     "Convención Mujer (1979)",
+     "Igualdad"
+    ]
+   ],
+   "voz": [
+    "Algunos tratados.",
+    "El *Pacto civil y político*: libertades.",
+    "El *Pacto económico y social*: trabajo y salud.",
+    "La *Convención del Niño*.",
+    "Y la de la *mujer*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "DECLARACIÓN",
+    "texto": "Proclama principios",
+    "emoji": "📜"
+   },
+   "b": {
+    "cab": "TRATADO",
+    "texto": "Obliga a quien ratifica",
+    "emoji": "✍️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos instrumentos.",
+    "La *declaración* proclama.",
+    "El *tratado* obliga a quien lo ratifica."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OBLIGA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO OBLIGA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Tratado ratificado",
+     "caja": 0
+    },
+    {
+     "txt": "Sin ratificar",
+     "caja": 1
+    },
+    {
+     "txt": "Pacto ratificado",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Obliga o no?",
+    "*Tratado ratificado* y *pacto ratificado*: obligan.",
+    "*Sin ratificar*: no obliga."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Aceptar obligarse por un tratado es…",
+   "opciones": [
+    "Ratificar",
+    "Vetar",
+    "Votar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: aceptar obligarse por un tratado.",
+    "¿Ratificar, vetar o votar?",
+    "*Ratificar*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Obligan a quien no los ratificó",
+     "bien": "Solo a quien ratifica"
+    },
+    {
+     "mal": "No se pueden reclamar",
+     "bien": "Hay comités y tribunales"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que obligan a quien *no ratificó*.",
+    "Y que *no se pueden reclamar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *tratado* obliga jurídicamente.",
+    "Se *ratifica*.",
+    "Hay *pactos* y *convenciones*.",
+    "Y hay *comités* que controlan.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TRATADO",
+     "obliga"
+    ],
+    [
+     "RATIFICAR",
+     "aceptar"
+    ],
+    [
+     "EJEMPLOS",
+     "pactos"
+    ],
+    [
+     "CONTROL",
+     "comités"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

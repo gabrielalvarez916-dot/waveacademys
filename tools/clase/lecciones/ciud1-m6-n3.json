@@ -1,0 +1,186 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m6-n3",
+ "step_id": "f9d4db73-b15b-4417-b07b-42b029474b3e",
+ "materia": "Ciudadanía I",
+ "titulo": "Derechos civiles, políticos, económicos y sociales",
+ "sub": "Ciudadanía I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Libres y dignos",
+   "emoji": "⚖️",
+   "final": "dos tipos de derechos",
+   "titulo": "TIPOS DE DERECHOS",
+   "sub": "civiles, políticos, sociales",
+   "voz": [
+    "Algunos derechos protegen la libertad.",
+    "Otros aseguran una vida digna.",
+    "Hoy: *derechos civiles, políticos, económicos y sociales*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LIBERTAD",
+   "columnas": [
+    "Tipo",
+    "Ejemplos"
+   ],
+   "filas": [
+    [
+     "Civiles",
+     "Vida, expresión"
+    ],
+    [
+     "Políticos",
+     "Votar, participar"
+    ]
+   ],
+   "voz": [
+    "Protegen la libertad.",
+    "Los *civiles*: vida y expresión.",
+    "Los *políticos*: votar y participar."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "VIDA DIGNA",
+   "columnas": [
+    "Tipo",
+    "Ejemplos"
+   ],
+   "filas": [
+    [
+     "Económicos",
+     "Trabajo, salario"
+    ],
+    [
+     "Sociales",
+     "Salud, educación"
+    ],
+    [
+     "Culturales",
+     "Idioma, cultura"
+    ]
+   ],
+   "voz": [
+    "Aseguran una vida digna.",
+    "Los *económicos*: trabajo y salario.",
+    "Los *sociales*: salud y educación.",
+    "Los *culturales*: idioma y cultura."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Solidaridad",
+   "texto": "Paz y ambiente sano",
+   "emoji": "🌱",
+   "voz": [
+    "Los derechos de *solidaridad* incluyen la paz y un ambiente sano.",
+    "Se ejercen entre todos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CIVIL O POLÍTICO",
+     "emoji": "🗳️"
+    },
+    {
+     "cab": "ECONÓMICO O SOCIAL",
+     "emoji": "🏥"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Votar",
+     "caja": 0
+    },
+    {
+     "txt": "Atención de salud",
+     "caja": 1
+    },
+    {
+     "txt": "Libre expresión",
+     "caja": 0
+    },
+    {
+     "txt": "Trabajo digno",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿De qué tipo?",
+    "*Votar* y *libre expresión*: civil o político.",
+    "*Salud* y *trabajo digno*: económico o social."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El derecho a votar es…",
+   "opciones": [
+    "Político",
+    "Social",
+    "Cultural"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el derecho a votar.",
+    "¿Político, social o cultural?",
+    "Es *político*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los sociales son un favor",
+     "bien": "Son derechos"
+    },
+    {
+     "mal": "Solo importan los políticos",
+     "bien": "Todos están conectados"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los sociales son *un favor*.",
+    "Y que *solo* importan los políticos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay derechos *civiles* y *políticos*.",
+    "Otros son *económicos*, *sociales* y culturales.",
+    "También de *solidaridad*.",
+    "Y todos están *conectados*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CIVILES",
+     "libertad"
+    ],
+    [
+     "POLÍTICOS",
+     "participar"
+    ],
+    [
+     "SOCIALES",
+     "vida digna"
+    ],
+    [
+     "SOLIDARIDAD",
+     "paz y ambiente"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
