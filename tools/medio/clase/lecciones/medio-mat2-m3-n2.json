@@ -1,0 +1,139 @@
+{
+ "slug": "medio-mat2-m3-n2",
+ "step_id": "0740802b-f444-4c4e-9be6-0f7eac8b275a",
+ "materia": "Matemática 2",
+ "titulo": "Hasta 1.000",
+ "sub": "Matemática 2 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué número viene después del 999?",
+   "segundos": 5,
+   "respuesta": "¡El 1.000!",
+   "emoji": "🏭",
+   "titulo": "HASTA",
+   "sub": "el 1.000",
+   "voz": [
+    "Desafío: ¿qué número viene después del 999?",
+    "¡El *1.000*! Mil.",
+    "Hoy: *los números hasta 1.000*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 2,
+   "d": 3,
+   "u": 5,
+   "texto": "¡Son 235 alfajores!",
+   "voz": [
+    "Mirá lo que preparó Rosa hoy.",
+    "Las cajas: 100, 200.",
+    "Los paquetes: 210, 220, 230.",
+    "Los sueltos: 231, 232, 233, 234, 235.",
+    "¡Son *235 alfajores*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE 10 EN 10",
+   "texto": "Contá paquetes: 10, 20, 30…",
+   "emoji": "🔟",
+   "voz": [
+    "Truco: los paquetes se cuentan *de 10 en 10*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 10 EN 10",
+   "min": 300,
+   "max": 400,
+   "cada": 10,
+   "inicio": 340,
+   "saltos": [
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    }
+   ],
+   "voz": [
+    "Contemos de 10 en 10 desde el 340.",
+    "*350*.",
+    "*360*.",
+    "*370*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "CENTENA",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "UNIDAD DE MIL",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Una caja tiene *100* alfajores.",
+    "¡Y 10 cajas llenan un camión!",
+    "Un camión lleva *1.000* alfajores: ¡mil!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene después del 499?",
+   "opciones": [
+    "500",
+    "400",
+    "4.100"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¿Qué número viene después del 499?",
+    "Pensá: 497, 498, 499…",
+    "¡El *500*! Cinco centenas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DE 10 EN 10",
+     "contar paquetes"
+    ],
+    [
+     "DE 100 EN 100",
+     "contar cajas"
+    ],
+    [
+     "1.000",
+     "10 centenas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los paquetes se cuentan *de 10 en 10*.",
+    "Las cajas se cuentan *de 100 en 100*.",
+    "*10 centenas* son *1.000*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

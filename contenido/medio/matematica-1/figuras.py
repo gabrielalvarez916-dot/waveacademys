@@ -233,3 +233,60 @@ def recta_num(desde, hasta, marcas=(), flechas=()):
         from matplotlib.patches import FancyArrowPatch
         ax.add_patch(FancyArrowPatch((a - desde, .25), (b - desde, .25), connectionstyle="arc3,rad=-.6", arrowstyle="-|>", mutation_scale=16, color=CORAL, lw=2))
     return png(fig)
+
+
+# ---------------- dibujos de números hasta 1.000 (Matemática 2) ----------------
+def _caja100(ax, x, y):
+    ax.add_patch(FancyBboxPatch((x - .42, y - .32), .84, .64, boxstyle="round,pad=0.02,rounding_size=0.08", color="#dcaa62", ec=OSC, lw=1.3))
+    ax.text(x, y - .05, "100", ha="center", va="center", fontsize=11, color="white", **F)
+
+
+def _paq10(ax, x, y):
+    ax.add_patch(FancyBboxPatch((x - .38, y - .17), .76, .34, boxstyle="round,pad=0.02,rounding_size=0.08", color=CORAL, ec=OSC, lw=1.2))
+    ax.text(x, y - .01, "10", ha="center", va="center", fontsize=10, color="white", **F)
+
+
+def _uno(ax, x, y):
+    ax.add_patch(Circle((x, y), .2, color="#8a5634", ec=OSC, lw=1.1))
+
+
+def bloques(c, d, u, texto=None):
+    """Cajas de 100, paquetes de 10 y sueltos, en tres columnas con su cartel."""
+    import math
+    filas = max(1, math.ceil(max(c, d, u, 1) / 3)); fondo = 2.0 - (filas - 1) * .75 - .85
+    fig, ax = lienzo(9.6, 3.6 - (2.0 - fondo) * .0 + 0, 9.6, 3.2, 0, fondo - .4)
+    for j, (n, cab, dib, dx, dy) in enumerate(((c, "CENTENAS", _caja100, .95, .75), (d, "DECENAS", _paq10, .85, .42), (u, "UNIDADES", _uno, .5, .5))):
+        x0 = .5 + j * 3.2
+        cartel(ax, x0 + 1.1, 2.75, cab, c=TEAL, fs=10)
+        for k in range(n): dib(ax, x0 + .2 + (k % 3) * dx, 2.0 - (k // 3) * dy)
+        cartel(ax, x0 + 1.1, fondo, str(n), c=AMBAR, tc=OSC, fs=13)
+    if texto: ax.text(4.8, -.35, "", ha="center")
+    return png(fig)
+
+
+def recta_cien(marcas=()):
+    """Recta del 0 al 1.000, de 100 en 100. marcas: [(valor, etiqueta)]."""
+    fig, ax = lienzo(9.5, 2.2, 10.9, 2.2, -0.5, -0.9)
+    ax.annotate("", xy=(10.4, 0), xytext=(-.3, 0), arrowprops=dict(arrowstyle="-|>", color=OSC, lw=1.8))
+    for k in range(11):
+        ax.plot([k, k], [-.12, .12], color=OSC, lw=1.4); ax.text(k, -.45, f"{k*100:,}".replace(",", "."), ha="center", va="center", fontsize=9, color=OSC, **F)
+    for v, et in marcas:
+        ax.add_patch(Circle((v / 100, 0), .16, color=AMBAR, ec=OSC, lw=1.2, zorder=3))
+        if et: cartel(ax, v / 100, .85, et, c=TEAL, fs=9)
+    return png(fig)
+
+
+def tablero(numeros, vacios=()):
+    """Tablero de valor posicional: C | D | U para cada número. vacios: índices de filas en blanco (para completar)."""
+    n = len(numeros); fig, ax = lienzo(6.4, .75 * (n + 1) + .2, 6.4, .75 * (n + 1) + .2, 0, 0)
+    H = .75 * (n + 1)
+    for j, (cab, col) in enumerate((("NÚMERO", OSC), ("C", "#dcaa62"), ("D", CORAL), ("U", "#8a5634"))):
+        x = .1 + j * 1.55
+        ax.add_patch(Rectangle((x, H - .7), 1.5, .62, color=col)); ax.text(x + .75, H - .39, cab, ha="center", va="center", fontsize=12, color="white", **F)
+        for i, num in enumerate(numeros):
+            y = H - .7 - (i + 1) * .75
+            ax.add_patch(Rectangle((x, y), 1.5, .68, fill=False, ec=TEAL, lw=1.2))
+            s = str(num).rjust(3, "0")
+            v = str(num) if j == 0 else ("" if i in vacios else s[j - 1])
+            ax.text(x + .75, y + .34, v, ha="center", va="center", fontsize=14, color=OSC, **F)
+    return png(fig)

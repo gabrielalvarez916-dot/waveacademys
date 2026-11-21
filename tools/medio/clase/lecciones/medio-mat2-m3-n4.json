@@ -1,0 +1,149 @@
+{
+ "slug": "medio-mat2-m3-n4",
+ "step_id": "083d5306-b626-406f-8b81-47d1d859237a",
+ "materia": "Matemática 2",
+ "titulo": "Centenas, decenas y unidades",
+ "sub": "Matemática 2 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa tiene que mandar un pedido.",
+    "Son 243 alfajores.",
+    "¿Cómo los arma?"
+   ],
+   "titulo": "CENTENAS",
+   "sub": "decenas y unidades",
+   "voz": [
+    "Rosa tiene que mandar un *pedido*.",
+    "El cliente quiere 243 alfajores.",
+    "¿Cuántas cajas, paquetes y sueltos arma?",
+    "Hoy: *centenas, decenas y unidades*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 2,
+   "d": 4,
+   "u": 3,
+   "texto": "2 centenas, 4 decenas y 3 unidades",
+   "voz": [
+    "Armamos el pedido de *243*.",
+    "2 cajas: 100, 200.",
+    "4 paquetes: 210, 220, 230, 240.",
+    "3 sueltos: 241, 242, 243.",
+    "¡*2 centenas, 4 decenas y 3 unidades*!"
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "243",
+   "cab": [
+    "CENTENAS",
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "2",
+    "4",
+    "3"
+   ],
+   "val": [
+    "200",
+    "40",
+    "3"
+   ],
+   "destacar": 0,
+   "etiqueta": "CADA CIFRA EN SU LUGAR",
+   "voz": [
+    "Mirá el número *243*.",
+    "Cada cifra va en su *lugar*.",
+    "Centenas, decenas y unidades.",
+    "El 2 vale *200*, el 4 vale *40*.",
+    "¡Y el 3 vale *3*!"
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "243",
+   "titulo": "DESARMAMOS EL 243",
+   "partes": [
+    "200",
+    "40",
+    "3"
+   ],
+   "resultado": "= 243 ✓",
+   "voz": [
+    "Ahora *desarmamos* el 243.",
+    "Lo escribimos como una suma.",
+    "200, más 40, más 3.",
+    "Cada parte sale de una cifra.",
+    "200 más 40 más 3 es *243*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto vale el 6 en 365?",
+   "opciones": [
+    "6",
+    "60",
+    "600"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá el número 365.",
+    "¿Cuánto vale el *6*?",
+    "¡*60*! Está en las decenas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "4 centenas y 7 unidades, ¿qué número es?",
+   "opciones": [
+    "47",
+    "407",
+    "470"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Otra más. Cuatro cajas y siete sueltos.",
+    "¿Qué número es?",
+    "¡*407*! El cero va en las decenas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CENTENAS",
+     "cajas de 100"
+    ],
+    [
+     "DECENAS",
+     "paquetes de 10"
+    ],
+    [
+     "UNIDADES",
+     "sueltos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *centenas* son cajas de 100.",
+    "Las *decenas* son paquetes de 10.",
+    "Las *unidades* son los sueltos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

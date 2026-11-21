@@ -1,0 +1,136 @@
+{
+ "slug": "medio-mat2-m3-n3",
+ "step_id": "00342da5-caa9-4192-947f-cc373c8a8b3e",
+ "materia": "Matemática 2",
+ "titulo": "Leer y escribir hasta 1.000",
+ "sub": "Matemática 2 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🏷️",
+   "final": "🔢",
+   "titulo": "LEER Y ESCRIBIR",
+   "sub": "hasta 1.000",
+   "voz": [
+    "Rosa escribe etiquetas para sus cajas.",
+    "¿Cómo se escribe *trescientos cuarenta y cinco*?",
+    "Hoy: *leer y escribir números hasta 1.000*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "3",
+    "4",
+    "5"
+   ],
+   "grande": "345",
+   "etiqueta": "TRESCIENTOS CUARENTA Y CINCO",
+   "voz": [
+    "Tiene *tres cifras*: un 3, un 4 y un 5.",
+    "Juntas forman el *345*.",
+    "Se lee: *trescientos cuarenta y cinco*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SE ESCRIBE",
+    "texto": "708",
+    "emoji": "✏️"
+   },
+   "b": {
+    "cab": "SE LEE",
+    "texto": "setecientos ocho",
+    "emoji": "🗣️"
+   },
+   "signo": "=",
+   "voz": [
+    "Con cifras se escribe: *708*.",
+    "Con palabras se lee: *setecientos ocho*.",
+    "¡Es el mismo número!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir 7008",
+     "bien": "708: el 0 guarda el lugar"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Setecientos ocho es *708*: el cero guarda el lugar."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "9",
+    "1",
+    "0"
+   ],
+   "grande": "910",
+   "etiqueta": "NOVECIENTOS DIEZ",
+   "voz": [
+    "Ahora, *novecientos diez*.",
+    "Un 9, un 1 y un 0: *910*.",
+    "Se lee *novecientos diez*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se escribe quinientos seis?",
+   "opciones": [
+    "56",
+    "506",
+    "5.006"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cómo se escribe *quinientos seis*?",
+    "Pensá: ¿hay decenas?",
+    "¡*506*! El cero va en las decenas."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL CERO",
+   "texto": "El 0 guarda un lugar vacío",
+   "emoji": "0️⃣",
+   "voz": [
+    "Truco: el *cero* guarda el lugar que está vacío."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCRIBIR",
+     "con cifras: 345"
+    ],
+    [
+     "LEER",
+     "con palabras"
+    ],
+    [
+     "EL CERO",
+     "guarda el lugar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Escribimos con *cifras*: 345.",
+    "Leemos con *palabras*: trescientos cuarenta y cinco.",
+    "El *cero* guarda el lugar vacío.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

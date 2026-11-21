@@ -1,0 +1,145 @@
+{
+ "slug": "medio-mat2-m3-n1",
+ "step_id": "f6d0f3e9-bced-4b67-be01-3ff3f5996026",
+ "materia": "Matemática 2",
+ "titulo": "Las centenas",
+ "sub": "Matemática 2 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "La abuela Rosa hace alfajores.",
+    "Los guarda en paquetes y cajas.",
+    "¿Cuántos hay?"
+   ],
+   "titulo": "LAS CENTENAS",
+   "sub": "grupos de 100",
+   "voz": [
+    "La abuela Rosa tiene una *fábrica de alfajores*.",
+    "Los guarda en paquetes y en cajas.",
+    "¿Cómo sabe cuántos hay? ¡Vamos a ver!",
+    "Hoy: *las centenas*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "UNIDAD",
+     "valor": "1",
+     "icono": "alf"
+    },
+    {
+     "nombre": "DECENA",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CENTENA",
+     "valor": "100",
+     "icono": "caja"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un alfajor suelto es una *unidad*.",
+    "10 alfajores llenan un paquete: una *decena*.",
+    "10 paquetes llenan una caja: una *centena*.",
+    "¡Una caja tiene *100 alfajores*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "10 DECENAS",
+   "texto": "10 paquetes de 10 son 100",
+   "emoji": "📦",
+   "voz": [
+    "Truco: *10 decenas* forman *1 centena*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 4,
+   "d": 0,
+   "u": 0,
+   "texto": "4 centenas son 400",
+   "voz": [
+    "Rosa llenó varias cajas. ¡Contemos!",
+    "100, 200, 300, 400.",
+    "No hay paquetes sueltos.",
+    "Tampoco hay alfajores sueltos.",
+    "¡*4 cajas* son *400* alfajores!"
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 0,
+   "max": 1000,
+   "paso": 100,
+   "marcas": [
+    {
+     "v": 300,
+     "txt": "300"
+    },
+    {
+     "v": 800,
+     "txt": "800"
+    }
+   ],
+   "voz": [
+    "En la recta contamos *de 100 en 100*.",
+    "Acá está el *300*: tres centenas.",
+    "Y acá el *800*: ocho centenas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántos alfajores hay en 5 cajas de 100?",
+   "opciones": [
+    "5",
+    "50",
+    "500"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Rosa tiene 5 cajas llenas.",
+    "¿Cuántos alfajores hay en total?",
+    "¡*500*! Cinco centenas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNIDAD",
+     "1 suelto"
+    ],
+    [
+     "DECENA",
+     "paquete de 10"
+    ],
+    [
+     "CENTENA",
+     "caja de 100"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *unidad* es un suelto.",
+    "Una *decena* es un paquete de 10.",
+    "Una *centena* es una caja de 100.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
