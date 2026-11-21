@@ -350,7 +350,7 @@
       '<h2>Nueva familia</h2><p>Se crea el usuario con el correo y una contraseña inicial.</p>' +
       '<div class="campo"><label for="nf-mail">Correo (será el usuario)</label><input id="nf-mail" type="email" autocomplete="off" placeholder="correo@ejemplo.com"></div>' +
       '<div class="campo"><label for="nf-nom">Nombre y apellido</label><input id="nf-nom" type="text" autocomplete="off" maxlength="80" placeholder="Nombre del padre, madre o tutor"></div>' +
-      '<div class="campo"><label for="nf-tel">Teléfono (opcional)</label><input id="nf-tel" type="tel" autocomplete="off" maxlength="30" placeholder="+54 9 ..."></div>' +
+      '<div class="campo"><label for="nf-tel">WhatsApp</label><input id="nf-tel" type="tel" autocomplete="off" maxlength="30" placeholder="+54 9 ..."></div>' +
       '<p class="mensaje" id="m-error" hidden></p>' +
       '<div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button><button type="button" class="wv-btn" data-si>Crear familia</button></div>');
     caja.querySelector('[data-no]').onclick = cerrarModal;
@@ -361,6 +361,7 @@
       var tel = caja.querySelector('#nf-tel').value.trim();
       if (!mail || mail.indexOf('@') < 1) { er.textContent = 'Ingresá un correo válido.'; er.hidden = false; return; }
       if (!nom) { er.textContent = 'Ingresá el nombre.'; er.hidden = false; return; }
+      if (tel.replace(/\D/g, '').length < 8) { er.textContent = 'Ingresá el WhatsApp de la familia, con código de área: es por donde les avisamos.'; er.hidden = false; return; }
       si.disabled = true; er.hidden = true;
       try {
         var r = await accion({ action: 'create_family', email: mail, full_name: nom, phone: tel || null });

@@ -55,6 +55,34 @@
     } catch (e) {}
   }
 
+  // ---------- WhatsApp de contacto: se pide una vez (el correo ya es el usuario) ----------
+  function preguntarContacto() {
+    return new Promise(function (listo) {
+      var el = document.createElement('div');
+      el.className = 'fp-fondo';
+      el.innerHTML = '<div class="fp-caja" role="dialog" aria-modal="true" aria-labelledby="fc-t">' +
+        '<h2 id="fc-t">¿A qué WhatsApp te avisamos?</h2>' +
+        '<p>Por acá te avisamos de reuniones, turnos y cambios. Los avisos también te llegan al correo con el que ingresás.</p>' +
+        '<input id="fc-tel" type="tel" autocomplete="tel" maxlength="30" placeholder="+54 9 11 1234 5678" aria-label="WhatsApp">' +
+        '<p class="fp-err" id="fc-err" hidden></p>' +
+        '<div class="fp-acc"><button type="button" class="boton" id="fc-ok">Guardar</button></div></div>';
+      document.body.appendChild(el);
+      el.querySelector('#fc-ok').addEventListener('click', async function () {
+        var b = this, er = el.querySelector('#fc-err'); b.disabled = true; er.hidden = true;
+        var r = await sb.rpc('set_family_contacto', { p_phone: el.querySelector('#fc-tel').value });
+        if (r.error) { er.textContent = r.error.message; er.hidden = false; b.disabled = false; return; }
+        el.remove(); listo();
+      });
+    });
+  }
+  async function asegurarContacto() {
+    try {
+      var ses = await sb.auth.getSession();
+      var f = await sb.from('families').select('phone').eq('profile_id', ses.data.session.user.id).maybeSingle();
+      if (f.data && !(f.data.phone || '').trim()) await preguntarContacto();
+    } catch (e) {}
+  }
+
   // ---------- Datos ----------
   async function cargarDatos() {
     var ses = await sb.auth.getSession();
@@ -1215,5 +1243,5 @@
   }
 
   window.addEventListener('hashchange', ruta);
-  asegurarPais().then(ruta);
+  asegurarPais().then(asegurarContacto).then(ruta);
 })();
