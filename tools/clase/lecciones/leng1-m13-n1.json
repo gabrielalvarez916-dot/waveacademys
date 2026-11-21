@@ -39,33 +39,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "HECHO",
-     "emoji": "📊"
+     "txt": "Abre a las ocho, Hay 40 alumnos"
     },
     {
      "cab": "OPINIÓN",
-     "emoji": "💭"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Abre a las ocho",
-     "caja": 0
-    },
-    {
-     "txt": "Es aburrido",
-     "caja": 1
-    },
-    {
-     "txt": "Hay 40 alumnos",
-     "caja": 0
-    },
-    {
-     "txt": "Es genial",
-     "caja": 1
+     "txt": "Es aburrido, Es genial"
     }
    ],
    "voz": [

@@ -46,29 +46,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "LOS SENTIDOS",
-   "columnas": [
-    "Sentido",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Vista",
-     "Paredes descascaradas"
-    ],
-    [
-     "Oído",
-     "Zumbido de la heladera"
-    ],
-    [
-     "Olfato",
-     "Olor a pan"
-    ],
-    [
-     "Tacto",
-     "Piso frío"
-    ]
+   "celdas": [
+    {
+     "cab": "VISTA",
+     "txt": "Paredes descascaradas"
+    },
+    {
+     "cab": "OÍDO",
+     "txt": "Zumbido de la heladera"
+    },
+    {
+     "cab": "OLFATO",
+     "txt": "Olor a pan"
+    },
+    {
+     "cab": "TACTO",
+     "txt": "Piso frío"
+    }
    ],
    "voz": [
     "Un ejemplo de cada sentido.",

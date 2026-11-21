@@ -36,29 +36,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "QUÉ FALLA",
-   "columnas": [
-    "Problema",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Vago",
-     "Casa linda"
-    ],
-    [
-     "Sin orden",
-     "Salta de lugar"
-    ],
-    [
-     "Repite",
-     "Tiene, tiene"
-    ],
-    [
-     "Un sentido",
-     "Solo vista"
-    ]
+   "celdas": [
+    {
+     "cab": "VAGO",
+     "txt": "Casa linda"
+    },
+    {
+     "cab": "SIN ORDEN",
+     "txt": "Salta de lugar"
+    },
+    {
+     "cab": "REPITE",
+     "txt": "Tiene, tiene"
+    },
+    {
+     "cab": "UN SENTIDO",
+     "txt": "Solo vista"
+    }
    ],
    "voz": [
     "Problemas comunes.",

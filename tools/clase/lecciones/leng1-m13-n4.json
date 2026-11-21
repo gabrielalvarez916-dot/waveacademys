@@ -35,22 +35,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "PASOS",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Reconozco",
      "emoji": "🤝"
     },
     {
+     "fecha": "2",
      "txt": "Discrepo",
      "emoji": "↔️"
     },
     {
+     "fecha": "3",
      "txt": "Argumento",
      "emoji": "💡"
     },
     {
+     "fecha": "4",
      "txt": "Propongo",
      "emoji": "🛠️"
     }

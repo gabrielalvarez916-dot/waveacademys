@@ -35,33 +35,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SE ANOTA",
-     "emoji": "✅"
+     "txt": "Fechas, Palabras clave, Números"
     },
     {
      "cab": "NO HACE FALTA",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Fechas",
-     "caja": 0
-    },
-    {
-     "txt": "Palabras clave",
-     "caja": 0
-    },
-    {
-     "txt": "Chistes",
-     "caja": 1
-    },
-    {
-     "txt": "Números",
-     "caja": 0
+     "txt": "Chistes"
     }
    ],
    "voz": [
@@ -71,29 +54,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "SÍMBOLOS",
-   "columnas": [
-    "Símbolo",
-    "Significa"
-   ],
-   "filas": [
-    [
-     "→",
-     "lleva a"
-    ],
-    [
-     "=",
-     "es igual a"
-    ],
-    [
-     "+",
-     "además"
-    ],
-    [
-     "!",
-     "importante"
-    ]
+   "celdas": [
+    {
+     "cab": "→",
+     "txt": "lleva a"
+    },
+    {
+     "cab": "=",
+     "txt": "es igual a"
+    },
+    {
+     "cab": "+",
+     "txt": "además"
+    },
+    {
+     "cab": "!",
+     "txt": "importante"
+    }
    ],
    "voz": [
     "Símbolos para ahorrar tiempo.",

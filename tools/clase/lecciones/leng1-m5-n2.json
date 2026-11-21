@@ -35,9 +35,16 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "matriz",
    "titulo": "PARTES DE UN ESQUEMA",
-   "items": [
+   "voz": [
+    "Mirá las partes de un esquema.",
+    "El *título*: el tema.",
+    "Las *ideas principales*, a la izquierda.",
+    "Las *secundarias*, a la derecha, con llaves.",
+    "Y todo con *palabras clave*."
+   ],
+   "celdas": [
     {
      "cab": "TÍTULO",
      "txt": "El tema"
@@ -54,13 +61,6 @@
      "cab": "PALABRAS CLAVE",
      "txt": "Pocas palabras"
     }
-   ],
-   "voz": [
-    "Mirá las partes de un esquema.",
-    "El *título*: el tema.",
-    "Las *ideas principales*, a la izquierda.",
-    "Las *secundarias*, a la derecha, con llaves.",
-    "Y todo con *palabras clave*."
    ]
   },
   {

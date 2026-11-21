@@ -20,22 +20,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "PASOS",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Anoto ideas",
      "emoji": "📝"
     },
     {
+     "fecha": "2",
      "txt": "Elijo tres imágenes",
      "emoji": "🖼️"
     },
     {
+     "fecha": "3",
      "txt": "Las ordeno en versos",
      "emoji": "📜"
     },
     {
+     "fecha": "4",
      "txt": "Leo en voz alta",
      "emoji": "🎙️"
     }

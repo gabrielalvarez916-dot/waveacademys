@@ -88,18 +88,21 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "LA PRUEBA DEL BORRADO",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Tachá una oración",
      "emoji": "✏️"
     },
     {
+     "fecha": "2",
      "txt": "¿Se pierde el sentido?",
      "emoji": "🤔"
     },
     {
+     "fecha": "3",
      "txt": "Si se pierde: era la principal",
      "emoji": "🎯"
     }

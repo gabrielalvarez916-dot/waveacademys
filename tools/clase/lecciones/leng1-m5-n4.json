@@ -63,23 +63,22 @@
    ]
   },
   {
-   "t": "comparar",
-   "a": {
-    "cab": "ANTES",
-    "texto": "Manzanas, peras y bananas",
-    "emoji": "🍎"
-   },
-   "b": {
-    "cab": "RESUMEN",
-    "texto": "Frutas",
-    "emoji": "🧺"
-   },
-   "signo": "→",
+   "t": "antesdespues",
    "voz": [
     "Un truco: *generalizar*.",
     "Varias cosas se resumen en una sola palabra.",
     "Manzanas, peras y bananas pasan a ser *frutas*."
-   ]
+   ],
+   "antes": {
+    "cab": "ANTES",
+    "texto": "Manzanas, peras y bananas",
+    "emoji": "🍎"
+   },
+   "despues": {
+    "cab": "RESUMEN",
+    "texto": "Frutas",
+    "emoji": "🧺"
+   }
   },
   {
    "t": "bloques",

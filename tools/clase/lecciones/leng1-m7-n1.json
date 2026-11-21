@@ -61,25 +61,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "CUÁNDO LLEVAN TILDE",
-   "columnas": [
-    "Clase",
-    "Regla"
-   ],
-   "filas": [
-    [
-     "Aguda",
-     "Termina en n, s o vocal"
-    ],
-    [
-     "Grave",
-     "NO termina en n, s o vocal"
-    ],
-    [
-     "Esdrújula",
-     "Siempre"
-    ]
+   "items": [
+    {
+     "cab": "AGUDA",
+     "txt": "Termina en n, s o vocal"
+    },
+    {
+     "cab": "GRAVE",
+     "txt": "NO termina en n, s o vocal"
+    },
+    {
+     "cab": "ESDRÚJULA",
+     "txt": "Siempre"
+    }
    ],
    "voz": [
     "Las reglas.",
@@ -89,37 +85,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "AGUDA",
-     "emoji": "1️⃣"
+     "txt": "canción, papel"
     },
     {
      "cab": "GRAVE",
-     "emoji": "2️⃣"
+     "txt": "árbol"
     },
     {
      "cab": "ESDRÚJULA",
-     "emoji": "3️⃣"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "canción",
-     "caja": 0
-    },
-    {
-     "txt": "árbol",
-     "caja": 1
-    },
-    {
-     "txt": "música",
-     "caja": 2
-    },
-    {
-     "txt": "papel",
-     "caja": 0
+     "txt": "música"
     }
    ],
    "voz": [

@@ -26,13 +26,22 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Pronombre",
-   "texto": "Reemplaza a un sustantivo",
-   "emoji": "👤",
+   "t": "comparar",
+   "a": {
+    "cab": "PRONOMBRE",
+    "texto": "Reemplaza a un sustantivo",
+    "emoji": "👤"
+   },
+   "b": {
+    "cab": "CONJUNCIÓN",
+    "texto": "Une palabras u oraciones",
+    "emoji": "🔗"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos clases de palabras.",
     "El *pronombre* reemplaza a un sustantivo para no repetirlo.",
-    "Como *ella* por *Sofía*."
+    "La *conjunción* une palabras u oraciones."
    ]
   },
   {
@@ -61,16 +70,6 @@
     "*Personales*: yo, ella.",
     "*Posesivos*: mío, suyo.",
     "*Demostrativos*: este, ese."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Conjunción",
-   "texto": "Une palabras u oraciones",
-   "emoji": "🔗",
-   "voz": [
-    "La *conjunción* une palabras u oraciones.",
-    "Es *invariable*."
    ]
   },
   {

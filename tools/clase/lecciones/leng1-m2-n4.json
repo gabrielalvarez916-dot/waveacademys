@@ -35,22 +35,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "PLANIFICO MI ENIGMA",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "El misterio: qué pasó",
      "emoji": "❓"
     },
     {
+     "fecha": "2",
      "txt": "El detective",
      "emoji": "🕵️"
     },
     {
+     "fecha": "3",
      "txt": "2 pistas y 1 falsa pista",
      "emoji": "🧩"
     },
     {
+     "fecha": "4",
      "txt": "La revelación",
      "emoji": "💡"
     }

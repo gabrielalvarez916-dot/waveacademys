@@ -35,25 +35,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "VAGO Y PRECISO",
-   "columnas": [
-    "Vago",
-    "Preciso"
-   ],
-   "filas": [
-    [
-     "Casa linda",
-     "Casa luminosa"
-    ],
-    [
-     "Chico malo",
-     "Chico caprichoso"
-    ],
-    [
-     "Comida rica",
-     "Comida picante"
-    ]
+   "items": [
+    {
+     "cab": "CASA LINDA",
+     "txt": "Casa luminosa"
+    },
+    {
+     "cab": "CHICO MALO",
+     "txt": "Chico caprichoso"
+    },
+    {
+     "cab": "COMIDA RICA",
+     "txt": "Comida picante"
+    }
    ],
    "voz": [
     "Del vago al preciso.",

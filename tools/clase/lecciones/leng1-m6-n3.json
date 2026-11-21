@@ -45,25 +45,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "ESPERADO Y REAL",
-   "columnas": [
-    "Se espera",
-    "Ocurre"
-   ],
-   "filas": [
-    [
-     "Familia aterrada",
-     "Le ofrecen aceite"
-    ],
-    [
-     "Fantasma imponente",
-     "Se siente ridículo"
-    ],
-    [
-     "Misterio",
-     "Producto de limpieza"
-    ]
+   "items": [
+    {
+     "cab": "FAMILIA ATERRADA",
+     "txt": "Le ofrecen aceite"
+    },
+    {
+     "cab": "FANTASMA IMPONENTE",
+     "txt": "Se siente ridículo"
+    },
+    {
+     "cab": "MISTERIO",
+     "txt": "Producto de limpieza"
+    }
    ],
    "voz": [
     "El contraste.",
@@ -83,29 +79,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "HUMOR",
-     "emoji": "😂"
+     "txt": "Aceite para cadenas, Almohadas"
     },
     {
      "cab": "TERROR",
-     "emoji": "😱"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Aceite para cadenas",
-     "caja": 0
-    },
-    {
-     "txt": "Mancha de sangre",
-     "caja": 1
-    },
-    {
-     "txt": "Almohadas",
-     "caja": 0
+     "txt": "Mancha de sangre"
     }
    ],
    "voz": [

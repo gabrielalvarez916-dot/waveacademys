@@ -35,22 +35,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "REVISO EN CUATRO PASADAS",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "El orden: ¿se entiende qué pasó?",
      "emoji": "🧭"
     },
     {
+     "fecha": "2",
      "txt": "Los tiempos verbales",
      "emoji": "⏳"
     },
     {
+     "fecha": "3",
      "txt": "Repeticiones",
      "emoji": "🔁"
     },
     {
+     "fecha": "4",
      "txt": "Puntuación y diálogos",
      "emoji": "✒️"
     }

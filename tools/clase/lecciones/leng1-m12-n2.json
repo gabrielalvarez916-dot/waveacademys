@@ -30,25 +30,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES MODOS",
-   "columnas": [
-    "Modo",
-    "Expresa"
-   ],
-   "filas": [
-    [
-     "Indicativo",
-     "Hechos reales"
-    ],
-    [
-     "Subjuntivo",
-     "Deseos y dudas"
-    ],
-    [
-     "Imperativo",
-     "Órdenes"
-    ]
+   "items": [
+    {
+     "cab": "INDICATIVO",
+     "txt": "Hechos reales"
+    },
+    {
+     "cab": "SUBJUNTIVO",
+     "txt": "Deseos y dudas"
+    },
+    {
+     "cab": "IMPERATIVO",
+     "txt": "Órdenes"
+    }
    ],
    "voz": [
     "Los tres modos.",
@@ -58,33 +54,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "INDICATIVO",
-     "emoji": "✅"
+     "txt": "Estudio"
     },
     {
      "cab": "SUBJUNTIVO",
-     "emoji": "🌠"
+     "txt": "Ojalá estudie"
     },
     {
      "cab": "IMPERATIVO",
-     "emoji": "📢"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Estudio",
-     "caja": 0
-    },
-    {
-     "txt": "Ojalá estudie",
-     "caja": 1
-    },
-    {
-     "txt": "Estudiá",
-     "caja": 2
+     "txt": "Estudiá"
     }
    ],
    "voz": [

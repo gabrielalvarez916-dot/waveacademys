@@ -39,23 +39,22 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Diptongo",
-   "texto": "Dos vocales en una sílaba",
-   "emoji": "🔗",
+   "t": "comparar",
+   "a": {
+    "cab": "DIPTONGO",
+    "texto": "Dos vocales en una sílaba",
+    "emoji": "🔗"
+   },
+   "b": {
+    "cab": "HIATO",
+    "texto": "Dos vocales en sílabas distintas",
+    "emoji": "✂️"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos ideas que se relacionan.",
     "El *diptongo* son dos vocales en una sola sílaba.",
-    "Como *ciu-dad* o *cuo-ta*."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Hiato",
-   "texto": "Dos vocales en sílabas distintas",
-   "emoji": "✂️",
-   "voz": [
-    "El *hiato* son dos vocales en sílabas distintas.",
-    "Como *pa-ís* o *rí-o*."
+    "El *hiato* son dos vocales en sílabas distintas."
    ]
   },
   {

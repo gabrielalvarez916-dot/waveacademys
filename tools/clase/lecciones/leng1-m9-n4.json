@@ -30,29 +30,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "PARTES",
-   "columnas": [
-    "Parte",
-    "Qué lleva"
-   ],
-   "filas": [
-    [
-     "Datos",
-     "Título y autor"
-    ],
-    [
-     "Resumen",
-     "Sin el final"
-    ],
-    [
-     "Valoración",
-     "Opinión con razones"
-    ],
-    [
-     "Recomendación",
-     "A quién le gusta"
-    ]
+   "celdas": [
+    {
+     "cab": "DATOS",
+     "txt": "Título y autor"
+    },
+    {
+     "cab": "RESUMEN",
+     "txt": "Sin el final"
+    },
+    {
+     "cab": "VALORACIÓN",
+     "txt": "Opinión con razones"
+    },
+    {
+     "cab": "RECOMENDACIÓN",
+     "txt": "A quién le gusta"
+    }
    ],
    "voz": [
     "Las cuatro partes.",
@@ -73,29 +69,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SÍ",
-     "emoji": "✅"
+     "txt": "Contar el comienzo, Dar un ejemplo"
     },
     {
      "cab": "NO",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Contar el comienzo",
-     "caja": 0
-    },
-    {
-     "txt": "Contar el final",
-     "caja": 1
-    },
-    {
-     "txt": "Dar un ejemplo",
-     "caja": 0
+     "txt": "Contar el final"
     }
    ],
    "voz": [

@@ -29,25 +29,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "PAUSAS",
-   "columnas": [
-    "Signo",
-    "Pausa"
-   ],
-   "filas": [
-    [
-     "Coma",
-     "Corta"
-    ],
-    [
-     "Punto",
-     "Larga"
-    ],
-    [
-     "Fin de verso",
-     "Breve"
-    ]
+   "items": [
+    {
+     "cab": "COMA",
+     "txt": "Corta"
+    },
+    {
+     "cab": "PUNTO",
+     "txt": "Larga"
+    },
+    {
+     "cab": "FIN DE VERSO",
+     "txt": "Breve"
+    }
    ],
    "voz": [
     "Las pausas.",

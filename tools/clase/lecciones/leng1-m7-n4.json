@@ -35,29 +35,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "LAS PASADAS",
-   "columnas": [
-    "Pasada",
-    "Qué busco"
-   ],
-   "filas": [
-    [
-     "1",
-     "Que se entienda"
-    ],
-    [
-     "2",
-     "Tildes"
-    ],
-    [
-     "3",
-     "b/v, g/j, h"
-    ],
-    [
-     "4",
-     "Mayúsculas y puntos"
-    ]
+   "celdas": [
+    {
+     "cab": "1",
+     "txt": "Que se entienda"
+    },
+    {
+     "cab": "2",
+     "txt": "Tildes"
+    },
+    {
+     "cab": "3",
+     "txt": "b/v, g/j, h"
+    },
+    {
+     "cab": "4",
+     "txt": "Mayúsculas y puntos"
+    }
    ],
    "voz": [
     "Cuatro pasadas.",
@@ -78,29 +74,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "REVISAR",
-     "emoji": "🔍"
+     "txt": "Leer en voz alta, Usar diccionario"
     },
     {
      "cab": "NO REVISAR",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Leer en voz alta",
-     "caja": 0
-    },
-    {
-     "txt": "Entregar sin releer",
-     "caja": 1
-    },
-    {
-     "txt": "Usar diccionario",
-     "caja": 0
+     "txt": "Entregar sin releer"
     }
    ],
    "voz": [

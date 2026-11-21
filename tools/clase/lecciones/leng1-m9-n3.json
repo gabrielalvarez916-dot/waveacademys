@@ -45,29 +45,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "QUÉ SE COMPARA",
-   "columnas": [
-    "Criterio",
-    "Pregunta"
-   ],
-   "filas": [
-    [
-     "Personajes",
-     "¿Son como en el libro?"
-    ],
-    [
-     "Ambiente",
-     "¿Cómo se ve el castillo?"
-    ],
-    [
-     "Hechos",
-     "¿Qué se agregó o sacó?"
-    ],
-    [
-     "Final",
-     "¿Es igual?"
-    ]
+   "celdas": [
+    {
+     "cab": "PERSONAJES",
+     "txt": "¿Son como en el libro?"
+    },
+    {
+     "cab": "AMBIENTE",
+     "txt": "¿Cómo se ve el castillo?"
+    },
+    {
+     "cab": "HECHOS",
+     "txt": "¿Qué se agregó o sacó?"
+    },
+    {
+     "cab": "FINAL",
+     "txt": "¿Es igual?"
+    }
    ],
    "voz": [
     "Los criterios.",

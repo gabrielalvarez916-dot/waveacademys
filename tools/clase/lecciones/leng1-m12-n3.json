@@ -29,29 +29,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "CLASES DE ADVERBIOS",
-   "columnas": [
-    "Clase",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Lugar",
-     "aquí, cerca"
-    ],
-    [
-     "Tiempo",
-     "hoy, nunca"
-    ],
-    [
-     "Modo",
-     "bien, rápido"
-    ],
-    [
-     "Cantidad",
-     "muy, poco"
-    ]
+   "celdas": [
+    {
+     "cab": "LUGAR",
+     "txt": "aquí, cerca"
+    },
+    {
+     "cab": "TIEMPO",
+     "txt": "hoy, nunca"
+    },
+    {
+     "cab": "MODO",
+     "txt": "bien, rápido"
+    },
+    {
+     "cab": "CANTIDAD",
+     "txt": "muy, poco"
+    }
    ],
    "voz": [
     "Cuatro clases.",
@@ -62,33 +58,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "LUGAR",
-     "emoji": "📍"
+     "txt": "allá"
     },
     {
      "cab": "TIEMPO",
-     "emoji": "⏰"
+     "txt": "ayer"
     },
     {
      "cab": "CANTIDAD",
-     "emoji": "📊"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "allá",
-     "caja": 0
-    },
-    {
-     "txt": "ayer",
-     "caja": 1
-    },
-    {
-     "txt": "mucho",
-     "caja": 2
+     "txt": "mucho"
     }
    ],
    "voz": [

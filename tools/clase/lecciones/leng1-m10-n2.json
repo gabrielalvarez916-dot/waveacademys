@@ -20,29 +20,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "PARTES DE UN MAIL",
-   "columnas": [
-    "Campo",
-    "Para qué"
-   ],
-   "filas": [
-    [
-     "Para",
-     "Destinatario"
-    ],
-    [
-     "Asunto",
-     "De qué trata"
-    ],
-    [
-     "Cuerpo",
-     "El mensaje"
-    ],
-    [
-     "Adjunto",
-     "Archivo"
-    ]
+   "celdas": [
+    {
+     "cab": "PARA",
+     "txt": "Destinatario"
+    },
+    {
+     "cab": "ASUNTO",
+     "txt": "De qué trata"
+    },
+    {
+     "cab": "CUERPO",
+     "txt": "El mensaje"
+    },
+    {
+     "cab": "ADJUNTO",
+     "txt": "Archivo"
+    }
    ],
    "voz": [
     "Los campos.",
@@ -53,26 +49,31 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "CUERPO",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Saludo",
      "emoji": "👋"
     },
     {
+     "fecha": "2",
      "txt": "Motivo",
      "emoji": "🎯"
     },
     {
+     "fecha": "3",
      "txt": "Detalle",
      "emoji": "📝"
     },
     {
+     "fecha": "4",
      "txt": "Cierre",
      "emoji": "🙏"
     },
     {
+     "fecha": "5",
      "txt": "Firma",
      "emoji": "✍️"
     }

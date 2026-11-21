@@ -64,33 +64,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "CONSONANTE",
-     "emoji": "🔔"
+     "txt": "sol / farol, canción / corazón"
     },
     {
      "cab": "ASONANTE",
-     "emoji": "🔕"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "sol / farol",
-     "caja": 0
-    },
-    {
-     "txt": "gato / lado",
-     "caja": 1
-    },
-    {
-     "txt": "canción / corazón",
-     "caja": 0
-    },
-    {
-     "txt": "casa / mesa",
-     "caja": 1
+     "txt": "gato / lado, casa / mesa"
     }
    ],
    "voz": [

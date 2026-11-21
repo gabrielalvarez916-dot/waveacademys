@@ -30,22 +30,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "ORDEN",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Leer instrucciones",
      "emoji": "📖"
     },
     {
+     "fecha": "2",
      "txt": "Completar campos",
      "emoji": "✏️"
     },
     {
+     "fecha": "3",
      "txt": "Revisar",
      "emoji": "🔍"
     },
     {
+     "fecha": "4",
      "txt": "Firmar",
      "emoji": "✍️"
     }

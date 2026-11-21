@@ -74,33 +74,29 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "SUBGÉNEROS NARRATIVOS",
-   "columnas": [
-    "Subgénero",
-    "Qué tiene"
-   ],
-   "filas": [
-    [
-     "Maravilloso",
-     "magia, hadas, dragones"
-    ],
-    [
-     "Ciencia ficción",
-     "futuro y tecnología"
-    ],
-    [
-     "Policial",
-     "un enigma y un detective"
-    ],
-    [
-     "Terror",
-     "busca dar miedo"
-    ],
-    [
-     "Realista",
-     "hechos que podrían pasar"
-    ]
+   "items": [
+    {
+     "cab": "MARAVILLOSO",
+     "txt": "magia, hadas, dragones"
+    },
+    {
+     "cab": "CIENCIA FICCIÓN",
+     "txt": "futuro y tecnología"
+    },
+    {
+     "cab": "POLICIAL",
+     "txt": "un enigma y un detective"
+    },
+    {
+     "cab": "TERROR",
+     "txt": "busca dar miedo"
+    },
+    {
+     "cab": "REALISTA",
+     "txt": "hechos que podrían pasar"
+    }
    ],
    "voz": [
     "Dentro de las historias hay muchos mundos.",

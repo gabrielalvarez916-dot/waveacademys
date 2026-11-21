@@ -19,29 +19,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "SIGNOS",
-   "columnas": [
-    "Signo",
-    "Función"
-   ],
-   "filas": [
-    [
-     "Coma",
-     "Pausa breve"
-    ],
-    [
-     "Punto y seguido",
-     "Sigue el párrafo"
-    ],
-    [
-     "Punto y aparte",
-     "Nuevo párrafo"
-    ],
-    [
-     "Punto final",
-     "Cierra el texto"
-    ]
+   "celdas": [
+    {
+     "cab": "COMA",
+     "txt": "Pausa breve"
+    },
+    {
+     "cab": "PUNTO Y SEGUIDO",
+     "txt": "Sigue el párrafo"
+    },
+    {
+     "cab": "PUNTO Y APARTE",
+     "txt": "Nuevo párrafo"
+    },
+    {
+     "cab": "PUNTO FINAL",
+     "txt": "Cierra el texto"
+    }
    ],
    "voz": [
     "Cada signo, una pausa.",
@@ -52,25 +48,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "USOS DE LA COMA",
-   "columnas": [
-    "Uso",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Enumerar",
-     "pan, leche y queso"
-    ],
-    [
-     "Tras conector",
-     "Sin embargo, llegué"
-    ],
-    [
-     "Aclarar",
-     "Mi tía, que vive en Salta"
-    ]
+   "items": [
+    {
+     "cab": "ENUMERAR",
+     "txt": "pan, leche y queso"
+    },
+    {
+     "cab": "TRAS CONECTOR",
+     "txt": "Sin embargo, llegué"
+    },
+    {
+     "cab": "ACLARAR",
+     "txt": "Mi tía, que vive en Salta"
+    }
    ],
    "voz": [
     "Tres usos de la coma.",

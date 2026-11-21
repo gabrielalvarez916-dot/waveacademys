@@ -20,29 +20,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "RECURSOS",
-   "columnas": [
-    "Recurso",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Pronombre",
-     "Ella llegó"
-    ],
-    [
-     "Sinónimo",
-     "casa, hogar"
-    ],
-    [
-     "Palabra general",
-     "el animal"
-    ],
-    [
-     "Elipsis",
-     "Llegó y saludó"
-    ]
+   "celdas": [
+    {
+     "cab": "PRONOMBRE",
+     "txt": "Ella llegó"
+    },
+    {
+     "cab": "SINÓNIMO",
+     "txt": "casa, hogar"
+    },
+    {
+     "cab": "PALABRA GENERAL",
+     "txt": "el animal"
+    },
+    {
+     "cab": "ELIPSIS",
+     "txt": "Llegó y saludó"
+    }
    ],
    "voz": [
     "Recursos para no repetir.",
@@ -63,33 +59,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "PRONOMBRE",
-     "emoji": "👤"
+     "txt": "ella, lo"
     },
     {
      "cab": "SINÓNIMO",
-     "emoji": "🔁"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "ella",
-     "caja": 0
-    },
-    {
-     "txt": "hogar",
-     "caja": 1
-    },
-    {
-     "txt": "lo",
-     "caja": 0
-    },
-    {
-     "txt": "vivienda",
-     "caja": 1
+     "txt": "hogar, vivienda"
     }
    ],
    "voz": [

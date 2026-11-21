@@ -20,29 +20,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "ROLES",
-   "columnas": [
-    "Rol",
-    "Función"
-   ],
-   "filas": [
-    [
-     "Moderador",
-     "Da la palabra"
-    ],
-    [
-     "A favor",
-     "Defiende"
-    ],
-    [
-     "En contra",
-     "Cuestiona"
-    ],
-    [
-     "Público",
-     "Escucha"
-    ]
+   "celdas": [
+    {
+     "cab": "MODERADOR",
+     "txt": "Da la palabra"
+    },
+    {
+     "cab": "A FAVOR",
+     "txt": "Defiende"
+    },
+    {
+     "cab": "EN CONTRA",
+     "txt": "Cuestiona"
+    },
+    {
+     "cab": "PÚBLICO",
+     "txt": "Escucha"
+    }
    ],
    "voz": [
     "Los roles.",
@@ -53,33 +49,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "RESPETO",
-     "emoji": "🤝"
+     "txt": "Pedir la palabra, Criticar la idea"
     },
     {
      "cab": "FALTA DE RESPETO",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Pedir la palabra",
-     "caja": 0
-    },
-    {
-     "txt": "Interrumpir",
-     "caja": 1
-    },
-    {
-     "txt": "Criticar la idea",
-     "caja": 0
-    },
-    {
-     "txt": "Burlarse",
-     "caja": 1
+     "txt": "Interrumpir, Burlarse"
     }
    ],
    "voz": [

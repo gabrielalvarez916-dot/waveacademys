@@ -26,22 +26,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "LISTA DE REVISIÓN",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "¿Conectores?",
      "emoji": "🔗"
     },
     {
+     "fecha": "2",
      "txt": "¿Repeticiones?",
      "emoji": "🔁"
     },
     {
+     "fecha": "3",
      "txt": "¿Párrafos?",
      "emoji": "📄"
     },
     {
+     "fecha": "4",
      "txt": "¿Signos?",
      "emoji": "✏️"
     }

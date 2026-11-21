@@ -20,25 +20,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "INTENTO Y RESPUESTA",
-   "columnas": [
-    "Fantasma",
-    "Familia"
-   ],
-   "filas": [
-    [
-     "Cadenas ruidosas",
-     "Le ofrecen aceite"
-    ],
-    [
-     "Mancha de sangre",
-     "La limpian"
-    ],
-    [
-     "Aparece de noche",
-     "Le tiran almohadas"
-    ]
+   "items": [
+    {
+     "cab": "CADENAS RUIDOSAS",
+     "txt": "Le ofrecen aceite"
+    },
+    {
+     "cab": "MANCHA DE SANGRE",
+     "txt": "La limpian"
+    },
+    {
+     "cab": "APARECE DE NOCHE",
+     "txt": "Le tiran almohadas"
+    }
    ],
    "voz": [
     "Cada intento tiene su respuesta.",

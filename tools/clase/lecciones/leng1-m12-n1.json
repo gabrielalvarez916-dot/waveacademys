@@ -35,59 +35,41 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Sustantivo",
-   "texto": "Nombra personas, cosas, lugares e ideas",
-   "emoji": "🏷️",
+   "t": "comparar",
+   "a": {
+    "cab": "SUSTANTIVO",
+    "texto": "Nombra personas, cosas, lugares e ideas",
+    "emoji": "🏷️"
+   },
+   "b": {
+    "cab": "ADJETIVO",
+    "texto": "Dice cómo es el sustantivo",
+    "emoji": "🎨"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos clases de palabras.",
     "El *sustantivo* nombra personas, animales, cosas, lugares e ideas.",
-    "Tiene *género* y *número*."
+    "El *adjetivo* acompaña al sustantivo y dice cómo es."
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "CONCRETO",
-     "emoji": "🪑"
+     "txt": "mesa, río"
     },
     {
      "cab": "ABSTRACTO",
-     "emoji": "💭"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "mesa",
-     "caja": 0
-    },
-    {
-     "txt": "alegría",
-     "caja": 1
-    },
-    {
-     "txt": "río",
-     "caja": 0
-    },
-    {
-     "txt": "libertad",
-     "caja": 1
+     "txt": "alegría, libertad"
     }
    ],
    "voz": [
     "¿Concreto o abstracto?",
     "*Mesa* y *río*: concretos.",
     "*Alegría* y *libertad*: abstractos."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Adjetivo",
-   "texto": "Dice cómo es el sustantivo",
-   "emoji": "🎨",
-   "voz": [
-    "El *adjetivo* acompaña al sustantivo y dice cómo es.",
-    "Concuerda en *género* y *número*."
    ]
   },
   {

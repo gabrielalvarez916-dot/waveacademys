@@ -30,29 +30,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "TIPOS DE ARGUMENTOS",
-   "columnas": [
-    "Tipo",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Ejemplo",
-     "En mi curso..."
-    ],
-    [
-     "Dato",
-     "El 80 %..."
-    ],
-    [
-     "Autoridad",
-     "Una docente dice..."
-    ],
-    [
-     "Causa y efecto",
-     "Si..., entonces..."
-    ]
+   "celdas": [
+    {
+     "cab": "EJEMPLO",
+     "txt": "En mi curso..."
+    },
+    {
+     "cab": "DATO",
+     "txt": "El 80 %..."
+    },
+    {
+     "cab": "AUTORIDAD",
+     "txt": "Una docente dice..."
+    },
+    {
+     "cab": "CAUSA Y EFECTO",
+     "txt": "Si..., entonces..."
+    }
    ],
    "voz": [
     "Cuatro tipos.",
@@ -63,33 +59,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "EJEMPLO",
-     "emoji": "📝"
+     "txt": "En mi curso"
     },
     {
      "cab": "DATO",
-     "emoji": "📊"
+     "txt": "El 80 % lo usa"
     },
     {
      "cab": "AUTORIDAD",
-     "emoji": "🎓"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "En mi curso",
-     "caja": 0
-    },
-    {
-     "txt": "El 80 % lo usa",
-     "caja": 1
-    },
-    {
-     "txt": "Lo dice una docente",
-     "caja": 2
+     "txt": "Lo dice una docente"
     }
    ],
    "voz": [

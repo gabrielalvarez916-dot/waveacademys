@@ -20,29 +20,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "PERSONAJES",
-   "columnas": [
-    "Personaje",
-    "Cómo es"
-   ],
-   "filas": [
-    [
-     "Lord Canterville",
-     "El dueño"
-    ],
-    [
-     "Los Otis",
-     "Prácticos y modernos"
-    ],
-    [
-     "Sir Simon",
-     "El fantasma"
-    ],
-    [
-     "Virginia",
-     "Sensible y amable"
-    ]
+   "celdas": [
+    {
+     "cab": "LORD CANTERVILLE",
+     "txt": "El dueño"
+    },
+    {
+     "cab": "LOS OTIS",
+     "txt": "Prácticos y modernos"
+    },
+    {
+     "cab": "SIR SIMON",
+     "txt": "El fantasma"
+    },
+    {
+     "cab": "VIRGINIA",
+     "txt": "Sensible y amable"
+    }
    ],
    "voz": [
     "Los personajes.",
@@ -92,29 +88,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "FANTASMA",
-     "emoji": "👻"
+     "txt": "Quiere asustar, Siglos de historia"
     },
     {
      "cab": "FAMILIA",
-     "emoji": "🏠"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Quiere asustar",
-     "caja": 0
-    },
-    {
-     "txt": "No cree en ellos",
-     "caja": 1
-    },
-    {
-     "txt": "Siglos de historia",
-     "caja": 0
+     "txt": "No cree en ellos"
     }
    ],
    "voz": [

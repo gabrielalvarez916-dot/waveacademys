@@ -20,25 +20,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "B Y V",
-   "columnas": [
-    "Regla",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Pretéritos en -aba",
-     "cantaba"
-    ],
-    [
-     "b antes de l y r",
-     "blanco, brazo"
-    ],
-    [
-     "v en el verbo ir",
-     "voy, vas"
-    ]
+   "items": [
+    {
+     "cab": "PRETÉRITOS EN -ABA",
+     "txt": "cantaba"
+    },
+    {
+     "cab": "B ANTES DE L Y R",
+     "txt": "blanco, brazo"
+    },
+    {
+     "cab": "V EN EL VERBO IR",
+     "txt": "voy, vas"
+    }
    ],
    "voz": [
     "Algunas reglas de *b* y *v*.",

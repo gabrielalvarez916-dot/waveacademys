@@ -74,33 +74,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "OPOSICIÓN",
-     "emoji": "↔️"
+     "txt": "pero"
     },
     {
      "cab": "CAUSA",
-     "emoji": "❓"
+     "txt": "porque"
     },
     {
      "cab": "CONSECUENCIA",
-     "emoji": "➡️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "pero",
-     "caja": 0
-    },
-    {
-     "txt": "porque",
-     "caja": 1
-    },
-    {
-     "txt": "por eso",
-     "caja": 2
+     "txt": "por eso"
     }
    ],
    "voz": [

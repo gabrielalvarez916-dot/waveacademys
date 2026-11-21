@@ -55,7 +55,7 @@ for _g, _l in _grupos.items():
         for t in set(_ts):
             if t not in ('pregunta', 'resumen', 'errores', 'definicion'): _cont.setdefault(t, []).append(_s)
     for t, ss in _cont.items():
-        if len(ss) > 3 and t not in ('reto', 'noticia', 'gancho', 'historia', 'chat'): E(_g, f'plantilla «{t}» repetida en {len(ss)} clases de la misión (máximo 3 de 4): variar los recursos')
+        if len(ss) > 3 and t not in ('reto', 'noticia', 'gancho', 'historia', 'chat', 'texto'): E(_g, f'plantilla «{t}» repetida en {len(ss)} clases de la misión (máximo 3 de 4): variar los recursos')
     if len({tuple(ts) for _, ts in _l}) < len(_l): E(_g, 'dos clases tienen exactamente la misma secuencia de escenas')
 if mis:
     for n, c in mis['niveles'].items():

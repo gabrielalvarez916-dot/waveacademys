@@ -39,29 +39,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "ESTRUCTURA",
-   "columnas": [
-    "Parte",
-    "Qué hace"
-   ],
-   "filas": [
-    [
-     "Tesis",
-     "Dice lo que pienso"
-    ],
-    [
-     "Argumento",
-     "Explica por qué"
-    ],
-    [
-     "Ejemplo",
-     "Lo prueba con el texto"
-    ],
-    [
-     "Cierre",
-     "Vuelve a la tesis"
-    ]
+   "celdas": [
+    {
+     "cab": "TESIS",
+     "txt": "Dice lo que pienso"
+    },
+    {
+     "cab": "ARGUMENTO",
+     "txt": "Explica por qué"
+    },
+    {
+     "cab": "EJEMPLO",
+     "txt": "Lo prueba con el texto"
+    },
+    {
+     "cab": "CIERRE",
+     "txt": "Vuelve a la tesis"
+    }
    ],
    "voz": [
     "Una opinión tiene partes.",

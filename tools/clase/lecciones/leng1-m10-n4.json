@@ -36,25 +36,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES REGISTROS",
-   "columnas": [
-    "Registro",
-    "Cuándo"
-   ],
-   "filas": [
-    [
-     "Formal",
-     "Autoridades"
-    ],
-    [
-     "Neutro",
-     "Textos comunes"
-    ],
-    [
-     "Informal",
-     "Amigos y familia"
-    ]
+   "items": [
+    {
+     "cab": "FORMAL",
+     "txt": "Autoridades"
+    },
+    {
+     "cab": "NEUTRO",
+     "txt": "Textos comunes"
+    },
+    {
+     "cab": "INFORMAL",
+     "txt": "Amigos y familia"
+    }
    ],
    "voz": [
     "Tres registros.",

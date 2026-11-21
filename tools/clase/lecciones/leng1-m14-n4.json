@@ -78,18 +78,21 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "UNA BUENA DEVOLUCIÓN",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Un acierto",
      "emoji": "✅"
     },
     {
+     "fecha": "2",
      "txt": "Otro acierto",
      "emoji": "✅"
     },
     {
+     "fecha": "3",
      "txt": "Una mejora",
      "emoji": "🛠️"
     }
@@ -102,35 +105,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "DEVOLUCIÓN ÚTIL",
-     "emoji": "✅"
-    },
-    {
-     "cab": "NO SIRVE",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Con ejemplos",
-     "caja": 0
-    },
-    {
-     "txt": "Estuvo bien",
-     "caja": 1
-    },
-    {
-     "txt": "Sobre la tarea",
-     "caja": 0
-    },
-    {
-     "txt": "Sobre la persona",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "DEVOLUCIÓN ÚTIL",
+    "emoji": "✅",
+    "texto": "Con ejemplos, Sobre la tarea"
+   },
+   "despues": {
+    "cab": "NO SIRVE",
+    "emoji": "🚫",
+    "texto": "Estuvo bien, Sobre la persona"
+   },
    "voz": [
     "¿Sirve o no?",
     "*Con ejemplos* y *sobre la tarea*: sirven.",

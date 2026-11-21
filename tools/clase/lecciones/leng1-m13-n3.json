@@ -30,26 +30,31 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "PARTES",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Título",
      "emoji": "🏷️"
     },
     {
+     "fecha": "2",
      "txt": "Saludo",
      "emoji": "👋"
     },
     {
+     "fecha": "3",
      "txt": "Tesis",
      "emoji": "🎯"
     },
     {
+     "fecha": "4",
      "txt": "Argumentos",
      "emoji": "💡"
     },
     {
+     "fecha": "5",
      "txt": "Cierre y firma",
      "emoji": "✍️"
     }
@@ -64,33 +69,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SÍ",
-     "emoji": "✅"
+     "txt": "Tono respetuoso, Dos argumentos"
     },
     {
      "cab": "NO",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Tono respetuoso",
-     "caja": 0
-    },
-    {
-     "txt": "Insultos",
-     "caja": 1
-    },
-    {
-     "txt": "Dos argumentos",
-     "caja": 0
-    },
-    {
-     "txt": "Chat abreviado",
-     "caja": 1
+     "txt": "Insultos, Chat abreviado"
     }
    ],
    "voz": [

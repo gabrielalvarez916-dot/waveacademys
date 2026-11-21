@@ -20,18 +20,21 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "ESQUEMA",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Inicio",
      "emoji": "👋"
     },
     {
+     "fecha": "2",
      "txt": "Desarrollo",
      "emoji": "📚"
     },
     {
+     "fecha": "3",
      "txt": "Cierre",
      "emoji": "🔚"
     }
@@ -63,29 +66,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "VOZ Y CUERPO",
-   "columnas": [
-    "Aspecto",
-    "Consejo"
-   ],
-   "filas": [
-    [
-     "Voz",
-     "Clara"
-    ],
-    [
-     "Ritmo",
-     "Ni rápido ni lento"
-    ],
-    [
-     "Mirada",
-     "Al público"
-    ],
-    [
-     "Tiempo",
-     "Ensayar"
-    ]
+   "celdas": [
+    {
+     "cab": "VOZ",
+     "txt": "Clara"
+    },
+    {
+     "cab": "RITMO",
+     "txt": "Ni rápido ni lento"
+    },
+    {
+     "cab": "MIRADA",
+     "txt": "Al público"
+    },
+    {
+     "cab": "TIEMPO",
+     "txt": "Ensayar"
+    }
    ],
    "voz": [
     "Cuidá cuatro cosas.",
@@ -96,29 +95,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SÍ",
-     "emoji": "✅"
+     "txt": "Mirar al público, Ensayar con reloj"
     },
     {
      "cab": "NO",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Mirar al público",
-     "caja": 0
-    },
-    {
-     "txt": "Leer todo",
-     "caja": 1
-    },
-    {
-     "txt": "Ensayar con reloj",
-     "caja": 0
+     "txt": "Leer todo"
     }
    ],
    "voz": [
