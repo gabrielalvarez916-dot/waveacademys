@@ -18,7 +18,7 @@
 .te-sello { display: inline-block; padding: 4px 12px; border-radius: 999px; font-weight: 800; font-size: .85rem; background: #E7EEEC; white-space: nowrap; }
 .te-sello.al_dia, .te-sello.aprobado { background: #CDEFD9; color: #14663A; }
 .te-sello.en_plazo, .te-sello.en_revision, .te-sello.pendiente, .te-sello.adelantado { background: #FBEFCB; color: #7A5A0B; }
-.te-sello.atrasado, .te-sello.rechazado { background: #F8DAD4; color: #8F3326; }
+.te-sello.atrasado, .te-sello.rechazado, .te-sello.bloqueado { background: #F8DAD4; color: #8F3326; }
 .te-card { background: #fff; border-radius: 18px; padding: 16px; margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
 .te-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
 .te-card p { margin: 2px 0; color: #587072; }
