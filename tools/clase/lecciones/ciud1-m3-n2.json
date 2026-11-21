@@ -1,0 +1,179 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m3-n2",
+ "step_id": "5d066a00-74c1-4b95-b4d3-0fac873b8035",
+ "materia": "Ciudadanía I",
+ "titulo": "Voto, petición y protesta",
+ "sub": "Ciudadanía I · Misión 3 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué voto es el que nadie puede conocer?",
+   "segundos": 5,
+   "respuesta": "El voto secreto",
+   "emoji": "🗳️",
+   "titulo": "VOTO, PETICIÓN",
+   "sub": "y protesta",
+   "voz": [
+    "Desafío: ¿qué voto es el que nadie puede conocer? Cinco segundos.",
+    "El voto secreto.",
+    "Hoy: *voto, petición y protesta*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EL VOTO",
+   "columnas": [
+    "Rasgo",
+    "Significa"
+   ],
+   "filas": [
+    [
+     "Universal",
+     "Todos los habilitados"
+    ],
+    [
+     "Igual",
+     "Vale lo mismo"
+    ],
+    [
+     "Secreto",
+     "Nadie sabe"
+    ],
+    [
+     "Libre",
+     "Sin presiones"
+    ]
+   ],
+   "voz": [
+    "Cómo es el voto democrático.",
+    "*Universal*: todos los habilitados.",
+    "*Igual*: todos valen lo mismo.",
+    "*Secreto*: nadie sabe qué votaste.",
+    "Y *libre*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Petición",
+   "texto": "Pedir por escrito a las autoridades",
+   "emoji": "✉️",
+   "voz": [
+    "El *derecho de petición* es pedir algo por escrito a las autoridades.",
+    "Tienen que responder."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Protesta pacífica",
+   "texto": "Expresar un reclamo sin violencia",
+   "emoji": "📢",
+   "voz": [
+    "La *protesta pacífica* es expresar un reclamo sin violencia.",
+    "Está protegida por la libertad de expresión."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PACÍFICA",
+     "emoji": "🕊️"
+    },
+    {
+     "cab": "NO PACÍFICA",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Marcha organizada",
+     "caja": 0
+    },
+    {
+     "txt": "Daño a otros",
+     "caja": 1
+    },
+    {
+     "txt": "Asamblea",
+     "caja": 0
+    },
+    {
+     "txt": "Agresión",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Pacífica o no?",
+    "*Marcha organizada* y *asamblea*: pacíficas.",
+    "*Daño* y *agresión*: no lo son."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El derecho de pedir algo por escrito es el derecho de…",
+   "opciones": [
+    "Petición",
+    "Censura",
+    "Voto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: pedir algo por escrito.",
+    "¿Petición, censura o voto?",
+    "*Petición*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Votar es lo único que se puede hacer",
+     "bien": "Hay más formas"
+    },
+    {
+     "mal": "Protestar autoriza dañar",
+     "bien": "Debe ser pacífica"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *votar* es lo único.",
+    "Y que *protestar* autoriza a dañar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El voto es *universal*, *igual*, *secreto* y *libre*.",
+    "La *petición* pide a las autoridades.",
+    "La *protesta* es pacífica.",
+    "Y tiene *límites*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VOTO",
+     "secreto y libre"
+    ],
+    [
+     "PETICIÓN",
+     "por escrito"
+    ],
+    [
+     "PROTESTA",
+     "pacífica"
+    ],
+    [
+     "LÍMITE",
+     "sin violencia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

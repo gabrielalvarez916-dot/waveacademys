@@ -1,0 +1,188 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m2-n2",
+ "step_id": "159aff8d-7ce3-42a3-8a70-cca5fb91edde",
+ "materia": "Ciudadanía I",
+ "titulo": "Cómo funciona un régimen autoritario",
+ "sub": "Ciudadanía I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "SIN PRENSA",
+   "titular": "Un diario no puede publicar",
+   "bajada": "El gobierno decide qué se dice",
+   "emoji": "🗞️",
+   "titulo": "RÉGIMEN AUTORITARIO",
+   "sub": "cómo funciona",
+   "voz": [
+    "Noticia: un diario no puede publicar.",
+    "El gobierno decide qué se dice.",
+    "Hoy: *cómo funciona un régimen autoritario*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Régimen autoritario",
+   "texto": "Poder concentrado y sin controles",
+   "emoji": "🔒",
+   "voz": [
+    "Un *régimen autoritario* concentra el poder en pocas manos.",
+    "Y no tiene controles reales."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "HERRAMIENTAS",
+   "columnas": [
+    "Herramienta",
+    "Para qué"
+   ],
+   "filas": [
+    [
+     "Censura",
+     "Prohibir publicar"
+    ],
+    [
+     "Propaganda",
+     "Una sola versión"
+    ],
+    [
+     "Culto al líder",
+     "Líder infalible"
+    ],
+    [
+     "Represión",
+     "Perseguir críticos"
+    ]
+   ],
+   "voz": [
+    "Las herramientas del autoritarismo.",
+    "La *censura* prohíbe publicar.",
+    "La *propaganda* muestra una sola versión.",
+    "El *culto al líder*.",
+    "Y la *represión*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AUTORITARIO",
+    "texto": "Limita la política y las libertades",
+    "emoji": "🔒"
+   },
+   "b": {
+    "cab": "TOTALITARIO",
+    "texto": "Quiere controlar toda la vida",
+    "emoji": "🕸️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos grados.",
+    "El *autoritario* limita la política.",
+    "El *totalitario* quiere controlar toda la vida."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DEMOCRACIA",
+     "emoji": "🗳️"
+    },
+    {
+     "cab": "AUTORITARISMO",
+     "emoji": "🔒"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Prensa libre",
+     "caja": 0
+    },
+    {
+     "txt": "Censura",
+     "caja": 1
+    },
+    {
+     "txt": "Alternancia",
+     "caja": 0
+    },
+    {
+     "txt": "Represión",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿De cuál es?",
+    "*Prensa libre* y *alternancia*: democracia.",
+    "*Censura* y *represión*: autoritarismo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Impedir que se publique algo es…",
+   "opciones": [
+    "Censura",
+    "Alternancia",
+    "Petición"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: impedir que se publique algo.",
+    "¿Censura, alternancia o petición?",
+    "*Censura*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Siempre se reconoce por la violencia visible",
+     "bien": "A veces es silencioso"
+    },
+    {
+     "mal": "Votar alcanza",
+     "bien": "Faltan libertades y controles"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que siempre se ve la *violencia*.",
+    "Y que *votar alcanza*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El poder está *concentrado*.",
+    "Usa *censura* y *propaganda*.",
+    "Hay *represión*.",
+    "El *totalitarismo* quiere controlar todo.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PODER",
+     "concentrado"
+    ],
+    [
+     "CENSURA",
+     "prohibir publicar"
+    ],
+    [
+     "REPRESIÓN",
+     "perseguir"
+    ],
+    [
+     "TOTALITARIO",
+     "controla todo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

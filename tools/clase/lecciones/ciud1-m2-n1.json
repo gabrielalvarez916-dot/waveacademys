@@ -1,0 +1,188 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m2-n1",
+ "step_id": "cbf73469-7fd7-400c-9f9a-698aa189cd3c",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué caracteriza a una democracia",
+ "sub": "Ciudadanía I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la forma de gobierno en que el poder viene del pueblo?",
+   "segundos": 6,
+   "respuesta": "Democracia",
+   "emoji": "🗳️",
+   "titulo": "QUÉ CARACTERIZA",
+   "sub": "a una democracia",
+   "voz": [
+    "Desafío: ¿cómo se llama la forma de gobierno en que el poder viene del pueblo? Seis segundos.",
+    "Democracia.",
+    "Hoy: *qué caracteriza a una democracia*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Democracia",
+   "texto": "El poder viene del pueblo",
+   "emoji": "🗳️",
+   "voz": [
+    "La *democracia* es la forma de gobierno en que el poder viene del pueblo.",
+    "*Demos* es pueblo y *kratos* es poder."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "RASGOS",
+   "columnas": [
+    "Rasgo",
+    "Qué significa"
+   ],
+   "filas": [
+    [
+     "Elecciones libres",
+     "Sin presiones"
+    ],
+    [
+     "División de poderes",
+     "Nadie concentra"
+    ],
+    [
+     "Derechos",
+     "Se respetan"
+    ],
+    [
+     "Alternancia",
+     "Cambia el gobierno"
+    ]
+   ],
+   "voz": [
+    "Los rasgos de una democracia.",
+    "*Elecciones libres*: sin presiones.",
+    "*División de poderes*: nadie concentra.",
+    "*Derechos* garantizados.",
+    "Y *alternancia*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "DIRECTA",
+    "texto": "El pueblo vota cada decisión",
+    "emoji": "🙋"
+   },
+   "b": {
+    "cab": "REPRESENTATIVA",
+    "texto": "El pueblo elige representantes",
+    "emoji": "🏛️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de democracia.",
+    "En la *directa* el pueblo decide.",
+    "En la *representativa* elige quién decide."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DEMOCRÁTICO",
+     "emoji": "🗳️"
+    },
+    {
+     "cab": "NO DEMOCRÁTICO",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Prensa libre",
+     "caja": 0
+    },
+    {
+     "txt": "Censura",
+     "caja": 1
+    },
+    {
+     "txt": "Elecciones libres",
+     "caja": 0
+    },
+    {
+     "txt": "Partido único",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Democrático o no?",
+    "*Prensa libre* y *elecciones libres*: democráticos.",
+    "*Censura* y *partido único*: no democráticos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué democracia elige representantes?",
+   "opciones": [
+    "Representativa",
+    "Directa",
+    "Autoritaria"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué democracia elige representantes?",
+    "¿Representativa, directa o autoritaria?",
+    "La *representativa*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Democracia es solo votar",
+     "bien": "También derechos y controles"
+    },
+    {
+     "mal": "La mayoría puede quitar derechos",
+     "bien": "Las minorías se respetan"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que democracia es *solo votar*.",
+    "Y que la mayoría puede *quitar derechos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "En democracia el poder viene del *pueblo*.",
+    "Hay *elecciones libres* y *división de poderes*.",
+    "Puede ser *directa* o *representativa*.",
+    "Y respeta el *pluralismo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DEMOCRACIA",
+     "poder del pueblo"
+    ],
+    [
+     "RASGOS",
+     "elecciones libres"
+    ],
+    [
+     "FORMAS",
+     "directa, representativa"
+    ],
+    [
+     "PLURALISMO",
+     "ideas distintas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

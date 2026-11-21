@@ -1,0 +1,188 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m2-n4",
+ "step_id": "ebff990b-e8eb-4a07-a8c3-6702538c679f",
+ "materia": "Ciudadanía I",
+ "titulo": "Cómo se defiende la democracia hoy",
+ "sub": "Ciudadanía I · Misión 2 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Te llega una noticia alarmante por chat. ¿Qué hacés primero?",
+   "segundos": 8,
+   "respuesta": "Verificarla",
+   "emoji": "📱",
+   "titulo": "DEFENDER LA DEMOCRACIA",
+   "sub": "hoy",
+   "voz": [
+    "Desafío: te llega una noticia alarmante por chat. ¿Qué hacés primero? Ocho segundos.",
+    "Verificarla.",
+    "Hoy: *cómo se defiende la democracia hoy*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Instituciones",
+   "texto": "Organismos estables del Estado",
+   "emoji": "🏛️",
+   "voz": [
+    "La democracia se defiende con *instituciones fuertes*.",
+    "Elecciones limpias, justicia independiente y Congreso."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "TRES PILARES",
+   "items": [
+    {
+     "txt": "Memoria",
+     "emoji": "🕯️"
+    },
+    {
+     "txt": "Verdad",
+     "emoji": "🔎"
+    },
+    {
+     "txt": "Justicia",
+     "emoji": "⚖️"
+    }
+   ],
+   "voz": [
+    "Tres pilares.",
+    "La *memoria*.",
+    "La *verdad*.",
+    "Y la *justicia*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CUIDAR LA INFORMACIÓN",
+   "columnas": [
+    "Hábito",
+    "Sirve para"
+   ],
+   "filas": [
+    [
+     "Contrastar fuentes",
+     "Evitar falsas"
+    ],
+    [
+     "No compartir viral",
+     "Frenar bulos"
+    ],
+    [
+     "Leer varias miradas",
+     "Entender mejor"
+    ]
+   ],
+   "voz": [
+    "Hábitos para informarse.",
+    "*Contrastar fuentes*.",
+    "No compartir lo *viral* sin verificar.",
+    "Y leer *varias miradas*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AYUDA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "DAÑA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Votar informado",
+     "caja": 0
+    },
+    {
+     "txt": "Compartir sin leer",
+     "caja": 1
+    },
+    {
+     "txt": "Participar",
+     "caja": 0
+    },
+    {
+     "txt": "Callar un abuso",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Ayuda o daña?",
+    "*Votar informado* y *participar*: ayudan.",
+    "*Compartir sin leer* y *callar un abuso*: dañan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Antes de compartir una noticia conviene…",
+   "opciones": [
+    "Verificarla",
+    "Reenviarla",
+    "Ignorarla"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: antes de compartir una noticia.",
+    "¿Verificarla, reenviarla o ignorarla?",
+    "*Verificarla*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La democracia se cuida sola",
+     "bien": "Requiere participación"
+    },
+    {
+     "mal": "Compartir sin verificar",
+     "bien": "Contrastar antes"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la democracia *se cuida sola*.",
+    "Y *compartir* sin verificar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hacen falta *instituciones fuertes*.",
+    "Memoria, verdad y *justicia*.",
+    "*Información* confiable.",
+    "Y *participación* de todos.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INSTITUCIONES",
+     "fuertes"
+    ],
+    [
+     "PILARES",
+     "memoria, verdad, justicia"
+    ],
+    [
+     "INFORMACIÓN",
+     "verificar"
+    ],
+    [
+     "PARTICIPAR",
+     "entre todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m2-n3",
+ "step_id": "55fbfdeb-3bf9-4eae-8ed3-0ce588bc4269",
+ "materia": "Ciudadanía I",
+ "titulo": "Democracias y dictaduras del siglo XX",
+ "sub": "Ciudadanía I · Misión 2 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Un siglo",
+   "emoji": "⏳",
+   "final": "de democracias y dictaduras",
+   "titulo": "DEMOCRACIAS Y DICTADURAS",
+   "sub": "del siglo XX",
+   "voz": [
+    "El siglo veinte alternó votos y golpes de Estado.",
+    "Muchos países vivieron las dos cosas.",
+    "Hoy: *democracias y dictaduras del siglo veinte*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Golpe de Estado",
+   "texto": "Toma del poder por la fuerza",
+   "emoji": "🪖",
+   "voz": [
+    "Un *golpe de Estado* es tomar el poder por la fuerza.",
+    "Fuera de lo que fija la Constitución."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "QUÉ HACE UN GOLPE",
+   "items": [
+    {
+     "txt": "Toma el poder",
+     "emoji": "🪖"
+    },
+    {
+     "txt": "Cierra el Congreso",
+     "emoji": "🏛️"
+    },
+    {
+     "txt": "Suspende elecciones",
+     "emoji": "🗳️"
+    },
+    {
+     "txt": "Limita derechos",
+     "emoji": "🔒"
+    }
+   ],
+   "voz": [
+    "Cómo avanza un golpe.",
+    "Toma el *poder*.",
+    "Cierra el *Congreso*.",
+    "Suspende las *elecciones*.",
+    "Y limita los *derechos*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TERRORISMO DE ESTADO",
+   "columnas": [
+    "Práctica",
+    "Qué es"
+   ],
+   "filas": [
+    [
+     "Detención ilegal",
+     "Sin orden judicial"
+    ],
+    [
+     "Tortura",
+     "Maltrato"
+    ],
+    [
+     "Desaparición",
+     "Sin noticias"
+    ],
+    [
+     "Censura",
+     "Se prohíbe"
+    ]
+   ],
+   "voz": [
+    "Terrorismo de Estado.",
+    "*Detención ilegal*: sin orden judicial.",
+    "*Tortura*: maltrato.",
+    "*Desaparición forzada*.",
+    "Y *censura*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Memoria",
+   "texto": "Recordar para no repetir",
+   "emoji": "🕯️",
+   "voz": [
+    "La *memoria* es recordar lo ocurrido.",
+    "Ayuda a que no se repita."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Cuando el Estado viola los derechos humanos hay…",
+   "opciones": [
+    "Terrorismo de Estado",
+    "Alternancia",
+    "Participación"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el Estado viola los derechos humanos.",
+    "¿Terrorismo de Estado, alternancia o participación?",
+    "*Terrorismo de Estado*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Dictadura es solo otro gobierno",
+     "bien": "Anula la voluntad del pueblo"
+    },
+    {
+     "mal": "Fueron hechos aislados",
+     "bien": "Fueron sistemáticos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que una dictadura es *solo otro gobierno*.",
+    "Y que las violaciones fueron *hechos aislados*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *golpe de Estado* rompe la democracia.",
+    "Las dictaduras *suspenden* elecciones.",
+    "El *terrorismo de Estado* viola derechos.",
+    "Y la *memoria* ayuda a evitar que se repita.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "GOLPE",
+     "toma el poder"
+    ],
+    [
+     "DICTADURA",
+     "sin elecciones"
+    ],
+    [
+     "TERRORISMO",
+     "viola derechos"
+    ],
+    [
+     "MEMORIA",
+     "no repetir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

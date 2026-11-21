@@ -1,0 +1,179 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m3-n3",
+ "step_id": "1e85d51b-9043-488d-9fb8-f87dc83685fb",
+ "materia": "Ciudadanía I",
+ "titulo": "Organizaciones y movimientos sociales",
+ "sub": "Ciudadanía I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "BARRIO",
+   "titular": "Vecinos arman una cooperativa",
+   "bajada": "Compran juntos y reparten ganancias",
+   "emoji": "🏘️",
+   "titulo": "ORGANIZACIONES",
+   "sub": "y movimientos sociales",
+   "voz": [
+    "Noticia: vecinos arman una cooperativa.",
+    "Compran juntos y reparten ganancias.",
+    "Hoy: *organizaciones y movimientos sociales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Organización social",
+   "texto": "Grupo organizado con un objetivo común",
+   "emoji": "🤝",
+   "voz": [
+    "Una *organización social* es un grupo organizado con un objetivo común.",
+    "Aparece cuando solos no podemos resolver un problema."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TIPOS",
+   "columnas": [
+    "Tipo",
+    "Qué hace"
+   ],
+   "filas": [
+    [
+     "Sindicato",
+     "Defiende trabajadores"
+    ],
+    [
+     "Cooperativa",
+     "Trabajo compartido"
+    ],
+    [
+     "ONG",
+     "Causas sociales"
+    ],
+    [
+     "Centro de estudiantes",
+     "Representa alumnos"
+    ]
+   ],
+   "voz": [
+    "Tipos de organizaciones.",
+    "El *sindicato* defiende a los trabajadores.",
+    "La *cooperativa* comparte el trabajo.",
+    "La *ONG* trabaja una causa.",
+    "Y el *centro de estudiantes* representa a los alumnos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Movimiento social",
+   "texto": "Acción colectiva que reclama cambios",
+   "emoji": "✊",
+   "voz": [
+    "Un *movimiento social* es una acción colectiva sostenida.",
+    "Reclama un cambio."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ORGANIZACIÓN",
+     "emoji": "🤝"
+    },
+    {
+     "cab": "MOVIMIENTO",
+     "emoji": "✊"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sindicato",
+     "caja": 0
+    },
+    {
+     "txt": "Reclamo sostenido",
+     "caja": 1
+    },
+    {
+     "txt": "ONG",
+     "caja": 0
+    },
+    {
+     "txt": "Cambio de leyes",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Organización o movimiento?",
+    "*Sindicato* y *ONG*: organizaciones.",
+    "*Reclamo sostenido* y *cambio de leyes*: movimiento."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué defiende un sindicato?",
+   "opciones": [
+    "Trabajadores",
+    "Alumnos",
+    "Vecinos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué defiende un sindicato?",
+    "¿Trabajadores, alumnos o vecinos?",
+    "A los *trabajadores*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Solo existen para protestar",
+     "bien": "También proponen y ayudan"
+    },
+    {
+     "mal": "Un movimiento dura un día",
+     "bien": "Es sostenido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que existen *solo para protestar*.",
+    "Y que un movimiento *dura un día*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una *organización* tiene un objetivo común.",
+    "Hay *sindicatos*, *ONG* y *cooperativas*.",
+    "Un *movimiento* reclama cambios.",
+    "Y funcionan con *reglas* y diálogo.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORGANIZACIÓN",
+     "objetivo común"
+    ],
+    [
+     "TIPOS",
+     "sindicato, ONG"
+    ],
+    [
+     "MOVIMIENTO",
+     "reclama cambios"
+    ],
+    [
+     "FUNCIONAN",
+     "con reglas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

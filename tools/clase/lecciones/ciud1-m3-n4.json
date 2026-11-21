@@ -1,0 +1,213 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m3-n4",
+ "step_id": "450a5465-9bdc-4dba-b4ab-fc7cfdd02e5a",
+ "materia": "Ciudadanía I",
+ "titulo": "Participación juvenil",
+ "sub": "Ciudadanía I · Misión 3 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "El patio está hecho un desastre 😩"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y si lo proponemos al centro?"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y eso sirve? 🤔"
+    }
+   ],
+   "titulo": "PARTICIPACIÓN JUVENIL",
+   "sub": "en tu escuela",
+   "voz": [
+    "Lu dice que el patio está hecho un desastre.",
+    "Juan: ¿y si lo proponemos al centro de estudiantes?",
+    "Lu: ¿y eso sirve?",
+    "Hoy: *participación juvenil*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Participación juvenil",
+   "texto": "Los jóvenes opinan y deciden",
+   "emoji": "🧑‍🎓",
+   "voz": [
+    "Los jóvenes tienen derecho a *opinar*.",
+    "Y a que su opinión se tenga en cuenta."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ESPACIOS",
+   "columnas": [
+    "Espacio",
+    "Qué hacer"
+   ],
+   "filas": [
+    [
+     "Centro de estudiantes",
+     "Proponer"
+    ],
+    [
+     "Consejos juveniles",
+     "Opinar"
+    ],
+    [
+     "Voluntariado",
+     "Ayudar"
+    ],
+    [
+     "Clubes",
+     "Juntarse"
+    ]
+   ],
+   "voz": [
+    "Dónde participar.",
+    "En el *centro de estudiantes*.",
+    "En *consejos juveniles*.",
+    "En el *voluntariado*.",
+    "Y en *clubes*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UN PROYECTO",
+   "items": [
+    {
+     "txt": "Detectar un problema",
+     "emoji": "🔎"
+    },
+    {
+     "txt": "Escuchar a los afectados",
+     "emoji": "👂"
+    },
+    {
+     "txt": "Proponer acciones",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Evaluar",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Un proyecto en pasos.",
+    "*Detectá* un problema.",
+    "*Escuchá* a los afectados.",
+    "*Proponé* acciones.",
+    "Y *evaluá*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CON CUIDADO",
+     "emoji": "⚠️"
+    },
+    {
+     "cab": "SIN CUIDADO",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Verificar datos",
+     "caja": 0
+    },
+    {
+     "txt": "Pasar tus datos",
+     "caja": 1
+    },
+    {
+     "txt": "Respetar a otros",
+     "caja": 0
+    },
+    {
+     "txt": "Difundir rumores",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "En redes, ¿con cuidado o sin cuidado?",
+    "*Verificar datos* y *respetar*: con cuidado.",
+    "*Pasar tus datos* y *difundir rumores*: sin cuidado."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un proyecto de participación empieza con…",
+   "opciones": [
+    "Un problema real",
+    "Dinero",
+    "Una orden"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un proyecto empieza con...",
+    "¿Un problema real, dinero o una orden?",
+    "Un *problema real*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los jóvenes no pueden participar",
+     "bien": "Tienen derecho"
+    },
+    {
+     "mal": "Hace falta mucho dinero",
+     "bien": "Se empieza con lo cercano"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los jóvenes *no pueden*.",
+    "Y que hace falta *mucho dinero*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los jóvenes tienen *derecho a opinar*.",
+    "Hay *espacios* para participar.",
+    "En redes, *verificá* y respetá.",
+    "Y un proyecto parte de un *problema real*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DERECHO",
+     "opinar"
+    ],
+    [
+     "ESPACIOS",
+     "centros, consejos"
+    ],
+    [
+     "REDES",
+     "con cuidado"
+    ],
+    [
+     "PROYECTO",
+     "problema real"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

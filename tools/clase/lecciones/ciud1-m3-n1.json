@@ -1,0 +1,173 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m3-n1",
+ "step_id": "423aae9f-34bc-4f1a-924d-1a5bdea283b8",
+ "materia": "Ciudadanía I",
+ "titulo": "Formas de participar",
+ "sub": "Ciudadanía I · Misión 3 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Más que votar",
+   "emoji": "🙋",
+   "final": "participar es todo lo que hacemos juntos",
+   "titulo": "FORMAS DE PARTICIPAR",
+   "sub": "social y política",
+   "voz": [
+    "¿Participar es solo votar?",
+    "No: hay muchas formas.",
+    "Hoy: *formas de participar*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Participación",
+   "texto": "Tomar parte en lo común",
+   "emoji": "🙋",
+   "voz": [
+    "La *participación* es tomar parte en las decisiones y acciones de la comunidad.",
+    "Se puede en la escuela, el barrio o internet."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SOCIAL",
+    "texto": "Ayudar a la comunidad",
+    "emoji": "🤲"
+   },
+   "b": {
+    "cab": "POLÍTICA",
+    "texto": "Influir en el gobierno",
+    "emoji": "🗳️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos tipos de participación.",
+    "La *social* ayuda a la comunidad.",
+    "La *política* influye en el gobierno."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SOCIAL",
+     "emoji": "🤲"
+    },
+    {
+     "cab": "POLÍTICA",
+     "emoji": "🗳️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Voluntariado",
+     "caja": 0
+    },
+    {
+     "txt": "Votar",
+     "caja": 1
+    },
+    {
+     "txt": "Cooperadora",
+     "caja": 0
+    },
+    {
+     "txt": "Afiliarse a partido",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Social o política?",
+    "*Voluntariado* y *cooperadora*: social.",
+    "*Votar* y *afiliarse*: política."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "INDIVIDUAL",
+    "texto": "Una persona sola",
+    "emoji": "👤"
+   },
+   "b": {
+    "cab": "COLECTIVA",
+    "texto": "Muchas juntas",
+    "emoji": "👥"
+   },
+   "signo": "vs",
+   "voz": [
+    "Otra diferencia.",
+    "*Individual*: una sola persona.",
+    "*Colectiva*: muchas personas juntas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un comedor barrial es participación…",
+   "opciones": [
+    "Social",
+    "Política",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un comedor barrial.",
+    "¿Social, política o ninguna?",
+    "*Social*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Participar es solo votar",
+     "bien": "Hay muchas formas"
+    },
+    {
+     "mal": "Es cosa de adultos",
+     "bien": "Es de todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que participar es *solo votar*.",
+    "Y que es *cosa de adultos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Participar es *tomar parte*.",
+    "Puede ser *social* o *política*.",
+    "*Individual* o *colectiva*.",
+    "Y *fortalece* la democracia.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTICIPAR",
+     "tomar parte"
+    ],
+    [
+     "TIPOS",
+     "social y política"
+    ],
+    [
+     "MODOS",
+     "individual, colectiva"
+    ],
+    [
+     "IMPORTA",
+     "democracia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
