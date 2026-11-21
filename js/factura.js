@@ -23,7 +23,6 @@
       '.pie{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-top:1px solid #111;font-size:13px}.aviso{background:#B3261E;color:#fff;text-align:center;font-weight:700;padding:7px;font-size:12px}' +
       '@media print{body{background:#fff}.barra{display:none}.hoja{margin:0;width:auto}}</style></head><body>' +
       '<div class="barra"><button onclick="window.print()">Imprimir o guardar como PDF</button></div><div class="hoja">' +
-      (fiscal ? '' : '<div class="aviso">COMPROBANTE SIN VALIDEZ FISCAL · todavía no emitido en ARCA</div>') +
       '<div class="orig">ORIGINAL</div><div class="cab"><div><h1>' + esc(e.razon_social || 'Wave Academy') + '</h1>' + fila('Razón social:', e.razon_social) + fila('Domicilio comercial:', e.domicilio) + fila('Condición frente al IVA:', e.condicion || 'Responsable Monotributo') + '</div>' +
       '<div class="letra"><b>C</b><small>COD. 011</small></div><div><h1>FACTURA</h1>' + fila('Punto de venta:', pad(f.punto_venta, 5) + '  Comp. Nro: ' + pad(f.numero, 8)) + fila('Fecha de emisión:', dmy(f.fecha)) + fila('CUIT:', e.cuit) + fila('Ingresos Brutos:', e.iibb) + fila('Fecha de inicio de actividades:', e.inicio_actividades ? dmy(e.inicio_actividades) : '') + '</div></div>' +
       '<div class="per"><b>Período facturado Desde:</b> ' + dmy(f.fecha) + ' &nbsp; <b>Hasta:</b> ' + dmy(f.fecha) + ' &nbsp; <b>Fecha de Vto. para el pago:</b> ' + dmy(f.fecha) + '</div>' +

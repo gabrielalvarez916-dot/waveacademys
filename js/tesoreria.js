@@ -190,22 +190,28 @@
     }).join('') + '</tbody></table></div>' : '<div class="te-vacio">Todavía no hay alumnos.</div>');
   }
 
-  // ---------- Datos de transferencia ----------
-  async function vistaTransferencia() {
-    var rf = await sb.rpc('datos_facturacion'), df = rf.data || {}, rb = await sb.rpc('bloqueo_mora_activo'), r = await sb.rpc('datos_transferencia'), d = r.data || {};
-    vista.innerHTML = '<h1 class="vista-titulo">Datos de transferencia</h1><p class="te-nota">Esto es lo que ven las familias en su sección Pagos.</p>' +
-      '<form id="te-tf" class="te-form una"><label>Banco o billetera<input name="banco" maxlength="80" value="' + esc(d.banco) + '"></label><label>Titular de la cuenta<input name="titular" maxlength="120" value="' + esc(d.titular) + '"></label>' +
-      '<label>CUIT/CUIL<input name="cuit" maxlength="20" value="' + esc(d.cuit) + '"></label><label>CBU/CVU<input name="cbu" maxlength="30" value="' + esc(d.cbu) + '"></label><label>Alias<input name="alias" maxlength="40" value="' + esc(d.alias) + '"></label>' +
-      '<label>Nota para las familias (opcional)<input name="nota" maxlength="300" value="' + esc(d.nota) + '" placeholder="Ej: poné el apellido de la familia en el concepto"></label><button class="te-btn principal" type="submit">Guardar</button></form>' +
-      '<h2 class="te-sub">Datos fiscales para las facturas</h2><form id="te-fisc" class="te-form una"><label>Razón social / nombre<input name="razon_social" maxlength="120" value="' + esc(df.razon_social) + '"></label><label>CUIT<input name="cuit" maxlength="20" value="' + esc(df.cuit) + '"></label>' +
+  // ---------- Datos fiscales ----------
+  async function vistaFiscales() {
+    var rf = await sb.rpc('datos_facturacion'), df = rf.data || {};
+    vista.innerHTML = '<h1 class="vista-titulo">Datos fiscales</h1><p class="te-nota">Aparecen en las facturas que reciben las familias.</p>' +
+      '<form id="te-fisc" class="te-form una"><label>Razón social / nombre<input name="razon_social" maxlength="120" value="' + esc(df.razon_social) + '"></label><label>CUIT<input name="cuit" maxlength="20" value="' + esc(df.cuit) + '"></label>' +
       '<label>Domicilio comercial<input name="domicilio" maxlength="200" value="' + esc(df.domicilio) + '"></label><label>Condición frente al IVA<input name="condicion" maxlength="60" value="' + esc(df.condicion || 'Responsable Monotributo') + '"></label>' +
       '<label>Ingresos Brutos<input name="iibb" maxlength="30" value="' + esc(df.iibb) + '"></label><label>Inicio de actividades<input name="inicio_actividades" type="date" value="' + esc(df.inicio_actividades) + '"></label>' +
       '<label>Punto de venta<input name="punto_venta" type="number" min="1" value="' + esc(df.punto_venta || 1) + '"></label>' +
       '<label style="grid-auto-flow:column;justify-content:start;align-items:center;gap:10px"><input name="arca_activo" type="checkbox" style="width:auto;min-height:0"' + (df.arca_activo ? ' checked' : '') + '> Facturar de verdad con ARCA</label>' +
-      '<p class="te-nota">Todavía no está conectada a ARCA: hasta que se conecte, las facturas salen como comprobante sin validez fiscal. Este botón queda guardado para cuando hagamos la conexión.</p><button class="te-btn principal" type="submit">Guardar datos fiscales</button></form>' +
+      '<p class="te-nota">Todavía no está conectada a ARCA: hasta que se conecte, las facturas salen como comprobante sin validez fiscal. Este botón queda guardado para cuando hagamos la conexión.</p><button class="te-btn principal" type="submit">Guardar datos fiscales</button></form>';
+    document.getElementById('te-fisc').onsubmit = async function (ev) { ev.preventDefault(); var f = ev.target; var x = await sb.rpc('guardar_datos_facturacion', { p: { razon_social: f.razon_social.value, cuit: f.cuit.value, domicilio: f.domicilio.value, condicion: f.condicion.value, iibb: f.iibb.value, inicio_actividades: f.inicio_actividades.value, punto_venta: +f.punto_venta.value || 1, arca_activo: f.arca_activo.checked } }); toast(x.error ? 'No se pudo guardar' : 'Datos fiscales guardados', !!x.error); };
+  }
+
+  // ---------- Datos de transferencia ----------
+  async function vistaTransferencia() {
+    var rb = await sb.rpc('bloqueo_mora_activo'), r = await sb.rpc('datos_transferencia'), d = r.data || {};
+    vista.innerHTML = '<h1 class="vista-titulo">Datos de transferencia</h1><p class="te-nota">Esto es lo que ven las familias en su sección Pagos.</p>' +
+      '<form id="te-tf" class="te-form una"><label>Banco o billetera<input name="banco" maxlength="80" value="' + esc(d.banco) + '"></label><label>Titular de la cuenta<input name="titular" maxlength="120" value="' + esc(d.titular) + '"></label>' +
+      '<label>CUIT/CUIL<input name="cuit" maxlength="20" value="' + esc(d.cuit) + '"></label><label>CBU/CVU<input name="cbu" maxlength="30" value="' + esc(d.cbu) + '"></label><label>Alias<input name="alias" maxlength="40" value="' + esc(d.alias) + '"></label>' +
+      '<label>Nota para las familias (opcional)<input name="nota" maxlength="300" value="' + esc(d.nota) + '" placeholder="Ej: poné el apellido de la familia en el concepto"></label><button class="te-btn principal" type="submit">Guardar</button></form>' +
       '<h2 class="te-sub">Bloqueo por mora</h2><div class="te-form una"><label style="grid-auto-flow:column;justify-content:start;align-items:center;gap:10px"><input id="te-bloq" type="checkbox" style="width:auto;min-height:0"' + (rb.data === true ? ' checked' : '') + '> Bloquear el acceso de los alumnos cuando la familia pasa el plazo de gracia</label>' +
       '<p class="te-nota">La cuota vence el 10. Pasado el 10 la familia figura atrasada; cuando terminan los días de gracia (hoy 15) figura bloqueada. Con esto activado, los alumnos de familias bloqueadas no pueden entrar hasta regularizar. Está apagado por defecto: activalo cuando ya estén cargados los datos de transferencia y las cuotas reales.</p></div>';
-    document.getElementById('te-fisc').onsubmit = async function (ev) { ev.preventDefault(); var f = ev.target; var x = await sb.rpc('guardar_datos_facturacion', { p: { razon_social: f.razon_social.value, cuit: f.cuit.value, domicilio: f.domicilio.value, condicion: f.condicion.value, iibb: f.iibb.value, inicio_actividades: f.inicio_actividades.value, punto_venta: +f.punto_venta.value || 1, arca_activo: f.arca_activo.checked } }); toast(x.error ? 'No se pudo guardar' : 'Datos fiscales guardados', !!x.error); };
     document.getElementById('te-bloq').onchange = async function () { var x = await sb.rpc('guardar_bloqueo_mora', { p_activo: this.checked }); toast(x.error ? 'No se pudo guardar' : this.checked ? 'Bloqueo por mora activado' : 'Bloqueo por mora desactivado', !!x.error); };
     document.getElementById('te-tf').onsubmit = async function (ev) {
       ev.preventDefault(); var f = ev.target, x = await sb.rpc('guardar_datos_transferencia', { p: { banco: f.banco.value, titular: f.titular.value, cuit: f.cuit.value, cbu: f.cbu.value, alias: f.alias.value, nota: f.nota.value } });
@@ -231,7 +237,7 @@
     }
   });
 
-  var VISTAS = { cuotas: vistaCuotas, comprobantes: vistaComprobantes, finanzas: vistaFinanzas, proyeccion: vistaProyeccion, facturas: vistaFacturas, altas: vistaAltas, transferencia: vistaTransferencia };
+  var VISTAS = { cuotas: vistaCuotas, comprobantes: vistaComprobantes, finanzas: vistaFinanzas, proyeccion: vistaProyeccion, facturas: vistaFacturas, fiscales: vistaFiscales, altas: vistaAltas, transferencia: vistaTransferencia };
   function ruta() {
     var h = (location.hash || '#cuotas').slice(1); if (!VISTAS[h]) h = 'cuotas';
     enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#' + h); });
