@@ -826,6 +826,33 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     B(2); if (ag) { tl.set(cambian, { opacity: 1, y: 0 }, '>+0.05'); w.OUT(tl, nA, '>'); w.OUT(tl, nB, '<'); w.IN(tl, cA, '>'); w.IN(tl, cB, '<'); }
     w.IN(tl, ig, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (cap) w.IN(tl, cap, '<.2');
   } };
+  // juntar: {a:{emoji, n}, b:{emoji, n}, texto} (a + b ≤ 10) — 3 pasos: dos grupos con su número y el + · se juntan en una sola caja · el total y el texto ("3 + 2 = 5")
+  T.juntar = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var na = d.a.n, nb = d.b.n, tot = na + nb;
+    function grupo(e, n, cx) { var p = w.pieza(g, cx, 520); w.caja(p, 0, 0, 600, 420, 'rgba(127,211,196,.08)', C.linea, 40, 5); return { caja: p, O: coleccion(g, e, n, cx, 520, 520, 340, 140) }; }
+    var GA = grupo(d.a.emoji, na, 520), GB = grupo(d.b.emoji, nb, 1400);
+    function num(cx, y, v, r) { var q = w.pieza(g, cx, y); w.el('circle', { r: r || 58, fill: C.sol }, q); w.txt(q, 0, 4, String(v), (r || 58) * 1.1, '#3a2a00'); return q; }
+    var nA = num(520, 800, na), nB = num(1400, 800, nb), mas = w.pieza(g, 960, 520); w.txt(mas, 0, 0, '+', 170, C.sol, { filter: 'url(#brillo)' });
+    var grande = w.pieza(g, 960, 520); w.caja(grande, 0, 0, 1300, 440, 'rgba(255,214,102,.08)', C.sol, 44, 6);
+    var O = GA.O.concat(GB.O), cols = tot > 5 ? Math.ceil(tot / 2) : tot, paso = Math.min(170, 1150 / cols), P = w.rejilla(tot, 960, 520, paso, paso, cols);
+    var nT = num(960, 830, tot, 70), cap = d.texto ? w.chip(g, 960, 250, Math.min(1500, d.texto.length * 32 + 140), 90, d.texto, { size: 46, stroke: C.verde, r: 32 }) : null;
+    B(0); w.IN(tl, GA.caja, 0); w.IN(tl, GB.caja, '<'); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.05' : '>-.2', { scale: 0, y: 0, ease: 'back.out(2)', d: .4 }); }); w.IN(tl, nA, '>'); w.IN(tl, nB, '<'); w.IN(tl, mas, '<.1', { scale: 0, y: 0 });
+    B(1); w.OUT(tl, GA.caja, 0); w.OUT(tl, GB.caja, '<'); w.OUT(tl, nA, '<'); w.OUT(tl, nB, '<'); w.OUT(tl, mas, '<'); w.IN(tl, grande, '>-.1', { scale: .8, y: 0 });
+    O.forEach(function (o, k) { tl.to(o, { x: P[k][0] - o.px, y: P[k][1] - o.py, duration: .6, ease: 'power2.inOut' }, k ? '<.04' : '>-.3'); });
+    B(2); w.IN(tl, nT, 0, { scale: .3, y: 0, ease: 'back.out(2.5)' }); if (cap) w.IN(tl, cap, '<.2');
+  } };
+  // agregar: {emoji, n, mas, texto} (n + mas ≤ 10) — 3 pasos: el grupo con su número · llegan los nuevos (cada uno cae cuando la voz cuenta su número: "4, 5") · el total y el texto
+  T.agregar = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var n = d.n, tot = n + d.mas, caja = w.pieza(g, 960, 520); w.caja(caja, 0, 0, 1300, 440, 'rgba(127,211,196,.08)', C.linea, 44, 5);
+    var O = coleccion(g, d.emoji, tot, 960, 520, 1150, 360, 160), viejos = O.slice(0, n), nuevos = O.slice(n);
+    function num(v, r) { var q = w.pieza(g, 960, 830); w.el('circle', { r: r, fill: C.sol }, q); w.txt(q, 0, 4, String(v), r * 1.1, '#3a2a00'); return q; }
+    var nI = num(n, 58), nT = num(tot, 70), cap = d.texto ? w.chip(g, 960, 250, Math.min(1500, d.texto.length * 32 + 140), 90, d.texto, { size: 46, stroke: C.verde, r: 32 }) : null;
+    B(0); w.IN(tl, caja, 0); viejos.forEach(function (o, k) { w.IN(tl, o, k ? '<.06' : '>-.2', { scale: 0, y: 0, ease: 'back.out(2)', d: .4 }); }); w.IN(tl, nI, '>');
+    var cayo = {}; g.alDecir = function (p, paso) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); if (paso !== 1 || !(v > n && v <= tot) || cayo[v]) return; cayo[v] = 1;
+      gsap.fromTo(O[v - 1], { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: .6, ease: 'bounce.out' }); };
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(nuevos, { opacity: 1, y: 0 }, '>+0.05'); w.OUT(tl, nI, '>'); w.IN(tl, nT, '>', { scale: .3, y: 0, ease: 'back.out(2.5)' }); if (cap) w.IN(tl, cap, '<.2');
+  } };
   function numDe(p) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); return isFinite(v) ? v : null; }
   // tren: {desde, hasta, paso (1 por defecto; 10 o 100 para contar de 10 en 10 o de 100 en 100), faltan:[números], titulo} (hasta 10 vagones) — 3 pasos: llega el tren · cada vagón se ilumina cuando la voz dice su número · aparecen los que faltaban
   T.tren = { n: function () { return 3; }, armar: function (g, tl, B, d) {
