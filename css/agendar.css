@@ -1,0 +1,50 @@
+/* Página pública para agendar la entrevista de admisión */
+.ag-body { background: var(--menta); min-height: 100vh; }
+.ag-cab { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px max(20px, calc((100vw - 1100px) / 2)); background: #FFFFFF; }
+.ag-logo img { height: 64px; width: auto; }
+.ag-volver { font-weight: 700; text-decoration: none; color: var(--petroleo); }
+.ag-volver:hover { color: var(--turquesa); }
+.ag-main { max-width: 760px; margin: 0 auto; padding: 36px 20px 80px; }
+.ag-card { background: #FFFFFF; border-radius: 24px; padding: 32px; box-shadow: 0 18px 50px -24px rgba(22,57,59,.35); }
+.ag-card + .ag-card { margin-top: 20px; }
+.ag-titulo { font-family: var(--d); font-weight: 800; font-stretch: 92%; font-size: 2.4em; line-height: 1; letter-spacing: -0.03em; margin: 0 0 12px; color: var(--petroleo); }
+.ag-intro { margin: 0 0 24px; color: var(--texto); line-height: 1.55; }
+.ag-sub { margin: 24px 0 10px; font-size: 1.05em; font-weight: 800; color: var(--petroleo); }
+.ag-dias { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+.ag-dia { flex: 0 0 auto; min-width: 74px; padding: 10px 12px; border-radius: 16px; border: 1.5px solid var(--borde); background: #FFFFFF; color: var(--petroleo); font: inherit; text-align: center; cursor: pointer; line-height: 1.2; }
+.ag-dia small { display: block; text-transform: capitalize; color: var(--suave); }
+.ag-dia b { font-size: 1.35em; }
+.ag-dia.on { background: var(--petroleo); border-color: var(--petroleo); color: #FFFFFF; }
+.ag-dia.on small { color: var(--menta-2); }
+.ag-horas { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.ag-hora { padding: 12px 8px; border-radius: 14px; border: 1.5px solid var(--turquesa); background: #FFFFFF; color: var(--turquesa); font: inherit; font-weight: 700; cursor: pointer; }
+.ag-hora:hover { background: var(--menta); }
+.ag-hora.on { background: var(--turquesa); color: #FFFFFF; }
+.ag-elegido { margin: 18px 0 0; padding: 14px 16px; border-radius: 14px; background: var(--menta); color: var(--petroleo); }
+.ag-form { display: grid; gap: 14px; margin-top: 6px; }
+.ag-form label { display: grid; gap: 6px; font-weight: 700; color: var(--petroleo); }
+.ag-form input, .ag-form textarea { width: 100%; padding: 13px 14px; border-radius: 14px; border: 1.5px solid var(--borde); font: inherit; color: var(--petroleo); background: #FFFFFF; }
+.ag-form input:focus, .ag-form textarea:focus { outline: none; border-color: var(--turquesa); box-shadow: 0 0 0 3px rgba(8,126,131,.18); }
+.ag-form textarea { min-height: 84px; resize: vertical; }
+.ag-ayuda { font-weight: 400; font-size: .88em; color: var(--suave); }
+.ag-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.ag-err { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; background: #F8E6E1; color: #8F3326; }
+.ag-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.ag-acciones .btn { min-height: 50px; }
+.ag-btn-sec { background: transparent; border: 1.5px solid var(--petroleo); color: var(--petroleo); }
+.ag-btn-sec:hover { background: var(--menta); color: var(--petroleo); }
+.ag-btn-peligro { background: transparent; border: 1.5px solid #8F3326; color: #8F3326; }
+.ag-btn-peligro:hover { background: #F8E6E1; color: #8F3326; }
+.ag-dato { margin: 0 0 6px; }
+.ag-ok { display: inline-block; margin-bottom: 10px; padding: 6px 14px; border-radius: 999px; background: var(--menta); color: var(--turquesa-osc); font-weight: 800; }
+.ag-link { display: flex; gap: 8px; align-items: stretch; margin-top: 8px; }
+.ag-link input { flex: 1; min-width: 0; padding: 12px; border-radius: 12px; border: 1.5px solid var(--borde); font: inherit; font-size: .9em; background: #F7FBFA; }
+.ag-nota { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: #FBF3E0; color: #6B5320; line-height: 1.5; }
+.ag-cargando { text-align: center; color: var(--suave); padding: 40px 0; }
+@media (max-width: 600px) {
+  .ag-card { padding: 22px 18px; border-radius: 20px; }
+  .ag-titulo { font-size: 1.9em; }
+  .ag-logo img { height: 52px; }
+  .ag-link { flex-direction: column; }
+  .ag-acciones .btn { flex: 1 1 100%; }
+}

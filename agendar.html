@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#087E83">
+  <title>Wave Academy · Agendá tu entrevista</title>
+  <meta name="description" content="Elegí un día y un horario para una videollamada con la dirección de Wave Academy.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/sitio.css?v=11211310">
+  <link rel="stylesheet" href="/css/agendar.css?v=11211310">
+</head>
+<body class="ag-body">
+  <header class="ag-cab">
+    <a href="/" class="ag-logo" aria-label="Wave Academy, volver al inicio"><img src="/assets/logo.png" alt="Wave Academy's"></a>
+    <a href="/" class="ag-volver">Volver al sitio</a>
+  </header>
+  <main class="ag-main" id="ag-main">
+    <p class="ag-cargando">Cargando horarios…</p>
+    <noscript><p>Para agendar necesitás activar JavaScript. También podés escribirnos por <a href="https://wa.me/5493447519836">WhatsApp</a>.</p></noscript>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js?v=11131315"></script>
+  <script src="/js/agendar.js?v=11211310"></script>
+</body>
+</html>
