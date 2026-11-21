@@ -27,3 +27,7 @@ jobs:
         env:
           WAVE_GEN_TOKEN: ${{ secrets.WAVE_GEN_TOKEN }}
         run: python tools/pdf/generar.py
+      - name: Publicar misiones completas (solo Nivel Avanzado)
+        if: always()
+        env: { WAVE_GEN_TOKEN: '${{ secrets.WAVE_GEN_TOKEN }}' }
+        run: python tools/publicar_avanzado.py

@@ -42,3 +42,6 @@ jobs:
       - name: Armar y subir los PDF
         if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
         run: python tools/medio/pdf/generar.py ${{ steps.cuales.outputs.lista }}
+      - name: Publicar misiones completas (solo Nivel Medio)
+        if: env.MEDIO_TOKEN != ''
+        run: python tools/medio/publicar.py

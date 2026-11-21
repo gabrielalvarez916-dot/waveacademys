@@ -9,7 +9,7 @@
 3. Subir a `main`. GitHub hace el resto solo, sin que nadie toque nada:
    - **Voz de las clases del NIVEL MEDIO** (`voz-clases-medio.yml`): graba la voz, arma el HTML y carga cada clase en su lección (`cargar_clase_medio`).
    - **Misiones del NIVEL MEDIO** (`mision-medio.yml`): carga actividades, Relámpago y examen (`cargar_mision_medio`) y arma y sube los PDF argentino y neutro (`pdf-medio`).
-4. Todo queda **sin publicar**, para revisar y publicar desde Contenidos.
+4. Cuando la misión queda **completa** (4 clases, 4 PDF, Relámpago y examen) **se publica sola** (`tools/medio/publicar.py` → `publicar_completas_medio`). Nunca despublica.
 
 Separación con el Avanzado: esta máquina no usa ni modifica nada de `tools/clase`, `tools/pdf`, `tools/neutro.py`, `fabrica-pdf`, `cargar_mision` ni `cargar_clase`, y sus funciones de la base rechazan cualquier materia que no sea del Nivel Medio. Secreto de GitHub: `MEDIO_TOKEN` (= `gen_config.medio_token`).
 

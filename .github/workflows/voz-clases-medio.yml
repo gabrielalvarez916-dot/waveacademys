@@ -33,6 +33,9 @@ jobs:
       - name: Cargar en la plataforma (solo Nivel Medio)
         if: env.MEDIO_TOKEN != ''
         run: python tools/medio/clase/cargar.py $(ls tools/medio/clase/dist | sed 's/\.html$//')
+      - name: Publicar misiones completas (solo Nivel Medio)
+        if: env.MEDIO_TOKEN != ''
+        run: python tools/medio/publicar.py
       - name: Seguir si quedaron voces sin grabar
         if: hashFiles('tools/medio/clase/voz/.pendiente') != ''
         env: { GH_TOKEN: '${{ github.token }}' }

@@ -1,0 +1,7 @@
+-- Publicación automática de misiones COMPLETAS (aplicado en Supabase como migración "publicar_misiones_completas").
+-- Una función por máquina, cada una con su clave y solo para su nivel:
+--   publicar_completas_medio(medio_token)  -> Nivel Medio    (tools/medio/publicar.py)
+--   publicar_completas_avanzado(token)     -> Nivel Avanzado (tools/publicar_avanzado.py)
+-- Completa = lecciones 1 a 4 con clase (o video) y PDF, lección 5 (práctica) y examen con preguntas.
+-- Publica la misión, todas sus lecciones y su examen. Nunca despublica nada.
+-- (Código completo en la migración; helpers en el esquema private: mision_completa, publicar_completas_de.)

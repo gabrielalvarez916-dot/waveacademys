@@ -36,6 +36,9 @@ jobs:
           git add tools/clase/voz tools/clase/dist actividades/clases
           git diff --cached --quiet || git commit -m "Voz de clases animadas (automático)"
           for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
+      - name: Publicar misiones completas (solo Nivel Avanzado)
+        env: { WAVE_GEN_TOKEN: '${{ secrets.WAVE_GEN_TOKEN }}' }
+        run: python tools/publicar_avanzado.py
       - name: Seguir si quedaron voces sin grabar (tope de tiempo por corrida)
         if: hashFiles('tools/clase/voz/.pendiente') != ''
         env: { GH_TOKEN: '${{ github.token }}' }
