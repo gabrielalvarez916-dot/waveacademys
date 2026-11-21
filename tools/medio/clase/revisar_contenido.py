@@ -37,10 +37,44 @@ for slug in args:
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')
     if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == 'TU TURNO' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
         E(slug, 'nivel de producción sin escena "TU TURNO" que diga la tarea concreta')
+# VARIEDAD DEL BANCO DE FORMATOS (regla del Nivel Medio, ver GUIA.md «Variedad»): las clases van rotando las plantillas del banco
+_BASICAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'tabla', 'clasificar', 'pasos', 'consejo', 'frase'}
+_GANCHOS = {'gancho', 'historia', 'chat', 'noticia', 'reto'}
+def _escenas(s):
+    p = os.path.join(AQUI, 'lecciones', s + '.json')
+    return [e.get('t') for e in json.load(open(p, encoding='utf-8'))['escenas']] if os.path.exists(p) else None
+_secs = {s: _escenas(s) for s in args if not s.endswith('.neutro')}
+for _s, _ts in _secs.items():
+    if _ts and len({t for t in _ts if t not in _BASICAS}) < 2: E(_s, 'poca variedad: usar al menos 2 formatos distintos del banco fuera de los básicos')
+_grupos = {}
+for _s, _ts in _secs.items():
+    if _ts: _grupos.setdefault(re.sub(r'-n\d+$', '', _s), []).append((_s, _ts))
+for _g, _l in _grupos.items():
+    _l.sort()
+    if len(_l) >= 3:
+        _cont = {}
+        for _s, _ts in _l:
+            for t in set(_ts):
+                if t not in _BASICAS: _cont.setdefault(t, []).append(_s)
+        for t, ss in _cont.items():
+            if len(ss) > 3: E(_g, f'formato «{t}» en {len(ss)} clases de la misión (máximo 3 de 4): variar con otros del banco')
+        if len({tuple(ts) for _, ts in _l}) < len(_l): E(_g, 'dos clases tienen exactamente la misma secuencia de escenas')
+    for (s1, t1), (s2, t2) in zip(_l, _l[1:]):
+        if t1[0] in _GANCHOS and t1[0] == t2[0]: E(s2, f'el gancho «{t2[0]}» repite el de la clase anterior: rotar gancho, historia, chat, noticia y reto')
+    # contra la misión anterior de la misma materia: la misión nueva tiene que sumar formatos y no copiar moldes
+    _m = re.match(r'(.*-m)(\d+)$', _g)
+    if _m and int(_m.group(2)) > 1:
+        _prev = [(_escenas(f'{_m.group(1)}{int(_m.group(2)) - 1}-n{k}')) for k in range(1, 5)]
+        if all(_prev):
+            usados = {t for ts in _prev for t in ts if t not in _BASICAS}
+            nuevos = {t for _, ts in _l for t in ts if t not in _BASICAS} - usados
+            if not nuevos: E(_g, 'no suma ningún formato del banco que no estuviera en la misión anterior: incorporar al menos uno nuevo')
+            for k, (_s, _ts) in enumerate(_l):
+                if k < 4 and _ts == _prev[k]: E(_s, 'misma secuencia de escenas que el mismo nivel de la misión anterior')
 if mis:
     for n, c in mis['niveles'].items():
         s = f'mision {mis["tema"]} nivel {n}'
-        tx = re.sub(r'(Revolución|Plaza|Avenida) de Mayo|\d+ de (diciembre|junio|marzo|septiembre)|Julio Verne', '', ' '.join(textos(c)))
+        tx =re.sub(r'(Revolución|Plaza|Avenida) de Mayo|\d+ de (diciembre|junio|marzo|septiembre)|Julio Verne', '', ' '.join(textos(c)))
         if re.search(MESES, tx, re.I): E(s, 'el PDF nombra meses')
         if 'en tu carpeta' in (c.get('ejemplo_solo') or {}).get('planteo', '') and any(q.get('t') == 'keywords' for q in mis['act'].get(n, [])): E(s, 'la producción se manda "a la carpeta": tiene que ir a la actividad del nivel')
     for n, acts in mis['act'].items():

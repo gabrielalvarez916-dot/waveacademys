@@ -5,7 +5,7 @@
 1. Carpeta `contenido/medio/<materia>/mision-N/` con dos scripts:
    - `mision.py` → `mision-N.json`: los 4 PDF (con dibujos), actividades, Relámpago y examen. Lleva `subject_id` y `tema`.
    - `clases.py` → `tools/medio/clase/lecciones/<slug>.json`: las 4 clases animadas (con el `step_id` del paso de video de cada nivel). Imprime una línea por clase que empieza con su slug.
-2. `bash tools/medio/controlar.sh contenido/medio/<materia>/mision-N` → arma y pasa todos los controles. Si marca algo, se corrige.
+2. `bash tools/medio/controlar.sh contenido/medio/<materia>/mision-N` → arma y pasa todos los controles (incluida la **variedad del banco de formatos**, ver «Variedad»). Si marca algo, se corrige.
 3. Subir a `main`. GitHub hace el resto solo, sin que nadie toque nada:
    - **Voz de las clases del NIVEL MEDIO** (`voz-clases-medio.yml`): graba la voz, arma el HTML y carga cada clase en su lección (`cargar_clase_medio`).
    - **Misiones del NIVEL MEDIO** (`mision-medio.yml`): carga actividades, Relámpago y examen (`cargar_mision_medio`) y arma y sube los PDF argentino y neutro (`pdf-medio`).
@@ -37,6 +37,16 @@ Una lección = **un archivo** `tools/medio/clase/lecciones/<slug>.json`. Al subi
 5. Momento sorpresa (algo se rompe, cambia o explota) cerca de la mitad.
 6. Cierre: errores comunes → resumen → "¡a practicar!".
 7. De 8 a 14 escenas (4 a 7 minutos).
+
+## Variedad: ir rotando el banco de formatos (regla fija del Nivel Medio)
+
+Las clases no pueden salir todas con el mismo molde: se van variando los formatos del banco (tabla de abajo). `revisar_contenido.py` lo controla y `controlar.sh` no deja subir si no se cumple.
+
+1. **Cada clase** usa al menos **2 formatos distintos del banco** fuera de los básicos (básicos: pregunta, resumen, errores, definicion, consejo, frase, portada, tabla, clasificar, pasos y los ganchos).
+2. **En una misión**, un mismo formato (fuera de los básicos) aparece como máximo en **3 de las 4 clases**, y no puede haber dos clases con la **misma secuencia** de escenas.
+3. **Ganchos rotando**: el gancho de una clase no puede ser del mismo tipo que el de la clase anterior (gancho, historia, chat, noticia, reto).
+4. **Contra la misión anterior** de la misma materia: cada misión nueva **suma al menos un formato del banco** que no estaba en la anterior, y ningún nivel repite la secuencia de escenas del mismo nivel de la misión anterior.
+5. Si el tema pide un dibujo que el banco no tiene, se crea una plantilla nueva (en `motor/t-mate.js` u otro), se suma a la tabla de abajo y queda disponible para todas las materias del Nivel Medio.
 
 ## Banco de plantillas (pasos = frases de `voz`)
 
