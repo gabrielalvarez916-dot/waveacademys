@@ -22,7 +22,8 @@
   },
   {
    "t": "cuadro",
-   "hasta": 100,
+   "desde": 0,
+   "hasta": 99,
    "titulo": "LA COLUMNA DEL 3",
    "voz": [
     "Mirá la columna del 3.",
@@ -32,7 +33,8 @@
   },
   {
    "t": "cuadro",
-   "hasta": 100,
+   "desde": 0,
+   "hasta": 99,
    "titulo": "LA FILA DEL 40",
    "voz": [
     "Ahora mirá la fila del 40.",
@@ -42,7 +44,8 @@
   },
   {
    "t": "cuadro",
-   "hasta": 100,
+   "desde": 0,
+   "hasta": 99,
    "faltan": [
     36,
     64,

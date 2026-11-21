@@ -132,7 +132,7 @@ N4 = {**ESTILO,
 "ojo": ["El anterior va antes, el siguiente después.", "Mayor es el que está más lejos del 0."],
 "resumen": [{"titulo": "Anterior", "texto": "El que va antes."}, {"titulo": "Siguiente", "texto": "El que va después."}, {"titulo": "Mayor", "texto": "Más lejos del 0."}],
 "glosario": [{"palabra": "Anterior", "significado": "El número que va antes."}, {"palabra": "Siguiente", "significado": "El número que va después."}],
-"carpeta": ["¿Qué número falta en el primer vagón con ?", "¿Qué número falta en el segundo vagón con ?", "¿Cuál es mayor: 16 o 13?"],
+"carpeta": ["¿Qué número falta en el primer vagón vacío?", "¿Qué número falta en el segundo vagón vacío?", "¿Cuál es mayor: 16 o 13?"],
 "respuestas_carpeta": [["15"], ["19"], ["16"]],
 "soluciones": {"incompleto": "16. 18.", "solo": "11, 15, 19.", "carpeta": ["15: va entre 14 y 16.", "19: va entre 18 y 20.", "16: está más lejos del 0."]},
 }

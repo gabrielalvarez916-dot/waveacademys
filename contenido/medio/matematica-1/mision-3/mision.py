@@ -39,7 +39,7 @@ N1 = {**ESTILO,
 "ojo": ["Después del 29 viene el 30.", "Después del 19 viene el 20."],
 "resumen": [{"titulo": "Hasta 30", "texto": "En orden."}, {"titulo": "Filas", "texto": "De a 10."}, {"titulo": "Del 20 al 29", "texto": "Empiezan con 2."}],
 "glosario": [{"palabra": "Fila", "significado": "Números uno al lado del otro."}, {"palabra": "Veinte", "significado": "El número 20."}],
-"carpeta": ["¿Qué número falta en el primer vagón con ?", "¿Qué número falta en el segundo vagón con ?", "¿Qué número viene después del 29?"],
+"carpeta": ["¿Qué número falta en el primer vagón vacío?", "¿Qué número falta en el segundo vagón vacío?", "¿Qué número viene después del 29?"],
 "respuestas_carpeta": [["24"], ["29"], ["30"]],
 "soluciones": {"incompleto": "28. 20.", "solo": "15, 16, 17… 30.", "carpeta": ["24.", "29.", "30."]},
 }

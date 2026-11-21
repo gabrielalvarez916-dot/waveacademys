@@ -132,7 +132,7 @@ N4 = {**ESTILO,
 "ojo": ["Para atrás, el número achica.", "Más a la derecha es más grande."],
 "resumen": [{"titulo": "La recta", "texto": "Números en orden."}, {"titulo": "Derecha", "texto": "Más grande."}, {"titulo": "Saltos", "texto": "Adelante o atrás."}],
 "glosario": [{"palabra": "Recta numérica", "significado": "Una línea con los números en orden."}, {"palabra": "Saltar", "significado": "Moverse en la recta."}],
-"carpeta": ["¿Qué número está marcado con ? en la recta?", "Si estás en el 4 y saltás 3, ¿a qué número llegás?", "¿Cuál está más a la derecha: 29 o 92?"],
+"carpeta": ["¿Qué número va en el lugar del signo de pregunta en la recta?", "Si estás en el 4 y saltás 3, ¿a qué número llegás?", "¿Cuál está más a la derecha: 29 o 92?"],
 "respuestas_carpeta": [["46"], ["7"], ["92"]],
 "soluciones": {"incompleto": "10. 10.", "solo": "92.", "carpeta": ["46.", "7.", "92."]},
 }

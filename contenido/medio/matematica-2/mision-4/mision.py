@@ -102,7 +102,7 @@ N3 = {**ESTILO,
 "ojo": ["347 no es redondo: termina en 7.", "Después del 990 viene el 1.000."],
 "resumen": [{"titulo": "Redondo", "texto": "Termina en 0."}, {"titulo": "De 10 en 10", "texto": "410, 420, 430."}, {"titulo": "De 100 en 100", "texto": "100, 200, 300."}],
 "glosario": [{"palabra": "Redondo", "significado": "Número que termina en 0."}, {"palabra": "Entre", "significado": "En el medio de dos números."}],
-"carpeta": ["¿Qué número falta en el primer vagón con ?", "¿Qué número falta en el segundo vagón con ?", "¿Cuál es redondo: 347, 560 o 821?"],
+"carpeta": ["¿Qué número falta en el primer vagón vacío?", "¿Qué número falta en el segundo vagón vacío?", "¿Cuál es redondo: 347, 560 o 821?"],
 "respuestas_carpeta": [["400"], ["800"], ["560"]],
 "soluciones": {"incompleto": "500. 900.", "solo": "Entre el 150 y el 160.", "carpeta": ["400.", "800.", "560."]},
 }
