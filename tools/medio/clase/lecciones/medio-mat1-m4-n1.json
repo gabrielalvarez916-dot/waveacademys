@@ -1,0 +1,117 @@
+{
+ "slug": "medio-mat1-m4-n1",
+ "step_id": "8d29186b-ec68-4156-a8ff-bdebac145ec4",
+ "materia": "Matemática 1",
+ "titulo": "La serie hasta 100",
+ "sub": "Matemática 1 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "¡Tomi tiene un álbum nuevo!",
+    "Tiene 100 figuritas.",
+    "¿Sabés contar hasta 100?"
+   ],
+   "titulo": "LA SERIE",
+   "sub": "hasta 100",
+   "voz": [
+    "¡Tomi tiene un *álbum nuevo*!",
+    "Este álbum tiene *100 figuritas*.",
+    "¿Sabés contar hasta 100? ¡Vamos!",
+    "Hoy: *la serie hasta 100*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 10,
+   "hasta": 100,
+   "paso": 10,
+   "titulo": "LOS NÚMEROS REDONDOS",
+   "voz": [
+    "Primero, los números *redondos*.",
+    "10, 20, 30, 40, 50, 60, 70, 80, 90, 100.",
+    "¡Llegamos al *100*: cien!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 61,
+   "hasta": 70,
+   "titulo": "LOS DEL SESENTA",
+   "voz": [
+    "Ahora contamos los del sesenta.",
+    "61, 62, 63, 64, 65, 66, 67, 68, 69, 70.",
+    "Después del 69 viene el *70*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DESPUÉS DEL 9",
+   "texto": "Después de un 9 viene un redondo",
+   "emoji": "🔁",
+   "voz": [
+    "Truco: después de un *9*, viene un número redondo."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 91,
+   "hasta": 100,
+   "titulo": "EL ÚLTIMO TRAMO",
+   "voz": [
+    "¡El último tramo del álbum!",
+    "91, 92, 93, 94, 95, 96, 97, 98, 99, 100.",
+    "¡*Cien*! Completamos el álbum."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene después del 79?",
+   "opciones": [
+    "80",
+    "70",
+    "710"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¿Qué número viene después del 79?",
+    "Pensá: después de un 9…",
+    "¡El *80*! Ochenta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HASTA 100",
+     "en orden"
+    ],
+    [
+     "REDONDOS",
+     "10, 20, 30…"
+    ],
+    [
+     "DESPUÉS DEL 9",
+     "viene un redondo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *hasta el 100*.",
+    "Los *redondos*: 10, 20, 30…",
+    "Después de un 9, viene un *redondo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

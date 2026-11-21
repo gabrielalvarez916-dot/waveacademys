@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat1-m4-n4",
+ "step_id": "5b25d5d3-8159-43fe-b7d1-22521691bf69",
+ "materia": "Matemática 1",
+ "titulo": "Contar de a 2, 5 y 10",
+ "sub": "Matemática 1 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🧦",
+   "lineas": [
+    "Tomi cuenta medias de a pares.",
+    "De a 2 es más rápido.",
+    "¿Y de a 5? ¿Y de a 10?"
+   ],
+   "titulo": "CONTAR",
+   "sub": "de a 2, 5 y 10",
+   "voz": [
+    "Tomi cuenta medias de *a pares*.",
+    "¡De a 2 es más rápido!",
+    "¿Y si cuenta de a 5? ¿Y de a 10?",
+    "Hoy: *contar de a 2, 5 y 10*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 2,
+   "hasta": 20,
+   "paso": 2,
+   "titulo": "DE A 2",
+   "voz": [
+    "Contamos de a 2.",
+    "2, 4, 6, 8, 10, 12, 14, 16, 18, 20.",
+    "¡Saltamos de a dos!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 5,
+   "hasta": 50,
+   "paso": 5,
+   "titulo": "DE A 5",
+   "voz": [
+    "Ahora de a 5, como una mano.",
+    "5, 10, 15, 20, 25, 30, 35, 40, 45, 50.",
+    "¡Terminan en *5* o en *0*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 10,
+   "hasta": 100,
+   "paso": 10,
+   "titulo": "DE A 10",
+   "voz": [
+    "Y de a 10, ¡el más rápido!",
+    "10, 20, 30, 40, 50, 60, 70, 80, 90, 100.",
+    "¡Llegamos al *100*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "2, 4, 6, 8… ¿qué sigue?",
+   "opciones": [
+    "9",
+    "10",
+    "12"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Contamos de a 2.",
+    "2, 4, 6, 8… ¿qué sigue?",
+    "¡El *10*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "5, 10, 15… ¿qué sigue?",
+   "opciones": [
+    "16",
+    "20",
+    "25"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Otra más. Contamos de a 5.",
+    "5, 10, 15… ¿qué sigue?",
+    "¡El *20*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DE A 2",
+     "2, 4, 6…"
+    ],
+    [
+     "DE A 5",
+     "5, 10, 15…"
+    ],
+    [
+     "DE A 10",
+     "10, 20, 30…"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*De a 2*: 2, 4, 6.",
+    "*De a 5*: 5, 10, 15.",
+    "*De a 10*: 10, 20, 30.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

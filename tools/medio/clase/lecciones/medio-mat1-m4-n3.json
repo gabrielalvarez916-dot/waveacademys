@@ -1,0 +1,111 @@
+{
+ "slug": "medio-mat1-m4-n3",
+ "step_id": "c02423b4-20bc-4122-b688-df4c677de7aa",
+ "materia": "Matemática 1",
+ "titulo": "Regularidades en la tabla",
+ "sub": "Matemática 1 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué tienen en común 7, 17, 27 y 37?",
+   "segundos": 6,
+   "respuesta": "¡Terminan en 7!",
+   "emoji": "🔍",
+   "titulo": "REGULARIDADES",
+   "sub": "en la tabla",
+   "voz": [
+    "Desafío: ¿qué tienen en común 7, 17, 27 y 37?",
+    "¡Todos terminan en *7*!",
+    "Hoy: *regularidades en la tabla*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "titulo": "LA COLUMNA DEL 3",
+   "voz": [
+    "Mirá la columna del 3.",
+    "3, 13, 23, 33, 43, 53, 63, 73, 83, 93.",
+    "¡En una columna, todos *terminan igual*!"
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "titulo": "LA FILA DEL 40",
+   "voz": [
+    "Ahora mirá la fila del 40.",
+    "41, 42, 43, 44, 45, 46, 47, 48, 49.",
+    "¡En una fila, todos *empiezan igual*!"
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "faltan": [
+    36,
+    64,
+    88
+   ],
+   "titulo": "FIGURITAS PERDIDAS",
+   "voz": [
+    "Hay figuritas perdidas en la tabla.",
+    "Usá los secretos de filas y columnas.",
+    "¡Faltan el *36*, el *64* y el *88*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número va debajo del 45?",
+   "opciones": [
+    "55",
+    "46",
+    "54"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Mirá el 45.",
+    "¿Qué número va justo *debajo*?",
+    "¡El *55*! Abajo, suma 10."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ABAJO SUMA 10",
+   "texto": "Bajar una fila es sumar 10",
+   "emoji": "👇",
+   "voz": [
+    "Truco: bajar una fila es *sumar 10*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FILAS",
+     "empiezan igual"
+    ],
+    [
+     "COLUMNAS",
+     "terminan igual"
+    ],
+    [
+     "ABAJO",
+     "suma 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En una fila, todos *empiezan igual*.",
+    "En una columna, todos *terminan igual*.",
+    "Bajar una fila es *sumar 10*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "slug": "medio-mat1-m4-n2",
+ "step_id": "a06eee1e-e762-45a6-83b9-12a56bc4a520",
+ "materia": "Matemática 1",
+ "titulo": "La tabla de cien",
+ "sub": "Matemática 1 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🔢",
+   "final": "💯",
+   "titulo": "LA TABLA",
+   "sub": "de cien",
+   "voz": [
+    "Tomi pegó todas sus figuritas.",
+    "Quedó una tabla con *100 números*.",
+    "Hoy: *la tabla de cien*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "titulo": "LA TABLA DE CIEN",
+   "voz": [
+    "Son diez filas de diez números.",
+    "81, 82, 83, 84, 85, 86, 87, 88, 89, 90.",
+    "Esta es la fila de los *ochenta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fila y columna",
+   "texto": "Fila: de costado. Columna: para abajo.",
+   "emoji": "📐",
+   "voz": [
+    "Una *fila* va de costado.",
+    "Una *columna* va para abajo."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "titulo": "BUSCAMOS EL 57",
+   "voz": [
+    "Busquemos el 57 en la tabla.",
+    "50… ¡57!",
+    "El 57 está en la fila del *cincuenta*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué fila está el 34?",
+   "opciones": [
+    "La del 30",
+    "La del 40",
+    "La del 20"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Buscá el 34.",
+    "¿En qué fila está?",
+    "¡En la fila del *treinta*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "BUSCÁ LA FILA",
+   "texto": "La primera cifra te dice la fila",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: la *primera cifra* te dice la fila."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA",
+     "100 números"
+    ],
+    [
+     "FILA",
+     "de costado"
+    ],
+    [
+     "COLUMNA",
+     "para abajo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla tiene *100 números*.",
+    "Una *fila* va de costado.",
+    "Una *columna* va para abajo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
