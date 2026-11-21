@@ -7,6 +7,7 @@
   var S = { cargas: {}, tiers: {}, listo: false, levels: [], grades: [], subjects: [], topics: [], info: {}, lessons: {}, cfg: null };
   var R = { level: null, grade: null, subject: null, topic: null, lesson: null };
   var pendiente = null;
+  var VER_OK = ['video-ver', 'pdf-get', 'trans-ver', 'correcciones', 'corr-cerrar', 'intro-ver', 'html-ver', 'desc-get'];
 
   var LEC_POR_TEMA = 4; // según la tabla de rangos: 4 lecciones por tema
   var TIPOS = ['video', 'pdf', 'interactive_activity', 'complementary_activity', 'final_activity'];
@@ -364,7 +365,7 @@
       r.data.forEach(function (s) { pasos[s.step_type] = s; });
       var faltan = [];
       TIPOS.forEach(function (t, i) { if (!pasos[t]) faltan.push({ lesson_id: R.lesson, step_type: t, position: i + 1 }); });
-      if (faltan.length) {
+      if (faltan.length && !S.lectura) {
         var ins = await sb.from('lesson_steps').insert(faltan).select('id, step_type, stream_uid, r2_key, content, title');
         if (ins.error) throw ins.error;
         ins.data.forEach(function (s) { pasos[s.step_type] = s; });
@@ -473,23 +474,13 @@
       clase += fila('🎬', vids.length > 1 ? 'Video ' + (i + 1) + ' de ' + vids.length : 'Video de la clase', esc(nom) + est,
         boton('video-ver:' + i, 'Ver') +
         (vids.length > 1 ? '<button type="button" class="wv-ico" title="Subir" data-acc="video-mov:' + i + ':-1"' + (i === 0 ? ' disabled' : '') + '>▲</button><button type="button" class="wv-ico" title="Bajar" data-acc="video-mov:' + i + ':1"' + (i === vids.length - 1 ? ' disabled' : '') + '>▼</button>' : '') +
-        (x.intro ? '' : boton('video-introdef:' + i, '⭐ Usar como intro', 'suave')) +
-        boton('video-del:' + i, 'Quitar', 'peligro')) + recorteHtml(x, i);
+        boton('video-del:' + i, 'Quitar', 'peligro'));
     });
-    if (tieneV) {
-      var rn = L.render, enCola = rn && (rn.status === 'pendiente' || rn.status === 'procesando');
-      var armado = vids.length > 1 || vids.some(function (x) { return (x.tramos && x.tramos.length) || x.intro; });
-      var pesado = vids.some(function (x) { return !esYt(x.uid) && !x.final; });
-      var rTxt = enCola ? (rn.status === 'procesando' ? 'Se está generando… (puede tardar unos minutos)' : 'En cola: arranca solo en un momento')
-        : rn && rn.status === 'error' ? 'El último intento falló: ' + esc(rn.error || '') : rn && rn.status === 'listo' && !armado ? 'Video final generado ✔ (un solo archivo, carga rápido)' : armado ? 'Une los cortes y la intro en UN solo video que carga rápido' : pesado ? 'Si el video es pesado o tarda en cargar: lo comprime y lo deja listo para internet' : 'Ya es un solo video';
-      if (armado || pesado || enCola || (rn && rn.status !== 'listo')) clase += fila('🎞️', 'Video final', rTxt, (enCola ? '' : boton('render-pedir', 'Generar video final', '')) + boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
-      else if (rn && rn.status === 'listo') clase += fila('🎞️', 'Video final', rTxt, boton('render-estado', 'Actualizar estado', 'suave'), 'wv-i-render');
-    }
     clase += S.introWave
       ? fila('⭐', 'Intro de Wave', 'Ya cargada: aparece sola al principio de los videos de todas las misiones. No hace falta agregarla acá.', boton('introw-up', 'Reemplazar intro', 'suave'), 'wv-i-introwave')
       : fila('⭐', 'Intro de Wave', 'Todavía no cargaste tu intro. Se sube una sola vez y aparece sola al principio de los videos de todas las misiones.', boton('introw-up', 'Subir mi intro', ''), 'wv-i-introwave');
     clase += fila(tieneV ? '➕' : '🎬', tieneV ? 'Agregar otro video' : 'Video de la clase', tieneV ? 'El alumno los ve en orden, uno después del otro' : 'Sin video',
-      boton('video-up', 'Subir videos', tieneV ? 'suave' : '') + boton('video-yt', 'Enlace de YouTube', 'suave'), 'wv-i-video');
+      boton('video-yt', 'Enlace de YouTube', tieneV ? 'suave' : ''), 'wv-i-video');
     if (tieneV) clase += filaTranscripcion();
     clase += fila('🔎', 'Revisar otro video', 'Pegá una transcripción y te dice cuánto de la misión cubre (sin IA, no gasta créditos)', boton('video-revisar', 'Revisar transcripción', 'suave'), 'wv-i-revisar');
     var num = 0;
@@ -1436,15 +1427,21 @@
 
   // ---------- Entrada ----------
   var enlazado = false;
-  async function abrir(el) {
+  async function abrir(el, opts) {
     vista = el;
+    S.lectura = !!(opts && opts.soloLectura);
+    vista.classList.toggle('wv-lectura', S.lectura);
     if (!enlazado) {
       enlazado = true;
       vista.addEventListener('click', function (ev) {
         var a = ev.target.closest('[data-ir]');
         if (a) { ev.preventDefault(); ir(a.getAttribute('data-ir')); return; }
         var b = ev.target.closest('[data-acc]');
-        if (b && !b.disabled) accion(b.getAttribute('data-acc'));
+        if (b && !b.disabled) {
+          var ac = b.getAttribute('data-acc');
+          if (S.lectura && VER_OK.indexOf(ac.split(':')[0]) < 0) return toast('Solo podés ver el contenido; lo carga el administrador.', true);
+          accion(ac);
+        }
       });
     }
     if (!S.listo) {

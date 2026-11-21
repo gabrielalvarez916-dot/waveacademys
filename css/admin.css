@@ -383,3 +383,7 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 .est-barra i { display: block; height: 100%; background: var(--turquesa, #087E83); border-radius: 8px; min-width: 2px; }
 .est-fila b { text-align: right; }
 @media (max-width: 760px) { .est-grid { grid-template-columns: 1fr; } .est-fila { grid-template-columns: 110px 1fr 32px; } }
+
+/* Contenido en solo lectura (directores): se ocultan los botones que modifican */
+.wv-lectura [data-acc]:not([data-acc^="video-ver"]):not([data-acc^="pdf-get"]):not([data-acc^="trans-ver"]):not([data-acc^="correcciones"]):not([data-acc^="corr-cerrar"]):not([data-acc^="intro-ver"]):not([data-acc^="html-ver"]):not([data-acc^="desc-get"]) { display: none !important; }
+.wv-lectura .wv-ico { display: none !important; }

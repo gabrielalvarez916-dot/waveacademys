@@ -11,15 +11,47 @@
     return d <= 0 ? 'Hoy' : d === 1 ? 'Ayer' : 'Hace ' + d + ' días';
   }
 
+  function modal(html) {
+    var f = document.createElement('div'); f.className = 'wv-modal-fondo'; f.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50';
+    f.innerHTML = '<div class="wv-modal" style="background:#fff;border-radius:18px;max-width:460px;width:100%;padding:22px">' + html + '</div>';
+    document.body.appendChild(f); return f;
+  }
+  function nuevaFamilia(despues) {
+    var f = modal('<h2 style="margin-top:0">Nueva familia</h2><p>Se crea el usuario con el correo y una contraseña inicial.</p>' +
+      '<div class="campo"><label for="nf-mail">Correo (será el usuario)</label><input id="nf-mail" type="email" autocomplete="off" placeholder="correo@ejemplo.com"></div>' +
+      '<div class="campo"><label for="nf-nom">Nombre y apellido</label><input id="nf-nom" type="text" maxlength="80" placeholder="Padre, madre o tutor"></div>' +
+      '<div class="campo"><label for="nf-tel">WhatsApp</label><input id="nf-tel" type="tel" maxlength="30" placeholder="+54 9 ..."></div>' +
+      '<p class="mensaje" id="nf-err" hidden></p><div class="wv-modal-pie"><button type="button" class="wv-btn suave" data-no>Cancelar</button> <button type="button" class="wv-btn" data-si>Crear familia</button></div>');
+    f.querySelector('[data-no]').onclick = function () { f.remove(); };
+    var si = f.querySelector('[data-si]'), er = f.querySelector('#nf-err');
+    si.onclick = async function () {
+      var mail = f.querySelector('#nf-mail').value.trim(), nom = f.querySelector('#nf-nom').value.trim(), tel = f.querySelector('#nf-tel').value.trim();
+      function mal(t) { er.textContent = t; er.hidden = false; }
+      if (mail.indexOf('@') < 1) return mal('Ingresá un correo válido.');
+      if (!nom) return mal('Ingresá el nombre.');
+      if (tel.replace(/\D/g, '').length < 8) return mal('Ingresá el WhatsApp de la familia, con código de área: es por donde les avisamos.');
+      si.disabled = true; er.hidden = true;
+      var r = await sb.functions.invoke('admin-actions', { body: { action: 'create_family', email: mail, full_name: nom, phone: tel } });
+      var msg = null;
+      if (r.error) { try { msg = (await r.error.context.json()).error; } catch (e) { msg = 'No se pudo crear la familia.'; } }
+      else if (r.data && r.data.error) msg = r.data.error;
+      if (msg) { mal(msg); si.disabled = false; return; }
+      f.querySelector('.wv-modal').innerHTML = '<h2 style="margin-top:0">¡Familia creada!</h2><p>Usuario: <b>' + esc(r.data.username) + '</b><br>Clave inicial: <b>' + esc(r.data.initial_password) + '</b></p><p class="wv-dato">Anotala: no se vuelve a mostrar. Deben cambiarla al ingresar.</p><div class="wv-modal-pie"><button type="button" class="wv-btn" data-no>Listo</button></div>';
+      f.querySelector('[data-no]').onclick = function () { f.remove(); despues(); };
+    };
+  }
+
   // ---------- Familias y alumnos (solo de su nivel) ----------
   async function vistaAlumnos() {
     vista.innerHTML = '<h1 class="vista-titulo">Familias y alumnos</h1><div class="wv-vacio">Cargando…</div>';
-    var r = await sb.rpc('dir_alumnos');
+    var r = await sb.rpc('dir_alumnos'), nuevas = await sb.rpc('dir_familias_nuevas');
     if (r.error) { vista.innerHTML = '<h1 class="vista-titulo">Familias y alumnos</h1><div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
     var a = r.data || [], porNivel = {};
     a.forEach(function (x) { (porNivel[x.nivel] = porNivel[x.nivel] || []).push(x); });
     var niveles = Object.keys(porNivel);
-    vista.innerHTML = '<h1 class="vista-titulo">Familias y alumnos</h1>' +
+    var sinAlu = (nuevas.data || []);
+    vista.innerHTML = '<h1 class="vista-titulo">Familias y alumnos</h1><p><button type="button" class="wv-btn" id="dir-nf">+ Nueva familia</button></p>' +
+      (sinAlu.length ? '<div class="wv-vacio" style="text-align:left"><b>Familias dadas de alta por vos, todavía sin alumnos</b><br>' + sinAlu.map(function (x) { return esc(x.familia || x.email) + ' · ' + esc(x.email) + (x.telefono ? ' · ' + esc(x.telefono) : ''); }).join('<br>') + '<br><small>Cuando carguen a sus hijos van a aparecer en la lista de abajo.</small></div>' : '') +
       '<div class="wv-resumen"><div class="wv-stat"><small>Alumnos</small><b>' + a.length + '</b></div>' + niveles.map(function (n) { return '<div class="wv-stat"><small>' + esc(n) + '</small><b>' + porNivel[n].length + '</b></div>'; }).join('') + '</div>' +
       '<input id="dir-buscar" class="wv-buscar" type="search" placeholder="Buscar por alumno, familia o correo" style="width:100%;max-width:420px;min-height:44px;padding:0 14px;margin:0 0 14px;border:2px solid #cfdcdb;border-radius:12px;font:inherit">' +
       '<div id="dir-lista"></div>';
@@ -33,6 +65,7 @@
       }).join('') + '</div>' : '<div class="wv-vacio">No hay alumnos para mostrar.</div>';
     }
     document.getElementById('dir-buscar').oninput = pintar; pintar();
+    document.getElementById('dir-nf').onclick = function () { nuevaFamilia(vistaAlumnos); };
   }
 
   // ---------- Tutores: alta y listado ----------
@@ -97,7 +130,11 @@
     horas();
   }
 
-  var VISTAS = { alumnos: vistaAlumnos, equipo: vistaEquipo, agenda: vistaAgenda };
+  var VISTAS = {
+    alumnos: vistaAlumnos, equipo: vistaEquipo, agenda: vistaAgenda,
+    contenido: function () { return WaveContenido.abrir(vista, { soloLectura: true }); },
+    curricular: function () { return WaveCurricular.abrir(vista); }
+  };
   function ruta() {
     var h = (location.hash || '#alumnos').slice(1); if (!VISTAS[h]) h = 'alumnos';
     enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#' + h); });

@@ -252,28 +252,25 @@
       var flojas = con.filter(function (l) { return l.status !== 'bien' || l.final_attempts > 1; })
         .sort(function (a, b) { return (a.mastery - b.mastery) || (b.final_attempts - a.final_attempts); }).slice(0, 5);
       var fuertes = con.filter(function (l) { return l.status === 'bien'; }).sort(function (a, b) { return b.mastery - a.mastery; }).slice(0, 5);
-      var rp = m.repasos || {};
       var cab = '<summary><span class="wv-tr-pt" style="background:' + esc(m.color || '#087E83') + '"></span><b>' + esc(m.name) + '</b>' +
         (con.length ? '<span class="wv-tr-chips"><span class="wv-tr-chip ok">' + cuenta.bien + ' bien</span><span class="wv-tr-chip med">' + cuenta.en_proceso + ' en proceso</span><span class="wv-tr-chip bajo">' + cuenta.flojo + (cuenta.flojo === 1 ? ' floja' : ' flojas') + '</span></span>'
           : '<span class="wv-tr-chips"><span class="wv-tr-chip nada">Sin actividad todavía</span></span>') + '</summary>';
-      if (!con.length) return '<details class="wv-tr-mat">' + cab + '<div class="wv-sin">Cuando haga actividades o repasos de esta materia, acá vas a ver qué maneja bien y qué le cuesta.</div></details>';
+      if (!con.length) return '<details class="wv-tr-mat">' + cab + '<div class="wv-sin">Cuando haga actividades de esta materia, acá vas a ver qué maneja bien y qué le cuesta.</div></details>';
       var lista = function (titulo, arr, vacio) {
         return '<div class="wv-tr-col"><h4>' + titulo + '</h4>' + (arr.length ? arr.map(function (l) {
           return '<div class="wv-tr-it"><span class="wv-tr-n ' + EST[l.status][1] + '">' + nota(l.mastery) + '</span><div><b>' + esc(l.title) + '</b><small>' + esc(l.tema) +
             (l.final_attempts > 1 ? ' · ' + l.final_attempts + ' intentos en la actividad' : '') + '</small></div></div>';
         }).join('') : '<small class="wv-tr-vac">' + vacio + '</small>') + '</div>';
       };
-      var h = '<div class="wv-tr-dos">' + lista('Para reforzar', flojas, 'Nada flojo por ahora.') + lista('Lo que maneja bien', fuertes, 'Todavía no hay lecciones con dominio alto.') + '</div>' +
-        '<p class="wv-tr-rep">Repasos hechos: <b>' + (rp.hechos || 0) + '</b>' + (rp.promedio != null ? ' · promedio <b>' + nota(rp.promedio) + '</b> de 100' : '') + '</p>';
+      var h = '<div class="wv-tr-dos">' + lista('Para reforzar', flojas, 'Nada flojo por ahora.') + lista('Lo que maneja bien', fuertes, 'Todavía no hay lecciones con dominio alto.') + '</div>';
       m.topics.forEach(function (t) {
         var filas = t.lessons.filter(function (l) { return l.status !== 'sin_datos' || l.done; });
         if (!filas.length && !(t.exam && t.exam.intentos)) return;
         h += '<h4 class="wv-tr-tema">' + esc(t.title) + (t.exam && t.exam.intentos ? '<small>Examen: mejor nota ' + nota(t.exam.mejor) + ' · ' + t.exam.intentos + (t.exam.intentos === 1 ? ' intento' : ' intentos') + (t.exam.aprobado ? ' · aprobado' : ' · sin aprobar') + '</small>' : '') + '</h4>';
-        if (filas.length) h += '<div class="wv-tr-tabla"><table><thead><tr><th>Lección</th><th>Dominio</th><th>Actividad</th><th>Interactiva</th><th>Repasos</th><th>Estado</th></tr></thead><tbody>' +
+        if (filas.length) h += '<div class="wv-tr-tabla"><table><thead><tr><th>Lección</th><th>Dominio</th><th>Actividad</th><th>Estado</th></tr></thead><tbody>' +
           filas.map(function (l) {
             return '<tr><td>' + esc(l.title) + '</td><td><span class="wv-tr-barra"><i class="' + EST[l.status][1] + '" style="width:' + (l.mastery == null ? 0 : Math.round(l.mastery)) + '%"></i></span> ' + nota(l.mastery) + '</td>' +
-              '<td>' + nota(l.final_score) + (l.final_attempts > 1 ? ' <small>(' + l.final_attempts + ' intentos)</small>' : '') + '</td><td>' + nota(l.interactive_score) + '</td>' +
-              '<td>' + (l.review_total ? l.review_ok + ' de ' + l.review_total : '—') + '</td><td><span class="wv-tr-chip ' + EST[l.status][1] + '">' + EST[l.status][0] + '</span></td></tr>';
+              '<td>' + nota(l.final_score) + (l.final_attempts > 1 ? ' <small>(' + l.final_attempts + ' intentos)</small>' : '') + '</td><td><span class="wv-tr-chip ' + EST[l.status][1] + '">' + EST[l.status][0] + '</span></td></tr>';
           }).join('') + '</tbody></table></div>';
       });
       return '<details class="wv-tr-mat" open>' + cab + h + '</details>';
@@ -293,7 +290,7 @@
       var db = b.topics.some(function (t) { return t.lessons.some(function (l) { return l.status !== 'sin_datos'; }); });
       return (db ? 1 : 0) - (da ? 1 : 0);
     });
-    cuerpo.innerHTML = '<p class="wv-tr-ley">El dominio va de 0 a 100 y combina la nota de la actividad, la actividad interactiva y los aciertos en los repasos. Baja un poco cuando tuvo que reintentar la actividad.</p>' + htmlTrayectoria(mats);
+    cuerpo.innerHTML = '<p class="wv-tr-ley">El dominio va de 0 a 100 y combina la nota de la actividad. Baja un poco cuando tuvo que reintentar la actividad.</p>' + htmlTrayectoria(mats);
   }
 
   function htmlFamilia(f) {
@@ -905,7 +902,6 @@
     agenda: vistaAgenda,
     contenido: function () { return WaveContenido.abrir(vista); },
     curricular: function () { return WaveCurricular.abrir(vista); },
-    fabrica: function () { return WaveFabrica.abrir(vista); },
     videos: function () { return WaveVideos.abrir(vista); },
     registro: proximamente('Registro de actividad')
   };
