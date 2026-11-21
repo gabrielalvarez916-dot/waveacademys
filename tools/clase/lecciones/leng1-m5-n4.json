@@ -1,0 +1,175 @@
+{
+ "slug": "leng1-m5-n4",
+ "step_id": "38ad494f-48ec-4540-ba83-10f122e0c625",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Resumo un capítulo",
+ "sub": "Lengua y Literatura I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "20 hojas",
+   "emoji": "📚",
+   "final": "1 hoja",
+   "titulo": "EL RESUMEN",
+   "sub": "mucho en poco",
+   "voz": [
+    "Un capítulo de veinte hojas.",
+    "¿Y si lo contás en una sola?",
+    "Hoy: *resumir un capítulo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Resumen",
+   "texto": "Versión breve con las ideas principales y mis palabras",
+   "emoji": "✂️",
+   "voz": [
+    "Un *resumen* es una versión breve del texto.",
+    "Conserva las *ideas principales* y se escribe con *tus palabras*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO RESUMIR",
+   "items": [
+    {
+     "txt": "Leo y subrayo",
+     "emoji": "🖍️"
+    },
+    {
+     "txt": "Idea principal de cada párrafo",
+     "emoji": "⭐"
+    },
+    {
+     "txt": "Armo un esquema",
+     "emoji": "🧩"
+    },
+    {
+     "txt": "Escribo con mis palabras",
+     "emoji": "✍️"
+    },
+    {
+     "txt": "Reviso",
+     "emoji": "🔎"
+    }
+   ],
+   "voz": [
+    "Cinco pasos para resumir.",
+    "Primero, leé y subrayá.",
+    "Buscá la idea principal de cada párrafo.",
+    "Armá un esquema.",
+    "Escribí con tus palabras.",
+    "Y revisá que se entienda y sea breve."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ANTES",
+    "texto": "Manzanas, peras y bananas",
+    "emoji": "🍎"
+   },
+   "b": {
+    "cab": "RESUMEN",
+    "texto": "Frutas",
+    "emoji": "🧺"
+   },
+   "signo": "→",
+   "voz": [
+    "Un truco: *generalizar*.",
+    "Varias cosas se resumen en una sola palabra.",
+    "Manzanas, peras y bananas pasan a ser *frutas*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "QUÉ SE SACA",
+   "items": [
+    {
+     "cab": "REPETICIONES",
+     "txt": "Se sacan"
+    },
+    {
+     "cab": "EJEMPLOS Y DETALLES",
+     "txt": "Se sacan"
+    },
+    {
+     "cab": "OPINIONES MÍAS",
+     "txt": "Se sacan"
+    }
+   ],
+   "voz": [
+    "Al resumir, hay cosas que se sacan.",
+    "Las *repeticiones*.",
+    "Los *ejemplos y detalles*.",
+    "Y tus *opiniones*: el resumen dice lo que dice el autor."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un buen resumen de \"Las ballenas son los animales más grandes. Aunque viven en el mar, son mamíferos\"?",
+   "opciones": [
+    "Las ballenas son enormes mamíferos marinos",
+    "Me gustan las ballenas",
+    "Las ballenas viven en el mar y tienen aletas"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál es el mejor resumen?",
+    "¿Enormes mamíferos marinos, me gustan las ballenas, o viven en el mar y tienen aletas?",
+    "*Enormes mamíferos marinos*: junta las dos ideas con otras palabras."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Copiar oraciones enteras",
+     "bien": "Usar mis palabras"
+    },
+    {
+     "mal": "Agregar mi opinión",
+     "bien": "Solo lo del autor"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Copiar* oraciones enteras del original.",
+    "Y *agregar tu opinión* al resumen."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *resumen* es breve y con tus palabras.",
+    "Seguí los *cinco pasos*.",
+    "Sacá *repeticiones y detalles*.",
+    "Y *generalizá* cuando puedas.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RESUMEN",
+     "breve y con mis palabras"
+    ],
+    [
+     "PASOS",
+     "subrayar, ideas, esquema, escribir, revisar"
+    ],
+    [
+     "SE SACA",
+     "repeticiones y detalles"
+    ],
+    [
+     "GENERALIZAR",
+     "varias cosas en una palabra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

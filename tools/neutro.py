@@ -42,6 +42,7 @@ MAPA = {
  'redondeás': 'redondeas', 'reemplazá': 'reemplaza', 'reemplazás': 'reemplazas', 'reescribí': 'reescribe', 'releé': 'relee', 'repartí': 'reparte',
  'repartís': 'repartes', 'repasá': 'repasa', 'resolvé': 'resuelve', 'resolvés': 'resuelves', 'respondé': 'responde', 'restale': 'réstale',
  'restá': 'resta', 'restás': 'restas', 'revisá': 'revisa', 'sabés': 'sabes', 'sacás': 'sacas', 'salteás': 'saltas', 'seguí': 'sigue', 'señalá': 'señala',
+ 'tachá': 'tacha', 'agradecés': 'agradeces', 'explicás': 'explicas', 'resumís': 'resumes', 'resumí': 'resume', 'generalizá': 'generaliza', 'sacá': 'saca', 'perdés': 'pierdes', 'trabás': 'trabas',
  'simplificá': 'simplifica', 'subrayá': 'subraya', 'subí': 'sube', 'subís': 'subes', 'sumale': 'súmale', 'sumá': 'suma', 'sumás': 'sumas',
  'tachás': 'tachas', 'tapá': 'tapa', 'tené': 'ten', 'tenés': 'tienes', 'tipealos': 'escríbelos', 'tipeá': 'escribe', 'tipeás': 'escribes', 'tirás': 'tiras',
  'tocá': 'toca', 'tomá': 'toma', 'traducí': 'traduce', 'transpirás': 'sudas', 'trasladás': 'trasladas', 'trazá': 'traza', 'trazás': 'trazas',

@@ -1,0 +1,211 @@
+{
+ "slug": "leng1-m5-n3",
+ "step_id": "330f8eee-8a9c-4a54-bfb2-785f1babf82a",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Exponer con mis palabras",
+ "sub": "Lengua y Literatura I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Se queda en blanco frente a la clase",
+   "bajada": "Leyó todo del papel y nadie entendió",
+   "emoji": "😰",
+   "titulo": "EXPONER",
+   "sub": "con mis palabras",
+   "voz": [
+    "Último momento: un alumno se quedó en blanco frente a la clase.",
+    "Leyó todo del papel y nadie entendió nada.",
+    "Hoy: *exponer con mis palabras*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Exposición oral",
+   "texto": "Explicar un tema hablando, sin leer todo",
+   "emoji": "🎤",
+   "voz": [
+    "Una *exposición oral* es explicar un tema hablando.",
+    "Se prepara antes, pero se dice *con tus palabras*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PARTES DE UNA EXPOSICIÓN",
+   "items": [
+    {
+     "txt": "Apertura: digo el tema",
+     "emoji": "👋"
+    },
+    {
+     "txt": "Desarrollo: explico las ideas",
+     "emoji": "🧠"
+    },
+    {
+     "txt": "Cierre: resumo y agradezco",
+     "emoji": "🙏"
+    }
+   ],
+   "voz": [
+    "Toda exposición tiene tres partes.",
+    "La *apertura*: decís el tema.",
+    "El *desarrollo*: explicás las ideas en orden.",
+    "El *cierre*: resumís y agradecés."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COPIAR",
+    "texto": "El Sol es una estrella que da luz y calor",
+    "emoji": "📋"
+   },
+   "b": {
+    "cab": "PARAFRASEAR",
+    "texto": "La Tierra recibe luz y calor del Sol",
+    "emoji": "💬"
+   },
+   "signo": "→",
+   "voz": [
+    "*Parafrasear* es decir lo mismo con otras palabras.",
+    "No copiás: lo explicás como lo entendiste.",
+    "Sin cambiar el sentido."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CONECTORES",
+   "items": [
+    {
+     "cab": "EMPEZAR",
+     "txt": "en primer lugar"
+    },
+    {
+     "cab": "SUMAR",
+     "txt": "además"
+    },
+    {
+     "cab": "CERRAR",
+     "txt": "en conclusión"
+    }
+   ],
+   "voz": [
+    "Los *conectores* ordenan lo que decís.",
+    "Para empezar: *en primer lugar*.",
+    "Para sumar: *además*.",
+    "Para cerrar: *en conclusión*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "FICHA, NO LIBRETO",
+   "texto": "Escribí solo palabras clave y explicá con tus palabras",
+   "emoji": "🗒️",
+   "voz": [
+    "Usá una ficha con *palabras clave*, no el texto entero: así explicás en vez de leer."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "BIEN",
+     "emoji": "✅"
+    },
+    {
+     "cab": "MAL",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Mirar al público",
+     "caja": 0
+    },
+    {
+     "txt": "Leer del papel",
+     "caja": 1
+    },
+    {
+     "txt": "Usar palabras clave",
+     "caja": 0
+    },
+    {
+     "txt": "Hablar muy rápido",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Qué se hace bien y qué mal al exponer?",
+    "*Bien*: mirar al público y usar palabras clave.",
+    "*Mal*: leer del papel y hablar muy rápido."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conector sirve para cerrar una exposición?",
+   "opciones": [
+    "Por ejemplo",
+    "En conclusión",
+    "Además"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: ¿qué conector sirve para cerrar?",
+    "¿Por ejemplo, en conclusión o además?",
+    "*En conclusión*: avisa que estás terminando."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Leer todo del papel",
+     "bien": "Palabras clave"
+    },
+    {
+     "mal": "Hablar muy rápido",
+     "bien": "Hablar despacio"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Leer todo* del papel sin mirar a nadie.",
+    "Y hablar *muy rápido* por los nervios."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *exposición* explica hablando.",
+    "Tiene *tres partes*.",
+    "*Parafrasear* es con tus palabras.",
+    "Los *conectores* ordenan.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EXPOSICIÓN",
+     "explicar hablando"
+    ],
+    [
+     "TRES PARTES",
+     "apertura, desarrollo, cierre"
+    ],
+    [
+     "PARAFRASEAR",
+     "con mis palabras"
+    ],
+    [
+     "CONECTORES",
+     "ordenan lo que digo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

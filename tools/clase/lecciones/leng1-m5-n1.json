@@ -1,0 +1,241 @@
+{
+ "slug": "leng1-m5-n1",
+ "step_id": "82bf5c35-cf80-447a-a230-56e23c8f5009",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Idea principal y secundarias",
+ "sub": "Lengua y Literatura I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mañana prueba y el texto tiene 6 hojas 😩"
+    },
+    {
+     "yo": true,
+     "txt": "¿De qué trata? 🤔"
+    },
+    {
+     "yo": false,
+     "txt": "De abejas, pero no sé qué es lo importante"
+    }
+   ],
+   "titulo": "LO IMPORTANTE",
+   "sub": "idea principal y secundarias",
+   "voz": [
+    "Sofi le escribe a Mati: mañana tiene prueba y el texto tiene seis hojas.",
+    "Mati pregunta: ¿de qué trata?",
+    "Sofi: de abejas, pero no sabe *qué es lo importante*.",
+    "Hoy aprendés a encontrar *lo importante* de un texto."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Texto expositivo",
+   "texto": "Explica un tema para que lo entiendas",
+   "emoji": "📘",
+   "voz": [
+    "Un *texto expositivo* explica un tema para que lo entiendas.",
+    "Informa con datos claros, sin contar una historia ni dar opiniones."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TEMA",
+    "texto": "Las abejas",
+    "emoji": "🐝"
+   },
+   "b": {
+    "cab": "IDEA PRINCIPAL",
+    "texto": "Las abejas polinizan las flores",
+    "emoji": "🌸"
+   },
+   "signo": "→",
+   "voz": [
+    "El *tema* es de qué trata el texto, en pocas palabras.",
+    "La *idea principal* es lo más importante que dice sobre ese tema.",
+    "Acá, el tema es *las abejas*, y la idea principal, que *polinizan las flores*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "UN PÁRRAFO POR DENTRO",
+   "items": [
+    {
+     "cab": "PRINCIPAL",
+     "txt": "Las abejas polinizan las flores"
+    },
+    {
+     "cab": "SECUNDARIA",
+     "txt": "El polen se pega a su cuerpo"
+    },
+    {
+     "cab": "SECUNDARIA",
+     "txt": "Con el néctar hacen miel"
+    }
+   ],
+   "voz": [
+    "Mirá cómo se arma un párrafo.",
+    "Primero, la idea *principal*: las abejas polinizan las flores.",
+    "Después, una *secundaria*: el polen se pega a su cuerpo.",
+    "Y otra: con el néctar hacen miel."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LA PRUEBA DEL BORRADO",
+   "items": [
+    {
+     "txt": "Tachá una oración",
+     "emoji": "✏️"
+    },
+    {
+     "txt": "¿Se pierde el sentido?",
+     "emoji": "🤔"
+    },
+    {
+     "txt": "Si se pierde: era la principal",
+     "emoji": "🎯"
+    }
+   ],
+   "voz": [
+    "Un truco para no equivocarte.",
+    "Tachá una oración con la imaginación.",
+    "Fijate si el párrafo deja de entenderse.",
+    "Si se pierde el sentido, era la *idea principal*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PRINCIPAL",
+     "emoji": "⭐"
+    },
+    {
+     "cab": "SECUNDARIA",
+     "emoji": "➕"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Vuelan",
+     "caja": 0
+    },
+    {
+     "txt": "Alas de piel",
+     "caja": 1
+    },
+    {
+     "txt": "Usan el eco",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Probemos con los murciélagos.",
+    "*Principal*: son los únicos mamíferos que vuelan.",
+    "*Secundarias*: cómo son sus alas y cómo se orientan."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "DÓNDE ESTÁ LA IDEA PRINCIPAL",
+   "columnas": [
+    "Lugar",
+    "Cómo se nota"
+   ],
+   "filas": [
+    [
+     "Al principio",
+     "La primera oración"
+    ],
+    [
+     "Al final",
+     "Los datos llevan a ella"
+    ],
+    [
+     "Escondida",
+     "La armás vos"
+    ]
+   ],
+   "voz": [
+    "Ojo: la idea principal no siempre está en el mismo lugar.",
+    "A veces, *al principio*: la primera oración.",
+    "A veces, *al final*: los datos llevan a ella.",
+    "Y otras, *escondida*: no está escrita y la armás vos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "\"La Luna es el único satélite natural de la Tierra. Tarda casi un mes en dar una vuelta. Tiene cráteres.\" ¿Cuál es la idea principal?",
+   "opciones": [
+    "Tiene cráteres",
+    "La Luna es el único satélite natural de la Tierra",
+    "Tarda casi un mes"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: ¿cuál es la idea principal sobre la Luna?",
+    "¿Tiene cráteres, es el único satélite natural de la Tierra, o tarda casi un mes?",
+    "*Es el único satélite natural de la Tierra*: es lo que dice qué es. Lo demás son detalles."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Tema = idea principal",
+     "bien": "El tema dice de qué trata"
+    },
+    {
+     "mal": "Lo llamativo es lo principal",
+     "bien": "Principal es lo que no se puede sacar"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir el *tema* con la *idea principal*.",
+    "Y pensar que lo más llamativo es lo principal."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *tema*: de qué trata.",
+    "La *idea principal*: lo más importante que dice.",
+    "Las *secundarias*: explican y suman datos.",
+    "Y la *prueba del borrado* te ayuda a encontrarla.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TEMA",
+     "de qué trata"
+    ],
+    [
+     "PRINCIPAL",
+     "lo más importante"
+    ],
+    [
+     "SECUNDARIAS",
+     "explican y suman"
+    ],
+    [
+     "BORRADO",
+     "si se pierde, es principal"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

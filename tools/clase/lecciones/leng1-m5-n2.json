@@ -1,0 +1,217 @@
+{
+ "slug": "leng1-m5-n2",
+ "step_id": "d350a974-3707-4e81-a5f0-d004d6f7c609",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Esquemas y cuadros sinópticos",
+ "sub": "Lengua y Literatura I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Valen",
+    "emoji": "👧"
+   },
+   "lugar": "🏠",
+   "lineas": [
+    "Valen subrayó todo el texto de Naturales.",
+    "Al estudiar, ¡todo estaba amarillo!"
+   ],
+   "titulo": "ESQUEMAS",
+   "sub": "ver las ideas de un vistazo",
+   "voz": [
+    "A Valen le pasó algo con su texto de Naturales: lo subrayó entero.",
+    "Cuando fue a estudiar, estaba todo amarillo y no distinguía nada.",
+    "Hoy: *esquemas* y *cuadros sinópticos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Esquema",
+   "texto": "Dibujo que ordena las ideas con palabras clave",
+   "emoji": "🗂️",
+   "voz": [
+    "Un *esquema* ordena las ideas de un texto en un dibujo.",
+    "Usa *palabras clave*, no oraciones completas."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PARTES DE UN ESQUEMA",
+   "items": [
+    {
+     "cab": "TÍTULO",
+     "txt": "El tema"
+    },
+    {
+     "cab": "IDEAS PRINCIPALES",
+     "txt": "A la izquierda"
+    },
+    {
+     "cab": "SECUNDARIAS",
+     "txt": "Con llaves, a la derecha"
+    },
+    {
+     "cab": "PALABRAS CLAVE",
+     "txt": "Pocas palabras"
+    }
+   ],
+   "voz": [
+    "Mirá las partes de un esquema.",
+    "El *título*: el tema.",
+    "Las *ideas principales*, a la izquierda.",
+    "Las *secundarias*, a la derecha, con llaves.",
+    "Y todo con *palabras clave*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO ARMARLO",
+   "items": [
+    {
+     "txt": "Subrayo lo principal",
+     "emoji": "🖍️"
+    },
+    {
+     "txt": "Escribo el título",
+     "emoji": "🏷️"
+    },
+    {
+     "txt": "Abro llaves",
+     "emoji": "🧩"
+    },
+    {
+     "txt": "Uso palabras clave",
+     "emoji": "🔑"
+    }
+   ],
+   "voz": [
+    "Cuatro pasos para armar un esquema.",
+    "Primero, subrayá lo principal.",
+    "Después, escribí el título.",
+    "Abrí llaves con las secundarias.",
+    "Y usá solo palabras clave."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "LLAVES",
+    "texto": "Partes y subpartes",
+    "emoji": "🧩"
+   },
+   "b": {
+    "cab": "CUADRO COMPARATIVO",
+    "texto": "Comparar dos cosas",
+    "emoji": "⚖️"
+   },
+   "signo": "≠",
+   "voz": [
+    "Hay distintos esquemas.",
+    "Las *llaves* sirven cuando el texto tiene partes y subpartes.",
+    "El *cuadro comparativo*, cuando comparás dos cosas."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LLAVES",
+     "emoji": "🧩"
+    },
+    {
+     "cab": "CUADRO",
+     "emoji": "⚖️"
+    },
+    {
+     "cab": "FLECHAS",
+     "emoji": "➡️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Partes de un libro",
+     "caja": 0
+    },
+    {
+     "txt": "Gato vs perro",
+     "caja": 1
+    },
+    {
+     "txt": "Pasos de una receta",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué esquema conviene en cada caso?",
+    "Las partes de un libro: *llaves*. Gato contra perro: *cuadro*.",
+    "Y los pasos de una receta: *flechas* en secuencia."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Querés comparar un murciélago con un ave. ¿Qué esquema usás?",
+   "opciones": [
+    "Llaves",
+    "Cuadro comparativo",
+    "Flechas"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: comparar un murciélago con un ave.",
+    "¿Llaves, cuadro comparativo o flechas?",
+    "*Cuadro comparativo*: ponés las mismas características en filas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Oraciones completas",
+     "bien": "Palabras clave"
+    },
+    {
+     "mal": "Todo al mismo nivel",
+     "bien": "Principales y secundarias"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Copiar *oraciones completas* en el esquema.",
+    "Y poner todas las ideas *al mismo nivel*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *esquema* ordena las ideas.",
+    "Las *llaves* van de lo general a lo particular.",
+    "El *comparativo* compara.",
+    "Y siempre con *palabras clave*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ESQUEMA",
+     "ideas ordenadas"
+    ],
+    [
+     "LLAVES",
+     "de lo general a lo particular"
+    ],
+    [
+     "COMPARATIVO",
+     "compara"
+    ],
+    [
+     "CLAVE",
+     "pocas palabras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
