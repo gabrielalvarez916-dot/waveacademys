@@ -1,0 +1,175 @@
+{
+ "slug": "leng1-m7-n3",
+ "step_id": "10596e7f-6040-4341-a907-b2adaa0e0b9c",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Letras que confunden",
+ "sub": "Lengua y Literatura I · Misión 7 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DUDA",
+   "titular": "¿Cantaba con b o con v?",
+   "bajada": "Las letras que más confunden",
+   "emoji": "✏️",
+   "titulo": "LETRAS QUE CONFUNDEN",
+   "sub": "b, v, g, j y h",
+   "voz": [
+    "Duda: ¿cantaba se escribe con b o con v?",
+    "Son las letras que más confunden.",
+    "Hoy: *b*, *v*, *g*, *j* y *h*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "B Y V",
+   "columnas": [
+    "Regla",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Pretéritos en -aba",
+     "cantaba"
+    ],
+    [
+     "b antes de l y r",
+     "blanco, brazo"
+    ],
+    [
+     "v en el verbo ir",
+     "voy, vas"
+    ]
+   ],
+   "voz": [
+    "Algunas reglas de *b* y *v*.",
+    "Los pretéritos en *aba* llevan *b*.",
+    "Antes de *l* y *r*, *b*.",
+    "Y el verbo *ir* lleva *v*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "G y J",
+   "texto": "Los verbos en -ger y -gir llevan g",
+   "emoji": "✏️",
+   "voz": [
+    "Los verbos terminados en *ger* y *gir* llevan *g*.",
+    "Como *coger* y *elegir*.",
+    "Excepciones: *tejer* y *crujir*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HECHO",
+    "texto": "Del verbo hacer",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "ECHO",
+    "texto": "Del verbo echar",
+    "emoji": "🔄"
+   },
+   "signo": "≠",
+   "voz": [
+    "La *h* no suena pero se escribe.",
+    "*Hecho* es de hacer, con *h*.",
+    "*Echo* es de echar, sin *h*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PAREJAS",
+   "columnas": [
+    "Palabra",
+    "Uso"
+   ],
+   "filas": [
+    [
+     "hay",
+     "Existir"
+    ],
+    [
+     "ahí",
+     "Lugar"
+    ],
+    [
+     "ay",
+     "Queja"
+    ]
+   ],
+   "voz": [
+    "Tres parecidas.",
+    "*Hay* es existir.",
+    "*Ahí* es un lugar.",
+    "Y *ay* es una queja."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Se escribe «porque» o «por qué» en «¿___ llegaste tarde?»?",
+   "opciones": [
+    "Por qué",
+    "Porque",
+    "Porqué"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿porque o por qué en una pregunta?",
+    "¿Por qué, porque o porqué?",
+    "*Por qué*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cantava",
+     "bien": "Cantaba"
+    },
+    {
+     "mal": "Cojer",
+     "bien": "Coger"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Cantava* con v.",
+    "Y *cojer* con j."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los pretéritos en *aba* llevan *b*.",
+    "Los verbos en *ger* llevan *g*.",
+    "*Hecho* lleva *h*.",
+    "Y distinguí *hay*, *ahí* y *ay*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "B",
+     "-aba"
+    ],
+    [
+     "G",
+     "-ger"
+    ],
+    [
+     "H",
+     "hecho"
+    ],
+    [
+     "PAREJAS",
+     "hay, ahí, ay"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "slug": "leng1-m6-n2",
+ "step_id": "7c8e4668-4fda-412e-96a7-7706c24e7ec7",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Un fantasma en apuros",
+ "sub": "Lengua y Literatura I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué le ofrece el señor Otis al fantasma para sus cadenas?",
+   "segundos": 6,
+   "respuesta": "Aceite",
+   "emoji": "⛓️",
+   "titulo": "UN FANTASMA EN APUROS",
+   "sub": "intentos y respuestas",
+   "voz": [
+    "Desafío: ¿qué le ofrece el señor Otis al fantasma para sus cadenas? Seis segundos.",
+    "Aceite.",
+    "Hoy: *un fantasma en apuros*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "INTENTO Y RESPUESTA",
+   "columnas": [
+    "Fantasma",
+    "Familia"
+   ],
+   "filas": [
+    [
+     "Cadenas ruidosas",
+     "Le ofrecen aceite"
+    ],
+    [
+     "Mancha de sangre",
+     "La limpian"
+    ],
+    [
+     "Aparece de noche",
+     "Le tiran almohadas"
+    ]
+   ],
+   "voz": [
+    "Cada intento tiene su respuesta.",
+    "Hace sonar *cadenas*: le ofrecen *aceite*.",
+    "Deja una *mancha*: la *limpian*.",
+    "Aparece de noche: le tiran *almohadas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Causa",
+   "texto": "Lo que provoca que algo pase",
+   "emoji": "🔗",
+   "voz": [
+    "La *causa* es lo que provoca que algo pase.",
+    "La *consecuencia* es lo que pasa después."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Nadie le tiene miedo",
+    "emoji": "👻"
+   },
+   "items": [
+    {
+     "txt": "Se siente humillado",
+     "emoji": "😞"
+    },
+    {
+     "txt": "Se esfuerza más",
+     "emoji": "💪"
+    },
+    {
+     "txt": "Pierde el orgullo",
+     "emoji": "📉"
+    }
+   ],
+   "voz": [
+    "Una causa y varias consecuencias.",
+    "Nadie le tiene miedo.",
+    "Entonces se siente *humillado*.",
+    "Se *esfuerza más*.",
+    "Y pierde el *orgullo*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CAUSA",
+     "emoji": "🔗"
+    },
+    {
+     "cab": "CONSECUENCIA",
+     "emoji": "➡️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Nadie se asusta",
+     "caja": 0
+    },
+    {
+     "txt": "Se siente humillado",
+     "caja": 1
+    },
+    {
+     "txt": "Deja una mancha",
+     "caja": 0
+    },
+    {
+     "txt": "La limpian",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Causa o consecuencia?",
+    "*Nadie se asusta* y *deja una mancha*: causas.",
+    "*Se siente humillado* y *la limpian*: consecuencias."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se siente el fantasma?",
+   "opciones": [
+    "Humillado",
+    "Orgulloso",
+    "Aliviado"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se siente el fantasma?",
+    "¿Humillado, orgulloso o aliviado?",
+    "*Humillado*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir causa y consecuencia",
+     "bien": "Probar con porque y entonces"
+    },
+    {
+     "mal": "El fantasma no siente nada",
+     "bien": "Se siente humillado"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Confundir* causa y consecuencia.",
+    "Y creer que el fantasma *no siente nada*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El fantasma *intenta* asustar.",
+    "La familia *responde* con practicidad.",
+    "La *causa* provoca la *consecuencia*.",
+    "Y el fantasma queda *humillado*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INTENTOS",
+     "asustar"
+    ],
+    [
+     "RESPUESTAS",
+     "prácticas"
+    ],
+    [
+     "CAUSA",
+     "lo que provoca"
+    ],
+    [
+     "FANTASMA",
+     "humillado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

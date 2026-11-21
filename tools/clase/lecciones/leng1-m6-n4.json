@@ -1,0 +1,210 @@
+{
+ "slug": "leng1-m6-n4",
+ "step_id": "5498e671-fda5-4d3e-af28-4376a962cc96",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Opino sobre lo leído",
+ "sub": "Lengua y Literatura I · Misión 6 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿\"El fantasma es simpático\" es un hecho o una opinión?",
+   "segundos": 6,
+   "respuesta": "Una opinión",
+   "emoji": "💭",
+   "titulo": "OPINO SOBRE LO LEÍDO",
+   "sub": "hechos y opiniones",
+   "voz": [
+    "Desafío: ¿el fantasma es simpático es un hecho o una opinión? Seis segundos.",
+    "Una opinión.",
+    "Hoy: *opino sobre lo leído*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HECHO",
+    "texto": "Ocurre en el texto",
+    "emoji": "📖"
+   },
+   "b": {
+    "cab": "OPINIÓN",
+    "texto": "Lo que pienso",
+    "emoji": "💭"
+   },
+   "signo": "vs",
+   "voz": [
+    "No son lo mismo.",
+    "El *hecho* ocurre en el texto.",
+    "La *opinión* es lo que yo pienso."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ESTRUCTURA",
+   "columnas": [
+    "Parte",
+    "Qué hace"
+   ],
+   "filas": [
+    [
+     "Tesis",
+     "Dice lo que pienso"
+    ],
+    [
+     "Argumento",
+     "Explica por qué"
+    ],
+    [
+     "Ejemplo",
+     "Lo prueba con el texto"
+    ],
+    [
+     "Cierre",
+     "Vuelve a la tesis"
+    ]
+   ],
+   "voz": [
+    "Una opinión tiene partes.",
+    "La *tesis* dice lo que pienso.",
+    "El *argumento* explica por qué.",
+    "El *ejemplo* lo prueba con el texto.",
+    "Y el *cierre* vuelve a la tesis."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "HECHO",
+     "emoji": "📖"
+    },
+    {
+     "cab": "OPINIÓN",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Compran el castillo",
+     "caja": 0
+    },
+    {
+     "txt": "Es muy divertido",
+     "caja": 1
+    },
+    {
+     "txt": "Deja una mancha",
+     "caja": 0
+    },
+    {
+     "txt": "Es simpático",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Hecho u opinión?",
+    "*Compran el castillo* y *deja una mancha*: hechos.",
+    "*Es muy divertido* y *es simpático*: opiniones."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONECTORES",
+   "columnas": [
+    "Función",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Opinar",
+     "en mi opinión"
+    ],
+    [
+     "Explicar",
+     "porque"
+    ],
+    [
+     "Ejemplificar",
+     "por ejemplo"
+    ],
+    [
+     "Cerrar",
+     "en conclusión"
+    ]
+   ],
+   "voz": [
+    "Conectores para opinar.",
+    "*En mi opinión* para opinar.",
+    "*Porque* para explicar.",
+    "*Por ejemplo* para ejemplificar.",
+    "Y *en conclusión* para cerrar."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conector sirve para dar un ejemplo?",
+   "opciones": [
+    "Por ejemplo",
+    "En conclusión",
+    "Pero"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué conector sirve para dar un ejemplo?",
+    "¿Por ejemplo, en conclusión o pero?",
+    "*Por ejemplo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Opinar sin explicar",
+     "bien": "Dar argumentos y ejemplos"
+    },
+    {
+     "mal": "Mezclar hecho y opinión",
+     "bien": "Separarlos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Opinar sin explicar*.",
+    "Y *mezclar* hechos con opiniones."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *hecho* ocurre en el texto.",
+    "La *opinión* es lo que pienso.",
+    "Se arma con *tesis*, *argumentos* y *ejemplos*.",
+    "Y se cierra volviendo a la tesis.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "HECHO",
+     "en el texto"
+    ],
+    [
+     "OPINIÓN",
+     "lo que pienso"
+    ],
+    [
+     "PARTES",
+     "tesis y ejemplos"
+    ],
+    [
+     "CIERRE",
+     "vuelve a la tesis"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

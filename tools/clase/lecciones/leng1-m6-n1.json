@@ -1,0 +1,193 @@
+{
+ "slug": "leng1-m6-n1",
+ "step_id": "037ca438-4ffc-4546-bac5-2d85e92fa42b",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Un castillo con historia",
+ "sub": "Lengua y Literatura I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "EXTRA",
+   "titular": "Familia compra un castillo embrujado",
+   "bajada": "Y no cree en fantasmas",
+   "emoji": "🏰",
+   "titulo": "EL FANTASMA DE CANTERVILLE",
+   "sub": "un castillo con historia",
+   "voz": [
+    "Extra: una familia compra un castillo embrujado.",
+    "Y no cree en fantasmas.",
+    "Hoy: *El fantasma de Canterville*, de Oscar Wilde."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PERSONAJES",
+   "columnas": [
+    "Personaje",
+    "Cómo es"
+   ],
+   "filas": [
+    [
+     "Lord Canterville",
+     "El dueño"
+    ],
+    [
+     "Los Otis",
+     "Prácticos y modernos"
+    ],
+    [
+     "Sir Simon",
+     "El fantasma"
+    ],
+    [
+     "Virginia",
+     "Sensible y amable"
+    ]
+   ],
+   "voz": [
+    "Los personajes.",
+    "*Lord Canterville* es el dueño y avisa del fantasma.",
+    "Los *Otis* son una familia práctica y moderna.",
+    "*Sir Simon* es el fantasma.",
+    "Y *Virginia* es la hija, sensible y amable."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Relato gótico",
+   "texto": "Misterio y terror en castillos antiguos",
+   "emoji": "🏰",
+   "voz": [
+    "Es un *relato gótico*: misterio y terror en un castillo antiguo.",
+    "Wilde juega con esos elementos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Narrador omnisciente",
+   "texto": "Cuenta en tercera persona y lo sabe todo",
+   "emoji": "👁️",
+   "voz": [
+    "El narrador es *omnisciente*.",
+    "Cuenta en tercera persona y conoce lo que sienten todos."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TRADICIÓN",
+    "texto": "El fantasma, siglos de historia",
+    "emoji": "👻"
+   },
+   "b": {
+    "cab": "PRACTICIDAD",
+    "texto": "La familia, moderna y sin miedo",
+    "emoji": "🧼"
+   },
+   "signo": "vs",
+   "voz": [
+    "El conflicto es un choque.",
+    "El fantasma representa la *tradición*.",
+    "La familia representa la *practicidad*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FANTASMA",
+     "emoji": "👻"
+    },
+    {
+     "cab": "FAMILIA",
+     "emoji": "🏠"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Quiere asustar",
+     "caja": 0
+    },
+    {
+     "txt": "No cree en ellos",
+     "caja": 1
+    },
+    {
+     "txt": "Siglos de historia",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Del fantasma o de la familia?",
+    "*Quiere asustar* y *siglos de historia*: el fantasma.",
+    "*No cree en ellos*: la familia."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama el fantasma?",
+   "opciones": [
+    "Sir Simon",
+    "Lord Canterville",
+    "Washington"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se llama el fantasma?",
+    "¿Sir Simon, Lord Canterville o Washington?",
+    "*Sir Simon*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Es un cuento de terror común",
+     "bien": "Es una parodia gótica"
+    },
+    {
+     "mal": "El narrador es un personaje",
+     "bien": "Narra en tercera persona"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que es *terror común*.",
+    "Y confundir al *narrador* con un personaje."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El autor es *Oscar Wilde*.",
+    "El escenario es un *castillo inglés*.",
+    "Los personajes son los *Otis* y *Sir Simon*.",
+    "Y el conflicto enfrenta *tradición* y *practicidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AUTOR",
+     "Wilde"
+    ],
+    [
+     "ESCENARIO",
+     "castillo"
+    ],
+    [
+     "PERSONAJES",
+     "Otis y Simon"
+    ],
+    [
+     "CONFLICTO",
+     "tradición y práctica"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

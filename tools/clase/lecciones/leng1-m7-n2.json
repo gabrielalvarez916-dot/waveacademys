@@ -1,0 +1,164 @@
+{
+ "slug": "leng1-m7-n2",
+ "step_id": "6e7f05eb-33db-4fab-b65a-771c877d32cc",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Diptongo, hiato y tilde",
+ "sub": "Lengua y Literatura I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿\"País\" tiene una o dos sílabas?",
+   "segundos": 6,
+   "respuesta": "Dos: pa-ís",
+   "emoji": "🔤",
+   "titulo": "DIPTONGO Y HIATO",
+   "sub": "y la tilde",
+   "voz": [
+    "Desafío: ¿país tiene una o dos sílabas? Seis segundos.",
+    "Dos: pa, ís.",
+    "Hoy: *diptongo*, *hiato* y *tilde*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ABIERTAS",
+    "texto": "a, e, o",
+    "emoji": "🔓"
+   },
+   "b": {
+    "cab": "CERRADAS",
+    "texto": "i, u",
+    "emoji": "🔒"
+   },
+   "signo": "+",
+   "voz": [
+    "Dos clases de vocales.",
+    "Las *abiertas* son a, e, o.",
+    "Las *cerradas* son i, u."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Diptongo",
+   "texto": "Dos vocales en una sílaba",
+   "emoji": "🔗",
+   "voz": [
+    "El *diptongo* son dos vocales en una sola sílaba.",
+    "Como *ciu-dad* o *cuo-ta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Hiato",
+   "texto": "Dos vocales en sílabas distintas",
+   "emoji": "✂️",
+   "voz": [
+    "El *hiato* son dos vocales en sílabas distintas.",
+    "Como *pa-ís* o *rí-o*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DIPTONGO",
+     "emoji": "🔗"
+    },
+    {
+     "cab": "HIATO",
+     "emoji": "✂️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "ciudad",
+     "caja": 0
+    },
+    {
+     "txt": "país",
+     "caja": 1
+    },
+    {
+     "txt": "cuota",
+     "caja": 0
+    },
+    {
+     "txt": "día",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Diptongo o hiato?",
+    "*Ciudad* y *cuota*: diptongos.",
+    "*País* y *día*: hiatos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál lleva tilde en el hiato?",
+   "opciones": [
+    "río",
+    "peine",
+    "ciudad"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál lleva tilde en el hiato?",
+    "¿Río, peine o ciudad?",
+    "*Río*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Tilde en un diptongo por costumbre",
+     "bien": "Solo si cumple las reglas generales"
+    },
+    {
+     "mal": "Olvidar la tilde en país",
+     "bien": "Hiato con tilde"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner tilde a un *diptongo* por costumbre.",
+    "Y *olvidar* la tilde en *país*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Las vocales son *abiertas* o *cerradas*.",
+    "El *diptongo* es una sílaba.",
+    "El *hiato* son dos.",
+    "Y el hiato con cerrada tónica *siempre lleva tilde*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DIPTONGO",
+     "una sílaba"
+    ],
+    [
+     "HIATO",
+     "dos sílabas"
+    ],
+    [
+     "CERRADA TÓNICA",
+     "tilde"
+    ],
+    [
+     "PASO",
+     "separar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

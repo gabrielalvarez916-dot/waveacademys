@@ -1,0 +1,179 @@
+{
+ "slug": "leng1-m7-n4",
+ "step_id": "dedf15cb-0aa4-4e52-9ff0-e7dc27e290b1",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Dictado y revisión",
+ "sub": "Lengua y Literatura I · Misión 7 · Nivel 4",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Mica",
+    "emoji": "👧"
+   },
+   "lugar": "📝",
+   "lineas": [
+    "Mica escribió un texto en cinco minutos.",
+    "Lo releyó en voz alta y encontró tres errores."
+   ],
+   "titulo": "DICTADO Y REVISIÓN",
+   "sub": "escribir bien",
+   "voz": [
+    "Mica escribió un texto en cinco minutos.",
+    "Lo releyó en voz alta y encontró tres errores.",
+    "Hoy: *dictado y revisión*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Revisar",
+   "texto": "Leer de nuevo para corregir",
+   "emoji": "🔍",
+   "voz": [
+    "*Revisar* es leer de nuevo para corregir.",
+    "Conviene hacerlo en *voz alta*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LAS PASADAS",
+   "columnas": [
+    "Pasada",
+    "Qué busco"
+   ],
+   "filas": [
+    [
+     "1",
+     "Que se entienda"
+    ],
+    [
+     "2",
+     "Tildes"
+    ],
+    [
+     "3",
+     "b/v, g/j, h"
+    ],
+    [
+     "4",
+     "Mayúsculas y puntos"
+    ]
+   ],
+   "voz": [
+    "Cuatro pasadas.",
+    "Primero, que se *entienda*.",
+    "Después, las *tildes*.",
+    "Luego, las letras que *confunden*.",
+    "Y por último, *mayúsculas* y puntuación."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Dictado",
+   "texto": "Escribir lo que se oye",
+   "emoji": "🎧",
+   "voz": [
+    "En un *dictado* escribís lo que oís.",
+    "Escuchá toda la frase, escribila y *releé*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "REVISAR",
+     "emoji": "🔍"
+    },
+    {
+     "cab": "NO REVISAR",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Leer en voz alta",
+     "caja": 0
+    },
+    {
+     "txt": "Entregar sin releer",
+     "caja": 1
+    },
+    {
+     "txt": "Usar diccionario",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Buena práctica o no?",
+    "*Leer en voz alta* y *usar diccionario*: sí.",
+    "*Entregar sin releer*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Para una duda de escritura, ¿qué usás?",
+   "opciones": [
+    "El diccionario",
+    "El azar",
+    "Nada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué se usa para una duda de escritura?",
+    "¿El diccionario, el azar o nada?",
+    "*El diccionario*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Revisar una sola vez",
+     "bien": "Varias pasadas"
+    },
+    {
+     "mal": "Corregir todo a la vez",
+     "bien": "Una cosa por pasada"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Revisar *una sola vez*.",
+    "Y querer corregir *todo a la vez*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Revisar es *releer*.",
+    "Conviene en *voz alta*.",
+    "Se hace en *pasadas*, una por tipo de error.",
+    "Y ante la duda, el *diccionario*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REVISAR",
+     "releer"
+    ],
+    [
+     "VOZ ALTA",
+     "se oyen faltas"
+    ],
+    [
+     "PASADAS",
+     "una por error"
+    ],
+    [
+     "DUDA",
+     "diccionario"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

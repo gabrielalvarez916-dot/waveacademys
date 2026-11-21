@@ -1,0 +1,184 @@
+{
+ "slug": "leng1-m6-n3",
+ "step_id": "0505a6fd-24ea-4323-9560-fc64e1ae3d6e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Humor e ironía",
+ "sub": "Lengua y Literatura I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Un fantasma aparece y le ofrecen aceite 😂"
+    },
+    {
+     "yo": true,
+     "txt": "¿Aceite? ¿Para qué?"
+    },
+    {
+     "yo": false,
+     "txt": "Para sus cadenas ruidosas"
+    }
+   ],
+   "titulo": "HUMOR E IRONÍA",
+   "sub": "lo esperado y lo que pasa",
+   "voz": [
+    "Lu le cuenta a Juan que a un fantasma le ofrecen aceite.",
+    "Juan: ¿aceite? ¿Para qué?",
+    "Lu: para sus cadenas ruidosas.",
+    "Hoy: *humor e ironía*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Ironía",
+   "texto": "Lo que ocurre es lo contrario de lo esperado",
+   "emoji": "🎭",
+   "voz": [
+    "La *ironía* muestra lo contrario de lo esperado.",
+    "Sirve para burlarse o señalar algo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ESPERADO Y REAL",
+   "columnas": [
+    "Se espera",
+    "Ocurre"
+   ],
+   "filas": [
+    [
+     "Familia aterrada",
+     "Le ofrecen aceite"
+    ],
+    [
+     "Fantasma imponente",
+     "Se siente ridículo"
+    ],
+    [
+     "Misterio",
+     "Producto de limpieza"
+    ]
+   ],
+   "voz": [
+    "El contraste.",
+    "Se espera una familia *aterrada*: le ofrecen *aceite*.",
+    "Se espera un fantasma *imponente*: se siente *ridículo*.",
+    "Se espera *misterio*: usan un *producto de limpieza*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Parodia",
+   "texto": "Imitar un género para burlarse",
+   "emoji": "🎪",
+   "voz": [
+    "Una *parodia* imita un género para burlarse de él.",
+    "El cuento parodia el *género gótico*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "HUMOR",
+     "emoji": "😂"
+    },
+    {
+     "cab": "TERROR",
+     "emoji": "😱"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Aceite para cadenas",
+     "caja": 0
+    },
+    {
+     "txt": "Mancha de sangre",
+     "caja": 1
+    },
+    {
+     "txt": "Almohadas",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Qué produce humor?",
+    "*Aceite para cadenas* y *almohadas*: humor.",
+    "*La mancha de sangre* sería terror."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Imitar un género para burlarse de él es una…",
+   "opciones": [
+    "Parodia",
+    "Fábula",
+    "Biografía"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: imitar un género para burlarse de él.",
+    "¿Parodia, fábula o biografía?",
+    "Una *parodia*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La ironía es mentir",
+     "bien": "Es mostrar lo contrario de lo esperado"
+    },
+    {
+     "mal": "El humor es solo burla",
+     "bien": "También señala algo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la ironía es *mentir*.",
+    "Y pensar que el humor es *solo burla*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *ironía* es lo contrario de lo esperado.",
+    "El *contraste* genera humor.",
+    "La *exageración* también.",
+    "Y el cuento es una *parodia* gótica.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "IRONÍA",
+     "contrario"
+    ],
+    [
+     "CONTRASTE",
+     "esperado y real"
+    ],
+    [
+     "EXAGERAR",
+     "hace reír"
+    ],
+    [
+     "PARODIA",
+     "imita y se burla"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

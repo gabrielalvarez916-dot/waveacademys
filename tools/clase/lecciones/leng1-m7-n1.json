@@ -1,0 +1,199 @@
+{
+ "slug": "leng1-m7-n1",
+ "step_id": "f492a440-2ac6-48da-9346-9cd82a20a00d",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Agudas, graves y esdrújulas",
+ "sub": "Lengua y Literatura I · Misión 7 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "3 clases",
+   "emoji": "🔤",
+   "final": "según dónde cae la fuerza",
+   "titulo": "AGUDAS, GRAVES Y ESDRÚJULAS",
+   "sub": "y cuándo llevan tilde",
+   "voz": [
+    "Todas las palabras caen en tres clases.",
+    "Según dónde cae la fuerza.",
+    "Hoy: *agudas*, *graves* y *esdrújulas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sílaba tónica",
+   "texto": "La que se pronuncia con más fuerza",
+   "emoji": "🔊",
+   "voz": [
+    "La *sílaba tónica* es la que se pronuncia con más fuerza.",
+    "En *canción* es *ción*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES CLASES",
+   "columnas": [
+    "Clase",
+    "Fuerza",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Aguda",
+     "Última",
+     "canción"
+    ],
+    [
+     "Grave",
+     "Penúltima",
+     "árbol"
+    ],
+    [
+     "Esdrújula",
+     "Antepenúltima",
+     "teléfono"
+    ]
+   ],
+   "voz": [
+    "Las tres clases.",
+    "*Aguda*: la fuerza en la última, como *canción*.",
+    "*Grave*: en la penúltima, como *árbol*.",
+    "*Esdrújula*: en la antepenúltima, como *teléfono*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CUÁNDO LLEVAN TILDE",
+   "columnas": [
+    "Clase",
+    "Regla"
+   ],
+   "filas": [
+    [
+     "Aguda",
+     "Termina en n, s o vocal"
+    ],
+    [
+     "Grave",
+     "NO termina en n, s o vocal"
+    ],
+    [
+     "Esdrújula",
+     "Siempre"
+    ]
+   ],
+   "voz": [
+    "Las reglas.",
+    "La *aguda* lleva tilde si termina en *n*, *s* o *vocal*.",
+    "La *grave* lleva tilde si *no* termina en *n*, *s* ni *vocal*.",
+    "Y la *esdrújula* lleva tilde *siempre*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AGUDA",
+     "emoji": "1️⃣"
+    },
+    {
+     "cab": "GRAVE",
+     "emoji": "2️⃣"
+    },
+    {
+     "cab": "ESDRÚJULA",
+     "emoji": "3️⃣"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "canción",
+     "caja": 0
+    },
+    {
+     "txt": "árbol",
+     "caja": 1
+    },
+    {
+     "txt": "música",
+     "caja": 2
+    },
+    {
+     "txt": "papel",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Qué clase es?",
+    "*Canción* y *papel*: agudas.",
+    "*Árbol*: grave.",
+    "*Música*: esdrújula."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál lleva tilde?",
+   "opciones": [
+    "lápiz",
+    "papel",
+    "casa"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál lleva tilde?",
+    "¿Lápiz, papel o casa?",
+    "*Lápiz*: grave terminada en z."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Tilde a todo lo que suena fuerte",
+     "bien": "Primero buscar la sílaba tónica"
+    },
+    {
+     "mal": "Olvidar la tilde en esdrújulas",
+     "bien": "Siempre llevan"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner tilde a *todo lo fuerte*.",
+    "Y *olvidar* la tilde en las esdrújulas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Aguda*: última sílaba.",
+    "*Grave*: penúltima.",
+    "*Esdrújula*: antepenúltima.",
+    "Y la esdrújula lleva tilde *siempre*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AGUDA",
+     "última"
+    ],
+    [
+     "GRAVE",
+     "penúltima"
+    ],
+    [
+     "ESDRÚJULA",
+     "siempre tilde"
+    ],
+    [
+     "TÓNICA",
+     "más fuerza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
