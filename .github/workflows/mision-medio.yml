@@ -42,6 +42,9 @@ jobs:
       - name: Armar y subir los PDF
         if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
         run: python tools/medio/pdf/generar.py ${{ steps.cuales.outputs.lista }}
+      - name: Cargar las clases que ya tienen voz (incluye las de la misión par de una ALTERNATIVA)
+        if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
+        run: python tools/medio/clase/cargar.py $(ls tools/medio/clase/dist 2>/dev/null | sed 's/\.html$//')
       - name: Publicar misiones completas (solo Nivel Medio)
         if: env.MEDIO_TOKEN != ''
         run: python tools/medio/publicar.py

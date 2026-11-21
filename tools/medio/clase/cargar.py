@@ -13,6 +13,11 @@ slugs = sys.argv[1:]
 if not slugs:
     out = subprocess.run(['git', 'status', '--porcelain', '--', os.path.join(AQUI, 'dist')], capture_output=True, text=True).stdout
     slugs = [os.path.basename(l.split()[-1])[:-5] for l in out.splitlines() if l.strip().endswith('.html')]
+def paso_video(d):
+    body = json.dumps({'p_token': TOKEN, 'p_subject': d['subject_id'], 'p_tema': d['tema'], 'p_nivel': d['nivel'], 'p_internacional': bool(d.get('internacional'))}).encode()
+    req = urllib.request.Request(URL.replace('cargar_clase_medio', 'paso_video_medio'), data=body, method='POST', headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=60) as r: return json.loads(r.read())
+
 error = False
 for nombre in slugs:
     neutro = nombre.endswith('.neutro'); slug = nombre[:-7] if neutro else nombre
@@ -20,6 +25,10 @@ for nombre in slugs:
     if not os.path.exists(lp):
         continue
     L = json.load(open(lp, encoding='utf-8'))
+    if L.get('destino') and not L.get('step_id'):  # {"subject_id", "tema", "nivel", "internacional"}: se busca el paso de video en la base
+        L['step_id'] = paso_video(L['destino'])
+        if not L['step_id']:
+            print(nombre, ': AVISO todavía no existe la lección de destino (se carga en la próxima corrida)'); continue
     if not (L.get('step_id') or L.get('subject_id')):
         print(slug, ': sin step_id ni subject_id, no se carga'); continue
     html = open(os.path.join(AQUI, 'dist', nombre + '.html'), encoding='utf-8').read()

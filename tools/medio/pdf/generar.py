@@ -29,20 +29,26 @@ def pdf_de(meta, contenido):
         return open(s, "rb").read()
 
 def mision(ruta):
-    M = json.load(open(ruta, encoding="utf-8")); fallos = 0
-    st, res = llamar({"action": "lecciones", "subject_id": M["subject_id"], "tema": M["tema"]})
-    if st != 200: print("No se pudieron pedir las lecciones:", st, res); return 1
+    M = json.load(open(ruta, encoding="utf-8")); fallos = subir(M, M["niveles"], False)
+    if isinstance(M.get("alternativa"), dict):  # ALTERNATIVA: la misión par para alumnos de otros países (todo en neutro)
+        fallos += subir(M, M["alternativa"].get("niveles") or {}, True)
+    return fallos
+
+def subir(M, niveles, internacional):
+    fallos = 0
+    st, res = llamar({"action": "lecciones", "subject_id": M["subject_id"], "tema": M["tema"], "internacional": internacional})
+    if st != 200: print("No se pudieron pedir las lecciones" + (" (par internacional)" if internacional else "") + ":", st, res); return 1
     for L in res["lecciones"]:
-        n = str(L["nivel"]); c = M["niveles"].get(n)
+        n = str(L["nivel"]); c = niveles.get(n)
         if not c: continue
         if not es_medio(L["materia"]): print("SALTEO (no es del Nivel Medio):", L["materia"]); continue
         if L["publicada"]: print("SALTEO (publicada):", L["titulo"]); continue
         meta = {k: L[k] for k in ("materia", "anio", "tema_num", "tema", "leccion_num", "titulo")}
         for neutro in (False, True):
-            cont = convertir(c) if neutro else argentino(c)
-            nombre = f"{L['materia']} · Lección {L['leccion_num']} · {L['titulo']}" + (" (neutro)" if neutro else "")
+            cont = convertir(c) if (neutro or internacional) else argentino(c)
+            nombre = f"{L['materia']} · Lección {L['leccion_num']} · {L['titulo']}" + (" (neutro)" if neutro else "") + (" [internacional]" if internacional else "")
             try:
-                pdf = pdf_de({**meta, **({"neutro": True} if neutro else {})}, cont)
+                pdf = pdf_de({**meta, **({"neutro": True} if (neutro or internacional) else {})}, cont)
                 st, r = llamar({"action": "subir", "lesson_id": L["lesson_id"], "pdf_base64": base64.b64encode(pdf).decode(), "contenido": cont, "neutro": neutro})
                 if st == 200 and r.get("ok"): print("OK  ", nombre, f"({len(pdf)//1024} KB)", r.get("carpeta", ""))
                 else: fallos += 1; print("FALLO", nombre, st, r)

@@ -1,0 +1,4 @@
+-- MÁQUINA DEL NIVEL MEDIO · etiquetas COMÚN / VARIANTE / ALTERNATIVA (aplicado como migraciones
+-- "medio_variante_alternativa" y "medio_alternativa_par_existente"). Funciones: cargar_mision_medio (actualizada),
+-- private.cargar_mision_medio_en, private.medio_par_internacional, private.medio_tema_par, paso_video_medio, tema_par_medio.
+-- Todas rechazan materias que no sean del Nivel Medio. El par de una ALTERNATIVA que ya existe (version_par) se respeta tal cual.

@@ -175,3 +175,15 @@ Regla fija para estas materias (la lista está en `tools/medio/primeros_anios.py
 - Hasta 8 hojas de contenido (la letra grande ocupa más).
 
 **Controles**: `revisar_contenido.py` marca frases largas, clases de más de 10 escenas y secciones del PDF sin dibujo.
+
+## Etiquetas COMÚN, VARIANTE y ALTERNATIVA en el Medio
+
+La etiqueta de cada misión está en la base (`topics.version`); copia en `tools/medio/versiones.json` (solo las que no son comunes). `revisar_contenido.py` avisa antes de subir y `cargar_mision_medio` vuelve a controlar: **no carga nada** si falta una parte.
+
+- **Común**: se escribe una vez; la versión neutra sale sola.
+- **Variante**: en el mismo archivo, cada bloque que cambia lleva su parte `"neutro"` (clase, PDF, y `"neutro": {"p": ...}` en actividades y examen). Una clase igual para todos lleva `"sin_variante": true`.
+- **Alternativa**: el archivo de la misión trae `"alternativa": {niveles, act, examen, practica, examen_titulo, titulo, lecciones}`.
+  - En el Medio el par suele estar en **otra materia** (por ejemplo "Ciencias Sociales 3" ↔ "Ciencias Sociales Argentina 3", unidas por `version_par`): la parte `"alternativa"` se carga en ese par y no se cambia ninguna marca. Si la misión no tiene par, se crea uno solo para alumnos de otros países.
+  - PDF del par: lo arma y lo sube `generar.py` solo (todo en neutro).
+  - Clase del par: otro archivo en `lecciones/` con `"alternativa_de": "<slug argentino>"` y, en vez de `step_id`, `"destino": {"subject_id": "<materia de la misión>", "tema": N, "nivel": K, "internacional": true}` (la máquina busca sola el paso de video del par). La clase argentina lleva `"alternativa": "<slug del par>"`.
+- `"destino"` sirve también para cualquier clase (sin `"internacional"`): así no hace falta buscar ids a mano.
