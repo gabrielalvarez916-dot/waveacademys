@@ -37,6 +37,26 @@ for slug in args:
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')
     if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == 'TU TURNO' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
         E(slug, 'nivel de producción sin escena "TU TURNO" que diga la tarea concreta')
+# VARIEDAD DE RECURSOS (regla general, todos los años y niveles): las 4 clases de una misión no pueden ser el mismo molde
+_BASICAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'tabla', 'clasificar', 'pasos', 'consejo', 'frase'}
+_secs = {}
+for _s in args:
+    _lp = os.path.join(AQUI, 'lecciones', _s + '.json')
+    if os.path.exists(_lp):
+        _secs[_s] = [e.get('t') for e in json.load(open(_lp, encoding='utf-8'))['escenas']]
+for _s, _ts in _secs.items():
+    if len([t for t in _ts if t not in _BASICAS]) < 2: E(_s, 'poca variedad de recursos: usar al menos 2 plantillas del banco fuera de las básicas (comparar, antesdespues, causas, ciclo, flujo, linea, venn, balanza, matriz, partes, dato, dialogo, bloques, zoom, etc.)')
+_grupos = {}
+for _s, _ts in _secs.items(): _grupos.setdefault(re.sub(r'-n\d+(\.neutro)?$', '', _s), []).append((_s, _ts))
+for _g, _l in _grupos.items():
+    if len(_l) < 3: continue
+    _cont = {}
+    for _s, _ts in _l:
+        for t in set(_ts):
+            if t not in ('pregunta', 'resumen', 'errores', 'definicion'): _cont.setdefault(t, []).append(_s)
+    for t, ss in _cont.items():
+        if len(ss) > 2 and t not in ('reto', 'noticia', 'gancho', 'historia', 'chat'): E(_g, f'plantilla «{t}» repetida en {len(ss)} clases de la misión (máximo 2): variar los recursos')
+    if len({tuple(ts) for _, ts in _l}) < len(_l): E(_g, 'dos clases tienen exactamente la misma secuencia de escenas')
 if mis:
     for n, c in mis['niveles'].items():
         s = f'mision {mis["tema"]} nivel {n}'

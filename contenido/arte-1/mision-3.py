@@ -135,28 +135,32 @@ AD=lambda a,d,v:{"t":"antesdespues","antes":{"cab":a[0],"emoji":a[1],"texto":a[2
 DA=lambda n,a,d,t,e,v:{"t":"dato","numero":n,"antes":a,"despues":d,"texto":t,"emoji":e,"voz":v}
 RET=lambda tx,seg,resp,em,ti,sub,v:{"t":"reto","texto":tx,"segundos":seg,"respuesta":resp,"emoji":em,"titulo":ti,"sub":sub,"voz":v}
 NOT=lambda ci,ti,ba,em,tt,sub,v:{"t":"noticia","cinta":ci,"titular":ti,"bajada":ba,"emoji":em,"titulo":tt,"sub":sub,"voz":v}
+CIC=lambda t,it,v:{"t":"ciclo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+FLU=lambda t,it,v:{"t":"flujo","titulo":t,"items":[{"txt":a,"emoji":b} for a,b in it],"voz":v}
+MAT=lambda t,c,v:{"t":"matriz","titulo":t,"celdas":[{"cab":a,"txt":b} for a,b in c],"voz":v}
+BLQ=lambda t,it,v:{"t":"bloques","titulo":t,"items":[{"cab":a,"txt":b} for a,b in it],"voz":v}
+BAR=lambda t,u,it,v:{"t":"barras","titulo":t,"unidad":u,"items":[{"txt":a,"valor":b} for a,b in it],"voz":v}
 CLS={1:[
  RET("¿Qué color sale de mezclar amarillo y azul?",6,"Verde","🎨","EL COLOR","pigmentos y círculo cromático",["Desafío: ¿qué color sale de mezclar amarillo y azul? Seis segundos.","Verde.","Hoy: *pigmentos y círculo cromático*."]),
  DEF("Pigmento","Sustancia que da color","🖌️",["Un *pigmento* es una sustancia que da color.","Absorbe parte de la luz que recibe."]),
- PA("PRIMARIOS",[("Rojo","🔴"),("Amarillo","🟡"),("Azul","🔵")],["Tres colores primarios.","*Rojo*.","*Amarillo*.","Y *azul*.","No salen de otras mezclas."]),
- CL([("PRIMARIO","⭐"),("SECUNDARIO","🔀")],[("Rojo",0),("Verde",1),("Azul",0),("Naranja",1)],["¿Primario o secundario?","*Rojo* y *azul*: primarios.","*Verde* y *naranja*: secundarios."]),
- TB("CAMBIAR UN COLOR",["Para…","Agregar"],[["Aclarar","Blanco"],["Oscurecer","Negro"],["Apagar","Su opuesto"]],["Cómo cambiar un color.","Para *aclarar*: blanco.","Para *oscurecer*: negro.","Y para *apagar*: su opuesto."]),
+ AD(("PRIMARIOS","🟡🔵","Amarillo y azul"),("SECUNDARIO","🟢","Verde"),["Mirá la mezcla.","Dos *primarios* se mezclan.","Y nace un *secundario*."]),
+ CIC("EL CÍRCULO CROMÁTICO",[("Rojo","🔴"),("Naranja","🟠"),("Amarillo","🟡"),("Verde","🟢"),("Azul","🔵"),("Violeta","🟣")],["El *círculo cromático* ordena los colores.","Empieza en el *rojo*.","Sigue el *naranja* y el *amarillo*.","Después el *verde* y el *azul*.","Y cierra con el *violeta*, que vuelve al rojo."]),
  Q("Amarillo más azul da…",["Verde","Naranja","Violeta"],0,["Te toca: amarillo más azul.","¿Verde, naranja o violeta?","*Verde*."]),
  ER([("Mucho oscuro de golpe","De a gotas"),("Mezclar muchos colores a la vez","Dos por vez")],["Errores típicos.","Agregar *mucho oscuro* de golpe.","Y mezclar *muchos colores* a la vez."]),
  RES(["Repasemos.","Hay tres *primarios*.","Dos primarios dan un *secundario*.","El *círculo* los ordena.","Y con *blanco o negro* cambia el tono.","¡Clase terminada! Ahora, *a practicar*."],[["PRIMARIOS","rojo, amarillo, azul"],["SECUNDARIOS","dos primarios"],["CÍRCULO","ordena colores"],["TONOS","blanco o negro"]])],
 2:[
  NOT("COLOR","Un cartel que llama la atención","Usa colores opuestos","🪧","CÁLIDOS Y FRÍOS","armonías",["Noticia: un cartel llama la atención usando colores opuestos.","Hoy: *colores cálidos, fríos y armonías*."]),
- CL([("CÁLIDO","🔥"),("FRÍO","❄️")],[("Rojo",0),("Azul",1),("Amarillo",0),("Violeta",1)],["¿Cálido o frío?","*Rojo* y *amarillo*: cálidos.","*Azul* y *violeta*: fríos."]),
- DEF("Complementarios","Opuestos en el círculo","↔️",["Los *complementarios* están enfrentados en el círculo.","Juntos se ven más intensos."]),
- TB("ARMONÍAS",["Armonía","Cómo se arma"],[["Análoga","Colores vecinos"],["Complementaria","Colores opuestos"],["Monocromática","Un solo color"]],["Tipos de armonía.","*Análoga*: colores vecinos.","*Complementaria*: opuestos.","Y *monocromática*: un solo color."]),
+ CMP(("CÁLIDOS","Rojo, naranja y amarillo: energía","🔥"),("FRÍOS","Azul, verde y violeta: calma","❄️"),"vs",["Dos temperaturas de color.","Los *cálidos*: rojo, naranja y amarillo.","Los *fríos*: azul, verde y violeta."]),
+ CAU(("Color cálido","🔥"),[("Parece acercarse","🔍"),("Da energía","⚡")],["Los cálidos *cambian* cómo vemos la escena.","Parecen *acercarse*.","Y dan *energía*."]),
+ MAT("TRES ARMONÍAS",[("ANÁLOGA","Colores vecinos"),("COMPLEMENTARIA","Colores opuestos"),("MONOCROMÁTICA","Un solo color"),("PROTAGONISTA","Uno domina")],["Armonías de color.","La *análoga*: colores vecinos.","La *complementaria*: colores opuestos.","La *monocromática*: un solo color.","Y siempre, un *protagonista*."]),
  Q("Los colores cálidos parecen…",["Acercarse","Alejarse","Desaparecer"],0,["Te toca: los cálidos.","¿Acercarse, alejarse o desaparecer?","*Acercarse*."]),
  ER([("Todos los colores con la misma fuerza","Un protagonista"),("Contraste fuerte siempre","Según la intención")],["Errores típicos.","Usar todos los colores *con la misma fuerza*.","Y creer que el contraste fuerte *siempre* queda mejor."]),
  RES(["Repasemos.","Hay colores *cálidos* y *fríos*.","Los *complementarios* son opuestos.","Hay tres *armonías*.","Y conviene un color *protagonista*.","¡Clase terminada! Ahora, *a practicar*."],[["TEMPERATURA","cálidos y fríos"],["COMPLEMENTARIOS","opuestos"],["ARMONÍAS","tres tipos"],["CONTRASTE","un protagonista"]])],
 3:[
  RET("¿Qué emoción suele transmitir el azul suave?",6,"Calma","💙","EL COLOR","y las emociones",["Desafío: ¿qué emoción suele transmitir el azul suave? Seis segundos.","Calma.","Hoy: *el color y las emociones*."]),
- TB("ASOCIACIONES",["Color","Transmite"],[["Rojo","Energía, peligro"],["Azul","Calma, tristeza"],["Amarillo","Alegría"],["Verde","Naturaleza"]],["Algunas asociaciones.","El *rojo*: energía o peligro.","El *azul*: calma o tristeza.","El *amarillo*: alegría.","Y el *verde*: naturaleza."]),
+ BLQ("COLOR Y EMOCIÓN",[("ROJO","Energía, pasión, peligro"),("AZUL","Calma, confianza, tristeza"),("AMARILLO","Alegría, atención"),("VERDE","Naturaleza, esperanza")],["Algunas asociaciones habituales.","El *rojo*: energía o peligro.","El *azul*: calma o tristeza.","El *amarillo*: alegría.","Y el *verde*: naturaleza."]),
  DEF("Valor simbólico","Lo que un color representa","🏳️",["El *valor simbólico* es lo que un color representa.","Lo da la comunidad."]),
- CL([("DEPENDE","🌍"),("NO DEPENDE","📏")],[("Sentido del blanco",0),("Tamaño del pincel",1),("Época",0),("Cantidad de pintura",1)],["¿Depende de la cultura?","*Significado* y *época*: dependen.","*Pincel* y *cantidad*: no dependen."]),
+ FLU("DE LA EMOCIÓN A LA OBRA",[("Emoción","💭"),("Colores","🎨"),("Intención","🎯"),("Obra","🖼️")],["Un camino para pintar con sentido.","Primero, la *emoción*.","Después, los *colores* que la expresan.","Con *intención*.","Y al final, la *obra*."]),
  Q("Un color significa lo mismo en…",["Ninguna cultura única","Todas las culturas","Solo Argentina"],0,["Te toca: significados.","¿Ninguna cultura única, todas o solo Argentina?","El significado *cambia* según la cultura."]),
  ER([("Suponer que significa lo mismo","Preguntar de dónde viene"),("Elegir sin pensar","Elegir con intención")],["Errores típicos.","Creer que significa *lo mismo en todas partes*.","Y elegir colores *sin pensar*."]),
  RES(["Repasemos.","Los colores transmiten *emociones*.","Tienen *valor simbólico*.","Cambia según la *cultura*.","Y se elige *con intención*.","¡Clase terminada! Ahora, *a practicar*."],[["EMOCIÓN","el color transmite"],["SÍMBOLO","lo da la comunidad"],["CULTURA","cambia significados"],["INTENCIÓN","con propósito"]])],
@@ -164,7 +168,8 @@ CLS={1:[
  NOT("PALETA","Cinco colores alcanzan","Para pintar casi todo","🎨","LA PALETA","propia",["Noticia: cinco colores alcanzan para pintar casi cualquier cosa.","Hoy: *una paleta propia*."]),
  DEF("Paleta","Colores elegidos para una obra","🎨",["Una *paleta* es un conjunto limitado de colores.","Se eligen para una obra."]),
  PA("PASOS",[("Propósito","🎯"),("Dominante","🟧"),("Apoyos","🟪"),("Acento","✨")],["Cuatro pasos.","El *propósito*.","El *dominante*.","Los *apoyos*.","Y el *acento*."]),
- TB("PROPORCIONES",["Color","Cantidad"],[["Dominante","Más de la mitad"],["Apoyos","Un tercio"],["Acento","Muy poco"]],["Proporciones sugeridas.","El *dominante*: más de la mitad.","Los *apoyos*: un tercio.","Y el *acento*: muy poco."]),
+ BAR("CUÁNTO DE CADA COLOR","%",[("Dominante",60),("Apoyos",30),("Acento",10)],["Las proporciones.","El *dominante*: sesenta por ciento.","Los *apoyos*: treinta.","Y el *acento*: diez por ciento."]),
+ AD(("SIN PRUEBA","😬","Se arruina la obra final"),("CON PRUEBA","😊","Se ajusta en una hoja aparte"),["Antes de pintar, *probá*.","Sin prueba, se *arruina* la obra.","Con prueba, se *ajusta* en una hoja aparte."]),
  Q("Antes de pintar la obra final conviene…",["Probar en una hoja","Usar todos los colores","Pintar sin pensar"],0,["Te toca: antes de pintar.","¿Probar en una hoja, usar todos los colores o pintar sin pensar?","*Probar en una hoja*."]),
  RES(["Repasemos.","La *paleta* es limitada.","Se arma con *propósito*.","Se *prueba* antes.","Y se respetan las *proporciones*.","¡Clase terminada! Ahora, *a practicar*."],[["PALETA","pocos colores"],["PASOS","propósito a acento"],["PRUEBA","hoja aparte"],["PROPORCIÓN","dominante grande"]])]}
 for n,es in CLS.items():
