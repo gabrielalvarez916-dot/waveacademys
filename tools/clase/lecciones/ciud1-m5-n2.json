@@ -1,0 +1,192 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m5-n2",
+ "step_id": "b83a7c37-a7f7-4282-805c-02376271d0ec",
+ "materia": "Ciudadanía I",
+ "titulo": "División de poderes y control mutuo",
+ "sub": "Ciudadanía I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Tres poderes",
+   "emoji": "⚖️",
+   "final": "que se controlan entre sí",
+   "titulo": "DIVISIÓN DE PODERES",
+   "sub": "y control mutuo",
+   "voz": [
+    "El poder se reparte en tres.",
+    "Y cada uno controla a los otros.",
+    "Hoy: *división de poderes y control mutuo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES PODERES",
+   "columnas": [
+    "Poder",
+    "Función"
+   ],
+   "filas": [
+    [
+     "Legislativo",
+     "Hace las leyes"
+    ],
+    [
+     "Ejecutivo",
+     "Gobierna"
+    ],
+    [
+     "Judicial",
+     "Juzga"
+    ]
+   ],
+   "voz": [
+    "Los tres poderes.",
+    "El *legislativo* hace las leyes.",
+    "El *ejecutivo* gobierna.",
+    "El *judicial* juzga."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONTROLES",
+   "columnas": [
+    "Poder",
+    "Cómo controla"
+   ],
+   "filas": [
+    [
+     "Legislativo",
+     "Investiga y puede juzgar políticamente"
+    ],
+    [
+     "Ejecutivo",
+     "Veta leyes"
+    ],
+    [
+     "Judicial",
+     "Declara inconstitucional"
+    ]
+   ],
+   "voz": [
+    "Cómo se controlan.",
+    "El *legislativo* investiga.",
+    "El *ejecutivo* puede *vetar*.",
+    "El *judicial* puede declarar algo *inconstitucional*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Frenos y contrapesos",
+   "texto": "Cada poder frena a los otros",
+   "emoji": "🔁",
+   "voz": [
+    "El sistema se llama *frenos y contrapesos*.",
+    "Cada poder frena a los otros."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LEGISLATIVO",
+     "emoji": "📜"
+    },
+    {
+     "cab": "EJECUTIVO",
+     "emoji": "🏛️"
+    },
+    {
+     "cab": "JUDICIAL",
+     "emoji": "⚖️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Votar una ley",
+     "caja": 0
+    },
+    {
+     "txt": "Vetar una ley",
+     "caja": 1
+    },
+    {
+     "txt": "Anular una norma",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué poder lo hace?",
+    "*Votar una ley*: legislativo.",
+    "*Vetar*: ejecutivo.",
+    "*Anular una norma*: judicial."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El rechazo del Ejecutivo a una ley es el…",
+   "opciones": [
+    "Veto",
+    "Amparo",
+    "Balotaje"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el rechazo del ejecutivo a una ley.",
+    "¿Veto, amparo o balotaje?",
+    "El *veto*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los poderes no se relacionan",
+     "bien": "Se controlan"
+    },
+    {
+     "mal": "El judicial dicta las leyes",
+     "bien": "Las hace el legislativo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los poderes *no se relacionan*.",
+    "Y que el judicial *dicta las leyes*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay tres *poderes*.",
+    "Cada uno tiene *controles*.",
+    "Son *frenos y contrapesos*.",
+    "Así ninguno *concentra* el poder.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PODERES",
+     "tres"
+    ],
+    [
+     "CONTROLES",
+     "veto, juicio político"
+    ],
+    [
+     "EQUILIBRIO",
+     "frenos y contrapesos"
+    ],
+    [
+     "SIN CONTROL",
+     "abusos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

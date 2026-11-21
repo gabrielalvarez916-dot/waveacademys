@@ -1,0 +1,169 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m5-n4",
+ "step_id": "e10072f4-eb81-46b8-9e29-752412fb3207",
+ "materia": "Ciudadanía I",
+ "titulo": "Cómo se protege la constitución",
+ "sub": "Ciudadanía I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "TRIBUNALES",
+   "titular": "Un juez anula una norma",
+   "bajada": "Violaba la constitución",
+   "emoji": "⚖️",
+   "titulo": "PROTEGER LA CONSTITUCIÓN",
+   "sub": "cómo se logra",
+   "voz": [
+    "Noticia: un juez anula una norma.",
+    "Violaba la constitución.",
+    "Hoy: *cómo se protege la constitución*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Control de constitucionalidad",
+   "texto": "Los jueces revisan si una norma respeta la constitución",
+   "emoji": "🔍",
+   "voz": [
+    "Los jueces hacen el *control de constitucionalidad*.",
+    "Revisan si una norma respeta la constitución."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Constitución rígida",
+   "texto": "Difícil de reformar",
+   "emoji": "🔒",
+   "voz": [
+    "Una constitución *rígida* es difícil de reformar.",
+    "Exige un procedimiento especial."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "GARANTÍAS",
+   "columnas": [
+    "Garantía",
+    "Protege"
+   ],
+   "filas": [
+    [
+     "Amparo",
+     "Derechos frente a actos ilegales"
+    ],
+    [
+     "Hábeas corpus",
+     "La libertad física"
+    ]
+   ],
+   "voz": [
+    "Las garantías.",
+    "El *amparo* protege derechos frente a actos ilegales.",
+    "El *hábeas corpus* protege la libertad física."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PROTEGE",
+     "emoji": "✅"
+    },
+    {
+     "cab": "DEBILITA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Conocerla",
+     "caja": 0
+    },
+    {
+     "txt": "Ignorar un abuso",
+     "caja": 1
+    },
+    {
+     "txt": "Reclamar derechos",
+     "caja": 0
+    },
+    {
+     "txt": "Cambiarla apurados",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Protege o debilita la constitución?",
+    "*Conocerla* y *reclamar derechos*: protegen.",
+    "*Ignorar abusos* y *cambiarla apurados*: debilitan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué garantía protege la libertad física?",
+   "opciones": [
+    "Hábeas corpus",
+    "Amparo",
+    "Veto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: protege la libertad física.",
+    "¿Hábeas corpus, amparo o veto?",
+    "El *hábeas corpus*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Se cambia como una ley común",
+     "bien": "Exige un procedimiento especial"
+    },
+    {
+     "mal": "Las garantías son para abogados",
+     "bien": "Son para todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que se cambia como *una ley común*.",
+    "Y que las garantías son *solo para abogados*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los jueces hacen el *control*.",
+    "La reforma es *difícil*.",
+    "Las *garantías* protegen derechos.",
+    "Y la *ciudadanía* la cuida.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONTROL",
+     "jueces revisan"
+    ],
+    [
+     "REFORMA",
+     "difícil"
+    ],
+    [
+     "GARANTÍAS",
+     "amparo, hábeas corpus"
+    ],
+    [
+     "CIUDADANÍA",
+     "conocer y reclamar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

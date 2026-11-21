@@ -1,0 +1,156 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m4-n2",
+ "step_id": "97ee0ee4-0312-43c4-8d30-d81a6a8acd9b",
+ "materia": "Ciudadanía I",
+ "titulo": "Sistemas electorales: mayoría y proporcionalidad",
+ "sub": "Ciudadanía I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ELECCIONES",
+   "titular": "Mismos votos, distinto reparto",
+   "bajada": "Todo depende del sistema electoral",
+   "emoji": "🗳️",
+   "titulo": "SISTEMAS ELECTORALES",
+   "sub": "mayoría y proporcionalidad",
+   "voz": [
+    "Noticia: mismos votos, distinto reparto.",
+    "Todo depende del sistema electoral.",
+    "Hoy: *sistemas electorales*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sistema electoral",
+   "texto": "Reglas que convierten votos en cargos",
+   "emoji": "🧮",
+   "voz": [
+    "Un *sistema electoral* convierte votos en cargos.",
+    "Distintos sistemas dan distintos resultados."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MAYORITARIO",
+    "texto": "Gana quien tiene más votos",
+    "emoji": "🥇"
+   },
+   "b": {
+    "cab": "PROPORCIONAL",
+    "texto": "Bancas según el porcentaje",
+    "emoji": "📊"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos sistemas.",
+    "El *mayoritario*: gana el más votado.",
+    "El *proporcional*: bancas según el porcentaje."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Lista con 40 % de votos",
+    "emoji": "📊"
+   },
+   "items": [
+    {
+     "txt": "10 bancas en juego",
+     "emoji": "🏛️"
+    },
+    {
+     "txt": "40 % de 10",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "Recibe 4 bancas",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Un ejemplo proporcional.",
+    "Una lista saca el *cuarenta por ciento*.",
+    "Hay *diez bancas*.",
+    "Recibe *cuatro bancas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Balotaje",
+   "texto": "Segunda vuelta entre los dos más votados",
+   "emoji": "🔁",
+   "voz": [
+    "El *balotaje* es una segunda vuelta.",
+    "Se hace entre los dos más votados."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El sistema que reparte bancas según el porcentaje es el…",
+   "opciones": [
+    "Proporcional",
+    "Mayoritario",
+    "Directo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: reparte bancas según el porcentaje.",
+    "¿Proporcional, mayoritario o directo?",
+    "El *proporcional*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todos los sistemas dan igual resultado",
+     "bien": "Cambian los resultados"
+    },
+    {
+     "mal": "El proporcional elimina minorías",
+     "bien": "Les da representación"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todos* dan igual resultado.",
+    "Y que el proporcional *elimina minorías*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *sistema electoral* convierte votos en cargos.",
+    "El *mayoritario* premia al más votado.",
+    "El *proporcional* reparte por porcentaje.",
+    "Y el *balotaje* es segunda vuelta.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SISTEMA",
+     "votos a cargos"
+    ],
+    [
+     "MAYORITARIO",
+     "gana el más votado"
+    ],
+    [
+     "PROPORCIONAL",
+     "por porcentaje"
+    ],
+    [
+     "BALOTAJE",
+     "segunda vuelta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

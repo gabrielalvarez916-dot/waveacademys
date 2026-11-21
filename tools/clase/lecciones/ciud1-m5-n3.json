@@ -1,0 +1,170 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m5-n3",
+ "step_id": "7acdd5ac-286b-4312-b11b-ce492b9786c2",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué es una constitución y para qué sirve",
+ "sub": "Ciudadanía I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuál es la ley fundamental de un Estado?",
+   "segundos": 5,
+   "respuesta": "La constitución",
+   "emoji": "📜",
+   "titulo": "QUÉ ES UNA CONSTITUCIÓN",
+   "sub": "y para qué sirve",
+   "voz": [
+    "Desafío: ¿cuál es la ley fundamental de un Estado? Cinco segundos.",
+    "La constitución.",
+    "Hoy: *qué es una constitución y para qué sirve*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Constitución",
+   "texto": "Ley fundamental del Estado",
+   "emoji": "📜",
+   "voz": [
+    "La *constitución* es la ley fundamental de un Estado.",
+    "Organiza el poder y garantiza derechos."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARTES",
+   "columnas": [
+    "Parte",
+    "Trata de"
+   ],
+   "filas": [
+    [
+     "Declaraciones",
+     "Principios"
+    ],
+    [
+     "Derechos y garantías",
+     "Qué se reconoce"
+    ],
+    [
+     "Organización",
+     "Cómo funcionan los poderes"
+    ]
+   ],
+   "voz": [
+    "Qué contiene.",
+    "Las *declaraciones*: principios.",
+    "Los *derechos y garantías*.",
+    "Y la *organización* del poder."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Norma suprema",
+   "texto": "Por encima de todas las demás",
+   "emoji": "👑",
+   "voz": [
+    "La constitución es la *norma suprema*.",
+    "Ninguna ley puede contradecirla."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DERECHOS",
+     "emoji": "⚖️"
+    },
+    {
+     "cab": "ORGANIZACIÓN",
+     "emoji": "🏛️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Expresión libre",
+     "caja": 0
+    },
+    {
+     "txt": "Poderes del Estado",
+     "caja": 1
+    },
+    {
+     "txt": "Igualdad",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Derechos u organización?",
+    "*Expresión libre* e *igualdad*: derechos.",
+    "*Poderes del Estado*: organización."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La norma que está por encima de todas es…",
+   "opciones": [
+    "La constitución",
+    "Un decreto",
+    "Una ordenanza"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la norma por encima de todas.",
+    "¿La constitución, un decreto o una ordenanza?",
+    "*La constitución*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Es una ley más",
+     "bien": "Es la norma suprema"
+    },
+    {
+     "mal": "Solo habla de derechos",
+     "bien": "También organiza el poder"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que es *una ley más*.",
+    "Y que *solo* habla de derechos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *constitución* es la ley fundamental.",
+    "Tiene *declaraciones*, *derechos* y organización.",
+    "Es la *norma suprema*.",
+    "Y *limita* al poder.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONSTITUCIÓN",
+     "ley fundamental"
+    ],
+    [
+     "PARTES",
+     "tres"
+    ],
+    [
+     "SUPREMA",
+     "sobre todas"
+    ],
+    [
+     "FUNCIÓN",
+     "limita al poder"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

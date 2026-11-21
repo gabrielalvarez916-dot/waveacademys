@@ -1,0 +1,184 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m4-n1",
+ "step_id": "74c81990-3677-41e1-8270-891b47744779",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué hace un partido político",
+ "sub": "Ciudadanía I · Misión 4 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la organización que compite en elecciones para gobernar?",
+   "segundos": 6,
+   "respuesta": "Partido político",
+   "emoji": "🏳️",
+   "titulo": "QUÉ HACE UN",
+   "sub": "partido político",
+   "voz": [
+    "Desafío: ¿cómo se llama la organización que compite en elecciones para gobernar? Seis segundos.",
+    "Partido político.",
+    "Hoy: *qué hace un partido político*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Partido político",
+   "texto": "Organización que compite por el gobierno",
+   "emoji": "🏳️",
+   "voz": [
+    "Un *partido político* reúne a personas con ideas comunes.",
+    "Busca llegar al gobierno o influir en él."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "FUNCIONES",
+   "columnas": [
+    "Función",
+    "Qué hace"
+   ],
+   "filas": [
+    [
+     "Representar",
+     "Lleva demandas"
+    ],
+    [
+     "Proponer",
+     "Presenta un programa"
+    ],
+    [
+     "Competir",
+     "Presenta candidatos"
+    ],
+    [
+     "Controlar",
+     "Vigila al gobierno"
+    ]
+   ],
+   "voz": [
+    "Las funciones de un partido.",
+    "*Representar*: lleva demandas.",
+    "*Proponer*: presenta un programa.",
+    "*Competir*: presenta candidatos.",
+    "Y *controlar*: vigila al gobierno."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IDEOLOGÍA",
+    "texto": "Cómo ve la sociedad",
+    "emoji": "💭"
+   },
+   "b": {
+    "cab": "PLATAFORMA",
+    "texto": "Lo que promete hacer",
+    "emoji": "📋"
+   },
+   "signo": "+",
+   "voz": [
+    "Dos conceptos clave.",
+    "La *ideología* es cómo ve la sociedad.",
+    "La *plataforma* es lo que promete hacer."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "GOBIERNO",
+     "emoji": "🏛️"
+    },
+    {
+     "cab": "OPOSICIÓN",
+     "emoji": "🔍"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Aplica políticas",
+     "caja": 0
+    },
+    {
+     "txt": "Controla y critica",
+     "caja": 1
+    },
+    {
+     "txt": "Propone otras",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Gobierno u oposición?",
+    "*Aplica políticas*: gobierno.",
+    "*Controla* y *propone otras*: oposición."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Los partidos que no gobiernan forman la…",
+   "opciones": [
+    "Oposición",
+    "Plataforma",
+    "Banca"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: los partidos que no gobiernan.",
+    "¿Oposición, plataforma o banca?",
+    "La *oposición*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todos los partidos piensan igual",
+     "bien": "Cada uno tiene su ideología"
+    },
+    {
+     "mal": "La oposición no sirve",
+     "bien": "Controla y propone"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que todos piensan *igual*.",
+    "Y que la *oposición* no sirve."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *partido* compite por el gobierno.",
+    "Cumple varias *funciones*.",
+    "Tiene *ideología* y *plataforma*.",
+    "Y la *oposición* controla.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTIDO",
+     "compite"
+    ],
+    [
+     "FUNCIONES",
+     "representar, proponer"
+    ],
+    [
+     "PLATAFORMA",
+     "lo que promete"
+    ],
+    [
+     "OPOSICIÓN",
+     "controla"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

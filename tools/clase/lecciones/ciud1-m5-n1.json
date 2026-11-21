@@ -1,0 +1,179 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m5-n1",
+ "step_id": "1a34c1a5-d1a4-41ad-895c-ca7cac30781b",
+ "materia": "Ciudadanía I",
+ "titulo": "Qué significa Estado de derecho",
+ "sub": "Ciudadanía I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "JUSTICIA",
+   "titular": "Un funcionario no paga una multa",
+   "bajada": "La ley vale para todos",
+   "emoji": "⚖️",
+   "titulo": "ESTADO DE DERECHO",
+   "sub": "qué significa",
+   "voz": [
+    "Noticia: un funcionario no paga una multa.",
+    "La ley vale para todos.",
+    "Hoy: *qué significa Estado de derecho*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Estado de derecho",
+   "texto": "El poder limitado por leyes iguales para todos",
+   "emoji": "⚖️",
+   "voz": [
+    "En un *Estado de derecho* el poder se ejerce según leyes.",
+    "Leyes conocidas e iguales para todos."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "RASGOS",
+   "columnas": [
+    "Rasgo",
+    "Qué significa"
+   ],
+   "filas": [
+    [
+     "Imperio de la ley",
+     "Rige a todos"
+    ],
+    [
+     "Igualdad",
+     "Sin privilegios"
+    ],
+    [
+     "Jueces independientes",
+     "Sin presiones"
+    ],
+    [
+     "Derechos",
+     "Se garantizan"
+    ]
+   ],
+   "voz": [
+    "Los rasgos.",
+    "*Imperio de la ley*: rige a todos.",
+    "*Igualdad*: sin privilegios.",
+    "*Jueces independientes*.",
+    "Y *derechos* garantizados."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Impunidad",
+   "texto": "Falta de castigo",
+   "emoji": "🚫",
+   "voz": [
+    "La *impunidad* es la falta de castigo.",
+    "Un Estado de derecho la evita."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "RESPETA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "ROMPE",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Igualdad de todos",
+     "caja": 0
+    },
+    {
+     "txt": "Privilegios",
+     "caja": 1
+    },
+    {
+     "txt": "Jueces libres",
+     "caja": 0
+    },
+    {
+     "txt": "Cambiar reglas",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Respeta o rompe el Estado de derecho?",
+    "*Igualdad de todos* y *jueces libres*: respetan.",
+    "*Privilegios* y *cambiar reglas*: rompen."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién debe cumplir la ley?",
+   "opciones": [
+    "Todos",
+    "Solo los ciudadanos",
+    "Solo los jueces"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿quién debe cumplir la ley?",
+    "¿Todos, solo los ciudadanos o solo los jueces?",
+    "*Todos*, también los gobernantes."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El gobierno puede actuar fuera de la ley",
+     "bien": "Debe cumplirla"
+    },
+    {
+     "mal": "Es solo tener leyes",
+     "bien": "Es que valgan para todos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el gobierno *puede actuar fuera de la ley*.",
+    "Y que alcanza con *tener leyes*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El poder se limita con *leyes*.",
+    "Hay *igualdad* ante la ley.",
+    "Los *jueces* son independientes.",
+    "Y no debe haber *impunidad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ESTADO DE DERECHO",
+     "poder limitado"
+    ],
+    [
+     "IGUALDAD",
+     "sin privilegios"
+    ],
+    [
+     "JUECES",
+     "independientes"
+    ],
+    [
+     "IMPUNIDAD",
+     "se evita"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

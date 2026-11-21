@@ -1,0 +1,183 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m4-n4",
+ "step_id": "05d0d9cf-d17e-47fe-b2bc-13f56ce34173",
+ "materia": "Ciudadanía I",
+ "titulo": "Campañas, medios y financiamiento",
+ "sub": "Ciudadanía I · Misión 4 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama informar cuánto y en qué gastó un partido?",
+   "segundos": 6,
+   "respuesta": "Rendición de cuentas",
+   "emoji": "💰",
+   "titulo": "CAMPAÑAS, MEDIOS",
+   "sub": "y financiamiento",
+   "voz": [
+    "Desafío: ¿cómo se llama informar cuánto y en qué gastó un partido? Seis segundos.",
+    "Rendición de cuentas.",
+    "Hoy: *campañas, medios y financiamiento*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Campaña electoral",
+   "texto": "Período de propuestas antes de votar",
+   "emoji": "📣",
+   "voz": [
+    "La *campaña electoral* es el período previo a la votación.",
+    "Se presentan candidatos y propuestas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MEDIOS",
+    "texto": "Informan y pueden influir",
+    "emoji": "📺"
+   },
+   "b": {
+    "cab": "REDES",
+    "texto": "Difunden rápido y sin filtro",
+    "emoji": "📱"
+   },
+   "signo": "+",
+   "voz": [
+    "Dos canales.",
+    "Los *medios* informan y pueden influir.",
+    "Las *redes* difunden rápido y sin filtro."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "FINANCIAMIENTO",
+   "columnas": [
+    "Fuente",
+    "Detalle"
+   ],
+   "filas": [
+    [
+     "Aportes públicos",
+     "Pone el Estado"
+    ],
+    [
+     "Aportes privados",
+     "Con límites"
+    ],
+    [
+     "Rendición",
+     "Se informa"
+    ]
+   ],
+   "voz": [
+    "De dónde sale el dinero.",
+    "Los *aportes públicos* los pone el Estado.",
+    "Los *privados* tienen límites.",
+    "Y hay *rendición de cuentas*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AYUDA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "DAÑA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Límites al gasto",
+     "caja": 0
+    },
+    {
+     "txt": "Dinero sin control",
+     "caja": 1
+    },
+    {
+     "txt": "Transparencia",
+     "caja": 0
+    },
+    {
+     "txt": "Publicidad oculta",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Ayuda o daña?",
+    "*Límites* y *transparencia*: ayudan.",
+    "*Dinero sin control* y *publicidad oculta*: dañan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Informar cuánto y en qué se gastó es…",
+   "opciones": [
+    "Rendición de cuentas",
+    "Balotaje",
+    "Veda"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: informar cuánto y en qué se gastó.",
+    "¿Rendición de cuentas, balotaje o veda?",
+    "*Rendición de cuentas*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La publicidad es información neutral",
+     "bien": "Busca persuadir"
+    },
+    {
+     "mal": "El dinero no influye",
+     "bien": "Puede influir"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la publicidad es *neutral*.",
+    "Y que el dinero *no influye*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *campaña* presenta propuestas.",
+    "Los *medios* informan y pueden influir.",
+    "El *financiamiento* se regula.",
+    "Y la *transparencia* hace justa la elección.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CAMPAÑA",
+     "propuestas"
+    ],
+    [
+     "MEDIOS",
+     "informan"
+    ],
+    [
+     "DINERO",
+     "se regula"
+    ],
+    [
+     "JUSTICIA",
+     "reglas iguales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

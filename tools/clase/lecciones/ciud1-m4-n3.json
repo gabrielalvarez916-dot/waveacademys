@@ -1,0 +1,212 @@
+{
+ "sin_variante": true,
+ "slug": "ciud1-m4-n3",
+ "step_id": "dd1e81bf-b167-42cd-a05b-88f1a25e648b",
+ "materia": "Ciudadanía I",
+ "titulo": "Voto obligatorio y voto voluntario",
+ "sub": "Ciudadanía I · Misión 4 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Votar debería ser obligatorio? 🗳️"
+    },
+    {
+     "yo": true,
+     "txt": "Yo creo que sí 🙋"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y la libertad de elegir?"
+    }
+   ],
+   "titulo": "VOTO OBLIGATORIO",
+   "sub": "o voluntario",
+   "voz": [
+    "Lu pregunta: ¿votar debería ser obligatorio?",
+    "Juan: yo creo que sí.",
+    "Lu: ¿y la libertad de elegir?",
+    "Hoy: *voto obligatorio y voto voluntario*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "OBLIGATORIO",
+    "texto": "Hay que votar",
+    "emoji": "📜"
+   },
+   "b": {
+    "cab": "VOLUNTARIO",
+    "texto": "Cada uno decide",
+    "emoji": "🤷"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos modelos.",
+    "En el *obligatorio* hay que votar.",
+    "En el *voluntario* cada uno decide."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "A FAVOR DEL OBLIGATORIO",
+   "columnas": [
+    "Argumento",
+    "Idea"
+   ],
+   "filas": [
+    [
+     "Participación",
+     "Vota casi todo el padrón"
+    ],
+    [
+     "Legitimidad",
+     "Más gente representada"
+    ],
+    [
+     "Igualdad",
+     "Participan todos"
+    ]
+   ],
+   "voz": [
+    "Argumentos del obligatorio.",
+    "*Participación*: vota casi todo el padrón.",
+    "*Legitimidad*: más gente representada.",
+    "*Igualdad*: participan todos."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "A FAVOR DEL VOLUNTARIO",
+   "columnas": [
+    "Argumento",
+    "Idea"
+   ],
+   "filas": [
+    [
+     "Libertad",
+     "Nadie obliga"
+    ],
+    [
+     "Interés real",
+     "Vota quien se informa"
+    ],
+    [
+     "Sin multas",
+     "No se sanciona"
+    ]
+   ],
+   "voz": [
+    "Argumentos del voluntario.",
+    "*Libertad*: nadie obliga.",
+    "*Interés real*: vota quien se informa.",
+    "*Sin multas*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OBLIGATORIO",
+     "emoji": "📜"
+    },
+    {
+     "cab": "VOLUNTARIO",
+     "emoji": "🤷"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Más participación",
+     "caja": 0
+    },
+    {
+     "txt": "Libertad de decidir",
+     "caja": 1
+    },
+    {
+     "txt": "Padrón completo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿De cuál es el argumento?",
+    "*Más participación* y *padrón completo*: obligatorio.",
+    "*Libertad de decidir*: voluntario."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué ventaja tiene el voto obligatorio?",
+   "opciones": [
+    "Mayor participación",
+    "Menos padrón",
+    "Más multas"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ventaja del voto obligatorio.",
+    "¿Mayor participación, menos padrón o más multas?",
+    "*Mayor participación*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Obligatorio es votar por alguien",
+     "bien": "Es votar, pero libremente"
+    },
+    {
+     "mal": "Un modelo es siempre mejor",
+     "bien": "Cada uno prioriza un valor"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que obligatorio es votar por *alguien*.",
+    "Y que un modelo es *siempre mejor*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "En el *obligatorio* hay que votar.",
+    "En el *voluntario* se decide.",
+    "El primero busca *participación*.",
+    "El segundo prioriza la *libertad*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "OBLIGATORIO",
+     "hay que votar"
+    ],
+    [
+     "VOLUNTARIO",
+     "se decide"
+    ],
+    [
+     "VENTAJA 1",
+     "participación"
+    ],
+    [
+     "VENTAJA 2",
+     "libertad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
