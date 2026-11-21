@@ -44,22 +44,27 @@
     var c = document.getElementById('te-comp');
     if (r.error) { c.innerHTML = '<div class="te-vacio">' + esc(r.error.message) + '</div>'; return; }
     c.innerHTML = (r.data || []).length ? r.data.map(function (p) {
-      return '<div class="te-card"><div><h3>' + esc(p.familia) + ' · ' + ars(p.monto) + '</h3><p>' + (p.tipo === 'matricula' ? 'Matrícula anual' : 'Cuota de ' + esc(mesTxt(new Date(p.periodo + 'T12:00:00')))) + ' · enviado el ' + fecha(p.created_at) + '</p>' +
+      return '<div class="te-card"><div><h3>' + esc(p.familia) + ' · ' + ars(p.monto) + '</h3><p>' + (p.tipo === 'matricula' ? 'Matrícula anual · ' + esc(p.alumnos || '') : 'Cuota de ' + esc(mesTxt(new Date(p.periodo + 'T12:00:00')))) + ' · enviado el ' + fecha(p.created_at) + '</p>' +
         (p.nota_familia ? '<p>Nota de la familia: ' + esc(p.nota_familia) + '</p>' : '') + (p.nota_tesoreria ? '<p>Tesorería: ' + esc(p.nota_tesoreria) + '</p>' : '') + '</div>' +
         '<div class="te-acc">' + sello(p.estado, { pendiente: 'Por revisar', aprobado: 'Aprobado', rechazado: 'Rechazado' }[p.estado]) +
         '<button class="te-btn" data-ver="' + esc(p.comprobante_path) + '">Ver comprobante</button>' +
+        (p.estado === 'aprobado' ? (p.factura_id ? '<button class="te-btn" data-factura="' + p.factura_id + '">Ver factura</button>' : '<button class="te-btn principal" data-facturar="' + p.id + '">Generar factura</button>') : '') +
         (p.estado === 'pendiente' ? '<button class="te-btn principal" data-aprobar="' + p.id + '">Aprobar</button><button class="te-btn peligro" data-rechazar="' + p.id + '">Rechazar</button>' : '') + '</div></div>';
     }).join('') : '<div class="te-vacio">' + (filtroComp ? 'No hay comprobantes por revisar.' : 'Todavía no hay comprobantes.') + '</div>';
   }
 
   // ---------- Ingresos y gastos ----------
-  var PRESETS = [['Supabase', 'Plataforma', 'Supabase'], ['Vercel', 'Plataforma', 'Vercel'], ['Claude (suscripción)', 'IA', 'Anthropic'], ['API de Claude', 'IA', 'Anthropic'], ['Monotributo', 'Impuestos', 'AFIP/ARCA'], ['Publicidad en Meta', 'Publicidad', 'Meta'], ['Honorarios tutores', 'Personal', ''], ['Inscripción en Royal Hollow (por alumno)', 'Inscripción', 'Royal Hollow', true]];
+  var PRESETS = [['Supabase', 'Plataforma', 'Supabase'], ['Vercel', 'Plataforma', 'Vercel'], ['Claude (suscripción)', 'IA', 'Anthropic'], ['API de Claude', 'IA', 'Anthropic'], ['Monotributo', 'Impuestos', 'AFIP/ARCA'], ['Publicidad en Meta', 'Publicidad', 'Meta'], ['Honorarios tutores', 'Personal', ''], ['Inscripción anual en Royal Hollow (por alumno)', 'Inscripción', 'Royal Hollow', true]];
   var CATS0 = null;
   var CATS = ['Plataforma', 'IA', 'Impuestos', 'Publicidad', 'Personal', 'Inscripción', 'Comisiones de cobro', 'Otro'];
   function gastoMes(g, m, altas, usd) {
     var ini = m, fin = new Date(m.getFullYear(), m.getMonth() + 1, 0, 23, 59, 59);
     var base = g.moneda === 'USD' ? g.monto * usd : +g.monto, d0 = new Date(g.desde + 'T00:00:00'), d1 = g.hasta ? new Date(g.hasta + 'T23:59:59') : null;
     var mult = 1;
+    if (g.por_alumno && g.frecuencia === 'anual') { // una vez por año por cada alumno: en el mes de su alta y en cada aniversario
+      var n = altas.filter(function (a) { return a <= fin && a.getMonth() === m.getMonth(); }).length;
+      return d0 <= fin && (!d1 || d1 >= ini) ? base * n : 0;
+    }
     if (g.por_alumno) mult = altas.filter(function (a) { return g.frecuencia === 'unico' ? (a >= ini && a <= fin) : a <= fin; }).length;
     if (g.frecuencia === 'unico') return d0 >= ini && d0 <= fin && !g.por_alumno ? base : g.por_alumno && d0 <= fin ? base * mult : 0;
     return d0 <= fin && (!d1 || d1 >= ini) ? base * mult / (g.frecuencia === 'anual' ? 12 : 1) : 0;
@@ -104,7 +109,7 @@
     vista.onclick = async function (ev) {
       var b;
       if (ev.target.closest('[data-excel]')) return exportarExcel(filas, ing, gas, usd, altas);
-      if ((b = ev.target.closest('[data-preset]'))) { var p = PRESETS[+b.getAttribute('data-preset')]; form.concepto.value = p[0]; form.cat.value = p[1]; form.prov.value = p[2]; form.poralu.checked = !!p[3]; if (p[3]) form.frec.value = 'unico'; form.monto.focus(); }
+      if ((b = ev.target.closest('[data-preset]'))) { var p = PRESETS[+b.getAttribute('data-preset')]; form.concepto.value = p[0]; form.cat.value = p[1]; form.prov.value = p[2]; form.poralu.checked = !!p[3]; if (p[3]) form.frec.value = 'anual'; form.monto.focus(); }
       else if ((b = ev.target.closest('[data-borrar-gasto]'))) { if (!confirm('¿Borrar este gasto? Desaparece de todos los meses.')) return; var r = await sb.from('gastos').delete().eq('id', b.getAttribute('data-borrar-gasto')); if (r.error) toast('No se pudo borrar', true); else vistaFinanzas(); }
       else if ((b = ev.target.closest('[data-cerrar-gasto]'))) { var r2 = await sb.from('gastos').update({ hasta: new Date().toISOString().slice(0, 10) }).eq('id', b.getAttribute('data-cerrar-gasto')); if (r2.error) toast('No se pudo dar de baja', true); else vistaFinanzas(); }
     };
@@ -114,6 +119,17 @@
       if (r.error) { er.textContent = 'No se pudo guardar el gasto.'; er.hidden = false; return; }
       toast('Gasto guardado'); vistaFinanzas();
     };
+  }
+
+  // ---------- Facturas ----------
+  async function vistaFacturas() {
+    vista.innerHTML = '<h1 class="vista-titulo">Facturas</h1><p class="te-nota">Se generan desde Comprobantes, con el botón "Generar factura" en un pago aprobado. Las familias las ven en su sección Pagos.</p><div id="te-fac"><div class="te-vacio">Cargando…</div></div>';
+    var r = await sb.rpc('tesoreria_facturas'), c = document.getElementById('te-fac');
+    if (r.error) { c.innerHTML = '<div class="te-vacio">' + esc(r.error.message) + '</div>'; return; }
+    var lst = r.data || [];
+    c.innerHTML = lst.length ? '<div class="te-envoltorio"><table class="te-tabla"><thead><tr><th>Número</th><th>Fecha</th><th>Receptor</th><th>Concepto</th><th class="num">Importe</th><th>Estado</th><th></th></tr></thead><tbody>' + lst.map(function (f) {
+      return '<tr><td>C ' + ('0000' + f.punto_venta).slice(-5) + '-' + ('00000000' + f.numero).slice(-8) + '</td><td>' + fecha(f.fecha + 'T12:00:00') + '</td><td>' + esc(f.receptor_nombre) + '</td><td>' + esc(f.concepto) + '</td><td class="num">' + ars(f.importe) + '</td><td>' + sello(f.estado === 'emitida' ? 'al_dia' : 'en_plazo', f.estado === 'emitida' ? 'Emitida en ARCA' : 'Sin validez fiscal') + '</td><td><button class="te-btn" data-factura="' + f.id + '">Ver / imprimir</button></td></tr>';
+    }).join('') + '</tbody></table></div>' : '<div class="te-vacio">Todavía no se generó ninguna factura.</div>';
   }
 
   // ---------- Exportar a Excel ----------
@@ -126,7 +142,7 @@
     hoja('Ingresos', ing.map(function (x) { return { Fecha: fecha(x.fecha), Familia: x.familia, Origen: x.origen, Detalle: x.detalle, 'Monto (ARS)': Math.round(x.monto_ars) }; }));
     hoja('Gastos', gas.map(function (g) { return { Concepto: g.concepto, Categoría: g.categoria, Proveedor: g.proveedor || '', Monto: +g.monto, Moneda: g.moneda, Frecuencia: g.frecuencia, 'Por alumno': g.por_alumno ? 'Sí' : 'No', Desde: g.desde, Hasta: g.hasta || '', Nota: g.nota || '' }; }));
     hoja('Cuotas ' + mesTxt(new Date()), (res[0].data || []).map(function (x) { return { Familia: x.familia, Email: x.email, WhatsApp: x.telefono || '', Alumnos: x.alumnos, Cuota: +x.cuota, Pagado: +x.aprobado, Estado: ESTADO[x.estado] || x.estado }; }));
-    hoja('Matrículas', (res[1].data || []).map(function (x) { return { Familia: x.familia, Email: x.email, 'Último pago': x.ultimo_pago ? fecha(x.ultimo_pago) : '', Vence: x.vence || '', Estado: x.estado, 'Monto actual': +x.monto_actual }; }));
+    hoja('Matrículas', (res[1].data || []).map(function (x) { return { Alumno: x.alumno, Familia: x.familia, Email: x.email, 'Último pago': x.ultimo_pago ? fecha(x.ultimo_pago) : '', Vence: x.vence || '', Estado: x.estado, 'Monto actual': +x.monto_actual }; }));
     XLSX.writeFile(wb, 'Wave-Academy-tesoreria-' + new Date().toISOString().slice(0, 10) + '.xlsx');
   }
 
@@ -169,20 +185,27 @@
       return '<tr><td><b>' + esc(a.alumno) + '</b></td><td>' + esc(a.familia) + '</td><td>' + esc(a.email || '') + '<br><small>' + esc(a.telefono || 'sin WhatsApp') + '</small></td><td>' + esc(a.nivel || '—') + '</td><td class="num">' + (+a.cuota ? ars(a.cuota) : '—') + '</td><td>' + esc({ vigente: 'Vigente', vencida: 'Vencida', sin_pago: 'Sin pagar' }[a.matricula] || a.matricula || '—') + (a.matricula_vence ? '<br><small>hasta ' + fecha(a.matricula_vence + 'T12:00:00') + '</small>' : '') + '</td><td>' + fecha(a.alta) + '</td></tr>';
     }).join('') + '</tbody></table></div>' : '<div class="te-vacio">No hay altas en los últimos 90 días.</div>';
     var ms = rr[1].data || [];
-    c.innerHTML += '<h2 class="te-sub">Matrículas anuales</h2>' + (ms.length ? '<div class="te-envoltorio"><table class="te-tabla"><thead><tr><th>Familia</th><th>Estado</th><th>Último pago</th><th>Vence / próxima matrícula</th><th class="num">Monto actual</th></tr></thead><tbody>' + ms.map(function (x) {
-      return '<tr><td><b>' + esc(x.familia) + '</b><br><small>' + esc(x.email || '') + '</small></td><td>' + sello(x.estado === 'vigente' ? 'al_dia' : x.estado === 'vencida' ? 'atrasado' : 'en_plazo', { vigente: 'Vigente', vencida: 'Vencida', sin_pago: 'Sin pagar' }[x.estado]) + (x.en_revision ? ' ' + sello('en_revision') : '') + '</td><td>' + (x.ultimo_pago ? fecha(x.ultimo_pago) : '—') + '</td><td>' + (x.vence ? fecha(x.vence + 'T12:00:00') : '—') + '</td><td class="num">' + ars(x.monto_actual) + '</td></tr>';
-    }).join('') + '</tbody></table></div>' : '<div class="te-vacio">Todavía no hay familias con alumnos.</div>');
+    c.innerHTML += '<h2 class="te-sub">Matrículas anuales</h2>' + (ms.length ? '<div class="te-envoltorio"><table class="te-tabla"><thead><tr><th>Alumno/a</th><th>Estado</th><th>Último pago</th><th>Vence / próxima matrícula</th><th class="num">Monto actual</th></tr></thead><tbody>' + ms.map(function (x) {
+      return '<tr><td><b>' + esc(x.alumno) + '</b><br><small>' + esc(x.familia) + '</small></td><td>' + sello(x.estado === 'vigente' ? 'al_dia' : x.estado === 'vencida' ? 'atrasado' : 'en_plazo', { vigente: 'Vigente', vencida: 'Vencida', sin_pago: 'Sin pagar' }[x.estado]) + (x.en_revision ? ' ' + sello('en_revision') : '') + '</td><td>' + (x.ultimo_pago ? fecha(x.ultimo_pago) : '—') + '</td><td>' + (x.vence ? fecha(x.vence + 'T12:00:00') : '—') + '</td><td class="num">' + ars(x.monto_actual) + '</td></tr>';
+    }).join('') + '</tbody></table></div>' : '<div class="te-vacio">Todavía no hay alumnos.</div>');
   }
 
   // ---------- Datos de transferencia ----------
   async function vistaTransferencia() {
-    var rb = await sb.rpc('bloqueo_mora_activo'), r = await sb.rpc('datos_transferencia'), d = r.data || {};
+    var rf = await sb.rpc('datos_facturacion'), df = rf.data || {}, rb = await sb.rpc('bloqueo_mora_activo'), r = await sb.rpc('datos_transferencia'), d = r.data || {};
     vista.innerHTML = '<h1 class="vista-titulo">Datos de transferencia</h1><p class="te-nota">Esto es lo que ven las familias en su sección Pagos.</p>' +
       '<form id="te-tf" class="te-form una"><label>Banco o billetera<input name="banco" maxlength="80" value="' + esc(d.banco) + '"></label><label>Titular de la cuenta<input name="titular" maxlength="120" value="' + esc(d.titular) + '"></label>' +
       '<label>CUIT/CUIL<input name="cuit" maxlength="20" value="' + esc(d.cuit) + '"></label><label>CBU/CVU<input name="cbu" maxlength="30" value="' + esc(d.cbu) + '"></label><label>Alias<input name="alias" maxlength="40" value="' + esc(d.alias) + '"></label>' +
       '<label>Nota para las familias (opcional)<input name="nota" maxlength="300" value="' + esc(d.nota) + '" placeholder="Ej: poné el apellido de la familia en el concepto"></label><button class="te-btn principal" type="submit">Guardar</button></form>' +
+      '<h2 class="te-sub">Datos fiscales para las facturas</h2><form id="te-fisc" class="te-form una"><label>Razón social / nombre<input name="razon_social" maxlength="120" value="' + esc(df.razon_social) + '"></label><label>CUIT<input name="cuit" maxlength="20" value="' + esc(df.cuit) + '"></label>' +
+      '<label>Domicilio comercial<input name="domicilio" maxlength="200" value="' + esc(df.domicilio) + '"></label><label>Condición frente al IVA<input name="condicion" maxlength="60" value="' + esc(df.condicion || 'Responsable Monotributo') + '"></label>' +
+      '<label>Ingresos Brutos<input name="iibb" maxlength="30" value="' + esc(df.iibb) + '"></label><label>Inicio de actividades<input name="inicio_actividades" type="date" value="' + esc(df.inicio_actividades) + '"></label>' +
+      '<label>Punto de venta<input name="punto_venta" type="number" min="1" value="' + esc(df.punto_venta || 1) + '"></label>' +
+      '<label style="grid-auto-flow:column;justify-content:start;align-items:center;gap:10px"><input name="arca_activo" type="checkbox" style="width:auto;min-height:0"' + (df.arca_activo ? ' checked' : '') + '> Facturar de verdad con ARCA</label>' +
+      '<p class="te-nota">Todavía no está conectada a ARCA: hasta que se conecte, las facturas salen como comprobante sin validez fiscal. Este botón queda guardado para cuando hagamos la conexión.</p><button class="te-btn principal" type="submit">Guardar datos fiscales</button></form>' +
       '<h2 class="te-sub">Bloqueo por mora</h2><div class="te-form una"><label style="grid-auto-flow:column;justify-content:start;align-items:center;gap:10px"><input id="te-bloq" type="checkbox" style="width:auto;min-height:0"' + (rb.data === true ? ' checked' : '') + '> Bloquear el acceso de los alumnos cuando la familia pasa el plazo de gracia</label>' +
       '<p class="te-nota">La cuota vence el 10. Pasado el 10 la familia figura atrasada; cuando terminan los días de gracia (hoy 15) figura bloqueada. Con esto activado, los alumnos de familias bloqueadas no pueden entrar hasta regularizar. Está apagado por defecto: activalo cuando ya estén cargados los datos de transferencia y las cuotas reales.</p></div>';
+    document.getElementById('te-fisc').onsubmit = async function (ev) { ev.preventDefault(); var f = ev.target; var x = await sb.rpc('guardar_datos_facturacion', { p: { razon_social: f.razon_social.value, cuit: f.cuit.value, domicilio: f.domicilio.value, condicion: f.condicion.value, iibb: f.iibb.value, inicio_actividades: f.inicio_actividades.value, punto_venta: +f.punto_venta.value || 1, arca_activo: f.arca_activo.checked } }); toast(x.error ? 'No se pudo guardar' : 'Datos fiscales guardados', !!x.error); };
     document.getElementById('te-bloq').onchange = async function () { var x = await sb.rpc('guardar_bloqueo_mora', { p_activo: this.checked }); toast(x.error ? 'No se pudo guardar' : this.checked ? 'Bloqueo por mora activado' : 'Bloqueo por mora desactivado', !!x.error); };
     document.getElementById('te-tf').onsubmit = async function (ev) {
       ev.preventDefault(); var f = ev.target, x = await sb.rpc('guardar_datos_transferencia', { p: { banco: f.banco.value, titular: f.titular.value, cuit: f.cuit.value, cbu: f.cbu.value, alias: f.alias.value, nota: f.nota.value } });
@@ -199,6 +222,8 @@
       var w = window.open('', '_blank'); var s = await sb.storage.from('comprobantes').createSignedUrl(b.getAttribute('data-ver'), 300);
       if (s.error) { if (w) w.close(); toast('No se pudo abrir el comprobante', true); } else if (w) w.location = s.data.signedUrl;
     }
+    else if ((b = ev.target.closest('[data-facturar]'))) { b.disabled = true; var fx = await sb.rpc('emitir_factura', { p_pago: b.getAttribute('data-facturar') }); if (fx.error) { toast(fx.error.message, true); b.disabled = false; } else { toast('Factura generada. La familia ya puede verla.'); vistaComprobantes(); } }
+    else if ((b = ev.target.closest('[data-factura]'))) { var fr = await Promise.all([sb.rpc('tesoreria_facturas'), sb.rpc('datos_facturacion')]); var ff = (fr[0].data || []).filter(function (z) { return z.id === b.getAttribute('data-factura'); })[0]; if (ff) WaveFactura.abrir(ff, fr[1].data); }
     else if ((b = ev.target.closest('[data-aprobar]'))) { b.disabled = true; var r = await sb.rpc('revisar_pago', { p_id: b.getAttribute('data-aprobar'), p_estado: 'aprobado', p_nota: null }); if (r.error) toast(r.error.message, true); else toast('Pago aprobado. Se avisó a la familia.'); vistaComprobantes(); }
     else if ((b = ev.target.closest('[data-rechazar]'))) {
       var motivo = prompt('Motivo del rechazo (se lo mostramos a la familia):'); if (motivo === null) return;
@@ -206,7 +231,7 @@
     }
   });
 
-  var VISTAS = { cuotas: vistaCuotas, comprobantes: vistaComprobantes, finanzas: vistaFinanzas, proyeccion: vistaProyeccion, altas: vistaAltas, transferencia: vistaTransferencia };
+  var VISTAS = { cuotas: vistaCuotas, comprobantes: vistaComprobantes, finanzas: vistaFinanzas, proyeccion: vistaProyeccion, facturas: vistaFacturas, altas: vistaAltas, transferencia: vistaTransferencia };
   function ruta() {
     var h = (location.hash || '#cuotas').slice(1); if (!VISTAS[h]) h = 'cuotas';
     enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#' + h); });
