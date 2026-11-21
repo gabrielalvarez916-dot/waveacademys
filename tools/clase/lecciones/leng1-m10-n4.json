@@ -1,0 +1,175 @@
+{
+ "slug": "leng1-m10-n4",
+ "step_id": "91961844-9105-4676-a3ef-402708333f47",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Registros y destinatarios",
+ "sub": "Lengua y Literatura I · Misión 10 · Nivel 4",
+ "escenas": [
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "INFORMAL",
+    "emoji": "😎",
+    "texto": "Che, pasame el horario"
+   },
+   "despues": {
+    "cab": "FORMAL",
+    "emoji": "🎩",
+    "texto": "¿Podría indicarme el horario, por favor?"
+   },
+   "titulo": "REGISTROS Y DESTINATARIOS",
+   "sub": "cambiar según a quién escribo",
+   "voz": [
+    "Informal: che, pasame el horario.",
+    "Formal: ¿podría indicarme el horario, por favor?",
+    "Hoy: *registros y destinatarios*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Registro",
+   "texto": "Manera de escribir según con quién hablo",
+   "emoji": "🎚️",
+   "voz": [
+    "El *registro* es la manera de escribir según con quién hablo.",
+    "Cambia según el destinatario y la situación."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES REGISTROS",
+   "columnas": [
+    "Registro",
+    "Cuándo"
+   ],
+   "filas": [
+    [
+     "Formal",
+     "Autoridades"
+    ],
+    [
+     "Neutro",
+     "Textos comunes"
+    ],
+    [
+     "Informal",
+     "Amigos y familia"
+    ]
+   ],
+   "voz": [
+    "Tres registros.",
+    "*Formal*, con autoridades.",
+    "*Neutro*, en textos comunes.",
+    "*Informal*, con amigos y familia."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FORMAL",
+     "emoji": "🎩"
+    },
+    {
+     "cab": "INFORMAL",
+     "emoji": "😎"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Le solicito",
+     "caja": 0
+    },
+    {
+     "txt": "¿Cuándo es, che?",
+     "caja": 1
+    },
+    {
+     "txt": "Atentamente",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Formal o informal?",
+    "*Le solicito* y *atentamente*: formales.",
+    "*¿Cuándo es, che?*: informal."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Evitar",
+   "texto": "Abreviaturas de chat en textos formales",
+   "emoji": "🚫",
+   "voz": [
+    "En un texto formal evitá las *abreviaturas de chat*.",
+    "Y la jerga con desconocidos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué registro usás con una autoridad?",
+   "opciones": [
+    "Formal",
+    "Informal",
+    "Jerga"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué registro con una autoridad?",
+    "¿Formal, informal o jerga?",
+    "*Formal*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Jerga con un desconocido",
+     "bien": "Registro formal"
+    },
+    {
+     "mal": "Rígido con un amigo",
+     "bien": "Registro informal"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *jerga* con un desconocido.",
+    "Y ser *rígido* con un amigo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *registro* se elige según el destinatario.",
+    "*Formal* con autoridades.",
+    "*Informal* con amigos.",
+    "Y el mismo mensaje *cambia* según a quién va.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "REGISTRO",
+     "según destinatario"
+    ],
+    [
+     "FORMAL",
+     "autoridades"
+    ],
+    [
+     "INFORMAL",
+     "amigos"
+    ],
+    [
+     "ADAPTAR",
+     "mismo mensaje"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

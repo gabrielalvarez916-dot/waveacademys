@@ -1,0 +1,175 @@
+{
+ "slug": "leng1-m11-n4",
+ "step_id": "3f322f49-dfce-457f-b2ae-fda9c2419a59",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escribo un poema",
+ "sub": "Lengua y Literatura I · Misión 11 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "TALLER",
+   "titular": "Hoy escribís tu primer poema",
+   "bajada": "Con una imagen y una emoción",
+   "emoji": "🖋️",
+   "titulo": "ESCRIBO UN POEMA",
+   "sub": "mostrar, no explicar",
+   "voz": [
+    "Taller: hoy escribís tu primer poema.",
+    "Con una imagen y una emoción.",
+    "Hoy: *escribo un poema*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PASOS",
+   "items": [
+    {
+     "txt": "Anoto ideas",
+     "emoji": "📝"
+    },
+    {
+     "txt": "Elijo tres imágenes",
+     "emoji": "🖼️"
+    },
+    {
+     "txt": "Las ordeno en versos",
+     "emoji": "📜"
+    },
+    {
+     "txt": "Leo en voz alta",
+     "emoji": "🎙️"
+    }
+   ],
+   "voz": [
+    "Cuatro pasos.",
+    "*Anotá* ideas.",
+    "*Elegí* tres imágenes.",
+    "*Ordenalas* en versos.",
+    "Y *leé en voz alta*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "EXPLICAR",
+    "texto": "Estoy triste",
+    "emoji": "🙁"
+   },
+   "b": {
+    "cab": "MOSTRAR",
+    "texto": "La tarde llueve en mi ventana",
+    "emoji": "🌧️"
+   },
+   "signo": "→",
+   "voz": [
+    "Mostrá, no expliques.",
+    "Explicar: *estoy triste*.",
+    "Mostrar: *la tarde llueve en mi ventana*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "BANCO DE RECURSOS",
+   "columnas": [
+    "Recurso",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Comparación",
+     "Lenta como un caracol"
+    ],
+    [
+     "Metáfora",
+     "La lluvia es un tambor"
+    ],
+    [
+     "Personificación",
+     "La ciudad bostezaba"
+    ]
+   ],
+   "voz": [
+    "Algunos recursos.",
+    "*Comparación*: lenta como un caracol.",
+    "*Metáfora*: la lluvia es un tambor.",
+    "*Personificación*: la ciudad bostezaba."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se revisa un poema?",
+   "opciones": [
+    "Leyéndolo en voz alta",
+    "Sin leerlo",
+    "Cambiando el título"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se revisa un poema?",
+    "¿Leyéndolo en voz alta, sin leerlo o cambiando el título?",
+    "*Leyéndolo en voz alta*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí un poema breve de entre cuatro y ocho versos",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí un poema breve.",
+    "Entre *cuatro y ocho versos*, con una *imagen* y una *emoción*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Explicar la emoción",
+     "bien": "Mostrarla con una imagen"
+    },
+    {
+     "mal": "No leerlo en voz alta",
+     "bien": "Leerlo para revisar"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Explicar* la emoción.",
+    "Y *no leerlo* en voz alta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Partí de una *emoción*.",
+    "Mostrala con *imágenes*.",
+    "Ordenalas en *versos*.",
+    "Y *revisá* leyendo en voz alta.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EMOCIÓN",
+     "punto de partida"
+    ],
+    [
+     "IMÁGENES",
+     "mostrar"
+    ],
+    [
+     "VERSOS",
+     "ordenar"
+    ],
+    [
+     "REVISAR",
+     "voz alta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

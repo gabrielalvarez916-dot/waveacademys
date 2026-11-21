@@ -1,0 +1,173 @@
+{
+ "slug": "leng1-m10-n3",
+ "step_id": "7e2ca836-429f-4346-9ed2-bf44fea7be53",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Completo un formulario",
+ "sub": "Lengua y Literatura I · Misión 10 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué se hace primero con un formulario?",
+   "segundos": 6,
+   "respuesta": "Leer las instrucciones",
+   "emoji": "📋",
+   "titulo": "COMPLETO UN FORMULARIO",
+   "sub": "datos exactos",
+   "voz": [
+    "Desafío: ¿qué se hace primero con un formulario? Seis segundos.",
+    "Leer las instrucciones.",
+    "Hoy: *completo un formulario*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Formulario",
+   "texto": "Documento con campos para completar datos",
+   "emoji": "📋",
+   "voz": [
+    "Un *formulario* tiene campos para completar datos.",
+    "Sirve para inscribirse o pedir un trámite."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ORDEN",
+   "items": [
+    {
+     "txt": "Leer instrucciones",
+     "emoji": "📖"
+    },
+    {
+     "txt": "Completar campos",
+     "emoji": "✏️"
+    },
+    {
+     "txt": "Revisar",
+     "emoji": "🔍"
+    },
+    {
+     "txt": "Firmar",
+     "emoji": "✍️"
+    }
+   ],
+   "voz": [
+    "El orden es siempre el mismo.",
+    "*Leer* las instrucciones.",
+    "*Completar* los campos.",
+    "*Revisar*.",
+    "Y *firmar*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OBLIGATORIO",
+     "emoji": "⚠️"
+    },
+    {
+     "cab": "OPCIONAL",
+     "emoji": "➖"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Nombre completo",
+     "caja": 0
+    },
+    {
+     "txt": "DNI",
+     "caja": 0
+    },
+    {
+     "txt": "Segundo teléfono",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Obligatorio u opcional?",
+    "*Nombre completo* y *DNI*: obligatorios.",
+    "*Segundo teléfono*: opcional."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "05/10/2012",
+   "antes": "fecha",
+   "despues": "bien escrita",
+   "texto": "Si el formulario pide día, mes y año, no la escribas al revés",
+   "emoji": "📅",
+   "voz": [
+    "Atención al formato de la fecha.",
+    "Si pide *día, mes y año*, se escribe 05/10/2012.",
+    "No al revés."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué se hace antes de entregar un formulario?",
+   "opciones": [
+    "Revisarlo",
+    "Dibujar en él",
+    "Perderlo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: antes de entregar un formulario.",
+    "¿Revisarlo, dibujar en él o perderlo?",
+    "*Revisarlo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Dejar un campo obligatorio vacío",
+     "bien": "Completarlo siempre"
+    },
+    {
+     "mal": "Fecha en otro formato",
+     "bien": "Respetar el formato pedido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Dejar un *campo obligatorio vacío*.",
+    "Y escribir la *fecha* en otro formato."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Primero *leé* las instrucciones.",
+    "Completá los campos *obligatorios*.",
+    "Los datos tienen que ser *exactos*.",
+    "Y *revisá* antes de entregar.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "LEER",
+     "primero"
+    ],
+    [
+     "OBLIGATORIOS",
+     "no omitir"
+    ],
+    [
+     "DATOS",
+     "exactos"
+    ],
+    [
+     "REVISAR",
+     "antes de entregar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

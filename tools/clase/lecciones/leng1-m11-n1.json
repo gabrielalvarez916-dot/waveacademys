@@ -1,0 +1,181 @@
+{
+ "slug": "leng1-m11-n1",
+ "step_id": "be53950a-a3e7-4ca1-932f-ecd2d657b98e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Leo poemas en voz alta",
+ "sub": "Lengua y Literatura I · Misión 11 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Cómo suena",
+   "emoji": "🎙️",
+   "final": "importa tanto como qué dice",
+   "titulo": "LEO POEMAS EN VOZ ALTA",
+   "sub": "versos, pausas y entonación",
+   "voz": [
+    "Un poema no es solo lo que dice.",
+    "Importa *cómo suena*.",
+    "Hoy: *leo poemas en voz alta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Verso",
+   "texto": "Cada línea de un poema",
+   "emoji": "📜",
+   "voz": [
+    "Cada línea de un poema es un *verso*.",
+    "Un grupo de versos es una *estrofa*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PAUSAS",
+   "columnas": [
+    "Signo",
+    "Pausa"
+   ],
+   "filas": [
+    [
+     "Coma",
+     "Corta"
+    ],
+    [
+     "Punto",
+     "Larga"
+    ],
+    [
+     "Fin de verso",
+     "Breve"
+    ]
+   ],
+   "voz": [
+    "Las pausas.",
+    "La *coma*: pausa corta.",
+    "El *punto*: pausa larga.",
+    "El *fin de verso* sin signo: pausa breve."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Entonación según la emoción",
+    "emoji": "🎙️"
+   },
+   "items": [
+    {
+     "txt": "Ternura: voz suave",
+     "emoji": "🌸"
+    },
+    {
+     "txt": "Enojo: voz fuerte",
+     "emoji": "🔥"
+    },
+    {
+     "txt": "Tristeza: voz lenta",
+     "emoji": "🌧️"
+    }
+   ],
+   "voz": [
+    "Cambiá la voz según lo que transmite.",
+    "Si es tierno, *suave*.",
+    "Si es enojado, *fuerte*.",
+    "Si es triste, *lenta*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PAUSA CORTA",
+     "emoji": "➖"
+    },
+    {
+     "cab": "PAUSA LARGA",
+     "emoji": "⏸️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Coma",
+     "caja": 0
+    },
+    {
+     "txt": "Punto",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Pausa corta o larga?",
+    "La *coma*: corta.",
+    "El *punto*: larga."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama cada línea de un poema?",
+   "opciones": [
+    "Verso",
+    "Párrafo",
+    "Capítulo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: cada línea de un poema.",
+    "¿Verso, párrafo o capítulo?",
+    "*Verso*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Leer como una lista",
+     "bien": "Leer con ritmo y emoción"
+    },
+    {
+     "mal": "Ignorar las pausas",
+     "bien": "Respetarlas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Leer un poema *como una lista*.",
+    "Y *ignorar las pausas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *verso* es una línea.",
+    "La *estrofa* es un grupo de versos.",
+    "Respetá las *pausas*.",
+    "Y cambiá la *entonación* según la emoción.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VERSO",
+     "línea"
+    ],
+    [
+     "ESTROFA",
+     "grupo"
+    ],
+    [
+     "PAUSAS",
+     "por signos"
+    ],
+    [
+     "ENTONACIÓN",
+     "emoción"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

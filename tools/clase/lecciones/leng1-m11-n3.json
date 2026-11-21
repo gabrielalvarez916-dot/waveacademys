@@ -1,0 +1,179 @@
+{
+ "slug": "leng1-m11-n3",
+ "step_id": "73cdc080-b436-4934-a959-071f22710e5a",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Rima y verso libre",
+ "sub": "Lengua y Literatura I · Misión 11 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Sol rima con farol 🌞"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y gato con lado?"
+    },
+    {
+     "yo": false,
+     "txt": "Casi: solo coinciden las vocales"
+    }
+   ],
+   "titulo": "RIMA Y VERSO LIBRE",
+   "sub": "consonante y asonante",
+   "voz": [
+    "Lu dice: sol rima con farol.",
+    "Juan: ¿y gato con lado?",
+    "Lu: casi, solo coinciden las vocales.",
+    "Hoy: *rima y verso libre*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Rima",
+   "texto": "Coincidencia de sonidos al final del verso",
+   "emoji": "🎶",
+   "voz": [
+    "La *rima* es la coincidencia de sonidos al final de los versos.",
+    "Da música al poema."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CONSONANTE",
+    "texto": "Coinciden todos los sonidos: sol, farol",
+    "emoji": "🔔"
+   },
+   "b": {
+    "cab": "ASONANTE",
+    "texto": "Coinciden solo las vocales: gato, lado",
+    "emoji": "🔕"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos tipos de rima.",
+    "*Consonante*: coinciden todos los sonidos.",
+    "*Asonante*: coinciden solo las vocales."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CONSONANTE",
+     "emoji": "🔔"
+    },
+    {
+     "cab": "ASONANTE",
+     "emoji": "🔕"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "sol / farol",
+     "caja": 0
+    },
+    {
+     "txt": "gato / lado",
+     "caja": 1
+    },
+    {
+     "txt": "canción / corazón",
+     "caja": 0
+    },
+    {
+     "txt": "casa / mesa",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Consonante o asonante?",
+    "*Sol / farol* y *canción / corazón*: consonantes.",
+    "*Gato / lado* y *casa / mesa*: asonantes."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Verso libre",
+   "texto": "Sin rima ni medida fija",
+   "emoji": "🕊️",
+   "voz": [
+    "El *verso libre* no tiene rima ni medida fija.",
+    "El poeta decide según el ritmo y la emoción."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Todos los poemas tienen que rimar?",
+   "opciones": [
+    "No",
+    "Sí",
+    "Solo los de amor"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿todos los poemas tienen que rimar?",
+    "¿No, sí o solo los de amor?",
+    "*No*: hay verso libre."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todo poema rima",
+     "bien": "Hay verso libre"
+    },
+    {
+     "mal": "Asonante igual a consonante",
+     "bien": "Asonante solo vocales"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todo poema rima*.",
+    "Y confundir *asonante* con *consonante*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *rima* son sonidos finales.",
+    "*Consonante*: todos coinciden.",
+    "*Asonante*: solo las vocales.",
+    "Y el *verso libre* no rima.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RIMA",
+     "sonidos finales"
+    ],
+    [
+     "CONSONANTE",
+     "todos"
+    ],
+    [
+     "ASONANTE",
+     "vocales"
+    ],
+    [
+     "VERSO LIBRE",
+     "sin rima fija"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

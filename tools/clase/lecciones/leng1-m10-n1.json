@@ -1,0 +1,212 @@
+{
+ "slug": "leng1-m10-n1",
+ "step_id": "a2e0c52f-97ec-44d1-b426-60559dcdb149",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Carta formal e informal",
+ "sub": "Lengua y Literatura I · Misión 10 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Hola directora, ¿me das permiso? 😅"
+    },
+    {
+     "yo": true,
+     "txt": "Eso no suena bien en una carta formal"
+    },
+    {
+     "yo": false,
+     "txt": "Tenés razón, lo cambio"
+    }
+   ],
+   "titulo": "CARTA FORMAL E INFORMAL",
+   "sub": "según a quién le escribo",
+   "voz": [
+    "Lu escribe: hola directora, ¿me das permiso?",
+    "Juan: eso no suena bien en una carta formal.",
+    "Lu: tenés razón, lo cambio.",
+    "Hoy: *carta formal e informal*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARTES",
+   "columnas": [
+    "Parte",
+    "Qué lleva"
+   ],
+   "filas": [
+    [
+     "Lugar y fecha",
+     "Dónde y cuándo"
+    ],
+    [
+     "Destinatario",
+     "A quién va"
+    ],
+    [
+     "Saludo",
+     "Estimado/a"
+    ],
+    [
+     "Cuerpo",
+     "El mensaje"
+    ],
+    [
+     "Despedida",
+     "Atentamente"
+    ],
+    [
+     "Firma",
+     "Quien escribe"
+    ]
+   ],
+   "voz": [
+    "Una carta tiene seis partes.",
+    "*Lugar y fecha*.",
+    "*Destinatario*.",
+    "*Saludo*.",
+    "*Cuerpo*.",
+    "*Despedida*.",
+    "Y *firma*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FORMAL",
+    "texto": "Estimado Sr. Pérez; atentamente",
+    "emoji": "🎩"
+   },
+   "b": {
+    "cab": "INFORMAL",
+    "texto": "Querida Sofi; un abrazo",
+    "emoji": "😊"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos registros.",
+    "La *formal* es cuidada y respetuosa.",
+    "La *informal* es cercana."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FORMAL",
+     "emoji": "🎩"
+    },
+    {
+     "cab": "INFORMAL",
+     "emoji": "😊"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Atentamente",
+     "caja": 0
+    },
+    {
+     "txt": "Un beso grande",
+     "caja": 1
+    },
+    {
+     "txt": "Estimada directora",
+     "caja": 0
+    },
+    {
+     "txt": "Querida Sofi",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Formal o informal?",
+    "*Atentamente* y *estimada directora*: formales.",
+    "*Un beso grande* y *querida Sofi*: informales."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿A quién se le escribe una carta formal?",
+   "opciones": [
+    "A una autoridad",
+    "A mi mejor amiga",
+    "A mi hermano"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿a quién se le escribe una carta formal?",
+    "¿A una autoridad, a mi mejor amiga o a mi hermano?",
+    "A una *autoridad*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí el saludo y la despedida de una carta formal y de una informal",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: el saludo y la despedida.",
+    "Uno *formal* y uno *informal*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Hola, qué tal con una autoridad",
+     "bien": "Estimado/a y atentamente"
+    },
+    {
+     "mal": "Olvidar la firma",
+     "bien": "Firmar al final"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *hola, qué tal* con una autoridad.",
+    "Y *olvidar la firma*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La carta tiene *seis partes*.",
+    "La *formal* es respetuosa.",
+    "La *informal* es cercana.",
+    "Elegí según *a quién* y *para qué*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTES",
+     "seis"
+    ],
+    [
+     "FORMAL",
+     "autoridades"
+    ],
+    [
+     "INFORMAL",
+     "amigos"
+    ],
+    [
+     "ELEGIR",
+     "a quién y para qué"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

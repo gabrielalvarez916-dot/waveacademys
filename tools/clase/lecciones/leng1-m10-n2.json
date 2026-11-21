@@ -1,0 +1,198 @@
+{
+ "slug": "leng1-m10-n2",
+ "step_id": "91442418-3617-464f-a336-3327015bc762",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escribo un mail",
+ "sub": "Lengua y Literatura I · Misión 10 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "BANDEJA",
+   "titular": "Mail sin asunto queda sin responder",
+   "bajada": "Nadie sabe de qué trata",
+   "emoji": "📧",
+   "titulo": "ESCRIBO UN MAIL",
+   "sub": "claro y breve",
+   "voz": [
+    "Bandeja de entrada: un mail sin asunto queda sin responder.",
+    "Nadie sabe de qué trata.",
+    "Hoy: *escribo un mail*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARTES DE UN MAIL",
+   "columnas": [
+    "Campo",
+    "Para qué"
+   ],
+   "filas": [
+    [
+     "Para",
+     "Destinatario"
+    ],
+    [
+     "Asunto",
+     "De qué trata"
+    ],
+    [
+     "Cuerpo",
+     "El mensaje"
+    ],
+    [
+     "Adjunto",
+     "Archivo"
+    ]
+   ],
+   "voz": [
+    "Los campos.",
+    "*Para*: el destinatario.",
+    "*Asunto*: de qué trata.",
+    "*Cuerpo*: el mensaje.",
+    "*Adjunto*: un archivo."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CUERPO",
+   "items": [
+    {
+     "txt": "Saludo",
+     "emoji": "👋"
+    },
+    {
+     "txt": "Motivo",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Detalle",
+     "emoji": "📝"
+    },
+    {
+     "txt": "Cierre",
+     "emoji": "🙏"
+    },
+    {
+     "txt": "Firma",
+     "emoji": "✍️"
+    }
+   ],
+   "voz": [
+    "El cuerpo, en cinco pasos.",
+    "*Saludo*.",
+    "*Motivo*.",
+    "*Detalle*.",
+    "*Cierre* educado.",
+    "Y *firma*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "BUEN ASUNTO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "MAL ASUNTO",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Consulta: la tarea",
+     "caja": 0
+    },
+    {
+     "txt": "Hola",
+     "caja": 1
+    },
+    {
+     "txt": "Importante",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Buen asunto o no?",
+    "*Consulta: la tarea*: buen asunto.",
+    "*Hola* e *importante*: no dicen nada."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Antes de enviar un mail, ¿qué conviene revisar?",
+   "opciones": [
+    "Adjunto y destinatario",
+    "Solo el color",
+    "Nada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: antes de enviar, ¿qué conviene revisar?",
+    "¿Adjunto y destinatario, solo el color o nada?",
+    "*Adjunto y destinatario*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí un mail a un docente pidiendo una aclaración",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí un mail a un docente.",
+    "Con *asunto*, *saludo*, *motivo*, *cierre* y *firma*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Asunto vacío",
+     "bien": "Asunto concreto"
+    },
+    {
+     "mal": "Dos pedidos en un mail",
+     "bien": "Un mail, un motivo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Dejar el *asunto vacío*.",
+    "Y mezclar *dos pedidos* en un mail."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *asunto* dice de qué trata.",
+    "El cuerpo lleva *saludo*, *motivo*, *cierre* y *firma*.",
+    "Revisá el *adjunto*.",
+    "Y un mail, *un motivo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ASUNTO",
+     "concreto"
+    ],
+    [
+     "CUERPO",
+     "cinco pasos"
+    ],
+    [
+     "ADJUNTO",
+     "revisarlo"
+    ],
+    [
+     "MOTIVO",
+     "uno por mail"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

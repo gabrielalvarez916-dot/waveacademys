@@ -1,0 +1,165 @@
+{
+ "slug": "leng1-m11-n2",
+ "step_id": "c0284020-79da-452d-a4a3-0839c75df444",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Metáfora y comparación",
+ "sub": "Lengua y Literatura I · Misión 11 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Completá: «La luna es un ___ de papel».",
+   "segundos": 6,
+   "respuesta": "Barco, por ejemplo: es una metáfora",
+   "emoji": "🌙",
+   "titulo": "METÁFORA Y COMPARACIÓN",
+   "sub": "ver de otra manera",
+   "voz": [
+    "Desafío: completá. La luna es un, qué, de papel. Seis segundos.",
+    "Barco, por ejemplo. Eso es una metáfora.",
+    "Hoy: *metáfora y comparación*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COMPARACIÓN",
+    "texto": "Con «como»: manos como pájaros",
+    "emoji": "🕊️"
+   },
+   "b": {
+    "cab": "METÁFORA",
+    "texto": "Sin «como»: manos son pájaros",
+    "emoji": "🕊️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos recursos.",
+    "La *comparación* usa *como*.",
+    "La *metáfora* dice que una cosa *es* otra."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Personificación",
+   "texto": "Dar cualidades humanas a lo que no es humano",
+   "emoji": "🌬️",
+   "voz": [
+    "La *personificación* da cualidades humanas a un objeto.",
+    "El viento susurra un secreto: el viento no susurra, pero lo decimos así."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "COMPARACIÓN",
+     "emoji": "➗"
+    },
+    {
+     "cab": "METÁFORA",
+     "emoji": "🔁"
+    },
+    {
+     "cab": "PERSONIFICACIÓN",
+     "emoji": "🧑"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Como una estrella",
+     "caja": 0
+    },
+    {
+     "txt": "Noche, un manto",
+     "caja": 1
+    },
+    {
+     "txt": "El viento susurró",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué recurso es?",
+    "*Como una estrella*: comparación.",
+    "*Noche, un manto*: metáfora.",
+    "*El viento susurró*: personificación."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Imagen sensorial",
+   "texto": "Apela a un sentido",
+   "emoji": "👃",
+   "voz": [
+    "Una *imagen sensorial* apela a un sentido.",
+    "Como el olor a lluvia sobre la tierra caliente."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«El mar es un gigante dormido» es una…",
+   "opciones": [
+    "Metáfora",
+    "Comparación",
+    "Rima"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: «el mar es un gigante dormido».",
+    "¿Metáfora, comparación o rima?",
+    "Una *metáfora*: no usa como."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir comparación y metáfora",
+     "bien": "Mirar si usa como"
+    },
+    {
+     "mal": "Explicarla literalmente",
+     "bien": "Pensar la imagen"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Confundir* comparación y metáfora.",
+    "Y explicar la imagen *literalmente*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *comparación* usa como.",
+    "La *metáfora* dice que una cosa es otra.",
+    "La *personificación* da rasgos humanos.",
+    "Y la *imagen sensorial* apela a un sentido.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMPARACIÓN",
+     "como"
+    ],
+    [
+     "METÁFORA",
+     "es otra cosa"
+    ],
+    [
+     "PERSONIFICACIÓN",
+     "rasgos humanos"
+    ],
+    [
+     "IMAGEN",
+     "un sentido"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
