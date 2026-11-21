@@ -1,0 +1,117 @@
+{
+ "slug": "medio-mat1-m8-n3",
+ "step_id": "19357bd1-91e5-4d5e-a5c0-a5c3d44f256a",
+ "materia": "Matemática 1",
+ "titulo": "Sumar con dibujos",
+ "sub": "Matemática 1 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "✏️",
+   "final": "🍎",
+   "titulo": "SUMAR",
+   "sub": "con dibujos",
+   "voz": [
+    "Sofi quiere contar las manzanas del picnic.",
+    "¡Pero se las comieron! ¿Qué hace?",
+    "Hoy: *sumar con dibujos*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "UN PALITO POR MANZANA",
+   "emoji": "✏️",
+   "cantidad": 3,
+   "etiqueta": "3 MANZANAS",
+   "voz": [
+    "Sofi dibuja un palito por cada manzana.",
+    "1, 2, 3.",
+    "¡*3 palitos* son 3 manzanas!"
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "✏️",
+    "n": 3
+   },
+   "b": {
+    "emoji": "✏️",
+    "n": 4
+   },
+   "texto": "3 MÁS 4 SON 7",
+   "voz": [
+    "Tomi comió 4. Sofi dibuja 4 palitos más.",
+    "Juntamos todos los palitos.",
+    "Contamos: ¡son *7*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "SUMAR",
+   "texto": "Juntar o agregar y contar todo",
+   "emoji": "➕",
+   "voz": [
+    "*Sumar* es juntar o agregar y contar todo.",
+    "Se dice *más*: 3 más 4 es 7."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 2 más 6?",
+   "opciones": [
+    "4",
+    "8",
+    "9"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Dibujá 2 palitos y 6 más.",
+    "¿Cuántos palitos hay en total?",
+    "¡*8*! Dos más seis es ocho."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un palito para todo el grupo",
+     "bien": "Un palito por cada cosa"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Dibujá *un palito por cada cosa*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DIBUJAR",
+     "un palito por cosa"
+    ],
+    [
+     "SUMAR",
+     "juntar y contar"
+    ],
+    [
+     "MÁS",
+     "así se dice"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Dibujamos* un palito por cosa.",
+    "*Sumar* es juntar y contar.",
+    "Y se dice *más*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

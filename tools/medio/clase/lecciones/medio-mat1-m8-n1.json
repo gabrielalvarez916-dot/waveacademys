@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat1-m8-n1",
+ "step_id": "3b05b278-3486-40c2-99f9-29a2264da122",
+ "materia": "Matemática 1",
+ "titulo": "Juntar colecciones",
+ "sub": "Matemática 1 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🧺",
+   "lineas": [
+    "Sofi va de picnic a la plaza.",
+    "Lleva una canasta con manzanas.",
+    "¡Tomi trae otra canasta!"
+   ],
+   "titulo": "JUNTAR",
+   "sub": "dos grupos",
+   "voz": [
+    "Sofi va de *picnic* a la plaza.",
+    "Lleva una canasta con manzanas.",
+    "¡Y Tomi trae otra canasta!",
+    "Hoy: *juntar colecciones*."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🍎",
+    "n": 3
+   },
+   "b": {
+    "emoji": "🍎",
+    "n": 2
+   },
+   "texto": "3 Y 2 SON 5",
+   "voz": [
+    "Sofi tiene *3* manzanas. Tomi tiene *2*.",
+    "Las ponemos todas juntas en la manta.",
+    "Contamos todo: ¡son *5* manzanas!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "JUNTAR",
+   "texto": "Poner dos grupos en uno solo",
+   "emoji": "🤝",
+   "voz": [
+    "*Juntar* es poner dos grupos en uno.",
+    "Después contamos *todo* junto."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "⚽",
+    "n": 4
+   },
+   "b": {
+    "emoji": "⭐",
+    "n": 3
+   },
+   "texto": "4 Y 3 SON 7",
+   "voz": [
+    "Ahora juntamos 4 pelotas y 3 estrellas.",
+    "Todo va al mismo grupo.",
+    "Contamos: ¡son *7* cosas!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ TODO",
+   "texto": "Contá cada cosa una sola vez",
+   "emoji": "👆",
+   "voz": [
+    "Truco: contá cada cosa *una sola vez*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "4 pelotas y 4 pelotas. ¿Cuántas son?",
+   "opciones": [
+    "4",
+    "6",
+    "8"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Juntamos 4 y 4 pelotas.",
+    "¿Cuántas pelotas hay en total?",
+    "¡*8*! Contamos todo junto."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DOS GRUPOS",
+     "los contamos"
+    ],
+    [
+     "JUNTAR",
+     "un solo grupo"
+    ],
+    [
+     "TOTAL",
+     "contamos todo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Tenemos *dos grupos*.",
+    "Los *juntamos* en uno solo.",
+    "Y contamos el *total*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

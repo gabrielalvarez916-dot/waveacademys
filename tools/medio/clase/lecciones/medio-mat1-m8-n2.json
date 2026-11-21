@@ -1,0 +1,123 @@
+{
+ "slug": "medio-mat1-m8-n2",
+ "step_id": "9839bcd7-75f7-4dfa-948d-9684689a98c8",
+ "materia": "Matemática 1",
+ "titulo": "Agregar elementos",
+ "sub": "Matemática 1 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Hay 4 manzanas. Llegan 3 más. ¿Cuántas hay?",
+   "segundos": 6,
+   "respuesta": "¡7!",
+   "emoji": "🍎",
+   "titulo": "AGREGAR",
+   "sub": "elementos",
+   "voz": [
+    "Desafío: hay 4 manzanas y llegan 3.",
+    "¡Son *7*!",
+    "Hoy: *agregar elementos*."
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🍎",
+   "n": 4,
+   "mas": 3,
+   "texto": "4 Y 3 MÁS SON 7",
+   "voz": [
+    "En la manta hay *4* manzanas.",
+    "Sofi agrega más: 5, 6, 7.",
+    "¡Ahora hay *7* manzanas!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "AGREGAR",
+   "texto": "Poner más cosas en un grupo",
+   "emoji": "➕",
+   "voz": [
+    "*Agregar* es poner más cosas en un grupo.",
+    "¡El grupo se hace *más grande*!"
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🎈",
+   "n": 5,
+   "mas": 3,
+   "texto": "5 Y 3 MÁS SON 8",
+   "voz": [
+    "Hay *5* globos atados al árbol.",
+    "Tomi trae más: 6, 7, 8.",
+    "¡Ahora hay *8* globos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SEGUÍ CONTANDO",
+   "texto": "No empieces de nuevo desde 1",
+   "emoji": "🔢",
+   "voz": [
+    "Truco: *seguí contando* desde el número que tenés."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Hay 5 vasos. Llegan 2. ¿Cuántos hay?",
+   "opciones": [
+    "7",
+    "5",
+    "3"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Hay 5 vasos y llegan 2.",
+    "¿Cuántos vasos hay ahora?",
+    "¡*7*! Cinco, seis, siete."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Empezar a contar de nuevo",
+     "bien": "Seguir desde el número"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No empieces de nuevo: *seguí contando*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPO",
+     "lo que había"
+    ],
+    [
+     "AGREGAR",
+     "llegan más"
+    ],
+    [
+     "AHORA",
+     "hay más que antes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero hay un *grupo*.",
+    "Después *agregamos* más.",
+    "¡Ahora hay *más que antes*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

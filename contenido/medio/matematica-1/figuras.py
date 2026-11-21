@@ -399,3 +399,38 @@ def precios(items, sim="$"):
         x = 1.0 + k * 1.8; OBJ[obj](ax, x, 1.3)
         cartel(ax, x, .4, f"{sim}{p}", c=AMBAR, tc=OSC, fs=13)
     return png(fig)
+
+
+# ---------------- dibujos de la misión 8 (juntar y agregar) ----------------
+def juntar(a, b, texto=None):
+    """Dos grupos (cada uno con su número), un + y, a la derecha, todo junto con el total. a, b = (objeto, cantidad)."""
+    (oa, na), (ob, nb) = a, b; tot = na + nb
+    ca, cb = min(na, 5), min(nb, 5); ct = min(tot, 5); fa, fb, ft = (na + 4) // 5, (nb + 4) // 5, (tot + 4) // 5
+    H = 1.15 * max(fa, fb, ft) + 1.4; xa = 0.15; xb = xa + ca + 1.3; xt = xb + cb + 1.3; W = xt + ct + .3
+    fig, ax = lienzo(min(9.5, .85 * W + .5), .85 * H + .3, W, H, 0, -1.0)
+    def grupo(x0, obj, n, c, txt, col):
+        filas = (n + 4) // 5
+        ax.add_patch(FancyBboxPatch((x0, H - 1.0 - 1.15 * filas - .05), c, 1.15 * filas, boxstyle="round,pad=0.05,rounding_size=0.2", fill=False, ec=col, lw=1.8, ls="--"))
+        for k in range(n): OBJ[obj](ax, x0 + .5 + (k % 5), H - 1.6 - (k // 5) * 1.15)
+        cartel(ax, x0 + c / 2, -.55, txt, c=col if col != AMBAR else AMBAR, tc="white" if col != AMBAR else OSC, fs=14)
+    grupo(xa, oa, na, ca, str(na), TEAL); grupo(xb, ob, nb, cb, str(nb), TEAL)
+    ax.text(xb - .65, H - 1.6, "+", ha="center", va="center", fontsize=30, color=OSC, **F)
+    ax.text(xt - .65, H - 1.6, "=", ha="center", va="center", fontsize=30, color=OSC, **F)
+    for k in range(tot): OBJ[oa if k < na else ob](ax, xt + .5 + (k % 5), H - 1.6 - (k // 5) * 1.15)
+    ax.add_patch(FancyBboxPatch((xt, H - 1.0 - 1.15 * ft - .05), ct, 1.15 * ft, boxstyle="round,pad=0.05,rounding_size=0.2", fill=False, ec=AMBAR, lw=2.2))
+    cartel(ax, xt + ct / 2, -.55, texto or str(tot), c=AMBAR, tc=OSC, fs=14)
+    return png(fig)
+
+
+def agregar(obj, n, mas, texto=None):
+    """Un grupo de n y los que llegan (marcados con +, en verde). Abajo, el total."""
+    tot = n + mas; cols = min(tot, 5); filas = (tot + 4) // 5
+    fig, ax = lienzo(1.1 * cols + 1.0, 1.15 * filas + 1.2, cols + .8, 1.15 * filas + .5, 0, -.9)
+    for k in range(tot):
+        x, y = .9 + (k % 5), 1.15 * filas - .3 - (k // 5) * 1.15
+        OBJ[obj](ax, x, y)
+        if k >= n:
+            ax.add_patch(Circle((x, y), .5, fill=False, ec=VERDE, lw=2.4, ls="--"))
+            ax.text(x + .4, y + .42, "+", ha="center", va="center", fontsize=16, color=VERDE, **F)
+    cartel(ax, cols / 2 + .4, -.5, texto or f"{n} + {mas} = {tot}", c=AMBAR, tc=OSC, fs=14)
+    return png(fig)

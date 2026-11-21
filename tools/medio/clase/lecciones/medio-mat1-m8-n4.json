@@ -1,0 +1,145 @@
+{
+ "slug": "medio-mat1-m8-n4",
+ "step_id": "fa15af9b-eb44-4fa7-85f0-c9d24d04fa5b",
+ "materia": "Matemática 1",
+ "titulo": "Escribir la suma",
+ "sub": "Matemática 1 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cuántas manzanas llevamos?"
+    },
+    {
+     "yo": true,
+     "txt": "Yo 3 y vos 2"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo lo anoto?"
+    }
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "la suma",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "Sofi lleva 3 manzanas y Tomi 2.",
+    "¿Cómo se anota eso?",
+    "Hoy: *escribir la suma*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "+",
+   "texto": "Se lee MÁS",
+   "emoji": "➕",
+   "voz": [
+    "Este es el signo *más*.",
+    "Va entre los dos números que juntamos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "=",
+   "texto": "Se lee IGUAL",
+   "emoji": "🟰",
+   "voz": [
+    "Este es el signo *igual*.",
+    "Después del igual va el *resultado*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "3",
+    "+",
+    "2",
+    "=",
+    "5"
+   ],
+   "grande": "3 + 2 = 5",
+   "etiqueta": "TRES MÁS DOS IGUAL A CINCO",
+   "voz": [
+    "Ponemos el 3, el más y el 2.",
+    "Después el igual y el *5*.",
+    "Se lee: *tres más dos igual a cinco*."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "4",
+    "5"
+   ],
+   "op": "+",
+   "resultado": "9",
+   "voz": [
+    "Otra suma: 4 vasos más 5 vasos.",
+    "¡4 más 5 es igual a *9*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se escribe 5 manzanas y 1 más?",
+   "opciones": [
+    "5 + 1 = 6",
+    "5 = 1 + 6",
+    "5 + 6 = 1"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 5 manzanas y 1 más.",
+    "¿Cuál es la suma bien escrita?",
+    "¡*5 más 1 igual a 6*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Poner el resultado antes del =",
+     "bien": "El resultado va después del ="
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El *resultado* va después del igual."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "+",
+     "se lee más"
+    ],
+    [
+     "=",
+     "se lee igual"
+    ],
+    [
+     "SUMA",
+     "3 + 2 = 5"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El signo *más* junta los números.",
+    "Después del *igual* va el resultado.",
+    "Tres más dos igual a *cinco*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

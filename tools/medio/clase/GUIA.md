@@ -73,6 +73,8 @@ Una lección = **un archivo** `tools/medio/clase/lecciones/<slug>.json`. Al subi
 | curva | 2 + marcas | titulo, x, y, puntos:[[x,y]], marcas:[{x, y, txt}] |
 | porcentaje | 2 | valor, txt, emoji |
 | fichas | 3 | fichas:[...], grande, etiqueta |
+| juntar | 3 | a:{emoji, n}, b:{emoji, n}, texto — dos grupos con su número y el +; se juntan en una caja; el total (a + b ≤ 10, primeros años) |
+| agregar | 3 | emoji, n, mas, texto — el grupo con su número; los nuevos caen cuando la voz cuenta ("5, 6, 7"); el total (n + mas ≤ 10, primeros años) |
 | agrupar | niveles + 1 | niveles:[{nombre, valor, icono:'alf'\|'pack'\|'caja'\|'camion'\|emoji}], salto |
 | estante | 5 | numero, cab, dig, val, flechas, destacar, etiqueta |
 | quitar | 5 | tarjetas:[{cab, val}×2], cab, dig, quitar, resultado, sello, etiqueta |
