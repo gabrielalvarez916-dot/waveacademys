@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat1-m6-n2",
+ "step_id": "04b8c66a-62ed-4672-a21f-efdbd1050817",
+ "materia": "Matemática 1",
+ "titulo": "Decenas y unidades sueltas",
+ "sub": "Matemática 1 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos caramelos hay en 3 bolsitas de 10?",
+   "segundos": 6,
+   "respuesta": "¡30!",
+   "emoji": "🛍️",
+   "titulo": "DECENAS",
+   "sub": "y unidades sueltas",
+   "voz": [
+    "Desafío: ¿cuántos caramelos hay en 3 bolsitas?",
+    "¡*30*! 10, 20, 30.",
+    "Hoy: *decenas y unidades sueltas*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "d": 3,
+   "u": 5,
+   "texto": "3 decenas y 5 unidades: 35",
+   "cabD": "BOLSITAS DE 10",
+   "cabU": "SUELTOS",
+   "voz": [
+    "Mirá lo que vendió Sofi hoy.",
+    "Bolsitas: 10, 20, 30.",
+    "Sueltos: 31, 32, 33, 34, 35.",
+    "¡*3 decenas y 5 unidades*: 35!"
+   ]
+  },
+  {
+   "t": "cdu",
+   "d": 5,
+   "u": 2,
+   "texto": "5 decenas y 2 unidades: 52",
+   "cabD": "BOLSITAS DE 10",
+   "cabU": "SUELTOS",
+   "voz": [
+    "Otro pedido para el recreo.",
+    "Bolsitas: 10, 20, 30, 40, 50.",
+    "Sueltos: 51, 52.",
+    "¡*5 decenas y 2 unidades*: 52!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "DECENA",
+    "texto": "bolsita de 10",
+    "emoji": "🛍️"
+   },
+   "b": {
+    "cab": "UNIDAD",
+    "texto": "1 suelto",
+    "emoji": "🍬"
+   },
+   "signo": "y",
+   "voz": [
+    "Una *decena* es una bolsita de 10.",
+    "Una *unidad* es un caramelo suelto.",
+    "¡Con las dos armamos cualquier número!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas decenas tiene el 47?",
+   "opciones": [
+    "4",
+    "7",
+    "47"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el 47.",
+    "¿Cuántas *decenas* tiene?",
+    "¡*4*! Cuatro bolsitas de 10."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar la bolsita como 1",
+     "bien": "Una bolsita vale 10"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Una bolsita vale *10*, no 1."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DECENAS",
+     "bolsitas de 10"
+    ],
+    [
+     "UNIDADES",
+     "sueltos"
+    ],
+    [
+     "JUNTAS",
+     "forman el número"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *decenas* son bolsitas de 10.",
+    "Las *unidades* son los sueltos.",
+    "Juntas *forman el número*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

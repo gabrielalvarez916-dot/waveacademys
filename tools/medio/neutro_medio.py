@@ -136,5 +136,5 @@ def revisar(o):
 
 # ---- palabras que aparecieron en el Nivel Medio ----
 MAPA.update({'igualá': 'iguala', 'igualás': 'igualas', 'quitá': 'quita', 'contalas': 'cuéntalas', 'levantá': 'levanta', 'ordenalos': 'ordénalos', 'ponelo': 'ponlo', 'seguís': 'sigues', 'saltás': 'saltas', 'volvés': 'vuelves'})
-OK |= {'regalos'}
+OK |= {'regalos', 'caramelo'}
 OK -= set(MAPA)

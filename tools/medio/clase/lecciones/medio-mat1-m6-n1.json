@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat1-m6-n1",
+ "step_id": "8454576d-815e-4ea3-8d0b-fb74e4609cd6",
+ "materia": "Matemática 1",
+ "titulo": "Agrupar de a diez",
+ "sub": "Matemática 1 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "Sofi atiende el kiosco de la escuela.",
+    "Tiene muchos caramelos sueltos.",
+    "¡Hay que guardarlos!"
+   ],
+   "titulo": "AGRUPAR",
+   "sub": "de a diez",
+   "voz": [
+    "Sofi atiende el *kiosco* de la escuela.",
+    "Tiene un montón de caramelos sueltos.",
+    "¿Cómo los cuenta rápido? ¡Agrupando!",
+    "Hoy: *agrupar de a diez*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "UNA BOLSITA",
+   "emoji": "🍬",
+   "cantidad": 10,
+   "voz": [
+    "Sofi mete caramelos en una bolsita.",
+    "1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
+    "¡*10 caramelos* llenan una bolsita!"
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "UNIDAD",
+     "valor": "1",
+     "icono": "🍬"
+    },
+    {
+     "nombre": "DECENA",
+     "valor": "10",
+     "icono": "🛍️"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un caramelo suelto es una *unidad*.",
+    "10 caramelos en una bolsita son una *decena*.",
+    "¡Una decena es igual a *10 unidades*!"
+   ]
+  },
+  {
+   "t": "diezymas",
+   "emoji": "🍬",
+   "n": 14,
+   "texto": "1 bolsita y 4 sueltos: 14",
+   "voz": [
+    "Una bolsita de 10 y algunos sueltos.",
+    "11, 12, 13, 14.",
+    "*1 decena y 4 unidades*: ¡14!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE A 10",
+   "texto": "Agrupar de a 10 ayuda a contar",
+   "emoji": "🛍️",
+   "voz": [
+    "Truco: agrupar de a 10 hace más fácil *contar*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántos caramelos van en una bolsita?",
+   "opciones": [
+    "5",
+    "10",
+    "100"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en las bolsitas de Sofi.",
+    "¿Cuántos caramelos van en cada una?",
+    "¡*10*! Una decena."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNIDAD",
+     "un suelto"
+    ],
+    [
+     "DECENA",
+     "una bolsita de 10"
+    ],
+    [
+     "AGRUPAR",
+     "de a 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *unidad* es un suelto.",
+    "Una *decena* es una bolsita de 10.",
+    "Agrupar de a 10 ayuda a *contar*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

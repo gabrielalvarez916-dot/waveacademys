@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat1-m6-n4",
+ "step_id": "c447a03d-4001-4578-a18e-7edd8bff79dd",
+ "materia": "Matemática 1",
+ "titulo": "Armar y desarmar números",
+ "sub": "Matemática 1 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "Sofi recibe un pedido de 47.",
+    "¿Cuántas bolsitas arma?",
+    "¿Y cuántos sueltos?"
+   ],
+   "titulo": "ARMAR",
+   "sub": "y desarmar números",
+   "voz": [
+    "Sofi recibe un pedido de *47 caramelos*.",
+    "¿Cuántas bolsitas arma?",
+    "¿Y cuántos caramelos sueltos?",
+    "Hoy: *armar y desarmar números*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "d": 4,
+   "u": 7,
+   "texto": "47 = 40 + 7",
+   "cabD": "BOLSITAS DE 10",
+   "cabU": "SUELTOS",
+   "voz": [
+    "Armamos el pedido de 47.",
+    "Bolsitas: 10, 20, 30, 40.",
+    "Sueltos: 41, 42, 43, 44, 45, 46, 47.",
+    "¡*4 bolsitas y 7 sueltos*!"
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "47",
+   "titulo": "DESARMAMOS EL 47",
+   "partes": [
+    "40",
+    "7"
+   ],
+   "resultado": "= 47 ✓",
+   "voz": [
+    "Ahora *desarmamos* el 47.",
+    "Lo escribimos como una suma.",
+    "40 más 7.",
+    "El 4 vale 40 y el 7 vale 7.",
+    "40 más 7 es *47*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "85",
+   "titulo": "DESARMAMOS EL 85",
+   "partes": [
+    "80",
+    "5"
+   ],
+   "resultado": "= 85 ✓",
+   "voz": [
+    "Otro más: el 85.",
+    "Lo desarmamos en una suma.",
+    "80 más 5.",
+    "El 8 vale *80*.",
+    "80 más 5 es *85*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número es 30 + 6?",
+   "opciones": [
+    "36",
+    "63",
+    "9"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Armamos un número.",
+    "¿Qué número es 30 más 6?",
+    "¡El *36*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se desarma el 52?",
+   "opciones": [
+    "50 + 2",
+    "5 + 2",
+    "20 + 5"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más. Desarmamos el 52.",
+    "¿Cuál es la suma correcta?",
+    "¡*50 más 2*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARMAR",
+     "40 + 7 = 47"
+    ],
+    [
+     "DESARMAR",
+     "47 = 40 + 7"
+    ],
+    [
+     "DECENAS",
+     "valen 10 cada una"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Armar*: 40 más 7 es 47.",
+    "*Desarmar*: 47 es 40 más 7.",
+    "Cada decena vale *10*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

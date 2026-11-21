@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat1-m6-n3",
+ "step_id": "ef83b0cd-48d2-4a19-9051-683976a5c2c3",
+ "materia": "Matemática 1",
+ "titulo": "Escribir números con decenas",
+ "sub": "Matemática 1 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "✏️",
+   "final": "🔢",
+   "titulo": "ESCRIBIR",
+   "sub": "con decenas",
+   "voz": [
+    "Sofi anota lo que vende en un cuaderno.",
+    "¿Cómo escribe 6 bolsitas y 3 sueltos?",
+    "Hoy: *escribir números con decenas*."
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "63",
+   "cab": [
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "6",
+    "3"
+   ],
+   "val": [
+    "60",
+    "3"
+   ],
+   "destacar": 0,
+   "etiqueta": "CADA CIFRA EN SU LUGAR",
+   "voz": [
+    "Mirá el número *63*.",
+    "Tiene dos lugares.",
+    "Decenas a la izquierda, unidades a la derecha.",
+    "El 6 son *6 bolsitas*: vale 60.",
+    "¡Y el 3 son *3 sueltos*!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "6",
+    "3"
+   ],
+   "grande": "63",
+   "etiqueta": "SESENTA Y TRES",
+   "voz": [
+    "Primero las decenas: un *6*. Después, un *3*.",
+    "Juntas forman el *63*.",
+    "Se lee: *sesenta y tres*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir 36 para sesenta y tres",
+     "bien": "Primero las decenas: 63"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Primero van las *decenas*: 63, no 36."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "4 bolsitas y 8 sueltos, ¿qué número es?",
+   "opciones": [
+    "48",
+    "84",
+    "12"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 4 bolsitas y 8 sueltos.",
+    "¿Qué número es?",
+    "¡*48*! Cuarenta y ocho."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PRIMERO LAS BOLSITAS",
+   "texto": "Las decenas van a la izquierda",
+   "emoji": "⬅️",
+   "voz": [
+    "Truco: las *decenas* se escriben a la izquierda."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DECENAS",
+     "a la izquierda"
+    ],
+    [
+     "UNIDADES",
+     "a la derecha"
+    ],
+    [
+     "LEER",
+     "sesenta y tres"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *decenas* van a la izquierda.",
+    "Las *unidades* van a la derecha.",
+    "Y lo leemos: *sesenta y tres*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

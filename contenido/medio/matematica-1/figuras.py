@@ -355,3 +355,18 @@ def chicos_numero(nums):
         ax.add_patch(FancyBboxPatch((x - .42, .2), .84, .95, boxstyle="round,pad=0.02,rounding_size=0.15", color=[TEAL, CORAL, AZUL, LILA, VERDE][i % 5], ec=OSC, lw=1.4))
         ax.text(x, .66, str(v), ha="center", va="center", fontsize=17, color="white", **F)
     return png(fig)
+
+
+def tablero_du(numeros, vacios=()):
+    """Tablero de decenas y unidades: NÚMERO | D | U. vacios: filas con D y U en blanco (para completar)."""
+    n = len(numeros); H = .75 * (n + 1); fig, ax = lienzo(4.8, H + .2, 4.8, H + .2, 0, 0)
+    for j, (cab, col) in enumerate((("NÚMERO", OSC), ("D", CORAL), ("U", "#8a5634"))):
+        x = .1 + j * 1.55
+        ax.add_patch(Rectangle((x, H - .7), 1.5, .62, color=col)); ax.text(x + .75, H - .39, cab, ha="center", va="center", fontsize=12, color="white", **F)
+        for i, num in enumerate(numeros):
+            y = H - .7 - (i + 1) * .75
+            ax.add_patch(Rectangle((x, y), 1.5, .68, fill=False, ec=TEAL, lw=1.2))
+            s = str(num).rjust(2, "0")
+            v = str(num) if j == 0 else ("" if i in vacios else s[j - 1])
+            ax.text(x + .75, y + .34, v, ha="center", va="center", fontsize=14, color=OSC, **F)
+    return png(fig)
