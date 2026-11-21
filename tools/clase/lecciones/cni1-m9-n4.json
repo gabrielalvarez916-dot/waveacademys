@@ -1,0 +1,207 @@
+{
+ "slug": "cni1-m9-n4",
+ "step_id": "454a882c-8175-4452-b37d-8da09f7fb976",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Soluciones sostenibles",
+ "sub": "Ciencias Naturales Integradas I · Misión 9 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Reciclar o reducir? ♻️"
+    },
+    {
+     "yo": true,
+     "txt": "Primero reducir 😉"
+    },
+    {
+     "yo": false,
+     "txt": "¿Por qué?"
+    }
+   ],
+   "titulo": "SOLUCIONES SOSTENIBLES",
+   "sub": "reducir, reutilizar, reciclar",
+   "voz": [
+    "Lu pregunta: ¿reciclar o reducir?",
+    "Juan: primero reducir.",
+    "Lu: ¿por qué?",
+    "Hoy: *soluciones sostenibles*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Desarrollo sostenible",
+   "texto": "Satisfacer necesidades sin comprometer el futuro",
+   "emoji": "🌍",
+   "voz": [
+    "El *desarrollo sostenible* satisface las necesidades actuales sin comprometer a las generaciones futuras.",
+    "Combina lo ambiental, lo social y lo económico."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LAS TRES R",
+   "items": [
+    {
+     "txt": "Reducir",
+     "emoji": "🔽"
+    },
+    {
+     "txt": "Reutilizar",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "Reciclar",
+     "emoji": "♻️"
+    }
+   ],
+   "voz": [
+    "Las tres R en orden.",
+    "*Reducir*: consumir menos.",
+    "*Reutilizar*: dar otro uso.",
+    "*Reciclar*: procesar para fabricar de nuevo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ENERGÍAS RENOVABLES",
+   "columnas": [
+    "Fuente",
+    "Origen"
+   ],
+   "filas": [
+    [
+     "Solar",
+     "Sol"
+    ],
+    [
+     "Eólica",
+     "Viento"
+    ],
+    [
+     "Hidráulica",
+     "Agua"
+    ],
+    [
+     "Biomasa",
+     "Restos orgánicos"
+    ]
+   ],
+   "voz": [
+    "Energías renovables.",
+    "La *solar*, del Sol.",
+    "La *eólica*, del viento.",
+    "La *hidráulica*, del agua.",
+    "Y la *biomasa*, de restos orgánicos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "RENOVABLE",
+     "emoji": "♻️"
+    },
+    {
+     "cab": "FÓSIL",
+     "emoji": "⛽"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Solar",
+     "caja": 0
+    },
+    {
+     "txt": "Carbón",
+     "caja": 1
+    },
+    {
+     "txt": "Eólica",
+     "caja": 0
+    },
+    {
+     "txt": "Petróleo",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Renovable o fósil?",
+    "*Solar* y *eólica*: renovables.",
+    "*Carbón* y *petróleo*: fósiles."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué R va primero?",
+   "opciones": [
+    "Reducir",
+    "Reciclar",
+    "Reutilizar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué R va primero?",
+    "¿Reducir, reciclar o reutilizar?",
+    "*Reducir*: evita generar residuos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Reciclar alcanza",
+     "bien": "Primero reducir"
+    },
+    {
+     "mal": "Renovables no emiten nada",
+     "bien": "Emiten mucho menos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *reciclar* alcanza.",
+    "Y que las renovables *no emiten nada*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Lo *sostenible* cuida el futuro.",
+    "Las *tres R*: reducir, reutilizar, reciclar.",
+    "Las *renovables* no se agotan.",
+    "Y la acción es *personal* y *colectiva*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SOSTENIBLE",
+     "cuida el futuro"
+    ],
+    [
+     "TRES R",
+     "reducir primero"
+    ],
+    [
+     "RENOVABLES",
+     "solar, eólica"
+    ],
+    [
+     "ACCIÓN",
+     "entre todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

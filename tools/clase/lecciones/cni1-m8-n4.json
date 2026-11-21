@@ -1,0 +1,192 @@
+{
+ "slug": "cni1-m8-n4",
+ "step_id": "aea76935-c587-4079-961d-b08d8e4f13f4",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Modelo de un ecosistema",
+ "sub": "Ciencias Naturales Integradas I · Misión 8 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Un modelo es una copia exacta de la realidad?",
+   "segundos": 6,
+   "respuesta": "No: simplifica",
+   "emoji": "🧩",
+   "titulo": "MODELO DE UN ECOSISTEMA",
+   "sub": "predecir con modelos",
+   "voz": [
+    "Desafío: ¿un modelo es una copia exacta de la realidad? Seis segundos.",
+    "No: simplifica.",
+    "Hoy: *modelo de un ecosistema*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Modelo",
+   "texto": "Representación simplificada de un sistema",
+   "emoji": "🧩",
+   "voz": [
+    "Un *modelo* es una representación simplificada de un sistema.",
+    "Sirve para entender y predecir."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "COMPONENTES",
+   "columnas": [
+    "Componente",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Productores",
+     "Algas"
+    ],
+    [
+     "Consumidores",
+     "Peces"
+    ],
+    [
+     "Descomponedores",
+     "Bacterias"
+    ],
+    [
+     "No vivos",
+     "Luz, agua"
+    ]
+   ],
+   "voz": [
+    "Qué incluir en el modelo.",
+    "*Productores*: algas.",
+    "*Consumidores*: peces.",
+    "*Descomponedores*: bacterias.",
+    "Y *factores no vivos*: luz y agua."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ENTRA",
+     "emoji": "⬇️"
+    },
+    {
+     "cab": "SALE",
+     "emoji": "⬆️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Luz del Sol",
+     "caja": 0
+    },
+    {
+     "txt": "Calor",
+     "caja": 1
+    },
+    {
+     "txt": "Lluvia",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Entra o sale?",
+    "*Luz del Sol* y *lluvia*: entran.",
+    "*Calor*: sale."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Se contaminan las algas",
+    "emoji": "☠️"
+   },
+   "items": [
+    {
+     "txt": "Faltan productores",
+     "emoji": "🌿"
+    },
+    {
+     "txt": "Bajan los peces",
+     "emoji": "🐟"
+    },
+    {
+     "txt": "Menos aves",
+     "emoji": "🦆"
+    }
+   ],
+   "voz": [
+    "Una predicción con el modelo.",
+    "Si se contaminan las algas...",
+    "Faltan *productores*.",
+    "Bajan los *peces*.",
+    "Y hay menos *aves*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo sale la energía de un ecosistema?",
+   "opciones": [
+    "Como calor",
+    "Como materia",
+    "No sale"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo sale la energía de un ecosistema?",
+    "¿Como calor, como materia o no sale?",
+    "*Como calor*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un modelo es una copia exacta",
+     "bien": "Simplifica"
+    },
+    {
+     "mal": "Dejar afuera lo no vivo",
+     "bien": "Incluirlo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que un modelo es *copia exacta*.",
+    "Y dejar afuera lo *no vivo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *modelo* simplifica.",
+    "Incluye componentes *vivos* y *no vivos*.",
+    "Muestra *flujos* de energía y materia.",
+    "Y permite *predecir*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MODELO",
+     "simplifica"
+    ],
+    [
+     "COMPONENTES",
+     "vivos y no vivos"
+    ],
+    [
+     "FLUJOS",
+     "energía y materia"
+    ],
+    [
+     "USO",
+     "predecir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

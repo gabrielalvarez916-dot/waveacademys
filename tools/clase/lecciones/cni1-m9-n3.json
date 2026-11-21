@@ -1,0 +1,192 @@
+{
+ "slug": "cni1-m9-n3",
+ "step_id": "896af0d4-abc7-4709-acda-d0d0a227f0b3",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Huella de carbono",
+ "sub": "Ciencias Naturales Integradas I · Misión 9 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Un auto emite 0,2 kg de CO₂ por km. ¿Cuánto emite en 50 km?",
+   "segundos": 10,
+   "respuesta": "10 kg",
+   "emoji": "🚗",
+   "titulo": "HUELLA DE CARBONO",
+   "sub": "calcular y reducir",
+   "voz": [
+    "Desafío: un auto emite cero coma dos kilos de CO₂ por kilómetro. ¿Cuánto emite en cincuenta kilómetros? Diez segundos.",
+    "Diez kilos.",
+    "Hoy: *huella de carbono*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Huella de carbono",
+   "texto": "Gases que produce una actividad",
+   "emoji": "👣",
+   "voz": [
+    "La *huella de carbono* es la cantidad de gases de efecto invernadero que produce algo.",
+    "Se mide en CO₂ equivalente."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "FUENTES",
+   "columnas": [
+    "Fuente",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Transporte",
+     "Auto, avión"
+    ],
+    [
+     "Energía",
+     "Electricidad, gas"
+    ],
+    [
+     "Alimentación",
+     "Carne"
+    ],
+    [
+     "Consumo",
+     "Ropa nueva"
+    ]
+   ],
+   "voz": [
+    "De dónde sale.",
+    "*Transporte*.",
+    "*Energía*.",
+    "*Alimentación*.",
+    "Y *consumo*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÁLCULO",
+   "items": [
+    {
+     "txt": "Actividad",
+     "emoji": "📏"
+    },
+    {
+     "txt": "Factor de emisión",
+     "emoji": "🏭"
+    },
+    {
+     "txt": "Multiplicar",
+     "emoji": "✖️"
+    }
+   ],
+   "voz": [
+    "Para calcular.",
+    "Tomá la *actividad*.",
+    "Buscá el *factor de emisión*.",
+    "Y *multiplicá*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MENOS HUELLA",
+     "emoji": "🌱"
+    },
+    {
+     "cab": "MÁS HUELLA",
+     "emoji": "🏭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Caminar",
+     "caja": 0
+    },
+    {
+     "txt": "Auto solo",
+     "caja": 1
+    },
+    {
+     "txt": "Ahorrar energía",
+     "caja": 0
+    },
+    {
+     "txt": "Avión",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Menos o más huella?",
+    "*Caminar* y *ahorrar energía*: menos.",
+    "*Auto solo* y *avión*: más."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La huella se calcula…",
+   "opciones": [
+    "Actividad por factor",
+    "Sumando años",
+    "Dividiendo por dos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se calcula la huella?",
+    "¿Actividad por factor, sumando años o dividiendo por dos?",
+    "*Actividad por factor*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Solo cuentan las fábricas",
+     "bien": "Cuenta todo lo que hacemos"
+    },
+    {
+     "mal": "Una acción no sirve",
+     "bien": "Todas suman"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que solo cuentan las *fábricas*.",
+    "Y que una acción individual *no sirve*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *huella* mide los gases que emitimos.",
+    "Viene del *transporte*, la *energía* y la *alimentación*.",
+    "Se calcula con *actividad por factor*.",
+    "Y se reduce con *pequeñas decisiones*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "HUELLA",
+     "gases emitidos"
+    ],
+    [
+     "FUENTES",
+     "transporte, energía"
+    ],
+    [
+     "CÁLCULO",
+     "actividad por factor"
+    ],
+    [
+     "REDUCIR",
+     "ahorrar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

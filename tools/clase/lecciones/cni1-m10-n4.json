@@ -1,0 +1,178 @@
+{
+ "slug": "cni1-m10-n4",
+ "step_id": "356de49b-fb07-46f8-8bac-fdb57d1d3396",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Curvas de calentamiento",
+ "sub": "Ciencias Naturales Integradas I · Misión 10 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Si la temperatura no sube mientras entra calor, ¿qué está pasando?",
+   "segundos": 8,
+   "respuesta": "Un cambio de estado",
+   "emoji": "📈",
+   "titulo": "CURVAS DE CALENTAMIENTO",
+   "sub": "leer mesetas",
+   "voz": [
+    "Desafío: si la temperatura no sube mientras entra calor, ¿qué está pasando? Ocho segundos.",
+    "Un cambio de estado.",
+    "Hoy: *curvas de calentamiento*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Curva de calentamiento",
+   "texto": "Temperatura en función del tiempo",
+   "emoji": "📈",
+   "voz": [
+    "Una *curva de calentamiento* muestra la temperatura en función del tiempo.",
+    "Mientras se entrega calor."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL AGUA AL CALENTARSE",
+   "eventos": [
+    {
+     "fecha": "-10 °C",
+     "txt": "Hielo que sube",
+     "emoji": "🧊"
+    },
+    {
+     "fecha": "0 °C",
+     "txt": "Meseta: fusión",
+     "emoji": "💧"
+    },
+    {
+     "fecha": "50 °C",
+     "txt": "Agua que sube",
+     "emoji": "🌡️"
+    },
+    {
+     "fecha": "100 °C",
+     "txt": "Meseta: ebullición",
+     "emoji": "♨️"
+    }
+   ],
+   "voz": [
+    "El agua al calentarse tiene cinco tramos.",
+    "El hielo sube hasta *cero grados*.",
+    "Meseta de *fusión*.",
+    "El agua líquida sube hasta *cien grados*.",
+    "Meseta de *ebullición*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Calor latente",
+   "texto": "Cambia el estado sin cambiar la temperatura",
+   "emoji": "🔥",
+   "voz": [
+    "El *calor latente* se usa para vencer las fuerzas entre partículas.",
+    "Por eso la temperatura no sube."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "TRAMO INCLINADO",
+     "emoji": "📈"
+    },
+    {
+     "cab": "MESETA",
+     "emoji": "➖"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Una sola fase",
+     "caja": 0
+    },
+    {
+     "txt": "Cambio de estado",
+     "caja": 1
+    },
+    {
+     "txt": "Temperatura sube",
+     "caja": 0
+    },
+    {
+     "txt": "Temp. constante",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Inclinado o meseta?",
+    "*Una sola fase* y *temperatura sube*: inclinado.",
+    "*Cambio de estado* y *temperatura constante*: meseta."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿A qué temperatura hierve el agua a nivel del mar?",
+   "opciones": [
+    "100 °C",
+    "0 °C",
+    "50 °C"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿a qué temperatura hierve el agua?",
+    "¿Cien, cero o cincuenta grados?",
+    "*Cien grados Celsius*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "En la meseta no entra calor",
+     "bien": "Entra y cambia el estado"
+    },
+    {
+     "mal": "La temperatura siempre sube",
+     "bien": "En las mesetas no"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que en la meseta *no entra calor*.",
+    "Y que la temperatura *siempre sube*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *curva* muestra temperatura y tiempo.",
+    "Las *mesetas* son cambios de estado.",
+    "El *calor latente* rompe fuerzas.",
+    "Y *horizontal* significa cambio.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CURVA",
+     "temperatura y tiempo"
+    ],
+    [
+     "MESETAS",
+     "cambios de estado"
+    ],
+    [
+     "LATENTE",
+     "rompe fuerzas"
+    ],
+    [
+     "LECTURA",
+     "horizontal es cambio"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

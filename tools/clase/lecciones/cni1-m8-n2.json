@@ -1,0 +1,210 @@
+{
+ "slug": "cni1-m8-n2",
+ "step_id": "82cb00a0-a8ea-443a-a0a3-184581a5c958",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Ciclos biogeoquímicos",
+ "sub": "Ciencias Naturales Integradas I · Misión 8 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Los mismos átomos",
+   "emoji": "♻️",
+   "final": "circulan desde hace millones de años",
+   "titulo": "CICLOS BIOGEOQUÍMICOS",
+   "sub": "la materia se recicla",
+   "voz": [
+    "Los átomos de tu cuerpo ya estuvieron en otros seres vivos.",
+    "La materia se recicla.",
+    "Hoy: *ciclos biogeoquímicos*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Ciclo del agua",
+    "emoji": "💧"
+   },
+   "items": [
+    {
+     "txt": "Evaporación",
+     "emoji": "☀️"
+    },
+    {
+     "txt": "Condensación",
+     "emoji": "☁️"
+    },
+    {
+     "txt": "Precipitación",
+     "emoji": "🌧️"
+    },
+    {
+     "txt": "Escurrimiento",
+     "emoji": "🏞️"
+    }
+   ],
+   "voz": [
+    "El agua recorre cuatro pasos.",
+    "*Evaporación*.",
+    "*Condensación*.",
+    "*Precipitación*.",
+    "Y *escurrimiento*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CICLO DEL CARBONO",
+   "columnas": [
+    "Proceso",
+    "Qué pasa"
+   ],
+   "filas": [
+    [
+     "Fotosíntesis",
+     "CO₂ a materia"
+    ],
+    [
+     "Respiración",
+     "Materia a CO₂"
+    ],
+    [
+     "Descomposición",
+     "Restos a CO₂"
+    ],
+    [
+     "Combustión",
+     "Libera CO₂"
+    ]
+   ],
+   "voz": [
+    "El carbono circula.",
+    "La *fotosíntesis* lo fija.",
+    "La *respiración* lo devuelve.",
+    "La *descomposición* también.",
+    "Y la *combustión* libera el carbono guardado."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fijación del nitrógeno",
+   "texto": "Bacterias lo vuelven aprovechable",
+   "emoji": "🦠",
+   "voz": [
+    "Las plantas no pueden usar el nitrógeno del aire.",
+    "Algunas *bacterias* lo *fijan* en formas aprovechables."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Ciclo del fósforo",
+   "texto": "Va de rocas a suelo y seres vivos",
+   "emoji": "🪨",
+   "voz": [
+    "El *fósforo* pasa de las rocas al suelo, a las plantas y a los animales.",
+    "No tiene fase gaseosa importante."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CARBONO",
+     "emoji": "⚫"
+    },
+    {
+     "cab": "NITRÓGENO",
+     "emoji": "🟣"
+    },
+    {
+     "cab": "AGUA",
+     "emoji": "💧"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Fotosíntesis",
+     "caja": 0
+    },
+    {
+     "txt": "Bacterias fijadoras",
+     "caja": 1
+    },
+    {
+     "txt": "Precipitación",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿De qué ciclo?",
+    "*Fotosíntesis*: carbono.",
+    "*Bacterias fijadoras*: nitrógeno.",
+    "*Precipitación*: agua."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué proceso devuelve CO₂ al aire cuando respiramos?",
+   "opciones": [
+    "Respiración",
+    "Fotosíntesis",
+    "Condensación"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué devuelve CO₂ al aire?",
+    "¿Respiración, fotosíntesis o condensación?",
+    "La *respiración*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El CO₂ solo lo producen fábricas",
+     "bien": "También los seres vivos"
+    },
+    {
+     "mal": "Las plantas toman el N del aire",
+     "bien": "Lo toman del suelo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el CO₂ solo viene de *fábricas*.",
+    "Y que las plantas toman el *nitrógeno del aire*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *materia* se recicla.",
+    "El *agua* evapora y condensa.",
+    "El *carbono* va y vuelve.",
+    "El *nitrógeno* lo fijan bacterias.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AGUA",
+     "evapora y precipita"
+    ],
+    [
+     "CARBONO",
+     "fotosíntesis y respiración"
+    ],
+    [
+     "NITRÓGENO",
+     "bacterias"
+    ],
+    [
+     "FÓSFORO",
+     "rocas y suelo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

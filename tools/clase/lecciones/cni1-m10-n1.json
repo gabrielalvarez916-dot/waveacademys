@@ -1,0 +1,196 @@
+{
+ "slug": "cni1-m10-n1",
+ "step_id": "158eeda1-ed9f-407b-82a4-e44aefe2eb90",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Teoría cinético-molecular",
+ "sub": "Ciencias Naturales Integradas I · Misión 10 · Nivel 1",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Invisibles",
+   "emoji": "🔬",
+   "final": "las partículas que forman todo",
+   "titulo": "TEORÍA CINÉTICO-MOLECULAR",
+   "sub": "un modelo de la materia",
+   "voz": [
+    "No las podés ver, pero están en todo.",
+    "Las partículas se mueven siempre.",
+    "Hoy: *la teoría cinético-molecular*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "IDEAS CLAVE",
+   "columnas": [
+    "Idea",
+    "Qué dice"
+   ],
+   "filas": [
+    [
+     "Partículas",
+     "La materia las tiene"
+    ],
+    [
+     "Movimiento",
+     "Siempre se mueven"
+    ],
+    [
+     "Espacios",
+     "Hay espacio vacío"
+    ],
+    [
+     "Fuerzas",
+     "Se atraen"
+    ]
+   ],
+   "voz": [
+    "Cuatro ideas.",
+    "La materia está hecha de *partículas*.",
+    "Siempre se *mueven*.",
+    "Hay *espacio vacío* entre ellas.",
+    "Y se *atraen* con fuerzas."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES ESTADOS",
+   "columnas": [
+    "Estado",
+    "Partículas"
+   ],
+   "filas": [
+    [
+     "Sólido",
+     "Ordenadas, vibran"
+    ],
+    [
+     "Líquido",
+     "Se deslizan"
+    ],
+    [
+     "Gas",
+     "Libres y rápidas"
+    ]
+   ],
+   "voz": [
+    "Cómo son en cada estado.",
+    "*Sólido*: ordenadas y vibran.",
+    "*Líquido*: se deslizan.",
+    "*Gas*: libres y rápidas."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SÓLIDO",
+     "emoji": "🧊"
+    },
+    {
+     "cab": "LÍQUIDO",
+     "emoji": "💧"
+    },
+    {
+     "cab": "GAS",
+     "emoji": "💨"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Forma propia",
+     "caja": 0
+    },
+    {
+     "txt": "Forma del envase",
+     "caja": 1
+    },
+    {
+     "txt": "Ocupa todo",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué estado?",
+    "*Forma propia*: sólido.",
+    "*Forma del recipiente*: líquido.",
+    "*Ocupa todo*: gas."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Compresión",
+   "texto": "Reducir el volumen",
+   "emoji": "🗜️",
+   "voz": [
+    "Los gases se *comprimen* porque hay mucho espacio entre sus partículas.",
+    "Los líquidos casi no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se mueven las partículas de un sólido?",
+   "opciones": [
+    "Vibran",
+    "Se deslizan",
+    "Vuelan"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se mueven las partículas de un sólido?",
+    "¿Vibran, se deslizan o vuelan?",
+    "*Vibran* en su lugar."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un sólido está quieto",
+     "bien": "Sus partículas vibran"
+    },
+    {
+     "mal": "Entre las partículas hay aire",
+     "bien": "Hay espacio vacío"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que un sólido está *quieto*.",
+    "Y que entre las partículas hay *aire*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La materia son *partículas en movimiento*.",
+    "Hay *espacio vacío* y *fuerzas*.",
+    "*Sólido*, *líquido* y *gas* se explican con el modelo.",
+    "Y los gases se *comprimen*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTÍCULAS",
+     "siempre se mueven"
+    ],
+    [
+     "SÓLIDO",
+     "vibran"
+    ],
+    [
+     "LÍQUIDO",
+     "se deslizan"
+    ],
+    [
+     "GAS",
+     "libres y rápidas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

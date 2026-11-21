@@ -1,0 +1,173 @@
+{
+ "slug": "cni1-m10-n3",
+ "step_id": "8853c7bd-ff59-47f8-9534-cab470b48a23",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Presión y temperatura en los gases",
+ "sub": "Ciencias Naturales Integradas I · Misión 10 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "SEGURIDAD",
+   "titular": "Una lata cerrada explota al sol",
+   "bajada": "El calor aumentó la presión",
+   "emoji": "💥",
+   "titulo": "PRESIÓN EN LOS GASES",
+   "sub": "y temperatura",
+   "voz": [
+    "Seguridad: una lata cerrada explota al sol.",
+    "El calor aumentó la presión.",
+    "Hoy: *presión y temperatura en los gases*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Presión",
+   "texto": "Choques de las partículas contra las paredes",
+   "emoji": "💥",
+   "voz": [
+    "La *presión* de un gas viene de los choques de sus partículas contra las paredes.",
+    "Más choques o más fuertes, más presión."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MENOS VOLUMEN",
+    "texto": "Más choques",
+    "emoji": "🗜️"
+   },
+   "b": {
+    "cab": "MÁS PRESIÓN",
+    "texto": "Ley de Boyle",
+    "emoji": "⬆️"
+   },
+   "signo": "→",
+   "voz": [
+    "A temperatura constante.",
+    "Con *menos volumen*, hay más choques.",
+    "Entonces, *más presión*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MÁS TEMPERATURA",
+    "texto": "Partículas más rápidas",
+    "emoji": "🌡️"
+   },
+   "b": {
+    "cab": "MÁS PRESIÓN",
+    "texto": "Choques más fuertes",
+    "emoji": "⬆️"
+   },
+   "signo": "→",
+   "voz": [
+    "Con volumen fijo.",
+    "Con *más temperatura*, van más rápido.",
+    "Y chocan con *más fuerza*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SUBE LA PRESIÓN",
+     "emoji": "⬆️"
+    },
+    {
+     "cab": "BAJA LA PRESIÓN",
+     "emoji": "⬇️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Reducir el volumen",
+     "caja": 0
+    },
+    {
+     "txt": "Ampliar el volumen",
+     "caja": 1
+    },
+    {
+     "txt": "Calentar",
+     "caja": 0
+    },
+    {
+     "txt": "Enfriar",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Sube o baja?",
+    "*Reducir el volumen* y *calentar*: sube.",
+    "*Ampliar el volumen* y *enfriar*: baja."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Si se reduce el volumen de un gas, la presión…",
+   "opciones": [
+    "Aumenta",
+    "Disminuye",
+    "No cambia"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: se reduce el volumen de un gas.",
+    "¿La presión aumenta, disminuye o no cambia?",
+    "*Aumenta*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La presión viene del peso del gas",
+     "bien": "Viene de los choques"
+    },
+    {
+     "mal": "El gas ocupa parte del recipiente",
+     "bien": "Ocupa todo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la presión viene del *peso*.",
+    "Y que el gas ocupa *parte* del recipiente."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *presión* viene de los choques.",
+    "Menos *volumen*, más presión.",
+    "Más *temperatura*, más presión.",
+    "Y se ve en globos y jeringas.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRESIÓN",
+     "choques"
+    ],
+    [
+     "BOYLE",
+     "menos volumen"
+    ],
+    [
+     "TEMPERATURA",
+     "más choques"
+    ],
+    [
+     "EJEMPLOS",
+     "globo, jeringa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

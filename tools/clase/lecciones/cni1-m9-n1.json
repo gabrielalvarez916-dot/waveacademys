@@ -1,0 +1,213 @@
+{
+ "slug": "cni1-m9-n1",
+ "step_id": "9712f47f-2d38-4f4a-abff-48ff6b85fc34",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Contaminación del agua y del aire",
+ "sub": "Ciencias Naturales Integradas I · Misión 9 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ALERTA",
+   "titular": "Un lago se llena de algas",
+   "bajada": "Los peces aparecen sin vida",
+   "emoji": "🌊",
+   "titulo": "CONTAMINACIÓN",
+   "sub": "del agua y del aire",
+   "voz": [
+    "Alerta: un lago se llena de algas.",
+    "Los peces aparecen sin vida.",
+    "Hoy: *contaminación del agua y del aire*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "AGUA",
+   "columnas": [
+    "Contaminante",
+    "Efecto"
+   ],
+   "filas": [
+    [
+     "Nutrientes",
+     "Eutrofización"
+    ],
+    [
+     "Basura",
+     "Daña animales"
+    ],
+    [
+     "Petróleo",
+     "Ahoga la fauna"
+    ],
+    [
+     "Metales pesados",
+     "Se acumulan"
+    ]
+   ],
+   "voz": [
+    "Contaminantes del agua.",
+    "Los *nutrientes* causan eutrofización.",
+    "La *basura* daña animales.",
+    "El *petróleo* ahoga la fauna.",
+    "Los *metales pesados* se acumulan."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "AIRE",
+   "columnas": [
+    "Contaminante",
+    "Efecto"
+   ],
+   "filas": [
+    [
+     "CO₂",
+     "Efecto invernadero"
+    ],
+    [
+     "Partículas",
+     "Problemas respiratorios"
+    ],
+    [
+     "Óxidos",
+     "Lluvia ácida"
+    ]
+   ],
+   "voz": [
+    "Contaminantes del aire.",
+    "El *CO₂* aumenta el efecto invernadero.",
+    "Las *partículas* afectan la respiración.",
+    "Los *óxidos* causan lluvia ácida."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Eutrofización",
+    "emoji": "🟢"
+   },
+   "items": [
+    {
+     "txt": "Crecen las algas",
+     "emoji": "🌿"
+    },
+    {
+     "txt": "Se gasta el oxígeno",
+     "emoji": "🫧"
+    },
+    {
+     "txt": "Mueren los peces",
+     "emoji": "🐟"
+    }
+   ],
+   "voz": [
+    "Así actúa el exceso de nutrientes.",
+    "Crecen las *algas*.",
+    "Se gasta el *oxígeno*.",
+    "Y mueren los *peces*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AGUA",
+     "emoji": "💧"
+    },
+    {
+     "cab": "AIRE",
+     "emoji": "💨"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Derrame",
+     "caja": 0
+    },
+    {
+     "txt": "Humo",
+     "caja": 1
+    },
+    {
+     "txt": "Fertilizante",
+     "caja": 0
+    },
+    {
+     "txt": "Polvo",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Agua o aire?",
+    "*Derrame* y *fertilizante*: agua.",
+    "*Humo* y *polvo*: aire."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El exceso de nutrientes en el agua provoca…",
+   "opciones": [
+    "Eutrofización",
+    "Condensación",
+    "Lluvia ácida"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el exceso de nutrientes en el agua.",
+    "¿Eutrofización, condensación o lluvia ácida?",
+    "*Eutrofización*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Agua clara igual a agua limpia",
+     "bien": "Puede tener contaminantes disueltos"
+    },
+    {
+     "mal": "El CO₂ no contamina",
+     "bien": "Aumenta el efecto invernadero"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que agua *clara* es limpia.",
+    "Y que el *CO₂* no es un contaminante."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El agua se contamina con *nutrientes*, *basura* y *petróleo*.",
+    "El aire, con *CO₂*, *partículas* y *óxidos*.",
+    "Hay *eutrofización* y *lluvia ácida*.",
+    "Y se mide con *indicadores*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AGUA",
+     "nutrientes, petróleo"
+    ],
+    [
+     "AIRE",
+     "CO₂, partículas"
+    ],
+    [
+     "EFECTOS",
+     "salud y ecosistemas"
+    ],
+    [
+     "MEDIR",
+     "pH"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

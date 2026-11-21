@@ -1,0 +1,186 @@
+{
+ "slug": "cni1-m8-n3",
+ "step_id": "ce0edb51-473d-4830-bffb-49aa831e7f08",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Productividad de un ecosistema",
+ "sub": "Ciencias Naturales Integradas I · Misión 8 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CAMPO",
+   "titular": "Dos ecosistemas, mucha diferencia",
+   "bajada": "Uno rebosa de vida y el otro casi no",
+   "emoji": "🌴",
+   "titulo": "PRODUCTIVIDAD",
+   "sub": "de un ecosistema",
+   "voz": [
+    "Campo: dos ecosistemas, mucha diferencia.",
+    "Uno rebosa de vida y el otro casi no.",
+    "Hoy: *productividad de un ecosistema*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Productividad primaria",
+   "texto": "Materia que fabrican los productores",
+   "emoji": "🌱",
+   "voz": [
+    "La *productividad primaria* es la materia que fabrican los productores en un tiempo.",
+    "Es la base de la red trófica."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PPB",
+    "texto": "Todo lo que fabrican",
+    "emoji": "🌿"
+   },
+   "b": {
+    "cab": "PPN",
+    "texto": "Lo que queda tras respirar",
+    "emoji": "🌱"
+   },
+   "signo": "−",
+   "voz": [
+    "Dos medidas.",
+    "La *PPB* es todo lo que fabrican las plantas.",
+    "La *PPN* es lo que queda después de la respiración."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Factores",
+    "emoji": "⚙️"
+   },
+   "items": [
+    {
+     "txt": "Luz",
+     "emoji": "☀️"
+    },
+    {
+     "txt": "Agua",
+     "emoji": "💧"
+    },
+    {
+     "txt": "Temperatura",
+     "emoji": "🌡️"
+    },
+    {
+     "txt": "Nutrientes",
+     "emoji": "🌱"
+    }
+   ],
+   "voz": [
+    "La productividad depende de cuatro factores.",
+    "La *luz*.",
+    "El *agua*.",
+    "La *temperatura*.",
+    "Y los *nutrientes*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MUY PRODUCTIVO",
+     "emoji": "📈"
+    },
+    {
+     "cab": "POCO PRODUCTIVO",
+     "emoji": "📉"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Selva",
+     "caja": 0
+    },
+    {
+     "txt": "Desierto",
+     "caja": 1
+    },
+    {
+     "txt": "Arrecife",
+     "caja": 0
+    },
+    {
+     "txt": "Tundra",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Productivo o no?",
+    "*Selva* y *arrecife*: muy productivos.",
+    "*Desierto* y *tundra*: poco productivos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La PPN se calcula…",
+   "opciones": [
+    "PPB menos respiración",
+    "PPB más respiración",
+    "PPB por dos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se calcula la PPN?",
+    "¿PPB menos respiración, más respiración o por dos?",
+    "*PPB menos respiración*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir bruta con neta",
+     "bien": "Restar la respiración"
+    },
+    {
+     "mal": "El desierto es muy productivo",
+     "bien": "Tiene poca agua"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Confundir* bruta con neta.",
+    "Y creer que el *desierto* es muy productivo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *productividad* es materia fabricada.",
+    "*PPN* es PPB menos respiración.",
+    "Dependen de *luz*, *agua*, *temperatura* y *nutrientes*.",
+    "Y la selva es muy *productiva*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRODUCTIVIDAD",
+     "materia fabricada"
+    ],
+    [
+     "PPN",
+     "PPB menos respiración"
+    ],
+    [
+     "FACTORES",
+     "luz, agua"
+    ],
+    [
+     "SELVA",
+     "muy productiva"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

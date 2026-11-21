@@ -1,0 +1,201 @@
+{
+ "slug": "cni1-m10-n2",
+ "step_id": "27bf9d22-c4b2-47db-b172-972902b72b87",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Cambios de estado según el modelo",
+ "sub": "Ciencias Naturales Integradas I · Misión 10 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama pasar de sólido a líquido?",
+   "segundos": 5,
+   "respuesta": "Fusión",
+   "emoji": "🧊",
+   "titulo": "CAMBIOS DE ESTADO",
+   "sub": "según el modelo",
+   "voz": [
+    "Desafío: ¿cómo se llama pasar de sólido a líquido? Cinco segundos.",
+    "Fusión.",
+    "Hoy: *cambios de estado según el modelo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "SEIS CAMBIOS",
+   "columnas": [
+    "Cambio",
+    "De a"
+   ],
+   "filas": [
+    [
+     "Fusión",
+     "Sólido a líquido"
+    ],
+    [
+     "Solidificación",
+     "Líquido a sólido"
+    ],
+    [
+     "Vaporización",
+     "Líquido a gas"
+    ],
+    [
+     "Condensación",
+     "Gas a líquido"
+    ],
+    [
+     "Sublimación",
+     "Sólido a gas"
+    ]
+   ],
+   "voz": [
+    "Los cambios.",
+    "*Fusión*: sólido a líquido.",
+    "*Solidificación*: líquido a sólido.",
+    "*Vaporización*: líquido a gas.",
+    "*Condensación*: gas a líquido.",
+    "*Sublimación*: sólido a gas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SE ENTREGA CALOR",
+    "texto": "Se mueven más rápido y se separan",
+    "emoji": "🔥"
+   },
+   "b": {
+    "cab": "SE QUITA CALOR",
+    "texto": "Se mueven más lento y se juntan",
+    "emoji": "❄️"
+   },
+   "signo": "vs",
+   "voz": [
+    "La energía decide.",
+    "Con *calor*, las partículas se separan.",
+    "Sin calor, se *juntan*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "EVAPORACIÓN",
+    "texto": "Solo en la superficie",
+    "emoji": "💧"
+   },
+   "b": {
+    "cab": "EBULLICIÓN",
+    "texto": "En todo el líquido",
+    "emoji": "🫧"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de vaporizar.",
+    "La *evaporación* ocurre en la superficie.",
+    "La *ebullición*, en todo el líquido."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CON CALOR",
+     "emoji": "🔥"
+    },
+    {
+     "cab": "SIN CALOR",
+     "emoji": "❄️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Fusión",
+     "caja": 0
+    },
+    {
+     "txt": "Condensación",
+     "caja": 1
+    },
+    {
+     "txt": "Vaporización",
+     "caja": 0
+    },
+    {
+     "txt": "Solidificación",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Entra o sale calor?",
+    "*Fusión* y *vaporización*: entra calor.",
+    "*Condensación* y *solidificación*: sale calor."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El pasaje directo de sólido a gas es…",
+   "opciones": [
+    "Sublimación",
+    "Fusión",
+    "Condensación"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: de sólido a gas directo.",
+    "¿Sublimación, fusión o condensación?",
+    "*Sublimación*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Evaporar es hervir",
+     "bien": "Evaporar es en la superficie"
+    },
+    {
+     "mal": "Condensar es evaporar",
+     "bien": "Es gas a líquido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *evaporar* con hervir.",
+    "Y confundir *condensar* con evaporar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay *seis* cambios de estado.",
+    "Con *calor* las partículas se separan.",
+    "Sin calor se *juntan*.",
+    "Y la *sublimación* salta el estado líquido.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CAMBIOS",
+     "seis"
+    ],
+    [
+     "CALOR",
+     "separa"
+    ],
+    [
+     "SIN CALOR",
+     "junta"
+    ],
+    [
+     "SUBLIMACIÓN",
+     "sólido a gas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
