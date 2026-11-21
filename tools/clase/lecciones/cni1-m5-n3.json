@@ -1,0 +1,206 @@
+{
+ "slug": "cni1-m5-n3",
+ "step_id": "a083c00c-b17c-4889-891f-26a727680fd6",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Nombres científicos",
+ "sub": "Ciencias Naturales Integradas I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Pelea por el puma: ¿león de montaña o cougar?",
+   "bajada": "Un mismo animal, tres nombres",
+   "emoji": "🐆",
+   "titulo": "NOMBRES CIENTÍFICOS",
+   "sub": "un nombre para todo el mundo",
+   "voz": [
+    "Último momento: pelea por el puma.",
+    "¿Es un león de montaña o un cougar?",
+    "Un mismo animal, tres nombres. Hoy: los *nombres científicos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Nombre científico",
+   "texto": "Nombre único, de dos palabras en latín",
+   "emoji": "📛",
+   "voz": [
+    "El *nombre científico* es único en todo el mundo.",
+    "Tiene dos palabras en latín."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EL SISTEMA BINOMIAL",
+   "items": [
+    {
+     "cab": "CREADOR",
+     "txt": "Carlos Linneo"
+    },
+    {
+     "cab": "PRIMERA PALABRA",
+     "txt": "Género"
+    },
+    {
+     "cab": "SEGUNDA PALABRA",
+     "txt": "Epíteto específico"
+    }
+   ],
+   "voz": [
+    "Lo creó *Carlos Linneo*.",
+    "La primera palabra es el *género*.",
+    "Y la segunda, el *epíteto específico*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EJEMPLOS",
+   "columnas": [
+    "Nombre común",
+    "Nombre científico"
+   ],
+   "filas": [
+    [
+     "Puma",
+     "Puma concolor"
+    ],
+    [
+     "Ser humano",
+     "Homo sapiens"
+    ],
+    [
+     "Ceibo",
+     "Erythrina crista-galli"
+    ]
+   ],
+   "voz": [
+    "Mirá algunos ejemplos.",
+    "El *puma*: Puma concolor.",
+    "El *ser humano*: Homo sapiens.",
+    "Y el *ceibo*: Erythrina crista-galli."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE ESCRIBE",
+   "items": [
+    {
+     "txt": "Género con mayúscula",
+     "emoji": "🔠"
+    },
+    {
+     "txt": "Especie con minúscula",
+     "emoji": "🔡"
+    },
+    {
+     "txt": "En cursiva",
+     "emoji": "✍️"
+    }
+   ],
+   "voz": [
+    "Tres reglas de escritura.",
+    "El *género* va con mayúscula.",
+    "La *especie*, con minúscula.",
+    "Y todo en *cursiva*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "BIEN",
+     "emoji": "✅"
+    },
+    {
+     "cab": "MAL",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Homo sapiens",
+     "caja": 0
+    },
+    {
+     "txt": "homo Sapiens",
+     "caja": 1
+    },
+    {
+     "txt": "Puma concolor",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Bien o mal escrito?",
+    "*Homo sapiens* está bien.",
+    "*homo Sapiens* está mal: al revés las mayúsculas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está bien escrito?",
+   "opciones": [
+    "Puma concolor",
+    "puma Concolor",
+    "PUMA concolor"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál está bien escrito?",
+    "¿Puma concolor, puma Concolor o PUMA concolor?",
+    "*Puma concolor*: género con mayúscula y especie con minúscula."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Epíteto con mayúscula",
+     "bien": "Va en minúscula"
+    },
+    {
+     "mal": "Solo nombre común",
+     "bien": "Usar el científico"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Escribir el *epíteto con mayúscula*.",
+    "Y usar *solo el nombre común* en un trabajo científico."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El nombre científico es *único*.",
+    "Lo creó *Linneo*.",
+    "Género con *mayúscula*, epíteto con *minúscula*.",
+    "Se escribe en *latín*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ÚNICO",
+     "en todo el mundo"
+    ],
+    [
+     "LINNEO",
+     "sistema binomial"
+    ],
+    [
+     "GÉNERO",
+     "mayúscula"
+    ],
+    [
+     "EPÍTETO",
+     "minúscula"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

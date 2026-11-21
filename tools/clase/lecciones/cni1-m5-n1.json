@@ -1,0 +1,221 @@
+{
+ "slug": "cni1-m5-n1",
+ "step_id": "3a9caa5e-c736-4e18-9dd1-9a8fe8e1d2b4",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Criterios de clasificación taxonómica",
+ "sub": "Ciencias Naturales Integradas I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Cami",
+    "emoji": "👧"
+   },
+   "lugar": "🏫",
+   "lineas": [
+    "Cami guardó 20 animales en un cajón.",
+    "¡Sin ningún orden, no encontraba nada!"
+   ],
+   "titulo": "CLASIFICAR",
+   "sub": "ordenar la vida",
+   "voz": [
+    "Cami juntó veinte animales de juguete y los guardó en un cajón.",
+    "Sin ningún orden, no encontraba nada.",
+    "Hoy: cómo se *clasifican* los seres vivos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Taxonomía",
+   "texto": "Ciencia que clasifica los seres vivos",
+   "emoji": "🗂️",
+   "voz": [
+    "La *taxonomía* clasifica los seres vivos.",
+    "Los agrupa según sus características y su parentesco."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CRITERIOS",
+   "items": [
+    {
+     "cab": "ESTRUCTURA",
+     "txt": "Con núcleo o sin él"
+    },
+    {
+     "cab": "NUTRICIÓN",
+     "txt": "Fabrica o consigue alimento"
+    },
+    {
+     "cab": "PARENTESCO",
+     "txt": "Ancestro común"
+    }
+   ],
+   "voz": [
+    "Se usan distintos criterios.",
+    "La *estructura* de sus células.",
+    "La *nutrición*.",
+    "Y el *parentesco*: el ancestro común."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LAS SIETE CATEGORÍAS",
+   "items": [
+    {
+     "txt": "Reino",
+     "emoji": "👑"
+    },
+    {
+     "txt": "Filo y clase",
+     "emoji": "📚"
+    },
+    {
+     "txt": "Orden y familia",
+     "emoji": "👪"
+    },
+    {
+     "txt": "Género y especie",
+     "emoji": "🔎"
+    }
+   ],
+   "voz": [
+    "De la más amplia a la más específica.",
+    "Primero el *reino*.",
+    "Después el *filo* y la *clase*.",
+    "Luego el *orden* y la *familia*.",
+    "Y por último el *género* y la *especie*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EL PUMA",
+   "columnas": [
+    "Categoría",
+    "Nombre"
+   ],
+   "filas": [
+    [
+     "Reino",
+     "Animalia"
+    ],
+    [
+     "Clase",
+     "Mammalia"
+    ],
+    [
+     "Familia",
+     "Felidae"
+    ],
+    [
+     "Especie",
+     "Puma concolor"
+    ]
+   ],
+   "voz": [
+    "Un ejemplo: el puma.",
+    "Es del *reino* Animalia.",
+    "De la *clase* Mammalia.",
+    "De la *familia* Felidae, y su *especie* es Puma concolor."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MÁS AMPLIA",
+     "emoji": "🌎"
+    },
+    {
+     "cab": "MÁS ESPECÍFICA",
+     "emoji": "🔎"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Reino",
+     "caja": 0
+    },
+    {
+     "txt": "Especie",
+     "caja": 1
+    },
+    {
+     "txt": "Género",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Amplia o específica?",
+    "El *reino* incluye muchísimos seres vivos.",
+    "La *especie* y el *género* son más específicos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es la categoría más amplia?",
+   "opciones": [
+    "Reino",
+    "Familia",
+    "Especie"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál es la categoría más amplia?",
+    "¿Reino, familia o especie?",
+    "El *reino*: incluye a todas las demás."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Agrupar solo por apariencia",
+     "bien": "Usar el parentesco"
+    },
+    {
+     "mal": "Dos géneros en una especie",
+     "bien": "Una especie está dentro de un género"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Agrupar solo por la *apariencia*.",
+    "Y creer que dos *géneros* caben en una especie."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *taxonomía* clasifica.",
+    "Los criterios: estructura, nutrición y parentesco.",
+    "Son *siete categorías*.",
+    "Del *reino* a la *especie*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TAXONOMÍA",
+     "clasifica"
+    ],
+    [
+     "CRITERIOS",
+     "tres"
+    ],
+    [
+     "CATEGORÍAS",
+     "siete"
+    ],
+    [
+     "ESPECIE",
+     "la más específica"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

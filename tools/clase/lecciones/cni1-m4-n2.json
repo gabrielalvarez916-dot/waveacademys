@@ -1,0 +1,203 @@
+{
+ "slug": "cni1-m4-n2",
+ "step_id": "2153cbbf-2515-4761-a4b6-c0ae2819f7d4",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Membrana y pared celular",
+ "sub": "Ciencias Naturales Integradas I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🥗",
+   "lineas": [
+    "Tomi le puso sal a la lechuga.",
+    "En minutos, ¡quedó toda arrugada!"
+   ],
+   "titulo": "LA MEMBRANA",
+   "sub": "la puerta de la célula",
+   "voz": [
+    "Tomi le puso sal a la lechuga de la ensalada.",
+    "En minutos, quedó toda arrugada.",
+    "Hoy: la *membrana* y la *pared celular*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Membrana",
+   "texto": "Rodea la célula y elige qué entra y qué sale",
+   "emoji": "🚪",
+   "voz": [
+    "La *membrana plasmática* rodea a toda célula.",
+    "Tiene *permeabilidad selectiva*: deja pasar unas sustancias y otras no."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PASIVO",
+    "texto": "Sin gastar energía",
+    "emoji": "🍃"
+   },
+   "b": {
+    "cab": "ACTIVO",
+    "texto": "Gastando energía",
+    "emoji": "⚡"
+   },
+   "signo": "≠",
+   "voz": [
+    "Hay dos formas de cruzar la membrana.",
+    "En el *transporte pasivo*, la sustancia pasa sin gasto de energía.",
+    "En el *activo*, la célula gasta energía."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LA ÓSMOSIS",
+   "items": [
+    {
+     "txt": "Afuera hay más sal",
+     "emoji": "🧂"
+    },
+    {
+     "txt": "El agua sale",
+     "emoji": "💧"
+    },
+    {
+     "txt": "La célula se arruga",
+     "emoji": "🥬"
+    }
+   ],
+   "voz": [
+    "Así pasó con la lechuga.",
+    "Afuera hay *más sal* que adentro.",
+    "El *agua sale* por ósmosis.",
+    "Y la célula pierde agua y *se arruga*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LA PARED CELULAR",
+   "items": [
+    {
+     "cab": "DE QUÉ",
+     "txt": "Celulosa"
+    },
+    {
+     "cab": "PARA QUÉ",
+     "txt": "Da forma y protege"
+    },
+    {
+     "cab": "QUIÉN LA TIENE",
+     "txt": "Plantas, hongos, bacterias"
+    }
+   ],
+   "voz": [
+    "Algunas células tienen *pared celular*.",
+    "En las plantas es de *celulosa*.",
+    "Da forma y evita que la célula *estalle*.",
+    "Las células animales *no* la tienen."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PASIVO",
+     "emoji": "🍃"
+    },
+    {
+     "cab": "ACTIVO",
+     "emoji": "⚡"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Difusión",
+     "caja": 0
+    },
+    {
+     "txt": "Ósmosis",
+     "caja": 0
+    },
+    {
+     "txt": "Gasta energía",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Pasivo o activo?",
+    "La *difusión* y la *ósmosis* son pasivas.",
+    "Si la célula *gasta energía*, es activo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué rodea a toda célula y elige qué entra y sale?",
+   "opciones": [
+    "La membrana",
+    "La pared",
+    "El núcleo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué rodea a toda célula?",
+    "¿La membrana, la pared o el núcleo?",
+    "La *membrana*: todas las células la tienen."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Membrana = pared",
+     "bien": "Son distintas"
+    },
+    {
+     "mal": "La membrana deja pasar todo",
+     "bien": "Deja pasar solo algunas sustancias"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir la *membrana* con la *pared*.",
+    "Y creer que la membrana *deja pasar todo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *membrana* elige qué entra y sale.",
+    "El transporte *pasivo* no gasta energía.",
+    "El *activo* sí.",
+    "La *pared* es rígida y de celulosa en las plantas.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MEMBRANA",
+     "puerta de la célula"
+    ],
+    [
+     "PASIVO",
+     "sin energía"
+    ],
+    [
+     "ACTIVO",
+     "con energía"
+    ],
+    [
+     "PARED",
+     "celulosa, rígida"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

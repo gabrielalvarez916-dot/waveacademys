@@ -1,0 +1,226 @@
+{
+ "slug": "cni1-m5-n2",
+ "step_id": "614d8651-98b6-409b-b3a7-3a682e6c2758",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Los cinco reinos en detalle",
+ "sub": "Ciencias Naturales Integradas I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Nico",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Los hongos son plantas, no?"
+    },
+    {
+     "yo": true,
+     "txt": "Mmm... no estoy seguro 🤔"
+    },
+    {
+     "yo": false,
+     "txt": "Entonces ¿qué son?"
+    }
+   ],
+   "titulo": "LOS CINCO REINOS",
+   "sub": "quién es quién",
+   "voz": [
+    "Nico le pregunta a Mati si los hongos son plantas.",
+    "Mati no está seguro.",
+    "Nico: entonces, ¿qué son?",
+    "Hoy conocés los *cinco reinos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Reino",
+   "texto": "Gran grupo de seres vivos con rasgos en común",
+   "emoji": "👑",
+   "voz": [
+    "Un *reino* es un gran grupo de seres vivos.",
+    "Hay cinco: *Monera*, *Protista*, *Fungi*, *Plantae* y *Animalia*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS CINCO REINOS",
+   "columnas": [
+    "Reino",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Monera",
+     "Bacterias"
+    ],
+    [
+     "Protista",
+     "Amebas y algas"
+    ],
+    [
+     "Fungi",
+     "Hongos"
+    ],
+    [
+     "Plantae",
+     "Ceibo"
+    ],
+    [
+     "Animalia",
+     "Puma"
+    ]
+   ],
+   "voz": [
+    "Mirá los cinco reinos.",
+    "*Monera*: las bacterias.",
+    "*Protista*: amebas y algas.",
+    "*Fungi*: los hongos.",
+    "*Plantae*: las plantas, y *Animalia*: los animales."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AUTÓTROFO",
+    "texto": "Fabrica su alimento",
+    "emoji": "🌿"
+   },
+   "b": {
+    "cab": "HETERÓTROFO",
+    "texto": "Lo consigue de otros",
+    "emoji": "🍽️"
+   },
+   "signo": "≠",
+   "voz": [
+    "Una diferencia clave.",
+    "Los *autótrofos* fabrican su alimento.",
+    "Los *heterótrofos* lo consiguen de otros seres."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PREGUNTAS PARA UBICARLOS",
+   "items": [
+    {
+     "cab": "1",
+     "txt": "¿Tiene núcleo?"
+    },
+    {
+     "cab": "2",
+     "txt": "¿Una célula o varias?"
+    },
+    {
+     "cab": "3",
+     "txt": "¿Fabrica su alimento?"
+    }
+   ],
+   "voz": [
+    "Tres preguntas ayudan.",
+    "Primero: ¿tiene *núcleo*?",
+    "Después: ¿una *célula* o varias?",
+    "Y por último: ¿*fabrica* su alimento?"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AUTÓTROFO",
+     "emoji": "🌿"
+    },
+    {
+     "cab": "HETERÓTROFO",
+     "emoji": "🍽️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Ceibo",
+     "caja": 0
+    },
+    {
+     "txt": "Puma",
+     "caja": 1
+    },
+    {
+     "txt": "Hongo de sombrero",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Autótrofo o heterótrofo?",
+    "El *ceibo* hace fotosíntesis.",
+    "El *puma* y el *hongo* consiguen su alimento."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un ser vivo pluricelular que absorbe el alimento y no hace fotosíntesis. ¿Qué es?",
+   "opciones": [
+    "Hongo",
+    "Planta",
+    "Bacteria"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: pluricelular, absorbe su alimento y no hace fotosíntesis.",
+    "¿Hongo, planta o bacteria?",
+    "Es un *hongo*: reino Fungi."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los hongos son plantas",
+     "bien": "Son un reino aparte"
+    },
+    {
+     "mal": "Todo unicelular es bacteria",
+     "bien": "Hay protistas unicelulares"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los *hongos son plantas*.",
+    "Y pensar que todo *unicelular* es bacteria."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Son *cinco reinos*.",
+    "*Monera* son las bacterias.",
+    "Los *hongos* son heterótrofos.",
+    "Las *plantas* son autótrofas.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MONERA",
+     "bacterias"
+    ],
+    [
+     "FUNGI",
+     "hongos"
+    ],
+    [
+     "PLANTAE",
+     "autótrofos"
+    ],
+    [
+     "ANIMALIA",
+     "heterótrofos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

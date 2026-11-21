@@ -43,6 +43,7 @@ MAPA = {
  'repartís': 'repartes', 'repasá': 'repasa', 'resolvé': 'resuelve', 'resolvés': 'resuelves', 'respondé': 'responde', 'restale': 'réstale',
  'restá': 'resta', 'restás': 'restas', 'revisá': 'revisa', 'sabés': 'sabes', 'sacás': 'sacas', 'salteás': 'saltas', 'seguí': 'sigue', 'señalá': 'señala',
  'tachá': 'tacha', 'agradecés': 'agradeces', 'explicás': 'explicas', 'resumís': 'resumes', 'resumí': 'resume', 'generalizá': 'generaliza', 'sacá': 'saca', 'perdés': 'pierdes', 'trabás': 'trabas',
+ 'estudiá': 'estudia', 'mezclás': 'mezclas', 'repetí': 'repite', 'ubicás': 'ubicas',
  'simplificá': 'simplifica', 'subrayá': 'subraya', 'subí': 'sube', 'subís': 'subes', 'sumale': 'súmale', 'sumá': 'suma', 'sumás': 'sumas',
  'tachás': 'tachas', 'tapá': 'tapa', 'tené': 'ten', 'tenés': 'tienes', 'tipealos': 'escríbelos', 'tipeá': 'escribe', 'tipeás': 'escribes', 'tirás': 'tiras',
  'tocá': 'toca', 'tomá': 'toma', 'traducí': 'traduce', 'transpirás': 'sudas', 'trasladás': 'trasladas', 'trazá': 'traza', 'trazás': 'trazas',
@@ -54,7 +55,7 @@ MAPA = {
  'heladera': 'refrigerador', 'frutilla': 'fresa', 'frutillas': 'fresas', 'manteca': 'mantequilla', 'hacelo': 'hazlo', 'completalo': 'complétalo', 'resolvelo': 'resuélvelo', 'comparala': 'compárala', 'comparalo': 'compáralo', 'abonás': 'abonas', 'conocé': 'conoce', 'guardá': 'guarda', 'hablá': 'habla', 'intentá': 'intenta', 'programá': 'programa', 'superá': 'supera', 'terminá': 'termina', 'terminás': 'terminas', 'elegilo': 'elígelo', 'preguntame': 'pregúntame', 'dale': 'vamos', 'che': 'oye',
 }
 FRASES = [(r'\bcon vos\b', 'contigo'), (r'\b(a|para|de|por) vos\b', r'\1 ti')]
-OK = set('''abuela abuelo además allá allí ahí así atrás billete busqué caminé canadá capitales caramelos chile chocolate cocinaré cociné comerciales
+OK = set('''organela sales través filo yacaré abuela abuelo además allá allí ahí así atrás billete busqué caminé canadá capitales caramelos chile chocolate cocinaré cociné comerciales
 compás comí corchete corrí culturales dé demás después detrás decimales diagonales diecisiete digitales dársela elo eme encontré equivale escala escalas
 escuela especiales está estás esté estudié fila gemelos glaciales granos habrá hielo huele huelo humanos iguales internacionales interés intervalo
 intervalos jacarandás kilo leí limite llame llegué límite mala manos mate materiales meridianos mete minerales miré modelos mundiales más mí naturales

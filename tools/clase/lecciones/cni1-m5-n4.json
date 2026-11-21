@@ -1,0 +1,197 @@
+{
+ "slug": "cni1-m5-n4",
+ "step_id": "c6602f2c-c7d5-4ed8-b219-29c60ed0b636",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Construyo una clave dicotómica",
+ "sub": "Ciencias Naturales Integradas I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "1 millón",
+   "emoji": "🐞",
+   "final": "2 opciones",
+   "titulo": "LA CLAVE",
+   "sub": "identificar con preguntas",
+   "voz": [
+    "Hay más de un millón de insectos conocidos.",
+    "¿Cómo reconocer uno? Con preguntas de dos opciones.",
+    "Hoy: la *clave dicotómica*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Clave dicotómica",
+   "texto": "Preguntas de dos opciones para identificar",
+   "emoji": "🔑",
+   "voz": [
+    "Una *clave dicotómica* te hace preguntas de dos opciones.",
+    "Siguiendo tus respuestas, llegás al nombre del ser vivo."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "USAR LA CLAVE",
+   "items": [
+    {
+     "txt": "¿Tiene plumas? Sí: ñandú",
+     "emoji": "🦤"
+    },
+    {
+     "txt": "No: ¿tiene pelo? Sí: carpincho",
+     "emoji": "🐹"
+    },
+    {
+     "txt": "No: ¿tiene patas? Sí: yacaré",
+     "emoji": "🐊"
+    }
+   ],
+   "voz": [
+    "Un ejemplo con cuatro animales.",
+    "Si tiene *plumas*, es el ñandú.",
+    "Si no, y tiene *pelo*, es el carpincho.",
+    "Si no tiene pelo pero tiene *patas*, es el yacaré. Si no, la mojarra."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PARA ARMAR LA TUYA",
+   "items": [
+    {
+     "cab": "1",
+     "txt": "Elegí el grupo"
+    },
+    {
+     "cab": "2",
+     "txt": "Buscá una característica"
+    },
+    {
+     "cab": "3",
+     "txt": "Preguntá con dos respuestas"
+    }
+   ],
+   "voz": [
+    "Para armar tu clave.",
+    "*Elegí* el grupo de seres vivos.",
+    "*Buscá* una característica que unos tengan y otros no.",
+    "Y *preguntá* con dos respuestas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BUENA",
+    "texto": "¿Tiene plumas?",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "MALA",
+    "texto": "¿Es lindo?",
+    "emoji": "❌"
+   },
+   "signo": "≠",
+   "voz": [
+    "Cuidado con las preguntas.",
+    "Una buena pregunta se puede *observar*.",
+    "Una opinión como *es lindo* no se puede comprobar."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OBSERVABLE",
+     "emoji": "👀"
+    },
+    {
+     "cab": "OPINIÓN",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Tiene patas",
+     "caja": 0
+    },
+    {
+     "txt": "Es simpático",
+     "caja": 1
+    },
+    {
+     "txt": "Tiene pelo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Observable u opinión?",
+    "*Tiene patas* y *tiene pelo* se ven.",
+    "*Es simpático* es una opinión."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un animal sin plumas ni pelo, con patas. ¿Cuál es en la clave?",
+   "opciones": [
+    "Yacaré",
+    "Carpincho",
+    "Mojarra"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: sin plumas, sin pelo y con patas.",
+    "¿Yacaré, carpincho o mojarra?",
+    "El *yacaré*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Preguntas con tres respuestas",
+     "bien": "Siempre dos opciones"
+    },
+    {
+     "mal": "Usar opiniones",
+     "bien": "Usar lo observable"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Hacer preguntas con *tres respuestas*.",
+    "Y usar *opiniones* en lugar de lo observable."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *clave* usa preguntas de dos opciones.",
+    "Se basa en lo *observable*.",
+    "Cada paso *divide* el grupo.",
+    "Y te lleva al *nombre*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CLAVE",
+     "dos opciones"
+    ],
+    [
+     "OBSERVABLE",
+     "se puede ver"
+    ],
+    [
+     "PASO",
+     "divide en dos"
+    ],
+    [
+     "RESULTADO",
+     "el nombre"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

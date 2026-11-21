@@ -1,0 +1,200 @@
+{
+ "slug": "cni1-m4-n4",
+ "step_id": "dec853cb-d2ce-4ba1-bcff-983585e2e2a9",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Organelas y sus funciones",
+ "sub": "Ciencias Naturales Integradas I · Misión 4 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "1 fábrica",
+   "emoji": "🏭",
+   "final": "1 célula",
+   "titulo": "LAS ORGANELAS",
+   "sub": "los órganos de la célula",
+   "voz": [
+    "Una fábrica con usina, depósito y correo.",
+    "Una célula funciona igual.",
+    "Hoy: las *organelas* y sus funciones."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Organela",
+   "texto": "Estructura de la célula con una función",
+   "emoji": "🔧",
+   "voz": [
+    "Una *organela* es una estructura de la célula con una función.",
+    "Cada una hace su tarea."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ORGANELAS QUE FABRICAN",
+   "columnas": [
+    "Organela",
+    "Función"
+   ],
+   "filas": [
+    [
+     "Ribosomas",
+     "Proteínas"
+    ],
+    [
+     "Retículo",
+     "Armar y transportar"
+    ],
+    [
+     "Golgi",
+     "Empaquetar y enviar"
+    ]
+   ],
+   "voz": [
+    "Las que fabrican.",
+    "Los *ribosomas* hacen proteínas.",
+    "El *retículo* arma y transporta.",
+    "El *Golgi* empaqueta y envía."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MITOCONDRIA",
+    "texto": "Obtiene energía",
+    "emoji": "🔋"
+   },
+   "b": {
+    "cab": "CLOROPLASTO",
+    "texto": "Hace fotosíntesis",
+    "emoji": "🌿"
+   },
+   "signo": "≠",
+   "voz": [
+    "Dos organelas de energía.",
+    "La *mitocondria* obtiene energía del alimento.",
+    "El *cloroplasto* fabrica alimento con luz, solo en vegetales."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "DIGERIR Y GUARDAR",
+   "items": [
+    {
+     "cab": "LISOSOMAS",
+     "txt": "Digieren"
+    },
+    {
+     "cab": "VACUOLA",
+     "txt": "Guarda agua y otras sustancias"
+    }
+   ],
+   "voz": [
+    "Otras dos organelas.",
+    "Los *lisosomas* digieren.",
+    "Y la *vacuola* guarda agua y otras sustancias."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ENERGÍA",
+     "emoji": "🔋"
+    },
+    {
+     "cab": "FABRICAR",
+     "emoji": "🏭"
+    },
+    {
+     "cab": "DIGERIR",
+     "emoji": "🍽️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Mitocondria",
+     "caja": 0
+    },
+    {
+     "txt": "Ribosomas",
+     "caja": 1
+    },
+    {
+     "txt": "Lisosomas",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué tarea hace cada una?",
+    "La *mitocondria* da energía.",
+    "Los *ribosomas* fabrican y los *lisosomas* digieren."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué organela obtiene energía del alimento?",
+   "opciones": [
+    "Mitocondria",
+    "Lisosoma",
+    "Ribosoma"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué organela obtiene energía del alimento?",
+    "¿Mitocondria, lisosoma o ribosoma?",
+    "La *mitocondria*: es la usina de la célula."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Las plantas no tienen mitocondrias",
+     "bien": "También las tienen"
+    },
+    {
+     "mal": "Mitocondria = cloroplasto",
+     "bien": "Una da energía y otro hace fotosíntesis"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que las plantas *no tienen mitocondrias*.",
+    "Y confundir *mitocondria* con *cloroplasto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *ribosomas* fabrican proteínas.",
+    "La *mitocondria* da energía.",
+    "El *cloroplasto* hace fotosíntesis.",
+    "Los *lisosomas* digieren.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RIBOSOMAS",
+     "proteínas"
+    ],
+    [
+     "MITOCONDRIA",
+     "energía"
+    ],
+    [
+     "CLOROPLASTO",
+     "fotosíntesis"
+    ],
+    [
+     "LISOSOMAS",
+     "digieren"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

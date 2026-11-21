@@ -1,0 +1,193 @@
+{
+ "slug": "cni1-m4-n3",
+ "step_id": "243714ba-6f80-453c-a3b5-b29b18024de2",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Núcleo y citoplasma",
+ "sub": "Ciencias Naturales Integradas I · Misión 4 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Cada célula humana guarda 46 cromosomas",
+   "bajada": "Todo el ADN está en el núcleo",
+   "emoji": "🧬",
+   "titulo": "EL NÚCLEO",
+   "sub": "la dirección de la célula",
+   "voz": [
+    "Último momento: cada célula humana guarda cuarenta y seis cromosomas.",
+    "Todo el *ADN* está en el *núcleo*.",
+    "Hoy: el *núcleo* y el *citoplasma*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Núcleo",
+   "texto": "Guarda el ADN y dirige la célula",
+   "emoji": "🧬",
+   "voz": [
+    "El *núcleo* guarda el ADN.",
+    "Desde ahí dirige la actividad de toda la célula."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PARTES DEL NÚCLEO",
+   "items": [
+    {
+     "cab": "ENVOLTURA",
+     "txt": "Doble membrana con poros"
+    },
+    {
+     "cab": "CROMATINA",
+     "txt": "ADN con proteínas"
+    },
+    {
+     "cab": "NUCLÉOLO",
+     "txt": "Fabrica ribosomas"
+    }
+   ],
+   "voz": [
+    "Mirá el núcleo por dentro.",
+    "La *envoltura* tiene poros por donde pasan sustancias.",
+    "La *cromatina* es el ADN con proteínas.",
+    "Y el *nucléolo* fabrica los ribosomas."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Citoplasma",
+   "texto": "Todo lo que hay entre la membrana y el núcleo",
+   "emoji": "💧",
+   "voz": [
+    "El *citoplasma* es todo lo que hay entre la membrana y el núcleo.",
+    "Incluye el *citosol*, las organelas y el citoesqueleto."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DENTRO DEL CITOPLASMA",
+   "items": [
+    {
+     "txt": "Citosol: el líquido",
+     "emoji": "💧"
+    },
+    {
+     "txt": "Organelas",
+     "emoji": "🔋"
+    },
+    {
+     "txt": "Citoesqueleto: las fibras",
+     "emoji": "🕸️"
+    }
+   ],
+   "voz": [
+    "Tres cosas en el citoplasma.",
+    "El *citosol*, el líquido.",
+    "Las *organelas*, que hacen las tareas.",
+    "Y el *citoesqueleto*, que da forma y mueve."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "NÚCLEO",
+     "emoji": "🧬"
+    },
+    {
+     "cab": "CITOPLASMA",
+     "emoji": "💧"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "ADN",
+     "caja": 0
+    },
+    {
+     "txt": "Nucléolo",
+     "caja": 0
+    },
+    {
+     "txt": "Citosol",
+     "caja": 1
+    },
+    {
+     "txt": "Citoesqueleto",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Núcleo o citoplasma?",
+    "El *ADN* y el *nucléolo* están en el núcleo.",
+    "El *citosol* y el *citoesqueleto*, en el citoplasma."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde se fabrican los ribosomas?",
+   "opciones": [
+    "En el nucléolo",
+    "En el citosol",
+    "En la membrana"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿dónde se fabrican los ribosomas?",
+    "¿En el nucléolo, en el citosol o en la membrana?",
+    "En el *nucléolo*, dentro del núcleo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El citoplasma es solo agua",
+     "bien": "Tiene organelas y fibras"
+    },
+    {
+     "mal": "Los cromosomas siempre están enrollados",
+     "bien": "Solo al dividirse la célula"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Pensar que el citoplasma es *solo agua*.",
+    "Y creer que los cromosomas *siempre* están enrollados."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *núcleo* guarda el ADN.",
+    "El *nucléolo* fabrica ribosomas.",
+    "El *citoplasma* incluye citosol, organelas y citoesqueleto.",
+    "El *citoesqueleto* da forma y mueve.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NÚCLEO",
+     "guarda el ADN"
+    ],
+    [
+     "NUCLÉOLO",
+     "fabrica ribosomas"
+    ],
+    [
+     "CITOSOL",
+     "líquido"
+    ],
+    [
+     "CITOESQUELETO",
+     "da forma"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

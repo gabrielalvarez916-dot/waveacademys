@@ -1,0 +1,221 @@
+{
+ "slug": "cni1-m4-n1",
+ "step_id": "8ed62215-1c69-4a08-a6fc-0ba01a8950b1",
+ "materia": "Ciencias Naturales Integradas I",
+ "titulo": "Célula procariota y eucariota",
+ "sub": "Ciencias Naturales Integradas I · Misión 4 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mirá lo que vi en el microscopio 🔬"
+    },
+    {
+     "yo": true,
+     "txt": "¿Qué es?"
+    },
+    {
+     "yo": false,
+     "txt": "Bacterias... ¡y no tienen núcleo!"
+    }
+   ],
+   "titulo": "DOS TIPOS DE CÉLULA",
+   "sub": "procariota y eucariota",
+   "voz": [
+    "Lu le escribe a Mati: vio algo en el microscopio.",
+    "Mati pregunta qué es.",
+    "Lu: son bacterias, ¡y no tienen *núcleo*!",
+    "Hoy comparás las células *procariotas* y *eucariotas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Procariota",
+   "texto": "Célula sin núcleo: su ADN está suelto",
+   "emoji": "🦠",
+   "voz": [
+    "Una célula *procariota* no tiene núcleo.",
+    "Su ADN está suelto en una zona del citoplasma, el *nucleoide*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PROCARIOTA",
+    "texto": "Sin núcleo",
+    "emoji": "🦠"
+   },
+   "b": {
+    "cab": "EUCARIOTA",
+    "texto": "Con núcleo y organelas",
+    "emoji": "🧬"
+   },
+   "signo": "≠",
+   "voz": [
+    "Comparemos los dos tipos de célula.",
+    "La *procariota* no tiene núcleo; son las bacterias.",
+    "La *eucariota* tiene núcleo y organelas con membrana."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PROCARIOTA VS EUCARIOTA",
+   "columnas": [
+    "Rasgo",
+    "Procariota",
+    "Eucariota"
+   ],
+   "filas": [
+    [
+     "Núcleo",
+     "No",
+     "Sí"
+    ],
+    [
+     "Tamaño",
+     "Chica",
+     "Más grande"
+    ],
+    [
+     "Ejemplo",
+     "Bacteria",
+     "Animal, planta, hongo"
+    ]
+   ],
+   "voz": [
+    "Mirá las diferencias.",
+    "El *núcleo*: la procariota no lo tiene.",
+    "El *tamaño*: la eucariota es más grande.",
+    "Un ejemplo: bacterias contra animales, plantas y hongos."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "ORIGEN DE LAS EUCARIOTAS",
+   "items": [
+    {
+     "cab": "PRIMERO",
+     "txt": "Aparecieron las procariotas"
+    },
+    {
+     "cab": "DESPUÉS",
+     "txt": "Algunas incorporaron bacterias"
+    },
+    {
+     "cab": "RESULTADO",
+     "txt": "Mitocondrias y cloroplastos"
+    }
+   ],
+   "voz": [
+    "Una idea sobre su origen.",
+    "Primero aparecieron las *procariotas*.",
+    "Después, algunas células *incorporaron bacterias*.",
+    "Esas bacterias serían hoy las *mitocondrias* y los *cloroplastos*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PROCARIOTA",
+     "emoji": "🦠"
+    },
+    {
+     "cab": "EUCARIOTA",
+     "emoji": "🧬"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Bacteria",
+     "caja": 0
+    },
+    {
+     "txt": "Levadura",
+     "caja": 1
+    },
+    {
+     "txt": "Célula de una hoja",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Procariota o eucariota?",
+    "La *bacteria* es procariota.",
+    "La *levadura* y la *célula de una hoja* son eucariotas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Una célula tiene ADN suelto y no tiene núcleo. ¿De qué tipo es?",
+   "opciones": [
+    "Procariota",
+    "Eucariota",
+    "Vegetal"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: una célula con el ADN suelto y sin núcleo.",
+    "¿Procariota, eucariota o vegetal?",
+    "Es *procariota*: sin núcleo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todas las células tienen núcleo",
+     "bien": "Las procariotas no"
+    },
+    {
+     "mal": "Las procariotas no tienen ADN",
+     "bien": "Lo tienen, pero suelto"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que todas las células tienen *núcleo*.",
+    "Y pensar que las procariotas no tienen *ADN*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *procariota* no tiene núcleo.",
+    "La *eucariota* sí, y organelas.",
+    "La eucariota es *más grande*.",
+    "Y las procariotas aparecieron *primero*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PROCARIOTA",
+     "sin núcleo"
+    ],
+    [
+     "EUCARIOTA",
+     "con núcleo"
+    ],
+    [
+     "TAMAÑO",
+     "eucariota mayor"
+    ],
+    [
+     "ORIGEN",
+     "procariotas primero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
