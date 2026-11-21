@@ -4,6 +4,8 @@ import os, sys, json
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(AQUI, "..", "matematica-1", "mision-4"))
 from base import *
+sys.path.insert(0, AQUI)
+from practica import P as PRACTICA
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
 def NE(b,**k): b=dict(b); b["neutro"]=k; return b
@@ -93,7 +95,7 @@ EX=[[1,MC("¿Qué es el bien común?",["Lo que conviene a todos","Lo que le sirv
  [4,FB("El poder que resuelve conflictos aplicando las leyes es el ___ .",[["judicial"]],"Poder judicial.")],
  [4,VF("La división de poderes evita que alguien concentre el poder.","Verdadero","Se controlan entre sí.")]]
 M1={"subject_id":SID,"tema":1,"practica":"Práctica general: vivir juntos","examen_titulo":"Nivel jefe: vivir juntos","niveles":{"1":A1,"2":A2,"3":A3,"4":A4},"act":ACT,"examen":EX}
-os.makedirs(os.path.join(AQUI,"mision-1"),exist_ok=True); json.dump(M1,open(os.path.join(AQUI,"mision-1","mision-1.json"),"w"),ensure_ascii=False)
+M1["act"]["5"]=PRACTICA[1]; os.makedirs(os.path.join(AQUI,"mision-1"),exist_ok=True); json.dump(M1,open(os.path.join(AQUI,"mision-1","mision-1.json"),"w"),ensure_ascii=False)
 RAIZ=os.path.join(AQUI,"..","..","tools","clase","lecciones")
 STEPS={1:"780cd451-1abd-4408-842f-311f0d721c07",2:"4adad691-2b06-476e-ab25-ad8e03b87b3e",3:"afaf490e-c9d0-47c6-a89b-4e3900a05602",4:"ab284c98-f924-4066-9efa-d0dece855c51"}
 TIT={1:"Qué nos une como comunidad",2:"Normas, leyes y costumbres",3:"Derechos y responsabilidades en la vida pública",4:"Para qué existe el poder político"}

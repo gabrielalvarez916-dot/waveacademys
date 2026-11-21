@@ -4,6 +4,8 @@ import os, sys, json
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(AQUI, "..", "matematica-1", "mision-4"))
 from base import *
+sys.path.insert(0, AQUI)
+from practica import P as PRACTICA
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
 def NE(b,**k): b=dict(b); b["neutro"]=k; return b
@@ -176,7 +178,7 @@ EX3=[[1,MC("Participar es…",["Tomar parte en las decisiones y acciones de la c
  [4,VF("Los jóvenes tienen derecho a opinar.","Verdadero","Y a que se los escuche.")]]
 M3={"subject_id":SID,"tema":3,"practica":"Práctica general: participación social y política","examen_titulo":"Nivel jefe: participación social y política","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT3,"examen":EX3}
 for n,m in ((2,M2),(3,M3)):
-    os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
+    m["act"]["5"]=PRACTICA[n]; os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
 RAIZ=os.path.join(AQUI,"..","..","tools","clase","lecciones")
 STEPS={(2,1):"cbf73469-7fd7-400c-9f9a-698aa189cd3c",(2,2):"159aff8d-7ce3-42a3-8a70-cca5fb91edde",(2,3):"55fbfdeb-3bf9-4eae-8ed3-0ce588bc4269",(2,4):"ebff990b-e8eb-4a07-a8c3-6702538c679f",(3,1):"423aae9f-34bc-4f1a-924d-1a5bdea283b8",(3,2):"5d066a00-74c1-4b95-b4d3-0fac873b8035",(3,3):"1e85d51b-9043-488d-9fb8-f87dc83685fb",(3,4):"450a5465-9bdc-4dba-b4ab-fc7cfdd02e5a"}
 TIT={(2,1):"Qué caracteriza a una democracia",(2,2):"Cómo funciona un régimen autoritario",(2,3):"Democracias y dictaduras del siglo XX",(2,4):"Cómo se defiende la democracia hoy",(3,1):"Formas de participar",(3,2):"Voto, petición y protesta",(3,3):"Organizaciones y movimientos sociales",(3,4):"Participación juvenil"}

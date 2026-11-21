@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Arma el PDF de cada borrador de lección que ya está listo y lo carga en la lección (sin publicar).
 Lo ejecuta GitHub Actions (.github/workflows/pdfs-lecciones.yml). Variables: WAVE_GEN_TOKEN (secreto), WAVE_FN_URL (opcional)."""
-import os, sys, json, base64, tempfile, urllib.request, urllib.error
+import os, sys, json, base64, tempfile, time, urllib.request, urllib.error
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from render_leccion import render
@@ -14,12 +14,18 @@ TOKEN = os.environ["WAVE_GEN_TOKEN"].strip()
 def llamar(body):
     req = urllib.request.Request(URL, data=json.dumps(body).encode(), method="POST",
                                  headers={"content-type": "application/json", "x-gen-token": TOKEN})
-    try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            return r.status, json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        try: return e.code, json.loads(e.read())
-        except Exception: return e.code, {"error": str(e)}
+    ultimo = None
+    for intento in range(4):  # si el servidor tarda o corta, se reintenta antes de rendirse
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return r.status, json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            try: return e.code, json.loads(e.read())
+            except Exception: return e.code, {"error": str(e)}
+        except Exception as e:
+            ultimo = e; print("  (reintento", intento + 1, "de la llamada", body.get("action"), ":", repr(e), ")")
+            time.sleep(5 * (intento + 1))
+    return 599, {"error": repr(ultimo)}
 
 def armar_pdf(m, contenido, imagenes, tmp):
     entrada = os.path.join(tmp, "e.json"); salida = os.path.join(tmp, "s.pdf")
@@ -40,7 +46,7 @@ def neutros():
     """Segundo PDF de cada lección, en español neutro (alumnos de otros países). También para lecciones ya publicadas."""
     hechos, fallos = [], 0
     while True:
-        st, res = llamar({"action": "pendientes_neutro", "limite": 15, "excluir": hechos})
+        st, res = llamar({"action": "pendientes_neutro", "limite": 5, "excluir": hechos})
         pend = res.get("pendientes", []) if st == 200 else []
         if st != 200: print("No se pudo pedir los pendientes neutros:", st, res); return 1
         if not pend: break

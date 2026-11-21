@@ -4,6 +4,8 @@ import os, sys, json
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(AQUI, "..", "matematica-1", "mision-4"))
 from base import *
+sys.path.insert(0, AQUI)
+from practica import P as PRACTICA
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
 def NE(b,**k): b=dict(b); b["neutro"]=k; return b
@@ -176,7 +178,7 @@ EX5=[[1,MC("El Estado de derecho es el Estado en el que…",["El poder se ejerce
  [4,VF("Reformar la constitución exige un procedimiento más exigente que una ley común.","Verdadero","La protege de cambios apresurados.")]]
 M5={"subject_id":SID,"tema":5,"practica":"Práctica general: el Estado de derecho","examen_titulo":"Nivel jefe: el Estado de derecho","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT5,"examen":EX5}
 for n,m in ((4,M4),(5,M5)):
-    os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
+    m["act"]["5"]=PRACTICA[n]; os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
 RAIZ=os.path.join(AQUI,"..","..","tools","clase","lecciones")
 STEPS={(4,1):"74c81990-3677-41e1-8270-891b47744779",(4,2):"97ee0ee4-0312-43c4-8d30-d81a6a8acd9b",(4,3):"dd1e81bf-b167-42cd-a05b-88f1a25e648b",(4,4):"05d0d9cf-d17e-47fe-b2bc-13f56ce34173",(5,1):"1a34c1a5-d1a4-41ad-895c-ca7cac30781b",(5,2):"b83a7c37-a7f7-4282-805c-02376271d0ec",(5,3):"7acdd5ac-286b-4312-b11b-ce492b9786c2",(5,4):"e10072f4-eb81-46b8-9e29-752412fb3207"}
 TIT={(4,1):"Qué hace un partido político",(4,2):"Sistemas electorales: mayoría y proporcionalidad",(4,3):"Voto obligatorio y voto voluntario",(4,4):"Campañas, medios y financiamiento",(5,1):"Qué significa Estado de derecho",(5,2):"División de poderes y control mutuo",(5,3):"Qué es una constitución y para qué sirve",(5,4):"Cómo se protege la constitución"}

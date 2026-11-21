@@ -4,6 +4,8 @@ import os, sys, json
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(AQUI, "..", "matematica-1", "mision-4"))
 from base import *
+sys.path.insert(0, AQUI)
+from practica import P as PRACTICA
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
 def NE(b,**k): b=dict(b); b["neutro"]=k; return b
@@ -176,7 +178,7 @@ EX7=[[1,MC("Una garantía constitucional es…",["Una herramienta para exigir un
  [4,VF("Existe la defensa pública gratuita para quien no puede pagar un abogado.","Verdadero","Facilita el acceso.")]]
 M7={"subject_id":SID,"tema":7,"practica":"Práctica general: garantías para proteger derechos","examen_titulo":"Nivel jefe: garantías para proteger derechos","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT7,"examen":EX7}
 for n,m in ((6,M6),(7,M7)):
-    os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
+    m["act"]["5"]=PRACTICA[n]; os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
 RAIZ=os.path.join(AQUI,"..","..","tools","clase","lecciones")
 STEPS={(6,1):"5e9c7abf-9857-46bc-8c16-e449b6f3dfbc",(6,2):"40989d93-f70c-4f1b-a28a-4d98741b7457",(6,3):"f9d4db73-b15b-4417-b07b-42b029474b3e",(6,4):"31a8e3df-9a2c-4b31-b309-ac46928e395f",(7,1):"9b22902c-87ed-459b-8ee1-c4e91a8fb9d2",(7,2):"d57e0bb7-af1d-4f4c-9f08-132cc8a1dbf3",(7,3):"8f97ce25-0b9e-46d2-aef1-3565b1c577ba",(7,4):"8798d051-e573-4726-b34e-1691caff18ed"}
 TIT={(6,1):"Qué son los derechos humanos",(6,2):"La Declaración Universal de 1948",(6,3):"Derechos civiles, políticos, económicos y sociales",(6,4):"Tratados y pactos internacionales",(7,1):"Qué son las garantías constitucionales",(7,2):"El amparo",(7,3):"Hábeas corpus y hábeas data",(7,4):"Acceso a la justicia"}

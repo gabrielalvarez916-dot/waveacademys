@@ -4,6 +4,8 @@ import os, sys, json
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(AQUI, "..", "matematica-1", "mision-4"))
 from base import *
+sys.path.insert(0, AQUI)
+from practica import P as PRACTICA
 def NV(obj,ver,secs,ec,ei,es,tip,ojo,res,glo,car,rc,sol): return {"objetivo":obj,"vas_a_ver":ver,"secciones":secs,"ejemplo_completo":ec,"ejemplo_incompleto":ei,"ejemplo_solo":es,"tip":tip,"ojo":ojo,"resumen":res,"glosario":glo,"carpeta":car,"respuestas_carpeta":rc,"soluciones":sol}
 G=lambda *p:[{"palabra":a,"significado":b} for a,b in p]; RS=lambda *p:[{"titulo":a,"texto":b} for a,b in p]
 def NE(b,**k): b=dict(b); b["neutro"]=k; return b
@@ -176,7 +178,7 @@ EX9=[[1,MC("La identidad es…",["La idea de quién es cada persona","Un documen
  [4,VF("Compartir la foto de otra persona sin permiso está mal.","Verdadero","El consentimiento también cuenta en línea.")]]
 M9={"subject_id":SID,"tema":9,"practica":"Práctica general: adolescencias, vínculos y consentimiento","examen_titulo":"Nivel jefe: adolescencias, vínculos y consentimiento","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT9,"examen":EX9}
 for n,m in ((8,M8),(9,M9)):
-    os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
+    m["act"]["5"]=PRACTICA[n]; os.makedirs(os.path.join(AQUI,f"mision-{n}"),exist_ok=True); json.dump(m,open(os.path.join(AQUI,f"mision-{n}",f"mision-{n}.json"),"w"),ensure_ascii=False)
 RAIZ=os.path.join(AQUI,"..","..","tools","clase","lecciones")
 STEPS={(8,1):"8b05b13a-0459-45c0-b37f-55935141b1fc",(8,2):"a54d9c31-de20-47c6-b927-f6e69af0d3c0",(8,3):"5db2b85e-fe2c-43c0-b63d-0a6dfa2c0c5c",(8,4):"c79ad7f3-a47b-4a1d-a7f3-fffd3cb2f2bf",(9,1):"79e3a1cb-f983-45b5-a1c0-b6aea48ac1b0",(9,2):"9b9cd876-f62e-4973-9322-76ad32080769",(9,3):"88904d84-d7c2-4ab2-8bc4-149ff39da8f2",(9,4):"9ae6ac87-287d-4baf-9f42-4785e1cd960e"}
 TIT={(8,1):"Del prejuicio a la discriminación",(8,2):"Racismo, xenofobia y exclusión",(8,3):"Leyes contra la discriminación",(8,4):"Cómo actuar ante la discriminación",(9,1):"Identidad y cambios en la adolescencia",(9,2):"Relaciones afectivas respetuosas",(9,3):"Violencia en las relaciones de pareja",(9,4):"Consentimiento y cuidado mutuo"}
