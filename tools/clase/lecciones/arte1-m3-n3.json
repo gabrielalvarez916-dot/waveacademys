@@ -1,1 +1,156 @@
-{"slug": "arte1-m3-n3", "step_id": "81c9c80d-0a2a-453d-bf9e-bd9236d276a5", "materia": "Arte y Comunicación I", "titulo": "El color y las emociones", "sub": "Arte y Comunicación I · Misión 3 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Qué emoción suele transmitir el azul suave?", "segundos": 6, "respuesta": "Calma", "emoji": "💙", "titulo": "EL COLOR", "sub": "y las emociones", "voz": ["Desafío: ¿qué emoción suele transmitir el azul suave? Seis segundos.", "Calma.", "Hoy: *el color y las emociones*."]}, {"t": "bloques", "titulo": "COLOR Y EMOCIÓN", "items": [{"cab": "ROJO", "txt": "Energía, pasión, peligro"}, {"cab": "AZUL", "txt": "Calma, confianza, tristeza"}, {"cab": "AMARILLO", "txt": "Alegría, atención"}, {"cab": "VERDE", "txt": "Naturaleza, esperanza"}], "voz": ["Algunas asociaciones habituales.", "El *rojo*: energía o peligro.", "El *azul*: calma o tristeza.", "El *amarillo*: alegría.", "Y el *verde*: naturaleza."]}, {"t": "definicion", "palabra": "Valor simbólico", "texto": "Lo que un color representa", "emoji": "🏳️", "voz": ["El *valor simbólico* es lo que un color representa.", "Lo da la comunidad."]}, {"t": "flujo", "titulo": "DE LA EMOCIÓN A LA OBRA", "items": [{"txt": "Emoción", "emoji": "💭"}, {"txt": "Colores", "emoji": "🎨"}, {"txt": "Intención", "emoji": "🎯"}, {"txt": "Obra", "emoji": "🖼️"}], "voz": ["Un camino para pintar con sentido.", "Primero, la *emoción*.", "Después, los *colores* que la expresan.", "Con *intención*.", "Y al final, la *obra*."]}, {"t": "pregunta", "pregunta": "Un color significa lo mismo en…", "opciones": ["Ninguna cultura única", "Todas las culturas", "Solo Argentina"], "correcta": 0, "voz": ["Te toca: significados.", "¿Ninguna cultura única, todas o solo Argentina?", "El significado *cambia* según la cultura."]}, {"t": "errores", "items": [{"mal": "Suponer que significa lo mismo", "bien": "Preguntar de dónde viene"}, {"mal": "Elegir sin pensar", "bien": "Elegir con intención"}], "voz": ["Errores típicos.", "Creer que significa *lo mismo en todas partes*.", "Y elegir colores *sin pensar*."]}, {"t": "resumen", "voz": ["Repasemos.", "Los colores transmiten *emociones*.", "Tienen *valor simbólico*.", "Cambia según la *cultura*.", "Y se elige *con intención*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["EMOCIÓN", "el color transmite"], ["SÍMBOLO", "lo da la comunidad"], ["CULTURA", "cambia significados"], ["INTENCIÓN", "con propósito"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "arte1-m3-n3",
+ "step_id": "81c9c80d-0a2a-453d-bf9e-bd9236d276a5",
+ "materia": "Arte y Comunicación I",
+ "titulo": "El color y las emociones",
+ "sub": "Arte y Comunicación I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué emoción suele transmitir el azul suave?",
+   "segundos": 6,
+   "respuesta": "Calma",
+   "emoji": "💙",
+   "titulo": "EL COLOR",
+   "sub": "y las emociones",
+   "voz": [
+    "Desafío: ¿qué emoción suele transmitir el azul suave? Seis segundos.",
+    "Calma.",
+    "Hoy: *el color y las emociones*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "COLOR Y EMOCIÓN",
+   "items": [
+    {
+     "cab": "ROJO",
+     "txt": "Energía, pasión, peligro"
+    },
+    {
+     "cab": "AZUL",
+     "txt": "Calma, confianza, tristeza"
+    },
+    {
+     "cab": "AMARILLO",
+     "txt": "Alegría, atención"
+    },
+    {
+     "cab": "VERDE",
+     "txt": "Naturaleza, esperanza"
+    }
+   ],
+   "voz": [
+    "Algunas asociaciones habituales.",
+    "El *rojo*: energía o peligro.",
+    "El *azul*: calma o tristeza.",
+    "El *amarillo*: alegría.",
+    "Y el *verde*: naturaleza."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Valor simbólico",
+   "texto": "Lo que un color representa",
+   "emoji": "🏳️",
+   "voz": [
+    "El *valor simbólico* es lo que un color representa.",
+    "Lo da la comunidad."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "DE LA EMOCIÓN A LA OBRA",
+   "items": [
+    {
+     "txt": "Emoción",
+     "emoji": "💭"
+    },
+    {
+     "txt": "Colores",
+     "emoji": "🎨"
+    },
+    {
+     "txt": "Intención",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Obra",
+     "emoji": "🖼️"
+    }
+   ],
+   "voz": [
+    "Un camino para pintar con sentido. Primero, la *emoción*.",
+    "Después, los *colores* que la expresan.",
+    "Con *intención*.",
+    "Y al final, la *obra*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un color significa lo mismo en…",
+   "opciones": [
+    "Ninguna cultura única",
+    "Todas las culturas",
+    "Solo Argentina"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: significados.",
+    "¿Ninguna cultura única, todas o solo Argentina?",
+    "El significado *cambia* según la cultura."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Suponer que significa lo mismo",
+     "bien": "Preguntar de dónde viene"
+    },
+    {
+     "mal": "Elegir sin pensar",
+     "bien": "Elegir con intención"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que significa *lo mismo en todas partes*.",
+    "Y elegir colores *sin pensar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los colores transmiten *emociones*.",
+    "Tienen *valor simbólico*.",
+    "Cambia según la *cultura*.",
+    "Y se elige *con intención*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EMOCIÓN",
+     "el color transmite"
+    ],
+    [
+     "SÍMBOLO",
+     "lo da la comunidad"
+    ],
+    [
+     "CULTURA",
+     "cambia significados"
+    ],
+    [
+     "INTENCIÓN",
+     "con propósito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

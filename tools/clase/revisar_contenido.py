@@ -37,6 +37,9 @@ for slug in args:
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')
     if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == 'TU TURNO' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
         E(slug, 'nivel de producción sin escena "TU TURNO" que diga la tarea concreta')
+from revisar_pasos import revisar as _rp
+for _s in args:
+    if os.path.exists(os.path.join(AQUI, 'lecciones', _s + '.json')): err.extend(_rp(_s))
 # VARIEDAD DE RECURSOS (regla general, todos los años y niveles): las 4 clases de una misión no pueden ser el mismo molde
 _BASICAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'tabla', 'clasificar', 'pasos', 'consejo', 'frase'}
 _secs = {}

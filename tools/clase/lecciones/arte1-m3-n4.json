@@ -1,1 +1,152 @@
-{"slug": "arte1-m3-n4", "step_id": "2bb1c736-3f2a-4dd8-91e7-972f9c6da816", "materia": "Arte y Comunicación I", "titulo": "Una paleta propia para pintar con propósito", "sub": "Arte y Comunicación I · Misión 3 · Nivel 4", "escenas": [{"t": "noticia", "cinta": "PALETA", "titular": "Cinco colores alcanzan", "bajada": "Para pintar casi todo", "emoji": "🎨", "titulo": "LA PALETA", "sub": "propia", "voz": ["Noticia: cinco colores alcanzan para pintar casi cualquier cosa.", "Hoy: *una paleta propia*."]}, {"t": "definicion", "palabra": "Paleta", "texto": "Colores elegidos para una obra", "emoji": "🎨", "voz": ["Una *paleta* es un conjunto limitado de colores.", "Se eligen para una obra."]}, {"t": "pasos", "titulo": "PASOS", "items": [{"txt": "Propósito", "emoji": "🎯"}, {"txt": "Dominante", "emoji": "🟧"}, {"txt": "Apoyos", "emoji": "🟪"}, {"txt": "Acento", "emoji": "✨"}], "voz": ["Cuatro pasos.", "El *propósito*.", "El *dominante*.", "Los *apoyos*.", "Y el *acento*."]}, {"t": "barras", "titulo": "CUÁNTO DE CADA COLOR", "unidad": "%", "items": [{"txt": "Dominante", "valor": 60}, {"txt": "Apoyos", "valor": 30}, {"txt": "Acento", "valor": 10}], "voz": ["Las proporciones.", "El *dominante*: sesenta por ciento.", "Los *apoyos*: treinta.", "Y el *acento*: diez por ciento."]}, {"t": "antesdespues", "antes": {"cab": "SIN PRUEBA", "emoji": "😬", "texto": "Se arruina la obra final"}, "despues": {"cab": "CON PRUEBA", "emoji": "😊", "texto": "Se ajusta en una hoja aparte"}, "voz": ["Antes de pintar, *probá*.", "Sin prueba, se *arruina* la obra.", "Con prueba, se *ajusta* en una hoja aparte."]}, {"t": "pregunta", "pregunta": "Antes de pintar la obra final conviene…", "opciones": ["Probar en una hoja", "Usar todos los colores", "Pintar sin pensar"], "correcta": 0, "voz": ["Te toca: antes de pintar.", "¿Probar en una hoja, usar todos los colores o pintar sin pensar?", "*Probar en una hoja*."]}, {"t": "resumen", "voz": ["Repasemos.", "La *paleta* es limitada.", "Se arma con *propósito*.", "Se *prueba* antes.", "Y se respetan las *proporciones*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["PALETA", "pocos colores"], ["PASOS", "propósito a acento"], ["PRUEBA", "hoja aparte"], ["PROPORCIÓN", "dominante grande"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "arte1-m3-n4",
+ "step_id": "2bb1c736-3f2a-4dd8-91e7-972f9c6da816",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Una paleta propia para pintar con propósito",
+ "sub": "Arte y Comunicación I · Misión 3 · Nivel 4",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "PALETA",
+   "titular": "Cinco colores alcanzan",
+   "bajada": "Para pintar casi todo",
+   "emoji": "🎨",
+   "titulo": "LA PALETA",
+   "sub": "propia",
+   "voz": [
+    "Noticia: cinco colores alcanzan.",
+    "Alcanzan para pintar casi cualquier cosa.",
+    "Hoy: *una paleta propia*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Paleta",
+   "texto": "Colores elegidos para una obra",
+   "emoji": "🎨",
+   "voz": [
+    "Una *paleta* es un conjunto limitado de colores.",
+    "Se eligen para una obra."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PASOS",
+   "items": [
+    {
+     "txt": "Propósito",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Dominante",
+     "emoji": "🟧"
+    },
+    {
+     "txt": "Apoyos",
+     "emoji": "🟪"
+    },
+    {
+     "txt": "Acento",
+     "emoji": "✨"
+    }
+   ],
+   "voz": [
+    "Cuatro pasos.",
+    "El *propósito*.",
+    "El *dominante*.",
+    "Los *apoyos*.",
+    "Y el *acento*."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "CUÁNTO DE CADA COLOR",
+   "unidad": "%",
+   "items": [
+    {
+     "txt": "Dominante",
+     "valor": 60
+    },
+    {
+     "txt": "Apoyos",
+     "valor": 30
+    },
+    {
+     "txt": "Acento",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "Las proporciones.",
+    "El *dominante*: sesenta por ciento.",
+    "Los *apoyos*: treinta.",
+    "Y el *acento*: diez por ciento."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SIN PRUEBA",
+    "emoji": "😬",
+    "texto": "Se arruina la obra final"
+   },
+   "despues": {
+    "cab": "CON PRUEBA",
+    "emoji": "😊",
+    "texto": "Se ajusta en una hoja aparte"
+   },
+   "voz": [
+    "Antes de pintar, *probá*. Sin prueba, se *arruina* la obra.",
+    "Con prueba, se *ajusta* en una hoja aparte."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Antes de pintar la obra final conviene…",
+   "opciones": [
+    "Probar en una hoja",
+    "Usar todos los colores",
+    "Pintar sin pensar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: antes de pintar.",
+    "¿Probar en una hoja, usar todos los colores o pintar sin pensar?",
+    "*Probar en una hoja*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *paleta* es limitada.",
+    "Se arma con *propósito*.",
+    "Se *prueba* antes.",
+    "Y se respetan las *proporciones*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PALETA",
+     "pocos colores"
+    ],
+    [
+     "PASOS",
+     "propósito a acento"
+    ],
+    [
+     "PRUEBA",
+     "hoja aparte"
+    ],
+    [
+     "PROPORCIÓN",
+     "dominante grande"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
