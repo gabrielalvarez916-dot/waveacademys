@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "TIPOS",
-   "columnas": [
-    "Tipo",
-    "Qué hace"
-   ],
-   "filas": [
-    [
-     "Sindicato",
-     "Defiende trabajadores"
-    ],
-    [
-     "Cooperativa",
-     "Trabajo compartido"
-    ],
-    [
-     "ONG",
-     "Causas sociales"
-    ],
-    [
-     "Centro de estudiantes",
-     "Representa alumnos"
-    ]
+   "celdas": [
+    {
+     "cab": "SINDICATO",
+     "txt": "Defiende trabajadores"
+    },
+    {
+     "cab": "COOPERATIVA",
+     "txt": "Trabajo compartido"
+    },
+    {
+     "cab": "ONG",
+     "txt": "Causas sociales"
+    },
+    {
+     "cab": "CENTRO DE ESTUDIANTES",
+     "txt": "Representa alumnos"
+    }
    ],
    "voz": [
     "Tipos de organizaciones.",
@@ -74,35 +70,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "ORGANIZACIÓN",
-     "emoji": "🤝"
-    },
-    {
-     "cab": "MOVIMIENTO",
-     "emoji": "✊"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Sindicato",
-     "caja": 0
-    },
-    {
-     "txt": "Reclamo sostenido",
-     "caja": 1
-    },
-    {
-     "txt": "ONG",
-     "caja": 0
-    },
-    {
-     "txt": "Cambio de leyes",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ORGANIZACIÓN",
+    "emoji": "🤝",
+    "texto": "Sindicato, ONG"
+   },
+   "despues": {
+    "cab": "MOVIMIENTO",
+    "emoji": "✊",
+    "texto": "Reclamo sostenido, Cambio de leyes"
+   },
    "voz": [
     "¿Organización o movimiento?",
     "*Sindicato* y *ONG*: organizaciones.",

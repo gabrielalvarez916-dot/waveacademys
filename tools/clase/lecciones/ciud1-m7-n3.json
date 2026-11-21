@@ -21,23 +21,22 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Hábeas corpus",
-   "texto": "Protege la libertad física",
-   "emoji": "⛓️",
+   "t": "comparar",
+   "a": {
+    "cab": "HÁBEAS CORPUS",
+    "texto": "Protege la libertad física",
+    "emoji": "⛓️"
+   },
+   "b": {
+    "cab": "HÁBEAS DATA",
+    "texto": "Protege los datos personales",
+    "emoji": "🗂️"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos ideas que se relacionan.",
     "El *hábeas corpus* protege la libertad física.",
-    "Permite revisar una detención ilegal."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Hábeas data",
-   "texto": "Protege los datos personales",
-   "emoji": "🗂️",
-   "voz": [
-    "El *hábeas data* protege los datos personales.",
-    "Permite corregirlos o suprimirlos."
+    "El *hábeas data* protege los datos personales."
    ]
   },
   {

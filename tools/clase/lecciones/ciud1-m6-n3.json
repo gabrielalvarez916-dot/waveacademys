@@ -20,21 +20,17 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "LIBERTAD",
-   "columnas": [
-    "Tipo",
-    "Ejemplos"
-   ],
-   "filas": [
-    [
-     "Civiles",
-     "Vida, expresión"
-    ],
-    [
-     "Políticos",
-     "Votar, participar"
-    ]
+   "items": [
+    {
+     "cab": "CIVILES",
+     "txt": "Vida, expresión"
+    },
+    {
+     "cab": "POLÍTICOS",
+     "txt": "Votar, participar"
+    }
    ],
    "voz": [
     "Protegen la libertad.",
@@ -81,35 +77,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "CIVIL O POLÍTICO",
-     "emoji": "🗳️"
-    },
-    {
-     "cab": "ECONÓMICO O SOCIAL",
-     "emoji": "🏥"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Votar",
-     "caja": 0
-    },
-    {
-     "txt": "Atención de salud",
-     "caja": 1
-    },
-    {
-     "txt": "Libre expresión",
-     "caja": 0
-    },
-    {
-     "txt": "Trabajo digno",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "CIVIL O POLÍTICO",
+    "emoji": "🗳️",
+    "texto": "Votar, Libre expresión"
+   },
+   "despues": {
+    "cab": "ECONÓMICO O SOCIAL",
+    "emoji": "🏥",
+    "texto": "Atención de salud, Trabajo digno"
+   },
    "voz": [
     "¿De qué tipo?",
     "*Votar* y *libre expresión*: civil o político.",

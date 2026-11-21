@@ -30,29 +30,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "NORMAS INTERNACIONALES",
-   "columnas": [
-    "Norma",
-    "Año"
-   ],
-   "filas": [
-    [
-     "Declaración Universal",
-     "1948"
-    ],
-    [
-     "Contra el racismo",
-     "1965"
-    ],
-    [
-     "Contra la discriminación de la mujer",
-     "1979"
-    ],
-    [
-     "Personas con discapacidad",
-     "2006"
-    ]
+   "celdas": [
+    {
+     "cab": "DECLARACIÓN UNIVERSAL",
+     "txt": "1948"
+    },
+    {
+     "cab": "CONTRA EL RACISMO",
+     "txt": "1965"
+    },
+    {
+     "cab": "CONTRA LA DISCRIMINACIÓN DE LA MUJER",
+     "txt": "1979"
+    },
+    {
+     "cab": "PERSONAS CON DISCAPACIDAD",
+     "txt": "2006"
+    }
    ],
    "voz": [
     "Algunos instrumentos.",

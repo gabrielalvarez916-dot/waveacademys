@@ -46,29 +46,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "ESPACIOS",
-   "columnas": [
-    "Espacio",
-    "Qué hacer"
-   ],
-   "filas": [
-    [
-     "Centro de estudiantes",
-     "Proponer"
-    ],
-    [
-     "Consejos juveniles",
-     "Opinar"
-    ],
-    [
-     "Voluntariado",
-     "Ayudar"
-    ],
-    [
-     "Clubes",
-     "Juntarse"
-    ]
+   "celdas": [
+    {
+     "cab": "CENTRO DE ESTUDIANTES",
+     "txt": "Proponer"
+    },
+    {
+     "cab": "CONSEJOS JUVENILES",
+     "txt": "Opinar"
+    },
+    {
+     "cab": "VOLUNTARIADO",
+     "txt": "Ayudar"
+    },
+    {
+     "cab": "CLUBES",
+     "txt": "Juntarse"
+    }
    ],
    "voz": [
     "Dónde participar.",
@@ -108,35 +104,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "CON CUIDADO",
-     "emoji": "⚠️"
-    },
-    {
-     "cab": "SIN CUIDADO",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Verificar datos",
-     "caja": 0
-    },
-    {
-     "txt": "Pasar tus datos",
-     "caja": 1
-    },
-    {
-     "txt": "Respetar a otros",
-     "caja": 0
-    },
-    {
-     "txt": "Difundir rumores",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "CON CUIDADO",
+    "emoji": "⚠️",
+    "texto": "Verificar datos, Respetar a otros"
+   },
+   "despues": {
+    "cab": "SIN CUIDADO",
+    "emoji": "❌",
+    "texto": "Pasar tus datos, Difundir rumores"
+   },
    "voz": [
     "En redes, ¿con cuidado o sin cuidado?",
     "*Verificar datos* y *respetar*: con cuidado.",

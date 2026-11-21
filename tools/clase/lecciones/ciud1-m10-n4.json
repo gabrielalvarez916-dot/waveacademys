@@ -1,1 +1,152 @@
-{"sin_variante": true, "slug": "ciud1-m10-n4", "step_id": "8dbe3585-8d24-4fae-8c6c-222e092a56f8", "materia": "Ciudadanía I", "titulo": "Presento y recibo devoluciones", "sub": "Ciudadanía I · Misión 10 · Nivel 4", "escenas": [{"t": "reto", "texto": "¿Cómo se llama la opinión que recibís sobre lo que presentaste?", "segundos": 6, "respuesta": "Devolución", "emoji": "🗣️", "titulo": "PRESENTO", "sub": "y recibo devoluciones", "voz": ["Desafío: ¿cómo se llama la opinión que recibís sobre lo que presentaste? Seis segundos.", "Devolución.", "Hoy: *presentar y recibir devoluciones*."]}, {"t": "tabla", "titulo": "QUÉ INCLUYE", "columnas": ["Parte", "Contenido"], "filas": [["Problema", "Con datos"], ["Propuesta", "Objetivo y acciones"], ["Plan", "Responsables y fechas"], ["Pedido", "Qué se solicita"]], "voz": ["Una presentación incluye cuatro partes.", "El *problema*, con datos.", "La *propuesta*.", "El *plan*.", "Y el *pedido*."]}, {"t": "definicion", "palabra": "Devolución", "texto": "Opinión sobre lo presentado", "emoji": "💬", "voz": ["Una *devolución* es una opinión sobre lo presentado.", "Sirve cuando se convierte en una mejora."]}, {"t": "comparar", "a": {"cab": "DEFENDERSE", "texto": "Tomarlo como ataque", "emoji": "🛡️"}, "b": {"cab": "ESCUCHAR", "texto": "Usarlo para mejorar", "emoji": "👂"}, "signo": "vs", "voz": ["Dos actitudes.", "*Defenderse* cierra la conversación.", "*Escuchar* ayuda a mejorar."]}, {"t": "clasificar", "cajas": [{"cab": "AYUDA", "emoji": "✅"}, {"cab": "NO AYUDA", "emoji": "❌"}], "fichas": [{"txt": "Escuchar", "caja": 0}, {"txt": "Interrumpir", "caja": 1}, {"txt": "Preguntar", "caja": 0}, {"txt": "Ignorar", "caja": 1}], "voz": ["¿Ayuda o no ayuda?", "*Escuchar* y *preguntar*: ayudan.", "*Interrumpir* e *ignorar*: no ayudan."]}, {"t": "pregunta", "pregunta": "Ante una devolución conviene…", "opciones": ["Escuchar y ajustar", "Ignorarla", "Discutir"], "correcta": 0, "voz": ["Te toca: ante una devolución.", "¿Escuchar y ajustar, ignorarla o discutir?", "*Escuchar y ajustar*."]}, {"t": "resumen", "voz": ["Repasemos.", "Una presentación tiene *problema*, propuesta, plan y pedido.", "Se comunica *breve* y con datos.", "Las *devoluciones* ayudan a mejorar.", "Y al final se *evalúa* el proyecto.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["PARTES", "problema, propuesta"], ["COMUNICAR", "breve y con datos"], ["DEVOLUCIÓN", "escuchar y mejorar"], ["EVALUAR", "qué ajustar"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "sin_variante": true,
+ "slug": "ciud1-m10-n4",
+ "step_id": "8dbe3585-8d24-4fae-8c6c-222e092a56f8",
+ "materia": "Ciudadanía I",
+ "titulo": "Presento y recibo devoluciones",
+ "sub": "Ciudadanía I · Misión 10 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la opinión que recibís sobre lo que presentaste?",
+   "segundos": 6,
+   "respuesta": "Devolución",
+   "emoji": "🗣️",
+   "titulo": "PRESENTO",
+   "sub": "y recibo devoluciones",
+   "voz": [
+    "Desafío: ¿cómo se llama la opinión que recibís sobre lo que presentaste? Seis segundos.",
+    "Devolución.",
+    "Hoy: *presentar y recibir devoluciones*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ INCLUYE",
+   "columnas": [
+    "Parte",
+    "Contenido"
+   ],
+   "filas": [
+    [
+     "Problema",
+     "Con datos"
+    ],
+    [
+     "Propuesta",
+     "Objetivo y acciones"
+    ],
+    [
+     "Plan",
+     "Responsables y fechas"
+    ],
+    [
+     "Pedido",
+     "Qué se solicita"
+    ]
+   ],
+   "voz": [
+    "Una presentación incluye cuatro partes.",
+    "El *problema*, con datos.",
+    "La *propuesta*.",
+    "El *plan*.",
+    "Y el *pedido*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Devolución",
+   "texto": "Opinión sobre lo presentado",
+   "emoji": "💬",
+   "voz": [
+    "Una *devolución* es una opinión sobre lo presentado.",
+    "Sirve cuando se convierte en una mejora."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "DEFENDERSE",
+    "texto": "Tomarlo como ataque",
+    "emoji": "🛡️"
+   },
+   "b": {
+    "cab": "ESCUCHAR",
+    "texto": "Usarlo para mejorar",
+    "emoji": "👂"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos actitudes.",
+    "*Defenderse* cierra la conversación.",
+    "*Escuchar* ayuda a mejorar."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "AYUDA",
+    "emoji": "✅",
+    "texto": "Escuchar, Preguntar"
+   },
+   "despues": {
+    "cab": "NO AYUDA",
+    "emoji": "❌",
+    "texto": "Interrumpir, Ignorar"
+   },
+   "voz": [
+    "¿Ayuda o no ayuda?",
+    "*Escuchar* y *preguntar*: ayudan.",
+    "*Interrumpir* e *ignorar*: no ayudan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Ante una devolución conviene…",
+   "opciones": [
+    "Escuchar y ajustar",
+    "Ignorarla",
+    "Discutir"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ante una devolución.",
+    "¿Escuchar y ajustar, ignorarla o discutir?",
+    "*Escuchar y ajustar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una presentación tiene *problema*, propuesta, plan y pedido.",
+    "Se comunica *breve* y con datos.",
+    "Las *devoluciones* ayudan a mejorar.",
+    "Y al final se *evalúa* el proyecto.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTES",
+     "problema, propuesta"
+    ],
+    [
+     "COMUNICAR",
+     "breve y con datos"
+    ],
+    [
+     "DEVOLUCIÓN",
+     "escuchar y mejorar"
+    ],
+    [
+     "EVALUAR",
+     "qué ajustar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

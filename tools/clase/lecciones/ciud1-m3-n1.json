@@ -49,33 +49,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SOCIAL",
-     "emoji": "🤲"
+     "txt": "Voluntariado, Cooperadora"
     },
     {
      "cab": "POLÍTICA",
-     "emoji": "🗳️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Voluntariado",
-     "caja": 0
-    },
-    {
-     "txt": "Votar",
-     "caja": 1
-    },
-    {
-     "txt": "Cooperadora",
-     "caja": 0
-    },
-    {
-     "txt": "Afiliarse a partido",
-     "caja": 1
+     "txt": "Votar, Afiliarse a partido"
     }
    ],
    "voz": [

@@ -41,29 +41,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "OTRAS FORMAS",
-   "columnas": [
-    "Tipo",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Sexismo",
-     "Por género"
-    ],
-    [
-     "Capacitismo",
-     "Por discapacidad"
-    ],
-    [
-     "Clasismo",
-     "Por dinero"
-    ],
-    [
-     "Por apariencia",
-     "Por el aspecto"
-    ]
+   "celdas": [
+    {
+     "cab": "SEXISMO",
+     "txt": "Por género"
+    },
+    {
+     "cab": "CAPACITISMO",
+     "txt": "Por discapacidad"
+    },
+    {
+     "cab": "CLASISMO",
+     "txt": "Por dinero"
+    },
+    {
+     "cab": "POR APARIENCIA",
+     "txt": "Por el aspecto"
+    }
    ],
    "voz": [
     "Otras formas de discriminar.",
@@ -74,33 +70,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DAÑA",
-     "emoji": "💔"
+     "txt": "Burlarse, Excluir"
     },
     {
      "cab": "SUMA",
-     "emoji": "🤝"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Burlarse",
-     "caja": 0
-    },
-    {
-     "txt": "Compartir culturas",
-     "caja": 1
-    },
-    {
-     "txt": "Excluir",
-     "caja": 0
-    },
-    {
-     "txt": "Valorar lo distinto",
-     "caja": 1
+     "txt": "Compartir culturas, Valorar lo distinto"
     }
    ],
    "voz": [

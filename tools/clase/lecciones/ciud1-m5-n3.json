@@ -31,25 +31,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "PARTES",
-   "columnas": [
-    "Parte",
-    "Trata de"
-   ],
-   "filas": [
-    [
-     "Declaraciones",
-     "Principios"
-    ],
-    [
-     "Derechos y garantías",
-     "Qué se reconoce"
-    ],
-    [
-     "Organización",
-     "Cómo funcionan los poderes"
-    ]
+   "items": [
+    {
+     "cab": "DECLARACIONES",
+     "txt": "Principios"
+    },
+    {
+     "cab": "DERECHOS Y GARANTÍAS",
+     "txt": "Qué se reconoce"
+    },
+    {
+     "cab": "ORGANIZACIÓN",
+     "txt": "Cómo funcionan los poderes"
+    }
    ],
    "voz": [
     "Qué contiene.",
@@ -69,31 +65,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "DERECHOS",
-     "emoji": "⚖️"
-    },
-    {
-     "cab": "ORGANIZACIÓN",
-     "emoji": "🏛️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Expresión libre",
-     "caja": 0
-    },
-    {
-     "txt": "Poderes del Estado",
-     "caja": 1
-    },
-    {
-     "txt": "Igualdad",
-     "caja": 0
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "DERECHOS",
+    "emoji": "⚖️",
+    "texto": "Expresión libre, Igualdad"
+   },
+   "despues": {
+    "cab": "ORGANIZACIÓN",
+    "emoji": "🏛️",
+    "texto": "Poderes del Estado"
+   },
    "voz": [
     "¿Derechos u organización?",
     "*Expresión libre* e *igualdad*: derechos.",

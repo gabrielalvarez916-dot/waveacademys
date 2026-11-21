@@ -49,29 +49,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "IDEAS CENTRALES",
-   "columnas": [
-    "Idea",
-    "Dice"
-   ],
-   "filas": [
-    [
-     "Igualdad y dignidad",
-     "Todos nacemos iguales"
-    ],
-    [
-     "No discriminación",
-     "Sin distinción"
-    ],
-    [
-     "Vida y libertad",
-     "Sin esclavitud ni tortura"
-    ],
-    [
-     "Derechos sociales",
-     "Trabajo, salud, educación"
-    ]
+   "celdas": [
+    {
+     "cab": "IGUALDAD Y DIGNIDAD",
+     "txt": "Todos nacemos iguales"
+    },
+    {
+     "cab": "NO DISCRIMINACIÓN",
+     "txt": "Sin distinción"
+    },
+    {
+     "cab": "VIDA Y LIBERTAD",
+     "txt": "Sin esclavitud ni tortura"
+    },
+    {
+     "cab": "DERECHOS SOCIALES",
+     "txt": "Trabajo, salud, educación"
+    }
    ],
    "voz": [
     "Sus ideas.",
@@ -92,29 +88,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DECLARACIÓN",
-     "emoji": "📜"
+     "txt": "Proclama principios, Inspira leyes"
     },
     {
      "cab": "TRATADO",
-     "emoji": "✍️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Proclama principios",
-     "caja": 0
-    },
-    {
-     "txt": "Obliga por ley",
-     "caja": 1
-    },
-    {
-     "txt": "Inspira leyes",
-     "caja": 0
+     "txt": "Obliga por ley"
     }
    ],
    "voz": [

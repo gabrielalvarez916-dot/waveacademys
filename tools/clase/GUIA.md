@@ -23,7 +23,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 5. Momento sorpresa (algo se rompe, cambia o explota) cerca de la mitad.
 6. Cierre: errores comunes → resumen → "¡a practicar!".
 7. De 8 a 14 escenas (4 a 7 minutos).
-8. **Variedad de recursos (regla para todas las materias, años y niveles).** Las 4 clases de una misión NO pueden ser el mismo molde (gancho + definición + tabla + clasificar + pregunta + errores + resumen). Cada clase usa al menos 2 plantillas del banco fuera de las básicas (comparar, antesdespues, causas, ciclo, flujo, linea, venn, balanza, matriz, bloques, barras, dato, zoom, dialogo, partes, etc.), una plantilla (salvo pregunta, resumen, errores, definicion y los ganchos) no se repite en más de 2 de las 4 clases, y no puede haber dos clases con la misma secuencia de escenas. `revisar_contenido.py` lo controla y no deja subir si no se cumple.
+8. **Variedad de recursos (regla para todas las materias, años y niveles).** Las 4 clases de una misión NO pueden ser el mismo molde (gancho + definición + tabla + clasificar + pregunta + errores + resumen). Cada clase usa al menos 2 plantillas del banco fuera de las básicas (comparar, antesdespues, causas, ciclo, flujo, linea, venn, balanza, matriz, bloques, barras, dato, zoom, dialogo, partes, etc.), una plantilla (salvo pregunta, resumen, errores, definicion y los ganchos) no se repite en las 4 clases (máximo 3 de 4), y no puede haber dos clases con la misma secuencia de escenas. `revisar_contenido.py` lo controla y no deja subir si no se cumple.
 
 ## Banco de plantillas (pasos = frases de `voz`)
 

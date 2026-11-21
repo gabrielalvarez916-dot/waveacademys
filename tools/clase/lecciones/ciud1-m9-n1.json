@@ -21,29 +21,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "QUÉ CAMBIA",
-   "columnas": [
-    "Tipo",
-    "Ejemplos"
-   ],
-   "filas": [
-    [
-     "Físicos",
-     "El cuerpo"
-    ],
-    [
-     "Emocionales",
-     "Ánimo intenso"
-    ],
-    [
-     "Sociales",
-     "Los amigos pesan"
-    ],
-    [
-     "De pensamiento",
-     "Se cuestiona más"
-    ]
+   "celdas": [
+    {
+     "cab": "FÍSICOS",
+     "txt": "El cuerpo"
+    },
+    {
+     "cab": "EMOCIONALES",
+     "txt": "Ánimo intenso"
+    },
+    {
+     "cab": "SOCIALES",
+     "txt": "Los amigos pesan"
+    },
+    {
+     "cab": "DE PENSAMIENTO",
+     "txt": "Se cuestiona más"
+    }
    ],
    "voz": [
     "Los cambios.",
@@ -74,29 +70,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "PUEDO DECIDIR",
-     "emoji": "✅"
+     "txt": "Elegir mis gustos, Decir que no"
     },
     {
      "cab": "PRESIÓN",
-     "emoji": "⚠️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Elegir mis gustos",
-     "caja": 0
-    },
-    {
-     "txt": "Hacerlo por miedo",
-     "caja": 1
-    },
-    {
-     "txt": "Decir que no",
-     "caja": 0
+     "txt": "Hacerlo por miedo"
     }
    ],
    "voz": [

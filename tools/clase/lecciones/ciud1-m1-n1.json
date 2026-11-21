@@ -37,29 +37,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "LO QUE NOS UNE",
-   "columnas": [
-    "Vínculo",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Lugar",
-     "Barrio"
-    ],
-    [
-     "Intereses",
-     "Club"
-    ],
-    [
-     "Normas",
-     "Convivencia"
-    ],
-    [
-     "Cultura",
-     "Fiestas"
-    ]
+   "celdas": [
+    {
+     "cab": "LUGAR",
+     "txt": "Barrio"
+    },
+    {
+     "cab": "INTERESES",
+     "txt": "Club"
+    },
+    {
+     "cab": "NORMAS",
+     "txt": "Convivencia"
+    },
+    {
+     "cab": "CULTURA",
+     "txt": "Fiestas"
+    }
    ],
    "voz": [
     "Qué une a las personas.",
@@ -80,29 +76,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DE TODOS",
-     "emoji": "🌳"
+     "txt": "Plaza, Escuela pública"
     },
     {
      "cab": "DE UNO",
-     "emoji": "🏠"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Plaza",
-     "caja": 0
-    },
-    {
-     "txt": "Mi mochila",
-     "caja": 1
-    },
-    {
-     "txt": "Escuela pública",
-     "caja": 0
+     "txt": "Mi mochila"
     }
    ],
    "voz": [

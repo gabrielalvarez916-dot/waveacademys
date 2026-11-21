@@ -1,1 +1,174 @@
-{"sin_variante": true, "slug": "ciud1-m10-n2", "step_id": "56cac442-b7ef-4e9c-a677-b450c0214232", "materia": "Ciudadanía I", "titulo": "Investigo y consulto fuentes", "sub": "Ciudadanía I · Misión 10 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "INVESTIGAR", "titular": "Un dato sin fuente", "bajada": "No convence a nadie", "emoji": "🔎", "titulo": "INVESTIGO Y CONSULTO", "sub": "fuentes", "voz": ["Noticia: un dato sin fuente no convence a nadie.", "Hay que investigar bien.", "Hoy: *investigar y consultar fuentes*."]}, {"t": "tabla", "titulo": "TIPOS DE FUENTES", "columnas": ["Tipo", "Ejemplo"], "filas": [["Observación", "Mirar y anotar"], ["Encuesta", "Muchas personas"], ["Entrevista", "Una persona"], ["Documentos", "Informes y datos"]], "voz": ["Tipos de fuentes.", "La *observación*: mirar y anotar.", "La *encuesta*: a muchas personas.", "La *entrevista*: a una persona.", "Y los *documentos*."]}, {"t": "definicion", "palabra": "Fuente primaria", "texto": "La obtenés vos mismo", "emoji": "📝", "voz": ["Una *fuente primaria* la obtenés vos mismo.", "Por ejemplo, una encuesta o una entrevista."]}, {"t": "definicion", "palabra": "Fuente secundaria", "texto": "Ya la reunió otra persona", "emoji": "📚", "voz": ["Una *fuente secundaria* ya la reunió otra persona.", "Por ejemplo, una noticia o un informe."]}, {"t": "clasificar", "cajas": [{"cab": "PRIMARIA", "emoji": "📝"}, {"cab": "SECUNDARIA", "emoji": "📚"}], "fichas": [{"txt": "Mi encuesta", "caja": 0}, {"txt": "Un informe", "caja": 1}, {"txt": "Mi entrevista", "caja": 0}, {"txt": "Una noticia", "caja": 1}], "voz": ["¿Primaria o secundaria?", "*Mi encuesta* y *mi entrevista*: primarias.", "*Un informe* y *una noticia*: secundarias."]}, {"t": "pregunta", "pregunta": "Un dato sin fuente…", "opciones": ["No convence", "Convence siempre", "Es oficial"], "correcta": 0, "voz": ["Te toca: un dato sin fuente.", "¿No convence, convence siempre o es oficial?", "*No convence*."]}, {"t": "errores", "items": [{"mal": "Usar una sola fuente", "bien": "Contrastar varias"}, {"mal": "Anotar sin la fuente", "bien": "Anotar dato y fuente"}], "voz": ["Errores típicos.", "Usar *una sola fuente*.", "Y anotar un dato *sin su fuente*."]}, {"t": "resumen", "voz": ["Repasemos.", "Hay varios *tipos* de fuentes.", "La *primaria* la obtengo yo.", "La *secundaria* ya existe.", "Y todo dato va con su *fuente*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["TIPOS", "observar, preguntar"], ["PRIMARIA", "la obtengo yo"], ["SECUNDARIA", "ya existe"], ["DATO", "con su fuente"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "sin_variante": true,
+ "slug": "ciud1-m10-n2",
+ "step_id": "56cac442-b7ef-4e9c-a677-b450c0214232",
+ "materia": "Ciudadanía I",
+ "titulo": "Investigo y consulto fuentes",
+ "sub": "Ciudadanía I · Misión 10 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "INVESTIGAR",
+   "titular": "Un dato sin fuente",
+   "bajada": "No convence a nadie",
+   "emoji": "🔎",
+   "titulo": "INVESTIGO Y CONSULTO",
+   "sub": "fuentes",
+   "voz": [
+    "Noticia: un dato sin fuente no convence a nadie.",
+    "Hay que investigar bien.",
+    "Hoy: *investigar y consultar fuentes*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "TIPOS DE FUENTES",
+   "celdas": [
+    {
+     "cab": "OBSERVACIÓN",
+     "txt": "Mirar y anotar"
+    },
+    {
+     "cab": "ENCUESTA",
+     "txt": "Muchas personas"
+    },
+    {
+     "cab": "ENTREVISTA",
+     "txt": "Una persona"
+    },
+    {
+     "cab": "DOCUMENTOS",
+     "txt": "Informes y datos"
+    }
+   ],
+   "voz": [
+    "Tipos de fuentes.",
+    "La *observación*: mirar y anotar.",
+    "La *encuesta*: a muchas personas.",
+    "La *entrevista*: a una persona.",
+    "Y los *documentos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FUENTE PRIMARIA",
+    "texto": "La obtenés vos mismo",
+    "emoji": "📝"
+   },
+   "b": {
+    "cab": "FUENTE SECUNDARIA",
+    "texto": "Ya la reunió otra persona",
+    "emoji": "📚"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos ideas que se relacionan.",
+    "Una *fuente primaria* la obtenés vos mismo.",
+    "Una *fuente secundaria* ya la reunió otra persona."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PRIMARIA",
+     "emoji": "📝"
+    },
+    {
+     "cab": "SECUNDARIA",
+     "emoji": "📚"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Mi encuesta",
+     "caja": 0
+    },
+    {
+     "txt": "Un informe",
+     "caja": 1
+    },
+    {
+     "txt": "Mi entrevista",
+     "caja": 0
+    },
+    {
+     "txt": "Una noticia",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Primaria o secundaria?",
+    "*Mi encuesta* y *mi entrevista*: primarias.",
+    "*Un informe* y *una noticia*: secundarias."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un dato sin fuente…",
+   "opciones": [
+    "No convence",
+    "Convence siempre",
+    "Es oficial"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un dato sin fuente.",
+    "¿No convence, convence siempre o es oficial?",
+    "*No convence*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Usar una sola fuente",
+     "bien": "Contrastar varias"
+    },
+    {
+     "mal": "Anotar sin la fuente",
+     "bien": "Anotar dato y fuente"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *una sola fuente*.",
+    "Y anotar un dato *sin su fuente*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay varios *tipos* de fuentes.",
+    "La *primaria* la obtengo yo.",
+    "La *secundaria* ya existe.",
+    "Y todo dato va con su *fuente*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TIPOS",
+     "observar, preguntar"
+    ],
+    [
+     "PRIMARIA",
+     "la obtengo yo"
+    ],
+    [
+     "SECUNDARIA",
+     "ya existe"
+    ],
+    [
+     "DATO",
+     "con su fuente"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

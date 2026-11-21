@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "TIPOS",
-   "columnas": [
-    "Tipo",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Psicológica",
-     "Humillar"
-    ],
-    [
-     "Física",
-     "Golpes"
-    ],
-    [
-     "Digital",
-     "Revisar el celular"
-    ],
-    [
-     "Aislamiento",
-     "Alejar de amigos"
-    ]
+   "celdas": [
+    {
+     "cab": "PSICOLÓGICA",
+     "txt": "Humillar"
+    },
+    {
+     "cab": "FÍSICA",
+     "txt": "Golpes"
+    },
+    {
+     "cab": "DIGITAL",
+     "txt": "Revisar el celular"
+    },
+    {
+     "cab": "AISLAMIENTO",
+     "txt": "Alejar de amigos"
+    }
    ],
    "voz": [
     "Tipos de violencia.",
@@ -64,29 +60,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "SEÑALES DE ALERTA",
-   "columnas": [
-    "Señal",
-    "Por qué preocupa"
-   ],
-   "filas": [
-    [
-     "Celos excesivos",
-     "Busca controlar"
-    ],
-    [
-     "Te aísla",
-     "Te deja sin apoyo"
-    ],
-    [
-     "Te humilla",
-     "Daña tu autoestima"
-    ],
-    [
-     "Te asusta",
-     "Es violencia"
-    ]
+   "celdas": [
+    {
+     "cab": "CELOS EXCESIVOS",
+     "txt": "Busca controlar"
+    },
+    {
+     "cab": "TE AÍSLA",
+     "txt": "Te deja sin apoyo"
+    },
+    {
+     "cab": "TE HUMILLA",
+     "txt": "Daña tu autoestima"
+    },
+    {
+     "cab": "TE ASUSTA",
+     "txt": "Es violencia"
+    }
    ],
    "voz": [
     "Señales de alerta.",

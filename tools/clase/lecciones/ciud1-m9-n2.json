@@ -21,33 +21,29 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "RASGOS",
-   "columnas": [
-    "Rasgo",
-    "Significa"
-   ],
-   "filas": [
-    [
-     "Respeto",
-     "Se valora al otro"
-    ],
-    [
-     "Confianza",
-     "Sin controlar"
-    ],
-    [
-     "Igualdad",
-     "Se decide entre dos"
-    ],
-    [
-     "Libertad",
-     "Cada uno sigue con lo suyo"
-    ],
-    [
-     "Cuidado",
-     "Se busca el bienestar"
-    ]
+   "items": [
+    {
+     "cab": "RESPETO",
+     "txt": "Se valora al otro"
+    },
+    {
+     "cab": "CONFIANZA",
+     "txt": "Sin controlar"
+    },
+    {
+     "cab": "IGUALDAD",
+     "txt": "Se decide entre dos"
+    },
+    {
+     "cab": "LIBERTAD",
+     "txt": "Cada uno sigue con lo suyo"
+    },
+    {
+     "cab": "CUIDADO",
+     "txt": "Se busca el bienestar"
+    }
    ],
    "voz": [
     "Rasgos de una relación sana.",
@@ -69,33 +65,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SEÑAL SANA",
-     "emoji": "💚"
+     "txt": "Respeta mis tiempos, Celebra mis logros"
     },
     {
      "cab": "SEÑAL DE ALERTA",
-     "emoji": "🚩"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Respeta mis tiempos",
-     "caja": 0
-    },
-    {
-     "txt": "Revisa mi celular",
-     "caja": 1
-    },
-    {
-     "txt": "Celebra mis logros",
-     "caja": 0
-    },
-    {
-     "txt": "Me aísla",
-     "caja": 1
+     "txt": "Revisa mi celular, Me aísla"
     }
    ],
    "voz": [

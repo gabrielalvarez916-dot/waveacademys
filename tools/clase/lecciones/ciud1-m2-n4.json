@@ -55,25 +55,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "CUIDAR LA INFORMACIÓN",
-   "columnas": [
-    "Hábito",
-    "Sirve para"
-   ],
-   "filas": [
-    [
-     "Contrastar fuentes",
-     "Evitar falsas"
-    ],
-    [
-     "No compartir viral",
-     "Frenar bulos"
-    ],
-    [
-     "Leer varias miradas",
-     "Entender mejor"
-    ]
+   "items": [
+    {
+     "cab": "CONTRASTAR FUENTES",
+     "txt": "Evitar falsas"
+    },
+    {
+     "cab": "NO COMPARTIR VIRAL",
+     "txt": "Frenar bulos"
+    },
+    {
+     "cab": "LEER VARIAS MIRADAS",
+     "txt": "Entender mejor"
+    }
    ],
    "voz": [
     "Hábitos para informarse.",
@@ -83,35 +79,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "AYUDA",
-     "emoji": "✅"
-    },
-    {
-     "cab": "DAÑA",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Votar informado",
-     "caja": 0
-    },
-    {
-     "txt": "Compartir sin leer",
-     "caja": 1
-    },
-    {
-     "txt": "Participar",
-     "caja": 0
-    },
-    {
-     "txt": "Callar un abuso",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "AYUDA",
+    "emoji": "✅",
+    "texto": "Votar informado, Participar"
+   },
+   "despues": {
+    "cab": "DAÑA",
+    "emoji": "❌",
+    "texto": "Compartir sin leer, Callar un abuso"
+   },
    "voz": [
     "¿Ayuda o daña?",
     "*Votar informado* y *participar*: ayudan.",

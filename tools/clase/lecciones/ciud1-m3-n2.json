@@ -21,29 +21,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "EL VOTO",
-   "columnas": [
-    "Rasgo",
-    "Significa"
-   ],
-   "filas": [
-    [
-     "Universal",
-     "Todos los habilitados"
-    ],
-    [
-     "Igual",
-     "Vale lo mismo"
-    ],
-    [
-     "Secreto",
-     "Nadie sabe"
-    ],
-    [
-     "Libre",
-     "Sin presiones"
-    ]
+   "celdas": [
+    {
+     "cab": "UNIVERSAL",
+     "txt": "Todos los habilitados"
+    },
+    {
+     "cab": "IGUAL",
+     "txt": "Vale lo mismo"
+    },
+    {
+     "cab": "SECRETO",
+     "txt": "Nadie sabe"
+    },
+    {
+     "cab": "LIBRE",
+     "txt": "Sin presiones"
+    }
    ],
    "voz": [
     "Cómo es el voto democrático.",
@@ -74,33 +70,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "PACÍFICA",
-     "emoji": "🕊️"
+     "txt": "Marcha organizada, Asamblea"
     },
     {
      "cab": "NO PACÍFICA",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Marcha organizada",
-     "caja": 0
-    },
-    {
-     "txt": "Daño a otros",
-     "caja": 1
-    },
-    {
-     "txt": "Asamblea",
-     "caja": 0
-    },
-    {
-     "txt": "Agresión",
-     "caja": 1
+     "txt": "Daño a otros, Agresión"
     }
    ],
    "voz": [

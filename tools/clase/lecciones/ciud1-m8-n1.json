@@ -21,23 +21,22 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Prejuicio",
-   "texto": "Opinión negativa formada sin conocer",
-   "emoji": "💭",
+   "t": "comparar",
+   "a": {
+    "cab": "PREJUICIO",
+    "texto": "Opinión negativa formada sin conocer",
+    "emoji": "💭"
+   },
+   "b": {
+    "cab": "ESTEREOTIPO",
+    "texto": "Imagen simplificada de un grupo",
+    "emoji": "🧩"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos ideas que se relacionan.",
     "Un *prejuicio* es una opinión negativa formada sin conocer.",
-    "Se aprende en la familia, los medios y la calle."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Estereotipo",
-   "texto": "Imagen simplificada de un grupo",
-   "emoji": "🧩",
-   "voz": [
-    "Un *estereotipo* es una imagen simplificada de un grupo.",
-    "Se aplica a todas las personas que lo integran."
+    "Un *estereotipo* es una imagen simplificada de un grupo."
    ]
   },
   {
@@ -75,29 +74,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "IDEA",
-     "emoji": "💭"
+     "txt": "Prejuicio, Estereotipo"
     },
     {
      "cab": "ACCIÓN",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Prejuicio",
-     "caja": 0
-    },
-    {
-     "txt": "Excluir a alguien",
-     "caja": 1
-    },
-    {
-     "txt": "Estereotipo",
-     "caja": 0
+     "txt": "Excluir a alguien"
     }
    ],
    "voz": [

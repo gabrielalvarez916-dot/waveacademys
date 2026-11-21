@@ -50,25 +50,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES PODERES",
-   "columnas": [
-    "Poder",
-    "Función"
-   ],
-   "filas": [
-    [
-     "Legislativo",
-     "Hace las leyes"
-    ],
-    [
-     "Ejecutivo",
-     "Gobierna"
-    ],
-    [
-     "Judicial",
-     "Resuelve conflictos"
-    ]
+   "items": [
+    {
+     "cab": "LEGISLATIVO",
+     "txt": "Hace las leyes"
+    },
+    {
+     "cab": "EJECUTIVO",
+     "txt": "Gobierna"
+    },
+    {
+     "cab": "JUDICIAL",
+     "txt": "Resuelve conflictos"
+    }
    ],
    "voz": [
     "Los tres poderes.",

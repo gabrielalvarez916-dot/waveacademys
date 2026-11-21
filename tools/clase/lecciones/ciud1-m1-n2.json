@@ -31,25 +31,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES TIPOS",
-   "columnas": [
-    "Tipo",
-    "Quién la impone"
-   ],
-   "filas": [
-    [
-     "Moral",
-     "Tu conciencia"
-    ],
-    [
-     "Social",
-     "El grupo"
-    ],
-    [
-     "Jurídica",
-     "El Estado"
-    ]
+   "items": [
+    {
+     "cab": "MORAL",
+     "txt": "Tu conciencia"
+    },
+    {
+     "cab": "SOCIAL",
+     "txt": "El grupo"
+    },
+    {
+     "cab": "JURÍDICA",
+     "txt": "El Estado"
+    }
    ],
    "voz": [
     "Tres tipos de normas.",
@@ -78,33 +74,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "MORAL",
-     "emoji": "💭"
+     "txt": "No mentir"
     },
     {
      "cab": "SOCIAL",
-     "emoji": "👥"
+     "txt": "Ceder el asiento"
     },
     {
      "cab": "JURÍDICA",
-     "emoji": "⚖️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "No mentir",
-     "caja": 0
-    },
-    {
-     "txt": "Ceder el asiento",
-     "caja": 1
-    },
-    {
-     "txt": "Pagar impuestos",
-     "caja": 2
+     "txt": "Pagar impuestos"
     }
    ],
    "voz": [

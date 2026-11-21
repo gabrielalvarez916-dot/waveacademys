@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "CUÁNDO SE USA",
-   "columnas": [
-    "Situación",
-    "Derecho"
-   ],
-   "filas": [
-    [
-     "Niegan tratamiento",
-     "Salud"
-    ],
-    [
-     "Impiden escolarizar",
-     "Educación"
-    ],
-    [
-     "Contaminan un río",
-     "Ambiente sano"
-    ],
-    [
-     "Censuran",
-     "Expresión"
-    ]
+   "celdas": [
+    {
+     "cab": "NIEGAN TRATAMIENTO",
+     "txt": "Salud"
+    },
+    {
+     "cab": "IMPIDEN ESCOLARIZAR",
+     "txt": "Educación"
+    },
+    {
+     "cab": "CONTAMINAN UN RÍO",
+     "txt": "Ambiente sano"
+    },
+    {
+     "cab": "CENSURAN",
+     "txt": "Expresión"
+    }
    ],
    "voz": [
     "Casos de amparo.",
@@ -88,29 +84,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "CONVIENE AMPARO",
-     "emoji": "✅"
+     "txt": "Salud negada, Censura"
     },
     {
      "cab": "NO CONVIENE",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Salud negada",
-     "caja": 0
-    },
-    {
-     "txt": "Cambiar de cancha",
-     "caja": 1
-    },
-    {
-     "txt": "Censura",
-     "caja": 0
+     "txt": "Cambiar de cancha"
     }
    ],
    "voz": [

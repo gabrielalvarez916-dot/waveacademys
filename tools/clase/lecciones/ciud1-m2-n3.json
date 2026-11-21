@@ -30,22 +30,26 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "linea",
    "titulo": "QUÉ HACE UN GOLPE",
-   "items": [
+   "eventos": [
     {
+     "fecha": "1",
      "txt": "Toma el poder",
      "emoji": "🪖"
     },
     {
+     "fecha": "2",
      "txt": "Cierra el Congreso",
      "emoji": "🏛️"
     },
     {
+     "fecha": "3",
      "txt": "Suspende elecciones",
      "emoji": "🗳️"
     },
     {
+     "fecha": "4",
      "txt": "Limita derechos",
      "emoji": "🔒"
     }
@@ -59,29 +63,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TERRORISMO DE ESTADO",
-   "columnas": [
-    "Práctica",
-    "Qué es"
-   ],
-   "filas": [
-    [
-     "Detención ilegal",
-     "Sin orden judicial"
-    ],
-    [
-     "Tortura",
-     "Maltrato"
-    ],
-    [
-     "Desaparición",
-     "Sin noticias"
-    ],
-    [
-     "Censura",
-     "Se prohíbe"
-    ]
+   "items": [
+    {
+     "cab": "DETENCIÓN ILEGAL",
+     "txt": "Sin orden judicial"
+    },
+    {
+     "cab": "TORTURA",
+     "txt": "Maltrato"
+    },
+    {
+     "cab": "DESAPARICIÓN",
+     "txt": "Sin noticias"
+    },
+    {
+     "cab": "CENSURA",
+     "txt": "Se prohíbe"
+    }
    ],
    "voz": [
     "Terrorismo de Estado.",

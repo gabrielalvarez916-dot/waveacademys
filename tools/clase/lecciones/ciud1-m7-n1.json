@@ -46,25 +46,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES GARANTÍAS",
-   "columnas": [
-    "Garantía",
-    "Protege"
-   ],
-   "filas": [
-    [
-     "Amparo",
-     "Derechos"
-    ],
-    [
-     "Hábeas corpus",
-     "Libertad física"
-    ],
-    [
-     "Hábeas data",
-     "Datos personales"
-    ]
+   "items": [
+    {
+     "cab": "AMPARO",
+     "txt": "Derechos"
+    },
+    {
+     "cab": "HÁBEAS CORPUS",
+     "txt": "Libertad física"
+    },
+    {
+     "cab": "HÁBEAS DATA",
+     "txt": "Datos personales"
+    }
    ],
    "voz": [
     "Tres garantías.",
@@ -98,29 +94,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DERECHO",
-     "emoji": "⚖️"
+     "txt": "Salud"
     },
     {
      "cab": "GARANTÍA",
-     "emoji": "🛡️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Salud",
-     "caja": 0
-    },
-    {
-     "txt": "Amparo",
-     "caja": 1
-    },
-    {
-     "txt": "Hábeas corpus",
-     "caja": 1
+     "txt": "Amparo, Hábeas corpus"
     }
    ],
    "voz": [

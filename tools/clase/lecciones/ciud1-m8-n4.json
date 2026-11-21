@@ -75,35 +75,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "AYUDA",
-     "emoji": "✅"
-    },
-    {
-     "cab": "DAÑA",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Acompañar",
-     "caja": 0
-    },
-    {
-     "txt": "Reírse",
-     "caja": 1
-    },
-    {
-     "txt": "Guardar capturas",
-     "caja": 0
-    },
-    {
-     "txt": "Compartir el meme",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "AYUDA",
+    "emoji": "✅",
+    "texto": "Acompañar, Guardar capturas"
+   },
+   "despues": {
+    "cab": "DAÑA",
+    "emoji": "❌",
+    "texto": "Reírse, Compartir el meme"
+   },
    "voz": [
     "¿Ayuda o daña?",
     "*Acompañar* y *guardar capturas*: ayudan.",

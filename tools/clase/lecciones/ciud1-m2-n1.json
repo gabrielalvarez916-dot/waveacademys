@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "RASGOS",
-   "columnas": [
-    "Rasgo",
-    "Qué significa"
-   ],
-   "filas": [
-    [
-     "Elecciones libres",
-     "Sin presiones"
-    ],
-    [
-     "División de poderes",
-     "Nadie concentra"
-    ],
-    [
-     "Derechos",
-     "Se respetan"
-    ],
-    [
-     "Alternancia",
-     "Cambia el gobierno"
-    ]
+   "celdas": [
+    {
+     "cab": "ELECCIONES LIBRES",
+     "txt": "Sin presiones"
+    },
+    {
+     "cab": "DIVISIÓN DE PODERES",
+     "txt": "Nadie concentra"
+    },
+    {
+     "cab": "DERECHOS",
+     "txt": "Se respetan"
+    },
+    {
+     "cab": "ALTERNANCIA",
+     "txt": "Cambia el gobierno"
+    }
    ],
    "voz": [
     "Los rasgos de una democracia.",
@@ -83,33 +79,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DEMOCRÁTICO",
-     "emoji": "🗳️"
+     "txt": "Prensa libre, Elecciones libres"
     },
     {
      "cab": "NO DEMOCRÁTICO",
-     "emoji": "🚫"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Prensa libre",
-     "caja": 0
-    },
-    {
-     "txt": "Censura",
-     "caja": 1
-    },
-    {
-     "txt": "Elecciones libres",
-     "caja": 0
-    },
-    {
-     "txt": "Partido único",
-     "caja": 1
+     "txt": "Censura, Partido único"
     }
    ],
    "voz": [

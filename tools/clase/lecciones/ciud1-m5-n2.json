@@ -20,25 +20,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "TRES PODERES",
-   "columnas": [
-    "Poder",
-    "Función"
-   ],
-   "filas": [
-    [
-     "Legislativo",
-     "Hace las leyes"
-    ],
-    [
-     "Ejecutivo",
-     "Gobierna"
-    ],
-    [
-     "Judicial",
-     "Juzga"
-    ]
+   "items": [
+    {
+     "cab": "LEGISLATIVO",
+     "txt": "Hace las leyes"
+    },
+    {
+     "cab": "EJECUTIVO",
+     "txt": "Gobierna"
+    },
+    {
+     "cab": "JUDICIAL",
+     "txt": "Juzga"
+    }
    ],
    "voz": [
     "Los tres poderes.",
@@ -48,25 +44,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "CONTROLES",
-   "columnas": [
-    "Poder",
-    "Cómo controla"
-   ],
-   "filas": [
-    [
-     "Legislativo",
-     "Investiga y puede juzgar políticamente"
-    ],
-    [
-     "Ejecutivo",
-     "Veta leyes"
-    ],
-    [
-     "Judicial",
-     "Declara inconstitucional"
-    ]
+   "items": [
+    {
+     "cab": "LEGISLATIVO",
+     "txt": "Investiga y puede juzgar políticamente"
+    },
+    {
+     "cab": "EJECUTIVO",
+     "txt": "Veta leyes"
+    },
+    {
+     "cab": "JUDICIAL",
+     "txt": "Declara inconstitucional"
+    }
    ],
    "voz": [
     "Cómo se controlan.",
@@ -86,33 +78,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "LEGISLATIVO",
-     "emoji": "📜"
+     "txt": "Votar una ley"
     },
     {
      "cab": "EJECUTIVO",
-     "emoji": "🏛️"
+     "txt": "Vetar una ley"
     },
     {
      "cab": "JUDICIAL",
-     "emoji": "⚖️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Votar una ley",
-     "caja": 0
-    },
-    {
-     "txt": "Vetar una ley",
-     "caja": 1
-    },
-    {
-     "txt": "Anular una norma",
-     "caja": 2
+     "txt": "Anular una norma"
     }
    ],
    "voz": [

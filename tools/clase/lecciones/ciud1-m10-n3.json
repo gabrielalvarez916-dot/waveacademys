@@ -1,1 +1,157 @@
-{"sin_variante": true, "slug": "ciud1-m10-n3", "step_id": "4dff95f7-75ec-4d87-9d7d-e9b7908455aa", "materia": "Ciudadanía I", "titulo": "Diseño una propuesta", "sub": "Ciudadanía I · Misión 10 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Cómo se llama lo que se quiere lograr con la propuesta?", "segundos": 5, "respuesta": "Objetivo", "emoji": "🎯", "titulo": "DISEÑO", "sub": "una propuesta", "voz": ["Desafío: ¿cómo se llama lo que se quiere lograr con la propuesta? Cinco segundos.", "Objetivo.", "Hoy: *diseñar una propuesta*."]}, {"t": "definicion", "palabra": "Objetivo", "texto": "Lo que se quiere lograr", "emoji": "🎯", "voz": ["El *objetivo* es lo que se quiere lograr.", "Debe ser claro, posible y medible."]}, {"t": "pasos", "titulo": "PLAN DE ACCIÓN", "items": [{"txt": "Definir acciones", "emoji": "📌"}, {"txt": "Elegir responsables", "emoji": "👥"}, {"txt": "Listar recursos", "emoji": "🧰"}, {"txt": "Poner fechas", "emoji": "📅"}], "voz": ["Plan de acción.", "Definir *acciones*.", "Elegir *responsables*.", "Listar *recursos*.", "Y poner *fechas*."]}, {"t": "tabla", "titulo": "INDICADORES", "columnas": ["Objetivo", "Se mide con"], "filas": [["Más luz", "Luminarias nuevas"], ["Menos basura", "Kilos por mes"], ["Más deporte", "Personas por semana"]], "voz": ["Cómo medir resultados.", "*Más luz*: luminarias nuevas.", "*Menos basura*: kilos por mes.", "Y *más deporte*: personas por semana."]}, {"t": "pregunta", "pregunta": "El calendario con las fechas es el…", "opciones": ["Cronograma", "Indicador", "Pedido"], "correcta": 0, "voz": ["Te toca: el calendario con las fechas.", "¿Cronograma, indicador o pedido?", "El *cronograma*."]}, {"t": "errores", "items": [{"mal": "Objetivos vagos", "bien": "Claros y medibles"}, {"mal": "Sin fechas", "bien": "Con cronograma"}], "voz": ["Errores típicos.", "Escribir objetivos *vagos*.", "Y olvidar las *fechas*."]}, {"t": "resumen", "voz": ["Repasemos.", "El *objetivo* es claro y medible.", "Las *acciones* tienen responsables.", "Se listan *recursos* y fechas.", "Y un *indicador* mide el resultado.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["OBJETIVO", "claro y medible"], ["ACCIONES", "con responsables"], ["RECURSOS", "y fechas"], ["INDICADOR", "mide resultados"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "sin_variante": true,
+ "slug": "ciud1-m10-n3",
+ "step_id": "4dff95f7-75ec-4d87-9d7d-e9b7908455aa",
+ "materia": "Ciudadanía I",
+ "titulo": "Diseño una propuesta",
+ "sub": "Ciudadanía I · Misión 10 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama lo que se quiere lograr con la propuesta?",
+   "segundos": 5,
+   "respuesta": "Objetivo",
+   "emoji": "🎯",
+   "titulo": "DISEÑO",
+   "sub": "una propuesta",
+   "voz": [
+    "Desafío: ¿cómo se llama lo que se quiere lograr con la propuesta? Cinco segundos.",
+    "Objetivo.",
+    "Hoy: *diseñar una propuesta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Objetivo",
+   "texto": "Lo que se quiere lograr",
+   "emoji": "🎯",
+   "voz": [
+    "El *objetivo* es lo que se quiere lograr.",
+    "Debe ser claro, posible y medible."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "PLAN DE ACCIÓN",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Definir acciones",
+     "emoji": "📌"
+    },
+    {
+     "fecha": "2",
+     "txt": "Elegir responsables",
+     "emoji": "👥"
+    },
+    {
+     "fecha": "3",
+     "txt": "Listar recursos",
+     "emoji": "🧰"
+    },
+    {
+     "fecha": "4",
+     "txt": "Poner fechas",
+     "emoji": "📅"
+    }
+   ],
+   "voz": [
+    "Plan de acción.",
+    "Definir *acciones*.",
+    "Elegir *responsables*.",
+    "Listar *recursos*.",
+    "Y poner *fechas*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "INDICADORES",
+   "items": [
+    {
+     "cab": "MÁS LUZ",
+     "txt": "Luminarias nuevas"
+    },
+    {
+     "cab": "MENOS BASURA",
+     "txt": "Kilos por mes"
+    },
+    {
+     "cab": "MÁS DEPORTE",
+     "txt": "Personas por semana"
+    }
+   ],
+   "voz": [
+    "Cómo medir resultados.",
+    "*Más luz*: luminarias nuevas.",
+    "*Menos basura*: kilos por mes.",
+    "Y *más deporte*: personas por semana."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El calendario con las fechas es el…",
+   "opciones": [
+    "Cronograma",
+    "Indicador",
+    "Pedido"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el calendario con las fechas.",
+    "¿Cronograma, indicador o pedido?",
+    "El *cronograma*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Objetivos vagos",
+     "bien": "Claros y medibles"
+    },
+    {
+     "mal": "Sin fechas",
+     "bien": "Con cronograma"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Escribir objetivos *vagos*.",
+    "Y olvidar las *fechas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *objetivo* es claro y medible.",
+    "Las *acciones* tienen responsables.",
+    "Se listan *recursos* y fechas.",
+    "Y un *indicador* mide el resultado.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "OBJETIVO",
+     "claro y medible"
+    ],
+    [
+     "ACCIONES",
+     "con responsables"
+    ],
+    [
+     "RECURSOS",
+     "y fechas"
+    ],
+    [
+     "INDICADOR",
+     "mide resultados"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

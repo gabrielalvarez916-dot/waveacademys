@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "RASGOS",
-   "columnas": [
-    "Rasgo",
-    "Significa"
-   ],
-   "filas": [
-    [
-     "Libre",
-     "Sin presión"
-    ],
-    [
-     "Informado",
-     "Se sabe de qué se trata"
-    ],
-    [
-     "Específico",
-     "Vale para una cosa"
-    ],
-    [
-     "Reversible",
-     "Se puede cambiar"
-    ]
+   "celdas": [
+    {
+     "cab": "LIBRE",
+     "txt": "Sin presión"
+    },
+    {
+     "cab": "INFORMADO",
+     "txt": "Se sabe de qué se trata"
+    },
+    {
+     "cab": "ESPECÍFICO",
+     "txt": "Vale para una cosa"
+    },
+    {
+     "cab": "REVERSIBLE",
+     "txt": "Se puede cambiar"
+    }
    ],
    "voz": [
     "Cómo es un consentimiento válido.",
@@ -74,35 +70,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "ES UN SÍ",
-     "emoji": "✅"
-    },
-    {
-     "cab": "NO ES UN SÍ",
-     "emoji": "🛑"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Un sí claro y libre",
-     "caja": 0
-    },
-    {
-     "txt": "Silencio",
-     "caja": 1
-    },
-    {
-     "txt": "Duda",
-     "caja": 1
-    },
-    {
-     "txt": "Entusiasmo",
-     "caja": 0
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ES UN SÍ",
+    "emoji": "✅",
+    "texto": "Un sí claro y libre, Entusiasmo"
+   },
+   "despues": {
+    "cab": "NO ES UN SÍ",
+    "emoji": "🛑",
+    "texto": "Silencio, Duda"
+   },
    "voz": [
     "¿Es un sí o no?",
     "*Un sí claro y libre* y *entusiasmo*: es un sí.",

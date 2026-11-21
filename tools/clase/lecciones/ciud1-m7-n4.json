@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "OBSTÁCULOS",
-   "columnas": [
-    "Obstáculo",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Económicos",
-     "Costo"
-    ],
-    [
-     "Geográficos",
-     "Distancia"
-    ],
-    [
-     "Culturales",
-     "No conocer derechos"
-    ],
-    [
-     "De tiempo",
-     "Procesos largos"
-    ]
+   "celdas": [
+    {
+     "cab": "ECONÓMICOS",
+     "txt": "Costo"
+    },
+    {
+     "cab": "GEOGRÁFICOS",
+     "txt": "Distancia"
+    },
+    {
+     "cab": "CULTURALES",
+     "txt": "No conocer derechos"
+    },
+    {
+     "cab": "DE TIEMPO",
+     "txt": "Procesos largos"
+    }
    ],
    "voz": [
     "Qué lo dificulta.",
@@ -92,35 +88,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "OBSTÁCULO",
-     "emoji": "🚧"
-    },
-    {
-     "cab": "HERRAMIENTA",
-     "emoji": "🛠️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Distancia",
-     "caja": 0
-    },
-    {
-     "txt": "Defensa pública",
-     "caja": 1
-    },
-    {
-     "txt": "Costo",
-     "caja": 0
-    },
-    {
-     "txt": "Mediación",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "OBSTÁCULO",
+    "emoji": "🚧",
+    "texto": "Distancia, Costo"
+   },
+   "despues": {
+    "cab": "HERRAMIENTA",
+    "emoji": "🛠️",
+    "texto": "Defensa pública, Mediación"
+   },
    "voz": [
     "¿Obstáculo o herramienta?",
     "*Distancia* y *costo*: obstáculos.",

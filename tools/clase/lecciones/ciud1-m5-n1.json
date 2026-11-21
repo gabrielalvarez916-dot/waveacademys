@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "RASGOS",
-   "columnas": [
-    "Rasgo",
-    "Qué significa"
-   ],
-   "filas": [
-    [
-     "Imperio de la ley",
-     "Rige a todos"
-    ],
-    [
-     "Igualdad",
-     "Sin privilegios"
-    ],
-    [
-     "Jueces independientes",
-     "Sin presiones"
-    ],
-    [
-     "Derechos",
-     "Se garantizan"
-    ]
+   "celdas": [
+    {
+     "cab": "IMPERIO DE LA LEY",
+     "txt": "Rige a todos"
+    },
+    {
+     "cab": "IGUALDAD",
+     "txt": "Sin privilegios"
+    },
+    {
+     "cab": "JUECES INDEPENDIENTES",
+     "txt": "Sin presiones"
+    },
+    {
+     "cab": "DERECHOS",
+     "txt": "Se garantizan"
+    }
    ],
    "voz": [
     "Los rasgos.",
@@ -74,33 +70,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "RESPETA",
-     "emoji": "✅"
+     "txt": "Igualdad de todos, Jueces libres"
     },
     {
      "cab": "ROMPE",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Igualdad de todos",
-     "caja": 0
-    },
-    {
-     "txt": "Privilegios",
-     "caja": 1
-    },
-    {
-     "txt": "Jueces libres",
-     "caja": 0
-    },
-    {
-     "txt": "Cambiar reglas",
-     "caja": 1
+     "txt": "Privilegios, Cambiar reglas"
     }
    ],
    "voz": [

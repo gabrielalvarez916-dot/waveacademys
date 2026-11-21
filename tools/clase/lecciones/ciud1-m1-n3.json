@@ -46,29 +46,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "DERECHO Y DEBER",
-   "columnas": [
-    "Derecho",
-    "Responsabilidad"
-   ],
-   "filas": [
-    [
-     "Educación",
-     "Estudiar"
-    ],
-    [
-     "Expresarse",
-     "Sin agredir"
-    ],
-    [
-     "Circular",
-     "Respetar tránsito"
-    ],
-    [
-     "Ambiente sano",
-     "Cuidar lo común"
-    ]
+   "celdas": [
+    {
+     "cab": "EDUCACIÓN",
+     "txt": "Estudiar"
+    },
+    {
+     "cab": "EXPRESARSE",
+     "txt": "Sin agredir"
+    },
+    {
+     "cab": "CIRCULAR",
+     "txt": "Respetar tránsito"
+    },
+    {
+     "cab": "AMBIENTE SANO",
+     "txt": "Cuidar lo común"
+    }
    ],
    "voz": [
     "Cada derecho tiene su responsabilidad.",
@@ -89,31 +85,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "DERECHO",
-     "emoji": "⚖️"
-    },
-    {
-     "cab": "RESPONSABILIDAD",
-     "emoji": "🤲"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Estudiar",
-     "caja": 1
-    },
-    {
-     "txt": "Opinar",
-     "caja": 0
-    },
-    {
-     "txt": "Cuidar la plaza",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "DERECHO",
+    "emoji": "⚖️",
+    "texto": "Opinar"
+   },
+   "despues": {
+    "cab": "RESPONSABILIDAD",
+    "emoji": "🤲",
+    "texto": "Estudiar, Cuidar la plaza"
+   },
    "voz": [
     "¿Derecho o responsabilidad?",
     "*Opinar*: derecho.",

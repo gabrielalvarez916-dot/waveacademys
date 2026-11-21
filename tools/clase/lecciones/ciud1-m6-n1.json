@@ -31,33 +31,29 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "CINCO RASGOS",
-   "columnas": [
-    "Rasgo",
-    "Significa"
-   ],
-   "filas": [
-    [
-     "Universales",
-     "Valen para todos"
-    ],
-    [
-     "Inalienables",
-     "No se quitan"
-    ],
-    [
-     "Indivisibles",
-     "No se separan"
-    ],
-    [
-     "Interdependientes",
-     "Se relacionan"
-    ],
-    [
-     "Progresivos",
-     "Se amplían"
-    ]
+   "items": [
+    {
+     "cab": "UNIVERSALES",
+     "txt": "Valen para todos"
+    },
+    {
+     "cab": "INALIENABLES",
+     "txt": "No se quitan"
+    },
+    {
+     "cab": "INDIVISIBLES",
+     "txt": "No se separan"
+    },
+    {
+     "cab": "INTERDEPENDIENTES",
+     "txt": "Se relacionan"
+    },
+    {
+     "cab": "PROGRESIVOS",
+     "txt": "Se amplían"
+    }
    ],
    "voz": [
     "Sus rasgos.",
@@ -97,29 +93,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "DERECHO HUMANO",
-     "emoji": "🧑‍🤝‍🧑"
+     "txt": "Vivir con dignidad, Educación"
     },
     {
      "cab": "NO LO ES",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Vivir con dignidad",
-     "caja": 0
-    },
-    {
-     "txt": "Un premio",
-     "caja": 1
-    },
-    {
-     "txt": "Educación",
-     "caja": 0
+     "txt": "Un premio"
     }
    ],
    "voz": [

@@ -78,35 +78,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "AYUDA",
-     "emoji": "✅"
-    },
-    {
-     "cab": "DAÑA",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Límites al gasto",
-     "caja": 0
-    },
-    {
-     "txt": "Dinero sin control",
-     "caja": 1
-    },
-    {
-     "txt": "Transparencia",
-     "caja": 0
-    },
-    {
-     "txt": "Publicidad oculta",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "AYUDA",
+    "emoji": "✅",
+    "texto": "Límites al gasto, Transparencia"
+   },
+   "despues": {
+    "cab": "DAÑA",
+    "emoji": "❌",
+    "texto": "Dinero sin control, Publicidad oculta"
+   },
    "voz": [
     "¿Ayuda o daña?",
     "*Límites* y *transparencia*: ayudan.",

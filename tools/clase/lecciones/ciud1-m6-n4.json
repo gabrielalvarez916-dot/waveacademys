@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "EJEMPLOS",
-   "columnas": [
-    "Tratado",
-    "Protege"
-   ],
-   "filas": [
-    [
-     "Pacto civil (1966)",
-     "Libertades"
-    ],
-    [
-     "Pacto social (1966)",
-     "Trabajo y salud"
-    ],
-    [
-     "Convención Niño (1989)",
-     "Niñez"
-    ],
-    [
-     "Convención Mujer (1979)",
-     "Igualdad"
-    ]
+   "celdas": [
+    {
+     "cab": "PACTO CIVIL (1966)",
+     "txt": "Libertades"
+    },
+    {
+     "cab": "PACTO SOCIAL (1966)",
+     "txt": "Trabajo y salud"
+    },
+    {
+     "cab": "CONVENCIÓN NIÑO (1989)",
+     "txt": "Niñez"
+    },
+    {
+     "cab": "CONVENCIÓN MUJER (1979)",
+     "txt": "Igualdad"
+    }
    ],
    "voz": [
     "Algunos tratados.",

@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "FUNCIONES",
-   "columnas": [
-    "Función",
-    "Qué hace"
-   ],
-   "filas": [
-    [
-     "Representar",
-     "Lleva demandas"
-    ],
-    [
-     "Proponer",
-     "Presenta un programa"
-    ],
-    [
-     "Competir",
-     "Presenta candidatos"
-    ],
-    [
-     "Controlar",
-     "Vigila al gobierno"
-    ]
+   "celdas": [
+    {
+     "cab": "REPRESENTAR",
+     "txt": "Lleva demandas"
+    },
+    {
+     "cab": "PROPONER",
+     "txt": "Presenta un programa"
+    },
+    {
+     "cab": "COMPETIR",
+     "txt": "Presenta candidatos"
+    },
+    {
+     "cab": "CONTROLAR",
+     "txt": "Vigila al gobierno"
+    }
    ],
    "voz": [
     "Las funciones de un partido.",
@@ -64,48 +60,34 @@
    ]
   },
   {
-   "t": "comparar",
-   "a": {
-    "cab": "IDEOLOGÍA",
-    "texto": "Cómo ve la sociedad",
-    "emoji": "💭"
-   },
-   "b": {
-    "cab": "PLATAFORMA",
-    "texto": "Lo que promete hacer",
-    "emoji": "📋"
-   },
-   "signo": "+",
+   "t": "antesdespues",
    "voz": [
     "Dos conceptos clave.",
     "La *ideología* es cómo ve la sociedad.",
     "La *plataforma* es lo que promete hacer."
-   ]
+   ],
+   "antes": {
+    "cab": "IDEOLOGÍA",
+    "texto": "Cómo ve la sociedad",
+    "emoji": "💭"
+   },
+   "despues": {
+    "cab": "PLATAFORMA",
+    "texto": "Lo que promete hacer",
+    "emoji": "📋"
+   }
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "GOBIERNO",
-     "emoji": "🏛️"
+     "txt": "Aplica políticas"
     },
     {
      "cab": "OPOSICIÓN",
-     "emoji": "🔍"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Aplica políticas",
-     "caja": 0
-    },
-    {
-     "txt": "Controla y critica",
-     "caja": 1
-    },
-    {
-     "txt": "Propone otras",
-     "caja": 1
+     "txt": "Controla y critica, Propone otras"
     }
    ],
    "voz": [

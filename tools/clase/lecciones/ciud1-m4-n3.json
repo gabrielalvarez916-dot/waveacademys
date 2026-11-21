@@ -55,25 +55,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "A FAVOR DEL OBLIGATORIO",
-   "columnas": [
-    "Argumento",
-    "Idea"
-   ],
-   "filas": [
-    [
-     "Participación",
-     "Vota casi todo el padrón"
-    ],
-    [
-     "Legitimidad",
-     "Más gente representada"
-    ],
-    [
-     "Igualdad",
-     "Participan todos"
-    ]
+   "items": [
+    {
+     "cab": "PARTICIPACIÓN",
+     "txt": "Vota casi todo el padrón"
+    },
+    {
+     "cab": "LEGITIMIDAD",
+     "txt": "Más gente representada"
+    },
+    {
+     "cab": "IGUALDAD",
+     "txt": "Participan todos"
+    }
    ],
    "voz": [
     "Argumentos del obligatorio.",

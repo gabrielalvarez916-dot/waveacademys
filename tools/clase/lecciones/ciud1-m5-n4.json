@@ -21,23 +21,22 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Control de constitucionalidad",
-   "texto": "Los jueces revisan si una norma respeta la constitución",
-   "emoji": "🔍",
+   "t": "comparar",
+   "a": {
+    "cab": "CONTROL DE CONSTITUCIONALIDAD",
+    "texto": "Los jueces revisan si una norma respeta la constitución",
+    "emoji": "🔍"
+   },
+   "b": {
+    "cab": "CONSTITUCIÓN RÍGIDA",
+    "texto": "Difícil de reformar",
+    "emoji": "🔒"
+   },
+   "signo": "vs",
    "voz": [
+    "Dos ideas que se relacionan.",
     "Los jueces hacen el *control de constitucionalidad*.",
-    "Revisan si una norma respeta la constitución."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Constitución rígida",
-   "texto": "Difícil de reformar",
-   "emoji": "🔒",
-   "voz": [
-    "Una constitución *rígida* es difícil de reformar.",
-    "Exige un procedimiento especial."
+    "Una constitución *rígida* es difícil de reformar."
    ]
   },
   {
@@ -64,35 +63,17 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "PROTEGE",
-     "emoji": "✅"
-    },
-    {
-     "cab": "DEBILITA",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Conocerla",
-     "caja": 0
-    },
-    {
-     "txt": "Ignorar un abuso",
-     "caja": 1
-    },
-    {
-     "txt": "Reclamar derechos",
-     "caja": 0
-    },
-    {
-     "txt": "Cambiarla apurados",
-     "caja": 1
-    }
-   ],
+   "t": "antesdespues",
+   "antes": {
+    "cab": "PROTEGE",
+    "emoji": "✅",
+    "texto": "Conocerla, Reclamar derechos"
+   },
+   "despues": {
+    "cab": "DEBILITA",
+    "emoji": "❌",
+    "texto": "Ignorar un abuso, Cambiarla apurados"
+   },
    "voz": [
     "¿Protege o debilita la constitución?",
     "*Conocerla* y *reclamar derechos*: protegen.",

@@ -31,29 +31,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "HERRAMIENTAS",
-   "columnas": [
-    "Herramienta",
-    "Para qué"
-   ],
-   "filas": [
-    [
-     "Censura",
-     "Prohibir publicar"
-    ],
-    [
-     "Propaganda",
-     "Una sola versión"
-    ],
-    [
-     "Culto al líder",
-     "Líder infalible"
-    ],
-    [
-     "Represión",
-     "Perseguir críticos"
-    ]
+   "celdas": [
+    {
+     "cab": "CENSURA",
+     "txt": "Prohibir publicar"
+    },
+    {
+     "cab": "PROPAGANDA",
+     "txt": "Una sola versión"
+    },
+    {
+     "cab": "CULTO AL LÍDER",
+     "txt": "Líder infalible"
+    },
+    {
+     "cab": "REPRESIÓN",
+     "txt": "Perseguir críticos"
+    }
    ],
    "voz": [
     "Las herramientas del autoritarismo.",
