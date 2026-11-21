@@ -1,0 +1,45 @@
+name: Misiones del NIVEL AVANZADO (carga completa)
+# Al subir a main un contenido/<materia>/mision-N/mision-N.json nuevo, hace TODO solo:
+#   1) carga borradores, actividades, Relámpago y examen (cargar_mision_avanzado; si ya estaba, no pisa nada)
+#   2) arma los PDF (argentino y neutro) y los sube a cada lección
+#   3) publica las misiones que quedaron completas
+# Las clases animadas van por voz-clases.yml (al subir tools/clase/lecciones/*.json). Nada se publica hasta que la misión está completa.
+on:
+  push:
+    branches: [main]
+    paths: ['contenido/*/mision-*/mision-*.json']
+  workflow_dispatch:
+    inputs:
+      mision: { description: 'Archivo de la misión (ej. contenido/lengua-1/mision-5/mision-5.json)', required: true }
+concurrency: { group: mision-avanzado, cancel-in-progress: false }
+jobs:
+  mision:
+    runs-on: ubuntu-latest
+    env: { WAVE_GEN_TOKEN: '${{ secrets.WAVE_GEN_TOKEN }}' }
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Fuentes y librerías
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y fonts-dejavu-core
+          pip install reportlab pillow
+      - name: Qué misiones hay que cargar
+        id: cuales
+        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}' }
+        run: |
+          if [ -n "$MANUAL" ]; then L="$MANUAL"
+          else L=$(git diff --name-only "$ANTES" "$GITHUB_SHA" -- 'contenido/*/mision-*/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/*/mision-*/mision-*.json'); fi
+          L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
+          echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
+      - name: Cargar borradores, actividades y examen
+        if: steps.cuales.outputs.lista != ''
+        run: python tools/cargar_mision_avanzado.py ${{ steps.cuales.outputs.lista }}
+      - name: Armar y subir los PDF
+        if: steps.cuales.outputs.lista != ''
+        run: python tools/pdf/generar.py
+      - name: Publicar misiones completas (solo Nivel Avanzado)
+        if: always()
+        run: python tools/publicar_avanzado.py
