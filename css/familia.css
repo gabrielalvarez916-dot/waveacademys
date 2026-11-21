@@ -557,3 +557,23 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .fp-cancelar, .fa-link { background: none; border: 0; padding: 0 6px; font: inherit; font-weight: 700; color: var(--turquesa-oscuro, #065F63); cursor: pointer; text-decoration: underline; }
 .fp-err { color: var(--error-texto, #8A2C1B) !important; font-weight: 700; }
 .fa-pais { margin: 0 2px 14px; color: var(--texto-suave, #4B6062); }
+
+/* Pagos por transferencia */
+.pf-estado { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.pf-estado small { color: var(--texto-suave); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: .75rem; }
+.pf-estado h2 { margin: 4px 0; font-size: 2rem; }
+.pf-estado p { margin: 0; color: var(--texto-suave); font-weight: 600; }
+.pf-sello { display: inline-block; padding: 8px 16px; border-radius: 999px; font-weight: 800; background: #E7EEEC; color: var(--petroleo); }
+.pf-sello.chico { padding: 4px 12px; font-size: .85rem; white-space: nowrap; }
+.pf-sello.ok { background: #CDEFD9; color: #14663A; }
+.pf-sello.plazo { background: #FBEFCB; color: #7A5A0B; }
+.pf-sello.atraso { background: #F8DAD4; color: #8F3326; }
+.pf-datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.pf-dato { position: relative; padding: 14px 16px; background: var(--menta); border-radius: 18px; }
+.pf-dato small { display: block; color: var(--texto-suave); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.pf-dato b { display: block; margin-top: 4px; font-size: 1.05rem; word-break: break-all; }
+.pf-copiar { margin-top: 8px; padding: 6px 12px; border: 2px solid var(--turquesa); border-radius: 10px; background: #fff; color: var(--turquesa); font: inherit; font-weight: 800; cursor: pointer; }
+.pf-form { display: grid; gap: 12px; max-width: 480px; }
+.pf-form label { display: grid; gap: 5px; font-weight: 700; }
+.pf-form input, .pf-form select { padding: 11px 12px; border: 2px solid #cfdcdb; border-radius: 12px; font: inherit; background: #fff; }
+.fa-hist li { display: flex; align-items: center; justify-content: space-between; gap: 12px; }

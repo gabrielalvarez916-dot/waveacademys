@@ -1229,6 +1229,7 @@
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
+    pagos: function () { return WavePagos.vista(vista); },
     facturacion: vistaFacturacion,
     tutorias: vistaTutorias
   };
