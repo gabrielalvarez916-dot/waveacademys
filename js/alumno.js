@@ -966,12 +966,14 @@
 
   window.WaveIconos = { materia: iconoMateria };
 
+  var rutaId = 0;
   async function ruta() {
-    var nombre = (location.hash || '#cursos').slice(1);
+    var mi = ++rutaId, nombre = (location.hash || '#cursos').slice(1);
     // Si todavía le falta elegir un oficio o su trayecto, lo llevamos a la pantalla de elección
     if (nombre !== 'elegir' && nombre !== 'perfil') {
       var st = await estadoEleccion();
       if (st && st.pendiente) { location.hash = '#elegir'; return; }
+      if (mi !== rutaId) return; // el alumno ya pidió otra pantalla mientras esta se resolvía
     }
     var m = /^materia\/([0-9a-f-]{36})(?:\/([0-9a-f-]{36}))?(?:\/([0-9a-f-]{36}))?$/i.exec(nombre);
     if (m) {

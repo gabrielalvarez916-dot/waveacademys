@@ -442,6 +442,7 @@
   // ----- Router interno -----
   var ruta = { tema: null, leccion: null };
   function pintar() {
+    if (!/^#materia\//.test(location.hash)) return; // el alumno ya salió de la materia (ej. «Mis cursos»): no volver a dibujarla encima
     calcular();
     hojaAbierta = null;
     var t = ruta.tema ? D.temas.filter(function (x) { return x.id === ruta.tema; })[0] : null;
@@ -1030,8 +1031,8 @@
     }
     vista.innerHTML = '<div class="mt"><div class="mt-vacio">Cargando tu materia…</div></div>';
     try {
-      D = await cargar(materiaId);
-      D.leido = Date.now();
+      var datos = await cargar(materiaId);
+      datos.leido = Date.now(); D = datos;
       pintar();
     } catch (e) {
       console.error(e);
