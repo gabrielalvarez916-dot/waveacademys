@@ -1,0 +1,120 @@
+{
+ "slug": "medio-mat1-m2-n2",
+ "step_id": "643adad2-3677-4bea-8ec9-6d577e042839",
+ "materia": "Matemática 1",
+ "titulo": "Del 11 al 20",
+ "sub": "Matemática 1 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué número viene después del 10?",
+   "segundos": 5,
+   "respuesta": "¡El 11!",
+   "emoji": "🚂",
+   "titulo": "DEL 11",
+   "sub": "al 20",
+   "voz": [
+    "Desafío: ¿qué número viene después del 10?",
+    "¡El *11*! Once.",
+    "Hoy: *los números del 11 al 20*."
+   ]
+  },
+  {
+   "t": "diezymas",
+   "emoji": "🍬",
+   "n": 13,
+   "texto": "10 y 3 son 13",
+   "voz": [
+    "Esta caja tiene *10 caramelos*.",
+    "Seguimos contando: 11, 12, 13.",
+    "*10 y 3* son *13*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "10 Y ALGO MÁS",
+   "texto": "Del 11 al 19: diez y algo más",
+   "emoji": "📦",
+   "voz": [
+    "Truco: del 11 al 19 son *diez y algo más*."
+   ]
+  },
+  {
+   "t": "diezymas",
+   "emoji": "⭐",
+   "n": 17,
+   "texto": "10 y 7 son 17",
+   "voz": [
+    "Otra caja de 10, ahora con estrellas.",
+    "11, 12, 13, 14, 15, 16, 17.",
+    "*10 y 7* son *17*."
+   ]
+  },
+  {
+   "t": "diezymas",
+   "emoji": "⚽",
+   "n": 20,
+   "texto": "10 y 10 son 20",
+   "voz": [
+    "¿Y si hay dos grupos de 10?",
+    "11, 12, 13, 14, 15, 16, 17, 18, 19, 20.",
+    "*10 y 10* son *20*: ¡veinte!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 11,
+   "hasta": 20,
+   "titulo": "EL TREN SIGUE",
+   "voz": [
+    "El tren de Tomi sigue viaje.",
+    "11, 12, 13, 14, 15, 16, 17, 18, 19, 20.",
+    "¡Llegamos al *20*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 10 y 5?",
+   "opciones": [
+    "15",
+    "14",
+    "50"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Una caja de 10 y 5 sueltos.",
+    "¿Cuántos son en total?",
+    "¡*15*! Diez y cinco, quince."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "11 AL 19",
+     "diez y algo más"
+    ],
+    [
+     "20",
+     "diez y diez"
+    ],
+    [
+     "CONTAR",
+     "seguir desde el 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Del 11 al 19: *diez y algo más*.",
+    "El *20* es diez y diez.",
+    "Para contar, *seguimos desde el 10*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

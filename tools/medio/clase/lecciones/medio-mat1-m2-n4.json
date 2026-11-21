@@ -1,0 +1,158 @@
+{
+ "slug": "medio-mat1-m2-n4",
+ "step_id": "bb036a33-f292-403e-b37e-4f5841e4931e",
+ "materia": "Matemática 1",
+ "titulo": "Ordenar números hasta 20",
+ "sub": "Matemática 1 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🚂",
+   "lineas": [
+    "¡Se desarmó el tren!",
+    "Los vagones quedaron mezclados.",
+    "Hay que ordenarlos."
+   ],
+   "titulo": "ORDENAR",
+   "sub": "números hasta 20",
+   "voz": [
+    "¡Oh, no! ¡Se *desarmó* el tren de Tomi!",
+    "Los vagones quedaron todos mezclados.",
+    "Hay que ponerlos en orden.",
+    "Hoy: *ordenar números hasta 20*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 5,
+   "hasta": 12,
+   "faltan": [
+    8,
+    11
+   ],
+   "titulo": "¿QUÉ VAGONES FALTAN?",
+   "voz": [
+    "Mirá el tren: faltan dos vagones.",
+    "5, 6, 7… ¿y después? 9, 10… ¿y después? 12.",
+    "¡Faltan el *8* y el *11*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Anterior y siguiente",
+   "texto": "El que está antes y el que viene después",
+   "emoji": "↔️",
+   "voz": [
+    "El *anterior* es el número que está antes.",
+    "El *siguiente* es el que viene después."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 10,
+   "max": 20,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 13,
+     "txt": "anterior: 13"
+    },
+    {
+     "v": 14,
+     "txt": "14"
+    },
+    {
+     "v": 15,
+     "txt": "siguiente: 15"
+    }
+   ],
+   "voz": [
+    "Mirá la recta del 10 al 20.",
+    "El *13* va antes del 14: es el anterior.",
+    "Este es el *14*.",
+    "El *15* va después: es el siguiente."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MAYOR",
+    "texto": "18",
+    "emoji": "🐘"
+   },
+   "b": {
+    "cab": "MENOR",
+    "texto": "12",
+    "emoji": "🐭"
+   },
+   "signo": "y",
+   "voz": [
+    "El *18* es mayor: está más lejos del cero.",
+    "El *12* es menor: está más cerca del cero.",
+    "Mayor es *más*; menor es *menos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número va después del 16?",
+   "opciones": [
+    "15",
+    "17",
+    "18"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Qué número va *después* del 16?",
+    "Pensá en el tren de los números.",
+    "¡El *17*! Es el siguiente."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es mayor?",
+   "opciones": [
+    "19",
+    "11"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más. Mirá estos dos números.",
+    "¿Cuál es *mayor*: 19 u 11?",
+    "¡El *19*! Está más lejos del cero."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ANTERIOR",
+     "el que va antes"
+    ],
+    [
+     "SIGUIENTE",
+     "el que va después"
+    ],
+    [
+     "MAYOR",
+     "más lejos del 0"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *anterior* va antes.",
+    "El *siguiente* va después.",
+    "El *mayor* está más lejos del cero.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

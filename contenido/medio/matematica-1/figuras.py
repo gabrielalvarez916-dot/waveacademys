@@ -172,3 +172,64 @@ def igualar(obj, na, nb, accion):
                 ax.plot([.25 + j, .95 + j], [y - .35, y + .35], color=CORAL, lw=3); ax.plot([.25 + j, .95 + j], [y + .35, y - .35], color=CORAL, lw=3)
         cartel(ax, m + 1.5, y, str(meta), c=TEAL, fs=14)
     return png(fig)
+
+
+# ---------------- dibujos de la misión 2 (números hasta 20) ----------------
+def tren(desde, hasta, faltan=(), titulo=None):
+    """Tren con un vagón por número; los que faltan quedan en blanco con un '?'."""
+    N = list(range(desde, hasta + 1)); n = len(N)
+    fig, ax = lienzo(1.0 * n + 2.2, 2.1, n + 1.9, 2.0, 0, -0.1)
+    # locomotora
+    ax.add_patch(FancyBboxPatch((0.15, .45), 1.1, .9, boxstyle="round,pad=0.02,rounding_size=0.15", color=CORAL, ec=OSC, lw=1.4))
+    ax.add_patch(Rectangle((0.3, 1.35), .3, .35, color=OSC)); ax.add_patch(Rectangle((0.75, .85), .38, .35, color="white", ec=OSC, lw=1))
+    for x in (0.45, 1.0): ax.add_patch(Circle((x, .35), .16, color=OSC))
+    for j, v in enumerate(N):
+        x = 1.45 + j
+        falta = v in faltan
+        ax.add_patch(FancyBboxPatch((x, .45), .85, .8, boxstyle="round,pad=0.02,rounding_size=0.12", fill=not falta, color=[TEAL, AMBAR, AZUL, LILA, VERDE][j % 5], ec=CORAL if falta else OSC, lw=2 if falta else 1.4, ls="--" if falta else "-"))
+        if falta: ax.add_patch(FancyBboxPatch((x, .45), .85, .8, boxstyle="round,pad=0.02,rounding_size=0.12", color="white", ec=CORAL, lw=2, ls="--"))
+        ax.text(x + .425, .85, "?" if falta else str(v), ha="center", va="center", fontsize=16, color=CORAL if falta else "white", **F)
+        for dx in (.2, .65): ax.add_patch(Circle((x + dx, .35), .12, color=OSC))
+        if j: ax.plot([x - .15, x], [.6, .6], color=OSC, lw=2)
+    ax.plot([0, n + 1.6], [.2, .2], color=OSC, lw=2)
+    return png(fig)
+
+
+def diez_y_mas(obj, n, texto=None):
+    """Una caja de 10 (dos filas de 5) y los sueltos al lado: 10 y n-10."""
+    sueltos = n - 10
+    fig, ax = lienzo(5.6 + 1.0 * min(5, sueltos) + 1.5, 3.0, 6.6 + min(5, sueltos) + 1.2, 2.9, 0, -0.5)
+    ax.add_patch(FancyBboxPatch((0.1, 0.1), 5.3, 2.4, boxstyle="round,pad=0.02,rounding_size=0.25", color="#fff4d6", ec=AMBAR, lw=2.2))
+    for k in range(10): OBJ[obj](ax, 0.75 + (k % 5), 1.85 - (k // 5) * 1.05)
+    cartel(ax, 2.75, -0.25, "10", c=AMBAR, tc=OSC, fs=13)
+    ax.text(5.95, 1.3, "+", ha="center", va="center", fontsize=30, color=OSC, **F)
+    for k in range(sueltos): OBJ[obj](ax, 6.8 + (k % 5), 1.85 - (k // 5) * 1.05)
+    if texto: cartel(ax, 6.8 + (min(5, sueltos) - 1) / 2, -0.25, texto, c=TEAL, fs=13)
+    return png(fig)
+
+
+def tarjetas(pares, ocultar=()):
+    """Tarjetas número / palabra. ocultar: índices de tarjetas con la palabra en blanco (para completar)."""
+    n = len(pares); fig, ax = lienzo(2.6 * n, 2.4, 2.6 * n, 2.4, 0, 0)
+    for i, (num, pal) in enumerate(pares):
+        x = 2.6 * i + .15
+        ax.add_patch(FancyBboxPatch((x, .15), 2.3, 2.1, boxstyle="round,pad=0.02,rounding_size=0.2", color=MENTA, ec=TEAL, lw=1.8))
+        ax.text(x + 1.15, 1.45, str(num), ha="center", va="center", fontsize=34, color=OSC, **F)
+        ax.text(x + 1.15, .55, "_______" if i in ocultar else pal.upper(), ha="center", va="center", fontsize=13, color=TEAL, **F)
+    return png(fig)
+
+
+def recta_num(desde, hasta, marcas=(), flechas=()):
+    """Recta numérica. marcas: [(valor, etiqueta)]; flechas: [(desde, hasta)] arcos de salto."""
+    n = hasta - desde
+    fig, ax = lienzo(0.62 * n + 1.4, 2.4, n + 1.2, 2.4, -0.6, -0.9)
+    ax.annotate("", xy=(n + .5, 0), xytext=(-.5, 0), arrowprops=dict(arrowstyle="-|>", color=OSC, lw=1.8))
+    for v in range(desde, hasta + 1):
+        x = v - desde; ax.plot([x, x], [-.12, .12], color=OSC, lw=1.4); ax.text(x, -.45, str(v), ha="center", va="center", fontsize=11, color=OSC, **F)
+    for v, et in marcas:
+        x = v - desde; ax.add_patch(Circle((x, 0), .2, color=AMBAR, ec=OSC, lw=1.2, zorder=3))
+        if et: cartel(ax, x, .95, et, c=TEAL, fs=10)
+    for a, b in flechas:
+        from matplotlib.patches import FancyArrowPatch
+        ax.add_patch(FancyArrowPatch((a - desde, .25), (b - desde, .25), connectionstyle="arc3,rad=-.6", arrowstyle="-|>", mutation_scale=16, color=CORAL, lw=2))
+    return png(fig)

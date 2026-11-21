@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat1-m2-n3",
+ "step_id": "da6c3011-c082-45b5-bc35-61c07a894bfa",
+ "materia": "Matemática 1",
+ "titulo": "Escribir y leer números",
+ "sub": "Matemática 1 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "✏️",
+   "final": "🔢",
+   "titulo": "ESCRIBIR",
+   "sub": "y leer números",
+   "voz": [
+    "Tomi quiere pintar el número de su vagón.",
+    "¿Cómo se escribe *doce*?",
+    "Hoy: *escribir y leer números*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "1",
+    "2"
+   ],
+   "grande": "12",
+   "etiqueta": "DOCE",
+   "voz": [
+    "Doce tiene *dos cifras*: un 1 y un 2.",
+    "Juntas forman el *12*.",
+    "Y se lee: *doce*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SE ESCRIBE",
+    "texto": "15",
+    "emoji": "✏️"
+   },
+   "b": {
+    "cab": "SE LEE",
+    "texto": "quince",
+    "emoji": "🗣️"
+   },
+   "signo": "=",
+   "voz": [
+    "Con cifras se escribe así: *15*.",
+    "Con palabras se lee así: *quince*.",
+    "¡Es el mismo número!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir 21 para doce",
+     "bien": "Primero el 1, después el 2"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "*Doce* es un 1 y un 2: no al revés."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "1",
+    "8"
+   ],
+   "grande": "18",
+   "etiqueta": "DIECIOCHO",
+   "voz": [
+    "Ahora, *dieciocho*.",
+    "Un 1 y un 8: *18*.",
+    "Se lee *dieciocho*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se escribe catorce?",
+   "opciones": [
+    "41",
+    "14",
+    "4"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cómo se escribe *catorce*?",
+    "Pensá: ¿qué cifra va primero?",
+    "¡*14*! Un 1 y un 4."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL PRIMERO",
+   "texto": "Del 10 al 19 empiezan con 1",
+   "emoji": "👀",
+   "voz": [
+    "Truco: del 10 al 19, todos empiezan con *1*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCRIBIR",
+     "con cifras: 12"
+    ],
+    [
+     "LEER",
+     "con palabras: doce"
+    ],
+    [
+     "ORDEN",
+     "primero el 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Escribimos con *cifras*: 12.",
+    "Leemos con *palabras*: doce.",
+    "Del 10 al 19, primero va el *1*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

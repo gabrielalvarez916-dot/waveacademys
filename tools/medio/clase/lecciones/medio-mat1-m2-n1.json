@@ -1,0 +1,118 @@
+{
+ "slug": "medio-mat1-m2-n1",
+ "step_id": "7319a71d-3fc1-4559-86ac-bc89a2911b3c",
+ "materia": "Matemática 1",
+ "titulo": "Del 1 al 10",
+ "sub": "Matemática 1 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🚂",
+   "lineas": [
+    "Tomi viaja en el tren de los números.",
+    "Cada vagón tiene un número.",
+    "¿Los conocés?"
+   ],
+   "titulo": "DEL 1",
+   "sub": "al 10",
+   "voz": [
+    "Tomi viaja en el *tren de los números*.",
+    "Cada vagón tiene su número pintado.",
+    "¿Los conocés? ¡Vamos a verlos!",
+    "Hoy: *los números del 1 al 10*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 1,
+   "hasta": 10,
+   "titulo": "EL TREN DE TOMI",
+   "voz": [
+    "¡Acá llega el tren! Contemos los vagones.",
+    "1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
+    "¡Diez vagones! El último es el *10*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TUS DOS MANOS",
+   "texto": "Diez dedos: ¡hasta el 10!",
+   "emoji": "🙌",
+   "voz": [
+    "Truco: con tus *dos manos* tenés 10 dedos."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LAS MANZANAS",
+   "emoji": "🍎",
+   "cantidad": 7,
+   "voz": [
+    "El tren lleva manzanas. ¡Contemos!",
+    "1, 2, 3, 4, 5, 6, 7.",
+    "¡Hay *7 manzanas*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas estrellas hay? ⭐⭐⭐⭐⭐⭐⭐⭐⭐",
+   "opciones": [
+    "8",
+    "9",
+    "10"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cuántas estrellas hay?",
+    "Contalas con el dedo, despacio.",
+    "¡Son *9 estrellas*! ¡Muy bien!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Saltear el 6",
+     "bien": "Decir todos, en orden"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No te saltees ninguno: 5, *6*, 7."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DEL 1 AL 10",
+     "en orden"
+    ],
+    [
+     "DOS MANOS",
+     "diez dedos"
+    ],
+    [
+     "EL ÚLTIMO",
+     "dice cuántos hay"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *del 1 al 10*, en orden.",
+    "Dos manos tienen *diez dedos*.",
+    "El *último número* dice cuántos hay.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
