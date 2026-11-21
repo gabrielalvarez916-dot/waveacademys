@@ -577,3 +577,5 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .pf-form label { display: grid; gap: 5px; font-weight: 700; }
 .pf-form input, .pf-form select { padding: 11px 12px; border: 2px solid #cfdcdb; border-radius: 12px; font: inherit; background: #fff; }
 .fa-hist li { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+.pf-gris { opacity: .6; filter: grayscale(.7); }

@@ -1,10 +1,12 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
+const RECARGO = 1.05;
 // Matrícula: desde noviembre se cobra la del año siguiente. Pagando antes de febrero de ese año, va el precio anticipado.
 function matriculaHoy(mat: any) {
   const hoy = new Date(), mes = hoy.getMonth() + 1, anioHoy = hoy.getFullYear();
   const anio = mes >= (Number(mat.abre_mes) || 11) ? anioHoy + 1 : anioHoy;
   const anticipada = anio > anioHoy || mes < (Number(mat.anticipado_hasta_mes) || 2);
-  const usd = anticipada && Number(mat.monto_anticipado_usd) ? Number(mat.monto_anticipado_usd) : Number(mat.monto_usd) || 0;
+  const base = anticipada && Number(mat.monto_anticipado_usd) ? Number(mat.monto_anticipado_usd) : Number(mat.monto_usd) || 0;
+  const usd = Math.round(base * RECARGO * 100) / 100; // +5% por el costo del cobro internacional
   return { anio, usd, anticipada };
 }
 
@@ -132,7 +134,7 @@ Deno.serve(async (req) => {
       const { data: t } = await admin.from("tarifas").select("id, cuota_mensual_usd, paypal_plan_id, paypal_plan_usd")
         .eq("nivel", b.nivel).eq("modalidad", b.modalidad).eq("activa", true).maybeSingle();
       if (!t) return json({ error: "Esa modalidad no está disponible para ese nivel" }, 400);
-      const usd = Number(t.cuota_mensual_usd);
+      const usd = Math.round(Number(t.cuota_mensual_usd) * RECARGO * 100) / 100; // +5% por el costo del cobro internacional
       let plan = t.paypal_plan_id;
       if (!plan || Number(t.paypal_plan_usd) !== usd) { // un plan por precio: si el precio cambió, se crea otro
         const { data: cfg } = await admin.from("app_settings").select("value").eq("key", "paypal").maybeSingle();

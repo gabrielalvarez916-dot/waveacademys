@@ -936,7 +936,7 @@
         (m.pagada ? '<p class="fa-aviso">✓ La matrícula ' + (m.anio || '') + ' ya está paga.</p>'
           : arg ? '<p class="fa-intro">' + esc(dinero(m.monto_ars, 'ARS')) + ' por año, en hasta ' + m.cuotas_max + ' cuotas con tarjeta' + (m.anticipada ? ' (precio por pago antes de febrero)' : '') + '.</p>' +
               '<button type="button" class="boton fa-boton" id="fa-pagar-mat">Pagar con Mercado Pago</button>'
-            : '<p class="fa-intro">' + esc(usd(m.monto_usd)) + ' por año, en un pago' + (m.anticipada ? ' (precio por pago antes de febrero)' : '') + '.</p>' +
+            : '<p class="fa-intro">' + esc(usd(m.monto_usd * RECARGO_PAYPAL)) + ' por año, en un pago (incluye 5% de costo de gestión del pago internacional)' + (m.anticipada ? ' (precio por pago antes de febrero)' : '') + '.</p>' +
               '<button type="button" class="boton fa-boton fa-pp" id="fa-pagar-mat-pp">Pagar con PayPal</button>') +
       '</section>' +
       '<section class="fa-card"><h2>Sumar una suscripción</h2>' +
@@ -955,7 +955,7 @@
       selM.innerHTML = ts.map(function (t) { return '<option value="' + t.modalidad + '">' + NOMBRE_MOD[t.modalidad] + '</option>'; }).join('');
       verPrecio();
     }
-    function verPrecio() { var t = tarifa(); precio.innerHTML = !t ? '' : arg ? '<b>' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes</b>' : '<b>' + esc(usd(t.cuota_mensual_usd)) + ' por mes</b>'; }
+    function verPrecio() { var t = tarifa(); precio.innerHTML = !t ? '' : arg ? '<b>' + esc(dinero(t.cuota_mensual_ars, 'ARS')) + ' por mes</b>' : '<b>' + esc(usd(t.cuota_mensual_usd * RECARGO_PAYPAL)) + ' por mes</b> <small>(incluye 5% de costo de gestión del pago internacional)</small>'; }
     selN.addEventListener('change', mods); selM.addEventListener('change', verPrecio); mods();
     async function ir(body, btn, fn) {
       err.hidden = true; btn.disabled = true; var txt = btn.textContent; btn.textContent = 'Preparando el pago…';
@@ -975,8 +975,14 @@
     if (bmp) bmp.addEventListener('click', function () { ir({ action: 'matricula' }, this, 'paypal'); });
   }
 
+  // Pagos: en Argentina, por transferencia; en otros países, suscripción y matrícula con PayPal (precio + 5%)
+  function vistaPagos() {
+    if (PAIS_FAM && PAIS_FAM !== 'Argentina') return vistaFacturacion();
+    return WavePagos.vista(vista);
+  }
+  var RECARGO_PAYPAL = 1.05;
   async function vistaFacturacion() {
-    vista.innerHTML = '<h1 class="vista-titulo">Facturación</h1><div id="facturacion"></div>';
+    vista.innerHTML = '<h1 class="vista-titulo">Pagos</h1><div id="facturacion"></div>';
     var cont = document.getElementById('facturacion');
     cont.innerHTML = '<div class="vacio">Cargando…</div>';
     try {
@@ -1229,8 +1235,8 @@
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
-    pagos: function () { return WavePagos.vista(vista); },
-    facturacion: vistaFacturacion,
+    pagos: vistaPagos,
+    facturacion: vistaPagos,
     tutorias: vistaTutorias
   };
 
