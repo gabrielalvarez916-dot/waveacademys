@@ -1,0 +1,227 @@
+{
+ "slug": "soc1-m5-n1",
+ "step_id": "3029e488-5ba8-4032-b5fd-dd5a3a00cfa3",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Recursos que se renuevan y recursos que se agotan",
+ "sub": "Ciencias Sociales Integradas I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿El petróleo es un recurso renovable? Pensalo.",
+   "segundos": 6,
+   "respuesta": "No: tarda millones de años en formarse",
+   "emoji": "🛢️",
+   "titulo": "LOS RECURSOS",
+   "sub": "se renuevan... o se agotan",
+   "voz": [
+    "Desafío: ¿el petróleo es un recurso renovable? Seis segundos.",
+    "No: tarda millones de años en formarse, y lo usamos mucho más rápido.",
+    "Hoy: *los recursos naturales*."
+   ],
+   "neutro": {
+    "texto": "¿El petróleo es un recurso renovable? Piénsalo.",
+    "voz": [
+     "Desafío: ¿el petróleo es un recurso renovable? Seis segundos.",
+     "No: tarda millones de años en formarse, y lo usamos mucho más rápido.",
+     "Hoy: *los recursos naturales*."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Recurso natural",
+   "texto": "Lo que la sociedad aprovecha de la naturaleza",
+   "emoji": "🌳",
+   "voz": [
+    "Un *recurso natural* es un elemento de la naturaleza que la sociedad aprovecha.",
+    "Depende de la época y la tecnología: el petróleo no servía hasta que existieron los motores."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "RENOVABLE",
+    "texto": "Se repone con el tiempo",
+    "emoji": "☀️"
+   },
+   "b": {
+    "cab": "NO RENOVABLE",
+    "texto": "Tarda millones de años",
+    "emoji": "🛢️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos grandes grupos.",
+    "Los *renovables* se reponen: el sol, el viento, el agua, los bosques.",
+    "Los *no renovables* tardan millones de años: petróleo, gas, carbón y minerales."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Un renovable que se agota",
+    "emoji": "⚠️"
+   },
+   "items": [
+    {
+     "txt": "Pesca excesiva",
+     "emoji": "🎣"
+    },
+    {
+     "txt": "Tala sin control",
+     "emoji": "🪓"
+    }
+   ],
+   "voz": [
+    "Un recurso renovable también se puede agotar.",
+    "Si se pesca más rápido de lo que los peces se reproducen.",
+    "O si se tala más rápido de lo que el bosque crece."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🌳",
+    "texto": "bosque nativo en pie"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "🪵",
+    "texto": "campo desmontado"
+   },
+   "voz": [
+    "Así cambia un lugar cuando el uso es excesivo.",
+    "Antes, el bosque nativo del Chaco en pie; después, un campo desmontado."
+   ],
+   "neutro": {
+    "antes": {
+     "cab": "ANTES",
+     "emoji": "🌳",
+     "texto": "bosque tropical en pie"
+    },
+    "despues": {
+     "cab": "DESPUÉS",
+     "emoji": "🪵",
+     "texto": "campo desmontado"
+    },
+    "voz": [
+     "Así cambia un lugar cuando el uso es excesivo.",
+     "Antes, un bosque tropical en pie; después, un campo desmontado."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Uso sostenible",
+   "texto": "Usar el recurso cuidándolo para el futuro",
+   "emoji": "♻️",
+   "voz": [
+    "El *uso sostenible* cuida el recurso para las generaciones futuras.",
+    "Se usa sin agotarlo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "RENOVABLE",
+     "emoji": "☀️"
+    },
+    {
+     "cab": "NO RENOVABLE",
+     "emoji": "🛢️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Viento",
+     "caja": 0
+    },
+    {
+     "txt": "Petróleo",
+     "caja": 1
+    },
+    {
+     "txt": "Carbón",
+     "caja": 1
+    },
+    {
+     "txt": "Bosques",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Renovable o no renovable?",
+    "*Viento* y *bosques*, renovables.",
+    "*Petróleo* y *carbón*, no renovables."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un recurso renovable usado más rápido de lo que se renueva, ¿puede agotarse?",
+   "opciones": [
+    "Sí",
+    "No",
+    "Solo si es mineral"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: un recurso renovable usado más rápido de lo que se renueva.",
+    "¿Puede agotarse?",
+    "*Sí*: renovable no significa inagotable."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Renovable es inagotable",
+     "bien": "Puede agotarse"
+    },
+    {
+     "mal": "Todos quieren lo mismo",
+     "bien": "Cada actor tiene intereses distintos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que renovable es *inagotable*.",
+    "Y pensar que todos los actores *quieren lo mismo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *recurso* es lo que la sociedad aprovecha.",
+    "Hay *renovables* y *no renovables*.",
+    "Hasta los renovables se *agotan* si se usan mal.",
+    "Y el uso *sostenible* los cuida.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RECURSO",
+     "lo que se aprovecha"
+    ],
+    [
+     "RENOVABLE",
+     "se repone"
+    ],
+    [
+     "NO RENOVABLE",
+     "millones de años"
+    ],
+    [
+     "SOSTENIBLE",
+     "cuida el futuro"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

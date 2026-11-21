@@ -1,0 +1,198 @@
+{
+ "slug": "soc1-m6-n1",
+ "step_id": "5e1454b9-74fb-43f0-9f22-19c1bf1a9c6f",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Suelos que se degradan: erosión y expansión agrícola",
+ "sub": "Ciencias Sociales Integradas I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Don Raúl",
+    "emoji": "👨‍🌾"
+   },
+   "lugar": "🌾",
+   "lineas": [
+    "Don Raúl sembró soja diez años seguidos.",
+    "Cada cosecha rendía menos."
+   ],
+   "titulo": "EL SUELO",
+   "sub": "que se degrada",
+   "voz": [
+    "Don Raúl sembró soja diez años seguidos en el mismo campo.",
+    "Cada cosecha rendía menos.",
+    "Hoy: *los suelos que se degradan*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Erosión",
+   "texto": "El agua y el viento arrastran el suelo",
+   "emoji": "🌬️",
+   "voz": [
+    "La *erosión* es el desgaste del suelo por el agua y el viento.",
+    "Se lleva la capa fértil, la que hace crecer las plantas."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Qué degrada el suelo",
+    "emoji": "🪱"
+   },
+   "items": [
+    {
+     "txt": "Deforestación",
+     "emoji": "🪓"
+    },
+    {
+     "txt": "Monocultivo",
+     "emoji": "🌱"
+    },
+    {
+     "txt": "Sobrepastoreo",
+     "emoji": "🐄"
+    }
+   ],
+   "voz": [
+    "Tres causas principales.",
+    "La *deforestación*: sin árboles, las raíces no sujetan el suelo.",
+    "El *monocultivo*: repetir el mismo cultivo agota los nutrientes.",
+    "Y el *sobrepastoreo*: demasiados animales dejan el suelo pelado."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🌳",
+    "texto": "monte en el Gran Chaco"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "🌾",
+    "texto": "campo de cultivo"
+   },
+   "voz": [
+    "Así avanza la agricultura.",
+    "Antes, monte en el Gran Chaco; después, campos de cultivo."
+   ],
+   "neutro": {
+    "antes": {
+     "cab": "ANTES",
+     "emoji": "🌳",
+     "texto": "monte en el Gran Chaco sudamericano"
+    },
+    "despues": {
+     "cab": "DESPUÉS",
+     "emoji": "🌾",
+     "texto": "campo de cultivo"
+    },
+    "voz": [
+     "Así avanza la agricultura.",
+     "Antes, monte en el Gran Chaco; después, campos de cultivo."
+    ]
+   }
+  },
+  {
+   "t": "definicion",
+   "palabra": "Desertificación",
+   "texto": "Un suelo fértil que se vuelve desierto",
+   "emoji": "🏜️",
+   "voz": [
+    "La *desertificación* es cuando un suelo fértil se vuelve desierto.",
+    "Pasa cuando pierde su cubierta de plantas y sus nutrientes."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO CUIDARLO",
+   "items": [
+    {
+     "txt": "Rotar cultivos",
+     "emoji": "🔄"
+    },
+    {
+     "txt": "Siembra directa",
+     "emoji": "🌱"
+    },
+    {
+     "txt": "Cortinas de árboles",
+     "emoji": "🌳"
+    }
+   ],
+   "voz": [
+    "Tres prácticas que cuidan el suelo.",
+    "*Rotar cultivos*: repone nutrientes.",
+    "*Siembra directa*: el suelo queda cubierto.",
+    "*Cortinas de árboles*: frenan el viento."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cuida más el suelo?",
+   "opciones": [
+    "La rotación de cultivos",
+    "El monocultivo",
+    "La tala"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué cuida más el suelo?",
+    "¿La rotación de cultivos, el monocultivo o la tala?",
+    "La *rotación de cultivos*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El suelo se renueva rápido",
+     "bien": "Tarda siglos"
+    },
+    {
+     "mal": "Sembrar siempre lo mismo no daña",
+     "bien": "Agota los nutrientes"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el suelo *se renueva rápido*.",
+    "Y pensar que sembrar *siempre lo mismo* no daña."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *erosión* se lleva el suelo.",
+    "Sus causas: tala, monocultivo y sobrepastoreo.",
+    "Puede llegar a la *desertificación*.",
+    "Se cuida con *rotación* y siembra directa.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EROSIÓN",
+     "agua y viento"
+    ],
+    [
+     "CAUSAS",
+     "tala y monocultivo"
+    ],
+    [
+     "DESIERTO",
+     "desertificación"
+    ],
+    [
+     "CUIDADO",
+     "rotar cultivos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "slug": "soc1-m5-n2",
+ "step_id": "e6acbef3-5c27-474d-bb7c-54247c97bec1",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Petróleo, gas y carbón: recursos estratégicos",
+ "sub": "Ciencias Sociales Integradas I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Sube el petróleo y se encarece todo",
+   "bajada": "Transporte, comida y plásticos, más caros",
+   "emoji": "⛽",
+   "titulo": "PETRÓLEO, GAS Y CARBÓN",
+   "sub": "recursos estratégicos",
+   "voz": [
+    "Último momento: sube el precio del petróleo y se encarece todo.",
+    "Transporte, comida y plásticos, más caros.",
+    "Hoy: *petróleo, gas y carbón*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Combustibles fósiles",
+   "texto": "Petróleo, gas y carbón: se formaron en millones de años",
+   "emoji": "🪨",
+   "voz": [
+    "Los *combustibles fósiles* se formaron por restos de seres vivos acumulados bajo tierra.",
+    "Tardaron millones de años, por eso son *no renovables*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PARA QUÉ SE USAN",
+   "columnas": [
+    "Recurso",
+    "Usos"
+   ],
+   "filas": [
+    [
+     "Petróleo",
+     "Nafta, plásticos"
+    ],
+    [
+     "Gas",
+     "Cocinar, calefacción"
+    ],
+    [
+     "Carbón",
+     "Electricidad, acero"
+    ]
+   ],
+   "voz": [
+    "Sus usos principales.",
+    "El *petróleo*: nafta, gasoil, plásticos y asfalto.",
+    "El *gas*: cocinar, calefacción, industrias y electricidad.",
+    "El *carbón*: electricidad y fabricación de acero."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "Vaca Muerta",
+   "antes": "formación de petróleo y gas",
+   "despues": "en Neuquén",
+   "texto": "Se extraen con técnicas especiales",
+   "emoji": "⛏️",
+   "voz": [
+    "En la Argentina, la formación *Vaca Muerta*, en Neuquén, tiene petróleo y gas.",
+    "Se extraen con técnicas especiales."
+   ],
+   "neutro": {
+    "numero": "Venezuela",
+    "antes": "mayores reservas",
+    "despues": "de petróleo de un país",
+    "texto": "Muchos países dependen de importarlo",
+    "emoji": "⛏️",
+    "voz": [
+     "Venezuela tiene las mayores *reservas* de petróleo de un solo país.",
+     "Pero muchos países dependen de importar petróleo."
+    ]
+   }
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Por qué son estratégicos",
+    "emoji": "🎯"
+   },
+   "items": [
+    {
+     "txt": "Mueven la economía",
+     "emoji": "🏭"
+    },
+    {
+     "txt": "Se reparten desigual",
+     "emoji": "🗺️"
+    },
+    {
+     "txt": "Muchos los importan",
+     "emoji": "🚢"
+    }
+   ],
+   "voz": [
+    "¿Por qué decimos que son *estratégicos*?",
+    "Porque *mueven la economía*: transporte, industria y energía.",
+    "Porque están *repartidos desigual*: Medio Oriente concentra muchísimo.",
+    "Y porque muchos países *dependen de importarlos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CARBÓN",
+    "texto": "El que más CO₂ emite",
+    "emoji": "⚫"
+   },
+   "b": {
+    "cab": "GAS",
+    "texto": "Emite menos CO₂",
+    "emoji": "🔥"
+   },
+   "signo": "vs",
+   "voz": [
+    "Al quemarlos liberan *dióxido de carbono*, que refuerza el efecto invernadero.",
+    "El *carbón* es el que más emite.",
+    "El *gas*, algo menos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué región concentra las mayores reservas de petróleo?",
+   "opciones": [
+    "Medio Oriente",
+    "Europa",
+    "Oceanía"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué región concentra las mayores reservas de petróleo?",
+    "¿Medio Oriente, Europa u Oceanía?",
+    "*Medio Oriente*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El que produce, consume",
+     "bien": "Muchos consumen más de lo que producen"
+    },
+    {
+     "mal": "El petróleo sirve solo de combustible",
+     "bien": "También se hacen plásticos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que quien *produce* es quien *consume*.",
+    "Y pensar que el petróleo sirve *solo de combustible*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *fósiles* tardan millones de años.",
+    "Se usan para energía, plásticos y acero.",
+    "Son *estratégicos*.",
+    "Y al quemarlos emiten *CO2*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FÓSILES",
+     "millones de años"
+    ],
+    [
+     "USOS",
+     "energía y plásticos"
+    ],
+    [
+     "ESTRATÉGICOS",
+     "muchos dependen"
+    ],
+    [
+     "COSTO",
+     "emiten CO₂"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

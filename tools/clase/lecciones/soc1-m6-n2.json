@@ -1,0 +1,204 @@
+{
+ "slug": "soc1-m6-n2",
+ "step_id": "0ef71248-d8a1-4e6a-9c78-7f8eacf2bcde",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Contaminación del aire, el agua y la tierra",
+ "sub": "Ciencias Sociales Integradas I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ALERTA",
+   "titular": "Peces muertos en el río de la ciudad",
+   "bajada": "Vecinos denuncian vertidos de residuos",
+   "emoji": "🐟",
+   "titulo": "CONTAMINACIÓN",
+   "sub": "aire, agua y tierra",
+   "voz": [
+    "Alerta: aparecen peces muertos en el río de la ciudad.",
+    "Los vecinos denuncian vertidos de residuos.",
+    "Hoy: *la contaminación* del aire, el agua y la tierra."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES TIPOS",
+   "columnas": [
+    "Tipo",
+    "Causa"
+   ],
+   "filas": [
+    [
+     "Aire",
+     "Humo de autos y fábricas"
+    ],
+    [
+     "Agua",
+     "Residuos y cloacas"
+    ],
+    [
+     "Tierra",
+     "Basura y derrames"
+    ]
+   ],
+   "voz": [
+    "Tres tipos de contaminación.",
+    "El *aire*: humo de autos, fábricas y quemas.",
+    "El *agua*: residuos de industrias y cloacas.",
+    "La *tierra*: basura y derrames."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Matanza-Riachuelo",
+   "texto": "Cuenca muy contaminada de Buenos Aires",
+   "emoji": "🏭",
+   "voz": [
+    "La cuenca *Matanza-Riachuelo* recibe residuos de industrias y cloacas de millones de personas.",
+    "Es una de las más contaminadas de la Argentina."
+   ],
+   "neutro": {
+    "palabra": "Ríos urbanos",
+    "texto": "Muchos ríos de grandes ciudades están contaminados",
+    "voz": [
+     "Muchos *ríos de grandes ciudades* reciben residuos de industrias y cloacas.",
+     "Están entre los más contaminados de cada país."
+    ]
+   }
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Escalas del problema",
+    "emoji": "🔎"
+   },
+   "items": [
+    {
+     "txt": "Local",
+     "emoji": "🏘️"
+    },
+    {
+     "txt": "Regional",
+     "emoji": "🗺️"
+    },
+    {
+     "txt": "Global",
+     "emoji": "🌍"
+    }
+   ],
+   "voz": [
+    "La contaminación tiene distintas *escalas*.",
+    "*Local*: un arroyo de un barrio.",
+    "*Regional*: una cuenca que cruza provincias o países.",
+    "*Global*: los plásticos en los océanos o los gases de la atmósfera."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LOCAL",
+     "emoji": "🏘️"
+    },
+    {
+     "cab": "GLOBAL",
+     "emoji": "🌍"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Arroyo de un barrio",
+     "caja": 0
+    },
+    {
+     "txt": "Plástico en el mar",
+     "caja": 1
+    },
+    {
+     "txt": "Humo de una fábrica",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Local o global?",
+    "El *arroyo* y el *humo de una fábrica*, locales.",
+    "Los *plásticos en el océano*, globales."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Los plásticos en el océano, ¿de qué escala son?",
+   "opciones": [
+    "Global",
+    "Local",
+    "De hogar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: los plásticos en el océano.",
+    "¿Global, local o de hogar?",
+    "*Global*: afectan a todos los mares."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Consecuencias",
+   "texto": "Enfermedades, agua no apta y suelos dañados",
+   "emoji": "⚠️",
+   "voz": [
+    "La contaminación tiene consecuencias.",
+    "Enfermedades respiratorias, agua no apta para beber y suelos dañados."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Solo afecta a quien contamina",
+     "bien": "Afecta a todos"
+    },
+    {
+     "mal": "El aire no cruza fronteras",
+     "bien": "Los gases viajan con el viento"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Pensar que afecta *solo a quien contamina*.",
+    "Y creer que el aire *no cruza fronteras*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay contaminación del *aire*, del *agua* y de la *tierra*.",
+    "Tiene escalas: *local*, *regional* y *global*.",
+    "Y daña la salud y el ambiente.",
+    "Cuidarlo es de todos.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "AIRE",
+     "humo y gases"
+    ],
+    [
+     "AGUA",
+     "residuos"
+    ],
+    [
+     "TIERRA",
+     "basura"
+    ],
+    [
+     "ESCALAS",
+     "local a global"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

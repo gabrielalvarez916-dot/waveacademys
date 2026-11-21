@@ -1,0 +1,224 @@
+{
+ "sin_variante": true,
+ "slug": "soc1-m5-n4",
+ "step_id": "06577aa6-32ec-469f-b28d-f43f2316036a",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Minerales y cultivos que mueven la economía mundial",
+ "sub": "Ciencias Sociales Integradas I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Fede",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mi celu usa litio 🔋"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y de dónde sale?"
+    },
+    {
+     "yo": false,
+     "txt": "De salares de Sudamérica 🌎"
+    }
+   ],
+   "titulo": "MINERALES Y CULTIVOS",
+   "sub": "que mueven la economía",
+   "voz": [
+    "Fede le cuenta a Mati que su celular usa litio.",
+    "Mati pregunta de dónde sale.",
+    "Fede: de *salares de Sudamérica*.",
+    "Hoy: *minerales y cultivos* que mueven la economía."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Commodity",
+   "texto": "Materia prima con precio mundial",
+   "emoji": "🚢",
+   "voz": [
+    "Una *materia prima* o *commodity* se compra y se vende en todo el mundo a un precio internacional.",
+    "Por ejemplo: soja, cobre, petróleo, café."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "MINERALES CLAVE",
+   "columnas": [
+    "Mineral",
+    "Uso",
+    "Dónde"
+   ],
+   "filas": [
+    [
+     "Cobre",
+     "Cables",
+     "Chile y Perú"
+    ],
+    [
+     "Litio",
+     "Baterías",
+     "Arg., Bolivia, Chile"
+    ],
+    [
+     "Hierro",
+     "Acero",
+     "Brasil, Australia"
+    ]
+   ],
+   "voz": [
+    "Tres minerales clave.",
+    "El *cobre*, para cables: Chile y Perú.",
+    "El *litio*, para baterías: Argentina, Bolivia y Chile.",
+    "El *hierro*, para acero: Brasil y Australia."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "sudamerica",
+   "pasos": [
+    {
+     "resaltar": [
+      "Chile",
+      "Perú"
+     ],
+     "color": "#c0792b",
+     "texto": "Cobre"
+    },
+    {
+     "resaltar": [
+      "Argentina",
+      "Bolivia",
+      "Chile"
+     ],
+     "color": "#8a6bbf",
+     "texto": "Litio"
+    },
+    {
+     "resaltar": [
+      "Brasil"
+     ],
+     "color": "#3fa07a",
+     "texto": "Soja, café y hierro"
+    }
+   ],
+   "voz": [
+    "Dónde está cada uno.",
+    "El *cobre*: Chile y Perú.",
+    "El *litio*: Argentina, Bolivia y Chile.",
+    "Y *Brasil*: soja, café y hierro."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Depender de un solo producto",
+    "emoji": "⚠️"
+   },
+   "items": [
+    {
+     "txt": "Baja el precio",
+     "emoji": "📉"
+    },
+    {
+     "txt": "Entran menos ingresos",
+     "emoji": "💸"
+    }
+   ],
+   "voz": [
+    "Depender de un solo producto es riesgoso.",
+    "Si *baja el precio*...",
+    "...*entran menos ingresos* de golpe."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MATERIA PRIMA",
+    "texto": "Se vende sin elaborar",
+    "emoji": "⛏️"
+   },
+   "b": {
+    "cab": "VALOR AGREGADO",
+    "texto": "Se elabora y vale más",
+    "emoji": "🔋"
+   },
+   "signo": "→",
+   "voz": [
+    "Una salida: agregar valor.",
+    "Vender solo la *materia prima* deja menos ganancia.",
+    "Elaborarla, como hacer baterías, deja *más valor*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué se usa el litio?",
+   "opciones": [
+    "Baterías",
+    "Cables",
+    "Acero"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿para qué se usa el litio?",
+    "¿Baterías, cables o acero?",
+    "*Baterías*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Depender de un solo producto es seguro",
+     "bien": "Conviene diversificar"
+    },
+    {
+     "mal": "Cada país fija el precio",
+     "bien": "Lo fija el mercado mundial"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que depender de *un solo producto* es seguro.",
+    "Y pensar que *cada país* fija el precio."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *commodity* tiene precio mundial.",
+    "Hay *minerales* y *cultivos* clave.",
+    "Depender de uno es un *riesgo*.",
+    "Conviene *diversificar* y agregar valor.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMMODITY",
+     "precio mundial"
+    ],
+    [
+     "MINERALES",
+     "cobre y litio"
+    ],
+    [
+     "RIESGO",
+     "depender de uno"
+    ],
+    [
+     "SOLUCIÓN",
+     "diversificar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

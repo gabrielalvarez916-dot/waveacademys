@@ -1,0 +1,195 @@
+{
+ "slug": "soc1-m6-n4",
+ "step_id": "fed71c24-110e-4701-9ac7-ce1834d85f60",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Políticas ambientales: de las cumbres a la comunidad",
+ "sub": "Ciencias Sociales Integradas I · Misión 6 · Nivel 4",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Vero",
+    "emoji": "👩"
+   },
+   "lugar": "🏫",
+   "lineas": [
+    "Vero organizó en su escuela una campaña de reciclaje.",
+    "En un mes, la basura bajó a la mitad."
+   ],
+   "titulo": "POLÍTICAS AMBIENTALES",
+   "sub": "de las cumbres a la comunidad",
+   "voz": [
+    "Vero organizó en su escuela una campaña de reciclaje.",
+    "En un mes, la basura bajó a la mitad.",
+    "Hoy: *políticas ambientales*, de las cumbres a la comunidad."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TRES HITOS MUNDIALES",
+   "eventos": [
+    {
+     "fecha": "1992",
+     "txt": "Cumbre de la Tierra, Río de Janeiro",
+     "emoji": "🌎"
+    },
+    {
+     "fecha": "1997",
+     "txt": "Protocolo de Kioto",
+     "emoji": "📜"
+    },
+    {
+     "fecha": "2015",
+     "txt": "Acuerdo de París",
+     "emoji": "🤝"
+    }
+   ],
+   "voz": [
+    "Tres hitos mundiales.",
+    "En *mil novecientos noventa y dos*, la Cumbre de la Tierra, en Río de Janeiro.",
+    "En *mil novecientos noventa y siete*, el Protocolo de Kioto.",
+    "Y en *dos mil quince*, el Acuerdo de París."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Acuerdo de París",
+   "texto": "Limitar el aumento de la temperatura muy por debajo de 2 °C",
+   "emoji": "🌡️",
+   "voz": [
+    "El *Acuerdo de París*, de dos mil quince, busca limitar el aumento de la temperatura.",
+    "Muy por debajo de dos grados."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Leyes nacionales",
+   "texto": "Cada país protege bosques y glaciares a su manera",
+   "emoji": "⚖️",
+   "voz": [
+    "En la Argentina, la *Ley de Bosques Nativos* y la *Ley de Glaciares* protegen esos ambientes.",
+    "Ordenan dónde se puede y dónde no desmontar o explotar."
+   ],
+   "neutro": {
+    "palabra": "Leyes nacionales",
+    "texto": "Muchos países protegen bosques y glaciares",
+    "voz": [
+     "Muchos países tienen *leyes* que protegen bosques y glaciares.",
+     "Ordenan dónde se puede y dónde no desmontar o explotar recursos."
+    ]
+   }
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Acciones de la comunidad",
+    "emoji": "🏘️"
+   },
+   "items": [
+    {
+     "txt": "Separar residuos",
+     "emoji": "♻️"
+    },
+    {
+     "txt": "Reforestar",
+     "emoji": "🌳"
+    },
+    {
+     "txt": "Huertas",
+     "emoji": "🥕"
+    }
+   ],
+   "voz": [
+    "La comunidad también actúa.",
+    "*Separar residuos* reduce la basura.",
+    "*Reforestar* recupera suelos y absorbe dióxido de carbono.",
+    "Y las *huertas comunitarias* dan alimentos locales."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GLOBAL",
+    "texto": "Cumbres y acuerdos",
+    "emoji": "🌍"
+   },
+   "b": {
+    "cab": "LOCAL",
+    "texto": "Barrio, escuela, plaza",
+    "emoji": "🏘️"
+   },
+   "signo": "+",
+   "voz": [
+    "Las dos escalas se necesitan.",
+    "Lo *global*: cumbres y acuerdos entre países.",
+    "Lo *local*: acciones del barrio, la escuela o la plaza."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué año se firmó el Acuerdo de París?",
+   "opciones": [
+    "2015",
+    "1992",
+    "1850"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿en qué año se firmó el Acuerdo de París?",
+    "¿Dos mil quince, mil novecientos noventa y dos o mil ochocientos cincuenta?",
+    "*Dos mil quince*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Solo los gobiernos pueden",
+     "bien": "La comunidad también actúa"
+    },
+    {
+     "mal": "Una acción chica no suma",
+     "bien": "Las acciones locales suman"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *solo los gobiernos* pueden hacer algo.",
+    "Y pensar que una *acción chica* no suma."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hubo *tres hitos*: Río, Kioto y París.",
+    "Cada país tiene sus *leyes*.",
+    "La *comunidad* también actúa.",
+    "Lo *local* y lo *global* se unen.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CUMBRES",
+     "Río, Kioto, París"
+    ],
+    [
+     "LEYES",
+     "cada país"
+    ],
+    [
+     "COMUNIDAD",
+     "reciclar, reforestar"
+    ],
+    [
+     "ESCALAS",
+     "local + global"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

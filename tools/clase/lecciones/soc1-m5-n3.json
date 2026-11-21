@@ -1,0 +1,213 @@
+{
+ "slug": "soc1-m5-n3",
+ "step_id": "dd05e528-5f20-4e8f-9a40-107f5b9ebd8a",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "El agua: un recurso que no se reparte parejo",
+ "sub": "Ciencias Sociales Integradas I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Lucía",
+    "emoji": "👧"
+   },
+   "lugar": "🚰",
+   "lineas": [
+    "Lucía abrió la canilla.",
+    "Pensó: ¿y si un día no sale nada?"
+   ],
+   "titulo": "EL AGUA",
+   "sub": "no se reparte parejo",
+   "voz": [
+    "Lucía abrió la canilla y salió agua.",
+    "Pensó: ¿y si un día no sale nada?",
+    "Hoy: *el agua dulce*."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "97%",
+   "antes": "del agua del planeta",
+   "despues": "es salada",
+   "texto": "De la dulce, casi toda está congelada o bajo tierra",
+   "emoji": "💧",
+   "voz": [
+    "Casi toda el agua del planeta es salada: el *noventa y siete por ciento*.",
+    "De la dulce, la mayor parte está congelada o bajo tierra."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AMAZONIA",
+    "texto": "Mucha agua dulce",
+    "emoji": "🌧️"
+   },
+   "b": {
+    "cab": "SAHARA",
+    "texto": "Muy poca",
+    "emoji": "🏜️"
+   },
+   "signo": "vs",
+   "voz": [
+    "El agua dulce no se reparte parejo.",
+    "La *Amazonia*: lluvias todo el año.",
+    "El *Sahara*: casi no llueve."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Estrés hídrico",
+   "texto": "El agua disponible no alcanza para la población",
+   "emoji": "⚠️",
+   "voz": [
+    "Hay *estrés hídrico* cuando el agua disponible no alcanza.",
+    "Pasa si hay mucha gente, mucho uso o contaminación."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUIÉN USA EL AGUA",
+   "columnas": [
+    "Uso",
+    "Peso"
+   ],
+   "filas": [
+    [
+     "Agricultura",
+     "El mayor"
+    ],
+    [
+     "Industria",
+     "Medio"
+    ],
+    [
+     "Hogares",
+     "Menor"
+    ]
+   ],
+   "voz": [
+    "Mirá quién consume el agua dulce.",
+    "La *agricultura* es la que más usa: el riego.",
+    "La *industria*, en segundo lugar.",
+    "Y los *hogares*, la parte menor."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Acuífero Guaraní",
+   "texto": "Agua bajo tierra compartida por cuatro países",
+   "emoji": "🌎",
+   "voz": [
+    "El *acuífero Guaraní* está bajo Argentina, Brasil, Paraguay y Uruguay.",
+    "Los cuatro países tienen que ponerse de acuerdo para cuidarlo."
+   ],
+   "neutro": {
+    "palabra": "Acuíferos compartidos",
+    "texto": "Agua bajo tierra que cruza fronteras",
+    "voz": [
+     "Muchos *acuíferos* están bajo varios países.",
+     "Por eso tienen que ponerse de acuerdo para cuidarlos."
+    ]
+   }
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MUCHA AGUA",
+     "emoji": "🌧️"
+    },
+    {
+     "cab": "POCA AGUA",
+     "emoji": "🏜️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Amazonia",
+     "caja": 0
+    },
+    {
+     "txt": "Desierto",
+     "caja": 1
+    },
+    {
+     "txt": "Lluvias todo el año",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Mucha o poca agua?",
+    "*Amazonia* y *lluvias todo el año*: mucha.",
+    "El *desierto*: poca."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué actividad usa más agua dulce en el mundo?",
+   "opciones": [
+    "La agricultura",
+    "Los hogares",
+    "El turismo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué actividad usa más agua dulce?",
+    "¿La agricultura, los hogares o el turismo?",
+    "La *agricultura*, por el riego."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Hay agua dulce de sobra",
+     "bien": "Es una parte mínima"
+    },
+    {
+     "mal": "El agua no se contamina",
+     "bien": "También se contamina"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que hay agua dulce *de sobra*.",
+    "Y olvidar que el agua *se contamina*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El agua *dulce* es muy poca.",
+    "Está *repartida* desigual.",
+    "La *agricultura* es la que más usa.",
+    "Y los acuíferos se *comparten*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DULCE",
+     "muy poca"
+    ],
+    [
+     "REPARTO",
+     "desigual"
+    ],
+    [
+     "MAYOR USO",
+     "agricultura"
+    ],
+    [
+     "COMPARTIDA",
+     "cooperar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
