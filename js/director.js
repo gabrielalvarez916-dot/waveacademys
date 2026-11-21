@@ -137,6 +137,7 @@
 
   var VISTAS = {
     alumnos: vistaAlumnos, equipo: vistaEquipo, agenda: vistaAgenda,
+    admision: function () { return WaveAdmision.vista(vista); },
     contenido: function () { return WaveContenido.abrir(vista, { soloLectura: true }); },
     curricular: function () { return WaveCurricular.abrir(vista); }
   };

@@ -387,3 +387,15 @@ body.panel.admin .barra-der .saludo { margin-left: 0; }
 /* Contenido en solo lectura (directores): se ocultan los botones que modifican */
 .wv-lectura [data-acc]:not([data-acc^="video-ver"]):not([data-acc^="pdf-get"]):not([data-acc^="trans-ver"]):not([data-acc^="correcciones"]):not([data-acc^="corr-cerrar"]):not([data-acc^="intro-ver"]):not([data-acc^="html-ver"]):not([data-acc^="desc-get"]) { display: none !important; }
 .wv-lectura .wv-ico { display: none !important; }
+
+/* Josefina (Admisión): chat y tarjetas */
+.ju-msgs { max-height: 340px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding: 6px 2px; }
+.ju-msg { max-width: 85%; padding: 9px 13px; border-radius: 14px; line-height: 1.45; font-size: .95rem; }
+.ju-msg.assistant { background: #eef6f5; align-self: flex-start; }
+.ju-msg.user { background: #0f766e; color: #fff; align-self: flex-end; }
+.ju-form { display: flex; gap: 8px; margin-top: 10px; }
+.ju-form input { flex: 1; padding: 9px 12px; border: 1px solid #cfd8d6; border-radius: 10px; font: inherit; }
+.fa-card { background: #fff; border: 1px solid #e3ebe9; border-radius: 14px; padding: 14px 16px; }
+.fa-card textarea, .fa-card input.ad-tema { border: 1px solid #cfd8d6; border-radius: 8px; padding: 8px; font: inherit; }
+.fa-link { background: none; border: 0; padding: 0 6px; font: inherit; font-weight: 700; color: #065F63; cursor: pointer; text-decoration: underline; }
+.fa-aviso.atraso { color: #b42318; }
