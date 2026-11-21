@@ -1,0 +1,39 @@
+name: Voz de las clases del NIVEL MEDIO
+# MÁQUINA DEL NIVEL MEDIO (separada de voz-clases.yml, que es del Avanzado y no se toca).
+# Solo mira tools/medio/**: graba la voz, arma el HTML y carga cada clase con cargar_clase_medio (solo acepta lecciones del Nivel Medio).
+on:
+  push:
+    branches: [main]
+    paths: ['tools/medio/clase/lecciones/*.json', 'tools/medio/clase/motor/**', 'tools/medio/clase/*.py', 'tools/medio/neutro_medio.py', 'tools/medio/primeros_anios.py', '.github/workflows/voz-clases-medio.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: { group: voz-clases-medio, cancel-in-progress: false }
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    env: { MEDIO_TOKEN: '${{ secrets.MEDIO_TOKEN }}' }  # secreto de GitHub (una sola vez); sin él, la carga la hace Claude desde Supabase
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install edge-tts
+      - name: Generar voz
+        env: { VOZ_MINUTOS: '80' }
+        run: python tools/medio/clase/voz_edge.py
+      - run: python tools/medio/clase/armar.py
+      - name: Guardar (voz y HTML en el repo, primero: así no se pierden aunque falle la carga)
+        run: |
+          git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
+          git add tools/medio/clase/voz tools/medio/clase/dist
+          git diff --cached --quiet || git commit -m "Voz de clases del Nivel Medio (automático)"
+          for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
+      - name: Cargar en la plataforma (solo Nivel Medio)
+        if: env.MEDIO_TOKEN != ''
+        run: python tools/medio/clase/cargar.py $(ls tools/medio/clase/dist | sed 's/\.html$//')
+      - name: Seguir si quedaron voces sin grabar
+        if: hashFiles('tools/medio/clase/voz/.pendiente') != ''
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: gh workflow run voz-clases-medio.yml --ref main

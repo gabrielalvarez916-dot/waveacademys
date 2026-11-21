@@ -1,0 +1,42 @@
+name: Misiones del NIVEL MEDIO (carga completa)
+# MÁQUINA DEL NIVEL MEDIO (separada de todo lo del Avanzado, que no se toca).
+# Al subir a main un contenido/medio/**/mision-N.json nuevo o cambiado, hace TODO solo:
+#   1) carga actividades, Relámpago y examen (cargar_mision_medio; si ya estaba, no pisa nada)
+#   2) arma los PDF (argentino y neutro) y los sube a cada lección (pdf-medio)
+# Las clases animadas van por voz-clases-medio.yml. Nada se publica: queda para revisar en Contenidos.
+on:
+  push:
+    branches: [main]
+    paths: ['contenido/medio/**/mision-*.json']
+  workflow_dispatch:
+    inputs:
+      mision: { description: 'Archivo de la misión (ej. contenido/medio/matematica-1/mision-1/mision-1.json)', required: true }
+concurrency: { group: mision-medio, cancel-in-progress: false }
+jobs:
+  mision:
+    runs-on: ubuntu-latest
+    env: { MEDIO_TOKEN: '${{ secrets.MEDIO_TOKEN }}' }  # secreto de GitHub (una sola vez); sin él, la carga la hace Claude desde Supabase
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Fuentes y librerías
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y fonts-dejavu-core
+          pip install reportlab pillow
+      - name: Qué misiones hay que cargar
+        id: cuales
+        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}' }
+        run: |
+          if [ -n "$MANUAL" ]; then L="$MANUAL"
+          else L=$(git diff --name-only "$ANTES" "$GITHUB_SHA" -- 'contenido/medio/**/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/medio/**/mision-*.json'); fi
+          L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | tr '\n' ' ')
+          echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
+      - name: Cargar actividades y examen
+        if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
+        run: python tools/medio/cargar_mision.py ${{ steps.cuales.outputs.lista }}
+      - name: Armar y subir los PDF
+        if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
+        run: python tools/medio/pdf/generar.py ${{ steps.cuales.outputs.lista }}

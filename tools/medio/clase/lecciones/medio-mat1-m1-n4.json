@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat1-m1-n4",
+ "step_id": "a9e9bc77-044c-49c3-a195-6b17c0d028fb",
+ "materia": "Matemática 1",
+ "titulo": "Armar colecciones iguales",
+ "sub": "Matemática 1 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🛍️",
+   "lineas": [
+    "Sofi arma bolsitas de cumple.",
+    "Una tiene 5 caramelos.",
+    "¡La otra tiene 3!"
+   ],
+   "titulo": "GRUPOS",
+   "sub": "iguales",
+   "voz": [
+    "Sofi arma las *bolsitas* del cumple.",
+    "En una bolsita puso 5 caramelos.",
+    "Y en la otra, ¡solo 3!",
+    "Hoy aprendemos a *armar grupos iguales*."
+   ]
+  },
+  {
+   "t": "igualar",
+   "a": {
+    "emoji": "🍬",
+    "n": 5
+   },
+   "b": {
+    "emoji": "🍬",
+    "n": 3
+   },
+   "accion": "agregar",
+   "texto": "¡Ahora hay igual!",
+   "voz": [
+    "Una bolsita tiene 5 y la otra, 3.",
+    "Agregamos a la que tiene *menos*: 4, 5.",
+    "¡Listo! 5 y 5: hay *igual*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "AGREGAR",
+   "texto": "Al grupo que tiene menos",
+   "emoji": "➕",
+   "voz": [
+    "Para igualar, *agregamos* al grupo que tiene menos."
+   ]
+  },
+  {
+   "t": "igualar",
+   "a": {
+    "emoji": "⚽",
+    "n": 6
+   },
+   "b": {
+    "emoji": "⚽",
+    "n": 4
+   },
+   "accion": "quitar",
+   "texto": "¡4 y 4: igual!",
+   "voz": [
+    "Otra forma de igualar: *quitar*.",
+    "Sacamos pelotas del grupo que tiene *más*.",
+    "Quedan 4 y 4: ¡*igual*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AGREGAR",
+    "texto": "al que tiene menos",
+    "emoji": "➕"
+   },
+   "b": {
+    "cab": "QUITAR",
+    "texto": "al que tiene más",
+    "emoji": "➖"
+   },
+   "signo": "o",
+   "voz": [
+    "Podemos *agregar* al grupo que tiene menos.",
+    "O podemos *quitar* al grupo que tiene más.",
+    "Las dos formas sirven para igualar."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "🍎🍎🍎🍎  🍎🍎  ¿Cuántas agrego al grupo chico?",
+   "opciones": [
+    "1",
+    "2",
+    "3"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá los dos grupos de manzanas.",
+    "¿Cuántas agregás al grupo chico para igualar?",
+    "¡*2*! Así quedan 4 y 4."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "IGUAL",
+     "la misma cantidad"
+    ],
+    [
+     "AGREGAR",
+     "al grupo que tiene menos"
+    ],
+    [
+     "QUITAR",
+     "al grupo que tiene más"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Igual* es la misma cantidad.",
+    "Podemos *agregar* al que tiene menos.",
+    "O *quitar* al que tiene más.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

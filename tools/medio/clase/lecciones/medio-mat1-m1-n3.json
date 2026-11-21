@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat1-m1-n3",
+ "step_id": "4a4edbc8-87da-42de-b711-6e22b5687dc9",
+ "materia": "Matemática 1",
+ "titulo": "Comparar sin contar",
+ "sub": "Matemática 1 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🥤",
+   "final": "🤔",
+   "titulo": "COMPARAR",
+   "sub": "sin contar",
+   "voz": [
+    "Sofi tiene vasos para sus amigos.",
+    "¿Alcanzan para todos? ¡Sin contar!",
+    "Hoy aprendemos a *comparar sin contar*."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "🧒",
+    "n": 4
+   },
+   "b": {
+    "emoji": "🥤",
+    "n": 6
+   },
+   "texto": "Sobran vasos: hay más vasos",
+   "voz": [
+    "Ponemos un vaso para cada chico.",
+    "Unimos *uno con uno*.",
+    "Sobran vasos: hay *más vasos* que chicos."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNO CON UNO",
+   "texto": "Cada uno con su pareja",
+   "emoji": "🤝",
+   "voz": [
+    "Unir *uno con uno* es armar *parejas*."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "🧒",
+    "n": 5
+   },
+   "b": {
+    "emoji": "🧁",
+    "n": 3
+   },
+   "texto": "Faltan tortitas: hay menos",
+   "voz": [
+    "Ahora, las tortitas.",
+    "Unimos cada chico con una tortita.",
+    "¡Faltan tortitas! Hay *menos tortitas* que chicos."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "🧒",
+    "n": 4
+   },
+   "b": {
+    "emoji": "🎈",
+    "n": 4
+   },
+   "texto": "¡No sobra ninguno: hay igual!",
+   "voz": [
+    "¿Y los globos?",
+    "Un globo para cada chico.",
+    "No sobra ni falta: hay *igual*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "🧒🧒🧒  🪑🪑  ¿Alcanzan las sillas?",
+   "opciones": [
+    "Sí, sobran",
+    "No, faltan",
+    "Hay igual"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá los chicos y las sillas.",
+    "¿Alcanzan las sillas para todos?",
+    "No: *falta una silla*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un chico con dos vasos",
+     "bien": "Un vaso para cada chico"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Cada chico va con *un solo* vaso."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNO CON UNO",
+     "armar parejas"
+    ],
+    [
+     "SOBRAN",
+     "ese grupo tiene más"
+    ],
+    [
+     "FALTAN",
+     "ese grupo tiene menos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Unimos *uno con uno*: parejas.",
+    "Si *sobran*, ese grupo tiene más.",
+    "Si *faltan*, ese grupo tiene menos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat1-m1-n2",
+ "step_id": "3f7aa6a4-8d30-49f0-a9bb-f16f608d01d8",
+ "materia": "Matemática 1",
+ "titulo": "Más, menos e igual",
+ "sub": "Matemática 1 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Juan: 🍬🍬🍬🍬   Sofi: 🍬🍬  ¿Quién tiene más?",
+   "segundos": 5,
+   "respuesta": "¡Juan!",
+   "emoji": "🍬",
+   "titulo": "MÁS, MENOS",
+   "sub": "e igual",
+   "voz": [
+    "Desafío: ¿quién tiene más caramelos? Tenés 5 segundos.",
+    "¡Juan! Tiene más caramelos que Sofi.",
+    "Hoy: *más*, *menos* e *igual*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS DE JUAN",
+   "emoji": "🍬",
+   "cantidad": 4,
+   "voz": [
+    "Contemos los caramelos de Juan.",
+    "1, 2, 3, 4.",
+    "Juan tiene *4 caramelos*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS DE SOFI",
+   "emoji": "🍬",
+   "cantidad": 2,
+   "voz": [
+    "Ahora, los caramelos de Sofi.",
+    "1, 2.",
+    "Sofi tiene *2 caramelos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "JUAN",
+    "texto": "4: tiene más",
+    "emoji": "👦"
+   },
+   "b": {
+    "cab": "SOFI",
+    "texto": "2: tiene menos",
+    "emoji": "👧"
+   },
+   "signo": "y",
+   "voz": [
+    "Juan tiene 4: tiene *más*.",
+    "Sofi tiene 2: tiene *menos*.",
+    "4 es más que 2."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Igual",
+   "texto": "La misma cantidad",
+   "emoji": "🤝",
+   "voz": [
+    "¿Y si los dos tienen 3 caramelos?",
+    "Entonces tienen *igual*: la misma cantidad."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Ana 🍎🍎🍎  Leo 🍎🍎🍎  ¿Quién tiene más?",
+   "opciones": [
+    "Ana",
+    "Leo",
+    "Tienen igual"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Mirá las manzanas de Ana y Leo.",
+    "¿Quién tiene más?",
+    "¡Tienen *igual*! 3 y 3."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ LOS DOS",
+   "texto": "Gana el número más grande",
+   "emoji": "🔢",
+   "voz": [
+    "Truco: contá los dos grupos y compará los números."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MÁS",
+     "el grupo más grande"
+    ],
+    [
+     "MENOS",
+     "el grupo más chico"
+    ],
+    [
+     "IGUAL",
+     "la misma cantidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Más*: el grupo más grande.",
+    "*Menos*: el grupo más chico.",
+    "*Igual*: la misma cantidad.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

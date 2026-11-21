@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat1-m1-n1",
+ "step_id": "0fb43ae5-a858-4215-80a8-d6d7d79ff6ac",
+ "materia": "Matemática 1",
+ "titulo": "Contar objetos",
+ "sub": "Matemática 1 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎂",
+   "lineas": [
+    "Mañana es el cumple de Sofi.",
+    "Tiene que preparar todo.",
+    "¿Cuántos globos tiene?"
+   ],
+   "titulo": "CONTAR",
+   "sub": "objetos",
+   "voz": [
+    "Mañana es el *cumple* de Sofi.",
+    "Está feliz y tiene que preparar todo.",
+    "Primero quiere saber cuántos globos tiene.",
+    "Hoy vamos a aprender a *contar*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS GLOBOS",
+   "emoji": "🎈",
+   "cantidad": 5,
+   "voz": [
+    "Mirá los globos de Sofi.",
+    "Contamos de a uno: 1, 2, 3, 4, 5.",
+    "El último número dice cuántos hay: *5 globos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "USÁ EL DEDO",
+   "texto": "Tocá cada uno al contar",
+   "emoji": "👉",
+   "voz": [
+    "Truco: tocá cada globo con el *dedo* al contar."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS CHUPETINES",
+   "emoji": "🍭",
+   "cantidad": 8,
+   "voz": [
+    "Ahora, los chupetines para la mesa.",
+    "Tocamos cada uno y decimos un número.",
+    "¡Hay *8 chupetines*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar uno dos veces",
+     "bien": "Cada uno, una sola vez"
+    },
+    {
+     "mal": "Saltear uno",
+     "bien": "Contar todos, sin apuro"
+    }
+   ],
+   "voz": [
+    "Ojo con dos errores.",
+    "No cuentes *dos veces* el mismo.",
+    "Y no te *saltees* ninguno."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas coronas hay? 👑👑👑👑👑👑",
+   "opciones": [
+    "5",
+    "6",
+    "7"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cuántas coronas hay?",
+    "Contalos con el dedo, despacio.",
+    "¡Son *6 coronas*! ¡Muy bien!"
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS REGALOS",
+   "emoji": "🎁",
+   "cantidad": 10,
+   "voz": [
+    "Llegaron los regalos. ¡Cuántos!",
+    "Contamos despacio, uno por uno.",
+    "¡Hay *10 regalos*! Sofi está feliz."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTAR",
+     "de a uno, en orden"
+    ],
+    [
+     "EL DEDO",
+     "toca cada objeto"
+    ],
+    [
+     "EL ÚLTIMO NÚMERO",
+     "dice cuántos hay"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *de a uno*, en orden.",
+    "El *dedo* toca cada objeto.",
+    "El *último número* dice cuántos hay.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
