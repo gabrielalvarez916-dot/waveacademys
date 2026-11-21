@@ -811,6 +811,42 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     B(2); if (ag) { tl.set(cambian, { opacity: 1, y: 0 }, '>+0.05'); w.OUT(tl, nA, '>'); w.OUT(tl, nB, '<'); w.IN(tl, cA, '>'); w.IN(tl, cB, '<'); }
     w.IN(tl, ig, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (cap) w.IN(tl, cap, '<.2');
   } };
+  function numDe(p) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); return isFinite(v) ? v : null; }
+  // tren: {desde, hasta (hasta 10 vagones), faltan:[números], titulo} — 3 pasos: llega el tren · cada vagón se ilumina cuando la voz dice su número · aparecen los que faltaban
+  T.tren = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var N = [], k; for (k = d.desde; k <= d.hasta; k++) N.push(k); var falta = d.faltan || [], cant = N.length, paso = Math.min(150, 1380 / (cant + 1)), x0 = 960 - (cant * paso) / 2 + paso * .35, Y = 560;
+    var ti = d.titulo ? w.titulo(g, d.titulo, 285) : null, tren = w.pieza(g, 0, 0);
+    w.el('line', { x1: 140, y1: Y + 92, x2: 1780, y2: Y + 92, stroke: C.suave, 'stroke-width': 6 }, tren);
+    w.emoji(tren, x0 - paso * .9, Y - 10, '🚂', paso * 1.15);
+    var V = N.map(function (v, j) { var x = x0 + j * paso, p = w.pieza(g, x, Y), es = falta.indexOf(v) >= 0;
+      p.r = w.caja(p, 0, 0, paso - 16, paso * .9, es ? 'rgba(255,255,255,.06)' : 'url(#gCard)', es ? C.coral : W.PAL[j % W.PAL.length], 18, 5);
+      if (es) p.r.setAttribute('stroke-dasharray', '14 10');
+      w.el('circle', { cx: -paso * .25, cy: paso * .48, r: 13, fill: '#0b1c1d', stroke: C.suave, 'stroke-width': 4 }, p); w.el('circle', { cx: paso * .25, cy: paso * .48, r: 13, fill: '#0b1c1d', stroke: C.suave, 'stroke-width': 4 }, p);
+      p.q = es ? w.txt(p, 0, 4, '?', paso * .42, C.coral) : null; p.t = w.txt(p, 0, 4, String(v), paso * .42, C.txt, es ? { opacity: 0 } : null); p.v = v; p.falta = es; return p; });
+    var dicho = {}; g.alDecir = function (pal, f) { var v = numDe(pal); if (f !== 1 || v == null || dicho[v]) return; var p = V[N.indexOf(v)]; if (!p || p.falta) return; dicho[v] = 1;
+      gsap.to(p.r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .2 }); gsap.fromTo(p, { y: 0 }, { y: -26, duration: .18, yoyo: true, repeat: 1 }); };
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, tren, ti ? '<' : 0, { x: 900, y: 0, ease: 'power3.out', d: 1 }); V.forEach(function (p, j) { w.IN(tl, p, j ? '<.06' : '<', { x: 900, y: 0, ease: 'power3.out', d: 1 }); });
+    B(1); tl.to({}, { duration: .01 });
+    B(2); V.forEach(function (p) { if (!p.falta) return; tl.to(p.q, { opacity: 0, duration: .2 }, '>+0.05'); tl.to(p.t, { opacity: 1, duration: .3 }, '<'); tl.to(p.r, { attr: { stroke: C.verde, 'stroke-width': 10 }, duration: .3 }, '<'); w.pop(tl, p, '<'); });
+    if (!falta.length) V.forEach(function (p, j) { tl.to(p.r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .1 }, j ? '<' : '>+0.05'); });
+  } };
+  // diezymas: {emoji, n (11-20), texto:'10 y 3 son 13'} — 3 pasos: caja de 10 · los sueltos aparecen cuando la voz cuenta 11, 12… · el resultado
+  T.diezymas = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var n = d.n, sueltos = n - 10, caja = w.pieza(g, 560, 520), cab = 92;
+    w.caja(caja, 0, 0, 560, 300, 'rgba(244,182,63,.10)', C.sol, 34, 6);
+    for (var k = 0; k < 10; k++) w.emoji(caja, (k % 5 - 2) * cab, (Math.floor(k / 5) - .5) * 110, d.emoji, 78);
+    var e10 = w.pieza(g, 560, 735); w.el('circle', { r: 50, fill: C.sol }, e10); w.txt(e10, 0, 4, '10', 52, '#3a2a00');
+    var cols = sueltos > 5 ? 5 : sueltos, S = [];
+    var y0 = sueltos > 5 ? 440 : 500; for (k = 0; k < sueltos; k++) { var o = w.pieza(g, 1180 + (k % 5) * 105, y0 + Math.floor(k / 5) * 155); w.emoji(o, 0, 0, d.emoji, 86); S.push(o); }
+    var nums = S.map(function (o, k) { var q = w.pieza(g, 1180 + (k % 5) * 105, y0 + Math.floor(k / 5) * 155 + 62); w.el('circle', { r: 24, fill: C.aqua }, q); w.txt(q, 0, 2, String(11 + k), 26, '#06282a'); return q; });
+    var mas = w.pieza(g, 960, 520); w.txt(mas, 0, 0, '+', 120, C.sol, { filter: 'url(#brillo)' });
+    var cap = d.texto ? w.chip(g, 960, 880, Math.min(1400, d.texto.length * 34 + 140), 104, d.texto, { size: 56, stroke: C.verde, r: 36 }) : null;
+    var dicho = {}; g.alDecir = function (pal, f) { var v = numDe(pal); if (f !== 1 || v == null || v < 11 || v > n || dicho[v]) return; dicho[v] = 1;
+      gsap.fromTo(S[v - 11], { opacity: 0, y: -260 }, { opacity: 1, y: 0, duration: .5, ease: 'bounce.out' }); gsap.fromTo(nums[v - 11], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(3)', delay: .15 }); };
+    B(0); w.IN(tl, caja, 0, { scale: .6, y: 0 }); w.IN(tl, e10, '>', { scale: 0, y: 0, ease: 'back.out(3)' });
+    B(1); w.IN(tl, mas, 0, { scale: 0, y: 0 });
+    B(2); tl.set(S.concat(nums), { opacity: 1, y: 0, scale: 1 }, '>+0.05'); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 });
+  } };
 })();
 
 /* PLANTILLAS · CIENCIAS, LENGUA E INGLÉS */
