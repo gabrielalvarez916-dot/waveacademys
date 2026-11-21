@@ -793,21 +793,45 @@
     };
   }
 
+  // ---------- Estadísticas ----------
+  async function vistaEstadisticas() {
+    vista.innerHTML = '<h1 class="vista-titulo">Estadísticas</h1><div class="wv-vacio">Cargando…</div>';
+    var r = await sb.rpc('estadisticas_admin');
+    if (r.error) { vista.innerHTML = '<h1 class="vista-titulo">Estadísticas</h1><div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
+    var d = r.data || {};
+    function barras(filas, etiqueta, valor) {
+      var max = Math.max.apply(null, filas.map(function (f) { return +f[valor]; }).concat([1]));
+      return filas.length ? '<div class="est-barras">' + filas.map(function (f) {
+        return '<div class="est-fila"><span class="est-et">' + esc(etiqueta(f)) + '</span><div class="est-barra"><i style="width:' + Math.round(+f[valor] / max * 100) + '%"></i></div><b>' + f[valor] + '</b></div>';
+      }).join('') + '</div>' : '<p class="wv-dato">Sin datos todavía.</p>';
+    }
+    function kpi(t, v) { return '<div class="wv-stat"><small>' + t + '</small><b>' + v + '</b></div>'; }
+    var mesTxt = function (m) { var p = m.split('-'); return new Date(+p[0], +p[1] - 1, 1).toLocaleDateString('es-AR', { month: 'short', year: '2-digit' }); };
+    vista.innerHTML = '<h1 class="vista-titulo">Estadísticas</h1>' +
+      '<div class="wv-resumen">' + kpi('Alumnos', d.alumnos) + kpi('Familias', d.familias) + kpi('Tutores', d.tutores) + kpi('Activos (7 días)', d.activos_7d) + kpi('Inactivos (10+ días)', d.inactivos_10d) + kpi('Altas (30 días)', d.nuevos_30d) + kpi('Sin tutor asignado', d.sin_tutor) + '</div>' +
+      '<div class="est-grid"><section class="est-card"><h2>Alumnos por nivel</h2>' + barras(d.por_nivel || [], function (f) { return f.nivel; }, 'alumnos') + '</section>' +
+      '<section class="est-card"><h2>Alumnos por país</h2>' + barras(d.por_pais || [], function (f) { return f.pais; }, 'alumnos') + '</section>' +
+      '<section class="est-card est-ancha"><h2>Alumnos por año</h2>' + barras(d.por_anio || [], function (f) { return f.nivel.replace('Nivel ', '') + (f.anio_nombre === f.nivel ? '' : ' · ' + f.anio_nombre); }, 'alumnos') + '</section>' +
+      '<section class="est-card est-ancha"><h2>Altas por mes (últimos 12 meses)</h2>' + barras(d.altas_mes || [], function (f) { return mesTxt(f.mes); }, 'alumnos') + '</section></div>';
+  }
+
   // ---------- Tutores ----------
   async function vistaTutores() {
-    vista.innerHTML = '<h1 class="vista-titulo">Tutores</h1>' +
-      '<p class="wv-dato">Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
+    vista.innerHTML = '<h1 class="vista-titulo">Equipo</h1>' +
+      '<p class="wv-dato">Acá das de alta las cuentas del equipo: tutores, directores de nivel y tesorero. Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
       '<form id="wv-tut-form" class="wv-tut-form"><input id="wv-tut-nom" placeholder="Nombre y apellido" required> <input id="wv-tut-mail" type="email" placeholder="Correo" required> ' +
-      '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="tesorero">Tesorero/a</option></select> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
+      '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="director_primaria">Director/a de Primaria e Inicial</option><option value="director_secundaria">Director/a de Secundaria</option><option value="tesorero">Tesorero/a</option></select> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
     async function pintar() {
       var r = await sb.rpc('tutores_admin');
       var l = document.getElementById('wv-tut-lista');
       if (r.error) { l.innerHTML = '<div class="wv-vacio">' + esc(r.error.message) + '</div>'; return; }
-      l.innerHTML = !r.data.length ? '<div class="wv-vacio">Todavía no hay tutores.</div>' :
+      var eq = await sb.rpc('equipo_cuentas'), NOMROL = { tesorero: 'Tesorería', director_primaria: 'Dirección de Primaria e Inicial', director_secundaria: 'Dirección de Secundaria' };
+      var otros = (eq.data || []).length ? '<h2 class="wv-sub" style="margin-top:22px">Directores y tesorería</h2><div class="wv-alus">' + eq.data.map(function (c) { return '<div class="wv-alu"><div><div class="wv-nombre">' + esc(c.nombre || c.email) + '</div><div class="wv-dato">' + esc(c.email) + '</div></div><div><span class="wv-rot">Rol</span><span class="wv-dato">' + esc(NOMROL[c.rol] || c.rol) + '</span></div></div>'; }).join('') + '</div>' : '';
+      l.innerHTML = otros + (!r.data.length ? '<div class="wv-vacio">Todavía no hay tutores.</div>' :
         '<div class="wv-alus">' + r.data.map(function (t) {
           return '<div class="wv-alu"><div><div class="wv-nombre">' + esc(t.nombre) + '</div><div class="wv-dato">' + esc(t.email) + '</div></div>' +
             '<div><span class="wv-rot">Alumnos</span><span class="wv-dato">' + t.alumnos + '</span></div></div>';
-        }).join('') + '</div>';
+        }).join('') + '</div>');
     }
     document.getElementById('wv-tut-form').onsubmit = async function (ev) {
       ev.preventDefault();
@@ -874,6 +898,7 @@
   }
 
   var VISTAS = {
+    estadisticas: vistaEstadisticas,
     familias: vistaFamilias,
     facturacion: vistaFacturacion,
     tutores: vistaTutores,
@@ -882,14 +907,13 @@
     curricular: function () { return WaveCurricular.abrir(vista); },
     fabrica: function () { return WaveFabrica.abrir(vista); },
     videos: function () { return WaveVideos.abrir(vista); },
-    seguimiento: proximamente('Seguimiento de alumnos'),
     registro: proximamente('Registro de actividad')
   };
 
   function ruta() {
     cerrarModal();
-    var nombre = (location.hash || '#familias').slice(1);
-    if (!VISTAS[nombre]) nombre = 'familias';
+    var nombre = (location.hash || '#estadisticas').slice(1);
+    if (!VISTAS[nombre]) nombre = 'estadisticas';
     enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#' + nombre); });
     try { Promise.resolve(VISTAS[nombre]()).catch(mostrarFallo); } catch (e) { mostrarFallo(e); }
   }

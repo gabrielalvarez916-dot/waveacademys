@@ -8,6 +8,8 @@ const cors = {
 const json = (b: unknown, s = 200) =>
   new Response(JSON.stringify(b), { status: s, headers: { ...cors, "content-type": "application/json" } });
 
+const ROLES_ADMIN = ["tutor", "tesorero", "director_primaria", "director_secundaria"];
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
   try {
@@ -18,11 +20,13 @@ Deno.serve(async (req) => {
     });
     const { data: { user } } = await userClient.auth.getUser();
     if (!user) return json({ error: "No autenticado" }, 401);
-    const { data: yo } = await admin.from("profiles").select("role").eq("id", user.id).single();
-    if (yo?.role !== "admin") return json({ error: "Solo el administrador" }, 403);
+    const { data: yo } = await admin.from("profiles").select("role, is_suspended").eq("id", user.id).single();
+    const esAdmin = yo?.role === "admin", esDirector = yo?.role === "director_primaria" || yo?.role === "director_secundaria";
+    if (yo?.is_suspended || (!esAdmin && !esDirector)) return json({ error: "No tenés permiso para crear cuentas" }, 403);
 
     const { nombre, email, rol } = await req.json();
-    const rolNuevo = rol === "tesorero" ? "tesorero" : "tutor";
+    const rolNuevo = ROLES_ADMIN.includes(rol) ? rol : "tutor";
+    if (!esAdmin && rolNuevo !== "tutor") return json({ error: "Solo el administrador puede crear ese tipo de cuenta" }, 403);
     const mail = String(email || "").trim().toLowerCase();
     if (!String(nombre || "").trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return json({ error: "Faltan el nombre o un correo válido" }, 400);
     const clave = Deno.env.get("INITIAL_PASSWORD") ?? "Wave1234";

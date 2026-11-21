@@ -12,7 +12,9 @@
     family: '/familia.html',
     student: '/alumno.html',
     tutor: '/tutor.html',
-    tesorero: '/tesoreria.html'
+    tesorero: '/tesoreria.html',
+    director_primaria: '/director.html',
+    director_secundaria: '/director.html'
   };
 
   async function getProfile(userId) {
