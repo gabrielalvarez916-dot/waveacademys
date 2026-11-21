@@ -124,6 +124,7 @@ async def tts(texto, voz=None):
     return {'a': base64.b64encode(audio).decode(), 'w': w}
 
 
+PARALELO = int(os.environ.get('VOZ_PARALELO', '4'))  # frases que se graban a la vez
 INICIO = time.time(); MINUTOS = float(os.environ.get('VOZ_MINUTOS', '0') or 0)  # tope de tiempo por corrida (0 = sin tope)
 PENDIENTES = []
 
@@ -136,6 +137,17 @@ async def grabar(L, nombre, suf, vz):
         if os.path.exists(pv): cache.update({f.get('h'): f for esc in json.load(open(pv)) for f in esc if isinstance(f, dict)})
     F = frases(L)
     res, nuevas = [], 0
+    # se graban EN PARALELO (de a PARALELO frases a la vez): mismo audio, mismo orden, mucho más rápido
+    sem = asyncio.Semaphore(PARALELO)
+    async def grabar_una(t):
+        async with sem:
+            for intento in range(6):
+                try:
+                    return await tts(t, vz)
+                except Exception as e:
+                    if intento == 5: raise
+                    await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos
+    pedidos = {}  # hash -> tarea (una frase repetida se graba una sola vez)
     for esc in F:
         fila = []
         for t in esc:
@@ -145,14 +157,13 @@ async def grabar(L, nombre, suf, vz):
             else:
                 if MINUTOS and time.time() - INICIO > MINUTOS * 60:
                     PENDIENTES.append(nombre + suf); return
-                for intento in range(6):
-                    try:
-                        r = await tts(t, vz); break
-                    except Exception as e:
-                        if intento == 5: raise
-                        await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos
-                r['h'] = h; fila.append(r); nuevas += 1
+                if h not in pedidos: pedidos[h] = asyncio.ensure_future(grabar_una(t))
+                fila.append(h)
         res.append(fila)
+    hechos = dict(zip(pedidos, await asyncio.gather(*pedidos.values())))
+    for h, r in hechos.items(): r['h'] = h
+    nuevas = len(hechos)
+    res = [[hechos[f] if isinstance(f, str) else f for f in fila] for fila in res]
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     json.dump(res, open(destino, 'w'), separators=(',', ':'))
     print(nombre + suf, ':', sum(len(e) for e in F), 'frases,', nuevas, 'nuevas, voz', vz, RATE)
