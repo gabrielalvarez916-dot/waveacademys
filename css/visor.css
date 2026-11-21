@@ -1,7 +1,7 @@
 /* Visor de PDF */
 body.wvp-abierto { overflow: hidden; }
 .wvp { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 12px; background: rgba(37, 54, 56, 0.72); }
-.wvp-caja { display: flex; flex-direction: column; width: min(100%, 980px); height: min(100%, 100dvh - 24px); background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.5); }
+.wvp-caja { position: relative; display: flex; flex-direction: column; width: min(100%, 980px); height: min(100%, 100dvh - 24px); background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.5); }
 .wvp-barra { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 14px; background: var(--menta, #DDF1EA); }
 .wvp-titulo { flex: 1 1 140px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--petroleo, #253638); }
 .wvp-ctrl { display: flex; align-items: center; gap: 4px; }
@@ -113,3 +113,24 @@ body.wvp-abierto { overflow: hidden; }
 @media (orientation: portrait) and (max-width: 900px) {
   .wvp.wvp-full .wvp-caja { width: 100dvh; height: 100vw; transform: rotate(90deg); }
 }
+
+/* ---- Tutor IA: botones rápidos, nombre/personalidad, turnos y botón flotante ---- */
+.wt-cuerpo, .wvp-chat > .wt-cuerpo { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.wvp-chat > .wt-cuerpo { height: 100%; }
+.wt-botones { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 10px; background: #F4F8F7; border-top: 1px solid var(--menta, #DDF1EA); max-height: 128px; overflow-y: auto; }
+.wt-b { border: 2px solid var(--turquesa, #087E83); background: #fff; color: var(--turquesa-oscuro, #065F63); font: inherit; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.wt-b:hover:not(:disabled) { background: var(--menta, #DDF1EA); }
+.wt-b:disabled { opacity: 0.5; cursor: default; }
+.wt-cfg-abrir { border: 0; background: #F4F8F7; color: var(--texto-suave, #4B6062); font: inherit; font-size: 0.75rem; padding: 4px 12px 8px; text-align: left; cursor: pointer; text-decoration: underline; }
+.wt-cfg { display: flex; flex-direction: column; gap: 8px; padding: 10px 14px; background: #fff; border-top: 1px solid var(--menta, #DDF1EA); font-size: 0.85rem; color: var(--petroleo, #253638); }
+.wt-cfg[hidden] { display: none; }
+.wt-cfg label { display: flex; flex-direction: column; gap: 3px; font-weight: 700; }
+.wt-cfg input, .wt-cfg select { font: inherit; padding: 7px 10px; border: 2px solid var(--menta, #DDF1EA); border-radius: 12px; }
+.wt-cfg-acc { display: flex; gap: 8px; }
+.wt-turnos { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.wt-turno, .wt-ofrecer { margin-top: 8px; }
+.wt-turnos .wt-turno { margin-top: 0; }
+.wt-flot { position: absolute; right: 14px; bottom: 14px; z-index: 5; border: 0; border-radius: 999px; padding: 12px 18px; background: var(--turquesa, #087E83); color: #fff; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4); }
+.wt-panel { position: absolute; right: 14px; bottom: 70px; z-index: 6; display: flex; flex-direction: column; width: min(360px, calc(100% - 28px)); height: min(520px, calc(100% - 90px)); background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px -10px rgba(0,0,0,0.5); }
+.wt-panel[hidden] { display: none; }
+.wt-panel .wvp-chat-x { display: block; }

@@ -51,6 +51,22 @@
     setTimeout(function () { t.remove(); }, 3600);
   }
 
+  // Tutor IA: cada pantalla le dice qué está mirando (solo esa misión); nunca se monta en el examen
+  function tutorOps(pantalla, ctx) {
+    return {
+      pantalla: pantalla,
+      enviar: function (payload) { return llamar('chat-tutor', payload); },
+      ctx: function () { return ctx; },
+      config: {
+        ver: async function () { var r = await sb.rpc('tutor_config_ver', { p_student: D.sid }); return r.data && r.data[0]; },
+        guardar: async function (apodo, nombre, pers) {
+          var r = await sb.rpc('tutor_config_guardar', { p_student: D.sid, p_apodo: apodo, p_tutor_nombre: nombre, p_personalidad: pers });
+          if (r.error) throw new Error(r.error.message || 'No se pudo guardar.');
+        }
+      }
+    };
+  }
+
   async function llamar(nombre, body) {
     var r = await sb.functions.invoke(nombre, { body: body });
     if (r.error) {
@@ -500,7 +516,7 @@
           }) });
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
-          chat: function (mensaje, conv) { return llamar('chat-tutor', { message: mensaje, lesson_step_id: paso.id, conversation_id: conv || undefined }); },
+          chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: paso.id }; }, chatConfig: tutorOps('pdf', {}).config,
           url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
       } else if (k === 'interactive') {
         var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();
@@ -508,7 +524,7 @@
         abrirInteractiva(paso, f.l.titulo, r.data.content.html);
       } else if (k === 'final') {
         abrirCuestionario({
-          titulo: 'Actividad · ' + f.l.titulo, examen: false,
+          titulo: 'Actividad · ' + f.l.titulo, examen: false, tutor: { lesson_id: paso.lesson_id },
           cargar: function () { return preguntas('lesson_step_id', paso.id); },
           enviar: function (resp) { return llamar('corregir', { modo: 'actividad', lesson_step_id: paso.id, answers: resp }); },
           alTerminar: function (res) {
@@ -519,7 +535,7 @@
       } else if (k === 'review') {
         var intento = null;
         abrirCuestionario({
-          titulo: 'Repaso · ' + f.l.titulo, examen: false, repaso: true,
+          titulo: 'Repaso · ' + f.l.titulo, examen: false, repaso: true, tutor: { lesson_id: f.l.id },
           cargando: 'Estamos armando tu repaso…', cargandoSub: 'Son 6 preguntas nuevas, de esta lección y de las anteriores. Tené tu carpeta a mano.',
           cargar: async function () { var d = await llamar('review', { action: 'start', lesson_id: f.l.id }); intento = d.attempt_id; return d.questions; },
           enviar: function (resp) { return llamar('review', { action: 'submit', attempt_id: intento, answers: resp }); },
@@ -616,6 +632,7 @@
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
     frame.srcdoc = r.data.html;
+    if (paso && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('clase', { lesson_id: paso.lesson_id }));
     function enFull() { return document.fullscreenElement || document.webkitFullscreenElement; }
     function pantallaCompleta() { // API de pantalla completa; si no existe (iPhone), ocupa toda la pantalla y gira en vertical
       var c = el.querySelector('.wvp-caja');
@@ -655,6 +672,7 @@
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
     frame.srcdoc = html;
+    if (paso && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('actividad', { lesson_id: paso.lesson_id }));
 
     function cerrar() {
       window.removeEventListener('message', alMensaje);
@@ -692,6 +710,7 @@
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var cuerpo = el.querySelector('.mt-cuest');
+    if (op.tutor && !op.examen && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('actividad', op.tutor));
     var lista = [], enviando = false, entregado = false, relamp = null;
     if (window.WaveTipos) WaveTipos.enlazar(cuerpo);
     // Enunciado que ve el alumno: si la pregunta tiene números al azar, ya viene con los números sorteados

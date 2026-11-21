@@ -61,12 +61,7 @@
         '<aside class="wvp-chat" aria-label="Tutor">' +
           '<div class="wvp-chat-cab"><b>💬 Tutor Wave</b><small>Preguntale lo que no entiendas de este material</small>' +
             '<button type="button" class="wvp-chat-x" data-v="chat" aria-label="Cerrar chat">✕</button></div>' +
-          '<div class="wvp-chat-msgs" aria-live="polite">' +
-            '<div class="wvp-m bot">¡Hola! Soy tu tutor. Leí este material: preguntame lo que no te quede claro y lo vemos juntos.</div>' +
-          '</div>' +
-          '<div class="wvp-chat-rest" hidden></div>' +
-          '<form class="wvp-chat-form"><textarea rows="1" maxlength="2000" placeholder="Escribí tu duda…" aria-label="Tu duda"></textarea>' +
-            '<button type="submit" class="wvp-b wvp-env" aria-label="Enviar">➤</button></form>' +
+          '<div class="wt-cuerpo"></div>' +
         '</aside>' : '') +
       '</div>';
     document.body.appendChild(el);
@@ -162,49 +157,9 @@
     var temporizador = null;
     function alCambiarTamano() { clearTimeout(temporizador); temporizador = setTimeout(pintar, 150); }
 
-    // ---------- Chat con el tutor ----------
-    var conv = null, enviando = false;
+    // ---------- Chat con el tutor (componente compartido js/tutor-ia.js) ----------
     if (conChat) {
-      var msgs = el.querySelector('.wvp-chat-msgs');
-      var form = el.querySelector('.wvp-chat-form');
-      var campo = form.querySelector('textarea');
-      var btnEnv = form.querySelector('.wvp-env');
-      var rest = el.querySelector('.wvp-chat-rest');
-      var agregar = function (clase, texto) {
-        var d = document.createElement('div');
-        d.className = 'wvp-m ' + clase;
-        d.textContent = texto;
-        msgs.appendChild(d);
-        msgs.scrollTop = msgs.scrollHeight;
-        return d;
-      };
-      campo.addEventListener('input', function () { campo.style.height = 'auto'; campo.style.height = Math.min(campo.scrollHeight, 120) + 'px'; });
-      campo.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); }
-        ev.stopPropagation(); // no cambiar de página mientras escribe
-      });
-      form.addEventListener('submit', async function (ev) {
-        ev.preventDefault();
-        var t = campo.value.trim();
-        if (!t || enviando) return;
-        enviando = true; btnEnv.disabled = true;
-        agregar('yo', t);
-        campo.value = ''; campo.style.height = 'auto';
-        var pensando = agregar('bot pensando', 'Pensando…');
-        try {
-          var r = await opts.chat(t, conv);
-          conv = r.conversation_id || conv;
-          pensando.className = 'wvp-m bot'; pensando.textContent = r.reply;
-          if (typeof r.remaining === 'number') {
-            rest.hidden = false;
-            rest.textContent = r.remaining > 0 ? 'Te quedan ' + r.remaining + ' consultas hoy' : 'Esta fue tu última consulta de hoy';
-          }
-        } catch (e) {
-          pensando.className = 'wvp-m bot error'; pensando.textContent = e.message || 'El tutor no pudo responder ahora.';
-        }
-        msgs.scrollTop = msgs.scrollHeight;
-        enviando = false; btnEnv.disabled = false; campo.focus();
-      });
+      WaveTutor.montar({ contenedor: el.querySelector('.wt-cuerpo'), pantalla: 'pdf', enviar: opts.chat, ctx: opts.chatCtx, config: opts.chatConfig });
     }
 
     el.addEventListener('click', function (ev) {
