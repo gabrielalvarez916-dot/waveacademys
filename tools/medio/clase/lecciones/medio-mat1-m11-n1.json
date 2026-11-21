@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat1-m11-n1",
+ "step_id": "7d8b1edd-ceae-47c3-a8c3-fc63ac2f48fd",
+ "materia": "Matemática 1",
+ "titulo": "Los dobles",
+ "sub": "Matemática 1 · Misión 11 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🪞",
+   "lineas": [
+    "Sofi encontró un espejo mágico.",
+    "Pone algo delante…",
+    "¡y aparece dos veces!"
+   ],
+   "titulo": "LOS DOBLES",
+   "sub": "el espejo mágico",
+   "voz": [
+    "Sofi encontró un *espejo mágico*.",
+    "Pone algo delante del espejo…",
+    "¡y aparece *dos veces*!",
+    "Hoy: *los dobles*."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🍎",
+    "n": 3
+   },
+   "b": {
+    "emoji": "🍎",
+    "n": 3
+   },
+   "texto": "3 + 3 = 6",
+   "voz": [
+    "Sofi pone *3* manzanas. ¡Aparecen 3 más!",
+    "Juntamos las de los dos lados.",
+    "¡Son *6*! El doble de 3 es 6."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "EL DOBLE",
+   "texto": "Dos veces la misma cantidad",
+   "emoji": "🪞",
+   "voz": [
+    "*El doble* es tener dos veces lo mismo.",
+    "Como en el espejo mágico."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "⚽",
+    "n": 4
+   },
+   "b": {
+    "emoji": "⚽",
+    "n": 4
+   },
+   "texto": "4 + 4 = 8",
+   "voz": [
+    "Ahora pone *4* pelotas frente al espejo.",
+    "Aparecen 4 más. Las juntamos.",
+    "¡El doble de 4 es *8*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ TUS MANOS",
+   "texto": "Las dos manos son un doble: 5 + 5",
+   "emoji": "🙌",
+   "voz": [
+    "Truco: tus manos son un doble. ¡*5 más 5*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es el doble de 2?",
+   "opciones": [
+    "2",
+    "4",
+    "22"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Dos globos frente al espejo.",
+    "¿Cuál es el doble de 2?",
+    "¡*4*! 2 más 2 es 4."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESPEJO",
+     "lo mismo dos veces"
+    ],
+    [
+     "DOBLE",
+     "4 + 4 = 8"
+    ],
+    [
+     "MANOS",
+     "5 + 5 = 10"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *espejo* muestra lo mismo dos veces.",
+    "El *doble* de 4 es 8.",
+    "Tus manos: *5 más 5 es 10*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

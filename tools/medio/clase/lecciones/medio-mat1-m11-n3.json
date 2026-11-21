@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat1-m11-n3",
+ "step_id": "84d8c211-a1aa-4baf-a02e-e54874f2e83e",
+ "materia": "Matemática 1",
+ "titulo": "Casi dobles",
+ "sub": "Matemática 1 · Misión 11 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🪞",
+   "final": "➕",
+   "titulo": "CASI DOBLES",
+   "sub": "uno más",
+   "voz": [
+    "¡El espejo mágico se equivocó!",
+    "Puso *una* manzana de más.",
+    "Hoy: *casi dobles*."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "⚽",
+    "n": 4
+   },
+   "b": {
+    "emoji": "⚽",
+    "n": 5
+   },
+   "texto": "4 + 5 = 9",
+   "voz": [
+    "De un lado hay 4, del otro 5.",
+    "¡Es casi un doble! El 5 tiene uno más.",
+    "Juntamos todo: ¡son *9*!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL TRUCO",
+   "items": [
+    {
+     "txt": "4 + 5",
+     "emoji": "🤔"
+    },
+    {
+     "txt": "4 + 4 = 8",
+     "emoji": "🪞"
+    },
+    {
+     "txt": "Uno más: 9",
+     "emoji": "➕"
+    }
+   ],
+   "voz": [
+    "Así se hace el *truco*.",
+    "Miramos la suma: 4 más 5.",
+    "Usamos el doble: 4 más 4 es 8.",
+    "Uno más: ¡*9*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "CASI DOBLE",
+   "texto": "Dos números uno al lado del otro",
+   "emoji": "👯",
+   "voz": [
+    "Un *casi doble* son dos números vecinos.",
+    "Como el 4 y el 5."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Si 5 + 5 = 10, ¿cuánto es 5 + 6?",
+   "opciones": [
+    "10",
+    "11",
+    "12"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Usá el doble del 5.",
+    "¿Cuánto es 5 más 6?",
+    "¡*11*! 10 y uno más."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar 2 al doble",
+     "bien": "Sumar solo 1"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Al doble le sumamos *solo 1*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CASI DOBLE",
+     "4 + 5"
+    ],
+    [
+     "DOBLE",
+     "4 + 4 = 8"
+    ],
+    [
+     "UNO MÁS",
+     "4 + 5 = 9"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "4 más 5 es un *casi doble*.",
+    "Usamos el *doble*: 4 más 4 es 8.",
+    "Y *uno más*: 9.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

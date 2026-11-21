@@ -1,0 +1,130 @@
+{
+ "slug": "medio-mat1-m11-n2",
+ "step_id": "2c89ae28-15ee-4f20-af3d-bfb8b98c12dd",
+ "materia": "Matemática 1",
+ "titulo": "Sumas de números iguales",
+ "sub": "Matemática 1 · Misión 11 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuánto es 2 + 2 + 2?",
+   "segundos": 6,
+   "respuesta": "¡6!",
+   "emoji": "🧦",
+   "titulo": "SUMAR",
+   "sub": "números iguales",
+   "voz": [
+    "Desafío: ¿cuánto es 2 más 2 más 2?",
+    "¡*6*!",
+    "Hoy: *sumas de números iguales*."
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🍎",
+   "n": 6,
+   "mas": 6,
+   "texto": "6 + 6 = 12",
+   "voz": [
+    "Hay *6* manzanas y el espejo pone 6 más.",
+    "Seguimos: 7, 8, 9, 10, 11, 12.",
+    "¡6 más 6 es *12*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "SUMAR IGUALES",
+   "texto": "Sumar el mismo número varias veces",
+   "emoji": "🔁",
+   "voz": [
+    "*Sumar iguales* es repetir el mismo número.",
+    "Lo podemos repetir dos, tres o más veces."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "TRES VECES EL 2",
+   "min": 0,
+   "max": 10,
+   "cada": 1,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    }
+   ],
+   "voz": [
+    "Saltamos de a 2 en la recta.",
+    "Primer salto: llegamos al 2.",
+    "Segundo salto: llegamos al 4.",
+    "Tercer salto: ¡llegamos al *6*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "3 pares de medias. ¿Cuántas medias son?",
+   "opciones": [
+    "3",
+    "5",
+    "6"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Un par son 2 medias.",
+    "¿Cuántas medias hay en 3 pares?",
+    "¡*6*! 2 más 2 más 2."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar el 2 solo una vez",
+     "bien": "Contar cuántas veces está"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Contá *cuántas veces* está el número."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "IGUALES",
+     "el mismo número"
+    ],
+    [
+     "DOBLE",
+     "6 + 6 = 12"
+    ],
+    [
+     "TRES VECES",
+     "2 + 2 + 2 = 6"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Sumamos el *mismo número*.",
+    "6 más 6 es *12*.",
+    "Tres veces el 2 es *6*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

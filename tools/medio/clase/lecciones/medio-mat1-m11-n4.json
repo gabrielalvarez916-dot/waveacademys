@@ -1,0 +1,167 @@
+{
+ "slug": "medio-mat1-m11-n4",
+ "step_id": "9cf8c48f-2983-47e5-9980-9f9fd8e54e3a",
+ "materia": "Matemática 1",
+ "titulo": "Cálculo mental con dobles",
+ "sub": "Matemática 1 · Misión 11 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CAMPEONATO",
+   "titular": "¡CARRERA DE DOBLES!",
+   "bajada": "Gana quien responde sin contar",
+   "emoji": "🏁",
+   "titulo": "CÁLCULO MENTAL",
+   "sub": "con dobles",
+   "voz": [
+    "¡Campeonato en la escuela de Sofi!",
+    "Gana quien dice los dobles *sin contar*.",
+    "Hoy: *cálculo mental con dobles*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS DOBLES",
+   "columnas": [
+    "DOBLE",
+    "DA"
+   ],
+   "filas": [
+    [
+     "1 + 1",
+     "2"
+    ],
+    [
+     "2 + 2",
+     "4"
+    ],
+    [
+     "3 + 3",
+     "6"
+    ],
+    [
+     "4 + 4",
+     "8"
+    ],
+    [
+     "5 + 5",
+     "10"
+    ]
+   ],
+   "voz": [
+    "Estos son los primeros *dobles*.",
+    "1 más 1 es 2.",
+    "2 más 2 es 4.",
+    "3 más 3 es 6.",
+    "4 más 4 es 8.",
+    "Y 5 más 5 es *10*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "DOBLES MÁS GRANDES",
+   "columnas": [
+    "DOBLE",
+    "DA"
+   ],
+   "filas": [
+    [
+     "6 + 6",
+     "12"
+    ],
+    [
+     "7 + 7",
+     "14"
+    ],
+    [
+     "8 + 8",
+     "16"
+    ],
+    [
+     "9 + 9",
+     "18"
+    ],
+    [
+     "10 + 10",
+     "20"
+    ]
+   ],
+   "voz": [
+    "Ahora, *dobles más grandes*.",
+    "6 más 6 es 12.",
+    "7 más 7 es 14.",
+    "8 más 8 es 16.",
+    "9 más 9 es 18.",
+    "¡Y 10 más 10 es *20*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SALTAN DE A 2",
+   "texto": "Los dobles son 2, 4, 6, 8, 10…",
+   "emoji": "🐸",
+   "voz": [
+    "Truco: los resultados *saltan de a 2*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 8 + 8?",
+   "opciones": [
+    "16",
+    "18",
+    "88"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¡Sin contar!",
+    "¿Cuánto es 8 más 8?",
+    "¡*16*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 10 + 10?",
+   "opciones": [
+    "1010",
+    "20",
+    "11"
+   ],
+   "correcta": 1,
+   "voz": [
+    "La última de la carrera.",
+    "¿Cuánto es 10 más 10?",
+    "¡*20*! ¡Ganaste!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MEMORIA",
+     "sin contar"
+    ],
+    [
+     "HASTA 10",
+     "5 + 5 = 10"
+    ],
+    [
+     "HASTA 20",
+     "10 + 10 = 20"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los dobles se saben *de memoria*.",
+    "5 más 5 es *10*.",
+    "Y 10 más 10 es *20*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

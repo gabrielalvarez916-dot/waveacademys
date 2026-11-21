@@ -462,3 +462,32 @@ def marco10(n, obj="pelota", obj2=None, n2=0, texto=None):
         elif k < n + n2: OBJ[obj2 or obj](ax, x, y)
     if texto: cartel(ax, 2.7, -.55, texto, c=TEAL, fs=14)
     return png(fig)
+
+
+# ---------------- dibujos de la misión 12 (decenas enteras) ----------------
+def recta_decenas(saltos=(), marcas=(), hasta=100):
+    """Recta del 0 al 100 de 10 en 10, con saltos (arcos) de una decena a otra. saltos: [(desde, hasta)]; marcas: [(valor, etiqueta)]."""
+    from matplotlib.patches import FancyArrowPatch
+    n = hasta // 10
+    fig, ax = lienzo(.85 * n + 1.2, 2.4, n + .8, 2.4, -0.5, -0.9)
+    ax.annotate("", xy=(n + .5, 0), xytext=(-.3, 0), arrowprops=dict(arrowstyle="-|>", color=OSC, lw=1.8))
+    for k in range(n + 1):
+        ax.plot([k, k], [-.12, .12], color=OSC, lw=1.4); ax.text(k, -.45, str(k * 10), ha="center", va="center", fontsize=12, color=OSC, **F)
+    for a, b in saltos:
+        ax.add_patch(FancyArrowPatch((a / 10, .2), (b / 10, .2), connectionstyle="arc3,rad=%s" % (-.7 if b > a else .7), arrowstyle="-|>", mutation_scale=16, color=CORAL, lw=2))
+    for v, et in marcas:
+        ax.add_patch(Circle((v / 10, 0), .17, color=AMBAR, ec=OSC, lw=1.2, zorder=3))
+        if et: cartel(ax, v / 10, 1.15, et, c=TEAL, fs=11)
+    return png(fig)
+
+
+# ---------------- dibujos de la misión 11 (dobles) ----------------
+def cuentas(pares, ocultar=()):
+    """Tarjetas con una cuenta arriba y su resultado grande abajo: [("6 + 6", 12)...]. ocultar: índices con el resultado en blanco."""
+    n = len(pares); fig, ax = lienzo(2.6 * n, 2.4, 2.6 * n, 2.4, 0, 0)
+    for i, (cta, res) in enumerate(pares):
+        x = 2.6 * i + .15
+        ax.add_patch(FancyBboxPatch((x, .15), 2.3, 2.1, boxstyle="round,pad=0.02,rounding_size=0.2", color=MENTA, ec=TEAL, lw=1.8))
+        ax.text(x + 1.15, 1.75, cta, ha="center", va="center", fontsize=17, color=TEAL, **F)
+        ax.text(x + 1.15, .85, "___" if i in ocultar else str(res), ha="center", va="center", fontsize=32, color=OSC, **F)
+    return png(fig)
