@@ -1,0 +1,212 @@
+{
+ "slug": "soc1-m7-n2",
+ "step_id": "4ea01feb-73a8-4bda-b0ae-c75b8ff4a491",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Natalidad, mortalidad y pirámides de población",
+ "sub": "Ciencias Sociales Integradas I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abu",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "En mi época éramos 8 hermanos"
+    },
+    {
+     "yo": true,
+     "txt": "¡Hoy casi nadie tiene tantos!"
+    },
+    {
+     "yo": false,
+     "txt": "Cambió la población, nieta 😊"
+    }
+   ],
+   "titulo": "NATALIDAD Y MORTALIDAD",
+   "sub": "y pirámides de población",
+   "voz": [
+    "Abu le cuenta a su nieta que en su época eran ocho hermanos.",
+    "La nieta dice que hoy casi nadie tiene tantos.",
+    "Abu: cambió la población.",
+    "Hoy: *natalidad*, *mortalidad* y *pirámides*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "DOS TASAS",
+   "columnas": [
+    "Tasa",
+    "Qué mide"
+   ],
+   "filas": [
+    [
+     "Natalidad",
+     "Nacimientos por mil"
+    ],
+    [
+     "Mortalidad",
+     "Muertes por mil"
+    ]
+   ],
+   "voz": [
+    "Dos tasas básicas.",
+    "La *natalidad*: nacimientos por cada mil habitantes en un año.",
+    "La *mortalidad*: muertes por cada mil habitantes en un año."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Crecimiento natural",
+   "texto": "Natalidad menos mortalidad",
+   "emoji": "➕",
+   "voz": [
+    "El *crecimiento natural* se calcula restando.",
+    "Natalidad menos mortalidad."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UN EJEMPLO",
+   "items": [
+    {
+     "txt": "Natalidad: 18",
+     "emoji": "👶"
+    },
+    {
+     "txt": "Mortalidad: 8",
+     "emoji": "🕯️"
+    },
+    {
+     "txt": "18 − 8 = 10",
+     "emoji": "➖"
+    }
+   ],
+   "voz": [
+    "Un ejemplo.",
+    "Natalidad: *dieciocho* por mil.",
+    "Mortalidad: *ocho* por mil.",
+    "Dieciocho menos ocho: crece *diez por mil*, un uno por ciento."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BASE ANCHA",
+    "texto": "Muchos nacimientos",
+    "emoji": "👶"
+   },
+   "b": {
+    "cab": "BASE ANGOSTA",
+    "texto": "Pocos nacimientos y vida larga",
+    "emoji": "👴"
+   },
+   "signo": "vs",
+   "voz": [
+    "Así se lee una pirámide.",
+    "La *base ancha* indica muchos nacimientos: población *joven*.",
+    "La *base angosta* con la cima ancha indica población *envejecida*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "JOVEN",
+     "emoji": "👶"
+    },
+    {
+     "cab": "ENVEJECIDA",
+     "emoji": "👴"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Base ancha",
+     "caja": 0
+    },
+    {
+     "txt": "Cima ancha",
+     "caja": 1
+    },
+    {
+     "txt": "Muchos nacimientos",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Joven o envejecida?",
+    "*Base ancha* y *muchos nacimientos*: joven.",
+    "*Cima ancha*: envejecida."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Natalidad veinte por mil y mortalidad siete por mil. ¿Cuál es el crecimiento natural?",
+   "opciones": [
+    "13",
+    "27",
+    "3"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: natalidad veinte y mortalidad siete.",
+    "¿Trece, veintisiete o tres?",
+    "Se *resta*: veinte menos siete, *trece*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar natalidad y mortalidad",
+     "bien": "Se restan"
+    },
+    {
+     "mal": "Base ancha = envejecida",
+     "bien": "Base ancha = joven"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Sumar* las dos tasas en lugar de restar.",
+    "Y confundir *base ancha* con población envejecida."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *natalidad* mide nacimientos.",
+    "La *mortalidad*, muertes.",
+    "El *crecimiento natural* es la resta.",
+    "Y la *pirámide* muestra la edad de la población.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NATALIDAD",
+     "nacimientos por mil"
+    ],
+    [
+     "MORTALIDAD",
+     "muertes por mil"
+    ],
+    [
+     "CRECIMIENTO",
+     "natalidad − mortalidad"
+    ],
+    [
+     "PIRÁMIDE",
+     "base ancha: joven"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

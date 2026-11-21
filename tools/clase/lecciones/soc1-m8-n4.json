@@ -1,0 +1,201 @@
+{
+ "slug": "soc1-m8-n4",
+ "step_id": "23e37342-25f4-4723-8e54-48a5c98bb327",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Tecnologías que reorganizan el territorio",
+ "sub": "Ciencias Sociales Integradas I · Misión 8 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Cami",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Me mudé al pueblo y trabajo desde casa 💻"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y la oficina?"
+    },
+    {
+     "yo": false,
+     "txt": "Es mi compu y buena conexión 😄"
+    }
+   ],
+   "titulo": "TECNOLOGÍA Y TERRITORIO",
+   "sub": "cómo reorganiza campo y ciudad",
+   "voz": [
+    "Cami se mudó a un pueblo y trabaja desde casa.",
+    "Mati pregunta por la oficina.",
+    "Cami: es su compu y una buena conexión.",
+    "Hoy: *tecnologías que reorganizan el territorio*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Teletrabajo",
+   "texto": "Trabajar a distancia por Internet",
+   "emoji": "💻",
+   "voz": [
+    "El *teletrabajo* es trabajar a distancia usando Internet.",
+    "Algunas personas se mudan lejos del centro."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Comercio electrónico",
+    "emoji": "🛒"
+   },
+   "items": [
+    {
+     "txt": "Más depósitos",
+     "emoji": "📦"
+    },
+    {
+     "txt": "Más repartos",
+     "emoji": "🚚"
+    }
+   ],
+   "voz": [
+    "El *comercio electrónico* cambia el territorio.",
+    "Hacen falta *más depósitos*.",
+    "Y *más repartos* por las calles."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TECNOLOGÍAS",
+   "columnas": [
+    "Dónde",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Campo",
+     "Drones y GPS"
+    ],
+    [
+     "Ciudad",
+     "Semáforos inteligentes"
+    ]
+   ],
+   "voz": [
+    "Tecnologías según el lugar.",
+    "En el *campo*: drones y GPS para cuidar los cultivos.",
+    "En la *ciudad*: semáforos inteligentes, aplicaciones de transporte y sensores."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Brecha digital",
+   "texto": "Diferencia de acceso a Internet",
+   "emoji": "📶",
+   "voz": [
+    "La *brecha digital* es la diferencia de acceso a Internet.",
+    "En zonas rurales a veces es lenta o no existe, y eso limita la educación y el trabajo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CAMPO",
+     "emoji": "🌾"
+    },
+    {
+     "cab": "CIUDAD",
+     "emoji": "🏙️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Drones y GPS",
+     "caja": 0
+    },
+    {
+     "txt": "Semáforo digital",
+     "caja": 1
+    },
+    {
+     "txt": "Riego de precisión",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Campo o ciudad?",
+    "*Drones, GPS* y *riego de precisión*: campo.",
+    "*Semáforo digital*: ciudad."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama la diferencia de acceso a Internet?",
+   "opciones": [
+    "Brecha digital",
+    "Éxodo rural",
+    "Subsistencia"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se llama la diferencia de acceso a Internet?",
+    "¿Brecha digital, éxodo rural o subsistencia?",
+    "*Brecha digital*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La tecnología llega igual a todos",
+     "bien": "Hay brecha digital"
+    },
+    {
+     "mal": "El comercio electrónico no usa territorio",
+     "bien": "Necesita depósitos y repartos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la tecnología *llega igual a todos*.",
+    "Y pensar que el comercio electrónico *no usa territorio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *teletrabajo* cambia dónde se vive.",
+    "El *comercio electrónico* necesita depósitos y repartos.",
+    "La *tecnología* cambia campo y ciudad.",
+    "Y la *brecha digital* deja a algunos afuera.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TELETRABAJO",
+     "a distancia"
+    ],
+    [
+     "COMERCIO",
+     "depósitos y repartos"
+    ],
+    [
+     "PRECISIÓN",
+     "GPS y drones"
+    ],
+    [
+     "BRECHA",
+     "acceso desigual"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,0 +1,200 @@
+{
+ "slug": "soc1-m7-n4",
+ "step_id": "ee7ec63c-b37c-4dec-a7d2-b3bb80042f3e",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Condiciones de vida: indicadores y desigualdades",
+ "sub": "Ciencias Sociales Integradas I · Misión 7 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Dónde se vive más años: en un país rico o en uno pobre?",
+   "segundos": 6,
+   "respuesta": "En general, en el país con mejores condiciones de vida",
+   "emoji": "🌍",
+   "titulo": "CONDICIONES DE VIDA",
+   "sub": "indicadores y desigualdades",
+   "voz": [
+    "Desafío: ¿dónde se vive más años, en un país rico o en uno pobre? Seis segundos.",
+    "En general, se vive más donde hay mejores condiciones de vida.",
+    "Hoy: *indicadores* y *desigualdades*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "INDICADORES",
+   "columnas": [
+    "Indicador",
+    "Qué muestra"
+   ],
+   "filas": [
+    [
+     "Esperanza de vida",
+     "Años que se espera vivir"
+    ],
+    [
+     "Mortalidad infantil",
+     "Bebés que mueren antes del año"
+    ],
+    [
+     "Alfabetización",
+     "Saber leer y escribir"
+    ]
+   ],
+   "voz": [
+    "Algunos indicadores.",
+    "La *esperanza de vida*: cuántos años se espera vivir.",
+    "La *mortalidad infantil*: bebés que mueren antes de cumplir un año.",
+    "La *alfabetización*: personas que saben leer y escribir."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "IDH",
+   "texto": "Combina salud, educación e ingreso",
+   "emoji": "📊",
+   "voz": [
+    "El *Índice de Desarrollo Humano* lo calcula el PNUD, de la ONU.",
+    "Combina salud, educación e ingreso, y va de cero a uno."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IDH CERCANO A 1",
+    "texto": "Mejores condiciones",
+    "emoji": "📈"
+   },
+   "b": {
+    "cab": "IDH BAJO",
+    "texto": "Peores condiciones",
+    "emoji": "📉"
+   },
+   "signo": "vs",
+   "voz": [
+    "Cómo se lee.",
+    "Un IDH *cercano a uno* indica mejores condiciones de vida.",
+    "Un IDH *bajo*, peores condiciones."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Desigualdades",
+    "emoji": "⚖️"
+   },
+   "items": [
+    {
+     "txt": "Entre países",
+     "emoji": "🌐"
+    },
+    {
+     "txt": "Dentro del país",
+     "emoji": "🏘️"
+    }
+   ],
+   "voz": [
+    "Hay desigualdades de dos tipos.",
+    "*Entre países*, como del norte y del sur.",
+    "Y *dentro* de un mismo país, entre ciudad y campo o entre barrios."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MEJORES CONDICIONES",
+     "emoji": "📈"
+    },
+    {
+     "cab": "PEORES CONDICIONES",
+     "emoji": "📉"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Vive más años",
+     "caja": 0
+    },
+    {
+     "txt": "Mueren más bebés",
+     "caja": 1
+    },
+    {
+     "txt": "Saben leer",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Mejores o peores condiciones?",
+    "*Vivir más años* y *saber leer*: mejores.",
+    "*Que mueran más bebés*: peores."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué indicador combina salud, educación e ingreso?",
+   "opciones": [
+    "El IDH",
+    "La densidad",
+    "La natalidad"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué indicador combina salud, educación e ingreso?",
+    "¿El IDH, la densidad o la natalidad?",
+    "El *IDH*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un indicador alcanza",
+     "bien": "Conviene mirar varios"
+    },
+    {
+     "mal": "Dentro del país todos viven igual",
+     "bien": "Hay desigualdades internas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *un indicador* alcanza.",
+    "Y pensar que dentro de un país *todos viven igual*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *indicadores* miden la calidad de vida.",
+    "El *IDH* combina salud, educación e ingreso.",
+    "Va de *cero a uno*.",
+    "Y hay *desigualdades* entre y dentro de los países.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INDICADORES",
+     "miden la vida"
+    ],
+    [
+     "IDH",
+     "salud, educación, ingreso"
+    ],
+    [
+     "RANGO",
+     "de 0 a 1"
+    ],
+    [
+     "DESIGUALDAD",
+     "entre y dentro"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

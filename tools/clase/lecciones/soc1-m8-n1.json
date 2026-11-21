@@ -1,0 +1,207 @@
+{
+ "slug": "soc1-m8-n1",
+ "step_id": "13884cf2-1909-44bc-84f7-e238534d0a70",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Sectores de la economía y actividades productivas",
+ "sub": "Ciencias Sociales Integradas I · Misión 8 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Pablo",
+    "emoji": "👦"
+   },
+   "lugar": "🍞",
+   "lineas": [
+    "Pablo se preguntó de dónde viene su pan.",
+    "Del trigo, del molino y de la panadería."
+   ],
+   "titulo": "SECTORES",
+   "sub": "de la economía",
+   "voz": [
+    "Pablo se preguntó de dónde viene su pan.",
+    "Del trigo, del molino y de la panadería.",
+    "Hoy: los *sectores de la economía*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LOS TRES SECTORES",
+   "columnas": [
+    "Sector",
+    "Qué hace",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Primario",
+     "Obtiene",
+     "Pesca, minería"
+    ],
+    [
+     "Secundario",
+     "Transforma",
+     "Industria"
+    ],
+    [
+     "Terciario",
+     "Presta servicios",
+     "Comercio, salud"
+    ]
+   ],
+   "voz": [
+    "Tres sectores.",
+    "El *primario* obtiene recursos de la naturaleza: pesca, minería, agricultura.",
+    "El *secundario* los transforma: la industria.",
+    "El *terciario* presta servicios: comercio, transporte, salud y educación."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LA CADENA DEL PAN",
+   "items": [
+    {
+     "txt": "Cosechar trigo",
+     "emoji": "🌾"
+    },
+    {
+     "txt": "Moler y hacer pan",
+     "emoji": "🏭"
+    },
+    {
+     "txt": "Vender en la panadería",
+     "emoji": "🛒"
+    }
+   ],
+   "voz": [
+    "Una cadena productiva.",
+    "Se *cosecha* el trigo: sector primario.",
+    "Se *muele* y se hace pan: sector secundario.",
+    "Se *vende* en la panadería: sector terciario."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Valor agregado",
+   "texto": "Valor que suma cada etapa de la cadena",
+   "emoji": "➕",
+   "voz": [
+    "Cada etapa agrega *valor* al producto.",
+    "Un kilo de trigo vale menos que el mismo trigo convertido en pan."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PRIMARIO",
+     "emoji": "⛏️"
+    },
+    {
+     "cab": "SECUNDARIO",
+     "emoji": "🏭"
+    },
+    {
+     "cab": "TERCIARIO",
+     "emoji": "🛒"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pesca",
+     "caja": 0
+    },
+    {
+     "txt": "Fábrica de pan",
+     "caja": 1
+    },
+    {
+     "txt": "Escuela",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿A qué sector pertenece cada una?",
+    "La *pesca*: primario.",
+    "La *fábrica*: secundario.",
+    "La *escuela*: terciario."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué sector transforma las materias primas?",
+   "opciones": [
+    "Secundario",
+    "Primario",
+    "Terciario"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué sector transforma las materias primas?",
+    "¿Secundario, primario o terciario?",
+    "El *secundario*: la industria."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Cambio actual",
+   "texto": "El terciario es el que más empleos da",
+   "emoji": "📈",
+   "voz": [
+    "Hoy el sector *terciario* es el que más empleos da.",
+    "La agricultura necesita menos gente porque se mecanizó."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Servicios son solo comercio",
+     "bien": "Incluyen salud, educación y más"
+    },
+    {
+     "mal": "Un producto es de un solo sector",
+     "bien": "Pasa por los tres"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *servicios* son solo comercio.",
+    "Y pensar que un producto es *de un solo sector*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *primario* obtiene.",
+    "El *secundario* transforma.",
+    "El *terciario* presta servicios.",
+    "Y la *cadena* pasa por los tres.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRIMARIO",
+     "obtiene"
+    ],
+    [
+     "SECUNDARIO",
+     "transforma"
+    ],
+    [
+     "TERCIARIO",
+     "servicios"
+    ],
+    [
+     "CADENA",
+     "suma valor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

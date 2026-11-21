@@ -1,0 +1,219 @@
+{
+ "slug": "soc1-m8-n3",
+ "step_id": "a1d26376-b802-4088-bad0-3972acc8c4dd",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Espacios urbanos: cómo se organiza una ciudad",
+ "sub": "Ciencias Sociales Integradas I · Misión 8 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "TRÁNSITO",
+   "titular": "Hora pico: la ciudad no se mueve",
+   "bajada": "Millones llegan al centro cada mañana",
+   "emoji": "🚗",
+   "titulo": "LA CIUDAD",
+   "sub": "cómo se organiza",
+   "voz": [
+    "Hora pico: la ciudad no se mueve.",
+    "Millones de personas llegan al centro cada mañana.",
+    "Hoy: *cómo se organiza una ciudad*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ZONAS DE LA CIUDAD",
+   "columnas": [
+    "Zona",
+    "Qué hay"
+   ],
+   "filas": [
+    [
+     "Centro",
+     "Comercio y oficinas"
+    ],
+    [
+     "Residencial",
+     "Viviendas"
+    ],
+    [
+     "Industrial",
+     "Fábricas"
+    ],
+    [
+     "Periferia",
+     "Barrios en crecimiento"
+    ]
+   ],
+   "voz": [
+    "Las zonas de una ciudad.",
+    "El *centro*: comercios, oficinas y edificios altos.",
+    "Los barrios *residenciales*: viviendas.",
+    "La zona *industrial*: fábricas.",
+    "Y la *periferia*: los barrios que van creciendo."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Uso del suelo",
+   "texto": "Para qué se usa cada terreno",
+   "emoji": "🗺️",
+   "voz": [
+    "El *uso del suelo* es para qué se utiliza cada terreno.",
+    "Vivir, trabajar, producir o descansar."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Redes de servicios",
+    "emoji": "🔌"
+   },
+   "items": [
+    {
+     "txt": "Agua y cloacas",
+     "emoji": "🚰"
+    },
+    {
+     "txt": "Electricidad",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Transporte",
+     "emoji": "🚌"
+    }
+   ],
+   "voz": [
+    "Una ciudad necesita redes.",
+    "*Agua y cloacas*.",
+    "*Electricidad*.",
+    "Y *transporte*. Si la ciudad crece muy rápido, no siempre llegan a todos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CENTRO",
+     "emoji": "🏢"
+    },
+    {
+     "cab": "PERIFERIA",
+     "emoji": "🏘️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Bancos y oficinas",
+     "caja": 0
+    },
+    {
+     "txt": "Barrios nuevos",
+     "caja": 1
+    },
+    {
+     "txt": "Edificios altos",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Centro o periferia?",
+    "*Bancos y oficinas* y *edificios altos*: centro.",
+    "*Barrios nuevos*: periferia."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un problema urbano?",
+   "opciones": [
+    "El tránsito",
+    "La cosecha",
+    "La pesca"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál es un problema urbano?",
+    "¿El tránsito, la cosecha o la pesca?",
+    "El *tránsito*: muchos autos y poco transporte público."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "PROBLEMAS URBANOS",
+   "columnas": [
+    "Problema",
+    "Causa"
+   ],
+   "filas": [
+    [
+     "Tránsito",
+     "Muchos autos"
+    ],
+    [
+     "Vivienda",
+     "Crecimiento rápido"
+    ],
+    [
+     "Basura",
+     "Mucha población"
+    ]
+   ],
+   "voz": [
+    "Problemas frecuentes.",
+    "El *tránsito*: muchos autos.",
+    "La falta de *vivienda*: crecimiento rápido.",
+    "Y la *basura*: mucha población."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todos los barrios tienen lo mismo",
+     "bien": "Hay desigualdades"
+    },
+    {
+     "mal": "La ciudad es un solo espacio",
+     "bien": "Tiene zonas distintas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todos los barrios* tienen los mismos servicios.",
+    "Y pensar que la ciudad es *un solo espacio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La ciudad tiene *zonas*.",
+    "Cada una tiene su *uso del suelo*.",
+    "Necesita *redes* de servicios.",
+    "Y enfrenta *problemas* como el tránsito.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CENTRO",
+     "comercio y oficinas"
+    ],
+    [
+     "PERIFERIA",
+     "crece"
+    ],
+    [
+     "REDES",
+     "agua, luz, transporte"
+    ],
+    [
+     "PROBLEMAS",
+     "tránsito y vivienda"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

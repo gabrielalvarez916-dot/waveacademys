@@ -1,0 +1,211 @@
+{
+ "slug": "soc1-m7-n3",
+ "step_id": "d3591306-0ffe-4b17-b75f-ef4ddf09592e",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Por qué y hacia dónde se mueve la gente",
+ "sub": "Ciencias Sociales Integradas I · Misión 7 · Nivel 3",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Amina",
+    "emoji": "👩"
+   },
+   "lugar": "🧳",
+   "lineas": [
+    "Amina dejó su ciudad por la guerra.",
+    "Llegó a otro país con una valija y mucha esperanza."
+   ],
+   "titulo": "MIGRACIONES",
+   "sub": "por qué y hacia dónde se mueve la gente",
+   "voz": [
+    "Amina dejó su ciudad por la guerra.",
+    "Llegó a otro país con una valija y mucha esperanza.",
+    "Hoy: las *migraciones*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Migración",
+   "texto": "Traslado de personas para vivir en otro lugar",
+   "emoji": "🚶",
+   "voz": [
+    "Una *migración* es el traslado de personas para vivir en otro lugar.",
+    "Quien sale es *emigrante*; quien llega, *inmigrante*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Por qué se migra",
+    "emoji": "🧭"
+   },
+   "items": [
+    {
+     "txt": "Económicas",
+     "emoji": "💼"
+    },
+    {
+     "txt": "Políticas",
+     "emoji": "🕊️"
+    },
+    {
+     "txt": "Ambientales",
+     "emoji": "🌪️"
+    },
+    {
+     "txt": "Familiares",
+     "emoji": "👪"
+    }
+   ],
+   "voz": [
+    "Hay muchas causas.",
+    "*Económicas*: buscar trabajo o mejor sueldo.",
+    "*Políticas*: guerras y persecuciones; quienes huyen son *refugiados*.",
+    "*Ambientales*: sequías, inundaciones o terremotos.",
+    "Y *familiares*: reunirse con parientes."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "INTERNA",
+    "texto": "Dentro del mismo país",
+    "emoji": "🏙️"
+   },
+   "b": {
+    "cab": "INTERNACIONAL",
+    "texto": "De un país a otro",
+    "emoji": "✈️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Hay dos tipos.",
+    "La *interna*: por ejemplo, del campo a la ciudad.",
+    "La *internacional*: de un país a otro."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "EMIGRANTE",
+     "emoji": "⬅️"
+    },
+    {
+     "cab": "INMIGRANTE",
+     "emoji": "➡️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sale de su país",
+     "caja": 0
+    },
+    {
+     "txt": "Llega a otro país",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Emigrante o inmigrante?",
+    "El que *sale* es emigrante.",
+    "El que *llega* es inmigrante."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Alguien huye de una guerra. ¿Cómo se llama?",
+   "opciones": [
+    "Refugiado",
+    "Turista",
+    "Comerciante"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: alguien huye de una guerra.",
+    "¿Refugiado, turista o comerciante?",
+    "*Refugiado*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONSECUENCIAS",
+   "columnas": [
+    "Lugar",
+    "Cambio"
+   ],
+   "filas": [
+    [
+     "Ciudades",
+     "Crecen"
+    ],
+    [
+     "Campo",
+     "Pierde gente joven"
+    ],
+    [
+     "Culturas",
+     "Se mezclan"
+    ]
+   ],
+   "voz": [
+    "Las migraciones cambian los lugares.",
+    "Las *ciudades* crecen.",
+    "El *campo* pierde gente joven.",
+    "Y las *culturas* se mezclan."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Emigrar = inmigrar",
+     "bien": "Salir y llegar"
+    },
+    {
+     "mal": "Solo se migra por trabajo",
+     "bien": "Hay varias causas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Confundir *emigrar* con *inmigrar*.",
+    "Y creer que se migra *solo por trabajo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Migrar es *trasladarse*.",
+    "Se migra por causas *económicas*, políticas, ambientales y familiares.",
+    "Puede ser *interna* o *internacional*.",
+    "Y cambia a los lugares.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EMIGRANTE",
+     "sale"
+    ],
+    [
+     "INMIGRANTE",
+     "llega"
+    ],
+    [
+     "REFUGIADO",
+     "huye de guerra"
+    ],
+    [
+     "INTERNA",
+     "dentro del país"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

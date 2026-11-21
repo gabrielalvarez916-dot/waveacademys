@@ -1,0 +1,199 @@
+{
+ "slug": "soc1-m7-n1",
+ "step_id": "58e4949e-1f3e-408e-8bfa-88b4b4046b9e",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Cuántos somos y dónde vivimos",
+ "sub": "Ciencias Sociales Integradas I · Misión 7 · Nivel 1",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "HITO MUNDIAL",
+   "titular": "Ya somos más de 8.000 millones",
+   "bajada": "Y la mitad vive en Asia",
+   "emoji": "🌍",
+   "titulo": "LA POBLACIÓN",
+   "sub": "cuántos somos y dónde vivimos",
+   "voz": [
+    "Hito mundial: ya somos más de ocho mil millones de personas.",
+    "Y más de la mitad vive en Asia.",
+    "Hoy: *la población mundial*."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "8.000",
+   "antes": "millones de personas",
+   "despues": "viven en el planeta",
+   "texto": "Superamos esa cifra en 2022",
+   "emoji": "👥",
+   "voz": [
+    "Somos más de *ocho mil millones* de personas.",
+    "Superamos esa cifra en el año dos mil veintidós."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "India",
+      "China"
+     ],
+     "color": "#c0392b",
+     "texto": "Los más poblados"
+    },
+    {
+     "resaltar": [
+      "Estados Unidos",
+      "Indonesia",
+      "Pakistán"
+     ],
+     "color": "#d9a441",
+     "texto": "Otros muy poblados"
+    }
+   ],
+   "voz": [
+    "Los países más poblados.",
+    "*India* y *China* encabezan la lista.",
+    "Les siguen *Estados Unidos*, *Indonesia* y *Pakistán*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Densidad de población",
+   "texto": "Habitantes por kilómetro cuadrado",
+   "emoji": "📏",
+   "voz": [
+    "La *densidad* se calcula dividiendo los habitantes por la superficie.",
+    "Se mide en habitantes por kilómetro cuadrado."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CALCULAR LA DENSIDAD",
+   "items": [
+    {
+     "txt": "Tomá los habitantes",
+     "emoji": "👥"
+    },
+    {
+     "txt": "Tomá la superficie",
+     "emoji": "📐"
+    },
+    {
+     "txt": "Dividí",
+     "emoji": "➗"
+    }
+   ],
+   "voz": [
+    "Tres pasos.",
+    "Tomá los *habitantes*: por ejemplo, mil doscientos.",
+    "Tomá la *superficie*: cuarenta kilómetros cuadrados.",
+    "*Dividí*: mil doscientos entre cuarenta da treinta habitantes por kilómetro cuadrado."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MUY POBLADAS",
+     "emoji": "🏙️"
+    },
+    {
+     "cab": "POCO POBLADAS",
+     "emoji": "🏜️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Costas",
+     "caja": 0
+    },
+    {
+     "txt": "Desiertos",
+     "caja": 1
+    },
+    {
+     "txt": "Valles de ríos",
+     "caja": 0
+    },
+    {
+     "txt": "Polos",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Dónde vive más gente?",
+    "*Costas* y *valles de ríos*: hay agua y suelo fértil.",
+    "*Desiertos* y *polos*: clima extremo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Una ciudad tiene 600 habitantes y 30 kilómetros cuadrados. ¿Cuál es su densidad?",
+   "opciones": [
+    "20",
+    "30",
+    "180"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: seiscientos habitantes en treinta kilómetros cuadrados.",
+    "¿Veinte, treinta o ciento ochenta?",
+    "Seiscientos entre treinta da *veinte* habitantes por kilómetro cuadrado."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Más habitantes es más densidad",
+     "bien": "Depende de la superficie"
+    },
+    {
+     "mal": "Los desiertos están muy poblados",
+     "bien": "Están poco poblados"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *más habitantes* siempre es *más densidad*.",
+    "Y pensar que los *desiertos* están muy poblados."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Somos más de *ocho mil millones*.",
+    "Más de la mitad vive en *Asia*.",
+    "La *densidad* es habitantes entre superficie.",
+    "Y la gente vive donde hay *agua* y *trabajo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "POBLACIÓN",
+     "más de 8.000 millones"
+    ],
+    [
+     "ASIA",
+     "más de la mitad"
+    ],
+    [
+     "DENSIDAD",
+     "habitantes ÷ km²"
+    ],
+    [
+     "POBLADAS",
+     "costas y llanuras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

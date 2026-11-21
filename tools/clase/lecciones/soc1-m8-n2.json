@@ -1,0 +1,195 @@
+{
+ "slug": "soc1-m8-n2",
+ "step_id": "b5c1a162-2eec-4627-b615-07d8573276ad",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Espacios rurales: del cultivo a la agroindustria",
+ "sub": "Ciencias Sociales Integradas I · Misión 8 · Nivel 2",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "1 tractor",
+   "emoji": "🚜",
+   "final": "100 trabajadores",
+   "titulo": "EL CAMPO ACTUAL",
+   "sub": "del cultivo a la agroindustria",
+   "voz": [
+    "Un tractor moderno puede hacer el trabajo de muchísimos trabajadores.",
+    "¿Qué le pasó al campo?",
+    "Hoy: *del cultivo a la agroindustria*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SUBSISTENCIA",
+    "texto": "Para consumo propio",
+    "emoji": "🥕"
+   },
+   "b": {
+    "cab": "COMERCIAL",
+    "texto": "Para vender",
+    "emoji": "🚜"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos tipos de agricultura.",
+    "La de *subsistencia*: se produce para comer en casa, casi sin tecnología.",
+    "La *comercial*: se produce para vender, con maquinaria e insumos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Agroindustria",
+   "texto": "Industria que procesa productos del campo",
+   "emoji": "🥫",
+   "voz": [
+    "La *agroindustria* procesa productos del campo.",
+    "Jugos, aceites, harinas, lácteos y conservas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "TECNOLOGÍA EN EL CAMPO",
+   "items": [
+    {
+     "txt": "Mecanización",
+     "emoji": "🚜"
+    },
+    {
+     "txt": "Semillas mejoradas",
+     "emoji": "🌱"
+    },
+    {
+     "txt": "GPS y drones",
+     "emoji": "📡"
+    }
+   ],
+   "voz": [
+    "Tres cambios.",
+    "La *mecanización*: máquinas en lugar de trabajo manual.",
+    "Las *semillas mejoradas* y los agroquímicos: más rendimiento, con riesgos ambientales.",
+    "Y la *agricultura de precisión*: GPS y drones."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Menos gente en el campo",
+    "emoji": "🏙️"
+   },
+   "items": [
+    {
+     "txt": "Más máquinas",
+     "emoji": "🚜"
+    },
+    {
+     "txt": "Migran los jóvenes",
+     "emoji": "🚶"
+    }
+   ],
+   "voz": [
+    "¿Por qué hay menos gente en el campo?",
+    "Porque hay *más máquinas*.",
+    "Y muchos *jóvenes migran* a las ciudades."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SUBSISTENCIA",
+     "emoji": "🥕"
+    },
+    {
+     "cab": "COMERCIAL",
+     "emoji": "🚜"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Huerta familiar",
+     "caja": 0
+    },
+    {
+     "txt": "Exportar soja",
+     "caja": 1
+    },
+    {
+     "txt": "Cultivo familiar",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Subsistencia o comercial?",
+    "La *huerta familiar* y el *cultivo manual*: subsistencia.",
+    "*Exportar soja*: comercial."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama la industria que procesa productos del campo?",
+   "opciones": [
+    "Agroindustria",
+    "Minería",
+    "Pesca"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se llama la industria que procesa productos del campo?",
+    "¿Agroindustria, minería o pesca?",
+    "La *agroindustria*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todo el campo es igual de tecnificado",
+     "bien": "Hay mucha diferencia"
+    },
+    {
+     "mal": "La tecnología no tiene riesgos",
+     "bien": "Puede dañar el ambiente"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todo el campo* está igual de tecnificado.",
+    "Y pensar que la tecnología *no tiene riesgos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay agricultura de *subsistencia* y *comercial*.",
+    "La *agroindustria* procesa el campo.",
+    "La *tecnología* reduce el trabajo manual.",
+    "Y muchos jóvenes *migran* a la ciudad.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUBSISTENCIA",
+     "para consumir"
+    ],
+    [
+     "COMERCIAL",
+     "para vender"
+    ],
+    [
+     "AGROINDUSTRIA",
+     "campo + fábrica"
+    ],
+    [
+     "PRECISIÓN",
+     "GPS y drones"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
