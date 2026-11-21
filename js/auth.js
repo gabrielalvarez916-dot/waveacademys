@@ -11,7 +11,8 @@
     admin: '/admin.html',
     family: '/familia.html',
     student: '/alumno.html',
-    tutor: '/tutor.html'
+    tutor: '/tutor.html',
+    tesorero: '/tesoreria.html'
   };
 
   async function getProfile(userId) {

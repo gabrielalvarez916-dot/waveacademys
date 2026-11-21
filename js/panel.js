@@ -16,7 +16,7 @@
   }
 
   // Si debe cambiar la clave, o este panel no es el de su rol, lo manda a donde corresponde
-  if (perfil.must_change_password || perfil.role !== rol) {
+  if (perfil.must_change_password || rol.split(',').indexOf(perfil.role) < 0) {
     location.replace(Wave.destino(perfil));
     return;
   }

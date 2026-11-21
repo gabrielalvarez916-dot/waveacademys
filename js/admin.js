@@ -798,7 +798,7 @@
     vista.innerHTML = '<h1 class="vista-titulo">Tutores</h1>' +
       '<p class="wv-dato">Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
       '<form id="wv-tut-form" class="wv-tut-form"><input id="wv-tut-nom" placeholder="Nombre y apellido" required> <input id="wv-tut-mail" type="email" placeholder="Correo" required> ' +
-      '<button class="wv-btn" type="submit">Crear tutor</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
+      '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="tesorero">Tesorero/a</option></select> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div>';
     async function pintar() {
       var r = await sb.rpc('tutores_admin');
       var l = document.getElementById('wv-tut-lista');
@@ -812,10 +812,10 @@
     document.getElementById('wv-tut-form').onsubmit = async function (ev) {
       ev.preventDefault();
       var b = this.querySelector('button'); b.disabled = true;
-      var r = await sb.functions.invoke('admin-tutores', { body: { nombre: document.getElementById('wv-tut-nom').value, email: document.getElementById('wv-tut-mail').value } });
+      var r = await sb.functions.invoke('admin-tutores', { body: { nombre: document.getElementById('wv-tut-nom').value, email: document.getElementById('wv-tut-mail').value, rol: document.getElementById('wv-tut-rol').value } });
       b.disabled = false;
-      if (r.error || (r.data && r.data.error)) { toast((r.data && r.data.error) || 'No se pudo crear el tutor', true); return; }
-      document.getElementById('wv-tut-cred').innerHTML = '<div class="wv-vacio">Tutor creado. Usuario: <b>' + esc(r.data.email) + '</b> · Clave inicial: <b>' + esc(r.data.initial_password) + '</b> (la cambia al entrar). Entra por la misma página de ingreso.</div>';
+      if (r.error || (r.data && r.data.error)) { toast((r.data && r.data.error) || 'No se pudo crear la cuenta', true); return; }
+      document.getElementById('wv-tut-cred').innerHTML = '<div class="wv-vacio">Cuenta creada. Usuario: <b>' + esc(r.data.email) + '</b> · Clave inicial: <b>' + esc(r.data.initial_password) + '</b> (la cambia al entrar). Entra por la misma página de ingreso.</div>';
       this.reset(); pintar();
     };
     pintar();

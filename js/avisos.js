@@ -3,7 +3,7 @@
   var sb = window.Wave && window.Wave.sb;
   var barra = document.querySelector('.barra-der');
   if (!sb || !barra) return;
-  var DESTINO = { admin: '#agenda', tutor: '#agenda', family: '#tutorias' };
+  var DESTINO = { admin: '#agenda', tutor: '#agenda', family: '#tutorias', tesorero: '#comprobantes', 'tesorero,admin': '#comprobantes' };
 
   function esc(t) {
     return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) {
