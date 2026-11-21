@@ -290,3 +290,31 @@ def tablero(numeros, vacios=()):
             v = str(num) if j == 0 else ("" if i in vacios else s[j - 1])
             ax.text(x + .75, y + .34, v, ha="center", va="center", fontsize=14, color=OSC, **F)
     return png(fig)
+
+
+def camiones(nums, titulo=None):
+    """Camiones con su número, en el orden dado (para ordenar de menor a mayor o al revés)."""
+    n = len(nums); fig, ax = lienzo(2.3 * n, 1.9, 2.3 * n, 1.8, 0, 0)
+    for i, v in enumerate(nums):
+        x = 2.3 * i + .15
+        ax.add_patch(FancyBboxPatch((x, .55), 1.35, .95, boxstyle="round,pad=0.02,rounding_size=0.12", color=TEAL, ec=OSC, lw=1.4))
+        ax.add_patch(FancyBboxPatch((x + 1.4, .55), .6, .7, boxstyle="round,pad=0.02,rounding_size=0.1", color=MENTA, ec=OSC, lw=1.4))
+        for dx in (.35, 1.65): ax.add_patch(Circle((x + dx, .45), .2, color=OSC))
+        ax.text(x + .68, 1.02, f"{v:,}".replace(",", "."), ha="center", va="center", fontsize=17, color="white", **F)
+    return png(fig)
+
+
+def tren_paso(desde, hasta, paso, faltan=()):
+    """Tren que cuenta de 10 en 10 o de 100 en 100."""
+    N = list(range(desde, hasta + 1, paso)); n = len(N)
+    fig, ax = lienzo(1.15 * n + 2.2, 2.1, 1.15 * n + 1.9, 2.0, 0, -0.1)
+    ax.add_patch(FancyBboxPatch((0.15, .45), 1.1, .9, boxstyle="round,pad=0.02,rounding_size=0.15", color=CORAL, ec=OSC, lw=1.4))
+    ax.add_patch(Rectangle((0.3, 1.35), .3, .35, color=OSC)); ax.add_patch(Rectangle((0.75, .85), .38, .35, color="white", ec=OSC, lw=1))
+    for x in (0.45, 1.0): ax.add_patch(Circle((x, .35), .16, color=OSC))
+    for j, v in enumerate(N):
+        x = 1.45 + j * 1.15; falta = v in faltan
+        ax.add_patch(FancyBboxPatch((x, .45), 1.0, .8, boxstyle="round,pad=0.02,rounding_size=0.12", color="white" if falta else [TEAL, AMBAR, AZUL, LILA, VERDE][j % 5], ec=CORAL if falta else OSC, lw=2 if falta else 1.4, ls="--" if falta else "-"))
+        ax.text(x + .5, .85, "?" if falta else f"{v:,}".replace(",", "."), ha="center", va="center", fontsize=12 if v >= 1000 else 14, color=CORAL if falta else "white", **F)
+        for dx in (.22, .78): ax.add_patch(Circle((x + dx, .35), .12, color=OSC))
+    ax.plot([0, 1.15 * n + 1.6], [.2, .2], color=OSC, lw=2)
+    return png(fig)

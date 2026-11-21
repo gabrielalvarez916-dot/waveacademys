@@ -70,7 +70,7 @@
     var et = w.etiqueta ? w.etiqueta(g, 960, 400, d.etq1 || 'ASÍ SE CUENTA') : null, et2 = w.etiqueta ? w.etiqueta(g, 960, 400, d.etq2 || 'ASÍ PASÓ') : null;
     var rel = d.relato || d.items.map(function (_, i) { return i; });
     var cards = d.items.map(function (it, i) { var col = W.PAL[i % W.PAL.length], gr = w.pieza(g, x0 + rel.indexOf(i) * paso, 620); gr._dx = (i - rel.indexOf(i)) * paso;
-      w.caja(gr, 0, 0, wC, 230, 'rgba(14,10,26,.85)', col, 26, 5); if (it.emoji) w.emoji(gr, 0, -45, it.emoji, 80); w.txt(gr, 0, 55, it.txt, 30, '#fff');
+      w.caja(gr, 0, 0, wC, 230, 'rgba(14,10,26,.85)', col, 26, 5); if (it.emoji) w.emoji(gr, 0, -45, it.emoji, 80); w.txt(gr, 0, 55, it.txt, String(it.txt).length <= 5 ? 62 : 30, '#fff'); // números cortos, bien grandes
       var nb = w.el('g', { opacity: 0 }, gr); w.el('circle', { cx: -wC / 2 + 12, cy: -103, r: 30, fill: col }, nb); w.txt(nb, -wC / 2 + 12, -101, String(i + 1), 32, '#14101f'); gr._nb = nb; return gr; });
     B(0); if (ti) w.IN(tl, ti, 0);
     B(1); if (et) w.IN(tl, et, 0); cards.forEach(function (c, k) { w.IN(tl, c, k ? '<.12' : 0, { scale: .8, y: 0 }); });

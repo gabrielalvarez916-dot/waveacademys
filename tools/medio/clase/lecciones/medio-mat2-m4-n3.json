@@ -1,0 +1,124 @@
+{
+ "slug": "medio-mat2-m4-n3",
+ "step_id": "15046120-689c-4893-a781-86379424a6b8",
+ "materia": "Matemática 2",
+ "titulo": "Números redondos",
+ "sub": "Matemática 2 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "⭕",
+   "final": "💯",
+   "titulo": "NÚMEROS",
+   "sub": "redondos",
+   "voz": [
+    "Rosa ama los números *redondos*.",
+    "¿Qué tienen de especial el 100, el 200, el 300?",
+    "Hoy: *los números redondos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Número redondo",
+   "texto": "Termina en 0: 40, 100, 350",
+   "emoji": "⭕",
+   "voz": [
+    "Un número *redondo* termina en cero.",
+    "Como 40, 100 o 350: ¡fáciles de contar!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 100,
+   "hasta": 1000,
+   "paso": 100,
+   "titulo": "DE 100 EN 100",
+   "voz": [
+    "Los camiones de Rosa salen de 100 en 100.",
+    "100, 200, 300, 400, 500, 600, 700, 800, 900, 1.000.",
+    "¡Llegamos al *1.000*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 410,
+   "hasta": 500,
+   "paso": 10,
+   "titulo": "DE 10 EN 10",
+   "voz": [
+    "Ahora de 10 en 10, desde el 410.",
+    "410, 420, 430, 440, 450, 460, 470, 480, 490, 500.",
+    "¡Todos terminan en *cero*!"
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 230,
+   "max": 240,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 238,
+     "txt": "238"
+    }
+   ],
+   "voz": [
+    "¿Entre qué números redondos está el 238?",
+    "Entre el *230* y el *240*. ¡Más cerca del 240!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un número redondo?",
+   "opciones": [
+    "347",
+    "560",
+    "821"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cuál es un número *redondo*?",
+    "Fijate en la última cifra.",
+    "¡*560*! Termina en cero."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL FINAL",
+   "texto": "Si termina en 0, es redondo",
+   "emoji": "👀",
+   "voz": [
+    "Truco: si termina en *cero*, es redondo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "REDONDO",
+     "termina en 0"
+    ],
+    [
+     "DE 10 EN 10",
+     "10, 20, 30…"
+    ],
+    [
+     "DE 100 EN 100",
+     "100, 200…"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un número *redondo* termina en cero.",
+    "Contamos *de 10 en 10*.",
+    "Y *de 100 en 100*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "slug": "medio-mat2-m4-n2",
+ "step_id": "cede3e3c-e778-4702-8aad-985e96b56c78",
+ "materia": "Matemática 2",
+ "titulo": "Ordenar números",
+ "sub": "Matemática 2 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Ordená de menor a mayor: 530, 305, 350",
+   "segundos": 8,
+   "respuesta": "305, 350, 530",
+   "emoji": "🚚",
+   "titulo": "ORDENAR",
+   "sub": "números hasta 1.000",
+   "voz": [
+    "Desafío: ordená de menor a mayor: 530, 305 y 350.",
+    "¡305, 350 y 530!",
+    "Hoy: *ordenar números*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LOS CAMIONES DE ROSA",
+   "etq1": "DESORDENADOS",
+   "etq2": "DE MENOR A MAYOR",
+   "items": [
+    {
+     "txt": "215",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "270",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "540",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "812",
+     "emoji": "🚚"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "voz": [
+    "Rosa tiene cuatro camiones con pedidos.",
+    "Están desordenados: 540, 215, 812, 270.",
+    "De menor a mayor: 215, 270, 540, 812."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MENOR A MAYOR",
+   "texto": "Del más chico al más grande",
+   "emoji": "📶",
+   "voz": [
+    "Menor a mayor: del *más chico* al *más grande*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "AL REVÉS",
+   "etq1": "DESORDENADOS",
+   "etq2": "DE MAYOR A MENOR",
+   "items": [
+    {
+     "txt": "950",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "905",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "590",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "509",
+     "emoji": "🚚"
+    }
+   ],
+   "relato": [
+    3,
+    1,
+    2,
+    0
+   ],
+   "voz": [
+    "Ahora al revés: *de mayor a menor*.",
+    "Desordenados: 509, 905, 590, 950.",
+    "Ordenados: 950, 905, 590, 509."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "De menor a mayor, ¿cuál va primero?",
+   "opciones": [
+    "307",
+    "370",
+    "703"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Ordenamos 703, 370 y 307.",
+    "¿Cuál va *primero*, de menor a mayor?",
+    "¡*307*! Es el más chico."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Ordenar por la última cifra",
+     "bien": "Mirar primero las centenas"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para ordenar, mirá primero las *centenas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MENOR A MAYOR",
+     "del chico al grande"
+    ],
+    [
+     "MAYOR A MENOR",
+     "del grande al chico"
+    ],
+    [
+     "CENTENAS",
+     "se miran primero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Menor a mayor*: del chico al grande.",
+    "*Mayor a menor*: del grande al chico.",
+    "Las *centenas* se miran primero.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

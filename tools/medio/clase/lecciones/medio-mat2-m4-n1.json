@@ -1,0 +1,160 @@
+{
+ "slug": "medio-mat2-m4-n1",
+ "step_id": "98d3a50a-5e46-44a0-8f46-65d8b7f795ce",
+ "materia": "Matemática 2",
+ "titulo": "Mayor y menor hasta mil",
+ "sub": "Matemática 2 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🚚",
+   "lineas": [
+    "Llegaron dos pedidos.",
+    "Uno de 412 alfajores.",
+    "Otro de 398."
+   ],
+   "titulo": "MAYOR",
+   "sub": "y menor",
+   "voz": [
+    "Llegaron *dos pedidos* a la fábrica de Rosa.",
+    "Uno es de 412 alfajores.",
+    "El otro es de 398.",
+    "Hoy: *mayor y menor hasta mil*."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "412",
+    "items": [
+     "4 cajas",
+     "1 paquete",
+     "2 sueltos"
+    ]
+   },
+   "der": {
+    "cab": "398",
+    "items": [
+     "3 cajas",
+     "9 paquetes",
+     "8 sueltos"
+    ]
+   },
+   "gana": "izq",
+   "voz": [
+    "El pedido de 412 tiene *4 cajas*.",
+    "El de 398 tiene *3 cajas*.",
+    "¡Más cajas, más alfajores: *412 es mayor*!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO COMPARAR",
+   "items": [
+    {
+     "txt": "Mirá las centenas",
+     "emoji": "📦"
+    },
+    {
+     "txt": "Si empatan, las decenas",
+     "emoji": "🍫"
+    },
+    {
+     "txt": "Si empatan, las unidades",
+     "emoji": "🍪"
+    }
+   ],
+   "voz": [
+    "¿Cómo comparamos números grandes?",
+    "Primero mirá las *centenas*.",
+    "Si empatan, mirá las *decenas*.",
+    "Si empatan otra vez, mirá las *unidades*."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "356",
+    "items": [
+     "3 cajas",
+     "5 paquetes",
+     "6 sueltos"
+    ]
+   },
+   "der": {
+    "cab": "372",
+    "items": [
+     "3 cajas",
+     "7 paquetes",
+     "2 sueltos"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Ahora comparamos 356 y 372.",
+    "Los dos tienen *3 cajas*: empatan.",
+    "Paquetes: 7 es más que 5. ¡*372 es mayor*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es mayor: 645 o 654?",
+   "opciones": [
+    "645",
+    "654"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá bien estos dos números.",
+    "¿Cuál es *mayor*: 645 o 654?",
+    "¡*654*! Tiene más decenas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Mirar solo las unidades",
+     "bien": "Empezar por las centenas"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Siempre empezá por las *centenas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYOR",
+     "tiene más"
+    ],
+    [
+     "MENOR",
+     "tiene menos"
+    ],
+    [
+     "COMPARAR",
+     "primero las centenas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *mayor* tiene más.",
+    "El *menor* tiene menos.",
+    "Para comparar, primero las *centenas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

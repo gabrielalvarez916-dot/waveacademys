@@ -355,17 +355,17 @@
     w.IN(tl, ig, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (cap) w.IN(tl, cap, '<.2');
   } };
   function numDe(p) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); return isFinite(v) ? v : null; }
-  // tren: {desde, hasta (hasta 10 vagones), faltan:[números], titulo} — 3 pasos: llega el tren · cada vagón se ilumina cuando la voz dice su número · aparecen los que faltaban
+  // tren: {desde, hasta, paso (1 por defecto; 10 o 100 para contar de 10 en 10 o de 100 en 100), faltan:[números], titulo} (hasta 10 vagones) — 3 pasos: llega el tren · cada vagón se ilumina cuando la voz dice su número · aparecen los que faltaban
   T.tren = { n: function () { return 3; }, armar: function (g, tl, B, d) {
-    var N = [], k; for (k = d.desde; k <= d.hasta; k++) N.push(k); var falta = d.faltan || [], cant = N.length, paso = Math.min(150, 1380 / (cant + 1)), x0 = 960 - (cant * paso) / 2 + paso * .35, Y = 560;
+    var N = [], k, fmt = function (v) { return v >= 1000 ? v.toLocaleString('es-AR') : String(v); }; for (k = d.desde; k <= d.hasta; k += (d.paso || 1)) N.push(k); var falta = d.faltan || [], cant = N.length, paso = Math.min(150, 1380 / (cant + 1)), x0 = 960 - (cant * paso) / 2 + paso * .35, Y = 560;
     var ti = d.titulo ? w.titulo(g, d.titulo, 285) : null, tren = w.pieza(g, 0, 0);
     w.el('line', { x1: 140, y1: Y + 92, x2: 1780, y2: Y + 92, stroke: C.suave, 'stroke-width': 6 }, tren);
-    w.emoji(tren, x0 - paso * .9, Y - 10, '🚂', paso * 1.15);
+    w.emoji(tren, x0 - paso * 1.12, Y - 10, '🚂', paso * 1.0);
     var V = N.map(function (v, j) { var x = x0 + j * paso, p = w.pieza(g, x, Y), es = falta.indexOf(v) >= 0;
       p.r = w.caja(p, 0, 0, paso - 16, paso * .9, es ? 'rgba(255,255,255,.06)' : 'url(#gCard)', es ? C.coral : W.PAL[j % W.PAL.length], 18, 5);
       if (es) p.r.setAttribute('stroke-dasharray', '14 10');
       w.el('circle', { cx: -paso * .25, cy: paso * .48, r: 13, fill: '#0b1c1d', stroke: C.suave, 'stroke-width': 4 }, p); w.el('circle', { cx: paso * .25, cy: paso * .48, r: 13, fill: '#0b1c1d', stroke: C.suave, 'stroke-width': 4 }, p);
-      p.q = es ? w.txt(p, 0, 4, '?', paso * .42, C.coral) : null; p.t = w.txt(p, 0, 4, String(v), paso * .42, C.txt, es ? { opacity: 0 } : null); p.v = v; p.falta = es; return p; });
+      p.q = es ? w.txt(p, 0, 4, '?', paso * .42, C.coral) : null; p.t = w.txt(p, 0, 4, fmt(v), paso * (fmt(v).length > 3 ? .26 : fmt(v).length === 3 ? .34 : .42), C.txt, es ? { opacity: 0 } : null); p.v = v; p.falta = es; return p; });
     var dicho = {}; g.alDecir = function (pal, f) { var v = numDe(pal); if (f !== 1 || v == null || dicho[v]) return; var p = V[N.indexOf(v)]; if (!p || p.falta) return; dicho[v] = 1;
       gsap.to(p.r, { attr: { stroke: C.sol, 'stroke-width': 10 }, duration: .2 }); gsap.fromTo(p, { y: 0 }, { y: -26, duration: .18, yoyo: true, repeat: 1 }); };
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, tren, ti ? '<' : 0, { x: 900, y: 0, ease: 'power3.out', d: 1 }); V.forEach(function (p, j) { w.IN(tl, p, j ? '<.06' : '<', { x: 900, y: 0, ease: 'power3.out', d: 1 }); });

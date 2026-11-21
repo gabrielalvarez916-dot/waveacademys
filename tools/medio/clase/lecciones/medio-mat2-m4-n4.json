@@ -1,0 +1,146 @@
+{
+ "slug": "medio-mat2-m4-n4",
+ "step_id": "af2ffef0-cae3-46fd-9412-86a7c0bff3fb",
+ "materia": "Matemática 2",
+ "titulo": "La recta numérica hasta 1.000",
+ "sub": "Matemática 2 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🛣️",
+   "lineas": [
+    "Rosa reparte por una ruta larga.",
+    "Hay un cartel cada 100 pasos.",
+    "¿Dónde vive cada cliente?"
+   ],
+   "titulo": "LA RECTA",
+   "sub": "hasta 1.000",
+   "voz": [
+    "Rosa reparte alfajores por una *ruta* larga.",
+    "Hay un cartel cada 100 pasos.",
+    "¿Dónde vive cada cliente?",
+    "Hoy: *la recta numérica hasta 1.000*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 0,
+   "max": 1000,
+   "paso": 100,
+   "marcas": [
+    {
+     "v": 300,
+     "txt": "300"
+    },
+    {
+     "v": 650,
+     "txt": "650"
+    },
+    {
+     "v": 900,
+     "txt": "900"
+    }
+   ],
+   "voz": [
+    "Esta es la recta del 0 al 1.000.",
+    "El *300* está justo en un cartel.",
+    "El *650* está entre el 600 y el 700.",
+    "El *900* está cerca del final."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MÁS A LA DERECHA",
+   "texto": "Más a la derecha, más grande",
+   "emoji": "➡️",
+   "voz": [
+    "Truco: en la recta, *más a la derecha*, más grande."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "SALTOS EN LA RECTA",
+   "min": 500,
+   "max": 600,
+   "cada": 10,
+   "inicio": 520,
+   "saltos": [
+    {
+     "a": 30,
+     "txt": "+30"
+    },
+    {
+     "a": -10,
+     "txt": "−10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 520.",
+    "Saltamos 30 para adelante: llegamos al *550*.",
+    "Volvemos 10: llegamos al *540*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Entre qué cientos está el 470?",
+   "opciones": [
+    "400 y 500",
+    "300 y 400",
+    "500 y 600"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Mirá el 470 en la recta.",
+    "¿Entre qué cientos está?",
+    "¡Entre el *400* y el *500*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está más a la derecha?",
+   "opciones": [
+    "780",
+    "870"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Otra más. Pensá en la recta.",
+    "¿Cuál está *más a la derecha*: 780 u 870?",
+    "¡*870*! Es el mayor."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LA RECTA",
+     "del 0 al 1.000"
+    ],
+    [
+     "DERECHA",
+     "más grande"
+    ],
+    [
+     "ENTRE",
+     "dos cientos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La recta va *del 0 al 1.000*.",
+    "*Más a la derecha*, más grande.",
+    "Cada número está *entre dos cientos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

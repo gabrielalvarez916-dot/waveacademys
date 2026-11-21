@@ -90,4 +90,4 @@ def oraciones(s):
 
 
 def palabras(s):
-    return len(re.findall(r'[\wáéíóúüñÁÉÍÓÚÜÑ]+', re.sub(r'<[^>]+>', '', str(s))))
+    return len(re.findall(r'\d+(?:[.,]\d+)*|[^\W\d_]+', re.sub(r'<[^>]+>', '', str(s))))  # 1.000 cuenta como una palabra
