@@ -1,1 +1,1183 @@
-{"subject_id": "a549d16a-c872-4df7-b243-e4b508bd8668", "tema": 4, "practica": "Práctica general: partidos políticos y elecciones", "examen_titulo": "Nivel jefe: partidos políticos y elecciones", "niveles": {"1": {"objetivo": "Vas a explicar qué hace un partido político y por qué son importantes en una democracia.", "vas_a_ver": ["Qué es un partido", "Funciones", "Programa e ideología", "Oposición y gobierno"], "secciones": [{"etapa": 1, "titulo": "Qué es un partido", "bloques": [{"tipo": "definicion", "titulo": "Partido político", "texto": "Organización de ciudadanos que comparte ideas y busca llegar al gobierno o influir en él mediante elecciones."}]}, {"etapa": 1, "titulo": "Funciones", "bloques": [{"tipo": "tabla", "titulo": "Qué hacen", "columnas": ["Función", "En qué consiste"], "filas": [["Representar", "Llevar a las instituciones las demandas de sectores de la sociedad"], ["Proponer", "Presentar un programa de gobierno"], ["Competir", "Presentar candidatos en las elecciones"], ["Formar", "Capacitar a militantes y futuros dirigentes"], ["Controlar", "Vigilar a quienes gobiernan, si están en la oposición"]], "iguales": true}]}, {"etapa": 2, "titulo": "Programa e ideología", "bloques": [{"tipo": "parrafo", "texto": "Cada partido tiene una <b>ideología</b> (una forma de ver la sociedad) y una <b>plataforma</b> (lo que promete hacer). Los votantes comparan plataformas antes de elegir."}]}, {"etapa": 2, "titulo": "Oposición y gobierno", "bloques": [{"tipo": "parrafo", "texto": "Quien gana las elecciones gobierna; los demás partidos forman la <b>oposición</b>, que controla, critica y propone alternativas. En la Argentina existen partidos nacionales y también partidos de distrito, que actúan en una provincia.", "neutro": {"texto": "Quien gana las elecciones gobierna; los demás partidos forman la <b>oposición</b>, que controla, critica y propone alternativas. En cada país existen partidos nacionales y también partidos regionales o locales."}}]}], "ejemplo_completo": {"titulo": "relacionar", "planteo": "¿Por qué una democracia con un solo partido permitido no es plena?", "pasos": ["Los votantes no pueden elegir entre propuestas distintas.", "No hay oposición que controle.", "Falta el pluralismo."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Lo que un partido promete hacer es su ___ .", "Los partidos que no gobiernan forman la ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Elegí una función de los partidos y explicá por qué es importante."}, "tip": {"titulo": "Comparar propuestas", "texto": "Antes de votar, compará las plataformas de los partidos."}, "ojo": ["Creer que todos los partidos piensan igual.", "Pensar que la oposición no sirve de nada."], "resumen": [{"titulo": "Partido", "texto": "Organización con ideas comunes."}, {"titulo": "Funciones", "texto": "Representar, proponer, competir."}, {"titulo": "Plataforma", "texto": "Lo que promete."}, {"titulo": "Oposición", "texto": "Controla y propone."}], "glosario": [{"palabra": "Partido político", "significado": "Organización que compite por el gobierno."}, {"palabra": "Ideología", "significado": "Forma de ver la sociedad."}, {"palabra": "Plataforma", "significado": "Programa de un partido."}, {"palabra": "Oposición", "significado": "Partidos que no gobiernan."}], "carpeta": ["¿Cómo se llama la organización que compite en elecciones para gobernar?", "¿Cómo se llama el programa de propuestas de un partido?", "¿La oposición controla al gobierno? Respondé sí o no.", "¿Cómo se llama la forma de ver la sociedad que guía a un partido?"], "respuestas_carpeta": [["partido politico", "partido político", "un partido politico", "un partido político", "partido"], ["plataforma", "la plataforma", "programa"], ["si", "sí"], ["ideologia", "ideología", "la ideologia", "la ideología"]], "soluciones": {"incompleto": "Plataforma. Oposición.", "solo": "Los partidos representan, proponen y compiten.", "carpeta": ["Partido político.", "Plataforma.", "Sí.", "Ideología."]}}, "2": {"objetivo": "Vas a distinguir los sistemas electorales mayoritario y proporcional y explicar cómo se reparten los cargos.", "vas_a_ver": ["Qué es un sistema electoral", "Mayoritario", "Proporcional", "Balotaje"], "secciones": [{"etapa": 1, "titulo": "Qué es un sistema electoral", "bloques": [{"tipo": "definicion", "titulo": "Sistema electoral", "texto": "Conjunto de reglas que transforma los votos en cargos."}, {"tipo": "parrafo", "texto": "Con los mismos votos, distintos sistemas pueden dar resultados distintos."}]}, {"etapa": 1, "titulo": "Mayoritario", "bloques": [{"tipo": "parrafo", "texto": "En el sistema <b>mayoritario</b>, gana el cargo quien obtiene más votos y los demás no obtienen representación. Es simple, pero deja sin representación a muchos votantes."}]}, {"etapa": 2, "titulo": "Proporcional", "bloques": [{"tipo": "parrafo", "texto": "En el sistema <b>proporcional</b>, los cargos se reparten según el porcentaje de votos de cada lista. Si una lista obtiene el 30 %, recibe cerca del 30 % de las bancas. Así hay más pluralismo."}]}, {"etapa": 2, "titulo": "Balotaje", "bloques": [{"tipo": "parrafo", "texto": "Cuando ningún candidato supera el mínimo exigido, se hace una <b>segunda vuelta</b> (balotaje) entre los dos más votados. En la Argentina, para presidente se gana en primera vuelta con el 45 % de los votos, o con el 40 % y 10 puntos de diferencia sobre el segundo.", "neutro": {"texto": "Cuando ningún candidato supera el mínimo exigido, muchos países hacen una <b>segunda vuelta</b> (balotaje) entre los dos más votados. Cada país fija qué porcentaje hace falta para ganar en primera vuelta."}}]}], "ejemplo_completo": {"titulo": "calcular", "planteo": "Se eligen 10 bancas y una lista saca el 40 % de los votos. ¿Cuántas bancas le corresponden en un sistema proporcional?", "pasos": ["40 % de 10 es 4.", "Le corresponden cerca de 4 bancas.", "En un sistema mayoritario puro, ganaría solo si es la más votada."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["El sistema donde gana quien tiene más votos es el ___ .", "El sistema que reparte bancas según el porcentaje de votos es el ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Explicá una ventaja y una desventaja de cada sistema."}, "tip": {"titulo": "Votos y cargos", "texto": "Preguntate siempre cómo se convierten los votos en cargos."}, "ojo": ["Pensar que todos los sistemas dan el mismo resultado.", "Creer que el proporcional deja sin voz a las minorías."], "resumen": [{"titulo": "Sistema electoral", "texto": "Votos a cargos."}, {"titulo": "Mayoritario", "texto": "Gana el más votado."}, {"titulo": "Proporcional", "texto": "Según el porcentaje."}, {"titulo": "Balotaje", "texto": "Segunda vuelta."}], "glosario": [{"palabra": "Banca", "significado": "Cargo en un cuerpo legislativo."}, {"palabra": "Lista", "significado": "Conjunto de candidatos de un partido."}, {"palabra": "Balotaje", "significado": "Segunda vuelta entre los dos más votados."}, {"palabra": "Proporcionalidad", "significado": "Reparto según el porcentaje."}], "carpeta": ["¿Cómo se llama el sistema donde gana el cargo quien tiene más votos?", "¿Cómo se llama el sistema que reparte cargos según el porcentaje de votos?", "¿El balotaje es una segunda vuelta entre los dos más votados? Respondé sí o no.", "Con 20 bancas y una lista con el 50 % de los votos en un sistema proporcional, ¿cuántas bancas recibe? Respondé solo el número."], "respuestas_carpeta": [["mayoritario", "el mayoritario"], ["proporcional", "el proporcional"], ["si", "sí"], ["10"]], "soluciones": {"incompleto": "Mayoritario. Proporcional.", "solo": "Proporcional: más pluralismo. Mayoritario: más simple.", "carpeta": ["Mayoritario.", "Proporcional.", "Sí.", "10."]}}, "3": {"objetivo": "Vas a comparar el voto obligatorio y el voluntario con sus ventajas y desventajas.", "vas_a_ver": ["Dos modelos", "Argumentos a favor del obligatorio", "Argumentos a favor del voluntario", "Participación y calidad"], "secciones": [{"etapa": 1, "titulo": "Dos modelos", "bloques": [{"tipo": "parrafo", "texto": "En el voto <b>obligatorio</b>, las personas habilitadas deben votar y, si no lo hacen sin justificación, pueden recibir una multa. En el <b>voluntario</b>, cada quien decide. En la Argentina el voto es obligatorio desde los 18 hasta los 70 años; a los 16 y 17 y desde los 71 es optativo.", "neutro": {"texto": "En el voto <b>obligatorio</b>, las personas habilitadas deben votar y, si no lo hacen sin justificación, pueden recibir una sanción. En el <b>voluntario</b>, cada quien decide. Algunos países, como Australia y Bélgica, tienen voto obligatorio; en otros es voluntario."}}]}, {"etapa": 1, "titulo": "A favor del obligatorio", "bloques": [{"tipo": "tabla", "titulo": "Argumentos", "columnas": ["Argumento", "Idea"], "filas": [["Mayor participación", "Vota casi todo el padrón"], ["Legitimidad", "El gobierno representa a más gente"], ["Igualdad", "Participan también quienes suelen quedar afuera"]], "iguales": true}]}, {"etapa": 2, "titulo": "A favor del voluntario", "bloques": [{"tipo": "tabla", "titulo": "Argumentos", "columnas": ["Argumento", "Idea"], "filas": [["Libertad", "Nadie debería ser obligado a votar"], ["Interés real", "Vota quien se informa y se interesa"], ["Sin multas", "No se sanciona a nadie"]], "iguales": true}]}, {"etapa": 2, "titulo": "Participación y calidad", "bloques": [{"tipo": "parrafo", "texto": "La obligatoriedad aumenta la cantidad de votos, pero no garantiza que sean informados. Por eso conviven con políticas de <b>educación cívica</b> y de acceso a la información."}]}], "ejemplo_completo": {"titulo": "comparar", "planteo": "¿Qué argumento da cada modelo?", "pasos": ["Obligatorio: más participación y legitimidad.", "Voluntario: libertad de elegir si votar.", "Cada uno prioriza un valor distinto."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Si votar es un deber, el voto es ___ .", "Si cada persona decide si vota, el voto es ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Elegí un modelo y escribí tres argumentos a favor."}, "tip": {"titulo": "Dos valores", "texto": "Libertad y participación: cada sistema pone el acento en uno."}, "ojo": ["Pensar que obligatorio significa votar por alguien determinado.", "Creer que un modelo es siempre mejor."], "resumen": [{"titulo": "Obligatorio", "texto": "Se debe votar."}, {"titulo": "Voluntario", "texto": "Se decide."}, {"titulo": "A favor del primero", "texto": "Participación."}, {"titulo": "A favor del segundo", "texto": "Libertad."}], "glosario": [{"palabra": "Padrón", "significado": "Lista de personas habilitadas para votar."}, {"palabra": "Obligatorio", "significado": "Que se debe cumplir."}, {"palabra": "Voluntario", "significado": "Que se hace por decisión propia."}, {"palabra": "Legitimidad", "significado": "Aceptación de las autoridades."}], "carpeta": ["¿Cómo se llama el voto que hay que emitir por obligación?", "¿Cómo se llama el voto que cada persona decide emitir o no?", "¿La obligatoriedad aumenta la participación? Respondé sí o no.", "¿Cómo se llama la lista de personas habilitadas para votar?"], "respuestas_carpeta": [["obligatorio", "el obligatorio", "voto obligatorio"], ["voluntario", "el voluntario", "voto voluntario"], ["si", "sí"], ["padron", "padrón", "el padron", "el padrón"]], "soluciones": {"incompleto": "Obligatorio. Voluntario.", "solo": "Obligatorio: más participación. Voluntario: libertad de decidir.", "carpeta": ["Obligatorio.", "Voluntario.", "Sí.", "Padrón."]}}, "4": {"objetivo": "Vas a analizar cómo las campañas, los medios y el financiamiento influyen en las elecciones.", "vas_a_ver": ["La campaña", "Los medios", "Financiamiento", "Elecciones justas"], "secciones": [{"etapa": 1, "titulo": "La campaña", "bloques": [{"tipo": "parrafo", "texto": "La campaña electoral es el período en que los partidos presentan candidatos y propuestas. Incluye debates, actos, publicidad y redes sociales."}]}, {"etapa": 1, "titulo": "Los medios", "bloques": [{"tipo": "parrafo", "texto": "Los medios informan sobre candidatos y propuestas, pero también pueden favorecer a unos sobre otros. Por eso importa la <b>pluralidad de voces</b>. En la Argentina existe una veda electoral: se prohíbe hacer campaña en los días previos a la votación.", "neutro": {"texto": "Los medios informan sobre candidatos y propuestas, pero también pueden favorecer a unos sobre otros. Por eso importa la <b>pluralidad de voces</b>. Muchos países fijan un período de silencio electoral antes de la votación."}}]}, {"etapa": 2, "titulo": "Financiamiento", "bloques": [{"tipo": "tabla", "titulo": "De dónde sale el dinero", "columnas": ["Fuente", "Detalle"], "filas": [["Aportes públicos", "El Estado financia parte de la campaña"], ["Aportes privados", "Donaciones con límites y registro"], ["Rendición de cuentas", "Los partidos deben informar cuánto gastan"]], "iguales": true}, {"tipo": "parrafo", "texto": "En la Argentina, una ley regula el financiamiento de los partidos y exige rendir cuentas.", "neutro": {"texto": "En muchos países, una ley regula el financiamiento de los partidos y exige rendir cuentas."}}]}, {"etapa": 2, "titulo": "Elecciones justas", "bloques": [{"tipo": "parrafo", "texto": "Para que una elección sea justa debe haber reglas iguales para todos, límites al gasto, transparencia y acceso equilibrado a los medios."}]}], "ejemplo_completo": {"titulo": "analizar", "planteo": "¿Por qué conviene limitar los aportes privados a una campaña?", "pasos": ["Quien más dinero aporta podría tener más influencia.", "Eso rompe la igualdad entre partidos.", "Los límites y la transparencia lo evitan."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Los partidos deben informar cuánto gastan: es la ___ de cuentas.", "La existencia de muchas voces en los medios es la ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí tres cosas que mirarías antes de creer una propuesta de campaña."}, "tip": {"titulo": "Seguir el dinero", "texto": "Preguntate quién financia una campaña y por qué."}, "ojo": ["Creer que la publicidad es información neutral.", "Pensar que el financiamiento no influye."], "resumen": [{"titulo": "Campaña", "texto": "Candidatos y propuestas."}, {"titulo": "Medios", "texto": "Informan y pueden influir."}, {"titulo": "Financiamiento", "texto": "Aportes públicos y privados."}, {"titulo": "Justicia", "texto": "Reglas iguales."}], "glosario": [{"palabra": "Campaña", "significado": "Período de propuestas antes de votar."}, {"palabra": "Pluralidad", "significado": "Variedad de voces."}, {"palabra": "Rendición de cuentas", "significado": "Informar cómo se gasta."}, {"palabra": "Veda", "significado": "Período sin campaña."}], "carpeta": ["¿Cómo se llama el período en que los partidos presentan propuestas antes de votar?", "¿Cómo se llama informar cuánto y en qué se gastó?", "¿Los aportes privados pueden influir en una campaña? Respondé sí o no.", "¿Cómo se llama la variedad de voces en los medios?"], "respuestas_carpeta": [["campana", "campaña", "la campana", "la campaña"], ["rendicion de cuentas", "rendición de cuentas", "la rendicion de cuentas", "la rendición de cuentas"], ["si", "sí"], ["pluralidad", "la pluralidad"]], "soluciones": {"incompleto": "Campaña. Rendición.", "solo": "Miro quién financia, comparo fuentes y verifico datos.", "carpeta": ["Campaña.", "Rendición de cuentas.", "Sí.", "Pluralidad."]}}}, "act": {"1": [{"t": "matching", "p": "Uní cada función de los partidos con su descripción.", "o": {"izquierda": ["Representar", "Proponer", "Competir", "Controlar"], "derecha": ["Llevar demandas a las instituciones", "Presentar un programa", "Presentar candidatos", "Vigilar a quienes gobiernan"]}, "r": {"pares": {"Representar": "Llevar demandas a las instituciones", "Proponer": "Presentar un programa", "Competir": "Presentar candidatos", "Controlar": "Vigilar a quienes gobiernan"}}, "e": "Cada función, su descripción."}, {"t": "true_false", "p": "Todos los partidos piensan igual.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Cada uno tiene su ideología."}], "2": [{"t": "classify", "p": "¿Mayoritario o proporcional?", "o": {"elementos": ["Gana quien tiene más votos", "Bancas según el porcentaje", "Más pluralismo", "Más simple"], "categorias": ["Mayoritario", "Proporcional"]}, "r": {"categorias": {"Gana quien tiene más votos": "Mayoritario", "Bancas según el porcentaje": "Proporcional", "Más pluralismo": "Proporcional", "Más simple": "Mayoritario"}}, "e": "Cada sistema tiene sus rasgos."}, {"t": "fill_blank", "p": "La segunda vuelta entre los dos más votados es el ___ .", "o": [], "r": {"huecos": [["balotaje"]]}, "e": "Balotaje."}], "3": [{"t": "multi_select", "p": "¿Cuáles son argumentos a favor del voto obligatorio?", "o": ["Mayor participación", "Más legitimidad", "Libertad de no votar", "Participan más personas"], "r": {"correctas": ["Mayor participación", "Más legitimidad", "Participan más personas"]}, "e": "La libertad de no votar es un argumento del voto voluntario."}, {"t": "ordering", "p": "Ordená de más a menos obligación.", "o": ["Voto voluntario sin sanción", "Voto obligatorio con multa", "Voto obligatorio sin multa efectiva"], "r": {"orden": ["Voto obligatorio con multa", "Voto obligatorio sin multa efectiva", "Voto voluntario sin sanción"]}, "e": "Cuanto más sanción, más obligación."}], "4": [{"t": "tap_text", "p": "Tocá los tipos de aporte: «Los aportes públicos y los privados financian campañas».", "o": {"segmentos": ["Los", "aportes", "públicos", "y", "los", "privados", "financian", "campañas"], "modo": "palabras"}, "r": {"tocar": [2, 5]}, "e": "Los dos tipos de aporte."}, {"t": "true_false", "p": "El financiamiento puede influir en una campaña.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Por eso se regula."}], "5": [{"t": "multiple_choice", "p": "Relámpago. Los partidos que no gobiernan forman la…", "o": ["Oposición", "Plataforma", "Banca"], "r": {"correcta": "Oposición"}, "e": "Controlan al gobierno.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. El sistema proporcional reparte cargos según el porcentaje.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Más pluralismo.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. La segunda vuelta se llama…", "o": ["Balotaje", "Padrón", "Veda"], "r": {"correcta": "Balotaje"}, "e": "Entre los dos más votados.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. El voto obligatorio garantiza que el voto sea informado.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Aumenta la cantidad, no la calidad.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "Un partido político es…", "o": ["Una organización que compite por el gobierno", "Un tribunal", "Un medio", "Un sindicato"], "r": {"correcta": "Una organización que compite por el gobierno"}, "e": "Busca ganar elecciones."}], [1, {"t": "fill_blank", "p": "Los partidos que no gobiernan forman la ___ .", "o": [], "r": {"huecos": [["oposicion", "oposición"]]}, "e": "Controla y propone."}], [1, {"t": "true_false", "p": "La plataforma es lo que el partido promete hacer.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es su programa."}], [2, {"t": "multiple_choice", "p": "El sistema donde gana quien tiene más votos es…", "o": ["Mayoritario", "Proporcional", "Mixto", "Directo"], "r": {"correcta": "Mayoritario"}, "e": "Los demás no obtienen cargos."}], [2, {"t": "multiple_choice", "p": "El sistema que reparte bancas según el porcentaje es…", "o": ["Proporcional", "Mayoritario", "Directo", "Obligatorio"], "r": {"correcta": "Proporcional"}, "e": "Más pluralismo."}], [2, {"t": "numeric", "p": "Se eligen 10 bancas y una lista saca el 30 % de los votos en un sistema proporcional. ¿Cuántas bancas recibe?", "o": {}, "r": {"acepta": [3]}, "e": "30 % de 10 es 3."}], [3, {"t": "multiple_choice", "p": "En el voto obligatorio…", "o": ["Se debe votar", "Se decide si votar", "No hay padrón", "Se vota dos veces"], "r": {"correcta": "Se debe votar"}, "e": "Hay sanción si no se justifica."}], [3, {"t": "true_false", "p": "El voto voluntario respeta la libertad de decidir si votar.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es su argumento."}], [3, {"t": "multiple_choice", "p": "Una ventaja del voto obligatorio es…", "o": ["Mayor participación", "Menos padrón", "Más multas", "Menos legitimidad"], "r": {"correcta": "Mayor participación"}, "e": "Vota casi todo el padrón."}], [4, {"t": "multiple_choice", "p": "Rendir cuentas significa…", "o": ["Informar cuánto y en qué se gastó", "Votar", "Debatir", "Ganar"], "r": {"correcta": "Informar cuánto y en qué se gastó"}, "e": "Da transparencia."}], [4, {"t": "multi_select", "p": "Una elección es justa si hay…", "o": ["Reglas iguales", "Transparencia", "Límites al gasto", "Censura"], "r": {"correctas": ["Reglas iguales", "Transparencia", "Límites al gasto"]}, "e": "La censura lo impide."}], [4, {"t": "fill_blank", "p": "La variedad de voces en los medios es la ___ .", "o": [], "r": {"huecos": [["pluralidad"]]}, "e": "Pluralidad."}], [4, {"t": "true_false", "p": "El financiamiento de las campañas no tiene importancia.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Influye y por eso se regula."}]]}
+{
+ "subject_id": "a549d16a-c872-4df7-b243-e4b508bd8668",
+ "tema": 4,
+ "practica": "Práctica general: partidos políticos y elecciones",
+ "examen_titulo": "Nivel jefe: partidos políticos y elecciones",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a explicar qué hace un partido político y por qué son importantes en una democracia.",
+   "vas_a_ver": [
+    "Qué es un partido",
+    "Funciones",
+    "Programa e ideología",
+    "Oposición y gobierno"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es un partido",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Partido político",
+       "texto": "Organización de ciudadanos que comparte ideas y busca llegar al gobierno o influir en él mediante elecciones."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Funciones",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Qué hacen",
+       "columnas": [
+        "Función",
+        "En qué consiste"
+       ],
+       "filas": [
+        [
+         "Representar",
+         "Llevar a las instituciones las demandas de sectores de la sociedad"
+        ],
+        [
+         "Proponer",
+         "Presentar un programa de gobierno"
+        ],
+        [
+         "Competir",
+         "Presentar candidatos en las elecciones"
+        ],
+        [
+         "Formar",
+         "Capacitar a militantes y futuros dirigentes"
+        ],
+        [
+         "Controlar",
+         "Vigilar a quienes gobiernan, si están en la oposición"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Programa e ideología",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Cada partido tiene una <b>ideología</b> (una forma de ver la sociedad) y una <b>plataforma</b> (lo que promete hacer). Los votantes comparan plataformas antes de elegir."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Oposición y gobierno",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Quien gana las elecciones gobierna; los demás partidos forman la <b>oposición</b>, que controla, critica y propone alternativas. En la Argentina existen partidos nacionales y también partidos de distrito, que actúan en una provincia.",
+       "neutro": {
+        "texto": "Quien gana las elecciones gobierna; los demás partidos forman la <b>oposición</b>, que controla, critica y propone alternativas. En cada país existen partidos nacionales y también partidos regionales o locales."
+       }
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "relacionar",
+    "planteo": "¿Por qué una democracia con un solo partido permitido no es plena?",
+    "pasos": [
+     "Los votantes no pueden elegir entre propuestas distintas.",
+     "No hay oposición que controle.",
+     "Falta el pluralismo."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Lo que un partido promete hacer es su ___ .",
+     "Los partidos que no gobiernan forman la ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Elegí una función de los partidos y explicá por qué es importante."
+   },
+   "tip": {
+    "titulo": "Comparar propuestas",
+    "texto": "Antes de votar, compará las plataformas de los partidos."
+   },
+   "ojo": [
+    "Creer que todos los partidos piensan igual.",
+    "Pensar que la oposición no sirve de nada."
+   ],
+   "resumen": [
+    {
+     "titulo": "Partido",
+     "texto": "Organización con ideas comunes."
+    },
+    {
+     "titulo": "Funciones",
+     "texto": "Representar, proponer, competir."
+    },
+    {
+     "titulo": "Plataforma",
+     "texto": "Lo que promete."
+    },
+    {
+     "titulo": "Oposición",
+     "texto": "Controla y propone."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Partido político",
+     "significado": "Organización que compite por el gobierno."
+    },
+    {
+     "palabra": "Ideología",
+     "significado": "Forma de ver la sociedad."
+    },
+    {
+     "palabra": "Plataforma",
+     "significado": "Programa de un partido."
+    },
+    {
+     "palabra": "Oposición",
+     "significado": "Partidos que no gobiernan."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama la organización que compite en elecciones para gobernar?",
+    "¿Cómo se llama el programa de propuestas de un partido?",
+    "¿La oposición controla al gobierno? Respondé sí o no.",
+    "¿Cómo se llama la forma de ver la sociedad que guía a un partido?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "partido politico",
+     "partido político",
+     "un partido politico",
+     "un partido político",
+     "partido"
+    ],
+    [
+     "plataforma",
+     "la plataforma",
+     "programa"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "ideologia",
+     "ideología",
+     "la ideologia",
+     "la ideología"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Plataforma. Oposición.",
+    "solo": "Los partidos representan, proponen y compiten.",
+    "carpeta": [
+     "Partido político.",
+     "Plataforma.",
+     "Sí.",
+     "Ideología."
+    ]
+   }
+  },
+  "2": {
+   "objetivo": "Vas a distinguir los sistemas electorales mayoritario y proporcional y explicar cómo se reparten los cargos.",
+   "vas_a_ver": [
+    "Qué es un sistema electoral",
+    "Mayoritario",
+    "Proporcional",
+    "Balotaje"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es un sistema electoral",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Sistema electoral",
+       "texto": "Conjunto de reglas que transforma los votos en cargos."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Con los mismos votos, distintos sistemas pueden dar resultados distintos."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Mayoritario",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En el sistema <b>mayoritario</b>, gana el cargo quien obtiene más votos y los demás no obtienen representación. Es simple, pero deja sin representación a muchos votantes."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Proporcional",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En el sistema <b>proporcional</b>, los cargos se reparten según el porcentaje de votos de cada lista. Si una lista obtiene el 30 %, recibe cerca del 30 % de las bancas. Así hay más pluralismo."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Balotaje",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Cuando ningún candidato supera el mínimo exigido, se hace una <b>segunda vuelta</b> (balotaje) entre los dos más votados. En la Argentina, para presidente se gana en primera vuelta con el 45 % de los votos, o con el 40 % y 10 puntos de diferencia sobre el segundo.",
+       "neutro": {
+        "texto": "Cuando ningún candidato supera el mínimo exigido, muchos países hacen una <b>segunda vuelta</b> (balotaje) entre los dos más votados. Cada país fija qué porcentaje hace falta para ganar en primera vuelta."
+       }
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "calcular",
+    "planteo": "Se eligen 10 bancas y una lista saca el 40 % de los votos. ¿Cuántas bancas le corresponden en un sistema proporcional?",
+    "pasos": [
+     "40 % de 10 es 4.",
+     "Le corresponden cerca de 4 bancas.",
+     "En un sistema mayoritario puro, ganaría solo si es la más votada."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "El sistema donde gana quien tiene más votos es el ___ .",
+     "El sistema que reparte bancas según el porcentaje de votos es el ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Explicá una ventaja y una desventaja de cada sistema."
+   },
+   "tip": {
+    "titulo": "Votos y cargos",
+    "texto": "Preguntate siempre cómo se convierten los votos en cargos."
+   },
+   "ojo": [
+    "Pensar que todos los sistemas dan el mismo resultado.",
+    "Creer que el proporcional deja sin voz a las minorías."
+   ],
+   "resumen": [
+    {
+     "titulo": "Sistema electoral",
+     "texto": "Votos a cargos."
+    },
+    {
+     "titulo": "Mayoritario",
+     "texto": "Gana el más votado."
+    },
+    {
+     "titulo": "Proporcional",
+     "texto": "Según el porcentaje."
+    },
+    {
+     "titulo": "Balotaje",
+     "texto": "Segunda vuelta."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Banca",
+     "significado": "Cargo en un cuerpo legislativo."
+    },
+    {
+     "palabra": "Lista",
+     "significado": "Conjunto de candidatos de un partido."
+    },
+    {
+     "palabra": "Balotaje",
+     "significado": "Segunda vuelta entre los dos más votados."
+    },
+    {
+     "palabra": "Proporcionalidad",
+     "significado": "Reparto según el porcentaje."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el sistema donde gana el cargo quien tiene más votos?",
+    "¿Cómo se llama el sistema que reparte cargos según el porcentaje de votos?",
+    "¿El balotaje es una segunda vuelta entre los dos más votados? Respondé sí o no.",
+    "Con 20 bancas y una lista con el 50 % de los votos en un sistema proporcional, ¿cuántas bancas recibe? Respondé solo el número."
+   ],
+   "respuestas_carpeta": [
+    [
+     "mayoritario",
+     "el mayoritario"
+    ],
+    [
+     "proporcional",
+     "el proporcional"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "10"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Mayoritario. Proporcional.",
+    "solo": "Proporcional: más pluralismo. Mayoritario: más simple.",
+    "carpeta": [
+     "Mayoritario.",
+     "Proporcional.",
+     "Sí.",
+     "10."
+    ]
+   }
+  },
+  "3": {
+   "objetivo": "Vas a comparar el voto obligatorio y el voluntario con sus ventajas y desventajas.",
+   "vas_a_ver": [
+    "Dos modelos",
+    "Argumentos a favor del obligatorio",
+    "Argumentos a favor del voluntario",
+    "Participación y calidad"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Dos modelos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En el voto <b>obligatorio</b>, las personas habilitadas deben votar y, si no lo hacen sin justificación, pueden recibir una multa. En el <b>voluntario</b>, cada quien decide. En la Argentina el voto es obligatorio desde los 18 hasta los 70 años; a los 16 y 17 y desde los 71 es optativo.",
+       "neutro": {
+        "texto": "En el voto <b>obligatorio</b>, las personas habilitadas deben votar y, si no lo hacen sin justificación, pueden recibir una sanción. En el <b>voluntario</b>, cada quien decide. Algunos países, como Australia y Bélgica, tienen voto obligatorio; en otros es voluntario."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "A favor del obligatorio",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Argumentos",
+       "columnas": [
+        "Argumento",
+        "Idea"
+       ],
+       "filas": [
+        [
+         "Mayor participación",
+         "Vota casi todo el padrón"
+        ],
+        [
+         "Legitimidad",
+         "El gobierno representa a más gente"
+        ],
+        [
+         "Igualdad",
+         "Participan también quienes suelen quedar afuera"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "A favor del voluntario",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Argumentos",
+       "columnas": [
+        "Argumento",
+        "Idea"
+       ],
+       "filas": [
+        [
+         "Libertad",
+         "Nadie debería ser obligado a votar"
+        ],
+        [
+         "Interés real",
+         "Vota quien se informa y se interesa"
+        ],
+        [
+         "Sin multas",
+         "No se sanciona a nadie"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Participación y calidad",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La obligatoriedad aumenta la cantidad de votos, pero no garantiza que sean informados. Por eso conviven con políticas de <b>educación cívica</b> y de acceso a la información."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "comparar",
+    "planteo": "¿Qué argumento da cada modelo?",
+    "pasos": [
+     "Obligatorio: más participación y legitimidad.",
+     "Voluntario: libertad de elegir si votar.",
+     "Cada uno prioriza un valor distinto."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Si votar es un deber, el voto es ___ .",
+     "Si cada persona decide si vota, el voto es ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Elegí un modelo y escribí tres argumentos a favor."
+   },
+   "tip": {
+    "titulo": "Dos valores",
+    "texto": "Libertad y participación: cada sistema pone el acento en uno."
+   },
+   "ojo": [
+    "Pensar que obligatorio significa votar por alguien determinado.",
+    "Creer que un modelo es siempre mejor."
+   ],
+   "resumen": [
+    {
+     "titulo": "Obligatorio",
+     "texto": "Se debe votar."
+    },
+    {
+     "titulo": "Voluntario",
+     "texto": "Se decide."
+    },
+    {
+     "titulo": "A favor del primero",
+     "texto": "Participación."
+    },
+    {
+     "titulo": "A favor del segundo",
+     "texto": "Libertad."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Padrón",
+     "significado": "Lista de personas habilitadas para votar."
+    },
+    {
+     "palabra": "Obligatorio",
+     "significado": "Que se debe cumplir."
+    },
+    {
+     "palabra": "Voluntario",
+     "significado": "Que se hace por decisión propia."
+    },
+    {
+     "palabra": "Legitimidad",
+     "significado": "Aceptación de las autoridades."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el voto que hay que emitir por obligación?",
+    "¿Cómo se llama el voto que cada persona decide emitir o no?",
+    "¿La obligatoriedad aumenta la participación? Respondé sí o no.",
+    "¿Cómo se llama la lista de personas habilitadas para votar?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "obligatorio",
+     "el obligatorio",
+     "voto obligatorio"
+    ],
+    [
+     "voluntario",
+     "el voluntario",
+     "voto voluntario"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "padron",
+     "padrón",
+     "el padron",
+     "el padrón"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Obligatorio. Voluntario.",
+    "solo": "Obligatorio: más participación. Voluntario: libertad de decidir.",
+    "carpeta": [
+     "Obligatorio.",
+     "Voluntario.",
+     "Sí.",
+     "Padrón."
+    ]
+   }
+  },
+  "4": {
+   "objetivo": "Vas a analizar cómo las campañas, los medios y el financiamiento influyen en las elecciones.",
+   "vas_a_ver": [
+    "La campaña",
+    "Los medios",
+    "Financiamiento",
+    "Elecciones justas"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La campaña",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La campaña electoral es el período en que los partidos presentan candidatos y propuestas. Incluye debates, actos, publicidad y redes sociales."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Los medios",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Los medios informan sobre candidatos y propuestas, pero también pueden favorecer a unos sobre otros. Por eso importa la <b>pluralidad de voces</b>. En la Argentina existe una veda electoral: se prohíbe hacer campaña en los días previos a la votación.",
+       "neutro": {
+        "texto": "Los medios informan sobre candidatos y propuestas, pero también pueden favorecer a unos sobre otros. Por eso importa la <b>pluralidad de voces</b>. Muchos países fijan un período de silencio electoral antes de la votación."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Financiamiento",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "De dónde sale el dinero",
+       "columnas": [
+        "Fuente",
+        "Detalle"
+       ],
+       "filas": [
+        [
+         "Aportes públicos",
+         "El Estado financia parte de la campaña"
+        ],
+        [
+         "Aportes privados",
+         "Donaciones con límites y registro"
+        ],
+        [
+         "Rendición de cuentas",
+         "Los partidos deben informar cuánto gastan"
+        ]
+       ],
+       "iguales": true
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "En la Argentina, una ley regula el financiamiento de los partidos y exige rendir cuentas.",
+       "neutro": {
+        "texto": "En muchos países, una ley regula el financiamiento de los partidos y exige rendir cuentas."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Elecciones justas",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para que una elección sea justa debe haber reglas iguales para todos, límites al gasto, transparencia y acceso equilibrado a los medios."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "analizar",
+    "planteo": "¿Por qué conviene limitar los aportes privados a una campaña?",
+    "pasos": [
+     "Quien más dinero aporta podría tener más influencia.",
+     "Eso rompe la igualdad entre partidos.",
+     "Los límites y la transparencia lo evitan."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Los partidos deben informar cuánto gastan: es la ___ de cuentas.",
+     "La existencia de muchas voces en los medios es la ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí tres cosas que mirarías antes de creer una propuesta de campaña."
+   },
+   "tip": {
+    "titulo": "Seguir el dinero",
+    "texto": "Preguntate quién financia una campaña y por qué."
+   },
+   "ojo": [
+    "Creer que la publicidad es información neutral.",
+    "Pensar que el financiamiento no influye."
+   ],
+   "resumen": [
+    {
+     "titulo": "Campaña",
+     "texto": "Candidatos y propuestas."
+    },
+    {
+     "titulo": "Medios",
+     "texto": "Informan y pueden influir."
+    },
+    {
+     "titulo": "Financiamiento",
+     "texto": "Aportes públicos y privados."
+    },
+    {
+     "titulo": "Justicia",
+     "texto": "Reglas iguales."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Campaña",
+     "significado": "Período de propuestas antes de votar."
+    },
+    {
+     "palabra": "Pluralidad",
+     "significado": "Variedad de voces."
+    },
+    {
+     "palabra": "Rendición de cuentas",
+     "significado": "Informar cómo se gasta."
+    },
+    {
+     "palabra": "Veda",
+     "significado": "Período sin campaña."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el período en que los partidos presentan propuestas antes de votar?",
+    "¿Cómo se llama informar cuánto y en qué se gastó?",
+    "¿Los aportes privados pueden influir en una campaña? Respondé sí o no.",
+    "¿Cómo se llama la variedad de voces en los medios?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "campana",
+     "campaña",
+     "la campana",
+     "la campaña"
+    ],
+    [
+     "rendicion de cuentas",
+     "rendición de cuentas",
+     "la rendicion de cuentas",
+     "la rendición de cuentas"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "pluralidad",
+     "la pluralidad"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Campaña. Rendición.",
+    "solo": "Miro quién financia, comparo fuentes y verifico datos.",
+    "carpeta": [
+     "Campaña.",
+     "Rendición de cuentas.",
+     "Sí.",
+     "Pluralidad."
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "matching",
+    "p": "Uní cada función de los partidos con su descripción.",
+    "o": {
+     "izquierda": [
+      "Representar",
+      "Proponer",
+      "Competir",
+      "Controlar"
+     ],
+     "derecha": [
+      "Llevar demandas a las instituciones",
+      "Presentar un programa",
+      "Presentar candidatos",
+      "Vigilar a quienes gobiernan"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Representar": "Llevar demandas a las instituciones",
+      "Proponer": "Presentar un programa",
+      "Competir": "Presentar candidatos",
+      "Controlar": "Vigilar a quienes gobiernan"
+     }
+    },
+    "e": "Cada función, su descripción."
+   },
+   {
+    "t": "true_false",
+    "p": "Todos los partidos piensan igual.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Cada uno tiene su ideología."
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "¿Mayoritario o proporcional?",
+    "o": {
+     "elementos": [
+      "Gana quien tiene más votos",
+      "Bancas según el porcentaje",
+      "Más pluralismo",
+      "Más simple"
+     ],
+     "categorias": [
+      "Mayoritario",
+      "Proporcional"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Gana quien tiene más votos": "Mayoritario",
+      "Bancas según el porcentaje": "Proporcional",
+      "Más pluralismo": "Proporcional",
+      "Más simple": "Mayoritario"
+     }
+    },
+    "e": "Cada sistema tiene sus rasgos."
+   },
+   {
+    "t": "fill_blank",
+    "p": "La segunda vuelta entre los dos más votados es el ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "balotaje"
+      ]
+     ]
+    },
+    "e": "Balotaje."
+   }
+  ],
+  "3": [
+   {
+    "t": "multi_select",
+    "p": "¿Cuáles son argumentos a favor del voto obligatorio?",
+    "o": [
+     "Mayor participación",
+     "Más legitimidad",
+     "Libertad de no votar",
+     "Participan más personas"
+    ],
+    "r": {
+     "correctas": [
+      "Mayor participación",
+      "Más legitimidad",
+      "Participan más personas"
+     ]
+    },
+    "e": "La libertad de no votar es un argumento del voto voluntario."
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená de más a menos obligación.",
+    "o": [
+     "Voto voluntario sin sanción",
+     "Voto obligatorio con multa",
+     "Voto obligatorio sin multa efectiva"
+    ],
+    "r": {
+     "orden": [
+      "Voto obligatorio con multa",
+      "Voto obligatorio sin multa efectiva",
+      "Voto voluntario sin sanción"
+     ]
+    },
+    "e": "Cuanto más sanción, más obligación."
+   }
+  ],
+  "4": [
+   {
+    "t": "tap_text",
+    "p": "Tocá los tipos de aporte: «Los aportes públicos y los privados financian campañas».",
+    "o": {
+     "segmentos": [
+      "Los",
+      "aportes",
+      "públicos",
+      "y",
+      "los",
+      "privados",
+      "financian",
+      "campañas"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      2,
+      5
+     ]
+    },
+    "e": "Los dos tipos de aporte."
+   },
+   {
+    "t": "true_false",
+    "p": "El financiamiento puede influir en una campaña.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Por eso se regula."
+   }
+  ],
+  "5": [
+   {
+    "t": "matching",
+    "p": "Relámpago. ¿Qué significa cada término?",
+    "o": {
+     "izquierda": [
+      "Oposición",
+      "Balotaje",
+      "Sistema proporcional"
+     ],
+     "derecha": [
+      "Partidos que no gobiernan",
+      "Segunda vuelta",
+      "Cargos según el porcentaje"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Oposición": "Partidos que no gobiernan",
+      "Balotaje": "Segunda vuelta",
+      "Sistema proporcional": "Cargos según el porcentaje"
+     }
+    },
+    "e": "Cada término, su significado.",
+    "tiempo": 35
+   },
+   {
+    "t": "tap_text",
+    "p": "Relámpago. Tocar la palabra que nombra la segunda vuelta: «El balotaje define entre los dos más votados».",
+    "o": {
+     "segmentos": [
+      "El",
+      "balotaje",
+      "define",
+      "entre",
+      "los",
+      "dos",
+      "más",
+      "votados."
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "Es la segunda vuelta.",
+    "tiempo": 25
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. El voto obligatorio garantiza que el voto sea informado.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Aumenta la cantidad, no la calidad.",
+    "tiempo": 15
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. El padrón electoral es la lista de…",
+    "o": [
+     "Personas que pueden votar",
+     "Candidatos",
+     "Partidos"
+    ],
+    "r": {
+     "correcta": "Personas que pueden votar"
+    },
+    "e": "Define quién vota.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Un partido político es…",
+    "o": [
+     "Una organización que compite por el gobierno",
+     "Un tribunal",
+     "Un medio",
+     "Un sindicato"
+    ],
+    "r": {
+     "correcta": "Una organización que compite por el gobierno"
+    },
+    "e": "Busca ganar elecciones."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "fill_blank",
+    "p": "Los partidos que no gobiernan forman la ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "oposicion",
+       "oposición"
+      ]
+     ]
+    },
+    "e": "Controla y propone."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "La plataforma es lo que el partido promete hacer.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es su programa."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "El sistema donde gana quien tiene más votos es…",
+    "o": [
+     "Mayoritario",
+     "Proporcional",
+     "Mixto",
+     "Directo"
+    ],
+    "r": {
+     "correcta": "Mayoritario"
+    },
+    "e": "Los demás no obtienen cargos."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "El sistema que reparte bancas según el porcentaje es…",
+    "o": [
+     "Proporcional",
+     "Mayoritario",
+     "Directo",
+     "Obligatorio"
+    ],
+    "r": {
+     "correcta": "Proporcional"
+    },
+    "e": "Más pluralismo."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Se eligen 10 bancas y una lista saca el 30 % de los votos en un sistema proporcional. ¿Cuántas bancas recibe?",
+    "o": {},
+    "r": {
+     "acepta": [
+      3
+     ]
+    },
+    "e": "30 % de 10 es 3."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "En el voto obligatorio…",
+    "o": [
+     "Se debe votar",
+     "Se decide si votar",
+     "No hay padrón",
+     "Se vota dos veces"
+    ],
+    "r": {
+     "correcta": "Se debe votar"
+    },
+    "e": "Hay sanción si no se justifica."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "El voto voluntario respeta la libertad de decidir si votar.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es su argumento."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Una ventaja del voto obligatorio es…",
+    "o": [
+     "Mayor participación",
+     "Menos padrón",
+     "Más multas",
+     "Menos legitimidad"
+    ],
+    "r": {
+     "correcta": "Mayor participación"
+    },
+    "e": "Vota casi todo el padrón."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Rendir cuentas significa…",
+    "o": [
+     "Informar cuánto y en qué se gastó",
+     "Votar",
+     "Debatir",
+     "Ganar"
+    ],
+    "r": {
+     "correcta": "Informar cuánto y en qué se gastó"
+    },
+    "e": "Da transparencia."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multi_select",
+    "p": "Una elección es justa si hay…",
+    "o": [
+     "Reglas iguales",
+     "Transparencia",
+     "Límites al gasto",
+     "Censura"
+    ],
+    "r": {
+     "correctas": [
+      "Reglas iguales",
+      "Transparencia",
+      "Límites al gasto"
+     ]
+    },
+    "e": "La censura lo impide."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "fill_blank",
+    "p": "La variedad de voces en los medios es la ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "pluralidad"
+      ]
+     ]
+    },
+    "e": "Pluralidad."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "El financiamiento de las campañas no tiene importancia.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Influye y por eso se regula."
+   }
+  ]
+ ]
+}

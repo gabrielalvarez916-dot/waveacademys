@@ -1,1 +1,1223 @@
-{"subject_id": "a549d16a-c872-4df7-b243-e4b508bd8668", "tema": 1, "practica": "Práctica general: vivir juntos", "examen_titulo": "Nivel jefe: vivir juntos", "niveles": {"1": {"objetivo": "Vas a explicar qué es una comunidad, qué nos une y qué significa cuidar el bien común.", "vas_a_ver": ["Comunidad", "Lo que nos une", "Bien común", "Convivir en la diferencia"], "secciones": [{"etapa": 1, "titulo": "Comunidad", "bloques": [{"tipo": "definicion", "titulo": "Comunidad", "texto": "Grupo de personas que comparten un lugar, intereses, normas o una historia y se reconocen como parte del mismo conjunto."}, {"tipo": "parrafo", "texto": "Una comunidad puede ser pequeña (una familia, un curso) o muy grande (un barrio, un país)."}]}, {"etapa": 1, "titulo": "Lo que nos une", "bloques": [{"tipo": "tabla", "titulo": "Vínculos", "columnas": ["Qué une", "Ejemplo"], "filas": [["Lugar", "Vivir en el mismo barrio"], ["Intereses", "Un club o un equipo"], ["Normas", "Reglas de convivencia"], ["Historia y cultura", "Fiestas, tradiciones, idioma"]], "iguales": true}]}, {"etapa": 2, "titulo": "Bien común", "bloques": [{"tipo": "parrafo", "texto": "Cuando una comunidad cuida lo que es de todos (la plaza, la escuela, el agua), cuida el <b>bien común</b>. En la Argentina, por ejemplo, las plazas, las escuelas y los hospitales públicos son de todos.", "neutro": {"texto": "Cuando una comunidad cuida lo que es de todos (la plaza, la escuela, el agua), cuida el <b>bien común</b>. En cada país, las plazas, las escuelas y los hospitales públicos son de todos."}}]}, {"etapa": 2, "titulo": "Convivir en la diferencia", "bloques": [{"tipo": "parrafo", "texto": "Las comunidades están formadas por personas distintas. Convivir es respetar las diferencias y resolver los conflictos sin violencia, con diálogo y con normas acordadas."}]}], "ejemplo_completo": {"titulo": "relacionar", "planteo": "¿Por qué una plaza descuidada es un problema de toda la comunidad?", "pasos": ["La plaza es un bien de todos.", "Si se rompe o se ensucia, nadie puede disfrutarla bien.", "Cuidarla es una responsabilidad compartida."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Lo que es de todos y conviene a todos es el ___ común.", "Convivir es resolver los conflictos con ___ y no con violencia."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Elegí una comunidad a la que pertenezcas y escribí tres cosas que te unen a ella."}, "tip": {"titulo": "De todos", "texto": "Preguntate siempre: ¿esto es de uno o es de todos?"}, "ojo": ["Creer que una comunidad es solo un lugar.", "Pensar que cuidar lo común es tarea de otros."], "resumen": [{"titulo": "Comunidad", "texto": "Personas que se reconocen parte de un conjunto."}, {"titulo": "Lo que une", "texto": "Lugar, intereses, normas, cultura."}, {"titulo": "Bien común", "texto": "Lo que es de todos."}, {"titulo": "Convivir", "texto": "Respetar y dialogar."}], "glosario": [{"palabra": "Comunidad", "significado": "Grupo que comparte algo y se reconoce unido."}, {"palabra": "Bien común", "significado": "Lo que conviene a todos."}, {"palabra": "Convivencia", "significado": "Vivir juntos respetándose."}, {"palabra": "Pertenencia", "significado": "Sentirse parte de un grupo."}], "carpeta": ["¿Cómo se llama el grupo de personas que comparten un lugar, normas o historia?", "¿Cómo se llama lo que es de todos y conviene a todos?", "¿Se puede ser parte de más de una comunidad? Respondé sí o no.", "¿Con qué se resuelven los conflictos en una convivencia sana: con diálogo o con violencia?"], "respuestas_carpeta": [["comunidad", "una comunidad"], ["bien comun", "bien común", "el bien comun", "el bien común"], ["si", "sí"], ["dialogo", "diálogo", "con dialogo", "con diálogo"]], "soluciones": {"incompleto": "Comunidad. Diálogo.", "solo": "Mi curso: compartimos aula, intereses y normas de convivencia.", "carpeta": ["Comunidad.", "Bien común.", "Sí.", "Diálogo."]}}, "2": {"objetivo": "Vas a distinguir normas sociales, morales y jurídicas y explicar qué hace especial a una ley.", "vas_a_ver": ["Para qué sirven las normas", "Tipos de normas", "Costumbres", "Qué es una ley"], "secciones": [{"etapa": 1, "titulo": "Para qué sirven", "bloques": [{"tipo": "parrafo", "texto": "Las normas son reglas que orientan cómo comportarnos. Hacen posible la convivencia: sin ellas, cada uno haría lo que quiere y los conflictos se resolverían por la fuerza."}]}, {"etapa": 1, "titulo": "Tipos de normas", "bloques": [{"tipo": "tabla", "titulo": "Tres grupos", "columnas": ["Tipo", "Quién la impone", "Qué pasa si no se cumple"], "filas": [["Moral", "La conciencia de cada persona", "Culpa o vergüenza"], ["Social (costumbre)", "El grupo", "Rechazo o crítica"], ["Jurídica (ley)", "El Estado", "Sanción obligatoria"]], "iguales": true}]}, {"etapa": 2, "titulo": "Costumbres", "bloques": [{"tipo": "parrafo", "texto": "Las costumbres cambian de un lugar a otro y con el tiempo. Por ejemplo, en la Argentina es común saludar con un beso en la mejilla; en otros países se saluda de otra forma.", "neutro": {"texto": "Las costumbres cambian de un lugar a otro y con el tiempo. Por ejemplo, el modo de saludar (un beso, un apretón de manos, una reverencia) varía según el país."}}]}, {"etapa": 2, "titulo": "Qué es una ley", "bloques": [{"tipo": "definicion", "titulo": "Ley", "texto": "Norma jurídica general y obligatoria, dictada por una autoridad competente, que prevé una sanción si no se cumple."}, {"tipo": "parrafo", "texto": "Para que una ley sea justa debe valer para todos por igual y haber sido dictada por el procedimiento que fija la Constitución."}]}], "ejemplo_completo": {"titulo": "clasificar", "planteo": "¿Qué tipo de norma es «ceder el asiento a una persona mayor»?", "pasos": ["Nadie te obliga con una sanción legal.", "El grupo lo espera y lo valora.", "Es una norma social."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La norma que impone el Estado y tiene sanción es la norma ___ .", "Una norma que depende de tu conciencia es una norma ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una norma moral, una social y una jurídica que conozcas."}, "tip": {"titulo": "Sanción", "texto": "Si incumplirla trae una sanción del Estado, es una ley."}, "ojo": ["Pensar que toda costumbre es una ley.", "Creer que las leyes valen solo para algunos."], "resumen": [{"titulo": "Normas", "texto": "Reglas para convivir."}, {"titulo": "Tipos", "texto": "Moral, social, jurídica."}, {"titulo": "Costumbre", "texto": "Cambia según lugar y época."}, {"titulo": "Ley", "texto": "Obligatoria, con sanción."}], "glosario": [{"palabra": "Norma", "significado": "Regla que orienta la conducta."}, {"palabra": "Costumbre", "significado": "Hábito repetido por un grupo."}, {"palabra": "Sanción", "significado": "Consecuencia por incumplir."}, {"palabra": "Jurídica", "significado": "Relativa al derecho y las leyes."}], "carpeta": ["¿Cómo se llama la regla que orienta cómo comportarnos?", "¿Qué tipo de norma impone el Estado y tiene sanción: la jurídica o la moral?", "¿Una costumbre puede cambiar con el tiempo? Respondé sí o no.", "¿Una ley justa vale para todos por igual? Respondé sí o no."], "respuestas_carpeta": [["norma", "una norma"], ["juridica", "jurídica", "la juridica", "la jurídica"], ["si", "sí"], ["si", "sí"]], "soluciones": {"incompleto": "Jurídica. Moral.", "solo": "Moral: no mentir. Social: saludar. Jurídica: pagar los impuestos.", "carpeta": ["Norma.", "La jurídica.", "Sí.", "Sí."]}}, "3": {"objetivo": "Vas a distinguir derechos y responsabilidades y explicar por qué los derechos de uno terminan donde empiezan los de otro.", "vas_a_ver": ["Qué es un derecho", "Responsabilidades", "Derechos y límites", "En la vida pública"], "secciones": [{"etapa": 1, "titulo": "Qué es un derecho", "bloques": [{"tipo": "definicion", "titulo": "Derecho", "texto": "Facultad que tienen todas las personas, reconocida por las normas, para vivir con dignidad y libertad."}, {"tipo": "parrafo", "texto": "Algunos derechos básicos son la vida, la educación, la salud, la libertad de expresión y la igualdad ante la ley. En la Argentina están reconocidos en la Constitución Nacional.", "neutro": {"texto": "Algunos derechos básicos son la vida, la educación, la salud, la libertad de expresión y la igualdad ante la ley. En la mayoría de los países están reconocidos en la Constitución."}}]}, {"etapa": 1, "titulo": "Responsabilidades", "bloques": [{"tipo": "tabla", "titulo": "Derecho y responsabilidad", "columnas": ["Derecho", "Responsabilidad que lo acompaña"], "filas": [["Educación", "Estudiar y respetar a docentes y compañeros"], ["Expresarse", "Hacerlo sin agredir ni difamar"], ["Circular", "Respetar las normas de tránsito"], ["Un ambiente sano", "Cuidar los espacios comunes"]], "iguales": true}]}, {"etapa": 2, "titulo": "Derechos y límites", "bloques": [{"tipo": "parrafo", "texto": "Mis derechos terminan donde empiezan los de otra persona. Por eso la libertad tiene límites: no puedo usar mi libertad para dañar a otros."}]}, {"etapa": 2, "titulo": "En la vida pública", "bloques": [{"tipo": "parrafo", "texto": "Participar en la vida pública también es una responsabilidad: informarse, opinar con respeto, votar cuando corresponde y cuidar lo común."}]}], "ejemplo_completo": {"titulo": "relacionar", "planteo": "Poner la música muy fuerte de noche: ¿qué derechos chocan?", "pasos": ["Mi libertad de escuchar música.", "El derecho de los vecinos al descanso.", "Mi derecho termina donde empieza el de ellos."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["A cada derecho lo acompaña una ___ .", "Mi libertad tiene ___ cuando daña a otros."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Elegí un derecho y escribí dos responsabilidades que lo acompañan."}, "tip": {"titulo": "Derecho con deber", "texto": "Cada vez que reclames un derecho, preguntate qué responsabilidad lo acompaña."}, "ojo": ["Creer que los derechos no tienen límites.", "Pensar que las responsabilidades son castigos."], "resumen": [{"titulo": "Derecho", "texto": "Facultad reconocida."}, {"titulo": "Responsabilidad", "texto": "Lo que corresponde hacer."}, {"titulo": "Límite", "texto": "Donde empiezan los otros."}, {"titulo": "Vida pública", "texto": "Informarse y participar."}], "glosario": [{"palabra": "Derecho", "significado": "Facultad reconocida por las normas."}, {"palabra": "Responsabilidad", "significado": "Obligación asumida con otros."}, {"palabra": "Límite", "significado": "Hasta dónde llega la libertad."}, {"palabra": "Vida pública", "significado": "Asuntos que afectan a toda la comunidad."}], "carpeta": ["¿Cómo se llama la facultad de todas las personas, reconocida por las normas?", "¿Qué acompaña a cada derecho: una responsabilidad o un premio?", "¿Mis derechos terminan donde empiezan los de otros? Respondé sí o no.", "¿Informarse y votar son formas de participar en la vida pública? Respondé sí o no."], "respuestas_carpeta": [["derecho", "un derecho"], ["responsabilidad", "una responsabilidad"], ["si", "sí"], ["si", "sí"]], "soluciones": {"incompleto": "Derecho. Responsabilidad.", "solo": "Derecho a la educación: estudiar y respetar a mis compañeros.", "carpeta": ["Derecho.", "Responsabilidad.", "Sí.", "Sí."]}}, "4": {"objetivo": "Vas a explicar para qué existe el poder político y cómo se organiza y se limita en una democracia.", "vas_a_ver": ["Qué es el poder", "Autoridad legítima", "El Estado", "Dividir el poder"], "secciones": [{"etapa": 1, "titulo": "Qué es el poder", "bloques": [{"tipo": "definicion", "titulo": "Poder político", "texto": "Capacidad de tomar decisiones obligatorias para toda la sociedad y de hacerlas cumplir."}, {"tipo": "parrafo", "texto": "Existe para ordenar la convivencia, resolver conflictos y proteger los derechos de todos."}]}, {"etapa": 1, "titulo": "Autoridad legítima", "bloques": [{"tipo": "tabla", "titulo": "Poder y autoridad", "columnas": ["Idea", "Qué significa"], "filas": [["Fuerza", "Imponer por la violencia"], ["Autoridad legítima", "Se acepta porque se obtuvo por un procedimiento aceptado"], ["Legitimidad", "Que la comunidad reconozca ese poder como justo"]], "iguales": true}]}, {"etapa": 2, "titulo": "El Estado", "bloques": [{"tipo": "parrafo", "texto": "El <b>Estado</b> es la organización política de una sociedad en un territorio: tiene gobierno, leyes y población. En la Argentina, el Estado nacional se organiza según la Constitución Nacional.", "neutro": {"texto": "El <b>Estado</b> es la organización política de una sociedad en un territorio: tiene gobierno, leyes y población. En cada país, el Estado se organiza según su Constitución."}}]}, {"etapa": 2, "titulo": "Dividir el poder", "bloques": [{"tipo": "tabla", "titulo": "Tres poderes", "columnas": ["Poder", "Función"], "filas": [["Legislativo", "Hace las leyes"], ["Ejecutivo", "Gobierna y aplica las leyes"], ["Judicial", "Interpreta las leyes y resuelve conflictos"]], "iguales": true}, {"tipo": "parrafo", "texto": "Dividir el poder evita que alguien lo concentre y abuse. Esto se llama <b>división de poderes</b>."}]}], "ejemplo_completo": {"titulo": "explicar", "planteo": "¿Por qué conviene que el poder esté dividido?", "pasos": ["Si una sola persona hiciera, aplicara y juzgara las leyes, podría abusar.", "Con tres poderes, cada uno controla a los otros.", "Así se protegen los derechos."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["El poder que hace las leyes es el ___ .", "El poder que resuelve conflictos aplicando las leyes es el ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Explicá con un ejemplo cotidiano por qué no conviene que una sola persona decida todo."}, "tip": {"titulo": "Control mutuo", "texto": "Un poder dividido es un poder controlado."}, "ojo": ["Confundir poder con fuerza.", "Pensar que el Estado y el gobierno son lo mismo."], "resumen": [{"titulo": "Poder", "texto": "Decisiones obligatorias."}, {"titulo": "Legitimidad", "texto": "Aceptado por la comunidad."}, {"titulo": "Estado", "texto": "Organización política."}, {"titulo": "Tres poderes", "texto": "Legislativo, ejecutivo, judicial."}], "glosario": [{"palabra": "Poder político", "significado": "Capacidad de decidir para todos."}, {"palabra": "Legitimidad", "significado": "Reconocimiento como justo."}, {"palabra": "Estado", "significado": "Organización política de una sociedad."}, {"palabra": "División de poderes", "significado": "Reparto de funciones del poder."}], "carpeta": ["¿Cómo se llama el poder que hace las leyes?", "¿Cómo se llama el poder que resuelve conflictos aplicando las leyes?", "¿La división de poderes evita los abusos? Respondé sí o no.", "¿Cómo se llama la organización política de una sociedad en un territorio?"], "respuestas_carpeta": [["legislativo", "el legislativo", "poder legislativo"], ["judicial", "el judicial", "poder judicial"], ["si", "sí"], ["estado", "el estado"]], "soluciones": {"incompleto": "Legislativo. Judicial.", "solo": "Si una sola persona decidiera todo, podría abusar; dividido, se controla.", "carpeta": ["Legislativo.", "Judicial.", "Sí.", "Estado."]}}}, "act": {"1": [{"t": "classify", "p": "¿Qué une a cada comunidad?", "o": {"elementos": ["Vivir en la misma calle", "Hinchar por el mismo club", "Hablar el mismo idioma", "Compartir un barrio"], "categorias": ["Lugar", "Intereses o cultura"]}, "r": {"categorias": {"Vivir en la misma calle": "Lugar", "Hinchar por el mismo club": "Intereses o cultura", "Hablar el mismo idioma": "Intereses o cultura", "Compartir un barrio": "Lugar"}}, "e": "Algunos vínculos son de lugar y otros de intereses o cultura."}, {"t": "fill_blank", "p": "Lo que es de todos y conviene a todos es el bien ___ .", "o": [], "r": {"huecos": [["comun", "común"]]}, "e": "Bien común."}], "2": [{"t": "matching", "p": "Uní cada norma con su tipo.", "o": {"izquierda": ["No mentir", "Ceder el asiento", "Pagar impuestos", "Saludar al entrar"], "derecha": ["Moral", "Social", "Jurídica", "Social"]}, "r": {"pares": {"No mentir": "Moral", "Ceder el asiento": "Social", "Pagar impuestos": "Jurídica", "Saludar al entrar": "Social"}}, "e": "Cada norma, su tipo."}, {"t": "true_false", "p": "Toda costumbre es una ley.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Solo las normas jurídicas son leyes."}], "3": [{"t": "multi_select", "p": "¿Qué responsabilidades acompañan al derecho a la educación?", "o": ["Estudiar", "Respetar a docentes y compañeros", "Faltar sin motivo", "Cuidar la escuela"], "r": {"correctas": ["Estudiar", "Respetar a docentes y compañeros", "Cuidar la escuela"]}, "e": "Faltar sin motivo no es una responsabilidad."}, {"t": "ordering", "p": "Ordená los pasos para resolver un choque de derechos.", "o": ["Buscar un acuerdo", "Identificar los derechos en conflicto", "Escuchar a cada parte", "Respetar lo acordado"], "r": {"orden": ["Identificar los derechos en conflicto", "Escuchar a cada parte", "Buscar un acuerdo", "Respetar lo acordado"]}, "e": "Primero entender, después acordar."}], "4": [{"t": "tap_text", "p": "Tocá los tres poderes: «El poder legislativo, ejecutivo y judicial se controlan entre sí».", "o": {"segmentos": ["El", "poder", "legislativo,", "ejecutivo", "y", "judicial", "se", "controlan", "entre", "sí"], "modo": "palabras"}, "r": {"tocar": [2, 3, 5]}, "e": "Son los tres poderes."}, {"t": "classify", "p": "¿Qué poder hace cada cosa?", "o": {"elementos": ["Sancionar una ley", "Gobernar y aplicar las leyes", "Dictar una sentencia", "Debatir un proyecto"], "categorias": ["Legislativo", "Ejecutivo", "Judicial"]}, "r": {"categorias": {"Sancionar una ley": "Legislativo", "Gobernar y aplicar las leyes": "Ejecutivo", "Dictar una sentencia": "Judicial", "Debatir un proyecto": "Legislativo"}}, "e": "Cada poder tiene su función."}], "5": [{"t": "multiple_choice", "p": "Relámpago. La norma impuesta por el Estado con sanción es…", "o": ["Jurídica", "Moral", "Social"], "r": {"correcta": "Jurídica"}, "e": "Es la ley.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. Los derechos no tienen límites.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Terminan donde empiezan los de otros.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. El poder que hace las leyes es el…", "o": ["Legislativo", "Judicial", "Ejecutivo"], "r": {"correcta": "Legislativo"}, "e": "Sanciona las leyes.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. Dividir el poder evita abusos.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Se controlan entre sí.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "¿Qué es el bien común?", "o": ["Lo que conviene a todos", "Lo que le sirve a uno", "Un impuesto", "Un barrio"], "r": {"correcta": "Lo que conviene a todos"}, "e": "Es lo de todos."}], [1, {"t": "true_false", "p": "Una persona puede pertenecer a más de una comunidad.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Familia, curso, club, barrio."}], [1, {"t": "fill_blank", "p": "Convivir es resolver los conflictos con ___ .", "o": [], "r": {"huecos": [["dialogo", "diálogo"]]}, "e": "Sin violencia."}], [2, {"t": "multiple_choice", "p": "La norma que impone el Estado y tiene sanción es la…", "o": ["Jurídica", "Moral", "Social", "Religiosa"], "r": {"correcta": "Jurídica"}, "e": "Es la ley."}], [2, {"t": "multiple_choice", "p": "Ceder el asiento a una persona mayor es una norma…", "o": ["Social", "Jurídica", "Penal", "Fiscal"], "r": {"correcta": "Social"}, "e": "El grupo la espera."}], [2, {"t": "true_false", "p": "Una ley justa vale para todos por igual.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Sin privilegios."}], [3, {"t": "multiple_choice", "p": "A cada derecho lo acompaña…", "o": ["Una responsabilidad", "Un castigo", "Un premio", "Un impuesto"], "r": {"correcta": "Una responsabilidad"}, "e": "Son dos caras."}], [3, {"t": "true_false", "p": "Mis derechos terminan donde empiezan los de otros.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Esa es la regla de la convivencia."}], [3, {"t": "multi_select", "p": "Formas de participar en la vida pública:", "o": ["Informarse", "Votar cuando corresponde", "Cuidar lo común", "Ignorar los problemas"], "r": {"correctas": ["Informarse", "Votar cuando corresponde", "Cuidar lo común"]}, "e": "Ignorar no es participar."}], [4, {"t": "multiple_choice", "p": "El poder político sirve para…", "o": ["Ordenar la convivencia y proteger derechos", "Imponer por la fuerza", "Evitar las leyes", "Cobrar impuestos"], "r": {"correcta": "Ordenar la convivencia y proteger derechos"}, "e": "Es su función."}], [4, {"t": "multiple_choice", "p": "¿Quién hace las leyes?", "o": ["El poder legislativo", "El poder judicial", "El poder ejecutivo", "Los vecinos"], "r": {"correcta": "El poder legislativo"}, "e": "Las sanciona."}], [4, {"t": "fill_blank", "p": "El poder que resuelve conflictos aplicando las leyes es el ___ .", "o": [], "r": {"huecos": [["judicial"]]}, "e": "Poder judicial."}], [4, {"t": "true_false", "p": "La división de poderes evita que alguien concentre el poder.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Se controlan entre sí."}]]}
+{
+ "subject_id": "a549d16a-c872-4df7-b243-e4b508bd8668",
+ "tema": 1,
+ "practica": "Práctica general: vivir juntos",
+ "examen_titulo": "Nivel jefe: vivir juntos",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a explicar qué es una comunidad, qué nos une y qué significa cuidar el bien común.",
+   "vas_a_ver": [
+    "Comunidad",
+    "Lo que nos une",
+    "Bien común",
+    "Convivir en la diferencia"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Comunidad",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Comunidad",
+       "texto": "Grupo de personas que comparten un lugar, intereses, normas o una historia y se reconocen como parte del mismo conjunto."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Una comunidad puede ser pequeña (una familia, un curso) o muy grande (un barrio, un país)."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Lo que nos une",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Vínculos",
+       "columnas": [
+        "Qué une",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Lugar",
+         "Vivir en el mismo barrio"
+        ],
+        [
+         "Intereses",
+         "Un club o un equipo"
+        ],
+        [
+         "Normas",
+         "Reglas de convivencia"
+        ],
+        [
+         "Historia y cultura",
+         "Fiestas, tradiciones, idioma"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Bien común",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Cuando una comunidad cuida lo que es de todos (la plaza, la escuela, el agua), cuida el <b>bien común</b>. En la Argentina, por ejemplo, las plazas, las escuelas y los hospitales públicos son de todos.",
+       "neutro": {
+        "texto": "Cuando una comunidad cuida lo que es de todos (la plaza, la escuela, el agua), cuida el <b>bien común</b>. En cada país, las plazas, las escuelas y los hospitales públicos son de todos."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Convivir en la diferencia",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las comunidades están formadas por personas distintas. Convivir es respetar las diferencias y resolver los conflictos sin violencia, con diálogo y con normas acordadas."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "relacionar",
+    "planteo": "¿Por qué una plaza descuidada es un problema de toda la comunidad?",
+    "pasos": [
+     "La plaza es un bien de todos.",
+     "Si se rompe o se ensucia, nadie puede disfrutarla bien.",
+     "Cuidarla es una responsabilidad compartida."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Lo que es de todos y conviene a todos es el ___ común.",
+     "Convivir es resolver los conflictos con ___ y no con violencia."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Elegí una comunidad a la que pertenezcas y escribí tres cosas que te unen a ella."
+   },
+   "tip": {
+    "titulo": "De todos",
+    "texto": "Preguntate siempre: ¿esto es de uno o es de todos?"
+   },
+   "ojo": [
+    "Creer que una comunidad es solo un lugar.",
+    "Pensar que cuidar lo común es tarea de otros."
+   ],
+   "resumen": [
+    {
+     "titulo": "Comunidad",
+     "texto": "Personas que se reconocen parte de un conjunto."
+    },
+    {
+     "titulo": "Lo que une",
+     "texto": "Lugar, intereses, normas, cultura."
+    },
+    {
+     "titulo": "Bien común",
+     "texto": "Lo que es de todos."
+    },
+    {
+     "titulo": "Convivir",
+     "texto": "Respetar y dialogar."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Comunidad",
+     "significado": "Grupo que comparte algo y se reconoce unido."
+    },
+    {
+     "palabra": "Bien común",
+     "significado": "Lo que conviene a todos."
+    },
+    {
+     "palabra": "Convivencia",
+     "significado": "Vivir juntos respetándose."
+    },
+    {
+     "palabra": "Pertenencia",
+     "significado": "Sentirse parte de un grupo."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el grupo de personas que comparten un lugar, normas o historia?",
+    "¿Cómo se llama lo que es de todos y conviene a todos?",
+    "¿Se puede ser parte de más de una comunidad? Respondé sí o no.",
+    "¿Con qué se resuelven los conflictos en una convivencia sana: con diálogo o con violencia?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "comunidad",
+     "una comunidad"
+    ],
+    [
+     "bien comun",
+     "bien común",
+     "el bien comun",
+     "el bien común"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "dialogo",
+     "diálogo",
+     "con dialogo",
+     "con diálogo"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Comunidad. Diálogo.",
+    "solo": "Mi curso: compartimos aula, intereses y normas de convivencia.",
+    "carpeta": [
+     "Comunidad.",
+     "Bien común.",
+     "Sí.",
+     "Diálogo."
+    ]
+   }
+  },
+  "2": {
+   "objetivo": "Vas a distinguir normas sociales, morales y jurídicas y explicar qué hace especial a una ley.",
+   "vas_a_ver": [
+    "Para qué sirven las normas",
+    "Tipos de normas",
+    "Costumbres",
+    "Qué es una ley"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Para qué sirven",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las normas son reglas que orientan cómo comportarnos. Hacen posible la convivencia: sin ellas, cada uno haría lo que quiere y los conflictos se resolverían por la fuerza."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Tipos de normas",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Tres grupos",
+       "columnas": [
+        "Tipo",
+        "Quién la impone",
+        "Qué pasa si no se cumple"
+       ],
+       "filas": [
+        [
+         "Moral",
+         "La conciencia de cada persona",
+         "Culpa o vergüenza"
+        ],
+        [
+         "Social (costumbre)",
+         "El grupo",
+         "Rechazo o crítica"
+        ],
+        [
+         "Jurídica (ley)",
+         "El Estado",
+         "Sanción obligatoria"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Costumbres",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las costumbres cambian de un lugar a otro y con el tiempo. Por ejemplo, en la Argentina es común saludar con un beso en la mejilla; en otros países se saluda de otra forma.",
+       "neutro": {
+        "texto": "Las costumbres cambian de un lugar a otro y con el tiempo. Por ejemplo, el modo de saludar (un beso, un apretón de manos, una reverencia) varía según el país."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Qué es una ley",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Ley",
+       "texto": "Norma jurídica general y obligatoria, dictada por una autoridad competente, que prevé una sanción si no se cumple."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Para que una ley sea justa debe valer para todos por igual y haber sido dictada por el procedimiento que fija la Constitución."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "clasificar",
+    "planteo": "¿Qué tipo de norma es «ceder el asiento a una persona mayor»?",
+    "pasos": [
+     "Nadie te obliga con una sanción legal.",
+     "El grupo lo espera y lo valora.",
+     "Es una norma social."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La norma que impone el Estado y tiene sanción es la norma ___ .",
+     "Una norma que depende de tu conciencia es una norma ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí una norma moral, una social y una jurídica que conozcas."
+   },
+   "tip": {
+    "titulo": "Sanción",
+    "texto": "Si incumplirla trae una sanción del Estado, es una ley."
+   },
+   "ojo": [
+    "Pensar que toda costumbre es una ley.",
+    "Creer que las leyes valen solo para algunos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Normas",
+     "texto": "Reglas para convivir."
+    },
+    {
+     "titulo": "Tipos",
+     "texto": "Moral, social, jurídica."
+    },
+    {
+     "titulo": "Costumbre",
+     "texto": "Cambia según lugar y época."
+    },
+    {
+     "titulo": "Ley",
+     "texto": "Obligatoria, con sanción."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Norma",
+     "significado": "Regla que orienta la conducta."
+    },
+    {
+     "palabra": "Costumbre",
+     "significado": "Hábito repetido por un grupo."
+    },
+    {
+     "palabra": "Sanción",
+     "significado": "Consecuencia por incumplir."
+    },
+    {
+     "palabra": "Jurídica",
+     "significado": "Relativa al derecho y las leyes."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama la regla que orienta cómo comportarnos?",
+    "¿Qué tipo de norma impone el Estado y tiene sanción: la jurídica o la moral?",
+    "¿Una costumbre puede cambiar con el tiempo? Respondé sí o no.",
+    "¿Una ley justa vale para todos por igual? Respondé sí o no."
+   ],
+   "respuestas_carpeta": [
+    [
+     "norma",
+     "una norma"
+    ],
+    [
+     "juridica",
+     "jurídica",
+     "la juridica",
+     "la jurídica"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "si",
+     "sí"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Jurídica. Moral.",
+    "solo": "Moral: no mentir. Social: saludar. Jurídica: pagar los impuestos.",
+    "carpeta": [
+     "Norma.",
+     "La jurídica.",
+     "Sí.",
+     "Sí."
+    ]
+   }
+  },
+  "3": {
+   "objetivo": "Vas a distinguir derechos y responsabilidades y explicar por qué los derechos de uno terminan donde empiezan los de otro.",
+   "vas_a_ver": [
+    "Qué es un derecho",
+    "Responsabilidades",
+    "Derechos y límites",
+    "En la vida pública"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es un derecho",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Derecho",
+       "texto": "Facultad que tienen todas las personas, reconocida por las normas, para vivir con dignidad y libertad."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Algunos derechos básicos son la vida, la educación, la salud, la libertad de expresión y la igualdad ante la ley. En la Argentina están reconocidos en la Constitución Nacional.",
+       "neutro": {
+        "texto": "Algunos derechos básicos son la vida, la educación, la salud, la libertad de expresión y la igualdad ante la ley. En la mayoría de los países están reconocidos en la Constitución."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Responsabilidades",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Derecho y responsabilidad",
+       "columnas": [
+        "Derecho",
+        "Responsabilidad que lo acompaña"
+       ],
+       "filas": [
+        [
+         "Educación",
+         "Estudiar y respetar a docentes y compañeros"
+        ],
+        [
+         "Expresarse",
+         "Hacerlo sin agredir ni difamar"
+        ],
+        [
+         "Circular",
+         "Respetar las normas de tránsito"
+        ],
+        [
+         "Un ambiente sano",
+         "Cuidar los espacios comunes"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Derechos y límites",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mis derechos terminan donde empiezan los de otra persona. Por eso la libertad tiene límites: no puedo usar mi libertad para dañar a otros."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "En la vida pública",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Participar en la vida pública también es una responsabilidad: informarse, opinar con respeto, votar cuando corresponde y cuidar lo común."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "relacionar",
+    "planteo": "Poner la música muy fuerte de noche: ¿qué derechos chocan?",
+    "pasos": [
+     "Mi libertad de escuchar música.",
+     "El derecho de los vecinos al descanso.",
+     "Mi derecho termina donde empieza el de ellos."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "A cada derecho lo acompaña una ___ .",
+     "Mi libertad tiene ___ cuando daña a otros."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Elegí un derecho y escribí dos responsabilidades que lo acompañan."
+   },
+   "tip": {
+    "titulo": "Derecho con deber",
+    "texto": "Cada vez que reclames un derecho, preguntate qué responsabilidad lo acompaña."
+   },
+   "ojo": [
+    "Creer que los derechos no tienen límites.",
+    "Pensar que las responsabilidades son castigos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Derecho",
+     "texto": "Facultad reconocida."
+    },
+    {
+     "titulo": "Responsabilidad",
+     "texto": "Lo que corresponde hacer."
+    },
+    {
+     "titulo": "Límite",
+     "texto": "Donde empiezan los otros."
+    },
+    {
+     "titulo": "Vida pública",
+     "texto": "Informarse y participar."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Derecho",
+     "significado": "Facultad reconocida por las normas."
+    },
+    {
+     "palabra": "Responsabilidad",
+     "significado": "Obligación asumida con otros."
+    },
+    {
+     "palabra": "Límite",
+     "significado": "Hasta dónde llega la libertad."
+    },
+    {
+     "palabra": "Vida pública",
+     "significado": "Asuntos que afectan a toda la comunidad."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama la facultad de todas las personas, reconocida por las normas?",
+    "¿Qué acompaña a cada derecho: una responsabilidad o un premio?",
+    "¿Mis derechos terminan donde empiezan los de otros? Respondé sí o no.",
+    "¿Informarse y votar son formas de participar en la vida pública? Respondé sí o no."
+   ],
+   "respuestas_carpeta": [
+    [
+     "derecho",
+     "un derecho"
+    ],
+    [
+     "responsabilidad",
+     "una responsabilidad"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "si",
+     "sí"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Derecho. Responsabilidad.",
+    "solo": "Derecho a la educación: estudiar y respetar a mis compañeros.",
+    "carpeta": [
+     "Derecho.",
+     "Responsabilidad.",
+     "Sí.",
+     "Sí."
+    ]
+   }
+  },
+  "4": {
+   "objetivo": "Vas a explicar para qué existe el poder político y cómo se organiza y se limita en una democracia.",
+   "vas_a_ver": [
+    "Qué es el poder",
+    "Autoridad legítima",
+    "El Estado",
+    "Dividir el poder"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es el poder",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Poder político",
+       "texto": "Capacidad de tomar decisiones obligatorias para toda la sociedad y de hacerlas cumplir."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Existe para ordenar la convivencia, resolver conflictos y proteger los derechos de todos."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Autoridad legítima",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Poder y autoridad",
+       "columnas": [
+        "Idea",
+        "Qué significa"
+       ],
+       "filas": [
+        [
+         "Fuerza",
+         "Imponer por la violencia"
+        ],
+        [
+         "Autoridad legítima",
+         "Se acepta porque se obtuvo por un procedimiento aceptado"
+        ],
+        [
+         "Legitimidad",
+         "Que la comunidad reconozca ese poder como justo"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "El Estado",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El <b>Estado</b> es la organización política de una sociedad en un territorio: tiene gobierno, leyes y población. En la Argentina, el Estado nacional se organiza según la Constitución Nacional.",
+       "neutro": {
+        "texto": "El <b>Estado</b> es la organización política de una sociedad en un territorio: tiene gobierno, leyes y población. En cada país, el Estado se organiza según su Constitución."
+       }
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Dividir el poder",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Tres poderes",
+       "columnas": [
+        "Poder",
+        "Función"
+       ],
+       "filas": [
+        [
+         "Legislativo",
+         "Hace las leyes"
+        ],
+        [
+         "Ejecutivo",
+         "Gobierna y aplica las leyes"
+        ],
+        [
+         "Judicial",
+         "Interpreta las leyes y resuelve conflictos"
+        ]
+       ],
+       "iguales": true
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Dividir el poder evita que alguien lo concentre y abuse. Esto se llama <b>división de poderes</b>."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "explicar",
+    "planteo": "¿Por qué conviene que el poder esté dividido?",
+    "pasos": [
+     "Si una sola persona hiciera, aplicara y juzgara las leyes, podría abusar.",
+     "Con tres poderes, cada uno controla a los otros.",
+     "Así se protegen los derechos."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "El poder que hace las leyes es el ___ .",
+     "El poder que resuelve conflictos aplicando las leyes es el ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Explicá con un ejemplo cotidiano por qué no conviene que una sola persona decida todo."
+   },
+   "tip": {
+    "titulo": "Control mutuo",
+    "texto": "Un poder dividido es un poder controlado."
+   },
+   "ojo": [
+    "Confundir poder con fuerza.",
+    "Pensar que el Estado y el gobierno son lo mismo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Poder",
+     "texto": "Decisiones obligatorias."
+    },
+    {
+     "titulo": "Legitimidad",
+     "texto": "Aceptado por la comunidad."
+    },
+    {
+     "titulo": "Estado",
+     "texto": "Organización política."
+    },
+    {
+     "titulo": "Tres poderes",
+     "texto": "Legislativo, ejecutivo, judicial."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Poder político",
+     "significado": "Capacidad de decidir para todos."
+    },
+    {
+     "palabra": "Legitimidad",
+     "significado": "Reconocimiento como justo."
+    },
+    {
+     "palabra": "Estado",
+     "significado": "Organización política de una sociedad."
+    },
+    {
+     "palabra": "División de poderes",
+     "significado": "Reparto de funciones del poder."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el poder que hace las leyes?",
+    "¿Cómo se llama el poder que resuelve conflictos aplicando las leyes?",
+    "¿La división de poderes evita los abusos? Respondé sí o no.",
+    "¿Cómo se llama la organización política de una sociedad en un territorio?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "legislativo",
+     "el legislativo",
+     "poder legislativo"
+    ],
+    [
+     "judicial",
+     "el judicial",
+     "poder judicial"
+    ],
+    [
+     "si",
+     "sí"
+    ],
+    [
+     "estado",
+     "el estado"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Legislativo. Judicial.",
+    "solo": "Si una sola persona decidiera todo, podría abusar; dividido, se controla.",
+    "carpeta": [
+     "Legislativo.",
+     "Judicial.",
+     "Sí.",
+     "Estado."
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "¿Qué une a cada comunidad?",
+    "o": {
+     "elementos": [
+      "Vivir en la misma calle",
+      "Hinchar por el mismo club",
+      "Hablar el mismo idioma",
+      "Compartir un barrio"
+     ],
+     "categorias": [
+      "Lugar",
+      "Intereses o cultura"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Vivir en la misma calle": "Lugar",
+      "Hinchar por el mismo club": "Intereses o cultura",
+      "Hablar el mismo idioma": "Intereses o cultura",
+      "Compartir un barrio": "Lugar"
+     }
+    },
+    "e": "Algunos vínculos son de lugar y otros de intereses o cultura."
+   },
+   {
+    "t": "fill_blank",
+    "p": "Lo que es de todos y conviene a todos es el bien ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "comun",
+       "común"
+      ]
+     ]
+    },
+    "e": "Bien común."
+   }
+  ],
+  "2": [
+   {
+    "t": "matching",
+    "p": "Uní cada norma con su tipo.",
+    "o": {
+     "izquierda": [
+      "No mentir",
+      "Ceder el asiento",
+      "Pagar impuestos",
+      "Saludar al entrar"
+     ],
+     "derecha": [
+      "Moral",
+      "Social",
+      "Jurídica",
+      "Social"
+     ]
+    },
+    "r": {
+     "pares": {
+      "No mentir": "Moral",
+      "Ceder el asiento": "Social",
+      "Pagar impuestos": "Jurídica",
+      "Saludar al entrar": "Social"
+     }
+    },
+    "e": "Cada norma, su tipo."
+   },
+   {
+    "t": "true_false",
+    "p": "Toda costumbre es una ley.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Solo las normas jurídicas son leyes."
+   }
+  ],
+  "3": [
+   {
+    "t": "multi_select",
+    "p": "¿Qué responsabilidades acompañan al derecho a la educación?",
+    "o": [
+     "Estudiar",
+     "Respetar a docentes y compañeros",
+     "Faltar sin motivo",
+     "Cuidar la escuela"
+    ],
+    "r": {
+     "correctas": [
+      "Estudiar",
+      "Respetar a docentes y compañeros",
+      "Cuidar la escuela"
+     ]
+    },
+    "e": "Faltar sin motivo no es una responsabilidad."
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená los pasos para resolver un choque de derechos.",
+    "o": [
+     "Buscar un acuerdo",
+     "Identificar los derechos en conflicto",
+     "Escuchar a cada parte",
+     "Respetar lo acordado"
+    ],
+    "r": {
+     "orden": [
+      "Identificar los derechos en conflicto",
+      "Escuchar a cada parte",
+      "Buscar un acuerdo",
+      "Respetar lo acordado"
+     ]
+    },
+    "e": "Primero entender, después acordar."
+   }
+  ],
+  "4": [
+   {
+    "t": "tap_text",
+    "p": "Tocá los tres poderes: «El poder legislativo, ejecutivo y judicial se controlan entre sí».",
+    "o": {
+     "segmentos": [
+      "El",
+      "poder",
+      "legislativo,",
+      "ejecutivo",
+      "y",
+      "judicial",
+      "se",
+      "controlan",
+      "entre",
+      "sí"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      2,
+      3,
+      5
+     ]
+    },
+    "e": "Son los tres poderes."
+   },
+   {
+    "t": "classify",
+    "p": "¿Qué poder hace cada cosa?",
+    "o": {
+     "elementos": [
+      "Sancionar una ley",
+      "Gobernar y aplicar las leyes",
+      "Dictar una sentencia",
+      "Debatir un proyecto"
+     ],
+     "categorias": [
+      "Legislativo",
+      "Ejecutivo",
+      "Judicial"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Sancionar una ley": "Legislativo",
+      "Gobernar y aplicar las leyes": "Ejecutivo",
+      "Dictar una sentencia": "Judicial",
+      "Debatir un proyecto": "Legislativo"
+     }
+    },
+    "e": "Cada poder tiene su función."
+   }
+  ],
+  "5": [
+   {
+    "t": "classify",
+    "p": "Relámpago. ¿Qué tipo de norma es cada una?",
+    "o": {
+     "elementos": [
+      "Pagar impuestos",
+      "Decir la verdad",
+      "Saludar al entrar"
+     ],
+     "categorias": [
+      "Jurídica",
+      "Moral",
+      "Social"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Pagar impuestos": "Jurídica",
+      "Decir la verdad": "Moral",
+      "Saludar al entrar": "Social"
+     }
+    },
+    "e": "Cada norma tiene su origen.",
+    "tiempo": 35
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. Los derechos no tienen límites.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Terminan donde empiezan los de otros.",
+    "tiempo": 15
+   },
+   {
+    "t": "fill_blank",
+    "p": "Relámpago. El poder que hace las leyes es el ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "legislativo"
+      ]
+     ]
+    },
+    "e": "Sanciona las leyes.",
+    "tiempo": 25
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Dividir el poder sirve para…",
+    "o": [
+     "Evitar abusos",
+     "Hacer más leyes",
+     "Votar menos"
+    ],
+    "r": {
+     "correcta": "Evitar abusos"
+    },
+    "e": "Los poderes se controlan entre sí.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué es el bien común?",
+    "o": [
+     "Lo que conviene a todos",
+     "Lo que le sirve a uno",
+     "Un impuesto",
+     "Un barrio"
+    ],
+    "r": {
+     "correcta": "Lo que conviene a todos"
+    },
+    "e": "Es lo de todos."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "Una persona puede pertenecer a más de una comunidad.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Familia, curso, club, barrio."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "fill_blank",
+    "p": "Convivir es resolver los conflictos con ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "dialogo",
+       "diálogo"
+      ]
+     ]
+    },
+    "e": "Sin violencia."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "La norma que impone el Estado y tiene sanción es la…",
+    "o": [
+     "Jurídica",
+     "Moral",
+     "Social",
+     "Religiosa"
+    ],
+    "r": {
+     "correcta": "Jurídica"
+    },
+    "e": "Es la ley."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "Ceder el asiento a una persona mayor es una norma…",
+    "o": [
+     "Social",
+     "Jurídica",
+     "Penal",
+     "Fiscal"
+    ],
+    "r": {
+     "correcta": "Social"
+    },
+    "e": "El grupo la espera."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "Una ley justa vale para todos por igual.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Sin privilegios."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "A cada derecho lo acompaña…",
+    "o": [
+     "Una responsabilidad",
+     "Un castigo",
+     "Un premio",
+     "Un impuesto"
+    ],
+    "r": {
+     "correcta": "Una responsabilidad"
+    },
+    "e": "Son dos caras."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "Mis derechos terminan donde empiezan los de otros.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Esa es la regla de la convivencia."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multi_select",
+    "p": "Formas de participar en la vida pública:",
+    "o": [
+     "Informarse",
+     "Votar cuando corresponde",
+     "Cuidar lo común",
+     "Ignorar los problemas"
+    ],
+    "r": {
+     "correctas": [
+      "Informarse",
+      "Votar cuando corresponde",
+      "Cuidar lo común"
+     ]
+    },
+    "e": "Ignorar no es participar."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "El poder político sirve para…",
+    "o": [
+     "Ordenar la convivencia y proteger derechos",
+     "Imponer por la fuerza",
+     "Evitar las leyes",
+     "Cobrar impuestos"
+    ],
+    "r": {
+     "correcta": "Ordenar la convivencia y proteger derechos"
+    },
+    "e": "Es su función."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Quién hace las leyes?",
+    "o": [
+     "El poder legislativo",
+     "El poder judicial",
+     "El poder ejecutivo",
+     "Los vecinos"
+    ],
+    "r": {
+     "correcta": "El poder legislativo"
+    },
+    "e": "Las sanciona."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "fill_blank",
+    "p": "El poder que resuelve conflictos aplicando las leyes es el ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "judicial"
+      ]
+     ]
+    },
+    "e": "Poder judicial."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "La división de poderes evita que alguien concentre el poder.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Se controlan entre sí."
+   }
+  ]
+ ]
+}
