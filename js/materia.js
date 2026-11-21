@@ -56,7 +56,7 @@
     return {
       pantalla: pantalla,
       enviar: function (payload) { return llamar('chat-tutor', payload); },
-      ctx: function () { return ctx; },
+      ctx: function () { return typeof ctx === 'function' ? ctx() : ctx; },
       config: {
         ver: async function () { var r = await sb.rpc('tutor_config_ver', { p_student: D.sid }); return r.data && r.data[0]; },
         guardar: async function (apodo, nombre, pers) {
@@ -710,8 +710,18 @@
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var cuerpo = el.querySelector('.mt-cuest');
-    if (op.tutor && !op.examen && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('actividad', op.tutor));
-    var lista = [], enviando = false, entregado = false, relamp = null;
+    var lista = [], enviando = false, entregado = false, relamp = null, qActual = null;
+    // Qué pregunta está mirando el alumno ahora: el tutor la recibe con sus opciones visibles (nunca la respuesta)
+    function preguntaTutor() {
+      var q = qActual; if (!q) return {};
+      var o = q.options, vis = '';
+      if (Array.isArray(o)) vis = ' Opciones: ' + o.map(String).join(' / ');
+      else if (o && (o.elementos || o.izquierda || o.columnas)) vis = ' ' + JSON.stringify(o.elementos ? { elementos: o.elementos, categorias: o.categorias } : o.izquierda ? { izquierda: o.izquierda, derecha: o.derecha } : { columnas: o.columnas });
+      var r = { pregunta_texto: (pr(q) + vis).slice(0, 600) };
+      if (!(o && o.vars)) r.question_id = q.id; // con números al azar la respuesta depende del sorteo: no se la damos
+      return r;
+    }
+    if (op.tutor && !op.examen && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('actividad', function () { return Object.assign({}, op.tutor, preguntaTutor()); }));
     if (window.WaveTipos) WaveTipos.enlazar(cuerpo);
     // Enunciado que ve el alumno: si la pregunta tiene números al azar, ya viene con los números sorteados
     function pr(q) { return q._prompt != null ? q._prompt : q.prompt; }
@@ -887,7 +897,7 @@
     function verConsigna(n) {
       var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length;
       if (!tot) return;
-      n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n;
+      n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n; qActual = lista[n] || null;
       [].forEach.call(ps, function (p, k) { p.style.display = k === n ? '' : 'none'; });
       var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = 'Consigna ' + (n + 1) + ' de ' + tot;
       var ant = cuerpo.querySelector('[data-cn="-1"]'), sig = cuerpo.querySelector('[data-cn="1"]'), env = cuerpo.querySelector('[data-enviar]');
@@ -903,7 +913,7 @@
       mostrarRel();
     }
     function mostrarRel() {
-      var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg;
+      var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q;
       cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">⚡ Relámpago · ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
         '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
         '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-rel="1">' + (i === lista.length - 1 ? 'Terminar' : 'Siguiente') + '</button></div>';
