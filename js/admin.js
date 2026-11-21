@@ -199,8 +199,6 @@
       '</select>';
   }
   function selTutor(a) {
-    var con = modalidadDe(a) !== 'libre';
-    if (!con && !a.tutor) return '<span class="wv-dato">— (Libre)</span>';
     return '<select class="wv-cur" data-tut="' + a.id + '" aria-label="Tutor de ' + esc(a.nombre) + '">' +
       '<option value="">Sin tutor</option>' +
       TUTORES.map(function (t) { return '<option value="' + t.id + '"' + (a.tutor === t.id ? ' selected' : '') + '>' + esc(t.nombre || t.email) + '</option>'; }).join('') +
@@ -815,7 +813,7 @@
   // ---------- Tutores ----------
   async function vistaTutores() {
     vista.innerHTML = '<h1 class="vista-titulo">Equipo</h1>' +
-      '<p class="wv-dato">Acá das de alta las cuentas del equipo: tutores, directores de nivel y tesorero. Los tutores acompañan a los alumnos de las modalidades Guiada y Completa: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
+      '<p class="wv-dato">Acá das de alta las cuentas del equipo: tutores, directores de nivel y tesorero. Los tutores acompañan a los alumnos de todas las modalidades: dan las tutorías y corrigen proyectos y escritura. Se asignan a cada alumno en Familias y alumnos.</p>' +
       '<form id="wv-tut-form" class="wv-tut-form"><input id="wv-tut-nom" placeholder="Nombre y apellido" required> <input id="wv-tut-mail" type="email" placeholder="Correo" required> ' +
       '<select id="wv-tut-rol"><option value="tutor">Tutor/a</option><option value="director_primaria">Director/a de Primaria e Inicial</option><option value="director_secundaria">Director/a de Secundaria</option><option value="tesorero">Tesorero/a</option></select>' + '<span id="wv-tut-areas" class="wv-dato" style="display:block;margin-top:8px"><b>Áreas del tutor:</b> ' + (window.WaveAreas ? WaveAreas.casillas('ar-nuevo', []) : '') + '</span> <button class="wv-btn" type="submit">Crear cuenta</button></form><div id="wv-tut-cred"></div><div id="wv-tut-lista"><div class="wv-vacio">Cargando…</div></div><div id="wv-areas"></div>';
     async function pintar() {

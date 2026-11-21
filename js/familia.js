@@ -1042,7 +1042,7 @@
     }
   }
 
-  // ---------- Tutorías y oficios (modalidades Guiada y Completa) ----------
+  // ---------- Tutorías mensuales (todas las modalidades) y oficios (Completa) ----------
   var MODS = { libre: 'Libre', guiada: 'Guiada', completa: 'Completa', personalizada: 'Personalizada' };
   function fechaTurno(v) {
     var d = new Date(v);
@@ -1056,6 +1056,7 @@
     pintarDireccion(document.getElementById('tuf-dir'), h.data);
     if (window.WaveTutInd) WaveTutInd.pintar(document.getElementById('tuf-ind'), (PAIS_FAM || 'Argentina') !== 'Argentina');
     if (!h.data.length) { cont.innerHTML = '<div class="vacio">Todavía no diste de alta a ningún hijo.</div>'; return; }
+    var TOPES = (await sb.rpc('tutorias_por_mes')).data || {};
     var partes = await Promise.all(h.data.map(async function (a) {
       var t = await sb.rpc('mi_tutor', { p_student: a.id });
       var info = (t.data && t.data[0]) || { modalidad: 'libre', nombre: null };
@@ -1064,14 +1065,12 @@
     cont.innerHTML = partes.map(function (p) {
       var a = p.a, nombre = a.first_name + ' ' + a.last_name;
       var html = '<section class="fa-card" data-alu="' + a.id + '"><h2>' + esc(nombre) + '</h2><span class="tu-sub">Modalidad ' + esc(MODS[p.mod] || p.mod) + '</span>';
-      if (p.mod === 'libre') return html + '<p class="fa-intro">La modalidad Libre no incluye tutorías ni oficios. Si querés sumarlos, pasá a Guiada o Completa desde Facturación.</p></section>';
-      html += '<p class="fa-intro">' + (p.tutor ? 'Su tutor es <b>' + esc(p.tutor) + '</b>. Tiene 2 tutorías por mes para consultar dudas.' : 'Todavía no tiene tutor asignado: te avisamos apenas lo tenga.') + '</p>' +
+      html += '<p class="fa-intro">' + (p.tutor ? 'Su tutor es <b>' + esc(p.tutor) + '</b>. Tiene ' + (TOPES[p.mod] || 2) + ' tutorías por mes para consultar dudas.' : 'Todavía no tiene tutor asignado: te avisamos apenas lo tenga.') + '</p>' +
         '<div class="tuf-mis"></div>' + (p.tutor ? '<div class="tuf-reservar"></div>' : '');
       if (p.mod === 'completa' || p.mod === 'personalizada') html += '<h3 class="fa-sub">Oficios</h3><div class="tuf-oficios"></div>';
       return html + '</section>';
     }).join('');
     partes.forEach(function (p) {
-      if (p.mod === 'libre') return;
       var card = cont.querySelector('[data-alu="' + p.a.id + '"]');
       pintarMisTutorias(card, p.a.id);
       if (p.tutor) pintarReserva(card, p.a.id);

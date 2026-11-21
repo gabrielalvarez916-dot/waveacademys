@@ -1,4 +1,4 @@
-// Panel del tutor: alumnos (Guiada y Completa), agenda de tutorías, horarios disponibles y corrección de proyectos y escritura.
+// Panel del tutor: alumnos, agenda de tutorías, horarios disponibles y corrección de proyectos y escritura.
 (function () {
   var sb = Wave.sb;
   var vista = document.getElementById('vista');
@@ -27,13 +27,14 @@
     vista.innerHTML = '<h1 class="vista-titulo">Mis alumnos</h1><div id="tu-cont"><div class="vacio">Cargando…</div></div>';
     var c = document.getElementById('tu-cont');
     var r = await sb.rpc('tutor_mis_alumnos');
+    var TOPES = (await sb.rpc('tutorias_por_mes')).data || {};
     if (r.error) return aviso(c, 'No pudimos cargar tus alumnos.');
-    if (!r.data.length) return aviso(c, 'Todavía no tenés alumnos asignados. Cuando el administrador te asigne alumnos de las modalidades Guiada o Completa, van a aparecer acá.');
+    if (!r.data.length) return aviso(c, 'Todavía no tenés alumnos asignados. Cuando el administrador te asigne alumnos, van a aparecer acá.');
     c.innerHTML = '<div class="tu-grilla">' + r.data.map(function (a) {
       return '<section class="fa-card tu-alu"><h2>' + esc(a.nombre) + '</h2><span class="tu-sub">' + esc(a.anio) + ' · ' + esc(MODS[a.modalidad] || a.modalidad) + '</span>' +
         '<div class="fa-datos">' +
           '<div class="fa-dato"><small>Correcciones pendientes</small><b>' + a.pendientes + '</b></div>' +
-          '<div class="fa-dato"><small>Tutorías este mes</small><b>' + a.tutorias_mes + ' de 2</b></div>' +
+          '<div class="fa-dato"><small>Tutorías este mes</small><b>' + a.tutorias_mes + ' de ' + (TOPES[a.modalidad] || 2) + '</b></div>' +
           '<div class="fa-dato"><small>Próxima tutoría</small><b>' + (a.proxima ? esc(fecha(a.proxima)) : '—') + '</b></div>' +
         '</div></section>';
     }).join('') + '</div>';
@@ -59,7 +60,7 @@
   // ---------- Mis horarios ----------
   async function vistaHorarios() {
     vista.innerHTML = '<h1 class="vista-titulo">Mis horarios</h1>' +
-      '<p class="fa-intro">Cargá los horarios de cada semana en que podés dar tutorías (hora de Argentina). Las familias eligen turno dentro de estos horarios. Cada alumno tiene 2 tutorías por mes.</p>' +
+      '<p class="fa-intro">Cargá los horarios de cada semana en que podés dar tutorías (hora de Argentina). Las familias eligen turno dentro de estos horarios. Cada alumno tiene 2 tutorías por mes en Libre y 4 en Guiada y Completa.</p>' +
       '<form id="tu-form" class="fa-card tu-form">' +
         '<select id="tu-dia" aria-label="Día">' + DIAS.slice(1).map(function (d, i) { return '<option value="' + (i + 1) + '">' + d + '</option>'; }).join('') + '</select>' +
         '<label>De <input id="tu-desde" type="time" value="15:00" required></label>' +

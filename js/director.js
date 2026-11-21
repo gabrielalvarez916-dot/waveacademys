@@ -71,7 +71,7 @@
   // ---------- Tutores: alta y listado ----------
   async function vistaEquipo() {
     vista.innerHTML = '<h1 class="vista-titulo">Tutores</h1>' +
-      '<p class="wv-dato">Dás de alta a los tutores, que acompañan a los alumnos de las modalidades Guiada y Completa. Se les crea el usuario con una clave inicial que deben cambiar al ingresar.</p>' +
+      '<p class="wv-dato">Dás de alta a los tutores, que acompañan a los alumnos de todas las modalidades. Se les crea el usuario con una clave inicial que deben cambiar al ingresar.</p>' +
       '<form id="dir-tut" class="wv-tut-form"><input id="dir-tut-nom" placeholder="Nombre y apellido" required> <input id="dir-tut-mail" type="email" placeholder="Correo" required> <span id="dir-tut-areas" class="wv-dato" style="display:block;margin-top:8px"><b>Áreas del tutor:</b> ' + (window.WaveAreas ? WaveAreas.casillas('ar-nuevo', []) : '') + '</span> <button class="wv-btn" type="submit">Crear tutor</button></form>' +
       '<div id="dir-cred"></div><div id="dir-tutores"><div class="wv-vacio">Cargando…</div></div><div id="dir-areas"></div>';
     async function pintar() {
