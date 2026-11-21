@@ -318,3 +318,15 @@ def tren_paso(desde, hasta, paso, faltan=()):
         for dx in (.22, .78): ax.add_patch(Circle((x + dx, .35), .12, color=OSC))
     ax.plot([0, 1.15 * n + 1.6], [.2, .2], color=OSC, lw=2)
     return png(fig)
+
+
+def cuadro(hasta, faltan=(), resaltar=()):
+    """Cuadro de números de a 10 por fila. faltan: casillas vacías (para completar). resaltar: casillas pintadas."""
+    filas = (hasta + 9) // 10; fig, ax = lienzo(7.4, .74 * filas + .2, 10.2, filas + .2, 0, 0)
+    for v in range(1, hasta + 1):
+        k = v - 1; x = .1 + (k % 10); y = filas - 1 - k // 10 + .1
+        falta, res = v in faltan, v in resaltar
+        ax.add_patch(FancyBboxPatch((x + .04, y + .04), .92, .84, boxstyle="round,pad=0.01,rounding_size=0.12",
+                                    color="white" if falta else (AMBAR if res else MENTA), ec=CORAL if falta else TEAL, lw=1.6 if falta else 1.0, ls="--" if falta else "-"))
+        if not falta: ax.text(x + .5, y + .46, str(v), ha="center", va="center", fontsize=13, color=OSC, **F)
+    return png(fig)

@@ -1,0 +1,139 @@
+{
+ "slug": "medio-mat1-m3-n3",
+ "step_id": "8bd884bd-736e-400d-8a24-d37a4e20da79",
+ "materia": "Matemática 1",
+ "titulo": "El anterior y el siguiente",
+ "sub": "Matemática 1 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "📒",
+   "final": "↔️",
+   "titulo": "EL ANTERIOR",
+   "sub": "y el siguiente",
+   "voz": [
+    "Tomi pega la figurita 27.",
+    "¿Qué figurita va antes? ¿Y cuál va después?",
+    "Hoy: *el anterior y el siguiente*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Anterior y siguiente",
+   "texto": "El que va antes y el que va después",
+   "emoji": "↔️",
+   "voz": [
+    "El *anterior* es el número que va antes.",
+    "El *siguiente* es el número que va después."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 20,
+   "max": 30,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 26,
+     "txt": "anterior: 26"
+    },
+    {
+     "v": 27,
+     "txt": "27"
+    },
+    {
+     "v": 28,
+     "txt": "siguiente: 28"
+    }
+   ],
+   "voz": [
+    "Mirá la recta del 20 al 30.",
+    "El *26* va antes del 27: es el anterior.",
+    "Esta es la figurita *27*.",
+    "El *28* va después: es el siguiente."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 40,
+   "titulo": "LA FIGURITA 38",
+   "voz": [
+    "Busquemos la figurita 38 en el álbum.",
+    "37, 38, 39.",
+    "El 37 va antes y el 39, después."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es el anterior del 40?",
+   "opciones": [
+    "41",
+    "39",
+    "30"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cuál es el *anterior* del 40?",
+    "Pensá: ¿qué número va antes?",
+    "¡El *39*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es el siguiente del 19?",
+   "opciones": [
+    "20",
+    "18",
+    "10"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más. ¿Cuál es el *siguiente* del 19?",
+    "Pensá: ¿qué número va después?",
+    "¡El *20*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El siguiente del 29 es 210",
+     "bien": "El siguiente del 29 es 30"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El siguiente del 29 es el *30*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ANTERIOR",
+     "va antes"
+    ],
+    [
+     "SIGUIENTE",
+     "va después"
+    ],
+    [
+     "ÁLBUM",
+     "del 1 al 50"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *anterior* va antes.",
+    "El *siguiente* va después.",
+    "Los buscamos en el álbum o en la recta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

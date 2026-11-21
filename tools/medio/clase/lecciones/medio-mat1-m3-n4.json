@@ -1,0 +1,128 @@
+{
+ "slug": "medio-mat1-m3-n4",
+ "step_id": "c70b6e5a-08a2-4048-bd93-02969b52dc6a",
+ "materia": "Matemática 1",
+ "titulo": "Qué número falta",
+ "sub": "Matemática 1 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "¡A Tomi le faltan figuritas!",
+    "Hay huecos en el álbum.",
+    "¿Qué números faltan?"
+   ],
+   "titulo": "¿QUÉ NÚMERO",
+   "sub": "falta?",
+   "voz": [
+    "¡A Tomi le *faltan figuritas*!",
+    "Hay lugares vacíos en su álbum.",
+    "¿Qué números faltan? ¡Vamos a buscarlos!",
+    "Hoy: *qué número falta*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 30,
+   "faltan": [
+    8,
+    17,
+    25
+   ],
+   "titulo": "LOS HUECOS DEL ÁLBUM",
+   "voz": [
+    "Mirá el álbum de Tomi.",
+    "Buscá los lugares vacíos.",
+    "¡Faltan el *8*, el *17* y el *25*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 42,
+   "hasta": 49,
+   "faltan": [
+    44,
+    47
+   ],
+   "titulo": "¿QUÉ VAGONES FALTAN?",
+   "voz": [
+    "En el tren también faltan figuritas.",
+    "42, 43… ¿y? 45, 46… ¿y? 48, 49.",
+    "¡Faltan el *44* y el *47*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ DESDE ANTES",
+   "texto": "Decí el anterior y seguí contando",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: decí el número de antes y *seguí contando*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número falta? 23, 24, ___, 26",
+   "opciones": [
+    "25",
+    "27",
+    "22"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 23, 24… ¿y? 26.",
+    "¿Qué número falta?",
+    "¡El *25*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número falta? 38, ___, 40",
+   "opciones": [
+    "39",
+    "41",
+    "30"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más. 38… ¿y? 40.",
+    "¿Qué número falta?",
+    "¡El *39*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BUSCAR",
+     "el lugar vacío"
+    ],
+    [
+     "CONTAR",
+     "desde el anterior"
+    ],
+    [
+     "COMPLETAR",
+     "el que falta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Buscamos el *lugar vacío*.",
+    "Contamos *desde el anterior*.",
+    "Y completamos el número que *falta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -405,4 +405,18 @@
     [1, 2, 3].forEach(function (f) { B(f); if (f > 1) { tl.set(obj[f - 2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[f - 2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); } else tl.to({}, { duration: .01 }); });
     B(4); tl.set(obj[2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (fin) w.IN(tl, fin, '>', { scale: .6, y: 0 });
   } };
+  // cuadro: {hasta (10-100), faltan:[números], titulo} — cuadro de números de a 10 por fila. 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
+  T.cuadro = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var n = d.hasta, filas = Math.ceil(n / 10), cw = 142, ch = Math.min(108, 560 / filas), x0 = 960 - 4.5 * cw, y0 = 560 - (filas - 1) * ch / 2 + (d.titulo ? 25 : 0), falta = d.faltan || [];
+    var ti = d.titulo ? w.titulo(g, d.titulo, 262) : null, C2 = [];
+    for (var v = 1; v <= n; v++) { var k = v - 1, p = w.pieza(g, x0 + (k % 10) * cw, y0 + Math.floor(k / 10) * ch), es = falta.indexOf(v) >= 0;
+      p.r = w.caja(p, 0, 0, cw - 12, ch - 12, es ? 'rgba(255,255,255,.05)' : 'url(#gCard)', es ? C.coral : C.linea, 16, 4); if (es) p.r.setAttribute('stroke-dasharray', '12 8');
+      p.q = es ? w.txt(p, 0, 3, '?', ch * .42, C.coral) : null; p.t = w.txt(p, 0, 3, String(v), ch * .42, C.txt, es ? { opacity: 0 } : null); p.falta = es; C2.push(p); }
+    var dicho = {}; g.alDecir = function (pal, f) { var v = parseInt(String(pal).replace(/[^0-9]/g, ''), 10); if (f !== 1 || !(v >= 1 && v <= n) || dicho[v]) return; var p = C2[v - 1]; if (p.falta) return; dicho[v] = 1;
+      gsap.to(p.r, { attr: { stroke: C.sol, 'stroke-width': 9, fill: 'rgba(244,182,63,.25)' }, duration: .2 }); gsap.fromTo(p, { scale: 1 }, { scale: 1.18, duration: .18, yoyo: true, repeat: 1 }); };
+    B(0); if (ti) w.IN(tl, ti, 0); C2.forEach(function (p, k) { w.IN(tl, p, k ? '<.012' : (ti ? '<.2' : 0), { scale: .4, y: 0, d: .35 }); });
+    B(1); tl.to({}, { duration: .01 });
+    B(2); C2.forEach(function (p) { if (!p.falta) return; tl.to(p.q, { opacity: 0, duration: .2 }, '>+0.05'); tl.to(p.t, { opacity: 1, duration: .3 }, '<'); tl.to(p.r, { attr: { stroke: C.verde, 'stroke-width': 9 }, duration: .3 }, '<'); w.pop(tl, p, '<'); });
+    if (!falta.length) tl.to({}, { duration: .01 }, '>+0.05');
+  } };
 })();

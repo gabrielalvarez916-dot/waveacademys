@@ -1,0 +1,117 @@
+{
+ "slug": "medio-mat1-m3-n1",
+ "step_id": "c152a1aa-f6fb-4106-bbdb-e465ae5743f1",
+ "materia": "Matemática 1",
+ "titulo": "Contar hasta 30",
+ "sub": "Matemática 1 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "Tomi junta figuritas.",
+    "Cada una tiene un número.",
+    "¡Su álbum llega al 30!"
+   ],
+   "titulo": "CONTAR",
+   "sub": "hasta 30",
+   "voz": [
+    "Tomi junta *figuritas* en su álbum.",
+    "Cada figurita tiene su número.",
+    "¡Su álbum llega hasta el 30!",
+    "Hoy: *contar hasta 30*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 30,
+   "titulo": "EL ÁLBUM DE TOMI",
+   "voz": [
+    "Este es el álbum: del 1 al 30.",
+    "21, 22, 23, 24, 25, 26, 27, 28, 29, 30.",
+    "¡Los del veinte empiezan con *2*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE A 10",
+   "texto": "Cada fila tiene 10 números",
+   "emoji": "📏",
+   "voz": [
+    "Truco: cada fila del álbum tiene *10* figuritas."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 21,
+   "hasta": 30,
+   "titulo": "EL TREN DE FIGURITAS",
+   "voz": [
+    "Las figuritas viajan en tren. ¡Contemos!",
+    "21, 22, 23, 24, 25, 26, 27, 28, 29, 30.",
+    "¡Llegamos al *30*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene después del 29?",
+   "opciones": [
+    "30",
+    "20",
+    "28"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¿Qué número viene después del 29?",
+    "Pensá en el álbum de Tomi.",
+    "¡El *30*! Treinta."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Después del 29 decir 20",
+     "bien": "Después del 29 viene el 30"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Después del 29 viene el *30*, no el 20."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HASTA 30",
+     "en orden"
+    ],
+    [
+     "DE A 10",
+     "una fila"
+    ],
+    [
+     "LOS VEINTE",
+     "empiezan con 2"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *hasta el 30*, en orden.",
+    "Cada fila tiene *10* números.",
+    "Los del veinte empiezan con *2*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

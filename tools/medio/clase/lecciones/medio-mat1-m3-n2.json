@@ -1,0 +1,107 @@
+{
+ "slug": "medio-mat1-m3-n2",
+ "step_id": "5b055fbf-1d1b-4fae-895d-766f32766886",
+ "materia": "Matemática 1",
+ "titulo": "Contar hasta 50",
+ "sub": "Matemática 1 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué número viene después del 39?",
+   "segundos": 5,
+   "respuesta": "¡El 40!",
+   "emoji": "📒",
+   "titulo": "CONTAR",
+   "sub": "hasta 50",
+   "voz": [
+    "Desafío: ¿qué número viene después del 39?",
+    "¡El *40*! Cuarenta.",
+    "Hoy: *contar hasta 50*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 50,
+   "titulo": "EL ÁLBUM CRECIÓ",
+   "voz": [
+    "¡El álbum de Tomi ahora llega al 50!",
+    "31, 32, 33, 34, 35, 36, 37, 38, 39, 40.",
+    "¡Los del treinta empiezan con *3*!"
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 50,
+   "titulo": "UN SECRETO DEL ÁLBUM",
+   "voz": [
+    "Mirá la columna del 5.",
+    "5, 15, 25, 35, 45.",
+    "¡Todos terminan en *5*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LAS FILAS",
+   "texto": "En una fila, todos empiezan igual",
+   "emoji": "👀",
+   "voz": [
+    "Truco: en cada fila, todos *empiezan igual*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 41,
+   "hasta": 50,
+   "titulo": "EL ÚLTIMO TRAMO",
+   "voz": [
+    "El último tramo del álbum. ¡Contemos!",
+    "41, 42, 43, 44, 45, 46, 47, 48, 49, 50.",
+    "¡Llegamos al *50*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene después del 45?",
+   "opciones": [
+    "46",
+    "44",
+    "55"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¿Qué número viene después del 45?",
+    "Pensá: 43, 44, 45…",
+    "¡El *46*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HASTA 50",
+     "en orden"
+    ],
+    [
+     "FILAS",
+     "empiezan igual"
+    ],
+    [
+     "COLUMNAS",
+     "terminan igual"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *hasta el 50*.",
+    "En una fila, todos *empiezan igual*.",
+    "En una columna, todos *terminan igual*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
