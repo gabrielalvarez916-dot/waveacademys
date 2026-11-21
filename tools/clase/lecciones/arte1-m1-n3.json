@@ -1,1 +1,190 @@
-{"slug": "arte1-m1-n3", "step_id": "8259e398-5296-47e7-b44d-f789ddcf2d17", "materia": "Arte y Comunicación I", "titulo": "Forma, figura y fondo", "sub": "Arte y Comunicación I · Misión 1 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Cómo se llama la zona que rodea a la figura?", "segundos": 6, "respuesta": "Fondo", "emoji": "🖼️", "titulo": "FORMA, FIGURA", "sub": "y fondo", "voz": ["Desafío: ¿cómo se llama la zona que rodea a la figura? Seis segundos.", "Fondo.", "Hoy: *forma, figura y fondo*."]}, {"t": "venn", "a": "FORMA", "b": "FIGURA", "itemsA": ["Contorno de algo", "No hace falta que represente algo"], "itemsB": ["Se reconoce", "Una casa o un árbol"], "ambos": ["Tienen un borde"], "voz": ["Forma y figura.", "La *forma* es el contorno de algo.", "La *figura* es una forma reconocible.", "Y las dos tienen un *borde*."]}, {"t": "comparar", "a": {"cab": "FIGURA", "texto": "Lo que se destaca", "emoji": "⬛"}, "b": {"cab": "FONDO", "texto": "Lo que la rodea", "emoji": "🟨"}, "signo": "+", "voz": ["Siempre van juntos.", "La *figura* es lo que se destaca.", "El *fondo* es lo que la rodea."]}, {"t": "clasificar", "cajas": [{"cab": "GEOMÉTRICA", "emoji": "🔺"}, {"cab": "ORGÁNICA", "emoji": "🍃"}], "fichas": [{"txt": "Círculo", "caja": 0}, {"txt": "Hoja", "caja": 1}, {"txt": "Cuadrado", "caja": 0}, {"txt": "Nube", "caja": 1}], "voz": ["¿Geométrica u orgánica?", "*Círculo* y *cuadrado*: geométricas.", "*Hoja* y *nube*: orgánicas."]}, {"t": "pregunta", "pregunta": "El espacio vacío que rodea a la figura es el espacio…", "opciones": ["Negativo", "Positivo", "Lleno"], "correcta": 0, "voz": ["Te toca: el espacio vacío que rodea a la figura.", "¿Negativo, positivo o lleno?", "El espacio *negativo*."]}, {"t": "errores", "items": [{"mal": "El fondo no importa", "bien": "Hace destacar la figura"}, {"mal": "Forma y figura son iguales", "bien": "La figura se reconoce"}], "voz": ["Errores típicos.", "Creer que el *fondo no importa*.", "Y confundir *forma* con *figura*."]}, {"t": "resumen", "voz": ["Repasemos.", "La *forma* es el contorno.", "La *figura* es reconocible.", "El *fondo* la hace destacar.", "Y el espacio *negativo* también cuenta.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["FORMA", "contorno"], ["FIGURA", "reconocible"], ["FONDO", "la hace destacar"], ["NEGATIVO", "espacio vacío"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "arte1-m1-n3",
+ "step_id": "8259e398-5296-47e7-b44d-f789ddcf2d17",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Forma, figura y fondo",
+ "sub": "Arte y Comunicación I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la zona que rodea a la figura?",
+   "segundos": 6,
+   "respuesta": "Fondo",
+   "emoji": "🖼️",
+   "titulo": "FORMA, FIGURA",
+   "sub": "y fondo",
+   "voz": [
+    "Desafío: ¿cómo se llama la zona que rodea a la figura? Seis segundos.",
+    "Fondo.",
+    "Hoy: *forma, figura y fondo*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "FORMA",
+   "b": "FIGURA",
+   "itemsA": [
+    "Contorno de algo",
+    "No hace falta que represente algo"
+   ],
+   "itemsB": [
+    "Se reconoce",
+    "Una casa o un árbol"
+   ],
+   "ambos": [
+    "Tienen un borde"
+   ],
+   "voz": [
+    "Forma y figura.",
+    "La *forma* es el contorno de algo.",
+    "La *figura* es una forma reconocible.",
+    "Y las dos tienen un *borde*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FIGURA",
+    "texto": "Lo que se destaca",
+    "emoji": "⬛"
+   },
+   "b": {
+    "cab": "FONDO",
+    "texto": "Lo que la rodea",
+    "emoji": "🟨"
+   },
+   "signo": "+",
+   "voz": [
+    "Siempre van juntos.",
+    "La *figura* es lo que se destaca.",
+    "El *fondo* es lo que la rodea."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "GEOMÉTRICA",
+     "emoji": "🔺"
+    },
+    {
+     "cab": "ORGÁNICA",
+     "emoji": "🍃"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Círculo",
+     "caja": 0
+    },
+    {
+     "txt": "Hoja",
+     "caja": 1
+    },
+    {
+     "txt": "Cuadrado",
+     "caja": 0
+    },
+    {
+     "txt": "Nube",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Geométrica u orgánica?",
+    "*Círculo* y *cuadrado*: geométricas.",
+    "*Hoja* y *nube*: orgánicas."
+   ]
+  },
+  {
+   "t": "imagen",
+   "src": "data:image/png;base64,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",
+   "ancho": 311,
+   "alto": 370,
+   "titulo": "¿UN VASO O DOS ROSTROS?",
+   "marcas": [
+    {
+     "x": 0.5,
+     "y": 0.55,
+     "txt": "Figura: el vaso"
+    },
+    {
+     "x": 0.14,
+     "y": 0.5,
+     "txt": "Fondo: los rostros"
+    }
+   ],
+   "voz": [
+    "Mirá este famoso dibujo.",
+    "Si ves el *vaso*, la figura es el vaso.",
+    "Si ves los *rostros*, el vaso pasa a ser el fondo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El espacio vacío que rodea a la figura es el espacio…",
+   "opciones": [
+    "Negativo",
+    "Positivo",
+    "Lleno"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el espacio vacío que rodea a la figura.",
+    "¿Negativo, positivo o lleno?",
+    "El espacio *negativo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El fondo no importa",
+     "bien": "Hace destacar la figura"
+    },
+    {
+     "mal": "Forma y figura son iguales",
+     "bien": "La figura se reconoce"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que el *fondo no importa*.",
+    "Y confundir *forma* con *figura*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *forma* es el contorno.",
+    "La *figura* es reconocible.",
+    "El *fondo* la hace destacar.",
+    "Y el espacio *negativo* también cuenta.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FORMA",
+     "contorno"
+    ],
+    [
+     "FIGURA",
+     "reconocible"
+    ],
+    [
+     "FONDO",
+     "la hace destacar"
+    ],
+    [
+     "NEGATIVO",
+     "espacio vacío"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

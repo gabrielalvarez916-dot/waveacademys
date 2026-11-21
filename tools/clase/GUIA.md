@@ -88,6 +88,7 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | celula | 1 + partes | titulo, tipo:'animal'\|'vegetal', partes:[{p:'membrana'\|'citoplasma'\|'nucleo'\|'mitocondria'\|'pared'\|'cloroplasto'\|'vacuola', txt}] — célula dibujada con sus partes marcadas (Naturales) |
 | globo | 1 + marcas | titulo, marcas:[{tipo:'ecuador'\|'greenwich'\|'paralelo'\|'meridiano'\|'punto', lat, lon, txt}] — la Tierra con paralelos y meridianos (Sociales/Geografía) |
 | orbita | 1 + posiciones | titulo, posiciones:[{ang, txt}] — el Sol y la Tierra en su órbita (estaciones) |
+| imagen | 1 + marcas | src (data:image/png;base64,…), ancho, alto, titulo, marcas:[{x, y (0 a 1 sobre la imagen), txt}] — muestra una imagen (la misma del PDF) y señala cada parte con un aro mientras se nombra. Regla: si el PDF tiene una imagen que la clase nombra (círculo cromático, esfera con sombras, mapa, esquema), la clase TIENE que mostrarla con esta plantilla |
 | partes | 1 + partes | emoji, titulo, partes:[{txt, x, y}] (x, y entre −1 y 1) |
 | molecula | 3 | titulo, atomos:[{el, x, y}], enlaces:[[i, j, orden]], nombre |
 | fuerzas | 1 + fuerzas | cuerpo, inclinado, fuerzas:[{txt, ang, largo, color}] |

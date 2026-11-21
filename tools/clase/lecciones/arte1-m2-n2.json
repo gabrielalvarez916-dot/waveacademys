@@ -1,1 +1,222 @@
-{"slug": "arte1-m2-n2", "step_id": "e3538802-9418-4394-87e2-68dc214a8a62", "materia": "Arte y Comunicación I", "titulo": "Luz y sombra: claroscuro y volumen", "sub": "Arte y Comunicación I · Misión 2 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "DIBUJO", "titular": "Un círculo plano", "bajada": "Se vuelve una esfera", "emoji": "⚪", "titulo": "LUZ Y SOMBRA", "sub": "claroscuro y volumen", "voz": ["Noticia: un círculo plano se vuelve una esfera.", "Con luz y sombra.", "Hoy: *luz y sombra, claroscuro y volumen*."]}, {"t": "causas", "causa": {"txt": "Fuente de luz", "emoji": "💡"}, "items": [{"txt": "Zonas claras", "emoji": "⚪"}, {"txt": "Sombras", "emoji": "⬛"}], "voz": ["Todo empieza en la *fuente de luz*.", "De ella salen las *zonas claras*.", "Y también las *sombras*."]}, {"t": "matriz", "titulo": "ZONAS", "celdas": [{"cab": "LUZ", "txt": "La más clara"}, {"cab": "SOMBRA PROPIA", "txt": "En el objeto"}, {"cab": "SOMBRA PROYECTADA", "txt": "Sobre el piso"}, {"cab": "LUZ REFLEJADA", "txt": "Brillo en la sombra"}], "voz": ["Las zonas de un objeto iluminado.", "La *luz*: la más clara.", "La *sombra propia*: en el objeto.", "La *proyectada*: sobre el piso.", "Y la *luz reflejada*."]}, {"t": "definicion", "palabra": "Claroscuro", "texto": "Contraste de claro y oscuro", "emoji": "🌗", "voz": ["El *claroscuro* es el contraste entre claro y oscuro.", "Da sensación de volumen."]}, {"t": "clasificar", "cajas": [{"cab": "EN EL OBJETO", "emoji": "⚪"}, {"cab": "SOBRE EL PISO", "emoji": "⬛"}], "fichas": [{"txt": "Sombra propia", "caja": 0}, {"txt": "Sombra proyectada", "caja": 1}, {"txt": "Luz reflejada", "caja": 0}, {"txt": "Mancha al lado", "caja": 1}], "voz": ["¿En el objeto o sobre el piso?", "*Sombra propia* y *luz reflejada*: en el objeto.", "*Sombra proyectada*: sobre el piso."]}, {"t": "pregunta", "pregunta": "La sombra proyectada cae…", "opciones": ["Opuesta a la luz", "Hacia la luz", "Siempre arriba"], "correcta": 0, "voz": ["Te toca: la sombra proyectada.", "¿Opuesta a la luz, hacia la luz o arriba?", "*Opuesta a la luz*."]}, {"t": "errores", "items": [{"mal": "Cambiar la luz a mitad del dibujo", "bien": "Mantener una sola luz"}, {"mal": "Sombra del lado de la luz", "bien": "Del lado opuesto"}], "voz": ["Errores típicos.", "*Cambiar la luz* a mitad del dibujo.", "Y poner la sombra *del lado de la luz*."]}, {"t": "resumen", "voz": ["Repasemos.", "Primero se elige la *luz*.", "Hay sombra *propia* y *proyectada*.", "El *claroscuro* da volumen.", "Y se oscurece *en capas*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["LUZ", "una sola fuente"], ["SOMBRAS", "propia y proyectada"], ["CLAROSCURO", "da volumen"], ["VALORES", "en capas"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "arte1-m2-n2",
+ "step_id": "e3538802-9418-4394-87e2-68dc214a8a62",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Luz y sombra: claroscuro y volumen",
+ "sub": "Arte y Comunicación I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DIBUJO",
+   "titular": "Un círculo plano",
+   "bajada": "Se vuelve una esfera",
+   "emoji": "⚪",
+   "titulo": "LUZ Y SOMBRA",
+   "sub": "claroscuro y volumen",
+   "voz": [
+    "Noticia: un círculo plano se vuelve una esfera.",
+    "Con luz y sombra.",
+    "Hoy: *luz y sombra, claroscuro y volumen*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Fuente de luz",
+    "emoji": "💡"
+   },
+   "items": [
+    {
+     "txt": "Zonas claras",
+     "emoji": "⚪"
+    },
+    {
+     "txt": "Sombras",
+     "emoji": "⬛"
+    }
+   ],
+   "voz": [
+    "Todo empieza en la *fuente de luz*.",
+    "De ella salen las *zonas claras*.",
+    "Y también las *sombras*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "ZONAS",
+   "celdas": [
+    {
+     "cab": "LUZ",
+     "txt": "La más clara"
+    },
+    {
+     "cab": "SOMBRA PROPIA",
+     "txt": "En el objeto"
+    },
+    {
+     "cab": "SOMBRA PROYECTADA",
+     "txt": "Sobre el piso"
+    },
+    {
+     "cab": "LUZ REFLEJADA",
+     "txt": "Brillo en la sombra"
+    }
+   ],
+   "voz": [
+    "Las zonas de un objeto iluminado.",
+    "La *luz*: la más clara.",
+    "La *sombra propia*: en el objeto.",
+    "La *proyectada*: sobre el piso.",
+    "Y la *luz reflejada*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Claroscuro",
+   "texto": "Contraste de claro y oscuro",
+   "emoji": "🌗",
+   "voz": [
+    "El *claroscuro* es el contraste entre claro y oscuro.",
+    "Da sensación de volumen."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "EN EL OBJETO",
+     "emoji": "⚪"
+    },
+    {
+     "cab": "SOBRE EL PISO",
+     "emoji": "⬛"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sombra propia",
+     "caja": 0
+    },
+    {
+     "txt": "Sombra proyectada",
+     "caja": 1
+    },
+    {
+     "txt": "Luz reflejada",
+     "caja": 0
+    },
+    {
+     "txt": "Mancha al lado",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿En el objeto o sobre el piso?",
+    "*Sombra propia* y *luz reflejada*: en el objeto.",
+    "*Sombra proyectada*: sobre el piso."
+   ]
+  },
+  {
+   "t": "imagen",
+   "src": "data:image/png;base64,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",
+   "ancho": 530,
+   "alto": 377,
+   "titulo": "LUZ Y SOMBRA EN UNA ESFERA",
+   "marcas": [
+    {
+     "x": 0.37,
+     "y": 0.23,
+     "txt": "Luz"
+    },
+    {
+     "x": 0.59,
+     "y": 0.43,
+     "txt": "Sombra propia"
+    },
+    {
+     "x": 0.68,
+     "y": 0.68,
+     "txt": "Sombra proyectada"
+    },
+    {
+     "x": 0.54,
+     "y": 0.57,
+     "txt": "Luz reflejada"
+    }
+   ],
+   "voz": [
+    "Mirá una esfera iluminada.",
+    "La *luz* llega desde arriba.",
+    "La *sombra propia* está del lado opuesto.",
+    "La *sombra proyectada* cae sobre el piso.",
+    "Y la *luz reflejada* aclara el borde de la sombra."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La sombra proyectada cae…",
+   "opciones": [
+    "Opuesta a la luz",
+    "Hacia la luz",
+    "Siempre arriba"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la sombra proyectada.",
+    "¿Opuesta a la luz, hacia la luz o arriba?",
+    "*Opuesta a la luz*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cambiar la luz a mitad del dibujo",
+     "bien": "Mantener una sola luz"
+    },
+    {
+     "mal": "Sombra del lado de la luz",
+     "bien": "Del lado opuesto"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Cambiar la luz* a mitad del dibujo.",
+    "Y poner la sombra *del lado de la luz*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Primero se elige la *luz*.",
+    "Hay sombra *propia* y *proyectada*.",
+    "El *claroscuro* da volumen.",
+    "Y se oscurece *en capas*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "LUZ",
+     "una sola fuente"
+    ],
+    [
+     "SOMBRAS",
+     "propia y proyectada"
+    ],
+    [
+     "CLAROSCURO",
+     "da volumen"
+    ],
+    [
+     "VALORES",
+     "en capas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
