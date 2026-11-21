@@ -1,0 +1,205 @@
+{
+ "slug": "soc1-m10-n2",
+ "step_id": "1eea37cc-64cd-4ce9-b65e-e1c7088ce11b",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Aldeas, excedente y división del trabajo",
+ "sub": "Ciencias Sociales Integradas I · Misión 10 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ARQUEOLOGÍA",
+   "titular": "Hallan graneros de hace 10.000 años",
+   "bajada": "Guardaban granos para los tiempos malos",
+   "emoji": "🏺",
+   "titulo": "ALDEAS Y EXCEDENTE",
+   "sub": "y división del trabajo",
+   "voz": [
+    "Arqueología: hallan graneros de hace diez mil años.",
+    "Guardaban granos para los tiempos malos.",
+    "Hoy: *aldeas*, *excedente* y *división del trabajo*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Excedente",
+   "texto": "El alimento que sobra",
+   "emoji": "🌾",
+   "voz": [
+    "El *excedente* es el alimento que sobra.",
+    "Se guardaba o se intercambiaba."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Qué permitió el excedente",
+    "emoji": "🌾"
+   },
+   "items": [
+    {
+     "txt": "Guardar en graneros",
+     "emoji": "🏺"
+    },
+    {
+     "txt": "Intercambiar",
+     "emoji": "🤝"
+    },
+    {
+     "txt": "Nuevos oficios",
+     "emoji": "🧵"
+    }
+   ],
+   "voz": [
+    "¿Qué permitió el excedente?",
+    "*Guardar* en graneros para tiempos malos.",
+    "*Intercambiar* con otros grupos.",
+    "Y que aparecieran *nuevos oficios*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "NUEVOS OFICIOS",
+   "columnas": [
+    "Oficio",
+    "Tarea"
+   ],
+   "filas": [
+    [
+     "Alfarero",
+     "Vasijas"
+    ],
+    [
+     "Tejedor",
+     "Telas"
+    ],
+    [
+     "Constructor",
+     "Casas y graneros"
+    ]
+   ],
+   "voz": [
+    "Algunos oficios.",
+    "El *alfarero* fabricaba vasijas.",
+    "El *tejedor*, telas.",
+    "Y el *constructor*, casas y graneros."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IGUALDAD",
+    "texto": "Antes, pocas diferencias",
+    "emoji": "⚖️"
+   },
+   "b": {
+    "cab": "DESIGUALDAD",
+    "texto": "Después, algunos acumulan",
+    "emoji": "📈"
+   },
+   "signo": "→",
+   "voz": [
+    "Un cambio social importante.",
+    "Antes, casi *sin diferencias*.",
+    "Después, algunas familias *acumularon más* y hubo desigualdad."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OFICIO NUEVO",
+     "emoji": "🧵"
+    },
+    {
+     "cab": "YA EXISTÍA",
+     "emoji": "🏹"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Alfarero",
+     "caja": 0
+    },
+    {
+     "txt": "Cazador",
+     "caja": 1
+    },
+    {
+     "txt": "Tejedor",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Oficio nuevo o ya existía?",
+    "*Alfarero* y *tejedor*: nuevos.",
+    "*Cazador*: ya existía."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué permitió que algunas personas se dedicaran a otros oficios?",
+   "opciones": [
+    "El excedente",
+    "El fuego",
+    "El nomadismo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué permitió que se dedicaran a otros oficios?",
+    "¿El excedente, el fuego o el nomadismo?",
+    "El *excedente*: ya no todos producían alimento."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todos eran iguales",
+     "bien": "Aparecieron desigualdades"
+    },
+    {
+     "mal": "Los oficios existieron siempre",
+     "bien": "Surgieron con el excedente"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todos eran iguales*.",
+    "Y pensar que los oficios *existieron siempre*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *excedente* es el alimento que sobra.",
+    "Permitió *guardar* e *intercambiar*.",
+    "Aparecieron *nuevos oficios*.",
+    "Y también *desigualdades*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "EXCEDENTE",
+     "lo que sobra"
+    ],
+    [
+     "GRANEROS",
+     "guardar"
+    ],
+    [
+     "OFICIOS",
+     "alfarero, tejedor"
+    ],
+    [
+     "DESIGUALDAD",
+     "acumular"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

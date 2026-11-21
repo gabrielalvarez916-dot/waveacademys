@@ -1,0 +1,196 @@
+{
+ "slug": "soc1-m9-n3",
+ "step_id": "6cc141b8-e6de-4276-93c4-1bf68c3b3fc8",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Arte, rituales y creencias en la prehistoria",
+ "sub": "Ciencias Sociales Integradas I · Misión 9 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "HALLAZGO",
+   "titular": "Manos pintadas hace miles de años",
+   "bajada": "Una cueva guarda mensajes de la prehistoria",
+   "emoji": "🖐️",
+   "titulo": "ARTE Y CREENCIAS",
+   "sub": "en la prehistoria",
+   "voz": [
+    "Hallazgo: manos pintadas hace miles de años.",
+    "Una cueva guarda mensajes de la prehistoria.",
+    "Hoy: *arte, rituales y creencias*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Arte rupestre",
+   "texto": "Pinturas y grabados en cuevas y rocas",
+   "emoji": "🎨",
+   "voz": [
+    "El *arte rupestre* son pinturas y grabados en cuevas y rocas.",
+    "Se hacían con pigmentos naturales, como ocre y carbón."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CUEVAS FAMOSAS",
+   "columnas": [
+    "Cueva",
+    "País"
+   ],
+   "filas": [
+    [
+     "Altamira",
+     "España"
+    ],
+    [
+     "Lascaux",
+     "Francia"
+    ],
+    [
+     "Cueva de las Manos",
+     "Argentina"
+    ]
+   ],
+   "voz": [
+    "Tres cuevas famosas.",
+    "*Altamira*, en España.",
+    "*Lascaux*, en Francia.",
+    "Y la *Cueva de las Manos*, en Santa Cruz, Argentina."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Entierros",
+   "texto": "Muertos enterrados con ofrendas",
+   "emoji": "⚱️",
+   "voz": [
+    "Algunos grupos enterraban a sus muertos con ofrendas.",
+    "Eso muestra *creencias* sobre la muerte."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Qué significaban las pinturas",
+    "emoji": "❓"
+   },
+   "items": [
+    {
+     "txt": "Magia de la caza",
+     "emoji": "🏹"
+    },
+    {
+     "txt": "Ritual",
+     "emoji": "🕯️"
+    },
+    {
+     "txt": "Registro",
+     "emoji": "📜"
+    }
+   ],
+   "voz": [
+    "¿Qué significaban?",
+    "*Magia de la caza*: pintar animales traería suerte.",
+    "*Ritual*: la cueva sería un lugar sagrado.",
+    "*Registro*: contar lo que vivía el grupo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SE SABE",
+     "emoji": "✅"
+    },
+    {
+     "cab": "HIPÓTESIS",
+     "emoji": "❓"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Se pintaba con ocre",
+     "caja": 0
+    },
+    {
+     "txt": "Pintar para cazar",
+     "caja": 1
+    },
+    {
+     "txt": "Había entierros",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Se sabe o es hipótesis?",
+    "Que se pintaba con *ocre* y que había *entierros*, se sabe.",
+    "Que se pintaba *para cazar*, es hipótesis."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El sentido de las pinturas rupestres, ¿se conoce con certeza?",
+   "opciones": [
+    "No: hay hipótesis",
+    "Sí: está escrito",
+    "Sí: lo dicen las vasijas"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿se conoce con certeza el sentido de las pinturas?",
+    "¿No y hay hipótesis, sí porque está escrito, o sí por las vasijas?",
+    "*No*: sin escritura, son hipótesis."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sabemos qué significaban",
+     "bien": "Son hipótesis"
+    },
+    {
+     "mal": "No tenían creencias",
+     "bien": "Hay entierros y arte"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *sabemos* qué significaban.",
+    "Y pensar que *no tenían creencias*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *arte rupestre* pinta cuevas y rocas.",
+    "Los *entierros* muestran creencias.",
+    "El sentido es una *hipótesis*.",
+    "Y era *pensamiento simbólico*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RUPESTRE",
+     "cuevas y rocas"
+    ],
+    [
+     "ENTIERROS",
+     "ofrendas"
+    ],
+    [
+     "SENTIDO",
+     "hipótesis"
+    ],
+    [
+     "SIMBÓLICO",
+     "imágenes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

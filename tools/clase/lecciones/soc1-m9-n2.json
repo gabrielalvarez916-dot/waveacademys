@@ -1,0 +1,210 @@
+{
+ "slug": "soc1-m9-n2",
+ "step_id": "59a74de9-a303-4770-801f-4e7340e68369",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Cazadores y recolectores: trabajo y autoridad",
+ "sub": "Ciencias Sociales Integradas I · Misión 9 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Kai",
+    "emoji": "🧒"
+   },
+   "lugar": "🏕️",
+   "lineas": [
+    "Kai vive en una banda de treinta personas.",
+    "Hoy toca mudarse: se acabó la comida cerca."
+   ],
+   "titulo": "CAZADORES Y RECOLECTORES",
+   "sub": "trabajo y autoridad",
+   "voz": [
+    "Kai vive en una banda de treinta personas.",
+    "Hoy toca mudarse: se acabó la comida cerca.",
+    "Hoy: *cazadores y recolectores*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Nómadas",
+   "texto": "Se desplazaban siguiendo el alimento",
+   "emoji": "🚶",
+   "voz": [
+    "Los cazadores y recolectores eran *nómadas*.",
+    "Se movían siguiendo a los animales y las estaciones."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Cómo se repartían el trabajo",
+    "emoji": "🧰"
+   },
+   "items": [
+    {
+     "txt": "Cazar",
+     "emoji": "🏹"
+    },
+    {
+     "txt": "Recolectar",
+     "emoji": "🌰"
+    },
+    {
+     "txt": "Cuidar a los niños",
+     "emoji": "🧸"
+    }
+   ],
+   "voz": [
+    "Las tareas se repartían según edad y habilidades.",
+    "Algunos *cazaban*.",
+    "Otros *recolectaban* frutos, semillas y raíces.",
+    "Y otros *cuidaban a los niños*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AUTORIDAD",
+    "texto": "Experiencia, sin jefes fijos",
+    "emoji": "🗣️"
+   },
+   "b": {
+    "cab": "RIQUEZA",
+    "texto": "Casi sin diferencias",
+    "emoji": "⚖️"
+   },
+   "signo": "+",
+   "voz": [
+    "Casi no había desigualdades.",
+    "Tenía influencia quien mostraba *experiencia*.",
+    "Y las decisiones se *discutían entre todos*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ USABAN",
+   "columnas": [
+    "Recurso",
+    "Para qué"
+   ],
+   "filas": [
+    [
+     "Piedra tallada",
+     "Cortar y cazar"
+    ],
+    [
+     "Hueso",
+     "Agujas y arpones"
+    ],
+    [
+     "Fuego",
+     "Calor y cocción"
+    ]
+   ],
+   "voz": [
+    "Sus herramientas.",
+    "La *piedra tallada*: cortar y cazar.",
+    "El *hueso*: agujas y arpones.",
+    "El *fuego*: calor y cocción."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PALEOLÍTICO",
+     "emoji": "🏹"
+    },
+    {
+     "cab": "NO PALEOLÍTICO",
+     "emoji": "🌾"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Nómadas",
+     "caja": 0
+    },
+    {
+     "txt": "Acumular cosechas",
+     "caja": 1
+    },
+    {
+     "txt": "Compartir lo cazado",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Paleolítico o no?",
+    "*Nómadas* y *compartir lo cazado*: sí.",
+    "*Acumular cosechas*: es de la agricultura."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se tomaban las decisiones en una banda?",
+   "opciones": [
+    "Se discutían entre todos",
+    "Las decidía un rey",
+    "Las decidía un ejército"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se tomaban las decisiones?",
+    "¿Entre todos, por un rey o por un ejército?",
+    "*Entre todos*: no había jefes permanentes."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Había reyes",
+     "bien": "No había jefes permanentes"
+    },
+    {
+     "mal": "Vivían fijos en un lugar",
+     "bien": "Eran nómadas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que había *reyes*.",
+    "Y pensar que vivían *fijos* en un lugar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Eran *nómadas*.",
+    "Vivían en bandas de *veinte a cincuenta* personas.",
+    "El trabajo se *repartía* y se *compartía*.",
+    "Y las decisiones eran de todos.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "NÓMADAS",
+     "se movían"
+    ],
+    [
+     "BANDAS",
+     "20 a 50"
+    ],
+    [
+     "TRABAJO",
+     "se repartía"
+    ],
+    [
+     "DECISIONES",
+     "entre todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

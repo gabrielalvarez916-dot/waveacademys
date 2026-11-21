@@ -55,7 +55,7 @@ MAPA = {
  'heladera': 'refrigerador', 'frutilla': 'fresa', 'frutillas': 'fresas', 'manteca': 'mantequilla', 'hacelo': 'hazlo', 'completalo': 'complétalo', 'resolvelo': 'resuélvelo', 'comparala': 'compárala', 'comparalo': 'compáralo', 'abonás': 'abonas', 'conocé': 'conoce', 'guardá': 'guarda', 'hablá': 'habla', 'intentá': 'intenta', 'programá': 'programa', 'superá': 'supera', 'terminá': 'termina', 'terminás': 'terminas', 'elegilo': 'elígelo', 'preguntame': 'pregúntame', 'dale': 'vamos', 'che': 'oye',
 }
 FRASES = [(r'\bcon vos\b', 'contigo'), (r'\b(a|para|de|por) vos\b', r'\1 ti')]
-OK = set('''bebés mudé rurales arrozales estrés guaraní globales locales malo ambientales nacionales parís organela sales través filo yacaré abuela abuelo además allá allí ahí así atrás billete busqué caminé canadá capitales caramelos chile chocolate cocinaré cociné comerciales
+OK = set('''malos metales yangtsé bebés mudé rurales arrozales estrés guaraní globales locales malo ambientales nacionales parís organela sales través filo yacaré abuela abuelo además allá allí ahí así atrás billete busqué caminé canadá capitales caramelos chile chocolate cocinaré cociné comerciales
 compás comí corchete corrí culturales dé demás después detrás decimales diagonales diecisiete digitales dársela elo eme encontré equivale escala escalas
 escuela especiales está estás esté estudié fila gemelos glaciales granos habrá hielo huele huelo humanos iguales internacionales interés intervalo
 intervalos jacarandás kilo leí limite llame llegué límite mala manos mate materiales meridianos mete minerales miré modelos mundiales más mí naturales

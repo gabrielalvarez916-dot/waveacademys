@@ -1,0 +1,200 @@
+{
+ "slug": "soc1-m9-n4",
+ "step_id": "024d10be-6a43-454b-bbcb-9d92b4f03213",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Un planeta que se puebla: de África a América",
+ "sub": "Ciencias Sociales Integradas I · Misión 9 · Nivel 4",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "70.000 años",
+   "emoji": "👣",
+   "final": "todos los continentes",
+   "titulo": "EL POBLAMIENTO",
+   "sub": "de África a América",
+   "voz": [
+    "Hace unos setenta mil años, unos pocos grupos salieron de África.",
+    "Y terminaron ocupando todos los continentes.",
+    "Hoy: *el poblamiento del planeta*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL VIAJE",
+   "eventos": [
+    {
+     "fecha": "300.000",
+     "txt": "Aparece el Homo sapiens",
+     "emoji": "🌍"
+    },
+    {
+     "fecha": "70.000",
+     "txt": "Sale de África",
+     "emoji": "👣"
+    },
+    {
+     "fecha": "50.000",
+     "txt": "Llega a Australia",
+     "emoji": "🦘"
+    },
+    {
+     "fecha": "15.000",
+     "txt": "Llega a América",
+     "emoji": "🏔️"
+    }
+   ],
+   "voz": [
+    "Las etapas, con fechas aproximadas.",
+    "Hace unos *trescientos mil años*, el Homo sapiens aparece en África.",
+    "Hace unos *setenta mil*, sale de África.",
+    "Hace unos *cincuenta mil*, llega a Australia.",
+    "Y hace más de *quince mil*, llega a América."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Beringia",
+   "texto": "Tierra entre Siberia y Alaska",
+   "emoji": "🧊",
+   "voz": [
+    "Durante las glaciaciones el mar bajó.",
+    "Apareció *Beringia*, una franja de tierra entre Siberia y Alaska."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Por qué se movían",
+    "emoji": "🧭"
+   },
+   "items": [
+    {
+     "txt": "Seguir animales",
+     "emoji": "🦌"
+    },
+    {
+     "txt": "Cambios del clima",
+     "emoji": "🌡️"
+    },
+    {
+     "txt": "Crecía el grupo",
+     "emoji": "👪"
+    }
+   ],
+   "voz": [
+    "¿Por qué se movían?",
+    "Para *seguir a los animales*.",
+    "Por los *cambios del clima*.",
+    "Y porque el *grupo crecía*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ANTES",
+     "emoji": "⏪"
+    },
+    {
+     "cab": "DESPUÉS",
+     "emoji": "⏩"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "África",
+     "caja": 0
+    },
+    {
+     "txt": "Australia",
+     "caja": 1
+    },
+    {
+     "txt": "América",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Antes o después?",
+    "*África*: el origen.",
+    "*Australia* y *América*: llegadas posteriores."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se llama la franja de tierra que unió Siberia y Alaska?",
+   "opciones": [
+    "Beringia",
+    "Pangea",
+    "Atlántida"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo se llama la franja de tierra entre Siberia y Alaska?",
+    "¿Beringia, Pangea o Atlántida?",
+    "*Beringia*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fechas aproximadas",
+   "texto": "Pueden cambiar con nuevos hallazgos",
+   "emoji": "📅",
+   "voz": [
+    "Las fechas son *aproximadas*.",
+    "Pueden cambiar con nuevos descubrimientos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Fechas exactas",
+     "bien": "Fechas aproximadas"
+    },
+    {
+     "mal": "Llegaron en barcos de metal",
+     "bien": "Por Beringia o la costa"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que las fechas son *exactas*.",
+    "Y pensar que llegaron en *barcos de metal*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El Homo sapiens *salió de África*.",
+    "Se extendió por *todos los continentes*.",
+    "A América llegó por *Beringia* o la costa.",
+    "Las fechas son *aproximadas*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORIGEN",
+     "África"
+    ],
+    [
+     "SALIDA",
+     "hace 70.000 años"
+    ],
+    [
+     "AMÉRICA",
+     "Beringia"
+    ],
+    [
+     "FECHAS",
+     "aproximadas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

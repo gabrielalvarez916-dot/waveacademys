@@ -1,0 +1,194 @@
+{
+ "slug": "soc1-m10-n1",
+ "step_id": "d8a631ca-09a4-4c42-b3bd-f635ec081f06",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Sembrar y criar: el comienzo de la agricultura y la ganadería",
+ "sub": "Ciencias Sociales Integradas I · Misión 10 · Nivel 1",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Noa",
+    "emoji": "👧"
+   },
+   "lugar": "🌾",
+   "lineas": [
+    "Noa guardó semillas de las plantas más grandes.",
+    "Al año siguiente, las sembró cerca de su casa."
+   ],
+   "titulo": "SEMBRAR Y CRIAR",
+   "sub": "el comienzo de la agricultura",
+   "voz": [
+    "Noa guardó las semillas de las plantas más grandes.",
+    "Al año siguiente, las sembró cerca de su casa.",
+    "Hoy: *el comienzo de la agricultura*."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "12.000",
+   "antes": "años atrás",
+   "despues": "empezó la agricultura",
+   "texto": "Al terminar la última glaciación, el clima se volvió más templado",
+   "emoji": "🌱",
+   "voz": [
+    "Hace unos *doce mil años* empezó la agricultura.",
+    "Al terminar la última glaciación, el clima se volvió más templado."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Domesticación",
+   "texto": "Criar y seleccionar plantas y animales",
+   "emoji": "🐑",
+   "voz": [
+    "La *domesticación* es criar y seleccionar plantas y animales.",
+    "Así dan más alimento y son más fáciles de manejar."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EJEMPLOS",
+   "columnas": [
+    "Plantas",
+    "Animales"
+   ],
+   "filas": [
+    [
+     "Trigo",
+     "Ovejas"
+    ],
+    [
+     "Arroz",
+     "Cerdos"
+    ],
+    [
+     "Maíz",
+     "Pavos"
+    ]
+   ],
+   "voz": [
+    "Algunas domesticaciones.",
+    "*Trigo* y *ovejas*, en Medio Oriente.",
+    "*Arroz* y *cerdos*, en China.",
+    "*Maíz* y *pavos*, en Mesoamérica."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🏕️",
+    "texto": "vida nómada"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "🏘️",
+    "texto": "aldeas fijas"
+   },
+   "voz": [
+    "Un cambio de vida.",
+    "Antes, vida *nómada*.",
+    "Después, *aldeas fijas*: el sedentarismo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "VIDA NÓMADA",
+     "emoji": "🏕️"
+    },
+    {
+     "cab": "VIDA SEDENTARIA",
+     "emoji": "🏘️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Cazar",
+     "caja": 0
+    },
+    {
+     "txt": "Sembrar",
+     "caja": 1
+    },
+    {
+     "txt": "Graneros",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Nómada o sedentaria?",
+    "*Cazar*: nómada.",
+    "*Sembrar* y *graneros*: sedentaria."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Criar y seleccionar plantas y animales se llama…",
+   "opciones": [
+    "Domesticación",
+    "Migración",
+    "Excavación"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: criar y seleccionar plantas y animales.",
+    "¿Domesticación, migración o excavación?",
+    "*Domesticación*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Apareció de golpe",
+     "bien": "Fue un proceso lento"
+    },
+    {
+     "mal": "Todos dejaron de cazar",
+     "bien": "Muchos siguieron"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que apareció *de golpe*.",
+    "Y pensar que *todos dejaron de cazar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hace unos *doce mil años* empezó la agricultura.",
+    "Se *domesticaron* plantas y animales.",
+    "Surgió el *sedentarismo*.",
+    "Y fue un proceso *lento*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INICIO",
+     "hace 12.000 años"
+    ],
+    [
+     "DOMESTICACIÓN",
+     "plantas y animales"
+    ],
+    [
+     "SEDENTARISMO",
+     "vida en un lugar"
+    ],
+    [
+     "PROCESO",
+     "lento"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

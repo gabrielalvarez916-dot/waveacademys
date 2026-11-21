@@ -1,0 +1,251 @@
+{
+ "slug": "soc1-m10-n3",
+ "step_id": "2076fbd9-36e6-41a2-96b5-4c2af1382f74",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "El Neolítico en el mundo: Medio Oriente, China, Mesoamérica y los Andes",
+ "sub": "Ciencias Sociales Integradas I · Misión 10 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lola",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Sabías que el maíz viene de una planta silvestre?"
+    },
+    {
+     "yo": true,
+     "txt": "¿En serio? 🌽"
+    },
+    {
+     "yo": false,
+     "txt": "Del teosinte, en Mesoamérica"
+    }
+   ],
+   "titulo": "EL NEOLÍTICO EN EL MUNDO",
+   "sub": "cuatro centros",
+   "voz": [
+    "Lola le cuenta a Mati que el maíz viene de una planta silvestre.",
+    "Mati no lo puede creer.",
+    "Lola: del teosinte, en Mesoamérica.",
+    "Hoy: *el Neolítico en el mundo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CUATRO CENTROS",
+   "columnas": [
+    "Región",
+    "Cultivos",
+    "Animales"
+   ],
+   "filas": [
+    [
+     "Medio Oriente",
+     "Trigo, cebada",
+     "Ovejas, cabras"
+    ],
+    [
+     "China",
+     "Arroz, mijo",
+     "Cerdos"
+    ],
+    [
+     "Mesoamérica",
+     "Maíz, frijol",
+     "Pavos"
+    ],
+    [
+     "Andes",
+     "Papa, quinoa",
+     "Llamas"
+    ]
+   ],
+   "voz": [
+    "Cuatro centros independientes.",
+    "*Medio Oriente*: trigo y cebada; ovejas y cabras.",
+    "*China*: arroz y mijo; cerdos.",
+    "*Mesoamérica*: maíz y frijol; pavos.",
+    "*Los Andes*: papa y quinoa; llamas."
+   ]
+  },
+  {
+   "t": "mapa",
+   "zona": "mundo",
+   "pasos": [
+    {
+     "resaltar": [
+      "Irak",
+      "Siria"
+     ],
+     "color": "#d9a441",
+     "texto": "Medio Oriente"
+    },
+    {
+     "resaltar": [
+      "China"
+     ],
+     "color": "#c0392b",
+     "texto": "China"
+    },
+    {
+     "resaltar": [
+      "México",
+      "Guatemala"
+     ],
+     "color": "#3fa07a",
+     "texto": "Mesoamérica"
+    },
+    {
+     "resaltar": [
+      "Perú",
+      "Bolivia"
+     ],
+     "color": "#8a6bbf",
+     "texto": "Andes"
+    }
+   ],
+   "voz": [
+    "Dónde surgió la agricultura.",
+    "En el *Medio Oriente*.",
+    "En *China*.",
+    "En *Mesoamérica*.",
+    "Y en los *Andes*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Creciente Fértil",
+   "texto": "Región de Medio Oriente donde surgió el cultivo de cereales",
+   "emoji": "🌾",
+   "voz": [
+    "El *Creciente Fértil* está entre los ríos Tigris y Éufrates y el Mediterráneo oriental.",
+    "Allí surgió el cultivo de cereales."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MESOAMÉRICA",
+    "texto": "Maíz, frijol y calabaza",
+    "emoji": "🌽"
+   },
+   "b": {
+    "cab": "ANDES",
+    "texto": "Papa, quinoa y llama",
+    "emoji": "🥔"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos centros de América.",
+    "*Mesoamérica*: maíz, frijol y calabaza.",
+    "Los *Andes*: papa, quinoa y la llama."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MEDIO ORIENTE",
+     "emoji": "🌾"
+    },
+    {
+     "cab": "AMÉRICA",
+     "emoji": "🌽"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Trigo",
+     "caja": 0
+    },
+    {
+     "txt": "Maíz",
+     "caja": 1
+    },
+    {
+     "txt": "Papa",
+     "caja": 1
+    },
+    {
+     "txt": "Ovejas",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Medio Oriente o América?",
+    "*Trigo* y *ovejas*: Medio Oriente.",
+    "*Maíz* y *papa*: América."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde se domesticó el maíz?",
+   "opciones": [
+    "Mesoamérica",
+    "China",
+    "Medio Oriente"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿dónde se domesticó el maíz?",
+    "¿Mesoamérica, China o Medio Oriente?",
+    "En *Mesoamérica*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Se difundió desde un solo lugar",
+     "bien": "Surgió en varios"
+    },
+    {
+     "mal": "En América se cultivaba trigo",
+     "bien": "Maíz, papa y otros"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que se difundió *desde un solo lugar*.",
+    "Y pensar que en América se cultivaba *trigo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hubo *cuatro centros* independientes.",
+    "Cada región *domesticó* lo suyo.",
+    "El *maíz*, en Mesoamérica.",
+    "La *papa* y la *llama*, en los Andes.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CENTROS",
+     "cuatro"
+    ],
+    [
+     "MEDIO ORIENTE",
+     "trigo"
+    ],
+    [
+     "MESOAMÉRICA",
+     "maíz"
+    ],
+    [
+     "ANDES",
+     "papa y llama"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

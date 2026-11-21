@@ -64,7 +64,7 @@ def fraccion(m):  # 3/4 -> tres cuartos · 1/2 -> un medio · 5/12 -> cinco doce
 
 
 # Nombres extranjeros: cómo se dicen en castellano (solo cambia la voz, no el subtítulo)
-PRONUNCIA = {'Sherlock Holmes': 'Shérlok Jolms', 'Holmes': 'Jolms', 'Watson': 'Uátson', 'Conan Doyle': 'Conan Doil', 'Oscar Wilde': 'Óscar Uáild', 'Wilde': 'Uáild', 'Baker Street': 'Béiker Strit', 'Canterville': 'Cánterwil', 'Jabez Wilson': 'Yábez Uílson', 'Wilson': 'Uílson', 'John Clay': 'Yon Cléi', 'Clay': 'Cléi', 'Spaulding': 'Spólding', 'Edgar Allan Poe': 'Édgar Álan Pou', 'Poe': 'Pou', 'Dupin': 'Dipán', 'Agatha Christie': 'Ágata Cristi', 'Poirot': 'Puaró', 'Walsh': 'Uolsh', 'Morgue': 'Morg', 'Bioy': 'Bióy', 'Arthur': 'Ártur', 'Greenwich': 'Grínich', 'Ushuaia': 'Ushuáia', 'Erythrina': 'Eritrína', 'Deshielo': 'Desyélo', 'deshielo': 'desyélo', 'crista-galli': 'crista gali'}
+PRONUNCIA = {'Sherlock Holmes': 'Shérlok Jolms', 'Holmes': 'Jolms', 'Watson': 'Uátson', 'Conan Doyle': 'Conan Doil', 'Oscar Wilde': 'Óscar Uáild', 'Wilde': 'Uáild', 'Baker Street': 'Béiker Strit', 'Canterville': 'Cánterwil', 'Jabez Wilson': 'Yábez Uílson', 'Wilson': 'Uílson', 'John Clay': 'Yon Cléi', 'Clay': 'Cléi', 'Spaulding': 'Spólding', 'Edgar Allan Poe': 'Édgar Álan Pou', 'Poe': 'Pou', 'Dupin': 'Dipán', 'Agatha Christie': 'Ágata Cristi', 'Poirot': 'Puaró', 'Walsh': 'Uolsh', 'Morgue': 'Morg', 'Bioy': 'Bióy', 'Arthur': 'Ártur', 'Greenwich': 'Grínich', 'Ushuaia': 'Ushuáia', 'Erythrina': 'Eritrína', 'Australopithecus': 'Australopitécus', 'Deshielo': 'Desyélo', 'deshielo': 'desyélo', 'crista-galli': 'crista gali'}
 def pronuncia(s):
     for a, b in PRONUNCIA.items(): s = re.sub(r'\b' + re.escape(a) + r'\b', b, s)
     return s

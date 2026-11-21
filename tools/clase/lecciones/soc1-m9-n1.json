@@ -1,0 +1,210 @@
+{
+ "slug": "soc1-m9-n1",
+ "step_id": "d4e4225e-02f7-438c-898d-943e06a50da6",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "Hominización: cómo llegamos a ser humanos",
+ "sub": "Ciencias Sociales Integradas I · Misión 9 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué dos cosas cambiaron al caminar erguidos?",
+   "segundos": 6,
+   "respuesta": "Las manos quedaron libres y se vio más lejos",
+   "emoji": "🚶",
+   "titulo": "HOMINIZACIÓN",
+   "sub": "cómo llegamos a ser humanos",
+   "voz": [
+    "Desafío: ¿qué cambió al caminar erguidos? Seis segundos.",
+    "Las manos quedaron libres y se podía ver más lejos.",
+    "Hoy: *la hominización*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Hominización",
+   "texto": "El proceso por el que aparecieron los humanos actuales",
+   "emoji": "🦴",
+   "voz": [
+    "La *hominización* es el proceso de millones de años por el que aparecieron los humanos actuales.",
+    "Empezó en *África*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LAS ESPECIES",
+   "eventos": [
+    {
+     "fecha": "4 millones",
+     "txt": "Australopithecus",
+     "emoji": "🦴"
+    },
+    {
+     "fecha": "2,4 millones",
+     "txt": "Homo habilis",
+     "emoji": "🪨"
+    },
+    {
+     "fecha": "1,9 millones",
+     "txt": "Homo erectus",
+     "emoji": "🔥"
+    },
+    {
+     "fecha": "300.000",
+     "txt": "Homo sapiens",
+     "emoji": "🧠"
+    }
+   ],
+   "voz": [
+    "Cuatro especies clave, de las más antiguas a la actual.",
+    "El *Australopithecus*, hace unos cuatro millones de años: caminaba erguido.",
+    "El *Homo habilis*: fabricaba herramientas de piedra.",
+    "El *Homo erectus*: usó el fuego y salió de África.",
+    "Y el *Homo sapiens*, hace unos trescientos mil años."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Grandes cambios",
+    "emoji": "🧬"
+   },
+   "items": [
+    {
+     "txt": "Bipedismo",
+     "emoji": "🚶"
+    },
+    {
+     "txt": "Cerebro grande",
+     "emoji": "🧠"
+    },
+    {
+     "txt": "Fuego",
+     "emoji": "🔥"
+    },
+    {
+     "txt": "Lenguaje",
+     "emoji": "💬"
+    }
+   ],
+   "voz": [
+    "¿Qué cambió?",
+    "El *bipedismo* liberó las manos.",
+    "El *cerebro* creció.",
+    "El *fuego* dio calor y cocción.",
+    "Y el *lenguaje* permitió transmitir lo aprendido."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CAMBIO FÍSICO",
+     "emoji": "🦴"
+    },
+    {
+     "cab": "CAMBIO CULTURAL",
+     "emoji": "🔥"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Caminar erguido",
+     "caja": 0
+    },
+    {
+     "txt": "Usar fuego",
+     "caja": 1
+    },
+    {
+     "txt": "Cerebro más grande",
+     "caja": 0
+    },
+    {
+     "txt": "Hablar",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Físico o cultural?",
+    "*Caminar erguido* y *cerebro más grande*: físicos.",
+    "*Usar fuego* y *hablar*: culturales."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué especie fabricó las primeras herramientas de piedra?",
+   "opciones": [
+    "Homo habilis",
+    "Homo sapiens",
+    "Australopithecus"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿quién fabricó las primeras herramientas de piedra?",
+    "¿Homo habilis, Homo sapiens o Australopithecus?",
+    "El *Homo habilis*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fósil",
+   "texto": "Resto de un ser vivo del pasado",
+   "emoji": "🦴",
+   "voz": [
+    "Los científicos estudian *fósiles*: huesos de seres del pasado.",
+    "También herramientas y ADN."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Descendemos de los monos actuales",
+     "bien": "Compartimos antepasados"
+    },
+    {
+     "mal": "Una línea recta de especies",
+     "bien": "Varias convivieron"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *descendemos de los monos actuales*.",
+    "Y pensar en una *línea recta* de especies."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *hominización* empezó en África.",
+    "Hubo varias especies.",
+    "El *bipedismo*, el *cerebro*, el *fuego* y el *lenguaje* fueron claves.",
+    "Y la ciencia revisa lo que sabe.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ORIGEN",
+     "África"
+    ],
+    [
+     "ESPECIES",
+     "varias"
+    ],
+    [
+     "CAMBIOS",
+     "bipedismo, fuego"
+    ],
+    [
+     "FUENTES",
+     "fósiles"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

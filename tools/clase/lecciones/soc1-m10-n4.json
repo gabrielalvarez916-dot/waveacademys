@@ -1,0 +1,209 @@
+{
+ "slug": "soc1-m10-n4",
+ "step_id": "c5309a61-217d-4f97-812e-dc02460d309f",
+ "materia": "Ciencias Sociales Integradas I",
+ "titulo": "¿Una revolución? Cambios y continuidades",
+ "sub": "Ciencias Sociales Integradas I · Misión 10 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Fue una revolución o un cambio muy lento?",
+   "segundos": 6,
+   "respuesta": "Cambió todo, pero tardó miles de años",
+   "emoji": "🤔",
+   "titulo": "¿UNA REVOLUCIÓN?",
+   "sub": "cambios y continuidades",
+   "voz": [
+    "Desafío: ¿fue una revolución o un cambio muy lento? Seis segundos.",
+    "Cambió casi todo, pero tardó miles de años.",
+    "Hoy: *cambios y continuidades*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Revolución Neolítica",
+   "texto": "Nombre que le dio Gordon Childe",
+   "emoji": "📚",
+   "voz": [
+    "El historiador *Gordon Childe* llamó *Revolución Neolítica* a este período.",
+    "Hoy se discute el nombre, porque fue muy lento."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ CAMBIÓ",
+   "columnas": [
+    "Aspecto",
+    "Cambio"
+   ],
+   "filas": [
+    [
+     "Alimentación",
+     "Se produce"
+    ],
+    [
+     "Vivienda",
+     "Aldeas"
+    ],
+    [
+     "Sociedad",
+     "Oficios y desigualdad"
+    ]
+   ],
+   "voz": [
+    "Los cambios.",
+    "La *alimentación*: ahora se produce.",
+    "La *vivienda*: aldeas fijas.",
+    "La *sociedad*: oficios y desigualdades."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CAMBIO",
+    "texto": "Aldeas, cerámica",
+    "emoji": "🏘️"
+   },
+   "b": {
+    "cab": "CONTINUIDAD",
+    "texto": "Se siguió cazando, rituales",
+    "emoji": "🏹"
+   },
+   "signo": "+",
+   "voz": [
+    "Pero no todo cambió.",
+    "*Cambio*: aldeas y cerámica.",
+    "*Continuidad*: muchos siguieron cazando y los rituales continuaron."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Costos de la agricultura",
+    "emoji": "⚠️"
+   },
+   "items": [
+    {
+     "txt": "Más trabajo",
+     "emoji": "🛠️"
+    },
+    {
+     "txt": "Enfermedades",
+     "emoji": "🤒"
+    },
+    {
+     "txt": "Dependencia de la cosecha",
+     "emoji": "🌧️"
+    }
+   ],
+   "voz": [
+    "La agricultura tuvo costos.",
+    "*Más trabajo* diario.",
+    "*Enfermedades* por vivir juntos y con animales.",
+    "Y *dependencia* de las cosechas."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "BENEFICIO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "COSTO",
+     "emoji": "⚠️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Más alimento",
+     "caja": 0
+    },
+    {
+     "txt": "Más trabajo",
+     "caja": 1
+    },
+    {
+     "txt": "Graneros",
+     "caja": 0
+    },
+    {
+     "txt": "Enfermedades",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Beneficio o costo?",
+    "*Más alimento* y *graneros*: beneficios.",
+    "*Más trabajo* y *enfermedades*: costos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿La agricultura trajo solo ventajas?",
+   "opciones": [
+    "No: también costos",
+    "Sí",
+    "Solo en América"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿la agricultura trajo solo ventajas?",
+    "¿No, sí o solo en América?",
+    "*No*: tuvo ventajas y costos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Fue solo progreso",
+     "bien": "Tuvo costos"
+    },
+    {
+     "mal": "Cambió todo a la vez",
+     "bien": "Fue lento y desigual"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que fue *solo progreso*.",
+    "Y pensar que *cambió todo a la vez*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Cambió la *alimentación*, la vivienda y la sociedad.",
+    "Hubo *continuidades*.",
+    "Tuvo *beneficios* y *costos*.",
+    "Y fue un proceso *lento*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CAMBIOS",
+     "alimento, aldeas"
+    ],
+    [
+     "CONTINUIDADES",
+     "caza, rituales"
+    ],
+    [
+     "BALANCE",
+     "ventajas y costos"
+    ],
+    [
+     "RITMO",
+     "lento"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
