@@ -1,0 +1,195 @@
+{
+ "slug": "leng1-m13-n4",
+ "step_id": "8ce6d0f4-0b6e-4f36-8f49-d67bce61e893",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Respondo a otra opinión",
+ "sub": "Lengua y Literatura I · Misión 13 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Hay que prohibir los celulares 📵"
+    },
+    {
+     "yo": true,
+     "txt": "Es cierto que distraen, pero..."
+    },
+    {
+     "yo": true,
+     "txt": "podemos usarlos con reglas 🙂"
+    }
+   ],
+   "titulo": "RESPONDO A OTRA OPINIÓN",
+   "sub": "discrepar con razones",
+   "voz": [
+    "Lu dice que hay que prohibir los celulares.",
+    "Juan responde: es cierto que distraen, pero podemos usarlos con reglas.",
+    "Reconoce, discrepa y propone.",
+    "Hoy: *respondo a otra opinión*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PASOS",
+   "items": [
+    {
+     "txt": "Reconozco",
+     "emoji": "🤝"
+    },
+    {
+     "txt": "Discrepo",
+     "emoji": "↔️"
+    },
+    {
+     "txt": "Argumento",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Propongo",
+     "emoji": "🛠️"
+    }
+   ],
+   "voz": [
+    "Una respuesta tiene cuatro pasos.",
+    "*Reconozco* algo valioso.",
+    "*Discrepo* con respeto.",
+    "*Argumento*.",
+    "Y *propongo* una alternativa."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Contraargumento",
+   "texto": "Razón que se opone al argumento de otro",
+   "emoji": "⚖️",
+   "voz": [
+    "El *contraargumento* es una razón que se opone al argumento de otro.",
+    "Muestra una falla en lo que dijo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONECTORES PARA DISCREPAR",
+   "columnas": [
+    "Función",
+    "Conectores"
+   ],
+   "filas": [
+    [
+     "Reconocer",
+     "es cierto que"
+    ],
+    [
+     "Oponer",
+     "sin embargo"
+    ],
+    [
+     "Conceder",
+     "aunque"
+    ],
+    [
+     "Proponer",
+     "por eso"
+    ]
+   ],
+   "voz": [
+    "Conectores útiles.",
+    "*Es cierto que*, para reconocer.",
+    "*Sin embargo*, para oponer.",
+    "*Aunque*, para conceder.",
+    "*Por eso*, para proponer."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IDEA",
+    "texto": "Se critica lo que dijo",
+    "emoji": "💡"
+   },
+   "b": {
+    "cab": "PERSONA",
+    "texto": "No se ataca a nadie",
+    "emoji": "🚫"
+   },
+   "signo": "≠",
+   "voz": [
+    "Cuando discrepás, cuidá esto.",
+    "Se critica la *idea*.",
+    "No se ataca a la *persona*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conector introduce una oposición?",
+   "opciones": [
+    "Sin embargo",
+    "Por ejemplo",
+    "En primer lugar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué conector introduce una oposición?",
+    "¿Sin embargo, por ejemplo o en primer lugar?",
+    "*Sin embargo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Atacar a la persona",
+     "bien": "Criticar la idea"
+    },
+    {
+     "mal": "Discrepar sin razones",
+     "bien": "Dar un contraargumento"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Atacar a la persona*.",
+    "Y discrepar *sin razones*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Respondé con *respeto*.",
+    "*Reconocé*, *discrepá*, *argumentá* y *proponé*.",
+    "Usá *contraargumentos*.",
+    "Y *conectores* de oposición.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RESPETO",
+     "la idea"
+    ],
+    [
+     "PASOS",
+     "cuatro"
+    ],
+    [
+     "CONTRAARGUMENTO",
+     "razón en contra"
+    ],
+    [
+     "CONECTORES",
+     "sin embargo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

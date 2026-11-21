@@ -1,0 +1,172 @@
+{
+ "slug": "leng1-m13-n1",
+ "step_id": "9e6fbdf0-9fa1-4a4d-89a1-b42d973d2964",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Hecho y opinión",
+ "sub": "Lengua y Literatura I · Misión 13 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "«El colegio es aburrido»: ¿hecho u opinión?",
+   "segundos": 6,
+   "respuesta": "Opinión",
+   "emoji": "🏫",
+   "titulo": "HECHO Y OPINIÓN",
+   "sub": "qué se comprueba",
+   "voz": [
+    "Desafío: el colegio es aburrido, ¿hecho u opinión? Seis segundos.",
+    "Opinión.",
+    "Hoy: *hecho y opinión*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HECHO",
+    "texto": "Se puede comprobar",
+    "emoji": "📊"
+   },
+   "b": {
+    "cab": "OPINIÓN",
+    "texto": "Lo que alguien piensa",
+    "emoji": "💭"
+   },
+   "signo": "vs",
+   "voz": [
+    "No son lo mismo.",
+    "El *hecho* se puede comprobar.",
+    "La *opinión* es lo que alguien piensa."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "HECHO",
+     "emoji": "📊"
+    },
+    {
+     "cab": "OPINIÓN",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Abre a las ocho",
+     "caja": 0
+    },
+    {
+     "txt": "Es aburrido",
+     "caja": 1
+    },
+    {
+     "txt": "Hay 40 alumnos",
+     "caja": 0
+    },
+    {
+     "txt": "Es genial",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Hecho u opinión?",
+    "*Abre a las ocho* y *hay 40 alumnos*: hechos.",
+    "*Es aburrido* y *es genial*: opiniones."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "MARCAS DE OPINIÓN",
+   "columnas": [
+    "Marca",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Verbos de pensamiento",
+     "creo, me parece"
+    ],
+    [
+     "Adjetivos valorativos",
+     "injusto, genial"
+    ],
+    [
+     "Exageraciones",
+     "siempre, nunca"
+    ]
+   ],
+   "voz": [
+    "Cómo reconocer una opinión.",
+    "Verbos de pensamiento: *creo*, *me parece*.",
+    "Adjetivos valorativos: *injusto*, *genial*.",
+    "Exageraciones: *siempre*, *nunca*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Para saber si es un hecho, ¿qué te preguntás?",
+   "opciones": [
+    "¿Puedo verificarlo?",
+    "¿Me gusta?",
+    "¿Es largo?"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué te preguntás para saber si es un hecho?",
+    "¿Puedo verificarlo, me gusta o es largo?",
+    "*¿Puedo verificarlo?*"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Una opinión es siempre falsa",
+     "bien": "Se argumenta"
+    },
+    {
+     "mal": "Tomar un dato dudoso como hecho",
+     "bien": "Verificarlo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que una opinión es *siempre falsa*.",
+    "Y tomar un dato *dudoso* como hecho."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *hecho* se comprueba.",
+    "La *opinión* se argumenta.",
+    "Hay *marcas* de opinión.",
+    "Y se pueden *mezclar*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "HECHO",
+     "se comprueba"
+    ],
+    [
+     "OPINIÓN",
+     "se argumenta"
+    ],
+    [
+     "MARCAS",
+     "creo, adjetivos"
+    ],
+    [
+     "MEZCLA",
+     "pueden ir juntos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

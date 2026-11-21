@@ -1,0 +1,192 @@
+{
+ "slug": "leng1-m12-n2",
+ "step_id": "bd232aa5-3e5a-415b-a1dd-e2a146736cab",
+ "materia": "Lengua y Literatura I",
+ "titulo": "El verbo y sus modos",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿En qué modo está «Cerrá la puerta»?",
+   "segundos": 6,
+   "respuesta": "Imperativo",
+   "emoji": "🚪",
+   "titulo": "EL VERBO Y SUS MODOS",
+   "sub": "hecho, deseo u orden",
+   "voz": [
+    "Desafío: ¿en qué modo está cerrá la puerta? Seis segundos.",
+    "Imperativo.",
+    "Hoy: *el verbo y sus modos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Verbo",
+   "texto": "Persona, número, tiempo y modo",
+   "emoji": "🏃",
+   "voz": [
+    "El *verbo* expresa acciones, estados o procesos.",
+    "Varía en *persona*, *número*, *tiempo* y *modo*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES MODOS",
+   "columnas": [
+    "Modo",
+    "Expresa"
+   ],
+   "filas": [
+    [
+     "Indicativo",
+     "Hechos reales"
+    ],
+    [
+     "Subjuntivo",
+     "Deseos y dudas"
+    ],
+    [
+     "Imperativo",
+     "Órdenes"
+    ]
+   ],
+   "voz": [
+    "Los tres modos.",
+    "*Indicativo*: hechos reales.",
+    "*Subjuntivo*: deseos y dudas.",
+    "*Imperativo*: órdenes."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "INDICATIVO",
+     "emoji": "✅"
+    },
+    {
+     "cab": "SUBJUNTIVO",
+     "emoji": "🌠"
+    },
+    {
+     "cab": "IMPERATIVO",
+     "emoji": "📢"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Estudio",
+     "caja": 0
+    },
+    {
+     "txt": "Ojalá estudie",
+     "caja": 1
+    },
+    {
+     "txt": "Estudiá",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué modo?",
+    "*Estudio*: indicativo.",
+    "*Ojalá estudie*: subjuntivo.",
+    "*Estudiá*: imperativo."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "FORMAS NO PERSONALES",
+   "columnas": [
+    "Forma",
+    "Terminación"
+   ],
+   "filas": [
+    [
+     "Infinitivo",
+     "-ar, -er, -ir"
+    ],
+    [
+     "Gerundio",
+     "-ando, -iendo"
+    ],
+    [
+     "Participio",
+     "-ado, -ido"
+    ]
+   ],
+   "voz": [
+    "Tres formas no personales.",
+    "*Infinitivo*: cantar.",
+    "*Gerundio*: cantando.",
+    "*Participio*: cantado."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«Ojalá llueva» está en modo…",
+   "opciones": [
+    "Subjuntivo",
+    "Indicativo",
+    "Imperativo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: «ojalá llueva».",
+    "¿Subjuntivo, indicativo o imperativo?",
+    "*Subjuntivo*: expresa un deseo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir tiempo y modo",
+     "bien": "El modo depende de lo que digo"
+    },
+    {
+     "mal": "El gerundio es una persona",
+     "bien": "Es una forma no personal"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Confundir* tiempo con modo.",
+    "Y creer que el gerundio es una *persona*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El verbo varía en *persona*, *número*, *tiempo* y *modo*.",
+    "*Indicativo*, hechos.",
+    "*Subjuntivo*, deseos.",
+    "*Imperativo*, órdenes.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VERBO",
+     "cuatro variaciones"
+    ],
+    [
+     "INDICATIVO",
+     "hechos"
+    ],
+    [
+     "SUBJUNTIVO",
+     "deseos"
+    ],
+    [
+     "IMPERATIVO",
+     "órdenes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

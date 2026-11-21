@@ -1,0 +1,198 @@
+{
+ "slug": "leng1-m13-n2",
+ "step_id": "a5cfd8a1-47eb-43d8-a731-35f01eb078ce",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Opinión, tesis y argumentos",
+ "sub": "Lengua y Literatura I · Misión 13 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DEBATE",
+   "titular": "¿Más tiempo de recreo? Opinan los alumnos",
+   "bajada": "Cada uno defiende su idea",
+   "emoji": "🗣️",
+   "titulo": "TESIS Y ARGUMENTOS",
+   "sub": "armar una opinión",
+   "voz": [
+    "Debate: ¿más tiempo de recreo? Opinan los alumnos.",
+    "Cada uno defiende su idea.",
+    "Hoy: *opinión, tesis y argumentos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Tesis",
+   "texto": "La idea principal que se defiende",
+   "emoji": "🎯",
+   "voz": [
+    "La *tesis* es la idea principal que se defiende.",
+    "Se dice con claridad."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TIPOS DE ARGUMENTOS",
+   "columnas": [
+    "Tipo",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Ejemplo",
+     "En mi curso..."
+    ],
+    [
+     "Dato",
+     "El 80 %..."
+    ],
+    [
+     "Autoridad",
+     "Una docente dice..."
+    ],
+    [
+     "Causa y efecto",
+     "Si..., entonces..."
+    ]
+   ],
+   "voz": [
+    "Cuatro tipos.",
+    "De *ejemplo*.",
+    "De *dato*.",
+    "De *autoridad*.",
+    "Y de *causa y efecto*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "EJEMPLO",
+     "emoji": "📝"
+    },
+    {
+     "cab": "DATO",
+     "emoji": "📊"
+    },
+    {
+     "cab": "AUTORIDAD",
+     "emoji": "🎓"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "En mi curso",
+     "caja": 0
+    },
+    {
+     "txt": "El 80 % lo usa",
+     "caja": 1
+    },
+    {
+     "txt": "Lo dice una docente",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué tipo?",
+    "*En mi curso*: ejemplo.",
+    "*El 80 % lo usa*: dato.",
+    "*Lo dice una docente*: autoridad."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UN PÁRRAFO",
+   "items": [
+    {
+     "txt": "Tesis",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Argumento",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Ejemplo",
+     "emoji": "📝"
+    },
+    {
+     "txt": "Cierre",
+     "emoji": "🔚"
+    }
+   ],
+   "voz": [
+    "Un buen párrafo tiene cuatro partes.",
+    "*Tesis*.",
+    "*Argumento*.",
+    "*Ejemplo*.",
+    "Y *cierre*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conector uso para dar un ejemplo?",
+   "opciones": [
+    "Por ejemplo",
+    "En conclusión",
+    "Pero"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué conector doy para un ejemplo?",
+    "¿Por ejemplo, en conclusión o pero?",
+    "*Por ejemplo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Repetir la tesis como argumento",
+     "bien": "Dar una razón nueva"
+    },
+    {
+     "mal": "Argumentar con insultos",
+     "bien": "Dar razones"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Repetir* la tesis.",
+    "Y argumentar con *insultos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *tesis* es lo que defiendo.",
+    "Los *argumentos* la apoyan.",
+    "Hay de *ejemplo*, *dato*, *autoridad* y *causa*.",
+    "Y se *cierra* volviendo a la tesis.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TESIS",
+     "lo que defiendo"
+    ],
+    [
+     "ARGUMENTOS",
+     "razones"
+    ],
+    [
+     "TIPOS",
+     "cuatro"
+    ],
+    [
+     "CIERRE",
+     "vuelve a la tesis"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

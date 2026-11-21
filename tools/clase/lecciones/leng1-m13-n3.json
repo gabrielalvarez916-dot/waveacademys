@@ -1,0 +1,179 @@
+{
+ "slug": "leng1-m13-n3",
+ "step_id": "a1960988-06bc-432b-b2c4-f62e6822ae5b",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escribo una carta de lectores",
+ "sub": "Lengua y Literatura I · Misión 13 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CARTAS",
+   "titular": "Una lectora pide más ciclovías",
+   "bajada": "Su carta se publicó hoy",
+   "emoji": "📰",
+   "titulo": "CARTA DE LECTORES",
+   "sub": "opinar en un diario",
+   "voz": [
+    "Cartas: una lectora pide más ciclovías.",
+    "Su carta se publicó hoy.",
+    "Hoy: *escribo una carta de lectores*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Carta de lectores",
+   "texto": "Texto que se envía a un diario para opinar",
+   "emoji": "📰",
+   "voz": [
+    "La *carta de lectores* se envía a un diario o revista para opinar.",
+    "Se publica con el nombre de quien la escribe."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PARTES",
+   "items": [
+    {
+     "txt": "Título",
+     "emoji": "🏷️"
+    },
+    {
+     "txt": "Saludo",
+     "emoji": "👋"
+    },
+    {
+     "txt": "Tesis",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Argumentos",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Cierre y firma",
+     "emoji": "✍️"
+    }
+   ],
+   "voz": [
+    "Las partes.",
+    "*Título*.",
+    "*Saludo*.",
+    "*Tesis*.",
+    "*Argumentos*.",
+    "Y *cierre y firma*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SÍ",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Tono respetuoso",
+     "caja": 0
+    },
+    {
+     "txt": "Insultos",
+     "caja": 1
+    },
+    {
+     "txt": "Dos argumentos",
+     "caja": 0
+    },
+    {
+     "txt": "Chat abreviado",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Va en una carta de lectores?",
+    "*Tono respetuoso* y *dos argumentos*: sí.",
+    "*Insultos* y *chat abreviado*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué parte dice lo que opina quien escribe?",
+   "opciones": [
+    "La tesis",
+    "La firma",
+    "El saludo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué parte dice lo que opina quien escribe?",
+    "¿La tesis, la firma o el saludo?",
+    "*La tesis*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí una carta de lectores sobre un tema que te importe",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí una carta de lectores.",
+    "Con *título*, *tesis*, *dos argumentos*, *cierre* y *firma*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Insultar a quien piensa distinto",
+     "bien": "Tono respetuoso"
+    },
+    {
+     "mal": "Olvidar la firma",
+     "bien": "Firmar con nombre y localidad"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Insultar* a quien piensa distinto.",
+    "Y *olvidar la firma*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La carta va a un *diario*.",
+    "Tiene *título*, *tesis*, *argumentos*, *cierre* y *firma*.",
+    "El tono es *respetuoso*.",
+    "Y la tesis va *primero*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DESTINO",
+     "diario o revista"
+    ],
+    [
+     "PARTES",
+     "cinco"
+    ],
+    [
+     "TONO",
+     "respetuoso"
+    ],
+    [
+     "TESIS",
+     "primero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

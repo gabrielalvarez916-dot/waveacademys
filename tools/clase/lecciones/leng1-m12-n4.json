@@ -1,0 +1,180 @@
+{
+ "slug": "leng1-m12-n4",
+ "step_id": "9b6ebe52-340e-4dd4-8b15-57295f27e190",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Pronombres y conjunciones",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 4",
+ "escenas": [
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "REPETIDO",
+    "emoji": "🔁",
+    "texto": "Lucas compró un libro. Lucas leyó el libro."
+   },
+   "despues": {
+    "cab": "MEJORADO",
+    "emoji": "✨",
+    "texto": "Lucas compró un libro y lo leyó."
+   },
+   "titulo": "PRONOMBRES Y CONJUNCIONES",
+   "sub": "evitar repeticiones y unir ideas",
+   "voz": [
+    "Repetido: Lucas compró un libro. Lucas leyó el libro.",
+    "Mejorado: Lucas compró un libro y lo leyó.",
+    "Hoy: *pronombres* y *conjunciones*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Pronombre",
+   "texto": "Reemplaza a un sustantivo",
+   "emoji": "👤",
+   "voz": [
+    "El *pronombre* reemplaza a un sustantivo para no repetirlo.",
+    "Como *ella* por *Sofía*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CLASES DE PRONOMBRES",
+   "columnas": [
+    "Clase",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Personales",
+     "yo, ella"
+    ],
+    [
+     "Posesivos",
+     "mío, suyo"
+    ],
+    [
+     "Demostrativos",
+     "este, ese"
+    ]
+   ],
+   "voz": [
+    "Tres clases.",
+    "*Personales*: yo, ella.",
+    "*Posesivos*: mío, suyo.",
+    "*Demostrativos*: este, ese."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Conjunción",
+   "texto": "Une palabras u oraciones",
+   "emoji": "🔗",
+   "voz": [
+    "La *conjunción* une palabras u oraciones.",
+    "Es *invariable*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SUMA",
+     "emoji": "➕"
+    },
+    {
+     "cab": "OPOSICIÓN",
+     "emoji": "↔️"
+    },
+    {
+     "cab": "CAUSA",
+     "emoji": "❓"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "y",
+     "caja": 0
+    },
+    {
+     "txt": "pero",
+     "caja": 1
+    },
+    {
+     "txt": "porque",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué idea une?",
+    "*Y*: suma.",
+    "*Pero*: oposición.",
+    "*Porque*: causa."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra reemplaza a un sustantivo?",
+   "opciones": [
+    "Pronombre",
+    "Conjunción",
+    "Adverbio"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué palabra reemplaza a un sustantivo?",
+    "¿Pronombre, conjunción o adverbio?",
+    "El *pronombre*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Repetir el sustantivo siempre",
+     "bien": "Usar pronombres"
+    },
+    {
+     "mal": "Confundir pero con porque",
+     "bien": "Oposición y causa"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Repetir* el sustantivo.",
+    "Y confundir *pero* con *porque*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *pronombre* reemplaza.",
+    "Hay *personales*, *posesivos* y *demostrativos*.",
+    "La *conjunción* une.",
+    "Evitá *repeticiones*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRONOMBRE",
+     "reemplaza"
+    ],
+    [
+     "CLASES",
+     "personales, posesivos"
+    ],
+    [
+     "CONJUNCIÓN",
+     "une"
+    ],
+    [
+     "MEJORA",
+     "menos repetición"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

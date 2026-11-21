@@ -1,0 +1,160 @@
+{
+ "slug": "leng1-m12-n1",
+ "step_id": "5b873e4d-3ac2-4900-a5d4-dcb3564d430e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Sustantivos y adjetivos",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 1",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Alegría es un sustantivo 😄"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y no se puede tocar?"
+    },
+    {
+     "yo": false,
+     "txt": "Justo: es abstracto"
+    }
+   ],
+   "titulo": "SUSTANTIVOS Y ADJETIVOS",
+   "sub": "clases y concordancia",
+   "voz": [
+    "Lu dice que alegría es un sustantivo.",
+    "Juan: ¿y no se puede tocar?",
+    "Lu: justo, es abstracto.",
+    "Hoy: *sustantivos y adjetivos*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sustantivo",
+   "texto": "Nombra personas, cosas, lugares e ideas",
+   "emoji": "🏷️",
+   "voz": [
+    "El *sustantivo* nombra personas, animales, cosas, lugares e ideas.",
+    "Tiene *género* y *número*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CONCRETO",
+     "emoji": "🪑"
+    },
+    {
+     "cab": "ABSTRACTO",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "mesa",
+     "caja": 0
+    },
+    {
+     "txt": "alegría",
+     "caja": 1
+    },
+    {
+     "txt": "río",
+     "caja": 0
+    },
+    {
+     "txt": "libertad",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Concreto o abstracto?",
+    "*Mesa* y *río*: concretos.",
+    "*Alegría* y *libertad*: abstractos."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Adjetivo",
+   "texto": "Dice cómo es el sustantivo",
+   "emoji": "🎨",
+   "voz": [
+    "El *adjetivo* acompaña al sustantivo y dice cómo es.",
+    "Concuerda en *género* y *número*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los niños cansada",
+     "bien": "Los niños cansados"
+    },
+    {
+     "mal": "Una casa grandes",
+     "bien": "Una casa grande"
+    }
+   ],
+   "voz": [
+    "Errores de concordancia.",
+    "*Los niños cansada* debe ser *cansados*.",
+    "*Una casa grandes* debe ser *grande*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«Córdoba» es un sustantivo…",
+   "opciones": [
+    "Propio",
+    "Común",
+    "Abstracto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: «Córdoba» es un sustantivo…",
+    "¿Propio, común o abstracto?",
+    "*Propio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *sustantivo* nombra.",
+    "Puede ser *común* o *propio*, *concreto* o *abstracto*.",
+    "El *adjetivo* dice cómo es.",
+    "Y *concuerda* en género y número.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SUSTANTIVO",
+     "nombra"
+    ],
+    [
+     "CLASES",
+     "común, propio"
+    ],
+    [
+     "ADJETIVO",
+     "cómo es"
+    ],
+    [
+     "CONCORDANCIA",
+     "género y número"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

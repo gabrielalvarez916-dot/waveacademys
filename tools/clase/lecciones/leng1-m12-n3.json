@@ -1,0 +1,178 @@
+{
+ "slug": "leng1-m12-n3",
+ "step_id": "ccce7fff-1b21-4add-971f-683902c6906b",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Adverbios y preposiciones",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "Invariables",
+   "emoji": "🔒",
+   "final": "no cambian de género ni de número",
+   "titulo": "ADVERBIOS Y PREPOSICIONES",
+   "sub": "palabras que no cambian",
+   "voz": [
+    "Hay palabras que nunca cambian.",
+    "No tienen género ni número.",
+    "Hoy: *adverbios* y *preposiciones*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Adverbio",
+   "texto": "Modifica a un verbo, un adjetivo u otro adverbio",
+   "emoji": "🧭",
+   "voz": [
+    "El *adverbio* modifica al verbo, a un adjetivo o a otro adverbio.",
+    "Es *invariable*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CLASES DE ADVERBIOS",
+   "columnas": [
+    "Clase",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Lugar",
+     "aquí, cerca"
+    ],
+    [
+     "Tiempo",
+     "hoy, nunca"
+    ],
+    [
+     "Modo",
+     "bien, rápido"
+    ],
+    [
+     "Cantidad",
+     "muy, poco"
+    ]
+   ],
+   "voz": [
+    "Cuatro clases.",
+    "*Lugar*: aquí, cerca.",
+    "*Tiempo*: hoy, nunca.",
+    "*Modo*: bien, rápido.",
+    "*Cantidad*: muy, poco."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "LUGAR",
+     "emoji": "📍"
+    },
+    {
+     "cab": "TIEMPO",
+     "emoji": "⏰"
+    },
+    {
+     "cab": "CANTIDAD",
+     "emoji": "📊"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "allá",
+     "caja": 0
+    },
+    {
+     "txt": "ayer",
+     "caja": 1
+    },
+    {
+     "txt": "mucho",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué clase?",
+    "*Allá*: lugar.",
+    "*Ayer*: tiempo.",
+    "*Mucho*: cantidad."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Preposición",
+   "texto": "Une una palabra con su complemento",
+   "emoji": "🔗",
+   "voz": [
+    "La *preposición* une una palabra con su complemento.",
+    "Como *a*, *con*, *de*, *en*, *para*, *por*, *sin* y *sobre*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«Sin» es…",
+   "opciones": [
+    "Una preposición",
+    "Un adverbio",
+    "Un verbo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: «sin» es…",
+    "¿Una preposición, un adverbio o un verbo?",
+    "*Una preposición*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Poner plural a un adverbio",
+     "bien": "Son invariables"
+    },
+    {
+     "mal": "Confundir adverbio con adjetivo",
+     "bien": "El adverbio no concuerda"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner *plural* a un adverbio.",
+    "Y confundirlo con un *adjetivo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *adverbio* modifica al verbo.",
+    "Hay de *lugar*, *tiempo*, *modo* y *cantidad*.",
+    "La *preposición* une.",
+    "Ambos son *invariables*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ADVERBIO",
+     "modifica"
+    ],
+    [
+     "CLASES",
+     "lugar, tiempo, modo"
+    ],
+    [
+     "PREPOSICIÓN",
+     "une"
+    ],
+    [
+     "INVARIABLES",
+     "no cambian"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
