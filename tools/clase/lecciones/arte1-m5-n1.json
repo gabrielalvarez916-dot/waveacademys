@@ -1,0 +1,153 @@
+{
+ "slug": "arte1-m5-n1",
+ "step_id": "1c3e7d0f-d0ca-4124-a7cf-16b7dfcc6fd5",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Composición: equilibrio, ritmo y puntos de interés",
+ "sub": "Arte y Comunicación I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la forma de organizar los elementos en una obra?",
+   "segundos": 6,
+   "respuesta": "Composición",
+   "emoji": "🧩",
+   "titulo": "COMPONER EL ESPACIO",
+   "sub": "equilibrio, ritmo e interés",
+   "voz": [
+    "Desafío: ¿cómo se llama la forma de organizar los elementos en una obra? Seis segundos.",
+    "Composición.",
+    "Hoy: *equilibrio, ritmo y puntos de interés*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Composición",
+   "texto": "Organizar los elementos del espacio",
+   "emoji": "🧩",
+   "voz": [
+    "La *composición* es la forma de organizar los elementos.",
+    "Guía la mirada."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "TRES CLAVES",
+   "items": [
+    {
+     "cab": "EQUILIBRIO",
+     "txt": "Simétrico o asimétrico"
+    },
+    {
+     "cab": "RITMO",
+     "txt": "Repetición con movimiento"
+    },
+    {
+     "cab": "INTERÉS",
+     "txt": "Lo que atrae la mirada"
+    }
+   ],
+   "voz": [
+    "Tres claves de la composición.",
+    "El *equilibrio*: simétrico o asimétrico.",
+    "El *ritmo*: repetición con movimiento.",
+    "Y el *interés*: lo que atrae la mirada."
+   ]
+  },
+  {
+   "t": "imagen",
+   "src": "data:image/png;base64,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",
+   "ancho": 715,
+   "alto": 308,
+   "titulo": "TRES FORMAS DE COMPONER",
+   "marcas": [
+    {
+     "x": 0.17,
+     "y": 0.55,
+     "txt": "Simétrica"
+    },
+    {
+     "x": 0.43,
+     "y": 0.47,
+     "txt": "Asimétrica"
+    },
+    {
+     "x": 0.83,
+     "y": 0.38,
+     "txt": "Regla de tercios"
+    }
+   ],
+   "voz": [
+    "Mirá tres formas de componer.",
+    "La *simétrica*: partes iguales a ambos lados.",
+    "La *asimétrica*: elementos distintos que se compensan.",
+    "Y la regla de *tercios*: el interés va en una intersección."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un buen punto de interés se ubica…",
+   "opciones": [
+    "En una intersección de tercios",
+    "Siempre en una esquina",
+    "Nunca importa"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el punto de interés.",
+    "¿En una intersección de tercios, en una esquina o nunca importa?",
+    "En una *intersección de tercios*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Todo en el centro",
+     "bien": "Usar los tercios"
+    },
+    {
+     "mal": "Destacar todo a la vez",
+     "bien": "Un protagonista"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner *todo en el centro*.",
+    "Y querer *destacar todo* a la vez."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Componer es *organizar* el espacio.",
+    "El *equilibrio* puede ser simétrico o asimétrico.",
+    "El *ritmo* repite y da movimiento.",
+    "Y el *interés* atrae la mirada.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMPOSICIÓN",
+     "organiza"
+    ],
+    [
+     "EQUILIBRIO",
+     "simétrico o no"
+    ],
+    [
+     "RITMO",
+     "repetición"
+    ],
+    [
+     "INTERÉS",
+     "atrae la mirada"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

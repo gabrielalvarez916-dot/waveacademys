@@ -1,0 +1,160 @@
+{
+ "slug": "arte1-m5-n2",
+ "step_id": "5e653e4d-a451-4b16-9e41-006d915c2095",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Planos, encuadres y puntos de vista",
+ "sub": "Arte y Comunicación I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ENCUADRE",
+   "titular": "El mismo objeto",
+   "bajada": "Cambia según el plano",
+   "emoji": "🎥",
+   "titulo": "PLANOS Y ENCUADRES",
+   "sub": "puntos de vista",
+   "voz": [
+    "Noticia: el mismo objeto cambia según el plano.",
+    "Y según desde dónde se mire.",
+    "Hoy: *planos, encuadres y puntos de vista*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏞️",
+     "txt": "Plano general: todo el lugar"
+    },
+    {
+     "emoji": "🧍",
+     "txt": "Plano medio: de la cintura"
+    },
+    {
+     "emoji": "👁️",
+     "txt": "Primer plano: el detalle"
+    }
+   ],
+   "voz": [
+    "Tres planos, cada vez más cerca. El *plano general* muestra todo el lugar.",
+    "El *plano medio*, de la cintura para arriba.",
+    "Y el *primer plano*, el detalle."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PICADO",
+    "texto": "Desde arriba: el objeto parece chico",
+    "emoji": "⬇️"
+   },
+   "b": {
+    "cab": "CONTRAPICADO",
+    "texto": "Desde abajo: parece grande",
+    "emoji": "⬆️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos puntos de vista.",
+    "El *picado* mira desde arriba.",
+    "El *contrapicado* mira desde abajo."
+   ]
+  },
+  {
+   "t": "imagen",
+   "src": "data:image/png;base64,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",
+   "ancho": 715,
+   "alto": 308,
+   "titulo": "PLANOS DE UNA IMAGEN",
+   "marcas": [
+    {
+     "x": 0.165,
+     "y": 0.7,
+     "txt": "Plano general"
+    },
+    {
+     "x": 0.5,
+     "y": 0.5,
+     "txt": "Plano medio"
+    },
+    {
+     "x": 0.83,
+     "y": 0.5,
+     "txt": "Primer plano"
+    }
+   ],
+   "voz": [
+    "Mirá la misma figura en tres planos.",
+    "En el *plano general* se ve chica.",
+    "En el *plano medio* se ve de la cintura.",
+    "Y en el *primer plano* ocupa casi todo el cuadro."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El recorte de la escena que mostramos es el…",
+   "opciones": [
+    "Encuadre",
+    "Ritmo",
+    "Contorno"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el recorte de la escena.",
+    "¿Encuadre, ritmo o contorno?",
+    "El *encuadre*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Mismo plano siempre",
+     "bien": "Probar varios planos"
+    },
+    {
+     "mal": "El punto de vista no importa",
+     "bien": "Cambia el mensaje"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *siempre el mismo plano*.",
+    "Y creer que el *punto de vista* no importa."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay planos *general, medio y primer plano*.",
+    "El *encuadre* elige qué entra.",
+    "El punto de vista puede ser *picado o contrapicado*.",
+    "Y todo cambia el *mensaje*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PLANOS",
+     "tres distancias"
+    ],
+    [
+     "ENCUADRE",
+     "qué entra"
+    ],
+    [
+     "PUNTO DE VISTA",
+     "arriba o abajo"
+    ],
+    [
+     "MENSAJE",
+     "cambia con la elección"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

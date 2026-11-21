@@ -1,0 +1,163 @@
+{
+ "slug": "arte1-m6-n4",
+ "step_id": "b16d80ec-a9aa-4eb4-a90d-602a8ec74560",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Armar volúmenes en papel y cartón",
+ "sub": "Arte y Comunicación I · Misión 6 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama el dibujo plano de un volumen abierto?",
+   "segundos": 6,
+   "respuesta": "Desarrollo plano",
+   "emoji": "📦",
+   "titulo": "VOLÚMENES",
+   "sub": "en papel y cartón",
+   "voz": [
+    "Desafío: ¿cómo se llama el dibujo plano de un volumen abierto? Seis segundos.",
+    "Desarrollo plano.",
+    "Hoy: *volúmenes en papel y cartón*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "ARMAR UN CUBO",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Dibujar",
+     "emoji": "✏️"
+    },
+    {
+     "fecha": "2",
+     "txt": "Cortar",
+     "emoji": "✂️"
+    },
+    {
+     "fecha": "3",
+     "txt": "Plegar",
+     "emoji": "📐"
+    },
+    {
+     "fecha": "4",
+     "txt": "Pegar",
+     "emoji": "🧴"
+    }
+   ],
+   "voz": [
+    "Cuatro pasos para armar un cubo. Primero, *dibujar* el desarrollo.",
+    "Después, *cortar*.",
+    "Luego, *plegar*.",
+    "Y al final, *pegar*."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "6",
+   "antes": "caras",
+   "despues": "tiene un cubo",
+   "texto": "Y todas son cuadrados iguales",
+   "emoji": "🎲",
+   "voz": [
+    "Un dato del cubo.",
+    "Tiene *seis caras*."
+   ]
+  },
+  {
+   "t": "imagen",
+   "src": "data:image/png;base64,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",
+   "ancho": 492,
+   "alto": 377,
+   "titulo": "DESARROLLO PLANO DE UN CUBO",
+   "marcas": [
+    {
+     "x": 0.16,
+     "y": 0.5,
+     "txt": "Caras"
+    },
+    {
+     "x": 0.49,
+     "y": 0.65,
+     "txt": "Pliegues"
+    },
+    {
+     "x": 0.955,
+     "y": 0.5,
+     "txt": "Solapa para pegar"
+    }
+   ],
+   "voz": [
+    "Mirá el desarrollo plano de un cubo.",
+    "Las *caras* son seis cuadrados.",
+    "Los *pliegues* se marcan antes de doblar.",
+    "Y la *solapa* se pega para cerrar el cubo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La pestaña que se pega para unir caras es la…",
+   "opciones": [
+    "Solapa",
+    "Base",
+    "Arista"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la pestaña de pegado.",
+    "¿Solapa, base o arista?",
+    "La *solapa*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cortar sin trazar",
+     "bien": "Dibujar antes"
+    },
+    {
+     "mal": "Mucho pegamento",
+     "bien": "Poco y parejo"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Cortar sin trazar* el desarrollo.",
+    "Y poner *mucho pegamento*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *desarrollo plano* es el volumen abierto.",
+    "Se *corta* y se *pliega*.",
+    "Se pega con *solapas*.",
+    "Y se *decora* al final.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DESARROLLO",
+     "volumen abierto"
+    ],
+    [
+     "CORTAR",
+     "siguiendo líneas"
+    ],
+    [
+     "PLEGAR",
+     "marcando antes"
+    ],
+    [
+     "SOLAPA",
+     "para pegar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

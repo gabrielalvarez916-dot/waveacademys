@@ -48,4 +48,13 @@ poner('arte1-m3-n2', escena(b, 'CÍRCULO CROMÁTICO', [(*NA, 'Cálidos'), (*VI, 
 b, _ = foto(4, 1)
 poner('arte1-m4-n1', escena(b, 'TEXTURAS VISUALES', [(0.16, 0.29, 'Rugosa'), (0.84, 0.29, 'Punteada'), (0.49, 0.78, 'Ondulada')],
       ['Mirá seis texturas visuales.', 'La *rugosa*, hecha con trazos cortos.', 'La *punteada*, hecha con puntos.', 'Y la *ondulada*, con líneas curvas.']))
+b, _ = foto(5, 1)
+poner('arte1-m5-n1', escena(b, 'TRES FORMAS DE COMPONER', [(0.17, 0.55, 'Simétrica'), (0.43, 0.47, 'Asimétrica'), (0.83, 0.38, 'Regla de tercios')],
+      ['Mirá tres formas de componer.', 'La *simétrica*: partes iguales a ambos lados.', 'La *asimétrica*: elementos distintos que se compensan.', 'Y la regla de *tercios*: el interés va en una intersección.']))
+b, _ = foto(5, 2)
+poner('arte1-m5-n2', escena(b, 'PLANOS DE UNA IMAGEN', [(0.165, 0.7, 'Plano general'), (0.5, 0.5, 'Plano medio'), (0.83, 0.5, 'Primer plano')],
+      ['Mirá la misma figura en tres planos.', 'En el *plano general* se ve chica.', 'En el *plano medio* se ve de la cintura.', 'Y en el *primer plano* ocupa casi todo el cuadro.']))
+b, _ = foto(6, 4)
+poner('arte1-m6-n4', escena(b, 'DESARROLLO PLANO DE UN CUBO', [(0.16, 0.5, 'Caras'), (0.49, 0.65, 'Pliegues'), (0.955, 0.5, 'Solapa para pegar')],
+      ['Mirá el desarrollo plano de un cubo.', 'Las *caras* son seis cuadrados.', 'Los *pliegues* se marcan antes de doblar.', 'Y la *solapa* se pega para cerrar el cubo.']))
 print('ok')
