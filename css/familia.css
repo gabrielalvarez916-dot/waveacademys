@@ -579,3 +579,10 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .fa-hist li { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
 .pf-gris { opacity: .6; filter: grayscale(.7); }
+
+/* Juana: informes semanales */
+.ju-informe.nuevo { border-color: var(--wave, #0f766e); }
+.ju-nuevo { background: #0f766e; color: #fff; border-radius: 999px; padding: 1px 8px; font-size: .72rem; font-weight: 700; margin-left: 6px; }
+.ju-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+.ju-chips span { background: #eef6f5; border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 600; }
+.ju-texto { line-height: 1.55; margin: 0; }

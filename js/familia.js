@@ -1238,7 +1238,8 @@
     programacion: vistaProgramacion,
     pagos: vistaPagos,
     facturacion: vistaPagos,
-    tutorias: vistaTutorias
+    tutorias: vistaTutorias,
+    juana: function () { if (window.WaveJuana) WaveJuana.vista(vista); }
   };
 
   function ruta() {
