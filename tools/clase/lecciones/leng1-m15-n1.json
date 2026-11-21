@@ -1,0 +1,180 @@
+{
+ "slug": "leng1-m15-n1",
+ "step_id": "644960f1-90d7-48ce-8f43-6eebae2e10c8",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Palabras que enlazan ideas",
+ "sub": "Lengua y Literatura I · Misión 15 · Nivel 1",
+ "escenas": [
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SUELTAS",
+    "emoji": "🧩",
+    "texto": "Estudié mucho. Aprobé."
+   },
+   "despues": {
+    "cab": "ENLAZADAS",
+    "emoji": "🔗",
+    "texto": "Estudié mucho; por eso aprobé."
+   },
+   "titulo": "PALABRAS QUE ENLAZAN IDEAS",
+   "sub": "conectores",
+   "voz": [
+    "Sueltas: estudié mucho. Aprobé.",
+    "Enlazadas: estudié mucho; por eso aprobé.",
+    "Hoy: *palabras que enlazan ideas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Cohesión",
+   "texto": "Enlaza las partes de un texto",
+   "emoji": "🔗",
+   "voz": [
+    "La *cohesión* enlaza las partes de un texto.",
+    "Sin ella, parece una lista de oraciones sueltas."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CONECTORES",
+   "columnas": [
+    "Función",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Adición",
+     "además"
+    ],
+    [
+     "Oposición",
+     "sin embargo"
+    ],
+    [
+     "Causa",
+     "porque"
+    ],
+    [
+     "Consecuencia",
+     "por eso"
+    ],
+    [
+     "Orden",
+     "luego"
+    ]
+   ],
+   "voz": [
+    "Clases de conectores.",
+    "*Adición*: además.",
+    "*Oposición*: sin embargo.",
+    "*Causa*: porque.",
+    "*Consecuencia*: por eso.",
+    "*Orden*: luego."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "OPOSICIÓN",
+     "emoji": "↔️"
+    },
+    {
+     "cab": "CAUSA",
+     "emoji": "❓"
+    },
+    {
+     "cab": "CONSECUENCIA",
+     "emoji": "➡️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "pero",
+     "caja": 0
+    },
+    {
+     "txt": "porque",
+     "caja": 1
+    },
+    {
+     "txt": "por eso",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "¿Qué relación?",
+    "*Pero*: oposición.",
+    "*Porque*: causa.",
+    "*Por eso*: consecuencia."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué conector expresa oposición?",
+   "opciones": [
+    "Sin embargo",
+    "Además",
+    "Luego"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué conector expresa oposición?",
+    "¿Sin embargo, además o luego?",
+    "*Sin embargo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Repetir siempre «y entonces»",
+     "bien": "Variar los conectores"
+    },
+    {
+     "mal": "Conector que no corresponde",
+     "bien": "Pensar la relación"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Repetir *y entonces*.",
+    "Y usar un conector que *no corresponde*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *cohesión* enlaza.",
+    "Los *conectores* expresan adición, oposición, causa y consecuencia.",
+    "Elegí según la *relación*.",
+    "Y no abuses.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COHESIÓN",
+     "enlaza"
+    ],
+    [
+     "CONECTORES",
+     "varias clases"
+    ],
+    [
+     "ELEGIR",
+     "según la relación"
+    ],
+    [
+     "MEDIDA",
+     "sin abusar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

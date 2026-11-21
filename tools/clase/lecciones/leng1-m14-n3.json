@@ -1,0 +1,192 @@
+{
+ "slug": "leng1-m14-n3",
+ "step_id": "755a15ad-005c-484f-8f01-d382866e0a4e",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Debatimos con respeto",
+ "sub": "Lengua y Literatura I · Misión 14 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DEBATE",
+   "titular": "Dos equipos, una idea: ¿tareas sí o no?",
+   "bajada": "Con turnos y respeto",
+   "emoji": "🎙️",
+   "titulo": "DEBATIMOS CON RESPETO",
+   "sub": "turnos, razones y escucha",
+   "voz": [
+    "Debate: dos equipos y una idea, ¿tareas sí o no?",
+    "Con turnos y respeto.",
+    "Hoy: *debatimos con respeto*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "ROLES",
+   "columnas": [
+    "Rol",
+    "Función"
+   ],
+   "filas": [
+    [
+     "Moderador",
+     "Da la palabra"
+    ],
+    [
+     "A favor",
+     "Defiende"
+    ],
+    [
+     "En contra",
+     "Cuestiona"
+    ],
+    [
+     "Público",
+     "Escucha"
+    ]
+   ],
+   "voz": [
+    "Los roles.",
+    "El *moderador* da la palabra.",
+    "El equipo *a favor* defiende.",
+    "El equipo *en contra* cuestiona.",
+    "Y el *público* escucha."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "RESPETO",
+     "emoji": "🤝"
+    },
+    {
+     "cab": "FALTA DE RESPETO",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pedir la palabra",
+     "caja": 0
+    },
+    {
+     "txt": "Interrumpir",
+     "caja": 1
+    },
+    {
+     "txt": "Criticar la idea",
+     "caja": 0
+    },
+    {
+     "txt": "Burlarse",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Respeto o no?",
+    "*Pedir la palabra* y *criticar la idea*: respeto.",
+    "*Interrumpir* y *burlarse*: no."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "REFUTAR",
+   "items": [
+    {
+     "txt": "Reconozco",
+     "emoji": "🤝"
+    },
+    {
+     "txt": "Discrepo",
+     "emoji": "↔️"
+    },
+    {
+     "txt": "Propongo",
+     "emoji": "🛠️"
+    }
+   ],
+   "voz": [
+    "Para refutar sin atacar.",
+    "*Reconozco* algo.",
+    "*Discrepo* con una razón.",
+    "Y *propongo*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién da la palabra en un debate?",
+   "opciones": [
+    "El moderador",
+    "El público",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿quién da la palabra?",
+    "¿El moderador, el público o nadie?",
+    "El *moderador*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Preparen dos argumentos a favor y dos en contra de un tema",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: preparen argumentos.",
+    "Dos *a favor* y dos *en contra*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Interrumpir a los gritos",
+     "bien": "Esperar el turno"
+    },
+    {
+     "mal": "Burlarse del otro",
+     "bien": "Criticar la idea"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Interrumpir* a los gritos.",
+    "Y *burlarse* del otro."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *debate* defiende ideas con razones.",
+    "Hay *moderador* y *equipos*.",
+    "Se respetan los *turnos*.",
+    "Y se *refuta* sin atacar.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "DEBATE",
+     "con razones"
+    ],
+    [
+     "ROLES",
+     "moderador y equipos"
+    ],
+    [
+     "TURNOS",
+     "respeto"
+    ],
+    [
+     "REFUTAR",
+     "sin atacar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

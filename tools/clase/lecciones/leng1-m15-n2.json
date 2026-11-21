@@ -1,0 +1,168 @@
+{
+ "slug": "leng1-m15-n2",
+ "step_id": "2927bee0-65cb-4f55-8f6f-1a86b72467f0",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Referencias y sustituciones",
+ "sub": "Lengua y Literatura I · Misión 15 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Evitá repetir: «María tiene un gato. El gato de María es negro».",
+   "segundos": 8,
+   "respuesta": "María tiene un gato negro",
+   "emoji": "🐈‍⬛",
+   "titulo": "REFERENCIAS Y SUSTITUCIONES",
+   "sub": "no repetir",
+   "voz": [
+    "Desafío: evitá repetir. María tiene un gato. El gato de María es negro. Ocho segundos.",
+    "María tiene un gato negro.",
+    "Hoy: *referencias y sustituciones*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "RECURSOS",
+   "columnas": [
+    "Recurso",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Pronombre",
+     "Ella llegó"
+    ],
+    [
+     "Sinónimo",
+     "casa, hogar"
+    ],
+    [
+     "Palabra general",
+     "el animal"
+    ],
+    [
+     "Elipsis",
+     "Llegó y saludó"
+    ]
+   ],
+   "voz": [
+    "Recursos para no repetir.",
+    "El *pronombre*: ella llegó.",
+    "El *sinónimo*: casa y hogar.",
+    "La *palabra general*: el animal.",
+    "Y la *elipsis*: llegó y saludó."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Elipsis",
+   "texto": "Omitir lo que se entiende por el contexto",
+   "emoji": "✂️",
+   "voz": [
+    "La *elipsis* omite una palabra que se entiende por el contexto.",
+    "En *Sofía llegó y saludó*, no repetimos Sofía."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PRONOMBRE",
+     "emoji": "👤"
+    },
+    {
+     "cab": "SINÓNIMO",
+     "emoji": "🔁"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "ella",
+     "caja": 0
+    },
+    {
+     "txt": "hogar",
+     "caja": 1
+    },
+    {
+     "txt": "lo",
+     "caja": 0
+    },
+    {
+     "txt": "vivienda",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Pronombre o sinónimo?",
+    "*Ella* y *lo*: pronombres.",
+    "*Hogar* y *vivienda*: sinónimos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué evita repetir «Sofía»?",
+   "opciones": [
+    "Ella",
+    "Pero",
+    "Luego"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué evita repetir «Sofía»?",
+    "¿Ella, pero o luego?",
+    "*Ella*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Repetir el nombre en cada oración",
+     "bien": "Pronombres y elipsis"
+    },
+    {
+     "mal": "Cambiar tanto que no se entiende",
+     "bien": "Variar con sentido"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Repetir* el nombre.",
+    "Y cambiar tanto que *no se entiende*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Evitá repetir con *pronombres*.",
+    "Con *sinónimos*.",
+    "Con *palabras generales*.",
+    "Y con *elipsis*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PRONOMBRE",
+     "ella, lo"
+    ],
+    [
+     "SINÓNIMO",
+     "hogar"
+    ],
+    [
+     "GENERAL",
+     "el animal"
+    ],
+    [
+     "ELIPSIS",
+     "se omite"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

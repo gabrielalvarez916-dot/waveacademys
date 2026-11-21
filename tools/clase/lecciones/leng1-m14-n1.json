@@ -1,0 +1,207 @@
+{
+ "slug": "leng1-m14-n1",
+ "step_id": "7a2ec037-f7ef-4ea0-b088-9bd6006a40a8",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Preparo una exposición",
+ "sub": "Lengua y Literatura I · Misión 14 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuáles son las tres partes de una exposición?",
+   "segundos": 6,
+   "respuesta": "Inicio, desarrollo y cierre",
+   "emoji": "🎤",
+   "titulo": "PREPARO UNA EXPOSICIÓN",
+   "sub": "orden, apoyos y voz",
+   "voz": [
+    "Desafío: ¿cuáles son las tres partes de una exposición? Seis segundos.",
+    "Inicio, desarrollo y cierre.",
+    "Hoy: *preparo una exposición*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ESQUEMA",
+   "items": [
+    {
+     "txt": "Inicio",
+     "emoji": "👋"
+    },
+    {
+     "txt": "Desarrollo",
+     "emoji": "📚"
+    },
+    {
+     "txt": "Cierre",
+     "emoji": "🔚"
+    }
+   ],
+   "voz": [
+    "Una exposición tiene tres partes.",
+    "El *inicio*: saludo y tema.",
+    "El *desarrollo*: tres o cuatro ideas con ejemplos.",
+    "Y el *cierre*: resumen y agradecimiento."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "APOYO BUENO",
+    "texto": "Pocas palabras e imágenes",
+    "emoji": "🖼️"
+   },
+   "b": {
+    "cab": "APOYO MALO",
+    "texto": "Un párrafo para leer",
+    "emoji": "📄"
+   },
+   "signo": "vs",
+   "voz": [
+    "Los apoyos ayudan, pero no se leen.",
+    "Un buen apoyo tiene *pocas palabras*.",
+    "Uno malo es un *párrafo* para leer."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "VOZ Y CUERPO",
+   "columnas": [
+    "Aspecto",
+    "Consejo"
+   ],
+   "filas": [
+    [
+     "Voz",
+     "Clara"
+    ],
+    [
+     "Ritmo",
+     "Ni rápido ni lento"
+    ],
+    [
+     "Mirada",
+     "Al público"
+    ],
+    [
+     "Tiempo",
+     "Ensayar"
+    ]
+   ],
+   "voz": [
+    "Cuidá cuatro cosas.",
+    "La *voz*, clara.",
+    "El *ritmo*, ni rápido ni lento.",
+    "La *mirada*, al público.",
+    "Y el *tiempo*: ensayá con reloj."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SÍ",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Mirar al público",
+     "caja": 0
+    },
+    {
+     "txt": "Leer todo",
+     "caja": 1
+    },
+    {
+     "txt": "Ensayar con reloj",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Conviene o no?",
+    "*Mirar al público* y *ensayar con reloj*: sí.",
+    "*Leer todo*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es la última parte de una exposición?",
+   "opciones": [
+    "Cierre",
+    "Inicio",
+    "Desarrollo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuál es la última parte?",
+    "¿Cierre, inicio o desarrollo?",
+    "El *cierre*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Armá el esquema de una exposición de tres minutos",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: armá el esquema de una exposición.",
+    "De *tres minutos*, con inicio, desarrollo y cierre."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Leer todo de un papel",
+     "bien": "Mirar al público"
+    },
+    {
+     "mal": "Diapositivas llenas de texto",
+     "bien": "Pocas palabras"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Leer todo* de un papel.",
+    "Y llenar de *texto* los apoyos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Una exposición tiene *inicio*, *desarrollo* y *cierre*.",
+    "Los apoyos llevan *pocas palabras*.",
+    "Cuidá la *voz*, la *mirada* y el *tiempo*.",
+    "Y *ensayá*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PARTES",
+     "tres"
+    ],
+    [
+     "APOYOS",
+     "pocas palabras"
+    ],
+    [
+     "VOZ",
+     "clara"
+    ],
+    [
+     "ENSAYO",
+     "con reloj"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

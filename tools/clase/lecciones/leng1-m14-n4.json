@@ -1,0 +1,207 @@
+{
+ "slug": "leng1-m14-n4",
+ "step_id": "f5c85cb7-7cd4-4455-be07-500166bbf469",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Evaluamos nuestros debates",
+ "sub": "Lengua y Literatura I · Misión 14 · Nivel 4",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cómo me fue en el debate? 😬"
+    },
+    {
+     "yo": true,
+     "txt": "Tus ejemplos fueron claros 👏"
+    },
+    {
+     "yo": true,
+     "txt": "Podés esperar más tu turno 🙂"
+    }
+   ],
+   "titulo": "EVALUAMOS NUESTROS DEBATES",
+   "sub": "devolución con respeto",
+   "voz": [
+    "Lu pregunta cómo le fue en el debate.",
+    "Juan: tus ejemplos fueron claros.",
+    "Y: podés esperar más tu turno.",
+    "Hoy: *evaluamos nuestros debates*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CRITERIOS",
+   "columnas": [
+    "Criterio",
+    "Pregunta"
+   ],
+   "filas": [
+    [
+     "Claridad",
+     "¿Se entendió la tesis?"
+    ],
+    [
+     "Argumentos",
+     "¿Hubo razones?"
+    ],
+    [
+     "Respeto",
+     "¿Se respetaron turnos?"
+    ],
+    [
+     "Tiempo",
+     "¿Se cumplió?"
+    ]
+   ],
+   "voz": [
+    "Los criterios.",
+    "*Claridad*: ¿se entendió la tesis?",
+    "*Argumentos*: ¿hubo razones?",
+    "*Respeto*: ¿se respetaron turnos?",
+    "*Tiempo*: ¿se cumplió?"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Grilla",
+   "texto": "Cuadro de criterios para evaluar",
+   "emoji": "📊",
+   "voz": [
+    "La *grilla* es un cuadro de criterios para evaluar.",
+    "Ordena lo que se mira."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UNA BUENA DEVOLUCIÓN",
+   "items": [
+    {
+     "txt": "Un acierto",
+     "emoji": "✅"
+    },
+    {
+     "txt": "Otro acierto",
+     "emoji": "✅"
+    },
+    {
+     "txt": "Una mejora",
+     "emoji": "🛠️"
+    }
+   ],
+   "voz": [
+    "Una devolución útil.",
+    "Dos *aciertos*.",
+    "Y una *mejora*.",
+    "Siempre con *ejemplos*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DEVOLUCIÓN ÚTIL",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO SIRVE",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Con ejemplos",
+     "caja": 0
+    },
+    {
+     "txt": "Estuvo bien",
+     "caja": 1
+    },
+    {
+     "txt": "Sobre la tarea",
+     "caja": 0
+    },
+    {
+     "txt": "Sobre la persona",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Sirve o no?",
+    "*Con ejemplos* y *sobre la tarea*: sirven.",
+    "*Estuvo bien* y *sobre la persona*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas mejoras lleva una devolución útil?",
+   "opciones": [
+    "Una",
+    "Diez",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cuántas mejoras lleva una devolución?",
+    "¿Una, diez o ninguna?",
+    "*Una*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Devolución sin ejemplos",
+     "bien": "Con ejemplos concretos"
+    },
+    {
+     "mal": "Criticar a la persona",
+     "bien": "Criticar la tarea"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Sin ejemplos*.",
+    "Y criticar a la *persona*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Evaluá con *criterios*.",
+    "Usá una *grilla*.",
+    "Da *dos aciertos* y *una mejora*.",
+    "Y *autoevaluate*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CRITERIOS",
+     "claridad, respeto"
+    ],
+    [
+     "GRILLA",
+     "ordena"
+    ],
+    [
+     "DEVOLUCIÓN",
+     "dos y una"
+    ],
+    [
+     "AUTOEVALUACIÓN",
+     "un objetivo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

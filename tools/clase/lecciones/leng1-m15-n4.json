@@ -1,0 +1,180 @@
+{
+ "slug": "leng1-m15-n4",
+ "step_id": "ac736270-c794-41db-8650-d6aca94e7af8",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Reviso la cohesión",
+ "sub": "Lengua y Literatura I · Misión 15 · Nivel 4",
+ "escenas": [
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "😵",
+    "texto": "Fui al parque. Fui con mi hermano. Jugamos. Nos cansamos."
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "😊",
+    "texto": "Fui al parque con mi hermano; jugamos tanto que nos cansamos."
+   },
+   "titulo": "REVISO LA COHESIÓN",
+   "sub": "reescribir mejor",
+   "voz": [
+    "Antes: fui al parque. Fui con mi hermano. Jugamos. Nos cansamos.",
+    "Después: fui al parque con mi hermano; jugamos tanto que nos cansamos.",
+    "Hoy: *reviso la cohesión*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LISTA DE REVISIÓN",
+   "items": [
+    {
+     "txt": "¿Conectores?",
+     "emoji": "🔗"
+    },
+    {
+     "txt": "¿Repeticiones?",
+     "emoji": "🔁"
+    },
+    {
+     "txt": "¿Párrafos?",
+     "emoji": "📄"
+    },
+    {
+     "txt": "¿Signos?",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "Cuatro preguntas.",
+    "¿Hay *conectores* donde hacen falta?",
+    "¿Hay *repeticiones*?",
+    "¿Cada *párrafo* tiene una idea?",
+    "¿Están bien los *signos*?"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Una pasada por vez",
+   "texto": "Un objetivo en cada lectura",
+   "emoji": "1️⃣",
+   "voz": [
+    "Revisá *una pasada por vez*.",
+    "Primero los conectores, después las repeticiones y por último los signos."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MEJORA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO MEJORA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Pronombres",
+     "caja": 0
+    },
+    {
+     "txt": "Repetir nombre",
+     "caja": 1
+    },
+    {
+     "txt": "Conectores",
+     "caja": 0
+    },
+    {
+     "txt": "Todo junto",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Mejora o no?",
+    "*Pronombres* y *conectores*: mejoran.",
+    "*Repetir nombre* y *todo junto*: no."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo conviene revisar?",
+   "opciones": [
+    "Una pasada por vez",
+    "Todo a la vez",
+    "Sin leer"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿cómo conviene revisar?",
+    "¿Una pasada por vez, todo a la vez o sin leer?",
+    "*Una pasada por vez*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Revisá un texto tuyo con la lista y reescribilo",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: revisá un texto tuyo.",
+    "Usá la *lista de revisión* y reescribilo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Revisar todo a la vez",
+     "bien": "Una pasada por vez"
+    },
+    {
+     "mal": "Conectores sin pensar",
+     "bien": "Elegir según la relación"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Revisar *todo a la vez*.",
+    "Y agregar *conectores sin pensar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Leé como *lector*.",
+    "Usá la *lista de revisión*.",
+    "Hacé *una pasada por vez*.",
+    "Y *comparé* antes y después.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "LEER",
+     "como lector"
+    ],
+    [
+     "LISTA",
+     "cuatro preguntas"
+    ],
+    [
+     "PASADAS",
+     "una por vez"
+    ],
+    [
+     "COMPARAR",
+     "antes y después"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

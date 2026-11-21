@@ -1,0 +1,202 @@
+{
+ "slug": "leng1-m14-n2",
+ "step_id": "d3e5dd65-fb48-44b4-9f31-d6d18d090b99",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Escucho y tomo notas",
+ "sub": "Lengua y Literatura I · Misión 14 · Nivel 2",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Mica",
+    "emoji": "👧"
+   },
+   "lugar": "🎧",
+   "lineas": [
+    "Mica copió todo lo que dijo el profe.",
+    "Pero no entendió nada de lo que escuchó."
+   ],
+   "titulo": "ESCUCHO Y TOMO NOTAS",
+   "sub": "escucha activa",
+   "voz": [
+    "Mica copió todo lo que dijo el profe.",
+    "Pero no entendió nada de lo que escuchó.",
+    "Hoy: *escucho y tomo notas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Escucha activa",
+   "texto": "Escuchar con atención, sin interrumpir",
+   "emoji": "👂",
+   "voz": [
+    "La *escucha activa* es escuchar con atención y sin interrumpir.",
+    "Se busca entender y recordar."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SE ANOTA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO HACE FALTA",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Fechas",
+     "caja": 0
+    },
+    {
+     "txt": "Palabras clave",
+     "caja": 0
+    },
+    {
+     "txt": "Chistes",
+     "caja": 1
+    },
+    {
+     "txt": "Números",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Se anota o no?",
+    "*Fechas*, *palabras clave* y *números*: se anotan.",
+    "*Chistes*: no hace falta."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "SÍMBOLOS",
+   "columnas": [
+    "Símbolo",
+    "Significa"
+   ],
+   "filas": [
+    [
+     "→",
+     "lleva a"
+    ],
+    [
+     "=",
+     "es igual a"
+    ],
+    [
+     "+",
+     "además"
+    ],
+    [
+     "!",
+     "importante"
+    ]
+   ],
+   "voz": [
+    "Símbolos para ahorrar tiempo.",
+    "La *flecha*: lleva a.",
+    "El *igual*: es igual a.",
+    "El *más*: además.",
+    "Y la *admiración*: importante."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DESPUÉS DE CLASE",
+   "items": [
+    {
+     "txt": "Releo",
+     "emoji": "📖"
+    },
+    {
+     "txt": "Subrayo",
+     "emoji": "🖍️"
+    },
+    {
+     "txt": "Resumo",
+     "emoji": "📝"
+    },
+    {
+     "txt": "Anoto dudas",
+     "emoji": "❓"
+    }
+   ],
+   "voz": [
+    "Después de la clase.",
+    "*Releo* y completo.",
+    "*Subrayo* lo principal.",
+    "Escribo un *resumen*.",
+    "Y anoto mis *dudas*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué se anota al escuchar?",
+   "opciones": [
+    "Lo esencial",
+    "Todo textual",
+    "Nada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué se anota al escuchar?",
+    "¿Lo esencial, todo textual o nada?",
+    "*Lo esencial*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Copiar todo textual",
+     "bien": "Anotar lo esencial"
+    },
+    {
+     "mal": "No repasar las notas",
+     "bien": "Repasar después"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Copiar todo* textual.",
+    "Y *no repasar* las notas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *escucha activa* busca entender.",
+    "Anotá *palabras clave*.",
+    "Usá *símbolos*.",
+    "Y *repasá* después de clase.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ESCUCHA",
+     "activa"
+    ],
+    [
+     "NOTAS",
+     "palabras clave"
+    ],
+    [
+     "SÍMBOLOS",
+     "ahorran tiempo"
+    ],
+    [
+     "REPASO",
+     "después"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

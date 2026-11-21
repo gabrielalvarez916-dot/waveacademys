@@ -1,0 +1,191 @@
+{
+ "slug": "leng1-m15-n3",
+ "step_id": "9489ec38-dbbf-4975-84f4-73d662e5b6d0",
+ "materia": "Lengua y Literatura I",
+ "titulo": "Puntuación y párrafos",
+ "sub": "Lengua y Literatura I · Misión 15 · Nivel 3",
+ "escenas": [
+  {
+   "t": "gancho",
+   "grande": "1 idea",
+   "emoji": "📄",
+   "final": "por párrafo",
+   "titulo": "PUNTUACIÓN Y PÁRRAFOS",
+   "sub": "organizar el texto",
+   "voz": [
+    "Un párrafo, una idea.",
+    "Y los signos marcan las pausas.",
+    "Hoy: *puntuación y párrafos*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "SIGNOS",
+   "columnas": [
+    "Signo",
+    "Función"
+   ],
+   "filas": [
+    [
+     "Coma",
+     "Pausa breve"
+    ],
+    [
+     "Punto y seguido",
+     "Sigue el párrafo"
+    ],
+    [
+     "Punto y aparte",
+     "Nuevo párrafo"
+    ],
+    [
+     "Punto final",
+     "Cierra el texto"
+    ]
+   ],
+   "voz": [
+    "Cada signo, una pausa.",
+    "La *coma*: pausa breve.",
+    "El *punto y seguido*: sigue el párrafo.",
+    "El *punto y aparte*: nuevo párrafo.",
+    "Y el *punto final*: cierra el texto."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "USOS DE LA COMA",
+   "columnas": [
+    "Uso",
+    "Ejemplo"
+   ],
+   "filas": [
+    [
+     "Enumerar",
+     "pan, leche y queso"
+    ],
+    [
+     "Tras conector",
+     "Sin embargo, llegué"
+    ],
+    [
+     "Aclarar",
+     "Mi tía, que vive en Salta"
+    ]
+   ],
+   "voz": [
+    "Tres usos de la coma.",
+    "*Enumerar*.",
+    "Después de un *conector*.",
+    "Y para *aclarar*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "COMA",
+     "emoji": "➖"
+    },
+    {
+     "cab": "PUNTO Y APARTE",
+     "emoji": "⏹️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Enumerar",
+     "caja": 0
+    },
+    {
+     "txt": "Cambiar de idea",
+     "caja": 1
+    },
+    {
+     "txt": "Tras «sin embargo»",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Qué signo?",
+    "*Enumerar* y después de *sin embargo*: coma.",
+    "*Cambiar de idea*: punto y aparte."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué signo cierra un párrafo?",
+   "opciones": [
+    "Punto y aparte",
+    "Coma",
+    "Dos puntos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué signo cierra un párrafo?",
+    "¿Punto y aparte, coma o dos puntos?",
+    "*Punto y aparte*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TU TURNO",
+   "texto": "Escribí un texto de dos párrafos con comas y puntos bien usados",
+   "emoji": "✍️",
+   "voz": [
+    "Ahora te toca: escribí dos párrafos.",
+    "Cuidá las *comas* y los *puntos*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Coma entre sujeto y verbo",
+     "bien": "Sin coma"
+    },
+    {
+     "mal": "Todo en un solo bloque",
+     "bien": "Un párrafo por idea"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner *coma* entre sujeto y verbo.",
+    "Y escribir *todo en un bloque*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *coma* marca una pausa breve.",
+    "El *punto y aparte* cierra un párrafo.",
+    "Un párrafo, *una idea*.",
+    "Y cambiá de párrafo al cambiar de idea.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "COMA",
+     "pausa breve"
+    ],
+    [
+     "PUNTO Y APARTE",
+     "nuevo párrafo"
+    ],
+    [
+     "PÁRRAFO",
+     "una idea"
+    ],
+    [
+     "REVISAR",
+     "los signos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
