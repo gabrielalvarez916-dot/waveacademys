@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat1-m13-n1",
+ "step_id": "9904c8c2-be39-45e6-a2ac-d312e6d729a7",
+ "materia": "Matemática 1",
+ "titulo": "Juntar y agregar",
+ "sub": "Matemática 1 · Misión 13 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎪",
+   "lineas": [
+    "Hay feria de juegos en la escuela.",
+    "Sofi y Tomi ganan premios.",
+    "¿Cuántos ganaron?"
+   ],
+   "titulo": "PROBLEMAS",
+   "sub": "de juntar y agregar",
+   "voz": [
+    "¡Hay *feria de juegos* en la escuela!",
+    "Sofi y Tomi ganan premios.",
+    "¿Cuántos premios ganaron?",
+    "Hoy: *problemas de juntar y agregar*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO RESOLVER",
+   "items": [
+    {
+     "txt": "Leo",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Pienso la cuenta",
+     "emoji": "🤔"
+    },
+    {
+     "txt": "Respondo",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Primero *leo* el problema.",
+    "Después *pienso* la cuenta.",
+    "Al final, *respondo* la pregunta."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "⚽",
+    "n": 5
+   },
+   "b": {
+    "emoji": "⚽",
+    "n": 3
+   },
+   "texto": "5 + 3 = 8",
+   "voz": [
+    "Sofi gana *5* pelotas. Tomi gana *3*.",
+    "¿Cuántas ganaron? Las juntamos.",
+    "¡Ganaron *8* pelotas entre los dos!"
+   ]
+  },
+  {
+   "t": "agregar",
+   "emoji": "🎈",
+   "n": 6,
+   "mas": 4,
+   "texto": "6 + 4 = 10",
+   "voz": [
+    "En el puesto hay *6* globos.",
+    "Llegan 4 más: 7, 8, 9, 10.",
+    "¡Ahora hay *10* globos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Sofi tiene 4 caramelos. Le dan 5. ¿Cuántos tiene?",
+   "opciones": [
+    "1",
+    "9",
+    "45"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Sofi tiene 4 y le dan 5.",
+    "¿Cuántos caramelos tiene?",
+    "¡*9*! 4 más 5."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "la historia"
+    ],
+    [
+     "SUMAR",
+     "juntar o agregar"
+    ],
+    [
+     "RESPONDER",
+     "con una oración"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Leemos* la historia.",
+    "*Sumamos*: juntamos o agregamos.",
+    "Y *respondemos* la pregunta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

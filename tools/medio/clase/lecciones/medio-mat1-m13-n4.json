@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat1-m13-n4",
+ "step_id": "3b20ae9f-8118-4b03-819c-48d843e50955",
+ "materia": "Matemática 1",
+ "titulo": "Armar problemas de suma",
+ "sub": "Matemática 1 · Misión 13 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CONCURSO",
+   "titular": "¡INVENTÁ TU PROBLEMA!",
+   "bajada": "Premio para el mejor problema",
+   "emoji": "🏆",
+   "titulo": "ARMAR",
+   "sub": "problemas de suma",
+   "voz": [
+    "¡Concurso en la feria de la escuela!",
+    "Gana quien *invente* el mejor problema.",
+    "Hoy: *armar problemas de suma*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LAS PARTES DEL PROBLEMA",
+   "celdas": [
+    {
+     "cab": "QUIÉN",
+     "txt": "Sofi"
+    },
+    {
+     "cab": "TIENE",
+     "txt": "3 manzanas"
+    },
+    {
+     "cab": "PASA",
+     "txt": "le dan 4"
+    },
+    {
+     "cab": "PREGUNTA",
+     "txt": "¿cuántas tiene?"
+    }
+   ],
+   "voz": [
+    "Todo problema tiene *cuatro partes*.",
+    "*Quién*: Sofi.",
+    "Qué *tiene*: 3 manzanas.",
+    "Qué *pasa*: le dan 4 más.",
+    "Y la *pregunta*: ¿cuántas tiene?"
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🍎",
+    "n": 3
+   },
+   "b": {
+    "emoji": "🍎",
+    "n": 4
+   },
+   "texto": "3 + 4 = 7",
+   "voz": [
+    "Resolvemos el problema de Sofi.",
+    "Juntamos sus 3 manzanas y las 4.",
+    "¡Tiene *7* manzanas!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "INVENTÁ CON 5 + 5",
+   "items": [
+    {
+     "cab": "QUIÉN",
+     "txt": "Tomi"
+    },
+    {
+     "cab": "QUÉ PASA",
+     "txt": "Tiene 5 autitos y le regalan 5"
+    },
+    {
+     "cab": "PREGUNTA",
+     "txt": "¿Cuántos autitos tiene?"
+    }
+   ],
+   "voz": [
+    "Inventamos otro con 5 más 5.",
+    "Elegimos *quién*: Tomi.",
+    "Decimos *qué pasa*: le regalan 5.",
+    "Y hacemos la *pregunta*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué le falta? «Sofi tiene 3 globos y le dan 2.»",
+   "opciones": [
+    "La pregunta",
+    "Los números",
+    "Un nombre"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Escuchá este problema.",
+    "Sofi tiene 3 globos y le dan 2. ¿Qué falta?",
+    "¡La *pregunta*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "QUIÉN",
+     "Sofi, Tomi…"
+    ],
+    [
+     "QUÉ PASA",
+     "gana, le dan…"
+    ],
+    [
+     "PREGUNTA",
+     "¿cuántos tiene?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Elegimos *quién*.",
+    "Contamos *qué pasa*.",
+    "Y terminamos con una *pregunta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

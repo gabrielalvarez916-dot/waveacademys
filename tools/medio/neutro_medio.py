@@ -136,6 +136,6 @@ def revisar(o):
 
 # ---- palabras que aparecieron en el Nivel Medio ----
 MAPA.update({'igualá': 'iguala', 'igualás': 'igualas', 'quitá': 'quita', 'contalas': 'cuéntalas', 'levantá': 'levanta', 'ordenalos': 'ordénalos', 'ponelo': 'ponlo', 'seguís': 'sigues', 'saltás': 'saltas', 'volvés': 'vuelves'})
-MAPA.update({'tachá': 'tacha', 'perdés': 'pierdes', 'prestás': 'prestas', 'regalás': 'regalas', 'usalos': 'úsalos', 'dalo': 'voltéalo', 'decilo': 'dilo', 'saltá': 'salta'})  # Matemática 1 · Misión 9
+MAPA.update({'tachá': 'tacha', 'perdés': 'pierdes', 'prestás': 'prestas', 'regalás': 'regalas', 'usalos': 'úsalos', 'dalo': 'voltéalo', 'decilo': 'dilo', 'saltá': 'salta', 'escuchá': 'escucha'})  # Matemática 1 · Misión 9
 OK |= {'regalos', 'caramelo', 'regala'}
 OK -= set(MAPA)

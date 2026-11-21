@@ -1,0 +1,147 @@
+{
+ "slug": "medio-mat1-m13-n3",
+ "step_id": "d1ee40a7-b555-43cf-ad87-a6f9fb15c58b",
+ "materia": "Matemática 1",
+ "titulo": "Completar cantidades",
+ "sub": "Matemática 1 · Misión 13 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cuántas pelotas tenés?"
+    },
+    {
+     "yo": true,
+     "txt": "Tengo 6 y quiero 9"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cuántas te faltan?"
+    }
+   ],
+   "titulo": "COMPLETAR",
+   "sub": "cantidades",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "Sofi tiene 6 pelotas y quiere 9.",
+    "¿Cuántas le faltan?",
+    "Hoy: *completar cantidades*."
+   ]
+  },
+  {
+   "t": "igualar",
+   "a": {
+    "emoji": "⚽",
+    "n": 6
+   },
+   "b": {
+    "emoji": "⚽",
+    "n": 9
+   },
+   "accion": "agregar",
+   "texto": "¡FALTAN 3!",
+   "voz": [
+    "Sofi tiene *6*. Quiere tener *9*.",
+    "Agregamos: 7, 8, 9.",
+    "¡Le faltan *3* pelotas!"
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "TENGO",
+    "items": [
+     "🍎🍎🍎🍎🍎🍎🍎"
+    ]
+   },
+   "der": {
+    "cab": "QUIERO",
+    "items": [
+     "🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "De un lado, lo que *tengo*: 7.",
+    "Del otro, lo que *quiero*: 10.",
+    "¡Faltan *3* para que quede pareja!"
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "7",
+    "?"
+   ],
+   "op": "+",
+   "resultado": "10",
+   "voz": [
+    "7 más algo es igual a 10.",
+    "Contamos 8, 9, 10: ¡el algo es *3*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Tomi tiene 5. Quiere 8. ¿Cuántos le faltan?",
+   "opciones": [
+    "8",
+    "3",
+    "13"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Tiene 5 y quiere 8.",
+    "¿Cuántos le faltan?",
+    "¡*3*! Seis, siete, ocho."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Responder el número grande",
+     "bien": "Responder lo que falta"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "La respuesta es *lo que falta*, no el grande."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TENGO",
+     "el número chico"
+    ],
+    [
+     "QUIERO",
+     "el número grande"
+    ],
+    [
+     "FALTA",
+     "contamos el camino"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Miramos lo que *tengo*.",
+    "Miramos lo que *quiero*.",
+    "Contamos lo que *falta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
