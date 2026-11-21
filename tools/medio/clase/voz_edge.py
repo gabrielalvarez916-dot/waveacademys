@@ -10,7 +10,7 @@ import edge_tts
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
 RATE = os.environ.get('RATE', '+25%')
-from primeros_anios import es_primeros, RATE as RATE_PRIMEROS  # 1.º a 3.º del Nivel Medio: voz más lenta
+from primeros_anios import es_primeros, RATE as RATE_PRIMEROS, PITCH as PITCH_PRIMEROS, VOZ as VOZ_PRIMEROS, VOZ_NEUTRA as VOZ_NEUTRA_PRIMEROS  # 1.º a 3.º: voz pausada, cálida y expresiva
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -96,6 +96,8 @@ VOZ_MATERIA = {'naturales': 'es-AR-ElenaNeural', 'lengua': 'es-AR-TomasNeural', 
 
 def voz_de(L, neutra=False):
     m = (L.get('materia') or '').lower()
+    if es_primeros(L.get('materia'), contenido=L) and not L.get('voz'):
+        return VOZ_NEUTRA_PRIMEROS if neutra else VOZ_PRIMEROS
     if neutra:
         if L.get('voz_neutra'): return L['voz_neutra']
         if 'natural' in m or 'biolog' in m: return VOZ_NEUTRA['naturales']
@@ -109,12 +111,12 @@ def voz_de(L, neutra=False):
     return VOZ
 
 
-async def tts(texto, voz=None, rate=None):
-    rate = rate or RATE
+async def tts(texto, voz=None, rate=None, pitch=None):
+    rate = rate or RATE; extra = {'pitch': pitch} if pitch else {}
     try:
-        c = edge_tts.Communicate(texto, voz or VOZ, rate=rate, boundary='WordBoundary')
+        c = edge_tts.Communicate(texto, voz or VOZ, rate=rate, boundary='WordBoundary', **extra)
     except TypeError:
-        c = edge_tts.Communicate(texto, voz or VOZ, rate=rate)
+        c = edge_tts.Communicate(texto, voz or VOZ, rate=rate, **extra)
     audio, w = b'', []
     async for ch in c.stream():
         if ch['type'] == 'audio':
@@ -138,7 +140,9 @@ async def grabar(L, nombre, suf, vz):
         pv = os.path.join(AQUI, 'voz', v)
         if os.path.exists(pv): cache.update({f.get('h'): f for esc in json.load(open(pv)) for f in esc if isinstance(f, dict)})
     F = frases(L)
-    rate = RATE_PRIMEROS if es_primeros(L.get('materia'), contenido=L) else RATE
+    prim = es_primeros(L.get('materia'), contenido=L)
+    rate = RATE_PRIMEROS if prim else RATE
+    pitch = PITCH_PRIMEROS if prim else None
     res, nuevas = [], 0
     # se graban EN PARALELO (de a PARALELO frases a la vez): mismo audio, mismo orden, mucho más rápido
     sem = asyncio.Semaphore(PARALELO)
@@ -146,7 +150,7 @@ async def grabar(L, nombre, suf, vz):
         async with sem:
             for intento in range(6):
                 try:
-                    return await tts(t, vz, rate)
+                    return await tts(t, vz, rate, pitch)
                 except Exception as e:
                     if intento == 5: raise
                     await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos
@@ -154,7 +158,7 @@ async def grabar(L, nombre, suf, vz):
     for esc in F:
         fila = []
         for t in esc:
-            h = hashlib.md5((vz + rate + t).encode()).hexdigest()[:12]
+            h = hashlib.md5((vz + rate + (pitch or '') + t).encode()).hexdigest()[:12]
             if h in cache:
                 fila.append(cache[h])
             else:

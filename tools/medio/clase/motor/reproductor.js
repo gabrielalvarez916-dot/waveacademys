@@ -15,11 +15,17 @@
   function barra() { [].forEach.call(document.querySelectorAll('#barra b'), function (b, k) { b.style.width = k < st.e ? '100%' : k > st.e ? '0' : Math.round(st.f / E[k].voz.length * 100) + '%'; }); $('pp').textContent = st.play ? '❚❚' : '▶'; }
   function limpio(s) { return s.replace(/\*/g, '').replace(/\s*\+\s*/g, ' más ').replace(/\s*×\s*/g, ' por '); }
   // subtítulos de a 3 palabras, la clave en amarillo. Primeros años (1.º a 3.º del Nivel Medio): de a 2 palabras y en imprenta mayúscula (CSS del shell)
-  var palabras = [], GRUPO = CL.estilo === 'primeros' ? 2 : 3;
-  function subs(frase) { marcar.a = -1; var raw = frase.split(' '), cl = false; palabras = raw.map(function (r) { if (r[0] === '*') cl = true; var p = { w: r.replace(/\*/g, ''), k: cl }; if (r.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; return p; }); marcar(0); }
+  var PRIM = CL.estilo === 'primeros', palabras = [], GRUPO = PRIM ? 2 : 3;
+  // primeros años: más tiempo entre frases, entre escenas y para pensar la respuesta de una pregunta
+  function pausaFrase(e, k) { if (!PRIM) return 30; return e.t === 'pregunta' && k === 1 ? 3500 : 700; }
+  function subs(frase) { marcar.a = -1; marcar.ult = -1; var raw = frase.split(' '), cl = false; palabras = raw.map(function (r) { if (r[0] === '*') cl = true; var p = { w: r.replace(/\*/g, ''), k: cl }; if (r.replace(/[.,:;!?…]+$/, '').slice(-1) === '*') cl = false; return p; }); marcar(0); }
   function marcar(k) {
     var s = $('subs'); s.innerHTML = ''; if (!palabras.length) return;
-    k = Math.max(0, Math.min(k, palabras.length - 1)); var a = Math.floor(k / GRUPO) * GRUPO, t = el('text', { x: 960, y: 125, 'font-size': 76, stroke: 'rgba(0,0,0,.55)', 'stroke-width': 12, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, s);
+    k = Math.max(0, Math.min(k, palabras.length - 1));
+    // cada palabra que se dice avisa a la escena (así los números aparecen justo cuando la voz los cuenta)
+    if (esc && esc.alDecir) for (var j = marcar.ult + 1; j <= k; j++) esc.alDecir(palabras[j].w, st.f);
+    marcar.ult = Math.max(marcar.ult, k);
+    var a = Math.floor(k / GRUPO) * GRUPO, t = el('text', { x: 960, y: 125, 'font-size': 76, stroke: 'rgba(0,0,0,.55)', 'stroke-width': 12, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, s);
     palabras.slice(a, a + GRUPO).forEach(function (p, j) { var sp = el('tspan', { fill: p.k ? C.sol : '#fff', opacity: a + j <= k ? 1 : 0 }, t); sp.textContent = (j ? ' ' : '') + p.w; });
     if (a !== marcar.a) { marcar.a = a; gsap.fromTo(t, { scale: .82, transformOrigin: '960px 105px' }, { scale: 1, duration: .22, ease: 'back.out(3)' }); }
   }
@@ -38,14 +44,14 @@
   }
   function frase(k) {
     var e = E[st.e], g = st.gen;
-    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; MUSICA.pausa(); barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 150);
+    if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; MUSICA.pausa(); barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, PRIM ? 900 : 150);
     st.f = k; barra(); subs(e.voz[k]);
     if (tl.labels['b' + k] != null) tl.play('b' + k);
-    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 30); }, k);
+    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, pausaFrase(e, k)); }, k);
   }
   function armarEscena(i) {
     var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
-    esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); tl.timeScale(1.45); var n = 0, e = E[i];
+    esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); tl.timeScale(PRIM ? 1 : 1.45); var n = 0, e = E[i];
     try { (T[e.t] || T.frase).armar(esc, tl, function (k) { if (n++) tl.addPause(); tl.addLabel('b' + k); }, e); }
     catch (err) { errores.push('Escena ' + (i + 1) + ' (' + e.t + '): ' + err.message); if (window.console) console.error(err); }
     gsap.set(esc.querySelectorAll('[data-c]'), { transformOrigin: '50% 50%', smoothOrigin: false });

@@ -11,5 +11,5 @@ JSON=$(ls "$DIR"/mision-*.json | head -1)
 python3 tools/medio/clase/armar.py $SLUGS
 python3 tools/medio/clase/revisar_contenido.py $SLUGS --mision "$JSON"
 python3 tools/medio/clase/revisar_pantalla.py $SLUGS
-rm -f tools/medio/clase/dist/*.html  # el HTML final (con voz) lo arma GitHub
+git checkout -q -- tools/medio/clase/dist 2>/dev/null; git clean -qf tools/medio/clase/dist  # el HTML final (con voz) lo arma GitHub: se deja como está en el repo
 echo "LISTA PARA SUBIR: $JSON · clases: $SLUGS"

@@ -312,8 +312,11 @@
     var tot = w.pieza(g, 960, filas > 1 ? 875 : 840); w.caja(tot, 0, 0, 280, 140, 'url(#gCard)', C.sol, 34, 6); w.txt(tot, 0, 4, String(n), 110, C.sol, { filter: 'url(#brillo)' });
     var et = d.etiqueta ? w.etiqueta(g, 960, 900, d.etiqueta) : null;
     B(0); if (ti) w.IN(tl, ti, 0); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.1' : (ti ? '<.2' : 0), { y: -260, scale: .5, ease: 'bounce.out', d: .6 }); });
-    B(1); O.forEach(function (o, k) { w.pop(tl, o, k ? '>' : 0); w.IN(tl, nums[k], '<', { scale: 0, y: 0, ease: 'back.out(3)', d: .3 }); });
-    B(2); w.IN(tl, tot, 0, { scale: .3, y: 0, ease: 'back.out(2.5)' }); w.pop(tl, nums[n - 1], '<.2');
+    // cada número aparece cuando la voz lo dice (paso 2: "1, 2, 3…"), como en los dibujitos para chicos
+    var visto = {}; g.alDecir = function (p, paso) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); if (paso < 1 || !(v >= 1 && v <= n) || visto[v]) return; visto[v] = 1;
+      gsap.fromTo(nums[v - 1], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .4, ease: 'back.out(3)' }); gsap.fromTo(O[v - 1], { scale: 1 }, { scale: 1.22, duration: .2, yoyo: true, repeat: 1 }); };
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(nums, { opacity: 1, scale: 1 }, '>+0.05'); w.IN(tl, tot, '>', { scale: .3, y: 0, ease: 'back.out(2.5)' }); w.pop(tl, nums[n - 1], '<.2');
     if (et) { w.OUT(tl, tot, '>.6'); w.IN(tl, et, '<.1'); }
   } };
   // parejas: {a:{emoji, n}, b:{emoji, n}, texto} — 3 pasos: dos filas · se unen de a uno (uno con uno) · lo que sobra brilla y sale el texto ("¡HAY MÁS 🐶!" o "¡HAY IGUAL!")
@@ -341,9 +344,14 @@
     var extraA = ag ? GA.O.slice(na) : GA.O.slice(meta), extraB = ag ? GB.O.slice(nb) : GB.O.slice(meta), baseA = GA.O.slice(0, ag ? na : na), baseB = GB.O.slice(0, nb);
     B(0); w.IN(tl, GA.caja, 0); w.IN(tl, GB.caja, '<'); (ag ? GA.O.slice(0, na) : GA.O).concat(ag ? GB.O.slice(0, nb) : GB.O).forEach(function (o, k) { w.IN(tl, o, k ? '<.05' : '>-.2', { scale: 0, y: 0, ease: 'back.out(2)', d: .4 }); }); w.IN(tl, nA, '>'); w.IN(tl, nB, '<');
     B(1); var cambian = extraA.concat(extraB);
-    if (ag) cambian.forEach(function (o, k) { w.IN(tl, o, k ? '>' : 0, { y: -400, ease: 'bounce.out', d: .6 }); });
+    // agregar: cada objeto nuevo cae cuando la voz cuenta su número ("4, 5"); si la frase no cuenta, caen solos
+    var chico = na < nb ? GA.O : GB.O, nchico = Math.min(na, nb), cayo = {};
+    if (ag) g.alDecir = function (p, paso) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); if (paso !== 1 || !(v > nchico && v <= meta) || cayo[v]) return; cayo[v] = 1;
+      gsap.fromTo(chico[v - 1], { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: .6, ease: 'bounce.out' }); };
+    if (ag) tl.to({}, { duration: .01 });
     else cambian.forEach(function (o, k) { tl.to(o, { y: 500, opacity: 0, rotation: 40, duration: .5, ease: 'power2.in' }, k ? '>-.2' : '>'); });
-    w.OUT(tl, nA, '>'); w.OUT(tl, nB, '<'); w.IN(tl, cA, '>'); w.IN(tl, cB, '<');
-    B(2); w.IN(tl, ig, 0, { scale: 0, y: 0, ease: 'back.out(3)' }); if (cap) w.IN(tl, cap, '<.2');
+    if (!ag) { w.OUT(tl, nA, '>'); w.OUT(tl, nB, '<'); w.IN(tl, cA, '>'); w.IN(tl, cB, '<'); }
+    B(2); if (ag) { tl.set(cambian, { opacity: 1, y: 0 }, '>+0.05'); w.OUT(tl, nA, '>'); w.OUT(tl, nB, '<'); w.IN(tl, cA, '>'); w.IN(tl, cB, '<'); }
+    w.IN(tl, ig, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (cap) w.IN(tl, cap, '<.2');
   } };
 })();

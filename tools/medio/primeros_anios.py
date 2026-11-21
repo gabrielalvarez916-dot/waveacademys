@@ -51,7 +51,10 @@ MATERIAS_MEDIO = set(MATERIAS) | set(OTRAS_MEDIO)  # todo lo que arma la máquin
 def es_medio(materia):
     return (materia or '').strip() in MATERIAS_MEDIO
 
-RATE = '+5%'            # voz de la clase: más lenta que la de los grandes (+25 %)
+RATE = '-8%'            # voz de la clase: pausada (los grandes van a +25 %)
+PITCH = '+6Hz'          # tono un poco más alto: más alegre y expresiva
+VOZ = 'es-AR-ElenaNeural'        # voz cálida para chicos (versión argentina)
+VOZ_NEUTRA = 'es-MX-DaliaNeural'  # versión neutra (alumnos de otros países)
 MAX_PALABRAS_VOZ = 10   # cada frase de la clase
 MAX_PALABRAS_PDF = 12   # cada oración del PDF
 MAX_ESCENAS = 10        # clase de 3 a 4 minutos
