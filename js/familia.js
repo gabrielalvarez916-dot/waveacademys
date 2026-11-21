@@ -1054,6 +1054,7 @@
     if (prox.length) html += '<h3 class="fa-sub">Tus turnos</h3>' + prox.map(function (t) {
       return '<div class="tuf-turno"><b>' + esc(fechaTurno(t.inicio)) + '</b> · ' + esc(t.motivo) + (t.tema ? ' · ' + esc(t.tema) : '') +
         '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
+        '<button type="button" class="tu-link" data-reagendar="' + t.id + '">Reagendar</button>' +
         '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div></div>';
     }).join('') + AVISO_LLAMADA;
     if (pasadas.length) html += '<h3 class="fa-sub">Últimos turnos</h3>' + pasadas.map(function (t) {
@@ -1079,6 +1080,9 @@
     var elegido = null;
     box.onclick = async function (ev) {
       var b;
+      if ((b = ev.target.closest('[data-reagendar]'))) {
+        return WaveCal.reagendarFamilia({ id: b.getAttribute('data-reagendar'), tipo: 'direccion' }, function () { pintarDireccion(box, hijos); });
+      }
       if ((b = ev.target.closest('[data-cancelar]'))) {
         if (!confirm('¿Cancelar este turno con dirección?')) return;
         var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });
@@ -1108,12 +1112,15 @@
     box.innerHTML = (prox.length ? '<h3 class="fa-sub">Próximas tutorías</h3>' + prox.map(function (t) {
         return '<div class="tuf-turno"><b>' + esc(fechaTurno(t.inicio)) + '</b>' + (t.tema ? ' · ' + esc(t.tema) : '') +
           '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
+          '<button type="button" class="tu-link" data-reagendar="' + t.id + '">Reagendar</button>' +
           '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div></div>';
       }).join('') + AVISO_LLAMADA : '') +
       (pasadas.length ? '<h3 class="fa-sub">Últimas tutorías</h3>' + pasadas.map(function (t) {
         return '<p class="tu-tema"><b>' + esc(fechaTurno(t.inicio)) + ':</b> ' + (t.estado === 'ausente' ? 'no se conectó.' : esc(t.notas_tutor || 'realizada.')) + '</p>';
       }).join('') : '');
     box.onclick = async function (ev) {
+      var rg = ev.target.closest('[data-reagendar]');
+      if (rg) return WaveCal.reagendarFamilia({ id: rg.getAttribute('data-reagendar'), tipo: 'tutoria', student: alu }, function () { pintarMisTutorias(card, alu); pintarReserva(card, alu); });
       var b = ev.target.closest('[data-cancelar]'); if (!b) return;
       if (!confirm('¿Cancelar esta tutoría?')) return;
       var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });

@@ -41,44 +41,19 @@
 
   // ---------- Agenda ----------
   async function vistaAgenda() {
-    vista.innerHTML = '<h1 class="vista-titulo">Agenda de tutorías</h1><div id="tu-cont"><div class="vacio">Cargando…</div></div>';
-    var c = document.getElementById('tu-cont');
-    var r = await sb.rpc('tutor_agenda');
-    if (r.error) return aviso(c, 'No pudimos cargar la agenda.');
-    var ahora = Date.now();
-    var prox = r.data.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() > ahora; });
-    var cerrar = r.data.filter(function (t) { return t.estado === 'reservada' && new Date(t.fin).getTime() <= ahora; });
-    var hechas = r.data.filter(function (t) { return t.estado !== 'reservada'; }).reverse();
-    function tarjeta(t, modo) {
-      return '<section class="fa-card tu-turno" data-id="' + t.id + '"><h2>' + esc(t.alumno) + '</h2><span class="tu-sub">' + esc(fecha(t.inicio)) + '</span>' +
-        (t.tema ? '<p class="tu-tema">Quiere ver: ' + esc(t.tema) + '</p>' : '') +
-        (modo === 'prox' ? '<div class="fa-botones"><a class="boton fa-boton" href="' + esc(t.link) + '" target="_blank" rel="noopener">Entrar a la videollamada</a>' +
-          '<button type="button" class="tu-link" data-cancelar="' + t.id + '">Cancelar</button></div>' : '') +
-        (modo === 'cerrar' ? '<textarea class="tu-notas" placeholder="Notas para la familia: qué trabajaron, qué tiene que repasar…"></textarea>' +
-          '<div class="fa-botones"><button type="button" class="boton fa-boton" data-cerrar="realizada">Se hizo</button>' +
-          '<button type="button" class="boton fa-boton tu-gris" data-cerrar="ausente">No se presentó</button></div>' : '') +
-        (modo === 'hecha' ? '<p class="tu-tema">' + (t.estado === 'ausente' ? 'No se presentó.' : 'Realizada.') + (t.notas_tutor ? ' ' + esc(t.notas_tutor) : '') + '</p>' : '') +
-        '</section>';
-    }
-    c.innerHTML =
-      (cerrar.length ? '<h2 class="tu-h">Para cerrar</h2>' + cerrar.map(function (t) { return tarjeta(t, 'cerrar'); }).join('') : '') +
-      '<h2 class="tu-h">Próximas</h2><p class="fa-intro">Entrá vos primero a la videollamada, con tu cuenta de Google: hasta que entres, la sala no se abre y la familia queda esperando.</p>' + (prox.length ? prox.map(function (t) { return tarjeta(t, 'prox'); }).join('') : '<div class="vacio">No tenés tutorías reservadas.</div>') +
-      (hechas.length ? '<h2 class="tu-h">Últimas realizadas</h2>' + hechas.slice(0, 15).map(function (t) { return tarjeta(t, 'hecha'); }).join('') : '');
-    c.onclick = async function (ev) {
-      var b;
-      if ((b = ev.target.closest('[data-cancelar]'))) {
-        if (!confirm('¿Cancelar esta tutoría? Avisale a la familia.')) return;
-        var x = await sb.rpc('cancelar_tutoria', { p_id: b.getAttribute('data-cancelar') });
-        if (x.error) return toast(x.error.message, true);
-        toast('Tutoría cancelada'); return vistaAgenda();
+    vista.innerHTML = '<h1 class="vista-titulo">Agenda de tutorías</h1>' +
+      '<p class="fa-intro">Tocá una tutoría para entrar, reagendarla, cancelarla o cerrarla con tus notas para la familia. Entrá vos primero a la videollamada, con tu cuenta de Google: hasta que entres, la sala no se abre y la familia queda esperando.</p>' +
+      '<div id="tu-cal"></div>';
+    WaveCal.semana(document.getElementById('tu-cal'), {
+      cargar: async function () {
+        var r = await sb.rpc('tutor_agenda');
+        if (r.error) throw r;
+        return (r.data || []).map(function (t) {
+          return { id: t.id, tipo: 'tutoria', titulo: t.alumno, sub: '', inicio: t.inicio, fin: t.fin, estado: t.estado, link: t.link,
+            alumno: t.alumno, tema: t.tema, notas: t.notas_tutor };
+        });
       }
-      if ((b = ev.target.closest('[data-cerrar]'))) {
-        var card = b.closest('[data-id]');
-        var y = await sb.rpc('cerrar_tutoria', { p_id: card.getAttribute('data-id'), p_estado: b.getAttribute('data-cerrar'), p_notas: card.querySelector('.tu-notas').value });
-        if (y.error) return toast(y.error.message, true);
-        toast('Listo'); return vistaAgenda();
-      }
-    };
+    });
   }
 
   // ---------- Mis horarios ----------
@@ -91,8 +66,9 @@
         '<label>a <input id="tu-hasta" type="time" value="18:00" required></label>' +
         '<label>Turnos de <select id="tu-dur"><option>30</option><option selected>45</option><option>60</option></select> min</label>' +
         '<button class="boton fa-boton" type="submit">Agregar</button></form>' +
-      '<div id="tu-cont"><div class="vacio">Cargando…</div></div>';
+      '<div id="tu-cont"><div class="vacio">Cargando…</div></div><div id="tu-bloq"></div>';
     var c = document.getElementById('tu-cont');
+    WaveCal.bloqueos(document.getElementById('tu-bloq'));
     async function pintar() {
       var r = await sb.from('tutor_disponibilidad').select('id, dia_semana, desde, hasta, duracion_min').order('dia_semana').order('desde');
       if (r.error) return aviso(c, 'No pudimos cargar tus horarios.');
