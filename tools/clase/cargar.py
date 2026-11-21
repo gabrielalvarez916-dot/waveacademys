@@ -27,9 +27,16 @@ for nombre in slugs:
         print(nombre, ': todavía sin voz, no se carga'); continue
     body = json.dumps({'p_token': TOKEN, 'p_html': html, 'p_step_id': L.get('step_id'), 'p_subject_id': L.get('subject_id'), 'p_neutro': neutro}).encode()
     req = urllib.request.Request(URL, data=body, method='POST', headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'})
-    try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            print(nombre, ':', r.read().decode())
-    except Exception as e:
-        error = True; print(nombre, ': ERROR', getattr(e, 'read', lambda: b'')().decode()[:300] or e)
+    import time
+    for intento in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                print(nombre, ':', r.read().decode())
+            break
+        except Exception as e:
+            msg = getattr(e, 'read', lambda: b'')().decode()[:300] or str(e)
+            if intento == 3:
+                error = True; print(nombre, ': ERROR', msg)
+            else:
+                print(nombre, ': reintento', intento + 1, msg[:80]); time.sleep(8 * (intento + 1))
 sys.exit(1 if error else 0)

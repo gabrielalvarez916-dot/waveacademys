@@ -48,7 +48,7 @@ def neutros():
     while True:
         st, res = llamar({"action": "pendientes_neutro", "limite": 5, "excluir": hechos})
         pend = res.get("pendientes", []) if st == 200 else []
-        if st != 200: print("No se pudo pedir los pendientes neutros:", st, res); return 1
+        if st != 200: print("AVISO: no se pudo pedir los pendientes neutros (se hacen en la próxima corrida):", st, res); return fallos
         if not pend: break
         for p in pend:
             hechos.append(p["draft_id"])
@@ -68,7 +68,7 @@ def neutros():
 def main():
     st, res = llamar({"action": "pendientes"})
     if st != 200:
-        print("No se pudo pedir los pendientes:", st, res); sys.exit(1)
+        print("AVISO: no se pudo pedir los pendientes (se hacen en la próxima corrida):", st, res); sys.exit(0)
     pend = res.get("pendientes", [])
     print(f"{len(pend)} borrador(es) sin PDF")
     fallos = 0
