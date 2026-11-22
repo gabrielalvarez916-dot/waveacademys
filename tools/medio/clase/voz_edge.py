@@ -142,7 +142,7 @@ GASTADOS = [0]
 import shutil
 if ELEVEN_KEY and ELEVEN_TOPE > 0 and not (shutil.which('ffmpeg') and shutil.which('ffprobe')):
     sys.exit('Falta ffmpeg en la máquina: no se gastó nada de ElevenLabs')
-ELEVEN_PARALELO = int(os.environ.get('ELEVEN_PARALELO', '2'))  # ElevenLabs limita los pedidos a la vez (con 4 respondía 429)
+ELEVEN_PARALELO = int(os.environ.get('ELEVEN_PARALELO', '3'))  # ElevenLabs limita los pedidos a la vez (con 4 respondía 429)
 MANUALES = {}  # frases grabadas a mano por Gaby (no se pisan): {slug: [[escena, linea], ...]}
 _mp = os.path.join(AQUI, 'voz', 'manuales.json')
 if os.path.exists(_mp): MANUALES = json.load(open(_mp))
