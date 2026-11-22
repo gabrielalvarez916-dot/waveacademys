@@ -1181,7 +1181,7 @@
         '<select data-f="mision" aria-label="Misión">' + opts(t, F.mision, 'Todas las misiones') + '</select>';
       var xs = items.filter(function (x) { return pasa(x); });
       if (!xs.length) { cont.innerHTML = '<p class="bib-vacio">No hay recursos con estos filtros todavía.</p>'; return; }
-      cont.innerHTML = [['video', 'Videos'], ['texto', 'Textos'], ['actividad', 'Actividades para vos']].map(function (gp) {
+      cont.innerHTML = [['video', 'Videos'], ['texto', 'PDF y lecturas'], ['actividad', 'Actividades para vos']].map(function (gp) {
         var ys = xs.filter(function (x) { return x.tipo === gp[0]; });
         if (!ys.length) return '';
         return '<h3>' + gp[1] + '</h3><div class="bib-lista">' + ys.map(function (x) {

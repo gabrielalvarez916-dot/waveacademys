@@ -471,12 +471,106 @@
       '<div class="wv-resumen" id="vd-resumen">' + htmlResumen() + '</div>' +
       '<div class="wv-tools" id="vd-optimizar"><button type="button" class="wv-btn" id="vd-opt-btn">⚡ Optimizar MIS videos cargados (no toca los de YouTube)</button> <span id="vd-opt-txt" class="wv-sub">Revisando…</span></div>' +
       '<div class="wv-tools vd-tools" id="vd-controles"></div>' +
+      '<details class="vd-bib" style="margin:14px 0"><summary style="cursor:pointer;font-weight:800">📚 Biblioteca: subir PDF y actividades</summary><div id="bl-caja" style="margin-top:10px"></div></details>' +
       '<div id="vd-lista"></div>';
+    BL = { nivel: '', grado: '', materia: '', mision: '', tipo: 'texto', temas: [], items: [] };
+    pintarBiblio(); enlazarBiblio();
     pintarControles();
     iniciarOptimizar();
     D = { temas: [], cands: {}, busq: {} };
     if (E.subject) { cambiarMateria(); } else { pintarLista(); }
     if (!vista.__vdEnlazado) { enlazar(); vista.__vdEnlazado = true; }
+  }
+
+  // ---------- Biblioteca: subir y catalogar PDF y actividades (por nivel, año, materia y misión) ----------
+  var BL = { nivel: '', grado: '', materia: '', mision: '', tipo: 'texto', temas: [], items: [] };
+  function nomGrado2(g) { return g.name || ('Año ' + g.year_number); }
+  function selOpts(lista, sel, vacio) { return '<option value="">' + vacio + '</option>' + lista.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === sel ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join(''); }
+  function pintarBiblio() {
+    var cont = document.getElementById('bl-caja');
+    if (!cont) return;
+    var gr = B.grades.filter(function (g) { return !BL.nivel || g.level_id === BL.nivel; });
+    var ms = B.subjects.filter(function (x) { return BL.grado && x.grade_id === BL.grado; });
+    cont.innerHTML =
+      '<div class="wv-tools vd-tools">' +
+        '<select id="bl-tipo" class="vd-sel" aria-label="Qué es"><option value="texto"' + (BL.tipo === 'texto' ? ' selected' : '') + '>PDF (para todos)</option><option value="actividad"' + (BL.tipo === 'actividad' ? ' selected' : '') + '>Actividad (solo Desafío)</option></select>' +
+        '<select id="bl-nivel" class="vd-sel" aria-label="Nivel">' + selOpts(B.levels.map(function (l) { return [l.id, l.name]; }), BL.nivel, 'Nivel…') + '</select>' +
+        '<select id="bl-grado" class="vd-sel" aria-label="Año">' + selOpts(gr.map(function (g) { return [g.id, nomGrado2(g)]; }), BL.grado, 'Año…') + '</select>' +
+        '<select id="bl-materia" class="vd-sel" aria-label="Materia">' + selOpts(ms.map(function (x) { return [x.id, x.name + (x.variant ? ' · ' + x.variant : '')]; }), BL.materia, 'Materia…') + '</select>' +
+        '<select id="bl-mision" class="vd-sel" aria-label="Misión">' + selOpts(BL.temas.map(function (t) { return [t.id, t.title]; }), BL.mision, 'Misión…') + '</select>' +
+      '</div>' +
+      '<div class="wv-tools vd-tools"><input id="bl-titulo" class="vd-sel" type="text" placeholder="Título" style="flex:1;min-width:200px"><input id="bl-desc" class="vd-sel" type="text" placeholder="Descripción corta (opcional)" style="flex:2;min-width:220px"></div>' +
+      '<div class="wv-tools"><input id="bl-archivo" type="file" accept="application/pdf"> <button type="button" class="wv-btn" id="bl-subir">⬆ Subir a la biblioteca</button> <span id="bl-txt" class="wv-sub"></span></div>' +
+      '<div id="bl-lista"></div>';
+    pintarItemsBiblio();
+  }
+  async function cargarItemsBiblio() {
+    if (!BL.materia) { BL.items = []; return pintarItemsBiblio(); }
+    var r = await sb.from('biblioteca_items').select('id, tipo, titulo, descripcion, url, topic_id, candidato_id').eq('subject_id', BL.materia).order('created_at');
+    BL.items = r.error ? [] : r.data;
+    pintarItemsBiblio();
+  }
+  function pintarItemsBiblio() {
+    var el = document.getElementById('bl-lista');
+    if (!el) return;
+    if (!BL.materia) { el.innerHTML = '<div class="wv-vacio">Elegí nivel, año y materia para ver lo que ya hay en la biblioteca.</div>'; return; }
+    var tit = {}; BL.temas.forEach(function (t) { tit[t.id] = t.title; });
+    var ET = { video: '🎬 Video', texto: '📄 PDF', actividad: '🧩 Actividad' };
+    el.innerHTML = BL.items.length ? BL.items.map(function (x) {
+      return '<div class="wv-fila" style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.08)"><span>' + ET[x.tipo] + '</span><div style="flex:1"><b>' + esc(x.titulo) + '</b><br><small>' + esc(x.topic_id && tit[x.topic_id] ? tit[x.topic_id] : 'Toda la materia') + '</small></div>' +
+        '<a class="vd-yt" href="' + esc(x.url) + '" target="_blank" rel="noopener">Ver</a><button type="button" class="wv-btn mini suave" data-bl-borrar="' + x.id + '">Quitar</button></div>';
+    }).join('') : '<div class="wv-vacio">Todavía no hay nada cargado para esta materia.</div>';
+  }
+  async function subirBiblio(btn) {
+    var tit = document.getElementById('bl-titulo').value.trim(), desc = document.getElementById('bl-desc').value.trim();
+    var f = document.getElementById('bl-archivo').files[0], txt = document.getElementById('bl-txt');
+    if (!BL.materia) return aviso('Elegí nivel, año y materia.', true);
+    if (!tit) return aviso('Poné un título.', true);
+    if (!f) return aviso('Elegí el PDF.', true);
+    if (f.type !== 'application/pdf' && !/\.pdf$/i.test(f.name)) return aviso('Tiene que ser un PDF.', true);
+    btn.disabled = true; txt.textContent = 'Subiendo…';
+    try {
+      var ruta = BL.materia + '/' + Date.now() + '-' + f.name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9._-]+/g, '_');
+      var u = await sb.storage.from('biblioteca').upload(ruta, f, { contentType: 'application/pdf', upsert: false });
+      if (u.error) throw u.error;
+      var url = sb.storage.from('biblioteca').getPublicUrl(ruta).data.publicUrl;
+      var i = await sb.from('biblioteca_items').insert({ tipo: BL.tipo, titulo: tit, descripcion: desc || null, url: url, subject_id: BL.materia, topic_id: BL.mision || null }).select('id, tipo, titulo, descripcion, url, topic_id, candidato_id').single();
+      if (i.error) { await sb.storage.from('biblioteca').remove([ruta]); throw i.error; }
+      BL.items.push(i.data);
+      document.getElementById('bl-titulo').value = ''; document.getElementById('bl-desc').value = ''; document.getElementById('bl-archivo').value = '';
+      txt.textContent = ''; pintarItemsBiblio(); aviso('Subido a la biblioteca');
+    } catch (e) { console.error(e); txt.textContent = ''; aviso('No se pudo subir: ' + ((e && e.message) || e), true); }
+    btn.disabled = false;
+  }
+  async function borrarBiblio(id) {
+    var x = BL.items.filter(function (y) { return y.id === id; })[0];
+    if (!x || !confirm('¿Quitar "' + x.titulo + '" de la biblioteca?')) return;
+    var d = await sb.from('biblioteca_items').delete().eq('id', id);
+    if (d.error) return aviso('No se pudo quitar: ' + d.error.message, true);
+    var m = /\/object\/public\/biblioteca\/(.+)$/.exec(x.url || '');
+    if (m) { try { await sb.storage.from('biblioteca').remove([decodeURIComponent(m[1])]); } catch (e) { /* archivo huérfano */ } }
+    BL.items = BL.items.filter(function (y) { return y.id !== id; });
+    pintarItemsBiblio(); aviso('Quitado');
+  }
+  function enlazarBiblio() {
+    var caja = document.getElementById('bl-caja');
+    caja.addEventListener('change', async function (ev) {
+      var id = ev.target.id;
+      if (id === 'bl-tipo') { BL.tipo = ev.target.value; return; }
+      if (id === 'bl-nivel') { BL.nivel = ev.target.value; BL.grado = ''; BL.materia = ''; BL.mision = ''; BL.temas = []; BL.items = []; return pintarBiblio(); }
+      if (id === 'bl-grado') { BL.grado = ev.target.value; BL.materia = ''; BL.mision = ''; BL.temas = []; BL.items = []; return pintarBiblio(); }
+      if (id === 'bl-materia') {
+        BL.materia = ev.target.value; BL.mision = ''; BL.temas = [];
+        if (BL.materia) { var t = await sb.from('topics').select('id, title, position').eq('subject_id', BL.materia).order('position'); BL.temas = t.error ? [] : t.data; }
+        pintarBiblio(); return cargarItemsBiblio();
+      }
+      if (id === 'bl-mision') { BL.mision = ev.target.value; }
+    });
+    caja.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button'); if (!b) return;
+      if (b.id === 'bl-subir') subirBiblio(b);
+      else if (b.hasAttribute('data-bl-borrar')) borrarBiblio(b.getAttribute('data-bl-borrar'));
+    });
   }
 
   window.WaveVideos = { abrir: abrir };
