@@ -3,6 +3,7 @@
 Regla de Gaby: todo lo que se alarga se escribe con cada letra repetida 4 veces.
   sss, mmm, fff, lll...      -> ssss, mmmm, ffff, llll
   vocal suelta (a, o, i...)  -> aaaa, oooo, iiii
+  palabra con guiones (To-mi, te-re) -> letra por letra: tttt oooo mmmm iiii
   sílaba antes de «…» o «:»  -> letra por letra:  to… -> tttt oooo…   ma… -> mmmm aaaa…   va: -> vvvv aaaa:
 Solo actúa en frases de sonidos (las que tienen sss/mmm/… o puntos suspensivos). «la A» / «la E» (nombre de la letra) no se toca."""
 import re
@@ -15,7 +16,13 @@ VOC = re.compile(rf'(?<![{L}])(?<!la )(?<!la\s)([aeiouAEIOU])(?![{L}])(?=\s?(?:�
 def es_de_sonidos(t):
     return bool(RUN.search(t)) or t.count('…') >= 2 or ('…' in t and re.search(rf'(?<![{L}])[aeiou](?![{L}])', t))
 
+GUION = re.compile(rf'(?<![{L}])([{L}]+(?:-[{L}]+)+)(?![{L}])')
+
+def silabeado(m):  # To-mi -> tttt oooo mmmm iiii   (como lo escribe Gaby)
+    return ' '.join(c * 4 for c in m.group(1).replace('-', '') if c.isalpha()).lower()
+
 def para_eleven(t):
+    t = GUION.sub(silabeado, t)
     if not es_de_sonidos(t): return t
     t = RUN.sub(lambda m: m.group(1) * 4, t)
     t = SIL.sub(lambda m: m.group(1) * 4 + ' ' + m.group(2) * 4, t)
