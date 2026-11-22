@@ -118,7 +118,6 @@
         (c.elegido
           ? '<button type="button" class="wv-btn mini" data-editar="' + c.id + '">✂️ Editar</button><button type="button" class="wv-btn mini suave" data-archivo="' + c.id + '" title="Reemplaza el video incrustado por el archivo que te dio el dueño">' + (c.conArchivo ? '⬆ Cambiar archivo' : '⬆ Subir archivo del dueño') + '</button><button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
           : '<button type="button" class="wv-btn mini" data-elegir="' + c.id + '">Elegir este</button>') +
-        '<button type="button" class="wv-btn mini suave" data-biblio="' + c.id + '" title="Lo ven todos los alumnos como recurso opcional, sin ponerlo en la misión">' + (D.biblio[c.id] ? '📚 En la biblio-videoteca ✓' : '📚 A la biblio-videoteca') + '</button>' +
         '<a class="vd-yt" href="https://www.youtube.com/watch?v=' + esc(c.youtube_id) + '" target="_blank" rel="noopener">Abrir en YouTube</a>' +
       '</div></div>';
   }
@@ -285,16 +284,23 @@
     WaveEditor.abrir(conf);
   }
 
+  // «Elegir este» manda el video a la BIBLIOTECA (biblio-videoteca), clasificado por nivel, año, materia y misión (por la materia y el tema de la lección).
+  // Ya NO lo mete dentro de la lección: los alumnos lo ven como recurso opcional en la biblioteca.
   async function elegir(candId) {
-    var cand = null, lecId = null;
+    var cand = null, lecId = null, temaId = null;
     Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
     if (!cand) return;
+    D.temas.forEach(function (t) { t.lecs.forEach(function (l) { if (l.id === lecId) temaId = t.id; }); });
     var r2 = await sb.from('video_candidatos').update({ elegido: true }).eq('id', candId);
     if (r2.error) throw r2.error;
     cand.elegido = true;
-    await pasarALeccion(lecId, cand.youtube_id, true);
+    if (!D.biblio[candId]) {
+      var i = await sb.from('biblioteca_items').insert({ tipo: 'video', titulo: cand.titulo, descripcion: cand.canal, url: 'https://www.youtube.com/watch?v=' + cand.youtube_id, subject_id: E.subject, topic_id: temaId, candidato_id: candId }).select('id').single();
+      if (i.error) throw i.error;
+      D.biblio[candId] = i.data.id;
+    }
     repintarLeccion(lecId);
-    aviso('Video elegido y agregado a la lección');
+    aviso('Video elegido y agregado a la biblioteca');
     refrescarTotales();
   }
 
@@ -325,9 +331,14 @@
     var r = await sb.from('video_candidatos').update({ elegido: false }).eq('id', candId);
     if (r.error) throw r.error;
     cand.elegido = false;
-    await pasarALeccion(lecId, cand.youtube_id, false);
+    if (D.biblio[candId]) {
+      var dq = await sb.from('biblioteca_items').delete().eq('id', D.biblio[candId]);
+      if (dq.error) throw dq.error;
+      delete D.biblio[candId];
+    }
+    await pasarALeccion(lecId, cand.youtube_id, false);  // por si quedó de antes dentro de la lección
     repintarLeccion(lecId);
-    aviso('Elección quitada (también de la lección)');
+    aviso('Elección quitada (de la biblioteca y de la lección si estaba)');
     refrescarTotales();
   }
 
