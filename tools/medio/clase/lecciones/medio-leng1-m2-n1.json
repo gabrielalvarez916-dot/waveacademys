@@ -1,0 +1,150 @@
+{
+ "slug": "medio-leng1-m2-n1",
+ "step_id": "f12fc1cc-11d2-4418-a706-1e8aa1c56299",
+ "materia": "Lengua 1",
+ "titulo": "Las cinco vocales",
+ "sub": "Lengua 1 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📖",
+   "lineas": [
+    "Sofi abre un libro.",
+    "Ve cinco letras que se repiten.",
+    "¡Están en todas las palabras!"
+   ],
+   "titulo": "LAS VOCALES",
+   "sub": "cinco amigas",
+   "voz": [
+    "Sofi abre un libro de cuentos.",
+    "Ve cinco letras que aparecen mucho.",
+    "¡Están en *todas* las palabras!",
+    "Hoy: *las cinco vocales*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "A",
+    "E",
+    "I",
+    "O",
+    "U"
+   ],
+   "grande": "A E I O U",
+   "etiqueta": "LAS 5 VOCALES",
+   "voz": [
+    "Estas son las *vocales*: A, E, I, O, U.",
+    "Son cinco amigas.",
+    "¡Las vas a encontrar en todos lados!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CADA VOCAL Y SU PALABRA",
+   "columnas": [
+    "VOCAL",
+    "PALABRA"
+   ],
+   "filas": [
+    [
+     "A",
+     "ANA"
+    ],
+    [
+     "E",
+     "ESTRELLA"
+    ],
+    [
+     "I",
+     "ISLA"
+    ],
+    [
+     "O",
+     "OSO"
+    ],
+    [
+     "U",
+     "UVA"
+    ]
+   ],
+   "voz": [
+    "Cada vocal tiene su palabra.",
+    "*A* de Ana.",
+    "*E* de estrella.",
+    "*I* de isla.",
+    "*O* de oso.",
+    "*U* de uva."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "¿CUÁNTAS VOCALES HAY?",
+   "emoji": "🔤",
+   "cantidad": 5,
+   "etiqueta": "5 VOCALES",
+   "voz": [
+    "Contamos las vocales.",
+    "1, 2, 3, 4, 5.",
+    "¡Son *5* vocales!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es una vocal?",
+   "opciones": [
+    "M",
+    "O",
+    "S"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá las tres letras.",
+    "¿Cuál es una vocal?",
+    "¡La *O*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ABRÍ LA BOCA",
+   "texto": "Las vocales se dicen con la boca abierta",
+   "emoji": "😮",
+   "voz": [
+    "Truco: las vocales se dicen con la *boca abierta*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CINCO",
+     "A, E, I, O, U"
+    ],
+    [
+     "SUENAN",
+     "solas"
+    ],
+    [
+     "PALABRAS",
+     "oso, uva"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Hay *cinco* vocales.",
+    "Suenan *solas*.",
+    "Y están en *todas* las palabras.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

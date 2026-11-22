@@ -30,13 +30,13 @@ def nombres(lista, resaltar_inicial=False, cols=3):
     return png(fig)
 
 
-def letras(palabra, ocultar=(), numeros=False):
-    """Una palabra con cada letra en su casillero. ocultar: posiciones en blanco. numeros: número de orden debajo."""
+def letras(palabra, ocultar=(), numeros=False, resaltar=()):
+    """Una palabra con cada letra en su casillero. ocultar: posiciones en blanco. numeros: número de orden debajo. resaltar: posiciones en amarillo."""
     p = palabra.upper(); n = len(p)
     fig, ax = lienzo(1.15 * n + .3, 1.9 if numeros else 1.4, 1.15 * n + .3, 1.9 if numeros else 1.4, 0, -.5 if numeros else 0)
     for i, ch in enumerate(p):
         x = .15 + 1.15 * i
-        ax.add_patch(FancyBboxPatch((x, .15), 1.0, 1.1, boxstyle="round,pad=0.02,rounding_size=0.12", color=MENTA, ec=TEAL, lw=2))
+        ax.add_patch(FancyBboxPatch((x, .15), 1.0, 1.1, boxstyle="round,pad=0.02,rounding_size=0.12", color="#ffe39a" if i in resaltar else MENTA, ec=AMBAR if i in resaltar else TEAL, lw=2))
         ax.text(x + .5, .7, "" if i in ocultar else ch, ha="center", va="center", fontsize=28, color=OSC, **F)
         if numeros: ax.text(x + .5, -.2, str(i + 1), ha="center", va="center", fontsize=12, color=TEAL, **F)
     return png(fig)
@@ -53,4 +53,19 @@ def lista(nombres_, titulo="LISTA DEL GRADO", marcar=()):
         if i in marcar: ax.add_patch(FancyBboxPatch((.35, y - .24), 3.5, .48, boxstyle="round,pad=0.02,rounding_size=0.1", color="#fff0c2", ec=AMBAR, lw=1.4))
         ax.text(.6, y, f"{i + 1}.", ha="left", va="center", fontsize=14, color=OSC, **F)
         ax.text(1.2, y, nom.upper(), ha="left", va="center", fontsize=15, color=OSC, **F)
+    return png(fig)
+
+
+def dibujo_palabra(pares, resaltar=None):
+    """Dibujos con su palabra debajo: [("pelota", "PELOTA"), ...]. resaltar: letra que se pinta en rojo en cada palabra (ej. "P")."""
+    n = len(pares); fig, ax = lienzo(2.4 * n, 2.6, 2.4 * n, 2.6, 0, 0)
+    for i, (obj, pal) in enumerate(pares):
+        x = 2.4 * i + 1.2
+        OBJ[obj](ax, x, 1.75)
+        pal = pal.upper(); w = .2 * len(pal); x0 = x - w / 2 * 1.0
+        if resaltar:
+            for j, ch in enumerate(pal):
+                ax.text(x - .2 * (len(pal) - 1) / 2 * 1.0 + .2 * j * 1.0, .45, ch, ha="center", va="center", fontsize=16, color=CORAL if ch == resaltar else OSC, **F)
+        else:
+            ax.text(x, .45, pal, ha="center", va="center", fontsize=16, color=OSC, **F)
     return png(fig)

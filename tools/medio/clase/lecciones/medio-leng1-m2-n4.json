@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng1-m2-n4",
+ "step_id": "6d0ecca3-e1fa-4f50-826b-aeeb148a27ab",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con vocales",
+ "sub": "Lengua 1 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "¡ATENCIÓN!",
+   "titular": "¡SE ESCAPARON LAS VOCALES!",
+   "bajada": "Hay palabras con huecos",
+   "emoji": "🚨",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras con vocales",
+   "voz": [
+    "¡Atención! ¡Se escaparon las *vocales*!",
+    "Hay palabras con *huecos*.",
+    "Hoy: *escribir palabras con vocales*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "CON HUECOS",
+    "emoji": "🕳️",
+    "texto": "O _ O"
+   },
+   "despues": {
+    "cab": "COMPLETA",
+    "emoji": "🐻",
+    "texto": "OSO"
+   },
+   "voz": [
+    "*Antes*: O, hueco, O. No se lee.",
+    "¡Ponemos la S y dice *OSO*!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS UVA",
+   "items": [
+    {
+     "txt": "U",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "V",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "3️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    1
+   ],
+   "voz": [
+    "Las letras de UVA están mezcladas.",
+    "Las ponemos en *orden*.",
+    "U, V, A: ¡*UVA*!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "M",
+    "E",
+    "S",
+    "A"
+   ],
+   "grande": "MESA",
+   "etiqueta": "FALTABAN LA E Y LA A",
+   "voz": [
+    "M, hueco, S, hueco. ¿Qué es?",
+    "Ponemos la E y la A: *MESA*.",
+    "¡Volvieron las vocales!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué vocal falta? L_NA",
+   "opciones": [
+    "A",
+    "U",
+    "E"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. L, hueco, N, A.",
+    "¿Qué vocal falta?",
+    "¡La *U*! LUNA."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HUECO",
+     "falta una letra"
+    ],
+    [
+     "COMPLETAR",
+     "con una vocal"
+    ],
+    [
+     "LEER",
+     "la palabra entera"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *hueco* es una letra que falta.",
+    "Lo *completamos* con una vocal.",
+    "Y *leemos* la palabra entera.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "slug": "medio-leng1-m2-n2",
+ "step_id": "e6634674-36eb-412a-b3fd-7ddd5efa9934",
+ "materia": "Lengua 1",
+ "titulo": "Vocales en los nombres",
+ "sub": "Lengua 1 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué vocales tiene el nombre SOFI?",
+   "segundos": 6,
+   "respuesta": "¡O e I!",
+   "emoji": "🔎",
+   "titulo": "VOCALES",
+   "sub": "en los nombres",
+   "voz": [
+    "Desafío: ¿qué vocales tiene SOFI?",
+    "¡La *O* y la *I*!",
+    "Hoy: *vocales en los nombres*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "👧",
+     "txt": "SOFI"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "S · O · F · I"
+    },
+    {
+     "emoji": "🔤",
+     "txt": "VOCALES: O · I"
+    }
+   ],
+   "voz": [
+    "Esta es *SOFI*.",
+    "Miramos su nombre letra por letra.",
+    "¡Encontramos las vocales: *O* e *I*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LAS VOCALES DE CADA NOMBRE",
+   "celdas": [
+    {
+     "cab": "ANA",
+     "txt": "A · A"
+    },
+    {
+     "cab": "TOMI",
+     "txt": "O · I"
+    },
+    {
+     "cab": "MATEO",
+     "txt": "A · E · O"
+    },
+    {
+     "cab": "LUCÍA",
+     "txt": "U · I · A"
+    }
+   ],
+   "voz": [
+    "Buscamos vocales en otros nombres.",
+    "*ANA*: A y A.",
+    "*TOMI*: O e I.",
+    "*MATEO*: A, E y O.",
+    "*LUCÍA*: U, I y A."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas vocales tiene ANA?",
+   "opciones": [
+    "1",
+    "2",
+    "3"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá el nombre ANA.",
+    "¿Cuántas vocales tiene?",
+    "¡*2*! A y A."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LETRA POR LETRA",
+   "texto": "Preguntá: ¿es vocal?",
+   "emoji": "👆",
+   "voz": [
+    "Truco: mirá *letra por letra* y preguntá."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar la A de ANA una vez",
+     "bien": "Las vocales se pueden repetir"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Una vocal se puede *repetir*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BUSCAR",
+     "letra por letra"
+    ],
+    [
+     "MARCAR",
+     "A, E, I, O, U"
+    ],
+    [
+     "REPETIR",
+     "ANA: A y A"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Buscamos* letra por letra.",
+    "*Marcamos* las vocales.",
+    "Y algunas se *repiten*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

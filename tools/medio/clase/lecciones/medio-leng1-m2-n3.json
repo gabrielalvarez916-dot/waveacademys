@@ -1,0 +1,133 @@
+{
+ "slug": "medio-leng1-m2-n3",
+ "step_id": "4fdf4428-b752-4001-a3db-3295e1ce0e2f",
+ "materia": "Lengua 1",
+ "titulo": "Vocales en las palabras",
+ "sub": "Lengua 1 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Hay palabras sin vocales?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Busquemos una!"
+    },
+    {
+     "yo": false,
+     "txt": "No encuentro ninguna"
+    }
+   ],
+   "titulo": "VOCALES",
+   "sub": "en las palabras",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Hay palabras *sin* vocales?",
+    "¡Busquemos una!",
+    "Hoy: *vocales en las palabras*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CON A",
+   "b": "CON O",
+   "itemsA": [
+    "MESA",
+    "CASA"
+   ],
+   "itemsB": [
+    "OSO",
+    "GLOBO"
+   ],
+   "ambos": [
+    "PELOTA",
+    "VASO"
+   ],
+   "voz": [
+    "Separamos palabras por sus vocales.",
+    "*MESA* y *CASA* tienen A.",
+    "*OSO* y *GLOBO* tienen O.",
+    "¡*PELOTA* y *VASO* tienen las dos!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "VOCALES",
+    "texto": "A, E, I, O, U",
+    "emoji": "😮"
+   },
+   "b": {
+    "cab": "OTRAS LETRAS",
+    "texto": "M, P, S, T…",
+    "emoji": "🤐"
+   },
+   "signo": "y",
+   "voz": [
+    "Las *vocales* suenan solas.",
+    "Las *otras letras* necesitan una vocal.",
+    "¡Juntas forman las palabras!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra tiene la U?",
+   "opciones": [
+    "MESA",
+    "LUNA",
+    "PATO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Decí cada palabra despacio.",
+    "¿Cuál tiene la *U*?",
+    "¡*LUNA*! L, U, N, A."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DECILA DESPACIO",
+   "texto": "Así escuchás cada vocal",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: decí la palabra *despacio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TODAS",
+     "tienen vocales"
+    ],
+    [
+     "LUGAR",
+     "principio, medio o final"
+    ],
+    [
+     "ESCUCHAR",
+     "decir lento"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Todas* las palabras tienen vocales.",
+    "Están en *cualquier lugar*.",
+    "Las *escuchamos* diciendo lento.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
