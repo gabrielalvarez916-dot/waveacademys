@@ -159,20 +159,48 @@
 
     // ---------- Modo lectura: el texto de la página con letra, interlineado y espacio entre palabras a medida ----------
     var lector = el.querySelector('.wvp-lector'), lecOn = false, lecPag = null;
-    var LEC = { t: 1.25, i: 1.9, p: 0.3 };
-    try { var g = JSON.parse(localStorage.getItem('wave_modo_lectura') || 'null'); if (g) { LEC.t = +g.t || LEC.t; LEC.i = +g.i || LEC.i; LEC.p = g.p === 0 ? 0 : (+g.p || LEC.p); } } catch (e) { /* nada */ }
+    var LEC = { t: 1.25, i: 1.9, p: 0.3, f: 'lexend' };
+    var FUENTES = { lexend: ['Lexend', '"Lexend", Verdana, sans-serif', 'https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap'], atkinson: ['Atkinson Hyperlegible', '"Atkinson Hyperlegible", Verdana, sans-serif', 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap'], opendys: ['OpenDyslexic', '"OpenDyslexic", "Comic Sans MS", sans-serif', 'https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5/400.css'], arial: ['Arial', 'Arial, Helvetica, sans-serif', ''], verdana: ['Verdana', 'Verdana, Geneva, sans-serif', ''] };
+    function cargarFuente(k) {
+      var f = FUENTES[k]; if (!f || !f[2] || document.querySelector('link[data-wfuente="' + k + '"]')) return;
+      var ln = document.createElement('link'); ln.rel = 'stylesheet'; ln.href = f[2]; ln.setAttribute('data-wfuente', k); document.head.appendChild(ln);
+    }
+    try { var g = JSON.parse(localStorage.getItem('wave_modo_lectura') || 'null'); if (g) { if (g.f && FUENTES[g.f]) LEC.f = g.f; LEC.t = +g.t || LEC.t; LEC.i = +g.i || LEC.i; LEC.p = g.p === 0 ? 0 : (+g.p || LEC.p); } } catch (e) { /* nada */ }
     function lecGuardar() { try { localStorage.setItem('wave_modo_lectura', JSON.stringify(LEC)); } catch (e) { /* nada */ } }
+    // Una línea del PDF: junta los pedazos de texto según la posición, y recompone los títulos con letras separadas (W A V E → WAVE)
+    function lecLinea(l) {
+      var LET = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]$/;
+      var T = l.toks.filter(function (k) { return k.s.trim() !== ''; });
+      var out = T.map(function (k, i) { var pr = T[i - 1]; return { s: k.s, gap: pr ? k.x - (pr.x + pr.w) : 0 }; });
+      var res = '', i = 0;
+      while (i < out.length) {
+        if (LET.test(out[i].s.trim())) {
+          var j = i; while (j < out.length && LET.test(out[j].s.trim())) j++;
+          if (j - i >= 3) {
+            var gaps = []; for (var q = i + 1; q < j; q++) gaps.push(out[q].gap);
+            var ord = gaps.slice().sort(function (x, y) { return x - y; }), med = ord[Math.floor(ord.length / 2)];
+            var corte = Math.max(med * 1.7, med + l.h * 0.35), txt = out[i].s.trim();
+            for (q = i + 1; q < j; q++) txt += (out[q].gap > corte ? ' ' : '') + out[q].s.trim();
+            res += (res && !/\s$/.test(res) ? ' ' : '') + txt + ' ';
+            i = j; continue;
+          }
+        }
+        var sp = i > 0 && out[i].gap > l.h * 0.28 && !/\s$/.test(res) && !/^\s/.test(out[i].s);
+        res += (sp ? ' ' : '') + out[i].s; i++;
+      }
+      return res;
+    }
     function lecParrafos(items) {
       var L = [], cur = null;
       items.forEach(function (it) {
         if (typeof it.str !== 'string') return;
-        var y = it.transform[5];
-        if (cur && Math.abs(cur.y - y) < 2.5) { cur.t += it.str; }
-        else { cur = { y: y, h: Math.abs(it.height) || Math.abs(it.transform[3]) || 10, t: it.str }; L.push(cur); }
+        var y = it.transform[5], tk = { s: it.str, x: it.transform[4], w: it.width || 0 };
+        if (cur && Math.abs(cur.y - y) < 2.5) { cur.toks.push(tk); }
+        else { cur = { y: y, h: Math.abs(it.height) || Math.abs(it.transform[3]) || 10, toks: [tk] }; L.push(cur); }
       });
       var P = [], act = '', prev = null;
       L.forEach(function (l) {
-        var t = l.t.replace(/\s+/g, ' ').trim();
+        var t = lecLinea(l).replace(/\s+/g, ' ').trim();
         if (!t) { if (act) { P.push(act); act = ''; } prev = null; return; }
         var corte = prev && (prev.y - l.y > prev.h * 1.75 || l.y > prev.y + 2);
         if (corte && act) { P.push(act); act = ''; }
@@ -190,7 +218,9 @@
       lector.style.setProperty('--lt', LEC.t + 'rem');
       lector.style.setProperty('--li', String(LEC.i));
       lector.style.setProperty('--lp', LEC.p + 'em');
+      lector.style.setProperty('--lf', FUENTES[LEC.f][1]); cargarFuente(LEC.f);
       var ctl = '<div class="wvp-lec-ctl" role="group" aria-label="Ajustes de lectura">' +
+        '<span>Tipo de letra <select class="wvp-lec-f" data-lec-f="1" aria-label="Tipo de letra">' + Object.keys(FUENTES).map(function (k) { return '<option value="' + k + '"' + (k === LEC.f ? ' selected' : '') + '>' + FUENTES[k][0] + '</option>'; }).join('') + '</select></span>' +
         '<span>Letra <button type="button" class="wvp-b" data-lec="t-">A−</button><button type="button" class="wvp-b" data-lec="t+">A+</button></span>' +
         '<span>Líneas <button type="button" class="wvp-b" data-lec="i-">−</button><button type="button" class="wvp-b" data-lec="i+">+</button></span>' +
         '<span>Palabras <button type="button" class="wvp-b" data-lec="p-">−</button><button type="button" class="wvp-b" data-lec="p+">+</button></span></div>';
@@ -206,6 +236,10 @@
       lecGuardar();
       lector.style.setProperty('--lt', LEC.t + 'rem'); lector.style.setProperty('--li', String(LEC.i)); lector.style.setProperty('--lp', LEC.p + 'em');
     }
+    if (lector) el.addEventListener('change', function (ev) {
+      var sel = ev.target.closest && ev.target.closest('[data-lec-f]'); if (!sel || !FUENTES[sel.value]) return;
+      LEC.f = sel.value; lecGuardar(); cargarFuente(LEC.f); lector.style.setProperty('--lf', FUENTES[LEC.f][1]);
+    });
     if (lector) el.addEventListener('click', function (ev) {
       var b = ev.target.closest('[data-lec]'); if (!b) return;
       var a = b.getAttribute('data-lec');
