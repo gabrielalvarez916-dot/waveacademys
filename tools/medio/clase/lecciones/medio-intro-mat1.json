@@ -1,0 +1,157 @@
+{
+ "slug": "medio-intro-mat1",
+ "subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3",
+ "materia": "Matemática 1",
+ "titulo": "Bienvenidos a Matemática 1",
+ "sub": "Introducción · Nivel medio",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏫",
+   "lineas": [
+    "Sofi empieza primer grado.",
+    "Ve números por todos lados.",
+    "¡Quiere aprender a usarlos!"
+   ],
+   "titulo": "¡BIENVENIDOS!",
+   "sub": "a Matemática 1",
+   "voz": [
+    "¡Hola! Ella es *Sofi*.",
+    "Sofi ve números por todos lados.",
+    "¡Y quiere aprender a usarlos!",
+    "¡Bienvenidos a *Matemática 1*!"
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Los números están en todos lados",
+    "emoji": "🔢"
+   },
+   "items": [
+    {
+     "txt": "Contar juguetes",
+     "emoji": "🧸"
+    },
+    {
+     "txt": "Pagar en el kiosco",
+     "emoji": "🍬"
+    },
+    {
+     "txt": "Saber tu edad",
+     "emoji": "🎂"
+    }
+   ],
+   "voz": [
+    "Los *números* están en todos lados.",
+    "Para *contar* tus juguetes.",
+    "Para *pagar* en el kiosco.",
+    "¡Y para saber *cuántos años* tenés!"
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "¿CUÁNTAS ESTRELLAS?",
+   "emoji": "⭐",
+   "cantidad": 5,
+   "etiqueta": "¡SABÉS CONTAR!",
+   "voz": [
+    "Probemos. Contemos estas estrellas.",
+    "1, 2, 3, 4, 5.",
+    "¡Son *5*! ¡Ya sabés contar!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 30 MISIONES",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Contar y los números hasta 100",
+     "emoji": "🔢"
+    },
+    {
+     "fecha": "2",
+     "txt": "Sumar y restar",
+     "emoji": "➕"
+    },
+    {
+     "fecha": "3",
+     "txt": "Figuras y cuerpos",
+     "emoji": "🔺"
+    },
+    {
+     "fecha": "4",
+     "txt": "Medir y el calendario",
+     "emoji": "📏"
+    },
+    {
+     "fecha": "5",
+     "txt": "Juegos con números",
+     "emoji": "🎲"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *30 misiones*. Primero, *contar*.",
+    "Después vas a *sumar* y *restar*.",
+    "Vas a conocer *figuras* y cuerpos.",
+    "Vas a *medir* y usar el calendario.",
+    "¡Y al final, *juegos* con números!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "¿CÓMO SE JUEGA?",
+   "items": [
+    {
+     "txt": "Mirás la clase",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Leés el PDF",
+     "emoji": "📄"
+    },
+    {
+     "txt": "Hacés las actividades",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "Cada misión tiene *niveles*.",
+    "Primero mirás una *clase*, como esta.",
+    "Después leés el *PDF* con tu carpeta.",
+    "Y hacés las *actividades*."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión: ¡el NIVEL JEFE!",
+   "emoji": "🏆",
+   "voz": [
+    "Al final te espera el *nivel jefe*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Tené tu carpeta y tus lápices a mano",
+   "emoji": "🎒",
+   "voz": [
+    "Tené tu *carpeta* y tus lápices a mano."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Tu primera misión: contar y comparar. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listos? Primera misión: *contar y comparar*. ¡Vamos!"
+   ]
+  }
+ ]
+}
