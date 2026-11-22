@@ -1004,7 +1004,7 @@
     }
     function mostrarRel() {
       var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q;
-      cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">⚡ Relámpago · ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
+      cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">Pregunta ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
         '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
         '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-sincrono="1" aria-pressed="false">Sin cronómetro</button></div>' +
         '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-rel="1">' + (i === lista.length - 1 ? 'Terminar' : 'Siguiente') + '</button></div>';
