@@ -1,0 +1,134 @@
+{
+ "slug": "medio-leng1-m8-n2",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 8,
+  "nivel": 2
+ },
+ "materia": "Lengua 1",
+ "titulo": "Mayúscula y punto",
+ "sub": "Lengua 1 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🚂",
+   "lineas": [
+    "Sofi maneja el tren.",
+    "Arranca con la mayúscula.",
+    "¡Y frena en el punto!"
+   ],
+   "titulo": "MAYÚSCULA",
+   "sub": "y punto",
+   "voz": [
+    "Sofi maneja el *tren* de palabras.",
+    "Arranca con la *mayúscula*.",
+    "¡Y frena en el *punto*!",
+    "Hoy: *cómo empieza y cómo termina*."
+   ]
+  },
+  {
+   "t": "parrafo",
+   "titulo": "MAMÁ MIMA A SOFI.",
+   "lineas": [
+    "Mamá mima a Sofi."
+   ],
+   "marcas": [
+    {
+     "linea": 0,
+     "pos": "inicio",
+     "txt": "MAYÚSCULA"
+    },
+    {
+     "linea": 0,
+     "pos": "fin",
+     "txt": "PUNTO"
+    }
+   ],
+   "voz": [
+    "Leemos: mamá mima a Sofi.",
+    "Al principio, la letra *grande*: *mayúscula*.",
+    "Al final, un puntito: el *punto*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ARRANCA",
+    "emoji": "🚂",
+    "texto": "Mayúscula"
+   },
+   "despues": {
+    "cab": "FRENA",
+    "emoji": "🛑",
+    "texto": "Punto"
+   },
+   "voz": [
+    "La mayúscula *arranca* el tren.",
+    "El punto lo *frena*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ARREGLAMOS",
+   "cambios": [
+    {
+     "antes": "el pato nada",
+     "despues": "El pato nada.",
+     "motivo": "mayúscula y punto"
+    }
+   ],
+   "voz": [
+    "¡Ups! A esta oración le faltan cosas.",
+    "Le ponemos *mayúscula* y *punto*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué va al final de la oración?",
+   "opciones": [
+    "UN PUNTO",
+    "UNA MAYÚSCULA",
+    "NADA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. ¿Qué frena el tren?",
+    "Pensá qué va al final.",
+    "¡*Un punto*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYÚSCULA",
+     "al principio"
+    ],
+    [
+     "PUNTO",
+     "al final"
+    ],
+    [
+     "REVISAR",
+     "mirar las dos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *mayúscula* va al principio.",
+    "El *punto* va al final.",
+    "Siempre *revisamos* las dos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

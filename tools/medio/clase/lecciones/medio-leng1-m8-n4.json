@@ -1,0 +1,142 @@
+{
+ "slug": "medio-leng1-m8-n4",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 8,
+  "nivel": 4
+ },
+ "materia": "Lengua 1",
+ "titulo": "Escribir mis primeras oraciones",
+ "sub": "Lengua 1 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué hace tu papá?"
+    },
+    {
+     "yo": true,
+     "txt": "MI PAPÁ TOMA MATE."
+    },
+    {
+     "yo": false,
+     "txt": "¡Qué linda oración!"
+    }
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "mis oraciones",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué hace tu papá?",
+    "Sofi escribe una *oración*.",
+    "Hoy: *escribir mis oraciones*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO ESCRIBO",
+   "items": [
+    "PIENSO",
+    "LO DIGO",
+    "LO ESCRIBO",
+    "LO LEO"
+   ],
+   "voz": [
+    "Primero, *pienso* qué decir.",
+    "Después, lo *digo* en voz alta.",
+    "Ahora, lo *escribo*.",
+    "Al final, lo *leo*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SIN ESPACIOS",
+    "texto": "ELSOLSALE",
+    "emoji": "😵"
+   },
+   "b": {
+    "cab": "CON ESPACIOS",
+    "texto": "EL SOL SALE.",
+    "emoji": "😃"
+   },
+   "signo": "vs",
+   "voz": [
+    "Todo pegado, no se puede leer.",
+    "Con *espacios*, ¡sí se lee!",
+    "Dejá un espacio entre palabras."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "REVISO",
+   "cambios": [
+    {
+     "antes": "mi mamá toma té",
+     "despues": "Mi mamá toma té.",
+     "motivo": "mayúscula y punto"
+    },
+    {
+     "antes": "ELOSO",
+     "despues": "EL OSO",
+     "motivo": "espacio"
+    }
+   ],
+   "voz": [
+    "Sofi revisa lo que escribió.",
+    "Pone *mayúscula* y *punto*.",
+    "Y separa con un *espacio*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está bien escrita?",
+   "opciones": [
+    "MIPAPÁTOMAMATE",
+    "MI PAPÁ TOMA MATE.",
+    "mi papá toma mate"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá las tres.",
+    "¿Cuál tiene espacios, mayúscula y punto?",
+    "¡*Mi papá toma mate*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PENSAR",
+     "decir en voz alta"
+    ],
+    [
+     "ESCRIBIR",
+     "con espacios"
+    ],
+    [
+     "REVISAR",
+     "mayúscula y punto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *pensamos* y decimos.",
+    "Escribimos con *espacios*.",
+    "Y revisamos *mayúscula y punto*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

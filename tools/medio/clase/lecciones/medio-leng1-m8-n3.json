@@ -1,0 +1,117 @@
+{
+ "slug": "medio-leng1-m8-n3",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 8,
+  "nivel": 3
+ },
+ "materia": "Lengua 1",
+ "titulo": "Ordenar palabras para armar oraciones",
+ "sub": "Lengua 1 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SE MEZCLÓ EL TREN!",
+   "bajada": "Las palabras no se entienden",
+   "emoji": "🚃",
+   "titulo": "ORDENAR",
+   "sub": "palabras",
+   "voz": [
+    "¡Último momento! ¡Se mezcló el *tren*!",
+    "Las palabras quedaron revueltas.",
+    "Hoy: *ordenar palabras*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "SOPA",
+    "TOMA",
+    "OSO",
+    "EL"
+   ],
+   "grande": "EL OSO TOMA SOPA",
+   "etiqueta": "¿QUIÉN? · ¿QUÉ HACE?",
+   "voz": [
+    "Sopa, toma, oso, el. ¡No se entiende!",
+    "Primero, ¿quién? *El oso*.",
+    "¿Qué hace? *Toma sopa*."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "MEZCLADA",
+    "items": [
+     "NADA PATO EL"
+    ]
+   },
+   "der": {
+    "cab": "ORDENADA",
+    "items": [
+     "EL PATO NADA"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Comparamos las dos.",
+    "Nada pato el: no se entiende.",
+    "*El pato nada*: ¡esta gana!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra va primero? SALE SOL EL",
+   "opciones": [
+    "SALE",
+    "EL",
+    "SOL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Sale, sol, el.",
+    "¿Qué palabra va primero?",
+    "¡*El*! El sol sale."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEÉ PARA REVISAR",
+   "texto": "Si se entiende, está bien",
+   "emoji": "👀",
+   "voz": [
+    "Truco: leé la oración y fijate si *se entiende*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MEZCLADAS",
+     "no se entiende"
+    ],
+    [
+     "ORDENAR",
+     "quién y qué hace"
+    ],
+    [
+     "REVISAR",
+     "leer otra vez"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Mezcladas, *no se entienden*.",
+    "Primero *quién*, después *qué hace*.",
+    "Y *leemos otra vez*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

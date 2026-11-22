@@ -1,0 +1,139 @@
+{
+ "slug": "medio-leng1-m8-n1",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 8,
+  "nivel": 1
+ },
+ "materia": "Lengua 1",
+ "titulo": "Palabras que forman oraciones",
+ "sub": "Lengua 1 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántas palabras dice: EL OSO TOMA SOPA?",
+   "segundos": 6,
+   "respuesta": "¡4 PALABRAS!",
+   "emoji": "🐻",
+   "titulo": "LA ORACIÓN",
+   "sub": "un tren de palabras",
+   "voz": [
+    "Desafío: ¿cuántas palabras escuchás?",
+    "El oso toma sopa: ¡*4 palabras*!",
+    "Hoy: *el tren de las palabras*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EL TREN",
+   "items": [
+    {
+     "cab": "🚃 1",
+     "txt": "EL"
+    },
+    {
+     "cab": "🚃 2",
+     "txt": "OSO"
+    },
+    {
+     "cab": "🚃 3",
+     "txt": "TOMA"
+    },
+    {
+     "cab": "🚃 4",
+     "txt": "SOPA"
+    }
+   ],
+   "voz": [
+    "Cada palabra es un *vagón*.",
+    "Primer vagón: *el*.",
+    "Segundo vagón: *oso*.",
+    "Tercer vagón: *toma*.",
+    "Cuarto vagón: *sopa*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "EL SOL SALE",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 0,
+     "etiqueta": "1",
+     "color": "sol"
+    },
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "2",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "3",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Juntas, las palabras dicen algo.",
+    "*El*: una.",
+    "*Sol*: dos.",
+    "*Sale*: tres. ¡Es una *oración*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN APLAUSO",
+   "texto": "Un aplauso por cada palabra",
+   "emoji": "👏",
+   "voz": [
+    "Truco: un *aplauso* por cada palabra."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es una oración?",
+   "opciones": [
+    "SOL EL",
+    "EL SOL SALE",
+    "SALE SOL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cuál dice algo?",
+    "Pensá cuál se entiende.",
+    "¡*El sol sale*! Se entiende."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VAGÓN",
+     "cada palabra"
+    ],
+    [
+     "TREN",
+     "la oración"
+    ],
+    [
+     "DICE ALGO",
+     "se entiende"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada palabra es un *vagón*.",
+    "El tren es la *oración*.",
+    "La oración *dice algo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
