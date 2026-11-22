@@ -1,0 +1,140 @@
+{
+ "slug": "medio-nat1-m7-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 7,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "El sol sale y se pone",
+ "sub": "Ciencias Naturales 1 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Ya salió el sol!"
+    },
+    {
+     "yo": true,
+     "txt": "¡Y A LA TARDE SE PONE!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Por dónde?"
+    }
+   ],
+   "titulo": "EL SOL",
+   "sub": "sale y se pone",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Ya salió el *sol*!",
+    "Y a la tarde *se pone*.",
+    "Hoy: *el camino del sol*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL CAMINO DEL SOL",
+   "eventos": [
+    {
+     "fecha": "MAÑANA",
+     "txt": "SALE",
+     "emoji": "🌅"
+    },
+    {
+     "fecha": "MEDIODÍA",
+     "txt": "ARRIBA",
+     "emoji": "☀️"
+    },
+    {
+     "fecha": "TARDE",
+     "txt": "SE PONE",
+     "emoji": "🌇"
+    }
+   ],
+   "voz": [
+    "A la *mañana*, el sol sale.",
+    "Al *mediodía*, está muy arriba.",
+    "A la *tarde*, se pone."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AMANECER",
+    "texto": "El sol sale",
+    "emoji": "🌅"
+   },
+   "b": {
+    "cab": "ATARDECER",
+    "texto": "El sol se pone",
+    "emoji": "🌇"
+   },
+   "signo": "vs",
+   "voz": [
+    "Cuando sale el sol: *amanecer*.",
+    "Cuando se pone: *atardecer*.",
+    "¡Sale por un lado y se pone por el otro!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde está el sol al mediodía?",
+   "opciones": [
+    "ESCONDIDO",
+    "MUY ARRIBA",
+    "SALIENDO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Es la hora del almuerzo.",
+    "¿Dónde está el sol?",
+    "¡*Muy arriba*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDÁ TUS OJOS",
+   "texto": "Nunca mires el sol directo",
+   "emoji": "😎",
+   "voz": [
+    "Importante: nunca mires el sol *directo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AMANECER",
+     "el sol sale"
+    ],
+    [
+     "MEDIODÍA",
+     "está arriba"
+    ],
+    [
+     "ATARDECER",
+     "se pone"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el *amanecer*, el sol sale.",
+    "Al *mediodía*, está arriba.",
+    "En el *atardecer*, se pone.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

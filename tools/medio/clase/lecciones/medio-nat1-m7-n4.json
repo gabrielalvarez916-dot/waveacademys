@@ -1,0 +1,125 @@
+{
+ "slug": "medio-nat1-m7-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 7,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Dibujo el cielo",
+ "sub": "Ciencias Naturales 1 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DIARIO DEL CIELO",
+   "titular": "¡SOFI DIBUJA EL CIELO!",
+   "bajada": "De día y de noche",
+   "emoji": "🖍️",
+   "titulo": "DIBUJO",
+   "sub": "el cielo",
+   "voz": [
+    "¡Sofi arma el *diario del cielo*!",
+    "Lo dibuja de día y de noche.",
+    "Hoy: *dibujo el cielo*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO HAGO",
+   "items": [
+    "MIRO",
+    "DIBUJO",
+    "ANOTO LA HORA",
+    "COMPARO"
+   ],
+   "voz": [
+    "Primero, *miro* el cielo.",
+    "Después, lo *dibujo*.",
+    "*Anoto la hora*.",
+    "Y al final, *comparo*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿QUÉ HAY EN EL CIELO?",
+   "celdas": [
+    {
+     "cab": "☀️ DÍA",
+     "txt": "SOL"
+    },
+    {
+     "cab": "☁️ DÍA",
+     "txt": "NUBES"
+    },
+    {
+     "cab": "🌙 NOCHE",
+     "txt": "LUNA"
+    },
+    {
+     "cab": "⭐ NOCHE",
+     "txt": "ESTRELLAS"
+    }
+   ],
+   "voz": [
+    "Miramos qué hay en el cielo.",
+    "De día, el *sol*.",
+    "De día también, las *nubes*.",
+    "De noche, la *luna*.",
+    "Y de noche, las *estrellas*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ANOTÁ LA HORA",
+   "texto": "Así podés comparar",
+   "emoji": "⏰",
+   "voz": [
+    "Truco: anotá la *hora* al lado del dibujo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué dibujás en el cielo de noche?",
+   "opciones": [
+    "EL SOL",
+    "LA LUNA",
+    "EL ARCOÍRIS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Es de noche.",
+    "¿Qué dibujás en el cielo?",
+    "¡La *luna* y las estrellas!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DÍA",
+     "sol y nubes"
+    ],
+    [
+     "NOCHE",
+     "luna y estrellas"
+    ],
+    [
+     "REGISTRO",
+     "dibujo y hora"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "De *día*: sol y nubes.",
+    "De *noche*: luna y estrellas.",
+    "Dibujamos y anotamos la *hora*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

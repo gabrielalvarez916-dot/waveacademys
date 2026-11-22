@@ -1,0 +1,123 @@
+{
+ "slug": "medio-nat1-m7-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 7,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "El día y la noche",
+ "sub": "Ciencias Naturales 1 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🌍",
+   "lineas": [
+    "Sofi juega con un trompo.",
+    "Gira y gira sin parar.",
+    "¡La Tierra hace lo mismo!"
+   ],
+   "titulo": "DÍA",
+   "sub": "y noche",
+   "voz": [
+    "Sofi juega con un *trompo*.",
+    "Gira y gira sin parar.",
+    "¡La *Tierra* hace lo mismo!",
+    "Hoy: *el día y la noche*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "UN DÍA ENTERO",
+   "items": [
+    "MAÑANA",
+    "TARDE",
+    "NOCHE",
+    "MADRUGADA"
+   ],
+   "voz": [
+    "La Tierra gira y todo se *repite*.",
+    "Primero, la *mañana*.",
+    "Después, la *tarde*.",
+    "Llega la *noche*.",
+    "Y la *madrugada*. ¡Otra vez mañana!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "¿QUÉ HACEMOS?",
+   "items": [
+    {
+     "cab": "☀️ DÍA",
+     "txt": "ESCUELA Y JUEGOS"
+    },
+    {
+     "cab": "🌙 NOCHE",
+     "txt": "CENAR Y DORMIR"
+    }
+   ],
+   "voz": [
+    "Cada momento tiene lo suyo.",
+    "De *día*: escuela y juegos.",
+    "De *noche*: cenar y dormir."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por qué hay día y noche?",
+   "opciones": [
+    "EL SOL SE APAGA",
+    "LA TIERRA GIRA",
+    "LA LUNA TAPA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el trompo.",
+    "¿Por qué hay día y noche?",
+    "¡Porque la *Tierra gira*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN OTRO LUGAR",
+   "texto": "Cuando acá es de noche, allá es de día",
+   "emoji": "🌏",
+   "voz": [
+    "Acá es de noche, allá es *de día*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GIRA",
+     "como un trompo"
+    ],
+    [
+     "DÍA",
+     "mira al sol"
+    ],
+    [
+     "NOCHE",
+     "no mira al sol"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La Tierra *gira* como un trompo.",
+    "La parte que mira al sol tiene *día*.",
+    "La otra tiene *noche*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

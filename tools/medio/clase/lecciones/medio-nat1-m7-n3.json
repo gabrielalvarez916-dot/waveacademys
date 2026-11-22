@@ -1,0 +1,119 @@
+{
+ "slug": "medio-nat1-m7-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 7,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "La luna y sus cambios",
+ "sub": "Ciencias Naturales 1 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué brilla de noche y cambia de forma?",
+   "segundos": 6,
+   "respuesta": "¡LA LUNA!",
+   "emoji": "🌙",
+   "titulo": "LA LUNA",
+   "sub": "y sus cambios",
+   "voz": [
+    "Desafío: ¿qué brilla de noche y cambia de forma?",
+    "¡La *luna*!",
+    "Hoy: *la luna y sus cambios*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "LAS FASES",
+   "items": [
+    "NUEVA",
+    "CRECIENTE",
+    "LLENA",
+    "MENGUANTE"
+   ],
+   "voz": [
+    "La luna parece *cambiar*.",
+    "Luna *nueva*: no se ve.",
+    "Luna *creciente*: va creciendo.",
+    "Luna *llena*: redonda entera.",
+    "Luna *menguante*: se va achicando."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🌃",
+     "txt": "EL CIELO"
+    },
+    {
+     "emoji": "🌕",
+     "txt": "LA LUNA LLENA"
+    },
+    {
+     "emoji": "🔭",
+     "txt": "SUS MANCHAS"
+    }
+   ],
+   "voz": [
+    "Miramos el *cielo* de noche.",
+    "Ahí está la *luna llena*.",
+    "¡Con un telescopio vemos sus *manchas*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo es la luna llena?",
+   "opciones": [
+    "NO SE VE",
+    "REDONDA ENTERA",
+    "COMO UNA BANANA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la luna llena.",
+    "¿Cómo se ve?",
+    "¡*Redonda entera*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRALA CADA NOCHE",
+   "texto": "Así la ves cambiar",
+   "emoji": "📅",
+   "voz": [
+    "Truco: mirá la luna *varias noches*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUNA",
+     "de noche y a veces de día"
+    ],
+    [
+     "FASES",
+     "sus formas"
+    ],
+    [
+     "CICLO",
+     "se repite"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *luna* brilla en el cielo.",
+    "Sus formas son las *fases*.",
+    "Y se *repiten* siempre.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

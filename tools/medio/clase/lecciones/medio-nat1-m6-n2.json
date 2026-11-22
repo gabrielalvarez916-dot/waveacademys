@@ -1,0 +1,152 @@
+{
+ "slug": "medio-nat1-m6-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 6,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Mezclas con agua",
+ "sub": "Ciencias Naturales 1 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Puse arena en un vaso con agua!"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y QUÉ PASÓ?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Se fue al fondo!"
+    }
+   ],
+   "titulo": "MEZCLAS",
+   "sub": "con agua",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Puse arena en un vaso con agua!",
+    "La arena se fue al *fondo*.",
+    "Hoy: *mezclas con agua*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿QUÉ PASA EN EL AGUA?",
+   "variable": "LO QUE PONEMOS",
+   "a": {
+    "cab": "AGUA Y ARENA",
+    "emojis": [
+     "🥛",
+     "🏖️"
+    ],
+    "txt": "Ponemos arena",
+    "res": "SE VA AL FONDO"
+   },
+   "b": {
+    "cab": "AGUA Y ACEITE",
+    "emojis": [
+     "🥛",
+     "🫒"
+    ],
+    "txt": "Ponemos aceite",
+    "res": "FLOTA ARRIBA"
+   },
+   "voz": [
+    "En un vaso ponemos *arena*.",
+    "En otro vaso ponemos *aceite*.",
+    "¡La arena baja y el aceite *flota*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "AGUA Y…",
+   "celdas": [
+    {
+     "cab": "🪨 PIEDRA",
+     "txt": "AL FONDO"
+    },
+    {
+     "cab": "🍾 CORCHO",
+     "txt": "FLOTA"
+    },
+    {
+     "cab": "🟤 TIERRA",
+     "txt": "BARRO"
+    },
+    {
+     "cab": "🍹 JUGO",
+     "txt": "SE PINTA"
+    }
+   ],
+   "voz": [
+    "Probamos con más cosas.",
+    "La *piedra* se va al fondo.",
+    "El *corcho* flota.",
+    "La *tierra* hace barro.",
+    "El *jugo en polvo* pinta el agua."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué hace el corcho en el agua?",
+   "opciones": [
+    "SE HUNDE",
+    "FLOTA",
+    "DESAPARECE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. El corcho es liviano.",
+    "¿Qué hace en el agua?",
+    "¡*Flota*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "Las pruebas, siempre acompañado",
+   "emoji": "🧑‍🔬",
+   "voz": [
+    "Truco: hacé las pruebas *con un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AL FONDO",
+     "arena, piedra"
+    ],
+    [
+     "FLOTA",
+     "aceite, corcho"
+    ],
+    [
+     "SE PINTA",
+     "jugo en polvo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Algunas cosas van *al fondo*.",
+    "Otras *flotan*.",
+    "Y otras *pintan* el agua.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

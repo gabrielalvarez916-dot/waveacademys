@@ -1,0 +1,161 @@
+{
+ "slug": "medio-nat1-m6-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 6,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Qué se disuelve y qué no",
+ "sub": "Ciencias Naturales 1 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡DESAPARECIÓ EL AZÚCAR!",
+   "bajada": "Pero el agua quedó dulce",
+   "emoji": "🍬",
+   "titulo": "SE DISUELVE",
+   "sub": "o no se disuelve",
+   "voz": [
+    "¡Último momento! Desapareció el *azúcar*.",
+    "Pero el agua quedó *dulce*.",
+    "Hoy: *qué se disuelve y qué no*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿SE DISUELVE?",
+   "variable": "LO QUE PONEMOS",
+   "a": {
+    "cab": "AGUA Y AZÚCAR",
+    "emojis": [
+     "🥛",
+     "🍬"
+    ],
+    "txt": "Revolvemos",
+    "res": "YA NO SE VE"
+   },
+   "b": {
+    "cab": "AGUA Y ARENA",
+    "emojis": [
+     "🥛",
+     "🏖️"
+    ],
+    "txt": "Revolvemos",
+    "res": "SIGUE AHÍ"
+   },
+   "voz": [
+    "En un vaso ponemos *azúcar*.",
+    "En otro vaso ponemos *arena*.",
+    "¡El azúcar se *disolvió*, la arena no!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL AZÚCAR EN EL AGUA",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "PONGO AZÚCAR",
+     "emoji": "🥄"
+    },
+    {
+     "fecha": "2",
+     "txt": "REVUELVO",
+     "emoji": "🌀"
+    },
+    {
+     "fecha": "3",
+     "txt": "YA NO SE VE",
+     "emoji": "✨"
+    }
+   ],
+   "voz": [
+    "Primero, *pongo* el azúcar.",
+    "Después, *revuelvo*.",
+    "¡Ya no se ve, pero sigue ahí!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SE DISUELVE",
+     "emoji": "✨"
+    },
+    {
+     "cab": "NO SE DISUELVE",
+     "emoji": "🪨"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "SAL",
+     "caja": 0
+    },
+    {
+     "txt": "ARENA",
+     "caja": 1
+    },
+    {
+     "txt": "AZÚCAR",
+     "caja": 0
+    },
+    {
+     "txt": "BOTÓN",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos en dos cajas.",
+    "Los que *se disuelven*.",
+    "Y los que *no se disuelven*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué se disuelve en el agua?",
+   "opciones": [
+    "PIEDRA",
+    "SAL",
+    "BOTÓN"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Piedra, sal, botón.",
+    "¿Cuál se disuelve?",
+    "¡La *sal*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SE DISUELVE",
+     "azúcar, sal"
+    ],
+    [
+     "NO SE DISUELVE",
+     "arena, aceite"
+    ],
+    [
+     "REVOLVER",
+     "ayuda"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El azúcar y la sal *se disuelven*.",
+    "La arena *no se disuelve*.",
+    "*Revolver* ayuda.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

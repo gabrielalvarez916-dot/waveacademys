@@ -1,0 +1,126 @@
+{
+ "slug": "medio-nat1-m6-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 6,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Mezclas de sólidos",
+ "sub": "Ciencias Naturales 1 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍲",
+   "lineas": [
+    "Sofi cocina con la abuela.",
+    "Se le cae el arroz en los porotos.",
+    "¡Quedó todo mezclado!"
+   ],
+   "titulo": "MEZCLAS",
+   "sub": "de sólidos",
+   "voz": [
+    "Sofi cocina con la *abuela*.",
+    "Se le cae el arroz en los porotos.",
+    "¡Quedó todo *mezclado*!",
+    "Hoy: *mezclas de sólidos*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SEPARADOS",
+    "emoji": "🍚",
+    "texto": "Arroz y porotos"
+   },
+   "despues": {
+    "cab": "MEZCLADOS",
+    "emoji": "🥣",
+    "texto": "¡Una mezcla!"
+   },
+   "voz": [
+    "Antes, el arroz y los porotos estaban *separados*.",
+    "Ahora están juntos: es una *mezcla*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🥣",
+     "txt": "LA MEZCLA"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "DE CERCA"
+    },
+    {
+     "emoji": "🫘",
+     "txt": "SE VEN LOS GRANOS"
+    }
+   ],
+   "voz": [
+    "Miramos la *mezcla*.",
+    "Nos acercamos.",
+    "¡Se ven los granos! Los podemos *separar con la mano*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo separás botones de fideos?",
+   "opciones": [
+    "CON LA MANO",
+    "CON AGUA",
+    "SOPLANDO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Hay botones y fideos juntos.",
+    "¿Cómo los separás?",
+    "¡*Con la mano*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LOS TAMAÑOS",
+   "texto": "Si se ven distintos, se separan",
+   "emoji": "👀",
+   "voz": [
+    "Truco: si se ven *distintos*, se pueden separar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MEZCLA",
+     "cosas juntas"
+    ],
+    [
+     "SÓLIDOS",
+     "arroz, porotos"
+    ],
+    [
+     "SEPARAR",
+     "con la mano"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *mezcla* son cosas juntas.",
+    "Arroz y porotos son *sólidos*.",
+    "Los separamos *con la mano*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

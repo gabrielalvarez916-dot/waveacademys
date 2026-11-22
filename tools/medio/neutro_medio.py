@@ -146,4 +146,6 @@ MAPA.update({'agrupalos': 'agrúpalos', 'imitá': 'imita'})  # Ciencias Naturale
 MAPA.update({'sentilo': 'siéntelo', 'regá': 'riega', 'anotás': 'anotas', 'calcá': 'calca', 'miralas': 'míralas', 'miralo': 'míralo', 'plantá': 'planta', 'salís': 'sales'})  # Ciencias Naturales 1 · Misión 3
 MAPA.update({'cuidás': 'cuidas'})  # Ciencias Naturales 1 · Misión 4
 OK |= {'través', 'mochila', 'doblé'}; MAPA.update({'alumbrá': 'alumbra', 'doblá': 'dobla', 'doblás': 'doblas'})  # Ciencias Naturales 1 · Misión 5
+MAPA.update({'separás': 'separas', 'colás': 'cuelas', 'esperá': 'espera', 'esperás': 'esperas', 'revolvé': 'revuelve'})  # Ciencias Naturales 1 · Misión 6
+MAPA.update({'cuidá': 'cuida', 'mirala': 'mírala', 'girala': 'gírala'})  # Ciencias Naturales 1 · Misión 7
 OK -= set(MAPA)

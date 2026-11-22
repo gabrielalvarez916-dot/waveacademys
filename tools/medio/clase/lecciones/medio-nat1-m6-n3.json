@@ -1,0 +1,115 @@
+{
+ "slug": "medio-nat1-m6-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 6,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Colar y filtrar",
+ "sub": "Ciencias Naturales 1 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo saca la abuela los fideos del agua?",
+   "segundos": 6,
+   "respuesta": "¡CON UN COLADOR!",
+   "emoji": "🍝",
+   "titulo": "COLAR",
+   "sub": "y filtrar",
+   "voz": [
+    "Desafío: ¿cómo saca la abuela los fideos del agua?",
+    "¡Con un *colador*!",
+    "Hoy: *colar y filtrar*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO SE CUELA",
+   "items": [
+    "PONGO EL COLADOR",
+    "VUELCO LA OLLA",
+    "PASA EL AGUA",
+    "QUEDAN LOS FIDEOS"
+   ],
+   "voz": [
+    "Primero, *pongo* el colador.",
+    "Un adulto *vuelca* la olla.",
+    "El agua *pasa* por los agujeros.",
+    "¡Y quedan los *fideos*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "COLADOR",
+    "texto": "AGUJEROS GRANDES",
+    "emoji": "🥄"
+   },
+   "b": {
+    "cab": "FILTRO",
+    "texto": "AGUJERITOS CHIQUITOS",
+    "emoji": "☕"
+   },
+   "signo": "vs",
+   "voz": [
+    "El *colador* tiene agujeros grandes.",
+    "El *filtro* tiene agujeritos chiquitos.",
+    "¡El filtro atrapa cosas muy chiquitas!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué usás para el agua con tierra?",
+   "opciones": [
+    "COLADOR",
+    "FILTRO",
+    "TENEDOR"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La tierra es muy chiquita.",
+    "¿Qué usás para separarla?",
+    "¡Un *filtro*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO, QUEMA",
+   "texto": "El agua caliente la cuela un adulto",
+   "emoji": "🔥",
+   "voz": [
+    "Truco: el agua caliente la cuela *un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "COLADOR",
+     "agujeros grandes"
+    ],
+    [
+     "FILTRO",
+     "agujeritos chiquitos"
+    ],
+    [
+     "ELEGIR",
+     "según el tamaño"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *colador*, para cosas grandes.",
+    "El *filtro*, para cosas chiquitas.",
+    "Elegimos según el *tamaño*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
