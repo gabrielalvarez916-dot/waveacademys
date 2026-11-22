@@ -277,6 +277,13 @@
         cont.insertAdjacentHTML('beforebegin', planHtml);
         enganchaPlan(cont.previousElementSibling);
       }
+      // Trayecto Número: tarjeta de la práctica diaria de cálculo
+      try {
+        var qn = await sb.from('students').select('adaptaciones').eq('id', estudianteId).maybeSingle();
+        if (window.WaveNum && qn.data && (qn.data.adaptaciones || []).indexOf('num_practica') >= 0) {
+          cont.insertAdjacentHTML('beforebegin', await WaveNum.tarjetaPractica(estudianteId));
+        }
+      } catch (e) { /* sin la tarjeta */ }
       cont.className = 'cursos-grilla';
       cont.innerHTML = cursos.map(function (c) {
         var pct = c.total ? Math.round((c.completas / c.total) * 100) : 0;
@@ -1035,6 +1042,8 @@
 
   window.WaveIconos = { materia: iconoMateria };
 
+  document.addEventListener('wave-num-practica', function () { if ((location.hash || '#cursos') === '#cursos') vistaCursos(); });
+
   var rutaId = 0;
   async function ruta() {
     var mi = ++rutaId, nombre = (location.hash || '#cursos').slice(1);
@@ -1049,6 +1058,7 @@
       enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#cursos'); });
       return WaveMateria.abrir(vista, m[1], m[2], m[3]);
     }
+    if (window.WaveNum) WaveNum.botonHerramientas(false);
     if (!VISTAS[nombre]) nombre = 'cursos';
     enlaces.forEach(function (a) {
       a.classList.toggle('activo', a.getAttribute('href') === '#' + nombre);

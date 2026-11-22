@@ -531,6 +531,7 @@
   // ----- Router interno -----
   var ruta = { tema: null, leccion: null };
   function pintar() {
+    if (window.WaveNum) WaveNum.botonHerramientas(/^#materia\//.test(location.hash) && !!D && !!D.adaptaciones && D.adaptaciones.indexOf('num_componentes') >= 0);
     if (!/^#materia\//.test(location.hash)) return; // el alumno ya salió de la materia (ej. «Mis cursos»): no volver a dibujarla encima
     calcular();
     hojaAbierta = null;
