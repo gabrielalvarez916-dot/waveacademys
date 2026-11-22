@@ -1,0 +1,139 @@
+{
+ "slug": "medio-intro-soc1",
+ "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Bienvenidos a Ciencias Sociales 1",
+ "sub": "Introducción · Nivel medio",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🏘️",
+   "lineas": [
+    "Tomi sale de su casa.",
+    "Saluda a sus vecinos.",
+    "¡Quiere conocer cómo vive la gente!"
+   ],
+   "titulo": "¡BIENVENIDOS!",
+   "sub": "a Ciencias Sociales 1",
+   "voz": [
+    "¡Hola! Él es *Tomi*.",
+    "Tomi sale y saluda a sus *vecinos*.",
+    "¡Quiere saber cómo vive la gente!",
+    "¡Bienvenidos a *Ciencias Sociales 1*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "ESTE AÑO VAMOS A CONOCER",
+   "celdas": [
+    {
+     "cab": "👨‍👩‍👧",
+     "txt": "LAS FAMILIAS"
+    },
+    {
+     "cab": "🏫",
+     "txt": "LA ESCUELA"
+    },
+    {
+     "cab": "🏘️",
+     "txt": "EL BARRIO"
+    },
+    {
+     "cab": "🌾",
+     "txt": "EL CAMPO Y LA CIUDAD"
+    },
+    {
+     "cab": "⏳",
+     "txt": "EL PASADO"
+    },
+    {
+     "cab": "🎉",
+     "txt": "FIESTAS Y DERECHOS"
+    }
+   ],
+   "voz": [
+    "Este año vamos a conocer a las *personas*.",
+    "Las *familias* y la escuela.",
+    "El *barrio* donde vivimos.",
+    "El *campo* y la ciudad.",
+    "Cómo vivían *antes*.",
+    "¡Y las fiestas y los *derechos*!"
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "ASÍ INVESTIGAMOS",
+   "items": [
+    "MIRO",
+    "PREGUNTO",
+    "COMPARO",
+    "CUENTO"
+   ],
+   "voz": [
+    "Vamos a investigar como *exploradores*.",
+    "Primero, *miro* a mi alrededor.",
+    "Después, *pregunto* a los grandes.",
+    "*Comparo* antes y ahora.",
+    "Y *cuento* lo que aprendí."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ANTES",
+    "texto": "Cartas en papel",
+    "emoji": "✉️"
+   },
+   "b": {
+    "cab": "AHORA",
+    "texto": "Mensajes en el celular",
+    "emoji": "📱"
+   },
+   "signo": "vs",
+   "voz": [
+    "Las cosas *cambian* con el tiempo.",
+    "*Antes* mandaban cartas.",
+    "*Ahora* mandamos mensajes.",
+    "¡Vamos a descubrir esos cambios!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿A quién le pregunto cómo era antes?",
+   "opciones": [
+    "A MI ABUELA",
+    "A MI PERRO",
+    "A LA TELE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el pasado.",
+    "¿A quién le preguntás cómo era antes?",
+    "¡A tu *abuela* o tu abuelo!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONVIVIR",
+   "texto": "Respetamos a todas las personas",
+   "emoji": "🤝",
+   "voz": [
+    "Importante: *respetamos* a todas las personas."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "¡A CONOCER NUESTRO MUNDO!",
+   "emoji": "🌎",
+   "color": "sol",
+   "voz": [
+    "¡Vamos a *conocer nuestro mundo* juntos!"
+   ]
+  }
+ ]
+}
