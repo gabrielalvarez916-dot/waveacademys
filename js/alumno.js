@@ -1083,6 +1083,11 @@
       return WaveMateria.abrir(vista, m[1], m[2], m[3]);
     }
     if (window.WaveNum) WaveNum.botonHerramientas(false);
+    var bi = /^biblioteca(?:\/([0-9a-f-]{36}))?(?:\/([0-9a-f-]{36}))?$/i.exec(nombre);
+    if (bi) {
+      enlaces.forEach(function (a) { a.classList.toggle('activo', a.getAttribute('href') === '#biblioteca'); });
+      return WaveMateria.biblioteca(vista, { materia: bi[1] || '', mision: bi[2] || '' }).catch(function (e) { console.error(e); vista.innerHTML = '<div class="vacio">No pudimos cargar la biblioteca. Probá recargar la página.</div>'; });
+    }
     if (!VISTAS[nombre]) nombre = 'cursos';
     enlaces.forEach(function (a) {
       a.classList.toggle('activo', a.getAttribute('href') === '#' + nombre);

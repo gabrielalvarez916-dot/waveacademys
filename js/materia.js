@@ -1203,16 +1203,13 @@
 
   // ---------- Biblio-videoteca: recursos opcionales de la materia (las actividades solo las ven los alumnos con Desafío) ----------
   function ytId(u) { var m = /(?:youtu\.be\/|[?&]v=|embed\/)([A-Za-z0-9_-]{6,15})/.exec(String(u || '')); return m ? m[1] : null; }
-  // Pantalla aparte (menú «Biblioteca»), con filtros por nivel, año, materia y misión. Nada de esto es obligatorio.
-  async function abrirBiblioteca(pre) {
+  // Página más del panel (menú «Biblioteca»), con filtros por nivel, año, materia y misión. Nada de esto es obligatorio.
+  async function abrirBiblioteca(raiz, pre) {
     pre = pre || {};
-    var f = document.createElement('div');
-    f.className = 'bib-fondo';
-    f.innerHTML = '<div class="bib-caja" role="dialog" aria-label="Biblio-videoteca"><button type="button" class="bib-x" aria-label="Cerrar">✕</button><h2>Biblio-videoteca</h2><p class="bib-sub">Recursos opcionales por si querés ver más o algo no te quedó claro.</p><div class="bib-filtros"></div><div class="bib-cont">Cargando…</div></div>';
-    document.body.appendChild(f);
+    raiz.innerHTML = '<div class="bib-pag"><h1 class="vista-titulo">Biblio-videoteca</h1><p class="bib-sub">Recursos opcionales por si querés ver más o algo no te quedó claro.</p><div class="bib-filtros"></div><div class="bib-cont">Cargando…</div></div>';
+    var f = raiz.firstChild;
     var cont = f.querySelector('.bib-cont'), fil = f.querySelector('.bib-filtros');
     f.addEventListener('click', function (ev) {
-      if (ev.target === f || ev.target.closest('.bib-x')) return f.remove();
       var v = ev.target.closest('[data-bib-ver]');
       if (v) { var c = document.createElement('div'); c.className = 'bib-player'; c.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.getAttribute('data-bib-ver')) + '?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; v.replaceWith(c); }
     });
@@ -1294,7 +1291,8 @@
     var b = ev.target.closest('[data-biblio]');
     if (!b) return;
     ev.preventDefault();
-    abrirBiblioteca({ materia: b.getAttribute('data-bib-materia') || '', mision: b.getAttribute('data-bib-mision') || '' }).catch(function (e) { console.error(e); });
+    var m = b.getAttribute('data-bib-materia') || '', t = b.getAttribute('data-bib-mision') || '';
+    location.hash = '#biblioteca' + (m ? '/' + m + (t ? '/' + t : '') : '');
   });
 
   // ---------- Introducción ----------
@@ -1370,5 +1368,5 @@
   // Solo para pruebas visuales con datos de ejemplo
   function _probar(el, datos, r) { vista = el; D = datos; ruta = r || { tema: null, leccion: null }; enlazar(); pintar(); }
 
-  window.WaveMateria = { abrir: abrir, _probar: _probar, _cuest: abrirCuestionario };
+  window.WaveMateria = { abrir: abrir, biblioteca: abrirBiblioteca, _probar: _probar, _cuest: abrirCuestionario };
 })();
