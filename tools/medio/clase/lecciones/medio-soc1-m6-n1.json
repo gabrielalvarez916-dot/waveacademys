@@ -1,0 +1,133 @@
+{
+ "slug": "medio-soc1-m6-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 6,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "La manzana, el tomate y la yerba mate",
+ "sub": "Ciencias Sociales 1 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍎",
+   "lineas": [
+    "Sofi come una manzana.",
+    "Se pregunta de dónde viene.",
+    "¡Empezó en el campo!"
+   ],
+   "titulo": "DEL CAMPO",
+   "sub": "a mi mesa",
+   "voz": [
+    "Sofi come una *manzana*.",
+    "Se pregunta de dónde viene.",
+    "¡Empezó en el *campo*!",
+    "Hoy: *la manzana, el tomate y la yerba*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿DE DÓNDE VIENEN?",
+   "celdas": [
+    {
+     "cab": "🍎 MANZANA",
+     "txt": "ÁRBOL"
+    },
+    {
+     "cab": "🍅 TOMATE",
+     "txt": "PLANTA"
+    },
+    {
+     "cab": "🧉 YERBA",
+     "txt": "HOJAS DE UN ARBUSTO"
+    },
+    {
+     "cab": "🥕 ZANAHORIA",
+     "txt": "RAÍZ"
+    }
+   ],
+   "voz": [
+    "Cada alimento viene de una *planta*.",
+    "La manzana, de un *árbol*.",
+    "El tomate, de una *planta* baja.",
+    "La yerba, de las *hojas* de un arbusto.",
+    "¡La zanahoria es una *raíz*!"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "VERDE",
+    "emoji": "🟢",
+    "texto": "Todavía no"
+   },
+   "despues": {
+    "cab": "ROJO",
+    "emoji": "🍅",
+    "texto": "¡Listo para cosechar!"
+   },
+   "voz": [
+    "Primero el tomate está *verde*.",
+    "Cuando madura, se pone *rojo*: ¡a cosechar!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De qué parte sale la yerba?",
+   "opciones": [
+    "RAÍZ",
+    "HOJAS",
+    "FLOR"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la yerba mate.",
+    "¿De qué parte de la planta sale?",
+    "¡De las *hojas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LAVÁ LA FRUTA",
+   "texto": "Siempre antes de comerla",
+   "emoji": "🚰",
+   "voz": [
+    "Truco: *lavá* la fruta antes de comerla."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MANZANA",
+     "del árbol"
+    ],
+    [
+     "TOMATE",
+     "de una planta"
+    ],
+    [
+     "YERBA",
+     "hojas secas y molidas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *manzana* viene del árbol.",
+    "El *tomate*, de una planta.",
+    "La *yerba*, de las hojas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

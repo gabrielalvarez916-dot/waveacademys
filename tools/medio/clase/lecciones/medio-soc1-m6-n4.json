@@ -1,0 +1,119 @@
+{
+ "slug": "medio-soc1-m6-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 6,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Trabajos para todas las personas",
+ "sub": "Ciencias Sociales 1 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡ANA MANEJA EL TRACTOR!",
+   "bajada": "En su chacra cosecha tomates",
+   "emoji": "👩‍🌾",
+   "titulo": "TRABAJOS",
+   "sub": "para todas las personas",
+   "voz": [
+    "¡Último momento! *Ana* maneja el tractor.",
+    "En su chacra cosecha tomates.",
+    "Hoy: *trabajos para todas las personas*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "PARA QUE LLEGUE LA MANZANA",
+    "emoji": "🍎"
+   },
+   "items": [
+    "TRABAJA LA AGRICULTORA",
+    "TRABAJA EL CAMIONERO",
+    "TRABAJA LA VERDULERA"
+   ],
+   "voz": [
+    "Para que llegue la *manzana* a tu mesa…",
+    "trabaja la *agricultora*.",
+    "Trabaja el *camionero*.",
+    "Y trabaja la *verdulera*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "¿ESTÁ BIEN?",
+   "cambios": [
+    {
+     "antes": "SOLO LOS VARONES MANEJAN",
+     "despues": "TODOS PUEDEN MANEJAR",
+     "motivo": "igualdad"
+    },
+    {
+     "antes": "SOLO LAS MUJERES COCINAN",
+     "despues": "TODOS PUEDEN COCINAR",
+     "motivo": "igualdad"
+    }
+   ],
+   "voz": [
+    "Arreglamos frases que están mal.",
+    "*Todos* pueden manejar un tractor.",
+    "Y *todos* pueden cocinar."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién puede cosechar?",
+   "opciones": [
+    "SOLO VARONES",
+    "TODAS LAS PERSONAS",
+    "NADIE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la chacra.",
+    "¿Quién puede cosechar?",
+    "¡*Todas las personas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODOS PUEDEN",
+   "texto": "No hay trabajos de un solo grupo",
+   "emoji": "🤝",
+   "voz": [
+    "Recordá: *todos* pueden hacer cualquier trabajo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MUCHOS",
+     "trabajan muchas personas"
+    ],
+    [
+     "IGUALDAD",
+     "todos pueden"
+    ],
+    [
+     "IMPORTANTES",
+     "todos los trabajos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Trabajan *muchas personas*.",
+    "*Todos* pueden hacer cualquier trabajo.",
+    "Todos los trabajos son *importantes*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,147 @@
+{
+ "slug": "medio-soc1-m5-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 5,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Qué hay en el campo y qué hay en la ciudad",
+ "sub": "Ciencias Sociales 1 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Prima Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Hoy fui a la escuela a caballo!"
+    },
+    {
+     "yo": true,
+     "txt": "¡YO FUI EN COLECTIVO!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Las dos fuimos a la escuela!"
+    }
+   ],
+   "titulo": "CAMPO",
+   "sub": "y ciudad",
+   "voz": [
+    "La prima Lu vive en el *campo*.",
+    "Fue a la escuela a caballo.",
+    "Sofi vive en la ciudad y fue en *colectivo*.",
+    "Hoy: *qué hay en el campo y en la ciudad*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CAMPO",
+   "b": "CIUDAD",
+   "itemsA": [
+    "TRACTOR",
+    "VACAS"
+   ],
+   "itemsB": [
+    "EDIFICIOS",
+    "SEMÁFOROS"
+   ],
+   "ambos": [
+    "ESCUELAS",
+    "FAMILIAS"
+   ],
+   "voz": [
+    "Comparamos el campo y la ciudad.",
+    "En el *campo*: tractores y vacas.",
+    "En la *ciudad*: edificios y semáforos.",
+    "¡En los *dos*: escuelas y familias!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿CÓMO VAN A LA ESCUELA?",
+   "celdas": [
+    {
+     "cab": "🐴 CAMPO",
+     "txt": "A CABALLO"
+    },
+    {
+     "cab": "🚜 CAMPO",
+     "txt": "EN CAMIONETA"
+    },
+    {
+     "cab": "🚌 CIUDAD",
+     "txt": "EN COLECTIVO"
+    },
+    {
+     "cab": "🚶 CIUDAD",
+     "txt": "CAMINANDO"
+    }
+   ],
+   "voz": [
+    "Cada chico llega distinto.",
+    "En el campo, algunos van *a caballo*.",
+    "Otros, en *camioneta*.",
+    "En la ciudad, en *colectivo*.",
+    "O *caminando*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué hay en los dos?",
+   "opciones": [
+    "TRACTORES",
+    "ESCUELAS",
+    "SEMÁFOROS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el campo y la ciudad.",
+    "¿Qué hay en los dos?",
+    "¡*Escuelas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODOS VALEN",
+   "texto": "Ningún lugar es mejor que otro",
+   "emoji": "💛",
+   "voz": [
+    "Recordá: ningún lugar es *mejor* que otro."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMPO",
+     "tractores, vacas"
+    ],
+    [
+     "CIUDAD",
+     "edificios, semáforos"
+    ],
+    [
+     "LOS DOS",
+     "escuelas y familias"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el *campo* hay tractores.",
+    "En la *ciudad* hay edificios.",
+    "En los *dos* hay escuelas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

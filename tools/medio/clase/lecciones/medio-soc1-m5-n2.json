@@ -1,0 +1,134 @@
+{
+ "slug": "medio-soc1-m5-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 5,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Paisajes de la ciudad",
+ "sub": "Ciencias Sociales 1 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué luces te dicen cuándo cruzar?",
+   "segundos": 6,
+   "respuesta": "¡EL SEMÁFORO!",
+   "emoji": "🚦",
+   "titulo": "LA CIUDAD",
+   "sub": "sus paisajes",
+   "voz": [
+    "Desafío: ¿qué luces te dicen cuándo cruzar?",
+    "¡El *semáforo*!",
+    "Hoy: *paisajes de la ciudad*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏙️",
+   "titulo": "LA CIUDAD",
+   "partes": [
+    {
+     "txt": "EDIFICIOS",
+     "x": -0.4,
+     "y": -0.6
+    },
+    {
+     "txt": "SEMÁFORO",
+     "x": 0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "COLECTIVO",
+     "x": -0.5,
+     "y": 0.5
+    },
+    {
+     "txt": "VEREDA",
+     "x": 0.5,
+     "y": 0.7
+    }
+   ],
+   "voz": [
+    "Miramos la *ciudad*.",
+    "Hay *edificios* altos.",
+    "Hay *semáforos*.",
+    "Pasan *colectivos*.",
+    "Y la gente camina por la *vereda*."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "AUTOS EN UN MINUTO",
+   "unidad": "autos",
+   "items": [
+    {
+     "txt": "CAMPO",
+     "valor": 1
+    },
+    {
+     "txt": "CIUDAD",
+     "valor": 20
+    }
+   ],
+   "voz": [
+    "Tomi cuenta *autos* en un minuto.",
+    "En el campo: *1*.",
+    "¡En la ciudad: *20*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde hay más ruido?",
+   "opciones": [
+    "CAMPO",
+    "CIUDAD",
+    "IGUAL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los autos.",
+    "¿Dónde hay más ruido?",
+    "¡En la *ciudad*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "En la ciudad cruzá siempre acompañado",
+   "emoji": "🚸",
+   "voz": [
+    "Importante: cruzá siempre *con un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CIUDAD",
+     "edificios y gente"
+    ],
+    [
+     "MOVIMIENTO",
+     "autos, colectivos"
+    ],
+    [
+     "RUIDO",
+     "más que el campo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *ciudad* tiene edificios.",
+    "Hay mucho *movimiento*.",
+    "Y más *ruido* que el campo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

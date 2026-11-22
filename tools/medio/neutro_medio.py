@@ -155,4 +155,5 @@ OK |= {'nací'}; MAPA.update({'ordenás': 'ordenas', 'pedí': 'pide', 'pegás': 
 MAPA.update({'saludá': 'saluda', 'almorzás': 'almuerzas'})  # Ciencias Sociales 1 · Misión 2
 MAPA.update({'cruzá': 'cruza', 'recorrés': 'recorres', 'hamacás': 'columpias'})  # Ciencias Sociales 1 · Misión 3
 OK |= {'hospitales', 'quebré'}; MAPA.update({'avisá': 'avisa', 'devolvé': 'devuelve', 'nadás': 'nadas'})  # Ciencias Sociales 1 · Misión 4
+MAPA.update({'lavá': 'lava', 'regás': 'riegas', 'ordenalas': 'ordénalas'})  # Ciencias Sociales 1 · Misión 6
 OK -= set(MAPA)

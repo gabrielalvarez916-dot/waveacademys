@@ -1,0 +1,125 @@
+{
+ "slug": "medio-soc1-m5-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 5,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Comparamos un pueblo y una ciudad",
+ "sub": "Ciencias Sociales 1 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡EL PUEBLO DEL ABUELO CRECIÓ!",
+   "bajada": "Ahora es una ciudad",
+   "emoji": "🏘️",
+   "titulo": "PUEBLO",
+   "sub": "y ciudad",
+   "voz": [
+    "¡Último momento! El pueblo del abuelo *creció*.",
+    "Ahora es una ciudad.",
+    "Hoy: *comparamos un pueblo y una ciudad*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PUEBLO",
+    "texto": "CHICO, TODOS SE CONOCEN",
+    "emoji": "🏡"
+   },
+   "b": {
+    "cab": "CIUDAD",
+    "texto": "GRANDE, MUCHA GENTE",
+    "emoji": "🏙️"
+   },
+   "signo": "vs",
+   "voz": [
+    "El *pueblo* es chico: todos se conocen.",
+    "La *ciudad* es grande: hay mucha gente.",
+    "¡Los dos tienen escuela y plaza!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL PUEBLO CRECE",
+   "eventos": [
+    {
+     "fecha": "HACE MUCHO",
+     "txt": "POCAS CASAS",
+     "emoji": "🏠"
+    },
+    {
+     "fecha": "DESPUÉS",
+     "txt": "MÁS CASAS",
+     "emoji": "🏘️"
+    },
+    {
+     "fecha": "HOY",
+     "txt": "EDIFICIOS",
+     "emoji": "🏙️"
+    }
+   ],
+   "voz": [
+    "Hace mucho, había *pocas casas*.",
+    "Después, hicieron *más casas*.",
+    "¡Hoy hay *edificios*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde casi todos se conocen?",
+   "opciones": [
+    "PUEBLO",
+    "CIUDAD GRANDE",
+    "AEROPUERTO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en un lugar chico.",
+    "¿Dónde todos se conocen?",
+    "¡En el *pueblo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "Los abuelos saben cómo era antes",
+   "emoji": "👴",
+   "voz": [
+    "Truco: preguntá a los *abuelos* cómo era antes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PUEBLO",
+     "chico, todos se conocen"
+    ],
+    [
+     "CIUDAD",
+     "grande, mucha gente"
+    ],
+    [
+     "CAMBIA",
+     "un pueblo crece"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *pueblo* es chico.",
+    "La *ciudad* es grande.",
+    "Y un pueblo puede *crecer*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

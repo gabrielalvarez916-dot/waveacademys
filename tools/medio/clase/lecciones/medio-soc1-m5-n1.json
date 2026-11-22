@@ -1,0 +1,138 @@
+{
+ "slug": "medio-soc1-m5-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 5,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Paisajes del campo",
+ "sub": "Ciencias Sociales 1 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🚌",
+   "lineas": [
+    "Sofi viaja en micro.",
+    "Sale de la ciudad.",
+    "¡Por la ventana ve el campo!"
+   ],
+   "titulo": "EL CAMPO",
+   "sub": "sus paisajes",
+   "voz": [
+    "Sofi viaja en *micro*.",
+    "Sale de la ciudad.",
+    "¡Por la ventana ve el *campo*!",
+    "Hoy: *paisajes del campo*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏞️",
+     "txt": "EL CAMPO"
+    },
+    {
+     "emoji": "🏡",
+     "txt": "UNA GRANJA"
+    },
+    {
+     "emoji": "🐄",
+     "txt": "UNA VACA"
+    }
+   ],
+   "voz": [
+    "Miramos el *campo* desde lejos.",
+    "Nos acercamos a una *granja*.",
+    "¡Y vemos una *vaca*!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EN EL CAMPO HAY",
+   "items": [
+    {
+     "cab": "🌾",
+     "txt": "SEMBRADOS"
+    },
+    {
+     "cab": "🐎",
+     "txt": "ANIMALES"
+    },
+    {
+     "cab": "🏠",
+     "txt": "POCAS CASAS"
+    },
+    {
+     "cab": "🛤️",
+     "txt": "CAMINOS DE TIERRA"
+    }
+   ],
+   "voz": [
+    "Miramos el *paisaje* del campo.",
+    "Hay campos *sembrados*.",
+    "Hay *animales*.",
+    "Hay *pocas casas*.",
+    "Y *caminos de tierra*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo están las casas en el campo?",
+   "opciones": [
+    "MUY JUNTAS",
+    "LEJOS",
+    "UNA ARRIBA DE OTRA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el campo.",
+    "¿Cómo están las casas?",
+    "¡*Lejos* unas de otras!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ TODO",
+   "texto": "El paisaje es todo lo que ves",
+   "emoji": "👀",
+   "voz": [
+    "Truco: el *paisaje* es todo lo que ves."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAISAJE",
+     "lo que vemos"
+    ],
+    [
+     "CAMPO",
+     "espacio, plantas, animales"
+    ],
+    [
+     "CASAS",
+     "lejos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *paisaje* es lo que vemos.",
+    "El *campo* tiene espacio y animales.",
+    "Las casas están *lejos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

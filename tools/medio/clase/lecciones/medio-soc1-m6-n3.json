@@ -1,0 +1,121 @@
+{
+ "slug": "medio-soc1-m6-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 6,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Herramientas y técnicas de cultivo",
+ "sub": "Ciencias Sociales 1 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué máquina ara un campo enorme?",
+   "segundos": 6,
+   "respuesta": "¡EL TRACTOR!",
+   "emoji": "🚜",
+   "titulo": "HERRAMIENTAS",
+   "sub": "y técnicas",
+   "voz": [
+    "Desafío: ¿qué máquina ara un campo enorme?",
+    "¡El *tractor*!",
+    "Hoy: *herramientas y técnicas de cultivo*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ANTES",
+    "texto": "A MANO CON AZADA",
+    "emoji": "🧑‍🌾"
+   },
+   "b": {
+    "cab": "AHORA",
+    "texto": "CON TRACTOR",
+    "emoji": "🚜"
+   },
+   "signo": "vs",
+   "voz": [
+    "*Antes* se trabajaba a mano.",
+    "*Ahora* hay máquinas como el tractor.",
+    "¡Pero en la huerta seguimos usando la pala!"
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🌾",
+     "txt": "EL CAMPO"
+    },
+    {
+     "emoji": "〰️",
+     "txt": "LOS SURCOS"
+    },
+    {
+     "emoji": "🌱",
+     "txt": "LA SEMILLA"
+    }
+   ],
+   "voz": [
+    "Miramos el *campo*.",
+    "Vemos los *surcos* en la tierra.",
+    "¡Y adentro, una *semilla*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con qué regás la huerta?",
+   "opciones": [
+    "TRACTOR",
+    "REGADERA",
+    "PALA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Las plantas tienen sed.",
+    "¿Con qué las regás?",
+    "¡Con la *regadera*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON CUIDADO",
+   "texto": "Las herramientas se usan con un adulto",
+   "emoji": "⚠️",
+   "voz": [
+    "Importante: las herramientas, *con un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HERRAMIENTAS",
+     "pala, azada, regadera"
+    ],
+    [
+     "ANTES",
+     "a mano"
+    ],
+    [
+     "AHORA",
+     "con máquinas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Usamos *herramientas* para cultivar.",
+    "*Antes* se hacía a mano.",
+    "*Ahora* ayudan las máquinas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

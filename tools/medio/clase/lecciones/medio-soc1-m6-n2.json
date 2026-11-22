@@ -1,0 +1,137 @@
+{
+ "slug": "medio-soc1-m6-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 6,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Las etapas de producir un alimento",
+ "sub": "Ciencias Sociales 1 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cómo llegó el tomate a la verdulería?"
+    },
+    {
+     "yo": true,
+     "txt": "¡HIZO UN VIAJE LARGO!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Desde dónde?"
+    }
+   ],
+   "titulo": "LAS ETAPAS",
+   "sub": "de un alimento",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Cómo llegó el tomate a la verdulería?",
+    "¡Hizo un *viaje* largo!",
+    "Hoy: *las etapas de producir un alimento*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "EL VIAJE DEL TOMATE",
+   "items": [
+    "SIEMBRO",
+    "CUIDO",
+    "COSECHO",
+    "TRANSPORTO",
+    "VENDO"
+   ],
+   "voz": [
+    "Primero, se *siembra*.",
+    "Después, se *cuida* la planta.",
+    "Se *cosecha*.",
+    "Se *transporta* en camión.",
+    "Y se *vende* en la verdulería."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "QUIÉNES TRABAJAN",
+   "items": [
+    {
+     "cab": "👩‍🌾",
+     "txt": "AGRICULTORA"
+    },
+    {
+     "cab": "🚚",
+     "txt": "CAMIONERO"
+    },
+    {
+     "cab": "🧑‍🍳",
+     "txt": "VERDULERA"
+    }
+   ],
+   "voz": [
+    "En cada etapa trabaja alguien.",
+    "La *agricultora* siembra y cosecha.",
+    "El *camionero* lo lleva.",
+    "La *verdulera* lo vende."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué etapa va primero?",
+   "opciones": [
+    "VENDER",
+    "SEMBRAR",
+    "COMER"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el orden.",
+    "¿Qué va primero?",
+    "¡*Sembrar*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNA CADENA",
+   "texto": "Cada etapa necesita la anterior",
+   "emoji": "🔗",
+   "voz": [
+    "Truco: cada etapa necesita *la anterior*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMPO",
+     "sembrar, cuidar, cosechar"
+    ],
+    [
+     "VIAJE",
+     "transportar"
+    ],
+    [
+     "MESA",
+     "vender y comer"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el *campo*: sembrar y cosechar.",
+    "Después, el *viaje* en camión.",
+    "Y al final, llega a la *mesa*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
