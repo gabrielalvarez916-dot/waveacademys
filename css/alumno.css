@@ -827,3 +827,16 @@ body.av-abierto { overflow: hidden; }
 .elegir-quitar { margin-left: auto; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.7); border-radius: 10px; background: transparent; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
 .elegir-volver { margin: 18px 0 0; font-weight: 700; }
 .elegir-atajo { margin: -8px 0 16px; font-weight: 700; }
+
+/* Mi plan de hoy */
+.plan-hoy { background: #fff; border: 2px solid var(--menta); border-radius: 18px; padding: 16px 18px; margin: 0 0 18px; }
+.plan-cab { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.plan-cab h2 { margin: 0; font-size: 1.15rem; }
+.plan-cuenta { background: var(--menta); color: var(--petroleo); font-weight: 800; border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; }
+.plan-lista { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.plan-tarea label { display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #f6faf9; cursor: pointer; }
+.plan-tarea input { width: 22px; height: 22px; margin-top: 2px; flex: none; }
+.plan-txt a { font-weight: 800; color: inherit; text-decoration: none; }
+.plan-txt small { display: block; margin-top: 2px; opacity: 0.8; }
+.plan-tarea.hecha .plan-txt a { text-decoration: line-through; opacity: 0.6; }
+.plan-fin, .plan-vacio { margin: 12px 0 0; font-weight: 700; }

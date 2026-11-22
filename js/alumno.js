@@ -192,6 +192,85 @@
   }
 
   // ---------- Vistas ----------
+  // ---------- Mi plan de hoy (trayectos Foco y Anticipación) ----------
+  // Las tareas salen de la programación: lo de hoy + lo que quedó atrasado. Se tildan solas al avanzar.
+  async function planDeHoy(cursos) {
+    var yo = await sb.from('students').select('started_at, adaptaciones').eq('id', estudianteId).maybeSingle();
+    var ad = (yo.data && yo.data.adaptaciones) || [];
+    var ant = ad.indexOf('ant_plan') >= 0, foc = ad.indexOf('foc_plan') >= 0;
+    if (!ant && !foc) return '';
+    var sch = await sb.from('study_schedule').select('weekday, subject_id, lessons_target').eq('student_id', estudianteId);
+    var av = await sb.from('student_subject_progress').select('subject_id, completed_lessons').eq('student_id', estudianteId);
+    var cfg = await sb.from('subject_load_config').select('subject_id, lessons_total');
+    var filas = sch.data || [], hechas = {}, total = {};
+    (av.data || []).forEach(function (x) { hechas[x.subject_id] = x.completed_lessons || 0; });
+    (cfg.data || []).forEach(function (x) { total[x.subject_id] = x.lessons_total || 0; });
+
+    var hoy = new Date(); hoy.setHours(12, 0, 0, 0);
+    var ini = yo.data && yo.data.started_at ? new Date(yo.data.started_at) : hoy;
+    ini.setHours(12, 0, 0, 0);
+    if (isNaN(ini.getTime()) || ini > hoy) ini = new Date(hoy);
+    var clave = 'wave-plan-' + estudianteId + '-' + hoy.toISOString().slice(0, 10);
+    var guardado = {};
+    try { guardado = JSON.parse(localStorage.getItem(clave) || '{}'); } catch (e) { guardado = {}; }
+    var base = guardado.base || {}, manual = guardado.manual || {}, nuevoBase = !guardado.base;
+
+    var tareas = [];
+    cursos.forEach(function (c) {
+      var esperadas = 0, d = new Date(ini), n = 0;
+      while (d <= hoy && n++ < 800) {
+        var wd = d.getDay();
+        if (wd >= 1 && wd <= 5) filas.forEach(function (f) { if (f.subject_id === c.id && f.weekday === wd) esperadas += f.lessons_target; });
+        d.setDate(d.getDate() + 1);
+      }
+      var h = hechas[c.id] || 0;
+      if (base[c.id] == null) base[c.id] = h;
+      var quedan = total[c.id] ? Math.max(0, total[c.id] - base[c.id]) : 99999;
+      var cuantas = Math.min(Math.max(0, esperadas - base[c.id]), quedan);
+      var hechasHoy = Math.max(0, h - base[c.id]);
+      for (var i = 0; i < cuantas; i++) {
+        tareas.push({ c: c, i: i, ok: i < hechasHoy || !!manual[c.id + '-' + i] });
+      }
+    });
+    if (nuevoBase || true) {
+      try { localStorage.setItem(clave, JSON.stringify({ base: base, manual: manual })); } catch (e) { /* sin almacenamiento */ }
+    }
+
+    var hechasN = tareas.filter(function (t) { return t.ok; }).length;
+    var cab = '<div class="plan-cab"><h2>Mi plan de hoy</h2>' +
+      (tareas.length ? '<span class="plan-cuenta">' + hechasN + ' de ' + tareas.length + '</span>' : '') + '</div>';
+    if (!tareas.length) {
+      return '<section class="plan-hoy">' + cab + '<p class="plan-vacio">Hoy no tenés tareas programadas.</p></section>';
+    }
+    var items = tareas.map(function (t, k) {
+      var sig = tareas[k + 1];
+      return '<li class="plan-tarea' + (t.ok ? ' hecha' : '') + '">' +
+        '<label><input type="checkbox" data-pc="' + t.c.id + '-' + t.i + '"' + (t.ok ? ' checked' : '') + '>' +
+        '<span class="plan-txt"><a href="#materia/' + t.c.id + '">' + esc(t.c.nombre) + '</a>' +
+        (ant ? '<small>' + (k + 1) + '.º tarea · Abrí la materia y hacé la próxima lección.' +
+          (sig ? ' Después sigue: ' + esc(sig.c.nombre) + '.' : ' Es la última de hoy.') + '</small>' : '') +
+        '</span></label></li>';
+    }).join('');
+    var fin = hechasN === tareas.length ? '<p class="plan-fin">Hoy terminaste tu plan.</p>' : '';
+    return '<section class="plan-hoy">' + cab + '<ul class="plan-lista">' + items + '</ul>' + fin + '</section>';
+  }
+
+  function enganchaPlan(cont) {
+    cont.addEventListener('change', function (e) {
+      var i = e.target.closest ? e.target.closest('[data-pc]') : null;
+      if (!i) return;
+      var hoy = new Date().toISOString().slice(0, 10);
+      var clave = 'wave-plan-' + estudianteId + '-' + hoy, g = {};
+      try { g = JSON.parse(localStorage.getItem(clave) || '{}'); } catch (x) { g = {}; }
+      g.manual = g.manual || {};
+      g.manual[i.getAttribute('data-pc')] = i.checked;
+      try { localStorage.setItem(clave, JSON.stringify(g)); } catch (x) { /* sin almacenamiento */ }
+      var li = i.closest('li'); if (li) li.classList.toggle('hecha', i.checked);
+      var todos = cont.querySelectorAll('[data-pc]'), ok = cont.querySelectorAll('[data-pc]:checked');
+      var cu = cont.querySelector('.plan-cuenta'); if (cu) cu.textContent = ok.length + ' de ' + todos.length;
+    });
+  }
+
   async function vistaCursos() {
     vista.innerHTML = '<h1 class="vista-titulo">Mis cursos</h1><div id="cursos"></div>';
     var cont = document.getElementById('cursos');
@@ -207,6 +286,12 @@
         var tituloE = document.querySelector('.vista-titulo');
         if (tituloE) tituloE.insertAdjacentHTML('afterend', '<p class="elegir-atajo"><a href="#elegir">' +
           (stE.oficios_disponibles > 0 ? 'Elegir o sumar oficios' : 'Ver mi trayecto de oficios') + '</a></p>');
+      }
+      var planHtml = '';
+      try { planHtml = await planDeHoy(cursos); } catch (e) { planHtml = ''; }
+      if (planHtml) {
+        cont.insertAdjacentHTML('beforebegin', planHtml);
+        enganchaPlan(cont.previousElementSibling);
       }
       cont.className = 'cursos-grilla';
       cont.innerHTML = cursos.map(function (c) {
