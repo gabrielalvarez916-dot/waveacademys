@@ -6,7 +6,7 @@ import { decodeBase64 } from "jsr:@std/encoding@1/base64";
 // El proceso de GitHub (tools/medio/pdf/generar.py) arma los PDF desde el repo y los sube por acá.
 // Solo acepta lecciones de materias del Nivel Medio, no publicadas. No usa lesson_drafts.
 // Acciones (POST, header x-medio-token):
-//   { action: "lecciones", subject_id, tema, internacional? }         -> las lecciones 1 a 4 de esa misión (o de su par internacional), con lo necesario para armar el PDF
+//   { action: "lecciones", subject_id, tema, internacional? }         -> las lecciones 1 a 5 de esa misión (la 5 es la Práctica general: lleva un PDF de repaso) (o de su par internacional), con lo necesario para armar el PDF
 //   { action: "subir", lesson_id, pdf_base64, contenido, neutro? }   -> guarda el PDF en R2 y lo carga en el paso PDF (y la carpeta con su clave)
 const cors = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-medio-token" };
 const json = (b: unknown, s = 200) => new Response(JSON.stringify(b), { status: s, headers: { ...cors, "content-type": "application/json" } });
@@ -61,7 +61,7 @@ Deno.serve(async (req) => {
           : (await admin.from("topics").select("id").eq("subject_id", b.subject_id).eq("position", b.tema).eq("solo_para", "internacional").limit(1).maybeSingle()).data;
       }
       if (!t) return json({ error: "No existe esa misión" }, 404);
-      const { data: ls } = await admin.from("lessons").select("id").eq("topic_id", t.id).lte("position", 4).order("position");
+      const { data: ls } = await admin.from("lessons").select("id").eq("topic_id", t.id).lte("position", 5).order("position");
       const out: any[] = [];
       for (const l of ls || []) {
         const d = await datos(l.id);

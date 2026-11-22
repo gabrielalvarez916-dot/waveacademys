@@ -34,12 +34,39 @@ def mision(ruta):
         fallos += subir(M, M["alternativa"].get("niveles") or {}, True)
     return fallos
 
+def repaso(niveles):
+    """Nivel 5 (Práctica general): PDF de repaso de toda la misión, armado solo con lo de los niveles 1 a 4."""
+    N = [niveles[k] for k in ("1", "2", "3", "4") if niveles.get(k)]
+    if len(N) < 2: return None
+    secs = []
+    for c in N:
+        s0 = (c.get("secciones") or [{}])[0]
+        img = next((b for s in c.get("secciones") or [] for b in s.get("bloques") or [] if b.get("tipo") == "imagen"), None)
+        txt = " ".join(f"<b>{r['titulo']}</b>: {r['texto']}" for r in c.get("resumen") or [])
+        secs.append({"etapa": 1, "titulo": s0.get("titulo", "Repaso"), "bloques": [{"tipo": "parrafo", "texto": txt}] + ([img] if img else [])})
+    glos, vistos = [], set()
+    for c in N:
+        for g in c.get("glosario") or []:
+            if g["palabra"].lower() not in vistos: vistos.add(g["palabra"].lower()); glos.append(g)
+    u = N[-1]
+    R = {k: v for k, v in N[0].items() if k == "estilo"}
+    R.update({"objetivo": "Vas a repasar todo lo que aprendiste en la misión.",
+        "vas_a_ver": [s["titulo"] for s in secs],
+        "secciones": secs,
+        "ejemplo_completo": u.get("ejemplo_completo"), "ejemplo_incompleto": N[-2].get("ejemplo_incompleto"), "ejemplo_solo": N[0].get("ejemplo_solo"),
+        "tip": {"titulo": "Repasá", "texto": "Volvé a mirar los dibujos de cada parte."},
+        "ojo": [(c.get("ojo") or [""])[0] for c in N if c.get("ojo")],
+        "resumen": [(c.get("resumen") or [None])[0] for c in N if c.get("resumen")],
+        "glosario": glos[:6], "carpeta": [], "respuestas_carpeta": [],
+        "soluciones": {"incompleto": (N[-2].get("soluciones") or {}).get("incompleto", ""), "solo": (N[0].get("soluciones") or {}).get("solo", ""), "carpeta": []}})
+    return R
+
 def subir(M, niveles, internacional):
     fallos = 0
     st, res = llamar({"action": "lecciones", "subject_id": M["subject_id"], "tema": M["tema"], "internacional": internacional})
     if st != 200: print("No se pudieron pedir las lecciones" + (" (par internacional)" if internacional else "") + ":", st, res); return 1
     for L in res["lecciones"]:
-        n = str(L["nivel"]); c = niveles.get(n)
+        n = str(L["nivel"]); c = niveles.get(n) or (repaso(niveles) if n == "5" else None)
         if not c: continue
         if not es_medio(L["materia"]): print("SALTEO (no es del Nivel Medio):", L["materia"]); continue
         if L["publicada"]: print("SALTEO (publicada):", L["titulo"]); continue
