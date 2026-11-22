@@ -438,10 +438,10 @@
     if (k === 'final' && esGen) { titulo = 'Las 4 generales'; sub = 'Mezclan todo lo de la misión y repasan lo anterior.'; icono = 'bolt'; }
     var extra = '';
     if (k === 'carpeta') {
-      extra = '<div class="rc-items">' + p.pdf.carpeta.map(function (x, i) {
+      extra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-cp-tg="1" aria-pressed="false">Ver de a una</button></div><div class="rl-top" data-cp-top style="display:none"><span class="rl-cont"></span></div><div class="rc-items">' + p.pdf.carpeta.map(function (x, i) {
         return '<label class="rc-item"><span class="mt-preg-n">' + (i + 1) + '</span><span class="rc-item-c"><span class="rc-consigna">' + esc(consigna(x)) +
           '</span><input type="text" class="rc-in" data-i="' + i + '" maxlength="120" autocomplete="off" placeholder="Tu respuesta"></span></label>';
-      }).join('') + '</div>';
+      }).join('') + '</div><div class="rc-nav" data-cp-nav style="display:none;justify-content:space-between;gap:12px;margin-top:10px"><button type="button" class="rc-btn" data-cp-n="-1" style="background:transparent;color:inherit;box-shadow:none;border:2px solid currentColor;opacity:.75">‹ Anterior</button><button type="button" class="rc-btn" data-cp-n="1">Siguiente ›</button></div>';
     }
     return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:' + u.color + '">' + ico(icono, 56, 2.2) + '</span>' +
       '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(sub) + '</p>' + extra +
@@ -594,6 +594,27 @@
     }
     WaveVisor.abrirVideo({ titulo: 'Video · ' + lec.titulo, alTerminar: function () { marcar(paso); }, lista: lista });
   }
+
+  // Carpeta: "Ver de a una" (opcional, lo activa el alumno acá mismo)
+  function carpetaVer(n) {
+    var it = vista.querySelectorAll('.rc-item'), tot = it.length, tg = vista.querySelector('[data-cp-tg]');
+    if (!tot || !tg) return;
+    var una = !!(window.WaveApoyos && WaveApoyos.get('deAUna'));
+    n = Math.max(0, Math.min(tot - 1, n)); vista._cp = n;
+    tg.setAttribute('aria-pressed', una ? 'true' : 'false');
+    [].forEach.call(it, function (e, k) { e.style.display = (!una || k === n) ? '' : 'none'; });
+    var top = vista.querySelector('[data-cp-top]'), nav = vista.querySelector('[data-cp-nav]'), pie = vista.querySelector('.rc-pie');
+    if (top) { top.style.display = una ? '' : 'none'; top.querySelector('.rl-cont').textContent = 'Consigna ' + (n + 1) + ' de ' + tot; }
+    if (nav) {
+      nav.style.display = una ? 'flex' : 'none';
+      nav.querySelector('[data-cp-n="-1"]').style.visibility = n ? '' : 'hidden';
+      nav.querySelector('[data-cp-n="1"]').style.display = n < tot - 1 ? '' : 'none';
+    }
+    if (pie) pie.style.display = (!una || n === tot - 1) ? '' : 'none';
+  }
+  new MutationObserver(function () {
+    if (vista && vista.querySelector('[data-cp-tg]') && !vista.querySelector('[data-cp-tg]')._ok) { vista.querySelector('[data-cp-tg]')._ok = 1; carpetaVer(0); }
+  }).observe(document.documentElement, { childList: true, subtree: true });
 
   // Entrega de la carpeta: se corrige acá, sin IA. Se aprueba con hasta 1 mal; al aprobar se muestran las soluciones.
   async function entregarCarpeta(btn) {
@@ -1095,6 +1116,10 @@
       if (!D || !vista.querySelector('.mt')) return;
       var av = ev.target.closest('[data-aviso]');
       if (av) return toast(av.getAttribute('data-aviso'), true);
+      var ct = ev.target.closest('[data-cp-tg]');
+      if (ct) { if (window.WaveApoyos) WaveApoyos.set('deAUna', !WaveApoyos.get('deAUna')); return carpetaVer(vista._cp || 0); }
+      var cn = ev.target.closest('[data-cp-n]');
+      if (cn) return carpetaVer((vista._cp || 0) + Number(cn.getAttribute('data-cp-n')));
       var mp = ev.target.closest('[data-mapa]');
       if (mp) return abrirMapa(mp.getAttribute('data-mapa'));
       var rc = ev.target.closest('[data-rc]');

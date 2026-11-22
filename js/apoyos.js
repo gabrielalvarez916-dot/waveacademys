@@ -67,10 +67,23 @@
       return !e._apMic && !e.closest('.ap-panel-fondo, .wvp-chat, .wt-cuerpo') && !e.classList.contains('mt-hueco') && !e.classList.contains('mt-celda');
     });
   }
+  function decir(txt, fin) {
+    var ss = window.speechSynthesis;
+    if (!ss) return fin();
+    var hecho = false, f = function () { if (!hecho) { hecho = true; fin(); } };
+    try {
+      ss.cancel();
+      var u = new SpeechSynthesisUtterance(txt); u.lang = 'es-AR';
+      var vs = ss.getVoices() || [], v = vs.filter(function (x) { return /^es-AR/i.test(x.lang); })[0] || vs.filter(function (x) { return /^es/i.test(x.lang); })[0];
+      if (v) u.voice = v;
+      u.onend = f; u.onerror = f; ss.speak(u);
+      setTimeout(f, 2500);
+    } catch (e) { f(); }
+  }
   function dictadoUI() {
     if (!SR) return;
     candidatos().forEach(function (c) {
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'ap-mic'; b.textContent = '🎤'; b.title = 'Dictar con la voz'; b.setAttribute('aria-label', 'Dictar con la voz');
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ap-mic'; b.textContent = '🎤 Dictar respuesta'; b.title = 'Hablá y se escribe tu respuesta'; b.setAttribute('aria-label', 'Dictar respuesta con la voz');
       c._apMic = true;
       b.onclick = function () { dictar(c, b); };
       c.insertAdjacentElement('afterend', b);
@@ -80,16 +93,25 @@
     var estabaEste = micActivo === btn;
     if (micActivo) { try { rec.stop(); } catch (e) {} }
     if (estabaEste) return;
-    rec = new SR(); rec.lang = 'es-AR'; rec.interimResults = false; rec.continuous = false;
-    rec.onresult = function (ev) {
+    var cerrado = false, r = new SR(); rec = r; r.lang = 'es-AR'; r.interimResults = false; r.continuous = false;
+    r.onresult = function (ev) {
       var t = ''; for (var i = ev.resultIndex; i < ev.results.length; i++) t += ev.results[i][0].transcript;
       campo.value = (campo.value ? campo.value + ' ' : '') + t.trim();
       campo.dispatchEvent(new Event('input', { bubbles: true }));
     };
-    rec.onend = function () { btn.classList.remove('on'); btn.textContent = '🎤'; if (micActivo === btn) micActivo = null; };
-    rec.onerror = function () { rec.onend(); };
-    micActivo = btn; btn.classList.add('on'); btn.textContent = '● Escuchando…';
-    try { rec.start(); } catch (e) { rec.onend(); }
+    r.onend = function () {
+      if (cerrado) return; cerrado = true;
+      btn.classList.remove('on'); btn.textContent = '🎤 Dictar respuesta'; if (micActivo === btn) micActivo = null;
+      decir('Listo', function () {});
+    };
+    r.onerror = function () { r.onend(); };
+    micActivo = btn; btn.classList.add('on'); btn.textContent = '🔊 Te escucho…';
+    // primero habla ("Te escucho, hablá") y recién después abre el micrófono, para que no se grabe a sí misma
+    decir('Te escucho, hablá', function () {
+      if (micActivo !== btn || cerrado) return;
+      btn.textContent = '● Escuchando… tocá para terminar';
+      try { r.start(); } catch (e) { r.onend(); }
+    });
   }
 
   // ---------- Botón y ventana "Accesibilidad": solo lo global ----------
