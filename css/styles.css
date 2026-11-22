@@ -266,6 +266,50 @@ body.panel.listo .panel-main { visibility: visible; }
 .panel-tarjeta h1 { margin: 0 0 8px; font-size: 1.5rem; }
 .panel-tarjeta p { margin: 0; color: var(--texto-suave); }
 
+/* Barra de los paneles: arriba logo y usuario, abajo la navegación en una fila propia que baja de renglón si hace falta.
+   Así no se desacomoda sin importar cuántas secciones tenga cada panel. */
+body.panel .barra {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "logo der" "nav nav";
+  align-items: center;
+  gap: 6px 14px;
+}
+body.panel .barra > img { grid-area: logo; }
+body.panel .barra > nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+body.panel .barra > nav a {
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+body.panel .barra > nav a:hover { background: rgba(255, 255, 255, 0.15); opacity: 1; }
+body.panel .barra > nav a.activo { background: rgba(255, 255, 255, 0.28); opacity: 1; }
+body.panel .barra-der {
+  grid-area: der;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+}
+body.panel .barra-der .saludo { margin-left: 0; }
+@media (max-width: 600px) {
+  body.panel .barra-der .saludo { display: none; }
+  body.panel .barra > nav a { padding: 6px 11px; font-size: .92rem; }
+}
+
 @media (max-width: 480px) {
   .barra { padding: 8px 12px; }
   .barra img { height: 36px; }
