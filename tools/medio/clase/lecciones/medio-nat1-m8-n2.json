@@ -1,0 +1,126 @@
+{
+ "slug": "medio-nat1-m8-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 8,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "El viento y sus efectos",
+ "sub": "Ciencias Naturales 1 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué no se ve pero mueve las hojas?",
+   "segundos": 6,
+   "respuesta": "¡EL VIENTO!",
+   "emoji": "🍃",
+   "titulo": "EL VIENTO",
+   "sub": "y sus efectos",
+   "voz": [
+    "Desafío: ¿qué no se ve pero mueve las hojas?",
+    "¡El *viento*!",
+    "Hoy: *el viento y sus efectos*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "EL VIENTO",
+    "emoji": "💨"
+   },
+   "items": [
+    "MUEVE LAS HOJAS",
+    "VUELA EL BARRILETE",
+    "SECA LA ROPA"
+   ],
+   "voz": [
+    "¿Qué hace el *viento*?",
+    "*Mueve* las hojas.",
+    "Hace *volar* el barrilete.",
+    "Y *seca* la ropa de la soga."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿HAY VIENTO?",
+   "variable": "EL VIENTO",
+   "a": {
+    "cab": "ADENTRO",
+    "emojis": [
+     "🏠",
+     "🎡"
+    ],
+    "txt": "Sin viento",
+    "res": "EL MOLINETE QUIETO"
+   },
+   "b": {
+    "cab": "EN EL PATIO",
+    "emojis": [
+     "🌳",
+     "🎡"
+    ],
+    "txt": "Con viento",
+    "res": "¡GIRA RÁPIDO!"
+   },
+   "voz": [
+    "Sofi prueba su molinete *adentro*.",
+    "Después lo lleva al *patio*.",
+    "¡Afuera gira rápido: hay *viento*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La bandera flamea. ¿Qué pasa?",
+   "opciones": [
+    "LLUEVE",
+    "HAY VIENTO",
+    "ES DE NOCHE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La bandera se mueve mucho.",
+    "¿Qué está pasando?",
+    "¡Hay *viento*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LOS ÁRBOLES",
+   "texto": "Si las hojas se mueven, hay viento",
+   "emoji": "🌳",
+   "voz": [
+    "Truco: mirá las *hojas* de los árboles."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VIENTO",
+     "aire que se mueve"
+    ],
+    [
+     "MUEVE",
+     "hojas y barriletes"
+    ],
+    [
+     "FUERZA",
+     "brisa o ventarrón"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *viento* es aire que se mueve.",
+    "*Mueve* hojas y barriletes.",
+    "Puede ser *brisa* o *ventarrón*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

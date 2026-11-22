@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat1-m9-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 9,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Instrumentos y sonidos",
+ "sub": "Ciencias Naturales 1 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡EL GRADO ARMA UNA BANDA!",
+   "bajada": "Cada uno trae un instrumento",
+   "emoji": "🥁",
+   "titulo": "INSTRUMENTOS",
+   "sub": "y sonidos",
+   "voz": [
+    "¡Último momento! El grado arma una *banda*.",
+    "Cada uno trae un instrumento.",
+    "Hoy: *instrumentos y sonidos*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CÓMO SE TOCAN",
+   "items": [
+    {
+     "cab": "🥁 TAMBOR",
+     "txt": "SE GOLPEA"
+    },
+    {
+     "cab": "🪇 MARACAS",
+     "txt": "SE SACUDEN"
+    },
+    {
+     "cab": "🪈 FLAUTA",
+     "txt": "SE SOPLA"
+    },
+    {
+     "cab": "🎸 GUITARRA",
+     "txt": "CUERDAS"
+    }
+   ],
+   "voz": [
+    "Cada instrumento se toca distinto.",
+    "El tambor se *golpea*.",
+    "Las maracas se *sacuden*.",
+    "La flauta se *sopla*.",
+    "La guitarra se toca con las *cuerdas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GOLPE FUERTE",
+    "texto": "SUENA FUERTE",
+    "emoji": "🔊"
+   },
+   "b": {
+    "cab": "GOLPE SUAVE",
+    "texto": "SUENA SUAVE",
+    "emoji": "🔈"
+   },
+   "signo": "vs",
+   "voz": [
+    "Si golpeás *fuerte*, suena fuerte.",
+    "Si golpeás *suave*, suena suave.",
+    "¡Vos elegís cómo suena!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se toca la flauta?",
+   "opciones": [
+    "SE GOLPEA",
+    "SE SOPLA",
+    "SE SACUDE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la flauta.",
+    "¿Cómo se toca?",
+    "¡Se *sopla*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EMPEZÁ SUAVE",
+   "texto": "Después probá más fuerte",
+   "emoji": "🎵",
+   "voz": [
+    "Truco: empezá tocando *suave*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GOLPEAR",
+     "tambor"
+    ],
+    [
+     "SOPLAR",
+     "flauta"
+    ],
+    [
+     "CUERDAS",
+     "guitarra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Unos se *golpean*.",
+    "Otros se *soplan*.",
+    "Y otros tienen *cuerdas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

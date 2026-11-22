@@ -1,0 +1,121 @@
+{
+ "slug": "medio-nat1-m8-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 8,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Nubes y lluvia",
+ "sub": "Ciencias Naturales 1 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📺",
+   "lineas": [
+    "Sofi presenta el pronóstico.",
+    "Señala unas nubes grises.",
+    "¡Hoy va a llover!"
+   ],
+   "titulo": "NUBES",
+   "sub": "y lluvia",
+   "voz": [
+    "Sofi presenta el *pronóstico* del tiempo.",
+    "Señala unas nubes *grises*.",
+    "¡Hoy va a *llover*!",
+    "Hoy: *nubes y lluvia*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "DESPEJADO",
+    "emoji": "☀️",
+    "texto": "Sin nubes"
+   },
+   "despues": {
+    "cab": "NUBLADO",
+    "emoji": "🌧️",
+    "texto": "Nubes grises"
+   },
+   "voz": [
+    "A la mañana, el cielo estaba *despejado*.",
+    "A la tarde se llenó de nubes *grises*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "ASÍ LLUEVE",
+   "items": [
+    "GOTITAS EN LA NUBE",
+    "SE JUNTAN",
+    "CAEN",
+    "QUEDAN CHARCOS"
+   ],
+   "voz": [
+    "La lluvia tiene su *camino*.",
+    "En la nube hay *gotitas*.",
+    "Las gotitas se *juntan*.",
+    "Se ponen pesadas y *caen*.",
+    "Y quedan *charcos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué nubes traen lluvia?",
+   "opciones": [
+    "BLANCAS",
+    "GRISES",
+    "ROSADAS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá el color.",
+    "¿Qué nubes traen lluvia?",
+    "¡Las *grises*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON TORMENTA",
+   "texto": "Si hay rayos, quedate adentro",
+   "emoji": "⛈️",
+   "voz": [
+    "Importante: con *tormenta*, quedate adentro."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NUBES",
+     "gotitas de agua"
+    ],
+    [
+     "GRISES",
+     "traen lluvia"
+    ],
+    [
+     "LLUVIA",
+     "las gotas caen"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *nubes* son gotitas de agua.",
+    "Las *grises* traen lluvia.",
+    "Las gotas *caen*: llueve.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

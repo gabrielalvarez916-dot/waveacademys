@@ -1,0 +1,122 @@
+{
+ "slug": "medio-nat1-m9-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 9,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "El sonido y las vibraciones",
+ "sub": "Ciencias Naturales 1 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Tocá tu garganta y hablá. ¿Qué sentís?",
+   "segundos": 6,
+   "respuesta": "¡VIBRA!",
+   "emoji": "🗣️",
+   "titulo": "EL SONIDO",
+   "sub": "y las vibraciones",
+   "voz": [
+    "Desafío: tocá tu garganta y hablá.",
+    "¿Qué sentís? ¡*Vibra*!",
+    "Hoy: *el sonido y las vibraciones*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LLEGA EL SONIDO",
+   "items": [
+    "ALGO VIBRA",
+    "VIAJA POR EL AIRE",
+    "LLEGA A MI OREJA"
+   ],
+   "voz": [
+    "Primero, algo *vibra*.",
+    "El sonido *viaja* por el aire.",
+    "Y llega a mi *oreja*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿SUENA EL ELÁSTICO?",
+   "variable": "LA VIBRACIÓN",
+   "a": {
+    "cab": "QUIETO",
+    "emojis": [
+     "➖",
+     "🤫"
+    ],
+    "txt": "No lo toco",
+    "res": "NO SUENA"
+   },
+   "b": {
+    "cab": "LO TOCO",
+    "emojis": [
+     "〰️",
+     "🎶"
+    ],
+    "txt": "Vibra",
+    "res": "¡SUENA!"
+   },
+   "voz": [
+    "Sofi estira un *elástico*.",
+    "Quieto, no suena.",
+    "¡Lo toca, *vibra* y suena!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué hace sonar a las cosas?",
+   "opciones": [
+    "LA LUZ",
+    "LA VIBRACIÓN",
+    "EL COLOR"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el elástico.",
+    "¿Qué hace que suene?",
+    "¡La *vibración*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDÁ LAS OREJAS",
+   "texto": "Los sonidos muy fuertes lastiman",
+   "emoji": "👂",
+   "voz": [
+    "Importante: los sonidos muy *fuertes* lastiman."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VIBRAR",
+     "moverse rápido"
+    ],
+    [
+     "VIAJA",
+     "por el aire"
+    ],
+    [
+     "OÍR",
+     "con las orejas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El sonido nace cuando algo *vibra*.",
+    "*Viaja* por el aire.",
+    "Y lo *oímos* con las orejas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

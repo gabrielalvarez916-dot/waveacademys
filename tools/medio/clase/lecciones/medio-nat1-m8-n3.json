@@ -1,0 +1,129 @@
+{
+ "slug": "medio-nat1-m8-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 8,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Medimos la temperatura",
+ "sub": "Ciencias Naturales 1 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Llevo campera hoy?"
+    },
+    {
+     "yo": true,
+     "txt": "¡MIRÁ EL TERMÓMETRO!"
+    },
+    {
+     "yo": false,
+     "txt": "Marca 10… ¡sí!"
+    }
+   ],
+   "titulo": "LA TEMPERATURA",
+   "sub": "calor o frío",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Llevo campera hoy?",
+    "Sofi le dice: ¡mirá el *termómetro*!",
+    "Hoy: *medimos la temperatura*."
+   ]
+  },
+  {
+   "t": "medidor",
+   "titulo": "EL TERMÓMETRO",
+   "tipo": "termometro",
+   "min": 0,
+   "max": 40,
+   "valor": 30,
+   "unidad": "grados",
+   "nota": "¡HACE CALOR!",
+   "voz": [
+    "Este es un *termómetro*.",
+    "La rayita llega al *30*.",
+    "¡Número alto: hace *calor*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CALOR",
+    "texto": "LA RAYITA SUBE",
+    "emoji": "🥵"
+   },
+   "b": {
+    "cab": "FRÍO",
+    "texto": "LA RAYITA BAJA",
+    "emoji": "🥶"
+   },
+   "signo": "vs",
+   "voz": [
+    "Con *calor*, la rayita sube.",
+    "Con *frío*, la rayita baja.",
+    "¡Así sabemos qué ropa ponernos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Marca 10. ¿Qué te ponés?",
+   "opciones": [
+    "MALLA",
+    "CAMPERA",
+    "OJOTAS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. El termómetro marca *10*.",
+    "¿Qué te ponés?",
+    "¡Una *campera*: hace frío!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "El termómetro se lee acompañado",
+   "emoji": "🧑",
+   "voz": [
+    "Truco: leé el termómetro *con un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CALOR",
+     "la rayita sube"
+    ],
+    [
+     "FRÍO",
+     "la rayita baja"
+    ],
+    [
+     "TERMÓMETRO",
+     "mide la temperatura"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con *calor*, la rayita sube.",
+    "Con *frío*, baja.",
+    "El *termómetro* mide la temperatura.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

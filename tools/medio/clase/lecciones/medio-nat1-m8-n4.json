@@ -1,0 +1,143 @@
+{
+ "slug": "medio-nat1-m8-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 8,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Calendario del tiempo",
+ "sub": "Ciencias Naturales 1 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "EL PRONÓSTICO",
+   "titular": "¡SOFI ARMA SU CALENDARIO!",
+   "bajada": "Anota el tiempo cada día",
+   "emoji": "📅",
+   "titulo": "CALENDARIO",
+   "sub": "del tiempo",
+   "voz": [
+    "¡Sofi arma su *calendario del tiempo*!",
+    "Anota cómo está el cielo cada día.",
+    "Hoy: *el calendario del tiempo*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "MI SEMANA",
+   "eventos": [
+    {
+     "fecha": "LUNES",
+     "txt": "SOL",
+     "emoji": "☀️"
+    },
+    {
+     "fecha": "MARTES",
+     "txt": "SOL",
+     "emoji": "☀️"
+    },
+    {
+     "fecha": "MIÉRCOLES",
+     "txt": "LLUVIA",
+     "emoji": "🌧️"
+    },
+    {
+     "fecha": "JUEVES",
+     "txt": "NUBE",
+     "emoji": "☁️"
+    },
+    {
+     "fecha": "VIERNES",
+     "txt": "SOL",
+     "emoji": "☀️"
+    }
+   ],
+   "voz": [
+    "El *lunes*: sol.",
+    "El *martes*: sol.",
+    "El *miércoles*: lluvia.",
+    "El *jueves*: nublado.",
+    "El *viernes*: sol otra vez."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "LA SEMANA DE SOFI",
+   "unidad": "días",
+   "items": [
+    {
+     "txt": "SOL",
+     "valor": 3
+    },
+    {
+     "txt": "NUBE",
+     "valor": 1
+    },
+    {
+     "txt": "LLUVIA",
+     "valor": 1
+    }
+   ],
+   "voz": [
+    "Contamos los días.",
+    "De *sol*: 3 días.",
+    "*Nublados*: 1 día.",
+    "De *lluvia*: 1 día."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué tiempo hubo más veces?",
+   "opciones": [
+    "LLUVIA",
+    "SOL",
+    "NUBE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá las barras.",
+    "¿Qué tiempo hubo más veces?",
+    "¡*Sol*! Tres días."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "A LA MISMA HORA",
+   "texto": "Mirá el cielo siempre a la misma hora",
+   "emoji": "⏰",
+   "voz": [
+    "Truco: mirá el cielo a la *misma hora*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "OBSERVAR",
+     "cada día"
+    ],
+    [
+     "ANOTAR",
+     "con dibujos"
+    ],
+    [
+     "CONTAR",
+     "al final de la semana"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Observamos* el cielo cada día.",
+    "*Anotamos* con dibujos.",
+    "Y *contamos* al final.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

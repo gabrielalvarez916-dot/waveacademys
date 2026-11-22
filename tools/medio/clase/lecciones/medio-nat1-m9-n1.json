@@ -1,0 +1,146 @@
+{
+ "slug": "medio-nat1-m9-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 9,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Objetos que dejan pasar la luz",
+ "sub": "Ciencias Naturales 1 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Se cortó la luz en casa!"
+    },
+    {
+     "yo": true,
+     "txt": "¡USÁ UNA LINTERNA!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Ahora veo todo!"
+    }
+   ],
+   "titulo": "LA LUZ",
+   "sub": "¿pasa o no pasa?",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Se cortó la luz en casa!",
+    "Sofi le dice: usá una *linterna*.",
+    "Hoy: *objetos que dejan pasar la luz*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿PASA LA LUZ?",
+   "celdas": [
+    {
+     "cab": "🪟 VIDRIO",
+     "txt": "PASA"
+    },
+    {
+     "cab": "📄 PAPEL FINO",
+     "txt": "PASA UN POCO"
+    },
+    {
+     "cab": "🚪 MADERA",
+     "txt": "NO PASA"
+    },
+    {
+     "cab": "📕 LIBRO",
+     "txt": "NO PASA"
+    }
+   ],
+   "voz": [
+    "Alumbramos cosas con la linterna.",
+    "Por el *vidrio*, pasa.",
+    "Por el *papel fino*, pasa un poco.",
+    "Por la *madera*, no pasa.",
+    "Por el *libro*, tampoco."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏠",
+     "txt": "LA CASA"
+    },
+    {
+     "emoji": "🪟",
+     "txt": "LA VENTANA"
+    },
+    {
+     "emoji": "☀️",
+     "txt": "ENTRA LA LUZ"
+    }
+   ],
+   "voz": [
+    "Miramos una *casa*.",
+    "Nos acercamos a la *ventana*.",
+    "¡Por el vidrio entra la *luz* del sol!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por cuál pasa la luz?",
+   "opciones": [
+    "LIBRO",
+    "VIDRIO",
+    "PARED"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Libro, vidrio, pared.",
+    "¿Por cuál pasa la luz?",
+    "¡Por el *vidrio*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDÁ LOS OJOS",
+   "texto": "No apuntes la linterna a los ojos",
+   "emoji": "🔦",
+   "voz": [
+    "Importante: no apuntes la linterna a los *ojos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUZ",
+     "sol, lámpara, linterna"
+    ],
+    [
+     "PASA",
+     "vidrio"
+    ],
+    [
+     "NO PASA",
+     "madera, libro"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *luz* viene del sol y las lámparas.",
+    "Por el vidrio *pasa*.",
+    "Por la madera *no pasa*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

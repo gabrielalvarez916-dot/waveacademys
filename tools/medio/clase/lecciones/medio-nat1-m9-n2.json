@@ -1,0 +1,132 @@
+{
+ "slug": "medio-nat1-m9-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 9,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Sombras largas y cortas",
+ "sub": "Ciencias Naturales 1 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎭",
+   "lineas": [
+    "Sofi arma un teatro de sombras.",
+    "Pone la mano frente a la linterna.",
+    "¡Aparece un perrito en la pared!"
+   ],
+   "titulo": "SOMBRAS",
+   "sub": "largas y cortas",
+   "voz": [
+    "Sofi arma un *teatro de sombras*.",
+    "Pone la mano frente a la linterna.",
+    "¡Aparece un *perrito* en la pared!",
+    "Hoy: *sombras largas y cortas*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "MI SOMBRA EN EL DÍA",
+   "eventos": [
+    {
+     "fecha": "MAÑANA",
+     "txt": "LARGA",
+     "emoji": "🌅"
+    },
+    {
+     "fecha": "MEDIODÍA",
+     "txt": "CORTA",
+     "emoji": "☀️"
+    },
+    {
+     "fecha": "TARDE",
+     "txt": "LARGA",
+     "emoji": "🌇"
+    }
+   ],
+   "voz": [
+    "A la *mañana*, mi sombra es larga.",
+    "Al *mediodía*, es cortita.",
+    "A la *tarde*, otra vez larga."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SOL BAJO",
+    "texto": "SOMBRA LARGA",
+    "emoji": "🌇"
+   },
+   "b": {
+    "cab": "SOL ALTO",
+    "texto": "SOMBRA CORTA",
+    "emoji": "☀️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Con el sol *bajo*, la sombra es larga.",
+    "Con el sol *alto*, la sombra es corta.",
+    "¡El sol decide el largo!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo es tu sombra al mediodía?",
+   "opciones": [
+    "LARGA",
+    "CORTA",
+    "NO HAY"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Es la hora del almuerzo.",
+    "¿Cómo es tu sombra?",
+    "¡*Corta*! El sol está arriba."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SIN LUZ NO HAY",
+   "texto": "La sombra necesita luz",
+   "emoji": "💡",
+   "voz": [
+    "Truco: *sin luz*, no hay sombra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SOMBRA",
+     "algo tapa la luz"
+    ],
+    [
+     "LARGA",
+     "mañana y tarde"
+    ],
+    [
+     "CORTA",
+     "mediodía"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *sombra* aparece si algo tapa la luz.",
+    "Es *larga* a la mañana y a la tarde.",
+    "Es *corta* al mediodía.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
