@@ -29,10 +29,11 @@ N1 = {**ESTILO,
   P("En el patio hay <b>árboles</b>, <b>plantas</b>, <b>bichitos</b>, bancos y tachos."),
   IMG("Mi patio", "Qué hay.", FG.tiras(["ÁRBOLES", "PLANTAS", "BICHITOS", "BANCOS", "TACHOS"], numeros=False, cols=3)),
  ]),
- S(1, "Vivos y no vivos", [
+ S(1, "Vivos e inertes", [
   D("Entorno", "Todo lo que está a nuestro alrededor."),
-  P("Los árboles y los bichitos son <b>seres vivos</b>. Los bancos, <b>no</b>."),
-  IMG("Separamos", "Vivos y no vivos.", FG.tiras(["VIVOS: ÁRBOL, HORMIGA", "NO VIVOS: BANCO, TACHO"], numeros=False, cols=1)),
+  P("Los árboles y los bichitos son <b>seres vivos</b>."),
+  P("El suelo, el agua y el aire son <b>inertes</b>."),
+  IMG("Separamos", "Vivos e inertes.", FG.tiras(["VIVOS: ÁRBOL, HORMIGA", "INERTES: SUELO, AGUA, AIRE"], numeros=False, cols=1)),
  ]),
  S(2, "Para practicar", [
   P("Mirá lo que contó Sofi. Lo vas a usar en la carpeta."),
@@ -46,7 +47,7 @@ N1 = {**ESTILO,
 "ojo": ["No toques bichitos que pican.", "Observar es mirar sin romper nada."],
 "resumen": [{"titulo": "Entorno", "texto": "Lo que nos rodea."}, {"titulo": "Vivos", "texto": "Árboles, bichitos."}, {"titulo": "Registrar", "texto": "Contar y anotar."}],
 "glosario": [{"palabra": "Entorno", "significado": "Lo que está a nuestro alrededor."}, {"palabra": "Cantero", "significado": "Lugar con tierra para plantas."}],
-"carpeta": ["¿Cuántos árboles contó Sofi?", "¿Qué había más: tachos o papeles en el piso?", "¿El banco es un ser vivo?"],
+"carpeta": ["¿Cuántos árboles contó Sofi?", "¿Qué había más: tachos o papeles en el piso?", "¿El suelo del patio es un ser vivo?"],
 "respuestas_carpeta": [["3", "tres", "TRES", "Tres"], acepta("PAPELES", "PAPELES EN EL PISO", "LOS PAPELES"), acepta("NO")],
 "carpeta_nivel": ["aplicar", "analizar", "aplicar"],
 "soluciones": {"incompleto": "VIVO.", "solo": "Tu dibujo.", "carpeta": ["3.", "PAPELES.", "NO."]},
@@ -146,7 +147,7 @@ N4 = {**ESTILO,
 }
 
 ACT = {
-"1": [MC("EN EL PATIO, ¿CUÁL ES UN SER VIVO?", ["EL ÁRBOL", "EL BANCO", "EL TACHO"], "EL ÁRBOL", "NACE Y CRECE.", n="aplicar"),
+"1": [MC("EN EL PATIO, ¿CUÁL ES UN SER VIVO?", ["EL ÁRBOL", "EL SUELO", "EL AGUA"], "EL ÁRBOL", "NACE Y CRECE.", n="aplicar"),
       SA("SOFI CONTÓ 3 ÁRBOLES Y 2 TACHOS. ¿CUÁNTAS COSAS CONTÓ?", ["5", "cinco", "CINCO"], "3 + 2 = 5.", n="aplicar")],
 "2": [MC("¿QUÉ CUIDA EL AMBIENTE?", ["USAR EL TACHO", "TIRAR PAPELES", "ROMPER RAMAS"], "USAR EL TACHO", "LA BASURA VA AL TACHO.", n="recordar"),
       MC("TOMI DEJA LA CANILLA ABIERTA. ¿QUÉ PASA?", ["SE GASTA AGUA", "SE CUIDA EL AGUA", "NO PASA NADA"], "SE GASTA AGUA", "HAY QUE CERRARLA.", n="error")],
@@ -157,11 +158,11 @@ ACT = {
 "5": [MC("RELÁMPAGO. LA BASURA VA EN EL…", ["TACHO", "PISO", "CANTERO"], "TACHO", "TACHO.", tiempo=30, n="recordar"),
       MC("RELÁMPAGO. ¿QUÉ DAÑA?", ["ROMPER RAMAS", "REGAR", "JUNTAR PAPELES"], "ROMPER RAMAS", "LASTIMA AL ÁRBOL.", tiempo=30, n="aplicar"),
       SA("RELÁMPAGO. ¿QUÉ HACÉS CON LA CANILLA AL TERMINAR?", acepta("CERRARLA", "LA CIERRO", "CERRAR", "CIERRO"), "CERRARLA.", tiempo=30, n="aplicar"),
-      MC("RELÁMPAGO. EL ÁRBOL ES UN…", ["SER VIVO", "OBJETO", "MATERIAL"], "SER VIVO", "NACE Y CRECE.", tiempo=30, n="recordar")],
+      MC("RELÁMPAGO. EL ÁRBOL ES UN…", ["SER VIVO", "SER INERTE", "MATERIAL"], "SER VIVO", "NACE Y CRECE.", tiempo=30, n="recordar")],
 }
 EXAMEN = [
  [1, MC("¿QUÉ ES EL ENTORNO?", ["LO QUE NOS RODEA", "UN JUGUETE", "UN NÚMERO"], "LO QUE NOS RODEA", "EL PATIO, LA PLAZA.", n="recordar")],
- [1, MC("EN EL PATIO, ¿CUÁL NO ES UN SER VIVO?", ["EL BANCO", "LA HORMIGA", "EL ÁRBOL"], "EL BANCO", "NO NACE NI CRECE.", n="aplicar")],
+ [1, MC("EN EL PATIO, ¿CUÁL ES INERTE?", ["EL SUELO", "LA HORMIGA", "EL ÁRBOL"], "EL SUELO", "NO NACE NI CRECE.", n="aplicar")],
  [1, SA("HAY 8 PAPELES EN EL PISO. SOFI JUNTA 8. ¿CUÁNTOS QUEDAN?", ["0", "cero", "CERO", "NINGUNO", "ninguno"], "8 − 8 = 0.", n="aplicar")],
  [2, MC("¿QUÉ DAÑA AL AMBIENTE?", ["TIRAR BASURA AL PISO", "REGAR PLANTAS", "CERRAR LA CANILLA"], "TIRAR BASURA AL PISO", "ENSUCIA Y LASTIMA ANIMALES.", n="recordar")],
  [2, MC("¿POR QUÉ LA BASURA DAÑA A LOS PÁJAROS?", ["PUEDE LASTIMARLOS", "LOS HACE VOLAR", "LES DA COMIDA RICA"], "PUEDE LASTIMARLOS", "SE LA PUEDEN COMER.", n="analizar")],

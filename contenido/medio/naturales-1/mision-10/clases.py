@@ -21,12 +21,12 @@ N1 = [
   "voz": ["Miramos el *patio* de la escuela.", "Hay un *árbol* grande.", "Hay un *cantero* con plantas.", "Hay un *tacho* para la basura.", "Y un *banco* para sentarse."]},
  {"t": "barras", "titulo": "LO QUE CONTÓ SOFI", "unidad": "cosas", "items": [{"txt": "ÁRBOLES", "valor": 3}, {"txt": "TACHOS", "valor": 2}, {"txt": "PAPELES", "valor": 8}],
   "voz": ["Sofi cuenta y anota.", "*3* árboles.", "*2* tachos.", "¡Y *8* papeles en el piso!"]},
- {"t": "pregunta", "pregunta": "¿Cuál es un ser vivo del patio?", "opciones": ["BANCO", "ÁRBOL", "TACHO"], "correcta": 1,
-  "voz": ["Ahora vos. Banco, árbol, tacho.", "¿Cuál es un ser vivo?", "¡El *árbol*!"]},
+ {"t": "pregunta", "pregunta": "¿Cuál es un ser vivo del patio?", "opciones": ["SUELO", "ÁRBOL", "AGUA"], "correcta": 1,
+  "voz": ["Ahora vos. Suelo, árbol, agua.", "¿Cuál es un ser vivo?", "¡El *árbol*!"]},
  {"t": "consejo", "titulo": "MIRÁ SIN ROMPER", "texto": "Observar es mirar con cuidado", "emoji": "👀",
   "voz": ["Truco: observá *sin romper* nada."]},
  {"t": "resumen", "items": [["ENTORNO", "lo que nos rodea"], ["VIVOS", "árboles, bichitos"], ["REGISTRAR", "contar y anotar"]], "fin": FIN,
-  "voz": ["Repasemos lo que aprendimos.", "El *entorno* es lo que nos rodea.", "Hay *seres vivos* y cosas.", "Contamos y *anotamos*.", CIERRE]},
+  "voz": ["Repasemos lo que aprendimos.", "El *entorno* es lo que nos rodea.", "Hay *seres vivos* y lo inerte.", "Contamos y *anotamos*.", CIERRE]},
 ]
 N2 = [
  {"t": "historia", "personaje": TOMI, "lugar": "🌳", "lineas": ["Tomi ve papeles en el patio.", "Un pajarito pica un envoltorio.", "¡Eso lo puede lastimar!"], "titulo": "CUIDA O DAÑA", "sub": "al ambiente",
