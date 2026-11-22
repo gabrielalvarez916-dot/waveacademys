@@ -7,6 +7,9 @@ import variar, asyncio, base64, glob, hashlib, json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # tools/medio
 from neutro_medio import convertir, argentino
 import edge_tts
+import difflib, subprocess, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from eleven_borrador import para_eleven
 
 VOZ = os.environ.get('VOZ', 'es-MX-JorgeNeural')
 RATE = os.environ.get('RATE', '+25%')
@@ -128,6 +131,75 @@ async def tts(texto, voz=None, rate=None, pitch=None):
     return {'a': base64.b64encode(audio).decode(), 'w': w}
 
 
+# ───────── ElevenLabs (SOLO Lengua 1.º y 2.º año, nivel medio) ─────────
+# Apagado por defecto: solo se enciende desde el flujo "Voz ElevenLabs Lengua" (ELEVEN_TOPE > 0). Modelo v3, estabilidad 0.5, similitud 0.75.
+ELEVEN_KEY = os.environ.get('ELEVEN_KEY', '')
+ELEVEN_TOPE = int(os.environ.get('ELEVEN_TOPE', '0') or 0)          # tope de caracteres por corrida (0 = no usar ElevenLabs)
+ELEVEN_VERSIONES = os.environ.get('ELEVEN_VERSIONES', 'arg').split(',')  # arg, neutro
+ELEVEN_VOCES = {'arg': os.environ.get('ELEVEN_VOZ_ARG', '0LdgqX7HWxqwl7GGMBS4'), 'neutro': os.environ.get('ELEVEN_VOZ_NEUTRO', '')}
+ELEVEN_MODELO = 'eleven_v3'
+GASTADOS = [0]
+MANUALES = {}  # frases grabadas a mano por Gaby (no se pisan): {slug: [[escena, linea], ...]}
+_mp = os.path.join(AQUI, 'voz', 'manuales.json')
+if os.path.exists(_mp): MANUALES = json.load(open(_mp))
+
+
+def eleven_activo(L, suf):
+    if not (ELEVEN_KEY and ELEVEN_TOPE > 0): return False
+    if not re.match(r'^\s*Lengua\s*[12]\b', L.get('materia') or '', re.I): return False
+    v = 'neutro' if suf else 'arg'
+    return v in ELEVEN_VERSIONES and bool(ELEVEN_VOCES[v])
+
+
+def eleven_hash(vid, t):
+    return hashlib.md5(('eleven-v3-s50-sim75|' + vid + '|' + para_eleven(t)).encode()).hexdigest()[:12]
+
+
+def _ffmpeg(args, datos):
+    return subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-loglevel', 'info', '-i', 'pipe:0'] + args, input=datos, capture_output=True)
+
+
+def a_mp3_nivelado(crudo, objetivo=-20.0):
+    m = _ffmpeg(['-af', 'loudnorm=print_format=summary', '-f', 'null', '-'], crudo).stderr.decode(errors='ignore')
+    g = re.search(r'Input Integrated:\s+(-?[\d.]+)', m)
+    db = (objetivo - float(g.group(1))) if g else 0
+    r = _ffmpeg(['-af', f'volume={db:.2f}dB,alimiter=limit=0.9', '-ar', '24000', '-ac', '1', '-c:a', 'libmp3lame', '-b:a', '48k', '-write_xing', '0', '-f', 'mp3', 'pipe:1'], crudo)
+    if not r.stdout: raise RuntimeError('ffmpeg sin salida')
+    return r.stdout
+
+
+def tiempos_palabras(texto, enviado, inicios):  # inicio (ms) de cada palabra del subtítulo, dentro del audio de lo enviado
+    pos, p = [], 0
+    for tok in texto.split():
+        p = texto.index(tok, p); pos.append(p); p += len(tok)
+    ops = difflib.SequenceMatcher(None, texto, enviado, autojunk=False).get_opcodes()
+    out = []
+    for x in pos:
+        q = 0
+        for tag, i1, i2, j1, j2 in ops:
+            if i1 <= x < i2 or (x == i2 == len(texto)):
+                q = j1 + (x - i1) if tag == 'equal' else j1 + int((x - i1) * (j2 - j1) / max(1, i2 - i1)); break
+        out.append(round(inicios[min(q, len(inicios) - 1)] * 1000))
+    return out
+
+
+async def tts_eleven(texto, vid):
+    env = para_eleven(texto)
+    cuerpo = json.dumps({'text': env, 'model_id': ELEVEN_MODELO, 'voice_settings': {'stability': 0.5, 'similarity_boost': 0.75}}).encode()
+    def pedir():
+        rq = urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{vid}/with-timestamps?output_format=mp3_44100_128', data=cuerpo,
+                                    headers={'xi-api-key': ELEVEN_KEY, 'content-type': 'application/json'})
+        return json.load(urllib.request.urlopen(rq, timeout=180))
+    j = await asyncio.get_event_loop().run_in_executor(None, pedir)
+    crudo = base64.b64decode(j['audio_base64'])
+    al = j.get('alignment') or j.get('normalized_alignment') or {}
+    ini = al.get('character_start_times_seconds') or []
+    if len(ini) < len(env):  # sin tiempos por letra: se reparte proporcional a lo largo del audio
+        dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', '-'], input=crudo, capture_output=True).stdout or 3)
+        ini = [dur * i / max(1, len(env)) for i in range(len(env))]
+    return {'a': base64.b64encode(a_mp3_nivelado(crudo)).decode(), 'w': tiempos_palabras(texto, env, ini)}
+
+
 PARALELO = int(os.environ.get('VOZ_PARALELO', '4'))  # frases que se graban a la vez
 INICIO = time.time(); MINUTOS = float(os.environ.get('VOZ_MINUTOS', '0') or 0)  # tope de tiempo por corrida (0 = sin tope)
 PENDIENTES = []
@@ -144,36 +216,51 @@ async def grabar(L, nombre, suf, vz):
     rate = RATE_PRIMEROS if prim else RATE
     pitch = PITCH_PRIMEROS if prim else None
     res, nuevas = [], 0
+    l12 = bool(re.match(r'^\s*Lengua\s*[12]\b', L.get('materia') or '', re.I)); textos = {}
+    el = eleven_activo(L, suf); vid = ELEVEN_VOCES['neutro' if suf else 'arg'] if el else ''
+    viejo = json.load(open(destino)) if os.path.exists(destino) else []
+    prot = {tuple(x) for x in MANUALES.get(nombre, [])} if el else set()
+    if el:  # la lección se hace entera o no se hace (cada lección completa cuesta lo mismo que sus frases nuevas)
+        costo = sum(len(para_eleven(t)) for i, esc in enumerate(F) for j, t in enumerate(esc) if (i, j) not in prot and eleven_hash(vid, t) not in cache)
+        if costo and GASTADOS[0] + costo > ELEVEN_TOPE:
+            PENDIENTES.append(nombre + suf); print('SALTEADA por tope de gasto:', nombre + suf, costo, 'caracteres'); return
+        GASTADOS[0] += costo
     # se graban EN PARALELO (de a PARALELO frases a la vez): mismo audio, mismo orden, mucho más rápido
     sem = asyncio.Semaphore(PARALELO)
     async def grabar_una(t):
         async with sem:
             for intento in range(6):
                 try:
+                    if el: return await tts_eleven(t, vid)
                     return await tts(t, vz, rate, pitch)
                 except Exception as e:
                     if intento == 5: raise
                     await asyncio.sleep(5 * (intento + 1))  # Microsoft a veces corta por muchos pedidos seguidos
     pedidos = {}  # hash -> tarea (una frase repetida se graba una sola vez)
-    for esc in F:
+    for ie, esc in enumerate(F):
         fila = []
-        for t in esc:
-            h = hashlib.md5((vz + rate + (pitch or '') + t).encode()).hexdigest()[:12]
+        for il, t in enumerate(esc):
+            if el and (ie, il) in prot and ie < len(viejo) and il < len(viejo[ie]): fila.append(viejo[ie][il]); continue  # grabada a mano: se respeta
+            if not el and l12 and ie < len(viejo) and il < len(viejo[ie]) and viejo[ie][il].get('e') and viejo[ie][il].get('th') == hashlib.md5(t.encode()).hexdigest()[:12]:
+                fila.append(viejo[ie][il]); continue  # ya tiene voz de ElevenLabs: una corrida común NO la pisa
+            h = eleven_hash(vid, t) if el else hashlib.md5((vz + rate + (pitch or '') + t).encode()).hexdigest()[:12]
             if h in cache:
                 fila.append(cache[h])
             else:
                 if MINUTOS and time.time() - INICIO > MINUTOS * 60:
                     PENDIENTES.append(nombre + suf); return
-                if h not in pedidos: pedidos[h] = asyncio.ensure_future(grabar_una(t))
+                if h not in pedidos: pedidos[h] = asyncio.ensure_future(grabar_una(t)); textos[h] = t
                 fila.append(h)
         res.append(fila)
     hechos = dict(zip(pedidos, await asyncio.gather(*pedidos.values())))
-    for h, r in hechos.items(): r['h'] = h
+    for h, r in hechos.items():
+        r['h'] = h
+        if el: r['e'] = 1; r['th'] = hashlib.md5(textos[h].encode()).hexdigest()[:12]
     nuevas = len(hechos)
     res = [[hechos[f] if isinstance(f, str) else f for f in fila] for fila in res]
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     json.dump(res, open(destino, 'w'), separators=(',', ':'))
-    print(nombre + suf, ':', sum(len(e) for e in F), 'frases,', nuevas, 'nuevas, voz', vz, rate)
+    print(nombre + suf, ':', sum(len(e) for e in F), 'frases,', nuevas, 'nuevas, voz', ('ElevenLabs ' + vid) if el else vz, rate)
 
 
 async def una(src_path):

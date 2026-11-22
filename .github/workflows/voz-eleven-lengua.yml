@@ -1,0 +1,39 @@
+name: Voz ElevenLabs de Lengua (años 1 y 2, nivel medio)
+# SOLO Lengua 1.º y 2.º año del Nivel Medio. Gasta créditos de ElevenLabs: se corre a mano y con TOPE de caracteres.
+# Una lección se hace entera o no se hace; las frases grabadas a mano (voz/manuales.json) y las ya hechas con ElevenLabs no se repiten ni se pisan.
+on:
+  workflow_dispatch:
+    inputs:
+      lecciones: { description: 'Lecciones (patrón, ej. medio-leng1-m1-n3 o medio-leng1-m1-*)', default: 'medio-leng1-m1-n3' }
+      versiones: { description: 'arg, neutro o arg,neutro', default: 'arg' }
+      tope: { description: 'Tope de caracteres de ElevenLabs a gastar en esta corrida', default: '3000' }
+      publicar: { description: 'Cargar las clases en la plataforma (si/no)', default: 'si' }
+permissions: { contents: write }
+concurrency: { group: voz-clases-medio, cancel-in-progress: false }
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    env:
+      MEDIO_TOKEN: '${{ secrets.MEDIO_TOKEN }}'
+      ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}'
+      ELEVEN_TOPE: '${{ github.event.inputs.tope }}'
+      ELEVEN_VERSIONES: '${{ github.event.inputs.versiones }}'
+      ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}'
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install edge-tts
+      - name: Generar voz (ElevenLabs en Lengua 1 y 2; el resto no se toca)
+        run: python tools/medio/clase/voz_edge.py $(ls tools/medio/clase/lecciones/${{ github.event.inputs.lecciones }}.json)
+      - run: python tools/medio/clase/armar.py
+      - name: Guardar voz y HTML en el repo
+        run: |
+          git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
+          git add tools/medio/clase/voz tools/medio/clase/dist
+          git diff --cached --quiet || git commit -m "Voz ElevenLabs de Lengua (automático)"
+          for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
+      - name: Cargar en la plataforma (solo las lecciones pedidas)
+        if: env.MEDIO_TOKEN != '' && github.event.inputs.publicar == 'si'
+        run: python tools/medio/clase/cargar.py $(for f in $(ls tools/medio/clase/lecciones/${{ github.event.inputs.lecciones }}.json); do basename $f .json; done)
