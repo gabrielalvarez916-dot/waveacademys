@@ -764,24 +764,27 @@
     return r.data;
   }
 
+  // Pantalla de aviso (Anticipación): cada tipo de pregunta con una línea de texto y una mini-versión dibujada de cómo se responde
+  function dmO(l, on) { return '<span class="dm-op' + (on ? ' on' : '') + '">' + l + '</span>'; }
+  function dmC(l, on) { return '<span class="dm-chip' + (on ? ' on' : '') + '">' + l + '</span>'; }
   var AVISOS = {
-    multiple_choice: { nombre: 'Elegir una opción', hacer: 'Leé la pregunta y tocá la única respuesta correcta.', fin: 'Una opción quedó marcada.', ejemplo: '¿Cuántos lados tiene un triángulo? Opciones: 2, 3, 4. Tocás «3».' },
-    true_false: { nombre: 'Verdadero o falso', hacer: 'Leé la frase y decidí si es verdadera o falsa.', fin: 'Quedó marcada una de las dos opciones.', ejemplo: '«El sol sale por el oeste.» Tocás «Falso».' },
-    short_answer: { nombre: 'Respuesta corta', hacer: 'Escribí la respuesta en una palabra o en una frase corta.', fin: 'El cuadro tiene tu respuesta escrita.', ejemplo: '¿Cómo se llama el resultado de una suma? Escribís «suma» o «total».' },
-    open: { nombre: 'Respuesta escrita', hacer: 'Escribí con tus palabras lo que pide la consigna. No hace falta que sea largo, pero sí completo.', fin: 'Respondiste lo que pedía la consigna y releíste lo escrito.', ejemplo: 'Explicá qué es un ecosistema. Escribís dos o tres frases.' },
-    multi_select: { nombre: 'Marcar varias', hacer: 'Marcá todas las respuestas correctas. Puede haber más de una.', fin: 'Marcaste todas las correctas y ninguna de más.', ejemplo: '¿Cuáles son números pares? 2, 3, 4, 7. Marcás «2» y «4».' },
-    odd_one_out: { nombre: 'Encontrar el intruso', hacer: 'Elegí el elemento que no pertenece al grupo.', fin: 'Una opción quedó marcada.', ejemplo: 'Perro, gato, mesa, caballo. Elegís «mesa».' },
-    ordering: { nombre: 'Ordenar', hacer: 'Con las flechas ▲ y ▼ poné los elementos en el orden correcto.', fin: 'La lista quedó en el orden que querés.', ejemplo: 'Ordenar de menor a mayor: 5, 2, 9. Queda 2, 5, 9.' },
-    matching: { nombre: 'Unir parejas', hacer: 'Para cada elemento de la izquierda, elegí su pareja de la derecha.', fin: 'Todos los elementos tienen una pareja elegida.', ejemplo: 'Argentina → Buenos Aires, Chile → Santiago.' },
-    classify: { nombre: 'Clasificar', hacer: 'Elegí la categoría a la que pertenece cada elemento.', fin: 'Todos los elementos tienen una categoría.', ejemplo: 'Manzana → Fruta, Zanahoria → Verdura.' },
-    table_fill: { nombre: 'Completar una tabla', hacer: 'Escribí lo que falta en las celdas vacías.', fin: 'Ninguna celda vacía quedó sin completar.', ejemplo: 'En una tabla del 2: 2×3 = __. Escribís 6.' },
-    fill_blank: { nombre: 'Completar huecos', hacer: 'Escribí la palabra o el número que falta en cada hueco del texto.', fin: 'Todos los huecos tienen algo escrito.', ejemplo: 'El agua hierve a ___ grados. Escribís 100.' },
-    solve_complete: { nombre: 'Resolver y escribir el resultado', hacer: 'Escribí cómo lo resolviste y después el resultado.', fin: 'Completaste el procedimiento y el resultado.', ejemplo: '12 + 8: «sumé 12 y 8», resultado 20.' },
-    numeric: { nombre: 'Escribir un número', hacer: 'Hacé la cuenta (en tu carpeta si querés) y escribí solo el resultado.', fin: 'El cuadro tiene el número.', ejemplo: '¿Cuánto es 6 × 7? Escribís 42.' },
-    tap_text: { nombre: 'Tocar en el texto', hacer: 'Tocá en el texto las partes que pide la consigna. Si te equivocás, volvé a tocar para sacarlas.', fin: 'Marcaste todo lo que pedía la consigna.', ejemplo: 'Tocá los sustantivos: «El perro corre». Tocás «perro».' },
-    tokens: { nombre: 'Armar con fichas', hacer: 'Tocá las fichas para armar lo que pide la consigna, en el orden correcto.', fin: 'Usaste las fichas que pedía y lo armado queda como querés.', ejemplo: 'Armá la frase con: sol, el, brilla. Queda «el sol brilla».' },
-    keywords: { nombre: 'Explicar con palabras clave', hacer: 'Escribí una explicación corta que use las ideas importantes del tema.', fin: 'Tu texto nombra las ideas principales.', ejemplo: '¿Qué es la fotosíntesis? Escribís que la planta usa luz para hacer su alimento.' },
-    label_image: { nombre: 'Rotular un dibujo', hacer: 'Mirá el dibujo y elegí el nombre que corresponde a cada punto marcado.', fin: 'Todos los puntos tienen un nombre elegido.', ejemplo: 'Un dibujo de una célula con un punto en el centro. Elegís «núcleo».' }
+    multiple_choice: { n: 'Elegir una opción', i: '🔘', c: '#087E83', t: 'Tocá la única respuesta correcta.', d: '<div class="dm-q">¿Cuántos lados tiene un triángulo?</div>' + dmO('2') + dmO('3', 1) + dmO('4') },
+    true_false: { n: 'Verdadero o falso', i: '✅', c: '#2E8B57', t: 'Decidí si la frase es verdadera o falsa.', d: '<div class="dm-q">El sol sale por el oeste.</div><div class="dm-fila">' + dmO('Verdadero') + dmO('Falso', 1) + '</div>' },
+    short_answer: { n: 'Respuesta corta', i: '✏️', c: '#E59A1B', t: 'Escribí la respuesta en una palabra o frase corta.', d: '<div class="dm-q">¿Cómo se llama el resultado de una suma?</div><div class="dm-in">suma</div>' },
+    open: { n: 'Respuesta escrita', i: '📝', c: '#7C5CE0', t: 'Explicalo con tus palabras, completo pero sin apuro.', d: '<div class="dm-q">Explicá qué es un ecosistema.</div><div class="dm-in alto">Es un conjunto de seres vivos que viven juntos y se relacionan con su ambiente…</div>' },
+    multi_select: { n: 'Marcar varias', i: '☑️', c: '#087E83', t: 'Marcá todas las correctas. Puede haber más de una.', d: '<div class="dm-q">¿Cuáles son números pares?</div><div class="dm-fila">' + dmC('☑ 2', 1) + dmC('☐ 3') + dmC('☑ 4', 1) + dmC('☐ 7') + '</div>' },
+    odd_one_out: { n: 'Encontrar el intruso', i: '🕵️', c: '#E4572E', t: 'Elegí lo que no pertenece al grupo.', d: '<div class="dm-fila">' + dmC('perro') + dmC('gato') + dmC('mesa', 1) + dmC('caballo') + '</div>' },
+    ordering: { n: 'Ordenar', i: '↕️', c: '#7C5CE0', t: 'Con las flechas ▲ ▼ poné todo en orden.', d: '<div class="dm-q">De menor a mayor:</div><div class="dm-fila">' + dmC('2 ▲▼', 1) + dmC('5 ▲▼') + dmC('9 ▲▼') + '</div>' },
+    matching: { n: 'Unir parejas', i: '🔗', c: '#2E8B57', t: 'Elegí la pareja de cada elemento.', d: '<div class="dm-par"><b>Argentina</b><span>→</span>' + dmO('Buenos Aires ▾', 1) + '</div><div class="dm-par"><b>Chile</b><span>→</span>' + dmO('Santiago ▾', 1) + '</div>' },
+    classify: { n: 'Clasificar', i: '🗂️', c: '#E59A1B', t: 'Elegí la categoría de cada elemento.', d: '<div class="dm-par"><b>Manzana</b><span>→</span>' + dmO('Fruta ▾', 1) + '</div><div class="dm-par"><b>Zanahoria</b><span>→</span>' + dmO('Verdura ▾', 1) + '</div>' },
+    table_fill: { n: 'Completar una tabla', i: '🔢', c: '#087E83', t: 'Escribí lo que falta en las celdas vacías.', d: '<div class="dm-tab"><span>2 × 2</span><span>4</span><span>2 × 3</span><span class="dm-in">6</span></div>' },
+    fill_blank: { n: 'Completar huecos', i: '🧩', c: '#E4572E', t: 'Escribí lo que falta en cada hueco.', d: '<div class="dm-q">El agua hierve a <span class="dm-in en">100</span> grados.</div>' },
+    solve_complete: { n: 'Resolver y responder', i: '🧮', c: '#7C5CE0', t: 'Contá cómo lo resolviste y poné el resultado.', d: '<div class="dm-q">12 + 8</div><div class="dm-in">Sumé 12 y 8</div><div class="dm-in">Resultado: 20</div>' },
+    numeric: { n: 'Escribir un número', i: '🔟', c: '#2E8B57', t: 'Hacé la cuenta (en tu carpeta si querés) y escribí solo el resultado.', d: '<div class="dm-q">6 × 7 = <span class="dm-in en">42</span></div>' },
+    tap_text: { n: 'Tocar en el texto', i: '👆', c: '#E59A1B', t: 'Tocá en el texto lo que pide la consigna. Volvé a tocar para sacarlo.', d: '<div class="dm-q">Tocá el sustantivo:</div><div class="dm-q">El <span class="dm-sub">perro</span> corre.</div>' },
+    tokens: { n: 'Armar con fichas', i: '🧱', c: '#087E83', t: 'Tocá las fichas en el orden que corresponde.', d: '<div class="dm-fila">' + dmC('el', 1) + dmC('sol', 1) + dmC('brilla', 1) + '</div><div class="dm-in">el sol brilla</div>' },
+    keywords: { n: 'Explicar con ideas clave', i: '🔑', c: '#7C5CE0', t: 'Escribí una explicación corta con las ideas importantes.', d: '<div class="dm-q">¿Qué es la fotosíntesis?</div><div class="dm-in alto">La planta usa la <b>luz</b> del sol para fabricar su alimento.</div>' },
+    label_image: { n: 'Rotular un dibujo', i: '🏷️', c: '#E4572E', t: 'Elegí el nombre que corresponde a cada punto del dibujo.', d: '<div class="dm-img"><span class="dm-cel"><i></i></span>' + dmO('núcleo ▾', 1) + '</div>' }
   };
 
   function abrirCuestionario(op) {
@@ -1111,12 +1114,15 @@
       lista.forEach(function (q) { var k = AVISOS[q.question_type] ? q.question_type : 'open'; if (!cuenta[k]) { cuenta[k] = 0; tipos.push(k); } cuenta[k]++; });
       var rel = lista.some(function (q) { return q.tiempo_seg; }) && !ap('sinCrono');
       var nuevos = tipos.filter(function (k) { return !vistos[k]; }), conocidos = tipos.filter(function (k) { return vistos[k]; });
-      var h = '<div class="ap-aviso"><h2>Antes de empezar</h2>' +
-        '<p class="ap-av-res">Esta actividad tiene <b>' + lista.length + (lista.length === 1 ? ' pregunta' : ' preguntas') + '</b>. ' + (rel ? 'Cada una tiene un tiempo y salta sola a la siguiente. Si no querés cronómetro, lo podés sacar cuando empieza. ' : 'No hay tiempo: vas a tu ritmo. ') + 'Cuando termines la última, se entrega y ves el resultado.</p>';
-      h += nuevos.map(function (k) { var a = AVISOS[k]; return '<div class="ap-av-tipo"><b>' + esc(a.nombre) + ' <small>(' + cuenta[k] + ')</small></b>' +
-        '<p><span>Qué tenés que hacer:</span> ' + esc(a.hacer) + '</p><p><span>Cómo sabés que terminaste:</span> ' + esc(a.fin) + '</p><div class="ap-av-ej"><span>Ejemplo</span> ' + esc(a.ejemplo) + '</div></div>'; }).join('');
-      if (conocidos.length) h += '<p class="ap-av-conoc">Ya conocés estos tipos: ' + conocidos.map(function (k) { return esc(AVISOS[k].nombre) + ' (' + cuenta[k] + ')'; }).join(', ') + '.</p>';
-      h += '<button type="button" class="mt-boton" data-avisook="1">Entendido, empezar</button></div>';
+      var h = '<div class="ap-aviso"><h2>Antes de empezar</h2><div class="av-chips">' +
+        '<span class="av-chip">📋 ' + lista.length + (lista.length === 1 ? ' pregunta' : ' preguntas') + '</span>' +
+        '<span class="av-chip">' + (rel ? '⏱️ Con tiempo (se puede sacar)' : '🐢 Sin apuro, a tu ritmo') + '</span>' +
+        '<span class="av-chip">🏁 Al final ves tu resultado</span></div>';
+      if (nuevos.length) h += '<p class="av-sub">Así se responde cada tipo de pregunta:</p><div class="av-grilla">' + nuevos.map(function (k) { var a = AVISOS[k];
+        return '<div class="av-card" style="--c:' + a.c + '"><div class="av-cab"><span>' + a.i + '</span><b>' + esc(a.n) + '</b><small>' + cuenta[k] + (cuenta[k] === 1 ? ' pregunta' : ' preguntas') + '</small></div>' +
+          '<p>' + esc(a.t) + '</p><div class="av-demo" aria-hidden="true">' + a.d + '</div></div>'; }).join('') + '</div>';
+      if (conocidos.length) h += '<p class="av-conoc">Ya conocés: ' + conocidos.map(function (k) { return AVISOS[k].i + ' ' + esc(AVISOS[k].n); }).join(' · ') + '</p>';
+      h += '<button type="button" class="mt-boton av-ok" data-avisook="1">¡Listo, empezar!</button></div>';
       cuerpo.innerHTML = h;
       cuerpo.querySelector('[data-avisook]').addEventListener('click', function () {
         tipos.forEach(function (k) { vistos[k] = 1; });
