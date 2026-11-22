@@ -1,0 +1,158 @@
+{
+ "slug": "medio-leng1-m3-n2",
+ "step_id": "707333ca-99be-4f80-b758-a4ecb3eb65c7",
+ "materia": "Lengua 1",
+ "titulo": "Leer sílabas con M y P",
+ "sub": "Lengua 1 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo suenan juntas la M y la A?",
+   "segundos": 6,
+   "respuesta": "¡MA!",
+   "emoji": "🔊",
+   "titulo": "SÍLABAS",
+   "sub": "con M y P",
+   "voz": [
+    "Desafío: ¿cómo suenan juntas la M y la A?",
+    "¡*MA*!",
+    "Hoy: *leer sílabas con M y P*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "MAMÁ",
+   "silabas": [
+    "MA",
+    "MÁ"
+   ],
+   "tonica": 1,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *MAMÁ*.",
+    "La cortamos en pedacitos: MA, MÁ.",
+    "¡Tiene *2 sílabas*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LA M CON LAS VOCALES",
+   "celdas": [
+    {
+     "cab": "MA",
+     "txt": "M + A"
+    },
+    {
+     "cab": "ME",
+     "txt": "M + E"
+    },
+    {
+     "cab": "MI",
+     "txt": "M + I"
+    },
+    {
+     "cab": "MO",
+     "txt": "M + O"
+    }
+   ],
+   "voz": [
+    "La M se junta con cada vocal.",
+    "M con A: *MA*.",
+    "M con E: *ME*.",
+    "M con I: *MI*.",
+    "M con O: *MO*. ¡Y MU!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LA P CON LAS VOCALES",
+   "columnas": [
+    "SÍLABA",
+    "SE LEE"
+   ],
+   "filas": [
+    [
+     "PA",
+     "P + A"
+    ],
+    [
+     "PE",
+     "P + E"
+    ],
+    [
+     "PI",
+     "P + I"
+    ],
+    [
+     "PO",
+     "P + O"
+    ],
+    [
+     "PU",
+     "P + U"
+    ]
+   ],
+   "voz": [
+    "Ahora la P con cada vocal.",
+    "*PA*.",
+    "*PE*.",
+    "*PI*.",
+    "*PO*.",
+    "*PU*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se lee P con O?",
+   "opciones": [
+    "OP",
+    "PO",
+    "MO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá la P y la O.",
+    "¿Cómo se lee?",
+    "¡*PO*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE UN GOLPE",
+   "texto": "Leé la consonante y la vocal juntas",
+   "emoji": "⚡",
+   "voz": [
+    "Truco: leé las dos letras *de un golpe*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABA",
+     "de un golpe"
+    ],
+    [
+     "CON M",
+     "MA, ME, MI, MO, MU"
+    ],
+    [
+     "CON P",
+     "PA, PE, PI, PO, PU"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *sílaba* se dice de un golpe.",
+    "*MA, ME, MI, MO, MU*.",
+    "*PA, PE, PI, PO, PU*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

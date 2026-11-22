@@ -1,0 +1,132 @@
+{
+ "slug": "medio-leng1-m3-n1",
+ "step_id": "f71fee4b-4cd6-425e-9b2d-06e34dde3b9a",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la M y la P",
+ "sub": "Lengua 1 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏠",
+   "lineas": [
+    "Sofi escribe una carta.",
+    "Es para su mamá y su papá.",
+    "¡Usa dos letras nuevas!"
+   ],
+   "titulo": "LA M Y LA P",
+   "sub": "letras nuevas",
+   "voz": [
+    "Sofi escribe una *carta*.",
+    "Es para su *mamá* y su *papá*.",
+    "¡Usa dos letras nuevas!",
+    "Hoy: *conocer la M y la P*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "M",
+    "texto": "de MAMÁ · mmm",
+    "emoji": "👩"
+   },
+   "b": {
+    "cab": "P",
+    "texto": "de PAPÁ · p",
+    "emoji": "👨"
+   },
+   "signo": "y",
+   "voz": [
+    "La *M* de mamá suena mmm.",
+    "La *P* de papá suena p.",
+    "¡Para las dos juntamos los labios!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "M",
+    "A",
+    "M",
+    "Á"
+   ],
+   "grande": "MAMÁ",
+   "etiqueta": "M · A · M · Á",
+   "voz": [
+    "Sofi escribe M, A, M, A.",
+    "Las letras forman *MAMÁ*.",
+    "¡Tiene dos M!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "CONSONANTE",
+   "texto": "Necesita una vocal para sonar",
+   "emoji": "🤝",
+   "voz": [
+    "La M y la P son *consonantes*.",
+    "Necesitan una *vocal* para sonar."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza con P?",
+   "opciones": [
+    "MESA",
+    "PATO",
+    "OSO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá cada palabra.",
+    "¿Cuál empieza con *P*?",
+    "¡*PATO*! P de pato."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir la P con la B",
+     "bien": "P de PAPÁ, B de BEBÉ"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "La *P* de papá no es la B de bebé."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "M",
+     "de MAMÁ"
+    ],
+    [
+     "P",
+     "de PAPÁ"
+    ],
+    [
+     "CONSONANTES",
+     "necesitan vocales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *M* de mamá.",
+    "La *P* de papá.",
+    "Son *consonantes*: necesitan vocales.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

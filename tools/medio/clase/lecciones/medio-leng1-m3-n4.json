@@ -1,0 +1,139 @@
+{
+ "slug": "medio-leng1-m3-n4",
+ "step_id": "1481f210-5907-437f-be8a-0f9bcf6044ea",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con M y P",
+ "sub": "Lengua 1 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CARTA DE SOFI",
+   "titular": "¡SOFI ESCRIBE SOLA!",
+   "bajada": "Palabras con M y P",
+   "emoji": "✉️",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras con M y P",
+   "voz": [
+    "¡Noticia! Sofi escribe *sola*.",
+    "Escribe palabras con M y P.",
+    "Hoy: *escribir palabras con M y P*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO ESCRIBIR",
+   "items": [
+    {
+     "txt": "Digo la palabra",
+     "emoji": "🗣️"
+    },
+    {
+     "txt": "Escribo cada sílaba",
+     "emoji": "✍️"
+    },
+    {
+     "txt": "Leo y reviso",
+     "emoji": "👀"
+    }
+   ],
+   "voz": [
+    "Primero *digo* la palabra.",
+    "Después *escribo* sílaba por sílaba.",
+    "Al final *leo* y reviso."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS PUMA",
+   "items": [
+    {
+     "txt": "P",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "U",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "M",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "4️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    3,
+    0,
+    1
+   ],
+   "voz": [
+    "Las letras de PUMA se mezclaron.",
+    "Las ponemos en *orden*.",
+    "P, U, M, A: ¡*PUMA*!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "M",
+    "A",
+    "P",
+    "A"
+   ],
+   "grande": "MAPA",
+   "etiqueta": "¡NO FALTA NINGUNA!",
+   "voz": [
+    "Sofi escribe MA y después PA.",
+    "Revisa: M, A, P, A: *MAPA*.",
+    "¡No le falta ninguna letra!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? MA_A",
+   "opciones": [
+    "M",
+    "P",
+    "S"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. M, A, hueco, A.",
+    "¿Qué letra falta?",
+    "¡La *P*! MAPA."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "PU-MA"
+    ],
+    [
+     "ESCRIBIR",
+     "sílaba por sílaba"
+    ],
+    [
+     "REVISAR",
+     "leer lo escrito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* la palabra.",
+    "*Escribimos* sílaba por sílaba.",
+    "Y *revisamos* leyendo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

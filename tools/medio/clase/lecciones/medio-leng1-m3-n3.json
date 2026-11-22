@@ -1,0 +1,138 @@
+{
+ "slug": "medio-leng1-m3-n3",
+ "step_id": "2006e2b7-0d9b-4abf-ad6e-1145da5fb15f",
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con M y P",
+ "sub": "Lengua 1 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Papá",
+    "emoji": "👨"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Leíste mi mensaje?"
+    },
+    {
+     "yo": true,
+     "txt": "Dice MAPA"
+    },
+    {
+     "yo": false,
+     "txt": "¡Muy bien, Sofi!"
+    }
+   ],
+   "titulo": "LEER",
+   "sub": "palabras con M y P",
+   "voz": [
+    "Papá le escribe a Sofi.",
+    "Le pregunta si leyó su mensaje.",
+    "¡Sofi lee *MAPA*!",
+    "Hoy: *leer palabras con M y P*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "PUMA",
+   "silabas": [
+    "PU",
+    "MA"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Leemos esta palabra.",
+    "Sílaba por sílaba: PU, MA.",
+    "¡Todo junto: *PUMA*!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PALABRAS DE LA FAMILIA",
+   "items": [
+    {
+     "cab": "MAPA",
+     "txt": "MA + PA"
+    },
+    {
+     "cab": "PIPA",
+     "txt": "PI + PA"
+    },
+    {
+     "cab": "MIMO",
+     "txt": "MI + MO"
+    }
+   ],
+   "voz": [
+    "Leemos más palabras.",
+    "MA y PA: *MAPA*.",
+    "PI y PA: *PIPA*.",
+    "MI y MO: *MIMO*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "DE A PEDACITOS",
+    "emoji": "🧩",
+    "texto": "PE · PE"
+   },
+   "despues": {
+    "cab": "TODO JUNTO",
+    "emoji": "🗣️",
+    "texto": "PEPE"
+   },
+   "voz": [
+    "Primero leemos *de a pedacitos*: PE, PE.",
+    "Después *todo junto*: ¡PEPE!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra forman MA y PA?",
+   "opciones": [
+    "PAMA",
+    "MAPA",
+    "PAPA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá MA y PA.",
+    "¿Qué palabra se forma?",
+    "¡*MAPA*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "MA + PA"
+    ],
+    [
+     "JUNTAR",
+     "MAPA"
+    ],
+    [
+     "LEER",
+     "todo junto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos las *sílabas*.",
+    "Las *juntamos*.",
+    "Y *leemos* todo junto.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
