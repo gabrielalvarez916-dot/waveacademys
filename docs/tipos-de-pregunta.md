@@ -53,3 +53,10 @@ Se activa poniendo `tiempo_seg` (3 a 300) a las preguntas de un set (actividad o
 - Anterior: prioriza lo que al alumno le fue mal (promedio en exámenes y nota de las actividades de esa lección); si no hay datos, las no vistas.
 - `corregir` (modo examen) siempre exige `sorteo_id`; lee las preguntas del sorteo con permisos de servidor.
 - Para que el "tema flojo" funcione, cargá `lesson_id` en las preguntas del banco del examen (la lección que evalúa).
+
+## Inglés estilo app de idiomas (marcas en el enunciado)
+Se escriben dentro del texto de la pregunta; la corrección no cambia (js/ingles-duo.js, solo en alumno.html).
+- `[[audio:Where is the library?]]` → botones 🔊 Escuchar y 🐢 Despacio (voz en inglés del navegador). Con `short_answer` (acepta) = escribí lo que escuchás; con `multiple_choice` = escuchá y elegí.
+- `[[hablar:Good morning]]` → lo anterior + 🎤 Hablar; escribe lo que el navegador entendió en el campo. Usar con `short_answer` + `acepta`. Si no hay micrófono, el alumno escribe.
+- `[[memorama]]` → en `matching`, se juega con tarjetas. La pareja k de `izquierda` debe ser la k de `derecha` (mismo orden). Sin la marca, las opciones de la derecha se mezclan solas.
+- `multiple_choice` con opciones que son todas emojis → se muestran como fichas grandes ("elegí la imagen").

@@ -11,7 +11,8 @@ N = {'gancho': lambda d: 3, 'historia': lambda d: len(d['lineas']) + 1, 'chat': 
      'linea': lambda d: len(d['eventos']), 'barras': lambda d: 1 + len(d['items']), 'torta': lambda d: 1 + len(d['items']), 'zoom': lambda d: len(d['niveles']),
      'bloques': lambda d: 1 + len(d['items']), 'dialogo': lambda d: len(d['lineas']), 'vocab': lambda d: len(d['items']), 'texto': lambda d: 1 + len(d['marcas']),
      'partes': lambda d: 1 + len(d['partes']), 'orden': lambda d: 3, 'corrige': lambda d: 1 + len(d['cambios']), 'silabas': lambda d: 3, 'imagen': lambda d: 1 + len(d.get('marcas') or []),
-     'sistema': lambda d: 1 + len(d['entradas']) + len(d['salidas']), 'vistas': lambda d: 4}
+     'sistema': lambda d: 1 + len(d['entradas']) + len(d['salidas']), 'vistas': lambda d: 4,
+     'tarjetas': lambda d: len(d['items']), 'oracion': lambda d: len(d['partes']) + 1, 'pronunciacion': lambda d: len(d['palabras'])}
 def revisar(slug):
     p = os.path.join(AQUI, 'lecciones', slug + '.json'); out = []
     for k, e in enumerate(json.load(open(p, encoding='utf-8'))['escenas']):

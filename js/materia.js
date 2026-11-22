@@ -970,8 +970,13 @@
           }).join('') + '</ol>';
       }
       if (t === 'matching' && o && listaOp(o.izquierda).length && listaOp(o.derecha).length) {
+        var der = listaOp(o.derecha).slice();
+        if (!/\[\[memorama\]\]/.test(pr(q))) { // mezcla fija por pregunta: la pareja no queda en la misma posición (el memorama necesita el orden original)
+          var sm = 0; String(q.id || pr(q)).split('').forEach(function (ch) { sm = (sm * 31 + ch.charCodeAt(0)) >>> 0; });
+          for (var mm = der.length - 1; mm > 0; mm--) { sm = (sm * 1103515245 + 12345) >>> 0; var rr = sm % (mm + 1), tm = der[mm]; der[mm] = der[rr]; der[rr] = tm; }
+        }
         return enun + '<small class="mt-ayuda">Elegí la pareja de cada elemento.</small><div class="mt-pares">' + listaOp(o.izquierda).map(function (x, k) {
-          return '<div class="mt-par"><span>' + esc(x) + '</span>' + selectDe(i, k, listaOp(o.derecha)) + '</div>';
+          return '<div class="mt-par"><span>' + esc(x) + '</span>' + selectDe(i, k, der) + '</div>';
         }).join('') + '</div>';
       }
       if (t === 'classify' && o && listaOp(o.elementos).length && listaOp(o.categorias).length) {
