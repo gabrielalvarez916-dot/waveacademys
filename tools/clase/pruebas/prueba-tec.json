@@ -1,0 +1,104 @@
+{
+ "slug": "prueba-tec",
+ "titulo": "Prueba tecnología",
+ "sub": "nuevas plantillas",
+ "escenas": [
+  {
+   "t": "sistema",
+   "titulo": "Un proceso: hacer pan",
+   "proceso": {
+    "txt": "Panadería",
+    "emoji": "🥖"
+   },
+   "entradas": [
+    {
+     "tipo": "materia",
+     "txt": "Harina, agua y sal"
+    },
+    {
+     "tipo": "energia",
+     "txt": "Gas del horno"
+    },
+    {
+     "tipo": "info",
+     "txt": "La receta"
+    }
+   ],
+   "salidas": [
+    {
+     "tipo": "materia",
+     "txt": "Pan"
+    },
+    {
+     "tipo": "energia",
+     "txt": "Calor perdido"
+    }
+   ],
+   "voz": [
+    "Todo proceso es un bloque.",
+    "Entra materia.",
+    "Entra energía.",
+    "Entra información.",
+    "Sale el producto.",
+    "Y sale energía perdida."
+   ]
+  },
+  {
+   "t": "vistas",
+   "titulo": "Una pieza y sus vistas",
+   "cubos": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     2
+    ]
+   ],
+   "voz": [
+    "Esta es la pieza en perspectiva.",
+    "Así se ve de frente.",
+    "Así se ve desde arriba.",
+    "Y así de costado."
+   ]
+  }
+ ]
+}

@@ -98,6 +98,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | bloques | 1 + items | titulo, items:[{cab, txt}] (2-5) |
 | dialogo | lineas | personas:[{nombre, emoji}×2], lineas:[{quien, txt, trad}] (máx 4) |
 | vocab | items | items:[{palabra, emoji, trad, pron}] (2-6) |
+| sistema | 1 + entradas + salidas | titulo, proceso:{txt, emoji}, entradas:[{tipo:'materia'\|'energia'\|'info', txt}] (1-4), salidas:[{tipo, txt}] (1-4) — diagrama de bloques con flechas de color por tipo de flujo (Tecnología). Pasos: el proceso, cada entrada y cada salida |
+| vistas | 4 | titulo, cubos:[[x,y,z],...] (máx. 4×4×4; x derecha, y hacia el observador, z arriba) — pieza en perspectiva y sus vistas de frente, superior y lateral (se calculan solas) (Tecnología) |
 
 Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en uso: `pruebas/prueba-banco.json` (`python tools/clase/armar.py prueba-banco`).
 
