@@ -70,7 +70,7 @@
        (conChat ?
         '<aside class="wvp-chat" aria-label="Tutor">' +
           '<div class="wvp-chat-cab"><b>💬 Tutor Wave</b><small>Preguntale lo que no entiendas de este material</small>' +
-            '<button type="button" class="wvp-chat-x" data-v="chat" aria-label="Cerrar chat">✕</button></div>' +
+            '<button type="button" class="wvp-chat-x" data-v="chat" aria-label="Achicar el tutor" title="Achicar el tutor">✕</button></div>' +
           '<div class="wt-cuerpo"></div>' +
         '</aside>' : '') +
       '</div>';
@@ -313,7 +313,7 @@
       else if (v === 'leer') leerVoz();
       else if (v === 'pausa') pausaVoz();
       else if (v === 'parar') pararVoz();
-      else if (v === 'chat') { el.classList.toggle('chat-abierto'); setTimeout(pintar, 50); if (el.classList.contains('chat-abierto')) { var c = el.querySelector('.wvp-chat textarea'); if (c) c.focus(); } }
+      else if (v === 'chat') { if (window.innerWidth > 860) { el.classList.toggle('chat-oculto'); setTimeout(pintar, 50); return; } el.classList.toggle('chat-abierto'); setTimeout(pintar, 50); if (el.classList.contains('chat-abierto')) { var c = el.querySelector('.wvp-chat textarea'); if (c) c.focus(); } }
     });
     document.addEventListener('keydown', tecla);
     window.addEventListener('resize', alCambiarTamano);

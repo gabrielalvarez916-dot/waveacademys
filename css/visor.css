@@ -158,3 +158,8 @@ body.wvp-abierto { overflow: hidden; }
   .wvp-barra-pdf .wvp-f3 { justify-content: center; }
   .wvp-barra-pdf .wvp-b { height: 36px; padding: 0 10px; }
 }
+
+/* Tutor: en pantallas grandes se puede achicar (ocultar) para que el PDF ocupe todo el ancho; el botón 💬 Tutor lo vuelve a abrir */
+.wvp-chat-x { display: block; }
+.wvp.chat-oculto .wvp-chat { display: none; }
+.wvp.chat-oculto .wvp-caja.con-chat { width: min(100%, 980px); }
