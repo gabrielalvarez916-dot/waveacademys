@@ -155,10 +155,14 @@
     lp.data.forEach(function (l) { hechas[l.lesson_id] = true; });
 
     var examen = {};
+    var saltosQ = await sb.from('saltos_mision').select('topic_id, estado').eq('student_id', sid);
+    var stQ = await sb.from('students').select('trayectos_apoyo').eq('id', sid).maybeSingle();
+    var saltos = {}; (saltosQ.error ? [] : saltosQ.data || []).forEach(function (x) { saltos[x.topic_id] = x.estado; });
+    var desafio = !!(stQ.data && (stQ.data.trayectos_apoyo || []).indexOf('desafio') >= 0);
     exs.data.forEach(function (e) {
       var mias = ints.data.filter(function (i) { return i.exam_id === e.id; });
       var graded = mias.filter(function (i) { return i.grading_status === 'graded' && i.score != null; });
-      examen[e.topic_id] = { id: e.id, aprobar: e.passing_score, tienePreguntas: !!exConPreg[e.id],
+      examen[e.topic_id] = { id: e.id, aprobar: e.passing_score, intentos: mias.length, tienePreguntas: !!exConPreg[e.id],
         aprobado: mias.some(function (i) { return i.passed; }),
         mejor: graded.length ? Math.max.apply(null, graded.map(function (i) { return Number(i.score); })) : null };
     });
@@ -187,7 +191,7 @@
 
     return {
       neutro: neutro,
-      sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen,
+      sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, saltos: saltos, desafio: desafio,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -235,6 +239,7 @@
         var pp = D.pasos[l.id] || {};
         if (pp.video && pp.video.tiene && !t.videoPaso) t.videoPaso = pp.video;
         l.est = estadoLeccion(l);
+        if (D.saltos && D.saltos[t.id] === 'saltada' && !l.est.vacia) { l.est.completa = true; l.est.hechos = l.est.total; l.est.frac = 1; } // misión saltada por examen
         if (D.sinAcceso) l.est.vacia = false;
         l.bloqueada = t.bloqueado || !ok;
         if (!l.bloqueada && !l.est.completa && !l.est.vacia && !actual) { actual = l.id; }
@@ -393,6 +398,16 @@
     el.onclick = function (e) { if (e.target === el || e.target.closest('.ap-cerrar')) el.remove(); };
   }
 
+  // Trayecto Desafío: rendir primero el examen de la misión (una sola oportunidad). Si aprueba, la misión queda saltada.
+  function ofertaSalto(t) {
+    if (D.saltos && D.saltos[t.id] === 'saltada') return '<div class="ap-salto ok"><b>Misión saltada por examen ✓</b> Ya demostraste que dominás este tema.</div>';
+    if (!D.desafio || !t.examen || t.bloqueado || (D.saltos && D.saltos[t.id]) || t.examen.intentos > 0) return '';
+    var hizo = t.lecciones.some(function (l) { return l.est && l.est.hechos > 0; });
+    if (hizo) return '';
+    return '<div class="ap-salto"><div><b>Rendí primero</b><span>Hacé ya el examen de esta misión. Si aprobás, la salteás. Tenés una sola oportunidad: si no aprobás, hacés la misión normal.</span></div>' +
+      '<button type="button" class="mt-boton" data-salto="' + t.id + '">Rendir primero</button></div>';
+  }
+
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
     var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
@@ -401,7 +416,7 @@
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
-      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' +
+      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' + ofertaSalto(t) +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
     // arranca en el primer círculo abierto y sin terminar de ESTA misión (nivel 1 si nunca se tocó; si no, donde quedó)
     var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.libre');
@@ -919,6 +934,7 @@
         h += ops.map(function (o, j) {
           return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(o) + '"><span>' + esc(o) + '</span></label>';
         }).join('');
+        if (op.justificar) h += '<div class="ap-just"><label>¿Por qué elegiste esa respuesta?</label><textarea class="mt-just" data-just="' + i + '" rows="2" maxlength="500" placeholder="Explicalo con tus palabras"></textarea></div>';
       } else if (q.question_type === 'short_answer') {
         h += '<input type="text" class="mt-txt" name="q' + i + '" maxlength="400" placeholder="Tu respuesta">';
       } else {
@@ -932,6 +948,7 @@
       var c = cuerpo.querySelector('[name="q' + i + '"]:checked') || cuerpo.querySelector('.mt-txt[name="q' + i + '"]');
       return c ? c.value : '';
     }
+    function justif(i) { var t = cuerpo.querySelector('[data-just="' + i + '"]'); return t ? t.value.trim() : undefined; }
     function mostrarResp(q, a) { return window.WaveTipos && WaveTipos.soporta(q.question_type) ? WaveTipos.mostrar(q, a) : a; }
 
     function ap(k) { return !!(window.WaveApoyos && WaveApoyos.get(k)); }
@@ -1021,13 +1038,13 @@
       if (!relamp) return;
       clearInterval(relamp.t);
       var i = relamp.i, q = lista[i];
-      relamp.resp.push({ question_id: q.id, answer: leerResp(q, i), seed: q._seed });
+      relamp.resp.push({ question_id: q.id, answer: leerResp(q, i), seed: q._seed, justificacion: op.justificar ? justif(i) : undefined });
       relamp.i++;
       if (relamp.i < lista.length) mostrarRel(); else enviar(relamp.resp);
     }
 
     async function enviar(pre) {
-      var resp = pre || lista.map(function (q, i) { return { question_id: q.id, answer: leerResp(q, i), seed: q._seed }; });
+      var resp = pre || lista.map(function (q, i) { return { question_id: q.id, answer: leerResp(q, i), seed: q._seed, justificacion: op.justificar ? justif(i) : undefined }; });
       var vacias = resp.filter(function (r) { return !String(r.answer).trim(); }).length;
       if (!pre && vacias && !confirm('Te quedaron ' + vacias + (vacias === 1 ? ' pregunta' : ' preguntas') + ' sin responder. ¿Entregar igual?')) return;
       enviando = true;
@@ -1077,13 +1094,14 @@
     traer();
   }
 
-  function abrirExamen(temaId) {
+  function abrirExamen(temaId, salto) {
     var t = D.temas.filter(function (x) { return x.id === temaId; })[0];
     if (!t || !t.examen) return;
-    if (!t.examenDisponible) { toast('Primero superá todos los niveles de la misión.', true); return; }
+    if (salto && (!D.desafio || (D.saltos && D.saltos[t.id]) || t.examen.intentos > 0)) { toast('Ya no podés rendir primero esta misión.', true); return; }
+    if (!salto && !t.examenDisponible) { toast('Primero superá todos los niveles de la misión.', true); return; }
     var sorteo = null; // cada vez que se abre, el examen sortea preguntas distintas del banco del tema
     abrirCuestionario({
-      titulo: 'Nivel jefe · ' + t.titulo, examen: true,
+      titulo: (salto ? 'Rendir primero · ' : 'Nivel jefe · ') + t.titulo, examen: true, justificar: !!salto,
       cargar: async function () {
         var r = await sb.rpc('sortear_examen', { p_exam: t.examen.id });
         if (r.error) throw new Error(r.error.message || 'No se pudo armar el examen.');
@@ -1091,11 +1109,13 @@
         if (!r.data.questions || !r.data.questions.length) throw new Error('Todavía no hay preguntas cargadas.');
         return r.data.questions;
       },
-      enviar: function (resp) { return llamar('corregir', { modo: 'examen', exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
-      comprobar: function (q, a, seed) { return llamar('comprobar', { origen: 'examen', exam_id: t.examen.id, sorteo_id: sorteo, question_id: q.id, answer: a, seed: seed }); },
+      enviar: function (resp) { return salto ? llamar('salto', { exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }) : llamar('corregir', { modo: 'examen', exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
+      comprobar: salto ? null : function (q, a, seed) { return llamar('comprobar', { origen: 'examen', exam_id: t.examen.id, sorteo_id: sorteo, question_id: q.id, answer: a, seed: seed }); },
       alTerminar: function (res) {
         t.examen.mejor = Math.max(t.examen.mejor || 0, res.score);
+        t.examen.intentos = (t.examen.intentos || 0) + 1;
         if (res.passed) t.examen.aprobado = true;
+        if (salto) { D.saltos[t.id] = res.salto || (res.passed ? 'saltada' : 'no_aprobada'); toast(res.passed ? '¡Misión saltada! Pasás directo a la siguiente.' : 'No alcanzó para saltarla. Hacé la misión normal: ¡vas a poder!', !res.passed); }
         refrescar();
       }
     });
@@ -1134,6 +1154,8 @@
       if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
+      var sl = ev.target.closest('[data-salto]');
+      if (sl) { if (window.confirm('Tenés UNA sola oportunidad para rendir primero esta misión. Si aprobás, la salteás; si no, la hacés normal. ¿Empezamos?')) abrirExamen(sl.getAttribute('data-salto'), true); return; }
       var x = ev.target.closest('[data-examen]');
       if (x) return abrirExamen(x.getAttribute('data-examen'));
       if (ev.target.closest('[data-intro]')) return abrirIntro();
