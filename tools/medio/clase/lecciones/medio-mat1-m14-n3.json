@@ -1,0 +1,135 @@
+{
+ "slug": "medio-mat1-m14-n3",
+ "step_id": "5a5a0412-8940-4893-8c5e-791dab5f06e0",
+ "materia": "Matemática 1",
+ "titulo": "Cuánto falta",
+ "sub": "Matemática 1 · Misión 14 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Vienen 10 amigos al cumple"
+    },
+    {
+     "yo": true,
+     "txt": "Hay solo 6 vasos"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cuántos faltan?"
+    }
+   ],
+   "titulo": "CUÁNTO",
+   "sub": "falta",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "Vienen 10 amigos al cumple.",
+    "Pero hay solo 6 vasos.",
+    "Hoy: *cuánto falta*."
+   ]
+  },
+  {
+   "t": "igualar",
+   "a": {
+    "emoji": "🥤",
+    "n": 6
+   },
+   "b": {
+    "emoji": "🧒",
+    "n": 10
+   },
+   "accion": "agregar",
+   "texto": "¡FALTAN 4 VASOS!",
+   "voz": [
+    "Hay *6* vasos y *10* chicos.",
+    "Agregamos vasos: 7, 8, 9, 10.",
+    "¡Faltan *4* vasos!"
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "10",
+    "6"
+   ],
+   "op": "−",
+   "resultado": "4",
+   "voz": [
+    "Con una resta: necesito menos tengo.",
+    "10 menos 6 es *4*."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "6",
+    "4"
+   ],
+   "op": "+",
+   "resultado": "10",
+   "voz": [
+    "Comprobamos con una suma.",
+    "6 más 4 es *10*. ¡Está bien!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Se necesitan 9 sillas. Hay 5. ¿Cuántas faltan?",
+   "opciones": [
+    "14",
+    "4",
+    "5"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Se necesitan 9 sillas.",
+    "Hay 5. ¿Cuántas faltan?",
+    "¡*4*! 9 menos 5."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMPROBÁ",
+   "texto": "Tengo + falta = necesito",
+   "emoji": "✅",
+   "voz": [
+    "Truco: sumá lo que tenés y lo que *falta*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NECESITO",
+     "el grande"
+    ],
+    [
+     "TENGO",
+     "el chico"
+    ],
+    [
+     "FALTA",
+     "grande menos chico"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Lo que *necesito* es el grande.",
+    "Lo que *tengo* es el chico.",
+    "Lo que *falta*: los restamos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

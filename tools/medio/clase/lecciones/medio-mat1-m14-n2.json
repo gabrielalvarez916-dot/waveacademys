@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat1-m14-n2",
+ "step_id": "31b08949-7ca9-4d82-914f-9b540bb44836",
+ "materia": "Matemática 1",
+ "titulo": "Comparar con la resta",
+ "sub": "Matemática 1 · Misión 14 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Tomi tiene 9 regalos y Sofi 6. ¿Cuántos más tiene Tomi?",
+   "segundos": 6,
+   "respuesta": "¡3!",
+   "emoji": "🎁",
+   "titulo": "COMPARAR",
+   "sub": "con la resta",
+   "voz": [
+    "Desafío: Tomi tiene 9 regalos, Sofi 6.",
+    "¡Tomi tiene *3* más!",
+    "Hoy: *comparar con la resta*."
+   ]
+  },
+  {
+   "t": "parejas",
+   "a": {
+    "emoji": "🎁",
+    "n": 9
+   },
+   "b": {
+    "emoji": "🎁",
+    "n": 6
+   },
+   "texto": "¡TOMI TIENE 3 MÁS!",
+   "voz": [
+    "Arriba, los de Tomi. Abajo, los de Sofi.",
+    "Unimos uno con uno.",
+    "¡Sobran *3*: Tomi tiene 3 más!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TOMI",
+    "texto": "9 regalos",
+    "emoji": "👦"
+   },
+   "b": {
+    "cab": "SOFI",
+    "texto": "6 regalos",
+    "emoji": "👧"
+   },
+   "signo": "−",
+   "voz": [
+    "Tomi tiene *9* regalos.",
+    "Sofi tiene *6* regalos.",
+    "Restamos: 9 menos 6 es *3*."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "9",
+    "6"
+   ],
+   "op": "−",
+   "resultado": "3",
+   "voz": [
+    "Escribimos la resta: grande menos chico.",
+    "9 menos 6 es igual a *3*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Sofi tiene 10. Tomi tiene 7. ¿Cuántos más tiene Sofi?",
+   "opciones": [
+    "3",
+    "17",
+    "7"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Sofi 10, Tomi 7.",
+    "¿Cuántos más tiene Sofi?",
+    "¡*3*! 10 menos 7."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar para comparar",
+     "bien": "Restar: grande menos chico"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para comparar *restamos*, no sumamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "COMPARAR",
+     "¿cuántos más?"
+    ],
+    [
+     "RESTAR",
+     "grande menos chico"
+    ],
+    [
+     "EJEMPLO",
+     "9 − 6 = 3"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Comparar* es ver cuántos más.",
+    "Restamos *grande menos chico*.",
+    "9 menos 6 es *3*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

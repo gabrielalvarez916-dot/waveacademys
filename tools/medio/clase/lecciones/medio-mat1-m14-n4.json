@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat1-m14-n4",
+ "step_id": "004eb6d1-a767-4a19-8e3e-588eacaaaa97",
+ "materia": "Matemática 1",
+ "titulo": "Armar problemas de resta",
+ "sub": "Matemática 1 · Misión 14 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CONCURSO",
+   "titular": "¡PROBLEMAS DE RESTA!",
+   "bajada": "Tomi inventa el mejor",
+   "emoji": "🏆",
+   "titulo": "ARMAR",
+   "sub": "problemas de resta",
+   "voz": [
+    "¡Nuevo concurso en la escuela!",
+    "Hay que inventar *problemas de resta*.",
+    "Hoy: *armar problemas de resta*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA HISTORIA DE TOMI",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Tomi tiene 7 globos",
+     "emoji": "🎈"
+    },
+    {
+     "fecha": "2",
+     "txt": "Regala 3",
+     "emoji": "🎁"
+    },
+    {
+     "fecha": "3",
+     "txt": "¿Cuántos le quedan?",
+     "emoji": "❓"
+    }
+   ],
+   "voz": [
+    "Primero: Tomi tiene *7* globos.",
+    "Después: *regala* 3.",
+    "Al final, la *pregunta*: ¿cuántos le quedan?"
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🎈",
+   "n": 7,
+   "menos": 3,
+   "texto": "7 − 3 = 4",
+   "voz": [
+    "Resolvemos el problema de Tomi.",
+    "Se van los 3 que regala.",
+    "¡Le quedan *4* globos!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PALABRAS QUE RESTAN",
+   "items": [
+    {
+     "cab": "PIERDE",
+     "txt": "se le cae, no lo encuentra"
+    },
+    {
+     "cab": "COME",
+     "txt": "ya no está"
+    },
+    {
+     "cab": "REGALA",
+     "txt": "se lo da a otro"
+    }
+   ],
+   "voz": [
+    "Estas palabras nos dicen *restá*.",
+    "*Pierde*: no lo encuentra más.",
+    "*Come*: ya no está.",
+    "*Regala*: se lo da a otro."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué problema se resuelve con 8 − 5?",
+   "opciones": [
+    "Tengo 8 y gano 5",
+    "Tengo 8 y pierdo 5",
+    "Tengo 5"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá la cuenta 8 menos 5.",
+    "¿Qué problema se resuelve con ella?",
+    "¡*Tengo 8 y pierdo 5*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "QUIÉN",
+     "Tomi, Sofi…"
+    ],
+    [
+     "SE VA",
+     "pierde, come…"
+    ],
+    [
+     "PREGUNTA",
+     "¿cuántos quedan?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Elegimos *quién*.",
+    "Contamos qué *se va*.",
+    "Y hacemos la *pregunta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "slug": "medio-mat1-m14-n1",
+ "step_id": "00ff0dc2-573b-4f4e-a9ef-97e14127cc65",
+ "materia": "Matemática 1",
+ "titulo": "Quitar y perder",
+ "sub": "Matemática 1 · Misión 14 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🎂",
+   "lineas": [
+    "Es el cumple de Tomi.",
+    "Hay globos por todos lados.",
+    "¡Pum! ¡Se pinchan algunos!"
+   ],
+   "titulo": "QUITAR",
+   "sub": "y perder",
+   "voz": [
+    "¡Es el *cumple* de Tomi!",
+    "Hay globos por todos lados.",
+    "¡Pum! ¡Se pinchan algunos!",
+    "Hoy: *problemas de quitar y perder*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🎈",
+   "n": 8,
+   "menos": 3,
+   "texto": "8 − 3 = 5",
+   "voz": [
+    "Había *8* globos en la fiesta.",
+    "Se pinchan 3.",
+    "¡Quedan *5* globos!"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🍬",
+    "texto": "Tomi tiene 10 caramelos"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "😋",
+    "texto": "Come 4: le quedan 6"
+   },
+   "voz": [
+    "*Antes*: Tomi tiene 10 caramelos.",
+    "*Después* de comer 4, le quedan *6*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "🍪",
+   "n": 7,
+   "menos": 2,
+   "texto": "7 − 2 = 5",
+   "voz": [
+    "Sofi tiene *7* galletitas.",
+    "Le regala 2 a Tomi.",
+    "¡Le quedan *5*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿SE VA ALGO?",
+   "texto": "Si se pierde, se come o se regala: restá",
+   "emoji": "➖",
+   "voz": [
+    "Truco: si algo *se va*, restamos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Hay 6 pelotas. Se pierden 4. ¿Cuántas quedan?",
+   "opciones": [
+    "10",
+    "2",
+    "4"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Hay 6 y se pierden 4.",
+    "¿Cuántas pelotas quedan?",
+    "¡*2*! 6 menos 4."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HABÍA",
+     "el primer número"
+    ],
+    [
+     "SE VA",
+     "restamos"
+    ],
+    [
+     "QUEDAN",
+     "menos que antes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero miramos lo que *había*.",
+    "Si algo *se va*, restamos.",
+    "Al final *quedan menos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
