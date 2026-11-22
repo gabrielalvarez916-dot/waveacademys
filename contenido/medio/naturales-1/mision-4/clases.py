@@ -7,7 +7,7 @@ import json, os
 RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..')
 SUBJECT = 'a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0'
 TEMA = 4
-TIT = {1: 'Ambientes de tierra, de agua y de aire', 2: 'Qué necesitan para vivir', 3: 'Un ambiente y sus habitantes', 4: 'Seres vivos y cosas no vivas'}
+TIT = {1: 'Ambientes de tierra, de agua y de aire', 2: 'Qué necesitan para vivir', 3: 'Un ambiente y sus habitantes', 4: 'Seres vivos y seres inertes'}
 FIN = {'titulo': '¡CLASE TERMINADA!', 'sub': 'Ahora, a practicar 🚀'}
 CIERRE = "¡Muy bien! Ahora, *a practicar*."
 SOFI = {"nombre": "Sofi", "emoji": "👧"}
@@ -57,18 +57,20 @@ N3 = [
   "voz": ["Repasemos lo que aprendimos.", "La laguna es un *ambiente*.", "Tiene muchos *habitantes*.", "Cada uno en su *lugar*.", CIERRE]},
 ]
 N4 = [
- {"t": "reto", "texto": "¿Está viva una piedra?", "segundos": 6, "respuesta": "¡NO! NO CRECE", "emoji": "🪨", "titulo": "VIVO", "sub": "o no vivo",
-  "voz": ["Desafío: ¿está viva una piedra?", "¡No! No nace ni *crece*.", "Hoy: *seres vivos y cosas no vivas*."]},
- {"t": "clasificar", "cajas": [{"cab": "VIVOS", "emoji": "💚"}, {"cab": "NO VIVOS", "emoji": "🪨"}], "fichas": [{"txt": "GATO", "caja": 0}, {"txt": "PIEDRA", "caja": 1}, {"txt": "ÁRBOL", "caja": 0}, {"txt": "PELOTA", "caja": 1}],
-  "voz": ["Separamos en dos cajas.", "En una, los *seres vivos*.", "En la otra, las *cosas no vivas*."]},
- {"t": "comparar", "a": {"cab": "PERRO", "texto": "Nace y crece", "emoji": "🐶"}, "b": {"cab": "AUTO", "texto": "Se mueve, no crece", "emoji": "🚗"}, "signo": "vs",
-  "voz": ["El perro nace y *crece*: está vivo.", "El auto se mueve, pero *no crece*.", "¡Moverse *no alcanza*!"]},
+ {"t": "reto", "texto": "¿El agua del río está viva?", "segundos": 6, "respuesta": "¡NO! ES INERTE", "emoji": "🏞️", "titulo": "VIVOS", "sub": "e inertes",
+  "voz": ["Desafío: ¿el agua del río está viva?", "¡No! No nace ni crece: es *inerte*.", "Hoy: *seres vivos y seres inertes*."]},
+ {"t": "clasificar", "cajas": [{"cab": "VIVOS", "emoji": "💚"}, {"cab": "INERTES", "emoji": "💧"}], "fichas": [{"txt": "PEZ", "caja": 0}, {"txt": "AGUA", "caja": 1}, {"txt": "ÁRBOL", "caja": 0}, {"txt": "SUELO", "caja": 1}],
+  "voz": ["Separamos en dos cajas.", "Los *seres vivos*: nacen y crecen.", "Lo *inerte* del ambiente: no nace ni crece."]},
+ {"t": "comparar", "a": {"cab": "PEZ", "texto": "Nace y crece", "emoji": "🐟"}, "b": {"cab": "AGUA", "texto": "No nace ni crece", "emoji": "💧"}, "signo": "y",
+  "voz": ["El pez nace y crece: es un *ser vivo*.", "El agua no nace ni crece: es *inerte*.", "¡El pez *necesita* el agua para vivir!"]},
+ {"t": "causas", "causa": {"txt": "LA PLANTA NECESITA", "emoji": "🌱"}, "items": ["AGUA", "SUELO", "AIRE", "LUZ Y CALOR"],
+  "voz": ["Los seres vivos necesitan lo *inerte*.", "La planta necesita *agua*.", "Necesita *suelo* para sus raíces.", "Necesita *aire*.", "Y necesita *luz* y una buena temperatura."]},
  {"t": "ciclo", "titulo": "LA VIDA DE UNA PLANTA", "items": ["NACE", "CRECE", "DA SEMILLAS", "SE MUERE"],
   "voz": ["Los seres vivos tienen un *ciclo*.", "La planta *nace*.", "*Crece*.", "Da *semillas*.", "Y un día *se muere*."]},
- {"t": "pregunta", "pregunta": "¿Cuál es un ser vivo?", "opciones": ["SILLA", "ÁRBOL", "ROCA"], "correcta": 1,
-  "voz": ["Ahora vos. Silla, árbol, roca.", "¿Cuál nace y crece?", "¡El *árbol*!"]},
- {"t": "resumen", "items": [["VIVOS", "nacen y crecen"], ["NO VIVOS", "no crecen"], ["OJO", "moverse no alcanza"]], "fin": FIN,
-  "voz": ["Repasemos lo que aprendimos.", "Los seres vivos *nacen y crecen*.", "Las cosas no vivas *no crecen*.", "Y moverse *no alcanza*.", CIERRE]},
+ {"t": "pregunta", "pregunta": "¿Cuál es inerte?", "opciones": ["GATO", "SUELO", "ÁRBOL"], "correcta": 1,
+  "voz": ["Ahora vos. Gato, suelo, árbol.", "¿Cuál no nace ni crece?", "¡El *suelo*! Es inerte."]},
+ {"t": "resumen", "items": [["VIVOS", "nacen y crecen"], ["INERTES", "agua, suelo, aire, luz"], ["JUNTOS", "los vivos necesitan lo inerte"]], "fin": FIN,
+  "voz": ["Repasemos lo que aprendimos.", "Los seres vivos *nacen y crecen*.", "El agua, el suelo y el aire son *inertes*.", "Los vivos *necesitan* lo inerte.", CIERRE]},
 ]
 for n, E in ((1, N1), (2, N2), (3, N3), (4, N4)):
     slug = f'medio-nat1-m{TEMA}-n{n}'

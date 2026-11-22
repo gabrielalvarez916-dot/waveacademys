@@ -6,22 +6,22 @@
   "nivel": 4
  },
  "materia": "Ciencias Naturales 1",
- "titulo": "Seres vivos y cosas no vivas",
+ "titulo": "Seres vivos y seres inertes",
  "sub": "Ciencias Naturales 1 · Misión 4 · Nivel 4",
  "estilo": "primeros",
  "escenas": [
   {
    "t": "reto",
-   "texto": "¿Está viva una piedra?",
+   "texto": "¿El agua del río está viva?",
    "segundos": 6,
-   "respuesta": "¡NO! NO CRECE",
-   "emoji": "🪨",
-   "titulo": "VIVO",
-   "sub": "o no vivo",
+   "respuesta": "¡NO! ES INERTE",
+   "emoji": "🏞️",
+   "titulo": "VIVOS",
+   "sub": "e inertes",
    "voz": [
-    "Desafío: ¿está viva una piedra?",
-    "¡No! No nace ni *crece*.",
-    "Hoy: *seres vivos y cosas no vivas*."
+    "Desafío: ¿el agua del río está viva?",
+    "¡No! No nace ni crece: es *inerte*.",
+    "Hoy: *seres vivos y seres inertes*."
    ]
   },
   {
@@ -32,17 +32,17 @@
      "emoji": "💚"
     },
     {
-     "cab": "NO VIVOS",
-     "emoji": "🪨"
+     "cab": "INERTES",
+     "emoji": "💧"
     }
    ],
    "fichas": [
     {
-     "txt": "GATO",
+     "txt": "PEZ",
      "caja": 0
     },
     {
-     "txt": "PIEDRA",
+     "txt": "AGUA",
      "caja": 1
     },
     {
@@ -50,33 +50,53 @@
      "caja": 0
     },
     {
-     "txt": "PELOTA",
+     "txt": "SUELO",
      "caja": 1
     }
    ],
    "voz": [
     "Separamos en dos cajas.",
-    "En una, los *seres vivos*.",
-    "En la otra, las *cosas no vivas*."
+    "Los *seres vivos*: nacen y crecen.",
+    "Lo *inerte* del ambiente: no nace ni crece."
    ]
   },
   {
    "t": "comparar",
    "a": {
-    "cab": "PERRO",
+    "cab": "PEZ",
     "texto": "Nace y crece",
-    "emoji": "🐶"
+    "emoji": "🐟"
    },
    "b": {
-    "cab": "AUTO",
-    "texto": "Se mueve, no crece",
-    "emoji": "🚗"
+    "cab": "AGUA",
+    "texto": "No nace ni crece",
+    "emoji": "💧"
    },
-   "signo": "vs",
+   "signo": "y",
    "voz": [
-    "El perro nace y *crece*: está vivo.",
-    "El auto se mueve, pero *no crece*.",
-    "¡Moverse *no alcanza*!"
+    "El pez nace y crece: es un *ser vivo*.",
+    "El agua no nace ni crece: es *inerte*.",
+    "¡El pez *necesita* el agua para vivir!"
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "LA PLANTA NECESITA",
+    "emoji": "🌱"
+   },
+   "items": [
+    "AGUA",
+    "SUELO",
+    "AIRE",
+    "LUZ Y CALOR"
+   ],
+   "voz": [
+    "Los seres vivos necesitan lo *inerte*.",
+    "La planta necesita *agua*.",
+    "Necesita *suelo* para sus raíces.",
+    "Necesita *aire*.",
+    "Y necesita *luz* y una buena temperatura."
    ]
   },
   {
@@ -98,17 +118,17 @@
   },
   {
    "t": "pregunta",
-   "pregunta": "¿Cuál es un ser vivo?",
+   "pregunta": "¿Cuál es inerte?",
    "opciones": [
-    "SILLA",
-    "ÁRBOL",
-    "ROCA"
+    "GATO",
+    "SUELO",
+    "ÁRBOL"
    ],
    "correcta": 1,
    "voz": [
-    "Ahora vos. Silla, árbol, roca.",
-    "¿Cuál nace y crece?",
-    "¡El *árbol*!"
+    "Ahora vos. Gato, suelo, árbol.",
+    "¿Cuál no nace ni crece?",
+    "¡El *suelo*! Es inerte."
    ]
   },
   {
@@ -119,12 +139,12 @@
      "nacen y crecen"
     ],
     [
-     "NO VIVOS",
-     "no crecen"
+     "INERTES",
+     "agua, suelo, aire, luz"
     ],
     [
-     "OJO",
-     "moverse no alcanza"
+     "JUNTOS",
+     "los vivos necesitan lo inerte"
     ]
    ],
    "fin": {
@@ -134,8 +154,8 @@
    "voz": [
     "Repasemos lo que aprendimos.",
     "Los seres vivos *nacen y crecen*.",
-    "Las cosas no vivas *no crecen*.",
-    "Y moverse *no alcanza*.",
+    "El agua, el suelo y el aire son *inertes*.",
+    "Los vivos *necesitan* lo inerte.",
     "¡Muy bien! Ahora, *a practicar*."
    ]
   }

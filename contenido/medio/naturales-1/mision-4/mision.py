@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Ciencias Naturales 1 (Nivel Medio, 1.º año) · Misión 4 · Quién vive dónde. Genera mision-4.json.
 Regla de primeros años. Metáfora: la excursión a la laguna.
-Niveles: 1 ambientes de tierra, de agua y de aire · 2 qué necesitan para vivir · 3 un ambiente y sus habitantes · 4 seres vivos y cosas no vivas."""
+Niveles: 1 ambientes de tierra, de agua y de aire · 2 qué necesitan para vivir · 3 un ambiente y sus habitantes · 4 seres vivos y seres inertes."""
 import json, os, sys
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(AQUI))
@@ -115,34 +115,36 @@ N3 = {**ESTILO,
 }
 
 N4 = {**ESTILO,
-"objetivo": "Vas a diferenciar seres vivos y cosas no vivas.",
-"vas_a_ver": ["Seres vivos", "Cosas no vivas", "El ciclo de la vida"],
+"objetivo": "Vas a diferenciar seres vivos y seres inertes del ambiente.",
+"vas_a_ver": ["Seres vivos", "Lo inerte del ambiente", "Los vivos necesitan lo inerte"],
 "secciones": [
  S(1, "Seres vivos", [
   D("Ser vivo", "Nace, crece, se alimenta y se muere."),
-  P("El perro, la planta y vos son <b>seres vivos</b>."),
-  IMG("Seres vivos", "Nacen y crecen.", FG.nombres(["PERRO", "PLANTA", "NENA"], cols=3)),
+  P("El pez, la planta y vos son <b>seres vivos</b>."),
+  IMG("Seres vivos", "Nacen y crecen.", FG.nombres(["PEZ", "PLANTA", "NENA"], cols=3)),
  ]),
- S(1, "Cosas no vivas", [
-  P("La piedra, el agua y la pelota <b>no</b> nacen ni crecen."),
-  IMG("No vivas", "No crecen.", FG.nombres(["PIEDRA", "AGUA", "PELOTA"], cols=3)),
+ S(1, "Lo inerte del ambiente", [
+  D("Inerte", "Parte del ambiente que no nace ni crece."),
+  P("Son inertes: <b>agua</b>, <b>suelo</b>, <b>aire</b>, <b>luz</b> y <b>temperatura</b>."),
+  P("Los seres vivos los <b>necesitan</b> para vivir."),
+  IMG("Inertes", "Lo que hay en el ambiente.", FG.tiras(["AGUA", "SUELO", "AIRE", "LUZ DEL SOL", "TEMPERATURA"], numeros=False, cols=3)),
  ]),
  S(2, "Para practicar", [
-  P("Mirá la lista. La vas a usar en la carpeta."),
-  IMG("¿Vivo o no vivo?", "Pensá si crece.", FG.nombres(["GATO", "SILLA", "ÁRBOL", "ROCA"], cols=4)),
+  P("Mirá la laguna. La vas a usar en la carpeta."),
+  IMG("En la laguna", "¿Vivo o inerte?", FG.nombres(["RANA", "AGUA", "SUELO", "PATO"], cols=4)),
  ]),
 ],
-"ejemplo_completo": {"titulo": "El árbol", "planteo": "¿Es un ser vivo?", "pasos": ["Nació de una semilla.", "Crece.", "Sí: es un ser vivo."]},
-"ejemplo_incompleto": {"titulo": "Completá", "planteo": "La piedra…", "pasos": ["La piedra no ___."]},
-"ejemplo_solo": {"titulo": "Buscá", "planteo": "Buscá en tu casa un ser vivo y una cosa no viva."},
+"ejemplo_completo": {"titulo": "El pez y el agua", "planteo": "Miramos la pecera.", "pasos": ["El pez nace y crece: es un ser vivo.", "El agua no nace ni crece: es inerte.", "El pez necesita el agua para vivir."]},
+"ejemplo_incompleto": {"titulo": "Completá", "planteo": "El suelo…", "pasos": ["El suelo no nace ni crece: es ___."]},
+"ejemplo_solo": {"titulo": "Mirá una maceta", "planteo": "Mirá una maceta. ¿Qué es vivo y qué es inerte?"},
 "tip": {"titulo": "Preguntá si crece", "texto": "Si nace y crece, es un ser vivo."},
-"ojo": ["Moverse no alcanza: el auto se mueve y no está vivo.", "Las plantas no caminan, pero están vivas."],
-"resumen": [{"titulo": "Vivos", "texto": "Nacen, crecen, se mueren."}, {"titulo": "No vivos", "texto": "No crecen."}, {"titulo": "Ojo", "texto": "Moverse no alcanza."}],
-"glosario": [{"palabra": "Ciclo", "significado": "Algo que se repite."}, {"palabra": "Semilla", "significado": "De ella nace una planta."}],
-"carpeta": ["¿Cuáles son seres vivos?", "¿Cuáles no son seres vivos?", "Sofi dice que el auto está vivo porque se mueve. ¿Está bien?"],
-"respuestas_carpeta": [acepta("GATO Y ÁRBOL", "GATO Y ARBOL", "EL GATO Y EL ÁRBOL", "ÁRBOL Y GATO"), acepta("SILLA Y ROCA", "LA SILLA Y LA ROCA", "ROCA Y SILLA"), acepta("NO", "NO, NO CRECE", "NO NO CRECE")],
+"ojo": ["Moverse no alcanza: el agua del río se mueve y es inerte.", "Los seres vivos necesitan agua, aire, suelo y luz."],
+"resumen": [{"titulo": "Vivos", "texto": "Nacen, crecen, se mueren."}, {"titulo": "Inertes", "texto": "Agua, suelo, aire, luz."}, {"titulo": "Juntos", "texto": "Los vivos necesitan lo inerte."}],
+"glosario": [{"palabra": "Inerte", "significado": "Que no nace ni crece."}, {"palabra": "Temperatura", "significado": "Cuánto calor o frío hace."}],
+"carpeta": ["¿Cuáles son seres vivos?", "¿Cuáles son inertes?", "Sofi dice que el agua del río está viva porque se mueve. ¿Está bien?"],
+"respuestas_carpeta": [acepta("RANA Y PATO", "LA RANA Y EL PATO", "PATO Y RANA"), acepta("AGUA Y SUELO", "EL AGUA Y EL SUELO", "SUELO Y AGUA"), acepta("NO", "NO, ES INERTE", "NO ES INERTE")],
 "carpeta_nivel": ["aplicar", "aplicar", "error"],
-"soluciones": {"incompleto": "CRECE.", "solo": "Por ejemplo: una planta y una mesa.", "carpeta": ["GATO Y ÁRBOL.", "SILLA Y ROCA.", "NO: NO NACE NI CRECE."]},
+"soluciones": {"incompleto": "INERTE.", "solo": "La planta es viva; el suelo y el agua, inertes.", "carpeta": ["RANA Y PATO.", "AGUA Y SUELO.", "NO: ES INERTE."]},
 }
 
 ACT = {
@@ -152,10 +154,10 @@ ACT = {
       MC("UN PERRO TIENE COMIDA PERO NO AGUA. ¿QUÉ LE FALTA PARA VIVIR?", ["AGUA", "UN JUGUETE", "NADA"], "AGUA", "TAMBIÉN NECESITA AGUA.", n="analizar")],
 "3": [SA("NOMBRÁ UN HABITANTE DE LA LAGUNA.", acepta("PATO", "PEZ", "RANA", "JUNCO", "JUNCOS"), "PATO, PEZ, RANA O JUNCO.", n="aplicar"),
       MC("EN LA LAGUNA, ¿CUÁL NO ES UN HABITANTE?", ["EL BARRO", "EL PATO", "EL JUNCO"], "EL BARRO", "EL BARRO NO ES UN SER VIVO.", n="analizar")],
-"4": [MC("¿CUÁL ES UN SER VIVO?", ["EL ÁRBOL", "LA PIEDRA", "LA SILLA"], "EL ÁRBOL", "NACE Y CRECE.", n="aplicar"),
+"4": [MC("¿CUÁL ES UN SER VIVO?", ["EL ÁRBOL", "EL AGUA", "EL SUELO"], "EL ÁRBOL", "NACE Y CRECE.", n="aplicar"),
       MC("TOMI DICE QUE LA PLANTA NO ESTÁ VIVA PORQUE NO CAMINA. ¿TIENE RAZÓN?", ["NO: NACE Y CRECE", "SÍ: NO CAMINA", "SÍ: ES VERDE"], "NO: NACE Y CRECE", "LAS PLANTAS ESTÁN VIVAS.", n="error")],
 "5": [MC("RELÁMPAGO. ¿DÓNDE VIVE EL PEZ?", ["AGUA", "TIERRA", "AIRE"], "AGUA", "EN EL AGUA.", tiempo=30, n="recordar"),
-      MC("RELÁMPAGO. ¿CUÁL NO ES UN SER VIVO?", ["PELOTA", "GATO", "FLOR"], "PELOTA", "NO CRECE.", tiempo=30, n="aplicar"),
+      MC("RELÁMPAGO. ¿CUÁL ES INERTE?", ["AGUA", "GATO", "FLOR"], "AGUA", "NO NACE NI CRECE.", tiempo=30, n="aplicar"),
       SA("RELÁMPAGO. ¿QUÉ NECESITA UNA PLANTA PARA NO SECARSE?", acepta("AGUA"), "AGUA.", tiempo=30, n="aplicar"),
       MC("RELÁMPAGO. ¿QUIÉN VIVE EN EL AGUA Y EN LA TIERRA?", ["RANA", "VACA", "PEZ"], "RANA", "LA RANA.", tiempo=30, n="recordar")],
 }
@@ -170,9 +172,9 @@ EXAMEN = [
  [3, MC("LOS JUNCOS SON…", ["PLANTAS DE LA ORILLA", "PECES", "PIEDRAS"], "PLANTAS DE LA ORILLA", "CRECEN EN LA ORILLA.", n="recordar")],
  [3, MC("¿QUÉ ES UN HABITANTE?", ["UN SER VIVO DE UN LUGAR", "UNA PIEDRA DEL LUGAR", "EL AGUA DEL LUGAR"], "UN SER VIVO DE UN LUGAR", "COMO EL PATO EN LA LAGUNA.", n="recordar")],
  [4, ORD("ORDENÁ LA VIDA DE UNA PLANTA.", ["CRECE", "NACE", "DA SEMILLAS"], ["NACE", "CRECE", "DA SEMILLAS"], "NACE, CRECE, DA SEMILLAS.", n="aplicar")],
- [4, MC("¿CUÁL NO ES UN SER VIVO?", ["LA ROCA", "EL GATO", "EL ÁRBOL"], "LA ROCA", "NO NACE NI CRECE.", n="aplicar")],
- [4, MC("EL AUTO SE MUEVE. ¿ESTÁ VIVO?", ["NO: NO NACE NI CRECE", "SÍ: SE MUEVE", "SÍ: HACE RUIDO"], "NO: NO NACE NI CRECE", "MOVERSE NO ALCANZA.", n="error")],
- [4, SA("NOMBRÁ UN SER VIVO DE TU CASA.", acepta("PERRO", "GATO", "PLANTA", "MAMÁ", "MAMA", "PAPÁ", "PAPA", "YO", "PEZ", "PÁJARO", "HERMANO", "HERMANA", "FLOR"), "POR EJEMPLO: UNA PLANTA.", n="aplicar")],
+ [4, MC("¿CUÁL ES INERTE?", ["EL SUELO", "EL GATO", "EL ÁRBOL"], "EL SUELO", "NO NACE NI CRECE.", n="aplicar")],
+ [4, MC("EL AGUA DEL RÍO SE MUEVE. ¿ESTÁ VIVA?", ["NO: ES INERTE", "SÍ: SE MUEVE", "SÍ: HACE RUIDO"], "NO: ES INERTE", "MOVERSE NO ALCANZA.", n="error")],
+ [4, SA("NOMBRÁ ALGO INERTE QUE NECESITA UNA PLANTA.", acepta("AGUA", "EL AGUA", "SUELO", "EL SUELO", "TIERRA", "LA TIERRA", "AIRE", "EL AIRE", "LUZ", "LA LUZ", "SOL", "EL SOL", "LUZ DEL SOL"), "POR EJEMPLO: EL AGUA.", n="aplicar")],
 ]
 M = {"subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0", "tema": 4, "estilo": "primeros",
      "practica": "Práctica general: quién vive dónde", "examen_titulo": "Nivel jefe: quién vive dónde",
