@@ -1,6 +1,6 @@
 # Reglas fijas del PDF de Wave Academy
 
-Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `reglas_fijas`, nombre "Reglas fijas del PDF".
+Versión del 22/11/2026 (3.ª). Copia también guardada en Supabase, tabla `reglas_fijas`, nombre "Reglas fijas del PDF".
 
 ## Quién hace qué
 
@@ -50,7 +50,7 @@ Versión del 18/11/2026 (2.ª). Copia también guardada en Supabase, tabla `regl
 8. Ojo con esto: 1 o 2 errores típicos de la ficha.
 9. Resumen (franja compacta): 4 a 6 tarjetas.
 10. Glosario (franja compacta): 5 a 8 términos que aparecen en el PDF, en lenguaje del alumno.
-11. Actividad de carpeta: 3 o 4 consignas, de simple a pensada, una apunta a un error típico. Sin soluciones.
+11. Actividad de carpeta: 3 o 4 consignas, de simple a pensada, una apunta a un error típico. Sin soluciones. Mínimo de consignas pensadas: ver "Calidad de carpeta, actividades y examen".
 
 Abajo de todo, en letra chica: respuestas del ejemplo incompleto y del hacelo solo.
 
@@ -88,6 +88,45 @@ Opcionales (un borrador viejo sin ellos se dibuja como antes):
 - `carpeta`: lista de consignas.
 - `respuestas_carpeta`: lista paralela a `carpeta`; cada elemento es la lista de respuestas válidas de esa consigna (ej. `[["40.382"], ["6.000", "6000"]]`). Cortas y únicas; la app ignora mayúsculas, espacios y puntos. No se imprime en el PDF.
 - `soluciones`: `{incompleto: texto, solo: texto, carpeta: [texto, ...]}`. `incompleto` y `solo` se imprimen chicos al final del PDF; `carpeta` es la clave que usa la app para validar la entrega y mostrar la solución después, y el PDF NO la imprime.
+
+## Calidad de carpeta, actividades y examen
+
+Regla del 22/11/2026. La controla sola la máquina con `tools/control_calidad.py`, en los workflows de Avanzado y Medio, ANTES de cargar: si una misión no cumple, no se carga nada y el log dice qué arreglar. Las misiones que ya estaban cargadas (`tools/calidad_existentes.txt`) no se revisan ni se tocan.
+
+Por qué: el PDF enseña a pensar (explicar, comparar, argumentar) y la carpeta y el examen tienen que pedir lo mismo. Si solo piden recordar, el nivel jefe certifica un dominio que no existe.
+
+**Cada consigna y cada pregunta lleva su nivel.** Se escribe junto con el contenido:
+- carpeta: `carpeta_nivel` en cada nivel del PDF, una etiqueta por consigna, en el mismo orden;
+- actividades y examen: campo `n` en cada pregunta.
+
+Valores: `recordar` (un dato, un nombre, una definición) · `aplicar` (usar lo aprendido en un caso nuevo que no está en el PDF) · `analizar` (comparar, explicar una causa o una consecuencia, justificar, decidir entre dos opciones con un criterio) · `error` (encontrar y corregir un error típico: "un compañero dice…"). Aplicar, analizar y error son **pensadas**.
+
+**Mínimos:**
+
+| | Avanzado | Medio (4.º a 6.º) | Primeros años (Medio 1.º a 3.º) |
+|---|---|---|---|
+| Carpeta: pensadas por nivel | 2 | 1 | 1 |
+| Actividades de los niveles 1 a 4: pensadas | 3 | 2 | 2 |
+| Examen (banco de 13): pensadas | 5 | 4 | 3 |
+| Examen: tope de opción múltiple + V/F | 60 % | 70 % | 80 % |
+| Examen: pensadas que no son de elegir | 1 o más | 1 o más | — |
+
+El Relámpago (nivel 5) no cuenta: es velocidad a propósito.
+
+**Cómo escribir una consigna pensada sin IA.** La respuesta sigue siendo corta y única (la app la compara con `respuestas_carpeta`, de 6 palabras como máximo), pero el camino para llegar exige pensar:
+- Caso nuevo: "Un barrio se inunda cada vez que llueve fuerte. ¿Qué le falta al suelo: cobertura vegetal o más pendiente?"
+- Causa y consecuencia: "Si en un lago crecen muchas algas, ¿qué le pasa al oxígeno del agua: sube o baja?"
+- Decidir con criterio: "¿Qué argumento es más fuerte para la tesis: un dato de una encuesta o lo que opina un amigo?"
+- Error típico: "Un compañero escribió «las flores blanco». ¿Qué palabra está mal?"
+En el examen, para explicar se usa `keywords` (se corrige sin IA, buscando las ideas clave). Nunca `open` ni `solve_complete`: llaman a la IA.
+
+**Prohibido (frena la carga):**
+- Etiquetar como pensada una consigna de memoria ("¿Cómo se llama…?", "Respondé sí o no").
+- Distractores de relleno: "todas/ninguna de las anteriores", "no sé", opciones absurdas o de chiste.
+- Que la correcta sea mucho más larga que las demás opciones (se delata).
+- Opciones repetidas, o menos de 3 en opción múltiple (fuera de Primeros años).
+
+**Distractores:** cada opción incorrecta tiene que ser un error que un alumno de verdad cometería. Primero se usan los errores típicos del "Ojo con esto" del PDF. Mismo largo y misma forma que la correcta. Evitar absolutos ("nunca", "siempre", "solo en…"): suelen descartarse solos (la máquina avisa).
 
 ## Qué hay de esto en el código
 

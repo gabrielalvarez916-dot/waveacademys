@@ -10,6 +10,10 @@ Dónde vive cada cosa:
 
 Código: `js/wave-calc.js` (números al azar, fórmulas, número argentino, fichas; igual en app y servidor), `js/tipos-nuevos.js` (pantalla de los tipos nuevos), `supabase/functions/_shared/corregir.js` (corrector; la función `corregir` lleva una copia).
 
+## Nivel de cada pregunta (obligatorio desde el 22/11/2026)
+
+Cada pregunta de actividad y de examen lleva `"n"`: `recordar`, `aplicar`, `analizar` o `error`. Lo controla `tools/control_calidad.py` antes de cargar (mínimos y prohibiciones en docs/reglas-fijas-pdf.md, sección "Calidad de carpeta, actividades y examen"). La base no lee este campo: es solo para el control.
+
 ## Tipos y claves
 
 | Tipo | Estructura (`options`) | Clave (`reference_answer`) |
