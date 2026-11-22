@@ -19,7 +19,7 @@ jobs:
       ELEVEN_TOPE: '${{ github.event.inputs.tope }}'
       ELEVEN_VERSIONES: '${{ github.event.inputs.versiones }}'
       ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}'
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
