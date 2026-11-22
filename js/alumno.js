@@ -93,51 +93,32 @@
 
     var ids = materias.map(function (m) { return m.id; });
 
-    var les = await sb.from('lessons')
-      .select('id, topic_id, topics!inner(subject_id)')
-      .in('topics.subject_id', ids);
-    if (les.error) throw les.error;
-
-    var prog = await sb.from('student_lesson_progress')
-      .select('lesson_id')
-      .eq('student_id', estudianteId);
-    if (prog.error) throw prog.error;
+    // Todas las consultas independientes salen juntas (antes iban una tras otra)
+    var rs = await Promise.all([
+      sb.from('lessons').select('id, topic_id, topics!inner(subject_id)').in('topics.subject_id', ids),
+      sb.from('student_lesson_progress').select('lesson_id').eq('student_id', estudianteId),
+      sb.from('lesson_steps').select('id, lessons!inner(topics!inner(subject_id))')
+        .in('step_type', ['interactive_activity', 'final_activity']).in('lessons.topics.subject_id', ids),
+      sb.from('student_step_progress').select('lesson_step_id, score').eq('student_id', estudianteId),
+      sb.from('exams').select('id, topic_id, topics!inner(subject_id)').in('topics.subject_id', ids),
+      sb.from('exam_attempts').select('exam_id, score, passed, grading_status').eq('student_id', estudianteId)
+    ]);
+    var les = rs[0], prog = rs[1], pasos = rs[2], pp = rs[3], exs = rs[4], ints = rs[5];
+    rs.forEach(function (x) { if (x.error) throw x.error; });
 
     var hechas = {};
     (prog.data || []).forEach(function (p) { hechas[p.lesson_id] = true; });
 
     // El avance se cuenta en TEMAS: un tema se completa cuando están hechas todas sus
-    // lecciones y aprobado su examen (si tiene). Se calcula más abajo, con los exámenes.
+    // lecciones y aprobado su examen (si tiene).
     var temas = {};
     (les.data || []).forEach(function (l) {
       var t = temas[l.topic_id] = temas[l.topic_id] || { sid: l.topics.subject_id, todas: true, examen: null };
       if (!hechas[l.id]) t.todas = false;
     });
 
-    // Actividades (interactivas y finales) de cada materia
-    var pasos = await sb.from('lesson_steps')
-      .select('id, lessons!inner(topics!inner(subject_id))')
-      .in('step_type', ['interactive_activity', 'final_activity'])
-      .in('lessons.topics.subject_id', ids);
-    if (pasos.error) throw pasos.error;
-
-    var pp = await sb.from('student_step_progress')
-      .select('lesson_step_id, score')
-      .eq('student_id', estudianteId);
-    if (pp.error) throw pp.error;
     var puntajePaso = {};
     (pp.data || []).forEach(function (p) { puntajePaso[p.lesson_step_id] = p.score; });
-
-    // Exámenes de cada materia y los intentos del alumno
-    var exs = await sb.from('exams')
-      .select('id, topic_id, topics!inner(subject_id)')
-      .in('topics.subject_id', ids);
-    if (exs.error) throw exs.error;
-
-    var ints = await sb.from('exam_attempts')
-      .select('exam_id, score, passed, grading_status')
-      .eq('student_id', estudianteId);
-    if (ints.error) throw ints.error;
 
     var examenMateria = {};
     var stats = {};
@@ -195,13 +176,16 @@
   // ---------- Mi plan de hoy (trayectos Foco y Anticipación) ----------
   // Las tareas salen de la programación: lo de hoy + lo que quedó atrasado. Se tildan solas al avanzar.
   async function planDeHoy(cursos) {
-    var yo = await sb.from('students').select('started_at, adaptaciones').eq('id', estudianteId).maybeSingle();
+    var q = await Promise.all([
+      sb.from('students').select('started_at, adaptaciones').eq('id', estudianteId).maybeSingle(),
+      sb.from('study_schedule').select('weekday, subject_id, lessons_target').eq('student_id', estudianteId),
+      sb.from('student_subject_progress').select('subject_id, completed_lessons').eq('student_id', estudianteId),
+      sb.from('subject_load_config').select('subject_id, lessons_total')
+    ]);
+    var yo = q[0], sch = q[1], av = q[2], cfg = q[3];
     var ad = (yo.data && yo.data.adaptaciones) || [];
     var ant = ad.indexOf('ant_plan') >= 0, foc = ad.indexOf('foc_plan') >= 0;
     if (!ant && !foc) return '';
-    var sch = await sb.from('study_schedule').select('weekday, subject_id, lessons_target').eq('student_id', estudianteId);
-    var av = await sb.from('student_subject_progress').select('subject_id, completed_lessons').eq('student_id', estudianteId);
-    var cfg = await sb.from('subject_load_config').select('subject_id, lessons_total');
     var filas = sch.data || [], hechas = {}, total = {};
     (av.data || []).forEach(function (x) { hechas[x.subject_id] = x.completed_lessons || 0; });
     (cfg.data || []).forEach(function (x) { total[x.subject_id] = x.lessons_total || 0; });
