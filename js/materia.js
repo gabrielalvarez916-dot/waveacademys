@@ -381,8 +381,60 @@
 
   // Mapa de la misión: todo el recorrido de un vistazo y dónde está parado el alumno
   var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', carpeta: 'Entregar la carpeta', final: 'Práctica' };
+  // Trayecto Anticipación: el camino en dibujos y el cartel «Ahora / Después» (sin listas de texto)
+  function esAnt() { return !!(D && D.adaptaciones && D.adaptaciones.indexOf('ant_mapa') >= 0); }
+  var ANT_ICO = { video: ['🎬', 'Clase', 'Mirar la clase'], pdf: ['📄', 'PDF', 'Leer el PDF'], carpeta: ['📁', 'Carpeta', 'Entregar la carpeta'], interactive: ['🎮', 'Juego', 'Hacer la actividad'], final: ['✏️', 'Práctica', 'Hacer la práctica'], examen: ['🏆', 'Examen', 'Hacer el examen'] };
+  function antPasos(t) {
+    var out = [], marcado = false;
+    function add(k, hecho, bloq, nivel) {
+      var est = hecho ? 'hecho' : bloq ? 'bloq' : (!marcado ? 'ahora' : 'sigue');
+      if (est === 'ahora') marcado = true;
+      var ic = ANT_ICO[k] || ['⭐', 'Paso', 'Hacer el paso'];
+      out.push({ k: k, ico: ic[0], corto: ic[1], largo: ic[2], est: est, nivel: nivel });
+    }
+    t.niveles.concat(t.generales ? [t.generales] : []).forEach(function (l, i) {
+      var nom = t.generales && l === t.generales ? 'Generales' : 'Nivel ' + (i + 1);
+      if (l.est.vacia) return;
+      (l.est.req || []).forEach(function (k) { add(k, hechoK(l, k), l.bloqueada, nom); });
+    });
+    if (t.examen) add('examen', !!t.examen.aprobado, !t.examenDisponible && !t.examen.aprobado, 'Jefe');
+    return out;
+  }
+  function antAhoraDespues(t) {
+    var P = antPasos(t), i = -1;
+    P.forEach(function (x, j) { if (i < 0 && x.est === 'ahora') i = j; });
+    function cuadro(cls, rot, x, vacio) {
+      return '<div class="ant-ad-c ' + cls + '"><small>' + rot + '</small>' + (x ? '<span class="ant-ad-i" aria-hidden="true">' + x.ico + '</span><b>' + esc(x.largo) + '</b>' : '<span class="ant-ad-i" aria-hidden="true">' + vacio[0] + '</span><b>' + esc(vacio[1]) + '</b>') + '</div>';
+    }
+    if (i < 0) {
+      var todo = P.length && P.every(function (x) { return x.est === 'hecho'; });
+      return '<div class="ant-ad">' + cuadro('ahora', 'AHORA', null, todo ? ['🎉', '¡Terminaste la misión!'] : ['🔒', 'Todavía no se puede']) + '</div>';
+    }
+    return '<div class="ant-ad" aria-label="Qué hacer ahora y qué viene después">' + cuadro('ahora', 'AHORA', P[i]) +
+      '<span class="ant-ad-f" aria-hidden="true">➜</span>' + cuadro('despues', 'DESPUÉS', P[i + 1], ['🎉', '¡Listo!']) + '</div>';
+  }
+  function antMapaHtml(t) {
+    var P = antPasos(t), grupos = [], ult = null;
+    P.forEach(function (x) { if (x.nivel !== ult) { grupos.push({ nom: x.nivel, xs: [] }); ult = x.nivel; } grupos[grupos.length - 1].xs.push(x); });
+    if (!grupos.length) return '<p class="ant-vacio">Esta misión todavía está en preparación.</p>';
+    return grupos.map(function (g) {
+      return '<div class="ant-tramo"><h3>' + esc(g.nom) + '</h3><div class="ant-camino">' + g.xs.map(function (x, j) {
+        return (j ? '<span class="ant-lin" aria-hidden="true"></span>' : '') + '<div class="ant-p ant-' + x.est + '">' +
+          (x.est === 'ahora' ? '<em>Estás acá</em>' : '') +
+          '<span class="ant-pc">' + (x.est === 'hecho' ? '✔' : x.est === 'bloq' ? '🔒' : x.ico) + '</span><small>' + esc(x.corto) + '</small></div>';
+      }).join('') + '</div></div>';
+    }).join('');
+  }
+
   function abrirMapa(temaId) {
     var t = D.temas.filter(function (x) { return x.id === temaId; })[0]; if (!t) return;
+    if (esAnt()) {
+      var ea = document.createElement('div'); ea.className = 'ap-panel-fondo';
+      ea.innerHTML = '<div class="ap-panel ant-panel" role="dialog" aria-label="Mapa de la misión"><h2>' + esc(t.titulo) + '</h2>' + antMapaHtml(t) + '<button class="ap-cerrar" type="button">Cerrar</button></div>';
+      document.body.appendChild(ea);
+      ea.onclick = function (e) { if (e.target === ea || e.target.closest('.ap-cerrar')) ea.remove(); };
+      return;
+    }
     var marcado = false;
     function fila(txt, hecho, bloq) {
       var est = hecho ? 'hecho' : bloq ? 'bloq' : (!marcado ? 'ahora' : 'sigue');
@@ -422,7 +474,7 @@
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
-      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' + ofertaSalto(t) + profundizar(t) +
+      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' + (esAnt() ? antAhoraDespues(t) : '') + ofertaSalto(t) + profundizar(t) +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
     // arranca en el primer círculo abierto y sin terminar de ESTA misión (nivel 1 si nunca se tocó; si no, donde quedó)
     var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.libre');
