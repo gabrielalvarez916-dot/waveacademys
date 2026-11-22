@@ -104,9 +104,7 @@
           .map(function (l) { return { id: l.id, titulo: l.title, tema: t.id }; }) };
     }).sort(function (a, b) { return a.posicion - b.posicion; });
 
-    var pasos = await sb.from('lesson_steps')
-      .select('id, lesson_id, step_type, title, stream_uid, r2_key, kind:content->>kind, files:content->files, carpeta:content->carpeta, carpeta_neutro:content->carpeta_neutro, inicio:content->inicio, fin:content->fin, tramos:content->tramos, videos:content->videos, clase:content->clase, lessons!inner(topics!inner(subject_id))')
-      .eq('lessons.topics.subject_id', materiaId);
+    var pasos = await sb.rpc('materia_pasos', { p_materia: materiaId });
     if (pasos.error) throw pasos.error;
 
     var finIds = pasos.data.filter(function (p) { return p.step_type === 'final_activity'; }).map(function (p) { return p.id; });
