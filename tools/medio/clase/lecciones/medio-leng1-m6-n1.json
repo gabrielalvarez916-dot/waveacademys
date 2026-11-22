@@ -1,0 +1,130 @@
+{
+ "slug": "medio-leng1-m6-n1",
+ "step_id": "1962ca64-fce2-4c04-bbd5-8b675b0219d8",
+ "materia": "Lengua 1",
+ "titulo": "Leer títulos de cuentos conocidos",
+ "sub": "Lengua 1 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📚",
+   "lineas": [
+    "Hoy hay ronda de cuentos.",
+    "La seño trae muchos libros.",
+    "¿Cuál vamos a leer?"
+   ],
+   "titulo": "CUENTOS",
+   "sub": "que ya conocemos",
+   "voz": [
+    "¡Hoy hay *ronda de cuentos*!",
+    "La seño trae muchos libros.",
+    "¿Cuál vamos a leer?",
+    "Hoy: *leer títulos de cuentos*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "📕",
+     "txt": "LA TAPA"
+    },
+    {
+     "emoji": "🔤",
+     "txt": "EL TÍTULO"
+    },
+    {
+     "emoji": "👧",
+     "txt": "CAPERUCITA ROJA"
+    }
+   ],
+   "voz": [
+    "Miramos la *tapa* del libro.",
+    "Arriba, con letras grandes, está el *título*.",
+    "Dice: *Caperucita Roja*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "TÍTULOS DE CUENTOS",
+   "items": [
+    {
+     "cab": "CAPERUCITA ROJA",
+     "txt": "una nena y un lobo"
+    },
+    {
+     "cab": "LOS TRES CHANCHITOS",
+     "txt": "tres casitas"
+    },
+    {
+     "cab": "EL PATITO FEO",
+     "txt": "un patito distinto"
+    }
+   ],
+   "voz": [
+    "Leemos más títulos.",
+    "*Caperucita Roja*: una nena y un lobo.",
+    "*Los tres chanchitos*: tres casitas.",
+    "*El patito feo*: un patito distinto."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "TÍTULO",
+   "texto": "El nombre del cuento",
+   "emoji": "🏷️",
+   "voz": [
+    "El *título* es el nombre del cuento.",
+    "Nos dice de qué se trata."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cuento tiene un lobo y una nena?",
+   "opciones": [
+    "El patito feo",
+    "Caperucita Roja",
+    "Los tres chanchitos"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los títulos.",
+    "¿Qué cuento tiene un lobo y una nena?",
+    "¡*Caperucita Roja*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TÍTULO",
+     "el nombre del cuento"
+    ],
+    [
+     "TAPA",
+     "ahí está el título"
+    ],
+    [
+     "BUSCAR",
+     "leyendo títulos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *título* es el nombre del cuento.",
+    "Está en la *tapa*.",
+    "Leyendo títulos *buscamos* cuentos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

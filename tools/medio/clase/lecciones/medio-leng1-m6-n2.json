@@ -1,0 +1,135 @@
+{
+ "slug": "medio-leng1-m6-n2",
+ "step_id": "5d5e7f94-b421-4aa2-b311-016926bcce66",
+ "materia": "Lengua 1",
+ "titulo": "Ordenar las escenas del cuento",
+ "sub": "Lengua 1 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué pasa primero en Caperucita?",
+   "segundos": 6,
+   "respuesta": "¡SALE DE SU CASA!",
+   "emoji": "🏠",
+   "titulo": "ORDENAR",
+   "sub": "las escenas",
+   "voz": [
+    "Desafío: ¿qué pasa primero en Caperucita?",
+    "¡Sale de su *casa*!",
+    "Hoy: *ordenar las escenas del cuento*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "CAPERUCITA ROJA",
+   "items": [
+    {
+     "txt": "Sale de su casa",
+     "emoji": "🏠"
+    },
+    {
+     "txt": "Se encuentra al lobo",
+     "emoji": "🐺"
+    },
+    {
+     "txt": "El lobo corre",
+     "emoji": "💨"
+    },
+    {
+     "txt": "El cazador las salva",
+     "emoji": "🪓"
+    }
+   ],
+   "relato": [
+    3,
+    1,
+    0,
+    2
+   ],
+   "voz": [
+    "¡Se mezclaron las escenas del cuento!",
+    "Las ponemos en *orden*.",
+    "Casa, lobo, corre y el cazador las salva."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LAS PARTES DEL CUENTO",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "PRINCIPIO",
+     "emoji": "🏠"
+    },
+    {
+     "fecha": "2",
+     "txt": "MEDIO",
+     "emoji": "🐺"
+    },
+    {
+     "fecha": "3",
+     "txt": "FINAL",
+     "emoji": "🎉"
+    }
+   ],
+   "voz": [
+    "*Principio*: Caperucita sale de su casa.",
+    "*Medio*: aparece el lobo.",
+    "*Final*: el cazador las salva."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué pasa al final?",
+   "opciones": [
+    "Sale de su casa",
+    "El cazador las salva",
+    "Se encuentra al lobo"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el final.",
+    "¿Qué pasa al final del cuento?",
+    "¡El cazador *las salva*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "¿Qué pasó primero? ¿Y después?",
+   "emoji": "❓",
+   "voz": [
+    "Truco: preguntá *qué pasó primero* y qué después."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRINCIPIO",
+     "cómo empieza"
+    ],
+    [
+     "MEDIO",
+     "el problema"
+    ],
+    [
+     "FINAL",
+     "cómo termina"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *principio*: cómo empieza.",
+    "El *medio*: el problema.",
+    "El *final*: cómo termina.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -69,3 +69,15 @@ def dibujo_palabra(pares, resaltar=None):
         else:
             ax.text(x, .45, pal, ha="center", va="center", fontsize=16, color=OSC, **F)
     return png(fig)
+
+
+def tiras(textos, numeros=True, ocultar_num=False, cols=2):
+    """Tiras de un cuento: cuadros con una frase corta y su número (1, 2, 3…). ocultar_num: el número en blanco (para ordenar)."""
+    n = len(textos); filas = (n + cols - 1) // cols; c = min(n, cols)
+    fig, ax = lienzo(4.4 * c, 1.7 * filas, 4.4 * c, 1.7 * filas, 0, 0)
+    for i, t in enumerate(textos):
+        x, y = 4.4 * (i % cols) + .15, 1.7 * (filas - 1 - i // cols) + .15
+        ax.add_patch(FancyBboxPatch((x, y), 4.1, 1.4, boxstyle="round,pad=0.02,rounding_size=0.15", color="#fffdf2", ec=COLS[i % len(COLS)], lw=2.2))
+        if numeros: ax.text(x + .35, y + 1.05, "_" if ocultar_num else str(i + 1), ha="center", va="center", fontsize=15, color=CORAL, **F)
+        ax.text(x + 2.15, y + .62, t.upper(), ha="center", va="center", fontsize=13, color=OSC, wrap=True, **F)
+    return png(fig)

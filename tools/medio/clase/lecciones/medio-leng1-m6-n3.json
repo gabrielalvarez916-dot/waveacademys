@@ -1,0 +1,136 @@
+{
+ "slug": "medio-leng1-m6-n3",
+ "step_id": "be1314a5-4f11-40d0-b565-ce218a63417c",
+ "materia": "Lengua 1",
+ "titulo": "Escribir los nombres de los personajes",
+ "sub": "Lengua 1 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Quiénes están en Caperucita?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te los escribo!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Dale!"
+    }
+   ],
+   "titulo": "PERSONAJES",
+   "sub": "sus nombres",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Quiénes están en Caperucita?",
+    "¡Sofi se los escribe!",
+    "Hoy: *escribir los nombres de los personajes*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LOS PERSONAJES",
+   "celdas": [
+    {
+     "cab": "CAPERUCITA",
+     "txt": "la nena 👧"
+    },
+    {
+     "cab": "LOBO",
+     "txt": "el malo 🐺"
+    },
+    {
+     "cab": "ABUELA",
+     "txt": "está en la cama 👵"
+    },
+    {
+     "cab": "CAZADOR",
+     "txt": "las salva 🪓"
+    }
+   ],
+   "voz": [
+    "Los *personajes* hacen cosas en el cuento.",
+    "*Caperucita*, la nena.",
+    "El *lobo*, el malo.",
+    "La *abuela*, en la cama.",
+    "Y el *cazador*, que las salva."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "L",
+    "O",
+    "B",
+    "O"
+   ],
+   "grande": "LOBO",
+   "etiqueta": "LO · BO",
+   "voz": [
+    "Sofi dice despacio: lll… o… bo.",
+    "Escribe y se forma *LOBO*.",
+    "¡Dos sílabas: LO, BO!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién es un personaje de Caperucita?",
+   "opciones": [
+    "El patito",
+    "El lobo",
+    "El chanchito"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el cuento.",
+    "¿Quién está en Caperucita?",
+    "¡El *lobo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DECILO LENTO",
+   "texto": "Decí el nombre despacio y escribí cada sonido",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: decí el nombre *despacio* y escribí cada sonido."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PERSONAJE",
+     "hace cosas en el cuento"
+    ],
+    [
+     "NOMBRES",
+     "LOBO, ABUELA"
+    ],
+    [
+     "ESCRIBIR",
+     "sílaba por sílaba"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *personaje* hace cosas en el cuento.",
+    "*Lobo*, *abuela*, *cazador*.",
+    "Los escribimos *sílaba por sílaba*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

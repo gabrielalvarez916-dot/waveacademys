@@ -1,0 +1,131 @@
+{
+ "slug": "medio-leng1-m6-n4",
+ "step_id": "82507333-95b7-4acf-b04d-037bd70a0352",
+ "materia": "Lengua 1",
+ "titulo": "Leer una frase del cuento",
+ "sub": "Lengua 1 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "TEATRO DEL GRADO",
+   "titular": "¡ACTUAMOS CAPERUCITA!",
+   "bajada": "Hay que leer con emoción",
+   "emoji": "🎭",
+   "titulo": "UNA FRASE",
+   "sub": "del cuento",
+   "voz": [
+    "¡El grado va a actuar *Caperucita*!",
+    "Hay que leer *con emoción*.",
+    "Hoy: *leer una frase del cuento*."
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "CAPERUCITA",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "LOBO",
+     "emoji": "🐺"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "¡QUÉ OJOS TAN GRANDES!"
+    },
+    {
+     "quien": 1,
+     "txt": "¡PARA VERTE MEJOR!"
+    },
+    {
+     "quien": 0,
+     "txt": "¡QUÉ BOCA TAN GRANDE!"
+    }
+   ],
+   "voz": [
+    "Caperucita dice: ¡qué ojos tan grandes!",
+    "El lobo contesta: ¡para verte mejor!",
+    "Caperucita: ¡qué boca tan grande!"
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "¡QUÉ OJOS TAN GRANDES!",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 0,
+     "etiqueta": "¡ ABRE",
+     "color": "sol"
+    },
+    {
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "! CIERRA",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Mirá los signos de la frase.",
+    "Este *abre* la emoción.",
+    "Y este la *cierra*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién dice ¡PARA VERTE MEJOR!?",
+   "opciones": [
+    "La abuela",
+    "El lobo",
+    "Caperucita"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el cuento.",
+    "¿Quién dice: para verte mejor?",
+    "¡El *lobo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LOS SIGNOS",
+   "texto": "Con ¡ ! se lee con emoción",
+   "emoji": "😮",
+   "voz": [
+    "Truco: si ves esos signos, leé *con emoción*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FRASE",
+     "lo que dice un personaje"
+    ],
+    [
+     "¡ !",
+     "con emoción"
+    ],
+    [
+     "LEER",
+     "palabra por palabra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *frase* es lo que dice un personaje.",
+    "Con estos signos leemos *con emoción*.",
+    "Leemos *palabra por palabra*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
