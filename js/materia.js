@@ -772,8 +772,11 @@
 
   // ---------- Clase animada (reemplaza al video): HTML en un marco aislado, con voz del dispositivo ----------
   async function abrirClase(paso, titulo) { // paso null = introducción de la materia
-    var r = paso ? await sb.from('lesson_steps').select(D.neutro ? 'html:content->>clase_html, neutro:content->>clase_html_neutro' : 'html:content->>clase_html').eq('id', paso.id).maybeSingle()
-      : await sb.from('subjects').select(D.neutro ? 'html:intro_clase_html, neutro:intro_clase_html_neutro' : 'html:intro_clase_html').eq('id', D.materia.id).maybeSingle();
+    var r;
+    if (paso) { // el HTML de la clase vive en lesson_step_clases (liviano para las listas); si no está ahí, se busca en el paso (clases viejas)
+      r = await sb.from('lesson_step_clases').select(D.neutro ? 'html, neutro:html_neutro' : 'html').eq('step_id', paso.id).maybeSingle();
+      if (r.error || !r.data || !r.data.html) r = await sb.from('lesson_steps').select(D.neutro ? 'html:content->>clase_html, neutro:content->>clase_html_neutro' : 'html:content->>clase_html').eq('id', paso.id).maybeSingle();
+    } else r = await sb.from('subjects').select(D.neutro ? 'html:intro_clase_html, neutro:intro_clase_html_neutro' : 'html:intro_clase_html').eq('id', D.materia.id).maybeSingle();
     if (r.data && r.data.neutro) r.data.html = r.data.neutro; // versión en español neutro
     if (r.error || !r.data || !r.data.html) throw new Error('No pudimos abrir la clase.');
     var el = document.createElement('div');
