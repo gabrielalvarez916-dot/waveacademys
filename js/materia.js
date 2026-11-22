@@ -156,9 +156,10 @@
 
     var examen = {};
     var saltosQ = await sb.from('saltos_mision').select('topic_id, estado').eq('student_id', sid);
-    var stQ = await sb.from('students').select('trayectos_apoyo').eq('id', sid).maybeSingle();
+    var stQ = await sb.from('students').select('trayectos_apoyo, adaptaciones').eq('id', sid).maybeSingle();
     var saltos = {}; (saltosQ.error ? [] : saltosQ.data || []).forEach(function (x) { saltos[x.topic_id] = x.estado; });
     var desafio = !!(stQ.data && (stQ.data.trayectos_apoyo || []).indexOf('desafio') >= 0);
+    var adaptaciones = (stQ.data && stQ.data.adaptaciones) || [];
     exs.data.forEach(function (e) {
       var mias = ints.data.filter(function (i) { return i.exam_id === e.id; });
       var graded = mias.filter(function (i) { return i.grading_status === 'graded' && i.score != null; });
@@ -191,7 +192,7 @@
 
     return {
       neutro: neutro,
-      sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, saltos: saltos, desafio: desafio,
+      adaptaciones: adaptaciones, sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, saltos: saltos, desafio: desafio,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -765,6 +766,26 @@
     return r.data;
   }
 
+  var AVISOS = {
+    multiple_choice: { nombre: 'Elegir una opción', hacer: 'Leé la pregunta y tocá la única respuesta correcta.', fin: 'Una opción quedó marcada.', ejemplo: '¿Cuántos lados tiene un triángulo? Opciones: 2, 3, 4. Tocás «3».' },
+    true_false: { nombre: 'Verdadero o falso', hacer: 'Leé la frase y decidí si es verdadera o falsa.', fin: 'Quedó marcada una de las dos opciones.', ejemplo: '«El sol sale por el oeste.» Tocás «Falso».' },
+    short_answer: { nombre: 'Respuesta corta', hacer: 'Escribí la respuesta en una palabra o en una frase corta.', fin: 'El cuadro tiene tu respuesta escrita.', ejemplo: '¿Cómo se llama el resultado de una suma? Escribís «suma» o «total».' },
+    open: { nombre: 'Respuesta escrita', hacer: 'Escribí con tus palabras lo que pide la consigna. No hace falta que sea largo, pero sí completo.', fin: 'Respondiste lo que pedía la consigna y releíste lo escrito.', ejemplo: 'Explicá qué es un ecosistema. Escribís dos o tres frases.' },
+    multi_select: { nombre: 'Marcar varias', hacer: 'Marcá todas las respuestas correctas. Puede haber más de una.', fin: 'Marcaste todas las correctas y ninguna de más.', ejemplo: '¿Cuáles son números pares? 2, 3, 4, 7. Marcás «2» y «4».' },
+    odd_one_out: { nombre: 'Encontrar el intruso', hacer: 'Elegí el elemento que no pertenece al grupo.', fin: 'Una opción quedó marcada.', ejemplo: 'Perro, gato, mesa, caballo. Elegís «mesa».' },
+    ordering: { nombre: 'Ordenar', hacer: 'Con las flechas ▲ y ▼ poné los elementos en el orden correcto.', fin: 'La lista quedó en el orden que querés.', ejemplo: 'Ordenar de menor a mayor: 5, 2, 9. Queda 2, 5, 9.' },
+    matching: { nombre: 'Unir parejas', hacer: 'Para cada elemento de la izquierda, elegí su pareja de la derecha.', fin: 'Todos los elementos tienen una pareja elegida.', ejemplo: 'Argentina → Buenos Aires, Chile → Santiago.' },
+    classify: { nombre: 'Clasificar', hacer: 'Elegí la categoría a la que pertenece cada elemento.', fin: 'Todos los elementos tienen una categoría.', ejemplo: 'Manzana → Fruta, Zanahoria → Verdura.' },
+    table_fill: { nombre: 'Completar una tabla', hacer: 'Escribí lo que falta en las celdas vacías.', fin: 'Ninguna celda vacía quedó sin completar.', ejemplo: 'En una tabla del 2: 2×3 = __. Escribís 6.' },
+    fill_blank: { nombre: 'Completar huecos', hacer: 'Escribí la palabra o el número que falta en cada hueco del texto.', fin: 'Todos los huecos tienen algo escrito.', ejemplo: 'El agua hierve a ___ grados. Escribís 100.' },
+    solve_complete: { nombre: 'Resolver y escribir el resultado', hacer: 'Escribí cómo lo resolviste y después el resultado.', fin: 'Completaste el procedimiento y el resultado.', ejemplo: '12 + 8: «sumé 12 y 8», resultado 20.' },
+    numeric: { nombre: 'Escribir un número', hacer: 'Hacé la cuenta (en tu carpeta si querés) y escribí solo el resultado.', fin: 'El cuadro tiene el número.', ejemplo: '¿Cuánto es 6 × 7? Escribís 42.' },
+    tap_text: { nombre: 'Tocar en el texto', hacer: 'Tocá en el texto las partes que pide la consigna. Si te equivocás, volvé a tocar para sacarlas.', fin: 'Marcaste todo lo que pedía la consigna.', ejemplo: 'Tocá los sustantivos: «El perro corre». Tocás «perro».' },
+    tokens: { nombre: 'Armar con fichas', hacer: 'Tocá las fichas para armar lo que pide la consigna, en el orden correcto.', fin: 'Usaste las fichas que pedía y lo armado queda como querés.', ejemplo: 'Armá la frase con: sol, el, brilla. Queda «el sol brilla».' },
+    keywords: { nombre: 'Explicar con palabras clave', hacer: 'Escribí una explicación corta que use las ideas importantes del tema.', fin: 'Tu texto nombra las ideas principales.', ejemplo: '¿Qué es la fotosíntesis? Escribís que la planta usa luz para hacer su alimento.' },
+    label_image: { nombre: 'Rotular un dibujo', hacer: 'Mirá el dibujo y elegí el nombre que corresponde a cada punto marcado.', fin: 'Todos los puntos tienen un nombre elegido.', ejemplo: 'Un dibujo de una célula con un punto en el centro. Elegís «núcleo».' }
+  };
+
   function abrirCuestionario(op) {
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -1084,10 +1105,31 @@
       cuerpo.scrollTo(0, 0);
     }
 
+    // Trayecto Anticipación: antes de cada actividad, una pantalla que dice qué viene, qué hay que hacer en cada tipo de pregunta y cómo saber que terminó
+    function conAviso() { return !!(D.adaptaciones && D.adaptaciones.indexOf('ant_aviso') >= 0 && lista.length); }
+    function avisoPrevio() {
+      var vistos = {}; try { vistos = JSON.parse(localStorage.getItem('wave-avisos-' + D.sid) || '{}'); } catch (e) { vistos = {}; }
+      var tipos = [], cuenta = {};
+      lista.forEach(function (q) { var k = AVISOS[q.question_type] ? q.question_type : 'open'; if (!cuenta[k]) { cuenta[k] = 0; tipos.push(k); } cuenta[k]++; });
+      var rel = lista.some(function (q) { return q.tiempo_seg; }) && !ap('sinCrono');
+      var nuevos = tipos.filter(function (k) { return !vistos[k]; }), conocidos = tipos.filter(function (k) { return vistos[k]; });
+      var h = '<div class="ap-aviso"><h2>Antes de empezar</h2>' +
+        '<p class="ap-av-res">Esta actividad tiene <b>' + lista.length + (lista.length === 1 ? ' pregunta' : ' preguntas') + '</b>. ' + (rel ? 'Cada una tiene un tiempo y salta sola a la siguiente. Si no querés cronómetro, lo podés sacar cuando empieza. ' : 'No hay tiempo: vas a tu ritmo. ') + 'Cuando termines la última, se entrega y ves el resultado.</p>';
+      h += nuevos.map(function (k) { var a = AVISOS[k]; return '<div class="ap-av-tipo"><b>' + esc(a.nombre) + ' <small>(' + cuenta[k] + ')</small></b>' +
+        '<p><span>Qué tenés que hacer:</span> ' + esc(a.hacer) + '</p><p><span>Cómo sabés que terminaste:</span> ' + esc(a.fin) + '</p><div class="ap-av-ej"><span>Ejemplo</span> ' + esc(a.ejemplo) + '</div></div>'; }).join('');
+      if (conocidos.length) h += '<p class="ap-av-conoc">Ya conocés estos tipos: ' + conocidos.map(function (k) { return esc(AVISOS[k].nombre) + ' (' + cuenta[k] + ')'; }).join(', ') + '.</p>';
+      h += '<button type="button" class="mt-boton" data-avisook="1">Entendido, empezar</button></div>';
+      cuerpo.innerHTML = h;
+      cuerpo.querySelector('[data-avisook]').addEventListener('click', function () {
+        tipos.forEach(function (k) { vistos[k] = 1; });
+        try { localStorage.setItem('wave-avisos-' + D.sid, JSON.stringify(vistos)); } catch (e) { /* sin almacenamiento */ }
+        formulario();
+      });
+    }
     function traer() {
       entregado = false;
       cuerpo.innerHTML = '<div class="mt-cuest-estado">' + (op.cargando ? '<div class="mt-girar"></div><b>' + esc(op.cargando) + '</b><small>' + esc(op.cargandoSub || '') + '</small>' : 'Cargando…') + '</div>';
-      op.cargar().then(function (qs) { lista = qs; formulario(); }).catch(function (e) {
+      op.cargar().then(function (qs) { lista = qs; if (conAviso()) avisoPrevio(); else formulario(); }).catch(function (e) {
         cuerpo.innerHTML = '<div class="mt-cuest-estado error"><b>' + esc(e.message || 'No se pudo cargar.') + '</b></div>';
       });
     }

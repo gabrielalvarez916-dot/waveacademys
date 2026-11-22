@@ -354,3 +354,14 @@
 
 .bib-filtros { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin: 12px 0 4px; }
 .bib-filtros select { padding: 10px 12px; border: 2px solid rgba(8,126,131,.3); border-radius: 12px; background: #fff; font: inherit; }
+
+/* Pantalla de aviso antes de cada actividad (Anticipación) */
+.ap-aviso { max-width: 640px; margin: 0 auto; padding: 18px 16px 30px; text-align: left; }
+.ap-aviso h2 { margin: 0 0 8px; font-size: 1.4rem; }
+.ap-av-res { margin: 0 0 14px; line-height: 1.5; }
+.ap-av-tipo { margin: 0 0 12px; padding: 14px 16px; background: #fff; border: 2px solid rgba(8,126,131,.2); border-radius: 16px; }
+.ap-av-tipo b { font-size: 1.05rem; }
+.ap-av-tipo p { margin: 6px 0 0; line-height: 1.45; }
+.ap-av-tipo p span, .ap-av-ej span { font-weight: 800; color: #065F63; }
+.ap-av-ej { margin-top: 8px; padding: 8px 10px; background: rgba(215,240,233,.6); border-radius: 10px; font-size: .95rem; line-height: 1.4; }
+.ap-av-conoc { margin: 0 0 16px; opacity: .85; line-height: 1.45; }
