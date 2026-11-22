@@ -314,3 +314,10 @@
 .rl-barra { height: 10px; margin-bottom: 14px; border-radius: 999px; background: #E3ECEA; overflow: hidden; }
 .rl-barra i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #E08A00, #F2B544); transform-origin: left; animation: rlbar linear forwards; }
 @keyframes rlbar { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+
+/* Carpeta "Ver de a una": Anterior / Siguiente lado a lado, fijos abajo como el botón principal */
+.rc-nav { width: 100%; gap: 12px; padding-top: 18px; position: sticky; bottom: 0; }
+.rc-nav .rc-btn { width: auto; flex: 1 1 0; }
+.rc-nav .rc-btn[data-cp-n="-1"] { background: #fff; color: var(--k, #087E83); border: 2px solid currentColor; box-shadow: none; }
+.rc-nav .rc-btn[data-cp-n="1"]:only-child { flex-basis: 100%; }
+.rc-pie.rc-pie-una { padding-top: 12px; }

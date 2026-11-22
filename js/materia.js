@@ -441,7 +441,7 @@
       extra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-cp-tg="1" aria-pressed="false">Ver de a una</button></div><div class="rl-top" data-cp-top style="display:none"><span class="rl-cont"></span></div><div class="rc-items">' + p.pdf.carpeta.map(function (x, i) {
         return '<label class="rc-item"><span class="mt-preg-n">' + (i + 1) + '</span><span class="rc-item-c"><span class="rc-consigna">' + esc(consigna(x)) +
           '</span><input type="text" class="rc-in" data-i="' + i + '" maxlength="120" autocomplete="off" placeholder="Tu respuesta"></span></label>';
-      }).join('') + '</div><div class="rc-nav" data-cp-nav style="display:none;justify-content:space-between;gap:12px;margin-top:10px"><button type="button" class="rc-btn" data-cp-n="-1" style="background:transparent;color:inherit;box-shadow:none;border:2px solid currentColor;opacity:.75">‹ Anterior</button><button type="button" class="rc-btn" data-cp-n="1">Siguiente ›</button></div>';
+      }).join('') + '</div><div class="rc-nav" data-cp-nav style="display:none"><button type="button" class="rc-btn" data-cp-n="-1">‹ Anterior</button><button type="button" class="rc-btn" data-cp-n="1">Siguiente ›</button></div>';
     }
     return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:' + u.color + '">' + ico(icono, 56, 2.2) + '</span>' +
       '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(sub) + '</p>' + extra +
@@ -606,7 +606,7 @@
     var top = vista.querySelector('[data-cp-top]'), nav = vista.querySelector('[data-cp-nav]'), pie = vista.querySelector('.rc-pie');
     if (top) { top.style.display = una ? '' : 'none'; top.querySelector('.rl-cont').textContent = 'Consigna ' + (n + 1) + ' de ' + tot; }
     if (nav) {
-      nav.style.display = una ? 'flex' : 'none';
+      nav.style.display = una ? 'flex' : 'none'; nav.style.marginTop = una ? 'auto' : '';
       nav.querySelector('[data-cp-n="-1"]').style.visibility = n ? '' : 'hidden';
       nav.querySelector('[data-cp-n="1"]').style.display = n < tot - 1 ? '' : 'none';
     }
