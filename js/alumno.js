@@ -283,6 +283,9 @@
         if (window.WaveNum && qn.data && (qn.data.adaptaciones || []).indexOf('num_practica') >= 0) {
           cont.insertAdjacentHTML('beforebegin', await WaveNum.tarjetaPractica(estudianteId));
         }
+        if (window.WaveLectura && qn.data && (qn.data.adaptaciones || []).indexOf('lec_practica') >= 0) {
+          cont.insertAdjacentHTML('beforebegin', await WaveLectura.tarjetaPractica(estudianteId));
+        }
       } catch (e) { /* sin la tarjeta */ }
       cont.className = 'cursos-grilla';
       cont.innerHTML = cursos.map(function (c) {

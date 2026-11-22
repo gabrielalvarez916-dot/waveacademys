@@ -529,12 +529,42 @@
     }).join('');
   }
 
+  // Registro de las prácticas diarias de apoyo (cálculo y lectura) de cada hijo
+  async function pintarPracticas(cont) {
+    var desde = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+    var r = await Promise.all([
+      sb.from('students').select('id, first_name'),
+      sb.from('practica_lectura').select('student_id, dia, nivel, total, bien, dificiles, ppm').gte('dia', desde).order('created_at', { ascending: false }).limit(200),
+      sb.from('practica_calculo').select('student_id, dia, nivel, correctas, total').gte('dia', desde).order('dia', { ascending: false }).limit(200)
+    ]);
+    var lec = r[1].data || [], cal = r[2].data || [];
+    if (!lec.length && !cal.length) return;
+    var NIV = ['', 'palabras cortas', 'palabras más largas', 'frases cortas', 'frases más largas', 'texto corto', 'texto de un párrafo'];
+    var html = '<section class="prog-practicas"><h2>Práctica de apoyo (últimos 30 días)</h2>';
+    (r[0].data || []).forEach(function (h) {
+      var L = lec.filter(function (x) { return x.student_id === h.id; }), C = cal.filter(function (x) { return x.student_id === h.id; });
+      if (!L.length && !C.length) return;
+      html += '<div class="prog-pr-hijo"><h3>' + esc(h.first_name) + '</h3>';
+      if (L.length) {
+        var dif = {}; L.slice(0, 6).forEach(function (x) { (x.dificiles || []).forEach(function (w) { dif[w] = (dif[w] || 0) + 1; }); });
+        var ppms = L.filter(function (x) { return x.ppm; }).map(function (x) { return Math.round(x.ppm); });
+        html += '<p><b>Lectura:</b> ' + L.length + (L.length === 1 ? ' práctica' : ' prácticas') + '. Nivel actual: ' + (NIV[L[0].nivel] || L[0].nivel) + '. Última: ' + L[0].bien + ' de ' + L[0].total + ' bien leídos' +
+          (ppms.length ? '. Palabras por minuto (de la más vieja a la más nueva): ' + ppms.slice(0, 8).reverse().join(' → ') : '') + '.' +
+          (Object.keys(dif).length ? ' Les cuestan: ' + esc(Object.keys(dif).slice(0, 8).join(', ')) + '.' : '') + '</p>';
+      }
+      if (C.length) html += '<p><b>Cálculo:</b> ' + C.length + (C.length === 1 ? ' día' : ' días') + ' de práctica. Último: ' + C[0].correctas + ' aciertos de ' + C[0].total + ', nivel ' + C[0].nivel + '.</p>';
+      html += '</div>';
+    });
+    cont.insertAdjacentHTML('beforeend', html + '<p class="prog-pr-nota">La lectura se registra con el reconocimiento de voz del navegador: es una guía y puede equivocarse. La medición formal la hace el tutor.</p></section>');
+  }
+
   async function vistaProgreso() {
     vista.innerHTML = '<h1 class="vista-titulo">Progreso</h1><div id="progreso"></div>';
     var cont = document.getElementById('progreso');
     cont.innerHTML = '<div class="vacio">Cargando…</div>';
     try {
       pintarProgreso(cont, await cargarProgreso());
+      try { await pintarPracticas(cont); } catch (e2) { /* sin registro de prácticas */ }
     } catch (e) {
       cont.innerHTML = '<div class="vacio">No pudimos cargar el progreso. Probá recargar la página.</div>';
     }
