@@ -4,11 +4,7 @@ Compara la duración con su audio hecho a mano (15,3 s). ~120 caracteres por mod
 import json, os, urllib.request
 H = {'xi-api-key': os.environ['ELEVEN_KEY'], 'content-type': 'application/json'}
 D = 'tools/medio/clase/prueba_eleven'; os.makedirs(D, exist_ok=True)
-ms = json.load(urllib.request.urlopen(urllib.request.Request('https://api.elevenlabs.io/v1/models', headers=H), timeout=60))
-for m in ms: print('modelo', m['model_id'], '|', m.get('name'), '| tts' if m.get('can_do_text_to_speech') else '')
-ids = [m['model_id'] for m in ms if m.get('can_do_text_to_speech')]
-cand = [i for i in ids if 'v4' in i] or [i for i in ids if 'v3' in i] or []
-cand = (cand + ['eleven_multilingual_v2'])[:3]
+cand = ['eleven_v4', 'eleven_v3', 'eleven_multilingual_v2']  # la clave no puede listar modelos: se prueban por nombre
 txt = 'Ahora vos. Mirá la primera letra.\n¿Qué nombre empieza igual que Tomi?\n¡TERE! tttt oooo mmmm iiii y tttt eeee rrrr eeee empiezan igual'
 for mid in cand:
     req = urllib.request.Request('https://api.elevenlabs.io/v1/text-to-speech/0LdgqX7HWxqwl7GGMBS4?output_format=mp3_44100_128',
