@@ -136,7 +136,7 @@ async def tts(texto, voz=None, rate=None, pitch=None):
 ELEVEN_KEY = os.environ.get('ELEVEN_KEY', '')
 ELEVEN_TOPE = int(os.environ.get('ELEVEN_TOPE', '0') or 0)          # tope de caracteres por corrida (0 = no usar ElevenLabs)
 ELEVEN_VERSIONES = os.environ.get('ELEVEN_VERSIONES', 'arg').split(',')  # arg, neutro
-ELEVEN_VOCES = {'arg': os.environ.get('ELEVEN_VOZ_ARG', '0LdgqX7HWxqwl7GGMBS4'), 'neutro': os.environ.get('ELEVEN_VOZ_NEUTRO', '')}
+ELEVEN_VOCES = {'arg': os.environ.get('ELEVEN_VOZ_ARG', '0LdgqX7HWxqwl7GGMBS4'), 'neutro': os.environ.get('ELEVEN_VOZ_NEUTRO') or '87bJkTOBRagtx7PAFZDB'}
 ELEVEN_MODELO = 'eleven_v3'
 GASTADOS = [0]
 MANUALES = {}  # frases grabadas a mano por Gaby (no se pisan): {slug: [[escena, linea], ...]}
