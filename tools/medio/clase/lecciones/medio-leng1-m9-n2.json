@@ -1,0 +1,158 @@
+{
+ "slug": "medio-leng1-m9-n2",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 9,
+  "nivel": 2
+ },
+ "materia": "Lengua 1",
+ "titulo": "Conocer la G y la J",
+ "sub": "Lengua 1 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué viste en el circo?"
+    },
+    {
+     "yo": true,
+     "txt": "UN GATO Y UNA JIRAFA"
+    },
+    {
+     "yo": false,
+     "txt": "¡Qué lindo!"
+    }
+   ],
+   "titulo": "DOS SONIDOS",
+   "sub": "nuevos",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué viste en el circo?",
+    "Sofi vio un *gato* y una *jirafa*.",
+    "Hoy: *los sonidos de gato y jirafa*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GATO",
+    "texto": "GA · GO · GU",
+    "emoji": "🐱"
+   },
+   "b": {
+    "cab": "JIRAFA",
+    "texto": "jjj",
+    "emoji": "🦒"
+   },
+   "signo": "y",
+   "voz": [
+    "En *gato*, *goma* y *gusano*: ga, go, gu.",
+    "En *jirafa* y *jugo*: jjj.",
+    "¡Dos sonidos nuevos!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CON LAS VOCALES",
+   "columnas": [
+    "SÍLABA",
+    "PALABRA"
+   ],
+   "filas": [
+    [
+     "JA",
+     "JAMÓN"
+    ],
+    [
+     "JE",
+     "TEJE"
+    ],
+    [
+     "JI",
+     "JIRAFA"
+    ],
+    [
+     "JO",
+     "OJO"
+    ],
+    [
+     "JU",
+     "JUGO"
+    ]
+   ],
+   "voz": [
+    "Juntamos jjj con cada vocal.",
+    "*ja*.",
+    "*je*.",
+    "*ji*.",
+    "*jo*.",
+    "*ju*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "JUGO",
+   "silabas": [
+    "JU",
+    "GO"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *JUGO*.",
+    "La cortamos: ju, go.",
+    "¡Tiene los *dos sonidos*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza como GATO?",
+   "opciones": [
+    "JUGO",
+    "GOMA",
+    "ROSA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá: ga… to.",
+    "¿Qué palabra empieza parecido?",
+    "¡*GOMA*! go… ma."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GATO",
+     "ga, go, gu"
+    ],
+    [
+     "JIRAFA",
+     "jjj"
+    ],
+    [
+     "JUGO",
+     "los dos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En gato: *ga, go, gu*.",
+    "En jirafa: *jjj*.",
+    "Y *jugo* tiene los dos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

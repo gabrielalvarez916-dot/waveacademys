@@ -1,0 +1,136 @@
+{
+ "slug": "medio-leng1-m10-n3",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 10,
+  "nivel": 3
+ },
+ "materia": "Lengua 1",
+ "titulo": "Leer un poema en voz alta",
+ "sub": "Lengua 1 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué sale de noche en el cielo?",
+   "segundos": 6,
+   "respuesta": "¡LA LUNA!",
+   "emoji": "🌙",
+   "titulo": "UN POEMA",
+   "sub": "en voz alta",
+   "voz": [
+    "Desafío: ¿qué sale de noche en el cielo?",
+    "¡La *LUNA*!",
+    "Hoy: *leer un poema en voz alta*."
+   ]
+  },
+  {
+   "t": "parrafo",
+   "titulo": "LA LUNA",
+   "lineas": [
+    "La luna de noche",
+    "sale a pasear,",
+    "la mira la foca",
+    "desde el mar."
+   ],
+   "marcas": [
+    {
+     "linea": 1,
+     "pos": "fin",
+     "txt": "PASEAR"
+    },
+    {
+     "linea": 3,
+     "pos": "fin",
+     "txt": "MAR"
+    }
+   ],
+   "voz": [
+    "Leemos el poema de la luna.",
+    "*Pasear* está al final de un renglón.",
+    "*Mar* también: ¡riman!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LOS VERSOS",
+   "items": [
+    {
+     "cab": "1",
+     "txt": "LA LUNA DE NOCHE"
+    },
+    {
+     "cab": "2",
+     "txt": "SALE A PASEAR"
+    },
+    {
+     "cab": "3",
+     "txt": "LA MIRA LA FOCA"
+    },
+    {
+     "cab": "4",
+     "txt": "DESDE EL MAR"
+    }
+   ],
+   "voz": [
+    "Cada renglón es un *verso*.",
+    "Verso uno: la luna de noche.",
+    "Verso dos: sale a pasear.",
+    "Verso tres: la mira la foca.",
+    "Verso cuatro: desde el mar."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNA PAUSA",
+   "texto": "Al final de cada verso, parás un ratito",
+   "emoji": "⏸️",
+   "voz": [
+    "Truco: después de cada verso, una *pausa*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántos versos tiene el poema?",
+   "opciones": [
+    "2",
+    "4",
+    "6"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Contá los renglones.",
+    "¿Cuántos versos tiene?",
+    "¡*4 versos*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "POEMA",
+     "renglones cortos"
+    ],
+    [
+     "VERSO",
+     "cada renglón"
+    ],
+    [
+     "LEER",
+     "con pausas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *poema* tiene renglones cortos.",
+    "Cada renglón es un *verso*.",
+    "Lo leemos con *pausas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "slug": "medio-leng1-m10-n1",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 10,
+  "nivel": 1
+ },
+ "materia": "Lengua 1",
+ "titulo": "Leer rimas conocidas",
+ "sub": "Lengua 1 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Me caí y me dolió!"
+    },
+    {
+     "yo": true,
+     "txt": "SANA, SANA, COLITA DE RANA"
+    },
+    {
+     "yo": false,
+     "txt": "¡Ja! ¡Ya estoy mejor!"
+    }
+   ],
+   "titulo": "RIMAS",
+   "sub": "que ya conocés",
+   "voz": [
+    "Tomi se cayó y le escribe a Sofi.",
+    "¡Me caí y me dolió!",
+    "Sofi le manda una *rima*.",
+    "Hoy: *rimas que ya conocés*."
+   ]
+  },
+  {
+   "t": "parrafo",
+   "titulo": "SANA, SANA",
+   "lineas": [
+    "Sana, sana,",
+    "colita de rana."
+   ],
+   "marcas": [
+    {
+     "linea": 0,
+     "pos": "fin",
+     "txt": "SANA"
+    },
+    {
+     "linea": 1,
+     "pos": "fin",
+     "txt": "RANA"
+    }
+   ],
+   "voz": [
+    "Leemos: sana, sana, colita de rana.",
+    "El primer renglón termina en *sana*.",
+    "El segundo termina en *rana*: ¡suenan igual!"
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "SOFI",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "MAMÁ",
+     "emoji": "👩"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "¡ME DUELE EL DEDO!"
+    },
+    {
+     "quien": 1,
+     "txt": "SANA, SANA,"
+    },
+    {
+     "quien": 1,
+     "txt": "COLITA DE RANA."
+    }
+   ],
+   "voz": [
+    "Sofi dice: ¡me duele el dedo!",
+    "Mamá contesta: sana, sana,",
+    "colita de *rana*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON PALMAS",
+   "texto": "Marcá el ritmo con las manos",
+   "emoji": "👏",
+   "voz": [
+    "Truco: decí la rima con *palmas*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra suena igual que SANA?",
+   "opciones": [
+    "SOPA",
+    "RANA",
+    "SOL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá el final: sa… na.",
+    "¿Qué palabra suena igual?",
+    "¡*RANA*! Sana y rana *riman*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RIMA",
+     "suena igual al final"
+    ],
+    [
+     "SANA · RANA",
+     "riman"
+    ],
+    [
+     "RITMO",
+     "con palmas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *rima* suena igual al final.",
+    "*Sana* y *rana* riman.",
+    "La decimos con *palmas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

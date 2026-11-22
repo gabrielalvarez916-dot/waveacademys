@@ -139,4 +139,6 @@ MAPA.update({'igualá': 'iguala', 'igualás': 'igualas', 'quitá': 'quita', 'con
 MAPA.update({'tachá': 'tacha', 'perdés': 'pierdes', 'prestás': 'prestas', 'regalás': 'regalas', 'usalos': 'úsalos', 'dalo': 'voltéalo', 'decilo': 'dilo', 'saltá': 'salta', 'escuchá': 'escucha', 'apretá': 'aprieta', 'apretás': 'aprietas', 'equivocás': 'equivocas', 'descubrí': 'descubre', 'tapalo': 'tápalo', 'seño': 'maestra', 'decila': 'dila', 'escuchás': 'escuchas', 'buscalas': 'búscalas', 'tapale': 'tápale', 'juntala': 'júntala', 'sentí': 'siente', 'estirá': 'estira', 'contale': 'cuéntale', 'soplá': 'sopla', 'soplás': 'soplas'})  # Matemática 1 · Misión 9
 OK |= {'regalos', 'caramelo', 'regala', 'regalo', 'vocales', 'lila', 'malo', 'pala', 'sala', 'same', 'lomo', 'tela', 'tina', 'nene', 'mano', 'dado', 'dedo', 'nido', 'nudo', 'nada', 'todo', 'moto', 'pato', 'tapa', 'tomate', 'luna', 'dama', 'dime', 'mido', 'pino', 'pone', 'toma', 'sopa', 'sapo', 'puma', 'mapa', 'pipa'}
 OK |= {'elsolsale', 'mipapátomamate'}  # Lengua 1 · Misión 8: palabras pegadas a propósito (sin espacios)
+OK |= {'palo'}; MAPA.update({'raspá': 'raspa'})  # Lengua 1 · Misión 9
+OK |= {'caí'}; MAPA.update({'parás': 'paras'})  # Lengua 1 · Misión 10
 OK -= set(MAPA)

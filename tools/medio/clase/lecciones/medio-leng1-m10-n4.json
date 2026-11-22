@@ -1,0 +1,117 @@
+{
+ "slug": "medio-leng1-m10-n4",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 10,
+  "nivel": 4
+ },
+ "materia": "Lengua 1",
+ "titulo": "Copiar mi verso preferido",
+ "sub": "Lengua 1 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SOFI ELIGE SU VERSO!",
+   "bajada": "Lo va a copiar en su cuaderno",
+   "emoji": "📓",
+   "titulo": "COPIAR",
+   "sub": "mi verso preferido",
+   "voz": [
+    "¡Último momento! Sofi elige su *verso*.",
+    "Lo va a copiar en su cuaderno.",
+    "Hoy: *copiar mi verso preferido*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO COPIO",
+   "items": [
+    "ELIJO",
+    "MIRO",
+    "ESCRIBO",
+    "COMPARO"
+   ],
+   "voz": [
+    "Primero, *elijo* el verso.",
+    "Después, *miro* una palabra.",
+    "La *escribo* en el cuaderno.",
+    "Al final, *comparo* con el poema."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "REVISO LA COPIA",
+   "cambios": [
+    {
+     "antes": "LA LUNA DE NOCE",
+     "despues": "LA LUNA DE NOCHE",
+     "motivo": "faltaba una letra"
+    },
+    {
+     "antes": "SEPONE UN GORRO",
+     "despues": "SE PONE UN GORRO",
+     "motivo": "espacio"
+    }
+   ],
+   "voz": [
+    "Sofi compara su copia con el poema.",
+    "En *noche* faltaba una letra.",
+    "Y separa con un *espacio*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está bien copiado?",
+   "opciones": [
+    "EL SAPOPEPE",
+    "EL SAPO PEPE",
+    "EL SAPO PEPA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. El verso es: el sapo Pepe.",
+    "¿Cuál está igual?",
+    "¡El del *medio*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON EL DEDO",
+   "texto": "Seguí cada palabra con el dedo",
+   "emoji": "☝️",
+   "voz": [
+    "Truco: seguí cada palabra con el *dedo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ELEGIR",
+     "el que más te gusta"
+    ],
+    [
+     "COPIAR",
+     "palabra por palabra"
+    ],
+    [
+     "REVISAR",
+     "comparar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Elegimos* el verso preferido.",
+    "Copiamos *palabra por palabra*.",
+    "Y *comparamos* con el poema.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

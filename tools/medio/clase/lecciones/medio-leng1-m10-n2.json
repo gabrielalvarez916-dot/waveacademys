@@ -1,0 +1,135 @@
+{
+ "slug": "medio-leng1-m10-n2",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 10,
+  "nivel": 2
+ },
+ "materia": "Lengua 1",
+ "titulo": "Encontrar palabras que riman",
+ "sub": "Lengua 1 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎵",
+   "lineas": [
+    "Sofi abre una caja de música.",
+    "Salen palabras que suenan igual.",
+    "¡Gato y pato!"
+   ],
+   "titulo": "PALABRAS",
+   "sub": "que riman",
+   "voz": [
+    "Sofi abre una *caja de música*.",
+    "Salen palabras que suenan igual.",
+    "¡*Gato* y *pato*!",
+    "Hoy: *buscar palabras que riman*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "PAREJAS QUE RIMAN",
+   "celdas": [
+    {
+     "cab": "🐱",
+     "txt": "GATO · PATO"
+    },
+    {
+     "cab": "🌙",
+     "txt": "LUNA · CUNA"
+    },
+    {
+     "cab": "🦭",
+     "txt": "FOCA · BOCA"
+    },
+    {
+     "cab": "🍓",
+     "txt": "MESA · FRESA"
+    }
+   ],
+   "voz": [
+    "Juntamos las parejas que *riman*.",
+    "*Gato* y *pato*.",
+    "*Luna* y *cuna*.",
+    "*Foca* y *boca*.",
+    "*Mesa* y *fresa*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "RIMAN",
+    "texto": "GATO · PATO",
+    "emoji": "🎵"
+   },
+   "b": {
+    "cab": "NO RIMAN",
+    "texto": "GATO · GOMA",
+    "emoji": "🙉"
+   },
+   "signo": "vs",
+   "voz": [
+    "*Gato* y *pato* terminan igual: riman.",
+    "*Gato* y *goma* empiezan igual.",
+    "Pero el final es distinto: ¡no riman!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra rima con FOCA?",
+   "opciones": [
+    "FOTO",
+    "BOCA",
+    "FIDEO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá el final de foca.",
+    "¿Qué palabra termina igual?",
+    "¡*BOCA*! Foca y boca."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ EL FINAL",
+   "texto": "La rima está al final",
+   "emoji": "👂",
+   "voz": [
+    "Truco: escuchá cómo *termina* la palabra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FINAL",
+     "suena igual"
+    ],
+    [
+     "PAREJAS",
+     "gato · pato"
+    ],
+    [
+     "OJO",
+     "empezar igual no alcanza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Riman si el *final* suena igual.",
+    "*Gato* y *pato* son pareja.",
+    "Empezar igual *no alcanza*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

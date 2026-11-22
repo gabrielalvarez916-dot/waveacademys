@@ -1,0 +1,124 @@
+{
+ "slug": "medio-leng1-m9-n1",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 9,
+  "nivel": 1
+ },
+ "materia": "Lengua 1",
+ "titulo": "Conocer la R",
+ "sub": "Lengua 1 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎪",
+   "lineas": [
+    "Sofi va al circo.",
+    "Una rana salta en la pista.",
+    "¡Y un ratón hace rrr!"
+   ],
+   "titulo": "UN SONIDO",
+   "sub": "de motor",
+   "voz": [
+    "Sofi va al *circo*.",
+    "Una *rana* salta en la pista.",
+    "¡Y un ratón hace *rrr*!",
+    "Hoy: *el sonido de rana*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "RANA",
+   "silabas": [
+    "RA",
+    "NA"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *RANA*.",
+    "La cortamos: ra, na.",
+    "¡Empieza con *rrr*!"
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🐸",
+     "txt": "RANA"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "RA · NA"
+    },
+    {
+     "emoji": "🚗",
+     "txt": "RRR"
+    }
+   ],
+   "voz": [
+    "Miramos *RANA* de cerca.",
+    "Primero escuchamos *ra*.",
+    "¡Suena como un motor: *rrr*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza como RANA?",
+   "opciones": [
+    "LANA",
+    "ROSA",
+    "PALA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá: rrr… ana.",
+    "¿Qué palabra empieza igual?",
+    "¡*ROSA*! rrr… osa."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN EL MEDIO",
+   "texto": "En PERA suena suave",
+   "emoji": "🍐",
+   "voz": [
+    "Truco: en el medio suena *suave*: pera."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RANA",
+     "rrr fuerte"
+    ],
+    [
+     "SÍLABAS",
+     "ra, re, ri, ro, ru"
+    ],
+    [
+     "PERA",
+     "suave en el medio"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En rana suena *rrr*.",
+    "*ra, re, ri, ro, ru*.",
+    "En *pera* suena suave.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

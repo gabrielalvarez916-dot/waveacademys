@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m9-n4",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 9,
+  "nivel": 4
+ },
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con R, G y J",
+ "sub": "Lengua 1 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DIARIO DEL CIRCO",
+   "titular": "¡SOFI ARMA UN CARTEL!",
+   "bajada": "Con palabras del circo",
+   "emoji": "🎪",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras del circo",
+   "voz": [
+    "¡Sofi arma un *cartel* para el circo!",
+    "Usa palabras con sonidos nuevos.",
+    "Hoy: *escribir palabras del circo*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "M",
+    "A",
+    "G",
+    "O"
+   ],
+   "grande": "MAGO",
+   "etiqueta": "MA · GO",
+   "voz": [
+    "Sofi dice despacio: mmm… a… go.",
+    "Escribe y se forma *MAGO*.",
+    "¡La primera palabra del cartel!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS ROJO",
+   "items": [
+    {
+     "txt": "R",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "O",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "J",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "O",
+     "emoji": "4️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "voz": [
+    "Las letras de ROJO se mezclaron.",
+    "Las ponemos en *orden*.",
+    "rrr… o… jjj… o: ¡*ROJO*!"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "PALA",
+    "emoji": "🪣",
+    "texto": "La lengua quieta"
+   },
+   "despues": {
+    "cab": "PERA",
+    "emoji": "🍐",
+    "texto": "La lengua tiembla"
+   },
+   "voz": [
+    "En *pala*, la lengua queda quieta.",
+    "En *pera*, la lengua *tiembla*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? LO_O",
+   "opciones": [
+    "L",
+    "R",
+    "J"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. lll… o… hueco… o.",
+    "¿Qué falta para decir LORO?",
+    "¡Falta *ro*! LO-RO."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "MA-GO"
+    ],
+    [
+     "PALA O PERA",
+     "la lengua tiembla"
+    ],
+    [
+     "REVISAR",
+     "leer lo escrito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* cada sonido.",
+    "Sentimos si la *lengua tiembla*.",
+    "Y *revisamos* leyendo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "medio-leng1-m9-n3",
+ "destino": {
+  "subject_id": "eee219b3-9188-4e94-be06-223054ed5a57",
+  "tema": 9,
+  "nivel": 3
+ },
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con R, G y J",
+ "sub": "Lengua 1 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién saca un conejo del gorro?",
+   "segundos": 6,
+   "respuesta": "¡EL MAGO!",
+   "emoji": "🎩",
+   "titulo": "LEER",
+   "sub": "palabras del circo",
+   "voz": [
+    "Desafío: ¿quién saca un conejo del gorro?",
+    "¡El *MAGO*!",
+    "Hoy: *leer palabras del circo*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "EL MAGO TOMA JUGO",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "MA-GO",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "TO-MA",
+     "color": "sol"
+    },
+    {
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "JU-GO",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Leemos: el mago toma jugo.",
+    "*MAGO*: ma, go.",
+    "*TOMA*: to, ma.",
+    "*JUGO*: ju, go."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CON R",
+   "b": "CON J",
+   "itemsA": [
+    "RANA",
+    "PERA"
+   ],
+   "itemsB": [
+    "OJO",
+    "JUGO"
+   ],
+   "ambos": [
+    "JIRAFA",
+    "ROJO"
+   ],
+   "voz": [
+    "Separamos palabras por su sonido.",
+    "*RANA* y *PERA* suenan con ra.",
+    "*OJO* y *JUGO* suenan con jjj.",
+    "¡*JIRAFA* y *ROJO* tienen los dos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra forman LA y GO?",
+   "opciones": [
+    "GOLA",
+    "LAGO",
+    "MAGO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá la y go.",
+    "¿Qué palabra se forma?",
+    "¡*LAGO*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEÉ DOS VECES",
+   "texto": "Primero despacio, después más rápido",
+   "emoji": "🔁",
+   "voz": [
+    "Truco: leé *dos veces*, la segunda más rápido."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "JI-RA-FA"
+    ],
+    [
+     "PALABRAS",
+     "MAGO, RANA"
+    ],
+    [
+     "ORACIÓN",
+     "EL MAGO TOMA JUGO"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *sílabas*.",
+    "Formamos *palabras*.",
+    "Y leemos *oraciones*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
