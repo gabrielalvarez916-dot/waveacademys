@@ -1,0 +1,139 @@
+{
+ "slug": "medio-nat1-m10-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 10,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Observo el patio de la escuela",
+ "sub": "Ciencias Naturales 1 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué hay en el patio de tu escuela?",
+   "segundos": 6,
+   "respuesta": "¡ÁRBOLES, BANCOS Y BICHITOS!",
+   "emoji": "🏫",
+   "titulo": "MI PATIO",
+   "sub": "lo observo",
+   "voz": [
+    "Desafío: ¿qué hay en el patio de tu escuela?",
+    "¡Árboles, bancos y *bichitos*!",
+    "Hoy: *observo el patio*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏫",
+   "titulo": "EL PATIO",
+   "partes": [
+    {
+     "txt": "ÁRBOL",
+     "x": -0.6,
+     "y": -0.4
+    },
+    {
+     "txt": "CANTERO",
+     "x": 0.5,
+     "y": 0.5
+    },
+    {
+     "txt": "TACHO",
+     "x": 0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "BANCO",
+     "x": -0.4,
+     "y": 0.6
+    }
+   ],
+   "voz": [
+    "Miramos el *patio* de la escuela.",
+    "Hay un *árbol* grande.",
+    "Hay un *cantero* con plantas.",
+    "Hay un *tacho* para la basura.",
+    "Y un *banco* para sentarse."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "LO QUE CONTÓ SOFI",
+   "unidad": "cosas",
+   "items": [
+    {
+     "txt": "ÁRBOLES",
+     "valor": 3
+    },
+    {
+     "txt": "TACHOS",
+     "valor": 2
+    },
+    {
+     "txt": "PAPELES",
+     "valor": 8
+    }
+   ],
+   "voz": [
+    "Sofi cuenta y anota.",
+    "*3* árboles.",
+    "*2* tachos.",
+    "¡Y *8* papeles en el piso!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un ser vivo del patio?",
+   "opciones": [
+    "BANCO",
+    "ÁRBOL",
+    "TACHO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Banco, árbol, tacho.",
+    "¿Cuál es un ser vivo?",
+    "¡El *árbol*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ SIN ROMPER",
+   "texto": "Observar es mirar con cuidado",
+   "emoji": "👀",
+   "voz": [
+    "Truco: observá *sin romper* nada."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ENTORNO",
+     "lo que nos rodea"
+    ],
+    [
+     "VIVOS",
+     "árboles, bichitos"
+    ],
+    [
+     "REGISTRAR",
+     "contar y anotar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *entorno* es lo que nos rodea.",
+    "Hay *seres vivos* y cosas.",
+    "Contamos y *anotamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

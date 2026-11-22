@@ -1,0 +1,149 @@
+{
+ "slug": "medio-nat1-m10-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 10,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Qué cuida y qué daña a un ambiente",
+ "sub": "Ciencias Naturales 1 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🌳",
+   "lineas": [
+    "Tomi ve papeles en el patio.",
+    "Un pajarito pica un envoltorio.",
+    "¡Eso lo puede lastimar!"
+   ],
+   "titulo": "CUIDA O DAÑA",
+   "sub": "al ambiente",
+   "voz": [
+    "Tomi ve *papeles* en el patio.",
+    "Un pajarito pica un envoltorio.",
+    "¡Eso lo puede *lastimar*!",
+    "Hoy: *qué cuida y qué daña*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "BASURA EN EL PISO",
+    "emoji": "🗑️"
+   },
+   "items": [
+    "ENSUCIA EL PATIO",
+    "LASTIMA A LOS ANIMALES",
+    "TAPA LAS PLANTAS"
+   ],
+   "voz": [
+    "¿Qué pasa con la *basura en el piso*?",
+    "*Ensucia* el patio.",
+    "Puede *lastimar* a los animales.",
+    "Y *tapa* las plantas."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🗑️",
+    "texto": "Patio sucio"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "🌻",
+    "texto": "¡Patio limpio!"
+   },
+   "voz": [
+    "Antes, el patio estaba *sucio*.",
+    "El grado juntó papeles: ¡quedó *limpio*!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CUIDA",
+     "emoji": "💚"
+    },
+    {
+     "cab": "DAÑA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "REGAR",
+     "caja": 0
+    },
+    {
+     "txt": "ROMPER RAMAS",
+     "caja": 1
+    },
+    {
+     "txt": "USAR EL TACHO",
+     "caja": 0
+    },
+    {
+     "txt": "CANILLA ABIERTA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos en dos cajas.",
+    "Lo que *cuida* el ambiente.",
+    "Y lo que lo *daña*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cuida el ambiente?",
+   "opciones": [
+    "TIRAR PAPELES",
+    "USAR EL TACHO",
+    "PISAR EL CANTERO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el patio.",
+    "¿Qué lo cuida?",
+    "¡*Usar el tacho*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DAÑA",
+     "basura, romper, gastar"
+    ],
+    [
+     "CUIDA",
+     "tacho, regar, cerrar"
+    ],
+    [
+     "VOS",
+     "podés ayudar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La basura y romper *dañan*.",
+    "El tacho y regar *cuidan*.",
+    "¡*Vos* podés ayudar!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

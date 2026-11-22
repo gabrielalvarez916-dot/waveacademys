@@ -1,0 +1,140 @@
+{
+ "slug": "medio-nat1-m10-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 10,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Armamos carteles de cuidado",
+ "sub": "Ciencias Naturales 1 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Hacemos un cartel para el patio?"
+    },
+    {
+     "yo": true,
+     "txt": "¡SÍ! QUE DIGA: USÁ EL TACHO"
+    },
+    {
+     "yo": false,
+     "txt": "¡Genial!"
+    }
+   ],
+   "titulo": "CARTELES",
+   "sub": "de cuidado",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Hacemos un cartel para el patio?",
+    "¡Sí! Que diga: usá el tacho.",
+    "Hoy: *armamos carteles de cuidado*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PARTES DEL CARTEL",
+   "items": [
+    {
+     "cab": "1",
+     "txt": "TÍTULO"
+    },
+    {
+     "cab": "2",
+     "txt": "DIBUJO"
+    },
+    {
+     "cab": "3",
+     "txt": "MENSAJE"
+    }
+   ],
+   "voz": [
+    "Un cartel tiene *tres* partes.",
+    "Arriba, el *título*.",
+    "En el medio, un *dibujo*.",
+    "Abajo, el *mensaje* corto."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "REVISAMOS EL CARTEL",
+   "cambios": [
+    {
+     "antes": "CUIDÁ LAS PLANTA",
+     "despues": "CUIDÁ LAS PLANTAS",
+     "motivo": "faltaba una letra"
+    },
+    {
+     "antes": "USÁELTACHO",
+     "despues": "USÁ EL TACHO",
+     "motivo": "espacios"
+    }
+   ],
+   "voz": [
+    "Revisamos los carteles.",
+    "En *plantas* faltaba una letra.",
+    "Y separamos con *espacios*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un buen mensaje?",
+   "opciones": [
+    "HOLA",
+    "USÁ EL TACHO",
+    "ME GUSTA EL HELADO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá los mensajes.",
+    "¿Cuál cuida el ambiente?",
+    "¡*Usá el tacho*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LETRAS GRANDES",
+   "texto": "Para que se lea de lejos",
+   "emoji": "🔠",
+   "voz": [
+    "Truco: escribí con letras *grandes*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TÍTULO",
+     "arriba"
+    ],
+    [
+     "DIBUJO",
+     "ayuda a entender"
+    ],
+    [
+     "MENSAJE",
+     "corto y claro"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *título* va arriba.",
+    "El *dibujo* ayuda a entender.",
+    "El *mensaje* es corto y claro.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

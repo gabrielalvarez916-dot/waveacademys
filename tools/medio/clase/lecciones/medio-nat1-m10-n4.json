@@ -1,0 +1,124 @@
+{
+ "slug": "medio-nat1-m10-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 10,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Mostramos lo que aprendimos",
+ "sub": "Ciencias Naturales 1 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡GRAN MUESTRA DE CIENCIAS!",
+   "bajada": "Primer grado cuenta lo que aprendió",
+   "emoji": "🎉",
+   "titulo": "LO QUE",
+   "sub": "aprendimos",
+   "voz": [
+    "¡Último momento! Hay una *muestra de ciencias*.",
+    "Primer grado cuenta lo que aprendió.",
+    "Hoy: *mostramos lo que aprendimos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "ESTE AÑO VIMOS",
+   "celdas": [
+    {
+     "cab": "🧍",
+     "txt": "MI CUERPO"
+    },
+    {
+     "cab": "🐾",
+     "txt": "ANIMALES"
+    },
+    {
+     "cab": "🌱",
+     "txt": "PLANTAS"
+    },
+    {
+     "cab": "🌙",
+     "txt": "EL CIELO"
+    }
+   ],
+   "voz": [
+    "¡Aprendimos un montón!",
+    "Conocimos nuestro *cuerpo*.",
+    "Miramos los *animales*.",
+    "Exploramos las *plantas*.",
+    "Y observamos el *cielo*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "PARA CUIDAR",
+   "items": [
+    "USAR MENOS",
+    "REUTILIZAR",
+    "SEPARAR"
+   ],
+   "voz": [
+    "Tres ideas para *cuidar*.",
+    "*Usar menos* cosas.",
+    "*Reutilizar*: usar otra vez.",
+    "Y *separar* la basura."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es reutilizar?",
+   "opciones": [
+    "TIRAR TODO",
+    "USAR OTRA VEZ",
+    "ROMPER"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Tenés una botella vacía.",
+    "¿Qué es reutilizarla?",
+    "¡*Usarla otra vez*! Como maceta."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "FUERTE Y CLARO",
+   "texto": "Mirá a los que te escuchan",
+   "emoji": "🎤",
+   "voz": [
+    "Truco: en la muestra, hablá *fuerte y claro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "APRENDIMOS",
+     "cuerpo, animales, plantas, cielo"
+    ],
+    [
+     "CUIDAR",
+     "usar menos, reutilizar"
+    ],
+    [
+     "MOSTRAR",
+     "contar a otros"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Vimos el cuerpo, animales, plantas y *cielo*.",
+    "Sabemos *cuidar* el ambiente.",
+    "¡Y lo *mostramos* a todos!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
