@@ -95,11 +95,12 @@
     var res = await Promise.all([
       sb.from('subscriptions').select('id, student_id, status').eq('family_id', fam.data.id),
       sb.from('students')
-        .select('id, first_name, last_name, grade_id, created_at, trayectos_apoyo, grades(name, levels(name)), profiles!students_profile_id_fkey(email)')
+        .select('id, first_name, last_name, grade_id, created_at, trayectos_apoyo, apoyos, grades(name, levels(name)), profiles!students_profile_id_fkey(email)')
         .eq('family_id', fam.data.id)
         .order('created_at', { ascending: true }),
       sb.from('grades').select('id, year_number, name, levels(name, position)'),
-      sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden')
+      sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden'),
+      sb.from('test_aprendizaje').select('student_id, fecha, trayectos').order('fecha', { ascending: false })
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
 
@@ -112,7 +113,7 @@
       return pa - pb || a.year_number - b.year_number;
     });
 
-    return { cupos: cupos, hijos: res[1].data || [], anios: anios, trayectos: res[3].data || [] };
+    return { cupos: cupos, hijos: res[1].data || [], anios: anios, trayectos: res[3].data || [], tests: res[4].data || [], famId: fam.data.id };
   }
 
   // La función devuelve el motivo del error en el cuerpo de la respuesta
@@ -182,10 +183,6 @@
             PAISES.map(function (p) { return '<option' + (p === (PAIS_FAM || 'Argentina') ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
           '</select><small class="ayuda">Si vive fuera de la Argentina, las clases y los PDF le llegan en español neutro latinoamericano.</small></div>' +
         '</div>' +
-        (d.trayectos.length ? '<fieldset class="apoyos-caja"><legend>Apoyos de aprendizaje <small>(opcional)</small></legend>' +
-          '<p class="ayuda">Si tu hijo necesita algo en especial para aprender, elegilo acá. No hace falta diagnóstico, se puede cambiar cuando quieras y se puede combinar.</p>' +
-          d.trayectos.map(function (t) { return '<label class="apoyo-op"><input type="checkbox" class="a-apoyo" value="' + esc(t.clave) + '"' + dis + '><span><b>' + esc(t.nombre) + '</b>' + esc(t.descripcion) + '</span></label>'; }).join('') +
-        '</fieldset>' : '') +
         '<p class="mensaje" id="a-error" hidden></p>' +
         '<button class="boton" type="submit" id="a-enviar"' + dis + '>Dar de alta</button>' +
       '</form>';
@@ -198,23 +195,18 @@
             '<div class="hijo-info"><b>' + esc(h.first_name + ' ' + h.last_name) + '</b>' +
             '<span>' + esc(h.grades ? etiquetaAnio(h.grades) : '') + '</span>' +
             (usuario ? '<span>' + esc(usuario) + '</span>' : '') +
-            (d.trayectos.length ? '<details class="hijo-apoyos"><summary>Apoyos de aprendizaje</summary>' +
-              d.trayectos.map(function (t) { return '<label class="apoyo-op"><input type="checkbox" class="h-apoyo" data-hijo="' + esc(h.id) + '" value="' + esc(t.clave) + '"' + ((h.trayectos_apoyo || []).indexOf(t.clave) >= 0 ? ' checked' : '') + '><span><b>' + esc(t.nombre) + '</b>' + esc(t.descripcion) + '</span></label>'; }).join('') +
-              '<small class="apoyo-estado" aria-live="polite"></small></details>' : '') +
+            testResumen(h, d) +
             '</div></div>';
         }).join('') + '</div>'
       : '';
 
-    cont.innerHTML = cupos + '<div id="cred"></div>' + form + lista;
+    cont.innerHTML = testAvisos(d) + cupos + '<div id="cred"></div>' + form + lista;
 
-    cont.addEventListener('change', async function (ev) {
-      var c = ev.target.closest && ev.target.closest('.h-apoyo');
-      if (!c) return;
-      var caja = c.closest('.hijo-apoyos'), est = caja.querySelector('.apoyo-estado');
-      var claves = [].map.call(caja.querySelectorAll('.h-apoyo:checked'), function (x) { return x.value; });
-      est.textContent = 'Guardando…';
-      var r = await sb.from('students').update({ trayectos_apoyo: claves }).eq('id', c.getAttribute('data-hijo'));
-      est.textContent = r.error ? 'No se pudo guardar. Probá de nuevo.' : 'Guardado ✓';
+    cont.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-test]');
+      if (!b) return;
+      var h = d.hijos.filter(function (x) { return x.id === b.getAttribute('data-test'); })[0];
+      if (h) abrirTest({ id: h.id, nombre: h.first_name }, d, async function () { await vistaAltas(); });
     });
 
     var f = document.getElementById('alta-form');
@@ -249,17 +241,174 @@
         return;
       }
 
-      var apoyos = [].map.call(f.querySelectorAll('.a-apoyo:checked'), function (x) { return x.value; });
-      if (apoyos.length && r.data.student_id) await sb.from('students').update({ trayectos_apoyo: apoyos }).eq('id', r.data.student_id);
-
-      // Se vuelve a pintar la vista (cupos y lista actualizados) y se muestran las credenciales
-      await vistaAltas();
-      var credCont = document.getElementById('cred');
-      if (credCont) {
-        pintarCredenciales(credCont, r.data, nombre);
-        credCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      // El test "Cómo aprende tu hijo" es obligatorio: se hace antes de mostrar el usuario y la contraseña
+      var datosAlta = r.data;
+      var dNuevo = { trayectos: d.trayectos, famId: d.famId, tests: [], hijos: [] };
+      abrirTest({ id: datosAlta.student_id, nombre: nombre }, dNuevo, async function () {
+        await vistaAltas();
+        var credCont = document.getElementById('cred');
+        if (credCont) {
+          pintarCredenciales(credCont, datosAlta, nombre);
+          credCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, true);
     });
+  }
+
+
+  // ---------- Test "Cómo aprende tu hijo": define el trayecto y los ajustes de cada alumno ----------
+  var T_AREAS = ['lectura', 'foco', 'anticipacion', 'numero', 'desafio'];
+  var T_PREG = [
+    ['lectura', 'Al leer un texto, ¿va muy despacio, se saltea palabras o pierde el renglón?'],
+    ['foco', '¿Le cuesta sostener la atención en una tarea más de unos pocos minutos?'],
+    ['anticipacion', '¿Se incomoda o se altera cuando cambia la rutina o pasa algo que no estaba previsto?'],
+    ['numero', '¿Le cuesta entender cuánto es una cantidad, comparar números o estimar?'],
+    ['desafio', '¿Aprende un tema nuevo bastante más rápido de lo esperable para su edad?'],
+    ['lectura', '¿Evita leer en voz alta o se pone nervioso cuando tiene que hacerlo?'],
+    ['foco', '¿Se distrae con ruidos, objetos o pensamientos y pierde el hilo de lo que estaba haciendo?'],
+    ['anticipacion', '¿Necesita saber con anticipación qué va a pasar y cuánto va a durar una actividad?'],
+    ['numero', '¿Se confunde con los signos, el orden de los números o las cuentas, aunque lo haya practicado?'],
+    ['desafio', '¿Se aburre o se frustra cuando le piden repetir algo que ya sabe?'],
+    ['lectura', '¿Entiende mucho mejor cuando alguien le lee el texto que cuando lo lee solo?'],
+    ['foco', '¿Deja las tareas a medias o empieza otra cosa antes de terminar la primera?'],
+    ['anticipacion', '¿Se confunde con consignas que pueden entenderse de más de una manera, como "contame con tus palabras"?'],
+    ['numero', '¿Le cuesta recordar tablas, horas, fechas o cuentas simples sin ayuda?'],
+    ['desafio', '¿Hace preguntas profundas o pide ir más allá de lo que le enseñan?'],
+    ['lectura', '¿Se cansa o se frustra con textos largos, aunque entienda las ideas?'],
+    ['foco', '¿Se le olvidan los pasos o lo que tenía que hacer, aunque se lo hayas explicado recién?'],
+    ['anticipacion', '¿Le cuesta empezar una actividad nueva si no sabe exactamente qué se espera de él?'],
+    ['numero', '¿Evita o se angustia ante actividades con números?'],
+    ['desafio', '¿Termina las tareas mucho antes que los demás y se queda sin nada que hacer?']
+  ];
+  var T_OPC = [['Nunca', 0], ['A veces', 1], ['Seguido', 2], ['Casi siempre', 3]];
+  var T_UMBRAL = { lectura: 6, foco: 6, anticipacion: 6, numero: 6, desafio: 7 };
+  var T_DIAG = { lectura: /dislex|lectura|lector/, foco: /tdah|tda\b|atencion|hiperact|deficit/, anticipacion: /\btea\b|autis|asperger|espectro/, numero: /discalcul|calculo/, desafio: /alta.?capacidad|sobredot|superdot|talento|precoz/ };
+  var T_AJUSTES = {
+    lectura: { letra: 1, sinCrono: true, deAUna: true },
+    foco: { deAUna: true, sinCrono: true, comprobar: true, sinAnim: true },
+    anticipacion: { sinCrono: true, sinAnim: true, comprobar: true },
+    numero: { sinCrono: true, comprobar: true },
+    desafio: {}
+  };
+  var T_ETIQ = { letra: 'Letra más grande', sinCrono: 'Sin cronómetro en las actividades', deAUna: 'Una consigna por vez', comprobar: 'Comprobar cada respuesta', sinAnim: 'Menos animación' };
+
+  function sinTilde(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+  function calcularTest(resp, diag) {
+    var pts = {}, d = sinTilde(diag), bonus = {};
+    T_AREAS.forEach(function (a) { pts[a] = 0; });
+    T_PREG.forEach(function (q, i) { pts[q[0]] += Number(resp[i]) || 0; });
+    T_AREAS.forEach(function (a) { bonus[a] = d && T_DIAG[a].test(d) ? 2 : 0; });
+    var cand = T_AREAS.filter(function (a) { return pts[a] + bonus[a] >= T_UMBRAL[a]; })
+      .sort(function (x, y) { return (pts[y] + bonus[y]) - (pts[x] + bonus[x]) || bonus[y] - bonus[x] || T_AREAS.indexOf(x) - T_AREAS.indexOf(y); });
+    var ajustes = {};
+    cand.slice(0, 2).forEach(function (a) {
+      Object.keys(T_AJUSTES[a]).forEach(function (k) { ajustes[k] = k === 'letra' ? Math.max(ajustes[k] || 0, T_AJUSTES[a][k]) : T_AJUSTES[a][k]; });
+    });
+    return { puntajes: pts, trayectos: cand.slice(0, 2), ajustes: ajustes, muchas: cand.length >= 3 };
+  }
+
+  function fechaCorta(iso) { var f = new Date(iso); return f.getDate() + '/' + (f.getMonth() + 1) + '/' + f.getFullYear(); }
+  function ultimoTest(d, id) { return (d.tests || []).filter(function (t) { return t.student_id === id; })[0] || null; }
+  function pasaron6Meses(iso) { var l = new Date(iso); l.setMonth(l.getMonth() + 6); return l < new Date(); }
+  function nombreTrayecto(d, c) { var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0]; return t ? t.nombre : c; }
+
+  function testResumen(h, d) {
+    var t = ultimoTest(d, h.id);
+    if (!t) return '<span class="test-estado pend">Falta hacer el test “Cómo aprende tu hijo”</span><button type="button" class="boton-mini" data-test="' + esc(h.id) + '">Hacer el test</button>';
+    var tr = (t.trayectos || []).length ? t.trayectos.map(function (c) { return nombreTrayecto(d, c); }).join(' + ') : 'Convencional';
+    return '<span class="test-estado">Test del ' + fechaCorta(t.fecha) + ' · Trayecto: <b>' + esc(tr) + '</b>' + (pasaron6Meses(t.fecha) ? ' · <em>pasaron más de 6 meses, conviene repetirlo</em>' : '') + '</span>' +
+      '<button type="button" class="boton-mini" data-test="' + esc(h.id) + '">Repetir el test</button>';
+  }
+
+  function testAvisos(d) {
+    var out = [];
+    (d.hijos || []).forEach(function (h) {
+      var t = ultimoTest(d, h.id);
+      if (!t) out.push('<div class="test-aviso">Falta el test <b>Cómo aprende tu hijo</b> de ' + esc(h.first_name) + '. Es obligatorio para dejar su recorrido bien armado. <button type="button" class="boton-mini" data-test="' + esc(h.id) + '">Hacerlo ahora</button></div>');
+      else if (pasaron6Meses(t.fecha)) out.push('<div class="test-aviso">Pasaron más de 6 meses del último test de ' + esc(h.first_name) + '. Conviene repetirlo. <button type="button" class="boton-mini" data-test="' + esc(h.id) + '">Repetir el test</button></div>');
+    });
+    return out.join('');
+  }
+
+  function abrirTest(hijo, d, alTerminar, obligatorio) {
+    var fondo = document.createElement('div');
+    fondo.className = 'tst-fondo';
+    document.body.appendChild(fondo);
+    document.body.style.overflow = 'hidden';
+    var resp = {}, diag = '';
+    function cerrar() { fondo.remove(); document.body.style.overflow = ''; if (alTerminar) alTerminar(); }
+
+    function pintarPreguntas(error) {
+      fondo.innerHTML = '<div class="tst-caja" role="dialog" aria-label="Cómo aprende ' + esc(hijo.nombre) + '">' +
+        (obligatorio ? '' : '<button type="button" class="tst-x" data-t="salir" aria-label="Cerrar">✕</button>') +
+        '<h2>Cómo aprende ' + esc(hijo.nombre) + '</h2>' +
+        '<p class="tst-intro">Respondé pensando en cómo es <b>hoy</b>, no en un diagnóstico. No hay respuestas buenas ni malas: con esto armamos su recorrido. Son 20 preguntas.</p>' +
+        T_PREG.map(function (q, i) {
+          return '<fieldset class="tst-preg' + (error && resp[i] === undefined ? ' falta' : '') + '"><legend><span>' + (i + 1) + '.</span> ' + esc(q[1]) + '</legend><div class="tst-opc">' +
+            T_OPC.map(function (o) { return '<label><input type="radio" name="tq' + i + '" value="' + o[1] + '"' + (resp[i] === o[1] ? ' checked' : '') + '><span>' + o[0] + '</span></label>'; }).join('') + '</div></fieldset>';
+        }).join('') +
+        '<div class="tst-diag"><label for="tst-d"><b>¿Tiene algún diagnóstico?</b> <small>(opcional)</small></label>' +
+          '<p>Si lo tiene, escribilo. Lo guardamos para poder armar mejores adaptaciones. Lo ven solo la familia, el equipo de Wave y su tutor, nunca el alumno.</p>' +
+          '<textarea id="tst-d" rows="2" maxlength="300" placeholder="Por ejemplo: dislexia, TDAH… o dejalo vacío">' + esc(diag) + '</textarea></div>' +
+        (error ? '<p class="mensaje">Faltan respuestas: respondé todas las preguntas marcadas.</p>' : '') +
+        '<button type="button" class="boton" data-t="ver">Ver resultado</button></div>';
+    }
+
+    async function verResultado() {
+      var res = calcularTest(resp, diag);
+      var fam = d.famId;
+      var ins = await sb.from('test_aprendizaje').insert({
+        student_id: hijo.id, family_id: fam, respuestas: resp, puntajes: res.puntajes,
+        diagnostico: diag || null, trayectos: res.trayectos, ajustes: res.ajustes
+      }).select('id').single();
+      var testId = ins.data ? ins.data.id : null;
+      var tr = res.trayectos;
+      var lista = tr.length ? tr.map(function (c) {
+        var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0] || { nombre: c, descripcion: '' };
+        return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p></div>';
+      }).join('') : (function () { var t = (d.trayectos || []).filter(function (x) { return x.clave === 'convencional'; })[0]; return '<div class="tst-tray"><b>Convencional</b><p>' + esc(t ? t.descripcion : 'Recorrido estándar de Wave.') + '</p></div>'; })();
+      var aj = Object.keys(res.ajustes).map(function (k) { return '<li>' + esc(T_ETIQ[k] || k) + '</li>'; }).join('');
+      fondo.innerHTML = '<div class="tst-caja" role="dialog">' +
+        '<h2>El recorrido que recomendamos para ' + esc(hijo.nombre) + '</h2>' +
+        '<p class="tst-intro">' + (tr.length > 1 ? 'Según tus respuestas, estos dos trayectos se combinan bien:' : 'Según tus respuestas, conviene este recorrido:') + '</p>' + lista +
+        (res.muchas ? '<p class="tst-nota">Notamos que hay varias áreas que le cuestan. Además de esto, conviene hablar con Dirección o con su tutor para armar un recorrido a su medida.</p>' : '') +
+        '<h3>Ajustes que se activan en su panel</h3>' +
+        (aj ? '<ul class="tst-aj">' + aj + '</ul>' : '<p class="tst-intro">Ninguno por ahora: arranca con el recorrido estándar.</p>') +
+        '<p class="tst-intro">Siempre están disponibles, sin activarlos acá: lectura en voz alta del PDF, dictado por voz, letra más grande, contraste y menos animación (desde el botón de accesibilidad), y el mapa de la misión. Los talleres y cambios propios de cada trayecto se van sumando a medida que se construyen.</p>' +
+        '<p class="tst-intro">Podés cambiar todo esto cuando quieras, y repetir el test pasados unos meses.</p>' +
+        '<div class="tst-acc"><button type="button" class="boton" data-t="aplicar">Dejar esto configurado</button></div></div>';
+      fondo._res = res; fondo._testId = testId;
+    }
+
+    async function aplicar(btn) {
+      var res = fondo._res;
+      btn.disabled = true; btn.textContent = 'Guardando…';
+      var cur = await sb.from('students').select('apoyos').eq('id', hijo.id).maybeSingle();
+      var apoyos = Object.assign({}, (cur.data && cur.data.apoyos) || {}, res.ajustes);
+      var u = await sb.from('students').update({ trayectos_apoyo: res.trayectos, apoyos: apoyos }).eq('id', hijo.id);
+      if (fondo._testId) await sb.from('test_aprendizaje').update({ aplicado: !u.error }).eq('id', fondo._testId);
+      if (u.error) { btn.disabled = false; btn.textContent = 'Dejar esto configurado'; alert('No se pudo guardar. Probá de nuevo.'); return; }
+      cerrar();
+    }
+
+    fondo.addEventListener('change', function (ev) {
+      var r = ev.target.closest && ev.target.closest('input[type=radio]');
+      if (r) { resp[Number(r.name.slice(2))] = Number(r.value); var fs = r.closest('fieldset'); if (fs) fs.classList.remove('falta'); }
+    });
+    fondo.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-t]');
+      if (!b) return;
+      var a = b.getAttribute('data-t');
+      if (a === 'salir') { fondo.remove(); document.body.style.overflow = ''; }
+      else if (a === 'ver') {
+        var ta = fondo.querySelector('#tst-d'); diag = ta ? ta.value.trim() : '';
+        if (T_PREG.some(function (_, i) { return resp[i] === undefined; })) { pintarPreguntas(true); var f = fondo.querySelector('.falta'); if (f) f.scrollIntoView({ block: 'center' }); return; }
+        b.disabled = true; verResultado();
+      }
+      else if (a === 'aplicar') aplicar(b);
+    });
+    pintarPreguntas(false);
   }
 
   async function vistaAltas() {
