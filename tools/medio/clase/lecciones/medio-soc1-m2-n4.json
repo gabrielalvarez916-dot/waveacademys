@@ -1,0 +1,143 @@
+{
+ "slug": "medio-soc1-m2-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 2,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Los espacios de la escuela y para qué sirven",
+ "sub": "Ciencias Sociales 1 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡RECORREMOS LA ESCUELA!",
+   "bajada": "Cada lugar tiene su uso",
+   "emoji": "🗺️",
+   "titulo": "LOS ESPACIOS",
+   "sub": "de la escuela",
+   "voz": [
+    "¡Último momento! Vamos a *recorrer* la escuela.",
+    "Cada lugar tiene su uso.",
+    "Hoy: *los espacios de la escuela*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏫",
+   "titulo": "MI ESCUELA",
+   "partes": [
+    {
+     "txt": "AULA",
+     "x": -0.6,
+     "y": -0.4
+    },
+    {
+     "txt": "PATIO",
+     "x": 0.5,
+     "y": 0.6
+    },
+    {
+     "txt": "BIBLIOTECA",
+     "x": 0.6,
+     "y": -0.4
+    },
+    {
+     "txt": "COMEDOR",
+     "x": -0.5,
+     "y": 0.6
+    }
+   ],
+   "voz": [
+    "Miramos la *escuela* por dentro.",
+    "Acá está el *aula*.",
+    "Allá, el *patio*.",
+    "Acá, la *biblioteca*.",
+    "Y allá, el *comedor*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿PARA QUÉ SIRVE?",
+   "celdas": [
+    {
+     "cab": "🧑‍🏫 AULA",
+     "txt": "APRENDER"
+    },
+    {
+     "cab": "⚽ PATIO",
+     "txt": "JUGAR"
+    },
+    {
+     "cab": "📚 BIBLIOTECA",
+     "txt": "LEER"
+    },
+    {
+     "cab": "🍽️ COMEDOR",
+     "txt": "COMER"
+    }
+   ],
+   "voz": [
+    "Cada espacio sirve para algo.",
+    "En el aula, *aprendemos*.",
+    "En el patio, *jugamos*.",
+    "En la biblioteca, *leemos*.",
+    "En el comedor, *comemos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde buscás un cuento?",
+   "opciones": [
+    "PATIO",
+    "BIBLIOTECA",
+    "BAÑO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Querés leer un cuento.",
+    "¿Adónde vas?",
+    "¡A la *biblioteca*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "BAJITO",
+   "texto": "En la biblioteca se habla bajito",
+   "emoji": "🤫",
+   "voz": [
+    "Truco: en la biblioteca, hablá *bajito*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESPACIOS",
+     "aula, patio, biblioteca"
+    ],
+    [
+     "USO",
+     "cada uno sirve para algo"
+    ],
+    [
+     "CUIDAR",
+     "dejarlos limpios"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La escuela tiene muchos *espacios*.",
+    "Cada uno tiene su *uso*.",
+    "Y los *cuidamos* entre todos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

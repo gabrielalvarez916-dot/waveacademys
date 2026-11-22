@@ -1,0 +1,119 @@
+{
+ "slug": "medio-soc1-m2-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 2,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Normas que nos cuidan en el aula",
+ "sub": "Ciencias Sociales 1 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué hacés para hablar en clase?",
+   "segundos": 6,
+   "respuesta": "¡LEVANTO LA MANO!",
+   "emoji": "✋",
+   "titulo": "LAS NORMAS",
+   "sub": "que nos cuidan",
+   "voz": [
+    "Desafío: ¿qué hacés para hablar en clase?",
+    "¡*Levanto la mano*!",
+    "Hoy: *normas que nos cuidan*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ASÍ NO, ASÍ SÍ",
+   "cambios": [
+    {
+     "antes": "GRITO PARA HABLAR",
+     "despues": "LEVANTO LA MANO",
+     "motivo": "así me escuchan"
+    },
+    {
+     "antes": "CORRO EN EL AULA",
+     "despues": "CAMINO DESPACIO",
+     "motivo": "para no golpearnos"
+    }
+   ],
+   "voz": [
+    "Arreglamos lo que está mal.",
+    "En vez de gritar, *levanto la mano*.",
+    "En vez de correr, *camino despacio*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "SIN NORMAS",
+    "emoji": "😵"
+   },
+   "items": [
+    "TODOS GRITAN",
+    "NADIE ESCUCHA",
+    "SE ROMPEN COSAS"
+   ],
+   "voz": [
+    "¿Qué pasa *sin normas*?",
+    "Todos *gritan*.",
+    "*Nadie* escucha.",
+    "Y se *rompen* cosas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es una norma del aula?",
+   "opciones": [
+    "GRITAR",
+    "ESPERAR MI TURNO",
+    "TIRAR PAPELES"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en tu aula.",
+    "¿Cuál es una norma?",
+    "¡*Esperar mi turno*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ENTRE TODOS",
+   "texto": "Las normas se arman entre todos",
+   "emoji": "🤝",
+   "voz": [
+    "Truco: las normas se pueden armar *entre todos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NORMA",
+     "regla que nos cuida"
+    ],
+    [
+     "AULA",
+     "levantar la mano"
+    ],
+    [
+     "PARA QUÉ",
+     "estar bien todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *norma* es una regla que cuida.",
+    "En el aula *levantamos la mano*.",
+    "Así estamos *bien todos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

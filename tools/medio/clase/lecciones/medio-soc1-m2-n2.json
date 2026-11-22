@@ -1,0 +1,133 @@
+{
+ "slug": "medio-soc1-m2-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 2,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Los trabajos que hay en la escuela",
+ "sub": "Ciencias Sociales 1 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏫",
+   "lineas": [
+    "Sofi llega temprano a la escuela.",
+    "El portero abre la puerta.",
+    "¡Y la cocinera ya prepara el almuerzo!"
+   ],
+   "titulo": "LOS TRABAJOS",
+   "sub": "de la escuela",
+   "voz": [
+    "Sofi llega *temprano* a la escuela.",
+    "El portero abre la puerta.",
+    "¡La cocinera ya prepara el almuerzo!",
+    "Hoy: *los trabajos de la escuela*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "QUIÉN HACE QUÉ",
+   "items": [
+    {
+     "cab": "🧑‍🏫 MAESTRA",
+     "txt": "ENSEÑA"
+    },
+    {
+     "cab": "👩‍💼 DIRECTORA",
+     "txt": "ORGANIZA"
+    },
+    {
+     "cab": "🧹 PORTERO",
+     "txt": "LIMPIA Y CUIDA"
+    },
+    {
+     "cab": "👩‍🍳 COCINERA",
+     "txt": "COCINA"
+    }
+   ],
+   "voz": [
+    "En la escuela trabajan muchas personas.",
+    "La maestra *enseña*.",
+    "La directora *organiza*.",
+    "El portero *limpia* y cuida.",
+    "La cocinera *cocina*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SIN EL PORTERO",
+    "emoji": "🗑️",
+    "texto": "Todo sucio"
+   },
+   "despues": {
+    "cab": "CON EL PORTERO",
+    "emoji": "✨",
+    "texto": "¡Todo limpio!"
+   },
+   "voz": [
+    "Sin el portero, la escuela estaría *sucia*.",
+    "Gracias a su trabajo, está *limpia*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién enseña a leer?",
+   "opciones": [
+    "COCINERA",
+    "MAESTRA",
+    "PORTERO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el aula.",
+    "¿Quién enseña a leer?",
+    "¡La *maestra*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SALUDÁ A TODOS",
+   "texto": "Todos los trabajos son importantes",
+   "emoji": "👋",
+   "voz": [
+    "Recordá: *todos* los trabajos son importantes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAESTRA",
+     "enseña"
+    ],
+    [
+     "PORTERO",
+     "limpia y cuida"
+    ],
+    [
+     "TODOS",
+     "son importantes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La maestra *enseña*.",
+    "El portero *limpia* y cuida.",
+    "*Todos* los trabajos importan.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

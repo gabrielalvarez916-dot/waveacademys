@@ -1,0 +1,135 @@
+{
+ "slug": "medio-soc1-m1-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 1,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Familias de distintos tipos",
+ "sub": "Ciencias Sociales 1 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📷",
+   "lineas": [
+    "Sofi lleva una foto al grado.",
+    "Está con su mamá y su abuela.",
+    "¡Es su familia!"
+   ],
+   "titulo": "LAS FAMILIAS",
+   "sub": "de distintos tipos",
+   "voz": [
+    "Sofi lleva una *foto* al grado.",
+    "Está con su mamá y su abuela.",
+    "¡Es su *familia*!",
+    "Hoy: *familias de distintos tipos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "FAMILIAS DEL GRADO",
+   "celdas": [
+    {
+     "cab": "👧 SOFI",
+     "txt": "MAMÁ Y ABUELA"
+    },
+    {
+     "cab": "👦 TOMI",
+     "txt": "MAMÁ, PAPÁ Y HERMANA"
+    },
+    {
+     "cab": "🧒 LU",
+     "txt": "PAPÁ"
+    },
+    {
+     "cab": "👶 MATI",
+     "txt": "ABUELOS Y PRIMOS"
+    }
+   ],
+   "voz": [
+    "Cada chico del grado trae su foto.",
+    "Sofi vive con su *mamá* y su *abuela*.",
+    "Tomi, con mamá, papá y su *hermana*.",
+    "Lu vive con su *papá*.",
+    "Mati, con sus *abuelos* y primos."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FAMILIA GRANDE",
+    "texto": "MUCHAS PERSONAS",
+    "emoji": "👨‍👩‍👧‍👦"
+   },
+   "b": {
+    "cab": "FAMILIA CHICA",
+    "texto": "POCAS PERSONAS",
+    "emoji": "👨‍👧"
+   },
+   "signo": "y",
+   "voz": [
+    "Hay familias *grandes*.",
+    "Y hay familias *chicas*.",
+    "¡Todas se quieren y se *cuidan*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Lu vive con su papá. ¿Es una familia?",
+   "opciones": [
+    "SÍ",
+    "NO",
+    "A MEDIAS"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Lu vive con su papá.",
+    "¿Es una familia?",
+    "¡*Sí*! Se quieren y se cuidan."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODAS VALEN",
+   "texto": "Ninguna familia es mejor que otra",
+   "emoji": "💛",
+   "voz": [
+    "Recordá: *todas* las familias valen."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FAMILIA",
+     "se quieren y se cuidan"
+    ],
+    [
+     "DISTINTAS",
+     "grandes y chicas"
+    ],
+    [
+     "RESPETO",
+     "todas valen"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *familia* se quiere y se cuida.",
+    "Hay familias *distintas*.",
+    "Y las *respetamos* a todas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

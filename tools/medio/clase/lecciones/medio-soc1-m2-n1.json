@@ -1,0 +1,135 @@
+{
+ "slug": "medio-soc1-m2-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 2,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Para qué sirve una escuela",
+ "sub": "Ciencias Sociales 1 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Para qué vamos a la escuela?"
+    },
+    {
+     "yo": true,
+     "txt": "¡PARA APRENDER Y JUGAR!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Y para ver amigos!"
+    }
+   ],
+   "titulo": "MI ESCUELA",
+   "sub": "es una institución",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Para qué vamos a la escuela?",
+    "Para *aprender* y jugar.",
+    "Hoy: *para qué sirve la escuela*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "LA ESCUELA SIRVE PARA",
+    "emoji": "🏫"
+   },
+   "items": [
+    "APRENDER",
+    "JUGAR",
+    "HACER AMIGOS"
+   ],
+   "voz": [
+    "¿Para qué sirve la *escuela*?",
+    "Para *aprender* a leer y contar.",
+    "Para *jugar* en el recreo.",
+    "Y para hacer *amigos*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏘️",
+     "txt": "EL BARRIO"
+    },
+    {
+     "emoji": "🏫",
+     "txt": "LA ESCUELA"
+    },
+    {
+     "emoji": "🧑‍🏫",
+     "txt": "MI AULA"
+    }
+   ],
+   "voz": [
+    "Miramos el *barrio*.",
+    "Ahí está la *escuela*.",
+    "¡Y adentro, *mi aula*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál también es una institución?",
+   "opciones": [
+    "UNA PELOTA",
+    "EL HOSPITAL",
+    "UN ÁRBOL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en lugares que ayudan.",
+    "¿Cuál es una institución?",
+    "¡El *hospital*! Cuida la salud de todos."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ES DE TODOS",
+   "texto": "Todos los chicos pueden ir a la escuela",
+   "emoji": "🎒",
+   "voz": [
+    "Recordá: la escuela es para *todos* los chicos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "INSTITUCIÓN",
+     "tarea para todos"
+    ],
+    [
+     "APRENDER",
+     "leer, escribir, contar"
+    ],
+    [
+     "COMPARTIR",
+     "jugar y hacer amigos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La escuela es una *institución*.",
+    "Sirve para *aprender*.",
+    "Y para *compartir* con amigos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

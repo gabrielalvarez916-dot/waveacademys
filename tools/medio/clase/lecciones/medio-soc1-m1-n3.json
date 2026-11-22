@@ -1,0 +1,133 @@
+{
+ "slug": "medio-soc1-m1-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 1,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Las viviendas y sus materiales",
+ "sub": "Ciencias Sociales 1 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Dónde vive una familia?",
+   "segundos": 6,
+   "respuesta": "¡EN UNA VIVIENDA!",
+   "emoji": "🏠",
+   "titulo": "LAS VIVIENDAS",
+   "sub": "y sus materiales",
+   "voz": [
+    "Desafío: ¿dónde vive una familia?",
+    "¡En una *vivienda*!",
+    "Hoy: *las viviendas y sus materiales*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏠",
+   "titulo": "LA CASA DE TOMI",
+   "partes": [
+    {
+     "txt": "TECHO: CHAPA",
+     "x": 0.2,
+     "y": -0.8
+    },
+    {
+     "txt": "PARED: LADRILLO",
+     "x": -0.6,
+     "y": 0.0
+    },
+    {
+     "txt": "PUERTA: MADERA",
+     "x": 0.3,
+     "y": 0.6
+    },
+    {
+     "txt": "VENTANA: VIDRIO",
+     "x": 0.6,
+     "y": 0.0
+    }
+   ],
+   "voz": [
+    "Miramos la casa de *Tomi*.",
+    "El *techo* es de chapa.",
+    "La *pared* es de ladrillo.",
+    "La *puerta* es de madera.",
+    "La *ventana* es de vidrio."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CASA",
+    "texto": "CON PATIO",
+    "emoji": "🏡"
+   },
+   "b": {
+    "cab": "DEPARTAMENTO",
+    "texto": "EN UN EDIFICIO",
+    "emoji": "🏢"
+   },
+   "signo": "y",
+   "voz": [
+    "Algunas familias viven en una *casa*.",
+    "Otras viven en un *departamento*.",
+    "¡Las dos son *viviendas*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De qué es la pared?",
+   "opciones": [
+    "PAPEL",
+    "LADRILLO",
+    "TELA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La pared es dura y fuerte.",
+    "¿De qué está hecha?",
+    "¡De *ladrillo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "NOS PROTEGEN",
+   "texto": "Todas las viviendas nos cuidan",
+   "emoji": "🛡️",
+   "voz": [
+    "Recordá: todas las viviendas nos *protegen*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VIVIENDA",
+     "donde vivimos"
+    ],
+    [
+     "TIPOS",
+     "casa, departamento"
+    ],
+    [
+     "MATERIALES",
+     "ladrillo, madera, chapa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *vivienda* es donde vivimos.",
+    "Hay casas y *departamentos*.",
+    "Se hacen con distintos *materiales*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

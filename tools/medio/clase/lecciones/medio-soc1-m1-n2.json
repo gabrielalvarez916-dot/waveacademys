@@ -1,0 +1,141 @@
+{
+ "slug": "medio-soc1-m1-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 1,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Quién hace qué en casa",
+ "sub": "Ciencias Sociales 1 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué hacés?"
+    },
+    {
+     "yo": true,
+     "txt": "¡PONGO LA MESA PARA CENAR!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Yo guardo los juguetes!"
+    }
+   ],
+   "titulo": "QUIÉN HACE QUÉ",
+   "sub": "en casa",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué hacés?",
+    "Sofi pone la *mesa* para cenar.",
+    "Hoy: *quién hace qué en casa*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LAS TAREAS",
+   "items": [
+    {
+     "cab": "🍳",
+     "txt": "COCINAR"
+    },
+    {
+     "cab": "🧺",
+     "txt": "LAVAR"
+    },
+    {
+     "cab": "🧹",
+     "txt": "ORDENAR"
+    },
+    {
+     "cab": "🛒",
+     "txt": "COMPRAR"
+    }
+   ],
+   "voz": [
+    "En casa hay muchas *tareas*.",
+    "Hay que *cocinar*.",
+    "Hay que *lavar*.",
+    "Hay que *ordenar*.",
+    "Y hacer las *compras*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🧸",
+    "texto": "Juguetes por todos lados"
+   },
+   "despues": {
+    "cab": "ENTRE TODOS",
+    "emoji": "✨",
+    "texto": "¡Todo ordenado!"
+   },
+   "voz": [
+    "La pieza estaba *desordenada*.",
+    "Entre todos la *ordenamos* rápido."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién puede ayudar en casa?",
+   "opciones": [
+    "SOLO MAMÁ",
+    "TODOS",
+    "NADIE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en tu casa.",
+    "¿Quién puede ayudar?",
+    "¡*Todos*, grandes y chicos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON CUIDADO",
+   "texto": "El horno y los cuchillos son para grandes",
+   "emoji": "⚠️",
+   "voz": [
+    "Importante: el *horno* es para los grandes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TAREAS",
+     "cocinar, lavar, ordenar"
+    ],
+    [
+     "TODOS",
+     "grandes y chicos"
+    ],
+    [
+     "YO",
+     "pongo la mesa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En casa hay muchas *tareas*.",
+    "Las hacemos *entre todos*.",
+    "Y *vos* también podés ayudar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

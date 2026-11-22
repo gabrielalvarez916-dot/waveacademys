@@ -1,0 +1,128 @@
+{
+ "slug": "medio-soc1-m1-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 1,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Mi historia familiar en un álbum",
+ "sub": "Ciencias Sociales 1 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SOFI ARMA SU ÁLBUM!",
+   "bajada": "Con su historia desde bebé",
+   "emoji": "📒",
+   "titulo": "MI HISTORIA",
+   "sub": "en un álbum",
+   "voz": [
+    "¡Último momento! Sofi arma su *álbum*.",
+    "Con su historia desde que era *bebé*.",
+    "Hoy: *mi historia familiar*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA HISTORIA DE SOFI",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "NACÍ",
+     "emoji": "👶"
+    },
+    {
+     "fecha": "2",
+     "txt": "PRIMEROS PASOS",
+     "emoji": "🚶"
+    },
+    {
+     "fecha": "3",
+     "txt": "JARDÍN",
+     "emoji": "🎨"
+    },
+    {
+     "fecha": "4",
+     "txt": "PRIMER GRADO",
+     "emoji": "🎒"
+    }
+   ],
+   "voz": [
+    "Primero, Sofi *nació*.",
+    "Después, dio sus *primeros pasos*.",
+    "Fue al *jardín*.",
+    "¡Y ahora está en *primer grado*!"
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO ARMO EL ÁLBUM",
+   "items": [
+    "BUSCO FOTOS",
+    "PREGUNTO EN CASA",
+    "ORDENO",
+    "PEGO"
+   ],
+   "voz": [
+    "Primero, *busco* fotos.",
+    "Después, *pregunto* en casa.",
+    "Las *ordeno*: de antes a ahora.",
+    "Y las *pego*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué foto va primero?",
+   "opciones": [
+    "PRIMER GRADO",
+    "NACÍ",
+    "JARDÍN"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el orden.",
+    "¿Qué foto va primero?",
+    "¡Cuando *naciste*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SIN FOTOS",
+   "texto": "Si no hay fotos, hacé dibujos",
+   "emoji": "🖍️",
+   "voz": [
+    "Truco: si no hay fotos, hacé *dibujos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HISTORIA",
+     "desde que nací"
+    ],
+    [
+     "PREGUNTAR",
+     "a la familia"
+    ],
+    [
+     "ORDENAR",
+     "antes y después"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Mi *historia* empieza cuando nací.",
+    "*Pregunto* a mi familia.",
+    "Y *ordeno* de antes a ahora.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
