@@ -630,3 +630,9 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .boton-mini { margin: 6px 0 0; padding: 8px 14px; border: 0; border-radius: 999px; background: var(--turquesa, #087E83); color: #fff; font: inherit; font-weight: 800; font-size: .85rem; cursor: pointer; }
 .test-aviso .boton-mini { margin: 0 0 0 8px; }
 @media (max-width: 640px) { .tst-opc { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tst-caja { padding: 22px 16px 26px; } }
+
+.tst-ad { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; text-align: left; }
+.tst-ad li { padding: 8px 10px; border-radius: 10px; background: #fff; line-height: 1.4; font-size: .95rem; }
+.tst-ad li span { display: inline-block; margin-right: 6px; font-weight: 800; font-size: .8rem; }
+.tst-ad li.ya span { color: #1c7c4d; }
+.tst-ad li.luego span { color: #8a6d00; }

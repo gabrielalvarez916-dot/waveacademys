@@ -100,7 +100,8 @@
         .order('created_at', { ascending: true }),
       sb.from('grades').select('id, year_number, name, levels(name, position)'),
       sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden'),
-      sb.from('test_aprendizaje').select('student_id, fecha, trayectos').order('fecha', { ascending: false })
+      sb.from('test_aprendizaje').select('student_id, fecha, trayectos').order('fecha', { ascending: false }),
+      sb.from('adaptaciones_apoyo').select('clave, trayecto, texto, lista, orden').order('orden')
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
 
@@ -113,7 +114,7 @@
       return pa - pb || a.year_number - b.year_number;
     });
 
-    return { cupos: cupos, hijos: res[1].data || [], anios: anios, trayectos: res[3].data || [], tests: res[4].data || [], famId: fam.data.id };
+    return { cupos: cupos, hijos: res[1].data || [], anios: anios, trayectos: res[3].data || [], tests: res[4].data || [], adaptaciones: res[5].data || [], famId: fam.data.id };
   }
 
   // La función devuelve el motivo del error en el cuerpo de la respuesta
@@ -243,7 +244,7 @@
 
       // El test "Cómo aprende tu hijo" es obligatorio: se hace antes de mostrar el usuario y la contraseña
       var datosAlta = r.data;
-      var dNuevo = { trayectos: d.trayectos, famId: d.famId, tests: [], hijos: [] };
+      var dNuevo = { trayectos: d.trayectos, adaptaciones: d.adaptaciones, famId: d.famId, tests: [], hijos: [] };
       abrirTest({ id: datosAlta.student_id, nombre: nombre }, dNuevo, async function () {
         await vistaAltas();
         var credCont = document.getElementById('cred');
@@ -313,6 +314,15 @@
   function pasaron6Meses(iso) { var l = new Date(iso); l.setMonth(l.getMonth() + 6); return l < new Date(); }
   function nombreTrayecto(d, c) { var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0]; return t ? t.nombre : c; }
 
+  function adaptacionesDe(d, trayectos) { return (d.adaptaciones || []).filter(function (a) { return trayectos.indexOf(a.trayecto) >= 0; }); }
+  function adaptacionesHtml(d, c) {
+    var xs = adaptacionesDe(d, [c]);
+    if (!xs.length) return '';
+    return '<ul class="tst-ad">' + xs.map(function (a) {
+      return '<li class="' + (a.lista ? 'ya' : 'luego') + '"><span>' + (a.lista ? '✓ Activa desde ya' : '⏳ Se activa cuando esté lista') + '</span> ' + esc(a.texto) + '</li>';
+    }).join('') + '</ul>';
+  }
+
   function testResumen(h, d) {
     var t = ultimoTest(d, h.id);
     if (!t) return '<span class="test-estado pend">Falta hacer el test “Cómo aprende tu hijo”</span><button type="button" class="boton-mini" data-test="' + esc(h.id) + '">Hacer el test</button>';
@@ -366,16 +376,15 @@
       var tr = res.trayectos;
       var lista = tr.length ? tr.map(function (c) {
         var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0] || { nombre: c, descripcion: '' };
-        return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p></div>';
+        return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p>' + adaptacionesHtml(d, c) + '</div>';
       }).join('') : (function () { var t = (d.trayectos || []).filter(function (x) { return x.clave === 'convencional'; })[0]; return '<div class="tst-tray"><b>Convencional</b><p>' + esc(t ? t.descripcion : 'Recorrido estándar de Wave.') + '</p></div>'; })();
       var aj = Object.keys(res.ajustes).map(function (k) { return '<li>' + esc(T_ETIQ[k] || k) + '</li>'; }).join('');
       fondo.innerHTML = '<div class="tst-caja" role="dialog">' +
         '<h2>El recorrido que recomendamos para ' + esc(hijo.nombre) + '</h2>' +
         '<p class="tst-intro">' + (tr.length > 1 ? 'Según tus respuestas, estos dos trayectos se combinan bien:' : 'Según tus respuestas, conviene este recorrido:') + '</p>' + lista +
         (res.muchas ? '<p class="tst-nota">Notamos que hay varias áreas que le cuestan. Además de esto, conviene hablar con Dirección o con su tutor para armar un recorrido a su medida.</p>' : '') +
-        '<h3>Ajustes que se activan en su panel</h3>' +
-        (aj ? '<ul class="tst-aj">' + aj + '</ul>' : '<p class="tst-intro">Ninguno por ahora: arranca con el recorrido estándar.</p>') +
-        '<p class="tst-intro">Siempre están disponibles, sin activarlos acá: lectura en voz alta del PDF, dictado por voz, letra más grande, contraste y menos animación (desde el botón de accesibilidad), y el mapa de la misión. Los talleres y cambios propios de cada trayecto se van sumando a medida que se construyen.</p>' +
+        (aj ? '<h3>Ajustes generales que se activan en su panel</h3><ul class="tst-aj">' + aj + '</ul>' : '') +
+        '<p class="tst-intro">Al tocar el botón, todo lo de arriba queda asignado a ' + esc(hijo.nombre) + '. Lo que dice «se activa cuando esté lista» arranca solo apenas esa adaptación está construida, sin que hagas nada. Además siempre están disponibles la lectura en voz alta del PDF, el dictado por voz, el contraste, la letra más grande, menos animación y el mapa de la misión.</p>' +
         '<p class="tst-intro">Podés cambiar todo esto cuando quieras, y repetir el test pasados unos meses.</p>' +
         '<div class="tst-acc"><button type="button" class="boton" data-t="aplicar">Dejar esto configurado</button></div></div>';
       fondo._res = res; fondo._testId = testId;
@@ -386,7 +395,8 @@
       btn.disabled = true; btn.textContent = 'Guardando…';
       var cur = await sb.from('students').select('apoyos').eq('id', hijo.id).maybeSingle();
       var apoyos = Object.assign({}, (cur.data && cur.data.apoyos) || {}, res.ajustes);
-      var u = await sb.from('students').update({ trayectos_apoyo: res.trayectos, apoyos: apoyos }).eq('id', hijo.id);
+      var claves = adaptacionesDe(d, res.trayectos).map(function (a) { return a.clave; });
+      var u = await sb.from('students').update({ trayectos_apoyo: res.trayectos, apoyos: apoyos, adaptaciones: claves }).eq('id', hijo.id);
       if (fondo._testId) await sb.from('test_aprendizaje').update({ aplicado: !u.error }).eq('id', fondo._testId);
       if (u.error) { btn.disabled = false; btn.textContent = 'Dejar esto configurado'; alert('No se pudo guardar. Probá de nuevo.'); return; }
       cerrar();
