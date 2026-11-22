@@ -1,0 +1,143 @@
+{
+ "slug": "medio-soc1-m3-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 3,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Lugares para jugar y encontrarnos",
+ "sub": "Ciencias Sociales 1 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Vamos a la plaza?"
+    },
+    {
+     "yo": true,
+     "txt": "¡SÍ! NOS VEMOS EN LAS HAMACAS"
+    },
+    {
+     "yo": false,
+     "txt": "¡Llevo la pelota!"
+    }
+   ],
+   "titulo": "LUGARES",
+   "sub": "para jugar",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Vamos a la plaza?",
+    "¡Nos vemos en las *hamacas*!",
+    "Hoy: *lugares para jugar y encontrarnos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LUGARES PARA ENCONTRARNOS",
+   "celdas": [
+    {
+     "cab": "🌳 PLAZA",
+     "txt": "JUGAR"
+    },
+    {
+     "cab": "⚽ CLUB",
+     "txt": "DEPORTE"
+    },
+    {
+     "cab": "📚 BIBLIOTECA",
+     "txt": "LEER"
+    },
+    {
+     "cab": "🎭 CENTRO CULTURAL",
+     "txt": "ARTE"
+    }
+   ],
+   "voz": [
+    "En el barrio hay lugares para *todos*.",
+    "En la *plaza*, jugamos.",
+    "En el *club*, hacemos deporte.",
+    "En la *biblioteca*, leemos.",
+    "En el *centro cultural*, hacemos arte."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PLAZA",
+    "texto": "SÍ SE JUEGA",
+    "emoji": "🛝"
+   },
+   "b": {
+    "cab": "CALLE",
+    "texto": "NO: PASAN AUTOS",
+    "emoji": "🚗"
+   },
+   "signo": "vs",
+   "voz": [
+    "En la *plaza* jugamos tranquilos.",
+    "En la *calle* pasan autos.",
+    "¡En la calle *no* se juega!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De quién es la plaza?",
+   "opciones": [
+    "DE NADIE",
+    "DE TODOS",
+    "DE UNO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la plaza.",
+    "¿De quién es?",
+    "¡De *todos*! Es un espacio público."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LO CUIDAMOS",
+   "texto": "Lo que es de todos, lo cuidamos todos",
+   "emoji": "🤝",
+   "voz": [
+    "Recordá: lo que es de todos, lo *cuidamos* todos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PLAZA",
+     "para jugar"
+    ],
+    [
+     "PÚBLICO",
+     "es de todos"
+    ],
+    [
+     "CUIDAR",
+     "entre todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *plaza* es para jugar.",
+    "Es un espacio *público*.",
+    "Y lo *cuidamos* entre todos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

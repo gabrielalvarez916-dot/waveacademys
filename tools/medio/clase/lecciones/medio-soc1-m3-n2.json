@@ -1,0 +1,136 @@
+{
+ "slug": "medio-soc1-m3-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 3,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Croquis de la manzana de la escuela",
+ "sub": "Ciencias Sociales 1 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se ve la escuela desde un avión?",
+   "segundos": 6,
+   "respuesta": "¡COMO UN CUADRADITO!",
+   "emoji": "✈️",
+   "titulo": "EL CROQUIS",
+   "sub": "de la manzana",
+   "voz": [
+    "Desafío: ¿cómo se ve la escuela desde un *avión*?",
+    "¡Como un *cuadradito*!",
+    "Hoy: *el croquis de la manzana*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏙️",
+     "txt": "LA CIUDAD"
+    },
+    {
+     "emoji": "🏘️",
+     "txt": "EL BARRIO"
+    },
+    {
+     "emoji": "🟩",
+     "txt": "LA MANZANA"
+    }
+   ],
+   "voz": [
+    "Miramos la *ciudad* desde arriba.",
+    "Nos acercamos al *barrio*.",
+    "¡Y vemos la *manzana* de la escuela!"
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🟩",
+   "titulo": "MI MANZANA",
+   "partes": [
+    {
+     "txt": "ESCUELA",
+     "x": 0.0,
+     "y": -0.6
+    },
+    {
+     "txt": "KIOSCO",
+     "x": -0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "CASA DE SOFI",
+     "x": 0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "PANADERÍA",
+     "x": 0.0,
+     "y": 0.6
+    }
+   ],
+   "voz": [
+    "Este es el *croquis* de la manzana.",
+    "Acá está la *escuela*.",
+    "A un lado, el *kiosco*.",
+    "Al otro lado, la *casa de Sofi*.",
+    "Y atrás, la *panadería*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas calles rodean la manzana?",
+   "opciones": [
+    "2",
+    "4",
+    "10"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá los lados.",
+    "¿Cuántas calles la rodean?",
+    "¡*4 calles*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMO UN PÁJARO",
+   "texto": "Imaginá que mirás desde arriba",
+   "emoji": "🐦",
+   "voz": [
+    "Truco: imaginá que sos un *pájaro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MANZANA",
+     "cuatro calles"
+    ],
+    [
+     "CROQUIS",
+     "dibujo desde arriba"
+    ],
+    [
+     "UBICAR",
+     "al lado, atrás"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *manzana* tiene cuatro calles.",
+    "El *croquis* es un dibujo desde arriba.",
+    "Ubicamos qué hay *al lado*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

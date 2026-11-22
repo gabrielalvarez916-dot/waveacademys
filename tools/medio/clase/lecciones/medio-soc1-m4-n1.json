@@ -1,0 +1,137 @@
+{
+ "slug": "medio-soc1-m4-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 4,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Centros de salud y hospitales",
+ "sub": "Ciencias Sociales 1 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Mañana me toca una vacuna!"
+    },
+    {
+     "yo": true,
+     "txt": "¿VAS AL CENTRO DE SALUD?"
+    },
+    {
+     "yo": false,
+     "txt": "Sí, con mi mamá."
+    }
+   ],
+   "titulo": "CENTROS DE SALUD",
+   "sub": "y hospitales",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Mañana me toca una *vacuna*!",
+    "Va al *centro de salud* con su mamá.",
+    "Hoy: *centros de salud y hospitales*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "VAMOS AL CENTRO DE SALUD",
+    "emoji": "🏥"
+   },
+   "items": [
+    "PARA VACUNARNOS",
+    "PARA UN CONTROL",
+    "SI ESTAMOS ENFERMOS"
+   ],
+   "voz": [
+    "¿Para qué vamos al *centro de salud*?",
+    "Para *vacunarnos*.",
+    "Para hacernos un *control*.",
+    "Y cuando estamos *enfermos*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "QUIÉNES NOS CUIDAN",
+   "items": [
+    {
+     "cab": "👩‍⚕️ MÉDICA",
+     "txt": "NOS REVISA"
+    },
+    {
+     "cab": "🧑‍⚕️ ENFERMERO",
+     "txt": "NOS VACUNA"
+    },
+    {
+     "cab": "🦷 DENTISTA",
+     "txt": "CUIDA LOS DIENTES"
+    }
+   ],
+   "voz": [
+    "Muchas personas nos *cuidan*.",
+    "La médica nos *revisa*.",
+    "El enfermero nos *vacuna*.",
+    "El dentista cuida los *dientes*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Te duele una muela. ¿Quién te ayuda?",
+   "opciones": [
+    "BOMBERO",
+    "DENTISTA",
+    "PANADERO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Te duele una muela.",
+    "¿Quién te ayuda?",
+    "¡El *dentista*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "Al médico se va acompañado",
+   "emoji": "🧑",
+   "voz": [
+    "Recordá: al médico se va *con un adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CENTRO DE SALUD",
+     "cuida la salud"
+    ],
+    [
+     "TRABAJAN",
+     "médicas, enfermeros"
+    ],
+    [
+     "VAMOS",
+     "vacunas y controles"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *centro de salud* cuida la salud.",
+    "Ahí trabajan *médicas* y enfermeros.",
+    "Vamos para *vacunas* y controles.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

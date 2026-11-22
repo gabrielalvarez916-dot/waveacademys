@@ -1,0 +1,130 @@
+{
+ "slug": "medio-soc1-m4-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 4,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Qué trabajo hace cada institución",
+ "sub": "Ciencias Sociales 1 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién apaga un incendio?",
+   "segundos": 6,
+   "respuesta": "¡LOS BOMBEROS!",
+   "emoji": "🚒",
+   "titulo": "CADA INSTITUCIÓN",
+   "sub": "su trabajo",
+   "voz": [
+    "Desafío: ¿quién apaga un incendio?",
+    "¡Los *bomberos*!",
+    "Hoy: *qué trabajo hace cada institución*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿QUÉ HACE CADA UNA?",
+   "celdas": [
+    {
+     "cab": "🏫 ESCUELA",
+     "txt": "ENSEÑA"
+    },
+    {
+     "cab": "🏥 HOSPITAL",
+     "txt": "CURA"
+    },
+    {
+     "cab": "🚒 BOMBEROS",
+     "txt": "APAGAN FUEGO"
+    },
+    {
+     "cab": "📚 BIBLIOTECA",
+     "txt": "PRESTA LIBROS"
+    }
+   ],
+   "voz": [
+    "Cada institución tiene su *trabajo*.",
+    "La escuela *enseña*.",
+    "El hospital *cura*.",
+    "Los bomberos *apagan* el fuego.",
+    "La biblioteca *presta* libros."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "¿ESTÁ BIEN?",
+   "cambios": [
+    {
+     "antes": "EL HOSPITAL PRESTA LIBROS",
+     "despues": "LA BIBLIOTECA PRESTA LIBROS",
+     "motivo": "el hospital cura"
+    },
+    {
+     "antes": "LA ESCUELA APAGA INCENDIOS",
+     "despues": "LOS BOMBEROS APAGAN INCENDIOS",
+     "motivo": "la escuela enseña"
+    }
+   ],
+   "voz": [
+    "¡Ups! Hay frases mezcladas.",
+    "La que presta libros es la *biblioteca*.",
+    "Los que apagan incendios son los *bomberos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Me quebré un brazo. ¿Adónde voy?",
+   "opciones": [
+    "CLUB",
+    "HOSPITAL",
+    "BIBLIOTECA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Te quebraste un brazo.",
+    "¿Adónde vas?",
+    "¡Al *hospital*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "AVISÁ A UN ADULTO",
+   "texto": "En una emergencia, avisá enseguida",
+   "emoji": "🚨",
+   "voz": [
+    "Importante: en una emergencia, avisá a un *adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "INSTITUCIONES",
+     "trabajan para todos"
+    ],
+    [
+     "CADA UNA",
+     "su trabajo"
+    ],
+    [
+     "AYUDAN",
+     "a todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *instituciones* trabajan para todos.",
+    "Cada una tiene *su trabajo*.",
+    "¡Nos *ayudan* a todos!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

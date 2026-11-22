@@ -1,0 +1,129 @@
+{
+ "slug": "medio-soc1-m3-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 3,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Placas y monumentos con historia",
+ "sub": "Ciencias Sociales 1 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "HISTORIAS DEL BARRIO",
+   "titular": "¡HAY UNA PLACA EN LA PLAZA!",
+   "bajada": "Recuerda algo importante",
+   "emoji": "🗿",
+   "titulo": "PLACAS",
+   "sub": "y monumentos",
+   "voz": [
+    "¡Historias del barrio! Hay una *placa* en la plaza.",
+    "Recuerda algo importante.",
+    "Hoy: *placas y monumentos con historia*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "HACE MUCHO",
+    "emoji": "🟫",
+    "texto": "Plaza de tierra"
+   },
+   "despues": {
+    "cab": "HOY",
+    "emoji": "🛝",
+    "texto": "¡Con juegos y árboles!"
+   },
+   "voz": [
+    "Hace mucho, la plaza era de *tierra*.",
+    "Hoy tiene *juegos* y árboles."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA HISTORIA DE LA PLAZA",
+   "eventos": [
+    {
+     "fecha": "HACE MUCHO",
+     "txt": "TIERRA",
+     "emoji": "🟫"
+    },
+    {
+     "fecha": "DESPUÉS",
+     "txt": "ÁRBOLES",
+     "emoji": "🌳"
+    },
+    {
+     "fecha": "MÁS TARDE",
+     "txt": "MONUMENTO",
+     "emoji": "🗿"
+    },
+    {
+     "fecha": "HOY",
+     "txt": "JUEGOS",
+     "emoji": "🛝"
+    }
+   ],
+   "voz": [
+    "Hace mucho, era de *tierra*.",
+    "Después, plantaron *árboles*.",
+    "Más tarde, pusieron un *monumento*.",
+    "¡Hoy tiene *juegos*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué sirve un monumento?",
+   "opciones": [
+    "PARA JUGAR",
+    "PARA RECORDAR",
+    "PARA COMER"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el monumento.",
+    "¿Para qué sirve?",
+    "¡Para *recordar* algo importante!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "Los abuelos saben cómo era antes",
+   "emoji": "👵",
+   "voz": [
+    "Truco: preguntá a los *abuelos* cómo era antes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MONUMENTO",
+     "recuerda algo"
+    ],
+    [
+     "PLACA",
+     "quién y cuándo"
+    ],
+    [
+     "CAMBIOS",
+     "antes y hoy"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *monumento* recuerda algo importante.",
+    "La *placa* dice quién y cuándo.",
+    "El barrio *cambia* con el tiempo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

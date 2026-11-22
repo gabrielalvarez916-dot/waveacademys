@@ -1,0 +1,132 @@
+{
+ "slug": "medio-soc1-m3-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 3,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Recorremos y observamos el barrio",
+ "sub": "Ciencias Sociales 1 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏘️",
+   "lineas": [
+    "Sofi sale a caminar con su papá.",
+    "Mira las casas y los negocios.",
+    "¡Descubre su barrio!"
+   ],
+   "titulo": "MI BARRIO",
+   "sub": "lo recorro",
+   "voz": [
+    "Sofi sale a caminar con su *papá*.",
+    "Mira las casas y los negocios.",
+    "¡Descubre su *barrio*!",
+    "Hoy: *recorremos el barrio*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EN MI BARRIO HAY",
+   "items": [
+    {
+     "cab": "🏠",
+     "txt": "CASAS"
+    },
+    {
+     "cab": "🏪",
+     "txt": "NEGOCIOS"
+    },
+    {
+     "cab": "🌳",
+     "txt": "PLAZA"
+    },
+    {
+     "cab": "🏫",
+     "txt": "ESCUELA"
+    }
+   ],
+   "voz": [
+    "Miramos qué hay en el *barrio*.",
+    "Hay *casas*.",
+    "Hay *negocios*.",
+    "Hay una *plaza*.",
+    "¡Y hay una *escuela*!"
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO OBSERVO",
+   "items": [
+    "SALGO CON UN ADULTO",
+    "MIRO",
+    "ESCUCHO",
+    "ANOTO"
+   ],
+   "voz": [
+    "Primero, salgo con un *adulto*.",
+    "Después, *miro* todo.",
+    "*Escucho* los sonidos.",
+    "Y *anoto* lo que vi."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con quién recorrés el barrio?",
+   "opciones": [
+    "SOLO",
+    "CON UN ADULTO",
+    "CON MI PERRO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Vas a salir a caminar.",
+    "¿Con quién vas?",
+    "¡*Con un adulto*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POR LA ESQUINA",
+   "texto": "La calle se cruza por la esquina",
+   "emoji": "🚸",
+   "voz": [
+    "Importante: cruzá siempre por la *esquina*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BARRIO",
+     "donde vive la gente"
+    ],
+    [
+     "LUGARES",
+     "casas, negocios, plaza"
+    ],
+    [
+     "OBSERVAR",
+     "mirar y anotar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *barrio* es donde vive la gente.",
+    "Tiene muchos *lugares*.",
+    "Lo *observamos* y anotamos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

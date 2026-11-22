@@ -1,0 +1,114 @@
+{
+ "slug": "medio-soc1-m4-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 4,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Respeto y cooperación en la convivencia",
+ "sub": "Ciencias Sociales 1 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡EL GRADO LIMPIÓ LA PLAZA!",
+   "bajada": "Lo hicieron entre todos",
+   "emoji": "🤝",
+   "titulo": "RESPETO",
+   "sub": "y cooperación",
+   "voz": [
+    "¡Último momento! El grado limpió la *plaza*.",
+    "Lo hicieron *entre todos*.",
+    "Hoy: *respeto y cooperación*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "CADA UNO SOLO",
+    "emoji": "😓",
+    "texto": "Cuesta mucho"
+   },
+   "despues": {
+    "cab": "ENTRE TODOS",
+    "emoji": "😃",
+    "texto": "¡Sale rápido!"
+   },
+   "voz": [
+    "Solos, las cosas *cuestan* mucho.",
+    "Entre todos, ¡salen *rápido*!"
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "PARA CONVIVIR",
+   "items": [
+    "ESCUCHO",
+    "RESPETO",
+    "AYUDO",
+    "COMPARTO"
+   ],
+   "voz": [
+    "Así convivimos *bien*.",
+    "*Escucho* al otro.",
+    "Lo *respeto*.",
+    "Lo *ayudo*.",
+    "Y *comparto*. ¡Y vuelta a empezar!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un compañero se burla de otro. ¿Qué hacés?",
+   "opciones": [
+    "ME RÍO",
+    "AVISO A UN ADULTO",
+    "NADA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Alguien se burla de otro.",
+    "¿Qué hacés?",
+    "¡Aviso a un *adulto*! Las burlas lastiman."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PONETE EN SU LUGAR",
+   "texto": "Pensá cómo se siente el otro",
+   "emoji": "💛",
+   "voz": [
+    "Truco: pensá cómo se *siente* el otro."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RESPETO",
+     "tratar bien"
+    ],
+    [
+     "COOPERAR",
+     "ayudarnos"
+    ],
+    [
+     "CONVIVIR",
+     "estar bien juntos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Respetar* es tratar bien.",
+    "*Cooperar* es ayudarnos.",
+    "Así *convivimos* mejor.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
