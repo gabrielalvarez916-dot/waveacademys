@@ -330,3 +330,24 @@
 .ap-just { margin-top: 10px; }
 .ap-just label { display: block; margin-bottom: 4px; font-weight: 700; font-size: .92rem; }
 .ap-just textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; font: inherit; border: 2px solid rgba(8,126,131,.3); border-radius: 12px; resize: vertical; }
+
+/* Biblio-videoteca */
+.bib-fondo { position: fixed; inset: 0; z-index: 150; display: flex; align-items: flex-start; justify-content: center; padding: 14px; overflow-y: auto; background: rgba(37,54,56,.75); }
+.bib-caja { position: relative; width: min(100%, 820px); margin: auto; padding: 24px 22px 28px; background: #fff; border-radius: 22px; box-shadow: 0 24px 50px -12px rgba(0,0,0,.5); text-align: left; }
+.bib-caja h2 { margin: 0 44px 4px 0; font-size: 1.4rem; font-weight: 800; }
+.bib-caja h3 { margin: 22px 0 10px; font-size: 1.05rem; }
+.bib-sub { margin: 0 0 6px; opacity: .8; }
+.bib-x { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border: 0; border-radius: 50%; background: #253638; color: #fff; cursor: pointer; }
+.bib-vacio { padding: 20px 0; }
+.bib-lista { display: grid; gap: 12px; }
+.bib-item { display: flex; gap: 14px; align-items: flex-start; padding: 10px; border: 2px solid rgba(8,126,131,.15); border-radius: 16px; }
+.bib-thumb { position: relative; flex: 0 0 170px; padding: 0; border: 0; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000; }
+.bib-thumb img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.bib-thumb span { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 2rem; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+.bib-player { flex: 0 0 min(100%, 420px); aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; }
+.bib-player iframe { width: 100%; height: 100%; border: 0; }
+.bib-tx b { display: block; line-height: 1.3; }
+.bib-tx small { display: block; opacity: .7; margin-top: 2px; }
+.bib-tx p { margin: 6px 0 0; font-size: .9rem; opacity: .85; }
+.bib-abrir { display: inline-block; margin-top: 8px; font-weight: 800; color: var(--turquesa-oscuro, #065F63); }
+@media (max-width: 560px) { .bib-item { flex-direction: column; } .bib-thumb, .bib-player { flex-basis: auto; width: 100%; } }

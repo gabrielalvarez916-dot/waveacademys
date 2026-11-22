@@ -293,7 +293,7 @@
       (o.estado === 'bloq' ? '<span class="mt-cand">' + ico('lock', 26, 2.8) + '</span>' : '');
     var estilo = ' style="--k:' + o.color + '"';
     if (o.href) return '<a class="' + cls + '" href="' + o.href + '"' + estilo + '>' + interior + '</a>';
-    return '<button type="button" class="' + cls + '"' + estilo + (o.aviso ? ' data-aviso="' + esc(o.aviso) + '"' : '') + (o.intro ? ' data-intro="1"' : '') + '>' + interior + '</button>';
+    return '<button type="button" class="' + cls + '"' + estilo + (o.aviso ? ' data-aviso="' + esc(o.aviso) + '"' : '') + (o.intro ? ' data-intro="1"' : '') + (o.biblio ? ' data-biblio="1"' : '') + '>' + interior + '</button>';
   }
 
   function pantallaTemas() {
@@ -315,6 +315,7 @@
       }
       cards.push(tarjeta(o));
     });
+    if (D.temas.length) cards.push(tarjeta({ titulo: 'Biblio-videoteca', texto: 'Videos y recursos extra por si querés ver más o algo no te quedó claro', boton: 'ABRIR', color: colorSeguro(m.color), figura: icono, biblio: true }));
     vista.innerHTML = '<div class="mt mt-p1" style="--c:' + colorSeguro(m.color) + '">' +
       '<div class="mt-top"><a class="mt-volver" href="#cursos">' + ico('back', 20, 3) + ' Mis cursos</a><h1>' + esc(m.name) + '</h1></div>' +
       banner() + '<div class="mt-cards">' + (D.temas.length ? cards.join('') : '<div class="mt-vacio">Esta materia todavía no tiene temas.</div>') + '</div></div>';
@@ -1121,6 +1122,38 @@
     });
   }
 
+  // ---------- Biblio-videoteca: recursos opcionales de la materia (las actividades solo las ven los alumnos con Desafío) ----------
+  function ytId(u) { var m = /(?:youtu\.be\/|[?&]v=|embed\/)([A-Za-z0-9_-]{6,15})/.exec(String(u || '')); return m ? m[1] : null; }
+  async function abrirBiblioteca() {
+    var f = document.createElement('div');
+    f.className = 'bib-fondo';
+    f.innerHTML = '<div class="bib-caja" role="dialog" aria-label="Biblio-videoteca"><button type="button" class="bib-x" aria-label="Cerrar">✕</button><h2>Biblio-videoteca</h2><p class="bib-sub">' + esc(D.materia.name) + ' · Recursos opcionales por si querés ver más o algo no te quedó claro.</p><div class="bib-cont">Cargando…</div></div>';
+    document.body.appendChild(f);
+    var cerrar = function () { f.remove(); };
+    f.addEventListener('click', function (ev) {
+      if (ev.target === f || ev.target.closest('.bib-x')) return cerrar();
+      var v = ev.target.closest('[data-bib-ver]');
+      if (v) { var id = v.getAttribute('data-bib-ver'); var c = document.createElement('div'); c.className = 'bib-player'; c.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; v.replaceWith(c); }
+    });
+    var r = await sb.from('biblioteca_items').select('id, tipo, titulo, descripcion, url, topic_id, origen_id').eq('subject_id', D.materia.id).order('created_at');
+    var cont = f.querySelector('.bib-cont');
+    if (r.error) { cont.textContent = 'No se pudo cargar. Probá de nuevo.'; return; }
+    var items = (r.data || []).filter(function (x) { return x.tipo !== 'actividad' || D.desafio; });
+    if (!items.length) { cont.innerHTML = '<p class="bib-vacio">Todavía no hay recursos para esta materia. Pronto vas a encontrar acá videos y más.</p>'; return; }
+    var tit = {}; D.temas.forEach(function (t) { tit[t.id] = t.titulo; });
+    var grupos = [['video', 'Videos'], ['texto', 'Textos'], ['actividad', 'Actividades para vos']];
+    cont.innerHTML = grupos.map(function (g) {
+      var xs = items.filter(function (x) { return x.tipo === g[0]; });
+      if (!xs.length) return '';
+      return '<h3>' + g[1] + '</h3><div class="bib-lista">' + xs.map(function (x) {
+        var id = x.tipo === 'video' ? ytId(x.url) : null;
+        var cab = id ? '<button type="button" class="bib-thumb" data-bib-ver="' + esc(id) + '" aria-label="Ver el video"><img src="https://i.ytimg.com/vi/' + esc(id) + '/hqdefault.jpg" alt="" loading="lazy"><span>▶</span></button>' : '';
+        return '<div class="bib-item">' + cab + '<div class="bib-tx"><b>' + esc(x.titulo) + '</b>' + (x.topic_id && tit[x.topic_id] ? '<small>' + esc(tit[x.topic_id]) + '</small>' : '') + (x.descripcion ? '<p>' + esc(x.descripcion) + '</p>' : '') +
+          (!id ? '<a class="bib-abrir" href="' + esc(x.url) + '" target="_blank" rel="noopener">Abrir</a>' : '') + '</div></div>';
+      }).join('') + '</div>';
+    }).join('');
+  }
+
   // ---------- Introducción ----------
   function abrirIntro() {
     if (D.materia.intro_clase) return abrirClase(null, 'Introducción · ' + D.materia.name).catch(function (e) { toast(e.message || 'No se pudo abrir.', true); });
@@ -1154,6 +1187,7 @@
       if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
+      if (ev.target.closest('[data-biblio]')) return abrirBiblioteca();
       var sl = ev.target.closest('[data-salto]');
       if (sl) { if (window.confirm('Tenés UNA sola oportunidad para rendir primero esta misión. Si aprobás, la salteás; si no, la hacés normal. ¿Empezamos?')) abrirExamen(sl.getAttribute('data-salto'), true); return; }
       var x = ev.target.closest('[data-examen]');

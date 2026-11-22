@@ -68,7 +68,7 @@
   function materiasDelAnio() { return B.subjects.filter(function (s) { return s.grade_id === E.grade; }); }
 
   async function cargarMateria() {
-    D = { temas: [], cands: {}, busq: {} };
+    D = { temas: [], cands: {}, busq: {}, biblio: {} };
     if (!E.subject) return;
     var t = await sb.from('topics').select('id, title, position, lessons(id, title, position, twin_of)').eq('subject_id', E.subject).order('position');
     if (t.error) throw t.error;
@@ -81,11 +81,13 @@
     if (!ids.length) return;
     var r = await Promise.all([
       sb.from('video_candidatos').select('id, lesson_id, youtube_id, titulo, canal, duracion_seg, miniatura, orden, elegido').in('lesson_id', ids).order('orden').limit(5000),
-      sb.from('video_busqueda').select('lesson_id, estado').in('lesson_id', ids).limit(2000)
+      sb.from('video_busqueda').select('lesson_id, estado').in('lesson_id', ids).limit(2000),
+      sb.from('biblioteca_items').select('id, candidato_id').eq('subject_id', E.subject).not('candidato_id', 'is', null)
     ]);
     r.forEach(function (x) { if (x.error) throw x.error; });
     r[0].data.forEach(function (c) { (D.cands[c.lesson_id] = D.cands[c.lesson_id] || []).push(c); });
     r[1].data.forEach(function (b) { D.busq[b.lesson_id] = b.estado; });
+    r[2].data.forEach(function (b) { D.biblio[b.candidato_id] = b.id; });
   }
 
   function estadoLeccion(id) {
@@ -116,6 +118,7 @@
         (c.elegido
           ? '<button type="button" class="wv-btn mini" data-editar="' + c.id + '">✂️ Editar</button><button type="button" class="wv-btn mini suave" data-archivo="' + c.id + '" title="Reemplaza el video incrustado por el archivo que te dio el dueño">' + (c.conArchivo ? '⬆ Cambiar archivo' : '⬆ Subir archivo del dueño') + '</button><button type="button" class="wv-btn mini peligro" data-quitar="' + c.id + '">Quitar elección</button>'
           : '<button type="button" class="wv-btn mini" data-elegir="' + c.id + '">Elegir este</button>') +
+        '<button type="button" class="wv-btn mini suave" data-biblio="' + c.id + '" title="Lo ven todos los alumnos como recurso opcional, sin ponerlo en la misión">' + (D.biblio[c.id] ? '📚 En la biblio-videoteca ✓' : '📚 A la biblio-videoteca') + '</button>' +
         '<a class="vd-yt" href="https://www.youtube.com/watch?v=' + esc(c.youtube_id) + '" target="_blank" rel="noopener">Abrir en YouTube</a>' +
       '</div></div>';
   }
@@ -295,6 +298,26 @@
     refrescarTotales();
   }
 
+  // Va a la biblio-videoteca de la materia (recurso opcional para todos los alumnos), sin ponerlo en la misión
+  async function biblio(candId) {
+    var cand = null, lecId = null, temaId = null;
+    Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
+    if (!cand) return;
+    D.temas.forEach(function (t) { t.lecs.forEach(function (l) { if (l.id === lecId) temaId = t.id; }); });
+    if (D.biblio[candId]) {
+      var d = await sb.from('biblioteca_items').delete().eq('id', D.biblio[candId]);
+      if (d.error) throw d.error;
+      delete D.biblio[candId];
+      aviso('Quitado de la biblio-videoteca');
+    } else {
+      var i = await sb.from('biblioteca_items').insert({ tipo: 'video', titulo: cand.titulo, descripcion: cand.canal, url: 'https://www.youtube.com/watch?v=' + cand.youtube_id, subject_id: E.subject, topic_id: temaId, candidato_id: candId }).select('id').single();
+      if (i.error) throw i.error;
+      D.biblio[candId] = i.data.id;
+      aviso('Agregado a la biblio-videoteca');
+    }
+    repintarLeccion(lecId);
+  }
+
   async function quitar(candId) {
     var cand = null, lecId = null;
     Object.keys(D.cands).forEach(function (k) { D.cands[k].forEach(function (c) { if (c.id === candId) { cand = c; lecId = k; } }); });
@@ -347,6 +370,7 @@
       if (!b) return;
       if (b.hasAttribute('data-estado')) { E.estado = b.getAttribute('data-estado'); pintarControles(); pintarLista(); return; }
       if (b.hasAttribute('data-ver')) { ponerReproductor(b); return; }
+      if (b.hasAttribute('data-biblio')) { b.disabled = true; biblio(b.getAttribute('data-biblio')).catch(function (e) { console.error(e); b.disabled = false; aviso('No se pudo guardar: ' + ((e && e.message) || e), true); }); return; }
       if (b.hasAttribute('data-elegir')) {
         b.disabled = true;
         elegir(b.getAttribute('data-elegir')).catch(function (e) { console.error(e); b.disabled = false; aviso('No se pudo guardar: ' + ((e && e.message) || e), true); });
