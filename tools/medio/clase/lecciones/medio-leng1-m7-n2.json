@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m7-n2",
+ "step_id": "19128ec8-46c6-4906-aae0-754bdf6ff5ad",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la B",
+ "sub": "Lengua 1 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué flota en el mar y lleva gente?",
+   "segundos": 6,
+   "respuesta": "¡UN BOTE!",
+   "emoji": "⛵",
+   "titulo": "UN SONIDO",
+   "sub": "nuevo",
+   "voz": [
+    "Desafío: ¿qué flota en el mar y lleva gente?",
+    "¡Un *BOTE*!",
+    "Hoy: *el sonido de bote*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "BOTE",
+   "silabas": [
+    "BO",
+    "TE"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *BOTE*.",
+    "La cortamos: bo, te.",
+    "¡Empieza con *bo*!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CON LAS VOCALES",
+   "columnas": [
+    "SÍLABA",
+    "PALABRA"
+   ],
+   "filas": [
+    [
+     "BA",
+     "BALDE"
+    ],
+    [
+     "BE",
+     "BEBÉ"
+    ],
+    [
+     "BI",
+     "BICI"
+    ],
+    [
+     "BO",
+     "BOTE"
+    ],
+    [
+     "BU",
+     "BÚHO"
+    ]
+   ],
+   "voz": [
+    "Juntamos el sonido con cada vocal.",
+    "*ba*.",
+    "*be*.",
+    "*bi*.",
+    "*bo*.",
+    "*bu*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "LABIOS JUNTOS",
+    "emoji": "😶",
+    "texto": "Cierro la boca"
+   },
+   "despues": {
+    "cab": "SE ABREN",
+    "emoji": "😮",
+    "texto": "¡BA!"
+   },
+   "voz": [
+    "Primero juntamos los *labios*.",
+    "Los abrimos con la voz: ¡*ba*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza como BOTE?",
+   "opciones": [
+    "FOCA",
+    "BOCA",
+    "CASA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá: bo… te.",
+    "¿Qué palabra empieza igual?",
+    "¡*BOCA*! bo… ca."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BOTE",
+     "empieza con bo"
+    ],
+    [
+     "SÍLABAS",
+     "ba, be, bi, bo, bu"
+    ],
+    [
+     "LABIOS",
+     "se juntan y se abren"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Bote* empieza con bo.",
+    "*ba, be, bi, bo, bu*.",
+    "Los *labios* se juntan y se abren.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

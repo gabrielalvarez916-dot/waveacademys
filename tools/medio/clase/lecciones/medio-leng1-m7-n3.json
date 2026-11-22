@@ -1,0 +1,144 @@
+{
+ "slug": "medio-leng1-m7-n3",
+ "step_id": "719a22c2-1860-49b1-8be3-30030c033e6b",
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con C, F y B",
+ "sub": "Lengua 1 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué viste en el mar?"
+    },
+    {
+     "yo": true,
+     "txt": "LA FOCA TOMA UN COCO"
+    },
+    {
+     "yo": false,
+     "txt": "¡Ja! ¡Lo leí!"
+    }
+   ],
+   "titulo": "LEER",
+   "sub": "palabras del mar",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué viste en el mar?",
+    "Sofi contesta con una oración.",
+    "Hoy: *leer palabras del mar*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "LA FOCA TOMA UN COCO",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "FO-CA",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "TO-MA",
+     "color": "sol"
+    },
+    {
+     "desde": 4,
+     "hasta": 4,
+     "etiqueta": "CO-CO",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Leemos: la foca toma un coco.",
+    "*FOCA*: fo, ca.",
+    "*TOMA*: to, ma.",
+    "*COCO*: co, co."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CON F",
+   "b": "CON B",
+   "itemsA": [
+    "FOTO",
+    "FIDEO"
+   ],
+   "itemsB": [
+    "BOTE",
+    "NUBE"
+   ],
+   "ambos": [
+    "FÚTBOL",
+    "FIEBRE"
+   ],
+   "voz": [
+    "Separamos palabras por su sonido.",
+    "*FOTO* y *FIDEO* suenan con fff.",
+    "*BOTE* y *NUBE* suenan con ba, be.",
+    "¡*FÚTBOL* tiene los dos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra forman CU y NA?",
+   "opciones": [
+    "NACU",
+    "CUNA",
+    "CUBA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá cu y na.",
+    "¿Qué palabra se forma?",
+    "¡*CUNA*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEÉ DOS VECES",
+   "texto": "Primero despacio, después más rápido",
+   "emoji": "🔁",
+   "voz": [
+    "Truco: leé *dos veces*, la segunda más rápido."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "FO-CA"
+    ],
+    [
+     "PALABRAS",
+     "FOCA, BOTE"
+    ],
+    [
+     "ORACIÓN",
+     "LA FOCA TOMA UN COCO"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *sílabas*.",
+    "Formamos *palabras*.",
+    "Y leemos *oraciones*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

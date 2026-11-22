@@ -1,0 +1,135 @@
+{
+ "slug": "medio-leng1-m7-n4",
+ "step_id": "fd7928cc-d488-4bf8-8814-80125c0e0b79",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con C, F y B",
+ "sub": "Lengua 1 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "DIARIO DEL MAR",
+   "titular": "¡SOFI ESCRIBE UNA POSTAL!",
+   "bajada": "Con palabras del mar",
+   "emoji": "💌",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras del mar",
+   "voz": [
+    "¡Sofi escribe una *postal* desde el mar!",
+    "Usa palabras con sonidos nuevos.",
+    "Hoy: *escribir palabras del mar*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "F",
+    "O",
+    "C",
+    "A"
+   ],
+   "grande": "FOCA",
+   "etiqueta": "FO · CA",
+   "voz": [
+    "Sofi dice despacio: fff… o… ca.",
+    "Escribe y se forma *FOCA*.",
+    "¡La primera palabra de la postal!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS BOTA",
+   "items": [
+    {
+     "txt": "B",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "O",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "T",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "4️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    3,
+    0,
+    1
+   ],
+   "voz": [
+    "Las letras de BOTA se mezclaron.",
+    "Las ponemos en *orden*.",
+    "bo… ta: ¡*BOTA*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BOTA",
+    "texto": "la voz vibra",
+    "emoji": "👢"
+   },
+   "b": {
+    "cab": "PATO",
+    "texto": "sale aire",
+    "emoji": "🦆"
+   },
+   "signo": "vs",
+   "voz": [
+    "En *bota*, la garganta vibra.",
+    "En *pato*, sale aire.",
+    "¡Tocá tu garganta y probá!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? NU_E",
+   "opciones": [
+    "P",
+    "B",
+    "F"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. nnn… u… hueco… e.",
+    "¿Qué falta para decir NUBE?",
+    "¡Falta *be*! NU-BE."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "FO-CA"
+    ],
+    [
+     "BOTA O PATO",
+     "sentir la voz"
+    ],
+    [
+     "REVISAR",
+     "leer lo escrito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* cada sonido.",
+    "Sentimos la *voz* en la garganta.",
+    "Y *revisamos* leyendo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

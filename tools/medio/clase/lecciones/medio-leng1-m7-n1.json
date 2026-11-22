@@ -1,0 +1,117 @@
+{
+ "slug": "medio-leng1-m7-n1",
+ "step_id": "488886cb-6f0d-4c3b-a8ac-f67a7783dd67",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la C y la F",
+ "sub": "Lengua 1 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🌊",
+   "lineas": [
+    "Sofi pasea por el mar.",
+    "Ve una foca en una roca.",
+    "¡Y una casa en la playa!"
+   ],
+   "titulo": "LA C Y LA F",
+   "sub": "en el mar",
+   "voz": [
+    "Sofi pasea por el *mar*.",
+    "Ve una *foca* en una roca.",
+    "¡Y una *casa* en la playa!",
+    "Hoy: *los sonidos de casa y foca*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "C",
+    "texto": "CASA · COCO · CUNA",
+    "emoji": "🏠"
+   },
+   "b": {
+    "cab": "F",
+    "texto": "FOCA · FOTO · FIDEO",
+    "emoji": "🦭"
+   },
+   "signo": "y",
+   "voz": [
+    "En *casa*, *coco* y *cuna*: ca, co, cu.",
+    "En *foca*, *foto* y *fideo*: fff.",
+    "¡Dos sonidos nuevos!"
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "FOCA",
+   "silabas": [
+    "FO",
+    "CA"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *FOCA*.",
+    "La cortamos: fo, ca.",
+    "¡Tiene *2 sílabas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SOPLÁ",
+   "texto": "Para decir fff, los dientes tocan el labio",
+   "emoji": "🌬️",
+   "voz": [
+    "Truco: para decir *fff*, soplá suavecito."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza como FOCA?",
+   "opciones": [
+    "CASA",
+    "FOTO",
+    "BOTA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá: fff… oca.",
+    "¿Qué palabra empieza igual?",
+    "¡*FOTO*! fff… oto."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CASA",
+     "ca, co, cu"
+    ],
+    [
+     "FOCA",
+     "fff"
+    ],
+    [
+     "SÍLABAS",
+     "FO-CA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En casa: *ca, co, cu*.",
+    "En foca: *fff*.",
+    "Y leemos *fo-ca*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
