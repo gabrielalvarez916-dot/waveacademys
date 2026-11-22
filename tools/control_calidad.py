@@ -60,7 +60,7 @@ def revisar_pregunta(q, donde, nivel, err, avi):
     if n in PENSADAS and MEMORIA.search(p): err.append(f'{donde}: está como "{n}" pero pide recordar un nombre o un sí/no: «{p[:70]}»')
     if t in ('multiple_choice', 'multi_select', 'odd_one_out') and isinstance(o, list):
         ops = [str(x) for x in o]
-        if len({norm(x) for x in ops}) < len(ops): err.append(f'{donde}: opciones repetidas')
+        if len({(norm(x) or str(x).strip()) for x in ops}) < len(ops): err.append(f'{donde}: opciones repetidas')
         if nivel != 'primeros' and t == 'multiple_choice' and len(ops) < 3 and {norm(x) for x in ops} != {'sí', 'no'}:
             err.append(f'{donde}: menos de 3 opciones')
         corr = r.get('correcta') if isinstance(r, dict) else r
