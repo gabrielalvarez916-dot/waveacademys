@@ -141,4 +141,5 @@ OK |= {'regalos', 'caramelo', 'regala', 'regalo', 'vocales', 'lila', 'malo', 'pa
 OK |= {'elsolsale', 'mipapátomamate'}  # Lengua 1 · Misión 8: palabras pegadas a propósito (sin espacios)
 OK |= {'palo'}; MAPA.update({'raspá': 'raspa'})  # Lengua 1 · Misión 9
 OK |= {'caí'}; MAPA.update({'parás': 'paras'})  # Lengua 1 · Misión 10
+OK |= {'crecí', 'tele'}; MAPA.update({'olés': 'hueles', 'lavás': 'lavas', 'observás': 'observas', 'agarrás': 'agarras', 'frotá': 'frota', 'frotás': 'frotas', 'imaginás': 'imaginas', 'lavate': 'lávate', 'registrá': 'registra'})  # Ciencias Naturales 1 · Misión 1
 OK -= set(MAPA)

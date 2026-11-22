@@ -1,0 +1,155 @@
+{
+ "slug": "medio-nat1-m1-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 1,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Lavado de manos y salud",
+ "sub": "Ciencias Naturales 1 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡HAY MICROBIOS EN LAS MANOS!",
+   "bajada": "Son tan chiquitos que no se ven",
+   "emoji": "🦠",
+   "titulo": "MANOS LIMPIAS",
+   "sub": "y salud",
+   "voz": [
+    "¡Último momento! Hay *microbios* en las manos.",
+    "Son tan chiquitos que no se ven.",
+    "Hoy: *lavarnos bien las manos*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "✋",
+     "txt": "MI MANO"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "CON LUPA"
+    },
+    {
+     "emoji": "🦠",
+     "txt": "MICROBIOS"
+    }
+   ],
+   "voz": [
+    "Miramos una *mano*.",
+    "La miramos con una lupa gigante.",
+    "¡Aparecen los *microbios*!"
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿AGUA SOLA O CON JABÓN?",
+   "variable": "EL JABÓN",
+   "a": {
+    "cab": "SOLO AGUA",
+    "emojis": [
+     "✋",
+     "💧"
+    ],
+    "txt": "Sin jabón",
+    "res": "QUEDAN MICROBIOS"
+   },
+   "b": {
+    "cab": "AGUA Y JABÓN",
+    "emojis": [
+     "✋",
+     "🧼"
+    ],
+    "txt": "Con jabón",
+    "res": "¡MANOS LIMPIAS!"
+   },
+   "voz": [
+    "Tomi lava una mano solo con agua.",
+    "La otra, con agua y *jabón*.",
+    "¡Con jabón, los microbios se van!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PASO A PASO",
+   "items": [
+    {
+     "txt": "MOJAR",
+     "emoji": "💧"
+    },
+    {
+     "txt": "JABÓN",
+     "emoji": "🧼"
+    },
+    {
+     "txt": "FROTAR HASTA 20",
+     "emoji": "👐"
+    },
+    {
+     "txt": "ENJUAGAR",
+     "emoji": "🚿"
+    },
+    {
+     "txt": "SECAR",
+     "emoji": "🧻"
+    }
+   ],
+   "voz": [
+    "Así nos lavamos las manos.",
+    "Primero, *mojamos*.",
+    "Ponemos *jabón*.",
+    "Frotamos contando hasta *20*.",
+    "*Enjuagamos* con agua.",
+    "Y *secamos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuándo te lavás las manos?",
+   "opciones": [
+    "ANTES DE COMER",
+    "AL DORMIR",
+    "AL CANTAR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá un momento importante.",
+    "¿Cuándo te lavás las manos?",
+    "¡*Antes de comer*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MICROBIOS",
+     "no se ven"
+    ],
+    [
+     "JABÓN",
+     "siempre"
+    ],
+    [
+     "CUÁNDO",
+     "antes de comer"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *microbios* no se ven.",
+    "Siempre con agua y *jabón*.",
+    "Y *antes de comer*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

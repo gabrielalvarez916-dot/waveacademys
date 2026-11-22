@@ -1,0 +1,155 @@
+{
+ "slug": "medio-nat1-m1-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 1,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Partes de mi cuerpo y para qué sirven",
+ "sub": "Ciencias Naturales 1 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "⚽",
+   "lineas": [
+    "Sofi juega a la pelota.",
+    "Corre, mira y patea.",
+    "¡Todo su cuerpo ayuda!"
+   ],
+   "titulo": "MI CUERPO",
+   "sub": "un gran equipo",
+   "voz": [
+    "Sofi juega a la *pelota*.",
+    "Corre, mira y patea.",
+    "¡Todo su cuerpo ayuda!",
+    "Hoy: *las partes de mi cuerpo*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🧍",
+   "titulo": "MI CUERPO",
+   "partes": [
+    {
+     "txt": "CABEZA",
+     "x": 0.1,
+     "y": -0.8
+    },
+    {
+     "txt": "TRONCO",
+     "x": -0.1,
+     "y": -0.1
+    },
+    {
+     "txt": "BRAZOS",
+     "x": 0.5,
+     "y": -0.2
+    },
+    {
+     "txt": "PIERNAS",
+     "x": -0.2,
+     "y": 0.7
+    }
+   ],
+   "voz": [
+    "Este es nuestro *cuerpo*.",
+    "Arriba está la *cabeza*.",
+    "En el medio, el *tronco*.",
+    "A los costados, los *brazos*.",
+    "Abajo, las *piernas*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CADA UNO, SU TRABAJO",
+   "items": [
+    {
+     "cab": "👀 OJOS",
+     "txt": "VER"
+    },
+    {
+     "cab": "👂 OREJAS",
+     "txt": "OÍR"
+    },
+    {
+     "cab": "👃 NARIZ",
+     "txt": "OLER"
+    },
+    {
+     "cab": "👅 LENGUA",
+     "txt": "PROBAR"
+    },
+    {
+     "cab": "✋ PIEL",
+     "txt": "TOCAR"
+    }
+   ],
+   "voz": [
+    "Cada parte tiene su *trabajo*.",
+    "Con los ojos, *vemos*.",
+    "Con las orejas, *oímos*.",
+    "Con la nariz, *olemos*.",
+    "Con la lengua, *probamos*.",
+    "Con la piel, *tocamos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con qué olés una flor?",
+   "opciones": [
+    "OJOS",
+    "NARIZ",
+    "OREJAS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Hay una flor linda.",
+    "¿Con qué sentís su olor?",
+    "¡Con la *nariz*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN EQUIPO",
+   "texto": "Todas las partes ayudan",
+   "emoji": "🤝",
+   "voz": [
+    "Tu cuerpo es un *equipo*: todas ayudan."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PARTES",
+     "cabeza, tronco, extremidades"
+    ],
+    [
+     "SENTIDOS",
+     "ver, oír, oler, probar, tocar"
+    ],
+    [
+     "EQUIPO",
+     "todas ayudan"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cabeza, *tronco* y extremidades.",
+    "Cinco *sentidos* para conocer.",
+    "Todas las partes son un *equipo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

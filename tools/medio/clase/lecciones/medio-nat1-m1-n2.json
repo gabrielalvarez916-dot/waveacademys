@@ -1,0 +1,123 @@
+{
+ "slug": "medio-nat1-m1-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 1,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Lo que cambió desde el jardín",
+ "sub": "Ciencias Naturales 1 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Te entran las zapatillas del jardín?",
+   "segundos": 6,
+   "respuesta": "¡NO! ¡CRECÍ!",
+   "emoji": "👟",
+   "titulo": "CRECER",
+   "sub": "desde el jardín",
+   "voz": [
+    "Desafío: ¿te entran las zapatillas del jardín?",
+    "¡No! ¡Tus pies *crecieron*!",
+    "Hoy: *lo que cambió desde el jardín*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "EN EL JARDÍN",
+    "emoji": "🧒",
+    "texto": "Más bajito"
+   },
+   "despues": {
+    "cab": "AHORA",
+    "emoji": "🧑",
+    "texto": "Más alto"
+   },
+   "voz": [
+    "En el jardín eras más *bajito*.",
+    "Ahora sos más *alto*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "MI DIENTE",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "SE MUEVE",
+     "emoji": "🦷"
+    },
+    {
+     "fecha": "2",
+     "txt": "SE CAE",
+     "emoji": "😁"
+    },
+    {
+     "fecha": "3",
+     "txt": "SALE UNO NUEVO",
+     "emoji": "✨"
+    }
+   ],
+   "voz": [
+    "Primero, el diente se *mueve*.",
+    "Después, se *cae*.",
+    "Y sale un diente *nuevo*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué pasa con los dientes de leche?",
+   "opciones": [
+    "SE PONEN AZULES",
+    "SE CAEN Y SALEN OTROS",
+    "NUNCA CAMBIAN"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los dientes.",
+    "¿Qué pasa con los de leche?",
+    "¡Se *caen* y salen otros!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "A TU RITMO",
+   "texto": "Cada chico crece a su tiempo",
+   "emoji": "🌱",
+   "voz": [
+    "Truco: cada chico crece a *su ritmo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CRECER",
+     "más alto"
+    ],
+    [
+     "DIENTES",
+     "se caen y salen"
+    ],
+    [
+     "RITMO",
+     "cada uno el suyo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Desde el jardín, *creciste*.",
+    "Los dientes de leche se *caen*.",
+    "Cada uno crece a *su ritmo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
