@@ -71,7 +71,13 @@
     var r = await sb.functions.invoke(nombre, { body: body });
     if (r.error) {
       var msg = 'No se pudo completar. Probá de nuevo en un momento.';
-      try { var c = await r.error.context.json(); if (c && c.error) msg = c.error; } catch (e) { /* genérico */ }
+      var st = null;
+      try { st = r.error.context && r.error.context.status; var c = await r.error.context.json(); if (c && c.error) msg = c.error; } catch (e) { /* genérico */ }
+      if (st === 401 || msg === 'No autenticado') {  // la sesión se cerró (por ejemplo, en otra pestaña): se vuelve a entrar en vez de mostrar un error técnico
+        msg = 'Tu sesión se cerró. Volvé a entrar para ver el contenido.';
+        try { await sb.auth.signOut(); } catch (e2) { /* nada */ }
+        setTimeout(function () { location.reload(); }, 2500);
+      }
       throw new Error(msg);
     }
     if (r.data && r.data.error) throw new Error(r.data.error);
