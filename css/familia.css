@@ -595,3 +595,11 @@
 .tst-ad li span { display: inline-block; margin-right: 6px; font-weight: 800; font-size: .8rem; }
 .tst-ad li.ya span { color: #1c7c4d; }
 .tst-ad li.luego span { color: #8a6d00; }
+
+.tst-ad li { display: flex; gap: 10px; align-items: flex-start; }
+.tst-ck { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #1c7c4d; color: #fff; font-size: .8rem; font-weight: 800; margin-top: 1px; }
+.tst-tray h4 { margin: 14px 0 6px; font-size: .98rem; }
+.tst-reco { margin: 0 0 14px; padding: 12px 14px; background: #FFF6E0; border-radius: 14px; line-height: 1.5; text-align: left; }
+.tst-acc { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tst-sec { background: #fff; color: var(--petroleo, #253638); border: 2px solid rgba(8,126,131,.35); }
+.tst-luego { border: 0; background: none; font: inherit; font-weight: 700; text-decoration: underline; color: #4B6062; cursor: pointer; padding: 8px 4px; }

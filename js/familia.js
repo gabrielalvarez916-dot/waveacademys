@@ -101,7 +101,7 @@
       sb.from('grades').select('id, year_number, name, levels(name, position)'),
       sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden'),
       sb.from('test_aprendizaje').select('student_id, fecha, trayectos').order('fecha', { ascending: false }),
-      sb.from('adaptaciones_apoyo').select('clave, trayecto, texto, lista, orden').order('orden')
+      sb.from('adaptaciones_apoyo').select('clave, trayecto, texto, texto_familia, lista, orden').order('orden')
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
 
@@ -316,10 +316,10 @@
 
   function adaptacionesDe(d, trayectos) { return (d.adaptaciones || []).filter(function (a) { return trayectos.indexOf(a.trayecto) >= 0; }); }
   function adaptacionesHtml(d, c) {
-    var xs = adaptacionesDe(d, [c]);
+    var xs = adaptacionesDe(d, [c]).filter(function (a) { return a.lista && (a.texto_familia || a.texto); });
     if (!xs.length) return '';
     return '<ul class="tst-ad">' + xs.map(function (a) {
-      return '<li class="' + (a.lista ? 'ya' : 'luego') + '"><span>' + (a.lista ? '✓ Activa desde ya' : '⏳ Se activa cuando esté lista') + '</span> ' + esc(a.texto) + '</li>';
+      return '<li><span class="tst-ck" aria-hidden="true">✓</span>' + esc(a.texto_familia || a.texto) + '</li>';
     }).join('') + '</ul>';
   }
 
@@ -373,32 +373,41 @@
         diagnostico: diag || null, trayectos: res.trayectos, ajustes: res.ajustes
       }).select('id').single();
       var testId = ins.data ? ins.data.id : null;
-      var tr = res.trayectos;
+      var tr = res.trayectos, nom = esc(hijo.nombre);
       var lista = tr.length ? tr.map(function (c) {
         var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0] || { nombre: c, descripcion: '' };
-        return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p>' + adaptacionesHtml(d, c) + '</div>';
+        return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p>' +
+          '<h4>Qué va a encontrar ' + nom + ' en Wave</h4>' + adaptacionesHtml(d, c) + '</div>';
       }).join('') : (function () { var t = (d.trayectos || []).filter(function (x) { return x.clave === 'convencional'; })[0]; return '<div class="tst-tray"><b>Convencional</b><p>' + esc(t ? t.descripcion : 'Recorrido estándar de Wave.') + '</p></div>'; })();
-      var aj = Object.keys(res.ajustes).map(function (k) { return '<li>' + esc(T_ETIQ[k] || k) + '</li>'; }).join('');
+      var conApoyo = tr.length > 0;
       fondo.innerHTML = '<div class="tst-caja" role="dialog">' +
-        '<h2>El recorrido que recomendamos para ' + esc(hijo.nombre) + '</h2>' +
-        '<p class="tst-intro">' + (tr.length > 1 ? 'Según tus respuestas, estos dos trayectos se combinan bien:' : 'Según tus respuestas, conviene este recorrido:') + '</p>' + lista +
-        (res.muchas ? '<p class="tst-nota">Notamos que hay varias áreas que le cuestan. Además de esto, conviene hablar con Dirección o con su tutor para armar un recorrido a su medida.</p>' : '') +
-        (aj ? '<h3>Ajustes generales que se activan en su panel</h3><ul class="tst-aj">' + aj + '</ul>' : '') +
-        '<p class="tst-intro">Al tocar el botón, todo lo de arriba queda asignado a ' + esc(hijo.nombre) + '. Lo que dice «se activa cuando esté lista» arranca solo apenas esa adaptación está construida, sin que hagas nada. Además siempre están disponibles la lectura en voz alta del PDF, el dictado por voz, el contraste, la letra más grande, menos animación y el mapa de la misión.</p>' +
-        '<p class="tst-intro">Podés cambiar todo esto cuando quieras, y repetir el test pasados unos meses.</p>' +
-        '<div class="tst-acc"><button type="button" class="boton" data-t="aplicar">Dejar esto configurado</button></div></div>';
+        '<h2>' + (conApoyo ? 'Armamos un recorrido pensado para ' + nom : 'El recorrido de ' + nom) + '</h2>' +
+        (conApoyo
+          ? '<p class="tst-intro">Gracias por contarnos cómo aprende ' + nom + '. Con tus respuestas preparamos ' + (tr.length > 1 ? 'una combinación de dos recorridos' : 'un recorrido') + ' para que estudiar le resulte más tranquilo y más fácil.</p>' +
+            '<p class="tst-reco"><b>Te recomendamos seguirlo</b>, porque es lo que mejor se ajusta a lo que nos contaste. Igual es <b>totalmente opcional</b>: vos decidís, y lo podés cambiar o desactivar cuando quieras.</p>'
+          : '<p class="tst-intro">Según tus respuestas, ' + nom + ' puede seguir el recorrido estándar de Wave. Si más adelante notás que algo le cuesta, podés repetir el test y sumar apoyos.</p>') +
+        lista +
+        (res.muchas ? '<p class="tst-nota">Notamos que hay varias áreas que le cuestan. Además de esto, te sugerimos hablar con Dirección o con su tutor, así armamos un acompañamiento a su medida.</p>' : '') +
+        (conApoyo ? '<p class="tst-intro">Si lo aceptás, queda todo listo en el panel de ' + nom + ' y empieza a verlo desde su próxima sesión. Y siempre tiene a mano la lectura en voz alta de los PDF, el dictado por voz y la letra más grande.</p>' : '') +
+        '<div class="tst-acc">' +
+          (conApoyo ? '<button type="button" class="boton" data-t="aplicar">Sí, quiero este recorrido para ' + nom + '</button>' +
+            '<button type="button" class="boton-mini tst-sec" data-t="conv">Prefiero el recorrido estándar</button>'
+            : '<button type="button" class="boton" data-t="conv">Dejar el recorrido estándar</button>') +
+          '<button type="button" class="tst-luego" data-t="luego">Lo decido después</button>' +
+        '</div></div>';
       fondo._res = res; fondo._testId = testId;
     }
 
-    async function aplicar(btn) {
+    async function aplicar(btn, conv) {
       var res = fondo._res;
-      btn.disabled = true; btn.textContent = 'Guardando…';
+      if (conv) res = { trayectos: [], ajustes: {} };
+      var txtBtn = btn.textContent; btn.disabled = true; btn.textContent = 'Guardando…';
       var cur = await sb.from('students').select('apoyos').eq('id', hijo.id).maybeSingle();
       var apoyos = Object.assign({}, (cur.data && cur.data.apoyos) || {}, res.ajustes);
       var claves = adaptacionesDe(d, res.trayectos).map(function (a) { return a.clave; });
       var u = await sb.from('students').update({ trayectos_apoyo: res.trayectos, apoyos: apoyos, adaptaciones: claves }).eq('id', hijo.id);
       if (fondo._testId) await sb.from('test_aprendizaje').update({ aplicado: !u.error }).eq('id', fondo._testId);
-      if (u.error) { btn.disabled = false; btn.textContent = 'Dejar esto configurado'; alert('No se pudo guardar. Probá de nuevo.'); return; }
+      if (u.error) { btn.disabled = false; btn.textContent = txtBtn; alert('No se pudo guardar. Probá de nuevo.'); return; }
       cerrar();
     }
 
@@ -416,7 +425,9 @@
         if (T_PREG.some(function (_, i) { return resp[i] === undefined; })) { pintarPreguntas(true); var f = fondo.querySelector('.falta'); if (f) f.scrollIntoView({ block: 'center' }); return; }
         b.disabled = true; verResultado();
       }
-      else if (a === 'aplicar') aplicar(b);
+      else if (a === 'aplicar') aplicar(b, false);
+      else if (a === 'conv') aplicar(b, true);
+      else if (a === 'luego') { fondo.remove(); document.body.style.overflow = ''; if (alTerminar) alTerminar(); }
     });
     pintarPreguntas(false);
   }
