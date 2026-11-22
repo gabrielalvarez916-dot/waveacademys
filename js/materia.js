@@ -78,6 +78,13 @@
     return r.data;
   }
 
+  // Trayecto Anticipación, modo calmo: las clases y actividades corren sin música ni efectos de sonido (la voz de la clase queda) y sin transiciones
+  function calmar(html) {
+    if (!D || !D.adaptaciones || D.adaptaciones.indexOf('ant_calmo') < 0 || typeof html !== 'string') return html;
+    var cod = '<script>try{window.AudioContext=undefined;window.webkitAudioContext=undefined;}catch(e){}</script><style>*,*::before,*::after{transition:none!important}</style>';
+    return /<head[^>]*>/i.test(html) ? html.replace(/<head[^>]*>/i, function (m) { return m + cod; }) : cod + html;
+  }
+
   // ---------- Datos ----------
   async function cargar(materiaId) {
     var ses = await sb.auth.getSession();
@@ -694,7 +701,7 @@
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
-    frame.srcdoc = r.data.html;
+    frame.srcdoc = calmar(r.data.html);
     if (paso && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('clase', { lesson_id: paso.lesson_id }));
     function enFull() { return document.fullscreenElement || document.webkitFullscreenElement; }
     function pantallaCompleta() { // API de pantalla completa; si no existe (iPhone), ocupa toda la pantalla y gira en vertical
@@ -734,7 +741,7 @@
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
-    frame.srcdoc = html;
+    frame.srcdoc = calmar(html);
     if (paso && window.WaveTutor) WaveTutor.flotante(el.querySelector('.wvp-caja'), tutorOps('actividad', { lesson_id: paso.lesson_id }));
 
     function cerrar() {
