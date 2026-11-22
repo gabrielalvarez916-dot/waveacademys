@@ -142,3 +142,19 @@ body.wvp-abierto { overflow: hidden; }
 .wvp-texto span.wvp-lee { background: rgba(255, 214, 51, 0.5); }
 .wvp-vel { font: inherit; padding: 6px 4px; border-radius: 8px; border: 1px solid #c9d3d1; background: #fff; }
 .wvp-voz .wvp-leer { background: #1f3a8a; color: #fff; }
+
+/* Barra del visor de PDF en filas: 1) título + cerrar, 2) páginas/zoom/tutor, 3) lectura en voz alta */
+.wvp-barra-pdf { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 8px; }
+.wvp-barra-pdf .wvp-f1 { display: flex; align-items: center; gap: 10px; }
+.wvp-barra-pdf .wvp-titulo { flex: 1 1 auto; order: 0; }
+.wvp-barra-pdf .wvp-x { flex: 0 0 auto; margin-left: auto; }
+.wvp-barra-pdf .wvp-f2 { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.wvp-barra-pdf .wvp-f3 { display: flex; align-items: center; padding-top: 8px; border-top: 1px solid rgba(6, 95, 99, .18); }
+.wvp-barra-pdf .wvp-voz { flex-wrap: wrap; gap: 6px; }
+.wvp-barra-pdf .wvp-voz .wvp-b { font-size: .9rem; }
+@media (max-width: 640px) {
+  .wvp-barra-pdf .wvp-titulo { flex-basis: auto; order: 0; }
+  .wvp-barra-pdf .wvp-f2 { justify-content: center; }
+  .wvp-barra-pdf .wvp-f3 { justify-content: center; }
+  .wvp-barra-pdf .wvp-b { height: 36px; padding: 0 10px; }
+}

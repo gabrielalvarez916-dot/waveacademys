@@ -36,8 +36,10 @@
     el.innerHTML =
       '<div class="wvp-caja' + (conChat ? ' con-chat' : '') + '">' +
        '<div class="wvp-doc">' +
-        '<div class="wvp-barra">' +
-          '<b class="wvp-titulo">' + esc(opts.titulo || 'PDF') + '</b>' +
+        '<div class="wvp-barra wvp-barra-pdf">' +
+         '<div class="wvp-f1"><b class="wvp-titulo">' + esc(opts.titulo || 'PDF') + '</b>' +
+          '<button type="button" class="wvp-b wvp-x" data-v="cerrar" aria-label="Cerrar">✕</button></div>' +
+         '<div class="wvp-f2">' +
           '<div class="wvp-ctrl wvp-pag">' +
             '<button type="button" class="wvp-b" data-v="ant" aria-label="Página anterior">‹</button>' +
             '<span class="wvp-num">–</span>' +
@@ -48,15 +50,17 @@
             '<button type="button" class="wvp-b wvp-ancho" data-v="ajustar" aria-label="Ajustar al ancho">Ajustar</button>' +
             '<button type="button" class="wvp-b" data-v="mas" aria-label="Acercar">+</button>' +
           '</div>' +
+          (conChat ? '<button type="button" class="wvp-b wvp-bchat" data-v="chat">💬 Tutor</button>' : '') +
+          (opts.descargable ? '<button type="button" class="wvp-b wvp-desc" data-v="bajar">⬇ Descargar</button>' : '') +
+         '</div>' +
+         '<div class="wvp-f3">' +
           '<div class="wvp-ctrl wvp-voz">' +
             '<button type="button" class="wvp-b wvp-leer" data-v="leer">🔊 Escuchar</button>' +
             '<button type="button" class="wvp-b" data-v="pausa" hidden>⏸ Pausa</button>' +
             '<button type="button" class="wvp-b" data-v="parar" hidden>■ Parar</button>' +
             '<select class="wvp-vel" aria-label="Velocidad de la voz"><option value="0.8">Lenta</option><option value="1" selected>Normal</option><option value="1.25">Rápida</option></select>' +
           '</div>' +
-          (conChat ? '<button type="button" class="wvp-b wvp-bchat" data-v="chat">💬 Tutor</button>' : '') +
-          (opts.descargable ? '<button type="button" class="wvp-b wvp-desc" data-v="bajar">⬇ Descargar</button>' : '') +
-          '<button type="button" class="wvp-b wvp-x" data-v="cerrar" aria-label="Cerrar">✕</button>' +
+         '</div>' +
         '</div>' +
         '<div class="wvp-cuerpo">' +
           '<div class="wvp-estado">Cargando PDF…</div>' +
