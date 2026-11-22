@@ -21,7 +21,11 @@ GUION = re.compile(rf'(?<![{L}])([{L}]+(?:-[{L}]+)+)(?![{L}])')
 def silabeado(m):  # To-mi -> tttt oooo mmmm iiii   (como lo escribe Gaby)
     return ' '.join(c * 4 for c in m.group(1).replace('-', '') if c.isalpha()).lower()
 
+# Un hueco (letra que falta) no se dice «hueco»: es un silencio.
+HUECO = re.compile(r'(?<=[,:]\s)huecos?(?=\s?[,.?!])', re.I)
+
 def para_eleven(t):
+    t = HUECO.sub('… …', t)
     t = GUION.sub(silabeado, t)
     if not es_de_sonidos(t): return t
     t = RUN.sub(lambda m: m.group(1) * 4, t)
