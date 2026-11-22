@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m4-n2",
+ "step_id": "8979d6de-4115-406c-badc-dcc9c7f4295f",
+ "materia": "Lengua 1",
+ "titulo": "Leer sílabas con S y L",
+ "sub": "Lengua 1 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo suenan juntas la S y la A?",
+   "segundos": 6,
+   "respuesta": "¡SA!",
+   "emoji": "🐸",
+   "titulo": "SÍLABAS",
+   "sub": "con S y L",
+   "voz": [
+    "Desafío: ¿cómo suenan la S y la A?",
+    "¡*SA*!",
+    "Hoy: *leer sílabas con S y L*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "SAPO",
+   "silabas": [
+    "SA",
+    "PO"
+   ],
+   "tonica": 0,
+   "tipo": "2 SÍLABAS",
+   "voz": [
+    "Esta palabra es *SAPO*.",
+    "La cortamos: SA, PO.",
+    "¡Tiene *2 sílabas*!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LA S Y LA L CON LAS VOCALES",
+   "columnas": [
+    "CON S",
+    "CON L"
+   ],
+   "filas": [
+    [
+     "SA",
+     "LA"
+    ],
+    [
+     "SE",
+     "LE"
+    ],
+    [
+     "SI",
+     "LI"
+    ],
+    [
+     "SO",
+     "LO"
+    ],
+    [
+     "SU",
+     "LU"
+    ]
+   ],
+   "voz": [
+    "Las juntamos con cada vocal.",
+    "*SA* y *LA*.",
+    "*SE* y *LE*.",
+    "*SI* y *LI*.",
+    "*SO* y *LO*.",
+    "*SU* y *LU*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ASÍ",
+    "emoji": "➡️",
+    "texto": "LA"
+   },
+   "despues": {
+    "cab": "AL REVÉS",
+    "emoji": "↩️",
+    "texto": "AL"
+   },
+   "voz": [
+    "La L primero dice *LA*.",
+    "Al revés, la A primero, dice *AL*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se lee S con O?",
+   "opciones": [
+    "OS",
+    "SO",
+    "LO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá la S y la O.",
+    "¿Cómo se lee?",
+    "¡*SO*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CON S",
+     "SA, SE, SI, SO, SU"
+    ],
+    [
+     "CON L",
+     "LA, LE, LI, LO, LU"
+    ],
+    [
+     "AL REVÉS",
+     "AL, EL"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*SA, SE, SI, SO, SU*.",
+    "*LA, LE, LI, LO, LU*.",
+    "Y al revés: *AL, EL*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

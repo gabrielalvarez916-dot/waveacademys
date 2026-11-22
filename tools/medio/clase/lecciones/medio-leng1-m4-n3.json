@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m4-n3",
+ "step_id": "15a22426-bba2-4f42-85c4-1e638d31a22d",
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con S y L",
+ "sub": "Lengua 1 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué viste en la laguna?"
+    },
+    {
+     "yo": true,
+     "txt": "EL SAPO ES MALO"
+    },
+    {
+     "yo": false,
+     "txt": "¡Ja! ¡Lo leí solo!"
+    }
+   ],
+   "titulo": "LEER",
+   "sub": "palabras con S y L",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué viste en la laguna?",
+    "Sofi contesta con una oración.",
+    "Hoy: *leer palabras con S y L*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "EL SAPO ES MALO",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "SA-PO",
+     "color": "sol"
+    },
+    {
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "MA-LO",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Leemos: el sapo es malo.",
+    "*SAPO*: SA, PO.",
+    "*MALO*: MA, LO."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CON S",
+   "b": "CON L",
+   "itemsA": [
+    "SOPA",
+    "MESA"
+   ],
+   "itemsB": [
+    "LUPA",
+    "LOMA"
+   ],
+   "ambos": [
+    "SAL",
+    "SOL"
+   ],
+   "voz": [
+    "Separamos palabras.",
+    "*SOPA* y *MESA* tienen S.",
+    "*LUPA* y *LOMA* tienen L.",
+    "¡*SAL* y *SOL* tienen las dos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra forman PA y LA?",
+   "opciones": [
+    "LAPA",
+    "PALA",
+    "PAPA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá PA y LA.",
+    "¿Qué palabra se forma?",
+    "¡*PALA*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PALABRA POR PALABRA",
+   "texto": "Leé cada palabra y después todo junto",
+   "emoji": "📖",
+   "voz": [
+    "Truco: leé *palabra por palabra*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "SA + PO"
+    ],
+    [
+     "PALABRAS",
+     "SAPO"
+    ],
+    [
+     "ORACIÓN",
+     "dice algo completo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Juntamos *sílabas*.",
+    "Leemos *palabras*.",
+    "Y leemos una *oración*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

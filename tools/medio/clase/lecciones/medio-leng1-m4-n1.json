@@ -1,0 +1,124 @@
+{
+ "slug": "medio-leng1-m4-n1",
+ "step_id": "4bd75bb0-105d-4023-b668-ff3596f34893",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la S y la L",
+ "sub": "Lengua 1 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "☀️",
+   "lineas": [
+    "Hace sol en la laguna.",
+    "Sofi lleva una lupa.",
+    "¡Encuentra un sapo!"
+   ],
+   "titulo": "LA S Y LA L",
+   "sub": "en la laguna",
+   "voz": [
+    "Hace *sol* en la laguna.",
+    "Sofi lleva una *lupa*.",
+    "¡Y encuentra un *sapo*!",
+    "Hoy: *conocer la S y la L*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "☀️",
+     "txt": "SOL"
+    },
+    {
+     "emoji": "🐍",
+     "txt": "S suena sss"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "L de LUPA"
+    }
+   ],
+   "voz": [
+    "Esta palabra es *SOL*.",
+    "La *S* suena como una víbora: sss.",
+    "Y la *L* de lupa suena lll."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "S",
+    "texto": "SOL · SAPO · SOPA",
+    "emoji": "🐸"
+   },
+   "b": {
+    "cab": "L",
+    "texto": "LUPA · LOMA · LILA",
+    "emoji": "🔍"
+   },
+   "signo": "y",
+   "voz": [
+    "Con *S*: sol, sapo y sopa.",
+    "Con *L*: lupa, loma y lila.",
+    "¡Dos letras nuevas para leer!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza con L?",
+   "opciones": [
+    "SAPO",
+    "LOMA",
+    "PALA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá cada palabra.",
+    "¿Cuál empieza con *L*?",
+    "¡*LOMA*! L de loma."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ EL SONIDO",
+   "texto": "S suena sss · L suena lll",
+   "emoji": "👂",
+   "voz": [
+    "Truco: *escuchá* el sonido de cada letra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "S",
+     "de SOL"
+    ],
+    [
+     "L",
+     "de LUPA"
+    ],
+    [
+     "SONIDO",
+     "sss y lll"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *S* de sol.",
+    "La *L* de lupa.",
+    "Suenan *sss* y *lll*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

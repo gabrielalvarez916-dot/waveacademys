@@ -1,0 +1,144 @@
+{
+ "slug": "medio-leng1-m4-n4",
+ "step_id": "0edd03d1-3361-439b-80a5-9dcbd6b14b60",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con S y L",
+ "sub": "Lengua 1 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LAGUNA",
+   "titular": "¡SOFI HACE UN CARTEL!",
+   "bajada": "Escribe con S y L",
+   "emoji": "🪧",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras con S y L",
+   "voz": [
+    "¡Sofi hace un *cartel* para la laguna!",
+    "Escribe palabras con S y L.",
+    "Hoy: *escribir palabras con S y L*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "S",
+    "O",
+    "L"
+   ],
+   "grande": "SOL",
+   "etiqueta": "S · O · L",
+   "voz": [
+    "Sofi dice despacio: sss, o, lll.",
+    "Escribe S, O, L: *SOL*.",
+    "¡No se olvidó la L del final!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS LUPA",
+   "items": [
+    {
+     "txt": "L",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "U",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "P",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "4️⃣"
+    }
+   ],
+   "relato": [
+    3,
+    0,
+    2,
+    1
+   ],
+   "voz": [
+    "Las letras de LUPA se mezclaron.",
+    "Las ponemos en *orden*.",
+    "L, U, P, A: ¡*LUPA*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "EL CARTEL DE SOFI",
+   "celdas": [
+    {
+     "cab": "SOL",
+     "txt": "S · O · L"
+    },
+    {
+     "cab": "SAPO",
+     "txt": "SA · PO"
+    },
+    {
+     "cab": "PALA",
+     "txt": "PA · LA"
+    },
+    {
+     "cab": "LUPA",
+     "txt": "LU · PA"
+    }
+   ],
+   "voz": [
+    "Sofi escribe cuatro palabras.",
+    "*SOL*.",
+    "*SAPO*.",
+    "*PALA*.",
+    "Y *LUPA*. ¡Qué lindo cartel!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? SO_",
+   "opciones": [
+    "L",
+    "P",
+    "M"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. S, O, hueco.",
+    "¿Qué letra falta?",
+    "¡La *L*! SOL."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "sss-O-lll"
+    ],
+    [
+     "ESCRIBIR",
+     "letra por letra"
+    ],
+    [
+     "REVISAR",
+     "leer lo escrito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* cada sonido.",
+    "*Escribimos* letra por letra.",
+    "Y *revisamos* leyendo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
