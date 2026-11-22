@@ -351,3 +351,6 @@
 .bib-tx p { margin: 6px 0 0; font-size: .9rem; opacity: .85; }
 .bib-abrir { display: inline-block; margin-top: 8px; font-weight: 800; color: var(--turquesa-oscuro, #065F63); }
 @media (max-width: 560px) { .bib-item { flex-direction: column; } .bib-thumb, .bib-player { flex-basis: auto; width: 100%; } }
+
+.bib-filtros { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin: 12px 0 4px; }
+.bib-filtros select { padding: 10px 12px; border: 2px solid rgba(8,126,131,.3); border-radius: 12px; background: #fff; font: inherit; }

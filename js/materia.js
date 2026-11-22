@@ -315,7 +315,6 @@
       }
       cards.push(tarjeta(o));
     });
-    if (D.temas.length) cards.push(tarjeta({ titulo: 'Biblio-videoteca', texto: 'Videos y recursos extra por si querés ver más o algo no te quedó claro', boton: 'ABRIR', color: colorSeguro(m.color), figura: icono, biblio: true }));
     vista.innerHTML = '<div class="mt mt-p1" style="--c:' + colorSeguro(m.color) + '">' +
       '<div class="mt-top"><a class="mt-volver" href="#cursos">' + ico('back', 20, 3) + ' Mis cursos</a><h1>' + esc(m.name) + '</h1></div>' +
       banner() + '<div class="mt-cards">' + (D.temas.length ? cards.join('') : '<div class="mt-vacio">Esta materia todavía no tiene temas.</div>') + '</div></div>';
@@ -417,7 +416,7 @@
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
-      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' + ofertaSalto(t) +
+      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' + ofertaSalto(t) + profundizar(t) +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
     // arranca en el primer círculo abierto y sin terminar de ESTA misión (nivel 1 si nunca se tocó; si no, donde quedó)
     var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.libre');
@@ -1124,35 +1123,99 @@
 
   // ---------- Biblio-videoteca: recursos opcionales de la materia (las actividades solo las ven los alumnos con Desafío) ----------
   function ytId(u) { var m = /(?:youtu\.be\/|[?&]v=|embed\/)([A-Za-z0-9_-]{6,15})/.exec(String(u || '')); return m ? m[1] : null; }
-  async function abrirBiblioteca() {
+  // Pantalla aparte (menú «Biblioteca»), con filtros por nivel, año, materia y misión. Nada de esto es obligatorio.
+  async function abrirBiblioteca(pre) {
+    pre = pre || {};
     var f = document.createElement('div');
     f.className = 'bib-fondo';
-    f.innerHTML = '<div class="bib-caja" role="dialog" aria-label="Biblio-videoteca"><button type="button" class="bib-x" aria-label="Cerrar">✕</button><h2>Biblio-videoteca</h2><p class="bib-sub">' + esc(D.materia.name) + ' · Recursos opcionales por si querés ver más o algo no te quedó claro.</p><div class="bib-cont">Cargando…</div></div>';
+    f.innerHTML = '<div class="bib-caja" role="dialog" aria-label="Biblio-videoteca"><button type="button" class="bib-x" aria-label="Cerrar">✕</button><h2>Biblio-videoteca</h2><p class="bib-sub">Recursos opcionales por si querés ver más o algo no te quedó claro.</p><div class="bib-filtros"></div><div class="bib-cont">Cargando…</div></div>';
     document.body.appendChild(f);
-    var cerrar = function () { f.remove(); };
+    var cont = f.querySelector('.bib-cont'), fil = f.querySelector('.bib-filtros');
     f.addEventListener('click', function (ev) {
-      if (ev.target === f || ev.target.closest('.bib-x')) return cerrar();
+      if (ev.target === f || ev.target.closest('.bib-x')) return f.remove();
       var v = ev.target.closest('[data-bib-ver]');
-      if (v) { var id = v.getAttribute('data-bib-ver'); var c = document.createElement('div'); c.className = 'bib-player'; c.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; v.replaceWith(c); }
+      if (v) { var c = document.createElement('div'); c.className = 'bib-player'; c.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.getAttribute('data-bib-ver')) + '?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; v.replaceWith(c); }
     });
-    var r = await sb.from('biblioteca_items').select('id, tipo, titulo, descripcion, url, topic_id, origen_id').eq('subject_id', D.materia.id).order('created_at');
-    var cont = f.querySelector('.bib-cont');
-    if (r.error) { cont.textContent = 'No se pudo cargar. Probá de nuevo.'; return; }
-    var items = (r.data || []).filter(function (x) { return x.tipo !== 'actividad' || D.desafio; });
-    if (!items.length) { cont.innerHTML = '<p class="bib-vacio">Todavía no hay recursos para esta materia. Pronto vas a encontrar acá videos y más.</p>'; return; }
-    var tit = {}; D.temas.forEach(function (t) { tit[t.id] = t.titulo; });
-    var grupos = [['video', 'Videos'], ['texto', 'Textos'], ['actividad', 'Actividades para vos']];
-    cont.innerHTML = grupos.map(function (g) {
-      var xs = items.filter(function (x) { return x.tipo === g[0]; });
-      if (!xs.length) return '';
-      return '<h3>' + g[1] + '</h3><div class="bib-lista">' + xs.map(function (x) {
-        var id = x.tipo === 'video' ? ytId(x.url) : null;
-        var cab = id ? '<button type="button" class="bib-thumb" data-bib-ver="' + esc(id) + '" aria-label="Ver el video"><img src="https://i.ytimg.com/vi/' + esc(id) + '/hqdefault.jpg" alt="" loading="lazy"><span>▶</span></button>' : '';
-        return '<div class="bib-item">' + cab + '<div class="bib-tx"><b>' + esc(x.titulo) + '</b>' + (x.topic_id && tit[x.topic_id] ? '<small>' + esc(tit[x.topic_id]) + '</small>' : '') + (x.descripcion ? '<p>' + esc(x.descripcion) + '</p>' : '') +
-          (!id ? '<a class="bib-abrir" href="' + esc(x.url) + '" target="_blank" rel="noopener">Abrir</a>' : '') + '</div></div>';
-      }).join('') + '</div>';
-    }).join('');
+    var r = await Promise.all([
+      sb.from('biblioteca_items').select('id, tipo, titulo, descripcion, url, subject_id, topic_id').order('created_at'),
+      sb.from('levels').select('id, name, position').order('position'),
+      sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
+      sb.from('subjects').select('id, grade_id, name, variant').limit(1000),
+      sb.from('topics').select('id, subject_id, title, position').order('position').limit(3000),
+      sb.from('students').select('trayectos_apoyo').limit(50)
+    ]);
+    if (r[0].error) { cont.textContent = 'No se pudo cargar. Probá de nuevo.'; return; }
+    var desafio = (r[5].data || []).some(function (x) { return (x.trayectos_apoyo || []).indexOf('desafio') >= 0; });
+    var items = (r[0].data || []).filter(function (x) { return x.tipo !== 'actividad' || desafio; });
+    var niv = {}, gr = {}, mat = {}, top = {};
+    (r[1].data || []).forEach(function (x) { niv[x.id] = x; });
+    (r[2].data || []).forEach(function (x) { gr[x.id] = x; });
+    (r[3].data || []).forEach(function (x) { mat[x.id] = x; });
+    (r[4].data || []).forEach(function (x) { top[x.id] = x; });
+    items = items.filter(function (x) { return mat[x.subject_id]; });
+    var F = { nivel: '', grado: '', materia: pre.materia || '', mision: pre.mision || '' };
+    var m0 = mat[F.materia]; if (m0 && gr[m0.grade_id]) { F.grado = m0.grade_id; F.nivel = gr[m0.grade_id].level_id; }
+    var nomMat = function (m) { return m.name + (m.variant ? ' · ' + m.variant : ''); };
+    var nomGr = function (g) { return g.name || ('Año ' + g.year_number); };
+    function opts(lista, sel, todos) { return '<option value="">' + todos + '</option>' + lista.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === sel ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join(''); }
+    function pasa(x, hasta) {
+      var m = mat[x.subject_id], g = gr[m.grade_id];
+      if (F.nivel && (!g || g.level_id !== F.nivel)) return false;
+      if (hasta === 'nivel') return true;
+      if (F.grado && m.grade_id !== F.grado) return false;
+      if (hasta === 'grado') return true;
+      if (F.materia && x.subject_id !== F.materia) return false;
+      if (hasta === 'materia') return true;
+      if (F.mision && x.topic_id !== F.mision) return false;
+      return true;
+    }
+    function uniq(lista, fn) { var v = {}, o = []; lista.forEach(function (x) { var p = fn(x); if (p && !v[p[0]]) { v[p[0]] = 1; o.push(p); } }); return o; }
+    function pintar() {
+      var n = uniq(items, function (x) { var g = gr[mat[x.subject_id].grade_id], l = g && niv[g.level_id]; return l ? [l.id, l.name] : null; });
+      var g = uniq(items.filter(function (x) { return pasa(x, 'nivel'); }), function (x) { var q = gr[mat[x.subject_id].grade_id]; return q ? [q.id, nomGr(q)] : null; });
+      var m = uniq(items.filter(function (x) { return pasa(x, 'grado'); }), function (x) { return [x.subject_id, nomMat(mat[x.subject_id])]; });
+      var t = uniq(items.filter(function (x) { return pasa(x, 'materia') && x.topic_id && top[x.topic_id]; }), function (x) { return [x.topic_id, top[x.topic_id].title]; });
+      fil.innerHTML = '<select data-f="nivel" aria-label="Nivel">' + opts(n, F.nivel, 'Todos los niveles') + '</select>' +
+        '<select data-f="grado" aria-label="Año">' + opts(g, F.grado, 'Todos los años') + '</select>' +
+        '<select data-f="materia" aria-label="Materia">' + opts(m, F.materia, 'Todas las materias') + '</select>' +
+        '<select data-f="mision" aria-label="Misión">' + opts(t, F.mision, 'Todas las misiones') + '</select>';
+      var xs = items.filter(function (x) { return pasa(x); });
+      if (!xs.length) { cont.innerHTML = '<p class="bib-vacio">No hay recursos con estos filtros todavía.</p>'; return; }
+      cont.innerHTML = [['video', 'Videos'], ['texto', 'Textos'], ['actividad', 'Actividades para vos']].map(function (gp) {
+        var ys = xs.filter(function (x) { return x.tipo === gp[0]; });
+        if (!ys.length) return '';
+        return '<h3>' + gp[1] + '</h3><div class="bib-lista">' + ys.map(function (x) {
+          var id = x.tipo === 'video' ? ytId(x.url) : null;
+          var cab = id ? '<button type="button" class="bib-thumb" data-bib-ver="' + esc(id) + '" aria-label="Ver el video"><img src="https://i.ytimg.com/vi/' + esc(id) + '/hqdefault.jpg" alt="" loading="lazy"><span>▶</span></button>' : '';
+          var ms = mat[x.subject_id];
+          return '<div class="bib-item">' + cab + '<div class="bib-tx"><b>' + esc(x.titulo) + '</b><small>' + esc(nomMat(ms)) + (x.topic_id && top[x.topic_id] ? ' · ' + esc(top[x.topic_id].title) : '') + '</small>' + (x.descripcion ? '<p>' + esc(x.descripcion) + '</p>' : '') +
+            (!id ? '<a class="bib-abrir" href="' + esc(x.url) + '" target="_blank" rel="noopener">Abrir</a>' : '') + '</div></div>';
+        }).join('') + '</div>';
+      }).join('');
+    }
+    fil.addEventListener('change', function (ev) {
+      var k = ev.target.getAttribute('data-f'); if (!k) return;
+      F[k] = ev.target.value;
+      if (k === 'nivel') { F.grado = ''; F.materia = ''; F.mision = ''; }
+      if (k === 'grado') { F.materia = ''; F.mision = ''; }
+      if (k === 'materia') F.mision = '';
+      pintar();
+    });
+    pintar();
   }
+
+  // Solo Desafío: al terminar una misión, la puerta a la biblioteca para seguir profundizando
+  function profundizar(t) {
+    if (!D.desafio || !t.completo) return '';
+    return '<div class="ap-salto ok"><div><b>Seguir profundizando</b><span>Misión cumplida. Si querés ir más lejos en este tema, mirá la biblio-videoteca.</span></div>' +
+      '<button type="button" class="mt-boton" data-biblio="1" data-bib-materia="' + esc(D.materia.id) + '" data-bib-mision="' + esc(t.id) + '">Seguir profundizando</button></div>';
+  }
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-biblio]');
+    if (!b) return;
+    ev.preventDefault();
+    abrirBiblioteca({ materia: b.getAttribute('data-bib-materia') || '', mision: b.getAttribute('data-bib-mision') || '' }).catch(function (e) { console.error(e); });
+  });
 
   // ---------- Introducción ----------
   function abrirIntro() {
@@ -1187,7 +1250,6 @@
       if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
-      if (ev.target.closest('[data-biblio]')) return abrirBiblioteca();
       var sl = ev.target.closest('[data-salto]');
       if (sl) { if (window.confirm('Tenés UNA sola oportunidad para rendir primero esta misión. Si aprobás, la salteás; si no, la hacés normal. ¿Empezamos?')) abrirExamen(sl.getAttribute('data-salto'), true); return; }
       var x = ev.target.closest('[data-examen]');
