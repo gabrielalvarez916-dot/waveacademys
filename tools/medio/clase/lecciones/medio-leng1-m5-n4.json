@@ -1,0 +1,139 @@
+{
+ "slug": "medio-leng1-m5-n4",
+ "step_id": "54a91e6e-0a67-4484-80ae-55454bc76c41",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con T, N y D",
+ "sub": "Lengua 1 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "HUERTA DE LA ABUELA",
+   "titular": "¡HAY QUE PONER CARTELES!",
+   "bajada": "Sofi escribe los nombres",
+   "emoji": "🪧",
+   "titulo": "ESCRIBIR",
+   "sub": "palabras con T, N y D",
+   "voz": [
+    "¡La huerta necesita *carteles*!",
+    "Sofi escribe los nombres.",
+    "Hoy: *escribir palabras con T, N y D*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "P",
+    "A",
+    "T",
+    "O"
+   ],
+   "grande": "PATO",
+   "etiqueta": "PA · TO",
+   "voz": [
+    "Sofi dice despacio: PA, TO.",
+    "Escribe P, A, T, O: *PATO*.",
+    "¡El cartel del pato está listo!"
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CON T",
+   "b": "CON D",
+   "itemsA": [
+    "TAPA",
+    "PATO"
+   ],
+   "itemsB": [
+    "DADO",
+    "NIDO"
+   ],
+   "ambos": [
+    "TODO",
+    "DATO"
+   ],
+   "voz": [
+    "¿T o D? Separamos palabras.",
+    "*TAPA* y *PATO* llevan T.",
+    "*DADO* y *NIDO* llevan D.",
+    "¡*TODO* y *DATO* llevan las dos!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ARMAMOS MANO",
+   "items": [
+    {
+     "txt": "M",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "N",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "O",
+     "emoji": "4️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    3,
+    1
+   ],
+   "voz": [
+    "Las letras de MANO se mezclaron.",
+    "Las ponemos en *orden*.",
+    "M, A, N, O: ¡*MANO*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? DE_O",
+   "opciones": [
+    "T",
+    "D",
+    "N"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. D, E, hueco, O.",
+    "¿Qué letra falta?",
+    "¡La *D*! DEDO."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "PA-TO"
+    ],
+    [
+     "T O D",
+     "decir lento"
+    ],
+    [
+     "REVISAR",
+     "leer lo escrito"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* cada sílaba.",
+    "Para *T o D*, decimos lento.",
+    "Y *revisamos* leyendo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

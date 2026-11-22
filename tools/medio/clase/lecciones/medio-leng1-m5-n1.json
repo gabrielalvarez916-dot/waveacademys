@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m5-n1",
+ "step_id": "d0d6b4e9-3265-493a-8fa6-445ff872ce42",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la T",
+ "sub": "Lengua 1 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍅",
+   "lineas": [
+    "Sofi visita a su abuela.",
+    "La abuela tiene una huerta.",
+    "¡Hay tomates rojos!"
+   ],
+   "titulo": "LA T",
+   "sub": "de tomate",
+   "voz": [
+    "Sofi visita a su *abuela*.",
+    "La abuela tiene una *huerta*.",
+    "¡Hay tomates bien rojos!",
+    "Hoy: *conocer la T*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "TOMATE",
+   "silabas": [
+    "TO",
+    "MA",
+    "TE"
+   ],
+   "tonica": 1,
+   "tipo": "3 SÍLABAS",
+   "voz": [
+    "Esta palabra es *TOMATE*.",
+    "La cortamos: TO, MA, TE.",
+    "¡Tiene *2 T* y 3 sílabas!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA T CON LAS VOCALES",
+   "eventos": [
+    {
+     "fecha": "TA",
+     "txt": "TAPA",
+     "emoji": "🫙"
+    },
+    {
+     "fecha": "TE",
+     "txt": "TELA",
+     "emoji": "🧵"
+    },
+    {
+     "fecha": "TI",
+     "txt": "TINA",
+     "emoji": "🛁"
+    },
+    {
+     "fecha": "TO",
+     "txt": "TOMATE",
+     "emoji": "🍅"
+    },
+    {
+     "fecha": "TU",
+     "txt": "TUNA",
+     "emoji": "🌵"
+    }
+   ],
+   "voz": [
+    "*TA* de tapa.",
+    "*TE* de tela.",
+    "*TI* de tina.",
+    "*TO* de tomate.",
+    "*TU* de tuna."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra empieza con T?",
+   "opciones": [
+    "DADO",
+    "TAPA",
+    "NIDO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Escuchá cada palabra.",
+    "¿Cuál empieza con *T*?",
+    "¡*TAPA*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMO UN RELOJ",
+   "texto": "La T suena corta: t, t, t",
+   "emoji": "⏰",
+   "voz": [
+    "Truco: la T suena como un *reloj*: t, t, t."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "T",
+     "de TOMATE"
+    ],
+    [
+     "SÍLABAS",
+     "TA, TE, TI, TO, TU"
+    ],
+    [
+     "LUGAR",
+     "principio o medio"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *T* de tomate.",
+    "*TA, TE, TI, TO, TU*.",
+    "Puede estar al *principio* o en el *medio*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

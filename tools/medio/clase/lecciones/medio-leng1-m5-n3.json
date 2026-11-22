@@ -1,0 +1,153 @@
+{
+ "slug": "medio-leng1-m5-n3",
+ "step_id": "601aa16a-7ab3-4c88-b3ac-ea2231667c90",
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con T, N y D",
+ "sub": "Lengua 1 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuela",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "EL PATO TOMA SOPA"
+    },
+    {
+     "yo": true,
+     "txt": "¡Lo leí, abuela!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Qué bien lees, Sofi!"
+    }
+   ],
+   "titulo": "LEER",
+   "sub": "palabras con T, N y D",
+   "voz": [
+    "La abuela le escribe a Sofi.",
+    "Le manda una oración.",
+    "¡Y Sofi la lee sola!",
+    "Hoy: *leer palabras con T, N y D*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "EL PATO TOMA SOPA",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "PA-TO",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "TO-MA",
+     "color": "sol"
+    },
+    {
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "SO-PA",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Leemos: el pato toma sopa.",
+    "*PATO*: PA, TO.",
+    "*TOMA*: TO, MA.",
+    "*SOPA*: SO, PA."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PALABRAS DE LA HUERTA",
+   "items": [
+    {
+     "cab": "LUNA",
+     "txt": "LU + NA"
+    },
+    {
+     "cab": "NIDO",
+     "txt": "NI + DO"
+    },
+    {
+     "cab": "MONO",
+     "txt": "MO + NO"
+    }
+   ],
+   "voz": [
+    "Leemos más palabras.",
+    "LU y NA: *LUNA*.",
+    "NI y DO: *NIDO*.",
+    "MO y NO: *MONO*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "PRIMERA VEZ",
+    "emoji": "🐢",
+    "texto": "Leo despacio"
+   },
+   "despues": {
+    "cab": "SEGUNDA VEZ",
+    "emoji": "🐇",
+    "texto": "Leo más rápido"
+   },
+   "voz": [
+    "La *primera vez* leemos despacio.",
+    "La *segunda vez*, más rápido."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra forman LU y NA?",
+   "opciones": [
+    "NALU",
+    "LUNA",
+    "LANA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Juntá LU y NA.",
+    "¿Qué palabra se forma?",
+    "¡*LUNA*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "TO-MA-TE"
+    ],
+    [
+     "PALABRAS",
+     "TOMATE"
+    ],
+    [
+     "ORACIÓN",
+     "EL PATO TOMA SOPA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *sílabas*.",
+    "Formamos *palabras*.",
+    "Y leemos *oraciones*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
