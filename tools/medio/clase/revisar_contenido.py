@@ -37,6 +37,18 @@ for slug in args:
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')
     if re.search(r'lengua|literatura', (L.get('materia') or ''), re.I) and re.match(PROD, tit) and not any(e.get('titulo') == 'TU TURNO' for e in L['escenas']):  # y en la misión: actividad de escritura (keywords/IA)
         E(slug, 'nivel de producción sin escena "TU TURNO" que diga la tarea concreta')
+# VÍA FONOLÓGICA (primeros años): la voz dice el SONIDO de las consonantes, no su nombre (ver GUIA.md «Vía fonológica»)
+sys.path.insert(0, os.path.dirname(AQUI)); from primeros_anios import es_primeros as _es_prim
+_CONS = 'BCDFGHJKLMNÑPQRSTVWXZ'
+_NOMBRE = [re.compile(r'(?<![A-Za-zÁÉÍÓÚÑáéíóúñ])\*?[' + _CONS + r']\*?(?:\s*,\s*\*?[A-ZÁÉÍÓÚÑ]\*?(?![A-Za-zÁÉÍÓÚÑáéíóúñ])){1,}'),  # deletreo: T, O, M, I
+           re.compile(r'\b(?:la|las|una|con|de|dos|\d+)\s+\*?[' + _CONS + r']\*?(?![A-Za-zÁÉÍÓÚÑáéíóúñ])', re.I),  # la T · con S · dos M
+           re.compile(r'(?:^|[¿¡\s])\*?[' + _CONS + r']\*?\s+(?:con|o|y)\s')]  # M con A · T o D
+for slug in args:
+    L = json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8'))
+    if not _es_prim(L.get('materia'), contenido=L): continue
+    for k, e in enumerate(L['escenas']):
+        for v in e.get('voz', []):
+            if any(rx.search(v) for rx in _NOMBRE): E(slug, f'escena {k}: la voz nombra una letra («{v}»): decir su sonido (sss, mmm, lll) o la sílaba (ta, pa, de)')
 # VARIEDAD DEL BANCO DE FORMATOS (regla del Nivel Medio, ver GUIA.md «Variedad»): las clases van rotando las plantillas del banco
 _BASICAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'tabla', 'clasificar', 'pasos', 'consejo', 'frase'}
 _GANCHOS = {'gancho', 'historia', 'chat', 'noticia', 'reto'}

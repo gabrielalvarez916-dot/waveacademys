@@ -38,6 +38,16 @@ Una lección = **un archivo** `tools/medio/clase/lecciones/<slug>.json`. Al subi
 6. Cierre: errores comunes → resumen → "¡a practicar!".
 7. De 8 a 14 escenas (4 a 7 minutos).
 
+## Vía fonológica (regla fija de primeros años, sobre todo en Lengua)
+
+Para aprender a leer y escribir, la voz de la clase dice el **sonido** de las letras, nunca su **nombre**.
+- Consonantes que se pueden estirar: se dicen largas, sin vocal: `sss`, `mmm`, `lll`, `nnn`, `fff`, `rrr`, `jjj`. Ej.: «Sofi empieza con sss», «Escribe sss, o, lll: SOL».
+- Consonantes cortas (p, t, d, b, c, g, k, q): la voz no las puede decir solas, así que se dicen **pegadas a su vocal**, como sílaba: `pa`, `to`, `de`. Ej.: «En papá escuchamos pa», «to… mmm… i: TOMI».
+- Las vocales suenan igual que su nombre: se dicen tal cual (a, e, i, o, u).
+- Nunca: deletrear con nombres (T, O, M, I), «la T», «con S», «dos M», «M con A», «T o D».
+- En pantalla (fichas, carteles, tablas) las letras se muestran normales: la regla es para lo que **dice la voz**.
+`revisar_contenido.py` lo controla en todas las clases de primeros años y no deja subir si la voz nombra una letra.
+
 ## Variedad: ir rotando el banco de formatos (regla fija del Nivel Medio)
 
 Las clases no pueden salir todas con el mismo molde: se van variando los formatos del banco (tabla de abajo). `revisar_contenido.py` lo controla y `controlar.sh` no deja subir si no se cumple.
