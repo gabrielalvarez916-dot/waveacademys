@@ -368,6 +368,31 @@
       abierto ? base() + '/' + sig.id : null, abierto ? '' : (sig.vacio ? 'La próxima misión está en preparación.' : 'Superá el nivel jefe para pasar a la siguiente misión.'));
   }
 
+  // Mapa de la misión: todo el recorrido de un vistazo y dónde está parado el alumno
+  var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', carpeta: 'Entregar la carpeta', final: 'Práctica' };
+  function abrirMapa(temaId) {
+    var t = D.temas.filter(function (x) { return x.id === temaId; })[0]; if (!t) return;
+    var marcado = false;
+    function fila(txt, hecho, bloq) {
+      var est = hecho ? 'hecho' : bloq ? 'bloq' : (!marcado ? 'ahora' : 'sigue');
+      if (!hecho && !bloq && !marcado) marcado = true;
+      return '<li class="ap-mp-' + est + '"><span class="ap-mp-i">' + (hecho ? '✔' : est === 'ahora' ? '▶' : bloq ? '🔒' : '○') + '</span><span>' + esc(txt) + (est === 'ahora' ? ' <b>(estás acá)</b>' : '') + '</span></li>';
+    }
+    var h = '';
+    t.niveles.concat(t.generales ? [t.generales] : []).forEach(function (l, i) {
+      var esGen = t.generales && l === t.generales;
+      var req = l.est.req;
+      h += '<div class="ap-mp-nivel"><h3>' + (esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + esc(l.titulo)) + '</h3><ul>' +
+        (l.est.vacia ? '<li class="ap-mp-bloq"><span class="ap-mp-i">…</span><span>En preparación</span></li>'
+          : req.map(function (k) { return fila(ROT_PASO[k] || k, hechoK(l, k), l.bloqueada); }).join('')) + '</ul></div>';
+    });
+    if (t.examen) h += '<div class="ap-mp-nivel"><h3>Nivel jefe</h3><ul>' + fila('Examen corto de la misión', !!t.examen.aprobado, !t.examenDisponible && !t.examen.aprobado) + '</ul></div>';
+    var el = document.createElement('div'); el.className = 'ap-panel-fondo';
+    el.innerHTML = '<div class="ap-panel" role="dialog" aria-label="Mapa de la misión"><h2>Mapa · ' + esc(t.titulo) + '</h2><p class="ap-sub">Todo lo que vas a hacer en esta misión, en orden.</p>' + h + '<button class="ap-cerrar" type="button">Cerrar</button></div>';
+    document.body.appendChild(el);
+    el.onclick = function (e) { if (e.target === el || e.target.closest('.ap-cerrar')) el.remove(); };
+  }
+
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
     var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
@@ -375,7 +400,8 @@
       (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
-      '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div></div>' +
+      '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
+      '<button type="button" class="ap-mapa-btn" data-mapa="' + t.id + '">🗺 Mapa</button></div>' +
       '<div class="mt-fila"><div class="mt-fila-int">' + nodos + '</div></div></div></div>';
     // arranca en el primer círculo abierto y sin terminar de ESTA misión (nivel 1 si nunca se tocó; si no, donde quedó)
     var fila = vista.querySelector('.mt-fila'), act = vista.querySelector('.mt-nodo.libre');
@@ -527,6 +553,7 @@
           titulo: 'Actividad · ' + f.l.titulo, examen: false, tutor: { lesson_id: paso.lesson_id },
           cargar: function () { return preguntas('lesson_step_id', paso.id); },
           enviar: function (resp) { return llamar('corregir', { modo: 'actividad', lesson_step_id: paso.id, answers: resp }); },
+          comprobar: function (q, a, seed) { return llamar('comprobar', { origen: 'actividad', lesson_step_id: paso.id, question_id: q.id, answer: a, seed: seed }); },
           alTerminar: function (res) {
             D.progreso[paso.id] = { score: res.score, estado: 'graded' };
             revisarLeccion(paso.lesson_id).then(refrescar);
@@ -539,6 +566,7 @@
           cargando: 'Estamos armando tu repaso…', cargandoSub: 'Son 6 preguntas nuevas, de esta lección y de las anteriores. Tené tu carpeta a mano.',
           cargar: async function () { var d = await llamar('review', { action: 'start', lesson_id: f.l.id }); intento = d.attempt_id; return d.questions; },
           enviar: function (resp) { return llamar('review', { action: 'submit', attempt_id: intento, answers: resp }); },
+          comprobar: function (q, a) { return llamar('comprobar', { origen: 'repaso', attempt_id: intento, question_id: q.id, answer: a }); },
           alTerminar: function (res) {
             D.repaso[f.l.id] = { req: true, done: true, score: res.score };
             revisarLeccion(f.l.id).then(refrescar);
@@ -747,6 +775,10 @@
       }
       if (ev.target === el || ev.target.closest('[data-cerrar]')) { if (!enviando) cerrar(); return; }
       if (ev.target.closest('[data-rel]')) { siguienteRel(); return; }
+      var tg = ev.target.closest('[data-ap]');
+      if (tg) { var kk = tg.getAttribute('data-ap'); if (window.WaveApoyos) WaveApoyos.set(kk, !WaveApoyos.get(kk)); pintarToggles(); verConsigna(cuerpo._cn || 0); return; }
+      var cb = ev.target.closest('[data-comprobar]'); if (cb) { comprobar(Number(cb.getAttribute('data-comprobar')), cb); return; }
+      if (ev.target.closest('[data-sincrono]')) { if (window.WaveApoyos) WaveApoyos.set('sinCrono', true); formulario(); return; }
       var cn = ev.target.closest('[data-cn]'); if (cn) { verConsigna((cuerpo._cn || 0) + Number(cn.getAttribute('data-cn'))); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
       else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
@@ -881,30 +913,66 @@
     }
     function mostrarResp(q, a) { return window.WaveTipos && WaveTipos.soporta(q.question_type) ? WaveTipos.mostrar(q, a) : a; }
 
+    function ap(k) { return !!(window.WaveApoyos && WaveApoyos.get(k)); }
+    function pintarToggles() {
+      [].forEach.call(cuerpo.querySelectorAll('[data-ap]'), function (b) { b.setAttribute('aria-pressed', ap(b.getAttribute('data-ap')) ? 'true' : 'false'); });
+      cuerpo.classList.toggle('ap-ver-comp', ap('comprobar'));
+    }
+    function compHtml(i) {
+      return '<div class="ap-comp"><button type="button" class="mt-boton suave" data-comprobar="' + i + '">Comprobar</button><div class="ap-comp-res" aria-live="polite"></div></div>';
+    }
     function formulario() {
       sembrar();
       if (relamp) clearInterval(relamp.t);
       relamp = null;
-      if (lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
-      // Una consigna por pantalla: todas quedan armadas (así se entregan juntas) y se muestra solo la actual
-      cuerpo.innerHTML = '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(campo).join('') +
+      if (!ap('sinCrono') && lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
+      var barra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-ap="deAUna" aria-pressed="false">Ver de a una</button>' +
+        (op.comprobar ? '<button type="button" class="ap-tg" data-ap="comprobar" aria-pressed="false">Comprobar cada respuesta</button>' : '') + '</div>';
+      // Todas las consignas quedan armadas (así se entregan juntas). Se muestran todas o de a una, a elección del alumno.
+      cuerpo.innerHTML = barra + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
+        var h = campo(q, i), k = h.lastIndexOf('</div></div>');
+        return op.comprobar && k > 0 ? h.slice(0, k) + compHtml(i) + h.slice(k) : h;
+      }).join('') +
         '<div class="mt-cuest-pie" style="display:flex;justify-content:space-between;gap:12px">' +
         '<button type="button" class="mt-boton" data-cn="-1" style="background:transparent;color:inherit;box-shadow:none;border:2px solid currentColor;opacity:.75">‹ Anterior</button>' +
         '<button type="button" class="mt-boton" data-cn="1">Siguiente ›</button>' +
         '<button type="button" class="mt-boton" data-enviar="1">Entregar</button></div>';
+      pintarToggles();
       verConsigna(0);
     }
     function verConsigna(n) {
-      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length;
+      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length, una = ap('deAUna');
       if (!tot) return;
       n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n; qActual = lista[n] || null;
-      [].forEach.call(ps, function (p, k) { p.style.display = k === n ? '' : 'none'; });
-      var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = 'Consigna ' + (n + 1) + ' de ' + tot;
+      [].forEach.call(ps, function (p, k) { p.style.display = (!una || k === n) ? '' : 'none'; });
+      var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = una ? 'Consigna ' + (n + 1) + ' de ' + tot : tot + (tot === 1 ? ' consigna' : ' consignas');
       var ant = cuerpo.querySelector('[data-cn="-1"]'), sig = cuerpo.querySelector('[data-cn="1"]'), env = cuerpo.querySelector('[data-enviar]');
-      if (ant) ant.style.visibility = n ? '' : 'hidden';
-      if (sig) sig.style.display = n < tot - 1 ? '' : 'none';
-      if (env) env.style.display = n === tot - 1 ? '' : 'none';
+      if (ant) { ant.style.display = una ? '' : 'none'; ant.style.visibility = n ? '' : 'hidden'; }
+      if (sig) sig.style.display = una && n < tot - 1 ? '' : 'none';
+      if (env) env.style.display = (!una || n === tot - 1) ? '' : 'none';
       cuerpo.scrollTo(0, 0);
+    }
+
+    // Comprobar una respuesta al instante: queda bloqueada y cuenta como la respuesta del alumno
+    async function comprobar(i, btn) {
+      var q = lista[i], blk = cuerpo.querySelectorAll(':scope > .mt-preg')[i]; if (!q || !blk) return;
+      var res = blk.querySelector('.ap-comp-res'), a = leerResp(q, i);
+      if (!String(a).trim()) { res.textContent = 'Primero escribí o elegí tu respuesta.'; return; }
+      btn.disabled = true; res.textContent = 'Comprobando…';
+      try {
+        var r = await op.comprobar(q, a, q._seed);
+        if (r.pendiente) res.innerHTML = '<b>Respuesta guardada.</b> Esta consigna se corrige al entregar.';
+        else {
+          var s = Number(r.score);
+          res.className = 'ap-comp-res ' + (s >= 100 ? 'ok' : s > 0 ? 'med' : 'no');
+          res.innerHTML = '<b>' + (s >= 100 ? '✔ Correcta' : s > 0 ? '◐ A medias' : '✘ Incorrecta') + '</b> ' + esc(r.feedback || '');
+        }
+        var c = blk.querySelector('.mt-preg-c');
+        [].forEach.call(c.children, function (ch) { if (!ch.classList.contains('ap-comp')) ch.inert = true; });
+        btn.hidden = true;
+      } catch (e) {
+        res.textContent = (e && e.message) || 'No se pudo comprobar. Probá de nuevo.'; btn.disabled = false;
+      }
     }
 
     // Modo Relámpago: una pregunta por vez, con cronómetro. Si se acaba el tiempo pasa sola a la siguiente.
@@ -916,6 +984,7 @@
       var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q;
       cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">⚡ Relámpago · ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
         '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
+        (i === 0 ? '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-sincrono="1">Sin cronómetro</button></div>' : '') +
         '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-rel="1">' + (i === lista.length - 1 ? 'Terminar' : 'Siguiente') + '</button></div>';
       cuerpo.scrollTo(0, 0);
       var num = cuerpo.querySelector('.rl-seg b');
@@ -1001,6 +1070,7 @@
         return r.data.questions;
       },
       enviar: function (resp) { return llamar('corregir', { modo: 'examen', exam_id: t.examen.id, answers: resp, sorteo_id: sorteo }); },
+      comprobar: function (q, a, seed) { return llamar('comprobar', { origen: 'examen', exam_id: t.examen.id, sorteo_id: sorteo, question_id: q.id, answer: a, seed: seed }); },
       alTerminar: function (res) {
         t.examen.mejor = Math.max(t.examen.mejor || 0, res.score);
         if (res.passed) t.examen.aprobado = true;
@@ -1025,6 +1095,8 @@
       if (!D || !vista.querySelector('.mt')) return;
       var av = ev.target.closest('[data-aviso]');
       if (av) return toast(av.getAttribute('data-aviso'), true);
+      var mp = ev.target.closest('[data-mapa]');
+      if (mp) return abrirMapa(mp.getAttribute('data-mapa'));
       var rc = ev.target.closest('[data-rc]');
       if (rc) {
         var a = rc.getAttribute('data-rc');

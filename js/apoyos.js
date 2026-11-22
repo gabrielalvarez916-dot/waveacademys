@@ -2,7 +2,7 @@
 // La lectura en voz alta vive dentro del visor de PDF (js/visor-pdf.js), no acá.
 (function () {
   var KEY = 'wave_accesibilidad';
-  var A = { letra: 0, contraste: 0, sinAnim: false }; // contraste: 0 normal, 1 más alto, 2 más suave
+  var A = { letra: 0, contraste: 0, sinAnim: false, deAUna: false, comprobar: false, sinCrono: false }; // contraste: 0 normal, 1 más alto, 2 más suave
   try { Object.assign(A, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   var raiz = document.documentElement;
   var FILTRO = { 1: 'contrast(1.35) saturate(1.1)', 2: 'contrast(0.85)' };
@@ -32,8 +32,9 @@
         var u = r.data && r.data.session && r.data.session.user; if (!u) return;
         sb.from('students').select('apoyos').eq('profile_id', u.id).maybeSingle().then(function (q) {
           var d = q && q.data && q.data.apoyos;
-          if (d && (d.letra !== undefined || d.contraste !== undefined || d.sinAnim !== undefined)) {
+          if (d && Object.keys(d).length) {
             A.letra = d.letra || 0; A.contraste = typeof d.contraste === 'number' ? d.contraste : (d.contraste ? 1 : 0); A.sinAnim = !!d.sinAnim;
+            A.deAUna = !!d.deAUna; A.comprobar = !!d.comprobar; A.sinCrono = !!d.sinCrono;
             try { localStorage.setItem(KEY, JSON.stringify(A)); } catch (e) {}
             aplicar();
           }
@@ -114,5 +115,6 @@
     aplicar(); cargarRemoto(); dictadoUI();
     new MutationObserver(function () { dictadoUI(); if (A.sinAnim || A.contraste) iframes(); }).observe(document.body, { childList: true, subtree: true });
   }
+  window.WaveApoyos = { get: function (k) { return A[k]; }, set: function (k, v) { A[k] = v; guardar(); aplicar(); } };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })();

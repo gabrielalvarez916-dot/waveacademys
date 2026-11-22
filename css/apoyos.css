@@ -18,3 +18,21 @@ html.ap-sin-anim *,html.ap-sin-anim *::before,html.ap-sin-anim *::after{animatio
 .ap-cerrar{margin-top:14px;width:100%;border:0;border-radius:12px;padding:12px;background:#1f3a8a;color:#fff;font:800 15px Nunito,sans-serif;cursor:pointer}
 .ap-mic{margin-left:6px;border:0;border-radius:10px;padding:6px 10px;background:#1f3a8a;color:#fff;font-size:15px;cursor:pointer;vertical-align:middle}
 .ap-mic.on{background:#c0262d}
+
+/* Opciones dentro de actividades y exámenes */
+.ap-barra-cuest{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ap-tg{border:2px solid #1f3a8a;background:#fff;color:#1f3a8a;border-radius:999px;padding:6px 14px;font:700 13px Nunito,sans-serif;cursor:pointer}
+.ap-tg[aria-pressed="true"]{background:#1f3a8a;color:#fff}
+.ap-comp{display:none;margin-top:10px}
+.ap-ver-comp .ap-comp{display:block}
+.ap-comp-res{margin-top:8px;padding:0;font-size:14px}
+.ap-comp-res.ok{background:#e7f7ec;color:#14532d;padding:8px 10px;border-radius:10px}
+.ap-comp-res.med{background:#fff4d6;color:#7a4b00;padding:8px 10px;border-radius:10px}
+.ap-comp-res.no{background:#fde8e8;color:#7f1d1d;padding:8px 10px;border-radius:10px}
+.ap-mapa-btn{margin-left:auto;border:0;border-radius:999px;padding:8px 16px;font:800 14px Nunito,sans-serif;background:#fff;color:#1f3a8a;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.ap-mp-nivel{border-top:1px solid #e5e7eb;padding:10px 0}
+.ap-mp-nivel h3{margin:0 0 6px;font-size:15px}
+.ap-mp-nivel ul{list-style:none;margin:0;padding:0}
+.ap-mp-nivel li{display:flex;gap:10px;align-items:center;padding:4px 0;font-size:14px}
+.ap-mp-i{width:22px;text-align:center}
+.ap-mp-hecho{color:#14532d}.ap-mp-ahora{font-weight:800;color:#1f3a8a}.ap-mp-bloq{color:#777}
