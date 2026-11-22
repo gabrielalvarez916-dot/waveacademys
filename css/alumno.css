@@ -344,7 +344,7 @@
   box-shadow: 0 14px 34px -18px rgba(37, 54, 56, 0.55);
 }
 
-.tray-hero.atraso { background: linear-gradient(145deg, #C2543F, #8F3326); }
+.tray-hero.atraso { background: linear-gradient(145deg, #E59A1B, #B9710E); }
 
 .tray-hero-top {
   display: flex;
@@ -395,7 +395,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.tray-hero.atraso .tray-pin { border-color: #C2543F; }
+.tray-hero.atraso .tray-pin { border-color: #E59A1B; }
 
 .tray-extremos {
   display: flex;
@@ -452,7 +452,7 @@
 }
 
 .tray-estado.ok { background: #DDF3E6; color: #1E7A4C; }
-.tray-estado.atraso { background: var(--error-fondo); color: var(--error-texto); }
+.tray-estado.atraso { background: #FFF1D6; color: #8A5A00; }
 
 @media (max-width: 640px) {
   .tray-fecha { font-size: 1.35rem; }
@@ -840,3 +840,11 @@ body.av-abierto { overflow: hidden; }
 .plan-txt small { display: block; margin-top: 2px; opacity: 0.8; }
 .plan-tarea.hecha .plan-txt a { text-decoration: line-through; opacity: 0.6; }
 .plan-fin, .plan-vacio { margin: 12px 0 0; font-weight: 700; }
+
+.plan-mat { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #f6faf9; }
+.plan-cuad { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.plan-cu { display: inline-flex; cursor: pointer; }
+.plan-cu input { width: 26px; height: 26px; margin: 0; cursor: pointer; }
+.plan-mat.hecha .plan-txt a { text-decoration: line-through; opacity: 0.6; }
+.plan-mat[hidden] { display: none; }
+.plan-vermas { margin-top: 10px; border: 2px solid var(--menta); background: #fff; color: var(--petroleo); font: inherit; font-weight: 800; border-radius: 999px; padding: 8px 18px; cursor: pointer; }

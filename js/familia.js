@@ -757,12 +757,12 @@
           } else {
             var fin = fechaFin(restantes, porDia);
             if (!fin) {
-              r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
+              r.texto = 'Con este ritmo falta muchísimo: conviene sumar lecciones por semana'; r.clase = 'atraso';
             } else {
               if (!finGlobal || fin > finGlobal) finGlobal = fin;
               r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
               if (finAnio && fin > finAnio) {
-                r.estado = 'Se retrasa ' + semanasDeRetraso(fin, finAnio) + ' sem.'; r.clase = 'atraso';
+                r.estado = 'Necesita ' + semanasDeRetraso(fin, finAnio) + ' sem. más'; r.clase = 'atraso';
               } else {
                 r.estado = 'A tiempo'; r.clase = 'ok';
               }
@@ -798,7 +798,7 @@
       var pill = '';
       if (finAnio) {
         pill = atrasado
-          ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, finAnio) + ' semanas de retraso</span>'
+          ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, finAnio) + ' semanas más que la fecha objetivo</span>'
           : '<span class="tray-pill ok">Llega a tiempo</span>';
       }
 
@@ -815,7 +815,7 @@
         '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
         linea +
         '<p class="tray-faltan">Le faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
-        (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
+        (atrasado ? ' Para llegar a la fecha objetivo, pueden sumar lecciones por día.' : '') + '</p>' + nota + '</div>';
     }
 
     // Fecha objetivo de finalización: la elige solo la familia

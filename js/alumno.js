@@ -174,7 +174,7 @@
 
   // ---------- Vistas ----------
   // ---------- Mi plan de hoy (trayectos Foco y Anticipación) ----------
-  // Las tareas salen de la programación: lo de hoy + lo que quedó atrasado. Se tildan solas al avanzar.
+  // Las tareas salen de la programación: lo de hoy + lo que quedó de días anteriores. Se tildan solas al avanzar.
   async function planDeHoy(cursos) {
     var q = await Promise.all([
       sb.from('students').select('started_at, adaptaciones').eq('id', estudianteId).maybeSingle(),
@@ -199,47 +199,67 @@
     try { guardado = JSON.parse(localStorage.getItem(clave) || '{}'); } catch (e) { guardado = {}; }
     var base = guardado.base || {}, manual = guardado.manual || {}, nuevoBase = !guardado.base;
 
-    var tareas = [];
+    var DIAS_N = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    var hoyClave = hoy.toDateString();
+    var mats = [];
     cursos.forEach(function (c) {
-      var esperadas = 0, d = new Date(ini), n = 0;
+      var dias = [], d = new Date(ini), n = 0;
       while (d <= hoy && n++ < 800) {
         var wd = d.getDay();
-        if (wd >= 1 && wd <= 5) filas.forEach(function (f) { if (f.subject_id === c.id && f.weekday === wd) esperadas += f.lessons_target; });
+        if (wd >= 1 && wd <= 5) filas.forEach(function (f) {
+          if (f.subject_id === c.id && f.weekday === wd) for (var k = 0; k < f.lessons_target; k++) dias.push(new Date(d));
+        });
         d.setDate(d.getDate() + 1);
       }
       var h = hechas[c.id] || 0;
       if (base[c.id] == null) base[c.id] = h;
       var quedan = total[c.id] ? Math.max(0, total[c.id] - base[c.id]) : 99999;
-      var cuantas = Math.min(Math.max(0, esperadas - base[c.id]), quedan);
+      var cuantas = Math.min(Math.max(0, dias.length - base[c.id]), quedan);
+      if (!cuantas) return;
       var hechasHoy = Math.max(0, h - base[c.id]);
-      for (var i = 0; i < cuantas; i++) {
-        tareas.push({ c: c, i: i, ok: i < hechasHoy || !!manual[c.id + '-' + i] });
-      }
+      var origen = [];
+      dias.slice(base[c.id], base[c.id] + cuantas).forEach(function (x) {
+        var t = x.toDateString() === hoyClave ? 'hoy' : 'el ' + DIAS_N[x.getDay()] + ' ' + x.getDate();
+        if (origen.indexOf(t) < 0) origen.push(t);
+      });
+      var txt = origen.length > 1 ? origen.slice(0, -1).join(', ') + ' y ' + origen[origen.length - 1] : origen[0];
+      txt = ('de ' + txt).replace(/^de el /, 'del ');
+      mats.push({ c: c, cuantas: cuantas, hechasHoy: hechasHoy, texto: txt });
     });
-    if (nuevoBase || true) {
-      try { localStorage.setItem(clave, JSON.stringify({ base: base, manual: manual })); } catch (e) { /* sin almacenamiento */ }
-    }
+    try { localStorage.setItem(clave, JSON.stringify({ base: base, manual: manual })); } catch (e) { /* sin almacenamiento */ }
 
-    var hechasN = tareas.filter(function (t) { return t.ok; }).length;
+    var totalN = 0, hechasN = 0;
+    mats.forEach(function (m) {
+      m.cuad = [];
+      for (var i = 0; i < m.cuantas; i++) { var ok = i < m.hechasHoy || !!manual[m.c.id + '-' + i]; m.cuad.push(ok); totalN++; if (ok) hechasN++; }
+    });
     var cab = '<div class="plan-cab"><h2>Mi plan de hoy</h2>' +
-      (tareas.length ? '<span class="plan-cuenta">' + hechasN + ' de ' + tareas.length + '</span>' : '') + '</div>';
-    if (!tareas.length) {
-      return '<section class="plan-hoy">' + cab + '<p class="plan-vacio">Hoy no tenés tareas programadas.</p></section>';
+      (totalN ? '<span class="plan-cuenta">' + hechasN + ' de ' + totalN + '</span>' : '') + '</div>';
+    if (!mats.length) {
+      return '<section class="plan-hoy">' + cab + '<p class="plan-vacio">Hoy no tenés nada programado. ¡Disfrutá tu descanso!</p></section>';
     }
-    var items = tareas.map(function (t, k) {
-      var sig = tareas[k + 1];
-      return '<li class="plan-tarea' + (t.ok ? ' hecha' : '') + '">' +
-        '<label><input type="checkbox" data-pc="' + t.c.id + '-' + t.i + '"' + (t.ok ? ' checked' : '') + '>' +
-        '<span class="plan-txt"><a href="#materia/' + t.c.id + '">' + esc(t.c.nombre) + '</a>' +
-        (ant ? '<small>' + (k + 1) + '.º tarea · Abrí la materia y hacé la próxima lección.' +
-          (sig ? ' Después sigue: ' + esc(sig.c.nombre) + '.' : ' Es la última de hoy.') + '</small>' : '') +
-        '</span></label></li>';
+    var items = mats.map(function (m, k) {
+      var cuad = m.cuad.map(function (ok, i) {
+        return '<label class="plan-cu"><input type="checkbox" data-pc="' + m.c.id + '-' + i + '"' + (ok ? ' checked' : '') + ' aria-label="Lección ' + (i + 1) + ' de ' + esc(m.c.nombre) + '"></label>';
+      }).join('');
+      return '<li class="plan-mat' + (m.cuad.every(Boolean) ? ' hecha' : '') + (k >= 4 ? ' plan-mas' : '') + '"' + (k >= 4 ? ' hidden' : '') + '>' +
+        '<div class="plan-txt"><a href="#materia/' + m.c.id + '">' + esc(m.c.nombre) + '</a> · <b>' + textoLecciones(m.cuantas) + '</b><small>' + esc(m.texto) + '</small></div>' +
+        '<div class="plan-cuad">' + cuad + '</div></li>';
     }).join('');
-    var fin = hechasN === tareas.length ? '<p class="plan-fin">Hoy terminaste tu plan.</p>' : '';
-    return '<section class="plan-hoy">' + cab + '<ul class="plan-lista">' + items + '</ul>' + fin + '</section>';
+    var mas = mats.length > 4 ? '<button type="button" class="plan-vermas" data-plan-mas="1">Ver más (' + (mats.length - 4) + ')</button>' : '';
+    var fin = hechasN === totalN ? '<p class="plan-fin">¡Terminaste todo! Qué buen trabajo.</p>' : '';
+    return '<section class="plan-hoy">' + cab + '<ul class="plan-lista">' + items + '</ul>' + mas + fin + '</section>';
   }
 
   function enganchaPlan(cont) {
+    cont.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-plan-mas]') : null;
+      if (!b) return;
+      var ocultas = cont.querySelectorAll('.plan-mas');
+      var abrir = ocultas.length && ocultas[0].hidden;
+      ocultas.forEach(function (li) { li.hidden = !abrir; });
+      b.textContent = abrir ? 'Ver menos' : 'Ver más (' + ocultas.length + ')';
+    });
     cont.addEventListener('change', function (e) {
       var i = e.target.closest ? e.target.closest('[data-pc]') : null;
       if (!i) return;
@@ -249,7 +269,8 @@
       g.manual = g.manual || {};
       g.manual[i.getAttribute('data-pc')] = i.checked;
       try { localStorage.setItem(clave, JSON.stringify(g)); } catch (x) { /* sin almacenamiento */ }
-      var li = i.closest('li'); if (li) li.classList.toggle('hecha', i.checked);
+      var li = i.closest('li');
+      if (li) li.classList.toggle('hecha', li.querySelectorAll('[data-pc]:not(:checked)').length === 0);
       var todos = cont.querySelectorAll('[data-pc]'), ok = cont.querySelectorAll('[data-pc]:checked');
       var cu = cont.querySelector('.plan-cuenta'); if (cu) cu.textContent = ok.length + ' de ' + todos.length;
     });
@@ -489,12 +510,12 @@
         } else {
           var fin = fechaFin(restantes, porDia);
           if (!fin) {
-            r.texto = 'Con este ritmo tardaría más de 10 años'; r.clase = 'atraso';
+            r.texto = 'Con este ritmo falta muchísimo: sumá lecciones por semana'; r.clase = 'atraso';
           } else {
             if (!finGlobal || fin > finGlobal) finGlobal = fin;
             r.texto = 'Termina el ' + fechaLarga(fin) + ' · ' + textoLecciones(semanal) + ' por semana';
             if (prog.finAnio && fin > prog.finAnio) {
-              r.estado = 'Se retrasa ' + semanasDeRetraso(fin, prog.finAnio) + ' sem.'; r.clase = 'atraso';
+              r.estado = 'Necesita ' + semanasDeRetraso(fin, prog.finAnio) + ' sem. más'; r.clase = 'atraso';
             } else {
               r.estado = 'A tiempo'; r.clase = 'ok';
             }
@@ -533,7 +554,7 @@
     var pill = '';
     if (prog.finAnio) {
       pill = atrasado
-        ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, prog.finAnio) + ' semanas de retraso</span>'
+        ? '<span class="tray-pill atraso">+' + semanasDeRetraso(t.finGlobal, prog.finAnio) + ' semanas más que tu fecha objetivo</span>'
         : '<span class="tray-pill ok">Llegás a tiempo</span>';
     }
 
@@ -550,7 +571,7 @@
       '<b class="tray-fecha">' + esc(fechaLarga(t.finGlobal)) + '</b></div>' + pill + '</div>' +
       linea +
       '<p class="tray-faltan">Te faltan <b>' + textoLecciones(t.restantesTotal) + '</b> en total.' +
-      (atrasado ? ' Para llegar a tiempo, sumá lecciones por día.' : '') + '</p>' + nota + '</div>';
+      (atrasado ? ' Si querés llegar a la fecha objetivo, podés sumar lecciones por día.' : '') + '</p>' + nota + '</div>';
   }
 
   function pintarProgramacion() {
