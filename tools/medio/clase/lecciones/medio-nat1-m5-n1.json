@@ -1,0 +1,131 @@
+{
+ "slug": "medio-nat1-m5-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 5,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Objetos y materiales que los forman",
+ "sub": "Ciencias Naturales 1 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿De qué está hecha tu mesa?",
+   "segundos": 6,
+   "respuesta": "¡DE MADERA!",
+   "emoji": "🪑",
+   "titulo": "LOS MATERIALES",
+   "sub": "de los objetos",
+   "voz": [
+    "Desafío: ¿de qué está hecha tu mesa?",
+    "¡De *madera*!",
+    "Hoy: *objetos y materiales*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "EN EL TALLER DEL ABUELO",
+   "items": [
+    {
+     "cab": "🪑 MESA",
+     "txt": "MADERA"
+    },
+    {
+     "cab": "🥛 VASO",
+     "txt": "VIDRIO"
+    },
+    {
+     "cab": "🥄 CUCHARA",
+     "txt": "METAL"
+    },
+    {
+     "cab": "🧴 BOTELLA",
+     "txt": "PLÁSTICO"
+    }
+   ],
+   "voz": [
+    "El abuelo tiene muchos *objetos*.",
+    "La mesa es de *madera*.",
+    "El vaso es de *vidrio*.",
+    "La cuchara es de *metal*.",
+    "La botella es de *plástico*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "✏️",
+     "txt": "UN LÁPIZ"
+    },
+    {
+     "emoji": "🪵",
+     "txt": "MADERA"
+    },
+    {
+     "emoji": "⚫",
+     "txt": "GRAFITO"
+    }
+   ],
+   "voz": [
+    "Miramos un *lápiz*.",
+    "Por fuera es de *madera*.",
+    "¡Adentro tiene *grafito*! Dos materiales."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De qué es la cuchara?",
+   "opciones": [
+    "MADERA",
+    "METAL",
+    "TELA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La cuchara es fría y brilla.",
+    "¿De qué material es?",
+    "¡De *metal*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TOCÁ Y MIRÁ",
+   "texto": "¿Frío, duro, liviano?",
+   "emoji": "✋",
+   "voz": [
+    "Truco: *tocá* el objeto y te da pistas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "OBJETO",
+     "mesa, vaso"
+    ],
+    [
+     "MATERIAL",
+     "madera, vidrio, metal"
+    ],
+    [
+     "VARIOS",
+     "el lápiz"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *objetos* están hechos de materiales.",
+    "Madera, *vidrio*, metal, plástico.",
+    "Algunos tienen *varios*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

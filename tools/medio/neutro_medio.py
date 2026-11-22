@@ -144,4 +144,6 @@ OK |= {'caí'}; MAPA.update({'parás': 'paras'})  # Lengua 1 · Misión 10
 OK |= {'crecí', 'tele'}; MAPA.update({'olés': 'hueles', 'lavás': 'lavas', 'observás': 'observas', 'agarrás': 'agarras', 'frotá': 'frota', 'frotás': 'frotas', 'imaginás': 'imaginas', 'lavate': 'lávate', 'registrá': 'registra'})  # Ciencias Naturales 1 · Misión 1
 MAPA.update({'agrupalos': 'agrúpalos', 'imitá': 'imita'})  # Ciencias Naturales 1 · Misión 2
 MAPA.update({'sentilo': 'siéntelo', 'regá': 'riega', 'anotás': 'anotas', 'calcá': 'calca', 'miralas': 'míralas', 'miralo': 'míralo', 'plantá': 'planta', 'salís': 'sales'})  # Ciencias Naturales 1 · Misión 3
+MAPA.update({'cuidás': 'cuidas'})  # Ciencias Naturales 1 · Misión 4
+OK |= {'través', 'mochila', 'doblé'}; MAPA.update({'alumbrá': 'alumbra', 'doblá': 'dobla', 'doblás': 'doblas'})  # Ciencias Naturales 1 · Misión 5
 OK -= set(MAPA)

@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat1-m4-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 4,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Ambientes de tierra, de agua y de aire",
+ "sub": "Ciencias Naturales 1 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡EXCURSIÓN A LA NATURALEZA!",
+   "bajada": "¿Quién vive dónde?",
+   "emoji": "🚌",
+   "titulo": "LOS AMBIENTES",
+   "sub": "tierra, agua y aire",
+   "voz": [
+    "¡Último momento! Nos vamos de *excursión*.",
+    "Vamos a ver quién vive dónde.",
+    "Hoy: *los ambientes*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿DÓNDE VIVEN?",
+   "celdas": [
+    {
+     "cab": "🐄 VACA",
+     "txt": "TIERRA"
+    },
+    {
+     "cab": "🐟 PEZ",
+     "txt": "AGUA"
+    },
+    {
+     "cab": "🐦 PÁJARO",
+     "txt": "AIRE"
+    },
+    {
+     "cab": "🐸 RANA",
+     "txt": "AGUA Y TIERRA"
+    }
+   ],
+   "voz": [
+    "Cada uno tiene su *ambiente*.",
+    "La vaca vive en la *tierra*.",
+    "El pez vive en el *agua*.",
+    "El pájaro vuela por el *aire*.",
+    "¡La rana vive en el agua *y* en la tierra!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TIERRA",
+    "texto": "CAMPO, BOSQUE",
+    "emoji": "🌳"
+   },
+   "b": {
+    "cab": "AGUA",
+    "texto": "MAR, LAGUNA",
+    "emoji": "🌊"
+   },
+   "signo": "vs",
+   "voz": [
+    "Ambientes de *tierra*: el campo, el bosque.",
+    "Ambientes de *agua*: el mar, la laguna.",
+    "¡Cada ambiente tiene sus animales!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde vive la ballena?",
+   "opciones": [
+    "TIERRA",
+    "AGUA",
+    "ÁRBOL"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La ballena es enorme y nada.",
+    "¿Dónde vive?",
+    "¡En el *agua*, en el mar!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ CÓMO SE MUEVE",
+   "texto": "Nada: agua. Camina: tierra.",
+   "emoji": "💡",
+   "voz": [
+    "Truco: fijate cómo se *mueve* el animal."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TIERRA",
+     "campo, bosque"
+    ],
+    [
+     "AGUA",
+     "mar, laguna"
+    ],
+    [
+     "AIRE",
+     "los que vuelan"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Hay ambientes de *tierra*.",
+    "Hay ambientes de *agua*.",
+    "Y los pájaros vuelan por el *aire*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

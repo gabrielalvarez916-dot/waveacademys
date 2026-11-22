@@ -1,0 +1,125 @@
+{
+ "slug": "medio-nat1-m5-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 5,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Elijo el material adecuado",
+ "sub": "Ciencias Naturales 1 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡UN PARAGUAS DE PAPEL!",
+   "bajada": "Se rompió con la primera lluvia",
+   "emoji": "☔",
+   "titulo": "ELIJO",
+   "sub": "el material",
+   "voz": [
+    "¡Último momento! Un paraguas de *papel*.",
+    "Se rompió con la primera lluvia.",
+    "Hoy: *elegir el material adecuado*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "BIEN ELEGIDO",
+   "celdas": [
+    {
+     "cab": "🪟 VENTANA",
+     "txt": "VIDRIO: PARA VER"
+    },
+    {
+     "cab": "☂️ PARAGUAS",
+     "txt": "PLÁSTICO: NO SE MOJA"
+    },
+    {
+     "cab": "⚽ PELOTA",
+     "txt": "GOMA: PICA"
+    },
+    {
+     "cab": "🚪 PUERTA",
+     "txt": "MADERA: FUERTE"
+    }
+   ],
+   "voz": [
+    "Cada objeto tiene su *mejor* material.",
+    "La ventana, de *vidrio*: para ver.",
+    "El paraguas, de *plástico*: no se moja.",
+    "La pelota, de *goma*: pica.",
+    "La puerta, de *madera*: es fuerte."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO ELIJO",
+   "items": [
+    "¿PARA QUÉ SIRVE?",
+    "¿QUÉ NECESITA?",
+    "ELIJO",
+    "PRUEBO"
+   ],
+   "voz": [
+    "Primero pienso: ¿*para qué* sirve?",
+    "Después: ¿qué *necesita*?",
+    "Ahora *elijo* el material.",
+    "Y lo *pruebo*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De qué hacés un vaso para ver el jugo?",
+   "opciones": [
+    "MADERA",
+    "VIDRIO",
+    "TELA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Querés ver el jugo.",
+    "¿De qué material hacés el vaso?",
+    "¡De *vidrio*, que es transparente!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿PARA QUÉ?",
+   "texto": "Siempre empezá por esa pregunta",
+   "emoji": "🤔",
+   "voz": [
+    "Truco: empezá siempre por *¿para qué sirve?*"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PENSAR",
+     "para qué sirve"
+    ],
+    [
+     "ELEGIR",
+     "el adecuado"
+    ],
+    [
+     "PROBAR",
+     "ver si sirve"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Pensamos *para qué* sirve.",
+    "*Elegimos* el material adecuado.",
+    "Y lo *probamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

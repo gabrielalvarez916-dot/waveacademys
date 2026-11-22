@@ -1,0 +1,167 @@
+{
+ "slug": "medio-nat1-m5-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 5,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Flexible y rígido",
+ "sub": "Ciencias Naturales 1 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Doblé mi regla y se rompió!"
+    },
+    {
+     "yo": true,
+     "txt": "¿ERA DE MADERA?"
+    },
+    {
+     "yo": false,
+     "txt": "Sí… ¿por qué?"
+    }
+   ],
+   "titulo": "FLEXIBLE",
+   "sub": "y rígido",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Doblé mi regla y se rompió!",
+    "Sofi le pregunta si era de madera.",
+    "Hoy: *flexible y rígido*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "LA DOBLO",
+    "emoji": "➰",
+    "texto": "Goma doblada"
+   },
+   "despues": {
+    "cab": "LA SUELTO",
+    "emoji": "➖",
+    "texto": "¡No se rompió!"
+   },
+   "voz": [
+    "Doblamos una *goma*.",
+    "La soltamos: ¡no se rompió! Es *flexible*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿SE DOBLA?",
+   "variable": "EL MATERIAL",
+   "a": {
+    "cab": "REGLA DE PLÁSTICO FINO",
+    "emojis": [
+     "📏",
+     "🤲"
+    ],
+    "txt": "La doblo",
+    "res": "SE DOBLA"
+   },
+   "b": {
+    "cab": "REGLA DE MADERA",
+    "emojis": [
+     "📏",
+     "🤲"
+    ],
+    "txt": "La doblo",
+    "res": "NO SE DOBLA"
+   },
+   "voz": [
+    "Probamos con una regla de *plástico fino*.",
+    "Y con una regla de *madera*.",
+    "¡La de madera es *rígida*: no se dobla!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FLEXIBLE",
+     "emoji": "🧦"
+    },
+    {
+     "cab": "RÍGIDO",
+     "emoji": "🧱"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "MEDIA",
+     "caja": 0
+    },
+    {
+     "txt": "LADRILLO",
+     "caja": 1
+    },
+    {
+     "txt": "PAPEL",
+     "caja": 0
+    },
+    {
+     "txt": "PIEDRA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos en dos cajas.",
+    "Los que se doblan: *flexibles*.",
+    "Los que no se doblan: *rígidos*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es flexible?",
+   "opciones": [
+    "PIEDRA",
+    "TELA",
+    "LADRILLO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Piedra, tela, ladrillo.",
+    "¿Cuál se dobla sin romperse?",
+    "¡La *tela*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FLEXIBLE",
+     "se dobla"
+    ],
+    [
+     "RÍGIDO",
+     "no se dobla"
+    ],
+    [
+     "PROBAR",
+     "con cuidado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Flexible*: se dobla sin romperse.",
+    "*Rígido*: no se dobla.",
+    "Probamos siempre con *cuidado*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

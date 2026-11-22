@@ -1,0 +1,150 @@
+{
+ "slug": "medio-nat1-m4-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 4,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Un ambiente y sus habitantes",
+ "sub": "Ciencias Naturales 1 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Llegaste a la laguna?"
+    },
+    {
+     "yo": true,
+     "txt": "¡SÍ! HAY PATOS Y RANAS"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y qué más?"
+    }
+   ],
+   "titulo": "LA LAGUNA",
+   "sub": "y sus habitantes",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Llegaste a la laguna?",
+    "¡Sí! Hay patos y ranas.",
+    "Hoy: *un ambiente y sus habitantes*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏞️",
+   "titulo": "LA LAGUNA",
+   "partes": [
+    {
+     "txt": "PATO",
+     "x": 0.4,
+     "y": -0.3
+    },
+    {
+     "txt": "PEZ",
+     "x": -0.2,
+     "y": 0.4
+    },
+    {
+     "txt": "RANA",
+     "x": 0.5,
+     "y": 0.5
+    },
+    {
+     "txt": "JUNCOS",
+     "x": -0.6,
+     "y": -0.2
+    }
+   ],
+   "voz": [
+    "Miramos la *laguna*.",
+    "Nada un *pato*.",
+    "Abajo del agua, un *pez*.",
+    "En la orilla, una *rana*.",
+    "Y crecen los *juncos*: ¡son plantas!"
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "EN EL AGUA",
+   "b": "EN LA ORILLA",
+   "itemsA": [
+    "PEZ"
+   ],
+   "itemsB": [
+    "JUNCO"
+   ],
+   "ambos": [
+    "RANA",
+    "PATO"
+   ],
+   "voz": [
+    "¿Dónde está cada habitante?",
+    "El *pez*, en el agua.",
+    "El *junco*, en la orilla.",
+    "¡La rana y el pato, en los *dos*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál no es un habitante?",
+   "opciones": [
+    "PATO",
+    "BARRO",
+    "JUNCO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pato, barro, junco.",
+    "¿Cuál no es un ser vivo?",
+    "¡El *barro*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PLANTAS TAMBIÉN",
+   "texto": "Las plantas también son habitantes",
+   "emoji": "🌾",
+   "voz": [
+    "Truco: las *plantas* también son habitantes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AMBIENTE",
+     "la laguna"
+    ],
+    [
+     "HABITANTES",
+     "pato, pez, rana, junco"
+    ],
+    [
+     "LUGAR",
+     "agua u orilla"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La laguna es un *ambiente*.",
+    "Tiene muchos *habitantes*.",
+    "Cada uno en su *lugar*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

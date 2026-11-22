@@ -1,0 +1,124 @@
+{
+ "slug": "medio-nat1-m4-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 4,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Qué necesitan para vivir",
+ "sub": "Ciencias Naturales 1 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🪴",
+   "lineas": [
+    "Sofi se fue de vacaciones.",
+    "Nadie regó su planta.",
+    "¡Al volver estaba seca!"
+   ],
+   "titulo": "QUÉ NECESITAN",
+   "sub": "para vivir",
+   "voz": [
+    "Sofi se fue de *vacaciones*.",
+    "Nadie regó su planta.",
+    "¡Al volver estaba *seca*!",
+    "Hoy: *qué necesitan para vivir*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "PARA VIVIR",
+    "emoji": "💚"
+   },
+   "items": [
+    "AGUA",
+    "ALIMENTO",
+    "AIRE",
+    "UN LUGAR"
+   ],
+   "voz": [
+    "¿Qué necesita un ser vivo?",
+    "Necesita *agua*.",
+    "Necesita *alimento*.",
+    "Necesita *aire*.",
+    "Y necesita *un lugar* para vivir."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SIN AGUA",
+    "emoji": "🥀",
+    "texto": "Seca"
+   },
+   "despues": {
+    "cab": "CON AGUA",
+    "emoji": "🌷",
+    "texto": "¡Verde otra vez!"
+   },
+   "voz": [
+    "Sin agua, la planta se *secó*.",
+    "Sofi la riega y se pone *verde*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué necesitan todos los seres vivos?",
+   "opciones": [
+    "UNA PELOTA",
+    "AGUA",
+    "UN AUTO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en plantas y animales.",
+    "¿Qué necesitan todos?",
+    "¡*Agua*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "VOS TAMBIÉN",
+   "texto": "Agua, comida, aire y casa",
+   "emoji": "🧒",
+   "voz": [
+    "Truco: vos también necesitás *lo mismo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AGUA",
+     "todos la necesitan"
+    ],
+    [
+     "ALIMENTO Y AIRE",
+     "para vivir"
+    ],
+    [
+     "LUGAR",
+     "su ambiente"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Todos necesitan *agua*.",
+    "También *alimento* y *aire*.",
+    "Y un *lugar* para vivir.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

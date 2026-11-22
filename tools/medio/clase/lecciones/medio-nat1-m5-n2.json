@@ -1,0 +1,134 @@
+{
+ "slug": "medio-nat1-m5-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 5,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Transparente, opaco y translúcido",
+ "sub": "Ciencias Naturales 1 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🔦",
+   "lineas": [
+    "Sofi juega con una linterna.",
+    "Alumbra la ventana y la puerta.",
+    "¡Por una pasa la luz!"
+   ],
+   "titulo": "LA LUZ",
+   "sub": "¿pasa o no pasa?",
+   "voz": [
+    "Sofi juega con una *linterna*.",
+    "Alumbra la ventana y la puerta.",
+    "¡Por una pasa la luz!",
+    "Hoy: *transparente, opaco y translúcido*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TRANSPARENTE",
+    "texto": "VIDRIO: SE VE",
+    "emoji": "🪟"
+   },
+   "b": {
+    "cab": "OPACO",
+    "texto": "MADERA: NO SE VE",
+    "emoji": "🚪"
+   },
+   "signo": "vs",
+   "voz": [
+    "Por el vidrio se ve: es *transparente*.",
+    "Por la madera no se ve: es *opaca*.",
+    "¡La luz pasa o no pasa!"
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿PASA LA LUZ?",
+   "variable": "EL MATERIAL",
+   "a": {
+    "cab": "PAPEL DE CALCAR",
+    "emojis": [
+     "🔦",
+     "📄"
+    ],
+    "txt": "Papel finito",
+    "res": "PASA UN POCO"
+   },
+   "b": {
+    "cab": "CARTÓN",
+    "emojis": [
+     "🔦",
+     "📦"
+    ],
+    "txt": "Cartón grueso",
+    "res": "NO PASA NADA"
+   },
+   "voz": [
+    "Sofi alumbra un *papel de calcar*.",
+    "Después alumbra un *cartón*.",
+    "Por el papel pasa un poco: es *translúcido*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo es el cartón?",
+   "opciones": [
+    "TRANSPARENTE",
+    "OPACO",
+    "TRANSLÚCIDO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Por el cartón no pasa la luz.",
+    "¿Cómo es?",
+    "¡*Opaco*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ A TRAVÉS",
+   "texto": "Poné el objeto frente a tus ojos",
+   "emoji": "👀",
+   "voz": [
+    "Truco: poné el objeto frente a tus *ojos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TRANSPARENTE",
+     "se ve"
+    ],
+    [
+     "TRANSLÚCIDO",
+     "pasa poca luz"
+    ],
+    [
+     "OPACO",
+     "no pasa luz"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Transparente*: se ve a través.",
+    "*Translúcido*: pasa poca luz.",
+    "*Opaco*: no pasa nada.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
