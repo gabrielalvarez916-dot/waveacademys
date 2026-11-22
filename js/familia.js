@@ -101,7 +101,7 @@
       sb.from('grades').select('id, year_number, name, levels(name, position)'),
       sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden'),
       sb.from('test_aprendizaje').select('student_id, fecha, trayectos').order('fecha', { ascending: false }),
-      sb.from('adaptaciones_apoyo').select('clave, trayecto, texto, texto_familia, lista, orden').order('orden')
+      sb.from('adaptaciones_apoyo').select('clave, trayecto, texto, texto_familia, concepto, lista, orden').order('orden')
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
 
@@ -374,6 +374,32 @@
       }).select('id').single();
       var testId = ins.data ? ins.data.id : null;
       var tr = res.trayectos, nom = esc(hijo.nombre);
+      var comb = null;
+      if (tr.length === 2) {
+        try {
+          var ex = await Promise.all([
+            sb.from('trayectos_combinados').select('nombre, descripcion').eq('clave', tr.slice().sort().join('+')).maybeSingle(),
+            sb.from('apoyos_comunes').select('concepto, texto_familia, orden').order('orden'),
+            sb.from('trayectos_apoyo').select('clave, titulo_familia')
+          ]);
+          if (ex[0].data) comb = { nombre: ex[0].data.nombre, descripcion: ex[0].data.descripcion, comunes: ex[1].data || [], titulos: ex[2].data || [] };
+        } catch (e) { comb = null; }
+      }
+      function combinadoHtml() {
+        var xs = adaptacionesDe(d, tr).filter(function (a) { return a.lista && (a.texto_familia || a.texto); });
+        var conceptos = {};
+        xs.forEach(function (a) { if (a.concepto) conceptos[a.concepto] = true; });
+        var comunes = comb.comunes.filter(function (c) { return conceptos[c.concepto]; });
+        var h = '<div class="tst-tray"><b>' + esc(comb.nombre) + '</b><p>' + esc(comb.descripcion) + '</p>';
+        if (comunes.length) h += '<h4>Para estudiar con calma</h4><ul class="tst-ad">' + comunes.map(function (c) { return '<li><span class="tst-ck" aria-hidden="true">✓</span>' + esc(c.texto_familia) + '</li>'; }).join('') + '</ul>';
+        tr.forEach(function (c) {
+          var propios = xs.filter(function (a) { return a.trayecto === c && !a.concepto; });
+          if (!propios.length) return;
+          var ti = comb.titulos.filter(function (t) { return t.clave === c; })[0];
+          h += '<h4>' + esc((ti && ti.titulo_familia) || nombreTrayecto(d, c)) + '</h4><ul class="tst-ad">' + propios.map(function (a) { return '<li><span class="tst-ck" aria-hidden="true">✓</span>' + esc(a.texto_familia || a.texto) + '</li>'; }).join('') + '</ul>';
+        });
+        return h + '</div>';
+      }
       var lista = tr.length ? tr.map(function (c) {
         var t = (d.trayectos || []).filter(function (x) { return x.clave === c; })[0] || { nombre: c, descripcion: '' };
         return '<div class="tst-tray"><b>' + esc(t.nombre) + '</b><p>' + esc(t.descripcion) + '</p>' +
@@ -383,10 +409,10 @@
       fondo.innerHTML = '<div class="tst-caja" role="dialog">' +
         '<h2>' + (conApoyo ? 'Armamos un recorrido pensado para ' + nom : 'El recorrido de ' + nom) + '</h2>' +
         (conApoyo
-          ? '<p class="tst-intro">Gracias por contarnos cómo aprende ' + nom + '. Con tus respuestas preparamos ' + (tr.length > 1 ? 'una combinación de dos recorridos' : 'un recorrido') + ' para que estudiar le resulte más tranquilo y más fácil.</p>' +
+          ? '<p class="tst-intro">Gracias por contarnos cómo aprende ' + nom + '. ' + (comb ? 'Con tus respuestas combinamos dos apoyos que se complementan: <b>' + esc(comb.nombre.replace(' + ', ' y ')) + '</b>.' : 'Con tus respuestas preparamos ' + (tr.length > 1 ? 'una combinación de dos recorridos' : 'un recorrido') + ' para que estudiar le resulte más tranquilo y más fácil.') + '</p>' +
             '<p class="tst-reco"><b>Te recomendamos seguirlo</b>, porque es lo que mejor se ajusta a lo que nos contaste. Igual es <b>totalmente opcional</b>: vos decidís, y lo podés cambiar o desactivar cuando quieras.</p>'
           : '<p class="tst-intro">Según tus respuestas, ' + nom + ' puede seguir el recorrido estándar de Wave. Si más adelante notás que algo le cuesta, podés repetir el test y sumar apoyos.</p>') +
-        lista +
+        (comb ? combinadoHtml() : lista) +
         (res.muchas ? '<p class="tst-nota">Notamos que hay varias áreas que le cuestan. Además de esto, te sugerimos hablar con Dirección o con su tutor, así armamos un acompañamiento a su medida.</p>' : '') +
         (conApoyo ? '<p class="tst-intro">Si lo aceptás, queda todo listo en el panel de ' + nom + ' y empieza a verlo desde su próxima sesión. Y siempre tiene a mano la lectura en voz alta de los PDF, el dictado por voz y la letra más grande.</p>' : '') +
         '<div class="tst-acc">' +
