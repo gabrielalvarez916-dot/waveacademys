@@ -589,7 +589,7 @@
               : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
           }) });
       } else if (k === 'pdf') {
-        WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, alTerminar: function () { marcar(paso); },
+        WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, modoLectura: !!D && (D.adaptaciones || []).indexOf('lec_modo') >= 0, alTerminar: function () { marcar(paso); },
           chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: paso.id }; }, chatConfig: tutorOps('pdf', {}).config,
           url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
       } else if (k === 'interactive') {

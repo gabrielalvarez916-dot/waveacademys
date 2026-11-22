@@ -50,6 +50,7 @@
             '<button type="button" class="wvp-b wvp-ancho" data-v="ajustar" aria-label="Ajustar al ancho">Ajustar</button>' +
             '<button type="button" class="wvp-b" data-v="mas" aria-label="Acercar">+</button>' +
           '</div>' +
+          (opts.modoLectura ? '<button type="button" class="wvp-b wvp-blec" data-lec="tog" aria-pressed="false">Aa Modo lectura</button>' : '') +
           (conChat ? '<button type="button" class="wvp-b wvp-bchat" data-v="chat">💬 Tutor</button>' : '') +
           (opts.descargable ? '<button type="button" class="wvp-b wvp-desc" data-v="bajar">⬇ Descargar</button>' : '') +
          '</div>' +
@@ -65,6 +66,7 @@
         '<div class="wvp-cuerpo">' +
           '<div class="wvp-estado">Cargando PDF…</div>' +
           '<div class="wvp-pagina"><canvas class="wvp-canvas" hidden></canvas><div class="wvp-texto"></div></div>' +
+          (opts.modoLectura ? '<div class="wvp-lector" hidden></div>' : '') +
         '</div>' +
        '</div>' +
        (conChat ?
@@ -124,6 +126,7 @@
         if (mia !== ficha || cerrado) return;
         cuerpo.scrollTo(0, 0);
         if (voz.hablando) remarcar();
+        if (lecOn) lecArmar();
         if (n === total && !avisado && opts.alTerminar) { avisado = true; try { opts.alTerminar(); } catch (e2) { /* nada */ } }
       } catch (e) {
         if (e && e.name === 'RenderingCancelledException') return;
@@ -153,6 +156,68 @@
       actualizarControles();
       return pintar();
     }
+
+    // ---------- Modo lectura: el texto de la página con letra, interlineado y espacio entre palabras a medida ----------
+    var lector = el.querySelector('.wvp-lector'), lecOn = false, lecPag = null;
+    var LEC = { t: 1.25, i: 1.9, p: 0.3 };
+    try { var g = JSON.parse(localStorage.getItem('wave_modo_lectura') || 'null'); if (g) { LEC.t = +g.t || LEC.t; LEC.i = +g.i || LEC.i; LEC.p = g.p === 0 ? 0 : (+g.p || LEC.p); } } catch (e) { /* nada */ }
+    function lecGuardar() { try { localStorage.setItem('wave_modo_lectura', JSON.stringify(LEC)); } catch (e) { /* nada */ } }
+    function lecParrafos(items) {
+      var L = [], cur = null;
+      items.forEach(function (it) {
+        if (typeof it.str !== 'string') return;
+        var y = it.transform[5];
+        if (cur && Math.abs(cur.y - y) < 2.5) { cur.t += it.str; }
+        else { cur = { y: y, h: Math.abs(it.height) || Math.abs(it.transform[3]) || 10, t: it.str }; L.push(cur); }
+      });
+      var P = [], act = '', prev = null;
+      L.forEach(function (l) {
+        var t = l.t.replace(/\s+/g, ' ').trim();
+        if (!t) { if (act) { P.push(act); act = ''; } prev = null; return; }
+        var corte = prev && (prev.y - l.y > prev.h * 1.75 || l.y > prev.y + 2);
+        if (corte && act) { P.push(act); act = ''; }
+        act = act ? (/[-‐]$/.test(act) ? act.slice(0, -1) + t : act + ' ' + t) : t;
+        prev = l;
+      });
+      if (act) P.push(act);
+      return P;
+    }
+    async function lecArmar() {
+      if (!lecOn || !lector || !pdf) return;
+      var pg = await pdf.getPage(n), cont = await pg.getTextContent();
+      if (!lecOn) return;
+      var P = lecParrafos(cont.items);
+      lector.style.setProperty('--lt', LEC.t + 'rem');
+      lector.style.setProperty('--li', String(LEC.i));
+      lector.style.setProperty('--lp', LEC.p + 'em');
+      var ctl = '<div class="wvp-lec-ctl" role="group" aria-label="Ajustes de lectura">' +
+        '<span>Letra <button type="button" class="wvp-b" data-lec="t-">A−</button><button type="button" class="wvp-b" data-lec="t+">A+</button></span>' +
+        '<span>Líneas <button type="button" class="wvp-b" data-lec="i-">−</button><button type="button" class="wvp-b" data-lec="i+">+</button></span>' +
+        '<span>Palabras <button type="button" class="wvp-b" data-lec="p-">−</button><button type="button" class="wvp-b" data-lec="p+">+</button></span></div>';
+      lector.innerHTML = ctl + (P.length
+        ? P.map(function (x) { return '<p>' + esc(x) + '</p>'; }).join('')
+        : '<p class="wvp-lec-vacio">Esta página no tiene texto para mostrar así (puede ser una imagen). Volvé al PDF para verla.</p>');
+      cuerpo.scrollTo(0, 0);
+    }
+    function lecAjustar(a) {
+      if (a === 't-') LEC.t = Math.max(1, +(LEC.t - 0.15).toFixed(2)); else if (a === 't+') LEC.t = Math.min(2.4, +(LEC.t + 0.15).toFixed(2));
+      else if (a === 'i-') LEC.i = Math.max(1.4, +(LEC.i - 0.2).toFixed(2)); else if (a === 'i+') LEC.i = Math.min(3, +(LEC.i + 0.2).toFixed(2));
+      else if (a === 'p-') LEC.p = Math.max(0, +(LEC.p - 0.1).toFixed(2)); else if (a === 'p+') LEC.p = Math.min(1, +(LEC.p + 0.1).toFixed(2));
+      lecGuardar();
+      lector.style.setProperty('--lt', LEC.t + 'rem'); lector.style.setProperty('--li', String(LEC.i)); lector.style.setProperty('--lp', LEC.p + 'em');
+    }
+    if (lector) el.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-lec]'); if (!b) return;
+      var a = b.getAttribute('data-lec');
+      if (a === 'tog') {
+        lecOn = !lecOn;
+        b.setAttribute('aria-pressed', lecOn ? 'true' : 'false');
+        b.textContent = lecOn ? '📄 Ver el PDF' : 'Aa Modo lectura';
+        lector.hidden = !lecOn;
+        pagina_el.style.display = lecOn ? 'none' : '';
+        if (lecOn) lecArmar(); else cuerpo.scrollTo(0, 0);
+      } else lecAjustar(a);
+    });
 
     // ---------- Lectura en voz alta del PDF, con la oración marcada encima ----------
     var voz = { hablando: false, pausado: false, cola: [], idx: 0, vozES: null, marcados: [], sesion: 0 };
