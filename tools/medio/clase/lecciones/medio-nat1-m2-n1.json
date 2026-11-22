@@ -1,0 +1,146 @@
+{
+ "slug": "medio-nat1-m2-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 2,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Cubiertos de pelos, plumas o escamas",
+ "sub": "Ciencias Naturales 1 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué viste en el zoológico?"
+    },
+    {
+     "yo": true,
+     "txt": "¡UN OSO, UN LORO Y UN PEZ!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y cómo eran?"
+    }
+   ],
+   "titulo": "ANIMALES",
+   "sub": "por fuera",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué viste en el zoológico?",
+    "Un oso, un loro y un pez.",
+    "Hoy: *de qué están cubiertos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿DE QUÉ ESTÁN CUBIERTOS?",
+   "celdas": [
+    {
+     "cab": "🐻 OSO",
+     "txt": "PELOS"
+    },
+    {
+     "cab": "🦜 LORO",
+     "txt": "PLUMAS"
+    },
+    {
+     "cab": "🐟 PEZ",
+     "txt": "ESCAMAS"
+    },
+    {
+     "cab": "🐍 VÍBORA",
+     "txt": "ESCAMAS"
+    }
+   ],
+   "voz": [
+    "Cada animal tiene su *ropa*.",
+    "El oso tiene *pelos*.",
+    "El loro tiene *plumas*.",
+    "El pez tiene *escamas*.",
+    "¡La víbora también tiene *escamas*!"
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🐟",
+     "txt": "UN PEZ"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "DE CERCA"
+    },
+    {
+     "emoji": "🔷",
+     "txt": "ESCAMAS"
+    }
+   ],
+   "voz": [
+    "Miramos un *pez*.",
+    "Nos acercamos con la lupa.",
+    "¡Vemos sus *escamas*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién tiene plumas?",
+   "opciones": [
+    "GATO",
+    "GALLINA",
+    "PEZ"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en las plumas.",
+    "¿Quién tiene plumas?",
+    "¡La *gallina*! Es un ave."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ DE CERCA",
+   "texto": "¿Pelos, plumas o escamas?",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: mirá la piel *de cerca*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PELOS",
+     "oso, perro"
+    ],
+    [
+     "PLUMAS",
+     "aves"
+    ],
+    [
+     "ESCAMAS",
+     "peces, víboras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El oso y el perro: *pelos*.",
+    "Las aves: *plumas*.",
+    "Peces y víboras: *escamas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

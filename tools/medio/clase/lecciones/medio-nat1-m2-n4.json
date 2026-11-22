@@ -1,0 +1,158 @@
+{
+ "slug": "medio-nat1-m2-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 2,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Agrupo animales por sus rasgos",
+ "sub": "Ciencias Naturales 1 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "NOTICIAS DEL ZOO",
+   "titular": "¡SE MEZCLARON LOS CARTELES!",
+   "bajada": "Hay que armar los grupos",
+   "emoji": "🦓",
+   "titulo": "AGRUPAR",
+   "sub": "animales",
+   "voz": [
+    "¡Noticias del zoológico! Se mezclaron los *carteles*.",
+    "Hay que armar los grupos otra vez.",
+    "Hoy: *agrupar animales*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PLUMAS",
+     "emoji": "🪶"
+    },
+    {
+     "cab": "PELOS",
+     "emoji": "🐾"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "LORO",
+     "caja": 0
+    },
+    {
+     "txt": "PERRO",
+     "caja": 1
+    },
+    {
+     "txt": "PATO",
+     "caja": 0
+    },
+    {
+     "txt": "VACA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Agrupamos por su *cubierta*.",
+    "En una caja, los de *plumas*.",
+    "En la otra, los de *pelos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "RASGOS DEL PATO",
+   "celdas": [
+    {
+     "cab": "🪶",
+     "txt": "PLUMAS"
+    },
+    {
+     "cab": "🚶",
+     "txt": "CAMINA"
+    },
+    {
+     "cab": "🏊",
+     "txt": "NADA"
+    },
+    {
+     "cab": "🕊️",
+     "txt": "VUELA"
+    }
+   ],
+   "voz": [
+    "Miramos los *rasgos* del pato.",
+    "Tiene *plumas*.",
+    "*Camina* con sus patas.",
+    "*Nada* en la laguna.",
+    "¡Y también *vuela*!"
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "NADAN",
+   "b": "VUELAN",
+   "itemsA": [
+    "PEZ",
+    "DELFÍN"
+   ],
+   "itemsB": [
+    "PALOMA",
+    "LORO"
+   ],
+   "ambos": [
+    "PATO"
+   ],
+   "voz": [
+    "Ahora agrupamos por cómo se *mueven*.",
+    "El pez y el delfín *nadan*.",
+    "La paloma y el loro *vuelan*.",
+    "¡El pato está en los *dos grupos*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál no va con los de plumas?",
+   "opciones": [
+    "LORO",
+    "GATO",
+    "GALLINA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Loro, gato, gallina.",
+    "¿Cuál no tiene plumas?",
+    "¡El *gato*! Tiene pelos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RASGO",
+     "algo que vemos"
+    ],
+    [
+     "GRUPO",
+     "los que se parecen"
+    ],
+    [
+     "DOS GRUPOS",
+     "el pato"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *rasgo* es algo que vemos.",
+    "Un *grupo* junta los parecidos.",
+    "Algunos van en *dos grupos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

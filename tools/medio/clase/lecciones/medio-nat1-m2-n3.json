@@ -1,0 +1,122 @@
+{
+ "slug": "medio-nat1-m2-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 2,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "De qué se alimentan",
+ "sub": "Ciencias Naturales 1 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué come el conejo?",
+   "segundos": 6,
+   "respuesta": "¡ZANAHORIAS!",
+   "emoji": "🐰",
+   "titulo": "QUÉ COMEN",
+   "sub": "los animales",
+   "voz": [
+    "Desafío: ¿qué come el conejo?",
+    "¡*Zanahorias* y pasto!",
+    "Hoy: *qué comen los animales*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "PLANTAS",
+   "b": "ANIMALES",
+   "itemsA": [
+    "VACA",
+    "CONEJO"
+   ],
+   "itemsB": [
+    "LEÓN",
+    "TIBURÓN"
+   ],
+   "ambos": [
+    "GALLINA",
+    "OSO"
+   ],
+   "voz": [
+    "Separamos por lo que *comen*.",
+    "La vaca y el conejo comen *plantas*.",
+    "El león y el tiburón comen *animales*.",
+    "¡La gallina y el oso comen *de todo*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "VACA",
+    "texto": "DIENTES CHATOS",
+    "emoji": "🐄"
+   },
+   "b": {
+    "cab": "LEÓN",
+    "texto": "DIENTES FILOSOS",
+    "emoji": "🦁"
+   },
+   "signo": "vs",
+   "voz": [
+    "La vaca tiene dientes *chatos*: muele pasto.",
+    "El león tiene dientes *filosos*: corta carne.",
+    "¡Los dientes nos dan una pista!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué come el tiburón?",
+   "opciones": [
+    "PASTO",
+    "PECES",
+    "ZANAHORIAS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. El tiburón vive en el mar.",
+    "¿Qué come?",
+    "¡*Peces*! Come otros animales."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LOS DIENTES",
+   "texto": "Filosos o chatos",
+   "emoji": "🦷",
+   "voz": [
+    "Truco: mirá los *dientes* del animal."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PLANTAS",
+     "vaca, conejo"
+    ],
+    [
+     "ANIMALES",
+     "león, tiburón"
+    ],
+    [
+     "DE TODO",
+     "gallina, oso"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Unos comen *plantas*.",
+    "Otros comen *animales*.",
+    "Y otros comen *de todo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

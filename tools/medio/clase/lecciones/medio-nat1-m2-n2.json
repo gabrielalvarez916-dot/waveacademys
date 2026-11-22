@@ -1,0 +1,131 @@
+{
+ "slug": "medio-nat1-m2-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 2,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Cómo se desplazan",
+ "sub": "Ciencias Naturales 1 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🦁",
+   "lineas": [
+    "Sofi pasea por el zoológico.",
+    "Un mono salta y un pez nada.",
+    "¡Cada uno se mueve distinto!"
+   ],
+   "titulo": "CÓMO",
+   "sub": "se mueven",
+   "voz": [
+    "Sofi pasea por el *zoológico*.",
+    "Un mono salta y un pez nada.",
+    "¡Cada uno se mueve *distinto*!",
+    "Hoy: *cómo se mueven los animales*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "SE MUEVEN ASÍ",
+   "items": [
+    {
+     "cab": "🐕 PERRO",
+     "txt": "CAMINA"
+    },
+    {
+     "cab": "🐦 PÁJARO",
+     "txt": "VUELA"
+    },
+    {
+     "cab": "🐟 PEZ",
+     "txt": "NADA"
+    },
+    {
+     "cab": "🐸 RANA",
+     "txt": "SALTA"
+    },
+    {
+     "cab": "🐍 VÍBORA",
+     "txt": "REPTA"
+    }
+   ],
+   "voz": [
+    "Miramos cómo se mueven.",
+    "El perro *camina*.",
+    "El pájaro *vuela*.",
+    "El pez *nada*.",
+    "La rana *salta*.",
+    "La víbora se arrastra: *repta*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ALAS",
+    "texto": "PARA VOLAR",
+    "emoji": "🐦"
+   },
+   "b": {
+    "cab": "ALETAS",
+    "texto": "PARA NADAR",
+    "emoji": "🐟"
+   },
+   "signo": "vs",
+   "voz": [
+    "El pájaro tiene *alas* para volar.",
+    "El pez tiene *aletas* para nadar.",
+    "¡Su cuerpo los ayuda a moverse!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se mueve la víbora?",
+   "opciones": [
+    "VUELA",
+    "REPTA",
+    "SALTA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. La víbora no tiene patas.",
+    "¿Cómo se mueve?",
+    "¡*Repta*! Se arrastra por el suelo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMINAR",
+     "con patas"
+    ],
+    [
+     "VOLAR Y NADAR",
+     "alas y aletas"
+    ],
+    [
+     "REPTAR",
+     "arrastrarse"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Unos *caminan* con patas.",
+    "Otros *vuelan* o *nadan*.",
+    "Y otros *reptan*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

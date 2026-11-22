@@ -1,0 +1,126 @@
+{
+ "slug": "medio-nat1-m3-n3",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 3,
+  "nivel": 3
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Dónde crecen mejor",
+ "sub": "Ciencias Naturales 1 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué necesita una planta para crecer?",
+   "segundos": 6,
+   "respuesta": "¡LUZ, AGUA Y TIERRA!",
+   "emoji": "🌱",
+   "titulo": "DÓNDE CRECEN",
+   "sub": "mejor",
+   "voz": [
+    "Desafío: ¿qué necesita una planta para crecer?",
+    "¡*Luz*, *agua* y *tierra*!",
+    "Hoy: *dónde crecen mejor*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿CON LUZ O SIN LUZ?",
+   "variable": "LA LUZ",
+   "a": {
+    "cab": "EN LA VENTANA",
+    "emojis": [
+     "🪴",
+     "☀️"
+    ],
+    "txt": "Con luz",
+    "res": "VERDE Y FUERTE"
+   },
+   "b": {
+    "cab": "EN EL PLACARD",
+    "emojis": [
+     "🪴",
+     "🌑"
+    ],
+    "txt": "Sin luz",
+    "res": "AMARILLA Y DÉBIL"
+   },
+   "voz": [
+    "Sofi pone una planta en la *ventana*.",
+    "Y otra igual en el *placard*.",
+    "¡La de la ventana quedó verde y fuerte!"
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "UNA PLANTA SANA",
+    "emoji": "🪴"
+   },
+   "items": [
+    "LUZ",
+    "AGUA JUSTA",
+    "TIERRA"
+   ],
+   "voz": [
+    "¿Qué hace falta para una planta *sana*?",
+    "Necesita *luz*.",
+    "Necesita agua, pero *justa*.",
+    "Y necesita *tierra* para sus raíces."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde ponés tu planta?",
+   "opciones": [
+    "EN EL PLACARD",
+    "EN LA VENTANA",
+    "EN LA HELADERA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Tenés una planta nueva.",
+    "¿Dónde crece mejor?",
+    "¡En la *ventana*, con sol!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "AGUA JUSTA",
+   "texto": "Mucha agua también hace mal",
+   "emoji": "💧",
+   "voz": [
+    "Truco: regá *poquito*, no de más."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUZ",
+     "la pone verde"
+    ],
+    [
+     "AGUA",
+     "justa"
+    ],
+    [
+     "TIERRA",
+     "para las raíces"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *luz* la pone verde.",
+    "El *agua*, justa.",
+    "Y la *tierra*, para las raíces.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

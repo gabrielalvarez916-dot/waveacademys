@@ -1,0 +1,124 @@
+{
+ "slug": "medio-nat1-m3-n4",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 3,
+  "nivel": 4
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Mi cuaderno de campo",
+ "sub": "Ciencias Naturales 1 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SOFI ES CIENTÍFICA!",
+   "bajada": "Arma su cuaderno de campo",
+   "emoji": "📓",
+   "titulo": "MI CUADERNO",
+   "sub": "de campo",
+   "voz": [
+    "¡Último momento! Sofi es *científica*.",
+    "Arma su cuaderno de campo.",
+    "Hoy: *mi cuaderno de campo*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO HAGO",
+   "items": [
+    "SALGO",
+    "OBSERVO",
+    "DIBUJO",
+    "ANOTO"
+   ],
+   "voz": [
+    "Primero, *salgo* al patio o la plaza.",
+    "Después, *observo* una planta.",
+    "La *dibujo* en mi cuaderno.",
+    "Y *anoto* su nombre y el lugar."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🍃",
+   "titulo": "LA HOJA",
+   "partes": [
+    {
+     "txt": "PARTE ANCHA",
+     "x": 0.3,
+     "y": -0.4
+    },
+    {
+     "txt": "NERVADURAS",
+     "x": -0.3,
+     "y": 0.0
+    },
+    {
+     "txt": "PECÍOLO",
+     "x": 0.4,
+     "y": 0.6
+    }
+   ],
+   "voz": [
+    "Miramos las partes de la *hoja*.",
+    "Tiene una *parte ancha*.",
+    "Tiene rayitas: las *nervaduras*.",
+    "Y un palito: el *pecíolo*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué se dibuja en el cuaderno?",
+   "opciones": [
+    "LO QUE IMAGINO",
+    "LO QUE VEO",
+    "UN CUENTO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Sofi va a dibujar.",
+    "¿Qué tiene que dibujar?",
+    "¡*Lo que ve*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ANOTÁ EL LUGAR",
+   "texto": "¿Dónde viste la planta?",
+   "emoji": "📍",
+   "voz": [
+    "Truco: anotá *dónde* viste la planta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "OBSERVAR",
+     "mirar con atención"
+    ],
+    [
+     "DIBUJAR Y ANOTAR",
+     "en el cuaderno"
+    ],
+    [
+     "PARTES",
+     "nervaduras y pecíolo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Observamos* con atención.",
+    "*Dibujamos* y *anotamos*.",
+    "Conocimos las *partes* de la hoja.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

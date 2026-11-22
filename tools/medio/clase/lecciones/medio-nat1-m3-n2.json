@@ -1,0 +1,144 @@
+{
+ "slug": "medio-nat1-m3-n2",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 3,
+  "nivel": 2
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Árboles, arbustos y hierbas",
+ "sub": "Ciencias Naturales 1 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué plantas hay en la plaza?"
+    },
+    {
+     "yo": true,
+     "txt": "¡UN PINO, UN ROSAL Y PASTO!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y son iguales?"
+    }
+   ],
+   "titulo": "ÁRBOLES",
+   "sub": "arbustos y hierbas",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué plantas hay en la plaza?",
+    "Un pino, un rosal y pasto.",
+    "Hoy: *árboles, arbustos y hierbas*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "TRES TIPOS",
+   "items": [
+    {
+     "cab": "🌲 ÁRBOL",
+     "txt": "ALTO, TRONCO DURO"
+    },
+    {
+     "cab": "🌹 ARBUSTO",
+     "txt": "MEDIANO, MUCHOS TALLOS"
+    },
+    {
+     "cab": "🌱 HIERBA",
+     "txt": "BAJITA, TALLO BLANDO"
+    }
+   ],
+   "voz": [
+    "Hay tres tipos de plantas.",
+    "El *árbol* es alto y tiene tronco.",
+    "El *arbusto* es mediano, con muchos tallos.",
+    "La *hierba* es bajita y blanda."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "¿QUÉ TAN ALTAS?",
+   "unidad": "chicos parados",
+   "items": [
+    {
+     "txt": "HIERBA",
+     "valor": 1
+    },
+    {
+     "txt": "ARBUSTO",
+     "valor": 2
+    },
+    {
+     "txt": "ÁRBOL",
+     "valor": 8
+    }
+   ],
+   "voz": [
+    "Las medimos con *chicos parados*.",
+    "La hierba: menos de *1*.",
+    "El arbusto: como *2*.",
+    "¡El árbol: como *8*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es el pasto?",
+   "opciones": [
+    "ÁRBOL",
+    "ARBUSTO",
+    "HIERBA"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. El pasto es bajito y blando.",
+    "¿Qué tipo de planta es?",
+    "¡Una *hierba*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL TALLO",
+   "texto": "¿Duro o blando?",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: tocá el *tallo*. ¿Es duro o blando?"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ÁRBOL",
+     "alto, tronco"
+    ],
+    [
+     "ARBUSTO",
+     "mediano"
+    ],
+    [
+     "HIERBA",
+     "bajita, blanda"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *árbol* es alto, con tronco.",
+    "El *arbusto* es mediano.",
+    "La *hierba* es bajita y blanda.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

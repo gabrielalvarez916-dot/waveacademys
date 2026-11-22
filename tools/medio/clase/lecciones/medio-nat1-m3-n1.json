@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat1-m3-n1",
+ "destino": {
+  "subject_id": "a3d2a4e5-78ec-4a92-9233-9f5f558a7ca0",
+  "tema": 3,
+  "nivel": 1
+ },
+ "materia": "Ciencias Naturales 1",
+ "titulo": "Las hojas, formas y bordes",
+ "sub": "Ciencias Naturales 1 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🌳",
+   "lineas": [
+    "Sofi pasea por la plaza.",
+    "Junta hojas del suelo.",
+    "¡Ninguna es igual a otra!"
+   ],
+   "titulo": "LAS HOJAS",
+   "sub": "formas y bordes",
+   "voz": [
+    "Sofi pasea por la *plaza*.",
+    "Junta hojas del suelo.",
+    "¡Ninguna es igual a otra!",
+    "Hoy: *formas y bordes de las hojas*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🌳",
+     "txt": "UN ÁRBOL"
+    },
+    {
+     "emoji": "🍃",
+     "txt": "UNA HOJA"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "SU BORDE"
+    }
+   ],
+   "voz": [
+    "Miramos un *árbol*.",
+    "Nos acercamos a una *hoja*.",
+    "¡Y miramos su *borde*!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BORDE LISO",
+    "texto": "Como un limón",
+    "emoji": "🍋"
+   },
+   "b": {
+    "cab": "CON DIENTES",
+    "texto": "Como una sierra",
+    "emoji": "🌹"
+   },
+   "signo": "vs",
+   "voz": [
+    "La hoja del limonero tiene borde *liso*.",
+    "La hoja de la rosa tiene *dientes*.",
+    "¡Pasá el dedo y sentilo!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo es el borde de la hoja de la rosa?",
+   "opciones": [
+    "LISO",
+    "CON DIENTES",
+    "DE PLUMAS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la rosa.",
+    "¿Cómo es el borde de su hoja?",
+    "¡Con *dientes*, como una sierra!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DEL SUELO",
+   "texto": "Juntá las hojas que ya cayeron",
+   "emoji": "🍂",
+   "voz": [
+    "Truco: juntá las hojas del *suelo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FORMA",
+     "redonda, alargada"
+    ],
+    [
+     "BORDE",
+     "liso o con dientes"
+    ],
+    [
+     "CUIDAR",
+     "juntar del suelo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las hojas tienen *formas* distintas.",
+    "El *borde* es liso o con dientes.",
+    "Juntamos las del *suelo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -142,4 +142,6 @@ OK |= {'elsolsale', 'mipapátomamate'}  # Lengua 1 · Misión 8: palabras pegada
 OK |= {'palo'}; MAPA.update({'raspá': 'raspa'})  # Lengua 1 · Misión 9
 OK |= {'caí'}; MAPA.update({'parás': 'paras'})  # Lengua 1 · Misión 10
 OK |= {'crecí', 'tele'}; MAPA.update({'olés': 'hueles', 'lavás': 'lavas', 'observás': 'observas', 'agarrás': 'agarras', 'frotá': 'frota', 'frotás': 'frotas', 'imaginás': 'imaginas', 'lavate': 'lávate', 'registrá': 'registra'})  # Ciencias Naturales 1 · Misión 1
+MAPA.update({'agrupalos': 'agrúpalos', 'imitá': 'imita'})  # Ciencias Naturales 1 · Misión 2
+MAPA.update({'sentilo': 'siéntelo', 'regá': 'riega', 'anotás': 'anotas', 'calcá': 'calca', 'miralas': 'míralas', 'miralo': 'míralo', 'plantá': 'planta', 'salís': 'sales'})  # Ciencias Naturales 1 · Misión 3
 OK -= set(MAPA)
