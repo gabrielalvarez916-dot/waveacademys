@@ -1,0 +1,142 @@
+{
+ "slug": "medio-leng1-m1-n1",
+ "step_id": "22b659ce-e46d-4587-99bc-b4fd7d19c384",
+ "materia": "Lengua 1",
+ "titulo": "Leer los nombres del grado",
+ "sub": "Lengua 1 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏫",
+   "lineas": [
+    "Es el primer día de clase.",
+    "Cada mesa tiene un cartel.",
+    "¿Dónde se sienta Sofi?"
+   ],
+   "titulo": "LOS NOMBRES",
+   "sub": "del grado",
+   "voz": [
+    "¡Es el *primer día* de clase!",
+    "Cada mesa tiene un *cartel* con un nombre.",
+    "¿Dónde se sienta Sofi?",
+    "Hoy: *leer los nombres del grado*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "S",
+    "O",
+    "F",
+    "I"
+   ],
+   "grande": "SOFI",
+   "etiqueta": "¡ACÁ SE SIENTA SOFI!",
+   "voz": [
+    "Sofi busca su cartel: S, O, F, I.",
+    "Las letras forman su nombre: *SOFI*.",
+    "¡Encontró su lugar!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LOS CARTELES DEL GRADO",
+   "items": [
+    {
+     "cab": "TOMI",
+     "txt": "empieza con T"
+    },
+    {
+     "cab": "ANA",
+     "txt": "empieza con A"
+    },
+    {
+     "cab": "MATEO",
+     "txt": "empieza con M"
+    }
+   ],
+   "voz": [
+    "Mirá otros carteles del grado.",
+    "Este dice *TOMI*.",
+    "Este dice *ANA*.",
+    "Y este dice *MATEO*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ANA",
+    "texto": "3 letras",
+    "emoji": "🐜"
+   },
+   "b": {
+    "cab": "MARTINA",
+    "texto": "7 letras",
+    "emoji": "🐍"
+   },
+   "signo": "vs",
+   "voz": [
+    "*ANA* tiene 3 letras: es corto.",
+    "*MARTINA* tiene 7 letras: es largo.",
+    "¡Hay nombres *cortos* y *largos*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántas letras tiene TOMI?",
+   "opciones": [
+    "3",
+    "4",
+    "5"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá el nombre TOMI.",
+    "¿Cuántas letras tiene?",
+    "¡*4*! T, O, M, I."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LA PRIMERA",
+   "texto": "La primera letra te ayuda a encontrar el nombre",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: mirá la *primera letra* del cartel."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CARTEL",
+     "dice un nombre"
+    ],
+    [
+     "LETRAS",
+     "forman el nombre"
+    ],
+    [
+     "LARGO",
+     "tiene más letras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada *cartel* dice un nombre.",
+    "Las *letras* forman el nombre.",
+    "Un nombre *largo* tiene más letras.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "slug": "medio-leng1-m1-n4",
+ "step_id": "925a339e-7f7b-42ed-990b-41a90d30b010",
+ "materia": "Lengua 1",
+ "titulo": "La lista de la clase",
+ "sub": "Lengua 1 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "AVISO DE LA SEÑO",
+   "titular": "¡HOY PASAMOS LISTA!",
+   "bajada": "Cada uno dice presente",
+   "emoji": "📋",
+   "titulo": "LA LISTA",
+   "sub": "de la clase",
+   "voz": [
+    "¡Aviso de la seño!",
+    "Hoy pasamos *lista*.",
+    "Hoy: *la lista de la clase*."
+   ]
+  },
+  {
+   "t": "contar",
+   "titulo": "LOS CHICOS DEL GRADO",
+   "emoji": "🧒",
+   "cantidad": 6,
+   "etiqueta": "6 NOMBRES EN LA LISTA",
+   "voz": [
+    "Contamos a los chicos del grado.",
+    "1, 2, 3, 4, 5, 6.",
+    "¡Son *6*! La lista tiene 6 nombres."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA LISTA EN ORDEN",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "ANA",
+     "emoji": "👧"
+    },
+    {
+     "fecha": "2",
+     "txt": "BRUNO",
+     "emoji": "👦"
+    },
+    {
+     "fecha": "3",
+     "txt": "LUCÍA",
+     "emoji": "👧"
+    },
+    {
+     "fecha": "4",
+     "txt": "MATEO",
+     "emoji": "👦"
+    },
+    {
+     "fecha": "5",
+     "txt": "SOFI",
+     "emoji": "👧"
+    }
+   ],
+   "voz": [
+    "Número 1: *ANA*, con A.",
+    "Número 2: *BRUNO*, con B.",
+    "Número 3: *LUCÍA*, con L.",
+    "Número 4: *MATEO*, con M.",
+    "Número 5: *SOFI*, con S."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "¿CÓMO VAN EN LA LISTA?",
+   "items": [
+    {
+     "txt": "ANA",
+     "emoji": "🅰️"
+    },
+    {
+     "txt": "MATEO",
+     "emoji": "Ⓜ️"
+    },
+    {
+     "txt": "SOFI",
+     "emoji": "🔤"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    1
+   ],
+   "voz": [
+    "Sofi, Ana y Mateo están mezclados.",
+    "Los ordenamos por la *primera letra*.",
+    "A, M, S: ¡Ana, Mateo y Sofi!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En la lista, ¿qué número tiene SOFI?",
+   "opciones": [
+    "1",
+    "5",
+    "6"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Buscá a Sofi en la lista.",
+    "¿Qué número tiene?",
+    "¡El *5*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LISTA",
+     "uno abajo del otro"
+    ],
+    [
+     "NÚMERO",
+     "dice el lugar"
+    ],
+    [
+     "BUSCAR",
+     "por la primera letra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la *lista*, uno abajo del otro.",
+    "El *número* dice el lugar.",
+    "*Buscamos* por la primera letra.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

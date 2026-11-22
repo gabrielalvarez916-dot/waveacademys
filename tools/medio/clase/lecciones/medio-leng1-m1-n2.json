@@ -1,0 +1,151 @@
+{
+ "slug": "medio-leng1-m1-n2",
+ "step_id": "32408f49-91d4-45ee-bd30-cff16db2e5e0",
+ "materia": "Lengua 1",
+ "titulo": "Copiar mi nombre sin mirar",
+ "sub": "Lengua 1 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Podés escribir tu nombre sin mirar el cartel?",
+   "segundos": 6,
+   "respuesta": "¡SÍ!",
+   "emoji": "🙈",
+   "titulo": "SIN MIRAR",
+   "sub": "copiar mi nombre",
+   "voz": [
+    "Desafío: ¿podés escribir tu nombre *sin mirar*?",
+    "¡Claro que sí!",
+    "Hoy: *copiar mi nombre sin mirar*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "T",
+    "O",
+    "M",
+    "I"
+   ],
+   "grande": "TOMI",
+   "etiqueta": "T · O · M · I",
+   "voz": [
+    "Tomi mira su cartel y dice las letras.",
+    "T, O, M, I: *TOMI*.",
+    "¡Las recuerda en *orden*!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LAS LETRAS DE MATEO",
+   "items": [
+    {
+     "txt": "M",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "A",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "T",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "E",
+     "emoji": "4️⃣"
+    },
+    {
+     "txt": "O",
+     "emoji": "5️⃣"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    4,
+    1,
+    3
+   ],
+   "voz": [
+    "¡Se mezclaron las letras de Mateo!",
+    "Las ponemos en *orden*.",
+    "M, A, T, E, O: *MATEO*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "PRIMERO",
+    "emoji": "👀",
+    "texto": "Miro el cartel y lo digo"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "✍️",
+    "texto": "Lo tapo y lo escribo"
+   },
+   "voz": [
+    "*Primero* miro el cartel y digo las letras.",
+    "*Después* lo tapo y lo escribo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué letra falta? MA_EO",
+   "opciones": [
+    "S",
+    "T",
+    "R"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Falta una letra en Mateo.",
+    "M, A… ¿qué letra va?",
+    "¡La *T*! M, A, T, E, O."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cambiar el orden: TIMO",
+     "bien": "Mismo orden: TOMI"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Las letras van siempre en el *mismo orden*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MIRAR",
+     "el cartel"
+    ],
+    [
+     "RECORDAR",
+     "las letras en orden"
+    ],
+    [
+     "COMPARAR",
+     "con el cartel"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *miramos* el cartel.",
+    "*Recordamos* las letras en orden.",
+    "Y *comparamos* con el cartel.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

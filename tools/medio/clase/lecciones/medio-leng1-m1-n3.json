@@ -1,0 +1,163 @@
+{
+ "slug": "medio-leng1-m1-n3",
+ "step_id": "b9e5507c-e7f9-401d-a573-a847df19dcff",
+ "materia": "Lengua 1",
+ "titulo": "Nombres que empiezan igual",
+ "sub": "Lengua 1 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Santi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Hola Sofi! Soy Santi"
+    },
+    {
+     "yo": true,
+     "txt": "¡Empezamos igual!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Igual? ¿Cómo?"
+    }
+   ],
+   "titulo": "EMPIEZAN IGUAL",
+   "sub": "los nombres",
+   "voz": [
+    "Santi le escribe a Sofi.",
+    "¡Hola Sofi! Soy Santi.",
+    "¡Nuestros nombres *empiezan igual*!",
+    "Hoy: *nombres que empiezan igual*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "SOFI Y SANTI SALTAN",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 0,
+     "etiqueta": "S",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "S",
+     "color": "sol"
+    },
+    {
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "S",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Leemos: Sofi y Santi saltan.",
+    "*SOFI* empieza con S.",
+    "*SANTI* también empieza con S.",
+    "¡Y *SALTAN* también!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "NOMBRES QUE EMPIEZAN IGUAL",
+   "celdas": [
+    {
+     "cab": "S",
+     "txt": "SOFI · SANTI"
+    },
+    {
+     "cab": "M",
+     "txt": "MATEO · MARTINA"
+    },
+    {
+     "cab": "L",
+     "txt": "LUCÍA · LUCAS"
+    },
+    {
+     "cab": "A",
+     "txt": "ANA · ALMA"
+    }
+   ],
+   "voz": [
+    "Juntamos los que *empiezan igual*.",
+    "Con *S*: Sofi y Santi.",
+    "Con *M*: Mateo y Martina.",
+    "Con *L*: Lucía y Lucas.",
+    "Con *A*: Ana y Alma."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué nombre empieza igual que TOMI?",
+   "opciones": [
+    "BRUNO",
+    "ANA",
+    "TERE"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Mirá la primera letra.",
+    "¿Qué nombre empieza igual que Tomi?",
+    "¡*TERE*! Los dos con T."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SOLO LA PRIMERA",
+   "texto": "Para agrupar, mirá solo la primera letra",
+   "emoji": "1️⃣",
+   "voz": [
+    "Truco: mirá solo la *primera letra*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Mirar la última letra",
+     "bien": "Mirar la primera letra"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Mirá la *primera* letra, no la última."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRIMERA",
+     "la letra de adelante"
+    ],
+    [
+     "IGUAL",
+     "SOFI y SANTI"
+    ],
+    [
+     "GRUPOS",
+     "por la primera letra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Miramos la *primera letra*.",
+    "Sofi y Santi *empiezan igual*.",
+    "Armamos *grupos* por la primera letra.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
