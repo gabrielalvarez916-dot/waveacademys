@@ -390,3 +390,11 @@
 @keyframes dm-pulso { 50% { transform: scale(1.04); } }
 html.ap-sin-anim .dm-op.on, html.ap-sin-anim .dm-chip.on { animation: none; }
 @media (prefers-reduced-motion: reduce) { .dm-op.on, .dm-chip.on { animation: none; } }
+
+/* Foco: bloques cortos y pausa */
+.fb-falta { margin: 4px 0 0; font-weight: 700; color: var(--c, #087E83); }
+.fb-pausa { margin: 18px 0 0; padding: 14px 16px; border-radius: 16px; background: #eef8f6; display: grid; gap: 8px; text-align: center; }
+.fb-pausa span { opacity: .85; }
+.fb-pausa-b { justify-self: center; border: 0; border-radius: 999px; padding: 10px 18px; font: inherit; font-weight: 800; background: var(--c, #087E83); color: #fff; cursor: pointer; }
+.fb-pausa-b:disabled { opacity: .6; cursor: default; }
+.fb-reloj { font-size: 1.6rem; font-weight: 800; }

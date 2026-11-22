@@ -465,9 +465,35 @@
       }).join('') + '</div><div class="rc-nav" data-cp-nav style="display:none"><button type="button" class="rc-btn" data-cp-n="-1">‹ Anterior</button><button type="button" class="rc-btn" data-cp-n="1">Siguiente ›</button></div>';
     }
     return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:' + u.color + '">' + ico(icono, 56, 2.2) + '</span>' +
-      '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(sub) + '</p>' + extra +
+      '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small>' + faltan(n, total) + '<h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(sub) + '</p>' + extra +
       '<div class="rc-pie"><button type="button" class="rc-btn" style="--k:' + u.color + '" data-rc="' + (k === 'carpeta' ? 'entregar' : 'abrir') + '" data-k="' + k + '">' + u.boton + '</button></div></div>';
   }
+
+  // ----- Foco: bloques cortos (cuánto falta) y pausa sugerida al terminar cada nivel -----
+  function esFoco() { return !!(D && D.adaptaciones && D.adaptaciones.indexOf('foc_bloques') >= 0); }
+  function faltan(n, total) {
+    if (!esFoco()) return '';
+    var q = total - n + 1;
+    return '<p class="fb-falta">' + (q === 1 ? 'Este es el último paso del nivel' : 'Te faltan ' + q + ' pasos para terminar el nivel') + '</p>';
+  }
+  function pausaHtml() {
+    if (!esFoco()) return '';
+    return '<div class="fb-pausa"><b>Hacé una pausa de 5 minutos</b><span>Tomá agua, estirate o mirá por la ventana. Después volvé.</span>' +
+      '<button type="button" class="fb-pausa-b" data-pausa="1">Empezar la pausa</button><output class="fb-reloj" aria-live="off"></output></div>';
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-pausa]');
+    if (!b || b.disabled) return;
+    var out = b.parentNode.querySelector('.fb-reloj'), resto = 300;
+    b.disabled = true;
+    function pinta() {
+      if (!document.body.contains(out)) return clearInterval(t);
+      if (resto <= 0) { clearInterval(t); out.textContent = 'Listo. Cuando quieras, seguí.'; b.textContent = 'Pausa terminada'; return; }
+      out.textContent = Math.floor(resto / 60) + ':' + ('0' + (resto % 60)).slice(-2);
+      resto--;
+    }
+    var t = setInterval(pinta, 1000); pinta();
+  });
 
   function pantallaFin(f, esGen) {
     var t = f.t, l = f.l, sig = null, boton;
@@ -480,7 +506,7 @@
     }
     var nombre = esGen ? '¡Generales superadas!' : '¡Nivel ' + (t.niveles.indexOf(l) + 1) + ' superado!';
     return '<div class="rc-cuerpo"><span class="rc-disco fin">' + ico('trophy', 64, 1.8) + '</span><small class="rc-kick">LO LOGRASTE</small><h1>' + nombre + '</h1>' +
-      '<p class="rc-sub">Completaste todos los pasos. Se abre lo que sigue.</p><div class="rc-pie">' + boton + '</div></div>';
+      '<p class="rc-sub">Completaste todos los pasos. Se abre lo que sigue.</p>' + pausaHtml() + '<div class="rc-pie">' + boton + '</div></div>';
   }
 
   function pantallaNivel(f) {
