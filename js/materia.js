@@ -799,7 +799,7 @@
       var tg = ev.target.closest('[data-ap]');
       if (tg) { var kk = tg.getAttribute('data-ap'); if (window.WaveApoyos) WaveApoyos.set(kk, !WaveApoyos.get(kk)); pintarToggles(); verConsigna(cuerpo._cn || 0); return; }
       var cb = ev.target.closest('[data-comprobar]'); if (cb) { comprobar(Number(cb.getAttribute('data-comprobar')), cb); return; }
-      if (ev.target.closest('[data-sincrono]')) { if (window.WaveApoyos) WaveApoyos.set('sinCrono', true); formulario(); return; }
+      if (ev.target.closest('[data-sincrono]')) { if (window.WaveApoyos) WaveApoyos.set('sinCrono', !WaveApoyos.get('sinCrono')); formulario(); return; }
       var cn = ev.target.closest('[data-cn]'); if (cn) { verConsigna((cuerpo._cn || 0) + Number(cn.getAttribute('data-cn'))); return; }
       if (ev.target.closest('[data-enviar]')) enviar();
       else if (ev.target.closest('[data-otra]')) { if (op.repaso && entregado) traer(); else formulario(); }
@@ -948,6 +948,7 @@
       relamp = null;
       if (!ap('sinCrono') && lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
       var barra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-ap="deAUna" aria-pressed="false">Ver de a una</button>' +
+        (lista.some(function (q) { return q.tiempo_seg; }) ? '<button type="button" class="ap-tg" data-sincrono="1" aria-pressed="true">Sin cronómetro</button>' : '') +
         (op.comprobar ? '<button type="button" class="ap-tg" data-ap="comprobar" aria-pressed="false">Comprobar cada respuesta</button>' : '') + '</div>';
       // Todas las consignas quedan armadas (así se entregan juntas). Se muestran todas o de a una, a elección del alumno.
       cuerpo.innerHTML = barra + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
@@ -1005,7 +1006,7 @@
       var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q;
       cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">⚡ Relámpago · ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
         '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
-        (i === 0 ? '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-sincrono="1">Sin cronómetro</button></div>' : '') +
+        '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-sincrono="1" aria-pressed="false">Sin cronómetro</button></div>' +
         '<div class="mt-cuest-pie"><button type="button" class="mt-boton" data-rel="1">' + (i === lista.length - 1 ? 'Terminar' : 'Siguiente') + '</button></div>';
       cuerpo.scrollTo(0, 0);
       var num = cuerpo.querySelector('.rl-seg b');
