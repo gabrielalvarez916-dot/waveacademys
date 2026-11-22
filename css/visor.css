@@ -134,3 +134,11 @@ body.wvp-abierto { overflow: hidden; }
 .wt-panel { position: absolute; right: 14px; bottom: 70px; z-index: 6; display: flex; flex-direction: column; width: min(360px, calc(100% - 28px)); height: min(520px, calc(100% - 90px)); background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px -10px rgba(0,0,0,0.5); }
 .wt-panel[hidden] { display: none; }
 .wt-panel .wvp-chat-x { display: block; }
+
+/* Lectura en voz alta: capa de texto invisible sobre el PDF y línea marcada */
+.wvp-pagina { position: relative; display: inline-block; vertical-align: top; }
+.wvp-texto { position: absolute; left: 0; top: 0; overflow: hidden; line-height: 1; }
+.wvp-texto span { position: absolute; white-space: pre; color: transparent; transform-origin: 0 0; cursor: text; border-radius: 2px; }
+.wvp-texto span.wvp-lee { background: rgba(255, 214, 51, 0.5); }
+.wvp-vel { font: inherit; padding: 6px 4px; border-radius: 8px; border: 1px solid #c9d3d1; background: #fff; }
+.wvp-voz .wvp-leer { background: #1f3a8a; color: #fff; }
