@@ -597,3 +597,15 @@ body.panel.familia .barra-der .saludo { margin-left: 0; }
 .ju-turnos { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; align-items: flex-start; }
 .ju-form { display: flex; gap: 8px; }
 .ju-form input { flex: 1; padding: 9px 12px; border: 1px solid #cfd8d6; border-radius: 10px; font: inherit; }
+
+/* Apoyos de aprendizaje (trayectos) */
+.apoyos-caja { margin: 8px 0 18px; padding: 16px 18px; border: 2px solid rgba(8,126,131,.2); border-radius: 16px; }
+.apoyos-caja legend { padding: 0 8px; font-weight: 800; }
+.apoyos-caja legend small { font-weight: 600; opacity: .7; }
+.apoyo-op { display: flex; align-items: flex-start; gap: 12px; padding: 10px 4px; cursor: pointer; }
+.apoyo-op input { margin-top: 4px; width: 20px; height: 20px; flex: none; accent-color: var(--turquesa, #087E83); }
+.apoyo-op b { display: block; margin-bottom: 2px; }
+.apoyo-op span { font-size: .92rem; line-height: 1.4; }
+.hijo-apoyos { margin-top: 10px; }
+.hijo-apoyos summary { cursor: pointer; font-weight: 800; color: var(--turquesa-oscuro, #065F63); }
+.apoyo-estado { display: block; min-height: 1.2em; margin-top: 4px; font-weight: 700; }

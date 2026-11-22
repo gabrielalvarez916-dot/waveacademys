@@ -95,10 +95,11 @@
     var res = await Promise.all([
       sb.from('subscriptions').select('id, student_id, status').eq('family_id', fam.data.id),
       sb.from('students')
-        .select('id, first_name, last_name, grade_id, created_at, grades(name, levels(name)), profiles!students_profile_id_fkey(email)')
+        .select('id, first_name, last_name, grade_id, created_at, trayectos_apoyo, grades(name, levels(name)), profiles!students_profile_id_fkey(email)')
         .eq('family_id', fam.data.id)
         .order('created_at', { ascending: true }),
-      sb.from('grades').select('id, year_number, name, levels(name, position)')
+      sb.from('grades').select('id, year_number, name, levels(name, position)'),
+      sb.from('trayectos_apoyo').select('clave, nombre, descripcion').order('orden')
     ]);
     res.forEach(function (r) { if (r.error) throw r.error; });
 
@@ -111,7 +112,7 @@
       return pa - pb || a.year_number - b.year_number;
     });
 
-    return { cupos: cupos, hijos: res[1].data || [], anios: anios };
+    return { cupos: cupos, hijos: res[1].data || [], anios: anios, trayectos: res[3].data || [] };
   }
 
   // La función devuelve el motivo del error en el cuerpo de la respuesta
@@ -181,6 +182,10 @@
             PAISES.map(function (p) { return '<option' + (p === (PAIS_FAM || 'Argentina') ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
           '</select><small class="ayuda">Si vive fuera de la Argentina, las clases y los PDF le llegan en español neutro latinoamericano.</small></div>' +
         '</div>' +
+        (d.trayectos.length ? '<fieldset class="apoyos-caja"><legend>Apoyos de aprendizaje <small>(opcional)</small></legend>' +
+          '<p class="ayuda">Si tu hijo necesita algo en especial para aprender, elegilo acá. No hace falta diagnóstico, se puede cambiar cuando quieras y se puede combinar.</p>' +
+          d.trayectos.map(function (t) { return '<label class="apoyo-op"><input type="checkbox" class="a-apoyo" value="' + esc(t.clave) + '"' + dis + '><span><b>' + esc(t.nombre) + '</b>' + esc(t.descripcion) + '</span></label>'; }).join('') +
+        '</fieldset>' : '') +
         '<p class="mensaje" id="a-error" hidden></p>' +
         '<button class="boton" type="submit" id="a-enviar"' + dis + '>Dar de alta</button>' +
       '</form>';
@@ -192,11 +197,25 @@
           return '<div class="hijo"><div class="hijo-ini">' + esc(ini.toUpperCase()) + '</div>' +
             '<div class="hijo-info"><b>' + esc(h.first_name + ' ' + h.last_name) + '</b>' +
             '<span>' + esc(h.grades ? etiquetaAnio(h.grades) : '') + '</span>' +
-            (usuario ? '<span>' + esc(usuario) + '</span>' : '') + '</div></div>';
+            (usuario ? '<span>' + esc(usuario) + '</span>' : '') +
+            (d.trayectos.length ? '<details class="hijo-apoyos"><summary>Apoyos de aprendizaje</summary>' +
+              d.trayectos.map(function (t) { return '<label class="apoyo-op"><input type="checkbox" class="h-apoyo" data-hijo="' + esc(h.id) + '" value="' + esc(t.clave) + '"' + ((h.trayectos_apoyo || []).indexOf(t.clave) >= 0 ? ' checked' : '') + '><span><b>' + esc(t.nombre) + '</b>' + esc(t.descripcion) + '</span></label>'; }).join('') +
+              '<small class="apoyo-estado" aria-live="polite"></small></details>' : '') +
+            '</div></div>';
         }).join('') + '</div>'
       : '';
 
     cont.innerHTML = cupos + '<div id="cred"></div>' + form + lista;
+
+    cont.addEventListener('change', async function (ev) {
+      var c = ev.target.closest && ev.target.closest('.h-apoyo');
+      if (!c) return;
+      var caja = c.closest('.hijo-apoyos'), est = caja.querySelector('.apoyo-estado');
+      var claves = [].map.call(caja.querySelectorAll('.h-apoyo:checked'), function (x) { return x.value; });
+      est.textContent = 'Guardando…';
+      var r = await sb.from('students').update({ trayectos_apoyo: claves }).eq('id', c.getAttribute('data-hijo'));
+      est.textContent = r.error ? 'No se pudo guardar. Probá de nuevo.' : 'Guardado ✓';
+    });
 
     var f = document.getElementById('alta-form');
     var err = document.getElementById('a-error');
@@ -229,6 +248,9 @@
         btn.disabled = false; btn.textContent = 'Dar de alta';
         return;
       }
+
+      var apoyos = [].map.call(f.querySelectorAll('.a-apoyo:checked'), function (x) { return x.value; });
+      if (apoyos.length && r.data.student_id) await sb.from('students').update({ trayectos_apoyo: apoyos }).eq('id', r.data.student_id);
 
       // Se vuelve a pintar la vista (cupos y lista actualizados) y se muestran las credenciales
       await vistaAltas();
