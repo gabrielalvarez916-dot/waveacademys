@@ -1,5 +1,8 @@
 name: Prueba de voz ElevenLabs (no publica nada)
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      script: { description: 'Script a correr', default: 'prueba_eleven.py' }
 permissions: { contents: write }
 jobs:
   prueba:
@@ -7,10 +10,10 @@ jobs:
     env: { ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}' }
     steps:
       - uses: actions/checkout@v4
-      - run: python tools/medio/clase/prueba_eleven.py
-      - name: Guardar los audios de prueba en el repo
+      - run: python tools/medio/clase/${{ github.event.inputs.script || 'prueba_eleven.py' }}
+      - name: Guardar los resultados en el repo
         run: |
           git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
           git add tools/medio/clase/prueba_eleven
-          git commit -m "Audios de prueba ElevenLabs (automático)"
+          git commit -m "Resultados de prueba ElevenLabs (automático)" || exit 0
           for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
