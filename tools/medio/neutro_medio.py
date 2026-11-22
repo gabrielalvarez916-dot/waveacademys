@@ -160,4 +160,5 @@ MAPA.update({'agradecé': 'agradece', 'apagá': 'apaga', 'ayudá': 'ayuda', 'sac
 OK |= {'nilo'}; MAPA.update({'entrevistás': 'entrevistas'})  # Ciencias Sociales 1 · Misión 8
 OK |= {'harás'}; MAPA.update({'cantalos': 'cántalos', 'cuidalas': 'cuídalas'})  # Ciencias Sociales 1 · Misión 9
 OK |= {'aprendí'}; MAPA.update({'mostralo': 'muéstralo'})  # Ciencias Sociales 1 · Misión 10
+OK |= {'inglés', 'gané', 'name', 'rompí'}; MAPA.update({'saludás': 'saludas', 'llamás': 'llamas', 'señalate': 'señálate', 'tocate': 'tócate', 'contestás': 'contestas', 'presentalo': 'preséntalo', 'sonreí': 'sonríe'})  # Inglés 1 · Misión 1
 OK -= set(MAPA)

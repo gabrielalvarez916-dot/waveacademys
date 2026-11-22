@@ -212,3 +212,8 @@ La etiqueta de cada misión está en la base (`topics.version`); copia en `tools
   - PDF del par: lo arma y lo sube `generar.py` solo (todo en neutro).
   - Clase del par: otro archivo en `lecciones/` con `"alternativa_de": "<slug argentino>"` y, en vez de `step_id`, `"destino": {"subject_id": "<materia de la misión>", "tema": N, "nivel": K, "internacional": true}` (la máquina busca sola el paso de video del par). La clase argentina lleva `"alternativa": "<slug del par>"`.
 - `"destino"` sirve también para cualquier clase (sin `"internacional"`): así no hace falta buscar ids a mano.
+
+## Inglés (1.º a 3.º año)
+- La explicación va en castellano; las frases enteras en inglés se marcan en la escena con `"voz_en": [índices]` y se graban con voz en inglés (`en-US-AnaNeural`, pausada). El control de pronunciación no revisa esas frases.
+- Las palabras sueltas en inglés dentro de una frase en castellano se dicen con PRONUNCIA (voz_edge.py): agregar ahí cada palabra nueva.
+- Plantillas útiles: `vocab` (palabra, emoji, trad, pron) y `dialogo` (txt en inglés + trad).

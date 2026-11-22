@@ -1,0 +1,174 @@
+{
+ "slug": "medio-ing1-m1-n3",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 1,
+  "nivel": 3
+ },
+ "materia": "Inglés 1",
+ "titulo": "How are you? Happy and sad",
+ "sub": "Inglés 1 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se dice feliz en inglés?",
+   "segundos": 6,
+   "respuesta": "¡HAPPY!",
+   "emoji": "😀",
+   "titulo": "HOW ARE YOU?",
+   "sub": "feliz y triste",
+   "voz": [
+    "Desafío: ¿cómo se dice feliz en inglés?",
+    "Happy!",
+    "Hoy: *cómo estás en inglés*."
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "HAPPY",
+     "emoji": "😀",
+     "trad": "feliz",
+     "pron": "jápi"
+    },
+    {
+     "palabra": "SAD",
+     "emoji": "😢",
+     "trad": "triste",
+     "pron": "sad"
+    },
+    {
+     "palabra": "FINE",
+     "emoji": "🙂",
+     "trad": "bien",
+     "pron": "fáin"
+    }
+   ],
+   "voz": [
+    "Happy!",
+    "Sad!",
+    "Fine!"
+   ],
+   "voz_en": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "HAPPY",
+    "texto": "Sonríe",
+    "emoji": "😀"
+   },
+   "b": {
+    "cab": "SAD",
+    "texto": "Llora",
+    "emoji": "😢"
+   },
+   "signo": "vs",
+   "voz": [
+    "Mirá las dos caras.",
+    "*Happy* sonríe: está feliz.",
+    "*Sad* llora: está triste."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "HAPPY",
+     "emoji": "😀"
+    },
+    {
+     "cab": "SAD",
+     "emoji": "😢"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "GANÉ UN PREMIO",
+     "caja": 0
+    },
+    {
+     "txt": "ES MI CUMPLE",
+     "caja": 0
+    },
+    {
+     "txt": "PERDÍ MI PELOTA",
+     "caja": 1
+    },
+    {
+     "txt": "ROMPÍ MI JUGUETE",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Cómo se siente cada uno?",
+    "Ganar un premio y el cumple: *happy*.",
+    "Perder la pelota o romper un juguete: *sad*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Tomi perdió su pelota. ¿Cómo está?",
+   "opciones": [
+    "SAD",
+    "HAPPY",
+    "HELLO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Tomi perdió su pelota.",
+    "¿Cómo está Tomi?",
+    "¡*Sad*! Está triste."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "HACÉ LA CARA",
+   "texto": "Sonreí al decir HAPPY",
+   "emoji": "😀",
+   "voz": [
+    "Truco: *sonreí* al decir happy."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HOW ARE YOU?",
+     "¿cómo estás?"
+    ],
+    [
+     "HAPPY",
+     "feliz"
+    ],
+    [
+     "SAD",
+     "triste"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "How are you?",
+    "*Happy* es feliz.",
+    "*Sad* es triste.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  }
+ ]
+}

@@ -31,7 +31,8 @@ for slug in args:
                 if len(f['txt']) > 19: E(slug, f'escena {k}: ficha larga (>19): «{f["txt"]}»')
         if t == 'pregunta' and len(e['opciones']) < 3 and set(e['opciones']) != {'Sí', 'No'} and 'I' in (L.get('materia') or ''): E(slug, f'escena {k}: pregunta con menos de 3 opciones (secundaria)')
         if t == 'dato' and re.fullmatch(r'1[0-9]{3}|20[0-9]{2}', str(e.get('numero', ''))): E(slug, f'escena {k}: un año en "dato" sale con punto de miles; usar frase')
-        for v in e.get('voz', []):
+        for j, v in enumerate(e.get('voz', [])):
+            if j in (e.get('voz_en') or []): continue  # frase dicha con voz en inglés
             for w in EXTR.findall(v.replace('*', '')):
                 if w not in PRON and not any(w in p for p in PRON) and w.lower() not in ('hay', 'muy', 'hoy', 'voy', 'soy', 'estoy', 'ley', 'rey', 'yo', 'ya', 'yerba', 'uruguay', 'paraguay'):
                     E(slug, f'escena {k}: nombre extranjero sin pronunciación cargada: «{w}» (agregar a PRONUNCIA en voz_edge.py)')

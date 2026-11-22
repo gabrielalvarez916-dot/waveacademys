@@ -69,6 +69,8 @@ def fraccion(m):  # 3/4 -> tres cuartos · 1/2 -> un medio · 5/12 -> cinco doce
 
 # Nombres extranjeros: cómo se dicen en castellano (solo cambia la voz, no el subtítulo)
 PRONUNCIA = {'Sherlock Holmes': 'Shérlok Jolms', 'Holmes': 'Jolms', 'Watson': 'Uátson', 'Conan Doyle': 'Conan Doil', 'Oscar Wilde': 'Óscar Uáild', 'Wilde': 'Uáild', 'Baker Street': 'Béiker Strit', 'Canterville': 'Cánterwil', 'Jabez Wilson': 'Yábez Uílson', 'Wilson': 'Uílson', 'John Clay': 'Yon Cléi', 'Clay': 'Cléi', 'Spaulding': 'Spólding', 'Edgar Allan Poe': 'Édgar Álan Pou', 'Poe': 'Pou', 'Dupin': 'Dipán', 'Agatha Christie': 'Ágata Cristi', 'Poirot': 'Puaró', 'Walsh': 'Uolsh', 'Morgue': 'Morg', 'Bioy': 'Bióy', 'Arthur': 'Ártur', 'Greenwich': 'Grínich', 'Ushuaia': 'Ushuáia'}
+# Palabras en inglés dentro de frases en castellano (Inglés 1.º a 3.º): cómo las dice la voz en castellano
+PRONUNCIA.update({'Nice to meet you': 'Náis tu mít iú', 'nice to meet you': 'náis tu mít iú', 'my name is': 'mái néim is', 'Goodbye': 'Gudbái', 'goodbye': 'gudbái', 'Hello': 'Jelóu', 'hello': 'jelóu', 'Happy': 'Jápi', 'happy': 'jápi', 'Name': 'Néim', 'name': 'néim', 'Sad': 'Sad', 'hi': 'jái', 'my': 'mái'})
 def pronuncia(s):
     for a, b in PRONUNCIA.items(): s = re.sub(r'\b' + re.escape(a) + r'\b', b, s)
     return s
@@ -89,8 +91,12 @@ def limpio(s):  # igual que en el reproductor: lo que se DICE
     return decir_numeros(s.replace('\\u2026', '…')).strip()
 
 
+# INGLÉS: en una escena, "voz_en": [índices de frases] = esas frases se dicen con voz en inglés (nena, pausada).
+VOZ_EN, RATE_EN = os.environ.get('VOZ_EN', 'en-US-AnaNeural'), '-15%'
+
+
 def frases(L):
-    return [[limpio(x) for x in e['voz']] for e in L['escenas']]
+    return [[x.replace('*', '').strip() if j in (e.get('voz_en') or []) else limpio(x) for j, x in enumerate(e['voz'])] for e in L['escenas']]
 
 
 VOZ_NEUTRA = {'naturales': 'es-MX-DaliaNeural', 'lengua': 'es-CO-GonzaloNeural', 'sociales': 'es-US-AlonsoNeural', 'otra': 'es-MX-JorgeNeural'}  # versión neutra (alumnos de otros países)
@@ -231,10 +237,11 @@ async def grabar(L, nombre, suf, vz):
         GASTADOS[0] += costo
     # se graban EN PARALELO (de a PARALELO frases a la vez): mismo audio, mismo orden, mucho más rápido
     sem = asyncio.Semaphore(ELEVEN_PARALELO if el else PARALELO)
-    async def grabar_una(t):
+    async def grabar_una(t, en=False):
         async with sem:
             for intento in range(6):
                 try:
+                    if en: return await tts(t, VOZ_EN, RATE_EN)
                     if el: return await tts_eleven(t, vid)
                     return await tts(t, vz, rate, pitch)
                 except Exception as e:
@@ -247,13 +254,14 @@ async def grabar(L, nombre, suf, vz):
             if el and (ie, il) in prot and ie < len(viejo) and il < len(viejo[ie]): fila.append(viejo[ie][il]); continue  # grabada a mano: se respeta
             if not el and l12 and ie < len(viejo) and il < len(viejo[ie]) and viejo[ie][il].get('e') and viejo[ie][il].get('th') == hashlib.md5(t.encode()).hexdigest()[:12]:
                 fila.append(viejo[ie][il]); continue  # ya tiene voz de ElevenLabs: una corrida común NO la pisa
-            h = eleven_hash(vid, t) if el else hashlib.md5((vz + rate + (pitch or '') + t).encode()).hexdigest()[:12]
+            en = il in (L['escenas'][ie].get('voz_en') or [])
+            h = hashlib.md5((VOZ_EN + RATE_EN + t).encode()).hexdigest()[:12] if en else eleven_hash(vid, t) if el else hashlib.md5((vz + rate + (pitch or '') + t).encode()).hexdigest()[:12]
             if h in cache:
                 fila.append(cache[h])
             else:
                 if MINUTOS and time.time() - INICIO > MINUTOS * 60:
                     PENDIENTES.append(nombre + suf); return
-                if h not in pedidos: pedidos[h] = asyncio.ensure_future(grabar_una(t)); textos[h] = t
+                if h not in pedidos: pedidos[h] = asyncio.ensure_future(grabar_una(t, en)); textos[h] = t
                 fila.append(h)
         res.append(fila)
     hechos = dict(zip(pedidos, await asyncio.gather(*pedidos.values())))
