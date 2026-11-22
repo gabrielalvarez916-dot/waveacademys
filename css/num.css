@@ -57,3 +57,16 @@
 .lc-ok { color: #138a5b; font-weight: 700; }
 .lc-no { color: #c2570d; font-weight: 800; text-decoration: underline; text-decoration-color: #E59A1B; text-underline-offset: 4px; }
 .lc-bot { justify-content: center; }
+
+.tm-tab { border-collapse: separate; border-spacing: 3px; margin: 8px auto; }
+.tm-tab th { background: #eef8f6; border-radius: 6px; min-width: 28px; padding: 5px 2px; font-size: .85rem; }
+.tm-tab th.tm-fila, .tm-tab th.tm-col { background: #087E83; color: #fff; }
+.tm-b { width: 100%; min-width: 30px; min-height: 34px; border: 0; border-radius: 6px; background: #f6faf9; font: inherit; font-size: .85rem; cursor: pointer; }
+.tm-b.tm-eje { background: #DDF1EA; }
+.tm-b.tm-sel { background: #E59A1B; color: #fff; font-weight: 800; }
+.tm-res { text-align: center; font-size: 1.15rem; min-height: 1.6em; }
+.ca-pant { background: #17323a; color: #fff; border-radius: 12px; text-align: right; padding: 14px 16px; font-size: 2rem; font-weight: 700; margin-bottom: 10px; min-height: 1.4em; overflow: hidden; }
+.ca-teclas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.ca-t { font-size: 1.4rem; min-height: 54px; }
+.ca-c { grid-column: 1 / -1; font-size: 1rem; }
+@media (max-width: 560px) { .tm-tab th { min-width: 22px; font-size: .75rem; } .tm-b { min-width: 24px; font-size: .75rem; } }

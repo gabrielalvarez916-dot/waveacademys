@@ -167,7 +167,60 @@
     inp.addEventListener('input', pinta); pinta();
   }
 
-  var TABS = [['recta', 'Recta numérica', rectaNumerica], ['bloques', 'Bloques de 10', bloquesBase10], ['fracc', 'Fracciones', barrasFracciones], ['valor', 'Valor posicional', valorPosicional]];
+  // ----- Tabla de multiplicar -----
+  function tablaMultiplicar(c) {
+    var sel = null;
+    function pinta() {
+      var h = '<p class="num-info">Tocá una casilla: se marcan su fila y su columna, y abajo ves la cuenta.</p><table class="tm-tab" aria-label="Tabla de multiplicar"><thead><tr><th>×</th>';
+      for (var j = 1; j <= 10; j++) h += '<th' + (sel && sel[1] === j ? ' class="tm-col"' : '') + '>' + j + '</th>';
+      h += '</tr></thead><tbody>';
+      for (var i = 1; i <= 10; i++) {
+        h += '<tr><th' + (sel && sel[0] === i ? ' class="tm-fila"' : '') + '>' + i + '</th>';
+        for (var k = 1; k <= 10; k++) {
+          var cl = sel && sel[0] === i && sel[1] === k ? ' tm-sel' : (sel && (sel[0] === i || sel[1] === k) ? ' tm-eje' : '');
+          h += '<td><button type="button" class="tm-b' + cl + '" data-a="' + i + '" data-b="' + k + '" aria-label="' + i + ' por ' + k + '">' + (i * k) + '</button></td>';
+        }
+        h += '</tr>';
+      }
+      c.innerHTML = h + '</tbody></table><div class="num-info tm-res" aria-live="polite">' + (sel ? '<b>' + sel[0] + ' × ' + sel[1] + ' = ' + (sel[0] * sel[1]) + '</b> (y también ' + sel[1] + ' × ' + sel[0] + ')' : '&nbsp;') + '</div>';
+    }
+    c.addEventListener('click', function (e) { var b = e.target.closest('.tm-b'); if (!b) return; sel = [+b.dataset.a, +b.dataset.b]; pinta(); });
+    pinta();
+  }
+
+  // ----- Calculadora simple (sin eval) -----
+  function calculadora(c) {
+    var K = { pant: '0', acum: null, op: null, nuevo: true };
+    function num(t) { return Number(String(t).replace(',', '.')); }
+    function fmt(n) { if (!isFinite(n)) return 'No se puede'; var r = Math.round(n * 1e9) / 1e9; return String(r).replace('.', ','); }
+    function aplicar() {
+      if (K.op == null || K.acum == null) return;
+      var a = K.acum, b = num(K.pant), r = K.op === '+' ? a + b : K.op === '−' ? a - b : K.op === '×' ? a * b : (b === 0 ? NaN : a / b);
+      K.pant = isNaN(r) ? 'No se puede' : fmt(r); K.acum = isNaN(r) ? null : r;
+    }
+    function pinta() {
+      var teclas = ['7', '8', '9', '÷', '4', '5', '6', '×', '1', '2', '3', '−', '0', ',', '=', '+'];
+      c.innerHTML = '<div class="ca-pant" aria-live="polite">' + esc(K.pant) + '</div><div class="ca-teclas">' +
+        teclas.map(function (t) { return '<button type="button" class="num-b ca-t' + (/[+−×÷=]/.test(t) ? ' num-b2' : '') + '" data-k="' + t + '">' + t + '</button>'; }).join('') +
+        '<button type="button" class="num-b ca-t ca-c" data-k="C">Borrar todo</button></div>';
+    }
+    c.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-k]'); if (!b) return;
+      var k = b.dataset.k;
+      if (/^[0-9]$/.test(k)) { if (K.nuevo || K.pant === '0' || K.pant === 'No se puede') K.pant = k; else if (K.pant.length < 12) K.pant += k; K.nuevo = false; }
+      else if (k === ',') { if (K.nuevo || K.pant === 'No se puede') { K.pant = '0,'; K.nuevo = false; } else if (K.pant.indexOf(',') < 0) K.pant += ','; }
+      else if (k === 'C') { K = { pant: '0', acum: null, op: null, nuevo: true }; }
+      else if (k === '=') { aplicar(); K.op = null; K.nuevo = true; K.acum = null; }
+      else { // + − × ÷
+        if (K.op != null && !K.nuevo) aplicar(); else if (K.acum == null || K.op == null) K.acum = num(K.pant);
+        K.op = k; K.nuevo = true;
+      }
+      pinta();
+    });
+    pinta();
+  }
+
+  var TABS = [['recta', 'Recta numérica', rectaNumerica], ['bloques', 'Bloques de 10', bloquesBase10], ['fracc', 'Fracciones', barrasFracciones], ['valor', 'Valor posicional', valorPosicional], ['tabla', 'Tabla del 1 al 10', tablaMultiplicar], ['calc', 'Calculadora', calculadora]];
   var ultimaTab = 'recta';
   function herramientas(ini) {
     var cuerpo = ventana('Herramientas para ver el número', 640);
