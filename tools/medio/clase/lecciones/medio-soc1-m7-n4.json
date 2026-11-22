@@ -1,0 +1,141 @@
+{
+ "slug": "medio-soc1-m7-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 7,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Quiénes trabajan en los servicios",
+ "sub": "Ciencias Sociales 1 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡VOLVIÓ LA LUZ AL BARRIO!",
+   "bajada": "Gracias a los electricistas",
+   "emoji": "💡",
+   "titulo": "QUIÉNES TRABAJAN",
+   "sub": "en los servicios",
+   "voz": [
+    "¡Último momento! Volvió la *luz* al barrio.",
+    "Gracias a los *electricistas*.",
+    "Hoy: *quiénes trabajan en los servicios*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "TRABAJAN PARA TODOS",
+   "items": [
+    {
+     "cab": "⚡",
+     "txt": "ELECTRICISTA: LUZ"
+    },
+    {
+     "cab": "🔥",
+     "txt": "GASISTA: GAS"
+    },
+    {
+     "cab": "🗑️",
+     "txt": "RECOLECTOR: BASURA"
+    },
+    {
+     "cab": "📬",
+     "txt": "CARTERO: CARTAS"
+    }
+   ],
+   "voz": [
+    "Muchas personas trabajan en los *servicios*.",
+    "El *electricista* arregla la luz.",
+    "El *gasista* arregla el gas.",
+    "El *recolector* junta la basura.",
+    "El *cartero* trae cartas."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA NOCHE DEL RECOLECTOR",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "SALE DE NOCHE",
+     "emoji": "🌙"
+    },
+    {
+     "fecha": "2",
+     "txt": "RECORRE EL BARRIO",
+     "emoji": "🚛"
+    },
+    {
+     "fecha": "3",
+     "txt": "DESCARGA",
+     "emoji": "♻️"
+    },
+    {
+     "fecha": "4",
+     "txt": "VUELVE A CASA",
+     "emoji": "🏠"
+    }
+   ],
+   "voz": [
+    "El recolector sale de *noche*.",
+    "*Recorre* el barrio.",
+    "*Descarga* la basura.",
+    "Y *vuelve* a su casa."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "No hay luz en casa. ¿Quién la arregla?",
+   "opciones": [
+    "GASISTA",
+    "ELECTRICISTA",
+    "CARTERO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. No hay luz en casa.",
+    "¿Quién la arregla?",
+    "¡El *electricista*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "GRACIAS",
+   "texto": "Saludá a quienes trabajan en tu barrio",
+   "emoji": "👋",
+   "voz": [
+    "Truco: *agradecé* a quienes trabajan."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TRABAJOS",
+     "electricista, gasista, recolector"
+    ],
+    [
+     "TURNOS",
+     "día y noche"
+    ],
+    [
+     "GRACIAS",
+     "nos ayudan a todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Muchos *trabajan* en los servicios.",
+    "Algunos trabajan de *noche*.",
+    "¡Les decimos *gracias*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

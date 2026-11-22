@@ -1,0 +1,148 @@
+{
+ "slug": "medio-soc1-m8-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 8,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Entrevista a una persona mayor",
+ "sub": "Ciencias Sociales 1 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué hacés?"
+    },
+    {
+     "yo": true,
+     "txt": "¡ENTREVISTO A MI ABUELA!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y qué te cuenta?"
+    }
+   ],
+   "titulo": "UNA ENTREVISTA",
+   "sub": "a una persona mayor",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Qué hacés?",
+    "Sofi *entrevista* a su abuela.",
+    "Hoy: *entrevista a una persona mayor*."
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "SOFI",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "ABUELA",
+     "emoji": "👵"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "¿A QUÉ JUGABAS?"
+    },
+    {
+     "quien": 1,
+     "txt": "¡A LA RAYUELA!"
+    },
+    {
+     "quien": 0,
+     "txt": "¿HABÍA TELE?"
+    },
+    {
+     "quien": 1,
+     "txt": "NO, ESCUCHÁBAMOS LA RADIO."
+    }
+   ],
+   "voz": [
+    "Sofi pregunta: ¿a qué jugabas?",
+    "La abuela dice: ¡a la *rayuela*!",
+    "Sofi pregunta: ¿había tele?",
+    "No, escuchábamos la *radio*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO ENTREVISTO",
+   "items": [
+    "PREPARO",
+    "PREGUNTO",
+    "ESCUCHO",
+    "ANOTO"
+   ],
+   "voz": [
+    "Primero, *preparo* las preguntas.",
+    "Después, *pregunto*.",
+    "*Escucho* con atención.",
+    "Y *anoto* lo que me cuentan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿A quién entrevistás para saber cómo era antes?",
+   "opciones": [
+    "UN BEBÉ",
+    "UNA PERSONA MAYOR",
+    "UN PERRO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Querés saber cómo era antes.",
+    "¿A quién le preguntás?",
+    "¡A una persona *mayor*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ",
+   "texto": "Mirá a la persona y no interrumpas",
+   "emoji": "👂",
+   "voz": [
+    "Truco: *escuchá* sin interrumpir."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ENTREVISTA",
+     "preguntar y aprender"
+    ],
+    [
+     "PASOS",
+     "preparo, pregunto, anoto"
+    ],
+    [
+     "ESCUCHAR",
+     "sin interrumpir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *entrevista* es preguntar y aprender.",
+    "Preparo, pregunto y *anoto*.",
+    "Y *escucho* sin interrumpir.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "slug": "medio-soc1-m8-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 8,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Qué cambió y qué sigue igual",
+ "sub": "Ciencias Sociales 1 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡SOFI VIAJA EN EL TIEMPO!",
+   "bajada": "¿Qué cambió y qué sigue igual?",
+   "emoji": "⏳",
+   "titulo": "CAMBIOS",
+   "sub": "y lo que sigue igual",
+   "voz": [
+    "¡Último momento! Sofi *viaja* en el tiempo.",
+    "¿Qué cambió y qué sigue igual?",
+    "Hoy: *qué cambió y qué sigue igual*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "ANTES",
+   "b": "AHORA",
+   "itemsA": [
+    "CARRETA",
+    "LÁMPARA DE ACEITE"
+   ],
+   "itemsB": [
+    "AUTO",
+    "FOCO"
+   ],
+   "ambos": [
+    "FAMILIA",
+    "JUGAR"
+   ],
+   "voz": [
+    "Comparamos *antes* y *ahora*.",
+    "Antes: carreta y lámpara de aceite.",
+    "Ahora: auto y foco.",
+    "¡En los dos: *familia* y jugar!"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🐎",
+    "texto": "En carreta"
+   },
+   "despues": {
+    "cab": "AHORA",
+    "emoji": "🚗",
+    "texto": "En auto"
+   },
+   "voz": [
+    "*Antes* se viajaba en carreta.",
+    "*Ahora* viajamos en auto."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué sigue igual desde siempre?",
+   "opciones": [
+    "EL TELÉFONO",
+    "JUGAR CON AMIGOS",
+    "LA LUZ"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los abuelos y en vos.",
+    "¿Qué sigue igual?",
+    "¡*Jugar con amigos*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DOS LISTAS",
+   "texto": "Cambió y sigue igual",
+   "emoji": "📝",
+   "voz": [
+    "Truco: hacé dos listas: *cambió* y *sigue igual*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMBIÓ",
+     "teléfono, luz, autos"
+    ],
+    [
+     "SIGUE IGUAL",
+     "familia, jugar"
+    ],
+    [
+     "COMPARAR",
+     "antes y ahora"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Algunas cosas *cambiaron*.",
+    "Otras *siguen igual*.",
+    "Y aprendimos a *comparar*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

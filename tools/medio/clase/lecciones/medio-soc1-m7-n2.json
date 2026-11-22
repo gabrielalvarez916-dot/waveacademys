@@ -1,0 +1,120 @@
+{
+ "slug": "medio-soc1-m7-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 7,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "El recorrido de la basura",
+ "sub": "Ciencias Sociales 1 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🗑️",
+   "lineas": [
+    "Sofi saca la bolsa a la vereda.",
+    "De noche pasa el camión.",
+    "¿Adónde va la basura?"
+   ],
+   "titulo": "LA BASURA",
+   "sub": "su recorrido",
+   "voz": [
+    "Sofi saca la bolsa a la *vereda*.",
+    "De noche pasa el *camión*.",
+    "¿Adónde va la basura?",
+    "Hoy: *el recorrido de la basura*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "EL RECORRIDO",
+   "items": [
+    "TACHO",
+    "VEREDA",
+    "CAMIÓN",
+    "PLANTA"
+   ],
+   "voz": [
+    "Primero, va al *tacho*.",
+    "Después, a la *vereda*.",
+    "La lleva el *camión*.",
+    "Y llega a la *planta*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "UNA BOTELLA RECICLADA",
+   "items": [
+    "LA USO",
+    "LA SEPARO",
+    "LA FUNDEN",
+    "BOTELLA NUEVA"
+   ],
+   "voz": [
+    "Una botella puede *reciclarse*.",
+    "Primero, la *uso*.",
+    "Después, la *separo*.",
+    "En la fábrica la *funden*.",
+    "¡Y es una *botella nueva*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué se recicla?",
+   "opciones": [
+    "BOTELLA",
+    "CÁSCARA",
+    "TIERRA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Botella, cáscara, tierra.",
+    "¿Cuál se recicla?",
+    "¡La *botella*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SEPARÁ",
+   "texto": "Papel, plástico y vidrio por separado",
+   "emoji": "♻️",
+   "voz": [
+    "Truco: *separá* la basura en casa."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECORRIDO",
+     "tacho, vereda, camión"
+    ],
+    [
+     "SEPARAR",
+     "papel, plástico, vidrio"
+    ],
+    [
+     "RECICLAR",
+     "cosas nuevas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La basura hace un *recorrido*.",
+    "La *separamos* en casa.",
+    "Y se puede *reciclar*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

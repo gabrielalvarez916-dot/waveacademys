@@ -1,0 +1,131 @@
+{
+ "slug": "medio-soc1-m8-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 8,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Una familia del antiguo Egipto",
+ "sub": "Ciencias Sociales 1 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué río famoso cruza Egipto?",
+   "segundos": 6,
+   "respuesta": "¡EL RÍO NILO!",
+   "emoji": "🏺",
+   "titulo": "EL ANTIGUO EGIPTO",
+   "sub": "una familia",
+   "voz": [
+    "Desafío: ¿qué río famoso cruza Egipto?",
+    "¡El río *Nilo*!",
+    "Hoy: *una familia del antiguo Egipto*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🌍",
+     "txt": "EL MUNDO"
+    },
+    {
+     "emoji": "🏜️",
+     "txt": "EGIPTO"
+    },
+    {
+     "emoji": "🏠",
+     "txt": "CASA DE ADOBE"
+    }
+   ],
+   "voz": [
+    "Miramos el *mundo*.",
+    "Nos acercamos a *Egipto*.",
+    "¡Vemos una casa de *adobe* junto al río!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "UNA FAMILIA EGIPCIA",
+   "celdas": [
+    {
+     "cab": "🍞 COMIDA",
+     "txt": "PAN Y PESCADO"
+    },
+    {
+     "cab": "👕 ROPA",
+     "txt": "LINO"
+    },
+    {
+     "cab": "🪀 JUEGOS",
+     "txt": "MUÑECAS Y PELOTAS"
+    },
+    {
+     "cab": "📜 ESCRIBÍAN",
+     "txt": "EN PAPIRO"
+    }
+   ],
+   "voz": [
+    "Así vivía una familia *egipcia*.",
+    "Comían *pan* y pescado.",
+    "Se vestían con *lino*.",
+    "Jugaban con *muñecas* y pelotas.",
+    "Escribían en *papiro*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué se parecen a vos?",
+   "opciones": [
+    "TENÍAN CELULAR",
+    "TAMBIÉN JUGABAN",
+    "MIRABAN TELE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los chicos de Egipto.",
+    "¿En qué se parecen a vos?",
+    "¡*También jugaban*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMPARÁ",
+   "texto": "Buscá qué se parece a tu vida",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: buscá qué se *parece* a tu vida."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NILO",
+     "vivían junto al río"
+    ],
+    [
+     "CASAS",
+     "de adobe"
+    ],
+    [
+     "JUEGOS",
+     "muñecas y pelotas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Vivían junto al río *Nilo*.",
+    "Sus casas eran de *adobe*.",
+    "Y jugaban con *muñecas* y pelotas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

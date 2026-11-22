@@ -1,0 +1,147 @@
+{
+ "slug": "medio-soc1-m7-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 7,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "La luz y el gas en mi casa",
+ "sub": "Ciencias Sociales 1 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Se cortó la luz en casa!"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y LA HELADERA?"
+    },
+    {
+     "yo": false,
+     "txt": "¡No anda nada!"
+    }
+   ],
+   "titulo": "LA LUZ",
+   "sub": "y el gas",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Se cortó la *luz* en casa!",
+    "¡No anda nada!",
+    "Hoy: *la luz y el gas en mi casa*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🏠",
+   "titulo": "MI CASA",
+   "partes": [
+    {
+     "txt": "LÁMPARA: LUZ",
+     "x": 0.0,
+     "y": -0.7
+    },
+    {
+     "txt": "COCINA: GAS",
+     "x": -0.6,
+     "y": 0.4
+    },
+    {
+     "txt": "CANILLA: AGUA",
+     "x": 0.6,
+     "y": 0.4
+    },
+    {
+     "txt": "ENCHUFE: LUZ",
+     "x": 0.6,
+     "y": -0.2
+    }
+   ],
+   "voz": [
+    "Miramos una *casa* por dentro.",
+    "La *lámpara* usa luz.",
+    "La *cocina* usa gas.",
+    "La *canilla* trae agua.",
+    "El *enchufe* da luz."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "SI SE CORTA LA LUZ",
+    "emoji": "🔌"
+   },
+   "items": [
+    "NO ANDA LA LÁMPARA",
+    "NO ANDA LA HELADERA",
+    "NO ANDA LA TELE"
+   ],
+   "voz": [
+    "¿Qué pasa si se corta la *luz*?",
+    "No anda la *lámpara*.",
+    "No anda la *heladera*.",
+    "Y no anda la *tele*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué usa la cocina?",
+   "opciones": [
+    "LUZ",
+    "GAS",
+    "AGUA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la cocina.",
+    "¿Qué servicio usa?",
+    "¡El *gas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO",
+   "texto": "Los enchufes no se tocan con las manos mojadas",
+   "emoji": "⚠️",
+   "voz": [
+    "Importante: nunca toques un enchufe *mojado*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SERVICIO",
+     "llega a casa"
+    ],
+    [
+     "LUZ",
+     "por cables"
+    ],
+    [
+     "GAS",
+     "por caños"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *servicios* llegan a casa.",
+    "La *luz* viene por cables.",
+    "El *gas* viene por caños.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

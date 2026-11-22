@@ -1,0 +1,126 @@
+{
+ "slug": "medio-soc1-m7-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 7,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Cartero, bomberos y policía",
+ "sub": "Ciencias Sociales 1 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién trae las cartas a casa?",
+   "segundos": 6,
+   "respuesta": "¡EL CARTERO!",
+   "emoji": "📬",
+   "titulo": "NOS AYUDAN",
+   "sub": "cartero, bomberos, policía",
+   "voz": [
+    "Desafío: ¿quién trae las cartas a casa?",
+    "¡El *cartero*!",
+    "Hoy: *cartero, bomberos y policía*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿QUÉ HACE CADA UNO?",
+   "celdas": [
+    {
+     "cab": "📬 CARTERO",
+     "txt": "TRAE CARTAS"
+    },
+    {
+     "cab": "🚒 BOMBEROS",
+     "txt": "APAGAN FUEGO"
+    },
+    {
+     "cab": "👮 POLICÍA",
+     "txt": "NOS CUIDA"
+    },
+    {
+     "cab": "🚑 AMBULANCIA",
+     "txt": "LLEVA ENFERMOS"
+    }
+   ],
+   "voz": [
+    "Muchos nos *ayudan*.",
+    "El *cartero* trae cartas.",
+    "Los *bomberos* apagan el fuego.",
+    "La *policía* nos cuida.",
+    "La *ambulancia* lleva enfermos."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "INCENDIO",
+    "emoji": "🔥",
+    "texto": "Se quema un pastizal"
+   },
+   "despues": {
+    "cab": "APAGADO",
+    "emoji": "🚒",
+    "texto": "¡Los bomberos llegaron!"
+   },
+   "voz": [
+    "Se quema un *pastizal*.",
+    "¡Llegan los *bomberos* y lo apagan!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Te perdiste en la plaza. ¿A quién buscás?",
+   "opciones": [
+    "UN DESCONOCIDO",
+    "UN POLICÍA",
+    "NADIE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Te perdiste en la plaza.",
+    "¿A quién buscás?",
+    "¡A un *policía* o a un adulto de confianza!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "AVISÁ",
+   "texto": "En una emergencia, avisá a un adulto",
+   "emoji": "🚨",
+   "voz": [
+    "Importante: en una emergencia, avisá a un *adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CARTERO",
+     "trae cartas"
+    ],
+    [
+     "BOMBEROS",
+     "apagan fuego"
+    ],
+    [
+     "POLICÍA",
+     "cuida"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *cartero* trae cartas.",
+    "Los *bomberos* apagan fuego.",
+    "La *policía* nos cuida.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

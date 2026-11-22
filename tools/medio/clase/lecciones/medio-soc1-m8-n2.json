@@ -1,0 +1,132 @@
+{
+ "slug": "medio-soc1-m8-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 8,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Objetos que cambiaron con el tiempo",
+ "sub": "Ciencias Sociales 1 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📦",
+   "lineas": [
+    "Sofi encuentra una caja vieja.",
+    "Adentro hay un teléfono raro.",
+    "¡Tiene un disco con números!"
+   ],
+   "titulo": "OBJETOS",
+   "sub": "que cambiaron",
+   "voz": [
+    "Sofi encuentra una *caja* vieja.",
+    "Adentro hay un teléfono raro.",
+    "¡Tiene un *disco* con números!",
+    "Hoy: *objetos que cambiaron con el tiempo*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ANTES",
+    "texto": "TELÉFONO CON CABLE",
+    "emoji": "☎️"
+   },
+   "b": {
+    "cab": "AHORA",
+    "texto": "CELULAR",
+    "emoji": "📱"
+   },
+   "signo": "vs",
+   "voz": [
+    "*Antes*, el teléfono tenía cable.",
+    "*Ahora*, lo llevamos en el bolsillo.",
+    "¡El teléfono *cambió* mucho!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL TELÉFONO CAMBIA",
+   "eventos": [
+    {
+     "fecha": "HACE MUCHO",
+     "txt": "CON DISCO",
+     "emoji": "☎️"
+    },
+    {
+     "fecha": "DESPUÉS",
+     "txt": "CON BOTONES",
+     "emoji": "📞"
+    },
+    {
+     "fecha": "HOY",
+     "txt": "CELULAR",
+     "emoji": "📱"
+    }
+   ],
+   "voz": [
+    "Hace mucho, tenía *disco*.",
+    "Después, tuvo *botones*.",
+    "¡Hoy es un *celular*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué objeto casi no cambió?",
+   "opciones": [
+    "TELÉFONO",
+    "CUCHARA",
+    "RADIO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la cocina.",
+    "¿Qué objeto casi no cambió?",
+    "¡La *cuchara*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "Los grandes recuerdan cómo eran las cosas",
+   "emoji": "👴",
+   "voz": [
+    "Truco: preguntá a los *grandes* cómo eran las cosas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMBIOS",
+     "los objetos cambian"
+    ],
+    [
+     "TELÉFONO",
+     "disco, botones, celular"
+    ],
+    [
+     "IGUAL",
+     "algunos casi no cambian"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los objetos *cambian* con el tiempo.",
+    "El *teléfono* cambió mucho.",
+    "Algunos casi *no cambian*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
