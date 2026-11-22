@@ -865,6 +865,24 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     van.forEach(function (o, k) { tl.to([o, X[k]], { y: -700, opacity: 0, rotation: 30, duration: .6, ease: 'power2.in' }, k ? '<.1' : '>.3'); });
     B(2); w.OUT(tl, nI, 0); w.IN(tl, nF, '>', { scale: .3, y: 0, ease: 'back.out(2.5)' }); quedan.forEach(function (o, k) { w.pop(tl, o, k ? '<.05' : '<'); }); if (cap) w.IN(tl, cap, '<.2');
   } };
+  // calculadora: {teclas:['1','2','+','5'], resultado:'17', texto, titulo} — 3 pasos: aparece la calculadora · se aprietan las teclas (brillan y van a la pantalla) · se aprieta = y sale el resultado
+  T.calculadora = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var cx = 700, cy = 575, F = [['7', '8', '9', '−'], ['4', '5', '6', '+'], ['1', '2', '3', '='], ['0', 'C']];
+    var cuerpo = w.pieza(g, cx, cy); w.caja(cuerpo, 0, 0, 560, 760, '#24343a', C.aqua, 46, 6); w.caja(cuerpo, 0, -250, 470, 150, '#cfe8c9', '#7fa77a', 18, 5);
+    var pant = w.txt(cuerpo, 205, -235, '0', 92, '#1f3a1c', { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace' });
+    var K = {};
+    F.forEach(function (fila, r) { fila.forEach(function (k, c) { var x = -165 + c * 110, y = -95 + r * 105, p = w.pieza(cuerpo, x, y);
+      p.r = w.caja(p, 0, 0, 92, 86, /[0-9]/.test(k) ? '#3c5158' : (k === '=' ? C.sol : '#4f6f63'), '#0d1b1e', 18, 3); w.txt(p, 0, 4, k, 48, k === '=' ? '#3a2a00' : '#ffffff'); K[k] = p; }); });
+    Object.keys(K).forEach(function (k) { K[k].setAttribute('opacity', 1); });
+    var ti = d.titulo ? w.titulo(g, d.titulo, 140) : null, cap = d.texto ? w.chip(g, 1400, 575, Math.min(820, d.texto.length * 32 + 140), 100, d.texto, { size: 46, stroke: C.verde, r: 32 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, cuerpo, ti ? '<.1' : 0, { scale: .8, y: 0 });
+    B(1); var s = '';
+    d.teclas.forEach(function (k, i) { var tk = K[k === '-' ? '−' : k]; s += (/[0-9]/.test(k) ? k : ' ' + (k === '-' ? '−' : k) + ' '); var v = s.trim();
+      if (tk) tl.to(tk, { scale: .85, duration: .12, yoyo: true, repeat: 1 }, i ? '>.25' : '>');
+      tl.call(function () { pant.textContent = v; }, null, '<'); });
+    B(2); if (K['=']) tl.to(K['='], { scale: .85, duration: .12, yoyo: true, repeat: 1 }, '>');
+    tl.call(function () { pant.textContent = String(d.resultado); }, null, '>'); w.pop(tl, cuerpo, '>'); if (cap) w.IN(tl, cap, '<.2');
+  } };
   function numDe(p) { var v = parseInt(String(p).replace(/[^0-9]/g, ''), 10); return isFinite(v) ? v : null; }
   // tren: {desde, hasta, paso (1 por defecto; 10 o 100 para contar de 10 en 10 o de 100 en 100), faltan:[números], titulo} (hasta 10 vagones) — 3 pasos: llega el tren · cada vagón se ilumina cuando la voz dice su número · aparecen los que faltaban
   T.tren = { n: function () { return 3; }, armar: function (g, tl, B, d) {
