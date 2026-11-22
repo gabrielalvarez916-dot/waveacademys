@@ -1,0 +1,128 @@
+{
+ "slug": "medio-soc1-m9-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 9,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Ayer, hoy y mañana en mi día",
+ "sub": "Ciencias Sociales 1 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📅",
+   "lineas": [
+    "Ayer Sofi fue a la plaza.",
+    "Hoy está en la escuela.",
+    "¡Mañana va a un cumple!"
+   ],
+   "titulo": "AYER, HOY",
+   "sub": "y mañana",
+   "voz": [
+    "*Ayer* Sofi fue a la plaza.",
+    "*Hoy* está en la escuela.",
+    "¡*Mañana* va a un cumple!",
+    "Hoy: *ayer, hoy y mañana*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LOS DÍAS DE SOFI",
+   "eventos": [
+    {
+     "fecha": "AYER",
+     "txt": "PLAZA",
+     "emoji": "🛝"
+    },
+    {
+     "fecha": "HOY",
+     "txt": "ESCUELA",
+     "emoji": "🏫"
+    },
+    {
+     "fecha": "MAÑANA",
+     "txt": "CUMPLE",
+     "emoji": "🎂"
+    }
+   ],
+   "voz": [
+    "*Ayer*: ya pasó.",
+    "*Hoy*: es ahora.",
+    "*Mañana*: todavía no llegó."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "MI DÍA",
+   "items": [
+    "MAÑANA",
+    "TARDE",
+    "NOCHE"
+   ],
+   "voz": [
+    "El día tiene *partes*.",
+    "A la *mañana*, voy a la escuela.",
+    "A la *tarde*, juego.",
+    "A la *noche*, duermo. ¡Y otra vez!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Lo que ya pasó es…",
+   "opciones": [
+    "MAÑANA",
+    "AYER",
+    "HOY"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en lo que ya pasó.",
+    "¿Cómo se llama?",
+    "¡*Ayer*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ANTES Y DESPUÉS",
+   "texto": "Esas palabras ordenan lo que pasa",
+   "emoji": "⏳",
+   "voz": [
+    "Truco: *antes* y *después* ordenan lo que pasa."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AYER",
+     "ya pasó"
+    ],
+    [
+     "HOY",
+     "ahora"
+    ],
+    [
+     "MAÑANA",
+     "todavía no llegó"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Ayer* ya pasó.",
+    "*Hoy* es ahora.",
+    "*Mañana* todavía no llegó.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

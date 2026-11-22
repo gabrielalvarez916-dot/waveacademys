@@ -1,0 +1,116 @@
+{
+ "slug": "medio-soc1-m10-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 10,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Mi álbum de lo que aprendí",
+ "sub": "Ciencias Sociales 1 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡TERMINA EL AÑO!",
+   "bajada": "Sofi arma su álbum",
+   "emoji": "📒",
+   "titulo": "MI ÁLBUM",
+   "sub": "de lo que aprendí",
+   "voz": [
+    "¡Último momento! Termina el *año*.",
+    "Sofi arma su *álbum*.",
+    "Hoy: *mi álbum de lo que aprendí*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO ARMO",
+   "items": [
+    "ELIJO",
+    "DIBUJO",
+    "ESCRIBO",
+    "MUESTRO"
+   ],
+   "voz": [
+    "Primero, *elijo* lo que más me gustó.",
+    "Después, lo *dibujo*.",
+    "*Escribo* un título.",
+    "Y lo *muestro* a mi familia."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "AL EMPEZAR",
+    "texto": "No sabía leer",
+    "emoji": "🌱"
+   },
+   "b": {
+    "cab": "AHORA",
+    "texto": "¡Leo y escribo!",
+    "emoji": "🌳"
+   },
+   "signo": "vs",
+   "voz": [
+    "Al *empezar* el año, no sabía leer.",
+    "*Ahora* leo y escribo.",
+    "¡Aprendí un *montón*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué va en un álbum?",
+   "opciones": [
+    "PIEDRAS",
+    "DIBUJOS Y FOTOS",
+    "COMIDA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en tu álbum.",
+    "¿Qué va adentro?",
+    "¡*Dibujos y fotos*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LO QUE MÁS TE GUSTÓ",
+   "texto": "Elegí lo que más te gustó aprender",
+   "emoji": "💛",
+   "voz": [
+    "Truco: elegí lo que *más te gustó*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECORDAR",
+     "lo que aprendí"
+    ],
+    [
+     "ARMAR",
+     "dibujar y escribir"
+    ],
+    [
+     "MOSTRAR",
+     "a la familia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Recordamos* lo que aprendimos.",
+    "*Armamos* el álbum.",
+    "Y lo *mostramos* con orgullo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

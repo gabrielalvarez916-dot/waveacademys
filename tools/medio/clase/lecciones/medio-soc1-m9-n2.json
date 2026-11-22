@@ -1,0 +1,134 @@
+{
+ "slug": "medio-soc1-m9-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 9,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Los días y los meses del calendario escolar",
+ "sub": "Ciencias Sociales 1 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Mañana hay escuela?"
+    },
+    {
+     "yo": true,
+     "txt": "¡NO! ¡ES SÁBADO!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Qué bueno!"
+    }
+   ],
+   "titulo": "EL CALENDARIO",
+   "sub": "días y meses",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Mañana hay escuela?",
+    "¡No! ¡Es *sábado*!",
+    "Hoy: *los días y los meses*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LA SEMANA",
+   "items": [
+    {
+     "cab": "🏫 5 DÍAS",
+     "txt": "LUNES A VIERNES"
+    },
+    {
+     "cab": "🏠 2 DÍAS",
+     "txt": "SÁBADO Y DOMINGO"
+    }
+   ],
+   "voz": [
+    "La semana tiene *7 días*.",
+    "De lunes a viernes, *escuela*.",
+    "Sábado y domingo, *descanso*."
+   ]
+  },
+  {
+   "t": "barras",
+   "titulo": "MI SEMANA",
+   "unidad": "días",
+   "items": [
+    {
+     "txt": "CON ESCUELA",
+     "valor": 5
+    },
+    {
+     "txt": "SIN ESCUELA",
+     "valor": 2
+    }
+   ],
+   "voz": [
+    "Contamos los días.",
+    "Con escuela: *5* días.",
+    "Sin escuela: *2* días."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuántos meses tiene el año?",
+   "opciones": [
+    "7",
+    "12",
+    "30"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en el calendario.",
+    "¿Cuántos meses tiene el año?",
+    "¡*12* meses!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CANTALOS",
+   "texto": "Decí los días como una canción",
+   "emoji": "🎵",
+   "voz": [
+    "Truco: decí los días como una *canción*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SEMANA",
+     "7 días"
+    ],
+    [
+     "AÑO",
+     "12 meses"
+    ],
+    [
+     "CALENDARIO",
+     "clases y vacaciones"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *semana* tiene 7 días.",
+    "El *año* tiene 12 meses.",
+    "El *calendario* marca clases y vacaciones.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

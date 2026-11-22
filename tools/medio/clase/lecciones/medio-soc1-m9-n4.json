@@ -1,0 +1,120 @@
+{
+ "slug": "medio-soc1-m9-n4",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 9,
+  "nivel": 4
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Huellas del pasado en fotos y objetos",
+ "sub": "Ciencias Sociales 1 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡UNA CAJA DE FOTOS VIEJAS!",
+   "bajada": "Sofi la encontró en lo de la abuela",
+   "emoji": "📦",
+   "titulo": "HUELLAS",
+   "sub": "del pasado",
+   "voz": [
+    "¡Último momento! Sofi encontró fotos *viejas*.",
+    "Estaban en lo de la abuela.",
+    "Hoy: *huellas del pasado*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "📦",
+     "txt": "LA CAJA"
+    },
+    {
+     "emoji": "🖼️",
+     "txt": "UNA FOTO VIEJA"
+    },
+    {
+     "emoji": "🐎",
+     "txt": "UNA CARRETA"
+    }
+   ],
+   "voz": [
+    "Abrimos la *caja*.",
+    "Sacamos una *foto vieja*.",
+    "¡Se ve una *carreta*! Es de hace mucho."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "UNA FOTO VIEJA NOS CUENTA",
+    "emoji": "🖼️"
+   },
+   "items": [
+    "QUIÉNES ESTABAN",
+    "DÓNDE ERA",
+    "CÓMO SE VESTÍAN"
+   ],
+   "voz": [
+    "¿Qué nos cuenta una *foto vieja*?",
+    "*Quiénes* estaban.",
+    "*Dónde* era.",
+    "Y *cómo* se vestían."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es una huella del pasado?",
+   "opciones": [
+    "CELULAR NUEVO",
+    "FOTO VIEJA",
+    "TELE NUEVA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en lo viejo.",
+    "¿Cuál es una huella del pasado?",
+    "¡La *foto vieja*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON CUIDADO",
+   "texto": "Las fotos viejas se tocan despacio",
+   "emoji": "🤲",
+   "voz": [
+    "Truco: las fotos viejas se tocan con *cuidado*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HUELLA",
+     "cuenta cómo era antes"
+    ],
+    [
+     "FOTOS",
+     "quiénes, dónde, cómo"
+    ],
+    [
+     "OBJETOS",
+     "juguetes, cartas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *huella* nos cuenta el pasado.",
+    "Las *fotos* nos dicen quiénes y dónde.",
+    "Los *objetos* viejos también cuentan.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

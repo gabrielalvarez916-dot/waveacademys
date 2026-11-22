@@ -1,0 +1,143 @@
+{
+ "slug": "medio-soc1-m10-n2",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 10,
+  "nivel": 2
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Fiestas y costumbres de mi familia",
+ "sub": "Ciencias Sociales 1 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎂",
+   "lineas": [
+    "Hoy es el cumple de Sofi.",
+    "Viene toda la familia.",
+    "¡La abuela trae empanadas!"
+   ],
+   "titulo": "FIESTAS",
+   "sub": "de mi familia",
+   "voz": [
+    "Hoy es el *cumple* de Sofi.",
+    "Viene toda la familia.",
+    "¡La abuela trae *empanadas*!",
+    "Hoy: *fiestas y costumbres de mi familia*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "FAMILIA DE SOFI",
+   "b": "FAMILIA DE TOMI",
+   "itemsA": [
+    "EMPANADAS",
+    "BAILAR"
+   ],
+   "itemsB": [
+    "PIZZA",
+    "JUEGOS"
+   ],
+   "ambos": [
+    "TORTA",
+    "CANCIÓN DE CUMPLE"
+   ],
+   "voz": [
+    "Comparamos dos familias.",
+    "La de Sofi come *empanadas* y baila.",
+    "La de Tomi come *pizza* y juega.",
+    "¡Las dos tienen *torta* y canción!"
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "SOFI",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "ABUELA",
+     "emoji": "👵"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "¿POR QUÉ HACÉS EMPANADAS?"
+    },
+    {
+     "quien": 1,
+     "txt": "MI MAMÁ LAS HACÍA."
+    },
+    {
+     "quien": 1,
+     "txt": "¡ES UNA COSTUMBRE!"
+    }
+   ],
+   "voz": [
+    "Sofi pregunta: ¿por qué hacés empanadas?",
+    "La abuela dice: mi mamá las hacía.",
+    "¡Es una *costumbre* de la familia!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Todas las familias festejan igual?",
+   "opciones": [
+    "SÍ",
+    "NO",
+    "NUNCA FESTEJAN"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en las familias.",
+    "¿Todas festejan igual?",
+    "¡*No*! Cada una a su manera."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "RESPETO",
+   "texto": "Respetamos las costumbres de los demás",
+   "emoji": "🤝",
+   "voz": [
+    "Recordá: *respetamos* las costumbres de todos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FIESTAS",
+     "cumpleaños, fin de año"
+    ],
+    [
+     "COSTUMBRES",
+     "comidas, canciones"
+    ],
+    [
+     "RESPETO",
+     "cada una es distinta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las familias tienen *fiestas*.",
+    "Y tienen *costumbres*.",
+    "Cada una es distinta y la *respetamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

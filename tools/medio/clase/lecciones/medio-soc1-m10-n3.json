@@ -1,0 +1,136 @@
+{
+ "slug": "medio-soc1-m10-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 10,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Los derechos de niñas y niños",
+ "sub": "Ciencias Sociales 1 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Jugar es un derecho o un premio?",
+   "segundos": 6,
+   "respuesta": "¡UN DERECHO!",
+   "emoji": "⚽",
+   "titulo": "MIS DERECHOS",
+   "sub": "niñas y niños",
+   "voz": [
+    "Desafío: ¿jugar es un derecho o un premio?",
+    "¡Es un *derecho*!",
+    "Hoy: *los derechos de niñas y niños*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "TENEMOS DERECHO A…",
+   "items": [
+    {
+     "cab": "⚽",
+     "txt": "JUGAR"
+    },
+    {
+     "cab": "🏫",
+     "txt": "IR A LA ESCUELA"
+    },
+    {
+     "cab": "🏥",
+     "txt": "LA SALUD"
+    },
+    {
+     "cab": "🪪",
+     "txt": "UN NOMBRE"
+    },
+    {
+     "cab": "👂",
+     "txt": "SER ESCUCHADOS"
+    }
+   ],
+   "voz": [
+    "Todos los chicos tienen *derechos*.",
+    "Derecho a *jugar*.",
+    "A ir a la *escuela*.",
+    "A la *salud*.",
+    "A tener un *nombre*.",
+    "Y a ser *escuchados*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "¿ESTÁ BIEN?",
+   "cambios": [
+    {
+     "antes": "SOLO ALGUNOS TIENEN DERECHOS",
+     "despues": "TODOS TIENEN DERECHOS",
+     "motivo": "son de todos"
+    },
+    {
+     "antes": "TENER CELULAR ES UN DERECHO",
+     "despues": "TENER CELULAR ES UN DESEO",
+     "motivo": "no es un derecho"
+    }
+   ],
+   "voz": [
+    "Arreglamos frases que están mal.",
+    "*Todos* los chicos tienen derechos.",
+    "Un celular es un *deseo*, no un derecho."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es un derecho?",
+   "opciones": [
+    "TENER CELULAR",
+    "IR A LA ESCUELA",
+    "COMER CARAMELOS"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en los derechos.",
+    "¿Cuál es un derecho?",
+    "¡*Ir a la escuela*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LOS GRANDES CUIDAN",
+   "texto": "Los adultos cuidan nuestros derechos",
+   "emoji": "🛡️",
+   "voz": [
+    "Recordá: los *adultos* cuidan nuestros derechos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DERECHO",
+     "lo que todos deben tener"
+    ],
+    [
+     "EJEMPLOS",
+     "jugar, escuela, salud"
+    ],
+    [
+     "TODOS",
+     "los mismos derechos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *derecho* es para todos.",
+    "Jugar, *escuela* y salud.",
+    "*Todos* tenemos los mismos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

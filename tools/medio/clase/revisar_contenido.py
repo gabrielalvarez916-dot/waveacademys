@@ -21,7 +21,7 @@ for slug in args:
     L = json.load(open(os.path.join(AQUI, 'lecciones', slug + '.json'), encoding='utf-8'))
     tit = (L.get('titulo') or '').lower()
     todo = re.sub(r'(Revolución|Plaza|Avenida) de Mayo|\d+ de (diciembre|junio|marzo|septiembre)', '', ' '.join(textos(L['escenas'])))
-    if re.search(MESES, todo, re.I) and 'Julio Verne' not in todo: E(slug, 'nombra meses: los alumnos entran en cualquier fecha')
+    if re.search(MESES, todo, re.I) and 'Julio Verne' not in todo and not L.get('meses_ok'): E(slug, 'nombra meses: los alumnos entran en cualquier fecha')
     for k, e in enumerate(L['escenas']):
         t = e['t']
         if t == 'mundo' and (e.get('fondo', 'nada') != 'nada' or any(('zoom' in a or 'mueve' in a) for p in e['pasos'] for a in p['acc'])) and 'subject_id' not in L:
@@ -87,7 +87,7 @@ if mis:
     for n, c in mis['niveles'].items():
         s = f'mision {mis["tema"]} nivel {n}'
         tx =re.sub(r'(Revolución|Plaza|Avenida) de Mayo|\d+ de (diciembre|junio|marzo|septiembre)|Julio Verne', '', ' '.join(textos(c)))
-        if re.search(MESES, tx, re.I): E(s, 'el PDF nombra meses')
+        if re.search(MESES, tx, re.I) and not c.get('meses_ok'): E(s, 'el PDF nombra meses')  # "meses_ok": true solo cuando el tema son los meses o las fechas (calendario, fechas patrias)
         if 'en tu carpeta' in (c.get('ejemplo_solo') or {}).get('planteo', '') and any(q.get('t') == 'keywords' for q in mis['act'].get(n, [])): E(s, 'la producción se manda "a la carpeta": tiene que ir a la actividad del nivel')
     for n, acts in mis['act'].items():
         for q in acts:

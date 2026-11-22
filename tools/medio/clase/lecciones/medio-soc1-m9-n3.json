@@ -1,0 +1,145 @@
+{
+ "slug": "medio-soc1-m9-n3",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 9,
+  "nivel": 3
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Mi línea de tiempo personal",
+ "sub": "Ciencias Sociales 1 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué pasó primero: naciste o fuiste al jardín?",
+   "segundos": 6,
+   "respuesta": "¡NACÍ!",
+   "emoji": "👶",
+   "titulo": "MI LÍNEA",
+   "sub": "de tiempo",
+   "voz": [
+    "Desafío: ¿qué pasó primero?",
+    "¡Primero *naciste*!",
+    "Hoy: *mi línea de tiempo*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ORDENAMOS LAS FOTOS",
+   "items": [
+    {
+     "txt": "NACÍ",
+     "emoji": "👶"
+    },
+    {
+     "txt": "CAMINÉ",
+     "emoji": "🚶"
+    },
+    {
+     "txt": "JARDÍN",
+     "emoji": "🎨"
+    },
+    {
+     "txt": "PRIMER GRADO",
+     "emoji": "🎒"
+    }
+   ],
+   "relato": [
+    3,
+    0,
+    2,
+    1
+   ],
+   "voz": [
+    "Las fotos de Sofi se *mezclaron*.",
+    "Las ponemos en *orden*.",
+    "¡De antes a ahora!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA LÍNEA DE SOFI",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "NACÍ",
+     "emoji": "👶"
+    },
+    {
+     "fecha": "2",
+     "txt": "CAMINÉ",
+     "emoji": "🚶"
+    },
+    {
+     "fecha": "3",
+     "txt": "JARDÍN",
+     "emoji": "🎨"
+    },
+    {
+     "fecha": "4",
+     "txt": "PRIMER GRADO",
+     "emoji": "🎒"
+    }
+   ],
+   "voz": [
+    "Primero, Sofi *nació*.",
+    "Después, *caminó*.",
+    "Fue al *jardín*.",
+    "¡Y ahora está en *primer grado*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué va al final de la línea?",
+   "opciones": [
+    "NACÍ",
+    "PRIMER GRADO",
+    "CAMINÉ"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá en la línea.",
+    "¿Qué va al final?",
+    "¡*Primer grado*: es lo de ahora!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ EN CASA",
+   "texto": "Tu familia recuerda cuándo pasó",
+   "emoji": "👪",
+   "voz": [
+    "Truco: preguntá en casa *cuándo* pasó cada cosa."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LÍNEA",
+     "hechos en orden"
+    ],
+    [
+     "ANTES",
+     "a la izquierda"
+    ],
+    [
+     "AHORA",
+     "a la derecha"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *línea de tiempo* ordena los hechos.",
+    "Lo de *antes* va primero.",
+    "Lo de *ahora* va al final.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

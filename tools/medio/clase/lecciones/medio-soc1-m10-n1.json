@@ -1,0 +1,187 @@
+{
+ "slug": "medio-soc1-m10-n1",
+ "destino": {
+  "subject_id": "67d2ad89-caaa-4e82-8d25-8bbb08147818",
+  "tema": 10,
+  "nivel": 1
+ },
+ "materia": "Ciencias Sociales 1",
+ "titulo": "Las fechas patrias que celebramos",
+ "sub": "Ciencias Sociales 1 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Mañana hay acto en la escuela!"
+    },
+    {
+     "yo": true,
+     "txt": "¡YO LLEVO LA BANDERA!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Qué lindo!"
+    }
+   ],
+   "titulo": "FECHAS PATRIAS",
+   "sub": "las celebramos",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¡Mañana hay *acto* en la escuela!",
+    "Sofi lleva la *bandera*.",
+    "Hoy: *las fechas patrias*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "NUESTRAS FECHAS",
+   "celdas": [
+    {
+     "cab": "25 DE MAYO",
+     "txt": "REVOLUCIÓN"
+    },
+    {
+     "cab": "20 DE JUNIO",
+     "txt": "BANDERA"
+    },
+    {
+     "cab": "9 DE JULIO",
+     "txt": "INDEPENDENCIA"
+    },
+    {
+     "cab": "🇦🇷",
+     "txt": "ACTOS EN LA ESCUELA"
+    }
+   ],
+   "voz": [
+    "En Argentina recordamos fechas *importantes*.",
+    "El 25 de Mayo, la *Revolución*.",
+    "El 20 de junio, el día de la *Bandera*.",
+    "El 9 de Julio, la *Independencia*.",
+    "¡Y hacemos *actos* en la escuela!"
+   ],
+   "neutro": {
+    "titulo": "FECHAS DEL PAÍS",
+    "celdas": [
+     {
+      "cab": "🚩",
+      "txt": "DÍA DE LA BANDERA"
+     },
+     {
+      "cab": "🗽",
+      "txt": "INDEPENDENCIA"
+     },
+     {
+      "cab": "🎉",
+      "txt": "FIESTA NACIONAL"
+     },
+     {
+      "cab": "🏫",
+      "txt": "ACTOS EN LA ESCUELA"
+     }
+    ],
+    "voz": [
+     "Cada país recuerda fechas *importantes*.",
+     "Hay un día de la *bandera*.",
+     "Hay un día de la *independencia*.",
+     "Hay *fiestas nacionales*.",
+     "¡Y hacemos *actos* en la escuela!"
+    ]
+   }
+  },
+  {
+   "t": "partes",
+   "emoji": "🏫",
+   "titulo": "EL ACTO",
+   "partes": [
+    {
+     "txt": "BANDERA",
+     "x": 0.0,
+     "y": -0.8
+    },
+    {
+     "txt": "ABANDERADOS",
+     "x": -0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "HIMNO",
+     "x": 0.6,
+     "y": -0.2
+    },
+    {
+     "txt": "BAILE",
+     "x": 0.0,
+     "y": 0.7
+    }
+   ],
+   "voz": [
+    "Miramos un *acto* escolar.",
+    "Sube la *bandera*.",
+    "Pasan los *abanderados*.",
+    "Cantamos el *himno*.",
+    "¡Y hay un *baile*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cantamos en el acto?",
+   "opciones": [
+    "EL HIMNO",
+    "FELIZ CUMPLE",
+    "UNA CANCIÓN DE CUNA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el acto.",
+    "¿Qué cantamos todos?",
+    "¡El *himno*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "RESPETO",
+   "texto": "En el himno, quietos y en silencio",
+   "emoji": "🤫",
+   "voz": [
+    "Recordá: en el himno, *quietos* y en silencio."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FECHA PATRIA",
+     "recuerda algo del país"
+    ],
+    [
+     "ACTO",
+     "bandera e himno"
+    ],
+    [
+     "RESPETO",
+     "silencio en el himno"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *fechas patrias* recuerdan al país.",
+    "En el *acto* hay bandera e himno.",
+    "Y escuchamos con *respeto*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "meses_ok": true
+}
