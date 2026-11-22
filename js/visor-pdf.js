@@ -135,6 +135,7 @@
         var vpc = pagina.getViewport({ scale: escala });
         capa.style.width = Math.round(vpc.width) + 'px';
         capa.style.height = Math.round(vpc.height) + 'px';
+        capa.style.setProperty('--scale-factor', String(vpc.scale)); // sin esto pdf.js no ubica las líneas y no se puede marcar nada
         var contenido = await pagina.getTextContent();
         var t = window.pdfjsLib.renderTextLayer({ textContentSource: contenido, container: capa, viewport: vpc, textDivs: capaDivs, textContentItemsStr: capaStrs });
         await t.promise;
@@ -174,15 +175,42 @@
     function remarcar() { var it = voz.cola[voz.idx]; if (it) marcar(it.divs.map(function (i) { return capaDivs[i]; })); }
 
     // Arma las oraciones de la página que se está viendo y a qué líneas del PDF corresponde cada una.
+    // El PDF guarda títulos y etiquetas con las letras separadas ("W A V E"): se juntan para que la voz lea palabras, no letras.
+    // El encabezado y el pie de cada página (WAVE ACADEMY · materia · lección, "Material de estudio…", número) no se leen.
+    function textoLeible(i) {
+      var s = String(capaStrs[i] || ''), d = capaDivs[i];
+      if (!s.trim() || !d) return '';
+      var cr = capa.getBoundingClientRect(), r = d.getBoundingClientRect();
+      if (cr.height > 0) { var arriba = (r.top - cr.top) / cr.height, abajo = (r.bottom - cr.top) / cr.height; if (arriba < 0.07 || abajo > 0.94) return ''; }
+      var t = s.trim();
+      if (/^\S( \S)+$/.test(t)) t = t.replace(/ /g, '').toLowerCase(); // letras separadas -> palabra
+      else if (t.length === 1 && /[A-ZÁÉÍÓÚÑ]/.test(t)) t = t.toLowerCase();
+      t = t.replace(/[▶►•■□●○◆▪→←↑↓✔✘★·|]/g, ' ').replace(/(\d)\.º/g, '$1º').replace(/\b[a-zñ]+\.º/gi, '').replace(/^(\d+)\.\s+/, '$1, ').replace(/\s+/g, ' ').trim();
+      return /[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]/.test(t) ? t : '';
+    }
     function armarCola() {
-      var texto = '', mapa = [];
-      capaStrs.forEach(function (s, i) { mapa.push({ i: i, ini: texto.length, fin: texto.length + s.length }); texto += s + ' '; });
-      var out = [], re = /[^.!?¿¡:;]+[.!?:;]*/g, m;
+      var FIN = '\u0001', texto = '', mapa = [], prev = null, prevT = '', cr = capa.getBoundingClientRect();
+      capaStrs.forEach(function (_, i) {
+        var t = textoLeible(i);
+        if (t && prevT && t.toLowerCase() === prevT.toLowerCase()) t = ''; // etiqueta repetida
+        var r = t ? capaDivs[i].getBoundingClientRect() : null;
+        if (r && prev) {
+          var mismaLinea = Math.abs(r.top - prev.top) < Math.max(2, prev.height * 0.5);
+          if (!mismaLinea) {
+            var paso = r.top - prev.top, cambioAlto = Math.abs(r.height - prev.height) > Math.max(1.5, prev.height * 0.12);
+            var anteriorLarga = prev.width > cr.width * 0.55; // una línea de párrafo que sigue en la de abajo suele ocupar casi todo el ancho
+            if (cambioAlto || Math.abs(r.left - prev.left) > 4 || paso < 0 || paso > prev.height * 3 || (paso > prev.height * 1.2 && !anteriorLarga)) texto += FIN; // otro bloque: título, lista, párrafo nuevo
+          }
+        }
+        mapa.push({ i: i, ini: texto.length, fin: texto.length + t.length }); texto += t + ' ';
+        if (t) { prev = r; prevT = t; }
+      });
+      var out = [], re = /[^.!?¿¡:;\u0001]+[.!?:;]*/g, m;
       while ((m = re.exec(texto))) {
         var t = m[0].replace(/\s+/g, ' ').trim();
         if (t.length < 2 || !/[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]/.test(t)) continue;
         var a = m.index, b = m.index + m[0].length;
-        out.push({ t: t, divs: mapa.filter(function (x) { return x.ini < b && x.fin > a && capaStrs[x.i].trim(); }).map(function (x) { return x.i; }) });
+        out.push({ t: t, divs: mapa.filter(function (x) { return x.fin > x.ini && x.ini < b && x.fin > a; }).map(function (x) { return x.i; }) });
       }
       return out;
     }
