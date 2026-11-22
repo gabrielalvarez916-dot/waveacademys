@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat1-m15-n1",
+ "step_id": "dc0cbb8e-985a-4558-9c62-794e7f55ca1b",
+ "materia": "Matemática 1",
+ "titulo": "Conocer la calculadora",
+ "sub": "Matemática 1 · Misión 15 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍬",
+   "lineas": [
+    "En el kiosco hay mucha gente.",
+    "Sofi tiene que sumar rápido.",
+    "¡Usa una calculadora!"
+   ],
+   "titulo": "LA CALCULADORA",
+   "sub": "conocerla",
+   "voz": [
+    "En el kiosco hay *mucha gente*.",
+    "Sofi tiene que sumar muy rápido.",
+    "¡Usa una *calculadora*!",
+    "Hoy: *conocer la calculadora*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "titulo": "LA CALCULADORA DE SOFI",
+   "teclas": [
+    "2",
+    "5"
+   ],
+   "resultado": "25",
+   "texto": "APRETÁ 2 Y 5",
+   "voz": [
+    "Esta es la *calculadora* de Sofi.",
+    "Aprieta el 2 y después el 5.",
+    "¡En la pantalla dice *25*!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "SUS PARTES",
+   "celdas": [
+    {
+     "cab": "PANTALLA",
+     "txt": "muestra los números"
+    },
+    {
+     "cab": "NÚMEROS",
+     "txt": "del 0 al 9"
+    },
+    {
+     "cab": "+ Y −",
+     "txt": "sumar y restar"
+    },
+    {
+     "cab": "= Y C",
+     "txt": "resultado y borrar"
+    }
+   ],
+   "voz": [
+    "La calculadora tiene *cuatro partes*.",
+    "La *pantalla* muestra los números.",
+    "Las teclas de *números*, del 0 al 9.",
+    "El *más* y el *menos*.",
+    "El *igual* y la *C* para borrar."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LA C BORRA",
+   "texto": "Si te equivocás, apretá la C",
+   "emoji": "🧽",
+   "voz": [
+    "Truco: si te equivocás, apretá la *C*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde se ve el resultado?",
+   "opciones": [
+    "En las teclas",
+    "En la pantalla",
+    "En la C"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá la calculadora.",
+    "¿Dónde se ve el resultado?",
+    "¡En la *pantalla*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PANTALLA",
+     "muestra los números"
+    ],
+    [
+     "NÚMEROS",
+     "del 0 al 9"
+    ],
+    [
+     "SIGNOS",
+     "+, − e ="
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *pantalla* muestra los números.",
+    "Hay teclas de *números*.",
+    "Y teclas de *signos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

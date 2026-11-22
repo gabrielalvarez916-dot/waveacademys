@@ -85,6 +85,7 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | fichas | 3 | fichas:[...], grande, etiqueta |
 | juntar | 3 | a:{emoji, n}, b:{emoji, n}, texto — dos grupos con su número y el +; se juntan en una caja; el total (a + b ≤ 10, primeros años) |
 | agregar | 3 | emoji, n, mas, texto — el grupo con su número; los nuevos caen cuando la voz cuenta ("5, 6, 7"); el total (n + mas ≤ 10, primeros años) |
+| calculadora | 3 | teclas:['1','5','−','4'], resultado, texto, titulo — calculadora dibujada: se aprietan las teclas y se ve el resultado |
 | sacar | 3 | emoji, n, menos, texto — el grupo con su número; se tachan y salen volando los que sacamos; lo que queda (n ≤ 10, primeros años) |
 | agrupar | niveles + 1 | niveles:[{nombre, valor, icono:'alf'\|'pack'\|'caja'\|'camion'\|emoji}], salto |
 | estante | 5 | numero, cab, dig, val, flechas, destacar, etiqueta |

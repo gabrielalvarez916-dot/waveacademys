@@ -1,0 +1,139 @@
+{
+ "slug": "medio-mat1-m15-n2",
+ "step_id": "5babb0c2-1dc6-4215-b54e-fe5cca3c3874",
+ "materia": "Matemática 1",
+ "titulo": "Sumar y restar con teclas",
+ "sub": "Matemática 1 · Misión 15 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué teclas apretás para hacer 7 + 5?",
+   "segundos": 6,
+   "respuesta": "7, +, 5, =",
+   "emoji": "🧮",
+   "titulo": "SUMAR Y RESTAR",
+   "sub": "con teclas",
+   "voz": [
+    "Desafío: ¿qué teclas apretás para 7 más 5?",
+    "¡7, más, 5 e *igual*!",
+    "Hoy: *sumar y restar con teclas*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "EL ORDEN",
+   "items": [
+    {
+     "txt": "Número",
+     "emoji": "7️⃣"
+    },
+    {
+     "txt": "Signo",
+     "emoji": "➕"
+    },
+    {
+     "txt": "Número",
+     "emoji": "5️⃣"
+    },
+    {
+     "txt": "Igual",
+     "emoji": "🟰"
+    }
+   ],
+   "voz": [
+    "Primero, un *número*.",
+    "Después, el *signo*.",
+    "Después, otro *número*.",
+    "Y al final, el *igual*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "7",
+    "+",
+    "5"
+   ],
+   "resultado": "12",
+   "texto": "7 + 5 = 12",
+   "voz": [
+    "Sumamos 7 más 5.",
+    "Apretamos 7, más y 5.",
+    "Apretamos igual: ¡*12*!"
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "1",
+    "5",
+    "−",
+    "4"
+   ],
+   "resultado": "11",
+   "texto": "15 − 4 = 11",
+   "voz": [
+    "Ahora restamos 15 menos 4.",
+    "Apretamos 1, 5, menos y 4.",
+    "Apretamos igual: ¡*11*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué tecla va al final?",
+   "opciones": [
+    "+",
+    "C",
+    "="
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Pensá en el orden.",
+    "¿Qué tecla va al final?",
+    "¡El *igual*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Olvidar el =",
+     "bien": "Apretar = para ver el resultado"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Sin el *igual*, no sale el resultado."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ORDEN",
+     "número, signo, número, ="
+    ],
+    [
+     "SUMAR",
+     "tecla +"
+    ],
+    [
+     "RESTAR",
+     "tecla −"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *orden*: número, signo, número, igual.",
+    "Para *sumar*, la tecla más.",
+    "Para *restar*, la tecla menos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

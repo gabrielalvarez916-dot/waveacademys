@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat1-m15-n3",
+ "step_id": "72822d33-d452-4196-8f82-3d7b7e4d7d29",
+ "materia": "Matemática 1",
+ "titulo": "Controlar resultados",
+ "sub": "Matemática 1 · Misión 15 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Hice 20 + 3 y me dio 50"
+    },
+    {
+     "yo": true,
+     "txt": "¡Eso no puede ser!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Qué hice mal?"
+    }
+   ],
+   "titulo": "CONTROLAR",
+   "sub": "resultados",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "Hizo 20 más 3 y le dio 50.",
+    "¡Eso no puede ser!",
+    "Hoy: *controlar resultados*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "2",
+    "0",
+    "+",
+    "3",
+    "0"
+   ],
+   "resultado": "50",
+   "texto": "¡APRETÓ 30, NO 3!",
+   "voz": [
+    "Mirá lo que apretó Tomi.",
+    "Apretó 20, más y… ¡30!",
+    "Por eso le dio *50*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "LO ARREGLAMOS",
+   "cambios": [
+    {
+     "antes": "20 + 3 = 50",
+     "despues": "20 + 3 = 23",
+     "motivo": "apretó 30 en vez de 3"
+    }
+   ],
+   "voz": [
+    "Corregimos la cuenta de Tomi.",
+    "20 más 3 es *23*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "2",
+    "0",
+    "+",
+    "3"
+   ],
+   "resultado": "23",
+   "texto": "¡AHORA SÍ: 23!",
+   "voz": [
+    "Tomi lo hace otra vez.",
+    "Aprieta 20, más y 3.",
+    "¡Ahora sí: *23*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La calculadora dice 6 + 2 = 62. ¿Está bien?",
+   "opciones": [
+    "Sí",
+    "No"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Pensá antes de mirar.",
+    "6 más 2… ¿da 62?",
+    "¡*No*! Da 8."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PENSÁ PRIMERO",
+   "texto": "Si el resultado es raro, volvé a apretar",
+   "emoji": "🤔",
+   "voz": [
+    "Truco: *pensá* el resultado antes de apretar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PENSAR",
+     "antes de apretar"
+    ],
+    [
+     "MIRAR",
+     "la pantalla"
+    ],
+    [
+     "COMPARAR",
+     "¿dice lo mismo?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *pensamos*.",
+    "Después *miramos* la pantalla.",
+    "Y *comparamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

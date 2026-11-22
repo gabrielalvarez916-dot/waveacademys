@@ -494,3 +494,21 @@ def cuentas(pares, ocultar=()):
 
 
 OBJ["bolsita"] = _paq10  # bolsita de 10 (misión 12): sirve en juntar, agregar y sacar
+
+
+# ---------------- dibujos de la misión 15 (calculadora) ----------------
+def calculadora(pantalla="0", resaltar=(), texto=None):
+    """Calculadora simple con su pantalla; resaltar: teclas marcadas en amarillo (las que se aprietan)."""
+    F_ = [['7', '8', '9', '−'], ['4', '5', '6', '+'], ['1', '2', '3', '='], ['0', 'C']]
+    fig, ax = lienzo(3.4, 4.6, 5.0, 6.6, 0, -.9)
+    ax.add_patch(FancyBboxPatch((.3, .2), 4.4, 5.9, boxstyle="round,pad=0.05,rounding_size=0.35", color="#24343a", ec=OSC, lw=1.6))
+    ax.add_patch(FancyBboxPatch((.6, 4.75), 3.8, 1.0, boxstyle="round,pad=0.02,rounding_size=0.12", color="#cfe8c9", ec="#7fa77a", lw=1.4))
+    ax.text(4.25, 5.25, pantalla, ha="right", va="center", fontsize=22, color="#1f3a1c", family="DejaVu Sans Mono", fontweight="bold")
+    for r, fila in enumerate(F_):
+        for c, k in enumerate(fila):
+            x, y = .95 + c * 1.03, 4.05 - r * .95
+            col = AMBAR if k in resaltar else ("#3c5158" if k.isdigit() else "#4f6f63")
+            ax.add_patch(FancyBboxPatch((x - .4, y - .35), .8, .7, boxstyle="round,pad=0.02,rounding_size=0.12", color=col, ec=OSC, lw=1.1))
+            ax.text(x, y, k, ha="center", va="center", fontsize=15, color=OSC if k in resaltar else "white", **F)
+    if texto: cartel(ax, 2.5, -.5, texto, c=TEAL, fs=13)
+    return png(fig)
