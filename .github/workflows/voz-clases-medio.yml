@@ -22,8 +22,8 @@ jobs:
       - run: pip install edge-tts
       - run: sudo apt-get install -y -qq ffmpeg   # para nivelar el audio de ElevenLabs
       - name: Generar voz
-        # Solo Lengua 1.º y 2.º año (nivel medio) sale con ElevenLabs (arg y neutro); el resto sigue con la voz de siempre. Tope de caracteres por corrida.
-        env: { VOZ_MINUTOS: '80', ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}', ELEVEN_TOPE: '8000', ELEVEN_VERSIONES: 'arg,neutro', ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}' }
+        # PAUSADO (tope 0) a pedido de Gaby mientras se terminan Sociales; para reactivar: ELEVEN_TOPE '8000'. Lengua 1.º y 2.º año (nivel medio) sale con ElevenLabs (arg y neutro); el resto sigue con la voz de siempre. Tope de caracteres por corrida.
+        env: { VOZ_MINUTOS: '80', ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}', ELEVEN_TOPE: '0', ELEVEN_VERSIONES: 'arg,neutro', ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}' }
         run: python tools/medio/clase/voz_edge.py
       - run: python tools/medio/clase/armar.py
       - name: 'Guardar voz y HTML en el repo (antes de cargar, para que no se pierdan)'
@@ -36,7 +36,7 @@ jobs:
         if: env.MEDIO_TOKEN != ''
         run: python tools/medio/clase/cargar.py $(ls tools/medio/clase/dist | sed 's/\.html$//')
       - name: Publicar misiones completas (solo Nivel Medio)
-        if: env.MEDIO_TOKEN != ''
+        if: ${{ !cancelled() && env.MEDIO_TOKEN != '' }}   # publica lo que esté completo aunque una carga haya fallado
         run: python tools/medio/publicar.py
       - name: Seguir si quedaron voces sin grabar
         if: hashFiles('tools/medio/clase/voz/.pendiente') != ''
