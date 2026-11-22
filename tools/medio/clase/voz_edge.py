@@ -139,6 +139,10 @@ ELEVEN_VERSIONES = os.environ.get('ELEVEN_VERSIONES', 'arg').split(',')  # arg, 
 ELEVEN_VOCES = {'arg': os.environ.get('ELEVEN_VOZ_ARG', '0LdgqX7HWxqwl7GGMBS4'), 'neutro': os.environ.get('ELEVEN_VOZ_NEUTRO') or '87bJkTOBRagtx7PAFZDB'}
 ELEVEN_MODELO = 'eleven_v3'
 GASTADOS = [0]
+import shutil
+if ELEVEN_KEY and ELEVEN_TOPE > 0 and not (shutil.which('ffmpeg') and shutil.which('ffprobe')):
+    sys.exit('Falta ffmpeg en la máquina: no se gastó nada de ElevenLabs')
+ELEVEN_PARALELO = int(os.environ.get('ELEVEN_PARALELO', '2'))  # ElevenLabs limita los pedidos a la vez (con 4 respondía 429)
 MANUALES = {}  # frases grabadas a mano por Gaby (no se pisan): {slug: [[escena, linea], ...]}
 _mp = os.path.join(AQUI, 'voz', 'manuales.json')
 if os.path.exists(_mp): MANUALES = json.load(open(_mp))
@@ -226,7 +230,7 @@ async def grabar(L, nombre, suf, vz):
             PENDIENTES.append(nombre + suf); print('SALTEADA por tope de gasto:', nombre + suf, costo, 'caracteres'); return
         GASTADOS[0] += costo
     # se graban EN PARALELO (de a PARALELO frases a la vez): mismo audio, mismo orden, mucho más rápido
-    sem = asyncio.Semaphore(PARALELO)
+    sem = asyncio.Semaphore(ELEVEN_PARALELO if el else PARALELO)
     async def grabar_una(t):
         async with sem:
             for intento in range(6):

@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install edge-tts
+      - name: Instalar ffmpeg (para nivelar el volumen del audio)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Generar voz (ElevenLabs en Lengua 1 y 2; el resto no se toca)
         run: python tools/medio/clase/voz_edge.py $(ls tools/medio/clase/lecciones/${{ github.event.inputs.lecciones }}.json)
       - run: python tools/medio/clase/armar.py
