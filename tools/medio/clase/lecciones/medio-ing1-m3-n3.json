@@ -1,0 +1,138 @@
+{
+ "slug": "medio-ing1-m3-n3",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 3,
+  "nivel": 3
+ },
+ "materia": "Inglés 1",
+ "titulo": "Black, white and brown",
+ "sub": "Inglés 1 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🏞️",
+   "lineas": [
+    "Tomi va al zoológico.",
+    "Ve una cebra y un oso.",
+    "¿De qué color son?"
+   ],
+   "titulo": "BLACK AND WHITE",
+   "sub": "negro, blanco y marrón",
+   "voz": [
+    "Tomi va al *zoológico*.",
+    "Ve una cebra y un oso.",
+    "¿De qué color son?",
+    "Hoy: *negro, blanco y marrón en inglés*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🦓",
+     "txt": "ZEBRA"
+    },
+    {
+     "emoji": "⬛",
+     "txt": "BLACK"
+    },
+    {
+     "emoji": "⬜",
+     "txt": "WHITE"
+    }
+   ],
+   "voz": [
+    "Miramos la cebra de cerca.",
+    "Black! Negro.",
+    "White! Blanco."
+   ],
+   "voz_en": []
+  },
+  {
+   "t": "venn",
+   "a": "BLACK",
+   "b": "WHITE",
+   "itemsA": [
+    "NOCHE",
+    "CUERVO"
+   ],
+   "itemsB": [
+    "NIEVE",
+    "LECHE"
+   ],
+   "ambos": [
+    "CEBRA",
+    "PANDA"
+   ],
+   "voz": [
+    "Separamos cosas por su color.",
+    "La noche y el cuervo son negros.",
+    "La nieve y la leche son blancas.",
+    "¡La cebra y el panda tienen los dos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El chocolate es…",
+   "opciones": [
+    "BROWN",
+    "WHITE",
+    "PINK"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el chocolate.",
+    "¿De qué color es en inglés?",
+    "Brown!"
+   ],
+   "voz_en": [
+    2
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "OPUESTOS",
+   "texto": "BLACK es oscuro y WHITE es claro",
+   "emoji": "🌗",
+   "voz": [
+    "Recordá: negro es *oscuro* y blanco es *claro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BLACK",
+     "negro"
+    ],
+    [
+     "WHITE",
+     "blanco"
+    ],
+    [
+     "BROWN",
+     "marrón"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Black, white, brown!",
+    "Negro, blanco y *marrón*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  }
+ ]
+}
