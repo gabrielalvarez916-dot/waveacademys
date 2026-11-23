@@ -39,6 +39,9 @@ sys.path.insert(0, os.path.dirname(AQUI))  # tools/medio
 from neutro_medio import convertir, argentino
 from primeros_anios import es_primeros
 
+import base64
+_CUR = os.path.join(M, 'fuentes', 'playwrite-ar.woff')  # letra cursiva escolar (Playwrite Argentina, OFL): solo se incrusta en las clases con la plantilla «cursiva»
+FUENTE_CURSIVA = ("@font-face{font-family:'PlaywriteAR';src:url(data:font/woff;base64," + base64.b64encode(open(_CUR, 'rb').read()).decode() + ") format('woff')}") if os.path.exists(_CUR) else ''
 SOLO_CAMBIADAS = '--cambiadas' in sys.argv
 def armar(L, slug, suf, outs):
     voz = os.path.join(AQUI, 'voz', slug + suf + '.json')
@@ -52,6 +55,7 @@ def armar(L, slug, suf, outs):
     if L.get('estilo') == 'primeros':  # 1.º a 3.º del Nivel Medio: pantalla de inicio en imprenta mayúscula
         shell = SHELL.replace('</style>', '#ui h1,#ui p,svg text{text-transform:uppercase}\n</style>', 1)
     else: shell = SHELL
+    if FUENTE_CURSIVA and any(e.get('t') in ('cursiva', 'trazos') for e in L['escenas']): shell = shell.replace('</style>', FUENTE_CURSIVA + '\n</style>', 1)
     html = shell.replace('{{TITULO}}', esc(L['titulo'])).replace('{{SUB}}', esc(L.get('sub', ''))).replace('{{SCRIPTS}}', GSAP + '\n' + datos + '\n<script>\n' + MOTOR + '\n' + REPRO + '\n</script>')
     for a, b in (tema_de(L.get('materia')) or {}).items():
         html = html.replace(a, b).replace(a.lower(), b)

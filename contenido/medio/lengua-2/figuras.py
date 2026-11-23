@@ -60,3 +60,24 @@ def objetos(pares, titulo=None):
         x = 2.4 * i + 1.2; OBJ2[obj](ax, x, 1.6)
         ax.text(x, .45, txt.upper(), ha="center", va="center", fontsize=10 if len(txt) > 9 else 12, color=OSC, **F)
     return png(fig)
+
+
+# ---------------- letra cursiva (misión 2): letra escolar Playwrite Argentina (licencia OFL, en fuentes/) ----------------
+from matplotlib.font_manager import FontProperties
+_FP = FontProperties(fname=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes', 'PlaywriteAR-Regular.ttf'))
+
+
+def cursiva(renglones, imprenta=None, repasar=False):
+    """Renglones de cuaderno con texto en cursiva escolar. renglones: lista de textos (uno por renglón, en minúscula como se escribe).
+    imprenta: lista paralela con la misma palabra en imprenta (a la izquierda). repasar=True: la cursiva sale en gris claro para repasar con el lápiz."""
+    n = len(renglones); H = 1.25 * n + .2
+    fig, ax = lienzo(6.8, min(5.5, .95 * n + .3), 10.0, H, 0, 0)
+    for i, txt in enumerate(renglones):
+        y = H - .5 - i * 1.25
+        for dy, c, ls, lw in ((-.32, "#9fb8e6", "-", 1.2), (.05, "#c7d7f2", "--", .9), (.42, "#9fb8e6", "-", 1.2)):
+            ax.plot([.1, 9.9], [y + dy, y + dy], color=c, ls=ls, lw=lw)
+        x0 = .3
+        if imprenta:
+            ax.text(.3, y, imprenta[i].upper(), ha="left", va="center", fontsize=15, color=TEAL, **F); x0 = 3.3
+        ax.text(x0, y - .3, txt, ha="left", va="baseline", fontsize=30, color="#b9c2d8" if repasar else "#1d2a5a", fontproperties=_FP)
+    return png(fig)

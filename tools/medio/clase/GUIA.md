@@ -141,6 +141,8 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | bloques | 1 + items | titulo, items:[{cab, txt}] (2-5) |
 | dialogo | lineas | personas:[{nombre, emoji}×2], lineas:[{quien, txt, trad}] (máx 4) |
 | vocab | items | items:[{palabra, emoji, trad, pron}] (2-6) |
+| cursiva | 3 | texto (en minúscula, como se escribe), imprenta?, nota?, titulo? — **letra cursiva escolar** (Playwrite Argentina, licencia OFL, en `motor/fuentes/`): cuaderno con renglones, la imprenta arriba y el lápiz que escribe la cursiva. `armar.py` incrusta la letra solo en las clases que usan esta plantilla. Para el PDF: `contenido/medio/lengua-2/figuras.py` → `cursiva()` |
+| trazos | 3 | texto, nota?, titulo? — como «cursiva», pero primero aparece el trazo punteado en gris para **repasar** y el lápiz lo repasa encima (trazos de práctica: bucles, puentes, ondas) |
 | fichas | 3 | consigna, fichas:[palabras en el orden correcto] (2-7), desorden:[índices] opcional, traduccion — **juego de idiomas**: fichas mezcladas que vuelan a armar la frase, ✓ y traducción |
 | completa | 3 | antes, despues, opciones (2-4), correcta (índice), traduccion? — frase con hueco; la opción correcta vuela al hueco |
 | personaje | lineas | personaje:{nombre, emoji}, lineas:[{txt, animo:'feliz'\|'sorpresa'\|'piensa'\|'ojo'\|'triste'}] (1-4) — personaje que habla con globo y reacciona |

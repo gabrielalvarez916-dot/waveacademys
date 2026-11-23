@@ -1,0 +1,118 @@
+{
+ "slug": "medio-leng2-m2-n2",
+ "step_id": "cdc501cc-7e44-4ade-96b4-6b9be002aed8",
+ "materia": "Lengua 2",
+ "titulo": "Cursiva con vocales",
+ "sub": "Lengua 2 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cómo se escriben las vocales en cursiva?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te muestro!"
+    },
+    {
+     "yo": false,
+     "txt": "¡Dale!"
+    }
+   ],
+   "titulo": "CURSIVA",
+   "sub": "con vocales",
+   "voz": [
+    "Tomi le escribe a Sofi.",
+    "¿Cómo se escriben las vocales en cursiva?",
+    "Sofi le dice: ¡te muestro!",
+    "Hoy: *cursiva con vocales*."
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "A  E  I  O  U",
+   "texto": "a e i o u",
+   "titulo": "LAS VOCALES",
+   "voz": [
+    "Estas son las cinco vocales.",
+    "En cursiva: a, e, i, o, u.",
+    "¡Cada una tiene una colita de *salida*!"
+   ]
+  },
+  {
+   "t": "cursiva",
+   "texto": "ae io ua",
+   "nota": "La salida de una es la entrada de la otra",
+   "titulo": "UNIMOS VOCALES",
+   "voz": [
+    "Ahora unimos las vocales.",
+    "La salida de una es la *entrada* de la otra.",
+    "¡Sin levantar el lápiz!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El punto de la i se pone al terminar",
+   "emoji": "✏️",
+   "verdadero": true,
+   "explicacion": "Así no levantamos el lápiz",
+   "voz": [
+    "¿Verdadero o falso? El punto va al terminar.",
+    "Pensá: ¿cuándo levantamos el lápiz?",
+    "¡*Verdadero*! El punto va al final."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "a",
+    "e",
+    "i",
+    "o"
+   ],
+   "falta": "u",
+   "regla": "Las cinco vocales",
+   "voz": [
+    "Mirá: a, e, i, o…",
+    "¿Qué vocal sigue?",
+    "¡La *u*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VOCALES",
+     "a, e, i, o, u"
+    ],
+    [
+     "SALIDA",
+     "una colita"
+    ],
+    [
+     "UNIR",
+     "la salida es la entrada"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *vocales*: a, e, i, o, u.",
+    "Cada una tiene una *salida*.",
+    "La salida es la *entrada* de la otra.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

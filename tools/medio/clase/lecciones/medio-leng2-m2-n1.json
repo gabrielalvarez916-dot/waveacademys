@@ -1,0 +1,125 @@
+{
+ "slug": "medio-leng2-m2-n1",
+ "step_id": "b34026dd-cb13-440c-b6f5-1f5f8c28cf43",
+ "materia": "Lengua 2",
+ "titulo": "Trazos para escribir en cursiva",
+ "sub": "Lengua 2 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "✏️",
+   "lineas": [
+    "Sofi ya escribe en imprenta.",
+    "Ahora quiere escribir de corrido.",
+    "¡Como su mamá!"
+   ],
+   "titulo": "LA CURSIVA",
+   "sub": "trazos",
+   "voz": [
+    "Sofi ya escribe en *imprenta*.",
+    "Ahora quiere escribir *de corrido*.",
+    "¡Como escribe su mamá!",
+    "Hoy: *trazos para la cursiva*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IMPRENTA",
+    "texto": "letras separadas",
+    "emoji": "🔠"
+   },
+   "b": {
+    "cab": "CURSIVA",
+    "texto": "letras unidas",
+    "emoji": "✍️"
+   },
+   "signo": "≠",
+   "voz": [
+    "En *imprenta*, las letras van separadas.",
+    "En *cursiva*, las letras van unidas.",
+    "¡Sin levantar el lápiz!"
+   ]
+  },
+  {
+   "t": "trazos",
+   "texto": "llllll",
+   "nota": "Bucles: subo, giro y bajo",
+   "titulo": "BUCLES",
+   "voz": [
+    "Primer trazo: los *bucles*. Mirá el modelo.",
+    "Repasamos: subo, giro arriba y bajo.",
+    "¡Como una montaña rusa!"
+   ]
+  },
+  {
+   "t": "trazos",
+   "texto": "mmmmm",
+   "nota": "Puentes: arriba y abajo",
+   "titulo": "PUENTES",
+   "voz": [
+    "Segundo trazo: los *puentes*.",
+    "Repasamos: subo, hago una curvita y bajo.",
+    "¡Uno detrás del otro!"
+   ]
+  },
+  {
+   "t": "trazos",
+   "texto": "uuuuu",
+   "nota": "Ondas: como el mar",
+   "titulo": "ONDAS",
+   "voz": [
+    "Tercer trazo: las *ondas*.",
+    "Repasamos: bajo, subo, bajo, subo.",
+    "¡Como las olas del mar!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "En cursiva, ¿cómo van las letras?",
+   "opciones": [
+    "Unidas",
+    "Separadas"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "En cursiva, ¿cómo van las letras?",
+    "¡*Unidas*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CURSIVA",
+     "letras unidas"
+    ],
+    [
+     "TRAZOS",
+     "bucles, puentes, ondas"
+    ],
+    [
+     "EL LÁPIZ",
+     "no se levanta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *cursiva* tiene letras unidas.",
+    "Practicamos *bucles, puentes y ondas*.",
+    "¡Sin levantar el *lápiz*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -270,3 +270,29 @@
     V.forEach(function (p, k) { B(k); w.IN(tl, p, 0, { scaleX: 0, y: 0, d: .5, ease: 'back.out(1.6)' }); });
   } };
 })();
+
+/* PLANTILLA · LETRA CURSIVA (Lengua 2.º año). Usa la letra escolar Playwrite Argentina (motor/fuentes/playwrite-ar.woff, licencia OFL),
+   que armar.py incrusta solo en las clases que usan esta plantilla. */
+(function () {
+  var w = W, C = w.C, nid = 0;
+  // cursiva: {titulo?, imprenta? (la palabra en imprenta, arriba), texto (lo que se escribe en cursiva, con minúsculas), nota?} — 3 pasos:
+  // aparece el cuaderno con renglones (y la imprenta) · el lápiz escribe la cursiva de izquierda a derecha · la nota (o un brillo)
+  // trazos: igual que cursiva, pero primero aparece el trazo en gris claro para REPASAR, y el lápiz lo repasa encima. {texto, nota?, titulo?} — 3 pasos
+  T.trazos = { n: function () { return 3; }, armar: function (g, tl, B, d) { return T.cursiva.armar(g, tl, B, Object.assign({}, d, { repasar: true })); } };
+  T.cursiva = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, Y = 640, s = String(d.texto), fs = Math.min(190, 1450 / Math.max(3, s.length * .62)), cid = 'cur' + (++nid) + Math.floor(Math.random() * 1e6);
+    var pz = w.pieza(g, 960, Y); w.caja(pz, 0, 0, 1620, 430, '#fffdf3', '#d8c9a0', 28, 6).setAttribute('filter', 'url(#sombra)');
+    [-fs * .62, -fs * .18, fs * .26].forEach(function (yy, k) { w.el('line', { x1: -780, y1: yy, x2: 780, y2: yy, stroke: k === 1 ? '#c7d7f2' : '#9fb8e6', 'stroke-width': k === 2 ? 4 : 3, 'stroke-dasharray': k === 1 ? '14 12' : null }, pz); });
+    w.el('line', { x1: -700, y1: -200, x2: -700, y2: 200, stroke: '#f2a8a8', 'stroke-width': 3 }, pz);
+    var imp = d.imprenta ? w.chip(g, 960, 375, Math.min(1200, String(d.imprenta).length * 40 + 140), 90, d.imprenta, { size: 52, stroke: C.sol, r: 30 }) : null;
+    var cp = w.el('clipPath', { id: cid }, pz), rc = w.el('rect', { x: -800, y: -220, width: 0, height: 440 }, cp);
+    if (d.repasar) w.txt(pz, 0, fs * .02, s, fs, '#c9d2e6', { 'font-family': "'PlaywriteAR', cursive", 'font-weight': 400, style: 'text-transform:none', 'stroke': '#9fb0d4', 'stroke-width': 2, 'stroke-dasharray': '6 8' });
+    var t = w.txt(pz, 0, fs * .02, s, fs, '#1d2a5a', { 'font-family': "'PlaywriteAR', cursive", 'font-weight': 400, style: 'text-transform:none', 'clip-path': 'url(#' + cid + ')' });
+    var ancho = Math.min(1500, s.length * fs * .6), lap = w.pieza(g, 960 - ancho / 2, Y - fs * .35); w.emoji(lap, 0, 0, '✏️', 80);
+    var nota = d.nota ? w.chip(g, 960, 920, Math.min(1500, String(d.nota).length * 32 + 140), 96, d.nota, { size: 48, stroke: C.verde, r: 32 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, pz, ti ? '<.1' : 0, { y: 30, d: .5 }); if (imp) w.IN(tl, imp, '>', { scale: .6, y: 0 });
+    B(1); tl.to(lap, { opacity: 1, duration: .15 }, '>'); tl.to(rc, { attr: { width: 1600 }, duration: Math.min(3.2, .9 + s.length * .16), ease: 'none' }, '>');
+    tl.to(lap.parentNode, { attr: { transform: 'translate(' + (960 + ancho / 2) + ' ' + (Y - fs * .35) + ')' }, duration: Math.min(3.2, .9 + s.length * .16) * (ancho / 1600 + .05), ease: 'none' }, '<'); tl.to(lap, { opacity: 0, duration: .2 }, '>');
+    B(2); if (nota) w.IN(tl, nota, '>', { scale: .6, y: 0 }); else tl.to(pz, { scale: 1.04, duration: .2, yoyo: true, repeat: 1 }, '>');
+  } };
+})();

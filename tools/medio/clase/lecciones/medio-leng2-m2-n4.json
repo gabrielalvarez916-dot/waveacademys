@@ -1,0 +1,129 @@
+{
+ "slug": "medio-leng2-m2-n4",
+ "step_id": "4fa4cbd8-75f2-4209-9f1c-12f6bc64cd5e",
+ "materia": "Lengua 2",
+ "titulo": "Copiar mi nombre en cursiva",
+ "sub": "Lengua 2 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Sofi firma en cursiva!",
+   "bajada": "Su primer dibujo firmado",
+   "emoji": "🖍️",
+   "titulo": "MI NOMBRE",
+   "sub": "en cursiva",
+   "voz": [
+    "¡Último momento: Sofi firmó en cursiva!",
+    "Escribió su nombre en su dibujo.",
+    "Hoy: *copiar mi nombre en cursiva*."
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "Sofi",
+   "texto": "Sofi",
+   "nota": "Empieza con mayúscula",
+   "titulo": "LA FIRMA DE SOFI",
+   "voz": [
+    "Sofi escribe su nombre.",
+    "Primero la *mayúscula*, grande y con adorno. Después ofi, unido.",
+    "¡Los nombres empiezan con mayúscula!"
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "Tomi",
+   "texto": "Tomi",
+   "titulo": "LA FIRMA DE TOMI",
+   "voz": [
+    "Ahora Tomi escribe su nombre.",
+    "La mayúscula, y después omi, todo unido.",
+    "¡Qué linda firma!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO ESCRIBO MI NOMBRE",
+   "items": [
+    {
+     "txt": "Lo miro en imprenta",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Empiezo con mayúscula",
+     "emoji": "🅰️"
+    },
+    {
+     "txt": "Sigo todo unido",
+     "emoji": "✍️"
+    }
+   ],
+   "voz": [
+    "¿Cómo escribo mi nombre en cursiva?",
+    "Primero lo *miro* en imprenta.",
+    "Empiezo con la *mayúscula*.",
+    "Y sigo *todo unido*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "NOMBRES DEL GRADO",
+   "items": [
+    "Sofi",
+    "Tomi",
+    "Ana",
+    "Lola"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá los nombres del grado: todos con mayúscula.",
+    "Se tapan… ¡y uno desapareció!",
+    "¡Faltaba *Ana*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con qué empieza un nombre?",
+   "opciones": [
+    "Con mayúscula",
+    "Con minúscula"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Con qué empieza un nombre?",
+    "¡Con *mayúscula*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYÚSCULA",
+     "al principio"
+    ],
+    [
+     "UNIDO",
+     "todo el nombre"
+    ],
+    [
+     "FIRMAR",
+     "en tus trabajos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El nombre empieza con *mayúscula*.",
+    "Después va todo *unido*.",
+    "¡Ahora podés *firmar* tus trabajos!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

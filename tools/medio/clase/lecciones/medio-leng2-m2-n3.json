@@ -1,0 +1,126 @@
+{
+ "slug": "medio-leng2-m2-n3",
+ "step_id": "5e2a2145-aec5-44c9-8ed6-a7f8df552937",
+ "materia": "Lengua 2",
+ "titulo": "Cursiva con las primeras consonantes",
+ "sub": "Lengua 2 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra se forma con me + sa?",
+   "segundos": 5,
+   "respuesta": "¡MESA!",
+   "emoji": "🪑",
+   "titulo": "CURSIVA",
+   "sub": "primeras consonantes",
+   "voz": [
+    "Desafío: ¿qué palabra se forma con me y sa?",
+    "¡*Mesa*!",
+    "Hoy: *palabras en cursiva*."
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "MA  LO  SA  PE  TU",
+   "texto": "ma lo sa pe tu",
+   "titulo": "SÍLABAS",
+   "voz": [
+    "Unimos consonantes con vocales.",
+    "ma, lo, sa, pe, tu.",
+    "¡Todo unido, sin levantar el lápiz!"
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "MESA",
+   "texto": "mesa",
+   "nota": "me + sa = mesa",
+   "titulo": "UNA PALABRA",
+   "voz": [
+    "Escribimos me…",
+    "…y sin levantar, sa: ¡mesa!",
+    "Toda la palabra va *unida*."
+   ]
+  },
+  {
+   "t": "cursiva",
+   "imprenta": "SAPO",
+   "texto": "sapo",
+   "nota": "sa + po = sapo",
+   "titulo": "OTRA PALABRA",
+   "voz": [
+    "Ahora sa…",
+    "…y po: ¡sapo!",
+    "¡Muy bien unida!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "SÍLABAS Y PALABRAS",
+   "pares": [
+    [
+     "me + sa",
+     "mesa"
+    ],
+    [
+     "sa + po",
+     "sapo"
+    ],
+    [
+     "pa + to",
+     "pato"
+    ]
+   ],
+   "voz": [
+    "Uní las sílabas con su palabra.",
+    "Me y sa: *mesa*.",
+    "Sa y po: *sapo*.",
+    "Pa y to: *pato*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué palabra se forma con pa + to?",
+   "opciones": [
+    "Pato",
+    "Topa",
+    "Sapo"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: pa y to.",
+    "¿Qué palabra se forma?",
+    "¡*Pato*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONSONANTE",
+     "se une a la vocal"
+    ],
+    [
+     "SÍLABA",
+     "ma, lo, sa"
+    ],
+    [
+     "PALABRA",
+     "toda unida"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La consonante se *une* a la vocal.",
+    "Así salen las *sílabas*.",
+    "Y la palabra va *toda unida*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
