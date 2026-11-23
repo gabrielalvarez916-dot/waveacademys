@@ -110,6 +110,7 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | recta | 1 + marcas | min, max, paso, marcas:[{v, txt}] |
 | cuadro | 3 | hasta (10-100), faltan, titulo — cuadro de números de a 10 por fila. **Regla fija: empieza siempre en 0** (los redondos 10, 20, 30… quedan en el margen izquierdo); lo mismo en el PDF (`figuras.cuadro`, que ya empieza en 0) |
 | cuenta | 2 | filas, op, resultado |
+| columnas | 1 + columnas | a, b, op:'+'\|'−', resultado, marcas:[{col:'U'\|'D'\|'C', txt, paso}], tachar:[{col, nuevo, paso}], titulo? — **cuenta en columnas** (algoritmo): U, D y C arriba; resuelve una columna por paso, de derecha a izquierda, con «me llevo 1» (marcas) y el canje de la resta (tachar). paso = número de columna (1 = unidades) |
 | fraccion | 2 | num, den, forma:'pizza'\|'barra', txt |
 | ecuacion | pasos | pasos:[...], notas:[...] |
 | figura | 2 | tipo:'triangulo'\|'cuadrado'\|'rectangulo'\|'circulo'\|'angulo', grados, etiquetas |

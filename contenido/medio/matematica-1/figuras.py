@@ -513,3 +513,30 @@ def calculadora(pantalla="0", resaltar=(), texto=None):
             ax.text(x, y, k, ha="center", va="center", fontsize=15, color=OSC if k in resaltar else "white", **F)
     if texto: cartel(ax, 2.5, -.5, texto, c=TEAL, fs=13)
     return png(fig)
+
+
+# ---------------- cuenta en columnas (Matemática 2 · misiones 9 y 10: algoritmo de la suma y la resta) ----------------
+def columnas(a, b, op="+", resultado=None, marcas=(), tachar=(), vacio=False):
+    """Cuenta en columnas con C, D y U arriba. marcas: [(col, txt)] arriba de la columna ('U', 'D', 'C'): el «me llevo 1» o el 1 del canje.
+    tachar: [(col, nuevo)] tacha la cifra de arriba y escribe el número nuevo (canje en la resta). vacio=True: el resultado queda en blanco (para completar)."""
+    a, b = str(a), str(b); r = "" if resultado is None else str(resultado)
+    nc = max(len(a), len(b), len(r), 2); IDX = {"U": 0, "D": 1, "C": 2}
+    fig, ax = lienzo(1.15 * nc + 1.6, 4.0, 1.15 * nc + 1.6, 4.4, 0, 0)
+    X = lambda k: 1.2 + (nc - 1 - k) * 1.15 + .5
+    for k in range(nc):
+        ax.add_patch(FancyBboxPatch((X(k) - .4, 3.75), .8, .45, boxstyle="round,pad=0.02,rounding_size=0.1", color=TEAL))
+        ax.text(X(k), 3.97, ["U", "D", "C", "UM"][k], ha="center", va="center", fontsize=13, color="white", **F)
+    def fila(s, y, c=OSC):
+        for j, ch in enumerate(reversed(s)): ax.text(X(j), y, ch, ha="center", va="center", fontsize=26, color=c, **F)
+    fila(a, 2.75); fila(b, 1.85)
+    ax.text(X(nc - 1) - .9, 1.85, op, ha="center", va="center", fontsize=26, color=CORAL, **F)
+    ax.plot([X(nc - 1) - 1.2, X(0) + .5], [1.35, 1.35], color=OSC, lw=2.5)
+    if vacio:
+        for k in range(nc): ax.add_patch(FancyBboxPatch((X(k) - .35, .45), .7, .7, boxstyle="round,pad=0.02,rounding_size=0.1", fill=False, ec=CORAL, lw=1.6, ls="--"))
+    elif r: fila(r, .8, c=VERDE)
+    for col, txt in marcas:
+        k = IDX[col]; ax.add_patch(Circle((X(k), 3.35), .22, color="#fff4d6", ec=AMBAR, lw=1.6)); ax.text(X(k), 3.35, str(txt), ha="center", va="center", fontsize=12 if len(str(txt)) > 1 else 14, color=OSC, **F)
+    for col, nuevo in tachar:
+        k = IDX[col]; ax.plot([X(k) - .3, X(k) + .3], [2.45, 3.05], color=CORAL, lw=3)
+        ax.text(X(k) + .45, 3.3, str(nuevo), ha="center", va="center", fontsize=15, color=CORAL, **F)
+    return png(fig)

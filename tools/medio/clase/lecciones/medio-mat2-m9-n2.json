@@ -1,0 +1,118 @@
+{
+ "slug": "medio-mat2-m9-n2",
+ "step_id": "6cc17141-16d3-4d42-bd60-9325693be71c",
+ "materia": "Matemática 2",
+ "titulo": "Sumas sin reagrupar",
+ "sub": "Matemática 2 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuánto es 342 + 125?",
+   "segundos": 8,
+   "respuesta": "¡467!",
+   "emoji": "📦",
+   "titulo": "SUMAS",
+   "sub": "sin reagrupar",
+   "voz": [
+    "Desafío: ¿cuánto es 342 más 125?",
+    "¡*467*!",
+    "Hoy: *sumas sin reagrupar*."
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "342",
+   "b": "125",
+   "op": "+",
+   "resultado": "467",
+   "titulo": "342 + 125",
+   "voz": [
+    "Armamos la cuenta en columnas.",
+    "Unidades: 2 más 5, *7*.",
+    "Decenas: 4 más 2, *6*.",
+    "Centenas: 3 más 1, *4*. ¡*467*!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "503",
+   "b": "284",
+   "op": "+",
+   "resultado": "787",
+   "titulo": "CON UN CERO",
+   "voz": [
+    "Ahora una con un *cero*.",
+    "Unidades: 3 más 4, *7*.",
+    "Decenas: 0 más 8, *8*.",
+    "Centenas: 5 más 2, *7*. ¡*787*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "2 + 5",
+     "r": "7"
+    },
+    {
+     "p": "0 + 8",
+     "r": "8"
+    },
+    {
+     "p": "4 + 3",
+     "r": "7"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de columnas!",
+    "2 más 5: *7*.",
+    "0 más 8: *8*.",
+    "4 más 3: *7*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Saltear una columna",
+     "bien": "Una columna por vez"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hacé *una columna por vez*, sin saltear."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNIDADES",
+     "primero"
+    ],
+    [
+     "DECENAS",
+     "después"
+    ],
+    [
+     "CENTENAS",
+     "al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero las *unidades*.",
+    "Después las *decenas*.",
+    "Al final, las *centenas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

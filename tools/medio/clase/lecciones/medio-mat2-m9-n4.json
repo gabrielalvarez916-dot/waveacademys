@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat2-m9-n4",
+ "step_id": "964dbad6-7dc4-4c82-9e51-93fd334e1f62",
+ "materia": "Matemática 2",
+ "titulo": "Controlar el resultado",
+ "sub": "Matemática 2 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Error en la fábrica!",
+   "bajada": "Una cuenta salió rarísima",
+   "emoji": "🚨",
+   "titulo": "CONTROLAR",
+   "sub": "el resultado",
+   "voz": [
+    "¡Último momento: error en la fábrica!",
+    "Una cuenta dio un resultado rarísimo.",
+    "Hoy: *controlar el resultado*."
+   ]
+  },
+  {
+   "t": "deslizador",
+   "titulo": "¿MÁS O MENOS?",
+   "min": 0,
+   "max": 1000,
+   "emoji": "📦",
+   "paradas": [
+    {
+     "v": 300,
+     "txt": "298 es casi 300"
+    },
+    {
+     "v": 400,
+     "txt": "405 es casi 400"
+    },
+    {
+     "v": 700,
+     "txt": "300 + 400 = 700"
+    }
+   ],
+   "voz": [
+    "298 es casi *300*.",
+    "405 es casi *400*.",
+    "Más o menos da *700*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CUÁL TIENE SENTIDO?",
+   "a": {
+    "txt": "703",
+    "emoji": "✅",
+    "datos": [
+     "cerca de 700"
+    ]
+   },
+   "b": {
+    "txt": "1.003",
+    "emoji": "❌",
+    "datos": [
+     "muy lejos"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡703 está cerca de 700!",
+   "voz": [
+    "Dos chicos hicieron 298 más 405.",
+    "Uno dice *703*: está cerca de 700.",
+    "Otro dice *1.003*: ¡está muy lejos!",
+    "¡Gana el *703*! Tiene sentido."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Robot Raro",
+    "emoji": "🤖"
+   },
+   "preguntas": [
+    {
+     "p": "199 + 302 ≈ ?",
+     "r": "500"
+    },
+    {
+     "p": "410 + 290 ≈ ?",
+     "r": "700"
+    }
+   ],
+   "voz": [
+    "¡El *Robot Raro* hace cuentas mal!",
+    "Lo vencemos estimando.",
+    "199 más 302: más o menos *500*.",
+    "410 más 290: más o menos *700*. ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Alguien dice: 301 + 299 = 900. ¿Tiene sentido?",
+   "opciones": [
+    "No",
+    "Sí"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 301 más 299 dio 900.",
+    "Estimá: 300 más 300…",
+    "¡*No* tiene sentido! Da cerca de *600*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESTIMAR",
+     "más o menos"
+    ],
+    [
+     "COMPARAR",
+     "¿está cerca?"
+    ],
+    [
+     "REVISAR",
+     "si está lejos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Estimamos* con números redondos.",
+    "Comparamos: ¿el resultado *está cerca*?",
+    "Si está lejos, *revisamos* la cuenta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

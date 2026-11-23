@@ -1,0 +1,154 @@
+{
+ "slug": "medio-mat2-m9-n1",
+ "step_id": "e76dcc09-4786-48eb-9883-b98f1cd373f3",
+ "materia": "Matemática 2",
+ "titulo": "Sumar en columnas",
+ "sub": "Matemática 2 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa junta dos pedidos.",
+    "234 y 52 alfajores.",
+    "¿Cómo los suma?"
+   ],
+   "titulo": "SUMAR",
+   "sub": "en columnas",
+   "voz": [
+    "Rosa junta *dos pedidos*.",
+    "Uno de 234 y otro de 52.",
+    "¿Cómo hace la cuenta?",
+    "Hoy: *sumar en columnas*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "CENTENAS",
+     "emoji": "📦"
+    },
+    {
+     "cab": "DECENAS",
+     "emoji": "🍫"
+    },
+    {
+     "cab": "UNIDADES",
+     "emoji": "🍪"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "2",
+     "caja": 0
+    },
+    {
+     "txt": "3",
+     "caja": 1
+    },
+    {
+     "txt": "5",
+     "caja": 1
+    },
+    {
+     "txt": "4",
+     "caja": 2
+    },
+    {
+     "txt": "2",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "Cada cifra va en su columna.",
+    "Centenas con centenas.",
+    "Decenas con decenas.",
+    "¡Y unidades con unidades!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "234",
+   "b": "52",
+   "op": "+",
+   "resultado": "286",
+   "titulo": "234 + 52",
+   "voz": [
+    "Armamos la cuenta: el 52 va corrido a la derecha.",
+    "Empezamos por las unidades: 4 más 2, *6*.",
+    "Decenas: 3 más 5, *8*.",
+    "Centenas: baja el *2*. ¡Da *286*!"
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lineas": [
+    {
+     "txt": "¡Empezá por la derecha!",
+     "animo": "ojo"
+    },
+    {
+     "txt": "Primero las unidades",
+     "animo": "feliz"
+    }
+   ],
+   "voz": [
+    "Rosa avisa: ¡empezá por la *derecha*!",
+    "Primero siempre las *unidades*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "En 413 + 75, ¿debajo de qué va el 7?",
+   "opciones": [
+    "Del 1",
+    "Del 4",
+    "Del 3"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 413 más 75.",
+    "¿Debajo de qué cifra va el *7*?",
+    "¡Del *1*! Decenas con decenas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "COLUMNAS",
+     "U con U, D con D"
+    ],
+    [
+     "EMPEZAR",
+     "por las unidades"
+    ],
+    [
+     "RESULTADO",
+     "abajo de la raya"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada cifra va en *su columna*.",
+    "Empezamos por las *unidades*.",
+    "El resultado va *abajo de la raya*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

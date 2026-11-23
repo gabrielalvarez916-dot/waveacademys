@@ -1,0 +1,140 @@
+{
+ "slug": "medio-mat2-m9-n3",
+ "step_id": "908b8cd5-dc95-43ac-a870-11622cc4ef5a",
+ "materia": "Matemática 2",
+ "titulo": "Sumas con reagrupamiento",
+ "sub": "Matemática 2 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, 7 + 5 me da 12"
+    },
+    {
+     "yo": true,
+     "txt": "¡No entra en la columna!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y qué hago?"
+    }
+   ],
+   "titulo": "SUMAS",
+   "sub": "con reagrupamiento",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "7 más 5 le da 12.",
+    "¡Pero el 12 no entra en una columna!",
+    "Hoy: *sumas con reagrupamiento*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "10 SUELTOS",
+     "valor": "10",
+     "icono": "alf"
+    },
+    {
+     "nombre": "1 PAQUETE",
+     "valor": "10",
+     "icono": "pack"
+    }
+   ],
+   "salto": "→",
+   "voz": [
+    "Rosa junta *10 sueltos*.",
+    "¡Los mete en *un paquete*!",
+    "12 sueltos son 1 paquete y 2 sueltos."
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "147",
+   "b": "235",
+   "op": "+",
+   "resultado": "382",
+   "marcas": [
+    {
+     "col": "D",
+     "txt": "1",
+     "paso": 1
+    }
+   ],
+   "titulo": "ME LLEVO 1",
+   "voz": [
+    "Sumamos 147 más 235.",
+    "7 más 5 es 12: escribo 2, *me llevo 1*.",
+    "Decenas: 4 más 3 más 1, *8*.",
+    "Centenas: 1 más 2, *3*. ¡*382*!"
+   ],
+   "sticker": {
+    "txt": "📦",
+    "paso": 1
+   }
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En 147 + 235, abajo escribo 12",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Escribo 2 y me llevo 1",
+   "voz": [
+    "¿Verdadero o falso? Abajo escribo el 12.",
+    "Pensá en el paquete…",
+    "¡*Falso*! Escribo 2 y *me llevo 1*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 268 + 125?",
+   "opciones": [
+    "393",
+    "383",
+    "3813"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 268 más 125.",
+    "8 más 5 es 13: ¿te llevás 1?",
+    "¡*393*! No te olvides del 1."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PASA DE 10",
+     "me llevo 1"
+    ],
+    [
+     "ESCRIBO",
+     "solo las unidades"
+    ],
+    [
+     "EL 1",
+     "va a la otra columna"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Si pasa de 10, *me llevo 1*.",
+    "Abajo escribo *solo las unidades*.",
+    "El 1 se suma en *la otra columna*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

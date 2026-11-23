@@ -1,0 +1,118 @@
+{
+ "slug": "medio-mat2-m10-n2",
+ "step_id": "dd20c56d-0069-45e7-9b7f-bfb31bd40701",
+ "materia": "Matemática 2",
+ "titulo": "Restas sin canje",
+ "sub": "Matemática 2 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🚚",
+   "final": "📦",
+   "titulo": "RESTAS",
+   "sub": "sin canje",
+   "voz": [
+    "Salieron camiones llenos de alfajores.",
+    "¿Cuántos quedan en la fábrica?",
+    "Hoy: *restas sin canje*."
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "865",
+   "b": "432",
+   "op": "−",
+   "resultado": "433",
+   "titulo": "865 − 432",
+   "voz": [
+    "Rosa tenía 865 y vendió 432.",
+    "Unidades: 5 menos 2, *3*.",
+    "Decenas: 6 menos 3, *3*.",
+    "Centenas: 8 menos 4, *4*. ¡*433*!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "CUANDO DA CERO",
+   "lineas": [
+    {
+     "txt": "579 − 274"
+    },
+    {
+     "txt": "7 − 7 = 0",
+     "color": "coral",
+     "marca": "circulo"
+    },
+    {
+     "txt": "= 305",
+     "color": "sol"
+    }
+   ],
+   "voz": [
+    "Ahora 579 menos 274.",
+    "En las decenas: 7 menos 7 es *0*.",
+    "¡El cero guarda el lugar: *305*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "900 − 100 = 800",
+    "800 − 100 = 700",
+    "700 − 100 = 600"
+   ],
+   "falta": "600 − 100 = 500",
+   "regla": "Restamos 100 cada vez",
+   "voz": [
+    "Mirá: cada camión se lleva 100.",
+    "¿Qué resta sigue?",
+    "¡600 menos 100: *500*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 796 − 352?",
+   "opciones": [
+    "444",
+    "448",
+    "1148"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 796 menos 352.",
+    "Columna por columna.",
+    "¡*444*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "UNIDADES",
+     "primero"
+    ],
+    [
+     "DECENAS",
+     "después"
+    ],
+    [
+     "IGUALES",
+     "da 0"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero las *unidades*, después las *decenas*.",
+    "Al final, las *centenas*.",
+    "Si son iguales, queda *0*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

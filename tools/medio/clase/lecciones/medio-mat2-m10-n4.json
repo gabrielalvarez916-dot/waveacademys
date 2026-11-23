@@ -1,0 +1,148 @@
+{
+ "slug": "medio-mat2-m10-n4",
+ "step_id": "30db8911-7343-4524-b33f-f02579c1029c",
+ "materia": "Matemática 2",
+ "titulo": "Controlar una resta con la suma",
+ "sub": "Matemática 2 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo sabés si una resta está bien?",
+   "segundos": 6,
+   "respuesta": "¡Con una suma!",
+   "emoji": "🕵️",
+   "titulo": "CONTROLAR",
+   "sub": "con la suma",
+   "voz": [
+    "Desafío: ¿cómo sabés si una resta está bien?",
+    "¡Con una *suma*!",
+    "Hoy: *controlar una resta con la suma*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "IDA Y VUELTA",
+   "vinetas": [
+    {
+     "emojis": [
+      "📦",
+      "🚚"
+     ],
+     "txt": "352 − 128 = 224",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "🚚",
+      "📦"
+     ],
+     "txt": "224 + 128 = 352",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "✅"
+     ],
+     "txt": "¡Volví al principio!",
+     "quien": "Rosa"
+    }
+   ],
+   "voz": [
+    "Rosa tenía 352, vendió 128 y le quedan 224.",
+    "Si le devuelven los 128: 224 más 128.",
+    "¡Vuelve a *352*! La resta está bien."
+   ]
+  },
+  {
+   "t": "cuenta",
+   "filas": [
+    "224",
+    "128"
+   ],
+   "op": "+",
+   "resultado": "352",
+   "voz": [
+    "Sumamos el resultado y lo que restamos: 224 más 128.",
+    "¡Da *352*: el número de arriba!"
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿QUIÉN ACERTÓ?",
+   "a": {
+    "txt": "463 − 247 = 216",
+    "emoji": "✅",
+    "datos": [
+     "216 + 247 = 463"
+    ]
+   },
+   "b": {
+    "txt": "463 − 247 = 226",
+    "emoji": "❌",
+    "datos": [
+     "226 + 247 = 473"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡216 vuelve al 463!",
+   "voz": [
+    "Dos chicos hicieron 463 menos 247.",
+    "Uno dice 216: 216 más 247 da *463*.",
+    "Otro dice 226: la suma da *473*.",
+    "¡Acertó el *216*!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Resta",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "342 + 234 = ?",
+     "r": "576"
+    },
+    {
+     "p": "433 + 432 = ?",
+     "r": "865"
+    }
+   ],
+   "voz": [
+    "¡Volvió el *Monstruo Resta*!",
+    "Controlamos sus restas con sumas.",
+    "342 más 234: *576*.",
+    "¡433 más 432: *865*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTROLAR",
+     "con una suma"
+    ],
+    [
+     "SUMAR",
+     "resultado + lo restado"
+    ],
+    [
+     "COMPARAR",
+     "con el de arriba"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Controlamos la resta con una *suma*.",
+    "Sumamos el resultado y *lo que restamos*.",
+    "Tiene que dar *el número de arriba*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

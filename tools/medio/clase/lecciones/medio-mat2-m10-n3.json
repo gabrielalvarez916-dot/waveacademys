@@ -1,0 +1,150 @@
+{
+ "slug": "medio-mat2-m10-n3",
+ "step_id": "e51351af-263c-45b5-a7e9-ffae230708cc",
+ "materia": "Matemática 2",
+ "titulo": "Restas con canje",
+ "sub": "Matemática 2 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿2 − 8? ¡No alcanza!"
+    },
+    {
+     "yo": true,
+     "txt": "¡Abrí un paquete!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo?"
+    }
+   ],
+   "titulo": "RESTAS",
+   "sub": "con canje",
+   "voz": [
+    "Tomi hace 352 menos 128.",
+    "En las unidades: 2 menos 8. ¡No alcanza!",
+    "Rosa le dice: ¡abrí un paquete!",
+    "Hoy: *restas con canje*."
+   ]
+  },
+  {
+   "t": "canje",
+   "titulo": "ABRIMOS UN PAQUETE",
+   "grande": {
+    "n": 4,
+    "txt": "10"
+   },
+   "chico": {
+    "n": 2,
+    "txt": "1"
+   },
+   "sueltos": 0,
+   "ec1": "4 paquetes y 2 sueltos",
+   "ec2": "3 paquetes y 12 sueltos",
+   "voz": [
+    "Mirá cómo se hace un *canje*.",
+    "Hay 4 paquetes y 2 sueltos.",
+    "¡Abrimos un paquete! Salen *10 sueltos*.",
+    "Antes: 4 paquetes y 2 sueltos.",
+    "¡Ahora: *3 paquetes y 12 sueltos*!"
+   ],
+   "sticker": {
+    "txt": "💥",
+    "paso": 2
+   }
+  },
+  {
+   "t": "columnas",
+   "a": "352",
+   "b": "128",
+   "op": "−",
+   "resultado": "224",
+   "marcas": [
+    {
+     "col": "U",
+     "txt": "12",
+     "paso": 1
+    }
+   ],
+   "tachar": [
+    {
+     "col": "D",
+     "nuevo": "4",
+     "paso": 1
+    }
+   ],
+   "titulo": "EL CANJE",
+   "voz": [
+    "Hacemos la resta en columnas.",
+    "2 menos 8 no alcanza: el 5 pasa a 4.",
+    "Decenas: 4 menos 2, *2*.",
+    "Centenas: 3 menos 1, *2*. ¡Quedan *224*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En 352 − 128, hago 8 − 2",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "No se da vuelta: abro un paquete",
+   "voz": [
+    "¿Verdadero o falso? Hago 8 menos 2.",
+    "Pensá: ¿se puede dar vuelta?",
+    "¡*Falso*! Abrimos un paquete."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Cuánto es 463 − 247?",
+   "pistas": [
+    "3 − 7 no alcanza: 13 − 7 = 6",
+    "El 6 pasa a 5: 5 − 4 = 1",
+    "4 − 2 = 2"
+   ],
+   "respuesta": "216",
+   "voz": [
+    "Ahora vos: 463 menos 247.",
+    "Pista uno: abrí un paquete. 13 menos 7, *6*.",
+    "Pista dos: 5 menos 4, *1*.",
+    "Pista tres: 4 menos 2, *2*.",
+    "¡Quedan *216*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NO ALCANZA",
+     "arriba hay menos"
+    ],
+    [
+     "CANJE",
+     "1 paquete = 10 sueltos"
+    ],
+    [
+     "DESPUÉS",
+     "un paquete menos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Si arriba hay menos, *no alcanza*.",
+    "Abrimos un paquete: *10 sueltos* más.",
+    "Y queda *un paquete menos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

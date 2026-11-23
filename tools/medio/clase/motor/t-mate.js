@@ -145,6 +145,32 @@
     B(0); w.IN(tl, p, 0); B(1); w.IN(tl, r, 0, { y: 60 });
   } };
 
+  // columnas: la cuenta en columnas (algoritmo de la suma y la resta) con U, D y C arriba.
+  // {titulo?, a:'365', b:'142', op:'+'|'−', resultado:'507', marcas:[{col:'D', txt:'1', paso:1}], tachar:[{col:'D', nuevo:'5', paso:1}]}
+  // 1 + columnas pasos: la cuenta armada · una columna por paso, de derecha a izquierda (unidades primero): se ilumina,
+  // aparecen las marcas de ese paso (marcas: «me llevo 1» o el 1 del canje; tachar: la cifra que se canjea y su número nuevo) y su resultado.
+  T.columnas = { n: function (d) { return 1 + Math.max(String(d.a).length, String(d.b).length, String(d.resultado).length); }, armar: function (g, tl, B, d) {
+    var a = String(d.a), b = String(d.b), r = String(d.resultado), nc = Math.max(a.length, b.length, r.length), NOM = ['U', 'D', 'C', 'UM'], IDX = { U: 0, D: 1, C: 2, UM: 3 };
+    var MONO = 'ui-monospace,Menlo,Consolas,monospace', X = function (k) { return 960 + ((nc - 1 - k) - (nc - 1) / 2) * 190; };  // k: columna contada desde la derecha
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, base = w.pieza(g, 0, 0), hl = [], k;
+    for (k = 0; k < nc; k++) { hl.push(w.caja(base, X(k), 590, 170, 560, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 30, 5));
+      w.caja(base, X(k), 350, 130, 70, 'url(#gAqua)', '#d8fff7', 22, 3); w.txt(base, X(k), 352, NOM[k], 40, '#06282a', { 'font-weight': 800 }); }
+    function fila(s, y) { for (var j = 0; j < s.length; j++) w.txt(base, X(j), y, s[s.length - 1 - j], 110, C.txt, { 'font-family': MONO, 'font-weight': 700 }); }
+    fila(a, 490); fila(b, 620);
+    w.txt(base, X(nc - 1) - 170, 620, d.op || '+', 100, C.sol, { 'font-weight': 800 });
+    w.el('line', { x1: X(nc - 1) - 230, y1: 690, x2: X(0) + 95, y2: 690, stroke: C.sol, 'stroke-width': 8, 'stroke-linecap': 'round' }, base);
+    var res = []; for (k = 0; k < r.length; k++) { var p = w.pieza(g, X(k), 775); w.txt(p, 0, 0, r[r.length - 1 - k], 110, C.verde, { 'font-family': MONO, 'font-weight': 700, filter: 'url(#brillo)' }); res.push(p); }
+    var M = (d.marcas || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 410); w.el('circle', { r: 30, fill: 'rgba(244,182,63,.25)', stroke: C.sol, 'stroke-width': 4 }, q); w.txt(q, 0, 2, m.txt, String(m.txt).length > 1 ? 32 : 40, C.sol, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    var TA = (d.tachar || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 490); w.el('line', { x1: -45, y1: 45, x2: 45, y2: -45, stroke: C.coral, 'stroke-width': 10, 'stroke-linecap': 'round' }, q); w.txt(q, 66, -64, m.nuevo, 44, C.coral, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.1' : 0, { y: 30 });
+    for (k = 0; k < nc; k++) { B(k + 1);
+      tl.to(hl, { attr: { fill: 'rgba(244,182,63,0)', stroke: 'rgba(244,182,63,0)' }, duration: .2 }, '>');
+      tl.to(hl[k], { attr: { fill: 'rgba(244,182,63,.12)', stroke: C.sol }, duration: .3 }, '<');
+      TA.concat(M).filter(function (m) { return m.paso === k + 1; }).forEach(function (m) { w.IN(tl, m, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); });
+      if (res[k]) w.IN(tl, res[k], '>', { y: -60 }); else tl.to({}, { duration: .01 });
+    }
+  } };
+
   // fraccion: {num, den, forma:'pizza'|'barra', txt} — 2 pasos: se divide, se pintan las partes
   T.fraccion = { n: function () { return 2; }, armar: function (g, tl, B, d) {
     var p = w.pieza(g, 760, 600), partes = [], n = d.den, i;

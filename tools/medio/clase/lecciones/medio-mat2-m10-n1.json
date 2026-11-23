@@ -1,0 +1,119 @@
+{
+ "slug": "medio-mat2-m10-n1",
+ "step_id": "a82a4661-1e7c-45a2-98fe-ceff46c61eba",
+ "materia": "Matemática 2",
+ "titulo": "Restar en columnas",
+ "sub": "Matemática 2 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🚚",
+   "lineas": [
+    "Rosa tenía 576 alfajores.",
+    "Vendió 234.",
+    "¿Cuántos le quedan?"
+   ],
+   "titulo": "RESTAR",
+   "sub": "en columnas",
+   "voz": [
+    "Rosa tenía *576* alfajores.",
+    "Hoy vendió *234*.",
+    "¿Cuántos le quedan?",
+    "Hoy: *restar en columnas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ARRIBA",
+    "texto": "576: lo que había",
+    "emoji": "⬆️"
+   },
+   "b": {
+    "cab": "ABAJO",
+    "texto": "234: lo que se fue",
+    "emoji": "⬇️"
+   },
+   "signo": "−",
+   "voz": [
+    "Arriba va lo que había: el *más grande*.",
+    "Abajo va lo que se vendió.",
+    "¡Del de arriba sacamos el de abajo!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "576",
+   "b": "234",
+   "op": "−",
+   "resultado": "342",
+   "titulo": "576 − 234",
+   "voz": [
+    "Armamos la resta en columnas.",
+    "Unidades: 6 menos 4, *2*.",
+    "Decenas: 7 menos 3, *4*.",
+    "Centenas: 5 menos 2, *3*. ¡Quedan *342*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "En una resta, ¿qué número va arriba?",
+   "opciones": [
+    "El más grande",
+    "El más chico"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Qué número va arriba en la resta?",
+    "¡El *más grande*! De él sacamos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Empezar por las centenas",
+     "bien": "Empezar por las unidades"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Siempre empezamos por las *unidades*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARRIBA",
+     "el más grande"
+    ],
+    [
+     "COLUMNAS",
+     "U con U, D con D"
+    ],
+    [
+     "EMPEZAR",
+     "por las unidades"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Arriba va el *más grande*.",
+    "Cada cifra en *su columna*.",
+    "Empezamos por las *unidades*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
