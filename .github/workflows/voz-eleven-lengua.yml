@@ -38,4 +38,4 @@ jobs:
           for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
       - name: Cargar en la plataforma (solo las lecciones pedidas)
         if: env.MEDIO_TOKEN != '' && github.event.inputs.publicar == 'si'
-        run: python tools/medio/clase/cargar.py $(for f in $(ls tools/medio/clase/lecciones/${{ github.event.inputs.lecciones }}.json); do basename $f .json; done)
+        run: python tools/medio/clase/cargar.py $(for f in $(ls tools/medio/clase/lecciones/${{ github.event.inputs.lecciones }}.json); do n=$(basename $f .json); echo $n; case "$ELEVEN_VERSIONES" in *neutro*) echo $n.neutro;; esac; done)
