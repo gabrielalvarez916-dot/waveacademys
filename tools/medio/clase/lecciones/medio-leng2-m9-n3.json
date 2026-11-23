@@ -1,0 +1,107 @@
+{
+ "slug": "medio-leng2-m9-n3",
+ "step_id": "0d91c36c-882b-4b6e-9e3e-8c67d3eb6fc8",
+ "materia": "Lengua 2",
+ "titulo": "Imaginar y dibujar los personajes",
+ "sub": "Lengua 2 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🖍️",
+   "lineas": [
+    "Sofi lee el poema otra vez.",
+    "Quiere dibujar a Rinrín.",
+    "¿Cómo será?"
+   ],
+   "titulo": "IMAGINAR",
+   "sub": "y dibujar",
+   "voz": [
+    "Sofi lee el poema otra vez.",
+    "Quiere *dibujar* a Rinrín.",
+    "¿Cómo será?",
+    "Hoy: *imaginar y dibujar los personajes*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Cómo se viste Rinrín?",
+   "pistas": [
+    "Pantalón corto",
+    "Corbata a la moda",
+    "Sombrero con cinta"
+   ],
+   "respuesta": "¡Muy elegante! 🎩",
+   "voz": [
+    "¿Cómo se viste Rinrín? Busquemos en el poema.",
+    "Lleva *pantalón corto*.",
+    "Una *corbata* a la moda.",
+    "Un *sombrero* con cinta.",
+    "¡Muy elegante!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Chupa",
+   "texto": "Una chaqueta elegante",
+   "emoji": "🧥",
+   "voz": [
+    "El poema dice *chupa de boda*.",
+    "Una chupa es una *chaqueta* elegante."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Rinrín lleva pantalón largo",
+   "emoji": "👖",
+   "verdadero": false,
+   "explicacion": "El poema dice pantalón corto",
+   "voz": [
+    "¿Verdadero o falso? Rinrín lleva pantalón largo.",
+    "Volvé al poema…",
+    "¡*Falso*! Dice pantalón *corto*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "VOLVÉ AL POEMA",
+   "texto": "Los detalles están en los versos",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: los detalles para dibujar están en los *versos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "cómo es"
+    ],
+    [
+     "IMAGINAR",
+     "al personaje"
+    ],
+    [
+     "DIBUJAR",
+     "con los detalles"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Leemos* cómo es cada personaje.",
+    "Lo *imaginamos*.",
+    "Lo *dibujamos* con los detalles.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

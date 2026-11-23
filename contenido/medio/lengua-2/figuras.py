@@ -110,10 +110,10 @@ def _flor(ax, x, y, s=1.0):
 OBJ2.update({"paloma": lambda ax, x, y, s=1.0: _hornero(ax, x, y, s, "#9aa3b5", "#c9d0dc", "#7d8698"), "hornero": _hornero, "nido": _nido, "flor": _flor})
 
 
-def _ancho(fig, ax, txt):
+def _ancho(fig, ax, txt, fs=11):
     """Ancho en unidades del dibujo de un texto en negrita tamaño 11 (para resaltar palabras exactas)."""
     if not txt: return 0
-    t = ax.text(0, 0, txt.replace(" ", "\u00a0"), fontsize=11, **F); r = fig.canvas.get_renderer(); bb = t.get_window_extent(r); t.remove()
+    t = ax.text(0, 0, txt.replace(" ", "\u00a0"), fontsize=fs, **F); r = fig.canvas.get_renderer(); bb = t.get_window_extent(r); t.remove()
     inv = ax.transData.inverted(); return inv.transform((bb.x1, 0))[0] - inv.transform((bb.x0, 0))[0]
 
 
@@ -148,4 +148,60 @@ def ficha(campos, titulo="FICHA"):
         ax.text(.5, y, p.upper(), ha="left", va="center", fontsize=11, color=CORAL, **F)
         ax.plot([5.4, 9.5], [y - .22, y - .22], color="#9aa", lw=1.2)
         if r: ax.text(5.5, y, r.upper(), ha="left", va="center", fontsize=11, color=OSC, **F)
+    return png(fig)
+
+
+# ---------------- misión 8 (ficha del yaguareté) y misión 9 (El renacuajo paseador) ----------------
+def _yaguarete(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x - .1 * s, y), 1.1 * s, .5 * s, color="#f2b544", ec=OSC, lw=1.4))
+    ax.add_patch(Circle((x + .5 * s, y + .2 * s), .25 * s, color="#f2b544", ec=OSC, lw=1.3))
+    for dx in (.36, .62): ax.add_patch(Circle((x + dx * s, y + .42 * s), .07 * s, color="#f2b544", ec=OSC, lw=1))
+    ax.add_patch(Circle((x + .58 * s, y + .24 * s), .035 * s, color=OSC))
+    for (dx, dy) in ((-.4, .05), (-.15, .12), (.1, -.02), (-.3, -.12), (.0, .15), (.2, .1)):
+        ax.add_patch(Circle((x + dx * s, y + dy * s), .055 * s, color="none", ec=OSC, lw=1.4))
+    for dx in (-.45, -.25, .1, .3): ax.plot([x + dx * s, x + dx * s], [y - .2 * s, y - .5 * s], color="#d99a2b", lw=4)
+    ax.plot([x - .65 * s, x - .9 * s], [y + .05 * s, y + .3 * s], color="#d99a2b", lw=3)
+
+
+def _rana(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x, y - .05 * s), .9 * s, .6 * s, color="#7cc576", ec=OSC, lw=1.4))
+    for dx in (-.2, .2):
+        ax.add_patch(Circle((x + dx * s, y + .28 * s), .13 * s, color="white", ec=OSC, lw=1.2)); ax.add_patch(Circle((x + dx * s, y + .28 * s), .05 * s, color=OSC))
+    ax.plot([x - .2 * s, x + .2 * s], [y - .05 * s, y - .05 * s], color=OSC, lw=1.5)
+
+
+def _renacuajo(ax, x, y, s=1.0):
+    ax.add_patch(Circle((x, y), .28 * s, color="#5a8f4e", ec=OSC, lw=1.4))
+    ax.plot([x - .25 * s, x - .5 * s, x - .7 * s], [y - .05 * s, y + .08 * s, y - .08 * s], color="#5a8f4e", lw=4)
+    ax.add_patch(Circle((x + .1 * s, y + .08 * s), .05 * s, color="white", ec=OSC, lw=1))
+    ax.add_patch(Polygon([(x - .2 * s, y + .24 * s), (x + .2 * s, y + .24 * s), (x + .12 * s, y + .45 * s), (x - .12 * s, y + .45 * s)], closed=True, color=OSC))
+    ax.add_patch(Rectangle((x - .28 * s, y + .22 * s), .56 * s, .05 * s, color=CORAL))
+    ax.add_patch(Polygon([(x + .05 * s, y - .2 * s), (x + .15 * s, y - .2 * s), (x + .1 * s, y - .42 * s)], closed=True, color=CORAL))
+
+
+def _pato(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x, y - .05 * s), .8 * s, .5 * s, color="white", ec=OSC, lw=1.4))
+    ax.add_patch(Circle((x + .3 * s, y + .2 * s), .18 * s, color="white", ec=OSC, lw=1.2))
+    ax.add_patch(Polygon([(x + .5 * s, y + .27 * s), (x + .72 * s, y + .22 * s), (x + .5 * s, y + .17 * s)], closed=True, color=AMBAR, ec=OSC, lw=1))
+    ax.add_patch(Circle((x + .38 * s, y + .3 * s), .03 * s, color=OSC))
+
+
+OBJ2.update({"yaguarete": _yaguarete, "rana": _rana, "renacuajo": _renacuajo, "pato": _pato})
+
+
+def estrofa(versos, rimas=(), titulo=None):
+    """Una estrofa de poema, verso por verso. rimas: [(verso, terminación)] se pinta esa terminación en coral."""
+    n = len(versos); H = .8 * n + (1.0 if titulo else .4)
+    fig, ax = lienzo(6.8, H * .7, 10, H, 0, 0)
+    ax.add_patch(FancyBboxPatch((.15, .15), 9.7, H - .3, boxstyle="round,pad=0.05", fc="#fffaf0", ec=AMBAR, lw=1.8))
+    if titulo: ax.text(5, H - .45, titulo.upper(), ha="center", va="center", fontsize=14, color=TEAL, **F)
+    for i, v in enumerate(versos):
+        y = H - (1.15 if titulo else .55) - i * .8; v = v.upper(); x = .5
+        ter = next((t.upper() for (r, t) in rimas if r == i and v.rstrip(".,;!").endswith(t.upper())), None)
+        if ter:
+            k = v.rstrip(".,;!").rindex(ter); x1 = x + _ancho(fig, ax, v[:k], 12)
+            ax.text(x, y, v[:k], ha="left", va="center", fontsize=12, color=OSC, zorder=3, **F)
+            ax.text(x1, y, v[k:], ha="left", va="center", fontsize=12, color=CORAL, zorder=3, **F)
+        else:
+            ax.text(x, y, v, ha="left", va="center", fontsize=12, color=OSC, zorder=3, **F)
     return png(fig)

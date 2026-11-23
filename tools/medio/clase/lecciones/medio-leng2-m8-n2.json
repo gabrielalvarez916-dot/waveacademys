@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng2-m8-n2",
+ "step_id": "cd39e8a1-aa50-4dff-afaa-e5c1336cad29",
+ "materia": "Lengua 2",
+ "titulo": "Buscar datos",
+ "sub": "Lengua 2 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué sabés del yaguareté? 🐆"
+    },
+    {
+     "yo": true,
+     "txt": "¡Poco! Voy a buscar datos"
+    }
+   ],
+   "titulo": "BUSCAR",
+   "sub": "datos",
+   "voz": [
+    "Tomi pregunta: ¿qué sabés del yaguareté?",
+    "Sofi responde: ¡poco! Voy a buscar datos.",
+    "Hoy: *buscar datos*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "📚",
+     "txt": "EN LIBROS"
+    },
+    {
+     "emoji": "🖼️",
+     "txt": "EN LÁMINAS"
+    },
+    {
+     "emoji": "👩‍🏫",
+     "txt": "PREGUNTANDO A UN ADULTO"
+    },
+    {
+     "emoji": "💻",
+     "txt": "INTERNET CON UN ADULTO"
+    }
+   ],
+   "voz": [
+    "Buscamos datos en *libros*.",
+    "También en *láminas*.",
+    "Le preguntamos a un *adulto*.",
+    "Y miramos *internet*, siempre con un adulto."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "LAS PREGUNTAS DE SOFI",
+   "items": [
+    {
+     "frente": "¿Dónde vive?",
+     "dorso": "EN LA SELVA",
+     "emoji": "🌳"
+    },
+    {
+     "frente": "¿Cómo es?",
+     "dorso": "TIENE MANCHAS",
+     "emoji": "🐆"
+    },
+    {
+     "frente": "¿Qué come?",
+     "dorso": "OTROS ANIMALES",
+     "emoji": "🍖"
+    }
+   ],
+   "voz": [
+    "¿Dónde vive? En la *selva*.",
+    "¿Cómo es? Tiene *manchas*.",
+    "¿Qué come? *Otros animales*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Copiar el libro entero",
+     "bien": "Anotar datos cortos"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "No copiamos todo: anotamos *datos cortos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SOLO DATOS REALES",
+   "texto": "Nada inventado",
+   "emoji": "✅",
+   "voz": [
+    "Truco: en la ficha van solo datos *reales*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BUSCAR",
+     "libros, láminas, adultos"
+    ],
+    [
+     "PREGUNTAR",
+     "¿dónde vive? ¿qué come?"
+    ],
+    [
+     "ANOTAR",
+     "datos cortos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Buscamos* en libros, láminas y con adultos.",
+    "Nos hacemos *preguntas*.",
+    "*Anotamos* datos cortos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "slug": "medio-leng2-m8-n4",
+ "step_id": "e3b5222f-1a48-4b30-aee0-a4fde4f734d1",
+ "materia": "Lengua 2",
+ "titulo": "Revisar y compartir la ficha",
+ "sub": "Lengua 2 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Sofi va a leer su ficha al grado!",
+   "bajada": "Pero antes la revisa",
+   "emoji": "🎤",
+   "titulo": "REVISAR",
+   "sub": "y compartir",
+   "voz": [
+    "¡Último momento: Sofi va a leer su ficha!",
+    "Pero antes la *revisa*.",
+    "Hoy: *revisar y compartir la ficha*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL AULA",
+   "candados": [
+    {
+     "p": "¿Tiene título?",
+     "r": "SÍ ✅"
+    },
+    {
+     "p": "¿Cada oración tiene punto?",
+     "r": "SÍ ✅"
+    },
+    {
+     "p": "¿Los datos son reales?",
+     "r": "SÍ ✅"
+    }
+   ],
+   "voz": [
+    "¡Para salir a compartir, abrimos los candados!",
+    "¿Tiene título? ¡Sí!",
+    "¿Cada oración tiene punto? ¡Sí!",
+    "¿Los datos son reales? ¡Sí!",
+    "¡Lista para compartir!"
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Mi ficha es del yaguareté.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Vive en la selva y tiene manchas.",
+     "animo": "ojo"
+    },
+    {
+     "txt": "¡Gracias por escuchar!",
+     "animo": "feliz"
+    }
+   ],
+   "voz": [
+    "¡Hola! Mi ficha es del yaguareté.",
+    "Vive en la selva y tiene manchas.",
+    "¡Gracias por escuchar!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Leer muy rápido",
+     "bien": "Leer despacio y en voz alta"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "No leemos rápido: leemos *despacio* y en voz alta."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MOSTRÁ EL DIBUJO",
+   "texto": "Así todos ven de qué hablás",
+   "emoji": "🖼️",
+   "voz": [
+    "Truco: mostrá el *dibujo* mientras leés."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "REVISAR",
+     "título, mayúscula, punto"
+    ],
+    [
+     "CORREGIR",
+     "arreglar errores"
+    ],
+    [
+     "COMPARTIR",
+     "en voz alta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Revisamos* título, mayúsculas y puntos.",
+    "*Corregimos* los errores.",
+    "*Compartimos* en voz alta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "slug": "medio-leng2-m8-n1",
+ "step_id": "52559f1a-9d15-4bc3-8a2e-bc0d7eeda5bb",
+ "materia": "Lengua 2",
+ "titulo": "Elegir un tema",
+ "sub": "Lengua 2 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "Sofi leyó la lámina del hornero.",
+    "Ahora quiere hacer su propia ficha.",
+    "¿Sobre qué será?"
+   ],
+   "titulo": "ELEGIR",
+   "sub": "un tema",
+   "voz": [
+    "Sofi leyó la lámina del hornero.",
+    "Ahora quiere hacer *su propia ficha*.",
+    "¿Sobre qué será?",
+    "Hoy: *elegir un tema*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Tema",
+   "texto": "De qué va a tratar la ficha",
+   "emoji": "🎯",
+   "voz": [
+    "El *tema* es de qué va a tratar la ficha.",
+    "Lo elegimos primero."
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "Sofi tiene que elegir un tema",
+   "emoji": "🤔",
+   "a": {
+    "txt": "Todos los animales",
+    "consecuencia": "¡Es demasiado para una hoja!",
+    "emoji": "🌍"
+   },
+   "b": {
+    "txt": "El yaguareté",
+    "consecuencia": "¡Uno solo, se cuenta bien!",
+    "emoji": "🐆"
+   },
+   "voz": [
+    "Sofi duda: ¿qué tema elige?",
+    "Todos los animales: ¡es *demasiado* para una hoja!",
+    "El *yaguareté*: uno solo, ¡se cuenta bien!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es un buen tema?",
+   "opciones": [
+    "TODO EL MUNDO",
+    "EL HORNERO",
+    "TODAS LAS PLANTAS",
+    "TODOS LOS PAÍSES"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál es un buen tema para una ficha?",
+    "Buscá el que sea *uno solo*.",
+    "¡*El hornero*! Es un tema chico."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNO SOLO",
+   "texto": "Un tema chico se cuenta mejor",
+   "emoji": "☝️",
+   "voz": [
+    "Truco: un tema *chico* se cuenta mejor."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FICHA",
+     "datos reales"
+    ],
+    [
+     "TEMA",
+     "de qué trata"
+    ],
+    [
+     "UNO SOLO",
+     "un tema chico"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *ficha* tiene datos reales.",
+    "El *tema* dice de qué trata.",
+    "Elegimos *uno solo*, un tema chico.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

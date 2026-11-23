@@ -1,0 +1,127 @@
+{
+ "slug": "medio-leng2-m9-n2",
+ "step_id": "5d10b497-5392-4e31-95a4-26da3bff7d95",
+ "materia": "Lengua 2",
+ "titulo": "Leer en voz alta con ritmo",
+ "sub": "Lengua 2 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra rima con MODA?",
+   "segundos": 8,
+   "respuesta": "¡BODA!",
+   "emoji": "🎵",
+   "titulo": "LEER",
+   "sub": "con ritmo",
+   "voz": [
+    "Desafío: ¿qué palabra rima con moda?",
+    "¡*Boda*! Terminan igual.",
+    "Hoy: *leer en voz alta con ritmo*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "LA PRIMERA ESTROFA",
+   "lineas": [
+    {
+     "txt": "El hijo de Rana, Rinrín Renacuajo,",
+     "marca": "subraya"
+    },
+    {
+     "txt": "salió esta mañana muy tieso y muy majo,",
+     "marca": "subraya",
+     "color": "coral"
+    },
+    {
+     "txt": "con pantalón corto, corbata a la moda,",
+     "marca": "subraya",
+     "color": "verde"
+    },
+    {
+     "txt": "sombrero encintado y chupa de boda.",
+     "marca": "subraya",
+     "color": "azul"
+    }
+   ],
+   "voz": [
+    "El hijo de Rana, Rinrín Renacuajo,",
+    "salió esta mañana muy tieso y muy majo,",
+    "con pantalón corto, corbata a la moda,",
+    "sombrero encintado y chupa de boda."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Rima",
+   "texto": "Palabras que terminan igual",
+   "emoji": "🔔",
+   "voz": [
+    "*Renacuajo* y *majo* terminan igual: riman.",
+    "*Moda* y *boda* también riman."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "¿RIMAN?",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "GATO · PATO",
+     "r": "SÍ"
+    },
+    {
+     "p": "SOL · LUNA",
+     "r": "NO"
+    },
+    {
+     "p": "RATÓN · BOTÓN",
+     "r": "SÍ"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿Riman o no?",
+    "Gato y pato: ¡*sí*!",
+    "Sol y luna: *no*.",
+    "Ratón y botón: ¡*sí*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PAUSA AL FINAL",
+   "texto": "Hacé una pausa en cada verso",
+   "emoji": "⏸️",
+   "voz": [
+    "Truco: hacé una *pausa* al final de cada verso."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VERSO",
+     "cada renglón"
+    ],
+    [
+     "ESTROFA",
+     "grupo de versos"
+    ],
+    [
+     "RIMA",
+     "finales iguales"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada renglón es un *verso*.",
+    "Un grupo de versos es una *estrofa*.",
+    "La *rima*: finales que suenan igual.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "slug": "medio-leng2-m8-n3",
+ "step_id": "f0ee9267-5926-41ac-8151-66ff53c8438d",
+ "materia": "Lengua 2",
+ "titulo": "Escribir la ficha",
+ "sub": "Lengua 2 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué va arriba en la ficha?",
+   "segundos": 8,
+   "respuesta": "¡El título!",
+   "emoji": "📝",
+   "titulo": "ESCRIBIR",
+   "sub": "la ficha",
+   "voz": [
+    "Desafío: ¿qué va arriba en la ficha?",
+    "¡El *título*!",
+    "Hoy: *escribir la ficha*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LA FICHA DEL YAGUARETÉ",
+   "celdas": [
+    {
+     "cab": "¿QUÉ ES?",
+     "txt": "Es un animal grande."
+    },
+    {
+     "cab": "¿DÓNDE VIVE?",
+     "txt": "Vive en la selva."
+    },
+    {
+     "cab": "¿CÓMO ES?",
+     "txt": "Tiene manchas."
+    },
+    {
+     "cab": "¿QUÉ COME?",
+     "txt": "Come otros animales."
+    }
+   ],
+   "voz": [
+    "Esta es la ficha de Sofi.",
+    "Es un animal grande.",
+    "Vive en la selva.",
+    "Tiene manchas.",
+    "Come otros animales."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "Vive en la",
+   "despues": ".",
+   "opciones": [
+    "SELVA",
+    "LUNA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá el dato: vive en la…",
+    "¿Selva o luna?",
+    "¡*Selva*! Es un dato real."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "DEL DATO A LA ORACIÓN",
+   "pares": [
+    [
+     "SELVA",
+     "Vive en la selva."
+    ],
+    [
+     "MANCHAS",
+     "Tiene manchas."
+    ],
+    [
+     "GRANDE",
+     "Es un animal grande."
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Cada dato se vuelve una oración.",
+    "Selva: vive en la selva.",
+    "Manchas: tiene manchas.",
+    "Grande: es un animal grande."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN DATO, UN RENGLÓN",
+   "texto": "Con mayúscula y punto",
+   "emoji": "✏️",
+   "voz": [
+    "Truco: un dato por renglón, con *mayúscula* y *punto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TÍTULO",
+     "arriba"
+    ],
+    [
+     "DIBUJO",
+     "cómo es"
+    ],
+    [
+     "DATOS",
+     "uno por renglón"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *título* va arriba.",
+    "El *dibujo* muestra cómo es.",
+    "Los *datos* van uno por renglón.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
