@@ -1,0 +1,145 @@
+{
+ "slug": "medio-leng2-m11-n4",
+ "step_id": "bf88bb75-4c86-45b8-9071-d561cdb44acb",
+ "materia": "Lengua 2",
+ "titulo": "Dictado con R y RR",
+ "sub": "Lengua 2 · Misión 11 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Escribí en tu carpeta: BURRO",
+   "segundos": 8,
+   "respuesta": "BURRO, con RR",
+   "emoji": "✏️",
+   "titulo": "DICTADO",
+   "sub": "con R y RR",
+   "voz": [
+    "Desafío: escribí en tu carpeta *burro*.",
+    "¡Burro! Fuerte en el medio: dos letras.",
+    "Hoy: *dictado*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO DECIDO",
+   "items": [
+    {
+     "txt": "¿Suena suave? → R",
+     "emoji": "🍐"
+    },
+    {
+     "txt": "¿Fuerte al principio? → R",
+     "emoji": "🐭"
+    },
+    {
+     "txt": "¿Fuerte en el medio? → RR",
+     "emoji": "🐶"
+    }
+   ],
+   "voz": [
+    "¿Cómo decide la detective?",
+    "Si suena *suave*: una letra.",
+    "Si es fuerte *al principio*: una letra.",
+    "Si es fuerte *en el medio*: dos letras."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "DICTADO",
+   "items": [
+    {
+     "p": "El animal que ladra",
+     "r": "PERRO"
+    },
+    {
+     "p": "La flor con espinas",
+     "r": "ROSA"
+    },
+    {
+     "p": "El pájaro que habla",
+     "r": "LORO"
+    }
+   ],
+   "voz": [
+    "Primera palabra: *perro*.",
+    "Segunda palabra: *rosa*.",
+    "Tercera palabra: *loro*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "GO_A",
+     "r": "RR"
+    },
+    {
+     "p": "_ISA",
+     "r": "R"
+    },
+    {
+     "p": "PE_A (fruta)",
+     "r": "R"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de la detective!",
+    "Gorra: *dos letras*.",
+    "Risa: *una letra*.",
+    "Pera: *una letra*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "LA DETECTIVE CORRIGE",
+   "cambios": [
+    {
+     "antes": "RRISA",
+     "despues": "RISA",
+     "motivo": "al principio, una R"
+    },
+    {
+     "antes": "TORE",
+     "despues": "TORRE",
+     "motivo": "fuerte en el medio"
+    }
+   ],
+   "voz": [
+    "¡Encontramos errores en el dictado!",
+    "Risa: al principio, *una sola letra*.",
+    "Torre: fuerte en el medio, *dos letras*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUAVE",
+     "una R"
+    ],
+    [
+     "FUERTE AL PRINCIPIO",
+     "una R"
+    ],
+    [
+     "FUERTE EN EL MEDIO",
+     "RR"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Suave*: una letra.",
+    "Fuerte *al principio*: una letra.",
+    "Fuerte *en el medio*: dos letras.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

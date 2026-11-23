@@ -1,0 +1,126 @@
+{
+ "slug": "medio-leng2-m10-n1",
+ "step_id": "1d4d4cae-b0d3-49e2-8d96-d637c419c37a",
+ "materia": "Lengua 2",
+ "titulo": "Palabras que dicen cómo es",
+ "sub": "Lengua 2 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🦆",
+   "lineas": [
+    "Sofi ve un pato en la laguna.",
+    "Escribe: EL PATO.",
+    "¡Pero quiere decir cómo es!"
+   ],
+   "titulo": "ADJETIVOS",
+   "sub": "dicen cómo es",
+   "voz": [
+    "Sofi ve un pato en la laguna.",
+    "En su cuaderno escribe: el pato.",
+    "¡Pero quiere decir *cómo es*!",
+    "Hoy: *palabras que dicen cómo es*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Adjetivo",
+   "texto": "Palabra que dice cómo es algo",
+   "emoji": "🎨",
+   "voz": [
+    "Sofi escribe: el pato *blanco*.",
+    "*Blanco* es un adjetivo: dice cómo es."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "ADJETIVOS DE TAMAÑO",
+   "items": [
+    {
+     "txt": "CHIQUITO",
+     "emoji": "🐭",
+     "valor": 1
+    },
+    {
+     "txt": "MEDIANO",
+     "emoji": "🐱",
+     "valor": 3
+    },
+    {
+     "txt": "GRANDE",
+     "emoji": "🐶",
+     "valor": 6
+    },
+    {
+     "txt": "ENORME",
+     "emoji": "🐘",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "El ratón es *chiquito*.",
+    "El gato es *mediano*.",
+    "El perro es *grande*.",
+    "¡Y el elefante es *enorme*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es un adjetivo?",
+   "opciones": [
+    "MESA",
+    "PELUDO",
+    "CORRE",
+    "GATO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál de estas palabras dice *cómo es*?",
+    "Pensá: ¿cómo es el gato?",
+    "¡*Peludo*! Es un adjetivo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ ¿CÓMO ES?",
+   "texto": "La respuesta es un adjetivo",
+   "emoji": "❓",
+   "voz": [
+    "Truco: preguntá *¿cómo es?* La respuesta es un adjetivo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ADJETIVO",
+     "dice cómo es"
+    ],
+    [
+     "DICE",
+     "tamaño, color, forma"
+    ],
+    [
+     "VA JUNTO",
+     "al sustantivo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *adjetivo* dice cómo es algo.",
+    "Dice el *tamaño*, el *color* o la forma.",
+    "Va junto al *sustantivo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

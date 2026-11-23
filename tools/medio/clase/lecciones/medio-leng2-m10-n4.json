@@ -1,0 +1,129 @@
+{
+ "slug": "medio-leng2-m10-n4",
+ "step_id": "2d39854b-6847-4a7f-9e66-daba12c96dcb",
+ "materia": "Lengua 2",
+ "titulo": "Escribir descripciones con adjetivos",
+ "sub": "Lengua 2 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cómo es tu gato Michi? 🐈"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te lo describo!"
+    }
+   ],
+   "titulo": "DESCRIBIR",
+   "sub": "con adjetivos",
+   "voz": [
+    "Tomi pregunta: ¿cómo es tu gato Michi?",
+    "Sofi responde: ¡te lo describo!",
+    "Hoy: *escribir descripciones con adjetivos*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "SUMAMOS ADJETIVOS",
+   "pasos": [
+    {
+     "txt": "EL GATO"
+    },
+    {
+     "txt": "EL GATO NEGRO",
+     "nota": "+ color"
+    },
+    {
+     "txt": "EL GATO NEGRO Y CHIQUITO",
+     "nota": "+ tamaño"
+    }
+   ],
+   "voz": [
+    "Empezamos con: el gato.",
+    "Sumamos un color: el gato *negro*.",
+    "Sumamos el tamaño: negro y *chiquito*."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Aburrido",
+    "emoji": "😴"
+   },
+   "preguntas": [
+    {
+     "p": "LA MANZANA…",
+     "r": "ROJA Y REDONDA"
+    },
+    {
+     "p": "EL GLOBO…",
+     "r": "AZUL Y LIVIANO"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Aburrido*! No le gustan las descripciones.",
+    "Le ganamos con adjetivos.",
+    "La manzana *roja y redonda*.",
+    "¡El globo *azul y liviano*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "LINDO, LINDO Y LINDO",
+     "bien": "LINDO, MIMOSO Y JUGUETÓN"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "No repetimos: usamos adjetivos *distintos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "NO REPITAS",
+   "texto": "Usá adjetivos distintos",
+   "emoji": "🔁",
+   "voz": [
+    "Truco: usá adjetivos *distintos* en cada oración."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ELEGIR",
+     "qué describir"
+    ],
+    [
+     "SUMAR",
+     "adjetivos"
+    ],
+    [
+     "ESCRIBIR",
+     "oraciones claras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Elegimos* qué describir.",
+    "*Sumamos* adjetivos.",
+    "*Escribimos* oraciones claras.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

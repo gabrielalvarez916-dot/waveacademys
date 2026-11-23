@@ -1,0 +1,127 @@
+{
+ "slug": "medio-leng2-m11-n3",
+ "step_id": "832e96c3-69ca-4d80-9ebb-317af99a4807",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con RR",
+ "sub": "Lengua 2 · Misión 11 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CASO NUEVO",
+   "titular": "¡Un sonido fuerte en el medio!",
+   "bajada": "La detective investiga PERRO",
+   "emoji": "🐶",
+   "titulo": "RR",
+   "sub": "en el medio",
+   "voz": [
+    "¡Caso nuevo: un sonido fuerte en el medio!",
+    "La detective investiga la palabra *perro*.",
+    "Hoy: *palabras con dos letras juntas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "La pista",
+   "texto": "Fuerte entre dos vocales: RR",
+   "emoji": "🔎",
+   "voz": [
+    "Si suena fuerte en el medio, entre vocales…",
+    "¡se escribe con *dos letras juntas*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué palabra con RR es?",
+   "pistas": [
+    "Es un animal",
+    "Tiene orejas largas",
+    "Hace iii-aaa"
+   ],
+   "respuesta": "BURRO",
+   "voz": [
+    "Adivinanza: ¿qué palabra es?",
+    "Pista uno: es un animal.",
+    "Pista dos: tiene orejas largas.",
+    "Pista tres: hace iii-aaa.",
+    "¡El *burro*! Fuerte en el medio."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "PERO y PERRO se escriben igual",
+   "emoji": "🐶",
+   "verdadero": false,
+   "explicacion": "PERO suave, PERRO fuerte",
+   "voz": [
+    "¿Verdadero o falso? Pero y perro se escriben igual.",
+    "Escuchá: pero… perro.",
+    "¡*Falso*! Pero es suave. Perro es fuerte."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "R (suave)",
+     "emoji": "🍐"
+    },
+    {
+     "cab": "RR (fuerte)",
+     "emoji": "🐶"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "PERA",
+     "caja": 0
+    },
+    {
+     "txt": "LORO",
+     "caja": 0
+    },
+    {
+     "txt": "TORRE",
+     "caja": 1
+    },
+    {
+     "txt": "GORRA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos las palabras.",
+    "Pera y loro suenan suave: una letra.",
+    "Torre y gorra suenan fuerte: dos letras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RR",
+     "fuerte entre vocales"
+    ],
+    [
+     "R",
+     "suave entre vocales"
+    ],
+    [
+     "EJEMPLOS",
+     "PERRO, TORRE"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Fuerte en el medio: *dos letras*.",
+    "Suave en el medio: *una letra*.",
+    "Como en *perro* y *torre*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

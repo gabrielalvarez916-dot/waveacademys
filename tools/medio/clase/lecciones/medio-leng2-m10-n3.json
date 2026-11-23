@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng2-m10-n3",
+ "step_id": "3d28bb30-724f-4bed-bd14-c681a1e7cb60",
+ "materia": "Lengua 2",
+ "titulo": "Adjetivos para lugares",
+ "sub": "Lengua 2 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo es la selva?",
+   "segundos": 8,
+   "respuesta": "¡Verde, húmeda y enorme!",
+   "emoji": "🌳",
+   "titulo": "ADJETIVOS",
+   "sub": "para lugares",
+   "voz": [
+    "Desafío: ¿cómo es la selva?",
+    "¡*Verde*, *húmeda* y *enorme*!",
+    "Hoy: *adjetivos para lugares*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🌳",
+    "🐆",
+    "🦜"
+   ],
+   "lugar": "🇦🇷",
+   "rotulos": [
+    {
+     "txt": "LA SELVA",
+     "sub": "verde y húmeda"
+    },
+    {
+     "txt": "EL CASTILLO",
+     "sub": "alto y brillante"
+    },
+    {
+     "txt": "LA PLAZA",
+     "sub": "grande y ruidosa"
+    }
+   ],
+   "voz": [
+    "La selva es *verde* y *húmeda*.",
+    "El castillo es *alto* y *brillante*.",
+    "La plaza es *grande* y *ruidosa*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CON LOS SENTIDOS",
+   "items": [
+    {
+     "txt": "¿Cómo se ve?",
+     "emoji": "👀"
+    },
+    {
+     "txt": "¿Cómo suena?",
+     "emoji": "👂"
+    },
+    {
+     "txt": "¿Cómo se siente?",
+     "emoji": "✋"
+    }
+   ],
+   "voz": [
+    "Para describir un lugar usamos los sentidos.",
+    "¿Cómo se *ve*?",
+    "¿Cómo *suena*?",
+    "¿Cómo se *siente*?"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "La laguna es",
+   "despues": ".",
+   "opciones": [
+    "FRÍA",
+    "CORRE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: la laguna es…",
+    "¿Fría o corre?",
+    "¡*Fría*! Dice cómo es."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "USÁ LOS SENTIDOS",
+   "texto": "Mirá, escuchá y tocá",
+   "emoji": "🖐️",
+   "voz": [
+    "Truco: mirá, escuchá y tocá para describir."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUGARES",
+     "con adjetivos"
+    ],
+    [
+     "SENTIDOS",
+     "ver, oír, sentir"
+    ],
+    [
+     "EJEMPLOS",
+     "selva verde"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *lugares* también se describen.",
+    "Usamos los *sentidos*.",
+    "Como la *selva verde*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

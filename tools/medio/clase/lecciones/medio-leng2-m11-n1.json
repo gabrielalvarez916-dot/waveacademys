@@ -1,0 +1,125 @@
+{
+ "slug": "medio-leng2-m11-n1",
+ "step_id": "96102e83-f3b5-4493-97cd-ad1d8a5ca770",
+ "materia": "Lengua 2",
+ "titulo": "Sonido suave y sonido fuerte",
+ "sub": "Lengua 2 · Misión 11 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "🕵️‍♀️"
+   },
+   "lugar": "🔍",
+   "lineas": [
+    "La detective Sofi escucha.",
+    "PERA y PERRO.",
+    "¡Suenan distinto!"
+   ],
+   "titulo": "SUAVE",
+   "sub": "y fuerte",
+   "voz": [
+    "La detective Sofi escucha con atención.",
+    "Pera… perro.",
+    "¡Suenan *distinto*!",
+    "Hoy: *sonido suave y sonido fuerte*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PERA",
+    "texto": "sonido suave",
+    "emoji": "🍐"
+   },
+   "b": {
+    "cab": "PERRO",
+    "texto": "sonido fuerte",
+    "emoji": "🐶"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "LA PISTA",
+    "texto": "suave: R · fuerte en el medio: RR"
+   },
+   "voz": [
+    "En *pera*, el sonido es suave.",
+    "En *perro*, es fuerte: rrr.",
+    "¡Suenan distinto y se escriben distinto!",
+    "Suave, una letra. Fuerte en el medio, dos letras."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿CARO y CARRO son la misma palabra?",
+   "a": {
+    "txt": "Sí, son iguales",
+    "emoji": "🟰"
+   },
+   "b": {
+    "txt": "No, cambian",
+    "emoji": "🚗"
+   },
+   "correcta": "b",
+   "resultado": "CARO es costoso. CARRO es un auto.",
+   "voz": [
+    "¿Caro y carro son la misma palabra?",
+    "Escuchá: caro… carro.",
+    "¡No! Caro es *costoso*. Carro es un *auto*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "TORRE: ¿suave o fuerte?",
+   "opciones": [
+    "SUAVE",
+    "FUERTE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos: torre.",
+    "¿Suena suave o fuerte?",
+    "¡*Fuerte*! Torre: rrr."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DECILO EN VOZ ALTA",
+   "texto": "El sonido fuerte vibra más",
+   "emoji": "🗣️",
+   "voz": [
+    "Truco: decí la palabra en voz alta. El fuerte *vibra*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUAVE",
+     "PERA, LORO"
+    ],
+    [
+     "FUERTE",
+     "PERRO, TORRE"
+    ],
+    [
+     "CUIDADO",
+     "cambia la palabra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Suave*, como en pera y loro.",
+    "*Fuerte*, como en perro y torre.",
+    "Si cambia el sonido, cambia la palabra.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

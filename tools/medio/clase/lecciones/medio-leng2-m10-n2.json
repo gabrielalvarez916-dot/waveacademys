@@ -1,0 +1,127 @@
+{
+ "slug": "medio-leng2-m10-n2",
+ "step_id": "2f9499fd-6700-45c0-855a-a1acd221027e",
+ "materia": "Lengua 2",
+ "titulo": "Adjetivos para personajes",
+ "sub": "Lengua 2 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CUENTOS",
+   "titular": "¡Los personajes quieren saber cómo son!",
+   "bajada": "Sofi los va a describir",
+   "emoji": "📖",
+   "titulo": "ADJETIVOS",
+   "sub": "para personajes",
+   "voz": [
+    "¡Noticia: los personajes quieren saber cómo son!",
+    "Sofi los va a *describir*.",
+    "Hoy: *adjetivos para personajes*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CÓMO SON?",
+   "a": {
+    "txt": "CENICIENTA",
+    "emoji": "👸",
+    "datos": [
+     "buena",
+     "trabajadora"
+    ]
+   },
+   "b": {
+    "txt": "MADRASTRA",
+    "emoji": "🦹‍♀️",
+    "datos": [
+     "mala",
+     "mandona"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡Gana la bondad!",
+   "voz": [
+    "Comparamos dos personajes.",
+    "Cenicienta es *buena* y *trabajadora*.",
+    "La madrastra es *mala* y *mandona*.",
+    "¡Gana la bondad!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "CADA UNO CON SU ADJETIVO",
+   "pares": [
+    [
+     "RINRÍN",
+     "elegante"
+    ],
+    [
+     "LOBO",
+     "feroz"
+    ],
+    [
+     "CHANCHITO",
+     "trabajador"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada personaje con su adjetivo.",
+    "Rinrín es *elegante*.",
+    "El lobo es *feroz*.",
+    "El chanchito es *trabajador*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "SOPLÓ es adjetivo",
+     "bien": "SOPLÓ dice lo que hace"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Sopló dice lo que *hace*, no cómo es."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POR FUERA Y POR DENTRO",
+   "texto": "Grande, elegante… buena, mala",
+   "emoji": "🪞",
+   "voz": [
+    "Truco: describí cómo es *por fuera* y *por dentro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "POR FUERA",
+     "grande, elegante"
+    ],
+    [
+     "POR DENTRO",
+     "buena, mala"
+    ],
+    [
+     "PERSONAJES",
+     "con adjetivos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Por fuera*: grande, elegante.",
+    "*Por dentro*: buena, mala.",
+    "Así describimos a los *personajes*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

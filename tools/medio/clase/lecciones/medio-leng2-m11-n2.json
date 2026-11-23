@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng2-m11-n2",
+ "step_id": "8c9adf29-c3da-4542-b98c-e3e6a4b93690",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con R inicial",
+ "sub": "Lengua 2 · Misión 11 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Vi un RRATÓN! 🐭"
+    },
+    {
+     "yo": true,
+     "txt": "Mmm… ¿así se escribe?"
+    }
+   ],
+   "titulo": "R",
+   "sub": "al principio",
+   "voz": [
+    "Tomi le escribe a Sofi: ¡vi un ratón!",
+    "La detective mira la palabra… ¿así se escribe?",
+    "Hoy: *palabras que empiezan con sonido fuerte*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "La pista",
+   "texto": "Al principio suena fuerte, pero va una sola R",
+   "emoji": "🔎",
+   "voz": [
+    "Al principio de la palabra, el sonido es fuerte.",
+    "¡Pero se escribe con *una sola letra*!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "EMPIEZAN CON R",
+   "items": [
+    "RATÓN",
+    "RANA",
+    "ROSA",
+    "RUEDA",
+    "REGALO"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá estas palabras: todas empiezan fuerte.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *rueda*!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "¿CÓMO SE ESCRIBE?",
+   "items": [
+    {
+     "frente": "🐭",
+     "dorso": "RATÓN",
+     "emoji": "🐭"
+    },
+    {
+     "frente": "😂",
+     "dorso": "RISA",
+     "emoji": "😂"
+    },
+    {
+     "frente": "⏰",
+     "dorso": "RELOJ",
+     "emoji": "⏰"
+    }
+   ],
+   "voz": [
+    "*Ratón*: una sola letra al principio.",
+    "*Risa*: también una sola.",
+    "*Reloj*: ¡una sola!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "RRATÓN",
+     "bien": "RATÓN"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Nunca empezamos con dos letras: *ratón*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AL PRINCIPIO",
+     "suena fuerte"
+    ],
+    [
+     "SE ESCRIBE",
+     "una sola R"
+    ],
+    [
+     "EJEMPLOS",
+     "RATÓN, ROSA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Al principio*, el sonido es fuerte.",
+    "Pero va *una sola letra*.",
+    "Como en *ratón* y *rosa*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
