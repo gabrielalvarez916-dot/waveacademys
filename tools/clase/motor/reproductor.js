@@ -44,7 +44,7 @@
     decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, Math.max(30, window.PENSAR ? PENSAR(e, k) : 0)); }, k);
   }
   function armarEscena(i) {
-    var vieja = esc, TR = CL.transiciones ? ['desliza', 'sube', 'zoom', 'gira', 'cortina'][i % 5] : null; // transiciones variadas: solo si la clase las pide (prueba)
+    var vieja = esc, TR = CL.transiciones !== false ? ['desliza', 'sube', 'zoom', 'gira', 'cortina'][i % 5] : null; // transiciones variadas: activas en todas las clases (se apagan con transiciones: false)
     if (vieja && TR) { var sal = { desliza: { x: -700 }, sube: { y: -500 }, zoom: { scale: 1.6 }, gira: { rotation: -8, x: -300 }, cortina: { x: 1920 } }[TR];
       gsap.to(vieja, Object.assign({ opacity: 0, duration: .35, ease: 'power2.in', transformOrigin: '960px 540px', onComplete: function () { vieja.remove(); } }, sal)); }
     else if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
