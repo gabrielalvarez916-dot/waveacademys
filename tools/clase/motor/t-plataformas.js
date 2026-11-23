@@ -189,8 +189,8 @@
       return { b: base, fr: fr, bk: bk }; });
     Ts.slice().reverse().forEach(function (t) { g.appendChild(t.b); });
     Ts.forEach(function (t, k) { B(k); if (!k) { w.IN(tl, ti, 0); Ts.forEach(function (u) { tl.fromTo(u.b, { opacity: 0 }, { opacity: 1, duration: .3 }, '<.05'); }); w.IN(tl, pila, '<'); }
-      tl.to(t.b, { attr: { transform: 'translate(900 600)' }, duration: .25 }, '>'); tl.to(t.fr, { scaleX: 0, duration: .25, ease: 'power1.in' }, '>+.4'); tl.set(t.fr, { opacity: 0 }); tl.fromTo(t.bk, { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: .25, ease: 'power1.out' }, '>');
-      if (k < n - 1) tl.to(t.b, { x: '+=720', y: '+=260', scale: .15, opacity: 0, duration: .5, ease: 'power2.in' }, '>+1.2'); tl.call(function (s) { pt.textContent = s; }, ['✔ ' + (k + 1) + '/' + n], '>'); w.pop(tl, pila, '<'); });
+      tl.to(t.b, { attr: { transform: 'translate(900 600)' }, duration: .7 }, '>'); tl.to(t.fr, { scaleX: 0, duration: .6, ease: 'power1.in' }, '>+1.2'); tl.set(t.fr, { opacity: 0 }); tl.fromTo(t.bk, { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: .6, ease: 'power1.out' }, '>');
+      if (k < n - 1) tl.to(t.b, { x: '+=720', y: '+=260', scale: .15, opacity: 0, duration: .9, ease: 'power2.in' }, '>+2.6'); tl.call(function (s) { pt.textContent = s; }, ['✔ ' + (k + 1) + '/' + n], '>'); w.pop(tl, pila, '<'); });
   } };
 
   // tipeo: la respuesta se escribe letra por letra, como en un repaso de escritura. {titulo?, items:[{p, r}] (1-4)} — un paso por item
