@@ -121,6 +121,7 @@
       '<div class="ap-op"><div><b>Tamaño de letra</b><br><select id="ap-letra"><option value="0">Normal</option><option value="1">Grande</option><option value="2">Muy grande</option></select></div></div>' +
       '<div class="ap-op"><div><b>Contraste</b><br><select id="ap-contraste"><option value="0">Normal</option><option value="1">Más alto</option><option value="2">Más suave</option></select></div></div>' +
       '<label class="ap-op"><input type="checkbox" id="ap-anim"><div><b>Menos animación</b><span>Quita movimientos y transiciones, también dentro de las clases.</span></div></label>' +
+      '<label class="ap-op"><input type="checkbox" id="ap-sonido"><div><b>Sin sonidos</b><span>Apaga los sonidos de las actividades y del examen.</span></div></label>' +
       '<button class="ap-cerrar" type="button">Listo</button></div>';
     document.body.appendChild(f);
     var l = f.querySelector('#ap-letra'), c = f.querySelector('#ap-contraste'), a = f.querySelector('#ap-anim');
@@ -128,6 +129,7 @@
     l.onchange = function () { A.letra = +l.value; guardar(); aplicar(); };
     c.onchange = function () { A.contraste = +c.value; guardar(); aplicar(); };
     a.onchange = function () { A.sinAnim = a.checked; guardar(); aplicar(); };
+    var so = f.querySelector('#ap-sonido'); so.checked = !!A.sinSonido; so.onchange = function () { A.sinSonido = so.checked; guardar(); aplicar(); };
     f.querySelector('.ap-cerrar').onclick = function () { f.remove(); };
     f.onclick = function (e) { if (e.target === f) f.remove(); };
   }

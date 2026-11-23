@@ -1127,6 +1127,7 @@
           var s = Number(r.score);
           res.className = 'ap-comp-res ' + (s >= 100 ? 'ok' : s > 0 ? 'med' : 'no');
           res.innerHTML = '<b>' + (s >= 100 ? '✔ Correcta' : s > 0 ? '◐ A medias' : '✘ Incorrecta') + '</b> ' + esc(r.feedback || '');
+          if (window.WaveJuego) WaveJuego.respuesta(s >= 100, blk);
         }
         var c = blk.querySelector('.mt-preg-c');
         [].forEach.call(c.children, function (ch) { if (!ch.classList.contains('ap-comp')) ch.inert = true; });
@@ -1142,7 +1143,7 @@
       mostrarRel();
     }
     function mostrarRel() {
-      var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q;
+      var i = relamp.i, q = lista[i], seg = q.tiempo_seg || 20, resto = seg; qActual = q; relamp.t0 = Date.now();
       cuerpo.innerHTML = '<div class="rl-top"><span class="rl-cont">Pregunta ' + (i + 1) + ' de ' + lista.length + '</span><span class="rl-seg"><b>' + seg + '</b> s</span></div>' +
         '<div class="rl-barra"><i style="animation-duration:' + seg + 's"></i></div>' + campo(q, i) +
         '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-sincrono="1" aria-pressed="false">Sin cronómetro</button></div>' +
@@ -1160,6 +1161,7 @@
       if (!relamp) return;
       clearInterval(relamp.t);
       var i = relamp.i, q = lista[i];
+      (relamp.tiempos = relamp.tiempos || []).push((Date.now() - relamp.t0) / 1000);
       relamp.resp.push({ question_id: q.id, answer: leerResp(q, i), seed: q._seed, justificacion: op.justificar ? justif(i) : undefined });
       relamp.i++;
       if (relamp.i < lista.length) mostrarRel(); else enviar(relamp.resp);
@@ -1204,6 +1206,8 @@
         '<div class="mt-cuest-pie">' + (ok && op.examen ? '' : '<button type="button" class="mt-boton suave" data-otra="1">' + (op.repaso ? 'Hacer otro repaso' : 'Intentar de nuevo') + '</button>') +
         '<button type="button" class="mt-boton" data-cerrar="1">Listo</button></div>';
       cuerpo.scrollTo(0, 0);
+      if (window.WaveJuego) WaveJuego.resultado(cuerpo, { nota: nota, ok: ok, examen: !!op.examen, scores: lista.map(function (q) { return Math.round((porId[q.id] || {}).score || 0); }),
+        tiempos: relamp && relamp.tiempos, limites: lista.map(function (q) { return q.tiempo_seg || 20; }) });
     }
 
     // Trayecto Anticipación: antes de cada actividad, una pantalla que dice qué viene, qué hay que hacer en cada tipo de pregunta y cómo saber que terminó
@@ -1231,7 +1235,7 @@
       });
     }
     function traer() {
-      entregado = false;
+      entregado = false; if (window.WaveJuego) WaveJuego.reiniciar();
       cuerpo.innerHTML = '<div class="mt-cuest-estado">' + (op.cargando ? '<div class="mt-girar"></div><b>' + esc(op.cargando) + '</b><small>' + esc(op.cargandoSub || '') + '</small>' : 'Cargando…') + '</div>';
       op.cargar().then(function (qs) { lista = qs; if (conAviso()) avisoPrevio(); else formulario(); }).catch(function (e) {
         cuerpo.innerHTML = '<div class="mt-cuest-estado error"><b>' + esc(e.message || 'No se pudo cargar.') + '</b></div>';
