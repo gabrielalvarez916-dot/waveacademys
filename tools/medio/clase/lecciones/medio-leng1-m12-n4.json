@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng1-m12-n4",
+ "step_id": "95cf7e47-5aac-4b9c-831f-2221e6347363",
+ "materia": "Lengua 1",
+ "titulo": "Leer y escribir palabras con todas las letras",
+ "sub": "Lengua 1 · Misión 12 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Completaste el álbum? 📒"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! ¡Las 27 letras!"
+    }
+   ],
+   "titulo": "LEER",
+   "sub": "y escribir",
+   "voz": [
+    "Tomi pregunta: ¿completaste el álbum?",
+    "Sofi responde: ¡sí, las 27 letras!",
+    "Hoy: *leer y escribir con todas*."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "LEEMOS",
+   "items": [
+    {
+     "p": "HE · LA · DO",
+     "r": "HELADO"
+    },
+    {
+     "p": "ZO · RRO",
+     "r": "ZORRO"
+    },
+    {
+     "p": "QUE · SO",
+     "r": "QUESO"
+    }
+   ],
+   "voz": [
+    "He… la… do: *helado*.",
+    "Zo… rro: *zorro*.",
+    "Que… so: *queso*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL ÁLBUM",
+   "candados": [
+    {
+     "p": "_ADA",
+     "r": "H"
+    },
+    {
+     "p": "_APATO",
+     "r": "Z"
+    },
+    {
+     "p": "_IWI",
+     "r": "K"
+    }
+   ],
+   "voz": [
+    "¡Para cerrar el álbum, abrimos los candados!",
+    "Hada: la letra *callada*.",
+    "Zapato: la que suena *sss*.",
+    "Kiwi: la de *kiwi*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "QESO",
+     "bien": "QUESO"
+    },
+    {
+     "mal": "UEVO",
+     "bien": "HUEVO"
+    }
+   ],
+   "voz": [
+    "Cuidado con estos errores.",
+    "Queso lleva su *amiga* que no suena.",
+    "Huevo lleva la letra *callada*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEÉ DESPACIO",
+   "texto": "Juntá las sílabas de a una",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: juntá las sílabas *de a una*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "YOYO · ZAPATO",
+     "dos letras"
+    ],
+    [
+     "HUEVO · QUESO",
+     "dos más"
+    ],
+    [
+     "KIWI · TAXI",
+     "¡y las últimas!"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las de *yoyo* y *zapato*.",
+    "Las de *huevo* y *queso*.",
+    "¡Y las de *kiwi* y *taxi*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

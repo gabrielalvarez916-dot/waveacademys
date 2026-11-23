@@ -1,0 +1,99 @@
+{
+ "slug": "medio-leng1-m12-n2",
+ "step_id": "be82999d-330e-46ad-b510-797de78d8084",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la H y la Q",
+ "sub": "Lengua 1 · Misión 12 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "MISTERIO",
+   "titular": "¡Una letra que no suena!",
+   "bajada": "Sofi la encontró en HUEVO",
+   "emoji": "🥚",
+   "titulo": "H · Q",
+   "sub": "letras nuevas",
+   "voz": [
+    "¡Misterio: una letra que *no suena*!",
+    "Sofi la encontró en *huevo*.",
+    "Hoy: *dos letras nuevas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "La letra callada",
+   "texto": "La H se escribe pero no suena",
+   "emoji": "🤫",
+   "voz": [
+    "En *huevo*, *hada* y *hoja* hay una letra callada.",
+    "Se escribe, pero no se escucha."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En HUEVO, la primera letra suena",
+   "emoji": "🥚",
+   "verdadero": false,
+   "explicacion": "La H no suena",
+   "voz": [
+    "¿Verdadero o falso? En huevo, la primera letra suena.",
+    "Escuchá: hue… vo.",
+    "¡*Falso*! Es la letra callada."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Siempre con U",
+   "texto": "QUE, QUI: la U no suena",
+   "emoji": "🧀",
+   "voz": [
+    "En *queso* y *quince* hay otra letra nueva.",
+    "Siempre va con una amiga que no suena: que, qui."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "",
+   "despues": "UESO",
+   "opciones": [
+    "Q",
+    "H"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: …ueso.",
+    "¿Cuál va en queso?",
+    "¡La de *queso*! Que, qui."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HUEVO",
+     "la letra callada"
+    ],
+    [
+     "QUESO",
+     "que, qui"
+    ],
+    [
+     "¡DOS MÁS!",
+     "para el álbum"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La de *huevo* no suena.",
+    "La de *queso*: que, qui.",
+    "¡Dos figuritas más para el álbum!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

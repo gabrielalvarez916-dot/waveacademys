@@ -179,5 +179,5 @@ OK |= {'llevé', 'volví', 'resté', 'vendí'}  # Matemática 2 · Misiones 9 y 
 OK |= {'malas', 'malos'}  # Lengua 2 · Misión 3
 MAPA.update({'resumí': 'resume'})  # Lengua 2 · Misión 4
 OK |= {'compré', 'modelo'}  # Lengua 2 · Misiones 2 y 5
-OK |= {'finales', 'mimí', 'egalo', 'rregalo', 'ganará', 'conté', 'enseñará', 'ananá'}  # Lengua 2 · Misiones 9, 11 y 12
+OK |= {'finales', 'mimí', 'egalo', 'rregalo', 'ganará', 'conté', 'enseñará', 'ananá', 'yate'}  # Lengua 2 · Misiones 9, 11 y 12
 OK -= set(MAPA)

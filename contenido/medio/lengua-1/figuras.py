@@ -81,3 +81,22 @@ def tiras(textos, numeros=True, ocultar_num=False, cols=2):
         if numeros: ax.text(x + .35, y + 1.05, "_" if ocultar_num else str(i + 1), ha="center", va="center", fontsize=15, color=CORAL, **F)
         ax.text(x + 2.05, y + .62, t.upper(), ha="center", va="center", fontsize=13, color=OSC, **F)
     return png(fig)
+
+
+def abecedario(minusculas=False, resaltar=(), cols=9):
+    """El abecedario de imprenta en orden (27 letras, con la Ñ). minusculas=True: abajo de cada mayúscula, su minúscula.
+    resaltar: letras que se pintan en rojo (ej. "YZ")."""
+    L = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"; filas = (len(L) + cols - 1) // cols
+    hc = 1.6 if minusculas else 1.0
+    W = 1.1 * cols + .3; H = (hc + .15) * filas + .3
+    fig, ax = lienzo(W * .8, H * .8, W, H, 0, 0)
+    for i, ch in enumerate(L):
+        x = .15 + 1.1 * (i % cols); y = H - .15 - (hc + .15) * (i // cols + 1) + .1
+        rojo = ch in resaltar
+        ax.add_patch(FancyBboxPatch((x, y), 1.0, hc, boxstyle="round,pad=0.02,rounding_size=0.12", color="#fff0c2" if rojo else "white", ec=COLS[i % len(COLS)], lw=2.2))
+        if minusculas:
+            ax.text(x + .5, y + 1.12, ch, ha="center", va="center", fontsize=24, color=CORAL if rojo else OSC, **F)
+            ax.text(x + .5, y + .45, ch.lower(), ha="center", va="center", fontsize=24, color=CORAL, **F)
+        else:
+            ax.text(x + .5, y + .5, ch, ha="center", va="center", fontsize=24, color=CORAL if rojo else OSC, **F)
+    return png(fig)

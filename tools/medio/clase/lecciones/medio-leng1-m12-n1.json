@@ -1,0 +1,122 @@
+{
+ "slug": "medio-leng1-m12-n1",
+ "step_id": "846e1a8d-044a-4abd-a795-1b3c625403fc",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la Y y la Z",
+ "sub": "Lengua 1 · Misión 12 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "Sofi tiene un álbum de letras.",
+    "¡Le faltan seis!",
+    "Hoy busca dos."
+   ],
+   "titulo": "Y · Z",
+   "sub": "letras nuevas",
+   "voz": [
+    "Sofi tiene un *álbum* de letras.",
+    "¡Le faltan seis figuritas!",
+    "Hoy busca dos.",
+    "Hoy: *dos letras nuevas*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "YOYO",
+   "silabas": [
+    "YO",
+    "YO"
+   ],
+   "tonica": 0,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: yo… yo.",
+    "Esta letra nueva suena como en *yoyo*.",
+    "Y como en *yema*: ya, ye, yo."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "ZAPATO",
+   "silabas": [
+    "ZA",
+    "PA",
+    "TO"
+   ],
+   "tonica": 1,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: za… pa… to.",
+    "Esta otra suena sss, como en *zapato*.",
+    "Za, zo, zu."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "PALABRAS NUEVAS",
+   "items": [
+    "YOYO",
+    "YEMA",
+    "ZAPATO",
+    "ZORRO"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá estas palabras.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *zorro*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál empieza como ZAPATO?",
+   "opciones": [
+    "YOYO",
+    "ZORRO",
+    "PATO",
+    "MESA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál empieza igual que zapato?",
+    "Mirá la primera letra.",
+    "¡*Zorro*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "YOYO",
+     "ya, ye, yo"
+    ],
+    [
+     "ZAPATO",
+     "za, zo, zu"
+    ],
+    [
+     "¡DOS MÁS!",
+     "para el álbum"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La letra de *yoyo*: ya, ye, yo.",
+    "La letra de *zapato*: za, zo, zu.",
+    "¡Dos figuritas más para el álbum!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

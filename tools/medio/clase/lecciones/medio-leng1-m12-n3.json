@@ -1,0 +1,117 @@
+{
+ "slug": "medio-leng1-m12-n3",
+ "step_id": "62e19cf0-e9ff-430d-8862-3101bd153d35",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la K y la X",
+ "sub": "Lengua 1 · Misión 12 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué fruta es verde por dentro y peluda por fuera?",
+   "segundos": 8,
+   "respuesta": "¡El KIWI!",
+   "emoji": "🥝",
+   "titulo": "K · X",
+   "sub": "letras nuevas",
+   "voz": [
+    "Desafío: ¿qué fruta es verde por dentro?",
+    "¡El *kiwi*!",
+    "Hoy: *las dos últimas letras*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué animal es?",
+   "pistas": [
+    "Vive en los árboles",
+    "Es gris y peludo",
+    "Empieza como KIWI"
+   ],
+   "respuesta": "KOALA 🐨",
+   "voz": [
+    "Adivinanza: ¿qué animal es?",
+    "Pista uno: vive en los árboles.",
+    "Pista dos: es gris y peludo.",
+    "Pista tres: empieza como *kiwi*.",
+    "¡El *koala*!"
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "TAXI",
+   "silabas": [
+    "TA",
+    "XI"
+   ],
+   "tonica": 0,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: ta… xi.",
+    "Esta letra suena *ks*, dos sonidos juntos.",
+    "Como en *taxi* y *examen*."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿CUÁL VA?",
+   "pares": [
+    [
+     "KIWI",
+     "K"
+    ],
+    [
+     "TAXI",
+     "X"
+    ],
+    [
+     "KOALA",
+     "K"
+    ]
+   ],
+   "voz": [
+    "Unimos cada palabra con su letra.",
+    "Kiwi: la de *kiwi*.",
+    "Taxi: la que suena *ks*.",
+    "Koala: la de *kiwi*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POCAS PALABRAS",
+   "texto": "Con K y X hay pocas palabras",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: con estas dos letras hay *muy pocas* palabras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "KIWI",
+     "ka, ki, ko"
+    ],
+    [
+     "TAXI",
+     "suena ks"
+    ],
+    [
+     "¡COMPLETO!",
+     "el álbum"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La de *kiwi*: suena como en casa.",
+    "La de *taxi*: suena ks.",
+    "¡El álbum está *completo*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
