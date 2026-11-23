@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       mision: { description: 'Archivo de la misión (ej. contenido/medio/matematica-1/mision-1/mision-1.json)', required: true }
+permissions: { contents: read, actions: read }
 concurrency: { group: mision-medio, cancel-in-progress: false }
 jobs:
   mision:
@@ -28,12 +29,17 @@ jobs:
           pip install reportlab pillow
       - name: Qué misiones hay que cargar
         id: cuales
-        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}' }
+        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}', GH_TOKEN: '${{ github.token }}' }
         run: |
+          # Desde cuándo mirar: el último cambio que esta máquina terminó BIEN (no el cambio anterior). Así, si una corrida en espera se cancela
+          # porque llegó otra más nueva, lo que traía se carga igual en la siguiente (da igual quién lo subió ni cuántos cambios haya juntos).
+          BASE=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/mision-medio.yml/runs?status=success&event=push&branch=main&per_page=1" --jq '.workflow_runs[0].head_sha' 2>/dev/null || true)
+          if [ -z "$BASE" ] || [ "$BASE" = "null" ] || ! git merge-base --is-ancestor "$BASE" "$GITHUB_SHA" 2>/dev/null; then BASE="$ANTES"; fi
+          echo "Mirando cambios desde: $BASE"
           if [ -n "$MANUAL" ]; then L="$MANUAL"
-          else L=$(git diff --name-only "$ANTES" "$GITHUB_SHA" -- 'contenido/medio/**/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/medio/**/mision-*.json'); fi
+          else L=$(git diff --name-only "$BASE" "$GITHUB_SHA" -- 'contenido/medio/**/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/medio/**/mision-*.json'); fi
           # recargar.txt: una misión por línea (para volver a cargar algo sin cambiarlo)
-          if git diff --name-only "$ANTES" "$GITHUB_SHA" 2>/dev/null | grep -qx 'contenido/medio/recargar.txt'; then L="$L $(grep -v '^#' contenido/medio/recargar.txt)"; fi
+          if git diff --name-only "$BASE" "$GITHUB_SHA" 2>/dev/null | grep -qx 'contenido/medio/recargar.txt'; then L="$L $(grep -v '^#' contenido/medio/recargar.txt)"; fi
           L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
           echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
       - name: Control de calidad (si no cumple, no se carga nada)
