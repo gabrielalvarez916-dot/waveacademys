@@ -1,3 +1,13 @@
 {
-  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ':(exclude)contenido' ':(exclude)tools' ':(exclude)docs' ':(exclude)supabase' ':(exclude).github' ':(exclude)actividades/clases'"
+  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ':(exclude)contenido' ':(exclude)tools' ':(exclude)docs' ':(exclude)supabase' ':(exclude).github' ':(exclude)actividades/clases'",
+  "headers": [
+    {
+      "source": "/",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    },
+    {
+      "source": "/(.*)\\.(html|css|js)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ]
 }
