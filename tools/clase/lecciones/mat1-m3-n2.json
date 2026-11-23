@@ -147,21 +147,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "(2 + 3)² = 2² + 3² = 13",
+     "despues": "(2 + 3)² = 5² = 25",
+     "motivo": ""
+    },
+    {
+     "antes": "2³ × 2² = 4⁵",
+     "despues": "2³ × 2² = 2⁵",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Dos *errores* frecuentes.",
     "Repartir sobre una suma: dos más tres, al cuadrado, *no* es 13.",
     "Y multiplicar las bases: dos a la tres por dos al cuadrado es dos a la quinta, *no* cuatro a la quinta."
-   ],
-   "items": [
-    {
-     "mal": "(2 + 3)² = 2² + 3² = 13",
-     "bien": "(2 + 3)² = 5² = 25"
-    },
-    {
-     "mal": "2³ × 2² = 4⁵",
-     "bien": "2³ × 2² = 2⁵"
-    }
    ]
   },
   {

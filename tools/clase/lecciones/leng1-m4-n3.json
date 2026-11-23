@@ -63,9 +63,9 @@
    ]
   },
   {
-   "t": "matriz",
+   "t": "bloques",
    "titulo": "UNIMEMBRES TÍPICAS",
-   "celdas": [
+   "items": [
     {
      "cab": "CLIMA",
      "txt": "Llueve. Nieva."
@@ -92,33 +92,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "TÁCITO",
-     "emoji": "🫥"
+     "txt": "Volvieron cansados., Llegaste tarde."
     },
     {
      "cab": "UNIMEMBRE",
-     "emoji": "🧱"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Volvieron cansados.",
-     "caja": 0
-    },
-    {
-     "txt": "Llegaste tarde.",
-     "caja": 0
-    },
-    {
-     "txt": "Anocheció temprano.",
-     "caja": 1
-    },
-    {
-     "txt": "Hubo tormenta.",
-     "caja": 1
+     "txt": "Anocheció temprano., Hubo tormenta."
     }
    ],
    "voz": [

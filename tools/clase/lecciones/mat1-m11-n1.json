@@ -190,24 +190,31 @@
    }
   },
   {
-   "t": "dato",
+   "t": "datoloco",
+   "texto": "…, −3, −2, −1, 0, 1, 2, 3, … sin principio ni fin",
+   "emoji": "♾️",
+   "numero": 0,
    "voz": [
     "Momento sorpresa: si contás para la derecha, los números no terminan nunca.",
     "¡Y para la izquierda *tampoco*! Los enteros no tienen ni principio ni fin."
-   ],
-   "numero": 0,
-   "texto": "…, −3, −2, −1, 0, 1, 2, 3, … sin principio ni fin",
-   "emoji": "♾️"
+   ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Enteros",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "…, −2, −1, 0, 1, 2, … naturales, cero y negativos"
+    }
+   ],
    "voz": [
     "Naturales, cero y negativos juntos forman los *números enteros*.",
     "Es un conjunto *infinito para los dos lados*."
-   ],
-   "palabra": "Enteros",
-   "texto": "…, −2, −1, 0, 1, 2, … naturales, cero y negativos",
-   "emoji": "🧱"
+   ]
   },
   {
    "t": "zoom",

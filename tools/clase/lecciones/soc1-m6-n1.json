@@ -129,30 +129,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Qué cuida más el suelo?",
    "opciones": [
-    "La rotación de cultivos",
     "El monocultivo",
-    "La tala"
+    "La tala",
+    "La rotación de cultivos"
    ],
-   "correcta": 0,
+   "correcta": 2,
    "voz": [
     "Te toca: ¿qué cuida más el suelo?",
-    "¿La rotación de cultivos, el monocultivo o la tala?",
+    "¿el monocultivo, la tala, o la rotación de cultivos?",
     "La *rotación de cultivos*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "El suelo se renueva rápido",
-     "bien": "Tarda siglos"
+     "antes": "El suelo se renueva rápido",
+     "despues": "Tarda siglos",
+     "motivo": ""
     },
     {
-     "mal": "Sembrar siempre lo mismo no daña",
-     "bien": "Agota los nutrientes"
+     "antes": "Sembrar siempre lo mismo no daña",
+     "despues": "Agota los nutrientes",
+     "motivo": ""
     }
    ],
    "voz": [

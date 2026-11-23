@@ -30,21 +30,25 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "PARTES DEL NÚCLEO",
-   "items": [
-    {
-     "cab": "ENVOLTURA",
-     "txt": "Doble membrana con poros"
-    },
-    {
-     "cab": "CROMATINA",
-     "txt": "ADN con proteínas"
-    },
-    {
-     "cab": "NUCLÉOLO",
-     "txt": "Fabrica ribosomas"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PASO 1",
+     "Envoltura: Doble membrana con poros"
+    ],
+    [
+     "PASO 2",
+     "Cromatina: ADN con proteínas"
+    ],
+    [
+     "PASO 3",
+     "Nucléolo: Fabrica ribosomas"
+    ]
    ],
    "voz": [
     "Mirá el núcleo por dentro.",

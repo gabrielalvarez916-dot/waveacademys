@@ -20,10 +20,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Nombre científico",
-   "texto": "Nombre único, de dos palabras en latín",
-   "emoji": "📛",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Nombre científico",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Nombre único, de dos palabras en latín"
+    }
+   ],
    "voz": [
     "El *nombre científico* es único en todo el mundo.",
     "Tiene dos palabras en latín."
@@ -54,13 +61,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "EJEMPLOS",
-   "columnas": [
-    "Nombre común",
-    "Nombre científico"
-   ],
-   "filas": [
+   "pares": [
     [
      "Puma",
      "Puma concolor"
@@ -74,6 +77,7 @@
      "Erythrina crista-galli"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Mirá algunos ejemplos.",
     "El *puma*: Puma concolor.",
@@ -138,30 +142,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Cuál está bien escrito?",
    "opciones": [
-    "Puma concolor",
     "puma Concolor",
+    "Puma concolor",
     "PUMA concolor"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿cuál está bien escrito?",
-    "¿Puma concolor, puma Concolor o PUMA concolor?",
+    "¿puma Concolor, puma concolor, o PUMA concolor?",
     "*Puma concolor*: género con mayúscula y especie con minúscula."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Epíteto con mayúscula",
-     "bien": "Va en minúscula"
+     "antes": "Epíteto con mayúscula",
+     "despues": "Va en minúscula",
+     "motivo": ""
     },
     {
-     "mal": "Solo nombre común",
-     "bien": "Usar el científico"
+     "antes": "Solo nombre común",
+     "despues": "Usar el científico",
+     "motivo": ""
     }
    ],
    "voz": [

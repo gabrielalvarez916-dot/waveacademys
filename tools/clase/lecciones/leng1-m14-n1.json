@@ -20,22 +20,19 @@
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "ESQUEMA",
-   "eventos": [
+   "items": [
     {
-     "fecha": "1",
-     "txt": "Inicio",
+     "txt": "1: Inicio",
      "emoji": "👋"
     },
     {
-     "fecha": "2",
-     "txt": "Desarrollo",
+     "txt": "2: Desarrollo",
      "emoji": "📚"
     },
     {
-     "fecha": "3",
-     "txt": "Cierre",
+     "txt": "3: Cierre",
      "emoji": "🔚"
     }
    ],

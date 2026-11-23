@@ -190,46 +190,56 @@
    ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Revelación",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "El detective explica cómo resolvió el enigma"
+    }
+   ],
    "voz": [
     "El momento en que el detective explica todo se llama *desenlace* o *revelación*.",
     "Holmes y la policía esperan en la bóveda y atrapan a *John Clay*, el falso ayudante."
-   ],
-   "palabra": "Revelación",
-   "texto": "El detective explica cómo resolvió el enigma",
-   "emoji": "💡"
+   ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Por qué Holmes no le avisa antes a la policía?",
    "opciones": [
-    "Necesita atraparlos en el acto",
     "No confía en Wilson",
-    "Quiere el oro para él"
+    "Quiere el oro para él",
+    "Necesita atraparlos en el acto"
    ],
-   "correcta": 0,
+   "correcta": 2,
    "voz": [
     "Te toca: Holmes ya sospecha del túnel. ¿Por qué no avisa enseguida a la policía?",
-    "¿Porque necesita atraparlos en el acto, porque no confía en Wilson, o porque quiere el oro?",
+    "¿no confía en Wilson, quiere el oro para él, o necesita atraparlos en el acto?",
     "Porque necesita *atraparlos en el acto*: sin pruebas, John Clay podría escaparse otra vez."
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Contar desordenado",
+     "despues": "Seguir el orden",
+     "motivo": ""
+    },
+    {
+     "antes": "Pistas sueltas",
+     "despues": "Unirlas con porque",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Contar el caso *desordenado*.",
     "Y olvidar *por qué* cada pista lleva a la siguiente."
-   ],
-   "items": [
-    {
-     "mal": "Contar desordenado",
-     "bien": "Seguir el orden"
-    },
-    {
-     "mal": "Pistas sueltas",
-     "bien": "Unirlas con porque"
-    }
    ]
   },
   {

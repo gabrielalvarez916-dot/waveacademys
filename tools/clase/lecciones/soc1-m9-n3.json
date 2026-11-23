@@ -20,23 +20,26 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Arte rupestre",
-   "texto": "Pinturas y grabados en cuevas y rocas",
-   "emoji": "🎨",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Arte rupestre",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Pinturas y grabados en cuevas y rocas"
+    }
+   ],
    "voz": [
     "El *arte rupestre* son pinturas y grabados en cuevas y rocas.",
     "Se hacían con pigmentos naturales, como ocre y carbón."
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "CUEVAS FAMOSAS",
-   "columnas": [
-    "Cueva",
-    "País"
-   ],
-   "filas": [
+   "pares": [
     [
      "Altamira",
      "España"
@@ -50,6 +53,7 @@
      "Argentina"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Tres cuevas famosas.",
     "*Altamira*, en España.",
@@ -68,24 +72,12 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Qué significaban las pinturas",
-    "emoji": "❓"
-   },
+   "t": "pasos",
+   "titulo": "QUÉ SIGNIFICABAN LAS PINTURAS",
    "items": [
-    {
-     "txt": "Magia de la caza",
-     "emoji": "🏹"
-    },
-    {
-     "txt": "Ritual",
-     "emoji": "🕯️"
-    },
-    {
-     "txt": "Registro",
-     "emoji": "📜"
-    }
+    "Efecto 1: Magia de la caza",
+    "Efecto 2: Ritual",
+    "Efecto 3: Registro"
    ],
    "voz": [
     "¿Qué significaban?",

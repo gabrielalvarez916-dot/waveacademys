@@ -1,1 +1,142 @@
-{"slug": "ing1-m3-n3", "step_id": "6456216f-212c-433a-b7ea-fadbd664757e", "materia": "Inglés I", "titulo": "Childhood memories", "sub": "Inglés I · Misión 3 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Cómo se dice en inglés me acuerdo?", "segundos": 6, "respuesta": "I remember", "emoji": "🧸", "titulo": "RECUERDOS", "sub": "cuando eras chico", "voz": ["Desafío: ¿cómo se dice me acuerdo? Seis segundos.", "*I remember*.", "Hoy: *recuerdos de la infancia*."]}, {"t": "tarjetas", "titulo": "JUGUETES", "items": [{"en": "doll", "es": "muñeca", "emoji": "🪆"}, {"en": "kite", "es": "barrilete", "emoji": "🪁"}, {"en": "puzzle", "es": "rompecabezas", "emoji": "🧩"}, {"en": "marbles", "es": "canicas", "emoji": "🔮"}], "voz": ["Primer juguete: *doll*.", "Segundo juguete: *kite*.", "Tercer juguete: *puzzle*.", "Cuarto juguete: *marbles*."]}, {"t": "pronunciacion", "titulo": "CÓMO SE DICEN", "palabras": [{"en": "remember", "como": "rimémber", "es": "acordarse"}, {"en": "childhood", "como": "cháildyud", "es": "infancia"}], "voz": ["Primera palabra: *remember*.", "Segunda palabra: *childhood*."]}, {"t": "oracion", "titulo": "UN RECUERDO", "partes": [{"txt": "When I was seven", "rol": "tiempo"}, {"txt": "I used to play", "rol": "verbo"}, {"txt": "in the park", "rol": "lugar"}], "traduccion": "Cuando tenía siete jugaba en el parque", "voz": ["Primero, *cuándo*.", "Después, lo que *hacía*.", "Luego, *dónde*.", "Significa que a los siete jugaba en el parque."]}, {"t": "pregunta", "pregunta": "We ___ very happy when we were kids.", "opciones": ["were", "was", "are"], "correcta": 0, "voz": ["Te toca: la forma de be.", "¿*Were*, *was* o *are*?", "*Were*."]}, {"t": "resumen", "voz": ["Repasemos.", "Cuenta *cuándo*, *qué hacías* y *cómo te sentías*.", "Usa *was* y *were*.", "Empieza con *I remember*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["CUÁNDO", "when I was"], ["QUÉ HACÍAS", "used to"], ["CÓMO TE SENTÍAS", "was o were"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m3-n3",
+ "step_id": "6456216f-212c-433a-b7ea-fadbd664757e",
+ "materia": "Inglés I",
+ "titulo": "Childhood memories",
+ "sub": "Inglés I · Misión 3 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se dice en inglés me acuerdo?",
+   "segundos": 6,
+   "respuesta": "I remember",
+   "emoji": "🧸",
+   "titulo": "RECUERDOS",
+   "sub": "cuando eras chico",
+   "voz": [
+    "Desafío: ¿cómo se dice me acuerdo? Seis segundos.",
+    "*I remember*.",
+    "Hoy: *recuerdos de la infancia*."
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "doll",
+     "emoji": "🪆",
+     "trad": "muñeca"
+    },
+    {
+     "palabra": "kite",
+     "emoji": "🪁",
+     "trad": "barrilete"
+    },
+    {
+     "palabra": "puzzle",
+     "emoji": "🧩",
+     "trad": "rompecabezas"
+    },
+    {
+     "palabra": "marbles",
+     "emoji": "🔮",
+     "trad": "canicas"
+    }
+   ],
+   "voz": [
+    "Primer juguete: *doll*.",
+    "Segundo juguete: *kite*.",
+    "Tercer juguete: *puzzle*.",
+    "Cuarto juguete: *marbles*."
+   ]
+  },
+  {
+   "t": "pronunciacion",
+   "titulo": "CÓMO SE DICEN",
+   "palabras": [
+    {
+     "en": "remember",
+     "como": "rimémber",
+     "es": "acordarse"
+    },
+    {
+     "en": "childhood",
+     "como": "cháildyud",
+     "es": "infancia"
+    }
+   ],
+   "voz": [
+    "Primera palabra: *remember*.",
+    "Segunda palabra: *childhood*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UN RECUERDO",
+   "partes": [
+    {
+     "txt": "When I was seven",
+     "rol": "tiempo"
+    },
+    {
+     "txt": "I used to play",
+     "rol": "verbo"
+    },
+    {
+     "txt": "in the park",
+     "rol": "lugar"
+    }
+   ],
+   "traduccion": "Cuando tenía siete jugaba en el parque",
+   "voz": [
+    "Primero, *cuándo*.",
+    "Después, lo que *hacía*.",
+    "Luego, *dónde*.",
+    "Significa que a los siete jugaba en el parque."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "We ___ very happy when we were kids.",
+   "opciones": [
+    "were",
+    "was",
+    "are"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la forma de be.",
+    "¿*Were*, *was* o *are*?",
+    "*Were*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Cuenta *cuándo*, *qué hacías* y *cómo te sentías*.",
+    "Usa *was* y *were*.",
+    "Empieza con *I remember*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CUÁNDO",
+     "when I was"
+    ],
+    [
+     "QUÉ HACÍAS",
+     "used to"
+    ],
+    [
+     "CÓMO TE SENTÍAS",
+     "was o were"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

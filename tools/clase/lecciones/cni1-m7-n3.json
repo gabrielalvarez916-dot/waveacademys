@@ -30,33 +30,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "ECTOPARÁSITO",
-     "emoji": "🪲"
+     "txt": "Pulga, Garrapata"
     },
     {
      "cab": "ENDOPARÁSITO",
-     "emoji": "🪱"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Pulga",
-     "caja": 0
-    },
-    {
-     "txt": "Tenia",
-     "caja": 1
-    },
-    {
-     "txt": "Garrapata",
-     "caja": 0
-    },
-    {
-     "txt": "Lombriz",
-     "caja": 1
+     "txt": "Tenia, Lombriz"
     }
    ],
    "voz": [

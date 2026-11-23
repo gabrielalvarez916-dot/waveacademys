@@ -1,1 +1,160 @@
-{"slug": "ing1-m6-n1", "step_id": "bdc31d5a-a852-4e1f-b274-523644e0872b", "materia": "Inglés I", "titulo": "Present continuous for future plans", "sub": "Inglés I · Misión 6 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Con qué forma se cuenta un plan acordado para mañana?", "segundos": 6, "respuesta": "Presente continuo", "emoji": "📅", "titulo": "PLANES", "sub": "presente continuo para el futuro", "voz": ["Desafío: ¿con qué forma se cuenta un plan acordado? Seis segundos.", "*Presente continuo*.", "Hoy: *planes para el futuro*."]}, {"t": "oracion", "titulo": "UN PLAN ACORDADO", "partes": [{"txt": "I", "rol": "sujeto"}, {"txt": "am meeting", "rol": "verbo"}, {"txt": "my friends", "rol": "complemento"}, {"txt": "tomorrow", "rol": "tiempo"}], "traduccion": "Mañana me junto con mis amigos", "voz": ["Primero, *quién*.", "Después, *am* más el verbo con *ing*.", "Luego, *con quién*.", "Y por último, *cuándo*.", "Significa que mañana se junta con sus amigos."]}, {"t": "tarjetas", "titulo": "CUÁNDO", "items": [{"en": "tomorrow", "es": "mañana", "emoji": "🌅"}, {"en": "tonight", "es": "esta noche", "emoji": "🌙"}, {"en": "next week", "es": "la semana que viene", "emoji": "📆"}], "voz": ["Primera expresión: *tomorrow*.", "Segunda expresión: *tonight*.", "Tercera expresión: *next week*."]}, {"t": "comparar", "a": {"cab": "PRESENTE SIMPLE", "texto": "Rutinas", "emoji": "🔁"}, "b": {"cab": "PRESENTE CONTINUO", "texto": "Planes y lo de ahora", "emoji": "⏱️"}, "signo": "vs", "voz": ["Dos usos.", "El *simple* cuenta rutinas.", "El *continuo* cuenta planes y lo de ahora."]}, {"t": "pregunta", "pregunta": "I ___ meeting my friends tomorrow.", "opciones": ["am", "is", "are"], "correcta": 0, "voz": ["Te toca: el auxiliar.", "¿*Am*, *is* o *are*?", "*Am*, con *I*."]}, {"t": "errores", "items": [{"mal": "We meet them tomorrow", "bien": "We are meeting them tomorrow"}, {"mal": "She is watch a movie", "bien": "She is watching a movie"}], "voz": ["Errores típicos.", "Usar el *presente simple* para un plan.", "Y olvidar el *ing*."]}, {"t": "resumen", "voz": ["Repasemos.", "Un *plan acordado* va en *presente continuo*.", "Se forma con *am, is o are* más *ing*.", "Siempre lleva una *expresión de tiempo*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["PLAN ACORDADO", "presente continuo"], ["FORMA", "am, is, are más ing"], ["TIEMPO", "tomorrow, tonight"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m6-n1",
+ "step_id": "bdc31d5a-a852-4e1f-b274-523644e0872b",
+ "materia": "Inglés I",
+ "titulo": "Present continuous for future plans",
+ "sub": "Inglés I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Con qué forma se cuenta un plan acordado para mañana?",
+   "segundos": 6,
+   "respuesta": "Presente continuo",
+   "emoji": "📅",
+   "titulo": "PLANES",
+   "sub": "presente continuo para el futuro",
+   "voz": [
+    "Desafío: ¿con qué forma se cuenta un plan acordado? Seis segundos.",
+    "*Presente continuo*.",
+    "Hoy: *planes para el futuro*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UN PLAN ACORDADO",
+   "partes": [
+    {
+     "txt": "I",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "am meeting",
+     "rol": "verbo"
+    },
+    {
+     "txt": "my friends",
+     "rol": "complemento"
+    },
+    {
+     "txt": "tomorrow",
+     "rol": "tiempo"
+    }
+   ],
+   "traduccion": "Mañana me junto con mis amigos",
+   "voz": [
+    "Primero, *quién*.",
+    "Después, *am* más el verbo con *ing*.",
+    "Luego, *con quién*.",
+    "Y por último, *cuándo*.",
+    "Significa que mañana se junta con sus amigos."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "CUÁNDO",
+   "items": [
+    {
+     "en": "tomorrow",
+     "es": "mañana",
+     "emoji": "🌅"
+    },
+    {
+     "en": "tonight",
+     "es": "esta noche",
+     "emoji": "🌙"
+    },
+    {
+     "en": "next week",
+     "es": "la semana que viene",
+     "emoji": "📆"
+    }
+   ],
+   "voz": [
+    "Primera expresión: *tomorrow*.",
+    "Segunda expresión: *tonight*.",
+    "Tercera expresión: *next week*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PRESENTE SIMPLE",
+    "texto": "Rutinas",
+    "emoji": "🔁"
+   },
+   "b": {
+    "cab": "PRESENTE CONTINUO",
+    "texto": "Planes y lo de ahora",
+    "emoji": "⏱️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos usos.",
+    "El *simple* cuenta rutinas.",
+    "El *continuo* cuenta planes y lo de ahora."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "I",
+   "despues": "meeting my friends tomorrow.",
+   "opciones": [
+    "is",
+    "am",
+    "are"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: el auxiliar.",
+    "¿is, am, o are?",
+    "*Am*, con *I*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "We meet them tomorrow",
+     "bien": "We are meeting them tomorrow"
+    },
+    {
+     "mal": "She is watch a movie",
+     "bien": "She is watching a movie"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar el *presente simple* para un plan.",
+    "Y olvidar el *ing*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un *plan acordado* va en *presente continuo*.",
+    "Se forma con *am, is o are* más *ing*.",
+    "Siempre lleva una *expresión de tiempo*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PLAN ACORDADO",
+     "presente continuo"
+    ],
+    [
+     "FORMA",
+     "am, is, are más ing"
+    ],
+    [
+     "TIEMPO",
+     "tomorrow, tonight"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

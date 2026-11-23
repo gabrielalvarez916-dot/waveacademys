@@ -28,13 +28,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "CAUSAS",
-   "columnas": [
-    "Causa",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Hábitat",
      "Desmonte"
@@ -56,6 +52,7 @@
      "Cambios"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Las causas.",
     "*Pérdida del hábitat*: desmonte.",

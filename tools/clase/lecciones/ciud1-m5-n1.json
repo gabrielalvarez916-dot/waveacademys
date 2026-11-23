@@ -21,10 +21,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Estado de derecho",
-   "texto": "El poder limitado por leyes iguales para todos",
-   "emoji": "⚖️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Estado de derecho",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "El poder limitado por leyes iguales para todos"
+    }
+   ],
    "voz": [
     "En un *Estado de derecho* el poder se ejerce según leyes.",
     "Leyes conocidas e iguales para todos."
@@ -60,27 +67,28 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Impunidad",
-   "texto": "Falta de castigo",
-   "emoji": "🚫",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Impunidad",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Falta de castigo"
+    }
+   ],
    "voz": [
     "La *impunidad* es la falta de castigo.",
     "Un Estado de derecho la evita."
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "CÓMO SE CLASIFICA",
    "items": [
-    {
-     "cab": "RESPETA",
-     "txt": "Igualdad de todos, Jueces libres"
-    },
-    {
-     "cab": "ROMPE",
-     "txt": "Privilegios, Cambiar reglas"
-    }
+    "Respeta: Igualdad de todos, Jueces libres",
+    "Rompe: Privilegios, Cambiar reglas"
    ],
    "voz": [
     "¿Respeta o rompe el Estado de derecho?",
@@ -89,30 +97,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Quién debe cumplir la ley?",
    "opciones": [
-    "Todos",
     "Solo los ciudadanos",
+    "Todos",
     "Solo los jueces"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿quién debe cumplir la ley?",
-    "¿Todos, solo los ciudadanos o solo los jueces?",
+    "¿solo los ciudadanos, todos, o solo los jueces?",
     "*Todos*, también los gobernantes."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "El gobierno puede actuar fuera de la ley",
-     "bien": "Debe cumplirla"
+     "antes": "El gobierno puede actuar fuera de la ley",
+     "despues": "Debe cumplirla",
+     "motivo": ""
     },
     {
-     "mal": "Es solo tener leyes",
-     "bien": "Es que valgan para todos"
+     "antes": "Es solo tener leyes",
+     "despues": "Es que valgan para todos",
+     "motivo": ""
     }
    ],
    "voz": [

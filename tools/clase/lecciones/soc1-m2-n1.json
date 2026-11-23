@@ -78,7 +78,7 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Cuando en Argentina es invierno, en España es…",
    "opciones": [
     "Verano",
@@ -93,15 +93,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Verano = Tierra más cerca del Sol",
-     "bien": "Es por la inclinación del eje"
+     "antes": "Verano = Tierra más cerca del Sol",
+     "despues": "Es por la inclinación del eje",
+     "motivo": ""
     },
     {
-     "mal": "La noche es por la traslación",
-     "bien": "Es por la rotación"
+     "antes": "La noche es por la traslación",
+     "despues": "Es por la rotación",
+     "motivo": ""
     }
    ],
    "voz": [

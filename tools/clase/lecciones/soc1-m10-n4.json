@@ -30,13 +30,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "QUÉ CAMBIÓ",
-   "columnas": [
-    "Aspecto",
-    "Cambio"
-   ],
-   "filas": [
+   "pares": [
     [
      "Alimentación",
      "Se produce"
@@ -50,6 +46,7 @@
      "Oficios y desigualdad"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Los cambios.",
     "La *alimentación*: ahora se produce.",
@@ -77,23 +74,20 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Costos de la agricultura",
-    "emoji": "⚠️"
-   },
+   "t": "bloques",
+   "titulo": "COSTOS DE LA AGRICULTURA",
    "items": [
     {
-     "txt": "Más trabajo",
-     "emoji": "🛠️"
+     "cab": "EFECTO 1",
+     "txt": "Más trabajo"
     },
     {
-     "txt": "Enfermedades",
-     "emoji": "🤒"
+     "cab": "EFECTO 2",
+     "txt": "Enfermedades"
     },
     {
-     "txt": "Dependencia de la cosecha",
-     "emoji": "🌧️"
+     "cab": "EFECTO 3",
+     "txt": "Dependencia de la cosecha"
     }
    ],
    "voz": [

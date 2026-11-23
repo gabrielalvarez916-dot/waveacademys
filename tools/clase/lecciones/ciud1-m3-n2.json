@@ -70,17 +70,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "PACÍFICA",
-     "txt": "Marcha organizada, Asamblea"
-    },
-    {
-     "cab": "NO PACÍFICA",
-     "txt": "Daño a otros, Agresión"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PACÍFICA",
+     "Marcha organizada, Asamblea"
+    ],
+    [
+     "NO PACÍFICA",
+     "Daño a otros, Agresión"
+    ]
    ],
    "voz": [
     "¿Pacífica o no?",

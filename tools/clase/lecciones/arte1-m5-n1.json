@@ -20,10 +20,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Composición",
-   "texto": "Organizar los elementos del espacio",
-   "emoji": "🧩",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Composición",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Organizar los elementos del espacio"
+    }
+   ],
    "voz": [
     "La *composición* es la forma de organizar los elementos.",
     "Guía la mirada."
@@ -84,30 +91,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Un buen punto de interés se ubica…",
    "opciones": [
-    "En una intersección de tercios",
     "Siempre en una esquina",
+    "En una intersección de tercios",
     "Nunca importa"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: el punto de interés.",
-    "¿En una intersección de tercios, en una esquina o nunca importa?",
+    "¿siempre en una esquina, en una intersección de tercios, o nunca importa?",
     "En una *intersección de tercios*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Todo en el centro",
-     "bien": "Usar los tercios"
+     "antes": "Todo en el centro",
+     "despues": "Usar los tercios",
+     "motivo": ""
     },
     {
-     "mal": "Destacar todo a la vez",
-     "bien": "Un protagonista"
+     "antes": "Destacar todo a la vez",
+     "despues": "Un protagonista",
+     "motivo": ""
     }
    ],
    "voz": [

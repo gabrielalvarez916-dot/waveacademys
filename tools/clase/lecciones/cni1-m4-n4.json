@@ -29,13 +29,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "ORGANELAS QUE FABRICAN",
-   "columnas": [
-    "Organela",
-    "Función"
-   ],
-   "filas": [
+   "pares": [
     [
      "Ribosomas",
      "Proteínas"
@@ -49,6 +45,7 @@
      "Empaquetar y enviar"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Las que fabrican.",
     "Los *ribosomas* hacen proteínas.",
@@ -76,17 +73,11 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "DIGERIR Y GUARDAR",
    "items": [
-    {
-     "cab": "LISOSOMAS",
-     "txt": "Digieren"
-    },
-    {
-     "cab": "VACUOLA",
-     "txt": "Guarda agua y otras sustancias"
-    }
+    "Lisosomas: Digieren",
+    "Vacuola: Guarda agua y otras sustancias"
    ],
    "voz": [
     "Otras dos organelas.",
@@ -95,33 +86,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "ENERGÍA",
-     "emoji": "🔋"
+     "txt": "Mitocondria"
     },
     {
      "cab": "FABRICAR",
-     "emoji": "🏭"
+     "txt": "Ribosomas"
     },
     {
      "cab": "DIGERIR",
-     "emoji": "🍽️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Mitocondria",
-     "caja": 0
-    },
-    {
-     "txt": "Ribosomas",
-     "caja": 1
-    },
-    {
-     "txt": "Lisosomas",
-     "caja": 2
+     "txt": "Lisosomas"
     }
    ],
    "voz": [

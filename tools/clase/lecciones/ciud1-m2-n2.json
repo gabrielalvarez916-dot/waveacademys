@@ -21,10 +21,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Régimen autoritario",
-   "texto": "Poder concentrado y sin controles",
-   "emoji": "🔒",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Régimen autoritario",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Poder concentrado y sin controles"
+    }
+   ],
    "voz": [
     "Un *régimen autoritario* concentra el poder en pocas manos.",
     "Y no tiene controles reales."
@@ -115,7 +122,7 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Impedir que se publique algo es…",
    "opciones": [
     "Censura",
@@ -130,15 +137,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Siempre se reconoce por la violencia visible",
-     "bien": "A veces es silencioso"
+     "antes": "Siempre se reconoce por la violencia visible",
+     "despues": "A veces es silencioso",
+     "motivo": ""
     },
     {
-     "mal": "Votar alcanza",
-     "bien": "Faltan libertades y controles"
+     "antes": "Votar alcanza",
+     "despues": "Faltan libertades y controles",
+     "motivo": ""
     }
    ],
    "voz": [

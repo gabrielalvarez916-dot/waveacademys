@@ -20,14 +20,21 @@
    "sub": "y propiedades"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Diagonal",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Segmento entre dos vértices no consecutivos"
+    }
+   ],
    "voz": [
     "Una *diagonal* une dos vértices *que no son consecutivos*.",
     "Todo cuadrilátero tiene *2 diagonales*."
-   ],
-   "palabra": "Diagonal",
-   "texto": "Segmento entre dos vértices no consecutivos",
-   "emoji": "✖️"
+   ]
   },
   {
    "t": "dato",
@@ -525,21 +532,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Diagonales siempre perpendiculares",
+     "despues": "Solo en rombo y cuadrado",
+     "motivo": ""
+    },
+    {
+     "antes": "Cuadrilátero suma 180°",
+     "despues": "Suma 360°",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Pensar que las diagonales *siempre son perpendiculares*: en el rectángulo, no.",
     "Y olvidar los *360*: el cuadrilátero no suma 180."
-   ],
-   "items": [
-    {
-     "mal": "Diagonales siempre perpendiculares",
-     "bien": "Solo en rombo y cuadrado"
-    },
-    {
-     "mal": "Cuadrilátero suma 180°",
-     "bien": "Suma 360°"
-    }
    ]
   },
   {

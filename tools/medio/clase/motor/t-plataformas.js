@@ -249,7 +249,7 @@
       w.caja(p, 0, 0, 790, 170, f[1], f[1], 18, 2).setAttribute('filter', 'url(#sombra)'); w.txt(p, -330, 0, f[0], 70, '#fff'); w.multi(p, 40, 0, o, 42, '#fff', 640); return p; });
     B(0); w.IN(tl, q, 0, { y: -30 });
     B(1); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.08' : 0, { scale: .5, y: 0, ease: 'back.out(2)' }); }); tl.to(bar, { opacity: 1, duration: .1 }, '>'); tl.to(bar, { attr: { width: 0, x: 960 }, duration: 2.6, ease: 'none' }, '>');
-    B(2); O.forEach(function (o, k) { if (k !== d.correcta) tl.to(o, { opacity: .2, scale: .95, duration: .3 }, '<'); }); var c = O[d.correcta] || O[0]; w.pop(tl, c, '>'); w.IN(tl, (function () { var t = w.pieza(c, 330, -60); w.emoji(t, 0, 0, '✅', 70); return t; })(), '<', { scale: 0, y: 0 });
+    B(2); O.forEach(function (o, k) { if (k !== d.correcta) tl.to(o, { opacity: .2, scale: .95, duration: .3 }, '<'); }); var c = O[d.correcta] || O[0]; w.pop(tl, c, '>'); w.IN(tl, (function () { var t = w.pieza(c, 372, -66); w.emoji(t, 0, 0, '✅', 50); return t; })(), '<', { scale: 0, y: 0 });
   } };
 
   // ======================= TRANSFORMACIONES =======================

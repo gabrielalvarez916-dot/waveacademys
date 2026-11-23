@@ -125,40 +125,27 @@
    ]
   },
   {
-   "t": "clasificar",
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "HIPÓTESIS",
+     "txt": "Calor = más rápido"
+    },
+    {
+     "cab": "PROCEDIMIENTO",
+     "txt": "Con y sin lámpara"
+    },
+    {
+     "cab": "RESULTADOS",
+     "txt": "6 min contra 15 min"
+    }
+   ],
    "voz": [
     "¿En qué parte va cada cosa? Del experimento del hielo.",
     "*Hipótesis*: si recibe más calor, se derrite más rápido.",
     "*Procedimiento*: pusimos un cubito bajo la lámpara y otro sin lámpara.",
     "*Resultados*: con lámpara tardó 6 minutos; sin lámpara, 15."
-   ],
-   "cajas": [
-    {
-     "cab": "HIPÓTESIS",
-     "emoji": "💡"
-    },
-    {
-     "cab": "PROCEDIMIENTO",
-     "emoji": "🧪"
-    },
-    {
-     "cab": "RESULTADOS",
-     "emoji": "📊"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Calor = más rápido",
-     "caja": 0
-    },
-    {
-     "txt": "Con y sin lámpara",
-     "caja": 1
-    },
-    {
-     "txt": "6 min contra 15 min",
-     "caja": 2
-    }
    ]
   },
   {
@@ -190,21 +177,24 @@
    "emoji": "🧾"
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Corregir la hipótesis al final",
+     "despues": "Decir si se confirmó o no",
+     "motivo": ""
+    },
+    {
+     "antes": "\"Salió bien\"",
+     "despues": "Conclusión con datos",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "*Cambiar la hipótesis* después de ver los resultados: si no se confirmó, se dice, ¡y eso también es ciencia!",
     "Y una conclusión que *no usa los datos*."
-   ],
-   "items": [
-    {
-     "mal": "Corregir la hipótesis al final",
-     "bien": "Decir si se confirmó o no"
-    },
-    {
-     "mal": "\"Salió bien\"",
-     "bien": "Conclusión con datos"
-    }
    ]
   },
   {

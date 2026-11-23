@@ -1,1 +1,164 @@
-{"slug": "ing1-m6-n3", "step_id": "51a63442-7d4d-43df-862c-f1b966e0031e", "materia": "Inglés I", "titulo": "Might and may: possibility", "sub": "Inglés I · Misión 6 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Qué palabra expresa posibilidad: might o will?", "segundos": 6, "respuesta": "Might", "emoji": "🌦️", "titulo": "POSIBILIDAD", "sub": "might y may", "voz": ["Desafío: ¿qué palabra expresa posibilidad? Seis segundos.", "*Might*.", "Hoy: *might y may*."]}, {"t": "oracion", "titulo": "UNA POSIBILIDAD", "partes": [{"txt": "It", "rol": "sujeto"}, {"txt": "might", "rol": "verbo"}, {"txt": "rain", "rol": "verbo"}, {"txt": "tomorrow", "rol": "tiempo"}], "traduccion": "Tal vez llueva mañana", "voz": ["Primero, *qué*.", "Después, *might*.", "Luego, el verbo en *forma base*.", "Y *cuándo*.", "Significa que tal vez llueva mañana."]}, {"t": "tabla", "titulo": "QUÉ TAN SEGURO", "columnas": ["Forma", "Seguridad"], "filas": [["will", "Muy seguro"], ["might, may", "Posible"], ["won't", "Seguro que no"]], "voz": ["Tres grados de seguridad.", "*Will* es muy seguro.", "*Might* y *may* son posibles.", "*Won't* es seguro que no."]}, {"t": "tarjetas", "titulo": "EJEMPLOS", "items": [{"en": "It might rain.", "es": "Tal vez llueva.", "emoji": "🌧️"}, {"en": "She may come.", "es": "Tal vez venga.", "emoji": "🚶"}, {"en": "He might not go.", "es": "Tal vez no vaya.", "emoji": "🚫"}], "voz": ["Primer ejemplo: la lluvia.", "Segundo ejemplo: ella.", "Tercer ejemplo: él."]}, {"t": "pregunta", "pregunta": "Después de might el verbo va…", "opciones": ["en forma base", "con to", "con ing"], "correcta": 0, "voz": ["Te toca: el verbo.", "¿En base, con *to* o con *ing*?", "En *forma base*."]}, {"t": "errores", "items": [{"mal": "She might to come", "bien": "She might come"}, {"mal": "It will might rain", "bien": "It might rain"}], "voz": ["Errores típicos.", "Poner *to* después de *might*.", "Y juntar *will* con *might*."]}, {"t": "resumen", "voz": ["Repasemos.", "*Might* y *may* expresan posibilidad.", "Después va el *verbo base*.", "*Will* es más seguro.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["MIGHT Y MAY", "posibilidad"], ["VERBO", "forma base"], ["WILL", "seguro"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m6-n3",
+ "step_id": "51a63442-7d4d-43df-862c-f1b966e0031e",
+ "materia": "Inglés I",
+ "titulo": "Might and may: possibility",
+ "sub": "Inglés I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra expresa posibilidad: might o will?",
+   "segundos": 6,
+   "respuesta": "Might",
+   "emoji": "🌦️",
+   "titulo": "POSIBILIDAD",
+   "sub": "might y may",
+   "voz": [
+    "Desafío: ¿qué palabra expresa posibilidad? Seis segundos.",
+    "*Might*.",
+    "Hoy: *might y may*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UNA POSIBILIDAD",
+   "partes": [
+    {
+     "txt": "It",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "might",
+     "rol": "verbo"
+    },
+    {
+     "txt": "rain",
+     "rol": "verbo"
+    },
+    {
+     "txt": "tomorrow",
+     "rol": "tiempo"
+    }
+   ],
+   "traduccion": "Tal vez llueva mañana",
+   "voz": [
+    "Primero, *qué*.",
+    "Después, *might*.",
+    "Luego, el verbo en *forma base*.",
+    "Y *cuándo*.",
+    "Significa que tal vez llueva mañana."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "QUÉ TAN SEGURO",
+   "pares": [
+    [
+     "will",
+     "Muy seguro"
+    ],
+    [
+     "might, may",
+     "Posible"
+    ],
+    [
+     "won't",
+     "Seguro que no"
+    ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Tres grados de seguridad.",
+    "*Will* es muy seguro.",
+    "*Might* y *may* son posibles.",
+    "*Won't* es seguro que no."
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "It might rain.",
+     "emoji": "🌧️",
+     "trad": "Tal vez llueva."
+    },
+    {
+     "palabra": "She may come.",
+     "emoji": "🚶",
+     "trad": "Tal vez venga."
+    },
+    {
+     "palabra": "He might not go.",
+     "emoji": "🚫",
+     "trad": "Tal vez no vaya."
+    }
+   ],
+   "voz": [
+    "Primer ejemplo: la lluvia.",
+    "Segundo ejemplo: ella.",
+    "Tercer ejemplo: él."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Después de might el verbo va…",
+   "opciones": [
+    "en forma base",
+    "con to",
+    "con ing"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el verbo.",
+    "¿En base, con *to* o con *ing*?",
+    "En *forma base*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "She might to come",
+     "bien": "She might come"
+    },
+    {
+     "mal": "It will might rain",
+     "bien": "It might rain"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner *to* después de *might*.",
+    "Y juntar *will* con *might*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Might* y *may* expresan posibilidad.",
+    "Después va el *verbo base*.",
+    "*Will* es más seguro.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MIGHT Y MAY",
+     "posibilidad"
+    ],
+    [
+     "VERBO",
+     "forma base"
+    ],
+    [
+     "WILL",
+     "seguro"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

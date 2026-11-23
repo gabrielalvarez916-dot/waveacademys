@@ -25,10 +25,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Membrana",
-   "texto": "Rodea la célula y elige qué entra y qué sale",
-   "emoji": "🚪",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Membrana",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Rodea la célula y elige qué entra y qué sale"
+    }
+   ],
    "voz": [
     "La *membrana plasmática* rodea a toda célula.",
     "Tiene *permeabilidad selectiva*: deja pasar unas sustancias y otras no."
@@ -78,21 +85,12 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "LA PARED CELULAR",
    "items": [
-    {
-     "cab": "DE QUÉ",
-     "txt": "Celulosa"
-    },
-    {
-     "cab": "PARA QUÉ",
-     "txt": "Da forma y protege"
-    },
-    {
-     "cab": "QUIÉN LA TIENE",
-     "txt": "Plantas, hongos, bacterias"
-    }
+    "De qué: Celulosa",
+    "Para qué: Da forma y protege",
+    "Quién la tiene: Plantas, hongos, bacterias"
    ],
    "voz": [
     "Algunas células tienen *pared celular*.",
@@ -102,29 +100,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "PASIVO",
-     "emoji": "🍃"
+     "txt": "Difusión, Ósmosis"
     },
     {
      "cab": "ACTIVO",
-     "emoji": "⚡"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Difusión",
-     "caja": 0
-    },
-    {
-     "txt": "Ósmosis",
-     "caja": 0
-    },
-    {
-     "txt": "Gasta energía",
-     "caja": 1
+     "txt": "Gasta energía"
     }
    ],
    "voz": [

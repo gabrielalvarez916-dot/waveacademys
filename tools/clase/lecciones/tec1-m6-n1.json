@@ -1,1 +1,167 @@
-{"slug": "tec1-m6-n1", "step_id": "708300d4-409d-4ea6-8603-ded0895472ff", "materia": "Tecnología I", "titulo": "Códigos y señales: de las banderas al Morse", "sub": "Tecnología I · Misión 6 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Cómo se llama lo que viaja y lleva un mensaje?", "segundos": 6, "respuesta": "Señal", "emoji": "📡", "titulo": "CÓDIGOS Y SEÑALES", "sub": "de las banderas al Morse", "voz": ["Desafío: ¿cómo se llama lo que viaja y lleva un mensaje? Seis segundos.", "Señal.", "Hoy: *códigos y señales*."]}, {"t": "linea", "titulo": "COMUNICACIÓN A DISTANCIA", "eventos": [{"fecha": "Antes", "txt": "Humo y tambores", "emoji": "💨"}, {"fecha": "Después", "txt": "Banderas y faros", "emoji": "🚩"}, {"fecha": "Siglo XIX", "txt": "Telégrafo y Morse", "emoji": "📟"}], "voz": ["Primero, *humo y tambores*.", "Después, *banderas y faros*.", "Y en el siglo diecinueve, el *telégrafo y el Morse*."]}, {"t": "comparar", "a": {"cab": "SEÑAL", "texto": "Lo que viaja", "emoji": "💡"}, "b": {"cab": "CÓDIGO", "texto": "Reglas que dan significado", "emoji": "📖"}, "signo": "vs", "voz": ["Dos ideas distintas.", "La *señal* es lo que viaja.", "El *código* da el significado."]}, {"t": "tabla", "titulo": "EL CÓDIGO MORSE", "columnas": ["Letra", "Morse"], "filas": [["E", "."], ["T", "-"], ["S", "..."], ["O", "---"]], "voz": ["Algunas letras en Morse.", "La *E*: un punto.", "La *T*: una raya.", "La *S*: tres puntos.", "La *O*: tres rayas."]}, {"t": "pregunta", "pregunta": "¿Qué es SOS en Morse?", "opciones": ["Tres puntos, tres rayas, tres puntos", "Una raya", "Cinco puntos"], "correcta": 0, "voz": ["Te toca: SOS.", "¿Tres puntos, tres rayas y tres puntos, una raya o cinco puntos?", "*Tres puntos, tres rayas y tres puntos*."]}, {"t": "errores", "items": [{"mal": "Señal y código son lo mismo", "bien": "El código da el significado"}, {"mal": "El Morse solo usa electricidad", "bien": "Sirve con luz y sonido"}], "voz": ["Errores típicos.", "Creer que *señal y código* son lo mismo.", "Y que el Morse *solo usa electricidad*."]}, {"t": "resumen", "voz": ["Repasemos.", "La *señal* viaja.", "El *código* da el significado.", "El *Morse* usa puntos y rayas.", "Y los dos lados *conocen el código*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["SEÑAL", "lo que viaja"], ["CÓDIGO", "da el significado"], ["MORSE", "puntos y rayas"], ["COMPARTIR", "emisor y receptor"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m6-n1",
+ "step_id": "708300d4-409d-4ea6-8603-ded0895472ff",
+ "materia": "Tecnología I",
+ "titulo": "Códigos y señales: de las banderas al Morse",
+ "sub": "Tecnología I · Misión 6 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama lo que viaja y lleva un mensaje?",
+   "segundos": 6,
+   "respuesta": "Señal",
+   "emoji": "📡",
+   "titulo": "CÓDIGOS Y SEÑALES",
+   "sub": "de las banderas al Morse",
+   "voz": [
+    "Desafío: ¿cómo se llama lo que viaja y lleva un mensaje? Seis segundos.",
+    "Señal.",
+    "Hoy: *códigos y señales*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "COMUNICACIÓN A DISTANCIA",
+   "eventos": [
+    {
+     "fecha": "Antes",
+     "txt": "Humo y tambores",
+     "emoji": "💨"
+    },
+    {
+     "fecha": "Después",
+     "txt": "Banderas y faros",
+     "emoji": "🚩"
+    },
+    {
+     "fecha": "Siglo XIX",
+     "txt": "Telégrafo y Morse",
+     "emoji": "📟"
+    }
+   ],
+   "voz": [
+    "Primero, *humo y tambores*.",
+    "Después, *banderas y faros*.",
+    "Y en el siglo diecinueve, el *telégrafo y el Morse*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SEÑAL",
+    "texto": "Lo que viaja",
+    "emoji": "💡"
+   },
+   "b": {
+    "cab": "CÓDIGO",
+    "texto": "Reglas que dan significado",
+    "emoji": "📖"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos ideas distintas.",
+    "La *señal* es lo que viaja.",
+    "El *código* da el significado."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "EL CÓDIGO MORSE",
+   "pares": [
+    [
+     "E",
+     "."
+    ],
+    [
+     "T",
+     "-"
+    ],
+    [
+     "S",
+     "..."
+    ],
+    [
+     "O",
+     "---"
+    ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Algunas letras en Morse.",
+    "La *E*: un punto.",
+    "La *T*: una raya.",
+    "La *S*: tres puntos.",
+    "La *O*: tres rayas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es SOS en Morse?",
+   "opciones": [
+    "Tres puntos, tres rayas, tres puntos",
+    "Una raya",
+    "Cinco puntos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: SOS.",
+    "¿Tres puntos, tres rayas y tres puntos, una raya o cinco puntos?",
+    "*Tres puntos, tres rayas y tres puntos*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Señal y código son lo mismo",
+     "despues": "El código da el significado",
+     "motivo": ""
+    },
+    {
+     "antes": "El Morse solo usa electricidad",
+     "despues": "Sirve con luz y sonido",
+     "motivo": ""
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *señal y código* son lo mismo.",
+    "Y que el Morse *solo usa electricidad*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *señal* viaja.",
+    "El *código* da el significado.",
+    "El *Morse* usa puntos y rayas.",
+    "Y los dos lados *conocen el código*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SEÑAL",
+     "lo que viaja"
+    ],
+    [
+     "CÓDIGO",
+     "da el significado"
+    ],
+    [
+     "MORSE",
+     "puntos y rayas"
+    ],
+    [
+     "COMPARTIR",
+     "emisor y receptor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

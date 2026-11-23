@@ -68,32 +68,36 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Grilla",
-   "texto": "Cuadro de criterios para evaluar",
-   "emoji": "📊",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Grilla",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Cuadro de criterios para evaluar"
+    }
+   ],
    "voz": [
     "La *grilla* es un cuadro de criterios para evaluar.",
     "Ordena lo que se mira."
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "UNA BUENA DEVOLUCIÓN",
-   "eventos": [
+   "items": [
     {
-     "fecha": "1",
-     "txt": "Un acierto",
+     "txt": "1: Un acierto",
      "emoji": "✅"
     },
     {
-     "fecha": "2",
-     "txt": "Otro acierto",
+     "txt": "2: Otro acierto",
      "emoji": "✅"
     },
     {
-     "fecha": "3",
-     "txt": "Una mejora",
+     "txt": "3: Una mejora",
      "emoji": "🛠️"
     }
    ],

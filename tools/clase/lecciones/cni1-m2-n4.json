@@ -142,13 +142,6 @@
   },
   {
    "t": "matriz",
-   "voz": [
-    "Primero, las unidades: todo el mundo científico usa el *Sistema Internacional*.",
-    "Longitud: el *metro*.",
-    "Masa: el *kilogramo*.",
-    "Tiempo: el *segundo*.",
-    "Temperatura: el *grado Celsius* en la vida diaria, y el *kelvin* en ciencia."
-   ],
    "titulo": "SISTEMA INTERNACIONAL",
    "celdas": [
     {
@@ -167,6 +160,13 @@
      "cab": "TEMPERATURA",
      "txt": "°C y kelvin (K)"
     }
+   ],
+   "voz": [
+    "Primero, las unidades: todo el mundo científico usa el *Sistema Internacional*.",
+    "Longitud: el *metro*.",
+    "Masa: el *kilogramo*.",
+    "Tiempo: el *segundo*.",
+    "Temperatura: el *grado Celsius* en la vida diaria, y el *kelvin* en ciencia."
    ]
   },
   {

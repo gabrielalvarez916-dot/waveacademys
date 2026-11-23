@@ -19,27 +19,24 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Ciclo del agua",
-    "emoji": "💧"
-   },
+   "t": "bloques",
+   "titulo": "CICLO DEL AGUA",
    "items": [
     {
-     "txt": "Evaporación",
-     "emoji": "☀️"
+     "cab": "EFECTO 1",
+     "txt": "Evaporación"
     },
     {
-     "txt": "Condensación",
-     "emoji": "☁️"
+     "cab": "EFECTO 2",
+     "txt": "Condensación"
     },
     {
-     "txt": "Precipitación",
-     "emoji": "🌧️"
+     "cab": "EFECTO 3",
+     "txt": "Precipitación"
     },
     {
-     "txt": "Escurrimiento",
-     "emoji": "🏞️"
+     "cab": "EFECTO 4",
+     "txt": "Escurrimiento"
     }
    ],
    "voz": [
@@ -51,13 +48,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "CICLO DEL CARBONO",
-   "columnas": [
-    "Proceso",
-    "Qué pasa"
-   ],
-   "filas": [
+   "pares": [
     [
      "Fotosíntesis",
      "CO₂ a materia"
@@ -75,6 +68,7 @@
      "Libera CO₂"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "El carbono circula.",
     "La *fotosíntesis* lo fija.",

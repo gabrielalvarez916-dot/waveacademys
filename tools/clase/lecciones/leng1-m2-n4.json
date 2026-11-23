@@ -90,20 +90,20 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
    "titulo": "MIS SOSPECHOSOS",
    "items": [
     {
-     "txt": "Motivo: ¿por qué lo haría?",
-     "emoji": "🔹"
+     "cab": "PASO 1",
+     "txt": "Motivo: ¿por qué lo haría?"
     },
     {
-     "txt": "Oportunidad: ¿pudo estar ahí?",
-     "emoji": "🔸"
+     "cab": "PASO 2",
+     "txt": "Oportunidad: ¿pudo estar ahí?"
     },
     {
-     "txt": "Coartada: ¿dónde dice que estaba?",
-     "emoji": "🟣"
+     "cab": "PASO 3",
+     "txt": "Coartada: ¿dónde dice que estaba?"
     }
    ],
    "voz": [

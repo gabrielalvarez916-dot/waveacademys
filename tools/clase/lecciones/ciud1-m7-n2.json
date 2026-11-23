@@ -84,17 +84,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "CONVIENE AMPARO",
-     "txt": "Salud negada, Censura"
-    },
-    {
-     "cab": "NO CONVIENE",
-     "txt": "Cambiar de cancha"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "CONVIENE AMPARO",
+     "Salud negada, Censura"
+    ],
+    [
+     "NO CONVIENE",
+     "Cambiar de cancha"
+    ]
    ],
    "voz": [
     "¿Conviene amparo?",

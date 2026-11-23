@@ -64,17 +64,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "CONSONANTE",
-     "txt": "sol / farol, canción / corazón"
-    },
-    {
-     "cab": "ASONANTE",
-     "txt": "gato / lado, casa / mesa"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "CONSONANTE",
+     "sol / farol, canción / corazón"
+    ],
+    [
+     "ASONANTE",
+     "gato / lado, casa / mesa"
+    ]
    ],
    "voz": [
     "¿Consonante o asonante?",

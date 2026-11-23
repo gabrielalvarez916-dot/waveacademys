@@ -74,17 +74,11 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "CÓMO SE CLASIFICA",
    "items": [
-    {
-     "cab": "REVISAR",
-     "txt": "Leer en voz alta, Usar diccionario"
-    },
-    {
-     "cab": "NO REVISAR",
-     "txt": "Entregar sin releer"
-    }
+    "Revisar: Leer en voz alta, Usar diccionario",
+    "No revisar: Entregar sin releer"
    ],
    "voz": [
     "¿Buena práctica o no?",

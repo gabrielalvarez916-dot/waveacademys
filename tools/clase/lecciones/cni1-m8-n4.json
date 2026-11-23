@@ -30,13 +30,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "COMPONENTES",
-   "columnas": [
-    "Componente",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Productores",
      "Algas"
@@ -54,6 +50,7 @@
      "Luz, agua"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Qué incluir en el modelo.",
     "*Productores*: algas.",
@@ -63,31 +60,19 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "ENTRA",
-     "emoji": "⬇️"
-    },
-    {
-     "cab": "SALE",
-     "emoji": "⬆️"
-    }
+   "t": "unir",
+   "titulo": "CÓMO SE CLASIFICA",
+   "pares": [
+    [
+     "ENTRA",
+     "Luz del Sol, Lluvia"
+    ],
+    [
+     "SALE",
+     "Calor"
+    ]
    ],
-   "fichas": [
-    {
-     "txt": "Luz del Sol",
-     "caja": 0
-    },
-    {
-     "txt": "Calor",
-     "caja": 1
-    },
-    {
-     "txt": "Lluvia",
-     "caja": 0
-    }
-   ],
+   "mezclar": false,
    "voz": [
     "¿Entra o sale?",
     "*Luz del Sol* y *lluvia*: entran.",

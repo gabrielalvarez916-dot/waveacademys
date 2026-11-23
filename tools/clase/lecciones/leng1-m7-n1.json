@@ -61,21 +61,12 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "CUÁNDO LLEVAN TILDE",
    "items": [
-    {
-     "cab": "AGUDA",
-     "txt": "Termina en n, s o vocal"
-    },
-    {
-     "cab": "GRAVE",
-     "txt": "NO termina en n, s o vocal"
-    },
-    {
-     "cab": "ESDRÚJULA",
-     "txt": "Siempre"
-    }
+    "Aguda: Termina en n, s o vocal",
+    "Grave: NO termina en n, s o vocal",
+    "Esdrújula: Siempre"
    ],
    "voz": [
     "Las reglas.",
@@ -85,21 +76,12 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
    "titulo": "CÓMO SE CLASIFICA",
    "items": [
-    {
-     "cab": "AGUDA",
-     "txt": "canción, papel"
-    },
-    {
-     "cab": "GRAVE",
-     "txt": "árbol"
-    },
-    {
-     "cab": "ESDRÚJULA",
-     "txt": "música"
-    }
+    "Aguda: canción, papel",
+    "Grave: árbol",
+    "Esdrújula: música"
    ],
    "voz": [
     "¿Qué clase es?",

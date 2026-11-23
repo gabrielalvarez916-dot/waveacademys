@@ -25,27 +25,38 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Escucha activa",
-   "texto": "Escuchar con atención, sin interrumpir",
-   "emoji": "👂",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Escucha activa",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Escuchar con atención, sin interrumpir"
+    }
+   ],
    "voz": [
     "La *escucha activa* es escuchar con atención y sin interrumpir.",
     "Se busca entender y recordar."
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "SE ANOTA",
-     "txt": "Fechas, Palabras clave, Números"
-    },
-    {
-     "cab": "NO HACE FALTA",
-     "txt": "Chistes"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "SE ANOTA",
+     "Fechas, Palabras clave, Números"
+    ],
+    [
+     "NO HACE FALTA",
+     "Chistes"
+    ]
    ],
    "voz": [
     "¿Se anota o no?",

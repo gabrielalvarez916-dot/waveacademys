@@ -137,30 +137,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Qué conector sirve para dar un ejemplo?",
    "opciones": [
-    "Por ejemplo",
     "En conclusión",
+    "Por ejemplo",
     "Pero"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿qué conector sirve para dar un ejemplo?",
-    "¿Por ejemplo, en conclusión o pero?",
+    "¿en conclusión, por ejemplo, o pero?",
     "*Por ejemplo*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Opinar sin explicar",
-     "bien": "Dar argumentos y ejemplos"
+     "antes": "Opinar sin explicar",
+     "despues": "Dar argumentos y ejemplos",
+     "motivo": ""
     },
     {
-     "mal": "Mezclar hecho y opinión",
-     "bien": "Separarlos"
+     "antes": "Mezclar hecho y opinión",
+     "despues": "Separarlos",
+     "motivo": ""
     }
    ],
    "voz": [

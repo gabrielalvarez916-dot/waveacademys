@@ -39,13 +39,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "VIDA DIGNA",
-   "columnas": [
-    "Tipo",
-    "Ejemplos"
-   ],
-   "filas": [
+   "pares": [
     [
      "Económicos",
      "Trabajo, salario"
@@ -59,6 +55,7 @@
      "Idioma, cultura"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Aseguran una vida digna.",
     "Los *económicos*: trabajo y salario.",

@@ -35,21 +35,25 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CRITERIOS",
-   "items": [
-    {
-     "cab": "ESTRUCTURA",
-     "txt": "Con núcleo o sin él"
-    },
-    {
-     "cab": "NUTRICIÓN",
-     "txt": "Fabrica o consigue alimento"
-    },
-    {
-     "cab": "PARENTESCO",
-     "txt": "Ancestro común"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "ESTRUCTURA",
+     "Con núcleo o sin él"
+    ],
+    [
+     "NUTRICIÓN",
+     "Fabrica o consigue alimento"
+    ],
+    [
+     "PARENTESCO",
+     "Ancestro común"
+    ]
    ],
    "voz": [
     "Se usan distintos criterios.",
@@ -88,29 +92,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "EL PUMA",
-   "columnas": [
-    "Categoría",
-    "Nombre"
-   ],
-   "filas": [
-    [
-     "Reino",
-     "Animalia"
-    ],
-    [
-     "Clase",
-     "Mammalia"
-    ],
-    [
-     "Familia",
-     "Felidae"
-    ],
-    [
-     "Especie",
-     "Puma concolor"
-    ]
+   "celdas": [
+    {
+     "cab": "REINO",
+     "txt": "Animalia"
+    },
+    {
+     "cab": "CLASE",
+     "txt": "Mammalia"
+    },
+    {
+     "cab": "FAMILIA",
+     "txt": "Felidae"
+    },
+    {
+     "cab": "ESPECIE",
+     "txt": "Puma concolor"
+    }
    ],
    "voz": [
     "Un ejemplo: el puma.",
@@ -153,30 +153,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Cuál es la categoría más amplia?",
    "opciones": [
-    "Reino",
     "Familia",
+    "Reino",
     "Especie"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿cuál es la categoría más amplia?",
-    "¿Reino, familia o especie?",
+    "¿familia, reino, o especie?",
     "El *reino*: incluye a todas las demás."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Agrupar solo por apariencia",
-     "bien": "Usar el parentesco"
+     "antes": "Agrupar solo por apariencia",
+     "despues": "Usar el parentesco",
+     "motivo": ""
     },
     {
-     "mal": "Dos géneros en una especie",
-     "bien": "Una especie está dentro de un género"
+     "antes": "Dos géneros en una especie",
+     "despues": "Una especie está dentro de un género",
+     "motivo": ""
     }
    ],
    "voz": [

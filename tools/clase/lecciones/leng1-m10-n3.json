@@ -30,27 +30,23 @@
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "ORDEN",
-   "eventos": [
+   "items": [
     {
-     "fecha": "1",
-     "txt": "Leer instrucciones",
+     "txt": "1: Leer instrucciones",
      "emoji": "📖"
     },
     {
-     "fecha": "2",
-     "txt": "Completar campos",
+     "txt": "2: Completar campos",
      "emoji": "✏️"
     },
     {
-     "fecha": "3",
-     "txt": "Revisar",
+     "txt": "3: Revisar",
      "emoji": "🔍"
     },
     {
-     "fecha": "4",
-     "txt": "Firmar",
+     "txt": "4: Firmar",
      "emoji": "✍️"
     }
    ],

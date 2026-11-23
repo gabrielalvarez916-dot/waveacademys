@@ -68,33 +68,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "SUBE LA PRESIÓN",
-     "emoji": "⬆️"
+     "txt": "Reducir el volumen, Calentar"
     },
     {
      "cab": "BAJA LA PRESIÓN",
-     "emoji": "⬇️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Reducir el volumen",
-     "caja": 0
-    },
-    {
-     "txt": "Ampliar el volumen",
-     "caja": 1
-    },
-    {
-     "txt": "Calentar",
-     "caja": 0
-    },
-    {
-     "txt": "Enfriar",
-     "caja": 1
+     "txt": "Ampliar el volumen, Enfriar"
     }
    ],
    "voz": [

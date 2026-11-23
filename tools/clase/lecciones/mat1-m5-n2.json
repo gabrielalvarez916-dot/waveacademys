@@ -45,21 +45,9 @@
    "signo": "⇄"
   },
   {
-   "t": "tabla",
-   "voz": [
-    "El método infalible: buscar *por parejas*. Probás 1, 2, 3… en orden.",
-    "1 por 36.",
-    "2 por 18.",
-    "3 por 12.",
-    "4 por 9. El 5 no divide: lo salteamos.",
-    "Y 6 por 6: ¡las parejas *se encontraron*! Terminamos."
-   ],
+   "t": "unir",
    "titulo": "DIVISORES DE 36 · POR PAREJAS",
-   "columnas": [
-    "Pareja",
-    "Producto"
-   ],
-   "filas": [
+   "pares": [
     [
      "1 y 36",
      "1 × 36"
@@ -80,6 +68,15 @@
      "6 y 6",
      "6 × 6"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "El método infalible: buscar *por parejas*. Probás 1, 2, 3… en orden.",
+    "1 por 36.",
+    "2 por 18.",
+    "3 por 12.",
+    "4 por 9. El 5 no divide: lo salteamos.",
+    "Y 6 por 6: ¡las parejas *se encontraron*! Terminamos."
    ]
   },
   {
@@ -135,7 +132,30 @@
    "emoji": "👯"
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "DIVISORES DE 60",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "1 × 60 · 2 × 30"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "3 × 20 · 4 × 15"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "5 × 12 · 6 × 10"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "7, 8 y 9 no dividen; el 10 ya apareció"
+    },
+    {
+     "cab": "PASO 5",
+     "txt": "1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60"
+    }
+   ],
    "voz": [
     "Desafío: todos los divisores de 60.",
     "1 por 60 y 2 por 30.",
@@ -143,14 +163,6 @@
     "5 por 12 y 6 por 10.",
     "7, 8 y 9 no dividen, y el 10 ya apareció: *terminamos*.",
     "Son *12 divisores*."
-   ],
-   "titulo": "DIVISORES DE 60",
-   "items": [
-    "1 × 60 · 2 × 30",
-    "3 × 20 · 4 × 15",
-    "5 × 12 · 6 × 10",
-    "7, 8 y 9 no dividen; el 10 ya apareció",
-    "1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60"
    ]
   },
   {

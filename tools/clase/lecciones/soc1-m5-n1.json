@@ -28,10 +28,17 @@
    }
   },
   {
-   "t": "definicion",
-   "palabra": "Recurso natural",
-   "texto": "Lo que la sociedad aprovecha de la naturaleza",
-   "emoji": "🌳",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Recurso natural",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Lo que la sociedad aprovecha de la naturaleza"
+    }
+   ],
    "voz": [
     "Un *recurso natural* es un elemento de la naturaleza que la sociedad aprovecha.",
     "Depende de la época y la tecnología: el petróleo no servía hasta que existieron los motores."

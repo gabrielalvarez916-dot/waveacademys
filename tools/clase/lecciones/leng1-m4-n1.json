@@ -35,10 +35,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Sujeto y predicado",
-   "texto": "Sujeto: de quién se habla. Predicado: lo que se dice de él",
-   "emoji": "✂️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Sujeto y predicado",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Sujeto: de quién se habla. Predicado: lo que se dice de él"
+    }
+   ],
    "voz": [
     "Casi todas las oraciones tienen dos partes. El *sujeto*: de quién se habla.",
     "Y el *predicado*: lo que se dice del sujeto."
@@ -171,17 +178,17 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "\"En la esquina de mi casa abrió una heladería artesanal.\" ¿Cuál es el sujeto?",
    "opciones": [
     "En la esquina de mi casa",
-    "una heladería artesanal",
-    "mi casa"
+    "mi casa",
+    "una heladería artesanal"
    ],
-   "correcta": 1,
+   "correcta": 2,
    "voz": [
     "Te toca: en la esquina de mi casa abrió una heladería artesanal. ¿Cuál es el sujeto?",
-    "¿En la esquina de mi casa, una heladería artesanal, o mi casa?",
+    "¿en la esquina de mi casa, mi casa, o una heladería artesanal?",
     "*Una heladería artesanal*: ¿qué abrió? La heladería. *En la esquina* empieza con preposición: nunca puede ser sujeto."
    ]
   },

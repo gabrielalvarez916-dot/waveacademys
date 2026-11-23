@@ -144,30 +144,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "El exceso de nutrientes en el agua provoca…",
    "opciones": [
-    "Eutrofización",
     "Condensación",
-    "Lluvia ácida"
+    "Lluvia ácida",
+    "Eutrofización"
    ],
-   "correcta": 0,
+   "correcta": 2,
    "voz": [
     "Te toca: el exceso de nutrientes en el agua.",
-    "¿Eutrofización, condensación o lluvia ácida?",
+    "¿condensación, lluvia ácida, o eutrofización?",
     "*Eutrofización*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Agua clara igual a agua limpia",
-     "bien": "Puede tener contaminantes disueltos"
+     "antes": "Agua clara igual a agua limpia",
+     "despues": "Puede tener contaminantes disueltos",
+     "motivo": ""
     },
     {
-     "mal": "El CO₂ no contamina",
-     "bien": "Aumenta el efecto invernadero"
+     "antes": "El CO₂ no contamina",
+     "despues": "Aumenta el efecto invernadero",
+     "motivo": ""
     }
    ],
    "voz": [

@@ -66,13 +66,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "QUIÉN USA EL AGUA",
-   "columnas": [
-    "Uso",
-    "Peso"
-   ],
-   "filas": [
+   "pares": [
     [
      "Agricultura",
      "El mayor"
@@ -86,6 +82,7 @@
      "Menor"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Mirá quién consume el agua dulce.",
     "La *agricultura* es la que más usa: el riego.",

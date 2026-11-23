@@ -20,13 +20,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "NIVELES",
-   "columnas": [
-    "Nivel",
-    "Quién es"
-   ],
-   "filas": [
+   "pares": [
     [
      "Productor",
      "Planta, alga"
@@ -44,6 +40,7 @@
      "Hongo, bacteria"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Los niveles.",
     "El *productor* fabrica su alimento.",

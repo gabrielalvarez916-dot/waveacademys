@@ -1,1 +1,176 @@
-{"slug": "tec1-m3-n1", "step_id": "2379e307-4c8d-4f89-8b4f-826117eb39ae", "materia": "Tecnología I", "titulo": "Moldeado: extrusión y termoformado", "sub": "Tecnología I · Misión 3 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Cómo se llama la abertura con forma por la que sale el material?", "segundos": 6, "respuesta": "Matriz", "emoji": "🔧", "titulo": "MOLDEAR", "sub": "extrusión y termoformado", "voz": ["Desafío: ¿cómo se llama la abertura con forma por la que sale el material? Seis segundos.", "Matriz.", "Hoy: *extrusión y termoformado*."]}, {"t": "comparar", "a": {"cab": "EXTRUSIÓN", "texto": "Se empuja por una matriz", "emoji": "🧈"}, "b": {"cab": "TERMOFORMADO", "texto": "Lámina caliente sobre un molde", "emoji": "🥡"}, "signo": "vs", "voz": ["Dos formas de moldear.", "En la *extrusión* se empuja por una matriz.", "En el *termoformado* una lámina caliente copia un molde."]}, {"t": "flujo", "titulo": "TERMOFORMADO PASO A PASO", "items": [{"txt": "Lámina de plástico", "emoji": "📄"}, {"txt": "Se calienta", "emoji": "🔥"}, {"txt": "Se aspira sobre el molde", "emoji": "🌀"}, {"txt": "Bandeja lista", "emoji": "🥡"}], "voz": ["Se parte de una *lámina*.", "Se *calienta*.", "Se *aspira* sobre el molde.", "Y queda la *bandeja*."]}, {"t": "clasificar", "cajas": [{"cab": "EXTRUSIÓN", "emoji": "🧈"}, {"cab": "TERMOFORMADO", "emoji": "🥡"}], "fichas": [{"txt": "Tubo", "caja": 0}, {"txt": "Bandeja", "caja": 1}, {"txt": "Fideo", "caja": 0}, {"txt": "Vaso", "caja": 1}], "voz": ["¿Extrusión o termoformado?", "*Tubo* y *fideo*: extrusión.", "*Bandeja* y *vaso*: termoformado."]}, {"t": "pregunta", "pregunta": "Un tubo largo de plástico se hace por…", "opciones": ["Extrusión", "Termoformado", "Molienda"], "correcta": 0, "voz": ["Te toca: el tubo de plástico.", "¿Extrusión, termoformado o molienda?", "*Extrusión*."]}, {"t": "errores", "items": [{"mal": "Los vasos se extruyen", "bien": "Se termoforman"}, {"mal": "Todo se moldea en frío", "bien": "Se necesita calor"}], "voz": ["Errores típicos.", "Creer que los vasos se *extruyen*.", "Y que todo se moldea *en frío*."]}, {"t": "resumen", "voz": ["Repasemos.", "*Moldear* da forma a un material blando.", "La *extrusión* empuja por una matriz.", "El *termoformado* usa una lámina y un molde.", "Y los dos necesitan *calor*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["MOLDEAR", "dar forma"], ["EXTRUSIÓN", "matriz"], ["TERMOFORMADO", "lámina y molde"], ["CALOR", "ablanda el plástico"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m3-n1",
+ "step_id": "2379e307-4c8d-4f89-8b4f-826117eb39ae",
+ "materia": "Tecnología I",
+ "titulo": "Moldeado: extrusión y termoformado",
+ "sub": "Tecnología I · Misión 3 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama la abertura con forma por la que sale el material?",
+   "segundos": 6,
+   "respuesta": "Matriz",
+   "emoji": "🔧",
+   "titulo": "MOLDEAR",
+   "sub": "extrusión y termoformado",
+   "voz": [
+    "Desafío: ¿cómo se llama la abertura con forma por la que sale el material? Seis segundos.",
+    "Matriz.",
+    "Hoy: *extrusión y termoformado*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "EXTRUSIÓN",
+    "texto": "Se empuja por una matriz",
+    "emoji": "🧈"
+   },
+   "b": {
+    "cab": "TERMOFORMADO",
+    "texto": "Lámina caliente sobre un molde",
+    "emoji": "🥡"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de moldear.",
+    "En la *extrusión* se empuja por una matriz.",
+    "En el *termoformado* una lámina caliente copia un molde."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TERMOFORMADO PASO A PASO",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Lámina de plástico",
+     "emoji": "📄"
+    },
+    {
+     "fecha": "2",
+     "txt": "Se calienta",
+     "emoji": "🔥"
+    },
+    {
+     "fecha": "3",
+     "txt": "Se aspira sobre el molde",
+     "emoji": "🌀"
+    },
+    {
+     "fecha": "4",
+     "txt": "Bandeja lista",
+     "emoji": "🥡"
+    }
+   ],
+   "voz": [
+    "Se parte de una *lámina*.",
+    "Se *calienta*.",
+    "Se *aspira* sobre el molde.",
+    "Y queda la *bandeja*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "EXTRUSIÓN",
+     "emoji": "🧈"
+    },
+    {
+     "cab": "TERMOFORMADO",
+     "emoji": "🥡"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Tubo",
+     "caja": 0
+    },
+    {
+     "txt": "Bandeja",
+     "caja": 1
+    },
+    {
+     "txt": "Fideo",
+     "caja": 0
+    },
+    {
+     "txt": "Vaso",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Extrusión o termoformado?",
+    "*Tubo* y *fideo*: extrusión.",
+    "*Bandeja* y *vaso*: termoformado."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un tubo largo de plástico se hace por…",
+   "opciones": [
+    "Extrusión",
+    "Termoformado",
+    "Molienda"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el tubo de plástico.",
+    "¿Extrusión, termoformado o molienda?",
+    "*Extrusión*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Los vasos se extruyen",
+     "bien": "Se termoforman"
+    },
+    {
+     "mal": "Todo se moldea en frío",
+     "bien": "Se necesita calor"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que los vasos se *extruyen*.",
+    "Y que todo se moldea *en frío*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Moldear* da forma a un material blando.",
+    "La *extrusión* empuja por una matriz.",
+    "El *termoformado* usa una lámina y un molde.",
+    "Y los dos necesitan *calor*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "MOLDEAR",
+     "dar forma"
+    ],
+    [
+     "EXTRUSIÓN",
+     "matriz"
+    ],
+    [
+     "TERMOFORMADO",
+     "lámina y molde"
+    ],
+    [
+     "CALOR",
+     "ablanda el plástico"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

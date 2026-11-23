@@ -183,20 +183,32 @@
    "gana": null
   },
   {
-   "t": "pasos",
+   "t": "matriz",
+   "titulo": "6x − 5 = 2x + 7",
+   "celdas": [
+    {
+     "cab": "PASO 1",
+     "txt": "− 2x: 4x − 5 = 7"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "+ 5: 4x = 12"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "÷ 4: x = 3"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "13 = 13 ✓"
+    }
+   ],
    "voz": [
     "Desafío: 6x − 5 igual a 2x + 7.",
     "Restamos 2x: 4x − 5 igual a 7.",
     "Sumamos 5: 4x igual a 12.",
     "Dividimos por 4: *x igual a 3*.",
     "Verificamos: 13 y 13. ¡Listo!"
-   ],
-   "titulo": "6x − 5 = 2x + 7",
-   "items": [
-    "− 2x: 4x − 5 = 7",
-    "+ 5: 4x = 12",
-    "÷ 4: x = 3",
-    "13 = 13 ✓"
    ]
   },
   {

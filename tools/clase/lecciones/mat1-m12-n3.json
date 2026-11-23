@@ -83,39 +83,22 @@
    ]
   },
   {
-   "t": "clasificar",
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "POSITIVOS · 8",
+     "txt": "+5, +3"
+    },
+    {
+     "cab": "NEGATIVOS · −10",
+     "txt": "−8, −2"
+    }
+   ],
    "voz": [
     "Para resolver: juntá los positivos y los negativos.",
     "Positivos: 5 más 3, *8*.",
     "Negativos: menos 8 y menos 2, *menos 10*. Total: 8 más menos 10, ¡*menos 2*!"
-   ],
-   "cajas": [
-    {
-     "cab": "POSITIVOS · 8",
-     "emoji": "⬆️"
-    },
-    {
-     "cab": "NEGATIVOS · −10",
-     "emoji": "⬇️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "+5",
-     "caja": 0
-    },
-    {
-     "txt": "+3",
-     "caja": 0
-    },
-    {
-     "txt": "−8",
-     "caja": 1
-    },
-    {
-     "txt": "−2",
-     "caja": 1
-    }
    ]
   },
   {
@@ -187,20 +170,32 @@
    "correcta": 1
   },
   {
-   "t": "pasos",
+   "t": "matriz",
+   "titulo": "−6 + (2 − 9) − (−4 + 1 − 3)",
+   "celdas": [
+    {
+     "cab": "PASO 1",
+     "txt": "+( ): 2 − 9"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "−( ): + 4 − 1 + 3"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Positivos 9 · negativos −16"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "9 + (−16) = −7"
+    }
+   ],
    "voz": [
     "Desafío: menos 6 más, paréntesis, 2 menos 9, menos, paréntesis, menos 4 más 1 menos 3.",
     "El primer paréntesis tiene más: queda 2 menos 9.",
     "El segundo tiene menos: cambian todos: más 4 menos 1 más 3.",
     "Positivos: 2, 4 y 3, *9*. Negativos: menos 6, menos 9, menos 1: *menos 16*.",
     "9 más menos 16: ¡*menos 7*!"
-   ],
-   "titulo": "−6 + (2 − 9) − (−4 + 1 − 3)",
-   "items": [
-    "+( ): 2 − 9",
-    "−( ): + 4 − 1 + 3",
-    "Positivos 9 · negativos −16",
-    "9 + (−16) = −7"
    ]
   },
   {

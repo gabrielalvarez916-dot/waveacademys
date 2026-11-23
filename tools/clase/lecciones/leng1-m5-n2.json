@@ -164,15 +164,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Oraciones completas",
-     "bien": "Palabras clave"
+     "antes": "Oraciones completas",
+     "despues": "Palabras clave",
+     "motivo": ""
     },
     {
-     "mal": "Todo al mismo nivel",
-     "bien": "Principales y secundarias"
+     "antes": "Todo al mismo nivel",
+     "despues": "Principales y secundarias",
+     "motivo": ""
     }
    ],
    "voz": [

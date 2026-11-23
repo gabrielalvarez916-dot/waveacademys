@@ -107,20 +107,9 @@
    "resultado": "= 3.152  ✓"
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Multiplicar por 10, 100 o 1.000 es facilísimo: *agregás ceros*.",
-    "45 por 100: le agregás dos ceros, *4.500*.",
-    "7 por 1.000: tres ceros, *7.000*.",
-    "Dividir es al revés: *sacás ceros*. 38.000 dividido 10 da 3.800.",
-    "Y 520.000 dividido 1.000 da *520*."
-   ],
+   "t": "unir",
    "titulo": "× Y ÷ POR 10, 100 Y 1.000",
-   "columnas": [
-    "Cálculo",
-    "Resultado"
-   ],
-   "filas": [
+   "pares": [
     [
      "45 × 100",
      "4.500"
@@ -137,6 +126,14 @@
      "520.000 ÷ 1.000",
      "520"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Multiplicar por 10, 100 o 1.000 es facilísimo: *agregás ceros*.",
+    "45 por 100: le agregás dos ceros, *4.500*.",
+    "7 por 1.000: tres ceros, *7.000*.",
+    "Dividir es al revés: *sacás ceros*. 38.000 dividido 10 da 3.800.",
+    "Y 520.000 dividido 1.000 da *520*."
    ]
   },
   {

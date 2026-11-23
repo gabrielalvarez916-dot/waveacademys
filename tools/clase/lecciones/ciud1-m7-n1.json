@@ -36,10 +36,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Garantía",
-   "texto": "Herramienta para exigir un derecho",
-   "emoji": "🛡️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Garantía",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Herramienta para exigir un derecho"
+    }
+   ],
    "voz": [
     "Una *garantía* es una herramienta para exigir un derecho.",
     "Permite reclamar si alguien lo viola."
@@ -113,30 +120,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "La herramienta para exigir un derecho es la…",
    "opciones": [
-    "Garantía",
     "Veda",
+    "Garantía",
     "Banca"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: herramienta para exigir un derecho.",
-    "¿Garantía, veda o banca?",
+    "¿veda, garantía, o banca?",
     "La *garantía*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Tener el derecho escrito alcanza",
-     "bien": "Hace falta una garantía"
+     "antes": "Tener el derecho escrito alcanza",
+     "despues": "Hace falta una garantía",
+     "motivo": ""
     },
     {
-     "mal": "Solo para casos extremos",
-     "bien": "Sirven en muchos casos"
+     "antes": "Solo para casos extremos",
+     "despues": "Sirven en muchos casos",
+     "motivo": ""
     }
    ],
    "voz": [

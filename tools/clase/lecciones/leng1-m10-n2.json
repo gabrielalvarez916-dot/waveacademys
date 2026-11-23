@@ -49,32 +49,27 @@
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "CUERPO",
-   "eventos": [
+   "items": [
     {
-     "fecha": "1",
-     "txt": "Saludo",
+     "txt": "1: Saludo",
      "emoji": "👋"
     },
     {
-     "fecha": "2",
-     "txt": "Motivo",
+     "txt": "2: Motivo",
      "emoji": "🎯"
     },
     {
-     "fecha": "3",
-     "txt": "Detalle",
+     "txt": "3: Detalle",
      "emoji": "📝"
     },
     {
-     "fecha": "4",
-     "txt": "Cierre",
+     "txt": "4: Cierre",
      "emoji": "🙏"
     },
     {
-     "fecha": "5",
-     "txt": "Firma",
+     "txt": "5: Firma",
      "emoji": "✍️"
     }
    ],

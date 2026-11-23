@@ -644,14 +644,21 @@
    ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Raíz cúbica",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "∛64 = 4 porque 4³ = 64"
+    }
+   ],
    "voz": [
     "La *raíz cúbica* es lo mismo, pero con el cubo.",
     "Raíz cúbica de 64 es 4, porque 4 al cubo es 64."
-   ],
-   "palabra": "Raíz cúbica",
-   "texto": "∛64 = 4 porque 4³ = 64",
-   "emoji": "🧊"
+   ]
   },
   {
    "t": "tabla",
@@ -762,21 +769,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "√36 = 18",
+     "despues": "√36 = 6 (6² = 36)",
+     "motivo": ""
+    },
+    {
+     "antes": "√(9 + 16) = 3 + 4",
+     "despues": "√(9 + 16) = √25 = 5",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Dos *errores* típicos.",
     "Dividir por 2: raíz de 36 *no* es 18, es 6.",
     "Y repartir la raíz en una suma: raíz de 9 más 16 es *5*, no 7."
-   ],
-   "items": [
-    {
-     "mal": "√36 = 18",
-     "bien": "√36 = 6 (6² = 36)"
-    },
-    {
-     "mal": "√(9 + 16) = 3 + 4",
-     "bien": "√(9 + 16) = √25 = 5"
-    }
    ]
   },
   {

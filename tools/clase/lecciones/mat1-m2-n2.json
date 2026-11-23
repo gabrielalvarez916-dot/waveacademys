@@ -63,14 +63,21 @@
    ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Distributiva",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "a × (b + c) = a × b + a × c"
+    }
+   ],
    "voz": [
     "Y ahora la estrella: la propiedad *distributiva*.",
     "Multiplicar por una suma es multiplicar *por cada parte* y después sumar."
-   ],
-   "palabra": "Distributiva",
-   "texto": "a × (b + c) = a × b + a × c",
-   "emoji": "🍫"
+   ]
   },
   {
    "t": "ecuacion",

@@ -86,14 +86,14 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Para saber si es un hecho, ¿qué te preguntás?",
    "opciones": [
-    "¿Puedo verificarlo?",
     "¿Me gusta?",
+    "¿Puedo verificarlo?",
     "¿Es largo?"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿qué te preguntás para saber si es un hecho?",
     "¿Puedo verificarlo, me gusta o es largo?",
@@ -101,15 +101,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Una opinión es siempre falsa",
-     "bien": "Se argumenta"
+     "antes": "Una opinión es siempre falsa",
+     "despues": "Se argumenta",
+     "motivo": ""
     },
     {
-     "mal": "Tomar un dato dudoso como hecho",
-     "bien": "Verificarlo"
+     "antes": "Tomar un dato dudoso como hecho",
+     "despues": "Verificarlo",
+     "motivo": ""
     }
    ],
    "voz": [

@@ -50,13 +50,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "FINANCIAMIENTO",
-   "columnas": [
-    "Fuente",
-    "Detalle"
-   ],
-   "filas": [
+   "pares": [
     [
      "Aportes públicos",
      "Pone el Estado"
@@ -70,6 +66,7 @@
      "Se informa"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "De dónde sale el dinero.",
     "Los *aportes públicos* los pone el Estado.",

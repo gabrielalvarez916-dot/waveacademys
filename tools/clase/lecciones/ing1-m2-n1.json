@@ -1,1 +1,147 @@
-{"slug": "ing1-m2-n1", "step_id": "d0bbcc37-acbb-4be2-9d3c-bfe56297e9be", "materia": "Inglés I", "titulo": "Describing friendships", "sub": "Inglés I · Misión 2 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Qué palabra se usa para dar el motivo en inglés?", "segundos": 6, "respuesta": "Because", "emoji": "🤝", "titulo": "AMISTADES", "sub": "describir a tus amigos", "voz": ["Desafío: ¿qué palabra se usa para dar el motivo? Seis segundos.", "*Because*.", "Hoy: *describir amistades*."]}, {"t": "tarjetas", "titulo": "CÓMO ES UN AMIGO", "items": [{"en": "kind", "es": "amable", "emoji": "💛"}, {"en": "funny", "es": "gracioso", "emoji": "😄"}, {"en": "loyal", "es": "leal", "emoji": "🤝"}, {"en": "shy", "es": "tímido", "emoji": "🙈"}], "voz": ["Primer adjetivo: *kind*.", "Segundo adjetivo: *funny*.", "Tercer adjetivo: *loyal*.", "Cuarto adjetivo: *shy*."]}, {"t": "oracion", "titulo": "UNA DESCRIPCIÓN CON MOTIVO", "partes": [{"txt": "She", "rol": "sujeto"}, {"txt": "is", "rol": "verbo"}, {"txt": "kind", "rol": "complemento"}, {"txt": "because she helps me", "rol": "complemento"}], "traduccion": "Ella es amable porque me ayuda", "voz": ["Primero, *quién*.", "Después, el verbo *ser*.", "Luego, el *adjetivo*.", "Y por último, el *motivo*.", "Significa ella es amable porque me ayuda."]}, {"t": "clasificar", "cajas": [{"cab": "POSITIVO", "emoji": "👍"}, {"cab": "DIFÍCIL", "emoji": "🤔"}], "fichas": [{"txt": "kind", "caja": 0}, {"txt": "funny", "caja": 0}, {"txt": "loyal", "caja": 0}, {"txt": "shy", "caja": 1}], "voz": ["¿Cuál se asocia a cada caja?", "Los tres primeros describen virtudes.", "El último es una forma de ser que a algunos les cuesta."]}, {"t": "pregunta", "pregunta": "Con she se dice…", "opciones": ["She has a friend", "She have a friend", "She haves a friend"], "correcta": 0, "voz": ["Te toca: el verbo con ella.", "¿*Has*, *have* o *haves*?", "*She has a friend*."]}, {"t": "resumen", "voz": ["Repasemos.", "Los *adjetivos* dicen cómo es alguien.", "*Because* da el motivo.", "Con ella, *has*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["ADJETIVOS", "cómo es alguien"], ["BECAUSE", "da el motivo"], ["HAS", "con she"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m2-n1",
+ "step_id": "d0bbcc37-acbb-4be2-9d3c-bfe56297e9be",
+ "materia": "Inglés I",
+ "titulo": "Describing friendships",
+ "sub": "Inglés I · Misión 2 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra se usa para dar el motivo en inglés?",
+   "segundos": 6,
+   "respuesta": "Because",
+   "emoji": "🤝",
+   "titulo": "AMISTADES",
+   "sub": "describir a tus amigos",
+   "voz": [
+    "Desafío: ¿qué palabra se usa para dar el motivo? Seis segundos.",
+    "*Because*.",
+    "Hoy: *describir amistades*."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "CÓMO ES UN AMIGO",
+   "items": [
+    {
+     "en": "kind",
+     "es": "amable",
+     "emoji": "💛"
+    },
+    {
+     "en": "funny",
+     "es": "gracioso",
+     "emoji": "😄"
+    },
+    {
+     "en": "loyal",
+     "es": "leal",
+     "emoji": "🤝"
+    },
+    {
+     "en": "shy",
+     "es": "tímido",
+     "emoji": "🙈"
+    }
+   ],
+   "voz": [
+    "Primer adjetivo: *kind*.",
+    "Segundo adjetivo: *funny*.",
+    "Tercer adjetivo: *loyal*.",
+    "Cuarto adjetivo: *shy*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UNA DESCRIPCIÓN CON MOTIVO",
+   "partes": [
+    {
+     "txt": "She",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "is",
+     "rol": "verbo"
+    },
+    {
+     "txt": "kind",
+     "rol": "complemento"
+    },
+    {
+     "txt": "because she helps me",
+     "rol": "complemento"
+    }
+   ],
+   "traduccion": "Ella es amable porque me ayuda",
+   "voz": [
+    "Primero, *quién*.",
+    "Después, el verbo *ser*.",
+    "Luego, el *adjetivo*.",
+    "Y por último, el *motivo*.",
+    "Significa ella es amable porque me ayuda."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "POSITIVO",
+     "txt": "kind, funny, loyal"
+    },
+    {
+     "cab": "DIFÍCIL",
+     "txt": "shy"
+    }
+   ],
+   "voz": [
+    "¿Cuál se asocia a cada caja?",
+    "Los tres primeros describen virtudes.",
+    "El último es una forma de ser que a algunos les cuesta."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Con she se dice…",
+   "opciones": [
+    "She has a friend",
+    "She have a friend",
+    "She haves a friend"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el verbo con ella.",
+    "¿*Has*, *have* o *haves*?",
+    "*She has a friend*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *adjetivos* dicen cómo es alguien.",
+    "*Because* da el motivo.",
+    "Con ella, *has*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "ADJETIVOS",
+     "cómo es alguien"
+    ],
+    [
+     "BECAUSE",
+     "da el motivo"
+    ],
+    [
+     "HAS",
+     "con she"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

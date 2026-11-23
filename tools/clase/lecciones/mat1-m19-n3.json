@@ -20,14 +20,21 @@
    "sub": "el espacio que ocupa"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Volumen",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Espacio que ocupa un cuerpo · se mide en cubitos de 1 cm³"
+    }
+   ],
    "voz": [
     "El *volumen* es el espacio que ocupa un cuerpo.",
     "Se mide contando cubitos de 1 centímetro: cada uno es *1 centímetro cúbico*."
-   ],
-   "palabra": "Volumen",
-   "texto": "Espacio que ocupa un cuerpo · se mide en cubitos de 1 cm³",
-   "emoji": "🧊"
+   ]
   },
   {
    "t": "geo",
@@ -579,19 +586,9 @@
    "signo": "·"
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Volumen y *capacidad*: lo que entra, en litros.",
-    "1 decímetro cúbico es *1 litro*.",
-    "1 centímetro cúbico es *1 mililitro*.",
-    "Y 1 metro cúbico son *1.000 litros*."
-   ],
+   "t": "unir",
    "titulo": "VOLUMEN Y LITROS",
-   "columnas": [
-    "Volumen",
-    "Capacidad"
-   ],
-   "filas": [
+   "pares": [
     [
      "1 dm³",
      "1 litro"
@@ -604,6 +601,13 @@
      "1 m³",
      "1.000 litros"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Volumen y *capacidad*: lo que entra, en litros.",
+    "1 decímetro cúbico es *1 litro*.",
+    "1 centímetro cúbico es *1 mililitro*.",
+    "Y 1 metro cúbico son *1.000 litros*."
    ]
   },
   {
@@ -648,21 +652,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "4 + 3 + 2 = 9 cm³",
+     "despues": "4 × 3 × 2 = 24 cm³",
+     "motivo": ""
+    },
+    {
+     "antes": "1 L = 100 cm³",
+     "despues": "1 L = 1.000 cm³",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "*Sumar* las medidas en vez de multiplicarlas.",
     "Y creer que 1 litro son 100 centímetros cúbicos: *son 1.000*."
-   ],
-   "items": [
-    {
-     "mal": "4 + 3 + 2 = 9 cm³",
-     "bien": "4 × 3 × 2 = 24 cm³"
-    },
-    {
-     "mal": "1 L = 100 cm³",
-     "bien": "1 L = 1.000 cm³"
-    }
    ]
   },
   {

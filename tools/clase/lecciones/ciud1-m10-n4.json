@@ -21,13 +21,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "QUÉ INCLUYE",
-   "columnas": [
-    "Parte",
-    "Contenido"
-   ],
-   "filas": [
+   "pares": [
     [
      "Problema",
      "Con datos"
@@ -45,6 +41,7 @@
      "Qué se solicita"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Una presentación incluye cuatro partes.",
     "El *problema*, con datos.",

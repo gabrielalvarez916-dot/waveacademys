@@ -57,14 +57,21 @@
    "txt": "3/6 = 1/2"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Equivalentes",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Representan la misma cantidad aunque se escriban distinto"
+    }
+   ],
    "voz": [
     "Dos fracciones son *equivalentes* si representan la *misma cantidad*.",
     "1/2, 2/4 y 3/6: escritas distinto, *valen lo mismo*."
-   ],
-   "palabra": "Equivalentes",
-   "texto": "Representan la misma cantidad aunque se escriban distinto",
-   "emoji": "🟰"
+   ]
   },
   {
    "t": "comparar",

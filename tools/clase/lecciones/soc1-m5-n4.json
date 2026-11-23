@@ -114,19 +114,16 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Depender de un solo producto",
-    "emoji": "⚠️"
-   },
+   "t": "bloques",
+   "titulo": "DEPENDER DE UN SOLO PRODUCTO",
    "items": [
     {
-     "txt": "Baja el precio",
-     "emoji": "📉"
+     "cab": "EFECTO 1",
+     "txt": "Baja el precio"
     },
     {
-     "txt": "Entran menos ingresos",
-     "emoji": "💸"
+     "cab": "EFECTO 2",
+     "txt": "Entran menos ingresos"
     }
    ],
    "voz": [

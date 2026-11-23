@@ -78,14 +78,21 @@
    "signo": "vs"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Relación fundamental",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Dividendo = divisor × cociente + resto"
+    }
+   ],
    "voz": [
     "Ahora, la fórmula mágica: la *relación fundamental*.",
     "Dividendo es igual a divisor por cociente, más el resto. 5 por 9, más 2: *47*."
-   ],
-   "palabra": "Relación fundamental",
-   "texto": "Dividendo = divisor × cociente + resto",
-   "emoji": "🔗"
+   ]
   },
   {
    "t": "ecuacion",
@@ -106,20 +113,20 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 824 ÷ 4?",
+   "opciones": [
+    "206",
+    "26",
+    "260",
+    "2.006"
+   ],
+   "correcta": 0,
    "voz": [
     "Pregunta trampa: ¿cuánto es 824 dividido 4?",
     "¿26? ¿206? ¿260?",
     "¡*206*! El 2 no alcanza para dividir por 4, y ahí va un *cero* en el cociente."
-   ],
-   "pregunta": "¿Cuánto es 824 ÷ 4?",
-   "opciones": [
-    "26",
-    "206",
-    "260",
-    "2.006"
-   ],
-   "correcta": 1
+   ]
   },
   {
    "t": "ecuacion",
@@ -140,31 +147,54 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "LA EXCURSIÓN",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "50 ÷ 12 = 4, resto 2"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "4 micros: quedan 2 chicos afuera"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "¡Hacen falta 5 micros!"
+    }
+   ],
    "voz": [
     "Volvamos a la excursión.",
     "50 dividido 12 da 4, y el resto es 2.",
     "Con 4 micros, *2 chicos se quedan afuera*.",
     "Por eso el resto obliga a sumar uno: *5 micros*."
-   ],
-   "titulo": "LA EXCURSIÓN",
-   "items": [
-    {
-     "txt": "50 ÷ 12 = 4, resto 2",
-     "emoji": "➗"
-    },
-    {
-     "txt": "4 micros: quedan 2 chicos afuera",
-     "emoji": "😟"
-    },
-    {
-     "txt": "¡Hacen falta 5 micros!",
-     "emoji": "🚌"
-    }
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "1.537 ÷ 12",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "15 ÷ 12 = 1, resto 3"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "33 ÷ 12 = 2, resto 9"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "97 ÷ 12 = 8, resto 1"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "Cociente 128, resto 1"
+    },
+    {
+     "cab": "PASO 5",
+     "txt": "12 × 128 + 1 = 1.537 ✓"
+    }
+   ],
    "voz": [
     "Desafío final: 1.537 dividido 12.",
     "15 dividido 12: 1, y sobran 3.",
@@ -172,32 +202,27 @@
     "Bajamos el 7: 97 dividido 12, 8, y sobra 1.",
     "Cociente *128*, resto *1*.",
     "Comprobamos: 12 por 128 más 1 da *1.537*. ¡Perfecto!"
-   ],
-   "titulo": "1.537 ÷ 12",
-   "items": [
-    "15 ÷ 12 = 1, resto 3",
-    "33 ÷ 12 = 2, resto 9",
-    "97 ÷ 12 = 8, resto 1",
-    "Cociente 128, resto 1",
-    "12 × 128 + 1 = 1.537 ✓"
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "47 ÷ 5 = 8, resto 7",
+     "despues": "47 ÷ 5 = 9, resto 2",
+     "motivo": ""
+    },
+    {
+     "antes": "824 ÷ 4 = 26",
+     "despues": "824 ÷ 4 = 206",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Dos *errores* clásicos.",
     "Dejar un resto más grande que el divisor: en 47 dividido 5, un resto de 7 *no puede ser*.",
     "Y olvidar el *cero* del cociente: 824 dividido 4 es 206, no 26."
-   ],
-   "items": [
-    {
-     "mal": "47 ÷ 5 = 8, resto 7",
-     "bien": "47 ÷ 5 = 9, resto 2"
-    },
-    {
-     "mal": "824 ÷ 4 = 26",
-     "bien": "824 ÷ 4 = 206"
-    }
    ]
   },
   {

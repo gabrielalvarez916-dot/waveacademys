@@ -172,27 +172,27 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "LOS CARAMELOS",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Más chicos → menos para cada uno"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "12 × 5 = 60"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "60 ÷ 15 = 4"
+    }
+   ],
    "voz": [
     "Desafío: una bolsa de caramelos alcanza para darle 5 a cada uno de 12 chicos. ¿Y si son 15?",
     "Más chicos, menos caramelos para cada uno: *inversa*.",
     "Producto: 12 por 5, *60 caramelos*.",
     "60 dividido 15: ¡*4 caramelos* cada uno!"
-   ],
-   "titulo": "LOS CARAMELOS",
-   "items": [
-    {
-     "txt": "Más chicos → menos para cada uno",
-     "emoji": "🍬"
-    },
-    {
-     "txt": "12 × 5 = 60",
-     "emoji": "✖️"
-    },
-    {
-     "txt": "60 ÷ 15 = 4",
-     "emoji": "✅"
-    }
    ]
   },
   {

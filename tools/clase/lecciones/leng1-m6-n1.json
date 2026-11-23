@@ -49,20 +49,34 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Relato gótico",
-   "texto": "Misterio y terror en castillos antiguos",
-   "emoji": "🏰",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Relato gótico",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Misterio y terror en castillos antiguos"
+    }
+   ],
    "voz": [
     "Es un *relato gótico*: misterio y terror en un castillo antiguo.",
     "Wilde juega con esos elementos."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Narrador omnisciente",
-   "texto": "Cuenta en tercera persona y lo sabe todo",
-   "emoji": "👁️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Narrador omnisciente",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Cuenta en tercera persona y lo sabe todo"
+    }
+   ],
    "voz": [
     "El narrador es *omnisciente*.",
     "Cuenta en tercera persona y conoce lo que sienten todos."

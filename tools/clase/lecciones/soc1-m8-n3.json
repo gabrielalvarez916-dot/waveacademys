@@ -20,13 +20,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "ZONAS DE LA CIUDAD",
-   "columnas": [
-    "Zona",
-    "Qué hay"
-   ],
-   "filas": [
+   "pares": [
     [
      "Centro",
      "Comercio y oficinas"
@@ -44,6 +40,7 @@
      "Barrios en crecimiento"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Las zonas de una ciudad.",
     "El *centro*: comercios, oficinas y edificios altos.",
@@ -63,23 +60,20 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Redes de servicios",
-    "emoji": "🔌"
-   },
+   "t": "bloques",
+   "titulo": "REDES DE SERVICIOS",
    "items": [
     {
-     "txt": "Agua y cloacas",
-     "emoji": "🚰"
+     "cab": "EFECTO 1",
+     "txt": "Agua y cloacas"
     },
     {
-     "txt": "Electricidad",
-     "emoji": "💡"
+     "cab": "EFECTO 2",
+     "txt": "Electricidad"
     },
     {
-     "txt": "Transporte",
-     "emoji": "🚌"
+     "cab": "EFECTO 3",
+     "txt": "Transporte"
     }
    ],
    "voz": [
@@ -90,29 +84,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "CENTRO",
-     "emoji": "🏢"
+     "txt": "Bancos y oficinas, Edificios altos"
     },
     {
      "cab": "PERIFERIA",
-     "emoji": "🏘️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Bancos y oficinas",
-     "caja": 0
-    },
-    {
-     "txt": "Barrios nuevos",
-     "caja": 1
-    },
-    {
-     "txt": "Edificios altos",
-     "caja": 0
+     "txt": "Barrios nuevos"
     }
    ],
    "voz": [
@@ -122,28 +103,24 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Cuál es un problema urbano?",
    "opciones": [
-    "El tránsito",
     "La cosecha",
+    "El tránsito",
     "La pesca"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿cuál es un problema urbano?",
-    "¿El tránsito, la cosecha o la pesca?",
+    "¿la cosecha, el tránsito, o la pesca?",
     "El *tránsito*: muchos autos y poco transporte público."
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "PROBLEMAS URBANOS",
-   "columnas": [
-    "Problema",
-    "Causa"
-   ],
-   "filas": [
+   "pares": [
     [
      "Tránsito",
      "Muchos autos"
@@ -157,6 +134,7 @@
      "Mucha población"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Problemas frecuentes.",
     "El *tránsito*: muchos autos.",
@@ -165,15 +143,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Todos los barrios tienen lo mismo",
-     "bien": "Hay desigualdades"
+     "antes": "Todos los barrios tienen lo mismo",
+     "despues": "Hay desigualdades",
+     "motivo": ""
     },
     {
-     "mal": "La ciudad es un solo espacio",
-     "bien": "Tiene zonas distintas"
+     "antes": "La ciudad es un solo espacio",
+     "despues": "Tiene zonas distintas",
+     "motivo": ""
     }
    ],
    "voz": [

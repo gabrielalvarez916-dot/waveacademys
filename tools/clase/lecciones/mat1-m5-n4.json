@@ -52,27 +52,31 @@
    }
   },
   {
-   "t": "pasos",
+   "t": "tabla",
+   "titulo": "LAS 40 SILLAS",
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PASO 1",
+     "Divisores de 40: 1, 2, 4, 5, 8, 10, 20, 40"
+    ],
+    [
+     "PASO 2",
+     "Más de 5 y menos de 10 por fila: solo el 8"
+    ],
+    [
+     "PASO 3",
+     "5 filas de 8 sillas"
+    ]
+   ],
    "voz": [
     "Problema: 40 sillas en filas iguales, con más de 5 y menos de 10 por fila.",
     "El total está fijo: buscamos *divisores* de 40.",
     "Entre 6 y 9 sillas por fila, solo está el *8*.",
     "Se arman *5 filas de 8 sillas*."
-   ],
-   "titulo": "LAS 40 SILLAS",
-   "items": [
-    {
-     "txt": "Divisores de 40: 1, 2, 4, 5, 8, 10, 20, 40",
-     "emoji": "📋"
-    },
-    {
-     "txt": "Más de 5 y menos de 10 por fila: solo el 8",
-     "emoji": "🎯"
-    },
-    {
-     "txt": "5 filas de 8 sillas",
-     "emoji": "🪑"
-    }
    ]
   },
   {

@@ -20,12 +20,10 @@
    ]
   },
   {
-   "t": "dato",
-   "numero": "8.000",
-   "antes": "millones de personas",
-   "despues": "viven en el planeta",
+   "t": "datoloco",
    "texto": "Superamos esa cifra en 2022",
    "emoji": "👥",
+   "numero": 8000,
    "voz": [
     "Somos más de *ocho mil millones* de personas.",
     "Superamos esa cifra en el año dos mil veintidós."
@@ -60,10 +58,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Densidad de población",
-   "texto": "Habitantes por kilómetro cuadrado",
-   "emoji": "📏",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Densidad de población",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Habitantes por kilómetro cuadrado"
+    }
+   ],
    "voz": [
     "La *densidad* se calcula dividiendo los habitantes por la superficie.",
     "Se mide en habitantes por kilómetro cuadrado."

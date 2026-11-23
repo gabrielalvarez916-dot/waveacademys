@@ -86,25 +86,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "EMIGRANTE",
-     "emoji": "⬅️"
+     "txt": "Sale de su país"
     },
     {
      "cab": "INMIGRANTE",
-     "emoji": "➡️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Sale de su país",
-     "caja": 0
-    },
-    {
-     "txt": "Llega a otro país",
-     "caja": 1
+     "txt": "Llega a otro país"
     }
    ],
    "voz": [

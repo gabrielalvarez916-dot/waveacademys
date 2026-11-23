@@ -96,21 +96,25 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "ORIGEN DE LAS EUCARIOTAS",
-   "items": [
-    {
-     "cab": "PRIMERO",
-     "txt": "Aparecieron las procariotas"
-    },
-    {
-     "cab": "DESPUÉS",
-     "txt": "Algunas incorporaron bacterias"
-    },
-    {
-     "cab": "RESULTADO",
-     "txt": "Mitocondrias y cloroplastos"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PRIMERO",
+     "Aparecieron las procariotas"
+    ],
+    [
+     "DESPUÉS",
+     "Algunas incorporaron bacterias"
+    ],
+    [
+     "RESULTADO",
+     "Mitocondrias y cloroplastos"
+    ]
    ],
    "voz": [
     "Una idea sobre su origen.",

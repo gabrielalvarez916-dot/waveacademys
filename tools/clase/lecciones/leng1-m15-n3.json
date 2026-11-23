@@ -48,21 +48,25 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "USOS DE LA COMA",
-   "items": [
-    {
-     "cab": "ENUMERAR",
-     "txt": "pan, leche y queso"
-    },
-    {
-     "cab": "TRAS CONECTOR",
-     "txt": "Sin embargo, llegué"
-    },
-    {
-     "cab": "ACLARAR",
-     "txt": "Mi tía, que vive en Salta"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "ENUMERAR",
+     "pan, leche y queso"
+    ],
+    [
+     "TRAS CONECTOR",
+     "Sin embargo, llegué"
+    ],
+    [
+     "ACLARAR",
+     "Mi tía, que vive en Salta"
+    ]
    ],
    "voz": [
     "Tres usos de la coma.",

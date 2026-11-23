@@ -73,14 +73,21 @@
    "etiqueta": "POTENCIAS DE 2"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "101₂",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Se lee «uno, cero, uno en base 2». No se dice «ciento uno»."
+    }
+   ],
    "voz": [
     "Ojo cómo se escribe: la *base* va chiquita, abajo a la derecha.",
     "Y se lee cifra por cifra: uno, cero, uno *en base 2*. Nunca ciento uno: centena y decena son palabras de la base 10."
-   ],
-   "palabra": "101₂",
-   "texto": "Se lee «uno, cero, uno en base 2». No se dice «ciento uno».",
-   "emoji": "🗣️"
+   ]
   },
   {
    "t": "descomponer",
@@ -198,21 +205,24 @@
    "etiqueta": "19 = 10011₂"
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "6 = 011₂",
+     "despues": "6 = 110₂",
+     "motivo": ""
+    },
+    {
+     "antes": "101₂ = ciento uno",
+     "despues": "101₂ = uno, cero, uno = 5",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Cuidado con dos *errores*.",
     "Leer los restos de arriba hacia abajo: para 6 da cero, uno, uno, y es *uno, uno, cero*.",
     "Y leer uno, cero, uno en base 2 como ciento uno: vale *5*."
-   ],
-   "items": [
-    {
-     "mal": "6 = 011₂",
-     "bien": "6 = 110₂"
-    },
-    {
-     "mal": "101₂ = ciento uno",
-     "bien": "101₂ = uno, cero, uno = 5"
-    }
    ]
   },
   {

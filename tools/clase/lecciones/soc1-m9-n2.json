@@ -25,33 +25,37 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Nómadas",
-   "texto": "Se desplazaban siguiendo el alimento",
-   "emoji": "🚶",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Nómadas",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Se desplazaban siguiendo el alimento"
+    }
+   ],
    "voz": [
     "Los cazadores y recolectores eran *nómadas*.",
     "Se movían siguiendo a los animales y las estaciones."
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Cómo se repartían el trabajo",
-    "emoji": "🧰"
-   },
+   "t": "bloques",
+   "titulo": "CÓMO SE REPARTÍAN EL TRABAJO",
    "items": [
     {
-     "txt": "Cazar",
-     "emoji": "🏹"
+     "cab": "EFECTO 1",
+     "txt": "Cazar"
     },
     {
-     "txt": "Recolectar",
-     "emoji": "🌰"
+     "cab": "EFECTO 2",
+     "txt": "Recolectar"
     },
     {
-     "txt": "Cuidar a los niños",
-     "emoji": "🧸"
+     "cab": "EFECTO 3",
+     "txt": "Cuidar a los niños"
     }
    ],
    "voz": [

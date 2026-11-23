@@ -20,13 +20,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "SEIS CAMBIOS",
-   "columnas": [
-    "Cambio",
-    "De a"
-   ],
-   "filas": [
+   "pares": [
     [
      "Fusión",
      "Sólido a líquido"
@@ -48,6 +44,7 @@
      "Sólido a gas"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Los cambios.",
     "*Fusión*: sólido a líquido.",

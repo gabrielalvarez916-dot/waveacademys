@@ -69,17 +69,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "SÍ",
-     "txt": "Contar el comienzo, Dar un ejemplo"
-    },
-    {
-     "cab": "NO",
-     "txt": "Contar el final"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "SÍ",
+     "Contar el comienzo, Dar un ejemplo"
+    ],
+    [
+     "NO",
+     "Contar el final"
+    ]
    ],
    "voz": [
     "¿Va en una reseña?",

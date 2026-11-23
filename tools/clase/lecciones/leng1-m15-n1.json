@@ -35,13 +35,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "CONECTORES",
-   "columnas": [
-    "Función",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Adición",
      "además"
@@ -63,6 +59,7 @@
      "luego"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Clases de conectores.",
     "*Adición*: además.",

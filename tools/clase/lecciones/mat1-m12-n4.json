@@ -49,18 +49,9 @@
    ]
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Dos traducciones.",
-    "Hacía menos 5 y subió 12 grados: menos 5 más 12, *7 grados*.",
-    "Estaba en el piso 2 y bajó 5: 2 menos 5, *subsuelo menos 3*."
-   ],
+   "t": "unir",
    "titulo": "TRADUCIR",
-   "columnas": [
-    "Situación",
-    "Cálculo"
-   ],
-   "filas": [
+   "pares": [
     [
      "−5 °C y subió 12°",
      "−5 + 12 = 7"
@@ -69,6 +60,12 @@
      "Piso 2 y bajó 5",
      "2 − 5 = −3"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Dos traducciones.",
+    "Hacía menos 5 y subió 12 grados: menos 5 más 12, *7 grados*.",
+    "Estaba en el piso 2 y bajó 5: 2 menos 5, *subsuelo menos 3*."
    ]
   },
   {

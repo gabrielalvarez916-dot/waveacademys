@@ -1,1 +1,128 @@
-{"slug": "ing1-m5-n3", "step_id": "bc5403da-873d-4c77-afd6-93dd36d8c27a", "materia": "Inglés I", "titulo": "Social media: pros and cons", "sub": "Inglés I · Misión 5 · Nivel 3", "escenas": [{"t": "noticia", "cinta": "REDES", "titular": "Las redes sociales, dos caras", "bajada": "Ventajas y desventajas", "emoji": "📲", "titulo": "PROS Y CONTRAS", "sub": "redes sociales", "voz": ["Noticia: las redes sociales tienen dos caras.", "Ventajas y desventajas.", "Hoy: *pros y contras*."]}, {"t": "clasificar", "cajas": [{"cab": "VENTAJA", "emoji": "👍"}, {"cab": "DESVENTAJA", "emoji": "👎"}], "fichas": [{"txt": "Estar en contacto", "caja": 0}, {"txt": "Perder tiempo", "caja": 1}, {"txt": "Compartir fotos", "caja": 0}, {"txt": "Noticias falsas", "caja": 1}], "voz": ["¿Ventaja o desventaja?", "*Estar en contacto* y *compartir fotos*: ventajas.", "*Perder tiempo* y *noticias falsas*: desventajas."]}, {"t": "tarjetas", "titulo": "CONECTORES", "items": [{"en": "One advantage is…", "es": "Una ventaja es…", "emoji": "➕"}, {"en": "One disadvantage is…", "es": "Una desventaja es…", "emoji": "➖"}, {"en": "On the other hand,", "es": "Por otro lado,", "emoji": "🔄"}], "voz": ["Para presentar una ventaja.", "Para presentar una desventaja.", "Y para contrastar."]}, {"t": "antesdespues", "antes": {"cab": "SOLO UN LADO", "emoji": "❌", "texto": "Sin ventajas o sin desventajas"}, "despues": {"cab": "EQUILIBRADA", "emoji": "✅", "texto": "Ventajas, desventajas y conectores"}, "voz": ["Una opinión de un solo lado queda incompleta.", "Una equilibrada muestra los dos lados."]}, {"t": "pregunta", "pregunta": "Para contrastar se usa…", "opciones": ["On the other hand", "For example", "In conclusion"], "correcta": 0, "voz": ["Te toca: contrastar.", "¿Cuál de las tres frases sirve para contrastar?", "*On the other hand*."]}, {"t": "resumen", "voz": ["Repasemos.", "Las redes tienen *ventajas* y *desventajas*.", "Los *conectores* ordenan las ideas.", "Una opinión *equilibrada* muestra los dos lados.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["VENTAJAS", "contacto y fotos"], ["DESVENTAJAS", "tiempo y noticias falsas"], ["CONECTORES", "ordenan las ideas"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m5-n3",
+ "step_id": "bc5403da-873d-4c77-afd6-93dd36d8c27a",
+ "materia": "Inglés I",
+ "titulo": "Social media: pros and cons",
+ "sub": "Inglés I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "REDES",
+   "titular": "Las redes sociales, dos caras",
+   "bajada": "Ventajas y desventajas",
+   "emoji": "📲",
+   "titulo": "PROS Y CONTRAS",
+   "sub": "redes sociales",
+   "voz": [
+    "Noticia: las redes sociales tienen dos caras.",
+    "Ventajas y desventajas.",
+    "Hoy: *pros y contras*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "VENTAJA",
+     "txt": "Estar en contacto, Compartir fotos"
+    },
+    {
+     "cab": "DESVENTAJA",
+     "txt": "Perder tiempo, Noticias falsas"
+    }
+   ],
+   "voz": [
+    "¿Ventaja o desventaja?",
+    "*Estar en contacto* y *compartir fotos*: ventajas.",
+    "*Perder tiempo* y *noticias falsas*: desventajas."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "CONECTORES",
+   "items": [
+    {
+     "en": "One advantage is…",
+     "es": "Una ventaja es…",
+     "emoji": "➕"
+    },
+    {
+     "en": "One disadvantage is…",
+     "es": "Una desventaja es…",
+     "emoji": "➖"
+    },
+    {
+     "en": "On the other hand,",
+     "es": "Por otro lado,",
+     "emoji": "🔄"
+    }
+   ],
+   "voz": [
+    "Para presentar una ventaja.",
+    "Para presentar una desventaja.",
+    "Y para contrastar."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "SOLO UN LADO",
+    "emoji": "❌",
+    "texto": "Sin ventajas o sin desventajas"
+   },
+   "despues": {
+    "cab": "EQUILIBRADA",
+    "emoji": "✅",
+    "texto": "Ventajas, desventajas y conectores"
+   },
+   "voz": [
+    "Una opinión de un solo lado queda incompleta.",
+    "Una equilibrada muestra los dos lados."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Para contrastar se usa…",
+   "opciones": [
+    "On the other hand",
+    "For example",
+    "In conclusion"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: contrastar.",
+    "¿Cuál de las tres frases sirve para contrastar?",
+    "*On the other hand*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Las redes tienen *ventajas* y *desventajas*.",
+    "Los *conectores* ordenan las ideas.",
+    "Una opinión *equilibrada* muestra los dos lados.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "VENTAJAS",
+     "contacto y fotos"
+    ],
+    [
+     "DESVENTAJAS",
+     "tiempo y noticias falsas"
+    ],
+    [
+     "CONECTORES",
+     "ordenan las ideas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

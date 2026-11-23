@@ -70,33 +70,20 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "PASTIZAL",
-     "emoji": "🌾"
+     "txt": "Pastos"
     },
     {
      "cab": "MONTE",
-     "emoji": "🌵"
+     "txt": "Arbustos"
     },
     {
      "cab": "SELVA",
-     "emoji": "🌳"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Pastos",
-     "caja": 0
-    },
-    {
-     "txt": "Arbustos",
-     "caja": 1
-    },
-    {
-     "txt": "Lianas",
-     "caja": 2
+     "txt": "Lianas"
     }
    ],
    "voz": [

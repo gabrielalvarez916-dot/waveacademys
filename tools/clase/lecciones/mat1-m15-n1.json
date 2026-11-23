@@ -234,18 +234,18 @@
    ]
   },
   {
-   "t": "pregunta",
-   "voz": [
-    "Trampa: ¿cómo se escribe *el doble de un número*?",
-    "¿n + 2 o 2n?",
-    "¡*2n*! El doble es *multiplicar* por 2, no sumar 2."
-   ],
+   "t": "quiz4",
    "pregunta": "El doble de un número",
    "opciones": [
     "n + 2",
     "2n"
    ],
-   "correcta": 1
+   "correcta": 1,
+   "voz": [
+    "Trampa: ¿cómo se escribe *el doble de un número*?",
+    "¿n + 2 o 2n?",
+    "¡*2n*! El doble es *multiplicar* por 2, no sumar 2."
+   ]
   },
   {
    "t": "antesdespues",
@@ -304,21 +304,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "El doble: n + 2",
+     "despues": "2n",
+     "motivo": ""
+    },
+    {
+     "antes": "n es siempre lo mismo",
+     "despues": "n puede valer cualquier número",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Traducir *el doble* como n + 2: es 2n.",
     "Y creer que la letra es una etiqueta fija: n puede valer *cualquier número*."
-   ],
-   "items": [
-    {
-     "mal": "El doble: n + 2",
-     "bien": "2n"
-    },
-    {
-     "mal": "n es siempre lo mismo",
-     "bien": "n puede valer cualquier número"
-    }
    ]
   },
   {

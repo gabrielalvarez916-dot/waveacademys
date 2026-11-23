@@ -87,17 +87,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "DECLARACIÓN",
-     "txt": "Proclama principios, Inspira leyes"
-    },
-    {
-     "cab": "TRATADO",
-     "txt": "Obliga por ley"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "DECLARACIÓN",
+     "Proclama principios, Inspira leyes"
+    ],
+    [
+     "TRATADO",
+     "Obliga por ley"
+    ]
    ],
    "voz": [
     "¿Declaración o tratado?",

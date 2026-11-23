@@ -20,10 +20,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Pigmento",
-   "texto": "Sustancia que da color",
-   "emoji": "🖌️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Pigmento",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Sustancia que da color"
+    }
+   ],
    "voz": [
     "Un *pigmento* es una sustancia que da color.",
     "Absorbe parte de la luz que recibe."
@@ -116,17 +123,17 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Amarillo más azul da…",
    "opciones": [
-    "Verde",
     "Naranja",
+    "Verde",
     "Violeta"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: amarillo más azul.",
-    "¿Verde, naranja o violeta?",
+    "¿naranja, verde, o violeta?",
     "*Verde*."
    ]
   },

@@ -91,30 +91,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "El recorte de la escena que mostramos es el…",
    "opciones": [
-    "Encuadre",
     "Ritmo",
+    "Encuadre",
     "Contorno"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: el recorte de la escena.",
-    "¿Encuadre, ritmo o contorno?",
+    "¿ritmo, encuadre, o contorno?",
     "El *encuadre*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Mismo plano siempre",
-     "bien": "Probar varios planos"
+     "antes": "Mismo plano siempre",
+     "despues": "Probar varios planos",
+     "motivo": ""
     },
     {
-     "mal": "El punto de vista no importa",
-     "bien": "Cambia el mensaje"
+     "antes": "El punto de vista no importa",
+     "despues": "Cambia el mensaje",
+     "motivo": ""
     }
    ],
    "voz": [

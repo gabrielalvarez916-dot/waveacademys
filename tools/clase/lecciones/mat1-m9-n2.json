@@ -62,15 +62,15 @@
    ]
   },
   {
-   "t": "dato",
+   "t": "datoloco",
+   "texto": "Multiplicar por una fracción menor que 1 achica el resultado",
+   "emoji": "🤏",
+   "numero": 8,
+   "unidad": "/15",
    "voz": [
     "Algo raro: 8/15 es *menos* que 2/3 y menos que 4/5.",
     "Multiplicar por una fracción menor que 1 *achica*. ¡Es tomar una parte de una parte!"
-   ],
-   "numero": 8,
-   "despues": "/15",
-   "texto": "Multiplicar por una fracción menor que 1 achica el resultado",
-   "emoji": "🤏"
+   ]
   },
   {
    "t": "zoom",

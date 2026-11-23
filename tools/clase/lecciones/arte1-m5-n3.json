@@ -1,1 +1,163 @@
-{"slug": "arte1-m5-n3", "step_id": "3d7d3c5d-0faa-41a4-9a25-7607f35315af", "materia": "Arte y Comunicación I", "titulo": "Espacios para mirar: interiores, exteriores, públicos y privados", "sub": "Arte y Comunicación I · Misión 5 · Nivel 3", "escenas": [{"t": "chat", "contacto": {"nombre": "Lu", "emoji": "👧"}, "mensajes": [{"yo": false, "txt": "¿Dibujaste la plaza?"}, {"yo": true, "txt": "Sí, un espacio exterior y público"}, {"yo": false, "txt": "¿Y tu cuarto? ¿Interior y privado?"}], "titulo": "ESPACIOS", "sub": "para mirar", "voz": ["Un chat sobre espacios.", "Lu pregunta si dibujaste la plaza.", "Respondés que es exterior y público.", "Y ella pregunta por tu cuarto: interior y privado."]}, {"t": "definicion", "palabra": "Espacio público", "texto": "Abierto a todas las personas", "emoji": "🏞️", "voz": ["Un *espacio público* está abierto a todas las personas.", "Por ejemplo, una plaza."]}, {"t": "venn", "a": "PÚBLICO", "b": "PRIVADO", "itemsA": ["Una plaza", "Una biblioteca"], "itemsB": ["Una casa", "Un jardín propio"], "ambos": ["Se pueden dibujar"], "voz": ["Dos tipos de espacio.", "El *público*: una plaza o una biblioteca.", "El *privado*: una casa o un jardín propio.", "Y los dos se pueden *dibujar*."]}, {"t": "antesdespues", "antes": {"cab": "INTERIOR", "emoji": "🏠", "texto": "Una habitación o un aula"}, "despues": {"cab": "EXTERIOR", "emoji": "🌳", "texto": "Una plaza o una calle"}, "voz": ["Dos formas de espacio. El *interior* es cubierto.", "El *exterior* es al aire libre."]}, {"t": "pregunta", "pregunta": "Un lugar abierto a todos es un espacio…", "opciones": ["Público", "Privado", "Oculto"], "correcta": 0, "voz": ["Te toca: lugar abierto a todos.", "¿Público, privado u oculto?", "*Público*."]}, {"t": "errores", "items": [{"mal": "Todo exterior es público", "bien": "Un patio propio es privado"}, {"mal": "Dibujar todos los objetos", "bien": "Elegir los importantes"}], "voz": ["Errores típicos.", "Creer que *todo exterior es público*.", "Y dibujar *todos los objetos*."]}, {"t": "resumen", "voz": ["Repasemos.", "Hay espacios *interiores y exteriores*.", "Y *públicos y privados*.", "Se eligen los *elementos importantes*.", "Y la *atmósfera* cuenta.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["INTERIOR", "cubierto"], ["EXTERIOR", "aire libre"], ["PÚBLICO", "para todos"], ["ATMÓSFERA", "luz y color"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "arte1-m5-n3",
+ "step_id": "3d7d3c5d-0faa-41a4-9a25-7607f35315af",
+ "materia": "Arte y Comunicación I",
+ "titulo": "Espacios para mirar: interiores, exteriores, públicos y privados",
+ "sub": "Arte y Comunicación I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lu",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Dibujaste la plaza?"
+    },
+    {
+     "yo": true,
+     "txt": "Sí, un espacio exterior y público"
+    },
+    {
+     "yo": false,
+     "txt": "¿Y tu cuarto? ¿Interior y privado?"
+    }
+   ],
+   "titulo": "ESPACIOS",
+   "sub": "para mirar",
+   "voz": [
+    "Un chat sobre espacios.",
+    "Lu pregunta si dibujaste la plaza.",
+    "Respondés que es exterior y público.",
+    "Y ella pregunta por tu cuarto: interior y privado."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Espacio público",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Abierto a todas las personas"
+    }
+   ],
+   "voz": [
+    "Un *espacio público* está abierto a todas las personas.",
+    "Por ejemplo, una plaza."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "PÚBLICO",
+   "b": "PRIVADO",
+   "itemsA": [
+    "Una plaza",
+    "Una biblioteca"
+   ],
+   "itemsB": [
+    "Una casa",
+    "Un jardín propio"
+   ],
+   "ambos": [
+    "Se pueden dibujar"
+   ],
+   "voz": [
+    "Dos tipos de espacio.",
+    "El *público*: una plaza o una biblioteca.",
+    "El *privado*: una casa o un jardín propio.",
+    "Y los dos se pueden *dibujar*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "INTERIOR",
+    "emoji": "🏠",
+    "texto": "Una habitación o un aula"
+   },
+   "despues": {
+    "cab": "EXTERIOR",
+    "emoji": "🌳",
+    "texto": "Una plaza o una calle"
+   },
+   "voz": [
+    "Dos formas de espacio. El *interior* es cubierto.",
+    "El *exterior* es al aire libre."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Un lugar abierto a todos es un espacio…",
+   "opciones": [
+    "Público",
+    "Privado",
+    "Oculto"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: lugar abierto a todos.",
+    "¿Público, privado u oculto?",
+    "*Público*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Todo exterior es público",
+     "despues": "Un patio propio es privado",
+     "motivo": ""
+    },
+    {
+     "antes": "Dibujar todos los objetos",
+     "despues": "Elegir los importantes",
+     "motivo": ""
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que *todo exterior es público*.",
+    "Y dibujar *todos los objetos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay espacios *interiores y exteriores*.",
+    "Y *públicos y privados*.",
+    "Se eligen los *elementos importantes*.",
+    "Y la *atmósfera* cuenta.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INTERIOR",
+     "cubierto"
+    ],
+    [
+     "EXTERIOR",
+     "aire libre"
+    ],
+    [
+     "PÚBLICO",
+     "para todos"
+    ],
+    [
+     "ATMÓSFERA",
+     "luz y color"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

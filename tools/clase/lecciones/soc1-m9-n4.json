@@ -19,27 +19,23 @@
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "EL VIAJE",
-   "eventos": [
+   "items": [
     {
-     "fecha": "300.000",
-     "txt": "Aparece el Homo sapiens",
+     "txt": "300.000: Aparece el Homo sapiens",
      "emoji": "🌍"
     },
     {
-     "fecha": "70.000",
-     "txt": "Sale de África",
+     "txt": "70.000: Sale de África",
      "emoji": "👣"
     },
     {
-     "fecha": "50.000",
-     "txt": "Llega a Australia",
+     "txt": "50.000: Llega a Australia",
      "emoji": "🦘"
     },
     {
-     "fecha": "15.000",
-     "txt": "Llega a América",
+     "txt": "15.000: Llega a América",
      "emoji": "🏔️"
     }
    ],
@@ -61,23 +57,20 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Por qué se movían",
-    "emoji": "🧭"
-   },
+   "t": "bloques",
+   "titulo": "POR QUÉ SE MOVÍAN",
    "items": [
     {
-     "txt": "Seguir animales",
-     "emoji": "🦌"
+     "cab": "PASO 1",
+     "txt": "Paso 1: Paso 1: Efecto 1: Seguir animales"
     },
     {
-     "txt": "Cambios del clima",
-     "emoji": "🌡️"
+     "cab": "PASO 2",
+     "txt": "Paso 2: Paso 2: Efecto 2: Cambios del clima"
     },
     {
-     "txt": "Crecía el grupo",
-     "emoji": "👪"
+     "cab": "PASO 3",
+     "txt": "Paso 3: Paso 3: Efecto 3: Crecía el grupo"
     }
    ],
    "voz": [

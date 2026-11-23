@@ -20,27 +20,23 @@
    ]
   },
   {
-   "t": "linea",
+   "t": "flujo",
    "titulo": "EL CASO DE JABEZ WILSON",
-   "eventos": [
+   "items": [
     {
-     "fecha": "1",
-     "txt": "Su ayudante le muestra el aviso",
+     "txt": "1: Su ayudante le muestra el aviso",
      "emoji": "📰"
     },
     {
-     "fecha": "2",
-     "txt": "Copia la enciclopedia 8 semanas",
+     "txt": "2: Copia la enciclopedia 8 semanas",
      "emoji": "✍️"
     },
     {
-     "fecha": "3",
-     "txt": "La liga desaparece",
+     "txt": "3: La liga desaparece",
      "emoji": "🚪"
     },
     {
-     "fecha": "4",
-     "txt": "Va a ver a Holmes",
+     "txt": "4: Va a ver a Holmes",
      "emoji": "🕵️"
     }
    ],
@@ -52,14 +48,21 @@
    ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Falsa pista",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Dato que distrae y aleja de la verdad"
+    }
+   ],
    "voz": [
     "Una *pista* es un dato que acerca a la verdad.",
     "Una *falsa pista* distrae: hace mirar hacia el lado equivocado."
-   ],
-   "palabra": "Falsa pista",
-   "texto": "Dato que distrae y aleja de la verdad",
-   "emoji": "🎭"
+   ]
   },
   {
    "t": "matriz",
@@ -141,36 +144,39 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Para qué querría alguien a Wilson fuera de su casa cuatro horas por día?",
    "opciones": [
-    "Para usar su casa sin que lo vea",
     "Para hacerle un favor",
-    "Para robarle a él"
+    "Para robarle a él",
+    "Para usar su casa sin que lo vea"
    ],
-   "correcta": 0,
+   "correcta": 2,
    "voz": [
     "Pensá como Holmes: ¿para qué querría alguien a Wilson *fuera de su casa* cuatro horas por día?",
-    "¿Para usar la casa sin que lo vea, para hacerle un favor, o para robarle a él?",
+    "¿para hacerle un favor, para robarle a él, o para usar su casa sin que lo vea?",
     "Para *usar la casa sin que lo vea*. Si quisieran robarle, no le pagarían cuatro libras por semana."
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Seguir lo llamativo",
+     "despues": "Dudar de lo raro",
+     "motivo": ""
+    },
+    {
+     "antes": "Ignorar detalles",
+     "despues": "Anotar todo",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Creerle todo al primer dato *llamativo*.",
     "Y dejar de lado los *detalles chicos*, como unas rodillas gastadas."
-   ],
-   "items": [
-    {
-     "mal": "Seguir lo llamativo",
-     "bien": "Dudar de lo raro"
-    },
-    {
-     "mal": "Ignorar detalles",
-     "bien": "Anotar todo"
-    }
    ]
   },
   {

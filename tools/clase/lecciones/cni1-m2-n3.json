@@ -35,14 +35,21 @@
    "sub": "ninguna medida es perfecta"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Incertidumbre",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "El margen de duda que tiene toda medición"
+    }
+   ],
    "voz": [
     "Toda medición tiene una *incertidumbre*: un margen de duda.",
     "Depende del instrumento, de quien mide y de cómo mide."
-   ],
-   "palabra": "Incertidumbre",
-   "texto": "El margen de duda que tiene toda medición",
-   "emoji": "🎯"
+   ]
   },
   {
    "t": "medidor",

@@ -27,30 +27,31 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "unir",
    "titulo": "ANÁLISIS EN 5 PASOS",
-   "items": [
-    {
-     "txt": "Marco el verbo (NV)",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Pregunto ¿quién? → sujeto",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Marco el núcleo del sujeto",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "MD, MI y aposición",
-     "emoji": "4️⃣"
-    },
-    {
-     "txt": "¿Bimembre o unimembre?",
-     "emoji": "5️⃣"
-    }
+   "pares": [
+    [
+     "PASO 1",
+     "Marco el verbo (NV)"
+    ],
+    [
+     "PASO 2",
+     "Pregunto ¿quién? → sujeto"
+    ],
+    [
+     "PASO 3",
+     "Marco el núcleo del sujeto"
+    ],
+    [
+     "PASO 4",
+     "MD, MI y aposición"
+    ],
+    [
+     "PASO 5",
+     "¿Bimembre o unimembre?"
+    ]
    ],
+   "mezclar": false,
    "voz": [
     "El análisis, en cinco pasos.",
     "Uno: marco el *verbo*, el núcleo del predicado.",

@@ -1,1 +1,166 @@
-{"slug": "ing1-m4-n1", "step_id": "d7b97426-6fb1-4fb9-910d-69629c6d3f7f", "materia": "Inglés I", "titulo": "Present perfect: for and since", "sub": "Inglés I · Misión 4 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Qué palabra indica desde cuándo empezó algo?", "segundos": 6, "respuesta": "Since", "emoji": "⏳", "titulo": "FOR Y SINCE", "sub": "cuánto tiempo hace", "voz": ["Desafío: ¿qué palabra indica desde cuándo empezó algo? Seis segundos.", "*Since*.", "Hoy: *for y since*."]}, {"t": "oracion", "titulo": "PRESENTE PERFECTO", "partes": [{"txt": "I", "rol": "sujeto"}, {"txt": "have lived", "rol": "verbo"}, {"txt": "here", "rol": "lugar"}, {"txt": "for five years", "rol": "tiempo"}], "traduccion": "Vivo aquí desde hace cinco años", "voz": ["Primero, *quién*.", "Después, *have* más el participio.", "Luego, *dónde*.", "Y por último, *cuánto tiempo*.", "Significa que vive allí desde hace cinco años."]}, {"t": "comparar", "a": {"cab": "FOR", "texto": "Cuánto tiempo: five years", "emoji": "⏱️"}, "b": {"cab": "SINCE", "texto": "Desde cuándo: 2020", "emoji": "📅"}, "signo": "vs", "voz": ["Dos palabras, dos preguntas.", "*For* responde cuánto tiempo.", "*Since* responde desde cuándo."]}, {"t": "tarjetas", "titulo": "EJEMPLOS", "items": [{"en": "for five years", "es": "durante cinco años", "emoji": "⏱️"}, {"en": "since 2020", "es": "desde 2020", "emoji": "📅"}, {"en": "for two weeks", "es": "durante dos semanas", "emoji": "🗓️"}, {"en": "since Monday", "es": "desde el lunes", "emoji": "📆"}], "voz": ["Primer ejemplo: una duración.", "Segundo ejemplo: un inicio.", "Tercer ejemplo: otra duración.", "Cuarto ejemplo: otro inicio."]}, {"t": "pregunta", "pregunta": "She has worked here ___ 2020.", "opciones": ["since", "for", "ago"], "correcta": 0, "voz": ["Te toca: 2020.", "¿*Since*, *for* o *ago*?", "*Since*: marca el inicio."]}, {"t": "errores", "items": [{"mal": "I have live here", "bien": "I have lived here"}, {"mal": "She have worked here", "bien": "She has worked here"}], "voz": ["Errores típicos.", "Olvidar el *participio*.", "Y usar *have* con *she*."]}, {"t": "resumen", "voz": ["Repasemos.", "Se forma con *have* o *has* más participio.", "*For* es duración.", "*Since* es inicio.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["FORMA", "have o has más participio"], ["FOR", "cuánto tiempo"], ["SINCE", "desde cuándo"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m4-n1",
+ "step_id": "d7b97426-6fb1-4fb9-910d-69629c6d3f7f",
+ "materia": "Inglés I",
+ "titulo": "Present perfect: for and since",
+ "sub": "Inglés I · Misión 4 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra indica desde cuándo empezó algo?",
+   "segundos": 6,
+   "respuesta": "Since",
+   "emoji": "⏳",
+   "titulo": "FOR Y SINCE",
+   "sub": "cuánto tiempo hace",
+   "voz": [
+    "Desafío: ¿qué palabra indica desde cuándo empezó algo? Seis segundos.",
+    "*Since*.",
+    "Hoy: *for y since*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "PRESENTE PERFECTO",
+   "partes": [
+    {
+     "txt": "I",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "have lived",
+     "rol": "verbo"
+    },
+    {
+     "txt": "here",
+     "rol": "lugar"
+    },
+    {
+     "txt": "for five years",
+     "rol": "tiempo"
+    }
+   ],
+   "traduccion": "Vivo aquí desde hace cinco años",
+   "voz": [
+    "Primero, *quién*.",
+    "Después, *have* más el participio.",
+    "Luego, *dónde*.",
+    "Y por último, *cuánto tiempo*.",
+    "Significa que vive allí desde hace cinco años."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FOR",
+    "texto": "Cuánto tiempo: five years",
+    "emoji": "⏱️"
+   },
+   "b": {
+    "cab": "SINCE",
+    "texto": "Desde cuándo: 2020",
+    "emoji": "📅"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos palabras, dos preguntas.",
+    "*For* responde cuánto tiempo.",
+    "*Since* responde desde cuándo."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "EJEMPLOS",
+   "items": [
+    {
+     "en": "for five years",
+     "es": "durante cinco años",
+     "emoji": "⏱️"
+    },
+    {
+     "en": "since 2020",
+     "es": "desde 2020",
+     "emoji": "📅"
+    },
+    {
+     "en": "for two weeks",
+     "es": "durante dos semanas",
+     "emoji": "🗓️"
+    },
+    {
+     "en": "since Monday",
+     "es": "desde el lunes",
+     "emoji": "📆"
+    }
+   ],
+   "voz": [
+    "Primer ejemplo: una duración.",
+    "Segundo ejemplo: un inicio.",
+    "Tercer ejemplo: otra duración.",
+    "Cuarto ejemplo: otro inicio."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "She has worked here",
+   "despues": "2020.",
+   "opciones": [
+    "for",
+    "since",
+    "ago"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: 2020.",
+    "¿for, since, o ago?",
+    "*Since*: marca el inicio."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "I have live here",
+     "bien": "I have lived here"
+    },
+    {
+     "mal": "She have worked here",
+     "bien": "She has worked here"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Olvidar el *participio*.",
+    "Y usar *have* con *she*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Se forma con *have* o *has* más participio.",
+    "*For* es duración.",
+    "*Since* es inicio.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FORMA",
+     "have o has más participio"
+    ],
+    [
+     "FOR",
+     "cuánto tiempo"
+    ],
+    [
+     "SINCE",
+     "desde cuándo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

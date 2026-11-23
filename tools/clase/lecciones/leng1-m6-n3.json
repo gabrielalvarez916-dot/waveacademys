@@ -45,22 +45,23 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "unir",
    "titulo": "ESPERADO Y REAL",
-   "items": [
-    {
-     "cab": "FAMILIA ATERRADA",
-     "txt": "Le ofrecen aceite"
-    },
-    {
-     "cab": "FANTASMA IMPONENTE",
-     "txt": "Se siente ridículo"
-    },
-    {
-     "cab": "MISTERIO",
-     "txt": "Producto de limpieza"
-    }
+   "pares": [
+    [
+     "FAMILIA ATERRADA",
+     "Le ofrecen aceite"
+    ],
+    [
+     "FANTASMA IMPONENTE",
+     "Se siente ridículo"
+    ],
+    [
+     "MISTERIO",
+     "Producto de limpieza"
+    ]
    ],
+   "mezclar": false,
    "voz": [
     "El contraste.",
     "Se espera una familia *aterrada*: le ofrecen *aceite*.",

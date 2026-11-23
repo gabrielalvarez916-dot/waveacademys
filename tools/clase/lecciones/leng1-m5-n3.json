@@ -30,20 +30,20 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
    "titulo": "PARTES DE UNA EXPOSICIÓN",
    "items": [
     {
-     "txt": "Apertura: digo el tema",
-     "emoji": "👋"
+     "cab": "PASO 1",
+     "txt": "Apertura: digo el tema"
     },
     {
-     "txt": "Desarrollo: explico las ideas",
-     "emoji": "🧠"
+     "cab": "PASO 2",
+     "txt": "Desarrollo: explico las ideas"
     },
     {
-     "txt": "Cierre: resumo y agradezco",
-     "emoji": "🙏"
+     "cab": "PASO 3",
+     "txt": "Cierre: resumo y agradezco"
     }
    ],
    "voz": [
@@ -106,33 +106,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "BIEN",
-     "emoji": "✅"
+     "txt": "Mirar al público, Usar palabras clave"
     },
     {
      "cab": "MAL",
-     "emoji": "❌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Mirar al público",
-     "caja": 0
-    },
-    {
-     "txt": "Leer del papel",
-     "caja": 1
-    },
-    {
-     "txt": "Usar palabras clave",
-     "caja": 0
-    },
-    {
-     "txt": "Hablar muy rápido",
-     "caja": 1
+     "txt": "Leer del papel, Hablar muy rápido"
     }
    ],
    "voz": [
@@ -157,15 +140,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Leer todo del papel",
-     "bien": "Palabras clave"
+     "antes": "Leer todo del papel",
+     "despues": "Palabras clave",
+     "motivo": ""
     },
     {
-     "mal": "Hablar muy rápido",
-     "bien": "Hablar despacio"
+     "antes": "Hablar muy rápido",
+     "despues": "Hablar despacio",
+     "motivo": ""
     }
    ],
    "voz": [

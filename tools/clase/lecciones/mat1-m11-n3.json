@@ -68,20 +68,9 @@
    "signo": "<"
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Las temperaturas de la semana.",
-    "Lunes: menos 4.",
-    "Martes: menos 1.",
-    "Miércoles: 2.",
-    "Jueves: menos 6. El más frío, el *jueves*; el más templado, el *miércoles*."
-   ],
+   "t": "unir",
    "titulo": "TEMPERATURAS DE LA SEMANA",
-   "columnas": [
-    "Día",
-    "Temperatura"
-   ],
-   "filas": [
+   "pares": [
     [
      "Lunes",
      "−4 °C"
@@ -98,6 +87,14 @@
      "Jueves",
      "−6 °C 🥶"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Las temperaturas de la semana.",
+    "Lunes: menos 4.",
+    "Martes: menos 1.",
+    "Miércoles: 2.",
+    "Jueves: menos 6. El más frío, el *jueves*; el más templado, el *miércoles*."
    ]
   },
   {

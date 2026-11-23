@@ -1,1 +1,163 @@
-{"slug": "ing1-m2-n2", "step_id": "f54ed25a-af1e-4b4e-87f1-2eb6b107e936", "materia": "Inglés I", "titulo": "Making plans and invitations", "sub": "Inglés I · Misión 2 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "PLANES", "titular": "Se arma el plan del sábado", "bajada": "¿Quién se suma?", "emoji": "🎬", "titulo": "INVITACIONES", "sub": "armar planes en inglés", "voz": ["Noticia: se arma el plan del sábado.", "¿Quién se suma?", "Hoy: *invitaciones y planes*."]}, {"t": "oracion", "titulo": "UNA INVITACIÓN", "partes": [{"txt": "Do", "rol": "verbo"}, {"txt": "you", "rol": "sujeto"}, {"txt": "want to go", "rol": "verbo"}, {"txt": "to the cinema", "rol": "lugar"}], "traduccion": "¿Querés ir al cine?", "voz": ["Empieza con el *auxiliar*.", "Sigue *quién*.", "Luego, *la acción*.", "Y por último, *dónde*.", "Significa si querés ir al cine."]}, {"t": "tarjetas", "titulo": "FORMAS DE PROPONER", "items": [{"en": "Let's go!", "es": "¡Vamos!", "emoji": "🚶"}, {"en": "How about Saturday?", "es": "¿Y el sábado?", "emoji": "📅"}, {"en": "Do you want to come?", "es": "¿Querés venir?", "emoji": "🙋"}], "voz": ["Primera forma: *let's*.", "Segunda forma: *how about*.", "Tercera forma: *do you want to*."]}, {"t": "pasos", "titulo": "ARMAR EL PLAN", "items": [{"txt": "Elegir la actividad", "emoji": "🎯"}, {"txt": "Elegir el día", "emoji": "📅"}, {"txt": "Acordar el lugar", "emoji": "📍"}], "voz": ["Tres pasos para armar un plan.", "Primero, la *actividad*.", "Después, el *día*.", "Y por último, el *lugar*."]}, {"t": "errores", "items": [{"mal": "Let's to go to the park", "bien": "Let's go to the park"}, {"mal": "Do you wants to come", "bien": "Do you want to come"}], "voz": ["Errores típicos.", "Poner *to* después de *let's*.", "Y agregar *s* después de *do you*."]}, {"t": "pregunta", "pregunta": "Para proponer ir al parque se dice…", "opciones": ["Let's go to the park", "Let's to go to the park", "We lets go"], "correcta": 0, "voz": ["Te toca: proponer un plan.", "¿Cuál de las tres frases es correcta?", "*Let's go to the park*."]}, {"t": "resumen", "voz": ["Repasemos.", "*Do you want to* invita.", "*Let's* propone.", "Para sugerir, *how about*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["INVITAR", "do you want to"], ["PROPONER", "let's"], ["SUGERIR", "how about"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m2-n2",
+ "step_id": "f54ed25a-af1e-4b4e-87f1-2eb6b107e936",
+ "materia": "Inglés I",
+ "titulo": "Making plans and invitations",
+ "sub": "Inglés I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "PLANES",
+   "titular": "Se arma el plan del sábado",
+   "bajada": "¿Quién se suma?",
+   "emoji": "🎬",
+   "titulo": "INVITACIONES",
+   "sub": "armar planes en inglés",
+   "voz": [
+    "Noticia: se arma el plan del sábado.",
+    "¿Quién se suma?",
+    "Hoy: *invitaciones y planes*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UNA INVITACIÓN",
+   "partes": [
+    {
+     "txt": "Do",
+     "rol": "verbo"
+    },
+    {
+     "txt": "you",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "want to go",
+     "rol": "verbo"
+    },
+    {
+     "txt": "to the cinema",
+     "rol": "lugar"
+    }
+   ],
+   "traduccion": "¿Querés ir al cine?",
+   "voz": [
+    "Empieza con el *auxiliar*.",
+    "Sigue *quién*.",
+    "Luego, *la acción*.",
+    "Y por último, *dónde*.",
+    "Significa si querés ir al cine."
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "Let's go!",
+     "emoji": "🚶",
+     "trad": "¡Vamos!"
+    },
+    {
+     "palabra": "How about Saturday?",
+     "emoji": "📅",
+     "trad": "¿Y el sábado?"
+    },
+    {
+     "palabra": "Do you want to come?",
+     "emoji": "🙋",
+     "trad": "¿Querés venir?"
+    }
+   ],
+   "voz": [
+    "Primera forma: *let's*.",
+    "Segunda forma: *how about*.",
+    "Tercera forma: *do you want to*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "ARMAR EL PLAN",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Elegir la actividad"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "Elegir el día"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Acordar el lugar"
+    }
+   ],
+   "voz": [
+    "Tres pasos para armar un plan.",
+    "Primero, la *actividad*.",
+    "Después, el *día*.",
+    "Y por último, el *lugar*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Let's to go to the park",
+     "bien": "Let's go to the park"
+    },
+    {
+     "mal": "Do you wants to come",
+     "bien": "Do you want to come"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Poner *to* después de *let's*.",
+    "Y agregar *s* después de *do you*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Para proponer ir al parque se dice…",
+   "opciones": [
+    "Let's go to the park",
+    "Let's to go to the park",
+    "We lets go"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: proponer un plan.",
+    "¿Cuál de las tres frases es correcta?",
+    "*Let's go to the park*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Do you want to* invita.",
+    "*Let's* propone.",
+    "Para sugerir, *how about*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "INVITAR",
+     "do you want to"
+    ],
+    [
+     "PROPONER",
+     "let's"
+    ],
+    [
+     "SUGERIR",
+     "how about"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

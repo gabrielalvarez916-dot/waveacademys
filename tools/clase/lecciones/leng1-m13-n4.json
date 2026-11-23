@@ -77,13 +77,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "CONECTORES PARA DISCREPAR",
-   "columnas": [
-    "Función",
-    "Conectores"
-   ],
-   "filas": [
+   "pares": [
     [
      "Reconocer",
      "es cierto que"
@@ -101,6 +97,7 @@
      "por eso"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Conectores útiles.",
     "*Es cierto que*, para reconocer.",

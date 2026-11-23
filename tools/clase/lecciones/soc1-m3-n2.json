@@ -128,7 +128,7 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "La Unión Soviética, al disolverse, se dividió en…",
    "opciones": [
     "15 países",
@@ -143,15 +143,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Los mapas no cambian",
-     "bien": "Las fronteras se mueven"
+     "antes": "Los mapas no cambian",
+     "despues": "Las fronteras se mueven",
+     "motivo": ""
     },
     {
-     "mal": "Límite = frontera",
-     "bien": "Línea vs zona"
+     "antes": "Límite = frontera",
+     "despues": "Línea vs zona",
+     "motivo": ""
     }
    ],
    "voz": [

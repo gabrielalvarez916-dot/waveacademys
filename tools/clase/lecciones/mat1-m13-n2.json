@@ -27,14 +27,21 @@
    "sub": "misma regla de signos"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Dividir enteros",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Dividir valores absolutos · signos: misma regla que ×"
+    }
+   ],
    "voz": [
     "Para dividir enteros, dividís los valores absolutos…",
     "… y el signo sigue *la misma regla que la multiplicación*: iguales, positivo; distintos, negativo."
-   ],
-   "palabra": "Dividir enteros",
-   "texto": "Dividir valores absolutos · signos: misma regla que ×",
-   "emoji": "➗"
+   ]
   },
   {
    "t": "saltos",

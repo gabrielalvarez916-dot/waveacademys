@@ -30,13 +30,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "FUENTES",
-   "columnas": [
-    "Fuente",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Transporte",
      "Auto, avión"
@@ -54,6 +50,7 @@
      "Ropa nueva"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "De dónde sale.",
     "*Transporte*.",

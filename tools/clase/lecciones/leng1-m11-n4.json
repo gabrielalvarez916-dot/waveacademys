@@ -71,13 +71,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "BANCO DE RECURSOS",
-   "columnas": [
-    "Recurso",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Comparación",
      "Lenta como un caracol"
@@ -91,6 +87,7 @@
      "La ciudad bostezaba"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Algunos recursos.",
     "*Comparación*: lenta como un caracol.",

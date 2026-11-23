@@ -96,40 +96,33 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "MEDIR",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Centro sobre el vértice"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "Un lado sobre el 0"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Leer la escala que empieza en 0"
+    }
+   ],
    "voz": [
     "Medir con el transportador, en tres pasos.",
     "El *centro* del transportador, justo sobre el *vértice*.",
     "Un lado sobre la *línea del cero*.",
     "Leer en la escala que *empieza en 0* sobre ese lado. ¡Si leés la otra, te da el ángulo equivocado!"
-   ],
-   "titulo": "MEDIR",
-   "items": [
-    {
-     "txt": "Centro sobre el vértice",
-     "emoji": "🎯"
-    },
-    {
-     "txt": "Un lado sobre el 0",
-     "emoji": "📏"
-    },
-    {
-     "txt": "Leer la escala que empieza en 0",
-     "emoji": "👀"
-    }
    ]
   },
   {
-   "t": "matriz",
-   "voz": [
-    "Los tipos de ángulos.",
-    "*Agudo*: menos de 90 grados.",
-    "*Recto*: exactamente 90.",
-    "*Obtuso*: más de 90 y menos de 180.",
-    "*Llano*: exactamente 180. ¡Y una vuelta completa son 360!"
-   ],
+   "t": "bloques",
    "titulo": "TIPOS DE ÁNGULOS",
-   "celdas": [
+   "items": [
     {
      "cab": "AGUDO",
      "txt": "menos de 90°"
@@ -146,6 +139,13 @@
      "cab": "LLANO",
      "txt": "180°"
     }
+   ],
+   "voz": [
+    "Los tipos de ángulos.",
+    "*Agudo*: menos de 90 grados.",
+    "*Recto*: exactamente 90.",
+    "*Obtuso*: más de 90 y menos de 180.",
+    "*Llano*: exactamente 180. ¡Y una vuelta completa son 360!"
    ]
   },
   {
@@ -470,21 +470,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Agudo de 130°",
+     "despues": "Leer la escala que empieza en 0",
+     "motivo": ""
+    },
+    {
+     "antes": "Centro corrido",
+     "despues": "Centro sobre el vértice",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Leer la *escala equivocada*: un agudo no puede medir 130.",
     "Y no poner el *centro sobre el vértice*."
-   ],
-   "items": [
-    {
-     "mal": "Agudo de 130°",
-     "bien": "Leer la escala que empieza en 0"
-    },
-    {
-     "mal": "Centro corrido",
-     "bien": "Centro sobre el vértice"
-    }
    ]
   },
   {

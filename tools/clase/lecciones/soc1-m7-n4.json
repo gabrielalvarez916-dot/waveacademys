@@ -20,25 +20,21 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "bloques",
    "titulo": "INDICADORES",
-   "columnas": [
-    "Indicador",
-    "Qué muestra"
-   ],
-   "filas": [
-    [
-     "Esperanza de vida",
-     "Años que se espera vivir"
-    ],
-    [
-     "Mortalidad infantil",
-     "Bebés que mueren antes del año"
-    ],
-    [
-     "Alfabetización",
-     "Saber leer y escribir"
-    ]
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Paso 1: Paso 1: Paso 1: Paso 1: Esperanza de vida: Años que se espera vivir"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "Paso 2: Paso 2: Paso 2: Paso 2: Mortalidad infantil: Bebés que mueren antes del año"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Paso 3: Paso 3: Paso 3: Paso 3: Alfabetización: Saber leer y escribir"
+    }
    ],
    "voz": [
     "Algunos indicadores.",

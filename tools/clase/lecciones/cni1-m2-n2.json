@@ -77,27 +77,18 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "pasos",
+   "titulo": "NORMAS DE ORO",
+   "items": [
+    "No probar: ni comer ni beber",
+    "Abanicar: nunca oler directo",
+    "Avisar: cualquier accidente"
+   ],
    "voz": [
     "Las normas de oro.",
     "*Nunca* comer, beber ni probar nada en el laboratorio.",
     "*Oler abanicando* con la mano, nunca directo.",
     "*Avisar* enseguida si algo se rompe o te lastimás."
-   ],
-   "titulo": "NORMAS DE ORO",
-   "items": [
-    {
-     "cab": "NO PROBAR",
-     "txt": "ni comer ni beber"
-    },
-    {
-     "cab": "ABANICAR",
-     "txt": "nunca oler directo"
-    },
-    {
-     "cab": "AVISAR",
-     "txt": "cualquier accidente"
-    }
    ]
   },
   {
@@ -153,72 +144,33 @@
    ]
   },
   {
-   "t": "matriz",
+   "t": "pasos",
+   "titulo": "SEÑALES DE PELIGRO",
+   "items": [
+    "🔥 inflamable: se prende fácil",
+    "☠️ tóxico: veneno",
+    "🧪 corrosivo: quema la piel",
+    "💥 explosivo: puede explotar"
+   ],
    "voz": [
     "Las *señales de peligro* de las etiquetas.",
     "La *llama*: inflamable, se prende fuego fácil.",
     "La *calavera*: tóxico, es veneno.",
     "La mano corroída: *corrosivo*, quema la piel.",
     "La explosión: *explosivo*."
-   ],
-   "titulo": "SEÑALES DE PELIGRO",
-   "celdas": [
-    {
-     "cab": "🔥 INFLAMABLE",
-     "txt": "se prende fácil"
-    },
-    {
-     "cab": "☠️ TÓXICO",
-     "txt": "veneno"
-    },
-    {
-     "cab": "🧪 CORROSIVO",
-     "txt": "quema la piel"
-    },
-    {
-     "cab": "💥 EXPLOSIVO",
-     "txt": "puede explotar"
-    }
    ]
   },
   {
-   "t": "clasificar",
+   "t": "pasos",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    "Seguro: Usar antiparras, Abanicar al oler, Atarse el pelo",
+    "Peligroso: Probar sustancias, Correr"
+   ],
    "voz": [
     "¿Seguro o peligroso?",
     "*Seguro*: usar antiparras, abanicar para oler, atarse el pelo.",
     "*Peligroso*: probar una sustancia, correr en el laboratorio."
-   ],
-   "cajas": [
-    {
-     "cab": "SEGURO",
-     "emoji": "✅"
-    },
-    {
-     "cab": "PELIGROSO",
-     "emoji": "⛔"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Usar antiparras",
-     "caja": 0
-    },
-    {
-     "txt": "Abanicar al oler",
-     "caja": 0
-    },
-    {
-     "txt": "Atarse el pelo",
-     "caja": 0
-    },
-    {
-     "txt": "Probar sustancias",
-     "caja": 1
-    },
-    {
-     "txt": "Correr",
-     "caja": 1
-    }
    ]
   },
   {

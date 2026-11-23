@@ -19,29 +19,25 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "matriz",
    "titulo": "IDEAS CLAVE",
-   "columnas": [
-    "Idea",
-    "Qué dice"
-   ],
-   "filas": [
-    [
-     "Partículas",
-     "La materia las tiene"
-    ],
-    [
-     "Movimiento",
-     "Siempre se mueven"
-    ],
-    [
-     "Espacios",
-     "Hay espacio vacío"
-    ],
-    [
-     "Fuerzas",
-     "Se atraen"
-    ]
+   "celdas": [
+    {
+     "cab": "PARTÍCULAS",
+     "txt": "La materia las tiene"
+    },
+    {
+     "cab": "MOVIMIENTO",
+     "txt": "Siempre se mueven"
+    },
+    {
+     "cab": "ESPACIOS",
+     "txt": "Hay espacio vacío"
+    },
+    {
+     "cab": "FUERZAS",
+     "txt": "Se atraen"
+    }
    ],
    "voz": [
     "Cuatro ideas.",

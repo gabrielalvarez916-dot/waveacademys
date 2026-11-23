@@ -45,13 +45,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "LOS CINCO REINOS",
-   "columnas": [
-    "Reino",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Monera",
      "Bacterias"
@@ -73,6 +69,7 @@
      "Puma"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Mirá los cinco reinos.",
     "*Monera*: las bacterias.",
@@ -158,30 +155,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Un ser vivo pluricelular que absorbe el alimento y no hace fotosíntesis. ¿Qué es?",
    "opciones": [
-    "Hongo",
     "Planta",
+    "Hongo",
     "Bacteria"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: pluricelular, absorbe su alimento y no hace fotosíntesis.",
-    "¿Hongo, planta o bacteria?",
+    "¿planta, hongo, o bacteria?",
     "Es un *hongo*: reino Fungi."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Los hongos son plantas",
-     "bien": "Son un reino aparte"
+     "antes": "Los hongos son plantas",
+     "despues": "Son un reino aparte",
+     "motivo": ""
     },
     {
-     "mal": "Todo unicelular es bacteria",
-     "bien": "Hay protistas unicelulares"
+     "antes": "Todo unicelular es bacteria",
+     "despues": "Hay protistas unicelulares",
+     "motivo": ""
     }
    ],
    "voz": [

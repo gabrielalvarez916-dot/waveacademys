@@ -20,14 +20,21 @@
    "sub": "reglas que se repiten"
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Patrón",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Secuencia que sigue una regla · término y posición"
+    }
+   ],
    "voz": [
     "Un *patrón* es una secuencia que sigue una *regla*.",
     "Cada número es un *término*, y cada término tiene una *posición*: primero, segundo, tercero…"
-   ],
-   "palabra": "Patrón",
-   "texto": "Secuencia que sigue una regla · término y posición",
-   "emoji": "🔁"
+   ]
   },
   {
    "t": "geo",
@@ -377,20 +384,9 @@
    ]
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Los fósforos, en tabla.",
-    "1 cuadrado: 4.",
-    "2 cuadrados: 7.",
-    "3 cuadrados: 10.",
-    "4 cuadrados: 13. Cada cuadrado nuevo suma *3*, porque comparte un lado."
-   ],
+   "t": "unir",
    "titulo": "CUADRADOS CON FÓSFOROS",
-   "columnas": [
-    "Cuadrados (n)",
-    "Fósforos"
-   ],
-   "filas": [
+   "pares": [
     [
      "1",
      "4"
@@ -407,6 +403,14 @@
      "4",
      "13"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Los fósforos, en tabla.",
+    "1 cuadrado: 4.",
+    "2 cuadrados: 7.",
+    "3 cuadrados: 10.",
+    "4 cuadrados: 13. Cada cuadrado nuevo suma *3*, porque comparte un lado."
    ]
   },
   {
@@ -452,14 +456,14 @@
    ]
   },
   {
-   "t": "dato",
+   "t": "datoloco",
+   "texto": "3 × 50 + 1 = 151 fósforos",
+   "emoji": "⚡",
+   "numero": 151,
    "voz": [
     "Momento sorpresa: con la recursiva, para el término 50 tendrías que calcular *los 49 anteriores*.",
     "Con la explícita: 3 por 50, más 1. ¡*151*, en un segundo!"
-   ],
-   "numero": 151,
-   "texto": "3 × 50 + 1 = 151 fósforos",
-   "emoji": "⚡"
+   ]
   },
   {
    "t": "consejo",

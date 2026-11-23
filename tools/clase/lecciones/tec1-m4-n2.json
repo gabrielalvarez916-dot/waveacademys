@@ -1,1 +1,172 @@
-{"slug": "tec1-m4-n2", "step_id": "ec98759f-c302-44b0-81b4-40dc5ef92af7", "materia": "Tecnología I", "titulo": "Microorganismos en la agricultura y la ganadería", "sub": "Tecnología I · Misión 4 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "AGRO", "titular": "Microorganismos en el campo", "bajada": "Menos químicos, más vida", "emoji": "🌱", "titulo": "EN EL CAMPO", "sub": "agricultura y ganadería", "voz": ["Noticia: microorganismos en el campo.", "Menos químicos, más vida.", "Hoy: *microorganismos en la agricultura y la ganadería*."]}, {"t": "causas", "causa": {"txt": "Rizobios en la raíz", "emoji": "🌱"}, "items": [{"txt": "Toman nitrógeno del aire", "emoji": "💨"}, {"txt": "Alimentan a la planta", "emoji": "🥦"}, {"txt": "Menos fertilizante químico", "emoji": "🧪"}], "voz": ["Los rizobios de la soja.", "Toman *nitrógeno del aire*.", "*Alimentan* a la planta.", "Y hace falta *menos fertilizante*."]}, {"t": "definicion", "palabra": "Control biológico", "texto": "Seres vivos contra plagas", "emoji": "🐛", "voz": ["El *control biológico* usa seres vivos.", "Controla plagas sin tantos químicos."]}, {"t": "flujo", "titulo": "ENSILADO", "items": [{"txt": "Forraje picado", "emoji": "🌽"}, {"txt": "Depósito cerrado", "emoji": "🏗️"}, {"txt": "Bacterias lácticas", "emoji": "🦠"}, {"txt": "Forraje conservado", "emoji": "🐄"}], "voz": ["Se *pica* el forraje.", "Se guarda en un depósito *cerrado*.", "Las *bacterias lácticas* lo fermentan.", "Y queda *conservado* para el ganado."]}, {"t": "clasificar", "cajas": [{"cab": "AGRICULTURA", "emoji": "🌾"}, {"cab": "GANADERÍA", "emoji": "🐄"}], "fichas": [{"txt": "Rizobios", "caja": 0}, {"txt": "Ensilado", "caja": 1}, {"txt": "Biofertilizante", "caja": 0}, {"txt": "Probiótico", "caja": 1}], "voz": ["¿Agricultura o ganadería?", "*Rizobios* y *biofertilizante*: agricultura.", "*Ensilado* y *probiótico*: ganadería."]}, {"t": "pregunta", "pregunta": "¿Para qué sirve el ensilado?", "opciones": ["Conservar forraje", "Regar", "Cosechar"], "correcta": 0, "voz": ["Te toca: el ensilado.", "¿Conservar forraje, regar o cosechar?", "*Conservar forraje*."]}, {"t": "resumen", "voz": ["Repasemos.", "Los *rizobios* fijan nitrógeno.", "El *control biológico* controla plagas.", "El *ensilado* conserva forraje.", "Y se *reducen los químicos*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["RIZOBIOS", "fijan nitrógeno"], ["BIOCONTROL", "contra plagas"], ["ENSILADO", "forraje conservado"], ["VENTAJA", "menos químicos"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m4-n2",
+ "step_id": "ec98759f-c302-44b0-81b4-40dc5ef92af7",
+ "materia": "Tecnología I",
+ "titulo": "Microorganismos en la agricultura y la ganadería",
+ "sub": "Tecnología I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "AGRO",
+   "titular": "Microorganismos en el campo",
+   "bajada": "Menos químicos, más vida",
+   "emoji": "🌱",
+   "titulo": "EN EL CAMPO",
+   "sub": "agricultura y ganadería",
+   "voz": [
+    "Noticia: microorganismos en el campo.",
+    "Menos químicos, más vida.",
+    "Hoy: *microorganismos en la agricultura y la ganadería*."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Rizobios en la raíz",
+    "emoji": "🌱"
+   },
+   "items": [
+    {
+     "txt": "Toman nitrógeno del aire",
+     "emoji": "💨"
+    },
+    {
+     "txt": "Alimentan a la planta",
+     "emoji": "🥦"
+    },
+    {
+     "txt": "Menos fertilizante químico",
+     "emoji": "🧪"
+    }
+   ],
+   "voz": [
+    "Los rizobios de la soja.",
+    "Toman *nitrógeno del aire*.",
+    "*Alimentan* a la planta.",
+    "Y hace falta *menos fertilizante*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Control biológico",
+   "texto": "Seres vivos contra plagas",
+   "emoji": "🐛",
+   "voz": [
+    "El *control biológico* usa seres vivos.",
+    "Controla plagas sin tantos químicos."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "ENSILADO",
+   "items": [
+    {
+     "txt": "Forraje picado",
+     "emoji": "🌽"
+    },
+    {
+     "txt": "Depósito cerrado",
+     "emoji": "🏗️"
+    },
+    {
+     "txt": "Bacterias lácticas",
+     "emoji": "🦠"
+    },
+    {
+     "txt": "Forraje conservado",
+     "emoji": "🐄"
+    }
+   ],
+   "voz": [
+    "Se *pica* el forraje.",
+    "Se guarda en un depósito *cerrado*.",
+    "Las *bacterias lácticas* lo fermentan.",
+    "Y queda *conservado* para el ganado."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AGRICULTURA",
+     "emoji": "🌾"
+    },
+    {
+     "cab": "GANADERÍA",
+     "emoji": "🐄"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Rizobios",
+     "caja": 0
+    },
+    {
+     "txt": "Ensilado",
+     "caja": 1
+    },
+    {
+     "txt": "Biofertilizante",
+     "caja": 0
+    },
+    {
+     "txt": "Probiótico",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Agricultura o ganadería?",
+    "*Rizobios* y *biofertilizante*: agricultura.",
+    "*Ensilado* y *probiótico*: ganadería."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Para qué sirve el ensilado?",
+   "opciones": [
+    "Conservar forraje",
+    "Regar",
+    "Cosechar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el ensilado.",
+    "¿Conservar forraje, regar o cosechar?",
+    "*Conservar forraje*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *rizobios* fijan nitrógeno.",
+    "El *control biológico* controla plagas.",
+    "El *ensilado* conserva forraje.",
+    "Y se *reducen los químicos*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RIZOBIOS",
+     "fijan nitrógeno"
+    ],
+    [
+     "BIOCONTROL",
+     "contra plagas"
+    ],
+    [
+     "ENSILADO",
+     "forraje conservado"
+    ],
+    [
+     "VENTAJA",
+     "menos químicos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -71,19 +71,19 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
+   "pregunta": "¿Dónde van los paréntesis para que 12 − 4 ÷ 2 dé 4?",
+   "opciones": [
+    "(12 − 4) ÷ 2",
+    "12 − (4 ÷ 2)",
+    "No hacen falta"
+   ],
+   "correcta": 0,
    "voz": [
     "Desafío: ¿dónde ponés paréntesis para que 12 menos 4 dividido 2 dé *4*?",
     "Sin paréntesis da 10. ¿Y con paréntesis?",
     "¡Así: 12 menos 4, entre paréntesis, dividido 2! 8 dividido 2, *4*."
-   ],
-   "pregunta": "¿Dónde van los paréntesis para que 12 − 4 ÷ 2 dé 4?",
-   "opciones": [
-    "12 − (4 ÷ 2)",
-    "(12 − 4) ÷ 2",
-    "No hacen falta"
-   ],
-   "correcta": 1
+   ]
   },
   {
    "t": "tabla",

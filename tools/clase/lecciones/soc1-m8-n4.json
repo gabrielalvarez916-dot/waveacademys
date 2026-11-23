@@ -67,13 +67,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "TECNOLOGÍAS",
-   "columnas": [
-    "Dónde",
-    "Ejemplo"
-   ],
-   "filas": [
+   "pares": [
     [
      "Campo",
      "Drones y GPS"
@@ -83,6 +79,7 @@
      "Semáforos inteligentes"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Tecnologías según el lugar.",
     "En el *campo*: drones y GPS para cuidar los cultivos.",

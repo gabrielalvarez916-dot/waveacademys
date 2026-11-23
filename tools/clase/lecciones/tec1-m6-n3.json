@@ -1,1 +1,164 @@
-{"slug": "tec1-m6-n3", "step_id": "9af1c96f-45f7-431b-8a10-dc3a254d4933", "materia": "Tecnología I", "titulo": "Telégrafo y telefonía: circuitos y transducción", "sub": "Tecnología I · Misión 6 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Cómo se llama el aparato que abre y cierra el circuito del telégrafo?", "segundos": 6, "respuesta": "Manipulador", "emoji": "📟", "titulo": "TELÉGRAFO Y TELÉFONO", "sub": "circuitos y transducción", "voz": ["Desafío: ¿cómo se llama el aparato que abre y cierra el circuito del telégrafo? Seis segundos.", "Manipulador.", "Hoy: *telégrafo y telefonía*."]}, {"t": "pasos", "titulo": "EL TELÉGRAFO", "items": [{"txt": "Se aprieta el manipulador", "emoji": "👆"}, {"txt": "Se cierra el circuito", "emoji": "🔌"}, {"txt": "Pasa corriente", "emoji": "⚡"}, {"txt": "El electroimán hace clic", "emoji": "🔔"}], "voz": ["Así funciona el telégrafo.", "Se *aprieta* el manipulador.", "Se *cierra* el circuito.", "*Pasa corriente*.", "Y el electroimán hace *clic*."]}, {"t": "comparar", "a": {"cab": "TELÉGRAFO", "texto": "Envía pulsos en Morse", "emoji": "📟"}, "b": {"cab": "TELÉFONO", "texto": "Envía la voz", "emoji": "📞"}, "signo": "vs", "voz": ["Dos aparatos distintos.", "El *telégrafo* envía pulsos en código Morse.", "El *teléfono* envía la voz."]}, {"t": "flujo", "titulo": "LA VOZ POR EL TELÉFONO", "items": [{"txt": "Voz", "emoji": "🗣️"}, {"txt": "Micrófono", "emoji": "🎙️"}, {"txt": "Señal eléctrica", "emoji": "⚡"}, {"txt": "Auricular", "emoji": "🔊"}], "voz": ["Hablás frente al teléfono.", "El *micrófono* convierte la voz.", "En una *señal eléctrica*.", "Y el *auricular* la vuelve sonido."]}, {"t": "definicion", "palabra": "Transducción", "texto": "Convertir una forma de señal en otra", "emoji": "🔄", "voz": ["La *transducción* convierte una señal en otra.", "Por ejemplo, sonido en electricidad."]}, {"t": "pregunta", "pregunta": "¿Qué convierte sonido en señal eléctrica?", "opciones": ["El micrófono", "El auricular", "La pila"], "correcta": 0, "voz": ["Te toca: sonido a electricidad.", "¿El micrófono, el auricular o la pila?", "El *micrófono*."]}, {"t": "resumen", "voz": ["Repasemos.", "El *telégrafo* envía pulsos.", "El *teléfono* envía la voz.", "El *micrófono* convierte sonido en electricidad.", "Y el *auricular* la vuelve sonido.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["TELÉGRAFO", "pulsos en Morse"], ["TELÉFONO", "la voz"], ["MICRÓFONO", "sonido a electricidad"], ["AURICULAR", "electricidad a sonido"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m6-n3",
+ "step_id": "9af1c96f-45f7-431b-8a10-dc3a254d4933",
+ "materia": "Tecnología I",
+ "titulo": "Telégrafo y telefonía: circuitos y transducción",
+ "sub": "Tecnología I · Misión 6 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama el aparato que abre y cierra el circuito del telégrafo?",
+   "segundos": 6,
+   "respuesta": "Manipulador",
+   "emoji": "📟",
+   "titulo": "TELÉGRAFO Y TELÉFONO",
+   "sub": "circuitos y transducción",
+   "voz": [
+    "Desafío: ¿cómo se llama el aparato que abre y cierra el circuito del telégrafo? Seis segundos.",
+    "Manipulador.",
+    "Hoy: *telégrafo y telefonía*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL TELÉGRAFO",
+   "items": [
+    {
+     "txt": "Se aprieta el manipulador",
+     "emoji": "👆"
+    },
+    {
+     "txt": "Se cierra el circuito",
+     "emoji": "🔌"
+    },
+    {
+     "txt": "Pasa corriente",
+     "emoji": "⚡"
+    },
+    {
+     "txt": "El electroimán hace clic",
+     "emoji": "🔔"
+    }
+   ],
+   "voz": [
+    "Así funciona el telégrafo.",
+    "Se *aprieta* el manipulador.",
+    "Se *cierra* el circuito.",
+    "*Pasa corriente*.",
+    "Y el electroimán hace *clic*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "TELÉGRAFO",
+    "texto": "Envía pulsos en Morse",
+    "emoji": "📟"
+   },
+   "b": {
+    "cab": "TELÉFONO",
+    "texto": "Envía la voz",
+    "emoji": "📞"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos aparatos distintos.",
+    "El *telégrafo* envía pulsos en código Morse.",
+    "El *teléfono* envía la voz."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "LA VOZ POR EL TELÉFONO",
+   "items": [
+    {
+     "txt": "Voz",
+     "emoji": "🗣️"
+    },
+    {
+     "txt": "Micrófono",
+     "emoji": "🎙️"
+    },
+    {
+     "txt": "Señal eléctrica",
+     "emoji": "⚡"
+    },
+    {
+     "txt": "Auricular",
+     "emoji": "🔊"
+    }
+   ],
+   "voz": [
+    "Hablás frente al teléfono.",
+    "El *micrófono* convierte la voz.",
+    "En una *señal eléctrica*.",
+    "Y el *auricular* la vuelve sonido."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Transducción",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Convertir una forma de señal en otra"
+    }
+   ],
+   "voz": [
+    "La *transducción* convierte una señal en otra.",
+    "Por ejemplo, sonido en electricidad."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué convierte sonido en señal eléctrica?",
+   "opciones": [
+    "El auricular",
+    "El micrófono",
+    "La pila"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Te toca: sonido a electricidad.",
+    "¿el auricular, el micrófono, o la pila?",
+    "El *micrófono*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *telégrafo* envía pulsos.",
+    "El *teléfono* envía la voz.",
+    "El *micrófono* convierte sonido en electricidad.",
+    "Y el *auricular* la vuelve sonido.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "TELÉGRAFO",
+     "pulsos en Morse"
+    ],
+    [
+     "TELÉFONO",
+     "la voz"
+    ],
+    [
+     "MICRÓFONO",
+     "sonido a electricidad"
+    ],
+    [
+     "AURICULAR",
+     "electricidad a sonido"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

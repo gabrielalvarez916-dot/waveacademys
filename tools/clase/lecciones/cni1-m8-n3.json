@@ -49,27 +49,24 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Factores",
-    "emoji": "⚙️"
-   },
-   "items": [
+   "t": "matriz",
+   "titulo": "FACTORES",
+   "celdas": [
     {
-     "txt": "Luz",
-     "emoji": "☀️"
+     "cab": "EFECTO 1",
+     "txt": "Luz"
     },
     {
-     "txt": "Agua",
-     "emoji": "💧"
+     "cab": "EFECTO 2",
+     "txt": "Agua"
     },
     {
-     "txt": "Temperatura",
-     "emoji": "🌡️"
+     "cab": "EFECTO 3",
+     "txt": "Temperatura"
     },
     {
-     "txt": "Nutrientes",
-     "emoji": "🌱"
+     "cab": "EFECTO 4",
+     "txt": "Nutrientes"
     }
    ],
    "voz": [

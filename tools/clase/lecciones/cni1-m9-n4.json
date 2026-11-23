@@ -45,20 +45,20 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
    "titulo": "LAS TRES R",
    "items": [
     {
-     "txt": "Reducir",
-     "emoji": "🔽"
+     "cab": "PASO 1",
+     "txt": "Reducir"
     },
     {
-     "txt": "Reutilizar",
-     "emoji": "🔁"
+     "cab": "PASO 2",
+     "txt": "Reutilizar"
     },
     {
-     "txt": "Reciclar",
-     "emoji": "♻️"
+     "cab": "PASO 3",
+     "txt": "Reciclar"
     }
    ],
    "voz": [
@@ -69,13 +69,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "ENERGÍAS RENOVABLES",
-   "columnas": [
-    "Fuente",
-    "Origen"
-   ],
-   "filas": [
+   "pares": [
     [
      "Solar",
      "Sol"
@@ -93,6 +89,7 @@
      "Restos orgánicos"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Energías renovables.",
     "La *solar*, del Sol.",
@@ -102,33 +99,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "RENOVABLE",
-     "emoji": "♻️"
+     "txt": "Solar, Eólica"
     },
     {
      "cab": "FÓSIL",
-     "emoji": "⛽"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Solar",
-     "caja": 0
-    },
-    {
-     "txt": "Carbón",
-     "caja": 1
-    },
-    {
-     "txt": "Eólica",
-     "caja": 0
-    },
-    {
-     "txt": "Petróleo",
-     "caja": 1
+     "txt": "Carbón, Petróleo"
     }
    ],
    "voz": [

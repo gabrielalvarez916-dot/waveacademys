@@ -35,22 +35,23 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "unir",
    "titulo": "VAGO Y PRECISO",
-   "items": [
-    {
-     "cab": "CASA LINDA",
-     "txt": "Casa luminosa"
-    },
-    {
-     "cab": "CHICO MALO",
-     "txt": "Chico caprichoso"
-    },
-    {
-     "cab": "COMIDA RICA",
-     "txt": "Comida picante"
-    }
+   "pares": [
+    [
+     "CASA LINDA",
+     "Casa luminosa"
+    ],
+    [
+     "CHICO MALO",
+     "Chico caprichoso"
+    ],
+    [
+     "COMIDA RICA",
+     "Comida picante"
+    ]
    ],
+   "mezclar": false,
    "voz": [
     "Del vago al preciso.",
     "*Casa linda* pasa a *casa luminosa*.",

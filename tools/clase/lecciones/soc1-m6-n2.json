@@ -125,17 +125,17 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Los plásticos en el océano, ¿de qué escala son?",
    "opciones": [
-    "Global",
     "Local",
+    "Global",
     "De hogar"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: los plásticos en el océano.",
-    "¿Global, local o de hogar?",
+    "¿local, global, o de hogar?",
     "*Global*: afectan a todos los mares."
    ]
   },
@@ -150,15 +150,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Solo afecta a quien contamina",
-     "bien": "Afecta a todos"
+     "antes": "Solo afecta a quien contamina",
+     "despues": "Afecta a todos",
+     "motivo": ""
     },
     {
-     "mal": "El aire no cruza fronteras",
-     "bien": "Los gases viajan con el viento"
+     "antes": "El aire no cruza fronteras",
+     "despues": "Los gases viajan con el viento",
+     "motivo": ""
     }
    ],
    "voz": [

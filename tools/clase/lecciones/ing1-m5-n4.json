@@ -1,1 +1,140 @@
-{"slug": "ing1-m5-n4", "step_id": "969837be-6114-4ed3-ae7d-fc40938064b4", "materia": "Inglés I", "titulo": "Opinion writing: tech in my life", "sub": "Inglés I · Misión 5 · Nivel 4", "escenas": [{"t": "reto", "texto": "¿Con qué frase se empieza para dar tu opinión?", "segundos": 6, "respuesta": "In my opinion", "emoji": "✍️", "titulo": "OPINAR", "sub": "escribir un texto de opinión", "voz": ["Desafío: ¿con qué frase se empieza para dar tu opinión? Seis segundos.", "*In my opinion*.", "Hoy: *la tecnología en mi vida*."]}, {"t": "pasos", "titulo": "PARTES DEL TEXTO", "items": [{"txt": "Introducción: tu opinión", "emoji": "💭"}, {"txt": "Desarrollo: razones y ejemplos", "emoji": "📚"}, {"txt": "Cierre: conclusión", "emoji": "🏁"}], "voz": ["Tres partes.", "Primero, tu *opinión*.", "Después, *razones y ejemplos*.", "Y al final, la *conclusión*."]}, {"t": "oracion", "titulo": "OPINIÓN CON RAZÓN", "partes": [{"txt": "In my opinion,", "rol": "tiempo"}, {"txt": "phones are useful", "rol": "complemento"}, {"txt": "because they help me study", "rol": "complemento"}], "traduccion": "En mi opinión, los celulares son útiles porque me ayudan a estudiar", "voz": ["Primero, la *opinión*.", "Después, la *idea*.", "Luego, la *razón*.", "Significa que los celulares son útiles porque ayudan a estudiar."]}, {"t": "tarjetas", "titulo": "CONECTORES PARA OPINAR", "items": [{"en": "because", "es": "porque", "emoji": "💡"}, {"en": "for example", "es": "por ejemplo", "emoji": "📌"}, {"en": "in conclusion", "es": "en conclusión", "emoji": "🏁"}], "voz": ["Para dar la razón.", "Para dar un ejemplo.", "Y para cerrar."]}, {"t": "pregunta", "pregunta": "Para cerrar un texto se usa…", "opciones": ["In conclusion", "Because", "For example"], "correcta": 0, "voz": ["Te toca: el cierre.", "¿Cuál de las tres frases cierra un texto?", "*In conclusion*."]}, {"t": "resumen", "voz": ["Repasemos.", "Empieza con tu *opinión*.", "Da *razones* y *ejemplos*.", "Cierra con la *conclusión*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["OPINIÓN", "in my opinion"], ["RAZONES", "because y for example"], ["CIERRE", "in conclusion"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m5-n4",
+ "step_id": "969837be-6114-4ed3-ae7d-fc40938064b4",
+ "materia": "Inglés I",
+ "titulo": "Opinion writing: tech in my life",
+ "sub": "Inglés I · Misión 5 · Nivel 4",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Con qué frase se empieza para dar tu opinión?",
+   "segundos": 6,
+   "respuesta": "In my opinion",
+   "emoji": "✍️",
+   "titulo": "OPINAR",
+   "sub": "escribir un texto de opinión",
+   "voz": [
+    "Desafío: ¿con qué frase se empieza para dar tu opinión? Seis segundos.",
+    "*In my opinion*.",
+    "Hoy: *la tecnología en mi vida*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "PARTES DEL TEXTO",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Introducción: tu opinión"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "Desarrollo: razones y ejemplos"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Cierre: conclusión"
+    }
+   ],
+   "voz": [
+    "Tres partes.",
+    "Primero, tu *opinión*.",
+    "Después, *razones y ejemplos*.",
+    "Y al final, la *conclusión*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "OPINIÓN CON RAZÓN",
+   "partes": [
+    {
+     "txt": "In my opinion,",
+     "rol": "tiempo"
+    },
+    {
+     "txt": "phones are useful",
+     "rol": "complemento"
+    },
+    {
+     "txt": "because they help me study",
+     "rol": "complemento"
+    }
+   ],
+   "traduccion": "En mi opinión, los celulares son útiles porque me ayudan a estudiar",
+   "voz": [
+    "Primero, la *opinión*.",
+    "Después, la *idea*.",
+    "Luego, la *razón*.",
+    "Significa que los celulares son útiles porque ayudan a estudiar."
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "because",
+     "emoji": "💡",
+     "trad": "porque"
+    },
+    {
+     "palabra": "for example",
+     "emoji": "📌",
+     "trad": "por ejemplo"
+    },
+    {
+     "palabra": "in conclusion",
+     "emoji": "🏁",
+     "trad": "en conclusión"
+    }
+   ],
+   "voz": [
+    "Para dar la razón.",
+    "Para dar un ejemplo.",
+    "Y para cerrar."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Para cerrar un texto se usa…",
+   "opciones": [
+    "In conclusion",
+    "Because",
+    "For example"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el cierre.",
+    "¿Cuál de las tres frases cierra un texto?",
+    "*In conclusion*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Empieza con tu *opinión*.",
+    "Da *razones* y *ejemplos*.",
+    "Cierra con la *conclusión*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "OPINIÓN",
+     "in my opinion"
+    ],
+    [
+     "RAZONES",
+     "because y for example"
+    ],
+    [
+     "CIERRE",
+     "in conclusion"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

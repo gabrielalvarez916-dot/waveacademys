@@ -20,13 +20,9 @@
    ]
   },
   {
-   "t": "tabla",
+   "t": "unir",
    "titulo": "AMENAZAS",
-   "columnas": [
-    "Amenaza",
-    "Daño"
-   ],
-   "filas": [
+   "pares": [
     [
      "Desmonte",
      "Se tala el bosque"
@@ -44,6 +40,7 @@
      "Compiten con las nativas"
     ]
    ],
+   "mezclar": false,
    "voz": [
     "Las amenazas.",
     "El *desmonte*: se tala el bosque.",

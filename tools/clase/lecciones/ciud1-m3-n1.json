@@ -49,17 +49,21 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "SOCIAL",
-     "txt": "Voluntariado, Cooperadora"
-    },
-    {
-     "cab": "POLÍTICA",
-     "txt": "Votar, Afiliarse a partido"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "SOCIAL",
+     "Voluntariado, Cooperadora"
+    ],
+    [
+     "POLÍTICA",
+     "Votar, Afiliarse a partido"
+    ]
    ],
    "voz": [
     "¿Social o política?",

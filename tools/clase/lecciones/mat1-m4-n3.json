@@ -18,32 +18,32 @@
    "sub": "en cálculos combinados"
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "EL ORDEN COMPLETO",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Paréntesis"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "Potencias y raíces"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "Multiplicaciones y divisiones"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "Sumas y restas"
+    }
+   ],
    "voz": [
     "Ahora la *jerarquía completa*, en cuatro escalones.",
     "Primero, lo que está entre *paréntesis*.",
     "Segundo, *potencias y raíces*.",
     "Tercero, *multiplicar y dividir*.",
     "Y último, *sumar y restar*."
-   ],
-   "titulo": "EL ORDEN COMPLETO",
-   "items": [
-    {
-     "txt": "Paréntesis",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Potencias y raíces",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Multiplicaciones y divisiones",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "Sumas y restas",
-     "emoji": "4️⃣"
-    }
    ]
   },
   {
@@ -151,21 +151,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "√(9 + 16) = 3 + 4 = 7",
+     "despues": "√(9 + 16) = √25 = 5",
+     "motivo": ""
+    },
+    {
+     "antes": "3 + 4 = 7 × 2 = 14",
+     "despues": "Una igualdad por línea",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Dos *errores* frecuentes.",
     "Sacar la raíz de cada término: raíz de 9 más 16 es *5*, no 7.",
     "Y encadenar igualdades falsas: no escribas 3 más 4 igual 7 por 2 igual 14. *Una igualdad por línea*."
-   ],
-   "items": [
-    {
-     "mal": "√(9 + 16) = 3 + 4 = 7",
-     "bien": "√(9 + 16) = √25 = 5"
-    },
-    {
-     "mal": "3 + 4 = 7 × 2 = 14",
-     "bien": "Una igualdad por línea"
-    }
    ]
   },
   {

@@ -20,10 +20,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Competencia",
-   "texto": "Disputa por un recurso limitado",
-   "emoji": "⚔️",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Competencia",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Disputa por un recurso limitado"
+    }
+   ],
    "voz": [
     "La *competencia* es la disputa por un recurso limitado.",
     "Puede ser por alimento, agua, luz o espacio."
@@ -49,10 +56,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Depredación",
-   "texto": "Un animal caza a otro para comer",
-   "emoji": "🐆",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Depredación",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Un animal caza a otro para comer"
+    }
+   ],
    "voz": [
     "En la *depredación*, un depredador caza a una presa para alimentarse.",
     "Como el puma que caza al guanaco."
@@ -91,30 +105,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Cómo se llama el animal cazado?",
    "opciones": [
-    "Presa",
     "Depredador",
+    "Presa",
     "Parásito"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿cómo se llama el animal cazado?",
-    "¿Presa, depredador o parásito?",
+    "¿depredador, presa, o parásito?",
     "La *presa*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "El depredador es siempre malo",
-     "bien": "Regula las poblaciones"
+     "antes": "El depredador es siempre malo",
+     "despues": "Regula las poblaciones",
+     "motivo": ""
     },
     {
-     "mal": "Competencia igual a depredación",
-     "bien": "Una lucha por recursos, otra caza"
+     "antes": "Competencia igual a depredación",
+     "despues": "Una lucha por recursos, otra caza",
+     "motivo": ""
     }
    ],
    "voz": [

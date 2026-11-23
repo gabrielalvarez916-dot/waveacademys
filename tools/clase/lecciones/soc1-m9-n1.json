@@ -20,10 +20,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Hominización",
-   "texto": "El proceso por el que aparecieron los humanos actuales",
-   "emoji": "🦴",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Hominización",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "El proceso por el que aparecieron los humanos actuales"
+    }
+   ],
    "voz": [
     "La *hominización* es el proceso de millones de años por el que aparecieron los humanos actuales.",
     "Empezó en *África*."
@@ -145,10 +152,17 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Fósil",
-   "texto": "Resto de un ser vivo del pasado",
-   "emoji": "🦴",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Fósil",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Resto de un ser vivo del pasado"
+    }
+   ],
    "voz": [
     "Los científicos estudian *fósiles*: huesos de seres del pasado.",
     "También herramientas y ADN."

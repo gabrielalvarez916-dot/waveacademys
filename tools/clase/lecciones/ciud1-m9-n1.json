@@ -50,37 +50,55 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Identidad",
-   "texto": "La idea de quién es cada persona",
-   "emoji": "🪞",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Identidad",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "La idea de quién es cada persona"
+    }
+   ],
    "voz": [
     "La *identidad* es la idea de quién sos.",
     "Se construye con el tiempo."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Presión de grupo",
-   "texto": "Empuje a hacer algo que uno no quiere",
-   "emoji": "👥",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Presión de grupo",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Empuje a hacer algo que uno no quiere"
+    }
+   ],
    "voz": [
     "La *presión de grupo* empuja a hacer algo que uno no quiere.",
     "Se puede decir que no y seguir perteneciendo."
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "PUEDO DECIDIR",
-     "txt": "Elegir mis gustos, Decir que no"
-    },
-    {
-     "cab": "PRESIÓN",
-     "txt": "Hacerlo por miedo"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PUEDO DECIDIR",
+     "Elegir mis gustos, Decir que no"
+    ],
+    [
+     "PRESIÓN",
+     "Hacerlo por miedo"
+    ]
    ],
    "voz": [
     "¿Decisión o presión?",
@@ -89,30 +107,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "La idea de quién es cada persona es la…",
    "opciones": [
-    "Identidad",
     "Presión",
+    "Identidad",
     "Veda"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: la idea de quién es cada persona.",
-    "¿Identidad, presión o veda?",
+    "¿presión, identidad, o veda?",
     "La *identidad*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Todas las adolescencias son iguales",
-     "bien": "Hay muchas"
+     "antes": "Todas las adolescencias son iguales",
+     "despues": "Hay muchas",
+     "motivo": ""
     },
     {
-     "mal": "Decir que no es traicionar",
-     "bien": "Es cuidarse"
+     "antes": "Decir que no es traicionar",
+     "despues": "Es cuidarse",
+     "motivo": ""
     }
    ],
    "voz": [

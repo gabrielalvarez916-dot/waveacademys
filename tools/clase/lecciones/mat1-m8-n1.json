@@ -96,47 +96,22 @@
    "signo": "="
   },
   {
-   "t": "clasificar",
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "PROPIAS · < 1",
+     "txt": "3/4, 2/5, 1/8"
+    },
+    {
+     "cab": "IMPROPIAS · ≥ 1",
+     "txt": "7/4, 5/5, 9/2"
+    }
+   ],
    "voz": [
     "Dos familias de fracciones.",
     "*Propias*: el numerador es más chico. Valen *menos que 1*: 3/4, 2/5, 1/8.",
     "*Impropias*: el numerador es mayor o igual. Valen *1 o más*: 7/4, 5/5, 9/2."
-   ],
-   "cajas": [
-    {
-     "cab": "PROPIAS · < 1",
-     "emoji": "🤏"
-    },
-    {
-     "cab": "IMPROPIAS · ≥ 1",
-     "emoji": "🙌"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "3/4",
-     "caja": 0
-    },
-    {
-     "txt": "2/5",
-     "caja": 0
-    },
-    {
-     "txt": "1/8",
-     "caja": 0
-    },
-    {
-     "txt": "7/4",
-     "caja": 1
-    },
-    {
-     "txt": "5/5",
-     "caja": 1
-    },
-    {
-     "txt": "9/2",
-     "caja": 1
-    }
    ]
   },
   {
@@ -202,38 +177,53 @@
    "salto": "× 2 → 8"
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "17/5 COMO MIXTO",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Impropia: 17 > 5"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "17 ÷ 5 = 3, resto 2"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "17/5 = 3 2/5"
+    },
+    {
+     "cab": "PASO 4",
+     "txt": "(3 × 5 + 2)/5 = 17/5 ✓"
+    }
+   ],
    "voz": [
     "Desafío: 17/5 como número mixto.",
     "Es impropia: 17 es mayor que 5.",
     "17 dividido 5 da 3, resto 2.",
     "Entonces es *3 enteros y 2 quintos*.",
     "Comprobamos: 3 por 5 más 2 da 17. *¡Cierra!*"
-   ],
-   "titulo": "17/5 COMO MIXTO",
-   "items": [
-    "Impropia: 17 > 5",
-    "17 ÷ 5 = 3, resto 2",
-    "17/5 = 3 2/5",
-    "(3 × 5 + 2)/5 = 17/5 ✓"
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Partes de distinto tamaño",
+     "despues": "Siempre partes iguales",
+     "motivo": ""
+    },
+    {
+     "antes": "En 5/8 el denominador es 5",
+     "despues": "Es 8: el de abajo",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores clásicos.",
     "Dibujar partes *que no son iguales*.",
     "Y confundir los pisos: en 5/8, el *denominador es 8*."
-   ],
-   "items": [
-    {
-     "mal": "Partes de distinto tamaño",
-     "bien": "Siempre partes iguales"
-    },
-    {
-     "mal": "En 5/8 el denominador es 5",
-     "bien": "Es 8: el de abajo"
-    }
    ]
   },
   {

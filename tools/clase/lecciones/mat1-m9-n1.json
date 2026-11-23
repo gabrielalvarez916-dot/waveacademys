@@ -56,18 +56,18 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
+   "pregunta": "1/2 + 1/4 = ?",
+   "opciones": [
+    "3/4",
+    "2/6"
+   ],
+   "correcta": 0,
    "voz": [
     "Trampa: ¿cuánto es 1/2 más 1/4?",
     "¿2/6 o 3/4?",
     "¡*3/4*! No se suman los denominadores: 1/2 es 2/4, y 2/4 más 1/4 da 3/4."
-   ],
-   "pregunta": "1/2 + 1/4 = ?",
-   "opciones": [
-    "2/6",
-    "3/4"
-   ],
-   "correcta": 1
+   ]
   },
   {
    "t": "frase",

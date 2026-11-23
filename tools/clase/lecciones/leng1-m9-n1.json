@@ -20,20 +20,34 @@
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Crisis",
-   "texto": "El fantasma necesita ayuda",
-   "emoji": "🆘",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Crisis",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "El fantasma necesita ayuda"
+    }
+   ],
    "voz": [
     "La *crisis* llega cuando Sir Simon *necesita ayuda*.",
     "El tono cambia: el conflicto se vuelve serio."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Clímax",
-   "texto": "Máxima tensión",
-   "emoji": "⚡",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Clímax",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Máxima tensión"
+    }
+   ],
    "voz": [
     "El *clímax* es el momento de mayor tensión.",
     "Aquí, cuando *Virginia* acompaña al fantasma."
@@ -91,17 +105,17 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Quién ayuda al fantasma?",
    "opciones": [
-    "Virginia",
     "Washington",
-    "Lord Canterville"
+    "Lord Canterville",
+    "Virginia"
    ],
-   "correcta": 0,
+   "correcta": 2,
    "voz": [
     "Te toca: ¿quién ayuda al fantasma?",
-    "¿Virginia, Washington o Lord Canterville?",
+    "¿washington, lord Canterville, o virginia?",
     "*Virginia*."
    ]
   },
@@ -115,15 +129,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Sigue siendo solo una burla",
-     "bien": "Termina con compasión"
+     "antes": "Sigue siendo solo una burla",
+     "despues": "Termina con compasión",
+     "motivo": ""
     },
     {
-     "mal": "Los Otis ayudan al fantasma",
-     "bien": "Ayuda Virginia"
+     "antes": "Los Otis ayudan al fantasma",
+     "despues": "Ayuda Virginia",
+     "motivo": ""
     }
    ],
    "voz": [

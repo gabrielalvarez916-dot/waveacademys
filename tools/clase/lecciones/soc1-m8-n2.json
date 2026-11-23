@@ -48,20 +48,20 @@
    ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
    "titulo": "TECNOLOGÍA EN EL CAMPO",
    "items": [
     {
-     "txt": "Mecanización",
-     "emoji": "🚜"
+     "cab": "PASO 1",
+     "txt": "Mecanización"
     },
     {
-     "txt": "Semillas mejoradas",
-     "emoji": "🌱"
+     "cab": "PASO 2",
+     "txt": "Semillas mejoradas"
     },
     {
-     "txt": "GPS y drones",
-     "emoji": "📡"
+     "cab": "PASO 3",
+     "txt": "GPS y drones"
     }
    ],
    "voz": [
@@ -72,19 +72,16 @@
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Menos gente en el campo",
-    "emoji": "🏙️"
-   },
+   "t": "bloques",
+   "titulo": "MENOS GENTE EN EL CAMPO",
    "items": [
     {
-     "txt": "Más máquinas",
-     "emoji": "🚜"
+     "cab": "EFECTO 1",
+     "txt": "Más máquinas"
     },
     {
-     "txt": "Migran los jóvenes",
-     "emoji": "🚶"
+     "cab": "EFECTO 2",
+     "txt": "Migran los jóvenes"
     }
    ],
    "voz": [
@@ -126,30 +123,33 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Cómo se llama la industria que procesa productos del campo?",
    "opciones": [
-    "Agroindustria",
     "Minería",
+    "Agroindustria",
     "Pesca"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿cómo se llama la industria que procesa productos del campo?",
-    "¿Agroindustria, minería o pesca?",
+    "¿minería, agroindustria, o pesca?",
     "La *agroindustria*."
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Todo el campo es igual de tecnificado",
-     "bien": "Hay mucha diferencia"
+     "antes": "Todo el campo es igual de tecnificado",
+     "despues": "Hay mucha diferencia",
+     "motivo": ""
     },
     {
-     "mal": "La tecnología no tiene riesgos",
-     "bien": "Puede dañar el ambiente"
+     "antes": "La tecnología no tiene riesgos",
+     "despues": "Puede dañar el ambiente",
+     "motivo": ""
     }
    ],
    "voz": [

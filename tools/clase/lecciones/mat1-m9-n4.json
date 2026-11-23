@@ -339,15 +339,15 @@
    ]
   },
   {
-   "t": "dato",
+   "t": "datoloco",
+   "texto": "A Juan le queda la mitad de su plata",
+   "emoji": "🔎",
+   "numero": 50,
+   "unidad": " %",
    "voz": [
     "La clave del problema: *de lo que le quedó*.",
     "No es 1/4 de toda la plata: es 1/4 *de los 2/3*. Esa palabra cambia todo."
-   ],
-   "numero": 50,
-   "despues": " %",
-   "texto": "A Juan le queda la mitad de su plata",
-   "emoji": "🔎"
+   ]
   },
   {
    "t": "ecuacion",

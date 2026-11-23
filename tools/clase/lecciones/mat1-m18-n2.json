@@ -193,32 +193,41 @@
    ]
   },
   {
-   "t": "pregunta",
-   "voz": [
-    "Trampa: ¿un triángulo puede tener *dos ángulos rectos*?",
-    "¿Sí o no?",
-    "¡*No*! Ya sumarían 180, y el tercero mediría 0."
-   ],
+   "t": "quiz4",
    "pregunta": "¿Dos ángulos rectos en un triángulo?",
    "opciones": [
-    "Sí",
-    "No"
+    "No",
+    "Sí"
    ],
-   "correcta": 1
+   "correcta": 0,
+   "voz": [
+    "Trampa: ¿un triángulo puede tener *dos ángulos rectos*?",
+    "¿no, o sí?",
+    "¡*No*! Ya sumarían 180, y el primero mediría 0."
+   ]
   },
   {
-   "t": "pasos",
+   "t": "bloques",
+   "titulo": "EL ISÓSCELES DE 36°",
+   "items": [
+    {
+     "cab": "PASO 1",
+     "txt": "Los otros dos son iguales"
+    },
+    {
+     "cab": "PASO 2",
+     "txt": "180° − 36° = 144°"
+    },
+    {
+     "cab": "PASO 3",
+     "txt": "144° ÷ 2 = 72°"
+    }
+   ],
    "voz": [
     "Desafío: un isósceles con ángulo desigual de 36. ¿Los otros dos?",
     "Los otros dos son iguales.",
     "Entre los dos: 180 menos 36, *144*.",
     "Cada uno: 144 dividido 2, ¡*72*!"
-   ],
-   "titulo": "EL ISÓSCELES DE 36°",
-   "items": [
-    "Los otros dos son iguales",
-    "180° − 36° = 144°",
-    "144° ÷ 2 = 72°"
    ]
   },
   {

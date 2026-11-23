@@ -27,14 +27,21 @@
    ]
   },
   {
-   "t": "definicion",
+   "t": "pizarra",
+   "lineas": [
+    {
+     "txt": "Cuento policial",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Relato con un enigma que un detective resuelve"
+    }
+   ],
    "voz": [
     "El *cuento policial* gira alrededor de un *enigma*: un misterio que alguien tiene que resolver.",
     "Y ese alguien es el *detective*."
-   ],
-   "palabra": "Cuento policial",
-   "texto": "Relato con un enigma que un detective resuelve",
-   "emoji": "🔍"
+   ]
   },
   {
    "t": "linea",
@@ -190,36 +197,39 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "Manga derecha gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
    "opciones": [
-    "Escribe mucho apoyando el brazo",
     "Trabaja cargando bolsas",
+    "Escribe mucho apoyando el brazo",
     "Es zurdo"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: la manga derecha está gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
-    "¿Que escribe mucho apoyando el brazo, que carga bolsas, o que es zurdo?",
+    "¿trabaja cargando bolsas, escribe mucho apoyando el brazo, o es zurdo?",
     "¡Que *escribe mucho*! Solo se gasta la manga que se apoya en el escritorio. Si fuera zurdo, sería la otra."
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "Adivinar",
+     "despues": "Deducir con pistas",
+     "motivo": ""
+    },
+    {
+     "antes": "Narra Holmes",
+     "despues": "Narra Watson",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Confundir *adivinar* con *deducir*: Holmes nunca adivina.",
     "Y creer que Holmes narra: el narrador es *Watson*."
-   ],
-   "items": [
-    {
-     "mal": "Adivinar",
-     "bien": "Deducir con pistas"
-    },
-    {
-     "mal": "Narra Holmes",
-     "bien": "Narra Watson"
-    }
    ]
   },
   {

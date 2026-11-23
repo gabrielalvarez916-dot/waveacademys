@@ -64,21 +64,25 @@
    ]
   },
   {
-   "t": "bloques",
+   "t": "tabla",
    "titulo": "UN PÁRRAFO POR DENTRO",
-   "items": [
-    {
-     "cab": "PRINCIPAL",
-     "txt": "Las abejas polinizan las flores"
-    },
-    {
-     "cab": "SECUNDARIA",
-     "txt": "El polen se pega a su cuerpo"
-    },
-    {
-     "cab": "SECUNDARIA",
-     "txt": "Con el néctar hacen miel"
-    }
+   "columnas": [
+    "",
+    ""
+   ],
+   "filas": [
+    [
+     "PRINCIPAL",
+     "Las abejas polinizan las flores"
+    ],
+    [
+     "SECUNDARIA",
+     "El polen se pega a su cuerpo"
+    ],
+    [
+     "SECUNDARIA",
+     "Con el néctar hacen miel"
+    ]
    ],
    "voz": [
     "Mirá cómo se arma un párrafo.",
@@ -189,15 +193,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Tema = idea principal",
-     "bien": "El tema dice de qué trata"
+     "antes": "Tema = idea principal",
+     "despues": "El tema dice de qué trata",
+     "motivo": ""
     },
     {
-     "mal": "Lo llamativo es lo principal",
-     "bien": "Principal es lo que no se puede sacar"
+     "antes": "Lo llamativo es lo principal",
+     "despues": "Principal es lo que no se puede sacar",
+     "motivo": ""
     }
    ],
    "voz": [

@@ -159,39 +159,22 @@
    ]
   },
   {
-   "t": "clasificar",
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
+    {
+     "cab": "POSITIVOS · 17",
+     "txt": "7, 10"
+    },
+    {
+     "cab": "NEGATIVOS · −17",
+     "txt": "−12, −5"
+    }
+   ],
    "voz": [
     "Truco con muchos sumandos: menos 12, más 7, más menos 5, más 10. *Agrupá por signo*.",
     "Positivos: 7 más 10, *17*.",
     "Negativos: menos 12 y menos 5, *menos 17*. ¡17 y menos 17 se anulan: da *0*!"
-   ],
-   "cajas": [
-    {
-     "cab": "POSITIVOS · 17",
-     "emoji": "⬆️"
-    },
-    {
-     "cab": "NEGATIVOS · −17",
-     "emoji": "⬇️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "7",
-     "caja": 0
-    },
-    {
-     "txt": "10",
-     "caja": 0
-    },
-    {
-     "txt": "−12",
-     "caja": 1
-    },
-    {
-     "txt": "−5",
-     "caja": 1
-    }
    ]
   },
   {
@@ -213,21 +196,24 @@
    ]
   },
   {
-   "t": "errores",
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "(−7) + 3 = −10",
+     "despues": "(−7) + 3 = −4",
+     "motivo": ""
+    },
+    {
+     "antes": "9 + (−4) = −5",
+     "despues": "9 + (−4) = 5",
+     "motivo": ""
+    }
+   ],
    "voz": [
     "Errores típicos.",
     "Sumar siempre los valores absolutos: menos 7 más 3 *no es menos 10*, es menos 4.",
     "Y poner el signo del menor: en 9 más menos 4 *gana el 9*: da positivo."
-   ],
-   "items": [
-    {
-     "mal": "(−7) + 3 = −10",
-     "bien": "(−7) + 3 = −4"
-    },
-    {
-     "mal": "9 + (−4) = −5",
-     "bien": "9 + (−4) = 5"
-    }
    ]
   },
   {

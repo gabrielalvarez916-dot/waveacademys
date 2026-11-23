@@ -1,1 +1,158 @@
-{"slug": "ing1-m5-n2", "step_id": "9851b08b-4ec1-48ca-a893-e02dbe5023bf", "materia": "Inglés I", "titulo": "Comparatives and superlatives with tech", "sub": "Inglés I · Misión 5 · Nivel 2", "escenas": [{"t": "reto", "texto": "Completa para comparar: faster ___ that one.", "segundos": 6, "respuesta": "Than", "emoji": "⚖️", "titulo": "COMPARAR", "sub": "comparativos y superlativos", "voz": ["Desafío: completa para comparar, faster, blanco, that one. Seis segundos.", "Se usa *than*.", "Hoy: *comparativos y superlativos*."]}, {"t": "comparar", "a": {"cab": "CORTO", "texto": "Fast → faster", "emoji": "⚡"}, "b": {"cab": "LARGO", "texto": "Expensive → more expensive", "emoji": "💰"}, "signo": "vs", "voz": ["Dos tipos de adjetivos.", "El *corto* agrega *er*.", "El *largo* usa *more*."]}, {"t": "tarjetas", "titulo": "SUPERLATIVOS", "items": [{"en": "the fastest", "es": "el más rápido", "emoji": "🚀"}, {"en": "the cheapest", "es": "el más barato", "emoji": "🏷️"}, {"en": "the most popular", "es": "el más popular", "emoji": "⭐"}], "voz": ["Primer superlativo: el más rápido.", "Segundo superlativo: el más barato.", "Tercer superlativo: el más popular."]}, {"t": "tabla", "titulo": "IRREGULARES", "columnas": ["Adjetivo", "Comparativo", "Superlativo"], "filas": [["good", "better", "the best"], ["bad", "worse", "the worst"]], "voz": ["Dos adjetivos irregulares.", "*Good* cambia a *better* y *the best*.", "*Bad* cambia a *worse* y *the worst*."]}, {"t": "pregunta", "pregunta": "This phone is ___ than that one.", "opciones": ["faster", "more fast", "fastest"], "correcta": 0, "voz": ["Te toca: comparar dos celulares.", "¿*Faster*, *more fast* o *fastest*?", "*Faster*."]}, {"t": "errores", "items": [{"mal": "more fast", "bien": "faster"}, {"mal": "the most good", "bien": "the best"}], "voz": ["Errores típicos.", "Usar *more* con un adjetivo corto.", "Y decir *most good* en vez de *best*."]}, {"t": "resumen", "voz": ["Repasemos.", "Los *cortos* llevan *er*.", "Los *largos* llevan *more*.", "Los *irregulares* cambian.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["CORTOS", "er y est"], ["LARGOS", "more y most"], ["IRREGULARES", "good, better, best"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m5-n2",
+ "step_id": "9851b08b-4ec1-48ca-a893-e02dbe5023bf",
+ "materia": "Inglés I",
+ "titulo": "Comparatives and superlatives with tech",
+ "sub": "Inglés I · Misión 5 · Nivel 2",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Completa para comparar: faster ___ that one.",
+   "segundos": 6,
+   "respuesta": "Than",
+   "emoji": "⚖️",
+   "titulo": "COMPARAR",
+   "sub": "comparativos y superlativos",
+   "voz": [
+    "Desafío: completa para comparar, faster, blanco, that one. Seis segundos.",
+    "Se usa *than*.",
+    "Hoy: *comparativos y superlativos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "CORTO",
+    "texto": "Fast → faster",
+    "emoji": "⚡"
+   },
+   "b": {
+    "cab": "LARGO",
+    "texto": "Expensive → more expensive",
+    "emoji": "💰"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos tipos de adjetivos.",
+    "El *corto* agrega *er*.",
+    "El *largo* usa *more*."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "SUPERLATIVOS",
+   "items": [
+    {
+     "en": "the fastest",
+     "es": "el más rápido",
+     "emoji": "🚀"
+    },
+    {
+     "en": "the cheapest",
+     "es": "el más barato",
+     "emoji": "🏷️"
+    },
+    {
+     "en": "the most popular",
+     "es": "el más popular",
+     "emoji": "⭐"
+    }
+   ],
+   "voz": [
+    "Primer superlativo: el más rápido.",
+    "Segundo superlativo: el más barato.",
+    "Tercer superlativo: el más popular."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "IRREGULARES",
+   "columnas": [
+    "Adjetivo",
+    "Comparativo",
+    "Superlativo"
+   ],
+   "filas": [
+    [
+     "good",
+     "better",
+     "the best"
+    ],
+    [
+     "bad",
+     "worse",
+     "the worst"
+    ]
+   ],
+   "voz": [
+    "Dos adjetivos irregulares.",
+    "*Good* cambia a *better* y *the best*.",
+    "*Bad* cambia a *worse* y *the worst*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "This phone is ___ than that one.",
+   "opciones": [
+    "more fast",
+    "fastest",
+    "faster"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Te toca: comparar dos celulares.",
+    "¿more fast, fastest, o faster?",
+    "*Faster*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
+    {
+     "antes": "more fast",
+     "despues": "faster",
+     "motivo": ""
+    },
+    {
+     "antes": "the most good",
+     "despues": "the best",
+     "motivo": ""
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *more* con un adjetivo corto.",
+    "Y decir *most good* en vez de *best*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Los *cortos* llevan *er*.",
+    "Los *largos* llevan *more*.",
+    "Los *irregulares* cambian.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CORTOS",
+     "er y est"
+    ],
+    [
+     "LARGOS",
+     "more y most"
+    ],
+    [
+     "IRREGULARES",
+     "good, better, best"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

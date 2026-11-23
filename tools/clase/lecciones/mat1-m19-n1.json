@@ -115,19 +115,9 @@
    ]
   },
   {
-   "t": "tabla",
-   "voz": [
-    "Las *unidades de longitud*: cada una es 10 veces la que sigue.",
-    "1 kilómetro son *1.000 metros*.",
-    "1 metro son *100 centímetros*.",
-    "1 centímetro son *10 milímetros*."
-   ],
+   "t": "unir",
    "titulo": "UNIDADES DE LONGITUD",
-   "columnas": [
-    "Unidad",
-    "Equivale a"
-   ],
-   "filas": [
+   "pares": [
     [
      "1 km",
      "1.000 m"
@@ -140,6 +130,13 @@
      "1 cm",
      "10 mm"
     ]
+   ],
+   "mezclar": false,
+   "voz": [
+    "Las *unidades de longitud*: cada una es 10 veces la que sigue.",
+    "1 kilómetro son *1.000 metros*.",
+    "1 metro son *100 centímetros*.",
+    "1 centímetro son *10 milímetros*."
    ]
   },
   {
@@ -292,16 +289,14 @@
    "correcta": 1
   },
   {
-   "t": "dato",
+   "t": "datoloco",
+   "texto": "La vuelta a un círculo (la cuenta exacta, en 2.º año)",
+   "emoji": "⭕",
+   "numero": 3,
    "voz": [
     "Bonus: la vuelta a un círculo mide *un poco más de 3 veces* su diámetro.",
     "Con un diámetro de 10 centímetros, la vuelta mide algo más de *30*."
-   ],
-   "numero": 3,
-   "antes": "un poco más de ",
-   "despues": " veces el diámetro",
-   "texto": "La vuelta a un círculo (la cuenta exacta, en 2.º año)",
-   "emoji": "⭕"
+   ]
   },
   {
    "t": "errores",

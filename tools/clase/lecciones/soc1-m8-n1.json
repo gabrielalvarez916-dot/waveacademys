@@ -128,17 +128,17 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "quiz4",
    "pregunta": "¿Qué sector transforma las materias primas?",
    "opciones": [
-    "Secundario",
     "Primario",
+    "Secundario",
     "Terciario"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
     "Te toca: ¿qué sector transforma las materias primas?",
-    "¿Secundario, primario o terciario?",
+    "¿primario, secundario, o terciario?",
     "El *secundario*: la industria."
    ]
   },
@@ -153,15 +153,18 @@
    ]
   },
   {
-   "t": "errores",
-   "items": [
+   "t": "corrige",
+   "titulo": "ERRORES TÍPICOS",
+   "cambios": [
     {
-     "mal": "Servicios son solo comercio",
-     "bien": "Incluyen salud, educación y más"
+     "antes": "Servicios son solo comercio",
+     "despues": "Incluyen salud, educación y más",
+     "motivo": ""
     },
     {
-     "mal": "Un producto es de un solo sector",
-     "bien": "Pasa por los tres"
+     "antes": "Un producto es de un solo sector",
+     "despues": "Pasa por los tres",
+     "motivo": ""
     }
    ],
    "voz": [

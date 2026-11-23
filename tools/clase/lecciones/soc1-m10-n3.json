@@ -146,33 +146,16 @@
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "bloques",
+   "titulo": "CÓMO SE CLASIFICA",
+   "items": [
     {
      "cab": "MEDIO ORIENTE",
-     "emoji": "🌾"
+     "txt": "Trigo, Ovejas"
     },
     {
      "cab": "AMÉRICA",
-     "emoji": "🌽"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Trigo",
-     "caja": 0
-    },
-    {
-     "txt": "Maíz",
-     "caja": 1
-    },
-    {
-     "txt": "Papa",
-     "caja": 1
-    },
-    {
-     "txt": "Ovejas",
-     "caja": 0
+     "txt": "Maíz, Papa"
     }
    ],
    "voz": [
