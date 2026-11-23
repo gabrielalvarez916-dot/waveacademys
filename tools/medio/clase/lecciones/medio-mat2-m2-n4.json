@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat2-m2-n4",
+ "step_id": "2d0ee16c-321a-444b-af4a-155b4a3fc16b",
+ "materia": "Matemática 2",
+ "titulo": "Leer y escribir números grandes",
+ "sub": "Matemática 2 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Se borraron las etiquetas!",
+   "bajada": "Rosa escribe los números",
+   "emoji": "🏷️",
+   "titulo": "LEER",
+   "sub": "y escribir",
+   "voz": [
+    "¡Último momento: se borraron las etiquetas!",
+    "Rosa tiene que escribir los números otra vez.",
+    "Hoy: *leer y escribir números grandes*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "2",
+    "5",
+    "8"
+   ],
+   "grande": "258",
+   "etiqueta": "DOSCIENTOS CINCUENTA Y OCHO",
+   "voz": [
+    "Mirá estas tres cifras: 2, 5 y 8.",
+    "Juntas forman el *258*.",
+    "Se lee: *doscientos cincuenta y ocho*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SE ESCRIBE",
+    "texto": "307",
+    "emoji": "✏️"
+   },
+   "b": {
+    "cab": "SE LEE",
+    "texto": "trescientos siete",
+    "emoji": "🗣️"
+   },
+   "signo": "=",
+   "voz": [
+    "Con cifras se escribe: *307*.",
+    "Con palabras se lee: *trescientos siete*.",
+    "¡Es el mismo número!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL CERO",
+   "texto": "El 0 guarda el lugar",
+   "emoji": "0️⃣",
+   "voz": [
+    "Truco: el *cero* guarda el lugar vacío."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "4",
+    "5",
+    "0"
+   ],
+   "grande": "450",
+   "etiqueta": "CUATROCIENTOS CINCUENTA",
+   "voz": [
+    "Ahora, *cuatrocientos cincuenta*.",
+    "Un 4, un 5 y un 0: *450*.",
+    "No hay unidades: va un cero."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se escribe trescientos seis?",
+   "opciones": [
+    "36",
+    "306",
+    "3006"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. ¿Cómo se escribe *trescientos seis*?",
+    "Pensá: ¿hay decenas?",
+    "¡*306*! El cero va en el medio."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Trescientos siete: 3007",
+     "bien": "Trescientos siete: 307"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Son *tres cifras*: 307."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCRIBIR",
+     "con cifras: 258"
+    ],
+    [
+     "LEER",
+     "con palabras"
+    ],
+    [
+     "EL CERO",
+     "guarda el lugar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Escribimos con *cifras*: 258.",
+    "Leemos con *palabras*: doscientos cincuenta y ocho.",
+    "El *cero* guarda el lugar vacío.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

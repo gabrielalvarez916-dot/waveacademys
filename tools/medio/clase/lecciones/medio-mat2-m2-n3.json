@@ -1,0 +1,149 @@
+{
+ "slug": "medio-mat2-m2-n3",
+ "step_id": "1e6dc920-8612-4a01-82d9-79cb0459bc05",
+ "materia": "Matemática 2",
+ "titulo": "Hasta 500",
+ "sub": "Matemática 2 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, la escuela pide 500 🍫"
+    },
+    {
+     "yo": true,
+     "txt": "¡Son 5 cajas!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo sabés?"
+    }
+   ],
+   "titulo": "HASTA",
+   "sub": "el 500",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "La escuela pide *500 alfajores*.",
+    "Rosa sabe: ¡son cinco cajas!",
+    "Hoy: *los números hasta 500*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "DECENA",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CENTENA",
+     "valor": "100",
+     "icono": "caja"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un paquete tiene *10* alfajores.",
+    "10 paquetes llenan una caja de *100*.",
+    "¡Cinco cajas así son *500*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 100,
+   "hasta": 500,
+   "paso": 100,
+   "titulo": "CINCO CAJAS",
+   "voz": [
+    "Los camiones llevan una caja cada uno.",
+    "100, 200, 300, 400, 500.",
+    "¡Cinco cajas: *500*!"
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 400,
+   "max": 500,
+   "paso": 10,
+   "marcas": [
+    {
+     "v": 450,
+     "txt": "450"
+    },
+    {
+     "v": 490,
+     "txt": "490"
+    }
+   ],
+   "voz": [
+    "Ahora de 10 en 10, del 400 al 500.",
+    "Acá está el *450*.",
+    "Y acá el *490*: falta un paquete."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene antes del 500?",
+   "opciones": [
+    "499",
+    "501",
+    "400"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Pensá en el 500.",
+    "¿Qué número viene *antes*?",
+    "¡*499*! Uno menos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Quinientos: 5100",
+     "bien": "Quinientos: 500"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Quinientos se escribe *500*: tres cifras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "500",
+     "cinco cajas"
+    ],
+    [
+     "DE 10 EN 10",
+     "un paquete más"
+    ],
+    [
+     "499",
+     "antes del 500"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cinco cajas son *500*.",
+    "De 10 en 10 sumamos *un paquete*.",
+    "Antes del 500 viene el *499*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

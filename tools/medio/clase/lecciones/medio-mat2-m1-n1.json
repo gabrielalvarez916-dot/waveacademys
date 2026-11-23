@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat2-m1-n1",
+ "step_id": "ea008220-181d-4188-9a4a-56e1ecc0a9cf",
+ "materia": "Matemática 2",
+ "titulo": "Contar hasta 100 y más",
+ "sub": "Matemática 2 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "La abuela Rosa hace alfajores.",
+    "Hoy hizo muchísimos.",
+    "¿Pasará del 100?"
+   ],
+   "titulo": "CONTAR",
+   "sub": "hasta 100 y más",
+   "voz": [
+    "La abuela Rosa tiene una *fábrica de alfajores*.",
+    "Hoy hizo muchísimos alfajores.",
+    "¿Puede contar más de 100?",
+    "Hoy: *contar hasta 100 y más*."
+   ]
+  },
+  {
+   "t": "cuadro",
+   "hasta": 100,
+   "faltan": [
+    100
+   ],
+   "titulo": "DEL 1 AL 100",
+   "voz": [
+    "Mirá el cuadro de los números.",
+    "Los redondos: 10, 20, 30, 40, 50.",
+    "¡Y el último es el *100*!"
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "UNIDAD",
+     "valor": "1",
+     "icono": "alf"
+    },
+    {
+     "nombre": "DECENA",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CIEN",
+     "valor": "100",
+     "icono": "caja"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un alfajor suelto es una *unidad*.",
+    "10 alfajores llenan un paquete: una *decena*.",
+    "10 paquetes llenan una caja.",
+    "¡Una caja tiene *100 alfajores*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 98,
+   "hasta": 105,
+   "faltan": [
+    101
+   ],
+   "titulo": "DESPUÉS DEL 100",
+   "voz": [
+    "El tren no se frena en el 100.",
+    "98, 99, 100… 102, 103, 104, 105.",
+    "¡Faltaba el *101*! Ciento uno."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué número viene después del 100?",
+   "opciones": [
+    "101",
+    "200",
+    "1001"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Rosa cuenta: 99, 100…",
+    "¿Qué número viene después?",
+    "¡El *101*! Seguimos de a uno."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Después del 100, el 200",
+     "bien": "Después del 100, el 101"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Después del 100 viene el *101*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DECENA",
+     "paquete de 10"
+    ],
+    [
+     "CIEN",
+     "10 paquetes"
+    ],
+    [
+     "DESPUÉS",
+     "101, 102, 103"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *decena* es un paquete de 10.",
+    "*10 paquetes* son 100.",
+    "Después del 100 seguimos: *101, 102*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

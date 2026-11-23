@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat2-m1-n2",
+ "step_id": "ed3381db-ac71-45f3-a7a3-1d4d27bf613b",
+ "materia": "Matemática 2",
+ "titulo": "Hasta 200",
+ "sub": "Matemática 2 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué número viene después del 199?",
+   "segundos": 5,
+   "respuesta": "¡El 200!",
+   "emoji": "📦",
+   "titulo": "HASTA",
+   "sub": "el 200",
+   "voz": [
+    "Desafío: ¿qué viene después del 199?",
+    "¡El *200*! Doscientos.",
+    "Hoy: *los números hasta 200*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 1,
+   "d": 4,
+   "u": 3,
+   "texto": "¡Son 143 alfajores!",
+   "voz": [
+    "Mirá el pedido de Rosa.",
+    "La caja: 100.",
+    "Los paquetes: 110, 120, 130, 140.",
+    "Los sueltos: 141, 142, 143.",
+    "¡Son *143 alfajores*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN ORDEN",
+   "texto": "Caja, paquetes, sueltos",
+   "emoji": "📦",
+   "voz": [
+    "Truco: primero la caja, después paquetes y sueltos."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 100,
+   "max": 200,
+   "paso": 10,
+   "marcas": [
+    {
+     "v": 150,
+     "txt": "150"
+    },
+    {
+     "v": 200,
+     "txt": "200"
+    }
+   ],
+   "voz": [
+    "En la recta vamos del 100 al 200.",
+    "Acá está el *150*: justo en el medio.",
+    "Y al final, el *200*: dos cajas."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 193,
+   "hasta": 200,
+   "faltan": [
+    200
+   ],
+   "titulo": "LLEGAMOS AL 200",
+   "voz": [
+    "Contemos los últimos vagones.",
+    "193, 194, 195, 196, 197, 198, 199.",
+    "¡Y el último es el *200*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "1 caja, 6 paquetes y 2 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "162",
+    "126",
+    "612"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Una caja, seis paquetes, dos sueltos.",
+    "¿Cuántos alfajores son?",
+    "¡*162*! Cien, sesenta y dos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAJA",
+     "100 alfajores"
+    ],
+    [
+     "CONTAR",
+     "caja, paquetes, sueltos"
+    ],
+    [
+     "200",
+     "dos cajas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *caja* tiene 100 alfajores.",
+    "Contamos caja, paquetes y sueltos.",
+    "Dos cajas son *200*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

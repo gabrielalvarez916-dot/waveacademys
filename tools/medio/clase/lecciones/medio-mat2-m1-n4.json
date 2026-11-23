@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat2-m1-n4",
+ "step_id": "14d43acc-8ba8-43ac-8f96-560f5cad6171",
+ "materia": "Matemática 2",
+ "titulo": "Series que suben y bajan",
+ "sub": "Matemática 2 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡El camión va para atrás!",
+   "bajada": "Reparte de 10 en 10",
+   "emoji": "🚚",
+   "titulo": "SUBEN",
+   "sub": "y bajan",
+   "voz": [
+    "¡Último momento en la fábrica de Rosa!",
+    "El camión reparte y quedan menos alfajores.",
+    "Hoy: *series que suben y bajan*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SUBE",
+    "texto": "150, 151, 152",
+    "emoji": "⬆️"
+   },
+   "b": {
+    "cab": "BAJA",
+    "texto": "200, 190, 180",
+    "emoji": "⬇️"
+   },
+   "signo": "≠",
+   "voz": [
+    "Esta serie *sube*: suma uno cada vez.",
+    "Esta serie *baja*: resta diez cada vez.",
+    "¡Mirá si los números crecen o achican!"
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "PARA ATRÁS",
+   "min": 140,
+   "max": 200,
+   "cada": 10,
+   "inicio": 200,
+   "saltos": [
+    {
+     "a": -10,
+     "txt": "−10"
+    },
+    {
+     "a": -10,
+     "txt": "−10"
+    },
+    {
+     "a": -10,
+     "txt": "−10"
+    }
+   ],
+   "voz": [
+    "El camión sale del 200.",
+    "Reparte un paquete: *190*.",
+    "Otro paquete: *180*.",
+    "Otro más: *170*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La serie 160, 150, 140, ¿sube o baja?",
+   "opciones": [
+    "Sube",
+    "Baja"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos. Mirá: 160, 150, 140.",
+    "¿La serie sube o baja?",
+    "¡*Baja*! Resta 10 cada vez."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Seguí: 125, 124, 123, ¿qué sigue?",
+   "opciones": [
+    "122",
+    "124",
+    "133"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra más. 125, 124, 123…",
+    "¿Qué número sigue?",
+    "¡*122*! Baja de a uno."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ DOS NÚMEROS",
+   "texto": "Crece: sube. Achica: baja",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: si crece, sube. Si achica, *baja*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUBE",
+     "sumamos"
+    ],
+    [
+     "BAJA",
+     "restamos"
+    ],
+    [
+     "EL SALTO",
+     "siempre igual"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una serie que *sube* suma.",
+    "Una serie que *baja* resta.",
+    "El salto es *siempre igual*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

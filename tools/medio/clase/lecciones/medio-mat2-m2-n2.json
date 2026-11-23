@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat2-m2-n2",
+ "step_id": "82be64b8-3357-4c49-84c3-28b5a05d8f77",
+ "materia": "Matemática 2",
+ "titulo": "Hasta 400",
+ "sub": "Matemática 2 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué número viene después del 399?",
+   "segundos": 5,
+   "respuesta": "¡El 400!",
+   "emoji": "📦",
+   "titulo": "HASTA",
+   "sub": "el 400",
+   "voz": [
+    "Desafío: ¿qué viene después del 399?",
+    "¡El *400*! Cuatrocientos.",
+    "Hoy: *los números hasta 400*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "CAJA POR CAJA",
+   "min": 0,
+   "max": 400,
+   "cada": 100,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 100,
+     "txt": "+100"
+    },
+    {
+     "a": 100,
+     "txt": "+100"
+    },
+    {
+     "a": 100,
+     "txt": "+100"
+    },
+    {
+     "a": 100,
+     "txt": "+100"
+    }
+   ],
+   "voz": [
+    "Contamos las cajas *de 100 en 100*.",
+    "Una caja: *100*.",
+    "Dos cajas: *200*.",
+    "Tres cajas: *300*.",
+    "¡Cuatro cajas: *400*!"
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 3,
+   "d": 7,
+   "u": 2,
+   "texto": "¡Son 372 alfajores!",
+   "voz": [
+    "Mirá este pedido.",
+    "Las cajas: 100, 200, 300.",
+    "Los paquetes: 310, 320, 330, 340, 350, 360, 370.",
+    "Los sueltos: 371, 372.",
+    "¡Son *372 alfajores*!"
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "3",
+    "9",
+    "9",
+    "+",
+    "1"
+   ],
+   "resultado": "400",
+   "texto": "399 + 1 = 400",
+   "titulo": "UNO MÁS",
+   "voz": [
+    "Tomi prueba con la calculadora.",
+    "Aprieta 399, más 1.",
+    "¡Sale *400*! Cuatro cajas justas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "De 100 en 100: 100, 200, 300, ¿qué sigue?",
+   "opciones": [
+    "400",
+    "310",
+    "3100"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 100, 200, 300…",
+    "¿Qué número sigue?",
+    "¡*400*! Una caja más."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ LAS CAJAS",
+   "texto": "Cada caja suma 100",
+   "emoji": "📦",
+   "voz": [
+    "Truco: cada *caja* suma 100 alfajores."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DE 100 EN 100",
+     "contar cajas"
+    ],
+    [
+     "PEDIDO",
+     "cajas, paquetes, sueltos"
+    ],
+    [
+     "400",
+     "cuatro cajas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las cajas se cuentan *de 100 en 100*.",
+    "Un pedido tiene cajas, paquetes y sueltos.",
+    "Cuatro cajas son *400*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "slug": "medio-mat2-m1-n3",
+ "step_id": "d5735aa5-13a9-41bc-9874-b8c5cd2af2af",
+ "materia": "Matemática 2",
+ "titulo": "Escalas de 10 en 10",
+ "sub": "Matemática 2 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿contás de a uno?"
+    },
+    {
+     "yo": true,
+     "txt": "¡No! De 10 en 10 🍫"
+    }
+   ],
+   "titulo": "DE 10",
+   "sub": "en 10",
+   "voz": [
+    "Tomi, el nieto, le escribe a Rosa.",
+    "¿Contás los alfajores de a uno?",
+    "¡No! Rosa cuenta *de 10 en 10*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "UN PAQUETE MÁS",
+   "min": 100,
+   "max": 160,
+   "cada": 10,
+   "inicio": 120,
+   "saltos": [
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 120.",
+    "Un paquete más: *130*.",
+    "Otro paquete: *140*.",
+    "Otro más: *150*."
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 110,
+   "hasta": 200,
+   "paso": 10,
+   "faltan": [
+    150,
+    180
+   ],
+   "titulo": "DE 10 EN 10",
+   "voz": [
+    "El tren cuenta de 10 en 10.",
+    "110, 120, 130, 140, 160, 170, 190, 200.",
+    "¡Faltaban el *150* y el *180*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL MEDIO",
+   "texto": "Cambian las decenas",
+   "emoji": "👀",
+   "voz": [
+    "Truco: de 10 en 10 cambia la cifra *del medio*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "De 10 en 10: 113, 123, ¿qué sigue?",
+   "opciones": [
+    "133",
+    "124",
+    "223"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 113, 123…",
+    "¿Qué número sigue de 10 en 10?",
+    "¡*133*! El 3 del final no cambia."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "190 y después 1100",
+     "bien": "190 y después 200"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Después del 190 viene el *200*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DE 10 EN 10",
+     "un paquete más"
+    ],
+    [
+     "CAMBIA",
+     "las decenas"
+    ],
+    [
+     "NO CAMBIA",
+     "las unidades"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "De 10 en 10 sumamos *un paquete*.",
+    "Cambia la cifra de las *decenas*.",
+    "Las *unidades* quedan igual.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
