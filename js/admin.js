@@ -907,6 +907,7 @@
     curricular: function () { return WaveCurricular.abrir(vista); },
     videos: function () { return WaveVideos.abrir(vista); },
     admision: function () { return WaveAdmision.vista(vista); },
+    estado: function () { return WaveEstado.abrir(vista); },
     registro: proximamente('Registro de actividad')
   };
 
