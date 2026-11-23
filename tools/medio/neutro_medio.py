@@ -164,4 +164,6 @@ OK |= {'inglés', 'gané', 'name', 'rompí'}; MAPA.update({'saludás': 'saludas'
 OK |= {'salteó', 'zrí'}; MAPA.update({'tocá': 'toca', 'contá': 'cuenta', 'cantá': 'canta', 'aplaudí': 'aplaude', 'mostrá': 'muestra', 'juntá': 'junta', 'levantá': 'levanta', 'llegás': 'llegas', 'podés': 'puedes'})  # Inglés 1 · Misión 2
 OK |= {'iélou', 'grín', 'órinch'}; MAPA.update({'señalá': 'señala', 'buscá': 'busca', 'mezclá': 'mezcla', 'preguntale': 'pregúntale'})  # Inglés 1 · Misión 3
 OK |= {'pénsil'}; MAPA.update({'sentás': 'sientas', 'sacá': 'saca', 'nombralos': 'nómbralos', 'pedile': 'pídele', 'escondé': 'esconde', 'poné': 'pon', 'decí': 'di', 'hacé': 'haz', 'escuchá': 'escucha', 'parate': 'párate', 'sentate': 'siéntate', 'abrí': 'abre', 'sabés': 'sabes', 'hacés': 'haces', 'mové': 'mueve'})  # Inglés 1 · Misión 4
+OK |= {'béibi', 'bráder', 'síster', 'granmá', 'granpá'}; MAPA.update({'señalás': 'señalas', 'dibujá': 'dibuja', 'decilo': 'dilo', 'mostrás': 'muestras', 'preguntá': 'pregunta'})  # Inglés 1 · Misión 5
+OK |= {'shóulders', 'nís', 'tóus', 'áis', 'nóus', 'máuz', 'íars'}; MAPA.update({'tocás': 'tocas', 'escuchás': 'escuchas', 'tocate': 'tócate', 'empezá': 'empieza', 'bajá': 'baja', 'esperá': 'espera', 'seguí': 'sigue', 'bailá': 'baila', 'jugá': 'juega', 'saltá': 'salta', 'zapateá': 'zapatea', 'saltás': 'saltas'})  # Inglés 1 · Misión 6
 OK -= set(MAPA)

@@ -1,0 +1,125 @@
+{
+ "slug": "medio-ing1-m6-n3",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 6,
+  "nivel": 3
+ },
+ "materia": "Inglés 1",
+ "titulo": "Touch your nose!",
+ "sub": "Inglés 1 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Escuchá y hacé: TOUCH YOUR NOSE!",
+   "segundos": 5,
+   "respuesta": "¡TE TOCASTE LA NARIZ!",
+   "emoji": "👃",
+   "titulo": "TOUCH YOUR NOSE!",
+   "sub": "escuchar y tocar",
+   "voz": [
+    "Desafío: escuchá y hacé.",
+    "Touch your nose!",
+    "Hoy: *escuchar y tocar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "TOUCH YOUR…",
+   "items": [
+    "NOSE 👃",
+    "EARS 👂",
+    "HEAD 🙂",
+    "KNEES 🦵"
+   ],
+   "voz": [
+    "Touch your nose!",
+    "Touch your ears!",
+    "Touch your head!",
+    "Touch your knees!"
+   ],
+   "voz_en": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "EL JUEGO",
+   "items": [
+    "ESCUCHO",
+    "TOCO",
+    "¡MUY BIEN!"
+   ],
+   "voz": [
+    "Así se juega.",
+    "Primero *escucho* la orden.",
+    "Después *toco* la parte del cuerpo.",
+    "¡Y otra vez!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "TOUCH YOUR HEAD. ¿Qué tocás?",
+   "opciones": [
+    "LA CABEZA",
+    "LA NARIZ",
+    "LOS PIES"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Escuchá la orden.",
+    "Touch your head!",
+    "¡La *cabeza*!"
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ",
+   "texto": "Esperá a escuchar la parte del cuerpo",
+   "emoji": "👂",
+   "voz": [
+    "Truco: *esperá* a escuchar la parte del cuerpo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TOUCH",
+     "tocar"
+    ],
+    [
+     "YOUR",
+     "tu"
+    ],
+    [
+     "JUEGO",
+     "escuchar y hacer"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Touch your nose!",
+    "Escuchamos y *tocamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  }
+ ]
+}

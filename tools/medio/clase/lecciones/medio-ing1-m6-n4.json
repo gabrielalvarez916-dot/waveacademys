@@ -1,0 +1,147 @@
+{
+ "slug": "medio-ing1-m6-n4",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 6,
+  "nivel": 4
+ },
+ "materia": "Inglés 1",
+ "titulo": "Hands and feet: action songs",
+ "sub": "Inglés 1 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡FIESTA DE BAILE EN INGLÉS!",
+   "bajada": "Con manos y pies",
+   "emoji": "💃",
+   "titulo": "HANDS AND FEET",
+   "sub": "manos y pies",
+   "voz": [
+    "¡Último momento! Hay fiesta de *baile*.",
+    "¡Y bailamos en inglés!",
+    "Hoy: *manos y pies en inglés*."
+   ]
+  },
+  {
+   "t": "vocab",
+   "items": [
+    {
+     "palabra": "HANDS",
+     "emoji": "👐",
+     "trad": "manos",
+     "pron": "jands"
+    },
+    {
+     "palabra": "FEET",
+     "emoji": "🦶",
+     "trad": "pies",
+     "pron": "fit"
+    },
+    {
+     "palabra": "CLAP",
+     "emoji": "👏",
+     "trad": "aplaudir",
+     "pron": "clap"
+    },
+    {
+     "palabra": "JUMP",
+     "emoji": "🤸",
+     "trad": "saltar",
+     "pron": "yamp"
+    }
+   ],
+   "voz": [
+    "Hands!",
+    "Feet!",
+    "Clap!",
+    "Jump!"
+   ],
+   "voz_en": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "HANDS",
+    "emoji": "👏",
+    "texto": "Aplaudimos"
+   },
+   "despues": {
+    "cab": "FEET",
+    "emoji": "🦶",
+    "texto": "Zapateamos"
+   },
+   "voz": [
+    "Clap your hands!",
+    "Stamp your feet!"
+   ],
+   "voz_en": [
+    0,
+    1
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "La canción dice JUMP. ¿Qué hacés?",
+   "opciones": [
+    "SALTO",
+    "APLAUDO",
+    "ME SIENTO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Escuchá la canción.",
+    "Jump!",
+    "¡*Saltás*!"
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON RITMO",
+   "texto": "Seguí el ritmo de la música",
+   "emoji": "🎶",
+   "voz": [
+    "Truco: seguí el *ritmo* de la música."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HANDS",
+     "manos"
+    ],
+    [
+     "FEET",
+     "pies"
+    ],
+    [
+     "CLAP / JUMP",
+     "aplaudir y saltar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Clap your hands! Stamp your feet!",
+    "¡Y jump, a *saltar*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  }
+ ]
+}
