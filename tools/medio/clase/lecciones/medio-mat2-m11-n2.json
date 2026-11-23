@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat2-m11-n2",
+ "step_id": "707a8c81-25ba-48ab-ab38-4d66942bd600",
+ "materia": "Matemática 2",
+ "titulo": "Comparar en problemas de dos pasos",
+ "sub": "Matemática 2 · Misión 11 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Ana",
+    "emoji": "👩‍🍳"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Hoy hice 320 alfajores 😎"
+    },
+    {
+     "yo": true,
+     "txt": "¡Yo hice 450!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cuántos más que yo?"
+    }
+   ],
+   "titulo": "COMPARAR",
+   "sub": "cuántos más",
+   "voz": [
+    "Ana, la vecina, le escribe a Rosa.",
+    "Ana hizo 320. Rosa hizo 450.",
+    "¿Cuántos más hizo Rosa?",
+    "Hoy: *comparar en problemas*."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "ROSA",
+    "items": [
+     "450"
+    ]
+   },
+   "der": {
+    "cab": "ANA",
+    "items": [
+     "320"
+    ]
+   },
+   "gana": "izq",
+   "voz": [
+    "Ponemos los dos en la balanza.",
+    "Rosa: 450. Ana: 320.",
+    "¡Rosa hizo *más*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "¿CUÁNTOS MÁS?",
+   "pasos": [
+    {
+     "txt": "450 y 320",
+     "nota": "grande y chico"
+    },
+    {
+     "txt": "450 − 320"
+    },
+    {
+     "txt": "= 130",
+     "nota": "Rosa hizo 130 más"
+    }
+   ],
+   "voz": [
+    "Tenemos el grande y el chico.",
+    "Restamos el chico al grande: 450 menos 320.",
+    "¡*130*! Rosa hizo 130 más."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Para saber cuántos más, siempre sumo",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Se resta el chico al grande",
+   "voz": [
+    "¿Verdadero o falso? Para saber cuántos más, sumo.",
+    "Pensá en Rosa y Ana…",
+    "¡*Falso*! Restamos el chico al grande."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Un camión lleva 580 y otro 350. ¿Cuántos más lleva el primero?",
+   "opciones": [
+    "230",
+    "930",
+    "220"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 580 y 350.",
+    "¿Cuántos más lleva el primero?",
+    "¡*230*! 580 menos 350."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MÁS",
+     "el número grande"
+    ],
+    [
+     "CUÁNTOS MÁS",
+     "restamos"
+    ],
+    [
+     "DIFERENCIA",
+     "lo que hay de más"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El que tiene *más* tiene el número grande.",
+    "Para saber *cuántos más*, restamos.",
+    "Eso es la *diferencia*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

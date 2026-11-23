@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat2-m12-n3",
+ "step_id": "67350050-4158-475b-b56a-ea79a9d5539c",
+ "materia": "Matemática 2",
+ "titulo": "Usar sumas conocidas para resolver nuevas",
+ "sub": "Matemática 2 · Misión 12 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Si 25 + 25 = 50, ¿cuánto es 25 + 26?",
+   "segundos": 6,
+   "respuesta": "¡51!",
+   "emoji": "🧠",
+   "titulo": "SUMAS",
+   "sub": "conocidas",
+   "voz": [
+    "Desafío: si 25 más 25 es 50…",
+    "¡25 más 26 es *51*! Uno más.",
+    "Hoy: *usar sumas conocidas*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DEL DOBLE A OTRA",
+   "pasos": [
+    {
+     "txt": "25 + 25 = 50",
+     "nota": "lo que sé"
+    },
+    {
+     "txt": "25 + 26",
+     "nota": "uno más"
+    },
+    {
+     "txt": "= 51"
+    }
+   ],
+   "voz": [
+    "Rosa ya sabe un doble: 25 más 25 es 50.",
+    "Ahora tiene 25 más 26: uno más.",
+    "¡El resultado también sube uno: *51*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "40 + 40 = 80",
+    "40 + 41 = 81",
+    "40 + 42 = 82"
+   ],
+   "falta": "40 + 43 = 83",
+   "regla": "Uno más, uno más",
+   "voz": [
+    "Mirá: 40 más 40, más 41, más 42.",
+    "¿Qué sigue?",
+    "¡40 más 43: *83*!"
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿QUIÉN ACERTÓ?",
+   "a": {
+    "txt": "30 + 40 = 70",
+    "emoji": "✅",
+    "datos": [
+     "sube 10"
+    ]
+   },
+   "b": {
+    "txt": "30 + 40 = 61",
+    "emoji": "❌",
+    "datos": [
+     "sube 1"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡40 es 10 más que 30!",
+   "voz": [
+    "Dos chicos usaron 30 más 30 es 60.",
+    "Uno dice 30 más 40 es *70*.",
+    "Otro dice *61*.",
+    "¡Gana el 70! El 40 es *10 más*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "50 + 51",
+     "r": "101"
+    },
+    {
+     "p": "100 + 99",
+     "r": "199"
+    },
+    {
+     "p": "15 + 16",
+     "r": "31"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de dobles!",
+    "50 más 51: *101*.",
+    "100 más 99: *199*.",
+    "15 más 16: *31*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DOBLES",
+     "los que ya sabés"
+    ],
+    [
+     "UNO MÁS",
+     "resultado + 1"
+    ],
+    [
+     "UNO MENOS",
+     "resultado − 1"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Usamos los *dobles* que ya sabemos.",
+    "Si uno sube 1, el resultado *sube 1*.",
+    "Si baja 1, el resultado *baja 1*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

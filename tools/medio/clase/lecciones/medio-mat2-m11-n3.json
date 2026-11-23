@@ -1,0 +1,124 @@
+{
+ "slug": "medio-mat2-m11-n3",
+ "step_id": "3aaa945b-66ca-43fe-a479-ce6ebc64b25d",
+ "materia": "Matemática 2",
+ "titulo": "Completar hasta un número",
+ "sub": "Matemática 2 · Misión 11 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Rosa tiene 350 y tiene que entregar 500. ¿Cuántos faltan?",
+   "segundos": 8,
+   "respuesta": "¡150!",
+   "emoji": "🎯",
+   "titulo": "COMPLETAR",
+   "sub": "hasta un número",
+   "voz": [
+    "Desafío: Rosa tiene 350 y necesita 500.",
+    "¡Le faltan *150*!",
+    "Hoy: *completar hasta un número*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 350 A 500",
+   "min": 300,
+   "max": 500,
+   "cada": 50,
+   "inicio": 350,
+   "saltos": [
+    {
+     "a": 50,
+     "txt": "+50"
+    },
+    {
+     "a": 100,
+     "txt": "+100"
+    }
+   ],
+   "voz": [
+    "Empezamos en lo que hay: 350.",
+    "Un salto de 50: llegamos a *400*.",
+    "Un salto de 100: ¡*500*! Faltaban *150*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "LO QUE FALTA",
+   "items": [
+    {
+     "txt": "hay 350",
+     "emoji": "📦",
+     "valor": 350
+    },
+    {
+     "txt": "quiero 500",
+     "emoji": "🚚",
+     "valor": 500
+    }
+   ],
+   "voz": [
+    "Lo que hay: *350*.",
+    "Lo que queremos: *500*. Faltan 150."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "70 +",
+   "despues": "= 100",
+   "opciones": [
+    "30",
+    "170",
+    "3"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Tomi tiene 70 figuritas y quiere 100.",
+    "70 más ¿cuánto? es 100.",
+    "¡*30*! Le faltan 30."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar lo que hay y lo que quiero",
+     "bien": "Contar desde lo que hay"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No sumes los dos: contá *desde lo que hay*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FALTA",
+     "lo que hay que agregar"
+    ],
+    [
+     "CONTAR",
+     "desde lo que hay"
+    ],
+    [
+     "RESTAR",
+     "quiero − hay"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Falta* es lo que hay que agregar.",
+    "Contamos *desde lo que hay*.",
+    "O restamos: lo que quiero menos lo que hay.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

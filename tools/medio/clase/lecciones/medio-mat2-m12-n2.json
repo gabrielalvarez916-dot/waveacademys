@@ -1,0 +1,136 @@
+{
+ "slug": "medio-mat2-m12-n2",
+ "step_id": "c97d4a72-4344-459b-a98f-6f36101956c7",
+ "materia": "Matemática 2",
+ "titulo": "Agrupar para calcular mejor",
+ "sub": "Matemática 2 · Misión 12 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa suma 37 + 25 + 3.",
+    "¡Son tres números!",
+    "¿Por dónde empieza?"
+   ],
+   "titulo": "AGRUPAR",
+   "sub": "para calcular mejor",
+   "voz": [
+    "Rosa tiene que sumar *tres números*.",
+    "37, 25 y 3.",
+    "¿Por cuál empieza?",
+    "Hoy: *agrupar para calcular mejor*."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "PAREJAS AMIGAS",
+   "pares": [
+    [
+     "37",
+     "3"
+    ],
+    [
+     "60",
+     "40"
+    ],
+    [
+     "8",
+     "2"
+    ]
+   ],
+   "voz": [
+    "Buscamos *parejas amigas*: dan redondo.",
+    "37 y 3: *40*.",
+    "60 y 40: *100*.",
+    "8 y 2: *10*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "37 + 25 + 3",
+   "lineas": [
+    {
+     "txt": "37 + 3 = 40",
+     "color": "sol",
+     "marca": "circulo"
+    },
+    {
+     "txt": "40 + 25 = 65",
+     "color": "verde"
+    }
+   ],
+   "voz": [
+    "Primero juntamos los amigos: 37 más 3, *40*.",
+    "Después: 40 más 25, ¡*65*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Cambia el resultado si junto distinto?",
+   "a": {
+    "txt": "Sí, cambia",
+    "emoji": "😱"
+   },
+   "b": {
+    "txt": "No, da igual",
+    "emoji": "😎"
+   },
+   "correcta": "b",
+   "resultado": "¡Da 65 de las dos formas!",
+   "voz": [
+    "¿Qué creés? Si junto distinto, ¿cambia el resultado?",
+    "¿Sí o no? Pensá…",
+    "¡*No*! Da 65 de las dos formas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 70 + 18 + 30?",
+   "opciones": [
+    "118",
+    "108",
+    "128"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 70 más 18 más 30.",
+    "Juntá los amigos: 70 y 30.",
+    "¡100 más 18: *118*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AGRUPAR",
+     "juntar los amigos"
+    ],
+    [
+     "REDONDO",
+     "más fácil"
+    ],
+    [
+     "DESPUÉS",
+     "lo que queda"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Juntamos primero los *amigos*.",
+    "Así queda un número *redondo*.",
+    "Después sumamos *lo que queda*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

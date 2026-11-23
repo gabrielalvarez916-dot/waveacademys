@@ -1,0 +1,133 @@
+{
+ "slug": "medio-mat2-m12-n4",
+ "step_id": "c4c9e3e8-3b94-48a9-860b-0966c7fa9589",
+ "materia": "Matemática 2",
+ "titulo": "La suma y la resta se relacionan",
+ "sub": "Matemática 2 · Misión 12 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡La suma y la resta son familia!",
+   "bajada": "Descubrimiento en la fábrica",
+   "emoji": "👨‍👩‍👧",
+   "titulo": "SUMA",
+   "sub": "y resta",
+   "voz": [
+    "¡Último momento: la suma y la resta son familia!",
+    "Lo descubrió Rosa en la fábrica.",
+    "Hoy: *la suma y la resta se relacionan*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LA FAMILIA",
+   "items": [
+    "25 + 15 = 40",
+    "15 + 25 = 40",
+    "40 − 15 = 25",
+    "40 − 25 = 15"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá la familia de 25, 15 y 40.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba 40 menos 15: *25*!"
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "IDA Y VUELTA",
+   "vinetas": [
+    {
+     "emojis": [
+      "📦",
+      "➕"
+     ],
+     "txt": "300 + 200 = 500",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "🚚",
+      "➖"
+     ],
+     "txt": "500 − 200 = 300",
+     "quien": "Rosa"
+    }
+   ],
+   "voz": [
+    "Rosa junta 300 y 200: *500*.",
+    "Se llevan 200: ¡vuelve a *300*!"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "Si 70 + 30 = 100, entonces 100 − 30 =",
+   "despues": "",
+   "opciones": [
+    "70",
+    "130",
+    "30"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: si 70 más 30 es 100…",
+    "¿100 menos 30?",
+    "¡*70*! La suma nos ayuda."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Robot Familia",
+    "emoji": "🤖"
+   },
+   "preguntas": [
+    {
+     "p": "45 + 55 = 100 → 100 − 55 = ?",
+     "r": "45"
+    },
+    {
+     "p": "8 + 5 = 13 → 13 − 8 = ?",
+     "r": "5"
+    }
+   ],
+   "voz": [
+    "¡El *Robot Familia* te desafía!",
+    "Usá la suma para la resta.",
+    "100 menos 55: *45*.",
+    "¡13 menos 8: *5*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FAMILIA",
+     "3 números, 4 cuentas"
+    ],
+    [
+     "SUMA",
+     "junta"
+    ],
+    [
+     "RESTA",
+     "deshace la suma"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con 3 números armamos *4 cuentas*.",
+    "La suma *junta*.",
+    "La resta *deshace* la suma.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

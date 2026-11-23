@@ -1,0 +1,148 @@
+{
+ "slug": "medio-mat2-m11-n4",
+ "step_id": "d7b5a7b9-6d8d-42ad-8d5d-b0114b41c7c3",
+ "materia": "Matemática 2",
+ "titulo": "Problemas con varias cuentas",
+ "sub": "Matemática 2 · Misión 11 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Día movido en la fábrica!",
+   "bajada": "Llegan y se van alfajores",
+   "emoji": "🏭",
+   "titulo": "VARIAS",
+   "sub": "cuentas",
+   "voz": [
+    "¡Último momento: día movido en la fábrica!",
+    "Hacen alfajores y después venden.",
+    "Hoy: *problemas con varias cuentas*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "EL DÍA DE ROSA",
+   "vinetas": [
+    {
+     "emojis": [
+      "📦"
+     ],
+     "txt": "Tenía 400",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "👩‍🍳",
+      "➕"
+     ],
+     "txt": "Hice 200 más: 600",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "🚚",
+      "➖"
+     ],
+     "txt": "Vendí 350: quedan 250",
+     "quien": "Rosa"
+    }
+   ],
+   "voz": [
+    "A la mañana, Rosa tenía *400*.",
+    "Hizo 200 más: 400 más 200, *600*.",
+    "Vendió 350: 600 menos 350, *250*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO LO RESUELVO",
+   "items": [
+    {
+     "txt": "Leo todo",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Primera cuenta",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Uso ese resultado",
+     "emoji": "2️⃣"
+    }
+   ],
+   "voz": [
+    "¿Cómo resolvemos estos problemas?",
+    "Primero *leemos todo*.",
+    "Hacemos la *primera cuenta*.",
+    "Y usamos ese resultado en la *segunda*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "En el colectivo iban 30. Subieron 15 y bajaron 20. ¿Cuántos van?",
+   "pistas": [
+    "Subieron: 30 + 15 = 45",
+    "Bajaron: 45 − 20 = 25"
+   ],
+   "respuesta": "Van 25 personas",
+   "voz": [
+    "Ahora vos: iban 30, subieron 15, bajaron 20.",
+    "Pista uno: subieron, sumamos. *45*.",
+    "Pista dos: bajaron, restamos. *25*.",
+    "¡Van *25* personas!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Señor Problema",
+    "emoji": "🧙"
+   },
+   "preguntas": [
+    {
+     "p": "300 + 100 − 250",
+     "r": "150"
+    },
+    {
+     "p": "50 + 30 − 10",
+     "r": "70"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Señor Problema*!",
+    "Lo vencemos paso por paso.",
+    "300 más 100 menos 250: *150*.",
+    "¡50 más 30 menos 10: *70*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "todo el problema"
+    ],
+    [
+     "PRIMER PASO",
+     "una cuenta"
+    ],
+    [
+     "SEGUNDO PASO",
+     "con ese resultado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *todo* el problema.",
+    "Hacemos la *primera cuenta*.",
+    "Con ese resultado, la *segunda*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "slug": "medio-mat2-m12-n1",
+ "step_id": "ed6db453-0ca6-4513-8b32-45ed961bd7c3",
+ "materia": "Matemática 2",
+ "titulo": "Cambiar el orden de los números",
+ "sub": "Matemática 2 · Misión 12 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿30 + 40 o 40 + 30?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Da lo mismo!"
+    },
+    {
+     "yo": false,
+     "txt": "¿En serio? 😮"
+    }
+   ],
+   "titulo": "CAMBIAR",
+   "sub": "el orden",
+   "voz": [
+    "Tomi le pregunta a Rosa.",
+    "¿Es igual 30 más 40 que 40 más 30?",
+    "Rosa dice: ¡da lo mismo!",
+    "Hoy: *cambiar el orden de los números*."
+   ]
+  },
+  {
+   "t": "juntar",
+   "a": {
+    "emoji": "🍫",
+    "n": 3
+   },
+   "b": {
+    "emoji": "🍪",
+    "n": 4
+   },
+   "texto": "3 + 4 = 4 + 3 = 7",
+   "voz": [
+    "Tres alfajores de chocolate.",
+    "Cuatro de dulce.",
+    "¡Juntos son 7, en cualquier orden!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "30 + 40 da lo mismo que 40 + 30",
+   "emoji": "🔄",
+   "verdadero": true,
+   "explicacion": "En la suma, el orden no cambia",
+   "voz": [
+    "Mirá: 30 más 40 es igual a 40 más 30.",
+    "¿Verdadero o falso? Pensá en los alfajores…",
+    "¡*Verdadero*! Los dos dan *70*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DESDE EL GRANDE",
+   "min": 95,
+   "max": 100,
+   "cada": 1,
+   "inicio": 98,
+   "saltos": [
+    {
+     "a": 1,
+     "txt": "+1"
+    },
+    {
+     "a": 1,
+     "txt": "+1"
+    }
+   ],
+   "voz": [
+    "2 más 98 es difícil. ¡Lo damos vuelta!",
+    "98 más 1: *99*.",
+    "Más 1: ¡*100*! Mucho más fácil."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "8 − 3 = 3 − 8",
+     "bien": "En la resta no se da vuelta"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En la *resta* no se puede dar vuelta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ORDEN",
+     "no cambia la suma"
+    ],
+    [
+     "TRUCO",
+     "empezá por el grande"
+    ],
+    [
+     "RESTA",
+     "no se da vuelta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la suma, el *orden* no cambia el resultado.",
+    "Conviene empezar por el *grande*.",
+    "En la *resta* no se da vuelta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

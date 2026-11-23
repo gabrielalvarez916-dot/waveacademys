@@ -1,0 +1,143 @@
+{
+ "slug": "medio-mat2-m11-n1",
+ "step_id": "bcfff097-dfca-4c0b-b128-0acf8b0f7b09",
+ "materia": "Matemática 2",
+ "titulo": "Agregar y quitar",
+ "sub": "Matemática 2 · Misión 11 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa tenía 230 alfajores.",
+    "Hizo 150 más.",
+    "¿Suma o resta?"
+   ],
+   "titulo": "AGREGAR",
+   "sub": "y quitar",
+   "voz": [
+    "Rosa tenía *230* alfajores.",
+    "Hoy hizo *150* más.",
+    "¿Hay que sumar o restar?",
+    "Hoy: *agregar y quitar*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SUMAR",
+     "emoji": "➕"
+    },
+    {
+     "cab": "RESTAR",
+     "emoji": "➖"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "llegan",
+     "caja": 0
+    },
+    {
+     "txt": "hizo más",
+     "caja": 0
+    },
+    {
+     "txt": "se fueron",
+     "caja": 1
+    },
+    {
+     "txt": "vendió",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Hay palabras que nos ayudan.",
+    "Si llegan o hace más, *sumamos*.",
+    "Si se van o vende, *restamos*."
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "230",
+   "b": "150",
+   "op": "+",
+   "resultado": "380",
+   "titulo": "LLEGAN MÁS",
+   "voz": [
+    "Rosa hizo más: sumamos 230 más 150.",
+    "Unidades: 0 más 0, *0*.",
+    "Decenas: 3 más 5, *8*.",
+    "Centenas: 2 más 1, *3*. ¡Tiene *380*!"
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "Rosa tenía 380 y vendió 120. ¿Qué cuenta hace?",
+   "emoji": "🤔",
+   "a": {
+    "txt": "380 + 120",
+    "consecuencia": "¡No! Vendió: se van",
+    "emoji": "❌"
+   },
+   "b": {
+    "txt": "380 − 120",
+    "consecuencia": "¡Sí! Le quedan 260",
+    "emoji": "✅"
+   },
+   "voz": [
+    "Rosa tenía 380 y vendió 120.",
+    "Si suma, se equivoca: ¡los alfajores se fueron!",
+    "Si resta, acierta: le quedan *260*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En el colectivo iban 48. Bajaron 15. ¿Qué cuenta hacés?",
+   "opciones": [
+    "48 − 15",
+    "48 + 15"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Iban 48 y bajaron 15.",
+    "¿Sumás o restás?",
+    "¡*Restamos*! Bajaron: se van."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AGREGAR",
+     "sumamos"
+    ],
+    [
+     "QUITAR",
+     "restamos"
+    ],
+    [
+     "RESPUESTA",
+     "con palabras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Si llegan más, *sumamos*.",
+    "Si se van, *restamos*.",
+    "La respuesta se escribe *con palabras*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
