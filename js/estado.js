@@ -38,7 +38,7 @@
     var sb = Wave.sb, h = '';
     var runs = [], err = '';
     try {
-      var r = await fetch('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=30');
+      var r = await fetch('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=30&t=' + Date.now(), { cache: 'no-store' });
       if (!r.ok) throw new Error('GitHub ' + r.status);
       runs = (await r.json()).workflow_runs || [];
     } catch (e) { err = 'No pude leer GitHub (' + e.message + '). Si dice 403, esperá unos minutos.'; }
@@ -52,7 +52,7 @@
     var pdfs = {}; st.forEach(function (s) { if (s.r2_key && /pdf/i.test(s.step_type || '')) pdfs[l2t[s.lesson_id]] = (pdfs[l2t[s.lesson_id]] || 0) + 1; });
     var pend = runs.filter(function (r) { return ['in_progress', 'queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length;
     var canc = runs.filter(function (r) { return r.conclusion === 'cancelled' && estadoRun(r, runs)[1] === 'rojo'; }).length;
-    h += '<div class="est-res">' + chip(runs.filter(function (r) { return r.status === 'in_progress'; }).length + ' en curso', 'amar') + chip(runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length + ' en espera', 'gris') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<small> Actualiza solo cada 75 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
+    h += '<div class="est-res">' + chip(runs.filter(function (r) { return r.status === 'in_progress'; }).length + ' en curso', 'amar') + chip(runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length + ' en espera', 'gris') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<button type="button" class="est-btn" id="est-act">Actualizar ahora</button><small> Actualiza solo cada 75 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
     var ahora = runs.filter(function (r) { return r.status === 'in_progress'; }), espera = runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; });
     function li(r) { return '<li><b>' + esc(tipo(r.name)) + '</b> · ' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 80)) + ' <small>(desde ' + hace(r.created_at) + ')</small></li>'; }
     h = '<div class="est-ahora"><div><h3>⚙️ Haciéndose ahora (' + ahora.length + ')</h3>' + (ahora.length ? '<ul>' + ahora.map(li).join('') + '</ul>' : '<p>Nada en curso.</p>') + '</div><div><h3>⏳ En espera (' + espera.length + ')</h3>' + (espera.length ? '<ul>' + espera.map(li).join('') + '</ul>' : '<p>Nada esperando.</p>') + '</div></div>' + h;
@@ -67,7 +67,9 @@
         return '<tr><td>' + esc(t.subjects && t.subjects.name) + '</td><td>' + esc(t.position + '. ' + t.title) + '</td><td>' + (e.length ? chip(e[0].publicado ? 'Cargado y publicado' : 'Cargado', e[0].publicado ? 'verde' : 'amar') : chip('Sin examen', 'rojo')) + '</td><td>' + chip(np + ' PDF', np >= 4 ? 'verde' : np ? 'amar' : 'rojo') + '</td><td>' + (t.is_published ? chip('Sí', 'verde') : chip('No', 'rojo')) + '</td><td>' + hace(t.updated_at) + '</td></tr>';
       }).join('') + '</tbody></table>';
     el.innerHTML = h;
+    var ba = document.getElementById('est-act'); if (ba) ba.onclick = function () { ba.textContent = 'Actualizando…'; cargar(el); };
     el.onclick = async function (ev) {
+      if (ev.target.id === 'est-act') return;
       var b = ev.target.closest('.est-btn'); if (!b) return;
       var rid = b.getAttribute('data-run'), cur = runs.filter(function (x) { return String(x.id) === rid; })[0];
       var mismos = runs.filter(function (x) { return cur && x.name === cur.name && ['in_progress', 'queued', 'waiting', 'pending'].indexOf(x.status) >= 0; });
@@ -83,7 +85,7 @@
       var r = await sb.functions.invoke('reenviar-github', { body: { run_id: b.getAttribute('data-run') } });
       var msg = (r.data && r.data.error) || (r.error && 'No se pudo reenviar') || null;
       if (msg) { b.disabled = false; b.textContent = 'Reenviar'; alert(msg); return; }
-      b.textContent = 'Reenviada ✔'; setTimeout(function () { cargar(el); }, 4000);
+      b.textContent = 'Reenviada ✔'; setTimeout(function () { cargar(el); }, 3000); setTimeout(function () { cargar(el); }, 9000);
     };
   }
   window.WaveEstado = {
