@@ -1,0 +1,121 @@
+{
+ "slug": "medio-leng1-m13-n1",
+ "step_id": "4b70b402-9944-4d69-baf7-b7f0b3cdcb8f",
+ "materia": "Lengua 1",
+ "titulo": "Cantar el abecedario",
+ "sub": "Lengua 1 · Misión 13 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "¡Sofi completó su álbum!",
+    "Tiene las 27 letras.",
+    "Ahora las pone en orden."
+   ],
+   "titulo": "EL ABECEDARIO",
+   "sub": "en orden",
+   "voz": [
+    "¡Sofi completó su *álbum*!",
+    "Tiene las *27 letras*.",
+    "Ahora las pone en orden.",
+    "Hoy: *el abecedario*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Abecedario",
+   "texto": "Todas las letras, siempre en el mismo orden",
+   "emoji": "🔤",
+   "voz": [
+    "El *abecedario* son todas las letras juntas.",
+    "Van siempre en el *mismo orden*."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ LETRA SIGUE?",
+   "items": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+   ],
+   "falta": 3,
+   "regla": "Siempre el mismo orden",
+   "voz": [
+    "Mirá: la de *avión*, la de *barco*, la de *casa*…",
+    "¿Cuál sigue?",
+    "¡La de *dedo*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "¿CUÁL VA DESPUÉS?",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "L, M, …",
+     "r": "N"
+    },
+    {
+     "p": "N, …",
+     "r": "Ñ"
+    },
+    {
+     "p": "X, Y, …",
+     "r": "Z"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿Cuál va después?",
+    "Después de la de *mamá*: la de *nube*.",
+    "Después de la de *nube*: la de *ñandú*.",
+    "Y al final de todo: la de *zapato*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE A PEDACITOS",
+   "texto": "Aprendelo por partes",
+   "emoji": "🧩",
+   "voz": [
+    "Truco: aprendé el abecedario *de a pedacitos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ABECEDARIO",
+     "todas las letras"
+    ],
+    [
+     "27",
+     "de la A a la Z"
+    ],
+    [
+     "ORDEN",
+     "siempre el mismo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *abecedario* son todas las letras.",
+    "Son *27*: de *avión* a *zapato*.",
+    "Siempre en el *mismo orden*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

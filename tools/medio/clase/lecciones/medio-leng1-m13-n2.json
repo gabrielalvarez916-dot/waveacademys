@@ -1,0 +1,121 @@
+{
+ "slug": "medio-leng1-m13-n2",
+ "step_id": "5826d7a9-3cc5-4068-b1ed-fe5807cea656",
+ "materia": "Lengua 1",
+ "titulo": "Letras mayúsculas y minúsculas",
+ "sub": "Lengua 1 · Misión 13 · Nivel 2",
+ "estilo": "primeros",
+ "minusculas": true,
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÁLBUM",
+   "titular": "¡Cada letra tiene dos formas!",
+   "bajada": "Una grande y una chica",
+   "emoji": "🔠",
+   "titulo": "MAYÚSCULAS",
+   "sub": "y minúsculas",
+   "voz": [
+    "¡Noticia: cada letra tiene *dos formas*!",
+    "Una *grande* y una *chica*.",
+    "Hoy: *mayúsculas y minúsculas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "M",
+    "texto": "mayúscula: la grande",
+    "emoji": "🐘"
+   },
+   "b": {
+    "cab": "m",
+    "texto": "minúscula: la chica",
+    "emoji": "🐭"
+   },
+   "signo": "=",
+   "voz": [
+    "Esta es la *mayúscula*: la grande.",
+    "Esta es la *minúscula*: la chica.",
+    "¡Son la *misma letra*!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "GRANDE Y CHICA",
+   "items": [
+    {
+     "frente": "A",
+     "dorso": "a",
+     "emoji": "✈️"
+    },
+    {
+     "frente": "S",
+     "dorso": "s",
+     "emoji": "☀️"
+    },
+    {
+     "frente": "T",
+     "dorso": "t",
+     "emoji": "🍅"
+    }
+   ],
+   "voz": [
+    "La de *avión*, grande y chica.",
+    "La de *sol*, grande y chica.",
+    "La de *tomate*, grande y chica."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo empieza el nombre Sofi?",
+   "opciones": [
+    "Con mayúscula",
+    "Con minúscula"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Cómo empieza el nombre Sofi?",
+    "Pensá: es un nombre.",
+    "¡Con *mayúscula*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "NOMBRES CON GRANDE",
+   "texto": "Tu nombre empieza con mayúscula",
+   "emoji": "✍️",
+   "voz": [
+    "Truco: tu nombre empieza siempre con *mayúscula*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYÚSCULA",
+     "la grande"
+    ],
+    [
+     "MINÚSCULA",
+     "la chica"
+    ],
+    [
+     "NOMBRES",
+     "con mayúscula"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *mayúscula* es la grande.",
+    "La *minúscula* es la chica.",
+    "Los *nombres* empiezan con mayúscula.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

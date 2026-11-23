@@ -1,0 +1,130 @@
+{
+ "slug": "medio-leng1-m13-n3",
+ "step_id": "a39b506d-f193-45cb-9ec3-88be842d8030",
+ "materia": "Lengua 1",
+ "titulo": "Ordenar nombres por la primera letra",
+ "sub": "Lengua 1 · Misión 13 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Seño Ana",
+    "emoji": "👩‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Sofi, ¿me ordenás la lista del grado? 📋"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! Por la primera letra"
+    }
+   ],
+   "titulo": "ORDENAR",
+   "sub": "nombres",
+   "voz": [
+    "La seño le pide a Sofi: ¿me ordenás la lista?",
+    "Sofi responde: ¡sí, por la primera letra!",
+    "Hoy: *ordenar nombres*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "ORDENAMOS LA LISTA",
+   "pasos": [
+    {
+     "txt": "TOMI · ANA · SOFI · BETO",
+     "nota": "sin orden"
+    },
+    {
+     "txt": "ANA · BETO · …",
+     "nota": "primero la de avión y la de barco"
+    },
+    {
+     "txt": "ANA · BETO · SOFI · TOMI",
+     "nota": "¡en orden!"
+    }
+   ],
+   "voz": [
+    "La lista está desordenada.",
+    "Primero *Ana*, la de avión. Después *Beto*, la de barco.",
+    "Después *Sofi* y *Tomi*. ¡En orden!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Desorden",
+    "emoji": "🌀"
+   },
+   "preguntas": [
+    {
+     "p": "CARLA o PEPE, ¿quién va primero?",
+     "r": "CARLA"
+    },
+    {
+     "p": "LUZ o DANI, ¿quién va primero?",
+     "r": "DANI"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Desorden*!",
+    "Ordenamos sus listas.",
+    "Carla o Pepe: ¡primero *Carla*!",
+    "Luz o Dani: ¡primero *Dani*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL ABECEDARIO",
+   "texto": "Si dudás, buscá las letras",
+   "emoji": "🔤",
+   "voz": [
+    "Truco: si dudás, mirá el *abecedario*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "MATEO antes que DANI",
+     "bien": "DANI antes que MATEO"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "La de *dedo* va antes: primero *Dani*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MIRAR",
+     "la primera letra"
+    ],
+    [
+     "BUSCAR",
+     "en el abecedario"
+    ],
+    [
+     "ORDENAR",
+     "la que va antes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Miramos* la primera letra.",
+    "La *buscamos* en el abecedario.",
+    "*Ordenamos*: la que va antes, primero.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

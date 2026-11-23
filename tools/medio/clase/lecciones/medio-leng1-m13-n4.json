@@ -1,0 +1,114 @@
+{
+ "slug": "medio-leng1-m13-n4",
+ "step_id": "32d175fc-ee16-448e-86b5-746890cf1567",
+ "materia": "Lengua 1",
+ "titulo": "Buscar palabras en un listado",
+ "sub": "Lengua 1 · Misión 13 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Dónde busco ZORRO en una lista en orden?",
+   "segundos": 8,
+   "respuesta": "¡Abajo de todo!",
+   "emoji": "🦊",
+   "titulo": "BUSCAR",
+   "sub": "en un listado",
+   "voz": [
+    "Desafío: ¿dónde busco *zorro* en una lista en orden?",
+    "¡*Abajo de todo*! Es la última letra.",
+    "Hoy: *buscar palabras en un listado*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "📋",
+     "txt": "LISTA DE FRUTAS"
+    },
+    {
+     "emoji": "🔎",
+     "txt": "BUSCO PERA"
+    },
+    {
+     "emoji": "⬇️",
+     "txt": "CASI AL FINAL"
+    },
+    {
+     "emoji": "🍐",
+     "txt": "¡PERA!"
+    }
+   ],
+   "voz": [
+    "Tenemos una *lista de frutas* en orden.",
+    "Buscamos *pera*.",
+    "Empieza como *pato*: casi al final.",
+    "¡La encontramos!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "ANA está arriba de todo en una lista en orden",
+   "emoji": "📋",
+   "verdadero": true,
+   "explicacion": "Empieza como AVIÓN, la primera",
+   "voz": [
+    "¿Verdadero o falso? Ana está arriba de todo.",
+    "Pensá en la primera letra.",
+    "¡*Verdadero*! Empieza como avión, la primera."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "GATO, LORO, OSO. ¿Qué va después de LORO?",
+   "opciones": [
+    "OSO",
+    "GATO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Lista: gato, loro, oso.",
+    "¿Qué va después de loro?",
+    "¡*Oso*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PRINCIPIO, MEDIO O FINAL",
+   "texto": "Pensá dónde está la letra",
+   "emoji": "🧭",
+   "voz": [
+    "Truco: ¿está al principio, al medio o al final?"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LISTADO",
+     "en orden"
+    ],
+    [
+     "BUSCAR",
+     "por la primera letra"
+    ],
+    [
+     "RÁPIDO",
+     "sin leer todo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Muchos *listados* están en orden.",
+    "*Buscamos* por la primera letra.",
+    "¡Así encontramos *rápido*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

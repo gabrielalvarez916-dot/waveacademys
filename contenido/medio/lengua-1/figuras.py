@@ -30,9 +30,10 @@ def nombres(lista, resaltar_inicial=False, cols=3):
     return png(fig)
 
 
-def letras(palabra, ocultar=(), numeros=False, resaltar=()):
-    """Una palabra con cada letra en su casillero. ocultar: posiciones en blanco. numeros: número de orden debajo. resaltar: posiciones en amarillo."""
-    p = palabra.upper(); n = len(p)
+def letras(palabra, ocultar=(), numeros=False, resaltar=(), tal_cual=False):
+    """Una palabra con cada letra en su casillero. ocultar: posiciones en blanco. numeros: número de orden debajo. resaltar: posiciones en amarillo.
+    tal_cual=True: respeta mayúsculas y minúsculas (para enseñar la minúscula)."""
+    p = palabra if tal_cual else palabra.upper(); n = len(p)
     fig, ax = lienzo(1.15 * n + .3, 1.9 if numeros else 1.4, 1.15 * n + .3, 1.9 if numeros else 1.4, 0, -.5 if numeros else 0)
     for i, ch in enumerate(p):
         x = .15 + 1.15 * i
@@ -83,10 +84,10 @@ def tiras(textos, numeros=True, ocultar_num=False, cols=2):
     return png(fig)
 
 
-def abecedario(minusculas=False, resaltar=(), cols=9):
+def abecedario(minusculas=False, resaltar=(), cols=9, letras_="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"):
     """El abecedario de imprenta en orden (27 letras, con la Ñ). minusculas=True: abajo de cada mayúscula, su minúscula.
     resaltar: letras que se pintan en rojo (ej. "YZ")."""
-    L = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"; filas = (len(L) + cols - 1) // cols
+    L = letras_; cols = min(cols, len(L)); filas = (len(L) + cols - 1) // cols
     hc = 1.6 if minusculas else 1.0
     W = 1.1 * cols + .3; H = (hc + .15) * filas + .3
     fig, ax = lienzo(W * .8, H * .8, W, H, 0, 0)
