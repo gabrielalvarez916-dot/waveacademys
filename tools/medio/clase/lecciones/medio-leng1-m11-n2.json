@@ -1,0 +1,115 @@
+{
+ "slug": "medio-leng1-m11-n2",
+ "step_id": "a5661981-f786-436c-86bb-851c0afe0651",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la Ñ y la LL",
+ "sub": "Lengua 1 · Misión 11 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LA GRANJA",
+   "titular": "¡Empezó a llover!",
+   "bajada": "Y apareció un ñandú",
+   "emoji": "🌧️",
+   "titulo": "DOS LETRAS",
+   "sub": "nuevas",
+   "voz": [
+    "¡Noticia en la granja: empezó a *llover*!",
+    "Y apareció un *ñandú*.",
+    "Hoy: *dos letras nuevas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "La del sombrerito",
+   "texto": "Ñ: ÑA, ÑE, ÑI, ÑO, ÑU",
+   "emoji": "🎩",
+   "voz": [
+    "Esta letra tiene un *sombrerito*.",
+    "Suena ñññ, como en *ñandú* y *niño*."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SÍLABA SIGUE?",
+   "items": [
+    "ÑA",
+    "ÑE",
+    "ÑI",
+    "ÑO",
+    "ÑU"
+   ],
+   "falta": 3,
+   "regla": "Con las vocales en orden",
+   "voz": [
+    "Ña, ñe, ñi…",
+    "¿Qué sigue?",
+    "¡*Ño*, como en niño!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "DOS JUNTAS",
+   "items": [
+    {
+     "frente": "🔑",
+     "dorso": "LLAVE",
+     "emoji": "🔑"
+    },
+    {
+     "frente": "🌧️",
+     "dorso": "LLUVIA",
+     "emoji": "🌧️"
+    },
+    {
+     "frente": "🐥",
+     "dorso": "POLLITO",
+     "emoji": "🐥"
+    }
+   ],
+   "voz": [
+    "*Llave*: dos letras juntas, un solo sonido.",
+    "*Lluvia*: igual.",
+    "*Pollito*: ¡también!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL SOMBRERITO",
+   "texto": "Sin sombrerito es N. Con sombrerito es Ñ",
+   "emoji": "🎩",
+   "voz": [
+    "Truco: mirá si tiene *sombrerito*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ÑANDÚ",
+     "ña, ñe, ñi, ño, ñu"
+    ],
+    [
+     "LLAVE",
+     "dos letras juntas"
+    ],
+    [
+     "PALABRAS",
+     "NIÑO, LLUVIA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La del *sombrerito*: como en ñandú.",
+    "Las *dos juntas*: como en llave.",
+    "Como en *niño* y *lluvia*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

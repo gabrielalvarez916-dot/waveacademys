@@ -1,0 +1,123 @@
+{
+ "slug": "medio-leng1-m11-n3",
+ "step_id": "f34508e4-f898-491a-b2c9-dbde29472752",
+ "materia": "Lengua 1",
+ "titulo": "Leer palabras con V, Ñ y LL",
+ "sub": "Lengua 1 · Misión 11 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Leé: EL POLLITO VE LA LLUVIA",
+   "segundos": 8,
+   "respuesta": "¡El pollito ve la lluvia!",
+   "emoji": "🐥",
+   "titulo": "LEER",
+   "sub": "palabras nuevas",
+   "voz": [
+    "Desafío: leé la oración de Sofi.",
+    "¡El pollito ve la lluvia!",
+    "Hoy: *leer palabras nuevas*."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "JUNTAMOS SÍLABAS",
+   "items": [
+    {
+     "p": "VA · SO",
+     "r": "VASO"
+    },
+    {
+     "p": "PI · ÑA",
+     "r": "PIÑA"
+    },
+    {
+     "p": "PO · LLO",
+     "r": "POLLO"
+    }
+   ],
+   "voz": [
+    "Va… so: *vaso*.",
+    "Pi… ña: *piña*.",
+    "Po… llo: *pollo*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "LECTURA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "U · ÑA",
+     "r": "UÑA"
+    },
+    {
+     "p": "SI · LLA",
+     "r": "SILLA"
+    },
+    {
+     "p": "U · VA",
+     "r": "UVA"
+    }
+   ],
+   "voz": [
+    "¡Lectura rápida!",
+    "U… ña: *uña*.",
+    "Si… lla: *silla*.",
+    "U… va: *uva*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE A UNA",
+   "texto": "Leé sílaba por sílaba y después juntá",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: leé *de a una* sílaba y después juntá."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué dice? PO · LLI · TO",
+   "opciones": [
+    "POLLITO",
+    "PALITO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: po… lli… to.",
+    "¿Qué dice?",
+    "¡*Pollito*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SÍLABAS",
+     "de a una"
+    ],
+    [
+     "JUNTAR",
+     "todo junto"
+    ],
+    [
+     "ORACIÓN",
+     "leer despacio"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos las *sílabas* de a una.",
+    "Después las *juntamos*.",
+    "Y leemos la *oración* despacio.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

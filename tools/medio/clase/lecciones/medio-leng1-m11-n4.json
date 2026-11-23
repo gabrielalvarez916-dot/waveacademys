@@ -1,0 +1,127 @@
+{
+ "slug": "medio-leng1-m11-n4",
+ "step_id": "222fd634-804e-41c6-8d61-9f004f5224b0",
+ "materia": "Lengua 1",
+ "titulo": "Escribir palabras con V, Ñ y LL",
+ "sub": "Lengua 1 · Misión 11 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuela",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Sofi, ¿me escribís lo que viste en la granja? 🐄"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí, abuela!"
+    }
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "palabras nuevas",
+   "voz": [
+    "La abuela le pide: ¿me escribís lo que viste?",
+    "Sofi responde: ¡sí, abuela!",
+    "Hoy: *escribir palabras nuevas*."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "ESTRE",
+   "despues": "A",
+   "opciones": [
+    "LL",
+    "Ñ"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: estre… a.",
+    "¿Las dos juntas o la del sombrerito?",
+    "¡Las *dos juntas*: estrella!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Borrón",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "MO_O (para el pelo)",
+     "r": "Ñ"
+    },
+    {
+     "p": "_ASO",
+     "r": "V"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Borrón*! Borró letras.",
+    "Las volvemos a escribir.",
+    "Moño: la del *sombrerito*.",
+    "Vaso: la de *vaca*. ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "NINO",
+     "bien": "NIÑO"
+    },
+    {
+     "mal": "ESTRELA",
+     "bien": "ESTRELLA"
+    }
+   ],
+   "voz": [
+    "Cuidado con estos errores.",
+    "Niño lleva el *sombrerito*.",
+    "Estrella lleva *dos juntas*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DECILO DESPACIO",
+   "texto": "Escuchá cada sílaba antes de escribir",
+   "emoji": "👂",
+   "voz": [
+    "Truco: decí la palabra *despacio* antes de escribir."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VASO",
+     "la de vaca"
+    ],
+    [
+     "MOÑO",
+     "la del sombrerito"
+    ],
+    [
+     "ESTRELLA",
+     "dos juntas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Vaso*, con la de vaca.",
+    "*Moño*, con la del sombrerito.",
+    "*Estrella*, con las dos juntas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

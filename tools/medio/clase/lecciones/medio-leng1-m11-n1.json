@@ -1,0 +1,117 @@
+{
+ "slug": "medio-leng1-m11-n1",
+ "step_id": "5db780ac-cfa8-43d1-84c2-a76585171737",
+ "materia": "Lengua 1",
+ "titulo": "Conocer la V",
+ "sub": "Lengua 1 · Misión 11 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🐄",
+   "lineas": [
+    "Sofi visita la granja de la abuela.",
+    "¡Hay una vaca!",
+    "Muuu…"
+   ],
+   "titulo": "LETRA NUEVA",
+   "sub": "la de VACA",
+   "voz": [
+    "Sofi visita la *granja* de la abuela.",
+    "¡Hay una *vaca*!",
+    "Muuu…",
+    "Hoy: *una letra nueva*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "VACA",
+   "silabas": [
+    "VA",
+    "CA"
+   ],
+   "tonica": 0,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: va… ca.",
+    "Esta letra nueva suena como en *vaca*.",
+    "Va, ve, vi, vo, vu."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "VACA",
+    "texto": "va",
+    "emoji": "🐄"
+   },
+   "b": {
+    "cab": "BOTE",
+    "texto": "bo",
+    "emoji": "⛵"
+   },
+   "signo": "=",
+   "voz": [
+    "*Vaca* y *bote* empiezan con el mismo sonido.",
+    "¡Pero se escriben con letras distintas!",
+    "Hay que mirar bien cómo se escribe."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál empieza como VACA?",
+   "opciones": [
+    "VASO",
+    "PATO",
+    "MESA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuál empieza como vaca?",
+    "Mirá la primera letra.",
+    "¡*Vaso*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LA PALABRA",
+   "texto": "Suenan igual: fijate cómo se escribe",
+   "emoji": "👀",
+   "voz": [
+    "Truco: suenan igual, así que *mirá* cómo se escribe."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VACA",
+     "va, ve, vi, vo, vu"
+    ],
+    [
+     "SUENA",
+     "igual que BOTE"
+    ],
+    [
+     "PALABRAS",
+     "VASO, UVA"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La letra de *vaca*: va, ve, vi, vo, vu.",
+    "Suena igual que la de *bote*.",
+    "Como en *vaso* y *uva*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
