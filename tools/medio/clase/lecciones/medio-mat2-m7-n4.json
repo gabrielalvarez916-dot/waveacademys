@@ -1,0 +1,130 @@
+{
+ "slug": "medio-mat2-m7-n4",
+ "step_id": "3c1f2efc-c397-4b2f-999e-a8902ec8ad0b",
+ "materia": "Matemática 2",
+ "titulo": "Sumas de memoria",
+ "sub": "Matemática 2 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Carrera de sumas!",
+   "bajada": "Gana quien suma sin papel",
+   "emoji": "🏁",
+   "titulo": "SUMAS",
+   "sub": "de memoria",
+   "voz": [
+    "¡Último momento: carrera de sumas en la fábrica!",
+    "Gana quien suma *sin papel*.",
+    "Hoy: *sumas de memoria*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "2",
+    "5",
+    "4",
+    "+",
+    "1",
+    "0"
+   ],
+   "resultado": "264",
+   "texto": "254 + 10 = 264",
+   "titulo": "MÁS 10",
+   "voz": [
+    "Tomi prueba: 254 más 10.",
+    "Aprieta las teclas…",
+    "¡*264*! Solo cambió el del medio."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "LOS DOBLES",
+   "items": [
+    "10 + 10 = 20",
+    "20 + 20 = 40",
+    "30 + 30 = 60"
+   ],
+   "falta": "40 + 40 = 80",
+   "regla": "Un número más él mismo",
+   "voz": [
+    "Mirá estos *dobles*: 10, 20 y 30.",
+    "¿Qué sigue?",
+    "¡40 más 40 es *80*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 365 + 100?",
+   "opciones": [
+    "465",
+    "375",
+    "366"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 365 más 100.",
+    "¿Qué cifra cambia?",
+    "¡*465*! Cambian las centenas."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Robot Suma",
+    "emoji": "🤖"
+   },
+   "preguntas": [
+    {
+     "p": "60 + 40",
+     "r": "100"
+    },
+    {
+     "p": "200 + 200",
+     "r": "400"
+    },
+    {
+     "p": "123 + 10",
+     "r": "133"
+    }
+   ],
+   "voz": [
+    "¡El *Robot Suma* te desafía!",
+    "Respondé rápido.",
+    "60 más 40: *100*.",
+    "200 más 200: *400*.",
+    "¡123 más 10: *133*! ¡Ganaste!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "+ 10",
+     "cambian decenas"
+    ],
+    [
+     "+ 100",
+     "cambian centenas"
+    ],
+    [
+     "DOBLES",
+     "un número + él mismo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Más 10 cambia las *decenas*.",
+    "Más 100 cambia las *centenas*.",
+    "Los *dobles* son fáciles de recordar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

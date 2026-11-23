@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat2-m7-n2",
+ "step_id": "bafb5757-89d3-40d7-ba51-0c2d180c459b",
+ "materia": "Matemática 2",
+ "titulo": "Complementos a 100",
+ "sub": "Matemática 2 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuánto le falta a 70 para llegar a 100?",
+   "segundos": 6,
+   "respuesta": "¡30!",
+   "emoji": "📦",
+   "titulo": "COMPLEMENTOS",
+   "sub": "a 100",
+   "voz": [
+    "Desafío: ¿cuánto le falta a 70 para 100?",
+    "¡*30*! 70 más 30 es 100.",
+    "Hoy: *complementos a 100*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 0,
+   "max": 100,
+   "paso": 10,
+   "marcas": [
+    {
+     "v": 70,
+     "txt": "70"
+    },
+    {
+     "v": 100,
+     "txt": "100"
+    }
+   ],
+   "voz": [
+    "Rosa tiene 70 alfajores en la caja.",
+    "Están en el *70*.",
+    "Para llenar la caja faltan 3 paquetes: *30*."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "PAREJAS DE 100",
+   "pares": [
+    [
+     "60",
+     "40"
+    ],
+    [
+     "80",
+     "20"
+    ],
+    [
+     "90",
+     "10"
+    ]
+   ],
+   "voz": [
+    "Uní las parejas que suman 100.",
+    "60 con *40*.",
+    "80 con *20*.",
+    "90 con *10*."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Señor Cien",
+    "emoji": "👾"
+   },
+   "preguntas": [
+    {
+     "p": "50 + ? = 100",
+     "r": "50"
+    },
+    {
+     "p": "30 + ? = 100",
+     "r": "70"
+    },
+    {
+     "p": "45 + ? = 100",
+     "r": "55"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Señor Cien*!",
+    "Para ganarle, completamos el 100.",
+    "50 más *50*.",
+    "30 más *70*.",
+    "¡Y 45 más *55*! ¡Le ganamos!"
+   ],
+   "sticker": {
+    "txt": "💥",
+    "paso": 4
+   }
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "A 70 le faltan 3",
+     "bien": "A 70 le faltan 30"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "A 70 le faltan *30*, no 3."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAREJAS DE 10",
+     "7 + 3"
+    ],
+    [
+     "PAREJAS DE 100",
+     "70 + 30"
+    ],
+    [
+     "COMPLEMENTO",
+     "lo que falta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "7 más 3 es 10.",
+    "Entonces 70 más 30 es *100*.",
+    "El *complemento* es lo que falta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "slug": "medio-mat2-m7-n1",
+ "step_id": "4b3c7bcf-ea0e-4c96-8d5c-4cc4d731891b",
+ "materia": "Matemática 2",
+ "titulo": "Sumar decenas y centenas",
+ "sub": "Matemática 2 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa tiene 3 cajas.",
+    "Le traen 2 cajas más.",
+    "¿Cuántos alfajores hay?"
+   ],
+   "titulo": "SUMAR",
+   "sub": "decenas y centenas",
+   "voz": [
+    "Rosa tiene *3 cajas* de alfajores.",
+    "Le traen *2 cajas* más.",
+    "¿Cuántos alfajores hay ahora?",
+    "Hoy: *sumar decenas y centenas*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "LA CUENTA CHICA",
+   "pasos": [
+    {
+     "txt": "3 + 2 = 5",
+     "nota": "la cuenta chica"
+    },
+    {
+     "txt": "300 + 200",
+     "nota": "cajas de 100"
+    },
+    {
+     "txt": "300 + 200 = 500"
+    }
+   ],
+   "voz": [
+    "Primero pensamos la cuenta chica: 3 más 2 es 5.",
+    "Pero son cajas de 100.",
+    "¡300 más 200 es *500*!"
+   ],
+   "sticker": {
+    "txt": "🤯",
+    "paso": 2
+   }
+  },
+  {
+   "t": "historieta",
+   "titulo": "EL TRUCO DE ROSA",
+   "vinetas": [
+    {
+     "emojis": [
+      "👵"
+     ],
+     "txt": "4 + 3 = 7",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "📦"
+     ],
+     "txt": "40 + 30 = 70",
+     "quien": "Rosa"
+    },
+    {
+     "emojis": [
+      "🚚"
+     ],
+     "txt": "400 + 300 = 700",
+     "quien": "Rosa"
+    }
+   ],
+   "voz": [
+    "Rosa sabe que 4 más 3 es *7*.",
+    "Entonces 40 más 30 es *70*.",
+    "¡Y 400 más 300 es *700*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "200 + 300 = 50",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Son 5 cajas: 500",
+   "voz": [
+    "¿Verdadero o falso? 200 más 300 es 50.",
+    "Pensá en las cajas…",
+    "¡*Falso*! Son cinco cajas: *500*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 50 + 40?",
+   "opciones": [
+    "90",
+    "9",
+    "900"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 50 más 40.",
+    "Pensá: 5 más 4 es 9.",
+    "¡*90*! Nueve paquetes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAJAS",
+     "300 + 200 = 500"
+    ],
+    [
+     "PAQUETES",
+     "40 + 30 = 70"
+    ],
+    [
+     "TRUCO",
+     "la cuenta chica"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cajas: 300 más 200 es *500*.",
+    "Paquetes: 40 más 30 es *70*.",
+    "El truco: pensá la *cuenta chica*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

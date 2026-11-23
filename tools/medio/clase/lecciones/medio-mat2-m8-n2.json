@@ -1,0 +1,144 @@
+{
+ "slug": "medio-mat2-m8-n2",
+ "step_id": "71ea8741-f828-4205-9d20-51e67ff8d933",
+ "materia": "Matemática 2",
+ "titulo": "Restar contando hacia adelante",
+ "sub": "Matemática 2 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿cuántos vendiste?"
+    },
+    {
+     "yo": true,
+     "txt": "Tenía 100 y me quedan 70"
+    },
+    {
+     "yo": false,
+     "txt": "¡Contemos!"
+    }
+   ],
+   "titulo": "RESTAR",
+   "sub": "contando para adelante",
+   "voz": [
+    "Tomi le pregunta a Rosa cuántos vendió.",
+    "Tenía 100 y le quedan 70.",
+    "¡Contemos para saberlo!",
+    "Hoy: *restar contando hacia adelante*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 70 A 100",
+   "min": 60,
+   "max": 100,
+   "cada": 10,
+   "inicio": 70,
+   "saltos": [
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el número chico: 70.",
+    "Un salto: *80*.",
+    "Dos saltos: *90*.",
+    "¡Tres saltos: *100*! Vendió *30*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lineas": [
+    {
+     "txt": "Contá los saltos",
+     "animo": "ojo"
+    },
+    {
+     "txt": "¡No los números!",
+     "animo": "sorpresa"
+    }
+   ],
+   "voz": [
+    "Rosa avisa: contá los *saltos*.",
+    "¡No cuentes los números!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 300,
+   "hasta": 500,
+   "paso": 100,
+   "titulo": "500 − 300",
+   "voz": [
+    "Ahora 500 menos 300.",
+    "300, 400, 500.",
+    "¡Dos saltos de 100: *200*!"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "100 − 80 =",
+   "despues": "",
+   "opciones": [
+    "20",
+    "2",
+    "180"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: 100 menos 80.",
+    "Desde 80: 90, 100.",
+    "¡*20*! Dos saltos de 10."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTAR",
+     "del chico al grande"
+    ],
+    [
+     "SALTOS DE 10",
+     "100 − 70 = 30"
+    ],
+    [
+     "SALTOS DE 100",
+     "500 − 300 = 200"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos *del chico al grande*.",
+    "De 70 a 100 hay *30*.",
+    "De 300 a 500 hay *200*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

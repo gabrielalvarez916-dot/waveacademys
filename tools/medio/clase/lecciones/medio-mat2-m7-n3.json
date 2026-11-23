@@ -1,0 +1,155 @@
+{
+ "slug": "medio-mat2-m7-n3",
+ "step_id": "4ee85131-a3a4-470f-af42-54858d5491da",
+ "materia": "Matemática 2",
+ "titulo": "Sumar descomponiendo",
+ "sub": "Matemática 2 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿cuánto es 245 + 32?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Desarmalo!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo?"
+    }
+   ],
+   "titulo": "SUMAR",
+   "sub": "descomponiendo",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "¿Cuánto es 245 más 32?",
+    "Rosa le contesta: ¡desarmalo!",
+    "Hoy: *sumar descomponiendo*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "245",
+   "titulo": "DESARMAMOS EL 245",
+   "partes": [
+    "200",
+    "40",
+    "5"
+   ],
+   "resultado": "= 245 ✓",
+   "voz": [
+    "Primero desarmamos el *245*.",
+    "Cajas, paquetes y sueltos.",
+    "200, 40 y 5.",
+    "El 32 es 30 y 2.",
+    "¡Ya tenemos todas las partes!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "PARTE POR PARTE",
+   "lineas": [
+    {
+     "txt": "Cajas: 200",
+     "color": "sol"
+    },
+    {
+     "txt": "40 + 30 = 70",
+     "color": "coral"
+    },
+    {
+     "txt": "5 + 2 = 7",
+     "color": "verde"
+    },
+    {
+     "txt": "200 + 70 + 7 = 277",
+     "color": "sol",
+     "marca": "circulo"
+    }
+   ],
+   "voz": [
+    "Las cajas: *200*.",
+    "Paquetes con paquetes: 40 más 30, *70*.",
+    "Sueltos con sueltos: 5 más 2, *7*.",
+    "¡Todo junto: *277*!"
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CUÁL ESTÁ BIEN?",
+   "a": {
+    "txt": "277",
+    "emoji": "✅",
+    "datos": [
+     "paquetes con paquetes"
+    ]
+   },
+   "b": {
+    "txt": "565",
+    "emoji": "❌",
+    "datos": [
+     "mezcla los lugares"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡Cada parte con su igual!",
+   "voz": [
+    "Dos chicos sumaron 245 más 32.",
+    "Uno juntó paquetes con paquetes: 277.",
+    "El otro mezcló los lugares: 565.",
+    "¡Gana el *277*! Cada parte con su igual."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 123 + 45?",
+   "opciones": [
+    "168",
+    "573",
+    "158"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 123 más 45.",
+    "Desarmá: 100, 20 más 40, 3 más 5.",
+    "¡*168*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESARMAR",
+     "cajas, paquetes, sueltos"
+    ],
+    [
+     "SUMAR",
+     "cada uno con su igual"
+    ],
+    [
+     "JUNTAR",
+     "todo al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Desarmamos* en cajas, paquetes y sueltos.",
+    "Sumamos cada parte con *su igual*.",
+    "Al final, *juntamos* todo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

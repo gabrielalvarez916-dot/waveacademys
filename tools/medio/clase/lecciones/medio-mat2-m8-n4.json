@@ -1,0 +1,146 @@
+{
+ "slug": "medio-mat2-m8-n4",
+ "step_id": "12195659-61b9-4ee1-ad76-678c61b0297d",
+ "materia": "Matemática 2",
+ "titulo": "Restas de memoria",
+ "sub": "Matemática 2 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🧠",
+   "final": "⚡",
+   "titulo": "RESTAS",
+   "sub": "de memoria",
+   "voz": [
+    "¿Se puede restar *sin papel*?",
+    "¡Sí! Con trucos que ya sabés.",
+    "Hoy: *restas de memoria*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿QUÉ CAMBIA?",
+   "a": {
+    "txt": "364 − 10",
+    "emoji": "📦",
+    "datos": [
+     "= 354",
+     "cambian decenas"
+    ]
+   },
+   "b": {
+    "txt": "364 − 100",
+    "emoji": "🚚",
+    "datos": [
+     "= 264",
+     "cambian centenas"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Cambia una sola cifra!",
+   "voz": [
+    "Comparamos dos restas.",
+    "364 menos 10 es *354*.",
+    "364 menos 100 es *264*.",
+    "¡En las dos cambia *una sola cifra*!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "PAREJAS DE 100",
+   "items": [
+    "100 − 60 = 40",
+    "100 − 90 = 10",
+    "100 − 50 = 50",
+    "100 − 20 = 80"
+   ],
+   "falta": 1,
+   "voz": [
+    "Mirá estas restas desde 100.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba 100 menos 90: *10*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "800 − 100",
+     "r": "700"
+    },
+    {
+     "p": "100 − 30",
+     "r": "70"
+    },
+    {
+     "p": "256 − 10",
+     "r": "246"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de restas!",
+    "800 menos 100: *700*.",
+    "100 menos 30: *70*.",
+    "256 menos 10: *246*."
+   ],
+   "sticker": {
+    "txt": "⚡",
+    "paso": 3
+   }
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Resta",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "500 − 300",
+     "r": "200"
+    },
+    {
+     "p": "100 − 70",
+     "r": "30"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Resta*!",
+    "Dos restas y lo vencemos.",
+    "500 menos 300: *200*.",
+    "¡100 menos 70: *30*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "− 10",
+     "cambian decenas"
+    ],
+    [
+     "− 100",
+     "cambian centenas"
+    ],
+    [
+     "DESDE 100",
+     "usá las parejas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Menos 10 cambia las *decenas*.",
+    "Menos 100 cambia las *centenas*.",
+    "Desde 100, usá las *parejas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

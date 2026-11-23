@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat2-m8-n3",
+ "step_id": "68563df7-4429-4a7a-8f96-c9e5d334287e",
+ "materia": "Matemática 2",
+ "titulo": "Restar descomponiendo",
+ "sub": "Matemática 2 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Rosa tiene 365 y vende 42. ¿Cuántos quedan?",
+   "segundos": 8,
+   "respuesta": "¡323!",
+   "emoji": "🚚",
+   "titulo": "RESTAR",
+   "sub": "descomponiendo",
+   "voz": [
+    "Desafío: Rosa tiene 365 y vende 42.",
+    "¡Le quedan *323*!",
+    "Hoy: *restar descomponiendo*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 3,
+   "d": 6,
+   "u": 5,
+   "texto": "365 alfajores",
+   "voz": [
+    "Mirá lo que tiene Rosa.",
+    "Las cajas: 100, 200, 300.",
+    "Los paquetes: 310, 320, 330, 340, 350, 360.",
+    "Los sueltos: 361, 362, 363, 364, 365.",
+    "¡Tiene *365 alfajores*!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "365 − 42",
+   "lineas": [
+    {
+     "txt": "42 = 40 + 2",
+     "color": "azul"
+    },
+    {
+     "txt": "60 − 40 = 20",
+     "color": "coral"
+    },
+    {
+     "txt": "5 − 2 = 3",
+     "color": "verde"
+    },
+    {
+     "txt": "300 + 20 + 3 = 323",
+     "color": "sol",
+     "marca": "circulo"
+    }
+   ],
+   "voz": [
+    "Desarmamos el 42: 40 y 2.",
+    "Paquetes: 60 menos 40, *20*.",
+    "Sueltos: 5 menos 2, *3*.",
+    "¡Quedan 300, 20 y 3: *323*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Cuánto es 178 − 35?",
+   "pistas": [
+    "Cajas: 100",
+    "70 − 30 = 40",
+    "8 − 5 = 3"
+   ],
+   "respuesta": "143",
+   "voz": [
+    "Ahora vos: 178 menos 35.",
+    "Pista uno: la caja queda, *100*.",
+    "Pista dos: 70 menos 30, *40*.",
+    "Pista tres: 8 menos 5, *3*.",
+    "¡Quedan *143*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Restar 40 de los sueltos",
+     "bien": "Paquetes de paquetes"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Restá *paquetes de paquetes*, sueltos de sueltos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESARMAR",
+     "42 = 40 + 2"
+    ],
+    [
+     "RESTAR",
+     "cada parte de su igual"
+    ],
+    [
+     "JUNTAR",
+     "lo que queda"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Desarmamos* el número que restamos.",
+    "Restamos cada parte de *su igual*.",
+    "Al final, *juntamos* lo que queda.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

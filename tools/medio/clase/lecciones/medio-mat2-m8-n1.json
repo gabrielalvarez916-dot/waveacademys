@@ -1,0 +1,120 @@
+{
+ "slug": "medio-mat2-m8-n1",
+ "step_id": "7c11ff24-8c12-43a8-b49d-d8300b2eda58",
+ "materia": "Matemática 2",
+ "titulo": "Restar decenas y unidades de memoria",
+ "sub": "Matemática 2 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa tenía 5 cajas.",
+    "Vendió 2 cajas.",
+    "¿Cuántas le quedan?"
+   ],
+   "titulo": "RESTAR",
+   "sub": "de memoria",
+   "voz": [
+    "Rosa tenía *5 cajas* de alfajores.",
+    "Hoy vendió *2 cajas*.",
+    "¿Cuántos alfajores le quedan?",
+    "Hoy: *restar de memoria*."
+   ]
+  },
+  {
+   "t": "sacar",
+   "emoji": "📦",
+   "n": 5,
+   "menos": 2,
+   "texto": "5 − 2 = 3",
+   "voz": [
+    "Mirá las cinco cajas de Rosa.",
+    "Se van dos cajas en el camión.",
+    "¡Quedan *3 cajas*: 300 alfajores!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "LA CUENTA CHICA",
+   "pasos": [
+    {
+     "txt": "8 − 3 = 5"
+    },
+    {
+     "txt": "80 − 30 = 50",
+     "nota": "paquetes"
+    },
+    {
+     "txt": "800 − 300 = 500",
+     "nota": "cajas"
+    }
+   ],
+   "voz": [
+    "Si sabés que 8 menos 3 es 5…",
+    "…sabés que 80 menos 30 es *50*.",
+    "¡Y que 800 menos 300 es *500*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "47 − 5 = 2",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Solo cambian los sueltos: 42",
+   "voz": [
+    "¿Verdadero o falso? 47 menos 5 es 2.",
+    "Pensá: ¿qué cambia, los paquetes o los sueltos?",
+    "¡*Falso*! Solo cambian los sueltos: *42*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto es 90 − 60?",
+   "opciones": [
+    "30",
+    "3",
+    "300"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 90 menos 60.",
+    "Pensá: 9 menos 6 es 3.",
+    "¡*30*! Tres paquetes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAJAS",
+     "500 − 200 = 300"
+    ],
+    [
+     "PAQUETES",
+     "80 − 30 = 50"
+    ],
+    [
+     "SUELTOS",
+     "47 − 5 = 42"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cajas: 500 menos 200 es *300*.",
+    "Paquetes: 80 menos 30 es *50*.",
+    "Sueltos: 47 menos 5 es *42*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
