@@ -1,0 +1,144 @@
+{
+ "slug": "medio-leng2-m5-n2",
+ "step_id": "aa2e3b66-8e16-49b5-8ec7-677867cb1dd4",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con MB",
+ "sub": "Lengua 2 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Me compré un TANBOR! 🥁"
+    },
+    {
+     "yo": true,
+     "txt": "¡Ojo cómo lo escribiste!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Está mal?"
+    }
+   ],
+   "titulo": "PALABRAS",
+   "sub": "con MB",
+   "voz": [
+    "Tomi le escribe a Sofi: ¡me compré un tambor!",
+    "Sofi mira bien la palabra…",
+    "¡Hay que revisar cómo la escribió!",
+    "Hoy: *palabras con mb*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "TAMBOR",
+   "silabas": [
+    "TAM",
+    "BOR"
+   ],
+   "tonica": 1,
+   "tipo": "aguda",
+   "voz": [
+    "Escuchá: tam… bor.",
+    "En *tam* escuchamos mmm al final.",
+    "¡Y después viene *bor*! Por eso va mmm."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MP",
+     "emoji": "🔔"
+    },
+    {
+     "cab": "MB",
+     "emoji": "🥁"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "CAMPANA",
+     "caja": 0
+    },
+    {
+     "txt": "LÁMPARA",
+     "caja": 0
+    },
+    {
+     "txt": "TAMBOR",
+     "caja": 1
+    },
+    {
+     "txt": "BOMBERO",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos las palabras.",
+    "Campana y lámpara: después viene pa.",
+    "Tambor y bombero: después viene ba o bo."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "TANBOR está bien escrito",
+   "emoji": "🥁",
+   "verdadero": false,
+   "explicacion": "Se escribe TAMBOR",
+   "voz": [
+    "¿Verdadero o falso? Así escribió Tomi.",
+    "Pensá en la pista de la detective…",
+    "¡*Falso*! Antes de bor va mmm: *tambor*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "SO_BRERO: ¿qué letra va?",
+   "opciones": [
+    "M",
+    "N"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: sombrero.",
+    "¿Va mmm o nnn?",
+    "¡*Mmm*! Después viene bre."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MB",
+     "antes de B, M"
+    ],
+    [
+     "MP",
+     "antes de P, M"
+    ],
+    [
+     "EJEMPLOS",
+     "TAMBOR, CAMPO"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Antes de ba, va *mmm*.",
+    "Antes de pa, también *mmm*.",
+    "Como en *tambor* y *campo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

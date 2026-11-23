@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng2-m5-n4",
+ "step_id": "545031f8-f35a-4568-9cc7-278bc9fa1d9a",
+ "materia": "Lengua 2",
+ "titulo": "Corregir palabras con M y N",
+ "sub": "Lengua 2 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Errores en el cuaderno de Tomi!",
+   "bajada": "La detective los va a encontrar",
+   "emoji": "🚨",
+   "titulo": "CORREGIR",
+   "sub": "M y N",
+   "voz": [
+    "¡Último momento: hay errores en el cuaderno de Tomi!",
+    "La detective Sofi los va a encontrar.",
+    "Hoy: *corregir palabras con mmm y nnn*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "LA DETECTIVE CORRIGE",
+   "cambios": [
+    {
+     "antes": "CANPO",
+     "despues": "CAMPO",
+     "motivo": "antes de P va M"
+    },
+    {
+     "antes": "TANBOR",
+     "despues": "TAMBOR",
+     "motivo": "antes de B va M"
+    },
+    {
+     "antes": "SIENPRE",
+     "despues": "SIEMPRE",
+     "motivo": "antes de P va M"
+    }
+   ],
+   "voz": [
+    "¡Encontramos errores!",
+    "Campo: antes de po, va mmm.",
+    "Tambor: antes de bor, va mmm.",
+    "Siempre: antes de pre, va mmm."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CUÁL ESTÁ BIEN?",
+   "a": {
+    "txt": "CANTO",
+    "emoji": "✅",
+    "datos": [
+     "después viene T"
+    ]
+   },
+   "b": {
+    "txt": "SONBRERO",
+    "emoji": "❌",
+    "datos": [
+     "después viene B"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡CANTO está bien!",
+   "voz": [
+    "Comparamos dos palabras.",
+    "*Canto*: después viene to. ¡Está bien con nnn!",
+    "*Sombrero* con nnn: ¡está mal!",
+    "¡Gana *canto*!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Borrón",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "LANPARA",
+     "r": "LÁMPARA"
+    },
+    {
+     "p": "HONBRE",
+     "r": "HOMBRE"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Borrón*!",
+    "Corregimos sus palabras.",
+    "*Lámpara*, con mmm.",
+    "¡*Hombre*, con mmm! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LO QUE SIGUE",
+   "texto": "P o B: M. Otra letra: puede ser N",
+   "emoji": "👀",
+   "voz": [
+    "Truco: mirá el sonido que *sigue*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ERROR",
+     "N antes de P o B"
+    ],
+    [
+     "CORREGIR",
+     "cambiar por M"
+    ],
+    [
+     "N",
+     "antes de otras letras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Nnn antes de pa o ba es un *error*.",
+    "Lo *corregimos* con mmm.",
+    "Antes de otros sonidos, puede ir nnn.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

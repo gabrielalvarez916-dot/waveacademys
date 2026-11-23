@@ -1,0 +1,134 @@
+{
+ "slug": "medio-leng2-m4-n4",
+ "step_id": "cc6679d8-8bb9-4692-a726-4af145ea120e",
+ "materia": "Lengua 2",
+ "titulo": "Contar el cuento ordenado",
+ "sub": "Lengua 2 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Podés contar el cuento en orden, sin mirar?",
+   "segundos": 8,
+   "respuesta": "¡Casas, lobo, se salvan!",
+   "emoji": "🎤",
+   "titulo": "CONTAR",
+   "sub": "el cuento ordenado",
+   "voz": [
+    "Desafío: contá el cuento en orden, sin mirar.",
+    "¡Casas, lobo y se salvan!",
+    "Hoy: *contar el cuento ordenado*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "consigna": "Armá el principio del cuento",
+   "fichas": [
+    "Primero,",
+    "los",
+    "chanchitos",
+    "hacen",
+    "casas."
+   ],
+   "desorden": [
+    3,
+    0,
+    4,
+    1,
+    2
+   ],
+   "traduccion": "¡Empezó el cuento!",
+   "voz": [
+    "Armamos la primera oración del cuento.",
+    "Primero, los chanchitos hacen casas.",
+    "¡Así empieza el cuento!"
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "REVISAMOS",
+   "cambios": [
+    {
+     "antes": "Primero, se salvan.",
+     "despues": "Primero, hacen sus casas.",
+     "motivo": "el orden"
+    },
+    {
+     "antes": "Al final, hacen sus casas.",
+     "despues": "Al final, se salvan.",
+     "motivo": "el orden"
+    }
+   ],
+   "voz": [
+    "Tomi contó el cuento. ¡Revisemos!",
+    "Empezó por el final: lo arreglamos.",
+    "Y terminó por el principio: ¡también!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Lobo Feroz",
+    "emoji": "🐺"
+   },
+   "preguntas": [
+    {
+     "p": "¿Qué pasa primero?",
+     "r": "Hacen sus casas"
+    },
+    {
+     "p": "¿Qué pasa luego?",
+     "r": "El lobo sopla"
+    },
+    {
+     "p": "¿Qué pasa al final?",
+     "r": "Se salvan"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Lobo Feroz*!",
+    "Le ganamos contando en orden.",
+    "Primero: hacen sus casas.",
+    "Luego: el lobo sopla.",
+    "¡Al final: se salvan! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CONTÁ CON CALMA",
+   "texto": "Usá primero, luego y al final",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: contá con calma y en *orden*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTAR",
+     "en voz alta"
+    ],
+    [
+     "ORDENAR",
+     "primero, luego, al final"
+    ],
+    [
+     "REVISAR",
+     "que esté en orden"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Contamos* en voz alta.",
+    "Usamos palabras que *ordenan*.",
+    "Y *revisamos* que esté en orden.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

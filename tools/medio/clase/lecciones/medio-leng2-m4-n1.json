@@ -1,0 +1,145 @@
+{
+ "slug": "medio-leng2-m4-n1",
+ "step_id": "96783c94-f2aa-4cca-be21-10657e8fec3a",
+ "materia": "Lengua 2",
+ "titulo": "Ordenar las escenas",
+ "sub": "Lengua 2 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Se mezclaron las escenas!",
+   "bajada": "El cuaderno de Sofi se cayó",
+   "emoji": "📒",
+   "titulo": "ORDENAR",
+   "sub": "las escenas",
+   "voz": [
+    "¡Último momento: se mezclaron las escenas del cuento!",
+    "El cuaderno de Sofi se cayó al piso.",
+    "Hoy: *ordenar las escenas*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "LOS TRES CHANCHITOS",
+   "vinetas": [
+    {
+     "emojis": [
+      "🐷",
+      "🏠"
+     ],
+     "txt": "Hacen sus casas."
+    },
+    {
+     "emojis": [
+      "🐺",
+      "💨"
+     ],
+     "txt": "El lobo sopla."
+    },
+    {
+     "emojis": [
+      "🧱",
+      "🐷"
+     ],
+     "txt": "¡Se salvan!"
+    }
+   ],
+   "voz": [
+    "Tres chanchitos hicieron casas de paja, madera y ladrillos.",
+    "Vino el lobo y sopló dos casas.",
+    "¡La de ladrillos no se cayó y se salvaron!"
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LAS ESCENAS",
+   "etq1": "MEZCLADAS",
+   "etq2": "EN ORDEN",
+   "items": [
+    {
+     "txt": "Hacen casas",
+     "emoji": "🏠"
+    },
+    {
+     "txt": "Sopla la paja",
+     "emoji": "🌾"
+    },
+    {
+     "txt": "Sopla la madera",
+     "emoji": "🪵"
+    },
+    {
+     "txt": "¡Se salvan!",
+     "emoji": "🧱"
+    }
+   ],
+   "relato": [
+    3,
+    0,
+    2,
+    1
+   ],
+   "voz": [
+    "Las escenas quedaron mezcladas.",
+    "Se salvan, hacen casas, sopla la madera, sopla la paja.",
+    "En orden: casas, paja, madera, ¡se salvan!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El cuento empieza cuando se salvan",
+   "emoji": "🐷",
+   "verdadero": false,
+   "explicacion": "Eso es el final",
+   "voz": [
+    "¿Verdadero o falso? El cuento empieza cuando se salvan.",
+    "Pensá: ¿qué pasa antes?",
+    "¡*Falso*! Eso es el *final*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué casa sopla primero el lobo?",
+   "opciones": [
+    "La de paja",
+    "La de ladrillos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Qué casa sopla primero el lobo?",
+    "¡La de *paja*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCENA",
+     "una parte del cuento"
+    ],
+    [
+     "ORDEN",
+     "primero, después, al final"
+    ],
+    [
+     "MEZCLADO",
+     "no se entiende"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *escena* es una parte del cuento.",
+    "Las escenas van *en orden*.",
+    "Mezcladas, *no se entienden*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "medio-leng2-m5-n3",
+ "step_id": "89e5bab3-ac53-4f55-9c5e-7f45a29ff0b2",
+ "materia": "Lengua 2",
+ "titulo": "Dictado con MP y MB",
+ "sub": "Lengua 2 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Escribí en tu carpeta: CAMPANA",
+   "segundos": 8,
+   "respuesta": "CAMPANA, con MP",
+   "emoji": "✏️",
+   "titulo": "DICTADO",
+   "sub": "con MP y MB",
+   "voz": [
+    "Desafío: escribí en tu carpeta *campana*.",
+    "¡Campana! Con mmm antes de pa.",
+    "Hoy: *dictado*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO HAGO EL DICTADO",
+   "items": [
+    {
+     "txt": "Escucho toda la palabra",
+     "emoji": "👂"
+    },
+    {
+     "txt": "Pienso la pista",
+     "emoji": "🔎"
+    },
+    {
+     "txt": "Escribo y reviso",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "¿Cómo hacemos un dictado?",
+    "Escuchamos *toda* la palabra.",
+    "Pensamos la *pista* de la detective.",
+    "Escribimos y *revisamos*."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "DICTADO",
+   "items": [
+    {
+     "p": "El que apaga incendios",
+     "r": "BOMBERO"
+    },
+    {
+     "p": "Da luz en la mesa",
+     "r": "LÁMPARA"
+    },
+    {
+     "p": "Suena en la escuela",
+     "r": "CAMPANA"
+    }
+   ],
+   "voz": [
+    "Primera palabra: *bombero*.",
+    "Segunda palabra: *lámpara*.",
+    "Tercera palabra: *campana*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "HO_BRE",
+     "r": "M"
+    },
+    {
+     "p": "SIE_PRE",
+     "r": "M"
+    },
+    {
+     "p": "TA_BIÉN",
+     "r": "M"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de la detective!",
+    "Hombre: va *mmm*.",
+    "Siempre: va *mmm*.",
+    "También: va *mmm*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "REVISÁ AL FINAL",
+   "texto": "Mirá cada palabra con MP o MB",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: al final, *revisá* cada palabra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESCUCHAR",
+     "toda la palabra"
+    ],
+    [
+     "PENSAR",
+     "la pista"
+    ],
+    [
+     "REVISAR",
+     "al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Escuchamos* toda la palabra.",
+    "*Pensamos* la pista.",
+    "Y *revisamos* al final.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

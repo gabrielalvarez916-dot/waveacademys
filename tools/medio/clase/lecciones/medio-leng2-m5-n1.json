@@ -1,0 +1,115 @@
+{
+ "slug": "medio-leng2-m5-n1",
+ "step_id": "92bdd477-1dc4-4b47-9299-98aed0ff4ef4",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con MP",
+ "sub": "Lengua 2 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "🕵️‍♀️"
+   },
+   "lugar": "🔍",
+   "lineas": [
+    "Sofi es detective de palabras.",
+    "Busca una pista escondida.",
+    "¡Está en CAMPO!"
+   ],
+   "titulo": "PALABRAS",
+   "sub": "con MP",
+   "voz": [
+    "Sofi es *detective de palabras*.",
+    "Hoy busca una pista escondida.",
+    "¡La encontró en la palabra *campo*!",
+    "Hoy: *palabras con mp*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "CAMPO",
+   "silabas": [
+    "CAM",
+    "PO"
+   ],
+   "tonica": 0,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: cam… po.",
+    "En *cam* escuchamos mmm al final.",
+    "¡Y después viene *po*! Por eso va mmm."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "La pista",
+   "texto": "Antes de P, siempre M",
+   "emoji": "🔎",
+   "voz": [
+    "Esta es la *pista* de la detective.",
+    "Antes del sonido pa, siempre se escribe con mmm."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "CA",
+   "despues": "PANA",
+   "opciones": [
+    "M",
+    "N"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá la palabra: campana.",
+    "¿Va mmm o nnn?",
+    "¡Va *mmm*! Porque después viene pa."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "PALABRAS CON MP",
+   "items": [
+    "CAMPO",
+    "LÁMPARA",
+    "TROMPETA",
+    "SIEMPRE"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá estas palabras con mp.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *trompeta*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LA PISTA",
+     "antes de P, M"
+    ],
+    [
+     "EJEMPLOS",
+     "CAMPO, LÁMPARA"
+    ],
+    [
+     "SIEMPRE",
+     "no falla"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Antes de pa, se escribe con *mmm*.",
+    "Como en *campo* y *lámpara*.",
+    "¡*Siempre* es así!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

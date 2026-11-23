@@ -1,0 +1,164 @@
+{
+ "slug": "medio-leng2-m4-n3",
+ "step_id": "fad0effe-582c-4304-b4f7-8fc28ba91d6c",
+ "materia": "Lengua 2",
+ "titulo": "Resumir en tres oraciones",
+ "sub": "Lengua 2 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿De qué trata tu cuento?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te lo cuento cortito!"
+    },
+    {
+     "yo": false,
+     "txt": "¿En tres oraciones?"
+    }
+   ],
+   "titulo": "RESUMIR",
+   "sub": "en tres oraciones",
+   "voz": [
+    "Tomi le pregunta a Sofi por el cuento.",
+    "Sofi le dice: ¡te lo cuento cortito!",
+    "¿En solo tres oraciones?",
+    "Hoy: *resumir en tres oraciones*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO RESUMO",
+   "items": [
+    {
+     "txt": "Principio",
+     "emoji": "🏠"
+    },
+    {
+     "txt": "Medio",
+     "emoji": "🐺"
+    },
+    {
+     "txt": "Final",
+     "emoji": "🧱"
+    }
+   ],
+   "voz": [
+    "Un resumen tiene *tres partes*.",
+    "Una oración para el *principio*.",
+    "Una para el *medio*.",
+    "Y una para el *final*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "VA",
+     "emoji": "✅"
+    },
+    {
+     "cab": "NO VA",
+     "emoji": "❌"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "El lobo sopla",
+     "caja": 0
+    },
+    {
+     "txt": "Se salvan",
+     "caja": 0
+    },
+    {
+     "txt": "Bigotes del lobo",
+     "caja": 1
+    },
+    {
+     "txt": "Paja amarilla",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Qué va en el resumen?",
+    "Que el lobo sopla y que se salvan: ¡*va*!",
+    "Los bigotes y el color: *no va*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "EL RESUMEN",
+   "lineas": [
+    {
+     "txt": "1. Tres chanchitos hacen casas."
+    },
+    {
+     "txt": "2. El lobo sopla dos casas."
+    },
+    {
+     "txt": "3. Se salvan en la de ladrillos.",
+     "color": "sol",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "Tres chanchitos hacen casas.",
+    "El lobo sopla dos casas.",
+    "Se salvan en la de ladrillos. ¡Listo el resumen!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué es resumir?",
+   "opciones": [
+    "Contar corto lo importante",
+    "Contar todo",
+    "Dibujar"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Qué es *resumir*?",
+    "¡Contar *corto* lo importante!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RESUMIR",
+     "contar corto"
+    ],
+    [
+     "TRES ORACIONES",
+     "principio, medio y final"
+    ],
+    [
+     "IMPORTANTE",
+     "lo que no se saca"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Resumir* es contar corto.",
+    "Usamos *tres oraciones*.",
+    "Solo lo *importante*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
