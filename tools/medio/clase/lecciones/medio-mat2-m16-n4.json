@@ -1,0 +1,146 @@
+{
+ "slug": "medio-mat2-m16-n4",
+ "step_id": "e4742e0d-fe8d-4e90-9f44-524fc68ae7e8",
+ "materia": "Matemática 2",
+ "titulo": "Usar las tablas para calcular",
+ "sub": "Matemática 2 · Misión 16 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Llegan pedidos de todo tipo!",
+   "bajada": "De a 2, de a 5 y de a 10",
+   "emoji": "📦",
+   "titulo": "USAR",
+   "sub": "las tablas",
+   "voz": [
+    "¡Último momento: llegan pedidos de todo tipo!",
+    "Cajitas de 2, bandejas de 5, paquetes de 10.",
+    "Hoy: *usar las tablas para calcular*."
+   ]
+  },
+  {
+   "t": "grilla",
+   "titulo": "LA TABLA DE ROSA",
+   "filas": 5,
+   "cols": 10,
+   "resaltar": [
+    {
+     "fila": 2,
+     "col": 4,
+     "txt": "8"
+    },
+    {
+     "fila": 5,
+     "col": 4,
+     "txt": "20"
+    }
+   ],
+   "voz": [
+    "Esta es una tabla para buscar resultados.",
+    "Fila del 2, columna del 4: *8*.",
+    "Fila del 5, columna del 4: *20*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "4 × 2, 4 × 5, 4 × 10",
+   "items": [
+    {
+     "txt": "8",
+     "emoji": "🍫",
+     "valor": 8
+    },
+    {
+     "txt": "20",
+     "emoji": "📦",
+     "valor": 20
+    },
+    {
+     "txt": "40",
+     "emoji": "🚚",
+     "valor": 40
+    }
+   ],
+   "voz": [
+    "4 cajitas de 2: *8*.",
+    "4 bandejas de 5: *20*.",
+    "¡4 paquetes de 10: *40*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Hay 7 pares de medias. ¿Cuántas medias hay?",
+   "pistas": [
+    "Un par tiene 2",
+    "Uso la tabla del 2",
+    "7 × 2"
+   ],
+   "respuesta": "14 medias",
+   "voz": [
+    "Ahora vos: 7 pares de medias.",
+    "Pista uno: un par tiene *2*.",
+    "Pista dos: uso la *tabla del 2*.",
+    "Pista tres: 7 por 2.",
+    "¡*14* medias!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Dragón Tablas",
+    "emoji": "🐉"
+   },
+   "preguntas": [
+    {
+     "p": "8 × 2",
+     "r": "16"
+    },
+    {
+     "p": "6 × 5",
+     "r": "30"
+    },
+    {
+     "p": "9 × 10",
+     "r": "90"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Dragón Tablas*!",
+    "Lo vencemos con las tablas.",
+    "8 por 2: *16*.",
+    "6 por 5: *30*.",
+    "¡9 por 10: *90*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ELEGIR",
+     "¿de a cuánto vienen?"
+    ],
+    [
+     "BUSCAR",
+     "en la tabla"
+    ],
+    [
+     "RESPONDER",
+     "con palabras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Miramos *de a cuánto* vienen.",
+    "Buscamos en la *tabla*.",
+    "Respondemos *con palabras*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

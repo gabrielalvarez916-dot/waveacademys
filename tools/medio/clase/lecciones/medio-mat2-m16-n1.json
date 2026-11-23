@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat2-m16-n1",
+ "step_id": "1934c2b0-4f3d-428d-9bbc-ee7518ca420c",
+ "materia": "Matemática 2",
+ "titulo": "La tabla del 2",
+ "sub": "Matemática 2 · Misión 16 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa arma cajitas.",
+    "Cada una lleva 2 alfajores.",
+    "¿Cuántos usa?"
+   ],
+   "titulo": "LA TABLA",
+   "sub": "del 2",
+   "voz": [
+    "Rosa arma *cajitas de regalo*.",
+    "Cada cajita lleva *2 alfajores*.",
+    "¿Cuántos usa en muchas cajitas?",
+    "Hoy: *la tabla del 2*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍫",
+   "grupos": 3,
+   "cada": 2,
+   "texto": "3 × 2 = 6",
+   "titulo": "TRES CAJITAS",
+   "voz": [
+    "Tres cajitas de 2.",
+    "Contamos: 2, 4, 6.",
+    "¡3 por 2 es *6*!"
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 2 EN 2",
+   "min": 0,
+   "max": 12,
+   "cada": 2,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 2,
+     "txt": "1 × 2"
+    },
+    {
+     "a": 2,
+     "txt": "2 × 2"
+    },
+    {
+     "a": 2,
+     "txt": "3 × 2"
+    },
+    {
+     "a": 2,
+     "txt": "4 × 2"
+    },
+    {
+     "a": 2,
+     "txt": "5 × 2"
+    }
+   ],
+   "voz": [
+    "La tabla del 2 salta de 2 en 2.",
+    "1 por 2: *2*.",
+    "2 por 2: *4*.",
+    "3 por 2: *6*.",
+    "4 por 2: *8*.",
+    "¡5 por 2: *10*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ES EL DOBLE",
+   "texto": "× 2 es hacer el doble",
+   "emoji": "👯",
+   "voz": [
+    "Truco: por 2 es hacer el *doble*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 6 × 2?",
+   "opciones": [
+    "12",
+    "8",
+    "62"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 6 por 2.",
+    "Pensá en el doble de 6.",
+    "¡*12*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA DEL 2",
+     "de 2 en 2"
+    ],
+    [
+     "DOBLE",
+     "× 2"
+    ],
+    [
+     "PARES",
+     "2, 4, 6, 8"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla del 2 salta *de 2 en 2*.",
+    "Por 2 es el *doble*.",
+    "Todos los resultados son *pares*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

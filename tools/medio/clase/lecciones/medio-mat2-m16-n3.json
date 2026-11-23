@@ -1,0 +1,150 @@
+{
+ "slug": "medio-mat2-m16-n3",
+ "step_id": "932b914f-691b-456f-9a60-d7ba9f8085c7",
+ "materia": "Matemática 2",
+ "titulo": "La tabla del 10",
+ "sub": "Matemática 2 · Misión 16 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿cuánto es 7 × 10?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Fácil! Agregá un 0"
+    },
+    {
+     "yo": false,
+     "txt": "¿¡70!?"
+    }
+   ],
+   "titulo": "LA TABLA",
+   "sub": "del 10",
+   "voz": [
+    "Tomi le pregunta a Rosa: 7 por 10.",
+    "Rosa le dice: ¡agregá un cero!",
+    "¡70! ¡Qué fácil!",
+    "Hoy: *la tabla del 10*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "1 PAQUETE",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "10 PAQUETES",
+     "valor": "100",
+     "icono": "caja"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un paquete tiene *10* alfajores.",
+    "10 paquetes llenan una caja.",
+    "¡10 por 10 es *100*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "UN 0 AL FINAL",
+   "pasos": [
+    {
+     "txt": "4 × 10"
+    },
+    {
+     "txt": "4 → 40",
+     "nota": "agregamos un 0"
+    },
+    {
+     "txt": "4 × 10 = 40"
+    }
+   ],
+   "voz": [
+    "Mirá: 4 por 10.",
+    "Al 4 le agregamos un *cero*.",
+    "¡4 por 10 es *40*!"
+   ],
+   "sticker": {
+    "txt": "0️⃣",
+    "paso": 1
+   }
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ",
+   "pares": [
+    [
+     "3 × 10",
+     "30"
+    ],
+    [
+     "5 × 10",
+     "50"
+    ],
+    [
+     "9 × 10",
+     "90"
+    ]
+   ],
+   "voz": [
+    "Uní cada cuenta con su resultado.",
+    "3 por 10: *30*.",
+    "5 por 10: *50*.",
+    "9 por 10: *90*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "7 × 10 = 17",
+     "bien": "7 × 10 = 70"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "7 por 10 es *70*: el cero va al final."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA DEL 10",
+     "de 10 en 10"
+    ],
+    [
+     "EL 0",
+     "va al final"
+    ],
+    [
+     "10 × 10",
+     "es 100"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla del 10 salta *de 10 en 10*.",
+    "El *cero* va al final.",
+    "10 por 10 es *100*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

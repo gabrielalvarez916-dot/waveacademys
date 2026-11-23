@@ -1,0 +1,166 @@
+{
+ "slug": "medio-intro-mat2",
+ "subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920",
+ "materia": "Matemática 2",
+ "titulo": "Bienvenidos a Matemática 2",
+ "sub": "Introducción · Nivel medio",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "La abuela Rosa tiene una fábrica.",
+    "Hace miles de alfajores.",
+    "¡Y necesita tu ayuda!"
+   ],
+   "titulo": "¡BIENVENIDOS!",
+   "sub": "a Matemática 2",
+   "voz": [
+    "¡Hola! Ella es la abuela *Rosa*.",
+    "Tiene una *fábrica de alfajores*.",
+    "¡Y este año necesita tu ayuda!",
+    "¡Bienvenidos a *Matemática 2*!"
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "SUELTO",
+     "valor": "1",
+     "icono": "alf"
+    },
+    {
+     "nombre": "PAQUETE",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CAJA",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "CAMIÓN",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "En la fábrica hay alfajores *sueltos*.",
+    "10 sueltos llenan un *paquete*.",
+    "10 paquetes llenan una *caja*: 100.",
+    "¡Y 10 cajas llenan un *camión*: 1.000!",
+    "¡Este año vamos a contar hasta *1.000*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuántos alfajores hay en una caja?",
+   "opciones": [
+    "10",
+    "100",
+    "1.000"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Probemos. Una caja de Rosa…",
+    "¿Cuántos alfajores tiene?",
+    "¡*100*! ¡Ya sabés un montón!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 30 MISIONES",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Los números hasta 1.000",
+     "emoji": "🔢"
+    },
+    {
+     "fecha": "2",
+     "txt": "Sumar y restar",
+     "emoji": "➕"
+    },
+    {
+     "fecha": "3",
+     "txt": "Multiplicar y repartir",
+     "emoji": "✖️"
+    },
+    {
+     "fecha": "4",
+     "txt": "Figuras y planos",
+     "emoji": "🔺"
+    },
+    {
+     "fecha": "5",
+     "txt": "Medir, la hora y los datos",
+     "emoji": "⏰"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *30 misiones*. Primero, los números hasta *1.000*.",
+    "Después vas a *sumar* y *restar*.",
+    "Vas a *multiplicar* y repartir.",
+    "Vas a conocer *figuras* y planos.",
+    "¡Y a *medir*, leer la hora y usar datos!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "¿CÓMO SE JUEGA?",
+   "items": [
+    {
+     "txt": "Mirás la clase",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Leés el PDF",
+     "emoji": "📄"
+    },
+    {
+     "txt": "Hacés las actividades",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "Cada misión tiene *niveles*.",
+    "Primero mirás una *clase*, como esta.",
+    "Después leés el *PDF* con tu carpeta.",
+    "Y hacés las *actividades*."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión: ¡el NIVEL JEFE!",
+   "emoji": "🏆",
+   "voz": [
+    "Al final te espera el *nivel jefe*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Tené tu carpeta y tus lápices a mano",
+   "emoji": "🎒",
+   "voz": [
+    "Tené tu *carpeta* y tus lápices a mano."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Tu primera misión: los números hasta 200. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listos? Primera misión: *los números hasta 200*. ¡Vamos!"
+   ]
+  }
+ ]
+}

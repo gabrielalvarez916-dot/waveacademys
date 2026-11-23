@@ -1,0 +1,111 @@
+{
+ "slug": "medio-mat2-m16-n2",
+ "step_id": "2243128c-57d1-42da-8f12-f8fc307c704f",
+ "materia": "Matemática 2",
+ "titulo": "La tabla del 5",
+ "sub": "Matemática 2 · Misión 16 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos dedos hay en 4 manos?",
+   "segundos": 6,
+   "respuesta": "¡20!",
+   "emoji": "🖐️",
+   "titulo": "LA TABLA",
+   "sub": "del 5",
+   "voz": [
+    "Desafío: ¿cuántos dedos hay en 4 manos?",
+    "¡*20*! 5, 10, 15, 20.",
+    "Hoy: *la tabla del 5*."
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🍪",
+   "filas": 4,
+   "cols": 5,
+   "texto": "4 × 5 = 20",
+   "titulo": "BANDEJAS DE 5",
+   "voz": [
+    "Rosa pone 5 galletitas por fila.",
+    "5, 10, 15, 20.",
+    "¡4 por 5 es *20*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 5,
+   "hasta": 50,
+   "paso": 5,
+   "faltan": [
+    25,
+    40
+   ],
+   "titulo": "LA TABLA DEL 5",
+   "voz": [
+    "El tren de la tabla del 5.",
+    "5, 10, 15, 20, 30, 35, 45, 50.",
+    "¡Faltaban el *25* y el *40*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "9 × 5 = 44",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Termina en 5 o en 0: es 45",
+   "voz": [
+    "¿Verdadero o falso? 9 por 5 es 44.",
+    "Mirá cómo termina…",
+    "¡*Falso*! Tiene que terminar en 5 o 0: *45*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LA TABLA DEL 5",
+   "items": [
+    "5",
+    "10",
+    "15",
+    "20",
+    "25",
+    "30"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá la tabla del 5.",
+    "Se tapan… ¡y uno desapareció!",
+    "¡Faltaba el *20*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA DEL 5",
+     "de 5 en 5"
+    ],
+    [
+     "TERMINA",
+     "en 5 o en 0"
+    ],
+    [
+     "MANOS",
+     "5 dedos cada una"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla del 5 salta *de 5 en 5*.",
+    "Los resultados terminan en *5 o en 0*.",
+    "Como los dedos de las *manos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
