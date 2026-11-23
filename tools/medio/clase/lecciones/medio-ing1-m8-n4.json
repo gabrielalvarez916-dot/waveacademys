@@ -1,0 +1,141 @@
+{
+ "slug": "medio-ing1-m8-n4",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 8,
+  "nivel": 4
+ },
+ "materia": "Inglés 1",
+ "titulo": "Yes or no: the toy game",
+ "sub": "Inglés 1 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "🙈 I HAVE A TOY. GUESS!"
+    },
+    {
+     "yo": true,
+     "txt": "IS IT A BALL?"
+    },
+    {
+     "yo": false,
+     "txt": "NO, IT ISN'T!"
+    }
+   ],
+   "titulo": "THE TOY GAME",
+   "sub": "adivinar con YES y NO",
+   "voz": [
+    "Sofi le propone un juego a Tomi.",
+    "Guess! ¡Adiviná!",
+    "Tomi pregunta en inglés.",
+    "Hoy: *el juego de los juguetes*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "ASÍ SE JUEGA",
+   "items": [
+    "ESCONDO",
+    "PREGUNTÁS",
+    "YES O NO"
+   ],
+   "voz": [
+    "Así se juega.",
+    "Uno *esconde* un juguete.",
+    "El otro *pregunta* en inglés.",
+    "Y contestamos *yes* o *no*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "¿ESTÁ BIEN?",
+   "cambios": [
+    {
+     "antes": "🚗 IS IT A CAR? NO",
+     "despues": "🚗 IS IT A CAR? YES!",
+     "motivo": "es un auto"
+    },
+    {
+     "antes": "⚽ IS IT A DOLL? YES",
+     "despues": "⚽ IS IT A DOLL? NO!",
+     "motivo": "es una pelota"
+    }
+   ],
+   "voz": [
+    "Tomi contestó mal. Lo arreglamos.",
+    "Is it a car? Yes!",
+    "Is it a doll? No!"
+   ],
+   "voz_en": [
+    1,
+    2
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Es una pelota. IS IT A BALL?",
+   "opciones": [
+    "YES, IT IS",
+    "NO, IT ISN'T",
+    "I HAVE A CAR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Es una pelota.",
+    "Is it a ball?",
+    "Yes, it is!"
+   ],
+   "voz_en": [
+    1,
+    2
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TURNOS",
+   "texto": "Esperá tu turno para preguntar",
+   "emoji": "⏳",
+   "voz": [
+    "Truco: *esperá* tu turno para preguntar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "IS IT A…?",
+     "¿es un…?"
+    ],
+    [
+     "YES",
+     "sí"
+    ],
+    [
+     "NO",
+     "no"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Is it a ball? Yes! No!",
+    "¡A *jugar* en inglés!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1
+   ]
+  }
+ ]
+}

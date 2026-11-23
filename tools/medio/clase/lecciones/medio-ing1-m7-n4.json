@@ -1,0 +1,165 @@
+{
+ "slug": "medio-ing1-m7-n4",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 7,
+  "nivel": 4
+ },
+ "materia": "Inglés 1",
+ "titulo": "Animal sounds: guessing game",
+ "sub": "Inglés 1 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué animal hace MOO?",
+   "segundos": 6,
+   "respuesta": "¡LA VACA: COW!",
+   "emoji": "🐄",
+   "titulo": "ANIMAL SOUNDS",
+   "sub": "adivinar por el sonido",
+   "voz": [
+    "Desafío: ¿qué animal hace así?",
+    "Moo!",
+    "¡La vaca! Hoy: *sonidos de animales*."
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "¿CÓMO SUENAN?",
+   "items": [
+    {
+     "cab": "🐶",
+     "txt": "WOOF!"
+    },
+    {
+     "cab": "🐱",
+     "txt": "MEOW!"
+    },
+    {
+     "cab": "🐄",
+     "txt": "MOO!"
+    },
+    {
+     "cab": "🦆",
+     "txt": "QUACK!"
+    }
+   ],
+   "voz": [
+    "En inglés, los animales suenan así.",
+    "Woof!",
+    "Meow!",
+    "Moo!",
+    "Quack!"
+   ],
+   "voz_en": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "SOFI",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "TOMI",
+     "emoji": "👦"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "WOOF! WOOF!",
+     "trad": "¡guau, guau!"
+    },
+    {
+     "quien": 1,
+     "txt": "WHAT IS IT?",
+     "trad": "¿qué es?"
+    },
+    {
+     "quien": 1,
+     "txt": "IT IS A DOG!",
+     "trad": "¡es un perro!"
+    }
+   ],
+   "voz": [
+    "Woof! Woof!",
+    "What is it?",
+    "It is a dog!"
+   ],
+   "voz_en": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Escuchás MEOW. ¿Qué es?",
+   "opciones": [
+    "IT IS A CAT",
+    "IT IS A DOG",
+    "IT IS A COW"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Escuchá el sonido.",
+    "Meow!",
+    "It is a cat!"
+   ],
+   "voz_en": [
+    1,
+    2
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DISTINTOS",
+   "texto": "En inglés los animales suenan distinto",
+   "emoji": "🔊",
+   "voz": [
+    "Dato: en inglés los animales *suenan distinto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "WOOF / MEOW",
+     "perro y gato"
+    ],
+    [
+     "MOO / QUACK",
+     "vaca y pato"
+    ],
+    [
+     "WHAT IS IT?",
+     "¿qué es?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Woof, meow, moo, quack!",
+    "What is it?",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1,
+    2
+   ]
+  }
+ ]
+}
