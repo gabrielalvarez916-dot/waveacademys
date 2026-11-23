@@ -1,0 +1,112 @@
+{
+ "slug": "medio-leng2-m14-n1",
+ "step_id": "ed97ba02-b3f0-41fb-9904-0576793146bf",
+ "materia": "Lengua 2",
+ "titulo": "Uno y varios",
+ "sub": "Lengua 2 · Misión 14 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🦆",
+   "lineas": [
+    "Sofi ve un pato en la laguna.",
+    "¡Después llegan más!",
+    "¿Cómo lo escribe?"
+   ],
+   "titulo": "UNO",
+   "sub": "y varios",
+   "voz": [
+    "Sofi ve *un pato* en la laguna.",
+    "¡Después llegan *muchos más*!",
+    "¿Cómo lo escribe?",
+    "Hoy: *uno y varios*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DE UNO A VARIOS",
+   "pasos": [
+    {
+     "txt": "EL PATO",
+     "nota": "uno: singular"
+    },
+    {
+     "txt": "LOS PATOS",
+     "nota": "varios: plural"
+    }
+   ],
+   "voz": [
+    "*El pato*: uno solo. Es *singular*.",
+    "*Los patos*: varios. Es *plural*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Singular y plural",
+   "texto": "Singular: uno. Plural: varios",
+   "emoji": "🔢",
+   "voz": [
+    "*Singular* nombra uno solo.",
+    "*Plural* nombra varios."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál está en plural?",
+   "opciones": [
+    "LA RANA",
+    "LAS RANAS",
+    "EL SOL",
+    "LA FLOR"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál nombra *varios*?",
+    "Escuchá el final…",
+    "¡*Las ranas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿CUÁNTOS?",
+   "texto": "Uno: singular. Varios: plural",
+   "emoji": "🖐️",
+   "voz": [
+    "Truco: preguntá *¿cuántos?*"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SINGULAR",
+     "uno solo"
+    ],
+    [
+     "PLURAL",
+     "varios"
+    ],
+    [
+     "CAMBIAN",
+     "EL → LOS, LA → LAS"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Singular*: uno solo.",
+    "*Plural*: varios.",
+    "También cambian *el* y *la*: *los* y *las*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

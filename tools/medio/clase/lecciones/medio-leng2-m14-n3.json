@@ -1,0 +1,110 @@
+{
+ "slug": "medio-leng2-m14-n3",
+ "step_id": "d63e52b8-3f55-4f1f-bc38-9fd5efc47976",
+ "materia": "Lengua 2",
+ "titulo": "Concordar sustantivo y adjetivo",
+ "sub": "Lengua 2 · Misión 14 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "GRANJA",
+   "titular": "¡Las palabras se pelean!",
+   "bajada": "Una dice uno y otra dice varios",
+   "emoji": "😤",
+   "titulo": "CONCORDAR",
+   "sub": "ir juntos",
+   "voz": [
+    "¡Noticia: las palabras se pelean!",
+    "Una dice *uno* y otra dice *varios*.",
+    "Hoy: *concordar*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Concordar",
+   "texto": "Sustantivo y adjetivo van juntos",
+   "emoji": "🤝",
+   "voz": [
+    "*Concordar* es ir juntos.",
+    "Si el sustantivo es plural, el adjetivo también."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "CADA UNO CON SU PAREJA",
+   "pares": [
+    [
+     "LOS PATOS",
+     "BLANCOS"
+    ],
+    [
+     "LA FLOR",
+     "ROJA"
+    ],
+    [
+     "LOS RATONES",
+     "GRISES"
+    ]
+   ],
+   "voz": [
+    "Unimos cada uno con su adjetivo.",
+    "Los patos *blancos*.",
+    "La flor *roja*.",
+    "Los ratones *grises*."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "LAS RANAS",
+   "despues": "",
+   "opciones": [
+    "VERDES",
+    "VERDE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: las ranas…",
+    "¿Verde o verdes?",
+    "¡*Verdes*! Las dos en plural."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LOS DOS JUNTOS",
+   "texto": "Si uno cambia, cambia el otro",
+   "emoji": "👯",
+   "voz": [
+    "Truco: si uno cambia, cambia *el otro*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONCORDAR",
+     "ir juntos"
+    ],
+    [
+     "SINGULAR",
+     "EL PATO BLANCO"
+    ],
+    [
+     "PLURAL",
+     "LOS PATOS BLANCOS"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Concordar* es ir juntos.",
+    "*El pato blanco*: todo singular.",
+    "*Los patos blancos*: todo plural.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

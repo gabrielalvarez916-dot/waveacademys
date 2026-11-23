@@ -1,0 +1,113 @@
+{
+ "slug": "medio-leng2-m15-n1",
+ "step_id": "ac7db775-71fd-4384-8569-12b1e449df60",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con QUE y QUI",
+ "sub": "Lengua 2 · Misión 15 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "🕵️‍♀️"
+   },
+   "lugar": "🧀",
+   "lineas": [
+    "La detective mira la palabra QUESO.",
+    "¡Hay una letra escondida!",
+    "Se ve, pero no suena."
+   ],
+   "titulo": "QUE",
+   "sub": "y QUI",
+   "voz": [
+    "La detective mira la palabra *queso*.",
+    "¡Hay una *letra escondida*!",
+    "Se ve, pero *no suena*.",
+    "Hoy: *que y qui*."
+   ]
+  },
+  {
+   "t": "silabas",
+   "palabra": "QUESO",
+   "silabas": [
+    "QUE",
+    "SO"
+   ],
+   "tonica": 0,
+   "tipo": "grave",
+   "voz": [
+    "Escuchá: que… so.",
+    "En *que* hay tres letras, pero suenan dos.",
+    "¡La del medio está escondida!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "CON QUE Y QUI",
+   "items": [
+    "QUESO",
+    "QUINCE",
+    "PAQUETE",
+    "MOSQUITO"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá estas palabras con que y qui.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *paquete*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál está bien escrita?",
+   "opciones": [
+    "QUESO",
+    "QESO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuál está bien?",
+    "Buscá la letra escondida.",
+    "¡*Queso*, con su letra escondida!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LA ESCONDIDA",
+   "texto": "QUE y QUI siempre llevan U",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: *que* y *qui* siempre llevan la letra escondida."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "QUE · QUI",
+     "con letra escondida"
+    ],
+    [
+     "EJEMPLOS",
+     "QUESO, QUINCE"
+    ],
+    [
+     "OJO",
+     "nunca QE ni QI"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Que* y *qui* llevan una letra que no suena.",
+    "Como en *queso* y *quince*.",
+    "¡Nunca se olvida!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "slug": "medio-leng2-m14-n2",
+ "step_id": "7ec301f3-24b5-43dd-886e-95c15134bc8c",
+ "materia": "Lengua 2",
+ "titulo": "Plural con S y ES",
+ "sub": "Lengua 2 · Misión 14 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Vi tres FLORS! 🌸"
+    },
+    {
+     "yo": true,
+     "txt": "Mmm… ¿así se escribe?"
+    }
+   ],
+   "titulo": "PLURAL",
+   "sub": "con S y ES",
+   "voz": [
+    "Tomi le escribe: ¡vi tres flores!",
+    "Sofi mira cómo lo escribió…",
+    "Hoy: *cómo se forma el plural*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "+ S",
+     "emoji": "🏠"
+    },
+    {
+     "cab": "+ ES",
+     "emoji": "🌸"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "CASA → CASAS",
+     "caja": 0
+    },
+    {
+     "txt": "PATO → PATOS",
+     "caja": 0
+    },
+    {
+     "txt": "FLOR → FLORES",
+     "caja": 1
+    },
+    {
+     "txt": "PAN → PANES",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos las palabras.",
+    "Casa y pato terminan en vocal: sumamos *sss*.",
+    "Flor y pan terminan distinto: sumamos *es*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "PLURAL RÁPIDO",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "MESA",
+     "r": "MESAS"
+    },
+    {
+     "p": "SOL",
+     "r": "SOLES"
+    },
+    {
+     "p": "RATÓN",
+     "r": "RATONES"
+    }
+   ],
+   "voz": [
+    "¡Plural rápido!",
+    "Mesa: *mesas*.",
+    "Sol: *soles*.",
+    "Ratón: *ratones*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL GALLINERO",
+   "candados": [
+    {
+     "p": "LORO →",
+     "r": "LOROS"
+    },
+    {
+     "p": "FLOR →",
+     "r": "FLORES"
+    }
+   ],
+   "voz": [
+    "¡Para abrir el gallinero, decimos el plural!",
+    "Loro: *loros*.",
+    "Flor: *flores*.",
+    "¡Abrimos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL FINAL",
+   "texto": "Vocal: S. Consonante: ES",
+   "emoji": "👀",
+   "voz": [
+    "Truco: mirá cómo *termina* la palabra."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VOCAL",
+     "agregar S"
+    ],
+    [
+     "CONSONANTE",
+     "agregar ES"
+    ],
+    [
+     "EJEMPLOS",
+     "CASAS, FLORES"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Si termina en *vocal*, sumamos *sss*.",
+    "Si no, sumamos *es*.",
+    "Como en *casas* y *flores*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

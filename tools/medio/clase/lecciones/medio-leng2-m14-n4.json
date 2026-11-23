@@ -1,0 +1,135 @@
+{
+ "slug": "medio-leng2-m14-n4",
+ "step_id": "40e7990c-0f1f-4119-820b-84bab8be5e09",
+ "materia": "Lengua 2",
+ "titulo": "Corregir oraciones",
+ "sub": "Lengua 2 · Misión 14 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué está mal? LOS GATO DUERMEN",
+   "segundos": 8,
+   "respuesta": "¡LOS GATOS DUERMEN!",
+   "emoji": "🐱",
+   "titulo": "CORREGIR",
+   "sub": "oraciones",
+   "voz": [
+    "Desafío: ¿qué está mal? Los gato duermen.",
+    "¡*Los gatos* duermen!",
+    "Hoy: *corregir oraciones*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "SOFI CORRIGE",
+   "cambios": [
+    {
+     "antes": "LOS GATO",
+     "despues": "LOS GATOS",
+     "motivo": "son varios"
+    },
+    {
+     "antes": "LA FLORES",
+     "despues": "LAS FLORES",
+     "motivo": "todo en plural"
+    },
+    {
+     "antes": "EL NIDOS",
+     "despues": "EL NIDO",
+     "motivo": "es uno solo"
+    }
+   ],
+   "voz": [
+    "¡Encontramos errores!",
+    "Los gatos: son *varios*.",
+    "Las flores: todo en *plural*.",
+    "El nido: es *uno solo*."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Mezclado",
+    "emoji": "🌀"
+   },
+   "preguntas": [
+    {
+     "p": "LOS LORO HABLAN",
+     "r": "LOS LOROS HABLAN"
+    },
+    {
+     "p": "LAS NUBE BLANCAS",
+     "r": "LAS NUBES BLANCAS"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Mezclado*!",
+    "Corregimos sus oraciones.",
+    "*Los loros* hablan.",
+    "¡*Las nubes blancas*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO REVISO",
+   "items": [
+    {
+     "txt": "¿Uno o varios?",
+     "emoji": "🔢"
+    },
+    {
+     "txt": "¿Todas dicen lo mismo?",
+     "emoji": "🤝"
+    },
+    {
+     "txt": "Corrijo",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "¿Cómo revisamos?",
+    "¿Es *uno* o *varios*?",
+    "¿Todas las palabras dicen lo mismo?",
+    "Y *corregimos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODAS DE ACUERDO",
+   "texto": "Todas dicen uno o todas dicen varios",
+   "emoji": "✅",
+   "voz": [
+    "Truco: todas las palabras tienen que estar *de acuerdo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BUSCAR",
+     "¿uno o varios?"
+    ],
+    [
+     "CORREGIR",
+     "todas de acuerdo"
+    ],
+    [
+     "REVISAR",
+     "el adjetivo también"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Buscamos*: ¿uno o varios?",
+    "*Corregimos*: todas de acuerdo.",
+    "*Revisamos* también el adjetivo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

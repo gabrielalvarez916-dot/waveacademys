@@ -1,0 +1,126 @@
+{
+ "slug": "medio-leng2-m15-n2",
+ "step_id": "1f5f5372-784e-4d55-88a9-0d91636f4650",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con GUE y GUI",
+ "sub": "Lengua 2 · Misión 15 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CASO NUEVO",
+   "titular": "¡Otra letra escondida!",
+   "bajada": "Ahora en GUITARRA",
+   "emoji": "🎸",
+   "titulo": "GUE",
+   "sub": "y GUI",
+   "voz": [
+    "¡Caso nuevo: otra letra escondida!",
+    "Ahora en *guitarra*.",
+    "Hoy: *gue y gui*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué palabra es?",
+   "pistas": [
+    "Es un instrumento",
+    "Tiene cuerdas",
+    "Empieza con GUI"
+   ],
+   "respuesta": "GUITARRA 🎸",
+   "voz": [
+    "Adivinanza: ¿qué palabra es?",
+    "Pista uno: es un instrumento.",
+    "Pista dos: tiene cuerdas.",
+    "Pista tres: empieza con *gui*.",
+    "¡La *guitarra*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En GUISO, la letra del medio suena",
+   "emoji": "🍲",
+   "verdadero": false,
+   "explicacion": "Está escondida: no suena",
+   "voz": [
+    "¿Verdadero o falso? En guiso, la letra del medio suena.",
+    "Escuchá: gui… so.",
+    "¡*Falso*! Está escondida."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "GA · GO · GU",
+     "emoji": "🐱"
+    },
+    {
+     "cab": "GUE · GUI",
+     "emoji": "🎸"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "GATO",
+     "caja": 0
+    },
+    {
+     "txt": "GUSANO",
+     "caja": 0
+    },
+    {
+     "txt": "GUISO",
+     "caja": 1
+    },
+    {
+     "txt": "JUGUETE",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos las palabras.",
+    "Gato y gusano: sin letra escondida.",
+    "Guiso y juguete: ¡con letra escondida!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON GUE Y GUI",
+   "texto": "Llevan una U que no suena",
+   "emoji": "🤫",
+   "voz": [
+    "Truco: *gue* y *gui* también llevan la letra escondida."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GA · GO · GU",
+     "sin escondida"
+    ],
+    [
+     "GUE · GUI",
+     "con escondida"
+    ],
+    [
+     "EJEMPLOS",
+     "GUITARRA, JUGUETE"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Ga*, *go*, *gu*: sin letra escondida.",
+    "*Gue* y *gui*: con letra escondida.",
+    "Como en *guitarra* y *juguete*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

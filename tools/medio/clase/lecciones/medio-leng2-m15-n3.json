@@ -1,0 +1,125 @@
+{
+ "slug": "medio-leng2-m15-n3",
+ "step_id": "2551f6eb-2fa7-40f7-9319-de70aac18aad",
+ "materia": "Lengua 2",
+ "titulo": "Palabras con GÜE y GÜI",
+ "sub": "Lengua 2 · Misión 15 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Decí despacio: PINGÜINO",
+   "segundos": 8,
+   "respuesta": "pin · güi · no: ¡se escucha!",
+   "emoji": "🐧",
+   "titulo": "GÜE",
+   "sub": "y GÜI",
+   "voz": [
+    "Desafío: decí despacio *pingüino*.",
+    "Pin… güi… no. ¡Ahora la letra *sí se escucha*!",
+    "Hoy: *güe y güi*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GUISO",
+    "texto": "no suena",
+    "emoji": "🍲"
+   },
+   "b": {
+    "cab": "PINGÜINO",
+    "texto": "sí suena: Ü",
+    "emoji": "🐧"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "LOS DOS PUNTITOS",
+    "texto": "avisan: ¡esta suena!"
+   },
+   "voz": [
+    "En *guiso*, la letra del medio no suena.",
+    "En *pingüino*, ¡sí suena!",
+    "Por eso lleva *dos puntitos* arriba.",
+    "Los puntitos avisan: ¡esta suena!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "CON PUNTITOS",
+   "items": [
+    {
+     "frente": "🐧",
+     "dorso": "PINGÜINO",
+     "emoji": "🐧"
+    },
+    {
+     "frente": "🦩",
+     "dorso": "CIGÜEÑA",
+     "emoji": "🦩"
+    },
+    {
+     "frente": "💧",
+     "dorso": "AGÜITA",
+     "emoji": "💧"
+    }
+   ],
+   "voz": [
+    "*Pingüino*: con dos puntitos.",
+    "*Cigüeña*: con dos puntitos.",
+    "*Agüita*: ¡también!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál lleva los dos puntitos?",
+   "opciones": [
+    "CIGÜEÑA",
+    "GUISO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuál lleva los dos puntitos?",
+    "Decilas en voz alta.",
+    "¡*Cigüeña*! Ahí suena."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿SUENA?",
+   "texto": "Si suena, lleva los dos puntitos",
+   "emoji": "👂",
+   "voz": [
+    "Truco: si la escuchás, lleva los *dos puntitos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GUE · GUI",
+     "no suena"
+    ],
+    [
+     "GÜE · GÜI",
+     "sí suena"
+    ],
+    [
+     "DIÉRESIS",
+     "los dos puntitos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En *gue* y *gui*, no suena.",
+    "En *güe* y *güi*, ¡sí suena!",
+    "Los dos puntitos se llaman *diéresis*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

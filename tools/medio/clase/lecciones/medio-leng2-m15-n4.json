@@ -1,0 +1,141 @@
+{
+ "slug": "medio-leng2-m15-n4",
+ "step_id": "abd8b08c-0d9c-4966-ac7a-c14a61051565",
+ "materia": "Lengua 2",
+ "titulo": "Dictado con las cuatro reglas",
+ "sub": "Lengua 2 · Misión 15 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Me dictás palabras difíciles? 📝"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! Con las cuatro reglas"
+    }
+   ],
+   "titulo": "DICTADO",
+   "sub": "las cuatro reglas",
+   "voz": [
+    "Tomi le pide: ¿me dictás palabras difíciles?",
+    "Sofi responde: ¡sí, con las cuatro reglas!",
+    "Hoy: *dictado*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "LAS CUATRO REGLAS",
+   "lineas": [
+    {
+     "txt": "QUE · QUI → QUESO",
+     "color": "sol"
+    },
+    {
+     "txt": "GUE · GUI → GUISO",
+     "color": "coral"
+    },
+    {
+     "txt": "GÜE · GÜI → PINGÜINO",
+     "color": "verde",
+     "marca": "circulo"
+    },
+    {
+     "txt": "GA · GO · GU → GATO",
+     "color": "azul"
+    }
+   ],
+   "voz": [
+    "*Que*, *qui*: con letra escondida, como *queso*.",
+    "*Gue*, *gui*: con letra escondida, como *guiso*.",
+    "*Güe*, *güi*: con dos puntitos, como *pingüino*.",
+    "*Ga*, *go*, *gu*: sin nada extra, como *gato*."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "DICTADO",
+   "items": [
+    {
+     "p": "El ave del hielo",
+     "r": "PINGÜINO"
+    },
+    {
+     "p": "Instrumento con cuerdas",
+     "r": "GUITARRA"
+    },
+    {
+     "p": "Insecto que pica",
+     "r": "MOSQUITO"
+    }
+   ],
+   "voz": [
+    "Primera palabra: *pingüino*.",
+    "Segunda palabra: *guitarra*.",
+    "Tercera palabra: *mosquito*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "MAQINA",
+     "bien": "MÁQUINA"
+    },
+    {
+     "mal": "PINGUINO",
+     "bien": "PINGÜINO"
+    }
+   ],
+   "voz": [
+    "Cuidado con estos errores.",
+    "Máquina lleva la letra *escondida*.",
+    "Pingüino lleva los *dos puntitos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "REVISÁ AL FINAL",
+   "texto": "Buscá cada QU, GU y GÜ",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: al final, *revisá* cada palabra difícil."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "QUE · QUI",
+     "con U"
+    ],
+    [
+     "GUE · GUI",
+     "con U muda"
+    ],
+    [
+     "GÜE · GÜI",
+     "con Ü"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Que* y *qui*: con letra escondida.",
+    "*Gue* y *gui*: con letra escondida.",
+    "*Güe* y *güi*: con dos puntitos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

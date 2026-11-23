@@ -173,11 +173,11 @@ OK |= {'favourite', 'dibujó', 'escribió', 'gustó'}; MAPA.update({'querés': '
 MAPA.update({'desarmá': 'desarma'})  # Matemática 2 · Misión 5
 MAPA.update({'formá': 'forma', 'formás': 'formas'})  # Matemática 2 · Misión 6
 MAPA.update({'desarmalo': 'desármalo', 'agregalos': 'agrégalos'})  # Matemática 2 · Misión 7
-MAPA.update({'ponele': 'ponle', 'respondela': 'respóndela', 'subrayás': 'subrayas', 'compartí': 'comparte', 'contala': 'cuéntala', 'dibujala': 'dibújala', 'contestala': 'contéstala', 'contestalo': 'contéstalo', 'firmá': 'firma', 'aprendelo': 'apréndelo', 'aprendé': 'aprende', 'cantalo': 'cántalo', 'juntalas': 'júntalas', 'prestá': 'presta', 'dibujalos': 'dibújalos'})  # Lengua 2 · Misiones 7, 8 y 12
+MAPA.update({'ponele': 'ponle', 'respondela': 'respóndela', 'subrayás': 'subrayas', 'compartí': 'comparte', 'contala': 'cuéntala', 'dibujala': 'dibújala', 'contestala': 'contéstala', 'contestalo': 'contéstalo', 'firmá': 'firma', 'aprendelo': 'apréndelo', 'aprendé': 'aprende', 'cantalo': 'cántalo', 'juntalas': 'júntalas', 'prestá': 'presta', 'dibujalos': 'dibújalos', 'dictás': 'dictas'})  # Lengua 2 · Misiones 7, 8 y 12
 OK |= {'empate'}  # Matemática 2 · Misión 8 (versus: gana empate)
 OK |= {'llevé', 'volví', 'resté', 'vendí'}  # Matemática 2 · Misiones 9 y 10
 OK |= {'malas', 'malos'}  # Lengua 2 · Misión 3
 MAPA.update({'resumí': 'resume'})  # Lengua 2 · Misión 4
 OK |= {'compré', 'modelo'}  # Lengua 2 · Misiones 2 y 5
-OK |= {'finales', 'mimí', 'egalo', 'rregalo', 'ganará', 'conté', 'enseñará', 'ananá', 'yate', 'estrela'}  # Lengua 2 · Misiones 9, 11 y 12
+OK |= {'finales', 'mimí', 'egalo', 'rregalo', 'ganará', 'conté', 'enseñará', 'ananá', 'yate', 'estrela', 'plurales'}  # Lengua 2 · Misiones 9, 11 y 12
 OK -= set(MAPA)
