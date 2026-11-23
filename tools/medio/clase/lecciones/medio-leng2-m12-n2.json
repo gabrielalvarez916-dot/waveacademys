@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng2-m12-n2",
+ "step_id": "e4ea53de-3f0a-48cb-9147-808bb18adaa4",
+ "materia": "Lengua 2",
+ "titulo": "Leer La liebre y la tortuga",
+ "sub": "Lengua 2 · Misión 12 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "GRAN CARRERA",
+   "titular": "¡La liebre contra la tortuga!",
+   "bajada": "¿Quién ganará?",
+   "emoji": "🏁",
+   "titulo": "LA LIEBRE",
+   "sub": "y la tortuga",
+   "voz": [
+    "¡Gran carrera: la liebre contra la tortuga!",
+    "¿Quién ganará?",
+    "Hoy: *la liebre y la tortuga*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "LA CARRERA",
+   "a": {
+    "txt": "LIEBRE",
+    "emoji": "🐇",
+    "datos": [
+     "muy rápida",
+     "se confió y se durmió"
+    ]
+   },
+   "b": {
+    "txt": "TORTUGA",
+    "emoji": "🐢",
+    "datos": [
+     "muy lenta",
+     "caminó sin parar"
+    ]
+   },
+   "gana": "b",
+   "veredicto": "¡Ganó la tortuga!",
+   "voz": [
+    "La liebre salió *muy rápido*… y se burlaba.",
+    "Se *confió* y se durmió una siesta.",
+    "La tortuga caminó despacio, *sin parar*.",
+    "¡Ganó la *tortuga*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿QUIÉN LO HIZO?",
+   "pares": [
+    [
+     "Se durmió",
+     "liebre"
+    ],
+    [
+     "No paró",
+     "tortuga"
+    ],
+    [
+     "Se burlaba",
+     "liebre"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada acción con su personaje.",
+    "Se durmió: la *liebre*.",
+    "No paró: la *tortuga*.",
+    "Se burlaba: la *liebre*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por qué perdió la liebre?",
+   "opciones": [
+    "SE CONFIÓ",
+    "ERA LENTA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Por qué perdió la liebre, si era rápida?",
+    "Pensá en la siesta…",
+    "¡Porque se *confió*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL FINAL",
+   "texto": "El final muestra la enseñanza",
+   "emoji": "🏁",
+   "voz": [
+    "Truco: el *final* de la fábula muestra la enseñanza."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LIEBRE",
+     "rápida, se confió"
+    ],
+    [
+     "TORTUGA",
+     "lenta, no paró"
+    ],
+    [
+     "FINAL",
+     "ganó la tortuga"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *liebre* era rápida, pero se confió.",
+    "La *tortuga* era lenta, pero no paró.",
+    "¡Ganó la *tortuga*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "slug": "medio-leng2-m13-n1",
+ "step_id": "c04851d0-4d81-403c-aeab-92c2b32d9ace",
+ "materia": "Lengua 2",
+ "titulo": "Partes de una carta",
+ "sub": "Lengua 2 · Misión 13 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "✉️",
+   "lineas": [
+    "Sofi quiere contarle algo a Tomi.",
+    "Pero Tomi está de viaje.",
+    "¡Le escribe una carta!"
+   ],
+   "titulo": "LA CARTA",
+   "sub": "y sus partes",
+   "voz": [
+    "Sofi quiere contarle algo a Tomi.",
+    "Pero Tomi está de viaje.",
+    "¡Le escribe una *carta*!",
+    "Hoy: *las partes de una carta*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "📅",
+     "txt": "LUGAR Y FECHA"
+    },
+    {
+     "emoji": "👋",
+     "txt": "SALUDO"
+    },
+    {
+     "emoji": "📝",
+     "txt": "CUERPO"
+    },
+    {
+     "emoji": "🤗",
+     "txt": "DESPEDIDA"
+    },
+    {
+     "emoji": "✍️",
+     "txt": "FIRMA"
+    }
+   ],
+   "voz": [
+    "Arriba: el *lugar y la fecha*.",
+    "Después, el *saludo*: querido Tomi.",
+    "En el medio, el *cuerpo*: lo que contamos.",
+    "Después, la *despedida*: un abrazo.",
+    "Al final, la *firma*: Sofi."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LAS PARTES DE LA CARTA",
+   "items": [
+    "LUGAR Y FECHA",
+    "SALUDO",
+    "CUERPO",
+    "DESPEDIDA",
+    "FIRMA"
+   ],
+   "falta": 4,
+   "voz": [
+    "Mirá las cinco partes.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba la *firma*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "«Un abrazo» es…",
+   "opciones": [
+    "EL SALUDO",
+    "LA DESPEDIDA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Un abrazo, ¿qué parte es?",
+    "Pensá: ¿va al principio o al final?",
+    "¡La *despedida*! Va antes de la firma."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DE ARRIBA A ABAJO",
+   "texto": "Fecha, saludo, cuerpo, despedida, firma",
+   "emoji": "⬇️",
+   "voz": [
+    "Truco: fecha, saludo, cuerpo, despedida y firma."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARRIBA",
+     "lugar, fecha y saludo"
+    ],
+    [
+     "MEDIO",
+     "el cuerpo"
+    ],
+    [
+     "FINAL",
+     "despedida y firma"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Arriba*: lugar, fecha y saludo.",
+    "En el *medio*: el cuerpo.",
+    "Al *final*: despedida y firma.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

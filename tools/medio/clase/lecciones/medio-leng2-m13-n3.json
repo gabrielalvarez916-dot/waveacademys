@@ -1,0 +1,122 @@
+{
+ "slug": "medio-leng2-m13-n3",
+ "step_id": "1e36adfb-998a-4719-a729-5334e5258d4a",
+ "materia": "Lengua 2",
+ "titulo": "Un mensaje de correo electrónico",
+ "sub": "Lengua 2 · Misión 13 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Mandame tu ficha! 📧"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te la mando por correo!"
+    }
+   ],
+   "titulo": "CORREO",
+   "sub": "electrónico",
+   "voz": [
+    "Tomi le pide a Sofi: ¡mandame tu ficha!",
+    "Sofi responde: ¡te la mando por correo!",
+    "Hoy: *el correo electrónico*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Correo electrónico",
+   "texto": "Carta que se manda por computadora o celular",
+   "emoji": "💻",
+   "voz": [
+    "El *correo electrónico* es una carta por computadora.",
+    "¡Llega en un ratito!"
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LAS PARTES DEL CORREO",
+   "celdas": [
+    {
+     "cab": "PARA",
+     "txt": "a quién va"
+    },
+    {
+     "cab": "ASUNTO",
+     "txt": "de qué trata"
+    },
+    {
+     "cab": "MENSAJE",
+     "txt": "lo que contamos"
+    },
+    {
+     "cab": "ENVIAR",
+     "txt": "el botón para mandarlo"
+    }
+   ],
+   "voz": [
+    "El correo tiene sus partes.",
+    "*Para*: a quién va.",
+    "*Asunto*: de qué trata.",
+    "*Mensaje*: lo que contamos.",
+    "*Enviar*: el botón para mandarlo."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El correo electrónico necesita estampilla",
+   "emoji": "📮",
+   "verdadero": false,
+   "explicacion": "Se manda por computadora",
+   "voz": [
+    "¿Verdadero o falso? El correo necesita estampilla.",
+    "Pensá: ¿cómo se manda?",
+    "¡*Falso*! Se manda por computadora o celular."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "Usá el correo siempre acompañado",
+   "emoji": "🧑‍🧒",
+   "voz": [
+    "Truco: usá el correo siempre con un *adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CORREO",
+     "carta por computadora"
+    ],
+    [
+     "PARA",
+     "a quién va"
+    ],
+    [
+     "ASUNTO",
+     "de qué trata"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *correo* es una carta por computadora.",
+    "*Para* dice a quién va.",
+    "El *asunto* dice de qué trata.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -230,6 +230,7 @@ Regla fija para estas materias (la lista está en `tools/medio/primeros_anios.py
 - Todo en **IMPRENTA MAYÚSCULA** y con letra 1,5 veces más grande (lo hace `tools/medio/pdf/render_leccion.py`; el contenido se escribe normal).
 - Oraciones de **12 palabras como máximo**, en presente y en segunda persona ("contá", "uní", "pintá").
 - **Un dibujo por sección como mínimo** (bloque `imagen` con `png_base64`, dibujado por script, como `contenido/medio/matematica-1/figuras.py`). Si no se entiende sin dibujo, va dibujo.
+- **Ninguna letra puede quedar afuera de su recuadro** (pedido de Sandra, nov 2026). Lo hace solo `png()` de `contenido/medio/matematica-1/figuras.py` (la base de todos los dibujos del Medio): si un texto se sale del cartel o la tira que lo contiene, o pisa otro texto del mismo recuadro (el número), primero lo parte en 2 o 3 renglones y, si no alcanza, achica la letra hasta que entre. `nombres()` además ensancha los carteles con palabras largas. Al hacer dibujos nuevos con recuadros, usar `FancyBboxPatch` o `Rectangle` (así el control los ve); los resaltados de fondo llevan `gid="resalte"`.
 - Consignas de carpeta para hacer con dibujos: contar, rodear, unir, pintar, dibujar.
 - Hasta 8 hojas de contenido (la letra grande ocupa más).
 

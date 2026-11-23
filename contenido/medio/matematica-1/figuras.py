@@ -13,7 +13,52 @@ TEAL, OSC, MENTA, AMBAR, CORAL, ROJO, VERDE, AZUL, LILA = "#0e7c7b", "#243b3f", 
 F = dict(fontfamily="DejaVu Sans", fontweight="bold")
 
 
+def _ajustar_textos(fig):
+    """REGLA: ninguna letra puede quedar afuera de su recuadro. Si un texto se sale del recuadro que lo contiene,
+    primero se parte en dos renglones (si es una frase y entra de alto) y, si todavía no entra, se achica hasta que entre."""
+    from matplotlib.patches import FancyBboxPatch as _FB, Rectangle as _R
+    r = fig.canvas.get_renderer()
+    for ax in fig.axes:
+        cajas = [p for p in ax.patches if isinstance(p, (_FB, _R)) and p.get_gid() != 'resalte']
+        for t in ax.texts:
+            if not t.get_text().strip(): continue
+            bb = t.get_window_extent(r); cx, cy = (bb.x0 + bb.x1) / 2, (bb.y0 + bb.y1) / 2
+            dentro = [c.get_window_extent(r) for c in cajas]
+            dentro = [c for c in dentro if c.x0 <= cx <= c.x1 and c.y0 <= cy <= c.y1 and c.height >= bb.height * .8]
+            if not dentro: continue
+            c = min(dentro, key=lambda c: c.width * c.height); m = max(12, .07 * c.width)
+            otros = [o for o in ax.texts if o is not t and o.get_text().strip()]
+            def entra(bb):
+                if not (bb.x0 >= c.x0 + m and bb.x1 <= c.x1 - m and bb.y0 >= c.y0 + 3 and bb.y1 <= c.y1 - 3): return False
+                for o in otros:  # tampoco puede pisar otro texto del mismo recuadro (por ejemplo, el número de la tira)
+                    ob = o.get_window_extent(r)
+                    if c.x0 <= ob.x0 and ob.x1 <= c.x1 and c.y0 <= ob.y0 and ob.y1 <= c.y1 and ob.x0 < bb.x1 and bb.x0 < ob.x1 and ob.y0 < bb.y1 and bb.y0 < ob.y1: return False
+                return True
+            if entra(t.get_window_extent(r)): continue
+            _AVISOS.append(t.get_text())
+            txt = t.get_text(); pal = txt.split(' ')
+            if '\n' not in txt and len(pal) >= 3:
+                for nl in (2, 3):  # probar en 2 y en 3 renglones, si entran de alto
+                    if len(pal) < nl or c.height < bb.height * (nl * 1.1 + .2): break
+                    obj = len(txt) / nl; cortes = []; acc = 0
+                    for i, w in enumerate(pal[:-1]):
+                        acc += len(w) + 1
+                        if acc >= obj * (len(cortes) + 1) and len(cortes) < nl - 1: cortes.append(i + 1)
+                    trozos = []; ini = 0
+                    for k in cortes + [len(pal)]: trozos.append(' '.join(pal[ini:k])); ini = k
+                    t.set_text('\n'.join(trozos)); t.set_linespacing(1.15)
+                    if entra(t.get_window_extent(r)): break
+            while t.get_fontsize() > 6 and not entra(t.get_window_extent(r)):
+                t.set_fontsize(t.get_fontsize() - .5)
+            if not entra(t.get_window_extent(r)):  # último recurso: centrar en el recuadro
+                t.set_horizontalalignment('center'); inv = ax.transData.inverted(); t.set_x(inv.transform(((c.x0 + c.x1) / 2, 0))[0])
+
+
+_AVISOS = []
+
+
 def png(fig):
+    _ajustar_textos(fig)
     b = io.BytesIO(); fig.savefig(b, format="png", dpi=120, bbox_inches="tight", facecolor="white"); plt.close(fig)
     im = Image.open(io.BytesIO(b.getvalue())).convert("RGB").quantize(colors=32)
     o = io.BytesIO(); im.save(o, format="PNG", optimize=True); return base64.b64encode(o.getvalue()).decode()

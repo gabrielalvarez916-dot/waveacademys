@@ -1,0 +1,130 @@
+{
+ "slug": "medio-leng2-m12-n4",
+ "step_id": "c5cb1a7d-49ad-4c02-91f5-8e589f0f5fb3",
+ "materia": "Lengua 2",
+ "titulo": "Escribir una moraleja",
+ "sub": "Lengua 2 · Misión 12 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🦁",
+   "lineas": [
+    "Sofi lee otra fábula.",
+    "Un ratón salva a un león.",
+    "¿Qué enseñará?"
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "una moraleja",
+   "voz": [
+    "Sofi lee otra fábula.",
+    "Un ratoncito salva a un león atrapado.",
+    "¿Qué enseñará?",
+    "Hoy: *escribir una moraleja*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DE LA HISTORIA A LA MORALEJA",
+   "pasos": [
+    {
+     "txt": "El ratón salvó al león",
+     "nota": "¿qué pasó?"
+    },
+    {
+     "txt": "Aunque era chiquito, pudo ayudar",
+     "nota": "¿qué aprendo?"
+    },
+    {
+     "txt": "Todos podemos ayudar",
+     "nota": "moraleja"
+    }
+   ],
+   "voz": [
+    "¿Qué pasó? El ratón salvó al león.",
+    "¿Qué aprendo? Aunque era chiquito, pudo ayudar.",
+    "Moraleja: ¡*todos podemos ayudar*!"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "La hormiga guardó comida. Es bueno",
+   "despues": ".",
+   "opciones": [
+    "PREPARARSE",
+    "DORMIR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Otra fábula: la hormiga guardó comida para el invierno.",
+    "¿Qué aprendemos? Es bueno…",
+    "¡*Prepararse*!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO ESCRIBO UNA MORALEJA",
+   "items": [
+    {
+     "txt": "Pienso qué pasó",
+     "emoji": "🤔"
+    },
+    {
+     "txt": "Pienso qué aprendo",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Escribo una oración corta",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "¿Cómo escribimos una moraleja?",
+    "Pensamos *qué pasó*.",
+    "Pensamos *qué aprendemos*.",
+    "Escribimos una *oración corta*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CORTA Y PARA TODOS",
+   "texto": "La moraleja sirve para cualquiera",
+   "emoji": "🌍",
+   "voz": [
+    "Truco: la moraleja es *corta* y sirve para todos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "¿QUÉ PASÓ?",
+     "pensar la historia"
+    ],
+    [
+     "¿QUÉ APRENDO?",
+     "la enseñanza"
+    ],
+    [
+     "ESCRIBIR",
+     "una oración corta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Pensamos *qué pasó*.",
+    "Pensamos *qué aprendemos*.",
+    "Escribimos una *oración corta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

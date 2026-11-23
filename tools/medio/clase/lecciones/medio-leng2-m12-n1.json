@@ -1,0 +1,127 @@
+{
+ "slug": "medio-leng2-m12-n1",
+ "step_id": "a2a06e6b-3414-49da-b7fb-1aa32a25c840",
+ "materia": "Lengua 2",
+ "titulo": "Leer La zorra y las uvas",
+ "sub": "Lengua 2 · Misión 12 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historieta",
+   "titulo": "LA ZORRA Y LAS UVAS",
+   "vinetas": [
+    {
+     "emojis": [
+      "🦊",
+      "😋"
+     ],
+     "txt": "Una zorra tenía hambre"
+    },
+    {
+     "emojis": [
+      "🍇",
+      "⬆️"
+     ],
+     "txt": "Vio unas uvas muy altas"
+    },
+    {
+     "emojis": [
+      "🦊",
+      "💨"
+     ],
+     "txt": "Saltó y saltó… ¡no llegó!"
+    },
+    {
+     "emojis": [
+      "🦊",
+      "😒"
+     ],
+     "txt": "¡Bah! Están verdes",
+     "quien": "Zorra"
+    }
+   ],
+   "voz": [
+    "Una zorra tenía mucha hambre.",
+    "Vio unas uvas muy altas.",
+    "Saltó y saltó… ¡pero no llegó!",
+    "Dijo: ¡bah, están verdes! Y se fue. Hoy: *una fábula*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fábula",
+   "texto": "Cuento corto con animales y una enseñanza",
+   "emoji": "🦊",
+   "voz": [
+    "Esta historia es una *fábula*: tiene animales y una enseñanza.",
+    "La contaron *Esopo* y *Samaniego*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Las uvas estaban verdes?",
+   "opciones": [
+    "SÍ, DE VERDAD",
+    "NO, FUE UNA EXCUSA",
+    "NO HABÍA UVAS",
+    "ERAN DE PLÁSTICO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Las uvas estaban verdes de verdad?",
+    "Pensá: ¿por qué lo dijo la zorra?",
+    "¡Fue una *excusa*! No pudo alcanzarlas."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ANIMALES QUE HABLAN",
+   "texto": "En las fábulas los animales hablan y piensan",
+   "emoji": "🗣️",
+   "voz": [
+    "Truco: en las fábulas, los animales *hablan* y *piensan*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Las uvas estaban verdes",
+     "bien": "La zorra no las alcanzó"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Las uvas no estaban verdes: la zorra *no llegó*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FÁBULA",
+     "animales y enseñanza"
+    ],
+    [
+     "AUTORES",
+     "Esopo y Samaniego"
+    ],
+    [
+     "LA ZORRA",
+     "puso una excusa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *fábula* tiene animales y una enseñanza.",
+    "La contaron *Esopo* y *Samaniego*.",
+    "La *zorra* puso una excusa.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

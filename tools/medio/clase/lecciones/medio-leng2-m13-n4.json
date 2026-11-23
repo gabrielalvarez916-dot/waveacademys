@@ -1,0 +1,109 @@
+{
+ "slug": "medio-leng2-m13-n4",
+ "step_id": "f739ae92-f58c-46fe-9f12-005df396ab95",
+ "materia": "Lengua 2",
+ "titulo": "Responder una carta",
+ "sub": "Lengua 2 · Misión 13 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CORREO",
+   "titular": "¡Tomi recibió la carta de Sofi!",
+   "bajada": "Y ahora le va a responder",
+   "emoji": "📬",
+   "titulo": "RESPONDER",
+   "sub": "una carta",
+   "voz": [
+    "¡Noticia: Tomi recibió la carta de Sofi!",
+    "Y ahora le va a *responder*.",
+    "Hoy: *responder una carta*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué tiene que hacer Tomi?",
+   "pistas": [
+    "Leer la carta entera",
+    "Buscar si hay una pregunta",
+    "Contestar y contar algo suyo"
+   ],
+   "respuesta": "¡Responder la carta! ✉️",
+   "voz": [
+    "¿Qué tiene que hacer Tomi para responder?",
+    "Primero, *leer* la carta entera.",
+    "Después, buscar si hay una *pregunta*.",
+    "Al final, *contestar* y contar algo suyo.",
+    "¡Así se responde una carta!"
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "LA RESPUESTA DE TOMI",
+   "items": [
+    {
+     "p": "Saludo",
+     "r": "Querida Sofi:"
+    },
+    {
+     "p": "Respuesta",
+     "r": "¡Sí! Vi un hornero en el campo."
+    }
+   ],
+   "voz": [
+    "Tomi saluda: querida Sofi.",
+    "Y contesta: ¡sí! Vi un hornero en el campo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "No contestar la pregunta",
+     "bien": "Contestar lo que preguntan"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Si la carta pregunta algo, lo *contestamos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "BUSCÁ LA PREGUNTA",
+   "texto": "Si te preguntan algo, contestalo",
+   "emoji": "❓",
+   "voz": [
+    "Truco: buscá la *pregunta* y contestala."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "la carta entera"
+    ],
+    [
+     "CONTESTAR",
+     "la pregunta"
+    ],
+    [
+     "ESCRIBIR",
+     "con todas las partes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Leemos* la carta entera.",
+    "*Contestamos* la pregunta.",
+    "*Escribimos* con todas las partes.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

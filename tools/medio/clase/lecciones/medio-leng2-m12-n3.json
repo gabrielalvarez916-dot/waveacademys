@@ -1,0 +1,120 @@
+{
+ "slug": "medio-leng2-m12-n3",
+ "step_id": "998f89b7-7d2c-4e03-94d4-fbdf93af85cf",
+ "materia": "Lengua 2",
+ "titulo": "Qué enseña cada fábula",
+ "sub": "Lengua 2 · Misión 12 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué aprendemos de la tortuga?",
+   "segundos": 8,
+   "respuesta": "Despacio y sin parar se llega lejos",
+   "emoji": "🐢",
+   "titulo": "LA MORALEJA",
+   "sub": "qué enseña",
+   "voz": [
+    "Desafío: ¿qué aprendemos de la tortuga?",
+    "¡Despacio y *sin parar* se llega lejos!",
+    "Hoy: *qué enseña cada fábula*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Esopo",
+    "emoji": "🧔"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Yo conté muchas fábulas.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Al final, siempre dejo una enseñanza.",
+     "animo": "piensa"
+    },
+    {
+     "txt": "¡Se llama moraleja!",
+     "animo": "ojo"
+    }
+   ],
+   "voz": [
+    "¡Hola! Soy Esopo. Conté muchas fábulas.",
+    "Al final, siempre dejo una *enseñanza*.",
+    "¡Se llama *moraleja*!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DE LAS FÁBULAS",
+   "candados": [
+    {
+     "p": "La zorra enseña…",
+     "r": "NO PONER EXCUSAS"
+    },
+    {
+     "p": "La tortuga enseña…",
+     "r": "DESPACIO Y SIN PARAR"
+    }
+   ],
+   "voz": [
+    "¡Para salir, decimos las moralejas!",
+    "La zorra enseña: no poner *excusas*.",
+    "La tortuga enseña: despacio y *sin parar*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Moraleja: la liebre se durmió",
+     "bien": "Moraleja: no te confíes"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "No cuenta lo que pasó: dice lo que *aprendemos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ ¿QUÉ APRENDO?",
+   "texto": "La respuesta es la moraleja",
+   "emoji": "💡",
+   "voz": [
+    "Truco: preguntá *¿qué aprendo?* Esa es la moraleja."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MORALEJA",
+     "la enseñanza"
+    ],
+    [
+     "ZORRA",
+     "no poner excusas"
+    ],
+    [
+     "TORTUGA",
+     "despacio y sin parar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *moraleja* es la enseñanza.",
+    "La *zorra*: no poner excusas.",
+    "La *tortuga*: despacio y sin parar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

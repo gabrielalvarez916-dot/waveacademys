@@ -133,7 +133,7 @@ def lamina(titulo, lineas, dibujo="hornero", subrayar=(), pie=None, marcar_titul
         for (r, pal) in subrayar:
             if r == i and pal.upper() in ln.upper():
                 k = ln.upper().index(pal.upper()); x1 = x + _ancho(fig, ax, ln.upper()[:k]); x2 = x + _ancho(fig, ax, ln.upper()[:k + len(pal)])
-                ax.add_patch(Rectangle((x1 - .04, y - .2), x2 - x1 + .08, .4, color="#ffe36b", zorder=2))
+                ax.add_patch(Rectangle((x1 - .04, y - .2), x2 - x1 + .08, .4, color="#ffe36b", zorder=2, gid="resalte"))
     return png(fig)
 
 
@@ -204,4 +204,76 @@ def estrofa(versos, rimas=(), titulo=None):
             ax.text(x1, y, v[k:], ha="left", va="center", fontsize=12, color=CORAL, zorder=3, **F)
         else:
             ax.text(x, y, v, ha="left", va="center", fontsize=12, color=OSC, zorder=3, **F)
+    return png(fig)
+
+
+# ---------------- misión 12 (fábulas) y misión 13 (cartas y mensajes) ----------------
+def _zorra(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x - .1 * s, y - .05 * s), .8 * s, .45 * s, color="#e8843a", ec=OSC, lw=1.4))
+    ax.add_patch(Polygon([(x + .25 * s, y + .05 * s), (x + .7 * s, y + .15 * s), (x + .3 * s, y + .4 * s)], closed=True, color="#e8843a", ec=OSC, lw=1.2))
+    for dx in (.28, .42): ax.add_patch(Polygon([(x + dx * s, y + .32 * s), (x + (dx + .1) * s, y + .62 * s), (x + (dx + .14) * s, y + .3 * s)], closed=True, color="#e8843a", ec=OSC, lw=1))
+    ax.add_patch(Circle((x + .4 * s, y + .22 * s), .035 * s, color=OSC))
+    ax.add_patch(Ellipse((x - .62 * s, y + .05 * s), .5 * s, .22 * s, angle=25, color="#e8843a", ec=OSC, lw=1.2)); ax.add_patch(Circle((x - .83 * s, y + .15 * s), .07 * s, color="white"))
+    for dx in (-.3, .1): ax.plot([x + dx * s, x + dx * s], [y - .25 * s, y - .5 * s], color=OSC, lw=2.5)
+
+
+def _uvas(ax, x, y, s=1.0):
+    for (dx, dy) in ((-.15, .2), (0, .2), (.15, .2), (-.08, .05), (.08, .05), (0, -.1)):
+        ax.add_patch(Circle((x + dx * s, y + dy * s), .09 * s, color="#8e5bb5", ec=OSC, lw=1))
+    ax.plot([x, x + .05 * s], [y + .3 * s, y + .45 * s], color="#6b4a2a", lw=2.5); ax.add_patch(Ellipse((x + .18 * s, y + .4 * s), .25 * s, .12 * s, color=VERDE))
+
+
+def _liebre(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x, y - .05 * s), .75 * s, .45 * s, color="#c9b8a3", ec=OSC, lw=1.4))
+    ax.add_patch(Circle((x + .38 * s, y + .18 * s), .18 * s, color="#c9b8a3", ec=OSC, lw=1.2))
+    for dx in (.3, .44): ax.add_patch(Ellipse((x + dx * s, y + .55 * s), .1 * s, .45 * s, color="#c9b8a3", ec=OSC, lw=1))
+    ax.add_patch(Circle((x + .43 * s, y + .22 * s), .03 * s, color=OSC)); ax.add_patch(Circle((x - .38 * s, y), .09 * s, color="white", ec=OSC, lw=1))
+
+
+def _tortuga(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x, y), .8 * s, .5 * s, color="#5fa463", ec=OSC, lw=1.4))
+    ax.add_patch(Circle((x + .5 * s, y - .02 * s), .14 * s, color="#a8d08d", ec=OSC, lw=1.2)); ax.add_patch(Circle((x + .54 * s, y + .02 * s), .025 * s, color=OSC))
+    for dx in (-.25, .2): ax.add_patch(Ellipse((x + dx * s, y - .25 * s), .16 * s, .12 * s, color="#a8d08d", ec=OSC, lw=1))
+    for (dx, dy) in ((-.15, .05), (.12, .05), (0, -.08)): ax.add_patch(Circle((x + dx * s, y + dy * s), .08 * s, color="none", ec="#2f6a33", lw=1.2))
+
+
+OBJ2.update({"zorra": _zorra, "uvas": _uvas, "liebre": _liebre, "tortuga": _tortuga})
+
+
+def carta(partes, marcar=False, titulo=None):
+    """Carta en una hoja. partes: [(rotulo, [renglones])] en orden: LUGAR Y FECHA, SALUDO, CUERPO, DESPEDIDA, FIRMA.
+    marcar=True: muestra el rótulo de cada parte al costado (con flecha)."""
+    lineas = sum(len(r) for _, r in partes) + len(partes) - 1
+    H = .5 * lineas + (1.4 if titulo else .9)
+    fig, ax = lienzo(6.8, H * .72, 10, H, 0, 0)
+    ax.add_patch(FancyBboxPatch((.15, .15), 6.9 if marcar else 9.7, H - .3, boxstyle="round,pad=0.05", fc="#fffdf6", ec=OSC, lw=1.6))
+    y = H - (.95 if titulo else .55)
+    if titulo: ax.text(3.6 if marcar else 5, H - .45, titulo.upper(), ha="center", va="center", fontsize=13, color=TEAL, **F)
+    cols = [TEAL, CORAL, AZUL, LILA, VERDE]
+    for k, (rot, rs) in enumerate(partes):
+        derecha = rot.upper() in ("LUGAR Y FECHA", "FIRMA")
+        y0 = y
+        for r in rs:
+            ax.text(6.7 if (marcar and derecha) else (9.4 if derecha else .5), y, r.upper(), ha="right" if derecha else "left", va="center", fontsize=10.5, color=OSC, **F); y -= .5
+        if marcar:
+            ym = (y0 + y + .5) / 2; c = cols[k % len(cols)]
+            ax.annotate("", xy=(7.0, ym), xytext=(7.45, ym), arrowprops=dict(arrowstyle="->", color=c, lw=2))
+            ax.text(7.5, ym, rot.upper(), ha="left", va="center", fontsize=10, color=c, **F)
+        y -= .5
+    return png(fig)
+
+
+def correo(para, asunto, cuerpo):
+    """Pantalla de correo electrónico: PARA, ASUNTO, mensaje y botón ENVIAR."""
+    H = 2.6 + .45 * len(cuerpo)
+    fig, ax = lienzo(6.8, H * .72, 10, H, 0, 0)
+    ax.add_patch(FancyBboxPatch((.15, .15), 9.7, H - .3, boxstyle="round,pad=0.05", fc="white", ec=AZUL, lw=1.8))
+    ax.add_patch(Rectangle((.2, H - .75), 9.6, .55, color="#dbe8fb"))
+    ax.text(.5, H - .48, "MENSAJE NUEVO", ha="left", va="center", fontsize=11, color=AZUL, **F)
+    for i, (k, v) in enumerate((("PARA:", para), ("ASUNTO:", asunto))):
+        yy = H - 1.15 - i * .55
+        ax.text(.5, yy, k, ha="left", va="center", fontsize=10.5, color=CORAL, **F); ax.text(2.2, yy, v.upper(), ha="left", va="center", fontsize=10.5, color=OSC, **F)
+        ax.plot([.4, 9.6], [yy - .25, yy - .25], color="#c5cbd6", lw=1)
+    for j, ln in enumerate(cuerpo): ax.text(.5, H - 2.35 - j * .45, ln.upper(), ha="left", va="center", fontsize=10.5, color=OSC, **F)
+    ax.add_patch(FancyBboxPatch((7.9, .4), 1.6, .5, boxstyle="round,pad=0.05", fc=AZUL, ec=AZUL)); ax.text(8.7, .65, "ENVIAR", ha="center", va="center", fontsize=10, color="white", **F)
     return png(fig)

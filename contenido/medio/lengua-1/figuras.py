@@ -12,21 +12,21 @@ COLS = [TEAL, CORAL, AZUL, LILA, VERDE, AMBAR]
 
 
 def nombres(lista, resaltar_inicial=False, cols=3):
-    """Carteles de nombres (como los del aula). resaltar_inicial: la primera letra en otro color."""
+    """Carteles de nombres (como los del aula). resaltar_inicial: la primera letra en otro color.
+    El cartel se ensancha solo si hay palabras largas, para que ninguna quede afuera del recuadro."""
+    W = max(2.6, .29 * max(len(str(x)) for x in lista) + .7); P = W + .3
+    if W > 2.6: cols = min(cols, max(2, int(8.8 // P)))  # si los carteles son anchos, van menos por fila (así no se achica todo el dibujo)
     n = len(lista); filas = (n + cols - 1) // cols; c = min(n, cols)
-    fig, ax = lienzo(2.9 * c, 1.35 * filas, 2.9 * c, 1.35 * filas, 0, 0)
+    fig, ax = lienzo(P * c, 1.35 * filas, P * c, 1.35 * filas, 0, 0)
     for i, nom in enumerate(lista):
-        x, y = 2.9 * (i % cols) + .15, 1.35 * (filas - 1 - i // cols) + .15
-        ax.add_patch(FancyBboxPatch((x, y), 2.6, 1.05, boxstyle="round,pad=0.02,rounding_size=0.15", color="white", ec=COLS[i % len(COLS)], lw=2.4))
+        x, y = P * (i % cols) + .15, 1.35 * (filas - 1 - i // cols) + .15
+        ax.add_patch(FancyBboxPatch((x, y), W, 1.05, boxstyle="round,pad=0.02,rounding_size=0.15", color="white", ec=COLS[i % len(COLS)], lw=2.4))
         if resaltar_inicial:
-            ax.text(x + 1.3, y + .52, nom.upper(), ha="center", va="center", fontsize=20, color="white", **F)  # medida
-            t0 = nom.upper()
-            ax.texts[-1].remove()
-            w = .22 * len(t0); x0 = x + 1.3 - w / 2
+            t0 = nom.upper(); w = .22 * len(t0); x0 = x + W / 2 - w / 2
             ax.text(x0, y + .52, t0[0], ha="left", va="center", fontsize=20, color=CORAL, **F)
             ax.text(x0 + .26, y + .52, t0[1:], ha="left", va="center", fontsize=20, color=OSC, **F)
         else:
-            ax.text(x + 1.3, y + .52, nom.upper(), ha="center", va="center", fontsize=20, color=OSC, **F)
+            ax.text(x + W / 2, y + .52, nom.upper(), ha="center", va="center", fontsize=20, color=OSC, **F)
     return png(fig)
 
 
@@ -79,5 +79,5 @@ def tiras(textos, numeros=True, ocultar_num=False, cols=2):
         x, y = 4.4 * (i % cols) + .15, 1.7 * (filas - 1 - i // cols) + .15
         ax.add_patch(FancyBboxPatch((x, y), 4.1, 1.4, boxstyle="round,pad=0.02,rounding_size=0.15", color="#fffdf2", ec=COLS[i % len(COLS)], lw=2.2))
         if numeros: ax.text(x + .35, y + 1.05, "_" if ocultar_num else str(i + 1), ha="center", va="center", fontsize=15, color=CORAL, **F)
-        ax.text(x + 2.15, y + .62, t.upper(), ha="center", va="center", fontsize=13, color=OSC, wrap=True, **F)
+        ax.text(x + 2.05, y + .62, t.upper(), ha="center", va="center", fontsize=13, color=OSC, **F)
     return png(fig)
