@@ -53,6 +53,29 @@ def _ajustar_textos(fig):
             if not entra(t.get_window_extent(r)):  # último recurso: centrar en el recuadro
                 t.set_horizontalalignment('center'); inv = ax.transData.inverted(); t.set_x(inv.transform(((c.x0 + c.x1) / 2, 0))[0])
 
+    # REGLA: dos textos nunca se pisan (en cualquier parte del dibujo). Si se pisan, se achica el más largo hasta que no se toquen.
+    for ax in fig.axes:
+        # no cuentan: letras sueltas (palabras armadas letra por letra) ni la letra cursiva (sus colas bajan al renglón de abajo a propósito)
+        ts = [t for t in ax.texts if len(t.get_text().strip()) > 2 and t.get_visible() and 'playwrite' not in t.get_fontname().lower()]
+        for _ in range(60):
+            choque = None
+            for i in range(len(ts)):
+                a = ts[i].get_window_extent(r)
+                for j in range(i + 1, len(ts)):
+                    b = ts[j].get_window_extent(r)
+                    ix, iy = min(a.x1, b.x1) - max(a.x0, b.x0), min(a.y1, b.y1) - max(a.y0, b.y0)
+                    if ix > 2 and iy > min(a.height, b.height) * .25:
+                        # textos encimados a propósito (mismo lugar, ej. sombra o letra resaltada) no cuentan
+                        if abs(a.x0 - b.x0) < 2 and abs(a.y0 - b.y0) < 2: continue
+                        if (a.x0 >= b.x0 and a.x1 <= b.x1 and a.y0 >= b.y0 and a.y1 <= b.y1) or (b.x0 >= a.x0 and b.x1 <= a.x1 and b.y0 >= a.y0 and b.y1 <= a.y1): continue
+                        choque = (ts[i], ts[j]); break
+                if choque: break
+            if not choque: break
+            t1, t2 = choque; t = t1 if len(t1.get_text()) >= len(t2.get_text()) else t2
+            if t.get_fontsize() <= 6: t = t2 if t is t1 else t1
+            if t.get_fontsize() <= 6: break
+            _AVISOS.append('pisa: ' + t.get_text()); t.set_fontsize(t.get_fontsize() - .5)
+
 
 _AVISOS = []
 
