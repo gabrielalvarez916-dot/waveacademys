@@ -12,8 +12,8 @@
     if (CACHE[r.id] != null) return CACHE[r.id];
     var txt = 'Falló (no pude ver el paso).';
     try {
-      var j = await (await fetch('https://api.github.com/repos/' + REPO + '/actions/runs/' + r.id + '/jobs')).json();
-      var paso = ''; (j.jobs || []).forEach(function (jb) { (jb.steps || []).forEach(function (st) { if (!paso && st.conclusion === 'failure') paso = st.name; }); });
+      var j = await Wave.sb.functions.invoke('enviar-mision', { body: { accion: 'jobs', run_id: String(r.id) } });
+      var paso = (j.data && j.data.paso) || '';
       if (paso) txt = 'Falló en el paso «' + paso + '». ' + (AYUDA[paso] || '');
       CACHE[r.id] = txt;
     } catch (e) { }
@@ -61,10 +61,10 @@
     var sb = Wave.sb, h = '';
     var runs = [], err = '';
     try {
-      var r = await fetch('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=30&t=' + Date.now(), { cache: 'no-store' });
-      if (!r.ok) throw new Error('GitHub ' + r.status);
-      runs = (await r.json()).workflow_runs || [];
-    } catch (e) { err = 'No pude leer GitHub (' + e.message + '). Si dice 403, esperá unos minutos.'; }
+      var r = await Wave.sb.functions.invoke('enviar-mision', { body: { accion: 'runs' } });
+      if (r.error || !r.data || r.data.error) throw new Error((r.data && r.data.error) || 'sin respuesta');
+      runs = r.data.runs || [];
+    } catch (e) { err = 'No pude leer GitHub (' + e.message + '). Probá de nuevo en un momento.'; }
     var tq = await sb.from('topics').select('id,title,position,is_published,updated_at,subjects(name)').order('updated_at', { ascending: false }).limit(24);
     var tops = tq.data || [];
     var ids = tops.map(function (t) { return t.id; });
@@ -77,14 +77,14 @@
     var canc = runs.filter(function (r) { return r.conclusion === 'cancelled' && estadoRun(r, runs)[1] === 'rojo'; }).length;
     h += '<div class="est-res">' + chip(runs.filter(function (r) { return r.status === 'in_progress'; }).length + ' en curso', 'amar') + chip(runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length + ' en espera', 'gris') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<button type="button" class="est-btn" id="est-act">Actualizar ahora</button><small> Actualiza solo cada 75 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
     var ahora = runs.filter(function (r) { return r.status === 'in_progress'; }), espera = runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; });
-    function li(r) { return '<li><b>' + esc(tipo(r.name)) + '</b> · ' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 80)) + ' <small>(desde ' + hace(r.created_at) + ')</small></li>'; }
+    function li(r) { return '<li><b>' + esc(tipo(r.name)) + '</b> · ' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 80)) + ' <small>(desde ' + hace(r.run_started_at || r.created_at) + ')</small></li>'; }
     h = '<div class="est-ahora"><div><h3>⚙️ Haciéndose ahora (' + ahora.length + ')</h3>' + (ahora.length ? '<ul>' + ahora.map(li).join('') + '</ul>' : '<p>Nada en curso.</p>') + '</div><div><h3>⏳ En espera (' + espera.length + ')</h3>' + (espera.length ? '<ul>' + espera.map(li).join('') + '</ul>' : '<p>Nada esperando.</p>') + '</div></div>' + h;
     if (err) h += '<p class="est-err">' + esc(err) + '</p>';
     var MOT = {};
     for (var i = 0; i < runs.length; i++) { if (runs[i].status === 'completed' && runs[i].conclusion !== 'success') MOT[runs[i].id] = await motivo(runs[i], runs); }
     h = cajaEnviar(runs) + h;
     h += '<h3>Lo que se mandó a GitHub</h3><table class="est-t"><thead><tr><th>Qué</th><th>Estado</th><th>Cuándo</th><th>Cambio</th><th>Motivo</th><th></th></tr></thead><tbody>' +
-      runs.map(function (r) { var e = estadoRun(r, runs); return '<tr><td>' + esc(tipo(r.name)) + '</td><td>' + chip(e[0], e[1]) + '</td><td>' + hace(r.created_at) + '</td><td>' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 90)) + '</td><td>' + esc(MOT[r.id] || '') + '</td><td>' + (r.status === 'completed' && e[1] !== 'verde' ? '<button type="button" class="est-btn" data-run="' + r.id + '">Reenviar</button>' : '') + '</td></tr>'; }).join('') + '</tbody></table>';
+      runs.map(function (r) { var e = estadoRun(r, runs); return '<tr><td>' + esc(tipo(r.name)) + '</td><td>' + chip(e[0], e[1]) + '</td><td>' + hace(r.run_started_at || r.created_at) + '</td><td>' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 90)) + '</td><td>' + esc(MOT[r.id] || '') + '</td><td>' + (r.status === 'completed' && e[1] !== 'verde' ? '<button type="button" class="est-btn" data-run="' + r.id + '">Reenviar</button>' : '') + '</td></tr>'; }).join('') + '</tbody></table>';
     h += '<h3>Misiones (lo último que se tocó en la base)</h3><table class="est-t"><thead><tr><th>Materia</th><th>Misión</th><th>Examen</th><th>PDFs</th><th>Publicada</th><th>Actualizada</th></tr></thead><tbody>' +
       tops.map(function (t) {
         var e = ex.filter(function (x) { return x.topic_id === t.id; }), np = pdfs[t.id] || 0;

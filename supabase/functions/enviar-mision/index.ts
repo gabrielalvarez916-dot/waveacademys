@@ -29,7 +29,7 @@ Deno.serve(async (req) => {
     const token = Deno.env.get("GITHUB_TOKEN_REENVIAR");
     if (!token) return json({ error: "Falta guardar el token de GitHub (GITHUB_TOKEN_REENVIAR)" }, 412);
     const H = { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
-    const { accion, archivos } = await req.json();
+    const { accion, archivos, run_id } = await req.json();
 
     if (accion === "enviar") {
       const lista: string[] = (Array.isArray(archivos) ? archivos : []).map(String);
@@ -52,6 +52,22 @@ Deno.serve(async (req) => {
     }
 
     // pendientes
+    if (accion === "runs") {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=30`, { headers: H });
+      if (!r.ok) return json({ error: "GitHub " + r.status }, 502);
+      const d = await r.json();
+      return json({ runs: (d.workflow_runs || []).map((x: any) => ({ id: x.id, name: x.name, status: x.status, conclusion: x.conclusion, created_at: x.created_at, run_started_at: x.run_started_at, run_number: x.run_number, run_attempt: x.run_attempt, head_commit: { message: String(x.head_commit?.message || "").split("\n")[0].slice(0, 120) } })) });
+    }
+    if (accion === "jobs") {
+      if (!/^\d+$/.test(String(run_id))) return json({ error: "Corrida inválida" }, 400);
+      const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs/${run_id}/jobs`, { headers: H });
+      if (!r.ok) return json({ error: "GitHub " + r.status }, 502);
+      const d = await r.json();
+      let paso = "";
+      for (const jb of d.jobs || []) for (const st of jb.steps || []) if (!paso && st.conclusion === "failure") paso = st.name;
+      return json({ paso });
+    }
+
     const tree = await (await fetch(`https://api.github.com/repos/${REPO}/git/trees/main?recursive=1`, { headers: H })).json();
     const files: { path: string; sha: string }[] = (tree.tree || []).filter((t: any) => t.type === "blob" && RUTA.test(t.path));
     const faltan = files.filter((f) => !CACHE.has(f.sha));
