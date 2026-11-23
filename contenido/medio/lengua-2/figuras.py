@@ -81,3 +81,71 @@ def cursiva(renglones, imprenta=None, repasar=False):
             ax.text(.3, y, imprenta[i].upper(), ha="left", va="center", fontsize=15, color=TEAL, **F); x0 = 3.3
         ax.text(x0, y - .3, txt, ha="left", va="baseline", fontsize=30, color="#b9c2d8" if repasar else "#1d2a5a", fontproperties=_FP)
     return png(fig)
+
+
+# ---------------- textos informativos (misión 7): el hornero y su nido ----------------
+def _hornero(ax, x, y, s=1.0, c="#c98a4b", panza="#f3d7b0", cola="#a8703a"):
+    ax.add_patch(Ellipse((x, y), .9 * s, .55 * s, color=c, ec=OSC, lw=1.4))
+    ax.add_patch(Ellipse((x, y - .08 * s), .55 * s, .3 * s, color=panza))
+    ax.add_patch(Circle((x + .45 * s, y + .22 * s), .2 * s, color=c, ec=OSC, lw=1.2))
+    ax.add_patch(Circle((x + .5 * s, y + .27 * s), .04 * s, color=OSC))
+    ax.add_patch(Polygon([(x + .62 * s, y + .25 * s), (x + .85 * s, y + .2 * s), (x + .62 * s, y + .16 * s)], closed=True, color=AMBAR, ec=OSC, lw=1))
+    ax.add_patch(Polygon([(x - .4 * s, y + .05 * s), (x - .8 * s, y + .2 * s), (x - .75 * s, y - .05 * s)], closed=True, color=cola, ec=OSC, lw=1))
+    for dx in (-.08, .1): ax.plot([x + dx * s, x + dx * s], [y - .27 * s, y - .5 * s], color=OSC, lw=2)
+
+
+def _nido(ax, x, y, s=1.0):
+    ax.add_patch(Ellipse((x, y), 1.3 * s, 1.0 * s, color="#b07a46", ec=OSC, lw=1.6))
+    ax.add_patch(Ellipse((x + .2 * s, y - .05 * s), .32 * s, .42 * s, color="#4a2f1a"))
+    ax.add_patch(Rectangle((x - .9 * s, y - .58 * s), 1.8 * s, .1 * s, color="#7a5a3a"))
+
+
+def _flor(ax, x, y, s=1.0):
+    import math
+    for k in range(5):
+        a = k * 2 * math.pi / 5; ax.add_patch(Circle((x + .2 * s * math.cos(a), y + .2 * s * math.sin(a)), .14 * s, color="#f7b6d2", ec=CORAL, lw=1))
+    ax.add_patch(Circle((x, y), .12 * s, color=AMBAR)); ax.plot([x, x], [y - .15 * s, y - .7 * s], color=VERDE, lw=2.5)
+
+
+OBJ2.update({"paloma": lambda ax, x, y, s=1.0: _hornero(ax, x, y, s, "#9aa3b5", "#c9d0dc", "#7d8698"), "hornero": _hornero, "nido": _nido, "flor": _flor})
+
+
+def _ancho(fig, ax, txt):
+    """Ancho en unidades del dibujo de un texto en negrita tamaño 11 (para resaltar palabras exactas)."""
+    if not txt: return 0
+    t = ax.text(0, 0, txt.replace(" ", "\u00a0"), fontsize=11, **F); r = fig.canvas.get_renderer(); bb = t.get_window_extent(r); t.remove()
+    inv = ax.transData.inverted(); return inv.transform((bb.x1, 0))[0] - inv.transform((bb.x0, 0))[0]
+
+
+def lamina(titulo, lineas, dibujo="hornero", subrayar=(), pie=None, marcar_titulo=False):
+    """Página de un texto informativo: título arriba, dibujo con su pie a la izquierda y renglones de texto a la derecha.
+    subrayar: [(renglón, palabra)] se resalta esa palabra en amarillo. marcar_titulo: recuadro rojo en el título."""
+    W = 10.0; H = max(3.6, 1.7 + .62 * len(lineas))
+    fig, ax = lienzo(6.8, H * .68, W, H, 0, 0)
+    ax.add_patch(FancyBboxPatch((.15, .15), W - .3, H - .3, boxstyle="round,pad=0.05", fc="white", ec=OSC, lw=1.6))
+    ax.text(W / 2, H - .55, titulo.upper(), ha="center", va="center", fontsize=17, color=TEAL, zorder=3, **F)
+    if marcar_titulo: ax.add_patch(FancyBboxPatch((2.0, H - .95), W - 4, .8, boxstyle="round,pad=0.05", fc="none", ec=CORAL, lw=2.5, zorder=3))
+    OBJ2[dibujo](ax, 1.5, H - 2.0, 1.0)
+    if pie: ax.text(1.5, H - 2.85, pie.upper(), ha="center", va="center", fontsize=8, color=OSC, style="italic", zorder=3, **F)
+    for i, ln in enumerate(lineas):
+        y = H - 1.4 - i * .62; x = 3.2
+        ax.text(x, y, ln.upper(), ha="left", va="center", fontsize=11, color=OSC, zorder=3, **F)
+        for (r, pal) in subrayar:
+            if r == i and pal.upper() in ln.upper():
+                k = ln.upper().index(pal.upper()); x1 = x + _ancho(fig, ax, ln.upper()[:k]); x2 = x + _ancho(fig, ax, ln.upper()[:k + len(pal)])
+                ax.add_patch(Rectangle((x1 - .04, y - .2), x2 - x1 + .08, .4, color="#ffe36b", zorder=2))
+    return png(fig)
+
+
+def ficha(campos, titulo="FICHA"):
+    """Ficha para responder por escrito: [("¿QUÉ ES?", "UN PÁJARO"), ("¿DÓNDE VIVE?", "")]. Vacío = renglón para completar."""
+    n = len(campos); H = 1.0 + .9 * n
+    fig, ax = lienzo(6.8, H * .7, 10, H, 0, 0)
+    ax.add_patch(FancyBboxPatch((.15, .15), 9.7, H - .3, boxstyle="round,pad=0.05", fc="#f6fbfb", ec=TEAL, lw=1.8))
+    ax.text(5, H - .45, titulo.upper(), ha="center", va="center", fontsize=15, color=TEAL, **F)
+    for i, (p, r) in enumerate(campos):
+        y = H - 1.2 - i * .9
+        ax.text(.5, y, p.upper(), ha="left", va="center", fontsize=11, color=CORAL, **F)
+        ax.plot([5.4, 9.5], [y - .22, y - .22], color="#9aa", lw=1.2)
+        if r: ax.text(5.5, y, r.upper(), ha="left", va="center", fontsize=11, color=OSC, **F)
+    return png(fig)

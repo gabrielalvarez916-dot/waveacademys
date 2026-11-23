@@ -1,0 +1,162 @@
+{
+ "slug": "medio-leng2-m6-n4",
+ "step_id": "27fd048c-39e5-423d-ac37-91f73adb9572",
+ "materia": "Lengua 2",
+ "titulo": "Clasificar sustantivos",
+ "sub": "Lengua 2 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué es PATO: persona, animal, cosa o lugar?",
+   "segundos": 8,
+   "respuesta": "¡Un animal!",
+   "emoji": "🦆",
+   "titulo": "CLASIFICAR",
+   "sub": "sustantivos",
+   "voz": [
+    "Desafío: ¿pato es persona, animal, cosa o lugar?",
+    "¡Un *animal*!",
+    "Hoy: *clasificar sustantivos*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "PERSONAS",
+     "emoji": "👩"
+    },
+    {
+     "cab": "ANIMALES",
+     "emoji": "🐾"
+    },
+    {
+     "cab": "COSAS",
+     "emoji": "📦"
+    },
+    {
+     "cab": "LUGARES",
+     "emoji": "📍"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "NENE",
+     "caja": 0
+    },
+    {
+     "txt": "GATO",
+     "caja": 1
+    },
+    {
+     "txt": "VASO",
+     "caja": 2
+    },
+    {
+     "txt": "PLAZA",
+     "caja": 3
+    },
+    {
+     "txt": "MAMÁ",
+     "caja": 0
+    },
+    {
+     "txt": "SILLA",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "Sofi arma cuatro cajas.",
+    "Nene y mamá van a *personas*.",
+    "Gato va a *animales*.",
+    "Vaso y silla van a *cosas*.",
+    "Plaza va a *lugares*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "TARJETAS DE SOFI",
+   "items": [
+    {
+     "frente": "ESCUELA",
+     "dorso": "LUGAR",
+     "emoji": "🏫"
+    },
+    {
+     "frente": "Pancho",
+     "dorso": "PROPIO",
+     "emoji": "🐶"
+    },
+    {
+     "frente": "pelota",
+     "dorso": "COSA · COMÚN",
+     "emoji": "⚽"
+    }
+   ],
+   "voz": [
+    "Escuela: es un *lugar*.",
+    "Pancho: es un sustantivo *propio*.",
+    "Pelota: es una *cosa*, y es común."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué sustantivo es?",
+   "pistas": [
+    "Es un lugar",
+    "Tiene hamacas y tobogán",
+    "Sofi fue hoy"
+   ],
+   "respuesta": "PLAZA",
+   "voz": [
+    "Adivinanza: ¿qué sustantivo es?",
+    "Pista uno: es un *lugar*.",
+    "Pista dos: tiene hamacas y tobogán.",
+    "Pista tres: Sofi fue hoy.",
+    "¡La *plaza*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "PLAZA en COSAS",
+     "bien": "PLAZA en LUGARES"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Plaza no es una cosa: va en *lugares*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUATRO CAJAS",
+     "personas, animales, cosas, lugares"
+    ],
+    [
+     "DOS CAJAS",
+     "comunes y propios"
+    ],
+    [
+     "PREGUNTA",
+     "¿qué nombra?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cuatro cajas: personas, animales, cosas y lugares.",
+    "Dos cajas más: *comunes* y *propios*.",
+    "Siempre preguntamos: ¿qué nombra?",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

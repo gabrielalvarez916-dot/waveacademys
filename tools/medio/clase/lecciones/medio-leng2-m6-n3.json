@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng2-m6-n3",
+ "step_id": "640a6d88-1179-4ef7-8962-dc9e41d4f5b6",
+ "materia": "Lengua 2",
+ "titulo": "Buscar sustantivos en un cuento",
+ "sub": "Lengua 2 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historieta",
+   "titulo": "EL CUENTO DE SOFI",
+   "vinetas": [
+    {
+     "emojis": [
+      "🐱",
+      "🏠"
+     ],
+     "txt": "Un gato vivía en una casa."
+    },
+    {
+     "emojis": [
+      "🐱",
+      "🐭"
+     ],
+     "txt": "Un día vio un ratón."
+    },
+    {
+     "emojis": [
+      "🐭",
+      "👟"
+     ],
+     "txt": "El ratón se escondió en un zapato."
+    }
+   ],
+   "voz": [
+    "Un gato vivía en una casa.",
+    "Un día vio un ratón.",
+    "El ratón se escondió en un zapato. Hoy: *buscar sustantivos*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "Un gato vivía en una casa",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "ANIMAL"
+    },
+    {
+     "desde": 5,
+     "hasta": 5,
+     "etiqueta": "LUGAR"
+    }
+   ],
+   "voz": [
+    "Leemos despacio: un gato vivía en una casa.",
+    "*Gato* nombra un animal: es sustantivo.",
+    "*Casa* nombra un lugar: ¡también es sustantivo!"
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "El ratón se escondió en un zapato",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "ANIMAL"
+    },
+    {
+     "desde": 6,
+     "hasta": 6,
+     "etiqueta": "COSA"
+    }
+   ],
+   "voz": [
+    "Otra oración: el ratón se escondió en un zapato.",
+    "*Ratón* nombra un animal.",
+    "*Zapato* nombra una cosa."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNA PISTA",
+   "texto": "Antes del sustantivo va EL, LA, UN o UNA",
+   "emoji": "🔎",
+   "voz": [
+    "Pista: antes suele ir *el*, *la*, *un* o *una*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "La nena come una manzana. ¿Cuál es sustantivo?",
+   "opciones": [
+    "COME",
+    "UNA",
+    "MANZANA",
+    "LA"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos: la nena come una manzana.",
+    "¿Cuál nombra una fruta?",
+    "¡*Manzana*! Es un sustantivo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "despacio"
+    ],
+    [
+     "BUSCAR",
+     "palabras que nombran"
+    ],
+    [
+     "PISTA",
+     "el, la, un, una"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos el cuento *despacio*.",
+    "Buscamos las palabras que *nombran*.",
+    "La pista: antes va *el*, *la*, *un* o *una*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

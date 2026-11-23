@@ -1,0 +1,115 @@
+{
+ "slug": "medio-leng2-m7-n2",
+ "step_id": "b10bb7f5-9e77-4eaa-8638-b8e832475c35",
+ "materia": "Lengua 2",
+ "titulo": "Leer un texto informativo",
+ "sub": "Lengua 2 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📚",
+   "lineas": [
+    "Sofi tiene dos textos.",
+    "Uno es un cuento.",
+    "El otro da datos."
+   ],
+   "titulo": "LEER",
+   "sub": "un texto informativo",
+   "voz": [
+    "Sofi tiene *dos textos*.",
+    "Uno es un *cuento*.",
+    "El otro da *datos* reales.",
+    "Hoy: *leer un texto informativo*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CUENTO O INFORMATIVO?",
+   "a": {
+    "txt": "CUENTO",
+    "emoji": "🧚",
+    "datos": [
+     "inventa una historia"
+    ]
+   },
+   "b": {
+    "txt": "INFORMATIVO",
+    "emoji": "🐦",
+    "datos": [
+     "da datos reales"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Los dos sirven para cosas distintas!",
+   "voz": [
+    "Comparamos dos textos.",
+    "El *cuento* inventa una historia.",
+    "El *informativo* da datos reales.",
+    "¡Los dos sirven para cosas distintas!"
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "El nido del hornero parece un horno de barro",
+   "emoji": "🏠",
+   "voz": [
+    "¿Sabías qué?",
+    "¡El nido del hornero parece un *horno* de barro!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El hornero habla con los gatos",
+   "emoji": "🐦",
+   "verdadero": false,
+   "explicacion": "Eso es de cuento",
+   "voz": [
+    "¿Verdadero o falso? El hornero habla con los gatos.",
+    "Pensá: ¿pasa de verdad?",
+    "¡*Falso*! Eso es de cuento, no es un dato."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿PASA DE VERDAD?",
+   "texto": "Si es real, es un dato",
+   "emoji": "✅",
+   "voz": [
+    "Truco: si pasa de verdad, es un *dato*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUENTO",
+     "historia inventada"
+    ],
+    [
+     "INFORMATIVO",
+     "datos reales"
+    ],
+    [
+     "DATO",
+     "algo que es verdad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *cuento* inventa una historia.",
+    "El *informativo* da datos reales.",
+    "Un *dato* es algo que es verdad.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

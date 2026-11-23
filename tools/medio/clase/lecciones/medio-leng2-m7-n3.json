@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng2-m7-n3",
+ "step_id": "af02cf02-a6c5-4f61-bbb6-64ffebe524e4",
+ "materia": "Lengua 2",
+ "titulo": "Subrayar datos importantes",
+ "sub": "Lengua 2 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué palabra es la más importante? HACE SU NIDO CON BARRO",
+   "segundos": 8,
+   "respuesta": "BARRO",
+   "emoji": "🖍️",
+   "titulo": "SUBRAYAR",
+   "sub": "datos importantes",
+   "voz": [
+    "Desafío: ¿cuál es la palabra más importante?",
+    "¡*Barro*! Dice con qué hace el nido.",
+    "Hoy: *subrayar datos importantes*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "EL HORNERO",
+   "lineas": [
+    {
+     "txt": "Es un pájaro",
+     "marca": "subraya"
+    },
+    {
+     "txt": "Hace su nido con barro",
+     "marca": "subraya",
+     "color": "coral"
+    },
+    {
+     "txt": "Come bichitos",
+     "marca": "subraya",
+     "color": "verde"
+    }
+   ],
+   "voz": [
+    "Subrayamos: es un *pájaro*.",
+    "Hace su nido con *barro*.",
+    "Come *bichitos*."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "PALABRAS CLAVE",
+   "items": [
+    "PÁJARO",
+    "BARRO",
+    "HORNO",
+    "BICHITOS"
+   ],
+   "falta": 2,
+   "regla": "Las palabras subrayadas",
+   "voz": [
+    "Leemos solo lo subrayado: pájaro, barro…",
+    "¿Qué palabra falta?",
+    "¡*Horno*! Con estas palabras recordamos todo."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "¿LA SUBRAYO?",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "BICHITOS",
+     "r": "SÍ"
+    },
+    {
+     "p": "EL",
+     "r": "NO"
+    },
+    {
+     "p": "BARRO",
+     "r": "SÍ"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿La subrayo o no?",
+    "Bichitos: *sí*, es importante.",
+    "El: *no*, no dice nada solo.",
+    "Barro: *sí*, es clave."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POCO Y BIEN",
+   "texto": "Subrayá pocas palabras, las más importantes",
+   "emoji": "🖍️",
+   "voz": [
+    "Truco: subrayá *pocas* palabras, las más importantes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUBRAYAR",
+     "marcar lo importante"
+    ],
+    [
+     "POCAS",
+     "palabras clave"
+    ],
+    [
+     "REPASAR",
+     "leer lo subrayado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Subrayar* es marcar lo importante.",
+    "Marcamos *pocas* palabras clave.",
+    "Después *leemos* lo subrayado.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

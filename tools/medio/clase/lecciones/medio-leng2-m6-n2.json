@@ -1,0 +1,145 @@
+{
+ "slug": "medio-leng2-m6-n2",
+ "step_id": "92d31ea5-2829-46a3-a972-d6f029fa51d4",
+ "materia": "Lengua 2",
+ "titulo": "Sustantivos propios y comunes",
+ "sub": "Lengua 2 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Tengo un perro nuevo! 🐶"
+    },
+    {
+     "yo": true,
+     "txt": "¿Cómo se llama?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Se llama Pancho!"
+    }
+   ],
+   "titulo": "PROPIOS",
+   "sub": "y comunes",
+   "voz": [
+    "Tomi le cuenta a Sofi: ¡tengo un perro nuevo!",
+    "Sofi pregunta: ¿cómo se llama?",
+    "¡Se llama *Pancho*!",
+    "Hoy: *sustantivos propios y comunes*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PERRO",
+    "texto": "cualquier perro",
+    "emoji": "🐕"
+   },
+   "b": {
+    "cab": "Pancho",
+    "texto": "un perro solo",
+    "emoji": "🐶"
+   },
+   "signo": "≠",
+   "def": {
+    "cab": "COMÚN Y PROPIO",
+    "texto": "propio: nombre de uno solo"
+   },
+   "voz": [
+    "*Perro* nombra a cualquier perro: es *común*.",
+    "*Pancho* es el nombre de uno solo: es *propio*.",
+    "Son dos tipos de sustantivos.",
+    "El propio es el nombre de *uno solo*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "CON MAYÚSCULA",
+   "lineas": [
+    {
+     "txt": "Sofi",
+     "marca": "circulo"
+    },
+    {
+     "txt": "Pancho",
+     "marca": "circulo",
+     "color": "coral"
+    },
+    {
+     "txt": "Córdoba",
+     "marca": "circulo",
+     "color": "verde"
+    }
+   ],
+   "voz": [
+    "Los propios empiezan con *mayúscula*: Sofi.",
+    "Pancho, también con mayúscula.",
+    "¡Y Córdoba, el nombre de una ciudad!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "¡A ESCAPAR DE LA PLAZA!",
+   "candados": [
+    {
+     "p": "RÍO: ¿común o propio?",
+     "r": "COMÚN"
+    },
+    {
+     "p": "PARANÁ: ¿común o propio?",
+     "r": "PROPIO"
+    }
+   ],
+   "voz": [
+    "¡La puerta de la plaza tiene candados!",
+    "Río nombra a cualquiera: es *común*.",
+    "Paraná es el nombre de uno: es *propio*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿UNO SOLO?",
+   "texto": "Si es el nombre de uno solo, es propio",
+   "emoji": "☝️",
+   "voz": [
+    "Truco: si es el nombre de *uno solo*, es propio."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "COMÚN",
+     "nombra a cualquiera"
+    ],
+    [
+     "PROPIO",
+     "nombre de uno solo"
+    ],
+    [
+     "MAYÚSCULA",
+     "en los propios"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *común* nombra a cualquiera.",
+    "El *propio* es el nombre de uno solo.",
+    "Los propios van con *mayúscula*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

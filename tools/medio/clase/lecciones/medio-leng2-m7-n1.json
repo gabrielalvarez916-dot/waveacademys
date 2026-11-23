@@ -1,0 +1,124 @@
+{
+ "slug": "medio-leng2-m7-n1",
+ "step_id": "8e9b3dbb-49ca-4b6c-ac9a-77f6fd061726",
+ "materia": "Lengua 2",
+ "titulo": "Títulos e imágenes",
+ "sub": "Lengua 2 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CUADERNO VIAJERO",
+   "titular": "¡Sofi pegó una lámina nueva!",
+   "bajada": "Tiene título, imagen y texto",
+   "emoji": "📰",
+   "titulo": "TÍTULOS",
+   "sub": "e imágenes",
+   "voz": [
+    "¡Noticia: Sofi pegó una lámina en su cuaderno!",
+    "Tiene un título, una imagen y un texto.",
+    "Hoy: *títulos e imágenes*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🐦",
+    "🏠"
+   ],
+   "lugar": "🇦🇷",
+   "rotulos": [
+    {
+     "txt": "EL HORNERO",
+     "sub": "el título"
+    },
+    {
+     "txt": "🐦",
+     "sub": "la imagen"
+    },
+    {
+     "txt": "El hornero en su nido",
+     "sub": "el epígrafe"
+    }
+   ],
+   "voz": [
+    "Arriba está el *título*: el hornero.",
+    "Después, la *imagen*: muestra cómo es.",
+    "Debajo, el *epígrafe*: una frase de la imagen."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Título",
+   "texto": "Dice de qué trata el texto",
+   "emoji": "🏷️",
+   "voz": [
+    "El *título* dice de qué trata el texto.",
+    "Lo leemos primero."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Título: LA VACA. ¿De qué trata?",
+   "a": {
+    "txt": "De un animal",
+    "emoji": "🐄"
+   },
+   "b": {
+    "txt": "De un auto",
+    "emoji": "🚗"
+   },
+   "correcta": "a",
+   "resultado": "¡Trata de la vaca, un animal!",
+   "voz": [
+    "El título dice: la vaca. ¿De qué trata?",
+    "Pensá antes de leer…",
+    "¡De un *animal*! El título nos avisó."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LAS PARTES DE LA LÁMINA",
+   "items": [
+    "TÍTULO",
+    "IMAGEN",
+    "EPÍGRAFE",
+    "TEXTO"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá las partes de la lámina.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba el *epígrafe*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TÍTULO",
+     "de qué trata"
+    ],
+    [
+     "IMAGEN",
+     "cómo es"
+    ],
+    [
+     "EPÍGRAFE",
+     "debajo de la imagen"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *título* dice de qué trata.",
+    "La *imagen* muestra cómo es.",
+    "El *epígrafe* va debajo de la imagen.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

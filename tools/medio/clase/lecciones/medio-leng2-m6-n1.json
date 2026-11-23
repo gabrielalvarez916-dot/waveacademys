@@ -1,0 +1,142 @@
+{
+ "slug": "medio-leng2-m6-n1",
+ "step_id": "3eefcb8e-1517-4b5c-b0fd-2b0704f05da5",
+ "materia": "Lengua 2",
+ "titulo": "Palabras que nombran",
+ "sub": "Lengua 2 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🌳",
+   "lineas": [
+    "Sofi va a la plaza.",
+    "Lleva su cuaderno viajero.",
+    "Anota todo lo que ve."
+   ],
+   "titulo": "PALABRAS",
+   "sub": "que nombran",
+   "voz": [
+    "Sofi va a la *plaza*.",
+    "Lleva su *cuaderno viajero*.",
+    "Anota todo lo que ve: perro, pelota, banco.",
+    "Hoy: *palabras que nombran*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sustantivo",
+   "texto": "Palabra que nombra algo",
+   "emoji": "🏷️",
+   "voz": [
+    "Las palabras que nombran se llaman *sustantivos*.",
+    "Perro, pelota y banco son sustantivos."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "👩",
+     "txt": "PERSONAS: MAMÁ"
+    },
+    {
+     "emoji": "🐶",
+     "txt": "ANIMALES: PERRO"
+    },
+    {
+     "emoji": "⚽",
+     "txt": "COSAS: PELOTA"
+    },
+    {
+     "emoji": "🏫",
+     "txt": "LUGARES: ESCUELA"
+    }
+   ],
+   "voz": [
+    "Los sustantivos nombran *personas*, como mamá.",
+    "Nombran *animales*, como perro.",
+    "Nombran *cosas*, como pelota.",
+    "¡Y nombran *lugares*, como escuela!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es un sustantivo?",
+   "opciones": [
+    "CORRE",
+    "GATO",
+    "LINDO",
+    "SALTA"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál de estas palabras *nombra* algo?",
+    "Pensá: ¿cuál podés señalar?",
+    "¡*Gato*! Nombra un animal."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿QUÉ NOMBRA?",
+   "pares": [
+    [
+     "MAESTRA",
+     "persona"
+    ],
+    [
+     "PALOMA",
+     "animal"
+    ],
+    [
+     "SILLA",
+     "cosa"
+    ],
+    [
+     "PLAZA",
+     "lugar"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada palabra con lo que nombra.",
+    "Maestra: una *persona*.",
+    "Paloma: un *animal*.",
+    "Silla: una *cosa*.",
+    "Plaza: un *lugar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUSTANTIVO",
+     "nombra algo"
+    ],
+    [
+     "NOMBRA",
+     "personas y animales"
+    ],
+    [
+     "TAMBIÉN",
+     "cosas y lugares"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *sustantivo* es una palabra que nombra.",
+    "Nombra *personas* y *animales*.",
+    "También *cosas* y *lugares*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

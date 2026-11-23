@@ -1,0 +1,137 @@
+{
+ "slug": "medio-leng2-m7-n4",
+ "step_id": "b878486b-349f-4cb4-9be7-f94f067ab45c",
+ "materia": "Lengua 2",
+ "titulo": "Responder por escrito",
+ "sub": "Lengua 2 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Con qué hace el nido el hornero? 🤔"
+    },
+    {
+     "yo": true,
+     "txt": "¡Lo busco en mi lámina!"
+    }
+   ],
+   "titulo": "RESPONDER",
+   "sub": "por escrito",
+   "voz": [
+    "Tomi pregunta: ¿con qué hace el nido el hornero?",
+    "Sofi responde: ¡lo busco en mi lámina!",
+    "Hoy: *responder por escrito*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO RESPONDO",
+   "items": [
+    {
+     "txt": "Leo la pregunta",
+     "emoji": "❓"
+    },
+    {
+     "txt": "Busco en el texto",
+     "emoji": "🔎"
+    },
+    {
+     "txt": "Escribo una oración",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "¿Cómo respondemos?",
+    "Leemos la *pregunta*.",
+    "Buscamos en el *texto*.",
+    "Escribimos una *oración*."
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "LA RESPUESTA DE SOFI",
+   "items": [
+    {
+     "p": "¿Con qué hace el nido?",
+     "r": "El hornero hace su nido con barro."
+    }
+   ],
+   "voz": [
+    "Sofi escribe: el hornero hace su nido con barro."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "TOMI REVISA",
+   "cambios": [
+    {
+     "antes": "el hornero come bichitos",
+     "despues": "El hornero come bichitos.",
+     "motivo": "mayúscula y punto"
+    }
+   ],
+   "voz": [
+    "Tomi escribió su respuesta. ¿Está bien?",
+    "Le faltaba *mayúscula* al principio y *punto* al final."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Preguntón",
+    "emoji": "👾"
+   },
+   "preguntas": [
+    {
+     "p": "¿Qué es el hornero?",
+     "r": "Es un pájaro."
+    },
+    {
+     "p": "¿A qué se parece el nido?",
+     "r": "A un horno."
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Preguntón*!",
+    "Respondemos con la lámina.",
+    "¿Qué es el hornero? *Es un pájaro*.",
+    "¿A qué se parece el nido? ¡*A un horno*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "la pregunta"
+    ],
+    [
+     "BUSCAR",
+     "en el texto"
+    ],
+    [
+     "ESCRIBIR",
+     "con mayúscula y punto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Leemos* la pregunta.",
+    "*Buscamos* en el texto.",
+    "*Escribimos* con mayúscula y punto.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
