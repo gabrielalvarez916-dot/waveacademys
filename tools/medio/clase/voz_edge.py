@@ -155,9 +155,18 @@ _mp = os.path.join(AQUI, 'voz', 'manuales.json')
 if os.path.exists(_mp): MANUALES = json.load(open(_mp))
 
 
-def eleven_activo(L, suf):
+ELEVEN_SOLO_NUEVAS = os.environ.get('ELEVEN_SOLO_NUEVAS') == '1'  # máquina automática: ElevenLabs solo en lecciones NUEVAS (sin voz) o que ya la tienen con ElevenLabs; no rehace las viejas con voz común
+
+
+def eleven_activo(L, suf, nombre=None):
     if not (ELEVEN_KEY and ELEVEN_TOPE > 0): return False
     if not re.match(r'^\s*Lengua\s*[12]\b', L.get('materia') or '', re.I): return False
+    if ELEVEN_SOLO_NUEVAS and nombre:
+        pv = os.path.join(AQUI, 'voz', nombre + suf + '.json')
+        if os.path.exists(pv):
+            try: viejo = [f for esc in json.load(open(pv)) for f in esc if isinstance(f, dict)]
+            except Exception: viejo = []
+            if viejo and not any(f.get('e') for f in viejo): return False
     v = 'neutro' if suf else 'arg'
     return v in ELEVEN_VERSIONES and bool(ELEVEN_VOCES[v])
 
@@ -228,7 +237,7 @@ async def grabar(L, nombre, suf, vz):
     pitch = PITCH_PRIMEROS if prim else None
     res, nuevas = [], 0
     l12 = bool(re.match(r'^\s*Lengua\s*[12]\b', L.get('materia') or '', re.I)); textos = {}
-    el = eleven_activo(L, suf); vid = ELEVEN_VOCES['neutro' if suf else 'arg'] if el else ''
+    el = eleven_activo(L, suf, nombre); vid = ELEVEN_VOCES['neutro' if suf else 'arg'] if el else ''
     viejo = json.load(open(destino)) if os.path.exists(destino) else []
     prot = {tuple(x) for x in MANUALES.get(nombre, [])} if el else set()
     if el:  # la lección se hace entera o no se hace (cada lección completa cuesta lo mismo que sus frases nuevas)
