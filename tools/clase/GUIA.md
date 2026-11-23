@@ -127,6 +127,10 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | datoloco | 2 | texto, emoji, numero?, unidad? — **dato loco**: «¿Sabías qué…?» con estallido 🤯 y el dato (si hay número, cuenta) |
 | ranking | 1 + items | titulo, items:[{txt, emoji, dato?}] en orden del 1.º al último (3-5) — **top**: cuenta regresiva del último al primero, redoble y el #1 en dorado |
 | escape | 2 + candados | titulo?, candados:[{p, r}] (2-3) — **escape room**: una puerta con candados que se abren con cada respuesta y ¡escapaste! |
+| vof | 3 | afirmacion, emoji?, verdadero: true\|false, explicacion — **verdadero o falso**: «3, 2, 1… pensá» y cae el sello VERDADERO o FALSO |
+| versus | 4 | titulo?, a:{txt, emoji, datos:[…] (1-3)}, b:{…}, gana:'a'\|'b'\|'empate', veredicto — **este o ese**: cara a cara con VS, datos de cada lado y corona al ganador |
+| jefe | 2 + preguntas | jefe:{nombre, emoji}, preguntas:[{p, r}] (2-4) — **jefe final** con barra de vida: cada respuesta le saca vida (ideal antes del resumen) |
+| historieta | vinetas | titulo?, vinetas:[{emojis:[…] (1-3), txt, quien?}] (2-4) — **historieta**: viñetas con globos de diálogo |
 
 Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en uso: `pruebas/prueba-banco.json` (`python tools/clase/armar.py prueba-banco`).
 

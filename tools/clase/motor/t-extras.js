@@ -108,7 +108,7 @@ var SFX = (function () {
       if (k < 1600) requestAnimationFrame(paso); else cv.remove(); })(t0);
   };
   // pensá: el reproductor lo llama al terminar cada frase; devuelve cuántos ms esperar antes de la siguiente
-  var PIENSA = { pregunta: 1, quiz4: 1, completa: 1 };
+  var PIENSA = { pregunta: 1, quiz4: 1, completa: 1, vof: 1 };
   window.PENSAR = function (e, k) {
     if (!e || !PIENSA[e.t] || k !== 1) return 0;
     var esc = document.getElementById('escena'); if (!esc) return 0; esc = esc.lastElementChild || esc;
