@@ -14,6 +14,8 @@ IMG = lambda t, pie, b64: {"tipo": "imagen", "imagen_tipo": "ilustracion", "titu
 S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
+TF = lambda p, ok, e, **k: {"t": "true_false", "p": p, "o": ["VERDADERO", "FALSO"], "r": {"correcta": ok}, "e": e, **k}
+UNI = lambda p, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": [a for a, _ in pares], "derecha": [b for _, b in pares]}, "r": {"pares": dict(pares)}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
 
 N1 = {**ESTILO,
@@ -149,11 +151,11 @@ ACT = {
 "1": [N("RESTÁ EN COLUMNAS: 576 − 234", 342, "U: 6 − 4. D: 7 − 3. C: 5 − 2.", n="aplicar"),
       MC("EN UNA RESTA, ¿QUÉ NÚMERO VA ARRIBA?", ["EL MÁS GRANDE", "EL MÁS CHICO", "EL QUE SE VENDIÓ"], "EL MÁS GRANDE", "DE ÉL SACAMOS.", n="analizar")],
 "2": [N("¿CUÁNTO ES 865 − 432?", 433, "COLUMNA POR COLUMNA.", n="aplicar"),
-      N("¿CUÁNTO ES 579 − 274?", 305, "7 − 7 = 0.", n="aplicar")],
+      UNI("UNÍ CADA RESTA CON SU RESULTADO.", [("865 − 432", "433"), ("579 − 274", "305"), ("796 − 352", "444")], "COLUMNA POR COLUMNA.", n="aplicar")],
 "3": [N("¿CUÁNTO ES 352 − 128?", 224, "ABRO UN PAQUETE: 12 − 8 = 4.", n="aplicar"),
       MC("EN 352 − 128, 2 − 8 NO ALCANZA. ¿QUÉ HAGO?", ["ABRO UN PAQUETE", "HAGO 8 − 2", "PONGO 0"], "ABRO UN PAQUETE", "CANJE: 1 PAQUETE POR 10 SUELTOS.", n="analizar")],
 "4": [N("224 + 128 = ___", 352, "VUELVE AL NÚMERO DE ARRIBA.", n="aplicar"),
-      MC("TOMI HIZO 463 − 247 = 226. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "226 + 247 = 473, NO 463.", n="error")],
+      TF("TOMI HIZO 463 − 247 = 226. ESTÁ BIEN.", "FALSO", "226 + 247 = 473, NO 463.", n="error")],
 "5": [N("RELÁMPAGO. 759 − 314 = ___", 445, "SIN CANJE.", tiempo=40, n="aplicar"),
       MC("RELÁMPAGO. 5 − 9: ¿ALCANZA?", ["NO", "SÍ"], "NO", "HAY QUE ABRIR UN PAQUETE.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 15 − 9 = ___", 6, "DESPUÉS DEL CANJE.", tiempo=30, n="aplicar"),
@@ -162,7 +164,7 @@ ACT = {
 EXAMEN = [
  [1, N("RESTÁ EN COLUMNAS: 498 − 65", 433, "U: 8 − 5. D: 9 − 6. C: 4.", n="aplicar")],
  [1, MC("¿POR QUÉ COLUMNA SE EMPIEZA A RESTAR?", ["UNIDADES", "CENTENAS", "DECENAS"], "UNIDADES", "DE DERECHA A IZQUIERDA.", n="recordar")],
- [1, MC("SOFI PUSO 234 ARRIBA Y 576 ABAJO. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "EL MÁS GRANDE VA ARRIBA.", n="error")],
+ [1, TF("SOFI PUSO 234 ARRIBA Y 576 ABAJO. ESTÁ BIEN.", "FALSO", "EL MÁS GRANDE VA ARRIBA.", n="error")],
  [2, N("¿CUÁNTO ES 967 − 523?", 444, "7 − 3, 6 − 2, 9 − 5.", n="aplicar")],
  [2, N("¿CUÁNTO ES 688 − 380?", 308, "8 − 0, 8 − 8, 6 − 3.", n="aplicar")],
  [2, N("¿CUÁNTO ES 745 − 132?", 613, "COLUMNA POR COLUMNA.", n="aplicar")],
@@ -170,7 +172,7 @@ EXAMEN = [
  [3, N("¿CUÁNTO ES 541 − 316?", 225, "11 − 6 = 5. 3 − 1 = 2. 5 − 3 = 2.", n="aplicar")],
  [3, MC("TOMI HIZO 352 − 128 = 236. ¿QUÉ HIZO MAL?", ["DIO VUELTA 2 − 8", "NADA", "SUMÓ"], "DIO VUELTA 2 − 8", "HAY QUE ABRIR UN PAQUETE.", n="error")],
  [4, N("CONTROLÁ 576 − 234 = 342. ¿CUÁNTO ES 342 + 234?", 576, "VUELVE AL NÚMERO DE ARRIBA.", n="aplicar")],
- [4, MC("ALGUIEN HIZO 530 − 210 = 310. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "310 + 210 = 520: DA 320.", n="analizar")],
+ [4, TF("530 − 210 = 310 ESTÁ BIEN.", "FALSO", "310 + 210 = 520: DA 320.", n="analizar")],
  [4, MC("PARA CONTROLAR UNA RESTA, ¿QUÉ SUMO?", ["RESULTADO + LO QUE RESTÉ", "LOS DOS DE ARRIBA", "NADA"], "RESULTADO + LO QUE RESTÉ", "ASÍ VUELVO AL PRINCIPIO.", n="analizar")],
 ]
 M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 10, "estilo": "primeros",

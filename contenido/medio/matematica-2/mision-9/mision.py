@@ -14,6 +14,8 @@ IMG = lambda t, pie, b64: {"tipo": "imagen", "imagen_tipo": "ilustracion", "titu
 S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
+TF = lambda p, ok, e, **k: {"t": "true_false", "p": p, "o": ["VERDADERO", "FALSO"], "r": {"correcta": ok}, "e": e, **k}
+UNI = lambda p, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": [a for a, _ in pares], "derecha": [b for _, b in pares]}, "r": {"pares": dict(pares)}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
 
 N1 = {**ESTILO,
@@ -150,11 +152,11 @@ ACT = {
 "1": [N("SUMÁ EN COLUMNAS: 231 + 45", 276, "U: 1 + 5 = 6. D: 3 + 4 = 7. C: 2.", n="aplicar"),
       MC("EN 234 + 52, ¿DEBAJO DE QUÉ VA EL 5?", ["DEL 3", "DEL 2", "DEL 4"], "DEL 3", "DECENAS DEBAJO DE DECENAS.", n="analizar")],
 "2": [N("¿CUÁNTO ES 342 + 125?", 467, "COLUMNA POR COLUMNA.", n="aplicar"),
-      N("¿CUÁNTO ES 503 + 284?", 787, "0 + 8 = 8.", n="aplicar")],
+      UNI("UNÍ CADA SUMA CON SU RESULTADO.", [("342 + 125", "467"), ("503 + 284", "787"), ("250 + 340", "590")], "COLUMNA POR COLUMNA.", n="aplicar")],
 "3": [N("¿CUÁNTO ES 147 + 235?", 382, "7 + 5 = 12: ME LLEVO 1.", n="aplicar"),
       MC("EN 356 + 128, 6 + 8 = 14. ¿QUÉ ESCRIBO ABAJO?", ["4", "14", "1"], "4", "ESCRIBO 4 Y ME LLEVO 1.", n="analizar")],
 "4": [MC("298 + 405 DA MÁS O MENOS…", ["700", "600", "900"], "700", "300 + 400 = 700.", n="aplicar"),
-      MC("ALGUIEN DICE: 410 + 290 = 1100. ¿TIENE SENTIDO?", ["NO", "SÍ"], "NO", "400 + 300 = 700: ESTÁ MUY LEJOS.", n="error")],
+      TF("410 + 290 = 1100 TIENE SENTIDO.", "FALSO", "400 + 300 = 700: ESTÁ MUY LEJOS.", n="error")],
 "5": [N("RELÁMPAGO. 123 + 45 = ___", 168, "SIN LLEVARSE.", tiempo=40, n="aplicar"),
       N("RELÁMPAGO. 210 + 360 = ___", 570, "COLUMNA POR COLUMNA.", tiempo=40, n="aplicar"),
       MC("RELÁMPAGO. 8 + 6 = 14. ¿ME LLEVO 1?", ["SÍ", "NO"], "SÍ", "PASA DE 10.", tiempo=30, n="aplicar"),
@@ -171,7 +173,7 @@ EXAMEN = [
  [3, N("¿CUÁNTO ES 459 + 236?", 695, "9 + 6 = 15: ME LLEVO 1.", n="aplicar")],
  [3, MC("SOFI HIZO 147 + 235 = 372. ¿QUÉ SE OLVIDÓ?", ["SUMAR EL 1 QUE SE LLEVÓ", "SUMAR LAS UNIDADES", "NADA"], "SUMAR EL 1 QUE SE LLEVÓ", "4 + 3 + 1 = 8: DA 382.", n="error")],
  [4, MC("302 + 497 DA MÁS O MENOS…", ["800", "700", "900"], "800", "300 + 500 = 800.", n="aplicar")],
- [4, MC("ALGUIEN DICE: 199 + 199 = 598. ¿TIENE SENTIDO?", ["NO", "SÍ"], "NO", "200 + 200 = 400.", n="analizar")],
+ [4, TF("199 + 199 = 598 TIENE SENTIDO.", "FALSO", "200 + 200 = 400.", n="analizar")],
  [4, N("¿CUÁNTO ES 298 + 405?", 703, "CERCA DE 700.", n="aplicar")],
 ]
 M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 9, "estilo": "primeros",
