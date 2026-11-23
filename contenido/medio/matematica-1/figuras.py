@@ -26,12 +26,13 @@ def _ajustar_textos(fig):
             dentro = [c.get_window_extent(r) for c in cajas]
             dentro = [c for c in dentro if c.x0 <= cx <= c.x1 and c.y0 <= cy <= c.y1 and c.height >= bb.height * .8]
             if not dentro: continue
-            c = min(dentro, key=lambda c: c.width * c.height); m = max(12, .07 * c.width)
+            c = min(dentro, key=lambda c: c.width * c.height); m = max(8, min(.09 * c.width, 30))
             otros = [o for o in ax.texts if o is not t and o.get_text().strip()]
             def entra(bb):
                 if not (bb.x0 >= c.x0 + m and bb.x1 <= c.x1 - m and bb.y0 >= c.y0 + 3 and bb.y1 <= c.y1 - 3): return False
                 for o in otros:  # tampoco puede pisar otro texto del mismo recuadro (por ejemplo, el número de la tira)
                     ob = o.get_window_extent(r)
+                    if abs(o.get_position()[1] - t.get_position()[1]) < 1e-6 and o.get_va() == t.get_va(): continue  # pedazos del mismo renglón (ej. la rima en otro color)
                     if c.x0 <= ob.x0 and ob.x1 <= c.x1 and c.y0 <= ob.y0 and ob.y1 <= c.y1 and ob.x0 < bb.x1 and bb.x0 < ob.x1 and ob.y0 < bb.y1 and bb.y0 < ob.y1: return False
                 return True
             if entra(t.get_window_extent(r)): continue
@@ -50,8 +51,6 @@ def _ajustar_textos(fig):
                     if entra(t.get_window_extent(r)): break
             while t.get_fontsize() > 6 and not entra(t.get_window_extent(r)):
                 t.set_fontsize(t.get_fontsize() - .5)
-            if not entra(t.get_window_extent(r)):  # último recurso: centrar en el recuadro
-                t.set_horizontalalignment('center'); inv = ax.transData.inverted(); t.set_x(inv.transform(((c.x0 + c.x1) / 2, 0))[0])
 
     # REGLA: dos textos nunca se pisan (en cualquier parte del dibujo). Si se pisan, se achica el más largo hasta que no se toquen.
     for ax in fig.axes:
@@ -67,6 +66,7 @@ def _ajustar_textos(fig):
                     if ix > 2 and iy > min(a.height, b.height) * .25:
                         # textos encimados a propósito (mismo lugar, ej. sombra o letra resaltada) no cuentan
                         if abs(a.x0 - b.x0) < 2 and abs(a.y0 - b.y0) < 2: continue
+                        if abs(ts[i].get_position()[1] - ts[j].get_position()[1]) < 1e-6 and ts[i].get_va() == ts[j].get_va() and ix < 8: continue  # pedazos pegados del mismo renglón
                         if (a.x0 >= b.x0 and a.x1 <= b.x1 and a.y0 >= b.y0 and a.y1 <= b.y1) or (b.x0 >= a.x0 and b.x1 <= a.x1 and b.y0 >= a.y0 and b.y1 <= a.y1): continue
                         choque = (ts[i], ts[j]); break
                 if choque: break

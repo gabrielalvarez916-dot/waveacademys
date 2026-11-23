@@ -138,16 +138,18 @@ def lamina(titulo, lineas, dibujo="hornero", subrayar=(), pie=None, marcar_titul
 
 
 def ficha(campos, titulo="FICHA"):
-    """Ficha para responder por escrito: [("¿QUÉ ES?", "UN PÁJARO"), ("¿DÓNDE VIVE?", "")]. Vacío = renglón para completar."""
+    """Ficha para responder por escrito: [("¿QUÉ ES?", "UN PÁJARO"), ("¿DÓNDE VIVE?", "")]. Vacío = renglón para completar.
+    La respuesta (o el renglón) empieza después de la pregunta más larga: nunca se pisan."""
     n = len(campos); H = 1.0 + .9 * n
     fig, ax = lienzo(6.8, H * .7, 10, H, 0, 0)
     ax.add_patch(FancyBboxPatch((.15, .15), 9.7, H - .3, boxstyle="round,pad=0.05", fc="#f6fbfb", ec=TEAL, lw=1.8))
     ax.text(5, H - .45, titulo.upper(), ha="center", va="center", fontsize=15, color=TEAL, **F)
+    xr = min(6.0, .5 + max(_ancho(fig, ax, p.upper(), 11) for p, _ in campos) + .4)
     for i, (p, r) in enumerate(campos):
         y = H - 1.2 - i * .9
         ax.text(.5, y, p.upper(), ha="left", va="center", fontsize=11, color=CORAL, **F)
-        ax.plot([5.4, 9.5], [y - .22, y - .22], color="#9aa", lw=1.2)
-        if r: ax.text(5.5, y, r.upper(), ha="left", va="center", fontsize=11, color=OSC, **F)
+        ax.plot([xr, 9.5], [y - .22, y - .22], color="#9aa", lw=1.2)
+        if r: ax.text(xr + .1, y, r.upper(), ha="left", va="center", fontsize=11, color=OSC, **F)
     return png(fig)
 
 
