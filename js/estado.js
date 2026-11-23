@@ -105,6 +105,7 @@
           if (!sel.some(function (x) { return x.nivel === nv; })) return;
           var rr = runs.filter(function (x) { return new RegExp(nv, 'i').test(x.name) && /misi/i.test(x.name); });
           var enc = rr.filter(function (x) { return x.status === 'in_progress'; }).length, esp = rr.filter(function (x) { return ['queued', 'waiting', 'pending'].indexOf(x.status) >= 0; }).length;
+          if (!esp && !enc) avisos += '✅ Ahora no hay nada corriendo de ' + nv + ': podés enviar tranquila.\n';
           if (esp) avisos += '⛔ Hay una corrida de ' + nv + ' EN ESPERA: esperá a que arranque, si no se pierde.\n';
           else if (enc) avisos += '⚠️ Hay una corrida de ' + nv + ' EN CURSO: la tuya queda esperando hasta que termine.\n';
         });
