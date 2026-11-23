@@ -256,8 +256,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     function lado(x, o, col) { var p = w.pieza(g, x, 520), pied = o.estilo === 'piedra';
       w.caja(p, 0, 0, 600, 340, pied ? 'url(#gPiedra)' : 'url(#gCard)', pied ? '#d8d0c0' : col, 34, 6).setAttribute('filter', 'url(#sombra)');
       w.txt(p, 0, -125, o.cab, 28, pied ? '#4a4438' : col, { 'letter-spacing': 4 });
-      if (o.emoji) w.emoji(p, 0, -30, o.emoji, 110);
-      w.multi(p, 0, o.emoji ? 85 : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
+      if (o.emoji) w.emoji(p, 0, -45, o.emoji, 96);
+      w.multi(p, 0, o.emoji ? (String(o.texto).length > 22 ? 98 : 85) : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
     var A = lado(560, d.a, C.aqua), Bb = lado(1360, d.b, C.sol), s = w.pieza(g, 960, 520); w.txt(s, 0, 0, d.signo || 'vs', d.signo && d.signo.length < 2 ? 140 : 70, C.sol, { filter: 'url(#brillo)' });
     var de = null; if (d.def) { de = w.pieza(g, 960, 850); w.tarjeta(de, 0, 0, 1440, 180, C.sol); w.txt(de, 0, -40, d.def.cab, 32, C.sol, { 'letter-spacing': 4 }); w.multi(de, 0, 30, d.def.texto, 40, C.txt, 1340); }
     B(0); w.IN(tl, A, 0, { x: -200, y: 0 });
@@ -602,6 +602,63 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     B(0); w.IN(tl, p, 0); B(1); w.IN(tl, r, 0, { y: 60 });
   } };
 
+  // grupos: grupos iguales (la multiplicación como suma repetida). {titulo?, emoji, grupos (2-6), cada (1-8), texto} — 3 pasos:
+  // aparecen los grupos (bandejas) · la voz cuenta sumando ("4, 8, 12") y cada bandeja muestra su subtotal · el texto ("3 veces 4 = 12" o "3 × 4 = 12")
+  T.grupos = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var G = d.grupos, c = d.cada, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, paso = Math.min(300, 1600 / G), x0 = 960 - (G - 1) * paso / 2;
+    var cols = c <= 3 ? c : Math.ceil(c / 2), rows = Math.ceil(c / cols), es = Math.min(72, (paso - 70) / cols), bh = Math.max(170, rows * es + 70), Y = 540;
+    var P = [], S = [], k, j;
+    for (k = 0; k < G; k++) { var p = w.pieza(g, x0 + k * paso, Y); w.caja(p, 0, 0, paso - 30, bh, 'rgba(255,255,255,.06)', W.PAL[k % W.PAL.length], 30, 5);
+      for (j = 0; j < c; j++) w.emoji(p, ((j % cols) - (cols - 1) / 2) * es, (Math.floor(j / cols) - (rows - 1) / 2) * es, d.emoji, es * .85); P.push(p);
+      var q = w.pieza(g, x0 + k * paso, Y + bh / 2 + 62); w.el('circle', { r: 42, fill: C.sol }, q); w.txt(q, 0, 2, String((k + 1) * c), (k + 1) * c >= 100 ? 28 : 36, '#3a2a00', { 'font-weight': 800 }); S.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    var visto = {}; g.alDecir = function (pal, f) { if (f !== 1) return; var v = numDe(pal); if (v == null) return;
+      for (var i = 0; i < G; i++) if ((i + 1) * c === v && !visto[i]) { visto[i] = 1; gsap.fromTo(S[i], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(3)' }); gsap.fromTo(P[i], { scale: 1 }, { scale: 1.08, duration: .18, yoyo: true, repeat: 1 }); break; } };
+    B(0); if (ti) w.IN(tl, ti, 0); P.forEach(function (p, i) { w.IN(tl, p, i ? '<.12' : (ti ? '<.2' : 0), { y: -200, scale: .6, ease: 'back.out(1.6)' }); });
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(S, { opacity: 1, scale: 1 }, '>+0.05'); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 });
+  } };
+
+  // arreglo: organización rectangular (filas y columnas). {titulo?, emoji, filas (1-6), cols (1-10), texto} — 3 pasos:
+  // aparece el arreglo · se iluminan las filas una por una con la cuenta al costado (4, 8, 12) · el texto ("3 filas de 4 = 12")
+  T.arreglo = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var F = d.filas, Cc = d.cols, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, s = Math.min(110, 1100 / Cc, 500 / F), x0 = 960 - (Cc - 1) * s / 2 - 60, y0 = 560 - (F - 1) * s / 2, r, c;
+    var base = w.pieza(g, 0, 0), hl = [], cnt = [];
+    for (r = 0; r < F; r++) { hl.push(w.caja(base, x0 + (Cc - 1) * s / 2, y0 + r * s, Cc * s + 24, s * .96, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 20, 4));
+      for (c = 0; c < Cc; c++) w.emoji(base, x0 + c * s, y0 + r * s, d.emoji, s * .78);
+      var q = w.pieza(g, x0 + Cc * s + 40, y0 + r * s); w.el('circle', { r: Math.min(40, s * .42), fill: C.sol }, q); w.txt(q, 0, 2, String((r + 1) * Cc), Math.min(34, s * .36), '#3a2a00', { 'font-weight': 800 }); cnt.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.2' : 0, { scale: .7, y: 0 });
+    B(1); for (r = 0; r < F; r++) { tl.to(hl[r], { attr: { fill: 'rgba(244,182,63,.16)', stroke: C.sol }, duration: .3 }, r ? '>+0.35' : '>'); w.IN(tl, cnt[r], '<', { scale: 0, y: 0, ease: 'back.out(3)' }); }
+    B(2); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 }); else tl.to({}, { duration: .01 });
+  } };
+
+  // columnas: la cuenta en columnas (algoritmo de la suma y la resta) con U, D y C arriba.
+  // {titulo?, a:'365', b:'142', op:'+'|'−', resultado:'507', marcas:[{col:'D', txt:'1', paso:1}], tachar:[{col:'D', nuevo:'5', paso:1}]}
+  // 1 + columnas pasos: la cuenta armada · una columna por paso, de derecha a izquierda (unidades primero): se ilumina,
+  // aparecen las marcas de ese paso (marcas: «me llevo 1» o el 1 del canje; tachar: la cifra que se canjea y su número nuevo) y su resultado.
+  T.columnas = { n: function (d) { return 1 + Math.max(String(d.a).length, String(d.b).length, String(d.resultado).length); }, armar: function (g, tl, B, d) {
+    var a = String(d.a), b = String(d.b), r = String(d.resultado), nc = Math.max(a.length, b.length, r.length), NOM = ['U', 'D', 'C', 'UM'], IDX = { U: 0, D: 1, C: 2, UM: 3 };
+    var MONO = 'ui-monospace,Menlo,Consolas,monospace', X = function (k) { return 960 + ((nc - 1 - k) - (nc - 1) / 2) * 190; };  // k: columna contada desde la derecha
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, base = w.pieza(g, 0, 0), hl = [], k;
+    for (k = 0; k < nc; k++) { hl.push(w.caja(base, X(k), 590, 170, 560, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 30, 5));
+      w.caja(base, X(k), 350, 130, 70, 'url(#gAqua)', '#efffdc', 22, 3); w.txt(base, X(k), 352, NOM[k], 40, '#14300c', { 'font-weight': 800 }); }
+    function fila(s, y) { for (var j = 0; j < s.length; j++) w.txt(base, X(j), y, s[s.length - 1 - j], 110, C.txt, { 'font-family': MONO, 'font-weight': 700 }); }
+    fila(a, 490); fila(b, 620);
+    w.txt(base, X(nc - 1) - 170, 620, d.op || '+', 100, C.sol, { 'font-weight': 800 });
+    w.el('line', { x1: X(nc - 1) - 230, y1: 690, x2: X(0) + 95, y2: 690, stroke: C.sol, 'stroke-width': 8, 'stroke-linecap': 'round' }, base);
+    var res = []; for (k = 0; k < r.length; k++) { var p = w.pieza(g, X(k), 775); w.txt(p, 0, 0, r[r.length - 1 - k], 110, C.verde, { 'font-family': MONO, 'font-weight': 700, filter: 'url(#brillo)' }); res.push(p); }
+    var M = (d.marcas || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 410); w.el('circle', { r: 30, fill: 'rgba(244,182,63,.25)', stroke: C.sol, 'stroke-width': 4 }, q); w.txt(q, 0, 2, m.txt, String(m.txt).length > 1 ? 32 : 40, C.sol, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    var TA = (d.tachar || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 490); w.el('line', { x1: -45, y1: 45, x2: 45, y2: -45, stroke: C.coral, 'stroke-width': 10, 'stroke-linecap': 'round' }, q); w.txt(q, 66, -64, m.nuevo, 44, C.coral, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.1' : 0, { y: 30 });
+    for (k = 0; k < nc; k++) { B(k + 1);
+      tl.to(hl, { attr: { fill: 'rgba(244,182,63,0)', stroke: 'rgba(244,182,63,0)' }, duration: .2 }, '>');
+      tl.to(hl[k], { attr: { fill: 'rgba(244,182,63,.12)', stroke: C.sol }, duration: .3 }, '<');
+      TA.concat(M).filter(function (m) { return m.paso === k + 1; }).forEach(function (m) { w.IN(tl, m, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); });
+      if (res[k]) w.IN(tl, res[k], '>', { y: -60 }); else tl.to({}, { duration: .01 });
+    }
+  } };
+
   // fraccion: {num, den, forma:'pizza'|'barra', txt} — 2 pasos: se divide, se pintan las partes
   T.fraccion = { n: function () { return 2; }, armar: function (g, tl, B, d) {
     var p = w.pieza(g, 760, 600), partes = [], n = d.den, i;
@@ -937,9 +994,9 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     for (var f = 1; f <= NC; f++) { B(f); if (f > 1) { tl.set(obj[f - 2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[f - 2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); } else tl.to({}, { duration: .01 }); }
     B(NC + 1); tl.set(obj[NC - 1], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[NC - 1], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (fin) w.IN(tl, fin, '>', { scale: .6, y: 0 });
   } };
-  // cuadro: {hasta (10-100), desde (0 o 1, por defecto 1), faltan:[números], titulo} — cuadro de números de a 10 por fila (con desde 0, los redondos 10, 20, 30… quedan a la izquierda). 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
+  // cuadro: {hasta (10-100), faltan:[números], titulo} — cuadro de números de a 10 por fila. REGLA FIJA: empieza siempre en 0, así los redondos 10, 20, 30… quedan en el margen izquierdo. 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
   T.cuadro = { n: function () { return 3; }, armar: function (g, tl, B, d) {
-    var n = d.hasta, d0 = d.desde === 0 ? 0 : 1, filas = Math.ceil((n - d0 + 1) / 10), cw = 142, ch = Math.min(108, 610 / filas), x0 = 960 - 4.5 * cw, y0 = (filas > 6 ? 625 : 560) - (filas - 1) * ch / 2 + (d.titulo && filas <= 6 ? 25 : 0), falta = d.faltan || [], fs = Math.min(ch * .6, 46);
+    var n = d.hasta, d0 = 0,  /* REGLA FIJA: el cuadro de números empieza SIEMPRE en 0 (los redondos 10, 20, 30… quedan a la izquierda) */ filas = Math.ceil((n - d0 + 1) / 10), cw = 142, ch = Math.min(108, 610 / filas), x0 = 960 - 4.5 * cw, y0 = (filas > 6 ? 625 : 560) - (filas - 1) * ch / 2 + (d.titulo && filas <= 6 ? 25 : 0), falta = d.faltan || [], fs = Math.min(ch * .6, 46);
     var ti = d.titulo ? w.titulo(g, d.titulo, filas > 6 ? 258 : 262) : null, C2 = [];
     for (var v = d0; v <= n; v++) { var k = v - d0, p = w.pieza(g, x0 + (k % 10) * cw, y0 + Math.floor(k / 10) * ch), es = falta.indexOf(v) >= 0;
       p.r = w.caja(p, 0, 0, cw - 12, ch - 12, es ? 'rgba(255,255,255,.05)' : 'url(#gCard)', es ? C.coral : C.linea, 16, 4); if (es) p.r.setAttribute('stroke-dasharray', '12 8');
@@ -1037,10 +1094,11 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   // corrige: {titulo, cambios:[{antes, despues, motivo}] (máx 3)} — tacha lo que está mal y escribe lo correcto (1 + cambios pasos)
   T.corrige = { n: function (d) { return 1 + d.cambios.length; }, armar: function (g, tl, B, d) {
     var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null;
-    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0);
-      var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20;
-      var tachon = w.el('line', { x1: 560 - la / 2, y1: y, x2: 560 + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
-      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
+    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0), largo = Math.max(String(c.antes).length, String(c.despues).length) > 26;
+      if (!largo) { var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20; }
+      else { var a = w.multi(gr, 500, y, c.antes, 32, '#ff9f9f', 640); var la = Math.min(640, c.antes.length * 17 + 20); }
+      var tachon = w.el('line', { x1: (largo ? 500 : 560) - la / 2, y1: y, x2: (largo ? 500 : 560) + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
+      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = largo ? w.multi(gr, 1420, y, c.despues, 32, '#8be38f', 640) : w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
       var mo = c.motivo ? w.txt(gr, 960, y + 62, c.motivo, 28, '#bdb2d6') : null; gr._t = tachon; gr._b = bb; gr._m = mo; return gr; });
     B(0); if (ti) w.IN(tl, ti, 0);
     F.forEach(function (f, k) { B(k + 1); tl.set([f._b, f._m].filter(Boolean), { opacity: 0 }, 0); w.IN(tl, f, 0, { y: 0, d: .3 });
@@ -1197,7 +1255,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
 
   // bloques: {titulo, items:[{cab, txt}] (2-5)} — estructura de un texto (titular, copete, cuerpo...) — 1 + n pasos
   T.bloques = { n: function (d) { return 1 + d.items.length; }, armar: function (g, tl, B, d) {
-    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110], y = 370, P = [];
+    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110].slice(0, n), y = 370, P = [];
+    var suma = alto.reduce(function (a, b) { return a + b; }, 0); if (suma > 580) alto = alto.map(function (h) { return h * 580 / suma; }); // 5 bloques: entran sin salirse por abajo
     var hoja = w.pieza(g, 860, 660); w.caja(hoja, 0, 0, 900, 620, '#eef6f4', '#efffdc', 20, 4).setAttribute('filter', 'url(#sombra)');
     d.items.forEach(function (it, k) { var h = alto[k] || 120, col = W.PAL[k % W.PAL.length], p = w.pieza(g, 0, 0);
       w.caja(p, 860, y + h / 2, 840, h - 16, col, col, 12, 2).setAttribute('opacity', .85); w.multi(p, 860, y + h / 2, it.txt, k ? 28 : 40, '#14300c', 780);
@@ -1219,8 +1278,34 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   T.vocab = { n: function (d) { return d.items.length; }, armar: function (g, tl, B, d) {
     var n = d.items.length, P = W.rejilla(n, 960, 620, 520, 340, 3);
     var V = d.items.map(function (it, k) { var p = w.pieza(g, P[k][0], P[k][1]); w.tarjeta(p, 0, 0, 470, 310, W.PAL[k % W.PAL.length]);
-      w.emoji(p, 0, -70, it.emoji || '', 100); w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
+      w.emoji(p, 0, -70, it.emoji || '', 100); if (String(it.palabra).length > 14) w.multi(p, 0, 30, it.palabra, 34, C.txt, 430); else w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); if (String(it.trad || '').length > 22) w.multi(p, 0, 112, it.trad, 26, C.sol, 430); else w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
     V.forEach(function (p, k) { B(k); w.IN(tl, p, 0, { scaleX: 0, y: 0, d: .5, ease: 'back.out(1.6)' }); });
+  } };
+})();
+
+/* PLANTILLA · LETRA CURSIVA (Lengua 2.º año). Usa la letra escolar Playwrite Argentina (motor/fuentes/playwrite-ar.woff, licencia OFL),
+   que armar.py incrusta solo en las clases que usan esta plantilla. */
+(function () {
+  var w = W, C = w.C, nid = 0;
+  // cursiva: {titulo?, imprenta? (la palabra en imprenta, arriba), texto (lo que se escribe en cursiva, con minúsculas), nota?} — 3 pasos:
+  // aparece el cuaderno con renglones (y la imprenta) · el lápiz escribe la cursiva de izquierda a derecha · la nota (o un brillo)
+  // trazos: igual que cursiva, pero primero aparece el trazo en gris claro para REPASAR, y el lápiz lo repasa encima. {texto, nota?, titulo?} — 3 pasos
+  T.trazos = { n: function () { return 3; }, armar: function (g, tl, B, d) { return T.cursiva.armar(g, tl, B, Object.assign({}, d, { repasar: true })); } };
+  T.cursiva = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, Y = 640, s = String(d.texto), fs = Math.min(190, 1450 / Math.max(3, s.length * .62)), cid = 'cur' + (++nid) + Math.floor(Math.random() * 1e6);
+    var pz = w.pieza(g, 960, Y); w.caja(pz, 0, 0, 1620, 430, '#fffdf3', '#d8c9a0', 28, 6).setAttribute('filter', 'url(#sombra)');
+    [-fs * .62, -fs * .18, fs * .26].forEach(function (yy, k) { w.el('line', { x1: -780, y1: yy, x2: 780, y2: yy, stroke: k === 1 ? '#c7d7f2' : '#9fb8e6', 'stroke-width': k === 2 ? 4 : 3, 'stroke-dasharray': k === 1 ? '14 12' : null }, pz); });
+    w.el('line', { x1: -700, y1: -200, x2: -700, y2: 200, stroke: '#f2a8a8', 'stroke-width': 3 }, pz);
+    var imp = d.imprenta ? w.chip(g, 960, 375, Math.min(1200, String(d.imprenta).length * 40 + 140), 90, d.imprenta, { size: 52, stroke: C.sol, r: 30 }) : null;
+    var cp = w.el('clipPath', { id: cid }, pz), rc = w.el('rect', { x: -800, y: -220, width: 0, height: 440 }, cp);
+    if (d.repasar) w.txt(pz, 0, fs * .02, s, fs, '#c9d2e6', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'stroke': '#9fb0d4', 'stroke-width': 2, 'stroke-dasharray': '6 8' });
+    var t = w.txt(pz, 0, fs * .02, s, fs, '#1d2a5a', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'clip-path': 'url(#' + cid + ')' });
+    var ancho = Math.min(1500, s.length * fs * .6), lap = w.pieza(g, 960 - ancho / 2, Y - fs * .35); w.emoji(lap, 0, 0, '✏️', 80);
+    var nota = d.nota ? w.chip(g, 960, 920, Math.min(1500, String(d.nota).length * 32 + 140), 96, d.nota, { size: 48, stroke: C.verde, r: 32 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, pz, ti ? '<.1' : 0, { y: 30, d: .5 }); if (imp) w.IN(tl, imp, '>', { scale: .6, y: 0 });
+    B(1); tl.to(lap, { opacity: 1, duration: .15 }, '>'); tl.to(rc, { attr: { width: 1600 }, duration: Math.min(3.2, .9 + s.length * .16), ease: 'none' }, '>');
+    tl.to(lap.parentNode, { attr: { transform: 'translate(' + (960 + ancho / 2) + ' ' + (Y - fs * .35) + ')' }, duration: Math.min(3.2, .9 + s.length * .16) * (ancho / 1600 + .05), ease: 'none' }, '<'); tl.to(lap, { opacity: 0, duration: .2 }, '>');
+    B(2); if (nota) w.IN(tl, nota, '>', { scale: .6, y: 0 }); else tl.to(pz, { scale: 1.04, duration: .2, yoyo: true, repeat: 1 }, '>');
   } };
 })();
 
@@ -1562,7 +1647,7 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
       w.caja(p, 0, 0, 790, 170, f[1], f[1], 18, 2).setAttribute('filter', 'url(#sombra)'); w.txt(p, -330, 0, f[0], 70, '#fff'); w.multi(p, 40, 0, o, 42, '#fff', 640); return p; });
     B(0); w.IN(tl, q, 0, { y: -30 });
     B(1); O.forEach(function (o, k) { w.IN(tl, o, k ? '<.08' : 0, { scale: .5, y: 0, ease: 'back.out(2)' }); }); tl.to(bar, { opacity: 1, duration: .1 }, '>'); tl.to(bar, { attr: { width: 0, x: 960 }, duration: 2.6, ease: 'none' }, '>');
-    B(2); O.forEach(function (o, k) { if (k !== d.correcta) tl.to(o, { opacity: .2, scale: .95, duration: .3 }, '<'); }); var c = O[d.correcta] || O[0]; w.pop(tl, c, '>'); w.IN(tl, (function () { var t = w.pieza(c, 330, -60); w.emoji(t, 0, 0, '✅', 70); return t; })(), '<', { scale: 0, y: 0 });
+    B(2); O.forEach(function (o, k) { if (k !== d.correcta) tl.to(o, { opacity: .2, scale: .95, duration: .3 }, '<'); }); var c = O[d.correcta] || O[0]; w.pop(tl, c, '>'); w.IN(tl, (function () { var t = w.pieza(c, 372, -66); w.emoji(t, 0, 0, '✅', 50); return t; })(), '<', { scale: 0, y: 0 });
   } };
 
   // ======================= TRANSFORMACIONES =======================
@@ -1576,6 +1661,70 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
       if (k) { var prev = Ps[k - 1]; w.OUT(tl, prev.nt, 0, { duration: .2 }); tl.to(prev.e, { scale: .45, opacity: .45, duration: .5, ease: 'power2.inOut' }, '<'); tl.to(prev.e.parentNode, { attr: { transform: 'translate(960 ' + (390 + (k - 1) * 0) + ')' }, duration: .5 }, '<');
         hist.forEach(function (h) { tl.to(h, { opacity: 0, duration: .2 }, '<'); }); hist.push(prev.e); }
       w.IN(tl, o.e, k ? '<.25' : 0, { scale: 1.6, y: 0, d: .6, ease: 'power3.out' }); if (d.pasos[k].nota) w.IN(tl, o.nt, '>', { y: 20 }); });
+  } };
+})();
+
+/* PLANTILLAS · JUEGOS: verdadero o falso (vof), este o ese (versus), jefe final (jefe) e historieta (historieta). */
+(function () {
+  var w = W, C = w.C;
+  function ancho(s, f, min, max) { return Math.max(min || 160, Math.min(max || 1600, String(s).length * f + 80)); }
+
+  // vof: verdadero o falso con sello. {afirmacion, emoji?, verdadero: true|false, explicacion} — 3 pasos: afirmación · ¿V o F? · sello y explicación
+  T.vof = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var a = w.pieza(g, 960, 360); w.tarjeta(a, 0, 0, 1500, 220, C.aqua); if (d.emoji) w.emoji(a, -640, 0, d.emoji, 100); w.multi(a, d.emoji ? 60 : 0, 0, '«' + d.afirmacion + '»', 50, C.txt, d.emoji ? 1260 : 1400);
+    var V = w.chip(g, 660, 640, 480, 130, '✅ VERDADERO', { r: 30, size: 46, stroke: C.verde }), F = w.chip(g, 1260, 640, 480, 130, '❌ FALSO', { r: 30, size: 46, stroke: C.coral });
+    var ok = d.verdadero ? V : F, no = d.verdadero ? F : V;
+    var se = w.pieza(g, 960, 520); w.caja(se, 0, 0, 620, 170, 'none', d.verdadero ? C.verde : C.coral, 30, 12); w.txt(se, 0, 4, d.verdadero ? 'VERDADERO' : 'FALSO', 92, d.verdadero ? C.verde : C.coral, { 'font-weight': 900, 'letter-spacing': 6 });
+    se.parentNode.setAttribute('transform', 'translate(960 520) rotate(-8)');
+    var ex = w.pieza(g, 960, 830); w.caja(ex, 0, 0, 1500, 150, 'url(#gCard)', C.sol, 30, 5); w.multi(ex, 0, 0, d.explicacion, 40, C.txt, 1400);
+    B(0); w.IN(tl, a, 0, { y: -40 });
+    B(1); w.IN(tl, V, 0, { x: -80, y: 0 }); w.IN(tl, F, '<.1', { x: 80, y: 0 });
+    B(2); tl.to(no, { opacity: .2, duration: .25 }, '>'); tl.to(ok, { opacity: .2, duration: .25 }, '<'); w.IN(tl, se, '>', { scale: 3, y: 0, d: .35, ease: 'power4.in' }); w.sacudir(tl, '>'); w.IN(tl, ex, '>', { y: 40 });
+  } };
+
+  // versus: este o ese, cara a cara. {titulo?, a:{txt, emoji, datos:[...] (1-3)}, b:{...}, gana:'a'|'b'|'empate', veredicto} — 4 pasos
+  T.versus = { n: function () { return 4; }, armar: function (g, tl, B, d) {
+    var ti = w.titulo(g, d.titulo || 'ESTE O ESE');
+    function lado(x, o, col, sg) { var p = w.pieza(g, x, 590); w.tarjeta(p, 0, 0, 640, 560, col); w.emoji(p, 0, -170, o.emoji || '⭐', 130); w.txt(p, 0, -50, o.txt, 50, col, { 'font-weight': 900 });
+      var ds = (o.datos || []).map(function (s, k) { var q = w.pieza(p, 0, 50 + k * 80); w.multi(q, 0, 0, '• ' + s, 34, C.txt, 560); return q; }); return { p: p, ds: ds }; }
+    var A = lado(520, d.a, C.azul), Bd = lado(1400, d.b, C.coral);
+    var vs = w.pieza(g, 960, 560); w.el('circle', { r: 90, fill: 'url(#gSol)', stroke: '#fff', 'stroke-width': 8 }, vs); w.txt(vs, 0, 4, 'VS', 72, '#3a2a00', { 'font-weight': 900 });
+    var ver = w.pieza(g, 960, 930); w.caja(ver, 0, 0, 1500, 100, 'url(#gSol)', '#ffe7a8', 50, 5); w.multi(ver, 0, 0, (d.gana === 'empate' ? '🤝 ' : '🏆 ') + d.veredicto, 40, '#3a2a00', 1400);
+    var co = w.pieza(g, d.gana === 'b' ? 1400 : 520, 300); w.emoji(co, 0, 0, '👑', 90);
+    B(0); w.IN(tl, ti, 0); w.IN(tl, A.p, '<.1', { x: -400, y: 0, ease: 'power3.out' }); w.IN(tl, Bd.p, '<', { x: 400, y: 0, ease: 'power3.out' }); w.IN(tl, vs, '>', { scale: 3, y: 0, ease: 'back.out(2)' }); w.sacudir(tl, '>');
+    B(1); A.ds.forEach(function (q) { w.IN(tl, q, '<.15', { x: -30, y: 0 }); });
+    B(2); Bd.ds.forEach(function (q) { w.IN(tl, q, '<.15', { x: 30, y: 0 }); });
+    B(3); if (d.gana !== 'empate') { tl.to(d.gana === 'b' ? A.p : Bd.p, { opacity: .45, duration: .3 }, '>'); w.IN(tl, co, '>', { y: -60, scale: .3, ease: 'bounce.out', d: .6 }); } w.IN(tl, ver, '>', { y: 30 });
+  } };
+
+  // jefe: jefe final con barra de vida; cada pregunta acertada le saca vida. {jefe:{nombre, emoji}, preguntas:[{p, r}] (2-4)} — 2 + preguntas pasos
+  T.jefe = { n: function (d) { return 2 + d.preguntas.length; }, armar: function (g, tl, B, d) {
+    var n = d.preguntas.length, j = w.pieza(g, 380, 560); w.el('circle', { r: 190, fill: 'rgba(226,69,60,.12)', stroke: C.coral, 'stroke-width': 6 }, j); var cara = w.emoji(j, 0, 0, d.jefe.emoji || '👾', 220);
+    var nb = w.pieza(g, 380, 820); w.txt(nb, 0, 0, d.jefe.nombre || 'EL JEFE FINAL', 40, C.coral, { 'font-weight': 900, 'letter-spacing': 2 });
+    var hp = w.pieza(g, 960, 270); w.txt(hp, -620, 0, 'VIDA', 30, C.coral, { 'font-weight': 900 }); w.el('rect', { x: -560, y: -20, width: 1240, height: 40, rx: 20, fill: 'rgba(0,0,0,.35)', stroke: '#fff', 'stroke-width': 4 }, hp);
+    var barra = w.el('rect', { x: -556, y: -16, width: 1232, height: 32, rx: 16, fill: C.coral }, hp);
+    var Q = d.preguntas.map(function (q, k) { var p = w.pieza(g, 1160, 560); w.tarjeta(p, 0, -50, 1000, 260, W.PAL[(k + 1) % W.PAL.length]); w.txt(p, -440, -150, 'GOLPE ' + (k + 1) + ' DE ' + n, 26, C.suave, { 'text-anchor': 'start', 'letter-spacing': 3 });
+      w.multi(p, 0, -40, q.p, 46, C.txt, 900); var r = w.pieza(p, 0, 160); w.caja(r, 0, 0, 760, 100, 'url(#gSol)', '#ffe7a8', 50, 5); w.multi(r, 0, 0, '⚔️ ' + q.r, 42, '#3a2a00', 700); p.r = r; return p; });
+    var fin = w.pieza(g, 1160, 560); w.emoji(fin, 0, -80, '🏆', 150); w.txt(fin, 0, 90, '¡JEFE DERROTADO!', 80, C.sol, { 'font-weight': 900 });
+    B(0); w.IN(tl, j, 0, { scale: .2, y: 0, ease: 'back.out(1.6)', d: .7 }); w.IN(tl, nb, '<.2'); w.IN(tl, hp, '<.1', { y: -30 }); w.temblar(tl, j, '>');
+    Q.forEach(function (q, k) { B(k + 1); if (k) w.OUT(tl, Q[k - 1], 0, { x: 120 }); w.IN(tl, q, k ? '>' : 0, { x: 150, y: 0 }); w.IN(tl, q.r, '>+.9', { scale: .3, y: 0, ease: 'back.out(2.4)' });
+      tl.to(barra, { attr: { width: 1232 * (1 - (k + 1) / n) }, duration: .4 }, '>'); w.temblar(tl, j, '<'); tl.call(function () { try { SFX.play('pop'); } catch (_) {} }, null, '<'); });
+    B(n + 1); w.OUT(tl, Q[n - 1], 0); tl.to(j, { rotation: 90, y: 60, opacity: .4, duration: .6, ease: 'power2.in' }, '>'); tl.call(function () { try { SFX.play('fanfarria'); } catch (_) {} if (window.CONFETI) CONFETI(); }, null, '>'); w.IN(tl, fin, '<', { scale: .3, y: 0, ease: 'elastic.out(1,.5)', d: 1 });
+  } };
+
+  // historieta: la explicación en viñetas con globos. {titulo?, vinetas:[{emojis:[...] (1-3), txt, quien?}] (2-4)} — un paso por viñeta
+  T.historieta = { n: function (d) { return d.vinetas.length; }, armar: function (g, tl, B, d) {
+    var n = d.vinetas.length, ti = d.titulo ? w.titulo(g, d.titulo) : null, cols = n <= 2 ? n : 2, filas = Math.ceil(n / cols);
+    var pw = cols === 1 ? 1000 : 780, ph = filas === 1 ? 600 : 290, P = W.rejilla(n, 960, filas === 1 ? 600 : 640, pw + 30, ph + 30, cols);
+    var V = d.vinetas.map(function (v, k) { var p = w.pieza(g, P[k][0], P[k][1]); w.caja(p, 0, 0, pw, ph, '#f7f2e6', '#1a1a1a', 10, 8).setAttribute('filter', 'url(#sombra)');
+      var em = v.emojis || [v.emoji || '🙂'], es = Math.min(ph * .42, 150), ex = W.rejilla(em.length, 0, 0, es * 1.2, 0, em.length);
+      em.forEach(function (e, j) { w.emoji(p, -pw * .22 + ex[j][0], ph * .14, e, es); });
+      var gw = pw * .52, gh = ph * .5, gx = pw * .2, gy = -ph * .18; w.el('ellipse', { cx: gx, cy: gy, rx: gw / 2, ry: gh / 2, fill: '#fff', stroke: '#1a1a1a', 'stroke-width': 5 }, p);
+      w.el('path', { d: 'M' + (gx - gw * .25) + ' ' + (gy + gh * .38) + ' L' + (gx - gw * .45) + ' ' + (gy + gh * .75) + ' L' + (gx - gw * .08) + ' ' + (gy + gh * .45) + ' Z', fill: '#fff', stroke: '#1a1a1a', 'stroke-width': 5 }, p);
+      w.multi(p, gx, gy, v.txt, Math.min(36, ph * .1), '#1a1a1a', gw * .8);
+      if (v.quien) w.txt(p, -pw / 2 + 24, -ph / 2 + 30, v.quien, 24, '#5a4a2a', { 'text-anchor': 'start', 'font-weight': 900, 'letter-spacing': 2 });
+      w.txt(p, pw / 2 - 30, ph / 2 - 24, String(k + 1), 24, '#5a4a2a', { 'font-weight': 900 }); return p; });
+    V.forEach(function (p, k) { B(k); if (!k && ti) w.IN(tl, ti, 0); w.IN(tl, p, k || !ti ? 0 : '<.1', { scale: .7, rotation: k % 2 ? 3 : -3, y: 0, ease: 'back.out(1.6)' }); });
   } };
 })();
 
@@ -1666,13 +1815,49 @@ var SFX = (function () {
       var pasos = 0; orig.call(this, g, tl, function (k) { pasos++; B(k); }, d);
       try {
         enPaso(tl, 0, function () { SFX.play('whoosh'); }, .02);
-        var r = REVELA[nom]; if (r) { var k = r[0] < 0 ? pasos - 1 : r[0]; if (k < pasos) enPaso(tl, k, function () { SFX.play(r[1]); }, nom === 'pregunta' || nom === 'quiz4' ? .35 : .25); }
+        var r = REVELA[nom]; if (r) { var k = r[0] < 0 ? pasos - 1 : r[0]; if (k < pasos) enPaso(tl, k, function () { SFX.play(r[1]); if (r[1] === 'ding' && nom !== 'reto' && window.CONFETI) CONFETI(); }, nom === 'pregunta' || nom === 'quiz4' ? .35 : .25); }
         [].concat(d.sticker || []).forEach(function (s) { if (!s || !s.txt) return; var k = Math.min(pasos - 1, Math.max(0, +s.paso || 0)), p = sticker(g, s);
           tl.fromTo(p, { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: .28, ease: 'back.out(2.5)', immediateRender: false }, 'b' + k + '+=.6'); enPaso(tl, k, function () { SFX.play('pop'); }, .62); });
       } catch (_) {}
     };
   });
 
+})();
+
+/* ---- CONFETI al revelar, "3, 2, 1… pensá" antes de la respuesta y BOTÓN DE VELOCIDAD ---- */
+(function () {
+  var calma = window.AudioContext === undefined && window.webkitAudioContext === undefined; // modo calmo de la plataforma (Menos animación)
+  try { if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calma = true; } catch (_) {}
+  window.CONFETI = function () {
+    if (calma) return; var cv = document.createElement('canvas'), W = innerWidth, H = innerHeight; cv.width = W; cv.height = H;
+    cv.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:50'; document.body.appendChild(cv);
+    var g = cv.getContext('2d'), cols = ['#F4B63F', '#9BE07A', '#ff7a66', '#b9a6ff', '#8be38f', '#7fb6ff'], P = [];
+    for (var i = 0; i < 90; i++) P.push({ x: W / 2 + (Math.random() - .5) * W * .3, y: H * .55, vx: (Math.random() - .5) * 12, vy: -6 - Math.random() * 9, s: 5 + Math.random() * 7, c: cols[i % 6], r: Math.random() * 6, vr: (Math.random() - .5) * .3 });
+    var t0 = performance.now();
+    (function paso(t) { var k = t - t0; g.clearRect(0, 0, W, H); P.forEach(function (p) { p.vy += .3; p.x += p.vx; p.y += p.vy; p.r += p.vr; g.save(); g.globalAlpha = Math.max(0, 1 - k / 1600); g.translate(p.x, p.y); g.rotate(p.r); g.fillStyle = p.c; g.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); g.restore(); });
+      if (k < 1600) requestAnimationFrame(paso); else cv.remove(); })(t0);
+  };
+  // pensá: el reproductor lo llama al terminar cada frase; devuelve cuántos ms esperar antes de la siguiente
+  var PIENSA = { pregunta: 1, quiz4: 1, completa: 1, vof: 1 };
+  window.PENSAR = function (e, k) {
+    if (!e || !PIENSA[e.t] || k !== 1) return 0;
+    var esc = document.getElementById('escena'); if (!esc) return 0; esc = esc.lastElementChild || esc;
+    var NS = 'http://www.w3.org/2000/svg', gg = document.createElementNS(NS, 'g'); gg.setAttribute('transform', 'translate(1690 300)'); esc.appendChild(gg);
+    var c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 78); c.setAttribute('fill', '#F4B63F'); c.setAttribute('stroke', '#fff'); c.setAttribute('stroke-width', 6); gg.appendChild(c);
+    var t = document.createElementNS(NS, 'text'); t.setAttribute('text-anchor', 'middle'); t.setAttribute('dominant-baseline', 'central'); t.setAttribute('font-size', 76); t.setAttribute('font-weight', 900); t.setAttribute('fill', '#3a2a00'); gg.appendChild(t);
+    var s = document.createElementNS(NS, 'text'); s.setAttribute('y', 118); s.setAttribute('text-anchor', 'middle'); s.setAttribute('font-size', 34); s.setAttribute('font-weight', 800); s.setAttribute('fill', '#F4B63F'); s.textContent = 'PENSÁ…'; gg.appendChild(s);
+    var n = 3; (function tic() { if (!gg.parentNode) return; if (n === 0) { gg.remove(); return; } t.textContent = n; try { SFX.play('tic'); } catch (_) {}
+      if (!calma && window.gsap) gsap.fromTo(gg, { scale: 1.3, svgOrigin: '1690 300' }, { scale: 1, duration: .3, svgOrigin: '1690 300' }); n--; setTimeout(tic, 1000); })();
+    return 3000;
+  };
+  // velocidad: 1x → 1,25x → 1,5x → 0,75x (voz y animaciones). Se recuerda para la próxima clase.
+  var V = [1, 1.25, 1.5, .75], vel = 1; try { vel = +localStorage.getItem('wave-vel') || 1; } catch (_) {}
+  var play0 = HTMLMediaElement.prototype.play;
+  HTMLMediaElement.prototype.play = function () { try { this.playbackRate = vel; } catch (_) {} return play0.apply(this, arguments); };
+  function aplicar() { try { if (window.gsap) gsap.globalTimeline.timeScale(vel); } catch (_) {} var b = document.getElementById('vel'); if (b) b.textContent = String(vel).replace('.', ',') + 'x'; }
+  function boton() { var ctl = document.getElementById('ctl'); if (!ctl || document.getElementById('vel')) return; var b = document.createElement('button'); b.id = 'vel'; b.setAttribute('aria-label', 'Velocidad');
+    b.style.cssText = 'min-width:64px;font-weight:800'; b.onclick = function () { vel = V[(V.indexOf(vel) + 1) % V.length]; try { localStorage.setItem('wave-vel', vel); } catch (_) {} aplicar(); }; ctl.insertBefore(b, document.getElementById('mus') || null); aplicar(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boton); else boton();
 })();
 
 /* MÚSICA DE FONDO: se compone en el momento con WebAudio (sin archivos). Cada clase tiene la suya:
@@ -1789,7 +1974,7 @@ var MUSICA = (function () {
     if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; MUSICA.pausa(); barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, PRIM ? 900 : 150);
     st.f = k; barra(); subs(e.voz[k]);
     if (tl.labels['b' + k] != null) tl.play('b' + k);
-    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, pausaFrase(e, k)); }, k);
+    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, Math.max(pausaFrase(e, k), window.PENSAR ? PENSAR(e, k) : 0)); }, k);
   }
   function armarEscena(i) {
     var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });

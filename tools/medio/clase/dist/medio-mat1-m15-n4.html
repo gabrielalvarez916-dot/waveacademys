@@ -256,8 +256,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     function lado(x, o, col) { var p = w.pieza(g, x, 520), pied = o.estilo === 'piedra';
       w.caja(p, 0, 0, 600, 340, pied ? 'url(#gPiedra)' : 'url(#gCard)', pied ? '#d8d0c0' : col, 34, 6).setAttribute('filter', 'url(#sombra)');
       w.txt(p, 0, -125, o.cab, 28, pied ? '#4a4438' : col, { 'letter-spacing': 4 });
-      if (o.emoji) w.emoji(p, 0, -30, o.emoji, 110);
-      w.multi(p, 0, o.emoji ? 85 : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
+      if (o.emoji) w.emoji(p, 0, -45, o.emoji, 96);
+      w.multi(p, 0, o.emoji ? (String(o.texto).length > 22 ? 98 : 85) : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
     var A = lado(560, d.a, C.aqua), Bb = lado(1360, d.b, C.sol), s = w.pieza(g, 960, 520); w.txt(s, 0, 0, d.signo || 'vs', d.signo && d.signo.length < 2 ? 140 : 70, C.sol, { filter: 'url(#brillo)' });
     var de = null; if (d.def) { de = w.pieza(g, 960, 850); w.tarjeta(de, 0, 0, 1440, 180, C.sol); w.txt(de, 0, -40, d.def.cab, 32, C.sol, { 'letter-spacing': 4 }); w.multi(de, 0, 30, d.def.texto, 40, C.txt, 1340); }
     B(0); w.IN(tl, A, 0, { x: -200, y: 0 });
@@ -600,6 +600,63 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     w.txt(p, xo, (n - 1 - n / 2) * h, d.op || '+', size * .9, C.sol); var yl = (n - n / 2) * h - size * .45; w.el('line', { x1: xo - 40, y1: yl, x2: xr + 20, y2: yl, stroke: C.sol, 'stroke-width': 8 }, p);
     var r = w.pieza(g, 960, 560); w.txt(r, xr, yl + size * .7, d.resultado, size, C.verde, { 'text-anchor': 'end', 'font-family': 'ui-monospace,Menlo,Consolas,monospace', filter: 'url(#brillo)' });
     B(0); w.IN(tl, p, 0); B(1); w.IN(tl, r, 0, { y: 60 });
+  } };
+
+  // grupos: grupos iguales (la multiplicación como suma repetida). {titulo?, emoji, grupos (2-6), cada (1-8), texto} — 3 pasos:
+  // aparecen los grupos (bandejas) · la voz cuenta sumando ("4, 8, 12") y cada bandeja muestra su subtotal · el texto ("3 veces 4 = 12" o "3 × 4 = 12")
+  T.grupos = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var G = d.grupos, c = d.cada, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, paso = Math.min(300, 1600 / G), x0 = 960 - (G - 1) * paso / 2;
+    var cols = c <= 3 ? c : Math.ceil(c / 2), rows = Math.ceil(c / cols), es = Math.min(72, (paso - 70) / cols), bh = Math.max(170, rows * es + 70), Y = 540;
+    var P = [], S = [], k, j;
+    for (k = 0; k < G; k++) { var p = w.pieza(g, x0 + k * paso, Y); w.caja(p, 0, 0, paso - 30, bh, 'rgba(255,255,255,.06)', W.PAL[k % W.PAL.length], 30, 5);
+      for (j = 0; j < c; j++) w.emoji(p, ((j % cols) - (cols - 1) / 2) * es, (Math.floor(j / cols) - (rows - 1) / 2) * es, d.emoji, es * .85); P.push(p);
+      var q = w.pieza(g, x0 + k * paso, Y + bh / 2 + 62); w.el('circle', { r: 42, fill: C.sol }, q); w.txt(q, 0, 2, String((k + 1) * c), (k + 1) * c >= 100 ? 28 : 36, '#3a2a00', { 'font-weight': 800 }); S.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    var visto = {}; g.alDecir = function (pal, f) { if (f !== 1) return; var v = numDe(pal); if (v == null) return;
+      for (var i = 0; i < G; i++) if ((i + 1) * c === v && !visto[i]) { visto[i] = 1; gsap.fromTo(S[i], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(3)' }); gsap.fromTo(P[i], { scale: 1 }, { scale: 1.08, duration: .18, yoyo: true, repeat: 1 }); break; } };
+    B(0); if (ti) w.IN(tl, ti, 0); P.forEach(function (p, i) { w.IN(tl, p, i ? '<.12' : (ti ? '<.2' : 0), { y: -200, scale: .6, ease: 'back.out(1.6)' }); });
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(S, { opacity: 1, scale: 1 }, '>+0.05'); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 });
+  } };
+
+  // arreglo: organización rectangular (filas y columnas). {titulo?, emoji, filas (1-6), cols (1-10), texto} — 3 pasos:
+  // aparece el arreglo · se iluminan las filas una por una con la cuenta al costado (4, 8, 12) · el texto ("3 filas de 4 = 12")
+  T.arreglo = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var F = d.filas, Cc = d.cols, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, s = Math.min(110, 1100 / Cc, 500 / F), x0 = 960 - (Cc - 1) * s / 2 - 60, y0 = 560 - (F - 1) * s / 2, r, c;
+    var base = w.pieza(g, 0, 0), hl = [], cnt = [];
+    for (r = 0; r < F; r++) { hl.push(w.caja(base, x0 + (Cc - 1) * s / 2, y0 + r * s, Cc * s + 24, s * .96, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 20, 4));
+      for (c = 0; c < Cc; c++) w.emoji(base, x0 + c * s, y0 + r * s, d.emoji, s * .78);
+      var q = w.pieza(g, x0 + Cc * s + 40, y0 + r * s); w.el('circle', { r: Math.min(40, s * .42), fill: C.sol }, q); w.txt(q, 0, 2, String((r + 1) * Cc), Math.min(34, s * .36), '#3a2a00', { 'font-weight': 800 }); cnt.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.2' : 0, { scale: .7, y: 0 });
+    B(1); for (r = 0; r < F; r++) { tl.to(hl[r], { attr: { fill: 'rgba(244,182,63,.16)', stroke: C.sol }, duration: .3 }, r ? '>+0.35' : '>'); w.IN(tl, cnt[r], '<', { scale: 0, y: 0, ease: 'back.out(3)' }); }
+    B(2); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 }); else tl.to({}, { duration: .01 });
+  } };
+
+  // columnas: la cuenta en columnas (algoritmo de la suma y la resta) con U, D y C arriba.
+  // {titulo?, a:'365', b:'142', op:'+'|'−', resultado:'507', marcas:[{col:'D', txt:'1', paso:1}], tachar:[{col:'D', nuevo:'5', paso:1}]}
+  // 1 + columnas pasos: la cuenta armada · una columna por paso, de derecha a izquierda (unidades primero): se ilumina,
+  // aparecen las marcas de ese paso (marcas: «me llevo 1» o el 1 del canje; tachar: la cifra que se canjea y su número nuevo) y su resultado.
+  T.columnas = { n: function (d) { return 1 + Math.max(String(d.a).length, String(d.b).length, String(d.resultado).length); }, armar: function (g, tl, B, d) {
+    var a = String(d.a), b = String(d.b), r = String(d.resultado), nc = Math.max(a.length, b.length, r.length), NOM = ['U', 'D', 'C', 'UM'], IDX = { U: 0, D: 1, C: 2, UM: 3 };
+    var MONO = 'ui-monospace,Menlo,Consolas,monospace', X = function (k) { return 960 + ((nc - 1 - k) - (nc - 1) / 2) * 190; };  // k: columna contada desde la derecha
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, base = w.pieza(g, 0, 0), hl = [], k;
+    for (k = 0; k < nc; k++) { hl.push(w.caja(base, X(k), 590, 170, 560, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 30, 5));
+      w.caja(base, X(k), 350, 130, 70, 'url(#gAqua)', '#d8fff7', 22, 3); w.txt(base, X(k), 352, NOM[k], 40, '#06282a', { 'font-weight': 800 }); }
+    function fila(s, y) { for (var j = 0; j < s.length; j++) w.txt(base, X(j), y, s[s.length - 1 - j], 110, C.txt, { 'font-family': MONO, 'font-weight': 700 }); }
+    fila(a, 490); fila(b, 620);
+    w.txt(base, X(nc - 1) - 170, 620, d.op || '+', 100, C.sol, { 'font-weight': 800 });
+    w.el('line', { x1: X(nc - 1) - 230, y1: 690, x2: X(0) + 95, y2: 690, stroke: C.sol, 'stroke-width': 8, 'stroke-linecap': 'round' }, base);
+    var res = []; for (k = 0; k < r.length; k++) { var p = w.pieza(g, X(k), 775); w.txt(p, 0, 0, r[r.length - 1 - k], 110, C.verde, { 'font-family': MONO, 'font-weight': 700, filter: 'url(#brillo)' }); res.push(p); }
+    var M = (d.marcas || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 410); w.el('circle', { r: 30, fill: 'rgba(244,182,63,.25)', stroke: C.sol, 'stroke-width': 4 }, q); w.txt(q, 0, 2, m.txt, String(m.txt).length > 1 ? 32 : 40, C.sol, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    var TA = (d.tachar || []).map(function (m) { var q = w.pieza(g, X(IDX[m.col] || 0), 490); w.el('line', { x1: -45, y1: 45, x2: 45, y2: -45, stroke: C.coral, 'stroke-width': 10, 'stroke-linecap': 'round' }, q); w.txt(q, 66, -64, m.nuevo, 44, C.coral, { 'font-weight': 800 }); q.paso = m.paso || 1; return q; });
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.1' : 0, { y: 30 });
+    for (k = 0; k < nc; k++) { B(k + 1);
+      tl.to(hl, { attr: { fill: 'rgba(244,182,63,0)', stroke: 'rgba(244,182,63,0)' }, duration: .2 }, '>');
+      tl.to(hl[k], { attr: { fill: 'rgba(244,182,63,.12)', stroke: C.sol }, duration: .3 }, '<');
+      TA.concat(M).filter(function (m) { return m.paso === k + 1; }).forEach(function (m) { w.IN(tl, m, '>', { scale: 0, y: 0, ease: 'back.out(3)' }); });
+      if (res[k]) w.IN(tl, res[k], '>', { y: -60 }); else tl.to({}, { duration: .01 });
+    }
   } };
 
   // fraccion: {num, den, forma:'pizza'|'barra', txt} — 2 pasos: se divide, se pintan las partes
@@ -1037,10 +1094,11 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   // corrige: {titulo, cambios:[{antes, despues, motivo}] (máx 3)} — tacha lo que está mal y escribe lo correcto (1 + cambios pasos)
   T.corrige = { n: function (d) { return 1 + d.cambios.length; }, armar: function (g, tl, B, d) {
     var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null;
-    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0);
-      var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20;
-      var tachon = w.el('line', { x1: 560 - la / 2, y1: y, x2: 560 + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
-      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
+    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0), largo = Math.max(String(c.antes).length, String(c.despues).length) > 26;
+      if (!largo) { var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20; }
+      else { var a = w.multi(gr, 500, y, c.antes, 32, '#ff9f9f', 640); var la = Math.min(640, c.antes.length * 17 + 20); }
+      var tachon = w.el('line', { x1: (largo ? 500 : 560) - la / 2, y1: y, x2: (largo ? 500 : 560) + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
+      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = largo ? w.multi(gr, 1420, y, c.despues, 32, '#8be38f', 640) : w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
       var mo = c.motivo ? w.txt(gr, 960, y + 62, c.motivo, 28, '#bdb2d6') : null; gr._t = tachon; gr._b = bb; gr._m = mo; return gr; });
     B(0); if (ti) w.IN(tl, ti, 0);
     F.forEach(function (f, k) { B(k + 1); tl.set([f._b, f._m].filter(Boolean), { opacity: 0 }, 0); w.IN(tl, f, 0, { y: 0, d: .3 });
@@ -1197,7 +1255,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
 
   // bloques: {titulo, items:[{cab, txt}] (2-5)} — estructura de un texto (titular, copete, cuerpo...) — 1 + n pasos
   T.bloques = { n: function (d) { return 1 + d.items.length; }, armar: function (g, tl, B, d) {
-    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110], y = 370, P = [];
+    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110].slice(0, n), y = 370, P = [];
+    var suma = alto.reduce(function (a, b) { return a + b; }, 0); if (suma > 580) alto = alto.map(function (h) { return h * 580 / suma; }); // 5 bloques: entran sin salirse por abajo
     var hoja = w.pieza(g, 860, 660); w.caja(hoja, 0, 0, 900, 620, '#eef6f4', '#d8fff7', 20, 4).setAttribute('filter', 'url(#sombra)');
     d.items.forEach(function (it, k) { var h = alto[k] || 120, col = W.PAL[k % W.PAL.length], p = w.pieza(g, 0, 0);
       w.caja(p, 860, y + h / 2, 840, h - 16, col, col, 12, 2).setAttribute('opacity', .85); w.multi(p, 860, y + h / 2, it.txt, k ? 28 : 40, '#06282a', 780);
@@ -1219,8 +1278,34 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
   T.vocab = { n: function (d) { return d.items.length; }, armar: function (g, tl, B, d) {
     var n = d.items.length, P = W.rejilla(n, 960, 620, 520, 340, 3);
     var V = d.items.map(function (it, k) { var p = w.pieza(g, P[k][0], P[k][1]); w.tarjeta(p, 0, 0, 470, 310, W.PAL[k % W.PAL.length]);
-      w.emoji(p, 0, -70, it.emoji || '', 100); w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
+      w.emoji(p, 0, -70, it.emoji || '', 100); if (String(it.palabra).length > 14) w.multi(p, 0, 30, it.palabra, 34, C.txt, 430); else w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); if (String(it.trad || '').length > 22) w.multi(p, 0, 112, it.trad, 26, C.sol, 430); else w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
     V.forEach(function (p, k) { B(k); w.IN(tl, p, 0, { scaleX: 0, y: 0, d: .5, ease: 'back.out(1.6)' }); });
+  } };
+})();
+
+/* PLANTILLA · LETRA CURSIVA (Lengua 2.º año). Usa la letra escolar Playwrite Argentina (motor/fuentes/playwrite-ar.woff, licencia OFL),
+   que armar.py incrusta solo en las clases que usan esta plantilla. */
+(function () {
+  var w = W, C = w.C, nid = 0;
+  // cursiva: {titulo?, imprenta? (la palabra en imprenta, arriba), texto (lo que se escribe en cursiva, con minúsculas), nota?} — 3 pasos:
+  // aparece el cuaderno con renglones (y la imprenta) · el lápiz escribe la cursiva de izquierda a derecha · la nota (o un brillo)
+  // trazos: igual que cursiva, pero primero aparece el trazo en gris claro para REPASAR, y el lápiz lo repasa encima. {texto, nota?, titulo?} — 3 pasos
+  T.trazos = { n: function () { return 3; }, armar: function (g, tl, B, d) { return T.cursiva.armar(g, tl, B, Object.assign({}, d, { repasar: true })); } };
+  T.cursiva = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null, Y = 640, s = String(d.texto), fs = Math.min(190, 1450 / Math.max(3, s.length * .62)), cid = 'cur' + (++nid) + Math.floor(Math.random() * 1e6);
+    var pz = w.pieza(g, 960, Y); w.caja(pz, 0, 0, 1620, 430, '#fffdf3', '#d8c9a0', 28, 6).setAttribute('filter', 'url(#sombra)');
+    [-fs * .62, -fs * .18, fs * .26].forEach(function (yy, k) { w.el('line', { x1: -780, y1: yy, x2: 780, y2: yy, stroke: k === 1 ? '#c7d7f2' : '#9fb8e6', 'stroke-width': k === 2 ? 4 : 3, 'stroke-dasharray': k === 1 ? '14 12' : null }, pz); });
+    w.el('line', { x1: -700, y1: -200, x2: -700, y2: 200, stroke: '#f2a8a8', 'stroke-width': 3 }, pz);
+    var imp = d.imprenta ? w.chip(g, 960, 375, Math.min(1200, String(d.imprenta).length * 40 + 140), 90, d.imprenta, { size: 52, stroke: C.sol, r: 30 }) : null;
+    var cp = w.el('clipPath', { id: cid }, pz), rc = w.el('rect', { x: -800, y: -220, width: 0, height: 440 }, cp);
+    if (d.repasar) w.txt(pz, 0, fs * .02, s, fs, '#c9d2e6', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'stroke': '#9fb0d4', 'stroke-width': 2, 'stroke-dasharray': '6 8' });
+    var t = w.txt(pz, 0, fs * .02, s, fs, '#1d2a5a', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'clip-path': 'url(#' + cid + ')' });
+    var ancho = Math.min(1500, s.length * fs * .6), lap = w.pieza(g, 960 - ancho / 2, Y - fs * .35); w.emoji(lap, 0, 0, '✏️', 80);
+    var nota = d.nota ? w.chip(g, 960, 920, Math.min(1500, String(d.nota).length * 32 + 140), 96, d.nota, { size: 48, stroke: C.verde, r: 32 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, pz, ti ? '<.1' : 0, { y: 30, d: .5 }); if (imp) w.IN(tl, imp, '>', { scale: .6, y: 0 });
+    B(1); tl.to(lap, { opacity: 1, duration: .15 }, '>'); tl.to(rc, { attr: { width: 1600 }, duration: Math.min(3.2, .9 + s.length * .16), ease: 'none' }, '>');
+    tl.to(lap.parentNode, { attr: { transform: 'translate(' + (960 + ancho / 2) + ' ' + (Y - fs * .35) + ')' }, duration: Math.min(3.2, .9 + s.length * .16) * (ancho / 1600 + .05), ease: 'none' }, '<'); tl.to(lap, { opacity: 0, duration: .2 }, '>');
+    B(2); if (nota) w.IN(tl, nota, '>', { scale: .6, y: 0 }); else tl.to(pz, { scale: 1.04, duration: .2, yoyo: true, repeat: 1 }, '>');
   } };
 })();
 

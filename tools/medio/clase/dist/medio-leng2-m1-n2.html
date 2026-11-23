@@ -1297,8 +1297,8 @@ var T = {}; // banco de plantillas: T.nombre = { n: function (d) { return pasos 
     w.el('line', { x1: -700, y1: -200, x2: -700, y2: 200, stroke: '#f2a8a8', 'stroke-width': 3 }, pz);
     var imp = d.imprenta ? w.chip(g, 960, 375, Math.min(1200, String(d.imprenta).length * 40 + 140), 90, d.imprenta, { size: 52, stroke: C.sol, r: 30 }) : null;
     var cp = w.el('clipPath', { id: cid }, pz), rc = w.el('rect', { x: -800, y: -220, width: 0, height: 440 }, cp);
-    if (d.repasar) w.txt(pz, 0, fs * .02, s, fs, '#c9d2e6', { 'font-family': "'PlaywriteAR', cursive", 'font-weight': 400, style: 'text-transform:none', 'stroke': '#9fb0d4', 'stroke-width': 2, 'stroke-dasharray': '6 8' });
-    var t = w.txt(pz, 0, fs * .02, s, fs, '#1d2a5a', { 'font-family': "'PlaywriteAR', cursive", 'font-weight': 400, style: 'text-transform:none', 'clip-path': 'url(#' + cid + ')' });
+    if (d.repasar) w.txt(pz, 0, fs * .02, s, fs, '#c9d2e6', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'stroke': '#9fb0d4', 'stroke-width': 2, 'stroke-dasharray': '6 8' });
+    var t = w.txt(pz, 0, fs * .02, s, fs, '#1d2a5a', { style: "text-transform:none;font-family:'PlaywriteAR',cursive;font-weight:400", 'clip-path': 'url(#' + cid + ')' });
     var ancho = Math.min(1500, s.length * fs * .6), lap = w.pieza(g, 960 - ancho / 2, Y - fs * .35); w.emoji(lap, 0, 0, '✏️', 80);
     var nota = d.nota ? w.chip(g, 960, 920, Math.min(1500, String(d.nota).length * 32 + 140), 96, d.nota, { size: 48, stroke: C.verde, r: 32 }) : null;
     B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, pz, ti ? '<.1' : 0, { y: 30, d: .5 }); if (imp) w.IN(tl, imp, '>', { scale: .6, y: 0 });
