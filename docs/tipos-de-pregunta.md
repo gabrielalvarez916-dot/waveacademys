@@ -60,3 +60,11 @@ Se escriben dentro del texto de la pregunta; la corrección no cambia (js/ingles
 - `[[hablar:Good morning]]` → lo anterior + 🎤 Hablar; escribe lo que el navegador entendió en el campo. Usar con `short_answer` + `acepta`. Si no hay micrófono, el alumno escribe.
 - `[[memorama]]` → en `matching`, se juega con tarjetas. La pareja k de `izquierda` debe ser la k de `derecha` (mismo orden). Sin la marca, las opciones de la derecha se mezclan solas.
 - `multiple_choice` con opciones que son todas emojis → se muestran como fichas grandes ("elegí la imagen").
+
+## Actividades-juego (desde 23/11/2026): crucigrama, sopa de letras y escape room
+Son marcas en el enunciado (js/juegos-act.js, solo en alumno.html); la corrección no cambia porque usan tipos que ya existen.
+Armarlas con `tools/juegos_actividad.py` (no a mano):
+- `crucigrama([(respuesta, pista), ...], consigna)` → `fill_blank` con `[[crucigrama:fila,col,h|v,largo;...]]`: la herramienta cruza las palabras sola. Cada palabra es un hueco (acepta con y sin espacios).
+- `sopa([palabras], consigna)` → `multi_select` con `[[sopa]]`: todas las opciones son palabras a encontrar (la grilla se arma sola en la pantalla). Encontrar una palabra marca su opción.
+- `escape(pregunta)` → agrega `[[escape]]` a la primera pregunta de una ACTIVIDAD (no examen): un candado por pregunta que se abre al comprobarla bien; con todos abiertos, «¡Escapaste!».
+Sugerencia: crucigrama y sopa para vocabulario y conceptos clave; escape room para la práctica general o un nivel de cierre.
