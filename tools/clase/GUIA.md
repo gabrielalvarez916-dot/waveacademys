@@ -25,6 +25,8 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 7. De 8 a 14 escenas (4 a 7 minutos).
 8. **Variedad de recursos (regla para todas las materias, años y niveles).** Las 4 clases de una misión NO pueden ser el mismo molde (gancho + definición + tabla + clasificar + pregunta + errores + resumen). Cada clase usa al menos 2 plantillas del banco fuera de las básicas (comparar, antesdespues, causas, ciclo, flujo, linea, venn, balanza, matriz, bloques, barras, dato, zoom, dialogo, partes, etc.), una plantilla (salvo pregunta, resumen, errores, definicion y los ganchos) no se repite en las 4 clases (máximo 3 de 4), y no puede haber dos clases con la misma secuencia de escenas. Cada escena tiene que tener exactamente las frases de voz que pide su plantilla (columna «pasos» del banco): si no, la imagen y la voz se desfasan (un círculo de 6 colores con frases para 4 no termina de ponerlos). `revisar_pasos.py` lo controla y lo corre `revisar_contenido.py`. `revisar_contenido.py` controla la variedad y no deja subir si no se cumple.
 
+9. **Plantillas estilo plataformas (desde nov 2026, obligatorio en clases nuevas).** Cada clase usa al menos 2 de estas: fichas, completa, personaje, logro, pizarra, pistas, deslizador, prediccion, patron, contrarreloj, memoria, unir, mazo, tipeo, documental, escala, dilema, quiz4, transforma. Rotarlas: en una misión, que no se repita la misma de estas en más de 2 clases, y que la misión siguiente use otras distintas. Guía por materia: Inglés → fichas, completa, personaje, mazo, tipeo, quiz4; Matemática → pizarra, pistas, deslizador, patron, transforma, contrarreloj; Naturales y Sociales → documental, escala, prediccion, dilema; Lengua → pizarra, personaje, dilema, completa; cualquier materia → unir, memoria, quiz4, logro.
+
 ## Banco de plantillas (pasos = frases de `voz`)
 
 | t | pasos | datos |
@@ -103,6 +105,25 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | tarjetas | len(items) | titulo, items:[{en, es, emoji?}] (1-4) — tarjetas que se dan vuelta: aparece en inglés y gira al español. Un paso por tarjeta (Inglés) |
 | oracion | 1 + partes | titulo, partes:[{txt, rol}] (2-5; rol: sujeto/verbo/complemento/lugar/tiempo), traduccion — frase armada por colores. Pasos: una por parte + la traducción (Inglés) |
 | pronunciacion | len(palabras) | titulo, palabras:[{en, como, es?}] (1-3) — palabra, cómo se lee en español y su significado. Un paso por palabra (Inglés) |
+| fichas | 3 | consigna, fichas:[palabras en el orden correcto] (2-7), desorden:[índices] opcional, traduccion — **juego de idiomas**: fichas mezcladas que vuelan a armar la frase, ✓ y traducción |
+| completa | 3 | antes, despues, opciones (2-4), correcta (índice), traduccion? — frase con hueco; la opción correcta vuela al hueco |
+| personaje | lineas | personaje:{nombre, emoji}, lineas:[{txt, animo:'feliz'\|'sorpresa'\|'piensa'\|'ojo'\|'triste'}] (1-4) — personaje que habla con globo y reacciona |
+| logro | 1 + items | titulo, items:[txt] (1-4), xp — pantalla de nivel superado con racha 🔥 y puntos que suben (sirve de cierre en lugar de resumen) |
+| pizarra | lineas | titulo?, lineas:[{txt, color?:'sol'\|'coral'\|'verde'\|'azul'\|'lila', marca?:'circulo'\|'subraya'}] (1-5) — **pizarra de clase**: se escribe a mano con lápiz y se marca lo clave |
+| pistas | 2 + pistas | problema, pistas:[...] (1-3), respuesta — problema con pistas que se destapan de a una y la respuesta |
+| deslizador | paradas | titulo, min, max, unidad?, emoji, paradas:[{v, txt}] (2-5) — **explorar**: un control que se mueve y cambia lo que se ve (crece el emoji, sube el número) |
+| prediccion | 3 | pregunta, a:{txt, emoji}, b:{txt, emoji}, correcta:'a'\|'b', resultado — ¿qué creés que pasa? Cuenta regresiva y resultado |
+| patron | 3 | titulo, items:[...] (3-6), falta, regla — secuencia con hueco: ¿qué sigue? |
+| contrarreloj | 1 + items | titulo, segundos, items:[{p, r}] (2-5) — **entrenamiento mental**: ronda rápida con reloj y contador |
+| memoria | 3 | titulo?, items:[...] (4-6), falta (índice) — mirá, se tapan, ¿cuál desapareció? |
+| unir | 1 + pares | titulo, pares:[[izq, der]] (2-5), mezclar? — **repaso**: dos columnas que se unen con líneas de colores |
+| mazo | items | titulo?, items:[{frente, dorso, emoji?}] (1-5) — mazo de tarjetas: se da vuelta y pasa a la pila de aprendidas |
+| tipeo | items | titulo?, items:[{p, r}] (1-4) — la respuesta se escribe letra por letra |
+| documental | rotulos | emojis:[...] (1-4), lugar?, rotulos:[{txt, sub?}] (1-4) — **documental**: bandas de cine, zoom lento y rótulos |
+| escala | items | titulo, items:[{txt, emoji, valor}] (2-5, de menor a mayor) — objetos que crecen para comparar tamaños o cantidades |
+| dilema | 3 | situacion, emoji, a:{txt, consecuencia, emoji?}, b:{…} — **historia con dilema**: dos caminos y sus consecuencias |
+| quiz4 | 3 | pregunta, opciones (2-4), correcta (índice) — **quiz de colores**: fichas de color con forma y barra de tiempo |
+| transforma | pasos | titulo, pasos:[{txt, nota?}] (2-5) — **transformación**: una expresión que se convierte en la siguiente (cuentas, I am → I'm, fórmulas) |
 
 Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en uso: `pruebas/prueba-banco.json` (`python tools/clase/armar.py prueba-banco`).
 

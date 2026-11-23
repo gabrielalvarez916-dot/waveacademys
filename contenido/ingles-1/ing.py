@@ -55,3 +55,23 @@ def MEM(p, iz, de, e, **k): return MAT("[[memorama]] " + p, iz, de, e, **k)
 TAR=lambda t,it,v:{"t":"tarjetas","titulo":t,"items":[{"en":a,"es":b,**({"emoji":c} if c else {})} for a,b,c in it],"voz":v}
 ORA=lambda t,pa,tr,v:{"t":"oracion","titulo":t,"partes":[{"txt":a,"rol":b} for a,b in pa],"traduccion":tr,"voz":v}
 PRO=lambda t,pa,v:{"t":"pronunciacion","titulo":t,"palabras":[{"en":a,"como":b,"es":c} for a,b,c in pa],"voz":v}
+# ---- Plantillas estilo plataformas (tools/clase/motor/t-plataformas.js)
+FIC=lambda c,f,tr,v,des=None:{"t":"fichas","consigna":c,"fichas":f,"traduccion":tr,"voz":v,**({"desorden":des} if des else {})}
+COM=lambda a,b,o,c,v,tr=None:{"t":"completa","antes":a,"despues":b,"opciones":o,"correcta":c,"voz":v,**({"traduccion":tr} if tr else {})}
+PER=lambda p,li,v:{"t":"personaje","personaje":{"nombre":p[0],"emoji":p[1]},"lineas":[{"txt":a,"animo":b} for a,b in li],"voz":v}
+LOG=lambda t,it,xp,v:{"t":"logro","titulo":t,"items":it,"xp":xp,"voz":v}
+PIZ=lambda li,v,t=None:{"t":"pizarra","lineas":[dict(zip(("txt","color","marca"),l)) if isinstance(l,(list,tuple)) else {"txt":l} for l in li],"voz":v,**({"titulo":t} if t else {})}
+PIS=lambda pr,pi,r,v:{"t":"pistas","problema":pr,"pistas":pi,"respuesta":r,"voz":v}
+DES=lambda t,mn,mx,em,pa,v,u=None:{"t":"deslizador","titulo":t,"min":mn,"max":mx,"emoji":em,"paradas":[{"v":a,"txt":b} for a,b in pa],"voz":v,**({"unidad":u} if u else {})}
+PRE=lambda q,a,b,c,r,v:{"t":"prediccion","pregunta":q,"a":{"txt":a[0],"emoji":a[1]},"b":{"txt":b[0],"emoji":b[1]},"correcta":c,"resultado":r,"voz":v}
+PAT=lambda t,it,f,r,v:{"t":"patron","titulo":t,"items":it,"falta":f,"regla":r,"voz":v}
+CR=lambda t,s,it,v:{"t":"contrarreloj","titulo":t,"segundos":s,"items":[{"p":a,"r":b} for a,b in it],"voz":v}
+MEMO=lambda it,f,v,t=None:{"t":"memoria","items":it,"falta":f,"voz":v,**({"titulo":t} if t else {})}
+UN=lambda t,pa,v:{"t":"unir","titulo":t,"pares":[list(x) for x in pa],"voz":v}
+MAZ=lambda it,v,t=None:{"t":"mazo","items":[{"frente":a,"dorso":b,**({"emoji":c} if c else {})} for a,b,c in it],"voz":v,**({"titulo":t} if t else {})}
+TIP=lambda it,v,t=None:{"t":"tipeo","items":[{"p":a,"r":b} for a,b in it],"voz":v,**({"titulo":t} if t else {})}
+DOC=lambda em,ro,v,lu=None:{"t":"documental","emojis":em,"rotulos":[dict(zip(("txt","sub"),r)) if isinstance(r,(list,tuple)) else {"txt":r} for r in ro],"voz":v,**({"lugar":lu} if lu else {})}
+ESC=lambda t,it,v:{"t":"escala","titulo":t,"items":[{"txt":a,"emoji":b,"valor":c} for a,b,c in it],"voz":v}
+DIL=lambda s,em,a,b,v:{"t":"dilema","situacion":s,"emoji":em,"a":{"txt":a[0],"consecuencia":a[1]},"b":{"txt":b[0],"consecuencia":b[1]},"voz":v}
+QZ=lambda q,o,c,v:{"t":"quiz4","pregunta":q,"opciones":o,"correcta":c,"voz":v}
+TRF=lambda t,pa,v:{"t":"transforma","titulo":t,"pasos":[dict(zip(("txt","nota"),p)) if isinstance(p,(list,tuple)) else {"txt":p} for p in pa],"voz":v}

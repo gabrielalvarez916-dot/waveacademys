@@ -59,6 +59,8 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 4. **Contra la misión anterior** de la misma materia: cada misión nueva **suma al menos un formato del banco** que no estaba en la anterior, y ningún nivel repite la secuencia de escenas del mismo nivel de la misión anterior.
 5. Si el tema pide un dibujo que el banco no tiene, se crea una plantilla nueva (en `motor/t-mate.js` u otro), se suma a la tabla de abajo y queda disponible para todas las materias del Nivel Medio.
 
+9. **Plantillas estilo plataformas (desde nov 2026, obligatorio en clases nuevas).** Cada clase usa al menos 2 de estas: fichas, completa, personaje, logro, pizarra, pistas, deslizador, prediccion, patron, contrarreloj, memoria, unir, mazo, tipeo, documental, escala, dilema, quiz4, transforma. Rotarlas: en una misión, que no se repita la misma de estas en más de 2 clases, y que la misión siguiente use otras distintas. Guía por materia: Inglés → fichas, completa, personaje, mazo, tipeo, quiz4; Matemática → pizarra, pistas, deslizador, patron, transforma, contrarreloj; Naturales y Sociales → documental, escala, prediccion, dilema; Lengua → pizarra, personaje, dilema, completa; cualquier materia → unir, memoria, quiz4, logro.
+
 ## Banco de plantillas (pasos = frases de `voz`)
 
 | t | pasos | datos |
@@ -135,6 +137,25 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | bloques | 1 + items | titulo, items:[{cab, txt}] (2-5) |
 | dialogo | lineas | personas:[{nombre, emoji}×2], lineas:[{quien, txt, trad}] (máx 4) |
 | vocab | items | items:[{palabra, emoji, trad, pron}] (2-6) |
+| fichas | 3 | consigna, fichas:[palabras en el orden correcto] (2-7), desorden:[índices] opcional, traduccion — **juego de idiomas**: fichas mezcladas que vuelan a armar la frase, ✓ y traducción |
+| completa | 3 | antes, despues, opciones (2-4), correcta (índice), traduccion? — frase con hueco; la opción correcta vuela al hueco |
+| personaje | lineas | personaje:{nombre, emoji}, lineas:[{txt, animo:'feliz'\|'sorpresa'\|'piensa'\|'ojo'\|'triste'}] (1-4) — personaje que habla con globo y reacciona |
+| logro | 1 + items | titulo, items:[txt] (1-4), xp — pantalla de nivel superado con racha 🔥 y puntos que suben (sirve de cierre en lugar de resumen) |
+| pizarra | lineas | titulo?, lineas:[{txt, color?:'sol'\|'coral'\|'verde'\|'azul'\|'lila', marca?:'circulo'\|'subraya'}] (1-5) — **pizarra de clase**: se escribe a mano con lápiz y se marca lo clave |
+| pistas | 2 + pistas | problema, pistas:[...] (1-3), respuesta — problema con pistas que se destapan de a una y la respuesta |
+| deslizador | paradas | titulo, min, max, unidad?, emoji, paradas:[{v, txt}] (2-5) — **explorar**: un control que se mueve y cambia lo que se ve (crece el emoji, sube el número) |
+| prediccion | 3 | pregunta, a:{txt, emoji}, b:{txt, emoji}, correcta:'a'\|'b', resultado — ¿qué creés que pasa? Cuenta regresiva y resultado |
+| patron | 3 | titulo, items:[...] (3-6), falta, regla — secuencia con hueco: ¿qué sigue? |
+| contrarreloj | 1 + items | titulo, segundos, items:[{p, r}] (2-5) — **entrenamiento mental**: ronda rápida con reloj y contador |
+| memoria | 3 | titulo?, items:[...] (4-6), falta (índice) — mirá, se tapan, ¿cuál desapareció? |
+| unir | 1 + pares | titulo, pares:[[izq, der]] (2-5), mezclar? — **repaso**: dos columnas que se unen con líneas de colores |
+| mazo | items | titulo?, items:[{frente, dorso, emoji?}] (1-5) — mazo de tarjetas: se da vuelta y pasa a la pila de aprendidas |
+| tipeo | items | titulo?, items:[{p, r}] (1-4) — la respuesta se escribe letra por letra |
+| documental | rotulos | emojis:[...] (1-4), lugar?, rotulos:[{txt, sub?}] (1-4) — **documental**: bandas de cine, zoom lento y rótulos |
+| escala | items | titulo, items:[{txt, emoji, valor}] (2-5, de menor a mayor) — objetos que crecen para comparar tamaños o cantidades |
+| dilema | 3 | situacion, emoji, a:{txt, consecuencia, emoji?}, b:{…} — **historia con dilema**: dos caminos y sus consecuencias |
+| quiz4 | 3 | pregunta, opciones (2-4), correcta (índice) — **quiz de colores**: fichas de color con forma y barra de tiempo |
+| transforma | pasos | titulo, pasos:[{txt, nota?}] (2-5) — **transformación**: una expresión que se convierte en la siguiente (cuentas, I am → I'm, fórmulas) |
 
 Ejemplo completo: `lecciones/medio-mat1-m1-n1.json`. PDF: `python tools/medio/pdf/generar.py contenido/medio/<materia>/mision-N/mision-N.json` (o el proceso "PDF de las misiones del NIVEL MEDIO").
 
