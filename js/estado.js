@@ -69,7 +69,16 @@
     el.innerHTML = h;
     el.onclick = async function (ev) {
       var b = ev.target.closest('.est-btn'); if (!b) return;
-      if (!confirm('¿Reenviar esta corrida a GitHub?')) return;
+      var rid = b.getAttribute('data-run'), cur = runs.filter(function (x) { return String(x.id) === rid; })[0];
+      var mismos = runs.filter(function (x) { return cur && x.name === cur.name && ['in_progress', 'queued', 'waiting', 'pending'].indexOf(x.status) >= 0; });
+      var aviso = '';
+      if (mismos.length) {
+        var enc = mismos.filter(function (x) { return x.status === 'in_progress'; }).length, esp = mismos.length - enc;
+        aviso = '⚠️ OJO: de este mismo tipo (' + tipo(cur.name) + ') hay ' + (enc ? enc + ' en curso' : '') + (enc && esp ? ' y ' : '') + (esp ? esp + ' en espera' : '') + '.\n' +
+          (esp ? 'Si reenviás ahora, la que está en espera puede ser reemplazada por esta (GitHub guarda una sola en espera).\n' : 'Si reenviás ahora, esta va a quedar en espera hasta que termine la que está en curso.\n') +
+          'Conviene esperar a que termine.\n\n';
+      }
+      if (!confirm(aviso + '¿Reenviar esta corrida a GitHub?')) return;
       b.disabled = true; b.textContent = 'Enviando…';
       var r = await sb.functions.invoke('reenviar-github', { body: { run_id: b.getAttribute('data-run') } });
       var msg = (r.data && r.data.error) || (r.error && 'No se pudo reenviar') || null;
