@@ -1,0 +1,121 @@
+{
+ "slug": "medio-nat2-m1-n2",
+ "step_id": "94d553cc-6480-4814-894a-6dd8764b6435",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Lo que necesita cada edad",
+ "sub": "Ciencias Naturales 2 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué necesita un bebé para vivir?",
+   "segundos": 8,
+   "respuesta": "¡Que lo cuiden!",
+   "emoji": "👶",
+   "titulo": "CADA EDAD",
+   "sub": "lo que necesita",
+   "voz": [
+    "Desafío: ¿qué necesita un bebé?",
+    "¡Que lo *cuiden*, lo alimenten y lo quieran!",
+    "Hoy: *lo que necesita cada edad*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "LAS ETAPAS DE LA VIDA",
+   "items": [
+    "BEBÉ 👶",
+    "NIÑO 🧒",
+    "ADOLESCENTE 🧑",
+    "ADULTO 🧔"
+   ],
+   "voz": [
+    "La vida tiene *etapas*.",
+    "Primero somos *bebés*.",
+    "Después, *niños*.",
+    "Después, *adolescentes*.",
+    "Y después, *adultos*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "LO QUE NECESITAMOS",
+   "celdas": [
+    {
+     "cab": "BEBÉ",
+     "txt": "Que lo cuiden"
+    },
+    {
+     "cab": "NIÑO",
+     "txt": "Jugar y aprender"
+    },
+    {
+     "cab": "ADOLESCENTE",
+     "txt": "Aprender y tener amigos"
+    },
+    {
+     "cab": "TODOS",
+     "txt": "Comer, dormir y amor"
+    }
+   ],
+   "voz": [
+    "Cada edad necesita algo.",
+    "El *bebé*: que lo cuiden.",
+    "El *niño*: jugar y aprender.",
+    "El *adolescente*: aprender y tener amigos.",
+    "*Todos*: comer, dormir y amor."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién usa pañales?",
+   "opciones": [
+    "EL BEBÉ",
+    "EL ADULTO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿quién usa pañales?",
+    "Pensá en las etapas.",
+    "¡El *bebé*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDARNOS",
+   "texto": "En cada edad necesitamos cuidados",
+   "emoji": "🤗",
+   "voz": [
+    "Truco: en *todas* las edades necesitamos cuidados."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ETAPAS",
+     "bebé, niño, adolescente, adulto"
+    ],
+    [
+     "BEBÉ",
+     "que lo cuiden"
+    ],
+    [
+     "TODOS",
+     "comer, dormir, jugar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *etapas*: bebé, niño, adolescente, adulto.",
+    "El *bebé* necesita que lo cuiden.",
+    "*Todos* necesitamos comer, dormir y jugar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

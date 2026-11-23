@@ -1,0 +1,147 @@
+{
+ "slug": "medio-nat2-m1-n3",
+ "step_id": "e0521561-747e-481e-9b67-a825b4b340cf",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Alimentos para crecer",
+ "sub": "Ciencias Naturales 2 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LABORATORIO",
+   "titular": "¿Qué comida nos ayuda a crecer?",
+   "bajada": "Tomi investiga",
+   "emoji": "🔬",
+   "titulo": "ALIMENTOS",
+   "sub": "para crecer",
+   "voz": [
+    "¡Pregunta de laboratorio: qué comida nos ayuda a crecer?",
+    "Tomi *investiga*.",
+    "Hoy: *alimentos para crecer*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "¿QUÉ PLATO AYUDA MÁS?",
+   "variable": "LO QUE COMEMOS",
+   "a": {
+    "cab": "SOLO GOLOSINAS",
+    "emojis": [
+     "🍬",
+     "🍭"
+    ],
+    "txt": "Todos los días",
+    "res": "POCA ENERGÍA"
+   },
+   "b": {
+    "cab": "PLATO VARIADO",
+    "emojis": [
+     "🥕",
+     "🍗",
+     "🥛"
+    ],
+    "txt": "De todo un poco",
+    "res": "¡CRECEMOS SANOS!"
+   },
+   "voz": [
+    "Comparamos dos formas de comer.",
+    "Solo golosinas: nos da *poca energía*.",
+    "Un plato *variado*: ¡crecemos sanos!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "FRUTAS Y VERDURAS",
+     "emoji": "🥕"
+    },
+    {
+     "cab": "LECHE Y QUESOS",
+     "emoji": "🥛"
+    },
+    {
+     "cab": "CARNES Y HUEVOS",
+     "emoji": "🍗"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "MANZANA",
+     "caja": 0
+    },
+    {
+     "txt": "ZANAHORIA",
+     "caja": 0
+    },
+    {
+     "txt": "YOGUR",
+     "caja": 1
+    },
+    {
+     "txt": "HUEVO",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "Separamos los alimentos en grupos.",
+    "Manzana y zanahoria: *frutas y verduras*.",
+    "Yogur: *leche y quesos*.",
+    "Huevo: *carnes y huevos*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es la mejor bebida?",
+   "opciones": [
+    "GASEOSA",
+    "AGUA",
+    "JUGO EN POLVO",
+    "BEBIDA DULCE"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál es la mejor bebida?",
+    "Pensá en lo más sano.",
+    "¡El *agua*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COLORES EN EL PLATO",
+   "texto": "Un plato con colores tiene de todo",
+   "emoji": "🌈",
+   "voz": [
+    "Truco: un plato con *muchos colores* tiene de todo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VARIADO",
+     "de todo un poco"
+    ],
+    [
+     "GRUPOS",
+     "frutas, leche, carnes"
+    ],
+    [
+     "AGUA",
+     "la mejor bebida"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Comemos *variado*.",
+    "Hay *grupos* de alimentos.",
+    "El *agua* es la mejor bebida.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

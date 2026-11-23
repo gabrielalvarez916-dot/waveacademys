@@ -1,0 +1,124 @@
+{
+ "slug": "medio-nat2-m1-n4",
+ "step_id": "1d576a2f-c7c6-4364-9430-715d77e52381",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Las vacunas y la salud",
+ "sub": "Ciencias Naturales 2 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Mamá",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mañana vamos al centro de salud 🏥"
+    },
+    {
+     "yo": true,
+     "txt": "¿Para qué, mamá?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Te toca una vacuna! 💉"
+    }
+   ],
+   "titulo": "LA SALUD",
+   "sub": "y las vacunas",
+   "voz": [
+    "Mamá le escribe a Tomi.",
+    "Mañana vamos al centro de salud.",
+    "¿Para qué, mamá?",
+    "¡Te toca una *vacuna*! Hoy: *la salud*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Vacuna",
+   "texto": "Ayuda al cuerpo a defenderse de algunas enfermedades",
+   "emoji": "💉",
+   "voz": [
+    "La *vacuna* ayuda al cuerpo a *defenderse*.",
+    "Se anota en la *libreta de vacunas*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "HÁBITOS SANOS",
+   "items": [
+    {
+     "frente": "🧼",
+     "dorso": "LAVARSE LAS MANOS",
+     "emoji": "🧼"
+    },
+    {
+     "frente": "😴",
+     "dorso": "DORMIR BIEN",
+     "emoji": "😴"
+    },
+    {
+     "frente": "⚽",
+     "dorso": "JUGAR Y MOVERSE",
+     "emoji": "⚽"
+    }
+   ],
+   "voz": [
+    "*Lavarse las manos*: saca los microbios.",
+    "*Dormir bien*: el cuerpo descansa.",
+    "*Jugar y moverse*: el cuerpo se pone fuerte."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Lavarse las manos no sirve para nada",
+   "emoji": "🧼",
+   "verdadero": false,
+   "explicacion": "Nos protege de los microbios",
+   "voz": [
+    "¿Verdadero o falso? Lavarse las manos no sirve.",
+    "Pensá en los microbios…",
+    "¡*Falso*! Nos protege."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODOS LOS DÍAS",
+   "texto": "Cuidar la salud es de todos los días",
+   "emoji": "📅",
+   "voz": [
+    "Truco: cuidar la salud es cosa de *todos los días*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VACUNAS",
+     "ayudan a defenderse"
+    ],
+    [
+     "LIBRETA",
+     "ahí se anotan"
+    ],
+    [
+     "HÁBITOS",
+     "manos, dormir, jugar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *vacunas* ayudan a defenderse.",
+    "Se anotan en la *libreta*.",
+    "Y tenemos *hábitos sanos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

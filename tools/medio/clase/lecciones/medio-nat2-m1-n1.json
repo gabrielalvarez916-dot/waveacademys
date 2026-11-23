@@ -1,0 +1,131 @@
+{
+ "slug": "medio-nat2-m1-n1",
+ "step_id": "1db8ac06-84e8-4450-93d8-bec72adac062",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Antes y ahora: cómo cambié",
+ "sub": "Ciencias Naturales 2 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "📸",
+   "lineas": [
+    "Tomi encontró una foto vieja.",
+    "¡Es él, de bebé!",
+    "¿Cuánto cambió?"
+   ],
+   "titulo": "ANTES",
+   "sub": "y ahora",
+   "voz": [
+    "Tomi, el científico, encontró una *foto vieja*.",
+    "¡Es él, de bebé!",
+    "¿Cuánto cambió?",
+    "Hoy: *antes y ahora*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "👶",
+    "texto": "Gateaba y tomaba mamadera"
+   },
+   "despues": {
+    "cab": "AHORA",
+    "emoji": "🧒",
+    "texto": "Corre, lee y come de todo"
+   },
+   "voz": [
+    "*Antes*, Tomi gateaba y tomaba mamadera.",
+    "*Ahora* corre, lee y come de todo. ¡Creció!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA VIDA DE TOMI",
+   "eventos": [
+    {
+     "fecha": "0",
+     "txt": "Nació",
+     "emoji": "👶"
+    },
+    {
+     "fecha": "1",
+     "txt": "Caminó",
+     "emoji": "🚶"
+    },
+    {
+     "fecha": "3",
+     "txt": "Fue al jardín",
+     "emoji": "🧸"
+    },
+    {
+     "fecha": "7",
+     "txt": "Segundo grado",
+     "emoji": "🎒"
+    }
+   ],
+   "voz": [
+    "Cuando *nació*, era chiquito.",
+    "Al año, empezó a *caminar*.",
+    "A los tres, fue al *jardín*.",
+    "¡Y ahora está en *segundo grado*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué hacía Tomi de bebé?",
+   "opciones": [
+    "GATEABA",
+    "LEÍA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué hacía Tomi de bebé?",
+    "Pensá en un bebé.",
+    "¡*Gateaba*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CADA UNO A SU RITMO",
+   "texto": "Todos crecemos, pero no igual",
+   "emoji": "🌱",
+   "voz": [
+    "Truco: todos crecemos, cada uno *a su ritmo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CRECER",
+     "es cambiar"
+    ],
+    [
+     "ANTES",
+     "bebé"
+    ],
+    [
+     "AHORA",
+     "más alto y fuerte"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Crecer* es cambiar.",
+    "*Antes* éramos bebés.",
+    "*Ahora* somos más altos y fuertes.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
