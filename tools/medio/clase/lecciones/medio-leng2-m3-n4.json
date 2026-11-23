@@ -1,0 +1,113 @@
+{
+ "slug": "medio-leng2-m3-n4",
+ "step_id": "ec3aec1d-3173-436d-916d-0757b2782a03",
+ "materia": "Lengua 2",
+ "titulo": "Comparar con otros cuentos de hadas",
+ "sub": "Lengua 2 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué cuento tiene un lobo, Cenicienta o Caperucita?",
+   "segundos": 5,
+   "respuesta": "¡CAPERUCITA!",
+   "emoji": "🐺",
+   "titulo": "COMPARAR",
+   "sub": "cuentos de hadas",
+   "voz": [
+    "Desafío: ¿qué cuento tiene un lobo?",
+    "¡*Caperucita*!",
+    "Hoy: *comparar cuentos de hadas*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Cuento de hadas",
+   "texto": "Tiene magia y final feliz",
+   "emoji": "🧚",
+   "voz": [
+    "Un *cuento de hadas* tiene magia.",
+    "Y casi siempre termina *feliz*."
+   ]
+  },
+  {
+   "t": "venn",
+   "a": "CENICIENTA",
+   "b": "BLANCANIEVES",
+   "itemsA": [
+    "hada",
+    "zapatito"
+   ],
+   "itemsB": [
+    "manzana",
+    "enanitos"
+   ],
+   "ambos": [
+    "madrastra mala",
+    "príncipe"
+   ],
+   "voz": [
+    "Comparamos dos cuentos.",
+    "Cenicienta tiene un *hada* y un zapatito.",
+    "Blancanieves tiene una *manzana* y enanitos.",
+    "¡Los dos tienen madrastra mala y príncipe!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En Cenicienta hay un lobo",
+   "emoji": "🐺",
+   "verdadero": false,
+   "explicacion": "El lobo es de Caperucita",
+   "voz": [
+    "¿Verdadero o falso? En Cenicienta hay un lobo.",
+    "Pensá en los personajes…",
+    "¡*Falso*! El lobo es de *Caperucita*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "¿DE QUÉ CUENTO?",
+   "items": [
+    "Zapatito",
+    "Manzana",
+    "Lobo",
+    "Carroza"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá estas cosas de los cuentos.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba el *lobo*, de Caperucita!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUENTO DE HADAS",
+     "magia y final feliz"
+    ],
+    [
+     "SE PARECEN",
+     "madrastra, príncipe"
+    ],
+    [
+     "DISTINTOS",
+     "hada, lobo, manzana"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *cuentos de hadas* tienen magia.",
+    "Se *parecen*: madrastra y príncipe.",
+    "Son *distintos*: hada, lobo, manzana.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

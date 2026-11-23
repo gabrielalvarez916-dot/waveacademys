@@ -175,4 +175,5 @@ MAPA.update({'formá': 'forma', 'formás': 'formas'})  # Matemática 2 · Misió
 MAPA.update({'desarmalo': 'desármalo', 'agregalos': 'agrégalos'})  # Matemática 2 · Misión 7
 OK |= {'empate'}  # Matemática 2 · Misión 8 (versus: gana empate)
 OK |= {'llevé', 'volví', 'resté', 'vendí'}  # Matemática 2 · Misiones 9 y 10
+OK |= {'malas', 'malos'}  # Lengua 2 · Misión 3
 OK -= set(MAPA)

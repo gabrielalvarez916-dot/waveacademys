@@ -1,0 +1,171 @@
+{
+ "slug": "medio-leng2-m3-n1",
+ "step_id": "d9a3964c-5050-48a6-9ac5-76b5c4854ffb",
+ "materia": "Lengua 2",
+ "titulo": "Escuchar La Cenicienta",
+ "sub": "Lengua 2 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📖",
+   "lineas": [
+    "La abuela le lee un cuento.",
+    "Se llama La Cenicienta.",
+    "¡Escuchemos!"
+   ],
+   "titulo": "LA CENICIENTA",
+   "sub": "un cuento de hadas",
+   "voz": [
+    "La abuela le lee un cuento a Sofi.",
+    "Se llama *La Cenicienta*.",
+    "¡Escuchemos juntos!",
+    "Hoy: *escuchar La Cenicienta*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "HABÍA UNA VEZ…",
+   "vinetas": [
+    {
+     "emojis": [
+      "👸",
+      "🧹"
+     ],
+     "txt": "Cenicienta limpia toda la casa."
+    },
+    {
+     "emojis": [
+      "🧚",
+      "✨"
+     ],
+     "txt": "El hada le da un vestido."
+    },
+    {
+     "emojis": [
+      "🏰",
+      "💃"
+     ],
+     "txt": "¡Va al baile del castillo!"
+    }
+   ],
+   "voz": [
+    "Había una vez una chica: Cenicienta. Limpiaba toda la casa.",
+    "Un día, su hada madrina le dio un vestido.",
+    "¡Y Cenicienta fue al baile del castillo!"
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "Y DESPUÉS…",
+   "vinetas": [
+    {
+     "emojis": [
+      "🕛",
+      "🏃‍♀️"
+     ],
+     "txt": "¡Suenan las doce!"
+    },
+    {
+     "emojis": [
+      "👠"
+     ],
+     "txt": "Pierde un zapatito."
+    },
+    {
+     "emojis": [
+      "🤴",
+      "👸"
+     ],
+     "txt": "El príncipe la encuentra."
+    }
+   ],
+   "voz": [
+    "¡Sonaron las doce! Cenicienta salió corriendo.",
+    "En la escalera perdió un *zapatito de cristal*.",
+    "El príncipe la buscó y ¡la encontró!"
+   ],
+   "sticker": {
+    "txt": "🕛",
+    "paso": 0
+   }
+  },
+  {
+   "t": "orden",
+   "titulo": "¿QUÉ PASÓ PRIMERO?",
+   "etq1": "MEZCLADO",
+   "etq2": "EN ORDEN",
+   "items": [
+    {
+     "txt": "Limpia la casa",
+     "emoji": "🧹"
+    },
+    {
+     "txt": "Va al baile",
+     "emoji": "💃"
+    },
+    {
+     "txt": "Pierde el zapatito",
+     "emoji": "👠"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    1
+   ],
+   "voz": [
+    "Estas partes del cuento están mezcladas.",
+    "Pierde el zapatito, limpia, va al baile.",
+    "En orden: limpia, va al baile, pierde el zapatito."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué perdió Cenicienta?",
+   "opciones": [
+    "Un zapatito",
+    "Una corona",
+    "Un reloj"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Qué perdió Cenicienta?",
+    "¡Un *zapatito de cristal*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRINCIPIO",
+     "Cenicienta limpia"
+    ],
+    [
+     "MEDIO",
+     "va al baile"
+    ],
+    [
+     "FINAL",
+     "el príncipe la encuentra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos el cuento.",
+    "Al *principio*, Cenicienta limpia.",
+    "En el *medio*, va al baile.",
+    "Al *final*, el príncipe la encuentra.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

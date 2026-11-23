@@ -1,0 +1,131 @@
+{
+ "slug": "medio-leng2-m3-n3",
+ "step_id": "ddb20994-6025-455a-a054-b43216e1ec39",
+ "materia": "Lengua 2",
+ "titulo": "Lugares y objetos mágicos",
+ "sub": "Lengua 2 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Una calabaza se hizo carroza!",
+   "bajada": "Pasó en el cuento de Cenicienta",
+   "emoji": "🎃",
+   "titulo": "LUGARES",
+   "sub": "y objetos mágicos",
+   "voz": [
+    "¡Último momento: una calabaza se hizo carroza!",
+    "¿Cómo pudo pasar? ¡Con *magia*!",
+    "Hoy: *lugares y objetos mágicos*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "LA CASA",
+    "texto": "Cenicienta limpia",
+    "emoji": "🏠"
+   },
+   "b": {
+    "cab": "EL CASTILLO",
+    "texto": "el gran baile",
+    "emoji": "🏰"
+   },
+   "signo": "y",
+   "voz": [
+    "El cuento pasa en dos lugares.",
+    "En la *casa* limpia. En el *castillo* baila.",
+    "¡Dos lugares muy distintos!"
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🪄",
+     "txt": "La varita"
+    },
+    {
+     "emoji": "🎃",
+     "txt": "La calabaza"
+    },
+    {
+     "emoji": "🛞",
+     "txt": "¡Una carroza!"
+    }
+   ],
+   "voz": [
+    "El hada mueve su *varita*.",
+    "Toca la calabaza…",
+    "¡Y se convierte en *carroza*!"
+   ],
+   "sticker": {
+    "txt": "✨",
+    "paso": 2
+   }
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Qué pasa a las doce?",
+   "a": {
+    "txt": "Sigue la magia",
+    "emoji": "✨"
+   },
+   "b": {
+    "txt": "Se termina la magia",
+    "emoji": "🕛"
+   },
+   "correcta": "b",
+   "resultado": "¡A las doce, todo vuelve a ser como antes!",
+   "voz": [
+    "¿Qué creés que pasa a las doce?",
+    "¿Sigue la magia o se termina?",
+    "¡Se *termina*! Todo vuelve a ser como antes."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué se convierten los ratones?",
+   "opciones": [
+    "En caballos",
+    "En perros",
+    "En pájaros"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿En qué se convierten los ratones?",
+    "¡En *caballos*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUGARES",
+     "la casa y el castillo"
+    ],
+    [
+     "MAGIA",
+     "varita y carroza"
+    ],
+    [
+     "LAS DOCE",
+     "termina la magia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *lugares*: la casa y el castillo.",
+    "La *magia*: la varita y la carroza.",
+    "A las *doce*, la magia termina.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

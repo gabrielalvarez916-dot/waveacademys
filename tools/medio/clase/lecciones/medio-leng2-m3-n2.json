@@ -1,0 +1,163 @@
+{
+ "slug": "medio-leng2-m3-n2",
+ "step_id": "144b5f6a-6907-4a77-8d4b-034cebefe5d0",
+ "materia": "Lengua 2",
+ "titulo": "Los personajes y sus deseos",
+ "sub": "Lengua 2 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Quiénes están en Cenicienta?"
+    },
+    {
+     "yo": true,
+     "txt": "¡Muchos personajes!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Buenos o malos?"
+    }
+   ],
+   "titulo": "LOS PERSONAJES",
+   "sub": "y sus deseos",
+   "voz": [
+    "Tomi le pregunta a Sofi por el cuento.",
+    "¿Quiénes aparecen?",
+    "¿Son buenos o malos?",
+    "Hoy: *los personajes y sus deseos*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AYUDAN",
+     "emoji": "💛"
+    },
+    {
+     "cab": "NO AYUDAN",
+     "emoji": "😠"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Hada",
+     "caja": 0
+    },
+    {
+     "txt": "Príncipe",
+     "caja": 0
+    },
+    {
+     "txt": "Madrastra",
+     "caja": 1
+    },
+    {
+     "txt": "Hermanastras",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos los personajes.",
+    "El hada y el príncipe *ayudan* a Cenicienta.",
+    "La madrastra y las hermanastras *no la ayudan*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Cenicienta",
+    "emoji": "👸"
+   },
+   "lineas": [
+    {
+     "txt": "¡Quiero ir al baile!",
+     "animo": "triste"
+    },
+    {
+     "txt": "¡Gracias, hada madrina!",
+     "animo": "feliz"
+    }
+   ],
+   "voz": [
+    "Cenicienta dice: ¡quiero ir al baile! Ese es su *deseo*.",
+    "Y cuando el hada la ayuda: ¡gracias, hada madrina!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿CÓMO ES CADA UNO?",
+   "pares": [
+    [
+     "Hada",
+     "generosa"
+    ],
+    [
+     "Hermanastras",
+     "malas"
+    ],
+    [
+     "Cenicienta",
+     "trabajadora"
+    ]
+   ],
+   "voz": [
+    "Uní cada personaje con cómo es.",
+    "El hada es *generosa*.",
+    "Las hermanastras son *malas*.",
+    "Cenicienta es *trabajadora*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué desea el príncipe?",
+   "opciones": [
+    "Encontrar a Cenicienta",
+    "Ir al bosque",
+    "Ser hada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Qué desea el príncipe?",
+    "¡*Encontrar a Cenicienta*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PERSONAJE",
+     "quien hace cosas"
+    ],
+    [
+     "CÓMO ES",
+     "por lo que hace"
+    ],
+    [
+     "DESEO",
+     "lo que quiere"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *personaje* hace cosas en el cuento.",
+    "Sabemos *cómo es* por lo que hace.",
+    "Su *deseo* es lo que quiere.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
