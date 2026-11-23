@@ -4,11 +4,14 @@
   var T = null;
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function hace(f) { var m = Math.round((Date.now() - new Date(f)) / 60000); return m < 1 ? 'recién' : m < 60 ? 'hace ' + m + ' min' : m < 1440 ? 'hace ' + Math.round(m / 60) + ' h' : 'hace ' + Math.round(m / 1440) + ' d'; }
-  function estadoRun(r) {
+  function estadoRun(r, runs) {
     if (r.status === 'in_progress') return ['En curso', 'amar'];
     if (r.status === 'queued' || r.status === 'waiting' || r.status === 'pending') return ['En espera', 'amar'];
     if (r.conclusion === 'success') return ['Hecho', 'verde'];
-    if (r.conclusion === 'cancelled') return ['Cancelado', 'rojo'];
+    if (r.conclusion === 'cancelled') {
+      var sig = (runs || []).some(function (x) { return x.name === r.name && x.conclusion === 'success' && new Date(x.created_at) > new Date(r.created_at); });
+      return sig ? ['Reemplazada por una más nueva ✔', 'verde'] : ['Cancelado (revisar)', 'rojo'];
+    }
     if (r.conclusion === 'failure') return ['Falló', 'rojo'];
     return [r.conclusion || r.status, 'gris'];
   }
@@ -31,11 +34,11 @@
     var l2t = {}; ls.forEach(function (l) { l2t[l.id] = l.topic_id; });
     var pdfs = {}; st.forEach(function (s) { if (s.r2_key && /pdf/i.test(s.step_type || '')) pdfs[l2t[s.lesson_id]] = (pdfs[l2t[s.lesson_id]] || 0) + 1; });
     var pend = runs.filter(function (r) { return ['in_progress', 'queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length;
-    var canc = runs.filter(function (r) { return r.conclusion === 'cancelled'; }).length;
-    h += '<div class="est-res">' + chip(pend + ' en curso o en espera', pend ? 'amar' : 'verde') + chip(canc + ' canceladas (últimas 30)', canc ? 'rojo' : 'verde') + '<small> Actualiza solo cada 90 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
+    var canc = runs.filter(function (r) { return r.conclusion === 'cancelled' && estadoRun(r, runs)[1] === 'rojo'; }).length;
+    h += '<div class="est-res">' + chip(pend + ' en curso o en espera', pend ? 'amar' : 'verde') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<small> Actualiza solo cada 90 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
     if (err) h += '<p class="est-err">' + esc(err) + '</p>';
     h += '<h3>Lo que se mandó a GitHub</h3><table class="est-t"><thead><tr><th>Qué</th><th>Estado</th><th>Cuándo</th><th>Cambio</th></tr></thead><tbody>' +
-      runs.map(function (r) { var e = estadoRun(r); return '<tr><td>' + esc(tipo(r.name)) + '</td><td>' + chip(e[0], e[1]) + '</td><td>' + hace(r.created_at) + '</td><td>' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 90)) + '</td></tr>'; }).join('') + '</tbody></table>';
+      runs.map(function (r) { var e = estadoRun(r, runs); return '<tr><td>' + esc(tipo(r.name)) + '</td><td>' + chip(e[0], e[1]) + '</td><td>' + hace(r.created_at) + '</td><td>' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 90)) + '</td></tr>'; }).join('') + '</tbody></table>';
     h += '<h3>Misiones (lo último que se tocó en la base)</h3><table class="est-t"><thead><tr><th>Materia</th><th>Misión</th><th>Examen</th><th>PDFs</th><th>Publicada</th><th>Actualizada</th></tr></thead><tbody>' +
       tops.map(function (t) {
         var e = ex.filter(function (x) { return x.topic_id === t.id; }), np = pdfs[t.id] || 0;
