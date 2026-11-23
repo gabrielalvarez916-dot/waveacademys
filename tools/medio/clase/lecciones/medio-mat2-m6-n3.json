@@ -1,0 +1,218 @@
+{
+ "slug": "medio-mat2-m6-n3",
+ "step_id": "e7f49b6c-02ce-4734-b38a-a8abbbd01fde",
+ "materia": "Matemática 2",
+ "titulo": "Calcular el vuelto",
+ "sub": "Matemática 2 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, quiero un alfajor de $80"
+    },
+    {
+     "yo": true,
+     "txt": "¿Con cuánto pagás?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Con $100!"
+    }
+   ],
+   "titulo": "EL VUELTO",
+   "sub": "lo que te devuelven",
+   "voz": [
+    "Tomi quiere un alfajor de 80.",
+    "Rosa le pregunta: ¿con cuánto pagás?",
+    "¡Con un billete de 100!",
+    "Hoy: *calcular el vuelto*."
+   ],
+   "neutro": {
+    "titulo": "EL CAMBIO",
+    "mensajes": [
+     {
+      "yo": false,
+      "txt": "Abu, quiero un alfajor de $80"
+     },
+     {
+      "yo": true,
+      "txt": "¿Con cuánto pagas?"
+     },
+     {
+      "yo": false,
+      "txt": "¡Con $100!"
+     }
+    ],
+    "voz": [
+     "Tomi quiere un alfajor de 80.",
+     "Rosa le pregunta: ¿con cuánto pagas?",
+     "¡Con un billete de 100!",
+     "Hoy: *calcular el cambio*."
+    ]
+   }
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lineas": [
+    {
+     "txt": "Te devuelvo lo que sobra",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Contá desde 80 hasta 100",
+     "animo": "piensa"
+    }
+   ],
+   "voz": [
+    "Rosa explica: te devuelvo *lo que sobra*.",
+    "Contá desde el precio hasta lo que pagaste."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 80 A 100",
+   "min": 70,
+   "max": 100,
+   "cada": 10,
+   "inicio": 80,
+   "saltos": [
+    {
+     "a": 10,
+     "txt": "+10"
+    },
+    {
+     "a": 10,
+     "txt": "+10"
+    }
+   ],
+   "voz": [
+    "Empezamos en el precio: 80.",
+    "Un salto: *90*.",
+    "Otro salto: *100*. ¡Dos saltos de 10 son *20*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Pagás $500 por algo de $300. ¿Cuánto te devuelven?",
+   "a": {
+    "txt": "$200",
+    "emoji": "💵"
+   },
+   "b": {
+    "txt": "$800",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡$200! 400, 500",
+   "voz": [
+    "¿Qué creés? Pagás 500 por algo de 300.",
+    "¿Te devuelven 200 u 800?",
+    "¡*200*! De 300 a 500 hay 200."
+   ],
+   "neutro": {
+    "pregunta": "Pagas $500 por algo de $300. ¿Cuánto te devuelven?"
+   }
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "1",
+    "0",
+    "0",
+    "−",
+    "7",
+    "0"
+   ],
+   "resultado": "30",
+   "texto": "100 − 70 = 30",
+   "titulo": "CON RESTA",
+   "voz": [
+    "También se puede *restar*.",
+    "Pagás 100, cuesta 70: 100 menos 70.",
+    "¡Te devuelven *30*!"
+   ],
+   "neutro": {
+    "voz": [
+     "También se puede *restar*.",
+     "Pagas 100, cuesta 70: 100 menos 70.",
+     "¡Te devuelven *30*!"
+    ]
+   }
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Devolver lo que pagaste",
+     "bien": "Devolver lo que sobra"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Te devuelven *lo que sobra*, no lo que pagaste."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VUELTO",
+     "lo que sobra"
+    ],
+    [
+     "CONTAR",
+     "del precio al pago"
+    ],
+    [
+     "JUSTO",
+     "sin vuelto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *vuelto* es lo que sobra.",
+    "Contamos desde el precio hasta el pago.",
+    "Si pagás justo, no hay vuelto.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "neutro": {
+    "items": [
+     [
+      "CAMBIO",
+      "lo que sobra"
+     ],
+     [
+      "CONTAR",
+      "del precio al pago"
+     ],
+     [
+      "JUSTO",
+      "sin cambio"
+     ]
+    ],
+    "voz": [
+     "Repasemos lo que aprendimos.",
+     "El *cambio* es lo que sobra.",
+     "Contamos desde el precio hasta el pago.",
+     "Si pagas justo, no hay cambio.",
+     "¡Muy bien! Ahora, *a practicar*."
+    ]
+   }
+  }
+ ]
+}

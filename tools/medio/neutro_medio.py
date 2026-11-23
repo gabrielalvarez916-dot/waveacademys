@@ -170,4 +170,6 @@ OK |= {'game', 'cáu', 'jors', 'láion', 'élefant', 'mánki', 'yiráf'}; MAPA.u
 OK |= {'tédi', 'tendrá'}; MAPA.update({'agarrás': 'agarras', 'adiviná': 'adivina', 'preguntás': 'preguntas', 'juntá': 'junta'})  # Inglés 1 · Misión 8
 OK |= {'ápel', 'banána', 'uóter'}; MAPA.update({'comés': 'comes', 'nombrá': 'nombra', 'probá': 'prueba', 'probás': 'pruebas', 'decís': 'dices'})  # Inglés 1 · Misión 9
 OK |= {'favourite', 'dibujó', 'escribió', 'gustó'}; MAPA.update({'querés': 'quieres', 'elegís': 'eliges', 'escribís': 'escribes', 'grabás': 'grabas', 'practicá': 'practica', 'grabá': 'graba', 'hablá': 'habla', 'escribila': 'escríbela', 'mostrale': 'muéstrale', 'terminás': 'terminas'})  # Inglés 1 · Misión 10
+MAPA.update({'desarmá': 'desarma'})  # Matemática 2 · Misión 5
+MAPA.update({'formá': 'forma', 'formás': 'formas'})  # Matemática 2 · Misión 6
 OK -= set(MAPA)

@@ -1,0 +1,170 @@
+{
+ "slug": "medio-mat2-m6-n1",
+ "step_id": "88c8a4da-6933-47c5-8121-c91903a69764",
+ "materia": "Matemática 2",
+ "titulo": "Billetes y monedas",
+ "sub": "Matemática 2 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏪",
+   "lineas": [
+    "Rosa abrió un kiosco.",
+    "Vende alfajores.",
+    "Le pagan con pesos."
+   ],
+   "titulo": "BILLETES",
+   "sub": "y monedas",
+   "voz": [
+    "La abuela Rosa abrió un *kiosco*.",
+    "Vende sus alfajores.",
+    "Los chicos le pagan con *pesos*.",
+    "Hoy: *billetes y monedas*."
+   ],
+   "neutro": {
+    "lineas": [
+     "Rosa abrió un kiosco.",
+     "Vende alfajores.",
+     "Le pagan con dinero."
+    ],
+    "voz": [
+     "La abuela Rosa abrió un *kiosco*.",
+     "Vende sus alfajores.",
+     "Los chicos le pagan con *dinero*.",
+     "Hoy: *billetes y monedas*."
+    ]
+   }
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BILLETE",
+    "texto": "de papel",
+    "emoji": "💵"
+   },
+   "b": {
+    "cab": "MONEDA",
+    "texto": "de metal",
+    "emoji": "🪙"
+   },
+   "signo": "y",
+   "voz": [
+    "El *billete* es de papel.",
+    "La *moneda* es de metal.",
+    "¡Los dos sirven para pagar!"
+   ]
+  },
+  {
+   "t": "monedas",
+   "titulo": "BILLETES DE 100",
+   "items": [
+    100,
+    100,
+    100
+   ],
+   "texto": "$300",
+   "voz": [
+    "Tomi tiene tres billetes de 100.",
+    "100, 200, 300.",
+    "¡Tiene *300 pesos*!"
+   ],
+   "neutro": {
+    "voz": [
+     "Tomi tiene tres billetes de 100.",
+     "100, 200, 300.",
+     "¡Tiene *300*!"
+    ]
+   }
+  },
+  {
+   "t": "escala",
+   "titulo": "¿CUÁL VALE MÁS?",
+   "items": [
+    {
+     "txt": "$10",
+     "emoji": "🪙",
+     "valor": 10
+    },
+    {
+     "txt": "$100",
+     "emoji": "💵",
+     "valor": 100
+    },
+    {
+     "txt": "$500",
+     "emoji": "💵",
+     "valor": 500
+    }
+   ],
+   "voz": [
+    "Una moneda de *10*.",
+    "Un billete de *100*: vale más.",
+    "Un billete de *500*: ¡vale mucho más!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LA CAJA DE ROSA",
+   "items": [
+    "$10",
+    "$50",
+    "$100",
+    "$500"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá la caja de Rosa.",
+    "Se tapa… ¡y falta uno!",
+    "¡Faltaba el billete de *500*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuánto son 2 billetes de $200?",
+   "opciones": [
+    "$400",
+    "$4",
+    "$2200"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. Dos billetes de 200.",
+    "¿Cuánto dinero es?",
+    "¡*400*! 200, 400."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BILLETE",
+     "de papel"
+    ],
+    [
+     "MONEDA",
+     "de metal"
+    ],
+    [
+     "EL NÚMERO",
+     "dice cuánto vale"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *billete* es de papel.",
+    "La *moneda* es de metal.",
+    "El *número* dice cuánto vale.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

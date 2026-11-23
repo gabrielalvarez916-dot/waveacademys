@@ -1,0 +1,148 @@
+{
+ "slug": "medio-mat2-m5-n1",
+ "step_id": "a06fa749-a97d-465e-81fc-cc4ca8b2a7ab",
+ "materia": "Matemática 2",
+ "titulo": "El valor de cada cifra",
+ "sub": "Matemática 2 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa escribió 333.",
+    "¡Tres treses iguales!",
+    "¿Valen lo mismo?"
+   ],
+   "titulo": "EL VALOR",
+   "sub": "de cada cifra",
+   "voz": [
+    "Rosa escribió un número raro: *333*.",
+    "¡Tiene tres treses iguales!",
+    "¿Valen todos lo mismo?",
+    "Hoy: *el valor de cada cifra*."
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "333",
+   "cab": [
+    "CENTENAS",
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "3",
+    "3",
+    "3"
+   ],
+   "val": [
+    "300",
+    "30",
+    "3"
+   ],
+   "destacar": 0,
+   "etiqueta": "CADA 3 EN SU LUGAR",
+   "voz": [
+    "Ponemos el 333 en el estante.",
+    "Cada cifra va en su *lugar*.",
+    "Centenas, decenas y unidades.",
+    "El primer 3 vale *300*. El segundo, *30*.",
+    "¡Y el último vale *3*!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "EL 452",
+   "lineas": [
+    {
+     "txt": "4 → 400",
+     "color": "sol"
+    },
+    {
+     "txt": "5 → 50",
+     "color": "coral",
+     "marca": "circulo"
+    },
+    {
+     "txt": "2 → 2",
+     "color": "verde"
+    }
+   ],
+   "voz": [
+    "En el 452, el 4 vale *400*.",
+    "El 5 vale *50*: está en las decenas.",
+    "Y el 2 vale *2*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL LUGAR",
+   "texto": "El lugar dice cuánto vale",
+   "emoji": "📍",
+   "voz": [
+    "Truco: el *lugar* dice cuánto vale la cifra."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto vale el 7 en 718?",
+   "opciones": [
+    "7",
+    "70",
+    "700"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Mirá el 718.",
+    "¿Cuánto vale el *7*?",
+    "¡*700*! Está en las centenas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "En 452, el 5 vale 5",
+     "bien": "En 452, el 5 vale 50"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En 452, el 5 vale *50*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CENTENAS",
+     "valen cientos"
+    ],
+    [
+     "DECENAS",
+     "valen dieces"
+    ],
+    [
+     "UNIDADES",
+     "valen unos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las cifras de las *centenas* valen cientos.",
+    "Las de las *decenas* valen dieces.",
+    "Las de las *unidades* valen unos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

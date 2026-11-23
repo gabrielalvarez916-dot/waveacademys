@@ -1,0 +1,135 @@
+{
+ "slug": "medio-mat2-m5-n2",
+ "step_id": "9a56b164-c90f-4a92-96a0-18f2c9606115",
+ "materia": "Matemática 2",
+ "titulo": "Descomponer en centenas, decenas y unidades",
+ "sub": "Matemática 2 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Desarmá el 465 en cajas, paquetes y sueltos",
+   "segundos": 8,
+   "respuesta": "4 cajas, 6 paquetes, 5 sueltos",
+   "emoji": "📦",
+   "titulo": "DESARMAR",
+   "sub": "números",
+   "voz": [
+    "Desafío: desarmá el 465.",
+    "¡4 cajas, 6 paquetes y 5 sueltos!",
+    "Hoy: *descomponer números*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 4,
+   "d": 6,
+   "u": 5,
+   "texto": "4 centenas, 6 decenas, 5 unidades",
+   "voz": [
+    "Armamos el pedido de 465.",
+    "Las cajas: 100, 200, 300, 400.",
+    "Los paquetes: 410, 420, 430, 440, 450, 460.",
+    "Los sueltos: 461, 462, 463, 464, 465.",
+    "¡4 centenas, 6 decenas y 5 unidades!"
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "465",
+   "titulo": "DESARMAMOS EL 465",
+   "partes": [
+    "400",
+    "60",
+    "5"
+   ],
+   "resultado": "= 465 ✓",
+   "voz": [
+    "Ahora lo escribimos como *suma*.",
+    "Cada cifra da una parte.",
+    "400, más 60, más 5.",
+    "Una parte por cifra.",
+    "¡400 más 60 más 5 es *465*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "CON UN CERO",
+   "pasos": [
+    {
+     "txt": "708"
+    },
+    {
+     "txt": "700 + 0 + 8",
+     "nota": "no hay paquetes"
+    },
+    {
+     "txt": "700 + 8"
+    }
+   ],
+   "voz": [
+    "Mirá el *708*.",
+    "Es 700, más 0, más 8.",
+    "¡El cero no suma: *700 más 8*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Desarmá el 738",
+   "pistas": [
+    "El 7 vale 700",
+    "El 3 vale 30",
+    "El 8 vale 8"
+   ],
+   "respuesta": "700 + 30 + 8",
+   "voz": [
+    "Ahora vos. Desarmá el *738*.",
+    "Pista uno: el 7 vale *700*.",
+    "Pista dos: el 3 vale *30*.",
+    "Pista tres: el 8 vale *8*.",
+    "¡*700 más 30 más 8*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "465 = 4 + 6 + 5",
+     "bien": "465 = 400 + 60 + 5"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "465 es *400 más 60 más 5*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESARMAR",
+     "escribir una suma"
+    ],
+    [
+     "PARTES",
+     "una por cifra"
+    ],
+    [
+     "EL CERO",
+     "no suma"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Desarmar* es escribir una suma.",
+    "Cada cifra da *una parte*.",
+    "El *cero* no suma nada.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

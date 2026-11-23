@@ -1,0 +1,131 @@
+{
+ "slug": "medio-mat2-m6-n4",
+ "step_id": "64dee40e-c6d2-45b7-baa5-a02fa247c211",
+ "materia": "Matemática 2",
+ "titulo": "Comprar y comparar precios",
+ "sub": "Matemática 2 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Ofertas en el kiosco!",
+   "bajada": "Rosa cambió los precios",
+   "emoji": "🏷️",
+   "titulo": "COMPRAR",
+   "sub": "y comparar",
+   "voz": [
+    "¡Último momento: ofertas en el kiosco de Rosa!",
+    "Tomi tiene *500 pesos* para gastar.",
+    "Hoy: *comprar y comparar precios*."
+   ],
+   "neutro": {
+    "voz": [
+     "¡Último momento: ofertas en el kiosco de Rosa!",
+     "Tomi tiene *500* para gastar.",
+     "Hoy: *comprar y comparar precios*."
+    ]
+   }
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "$450",
+    "items": [
+     "4 de 100",
+     "1 de 50"
+    ]
+   },
+   "der": {
+    "cab": "$540",
+    "items": [
+     "5 de 100",
+     "2 de 20"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Un jugo cuesta 450. Una galletita, 540.",
+    "Miramos las centenas: 5 es más que 4.",
+    "¡540 es *más caro*!"
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "DEL MÁS BARATO",
+   "items": [
+    {
+     "txt": "$150",
+     "emoji": "🍬",
+     "valor": 150
+    },
+    {
+     "txt": "$300",
+     "emoji": "🍫",
+     "valor": 300
+    },
+    {
+     "txt": "$900",
+     "emoji": "🎂",
+     "valor": 900
+    }
+   ],
+   "voz": [
+    "Un caramelo: *150*. Es el más barato.",
+    "Un alfajor: *300*.",
+    "Una torta: *900*. ¡La más cara!"
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "Tomi tiene $500. ¿Qué compra?",
+   "emoji": "🤔",
+   "a": {
+    "txt": "Alfajor $300 y caramelo $150",
+    "consecuencia": "Gasta $450: ¡le alcanza!",
+    "emoji": "✅"
+   },
+   "b": {
+    "txt": "Alfajor $300 y jugo $250",
+    "consecuencia": "Son $550: ¡no le alcanza!",
+    "emoji": "❌"
+   },
+   "voz": [
+    "Tomi tiene 500. ¿Qué puede comprar?",
+    "Alfajor y caramelo: 450. ¡Le alcanza!",
+    "Alfajor y jugo: 550. ¡No le alcanza!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es más barato?",
+   "opciones": [
+    "$270",
+    "$720",
+    "$702"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 270, 720 o 702.",
+    "¿Cuál es el *más barato*?",
+    "¡*270*! Tiene menos centenas."
+   ]
+  },
+  {
+   "t": "logro",
+   "titulo": "¡NIVEL SUPERADO!",
+   "items": [
+    "Comparo precios",
+    "Sumo antes de pagar",
+    "Sé si me alcanza"
+   ],
+   "xp": 30,
+   "voz": [
+    "Comparamos precios mirando las *centenas*.",
+    "Sumamos los precios *antes de pagar*.",
+    "Así sabemos si nos *alcanza*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

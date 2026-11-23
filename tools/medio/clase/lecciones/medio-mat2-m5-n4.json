@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat2-m5-n4",
+ "step_id": "318619af-234a-47ab-a260-8ac5b3726832",
+ "materia": "Matemática 2",
+ "titulo": "Cambiar una cifra",
+ "sub": "Matemática 2 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Llegó una caja más!",
+   "bajada": "Cambió una cifra",
+   "emoji": "🚚",
+   "titulo": "CAMBIAR",
+   "sub": "una cifra",
+   "voz": [
+    "¡Último momento: llegó una caja más!",
+    "Rosa tenía 352. ¿Qué número cambió?",
+    "Hoy: *cambiar una cifra*."
+   ]
+  },
+  {
+   "t": "calculadora",
+   "teclas": [
+    "3",
+    "5",
+    "2",
+    "+",
+    "1",
+    "0",
+    "0"
+   ],
+   "resultado": "452",
+   "texto": "352 + 100 = 452",
+   "titulo": "UNA CAJA MÁS",
+   "voz": [
+    "Rosa prueba con la calculadora.",
+    "Aprieta 352, más 100.",
+    "¡*452*! Solo cambió el primer número."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "UNA CIFRA POR VEZ",
+   "lineas": [
+    {
+     "txt": "352 + 100 = 452",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "352 + 10 = 362",
+     "color": "coral",
+     "marca": "subraya"
+    },
+    {
+     "txt": "352 + 1 = 353",
+     "color": "verde",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "Más 100: cambian las *centenas*.",
+    "Más 10: cambian las *decenas*.",
+    "Más 1: cambian las *unidades*."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "125",
+    "135",
+    "145"
+   ],
+   "falta": "155",
+   "regla": "Sumamos 10: cambian las decenas",
+   "voz": [
+    "Mirá: 125, 135, 145…",
+    "¿Qué número sigue?",
+    "¡*155*! Cambia la cifra del medio."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Rosa tiene 518. Llega una caja de 100. ¿Cuánto tiene?",
+   "opciones": [
+    "519",
+    "528",
+    "618"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos. Rosa tiene 518.",
+    "Llega una caja de 100. ¿Cuánto tiene?",
+    "¡*618*! Cambiaron las centenas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "352 + 100 = 353",
+     "bien": "352 + 100 = 452"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Más 100 cambia las *centenas*: 452."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "+ 100",
+     "cambian centenas"
+    ],
+    [
+     "+ 10",
+     "cambian decenas"
+    ],
+    [
+     "+ 1",
+     "cambian unidades"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Más 100 cambia las *centenas*.",
+    "Más 10 cambia las *decenas*.",
+    "Más 1 cambia las *unidades*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

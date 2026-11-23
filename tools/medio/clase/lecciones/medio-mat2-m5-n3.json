@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat2-m5-n3",
+ "step_id": "6b8b5d0b-2f18-41a2-b62c-79500881f437",
+ "materia": "Matemática 2",
+ "titulo": "Armar números a partir de sus partes",
+ "sub": "Matemática 2 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, tengo 500 + 20 + 7"
+    },
+    {
+     "yo": true,
+     "txt": "¡Armemos el número!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cuál es?"
+    }
+   ],
+   "titulo": "ARMAR",
+   "sub": "números",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "Tiene 500, más 20, más 7.",
+    "Rosa le dice: ¡armemos el número!",
+    "Hoy: *armar números con sus partes*."
+   ]
+  },
+  {
+   "t": "cdu",
+   "c": 5,
+   "d": 2,
+   "u": 7,
+   "texto": "¡Es el 527!",
+   "voz": [
+    "Juntamos las partes de Tomi.",
+    "500: cinco cajas. 100, 200, 300, 400, 500.",
+    "20: dos paquetes. 510, 520.",
+    "7 sueltos: 521, 522, 523, 524, 525, 526, 527.",
+    "¡Es el *527*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ CADA SUMA",
+   "pares": [
+    [
+     "300 + 40 + 5",
+     "345"
+    ],
+    [
+     "600 + 8",
+     "608"
+    ],
+    [
+     "200 + 90",
+     "290"
+    ]
+   ],
+   "voz": [
+    "Uní cada suma con su número.",
+    "300 más 40 más 5: *345*.",
+    "600 más 8: *608*.",
+    "200 más 90: *290*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SI FALTA, UN 0",
+   "texto": "El lugar vacío lleva 0",
+   "emoji": "0️⃣",
+   "voz": [
+    "Truco: si falta una parte, va un *cero*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué número es 800 + 50 + 1?",
+   "opciones": [
+    "851",
+    "8.501",
+    "158"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. 800, más 50, más 1.",
+    "¿Qué número es?",
+    "¡*851*! Ochocientos cincuenta y uno."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "600 + 8 = 68",
+     "bien": "600 + 8 = 608"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "600 más 8 es *608*: va un cero."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARMAR",
+     "juntar las partes"
+    ],
+    [
+     "CADA CIFRA",
+     "a su lugar"
+    ],
+    [
+     "SI FALTA",
+     "va un 0"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Armar* es juntar las partes.",
+    "Cada cifra va a *su lugar*.",
+    "Si falta una parte, va un *cero*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

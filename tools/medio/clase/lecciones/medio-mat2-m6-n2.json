@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat2-m6-n2",
+ "step_id": "fb8ec094-ba9f-4077-b86e-95cc06acb2b1",
+ "materia": "Matemática 2",
+ "titulo": "Formar un monto",
+ "sub": "Matemática 2 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Formá $350 con billetes",
+   "segundos": 8,
+   "respuesta": "$200 + $100 + $50",
+   "emoji": "💵",
+   "titulo": "FORMAR",
+   "sub": "un monto",
+   "voz": [
+    "Desafío: juntá *350 pesos* con billetes.",
+    "¡200, más 100, más 50!",
+    "Hoy: *formar un monto*."
+   ],
+   "neutro": {
+    "voz": [
+     "Desafío: junta *350* con billetes.",
+     "¡200, más 100, más 50!",
+     "Hoy: *formar un monto*."
+    ]
+   }
+  },
+  {
+   "t": "monedas",
+   "titulo": "PRIMERO EL GRANDE",
+   "items": [
+    200,
+    100,
+    50
+   ],
+   "texto": "$350",
+   "voz": [
+    "Rosa empieza por el billete más grande.",
+    "200, 300, 350.",
+    "¡Son *350*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DEL MÁS GRANDE",
+   "texto": "Al más chico",
+   "emoji": "💡",
+   "voz": [
+    "Truco: contá del billete *más grande* al más chico."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "$500 + $200 + $20 =",
+   "despues": "",
+   "opciones": [
+    "$720",
+    "$5220",
+    "$270"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: 500, más 200, más 20.",
+    "¿Cuánto es?",
+    "¡*720*! 500, 700, 720."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "$100 + $100",
+     "r": "$200"
+    },
+    {
+     "p": "$200 + $50",
+     "r": "$250"
+    },
+    {
+     "p": "$500 + $500",
+     "r": "$1.000"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de billetes!",
+    "100 más 100: *200*.",
+    "200 más 50: *250*.",
+    "500 más 500: ¡*1.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "$200 + $50 = $20050",
+     "bien": "$200 + $50 = $250"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "200 más 50 es *250*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MONTO",
+     "dinero en total"
+    ],
+    [
+     "CONTAR",
+     "del más grande"
+    ],
+    [
+     "FORMAS",
+     "hay más de una"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *monto* es el dinero en total.",
+    "Contamos del billete *más grande*.",
+    "Hay *más de una forma* de formarlo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
