@@ -1,0 +1,111 @@
+{
+ "slug": "medio-leng1-m14-n3",
+ "step_id": "027c9df3-8493-4d8f-958b-da5fbd855234",
+ "materia": "Lengua 1",
+ "titulo": "Etiquetas con nombres",
+ "sub": "Lengua 1 · Misión 14 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué etiqueta va en una caja con pelotas?",
+   "segundos": 8,
+   "respuesta": "¡PELOTAS!",
+   "emoji": "⚽",
+   "titulo": "ETIQUETAS",
+   "sub": "con nombres",
+   "voz": [
+    "Desafío: ¿qué etiqueta va en una caja con pelotas?",
+    "¡*Pelotas*!",
+    "Hoy: *etiquetas con nombres*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Etiqueta",
+   "texto": "Dice qué hay adentro o de quién es",
+   "emoji": "🏷️",
+   "voz": [
+    "Una *etiqueta* es un papelito.",
+    "Dice qué hay adentro o *de quién es*."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "Caja de",
+   "despues": "",
+   "opciones": [
+    "TIJERAS ✂️",
+    "PERRO 🐶"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Esta caja tiene tijeras. La etiqueta dice: caja de…",
+    "¿Tijeras o perro?",
+    "¡*Tijeras*!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "EL ARMARIO DEL AULA",
+   "candados": [
+    {
+     "p": "Caja con ✏️",
+     "r": "LÁPICES"
+    },
+    {
+     "p": "Caja con 🟣🟢",
+     "r": "PLASTILINA"
+    },
+    {
+     "p": "El cuaderno de Sofi",
+     "r": "SOFI"
+    }
+   ],
+   "voz": [
+    "¡Para abrir el armario, ponemos las etiquetas!",
+    "La caja de *lápices*.",
+    "La caja de *plastilina*.",
+    "Y el cuaderno con el nombre: *Sofi*.",
+    "¡Abrimos el armario!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CLARA Y CORTA",
+   "texto": "Una o dos palabras alcanzan",
+   "emoji": "✍️",
+   "voz": [
+    "Truco: en la etiqueta, *una o dos palabras* alcanzan."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ETIQUETA",
+     "qué es o de quién"
+    ],
+    [
+     "CORTA",
+     "una o dos palabras"
+    ],
+    [
+     "NOMBRE",
+     "en tus cosas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *etiqueta* dice qué es o de quién.",
+    "Es *corta*.",
+    "Tu *nombre* va en tus cosas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

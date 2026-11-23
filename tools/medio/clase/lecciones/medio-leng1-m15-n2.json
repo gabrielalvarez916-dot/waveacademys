@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng1-m15-n2",
+ "step_id": "a15b4922-df5c-4a4e-9f72-b2357fb74b94",
+ "materia": "Lengua 1",
+ "titulo": "Quiénes son los animales de la fábula",
+ "sub": "Lengua 1 · Misión 15 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién es más fuerte: el león o el ratón?",
+   "segundos": 8,
+   "respuesta": "¡El león!",
+   "emoji": "💪",
+   "titulo": "LOS ANIMALES",
+   "sub": "de la fábula",
+   "voz": [
+    "Desafío: ¿quién es más fuerte?",
+    "¡El *león*!",
+    "Hoy: *los animales de la fábula*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CÓMO SON?",
+   "a": {
+    "txt": "LEÓN",
+    "emoji": "🦁",
+    "datos": [
+     "grande",
+     "fuerte"
+    ]
+   },
+   "b": {
+    "txt": "RATÓN",
+    "emoji": "🐭",
+    "datos": [
+     "chiquito",
+     "valiente"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Los dos se ayudaron!",
+   "voz": [
+    "Comparamos a los dos animales.",
+    "El león es *grande* y *fuerte*.",
+    "El ratón es *chiquito* y *valiente*.",
+    "¡Al final, los dos se ayudaron!"
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "León",
+    "emoji": "🦁"
+   },
+   "lineas": [
+    {
+     "txt": "¡Grrr! Yo soy el rey de la selva.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "¡Caí en una red y no podía salir!",
+     "animo": "triste"
+    },
+    {
+     "txt": "¡Gracias, ratoncito!",
+     "animo": "sorpresa"
+    }
+   ],
+   "voz": [
+    "¡Grrr! Yo soy el rey de la selva.",
+    "¡Caí en una red y no podía salir!",
+    "¡Gracias, ratoncito!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POR LO QUE HACEN",
+   "texto": "Lo que hace cada animal muestra cómo es",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: lo que *hace* cada animal muestra cómo es."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Chiquito no puede ayudar",
+     "bien": "Todos podemos ayudar"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "Ser chiquito *no* quiere decir que no podés ayudar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEÓN",
+     "grande y fuerte"
+    ],
+    [
+     "RATÓN",
+     "chiquito y valiente"
+    ],
+    [
+     "LOS DOS",
+     "se ayudaron"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *león* es grande y fuerte.",
+    "El *ratón* es chiquito y valiente.",
+    "*Los dos* se ayudaron.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

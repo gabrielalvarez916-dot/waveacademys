@@ -277,3 +277,22 @@ def correo(para, asunto, cuerpo):
     for j, ln in enumerate(cuerpo): ax.text(.5, H - 2.35 - j * .45, ln.upper(), ha="left", va="center", fontsize=10.5, color=OSC, **F)
     ax.add_patch(FancyBboxPatch((7.9, .4), 1.6, .5, boxstyle="round,pad=0.05", fc=AZUL, ec=AZUL)); ax.text(8.7, .65, "ENVIAR", ha="center", va="center", fontsize=10, color="white", **F)
     return png(fig)
+
+
+def _leon(ax, x, y, s=1.0):
+    import math
+    for k in range(12):
+        a = k * 2 * math.pi / 12; ax.add_patch(Circle((x + .38 * s * math.cos(a), y + .1 * s + .38 * s * math.sin(a)), .14 * s, color="#c9772f", ec=OSC, lw=.8))
+    ax.add_patch(Circle((x, y + .1 * s), .3 * s, color="#f2c14e", ec=OSC, lw=1.4))
+    for dx in (-.1, .1): ax.add_patch(Circle((x + dx * s, y + .17 * s), .035 * s, color=OSC))
+    ax.add_patch(Polygon([(x - .05 * s, y + .05 * s), (x + .05 * s, y + .05 * s), (x, y - .01 * s)], closed=True, color=OSC))
+    ax.plot([x - .07 * s, x, x + .07 * s], [y - .08 * s, y - .04 * s, y - .08 * s], color=OSC, lw=1.4)
+
+
+def _red(ax, x, y, s=1.0):
+    for k in range(5):
+        ax.plot([x - .45 * s + k * .225 * s] * 2, [y - .4 * s, y + .4 * s], color="#8a6a45", lw=2)
+        ax.plot([x - .45 * s, x + .45 * s], [y - .4 * s + k * .2 * s] * 2, color="#8a6a45", lw=2)
+
+
+OBJ2.update({"leon": _leon, "red": _red})

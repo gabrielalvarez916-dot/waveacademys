@@ -1,0 +1,141 @@
+{
+ "slug": "medio-leng1-m14-n4",
+ "step_id": "7d737bc9-2f2f-4945-b6a7-5d774d399f7d",
+ "materia": "Lengua 1",
+ "titulo": "Agenda de la semana",
+ "sub": "Lengua 1 · Misión 14 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Qué día tenemos música? 🎵"
+    },
+    {
+     "yo": true,
+     "txt": "¡Miro la agenda!"
+    }
+   ],
+   "titulo": "LA AGENDA",
+   "sub": "de la semana",
+   "voz": [
+    "Tomi pregunta: ¿qué día tenemos música?",
+    "Sofi responde: ¡miro la agenda!",
+    "Hoy: *la agenda de la semana*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LA AGENDA DEL GRADO",
+   "eventos": [
+    {
+     "fecha": "LUNES",
+     "txt": "Música",
+     "emoji": "🎵"
+    },
+    {
+     "fecha": "MARTES",
+     "txt": "Educación física",
+     "emoji": "🏃"
+    },
+    {
+     "fecha": "MIÉRCOLES",
+     "txt": "Biblioteca",
+     "emoji": "📚"
+    },
+    {
+     "fecha": "JUEVES",
+     "txt": "Plástica",
+     "emoji": "🎨"
+    },
+    {
+     "fecha": "VIERNES",
+     "txt": "Juegos",
+     "emoji": "🎲"
+    }
+   ],
+   "voz": [
+    "El *lunes*: música.",
+    "El *martes*: educación física.",
+    "El *miércoles*: biblioteca.",
+    "El *jueves*: plástica.",
+    "Y el *viernes*: ¡juegos!"
+   ]
+  },
+  {
+   "t": "tipeo",
+   "titulo": "¿QUÉ DÍA SIGUE?",
+   "items": [
+    {
+     "p": "LUNES, …",
+     "r": "MARTES"
+    },
+    {
+     "p": "JUEVES, …",
+     "r": "VIERNES"
+    }
+   ],
+   "voz": [
+    "Después del lunes: *martes*.",
+    "Después del jueves: *viernes*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué día hay música?",
+   "opciones": [
+    "LUNES",
+    "VIERNES"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué día hay música?",
+    "Buscá en la agenda.",
+    "¡El *lunes*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "BUSCÁ EL DÍA",
+   "texto": "Primero el día, después leé al lado",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: primero buscá *el día*, después leé al lado."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SEMANA",
+     "cinco días de escuela"
+    ],
+    [
+     "AGENDA",
+     "qué hacemos"
+    ],
+    [
+     "LEER",
+     "buscar el día"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La semana tiene *cinco días* de escuela.",
+    "La *agenda* dice qué hacemos.",
+    "*Buscamos* el día y leemos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

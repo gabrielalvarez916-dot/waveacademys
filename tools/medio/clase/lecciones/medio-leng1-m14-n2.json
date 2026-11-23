@@ -1,0 +1,115 @@
+{
+ "slug": "medio-leng1-m14-n2",
+ "step_id": "3da1c157-b343-41d4-8db3-055558c3dd88",
+ "materia": "Lengua 1",
+ "titulo": "Carteles para el aula",
+ "sub": "Lengua 1 · Misión 14 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ESCUELA",
+   "titular": "¡Faltan carteles en el aula!",
+   "bajada": "Sofi los va a hacer",
+   "emoji": "🪧",
+   "titulo": "CARTELES",
+   "sub": "para el aula",
+   "voz": [
+    "¡Noticia: faltan *carteles* en la escuela!",
+    "Sofi los va a hacer.",
+    "Hoy: *carteles para el aula*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué cartel es?",
+   "pistas": [
+    "Va en una puerta",
+    "Ahí hay muchos libros",
+    "Hay que hablar bajito"
+   ],
+   "respuesta": "BIBLIOTECA 📚",
+   "voz": [
+    "Adivinanza: ¿qué cartel es?",
+    "Pista uno: va en una puerta.",
+    "Pista dos: ahí hay muchos libros.",
+    "Pista tres: hay que hablar bajito.",
+    "¡*Biblioteca*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "CADA CARTEL EN SU LUGAR",
+   "pares": [
+    [
+     "🍽️",
+     "COMEDOR"
+    ],
+    [
+     "🛝",
+     "PATIO"
+    ],
+    [
+     "🚽",
+     "BAÑO"
+    ]
+   ],
+   "voz": [
+    "Ponemos cada cartel en su lugar.",
+    "Donde comemos: *comedor*.",
+    "Donde jugamos: *patio*.",
+    "Y la puerta del *baño*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CORTO Y GRANDE",
+   "texto": "Así se lee de lejos",
+   "emoji": "🔭",
+   "voz": [
+    "Truco: el cartel es *corto* y con letras *grandes*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un cartel con un cuento largo",
+     "bien": "Un cartel con pocas palabras"
+    }
+   ],
+   "voz": [
+    "Cuidado con este error.",
+    "El cartel no cuenta historias: dice *lo justo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CARTEL",
+     "pocas palabras"
+    ],
+    [
+     "LETRAS",
+     "grandes"
+    ],
+    [
+     "AVISA",
+     "qué hay o qué hacer"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *cartel* tiene pocas palabras.",
+    "Con letras *grandes*.",
+    "*Avisa* qué hay o qué hacer.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

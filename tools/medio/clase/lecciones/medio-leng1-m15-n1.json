@@ -1,0 +1,131 @@
+{
+ "slug": "medio-leng1-m15-n1",
+ "step_id": "f0c1525f-d053-4a44-af17-4be43a0934c6",
+ "materia": "Lengua 1",
+ "titulo": "Escuchar la fábula",
+ "sub": "Lengua 1 · Misión 15 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historieta",
+   "titulo": "EL LEÓN Y EL RATÓN",
+   "vinetas": [
+    {
+     "emojis": [
+      "🦁",
+      "💤"
+     ],
+     "txt": "Un león dormía"
+    },
+    {
+     "emojis": [
+      "🐭",
+      "😳"
+     ],
+     "txt": "Un ratón lo despertó"
+    },
+    {
+     "emojis": [
+      "🦁",
+      "🕸️"
+     ],
+     "txt": "El león cayó en una red"
+    },
+    {
+     "emojis": [
+      "🐭",
+      "✂️"
+     ],
+     "txt": "¡El ratón mordió la red!"
+    }
+   ],
+   "voz": [
+    "Un león dormía. Un ratón lo despertó.",
+    "El león lo dejó ir.",
+    "Un día, el león cayó en una red.",
+    "¡El ratón lo salvó! Hoy: *una fábula*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fábula",
+   "texto": "Cuento corto con animales que enseña algo",
+   "emoji": "📖",
+   "voz": [
+    "Esta historia es una *fábula*: tiene animales y enseña algo.",
+    "La contó *Esopo*, hace muchísimo."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "¿QUIÉN ES MÁS GRANDE?",
+   "items": [
+    {
+     "txt": "RATÓN",
+     "emoji": "🐭",
+     "valor": 1
+    },
+    {
+     "txt": "LEÓN",
+     "emoji": "🦁",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "El ratón es *chiquito*.",
+    "¡El león es *enorme*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién mordió la red?",
+   "opciones": [
+    "EL RATÓN",
+    "EL LEÓN"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿quién mordió la red?",
+    "Acordate de la fábula.",
+    "¡El *ratón*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ",
+   "texto": "Mirá lo que hace cada animal",
+   "emoji": "👂",
+   "voz": [
+    "Truco: prestá atención a lo que *hace* cada animal."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FÁBULA",
+     "cuento con animales"
+    ],
+    [
+     "PRINCIPIO",
+     "el ratón despierta al león"
+    ],
+    [
+     "FINAL",
+     "el ratón lo salva"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *fábula* es un cuento con animales.",
+    "Al *principio*, el ratón despierta al león.",
+    "Al *final*, el ratón lo salva.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

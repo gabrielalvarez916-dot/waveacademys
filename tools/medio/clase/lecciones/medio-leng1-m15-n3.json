@@ -1,0 +1,103 @@
+{
+ "slug": "medio-leng1-m15-n3",
+ "step_id": "78a5824d-73e1-4c68-8006-03900aa0573a",
+ "materia": "Lengua 1",
+ "titulo": "Qué enseña la fábula",
+ "sub": "Lengua 1 · Misión 15 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "FÁBULAS",
+   "titular": "¡Un ratón salvó al rey de la selva!",
+   "bajada": "¿Qué nos enseña?",
+   "emoji": "🐭",
+   "titulo": "LA ENSEÑANZA",
+   "sub": "de la fábula",
+   "voz": [
+    "¡Noticia: un ratón salvó al rey de la selva!",
+    "¿Qué nos *enseña*?",
+    "Hoy: *qué enseña la fábula*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Moraleja",
+   "texto": "Todos podemos ayudar, aunque seamos chiquitos",
+   "emoji": "💡",
+   "voz": [
+    "Lo que enseña la fábula se llama *moraleja*.",
+    "Todos podemos ayudar, aunque seamos *chiquitos*."
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "Tomi ve que a un compañero se le cayeron los lápices",
+   "emoji": "✏️",
+   "a": {
+    "txt": "Lo ayuda a juntarlos",
+    "consecuencia": "¡Como el ratón! Su amigo se pone contento",
+    "emoji": "🤝"
+   },
+   "b": {
+    "txt": "Sigue de largo",
+    "consecuencia": "Su amigo queda solo juntando todo",
+    "emoji": "🚶"
+   },
+   "voz": [
+    "A un compañero de Tomi se le cayeron los lápices.",
+    "Si lo *ayuda*, ¡como el ratón! Su amigo, contento.",
+    "Si sigue de largo, su amigo queda solo."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "La moraleja es: el león dormía",
+   "emoji": "🦁",
+   "verdadero": false,
+   "explicacion": "Eso cuenta lo que pasó",
+   "voz": [
+    "¿Verdadero o falso? La moraleja es: el león dormía.",
+    "Pensá: ¿eso enseña algo?",
+    "¡*Falso*! Eso cuenta lo que pasó."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "¿Qué aprendí? Esa es la moraleja",
+   "emoji": "❓",
+   "voz": [
+    "Truco: preguntá *¿qué aprendí?* Esa es la moraleja."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MORALEJA",
+     "lo que enseña"
+    ],
+    [
+     "ESTA FÁBULA",
+     "todos podemos ayudar"
+    ],
+    [
+     "EN LA ESCUELA",
+     "también ayudamos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *moraleja* es lo que enseña.",
+    "Esta fábula: *todos podemos ayudar*.",
+    "En la escuela, ¡también *ayudamos*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "slug": "medio-leng1-m14-n1",
+ "step_id": "0bba5bf4-a717-4d45-90ff-5984e6a3310a",
+ "materia": "Lengua 1",
+ "titulo": "Listas para la clase",
+ "sub": "Lengua 1 · Misión 14 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🎒",
+   "lineas": [
+    "Sofi prepara la mochila.",
+    "¡No se quiere olvidar nada!",
+    "Hace una lista."
+   ],
+   "titulo": "LISTAS",
+   "sub": "para la clase",
+   "voz": [
+    "Sofi prepara la *mochila*.",
+    "¡No se quiere olvidar nada!",
+    "Escribe una *lista*.",
+    "Hoy: *listas para la clase*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Lista",
+   "texto": "Palabras una abajo de la otra",
+   "emoji": "📝",
+   "voz": [
+    "Una *lista* son palabras una abajo de la otra.",
+    "Cada cosa en su renglón."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LA LISTA DE SOFI",
+   "items": [
+    "LÁPIZ",
+    "GOMA",
+    "CUADERNO",
+    "TIJERA"
+   ],
+   "falta": 1,
+   "voz": [
+    "Mirá la lista de Sofi.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba la *goma*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es una lista?",
+   "opciones": [
+    "PAN / LECHE / QUESO",
+    "HABÍA UNA VEZ…",
+    "¡HOLA!",
+    "NO CORRER"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Cuál de estas es una *lista*?",
+    "Buscá palabras una abajo de la otra.",
+    "¡Pan, leche, queso!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UNA POR RENGLÓN",
+   "texto": "Cada cosa en su renglón",
+   "emoji": "📏",
+   "voz": [
+    "Truco: cada cosa va en *su renglón*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LISTA",
+     "una abajo de la otra"
+    ],
+    [
+     "SIRVE",
+     "para no olvidar"
+    ],
+    [
+     "MARCAR",
+     "lo que ya está"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *lista*: una palabra abajo de la otra.",
+    "Sirve para *no olvidarnos*.",
+    "*Marcamos* lo que ya guardamos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

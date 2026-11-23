@@ -1,0 +1,128 @@
+{
+ "slug": "medio-leng1-m15-n4",
+ "step_id": "ef072f6f-7d09-4bf8-8743-a1e423f9f912",
+ "materia": "Lengua 1",
+ "titulo": "Contar la fábula con mis palabras",
+ "sub": "Lengua 1 · Misión 15 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Contame la fábula del león! 🦁"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te la cuento con mis palabras!"
+    }
+   ],
+   "titulo": "CONTAR",
+   "sub": "con mis palabras",
+   "voz": [
+    "Tomi le pide a Sofi: ¡contame la fábula!",
+    "Sofi responde: ¡te la cuento con mis palabras!",
+    "Hoy: *contar la fábula*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LAS TRES PARTES",
+   "items": [
+    {
+     "cab": "PRINCIPIO",
+     "txt": "El ratón despierta al león"
+    },
+    {
+     "cab": "PROBLEMA",
+     "txt": "El león cae en una red"
+    },
+    {
+     "cab": "FINAL",
+     "txt": "El ratón lo salva"
+    }
+   ],
+   "voz": [
+    "Para contar, pensamos en tres partes.",
+    "*Principio*: el ratón despierta al león.",
+    "*Problema*: el león cae en una red.",
+    "*Final*: el ratón lo salva."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Qué palabra usamos para empezar a contar?",
+   "a": {
+    "txt": "PRIMERO",
+    "emoji": "1️⃣"
+   },
+   "b": {
+    "txt": "AL FINAL",
+    "emoji": "🏁"
+   },
+   "correcta": "a",
+   "resultado": "PRIMERO, DESPUÉS y AL FINAL",
+   "voz": [
+    "¿Qué palabra usamos para empezar?",
+    "Pensá…",
+    "¡*Primero*! Después viene *después* y *al final*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué pasa en el problema?",
+   "opciones": [
+    "EL LEÓN CAE EN UNA RED",
+    "EL RATÓN COME QUESO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué pasa en el problema?",
+    "Acordate de la red.",
+    "¡El león cae en una *red*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN ORDEN",
+   "texto": "No te saltees el problema",
+   "emoji": "🧭",
+   "voz": [
+    "Truco: contá *en orden* y no te saltees el problema."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRINCIPIO",
+     "lo primero"
+    ],
+    [
+     "PROBLEMA",
+     "la red"
+    ],
+    [
+     "FINAL",
+     "el ratón lo salva"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *principio*: lo primero que pasa.",
+    "El *problema*: la red.",
+    "El *final*: el ratón lo salva.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
