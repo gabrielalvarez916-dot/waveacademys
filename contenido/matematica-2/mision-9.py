@@ -104,7 +104,7 @@ EX=[[1,N("Un número y su doble suman 21. ¿Cuál es el número?",{"acepta":[7]}
  [4,MAT("Uní cada fórmula con su despeje.",["v = d / t","δ = m / V","F = m · a","A = b · h"],["t = d / v","m = δ · V","a = F / m","h = A / b"],"Se despeja la letra que se busca.",n="analizar")],
  [4,SA("Un compañero despejó t de v = d / t como t = v / d. ¿Cuánto da t con d = 150 y v = 50 con la fórmula correcta?",["3"],"t = d / v.",n="error")]]
 M={"subject_id":SID,"tema":9,"practica":"Práctica general: problemas con ecuaciones y despeje de fórmulas","examen_titulo":"Nivel jefe: problemas con ecuaciones y despeje de fórmulas","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"7c5e14d7-3304-4ce3-ade9-21421c600ba5",2:"0933d81b-2989-4267-b28e-f81bf11d9f2d",3:"3ad19551-618b-4348-8ca0-75ac03efd45a",4:"3326b4c9-e715-4442-9b00-1db838fabc57"}
+STEPS={1:"b662110d-dbb9-4f03-b59d-041f8bc7e77f",2:"ca04556a-5706-4fe1-a0c5-f046009199ee",3:"ba312671-e400-4357-83a9-456606e89b12",4:"132bfb64-d020-4d4f-8484-0a8c56aa3e43"}
 TIT={1:"Traducir enunciados a ecuaciones",2:"Problemas de edades, dinero y repartos",3:"Despeje en fórmulas de geometría",4:"Despeje en fórmulas de física"}
 CLS={1:[
  NOT("ENUNCIADO","Un problema escrito con palabras","Se traduce a una ecuación","📝","PROBLEMAS","los problemas con ecuaciones",["Noticia: los problemas se pueden traducir a ecuaciones.","Se elige la incógnita y se escribe la igualdad.","Hoy: *problemas con ecuaciones*."]),

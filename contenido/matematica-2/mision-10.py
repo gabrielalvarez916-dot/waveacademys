@@ -104,7 +104,7 @@ EX=[[1,MC("Si y = 3x − 2, ¿cuánto vale y para x = 4?",["10","14","7","12"],"
  [4,MS("¿Cuáles son funciones decrecientes?",["y: 9, 6, 3","y: 1, 3, 5","y: 10, 7, 4","y: 4, 4, 4"],["y: 9, 6, 3","y: 10, 7, 4"],"y disminuye al aumentar x.",n="analizar")],
  [4,SA("Un compañero dijo que y = 9, 6, 3 es creciente. ¿Cuánto disminuye y cada vez que x aumenta 1?",["3"],"9 − 6 = 3.",n="error")]]
 M={"subject_id":SID,"tema":10,"practica":"Práctica general: funciones","examen_titulo":"Nivel jefe: funciones","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"05e4fa5c-353f-4fc6-9d22-438c6b10fd81",2:"cba538ed-6657-4600-aa31-9d63d8d9e437",3:"9360811c-03ee-4721-b3df-7120dacf16c6",4:"8ee41847-3930-443f-a522-086fcc729f46"}
+STEPS={1:"729eec67-9d01-4042-be28-2d9f0b8fcbb4",2:"e87c00d1-4c98-4395-a6a9-7320320f3102",3:"52101a30-8697-49d7-aa1e-b1271f3b0a3b",4:"5ad6ec58-3c90-4e44-9015-9c5dab03cecc"}
 TIT={1:"Qué es una función",2:"Tablas de valores",3:"Gráficos cartesianos",4:"Leer e interpretar gráficos"}
 CLS={1:[
  DEF("Función","Relación en la que a cada valor de equis le corresponde un único valor de ye.","📈",["Una *función* es una relación entre dos variables.","A cada valor de equis le corresponde *un único valor de ye*."]),

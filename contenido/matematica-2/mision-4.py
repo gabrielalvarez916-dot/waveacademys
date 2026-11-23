@@ -104,7 +104,7 @@ EX=[[1,MC("2 kg de manzanas cuestan $500. ¿Cuánto cuestan 5 kg?",["1250","1000
  [4,MS("¿Cuáles son inversamente proporcionales?",["Obreros y días","Velocidad y tiempo","Kilos y precio","Canillas y tiempo de llenado"],["Obreros y días","Velocidad y tiempo","Canillas y tiempo de llenado"],"Kilos y precio es directa.",n="analizar")],
  [4,SA("Un compañero resolvió 6 obreros en 10 días y obtuvo 180 m. ¿Cuántos metros son en realidad?",["300"],"Faltaba multiplicar por 10/6.",n="error")]]
 M={"subject_id":SID,"tema":4,"practica":"Práctica general: proporcionalidad directa e inversa","examen_titulo":"Nivel jefe: proporcionalidad directa e inversa","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"718793a3-86e2-4f57-bbbd-b718e3b8936f",2:"6812d508-b70c-47b4-be89-2a4a8e24e16c",3:"4ea909b0-26bc-4866-9a4c-26d477182372",4:"57c3712e-56db-465d-8d64-3e79e21aec5a"}
+STEPS={1:"2824cc10-1b17-41f4-9299-43d905931fbe",2:"e4ef49c9-929a-480b-964b-1e992169dd1c",3:"ade75a4c-4c73-425d-999e-3e3a48a5686f",4:"08f368ae-82ab-4629-a99f-62f627e0359b"}
 TIT={1:"Magnitudes directamente proporcionales",2:"Magnitudes inversamente proporcionales",3:"Función de proporcionalidad y su gráfico",4:"Regla de tres compuesta"}
 CLS={1:[
  DIL("2 kilos de pan cuestan $400. ¿Cuánto cuestan 4 kilos?","🍞",("$800","El doble de kilos, el doble de precio","✅"),("$404","Se suman 4 pesos: no es proporcional","❌"),["Un dilema de proporciones.","Si se duplican los kilos, también se duplica el *precio*.","No se *suma*: se *multiplica*."]),

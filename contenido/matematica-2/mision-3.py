@@ -103,7 +103,7 @@ EX=[[1,MC("¿Cuánto es (2/3)³?",["8/27","6/9","2/9","8/9"],"8/27","2³ = 8 y 3
  [4,MS("¿Cuáles están en notación científica?",["3,2 × 10⁻⁴","45 × 10⁵","6 × 10⁷","0,5 × 10³"],["3,2 × 10⁻⁴","6 × 10⁷"],"El número debe estar entre 1 y 10.",n="analizar")],
  [4,SA("Calculá (2 × 10³) × (3 × 10⁴). ¿Qué exponente de 10 queda?",["7"],"Se suman los exponentes: 3 + 4.",n="aplicar")]]
 M={"subject_id":SID,"tema":3,"practica":"Práctica general: potenciación y radicación con racionales","examen_titulo":"Nivel jefe: potenciación y radicación con racionales","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"452eb2b0-5bb7-4cea-88c3-10c997e6de9c",2:"372a6d34-b922-4612-9b77-434031da395a",3:"925c0fbf-7a3e-4295-bd02-c37245abfad2",4:"e89ae2ec-6389-4a16-93df-92c9ef36c575"}
+STEPS={1:"8a168e5d-8587-45b7-8f7c-dca48b35ca41",2:"82627ef9-b7f2-46e7-8c06-8a3fb2f9e6b1",3:"31685f87-eb93-4b8f-96c7-ecd84792d6d8",4:"50de0ecf-5db8-4016-8a46-9134ba1de5a5"}
 TIT={1:"Potencias de exponente entero",2:"Exponente negativo",3:"Radicación y sus propiedades",4:"Notación científica"}
 CLS={1:[
  DEF("Potencia","Producto de una misma base repetida tantas veces como indica el exponente.","⚡",["Una *potencia* repite la base tantas veces como dice el exponente.","Por ejemplo, dos al cubo es dos por dos por dos."]),

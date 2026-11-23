@@ -105,7 +105,7 @@ EX=[[1,MC("¿Cuál es la razón entre 15 y 20 simplificada?",["3/4","4/3","5/4",
  [4,MS("¿Cuáles de estas razones son velocidades?",["150 km en 2 h","30 m en 5 s","200 g en 50 cm³","12 alumnos y 4 profesores"],["150 km en 2 h","30 m en 5 s"],"Velocidad: distancia entre tiempo.",n="analizar")],
  [4,SA("Un compañero calculó la velocidad de 150 km en 2 h como 2 ÷ 150. ¿Cuál es la velocidad correcta? Escribí solo el número.",["75"],"Distancia sobre tiempo.",n="error")]]
 M={"subject_id":SID,"tema":6,"practica":"Práctica general: razones y escalas","examen_titulo":"Nivel jefe: razones y escalas","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"140f5254-2b7a-4201-afc3-8f2ca94b7c12",2:"9351a226-cc1d-47df-b313-4ab3a4d37586",3:"77f68971-e5db-432c-9af2-65d23d5f8cfa",4:"7b7504bf-b17d-441d-83ba-3ff9e34e5309"}
+STEPS={1:"f22fe03d-5014-4b4e-821a-fda178f32128",2:"d5dbafe2-a367-47b5-903a-fa8bc070ea4d",3:"c2a14abf-6a76-40f6-b5b0-dd536926472e",4:"465ae520-a31f-4e82-9445-9384fb46bf0b"}
 TIT={1:"Razón entre magnitudes",2:"Escalas en mapas y planos",3:"Proporciones y propiedad fundamental",4:"Razones en velocidad y densidad"}
 CLS={1:[
  DEF("Razón","Cociente entre dos cantidades, que dice cuántas veces entra una en la otra.","➗",["Una *razón* es el cociente entre dos cantidades.","Doce alumnos y cuatro profesores dan una razón de *tres a uno*."]),

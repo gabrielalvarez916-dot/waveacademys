@@ -144,7 +144,7 @@ EX=[[1,A1["3"][1]],[1,A1["2"][2]],[1,A1["4"][0]],
  [3,ACT3["3"][0]],[3,ACT3["2"][0]],[3,ACT3["4"][0]],
  [4,ACT4["3"][0]],[4,ACT4["3"][2]],[4,ACT4["4"][2]],[4,ACT4["4"][0]]]
 M={"subject_id":SID,"tema":7,"practica":"Práctica general: expresiones algebraicas","examen_titulo":"Nivel jefe: expresiones algebraicas","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"8156dc49-a2d0-4b19-9e0b-528ac1ec516a",2:"ef44066f-f53f-49d4-88cb-422665bfce48",3:"7b172573-21f3-4f5f-a3ed-9b9ab231d85a",4:"da3c1da8-0005-4693-a471-b3684dc86265"}
+STEPS={1:"ee44272a-da9a-4101-a9ba-a3d4a8676175",2:"f43b670c-b591-4ccd-aa1d-62fe95913ae0",3:"5f999aec-ef0f-4ef6-9dbd-e4ac0e1812d7",4:"0b60aabb-62c7-4759-aaa7-159948fe0ce5"}
 TIT={1:"Variables y expresiones algebraicas",2:"Monomios",3:"Suma y resta de polinomios",4:"Producto de polinomios"}
 CLS={1:[
  NOT("VARIABLE","Una letra que representa un número","Puede tomar distintos valores","🔤","ÁLGEBRA","las expresiones algebraicas",["Noticia: una letra puede representar un número.","Esa letra se llama *variable* y puede tomar distintos valores.","Hoy: *expresiones algebraicas*."]),

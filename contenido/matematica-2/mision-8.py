@@ -106,7 +106,7 @@ EX=[[1,SA("Resolvé 4(x + 3) = 24. ¿Cuánto vale x?",["3"],"4x + 12 = 24.",n="a
  [4,MS("¿En cuáles ecuaciones x = 5 es solución?",["2x − 3 = 7","3x − 2 = 10","x + 1 = 6","x/5 = 2"],["2x − 3 = 7","x + 1 = 6"],"Se reemplaza el 5 en cada una.",n="analizar")],
  [4,N("Un compañero dijo que x = 5 es solución de 3x − 2 = 10. ¿Cuánto da 3x − 2 con x = 5?",{"acepta":[13]},"15 − 2 = 13, no 10.",n="error")]]
 M={"subject_id":SID,"tema":8,"practica":"Práctica general: ecuaciones de primer grado","examen_titulo":"Nivel jefe: ecuaciones de primer grado","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
-STEPS={1:"bf1fd5b1-664c-4f83-8556-6d00985abf85",2:"a82db1ad-43ae-47dd-97fd-6687e2b6a419",3:"cbae8348-c9aa-4f63-b262-a223522660fb",4:"51a440eb-bfbe-4c93-b2a8-b5a30bce7b3b"}
+STEPS={1:"591085ab-931d-47fc-b62e-5b43c7ac829f",2:"6c7c84f2-d195-44c5-b5e9-fc89bd9b2eca",3:"c464b151-37aa-4c64-a700-0ffdd4ff86db",4:"aee503c9-e5b6-4ffe-abd1-b049d1a4acb0"}
 TIT={1:"Ecuaciones con paréntesis",2:"Ecuaciones con denominadores",3:"Ecuaciones sin solución e identidades",4:"Verificar y escribir la solución"}
 CLS={1:[
  DEF("Ecuación con paréntesis","Igualdad con una incógnita en la que primero se distribuye el número de afuera.","🧮",["Una *ecuación con paréntesis* se resuelve distribuyendo primero.","Dos por equis más tres es *dos equis más seis*."]),
