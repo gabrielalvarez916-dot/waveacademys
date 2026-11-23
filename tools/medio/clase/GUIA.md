@@ -59,7 +59,7 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 4. **Contra la misión anterior** de la misma materia: cada misión nueva **suma al menos un formato del banco** que no estaba en la anterior, y ningún nivel repite la secuencia de escenas del mismo nivel de la misión anterior.
 5. Si el tema pide un dibujo que el banco no tiene, se crea una plantilla nueva (en `motor/t-mate.js` u otro), se suma a la tabla de abajo y queda disponible para todas las materias del Nivel Medio.
 
-9. **Plantillas estilo plataformas (desde nov 2026, obligatorio en clases nuevas).** Cada clase usa al menos 2 de estas: fichas, completa, personaje, logro, pizarra, pistas, deslizador, prediccion, patron, contrarreloj, memoria, unir, mazo, tipeo, documental, escala, dilema, quiz4, transforma. Rotarlas: en una misión, que no se repita la misma de estas en más de 2 clases, y que la misión siguiente use otras distintas. Guía por materia: Inglés → fichas, completa, personaje, mazo, tipeo, quiz4; Matemática → pizarra, pistas, deslizador, patron, transforma, contrarreloj; Naturales y Sociales → documental, escala, prediccion, dilema; Lengua → pizarra, personaje, dilema, completa; cualquier materia → unir, memoria, quiz4, logro.
+9. **Variedad sin fórmulas fijas (desde nov 2026).** No hay cupos obligatorios de ningún tipo de pantalla: la regla es que las clases no se vean iguales. Dentro de una misión, dos clases no pueden compartir más de la mitad de sus pantallas (sin contar pregunta, resumen, errores, definicion ni los ganchos); y una misión no puede repetir más del 60 % de las pantallas de la misión anterior de la misma materia. Repetir alguna a veces está bien; repetir todo, no. Hay un banco grande (plataformas, dato loco, ranking, escape, documental, etc.): usarlo y rotarlo. Efectos de sonido: salen solos (whoosh al entrar, ding al revelar, fanfarria al cerrar). **Stickers**: cualquier escena puede llevar `"sticker": {"txt": "🤯", "paso": 1}` (o una lista; txt puede ser un emoji o un texto corto como «¡PLOT TWIST!», opcional x, y, rot); usarlos en los momentos sorpresa, sin abusar (1 o 2 por clase).
 
 ## Banco de plantillas (pasos = frases de `voz`)
 
@@ -156,6 +156,9 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | dilema | 3 | situacion, emoji, a:{txt, consecuencia, emoji?}, b:{…} — **historia con dilema**: dos caminos y sus consecuencias |
 | quiz4 | 3 | pregunta, opciones (2-4), correcta (índice) — **quiz de colores**: fichas de color con forma y barra de tiempo |
 | transforma | pasos | titulo, pasos:[{txt, nota?}] (2-5) — **transformación**: una expresión que se convierte en la siguiente (cuentas, I am → I'm, fórmulas) |
+| datoloco | 2 | texto, emoji, numero?, unidad? — **dato loco**: «¿Sabías qué…?» con estallido 🤯 y el dato (si hay número, cuenta) |
+| ranking | 1 + items | titulo, items:[{txt, emoji, dato?}] en orden del 1.º al último (3-5) — **top**: cuenta regresiva del último al primero, redoble y el #1 en dorado |
+| escape | 2 + candados | titulo?, candados:[{p, r}] (2-3) — **escape room**: una puerta con candados que se abren con cada respuesta y ¡escapaste! |
 
 Ejemplo completo: `lecciones/medio-mat1-m1-n1.json`. PDF: `python tools/medio/pdf/generar.py contenido/medio/<materia>/mision-N/mision-N.json` (o el proceso "PDF de las misiones del NIVEL MEDIO").
 

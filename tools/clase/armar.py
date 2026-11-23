@@ -8,7 +8,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(os.path.dirname(AQUI))
 M = os.path.join(AQUI, 'motor')
 GSAP = '<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>'
-ORDEN = ['base.js', 't-narrativa.js', 't-procesos.js', 't-tecnologia.js', 't-ingles.js', 't-mate.js', 't-ciencias-lengua.js', 't-mundo.js', 't-plataformas.js', 'musica.js', 'reproductor.js']
+ORDEN = ['base.js', 't-narrativa.js', 't-procesos.js', 't-tecnologia.js', 't-ingles.js', 't-mate.js', 't-ciencias-lengua.js', 't-mundo.js', 't-plataformas.js', 't-extras.js', 'musica.js', 'reproductor.js']
 MOTOR = '\n'.join(open(os.path.join(M, f), encoding='utf-8').read() for f in ORDEN[:-1])
 REPRO = open(os.path.join(M, ORDEN[-1]), encoding='utf-8').read()
 SHELL = open(os.path.join(M, 'shell.html'), encoding='utf-8').read()

@@ -59,19 +59,32 @@ def _escenas(s):
 _secs = {s: _escenas(s) for s in args if not s.endswith('.neutro')}
 for _s, _ts in _secs.items():
     if _ts and len({t for t in _ts if t not in _BASICAS}) < 2: E(_s, 'poca variedad: usar al menos 2 formatos distintos del banco fuera de los básicos')
-# PLANTILLAS ESTILO PLATAFORMAS (regla desde nov 2026, solo clases nuevas: las de plataformas_existentes.txt no se revisan):
-# cada clase usa al menos 2, y en una misión ninguna se repite en más de 2 clases.
-_PLAT = {'fichas', 'completa', 'personaje', 'logro', 'pizarra', 'pistas', 'deslizador', 'prediccion', 'patron', 'contrarreloj', 'memoria', 'unir', 'mazo', 'tipeo', 'documental', 'escala', 'dilema', 'quiz4', 'transforma'}
+# VARIEDAD SIN FÓRMULAS (regla desde nov 2026, solo clases nuevas: las de plataformas_existentes.txt no se revisan).
+# No hay cupos fijos: dos clases de la misma misión no comparten más de la mitad de sus pantallas, y una misión no repite
+# más del 60 % de las pantallas de la misión anterior de la misma materia. Repetir alguna está bien; repetir todo, no.
+_NEUTRAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'frase', 'consejo'}
 try: _VIEJAS = set(open(os.path.join(AQUI, 'plataformas_existentes.txt'), encoding='utf-8').read().split())
 except Exception: _VIEJAS = set()
-_cuenta_plat = {}
+import glob as _glob
+def _set_de(ts): return {t for t in ts if t not in _NEUTRAS}
+_porm = {}
 for _s, _ts in _secs.items():
     if _s in _VIEJAS or _s.endswith('.neutro'): continue
-    _p = {t for t in _ts if t in _PLAT}
-    if len(_p) < 2: E(_s, 'faltan plantillas estilo plataformas: usar al menos 2 (fichas, completa, personaje, logro, pizarra, pistas, deslizador, prediccion, patron, contrarreloj, memoria, unir, mazo, tipeo, documental, escala, dilema, quiz4, transforma)')
-    for t in _p: _cuenta_plat.setdefault((re.sub(r'-n\d+$', '', _s), t), []).append(_s)
-for (_g, t), _ss in _cuenta_plat.items():
-    if len(_ss) > 2: E(_g, f'plantilla «{t}» en {len(_ss)} clases de la misión (máximo 2): rotar las de plataformas')
+    _porm.setdefault(re.sub(r'-n\d+$', '', _s), []).append((_s, _set_de(_ts)))
+for _g, _l in _porm.items():
+    for _i in range(len(_l)):
+        for _j in range(_i + 1, len(_l)):
+            (a, A), (b, Bs) = _l[_i], _l[_j]
+            if A and Bs and len(A & Bs) > .5 * min(len(A), len(Bs)): E(_g, f'{a} y {b} comparten demasiadas pantallas ({", ".join(sorted(A & Bs))}): variar')
+    _m = re.match(r'^(.*-m)(\d+)$', _g)
+    if _m:
+        _prev = set()
+        for _f in _glob.glob(os.path.join(AQUI, 'lecciones', _m.group(1) + str(int(_m.group(2)) - 1) + '-n*.json')):
+            if _f.endswith('.neutro.json'): continue
+            try: _prev |= _set_de(e.get('t') for e in json.load(open(_f, encoding='utf-8'))['escenas'])
+            except Exception: pass
+        _U = set().union(*[x for _, x in _l]) if _l else set()
+        if _prev and _U and len(_U & _prev) > .6 * len(_U): E(_g, f'repite {len(_U & _prev)} de {len(_U)} pantallas de la misión anterior: rotar el banco')
 _grupos = {}
 for _s, _ts in _secs.items():
     if _ts: _grupos.setdefault(re.sub(r'-n\d+$', '', _s), []).append((_s, _ts))
