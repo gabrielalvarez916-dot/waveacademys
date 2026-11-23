@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat2-m14-n1",
+ "step_id": "454a78bf-d8c7-4b6a-a466-4421fabe00d4",
+ "materia": "Matemática 2",
+ "titulo": "Contar filas y columnas",
+ "sub": "Matemática 2 · Misión 14 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa tiene una bandeja grande.",
+    "Ordena los alfajores.",
+    "¡En filas y columnas!"
+   ],
+   "titulo": "FILAS",
+   "sub": "y columnas",
+   "voz": [
+    "Rosa tiene una *bandeja grande*.",
+    "Ordena los alfajores con cuidado.",
+    "¡Los pone en filas y columnas!",
+    "Hoy: *contar filas y columnas*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FILA",
+    "texto": "acostada ➡️",
+    "emoji": "🍫"
+   },
+   "b": {
+    "cab": "COLUMNA",
+    "texto": "parada ⬇️",
+    "emoji": "🍫"
+   },
+   "signo": "y",
+   "voz": [
+    "La *fila* va acostada: de lado a lado.",
+    "La *columna* va parada: de arriba abajo.",
+    "¡Fila acostada, columna parada!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "LA BANDEJA DE ROSA",
+   "lineas": [
+    {
+     "txt": "🍫 🍫 🍫 🍫  fila 1"
+    },
+    {
+     "txt": "🍫 🍫 🍫 🍫  fila 2"
+    },
+    {
+     "txt": "🍫 🍫 🍫 🍫  fila 3",
+     "color": "sol",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "Rosa pone la primera fila: 4 alfajores.",
+    "La segunda fila: 4 más.",
+    "¡La tercera! *3 filas* y *4 columnas*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cómo va la columna?",
+   "opciones": [
+    "Parada",
+    "Acostada"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Cómo va la *columna*?",
+    "¡*Parada*! De arriba abajo."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar columnas como filas",
+     "bien": "Fila acostada, columna parada"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No confundas: fila *acostada*, columna *parada*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FILA",
+     "de lado a lado"
+    ],
+    [
+     "COLUMNA",
+     "de arriba abajo"
+    ],
+    [
+     "CONTAR",
+     "las dos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *fila* va de lado a lado.",
+    "La *columna* va de arriba abajo.",
+    "Contamos *las dos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

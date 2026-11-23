@@ -1,0 +1,143 @@
+{
+ "slug": "medio-mat2-m13-n3",
+ "step_id": "497584c2-0941-4bcd-9a1f-46829e842d5e",
+ "materia": "Matemática 2",
+ "titulo": "Escribir con multiplicación",
+ "sub": "Matemática 2 · Misión 13 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, 4 + 4 + 4 es largo 😩"
+    },
+    {
+     "yo": true,
+     "txt": "¡Escribilo con ×!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Con qué?"
+    }
+   ],
+   "titulo": "ESCRIBIR",
+   "sub": "con multiplicación",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "4 más 4 más 4 es muy largo.",
+    "Rosa le dice: ¡escribilo con el *por*!",
+    "Hoy: *escribir con multiplicación*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "MÁS CORTO",
+   "pasos": [
+    {
+     "txt": "4 + 4 + 4"
+    },
+    {
+     "txt": "3 veces 4",
+     "nota": "contamos las veces"
+    },
+    {
+     "txt": "3 × 4 = 12",
+     "nota": "se lee 3 por 4"
+    }
+   ],
+   "voz": [
+    "Tenemos 4 más 4 más 4.",
+    "Es sumar *3 veces 4*.",
+    "Se escribe 3 *por* 4. ¡Da *12*!"
+   ],
+   "sticker": {
+    "txt": "✨",
+    "paso": 2
+   }
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍪",
+   "grupos": 2,
+   "cada": 5,
+   "texto": "2 × 5 = 10",
+   "titulo": "2 VECES 5",
+   "voz": [
+    "Dos bandejas de 5 galletitas.",
+    "5, 10.",
+    "¡2 por 5 es *10*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "SUMA Y MULTIPLICACIÓN",
+   "pares": [
+    [
+     "2 + 2 + 2",
+     "3 × 2"
+    ],
+    [
+     "5 + 5",
+     "2 × 5"
+    ],
+    [
+     "10 + 10 + 10",
+     "3 × 10"
+    ]
+   ],
+   "voz": [
+    "Uní cada suma con su multiplicación.",
+    "2 más 2 más 2: *3 por 2*.",
+    "5 más 5: *2 por 5*.",
+    "10 más 10 más 10: *3 por 10*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "3 × 4 = 3 + 4 = 7",
+     "bien": "3 × 4 = 4 + 4 + 4 = 12"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "3 por 4 no es 3 más 4: es *12*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VECES",
+     "cuántos grupos"
+    ],
+    [
+     "×",
+     "se lee por"
+    ],
+    [
+     "3 × 4",
+     "4 + 4 + 4 = 12"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *veces* son cuántos grupos.",
+    "El signo × se lee *por*.",
+    "3 por 4 es 4 más 4 más 4: *12*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

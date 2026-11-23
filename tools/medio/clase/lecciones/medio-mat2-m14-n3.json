@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat2-m14-n3",
+ "step_id": "c8ac471f-55c5-4000-bf3e-dcc35c231470",
+ "materia": "Matemática 2",
+ "titulo": "Multiplicar para contar",
+ "sub": "Matemática 2 · Misión 14 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos alfajores hay en 3 filas de 4? ¡Sin contar de a uno!",
+   "segundos": 6,
+   "respuesta": "¡12!",
+   "emoji": "⚡",
+   "titulo": "MULTIPLICAR",
+   "sub": "para contar",
+   "voz": [
+    "Desafío: 3 filas de 4, sin contar de a uno.",
+    "¡*12*! 3 por 4.",
+    "Hoy: *multiplicar para contar*."
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🍫",
+   "filas": 3,
+   "cols": 4,
+   "texto": "3 × 4 = 12",
+   "titulo": "FILAS × COLUMNAS",
+   "voz": [
+    "Mirá la bandeja: 3 filas de 4.",
+    "4, 8, 12.",
+    "¡3 por 4 es *12*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Si giro la bandeja, ¿cambia el total?",
+   "a": {
+    "txt": "Sí, cambia",
+    "emoji": "😱"
+   },
+   "b": {
+    "txt": "No, da igual",
+    "emoji": "😎"
+   },
+   "correcta": "b",
+   "resultado": "4 × 3 = 12. ¡Da lo mismo!",
+   "voz": [
+    "¿Qué creés? Si giro la bandeja…",
+    "¿Cambia la cantidad de alfajores?",
+    "¡*No*! 4 por 3 también es *12*."
+   ],
+   "sticker": {
+    "txt": "🔄",
+    "paso": 2
+   }
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🍫",
+   "filas": 4,
+   "cols": 3,
+   "texto": "4 × 3 = 12",
+   "titulo": "GIRADA",
+   "voz": [
+    "Ahora quedan 4 filas de 3.",
+    "3, 6, 9, 12.",
+    "¡También son *12*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "2 filas de 5",
+     "r": "10"
+    },
+    {
+     "p": "3 filas de 10",
+     "r": "30"
+    },
+    {
+     "p": "5 filas de 2",
+     "r": "10"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de arreglos!",
+    "2 filas de 5: *10*.",
+    "3 filas de 10: *30*.",
+    "5 filas de 2: *10*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FILAS × COLUMNAS",
+     "da el total"
+    ],
+    [
+     "RÁPIDO",
+     "no contamos de a uno"
+    ],
+    [
+     "GIRAR",
+     "da lo mismo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Multiplicamos *filas por columnas*.",
+    "Es *más rápido* que contar de a uno.",
+    "Si giramos el arreglo, *da lo mismo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

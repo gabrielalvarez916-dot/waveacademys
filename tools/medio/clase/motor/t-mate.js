@@ -145,6 +145,37 @@
     B(0); w.IN(tl, p, 0); B(1); w.IN(tl, r, 0, { y: 60 });
   } };
 
+  // grupos: grupos iguales (la multiplicación como suma repetida). {titulo?, emoji, grupos (2-6), cada (1-8), texto} — 3 pasos:
+  // aparecen los grupos (bandejas) · la voz cuenta sumando ("4, 8, 12") y cada bandeja muestra su subtotal · el texto ("3 veces 4 = 12" o "3 × 4 = 12")
+  T.grupos = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var G = d.grupos, c = d.cada, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, paso = Math.min(300, 1600 / G), x0 = 960 - (G - 1) * paso / 2;
+    var cols = c <= 3 ? c : Math.ceil(c / 2), rows = Math.ceil(c / cols), es = Math.min(72, (paso - 70) / cols), bh = Math.max(170, rows * es + 70), Y = 540;
+    var P = [], S = [], k, j;
+    for (k = 0; k < G; k++) { var p = w.pieza(g, x0 + k * paso, Y); w.caja(p, 0, 0, paso - 30, bh, 'rgba(255,255,255,.06)', W.PAL[k % W.PAL.length], 30, 5);
+      for (j = 0; j < c; j++) w.emoji(p, ((j % cols) - (cols - 1) / 2) * es, (Math.floor(j / cols) - (rows - 1) / 2) * es, d.emoji, es * .85); P.push(p);
+      var q = w.pieza(g, x0 + k * paso, Y + bh / 2 + 62); w.el('circle', { r: 42, fill: C.sol }, q); w.txt(q, 0, 2, String((k + 1) * c), (k + 1) * c >= 100 ? 28 : 36, '#3a2a00', { 'font-weight': 800 }); S.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    var visto = {}; g.alDecir = function (pal, f) { if (f !== 1) return; var v = numDe(pal); if (v == null) return;
+      for (var i = 0; i < G; i++) if ((i + 1) * c === v && !visto[i]) { visto[i] = 1; gsap.fromTo(S[i], { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .35, ease: 'back.out(3)' }); gsap.fromTo(P[i], { scale: 1 }, { scale: 1.08, duration: .18, yoyo: true, repeat: 1 }); break; } };
+    B(0); if (ti) w.IN(tl, ti, 0); P.forEach(function (p, i) { w.IN(tl, p, i ? '<.12' : (ti ? '<.2' : 0), { y: -200, scale: .6, ease: 'back.out(1.6)' }); });
+    B(1); tl.to({}, { duration: .01 });
+    B(2); tl.set(S, { opacity: 1, scale: 1 }, '>+0.05'); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 });
+  } };
+
+  // arreglo: organización rectangular (filas y columnas). {titulo?, emoji, filas (1-6), cols (1-10), texto} — 3 pasos:
+  // aparece el arreglo · se iluminan las filas una por una con la cuenta al costado (4, 8, 12) · el texto ("3 filas de 4 = 12")
+  T.arreglo = { n: function () { return 3; }, armar: function (g, tl, B, d) {
+    var F = d.filas, Cc = d.cols, ti = d.titulo ? w.titulo(g, d.titulo, 260) : null, s = Math.min(110, 1100 / Cc, 500 / F), x0 = 960 - (Cc - 1) * s / 2 - 60, y0 = 560 - (F - 1) * s / 2, r, c;
+    var base = w.pieza(g, 0, 0), hl = [], cnt = [];
+    for (r = 0; r < F; r++) { hl.push(w.caja(base, x0 + (Cc - 1) * s / 2, y0 + r * s, Cc * s + 24, s * .96, 'rgba(244,182,63,0)', 'rgba(244,182,63,0)', 20, 4));
+      for (c = 0; c < Cc; c++) w.emoji(base, x0 + c * s, y0 + r * s, d.emoji, s * .78);
+      var q = w.pieza(g, x0 + Cc * s + 40, y0 + r * s); w.el('circle', { r: Math.min(40, s * .42), fill: C.sol }, q); w.txt(q, 0, 2, String((r + 1) * Cc), Math.min(34, s * .36), '#3a2a00', { 'font-weight': 800 }); cnt.push(q); }
+    var cap = d.texto ? w.chip(g, 960, 905, Math.min(1500, d.texto.length * 34 + 140), 100, d.texto, { size: 54, stroke: C.verde, r: 34 }) : null;
+    B(0); if (ti) w.IN(tl, ti, 0); w.IN(tl, base, ti ? '<.2' : 0, { scale: .7, y: 0 });
+    B(1); for (r = 0; r < F; r++) { tl.to(hl[r], { attr: { fill: 'rgba(244,182,63,.16)', stroke: C.sol }, duration: .3 }, r ? '>+0.35' : '>'); w.IN(tl, cnt[r], '<', { scale: 0, y: 0, ease: 'back.out(3)' }); }
+    B(2); if (cap) w.IN(tl, cap, '>', { scale: .6, y: 0 }); else tl.to({}, { duration: .01 });
+  } };
+
   // columnas: la cuenta en columnas (algoritmo de la suma y la resta) con U, D y C arriba.
   // {titulo?, a:'365', b:'142', op:'+'|'−', resultado:'507', marcas:[{col:'D', txt:'1', paso:1}], tachar:[{col:'D', nuevo:'5', paso:1}]}
   // 1 + columnas pasos: la cuenta armada · una columna por paso, de derecha a izquierda (unidades primero): se ilumina,

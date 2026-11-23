@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat2-m13-n2",
+ "step_id": "6e981182-175c-4799-bd86-9b81959bdfc4",
+ "materia": "Matemática 2",
+ "titulo": "Series de números",
+ "sub": "Matemática 2 · Misión 13 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Contá de 5 en 5 hasta 30",
+   "segundos": 8,
+   "respuesta": "5, 10, 15, 20, 25, 30",
+   "emoji": "🖐️",
+   "titulo": "SERIES",
+   "sub": "de números",
+   "voz": [
+    "Desafío: contá de 5 en 5 hasta 30.",
+    "¡5, 10, 15, 20, 25, 30!",
+    "Hoy: *series de números*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 2 EN 2",
+   "min": 0,
+   "max": 10,
+   "cada": 2,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    },
+    {
+     "a": 2,
+     "txt": "+2"
+    }
+   ],
+   "voz": [
+    "Los alfajores vienen de a dos.",
+    "Saltamos: *2*.",
+    "*4*.",
+    "*6*.",
+    "*8*.",
+    "¡*10*!"
+   ]
+  },
+  {
+   "t": "tren",
+   "desde": 5,
+   "hasta": 40,
+   "paso": 5,
+   "faltan": [
+    20,
+    35
+   ],
+   "titulo": "DE 5 EN 5",
+   "voz": [
+    "El tren cuenta de 5 en 5.",
+    "5, 10, 15, 25, 30, 40.",
+    "¡Faltaban el *20* y el *35*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "10",
+    "20",
+    "30"
+   ],
+   "falta": "40",
+   "regla": "Saltamos de 10 en 10",
+   "voz": [
+    "Mirá: 10, 20, 30…",
+    "¿Qué sigue?",
+    "¡*40*! De 10 en 10."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "De 5 en 5: 5, 10, 15, 21",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Después del 15 viene el 20",
+   "voz": [
+    "¿Verdadero o falso? 5, 10, 15, 21.",
+    "Pensá: ¿cuánto salta?",
+    "¡*Falso*! Después del 15 viene el *20*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DE 2 EN 2",
+     "2, 4, 6, 8"
+    ],
+    [
+     "DE 5 EN 5",
+     "5, 10, 15, 20"
+    ],
+    [
+     "DE 10 EN 10",
+     "10, 20, 30"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "De 2 en 2: 2, 4, 6, 8.",
+    "De 5 en 5: 5, 10, 15, 20.",
+    "De 10 en 10: 10, 20, 30.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

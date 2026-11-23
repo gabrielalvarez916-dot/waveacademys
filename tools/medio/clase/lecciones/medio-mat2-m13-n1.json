@@ -1,0 +1,119 @@
+{
+ "slug": "medio-mat2-m13-n1",
+ "step_id": "2f08bdc0-efb3-4fcd-865a-5892ed9c90e8",
+ "materia": "Matemática 2",
+ "titulo": "Sumar muchas veces lo mismo",
+ "sub": "Matemática 2 · Misión 13 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa llena bandejas.",
+    "Pone 4 alfajores en cada una.",
+    "¿Cuántos usa?"
+   ],
+   "titulo": "SUMAR",
+   "sub": "muchas veces lo mismo",
+   "voz": [
+    "Rosa llena *bandejas* de alfajores.",
+    "En cada bandeja pone *4*.",
+    "¿Cuántos alfajores usa en total?",
+    "Hoy: *sumar muchas veces lo mismo*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍫",
+   "grupos": 3,
+   "cada": 4,
+   "texto": "4 + 4 + 4 = 12",
+   "titulo": "TRES BANDEJAS",
+   "voz": [
+    "Mirá: tres bandejas con 4 alfajores.",
+    "Contamos de a 4: 4, 8, 12.",
+    "¡Son *12* alfajores!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "IGUALES",
+    "texto": "4, 4 y 4",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "DISTINTOS",
+    "texto": "4, 2 y 5",
+    "emoji": "❌"
+   },
+   "signo": "≠",
+   "voz": [
+    "Estos grupos son *iguales*: todos tienen 4.",
+    "Estos son *distintos*: 4, 2 y 5.",
+    "¡Hoy trabajamos con grupos *iguales*!"
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "⭐",
+   "grupos": 5,
+   "cada": 2,
+   "texto": "2 + 2 + 2 + 2 + 2 = 10",
+   "titulo": "CINCO DE 2",
+   "voz": [
+    "Ahora cinco grupos de 2.",
+    "2, 4, 6, 8, 10.",
+    "¡Son *10* estrellas!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "4 bandejas con 3 caramelos. ¿Cuántos son?",
+   "opciones": [
+    "12",
+    "7",
+    "43"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 4 bandejas de 3.",
+    "Contá de a 3: 3, 6, 9…",
+    "¡*12*! 3 más 3 más 3 más 3."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPOS IGUALES",
+     "misma cantidad"
+    ],
+    [
+     "SUMAR",
+     "lo mismo varias veces"
+    ],
+    [
+     "MIRAR",
+     "grupos y cuántos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *grupos iguales* tienen la misma cantidad.",
+    "Sumamos *lo mismo* varias veces.",
+    "Miramos cuántos grupos y cuántos en cada uno.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -540,3 +540,29 @@ def columnas(a, b, op="+", resultado=None, marcas=(), tachar=(), vacio=False):
         k = IDX[col]; ax.plot([X(k) - .3, X(k) + .3], [2.45, 3.05], color=CORAL, lw=3)
         ax.text(X(k) + .45, 3.3, str(nuevo), ha="center", va="center", fontsize=15, color=CORAL, **F)
     return png(fig)
+
+
+# ---------------- multiplicación (Matemática 2 · misiones 13 y 14) ----------------
+def grupos(obj, n, cada, texto=None):
+    """n bandejas iguales con 'cada' objetos (OBJ) adentro y su subtotal abajo (suma repetida)."""
+    import math
+    cols = cada if cada <= 3 else math.ceil(cada / 2); rows = math.ceil(cada / cols); w_, h_ = cols * .9 + .5, rows * .9 + .5
+    W = n * (w_ + .4) + .2; fig, ax = lienzo(min(7.2, W * .9), 2.9, W, h_ + 1.6, 0, -1.0)
+    for k in range(n):
+        x = .3 + k * (w_ + .4)
+        ax.add_patch(FancyBboxPatch((x, 0), w_, h_, boxstyle="round,pad=0.02,rounding_size=0.2", color="#fff4d6", ec=[TEAL, CORAL, AZUL, LILA, VERDE, AMBAR][k % 6], lw=2))
+        for j in range(cada): OBJ[obj](ax, x + .7 + (j % cols) * .9, h_ - .7 - (j // cols) * .9)
+        cartel(ax, x + w_ / 2, -.5, str((k + 1) * cada), c=AMBAR, tc=OSC, fs=12)
+    if texto: ax.text(W / 2, h_ + .35, texto, ha="center", va="center", fontsize=14, color=OSC, **F)
+    return png(fig)
+
+
+def arreglo(obj, filas, cols, texto=None, contar=True):
+    """Organización rectangular: filas × cols objetos (OBJ), con la cuenta de cada fila al costado si contar=True."""
+    W, H = cols + 1.6, filas + (1.0 if texto else .4)
+    fig, ax = lienzo(min(6.5, W * .75), min(5.2, H * .75), W, H, 0, 0)
+    for r in range(filas):
+        for c in range(cols): OBJ[obj](ax, .6 + c, filas - .4 - r)
+        if contar: cartel(ax, cols + .7, filas - .4 - r, str((r + 1) * cols), c=AMBAR, tc=OSC, fs=11)
+    if texto: ax.text(cols / 2 + .1, filas + .45, texto, ha="center", va="center", fontsize=14, color=OSC, **F)
+    return png(fig)

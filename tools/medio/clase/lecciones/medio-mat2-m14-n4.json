@@ -1,0 +1,139 @@
+{
+ "slug": "medio-mat2-m14-n4",
+ "step_id": "609eda3c-d2f3-4c9e-a9e9-56d232615d3e",
+ "materia": "Matemática 2",
+ "titulo": "Problemas con filas y columnas",
+ "sub": "Matemática 2 · Misión 14 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Acto en la escuela!",
+   "bajada": "Hay que poner las sillas",
+   "emoji": "🪑",
+   "titulo": "PROBLEMAS",
+   "sub": "con filas y columnas",
+   "voz": [
+    "¡Último momento: hay acto en la escuela!",
+    "Ponen las sillas en filas.",
+    "Hoy: *problemas con filas y columnas*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "LAS SILLAS DEL ACTO",
+   "vinetas": [
+    {
+     "emojis": [
+      "🪑",
+      "🪑"
+     ],
+     "txt": "4 filas de 10 sillas",
+     "quien": "Tomi"
+    },
+    {
+     "emojis": [
+      "🤔"
+     ],
+     "txt": "¿Cuántas sillas?",
+     "quien": "Tomi"
+    },
+    {
+     "emojis": [
+      "👵",
+      "✖️"
+     ],
+     "txt": "4 × 10 = 40",
+     "quien": "Rosa"
+    }
+   ],
+   "voz": [
+    "Tomi ve 4 filas de 10 sillas.",
+    "¿Cuántas sillas hay?",
+    "Rosa multiplica: 4 por 10, ¡*40*!"
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🥚",
+   "filas": 2,
+   "cols": 6,
+   "texto": "2 × 6 = 12 huevos",
+   "titulo": "LA CAJA DE HUEVOS",
+   "voz": [
+    "Una caja de huevos: 2 filas de 6.",
+    "6, 12.",
+    "¡2 por 6 es *12* huevos!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Una barra de chocolate tiene 3 filas de 5 cuadraditos. ¿Cuántos tiene?",
+   "pistas": [
+    "Hay 3 filas",
+    "Cada fila tiene 5",
+    "3 × 5"
+   ],
+   "respuesta": "15 cuadraditos",
+   "voz": [
+    "Ahora vos: una barra de chocolate.",
+    "Pista uno: hay *3 filas*.",
+    "Pista dos: cada fila tiene *5*.",
+    "Pista tres: 3 por 5.",
+    "¡*15* cuadraditos!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Rey Rectángulo",
+    "emoji": "🤴"
+   },
+   "preguntas": [
+    {
+     "p": "5 filas de 4 baldosas",
+     "r": "20"
+    },
+    {
+     "p": "2 filas de 10 libros",
+     "r": "20"
+    }
+   ],
+   "voz": [
+    "¡Llegó el *Rey Rectángulo*!",
+    "Resolvemos sus problemas.",
+    "5 filas de 4 baldosas: *20*.",
+    "¡2 filas de 10 libros: *20*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BUSCAR",
+     "filas y columnas"
+    ],
+    [
+     "MULTIPLICAR",
+     "filas × columnas"
+    ],
+    [
+     "RESPONDER",
+     "con palabras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Buscamos las *filas y columnas*.",
+    "*Multiplicamos* filas por columnas.",
+    "Respondemos *con palabras*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

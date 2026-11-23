@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat2-m13-n4",
+ "step_id": "dcffea70-13ef-4030-8c1b-5b0051f9c9e2",
+ "materia": "Matemática 2",
+ "titulo": "Problemas de grupos iguales",
+ "sub": "Matemática 2 · Misión 13 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Pedido de cajitas!",
+   "bajada": "La escuela quiere 5 cajitas de 2",
+   "emoji": "🎁",
+   "titulo": "PROBLEMAS",
+   "sub": "de grupos iguales",
+   "voz": [
+    "¡Último momento: la escuela pide cajitas!",
+    "Quieren 5 cajitas con 2 alfajores.",
+    "Hoy: *problemas de grupos iguales*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO LO RESUELVO",
+   "items": [
+    {
+     "txt": "¿Cuántos grupos?",
+     "emoji": "📦"
+    },
+    {
+     "txt": "¿Cuántos en cada uno?",
+     "emoji": "🍫"
+    },
+    {
+     "txt": "Multiplico",
+     "emoji": "✖️"
+    }
+   ],
+   "voz": [
+    "¿Cómo resolvemos estos problemas?",
+    "Primero: ¿cuántos *grupos* hay?",
+    "Después: ¿cuántos hay en *cada uno*?",
+    "¡Y multiplicamos!"
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍫",
+   "grupos": 5,
+   "cada": 2,
+   "texto": "5 × 2 = 10",
+   "titulo": "CINCO CAJITAS",
+   "voz": [
+    "5 cajitas con 2 alfajores.",
+    "2, 4, 6, 8, 10.",
+    "¡5 por 2 es *10*! Rosa usa 10 alfajores."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Hay 3 mesas con 4 sillas cada una. ¿Cuántas sillas hay?",
+   "pistas": [
+    "Hay 3 grupos",
+    "Cada grupo tiene 4",
+    "3 × 4"
+   ],
+   "respuesta": "12 sillas",
+   "voz": [
+    "Ahora vos: 3 mesas con 4 sillas.",
+    "Pista uno: hay *3 grupos*.",
+    "Pista dos: cada grupo tiene *4*.",
+    "Pista tres: 3 por 4.",
+    "¡Hay *12* sillas!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Señor Grupos",
+    "emoji": "🐲"
+   },
+   "preguntas": [
+    {
+     "p": "2 autos con 4 ruedas",
+     "r": "8"
+    },
+    {
+     "p": "4 bolsas de 10",
+     "r": "40"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Señor Grupos*!",
+    "Resolvemos sus problemas.",
+    "2 autos de 4 ruedas: *8*.",
+    "¡4 bolsas de 10: *40*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPOS",
+     "¿cuántos hay?"
+    ],
+    [
+     "CADA UNO",
+     "¿cuántos tiene?"
+    ],
+    [
+     "×",
+     "grupos por cantidad"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Buscamos cuántos *grupos* hay.",
+    "Y cuántos hay en *cada uno*.",
+    "Después *multiplicamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

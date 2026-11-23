@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat2-m14-n2",
+ "step_id": "552a12f8-2edb-4bb7-8600-5398c1fb4b97",
+ "materia": "Matemática 2",
+ "titulo": "Arreglos rectangulares",
+ "sub": "Matemática 2 · Misión 14 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿cómo ordeno 12 alfajores?"
+    },
+    {
+     "yo": true,
+     "txt": "¡En filas iguales!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Cómo?"
+    }
+   ],
+   "titulo": "ARREGLOS",
+   "sub": "rectangulares",
+   "voz": [
+    "Tomi le escribe a Rosa.",
+    "¿Cómo ordeno 12 alfajores?",
+    "Rosa le dice: ¡en *filas iguales*!",
+    "Hoy: *arreglos rectangulares*."
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🍪",
+   "filas": 3,
+   "cols": 5,
+   "texto": "3 filas de 5 = 15",
+   "titulo": "UN ARREGLO",
+   "voz": [
+    "Un *arreglo* tiene filas iguales.",
+    "Contamos de fila en fila: 5, 10, 15.",
+    "¡3 filas de 5 son *15*!"
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿ES UN ARREGLO?",
+   "a": {
+    "txt": "2 filas de 6",
+    "emoji": "✅",
+    "datos": [
+     "filas iguales"
+    ]
+   },
+   "b": {
+    "txt": "una de 6 y otra de 4",
+    "emoji": "❌",
+    "datos": [
+     "filas distintas"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡Las filas tienen que ser iguales!",
+   "voz": [
+    "¿Cuál es un arreglo?",
+    "Dos filas de 6: *iguales*.",
+    "Una de 6 y otra de 4: *distintas*.",
+    "¡Gana el de filas iguales!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "FORMAS DE ORDENAR 12",
+   "items": [
+    "2 filas de 6",
+    "3 filas de 4",
+    "4 filas de 3",
+    "6 filas de 2"
+   ],
+   "falta": 1,
+   "voz": [
+    "12 alfajores se ordenan de muchas formas.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *3 filas de 4*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "4 filas de 5 pelotas. ¿Cuántas son?",
+   "opciones": [
+    "20",
+    "9",
+    "45"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 4 filas de 5.",
+    "Contá: 5, 10, 15…",
+    "¡*20*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARREGLO",
+     "filas iguales"
+    ],
+    [
+     "FORMA",
+     "un rectángulo"
+    ],
+    [
+     "CONTAR",
+     "de fila en fila"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *arreglo* tiene filas iguales.",
+    "Forma un *rectángulo*.",
+    "Contamos *de fila en fila*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
