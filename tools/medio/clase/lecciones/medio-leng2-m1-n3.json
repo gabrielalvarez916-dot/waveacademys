@@ -1,0 +1,140 @@
+{
+ "slug": "medio-leng2-m1-n3",
+ "step_id": "f774fb98-34c9-4966-8bbc-a4cc6d0c0aa3",
+ "materia": "Lengua 2",
+ "titulo": "Ordenar palabras de una oración",
+ "sub": "Lengua 2 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡El viento desordenó el cuaderno!",
+   "bajada": "Las palabras quedaron mezcladas",
+   "emoji": "🌬️",
+   "titulo": "ORDENAR",
+   "sub": "palabras",
+   "voz": [
+    "¡Último momento: el viento desordenó el cuaderno!",
+    "Las palabras quedaron *mezcladas*.",
+    "Hoy: *ordenar palabras de una oración*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "consigna": "Ordená: PAN COMPRA PAPÁ",
+   "fichas": [
+    "Papá",
+    "compra",
+    "pan."
+   ],
+   "desorden": [
+    2,
+    1,
+    0
+   ],
+   "traduccion": "¡Ahora se entiende!",
+   "voz": [
+    "Pan compra papá… ¡no se entiende!",
+    "Primero quién: papá. Después qué hace: compra pan.",
+    "¡*Papá compra pan*! Ahora se entiende."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO ORDENO",
+   "items": [
+    {
+     "txt": "¿Quién?",
+     "emoji": "👤"
+    },
+    {
+     "txt": "¿Qué hace?",
+     "emoji": "🏃"
+    },
+    {
+     "txt": "Lo demás",
+     "emoji": "📦"
+    }
+   ],
+   "voz": [
+    "¿Cómo ordenamos las palabras?",
+    "Primero buscamos *quién*.",
+    "Después, *qué hace*.",
+    "Y al final, *lo demás*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LA ORACIÓN",
+   "etq1": "MEZCLADAS",
+   "etq2": "ORDENADAS",
+   "items": [
+    {
+     "txt": "La abuela",
+     "emoji": "👵"
+    },
+    {
+     "txt": "riega",
+     "emoji": "💧"
+    },
+    {
+     "txt": "las flores.",
+     "emoji": "🌷"
+    }
+   ],
+   "relato": [
+    2,
+    1,
+    0
+   ],
+   "voz": [
+    "Estas palabras están mezcladas.",
+    "Flores, riega, la abuela.",
+    "Ordenadas: la abuela riega las flores."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál va primero en: SALTA EL CONEJO?",
+   "opciones": [
+    "El conejo",
+    "Salta"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: salta el conejo.",
+    "¿Qué palabra va primero?",
+    "¡*El conejo*! Primero quién."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MEZCLADAS",
+     "no se entienden"
+    ],
+    [
+     "QUIÉN",
+     "va primero"
+    ],
+    [
+     "ORDENADA",
+     "se entiende"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las palabras *mezcladas* no se entienden.",
+    "Primero va *quién*.",
+    "Ordenada, la oración *se entiende*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

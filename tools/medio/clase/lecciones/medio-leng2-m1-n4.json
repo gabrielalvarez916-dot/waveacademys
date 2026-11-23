@@ -1,0 +1,126 @@
+{
+ "slug": "medio-leng2-m1-n4",
+ "step_id": "db1e409f-4923-440a-8772-f417c3b735fb",
+ "materia": "Lengua 2",
+ "titulo": "Completar oraciones",
+ "sub": "Lengua 2 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "El pájaro ___ en el árbol. ¿Qué palabra falta?",
+   "segundos": 6,
+   "respuesta": "¡CANTA!",
+   "emoji": "🐦",
+   "titulo": "COMPLETAR",
+   "sub": "oraciones",
+   "voz": [
+    "Desafío: el pájaro… ¿qué? en el árbol.",
+    "¡*Canta*! El pájaro canta en el árbol.",
+    "Hoy: *completar oraciones*."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "El pájaro",
+   "despues": "en el árbol.",
+   "opciones": [
+    "canta",
+    "mesa",
+    "azul"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Se borró una palabra del cuaderno.",
+    "¿Canta, mesa o azul?",
+    "¡*Canta*! Es la que tiene sentido."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "¿CUÁL TIENE SENTIDO?",
+   "a": {
+    "txt": "La vaca da leche.",
+    "emoji": "🐄",
+    "datos": [
+     "se entiende"
+    ]
+   },
+   "b": {
+    "txt": "La vaca da mesa.",
+    "emoji": "🪑",
+    "datos": [
+     "no se entiende"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡Gana la que tiene sentido!",
+   "voz": [
+    "Tomi completó de dos formas.",
+    "La vaca da *leche*: se entiende.",
+    "La vaca da *mesa*: ¡no tiene sentido!",
+    "¡Gana *leche*!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Borrador Loco",
+    "emoji": "👾"
+   },
+   "preguntas": [
+    {
+     "p": "El ___ ladra.",
+     "r": "perro"
+    },
+    {
+     "p": "En invierno hace ___ .",
+     "r": "frío"
+    }
+   ],
+   "voz": [
+    "¡El *Borrador Loco* borró palabras!",
+    "Las completamos para ganarle.",
+    "El *perro* ladra.",
+    "En invierno hace *frío*. ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "RELEÉ",
+   "texto": "Leé la oración con la palabra puesta",
+   "emoji": "🔁",
+   "voz": [
+    "Truco: *releé* la oración con la palabra puesta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FALTA",
+     "una palabra"
+    ],
+    [
+     "ELEGIR",
+     "la que tiene sentido"
+    ],
+    [
+     "RELEER",
+     "para controlar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "A la oración le *falta* una palabra.",
+    "Elegimos la que tiene *sentido*.",
+    "Al final, *releemos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

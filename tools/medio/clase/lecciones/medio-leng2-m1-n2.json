@@ -1,0 +1,139 @@
+{
+ "slug": "medio-leng2-m1-n2",
+ "step_id": "7c681484-145f-43c1-9f0c-3d637312c7ef",
+ "materia": "Lengua 2",
+ "titulo": "Escribir oraciones con mayúscula y punto",
+ "sub": "Lengua 2 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "hoy fuimos a la plaza"
+    },
+    {
+     "yo": true,
+     "txt": "¡Te faltó algo! 🤔"
+    },
+    {
+     "yo": false,
+     "txt": "¿Qué me faltó?"
+    }
+   ],
+   "titulo": "MAYÚSCULA",
+   "sub": "y punto",
+   "voz": [
+    "Tomi le manda un mensaje a Sofi.",
+    "Escribió: hoy fuimos a la plaza.",
+    "Sofi le dice: ¡te faltó algo!",
+    "Hoy: *mayúscula y punto*."
+   ]
+  },
+  {
+   "t": "parrafo",
+   "titulo": "HOY LLUEVE.",
+   "lineas": [
+    "Hoy llueve."
+   ],
+   "marcas": [
+    {
+     "linea": 0,
+     "pos": "inicio",
+     "txt": "MAYÚSCULA"
+    },
+    {
+     "linea": 0,
+     "pos": "fin",
+     "txt": "PUNTO"
+    }
+   ],
+   "voz": [
+    "Sofi escribió: hoy llueve.",
+    "Al principio, la letra grande: *mayúscula*.",
+    "Al final, un puntito: el *punto*."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "ARREGLAMOS",
+   "cambios": [
+    {
+     "antes": "hoy fuimos a la plaza",
+     "despues": "Hoy fuimos a la plaza.",
+     "motivo": "mayúscula y punto"
+    },
+    {
+     "antes": "mi abuela hace tortas",
+     "despues": "Mi abuela hace tortas.",
+     "motivo": "mayúscula y punto"
+    }
+   ],
+   "voz": [
+    "¡Arreglemos las oraciones!",
+    "Le ponemos *mayúscula* y *punto* a la de Tomi.",
+    "Y a la de la abuela, ¡también!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El perro ladra — está bien escrita",
+   "emoji": "🐶",
+   "verdadero": false,
+   "explicacion": "Le falta el punto al final",
+   "voz": [
+    "¿Verdadero o falso? Mirá esta oración.",
+    "¿Tiene mayúscula? ¿Tiene punto?",
+    "¡*Falso*! Le falta el *punto*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde va la mayúscula?",
+   "opciones": [
+    "Al principio",
+    "Al final",
+    "En el medio"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos.",
+    "¿Dónde va la mayúscula?",
+    "¡*Al principio*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAYÚSCULA",
+     "al principio"
+    ],
+    [
+     "PUNTO",
+     "al final"
+    ],
+    [
+     "REVISAR",
+     "las dos puntas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *mayúscula* va al principio.",
+    "El *punto* va al final.",
+    "Siempre revisamos *las dos puntas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

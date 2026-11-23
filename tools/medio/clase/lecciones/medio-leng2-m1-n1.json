@@ -1,0 +1,141 @@
+{
+ "slug": "medio-leng2-m1-n1",
+ "step_id": "25e364ed-834f-40bc-a1b6-c2458923574d",
+ "materia": "Lengua 2",
+ "titulo": "Leer oraciones cortas",
+ "sub": "Lengua 2 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "📒",
+   "lineas": [
+    "Sofi tiene un cuaderno viajero.",
+    "Cada día escribe algo.",
+    "¿Qué escribió hoy?"
+   ],
+   "titulo": "LEER",
+   "sub": "oraciones cortas",
+   "voz": [
+    "Sofi tiene un *cuaderno viajero*.",
+    "Cada día escribe algo nuevo.",
+    "¿Qué escribió hoy? ¡Leamos!",
+    "Hoy: *leer oraciones cortas*."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "MI GATO DUERME AL SOL",
+   "marcas": [
+    {
+     "desde": 0,
+     "hasta": 1,
+     "etiqueta": "¿QUIÉN?",
+     "color": "sol"
+    },
+    {
+     "desde": 2,
+     "hasta": 2,
+     "etiqueta": "¿QUÉ HACE?",
+     "color": "verde"
+    }
+   ],
+   "voz": [
+    "Sofi escribió: mi gato duerme al sol.",
+    "¿De quién habla? De *mi gato*.",
+    "¿Qué hace? *Duerme*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "EL CUADERNO DE SOFI",
+   "vinetas": [
+    {
+     "emojis": [
+      "🐱",
+      "☀️"
+     ],
+     "txt": "Mi gato duerme al sol.",
+     "quien": "Sofi"
+    },
+    {
+     "emojis": [
+      "👦",
+      "⚽"
+     ],
+     "txt": "Tomi juega a la pelota.",
+     "quien": "Sofi"
+    },
+    {
+     "emojis": [
+      "👩‍🏫",
+      "📖"
+     ],
+     "txt": "La maestra lee un cuento.",
+     "quien": "Sofi"
+    }
+   ],
+   "voz": [
+    "Mi gato duerme al sol.",
+    "Tomi juega a la pelota.",
+    "La maestra lee un cuento."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Tomi juega a la pelota. ¿Qué hace Tomi?",
+   "opciones": [
+    "Juega",
+    "Duerme",
+    "Lee"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: Tomi juega a la pelota.",
+    "¿Qué hace Tomi?",
+    "¡*Juega*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LEÉ DESPACITO",
+   "texto": "Todas las palabras, sin saltear",
+   "emoji": "🐢",
+   "voz": [
+    "Truco: leé *despacito*, sin saltear palabras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "todas las palabras"
+    ],
+    [
+     "¿QUIÉN?",
+     "de quién habla"
+    ],
+    [
+     "¿QUÉ HACE?",
+     "lo que pasa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *todas las palabras*.",
+    "Pensamos *de quién* habla.",
+    "Y *qué hace*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
