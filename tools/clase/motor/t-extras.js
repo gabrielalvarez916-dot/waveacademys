@@ -85,11 +85,47 @@ var SFX = (function () {
       var pasos = 0; orig.call(this, g, tl, function (k) { pasos++; B(k); }, d);
       try {
         enPaso(tl, 0, function () { SFX.play('whoosh'); }, .02);
-        var r = REVELA[nom]; if (r) { var k = r[0] < 0 ? pasos - 1 : r[0]; if (k < pasos) enPaso(tl, k, function () { SFX.play(r[1]); }, nom === 'pregunta' || nom === 'quiz4' ? .35 : .25); }
+        var r = REVELA[nom]; if (r) { var k = r[0] < 0 ? pasos - 1 : r[0]; if (k < pasos) enPaso(tl, k, function () { SFX.play(r[1]); if (r[1] === 'ding' && nom !== 'reto' && window.CONFETI) CONFETI(); }, nom === 'pregunta' || nom === 'quiz4' ? .35 : .25); }
         [].concat(d.sticker || []).forEach(function (s) { if (!s || !s.txt) return; var k = Math.min(pasos - 1, Math.max(0, +s.paso || 0)), p = sticker(g, s);
           tl.fromTo(p, { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: .28, ease: 'back.out(2.5)', immediateRender: false }, 'b' + k + '+=.6'); enPaso(tl, k, function () { SFX.play('pop'); }, .62); });
       } catch (_) {}
     };
   });
 
+})();
+
+/* ---- CONFETI al revelar, "3, 2, 1… pensá" antes de la respuesta y BOTÓN DE VELOCIDAD ---- */
+(function () {
+  var calma = window.AudioContext === undefined && window.webkitAudioContext === undefined; // modo calmo de la plataforma (Menos animación)
+  try { if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calma = true; } catch (_) {}
+  window.CONFETI = function () {
+    if (calma) return; var cv = document.createElement('canvas'), W = innerWidth, H = innerHeight; cv.width = W; cv.height = H;
+    cv.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:50'; document.body.appendChild(cv);
+    var g = cv.getContext('2d'), cols = ['#F4B63F', '#7FD3C4', '#ff7a66', '#b9a6ff', '#8be38f', '#7fb6ff'], P = [];
+    for (var i = 0; i < 90; i++) P.push({ x: W / 2 + (Math.random() - .5) * W * .3, y: H * .55, vx: (Math.random() - .5) * 12, vy: -6 - Math.random() * 9, s: 5 + Math.random() * 7, c: cols[i % 6], r: Math.random() * 6, vr: (Math.random() - .5) * .3 });
+    var t0 = performance.now();
+    (function paso(t) { var k = t - t0; g.clearRect(0, 0, W, H); P.forEach(function (p) { p.vy += .3; p.x += p.vx; p.y += p.vy; p.r += p.vr; g.save(); g.globalAlpha = Math.max(0, 1 - k / 1600); g.translate(p.x, p.y); g.rotate(p.r); g.fillStyle = p.c; g.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); g.restore(); });
+      if (k < 1600) requestAnimationFrame(paso); else cv.remove(); })(t0);
+  };
+  // pensá: el reproductor lo llama al terminar cada frase; devuelve cuántos ms esperar antes de la siguiente
+  var PIENSA = { pregunta: 1, quiz4: 1, completa: 1 };
+  window.PENSAR = function (e, k) {
+    if (!e || !PIENSA[e.t] || k !== 1) return 0;
+    var esc = document.getElementById('escena'); if (!esc) return 0; esc = esc.lastElementChild || esc;
+    var NS = 'http://www.w3.org/2000/svg', gg = document.createElementNS(NS, 'g'); gg.setAttribute('transform', 'translate(1690 300)'); esc.appendChild(gg);
+    var c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 78); c.setAttribute('fill', '#F4B63F'); c.setAttribute('stroke', '#fff'); c.setAttribute('stroke-width', 6); gg.appendChild(c);
+    var t = document.createElementNS(NS, 'text'); t.setAttribute('text-anchor', 'middle'); t.setAttribute('dominant-baseline', 'central'); t.setAttribute('font-size', 76); t.setAttribute('font-weight', 900); t.setAttribute('fill', '#3a2a00'); gg.appendChild(t);
+    var s = document.createElementNS(NS, 'text'); s.setAttribute('y', 118); s.setAttribute('text-anchor', 'middle'); s.setAttribute('font-size', 34); s.setAttribute('font-weight', 800); s.setAttribute('fill', '#F4B63F'); s.textContent = 'PENSÁ…'; gg.appendChild(s);
+    var n = 3; (function tic() { if (!gg.parentNode) return; if (n === 0) { gg.remove(); return; } t.textContent = n; try { SFX.play('tic'); } catch (_) {}
+      if (!calma && window.gsap) gsap.fromTo(gg, { scale: 1.3, svgOrigin: '1690 300' }, { scale: 1, duration: .3, svgOrigin: '1690 300' }); n--; setTimeout(tic, 1000); })();
+    return 3000;
+  };
+  // velocidad: 1x → 1,25x → 1,5x → 0,75x (voz y animaciones). Se recuerda para la próxima clase.
+  var V = [1, 1.25, 1.5, .75], vel = 1; try { vel = +localStorage.getItem('wave-vel') || 1; } catch (_) {}
+  var play0 = HTMLMediaElement.prototype.play;
+  HTMLMediaElement.prototype.play = function () { try { this.playbackRate = vel; } catch (_) {} return play0.apply(this, arguments); };
+  function aplicar() { try { if (window.gsap) gsap.globalTimeline.timeScale(vel); } catch (_) {} var b = document.getElementById('vel'); if (b) b.textContent = String(vel).replace('.', ',') + 'x'; }
+  function boton() { var ctl = document.getElementById('ctl'); if (!ctl || document.getElementById('vel')) return; var b = document.createElement('button'); b.id = 'vel'; b.setAttribute('aria-label', 'Velocidad');
+    b.style.cssText = 'min-width:64px;font-weight:800'; b.onclick = function () { vel = V[(V.indexOf(vel) + 1) % V.length]; try { localStorage.setItem('wave-vel', vel); } catch (_) {} aplicar(); }; ctl.insertBefore(b, document.getElementById('mus') || null); aplicar(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boton); else boton();
 })();

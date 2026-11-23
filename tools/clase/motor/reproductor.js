@@ -41,7 +41,7 @@
     if (k >= e.voz.length) return setTimeout(function () { if (g === st.gen && st.play) { if (st.e < E.length - 1) irA(st.e + 1); else { st.play = false; MUSICA.pausa(); barra(); try { parent.postMessage({ tipo: 'wave-clase-fin', puntaje: 100 }, '*'); } catch (_) {} } } }, 150);
     st.f = k; barra(); subs(e.voz[k]);
     if (tl.labels['b' + k] != null) tl.play('b' + k);
-    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, 30); }, k);
+    decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, Math.max(30, window.PENSAR ? PENSAR(e, k) : 0)); }, k);
   }
   function armarEscena(i) {
     var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
