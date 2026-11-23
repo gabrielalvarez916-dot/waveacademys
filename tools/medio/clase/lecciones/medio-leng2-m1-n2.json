@@ -36,6 +36,82 @@
    ]
   },
   {
+   "t": "comparar",
+   "a": {
+    "cab": "MAYÚSCULA",
+    "texto": "A B C D"
+   },
+   "b": {
+    "cab": "minúscula",
+    "texto": "a b c d"
+   },
+   "signo": "=",
+   "def": {
+    "cab": "LA MISMA LETRA",
+    "texto": "Cada letra tiene dos formas: la grande y la chica."
+   },
+   "voz": [
+    "Cada letra tiene dos formas.",
+    "Una es la *mayúscula*, la letra grande.",
+    "La otra es la *minúscula*, la letra chica.",
+    "Es la *misma letra*, en dos tamaños."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "EL ABECEDARIO",
+   "columnas": [
+    "MAYÚSCULA",
+    "minúscula"
+   ],
+   "filas": [
+    [
+     "A B C D E F G",
+     "a b c d e f g"
+    ],
+    [
+     "H I J K L M N",
+     "h i j k l m n"
+    ],
+    [
+     "Ñ O P Q R S T",
+     "ñ o p q r s t"
+    ],
+    [
+     "U V W X Y Z",
+     "u v w x y z"
+    ]
+   ],
+   "voz": [
+    "Mirá el abecedario completo, con las dos formas.",
+    "Primero, las primeras siete: arriba las grandes, al lado las chicas.",
+    "Después, las siguientes siete.",
+    "Luego, otras siete.",
+    "Y al final, las últimas seis."
+   ]
+  },
+  {
+   "t": "corrige",
+   "titulo": "DE MAYÚSCULA A MINÚSCULA",
+   "cambios": [
+    {
+     "antes": "SOFI",
+     "despues": "Sofi",
+     "motivo": "solo la primera queda grande"
+    },
+    {
+     "antes": "MI CASA",
+     "despues": "Mi casa",
+     "motivo": "las demás se achican"
+    }
+   ],
+   "voz": [
+    "Pasemos de mayúscula a minúscula.",
+    "Si todas las letras son grandes, solo la primera queda *grande*.",
+    "Las demás se *achican*. Así queda bien escrito."
+   ]
+  },
+  {
    "t": "parrafo",
    "titulo": "HOY LLUEVE.",
    "lineas": [

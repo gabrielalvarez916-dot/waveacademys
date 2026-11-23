@@ -8,6 +8,19 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(AQUI)), "lengua-1"))  # dibujos de Lengua del Medio
 import figuras as FG
 
+
+def abecedario_pares():
+    """Abecedario de imprenta: arriba la mayúscula, abajo la minúscula de cada letra."""
+    L = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"; cols = 9; filas = 3
+    W = 1.1 * cols + .3; H = 1.75 * filas + .3
+    fig, ax = FG.lienzo(W, H, W, H, 0, 0)
+    for i, ch in enumerate(L):
+        x = .15 + 1.1 * (i % cols); y = H - .15 - 1.75 * (i // cols + 1) + .1
+        ax.add_patch(FG.FancyBboxPatch((x, y), 1.0, 1.6, boxstyle="round,pad=0.02,rounding_size=0.12", color="white", ec=FG.COLS[i % len(FG.COLS)], lw=2.2))
+        ax.text(x + .5, y + 1.12, ch, ha="center", va="center", fontsize=27, color=FG.OSC, **FG.F)
+        ax.text(x + .5, y + .45, ch.lower(), ha="center", va="center", fontsize=27, color=FG.CORAL, **FG.F)
+    return FG.png(fig)
+
 D = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
 P = lambda x: {"tipo": "parrafo", "texto": x}
 IMG = lambda t, pie, b64: {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": t, "texto": pie, "png_base64": b64}
@@ -54,12 +67,18 @@ N1 = {**ESTILO,
 
 N2 = {**ESTILO,
 "objetivo": "Vas a escribir oraciones con mayúscula y punto.",
-"vas_a_ver": ["Empieza con mayúscula", "Termina con punto", "Revisar lo que escribo"],
+"vas_a_ver": ["Empieza con mayúscula", "Mayúscula y minúscula: dos formas de cada letra", "Termina con punto", "Revisar lo que escribo"],
 "secciones": [
  S(1, "Mayúscula y punto", [
   D("Mayúscula", "La oración empieza con <b>letra grande</b>: la mayúscula."),
   D("Punto", "La oración termina con un <b>punto</b>. Dice: terminó."),
   IMG("Sofi escribió", "Mayúscula al principio, punto al final.", FG.letras("Hoy llueve.", resaltar=(0,))),
+ ]),
+ S(1, "Mayúscula y minúscula", [
+  D("Dos formas de cada letra", "Cada letra tiene dos formas: la <b>mayúscula</b>, que es la grande, y la <b>minúscula</b>, que es la chica. Es la misma letra."),
+  P("La <b>mayúscula</b> va al principio de la oración y en los nombres. Todo lo demás se escribe con <b>minúscula</b>."),
+  IMG("El abecedario de imprenta", "Arriba, la mayúscula. Abajo, la minúscula.", abecedario_pares()),
+  P("Para pasar de mayúscula a minúscula: la primera letra queda grande y las demás se achican. <b>SOFI</b> se escribe <b>Sofi</b>."),
  ]),
  S(1, "Revisar", [
   P("Tomi escribió: <b>hoy fuimos a la plaza</b>."),
