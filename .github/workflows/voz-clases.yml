@@ -8,6 +8,7 @@ on:
     inputs:
       voz: { description: 'Voz (ej. es-MX-JorgeNeural, es-AR-TomasNeural)', default: 'es-MX-JorgeNeural' }
       rate: { description: 'Velocidad (ej. +8%, +15%)', default: '+25%' }
+      cargar: { description: 'Volver a cargar estas clases ya armadas (slugs separados por espacio)', default: '' }
 permissions:
   contents: write
   actions: write
@@ -29,7 +30,8 @@ jobs:
         run: python tools/clase/voz_edge.py
       - run: python tools/clase/armar.py --cambiadas   # solo las clases con lección o voz nueva (un cambio de motor no re-sube todo)
       - name: Cargar en la plataforma
-        run: python tools/clase/cargar.py
+        env: { CARGAR: '${{ github.event.inputs.cargar }}' }
+        run: python tools/clase/cargar.py $CARGAR
       - name: Guardar
         run: |
           git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
