@@ -5,9 +5,7 @@ name: Misiones del NIVEL AVANZADO (carga completa)
 #   3) publica las misiones que quedaron completas
 # Las clases animadas van por voz-clases.yml (al subir tools/clase/lecciones/*.json). Nada se publica hasta que la misión está completa.
 on:
-  push:
-    branches: [main]
-    paths: ['contenido/*/mision-*/mision-*.json']
+  # SOLO MANUAL: ya no arranca sola al subir contenido. Se manda desde el admin (Estado de envíos → Para enviar).
   workflow_dispatch:
     inputs:
       mision: { description: 'Archivo de la misión (ej. contenido/lengua-1/mision-5/mision-5.json)', required: true }

@@ -5,9 +5,7 @@ name: Misiones del NIVEL MEDIO (carga completa)
 #   2) arma los PDF (argentino y neutro) y los sube a cada lección (pdf-medio)
 # Las clases animadas van por voz-clases-medio.yml. Nada se publica: queda para revisar en Contenidos.
 on:
-  push:
-    branches: [main]
-    paths: ['contenido/medio/**/mision-*.json', 'contenido/medio/recargar.txt']
+  # SOLO MANUAL: ya no arranca sola al subir contenido. Se manda desde el admin (Estado de envíos → Para enviar).
   workflow_dispatch:
     inputs:
       mision: { description: 'Archivo de la misión (ej. contenido/medio/matematica-1/mision-1/mision-1.json)', required: true }
