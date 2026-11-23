@@ -44,12 +44,17 @@
     decir(limpio(e.voz[k]), g, function () { if (g === st.gen && st.play) setTimeout(function () { if (g === st.gen && st.play) frase(k + 1); }, Math.max(30, window.PENSAR ? PENSAR(e, k) : 0)); }, k);
   }
   function armarEscena(i) {
-    var vieja = esc; if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
+    var vieja = esc, TR = CL.transiciones ? ['desliza', 'sube', 'zoom', 'gira', 'cortina'][i % 5] : null; // transiciones variadas: solo si la clase las pide (prueba)
+    if (vieja && TR) { var sal = { desliza: { x: -700 }, sube: { y: -500 }, zoom: { scale: 1.6 }, gira: { rotation: -8, x: -300 }, cortina: { x: 1920 } }[TR];
+      gsap.to(vieja, Object.assign({ opacity: 0, duration: .35, ease: 'power2.in', transformOrigin: '960px 540px', onComplete: function () { vieja.remove(); } }, sal)); }
+    else if (vieja) gsap.to(vieja, { opacity: 0, duration: .2, onComplete: function () { vieja.remove(); } });
     esc = el('g', {}, $('escena')); tl = gsap.timeline({ paused: true }); tl.timeScale(1.45); var n = 0, e = E[i];
     try { (T[e.t] || T.frase).armar(esc, tl, function (k) { if (n++) tl.addPause(); tl.addLabel('b' + k); }, e); }
     catch (err) { errores.push('Escena ' + (i + 1) + ' (' + e.t + '): ' + err.message); if (window.console) console.error(err); }
     gsap.set(esc.querySelectorAll('[data-c]'), { transformOrigin: '50% 50%', smoothOrigin: false });
-    gsap.fromTo(esc, { opacity: 0, scale: 1.04, transformOrigin: '960px 560px' }, { opacity: 1, scale: 1, duration: .3, delay: vieja ? .12 : 0, ease: 'power2.out' });
+    if (TR) { var ent = { desliza: { x: 700 }, sube: { y: 500 }, zoom: { scale: .5 }, gira: { rotation: 8, x: 300 }, cortina: { x: -1920 } }[TR];
+      gsap.fromTo(esc, Object.assign({ opacity: 0, transformOrigin: '960px 540px' }, ent), { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: .45, delay: vieja ? .2 : 0, ease: 'power3.out' }); }
+    else gsap.fromTo(esc, { opacity: 0, scale: 1.04, transformOrigin: '960px 560px' }, { opacity: 1, scale: 1, duration: .3, delay: vieja ? .12 : 0, ease: 'power2.out' });
   }
   function irA(i) { cortar(); st.e = i; st.f = 0; gsap.set('#cam', { x: 0 }); $('flash').setAttribute('opacity', 0); armarEscena(i); barra(); if (st.play) setTimeout(function () { frase(0); }, 220); else subs(E[i].voz[0]); }
   function pausa() { st.play = false; MUSICA.pausa(); cortar(); if (tl) tl.pause(); barra(); }

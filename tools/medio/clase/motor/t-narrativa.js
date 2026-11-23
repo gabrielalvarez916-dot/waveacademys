@@ -143,8 +143,8 @@
     function lado(x, o, col) { var p = w.pieza(g, x, 520), pied = o.estilo === 'piedra';
       w.caja(p, 0, 0, 600, 340, pied ? 'url(#gPiedra)' : 'url(#gCard)', pied ? '#d8d0c0' : col, 34, 6).setAttribute('filter', 'url(#sombra)');
       w.txt(p, 0, -125, o.cab, 28, pied ? '#4a4438' : col, { 'letter-spacing': 4 });
-      if (o.emoji) w.emoji(p, 0, -30, o.emoji, 110);
-      w.multi(p, 0, o.emoji ? 85 : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
+      if (o.emoji) w.emoji(p, 0, -45, o.emoji, 96);
+      w.multi(p, 0, o.emoji ? (String(o.texto).length > 22 ? 98 : 85) : 20, o.texto, o.emoji ? 44 : (String(o.texto).length > 12 ? 50 : 104), pied ? '#3d382f' : C.txt, 540, pied ? { 'font-family': 'Georgia,serif' } : null); return p; }
     var A = lado(560, d.a, C.aqua), Bb = lado(1360, d.b, C.sol), s = w.pieza(g, 960, 520); w.txt(s, 0, 0, d.signo || 'vs', d.signo && d.signo.length < 2 ? 140 : 70, C.sol, { filter: 'url(#brillo)' });
     var de = null; if (d.def) { de = w.pieza(g, 960, 850); w.tarjeta(de, 0, 0, 1440, 180, C.sol); w.txt(de, 0, -40, d.def.cab, 32, C.sol, { 'letter-spacing': 4 }); w.multi(de, 0, 30, d.def.texto, 40, C.txt, 1340); }
     B(0); w.IN(tl, A, 0, { x: -200, y: 0 });

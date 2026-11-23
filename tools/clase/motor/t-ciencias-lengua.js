@@ -82,10 +82,11 @@
   // corrige: {titulo, cambios:[{antes, despues, motivo}] (máx 3)} — tacha lo que está mal y escribe lo correcto (1 + cambios pasos)
   T.corrige = { n: function (d) { return 1 + d.cambios.length; }, armar: function (g, tl, B, d) {
     var ti = d.titulo ? w.titulo(g, d.titulo, 250) : null;
-    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0);
-      var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20;
-      var tachon = w.el('line', { x1: 560 - la / 2, y1: y, x2: 560 + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
-      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
+    var F = d.cambios.map(function (c, k) { var y = 400 + k * 200, gr = w.pieza(g, 0, 0), largo = Math.max(String(c.antes).length, String(c.despues).length) > 26;
+      if (!largo) { var a = w.txt(gr, 560, y, c.antes, 40, '#ff9f9f'); var la = c.antes.length * 21 + 20; }
+      else { var a = w.multi(gr, 500, y, c.antes, 32, '#ff9f9f', 640); var la = Math.min(640, c.antes.length * 17 + 20); }
+      var tachon = w.el('line', { x1: (largo ? 500 : 560) - la / 2, y1: y, x2: (largo ? 500 : 560) + la / 2, y2: y, stroke: '#ff5a4f', 'stroke-width': 6, 'stroke-dasharray': la, 'stroke-dashoffset': la }, gr);
+      w.txt(gr, 960, y, '→', 50, '#C3A8FF'); var bb = largo ? w.multi(gr, 1420, y, c.despues, 32, '#8be38f', 640) : w.txt(gr, 1360, y, c.despues, 40, '#8be38f');
       var mo = c.motivo ? w.txt(gr, 960, y + 62, c.motivo, 28, '#bdb2d6') : null; gr._t = tachon; gr._b = bb; gr._m = mo; return gr; });
     B(0); if (ti) w.IN(tl, ti, 0);
     F.forEach(function (f, k) { B(k + 1); tl.set([f._b, f._m].filter(Boolean), { opacity: 0 }, 0); w.IN(tl, f, 0, { y: 0, d: .3 });
@@ -242,7 +243,8 @@
 
   // bloques: {titulo, items:[{cab, txt}] (2-5)} — estructura de un texto (titular, copete, cuerpo...) — 1 + n pasos
   T.bloques = { n: function (d) { return 1 + d.items.length; }, armar: function (g, tl, B, d) {
-    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110], y = 370, P = [];
+    var ti = w.titulo(g, d.titulo, 260), n = d.items.length, alto = [130, 110, 240, 120, 110].slice(0, n), y = 370, P = [];
+    var suma = alto.reduce(function (a, b) { return a + b; }, 0); if (suma > 580) alto = alto.map(function (h) { return h * 580 / suma; }); // 5 bloques: entran sin salirse por abajo
     var hoja = w.pieza(g, 860, 660); w.caja(hoja, 0, 0, 900, 620, '#eef6f4', '#d8fff7', 20, 4).setAttribute('filter', 'url(#sombra)');
     d.items.forEach(function (it, k) { var h = alto[k] || 120, col = W.PAL[k % W.PAL.length], p = w.pieza(g, 0, 0);
       w.caja(p, 860, y + h / 2, 840, h - 16, col, col, 12, 2).setAttribute('opacity', .85); w.multi(p, 860, y + h / 2, it.txt, k ? 28 : 40, '#06282a', 780);
@@ -264,7 +266,7 @@
   T.vocab = { n: function (d) { return d.items.length; }, armar: function (g, tl, B, d) {
     var n = d.items.length, P = W.rejilla(n, 960, 620, 520, 340, 3);
     var V = d.items.map(function (it, k) { var p = w.pieza(g, P[k][0], P[k][1]); w.tarjeta(p, 0, 0, 470, 310, W.PAL[k % W.PAL.length]);
-      w.emoji(p, 0, -70, it.emoji || '', 100); w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
+      w.emoji(p, 0, -70, it.emoji || '', 100); if (String(it.palabra).length > 14) w.multi(p, 0, 30, it.palabra, 34, C.txt, 430); else w.txt(p, 0, 40, it.palabra, 52, C.txt); if (it.pron) w.txt(p, 0, 88, '/' + it.pron + '/', 28, C.suave); if (String(it.trad || '').length > 22) w.multi(p, 0, 112, it.trad, 26, C.sol, 430); else w.txt(p, 0, it.pron ? 126 : 100, it.trad || '', 32, C.sol); return p; });
     V.forEach(function (p, k) { B(k); w.IN(tl, p, 0, { scaleX: 0, y: 0, d: .5, ease: 'back.out(1.6)' }); });
   } };
 })();
