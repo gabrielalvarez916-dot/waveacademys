@@ -49,6 +49,19 @@ for _s in args:
         _secs[_s] = [e.get('t') for e in json.load(open(_lp, encoding='utf-8'))['escenas']]
 for _s, _ts in _secs.items():
     if len([t for t in _ts if t not in _BASICAS]) < 2: E(_s, 'poca variedad de recursos: usar al menos 2 plantillas del banco fuera de las básicas (comparar, antesdespues, causas, ciclo, flujo, linea, venn, balanza, matriz, partes, dato, dialogo, bloques, zoom, etc.)')
+# PLANTILLAS ESTILO PLATAFORMAS (regla desde nov 2026, solo clases nuevas: las de plataformas_existentes.txt no se revisan):
+# cada clase usa al menos 2, y en una misión ninguna se repite en más de 2 clases.
+_PLAT = {'fichas', 'completa', 'personaje', 'logro', 'pizarra', 'pistas', 'deslizador', 'prediccion', 'patron', 'contrarreloj', 'memoria', 'unir', 'mazo', 'tipeo', 'documental', 'escala', 'dilema', 'quiz4', 'transforma'}
+try: _VIEJAS = set(open(os.path.join(AQUI, 'plataformas_existentes.txt'), encoding='utf-8').read().split())
+except Exception: _VIEJAS = set()
+_cuenta_plat = {}
+for _s, _ts in _secs.items():
+    if _s in _VIEJAS or _s.endswith('.neutro'): continue
+    _p = {t for t in _ts if t in _PLAT}
+    if len(_p) < 2: E(_s, 'faltan plantillas estilo plataformas: usar al menos 2 (fichas, completa, personaje, logro, pizarra, pistas, deslizador, prediccion, patron, contrarreloj, memoria, unir, mazo, tipeo, documental, escala, dilema, quiz4, transforma)')
+    for t in _p: _cuenta_plat.setdefault((re.sub(r'-n\d+$', '', _s), t), []).append(_s)
+for (_g, t), _ss in _cuenta_plat.items():
+    if len(_ss) > 2: E(_g, f'plantilla «{t}» en {len(_ss)} clases de la misión (máximo 2): rotar las de plataformas')
 _grupos = {}
 for _s, _ts in _secs.items(): _grupos.setdefault(re.sub(r'-n\d+(\.neutro)?$', '', _s), []).append((_s, _ts))
 for _g, _l in _grupos.items():
