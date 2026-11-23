@@ -1,0 +1,152 @@
+{
+ "slug": "medio-ing1-m4-n4",
+ "destino": {
+  "subject_id": "e2d48bb4-83ea-4f78-b7f0-ba50b1154664",
+  "tema": 4,
+  "nivel": 4
+ },
+ "materia": "Inglés 1",
+ "titulo": "In and on: where is it?",
+ "sub": "Inglés 1 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🏠",
+   "lineas": [
+    "Sofi busca su lápiz.",
+    "¿Dónde está?",
+    "¡Está en la mochila!"
+   ],
+   "titulo": "WHERE IS IT?",
+   "sub": "in y on",
+   "voz": [
+    "Sofi busca su *lápiz*.",
+    "Where is it?",
+    "¡Está en la mochila!",
+    "Hoy: *in y on, dónde están las cosas*."
+   ],
+   "voz_en": [
+    1
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "IN",
+    "emoji": "🎒",
+    "texto": "Adentro de la mochila"
+   },
+   "despues": {
+    "cab": "ON",
+    "emoji": "📘",
+    "texto": "Arriba de la mesa"
+   },
+   "voz": [
+    "The pencil is in the bag.",
+    "The book is on the table."
+   ],
+   "voz_en": [
+    0,
+    1
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "¿DÓNDE ESTÁ?",
+   "celdas": [
+    {
+     "cab": "✏️🎒",
+     "txt": "IN THE BAG"
+    },
+    {
+     "cab": "📘🪑",
+     "txt": "ON THE TABLE"
+    },
+    {
+     "cab": "🧸📦",
+     "txt": "IN THE BOX"
+    },
+    {
+     "cab": "🐱🛏️",
+     "txt": "ON THE BED"
+    }
+   ],
+   "voz": [
+    "Buscamos las cosas de Tomi.",
+    "In the bag!",
+    "On the table!",
+    "In the box!",
+    "On the bed!"
+   ],
+   "voz_en": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "El lápiz está adentro de la mochila. ¿IN u ON?",
+   "opciones": [
+    "IN",
+    "ON",
+    "UP"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos. El lápiz está adentro.",
+    "¿Es in u on?",
+    "In the bag!"
+   ],
+   "voz_en": [
+    2
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON LAS MANOS",
+   "texto": "IN: mano adentro. ON: mano arriba",
+   "emoji": "🙌",
+   "voz": [
+    "Truco: *adentro* es in, *arriba* es on."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "IN",
+     "adentro"
+    ],
+    [
+     "ON",
+     "arriba"
+    ],
+    [
+     "WHERE IS IT?",
+     "¿dónde está?"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Where is it?",
+    "In the bag! On the table!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "voz_en": [
+    1,
+    2
+   ]
+  }
+ ]
+}
