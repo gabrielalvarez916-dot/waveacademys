@@ -42,24 +42,29 @@
    ]
   },
   {
-   "t": "recta",
-   "min": 200,
-   "max": 300,
-   "paso": 10,
-   "marcas": [
+   "t": "escala",
+   "titulo": "CAJAS QUE CRECEN",
+   "items": [
     {
-     "v": 250,
-     "txt": "250"
+     "txt": "100",
+     "emoji": "📦",
+     "valor": 100
     },
     {
-     "v": 300,
-     "txt": "300"
+     "txt": "200",
+     "emoji": "📦",
+     "valor": 200
+    },
+    {
+     "txt": "300",
+     "emoji": "📦",
+     "valor": 300
     }
    ],
    "voz": [
-    "En la recta vamos del 200 al 300.",
-    "En el medio está el *250*.",
-    "Y al final, el *300*: tres cajas."
+    "Una caja: *100* alfajores.",
+    "Dos cajas: *200*.",
+    "Tres cajas: ¡*300*!"
    ]
   },
   {
@@ -74,6 +79,22 @@
     "Contemos estos vagones.",
     "296, 297, 298, 299… 301, 302, 303.",
     "¡Faltaba el *300*! Trescientos."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "Después del 299 viene el",
+   "despues": "",
+   "opciones": [
+    "300",
+    "2100",
+    "290"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: después del 299 viene el…",
+    "¿300, 2100 o 290?",
+    "¡El *300*! Trescientos."
    ]
   },
   {

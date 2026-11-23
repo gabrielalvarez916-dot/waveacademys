@@ -44,24 +44,29 @@
    ]
   },
   {
-   "t": "recta",
+   "t": "deslizador",
+   "titulo": "DEL 100 AL 200",
    "min": 100,
    "max": 200,
-   "paso": 10,
-   "marcas": [
+   "emoji": "🍫",
+   "paradas": [
+    {
+     "v": 100,
+     "txt": "una caja"
+    },
     {
      "v": 150,
-     "txt": "150"
+     "txt": "en el medio"
     },
     {
      "v": 200,
-     "txt": "200"
+     "txt": "dos cajas"
     }
    ],
    "voz": [
-    "En la recta vamos del 100 al 200.",
-    "Acá está el *150*: justo en el medio.",
-    "Y al final, el *200*: dos cajas."
+    "Empezamos en el *100*: una caja.",
+    "Movemos hasta el *150*: justo en el medio.",
+    "¡Y llegamos al *200*: dos cajas!"
    ]
   },
   {
@@ -79,18 +84,20 @@
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "1 caja, 6 paquetes y 2 sueltos. ¿Cuántos son?",
-   "opciones": [
-    "162",
-    "126",
-    "612"
+   "t": "pistas",
+   "problema": "Rosa tiene 1 caja, 6 paquetes y 2 sueltos. ¿Cuántos son?",
+   "pistas": [
+    "La caja: 100",
+    "6 paquetes: 60",
+    "2 sueltos: 2"
    ],
-   "correcta": 0,
+   "respuesta": "162 alfajores",
    "voz": [
     "Ahora vos. Una caja, seis paquetes, dos sueltos.",
-    "¿Cuántos alfajores son?",
-    "¡*162*! Cien, sesenta y dos."
+    "Pista uno: la caja tiene *100*.",
+    "Pista dos: seis paquetes son *60*.",
+    "Pista tres: y dos sueltos.",
+    "¡Son *162* alfajores!"
    ]
   },
   {

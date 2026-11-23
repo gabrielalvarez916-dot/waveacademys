@@ -90,18 +90,22 @@
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "¿Qué número viene antes del 500?",
-   "opciones": [
-    "499",
-    "501",
-    "400"
-   ],
-   "correcta": 0,
+   "t": "prediccion",
+   "pregunta": "¿Qué número viene después del 499?",
+   "a": {
+    "txt": "4100",
+    "emoji": "🤔"
+   },
+   "b": {
+    "txt": "500",
+    "emoji": "📦"
+   },
+   "correcta": "b",
+   "resultado": "¡500! Cinco cajas justas",
    "voz": [
-    "Ahora vos. Pensá en el 500.",
-    "¿Qué número viene *antes*?",
-    "¡*499*! Uno menos."
+    "¿Qué creés? ¿Qué viene después del 499?",
+    "¿4100 o 500? Pensá…",
+    "¡*500*! Cinco cajas justas."
    ]
   },
   {
@@ -115,6 +119,30 @@
    "voz": [
     "Ojo con este error.",
     "Quinientos se escribe *500*: tres cifras."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ CADA PEDIDO",
+   "pares": [
+    [
+     "1 caja",
+     "100"
+    ],
+    [
+     "3 cajas",
+     "300"
+    ],
+    [
+     "5 cajas",
+     "500"
+    ]
+   ],
+   "voz": [
+    "Uní cada pedido con su número.",
+    "Una caja: *100*.",
+    "Tres cajas: *300*.",
+    "Cinco cajas: *500*."
    ]
   },
   {

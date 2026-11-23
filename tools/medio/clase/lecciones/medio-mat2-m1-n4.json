@@ -68,7 +68,23 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "200",
+    "190",
+    "180"
+   ],
+   "falta": "170",
+   "regla": "Restamos 10 cada vez",
+   "voz": [
+    "Mirá esta serie: 200, 190, 180…",
+    "¿Qué número sigue?",
+    "¡El *170*! La serie baja de 10 en 10."
+   ]
+  },
+  {
+   "t": "quiz4",
    "pregunta": "La serie 160, 150, 140, ¿sube o baja?",
    "opciones": [
     "Sube",

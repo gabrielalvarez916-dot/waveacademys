@@ -2,7 +2,7 @@
 """Matemática 2 (Nivel Medio, 2.º año) · Misión 2 · Los números hasta 500: las 4 clases animadas.
 Metáfora de toda la misión: la fábrica de alfajores de la abuela Rosa (sueltos, paquetes de 10 y cajas de 100).
 Regla de primeros años (tools/medio/primeros_anios.py). Genera tools/medio/clase/lecciones/medio-mat2-m2-n<N>.json.
-Formatos nuevos contra la misión 1: fichas y calculadora."""
+Formatos nuevos contra la misión 1: calculadora y plantillas de plataformas distintas (escala, completa, transforma, memoria, prediccion, unir, fichas, logro)."""
 import json, os
 RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..')
 STEP = {1: 'c10404aa-bbc6-4429-a4e8-3818661217c7', 2: '82be64b8-3357-4c49-84c3-28b5a05d8f77', 3: '1e6dc920-8612-4a01-82d9-79cb0459bc05', 4: '2d0ee16c-321a-444b-af4a-155b4a3fc16b'}
@@ -16,10 +16,12 @@ N1 = [
   "voz": ["Llegó un *pedido grande* a la fábrica de Rosa.", "Ya hay dos cajas llenas.", "¿Cuántos alfajores son en total?", "Hoy: *del 200 al 300*."]},
  {"t": "cdu", "c": 2, "d": 4, "u": 6, "texto": "¡Son 246 alfajores!",
   "voz": ["Contemos el pedido de Rosa.", "Las cajas: 100, 200.", "Los paquetes: 210, 220, 230, 240.", "Los sueltos: 241, 242, 243, 244, 245, 246.", "¡Son *246 alfajores*!"]},
- {"t": "recta", "min": 200, "max": 300, "paso": 10, "marcas": [{"v": 250, "txt": "250"}, {"v": 300, "txt": "300"}],
-  "voz": ["En la recta vamos del 200 al 300.", "En el medio está el *250*.", "Y al final, el *300*: tres cajas."]},
+ {"t": "escala", "titulo": "CAJAS QUE CRECEN", "items": [{"txt": "100", "emoji": "📦", "valor": 100}, {"txt": "200", "emoji": "📦", "valor": 200}, {"txt": "300", "emoji": "📦", "valor": 300}],
+  "voz": ["Una caja: *100* alfajores.", "Dos cajas: *200*.", "Tres cajas: ¡*300*!"]},
  {"t": "tren", "desde": 296, "hasta": 303, "faltan": [300], "titulo": "PASAMOS EL 300",
   "voz": ["Contemos estos vagones.", "296, 297, 298, 299… 301, 302, 303.", "¡Faltaba el *300*! Trescientos."]},
+ {"t": "completa", "antes": "Después del 299 viene el", "despues": "", "opciones": ["300", "2100", "290"], "correcta": 0,
+  "voz": ["Completá: después del 299 viene el…", "¿300, 2100 o 290?", "¡El *300*! Trescientos."]},
  {"t": "pregunta", "pregunta": "2 cajas, 7 paquetes y 1 suelto. ¿Cuántos son?", "opciones": ["271", "217", "721"], "correcta": 0,
   "voz": ["Ahora vos. Dos cajas, siete paquetes, un suelto.", "¿Cuántos alfajores son?", "¡*271*! Doscientos setenta y uno."]},
  {"t": "errores", "items": [{"mal": "Doscientos cinco: 2005", "bien": "Doscientos cinco: 205"}],
@@ -36,8 +38,10 @@ N2 = [
   "voz": ["Mirá este pedido.", "Las cajas: 100, 200, 300.", "Los paquetes: 310, 320, 330, 340, 350, 360, 370.", "Los sueltos: 371, 372.", "¡Son *372 alfajores*!"]},
  {"t": "calculadora", "teclas": ["3", "9", "9", "+", "1"], "resultado": "400", "texto": "399 + 1 = 400", "titulo": "UNO MÁS",
   "voz": ["Tomi prueba con la calculadora.", "Aprieta 399, más 1.", "¡Sale *400*! Cuatro cajas justas."]},
- {"t": "pregunta", "pregunta": "De 100 en 100: 100, 200, 300, ¿qué sigue?", "opciones": ["400", "310", "3100"], "correcta": 0,
-  "voz": ["Ahora vos. 100, 200, 300…", "¿Qué número sigue?", "¡*400*! Una caja más."]},
+ {"t": "transforma", "titulo": "ARMAMOS EL NÚMERO", "pasos": [{"txt": "3 cajas, 7 paquetes, 2 sueltos"}, {"txt": "300 + 70 + 2"}, {"txt": "372", "nota": "trescientos setenta y dos"}],
+  "voz": ["Tres cajas, siete paquetes y dos sueltos.", "Es 300, más 70, más 2.", "¡Es el *372*!"]},
+ {"t": "memoria", "titulo": "¿CUÁL FALTA?", "items": ["100", "200", "300", "400"], "falta": 2,
+  "voz": ["Mirá bien estos cuatro números.", "Se tapan… ¡y uno desapareció!", "¡Faltaba el *300*!"]},
  {"t": "consejo", "titulo": "CONTÁ LAS CAJAS", "texto": "Cada caja suma 100", "emoji": "📦",
   "voz": ["Truco: cada *caja* suma 100 alfajores."]},
  {"t": "resumen", "items": [["DE 100 EN 100", "contar cajas"], ["PEDIDO", "cajas, paquetes, sueltos"], ["400", "cuatro cajas"]], "fin": FIN,
@@ -52,30 +56,32 @@ N3 = [
   "voz": ["Los camiones llevan una caja cada uno.", "100, 200, 300, 400, 500.", "¡Cinco cajas: *500*!"]},
  {"t": "recta", "min": 400, "max": 500, "paso": 10, "marcas": [{"v": 450, "txt": "450"}, {"v": 490, "txt": "490"}],
   "voz": ["Ahora de 10 en 10, del 400 al 500.", "Acá está el *450*.", "Y acá el *490*: falta un paquete."]},
- {"t": "pregunta", "pregunta": "¿Qué número viene antes del 500?", "opciones": ["499", "501", "400"], "correcta": 0,
-  "voz": ["Ahora vos. Pensá en el 500.", "¿Qué número viene *antes*?", "¡*499*! Uno menos."]},
+ {"t": "prediccion", "pregunta": "¿Qué número viene después del 499?", "a": {"txt": "4100", "emoji": "🤔"}, "b": {"txt": "500", "emoji": "📦"}, "correcta": "b", "resultado": "¡500! Cinco cajas justas",
+  "voz": ["¿Qué creés? ¿Qué viene después del 499?", "¿4100 o 500? Pensá…", "¡*500*! Cinco cajas justas."]},
  {"t": "errores", "items": [{"mal": "Quinientos: 5100", "bien": "Quinientos: 500"}],
   "voz": ["Ojo con este error.", "Quinientos se escribe *500*: tres cifras."]},
+ {"t": "unir", "titulo": "UNÍ CADA PEDIDO", "pares": [["1 caja", "100"], ["3 cajas", "300"], ["5 cajas", "500"]],
+  "voz": ["Uní cada pedido con su número.", "Una caja: *100*.", "Tres cajas: *300*.", "Cinco cajas: *500*."]},
  {"t": "resumen", "items": [["500", "cinco cajas"], ["DE 10 EN 10", "un paquete más"], ["499", "antes del 500"]], "fin": FIN,
   "voz": ["Repasemos lo que aprendimos.", "Cinco cajas son *500*.", "De 10 en 10 sumamos *un paquete*.", "Antes del 500 viene el *499*.", CIERRE]},
 ]
 N4 = [
  {"t": "noticia", "cinta": "ÚLTIMO MOMENTO", "titular": "¡Se borraron las etiquetas!", "bajada": "Rosa escribe los números", "emoji": "🏷️", "titulo": "LEER", "sub": "y escribir",
   "voz": ["¡Último momento: se borraron las etiquetas!", "Rosa tiene que escribir los números otra vez.", "Hoy: *leer y escribir números grandes*."]},
- {"t": "fichas", "fichas": ["2", "5", "8"], "grande": "258", "etiqueta": "DOSCIENTOS CINCUENTA Y OCHO",
-  "voz": ["Mirá estas tres cifras: 2, 5 y 8.", "Juntas forman el *258*.", "Se lee: *doscientos cincuenta y ocho*."]},
+ {"t": "fichas", "consigna": "Armá el doscientos cincuenta y ocho", "fichas": ["2", "5", "8"], "desorden": [2, 0, 1], "traduccion": "258",
+  "voz": ["Armemos *doscientos cincuenta y ocho*.", "Primero el 2, después el 5 y el 8.", "¡*258*! Tres cifras."]},
  {"t": "comparar", "a": {"cab": "SE ESCRIBE", "texto": "307", "emoji": "✏️"}, "b": {"cab": "SE LEE", "texto": "trescientos siete", "emoji": "🗣️"}, "signo": "=",
   "voz": ["Con cifras se escribe: *307*.", "Con palabras se lee: *trescientos siete*.", "¡Es el mismo número!"]},
  {"t": "consejo", "titulo": "MIRÁ EL CERO", "texto": "El 0 guarda el lugar", "emoji": "0️⃣",
   "voz": ["Truco: el *cero* guarda el lugar vacío."]},
- {"t": "fichas", "fichas": ["4", "5", "0"], "grande": "450", "etiqueta": "CUATROCIENTOS CINCUENTA",
-  "voz": ["Ahora, *cuatrocientos cincuenta*.", "Un 4, un 5 y un 0: *450*.", "No hay unidades: va un cero."]},
+ {"t": "unir", "titulo": "NÚMERO Y NOMBRE", "pares": [["300", "trescientos"], ["400", "cuatrocientos"], ["500", "quinientos"]],
+  "voz": ["Uní cada número con su nombre.", "300: *trescientos*.", "400: *cuatrocientos*.", "500: *quinientos*."]},
  {"t": "pregunta", "pregunta": "¿Cómo se escribe trescientos seis?", "opciones": ["36", "306", "3006"], "correcta": 1,
   "voz": ["Ahora vos. ¿Cómo se escribe *trescientos seis*?", "Pensá: ¿hay decenas?", "¡*306*! El cero va en el medio."]},
  {"t": "errores", "items": [{"mal": "Trescientos siete: 3007", "bien": "Trescientos siete: 307"}],
   "voz": ["Ojo con este error.", "Son *tres cifras*: 307."]},
- {"t": "resumen", "items": [["ESCRIBIR", "con cifras: 258"], ["LEER", "con palabras"], ["EL CERO", "guarda el lugar"]], "fin": FIN,
-  "voz": ["Repasemos lo que aprendimos.", "Escribimos con *cifras*: 258.", "Leemos con *palabras*: doscientos cincuenta y ocho.", "El *cero* guarda el lugar vacío.", CIERRE]},
+ {"t": "logro", "titulo": "¡NIVEL SUPERADO!", "items": ["Escribo con cifras", "Leo con palabras", "El 0 guarda el lugar"], "xp": 30,
+  "voz": ["Escribimos con *cifras*: 258.", "Leemos con *palabras*: doscientos cincuenta y ocho.", "El *cero* guarda el lugar vacío.", CIERRE]},
 ]
 for n, E in ((1, N1), (2, N2), (3, N3), (4, N4)):
     slug = f'medio-mat2-m2-n{n}'

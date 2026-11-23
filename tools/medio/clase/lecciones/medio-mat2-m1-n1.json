@@ -82,7 +82,23 @@
    ]
   },
   {
-   "t": "pregunta",
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "107",
+    "108",
+    "109"
+   ],
+   "falta": "110",
+   "regla": "Sumamos 1 cada vez",
+   "voz": [
+    "Mirá: 107, 108, 109…",
+    "¿Qué número sigue?",
+    "¡El *110*! Ciento diez."
+   ]
+  },
+  {
+   "t": "quiz4",
    "pregunta": "¿Qué número viene después del 100?",
    "opciones": [
     "101",

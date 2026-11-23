@@ -86,18 +86,40 @@
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "De 100 en 100: 100, 200, 300, ¿qué sigue?",
-   "opciones": [
-    "400",
-    "310",
-    "3100"
+   "t": "transforma",
+   "titulo": "ARMAMOS EL NÚMERO",
+   "pasos": [
+    {
+     "txt": "3 cajas, 7 paquetes, 2 sueltos"
+    },
+    {
+     "txt": "300 + 70 + 2"
+    },
+    {
+     "txt": "372",
+     "nota": "trescientos setenta y dos"
+    }
    ],
-   "correcta": 0,
    "voz": [
-    "Ahora vos. 100, 200, 300…",
-    "¿Qué número sigue?",
-    "¡*400*! Una caja más."
+    "Tres cajas, siete paquetes y dos sueltos.",
+    "Es 300, más 70, más 2.",
+    "¡Es el *372*!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "¿CUÁL FALTA?",
+   "items": [
+    "100",
+    "200",
+    "300",
+    "400"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá bien estos cuatro números.",
+    "Se tapan… ¡y uno desapareció!",
+    "¡Faltaba el *300*!"
    ]
   },
   {

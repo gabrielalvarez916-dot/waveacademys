@@ -75,12 +75,27 @@
    ]
   },
   {
-   "t": "consejo",
-   "titulo": "MIRÁ EL MEDIO",
-   "texto": "Cambian las decenas",
-   "emoji": "👀",
+   "t": "pizarra",
+   "titulo": "LA CIFRA DEL MEDIO",
+   "lineas": [
+    {
+     "txt": "113"
+    },
+    {
+     "txt": "123",
+     "color": "sol",
+     "marca": "circulo"
+    },
+    {
+     "txt": "133",
+     "color": "verde",
+     "marca": "subraya"
+    }
+   ],
    "voz": [
-    "Truco: de 10 en 10 cambia la cifra *del medio*."
+    "Rosa escribe en la pizarra: 113.",
+    "Un paquete más: 123. ¡Cambió la del medio!",
+    "Otro más: 133. El 3 del final no cambia."
    ]
   },
   {
@@ -96,6 +111,31 @@
     "Ahora vos. 113, 123…",
     "¿Qué número sigue de 10 en 10?",
     "¡*133*! El 3 del final no cambia."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "140 y 10 más",
+     "r": "150"
+    },
+    {
+     "p": "170 y 10 más",
+     "r": "180"
+    },
+    {
+     "p": "190 y 10 más",
+     "r": "200"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de 10 en 10!",
+    "140 y 10 más: *150*.",
+    "170 y 10 más: *180*.",
+    "190 y 10 más: ¡*200*!"
    ]
   },
   {

@@ -22,17 +22,22 @@
   },
   {
    "t": "fichas",
+   "consigna": "Armá el doscientos cincuenta y ocho",
    "fichas": [
     "2",
     "5",
     "8"
    ],
-   "grande": "258",
-   "etiqueta": "DOSCIENTOS CINCUENTA Y OCHO",
+   "desorden": [
+    2,
+    0,
+    1
+   ],
+   "traduccion": "258",
    "voz": [
-    "Mirá estas tres cifras: 2, 5 y 8.",
-    "Juntas forman el *258*.",
-    "Se lee: *doscientos cincuenta y ocho*."
+    "Armemos *doscientos cincuenta y ocho*.",
+    "Primero el 2, después el 5 y el 8.",
+    "¡*258*! Tres cifras."
    ]
   },
   {
@@ -64,18 +69,27 @@
    ]
   },
   {
-   "t": "fichas",
-   "fichas": [
-    "4",
-    "5",
-    "0"
+   "t": "unir",
+   "titulo": "NÚMERO Y NOMBRE",
+   "pares": [
+    [
+     "300",
+     "trescientos"
+    ],
+    [
+     "400",
+     "cuatrocientos"
+    ],
+    [
+     "500",
+     "quinientos"
+    ]
    ],
-   "grande": "450",
-   "etiqueta": "CUATROCIENTOS CINCUENTA",
    "voz": [
-    "Ahora, *cuatrocientos cincuenta*.",
-    "Un 4, un 5 y un 0: *450*.",
-    "No hay unidades: va un cero."
+    "Uní cada número con su nombre.",
+    "300: *trescientos*.",
+    "400: *cuatrocientos*.",
+    "500: *quinientos*."
    ]
   },
   {
@@ -107,27 +121,15 @@
    ]
   },
   {
-   "t": "resumen",
+   "t": "logro",
+   "titulo": "¡NIVEL SUPERADO!",
    "items": [
-    [
-     "ESCRIBIR",
-     "con cifras: 258"
-    ],
-    [
-     "LEER",
-     "con palabras"
-    ],
-    [
-     "EL CERO",
-     "guarda el lugar"
-    ]
+    "Escribo con cifras",
+    "Leo con palabras",
+    "El 0 guarda el lugar"
    ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   },
+   "xp": 30,
    "voz": [
-    "Repasemos lo que aprendimos.",
     "Escribimos con *cifras*: 258.",
     "Leemos con *palabras*: doscientos cincuenta y ocho.",
     "El *cero* guarda el lugar vacío.",
