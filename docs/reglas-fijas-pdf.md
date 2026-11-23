@@ -91,6 +91,9 @@ Opcionales (un borrador viejo sin ellos se dibuja como antes):
 
 ## Calidad de carpeta, actividades y examen
 
+**Variedad de tipos de pregunta (desde 23/11/2026, misiones nuevas):** en cada misión, contando actividades de los niveles 1 a 4 y el examen, ningún tipo puede pasar del 40 % en Nivel Avanzado (50 % en Medio, 60 % en 1.º a 3.º) y tiene que haber al menos 5 tipos distintos (4 en Medio, 3 en 1.º a 3.º). Lo controla `tools/control_calidad.py` y frena la carga si no se cumple. Variar entre: opción múltiple, V/F, completar, ordenar, unir, clasificar, tabla, numérica, tocá el texto, fichas, palabras clave, rotular, crucigrama, sopa de letras y escape room (ver docs/tipos-de-pregunta.md).
+
+
 Regla del 22/11/2026. La controla sola la máquina con `tools/control_calidad.py`, en los workflows de Avanzado y Medio, ANTES de cargar: si una misión no cumple, no se carga nada y el log dice qué arreglar. Las misiones que ya estaban cargadas (`tools/calidad_existentes.txt`) no se revisan ni se tocan.
 
 Por qué: el PDF enseña a pensar (explicar, comparar, argumentar) y la carpeta y el examen tienen que pedir lo mismo. Si solo piden recordar, el nivel jefe certifica un dominio que no existe.

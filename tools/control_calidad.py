@@ -115,7 +115,24 @@ def revisar(ruta, forzar=False):
         if pens < R['examen']: err.append(f'examen: {pens} pregunta(s) pensada(s) de {len(ex)}; el mínimo es {R["examen"]}')
         if elec > R['eleccion_max'] * len(ex): err.append(f'examen: {elec} de {len(ex)} son opción múltiple o V/F; el tope es {int(R["eleccion_max"] * 100)} %')
         if no_elec_pens < R['examen_no_eleccion_pensada']: err.append('examen: falta al menos 1 pregunta pensada que no sea de elegir (keywords, numeric, short_answer, classify, ordering…)')
+    # VARIEDAD DE TIPOS (regla del 23/11/2026, solo misiones nuevas): actividades (niveles 1 a 4) + examen.
+    # Ningún tipo de pregunta puede pasar del tope, y tiene que haber un mínimo de tipos distintos.
+    if os.path.relpath(os.path.abspath(ruta), os.path.dirname(AQUI)).replace('\\', '/') not in variedad_existentes():
+        V = {'avanzado': (.40, 5), 'medio': (.50, 4), 'primeros': (.60, 3)}[nivel]
+        ts = [q.get('t') for k, l in (M.get('act') or {}).items() if str(k) != '5' for q in (l or [])]
+        ts += [(it[1] if isinstance(it, list) and len(it) > 1 else it).get('t') for it in (M.get('examen') or [])]
+        if ts:
+            c = {}
+            for t in ts: c[t] = c.get(t, 0) + 1
+            top = max(c, key=c.get)
+            if c[top] > V[0] * len(ts): err.append(f'variedad: «{top}» es {c[top]} de {len(ts)} preguntas (más del {int(V[0] * 100)} %); usá otros tipos (ordenar, unir, clasificar, completar, tocá el texto, fichas, numérica, palabras clave, crucigrama, sopa…)')
+            if len(c) < V[1]: err.append(f'variedad: solo {len(c)} tipos de pregunta distintos; el mínimo es {V[1]}')
     return nivel, err, avi
+
+def variedad_existentes():
+    ruta = os.path.join(AQUI, 'variedad_existentes.txt')
+    if not os.path.exists(ruta): return set()
+    return {l.strip() for l in open(ruta, encoding='utf-8') if l.strip() and not l.startswith('#')}
 
 def main():
     args = sys.argv[1:]
