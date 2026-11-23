@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       mision: { description: 'Archivo de la misión (ej. contenido/lengua-1/mision-5/mision-5.json)', required: true }
+permissions: { contents: read, actions: read }
 concurrency: { group: mision-avanzado, cancel-in-progress: false }
 jobs:
   mision:
@@ -28,10 +29,15 @@ jobs:
           pip install reportlab pillow
       - name: Qué misiones hay que cargar
         id: cuales
-        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}' }
+        env: { MANUAL: '${{ github.event.inputs.mision }}', ANTES: '${{ github.event.before }}', GH_TOKEN: '${{ github.token }}' }
         run: |
+          # Desde cuándo mirar: el último cambio que esta máquina terminó BIEN (no solo el cambio anterior). Así, si una corrida en espera se cancela
+          # porque llegó otra más nueva, lo que traía se carga igual en la siguiente. Si ese cambio tiene más de 12 horas, se usa el anterior.
+          BASE=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/mision-avanzado.yml/runs?status=success&event=push&branch=main&per_page=1" --jq '.workflow_runs[0] | select(.created_at > (now - 43200 | todate)) | .head_sha' 2>/dev/null || true)
+          if [ -z "$BASE" ] || [ "$BASE" = "null" ] || ! git merge-base --is-ancestor "$BASE" "$GITHUB_SHA" 2>/dev/null; then BASE="$ANTES"; fi
+          echo "Mirando cambios desde: $BASE"
           if [ -n "$MANUAL" ]; then L="$MANUAL"
-          else L=$(git diff --name-only "$ANTES" "$GITHUB_SHA" -- 'contenido/*/mision-*/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/*/mision-*/mision-*.json'); fi
+          else L=$(git diff --name-only "$BASE" "$GITHUB_SHA" -- 'contenido/*/mision-*/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/*/mision-*/mision-*.json'); fi
           L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
           echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
       - name: Control de calidad (si no cumple, no se carga nada)
