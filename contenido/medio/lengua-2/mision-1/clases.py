@@ -76,6 +76,6 @@ N4 = [
 ]
 for n, E in ((1, N1), (2, N2), (3, N3), (4, N4)):
     slug = f'medio-leng2-m1-n{n}'
-    L = {"slug": slug, "step_id": STEP[n], "materia": "Lengua 2", "titulo": TIT[n], "sub": f"Lengua 2 · Misión 1 · Nivel {n}", "estilo": "primeros", "escenas": E}
+    L = {"slug": slug, "step_id": STEP[n], "materia": "Lengua 2", "titulo": TIT[n], "sub": f"Lengua 2 · Misión 1 · Nivel {n}", "estilo": "primeros", **({"minusculas": True} if n == 2 else {}), "escenas": E}
     json.dump(L, open(os.path.join(RAIZ, 'tools', 'medio', 'clase', 'lecciones', slug + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(slug, len(E), 'escenas')

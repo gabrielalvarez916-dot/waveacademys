@@ -52,7 +52,7 @@ def armar(L, slug, suf, outs):
         dt = datos
         for a, b in (tema_de(L.get('materia')) or {}).items(): dt = dt.replace(a, b).replace(a.lower(), b)
         if dt in open(outs[-1], encoding='utf-8').read(): return
-    if L.get('estilo') == 'primeros':  # 1.º a 3.º del Nivel Medio: pantalla de inicio en imprenta mayúscula
+    if L.get('estilo') == 'primeros' and not L.get('minusculas'):  # 1.º a 3.º del Nivel Medio: pantalla de inicio en imprenta mayúscula (salvo clases que enseñan la minúscula: "minusculas": true)
         shell = SHELL.replace('</style>', '#ui h1,#ui p,svg text{text-transform:uppercase}\n</style>', 1)
     else: shell = SHELL
     if FUENTE_CURSIVA and any(e.get('t') in ('cursiva', 'trazos') for e in L['escenas']): shell = shell.replace('</style>', FUENTE_CURSIVA + '\n</style>', 1)
