@@ -25,7 +25,9 @@ jobs:
         # PAUSADO (tope 0) a pedido de Gaby mientras se terminan Sociales; para reactivar: ELEVEN_TOPE '8000'. Lengua 1.º y 2.º año (nivel medio) sale con ElevenLabs (arg y neutro); el resto sigue con la voz de siempre. Tope de caracteres por corrida.
         env: { VOZ_MINUTOS: '80', ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}', ELEVEN_TOPE: '0', ELEVEN_VERSIONES: 'arg,neutro', ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}' }
         run: python tools/medio/clase/voz_edge.py
-      - run: python tools/medio/clase/armar.py
+      - run: python tools/medio/clase/armar.py --cambiadas   # solo las clases con lección o voz nueva
+      - name: Anotar qué clases cambiaron (se cargan solo esas, no todas)
+        run: git status --porcelain tools/medio/clase/dist | awk '{print $NF}' | grep '\.html$' | xargs -r -n1 basename | sed 's/\.html$//' > /tmp/cambiadas.txt; wc -l < /tmp/cambiadas.txt
       - name: 'Guardar voz y HTML en el repo (antes de cargar, para que no se pierdan)'
         run: |
           git config user.name "wave-bot"; git config user.email "wave-bot@users.noreply.github.com"
@@ -34,7 +36,7 @@ jobs:
           for i in 1 2 3; do git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && break; sleep 5; done
       - name: Cargar en la plataforma (solo Nivel Medio)
         if: env.MEDIO_TOKEN != ''
-        run: python tools/medio/clase/cargar.py $(ls tools/medio/clase/dist | sed 's/\.html$//')
+        run: 'L=$(cat /tmp/cambiadas.txt); if [ -n "$L" ]; then python tools/medio/clase/cargar.py $L; else echo "nada nuevo para cargar"; fi'
       - name: Publicar misiones completas (solo Nivel Medio)
         if: ${{ !cancelled() && env.MEDIO_TOKEN != '' }}   # publica lo que esté completo aunque una carga haya fallado
         run: python tools/medio/publicar.py

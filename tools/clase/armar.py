@@ -38,11 +38,16 @@ def tema_de(materia):
 sys.path.insert(0, os.path.dirname(AQUI))
 from neutro import convertir, argentino
 
+SOLO_CAMBIADAS = '--cambiadas' in sys.argv
 def armar(L, slug, suf, outs):
     voz = os.path.join(AQUI, 'voz', slug + suf + '.json')
     audio = [[{'a': f['a'], 'w': f['w']} for f in e] for e in json.load(open(voz))] if os.path.exists(voz) else None
     zonas = sorted({e.get('zona', 'mundo') for e in L['escenas'] if e.get('t') == 'mapa'})
     datos = '<script>window.CLASE=' + J(L) + ';' + ('window.MAPAS=' + J({z: MAPAS[z] for z in zonas}) + ';' if zonas else '') + ('window.VOZ_AUDIO=' + J(audio) + ';' if audio else '') + '</script>'
+    if SOLO_CAMBIADAS and os.path.exists(outs[-1]):  # --cambiadas: si el HTML ya tiene esta misma lección y esta misma voz, no se rearma (un cambio de motor no re-sube todo)
+        dt = datos
+        for a, b in (tema_de(L.get('materia')) or {}).items(): dt = dt.replace(a, b).replace(a.lower(), b)
+        if dt in open(outs[-1], encoding='utf-8').read(): return
     html = SHELL.replace('{{TITULO}}', esc(L['titulo'])).replace('{{SUB}}', esc(L.get('sub', ''))).replace('{{SCRIPTS}}', GSAP + '\n' + datos + '\n<script>\n' + MOTOR + '\n' + REPRO + '\n</script>')
     for a, b in (tema_de(L.get('materia')) or {}).items():
         html = html.replace(a, b).replace(a.lower(), b)
@@ -51,7 +56,8 @@ def armar(L, slug, suf, outs):
         open(out, 'w', encoding='utf-8').write(html)
     print(slug + suf, 'armada', 'con audio' if audio else 'SIN audio', round(len(html) / 1024), 'KB')
 
-pedidas = sys.argv[1:]
+SOLO_CAMBIADAS = '--cambiadas' in sys.argv
+pedidas = [a for a in sys.argv[1:] if a != '--cambiadas']
 for path in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json'))) + (sorted(glob.glob(os.path.join(AQUI, 'pruebas', '*.json'))) if pedidas else []):
     crudo = json.load(open(path, encoding='utf-8'))
     slug = crudo.get('slug') or os.path.basename(path)[:-5]

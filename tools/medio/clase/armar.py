@@ -39,11 +39,16 @@ sys.path.insert(0, os.path.dirname(AQUI))  # tools/medio
 from neutro_medio import convertir, argentino
 from primeros_anios import es_primeros
 
+SOLO_CAMBIADAS = '--cambiadas' in sys.argv
 def armar(L, slug, suf, outs):
     voz = os.path.join(AQUI, 'voz', slug + suf + '.json')
     audio = [[{'a': f['a'], 'w': f['w']} for f in e] for e in json.load(open(voz))] if os.path.exists(voz) else None
     zonas = sorted({e.get('zona', 'mundo') for e in L['escenas'] if e.get('t') == 'mapa'})
     datos = '<script>window.CLASE=' + J(L) + ';' + ('window.MAPAS=' + J({z: MAPAS[z] for z in zonas}) + ';' if zonas else '') + ('window.VOZ_AUDIO=' + J(audio) + ';' if audio else '') + '</script>'
+    if SOLO_CAMBIADAS and os.path.exists(outs[-1]):  # --cambiadas: si el HTML ya tiene esta misma lección y esta misma voz, no se rearma (un cambio de motor no re-sube todo)
+        dt = datos
+        for a, b in (tema_de(L.get('materia')) or {}).items(): dt = dt.replace(a, b).replace(a.lower(), b)
+        if dt in open(outs[-1], encoding='utf-8').read(): return
     if L.get('estilo') == 'primeros':  # 1.º a 3.º del Nivel Medio: pantalla de inicio en imprenta mayúscula
         shell = SHELL.replace('</style>', '#ui h1,#ui p,svg text{text-transform:uppercase}\n</style>', 1)
     else: shell = SHELL
@@ -55,7 +60,8 @@ def armar(L, slug, suf, outs):
         open(out, 'w', encoding='utf-8').write(html)
     print(slug + suf, 'armada', 'con audio' if audio else 'SIN audio', round(len(html) / 1024), 'KB')
 
-pedidas = sys.argv[1:]
+SOLO_CAMBIADAS = '--cambiadas' in sys.argv
+pedidas = [a for a in sys.argv[1:] if a != '--cambiadas']
 for path in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json'))) + (sorted(glob.glob(os.path.join(AQUI, 'pruebas', '*.json'))) if pedidas else []):
     crudo = json.load(open(path, encoding='utf-8'))
     slug = crudo.get('slug') or os.path.basename(path)[:-5]

@@ -27,7 +27,7 @@ jobs:
           RATE: ${{ github.event.inputs.rate || '+25%' }}
           VOZ_MINUTOS: '80'
         run: python tools/clase/voz_edge.py
-      - run: python tools/clase/armar.py
+      - run: python tools/clase/armar.py --cambiadas   # solo las clases con lección o voz nueva (un cambio de motor no re-sube todo)
       - name: Cargar en la plataforma
         run: python tools/clase/cargar.py
       - name: Guardar
