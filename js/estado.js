@@ -43,6 +43,7 @@
     } catch (e) { PENDERR = 'No pude leer lo pendiente'; }
     PENDCARGANDO = false; cargar(el);
   }
+  function corriendo(runs, nv) { return runs.some(function (x) { return new RegExp(nv, 'i').test(x.name) && /misi/i.test(x.name) && ['in_progress', 'queued', 'waiting', 'pending'].indexOf(x.status) >= 0; }); }
   function cajaEnviar(runs) {
     var h = '<div class="est-env"><h3>📤 Para enviar' + (PEND ? ' (' + PEND.length + ')' : '') + '</h3>';
     if (PENDERR) h += '<p class="est-err">' + esc(PENDERR) + '</p>';
@@ -50,7 +51,7 @@
     if (PEND && !PEND.length) h += '<p>Todo lo subido ya está cargado. ✔</p>';
     if (PEND && PEND.length) {
       h += '<p><small>Subido a GitHub, pero sin examen cargado en la base. Marcá lo que querés mandar. Ya no se manda solo.</small></p><table class="est-t"><thead><tr><th></th><th>Nivel</th><th>Materia</th><th>Misión</th></tr></thead><tbody>' +
-        PEND.map(function (p, i) { return '<tr><td><input type="checkbox" class="est-ck" data-i="' + i + '"></td><td>' + esc(p.nivel) + '</td><td>' + esc(p.materia) + '</td><td>' + esc(p.mision) + '</td></tr>'; }).join('') + '</tbody></table>' +
+        PEND.map(function (p, i) { return '<tr><td><input type="checkbox" class="est-ck" data-i="' + i + '"></td><td>' + esc(p.nivel) + '</td><td>' + esc(p.materia) + '</td><td>' + esc(p.mision) + (corriendo(runs, p.nivel) ? ' <span class="est-chip est-amar">⏳ ya hay una corrida de ' + esc(p.nivel) + ' en curso o en espera: puede que ya la esté cargando</span>' : '') + '</td></tr>'; }).join('') + '</tbody></table>' +
         '<button type="button" class="est-btn" id="est-todas">Marcar todas</button> <button type="button" class="est-btn" id="est-enviar">Enviar las marcadas</button>';
     }
     h += ' <button type="button" class="est-btn" id="est-rev">Volver a buscar</button></div>';
