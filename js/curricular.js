@@ -16,16 +16,30 @@
   function norm(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   function nombreGrado(g) { return g.name || (g.year_number + '.º año'); }
 
+  // Supabase entrega como máximo 1000 filas por pedido: se pide por tandas hasta traer todo el mapa.
+  async function traerMapa() {
+    var todo = [], desde = 0, paso = 1000;
+    for (;;) {
+      var x = await sb.from('mapa_curricular_completo').select('subject_id, posicion, tema, que_se_trabaja, relacion, lecciones, nota')
+        .order('subject_id').order('posicion').range(desde, desde + paso - 1);
+      if (x.error) throw x.error;
+      todo = todo.concat(x.data);
+      if (x.data.length < paso) break;
+      desde += paso;
+    }
+    return todo;
+  }
+
   async function cargar() {
     var r = await Promise.all([
       sb.from('levels').select('id, name, position').order('position'),
       sb.from('grades').select('id, level_id, year_number, name').order('year_number'),
       sb.from('subjects').select('id, grade_id, name, position').order('position').limit(1000),
-      sb.from('mapa_curricular_completo').select('subject_id, posicion, tema, que_se_trabaja, relacion, lecciones, nota').order('posicion').limit(3000)
+      traerMapa()
     ]);
-    r.forEach(function (x) { if (x.error) throw x.error; });
+    r.slice(0, 3).forEach(function (x) { if (x.error) throw x.error; });
     var porMateria = {};
-    r[3].data.forEach(function (f) { (porMateria[f.subject_id] = porMateria[f.subject_id] || []).push(f); });
+    r[3].forEach(function (f) { (porMateria[f.subject_id] = porMateria[f.subject_id] || []).push(f); });
     B = { levels: r[0].data, grades: r[1].data, subjects: r[2].data, porMateria: porMateria };
     if (!E.level && B.levels.length) E.level = B.levels[0].id;
   }
