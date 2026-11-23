@@ -320,9 +320,10 @@ def tren_paso(desde, hasta, paso, faltan=()):
     return png(fig)
 
 
-def cuadro(hasta, faltan=(), resaltar=(), desde=1):
+def cuadro(hasta, faltan=(), resaltar=(), desde=0):
     """Cuadro de números de a 10 por fila. faltan: casillas vacías (para completar). resaltar: casillas pintadas.
-    desde=0: empieza en 0, así los redondos (10, 20, 30…) quedan a la izquierda de cada fila."""
+    REGLA FIJA: empieza SIEMPRE en 0, así los redondos (10, 20, 30…) quedan en el margen izquierdo de cada fila."""
+    desde = 0
     filas = (hasta - desde + 10) // 10; fig, ax = lienzo(7.4, .74 * filas + .2, 10.2, filas + .2, 0, 0)
     for v in range(desde, hasta + 1):
         k = v - desde; x = .1 + (k % 10); y = filas - 1 - k // 10 + .1

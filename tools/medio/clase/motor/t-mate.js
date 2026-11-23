@@ -480,9 +480,9 @@
     for (var f = 1; f <= NC; f++) { B(f); if (f > 1) { tl.set(obj[f - 2], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[f - 2], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); } else tl.to({}, { duration: .01 }); }
     B(NC + 1); tl.set(obj[NC - 1], { opacity: 1, y: 0, scale: 1 }, '>+0.05'); w.IN(tl, cnt[NC - 1], '>', { scale: 0, y: 0, ease: 'back.out(3)' }); if (fin) w.IN(tl, fin, '>', { scale: .6, y: 0 });
   } };
-  // cuadro: {hasta (10-100), desde (0 o 1, por defecto 1), faltan:[números], titulo} — cuadro de números de a 10 por fila (con desde 0, los redondos 10, 20, 30… quedan a la izquierda). 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
+  // cuadro: {hasta (10-100), faltan:[números], titulo} — cuadro de números de a 10 por fila. REGLA FIJA: empieza siempre en 0, así los redondos 10, 20, 30… quedan en el margen izquierdo. 3 pasos: aparece el cuadro · cada número se ilumina cuando la voz lo dice · aparecen los que faltaban
   T.cuadro = { n: function () { return 3; }, armar: function (g, tl, B, d) {
-    var n = d.hasta, d0 = d.desde === 0 ? 0 : 1, filas = Math.ceil((n - d0 + 1) / 10), cw = 142, ch = Math.min(108, 610 / filas), x0 = 960 - 4.5 * cw, y0 = (filas > 6 ? 625 : 560) - (filas - 1) * ch / 2 + (d.titulo && filas <= 6 ? 25 : 0), falta = d.faltan || [], fs = Math.min(ch * .6, 46);
+    var n = d.hasta, d0 = 0,  /* REGLA FIJA: el cuadro de números empieza SIEMPRE en 0 (los redondos 10, 20, 30… quedan a la izquierda) */ filas = Math.ceil((n - d0 + 1) / 10), cw = 142, ch = Math.min(108, 610 / filas), x0 = 960 - 4.5 * cw, y0 = (filas > 6 ? 625 : 560) - (filas - 1) * ch / 2 + (d.titulo && filas <= 6 ? 25 : 0), falta = d.faltan || [], fs = Math.min(ch * .6, 46);
     var ti = d.titulo ? w.titulo(g, d.titulo, filas > 6 ? 258 : 262) : null, C2 = [];
     for (var v = d0; v <= n; v++) { var k = v - d0, p = w.pieza(g, x0 + (k % 10) * cw, y0 + Math.floor(k / 10) * ch), es = falta.indexOf(v) >= 0;
       p.r = w.caja(p, 0, 0, cw - 12, ch - 12, es ? 'rgba(255,255,255,.05)' : 'url(#gCard)', es ? C.coral : C.linea, 16, 4); if (es) p.r.setAttribute('stroke-dasharray', '12 8');

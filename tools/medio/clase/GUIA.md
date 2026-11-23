@@ -108,6 +108,7 @@ Las clases no pueden salir todas con el mismo molde: se van variando los formato
 | canje | 5 | titulo, grande:{n, txt}, chico:{n, txt}, sueltos, ec1, ec2 |
 | ejemplo | 7 | numero, cab, dig, val, lineas:[a, m], suma:[...], destacar, etiqueta |
 | recta | 1 + marcas | min, max, paso, marcas:[{v, txt}] |
+| cuadro | 3 | hasta (10-100), faltan, titulo — cuadro de números de a 10 por fila. **Regla fija: empieza siempre en 0** (los redondos 10, 20, 30… quedan en el margen izquierdo); lo mismo en el PDF (`figuras.cuadro`, que ya empieza en 0) |
 | cuenta | 2 | filas, op, resultado |
 | fraccion | 2 | num, den, forma:'pizza'\|'barra', txt |
 | ecuacion | pasos | pasos:[...], notas:[...] |

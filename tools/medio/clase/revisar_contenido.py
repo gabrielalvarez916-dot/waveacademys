@@ -50,6 +50,12 @@ for slug in args:
     for k, e in enumerate(L['escenas']):
         for v in e.get('voz', []):
             if any(rx.search(v) for rx in _NOMBRE): E(slug, f'escena {k}: la voz nombra una letra («{v}»): decir su sonido (sss, mmm, lll) o la sílaba (ta, pa, de)')
+# CUADRO DE NÚMEROS (regla fija): empieza siempre en 0, así los redondos 10, 20, 30… quedan en el margen izquierdo
+for slug in args:
+    _p = os.path.join(AQUI, 'lecciones', slug + '.json')
+    if not os.path.exists(_p): continue
+    for k, e in enumerate(json.load(open(_p, encoding='utf-8'))['escenas']):
+        if e.get('t') == 'cuadro' and e.get('desde', 0) != 0: E(slug, f'escena {k}: el cuadro de números tiene que empezar en 0 ("desde": 0) para que los redondos queden a la izquierda')
 # VARIEDAD DEL BANCO DE FORMATOS (regla del Nivel Medio, ver GUIA.md «Variedad»): las clases van rotando las plantillas del banco
 _BASICAS = {'pregunta', 'resumen', 'errores', 'definicion', 'reto', 'noticia', 'gancho', 'historia', 'chat', 'portada', 'tabla', 'clasificar', 'pasos', 'consejo', 'frase'}
 _GANCHOS = {'gancho', 'historia', 'chat', 'noticia', 'reto'}

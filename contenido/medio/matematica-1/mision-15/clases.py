@@ -63,7 +63,7 @@ N4 = [
   "voz": ["Sofi aprieta más 1, una y otra vez.", "5, 6, 7, 8, 9, 10, 11, 12.", "¡Va de *uno en uno*!"]},
  {"t": "tren", "titulo": "SUMAR 10", "desde": 3, "hasta": 93, "paso": 10,
   "voz": ["Ahora aprieta más 10, desde el 3.", "3, 13, 23, 33, 43, 53, 63, 73, 83, 93.", "¡El *3* del final no cambia nunca!"]},
- {"t": "cuadro", "titulo": "RESTAR 10", "hasta": 50, "desde": 1, "faltan": [17, 27, 37],
+ {"t": "cuadro", "titulo": "RESTAR 10", "hasta": 50, "desde": 0, "faltan": [17, 27, 37],
   "voz": ["Restar 10 es subir una fila del cuadro.", "47, 37, 27, 17.", "¡Cambia el *primer número*!"]},
  {"t": "pregunta", "pregunta": "4, 14, 24… ¿qué sigue?", "opciones": ["25", "34", "44"], "correcta": 1,
   "voz": ["Ahora vos. Sumamos 10 cada vez.", "4, 14, 24… ¿qué sigue?", "¡*34*!"]},

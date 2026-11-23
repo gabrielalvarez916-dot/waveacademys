@@ -30,10 +30,11 @@
   {
    "t": "cuadro",
    "hasta": 100,
+   "desde": 0,
    "faltan": [
     100
    ],
-   "titulo": "DEL 1 AL 100",
+   "titulo": "DEL 0 AL 100",
    "voz": [
     "Mirá el cuadro de los números.",
     "Los redondos: 10, 20, 30, 40, 50.",

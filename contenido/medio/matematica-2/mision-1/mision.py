@@ -34,7 +34,7 @@ N1 = {**ESTILO,
  ]),
  S(2, "Para practicar", [
   P("Mirá el cuadro. Lo vas a usar en la carpeta."),
-  IMG("Cuadro hasta 100", "Faltan algunos números.", FG.cuadro(100, faltan=(45, 78, 100))),
+  IMG("Cuadro del 0 al 100", "Faltan algunos números.", FG.cuadro(100, faltan=(45, 78, 100), desde=0)),
  ]),
 ],
 "ejemplo_completo": {"titulo": "Paquetes y sueltos", "planteo": "Rosa tiene 10 paquetes y 2 sueltos.", "pasos": ["10 paquetes son 100.", "Sumamos los sueltos: 101, 102.", "Son 102 alfajores."]},

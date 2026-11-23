@@ -13,7 +13,7 @@ ROSA = {"nombre": "Rosa", "emoji": "👵"}
 N1 = [
  {"t": "historia", "personaje": ROSA, "lugar": "🏭", "lineas": ["La abuela Rosa hace alfajores.", "Hoy hizo muchísimos.", "¿Pasará del 100?"], "titulo": "CONTAR", "sub": "hasta 100 y más",
   "voz": ["La abuela Rosa tiene una *fábrica de alfajores*.", "Hoy hizo muchísimos alfajores.", "¿Puede contar más de 100?", "Hoy: *contar hasta 100 y más*."]},
- {"t": "cuadro", "hasta": 100, "faltan": [100], "titulo": "DEL 1 AL 100",
+ {"t": "cuadro", "hasta": 100, "desde": 0, "faltan": [100], "titulo": "DEL 0 AL 100",
   "voz": ["Mirá el cuadro de los números.", "Los redondos: 10, 20, 30, 40, 50.", "¡Y el último es el *100*!"]},
  {"t": "agrupar", "niveles": [{"nombre": "UNIDAD", "valor": "1", "icono": "alf"}, {"nombre": "DECENA", "valor": "10", "icono": "pack"}, {"nombre": "CIEN", "valor": "100", "icono": "caja"}], "salto": "×10",
   "voz": ["Un alfajor suelto es una *unidad*.", "10 alfajores llenan un paquete: una *decena*.", "10 paquetes llenan una caja.", "¡Una caja tiene *100 alfajores*!"]},
