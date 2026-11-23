@@ -52,7 +52,10 @@
     var pdfs = {}; st.forEach(function (s) { if (s.r2_key && /pdf/i.test(s.step_type || '')) pdfs[l2t[s.lesson_id]] = (pdfs[l2t[s.lesson_id]] || 0) + 1; });
     var pend = runs.filter(function (r) { return ['in_progress', 'queued', 'waiting', 'pending'].indexOf(r.status) >= 0; }).length;
     var canc = runs.filter(function (r) { return r.conclusion === 'cancelled' && estadoRun(r, runs)[1] === 'rojo'; }).length;
-    h += '<div class="est-res">' + chip(pend + ' en curso o en espera', pend ? 'amar' : 'verde') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<small> Actualiza solo cada 2 min · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
+    h += '<div class="est-res">' + chip(pend + ' en curso o en espera', pend ? 'amar' : 'verde') + chip(canc + ' canceladas sin reemplazo (últimas 30)', canc ? 'rojo' : 'verde') + '<small> Actualiza solo cada 75 s · ' + new Date().toLocaleTimeString('es-AR') + '</small></div>';
+    var ahora = runs.filter(function (r) { return r.status === 'in_progress'; }), espera = runs.filter(function (r) { return ['queued', 'waiting', 'pending'].indexOf(r.status) >= 0; });
+    function li(r) { return '<li><b>' + esc(tipo(r.name)) + '</b> · ' + esc(((r.head_commit && r.head_commit.message) || '').split('\n')[0].slice(0, 80)) + ' <small>(desde ' + hace(r.created_at) + ')</small></li>'; }
+    h = '<div class="est-ahora"><div><h3>⚙️ Haciéndose ahora (' + ahora.length + ')</h3>' + (ahora.length ? '<ul>' + ahora.map(li).join('') + '</ul>' : '<p>Nada en curso.</p>') + '</div><div><h3>⏳ En espera (' + espera.length + ')</h3>' + (espera.length ? '<ul>' + espera.map(li).join('') + '</ul>' : '<p>Nada esperando.</p>') + '</div></div>' + h;
     if (err) h += '<p class="est-err">' + esc(err) + '</p>';
     var MOT = {};
     for (var i = 0; i < runs.length; i++) { if (runs[i].status === 'completed' && runs[i].conclusion !== 'success') MOT[runs[i].id] = await motivo(runs[i], runs); }
@@ -77,10 +80,10 @@
   window.WaveEstado = {
     abrir: function (vista) {
       clearInterval(T);
-      vista.innerHTML = '<style>.est-chip{display:inline-block;padding:2px 10px;border-radius:12px;font-weight:700;font-size:.8rem;margin-right:6px}.est-verde{background:#d6f5df;color:#17692f}.est-amar{background:#fff0c2;color:#8a5a00}.est-rojo{background:#fddada;color:#a11}.est-gris{background:#e8eaed;color:#444}.est-t{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:.9rem}.est-t th,.est-t td{text-align:left;padding:7px 8px;border-bottom:1px solid #e3e6ea}.est-err{color:#a11;font-weight:700}.est-res{margin:10px 0}.est-btn{background:#087E83;color:#fff;border:0;border-radius:8px;padding:5px 12px;font-weight:700;cursor:pointer}.est-btn[disabled]{opacity:.5}</style><h2>Estado de envíos</h2><div id="est-c">Cargando…</div>';
+      vista.innerHTML = '<style>.est-chip{display:inline-block;padding:2px 10px;border-radius:12px;font-weight:700;font-size:.8rem;margin-right:6px}.est-verde{background:#d6f5df;color:#17692f}.est-amar{background:#fff0c2;color:#8a5a00}.est-rojo{background:#fddada;color:#a11}.est-gris{background:#e8eaed;color:#444}.est-t{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:.9rem}.est-t th,.est-t td{text-align:left;padding:7px 8px;border-bottom:1px solid #e3e6ea}.est-err{color:#a11;font-weight:700}.est-res{margin:10px 0}.est-ahora{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#f3f8f8;border-radius:12px;padding:6px 16px;margin-bottom:12px}.est-ahora ul{margin:0;padding-left:18px}.est-ahora li{margin-bottom:4px}.est-btn{background:#087E83;color:#fff;border:0;border-radius:8px;padding:5px 12px;font-weight:700;cursor:pointer}.est-btn[disabled]{opacity:.5}</style><h2>Estado de envíos</h2><div id="est-c">Cargando…</div>';
       var el = document.getElementById('est-c');
       cargar(el).catch(function (e) { el.textContent = 'Error: ' + e.message; });
-      T = setInterval(function () { if (!document.getElementById('est-c')) return clearInterval(T); cargar(document.getElementById('est-c')).catch(function () { }); }, 120000);
+      T = setInterval(function () { if (!document.getElementById('est-c')) return clearInterval(T); cargar(document.getElementById('est-c')).catch(function () { }); }, 75000);
     }
   };
 })();
