@@ -10,7 +10,7 @@
 
   var CLAVES = ['video', 'pdf', 'interactive', 'final'];
   // El repaso obligatorio no es un paso cargado: lo arma la IA. Cuenta para completar la lección cuando corresponde.
-  var TIPO_PASO = { video: 'video', pdf: 'pdf', interactive_activity: 'interactive', complementary_activity: 'complementary', final_activity: 'final' };
+  var TIPO_PASO = { video: 'video', pdf: 'pdf', interactive_activity: 'interactive', complementary_activity: 'complementary', final_activity: 'final', step_by_step: 'pasoapaso' };
 
   function esc(t) {
     return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) {
@@ -150,6 +150,7 @@
         : k === 'pdf' ? !!p.r2_key
         : k === 'interactive' ? p.kind === 'html'
         : k === 'complementary' ? (Array.isArray(p.files) && p.files.length > 0)
+        : k === 'pasoapaso' ? true
         : !!conPreg[p.id];
       (porLeccion[p.lesson_id] = porLeccion[p.lesson_id] || {})[k] = {
         id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene, clase: k === 'video' && p.clase === true,
@@ -228,13 +229,12 @@
     var p = D.pasos[l.id] || {}, r = [];
     if (p.video && p.video.tiene) r.push('video');
     if (p.pdf && p.pdf.tiene) r.push('pdf');
-    if (pasoapasoDe(l)) r.push('pasoapaso'); // Paso a paso: después del PDF y antes de la carpeta (cambiar el orden acá)
+    if (p.pasoapaso && p.pasoapaso.tiene) r.push('pasoapaso'); // Paso a paso (solo en las lecciones que tienen ese paso en Supabase): después del PDF y antes de la carpeta
     if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
     return r;
   }
   function hechoK(l, k) {
-    if (k === 'pasoapaso') return papHecho(l);
     var p = D.pasos[l.id] || {};
     if (k === 'carpeta') return !!(p.pdf && D.carpeta[p.pdf.id]);
     return !!(p[k] && hecho(p[k]));
@@ -656,49 +656,37 @@
   // ---------- Abrir cada recuadro ----------
   function pasoActual(k) { var f = buscarLeccion(hojaAbierta); return f && (D.pasos[f.l.id] || {})[k]; }
 
-  // ---------- Paso a paso (HTML en marco aislado; no usa la base de datos) ----------
-  // Para sumar otro: agregar una fila acá y subir el HTML a /actividades/pasoapaso/
-  var PASOAPASO = [{ materia: '1260de30-041b-4324-b819-2de1a344f189', tema: 0, nivel: 1, items: [
-    ['Descomposición aditiva', '/actividades/pasoapaso/descomposicion-aditiva.html'],
-    ['Descomposición multiplicativa', '/actividades/pasoapaso/descomposicion-multiplicativa.html']] }];
-  function pasoapasoDe(l) {
-    if (!D || !D.materia) return null;
-    var f = buscarLeccion(l.id); if (!f) return null;
-    for (var i = 0; i < PASOAPASO.length; i++) {
-      var c = PASOAPASO[i];
-      if (c.materia === D.materia.id && D.temas.indexOf(f.t) === c.tema && f.n === c.nivel) return c;
-    }
-    return null;
-  }
-  function papKey(l) { return 'wave-pap:' + D.sid + ':' + l.id; }
-  function papHecho(l) { try { return localStorage.getItem(papKey(l)) === '1'; } catch (e) { return false; } }
-  function abrirPasoAPaso() {
-    var f = buscarLeccion(hojaAbierta), c = f && pasoapasoDe(f.l);
-    if (!c) return;
+  // ---------- Paso a paso: HTML en marco aislado. El paso es una fila step_by_step en lesson_steps (solo en las lecciones que lo tienen) ----------
+  async function abrirPasoAPaso(paso, titulo) {
+    var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();
+    var items = r.data && r.data.content && r.data.content.items;
+    items = Array.isArray(items) ? items.filter(function (x) { return x && typeof x.u === 'string' && x.u.indexOf('/actividades/pasoapaso/') === 0; }) : [];
+    if (r.error || !items.length) throw new Error('No pudimos abrir el paso a paso.');
     var el = document.createElement('div');
     el.className = 'wvp';
-    el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(f.l.titulo) + ' · Paso a paso</b>' +
-      c.items.map(function (x, i) { return '<button type="button" class="wvp-b" data-pap="' + i + '">' + esc(x[0]) + '</button>'; }).join('') +
+    el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(titulo) + ' · Paso a paso</b>' +
+      (items.length > 1 ? items.map(function (x, i) { return '<button type="button" class="wvp-b" data-pap="' + i + '">' + esc(x.t || 'Paso a paso') + '</button>'; }).join('') : '') +
+      '<button type="button" class="wvp-b wvp-desc" data-fin="1">Terminé ✓</button>' +
       '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
       '<div class="mt-marco"><iframe title="Paso a paso" sandbox="allow-scripts"></iframe></div></div>';
     document.body.appendChild(el);
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
     async function ver(i) {
-      try { var r = await fetch(c.items[i][1], { cache: 'no-cache' }); if (!r.ok) throw new Error('x'); frame.srcdoc = calmar(await r.text()); }
+      try { var h = await fetch(items[i].u, { cache: 'no-cache' }); if (!h.ok) throw new Error('x'); frame.srcdoc = calmar(await h.text()); }
       catch (e) { toast('No pudimos abrir el paso a paso. Revisá tu conexión.', true); }
     }
+    function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
     ver(0);
-    try { localStorage.setItem(papKey(f.l), '1'); } catch (e) {}
     el.addEventListener('click', function (ev) {
       var b = ev.target.closest('[data-pap]');
       if (b) return ver(+b.getAttribute('data-pap'));
-      if (ev.target === el || ev.target.closest('[data-cerrar]')) { document.body.classList.remove('wvp-abierto'); el.remove(); refrescar(); }
+      if (ev.target.closest('[data-fin]')) { marcar(paso, null); toast('¡Paso a paso terminado! 🎉'); cerrar(); }
+      else if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar();
     });
   }
 
   async function abrirPaso(k) {
-    if (k === 'pasoapaso') return abrirPasoAPaso();
     var f = buscarLeccion(hojaAbierta), paso = pasoActual(k);
     if (!f || !paso) return;
     if (D.prueba && !hecho(paso) && k !== 'complementary' && k !== 'review') marcar(paso, k === 'final' ? 100 : null); // cuenta de prueba: avanza sin completar
@@ -715,6 +703,8 @@
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, modoLectura: !!D && (D.adaptaciones || []).indexOf('lec_modo') >= 0, alTerminar: function () { marcar(paso); },
           chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: paso.id }; }, chatConfig: tutorOps('pdf', {}).config,
           url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: paso.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
+      } else if (k === 'pasoapaso') {
+        await abrirPasoAPaso(paso, f.l.titulo);
       } else if (k === 'interactive') {
         var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();
         if (r.error || !r.data || !r.data.content || !r.data.content.html) throw new Error('No pudimos abrir la actividad.');
