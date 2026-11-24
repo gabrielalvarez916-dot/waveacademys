@@ -91,7 +91,8 @@ PDF_PALABRAS = {'avanzado': 425, 'medio': 320, 'primeros': 170}   # piso = 85% d
 PDF_ETAPAS = {'avanzado': 2, 'medio': 2, 'primeros': 1}            # secciones mínimas de etapa 1 y de etapa 2
 ENSEÑAN = {'definicion', 'pasos', 'errores', 'resumen', 'tabla', 'comparar', 'linea', 'flujo', 'causas', 'texto', 'corrige', 'matriz', 'escala', 'noticia'}
 DISTINTAS_AV, ENSEÑAN_AV = 8, 5   # 80-85% del modelo: las 4 clases de Lengua II M1 (10 escenas, 10 plantillas distintas, 6-8 que enseñan, 282-295 palabras)
-CLASE = {'avanzado': (10, 280), 'medio': (8, 180), 'primeros': (6, 105)}   # (escenas, palabras de voz): 85% de las primeras clases medidas — Avanzado 11 esc/329 pal (18-19/11), Medio/primeros 7 esc/124 pal (21/11)
+DISTINTAS_ME, ENSEÑAN_ME = 5, 2   # 85% de las primeras 60 clases de Medio (21/11): 7,2 escenas, 6,3 plantillas distintas, 2,2 que enseñan, 123 palabras
+CLASE = {'avanzado': (10, 280), 'medio': (6, 105), 'primeros': (6, 105)}   # (escenas, palabras de voz): 85% de las primeras clases medidas — Avanzado 11 esc/329 pal (18-19/11), Medio/primeros 7 esc/124 pal (21/11)
 PROCEDIMENTALES = {'matematica', 'fisica', 'quimica'}   # repetir el tema es válido si suben las cifras: solo se compara el ejemplo con los mismos números  
 PENSADA_MIN_PALABRAS = {'avanzado': 12, 'medio': 9, 'primeros': 6}   # palabras del caso o texto de una pregunta pensada
 RECORDAR_MAX = {'avanzado': 0.25, 'medio': 0.30, 'primeros': 0.40}
@@ -268,11 +269,11 @@ def revisar_clases(ruta, M, nivel, err, avi):
     for p, L in cl:
         e = L.get('escenas') or []
         voz = sum(len(' '.join(x.get('voz', [])).split()) for x in e if isinstance(x.get('voz'), list))
-        if nivel == 'avanzado':
-            ts = [x.get('t') for x in e]
-            ens = sum(t in ENSEÑAN for t in ts)
-            if len(set(ts)) < DISTINTAS_AV: err.append(f'clase {L.get("slug")}: usa {len(set(ts))} plantillas distintas; el mínimo es {DISTINTAS_AV} (modelo: Lengua II, Misión 1). Variá los recursos')
-            if ens < ENSEÑAN_AV: err.append(f'clase {L.get("slug")}: {ens} escenas que enseñan (definición, pasos, errores, resumen, tabla, comparar, línea, flujo, causas, texto, corrige, matriz, escala o noticia); el mínimo es {ENSEÑAN_AV} (modelo: Lengua II, Misión 1)')
+        ts = [x.get('t') for x in e]
+        ens = sum(t in ENSEÑAN for t in ts)
+        dmin, emin, modelo = (DISTINTAS_AV, ENSEÑAN_AV, 'Lengua II, Misión 1') if nivel == 'avanzado' else (DISTINTAS_ME, ENSEÑAN_ME, 'primeras clases de Medio, 21/11')
+        if len(set(ts)) < dmin: err.append(f'clase {L.get("slug")}: usa {len(set(ts))} plantillas distintas; el mínimo es {dmin} (modelo: {modelo}). Variá los recursos')
+        if ens < emin: err.append(f'clase {L.get("slug")}: {ens} escenas que enseñan (definición, pasos, errores, resumen, tabla, comparar, línea, flujo, causas, texto, corrige, matriz, escala o noticia); el mínimo es {emin} (modelo: {modelo})')
         if len(e) < esc_min or voz < voz_min:
             err.append(f'clase {L.get("slug")}: {len(e)} escenas y {voz} palabras de voz (≈{voz / 2.7 / 60:.1f} min); el mínimo es {esc_min} escenas y {voz_min} palabras (línea base de las primeras clases). Explicá más, con un ejemplo resuelto paso a paso')
 
