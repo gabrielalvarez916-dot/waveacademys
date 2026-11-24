@@ -143,3 +143,23 @@ En el examen, para explicar se usa `keywords` (se corrige sin IA, buscando las i
 - Frontend: recorrido de la misión (videos, 3 bloques PDF + entrega + 2 preguntas, 4 generales, pase) y guardado de cada entrega.
 - Bancos de práctica (con repaso de misiones anteriores) y de examen.
 - Proyecto cada 5 misiones, según aprendizaje basado en proyectos.
+
+## Profundidad y no repetición (regla del 23/11/2026, Avanzado y Medio, todas las materias)
+
+Por qué: las clases y los PDF se estaban acortando y las preguntas volviéndose básicas, y los temas se repetían entre años y entre misiones. La controla sola la máquina con `tools/profundidad.py` (llamada desde `tools/control_calidad.py`, en los workflows de Avanzado y Medio), ANTES de cargar: si no cumple, no se carga nada y el log dice qué arreglar. Las misiones que ya estaban cargadas (`tools/profundidad_existentes.txt`) no se revisan ni se tocan.
+
+**1. Lo ya visto no se vuelve a explicar.** La máquina arma la lista de lo ya visto (términos, definiciones, glosario y ejemplos) de TODAS las misiones anteriores de la misma familia de materias: misiones anteriores del mismo año, años previos y el nivel Medio. Y lee la etiqueta de la misión en `mapa_curricular.relacion` (función `mision_relacion`):
+- **Nuevo**: nada de lo anterior; un término ya definido no vuelve ni con redacción parecida (parecido ≥ 30 %).
+- **Retoma**: se apoya en lo ya visto para explicar OTRA cosa; no se vuelve a explicar lo visto.
+- **Profundiza**: el mismo tema pero MÁS a fondo, nunca igual; una definición parecida a la anterior (≥ 50 %) o un ejemplo repetido (≥ 60 %) frena la carga.
+- **No hay repasos** en el PDF ni en la clase: el repaso va en las actividades y el examen.
+
+**2. PDF**: mínimo de palabras por nivel sin contar la carpeta (Avanzado 400, Medio 320, primeros años 200); al menos 2 secciones de etapa 1 y 2 de etapa 2 (1 en primeros años); ejemplo completo con 3 pasos o más.
+
+**3. Clases animadas**: mínimo de escenas y de palabras de voz por clase (Avanzado 8 y 220, Medio 8 y 180, primeros años 6 y 130), con un ejemplo resuelto paso a paso.
+
+**4. Preguntas** (actividades de los niveles 1 a 4 + examen; el Relámpago no cuenta):
+- La máquina ya no cree la etiqueta sola. Una pregunta cuenta como pensada si lleva `n` aplicar, analizar o error Y un caso o texto de 12 palabras o más (Medio 9, primeros 6). Los tipos que ya exigen armar o resolver (ordenar, unir, clasificar, tocar el texto, fichas, cuentas, palabras clave) valen por sí solos.
+- Recordar: máximo 25 % (Medio 30 %, primeros 40 %).
+- Respuestas de una sola palabra: máximo 25 % de las preguntas y consignas de carpeta (Medio 30 %, primeros 40 %).
+- Carpeta: al menos 3 de 4 consignas por nivel con un caso o una cuenta (Medio 2, primeros 1).

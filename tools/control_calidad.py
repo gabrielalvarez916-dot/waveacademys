@@ -127,6 +127,12 @@ def revisar(ruta, forzar=False):
             top = max(c, key=c.get)
             if c[top] > V[0] * len(ts): err.append(f'variedad: «{top}» es {c[top]} de {len(ts)} preguntas (más del {int(V[0] * 100)} %); usá otros tipos (ordenar, unir, clasificar, completar, tocá el texto, fichas, numérica, palabras clave, crucigrama, sopa…)')
             if len(c) < V[1]: err.append(f'variedad: solo {len(c)} tipos de pregunta distintos; el mínimo es {V[1]}')
+    # PROFUNDIDAD Y NO REPETICIÓN (regla del 23/11/2026, solo misiones nuevas): tools/profundidad.py. Si ese módulo falla, no frena la carga: avisa.
+    try:
+        import profundidad
+        profundidad.revisar(ruta, M, nivel, err, avi)
+    except Exception as ex:
+        avi.append(f'profundidad: no se pudo revisar ({ex})')
     return nivel, err, avi
 
 def variedad_existentes():
