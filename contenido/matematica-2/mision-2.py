@@ -74,15 +74,15 @@ B4=NV("Vas a resolver problemas que combinan fracciones, decimales y varias oper
  ["aplicar","aplicar","aplicar","error"],
  [["60"],["1/4"],["12"],["30"]],
  {"incompleto":"10.","solo":"1/3 de 90 = 30. Quedan 60. 1/5 de 60 = 12. Quedan 48 L.","carpeta":["60.","1/4.","12.","30: se multiplica 1/3 × 90."]})
-ACT={"1":[SA("Calculá 1/2 + 1/3 × 3/4. Escribilo como fracción.",["3/4"],"Primero la multiplicación: 1/4. Después 1/2 + 1/4.",n="aplicar"),
-   MC("¿Qué se resuelve primero en 2/3 + 1/2 × 1/4?",["La suma","La multiplicación","Da lo mismo"],"La multiplicación","La multiplicación va antes que la suma.",n="analizar"),
-   FB("1/2 ÷ 1/4 = ___",[["2"]],"Se multiplica por la inversa: 1/2 × 4.",n="aplicar")],
+ACT={"1":[SA("Una cuenta combinada de un problema de cocina dice 1/2 + 1/3 × 3/4. Calculala respetando el orden y escribí el resultado como fracción.",["3/4"],"Primero la multiplicación: 1/4. Después 1/2 + 1/4.",n="aplicar"),
+   MC("Para resolver la cuenta combinada 2/3 + 1/2 × 1/4, Pablo debe decidir qué operación hacer primero. ¿Qué se resuelve primero?",["La suma","La multiplicación","Da lo mismo"],"La multiplicación","La multiplicación va antes que la suma.",n="analizar"),
+   FB("Se reparte 1/2 litro de jugo en vasos de 1/4 de litro cada uno. Completá cuántos vasos salen: 1/2 ÷ 1/4 = ___",[["2"]],"Se multiplica por la inversa: 1/2 × 4.",n="aplicar")],
  "2":[N("¿Cuánto es 0,5 + 1/4? Escribilo como decimal.",{"acepta":[0.75]},"0,5 + 0,25.",n="aplicar"),
    MAT("Uní cada cuenta con su resultado.",["0,5 + 1/4","1/2 × 0,4","0,25 + 3/4","1/5 + 0,3"],["3/4","1/5","1","1/2"],"Se pasa todo al mismo formato.",n="aplicar"),
    CLF("¿Conviene pasar todo a fracción o a decimal?",["1/3 + 0,5","0,2 + 0,75","2/3 × 0,5","0,4 + 1/5"],["Fracción","Decimal"],{"1/3 + 0,5":"Fracción","0,2 + 0,75":"Decimal","2/3 × 0,5":"Fracción","0,4 + 1/5":"Decimal"},"Si hay un periódico, todo a fracción.",n="analizar")],
  "3":[ORD("Ordená los pasos para resolver (1/2 + 1/4)².",["(3/4)²","(1/2 + 1/4)²","9/16"],["(1/2 + 1/4)²","(3/4)²","9/16"],"Primero el paréntesis, después la potencia.",n="aplicar"),
-   MC("¿Cuánto es (1/2)³?",["1/8","1/6","3/2","1/4"],"1/8","1³ = 1 y 2³ = 8.",n="aplicar"),
-   VF("(−1/2)² es un número negativo.","Falso","Exponente par: el resultado es positivo, 1/4.",n="analizar")],
+   MC("Un cuadrado de lado 1/2 se usa para armar un cubo del mismo lado. ¿Cuánto es (1/2)³, el volumen del cubo?",["1/8","1/6","3/2","1/4"],"1/8","1³ = 1 y 2³ = 8.",n="aplicar"),
+   VF("Un alumno dice: «(−1/2)² es un número negativo, porque tiene un signo menos adelante». ¿Es verdadero lo que dice?","Falso","Exponente par: el resultado es positivo, 1/4.",n="analizar")],
  "4":[N("Un tanque de 120 L: se usa 1/3 el lunes y 1/4 del resto el martes. ¿Cuántos litros quedan?",{"acepta":[60]},"Lunes 40, quedan 80; martes 20; quedan 60.",n="aplicar"),
    KW("Explicá por qué «1/3 de 90» se calcula multiplicando.","Escribí una frase.",[["multiplic*","por"],["parte","fracción","fraccion","de"]],1,"«De» en una fracción de una cantidad significa multiplicar.",n="analizar"),
    MS("¿Cuáles de estas cuentas dan 1/4?",["1/2 × 1/2","1/2 ÷ 2","1/2 − 1/4","1/3 + 1/6"],["1/2 × 1/2","1/2 ÷ 2","1/2 − 1/4"],"1/3 + 1/6 da 1/2.",n="aplicar")],
@@ -90,19 +90,19 @@ ACT={"1":[SA("Calculá 1/2 + 1/3 × 3/4. Escribilo como fracción.",["3/4"],"Pri
    N("Relámpago. ¿Cuánto es 1/2 + 1/2 × 2?",{"acepta":[1.5]},"1/2 + 1 = 3/2.",tiempo=25,n="recordar"),
    VF("Relámpago. En 3 + 2 × 4 se suma primero.","Falso","Se multiplica primero.",tiempo=15,n="recordar"),
    FB("Relámpago. (1/3)² = 1/___",[["9"]],"3² = 9.",tiempo=25,n="recordar")]}
-EX=[[1,MC("¿Cuánto es 1/2 + 1/3 × 3/4?",["3/4","5/8","1","1/4"],"3/4","Primero la multiplicación: 1/4.",n="aplicar")],
- [1,VF("En 1/2 + 1/4 × 2 se resuelve primero la suma.","Falso","Se resuelve primero la multiplicación.",n="error")],
+EX=[[1,MC("Ema resuelve la cuenta 1/2 + 1/3 × 3/4 respetando la jerarquía de las operaciones. ¿Cuánto es el resultado?",["3/4","5/8","1","1/4"],"3/4","Primero la multiplicación: 1/4.",n="aplicar")],
+ [1,VF("Un compañero afirma: «En la cuenta 1/2 + 1/4 × 2 se resuelve primero la suma». ¿Es verdadero lo que afirma?","Falso","Se resuelve primero la multiplicación.",n="error")],
  [1,N("¿Cuánto es 1/2 ÷ 1/4?",{"acepta":[2]},"1/2 × 4 = 2.",n="aplicar")],
  [2,N("¿Cuánto es 0,5 × 2/5? Escribilo como decimal.",{"acepta":[0.2]},"1/2 × 2/5 = 1/5.",n="aplicar")],
  [2,CLF("¿Conviene pasar todo a fracción o a decimal?",["1/3 + 0,5","0,2 + 0,75","2/3 × 0,5","0,4 + 1/5"],["Fracción","Decimal"],{"1/3 + 0,5":"Fracción","0,2 + 0,75":"Decimal","2/3 × 0,5":"Fracción","0,4 + 1/5":"Decimal"},"Si hay un periódico, todo a fracción.",n="analizar")],
  [2,KW("Un compañero calculó 0,5 + 1/4 como 0,375. Explicá el error.","Escribí una frase.",[["numerador*","sumó","sumo","1,5"],["denominador*","común","comun","fracción","fraccion","formato"]],1,"Hay que pasar todo al mismo formato: 1/2 + 1/4 = 3/4 = 0,75.",n="error")],
  [3,ORD("Ordená los pasos para resolver 1/2 + 1/4 × 2.",["Sumar 1/2 + 1/2","Calcular 1/4 × 2 = 1/2","Resultado: 1"],["Calcular 1/4 × 2 = 1/2","Sumar 1/2 + 1/2","Resultado: 1"],"Primero la multiplicación.",n="aplicar")],
- [3,MC("¿Cuánto es (−1/2)³?",["−1/8","−1/6","−3/2","−1/4"],"−1/8","Exponente impar: conserva el signo.",n="analizar")],
- [3,FB("(2/3)² = ___/9",[["4"]],"2² = 4.",n="aplicar")],
+ [3,MC("Un compañero calcula (−1/2)³ multiplicando tres veces menos un medio. ¿Cuánto es el resultado de esa potencia?",["−1/8","−1/6","−3/2","−1/4"],"−1/8","Exponente impar: conserva el signo.",n="analizar")],
+ [3,FB("Un campo cuadrado tiene lado de 2/3 de hectómetro. Completá el área en hectómetros cuadrados: (2/3)² = ___/9",[["4"]],"2² = 4.",n="aplicar")],
  [4,N("Un tanque de 90 L: se usa 1/3 el lunes y 1/5 del resto el martes. ¿Cuántos litros quedan?",{"acepta":[48]},"Lunes 30, quedan 60; martes 12; quedan 48.",n="aplicar")],
  [4,MAT("Uní cada potencia con su resultado.",["(1/2)²","(1/3)²","(2/3)²","(3/2)²"],["1/4","1/9","4/9","9/4"],"Se eleva arriba y abajo.",n="aplicar")],
  [4,MS("¿Cuáles de estas cuentas dan 1?",["1/2 + 1/2","3/4 + 1/4","1/2 × 2","1/2 + 1/4"],["1/2 + 1/2","3/4 + 1/4","1/2 × 2"],"1/2 + 1/4 da 3/4.",n="analizar")],
- [4,SA("Calculá (1/2 + 1/4)². Escribilo como fracción.",["9/16"],"3/4 al cuadrado.",n="aplicar")]]
+ [4,SA("En una cuenta con paréntesis y potencia, primero se resuelve el paréntesis. Calculá (1/2 + 1/4)² y escribilo como fracción.",["9/16"],"3/4 al cuadrado.",n="aplicar")]]
 M={"subject_id":SID,"tema":2,"practica":"Práctica general: operaciones combinadas con racionales","examen_titulo":"Nivel jefe: operaciones combinadas con racionales","niveles":{"1":B1,"2":B2,"3":B3,"4":B4},"act":ACT,"examen":EX}
 STEPS={1:"3fd44e9d-c546-499b-845d-65c2b644be8f",2:"2984f6fb-c425-4e1e-9e40-5f6e2117c53e",3:"155b2ce7-bac1-4b35-9634-3b89da15d653",4:"e70b70e4-6baa-43b1-b2a3-b4b2b101f6a9"}
 TIT={1:"Jerarquía de operaciones con fracciones",2:"Fracciones y decimales juntos",3:"Cálculo con paréntesis y potencias",4:"Problemas con operaciones combinadas"}
