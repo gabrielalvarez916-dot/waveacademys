@@ -84,12 +84,13 @@ def revisar_pregunta(q, donde, nivel, err, avi):
 import glob, unicodedata, urllib.request
 RAIZ = os.path.dirname(AQUI)
 # ---- umbrales (cambiar acá y en docs/reglas-fijas-pdf.md) ----
-SIM_DEF = 0.50          # parecido de definiciones del mismo término (palabras de contenido)
-SIM_DEF_NUEVO = 0.30    # misión "Nuevo": un término ya definido no puede volver ni con otra redacción parecida
+SIM_DEF = 0.80          # misma explicación casi igual (Retoma/Profundiza pueden volver a usar el término; lo que no vale es repetir la explicación)
+SIM_DEF_NUEVO = 0.50    # misión "Nuevo": un término ya definido no puede volver con una explicación parecida
 SIM_EJ = 0.60           # parecido de ejemplos
-PDF_PALABRAS = {'avanzado': 400, 'medio': 320, 'primeros': 200}   # por nivel, sin carpeta ni claves
+PDF_PALABRAS = {'avanzado': 480, 'medio': 380, 'primeros': 230}   # línea base: primeras misiones (~610 palabras/nivel)   # por nivel, sin carpeta ni claves
 PDF_ETAPAS = {'avanzado': 2, 'medio': 2, 'primeros': 1}            # secciones mínimas de etapa 1 y de etapa 2
-CLASE = {'avanzado': (8, 220), 'medio': (8, 180), 'primeros': (6, 130)}   # (escenas, palabras de voz) por clase
+CLASE = {'avanzado': (10, 330), 'medio': (9, 260), 'primeros': (7, 170)}   # línea base: primeras clases ≈2 min de narración (Medio y primeros: provisorio)
+PROCEDIMENTALES = {'matematica', 'fisica', 'quimica'}   # repetir el tema es válido si suben las cifras: solo se compara el ejemplo con los mismos números  
 PENSADA_MIN_PALABRAS = {'avanzado': 12, 'medio': 9, 'primeros': 6}   # palabras del caso o texto de una pregunta pensada
 RECORDAR_MAX = {'avanzado': 0.25, 'medio': 0.30, 'primeros': 0.40}
 UNA_PALABRA_MAX = {'avanzado': 0.25, 'medio': 0.30, 'primeros': 0.40}
@@ -172,17 +173,17 @@ def revisar_repeticion(ruta, M, err, avi, etiqueta=None):
     previas = _lo_ya_visto(me)
     umbral = SIM_DEF_NUEVO if etiqueta == 'Nuevo' else SIM_DEF
     vistos = set()
-    for t, x, donde in ter:
+    for t, x, donde in ([] if me['familia'] in PROCEDIMENTALES else ter):
         for u, P in previas:
             for t2, x2, d2 in _items(P)[0]:
                 if t and t == t2 and sim(x, x2) >= umbral and (t, u['ruta']) not in vistos:
                     vistos.add((t, u['ruta']))
-                    err.append(f'ya visto: «{t}» ({donde}) ya se definió en {u["ruta"]} ({d2}). No se vuelve a explicar'
+                    err.append(f'ya visto: «{t}» ({donde}) ya se explicó casi igual en {u["ruta"]} ({d2}). Ahora: «{str(x)[:90]}» / Antes: «{str(x2)[:90]}». No se vuelve a explicar'
                                + (' (misión Nuevo: nada de lo anterior)' if etiqueta == 'Nuevo' else ' — Retoma: usalo para explicar OTRA cosa; Profundiza: más a fondo, no igual'))
     for x, donde in eje:
         for u, P in previas:
             for x2, d2 in _items(P)[1]:
-                if sim(x, x2) >= SIM_EJ and (x[:40], u['ruta']) not in vistos:
+                if sim(x, x2) >= SIM_EJ and set(re.findall(r'\d+', x)) == set(re.findall(r'\d+', x2)) and (x[:40], u['ruta']) not in vistos:
                     vistos.add((x[:40], u['ruta']))
                     err.append(f'ya visto: el {donde} repite el {d2} de {u["ruta"]}: «{x[:60]}…». Usá un caso nuevo')
 
@@ -262,7 +263,7 @@ def revisar_clases(ruta, M, nivel, err, avi):
         e = L.get('escenas') or []
         voz = sum(len(' '.join(x.get('voz', [])).split()) for x in e if isinstance(x.get('voz'), list))
         if len(e) < esc_min or voz < voz_min:
-            err.append(f'clase {L.get("slug")}: {len(e)} escenas y {voz} palabras de voz; el mínimo es {esc_min} escenas y {voz_min} palabras. Explicá más, con un ejemplo resuelto paso a paso')
+            err.append(f'clase {L.get("slug")}: {len(e)} escenas y {voz} palabras de voz (≈{voz / 2.7 / 60:.1f} min); el mínimo es {esc_min} escenas y {voz_min} palabras (línea base de las primeras clases). Explicá más, con un ejemplo resuelto paso a paso')
 
 
 def revisar_profundidad(ruta, M, nivel, err, avi, forzar=False, etiqueta=None):

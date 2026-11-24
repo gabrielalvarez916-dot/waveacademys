@@ -146,7 +146,7 @@ En el examen, para explicar se usa `keywords` (se corrige sin IA, buscando las i
 
 ## Profundidad y no repetición (regla del 23/11/2026, Avanzado y Medio, todas las materias)
 
-Por qué: las clases y los PDF se estaban acortando y las preguntas volviéndose básicas, y los temas se repetían entre años y entre misiones. La controla sola la máquina con `tools/profundidad.py` (llamada desde `tools/control_calidad.py`, en los workflows de Avanzado y Medio), ANTES de cargar: si no cumple, no se carga nada y el log dice qué arreglar. Las misiones que ya estaban cargadas (`tools/profundidad_existentes.txt`) no se revisan ni se tocan.
+Por qué: las clases y los PDF se estaban acortando y las preguntas volviéndose básicas, y los temas se repetían entre años y entre misiones. La controla sola la máquina con `tools/control_calidad.py` (llamada desde `tools/control_calidad.py`, en los workflows de Avanzado y Medio), ANTES de cargar: si no cumple, no se carga nada y el log dice qué arreglar. Las misiones que ya estaban cargadas (`tools/calidad_existentes.txt`) no se revisan ni se tocan.
 
 **1. Lo ya visto no se vuelve a explicar.** La máquina arma la lista de lo ya visto (términos, definiciones, glosario y ejemplos) de TODAS las misiones anteriores de la misma familia de materias: misiones anteriores del mismo año, años previos y el nivel Medio. Y lee la etiqueta de la misión en `mapa_curricular.relacion` (función `mision_relacion`):
 - **Nuevo**: nada de lo anterior; un término ya definido no vuelve ni con redacción parecida (parecido ≥ 30 %).
@@ -163,3 +163,6 @@ Por qué: las clases y los PDF se estaban acortando y las preguntas volviéndose
 - Recordar: máximo 25 % (Medio 30 %, primeros 40 %).
 - Respuestas de una sola palabra: máximo 25 % de las preguntas y consignas de carpeta (Medio 30 %, primeros 40 %).
 - Carpeta: al menos 3 de 4 consignas por nivel con un caso o una cuenta (Medio 2, primeros 1).
+
+
+**Ajuste 24/11:** la repetición solo frena la misma explicación casi idéntica (Retoma/Profundiza pueden reusar el término; en Matemática solo cuenta el ejemplo con los mismos números). La calidad se mide contra las primeras misiones: clase ≥ ~2 min de narración y PDF ≥ ~480 palabras por nivel en Avanzado. Rige solo para misiones nuevas; las ya cargadas siguen exentas.
