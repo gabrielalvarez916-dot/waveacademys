@@ -23,3 +23,6 @@ def escribir(n, M, STEPS, TIT, CLS):
     for k, es in CLS.items():
         json.dump({"slug":f"mat2-m{n}-n{k}","step_id":STEPS[k],"materia":"Matemática II","titulo":TIT[k],"sub":f"Matemática II · Misión {n} · Nivel {k}","escenas":es},open(os.path.join(RAIZ,f"mat2-m{n}-n{k}.json"),"w"),ensure_ascii=False)
     print("ok misión", n)
+CJ = lambda t, x, e, v: {"t": "consejo", "titulo": t, "texto": x, "emoji": e, "voz": v}
+COR = lambda t, cs, v: {"t": "corrige", "titulo": t, "cambios": [{"antes": a, "despues": b, "motivo": c} for a, b, c in cs], "voz": v}
+VOF = lambda a, em, ok, ex, v: {"t": "vof", "afirmacion": a, "emoji": em, "verdadero": ok, "explicacion": ex, "voz": v}
