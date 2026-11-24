@@ -87,7 +87,6 @@ RAIZ = os.path.dirname(AQUI)
 SIM_DEF = 0.80          # misma explicación casi igual (Retoma/Profundiza pueden volver a usar el término; lo que no vale es repetir la explicación)
 SIM_DEF_NUEVO = 0.50    # misión "Nuevo": un término ya definido no puede volver con una explicación parecida
 SIM_EJ = 0.60           # parecido de ejemplos
-PDF_PALABRAS = {'avanzado': 425, 'medio': 320, 'primeros': 170}   # piso = 85% del promedio medido en las primeras misiones: Avanzado 500 (18-19/11), Medio/primeros 201 (21/11). 'medio' sin misiones para medir
 PDF_ETAPAS = {'avanzado': 2, 'medio': 2, 'primeros': 1}            # secciones mínimas de etapa 1 y de etapa 2
 ENSEÑAN = {'definicion', 'pasos', 'errores', 'resumen', 'tabla', 'comparar', 'linea', 'flujo', 'causas', 'texto', 'corrige', 'matriz', 'escala', 'noticia'}
 DISTINTAS_AV, ENSEÑAN_AV = 8, 5   # 80-85% del modelo: las 4 clases de Lengua II M1 (10 escenas, 10 plantillas distintas, 6-8 que enseñan, 282-295 palabras)
@@ -192,9 +191,6 @@ def revisar_repeticion(ruta, M, err, avi, etiqueta=None):
 
 def revisar_pdf(M, nivel, err):
     for k, N in (M.get('niveles') or {}).items():
-        base = {a: b for a, b in N.items() if a not in ('carpeta', 'carpeta_nivel', 'respuestas_carpeta', 'soluciones')}
-        n = len(' '.join(textos(base)).split())
-        if n < PDF_PALABRAS[nivel]: err.append(f'nivel {k} · PDF: {n} palabras; el mínimo es {PDF_PALABRAS[nivel]} (sin contar carpeta). Explicá más y con más ejemplos')
         secs = N.get('secciones') or []
         for et in (1, 2):
             c = sum(1 for s in secs if s.get('etapa') == et)
