@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descomposición aditiva – Wave Academy’s</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+/* ===== PALETA WAVE ACADEMY'S (cambiar solo acá) ===== */
+:root{
+  --top:#0b7a80; --bg:#d6efe8; --card:#ffffff; --scene:#f1faf7;
+  --ink:#1d2f2d; --muted:#4f6c68; --line:#0a5c61; --hint:#0b7a80;
+  --accent:#0b7a80; --accentInk:#ffffff; --note:#fff5da; --noteB:#e9a62b;
+  --border:#b7dcd3; --cellL:88%; --hl:#ffffff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+    --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+    --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+    --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+  --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+  --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+  --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.5}
+.top{background:var(--top);color:#fff;padding:14px 20px}
+.top .in{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.brand{font-weight:800;letter-spacing:.06em}
+.tag{opacity:.85;font-weight:700}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 16px 32px}
+h1{font-size:clamp(1.4rem,3.2vw,2rem);margin:0 0 2px;font-weight:800}
+.sub{margin:0 0 16px;color:var(--muted);font-weight:700}
+.card{background:var(--card);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);overflow:hidden;box-shadow:0 6px 24px rgba(8,70,72,.12)}
+.left{padding:22px 24px}
+.left p{margin:0 0 12px;max-width:52ch}
+.scene{background:var(--scene);display:flex;flex-direction:column;min-width:0}
+.note{background:var(--note);border-bottom:3px solid var(--noteB);padding:12px 18px;min-height:6em}
+.note b{color:var(--hint)}
+.ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border);font-size:.85rem}
+.ctrl label{color:var(--muted);font-weight:700}
+select,input{font:inherit;padding:3px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink)}
+input{width:7.5em;text-align:center}
+.sp{flex:1}
+.nav{display:flex;gap:8px;align-items:center}
+.nav button{width:36px;height:36px;border-radius:50%;border:0;background:var(--accent);color:var(--accentInk);font-size:1rem;cursor:pointer}
+.nav button:disabled{opacity:.35;cursor:default}
+.nav button:focus-visible,.txt:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hint);outline-offset:2px}
+.txt{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:4px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.work{padding:16px;min-height:340px;color:var(--line)}
+.big{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:.04em;margin:0 0 12px;transition:font-size .3s}
+.big.small{font-size:1.3rem}
+.tbl{display:grid;gap:4px;margin-bottom:14px;overflow-x:auto}
+.h,.d{border-radius:8px;text-align:center;background:hsl(var(--c) 55% var(--cellL))}
+.h{padding:5px 2px;font-size:.95rem;font-weight:800;color:var(--ink);animation:in .4s both}
+.h small{display:block;font-weight:400;font-size:.62rem;line-height:1.15;color:var(--muted);margin-top:2px}
+.d{font-size:clamp(1.4rem,4.5vw,2rem);padding:6px 0;min-height:2.3em;color:var(--line);font-weight:800;border:2px solid transparent}
+.d.on{border-color:var(--line);box-shadow:0 0 0 3px var(--hl) inset}
+.d.pop{animation:drop .45s both}
+.lines{font-size:1.15rem;font-weight:700;display:flex;flex-direction:column;gap:3px}
+.lines .l{animation:in .35s both}
+.lines .z{opacity:.5}
+.why{font-size:.8rem;font-weight:400;color:var(--muted)}
+.lines hr{border:0;border-top:2px solid var(--line);margin:6px 0;width:100%}
+.res{font-weight:800}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.dots{display:flex;gap:5px;justify-content:center;padding:8px 0 14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.dots i.a{background:var(--accent)}
+@media (max-width:760px){.card{grid-template-columns:1fr}.h small{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><span class="brand">WAVE ACADEMY’S</span><span class="tag">Matemática</span></div></header>
+<div class="wrap">
+  <h1>Descomposición aditiva</h1>
+  <p class="sub">Sistema decimal: el número como suma de sus valores posicionales</p>
+  <div class="card">
+    <div class="left"><p>En el <b>sistema decimal</b> el valor de una cifra depende de su <b>posición</b>: cada columna vale 10 veces más que la de su derecha.</p><p>En la <b>descomposición aditiva</b> escribimos el número como una <b>suma</b> del valor de cada cifra. Ejemplo: 35.208 = 30.000 + 5.000 + 200 + 8.</p><p>En la escena de la derecha verás el procedimiento paso a paso. Pulsa el botón siguiente para avanzar.</p><p>Puedes elegir cuántas cifras tendrá el ejemplo o escribir tu propio número.</p></div>
+    <div class="scene" aria-live="polite">
+      <div class="note" id="note"></div>
+      <div class="ctrl">
+        <label for="nc">Número de cifras</label>
+        <select id="nc"></select>
+        <label for="num">Número</label>
+        <input id="num" inputmode="numeric" maxlength="7" aria-label="Escribe un número de hasta 7 cifras">
+        <span class="sp"></span>
+        <button class="txt" id="auto" type="button">Auto</button>
+        <div class="nav">
+          <button id="prev" type="button" aria-label="Paso anterior">◀</button>
+          <button id="next" type="button" aria-label="Paso siguiente">▶</button>
+        </div>
+      </div>
+      <div class="work" id="work"></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div>
+<script>
+const MODE="add"; // "add" o "mul"
+const NAMES=[["unidad","unidades","U"],["decena","decenas","D"],["centena","centenas","C"],["unidad de millar","unidades de millar","UM"],["decena de millar","decenas de millar","DM"],["centena de millar","centenas de millar","CM"],["unidad de millón","unidades de millón","UMi"]];
+const HUES=[205,190,175,150,135,120,35];
+const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const $=id=>document.getElementById(id);
+const P=i=>Math.pow(10,i);
+const pw=i=>i===0?"1":i===1?"10":"10<sup>"+i+"</sup>";
+let digits="35208",step=0,timer=null;
+const ncSel=$("nc");
+for(let i=1;i<=7;i++){const o=document.createElement("option");o.value=i;o.textContent=i===1?"Una cifra":["","","Dos","Tres","Cuatro","Cinco","Seis","Siete"][i]+" cifras";ncSel.appendChild(o);}
+const total=()=>(MODE==="add"?4:6)+digits.length;
+function randomNum(len){let s=String(1+Math.floor(Math.random()*9));for(let i=1;i<len;i++)s+=Math.random()<.22?"0":String(Math.floor(Math.random()*10));return s;}
+function setNumber(s){s=s.replace(/\D/g,"").replace(/^0+(?=\d)/,"").slice(0,7)||"1";digits=s;step=0;ncSel.value=s.length;$("num").value=s;stop();render();}
+function hint(s){
+  const L=digits.length,n=fmt(digits);
+  if(s===0)return MODE==="add"
+    ?`Vamos a hacer la <b>descomposición aditiva</b> de <b>${n}</b>: escribirlo como una suma de lo que vale cada cifra según su posición.`
+    :`Vamos a hacer la <b>descomposición multiplicativa</b> de <b>${n}</b>: escribir cada cifra multiplicada por el valor de su posición (1, 10, 100, 1.000…).`;
+  if(s===1)return `Primero dibujamos las columnas. De derecha a izquierda: unidades, decenas, centenas… Cada columna vale 10 veces más que la de su derecha.`;
+  if(s===2)return `Colocamos cada cifra en su columna. La última cifra de la derecha siempre son las unidades.`;
+  if(s<3+L){
+    const j=s-3,i=L-1-j,d=+digits[j],nm=NAMES[i],val=d*P(i);
+    if(d===0)return `El <b>0</b> está en la columna de las ${nm[1]}: no hay ninguna, así que no aporta valor. Pero se necesita para mantener a las demás cifras en su lugar.`;
+    return MODE==="add"
+      ?`El <b>${d}</b> está en la columna de las ${nm[1]}. Son ${d} ${d===1?nm[0]:nm[1]}, que valen <b>${fmt(val)}</b>.`
+      :`El <b>${d}</b> está en la columna de las ${nm[1]}, cuya posición vale ${fmt(P(i))}. Multiplicamos: ${d} · ${fmt(P(i))} = <b>${fmt(val)}</b>.`;
+  }
+  if(MODE==="add")return `Sumamos los valores de cada columna. Los ceros no aportan nada, por eso no aparecen. El resultado es el número de partida.`;
+  if(s===3+L)return `Juntamos todos los productos con signos +. Cada cifra va multiplicada por el valor de su columna.`;
+  if(s===4+L)return `Los valores 1, 10, 100, 1.000… son potencias de 10, así que los escribimos como 10<sup>n</sup>. El exponente coincide con el lugar de la columna contando desde cero.`;
+  return `Comprobamos: resolvemos cada producto y sumamos. Obtenemos de nuevo <b>${n}</b>. ¡Descomposición correcta!`;
+}
+function render(){
+  const L=digits.length,s=step,T=total();
+  $("note").innerHTML=hint(s);
+  let h=`<div class="big ${s>0?"small":""}">${fmt(digits)}</div>`;
+  if(s>=1){
+    h+=`<div class="tbl" style="grid-template-columns:repeat(${L},minmax(44px,1fr))">`;
+    for(let j=0;j<L;j++){const i=L-1-j;h+=`<div class="h" style="--c:${HUES[i]}" title="${NAMES[i][1]}">${NAMES[i][2]}<small>${NAMES[i][1]}</small></div>`;}
+    for(let j=0;j<L;j++){const i=L-1-j,on=s>=3&&s<3+L&&s-3===j;
+      h+=`<div class="d ${on?"on":""} ${s===2?"pop":""}" style="--c:${HUES[i]};${s===2?`animation-delay:${(L-1-j)*.12}s`:""}">${s>=2?digits[j]:""}</div>`;}
+    h+=`</div>`;
+  }
+  const lines=[],upto=s>=3+L?L-1:s-3;
+  for(let j=0;j<=upto;j++){
+    const i=L-1-j,d=+digits[j],nm=NAMES[i];
+    lines.push(MODE==="add"
+      ?`<div class="l ${d===0?"z":""}">${fmt(d*P(i))} <span class="why">← ${d} ${d===1?nm[0]:nm[1]}</span></div>`
+      :`<div class="l ${d===0?"z":""}">${d} · ${fmt(P(i))}</div>`);
+  }
+  if(s>=3+L){
+    const vals=[],prod=[],pows=[];
+    for(let j=0;j<L;j++){const i=L-1-j,d=+digits[j];if(d)vals.push(fmt(d*P(i)));prod.push(`${d} · ${fmt(P(i))}`);pows.push(`${d} · ${pw(i)}`);}
+    lines.push(`<hr>`);
+    if(MODE==="add")lines.push(`<div class="l res">${fmt(digits)} = ${vals.join(" + ")}</div>`);
+    else{
+      lines.push(`<div class="l res">${fmt(digits)} = ${prod.join(" + ")}</div>`);
+      if(s>=4+L)lines.push(`<div class="l res">${fmt(digits)} = ${pows.join(" + ")}</div>`);
+      if(s>=5+L)lines.push(`<div class="l res">${vals.join(" + ")} = ${fmt(digits)}</div>`);
+    }
+  }
+  h+=`<div class="lines">${lines.join("")}</div>`;
+  $("work").innerHTML=h;
+  $("prev").disabled=s===0;$("next").disabled=s===T-1;
+  $("dots").innerHTML=Array.from({length:T},(_,k)=>`<i class="${k===s?"a":""}"></i>`).join("");
+}
+function go(d){step=Math.max(0,Math.min(total()-1,step+d));render();if(step===total()-1)stop();}
+function stop(){if(timer){clearInterval(timer);timer=null;}$("auto").textContent="Auto";}
+$("next").onclick=()=>{stop();go(1)};
+$("prev").onclick=()=>{stop();go(-1)};
+$("auto").onclick=()=>{if(timer){stop();return;}if(step===total()-1){step=0;render();}$("auto").textContent="Pausa";timer=setInterval(()=>go(1),3200);};
+ncSel.onchange=()=>setNumber(randomNum(+ncSel.value));
+$("num").addEventListener("change",e=>setNumber(e.target.value));
+$("num").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,7);});
+document.addEventListener("keydown",e=>{if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT")return;if(e.key==="ArrowRight"){stop();go(1)}if(e.key==="ArrowLeft"){stop();go(-1)}});
+setNumber(digits);
+</script>
+</body>
+</html>
