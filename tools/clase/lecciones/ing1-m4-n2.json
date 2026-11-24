@@ -1,1 +1,193 @@
-{"slug": "ing1-m4-n2", "step_id": "dbd7ca47-c87e-478f-91bb-7ea252548f9f", "materia": "Inglés I", "titulo": "Been and gone", "sub": "Inglés I · Misión 4 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "VIAJES", "titular": "¿Ya volvió o sigue de viaje?", "bajada": "Dos verbos, dos situaciones", "emoji": "🧳", "titulo": "BEEN Y GONE", "sub": "ya volvió o sigue allá", "voz": ["Noticia: ¿ya volvió o sigue de viaje?", "Dos verbos, dos situaciones.", "Hoy: *been y gone*."]}, {"t": "antesdespues", "antes": {"cab": "HAS BEEN", "emoji": "🏠", "texto": "Fue y ya volvió"}, "despues": {"cab": "HAS GONE", "emoji": "✈️", "texto": "Se fue y sigue allá"}, "voz": ["Con *been* la persona ya está de vuelta.", "Con *gone* todavía está allá."]}, {"t": "comparar", "a": {"cab": "BEEN", "texto": "Ida y vuelta", "emoji": "🔁"}, "b": {"cab": "GONE", "texto": "Solo ida", "emoji": "➡️"}, "signo": "vs", "voz": ["Dos verbos.", "*Been* es ida y vuelta.", "*Gone* es solo ida."]}, {"t": "clasificar", "cajas": [{"cab": "BEEN", "emoji": "🏠"}, {"cab": "GONE", "emoji": "✈️"}], "fichas": [{"txt": "Ya volvió de Italia", "caja": 0}, {"txt": "Sigue en Chile", "caja": 1}, {"txt": "Fue dos veces", "caja": 0}, {"txt": "Se fue y no está", "caja": 1}], "voz": ["¿Been o gone?", "Si *ya volvió*, usamos *been*.", "Si *sigue allá*, usamos *gone*."]}, {"t": "pregunta", "pregunta": "Tom has gone to Paris. ¿Dónde está Tom?", "opciones": ["En París", "En casa", "No se sabe"], "correcta": 0, "voz": ["Te toca: dónde está Tom.", "¿En París, en casa o no se sabe?", "En *París*."]}, {"t": "resumen", "voz": ["Repasemos.", "*Been* es ida y vuelta.", "*Gone* es solo ida.", "Con *been* cuentas tus viajes.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["BEEN", "ya volvió"], ["GONE", "sigue allá"], ["VIAJES", "been to"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m4-n2",
+ "step_id": "dbd7ca47-c87e-478f-91bb-7ea252548f9f",
+ "materia": "Inglés I",
+ "titulo": "Been and gone",
+ "sub": "Inglés I · Misión 4 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "VIAJES",
+   "titular": "¿Ya volvió o sigue de viaje?",
+   "bajada": "Dos verbos, dos situaciones",
+   "emoji": "🧳",
+   "titulo": "BEEN Y GONE",
+   "sub": "ya volvió o sigue allá",
+   "voz": [
+    "Noticia: ¿ya volvió o sigue de viaje?",
+    "Dos verbos, dos situaciones.",
+    "Hoy: *been y gone*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "HAS BEEN",
+    "emoji": "🏠",
+    "texto": "Fue y ya volvió"
+   },
+   "despues": {
+    "cab": "HAS GONE",
+    "emoji": "✈️",
+    "texto": "Se fue y sigue allá"
+   },
+   "voz": [
+    "Con *been* la persona ya está de vuelta.",
+    "Con *gone* todavía está allá."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BEEN",
+    "texto": "Ida y vuelta",
+    "emoji": "🔁"
+   },
+   "b": {
+    "cab": "GONE",
+    "texto": "Solo ida",
+    "emoji": "➡️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos verbos.",
+    "*Been* es ida y vuelta.",
+    "*Gone* es solo ida."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "BEEN",
+     "emoji": "🏠"
+    },
+    {
+     "cab": "GONE",
+     "emoji": "✈️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Ya volvió de Italia",
+     "caja": 0
+    },
+    {
+     "txt": "Sigue en Chile",
+     "caja": 1
+    },
+    {
+     "txt": "Fue dos veces",
+     "caja": 0
+    },
+    {
+     "txt": "Se fue y no está",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Been o gone?",
+    "Si *ya volvió*, usamos *been*.",
+    "Si *sigue allá*, usamos *gone*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Been",
+   "texto": "Se usa para decir que alguien fue a un lugar y ya volvió: She has been to Paris.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Been*.",
+    "Se usa para decir que alguien fue a un lugar y ya volvió: She has been to Paris."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ELEGIR",
+   "items": [
+    {
+     "txt": "Todavía está en Chile: no volvió.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se usa gone.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: Ana has gone to Chile.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Ana viajó a Chile y todavía está allá. ¿Been o gone?",
+    "Todavía está en Chile: no volvió.",
+    "Se usa gone.",
+    "Resultado: Ana has gone to Chile."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Preguntate si la persona ya está de vuelta.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Preguntate si la persona ya está de vuelta."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Usar gone para un viaje que terminó",
+     "bien": "Lo correcto: Been"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Usar gone para un viaje que terminó. Lo correcto: Been."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Tom has gone to Paris. ¿Dónde está Tom?",
+   "opciones": [
+    "En París",
+    "En casa",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: dónde está Tom.",
+    "¿En París, en casa o no se sabe?",
+    "En *París*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Been* es ida y vuelta.",
+    "*Gone* es solo ida.",
+    "Con *been* cuentas tus viajes.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "BEEN",
+     "ya volvió"
+    ],
+    [
+     "GONE",
+     "sigue allá"
+    ],
+    [
+     "VIAJES",
+     "been to"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

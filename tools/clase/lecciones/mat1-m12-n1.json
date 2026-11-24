@@ -217,6 +217,55 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Suma en la recta",
+   "texto": "Se parte del primer número y se avanza el segundo: si es positivo, hacia la derecha; si es negativo, hacia la izquierda.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Suma en la recta*.",
+    "Se parte del primer número y se avanza el segundo: si es *positivo*, hacia la *derecha*; si es *negativo*, hacia la *izquierda*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Reglas de la suma",
+   "texto": "Igual signo: se suman los valores absolutos y se deja el signo.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Reglas de la suma*.",
+    "*Igual signo:* se suman los valores absolutos y se deja el signo."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "(−15) + (−7) + 20",
+   "items": [
+    {
+     "txt": "(−15) + (−7): igual signo. 15 + 7 = 22, signo −: −22.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "(−22) + 20: distinto signo. 22 − 20 = 2.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Gana el signo del 22, que es negativo: −2.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "En la recta: desde −22 avanzo 20 a la derecha y llego a −2.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Calculá (−15) + (−7) + 20.",
+    "(−15) + (−7): igual signo. 15 + 7 = 22, signo −: −22.",
+    "(−22) + 20: distinto signo. 22 − 20 = 2.",
+    "Gana el signo del 22, que es negativo: −2.",
+    "En la recta: desde −22 avanzo 20 a la derecha y llego a −2."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

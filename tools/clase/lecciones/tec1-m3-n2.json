@@ -134,6 +134,47 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Torneado",
+   "texto": "Operación en la que la pieza gira y una herramienta fija le quita material para dejarla redonda.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Torneado*.",
+    "Operación en la que la pieza gira y una herramienta fija le quita material para dejarla redonda."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Molienda",
+   "texto": "Operación que tritura un sólido duro hasta convertirlo en partículas más chicas, como polvo o harina.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Molienda*.",
+    "Operación que tritura un sólido duro hasta convertirlo en partículas más chicas, como polvo o harina."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Preguntate si se quiere dar forma quitando material (torneado) o achicar el tamaño (molienda).",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Preguntate si se quiere dar forma quitando material (torneado) o achicar el tamaño (molienda)."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir torneado con molienda",
+     "bien": "Lo correcto: Molienda"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Confundir torneado con molienda. Lo correcto: Molienda."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "En el torneado, ¿qué gira?",
    "opciones": [

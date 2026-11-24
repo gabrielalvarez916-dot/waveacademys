@@ -138,6 +138,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "ANALIZAR",
+   "items": [
+    {
+     "txt": "Verbo: duerme (NV).",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "¿Quién duerme? El gato negro del vecino: sujeto.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Núcleo: gato. MD: el, negro. MI: del vecino.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: \"El gato negro del vecino duerme.\"",
+    "Verbo: duerme (NV).",
+    "¿Quién duerme? El gato negro del vecino: sujeto.",
+    "Núcleo: gato. MD: el, negro. MI: del vecino."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si un modificador empieza con de, con, en, sin o para, es indirecto.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si un modificador empieza con de, con, en, sin o para, es indirecto."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "\"Las calles empedradas del centro\": ¿qué es \"del centro\"?",
    "opciones": [

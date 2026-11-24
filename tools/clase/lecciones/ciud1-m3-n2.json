@@ -93,6 +93,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "Se dirigen a las autoridades.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Piden algo a nombre de la comunidad.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Ejercen el derecho de petición.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un grupo de vecinos junta firmas para pedir una plaza. ¿Qué derecho ejercen?",
+    "Se dirigen a las autoridades.",
+    "Piden algo a nombre de la comunidad.",
+    "Ejercen el derecho de petición."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Un reclamo tiene más fuerza cuando se expresa sin violencia.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Un reclamo tiene más fuerza cuando se expresa sin violencia."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El derecho de pedir algo por escrito es el derecho de…",
    "opciones": [

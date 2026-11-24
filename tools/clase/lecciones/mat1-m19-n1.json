@@ -275,6 +275,30 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "EL CERCO",
+   "items": [
+    {
+     "txt": "Perímetro: 25 + 12 + 25 + 12 = 74 m.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El portón no lleva alambre: 74 − 3 = 71 m.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Hacen falta 71 m de alambre.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un terreno rectangular mide 25 m por 12 m. Se quiere cercar con alambre, dejando un portón de 3 m. ¿Cuántos metros de alambre hacen falta?",
+    "Perímetro: 25 + 12 + 25 + 12 = 74 m.",
+    "El portón no lleva alambre: 74 − 3 = 71 m.",
+    "Hacen falta 71 m de alambre."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Trampa: un rectángulo de 2 metros por 45 centímetros. ¿Perímetro?",

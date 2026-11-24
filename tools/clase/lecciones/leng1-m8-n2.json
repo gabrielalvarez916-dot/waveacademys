@@ -150,6 +150,30 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "ORDENAR",
+   "items": [
+    {
+     "txt": "Primero lo que se ve al entrar: una puerta de madera.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Después, al fondo, una ventana con cortinas.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Por último, sobre el escritorio, una lámpara encendida.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Ordená la descripción de una habitación.",
+    "Primero lo que se ve al entrar: una puerta de madera.",
+    "Después, al fondo, una ventana con cortinas.",
+    "Por último, sobre el escritorio, una lámpara encendida."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Cuántos sentidos conviene usar al describir un lugar?",
    "opciones": [

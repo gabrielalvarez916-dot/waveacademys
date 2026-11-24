@@ -87,6 +87,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "PREDECIR",
+   "items": [
+    {
+     "txt": "El calor aumenta la temperatura.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Las partículas chocan con más fuerza.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "La presión sube y el globo puede explotar.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un globo se deja al sol. ¿Qué le pasa a la presión del aire adentro?",
+    "El calor aumenta la temperatura.",
+    "Las partículas chocan con más fuerza.",
+    "La presión sube y el globo puede explotar."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Presión es choques: más choques o más fuertes, más presión.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Presión es choques: más choques o más fuertes, más presión."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Si se reduce el volumen de un gas, la presión…",
    "opciones": [

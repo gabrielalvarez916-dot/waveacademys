@@ -105,6 +105,58 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Fuente primaria",
+   "texto": "Información que obtenés vos mismo: observaciones, encuestas, entrevistas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fuente primaria*.",
+    "Información que obtenés vos mismo: observaciones, encuestas, entrevistas."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fuente secundaria",
+   "texto": "Información que ya reunió otra persona: noticias, informes, estadísticas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fuente secundaria*.",
+    "Información que ya reunió otra persona: noticias, informes, estadísticas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EVALUAR",
+   "items": [
+    {
+     "txt": "No se sabe quién lo dice ni cuándo.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "No explica de dónde sale el 90 %.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "No sirve solo: hay que contrastarlo con otra fuente.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un video anónimo dice que «el 90 % de las plazas es peligroso». ¿Sirve como fuente?",
+    "No se sabe quién lo dice ni cuándo.",
+    "No explica de dónde sale el 90 %.",
+    "No sirve solo: hay que contrastarlo con otra fuente."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si dos fuentes distintas coinciden, el dato es más confiable.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si dos fuentes distintas coinciden, el dato es más confiable."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Un dato sin fuente…",
    "opciones": [

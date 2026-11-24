@@ -1,1 +1,222 @@
-{"slug": "tec1-m5-n1", "step_id": "15445050-23a9-436f-93f3-d777fc3529a2", "materia": "Tecnología I", "titulo": "Formas de energía y sus conversiones", "sub": "Tecnología I · Misión 5 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Cómo se llama el cambio de una forma de energía en otra?", "segundos": 6, "respuesta": "Conversión", "emoji": "🔄", "titulo": "CONVERSIÓN DE ENERGÍA", "sub": "de una forma a otra", "voz": ["Desafío: ¿cómo se llama el cambio de una forma de energía en otra? Seis segundos.", "Conversión.", "Hoy: *formas de energía y sus conversiones*."]}, {"t": "sistema", "titulo": "UNA LÁMPARA CONVIERTE ENERGÍA", "proceso": {"txt": "Lámpara", "emoji": "💡"}, "entradas": [{"tipo": "energia", "txt": "Energía eléctrica"}], "salidas": [{"tipo": "energia", "txt": "Luz"}, {"tipo": "energia", "txt": "Calor"}], "voz": ["Todo artefacto convierte energía.", "Entra *energía eléctrica*.", "Sale *luz*.", "Y sale *calor*."]}, {"t": "tabla", "titulo": "QUÉ CONVIERTE CADA ARTEFACTO", "columnas": ["Artefacto", "Entra → Sale"], "filas": [["Motor", "Eléctrica → mecánica"], ["Batería", "Química → eléctrica"], ["Panel solar", "Luz → eléctrica"], ["Tostadora", "Eléctrica → térmica"]], "voz": ["Cuatro convertidores.", "El *motor*: de eléctrica a mecánica.", "La *batería*: de química a eléctrica.", "El *panel solar*: de luz a eléctrica.", "La *tostadora*: de eléctrica a térmica."]}, {"t": "flujo", "titulo": "UN AUTO A NAFTA", "items": [{"txt": "Energía química", "emoji": "⛽"}, {"txt": "Calor al quemar", "emoji": "🔥"}, {"txt": "Movimiento del motor", "emoji": "⚙️"}, {"txt": "El auto avanza", "emoji": "🚗"}], "voz": ["La nafta guarda *energía química*.", "Al quemarse da *calor*.", "El motor la convierte en *movimiento*.", "Y el *auto avanza*."]}, {"t": "pregunta", "pregunta": "Una batería convierte energía…", "opciones": ["Química en eléctrica", "Eléctrica en química", "Luz en calor"], "correcta": 0, "voz": ["Te toca: la batería.", "¿Química en eléctrica, eléctrica en química o luz en calor?", "*Química en eléctrica*."]}, {"t": "errores", "items": [{"mal": "La energía se produce de la nada", "bien": "La energía se transforma"}, {"mal": "Todo da solo calor", "bien": "Hay distintas formas"}], "voz": ["Errores típicos.", "Creer que la energía *se produce de la nada*.", "Y que todo da *solo calor*."]}, {"t": "resumen", "voz": ["Repasemos.", "Hay varias *formas de energía*.", "Un artefacto *convierte* una forma en otra.", "Siempre se anota qué *entra* y qué *sale*.", "Y la energía *se transforma*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["FORMAS", "eléctrica, térmica, luminosa…"], ["CONVERSIÓN", "cambia de forma"], ["ENTRA Y SALE", "se anota siempre"], ["SE TRANSFORMA", "no se crea"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m5-n1",
+ "step_id": "15445050-23a9-436f-93f3-d777fc3529a2",
+ "materia": "Tecnología I",
+ "titulo": "Formas de energía y sus conversiones",
+ "sub": "Tecnología I · Misión 5 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama el cambio de una forma de energía en otra?",
+   "segundos": 6,
+   "respuesta": "Conversión",
+   "emoji": "🔄",
+   "titulo": "CONVERSIÓN DE ENERGÍA",
+   "sub": "de una forma a otra",
+   "voz": [
+    "Desafío: ¿cómo se llama el cambio de una forma de energía en otra? Seis segundos.",
+    "Conversión.",
+    "Hoy: *formas de energía y sus conversiones*."
+   ]
+  },
+  {
+   "t": "sistema",
+   "titulo": "UNA LÁMPARA CONVIERTE ENERGÍA",
+   "proceso": {
+    "txt": "Lámpara",
+    "emoji": "💡"
+   },
+   "entradas": [
+    {
+     "tipo": "energia",
+     "txt": "Energía eléctrica"
+    }
+   ],
+   "salidas": [
+    {
+     "tipo": "energia",
+     "txt": "Luz"
+    },
+    {
+     "tipo": "energia",
+     "txt": "Calor"
+    }
+   ],
+   "voz": [
+    "Todo artefacto convierte energía.",
+    "Entra *energía eléctrica*.",
+    "Sale *luz*.",
+    "Y sale *calor*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ CONVIERTE CADA ARTEFACTO",
+   "columnas": [
+    "Artefacto",
+    "Entra → Sale"
+   ],
+   "filas": [
+    [
+     "Motor",
+     "Eléctrica → mecánica"
+    ],
+    [
+     "Batería",
+     "Química → eléctrica"
+    ],
+    [
+     "Panel solar",
+     "Luz → eléctrica"
+    ],
+    [
+     "Tostadora",
+     "Eléctrica → térmica"
+    ]
+   ],
+   "voz": [
+    "Cuatro convertidores.",
+    "El *motor*: de eléctrica a mecánica.",
+    "La *batería*: de química a eléctrica.",
+    "El *panel solar*: de luz a eléctrica.",
+    "La *tostadora*: de eléctrica a térmica."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "UN AUTO A NAFTA",
+   "items": [
+    {
+     "txt": "Energía química",
+     "emoji": "⛽"
+    },
+    {
+     "txt": "Calor al quemar",
+     "emoji": "🔥"
+    },
+    {
+     "txt": "Movimiento del motor",
+     "emoji": "⚙️"
+    },
+    {
+     "txt": "El auto avanza",
+     "emoji": "🚗"
+    }
+   ],
+   "voz": [
+    "La nafta guarda *energía química*.",
+    "Al quemarse da *calor*.",
+    "El motor la convierte en *movimiento*.",
+    "Y el *auto avanza*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Conversión de energía",
+   "texto": "Cambio de una forma de energía en otra mediante un artefacto o proceso.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Conversión de energía*.",
+    "Cambio de una forma de energía en otra mediante un artefacto o proceso."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "IDENTIFICAR",
+   "items": [
+    {
+     "txt": "Entra energía eléctrica.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El motor la convierte en energía mecánica.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Sale movimiento (y un poco de calor).",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: En un ventilador enchufado, ¿qué conversión ocurre?",
+    "Entra energía eléctrica.",
+    "El motor la convierte en energía mecánica.",
+    "Sale movimiento (y un poco de calor)."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para analizar un artefacto, anotá siempre qué forma de energía entra y cuál sale.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para analizar un artefacto, anotá siempre qué forma de energía entra y cuál sale."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Una batería convierte energía…",
+   "opciones": [
+    "Química en eléctrica",
+    "Eléctrica en química",
+    "Luz en calor"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la batería.",
+    "¿Química en eléctrica, eléctrica en química o luz en calor?",
+    "*Química en eléctrica*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "La energía se produce de la nada",
+     "bien": "La energía se transforma"
+    },
+    {
+     "mal": "Todo da solo calor",
+     "bien": "Hay distintas formas"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que la energía *se produce de la nada*.",
+    "Y que todo da *solo calor*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay varias *formas de energía*.",
+    "Un artefacto *convierte* una forma en otra.",
+    "Siempre se anota qué *entra* y qué *sale*.",
+    "Y la energía *se transforma*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "FORMAS",
+     "eléctrica, térmica, luminosa…"
+    ],
+    [
+     "CONVERSIÓN",
+     "cambia de forma"
+    ],
+    [
+     "ENTRA Y SALE",
+     "se anota siempre"
+    ],
+    [
+     "SE TRANSFORMA",
+     "no se crea"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

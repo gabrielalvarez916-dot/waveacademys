@@ -166,6 +166,48 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Diálogo con el médico",
+   "texto": "Doctor: What's the matter?",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Diálogo con el médico*.",
+    "Doctor: What's the matter?"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CONTAR UN SÍNTOMA",
+   "items": [
+    {
+     "txt": "Es he: se usa has.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El síntoma lleva a: a stomachache.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: He has a stomachache.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Decí que a tu hermano le duele la panza.",
+    "Es he: se usa has.",
+    "El síntoma lleva a: a stomachache.",
+    "Resultado: He has a stomachache."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "I have, you have, pero he has, she has.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: I have, you have, pero he has, she has."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

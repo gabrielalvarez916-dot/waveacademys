@@ -103,6 +103,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "ELEGIR",
+   "items": [
+    {
+     "txt": "Soporte firme: un cartón grueso.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Materiales con volumen: tapitas y telas.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Pegamento fuerte.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Una capa de pintura para unir los colores.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Querés hacer una obra con mucho relieve. ¿Qué elegís?",
+    "Soporte firme: un cartón grueso.",
+    "Materiales con volumen: tapitas y telas.",
+    "Pegamento fuerte.",
+    "Una capa de pintura para unir los colores."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Pensá primero en el soporte y después en los materiales: se eligen juntos.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Pensá primero en el soporte y después en los materiales: se eligen juntos."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El soporte es…",
    "opciones": [

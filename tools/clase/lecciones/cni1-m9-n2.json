@@ -100,6 +100,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "Las abejas polinizan.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sin polinizadores, muchas plantas dan menos frutos.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Hay menos cultivos.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué la pérdida de abejas afecta los cultivos?",
+    "Las abejas polinizan.",
+    "Sin polinizadores, muchas plantas dan menos frutos.",
+    "Hay menos cultivos."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Cada especie que se pierde puede arrastrar a otras.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Cada especie que se pierde puede arrastrar a otras."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Cuando muere el último individuo de una especie, esta se…",
    "opciones": [

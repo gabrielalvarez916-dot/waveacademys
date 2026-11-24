@@ -1,1 +1,225 @@
-{"slug": "tec1-m1-n3", "step_id": "b0b825d5-cc19-4f7a-86be-27d19597fc71", "materia": "Tecnología I", "titulo": "Vistas, cortes y perspectivas", "sub": "Tecnología I · Misión 1 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Qué vista se mira desde arriba?", "segundos": 6, "respuesta": "Superior", "emoji": "👁️", "titulo": "VISTAS Y CORTES", "sub": "representar una pieza", "voz": ["Desafío: ¿qué vista se mira desde arriba? Seis segundos.", "La superior.", "Hoy: *vistas, cortes y perspectivas*."]}, {"t": "vistas", "titulo": "UNA PIEZA Y SUS VISTAS", "cubos": [[0, 0, 0], [0, 1, 0], [1, 0, 0], [1, 1, 0], [2, 0, 0], [2, 1, 0], [0, 0, 1], [0, 1, 1]], "voz": ["Esta es la pieza en perspectiva.", "Así se ve de *frente*.", "Así se ve desde *arriba*.", "Y así de *costado*."]}, {"t": "tabla", "titulo": "QUÉ MUESTRA CADA VISTA", "columnas": ["Vista", "Medidas"], "filas": [["Frente", "Ancho y alto"], ["Superior", "Ancho y profundidad"], ["Lateral", "Profundidad y alto"]], "voz": ["Cada vista muestra solo dos medidas.", "El *frente*: ancho y alto.", "La *superior*: ancho y profundidad.", "La *lateral*: profundidad y alto."]}, {"t": "comparar", "a": {"cab": "PERSPECTIVA", "texto": "Una imagen con volumen", "emoji": "🧊"}, "b": {"cab": "VISTA", "texto": "Un solo lado, medible", "emoji": "📐"}, "signo": "vs", "voz": ["Dos formas de dibujar.", "La *perspectiva* da una idea general.", "La *vista* muestra un lado y permite medir."]}, {"t": "definicion", "palabra": "Corte", "texto": "Plano imaginario que muestra el interior", "emoji": "🔪", "voz": ["Un *corte* es un plano imaginario.", "Muestra cómo es la pieza por dentro."]}, {"t": "pregunta", "pregunta": "¿Qué vista muestra el ancho y la profundidad?", "opciones": ["Superior", "Frente", "Lateral"], "correcta": 0, "voz": ["Te toca: ancho y profundidad.", "¿Superior, frente o lateral?", "La *superior*."]}, {"t": "resumen", "voz": ["Repasemos.", "La *perspectiva* muestra el volumen.", "Hay tres vistas: *frente*, *superior* y *lateral*.", "Cada una muestra dos medidas.", "Y el *corte* muestra el interior.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["PERSPECTIVA", "volumen"], ["VISTAS", "tres, dos medidas cada una"], ["CORTE", "el interior"], ["COMBINAR", "imaginar la pieza"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m1-n3",
+ "step_id": "b0b825d5-cc19-4f7a-86be-27d19597fc71",
+ "materia": "Tecnología I",
+ "titulo": "Vistas, cortes y perspectivas",
+ "sub": "Tecnología I · Misión 1 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué vista se mira desde arriba?",
+   "segundos": 6,
+   "respuesta": "Superior",
+   "emoji": "👁️",
+   "titulo": "VISTAS Y CORTES",
+   "sub": "representar una pieza",
+   "voz": [
+    "Desafío: ¿qué vista se mira desde arriba? Seis segundos.",
+    "La superior.",
+    "Hoy: *vistas, cortes y perspectivas*."
+   ]
+  },
+  {
+   "t": "vistas",
+   "titulo": "UNA PIEZA Y SUS VISTAS",
+   "cubos": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "voz": [
+    "Esta es la pieza en perspectiva.",
+    "Así se ve de *frente*.",
+    "Así se ve desde *arriba*.",
+    "Y así de *costado*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ MUESTRA CADA VISTA",
+   "columnas": [
+    "Vista",
+    "Medidas"
+   ],
+   "filas": [
+    [
+     "Frente",
+     "Ancho y alto"
+    ],
+    [
+     "Superior",
+     "Ancho y profundidad"
+    ],
+    [
+     "Lateral",
+     "Profundidad y alto"
+    ]
+   ],
+   "voz": [
+    "Cada vista muestra solo dos medidas.",
+    "El *frente*: ancho y alto.",
+    "La *superior*: ancho y profundidad.",
+    "La *lateral*: profundidad y alto."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "PERSPECTIVA",
+    "texto": "Una imagen con volumen",
+    "emoji": "🧊"
+   },
+   "b": {
+    "cab": "VISTA",
+    "texto": "Un solo lado, medible",
+    "emoji": "📐"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de dibujar.",
+    "La *perspectiva* da una idea general.",
+    "La *vista* muestra un lado y permite medir."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Corte",
+   "texto": "Plano imaginario que muestra el interior",
+   "emoji": "🔪",
+   "voz": [
+    "Un *corte* es un plano imaginario.",
+    "Muestra cómo es la pieza por dentro."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ELEGIR LA VISTA",
+   "items": [
+    {
+     "txt": "Profundidad se ve en la vista superior y en la lateral.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "La vista de frente no muestra profundidad.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Se usa la vista superior o la lateral.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Querés mostrar cuánta profundidad tiene un estante. ¿Qué vista usás?",
+    "Profundidad se ve en la vista superior y en la lateral.",
+    "La vista de frente no muestra profundidad.",
+    "Se usa la vista superior o la lateral."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Cada vista muestra solo dos dimensiones: anotá cuáles antes de dibujar.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Cada vista muestra solo dos dimensiones: anotá cuáles antes de dibujar."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Confundir perspectiva con vista",
+     "bien": "Lo correcto: Lateral"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Confundir perspectiva con vista. Lo correcto: Lateral."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué vista muestra el ancho y la profundidad?",
+   "opciones": [
+    "Superior",
+    "Frente",
+    "Lateral"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ancho y profundidad.",
+    "¿Superior, frente o lateral?",
+    "La *superior*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "La *perspectiva* muestra el volumen.",
+    "Hay tres vistas: *frente*, *superior* y *lateral*.",
+    "Cada una muestra dos medidas.",
+    "Y el *corte* muestra el interior.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PERSPECTIVA",
+     "volumen"
+    ],
+    [
+     "VISTAS",
+     "tres, dos medidas cada una"
+    ],
+    [
+     "CORTE",
+     "el interior"
+    ],
+    [
+     "COMBINAR",
+     "imaginar la pieza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

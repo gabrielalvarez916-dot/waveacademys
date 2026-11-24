@@ -156,6 +156,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "LA TEMPERATURA",
+   "items": [
+    {
+     "txt": "Apreciación del termómetro: 1 °C.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Promedio: (21 + 23 + 22) ÷ 3 = 22.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: 22 ± 1 °C.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "La temperatura real está entre 21 y 23 °C.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un termómetro marca de a 1 °C. Se midió el agua tres veces: 21 °C, 23 °C y 22 °C. Escribí el resultado.",
+    "Apreciación del termómetro: 1 °C.",
+    "Promedio: (21 + 23 + 22) ÷ 3 = 22.",
+    "Resultado: 22 ± 1 °C.",
+    "La temperatura real está entre 21 y 23 °C."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Un resultado completo tiene tres partes: el valor, la incertidumbre y la unidad. Si falta una, está incompleto.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Un resultado completo tiene tres partes: el valor, la incertidumbre y la unidad. Si falta una, está incompleto."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Te toca: ¿qué medición es más confiable?",

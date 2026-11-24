@@ -96,6 +96,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "Los votantes no pueden elegir entre propuestas distintas.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "No hay oposición que controle.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Falta el pluralismo.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué una democracia con un solo partido permitido no es plena?",
+    "Los votantes no pueden elegir entre propuestas distintas.",
+    "No hay oposición que controle.",
+    "Falta el pluralismo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Antes de votar, compará las plataformas de los partidos.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Antes de votar, compará las plataformas de los partidos."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Los partidos que no gobiernan forman la…",
    "opciones": [

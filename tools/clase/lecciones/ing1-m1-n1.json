@@ -1,1 +1,211 @@
-{"slug": "ing1-m1-n1", "step_id": "a52d7498-3b09-4912-9480-b69a61d5d0aa", "materia": "Inglés I", "titulo": "Present simple and continuous: review", "sub": "Inglés I · Misión 1 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Con qué terminación se forma el presente continuo?", "segundos": 6, "respuesta": "-ing", "emoji": "🎬", "titulo": "AHORA O SIEMPRE", "sub": "presente simple y continuo", "voz": ["Desafío: ¿con qué terminación se forma el presente continuo? Seis segundos.", "Terminación *ing*.", "Hoy: *presente simple y continuo*."]}, {"t": "oracion", "titulo": "PRESENTE SIMPLE", "partes": [{"txt": "She", "rol": "sujeto"}, {"txt": "plays", "rol": "verbo"}, {"txt": "tennis", "rol": "complemento"}, {"txt": "every Sunday", "rol": "tiempo"}], "traduccion": "Ella juega al tenis todos los domingos", "voz": ["Primero, *quién*.", "Después, la *acción*, con la *s* de ella.", "Luego, *qué*.", "Y por último, *cuándo*.", "La frase habla de una *rutina*."]}, {"t": "comparar", "a": {"cab": "SIMPLE", "texto": "Rutinas y hábitos", "emoji": "🔁"}, "b": {"cab": "CONTINUO", "texto": "Lo que pasa ahora", "emoji": "⏱️"}, "signo": "vs", "voz": ["Dos tiempos, dos usos.", "El *simple* cuenta rutinas.", "El *continuo* cuenta lo que pasa ahora."]}, {"t": "tarjetas", "titulo": "PALABRAS QUE AVISAN", "items": [{"en": "always", "es": "siempre", "emoji": "🔁"}, {"en": "now", "es": "ahora", "emoji": "⏱️"}, {"en": "every day", "es": "todos los días", "emoji": "📅"}], "voz": ["La primera señal es *always*: siempre.", "La segunda es *now*: ahora.", "Y *every day*: todos los días."]}, {"t": "pregunta", "pregunta": "Look! The dog ___ in the park.", "opciones": ["is running", "runs", "run"], "correcta": 0, "voz": ["Te toca: el perro en el parque.", "¿*Is running*, *runs* o *run*?", "*Is running*: pasa ahora."]}, {"t": "errores", "items": [{"mal": "I am knowing the answer", "bien": "I know the answer"}, {"mal": "She play tennis", "bien": "She plays tennis"}], "voz": ["Errores típicos.", "Usar *ing* con *know*.", "Y olvidar la *s* con ella."]}, {"t": "resumen", "voz": ["Repasemos.", "El *simple* cuenta rutinas.", "El *continuo* cuenta lo de ahora.", "Con *she*, el verbo lleva *s*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["SIMPLE", "rutinas"], ["CONTINUO", "ahora"], ["CON SHE", "verbo con s"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m1-n1",
+ "step_id": "a52d7498-3b09-4912-9480-b69a61d5d0aa",
+ "materia": "Inglés I",
+ "titulo": "Present simple and continuous: review",
+ "sub": "Inglés I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Con qué terminación se forma el presente continuo?",
+   "segundos": 6,
+   "respuesta": "-ing",
+   "emoji": "🎬",
+   "titulo": "AHORA O SIEMPRE",
+   "sub": "presente simple y continuo",
+   "voz": [
+    "Desafío: ¿con qué terminación se forma el presente continuo? Seis segundos.",
+    "Terminación *ing*.",
+    "Hoy: *presente simple y continuo*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "PRESENTE SIMPLE",
+   "partes": [
+    {
+     "txt": "She",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "plays",
+     "rol": "verbo"
+    },
+    {
+     "txt": "tennis",
+     "rol": "complemento"
+    },
+    {
+     "txt": "every Sunday",
+     "rol": "tiempo"
+    }
+   ],
+   "traduccion": "Ella juega al tenis todos los domingos",
+   "voz": [
+    "Primero, *quién*.",
+    "Después, la *acción*, con la *s* de ella.",
+    "Luego, *qué*.",
+    "Y por último, *cuándo*.",
+    "La frase habla de una *rutina*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SIMPLE",
+    "texto": "Rutinas y hábitos",
+    "emoji": "🔁"
+   },
+   "b": {
+    "cab": "CONTINUO",
+    "texto": "Lo que pasa ahora",
+    "emoji": "⏱️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos tiempos, dos usos.",
+    "El *simple* cuenta rutinas.",
+    "El *continuo* cuenta lo que pasa ahora."
+   ]
+  },
+  {
+   "t": "tarjetas",
+   "titulo": "PALABRAS QUE AVISAN",
+   "items": [
+    {
+     "en": "always",
+     "es": "siempre",
+     "emoji": "🔁"
+    },
+    {
+     "en": "now",
+     "es": "ahora",
+     "emoji": "⏱️"
+    },
+    {
+     "en": "every day",
+     "es": "todos los días",
+     "emoji": "📅"
+    }
+   ],
+   "voz": [
+    "La primera señal es *always*: siempre.",
+    "La segunda es *now*: ahora.",
+    "Y *every day*: todos los días."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Presente simple",
+   "texto": "Se usa para hábitos, rutinas y verdades generales.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Presente simple*.",
+    "Se usa para hábitos, rutinas y verdades generales."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Presente continuo",
+   "texto": "Se usa para lo que pasa ahora.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Presente continuo*.",
+    "Se usa para lo que pasa ahora."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ELEGIR EL TIEMPO",
+   "items": [
+    {
+     "txt": "La palabra Look indica que pasa ahora.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se usa el presente continuo: is más -ing.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: is running.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Completá: Look! The dog ___ in the park (run).",
+    "La palabra Look indica que pasa ahora.",
+    "Se usa el presente continuo: is más -ing.",
+    "Resultado: is running."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si dudás, preguntá si es una rutina o si pasa ahora mismo.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si dudás, preguntá si es una rutina o si pasa ahora mismo."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Look! The dog ___ in the park.",
+   "opciones": [
+    "is running",
+    "runs",
+    "run"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: el perro en el parque.",
+    "¿*Is running*, *runs* o *run*?",
+    "*Is running*: pasa ahora."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "I am knowing the answer",
+     "bien": "I know the answer"
+    },
+    {
+     "mal": "She play tennis",
+     "bien": "She plays tennis"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Usar *ing* con *know*.",
+    "Y olvidar la *s* con ella."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "El *simple* cuenta rutinas.",
+    "El *continuo* cuenta lo de ahora.",
+    "Con *she*, el verbo lleva *s*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SIMPLE",
+     "rutinas"
+    ],
+    [
+     "CONTINUO",
+     "ahora"
+    ],
+    [
+     "CON SHE",
+     "verbo con s"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -135,6 +135,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "La respiración quema materia orgánica.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El producto es CO₂.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Vuelve a la atmósfera.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Qué proceso devuelve CO₂ al aire cuando un animal respira?",
+    "La respiración quema materia orgánica.",
+    "El producto es CO₂.",
+    "Vuelve a la atmósfera."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "En los ciclos, los átomos no se crean ni se destruyen: se reorganizan.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: En los ciclos, los átomos no se crean ni se destruyen: se reorganizan."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué proceso devuelve CO₂ al aire cuando respiramos?",
    "opciones": [

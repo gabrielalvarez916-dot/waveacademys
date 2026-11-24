@@ -101,6 +101,55 @@
    "emoji": "⚖️"
   },
   {
+   "t": "definicion",
+   "palabra": "Fracciones equivalentes",
+   "texto": "Dos fracciones son equivalentes si representan la misma cantidad, aunque se escriban distinto: 1/2 = 2/4 = 3/6.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fracciones equivalentes*.",
+    "Dos fracciones son *equivalentes* si representan la *misma cantidad*, aunque se escriban distinto: 1/2 = 2/4 = 3/6."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Amplificar y simplificar",
+   "texto": "Amplificar es multiplicar numerador y denominador por el mismo número.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Amplificar y simplificar*.",
+    "*Amplificar* es multiplicar numerador y denominador por el mismo número."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "36/48",
+   "items": [
+    {
+     "txt": "MCD(36, 48) = 12.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "36 ÷ 12 = 3 y 48 ÷ 12 = 4.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "36/48 = 3/4.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Comprobación cruzada: 36 × 4 = 144 y 48 × 3 = 144.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Simplificá 36/48 hasta la irreducible y comprobá.",
+    "MCD(36, 48) = 12.",
+    "36 ÷ 12 = 3 y 48 ÷ 12 = 4.",
+    "36/48 = 3/4.",
+    "Comprobación cruzada: 36 × 4 = 144 y 48 × 3 = 144."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Trampa: si a 1/2 le sumo 1 arriba y 1 abajo, ¿queda equivalente?",

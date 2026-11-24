@@ -140,6 +140,63 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Codificar",
+   "texto": "Convertir el mensaje en señales según un código.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Codificar*.",
+    "Convertir el mensaje en señales según un código."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Decodificar",
+   "texto": "Recuperar el mensaje a partir de las señales recibidas, con el mismo código.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Decodificar*.",
+    "Recuperar el mensaje a partir de las señales recibidas, con el mismo código."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ORDENAR",
+   "items": [
+    {
+     "txt": "Codificar: pasás las letras a destellos.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Transmitir: los destellos viajan por el aire.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Recibir: tu amigo ve los destellos.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Decodificar: los pasa a letras con la tabla.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Mandás un mensaje en Morse con una linterna. ¿Cuál es el recorrido?",
+    "Codificar: pasás las letras a destellos.",
+    "Transmitir: los destellos viajan por el aire.",
+    "Recibir: tu amigo ve los destellos.",
+    "Decodificar: los pasa a letras con la tabla."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Quien recibe un mensaje tiene que decodificarlo con el mismo código con el que se codificó.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Quien recibe un mensaje tiene que decodificarlo con el mismo código con el que se codificó."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

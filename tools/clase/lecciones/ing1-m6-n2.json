@@ -1,1 +1,193 @@
-{"slug": "ing1-m6-n2", "step_id": "88a52649-a0bb-4ef2-9b94-bd758f3d5000", "materia": "Inglés I", "titulo": "Going to and will: a review", "sub": "Inglés I · Misión 6 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "FUTURO", "titular": "¿Plan o decisión?", "bajada": "Dos formas de hablar del futuro", "emoji": "🔮", "titulo": "GOING TO Y WILL", "sub": "planes y decisiones", "voz": ["Noticia: ¿plan o decisión?", "Dos formas de hablar del futuro.", "Hoy: *going to y will*."]}, {"t": "comparar", "a": {"cab": "GOING TO", "texto": "Planes y pruebas", "emoji": "📋"}, "b": {"cab": "WILL", "texto": "Decisiones del momento", "emoji": "⚡"}, "signo": "vs", "voz": ["Dos formas.", "*Going to* es para planes y pruebas.", "*Will* es para decisiones del momento."]}, {"t": "antesdespues", "antes": {"cab": "PRUEBAS", "emoji": "☁️", "texto": "Look! It's going to rain"}, "despues": {"cab": "DECISIÓN", "emoji": "💧", "texto": "I'm thirsty. I will get water"}, "voz": ["Con pruebas a la vista, *going to*.", "Con una decisión ahora, *will*."]}, {"t": "clasificar", "cajas": [{"cab": "GOING TO", "emoji": "📋"}, {"cab": "WILL", "emoji": "⚡"}], "fichas": [{"txt": "Ya lo decidí", "caja": 0}, {"txt": "Lo decido ahora", "caja": 1}, {"txt": "Veo nubes negras", "caja": 0}, {"txt": "Ofrezco ayuda", "caja": 1}], "voz": ["¿Cuál se usa?", "Lo *ya decidido* y las *pruebas*: going to.", "Lo que *decides ahora* y los *ofrecimientos*: will."]}, {"t": "pregunta", "pregunta": "Veo nubes negras. Se usa…", "opciones": ["going to", "will", "might"], "correcta": 0, "voz": ["Te toca: nubes negras.", "¿*Going to*, *will* o *might*?", "*Going to*: hay pruebas."]}, {"t": "resumen", "voz": ["Repasemos.", "*Going to* es para planes y pruebas.", "*Will* es para decisiones.", "Después de will, *verbo base*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["GOING TO", "planes y pruebas"], ["WILL", "decisiones"], ["CON WILL", "verbo base"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m6-n2",
+ "step_id": "88a52649-a0bb-4ef2-9b94-bd758f3d5000",
+ "materia": "Inglés I",
+ "titulo": "Going to and will: a review",
+ "sub": "Inglés I · Misión 6 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "FUTURO",
+   "titular": "¿Plan o decisión?",
+   "bajada": "Dos formas de hablar del futuro",
+   "emoji": "🔮",
+   "titulo": "GOING TO Y WILL",
+   "sub": "planes y decisiones",
+   "voz": [
+    "Noticia: ¿plan o decisión?",
+    "Dos formas de hablar del futuro.",
+    "Hoy: *going to y will*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "GOING TO",
+    "texto": "Planes y pruebas",
+    "emoji": "📋"
+   },
+   "b": {
+    "cab": "WILL",
+    "texto": "Decisiones del momento",
+    "emoji": "⚡"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas.",
+    "*Going to* es para planes y pruebas.",
+    "*Will* es para decisiones del momento."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "PRUEBAS",
+    "emoji": "☁️",
+    "texto": "Look! It's going to rain"
+   },
+   "despues": {
+    "cab": "DECISIÓN",
+    "emoji": "💧",
+    "texto": "I'm thirsty. I will get water"
+   },
+   "voz": [
+    "Con pruebas a la vista, *going to*.",
+    "Con una decisión ahora, *will*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "GOING TO",
+     "emoji": "📋"
+    },
+    {
+     "cab": "WILL",
+     "emoji": "⚡"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Ya lo decidí",
+     "caja": 0
+    },
+    {
+     "txt": "Lo decido ahora",
+     "caja": 1
+    },
+    {
+     "txt": "Veo nubes negras",
+     "caja": 0
+    },
+    {
+     "txt": "Ofrezco ayuda",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Cuál se usa?",
+    "Lo *ya decidido* y las *pruebas*: going to.",
+    "Lo que *decides ahora* y los *ofrecimientos*: will."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Going to",
+   "texto": "Se usa para planes ya decididos y para predicciones con pruebas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Going to*.",
+    "Se usa para planes ya decididos y para predicciones con pruebas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ELEGIR",
+   "items": [
+    {
+     "txt": "Hay una prueba: las nubes.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Con pruebas se usa going to.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: going.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Completá: Look at those clouds! It is ___ to rain.",
+    "Hay una prueba: las nubes.",
+    "Con pruebas se usa going to.",
+    "Resultado: going."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si ya lo tenías decidido, going to. Si lo decidís recién, will.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si ya lo tenías decidido, going to. Si lo decidís recién, will."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir I'll to help",
+     "bien": "Lo correcto: I'll help you"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Escribir I'll to help. Lo correcto: I'll help you."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Veo nubes negras. Se usa…",
+   "opciones": [
+    "going to",
+    "will",
+    "might"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: nubes negras.",
+    "¿*Going to*, *will* o *might*?",
+    "*Going to*: hay pruebas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Going to* es para planes y pruebas.",
+    "*Will* es para decisiones.",
+    "Después de will, *verbo base*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "GOING TO",
+     "planes y pruebas"
+    ],
+    [
+     "WILL",
+     "decisiones"
+    ],
+    [
+     "CON WILL",
+     "verbo base"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

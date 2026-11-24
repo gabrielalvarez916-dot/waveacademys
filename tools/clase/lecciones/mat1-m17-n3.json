@@ -391,6 +391,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "BISECTRIZ DE 80°",
+   "items": [
+    {
+     "txt": "La bisectriz divide en dos partes iguales.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "80° ÷ 2 = 40°.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Cada ángulo mide 40°.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Verificación: se mide cada parte con el transportador.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Se traza la bisectriz de un ángulo de 80°. ¿Cuánto mide cada parte? ¿Cómo se verifica?",
+    "La bisectriz divide en dos partes iguales.",
+    "80° ÷ 2 = 40°.",
+    "Cada ángulo mide 40°.",
+    "Verificación: se mide cada parte con el transportador."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Entre los arcos de una misma construcción la abertura del compás no se cambia. Si se mueve, la construcción sale mal.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Entre los arcos de una misma construcción la abertura del compás no se cambia. Si se mueve, la construcción sale mal."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Te toca: trazás la bisectriz de un ángulo de 80 grados. ¿Cuánto mide cada parte?",

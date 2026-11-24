@@ -159,6 +159,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "EL PAN Y LA HUMEDAD",
+   "items": [
+    {
+     "txt": "Independiente: la humedad (un pan en lugar húmedo y otro en lugar seco).",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Dependiente: los días que tardan en aparecer los hongos.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Controladas: el mismo tipo de pan, el mismo tamaño y la misma temperatura.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Grupo control: el pan del lugar seco.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Se quiere saber si la humedad influye en la aparición de hongos en el pan. Identificá las variables.",
+    "Independiente: la humedad (un pan en lugar húmedo y otro en lugar seco).",
+    "Dependiente: los días que tardan en aparecer los hongos.",
+    "Controladas: el mismo tipo de pan, el mismo tamaño y la misma temperatura.",
+    "Grupo control: el pan del lugar seco."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "La que cambiás vos es la independiente; la que medís para ver qué pasó es la dependiente. Todo lo demás, igual.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: La que cambiás vos es la independiente; la que medís para ver qué pasó es la dependiente. Todo lo demás, igual."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Trampa: si cambiás la luz *y* el agua al mismo tiempo, ¿podés saber cuál hizo efecto?",

@@ -121,6 +121,50 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Forma",
+   "texto": "Aspecto exterior de algo: su contorno, sin importar qué represente.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Forma*.",
+    "Aspecto exterior de algo: su contorno, sin importar qué represente."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Figura",
+   "texto": "Forma que reconocemos como algo concreto, por ejemplo una casa o un árbol.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Figura*.",
+    "Forma que reconocemos como algo concreto, por ejemplo una casa o un árbol."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "SEPARAR",
+   "items": [
+    {
+     "txt": "La silueta negra es la figura.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El cielo amarillo es el fondo.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El contraste de color hace que la figura se destaque.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: En un afiche hay una silueta negra sobre un cielo amarillo. ¿Qué es la figura y qué es el fondo?",
+    "La silueta negra es la figura.",
+    "El cielo amarillo es el fondo.",
+    "El contraste de color hace que la figura se destaque."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El espacio vacío que rodea a la figura es el espacio…",
    "opciones": [

@@ -104,6 +104,48 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Huso horario",
+   "texto": "Cada una de las 24 franjas de 15° de longitud en las que se divide la Tierra, con la misma hora.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Huso horario*.",
+    "Cada una de las 24 franjas de 15° de longitud en las que se divide la Tierra, con la misma hora."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CALCULAR",
+   "items": [
+    {
+     "txt": "Diferencia de husos: de −3 a +1 hay 4.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Madrid está al este: se suman 4 horas.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "20 + 4 = 24: medianoche, ya del día siguiente.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: En Buenos Aires (UTC −3) son las 20. ¿Qué hora es en Madrid (UTC +1)?",
+    "Diferencia de husos: de −3 a +1 hay 4.",
+    "Madrid está al este: se suman 4 horas.",
+    "20 + 4 = 24: medianoche, ya del día siguiente."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Restá los números de los husos: la diferencia es la cantidad de horas. Al este se suman; al oeste se restan.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Restá los números de los husos: la diferencia es la cantidad de horas. Al este se suman; al oeste se restan."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "En Buenos Aires (UTC −3) son las 10. ¿Qué hora es en Londres (UTC 0)?",
    "opciones": [

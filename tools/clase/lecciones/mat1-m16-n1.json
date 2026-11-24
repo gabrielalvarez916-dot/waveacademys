@@ -190,6 +190,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "LA BALANZA",
+   "items": [
+    {
+     "txt": "Ecuación: 3x + 2 = 14.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sacamos 2 kg de cada platillo: 3x = 12.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Repartimos en 3: x = 4.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Verificación: 3 × 4 + 2 = 14. Cada bolsita pesa 4 kg.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: En un platillo hay 3 bolsitas iguales y una pesa de 2 kg; en el otro, 14 kg. La balanza está en equilibrio. ¿Cuánto pesa cada bolsita?",
+    "Ecuación: 3x + 2 = 14.",
+    "Sacamos 2 kg de cada platillo: 3x = 12.",
+    "Repartimos en 3: x = 4.",
+    "Verificación: 3 × 4 + 2 = 14. Cada bolsita pesa 4 kg."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Reemplazar la solución en la ecuación te asegura que está bien. Lleva un minuto.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Reemplazar la solución en la ecuación te asegura que está bien. Lleva un minuto."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

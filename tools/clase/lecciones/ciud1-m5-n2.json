@@ -106,6 +106,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "El Judicial revisa la norma.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Declara que viola la Constitución.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Así controla al Ejecutivo.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Qué poder controla a quién cuando un juez anula una norma del gobierno?",
+    "El Judicial revisa la norma.",
+    "Declara que viola la Constitución.",
+    "Así controla al Ejecutivo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si un solo poder lo decide todo, no hay control.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si un solo poder lo decide todo, no hay control."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El rechazo del Ejecutivo a una ley es el…",
    "opciones": [

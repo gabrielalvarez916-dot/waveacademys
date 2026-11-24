@@ -115,6 +115,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "USAR LA ESCALA",
+   "items": [
+    {
+     "txt": "1 cm = 50.000 cm = 500 m.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "6 × 500 m = 3000 m.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Distancia real: 3 km.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Escala 1:50.000. Dos puntos están a 6 cm. ¿Distancia real?",
+    "1 cm = 50.000 cm = 500 m.",
+    "6 × 500 m = 3000 m.",
+    "Distancia real: 3 km."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Título, referencias y escala: con esas tres cosas ya sabés qué estás mirando.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Título, referencias y escala: con esas tres cosas ya sabés qué estás mirando."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Escala 1:100.000. Dos ciudades están a 8 cm en el mapa. ¿Distancia real?",
    "opciones": [

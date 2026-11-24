@@ -98,6 +98,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "Al principio es orgulloso y quiere asustar.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Al final está agradecido y descansa.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Cambió: es dinámico.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Sir Simon es dinámico o estático?",
+    "Al principio es orgulloso y quiere asustar.",
+    "Al final está agradecido y descansa.",
+    "Cambió: es dinámico."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para ver el cambio, compará cómo es al principio y cómo es al final.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para ver el cambio, compará cómo es al principio y cómo es al final."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Un personaje que cambia es…",
    "opciones": [

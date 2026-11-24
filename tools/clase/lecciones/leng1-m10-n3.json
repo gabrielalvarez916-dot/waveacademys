@@ -102,6 +102,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "DETECTAR",
+   "items": [
+    {
+     "txt": "El formato pide día primero.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Está escrito año primero.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Corrección: 05/10/2012.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un formulario pide fecha de nacimiento «día/mes/año» y alguien escribió 2012/10/05. ¿Qué falla?",
+    "El formato pide día primero.",
+    "Está escrito año primero.",
+    "Corrección: 05/10/2012."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "El orden es siempre el mismo: leer, completar y revisar.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: El orden es siempre el mismo: leer, completar y revisar."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué se hace antes de entregar un formulario?",
    "opciones": [

@@ -109,6 +109,58 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Compostaje",
+   "texto": "Descomposición de residuos orgánicos con oxígeno y microorganismos, que produce compost, un abono natural.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Compostaje*.",
+    "Descomposición de residuos orgánicos con oxígeno y microorganismos, que produce compost, un abono natural."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Biodigestor",
+   "texto": "Tanque cerrado, sin oxígeno, donde bacterias descomponen residuos orgánicos y producen biogás y abono.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Biodigestor*.",
+    "Tanque cerrado, sin oxígeno, donde bacterias descomponen residuos orgánicos y producen biogás y abono."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "COMPARAR",
+   "items": [
+    {
+     "txt": "Los dos usan microorganismos para descomponer residuos orgánicos.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El compostaje necesita oxígeno; el biodigestor trabaja sin oxígeno.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El compostaje produce abono; el biodigestor, biogás y abono.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿En qué se parecen y en qué se diferencian el compostaje y el biodigestor?",
+    "Los dos usan microorganismos para descomponer residuos orgánicos.",
+    "El compostaje necesita oxígeno; el biodigestor trabaja sin oxígeno.",
+    "El compostaje produce abono; el biodigestor, biogás y abono."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Antes de elegir un tratamiento, preguntate si los microorganismos necesitan oxígeno.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Antes de elegir un tratamiento, preguntate si los microorganismos necesitan oxígeno."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El biodigestor trabaja…",
    "opciones": [

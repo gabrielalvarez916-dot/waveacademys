@@ -1,1 +1,223 @@
-{"slug": "tec1-m5-n3", "step_id": "523a6ec2-529a-4cfa-8298-11a74f2e14a6", "materia": "Tecnología I", "titulo": "Impacto ambiental de cada fuente", "sub": "Tecnología I · Misión 5 · Nivel 3", "escenas": [{"t": "reto", "texto": "¿Cómo se llama el gas que emiten los combustibles fósiles al quemarse?", "segundos": 6, "respuesta": "Dióxido de carbono", "emoji": "🏭", "titulo": "FUENTES DE ENERGÍA", "sub": "impacto ambiental", "voz": ["Desafío: ¿cómo se llama el gas que emiten los fósiles al quemarse? Seis segundos.", "Dióxido de carbono.", "Hoy: *impacto ambiental de cada fuente*."]}, {"t": "clasificar", "cajas": [{"cab": "RENOVABLES", "emoji": "🌞"}, {"cab": "NO RENOVABLES", "emoji": "🛢️"}], "fichas": [{"txt": "Sol", "caja": 0}, {"txt": "Petróleo", "caja": 1}, {"txt": "Viento", "caja": 0}, {"txt": "Carbón", "caja": 1}], "voz": ["¿Renovable o no renovable?", "*Sol* y *viento*: renovables.", "*Petróleo* y *carbón*: no renovables."]}, {"t": "bloques", "titulo": "IMPACTO DE CADA FUENTE", "items": [{"cab": "SOLAR", "txt": "Depende del sol"}, {"cab": "HIDRÁULICA", "txt": "Inunda terrenos"}, {"cab": "GAS", "txt": "Emite CO2"}, {"cab": "NUCLEAR", "txt": "Residuos radiactivos"}], "voz": ["Cuatro fuentes.", "La *solar*: depende del sol.", "La *hidráulica*: inunda terrenos.", "El *gas*: emite dióxido de carbono.", "La *nuclear*: deja residuos radiactivos."]}, {"t": "causas", "causa": {"txt": "Quemar combustibles fósiles", "emoji": "🛢️"}, "items": [{"txt": "Emite dióxido de carbono", "emoji": "☁️"}, {"txt": "Aumenta el efecto invernadero", "emoji": "🌡️"}, {"txt": "Calienta el planeta", "emoji": "🌍"}], "voz": ["Quemar combustibles fósiles.", "Emite *dióxido de carbono*.", "Aumenta el *efecto invernadero*.", "Y *calienta el planeta*."]}, {"t": "pregunta", "pregunta": "Una represa puede tener el impacto de…", "opciones": ["Inundar terrenos", "Emitir mucho gas", "Dejar residuos radiactivos"], "correcta": 0, "voz": ["Te toca: la represa.", "¿Inundar terrenos, emitir gas o dejar residuos radiactivos?", "*Inundar terrenos*."]}, {"t": "errores", "items": [{"mal": "Las renovables no tienen impacto", "bien": "Tienen otros impactos"}, {"mal": "La nuclear emite CO2 al generar", "bien": "Deja residuos radiactivos"}], "voz": ["Errores típicos.", "Creer que las renovables *no tienen impacto*.", "Y que la nuclear *emite CO2*."]}, {"t": "resumen", "voz": ["Repasemos.", "Hay fuentes *renovables* y *no renovables*.", "Los fósiles emiten *dióxido de carbono*.", "Las renovables tienen *otros impactos*.", "Y ninguna fuente es *perfecta*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["RENOVABLES", "sol, viento, agua"], ["FÓSILES", "emiten CO2"], ["NUCLEAR", "residuos radiactivos"], ["COMPARAR", "ventajas e impactos"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m5-n3",
+ "step_id": "523a6ec2-529a-4cfa-8298-11a74f2e14a6",
+ "materia": "Tecnología I",
+ "titulo": "Impacto ambiental de cada fuente",
+ "sub": "Tecnología I · Misión 5 · Nivel 3",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama el gas que emiten los combustibles fósiles al quemarse?",
+   "segundos": 6,
+   "respuesta": "Dióxido de carbono",
+   "emoji": "🏭",
+   "titulo": "FUENTES DE ENERGÍA",
+   "sub": "impacto ambiental",
+   "voz": [
+    "Desafío: ¿cómo se llama el gas que emiten los fósiles al quemarse? Seis segundos.",
+    "Dióxido de carbono.",
+    "Hoy: *impacto ambiental de cada fuente*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "RENOVABLES",
+     "emoji": "🌞"
+    },
+    {
+     "cab": "NO RENOVABLES",
+     "emoji": "🛢️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Sol",
+     "caja": 0
+    },
+    {
+     "txt": "Petróleo",
+     "caja": 1
+    },
+    {
+     "txt": "Viento",
+     "caja": 0
+    },
+    {
+     "txt": "Carbón",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Renovable o no renovable?",
+    "*Sol* y *viento*: renovables.",
+    "*Petróleo* y *carbón*: no renovables."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "IMPACTO DE CADA FUENTE",
+   "items": [
+    {
+     "cab": "SOLAR",
+     "txt": "Depende del sol"
+    },
+    {
+     "cab": "HIDRÁULICA",
+     "txt": "Inunda terrenos"
+    },
+    {
+     "cab": "GAS",
+     "txt": "Emite CO2"
+    },
+    {
+     "cab": "NUCLEAR",
+     "txt": "Residuos radiactivos"
+    }
+   ],
+   "voz": [
+    "Cuatro fuentes.",
+    "La *solar*: depende del sol.",
+    "La *hidráulica*: inunda terrenos.",
+    "El *gas*: emite dióxido de carbono.",
+    "La *nuclear*: deja residuos radiactivos."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Quemar combustibles fósiles",
+    "emoji": "🛢️"
+   },
+   "items": [
+    {
+     "txt": "Emite dióxido de carbono",
+     "emoji": "☁️"
+    },
+    {
+     "txt": "Aumenta el efecto invernadero",
+     "emoji": "🌡️"
+    },
+    {
+     "txt": "Calienta el planeta",
+     "emoji": "🌍"
+    }
+   ],
+   "voz": [
+    "Quemar combustibles fósiles.",
+    "Emite *dióxido de carbono*.",
+    "Aumenta el *efecto invernadero*.",
+    "Y *calienta el planeta*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fuente de energía",
+   "texto": "Recurso del que se obtiene energía para generar electricidad, calor o movimiento.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fuente de energía*.",
+    "Recurso del que se obtiene energía para generar electricidad, calor o movimiento."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "COMPARAR",
+   "items": [
+    {
+     "txt": "El gas, al quemarse, emite dióxido de carbono.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Ese gas aumenta el efecto invernadero.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El viento no se quema ni emite gases al generar.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué una central a gas contribuye más al calentamiento global que un parque eólico?",
+    "El gas, al quemarse, emite dióxido de carbono.",
+    "Ese gas aumenta el efecto invernadero.",
+    "El viento no se quema ni emite gases al generar."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Al evaluar una fuente, anotá siempre una ventaja y un impacto.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Al evaluar una fuente, anotá siempre una ventaja y un impacto."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Una represa puede tener el impacto de…",
+   "opciones": [
+    "Inundar terrenos",
+    "Emitir mucho gas",
+    "Dejar residuos radiactivos"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: la represa.",
+    "¿Inundar terrenos, emitir gas o dejar residuos radiactivos?",
+    "*Inundar terrenos*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Las renovables no tienen impacto",
+     "bien": "Tienen otros impactos"
+    },
+    {
+     "mal": "La nuclear emite CO2 al generar",
+     "bien": "Deja residuos radiactivos"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Creer que las renovables *no tienen impacto*.",
+    "Y que la nuclear *emite CO2*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Hay fuentes *renovables* y *no renovables*.",
+    "Los fósiles emiten *dióxido de carbono*.",
+    "Las renovables tienen *otros impactos*.",
+    "Y ninguna fuente es *perfecta*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "RENOVABLES",
+     "sol, viento, agua"
+    ],
+    [
+     "FÓSILES",
+     "emiten CO2"
+    ],
+    [
+     "NUCLEAR",
+     "residuos radiactivos"
+    ],
+    [
+     "COMPARAR",
+     "ventajas e impactos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

@@ -1,1 +1,207 @@
-{"slug": "tec1-m1-n1", "step_id": "5eb5a210-a324-4a44-a2b9-fbf49426affb", "materia": "Tecnología I", "titulo": "Fases del diseño: del problema a la solución", "sub": "Tecnología I · Misión 1 · Nivel 1", "escenas": [{"t": "reto", "texto": "¿Cómo se llama lo que un producto tiene que cumplir?", "segundos": 6, "respuesta": "Requisito", "emoji": "📐", "titulo": "DISEÑAR", "sub": "del problema a la solución", "voz": ["Desafío: ¿cómo se llama lo que un producto tiene que cumplir? Seis segundos.", "Requisito.", "Hoy: *las fases del diseño*."]}, {"t": "flujo", "titulo": "LAS FASES DEL DISEÑO", "items": [{"txt": "Problema", "emoji": "❓"}, {"txt": "Ideas", "emoji": "💡"}, {"txt": "Elección", "emoji": "✅"}, {"txt": "Prototipo", "emoji": "🛠️"}], "voz": ["Primero, el *problema*.", "Después, las *ideas*.", "Luego, la *elección*.", "Y por último, el *prototipo*."]}, {"t": "comparar", "a": {"cab": "REQUISITO", "texto": "Lo que debe cumplir", "emoji": "✔️"}, "b": {"cab": "RESTRICCIÓN", "texto": "Un límite: costo, tiempo", "emoji": "⛔"}, "signo": "vs", "voz": ["Dos cosas que se anotan antes de dibujar.", "El *requisito* es lo que debe cumplir.", "La *restricción* es un límite."]}, {"t": "ciclo", "titulo": "DISEÑAR ES REPETIR", "items": [{"txt": "Probar", "emoji": "🧪"}, {"txt": "Registrar", "emoji": "📝"}, {"txt": "Mejorar", "emoji": "🔧"}], "voz": ["El diseño no termina al armar.", "*Probar*.", "*Registrar* lo que pasa.", "Y *mejorar*, para volver a probar."]}, {"t": "pregunta", "pregunta": "¿Qué va primero al diseñar?", "opciones": ["El problema", "El prototipo", "La pintura"], "correcta": 0, "voz": ["Te toca: ¿qué va primero?", "¿El problema, el prototipo o la pintura?", "El *problema*."]}, {"t": "errores", "items": [{"mal": "Empezar a construir ya", "bien": "Primero definir el problema"}, {"mal": "Diseñar es dibujar lindo", "bien": "Es resolver un problema"}], "voz": ["Errores típicos.", "*Construir ya*, sin definir el problema.", "Y creer que diseñar es *dibujar lindo*."]}, {"t": "resumen", "voz": ["Repasemos.", "Se parte del *problema*.", "Se anotan *requisitos* y *restricciones*.", "Se eligen ideas y se arma un *prototipo*.", "Y se *ensaya y mejora*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["PROBLEMA", "qué resolver"], ["REQUISITOS", "lo que debe cumplir"], ["PROTOTIPO", "modelo para probar"], ["ENSAYO", "probar y mejorar"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m1-n1",
+ "step_id": "5eb5a210-a324-4a44-a2b9-fbf49426affb",
+ "materia": "Tecnología I",
+ "titulo": "Fases del diseño: del problema a la solución",
+ "sub": "Tecnología I · Misión 1 · Nivel 1",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llama lo que un producto tiene que cumplir?",
+   "segundos": 6,
+   "respuesta": "Requisito",
+   "emoji": "📐",
+   "titulo": "DISEÑAR",
+   "sub": "del problema a la solución",
+   "voz": [
+    "Desafío: ¿cómo se llama lo que un producto tiene que cumplir? Seis segundos.",
+    "Requisito.",
+    "Hoy: *las fases del diseño*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "LAS FASES DEL DISEÑO",
+   "items": [
+    {
+     "txt": "Problema",
+     "emoji": "❓"
+    },
+    {
+     "txt": "Ideas",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Elección",
+     "emoji": "✅"
+    },
+    {
+     "txt": "Prototipo",
+     "emoji": "🛠️"
+    }
+   ],
+   "voz": [
+    "Primero, el *problema*.",
+    "Después, las *ideas*.",
+    "Luego, la *elección*.",
+    "Y por último, el *prototipo*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "REQUISITO",
+    "texto": "Lo que debe cumplir",
+    "emoji": "✔️"
+   },
+   "b": {
+    "cab": "RESTRICCIÓN",
+    "texto": "Un límite: costo, tiempo",
+    "emoji": "⛔"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos cosas que se anotan antes de dibujar.",
+    "El *requisito* es lo que debe cumplir.",
+    "La *restricción* es un límite."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "DISEÑAR ES REPETIR",
+   "items": [
+    {
+     "txt": "Probar",
+     "emoji": "🧪"
+    },
+    {
+     "txt": "Registrar",
+     "emoji": "📝"
+    },
+    {
+     "txt": "Mejorar",
+     "emoji": "🔧"
+    }
+   ],
+   "voz": [
+    "El diseño no termina al armar.",
+    "*Probar*.",
+    "*Registrar* lo que pasa.",
+    "Y *mejorar*, para volver a probar."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Diseño",
+   "texto": "Proceso ordenado para crear un producto o un proceso que resuelva un problema concreto de las personas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Diseño*.",
+    "Proceso ordenado para crear un producto o un proceso que resuelva un problema concreto de las personas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "RECORRER LAS FASES",
+   "items": [
+    {
+     "txt": "Problema: los lápices están desparramados y se pierden.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Requisitos y restricciones: sostener cinco lápices; hacerlo con cartón y gastar poco.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Ideas y elección: se proponen tres formas y se elige la más estable.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Prototipo y ensayo: se arma, se prueba si se vuelca y se corrige la base.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un grupo quiere diseñar un portalápices para el escritorio. ¿Cómo recorre las fases?",
+    "Problema: los lápices están desparramados y se pierden.",
+    "Requisitos y restricciones: sostener cinco lápices; hacerlo con cartón y gastar poco.",
+    "Ideas y elección: se proponen tres formas y se elige la más estable.",
+    "Prototipo y ensayo: se arma, se prueba si se vuelca y se corrige la base."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Antes de dibujar, escribí en una frase qué problema resolvés y para quién.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Antes de dibujar, escribí en una frase qué problema resolvés y para quién."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué va primero al diseñar?",
+   "opciones": [
+    "El problema",
+    "El prototipo",
+    "La pintura"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: ¿qué va primero?",
+    "¿El problema, el prototipo o la pintura?",
+    "El *problema*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Empezar a construir ya",
+     "bien": "Primero definir el problema"
+    },
+    {
+     "mal": "Diseñar es dibujar lindo",
+     "bien": "Es resolver un problema"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "*Construir ya*, sin definir el problema.",
+    "Y creer que diseñar es *dibujar lindo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Se parte del *problema*.",
+    "Se anotan *requisitos* y *restricciones*.",
+    "Se eligen ideas y se arma un *prototipo*.",
+    "Y se *ensaya y mejora*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "PROBLEMA",
+     "qué resolver"
+    ],
+    [
+     "REQUISITOS",
+     "lo que debe cumplir"
+    ],
+    [
+     "PROTOTIPO",
+     "modelo para probar"
+    ],
+    [
+     "ENSAYO",
+     "probar y mejorar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

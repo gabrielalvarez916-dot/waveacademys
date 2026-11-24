@@ -112,6 +112,38 @@
    }
   },
   {
+   "t": "pasos",
+   "titulo": "COMPARAR",
+   "items": [
+    {
+     "txt": "Pastizal: clima templado, pastos, pocos árboles.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Selva: clima cálido y muy lluvioso, árboles muy altos.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Cambia la cantidad de agua y, por eso, la vegetación.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Qué diferencia hay entre pastizal y selva?",
+    "Pastizal: clima templado, pastos, pocos árboles.",
+    "Selva: clima cálido y muy lluvioso, árboles muy altos.",
+    "Cambia la cantidad de agua y, por eso, la vegetación."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Cuanta más agua, más vegetación: la lluvia explica el paisaje.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Cuanta más agua, más vegetación: la lluvia explica el paisaje."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué ambiente tiene arbustos y poca lluvia?",
    "opciones": [

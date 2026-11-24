@@ -105,6 +105,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "Se queda dentro del mismo país: es interna.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se fue por una sequía: causa ambiental.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Va del campo a la ciudad.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Una familia deja su pueblo por una sequía y se muda a la capital de su país. ¿Qué tipo de migración es y por qué causa?",
+    "Se queda dentro del mismo país: es interna.",
+    "Se fue por una sequía: causa ambiental.",
+    "Va del campo a la ciudad."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Un mismo viaje es emigración para el país de salida e inmigración para el de llegada.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Un mismo viaje es emigración para el país de salida e inmigración para el de llegada."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Alguien huye de una guerra. ¿Cómo se llama?",
    "opciones": [

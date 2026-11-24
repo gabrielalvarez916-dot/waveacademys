@@ -108,6 +108,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "LEER",
+   "items": [
+    {
+     "txt": "Cada línea es un verso.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Pausa breve al terminar el primero.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Voz suave: la imagen es tierna.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Leé con pausas: «La luna es un barco de papel / que navega sobre el techo de la noche».",
+    "Cada línea es un verso.",
+    "Pausa breve al terminar el primero.",
+    "Voz suave: la imagen es tierna."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "La primera para entender; la segunda para sentirlo.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: La primera para entender; la segunda para sentirlo."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Cómo se llama cada línea de un poema?",
    "opciones": [

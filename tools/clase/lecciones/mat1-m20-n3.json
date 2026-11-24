@@ -155,6 +155,55 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Aleatorio y determinista",
+   "texto": "Un experimento es aleatorio si no se puede saber el resultado antes de hacerlo (tirar un dado).",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Aleatorio y determinista*.",
+    "Un experimento es *aleatorio* si no se puede saber el resultado antes de hacerlo (tirar un dado)."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Espacio muestral",
+   "texto": "Es el conjunto de todos los resultados posibles de un experimento aleatorio.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Espacio muestral*.",
+    "Es el *conjunto de todos los resultados posibles* de un experimento aleatorio."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DOS MONEDAS",
+   "items": [
+    {
+     "txt": "Primera moneda: cara o ceca. Segunda: cara o ceca.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Resultados: cara-cara, cara-ceca, ceca-cara, ceca-ceca.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Son 4 resultados posibles.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "\"Dos cecas\" sale en uno de ellos: es un suceso posible.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Se tiran dos monedas. Escribí el espacio muestral y clasificá el suceso \"salen dos cecas\".",
+    "Primera moneda: cara o ceca. Segunda: cara o ceca.",
+    "Resultados: cara-cara, cara-ceca, ceca-cara, ceca-ceca.",
+    "Son 4 resultados posibles.",
+    "\"Dos cecas\" sale en uno de ellos: es un suceso posible."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

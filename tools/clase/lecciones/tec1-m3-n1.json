@@ -107,6 +107,58 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Moldeado",
+   "texto": "Operación que da forma a un material blando o caliente, forzándolo a tomar la forma de una matriz o un molde.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Moldeado*.",
+    "Operación que da forma a un material blando o caliente, forzándolo a tomar la forma de una matriz o un molde."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Extrusión",
+   "texto": "El material blando es empujado a presión por una abertura con forma, la matriz, y sale como una pieza continua de esa sección.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Extrusión*.",
+    "El material blando es empujado a presión por una abertura con forma, la matriz, y sale como una pieza continua de esa sección."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ELEGIR LA OPERACIÓN",
+   "items": [
+    {
+     "txt": "Las bandejas son huecas y poco profundas.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se parten de una lámina de plástico.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Se calienta y se aspira sobre un molde: termoformado.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Para fabricar bandejas para pasteles, ¿extrusión o termoformado?",
+    "Las bandejas son huecas y poco profundas.",
+    "Se parten de una lámina de plástico.",
+    "Se calienta y se aspira sobre un molde: termoformado."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si el objeto es largo y parejo, pensá en extrusión; si es hueco y se hizo de una lámina, en termoformado.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si el objeto es largo y parejo, pensá en extrusión; si es hueco y se hizo de una lámina, en termoformado."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Un tubo largo de plástico se hace por…",
    "opciones": [

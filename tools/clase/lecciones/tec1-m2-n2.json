@@ -1,1 +1,237 @@
-{"slug": "tec1-m2-n2", "step_id": "0633af62-8ca7-4972-a936-989a6f4efb9f", "materia": "Tecnología I", "titulo": "Procesos de la industria maderera, textil y alimentaria", "sub": "Tecnología I · Misión 2 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "INDUSTRIA", "titular": "Tres industrias, un mismo esquema", "bajada": "Madera, telas y alimentos", "emoji": "🏭", "titulo": "PROCESOS INDUSTRIALES", "sub": "madera, textil y alimentos", "voz": ["Noticia: tres industrias, un mismo esquema.", "Madera, telas y alimentos.", "Hoy: *procesos industriales*."]}, {"t": "flujo", "titulo": "INDUSTRIA MADERERA", "items": [{"txt": "Aserrar", "emoji": "🪚"}, {"txt": "Secar", "emoji": "☀️"}, {"txt": "Armar", "emoji": "🔨"}, {"txt": "Barnizar", "emoji": "🖌️"}], "voz": ["Se *asierra* la madera.", "Se *seca*.", "Se *arma* la pieza.", "Y se *barniza*."]}, {"t": "flujo", "titulo": "INDUSTRIA TEXTIL", "items": [{"txt": "Hilar", "emoji": "🧵"}, {"txt": "Tejer", "emoji": "🧶"}, {"txt": "Teñir", "emoji": "🎨"}, {"txt": "Confeccionar", "emoji": "👕"}], "voz": ["Primero, el *hilado*.", "Después, el *tejido*.", "Luego, el *teñido*.", "Y por último, la *confección*."]}, {"t": "comparar", "a": {"cab": "SECUENCIA", "texto": "Una después de otra", "emoji": "➡️"}, "b": {"cab": "SIMULTÁNEAS", "texto": "Al mismo tiempo", "emoji": "⏸️"}, "signo": "vs", "voz": ["Dos formas de ordenar operaciones.", "En *secuencia*, una después de otra.", "En *simultáneo*, al mismo tiempo."]}, {"t": "clasificar", "cajas": [{"cab": "MANUAL", "emoji": "✋"}, {"cab": "AUTOMÁTICA", "emoji": "🤖"}], "fichas": [{"txt": "Lijar un detalle", "caja": 0}, {"txt": "Sierra automática", "caja": 1}, {"txt": "Mezcladora", "caja": 1}, {"txt": "Controlar a ojo", "caja": 0}], "voz": ["¿Manual o automática?", "*Lijar un detalle* y *controlar a ojo*: manual.", "*Sierra automática* y *mezcladora*: automática."]}, {"t": "pregunta", "pregunta": "Automatizar una operación, ¿qué hace con la persona?", "opciones": ["Le cambia el rol", "La elimina", "La vuelve máquina"], "correcta": 0, "voz": ["Te toca: automatizar.", "¿Le cambia el rol, la elimina o la vuelve máquina?", "Le *cambia el rol*."]}, {"t": "resumen", "voz": ["Repasemos.", "Cada industria tiene una *secuencia* de operaciones.", "Algunas son *simultáneas*.", "Algunas son *manuales* y otras *automáticas*.", "Y las personas *cambian de rol*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["SECUENCIA", "una tras otra"], ["SIMULTÁNEAS", "a la vez"], ["MANUAL", "la hace una persona"], ["ROLES", "programar y supervisar"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "tec1-m2-n2",
+ "step_id": "0633af62-8ca7-4972-a936-989a6f4efb9f",
+ "materia": "Tecnología I",
+ "titulo": "Procesos de la industria maderera, textil y alimentaria",
+ "sub": "Tecnología I · Misión 2 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "INDUSTRIA",
+   "titular": "Tres industrias, un mismo esquema",
+   "bajada": "Madera, telas y alimentos",
+   "emoji": "🏭",
+   "titulo": "PROCESOS INDUSTRIALES",
+   "sub": "madera, textil y alimentos",
+   "voz": [
+    "Noticia: tres industrias, un mismo esquema.",
+    "Madera, telas y alimentos.",
+    "Hoy: *procesos industriales*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "INDUSTRIA MADERERA",
+   "items": [
+    {
+     "txt": "Aserrar",
+     "emoji": "🪚"
+    },
+    {
+     "txt": "Secar",
+     "emoji": "☀️"
+    },
+    {
+     "txt": "Armar",
+     "emoji": "🔨"
+    },
+    {
+     "txt": "Barnizar",
+     "emoji": "🖌️"
+    }
+   ],
+   "voz": [
+    "Se *asierra* la madera.",
+    "Se *seca*.",
+    "Se *arma* la pieza.",
+    "Y se *barniza*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "INDUSTRIA TEXTIL",
+   "items": [
+    {
+     "txt": "Hilar",
+     "emoji": "🧵"
+    },
+    {
+     "txt": "Tejer",
+     "emoji": "🧶"
+    },
+    {
+     "txt": "Teñir",
+     "emoji": "🎨"
+    },
+    {
+     "txt": "Confeccionar",
+     "emoji": "👕"
+    }
+   ],
+   "voz": [
+    "Primero, el *hilado*.",
+    "Después, el *tejido*.",
+    "Luego, el *teñido*.",
+    "Y por último, la *confección*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SECUENCIA",
+    "texto": "Una después de otra",
+    "emoji": "➡️"
+   },
+   "b": {
+    "cab": "SIMULTÁNEAS",
+    "texto": "Al mismo tiempo",
+    "emoji": "⏸️"
+   },
+   "signo": "vs",
+   "voz": [
+    "Dos formas de ordenar operaciones.",
+    "En *secuencia*, una después de otra.",
+    "En *simultáneo*, al mismo tiempo."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "MANUAL",
+     "emoji": "✋"
+    },
+    {
+     "cab": "AUTOMÁTICA",
+     "emoji": "🤖"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Lijar un detalle",
+     "caja": 0
+    },
+    {
+     "txt": "Sierra automática",
+     "caja": 1
+    },
+    {
+     "txt": "Mezcladora",
+     "caja": 1
+    },
+    {
+     "txt": "Controlar a ojo",
+     "caja": 0
+    }
+   ],
+   "voz": [
+    "¿Manual o automática?",
+    "*Lijar un detalle* y *controlar a ojo*: manual.",
+    "*Sierra automática* y *mezcladora*: automática."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Operación",
+   "texto": "Cada paso del proceso que cambia la materia o la prepara para el siguiente.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Operación*.",
+    "Cada paso del proceso que cambia la materia o la prepara para el siguiente."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "ORDENAR",
+   "items": [
+    {
+     "txt": "El barniz se aplica sobre una superficie lisa.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Primero se lija para alisar.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Después se barniza: es una secuencia necesaria.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: En una carpintería, ¿qué va antes: barnizar o lijar?",
+    "El barniz se aplica sobre una superficie lisa.",
+    "Primero se lija para alisar.",
+    "Después se barniza: es una secuencia necesaria."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para ordenar un proceso, preguntá qué tiene que estar listo antes de cada operación.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para ordenar un proceso, preguntá qué tiene que estar listo antes de cada operación."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Pensar que automatizar elimina a la persona",
+     "bien": "Lo correcto: Supervisa"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Pensar que automatizar elimina a la persona. Lo correcto: Supervisa."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Automatizar una operación, ¿qué hace con la persona?",
+   "opciones": [
+    "Le cambia el rol",
+    "La elimina",
+    "La vuelve máquina"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: automatizar.",
+    "¿Le cambia el rol, la elimina o la vuelve máquina?",
+    "Le *cambia el rol*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Cada industria tiene una *secuencia* de operaciones.",
+    "Algunas son *simultáneas*.",
+    "Algunas son *manuales* y otras *automáticas*.",
+    "Y las personas *cambian de rol*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SECUENCIA",
+     "una tras otra"
+    ],
+    [
+     "SIMULTÁNEAS",
+     "a la vez"
+    ],
+    [
+     "MANUAL",
+     "la hace una persona"
+    ],
+    [
+     "ROLES",
+     "programar y supervisar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

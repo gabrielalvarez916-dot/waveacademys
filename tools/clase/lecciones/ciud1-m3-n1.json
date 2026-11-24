@@ -91,6 +91,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "No busca cargos ni decisiones de gobierno.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Mejora la vida de la comunidad.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Es participación social.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Organizar una campaña de limpieza del barrio: ¿participación social o política?",
+    "No busca cargos ni decisiones de gobierno.",
+    "Mejora la vida de la comunidad.",
+    "Es participación social."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Participar es mucho más que votar.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Participar es mucho más que votar."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Un comedor barrial es participación…",
    "opciones": [

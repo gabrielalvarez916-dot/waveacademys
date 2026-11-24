@@ -151,6 +151,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "¿VIVO O NO?",
+   "items": [
+    {
+     "txt": "Está formada por células.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Si se la riega, germina: crece y se desarrolla.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Puede originar una planta que dé nuevas semillas.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Está viva, en estado de reposo.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Está viva una semilla de poroto seca?",
+    "Está formada por células.",
+    "Si se la riega, germina: crece y se desarrolla.",
+    "Puede originar una planta que dé nuevas semillas.",
+    "Está viva, en estado de reposo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para decidir si algo está vivo, revisá la lista completa: con una sola que falte, no es un ser vivo.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para decidir si algo está vivo, revisá la lista completa: con una sola que falte, no es un ser vivo."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué propiedad muestra una planta que gira sus hojas hacia la ventana?",
    "opciones": [

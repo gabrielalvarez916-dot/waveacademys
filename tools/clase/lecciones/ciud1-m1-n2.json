@@ -98,6 +98,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "Nadie te obliga con una sanción legal.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El grupo lo espera y lo valora.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Es una norma social.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Qué tipo de norma es «ceder el asiento a una persona mayor»?",
+    "Nadie te obliga con una sanción legal.",
+    "El grupo lo espera y lo valora.",
+    "Es una norma social."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si incumplirla trae una sanción del Estado, es una ley.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si incumplirla trae una sanción del Estado, es una ley."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué norma impone el Estado y tiene sanción?",
    "opciones": [

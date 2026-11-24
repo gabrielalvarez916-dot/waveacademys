@@ -243,6 +243,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "ORDENAR",
+   "items": [
+    {
+     "txt": "El ayudante pasa horas en el sótano.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Tiene las rodillas gastadas.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El banco está detrás de la casa.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Conclusión: un túnel al banco.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Ordená la deducción de Holmes.",
+    "El ayudante pasa horas en el sótano.",
+    "Tiene las rodillas gastadas.",
+    "El banco está detrás de la casa.",
+    "Conclusión: un túnel al banco."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para explicar una deducción, uní las pistas con porque y entonces: así se ve la lógica.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para explicar una deducción, uní las pistas con porque y entonces: así se ve la lógica."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

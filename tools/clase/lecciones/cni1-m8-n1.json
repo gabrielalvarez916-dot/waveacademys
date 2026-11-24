@@ -131,6 +131,40 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Eficiencia ecológica",
+   "texto": "Porcentaje de la energía de un nivel que llega al siguiente.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Eficiencia ecológica*.",
+    "Porcentaje de la energía de un nivel que llega al siguiente."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CALCULAR",
+   "items": [
+    {
+     "txt": "Pasa cerca del 10 %.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "10 % de 1.000 = 100.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Llegan unos 100 kJ.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un productor almacena 1.000 kJ. ¿Cuánta energía llega al consumidor primario?",
+    "Pasa cerca del 10 %.",
+    "10 % de 1.000 = 100.",
+    "Llegan unos 100 kJ."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué porcentaje de energía pasa en promedio al siguiente nivel?",
    "opciones": [

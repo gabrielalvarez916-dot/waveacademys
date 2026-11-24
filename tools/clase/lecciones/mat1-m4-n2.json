@@ -160,6 +160,35 @@
    "emoji": "📝"
   },
   {
+   "t": "pasos",
+   "titulo": "2 × {30 − [4 × (6 − 1) + 3]}",
+   "items": [
+    {
+     "txt": "Paréntesis: 6 − 1 = 5.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Corchete: 4 × 5 + 3 = 20 + 3 = 23.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Llave: 30 − 23 = 7.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Afuera: 2 × 7 = 14.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Resolvé de adentro hacia afuera.",
+    "Paréntesis: 6 − 1 = 5.",
+    "Corchete: 4 × 5 + 3 = 20 + 3 = 23.",
+    "Llave: 30 − 23 = 7.",
+    "Afuera: 2 × 7 = 14."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

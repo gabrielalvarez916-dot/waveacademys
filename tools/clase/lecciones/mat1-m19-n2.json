@@ -795,6 +795,50 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Área",
+   "texto": "El área es la superficie que ocupa una figura.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Área*.",
+    "El *área* es la *superficie* que ocupa una figura."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fórmulas",
+   "texto": "Paralelogramo: base × altura (si se recorta un triángulo de un costado y se pasa al otro, queda un rectángulo).",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fórmulas*.",
+    "*Paralelogramo:* base × altura (si se recorta un triángulo de un costado y se pasa al otro, queda un rectángulo)."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LA PARED",
+   "items": [
+    {
+     "txt": "Pared: 4 × 2,5 = 10 m².",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Ventana: 1,2 × 1 = 1,2 m².",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Se pinta: 10 − 1,2 = 8,8 m².",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Hay que pintar una pared de 4 m por 2,5 m que tiene una ventana de 1,2 m por 1 m. ¿Cuántos m² se pintan?",
+    "Pared: 4 × 2,5 = 10 m².",
+    "Ventana: 1,2 × 1 = 1,2 m².",
+    "Se pinta: 10 − 1,2 = 8,8 m²."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

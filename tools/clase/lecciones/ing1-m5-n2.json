@@ -127,6 +127,51 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "COMPARAR",
+   "items": [
+    {
+     "txt": "Fast es corto: faster.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se agrega than.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: This phone is faster than that one.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Compará un celular rápido con uno lento.",
+    "Fast es corto: faster.",
+    "Se agrega than.",
+    "Resultado: This phone is faster than that one."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Contá las sílabas: corto lleva -er, largo lleva more.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Contá las sílabas: corto lleva -er, largo lleva more."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir more fast",
+     "bien": "Lo correcto: Faster"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Escribir more fast. Lo correcto: Faster."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

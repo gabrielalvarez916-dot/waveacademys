@@ -127,6 +127,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "EXPLICAR",
+   "items": [
+    {
+     "txt": "Necesita petróleo para el transporte y la industria.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Debe comprarlo afuera.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Si el precio sube, todo se encarece.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué un país sin petróleo puede quedar en problemas si sube su precio?",
+    "Necesita petróleo para el transporte y la industria.",
+    "Debe comprarlo afuera.",
+    "Si el precio sube, todo se encarece."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Preguntate siempre quién lo tiene, quién lo extrae y quién lo consume.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Preguntate siempre quién lo tiene, quién lo extrae y quién lo consume."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué región concentra las mayores reservas de petróleo?",
    "opciones": [

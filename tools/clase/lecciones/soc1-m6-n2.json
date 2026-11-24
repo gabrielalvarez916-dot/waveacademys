@@ -171,6 +171,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "UBICAR LA ESCALA",
+   "items": [
+    {
+     "txt": "Afecta a un lugar chico.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Es un problema local.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Si el gas sale a la atmósfera y se mezcla con el de todo el planeta, ya es global.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: El humo de una fábrica enferma a un barrio. ¿Qué escala es?",
+    "Afecta a un lugar chico.",
+    "Es un problema local.",
+    "Si el gas sale a la atmósfera y se mezcla con el de todo el planeta, ya es global."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para ubicar la escala, preguntate qué territorio abarca el daño: ¿un barrio, una región o el mundo?",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para ubicar la escala, preguntate qué territorio abarca el daño: ¿un barrio, una región o el mundo?"
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

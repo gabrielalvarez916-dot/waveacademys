@@ -137,6 +137,40 @@
    "gana": "der"
   },
   {
+   "t": "definicion",
+   "palabra": "Media aritmética",
+   "texto": "La media (o promedio) se calcula sumando todos los datos y dividiendo por la cantidad de datos.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Media aritmética*.",
+    "La *media* (o promedio) se calcula *sumando todos los datos* y *dividiendo por la cantidad de datos*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LAS ALTURAS",
+   "items": [
+    {
+     "txt": "Suma: 12 + 15 + 12 + 18 + 14 + 13 = 84.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Media: 84 ÷ 6 = 14 cm.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El 12 aparece dos veces y los demás una: la moda es 12 cm.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Alturas de 6 plantas en cm: 12, 15, 12, 18, 14 y 13. Calculá la media y la moda.",
+    "Suma: 12 + 15 + 12 + 18 + 14 + 13 = 84.",
+    "Media: 84 ÷ 6 = 14 cm.",
+    "El 12 aparece dos veces y los demás una: la moda es 12 cm."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Te toca: ¿cuál es la media de 2, 2, 2 y 10?",

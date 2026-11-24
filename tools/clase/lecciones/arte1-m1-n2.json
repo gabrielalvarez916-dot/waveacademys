@@ -145,6 +145,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "ANALIZAR",
+   "items": [
+    {
+     "txt": "La diagonal es una línea: marca dirección y movimiento.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "La casita pequeña funciona como un punto de atención.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El campo que la rodea es un plano que organiza el espacio.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Una imagen tiene un camino diagonal que baja hacia una casita pequeña, rodeada de campo. ¿Qué elementos hay y qué transmiten?",
+    "La diagonal es una línea: marca dirección y movimiento.",
+    "La casita pequeña funciona como un punto de atención.",
+    "El campo que la rodea es un plano que organiza el espacio."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Dibujá cada elemento por separado antes de combinarlos: así se entiende qué aporta cada uno.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Dibujá cada elemento por separado antes de combinarlos: así se entiende qué aporta cada uno."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué transmite la línea diagonal?",
    "opciones": [

@@ -1,1 +1,201 @@
-{"slug": "ing1-m7-n2", "step_id": "5f344ee1-d4e3-4bdb-aa9c-ebcb3779698e", "materia": "Inglés I", "titulo": "Should, shouldn't and had better", "sub": "Inglés I · Misión 7 · Nivel 2", "escenas": [{"t": "noticia", "cinta": "CONSEJOS", "titular": "¿Consejo o advertencia?", "bajada": "Dos formas de aconsejar en inglés", "emoji": "💬", "titulo": "SHOULD Y HAD BETTER", "sub": "consejos y advertencias", "voz": ["Noticia: ¿consejo o advertencia?", "Dos formas de aconsejar.", "Hoy: *should y had better*."]}, {"t": "oracion", "titulo": "UN CONSEJO", "partes": [{"txt": "You", "rol": "sujeto"}, {"txt": "should drink", "rol": "verbo"}, {"txt": "more water", "rol": "complemento"}], "traduccion": "Tendrías que tomar más agua", "voz": ["Primero, *a quién*.", "Después, *should* más el verbo base.", "Luego, *qué*.", "Significa que tendría que tomar más agua."]}, {"t": "comparar", "a": {"cab": "SHOULD", "texto": "Consejo amable", "emoji": "🙂"}, "b": {"cab": "SHOULDN'T", "texto": "Mejor no hacerlo", "emoji": "🙅"}, "signo": "vs", "voz": ["Afirmativo y negativo.", "*Should*: conviene hacerlo.", "*Shouldn't*: conviene no hacerlo."]}, {"t": "definicion", "palabra": "Had better", "texto": "Advertencia fuerte: si no lo hacés, algo malo puede pasar. You'd better see a doctor.", "emoji": "⚠️", "voz": ["*Had better* es más fuerte que should.", "Avisa que hay un *riesgo*."]}, {"t": "clasificar", "cajas": [{"cab": "SHOULD", "emoji": "🙂"}, {"cab": "HAD BETTER", "emoji": "⚠️"}], "fichas": [{"txt": "Comé más fruta", "caja": 0}, {"txt": "Fiebre muy alta", "caja": 1}, {"txt": "Probá yoga", "caja": 0}, {"txt": "Cable pelado", "caja": 1}], "voz": ["¿Cuál conviene?", "Un consejo *sin riesgo*: should.", "Un *riesgo* de verdad: had better."]}, {"t": "pregunta", "pregunta": "You ___ to rest. ¿Qué está mal?", "opciones": ["Sobra el to", "Falta el to", "Está bien"], "correcta": 0, "voz": ["Te toca: should *to* rest.", "¿Sobra, falta o está bien?", "*Sobra el to*: should rest."]}, {"t": "resumen", "voz": ["Repasemos.", "*Should* da un consejo.", "*Shouldn't* aconseja no hacerlo.", "*Had better* avisa un riesgo.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["SHOULD", "consejo"], ["SHOULDN'T", "mejor no"], ["HAD BETTER", "advertencia"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "ing1-m7-n2",
+ "step_id": "5f344ee1-d4e3-4bdb-aa9c-ebcb3779698e",
+ "materia": "Inglés I",
+ "titulo": "Should, shouldn't and had better",
+ "sub": "Inglés I · Misión 7 · Nivel 2",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "CONSEJOS",
+   "titular": "¿Consejo o advertencia?",
+   "bajada": "Dos formas de aconsejar en inglés",
+   "emoji": "💬",
+   "titulo": "SHOULD Y HAD BETTER",
+   "sub": "consejos y advertencias",
+   "voz": [
+    "Noticia: ¿consejo o advertencia?",
+    "Dos formas de aconsejar.",
+    "Hoy: *should y had better*."
+   ]
+  },
+  {
+   "t": "oracion",
+   "titulo": "UN CONSEJO",
+   "partes": [
+    {
+     "txt": "You",
+     "rol": "sujeto"
+    },
+    {
+     "txt": "should drink",
+     "rol": "verbo"
+    },
+    {
+     "txt": "more water",
+     "rol": "complemento"
+    }
+   ],
+   "traduccion": "Tendrías que tomar más agua",
+   "voz": [
+    "Primero, *a quién*.",
+    "Después, *should* más el verbo base.",
+    "Luego, *qué*.",
+    "Significa que tendría que tomar más agua."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SHOULD",
+    "texto": "Consejo amable",
+    "emoji": "🙂"
+   },
+   "b": {
+    "cab": "SHOULDN'T",
+    "texto": "Mejor no hacerlo",
+    "emoji": "🙅"
+   },
+   "signo": "vs",
+   "voz": [
+    "Afirmativo y negativo.",
+    "*Should*: conviene hacerlo.",
+    "*Shouldn't*: conviene no hacerlo."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Had better",
+   "texto": "Advertencia fuerte: si no lo hacés, algo malo puede pasar. You'd better see a doctor.",
+   "emoji": "⚠️",
+   "voz": [
+    "*Had better* es más fuerte que should.",
+    "Avisa que hay un *riesgo*."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "SHOULD",
+     "emoji": "🙂"
+    },
+    {
+     "cab": "HAD BETTER",
+     "emoji": "⚠️"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "Comé más fruta",
+     "caja": 0
+    },
+    {
+     "txt": "Fiebre muy alta",
+     "caja": 1
+    },
+    {
+     "txt": "Probá yoga",
+     "caja": 0
+    },
+    {
+     "txt": "Cable pelado",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "¿Cuál conviene?",
+    "Un consejo *sin riesgo*: should.",
+    "Un *riesgo* de verdad: had better."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DAR UN CONSEJO",
+   "items": [
+    {
+     "txt": "Es un consejo amable: should.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sigue el verbo base: sleep.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Resultado: You should sleep more.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Tu amiga está muy cansada. Aconsejale dormir más.",
+    "Es un consejo amable: should.",
+    "Sigue el verbo base: sleep.",
+    "Resultado: You should sleep more."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Should drink, no should to drink.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Should drink, no should to drink."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir you should to rest",
+     "bien": "Lo correcto: You should rest"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Escribir you should to rest. Lo correcto: You should rest."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "You ___ to rest. ¿Qué está mal?",
+   "opciones": [
+    "Sobra el to",
+    "Falta el to",
+    "Está bien"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Te toca: should *to* rest.",
+    "¿Sobra, falta o está bien?",
+    "*Sobra el to*: should rest."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "*Should* da un consejo.",
+    "*Shouldn't* aconseja no hacerlo.",
+    "*Had better* avisa un riesgo.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "SHOULD",
+     "consejo"
+    ],
+    [
+     "SHOULDN'T",
+     "mejor no"
+    ],
+    [
+     "HAD BETTER",
+     "advertencia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}

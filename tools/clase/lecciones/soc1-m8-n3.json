@@ -164,6 +164,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "UBICAR",
+   "items": [
+    {
+     "txt": "Los bancos y oficinas necesitan mucho movimiento.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Por eso están en el centro.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Es la zona de comercios y administración.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿En qué zona de la ciudad es más probable encontrar edificios de oficinas y bancos?",
+    "Los bancos y oficinas necesitan mucho movimiento.",
+    "Por eso están en el centro.",
+    "Es la zona de comercios y administración."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para clasificar una zona, mirá para qué se usa el suelo: vivir, trabajar, producir o descansar.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para clasificar una zona, mirá para qué se usa el suelo: vivir, trabajar, producir o descansar."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

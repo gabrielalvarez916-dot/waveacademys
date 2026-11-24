@@ -95,6 +95,58 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Señal",
+   "texto": "Lo que viaja de un lugar a otro para llevar un mensaje: luz, sonido, una corriente eléctrica.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Señal*.",
+    "Lo que viaja de un lugar a otro para llevar un mensaje: luz, sonido, una corriente eléctrica."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Código",
+   "texto": "Conjunto de reglas que asocia señales con significados, para que quien envía y quien recibe se entiendan.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Código*.",
+    "Conjunto de reglas que asocia señales con significados, para que quien envía y quien recibe se entiendan."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DESCIFRAR",
+   "items": [
+    {
+     "txt": "Luz corta = punto.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Tres puntos seguidos.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Tres puntos es la letra S.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un faro emite luz corta, luz corta, luz corta. En Morse, ¿qué letra es?",
+    "Luz corta = punto.",
+    "Tres puntos seguidos.",
+    "Tres puntos es la letra S."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Antes de enviar un mensaje, asegurate de que quien lo recibe conozca el código.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Antes de enviar un mensaje, asegurate de que quien lo recibe conozca el código."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué es SOS en Morse?",
    "opciones": [

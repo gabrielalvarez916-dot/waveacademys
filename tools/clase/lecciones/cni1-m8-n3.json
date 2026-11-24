@@ -114,6 +114,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CALCULAR",
+   "items": [
+    {
+     "txt": "PPN = PPB − respiración.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "1.200 − 400 = 800.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "La PPN es de 800 unidades.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Un pastizal produce 1.200 unidades de PPB y las plantas gastan 400 al respirar. ¿Cuánta PPN hay?",
+    "PPN = PPB − respiración.",
+    "1.200 − 400 = 800.",
+    "La PPN es de 800 unidades."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Siempre restá la respiración: la neta es lo que realmente alimenta a otros.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Siempre restá la respiración: la neta es lo que realmente alimenta a otros."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "La PPN se calcula…",
    "opciones": [

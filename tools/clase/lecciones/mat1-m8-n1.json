@@ -227,6 +227,60 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Fracción",
+   "texto": "Una fracción a/b indica que un entero se divide en b partes iguales (el denominador) y se toman a de esas partes (el numerador).",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fracción*.",
+    "Una *fracción* a/b indica que un entero se divide en *b partes iguales* (el *denominador*) y se toman *a* de esas partes (el *numerador*)."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fracción y división",
+   "texto": "La fracción a/b también es la división a ÷ b.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Fracción y división*.",
+    "La fracción a/b también es la división *a ÷ b*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "17/5",
+   "items": [
+    {
+     "txt": "Es impropia: 17 es mayor que 5.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "17 ÷ 5 = 3, resto 2.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "17/5 = 3 2/5.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Son 3 enteros completos y 2 quintos de otro.",
+     "emoji": "4️⃣"
+    },
+    {
+     "txt": "Comprobación: (3 × 5 + 2)/5 = 17/5.",
+     "emoji": "5️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Escribí 17/5 como número mixto y explicá qué significa.",
+    "Es impropia: 17 es mayor que 5.",
+    "17 ÷ 5 = 3, resto 2.",
+    "17/5 = 3 2/5.",
+    "Son 3 enteros completos y 2 quintos de otro.",
+    "Comprobación: (3 × 5 + 2)/5 = 17/5."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

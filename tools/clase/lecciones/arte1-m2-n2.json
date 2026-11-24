@@ -153,6 +153,43 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "SOMBREAR",
+   "items": [
+    {
+     "txt": "Decidir que la luz viene de arriba a la izquierda.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "La zona más clara va arriba a la izquierda.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "La sombra propia va abajo a la derecha.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "La sombra proyectada cae del lado opuesto a la luz.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Vas a sombrear una esfera. ¿Cómo se ubican la luz y las sombras?",
+    "Decidir que la luz viene de arriba a la izquierda.",
+    "La zona más clara va arriba a la izquierda.",
+    "La sombra propia va abajo a la derecha.",
+    "La sombra proyectada cae del lado opuesto a la luz."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Elegí una única fuente de luz y no la cambies durante el dibujo.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Elegí una única fuente de luz y no la cambies durante el dibujo."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "La sombra proyectada cae…",
    "opciones": [

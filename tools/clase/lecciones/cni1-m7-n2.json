@@ -123,6 +123,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "La orquídea gana lugar y luz.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "El árbol no gana ni pierde.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Es comensalismo.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Una orquídea crece sobre un árbol sin dañarlo. ¿Qué relación es?",
+    "La orquídea gana lugar y luz.",
+    "El árbol no gana ni pierde.",
+    "Es comensalismo."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Para clasificar una relación, anotá qué le pasa a cada especie: gana, pierde o nada.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Para clasificar una relación, anotá qué le pasa a cada especie: gana, pierde o nada."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "Si ambos se benefician, la relación es…",
    "opciones": [

@@ -82,6 +82,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "CLASIFICAR",
+   "items": [
+    {
+     "txt": "Habla de un derecho.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Se trata de los derechos y garantías.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Pertenece a esa parte.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: «Todas las personas son iguales ante la ley». ¿A qué parte de la Constitución pertenece?",
+    "Habla de un derecho.",
+    "Se trata de los derechos y garantías.",
+    "Pertenece a esa parte."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si una ley contradice la constitución, la ley pierde.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si una ley contradice la constitución, la ley pierde."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "La norma que está por encima de todas es…",
    "opciones": [

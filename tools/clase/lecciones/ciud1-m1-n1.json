@@ -122,6 +122,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "RELACIONAR",
+   "items": [
+    {
+     "txt": "La plaza es un bien de todos.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Si se rompe o se ensucia, nadie puede disfrutarla bien.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Cuidarla es una responsabilidad compartida.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué una plaza descuidada es un problema de toda la comunidad?",
+    "La plaza es un bien de todos.",
+    "Si se rompe o se ensucia, nadie puede disfrutarla bien.",
+    "Cuidarla es una responsabilidad compartida."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Preguntate siempre: ¿esto es de uno o es de todos?",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Preguntate siempre: ¿esto es de uno o es de todos?"
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "¿Qué es el bien común?",
    "opciones": [

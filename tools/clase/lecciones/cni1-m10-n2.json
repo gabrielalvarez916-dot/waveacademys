@@ -129,6 +129,38 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "EXPLICAR",
+   "items": [
+    {
+     "txt": "El calor aumenta el movimiento de las partículas.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Vencen las fuerzas que las mantenían fijas.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Pasan a deslizarse: líquido.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: ¿Por qué el hielo se derrite al calentarlo?",
+    "El calor aumenta el movimiento de las partículas.",
+    "Vencen las fuerzas que las mantenían fijas.",
+    "Pasan a deslizarse: líquido."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Si el cambio necesita calor, las partículas se separan; si lo libera, se juntan.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Si el cambio necesita calor, las partículas se separan; si lo libera, se juntan."
+   ]
+  },
+  {
    "t": "pregunta",
    "pregunta": "El pasaje directo de sólido a gas es…",
    "opciones": [

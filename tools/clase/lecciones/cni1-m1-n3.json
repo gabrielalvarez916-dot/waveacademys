@@ -221,6 +221,45 @@
    "emoji": "✍️"
   },
   {
+   "t": "definicion",
+   "palabra": "Tabla",
+   "texto": "Ordena las mediciones en columnas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Tabla*.",
+    "Ordena las mediciones en columnas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LA PLANTA",
+   "items": [
+    {
+     "txt": "Columnas: Día y Altura (cm).",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Filas: 1 y 2; 4 y 5; 7 y 8; 10 y 11.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Cada 3 días creció 3 cm.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Creció de forma pareja: el gráfico sería una línea recta que sube.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Una planta midió 2 cm el día 1, 5 cm el día 4, 8 cm el día 7 y 11 cm el día 10. Armá la tabla y describí cómo creció.",
+    "Columnas: Día y Altura (cm).",
+    "Filas: 1 y 2; 4 y 5; 7 y 8; 10 y 11.",
+    "Cada 3 días creció 3 cm.",
+    "Creció de forma pareja: el gráfico sería una línea recta que sube."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Te toca: mirando el gráfico, ¿cuándo se enfrió *más rápido* el té?",

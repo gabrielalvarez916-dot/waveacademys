@@ -136,6 +136,61 @@
    ]
   },
   {
+   "t": "definicion",
+   "palabra": "Pasado simple",
+   "texto": "Cuenta acciones terminadas.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Pasado simple*.",
+    "Cuenta acciones terminadas."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "PREGUNTAR",
+   "items": [
+    {
+     "txt": "Se empieza con la palabra interrogativa: What.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sigue did y el sujeto: did you.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "El verbo queda en base: eat. Resultado: What did you eat?",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Armá la pregunta: you / did / eat / what.",
+    "Se empieza con la palabra interrogativa: What.",
+    "Sigue did y el sujeto: did you.",
+    "El verbo queda en base: eat. Resultado: What did you eat?"
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Cuando aparece did, el verbo no cambia: queda como en el diccionario.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Cuando aparece did, el verbo no cambia: queda como en el diccionario."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir did you went",
+     "bien": "Lo correcto: Did you go to school?"
+    }
+   ],
+   "voz": [
+    "Errores típicos.",
+    "Ojo: Escribir did you went. Lo correcto: Did you go to school?."
+   ]
+  },
+  {
    "t": "resumen",
    "voz": [
     "Repasemos.",

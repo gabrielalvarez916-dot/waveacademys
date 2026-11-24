@@ -113,6 +113,43 @@
    "emoji": "🎲"
   },
   {
+   "t": "pasos",
+   "titulo": "LA CAJA DE CARAMELOS",
+   "items": [
+    {
+     "txt": "Posibles: 5 + 3 + 2 = 10.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Favorables (menta): 5.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Probabilidad: 5/10 = 1/2.",
+     "emoji": "3️⃣"
+    },
+    {
+     "txt": "Decimal: 0,5. Porcentaje: 50%.",
+     "emoji": "4️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Una caja tiene 5 caramelos de menta, 3 de frutilla y 2 de limón. Se saca uno sin mirar. ¿Qué probabilidad hay de que sea de menta? Escribila de las tres formas.",
+    "Posibles: 5 + 3 + 2 = 10.",
+    "Favorables (menta): 5.",
+    "Probabilidad: 5/10 = 1/2.",
+    "Decimal: 0,5. Porcentaje: 50%."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Primero contá todos los resultados posibles; después, solo los que te sirven. La probabilidad es el segundo número sobre el primero.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Primero contá todos los resultados posibles; después, solo los que te sirven. La probabilidad es el segundo número sobre el primero."
+   ]
+  },
+  {
    "t": "pregunta",
    "voz": [
     "Trampa: 3 bolitas rojas y 5 blancas. ¿Probabilidad de roja?",
