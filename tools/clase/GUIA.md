@@ -175,3 +175,13 @@ Cada misión tiene su etiqueta en `topics.version` (copia en `tools/versiones.js
   - Cada clase argentina lleva `"alternativa": "<slug de la clase para extranjeros>"`, y esa clase lleva `"alternativa_de": "<slug argentino>"`.
 
 **Controles**: `revisar_contenido.py` avisa antes de subir y `cargar_mision` **no carga** una variante sin partes `"neutro"` ni una alternativa sin `"alternativa"`.
+
+
+## Modelo de calidad para Avanzado (obligatorio)
+El modelo son las 4 clases de Lengua II, Misión 1 (`tools/clase/lecciones/leng2-m1-n1..n4.json`, contenido/lengua-2/mision-1.py). Cada clase de Avanzado se arma contra ese ejemplo, no de memoria:
+- 10 escenas como mínimo, con al menos 8 plantillas distintas (no el mismo molde en todas).
+- Al menos 5 escenas que enseñan (definición, pasos, errores, resumen, tabla, comparar, línea, flujo, causas, texto, corrige, matriz, escala o noticia).
+- Un ejemplo resuelto paso a paso y un error típico explicado.
+- Al menos 280 palabras de voz.
+- «dato» solo para cifras reales.
+- Armar de a una misión por vez: al armar muchas juntas la clase se acorta. El control de calidad corta la carga si no se cumple.
