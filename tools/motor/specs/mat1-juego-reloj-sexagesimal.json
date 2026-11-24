@@ -1,0 +1,108 @@
+{
+ "etiqueta": "Matemática I · Sistema sexagesimal",
+ "titulo": "El reloj sexagesimal",
+ "historia": "El tiempo y los ángulos se miden de 60 en 60. Convertí horas, minutos y segundos.",
+ "boton": "Empezar ➜",
+ "cierre": {
+  "alto": "¡Excelente! Dominás el tema.",
+  "medio": "¡Muy bien! Repasá el tema en el PDF y volvé a jugar.",
+  "bajo": "Buen intento. Volvé al PDF de la lección y probá de nuevo."
+ },
+ "desafios": [
+  {
+   "ico": "⏱️",
+   "nom": "El reloj sexagesimal",
+   "sub": "Horas, minutos, segundos y grados",
+   "como": "Convertí entre horas, minutos y segundos. Recordá que cada unidad se divide en 60 partes.",
+   "pasos": [
+    {
+     "t": "numero",
+     "q": "El tren sale en <b>3 horas</b>. ¿Cuántos <b>minutos</b> faltan?",
+     "sol": "180",
+     "aceptadas": [],
+     "pista": "1 hora tiene 60 minutos: multiplicá por 60.",
+     "exp": "3 × 60 = 180 minutos."
+    },
+    {
+     "t": "numero",
+     "q": "La canción dura <b>5 minutos</b>. ¿Cuántos <b>segundos</b> son?",
+     "sol": "300",
+     "aceptadas": [],
+     "pista": "1 minuto tiene 60 segundos: multiplicá por 60.",
+     "exp": "5 × 60 = 300 segundos."
+    },
+    {
+     "t": "op",
+     "q": "Una película dura <b>2 h 15 min</b>. ¿Cuántos minutos son en total?",
+     "ops": [
+      "135 minutos",
+      "215 minutos",
+      "275 minutos",
+      "125 minutos"
+     ],
+     "ok": 0,
+     "pista": "Pasá las horas a minutos y sumá los minutos que sobran.",
+     "exp": "2 h = 120 min, y 120 + 15 = 135 minutos."
+    },
+    {
+     "t": "numero",
+     "q": "El cronómetro marca <b>420 segundos</b>. ¿Cuántos <b>minutos</b> son?",
+     "sol": "7",
+     "aceptadas": [],
+     "pista": "Para pasar de segundos a minutos se divide por 60.",
+     "exp": "420 ÷ 60 = 7 minutos."
+    },
+    {
+     "t": "op",
+     "q": "Salís a las 10 y ya pasaron <b>1 h 45 min</b>. Esperás <b>35 min</b> más. ¿Cuánto tiempo pasó en total?",
+     "ops": [
+      "2 h 20 min",
+      "2 h 10 min",
+      "3 h 20 min",
+      "2 h 30 min"
+     ],
+     "ok": 0,
+     "pista": "Sumá los minutos: 45 + 35. Si llegás a 60 o más, pasá una hora.",
+     "exp": "45 + 35 = 80 minutos, que son 1 hora y 20 minutos. Entonces 1 h + 1 h 20 min = 2 h 20 min."
+    },
+    {
+     "t": "completar",
+     "q": "Completá con lo que corresponde al sistema sexagesimal.",
+     "texto": "1 hora tiene ___ minutos y 1 minuto tiene ___ segundos.",
+     "banco": [
+      "60",
+      "100",
+      "60",
+      "3.600"
+     ],
+     "sol": [
+      "60",
+      "60"
+     ],
+     "pista": "Se llama sexagesimal porque se cuenta de 60 en 60.",
+     "exp": "1 hora = 60 minutos y 1 minuto = 60 segundos."
+    },
+    {
+     "t": "numero",
+     "q": "¿Cuántos <b>segundos</b> tiene <b>1 hora</b>?",
+     "sol": "3600",
+     "aceptadas": [
+      "3.600"
+     ],
+     "pista": "1 hora son 60 minutos y cada minuto son 60 segundos.",
+     "exp": "60 × 60 = 3.600 segundos."
+    },
+    {
+     "t": "numero",
+     "q": "Un ángulo mide <b>2 grados</b>. ¿Cuántos <b>minutos de ángulo</b> son? (1° = 60′)",
+     "sol": "120",
+     "aceptadas": [],
+     "pista": "Los grados también se dividen de 60 en 60.",
+     "exp": "2 × 60 = 120 minutos de ángulo."
+    }
+   ]
+  }
+ ],
+ "ancho": true,
+ "continuo": true
+}

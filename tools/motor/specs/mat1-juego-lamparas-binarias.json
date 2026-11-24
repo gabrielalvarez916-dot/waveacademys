@@ -1,0 +1,79 @@
+{
+ "etiqueta": "Matemática I · Sistema binario",
+ "titulo": "Las lámparas binarias",
+ "historia": "En el sistema binario solo hay dos cifras, 0 y 1. Una lámpara apagada es 0 y una prendida es 1.",
+ "boton": "Empezar ➜",
+ "cierre": {
+  "alto": "¡Excelente! Dominás el tema.",
+  "medio": "¡Muy bien! Repasá el tema en el PDF y volvé a jugar.",
+  "bajo": "Buen intento. Volvé al PDF de la lección y probá de nuevo."
+ },
+ "desafios": [
+  {
+   "ico": "💡",
+   "nom": "Las lámparas binarias",
+   "sub": "Pasar de decimal a binario y de binario a decimal",
+   "como": "Cada lámpara vale el doble que la de su derecha: 16, 8, 4, 2 y 1. Prendé las lámparas que suman el número pedido. En otros ejercicios te damos el número en binario y tenés que decir cuánto vale.",
+   "pasos": [
+    {
+     "t": "lamparas",
+     "n": 5,
+     "bits": 4,
+     "q": "Prendé las lámparas que suman <b>5</b>. Cada lámpara vale el doble que la de su derecha."
+    },
+    {
+     "t": "numero",
+     "q": "El tablero muestra el número binario <b>1010</b>. ¿Qué número es en decimal?",
+     "sol": "10",
+     "aceptadas": [],
+     "pista": "Sumá el valor de cada lugar donde hay un 1: de derecha a izquierda valen 1, 2, 4, 8, 16.",
+     "exp": "Los 1 están en los lugares del 8 y del 2: 8 + 2 = 10."
+    },
+    {
+     "t": "lamparas",
+     "n": 12,
+     "bits": 4,
+     "q": "Prendé las lámparas que suman <b>12</b>. Cada lámpara vale el doble que la de su derecha."
+    },
+    {
+     "t": "numero",
+     "q": "El tablero muestra el número binario <b>11001</b>. ¿Qué número es en decimal?",
+     "sol": "25",
+     "aceptadas": [],
+     "pista": "Sumá el valor de cada lugar donde hay un 1: de derecha a izquierda valen 1, 2, 4, 8, 16.",
+     "exp": "Los 1 están en los lugares del 16, del 8 y del 1: 16 + 8 + 1 = 25."
+    },
+    {
+     "t": "lamparas",
+     "n": 19,
+     "bits": 5,
+     "q": "Prendé las lámparas que suman <b>19</b>. Cada lámpara vale el doble que la de su derecha."
+    },
+    {
+     "t": "numero",
+     "q": "El tablero muestra el número binario <b>10111</b>. ¿Qué número es en decimal?",
+     "sol": "23",
+     "aceptadas": [],
+     "pista": "Sumá el valor de cada lugar donde hay un 1: de derecha a izquierda valen 1, 2, 4, 8, 16.",
+     "exp": "Los 1 están en los lugares del 16, 4, 2 y 1: 16 + 4 + 2 + 1 = 23."
+    },
+    {
+     "t": "lamparas",
+     "n": 30,
+     "bits": 5,
+     "q": "Prendé las lámparas que suman <b>30</b>. Cada lámpara vale el doble que la de su derecha."
+    },
+    {
+     "t": "numero",
+     "q": "El tablero muestra el número binario <b>11111</b>. ¿Qué número es en decimal?",
+     "sol": "31",
+     "aceptadas": [],
+     "pista": "Sumá el valor de cada lugar donde hay un 1: de derecha a izquierda valen 1, 2, 4, 8, 16.",
+     "exp": "Todas las lámparas prendidas: 16 + 8 + 4 + 2 + 1 = 31."
+    }
+   ]
+  }
+ ],
+ "ancho": true,
+ "continuo": true
+}

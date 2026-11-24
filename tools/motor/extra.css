@@ -110,3 +110,17 @@ body.ancho .lug b{font-size:clamp(.85rem,2.4vh,1.3rem)}
 body.ancho .pagare{max-width:900px;padding:2.4vh 3vw}
 
 .saltar{position:absolute;top:10px;right:10px;z-index:30;appearance:none;border:1px dashed var(--sol);background:#0008;color:var(--sol);font:inherit;font-weight:800;font-size:.8rem;border-radius:999px;padding:6px 12px;cursor:pointer}
+
+/* lámparas binarias */
+.lampobj{align-self:center;font-size:clamp(2.6rem,12vw,4.2rem);font-weight:900;color:var(--sol);background:var(--card);border:2px solid var(--linea);border-radius:22px;padding:6px 34px;line-height:1.1}
+.lamps{display:flex;justify-content:center;gap:clamp(6px,2vw,18px)}
+.lamp{appearance:none;font:inherit;color:var(--txt);background:var(--card);border:2px solid var(--linea);border-bottom-width:5px;border-radius:18px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px 8px;flex:1;max-width:120px;min-width:0;cursor:pointer}
+.lamp .bulbo{width:clamp(34px,9vw,64px);height:clamp(34px,9vw,64px);border-radius:50%;background:#0a1a1c;border:3px solid var(--linea);transition:all .15s}
+.lamp b{font-size:clamp(1.1rem,4.6vw,1.8rem);font-weight:900}
+.lamp i{font-style:normal;font-size:.8rem;color:var(--suave);font-weight:800}
+.lamp.on{border-color:var(--sol);background:#2b2a14}
+.lamp.on .bulbo{background:radial-gradient(circle at 35% 30%,#fff3c4,var(--sol));border-color:#ffe08a;box-shadow:0 0 22px 4px #f4b63f99}
+.lamp.on i{color:var(--sol)}
+.lamp.mal{border-color:var(--coral)}.lamp.bien{border-color:var(--aqua)}
+body.ancho .lamp .bulbo{width:12vh;height:12vh}
+@media(min-aspect-ratio:1/1){body.ancho .lampobj{font-size:clamp(2.6rem,11vh,5rem)}body.ancho .lamp{padding:2vh 6px 1.4vh}body.ancho .lamp b{font-size:clamp(1.2rem,5vh,2.4rem)}}

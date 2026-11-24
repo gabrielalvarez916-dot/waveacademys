@@ -465,6 +465,37 @@
     dib();
   };
 
+  // lamparas: encender las lámparas cuyo valor suma el número (pasar de decimal a binario). {q, n, bits}
+  T.lamparas = function (A) {
+    var nb = A.bits || 5, vals = [], on = [], err = false, lock = false, ok = false, i;
+    for (i = 0; i < nb; i++) { vals.push(Math.pow(2, nb - 1 - i)); on.push(false); }
+    function suma() { return vals.reduce(function (t, v, k) { return t + (on[k] ? v : 0); }, 0); }
+    function bin(n) { return vals.map(function (v) { var b = n >= v ? 1 : 0; n -= b * v; return b; }); }
+    function expl() {
+      var b = bin(A.n), partes = vals.filter(function (v, k) { return b[k]; });
+      return A.exp || (A.n + ' = ' + partes.join(' + ') + ', así que en binario es ' + b.join('') + '.');
+    }
+    function dib() {
+      var s = suma();
+      var h = cab() + '<h2>' + S(A.q || 'Prendé las lámparas que suman el número') + '</h2><div class="lampobj">' + A.n + '</div><div class="lamps">' +
+        vals.map(function (v, k) {
+          return '<button class="lamp' + (on[k] ? ' on' : '') + (err ? ' mal' : '') + (lock && ok ? ' bien' : '') + '" data-l="' + k + '"' + (lock ? ' disabled' : '') + '><span class="bulbo"></span><b>' + v + '</b><i>' + (on[k] ? 1 : 0) + '</i></button>';
+        }).join('') + '</div><div class="visor"><small>SUMA DE LAS LÁMPARAS PRENDIDAS</small>' + s + '</div>' + botonComprobar(lock, true);
+      pintar(h);
+      on2('[data-l]', function (b) { var k = +b.dataset.l; on[k] = !on[k]; err = false; dib(); });
+      document.getElementById('ok').onclick = function () {
+        veredicto({ pista: A.pista || 'Empezá por la lámpara más grande que entre en el número, y seguí con lo que falta.', exp: expl(), uno: A.uno }, suma() === A.n, {
+          bloquear: function () { lock = true; ok = true; dib(); },
+          marcar: function () { err = true; dib(); },
+          reintento: function () { err = false; dib(); },
+          revelar: function () { on = bin(A.n).map(function (b) { return !!b; }); lock = true; ok = false; err = false; dib(); }
+        });
+      };
+    }
+    function on2(sel, fn) { [].forEach.call(app.querySelectorAll(sel), function (el) { el.onclick = function () { fn(el); }; }); }
+    dib();
+  };
+
   // letras: escribir con letras el número de un pagaré. {q?, num:"4350", pista, exp?}
   var UN = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte','veintiuno','veintidós','veintitrés','veinticuatro','veinticinco','veintiséis','veintisiete','veintiocho','veintinueve'];
   var DE = ['','','','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];

@@ -32,6 +32,7 @@ async function correr(archivo, modo) {
     else if (t === 'completar') { for (const s of A.sol) click(btns('.suelto .chipi').find((x) => limpio(x.textContent) === s && x.style.visibility !== 'hidden')); comprobar(); }
     else if (t === 'numero') { for (const ch of String(A.sol)) click(btns('.teclan .pz').find((b) => b.textContent === ch)); comprobar(); }
     else if (t === 'letras') { const inp = d.getElementById('pgin'); inp.value = w.WaveMotor.enLetras(parseInt(A.num, 10)); comprobar(); }
+    else if (t === 'lamparas') { const nb = A.bits || 5; let n = A.n; for (let k = 0; k < nb; k++) { const v = Math.pow(2, nb - 1 - k); if (n >= v) { n -= v; click(d.querySelector('[data-l="' + k + '"]')); } } comprobar(); }
     else if (t === 'detective') { click(d.querySelector('[data-l="' + A.error + '"]')); comprobar(); }
     else if (t === 'recta') { const r = d.getElementById('rg'); r.value = A.sol; r.dispatchEvent(new w.Event('input', { bubbles: true })); comprobar(); }
     else if (t === 'comparar') { click(d.querySelector('[data-s="' + A.ok + '"]')); comprobar(); }
