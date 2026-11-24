@@ -18,110 +18,93 @@
     {
      "t": "completar",
      "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
-     "texto": "4.529 = 4 M + ___ C + 2 D + ___ U",
+     "texto": "6.327 = 6 M + ___ C + 2 D + ___ U",
      "banco": [
-      "5",
-      "9",
-      "4",
+      "3",
+      "7",
+      "6",
       "2"
      ],
      "sol": [
+      "3",
+      "7"
+     ],
+     "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
+     "exp": "6.327 = 6 M + 3 C + 2 D + 7 U."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el número que falta: <b>___ = 5 M + 1 C + 0 D + 4 U</b>",
+     "sol": "5104",
+     "aceptadas": [
+      "5.104"
+     ],
+     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
+     "exp": "5 M, 1 C, 0 D y 4 U forman 5.104."
+    },
+    {
+     "t": "completar",
+     "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
+     "texto": "3.795 = ___ M + 7 C + 9 D + ___ U",
+     "banco": [
+      "3",
       "5",
+      "7",
       "9"
      ],
-     "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
-     "exp": "4.529 son 4 M, 5 C, 2 D y 9 U."
-    },
-    {
-     "t": "numero",
-     "q": "Escribí el número que falta: <b>___ = 7 M + 3 C + 0 D + 8 U</b>",
-     "sol": "7308",
-     "aceptadas": [
-      "7.308"
-     ],
-     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
-     "exp": "7 M, 3 C, 0 D y 8 U forman 7.308."
-    },
-    {
-     "t": "completar",
-     "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
-     "texto": "8.016 = ___ M + 0 C + ___ D + 6 U",
-     "banco": [
-      "8",
-      "1",
-      "0",
-      "6"
-     ],
      "sol": [
-      "8",
-      "1"
-     ],
-     "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
-     "exp": "8.016 son 8 M, 0 C, 1 D y 6 U."
-    },
-    {
-     "t": "numero",
-     "q": "Escribí el número que falta: <b>___ = 2 M + 9 C + 5 D + 1 U</b>",
-     "sol": "2951",
-     "aceptadas": [
-      "2.951"
-     ],
-     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
-     "exp": "2 M, 9 C, 5 D y 1 U forman 2.951."
-    },
-    {
-     "t": "completar",
-     "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
-     "texto": "3.742 = 3 M + ___ C + ___ D + 2 U",
-     "banco": [
-      "7",
-      "4",
       "3",
-      "2"
-     ],
-     "sol": [
-      "7",
-      "4"
-     ],
-     "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
-     "exp": "3.742 son 3 M, 7 C, 4 D y 2 U."
-    },
-    {
-     "t": "numero",
-     "q": "Escribí el número que falta: <b>___ = 9 M + 0 C + 4 D + 0 U</b>",
-     "sol": "9040",
-     "aceptadas": [
-      "9.040"
-     ],
-     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
-     "exp": "9 M, 0 C, 4 D y 0 U forman 9.040."
-    },
-    {
-     "t": "completar",
-     "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
-     "texto": "6.805 = 6 M + ___ C + 0 D + ___ U",
-     "banco": [
-      "8",
-      "5",
-      "0",
-      "6"
-     ],
-     "sol": [
-      "8",
       "5"
      ],
      "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
-     "exp": "6.805 son 6 M, 8 C, 0 D y 5 U."
+     "exp": "3.795 = 3 M + 7 C + 9 D + 5 U."
+    },
+    {
+     "t": "completar",
+     "q": "Completá lo que falta. M = unidades de mil, C = centenas, D = decenas, U = unidades.",
+     "texto": "4.380 = ___ M + 3 C + ___ D + 0 U",
+     "banco": [
+      "4",
+      "8",
+      "3",
+      "0"
+     ],
+     "sol": [
+      "4",
+      "8"
+     ],
+     "pista": "Cada cifra del número va en su lugar: la primera son los M, después los C, los D y por último los U.",
+     "exp": "4.380 = 4 M + 3 C + 8 D + 0 U."
     },
     {
      "t": "numero",
-     "q": "Escribí el número que falta: <b>___ = 1 M + 6 C + 7 D + 3 U</b>",
-     "sol": "1673",
+     "q": "Escribí el número que falta: <b>___ = 6 M + 3 C + 2 D + 7 U</b>",
+     "sol": "6327",
      "aceptadas": [
-      "1.673"
+      "6.327"
      ],
      "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
-     "exp": "1 M, 6 C, 7 D y 3 U forman 1.673."
+     "exp": "6 M, 3 C, 2 D y 7 U forman 6.327."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el número que falta: <b>___ = 3 M + 7 C + 9 D + 5 U</b>",
+     "sol": "3795",
+     "aceptadas": [
+      "3.795"
+     ],
+     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
+     "exp": "3 M, 7 C, 9 D y 5 U forman 3.795."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el número que falta: <b>___ = 4 M + 3 C + 8 D + 0 U</b>",
+     "sol": "4380",
+     "aceptadas": [
+      "4.380"
+     ],
+     "pista": "Juntá las cifras en orden: primero los M, después los C, los D y los U.",
+     "exp": "4 M, 3 C, 8 D y 0 U forman 4.380."
     }
    ]
   }
