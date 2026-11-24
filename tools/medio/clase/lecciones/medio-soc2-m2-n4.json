@@ -1,0 +1,125 @@
+{
+ "slug": "medio-soc2-m2-n4",
+ "step_id": "8e033fee-b026-4515-980b-48977bab2714",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "El mismo producto en distintos lugares",
+ "sub": "Ciencias Sociales 2 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tío Beto",
+    "emoji": "👨"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Te traje alfajores de mi pueblo! 🍪"
+    },
+    {
+     "yo": true,
+     "txt": "¡Son distintos a los de acá!"
+    }
+   ],
+   "titulo": "EL MISMO PRODUCTO",
+   "sub": "en distintos lugares",
+   "voz": [
+    "El tío escribe: ¡te traje alfajores de mi *pueblo*!",
+    "Lola responde: ¡son *distintos*!",
+    "Hoy: *el mismo producto en distintos lugares*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "ALFAJORES",
+   "celdas": [
+    {
+     "cab": "DE MAICENA 🥥",
+     "txt": "con coco"
+    },
+    {
+     "cab": "DE CHOCOLATE 🍫",
+     "txt": "bañado"
+    },
+    {
+     "cab": "CON MERENGUE ☁️",
+     "txt": "blanco y dulce"
+    }
+   ],
+   "voz": [
+    "Hay alfajores de muchos tipos.",
+    "*De maicena*, con coco.",
+    "*De chocolate*, bañados.",
+    "*Con merengue*, blanco y dulce."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LUGARES",
+   "items": [
+    "PUEBLO",
+    "CIUDAD",
+    "FAMILIA",
+    "FÁBRICA"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá las palabras.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba *fábrica*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "En el pueblo, ¿quién hace los alfajores?",
+   "opciones": [
+    "UNA FAMILIA",
+    "UNA CINTA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿quién los hace en el pueblo?",
+    "Pensá: a mano.",
+    "¡Una *familia*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CADA LUGAR",
+   "texto": "Cada lugar tiene su receta",
+   "emoji": "📍",
+   "voz": [
+    "Truco: cada lugar tiene su *receta*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PUEBLO",
+     "familia y a mano"
+    ],
+    [
+     "CIUDAD",
+     "fábrica y máquinas"
+    ],
+    [
+     "DISTINTOS",
+     "cada uno con su receta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el *pueblo*, una familia, a mano.",
+    "En la *ciudad*, una fábrica.",
+    "Cada lugar tiene su *receta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

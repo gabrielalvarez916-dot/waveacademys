@@ -1,0 +1,129 @@
+{
+ "slug": "medio-soc2-m2-n2",
+ "step_id": "b34afa42-a2b7-4e47-b84e-5016c3b6f568",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Hacer miles de alfajores en una fábrica",
+ "sub": "Ciencias Sociales 2 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "REPORTAJE",
+   "titular": "¡Lola entra a una fábrica de alfajores!",
+   "bajada": "Hacen miles por día",
+   "emoji": "🏭",
+   "titulo": "MILES",
+   "sub": "en una fábrica",
+   "voz": [
+    "¡Noticia: Lola entra a una *fábrica* de alfajores!",
+    "¡Hacen *miles* por día!",
+    "Hoy: *la industria*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "¿CUÁNTOS POR DÍA?",
+   "items": [
+    {
+     "txt": "A MANO",
+     "emoji": "🙌",
+     "valor": 1
+    },
+    {
+     "txt": "TALLER CHICO",
+     "emoji": "🏠",
+     "valor": 4
+    },
+    {
+     "txt": "FÁBRICA",
+     "emoji": "🏭",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "*A mano*: pocos alfajores.",
+    "En un *taller* chico: algunos más.",
+    "En la *fábrica*: ¡miles!"
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "MANO O FÁBRICA",
+   "a": {
+    "txt": "A MANO",
+    "emoji": "🙌",
+    "datos": [
+     "pocos",
+     "distintos"
+    ]
+   },
+   "b": {
+    "txt": "FÁBRICA",
+    "emoji": "🏭",
+    "datos": [
+     "miles",
+     "iguales"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Los dos son trabajo!",
+   "voz": [
+    "Comparamos dos formas de hacer.",
+    "*A mano*: pocos y distintos.",
+    "En la *fábrica*: miles e iguales.",
+    "¡Los dos son *trabajo*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En la fábrica trabajan personas?",
+   "opciones": [
+    "SÍ, MUCHAS",
+    "NO, NINGUNA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿en la fábrica trabajan personas?",
+    "Pensá en las máquinas.",
+    "¡*Sí*! Muchas personas."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ CUÁNTOS",
+   "texto": "Muchos e iguales: industria",
+   "emoji": "🔢",
+   "voz": [
+    "Truco: muchos e iguales, es *industria*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "INDUSTRIA",
+     "fábrica con máquinas"
+    ],
+    [
+     "MILES",
+     "muchos productos"
+    ],
+    [
+     "IGUALES",
+     "todos parecidos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *industria* usa máquinas.",
+    "Hace *miles* de productos.",
+    "Todos *iguales*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

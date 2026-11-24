@@ -1,0 +1,125 @@
+{
+ "slug": "medio-soc2-m2-n1",
+ "step_id": "c2488d48-cfd5-40eb-8fd5-6904e733dd40",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Hacer un alfajor a mano",
+ "sub": "Ciencias Sociales 2 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Lola",
+    "emoji": "👧🎤"
+   },
+   "lugar": "🏠",
+   "lineas": [
+    "Lola visita a Doña Elsa.",
+    "Hace alfajores en su cocina.",
+    "¡Todo a mano!"
+   ],
+   "titulo": "UN ALFAJOR",
+   "sub": "a mano",
+   "voz": [
+    "Lola visita a *Doña Elsa*.",
+    "Hace alfajores en su *cocina*.",
+    "¡Todo a *mano*!",
+    "Hoy: *un alfajor a mano*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏠",
+     "txt": "LA COCINA"
+    },
+    {
+     "emoji": "🙌",
+     "txt": "LAS MANOS DE DOÑA ELSA"
+    },
+    {
+     "emoji": "🍪",
+     "txt": "¡UNA TAPITA DE ALFAJOR!"
+    }
+   ],
+   "voz": [
+    "Miramos la *cocina*.",
+    "Más cerca: las *manos* de Doña Elsa.",
+    "¡Una *tapita* de alfajor!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "LOS PASOS",
+   "pasos": [
+    {
+     "txt": "MASA 🥣",
+     "nota": "amasa"
+    },
+    {
+     "txt": "TAPITAS 🍪",
+     "nota": "corta y hornea"
+    },
+    {
+     "txt": "ALFAJOR 😋",
+     "nota": "¡con dulce de leche!"
+    }
+   ],
+   "voz": [
+    "Primero, la *masa*.",
+    "Después, corta y hornea las *tapitas*.",
+    "¡Le pone *dulce de leche*: un alfajor!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Doña Elsa hace miles de alfajores por día",
+   "emoji": "🍪",
+   "verdadero": false,
+   "explicacion": "A mano se hacen pocos",
+   "voz": [
+    "¿Verdadero o falso? Hace miles por día.",
+    "Pensá: lo hace a mano…",
+    "¡*Falso*! A mano se hacen *pocos*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LAS MANOS",
+   "texto": "Hecho a mano: artesanal",
+   "emoji": "🙌",
+   "voz": [
+    "Truco: si se hace a mano, es *artesanal*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARTESANAL",
+     "hecho a mano"
+    ],
+    [
+     "POCOS",
+     "de a poco"
+    ],
+    [
+     "HERRAMIENTAS",
+     "simples"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Artesanal* es hecho a mano.",
+    "Se hacen *pocos*, de a poco.",
+    "Con *herramientas* simples.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
