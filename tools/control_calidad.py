@@ -260,6 +260,10 @@ def revisar_clases(ruta, M, nivel, err, avi):
         avi.append('clases: no encontré las clases animadas de esta misión para medir su duración (se revisan cuando se suban)'); return
     esc_min, voz_min = CLASE[nivel]
     for p, L in cl:
+        for k, e in enumerate(L.get('escenas') or []):
+            if e.get('t') == 'dato' and (L.get('materia', '').lower().startswith('lengua') or not re.search(r'\d|mill|mil', str(e.get('numero', '')).lower())):
+                err.append(f'clase {L.get("slug")}: la escena {k + 1} usa «dato», que es para cifras y muestra un número grande: en Lengua o sin cifra real usá otra plantilla (consejo, definición…)')
+    for p, L in cl:
         e = L.get('escenas') or []
         voz = sum(len(' '.join(x.get('voz', [])).split()) for x in e if isinstance(x.get('voz'), list))
         if len(e) < esc_min or voz < voz_min:

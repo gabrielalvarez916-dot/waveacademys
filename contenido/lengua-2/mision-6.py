@@ -102,7 +102,7 @@ STEPS={1:"9256654f-f036-4a08-8584-2a8c5ba5e331",2:"1d9dd0e3-ef0b-4f3b-87cf-64105
 TIT={1:"Una autora joven y un desafío",2:"El científico y su criatura",3:"Cartas y relatos enmarcados",4:"Preguntas para la lectura"}
 CLS={1:[
  NOT("UN CLÁSICO NACE","Un verano de lluvia y un desafío","Así empezó una novela famosa","⛈️","FRANKENSTEIN","primera parte",["Noticia: un verano de lluvia y un reto entre amigos.","Así nació una novela famosa.","Hoy: *una autora joven y un desafío*."]),
- DA("1","autora","muy joven","la escritora inglesa que la imaginó","📖",["Un dato clave.","La novela la escribió *una sola autora*, muy joven."]),
+ AD(("LA AUTORA","👩","Muy joven"),("LA OBRA","📖","Un clásico"),["Un dato clave.","La novela la escribió *una sola autora*, muy joven, y se volvió *un clásico*."]),
  LI("CÓMO NACIÓ LA NOVELA",[("Un verano","Amigos encerrados por la lluvia","⛈️"),("El desafío","Inventar cuentos de terror","👻"),("La idea","Un científico que crea vida","⚡")],["Primero, *un verano* de lluvia.","Después, *el desafío* de inventar cuentos de terror.","Y nace *la idea* de un científico que crea vida."]),
  Q("¿Qué género mezcla misterio, miedo y escenarios sombríos?",["Novela gótica","Cuento policial","Poesía"],0,["Te toca.","¿Qué género es?","*La novela gótica*."]),
  RES(["Repasemos.","La novela nació de un *desafío* entre amigos.","La escribió una *autora muy joven*.","Es una *novela gótica*.","¡Clase terminada! Ahora, *a practicar*."],[["AUTORA","muy joven"],["DESAFÍO","cuentos de terror"],["GÓTICA","misterio y miedo"]])],
