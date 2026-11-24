@@ -8,7 +8,7 @@ Para sumar una forma nueva: agregarla a MAPA (si es voseo) o a OK (si no lo es).
 import re
 
 MAPA = {
- 'abandonás': 'abandonas', 'cumplís': 'cumples', 'transformá': 'transforma',
+ 'burlás': 'burlas', 'exagerás': 'exageras', 'abandonás': 'abandonas', 'cumplís': 'cumples', 'transformá': 'transforma',
  'comé': 'come', 'aconsejale': 'aconséjale', 'decila': 'dila', 'dormís': 'duermes', 'aconsejás': 'aconsejas', 'doblá': 'dobla', 'llamás': 'llamas', 'recomendá': 'recomienda', 'pedí': 'pide',
  # imperativos y presentes de voseo -> tuteo
  'abrí': 'abre', 'abrís': 'abres', 'acabás': 'acabas', 'acercás': 'acercas', 'acordate': 'acuérdate', 'acordás': 'acuerdas',
