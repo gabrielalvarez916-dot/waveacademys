@@ -82,10 +82,15 @@
   // dato: {numero: 7000000, antes:'', despues:'', texto, emoji} — 2 pasos: cuenta, explicación
   T.dato = { n: function () { return 2; }, armar: function (g, tl, B, d) {
     var e = d.emoji ? w.pieza(g, 960, 360) : null; if (e) w.emoji(e, 0, 0, d.emoji, 140);
-    var largo = ((d.antes || '') + Math.round(d.numero).toLocaleString('es-AR') + (d.despues || '')).length, n = w.pieza(g, 960, 570), t = w.txt(n, 0, 0, '0', Math.min(190, Math.floor(1500 / (largo * .58))), C.sol, { filter: 'url(#brillo)' });
+    // El número solo "cuenta" si es un entero limpio (12.000 = 12000); si trae símbolos, texto o decimales (97%, 4,5 × 10⁶, A = b · h) se muestra tal cual, sin NaN.
+    var raw = String(d.numero == null ? '' : d.numero).trim(), num = null;
+    if (/^-?\d{1,3}(\.\d{3})+$/.test(raw)) num = +raw.replace(/\./g, ''); else if (/^-?\d+$/.test(raw)) num = +raw;
+    var J = function (x) { var a = d.antes ? (/\s$/.test(d.antes) ? d.antes : d.antes + ' ') : '', z = d.despues ? (/^[\s%°,.:;)]/.test(d.despues) ? d.despues : ' ' + d.despues) : ''; return a + x + z; };
+    var fijo = J(raw);
+    var largo = (num != null ? J(Math.round(num).toLocaleString('es-AR')) : fijo).length, n = w.pieza(g, 960, 570), t = w.txt(n, 0, 0, num != null ? '0' : fijo, Math.min(190, Math.floor(1500 / (largo * .58))), C.sol, { filter: 'url(#brillo)' });
     var tx = w.pieza(g, 960, 820); w.multi(tx, 0, 0, d.texto, 48, C.txt, 1400);
-    var fmt = function (v) { return (d.antes || '') + Math.round(v).toLocaleString('es-AR') + (d.despues || ''); };
-    B(0); if (e) w.IN(tl, e, 0, { scale: 0, y: 0 }); w.IN(tl, n, '<'); w.contador(tl, t, 0, d.numero, '<', 1.4, fmt);
+    var fmt = function (v) { return J(Math.round(v).toLocaleString('es-AR')); };
+    B(0); if (e) w.IN(tl, e, 0, { scale: 0, y: 0 }); w.IN(tl, n, '<'); if (num != null) w.contador(tl, t, 0, num, '<', 1.4, fmt);
     B(1); w.IN(tl, tx, 0);
   } };
 
