@@ -228,11 +228,13 @@
     var p = D.pasos[l.id] || {}, r = [];
     if (p.video && p.video.tiene) r.push('video');
     if (p.pdf && p.pdf.tiene) r.push('pdf');
+    if (pasoapasoDe(l)) r.push('pasoapaso'); // Paso a paso: después del PDF y antes de la carpeta (cambiar el orden acá)
     if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
     return r;
   }
   function hechoK(l, k) {
+    if (k === 'pasoapaso') return papHecho(l);
     var p = D.pasos[l.id] || {};
     if (k === 'carpeta') return !!(p.pdf && D.carpeta[p.pdf.id]);
     return !!(p[k] && hecho(p[k]));
@@ -406,10 +408,10 @@
   }
 
   // Mapa de la misión: todo el recorrido de un vistazo y dónde está parado el alumno
-  var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', carpeta: 'Entregar la carpeta', final: 'Práctica' };
+  var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', pasoapaso: 'Paso a paso', carpeta: 'Entregar la carpeta', final: 'Práctica' };
   // Trayecto Anticipación: el camino en dibujos y el cartel «Ahora / Después» (sin listas de texto)
   function esAnt() { return !!(D && D.adaptaciones && D.adaptaciones.indexOf('ant_mapa') >= 0); }
-  var ANT_ICO = { video: ['🎬', 'Clase', 'Mirar la clase'], pdf: ['📄', 'PDF', 'Leer el PDF'], carpeta: ['📁', 'Carpeta', 'Entregar la carpeta'], interactive: ['🎮', 'Juego', 'Hacer la actividad'], final: ['✏️', 'Práctica', 'Hacer la práctica'], examen: ['🏆', 'Examen', 'Hacer el examen'] };
+  var ANT_ICO = { video: ['🎬', 'Clase', 'Mirar la clase'], pdf: ['📄', 'PDF', 'Leer el PDF'], pasoapaso: ['👣', 'Paso a paso', 'Ver el paso a paso'], carpeta: ['📁', 'Carpeta', 'Entregar la carpeta'], interactive: ['🎮', 'Juego', 'Hacer la actividad'], final: ['✏️', 'Práctica', 'Hacer la práctica'], examen: ['🏆', 'Examen', 'Hacer el examen'] };
   function antPasos(t) {
     var out = [], marcado = false;
     function add(k, hecho, bloq, nivel) {
@@ -511,6 +513,7 @@
   var PASO_UI = {
     video:   { icono: 'play',   color: '#087E83', titulo: 'Mirá la clase', sub: 'Una clase animada que te explica todo el nivel. Después vas a leer el PDF y practicar.', boton: 'VER LA CLASE' },
     pdf:     { icono: 'doc',    color: '#E4572E', titulo: 'Leé el PDF', sub: 'Con la explicación, los ejemplos y las consignas de tu carpeta. Tené la carpeta a mano.', boton: 'ABRIR EL PDF' },
+    pasoapaso: { icono: 'bolt', color: '#0B7A80', titulo: 'Paso a paso', sub: 'Mirá cómo se hace el procedimiento, un paso por vez, y probalo con tu propio número.', boton: 'VER PASO A PASO' },
     carpeta: { icono: 'pencil', color: '#7C5CE0', titulo: 'Entregá tu carpeta', sub: 'Escribí lo que te dio en cada consigna. Las soluciones aparecen cuando entregás todo bien.', boton: 'ENTREGAR RESPUESTAS' },
     final:   { icono: 'puzzle', color: '#E59A1B', titulo: 'Actividades', sub: 'Practicá lo que aprendiste en este nivel.', boton: 'EMPEZAR' }
   };
@@ -653,7 +656,49 @@
   // ---------- Abrir cada recuadro ----------
   function pasoActual(k) { var f = buscarLeccion(hojaAbierta); return f && (D.pasos[f.l.id] || {})[k]; }
 
+  // ---------- Paso a paso (HTML en marco aislado; no usa la base de datos) ----------
+  // Para sumar otro: agregar una fila acá y subir el HTML a /actividades/pasoapaso/
+  var PASOAPASO = [{ materia: '1260de30-041b-4324-b819-2de1a344f189', tema: 0, nivel: 1, items: [
+    ['Descomposición aditiva', '/actividades/pasoapaso/descomposicion-aditiva.html'],
+    ['Descomposición multiplicativa', '/actividades/pasoapaso/descomposicion-multiplicativa.html']] }];
+  function pasoapasoDe(l) {
+    if (!D || !D.materia) return null;
+    var f = buscarLeccion(l.id); if (!f) return null;
+    for (var i = 0; i < PASOAPASO.length; i++) {
+      var c = PASOAPASO[i];
+      if (c.materia === D.materia.id && D.temas.indexOf(f.t) === c.tema && f.n === c.nivel) return c;
+    }
+    return null;
+  }
+  function papKey(l) { return 'wave-pap:' + D.sid + ':' + l.id; }
+  function papHecho(l) { try { return localStorage.getItem(papKey(l)) === '1'; } catch (e) { return false; } }
+  function abrirPasoAPaso() {
+    var f = buscarLeccion(hojaAbierta), c = f && pasoapasoDe(f.l);
+    if (!c) return;
+    var el = document.createElement('div');
+    el.className = 'wvp';
+    el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(f.l.titulo) + ' · Paso a paso</b>' +
+      c.items.map(function (x, i) { return '<button type="button" class="wvp-b" data-pap="' + i + '">' + esc(x[0]) + '</button>'; }).join('') +
+      '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
+      '<div class="mt-marco"><iframe title="Paso a paso" sandbox="allow-scripts"></iframe></div></div>';
+    document.body.appendChild(el);
+    document.body.classList.add('wvp-abierto');
+    var frame = el.querySelector('iframe');
+    async function ver(i) {
+      try { var r = await fetch(c.items[i][1], { cache: 'no-cache' }); if (!r.ok) throw new Error('x'); frame.srcdoc = calmar(await r.text()); }
+      catch (e) { toast('No pudimos abrir el paso a paso. Revisá tu conexión.', true); }
+    }
+    ver(0);
+    try { localStorage.setItem(papKey(f.l), '1'); } catch (e) {}
+    el.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-pap]');
+      if (b) return ver(+b.getAttribute('data-pap'));
+      if (ev.target === el || ev.target.closest('[data-cerrar]')) { document.body.classList.remove('wvp-abierto'); el.remove(); refrescar(); }
+    });
+  }
+
   async function abrirPaso(k) {
+    if (k === 'pasoapaso') return abrirPasoAPaso();
     var f = buscarLeccion(hojaAbierta), paso = pasoActual(k);
     if (!f || !paso) return;
     if (D.prueba && !hecho(paso) && k !== 'complementary' && k !== 'review') marcar(paso, k === 'final' ? 100 : null); // cuenta de prueba: avanza sin completar
