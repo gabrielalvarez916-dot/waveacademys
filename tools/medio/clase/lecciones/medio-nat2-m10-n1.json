@@ -1,0 +1,114 @@
+{
+ "slug": "medio-nat2-m10-n1",
+ "step_id": "2cdf29c4-e6ab-4886-b7d7-e926bd6112fc",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Elijo un tema para mostrar",
+ "sub": "Ciencias Naturales 2 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🏛️",
+   "lineas": [
+    "El grado arma un museo.",
+    "Cada uno muestra un tema.",
+    "¿Cuál elige Tomi?"
+   ],
+   "titulo": "MUSEO",
+   "sub": "de ciencias",
+   "voz": [
+    "El grado arma un *museo*.",
+    "Cada uno muestra un *tema*.",
+    "¿Cuál elegirá Tomi?",
+    "Hoy: *elijo un tema*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "TEMAS DEL AÑO",
+   "items": [
+    "CRECEMOS",
+    "LAS CRÍAS",
+    "EL AGUA",
+    "LOS IMANES"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá los temas que aprendimos.",
+    "Se tapan… ¡y uno desapareció!",
+    "¡Faltaban *los imanes*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué tema elige Tomi?",
+   "opciones": [
+    "LOS IMANES",
+    "LOS PLANETAS",
+    "LOS AUTOS",
+    "LA MÚSICA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Qué tema elige Tomi?",
+    "Le encantan los clips que saltan.",
+    "¡*Los imanes*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué sirve un museo?",
+   "opciones": [
+    "PARA APRENDER",
+    "PARA DORMIR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿para qué sirve un museo?",
+    "Pensá en lo que se muestra.",
+    "¡Para *aprender*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ELEGÍ CON GANAS",
+   "texto": "El tema que más te guste",
+   "emoji": "💡",
+   "voz": [
+    "Truco: elegí el tema que más te *guste*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MUSEO",
+     "mostrar y aprender"
+    ],
+    [
+     "TEMAS",
+     "los del año"
+    ],
+    [
+     "ELEGIR",
+     "el que más te gusta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *museo* es para mostrar y aprender.",
+    "Los *temas* son los del año.",
+    "*Elegimos* el que más nos gusta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

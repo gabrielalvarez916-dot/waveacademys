@@ -1,0 +1,134 @@
+{
+ "slug": "medio-nat2-m10-n2",
+ "step_id": "494d576e-e8a7-4247-b937-8b2e4095adef",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Armo mi puesto del museo",
+ "sub": "Ciencias Naturales 2 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué necesita un buen puesto del museo?",
+   "segundos": 8,
+   "respuesta": "¡Título, dibujo y algo para probar!",
+   "emoji": "🖼️",
+   "titulo": "ARMO",
+   "sub": "mi puesto",
+   "voz": [
+    "Desafío: ¿qué necesita un buen puesto?",
+    "¡Título, dibujo y algo para *probar*!",
+    "Hoy: *armo mi puesto*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🖼️",
+   "titulo": "EL PUESTO DE TOMI",
+   "partes": [
+    {
+     "txt": "TÍTULO",
+     "x": 0,
+     "y": -0.8
+    },
+    {
+     "txt": "DIBUJO",
+     "x": -0.7,
+     "y": 0
+    },
+    {
+     "txt": "OBJETOS",
+     "x": 0.7,
+     "y": 0
+    },
+    {
+     "txt": "PARA PROBAR",
+     "x": 0,
+     "y": 0.8
+    }
+   ],
+   "voz": [
+    "Este es el puesto de Tomi.",
+    "Arriba, el *título*.",
+    "Un *dibujo* del imán.",
+    "Los *objetos*: clips y clavos.",
+    "Y algo *para probar*."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿PARA QUÉ SIRVE?",
+   "pares": [
+    [
+     "TÍTULO",
+     "dice el tema"
+    ],
+    [
+     "DIBUJO",
+     "muestra"
+    ],
+    [
+     "OBJETOS",
+     "se tocan"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada parte con lo que hace.",
+    "El *título* dice el tema.",
+    "El *dibujo* muestra.",
+    "Los *objetos* se tocan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo tiene que ser la letra del cartel?",
+   "opciones": [
+    "GRANDE Y CLARA",
+    "CHIQUITA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo es la letra del cartel?",
+    "Pensá en leer de lejos.",
+    "¡*Grande* y clara!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POCAS PALABRAS",
+   "texto": "Se leen mejor",
+   "emoji": "✏️",
+   "voz": [
+    "Truco: en el cartel, *pocas* palabras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TÍTULO",
+     "arriba y grande"
+    ],
+    [
+     "DIBUJO",
+     "muestra el tema"
+    ],
+    [
+     "PARA PROBAR",
+     "algo para tocar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *título* va arriba y grande.",
+    "El *dibujo* muestra el tema.",
+    "Y algo *para probar*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

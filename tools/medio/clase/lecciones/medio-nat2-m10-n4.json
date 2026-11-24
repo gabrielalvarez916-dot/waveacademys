@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat2-m10-n4",
+ "step_id": "8ebef30b-de45-4ef6-a530-a1cf157fd1bb",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Visitamos el museo",
+ "sub": "Ciencias Naturales 2 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Seño Ana",
+    "emoji": "👩‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Hoy abrimos el museo! 🏛️"
+    },
+    {
+     "yo": true,
+     "txt": "¡Voy a visitar todos los puestos!"
+    }
+   ],
+   "titulo": "VISITAMOS",
+   "sub": "el museo",
+   "voz": [
+    "La seño escribe: ¡hoy abrimos el museo!",
+    "Tomi responde: ¡voy a *visitar* todo!",
+    "Hoy: *visitamos el museo*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL MUSEO",
+   "candados": [
+    {
+     "p": "¿Cómo hablamos en el museo?",
+     "r": "BAJITO"
+    },
+    {
+     "p": "¿Qué hacemos antes de tocar?",
+     "r": "PREGUNTAR"
+    }
+   ],
+   "voz": [
+    "¡Para entrar al museo, abrimos los candados!",
+    "En el museo hablamos *bajito*.",
+    "Antes de tocar, *preguntamos*.",
+    "¡Entramos!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Gritón",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "¿Esperamos el turno para hablar?",
+     "r": "SÍ"
+    },
+    {
+     "p": "¿Qué decimos al irnos?",
+     "r": "¡QUÉ BUEN PUESTO!"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Gritón*!",
+    "No sabe visitar un museo.",
+    "¿Esperamos el turno? ¡*Sí*!",
+    "Al irnos: ¡qué buen puesto! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué hace un buen visitante?",
+   "opciones": [
+    "ESCUCHA Y PREGUNTA",
+    "GRITA Y CORRE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué hace un buen visitante?",
+    "Pensá en el museo.",
+    "¡*Escucha* y pregunta!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "FELICITÁ",
+   "texto": "Decí algo lindo de cada puesto",
+   "emoji": "👏",
+   "voz": [
+    "Truco: *felicitá* a tus compañeros."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MIRO",
+     "con cuidado"
+    ],
+    [
+     "PREGUNTO",
+     "para aprender"
+    ],
+    [
+     "FELICITO",
+     "al irme"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Miro* con cuidado.",
+    "*Pregunto* para aprender.",
+    "*Felicito* al irme. ¡Fuiste un gran científico!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

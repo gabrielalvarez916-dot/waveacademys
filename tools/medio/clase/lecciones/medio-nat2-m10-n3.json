@@ -1,0 +1,131 @@
+{
+ "slug": "medio-nat2-m10-n3",
+ "step_id": "8da11841-4b38-40b3-a50e-c5bc423635b6",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Explico con dibujos y datos",
+ "sub": "Ciencias Naturales 2 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "TOMI",
+     "emoji": "🧑‍🔬"
+    },
+    {
+     "nombre": "VISITANTE",
+     "emoji": "👦"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "¡Hola! Bienvenido a mi puesto."
+    },
+    {
+     "quien": 1,
+     "txt": "¿De qué se trata?"
+    },
+    {
+     "quien": 0,
+     "txt": "Mirá: el imán atrae clips."
+    }
+   ],
+   "voz": [
+    "¡Hola! Bienvenido a mi puesto.",
+    "¿De qué se trata?",
+    "Mirá: el imán atrae *clips*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SIN DIBUJO",
+    "texto": "CUESTA ENTENDER",
+    "emoji": "😕"
+   },
+   "b": {
+    "cab": "CON DIBUJO",
+    "texto": "¡SE ENTIENDE!",
+    "emoji": "😃"
+   },
+   "signo": "→",
+   "voz": [
+    "Comparamos dos formas de explicar.",
+    "*Sin dibujo*: cuesta entender.",
+    "*Con dibujo*: ¡se entiende mejor!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Qué hacemos primero al explicar?",
+   "a": {
+    "txt": "SALUDO",
+    "emoji": "👋"
+   },
+   "b": {
+    "txt": "ME VOY",
+    "emoji": "🚶"
+   },
+   "correcta": "a",
+   "resultado": "Saludo, señalo el dibujo y digo un dato",
+   "voz": [
+    "¿Qué hacemos *primero* al explicar?",
+    "Pensá…",
+    "¡*Saludo*! Después, el dibujo y un dato."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo hablo para explicar?",
+   "opciones": [
+    "DESPACIO Y FUERTE",
+    "RAPIDÍSIMO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo hablo para explicar?",
+    "Pensá en el que escucha.",
+    "¡*Despacio* y fuerte!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ENSAYÁ",
+   "texto": "Practicá en casa antes del museo",
+   "emoji": "🎤",
+   "voz": [
+    "Truco: *ensayá* en casa antes del museo."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SALUDO",
+     "bienvenida"
+    ],
+    [
+     "DIBUJO",
+     "lo señalo"
+    ],
+    [
+     "DATO",
+     "algo verdadero"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero, *saludo*.",
+    "Después, señalo el *dibujo*.",
+    "Y digo un *dato* verdadero.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
