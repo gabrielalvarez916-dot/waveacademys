@@ -27,9 +27,11 @@ async function correr(archivo, modo) {
     else if (t === 'armar') { const uni = A.union == null ? '' : A.union; String(A.sol).split(uni).forEach((p) => click(btns('.piezas .pz:not(.usada)').find((b) => limpio(b.textContent) === p))); comprobar(); }
     else if (t === 'ordenar') { A.items.forEach((x) => click(porTexto('.fila-ord', x))); comprobar(); }
     else if (t === 'unir') { for (const [a, b] of A.pares) { click(btns('[data-i]').find((x) => limpio(x.textContent) === limpio(a))); click(btns('[data-d]').find((x) => limpio(x.textContent) === limpio(b))); } comprobar(); }
+    else if (t === 'arrastrar') { const L = ['centenas de mil', 'decenas de mil', 'unidades de mil', 'centenas', 'decenas', 'unidades']; const dd = L.length - 1 - L.indexOf(A.lugar); const z = A.num != null ? String(A.num).length - 1 - dd : L.indexOf(A.lugar); click(d.querySelector('[data-f]')); click(d.querySelector('[data-z="' + z + '"]')); }
     else if (t === 'clasificar') { for (const it of A.items) { click(btns('.suelto .chipi').find((x) => limpio(x.textContent) === limpio(it.t))); click(d.querySelector('[data-box="' + it.c + '"]')); } comprobar(); }
     else if (t === 'completar') { for (const s of A.sol) click(btns('.suelto .chipi').find((x) => limpio(x.textContent) === s && x.style.visibility !== 'hidden')); comprobar(); }
     else if (t === 'numero') { for (const ch of String(A.sol)) click(btns('.teclan .pz').find((b) => b.textContent === ch)); comprobar(); }
+    else if (t === 'letras') { const inp = d.getElementById('pgin'); inp.value = w.WaveMotor.enLetras(parseInt(A.num, 10)); comprobar(); }
     else if (t === 'detective') { click(d.querySelector('[data-l="' + A.error + '"]')); comprobar(); }
     else if (t === 'recta') { const r = d.getElementById('rg'); r.value = A.sol; r.dispatchEvent(new w.Event('input', { bubbles: true })); comprobar(); }
     else if (t === 'comparar') { click(d.querySelector('[data-s="' + A.ok + '"]')); comprobar(); }
@@ -43,9 +45,9 @@ async function correr(archivo, modo) {
   }
 
   try {
-    click(grande()); // empezar
+    if (!d.querySelector('.tip')) click(grande()); // empezar (si ya está la placa del único desafío, no hace falta)
     if (modo === 'oraculo') {
-      for (const ds of spec.desafios) { click(grande()); for (const A of ds.pasos) { await oraculo(A); await esperar(5); } click(grande()); }
+      for (const ds of spec.desafios) { click(grande()); for (const A of ds.pasos) { await oraculo(A); await esperar(5); } if (!spec.continuo) click(grande()); }
     } else { // azar: toca botones cualquiera hasta terminar; solo busca errores de código
       for (let i = 0; i < 6000 && resultado == null; i++) {
         const f = d.querySelector('#fb.ver .btn'); if (f && Math.random() < .7) { click(f); continue; }

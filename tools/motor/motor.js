@@ -3,6 +3,7 @@
    Cada paso vale 1 punto a la primera, 0,5 a la segunda y 0 si falla; al final avisa el porcentaje a la plataforma. */
 (function () {
   var SPEC = window.SPEC, app = document.getElementById('app'), E = {};
+  if (SPEC.ancho) document.body.classList.add('ancho');
 
   // ---------- utilidades ----------
   function S(t) { // texto de la IA: se escapa todo y se permiten solo unas pocas marcas
@@ -22,9 +23,15 @@
   function hud() {
     var h = '<div class="hud"><div class="pasos">';
     for (var d = 0; d < ND; d++) { var w = E.cred && E.cred[d] ? Math.round(E.cred[d].length / nPasos(d) * 100) : 0; h += '<i><b style="width:' + w + '%"></b></i>'; }
-    return h + '</div><span class="chip">⭐ ' + (E.pts || 0) + '</span></div>';
+    return h + '</div>' + (SPEC.continuo ? '' : '<span class="chip">⭐ ' + (E.pts || 0) + '</span>') + '</div>';
   }
-  function pintar(h, cls) { clearTimeout(E.tm); app.innerHTML = hud() + '<div class="escena ' + (cls || '') + '">' + h + '</div><div class="fb" id="fb"></div>'; }
+  function pintar(h, cls) {
+    clearTimeout(E.tm); app.innerHTML = hud() + '<div class="escena ' + (cls || '') + '">' + h + '</div><div class="fb" id="fb"></div>';
+    if (SPEC.prueba && E.cred && !cls && h.indexOf('<h1>') < 0) { // solo para probar: botón para pasar el ejercicio
+      var sb = document.createElement('button'); sb.className = 'saltar'; sb.textContent = 'Pasar ➜ (prueba)';
+      sb.onclick = function () { anotar(1); }; app.appendChild(sb);
+    }
+  }
   function fb(tipo, html, botones) {
     var f = document.getElementById('fb'); f.className = 'fb ver ' + tipo;
     f.innerHTML = '<div>' + html + '</div><span class="bt">' + botones.map(function (b, i) { return '<button class="btn" data-b="' + i + '">' + b[0] + '</button>'; }).join('') + '</span>';
@@ -32,7 +39,7 @@
     var es = app.querySelector('.escena'); if (es) { es.classList.add('confb'); es.scrollTop = es.scrollHeight; }
   }
   function sinFb() { var f = document.getElementById('fb'); if (f) f.className = 'fb'; var es = app.querySelector('.escena'); if (es) es.classList.remove('confb'); }
-  function cab() { var d = DES[E.d]; return '<div><div class="etq">' + S(d.ico || '⭐') + ' Desafío ' + (E.d + 1) + ' · ' + (E.a + 1) + ' de ' + nPasos(E.d) + '</div></div>'; }
+  function cab() { if (SPEC.continuo) return ''; var d = DES[E.d]; return '<div><div class="etq">' + S(d.ico || '⭐') + ' Desafío ' + (E.d + 1) + ' · ' + (E.a + 1) + ' de ' + nPasos(E.d) + '</div></div>'; }
 
   // ---------- veredicto común: 2 intentos (A.uno = un solo intento) ----------
   function veredicto(A, ok, h) {
@@ -42,7 +49,7 @@
     }
     if (E.int === 1 && !A.uno) {
       E.int = 2; h.marcar();
-      fb('mal', 'Casi. Tenés otra oportunidad (vale medio punto).<small>' + S(A.pista || '') + '</small>', [['Probar de nuevo', function () { h.reintento(); sinFb(); }]]); return;
+      fb('mal', 'Casi. Tenés otra oportunidad' + (SPEC.continuo ? '' : ' (vale medio punto)') + '.<small>' + S(A.pista || '') + '</small>', [['Probar de nuevo', function () { h.reintento(); sinFb(); }]]); return;
     }
     h.revelar();
     fb('mal', 'Esta vez no salió. Mirá cómo se resuelve:<small>' + S(A.exp || '') + '</small>', [['Seguir ➜', function () { anotar(0); }]]);
@@ -195,6 +202,70 @@
         var mal = its.filter(function (x) { return puesto[x.k] !== x.c; }).map(function (x) { return x.k; });
         veredicto(A, !mal.length, { bloquear: function () { lock = true; dib(); }, marcar: function () { err = mal; dib(); }, reintento: function () { mal.forEach(function (k) { delete puesto[k]; }); err = []; dib(); }, revelar: function () { lock = true; its.forEach(function (x) { puesto[x.k] = x.c; }); err = []; dib(); } });
       };
+    }
+    dib();
+  };
+
+  // arrastrar: arrastrar una ficha hasta el lugar que corresponde en el sistema decimal. Dos formas:
+  //  1) CIFRAS: {q, num:"52806", lugar:"decenas de mil"}  -> se ve el número con sus cifras y se arrastra el círculo hasta la cifra de ese lugar.
+  //  2) VALOR:  {q, ficha:"50.000", lugar:"decenas de mil"} -> se arrastra el número hasta la caja del lugar que le corresponde.
+  // lugar: unidades | decenas | centenas | unidades de mil | decenas de mil | centenas de mil. También se puede tocar la ficha y después el lugar.
+  var LUG = ['centenas de mil', 'decenas de mil', 'unidades de mil', 'centenas', 'decenas', 'unidades'];
+  T.arrastrar = function (A) {
+    var cifras = A.num != null ? String(A.num).replace(/\D/g, '').split('') : null;
+    var desdeDer = LUG.length - 1 - LUG.indexOf(String(A.lugar).toLowerCase());
+    var meta = cifras ? cifras.length - 1 - desdeDer : LUG.indexOf(String(A.lugar).toLowerCase());
+    var puesto = -1, sel = false, err = -1, lock = false, ok = false, huboArrastre = false;
+    var fichaTxt = cifras ? '' : S(A.ficha || '●');
+    function soltar(i) {
+      puesto = i; sel = false; err = -1; dib();
+      veredicto(A, i === meta, {
+        bloquear: function () { lock = true; ok = true; dib(); },
+        marcar: function () { err = puesto; dib(); },
+        reintento: function () { puesto = -1; err = -1; dib(); },
+        revelar: function () { puesto = meta; lock = true; ok = false; err = -1; dib(); }
+      });
+    }
+    function ficha(extra, q) { return '<span class="fichad' + (extra || '') + '"' + (q ? ' data-q="1"' : ' data-f="1"') + '>' + (cifras ? '' : fichaTxt) + '</span>'; }
+    function zonas() {
+      var cls = function (i) { return (sel && puesto < 0 ? ' lista' : '') + (err === i ? ' mal' : '') + (ok && puesto === i ? ' bien' : ''); };
+      if (cifras) {
+        return '<div class="cifs">' + cifras.map(function (c, i) {
+          var sep = (cifras.length - 1 - i) % 3 === 2 && i > 0 ? ' sep' : '';
+          return '<div class="cif' + cls(i) + sep + '" data-z="' + i + '"><span class="dg">' + c + '</span><div class="nido">' + (puesto === i ? ficha((err === i ? ' mal' : '') + (ok ? ' bien' : ''), true) : '') + '</div></div>';
+        }).join('') + '</div>';
+      }
+      return '<div class="lugares">' + LUG.map(function (n, i) {
+        return '<div class="lug' + cls(i) + '" data-z="' + i + '"><b>' + n + '</b><div class="nido">' + (puesto === i ? ficha((err === i ? ' mal' : '') + (ok ? ' bien' : ''), true) : '') + '</div></div>';
+      }).join('') + '</div>';
+    }
+    function dib() {
+      var suelta = puesto < 0 ? '<div class="suelta">' + ficha(sel ? ' sel' : '') + '<p>Arrastralo hasta el lugar, o tocalo y después tocá el lugar.</p></div>' : '<div class="suelta"><p>' + (lock ? '' : 'Tocá la ficha para sacarla y probar en otro lugar.') + '</p></div>';
+      pintar(cab() + '<h2>' + S(A.q) + '</h2>' + suelta + zonas());
+      var f = app.querySelector('[data-f]');
+      if (f) {
+        f.onpointerdown = function (e) {
+          if (lock || !f.setPointerCapture) return;
+          e.preventDefault(); try { f.setPointerCapture(e.pointerId); } catch (x) { }
+          var x0 = e.clientX, y0 = e.clientY; huboArrastre = false;
+          f.onpointermove = function (m) {
+            var dx = m.clientX - x0, dy = m.clientY - y0;
+            if (Math.abs(dx) + Math.abs(dy) > 8) { huboArrastre = true; f.classList.add('arrastrando'); }
+            if (huboArrastre) f.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+          };
+          f.onpointerup = function (u) {
+            f.onpointermove = f.onpointerup = null;
+            if (!huboArrastre) return;
+            f.style.pointerEvents = 'none';
+            var el = document.elementFromPoint(u.clientX, u.clientY); f.style.pointerEvents = '';
+            var z = el && el.closest ? el.closest('[data-z]') : null;
+            if (z) soltar(+z.dataset.z); else { f.style.transform = ''; f.classList.remove('arrastrando'); }
+          };
+        };
+        f.onclick = function () { if (huboArrastre) { huboArrastre = false; return; } sel = !sel; dib(); };
+      }
+      on('[data-z]', 'click', function (z) { if (lock || puesto >= 0 || !sel) return; soltar(+z.dataset.z); });
+      on('[data-q]', 'click', function () { if (lock) return; puesto = -1; err = -1; sinFb(); dib(); });
     }
     dib();
   };
@@ -394,9 +465,55 @@
     dib();
   };
 
+  // letras: escribir con letras el número de un pagaré. {q?, num:"4350", pista, exp?}
+  var UN = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte','veintiuno','veintidós','veintitrés','veinticuatro','veinticinco','veintiséis','veintisiete','veintiocho','veintinueve'];
+  var DE = ['','','','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
+  var CE = ['','ciento','doscientos','trescientos','cuatrocientos','quinientos','seiscientos','setecientos','ochocientos','novecientos'];
+  function menos1000(n) {
+    if (n === 100) return 'cien';
+    if (n < 30) return UN[n];
+    if (n < 100) return DE[Math.floor(n / 10)] + (n % 10 ? ' y ' + UN[n % 10] : '');
+    return CE[Math.floor(n / 100)] + (n % 100 ? ' ' + menos1000(n % 100) : '');
+  }
+  function enLetras(n) {
+    if (n >= 1000000) { var mm = Math.floor(n / 1000000), rr = n % 1000000; return (mm === 1 ? 'un millón' : enLetras(mm).replace(/uno$/, 'ún') + ' millones') + (rr ? ' ' + enLetras(rr) : ''); }
+    if (n < 1000) return menos1000(n);
+    var m = Math.floor(n / 1000), r = n % 1000;
+    var mil = m === 1 ? 'mil' : (m % 10 === 1 && m % 100 !== 11 ? menos1000(m).replace(/uno$/, 'ún').replace(/ún$/, 'ún') : menos1000(m)) + ' mil';
+    return mil + (r ? ' ' + menos1000(r) : '');
+  }
+  function norm(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim(); }
+  T.letras = function (A) {
+    var n = parseInt(A.num, 10), sol = enLetras(n), val = '', lock = false, ok = false;
+    function igual(t) { var a = norm(t), b = norm(sol); return a === b || a === b.replace(/un mil/, 'uno mil'); }
+    function dib() {
+      var h = cab() + '<h2>' + S(A.q || 'Completá el pagaré: escribí con letras el número.') + '</h2>' +
+        '<div class="pagare"><div class="pg-top"><b>PAGARÉ</b><span>Banco Wave</span></div>' +
+        '<div class="pg-monto">$ ' + fmt(n) + '</div>' +
+        '<p>Por este pagaré me comprometo a pagar la suma de <u>pesos</u>:</p>' +
+        '<input id="pgin" class="pg-in' + (lock ? (ok ? ' bien' : ' mal') : '') + '" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="escribí el número con letras" value="' + val.replace(/"/g, '&quot;') + '"' + (lock ? ' disabled' : '') + '></div>' +
+        botonComprobar(lock, true);
+      pintar(h);
+      var inp = document.getElementById('pgin');
+      if (inp) { inp.oninput = function () { val = inp.value; }; inp.onkeydown = function (e) { if (e.key === 'Enter') { val = inp.value; document.getElementById('ok').click(); } }; if (!lock) { try { inp.focus(); } catch (x) { } } }
+      document.getElementById('ok').onclick = function () {
+        val = inp.value; var bien = igual(val);
+        if (!norm(val)) return;
+        veredicto({ pista: A.pista, exp: A.exp || ('Se escribe: ' + sol + '.'), uno: A.uno }, bien, {
+          bloquear: function () { lock = true; ok = true; dib(); },
+          marcar: function () { lock = false; ok = false; dib(); },
+          reintento: function () { dib(); },
+          revelar: function () { val = sol; lock = true; ok = false; dib(); }
+        });
+      };
+    }
+    dib();
+  };
+
   // ================= flujo del juego =================
   function estrellas(p) { var n = p >= .9 ? 3 : p >= .6 ? 2 : p > 0 ? 1 : 0; return '★★★'.slice(0, n) + '<s>' + '★★★'.slice(n) + '</s>'; }
   function mapa() {
+    if (ND === 1) return '';
     var h = '<div class="mapa mini">';
     DES.forEach(function (d, i) {
       var hecho = !!(E.cred && E.cred[i] && E.cred[i].length >= nPasos(i)), act = !hecho && i === E.d;
@@ -407,10 +524,11 @@
   function jugar() { var A = DES[E.d].pasos[E.a]; E.int = 1; if (!T[A.t]) { anotar(1); return; } T[A.t](A); }
   function introDesafio() {
     var d = DES[E.d];
-    pintar('<div class="etq">Desafío ' + (E.d + 1) + ' de ' + ND + '</div><h1>' + S(d.ico || '⭐') + ' ' + S(d.nom) + '</h1><div class="tip"><b>Cómo funciona.</b> ' + S(d.como || '') + '</div><p style="max-width:520px">Tenés 2 intentos por actividad: si acertás a la primera vale 1 punto; a la segunda, medio punto.</p><button class="btn" style="min-width:220px">Empezar ➜</button>', 'centro');
+    pintar('<div class="etq">Desafío ' + (E.d + 1) + ' de ' + ND + '</div><h1>' + S(d.ico || '⭐') + ' ' + S(d.nom) + '</h1><div class="tip"><b>Cómo funciona.</b> ' + S(d.como || '') + '</div>' + (SPEC.continuo ? '' : '<p style="max-width:520px">Tenés 2 intentos por actividad: si acertás a la primera vale 1 punto; a la segunda, medio punto.</p>') + '<button class="btn" style="min-width:220px">Empezar ➜</button>', 'centro');
     app.querySelector('.escena .btn').onclick = function () { E.a = 0; jugar(); };
   }
   function finDesafio() {
+    if (SPEC.continuo) { if (E.d >= ND - 1) final(); else { E.d++; introDesafio(); } return; }
     var c = suma(E.cred[E.d]) / nPasos(E.d), ult = E.d >= ND - 1, msgs = ['¡Desafío superado!', 'Muy buen trabajo.', 'Lo importante es que lo intentaste.'];
     var h = '<div class="etq">Desafío ' + (E.d + 1) + ' completo</div><div class="gran">' + Math.round(c * 100) + '%</div><div class="estrellas">' + estrellas(c) + '</div><h2>' + (c >= .9 ? msgs[0] : c >= .5 ? msgs[1] : msgs[2]) + '</h2>' + mapa() + '<button class="btn">' + (ult ? 'Ver resultado final' : 'Siguiente desafío ➜') + '</button>';
     pintar(h, 'centro');
@@ -429,7 +547,8 @@
     E = { d: 0, a: 0, int: 1, pts: 0, cred: DES.map(function () { return []; }) };
     pintar('<div class="etq">' + S(SPEC.etiqueta || '') + '</div><h1>' + S(SPEC.titulo) + '</h1><p style="max-width:520px">' + S(SPEC.historia || '') + '</p>' + mapa() + '<button class="btn" style="min-width:220px">' + S(SPEC.boton || 'Empezar ➜') + '</button>', 'centro');
     app.querySelector('.escena .btn').onclick = introDesafio;
+    if (SPEC.continuo && ND === 1) introDesafio(); // un solo juego: va directo a la placa que explica
   }
-  window.WaveMotor = { tipos: Object.keys(T), T: T, inicio: inicio };
+  window.WaveMotor = { tipos: Object.keys(T), T: T, inicio: inicio, enLetras: enLetras };
   inicio();
 })();

@@ -1,0 +1,87 @@
+{
+ "etiqueta": "Matemática I · Valor posicional",
+ "titulo": "Cada cifra en su lugar",
+ "historia": "Cada cifra vive en un lugar y vale según dónde esté.",
+ "boton": "Empezar ➜",
+ "cierre": {
+  "alto": "¡Excelente! Ubicás cada cifra en su lugar.",
+  "medio": "¡Muy bien! Repasá los lugares en el PDF y volvé a jugar.",
+  "bajo": "Buen intento. Volvé al PDF de la lección y probá de nuevo."
+ },
+ "desafios": [
+  {
+   "ico": "🎯",
+   "nom": "Cada cifra en su lugar",
+   "sub": "Unidades, decenas, centenas y miles",
+   "como": "Arrastrá la ficha hasta donde se pide. Si no podés arrastrar, tocá la ficha y después tocá el lugar.",
+   "pasos": [
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá el círculo hasta las <b>decenas de mil</b> del número <b>52.806</b>",
+     "num": "52806",
+     "lugar": "decenas de mil",
+     "pista": "Contá los lugares desde la derecha: unidades, decenas, centenas, unidades de mil y decenas de mil.",
+     "exp": "Los lugares, de derecha a izquierda: unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá el círculo hasta las <b>centenas</b> del número <b>7.439</b>",
+     "num": "7439",
+     "lugar": "centenas",
+     "pista": "Las centenas son el tercer lugar contando desde la derecha.",
+     "exp": "Los lugares, de derecha a izquierda: unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá el círculo hasta las <b>unidades de mil</b> del número <b>618.205</b>",
+     "num": "618205",
+     "lugar": "unidades de mil",
+     "pista": "Los miles empiezan después de las centenas: el primer lugar de los miles son las unidades de mil.",
+     "exp": "Los lugares, de derecha a izquierda: unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá el círculo hasta las <b>decenas</b> del número <b>94.071</b>",
+     "num": "94071",
+     "lugar": "decenas",
+     "pista": "Las decenas están justo a la izquierda de las unidades.",
+     "exp": "Los lugares, de derecha a izquierda: unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá el círculo hasta las <b>centenas de mil</b> del número <b>305.918</b>",
+     "num": "305918",
+     "lugar": "centenas de mil",
+     "pista": "Es el lugar de más a la izquierda en un número de seis cifras.",
+     "exp": "Los lugares, de derecha a izquierda: unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá <b>700</b> hasta el lugar donde está su cifra.",
+     "ficha": "700",
+     "lugar": "centenas",
+     "pista": "Fijate cuántos ceros tiene: de ahí sale el lugar.",
+     "exp": "700 son 7 centenas: la cifra 7 va en el lugar de las centenas."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá <b>6.000</b> hasta el lugar donde está su cifra.",
+     "ficha": "6.000",
+     "lugar": "unidades de mil",
+     "pista": "Fijate cuántos ceros tiene: de ahí sale el lugar.",
+     "exp": "6.000 son 6 unidades de mil: la cifra 6 va en el lugar de las unidades de mil."
+    },
+    {
+     "t": "arrastrar",
+     "q": "Arrastrá <b>50.000</b> hasta el lugar donde está su cifra.",
+     "ficha": "50.000",
+     "lugar": "decenas de mil",
+     "pista": "Fijate cuántos ceros tiene: de ahí sale el lugar.",
+     "exp": "50.000 son 5 decenas de mil: la cifra 5 va en el lugar de las decenas de mil."
+    }
+   ]
+  }
+ ],
+ "ancho": true,
+ "continuo": true
+}

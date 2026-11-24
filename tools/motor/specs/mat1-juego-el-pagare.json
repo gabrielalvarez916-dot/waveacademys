@@ -1,0 +1,53 @@
+{
+ "etiqueta": "Matemática I · Números en letras",
+ "titulo": "Del número a las letras",
+ "historia": "Cada pagaré trae un monto en números: escribilo con letras.",
+ "boton": "Empezar ➜",
+ "cierre": {
+  "alto": "¡Excelente! Escribís cualquier cantidad con letras.",
+  "medio": "¡Muy bien! Repasá cómo se leen los números grandes y volvé a jugar.",
+  "bajo": "Buen intento. Volvé al PDF de la lección y probá de nuevo."
+ },
+ "desafios": [
+  {
+   "ico": "🧾",
+   "nom": "Del número a las letras",
+   "sub": "Escribir cantidades en un pagaré",
+   "como": "Cada pagaré trae un monto en números. Escribilo con letras en el renglón y tocá Comprobar. No hace falta usar mayúsculas ni tildes.",
+   "pasos": [
+    {
+     "t": "letras",
+     "num": "2815",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    },
+    {
+     "t": "letras",
+     "num": "348600",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    },
+    {
+     "t": "letras",
+     "num": "5090",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    },
+    {
+     "t": "letras",
+     "num": "1250000",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    },
+    {
+     "t": "letras",
+     "num": "30506",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    },
+    {
+     "t": "letras",
+     "num": "806040",
+     "pista": "Leé el número de izquierda a derecha: primero los millones o los miles y después las centenas, decenas y unidades."
+    }
+   ]
+  }
+ ],
+ "ancho": true,
+ "continuo": true
+}

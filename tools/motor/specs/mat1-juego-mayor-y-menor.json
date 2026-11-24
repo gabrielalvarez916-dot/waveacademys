@@ -1,0 +1,83 @@
+{
+ "etiqueta": "Matemática I · Ordenar cifras",
+ "titulo": "Mayor y menor con las mismas cifras",
+ "historia": "Con las mismas cifras se arman números distintos.",
+ "boton": "Empezar ➜",
+ "cierre": {
+  "alto": "¡Excelente! Ordenás las cifras como un experto.",
+  "medio": "¡Muy bien! Repasá cómo se ordenan las cifras y volvé a jugar.",
+  "bajo": "Buen intento. Volvé al PDF de la lección y probá de nuevo."
+ },
+ "desafios": [
+  {
+   "ico": "🔢",
+   "nom": "Mayor y menor con las mismas cifras",
+   "sub": "Ordenar cifras para formar números",
+   "como": "Usá las cifras que se dan, todas una sola vez, y escribí el número pedido con el teclado.",
+   "pasos": [
+    {
+     "t": "numero",
+     "q": "Escribí el <b>mayor</b> número que se puede formar con las cuatro cifras de <b>3805</b>.",
+     "sol": "8530",
+     "aceptadas": [
+      "8.530"
+     ],
+     "pista": "Poné primero la cifra más grande, después la que sigue, y así hasta la más chica.",
+     "exp": "Las cifras ordenadas de mayor a menor son 8, 5, 3 y 0: queda 8.530."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el <b>mayor</b> número que se puede formar con las cuatro cifras de <b>4172</b>.",
+     "sol": "7421",
+     "aceptadas": [
+      "7.421"
+     ],
+     "pista": "Poné primero la cifra más grande, después la que sigue, y así hasta la más chica.",
+     "exp": "Las cifras ordenadas de mayor a menor son 7, 4, 2 y 1: queda 7.421."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el <b>mayor</b> número que se puede formar con las cuatro cifras de <b>9060</b>.",
+     "sol": "9600",
+     "aceptadas": [
+      "9.600"
+     ],
+     "pista": "Poné primero la cifra más grande, después la que sigue, y así hasta la más chica.",
+     "exp": "Las cifras ordenadas de mayor a menor son 9, 6, 0 y 0: queda 9.600."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el <b>menor</b> número de cuatro cifras que se puede formar con las cifras de <b>7014</b>.",
+     "sol": "1047",
+     "aceptadas": [
+      "1.047"
+     ],
+     "pista": "Ordená las cifras de menor a mayor, pero ojo: el número no puede empezar con 0.",
+     "exp": "De menor a mayor serían 0, 1, 4 y 7, pero no se empieza con 0: se usa el 1 primero y queda 1.047."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el <b>menor</b> número de cuatro cifras que se puede formar con las cifras de <b>5203</b>.",
+     "sol": "2035",
+     "aceptadas": [
+      "2.035"
+     ],
+     "pista": "Ordená las cifras de menor a mayor, pero ojo: el número no puede empezar con 0.",
+     "exp": "De menor a mayor serían 0, 2, 3 y 5, pero no se empieza con 0: arranca con el 2 y queda 2.035."
+    },
+    {
+     "t": "numero",
+     "q": "Escribí el <b>menor</b> número de cuatro cifras que se puede formar con las cifras de <b>8090</b>.",
+     "sol": "8009",
+     "aceptadas": [
+      "8.009"
+     ],
+     "pista": "Ordená las cifras de menor a mayor, pero ojo: el número no puede empezar con 0.",
+     "exp": "Hay dos ceros. No se empieza con 0, así que va el 8 primero y después los ceros y el 9: 8.009."
+    }
+   ]
+  }
+ ],
+ "ancho": true,
+ "continuo": true
+}

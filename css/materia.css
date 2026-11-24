@@ -423,3 +423,19 @@ html.ap-sin-anim .dm-op.on, html.ap-sin-anim .dm-chip.on { animation: none; }
 .ant-ahora .ant-pc { width: 68px; height: 68px; border-color: #E59A1B; border-width: 5px; font-size: 2rem; }
 .ant-bloq .ant-pc { background: #eef2f1; opacity: .7; }
 .ant-vacio { font-weight: 700; }
+
+/* Juegos interactivos de la misión */
+.mt-nodo.juegos .mt-disco { background: radial-gradient(circle at 35% 28%, #A8E6D8, #4DBFA8 65%); color: #fff; }
+.mt-nodo.juegos .mt-num { font-size: 2.4rem; }
+.jg-pant { flex: 1; min-height: 0; overflow-y: auto; padding: 18px 16px 24px; background: #f4fbf9; }
+.jg-intro { margin: 0 auto 14px; max-width: 640px; color: #4d6a66; font-weight: 600; text-align: center; }
+.jg-lista { display: grid; gap: 12px; max-width: 640px; margin: 0 auto; }
+.jg-card { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 14px 16px; border: 2px solid #cfe6e0; border-radius: 18px; background: #fff; font: inherit; color: #1f3b38; cursor: pointer; box-shadow: 0 4px 0 #cfe6e0; }
+.jg-card:hover { border-color: #4DBFA8; }
+.jg-card:active { transform: translateY(2px); box-shadow: 0 2px 0 #cfe6e0; }
+.jg-ico { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: #e6f6f2; font-size: 1.7rem; }
+.jg-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.jg-txt b { font-size: 1.12rem; font-weight: 900; }
+.jg-txt small { font-size: .9rem; color: #5b7a75; font-weight: 600; }
+.jg-est { flex: none; color: #F5B72C; font-size: 1.2rem; letter-spacing: 2px; }
+.jg-off { opacity: .3; }

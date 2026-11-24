@@ -160,6 +160,13 @@
       };
     });
 
+    // Juegos interactivos de cada misión (solo las misiones que tienen juegos muestran la pantalla)
+    var jg = topIds.length ? await sb.from('juegos_interactivos').select('id, topic_id, orden, nombre, tema, ico').in('topic_id', topIds).eq('publicado', true).order('orden') : { data: [] };
+    var jp = await sb.from('student_juegos').select('juego_id, mejor').eq('student_id', sid);
+    var juegos = {}, juegoMejor = {};
+    (jg.error ? [] : jg.data || []).forEach(function (j) { (juegos[j.topic_id] = juegos[j.topic_id] || []).push(j); });
+    (jp.error ? [] : jp.data || []).forEach(function (x) { juegoMejor[x.juego_id] = x.mejor; });
+
     var progreso = {};
     prog.data.forEach(function (p) { progreso[p.lesson_step_id] = { score: p.score, estado: p.grading_status }; });
     var hechas = {};
@@ -203,7 +210,7 @@
 
     return {
       neutro: neutro,
-      adaptaciones: adaptaciones, sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, saltos: saltos, desafio: desafio,
+      adaptaciones: adaptaciones, sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, juegos: juegos, juegoMejor: juegoMejor, saltos: saltos, desafio: desafio,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -362,6 +369,19 @@
     return nodo(cls, burbuja + discoNodo(cls, contenido, e.completa ? 1 : e.frac) + '<span class="mt-nombre">' + esc(nombre) + '</span>', href, aviso);
   }
 
+  function nodoJuegos(t) {
+    var lista = (D.juegos && D.juegos[t.id]) || [];
+    if (!lista.length) return '';
+    var bloq = D.sinAcceso || t.bloqueado;
+    var hechos = lista.filter(function (j) { return D.juegoMejor && D.juegoMejor[j.id] != null; }).length;
+    var cls = bloq ? 'bloq' : (hechos === lista.length ? 'hecha' : 'libre');
+    var contenido = bloq ? ico('lock', 34, 2.6) : '<span class="mt-num">🎮</span>';
+    var aviso = D.sinAcceso ? 'La suscripción tiene que estar al día.' : 'Terminá la misión anterior.';
+    return '<button type="button" class="mt-nodo juegos ' + cls + '"' + (bloq ? ' data-aviso="' + esc(aviso) + '"' : ' data-juegos="' + t.id + '"') + '>' +
+      '<span class="mt-aro">' + aro(hechos / lista.length) + '<span class="mt-disco">' + contenido + '</span></span>' +
+      '<span class="mt-nombre">Juegos interactivos</span></button>';
+  }
+
   function nodoExamen(t) {
     var ex = t.examen, cls, contenido;
     if (ex.aprobado) { cls = 'hecha'; contenido = ico('trophy', 46, 1.8); }
@@ -476,7 +496,7 @@
     var idx = D.temas.indexOf(t), c = tono(idx);
     var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
       (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
-      (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
+      nodoJuegos(t) + (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
@@ -815,6 +835,72 @@
     }
     window.addEventListener('message', alMensaje);
     el.addEventListener('click', function (ev) { if (ev.target.closest('[data-full]')) return pantallaCompleta(); if (ev.target === el || ev.target.closest('[data-cerrar]')) cerrar(); });
+  }
+
+  // ---------- Juegos interactivos de la misión ----------
+  var motorJuegos = null;
+  async function cargarMotor() {
+    if (motorJuegos) return motorJuegos;
+    var a = await Promise.all([fetch('/assets/juegos/motor.min.css').then(function (r) { return r.text(); }), fetch('/assets/juegos/motor.min.js').then(function (r) { return r.text(); })]);
+    motorJuegos = { css: a[0], js: a[1] };
+    return motorJuegos;
+  }
+  function htmlJuego(spec, m) {
+    var j = JSON.stringify(spec).replace(/</g, '\\u003c');
+    return '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>' + esc(spec.titulo || 'Juego') + '</title><style>' + m.css + '</style></head><body><div id="app"></div><script>window.SPEC=' + j + ';</script><script>' + m.js.replace(/<\/script/gi, '<\\/script') + '</script></body></html>';
+  }
+  function estrellasJuego(p) { var n = p >= 90 ? 3 : p >= 60 ? 2 : p > 0 ? 1 : 0; return '★★★'.slice(0, n) + '<span class="jg-off">' + '★★★'.slice(n) + '</span>'; }
+  function abrirJuegos(temaId) {
+    var t = D.temas.filter(function (x) { return x.id === temaId; })[0];
+    var lista = (D.juegos && D.juegos[temaId]) || [];
+    if (!t || !lista.length) return;
+    var el = document.createElement('div');
+    el.className = 'wvp';
+    function dibujar() {
+      el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">Juegos interactivos · ' + esc(t.titulo) + '</b>' +
+        '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
+        '<div class="jg-pant"><p class="jg-intro">Elegí un juego para practicar. Son opcionales: podés jugarlos cuando quieras.</p><div class="jg-lista">' +
+        lista.map(function (j) {
+          var mej = D.juegoMejor && D.juegoMejor[j.id];
+          return '<button type="button" class="jg-card" data-jg="' + j.id + '"><span class="jg-ico">' + esc(j.ico || '🎮') + '</span><span class="jg-txt"><b>' + esc(j.nombre) + '</b><small>' + esc(j.tema) + '</small></span>' +
+            (mej != null ? '<span class="jg-est">' + estrellasJuego(mej) + '</span>' : '') + '</button>';
+        }).join('') + '</div></div></div>';
+    }
+    dibujar();
+    document.body.appendChild(el);
+    document.body.classList.add('wvp-abierto');
+    function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
+    el.addEventListener('click', function (ev) {
+      if (ev.target === el || ev.target.closest('[data-cerrar]')) return cerrar();
+      var c = ev.target.closest('[data-jg]');
+      if (c) jugarJuego(lista.filter(function (j) { return j.id === c.getAttribute('data-jg'); })[0], function () { dibujar(); refrescar(); });
+    });
+  }
+  async function jugarJuego(j, alTerminar) {
+    try {
+      var r = await sb.from('juegos_interactivos').select('spec').eq('id', j.id).maybeSingle();
+      if (r.error || !r.data || !r.data.spec) throw new Error('No pudimos abrir el juego.');
+      var m = await cargarMotor();
+      var el = document.createElement('div');
+      el.className = 'wvp';
+      el.style.zIndex = 90;
+      el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(j.nombre) + '</b>' +
+        '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
+        '<div class="mt-marco"><iframe title="Juego interactivo" sandbox="allow-scripts allow-forms"></iframe></div></div>';
+      document.body.appendChild(el);
+      var frame = el.querySelector('iframe');
+      frame.srcdoc = calmar(htmlJuego(r.data.spec, m));
+      var fin = function () { window.removeEventListener('message', alMensaje); el.remove(); alTerminar(); };
+      var alMensaje = async function (ev) {
+        if (ev.source !== frame.contentWindow || !ev.data || ev.data.tipo !== 'wave-resultado') return;
+        var pt = Math.max(0, Math.min(100, Math.round(Number(ev.data.puntaje) || 0)));
+        var g = await sb.rpc('guardar_juego', { p_student: D.sid, p_juego: j.id, p_puntaje: pt });
+        if (g.error) { toast('No pudimos guardar tu resultado. Revisá tu conexión.', true); return; }
+        D.juegoMejor = D.juegoMejor || {}; D.juegoMejor[j.id] = Math.max(D.juegoMejor[j.id] || 0, pt);
+      };
+      window.addEventListener('message', alMensaje);
+      el.addEventListener('click', function (ev) { if (ev.target === el || ev.target.closest('[data-cerrar]')) fin(); });
+    } catch (e) { toast(e.message || 'No pudimos abrir el juego.', true); }
   }
 
   // ---------- Actividad interactiva (HTML en un marco aislado) ----------
@@ -1400,6 +1486,8 @@
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
       var sl = ev.target.closest('[data-salto]');
       if (sl) { if (window.confirm('Tenés UNA sola oportunidad para rendir primero esta misión. Si aprobás, la salteás; si no, la hacés normal. ¿Empezamos?')) abrirExamen(sl.getAttribute('data-salto'), true); return; }
+      var jgb = ev.target.closest('[data-juegos]');
+      if (jgb) return abrirJuegos(jgb.getAttribute('data-juegos'));
       var x = ev.target.closest('[data-examen]');
       if (x) return abrirExamen(x.getAttribute('data-examen'));
       if (ev.target.closest('[data-intro]')) return abrirIntro();

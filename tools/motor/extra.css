@@ -48,3 +48,65 @@
 .carta.ok{color:var(--txt);background:#1d5a55;border-color:var(--aqua);pointer-events:none}
 .carta:not(.arriba):not(.ok)::after{content:"?";color:var(--aqua);font-size:1.6rem;font-weight:900}
 @media (max-width:420px){.memo{grid-template-columns:repeat(3,1fr)}.pares{gap:8px}.fila-ord{font-size:.95rem}}
+
+/* arrastrar: ficha que se suelta en un lugar del sistema decimal */
+.suelta{display:flex;flex-direction:column;align-items:center;gap:8px;min-height:92px;justify-content:center}
+.fichad{display:inline-flex;align-items:center;justify-content:center;min-width:60px;height:60px;padding:0 14px;border-radius:999px;background:linear-gradient(180deg,#ffd27a,var(--sol));color:#3a2600;font-weight:900;font-size:1.25rem;box-shadow:0 5px 0 #a97814;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;position:relative;z-index:5}
+.fichad.sel{outline:3px solid var(--aqua);outline-offset:3px}
+.fichad.arrastrando{cursor:grabbing;box-shadow:0 12px 22px rgba(0,0,0,.45);z-index:20}
+.fichad.mal{background:linear-gradient(180deg,#ff9d8f,var(--coral));box-shadow:0 5px 0 #a33f31;color:#3a0a02}
+.fichad.bien{background:linear-gradient(180deg,#9be8da,var(--aqua));box-shadow:0 5px 0 #3e9488;color:#06282a}
+.lugares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.lug{background:var(--card);border:2px dashed var(--linea);border-radius:14px;padding:6px 2px 8px;text-align:center;display:flex;flex-direction:column;gap:6px;min-height:96px}
+.lug b{font-size:.74rem;hyphens:none;line-height:1.15;letter-spacing:.02em;color:var(--suave);text-transform:uppercase;font-weight:900;padding:0 2px}
+.lug .nido{flex:1;display:flex;align-items:center;justify-content:center}
+.lug.lista{border-color:var(--aqua);background:var(--card2)}
+.lug.mal{border-color:var(--coral)}.lug.bien{border-color:var(--aqua);border-style:solid}
+.lug .fichad{min-width:52px;width:auto;max-width:100%;height:52px;padding:0 8px;font-size:1rem}
+@media(min-width:520px){.lug b{font-size:.82rem}.lug .fichad{font-size:1.05rem}}
+
+/* arrastrar con cifras: el número se ve grande y el círculo se suelta sobre la cifra */
+.fichad:empty{min-width:56px;width:56px;height:56px;padding:0}
+.fichad:empty:before{content:"";width:22px;height:22px;border-radius:50%;background:#7a4d00;opacity:.85}
+.fichad.bien:empty:before{background:#0b4a41}.fichad.mal:empty:before{background:#6e1d12}
+.cifs{display:flex;justify-content:center;gap:6px;flex-wrap:nowrap}
+.cif{flex:1;max-width:70px;min-width:0;border:2px dashed var(--linea);border-radius:16px;background:var(--card);display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0 8px;min-height:140px}
+.cif.sep{margin-left:10px}
+.cif .dg{font-size:clamp(2rem,10vw,3rem);font-weight:900;line-height:1}
+.cif .nido{flex:1;display:flex;align-items:center;justify-content:center}
+.cif.lista{border-color:var(--aqua);background:var(--card2)}.cif.mal{border-color:var(--coral)}.cif.bien{border-color:var(--aqua);border-style:solid}
+.cif .fichad{min-width:0;width:44px;height:44px;padding:0}
+.cif .fichad:empty:before{width:18px;height:18px}
+
+/* formato ancho (16:9) como las clases animadas: todo apaisado y grande */
+body.ancho #app{max-width:none;padding:2vh 4vw}
+@media (min-aspect-ratio:1/1){
+body.ancho #app h2{font-size:clamp(1.3rem,4.2vh,2.2rem);text-align:center}
+body.ancho .suelta{flex-direction:row;gap:3vw;min-height:14vh}
+body.ancho .suelta p{max-width:34ch;font-size:clamp(.95rem,2.6vh,1.3rem)}
+body.ancho .fichad{height:11vh;min-width:11vh;font-size:clamp(1.6rem,5vh,2.8rem);padding:0 4vh}
+body.ancho .fichad:empty{width:11vh;min-width:11vh;height:11vh}
+body.ancho .fichad:empty:before{width:4.4vh;height:4.4vh}
+body.ancho .cifs{gap:1.6vw}
+body.ancho .cif{max-width:13vw;min-height:34vh;border-radius:22px}
+body.ancho .cif.sep{margin-left:2.2vw}
+body.ancho .cif .dg{font-size:clamp(3rem,15vh,8rem)}
+body.ancho .cif .fichad{width:8vh;height:8vh;min-width:0;padding:0}
+body.ancho .cif .fichad:empty:before{width:3.4vh;height:3.4vh}
+body.ancho .lugares{grid-template-columns:repeat(6,minmax(0,1fr));gap:1.4vw}
+body.ancho .lug{min-height:24vh}
+body.ancho .lug b{font-size:clamp(.85rem,2.4vh,1.3rem)}
+}
+
+/* pagaré */
+.pagare{width:100%;max-width:760px;margin:0 auto;background:linear-gradient(180deg,#e3f3e6,#cfe8d6);color:#12302f;border:3px solid #6aa985;border-radius:18px;padding:16px 22px;box-shadow:0 8px 24px rgba(0,0,0,.3);position:relative}
+.pagare:before{content:"PAGARÉ";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(3rem,16vw,7rem);font-weight:900;color:rgba(80,140,110,.12);letter-spacing:.1em;pointer-events:none}
+.pg-top{display:flex;justify-content:space-between;align-items:baseline;font-weight:900;border-bottom:2px solid #6aa985;padding-bottom:6px}
+.pg-top b{letter-spacing:.15em}.pg-top span{font-size:.95rem;color:#2c6a56}
+.pg-monto{margin:12px 0 4px;font-size:clamp(2rem,9vw,3.4rem);font-weight:900;color:#e2553f;text-align:center}
+.pagare p{margin:6px 0;font-weight:700;color:#12302f;position:relative}
+.pg-in{position:relative;width:100%;box-sizing:border-box;font:inherit;font-size:1.2rem;font-weight:800;padding:12px 14px;border-radius:12px;border:2px solid #6aa985;background:#fff;color:#12302f}
+.pg-in.bien{border-color:#19a39f;background:#dff6ef}.pg-in.mal{border-color:#e2553f;background:#fde6e1}
+body.ancho .pagare{max-width:900px;padding:2.4vh 3vw}
+
+.saltar{position:absolute;top:10px;right:10px;z-index:30;appearance:none;border:1px dashed var(--sol);background:#0008;color:var(--sol);font:inherit;font-weight:800;font-size:.8rem;border-radius:999px;padding:6px 12px;cursor:pointer}
