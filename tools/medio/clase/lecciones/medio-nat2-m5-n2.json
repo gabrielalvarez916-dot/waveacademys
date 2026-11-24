@@ -1,0 +1,104 @@
+{
+ "slug": "medio-nat2-m5-n2",
+ "step_id": "3381a430-db9e-451e-90f5-db8c8d08f368",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Derretir y solidificar",
+ "sub": "Ciencias Naturales 2 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué pasa con el helado en el verano?",
+   "segundos": 8,
+   "respuesta": "¡Se derrite!",
+   "emoji": "🍦",
+   "titulo": "DERRETIR",
+   "sub": "y solidificar",
+   "voz": [
+    "Desafío: ¿qué pasa con el helado en verano?",
+    "¡Se *derrite*!",
+    "Hoy: *derretir y solidificar*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "IDA Y VUELTA",
+   "items": [
+    "HIELO 🧊",
+    "+ CALOR 🔥",
+    "AGUA 💧",
+    "+ FRÍO ❄️"
+   ],
+   "voz": [
+    "El agua va y vuelve.",
+    "Empezamos con *hielo*.",
+    "Con *calor*, se derrite.",
+    "Se hace *agua*.",
+    "Con *frío*, ¡vuelve a ser hielo!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué hace que el agua se haga hielo?",
+   "opciones": [
+    "EL SOL",
+    "EL FRÍO",
+    "EL VIENTO",
+    "LA LUZ"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Qué hace que el agua se haga *hielo*?",
+    "Pensá en el congelador.",
+    "¡El *frío*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sólido y líquido",
+   "texto": "Sólido: tiene forma. Líquido: se derrama",
+   "emoji": "🧊",
+   "voz": [
+    "El hielo es *sólido*: tiene forma.",
+    "El agua es *líquido*: se derrama."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CALOR O FRÍO",
+   "texto": "Calor derrite. Frío solidifica",
+   "emoji": "🌡️",
+   "voz": [
+    "Truco: el *calor* derrite y el *frío* solidifica."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DERRETIR",
+     "sólido a líquido"
+    ],
+    [
+     "SOLIDIFICAR",
+     "líquido a sólido"
+    ],
+    [
+     "IDA Y VUELTA",
+     "se puede repetir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Derretir*: de sólido a líquido.",
+    "*Solidificar*: de líquido a sólido.",
+    "¡Es *ida y vuelta*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

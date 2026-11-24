@@ -1,0 +1,110 @@
+{
+ "slug": "medio-nat2-m5-n3",
+ "step_id": "1d61c4c2-4295-45c8-aaed-80610bf68e6c",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Evaporar y condensar",
+ "sub": "Ciencias Naturales 2 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "COCINA",
+   "titular": "¡Gotitas misteriosas en la tapa!",
+   "bajada": "Tomi investiga la olla",
+   "emoji": "🫕",
+   "titulo": "EVAPORAR",
+   "sub": "y condensar",
+   "voz": [
+    "¡Noticia: gotitas *misteriosas* en la tapa de la olla!",
+    "Tomi investiga.",
+    "Hoy: *evaporar y condensar*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "EL VIAJE DEL AGUA",
+   "pasos": [
+    {
+     "txt": "AGUA EN LA OLLA 💧",
+     "nota": "líquido"
+    },
+    {
+     "txt": "VAPOR QUE SUBE ♨️",
+     "nota": "con calor: se evapora"
+    },
+    {
+     "txt": "GOTITAS EN LA TAPA 💦",
+     "nota": "con frío: se condensa"
+    }
+   ],
+   "voz": [
+    "El agua está en la olla.",
+    "Con calor, se *evapora*: sube el vapor.",
+    "En la tapa fría, se *condensa*: ¡gotitas!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El agua del charco desaparece para siempre",
+   "emoji": "☀️",
+   "verdadero": false,
+   "explicacion": "Se hace vapor y sube",
+   "voz": [
+    "¿Verdadero o falso? El charco desaparece para siempre.",
+    "Pensá en el vapor…",
+    "¡*Falso*! Se hace vapor y sube."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por qué se empaña el espejo del baño?",
+   "opciones": [
+    "EL VAPOR SE CONDENSA",
+    "SE ENSUCIA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿por qué se empaña el espejo?",
+    "Pensá en la ducha caliente.",
+    "¡El vapor se *condensa*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO",
+   "texto": "El vapor también quema",
+   "emoji": "⚠️",
+   "voz": [
+    "Truco: el *vapor* también quema. ¡De lejos!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "EVAPORAR",
+     "agua a vapor"
+    ],
+    [
+     "CONDENSAR",
+     "vapor a gotitas"
+    ],
+    [
+     "VAPOR",
+     "agua que no vemos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Evaporar*: el agua se hace vapor.",
+    "*Condensar*: el vapor se hace gotitas.",
+    "El *vapor* es agua que no vemos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

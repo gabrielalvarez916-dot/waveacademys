@@ -1,0 +1,120 @@
+{
+ "slug": "medio-nat2-m4-n2",
+ "step_id": "2bb7e82e-1810-47c4-bd4e-4c89650b5561",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Plantas de ambientes secos y húmedos",
+ "sub": "Ciencias Naturales 2 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "VIAJE",
+   "titular": "¡Una planta con espinas en el desierto!",
+   "bajada": "Y otra que flota en el río",
+   "emoji": "🌵",
+   "titulo": "PLANTAS",
+   "sub": "secas y húmedas",
+   "voz": [
+    "¡Noticia: una planta con *espinas* en el desierto!",
+    "Y otra que *flota* en el río.",
+    "Hoy: *plantas de lugares secos y húmedos*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "SECO CONTRA HÚMEDO",
+   "a": {
+    "txt": "CACTUS",
+    "emoji": "🌵",
+    "datos": [
+     "tallo grueso",
+     "espinas"
+    ]
+   },
+   "b": {
+    "txt": "HOJAS DE SELVA",
+    "emoji": "🌿",
+    "datos": [
+     "hojas grandes",
+     "mucha agua"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Cada una sirve para su lugar!",
+   "voz": [
+    "Comparamos dos plantas.",
+    "El *cactus*: tallo grueso y espinas, para el desierto.",
+    "Las plantas de *selva*: hojas grandes, con mucha agua.",
+    "¡Cada una sirve para su lugar!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué planta es?",
+   "pistas": [
+    "Vive en el río",
+    "Tiene hojas verdes",
+    "Flota en el agua"
+   ],
+   "respuesta": "EL CAMALOTE",
+   "voz": [
+    "Adivinanza: ¿qué planta es?",
+    "Pista uno: vive en el río.",
+    "Pista dos: tiene hojas verdes.",
+    "Pista tres: *flota* en el agua.",
+    "¡El *camalote*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué planta guarda agua en su tallo?",
+   "opciones": [
+    "EL CACTUS",
+    "EL CAMALOTE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué planta guarda agua?",
+    "Pensá en el desierto.",
+    "¡El *cactus*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL LUGAR",
+   "texto": "Cada planta es como el lugar donde vive",
+   "emoji": "🗺️",
+   "voz": [
+    "Truco: cada planta se parece al *lugar* donde vive."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SECO",
+     "cactus: guarda agua"
+    ],
+    [
+     "HÚMEDO",
+     "hojas grandes"
+    ],
+    [
+     "RÍO",
+     "camalote: flota"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En lo *seco*: el cactus guarda agua.",
+    "En lo *húmedo*: hojas grandes.",
+    "En el *río*: el camalote flota.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

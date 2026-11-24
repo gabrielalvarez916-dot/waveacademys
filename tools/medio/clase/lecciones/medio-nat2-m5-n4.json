@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat2-m5-n4",
+ "step_id": "6e8e091d-0e8a-4ff2-80a0-89b547187486",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Qué cambia al cocinar",
+ "sub": "Ciencias Naturales 2 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuela",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Me ayudás a cocinar? 🍳"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! Y miro qué cambia"
+    }
+   ],
+   "titulo": "COCINAR",
+   "sub": "qué cambia",
+   "voz": [
+    "La abuela pregunta: ¿me ayudás a cocinar?",
+    "Tomi responde: ¡sí, y miro qué cambia!",
+    "Hoy: *qué cambia al cocinar*."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "CRUDO",
+    "emoji": "🥚",
+    "texto": "Huevo líquido"
+   },
+   "despues": {
+    "cab": "COCIDO",
+    "emoji": "🍳",
+    "texto": "Huevo duro"
+   },
+   "voz": [
+    "*Antes*: el huevo crudo es líquido.",
+    "*Después* de cocinarlo: ¡se pone duro y no vuelve atrás!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "ANTES Y DESPUÉS",
+   "items": [
+    {
+     "frente": "🍞 PAN",
+     "dorso": "TOSTADA",
+     "emoji": "🍞"
+    },
+    {
+     "frente": "🥔 PAPA DURA",
+     "dorso": "PAPA BLANDA",
+     "emoji": "🥔"
+    },
+    {
+     "frente": "🧊 HIELO",
+     "dorso": "AGUA (¡VUELVE!)",
+     "emoji": "🧊"
+    }
+   ],
+   "voz": [
+    "El *pan* se hace tostada.",
+    "La *papa* dura se pone blanda.",
+    "El *hielo* se hace agua… ¡y ese sí vuelve!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cambio NO vuelve atrás?",
+   "opciones": [
+    "COCINAR UN HUEVO",
+    "DERRETIR HIELO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué cambio no vuelve atrás?",
+    "Pensá en el huevo duro.",
+    "¡*Cocinar un huevo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMPARÁ",
+   "texto": "Mirá el alimento antes y después",
+   "emoji": "👀",
+   "voz": [
+    "Truco: mirá el alimento *antes* y *después*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CRUDO",
+     "antes de cocinar"
+    ],
+    [
+     "COCIDO",
+     "después del calor"
+    ],
+    [
+     "NO VUELVE",
+     "huevo, tostada"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Crudo*: antes de cocinar.",
+    "*Cocido*: después del calor.",
+    "Algunos cambios *no vuelven*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

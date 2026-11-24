@@ -1,0 +1,125 @@
+{
+ "slug": "medio-nat2-m5-n1",
+ "step_id": "7639ad94-e71f-4057-83a5-fd142218f507",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Qué pasa al calentar",
+ "sub": "Ciencias Naturales 2 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "☀️",
+   "lineas": [
+    "Tomi dejó un chocolate al sol.",
+    "¡Se puso blandito!",
+    "¿Qué pasó?"
+   ],
+   "titulo": "CALENTAR",
+   "sub": "qué pasa con el calor",
+   "voz": [
+    "Tomi dejó un *chocolate* al sol.",
+    "¡Se puso *blandito*!",
+    "¿Qué pasó?",
+    "Hoy: *qué pasa al calentar*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "DOS CHOCOLATES",
+   "variable": "EL CALOR",
+   "a": {
+    "cab": "A LA SOMBRA",
+    "emojis": [
+     "🍫",
+     "🌳"
+    ],
+    "txt": "Sin calor",
+    "res": "QUEDA DURO"
+   },
+   "b": {
+    "cab": "AL SOL",
+    "emojis": [
+     "🍫",
+     "☀️"
+    ],
+    "txt": "Con calor",
+    "res": "¡SE ABLANDA!"
+   },
+   "voz": [
+    "Probamos con dos chocolates.",
+    "A la *sombra*: queda duro.",
+    "Al *sol*: ¡se ablanda!"
+   ]
+  },
+  {
+   "t": "medidor",
+   "titulo": "EL TERMÓMETRO",
+   "tipo": "termometro",
+   "min": 0,
+   "max": 50,
+   "valor": 35,
+   "unidad": "°C",
+   "nota": "Día de mucho calor",
+   "voz": [
+    "Esto es un *termómetro*.",
+    "Mide si algo está frío o caliente.",
+    "¡Hoy marca mucho calor!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué le pasa a la manteca en la sartén caliente?",
+   "opciones": [
+    "SE DERRITE",
+    "SE CONGELA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué le pasa a la manteca?",
+    "Pensá en el calor.",
+    "¡Se *derrite*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "Las cosas calientes queman",
+   "emoji": "⚠️",
+   "voz": [
+    "Truco: con cosas calientes, siempre con un *adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CALENTAR",
+     "dar calor"
+    ],
+    [
+     "CAMBIA",
+     "se ablanda, se derrite"
+    ],
+    [
+     "TERMÓMETRO",
+     "mide frío y calor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Calentar* es dar calor.",
+    "Con calor, las cosas *cambian*.",
+    "El *termómetro* mide frío y calor.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

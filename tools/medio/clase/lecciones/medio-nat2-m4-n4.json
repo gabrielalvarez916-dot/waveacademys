@@ -1,0 +1,136 @@
+{
+ "slug": "medio-nat2-m4-n4",
+ "step_id": "df572644-4cfd-4d3b-8329-b6c873052c06",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Comparo ambientes argentinos",
+ "sub": "Ciencias Naturales 2 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Adónde viajás, Tomi? 🗺️"
+    },
+    {
+     "yo": true,
+     "txt": "¡Por toda la Argentina!"
+    }
+   ],
+   "titulo": "AMBIENTES",
+   "sub": "de la Argentina",
+   "voz": [
+    "Sofi pregunta: ¿adónde viajás, Tomi?",
+    "Tomi responde: ¡por toda la Argentina!",
+    "Hoy: *ambientes argentinos*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🌳",
+    "🌊",
+    "🏔️"
+   ],
+   "lugar": "🇦🇷",
+   "rotulos": [
+    {
+     "txt": "SELVA",
+     "sub": "yaguareté y tucán"
+    },
+    {
+     "txt": "MAR",
+     "sub": "pingüino y lobo marino"
+    },
+    {
+     "txt": "MONTAÑA",
+     "sub": "guanaco y cóndor"
+    }
+   ],
+   "voz": [
+    "En la *selva* viven el yaguareté y el tucán.",
+    "En el *mar*, el pingüino y el lobo marino.",
+    "En la *montaña*, el guanaco y el cóndor."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Perdido",
+    "emoji": "🧭"
+   },
+   "preguntas": [
+    {
+     "p": "¿Dónde vive el pingüino?",
+     "r": "EN EL MAR"
+    },
+    {
+     "p": "¿Dónde vive el tucán?",
+     "r": "EN LA SELVA"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Perdido*! No sabe dónde vive cada animal.",
+    "Lo ayudamos.",
+    "El pingüino: en el *mar*.",
+    "¡El tucán: en la *selva*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde hace más frío?",
+   "opciones": [
+    "EN LA MONTAÑA",
+    "EN LA SELVA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿dónde hace más frío?",
+    "Pensá en la lana del guanaco.",
+    "¡En la *montaña*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CALOR O FRÍO",
+   "texto": "Pensá cómo es el clima de cada lugar",
+   "emoji": "🌡️",
+   "voz": [
+    "Truco: ¿el lugar es de *calor* o de *frío*?"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SELVA",
+     "calor y lluvia"
+    ],
+    [
+     "MAR",
+     "agua salada"
+    ],
+    [
+     "MONTAÑA",
+     "frío"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *selva*: calor y lluvia.",
+    "El *mar*: agua salada.",
+    "La *montaña*: frío.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

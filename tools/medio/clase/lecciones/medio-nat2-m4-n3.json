@@ -1,0 +1,153 @@
+{
+ "slug": "medio-nat2-m4-n3",
+ "step_id": "c5c0ac10-cb47-4050-92bf-9a37bf3444d4",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Cuerpos para moverse",
+ "sub": "Ciencias Naturales 2 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se mueve un animal sin patas?",
+   "segundos": 8,
+   "respuesta": "¡Repta, como la víbora!",
+   "emoji": "🐍",
+   "titulo": "MOVERSE",
+   "sub": "cada uno a su manera",
+   "voz": [
+    "Desafío: ¿cómo se mueve un animal *sin patas*?",
+    "¡*Repta*, como la víbora!",
+    "Hoy: *cuerpos para moverse*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Rana Rita",
+    "emoji": "🐸"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Yo salto muy lejos.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Mis patas de atrás son largas y fuertes.",
+     "animo": "ojo"
+    },
+    {
+     "txt": "¡Por eso salto tan bien!",
+     "animo": "feliz"
+    }
+   ],
+   "voz": [
+    "¡Hola! Yo *salto* muy lejos.",
+    "Mis patas de atrás son *largas* y fuertes.",
+    "¡Por eso salto tan bien!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL ZOOLÓGICO",
+   "candados": [
+    {
+     "p": "El pez se mueve…",
+     "r": "NADANDO"
+    },
+    {
+     "p": "El pájaro se mueve…",
+     "r": "VOLANDO"
+    },
+    {
+     "p": "La víbora se mueve…",
+     "r": "REPTANDO"
+    }
+   ],
+   "voz": [
+    "¡Para salir del zoológico, abrimos los candados!",
+    "El pez: *nadando*.",
+    "El pájaro: *volando*.",
+    "La víbora: *reptando*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "AGUA",
+     "emoji": "🌊"
+    },
+    {
+     "cab": "AIRE",
+     "emoji": "☁️"
+    },
+    {
+     "cab": "TIERRA",
+     "emoji": "🌍"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "PEZ",
+     "caja": 0
+    },
+    {
+     "txt": "PÁJARO",
+     "caja": 1
+    },
+    {
+     "txt": "ÑANDÚ",
+     "caja": 2
+    },
+    {
+     "txt": "VÍBORA",
+     "caja": 2
+    }
+   ],
+   "voz": [
+    "Separamos según dónde se mueven.",
+    "El pez, en el *agua*.",
+    "El pájaro, en el *aire*.",
+    "El ñandú y la víbora, en la *tierra*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ EL CUERPO",
+   "texto": "Las partes del cuerpo dicen cómo se mueve",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: las partes del cuerpo dicen *cómo se mueve*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NADAR",
+     "aletas"
+    ],
+    [
+     "VOLAR",
+     "alas"
+    ],
+    [
+     "CORRER Y SALTAR",
+     "patas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Para *nadar*: aletas.",
+    "Para *volar*: alas.",
+    "Para *correr y saltar*: patas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

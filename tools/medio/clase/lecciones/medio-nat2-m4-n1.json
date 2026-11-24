@@ -1,0 +1,129 @@
+{
+ "slug": "medio-nat2-m4-n1",
+ "step_id": "42c624c5-fcec-44ca-b91a-8baecfdd5dd7",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Patas, picos y pelajes",
+ "sub": "Ciencias Naturales 2 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🔍",
+   "lineas": [
+    "Tomi mira un pato con su lupa.",
+    "¡Sus patas son raras!",
+    "¿Para qué le sirven?"
+   ],
+   "titulo": "CUERPOS",
+   "sub": "patas, picos y pelajes",
+   "voz": [
+    "Tomi mira un *pato* con su lupa.",
+    "¡Sus patas son raras!",
+    "¿Para qué le sirven?",
+    "Hoy: *patas, picos y pelajes*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🦆",
+     "txt": "UN PATO"
+    },
+    {
+     "emoji": "🦶",
+     "txt": "SUS PATAS"
+    },
+    {
+     "emoji": "🏊",
+     "txt": "¡PIEL PARA NADAR!"
+    }
+   ],
+   "voz": [
+    "Miramos de cerca un *pato*.",
+    "Más cerca: sus *patas*.",
+    "¡Tienen piel entre los dedos para *nadar*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿PARA QUÉ SIRVE?",
+   "pares": [
+    [
+     "PATAS DEL PATO",
+     "nadar"
+    ],
+    [
+     "PICO DEL HORNERO",
+     "comer bichitos"
+    ],
+    [
+     "LANA DEL GUANACO",
+     "abrigar"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada parte con lo que hace.",
+    "Patas del pato: para *nadar*.",
+    "Pico del hornero: para *comer bichitos*.",
+    "Lana del guanaco: para *abrigar*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué sirve la lana del guanaco?",
+   "opciones": [
+    "PARA EL FRÍO",
+    "PARA NADAR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿para qué sirve la lana?",
+    "Pensá dónde vive el guanaco.",
+    "¡Para el *frío*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ ¿PARA QUÉ?",
+   "texto": "Cada parte del cuerpo sirve para algo",
+   "emoji": "❓",
+   "voz": [
+    "Truco: cada parte del cuerpo *sirve para algo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PATAS",
+     "nadar o correr"
+    ],
+    [
+     "PICOS",
+     "comer"
+    ],
+    [
+     "PELAJE",
+     "abrigar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las *patas* sirven para nadar o correr.",
+    "Los *picos*, para comer.",
+    "El *pelaje*, para abrigar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
