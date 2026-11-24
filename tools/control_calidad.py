@@ -87,9 +87,9 @@ RAIZ = os.path.dirname(AQUI)
 SIM_DEF = 0.80          # misma explicación casi igual (Retoma/Profundiza pueden volver a usar el término; lo que no vale es repetir la explicación)
 SIM_DEF_NUEVO = 0.50    # misión "Nuevo": un término ya definido no puede volver con una explicación parecida
 SIM_EJ = 0.60           # parecido de ejemplos
-PDF_PALABRAS = {'avanzado': 480, 'medio': 380, 'primeros': 230}   # línea base: primeras misiones (~610 palabras/nivel)   # por nivel, sin carpeta ni claves
+PDF_PALABRAS = {'avanzado': 425, 'medio': 320, 'primeros': 170}   # piso = 85% del promedio medido en las primeras misiones: Avanzado 500 (18-19/11), Medio/primeros 201 (21/11). 'medio' sin misiones para medir
 PDF_ETAPAS = {'avanzado': 2, 'medio': 2, 'primeros': 1}            # secciones mínimas de etapa 1 y de etapa 2
-CLASE = {'avanzado': (10, 330), 'medio': (9, 260), 'primeros': (7, 170)}   # línea base: primeras clases ≈2 min de narración (Medio y primeros: provisorio)
+CLASE = {'avanzado': (9, 280), 'medio': (8, 180), 'primeros': (6, 105)}   # (escenas, palabras de voz): 85% de las primeras clases medidas — Avanzado 11 esc/329 pal (18-19/11), Medio/primeros 7 esc/124 pal (21/11)
 PROCEDIMENTALES = {'matematica', 'fisica', 'quimica'}   # repetir el tema es válido si suben las cifras: solo se compara el ejemplo con los mismos números  
 PENSADA_MIN_PALABRAS = {'avanzado': 12, 'medio': 9, 'primeros': 6}   # palabras del caso o texto de una pregunta pensada
 RECORDAR_MAX = {'avanzado': 0.25, 'medio': 0.30, 'primeros': 0.40}
