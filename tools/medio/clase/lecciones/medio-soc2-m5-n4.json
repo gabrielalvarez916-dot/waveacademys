@@ -1,0 +1,163 @@
+{
+ "slug": "medio-soc2-m5-n4",
+ "step_id": "1988f139-e1ac-41fc-850a-45885ac98640",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Mapas de recorridos",
+ "sub": "Ciencias Sociales 2 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🗺️",
+     "txt": "UN MAPA"
+    },
+    {
+     "emoji": "🏘️",
+     "txt": "EL BARRIO DE LOLA"
+    },
+    {
+     "emoji": "➡️",
+     "txt": "¡SU RECORRIDO A LA ESCUELA!"
+    }
+   ],
+   "voz": [
+    "Miramos un *mapa*.",
+    "Más cerca: el *barrio* de Lola.",
+    "¡Su *recorrido* a la escuela! Hoy: *mapas*."
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "LOLA",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "SEÑORA",
+     "emoji": "👵"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 1,
+     "txt": "¿Cómo llego a la escuela?"
+    },
+    {
+     "quien": 0,
+     "txt": "Siga derecho hasta la plaza."
+    },
+    {
+     "quien": 0,
+     "txt": "Pase el kiosco: ¡ahí está!"
+    }
+   ],
+   "voz": [
+    "¿Cómo llego a la escuela?",
+    "Siga derecho hasta la *plaza*.",
+    "Pase el *kiosco*: ¡ahí está!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Referencias",
+   "texto": "Dibujitos que explican qué es cada cosa en el mapa",
+   "emoji": "🔑",
+   "voz": [
+    "Las *referencias* explican el mapa.",
+    "Siempre miralas primero."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con qué se marca un recorrido?",
+   "opciones": [
+    "CON UNA LÍNEA",
+    "CON UN SELLO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿con qué se marca un recorrido?",
+    "Pensá en el mapa.",
+    "¡Con una *línea* o flechas!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LEER UN RECORRIDO",
+   "items": [
+    {
+     "txt": "Busco el número 1",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Sigo la línea",
+     "emoji": "➡️"
+    },
+    {
+     "txt": "Miro las referencias",
+     "emoji": "🔑"
+    },
+    {
+     "txt": "Llego al final",
+     "emoji": "🏁"
+    }
+   ],
+   "voz": [
+    "Leemos el recorrido de Lola, paso a paso.",
+    "Busco el *número uno*: la casa.",
+    "Sigo la *línea*: plaza y kiosco.",
+    "Miro las *referencias* para entender cada dibujito.",
+    "¡Llego al final: la *escuela*!"
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "Un mapa muestra los lugares vistos desde arriba",
+   "emoji": "🦅",
+   "voz": [
+    "¿Sabías qué?",
+    "Un mapa muestra todo desde *arriba*, como si volaras."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SEGUÍ LA LÍNEA",
+   "texto": "Empezá por el número 1",
+   "emoji": "1️⃣",
+   "voz": [
+    "Truco: seguí la línea desde el *número uno*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECORRIDO",
+     "de un lugar a otro"
+    ],
+    [
+     "LÍNEA",
+     "marca el camino"
+    ],
+    [
+     "REFERENCIAS",
+     "explican el mapa"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *recorrido* va de un lugar a otro.",
+    "La *línea* marca el camino.",
+    "Las *referencias* explican el mapa.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

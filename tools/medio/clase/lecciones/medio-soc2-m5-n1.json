@@ -1,0 +1,140 @@
+{
+ "slug": "medio-soc2-m5-n1",
+ "step_id": "3b1f281f-3ce1-4a75-bfb4-2f3561b9217b",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Rutas, caminos y vías",
+ "sub": "Ciencias Sociales 2 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cómo se llega de la ciudad al campo?",
+   "segundos": 8,
+   "respuesta": "¡Por rutas y caminos!",
+   "emoji": "🛣️",
+   "titulo": "RUTAS",
+   "sub": "caminos y vías",
+   "voz": [
+    "Desafío: ¿cómo se llega al *campo*?",
+    "¡Por *rutas* y caminos!",
+    "Hoy: *rutas, caminos y vías*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🗺️",
+   "titulo": "CAMINOS",
+   "partes": [
+    {
+     "txt": "RUTA",
+     "x": 0,
+     "y": -0.8
+    },
+    {
+     "txt": "CAMINO DE TIERRA",
+     "x": -0.7,
+     "y": 0
+    },
+    {
+     "txt": "VÍAS DEL TREN",
+     "x": 0.7,
+     "y": 0
+    },
+    {
+     "txt": "RÍO",
+     "x": 0,
+     "y": 0.8
+    }
+   ],
+   "voz": [
+    "Hay muchos caminos para viajar.",
+    "La *ruta*, asfaltada.",
+    "El *camino de tierra*, en el campo.",
+    "Las *vías*, para el tren.",
+    "Y el *río*, para los barcos."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El tren va por la ruta",
+   "emoji": "🚆",
+   "verdadero": false,
+   "explicacion": "El tren va por las vías",
+   "voz": [
+    "¿Verdadero o falso? El tren va por la ruta.",
+    "Pensá en los rieles…",
+    "¡*Falso*! Va por las *vías*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué camino se llena de barro con lluvia?",
+   "opciones": [
+    "EL DE TIERRA",
+    "LA RUTA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuál se llena de barro?",
+    "Pensá en la lluvia.",
+    "¡El camino de *tierra*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Ruta",
+   "texto": "Camino asfaltado y largo que une pueblos y ciudades",
+   "emoji": "🛣️",
+   "voz": [
+    "Una *ruta* es un camino asfaltado y largo.",
+    "Une el *campo* con pueblos y ciudades."
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "Sin caminos, la comida no llegaría a la ciudad",
+   "emoji": "🥬",
+   "voz": [
+    "¿Sabías qué?",
+    "¡Sin caminos, la comida no llegaría a la *ciudad*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO CON LAS VÍAS",
+   "texto": "Se cruzan solo por el paso a nivel",
+   "emoji": "🚧",
+   "voz": [
+    "Truco: cruzá las vías solo por el *paso a nivel*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RUTA",
+     "asfaltada"
+    ],
+    [
+     "CAMINO DE TIERRA",
+     "en el campo"
+    ],
+    [
+     "VÍAS",
+     "para el tren"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *ruta* es asfaltada.",
+    "El camino de *tierra* está en el campo.",
+    "Las *vías* son para el tren.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

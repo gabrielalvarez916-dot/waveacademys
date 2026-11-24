@@ -1,0 +1,153 @@
+{
+ "slug": "medio-soc2-m5-n2",
+ "step_id": "daafd614-22fa-469e-9f6b-e0244dc5ef19",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Camiones, trenes y barcos de carga",
+ "sub": "Ciencias Sociales 2 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "VIAJE",
+   "titular": "¡Lola viaja en un tren de carga!",
+   "bajada": "Lleva granos al puerto",
+   "emoji": "🚂",
+   "titulo": "CAMIONES",
+   "sub": "trenes y barcos",
+   "voz": [
+    "¡Noticia: Lola viaja en un tren de *carga*!",
+    "Lleva granos al *puerto*.",
+    "Hoy: *camiones, trenes y barcos*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "¿CUÁNTA CARGA LLEVA?",
+   "items": [
+    {
+     "txt": "CAMIÓN",
+     "emoji": "🚚",
+     "valor": 2
+    },
+    {
+     "txt": "TREN",
+     "emoji": "🚂",
+     "valor": 6
+    },
+    {
+     "txt": "BARCO",
+     "emoji": "🚢",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "El *camión* lleva un poco.",
+    "El *tren* lleva más.",
+    "¡El *barco* lleva muchísimo!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Qué transporte cruza el mar?",
+   "a": {
+    "txt": "EL BARCO",
+    "emoji": "🚢"
+   },
+   "b": {
+    "txt": "EL CAMIÓN",
+    "emoji": "🚚"
+   },
+   "correcta": "a",
+   "resultado": "El barco lleva la carga a otros países",
+   "voz": [
+    "¿Qué transporte cruza el *mar*?",
+    "Pensá…",
+    "¡El *barco*! Lleva carga a otros países."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por dónde va el camión?",
+   "opciones": [
+    "POR LA RUTA",
+    "POR EL RÍO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿por dónde va el camión?",
+    "Pensá en el asfalto.",
+    "¡Por la *ruta*!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL VIAJE DE LA SOJA",
+   "items": [
+    {
+     "txt": "Camión: sale del campo",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "Tren: va al puerto",
+     "emoji": "🚂"
+    },
+    {
+     "txt": "Barco: a otro país",
+     "emoji": "🚢"
+    }
+   ],
+   "voz": [
+    "Veamos un ejemplo: el viaje de la *soja*.",
+    "Un *camión* la saca del campo por la ruta.",
+    "Un *tren* la lleva por las vías hasta el puerto.",
+    "En el puerto la cargan en un *barco* enorme."
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "Un barco grande lleva más carga que muchísimos camiones",
+   "emoji": "🚢",
+   "voz": [
+    "¿Sabías qué?",
+    "¡Un barco lleva más carga que *muchísimos* camiones juntos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿POR DÓNDE VA?",
+   "texto": "Ruta, vías o agua",
+   "emoji": "🧭",
+   "voz": [
+    "Truco: mirá por dónde va: *ruta*, vías o agua."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMIÓN",
+     "por la ruta"
+    ],
+    [
+     "TREN",
+     "por las vías"
+    ],
+    [
+     "BARCO",
+     "por el agua"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *camión* va por la ruta.",
+    "El *tren*, por las vías.",
+    "El *barco*, por el agua.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

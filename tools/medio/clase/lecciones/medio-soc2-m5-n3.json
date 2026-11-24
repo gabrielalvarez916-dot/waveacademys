@@ -1,0 +1,169 @@
+{
+ "slug": "medio-soc2-m5-n3",
+ "step_id": "61dc42dd-18a0-4fb5-b08b-21c53673f256",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Cómo llega la comida a la ciudad",
+ "sub": "Ciencias Sociales 2 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Mamá",
+    "emoji": "👩"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿De dónde vino esta lechuga? 🥬"
+    },
+    {
+     "yo": true,
+     "txt": "¡Voy a averiguarlo!"
+    }
+   ],
+   "titulo": "CÓMO LLEGA",
+   "sub": "la comida",
+   "voz": [
+    "Mamá pregunta: ¿de dónde vino esta *lechuga*?",
+    "Lola responde: ¡voy a *averiguarlo*!",
+    "Hoy: *cómo llega la comida*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL VIAJE DE LA LECHUGA",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "quinta",
+     "emoji": "🥬"
+    },
+    {
+     "fecha": "2",
+     "txt": "camión",
+     "emoji": "🚚"
+    },
+    {
+     "fecha": "3",
+     "txt": "mercado",
+     "emoji": "🏬"
+    },
+    {
+     "fecha": "4",
+     "txt": "verdulería",
+     "emoji": "🛒"
+    }
+   ],
+   "voz": [
+    "La cosechan en la *quinta*.",
+    "Viaja en *camión*.",
+    "Llega al *mercado*.",
+    "¡Y la venden en la *verdulería*!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Despistado",
+    "emoji": "👾"
+   },
+   "preguntas": [
+    {
+     "p": "¿Dónde crece la lechuga?",
+     "r": "EN LA QUINTA"
+    },
+    {
+     "p": "¿Dónde compran los verduleros?",
+     "r": "EN EL MERCADO"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Despistado*!",
+    "No sabe de dónde viene la comida.",
+    "La lechuga crece en la *quinta*.",
+    "Los verduleros compran en el *mercado*. ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Por qué la verdura viaja rápido?",
+   "opciones": [
+    "PARA ESTAR FRESCA",
+    "PARA JUGAR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿por qué viaja rápido?",
+    "Pensá en la lechuga.",
+    "¡Para estar *fresca*!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LAS NARANJAS",
+   "items": [
+    {
+     "txt": "Se cosechan",
+     "emoji": "🍊"
+    },
+    {
+     "txt": "Viajan en camión",
+     "emoji": "🚚"
+    },
+    {
+     "txt": "Llegan al mercado",
+     "emoji": "🏬"
+    },
+    {
+     "txt": "Las compramos",
+     "emoji": "🛒"
+    }
+   ],
+   "voz": [
+    "Otro ejemplo: las *naranjas*.",
+    "Primero las *cosechan* en el campo.",
+    "Después viajan en *camión* toda la noche.",
+    "Llegan al *mercado* muy temprano.",
+    "¡Y las compramos en la verdulería!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PREGUNTÁ",
+   "texto": "¿De dónde viene lo que comés?",
+   "emoji": "🎤",
+   "voz": [
+    "Truco: preguntá de dónde viene lo que *comés*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "QUINTA",
+     "se cosecha"
+    ],
+    [
+     "MERCADO",
+     "se vende a negocios"
+    ],
+    [
+     "VERDULERÍA",
+     "la compramos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la *quinta* se cosecha.",
+    "En el *mercado* se vende a los negocios.",
+    "En la *verdulería* la compramos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
