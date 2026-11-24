@@ -660,7 +660,7 @@
   async function abrirPasoAPaso(paso, titulo) {
     var r = await sb.from('lesson_steps').select('content').eq('id', paso.id).maybeSingle();
     var items = r.data && r.data.content && r.data.content.items;
-    items = Array.isArray(items) ? items.filter(function (x) { return x && typeof x.u === 'string' && x.u.indexOf('/actividades/pasoapaso/') === 0; }) : [];
+    items = Array.isArray(items) ? items.filter(function (x) { return x && ((typeof x.html === 'string' && /^<!doctype html/i.test(x.html)) || (typeof x.u === 'string' && x.u.indexOf('/actividades/pasoapaso/') === 0)); }) : [];
     if (r.error || !items.length) throw new Error('No pudimos abrir el paso a paso.');
     var el = document.createElement('div');
     el.className = 'wvp';
@@ -673,7 +673,10 @@
     document.body.classList.add('wvp-abierto');
     var frame = el.querySelector('iframe');
     async function ver(i) {
-      try { var h = await fetch(items[i].u, { cache: 'no-cache' }); if (!h.ok) throw new Error('x'); frame.srcdoc = calmar(await h.text()); }
+      try {
+        if (typeof items[i].html === 'string') { frame.srcdoc = calmar(items[i].html); return; } // HTML guardado en Supabase
+        var h = await fetch(items[i].u, { cache: 'no-cache' }); if (!h.ok) throw new Error('x'); frame.srcdoc = calmar(await h.text()); // HTML del repo
+      }
       catch (e) { toast('No pudimos abrir el paso a paso. Revisá tu conexión.', true); }
     }
     function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); }
