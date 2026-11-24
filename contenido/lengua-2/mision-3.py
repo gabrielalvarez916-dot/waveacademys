@@ -72,7 +72,7 @@ B4=NV("Vas a comparar dos cuentos con criterios claros: tema, ambiente, narrador
  {"titulo":"Mismos criterios","texto":"Antes de comparar, anotá los criterios en una lista y usá los mismos para los dos cuentos."},
  ["Contar un cuento entero y después el otro, sin comparar.","Usar criterios distintos para cada cuento."],
  RS(("Comparar","Parecidos y diferencias."),("Criterio","Punto de vista fijo."),("Parecido","Lo que se repite."),("Diferencia","Lo que cambia.")),
- G(("Criterio","Punto de vista fijo para mirar un texto."),("Parecido","Rasgo que se repite en los dos textos."),("Contraste","Diferencia marcada entre dos cosas."),("Conector","Palabra que une ideas, como «en cambio».")),
+ G(("Criterio","Punto de vista fijo para mirar un texto."),("Parecido","Rasgo que se repite en los dos textos."),("Paralelo","Comparación punto por punto entre dos textos."),("Marca de diferencia","Expresión que señala que dos cosas no son iguales, como «en cambio».")),
  ["En un cuento cuenta la protagonista y en otro cuenta alguien desde afuera. ¿Qué criterio usás para comparar? Escribí una palabra.","¿Cómo se llama el rasgo que se repite en los dos cuentos? Escribí una palabra.","Una alumna compara un cuento con un criterio y el otro con otro distinto. ¿Qué tiene que usar: los mismos criterios o criterios distintos? Escribí «los mismos» o «distintos».","Un cuento ocurre en un faro y el otro, en un mercado. ¿Es un parecido o una diferencia? Escribí una palabra."],
  ["aplicar","recordar","error","analizar"],
  [["narrador","el narrador"],["parecido","un parecido"],["los mismos","los mismos criterios"],["diferencia","una diferencia"]],
