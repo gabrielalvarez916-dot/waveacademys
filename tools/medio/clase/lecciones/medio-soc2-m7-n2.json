@@ -1,0 +1,141 @@
+{
+ "slug": "medio-soc2-m7-n2",
+ "step_id": "286edde1-d491-4253-8bc4-511f051384dc",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Reclamos de las personas que trabajaban",
+ "sub": "Ciencias Sociales 2 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "VIAJE AL PASADO",
+   "titular": "¡Los obreros hacen huelga!",
+   "bajada": "Piden menos horas de trabajo",
+   "emoji": "🪧",
+   "titulo": "RECLAMOS",
+   "sub": "de los trabajadores",
+   "voz": [
+    "¡Noticia del pasado: los obreros hacen *huelga*!",
+    "Piden trabajar *menos horas*.",
+    "Hoy: *reclamos de los trabajadores*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué es?",
+   "pistas": [
+    "Muchos trabajadores",
+    "Se unen",
+    "Reclaman juntos"
+   ],
+   "respuesta": "¡EL SINDICATO! 🤝",
+   "voz": [
+    "Adivinanza: ¿qué es?",
+    "Pista uno: muchos trabajadores.",
+    "Pista dos: se unen.",
+    "Pista tres: reclaman juntos.",
+    "¡El *sindicato*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Se escucha más un reclamo de uno o de muchos?",
+   "a": {
+    "txt": "DE MUCHOS",
+    "emoji": "👥"
+   },
+   "b": {
+    "txt": "DE UNO SOLO",
+    "emoji": "👤"
+   },
+   "correcta": "a",
+   "resultado": "Juntos, los reclamos se escuchan más",
+   "voz": [
+    "¿Se escucha más el reclamo de *uno* o de *muchos*?",
+    "Pensá…",
+    "¡De *muchos*! Juntos se escucha más."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UN RECLAMO",
+   "items": [
+    {
+     "txt": "Trabajan sin descanso",
+     "emoji": "😓"
+    },
+    {
+     "txt": "Se juntan",
+     "emoji": "🤝"
+    },
+    {
+     "txt": "Hacen carteles",
+     "emoji": "🪧"
+    },
+    {
+     "txt": "Consiguen leyes",
+     "emoji": "📜"
+    }
+   ],
+   "voz": [
+    "Seguimos un reclamo, paso a paso.",
+    "Los obreros trabajan *sin descanso*.",
+    "Se *juntan* en el sindicato.",
+    "Hacen *carteles* y marchan por la calle.",
+    "Con el tiempo, consiguen *leyes* que los cuidan."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es una huelga?",
+   "opciones": [
+    "DEJAR DE TRABAJAR JUNTOS",
+    "IRSE DE VACACIONES"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué es una huelga?",
+    "Pensá en el reclamo.",
+    "¡Dejar de trabajar *juntos* para reclamar!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "SIN LASTIMAR",
+   "texto": "Se reclama sin lastimar a nadie",
+   "emoji": "🕊️",
+   "voz": [
+    "Truco: se reclama sin *lastimar* a nadie."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECLAMO",
+     "pedir lo justo"
+    ],
+    [
+     "HUELGA",
+     "dejar de trabajar juntos"
+    ],
+    [
+     "SINDICATO",
+     "trabajadores unidos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *reclamo* es pedir lo justo.",
+    "La *huelga* es dejar de trabajar juntos.",
+    "El *sindicato* une a los trabajadores.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

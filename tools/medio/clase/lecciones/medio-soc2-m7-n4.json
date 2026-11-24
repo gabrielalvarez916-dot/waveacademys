@@ -1,0 +1,158 @@
+{
+ "slug": "medio-soc2-m7-n4",
+ "step_id": "51c199e5-0d8c-4724-a46d-3dab15c78e15",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Cómo resolvemos conflictos hoy",
+ "sub": "Ciencias Sociales 2 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "ANA",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "LUIS",
+     "emoji": "👦"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "Yo quiero jugar al fútbol."
+    },
+    {
+     "quien": 1,
+     "txt": "Y yo, a la mancha."
+    },
+    {
+     "quien": 0,
+     "txt": "¡Hoy fútbol y mañana mancha!"
+    },
+    {
+     "quien": 1,
+     "txt": "¡Trato hecho!"
+    }
+   ],
+   "voz": [
+    "Yo quiero jugar al fútbol.",
+    "Y yo, a la mancha.",
+    "¡Hoy fútbol y mañana mancha!",
+    "¡Trato hecho!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Acuerdo",
+   "texto": "Cuando todos aceptan una solución después de hablar",
+   "emoji": "🤝",
+   "voz": [
+    "Ana y Luis hicieron un *acuerdo*.",
+    "Hablaron, se escucharon y aceptaron una *solución*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA SALA DEL ACUERDO",
+   "candados": [
+    {
+     "p": "¿Qué hago primero?",
+     "r": "DIGO LO QUE PASA"
+    },
+    {
+     "p": "¿Y después?",
+     "r": "ESCUCHO AL OTRO"
+    }
+   ],
+   "voz": [
+    "¡Para salir de la sala, abrimos los candados!",
+    "Primero, *digo* lo que pasa.",
+    "Después, *escucho* al otro.",
+    "¡Salimos con un acuerdo!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "VOTAR",
+   "items": [
+    {
+     "txt": "Hay varias ideas",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Cada uno elige",
+     "emoji": "✋"
+    },
+    {
+     "txt": "Contamos",
+     "emoji": "🔢"
+    },
+    {
+     "txt": "Gana la más elegida",
+     "emoji": "🏆"
+    }
+   ],
+   "voz": [
+    "Si somos muchos, podemos *votar*.",
+    "Hay *varias ideas* para elegir.",
+    "Cada uno levanta la mano por *una*.",
+    "*Contamos* las manos.",
+    "¡Gana la idea más elegida!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo resolvemos un conflicto hoy?",
+   "opciones": [
+    "HABLANDO Y ESCUCHANDO",
+    "PELEANDO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo resolvemos hoy?",
+    "Pensá en Ana y Luis.",
+    "¡*Hablando* y escuchando!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TURNOS",
+   "texto": "Uno habla y el otro escucha",
+   "emoji": "🗣️",
+   "voz": [
+    "Truco: uno *habla* y el otro escucha."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HABLAR",
+     "digo lo que pasa"
+    ],
+    [
+     "ESCUCHAR",
+     "sin interrumpir"
+    ],
+    [
+     "ACUERDO O VOTO",
+     "para decidir"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *hablamos*.",
+    "Después *escuchamos* sin interrumpir.",
+    "Decidimos con un *acuerdo* o votando.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

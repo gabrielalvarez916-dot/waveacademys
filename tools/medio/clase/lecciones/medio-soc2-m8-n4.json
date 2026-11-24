@@ -1,0 +1,148 @@
+{
+ "slug": "medio-soc2-m8-n4",
+ "step_id": "240f9df3-52ba-47ac-a5be-694a5d114781",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Carnaval y otras fiestas",
+ "sub": "Ciencias Sociales 2 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "FIESTA",
+   "titular": "¡Llegó el carnaval al barrio!",
+   "bajada": "Murgas, disfraces y espuma",
+   "emoji": "🎭",
+   "titulo": "CARNAVAL",
+   "sub": "y otras fiestas",
+   "voz": [
+    "¡Noticia: llegó el *carnaval* al barrio!",
+    "Hay murgas, disfraces y espuma.",
+    "Hoy: *carnaval y otras fiestas*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🥁",
+    "🪶",
+    "🎭"
+   ],
+   "lugar": "🎉",
+   "rotulos": [
+    {
+     "txt": "MURGA",
+     "sub": "canta y baila"
+    },
+    {
+     "txt": "COMPARSA",
+     "sub": "desfila con plumas"
+    },
+    {
+     "txt": "DISFRACES",
+     "sub": "y máscaras"
+    }
+   ],
+   "voz": [
+    "La *murga* canta y baila con bombos.",
+    "La *comparsa* desfila con plumas y brillos.",
+    "Y todos se ponen *disfraces* y máscaras."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "FIESTAS",
+   "items": [
+    "CARNAVAL",
+    "AÑO NUEVO CHINO",
+    "PACHAMAMA",
+    "CUMPLEAÑOS"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá estas fiestas de muchas culturas.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba la *Pachamama*: la madre tierra!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL TRAJE DE LOLA",
+   "items": [
+    {
+     "txt": "Elige colores",
+     "emoji": "🎨"
+    },
+    {
+     "txt": "Cose lentejuelas",
+     "emoji": "🧵"
+    },
+    {
+     "txt": "Ensaya el baile",
+     "emoji": "💃"
+    },
+    {
+     "txt": "¡Sale con la murga!",
+     "emoji": "🥁"
+    }
+   ],
+   "voz": [
+    "Lola prepara su traje de murga, paso a paso.",
+    "Primero *elige* los colores.",
+    "Después le cose *lentejuelas* brillantes.",
+    "*Ensaya* el baile con sus amigos.",
+    "¡Y sale a bailar con la *murga*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué fiesta se festeja con dragones?",
+   "opciones": [
+    "AÑO NUEVO CHINO",
+    "CARNAVAL"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué fiesta tiene dragones?",
+    "Pensá en otras culturas.",
+    "¡El *Año Nuevo chino*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "COMPARTÍ",
+   "texto": "Invitá a tus amigos a tus fiestas",
+   "emoji": "🎊",
+   "voz": [
+    "Truco: *compartí* tus fiestas con tus amigos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CARNAVAL",
+     "música y disfraces"
+    ],
+    [
+     "MURGA",
+     "canta y baila"
+    ],
+    [
+     "OTRAS FIESTAS",
+     "cada cultura, la suya"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *carnaval* tiene música y disfraces.",
+    "La *murga* canta y baila.",
+    "Cada cultura tiene sus *fiestas*. ¡Todas valen!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

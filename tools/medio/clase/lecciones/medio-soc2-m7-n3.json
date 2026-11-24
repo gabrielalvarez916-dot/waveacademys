@@ -1,0 +1,164 @@
+{
+ "slug": "medio-soc2-m7-n3",
+ "step_id": "61e96492-9c23-4e94-bde9-73ea79525c9c",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Cómo se resolvía un conflicto antes",
+ "sub": "Ciencias Sociales 2 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuelo Tito",
+    "emoji": "👴"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Antes, muchas peleas terminaban mal 😔"
+    },
+    {
+     "yo": true,
+     "txt": "¿Cómo se resolvían?"
+    }
+   ],
+   "titulo": "CÓMO SE RESOLVÍA",
+   "sub": "antes",
+   "voz": [
+    "El abuelo escribe: antes, muchas peleas terminaban mal.",
+    "Lola pregunta: ¿cómo se *resolvían*?",
+    "Hoy: *cómo se resolvía un conflicto antes*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "ANTES",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "con peleas",
+     "emoji": "⚔️"
+    },
+    {
+     "fecha": "2",
+     "txt": "ganaba el más fuerte",
+     "emoji": "💪"
+    },
+    {
+     "fecha": "3",
+     "txt": "decidía el que mandaba",
+     "emoji": "👑"
+    }
+   ],
+   "voz": [
+    "Antes, muchos conflictos se resolvían con *peleas*.",
+    "Muchas veces ganaba el *más fuerte*.",
+    "O decidía el que *mandaba*, sin preguntar."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Forzudo",
+    "emoji": "👹"
+   },
+   "preguntas": [
+    {
+     "p": "¿Ser fuerte da la razón?",
+     "r": "NO"
+    },
+    {
+     "p": "¿Hay que escuchar a todos?",
+     "r": "SÍ"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Forzudo*!",
+    "Cree que por ser fuerte tiene razón.",
+    "¿Ser fuerte da la razón? ¡*No*!",
+    "¿Hay que escuchar a todos? ¡*Sí*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UN CONFLICTO DE ANTES",
+   "items": [
+    {
+     "txt": "Querían un río",
+     "emoji": "🏞️"
+    },
+    {
+     "txt": "No hablaron",
+     "emoji": "🤐"
+    },
+    {
+     "txt": "Se pelearon",
+     "emoji": "⚔️"
+    },
+    {
+     "txt": "Ganó el más fuerte",
+     "emoji": "💪"
+    }
+   ],
+   "voz": [
+    "Veamos un conflicto de antes, paso a paso.",
+    "Dos grupos querían el mismo *río*.",
+    "No se sentaron a *hablar*.",
+    "Se *pelearon*.",
+    "Y ganó el más fuerte, aunque no tuviera razón."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Antes podían opinar todos?",
+   "opciones": [
+    "NO, MUCHOS NO PODÍAN",
+    "SÍ, TODOS"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿antes opinaban todos?",
+    "Pensá en las mujeres y los pobres.",
+    "¡*No*! Muchos no podían opinar."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "LA FUERZA NO DA LA RAZÓN",
+   "texto": "Hay que escuchar a todos",
+   "emoji": "👂",
+   "voz": [
+    "Truco: la *fuerza* no da la razón."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PELEAS",
+     "así se resolvía"
+    ],
+    [
+     "EL MÁS FUERTE",
+     "muchas veces ganaba"
+    ],
+    [
+     "INJUSTO",
+     "no opinaban todos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Antes se resolvía con *peleas*.",
+    "Muchas veces ganaba el más *fuerte*.",
+    "Era *injusto*: no opinaban todos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

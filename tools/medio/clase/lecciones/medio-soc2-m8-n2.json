@@ -1,0 +1,163 @@
+{
+ "slug": "medio-soc2-m8-n2",
+ "step_id": "ee42f41a-3a19-47ce-8db9-bb571e7df302",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Historias de vida y cuentos que se heredan",
+ "sub": "Ciencias Sociales 2 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Doña Rosa",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Querés que te cuente mi historia? 📖"
+    },
+    {
+     "yo": true,
+     "txt": "¡Sí! Traigo el micrófono"
+    }
+   ],
+   "titulo": "HISTORIAS",
+   "sub": "que se heredan",
+   "voz": [
+    "Doña Rosa escribe: ¿querés que te cuente mi historia?",
+    "Lola responde: ¡sí, traigo el *micrófono*!",
+    "Hoy: *historias y cuentos que se heredan*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Doña Rosa",
+    "emoji": "👵"
+   },
+   "lineas": [
+    {
+     "txt": "Nací en el campo, hace muchos años.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Viajé en tren hasta la ciudad.",
+     "animo": "piensa"
+    },
+    {
+     "txt": "Trabajé de costurera.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "¡Y hoy soy abuela!",
+     "animo": "sorpresa"
+    }
+   ],
+   "voz": [
+    "Nací en el *campo*, hace muchos años.",
+    "Viajé en *tren* hasta la ciudad.",
+    "Trabajé de *costurera*.",
+    "¡Y hoy soy *abuela*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "EL CUENTO VIAJA",
+   "pasos": [
+    {
+     "txt": "ABUELA 👵",
+     "nota": "lo cuenta"
+    },
+    {
+     "txt": "MAMÁ 👩",
+     "nota": "lo aprende"
+    },
+    {
+     "txt": "LOLA 👧",
+     "nota": "¡lo hereda!"
+    }
+   ],
+   "voz": [
+    "La *abuela* le contó un cuento a la mamá.",
+    "La *mamá* lo aprendió y lo guardó.",
+    "¡Hoy se lo cuenta a *Lola*: lo heredó!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "UNA ENTREVISTA",
+   "items": [
+    {
+     "txt": "¿Dónde naciste?",
+     "emoji": "🏡"
+    },
+    {
+     "txt": "¿En qué trabajaste?",
+     "emoji": "🧵"
+    },
+    {
+     "txt": "Ordeno lo que contó",
+     "emoji": "📝"
+    }
+   ],
+   "voz": [
+    "¿Cómo armamos una historia de vida? Paso a paso.",
+    "Pregunto: ¿*dónde* naciste?",
+    "Pregunto: ¿en qué *trabajaste*?",
+    "Después *ordeno* todo lo que me contó."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué es heredar un cuento?",
+   "opciones": [
+    "RECIBIRLO DE LOS MAYORES",
+    "COMPRARLO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué es heredar un cuento?",
+    "Pensá en la abuela.",
+    "¡Recibirlo de los *mayores*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ESCUCHÁ",
+   "texto": "Las historias de los mayores enseñan",
+   "emoji": "👂",
+   "voz": [
+    "Truco: *escuchá* las historias de los mayores."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HISTORIA DE VIDA",
+     "lo que le pasó a alguien"
+    ],
+    [
+     "HEREDAR",
+     "recibir de los mayores"
+    ],
+    [
+     "CUENTOS",
+     "de abuelos a nietos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *historia de vida* cuenta lo que pasó.",
+    "*Heredar* es recibir de los mayores.",
+    "Los *cuentos* pasan de abuelos a nietos.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
