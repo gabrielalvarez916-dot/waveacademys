@@ -1,0 +1,129 @@
+{
+ "slug": "medio-nat2-m9-n2",
+ "step_id": "46f2368e-e5fe-43c6-ab58-bfdfbc7caf7b",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Rocas de distintos tipos",
+ "sub": "Ciencias Naturales 2 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "EXPLORACIÓN",
+   "titular": "¡Tomi junta rocas!",
+   "bajada": "Hay duras y blandas",
+   "emoji": "🪨",
+   "titulo": "LAS ROCAS",
+   "sub": "de distintos tipos",
+   "voz": [
+    "¡Noticia: Tomi junta *rocas*!",
+    "Hay duras y *blandas*.",
+    "Hoy: *rocas de distintos tipos*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "MI COLECCIÓN",
+   "items": [
+    {
+     "frente": "🪨",
+     "dorso": "GRANITO: MUY DURO",
+     "emoji": "🪨"
+    },
+    {
+     "frente": "🖍️",
+     "dorso": "TIZA: BLANDA",
+     "emoji": "🖍️"
+    },
+    {
+     "frente": "⚪",
+     "dorso": "CANTO RODADO: REDONDO",
+     "emoji": "⚪"
+    }
+   ],
+   "voz": [
+    "El *granito*: muy duro.",
+    "La *tiza*: blanda, se raya.",
+    "El *canto rodado*: redondo, del río."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "DURA O BLANDA",
+   "a": {
+    "txt": "DURA",
+    "emoji": "🪨",
+    "datos": [
+     "no se raya",
+     "granito"
+    ]
+   },
+   "b": {
+    "txt": "BLANDA",
+    "emoji": "🖍️",
+    "datos": [
+     "se raya",
+     "tiza"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Las dos son rocas!",
+   "voz": [
+    "Comparamos dos rocas.",
+    "*Dura*: no se raya. Como el granito.",
+    "*Blanda*: se raya. Como la tiza.",
+    "¡Las dos son *rocas*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo son las piedras del río?",
+   "opciones": [
+    "REDONDAS Y LISAS",
+    "CON PUNTAS"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo son las piedras del río?",
+    "Pensá en el agua.",
+    "¡*Redondas* y lisas!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "NO TIRES PIEDRAS",
+   "texto": "Pueden lastimar",
+   "emoji": "⚠️",
+   "voz": [
+    "Truco: mirá las piedras, pero no las *tires*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRANITO",
+     "muy duro"
+    ],
+    [
+     "TIZA",
+     "blanda"
+    ],
+    [
+     "CANTO RODADO",
+     "redondo, del río"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *granito* es muy duro.",
+    "La *tiza* es blanda.",
+    "El *canto rodado* es redondo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

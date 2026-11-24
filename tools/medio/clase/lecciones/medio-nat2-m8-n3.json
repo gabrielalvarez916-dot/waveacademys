@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat2-m8-n3",
+ "step_id": "c800f22f-12d2-43ea-b0a3-1e894f5ee1de",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Los puntos cardinales",
+ "sub": "Ciencias Naturales 2 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Por dónde sale el sol cada mañana?",
+   "segundos": 8,
+   "respuesta": "¡Por el este!",
+   "emoji": "🌅",
+   "titulo": "LOS PUNTOS",
+   "sub": "cardinales",
+   "voz": [
+    "Desafío: ¿por dónde sale el sol?",
+    "¡Por el *este*!",
+    "Hoy: *los puntos cardinales*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🧭",
+   "titulo": "LA BRÚJULA DE TOMI",
+   "partes": [
+    {
+     "txt": "NORTE",
+     "x": 0,
+     "y": -0.8
+    },
+    {
+     "txt": "ESTE",
+     "x": 0.8,
+     "y": 0
+    },
+    {
+     "txt": "SUR",
+     "x": 0,
+     "y": 0.8
+    },
+    {
+     "txt": "OESTE",
+     "x": -0.8,
+     "y": 0
+    }
+   ],
+   "voz": [
+    "Esta es la *brújula* de Tomi.",
+    "Arriba, el *norte*.",
+    "A la derecha, el *este*.",
+    "Abajo, el *sur*.",
+    "A la izquierda, el *oeste*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "ESTE",
+    "texto": "SALE EL SOL",
+    "emoji": "🌅"
+   },
+   "b": {
+    "cab": "OESTE",
+    "texto": "SE ESCONDE",
+    "emoji": "🌇"
+   },
+   "signo": "↔",
+   "voz": [
+    "Comparamos dos puntos.",
+    "Por el *este*, sale el sol.",
+    "Por el *oeste*, se esconde."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Adónde apunta la aguja de la brújula?",
+   "opciones": [
+    "AL NORTE",
+    "AL SUR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿adónde apunta la aguja?",
+    "Pensá en la brújula.",
+    "¡Al *norte*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO",
+   "texto": "Nunca mires el sol directo",
+   "emoji": "😎",
+   "voz": [
+    "Truco: nunca mires el sol *directo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESTE",
+     "sale el sol"
+    ],
+    [
+     "OESTE",
+     "se esconde"
+    ],
+    [
+     "BRÚJULA",
+     "apunta al norte"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Por el *este* sale el sol.",
+    "Por el *oeste* se esconde.",
+    "La *brújula* apunta al norte.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

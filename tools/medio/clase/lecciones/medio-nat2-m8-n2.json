@@ -1,0 +1,136 @@
+{
+ "slug": "medio-nat2-m8-n2",
+ "step_id": "00f8a440-3e0c-4721-9d11-2047c98ec644",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Las cuatro estaciones",
+ "sub": "Ciencias Naturales 2 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Se cayeron todas las hojas! 🍂"
+    },
+    {
+     "yo": true,
+     "txt": "¡Llegó el otoño!"
+    }
+   ],
+   "titulo": "LAS CUATRO",
+   "sub": "estaciones",
+   "voz": [
+    "Sofi escribe: ¡se cayeron todas las hojas!",
+    "Tomi responde: ¡llegó el *otoño*!",
+    "Hoy: *las cuatro estaciones*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "LAS ESTACIONES",
+   "items": [
+    {
+     "frente": "☀️",
+     "dorso": "VERANO: CALOR",
+     "emoji": "☀️"
+    },
+    {
+     "frente": "🍂",
+     "dorso": "OTOÑO: CAEN LAS HOJAS",
+     "emoji": "🍂"
+    },
+    {
+     "frente": "❄️",
+     "dorso": "INVIERNO: FRÍO",
+     "emoji": "❄️"
+    },
+    {
+     "frente": "🌸",
+     "dorso": "PRIMAVERA: FLORES",
+     "emoji": "🌸"
+    }
+   ],
+   "voz": [
+    "*Verano*: hace calor.",
+    "*Otoño*: caen las hojas.",
+    "*Invierno*: hace frío.",
+    "*Primavera*: ¡salen las flores!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Qué ropa usamos en invierno?",
+   "a": {
+    "txt": "CAMPERA Y BUFANDA",
+    "emoji": "🧣"
+   },
+   "b": {
+    "txt": "MALLA",
+    "emoji": "🩱"
+   },
+   "correcta": "a",
+   "resultado": "En invierno nos abrigamos",
+   "voz": [
+    "¿Qué ropa usamos en *invierno*?",
+    "Pensá…",
+    "¡Campera y *bufanda*! Nos abrigamos."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿En qué estación hay más flores?",
+   "opciones": [
+    "PRIMAVERA",
+    "INVIERNO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuándo hay más flores?",
+    "Pensá en los árboles.",
+    "¡En *primavera*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN ORDEN",
+   "texto": "Verano, otoño, invierno, primavera",
+   "emoji": "🔄",
+   "voz": [
+    "Truco: verano, otoño, invierno, primavera… ¡y otra vez!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VERANO",
+     "calor"
+    ],
+    [
+     "OTOÑO",
+     "caen las hojas"
+    ],
+    [
+     "INVIERNO Y PRIMAVERA",
+     "frío y flores"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En *verano*, calor.",
+    "En *otoño*, caen las hojas.",
+    "En *invierno*, frío; en *primavera*, flores.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

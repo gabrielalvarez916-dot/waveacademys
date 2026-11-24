@@ -1,0 +1,135 @@
+{
+ "slug": "medio-nat2-m9-n4",
+ "step_id": "6471639d-b400-40bf-b721-172b0b8dd31e",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Suelos para sembrar",
+ "sub": "Ciencias Naturales 2 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuela Rosa",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Dónde siembro los porotos? 🌱"
+    },
+    {
+     "yo": true,
+     "txt": "¡Vamos a probar!"
+    }
+   ],
+   "titulo": "SUELOS",
+   "sub": "para sembrar",
+   "voz": [
+    "La abuela pregunta: ¿dónde siembro los porotos?",
+    "Tomi responde: ¡vamos a *probar*!",
+    "Hoy: *suelos para sembrar*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "TRES SUELOS",
+   "celdas": [
+    {
+     "cab": "ARENA 🏖️",
+     "txt": "el agua se va"
+    },
+    {
+     "cab": "ARCILLA 🧱",
+     "txt": "el agua queda arriba"
+    },
+    {
+     "cab": "TIERRA NEGRA 🌱",
+     "txt": "¡justo para sembrar!"
+    }
+   ],
+   "voz": [
+    "Probamos tres suelos.",
+    "*Arena*: el agua se va rápido.",
+    "*Arcilla*: el agua queda arriba.",
+    "*Tierra negra*: ¡justo para sembrar!"
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "¿CUÁNTO CRECIÓ EL POROTO?",
+   "items": [
+    {
+     "txt": "ARCILLA",
+     "emoji": "🧱",
+     "valor": 2
+    },
+    {
+     "txt": "ARENA",
+     "emoji": "🏖️",
+     "valor": 4
+    },
+    {
+     "txt": "TIERRA NEGRA",
+     "emoji": "🌱",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "En la *arcilla*, creció poquito.",
+    "En la *arena*, un poco más.",
+    "En la *tierra negra*, ¡muchísimo!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué suelo es mejor para sembrar?",
+   "opciones": [
+    "TIERRA NEGRA",
+    "ARENA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué suelo es mejor?",
+    "Pensá en el poroto.",
+    "¡La *tierra negra*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "REGÁ IGUAL",
+   "texto": "Para comparar, igual agua a todas",
+   "emoji": "🚿",
+   "voz": [
+    "Truco: para comparar, regá *igual* a todas."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARENA",
+     "el agua se va"
+    ],
+    [
+     "ARCILLA",
+     "el agua queda"
+    ],
+    [
+     "TIERRA NEGRA",
+     "la mejor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la *arena*, el agua se va.",
+    "En la *arcilla*, el agua queda.",
+    "La *tierra negra* es la mejor para sembrar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

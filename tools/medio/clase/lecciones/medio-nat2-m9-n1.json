@@ -1,0 +1,143 @@
+{
+ "slug": "medio-nat2-m9-n1",
+ "step_id": "9c48bd93-0b36-41b2-900c-2581835cc1c2",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Qué tiene el suelo",
+ "sub": "Ciencias Naturales 2 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historieta",
+   "titulo": "TOMI EN LA HUERTA",
+   "vinetas": [
+    {
+     "emojis": [
+      "🧑‍🔬",
+      "🪴"
+     ],
+     "txt": "Tomi junta tierra"
+    },
+    {
+     "emojis": [
+      "🔍",
+      "🪨"
+     ],
+     "txt": "La mira con la lupa"
+    },
+    {
+     "emojis": [
+      "🍂",
+      "💧"
+     ],
+     "txt": "¡Hay de todo!"
+    }
+   ],
+   "voz": [
+    "Tomi junta un poco de *tierra*.",
+    "La mira con la *lupa*.",
+    "¡Hay de todo! Hoy: *qué tiene el suelo*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🪴",
+     "txt": "UN PUÑADO DE TIERRA"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "CON LUPA"
+    },
+    {
+     "emoji": "🪨",
+     "txt": "¡PIEDRITAS, HOJITAS Y AGUA!"
+    }
+   ],
+   "voz": [
+    "Miramos un puñado de *tierra*.",
+    "Más cerca, con la *lupa*.",
+    "¡Piedritas, hojitas y agua!"
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "EL FRASCO DE TOMI",
+   "variable": "LO QUE PESA",
+   "a": {
+    "cab": "ABAJO",
+    "emojis": [
+     "🪨",
+     "🪨"
+    ],
+    "txt": "Lo pesado",
+    "res": "PIEDRITAS"
+   },
+   "b": {
+    "cab": "ARRIBA",
+    "emojis": [
+     "🍂",
+     "🍃"
+    ],
+    "txt": "Lo liviano",
+    "res": "HOJITAS"
+   },
+   "voz": [
+    "Tierra y agua en un *frasco*.",
+    "Abajo quedan las *piedritas*.",
+    "Arriba flotan las *hojitas*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿El suelo tiene agua y aire?",
+   "opciones": [
+    "SÍ",
+    "NO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿el suelo tiene agua y aire?",
+    "Pensá en la lupa.",
+    "¡*Sí*! Entre las piedritas."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MANOS LIMPIAS",
+   "texto": "Después de tocar tierra, lavate",
+   "emoji": "🧼",
+   "voz": [
+    "Truco: después de tocar tierra, *lavate* las manos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUELO",
+     "tierra que pisamos"
+    ],
+    [
+     "TIENE",
+     "piedritas y hojas"
+    ],
+    [
+     "FRASCO",
+     "se separa en capas"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *suelo* es la tierra que pisamos.",
+    "*Tiene* piedritas, hojas, agua y aire.",
+    "En el *frasco*, se separa en capas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

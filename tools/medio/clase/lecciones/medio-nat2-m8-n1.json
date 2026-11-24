@@ -1,0 +1,108 @@
+{
+ "slug": "medio-nat2-m8-n1",
+ "step_id": "ce72fa17-580c-4971-97f3-117c7d75a498",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "La luna y sus fases",
+ "sub": "Ciencias Naturales 2 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🌙",
+   "lineas": [
+    "Tomi mira la luna de noche.",
+    "Cada noche se ve distinta.",
+    "¿Por qué cambia?"
+   ],
+   "titulo": "LA LUNA",
+   "sub": "y sus fases",
+   "voz": [
+    "Tomi mira la *luna* de noche.",
+    "Cada noche se ve *distinta*.",
+    "¿Por qué cambia?",
+    "Hoy: *la luna y sus fases*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "LAS FASES DE LA LUNA",
+   "items": [
+    "NUEVA 🌑",
+    "CRECIENTE 🌓",
+    "LLENA 🌕",
+    "MENGUANTE 🌗"
+   ],
+   "voz": [
+    "La luna muestra cuatro *caras*.",
+    "*Nueva*: casi no se ve.",
+    "*Creciente*: va creciendo.",
+    "*Llena*: ¡toda redonda!",
+    "*Menguante*: se achica. Y vuelve a empezar."
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "La luna no tiene luz propia: la ilumina el sol",
+   "emoji": "☀️",
+   "voz": [
+    "¿Sabías qué?",
+    "¡La luna no tiene luz! La ilumina el *sol*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo se ve la luna llena?",
+   "opciones": [
+    "TODA REDONDA",
+    "NO SE VE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo se ve la luna llena?",
+    "Pensá en un círculo.",
+    "¡Toda *redonda*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRALA CADA NOCHE",
+   "texto": "Dibujá cómo cambia",
+   "emoji": "✏️",
+   "voz": [
+    "Truco: mirá la luna cada noche y *dibujala*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LUNA",
+     "la ilumina el sol"
+    ],
+    [
+     "FASES",
+     "cuatro caras"
+    ],
+    [
+     "CICLO",
+     "se repiten"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "A la *luna* la ilumina el sol.",
+    "Tiene cuatro *fases*.",
+    "Se repiten en un *ciclo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

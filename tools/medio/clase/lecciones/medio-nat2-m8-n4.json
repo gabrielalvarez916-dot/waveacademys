@@ -1,0 +1,136 @@
+{
+ "slug": "medio-nat2-m8-n4",
+ "step_id": "b5cf891f-a513-407e-818f-80ac51030686",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Orientarse con el sol",
+ "sub": "Ciencias Naturales 2 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Sol Solcito",
+    "emoji": "☀️"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! A la mañana salgo por el este.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Al mediodía estoy bien alto.",
+     "animo": "sorpresa"
+    },
+    {
+     "txt": "A la tarde me escondo por el oeste.",
+     "animo": "piensa"
+    }
+   ],
+   "voz": [
+    "¡Hola! A la mañana salgo por el *este*.",
+    "Al *mediodía* estoy bien alto.",
+    "A la tarde me escondo por el *oeste*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "EL VIAJE DEL SOL",
+   "eventos": [
+    {
+     "fecha": "MAÑANA",
+     "txt": "este",
+     "emoji": "🌅"
+    },
+    {
+     "fecha": "MEDIODÍA",
+     "txt": "arriba",
+     "emoji": "☀️"
+    },
+    {
+     "fecha": "TARDE",
+     "txt": "oeste",
+     "emoji": "🌇"
+    }
+   ],
+   "voz": [
+    "A la *mañana*, el sol está al este.",
+    "Al *mediodía*, bien arriba.",
+    "A la *tarde*, se va al oeste."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Perdido",
+    "emoji": "👾"
+   },
+   "preguntas": [
+    {
+     "p": "Derecha al este: ¿qué hay adelante?",
+     "r": "EL NORTE"
+    },
+    {
+     "p": "¿Y atrás?",
+     "r": "EL SUR"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Perdido*!",
+    "Señalamos con la derecha donde sale el sol.",
+    "Adelante: ¡el *norte*!",
+    "Atrás: ¡el *sur*! ¡Ya no está perdido!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuándo la sombra es más cortita?",
+   "opciones": [
+    "AL MEDIODÍA",
+    "A LA TARDE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuándo la sombra es más corta?",
+    "Pensá dónde está el sol.",
+    "¡Al *mediodía*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "GORRA",
+   "texto": "Al sol, usá gorra",
+   "emoji": "🧢",
+   "voz": [
+    "Truco: si estás al sol, usá *gorra*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MAÑANA",
+     "sol al este"
+    ],
+    [
+     "TARDE",
+     "sol al oeste"
+    ],
+    [
+     "TRUCO",
+     "derecha al este"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "A la *mañana*, el sol está al este.",
+    "A la *tarde*, al oeste.",
+    "Derecha al este: adelante está el *norte*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

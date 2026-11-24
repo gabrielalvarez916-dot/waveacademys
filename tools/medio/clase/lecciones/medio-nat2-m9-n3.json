@@ -1,0 +1,115 @@
+{
+ "slug": "medio-nat2-m9-n3",
+ "step_id": "490069b6-3784-4fa2-ba89-55ea73882e7d",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Seres vivos del suelo",
+ "sub": "Ciencias Naturales 2 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién vive debajo de una piedra del jardín?",
+   "segundos": 8,
+   "respuesta": "¡Bichitos del suelo!",
+   "emoji": "🪱",
+   "titulo": "SERES VIVOS",
+   "sub": "del suelo",
+   "voz": [
+    "Desafío: ¿quién vive debajo de una piedra?",
+    "¡Muchos *bichitos*!",
+    "Hoy: *seres vivos del suelo*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🪱",
+    "🐜",
+    "🐞"
+   ],
+   "lugar": "🌱",
+   "rotulos": [
+    {
+     "txt": "LOMBRIZ",
+     "sub": "hace túneles"
+    },
+    {
+     "txt": "HORMIGA",
+     "sub": "en el hormiguero"
+    },
+    {
+     "txt": "BICHO BOLITA",
+     "sub": "se hace bolita"
+    }
+   ],
+   "voz": [
+    "La *lombriz* hace túneles.",
+    "La *hormiga* vive en el hormiguero.",
+    "El *bicho bolita* se hace bolita."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Las lombrices le hacen mal al suelo",
+   "emoji": "🪱",
+   "verdadero": false,
+   "explicacion": "Hacen túneles y mejoran la tierra",
+   "voz": [
+    "¿Verdadero o falso? Las lombrices hacen mal.",
+    "Pensá en los túneles…",
+    "¡*Falso*! Mejoran la tierra."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué comen las lombrices?",
+   "opciones": [
+    "HOJAS SECAS",
+    "PIEDRAS"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué comen las lombrices?",
+    "Pensá en el suelo.",
+    "¡Hojas *secas*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON CUIDADO",
+   "texto": "Mirá y dejalos en su lugar",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: mirá los bichitos y *dejalos* en su lugar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LOMBRIZ",
+     "hace túneles"
+    ],
+    [
+     "HORMIGA",
+     "hormiguero"
+    ],
+    [
+     "BICHO BOLITA",
+     "se hace bolita"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *lombriz* hace túneles.",
+    "La *hormiga* vive en el hormiguero.",
+    "El *bicho bolita* se hace bolita.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
