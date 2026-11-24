@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>De binario a decimal – Wave Academy’s</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+
+/* ===== PALETA WAVE ACADEMY'S (cambiar solo acá) ===== */
+:root{
+  --top:#0b7a80; --bg:#d6efe8; --card:#ffffff; --scene:#f1faf7;
+  --ink:#1d2f2d; --muted:#4f6c68; --line:#0a5c61; --hint:#0b7a80;
+  --accent:#0b7a80; --accentInk:#ffffff; --note:#fff5da; --noteB:#e9a62b;
+  --border:#b7dcd3; --cellL:88%; --hl:#ffffff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+    --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+    --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+    --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+  --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+  --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+  --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.5}
+.top{background:var(--top);color:#fff;padding:14px 20px}
+.top .in{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.brand{font-weight:800;letter-spacing:.06em}
+.tag{opacity:.85;font-weight:700}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 16px 32px}
+h1{font-size:clamp(1.4rem,3.2vw,2rem);margin:0 0 2px;font-weight:800}
+.sub{margin:0 0 16px;color:var(--muted);font-weight:700}
+.card{background:var(--card);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);overflow:hidden;box-shadow:0 6px 24px rgba(8,70,72,.12)}
+.left{padding:22px 24px}
+.left p{margin:0 0 12px;max-width:52ch}
+.scene{background:var(--scene);display:flex;flex-direction:column;min-width:0}
+.note{background:var(--note);border-bottom:3px solid var(--noteB);padding:12px 18px;min-height:6em}
+.note b{color:var(--hint)}
+.ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border);font-size:.85rem}
+.ctrl label{color:var(--muted);font-weight:700}
+select,input{font:inherit;padding:3px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink)}
+input{width:7.5em;text-align:center}
+.sp{flex:1}
+.nav{display:flex;gap:8px;align-items:center}
+.nav button{width:36px;height:36px;border-radius:50%;border:0;background:var(--accent);color:var(--accentInk);font-size:1rem;cursor:pointer}
+.nav button:disabled{opacity:.35;cursor:default}
+.nav button:focus-visible,.txt:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hint);outline-offset:2px}
+.txt{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:4px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.work{padding:16px;min-height:340px;color:var(--line)}
+.big{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:.04em;margin:0 0 12px;transition:font-size .3s}
+.big.small{font-size:1.3rem}
+.tbl{display:grid;gap:4px;margin-bottom:14px;overflow-x:auto}
+.h,.d{border-radius:8px;text-align:center;background:hsl(var(--c) 55% var(--cellL))}
+.h{padding:5px 2px;font-size:.95rem;font-weight:800;color:var(--ink);animation:in .4s both}
+.h small{display:block;font-weight:400;font-size:.62rem;line-height:1.15;color:var(--muted);margin-top:2px}
+.d{font-size:clamp(1.4rem,4.5vw,2rem);padding:6px 0;min-height:2.3em;color:var(--line);font-weight:800;border:2px solid transparent}
+.d.on{border-color:var(--line);box-shadow:0 0 0 3px var(--hl) inset}
+.d.pop{animation:drop .45s both}
+.lines{font-size:1.15rem;font-weight:700;display:flex;flex-direction:column;gap:3px}
+.lines .l{animation:in .35s both}
+.lines .z{opacity:.5}
+.why{font-size:.8rem;font-weight:400;color:var(--muted)}
+.lines hr{border:0;border-top:2px solid var(--line);margin:6px 0;width:100%}
+.res{font-weight:800}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.dots{display:flex;gap:5px;justify-content:center;padding:8px 0 14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.dots i.a{background:var(--accent)}
+@media (max-width:760px){.card{grid-template-columns:1fr}.h small{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;min-width:1.6em;text-align:center;padding:0 6px;border-radius:8px;background:hsl(var(--c,190) 55% var(--cellL));font-weight:800}
+.chip.sel{outline:3px solid var(--line);outline-offset:1px}
+.lines .cur{color:var(--hint)}
+.arrow{font-size:.85rem;font-weight:400;color:var(--muted)}
+.tbl .r{font-size:.85rem;text-align:center;color:var(--muted);font-weight:700}
+.tbl .v{border-radius:8px;text-align:center;padding:4px 0;font-weight:800;color:var(--ink);background:hsl(var(--c) 55% var(--cellL));animation:in .4s both}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><span class="brand">WAVE ACADEMY’S</span><span class="tag">Matemática</span></div></header>
+<div class="wrap">
+  <h1>De binario a decimal</h1>
+  <p class="sub">Sistema binario: cada lugar vale una potencia de 2</p>
+  <div class="card">
+    <div class="left"><p>En binario cada lugar vale el <b>doble</b> que el anterior: 1, 2, 4, 8, 16… son las <b>potencias de 2</b>, contadas desde la derecha.</p><p>Para pasar un número de <b>binario a decimal</b> multiplicamos cada cifra por el valor de su lugar y sumamos los resultados.</p><p>Ejemplo: 1110<sub>2</sub> = 0 · 1 + 1 · 2 + 1 · 4 + 1 · 8 = 14.</p><p>Pulsa el botón siguiente para avanzar, o escribe tu propio número binario.</p></div>
+    <div class="scene" aria-live="polite">
+      <div class="note" id="note"></div>
+      <div class="ctrl">
+        <label for="num">Número binario (solo 0 y 1)</label>
+        <input id="num" inputmode="numeric" maxlength="8" aria-label="Número binario (solo 0 y 1)">
+        <button class="txt" id="rnd" type="button">Otro ejemplo</button>
+        <span class="sp"></span>
+        <button class="txt" id="auto" type="button">Auto</button>
+        <div class="nav">
+          <button id="prev" type="button" aria-label="Paso anterior">◀</button>
+          <button id="next" type="button" aria-label="Paso siguiente">▶</button>
+        </div>
+      </div>
+      <div class="work" id="work"></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div>
+<script>
+const MODE="b2d"; // "d2b" decimal→binario, "b2d" binario→decimal
+const $=id=>document.getElementById(id);
+const HUES=[205,195,185,175,160,145,130,35];
+const sup=i=>i===0?"1":i===1?"2":"2<sup>"+i+"</sup>";
+let val=MODE==="d2b"?"19":"1110",step=0,timer=null;
+
+function model(){
+  if(MODE==="d2b"){
+    const n=+val,divs=[];let q=n;
+    do{divs.push({n:q,q:Math.floor(q/2),r:q%2});q=Math.floor(q/2);}while(q>0);
+    const bits=divs.map(d=>d.r).reverse().join("");
+    return{n,divs,k:divs.length,bits,T:divs.length+3};
+  }
+  const L=val.length,res=parseInt(val,2);
+  return{L,res,T:L+3};
+}
+function total(){return model().T;}
+
+function hint(s,m){
+  if(MODE==="d2b"){
+    if(s===0)return `Vamos a pasar <b>${m.n}</b> a binario. Dividimos entre 2 una y otra vez, hasta que el cociente sea 0. Los restos van a ser las cifras del número binario.`;
+    if(s<=m.k){const d=m.divs[s-1];
+      return `Dividimos ${d.n} ÷ 2: el cociente es ${d.q} y el resto es <b>${d.r}</b>. ${d.q>0?`Guardamos el resto y seguimos con el cociente ${d.q}.`:`El cociente llegó a 0: ¡paramos!`}`;}
+    if(s===m.k+1)return `Leemos los restos <b>de abajo hacia arriba</b>: ${m.bits}. Entonces ${m.n} = <b>${m.bits}<sub>2</sub></b>.`;
+    return `Comprobamos: cada 1 vale una potencia de 2 según su lugar. Si las sumamos, obtenemos de nuevo ${m.n}.`;
+  }
+  const sd=val;
+  if(s===0)return `Vamos a pasar <b>${sd}<sub>2</sub></b> a decimal. En binario cada lugar vale una potencia de 2 (1, 2, 4, 8…): cada uno es el doble del anterior, empezando desde la derecha.`;
+  if(s===1)return `Escribimos el valor de cada lugar y ubicamos las cifras. Los lugares se cuentan desde la derecha.`;
+  if(s<=m.L+1){const i=s-2,d=+sd[m.L-1-i],v=Math.pow(2,i);
+    return d===0?`El lugar de ${v} tiene un 0: 0 · ${v} = 0. No suma nada.`:`El lugar de ${v} tiene un 1: 1 · ${v} = <b>${v}</b>.`;}
+  const vals=[...sd].reverse().map((c,i)=>+c*Math.pow(2,i)).reverse();
+  return `Sumamos los resultados: ${vals.join(" + ")} = <b>${m.res}</b>. Entonces ${sd}<sub>2</sub> = ${m.res}.`;
+}
+
+function render(){
+  const s=step,m=model(),T=m.T;
+  $("note").innerHTML=hint(s,m);
+  let h="";
+  if(MODE==="d2b"){
+    h+=`<div class="big ${s>0?"small":""}">${m.n}</div>`;
+    const lines=[];
+    for(let i=0;i<Math.min(s,m.k);i++){const d=m.divs[i],sel=s>=m.k+1;
+      lines.push(`<div class="l ${i===s-1?"cur":""}">${d.n} ÷ 2 = ${d.q} <span class="arrow">resto</span> <span class="chip ${sel?"sel":""}" style="--c:${d.r?35:190}">${d.r}</span></div>`);}
+    if(s>=m.k+1){
+      lines.push(`<div class="arrow">↑ leemos los restos de abajo hacia arriba</div><hr>`);
+      lines.push(`<div class="l res">${m.n} = ${m.bits}<sub>2</sub></div>`);}
+    if(s>=m.k+2){
+      const terms=[...m.bits].map((c,j)=>c==="1"?Math.pow(2,m.bits.length-1-j):null).filter(x=>x!==null);
+      lines.push(`<div class="l res">${terms.join(" + ")} = ${m.n}</div>`);}
+    h+=`<div class="lines">${lines.join("")}</div>`;
+  }else{
+    const L=m.L;
+    h+=`<div class="big ${s>0?"small":""}">${val}<sub>2</sub></div>`;
+    if(s>=1){
+      h+=`<div class="tbl" style="grid-template-columns:repeat(${L},minmax(40px,1fr))">`;
+      for(let j=0;j<L;j++){const i=L-1-j;h+=`<div class="r">${sup(i)}</div>`;}
+      for(let j=0;j<L;j++){const i=L-1-j;h+=`<div class="v" style="--c:${HUES[i%8]}">${Math.pow(2,i)}</div>`;}
+      for(let j=0;j<L;j++){const i=L-1-j,on=s>=2&&s<=L+1&&s-2===i;
+        h+=`<div class="d ${on?"on":""}" style="--c:${HUES[i%8]}">${val[j]}</div>`;}
+      h+=`</div>`;
+    }
+    const lines=[],upto=s>=L+2?L-1:s-2;
+    for(let i=0;i<=upto;i++){const d=+val[L-1-i];
+      lines.push(`<div class="l ${d===0?"z":""}">${d} · ${Math.pow(2,i)} = ${d*Math.pow(2,i)}</div>`);}
+    if(s>=L+2){
+      const vals=[...val].map((c,j)=>+c*Math.pow(2,L-1-j));
+      lines.push(`<hr><div class="l res">${vals.join(" + ")} = ${m.res}</div><div class="l res">${val}<sub>2</sub> = ${m.res}</div>`);}
+    h+=`<div class="lines">${lines.join("")}</div>`;
+  }
+  $("work").innerHTML=h;
+  $("prev").disabled=s===0;$("next").disabled=s===T-1;
+  $("dots").innerHTML=Array.from({length:T},(_,k)=>`<i class="${k===s?"a":""}"></i>`).join("");
+}
+function setVal(v){
+  if(MODE==="d2b"){const n=Math.max(1,Math.min(255,parseInt(String(v).replace(/\D/g,""),10)||1));val=String(n);}
+  else{v=String(v).replace(/[^01]/g,"").slice(0,8).replace(/^0+(?=[01])/,"");val=v||"1";}
+  $("num").value=val;step=0;stop();render();
+}
+function rand(){
+  if(MODE==="d2b")return String(2+Math.floor(Math.random()*62));
+  const L=3+Math.floor(Math.random()*4);let s="1";for(let i=1;i<L;i++)s+=Math.random()<.5?"1":"0";return s;
+}
+function go(d){step=Math.max(0,Math.min(total()-1,step+d));render();if(step===total()-1)stop();}
+function stop(){if(timer){clearInterval(timer);timer=null;}$("auto").textContent="Auto";}
+$("next").onclick=()=>{stop();go(1)};
+$("prev").onclick=()=>{stop();go(-1)};
+$("rnd").onclick=()=>setVal(rand());
+$("auto").onclick=()=>{if(timer){stop();return;}if(step===total()-1){step=0;render();}$("auto").textContent="Pausa";timer=setInterval(()=>go(1),3200);};
+$("num").addEventListener("change",e=>setVal(e.target.value));
+$("num").addEventListener("input",e=>{e.target.value=e.target.value.replace(MODE==="d2b"?/\D/g:/[^01]/g,"");});
+document.addEventListener("keydown",e=>{if(e.target.tagName==="INPUT")return;if(e.key==="ArrowRight"){stop();go(1)}if(e.key==="ArrowLeft"){stop();go(-1)}});
+setVal(val);
+</script>
+</body>
+</html>
