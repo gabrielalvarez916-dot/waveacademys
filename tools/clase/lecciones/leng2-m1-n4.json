@@ -1,1 +1,161 @@
-{"slug": "leng2-m1-n4", "step_id": "f1a07b9a-31fd-4f4f-8dc4-5a675e8a60b4", "materia": "Lengua y Literatura II", "titulo": "Elijo desafíos", "sub": "Lengua y Literatura II · Misión 1 · Nivel 4", "escenas": [{"t": "escala", "titulo": "DE GENERAL A CONCRETO", "items": [{"txt": "Leer más", "emoji": "🔸", "valor": 1}, {"txt": "Leer una novela", "emoji": "🔹", "valor": 2}, {"txt": "Veinte páginas por día", "emoji": "🔷", "valor": 3}], "voz": ["«Leer más» es *muy general*.", "«Leer una novela» es *más concreto*.", "«Veinte páginas por día» es *concreto y medible*."]}, {"t": "dilema", "situacion": "Querés leer más este año. ¿Qué desafío elegís?", "emoji": "📚", "a": {"txt": "Cinco libros esta semana", "consecuencia": "Es imposible: se abandona."}, "b": {"txt": "Veinte páginas por día", "consecuencia": "Es posible: se cumple."}, "voz": ["Un dilema de lector.", "Cinco libros esta semana es *demasiado*.", "Veinte páginas por día es un desafío *posible*."]}, {"t": "vof", "afirmacion": "«Voy a leer mucho» es un desafío medible", "emoji": "📏", "verdadero": false, "explicacion": "No tiene un número", "voz": ["¿Verdadero o falso?", "Dice «mucho», pero no dice cuánto.", "¡*Falso*! Le falta un número."]}, {"t": "quiz4", "pregunta": "¿Qué hace posible un desafío?", "opciones": ["Que entre en mi semana", "Que sea enorme", "Que nadie lo sepa", "Que no tenga número"], "correcta": 0, "voz": ["Un quiz rápido.", "¿Qué hace posible un desafío?", "*Que entre en mi semana*."]}, {"t": "resumen", "voz": ["Repasemos.", "Un desafío es *concreto, medible y posible*.", "El *pacto* dice qué, cuándo y cómo registro.", "Mejor *chico pero seguro*.", "¡Clase terminada! Ahora, *a practicar*."], "items": [["CONCRETO", "dice qué leo"], ["MEDIBLE", "tiene un número"], ["POSIBLE", "entra en mi semana"]], "fin": {"titulo": "¡CLASE TERMINADA!", "sub": "Ahora, a practicar 🚀"}}]}
+{
+ "slug": "leng2-m1-n4",
+ "step_id": "f1a07b9a-31fd-4f4f-8dc4-5a675e8a60b4",
+ "materia": "Lengua y Literatura II",
+ "titulo": "Elijo desafíos",
+ "sub": "Lengua y Literatura II · Misión 1 · Nivel 4",
+ "escenas": [
+  {
+   "t": "escala",
+   "titulo": "DE GENERAL A CONCRETO",
+   "items": [
+    {
+     "txt": "Leer más",
+     "emoji": "🔸",
+     "valor": 1
+    },
+    {
+     "txt": "Leer una novela",
+     "emoji": "🔹",
+     "valor": 2
+    },
+    {
+     "txt": "Veinte páginas por día",
+     "emoji": "🔷",
+     "valor": 3
+    }
+   ],
+   "voz": [
+    "«Leer más» es *muy general*.",
+    "«Leer una novela» es *más concreto*.",
+    "«Veinte páginas por día» es *concreto y medible*."
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "Querés leer más este año. ¿Qué desafío elegís?",
+   "emoji": "📚",
+   "a": {
+    "txt": "Cinco libros esta semana",
+    "consecuencia": "Es imposible: se abandona."
+   },
+   "b": {
+    "txt": "Veinte páginas por día",
+    "consecuencia": "Es posible: se cumple."
+   },
+   "voz": [
+    "Un dilema de lector.",
+    "Cinco libros esta semana es *demasiado*.",
+    "Veinte páginas por día es un desafío *posible*."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "«Voy a leer mucho» es un desafío medible",
+   "emoji": "📏",
+   "verdadero": false,
+   "explicacion": "No tiene un número",
+   "voz": [
+    "¿Verdadero o falso?",
+    "Dice «mucho», pero no dice cuánto.",
+    "¡*Falso*! Le falta un número."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué hace posible un desafío?",
+   "opciones": [
+    "Que entre en mi semana",
+    "Que sea enorme",
+    "Que nadie lo sepa",
+    "Que no tenga número"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Un quiz rápido.",
+    "¿Qué hace posible un desafío?",
+    "*Que entre en mi semana*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Desafío de lectura",
+   "texto": "Una meta que te exige un poco más que lo habitual: un libro más largo, otro género o leer más seguido.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Desafío de lectura*.",
+    "Una meta que te exige un poco más que lo habitual: un libro más largo, otro género o leer más seguido."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Pacto de lectura",
+   "texto": "Acuerdo con uno mismo: qué voy a leer, cuándo lo voy a leer y cómo voy a llevar el registro.",
+   "emoji": "📘",
+   "voz": [
+    "Veamos *Pacto de lectura*.",
+    "Acuerdo con uno mismo: qué voy a leer, cuándo lo voy a leer y cómo voy a llevar el registro."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "MEJORAR",
+   "items": [
+    {
+     "txt": "Digo qué voy a leer: una novela de misterio.",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "Digo cuánto: veinte páginas por día.",
+     "emoji": "2️⃣"
+    },
+    {
+     "txt": "Ahora es concreto y medible.",
+     "emoji": "3️⃣"
+    }
+   ],
+   "voz": [
+    "Resolvamos un caso: Transformá «Voy a leer mucho» en un desafío concreto y medible.",
+    "Digo qué voy a leer: una novela de misterio.",
+    "Digo cuánto: veinte páginas por día.",
+    "Ahora es concreto y medible."
+   ]
+  },
+  {
+   "t": "consejo",
+   "texto": "Mejor un desafío pequeño que cumplís todas las semanas que uno enorme que abandonás.",
+   "emoji": "💡",
+   "voz": [
+    "Un consejo: Mejor un desafío pequeño que cumplís todas las semanas que uno enorme que abandonás."
+   ]
+  },
+  {
+   "t": "resumen",
+   "voz": [
+    "Repasemos.",
+    "Un desafío es *concreto, medible y posible*.",
+    "El *pacto* dice qué, cuándo y cómo registro.",
+    "Mejor *chico pero seguro*.",
+    "¡Clase terminada! Ahora, *a practicar*."
+   ],
+   "items": [
+    [
+     "CONCRETO",
+     "dice qué leo"
+    ],
+    [
+     "MEDIBLE",
+     "tiene un número"
+    ],
+    [
+     "POSIBLE",
+     "entra en mi semana"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   }
+  }
+ ]
+}
