@@ -28,8 +28,22 @@ def revisar(slug):
         except Exception: continue
         if len(e.get('voz') or []) != n: out.append(f'{slug}: escena {k} «{e["t"]}» necesita {n} frases de voz y tiene {len(e.get("voz") or [])}')
     return out
+
+NUM = ('cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce quince veinte treinta cuarenta cincuenta sesenta setenta ochenta noventa cien ciento mil medio medios tercio tercios cuarto cuartos quinto quintos sexto sextos octavo octavos noveno novenos décimo décimos centésimos').split()
+def adelanto(slug):
+    """La frase que suena MIENTRAS corre el tiempo (la 2.ª de pregunta/quiz4/prediccion) no puede traer números nuevos (resultados): la respuesta se revela en la 3.ª."""
+    import re
+    p = os.path.join(AQUI, 'lecciones', slug + '.json'); out = []
+    for k, e in enumerate(json.load(open(p, encoding='utf-8'))['escenas']):
+        if e.get('t') not in ('pregunta', 'quiz4') or len(e.get('voz') or []) < 3: continue
+        a, b = e['voz'][0].lower(), e['voz'][1].lower()
+        if '?' in b: continue
+        w = lambda t: set(re.findall(r'[a-záéíóúñ]+|\d+', t))
+        nuevos = [x for x in (w(b) - w(a)) if x in NUM or x.isdigit()]
+        if nuevos: out.append(f'{slug}: escena {k} «{e["t"]}» la voz adelanta datos antes de revelar ({", ".join(sorted(nuevos))})')
+    return out
 if __name__ == '__main__':
     slugs = sys.argv[1:] or [os.path.basename(f)[:-5] for f in sorted(glob.glob(os.path.join(AQUI, 'lecciones', '*.json')))]
-    err = [x for s in slugs for x in revisar(s)]
+    err = [x for s in slugs for x in revisar(s)] + [x for s in slugs for x in adelanto(s)]
     for x in err: print(x)
     print('pasos:', 'OK' if not err else f'{len(err)} escena(s) desfasada(s)'); sys.exit(1 if err else 0)
