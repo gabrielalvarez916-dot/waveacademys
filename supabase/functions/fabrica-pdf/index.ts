@@ -167,15 +167,29 @@ Deno.serve(async (req) => {
     // Versión neutra (alumnos de otros países): un segundo PDF por lección, armado por la máquina con el texto en español neutro.
     // No toca el PDF principal ni el estado de publicación; vale también para lecciones publicadas.
     if (b.action === "pendientes_neutro") {
-      const { data: ds } = await admin.from("lesson_drafts").select("id, lesson_id, contenido, pdf_draft_key").not("pdf_at", "is", null).order("created_at");
+      // Liviano: primero los pasos PDF que todavía no tienen neutro (sin traer el contenido de los borradores), después solo se arman los que se van a devolver.
+      const limite = Number(b.limite) || 25;
+      const excl = new Set<string>(b.excluir || []);
+      const pasos: any[] = [];
+      for (let desde = 0; desde < 20000; desde += 1000) {
+        const { data: pg } = await admin.from("lesson_steps").select("lesson_id, r2_key").eq("step_type", "pdf").not("r2_key", "is", null)
+          .is("content->>r2_key_neutro", null).order("lesson_id").range(desde, desde + 999);
+        pasos.push(...(pg || []));
+        if (!pg || pg.length < 1000) break;
+      }
+      const clave = new Map<string, string>(pasos.map((p: any) => [p.lesson_id, p.r2_key]));
+      const ids = [...clave.keys()];
+      const cands: any[] = [];
+      for (let k = 0; k < ids.length; k += 100) {
+        const { data: ds } = await admin.from("lesson_drafts").select("id, lesson_id, pdf_draft_key, created_at").in("lesson_id", ids.slice(k, k + 100)).not("pdf_at", "is", null);
+        for (const d of ds || []) if (d.pdf_draft_key && d.pdf_draft_key === clave.get(d.lesson_id) && !excl.has(d.id)) cands.push(d);
+      }
+      cands.sort((x: any, y: any) => String(x.created_at).localeCompare(String(y.created_at)));
       const out: any[] = [];
-      for (const d of ds || []) {
-        if (out.length >= (Number(b.limite) || 25)) break;
-        if ((b.excluir || []).includes(d.id)) continue;
-        const { data: paso } = await admin.from("lesson_steps").select("r2_key, content").eq("lesson_id", d.lesson_id).eq("step_type", "pdf").maybeSingle();
-        if (!paso?.r2_key || paso.r2_key !== d.pdf_draft_key || (paso.content as any)?.r2_key_neutro) continue;
+      for (const d of cands.slice(0, limite)) {
+        const { data: full } = await admin.from("lesson_drafts").select("contenido").eq("id", d.id).single();
         const meta = await numeroDeLeccion(d.lesson_id); delete (meta as any).publicada;
-        out.push({ draft_id: d.id, meta, contenido: d.contenido, imagenes: await imagenesDe(d.id, d.contenido) });
+        out.push({ draft_id: d.id, meta, contenido: full?.contenido, imagenes: await imagenesDe(d.id, full?.contenido) });
       }
       return json({ pendientes: out });
     }
