@@ -970,7 +970,7 @@
 
   function abrirCuestionario(op) {
     var el = document.createElement('div');
-    el.className = 'wvp';
+    el.className = 'wvp' + (op.examen ? ' jefe' : '');
     el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(op.titulo) + '</b>' +
       '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
       '<div class="mt-cuest"></div></div>';
@@ -1016,6 +1016,10 @@
       if (ev.target.closest('[data-rel]')) { siguienteRel(); return; }
       var tg = ev.target.closest('[data-ap]');
       if (tg) { var kk = tg.getAttribute('data-ap'); if (window.WaveApoyos) WaveApoyos.set(kk, !WaveApoyos.get(kk)); pintarToggles(); verConsigna(cuerpo._cn || 0); return; }
+      var jIr = ev.target.closest('[data-jf-ir]'); if (jIr) { verConsigna(+jIr.getAttribute('data-jf-ir')); return; }
+      if (ev.target.closest('[data-jf-ini]')) { if (conAviso()) avisoPrevio(); else formulario(); return; }
+      if (ev.target.closest('[data-jf-volver]')) { cerrarResumen(); return; }
+      if (ev.target.closest('[data-jf-enviar]')) { cerrarResumen(); enviar(null, true); return; }
       var cb = ev.target.closest('[data-comprobar]'); if (cb) { comprobar(Number(cb.getAttribute('data-comprobar')), cb); return; }
       if (ev.target.closest('[data-sincrono]')) { if (window.WaveApoyos) WaveApoyos.set('sinCrono', !WaveApoyos.get('sinCrono')); formulario(); return; }
       var cn = ev.target.closest('[data-cn]'); if (cn) { verConsigna((cuerpo._cn || 0) + Number(cn.getAttribute('data-cn'))); return; }
@@ -1172,11 +1176,11 @@
       if (relamp) clearInterval(relamp.t);
       relamp = null;
       if (!ap('sinCrono') && lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
-      var barra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-ap="deAUna" aria-pressed="false">Ver de a una</button>' +
+      var barra = op.examen ? '' : '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-ap="deAUna" aria-pressed="false">Ver de a una</button>' +
         (lista.some(function (q) { return q.tiempo_seg; }) ? '<button type="button" class="ap-tg" data-sincrono="1" aria-pressed="true">Sin cronómetro</button>' : '') +
         (op.comprobar ? '<button type="button" class="ap-tg" data-ap="comprobar" aria-pressed="false">Comprobar cada respuesta</button>' : '') + '</div>';
       // Todas las consignas quedan armadas (así se entregan juntas). Se muestran todas o de a una, a elección del alumno.
-      cuerpo.innerHTML = barra + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
+      cuerpo.innerHTML = barra + (op.examen ? jfHud() : '') + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
         var h = campo(q, i), k = h.lastIndexOf('</div></div>');
         return op.comprobar && k > 0 ? h.slice(0, k) + compHtml(i) + h.slice(k) : h;
       }).join('') +
@@ -1188,7 +1192,7 @@
       verConsigna(0);
     }
     function verConsigna(n) {
-      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length, una = ap('deAUna');
+      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length, una = !!op.examen || ap('deAUna');
       if (!tot) return;
       n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n; qActual = lista[n] || null;
       [].forEach.call(ps, function (p, k) { p.style.display = (!una || k === n) ? '' : 'none'; });
@@ -1197,6 +1201,7 @@
       if (ant) { ant.style.display = una ? '' : 'none'; ant.style.visibility = n ? '' : 'hidden'; }
       if (sig) sig.style.display = una && n < tot - 1 ? '' : 'none';
       if (env) env.style.display = (!una || n === tot - 1) ? '' : 'none';
+      jfActualizar(n);
       cuerpo.scrollTo(0, 0);
     }
 
@@ -1253,10 +1258,11 @@
       if (relamp.i < lista.length) mostrarRel(); else enviar(relamp.resp);
     }
 
-    async function enviar(pre) {
+    async function enviar(pre, firme) {
+      if (op.examen && !pre && !firme) { resumenJefe(); return; }
       var resp = pre || lista.map(function (q, i) { return { question_id: q.id, answer: leerResp(q, i), seed: q._seed, justificacion: op.justificar ? justif(i) : undefined }; });
       var vacias = resp.filter(function (r) { return !String(r.answer).trim(); }).length;
-      if (!pre && vacias && !confirm('Te quedaron ' + vacias + (vacias === 1 ? ' pregunta' : ' preguntas') + ' sin responder. ¿Entregar igual?')) return;
+      if (!pre && !op.examen && vacias && !confirm('Te quedaron ' + vacias + (vacias === 1 ? ' pregunta' : ' preguntas') + ' sin responder. ¿Entregar igual?')) return;
       enviando = true;
       cuerpo.innerHTML = '<div class="mt-cuest-estado"><div class="mt-girar"></div><b>Estamos corrigiendo tus respuestas…</b><small>Puede tardar unos segundos. No cierres esta ventana.</small></div>';
       try {
@@ -1280,9 +1286,10 @@
       (res.results || []).forEach(function (r) { porId[r.question_id] = r; });
       var mias = {};
       resp.forEach(function (r) { mias[r.question_id] = r.answer; });
-      cuerpo.innerHTML =
+      var cabecera = op.examen ? finalJefe(res, nota, ok, detalle) :
         '<div class="mt-res ' + (ok ? 'ok' : 'no') + '"><div class="mt-res-nota"><b>' + nota + '</b><span>de 100</span></div><h3>' + titulo + '</h3>' +
-        (detalle ? '<p>' + detalle + '</p>' : '') + (res.overall_feedback ? '<p class="mt-res-fb">' + esc(res.overall_feedback) + '</p>' : '') + '</div>' +
+        (detalle ? '<p>' + detalle + '</p>' : '') + (res.overall_feedback ? '<p class="mt-res-fb">' + esc(res.overall_feedback) + '</p>' : '') + '</div>';
+      cuerpo.innerHTML = cabecera + (op.examen ? '<h3 class="jf-rep">Así te fue en cada pregunta</h3>' : '') +
         '<div class="mt-res-lista">' + lista.map(function (q, i) {
           var r = porId[q.id] || {}, sc = Math.round(r.score || 0);
           return '<div class="mt-res-item"><div class="mt-res-cab"><span class="mt-preg-n">' + (i + 1) + '</span><b>' + esc(pr(q)) + '</b><span class="mt-chip-n ' + (sc >= 70 ? 'ok' : sc >= 40 ? 'med' : 'bajo') + '">' + sc + '</span></div>' +
@@ -1292,8 +1299,65 @@
         '<div class="mt-cuest-pie">' + (ok && op.examen ? '' : '<button type="button" class="mt-boton suave" data-otra="1">' + (op.repaso ? 'Hacer otro repaso' : 'Intentar de nuevo') + '</button>') +
         '<button type="button" class="mt-boton" data-cerrar="1">Listo</button></div>';
       cuerpo.scrollTo(0, 0);
+      if (op.examen) contarNota(nota);
       if (window.WaveJuego) WaveJuego.resultado(cuerpo, { nota: nota, ok: ok, examen: !!op.examen, scores: lista.map(function (q) { return Math.round((porId[q.id] || {}).score || 0); }),
         tiempos: relamp && relamp.tiempos, limites: lista.map(function (q) { return q.tiempo_seg || 20; }) });
+    }
+
+    // ---------- Nivel jefe: interfaz de videojuego (entrada, barra de rondas y de vida, golpe final, pantalla de victoria) ----------
+    function entradaJefe() {
+      var salto = !!op.justificar, n = lista.length;
+      var reglas = salto
+        ? ['Es tu única oportunidad para saltear esta misión.', 'Podés ir y volver entre las preguntas antes de enviar.', 'Si no aprobás, hacés la misión completa.']
+        : ['Respondé con calma: podés ir y volver entre las preguntas antes de enviar.', 'Al enviar se corrige y ves tu puntaje.', 'Si no aprobás, podés volver a intentarlo cuando quieras.'];
+      cuerpo.innerHTML = '<div class="jf-entrada"><div class="jf-aura"></div><div class="jf-emblema">' + (salto ? '⚔️' : '🏆') + '</div>' +
+        '<span class="jf-etq">' + (salto ? 'RENDIR PRIMERO' : 'NIVEL JEFE') + '</span><h2 class="jf-nombre">' + esc(op.misionTitulo || '') + '</h2>' +
+        '<p class="jf-sub">' + (salto ? 'Demostrá que ya dominás este tema.' : 'El último desafío de la misión.') + '</p>' +
+        '<div class="jf-datos"><div><b>' + n + '</b><small>' + (n === 1 ? 'pregunta' : 'preguntas') + '</small></div>' +
+        (op.aprobar != null ? '<div><b>' + esc(String(op.aprobar)) + '</b><small>puntos para aprobar</small></div>' : '') + '</div>' +
+        '<ul class="jf-reglas">' + reglas.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>' +
+        '<button type="button" class="jf-btn" data-jf-ini="1">¡A PELEAR!</button></div>';
+      cuerpo.scrollTo(0, 0);
+    }
+    function jfHud() {
+      return '<div class="jf-hud"><div class="jf-segs">' + lista.map(function (q, k) { return '<button type="button" class="jf-seg" data-jf-ir="' + k + '" aria-label="Ir a la pregunta ' + (k + 1) + '"></button>'; }).join('') + '</div>' +
+        '<div class="jf-vida"><span>JEFE</span><div class="jf-vbar"><i></i></div></div></div>';
+    }
+    function jfActualizar(n) {
+      var segs = cuerpo.querySelectorAll('.jf-seg'); if (!segs.length) return;
+      var resp = 0;
+      [].forEach.call(segs, function (sg, k) {
+        var hecha = false; try { hecha = !!String(leerResp(lista[k], k)).trim(); } catch (e) { hecha = false; }
+        if (hecha) resp++;
+        sg.className = 'jf-seg' + (hecha ? ' resp' : '') + (k === n ? ' act' : '');
+      });
+      var v = cuerpo.querySelector('.jf-vbar i'); if (v) v.style.width = Math.round((1 - resp / segs.length) * 100) + '%';
+    }
+    function cerrarResumen() { var o = el.querySelector('.jf-over'); if (o) o.remove(); }
+    function resumenJefe() {
+      cerrarResumen();
+      var filas = lista.map(function (q, k) { var h = false; try { h = !!String(leerResp(q, k)).trim(); } catch (e) { h = false; } return h; });
+      var hechas = filas.filter(Boolean).length, vacias = filas.length - hechas;
+      var o = document.createElement('div'); o.className = 'jf-over';
+      o.innerHTML = '<div class="jf-caja"><span class="jf-etq">GOLPE FINAL</span><h2>¿Listo para enviar?</h2>' +
+        '<div class="jf-datos"><div><b>' + hechas + '/' + filas.length + '</b><small>respondidas</small></div></div>' +
+        '<div class="jf-segs jf-segs-res">' + filas.map(function (h, k) { return '<button type="button" class="jf-seg' + (h ? ' resp' : ' vacia') + '" data-jf-volver="1" data-jf-ir="' + k + '" aria-label="Pregunta ' + (k + 1) + '"></button>'; }).join('') + '</div>' +
+        (vacias ? '<p class="jf-aviso">Te ' + (vacias === 1 ? 'quedó 1 pregunta' : 'quedaron ' + vacias + ' preguntas') + ' sin responder. Si enviás así, esas cuentan como incorrectas.</p>' : '<p class="jf-aviso ok">¡Respondiste todo! Cuando quieras, enviá tu examen.</p>') +
+        '<div class="mt-cuest-pie"><button type="button" class="jf-btn suave" data-jf-volver="1">Volver al examen</button><button type="button" class="jf-btn" data-jf-enviar="1">¡ENVIAR!</button></div></div>';
+      el.querySelector('.wvp-caja').appendChild(o);
+    }
+    function finalJefe(res, nota, ok, detalle) {
+      var est = ok ? (nota >= 90 ? 3 : nota >= 75 ? 2 : 1) : 0;
+      return '<div class="jf-final ' + (ok ? 'gana' : 'pierde') + '"><div class="jf-aura"></div><span class="jf-etq">' + (ok ? 'NIVEL JEFE SUPERADO' : 'NIVEL JEFE') + '</span>' +
+        '<h2 class="jf-tit">' + (ok ? '¡JEFE DERROTADO!' : 'EL JEFE RESISTE') + '</h2><div class="jf-medalla">' + (ok ? '🏅' : '🛡️') + '</div>' +
+        '<div class="jf-puntaje"><b data-jf-nota="' + nota + '">0</b><small>de 100</small></div>' +
+        '<div class="jf-estrellas">' + '★★★'.slice(0, est) + '<s>' + '★★★'.slice(est) + '</s></div>' +
+        '<p>' + esc(detalle || '') + '</p>' + (res.overall_feedback ? '<p class="jf-fb">' + esc(res.overall_feedback) + '</p>' : '') + '</div>';
+    }
+    function contarNota(nota) {
+      var b = cuerpo.querySelector('[data-jf-nota]'); if (!b) return;
+      var t0 = Date.now(), dur = 1100;
+      (function paso() { var f = Math.min(1, (Date.now() - t0) / dur); b.textContent = Math.round(nota * (1 - Math.pow(1 - f, 3))); if (f < 1) requestAnimationFrame(paso); })();
     }
 
     // Trayecto Anticipación: antes de cada actividad, una pantalla que dice qué viene, qué hay que hacer en cada tipo de pregunta y cómo saber que terminó
@@ -1323,7 +1387,7 @@
     function traer() {
       entregado = false; if (window.WaveJuego) WaveJuego.reiniciar();
       cuerpo.innerHTML = '<div class="mt-cuest-estado">' + (op.cargando ? '<div class="mt-girar"></div><b>' + esc(op.cargando) + '</b><small>' + esc(op.cargandoSub || '') + '</small>' : 'Cargando…') + '</div>';
-      op.cargar().then(function (qs) { lista = qs; if (conAviso()) avisoPrevio(); else formulario(); }).catch(function (e) {
+      op.cargar().then(function (qs) { lista = qs; if (op.examen) entradaJefe(); else if (conAviso()) avisoPrevio(); else formulario(); }).catch(function (e) {
         cuerpo.innerHTML = '<div class="mt-cuest-estado error"><b>' + esc(e.message || 'No se pudo cargar.') + '</b></div>';
       });
     }
@@ -1337,7 +1401,7 @@
     if (!salto && !t.examenDisponible) { toast('Primero superá todos los niveles de la misión.', true); return; }
     var sorteo = null; // cada vez que se abre, el examen sortea preguntas distintas del banco del tema
     abrirCuestionario({
-      titulo: (salto ? 'Rendir primero · ' : 'Nivel jefe · ') + t.titulo, examen: true, justificar: !!salto,
+      titulo: (salto ? 'Rendir primero · ' : 'Nivel jefe · ') + t.titulo, examen: true, justificar: !!salto, misionTitulo: t.titulo, aprobar: t.examen.aprobar,
       cargar: async function () {
         var r = await sb.rpc('sortear_examen', { p_exam: t.examen.id });
         if (r.error) throw new Error(r.error.message || 'No se pudo armar el examen.');
