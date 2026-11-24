@@ -31,6 +31,7 @@ N1 = {**ESTILO,
  ]),
  S(1, "Cómo se hace la salsa", [
   P("Lola visita una fábrica de salsa. ¡Mirá los pasos!"),
+  P("Los tomates llegan en cajones desde la huerta. Una máquina los lava con agua. Después se cocinan en ollas gigantes."),
   IMG("Los pasos", "Del tomate a la salsa.", FG.tiras(["1. COSECHAN LOS TOMATES", "2. LOS LAVAN", "3. LOS COCINAN", "4. LOS ENVASAN"], numeros=False)),
  ]),
  S(2, "Para practicar", [
@@ -44,7 +45,7 @@ N1 = {**ESTILO,
 "tip": {"titulo": "¿Naturaleza o fábrica?", "texto": "Si sale de la naturaleza, es materia prima."},
 "ojo": ["Un producto puede tener varias materias primas.", "Muchas personas trabajan para hacer un producto."],
 "resumen": [{"titulo": "Materia prima", "texto": "De la naturaleza."}, {"titulo": "Producto", "texto": "Hecho en la fábrica."}, {"titulo": "Salsa", "texto": "Viene del tomate."}],
-"glosario": [{"palabra": "Cosechar", "significado": "Juntar lo que dio la planta."}, {"palabra": "Envasar", "significado": "Poner en frascos o paquetes."}],
+"glosario": [{"palabra": "Frasco", "significado": "Envase de vidrio con tapa."}, {"palabra": "Envasar", "significado": "Poner en frascos o paquetes."}],
 "carpeta": ["¿La tarjeta 1 es materia prima o producto?", "¿Y la tarjeta 2?", "Lola dice que la salsa sale sola de la planta. ¿Tiene razón?"],
 "carpeta_nivel": ["aplicar", "aplicar", "error"],
 "respuestas_carpeta": [low("MATERIA PRIMA") + low("ES MATERIA PRIMA"), low("PRODUCTO") + low("ES UN PRODUCTO") + low("UN PRODUCTO"), NO],
@@ -62,6 +63,7 @@ N2 = {**ESTILO,
  ]),
  S(1, "Muchos productos", [
   P("Con una sola materia prima, la <b>leche</b>, se hacen muchos productos."),
+  P("Para el queso, la leche se cuaja y se aprieta. Para el helado, se mezcla con azúcar y se congela."),
   IMG("Productos de la leche", "Todos vienen de la vaca.", FG.nombres(["QUESO", "YOGUR", "HELADO"], cols=3)),
  ]),
  S(2, "Para practicar", [
@@ -93,6 +95,7 @@ N3 = {**ESTILO,
  S(1, "Un ejemplo: el pan", [
   P("El <b>trigo</b> crece en el campo. En el molino se hace <b>harina</b>."),
   P("En la panadería se hace el <b>pan</b>, y lo compramos."),
+  P("Entre el campo y la panadería viajan camiones. Cada etapa necesita personas que trabajen. Si falta una, el pan no llega."),
   IMG("Del trigo al pan", "Tres lugares.", FG.nombres(["CAMPO", "MOLINO", "PANADERÍA"], cols=3)),
  ]),
  S(2, "Para practicar", [
@@ -124,6 +127,7 @@ N4 = {**ESTILO,
  S(1, "Cuidarse al trabajar", [
   P("En la fábrica usan <b>guantes</b>, <b>gorro</b> y <b>barbijo</b>."),
   P("Así se cuidan y los alimentos quedan limpios."),
+  P("Las operarias trabajan con horarios. Descansan para comer. Cuando terminan, otra persona sigue con la máquina."),
   IMG("Para cuidarse", "Ropa de trabajo.", FG.nombres(["GUANTES", "GORRO", "BARBIJO"], cols=3)),
  ]),
  S(2, "Para practicar", [

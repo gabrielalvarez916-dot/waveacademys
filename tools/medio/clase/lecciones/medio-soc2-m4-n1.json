@@ -87,6 +87,35 @@
    ]
   },
   {
+   "t": "pasos",
+   "titulo": "LA MAÑANA DE LOLA",
+   "items": [
+    {
+     "txt": "Se lava: agua",
+     "emoji": "🚰"
+    },
+    {
+     "txt": "Prende la luz",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Toma el colectivo",
+     "emoji": "🚌"
+    },
+    {
+     "txt": "Llega a la escuela",
+     "emoji": "🏫"
+    }
+   ],
+   "voz": [
+    "¿Cuántos servicios usa Lola en una mañana?",
+    "Se lava la cara: usa el *agua*.",
+    "Prende la *luz* para vestirse.",
+    "Toma el *colectivo* para viajar.",
+    "Y llega a la *escuela*. ¡Cuatro servicios!"
+   ]
+  },
+  {
    "t": "consejo",
    "titulo": "CUIDALOS",
    "texto": "Apagá la luz y cerrá la canilla",

@@ -27,6 +27,7 @@ N1 = {**ESTILO,
  S(1, "Los servicios", [
   D("Servicio", "Algo que la ciudad nos da para <b>vivir mejor</b>."),
   P("En casa usamos <b>agua</b>, <b>luz</b> y <b>gas</b>."),
+  P("El agua llega por caños. La luz llega por cables."),
   IMG("Servicios de la casa", "Llegan por caños y cables.", FG.nombres(["AGUA", "LUZ", "GAS"], cols=3)),
  ]),
  S(1, "Para todos", [
@@ -57,10 +58,12 @@ N2 = {**ESTILO,
 "secciones": [
  S(1, "Quiénes trabajan", [
   P("Cada servicio tiene <b>trabajadores</b> con sus herramientas."),
+  P("El electricista sube a los postes con escalera y casco. La enfermera mide la fiebre. El chofer sigue siempre el mismo recorrido."),
   IMG("Trabajos de la ciudad", "Cada uno con su herramienta.", FG.tiras(["RECOLECTOR: CAMIÓN DE BASURA", "ELECTRICISTA: CABLES Y PINZA", "CHOFER: COLECTIVO", "ENFERMERA: TERMÓMETRO"], numeros=False)),
  ]),
  S(1, "A toda hora", [
   P("Algunos trabajan de <b>noche</b>: los recolectores, los médicos de guardia."),
+  P("Así, cuando nos levantamos, la calle ya está limpia."),
   IMG("De día y de noche", "La ciudad no para.", FG.nombres(["RECOLECTOR", "MÉDICA", "POLICÍA"], cols=3)),
  ]),
  S(2, "Para practicar", [
@@ -87,10 +90,12 @@ N3 = {**ESTILO,
 "secciones": [
  S(1, "Normas para todos", [
   P("Los servicios funcionan mejor si respetamos <b>normas</b>."),
+  P("Si sacamos la basura a cualquier hora, la calle se ensucia. Si no esperamos en la parada, el colectivo no para."),
   IMG("Algunas normas", "Para que todo funcione.", FG.tiras(["SACAR LA BASURA EN SU HORARIO", "ESPERAR EL COLECTIVO EN LA PARADA", "CRUZAR CON EL SEMÁFORO"], numeros=False, cols=1)),
  ]),
  S(1, "El semáforo", [
   P("<b>Verde</b>: cruzamos. <b>Amarillo</b>: atención. <b>Rojo</b>: esperamos."),
+  P("Los autos también miran el semáforo. Así nadie se choca."),
   IMG("Los colores", "Para cruzar seguros.", FG.nombres(["ROJO: ESPERO", "AMARILLO: ATENCIÓN", "VERDE: CRUZO"], cols=3)),
  ]),
  S(2, "Para practicar", [
