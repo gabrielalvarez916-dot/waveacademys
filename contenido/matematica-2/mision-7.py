@@ -105,14 +105,14 @@ ACT2={"1":[SA("¿Cuál es el grado de 5x²y? Escribí solo el número.",["3"],"S
    N("Relámpago. 2x + 3x tiene coeficiente…",{"acepta":[5]},"2 + 3.",tiempo=25,n="recordar"),
    VF("Relámpago. Para sumar monomios semejantes se suman los coeficientes.","Verdadero","La parte literal queda igual.",tiempo=15,n="recordar"),
    FB("Relámpago. x · x² = x a la ___",[["3"]],"1 + 2.",tiempo=25,n="recordar")]}
-ACT3={"1":[N("Sumá (3x + 2) + (2x + 5). ¿Cuál es el coeficiente de x del resultado?",{"acepta":[5]},"3 + 2.",n="aplicar"),
+ACT3={"1":[MAT("Uní cada suma con su resultado.",["(3x + 2) + (2x + 5)","(x + 1) + (x + 1)","4x + (2x − 1)","(x + 6) + (3x − 2)"],["5x + 7","2x + 2","6x − 1","4x + 4"],"Se agrupan los términos semejantes.",n="aplicar"),
    MC("(2x + 3) + (x + 4) =",["3x + 7","3x + 12","2x + 7","3x² + 7"],"3x + 7","Se agrupan los semejantes.",n="aplicar"),
    FB("En (5x + 1) + (2x − 1), el término independiente da ___",[["0"]],"1 − 1 = 0.",n="aplicar")],
  "2":[SA("Restá (5x + 4) − (2x + 1). ¿Cuál es el término independiente del resultado?",["3"],"4 − 1.",n="aplicar"),
    ORD("Ordená los pasos para restar (5x + 4) − (2x + 1).",["3x + 3","5x + 4 − 2x − 1","(5x + 4) − (2x + 1)"],["(5x + 4) − (2x + 1)","5x + 4 − 2x − 1","3x + 3"],"Primero se cambian los signos.",n="aplicar"),
    VF("Al restar un polinomio se cambia el signo solo de su primer término.","Falso","Se cambia el signo de todos los términos.",n="error")],
  "3":[MAT("Uní cada operación con su resultado.",["(x + 2) + (x + 3)","(3x + 1) − (x + 1)","(x² + x) + (2x² − x)","(2x + 5) − (2x + 1)"],["2x + 5","2x","3x²","4"],"Se agrupan los semejantes.",n="aplicar"),
-   N("Sumá (4x + 3) + (x − 3). ¿Cuánto vale el término independiente?",{"acepta":[0]},"3 − 3.",n="aplicar"),
+   MS("¿Qué sumas dan un resultado sin término independiente?",["(4x + 3) + (x − 3)","(2x + 1) + (x + 2)","(5x − 2) + (x + 2)","(x + 4) + (x + 4)"],["(4x + 3) + (x − 3)","(5x − 2) + (x + 2)"],"El término independiente se anula si los números suman cero.",n="analizar"),
    MC("¿Cuál es el resultado de (4x + 3) − (x + 1)?",["3x + 2","3x + 4","5x + 4","3x + 3"],"3x + 2","Se cambian los signos: 4x + 3 − x − 1.",n="aplicar")],
  "4":[N("Un compañero restó (5x + 4) − (2x + 1) y obtuvo 3x + 5. ¿Cuál es el término independiente correcto?",{"acepta":[3]},"4 − 1 = 3: se cambia el signo del 1.",n="error"),
    KW("Explicá cómo se restan dos polinomios.","Escribí una frase.",[["signo*","cambia*","opuest*"],["término*","semejante*","agrup*"]],1,"Se cambia el signo del segundo y se agrupan los semejantes.",n="analizar"),
@@ -125,7 +125,7 @@ ACT4={"1":[N("Multiplicá 3x · (x + 4). ¿Cuál es el coeficiente de x en el re
    MC("2x · (x + 3) =",["2x² + 6x","2x² + 3","2x + 6x","x² + 6x"],"2x² + 6x","Se distribuye.",n="aplicar"),
    FB("3 · (2x + 1) = ___ x + 3",[["6"]],"3 × 2.",n="aplicar")],
  "2":[ORD("Ordená los pasos para multiplicar 3x · (x + 4).",["3x² + 12x","3x · x y 3x · 4","3x · (x + 4)"],["3x · (x + 4)","3x · x y 3x · 4","3x² + 12x"],"Se distribuye.",n="aplicar"),
-   N("Multiplicá x · (x − 5). ¿Cuál es el coeficiente de x del resultado?",{"acepta":[-5]},"x · (−5) = −5x.",n="aplicar"),
+   MS("¿Cuáles productos dan x² − 5x?",["x · (x − 5)","(x − 5) · x","x · (x + 5)","5 · (x² − x)"],["x · (x − 5)","(x − 5) · x"],"Se multiplica x por x y por −5.",n="analizar"),
    VF("Al multiplicar 2x · (x + 3), solo se multiplica el primer término del paréntesis.","Falso","Se multiplica por cada término.",n="error")],
  "3":[N("Multiplicá (x + 2)(x + 3). ¿Cuál es el coeficiente de x?",{"acepta":[5]},"3x + 2x.",n="aplicar"),
    MAT("Uní cada producto con su resultado.",["2 · (x + 3)","x · (x + 1)","3x · 2","(x + 1)(x + 1)"],["2x + 6","x² + x","6x","x² + 2x + 1"],"Se distribuye.",n="aplicar"),
@@ -137,6 +137,42 @@ ACT4={"1":[N("Multiplicá 3x · (x + 4). ¿Cuál es el coeficiente de x en el re
    N("Relámpago. 3 · (x + 2): término independiente…",{"acepta":[6]},"3 × 2.",tiempo=25,n="recordar"),
    VF("Relámpago. x · x = x².","Verdadero","Se suman los exponentes.",tiempo=15,n="recordar"),
    FB("Relámpago. (x + 1)(x + 1) = x² + ___ x + 1",[["2"]],"x + x = 2x.",tiempo=25,n="recordar")]}
+ACT["1"]=[MAT("Uní cada frase con su expresión.",["El doble de n","n aumentado en 5","El triple de n","La mitad de n"],["2n","n + 5","3n","n / 2"],"Doble: por 2. Aumentado: se suma.",n="aplicar"),
+   N("Calculá 3n + 2 para n = 4. Escribí solo el número.",{"acepta":[14]},"3 × 4 + 2.",n="aplicar"),
+   ORD("Ordená los pasos para traducir «el triple de un número, más cinco».",["Sumar cinco: 3n + 5","Escribir el triple: 3n","Elegir una letra: n"],["Elegir una letra: n","Escribir el triple: 3n","Sumar cinco: 3n + 5"],"Primero se elige la letra.",n="aplicar")]
+ACT["2"]=[N("Calculá 2a − b para a = 5 y b = 3. Escribí solo el número.",{"acepta":[7]},"2 × 5 − 3 = 7.",n="aplicar"),
+   MS("¿Cuáles son expresiones algebraicas?",["3n + 2","15","a − b","7 + 8"],["3n + 2","a − b"],"Tienen letras.",n="aplicar"),
+   MAT("Uní cada expresión con su valor cuando n = 6.",["n / 2 + 1","2n − 5","n + 4","3n"],["4","7","10","18"],"Se reemplaza n por 6 en cada una.",n="aplicar")]
+ACT["3"]=[ORD("Ordená los pasos para calcular 3n + 2 con n = 4.",["14","3 × 4 + 2","12 + 2"],["3 × 4 + 2","12 + 2","14"],"Primero se reemplaza la letra.",n="aplicar"),
+   CLF("¿Es una expresión algebraica o solo un número?",["3n + 2","7","a − b","12"],["Expresión algebraica","Número"],{"3n + 2":"Expresión algebraica","7":"Número","a − b":"Expresión algebraica","12":"Número"},"Si tiene letras, es algebraica.",n="analizar"),
+   N("Calculá 5n − 3 para n = 4. Escribí solo el número.",{"acepta":[17]},"5 × 4 − 3.",n="aplicar")]
+ACT["4"]=[KW("Explicá qué es una variable.","Escribí una frase.",[["letra*","símbolo*"],["número*","valor*","cambia*","represent*"]],1,"Una variable es una letra que representa un número.",n="analizar"),
+   N("Un compañero leyó 3n con n = 4 como 34. ¿Cuánto vale realmente 3n? Escribí solo el número.",{"acepta":[12]},"3n significa 3 por n: 3 × 4 = 12.",n="error"),
+   MS("¿Cuáles expresiones valen 10 cuando n = 4?",["2n + 2","3n − 2","n + 6","5n − 9"],["2n + 2","3n − 2","n + 6"],"Se reemplaza n por 4 en cada una.",n="analizar")]
+ACT2["1"]=[N("¿Cuál es el grado de 5x²y? Escribí solo el número.",{"acepta":[3]},"Se suman los exponentes: 2 + 1.",n="aplicar"),
+   MAT("Uní cada monomio con su grado.",["5x²y","−3x","x³","7"],["3","1","3 (de x³)","0"],"El grado es la suma de los exponentes.",n="aplicar"),
+   MS("¿Cuáles monomios tienen coeficiente 4?",["4x²","x⁴","−4y","4ab"],["4x²","4ab"],"El coeficiente es el número que multiplica.",n="aplicar")]
+ACT2["2"]=[N("Sumá 3x + 5x. ¿Cuál es el coeficiente del resultado?",{"acepta":[8]},"3 + 5.",n="aplicar"),
+   CLF("¿Es semejante a 3x?",["5x","2x²","−x","4y"],["Semejante","No semejante"],{"5x":"Semejante","2x²":"No semejante","−x":"Semejante","4y":"No semejante"},"Tiene que tener la misma parte literal.",n="analizar"),
+   MS("¿Cuáles pares son monomios semejantes?",["3x y 5x","2x² y 2x","4ab y −ab","x e y"],["3x y 5x","4ab y −ab"],"Misma letra y mismo exponente.",n="analizar")]
+ACT3["1"]=[MAT("Uní cada suma con su resultado.",["(3x + 2) + (2x + 5)","(x + 1) + (x + 1)","4x + (2x − 1)","(x + 6) + (3x − 2)"],["5x + 7","2x + 2","6x − 1","4x + 4"],"Se agrupan los términos semejantes.",n="aplicar"),
+   ORD("Ordená los pasos para sumar (2x + 3) + (x + 4).",["3x + 7","2x + x y 3 + 4","(2x + 3) + (x + 4)"],["(2x + 3) + (x + 4)","2x + x y 3 + 4","3x + 7"],"Primero se agrupan los semejantes.",n="aplicar"),
+   MS("¿Cuáles sumas dan 5x + 3?",["(2x + 1) + (3x + 2)","(4x + 2) + (x + 1)","(5x + 1) + 2","(3x + 3) + 3x"],["(2x + 1) + (3x + 2)","(4x + 2) + (x + 1)","(5x + 1) + 2"],"Se agrupan los semejantes.",n="analizar")]
+ACT3["2"]=[N("Restá (5x + 4) − (2x + 1). ¿Cuál es el término independiente del resultado?",{"acepta":[3]},"4 − 1.",n="aplicar"),
+   ORD("Ordená los pasos para restar (5x + 4) − (2x + 1).",["3x + 3","5x + 4 − 2x − 1","(5x + 4) − (2x + 1)"],["(5x + 4) − (2x + 1)","5x + 4 − 2x − 1","3x + 3"],"Primero se cambian los signos.",n="aplicar"),
+   MS("¿Cuáles restas dan 2x + 5?",["(3x + 7) − (x + 2)","(4x + 1) − (2x − 4)","(5x + 9) − (3x + 4)","(2x + 6) − (x + 1)"],["(3x + 7) − (x + 2)","(4x + 1) − (2x − 4)","(5x + 9) − (3x + 4)"],"Se cambian los signos y se agrupan.",n="analizar")]
+ACT3["3"]=[MAT("Uní cada operación con su resultado.",["(x + 2) + (x + 3)","(3x + 1) − (x + 1)","(x² + x) + (2x² − x)","(2x + 5) − (2x + 1)"],["2x + 5","2x","3x²","4"],"Se agrupan los semejantes.",n="aplicar"),
+   MS("¿Qué sumas dan un resultado sin término independiente?",["(4x + 3) + (x − 3)","(2x + 1) + (x + 2)","(5x − 2) + (x + 2)","(x + 4) + (x + 4)"],["(4x + 3) + (x − 3)","(5x − 2) + (x + 2)"],"El término independiente se anula si los números suman cero.",n="analizar"),
+   N("Restá (4x + 3) − (x + 1). ¿Cuál es el coeficiente de x del resultado?",{"acepta":[3]},"4 − 1.",n="aplicar")]
+ACT4["1"]=[N("Multiplicá 3x · (x + 4). ¿Cuál es el coeficiente de x en el resultado?",{"acepta":[12]},"3x · 4 = 12x.",n="aplicar"),
+   CLF("¿El producto es correcto o incorrecto?",["2x · 3x = 6x²","x · x = 2x","3 · 2x = 6x","x² · x = x²"],["Correcto","Incorrecto"],{"2x · 3x = 6x²":"Correcto","x · x = 2x":"Incorrecto","3 · 2x = 6x":"Correcto","x² · x = x²":"Incorrecto"},"Se multiplican los coeficientes y se suman los exponentes.",n="analizar"),
+   N("Si 3 · (2x + 1) = ax + 3, ¿cuánto vale a?",{"acepta":[6]},"3 × 2 = 6.",n="aplicar")]
+ACT4["2"]=[ORD("Ordená los pasos para multiplicar 3x · (x + 4).",["3x² + 12x","3x · x y 3x · 4","3x · (x + 4)"],["3x · (x + 4)","3x · x y 3x · 4","3x² + 12x"],"Se distribuye.",n="aplicar"),
+   MS("¿Cuáles productos dan x² − 5x?",["x · (x − 5)","(x − 5) · x","x · (x + 5)","5 · (x² − x)"],["x · (x − 5)","(x − 5) · x"],"Se multiplica x por x y por −5.",n="analizar"),
+   N("Un compañero multiplicó 2x · (x + 3) solo por el primer término y obtuvo 2x² + 3. ¿Cuál es el coeficiente de x en el resultado correcto?",{"acepta":[6]},"2x · 3 = 6x: se multiplica cada término.",n="error")]
+ACT4["3"]=[N("Multiplicá (x + 2)(x + 3). ¿Cuál es el coeficiente de x?",{"acepta":[5]},"3x + 2x.",n="aplicar"),
+   MAT("Uní cada producto con su resultado.",["2 · (x + 3)","x · (x + 1)","3x · 2","(x + 1)(x + 1)"],["2x + 6","x² + x","6x","x² + 2x + 1"],"Se distribuye.",n="aplicar"),
+   N("En (x + 1)(x + 4), ¿cuál es el término independiente del resultado?",{"acepta":[4]},"1 · 4.",n="aplicar")]
 A1=ACT
 ACT={"1":A1["1"],"2":ACT2["1"],"3":ACT3["1"],"4":ACT4["1"],"5":[A1["5"][0],ACT2["5"][1],ACT3["5"][2],ACT4["5"][3]]}
 EX=[[1,A1["3"][1]],[1,A1["2"][2]],[1,A1["4"][0]],
@@ -147,29 +183,47 @@ M={"subject_id":SID,"tema":7,"practica":"Práctica general: expresiones algebrai
 STEPS={1:"ee44272a-da9a-4101-a9ba-a3d4a8676175",2:"f43b670c-b591-4ccd-aa1d-62fe95913ae0",3:"5f999aec-ef0f-4ef6-9dbd-e4ac0e1812d7",4:"0b60aabb-62c7-4759-aaa7-159948fe0ce5"}
 TIT={1:"Variables y expresiones algebraicas",2:"Monomios",3:"Suma y resta de polinomios",4:"Producto de polinomios"}
 CLS={1:[
- NOT("VARIABLE","Una letra que representa un número","Puede tomar distintos valores","🔤","ÁLGEBRA","las expresiones algebraicas",["Noticia: una letra puede representar un número.","Esa letra se llama *variable* y puede tomar distintos valores.","Hoy: *expresiones algebraicas*."]),
- TAR("DEL LENGUAJE AL ÁLGEBRA",[("El triple de ene","3n","✖️"),("Ene aumentado en cinco","n + 5","➕"),("La mitad de ene","n / 2","➗")],["El *triple* de un número se escribe tres ene.","Un número *aumentado en cinco* es ene más cinco.","Y la *mitad* es ene dividido dos."]),
- CMP(("EXPRESIÓN ALGEBRAICA","3n + 2","🔤"),("SOLO NÚMEROS","15","🔢"),"vs",["Dos casos.","Tres ene más dos *tiene una letra*: es algebraica.","Quince tiene *solo números*."]),
- Q("Si n vale 4, 3n + 2 vale…",["14","34","12"],0,["Te toca: tres ene más dos, con ene igual a cuatro.","¿Catorce, treinta y cuatro o doce?","*Catorce*: tres por cuatro, más dos."]),
+ NOT("VARIABLE","Una letra que representa un número","Puede tomar distintos valores","🔤","ÁLGEBRA","las expresiones algebraicas",["Noticia: una letra puede representar un número que cambia.","Esa letra se llama *variable*, y con ella se escriben expresiones que valen para muchos casos.","Hoy: *expresiones algebraicas*."]),
+ DEF("Expresión algebraica","Combina números, letras y operaciones, como 4n + 1. La letra, la variable, representa un número que puede cambiar.","🔤",["Una *expresión algebraica* combina números, letras y operaciones.","La letra se llama *variable* porque puede tomar distintos valores."]),
+ TAR("DEL LENGUAJE AL ÁLGEBRA",[("El cuádruple de un número","4n","✖️"),("Un número disminuido en siete","n − 7","➖"),("El siguiente de un número","n + 1","1️⃣")],["El *cuádruple* de un número se escribe cuatro ene.","Un número *disminuido en siete* es ene menos siete.","Y el *siguiente* de un número es ene más uno."]),
+ TB("LAS PARTES DE 4n + 1",["Parte","Qué es"],[["4","coeficiente"],["n","variable"],["+ 1","término sin letra"]],["Miremos una por una las partes de cuatro ene más uno.","El *cuatro* es el coeficiente: es el número que multiplica a la letra.","La *ene* es la variable, la letra que puede cambiar de valor.","Y el *más uno* es un término sin letra, que no cambia nunca."]),
+ EQ(["4n + 1  con n = 3","4 × 3 + 1","12 + 1 = 13"],["expresión y valor de la letra","se reemplaza la letra","valor numérico"],["Calculemos el valor numérico de cuatro ene más uno cuando ene vale tres.","Se reemplaza la letra por el número: cuatro por tres, más uno.","Doce más uno: *trece*."]),
+ PRED("¿Qué vale más con n = 5?",("2n + 1","🟦"),("3n − 2","🟧"),"b","2n + 1 = 11 y 3n − 2 = 13",["Predicción: con ene igual a cinco, ¿qué vale más, dos ene más uno o tres ene menos dos?","Tres, dos, uno…","Vale más *tres ene menos dos*: trece contra once."]),
+ EQ(["7a − 2b  con a = 2 y b = 5","7 × 2 − 2 × 5","14 − 10 = 4"],["dos letras","se reemplazan las dos","valor numérico"],["Con dos letras se reemplazan las dos: siete a menos dos be, con a igual dos y be igual cinco.","Siete por dos es catorce, y dos por cinco es diez.","Catorce menos diez: *cuatro*."]),
+ ER([("Leer 5m con m = 2 como 52","5m es 5 por m: 5 × 2 = 10"),("Reemplazar solo una de las letras","Hay que reemplazar todas las letras")],["Errores típicos.","Leer cinco eme como *cincuenta y dos*: es cinco *por* eme.","Y reemplazar *solo una* de las letras."]),
+ Q("Si m vale 5, 2m + 3 vale…",["13","25","10"],0,["Te toca: dos eme más tres, con eme igual a cinco.","¿Trece, veinticinco o diez?","*Trece*: dos por cinco, más tres."]),
  RES(["Repasemos.","Una *variable* es una letra que representa un número.","Se *traduce* del lenguaje común a las letras.","El *valor numérico* se calcula reemplazando.","¡Clase terminada! Ahora, *a practicar*."],[["VARIABLE","letra que cambia"],["TRADUCIR","palabras a letras"],["VALOR NUMÉRICO","reemplazar y calcular"]])],
 2:[
- PRED("¿Cuál es el grado de 5x²y?",("2","🟦"),("3","🟧"),"b","2 + 1 = 3",["Predicción: ¿cuál es el grado de cinco equis cuadrado ye?","Tres, dos, uno…","*Tres*: se suman los exponentes, dos más uno."]),
- PAT("POTENCIAS DE EQUIS",["x¹","x²","x³"],"x⁴","cada paso suma uno al exponente",["Una secuencia de potencias.","Equis, equis al cuadrado, equis al cubo.","¿Y después? *Equis a la cuarta*."]),
- TB("PARTES DE UN MONOMIO",["Monomio","Coeficiente","Grado"],[["5x²y","5","3"],["−3x","−3","1"],["x³","1","3"]],["Cada monomio tiene coeficiente y grado.","Cinco equis cuadrado ye: coeficiente *cinco* y grado *tres*.","Menos tres equis: coeficiente *menos tres* y grado *uno*.","Y equis al cubo: coeficiente *uno* y grado *tres*."]),
- Q("En 7x³, el coeficiente es…",["7","3","x"],0,["Te toca: siete equis al cubo.","¿Siete, tres o equis?","*Siete*: es el número que multiplica."]),
+ RET("¿Cuál es el grado de 9m³n²?",8,"5","🎯","MONOMIOS","coeficiente y grado",["Desafío: ¿cuál es el grado de nueve eme al cubo ene al cuadrado? Ocho segundos.","El grado es *cinco*: tres más dos.","Hoy: las partes de un *monomio*."]),
+ DEF("Monomio","Producto de un número, el coeficiente, por letras con exponentes, la parte literal. Su grado es la suma de los exponentes.","📐",["Un *monomio* es un número por letras con exponentes.","El número es el *coeficiente* y las letras forman la *parte literal*."]),
+ ZO([("🔭","Coeficiente: 9"),("🔬","Parte literal: m³n²"),("🧬","Grado: 3 + 2 = 5")],["Acerquemos la lupa a nueve eme al cubo ene al cuadrado.","El *coeficiente* es nueve.","La *parte literal* es eme al cubo ene al cuadrado, y el *grado* es la suma de los exponentes."]),
+ MZ("¿SON SEMEJANTES?",[("6x y 2x","Semejantes"),("5a² y 5a","No semejantes"),("m y −3m","Semejantes"),("xy y x","No semejantes")],["Veamos cuatro parejas.","Seis equis y dos equis tienen la *misma* parte literal.","Cinco a cuadrado y cinco a *no*: cambia el exponente.","Eme y menos tres eme sí son semejantes.","Y equis ye con equis no, porque falta una letra."]),
+ TB("SUMAR MONOMIOS SEMEJANTES",["Suma","Resultado"],[["6a + 2a","8a"],["7m − 3m","4m"],["b + 5b","6b"]],["Se suman los coeficientes y la parte literal queda igual.","Seis a más dos a es *ocho a*.","Siete eme menos tres eme es *cuatro eme*.","Y be más cinco be es *seis be*."]),
+ COR("CORREGIR LOS ERRORES",[("4m + 2m = 6m²","4m + 2m = 6m","al sumar, el exponente no cambia"),("a · a³ = a³","a · a³ = a⁴","al multiplicar, los exponentes se suman")],["Corrijamos dos errores comunes.","Al *sumar* monomios semejantes el exponente no cambia: cuatro eme más dos eme es seis eme.","Al *multiplicar*, los exponentes se suman: a por a al cubo es a a la cuarta."]),
+ PRED("¿Cuál tiene mayor grado?",("x²y³","🟦"),("6x⁴","🟧"),"a","El grado de x²y³ es 5 y el de 6x⁴ es 4",["Predicción: ¿cuál tiene mayor grado, equis cuadrado ye al cubo o seis equis a la cuarta?","Tres, dos, uno…","Gana *equis cuadrado ye al cubo*: grado cinco contra grado cuatro."]),
+ VOF("El grado de un monomio es su coeficiente","📏",False,"El grado es la suma de los exponentes, no el coeficiente.",["Verdadero o falso: el grado de un monomio es su coeficiente.","Es *falso*.","El grado es la suma de los exponentes, no el coeficiente."]),
+ Q("El grado de 2a³b² es…",["5","6","3"],0,["Te toca: dos a al cubo be al cuadrado.","¿Cinco, seis o tres?","*Cinco*: se suman los exponentes."]),
  RES(["Repasemos.","El *coeficiente* es el número del monomio.","El *grado* es la suma de los exponentes.","Los monomios *semejantes* tienen la misma parte literal.","¡Clase terminada! Ahora, *a practicar*."],[["COEFICIENTE","el número"],["GRADO","suma de exponentes"],["SEMEJANTES","misma parte literal"]])],
 3:[
- DA("(2x + 3) + (x + 4)","se agrupan los semejantes","3x + 7","Las equis se suman entre sí y los números también","➕",["Un dato clave.","Dos equis más tres, más equis más cuatro, da *tres equis más siete*."]),
- BQ("RESTAR POLINOMIOS",[("SIGNOS","Se cambian los del segundo polinomio"),("AGRUPAR","Se suman los términos semejantes")],["Dos pasos.","Primero, se *cambian los signos* del segundo polinomio.","Después, se *agrupan* los términos semejantes."]),
- EQ(["(5x + 4) − (2x + 1)","= 5x + 4 − 2x − 1","= 3x + 3"],["restar","se cambian los signos","se agrupan"],["Se resta: *cinco equis más cuatro, menos dos equis más uno*.","Se cambian los signos del segundo paréntesis.","Y queda *tres equis más tres*."]),
- ER([("Cambiar el signo solo del primer término","Cambiar el signo de todos los términos"),("Sumar equis con equis al cuadrado","Sumar solo términos semejantes")],["Errores típicos.","Cambiar el signo *solo del primero* al restar.","Y sumar términos que *no son semejantes*."]),
- Q("(2x + 1) + (x + 3) da…",["3x + 4","2x + 4","3x + 3"],0,["Te toca: dos equis más uno, más equis más tres.","¿Tres equis más cuatro, dos equis más cuatro o tres equis más tres?","*Tres equis más cuatro*."]),
+ AD(("ANTES","🧩","(6x + 5) + (2x − 3)"),("DESPUÉS","✅","8x + 2"),["Antes, hay dos polinomios separados: seis equis más cinco, y dos equis menos tres.","Después, hay uno solo: *ocho equis más dos*, porque se agruparon los términos que son semejantes entre sí."]),
+ DEF("Polinomio","Suma de monomios. Para sumar o restar polinomios se agrupan los términos semejantes.","🧮",["Un *polinomio* es una suma de monomios, como seis equis más cinco, o tres equis cuadrado menos dos.","Para sumar o restar polinomios, se agrupan siempre los *términos semejantes*."]),
+ EQ(["(6x + 5) + (2x − 3)","= 6x + 2x + 5 − 3","= 8x + 2"],["la suma","se agrupan los semejantes","resultado"],["Sumemos seis equis más cinco, con dos equis menos tres.","Se agrupan las equis por un lado y los números por otro.","Seis más dos son ocho, y cinco menos tres es dos: *ocho equis más dos*."]),
+ TRF("RESTAR (7x + 2) − (3x + 6)",[("(7x + 2) − (3x + 6)","la resta"),("7x + 2 − 3x − 6","se cambian los signos"),("7x − 3x y 2 − 6","se agrupan los semejantes"),("4x − 4","resultado")],["Restemos siete equis más dos, menos tres equis más seis.","Se *cambian los signos* de todo el segundo polinomio.","Se agrupan las equis y los números.","El resultado es *cuatro equis menos cuatro*."]),
+ CMP(("SUMAR","Se agrupan los semejantes","➕"),("RESTAR","Se cambian los signos y se agrupan","➖"),"vs",["Hay dos operaciones.","Para *sumar* alcanza con agrupar los términos semejantes.","Para *restar*, primero se cambian los signos del segundo polinomio."]),
+ CAU(("Al restar un polinomio","➖"),[("Cambian todos los signos","🔄"),("Se agrupan los semejantes","🧩"),("Se escribe el resultado","✅")],["Veamos qué pasa al restar un polinomio.","Cambian los signos de *todos* los términos.","Luego se agrupan los *semejantes*.","Y se escribe el resultado final."]),
+ CJ("UN TRUCO","Poner el signo menos a la vista antes de quitar paréntesis","💡",["Un truco muy útil: antes de quitar el paréntesis, mirá bien si hay un signo menos adelante, porque ese signo cambia a todos los términos que están adentro, no solamente al primero."]),
+ ER([("Cambiar el signo solo del primer término","Cambiar el signo de todos los términos"),("Sumar x con x²","Sumar solo términos semejantes")],["Errores típicos al trabajar con polinomios.","Cambiar el signo *solo del primero* al restar, cuando hay que cambiarlos todos.","Y sumar términos que *no son semejantes*, como equis con equis al cuadrado."]),
+ Q("(4a + 6) + (a − 2) da…",["5a + 4","5a + 8","4a + 4"],0,["Te toca: cuatro a más seis, más a menos dos.","¿Cinco a más cuatro, cinco a más ocho o cuatro a más cuatro?","*Cinco a más cuatro*."]),
  RES(["Repasemos.","Un *polinomio* es una suma de monomios.","Se *agrupan* los términos semejantes.","Al restar, se *cambian los signos* del segundo.","¡Clase terminada! Ahora, *a practicar*."],[["POLINOMIO","suma de monomios"],["SUMAR","agrupar semejantes"],["RESTAR","cambiar los signos"]])],
 4:[
- RET("¿Cuánto da 3x por x?",8,"3x²","✖️","PRODUCTO","el producto de polinomios",["Desafío: ¿cuánto da tres equis por equis? Ocho segundos.","*Tres equis al cuadrado*.","Hoy: *producto de polinomios*."]),
- QZ("¿Cuánto es 2x · (x + 3)?",["2x² + 6x","2x² + 3"],0,["Un quiz rápido: dos equis por equis más tres.","¿Dos equis cuadrado más seis equis o dos equis cuadrado más tres?","*Dos equis cuadrado más seis equis*: se multiplica por cada término."]),
- PA("PASOS",[("Distribuir","📤"),("Multiplicar","✖️"),("Agrupar","🧩")],["Tres pasos.","Primero, *distribuir* el factor.","Después, *multiplicar* cada término.","Y *agrupar* los términos semejantes."]),
- ZO([("🔭","3x · x = 3x²"),("🔬","3x · 4 = 12x"),("🧬","(x + 1)(x + 1) = x² + 2x + 1")],["Tres productos clave.","Tres equis por equis es *tres equis al cuadrado*.","Y tres equis por cuatro es *doce equis*."]),
- Q("(x + 1)(x + 1) da…",["x² + 2x + 1","x² + 1","2x + 2"],0,["Te toca: equis más uno, al cuadrado.","¿Equis cuadrado más dos equis más uno, equis cuadrado más uno o dos equis más dos?","*Equis cuadrado más dos equis más uno*."]),
+ RET("¿Cuánto da 5a por a?",8,"5a²","✖️","PRODUCTO","de polinomios",["Desafío: ¿cuánto da cinco a por a? Ocho segundos.","*Cinco a al cuadrado*.","Hoy: el *producto de polinomios*."]),
+ DEF("Propiedad distributiva","Para multiplicar, cada término del primer factor se multiplica por cada término del segundo; después se agrupan los semejantes.","📤",["La *propiedad distributiva* dice que cada término se multiplica por cada término.","Después se agrupan los semejantes."]),
+ QZ("¿Cuánto es 4x · (x + 5)?",["4x² + 20x","4x² + 5","4x + 20x"],0,["Un quiz rápido: cuatro equis por equis más cinco.","¿Cuatro equis cuadrado más veinte equis, cuatro equis cuadrado más cinco, o cuatro equis más veinte equis?","*Cuatro equis cuadrado más veinte equis*: se multiplica por cada término."]),
+ PA("MULTIPLICAR (x + 5)(x + 2)",[("x · x = x²","1️⃣"),("x · 2 = 2x","2️⃣"),("5 · x = 5x","3️⃣"),("5 · 2 = 10","4️⃣")],["Multipliquemos equis más cinco por equis más dos.","Primero, equis por equis: *equis cuadrado*.","Segundo, equis por dos: *dos equis*.","Tercero, cinco por equis: *cinco equis*.","Y cuarto, cinco por dos: *diez*."]),
+ PIZ([("(x + 5)(x + 2)",None,None),("x² + 2x + 5x + 10","sol",None),("x² + 7x + 10  ✓","verde","circulo")],["Resumamos el producto en el pizarrón.","Se escriben los cuatro productos.","Se agrupan las equis: *equis cuadrado más siete equis más diez*."]),
+ UNI("PRODUCTO Y RESULTADO",[("3a · 4a","12a²"),("a · a⁴","a⁵"),("2 · (a + 6)","2a + 12")],["Unamos cada producto con su resultado.","Tres a por cuatro a es *doce a cuadrado*.","A por a a la cuarta es *a a la quinta*.","Y dos por a más seis es *dos a más doce*."]),
+ TB("UN MONOMIO POR UN BINOMIO",["Producto","Resultado"],[["2a · (a + 1)","2a² + 2a"],["3 · (m − 4)","3m − 12"],["x · (x + 8)","x² + 8x"]],["Se multiplica el monomio por cada término del binomio.","Dos a por a más uno da *dos a cuadrado más dos a*.","Tres por eme menos cuatro da *tres eme menos doce*.","Y equis por equis más ocho da *equis cuadrado más ocho equis*."]),
+ ER([("Multiplicar solo el primer término","Multiplicar cada término del paréntesis"),("Sumar los exponentes al sumar","Los exponentes se suman solo al multiplicar")],["Errores típicos.","Multiplicar *solo el primer término* del paréntesis.","Y confundir: los exponentes se suman al *multiplicar*, no al sumar."]),
+ Q("(x + 3)(x + 6) da…",["x² + 9x + 18","x² + 18","x² + 9x + 9"],0,["Te toca: equis más tres, por equis más seis.","¿Equis cuadrado más nueve equis más dieciocho, equis cuadrado más dieciocho, o equis cuadrado más nueve equis más nueve?","*Equis cuadrado más nueve equis más dieciocho*."]),
  RES(["Repasemos.","Se *distribuye*: cada término por cada término.","Los coeficientes se *multiplican* y los exponentes se *suman*.","Al final se *agrupan* los semejantes.","¡Clase terminada! Ahora, *a practicar*."],[["DISTRIBUTIVA","cada término"],["EXPONENTES","se suman"],["AGRUPAR","semejantes"]])]}
 escribir(7, M, STEPS, TIT, CLS)
