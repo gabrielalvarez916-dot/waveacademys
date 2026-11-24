@@ -1,0 +1,130 @@
+{
+ "slug": "medio-nat2-m3-n2",
+ "step_id": "261c94f2-418c-427c-b9fe-7f2872632bae",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Cómo viajan las semillas",
+ "sub": "Ciencias Naturales 2 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "HUERTA",
+   "titular": "¡Las semillas se van de viaje!",
+   "bajada": "¿Cómo viajan?",
+   "emoji": "🌬️",
+   "titulo": "SEMILLAS",
+   "sub": "viajeras",
+   "voz": [
+    "¡Noticia en la huerta: las semillas se van de *viaje*!",
+    "¿Cómo viajan?",
+    "Hoy: *cómo viajan las semillas*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "CÓMO VIAJAN",
+   "celdas": [
+    {
+     "cab": "VIENTO 🌬️",
+     "txt": "El panadero vuela"
+    },
+    {
+     "cab": "ANIMALES 🐦",
+     "txt": "Comen frutos y las llevan"
+    },
+    {
+     "cab": "PELO 🐕",
+     "txt": "Se pegan con pinches"
+    },
+    {
+     "cab": "AGUA 🌊",
+     "txt": "El coco flota"
+    }
+   ],
+   "voz": [
+    "Las semillas viajan de muchas formas.",
+    "Con el *viento*: el panadero vuela.",
+    "Con los *animales*: comen frutos y las llevan.",
+    "Pegadas al *pelo*, con pinches.",
+    "Y por el *agua*: ¡el coco flota!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "SEMILLAS VIAJERAS",
+   "items": [
+    {
+     "frente": "🌬️ PANADERO",
+     "dorso": "VIENTO",
+     "emoji": "🌬️"
+    },
+    {
+     "frente": "🦔 CON PINCHES",
+     "dorso": "ANIMALES",
+     "emoji": "🐕"
+    },
+    {
+     "frente": "🥥 COCO",
+     "dorso": "AGUA",
+     "emoji": "🌊"
+    }
+   ],
+   "voz": [
+    "El *panadero* viaja con el viento.",
+    "La semilla con *pinches* viaja en los animales.",
+    "El *coco* viaja por el agua."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cómo viaja el panadero?",
+   "opciones": [
+    "CON EL VIENTO",
+    "CON EL AGUA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo viaja el panadero?",
+    "Pensá: es muy liviano.",
+    "¡Con el *viento*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LA FORMA",
+   "texto": "La forma te dice cómo viaja",
+   "emoji": "🔎",
+   "voz": [
+    "Truco: la *forma* de la semilla te dice cómo viaja."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VIENTO",
+     "semillas livianas"
+    ],
+    [
+     "ANIMALES",
+     "comen o se pegan"
+    ],
+    [
+     "AGUA",
+     "semillas que flotan"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con el *viento* viajan las livianas.",
+    "Los *animales* las comen o las llevan pegadas.",
+    "Por el *agua* viajan las que flotan.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

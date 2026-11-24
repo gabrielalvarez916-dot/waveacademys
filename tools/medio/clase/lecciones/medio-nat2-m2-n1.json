@@ -1,0 +1,156 @@
+{
+ "slug": "medio-nat2-m2-n1",
+ "step_id": "cf56847a-8959-4695-bdff-0ea6841e4579",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Nacen de huevos o de la panza",
+ "sub": "Ciencias Naturales 2 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🐔",
+   "lineas": [
+    "Tomi visita la granja.",
+    "¡La gallina puso huevos!",
+    "Y la vaca tuvo un ternero."
+   ],
+   "titulo": "CÓMO NACEN",
+   "sub": "los animales",
+   "voz": [
+    "Tomi, el científico, visita la *granja*.",
+    "¡La gallina puso *huevos*!",
+    "Y la vaca tuvo un *ternero*.",
+    "Hoy: *cómo nacen los animales*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "DOS FORMAS DE NACER",
+   "a": {
+    "txt": "DE UN HUEVO",
+    "emoji": "🥚",
+    "datos": [
+     "gallina",
+     "pato",
+     "tortuga"
+    ]
+   },
+   "b": {
+    "txt": "DE LA PANZA",
+    "emoji": "🤰",
+    "datos": [
+     "perro",
+     "gato",
+     "vaca"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Las dos son formas de nacer!",
+   "voz": [
+    "Hay dos formas de nacer.",
+    "*De un huevo*: gallina, pato, tortuga.",
+    "*De la panza* de la mamá: perro, gato, vaca.",
+    "¡Las dos son formas de nacer!"
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🥚",
+     "txt": "UN HUEVO"
+    },
+    {
+     "emoji": "🐣",
+     "txt": "SE ROMPE"
+    },
+    {
+     "emoji": "🐥",
+     "txt": "¡UN POLLITO!"
+    }
+   ],
+   "voz": [
+    "Miramos de cerca un *huevo*.",
+    "De a poco, *se rompe*.",
+    "¡Sale un *pollito*!"
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "DE HUEVO",
+     "emoji": "🥚"
+    },
+    {
+     "cab": "DE LA PANZA",
+     "emoji": "🤰"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "GALLINA",
+     "caja": 0
+    },
+    {
+     "txt": "TORTUGA",
+     "caja": 0
+    },
+    {
+     "txt": "GATO",
+     "caja": 1
+    },
+    {
+     "txt": "OVEJA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Separamos los animales.",
+    "Gallina y tortuga: nacen de *huevo*.",
+    "Gato y oveja: nacen de la *panza*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "DOS FORMAS",
+   "texto": "Huevo o panza: así nacen los animales",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: nacen de un *huevo* o de la *panza*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "HUEVO",
+     "gallina, pato, tortuga"
+    ],
+    [
+     "PANZA",
+     "perro, gato, vaca"
+    ],
+    [
+     "CRÍA",
+     "el animal bebé"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "De *huevo*: gallina, pato, tortuga.",
+    "De la *panza*: perro, gato, vaca.",
+    "La *cría* es el animal bebé.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

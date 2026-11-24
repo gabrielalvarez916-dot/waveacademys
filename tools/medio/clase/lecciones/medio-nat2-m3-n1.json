@@ -1,0 +1,111 @@
+{
+ "slug": "medio-nat2-m3-n1",
+ "step_id": "12904dff-a67e-4de5-9173-e2af7efb6d6a",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Flores y frutos",
+ "sub": "Ciencias Naturales 2 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🌼",
+   "lineas": [
+    "Tomi mira la huerta de la escuela.",
+    "La planta de tomate tiene flores.",
+    "Días después… ¡hay tomates!"
+   ],
+   "titulo": "DE LA FLOR",
+   "sub": "al fruto",
+   "voz": [
+    "Tomi mira la *huerta* de la escuela.",
+    "La planta de tomate tiene *flores* amarillas.",
+    "Días después… ¡hay *tomates*!",
+    "Hoy: *de la flor al fruto*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "EL CICLO DE LA PLANTA",
+   "items": [
+    "SEMILLA 🌰",
+    "PLANTA 🌱",
+    "FLOR 🌼",
+    "FRUTO 🍅"
+   ],
+   "voz": [
+    "Las plantas tienen un *ciclo*.",
+    "Todo empieza con una *semilla*.",
+    "Crece una *planta*.",
+    "La planta da *flores*.",
+    "¡Y la flor se convierte en *fruto*, con semillas adentro!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Fruto",
+   "texto": "Sale de la flor y guarda las semillas",
+   "emoji": "🍎",
+   "voz": [
+    "El *fruto* sale de la flor.",
+    "Adentro guarda las *semillas*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es un fruto?",
+   "opciones": [
+    "LA HOJA",
+    "EL TOMATE",
+    "LA RAÍZ",
+    "EL TALLO"
+   ],
+   "correcta": 1,
+   "voz": [
+    "¿Cuál de estos es un *fruto*?",
+    "Pensá: ¿cuál tiene semillas adentro?",
+    "¡El *tomate*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ ADENTRO",
+   "texto": "Si tiene semillas adentro, es un fruto",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: si tiene *semillas* adentro, es un fruto."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FLOR",
+     "primero"
+    ],
+    [
+     "FRUTO",
+     "sale de la flor"
+    ],
+    [
+     "SEMILLAS",
+     "adentro del fruto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero está la *flor*.",
+    "La flor se convierte en *fruto*.",
+    "Adentro del fruto hay *semillas*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "slug": "medio-nat2-m3-n4",
+ "step_id": "d206ac25-0e8b-47b4-a6d8-ae5e4dc8eb32",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Armo mi semillero",
+ "sub": "Ciencias Naturales 2 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Seño Ana",
+    "emoji": "👩‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Mañana armamos un semillero 🌱"
+    },
+    {
+     "yo": true,
+     "txt": "¡Traigo porotos y un vaso!"
+    }
+   ],
+   "titulo": "MI SEMILLERO",
+   "sub": "armo y observo",
+   "voz": [
+    "La seño escribe: mañana armamos un *semillero*.",
+    "Tomi responde: ¡traigo porotos y un vaso!",
+    "Hoy: *armo mi semillero*."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO LO ARMO",
+   "items": [
+    {
+     "txt": "Pongo tierra en el vaso",
+     "emoji": "🪴"
+    },
+    {
+     "txt": "Pongo las semillas",
+     "emoji": "🌰"
+    },
+    {
+     "txt": "Riego un poco",
+     "emoji": "💧"
+    },
+    {
+     "txt": "Lo dejo con luz",
+     "emoji": "☀️"
+    }
+   ],
+   "voz": [
+    "¿Cómo armamos el semillero?",
+    "Ponemos *tierra* en un vaso.",
+    "Ponemos las *semillas*.",
+    "Regamos *un poco*.",
+    "Y lo dejamos con *luz*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LO QUE ANOTÓ TOMI",
+   "eventos": [
+    {
+     "fecha": "DÍA 1",
+     "txt": "Siembro",
+     "emoji": "🌰"
+    },
+    {
+     "fecha": "DÍA 5",
+     "txt": "Sale un brote",
+     "emoji": "🌱"
+    },
+    {
+     "fecha": "DÍA 10",
+     "txt": "Tiene hojitas",
+     "emoji": "🌿"
+    }
+   ],
+   "voz": [
+    "Tomi anota. *Día uno*: siembra.",
+    "*Día cinco*: sale un brote.",
+    "*Día diez*: ¡tiene hojitas!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LO QUE NECESITA",
+   "items": [
+    "TIERRA",
+    "AGUA",
+    "LUZ",
+    "SEMILLA"
+   ],
+   "falta": 2,
+   "voz": [
+    "Mirá lo que necesita la planta.",
+    "Se tapan… ¡y una desapareció!",
+    "¡Faltaba la *luz*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "ANOTÁ TODO",
+   "texto": "Un científico anota lo que observa",
+   "emoji": "📝",
+   "voz": [
+    "Truco: un científico *anota* lo que observa cada día."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MATERIALES",
+     "vaso, tierra, semillas"
+    ],
+    [
+     "PASOS",
+     "tierra, semilla, agua, luz"
+    ],
+    [
+     "ANOTAR",
+     "cada día"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *materiales*: vaso, tierra y semillas.",
+    "Los *pasos*: tierra, semilla, agua y luz.",
+    "Y *anotamos* lo que pasa cada día.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

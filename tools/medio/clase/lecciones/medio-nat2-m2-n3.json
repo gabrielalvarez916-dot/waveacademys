@@ -1,0 +1,126 @@
+{
+ "slug": "medio-nat2-m2-n3",
+ "step_id": "cce13d4d-0bd0-4e84-a9e3-ef8ba7560c17",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Quién cuida a las crías",
+ "sub": "Ciencias Naturales 2 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Quién le da leche al ternero?",
+   "segundos": 8,
+   "respuesta": "¡La vaca, su mamá!",
+   "emoji": "🐄",
+   "titulo": "QUIÉN CUIDA",
+   "sub": "a las crías",
+   "voz": [
+    "Desafío: ¿quién le da leche al ternero?",
+    "¡La *vaca*, su mamá!",
+    "Hoy: *quién cuida a las crías*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Gallina Pepa",
+    "emoji": "🐔"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Yo cuido a mis pollitos.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Los abrigo debajo de mis alas.",
+     "animo": "piensa"
+    },
+    {
+     "txt": "¡Y les enseño a buscar comida!",
+     "animo": "feliz"
+    }
+   ],
+   "voz": [
+    "¡Hola! Yo cuido a mis pollitos.",
+    "Los *abrigo* debajo de mis alas.",
+    "¡Y les enseño a buscar *comida*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿CÓMO CUIDAN?",
+   "pares": [
+    [
+     "VACA 🐄",
+     "da leche"
+    ],
+    [
+     "GALLINA 🐔",
+     "abriga"
+    ],
+    [
+     "TORTUGA 🐢",
+     "se va"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada mamá con lo que hace.",
+    "La vaca: da *leche*.",
+    "La gallina: *abriga*.",
+    "La tortuga: ¡se va! Sus crías se arreglan solas."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Las tortuguitas tienen quien las cuide?",
+   "opciones": [
+    "NO, SE ARREGLAN SOLAS",
+    "SÍ, LA MAMÁ"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿quién cuida a las tortuguitas?",
+    "Pensá en la arena…",
+    "¡Nadie! Se *arreglan solas*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CADA ANIMAL",
+   "texto": "Cada uno cuida distinto a sus crías",
+   "emoji": "🐾",
+   "voz": [
+    "Truco: cada animal cuida *distinto* a sus crías."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUIDAN",
+     "vaca, gallina, hornero"
+    ],
+    [
+     "SOLAS",
+     "tortuguitas"
+    ],
+    [
+     "CÓMO",
+     "comida y abrigo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Algunas mamás *cuidan*: vaca, gallina, hornero.",
+    "Las tortuguitas se arreglan *solas*.",
+    "Cuidar es dar *comida* y *abrigo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

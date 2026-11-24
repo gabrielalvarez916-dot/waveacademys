@@ -1,0 +1,133 @@
+{
+ "slug": "medio-nat2-m2-n4",
+ "step_id": "ed4f5d1f-5c98-45aa-8934-ca2ee61c460a",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Animales que viven en grupo",
+ "sub": "Ciencias Naturales 2 · Misión 2 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Vi muchas hormigas en fila! 🐜"
+    },
+    {
+     "yo": true,
+     "txt": "¡Viven en grupo! Te cuento"
+    }
+   ],
+   "titulo": "EN GRUPO",
+   "sub": "animales que viven juntos",
+   "voz": [
+    "Sofi le escribe: ¡vi muchas hormigas en fila!",
+    "Tomi responde: ¡viven en grupo! Te cuento.",
+    "Hoy: *animales que viven en grupo*."
+   ]
+  },
+  {
+   "t": "documental",
+   "emojis": [
+    "🐜",
+    "🐝",
+    "🐑"
+   ],
+   "lugar": "🌳",
+   "rotulos": [
+    {
+     "txt": "HORMIGAS",
+     "sub": "en el hormiguero"
+    },
+    {
+     "txt": "ABEJAS",
+     "sub": "en la colmena"
+    },
+    {
+     "txt": "OVEJAS",
+     "sub": "en el rebaño"
+    }
+   ],
+   "voz": [
+    "Las *hormigas* viven en el hormiguero.",
+    "Las *abejas* viven en la colmena.",
+    "Las *ovejas* andan en rebaño."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PUERTA DEL HORMIGUERO",
+   "candados": [
+    {
+     "p": "Grupo de peces",
+     "r": "CARDUMEN"
+    },
+    {
+     "p": "Casa de las abejas",
+     "r": "COLMENA"
+    }
+   ],
+   "voz": [
+    "¡Para entrar al hormiguero, abrimos los candados!",
+    "Grupo de peces: *cardumen*.",
+    "Casa de las abejas: *colmena*.",
+    "¡Entramos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Para qué viven en grupo?",
+   "opciones": [
+    "PARA CUIDARSE Y COMER",
+    "PARA PELEAR"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿para qué viven en grupo?",
+    "Pensá en las hormigas.",
+    "¡Para *cuidarse* y buscar *comida* juntas!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ DE LEJOS",
+   "texto": "No molestes a las hormigas ni a las abejas",
+   "emoji": "👀",
+   "voz": [
+    "Truco: mirá de *lejos*, sin molestar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPO",
+     "viven juntos"
+    ],
+    [
+     "EJEMPLOS",
+     "hormigas, abejas, ovejas"
+    ],
+    [
+     "SIRVE",
+     "para cuidarse"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Algunos animales viven en *grupo*.",
+    "Como hormigas, abejas y ovejas.",
+    "Así se *cuidan* y buscan comida.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

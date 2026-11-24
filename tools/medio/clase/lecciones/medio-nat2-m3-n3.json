@@ -1,0 +1,111 @@
+{
+ "slug": "medio-nat2-m3-n3",
+ "step_id": "59d877ec-419f-4504-b809-c13457098ba2",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Plantas que nacen sin semillas",
+ "sub": "Ciencias Naturales 2 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Puede nacer una planta sin semilla?",
+   "segundos": 8,
+   "respuesta": "¡Sí! De un gajo o una papa",
+   "emoji": "🥔",
+   "titulo": "SIN SEMILLAS",
+   "sub": "plantas que nacen distinto",
+   "voz": [
+    "Desafío: ¿puede nacer una planta *sin semilla*?",
+    "¡Sí! De un *gajo* o de una *papa*.",
+    "Hoy: *plantas que nacen sin semillas*."
+   ]
+  },
+  {
+   "t": "experimento",
+   "titulo": "UN GAJO EN AGUA",
+   "variable": "EL AGUA",
+   "a": {
+    "cab": "GAJO SECO",
+    "emojis": [
+     "🌿",
+     "🏜️"
+    ],
+    "txt": "Sin agua",
+    "res": "SE SECA"
+   },
+   "b": {
+    "cab": "GAJO EN AGUA",
+    "emojis": [
+     "🌿",
+     "💧"
+    ],
+    "txt": "En un vaso con agua",
+    "res": "¡LE SALEN RAÍCES!"
+   },
+   "voz": [
+    "Probamos con dos gajos.",
+    "El gajo *sin agua* se seca.",
+    "El gajo *en agua*: ¡le salen raíces!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Gajo",
+   "texto": "Pedacito de tallo que echa raíces",
+   "emoji": "🌿",
+   "voz": [
+    "Un *gajo* es un pedacito de tallo.",
+    "Con agua, echa *raíces* y nace una planta nueva."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Todas las plantas nacen de semillas",
+   "emoji": "🌱",
+   "verdadero": false,
+   "explicacion": "Algunas nacen de gajos o de papas",
+   "voz": [
+    "¿Verdadero o falso? Todas las plantas nacen de semillas.",
+    "Acordate del gajo…",
+    "¡*Falso*! Algunas nacen de gajos o papas."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PACIENCIA",
+   "texto": "Las raíces tardan varios días",
+   "emoji": "⏳",
+   "voz": [
+    "Truco: *paciencia*, las raíces tardan varios días."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GAJO",
+     "pedacito de tallo"
+    ],
+    [
+     "RAÍCES",
+     "le salen en agua"
+    ],
+    [
+     "PAPA",
+     "echa brotes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *gajo* es un pedacito de tallo.",
+    "En agua le salen *raíces*.",
+    "La *papa* vieja echa brotes.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "slug": "medio-nat2-m2-n2",
+ "step_id": "4beffacb-79a7-4256-a78a-6e5b3361fb5f",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Crías que se parecen a sus padres",
+ "sub": "Ciencias Naturales 2 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LAGUNA",
+   "titular": "¡Un animal que cambia de forma!",
+   "bajada": "Tomi lo encontró en la laguna",
+   "emoji": "🐸",
+   "titulo": "LAS CRÍAS",
+   "sub": "¿se parecen?",
+   "voz": [
+    "¡Noticia: un animal que *cambia de forma*!",
+    "Tomi lo encontró en la laguna.",
+    "Hoy: *¿las crías se parecen a sus padres?*"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DEL RENACUAJO A LA RANA",
+   "pasos": [
+    {
+     "txt": "RENACUAJO 🐟",
+     "nota": "con cola"
+    },
+    {
+     "txt": "LE SALEN PATAS 🦵",
+     "nota": "va cambiando"
+    },
+    {
+     "txt": "RANA 🐸",
+     "nota": "¡adulta!"
+    }
+   ],
+   "voz": [
+    "Primero es un *renacuajo*, con cola.",
+    "Después le salen *patas*.",
+    "¡Y se convierte en *rana*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué cría es?",
+   "pistas": [
+    "Es chiquita y come hojas",
+    "Arma un capullo",
+    "Sale con alas de colores"
+   ],
+   "respuesta": "LA ORUGA 🐛 → MARIPOSA 🦋",
+   "voz": [
+    "Adivinanza: ¿qué cría es?",
+    "Pista uno: es chiquita y come hojas.",
+    "Pista dos: arma un *capullo*.",
+    "Pista tres: sale con alas de colores.",
+    "¡La *oruga*, que se convierte en mariposa!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué cría se parece a su mamá?",
+   "opciones": [
+    "EL PERRITO",
+    "EL RENACUAJO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué cría se parece a su mamá?",
+    "Pensá en un perro chiquito.",
+    "¡El *perrito*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ BIEN",
+   "texto": "Algunas crías cambian mucho",
+   "emoji": "🔍",
+   "voz": [
+    "Truco: algunas crías *cambian mucho* al crecer."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PARECIDAS",
+     "perrito, potrillo"
+    ],
+    [
+     "CAMBIAN",
+     "renacuajo, oruga"
+    ],
+    [
+     "CRECEN",
+     "y se hacen adultos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Algunas crías son *parecidas*: perrito, potrillo.",
+    "Otras *cambian*: renacuajo, oruga.",
+    "Todas *crecen* y se hacen adultas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
