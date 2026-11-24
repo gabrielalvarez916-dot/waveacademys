@@ -1,0 +1,128 @@
+{
+ "slug": "medio-nat2-m6-n2",
+ "step_id": "1912322f-775c-4335-a540-08f18c016902",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Rápido y despacio",
+ "sub": "Ciencias Naturales 2 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Pateé la pelota re lejos! ⚽"
+    },
+    {
+     "yo": true,
+     "txt": "¡La pateaste fuerte!"
+    }
+   ],
+   "titulo": "RÁPIDO",
+   "sub": "y despacio",
+   "voz": [
+    "Sofi le escribe: ¡pateé la pelota muy lejos!",
+    "Tomi responde: ¡la pateaste *fuerte*!",
+    "Hoy: *rápido y despacio*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "MÁS FUERZA, MÁS LEJOS",
+   "items": [
+    {
+     "txt": "SUAVE",
+     "emoji": "🐢",
+     "valor": 2
+    },
+    {
+     "txt": "MEDIANA",
+     "emoji": "🚶",
+     "valor": 5
+    },
+    {
+     "txt": "FUERTE",
+     "emoji": "🚀",
+     "valor": 10
+    }
+   ],
+   "voz": [
+    "Patada *suave*: la pelota va cerca.",
+    "Patada *mediana*: va un poco más lejos.",
+    "Patada *fuerte*: ¡llega lejísimos!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Quién frena la pelota?",
+   "pistas": [
+    "Está en el arco",
+    "Usa guantes",
+    "Ataja con las manos"
+   ],
+   "respuesta": "EL ARQUERO 🧤",
+   "voz": [
+    "Adivinanza: ¿quién *frena* la pelota?",
+    "Pista uno: está en el arco.",
+    "Pista dos: usa guantes.",
+    "Pista tres: ataja con las manos.",
+    "¡El *arquero*! Frenar también es fuerza."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Con qué patada la pelota va más lejos?",
+   "opciones": [
+    "FUERTE",
+    "SUAVE"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿con qué patada va más lejos?",
+    "Pensá en la fuerza.",
+    "¡Con la *fuerte*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "JUGÁ CON CUIDADO",
+   "texto": "Sin golpear a nadie",
+   "emoji": "⚽",
+   "voz": [
+    "Truco: jugá con fuerza, pero sin golpear a nadie."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUAVE",
+     "despacio y cerca"
+    ],
+    [
+     "FUERTE",
+     "rápido y lejos"
+    ],
+    [
+     "FRENAR",
+     "también es fuerza"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Fuerza *suave*: despacio y cerca.",
+    "Fuerza *fuerte*: rápido y lejos.",
+    "*Frenar* también es una fuerza.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "slug": "medio-nat2-m7-n2",
+ "step_id": "0fbfa7e9-071d-4f76-a479-0cad44c35754",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Ríos, lagos y mares",
+ "sub": "Ciencias Naturales 2 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "VIAJE",
+   "titular": "¡Tomi llegó al río Paraná!",
+   "bajada": "Y después al mar",
+   "emoji": "🌊",
+   "titulo": "RÍOS, LAGOS",
+   "sub": "y mares",
+   "voz": [
+    "¡Noticia: Tomi llegó al río *Paraná*!",
+    "Y después, al *mar*.",
+    "Hoy: *ríos, lagos y mares*."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "DÓNDE HAY AGUA",
+   "celdas": [
+    {
+     "cab": "RÍO 🏞️",
+     "txt": "corre, agua dulce"
+    },
+    {
+     "cab": "LAGO 💧",
+     "txt": "quieto, agua dulce"
+    },
+    {
+     "cab": "LAGUNA 🦆",
+     "txt": "lago chiquito"
+    },
+    {
+     "cab": "MAR 🌊",
+     "txt": "grande y salado"
+    }
+   ],
+   "voz": [
+    "El agua está en muchos lugares.",
+    "El *río*: corre, con agua dulce.",
+    "El *lago*: quieto, con agua dulce.",
+    "La *laguna*: un lago chiquito.",
+    "El *mar*: grande y salado."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LUGARES CON AGUA",
+   "items": [
+    "RÍO",
+    "LAGO",
+    "LAGUNA",
+    "MAR"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá los lugares con agua.",
+    "Se tapan… ¡y uno desapareció!",
+    "¡Faltaba el *mar*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Dónde hay agua salada?",
+   "opciones": [
+    "EN EL MAR",
+    "EN EL RÍO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿dónde hay agua salada?",
+    "Pensá en las olas.",
+    "¡En el *mar*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CON UN ADULTO",
+   "texto": "Cerca del agua, siempre acompañados",
+   "emoji": "🧑‍🧒",
+   "voz": [
+    "Truco: cerca del agua, siempre con un *adulto*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RÍO",
+     "corre, dulce"
+    ],
+    [
+     "LAGO",
+     "quieto, dulce"
+    ],
+    [
+     "MAR",
+     "salado y grande"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *río* corre y es dulce.",
+    "El *lago* es quieto y dulce.",
+    "El *mar* es salado y grande.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

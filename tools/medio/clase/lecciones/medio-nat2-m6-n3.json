@@ -1,0 +1,113 @@
+{
+ "slug": "medio-nat2-m6-n3",
+ "step_id": "1f98c7b6-2ee4-45e0-843e-dbab3a06737f",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "El rozamiento",
+ "sub": "Ciencias Naturales 2 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Por qué la pelota que rueda al final para?",
+   "segundos": 8,
+   "respuesta": "¡El piso la frena!",
+   "emoji": "⚽",
+   "titulo": "EL ROZAMIENTO",
+   "sub": "lo que frena",
+   "voz": [
+    "Desafío: ¿por qué la pelota al final *para*?",
+    "¡El piso la *frena*!",
+    "Hoy: *el rozamiento*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "👟",
+     "txt": "UNA ZAPATILLA"
+    },
+    {
+     "emoji": "🔍",
+     "txt": "LA SUELA"
+    },
+    {
+     "emoji": "〰️",
+     "txt": "¡DIBUJITOS PARA NO RESBALAR!"
+    }
+   ],
+   "voz": [
+    "Miramos de cerca una *zapatilla*.",
+    "Más cerca: la *suela*.",
+    "¡Tiene *dibujitos* para no resbalar!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA PISTA DE PATINAJE",
+   "candados": [
+    {
+     "p": "¿Dónde resbalamos más?",
+     "r": "EN EL HIELO"
+    },
+    {
+     "p": "¿Qué frena más?",
+     "r": "LA ALFOMBRA"
+    }
+   ],
+   "voz": [
+    "¡Para salir de la pista, abrimos los candados!",
+    "Resbalamos más en el *hielo*.",
+    "Frena más la *alfombra*.",
+    "¡Salimos!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Rozamiento",
+   "texto": "Cuando algo se arrastra, el piso lo frena",
+   "emoji": "🛑",
+   "voz": [
+    "Eso se llama *rozamiento*.",
+    "Lo áspero frena *más* que lo liso."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "CUIDADO",
+   "texto": "Los pisos mojados resbalan",
+   "emoji": "⚠️",
+   "voz": [
+    "Truco: cuidado con los pisos *mojados*: ¡resbalan!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ROZAMIENTO",
+     "frena"
+    ],
+    [
+     "LISO",
+     "frena menos"
+    ],
+    [
+     "ÁSPERO",
+     "frena más"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *rozamiento* frena lo que se arrastra.",
+    "Lo *liso* frena menos.",
+    "Lo *áspero* frena más.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

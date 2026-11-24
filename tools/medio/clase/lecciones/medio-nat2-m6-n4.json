@@ -1,0 +1,146 @@
+{
+ "slug": "medio-nat2-m6-n4",
+ "step_id": "81fcc891-c126-4e51-b420-c7ac2b05fbec",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Los imanes atraen",
+ "sub": "Ciencias Naturales 2 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "LABORATORIO",
+   "titular": "¡Los clips saltan solos!",
+   "bajada": "Tomi tiene un imán",
+   "emoji": "🧲",
+   "titulo": "LOS IMANES",
+   "sub": "atraen",
+   "voz": [
+    "¡Noticia: los clips *saltan* solos!",
+    "Tomi tiene un *imán*.",
+    "Hoy: *los imanes atraen*."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Imán Iván",
+    "emoji": "🧲"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Yo atraigo clips y clavos.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "¡Sin tocarlos!",
+     "animo": "sorpresa"
+    },
+    {
+     "txt": "Pero el papel y la madera, no.",
+     "animo": "piensa"
+    }
+   ],
+   "voz": [
+    "¡Hola! Yo *atraigo* clips y clavos.",
+    "¡Sin tocarlos!",
+    "Pero el *papel* y la *madera*, no."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "ATRAE",
+     "emoji": "🧲"
+    },
+    {
+     "cab": "NO ATRAE",
+     "emoji": "🚫"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "CLIP",
+     "caja": 0
+    },
+    {
+     "txt": "CLAVO",
+     "caja": 0
+    },
+    {
+     "txt": "PAPEL",
+     "caja": 1
+    },
+    {
+     "txt": "GOMA",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Probamos con el imán.",
+    "El clip y el clavo: ¡los *atrae*!",
+    "El papel y la goma: *no* los atrae."
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Monstruo Confundido",
+    "emoji": "🤖"
+   },
+   "preguntas": [
+    {
+     "p": "¿El imán atrae un tornillo?",
+     "r": "SÍ"
+    },
+    {
+     "p": "¿Atrae una cuchara de madera?",
+     "r": "NO"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Monstruo Confundido*!",
+    "No sabe qué atrae el imán.",
+    "¿Un tornillo? ¡*Sí*!",
+    "¿Una cuchara de madera? ¡*No*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "PROBÁ Y ANOTÁ",
+   "texto": "Dos listas: atrae y no atrae",
+   "emoji": "📝",
+   "voz": [
+    "Truco: probá y anotá en *dos listas*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "IMÁN",
+     "atrae sin tocar"
+    ],
+    [
+     "ATRAE",
+     "clips, clavos"
+    ],
+    [
+     "NO ATRAE",
+     "papel, madera"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *imán* atrae sin tocar.",
+    "*Atrae* clips y clavos.",
+    "*No atrae* papel ni madera.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

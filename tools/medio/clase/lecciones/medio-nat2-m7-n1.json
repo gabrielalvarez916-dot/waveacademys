@@ -1,0 +1,119 @@
+{
+ "slug": "medio-nat2-m7-n1",
+ "step_id": "dbae7eee-d25b-41d4-9325-34b060b98223",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Lluvia y nubes",
+ "sub": "Ciencias Naturales 2 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historieta",
+   "titulo": "UN DÍA DE LLUVIA",
+   "vinetas": [
+    {
+     "emojis": [
+      "☁️",
+      "☁️"
+     ],
+     "txt": "Hay nubes grises"
+    },
+    {
+     "emojis": [
+      "💧",
+      "💧"
+     ],
+     "txt": "Las gotitas se juntan"
+    },
+    {
+     "emojis": [
+      "🌧️",
+      "☂️"
+     ],
+     "txt": "¡Llueve!"
+    }
+   ],
+   "voz": [
+    "Tomi mira el cielo: hay nubes grises.",
+    "Adentro, las *gotitas* se juntan y pesan.",
+    "¡Llueve! Hoy: *lluvia y nubes*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Nube",
+   "texto": "Muchas gotitas de agua juntas, allá arriba",
+   "emoji": "☁️",
+   "voz": [
+    "Una *nube* son muchas gotitas de agua.",
+    "Cuando se hacen pesadas, ¡caen!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué cae cuando hace mucho frío arriba?",
+   "opciones": [
+    "GRANIZO",
+    "HOJAS",
+    "ARENA",
+    "FLORES"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Qué cae cuando hace mucho *frío* arriba?",
+    "Pensá en piedritas de hielo.",
+    "¡El *granizo*! O la nieve."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿De qué son las nubes?",
+   "opciones": [
+    "DE AGUA",
+    "DE ALGODÓN"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿de qué son las nubes?",
+    "Pensá en la lluvia.",
+    "¡De *agua*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "NUBES GRISES",
+   "texto": "Las nubes oscuras traen lluvia",
+   "emoji": "🌧️",
+   "voz": [
+    "Truco: las nubes *oscuras* traen lluvia."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NUBE",
+     "gotitas juntas"
+    ],
+    [
+     "LLUVIA",
+     "gotitas que caen"
+    ],
+    [
+     "FRÍO",
+     "granizo o nieve"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *nube* son gotitas juntas.",
+    "La *lluvia* son gotitas que caen.",
+    "Con mucho *frío*: granizo o nieve.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

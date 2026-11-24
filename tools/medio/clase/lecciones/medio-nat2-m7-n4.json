@@ -1,0 +1,126 @@
+{
+ "slug": "medio-nat2-m7-n4",
+ "step_id": "50615502-010f-4f9d-95af-15c725826eb8",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Medimos la lluvia",
+ "sub": "Ciencias Naturales 2 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Seño Ana",
+    "emoji": "👩‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Cuánto llovió ayer? 🌧️"
+    },
+    {
+     "yo": true,
+     "txt": "¡Lo voy a medir!"
+    }
+   ],
+   "titulo": "MEDIMOS",
+   "sub": "la lluvia",
+   "voz": [
+    "La seño pregunta: ¿cuánto llovió ayer?",
+    "Tomi responde: ¡lo voy a *medir*!",
+    "Hoy: *medimos la lluvia*."
+   ]
+  },
+  {
+   "t": "medidor",
+   "titulo": "MI PLUVIÓMETRO",
+   "tipo": "probeta",
+   "min": 0,
+   "max": 10,
+   "valor": 5,
+   "unidad": "cm",
+   "nota": "El miércoles llovió 5 cm",
+   "voz": [
+    "Este es el *pluviómetro* de Tomi.",
+    "Junta el agua de la lluvia.",
+    "¡El miércoles llovió *cinco* centímetros!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LO QUE ANOTÓ TOMI",
+   "eventos": [
+    {
+     "fecha": "LUNES",
+     "txt": "2 cm",
+     "emoji": "🌦️"
+    },
+    {
+     "fecha": "MIÉRCOLES",
+     "txt": "5 cm",
+     "emoji": "🌧️"
+    },
+    {
+     "fecha": "VIERNES",
+     "txt": "nada",
+     "emoji": "☀️"
+    }
+   ],
+   "voz": [
+    "El *lunes*: dos centímetros.",
+    "El *miércoles*: ¡cinco centímetros!",
+    "El *viernes*: nada, hubo sol."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué día llovió más?",
+   "opciones": [
+    "MIÉRCOLES",
+    "LUNES"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué día llovió más?",
+    "Compará los números.",
+    "¡El *miércoles*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "VACIÁ LA BOTELLA",
+   "texto": "Después de anotar, para la próxima lluvia",
+   "emoji": "🫙",
+   "voz": [
+    "Truco: después de anotar, *vaciá* la botella."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PLUVIÓMETRO",
+     "junta la lluvia"
+    ],
+    [
+     "MEDIR",
+     "con una regla"
+    ],
+    [
+     "ANOTAR",
+     "cada lluvia"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *pluviómetro* junta la lluvia.",
+    "*Medimos* con una regla.",
+    "*Anotamos* cada lluvia.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "slug": "medio-nat2-m7-n3",
+ "step_id": "914a6b32-cc42-4e5f-8944-66830153a1c7",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "El agua vuelve al cielo",
+ "sub": "Ciencias Naturales 2 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Adónde va el charco cuando sale el sol?",
+   "segundos": 8,
+   "respuesta": "¡Sube al cielo como vapor!",
+   "emoji": "☀️",
+   "titulo": "EL AGUA",
+   "sub": "vuelve al cielo",
+   "voz": [
+    "Desafío: ¿adónde va el charco cuando sale el sol?",
+    "¡Sube al cielo como *vapor*!",
+    "Hoy: *el ciclo del agua*."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "EL CICLO DEL AGUA",
+   "items": [
+    "EL SOL CALIENTA ☀️",
+    "EL VAPOR SUBE ♨️",
+    "SE FORMAN NUBES ☁️",
+    "LLUEVE 🌧️"
+   ],
+   "voz": [
+    "El agua hace un *viaje* que no termina.",
+    "El *sol* calienta el agua.",
+    "El *vapor* sube.",
+    "Arriba se forman *nubes*.",
+    "¡Y *llueve*! Después, vuelve a empezar."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "El agua del charco se pierde para siempre",
+   "emoji": "💧",
+   "verdadero": false,
+   "explicacion": "Sube y vuelve a caer como lluvia",
+   "voz": [
+    "¿Verdadero o falso? El charco se pierde para siempre.",
+    "Pensá en el ciclo…",
+    "¡*Falso*! Sube y vuelve a caer."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué empieza el ciclo del agua?",
+   "opciones": [
+    "EL SOL",
+    "LA LUNA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué empieza el ciclo?",
+    "Pensá en el calor.",
+    "¡El *sol*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CÍRCULO",
+   "texto": "El ciclo vuelve a empezar",
+   "emoji": "🔄",
+   "voz": [
+    "Truco: el ciclo es un *círculo*: vuelve a empezar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "EVAPORA",
+     "el sol calienta"
+    ],
+    [
+     "CONDENSA",
+     "forma nubes"
+    ],
+    [
+     "LLUEVE",
+     "y vuelve a empezar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El agua se *evapora* con el sol.",
+    "Se *condensa* y forma nubes.",
+    "*Llueve* y vuelve a empezar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

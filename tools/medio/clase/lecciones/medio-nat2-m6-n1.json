@@ -1,0 +1,135 @@
+{
+ "slug": "medio-nat2-m6-n1",
+ "step_id": "15c1cd5d-3639-4788-8c14-dff382ec4e41",
+ "materia": "Ciencias Naturales 2",
+ "titulo": "Empujar, tirar y mover",
+ "sub": "Ciencias Naturales 2 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "🛒",
+   "lineas": [
+    "Tomi lleva un carrito.",
+    "Primero lo empuja.",
+    "Después tira de una soga."
+   ],
+   "titulo": "EMPUJAR",
+   "sub": "y tirar",
+   "voz": [
+    "Tomi lleva un *carrito*.",
+    "Primero lo *empuja*.",
+    "Después *tira* de una soga.",
+    "Hoy: *empujar y tirar*."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "EMPUJAR O TIRAR",
+   "a": {
+    "txt": "EMPUJAR",
+    "emoji": "👐",
+    "datos": [
+     "aleja",
+     "hamaca, puerta"
+    ]
+   },
+   "b": {
+    "txt": "TIRAR",
+    "emoji": "🪢",
+    "datos": [
+     "acerca",
+     "cajón, soga"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Las dos son fuerzas!",
+   "voz": [
+    "Comparamos dos formas de mover.",
+    "*Empujar*: aleja. Como la hamaca.",
+    "*Tirar*: acerca. Como el cajón.",
+    "¡Las dos son *fuerzas*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿EMPUJO O TIRO?",
+   "pares": [
+    [
+     "HAMACA",
+     "empujo"
+    ],
+    [
+     "CAJÓN",
+     "tiro"
+    ],
+    [
+     "CHANGUITO",
+     "empujo"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada cosa con lo que hacemos.",
+    "La hamaca: la *empujo*.",
+    "El cajón: *tiro*.",
+    "El changuito: lo *empujo*."
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Una pelota quieta se mueve sola?",
+   "opciones": [
+    "NO, NECESITA FUERZA",
+    "SÍ, SOLA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿una pelota quieta se mueve sola?",
+    "Pensá en la fuerza.",
+    "¡No! Necesita una *fuerza*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "¿SE ALEJA O SE ACERCA?",
+   "texto": "Se aleja: empujás. Se acerca: tirás",
+   "emoji": "↔️",
+   "voz": [
+    "Truco: si se *aleja*, empujás. Si se *acerca*, tirás."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "EMPUJAR",
+     "aleja"
+    ],
+    [
+     "TIRAR",
+     "acerca"
+    ],
+    [
+     "FUERZA",
+     "hace mover"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Empujar* aleja.",
+    "*Tirar* acerca.",
+    "La *fuerza* hace mover las cosas.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
