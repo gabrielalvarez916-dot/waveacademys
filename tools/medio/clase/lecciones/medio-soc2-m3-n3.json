@@ -1,0 +1,123 @@
+{
+ "slug": "medio-soc2-m3-n3",
+ "step_id": "564a729e-fab5-46cd-ad55-e1457c9f040f",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Derechos de los consumidores",
+ "sub": "Ciencias Sociales 2 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "dialogo",
+   "personas": [
+    {
+     "nombre": "LOLA",
+     "emoji": "👧"
+    },
+    {
+     "nombre": "ALMACENERO",
+     "emoji": "👨‍🍳"
+    }
+   ],
+   "lineas": [
+    {
+     "quien": 0,
+     "txt": "Este yogur vino vencido. Acá está el ticket."
+    },
+    {
+     "quien": 1,
+     "txt": "¡Perdón! Te lo cambio ya."
+    },
+    {
+     "quien": 0,
+     "txt": "¡Muchas gracias!"
+    }
+   ],
+   "voz": [
+    "Este yogur vino *vencido*. Acá está el ticket.",
+    "¡Perdón! Te lo *cambio* ya.",
+    "¡Muchas gracias!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Consumidor",
+   "texto": "La persona que compra y usa un producto",
+   "emoji": "🛒",
+   "voz": [
+    "Lola es una *consumidora*: compra y usa.",
+    "Y tiene *derechos*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "EL ALMACÉN",
+   "candados": [
+    {
+     "p": "¿Qué llevo para reclamar?",
+     "r": "EL TICKET"
+    },
+    {
+     "p": "¿Cómo reclamo?",
+     "r": "CON RESPETO"
+    }
+   ],
+   "voz": [
+    "¡Para salir del almacén, abrimos los candados!",
+    "Para reclamar, llevo el *ticket*.",
+    "Reclamo *con respeto*.",
+    "¡Salimos!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "Si el juguete vino roto, ¿puedo reclamar?",
+   "opciones": [
+    "SÍ",
+    "NO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿si vino roto, puedo reclamar?",
+    "Pensá en los derechos.",
+    "¡*Sí*! Es mi derecho."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "GUARDÁ EL TICKET",
+   "texto": "Muestra que lo compraste ahí",
+   "emoji": "🧾",
+   "voz": [
+    "Truco: guardá el *ticket* de lo que comprás."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONSUMIDOR",
+     "quien compra"
+    ],
+    [
+     "DERECHOS",
+     "se respetan"
+    ],
+    [
+     "RECLAMAR",
+     "con respeto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *consumidor* es quien compra.",
+    "Tiene *derechos* que se respetan.",
+    "Puede *reclamar*, con respeto.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

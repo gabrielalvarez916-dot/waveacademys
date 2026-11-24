@@ -1,0 +1,114 @@
+{
+ "slug": "medio-soc2-m4-n3",
+ "step_id": "39634c6a-fb5c-4464-b89e-6c793834f0b9",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Normas que organizan los servicios",
+ "sub": "Ciencias Sociales 2 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Qué pasa si todos sacan la basura a cualquier hora?",
+   "segundos": 8,
+   "respuesta": "¡La calle se ensucia!",
+   "emoji": "🗑️",
+   "titulo": "NORMAS",
+   "sub": "de los servicios",
+   "voz": [
+    "Desafío: ¿y si sacan la basura a cualquier hora?",
+    "¡La calle se *ensucia*!",
+    "Hoy: *normas de los servicios*."
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "El semáforo tiene tres colores: rojo, amarillo y verde",
+   "emoji": "🚦",
+   "voz": [
+    "¿Sabías qué?",
+    "El *semáforo* nos dice cuándo cruzar."
+   ]
+  },
+  {
+   "t": "versus",
+   "titulo": "ROJO O VERDE",
+   "a": {
+    "txt": "ROJO",
+    "emoji": "🔴",
+    "datos": [
+     "espero",
+     "quieto"
+    ]
+   },
+   "b": {
+    "txt": "VERDE",
+    "emoji": "🟢",
+    "datos": [
+     "cruzo",
+     "con cuidado"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "¡Los dos nos cuidan!",
+   "voz": [
+    "Comparamos dos colores.",
+    "*Rojo*: espero, quieto.",
+    "*Verde*: cruzo, con cuidado.",
+    "¡Los dos nos *cuidan*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Dónde esperamos el colectivo?",
+   "opciones": [
+    "EN LA PARADA",
+    "EN LA PLAZA",
+    "EN EL MEDIO DE LA CALLE",
+    "EN CASA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Dónde esperamos el *colectivo*?",
+    "Pensá en el cartel.",
+    "¡En la *parada*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "POR LA SENDA",
+   "texto": "Cruzá por las rayas blancas",
+   "emoji": "🚸",
+   "voz": [
+    "Truco: cruzá por la *senda* peatonal, con un adulto."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "BASURA",
+     "en su horario"
+    ],
+    [
+     "COLECTIVO",
+     "en la parada"
+    ],
+    [
+     "SEMÁFORO",
+     "verde: cruzo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *basura*, en su horario.",
+    "El *colectivo*, en la parada.",
+    "Con el *semáforo* en verde, cruzo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

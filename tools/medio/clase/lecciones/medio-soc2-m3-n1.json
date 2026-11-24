@@ -1,0 +1,120 @@
+{
+ "slug": "medio-soc2-m3-n1",
+ "step_id": "596ad46a-0f19-4831-af95-7182db211e25",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Normas de seguridad en el trabajo",
+ "sub": "Ciencias Sociales 2 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Por qué el albañil usa casco?",
+   "segundos": 8,
+   "respuesta": "¡Para cuidar su cabeza!",
+   "emoji": "⛑️",
+   "titulo": "NORMAS",
+   "sub": "de seguridad",
+   "voz": [
+    "Desafío: ¿por qué el albañil usa *casco*?",
+    "¡Para cuidar su *cabeza*!",
+    "Hoy: *normas de seguridad*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🏗️",
+     "txt": "UNA OBRA"
+    },
+    {
+     "emoji": "👷",
+     "txt": "UN ALBAÑIL"
+    },
+    {
+     "emoji": "⛑️",
+     "txt": "¡SU CASCO LO CUIDA!"
+    }
+   ],
+   "voz": [
+    "Miramos una *obra*.",
+    "Más cerca: un *albañil*.",
+    "¡Su *casco* lo cuida!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿QUÉ SE PONE?",
+   "pares": [
+    [
+     "ALBAÑIL",
+     "casco"
+    ],
+    [
+     "BOMBERA",
+     "traje especial"
+    ],
+    [
+     "COCINERO",
+     "gorro"
+    ]
+   ],
+   "mezclar": true,
+   "voz": [
+    "Unimos cada trabajo con su protección.",
+    "El albañil: *casco*.",
+    "La bombera: *traje especial*.",
+    "El cocinero: *gorro*."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Las normas de seguridad no sirven",
+   "emoji": "⚠️",
+   "verdadero": false,
+   "explicacion": "Cuidan a los trabajadores",
+   "voz": [
+    "¿Verdadero o falso? Las normas no sirven.",
+    "Pensá en el casco…",
+    "¡*Falso*! Cuidan a los trabajadores."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LOS CARTELES",
+   "texto": "Avisan peligros y salidas",
+   "emoji": "🚧",
+   "voz": [
+    "Truco: mirá los *carteles*: avisan peligros."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "NORMA",
+     "regla para todos"
+    ],
+    [
+     "SEGURIDAD",
+     "cuida a las personas"
+    ],
+    [
+     "PROTECCIÓN",
+     "casco, gorro, guantes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una *norma* es una regla para todos.",
+    "La *seguridad* cuida a las personas.",
+    "Nos protegen el casco y los *guantes*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

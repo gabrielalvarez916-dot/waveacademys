@@ -1,0 +1,126 @@
+{
+ "slug": "medio-soc2-m3-n2",
+ "step_id": "768d7797-8325-4e18-81ad-3ff27a137d84",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Etiquetas y fechas de vencimiento",
+ "sub": "Ciencias Sociales 2 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "INVESTIGACIÓN",
+   "titular": "¡Lola lee la etiqueta del yogur!",
+   "bajada": "Tiene mucha información",
+   "emoji": "🏷️",
+   "titulo": "ETIQUETAS",
+   "sub": "y vencimiento",
+   "voz": [
+    "¡Noticia: Lola lee la *etiqueta* del yogur!",
+    "Tiene mucha información.",
+    "Hoy: *etiquetas y vencimiento*."
+   ]
+  },
+  {
+   "t": "partes",
+   "emoji": "🥛",
+   "titulo": "LA ETIQUETA",
+   "partes": [
+    {
+     "txt": "NOMBRE",
+     "x": 0,
+     "y": -0.8
+    },
+    {
+     "txt": "INGREDIENTES",
+     "x": -0.7,
+     "y": 0
+    },
+    {
+     "txt": "PESO",
+     "x": 0.7,
+     "y": 0
+    },
+    {
+     "txt": "VENCIMIENTO",
+     "x": 0,
+     "y": 0.8
+    }
+   ],
+   "voz": [
+    "Miramos la etiqueta del yogur.",
+    "El *nombre* del producto.",
+    "Los *ingredientes*: lo que tiene.",
+    "El *peso*: cuánto trae.",
+    "Y la fecha de *vencimiento*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Qué parte de la etiqueta es?",
+   "pistas": [
+    "Es una fecha",
+    "Dice hasta cuándo comer",
+    "Si pasó, no se come"
+   ],
+   "respuesta": "¡EL VENCIMIENTO! 📅",
+   "voz": [
+    "Adivinanza: ¿qué parte de la etiqueta es?",
+    "Pista uno: es una fecha.",
+    "Pista dos: dice hasta cuándo comer.",
+    "Pista tres: si pasó, no se come.",
+    "¡El *vencimiento*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Un producto vencido se come?",
+   "opciones": [
+    "NO",
+    "SÍ"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿un producto vencido se come?",
+    "Pensá en la fecha.",
+    "¡*No*! Puede hacer mal."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "MIRÁ LA FECHA",
+   "texto": "Antes de comer, mirá el vencimiento",
+   "emoji": "📅",
+   "voz": [
+    "Truco: antes de comer, mirá el *vencimiento*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ETIQUETA",
+     "información"
+    ],
+    [
+     "INGREDIENTES",
+     "lo que tiene"
+    ],
+    [
+     "VENCIMIENTO",
+     "hasta cuándo se come"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *etiqueta* tiene información.",
+    "Los *ingredientes* dicen lo que tiene.",
+    "El *vencimiento*, hasta cuándo se come.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

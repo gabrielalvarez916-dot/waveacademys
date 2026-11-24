@@ -1,0 +1,134 @@
+{
+ "slug": "medio-soc2-m4-n2",
+ "step_id": "0bc29532-3875-4b61-8f54-af582e6d6af1",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Trabajadores y técnicas de cada servicio",
+ "sub": "Ciencias Sociales 2 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Abuela Rosa",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡Se cortó la luz! 😮"
+    },
+    {
+     "yo": true,
+     "txt": "¡Ya viene el electricista!"
+    }
+   ],
+   "titulo": "TRABAJADORES",
+   "sub": "de los servicios",
+   "voz": [
+    "La abuela escribe: ¡se cortó la luz!",
+    "Lola responde: ¡ya viene el *electricista*!",
+    "Hoy: *trabajadores de los servicios*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "TRABAJOS DE LA CIUDAD",
+   "items": [
+    {
+     "frente": "🚛",
+     "dorso": "RECOLECTOR: BASURA",
+     "emoji": "🚛"
+    },
+    {
+     "frente": "🔌",
+     "dorso": "ELECTRICISTA: CABLES",
+     "emoji": "🔌"
+    },
+    {
+     "frente": "🚌",
+     "dorso": "CHOFER: COLECTIVO",
+     "emoji": "🚌"
+    },
+    {
+     "frente": "🌡️",
+     "dorso": "ENFERMERA: TERMÓMETRO",
+     "emoji": "🌡️"
+    }
+   ],
+   "voz": [
+    "El *recolector* junta la basura.",
+    "El *electricista* arregla los cables.",
+    "El *chofer* maneja el colectivo.",
+    "La *enfermera* usa el termómetro."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Quién trabaja de noche?",
+   "pistas": [
+    "Pasa con un camión",
+    "Junta bolsas",
+    "Deja la calle limpia"
+   ],
+   "respuesta": "¡EL RECOLECTOR! 🚛",
+   "voz": [
+    "Adivinanza: ¿quién trabaja de *noche*?",
+    "Pista uno: pasa con un camión.",
+    "Pista dos: junta bolsas.",
+    "Pista tres: deja la calle limpia.",
+    "¡El *recolector*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Quién arregla la luz?",
+   "opciones": [
+    "EL ELECTRICISTA",
+    "LA ENFERMERA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿quién arregla la luz?",
+    "Pensá en los cables.",
+    "¡El *electricista*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "AGRADECÉ",
+   "texto": "Decí gracias a quien trabaja para todos",
+   "emoji": "🙏",
+   "voz": [
+    "Truco: decí *gracias* a quien trabaja para todos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECOLECTOR",
+     "junta la basura"
+    ],
+    [
+     "ELECTRICISTA",
+     "arregla la luz"
+    ],
+    [
+     "ENFERMERA",
+     "cuida la salud"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *recolector* junta la basura.",
+    "El *electricista* arregla la luz.",
+    "La *enfermera* cuida la salud.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
