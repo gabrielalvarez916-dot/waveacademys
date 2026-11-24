@@ -1,0 +1,143 @@
+{
+ "slug": "medio-soc2-m1-n4",
+ "step_id": "8a41c621-c57d-4878-9706-e805a7035a1d",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Quiénes trabajan en una fábrica",
+ "sub": "Ciencias Sociales 2 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Papá",
+    "emoji": "👨"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Quién hizo este yogur? 🥣"
+    },
+    {
+     "yo": true,
+     "txt": "¡Muchas personas!"
+    }
+   ],
+   "titulo": "QUIÉNES",
+   "sub": "trabajan",
+   "voz": [
+    "Papá pregunta: ¿quién hizo este yogur?",
+    "Lola responde: ¡*muchas* personas!",
+    "Hoy: *quiénes trabajan en una fábrica*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "TRABAJOS",
+   "items": [
+    {
+     "frente": "👨‍🌾",
+     "dorso": "AGRICULTOR: COSECHA",
+     "emoji": "👨‍🌾"
+    },
+    {
+     "frente": "👩‍🏭",
+     "dorso": "OPERARIA: USA MÁQUINAS",
+     "emoji": "👩‍🏭"
+    },
+    {
+     "frente": "🚚",
+     "dorso": "CHOFER: MANEJA",
+     "emoji": "🚚"
+    },
+    {
+     "frente": "🛒",
+     "dorso": "VENDEDORA: ATIENDE",
+     "emoji": "🛒"
+    }
+   ],
+   "voz": [
+    "El *agricultor* cosecha en el campo.",
+    "La *operaria* usa las máquinas.",
+    "El *chofer* maneja el camión.",
+    "La *vendedora* atiende el negocio."
+   ]
+  },
+  {
+   "t": "personaje",
+   "personaje": {
+    "nombre": "Marta, operaria",
+    "emoji": "👩‍🏭"
+   },
+   "lineas": [
+    {
+     "txt": "¡Hola! Trabajo en la fábrica de yogur.",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Me pongo guantes, gorro y barbijo.",
+     "animo": "piensa"
+    },
+    {
+     "txt": "¡Así el yogur queda limpio!",
+     "animo": "sorpresa"
+    }
+   ],
+   "voz": [
+    "¡Hola! Trabajo en la fábrica de *yogur*.",
+    "Me pongo *guantes*, gorro y barbijo.",
+    "¡Así el yogur queda *limpio*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Qué usan en la fábrica para cuidarse?",
+   "opciones": [
+    "GUANTES Y GORRO",
+    "MALLA"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué usan para cuidarse?",
+    "Pensá en las manos y el pelo.",
+    "¡*Guantes* y gorro!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "TODOS IMPORTAN",
+   "texto": "Si falta uno, el producto no llega",
+   "emoji": "🤝",
+   "voz": [
+    "Truco: *todos* los trabajos son importantes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMPO",
+     "agricultor"
+    ],
+    [
+     "FÁBRICA",
+     "operaria"
+    ],
+    [
+     "CAMINO Y NEGOCIO",
+     "chofer y vendedora"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el campo, el *agricultor*.",
+    "En la fábrica, la *operaria*.",
+    "Después, el *chofer* y la *vendedora*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "slug": "medio-soc2-m1-n3",
+ "step_id": "bb2e94e0-b414-40c8-82c4-79d93bd97edf",
+ "materia": "Ciencias Sociales 2",
+ "titulo": "Las etapas de una producción",
+ "sub": "Ciencias Sociales 2 · Misión 1 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos lugares recorre el pan hasta tu mesa?",
+   "segundos": 8,
+   "respuesta": "¡Campo, molino y panadería!",
+   "emoji": "🍞",
+   "titulo": "LAS ETAPAS",
+   "sub": "de una producción",
+   "voz": [
+    "Desafío: ¿cuántos lugares recorre el *pan*?",
+    "¡Campo, *molino* y panadería!",
+    "Hoy: *las etapas de una producción*."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "LAS ETAPAS",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "campo: se obtiene",
+     "emoji": "🌾"
+    },
+    {
+     "fecha": "2",
+     "txt": "fábrica: se transforma",
+     "emoji": "🏭"
+    },
+    {
+     "fecha": "3",
+     "txt": "camión: se transporta",
+     "emoji": "🚚"
+    },
+    {
+     "fecha": "4",
+     "txt": "negocio: se vende",
+     "emoji": "🏪"
+    }
+   ],
+   "voz": [
+    "En el *campo*, se obtiene.",
+    "En la *fábrica*, se transforma.",
+    "En el *camión*, se transporta.",
+    "En el *negocio*, se vende."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Dónde se hace la harina?",
+   "opciones": [
+    "EN EL MOLINO",
+    "EN LA PLAZA",
+    "EN LA ESCUELA",
+    "EN EL RÍO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "¿Dónde se hace la *harina*?",
+    "Pensá en el trigo.",
+    "¡En el *molino*!"
+   ]
+  },
+  {
+   "t": "pregunta",
+   "pregunta": "¿Cuál es la primera etapa?",
+   "opciones": [
+    "EL CAMPO",
+    "EL NEGOCIO"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuál es la primera etapa?",
+    "Pensá de dónde sale todo.",
+    "¡El *campo*!"
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "EN ORDEN",
+   "texto": "Campo, fábrica, camión y negocio",
+   "emoji": "➡️",
+   "voz": [
+    "Truco: campo, fábrica, camión y *negocio*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAMPO",
+     "se obtiene"
+    ],
+    [
+     "FÁBRICA",
+     "se transforma"
+    ],
+    [
+     "NEGOCIO",
+     "se vende"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En el *campo* se obtiene.",
+    "En la *fábrica* se transforma.",
+    "En el *negocio* se vende.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
