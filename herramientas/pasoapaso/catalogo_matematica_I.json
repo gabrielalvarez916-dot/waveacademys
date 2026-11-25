@@ -1,0 +1,708 @@
+{
+ "materia": "Matemática I",
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "items": [
+  {
+   "mision": 1,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "subido",
+   "archivo": null,
+   "procedimientos": [
+    "Descomposición aditiva",
+    "Descomposición multiplicativa"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 1,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Multiplicar y dividir por 10, 100 y 1.000 (escribir números grandes con potencias de 10)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 1,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "subido",
+   "archivo": null,
+   "procedimientos": [
+    "De decimal a binario",
+    "De binario a decimal"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 1,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Convertir horas, minutos y segundos",
+    "Sumar y restar medidas sexagesimales"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 2,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": null,
+   "procedimientos": [
+    "Sumar y restar mentalmente (descomponer y compensar)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 2,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": null,
+   "procedimientos": [
+    "Multiplicar con la propiedad distributiva"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 2,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": null,
+   "procedimientos": [
+    "Dividir con resto y comprobar con D = d × c + r"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 2,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": null,
+   "procedimientos": [
+    "Estimar un cálculo (redondear y comparar)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 3,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": "Mision03_Avanzado_MatematicaI_A_o1_potencias.html",
+   "procedimientos": [
+    "Cómo se calcula una potencia"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 3,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": null,
+   "procedimientos": [
+    "Multiplicar potencias de igual base",
+    "Dividir potencias de igual base",
+    "Potencia de una potencia"
+   ],
+   "nota": "unir en un archivo con selector"
+  },
+  {
+   "mision": 3,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "existe_sin_subir",
+   "archivo": "Mision03_Avanzado_MatematicaI_A_o1_raiz-cuadrada-y-cubica-exactas.html",
+   "procedimientos": [
+    "Raíz cuadrada exacta",
+    "Raíz cúbica exacta",
+    "Estimar raíz cuadrada",
+    "Estimar raíz cúbica",
+    "Raíz cuadrada por descomposición",
+    "Raíz cúbica por descomposición"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 3,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Distribuir potencias y raíces en un producto o cociente"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 4,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Resolver una cuenta combinada (orden de las operaciones)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 4,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Resolver con paréntesis, corchetes y llaves"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 4,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Resolver una cuenta combinada con potencias y raíces"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 5,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar los múltiplos de un número"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 5,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar todos los divisores (parejas)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 6,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Criterios de divisibilidad por 2, 3, 5 y 9"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 6,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Criterios de divisibilidad por 4, 6, 8, 10 y 11"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 6,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Saber si un número es primo"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 6,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Descomponer en factores primos"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 7,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular el MCD por factores primos"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 7,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular el mcm por factores primos"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 8,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar fracciones equivalentes",
+    "Simplificar hasta la irreducible"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 8,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Ubicar una fracción en la recta numérica"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 8,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Comparar fracciones con denominador común"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 9,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "generado",
+   "archivo": "Mision09_Avanzado_MatematicaI_A_o1_suma-y-resta-de-fracciones.html",
+   "procedimientos": [
+    "Sumar fracciones",
+    "Restar fracciones"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 9,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Multiplicar fracciones"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 9,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Dividir fracciones (multiplicar por la inversa)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 10,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Fracción a decimal",
+    "Decimal a fracción"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 10,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Decimal periódico a fracción"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 10,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Sumar y restar decimales",
+    "Multiplicar decimales",
+    "Dividir decimales"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 11,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Ubicar y ordenar enteros en la recta"
+   ],
+   "nota": "misma actividad que L3"
+  },
+  {
+   "mision": 11,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Ubicar y ordenar enteros en la recta"
+   ],
+   "nota": "misma actividad que L2"
+  },
+  {
+   "mision": 12,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Sumar enteros (mismo signo / distinto signo)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 12,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Restar enteros (sumar el opuesto)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 12,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Resolver una suma algebraica (suprimir paréntesis)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 13,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Multiplicar enteros (regla de los signos)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 13,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Dividir enteros"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 13,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Cálculos combinados con enteros"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 13,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Potencia de base negativa (exponente par o impar)",
+    "Raíz de un entero (incluye raíz cúbica de negativo)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 14,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar el término desconocido de una proporción"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 14,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Proporcionalidad directa (regla de tres simple)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 14,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Proporcionalidad inversa"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 14,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Porcentaje de una cantidad",
+    "Aumentos y descuentos porcentuales"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 15,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Pasar una frase al lenguaje algebraico"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 15,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Encontrar la regla de un patrón"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 15,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular el valor numérico de una expresión"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 15,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Simplificar sumando términos semejantes"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 16,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Comprobar si un número es solución de una ecuación"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 16,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "generado",
+   "archivo": "Mision16_Avanzado_MatematicaI_A_o1_ecuaciones-de-la-forma-ax-b-c.html",
+   "procedimientos": [
+    "ax + b = c",
+    "ax − b = c"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 16,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Ecuación con la incógnita en ambos miembros"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 16,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Plantear y resolver un problema con una ecuación"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 17,
+   "leccion": 1,
+   "motor": "geometrico",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Medir un ángulo con el transportador"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 17,
+   "leccion": 3,
+   "motor": "geometrico",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Trazar la bisectriz con regla y compás",
+    "Trazar la mediatriz con regla y compás"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 18,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar un ángulo desconocido de un triángulo (suman 180°)"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 19,
+   "leccion": 1,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular un perímetro"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 19,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular el área de una figura plana"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 19,
+   "leccion": 3,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular el volumen de un prisma"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 19,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Hallar el lado de un cuadrado o cubo a partir del área o volumen"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 20,
+   "leccion": 2,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular la media",
+    "Calcular la moda"
+   ],
+   "nota": null
+  },
+  {
+   "mision": 20,
+   "leccion": 4,
+   "motor": "selector",
+   "estado": "pendiente",
+   "archivo": null,
+   "procedimientos": [
+    "Calcular una probabilidad simple (favorables / posibles)"
+   ],
+   "nota": null
+  }
+ ]
+}
