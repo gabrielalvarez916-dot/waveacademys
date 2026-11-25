@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ecuaciones de la forma ax + b = c – Wave Academy’s</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+/* ===== PALETA WAVE ACADEMY'S (cambiar solo acá) ===== */
+:root{
+  --top:#0b7a80; --bg:#d6efe8; --card:#ffffff; --scene:#f1faf7;
+  --ink:#1d2f2d; --muted:#4f6c68; --line:#0a5c61; --hint:#0b7a80;
+  --accent:#0b7a80; --accentInk:#ffffff; --note:#fff5da; --noteB:#e9a62b;
+  --border:#b7dcd3; --cellL:88%; --hl:#ffffff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+    --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+    --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+    --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+  --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+  --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+  --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.5}
+.top{background:var(--top);color:#fff;padding:14px 20px}
+.top .in{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.brand{font-weight:800;letter-spacing:.06em}
+.tag{opacity:.85;font-weight:700}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 16px 32px}
+h1{font-size:clamp(1.4rem,3.2vw,2rem);margin:0 0 2px;font-weight:800}
+.sub{margin:0 0 16px;color:var(--muted);font-weight:700}
+.card{background:var(--card);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);overflow:hidden;box-shadow:0 6px 24px rgba(8,70,72,.12)}
+.left{padding:22px 24px}
+.left p{margin:0 0 12px;max-width:52ch}
+.scene{background:var(--scene);display:flex;flex-direction:column;min-width:0}
+.note{background:var(--note);border-bottom:3px solid var(--noteB);padding:12px 18px;min-height:6.5em}
+.note b{color:var(--hint)}
+.ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border);font-size:.85rem}
+.ctrl label{color:var(--muted);font-weight:700}
+select,input{font:inherit;padding:3px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink)}
+input.n{width:4.6em;text-align:center;padding:3px 4px}
+.sp{flex:1}
+.nav{display:flex;gap:8px;align-items:center}
+.nav button{width:36px;height:36px;border-radius:50%;border:0;background:var(--accent);color:var(--accentInk);font-size:1rem;cursor:pointer}
+.nav button:disabled{opacity:.35;cursor:default}
+.nav button:focus-visible,.txt:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hint);outline-offset:2px}
+.txt{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:4px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.work{padding:16px;min-height:340px;color:var(--line)}
+sup{font-size:.6em}select{max-width:100%}.d{font-size:clamp(1rem,3vw,1.35rem)}.big{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:.04em;margin:0 0 12px}
+.tbl{display:grid;gap:4px;margin-bottom:14px;overflow-x:auto;grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.h,.d{border-radius:8px;text-align:center;background:hsl(var(--c) 55% var(--cellL))}
+.h{padding:5px 2px;font-size:.95rem;font-weight:800;color:var(--ink);animation:in .4s both}
+.d{font-size:clamp(1.1rem,3.6vw,1.6rem);padding:6px 4px;min-height:2.3em;color:var(--line);font-weight:800;border:2px solid transparent;display:flex;align-items:center;justify-content:center;animation:drop .45s both}
+.d.on{border-color:var(--line);box-shadow:0 0 0 3px var(--hl) inset}
+.d.ph{background:transparent;border:2px dashed var(--border);animation:none}
+.lines{font-size:1.1rem;font-weight:700;display:flex;flex-direction:column;gap:3px}
+.lines .l{animation:in .35s both}
+.lines .cur{color:var(--hint)}
+.res{font-weight:800}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.dots{display:flex;gap:5px;justify-content:center;padding:8px 0 14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.dots i.a{background:var(--accent)}
+@media (max-width:760px){.card{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#rnd,#again button{background:var(--accent);color:var(--accentInk);border-color:var(--accent)}
+#rnd{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(42,169,161,.7)}70%{box-shadow:0 0 0 10px rgba(42,169,161,0)}100%{box-shadow:0 0 0 0 rgba(42,169,161,0)}}
+#again{display:none;margin:0 16px 14px;padding:10px 14px;border-radius:14px;background:var(--note);border:2px dashed var(--noteB);align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700}
+#again.show{display:flex;animation:in .4s both}
+.pick{flex-basis:100%;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:14px;background:var(--note);border:2px solid var(--noteB);animation:pulse2 2s infinite}
+.pick label{color:var(--ink);font-weight:800;font-size:.95rem}
+.pick select{flex:1;min-width:0;font-weight:800;border:2px solid var(--noteB);padding:5px 8px}
+.pick.seen{animation:none}
+@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(233,166,43,.65)}70%{box-shadow:0 0 0 10px rgba(233,166,43,0)}100%{box-shadow:0 0 0 0 rgba(233,166,43,0)}}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.1;margin:0 2px}
+.fr i{font-style:normal;padding:0 4px}.fr i:first-child{border-bottom:2px solid currentColor}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><span class="brand">WAVE ACADEMY’S</span><span class="tag">Matemática</span></div></header>
+<div class="wrap">
+  <h1>Ecuaciones de la forma ax + b = c</h1>
+  <p class="sub">Despejamos la incógnita deshaciendo las operaciones en orden inverso</p>
+  <div class="card">
+    <div class="left" id="left"></div>
+    <div class="scene" aria-live="polite">
+      <div class="note" id="note"></div>
+      <div class="ctrl">
+        <span class="pick"><label for="mode">👆 Elegí el tema:</label> <select id="mode" aria-label="Tema">
+          <option value="mas">ax + b = c</option>
+          <option value="menos">ax − b = c</option></select></span>
+        <span><label for="in_a">a</label> <input class="n" id="in_a" inputmode="numeric" maxlength="2" aria-label="a"></span>
+        <span><label for="in_b">b</label> <input class="n" id="in_b" inputmode="numeric" maxlength="2" aria-label="b"></span>
+        <span><label for="in_c">c</label> <input class="n" id="in_c" inputmode="numeric" maxlength="3" aria-label="c"></span>
+        <button class="txt" id="rnd" type="button">🔄 Otro ejercicio</button>
+        <span class="sp"></span>
+        <button class="txt" id="auto" type="button">Auto</button>
+        <div class="nav">
+          <button id="prev" type="button" aria-label="Paso anterior">◀</button>
+          <button id="next" type="button" aria-label="Paso siguiente">▶</button>
+        </div>
+      </div>
+      <div class="work" id="work"></div>
+      <div id="again"><span>¡Terminaste este ejercicio! Probá con otro para practicar.</span><button class="txt" id="rnd2" type="button">🔄 Probar otro ejercicio</button></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div>
+<script>
+// Helpers compartidos (van dentro de cada HTML y también los usa el validador en Node)
+const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const lcm=(a,b)=>a/gcd(a,b)*b;
+const R_=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const clamp=(x,min,max)=>{x=parseInt(String(x).replace(/\D/g,""),10);return isNaN(x)?min:Math.max(min,Math.min(max,x));};
+const pw=(a,e)=>{let r=1;for(let i=0;i<e;i++)r*=a;return r;};
+const fr=(n,d)=>d===1?fmt(n):`<span class="fr"><i>${fmt(n)}</i><i>${fmt(d)}</i></span>`;
+
+// Misión 16 · L2 · Ecuaciones de la forma ax + b = c (selector: con suma / con resta)
+const SPEC={
+  mision:16, slug:'ecuaciones-de-la-forma-ax-b-c',
+  title:'Ecuaciones de la forma ax + b = c',
+  sub:'Despejamos la incógnita deshaciendo las operaciones en orden inverso',
+  inputs:[{id:'a',label:'a',max:2},{id:'b',label:'b',max:2},{id:'c',label:'c',max:3}],
+  modes:[
+    {id:'mas',label:'ax + b = c',def:{a:3,b:5,c:20},
+     left:`<p>Una <b>ecuación</b> es una igualdad con una incógnita (x). Resolverla es hallar el valor de x que la hace verdadera.</p><p>En <b>ax + b = c</b> a x primero lo multiplicaron por a y después le sumaron b. Para despejar, <b>deshacemos en orden inverso</b>: primero restamos b y después dividimos por a.</p><p>Ejemplo: 3x + 5 = 20 → 3x = 15 → x = 5.</p><p><b>Ojo:</b> lo que se hace de un lado se hace <b>en los dos miembros</b>.</p><p>Tocá el botón siguiente para avanzar, o escribí tus propios números.</p>`},
+    {id:'menos',label:'ax − b = c',def:{a:4,b:7,c:21},
+     left:`<p>En <b>ax − b = c</b> a x primero lo multiplicaron por a y después le restaron b. Para despejar, <b>deshacemos en orden inverso</b>: primero sumamos b y después dividimos por a.</p><p>Ejemplo: 4x − 7 = 21 → 4x = 28 → x = 7.</p><p><b>Ojo:</b> para deshacer una resta se suma, y se suma en los dos miembros.</p><p>Tocá el botón siguiente para avanzar, o escribí tus propios números.</p>`}],
+  norm(mode,r){
+    const a=clamp(r.a,2,12),b=clamp(r.b,1,30),c0=clamp(r.c,1,400);
+    let x;
+    if(mode==='mas')x=Math.max(1,Math.round((c0-b)/a));
+    else x=Math.max(Math.ceil((b+1)/a),Math.round((c0+b)/a));
+    x=Math.min(x,40);
+    const c=mode==='mas'?a*x+b:a*x-b;
+    return{a,b,c};
+  },
+  rand(mode,v){
+    let o;
+    do{const a=R_(2,12),b=R_(1,30),x=R_(1,20);
+       o={a,b,c:mode==='mas'?a*x+b:Math.max(1,a*x-b)};
+       o=SPEC.norm(mode,o);
+    }while(o.a===v.a&&o.b===v.b&&o.c===v.c);
+    return o;
+  },
+  truth(mode,v){return String((mode==='mas'?v.c-v.b:v.c+v.b)/v.a);},
+  build(mode,v){
+    const mas=mode==='mas',{a,b,c}=v,s=mas?'+':'−';
+    const A=mas?c-b:c+b,x=A/a,T=`${a}x ${s} ${b} = ${c}`;
+    const lado=mas?`${a}x + ${b} − ${b} = ${c} − ${b}`:`${a}x − ${b} + ${b} = ${c} + ${b}`;
+    const izq=mas?`${a} × ${x} + ${b} = ${a*x} + ${b} = ${c}`:`${a} × ${x} − ${b} = ${a*x} − ${b} = ${c}`;
+    const S=[
+      {h:`Vamos a resolver <b>${T}</b>. Hay que encontrar el valor de x que hace verdadera la igualdad.`},
+      {h:`Miramos qué le hicieron a x: primero la multiplicaron por <b>${a}</b> y después le ${mas?'sumaron':'restaron'} <b>${b}</b>. Para despejar, deshacemos <b>en orden inverso</b>: primero ${mas?'restamos':'sumamos'} ${b} y después dividimos por ${a}.`,
+       row:[T,`a = ${a} · b = ${b} · c = ${c}`],c:205,l:T},
+      {h:`Deshacemos ${mas?'la suma':'la resta'}: ${mas?'restamos':'sumamos'} <b>${b}</b> <b>en los dos miembros</b>. ${lado}, y queda <b>${a}x = ${A}</b>.`,
+       row:[lado,`${a}x = ${A}`],c:35,l:`${a}x = ${A}`},
+      {h:`Deshacemos la multiplicación: dividimos por <b>${a}</b> los dos miembros. ${a}x ÷ ${a} = ${A} ÷ ${a}, entonces <b>x = ${x}</b>.`,
+       row:[`${A} ÷ ${a}`,`x = ${x}`],c:50,l:`x = ${A} ÷ ${a} = ${x}`},
+      {h:`Comprobamos reemplazando x por ${x} en la ecuación original: ${izq}. ¡Da ${c}, igual que el segundo miembro!`,
+       row:[izq,`${c} = ${c} ✓`],c:160,l:`${izq} ✓`},
+      {h:`¡Listo! La solución de <b>${T}</b> es <b>x = ${x}</b>. Comprobación: al reemplazar x por ${x}, los dos miembros valen ${c}.`,
+       row:[T,`x = ${x}`],c:280,l:`x = ${x}`}];
+    return{T,end:` → x = ${x}`,rs:5,S,res:String(x)};
+  }
+};
+
+// Motor común: mismo comportamiento que el archivo de raíces (selector, Otro ejercicio, Auto, flechas, puntitos)
+const $=id=>document.getElementById(id);
+let mode=SPEC.modes[0].id,v=null,step=0,timer=null,M=null;
+const mdef=()=>SPEC.modes.find(m=>m.id===mode);
+function render(){
+  M=SPEC.build(mode,v);
+  window.__M=M;window.__v=v;window.__mode=mode;
+  const S=M.S,T_=S.length;
+  if(step>T_-1)step=T_-1;
+  $("note").innerHTML=S[step].h;
+  const cell=(k,c,t)=>step>=k?`<div class="d ${step===k?"on":""}" style="--c:${c}">${t}</div>`:`<div class="d ph"></div>`;
+  let g=`<div class="big">${M.T}${step>=M.rs?M.end:""}</div><div class="tbl"><div class="h">cuenta</div><div class="h">resultado</div>`;
+  S.forEach((o,k)=>{if(o.row)g+=cell(k,o.c,o.row[0])+cell(k,o.c,o.row[1]);});
+  g+=`</div>`;
+  const lines=S.map((o,k)=>step>=k&&o.l?`<div class="l ${k===T_-1?"res":(k===step?"cur":"")}">${o.l}</div>`:"").join("");
+  $("work").innerHTML=g+`<div class="lines">${lines}</div>`;
+  $("prev").disabled=step===0;$("next").disabled=step===T_-1;
+  $("again").classList.toggle("show",$("next").disabled);
+  $("dots").innerHTML=Array.from({length:T_},(_,k)=>`<i class="${k===step?"a":""}"></i>`).join("");
+}
+function readRaw(){const o={};SPEC.inputs.forEach(i=>o[i.id]=$("in_"+i.id).value);return o;}
+function setVals(raw){
+  v=SPEC.norm(mode,raw);
+  SPEC.inputs.forEach(i=>$("in_"+i.id).value=v[i.id]);
+  step=0;stop();render();
+}
+function setMode(m){mode=m;$("left").innerHTML=mdef().left;setVals(mdef().def);}
+function go(d){const T_=M.S.length;step=Math.max(0,Math.min(T_-1,step+d));render();if(step===T_-1)stop();}
+function stop(){if(timer){clearInterval(timer);timer=null;}$("auto").textContent="Auto";}
+$("next").onclick=()=>{stop();go(1)};
+$("prev").onclick=()=>{stop();go(-1)};
+$("rnd").onclick=()=>setVals(SPEC.rand(mode,v));
+$("rnd2").onclick=()=>$("rnd").click();
+if($("mode")){
+  $("mode").onchange=e=>setMode(e.target.value);
+  $("mode").addEventListener("change",()=>$("mode").parentNode.classList.add("seen"));
+}
+$("auto").onclick=()=>{
+  if(timer){stop();return;}
+  if(step===M.S.length-1){step=0;render();}
+  $("auto").textContent="Pausa";timer=setInterval(()=>go(1),3200);
+};
+SPEC.inputs.forEach(i=>{
+  const el=$("in_"+i.id);
+  el.addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"");});
+  el.addEventListener("change",()=>setVals(readRaw()));
+});
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT")return;
+  if(e.key==="ArrowRight"){stop();go(1)}
+  if(e.key==="ArrowLeft"){stop();go(-1)}
+});
+setMode(SPEC.modes[0].id);
+
+</script>
+</body>
+</html>

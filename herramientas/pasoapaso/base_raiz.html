@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raíz cuadrada y raíz cúbica exactas – Wave Academy’s</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+/* ===== PALETA WAVE ACADEMY'S (cambiar solo acá) ===== */
+:root{
+  --top:#0b7a80; --bg:#d6efe8; --card:#ffffff; --scene:#f1faf7;
+  --ink:#1d2f2d; --muted:#4f6c68; --line:#0a5c61; --hint:#0b7a80;
+  --accent:#0b7a80; --accentInk:#ffffff; --note:#fff5da; --noteB:#e9a62b;
+  --border:#b7dcd3; --cellL:88%; --hl:#ffffff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+    --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+    --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+    --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --top:#073b3e; --bg:#0a1a1b; --card:#112a2b; --scene:#0e2425;
+  --ink:#e4f2ef; --muted:#9bbdb8; --line:#7fe3d8; --hint:#7fe3d8;
+  --accent:#2aa9a1; --accentInk:#04201f; --note:#2f2a17; --noteB:#c98f1f;
+  --border:#25504f; --cellL:24%; --hl:#1c3d3d; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito","Trebuchet MS","Segoe UI",system-ui,sans-serif;line-height:1.5}
+.top{background:var(--top);color:#fff;padding:14px 20px}
+.top .in{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.brand{font-weight:800;letter-spacing:.06em}
+.tag{opacity:.85;font-weight:700}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 16px 32px}
+h1{font-size:clamp(1.4rem,3.2vw,2rem);margin:0 0 2px;font-weight:800}
+.sub{margin:0 0 16px;color:var(--muted);font-weight:700}
+.card{background:var(--card);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);overflow:hidden;box-shadow:0 6px 24px rgba(8,70,72,.12)}
+.left{padding:22px 24px}
+.left p{margin:0 0 12px;max-width:52ch}
+.scene{background:var(--scene);display:flex;flex-direction:column;min-width:0}
+.note{background:var(--note);border-bottom:3px solid var(--noteB);padding:12px 18px;min-height:6.5em}
+.note b{color:var(--hint)}
+.ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border);font-size:.85rem}
+.ctrl label{color:var(--muted);font-weight:700}
+select,input{font:inherit;padding:3px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--ink)}
+input.n{width:4.6em;text-align:center;padding:3px 4px}
+.sp{flex:1}
+.nav{display:flex;gap:8px;align-items:center}
+.nav button{width:36px;height:36px;border-radius:50%;border:0;background:var(--accent);color:var(--accentInk);font-size:1rem;cursor:pointer}
+.nav button:disabled{opacity:.35;cursor:default}
+.nav button:focus-visible,.txt:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hint);outline-offset:2px}
+.txt{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:4px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.work{padding:16px;min-height:340px;color:var(--line)}
+sup{font-size:.6em}select{max-width:100%}.d{font-size:clamp(1rem,3vw,1.35rem)}.big{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:.04em;margin:0 0 12px}
+.tbl{display:grid;gap:4px;margin-bottom:14px;overflow-x:auto;grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.h,.d{border-radius:8px;text-align:center;background:hsl(var(--c) 55% var(--cellL))}
+.h{padding:5px 2px;font-size:.95rem;font-weight:800;color:var(--ink);animation:in .4s both}
+.d{font-size:clamp(1.1rem,3.6vw,1.6rem);padding:6px 4px;min-height:2.3em;color:var(--line);font-weight:800;border:2px solid transparent;display:flex;align-items:center;justify-content:center;animation:drop .45s both}
+.d.on{border-color:var(--line);box-shadow:0 0 0 3px var(--hl) inset}
+.d.ph{background:transparent;border:2px dashed var(--border);animation:none}
+.lines{font-size:1.1rem;font-weight:700;display:flex;flex-direction:column;gap:3px}
+.lines .l{animation:in .35s both}
+.lines .cur{color:var(--hint)}
+.res{font-weight:800}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.dots{display:flex;gap:5px;justify-content:center;padding:8px 0 14px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.dots i.a{background:var(--accent)}
+@media (max-width:760px){.card{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#rnd,#again button{background:var(--accent);color:var(--accentInk);border-color:var(--accent)}
+#rnd{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(42,169,161,.7)}70%{box-shadow:0 0 0 10px rgba(42,169,161,0)}100%{box-shadow:0 0 0 0 rgba(42,169,161,0)}}
+#again{display:none;margin:0 16px 14px;padding:10px 14px;border-radius:14px;background:var(--note);border:2px dashed var(--noteB);align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700}
+#again.show{display:flex;animation:in .4s both}
+.pick{flex-basis:100%;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:14px;background:var(--note);border:2px solid var(--noteB);animation:pulse2 2s infinite}
+.pick label{color:var(--ink);font-weight:800;font-size:.95rem}
+.pick select{flex:1;min-width:0;font-weight:800;border:2px solid var(--noteB);padding:5px 8px}
+.pick.seen{animation:none}
+@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(233,166,43,.65)}70%{box-shadow:0 0 0 10px rgba(233,166,43,0)}100%{box-shadow:0 0 0 0 rgba(233,166,43,0)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><span class="brand">WAVE ACADEMY’S</span><span class="tag">Matemática</span></div></header>
+<div class="wrap">
+  <h1>Raíz cuadrada y raíz cúbica exactas</h1>
+  <p class="sub">La raíz deshace la potencia: calculamos, estimamos y descomponemos números grandes</p>
+  <div class="card">
+    <div class="left" id="left"></div>
+    <div class="scene" aria-live="polite">
+      <div class="note" id="note"></div>
+      <div class="ctrl">
+        <span class="pick"><label for="mode">👆 Elegí el tema:</label> <select id="mode" aria-label="Tema">
+          <option value="sq">Raíz cuadrada exacta</option>
+          <option value="cu">Raíz cúbica exacta</option>
+          <option value="es">Estimar una raíz cuadrada no exacta</option>
+          <option value="ec">Estimar una raíz cúbica no exacta</option>
+          <option value="ds">Raíz cuadrada de un número grande (descomposición)</option>
+          <option value="dc">Raíz cúbica de un número grande (descomposición)</option></select></span>
+        <span><label for="x">Número</label> <input class="n" id="x" inputmode="numeric" maxlength="7" style="width:6.5em" aria-label="Número"></span>
+        <button class="txt" id="rnd" type="button">🔄 Otro ejercicio</button>
+        <span class="sp"></span>
+        <button class="txt" id="auto" type="button">Auto</button>
+        <div class="nav">
+          <button id="prev" type="button" aria-label="Paso anterior">◀</button>
+          <button id="next" type="button" aria-label="Paso siguiente">▶</button>
+        </div>
+      </div>
+      <div class="work" id="work"></div>
+      <div id="again"><span>¡Terminaste este ejercicio! Probá con otro para practicar.</span><button class="txt" id="rnd2" type="button">🔄 Probar otro ejercicio</button></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T_=6;
+const D={sq:1764,cu:17576,es:50,ec:30,ds:7056,dc:3375};
+const LEFT={
+sq:`<p><b>Raíz cuadrada:</b> es la operación inversa de elevar al cuadrado. √N es el número que, multiplicado por sí mismo, da N.</p><p>Ejemplo: √49 = 7, porque 7 × 7 = 49.</p><p><b>Ojo:</b> √36 no es 18 (no se divide por 2) y √(9 + 16) no es √9 + √16.</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`,
+cu:`<p><b>Raíz cúbica:</b> es la operación inversa de elevar al cubo. ∛N es el número que, multiplicado <b>tres veces</b> por sí mismo, da N.</p><p>Ejemplo: ∛27 = 3, porque 3 × 3 × 3 = 27.</p><p><b>Ojo:</b> ∛27 no es 9 (no se divide por 3).</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`,
+es:`<p><b>Estimar una raíz cuadrada:</b> si el número no es un cuadrado perfecto, su raíz no da exacta, pero siempre está <b>entre dos naturales consecutivos</b>.</p><p>Ejemplo: √50 está entre 7 y 8, porque 7² = 49 y 8² = 64.</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`,
+ec:`<p><b>Estimar una raíz cúbica:</b> si el número no es un cubo perfecto, su raíz no da exacta, pero siempre está <b>entre dos naturales consecutivos</b>.</p><p>Ejemplo: ∛30 está entre 3 y 4, porque 3³ = 27 y 4³ = 64.</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`,
+ds:`<p><b>Raíz cuadrada de un número grande:</b> lo descomponemos en <b>factores primos</b> y, como la raíz deshace el cuadrado, le sacamos la mitad a cada exponente.</p><p>Ejemplo: 1.764 = 2² × 3² × 7², entonces √1.764 = 2 × 3 × 7 = 42.</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`,
+dc:`<p><b>Raíz cúbica de un número grande:</b> lo descomponemos en <b>factores primos</b> y, como la raíz deshace el cubo, dividimos cada exponente entre 3.</p><p>Ejemplo: 3.375 = 3³ × 5³, entonces ∛3.375 = 3 × 5 = 15.</p><p>Tocá el botón siguiente para avanzar, o escribí tu propio número.</p>`};
+let mode="sq",v={x:1764,adj:null},step=0,timer=null;
+const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+const pw=(a,e)=>{let r=1;for(let i=0;i<e;i++)r*=a;return r;};
+const pot=(a,e)=>e>1?`${fmt(a)}<sup>${e}</sup>`:fmt(a);
+const idxOf=m=>(m==="sq"||m==="es"||m==="ds")?2:3;
+const rootOf=(n,idx)=>Math.round(idx===2?Math.sqrt(n):Math.cbrt(n));
+const isPerf=(n,idx)=>pw(rootOf(n,idx),idx)===n;
+function factor(n){const f=[];let p=2;while(p*p<=n){let e=0;while(n%p===0){n/=p;e++;}if(e)f.push([p,e]);p++;}if(n>1)f.push([n,1]);return f;}
+function build(){
+  const N=v.x,idx=idxOf(mode),sym=idx===2?"√":"∛",sup=idx===2?"²":"³",nom=idx===2?"cuadrada":"cúbica",pf=idx===2?"cuadrado":"cubo";
+  const T=`${sym}${fmt(N)}`;let S,end,rs;
+  const mult=(r)=>Array(idx).fill(r).join(" × ");
+  const adjEx=v.adj?` <i>(${fmt(v.adj)} no tiene raíz ${nom} exacta, así que usamos el número más cercano que sí la tiene. Las que no dan exactas se estiman en «Estimar».)</i>`:"";
+  if(mode==="sq"||mode==="cu"){
+    const r=rootOf(N,idx),lo=Math.floor(r/10)*10,hi=lo+10,u=N%10;
+    const ds=[];for(let d=0;d<10;d++)if(pw(d,idx)%10===u)ds.push(d);
+    const cands=ds.map(d=>lo+d).filter(c=>c>=1);
+    const probs=cands.map(c=>`${c}${sup} = ${mult(c)} = ${fmt(pw(c,idx))}`).join("; ");
+    const probsShort=cands.map(c=>`${c}${sup} = ${fmt(pw(c,idx))}`).join(" · ");
+    end=` = ${r}`;rs=4;
+    S=[
+    {h:`Vamos a calcular <b>${T}</b>. La raíz ${nom} es la operación inversa de elevar al ${pf}: busca el número que, ${idx===2?"multiplicado por sí mismo":"multiplicado tres veces por sí mismo"}, da ${fmt(N)}.${adjEx}`},
+    {h:`Primero buscamos entre qué decenas está, con la tabla de ${pf}s perfectos: ${lo}${sup} = ${fmt(pw(lo,idx))} y ${hi}${sup} = ${fmt(pw(hi,idx))}. Como ${fmt(N)} está entre esos dos números, la raíz está entre <b>${lo}</b> y <b>${hi}</b>.`,row:[`${lo}${sup} = ${fmt(pw(lo,idx))}`,`${hi}${sup} = ${fmt(pw(hi,idx))}`],c:205,l:`La raíz está entre ${lo} y ${hi}`},
+    {h:`${fmt(N)} termina en ${u}. Un número ${idx===2?"al cuadrado":"al cubo"} termina en ${u} solo si el número termina en ${ds.join(" o en ")}. Entonces, entre ${lo} y ${hi}, ${cands.length>1?"los candidatos son":"el candidato es"}: <b>${cands.join(" o ")}</b>.`,row:[`termina en ${u}`,`candidato${cands.length>1?"s":""}: ${cands.join(" o ")}`],c:35,l:`Última cifra ${u} → ${cands.join(" o ")}`},
+    {h:`Probamos: ${probs}. ¡<b>${r}${sup}</b> da justo ${fmt(N)}!`,row:[probsShort,`${r} ✓`],c:50,l:`${r}${sup} = ${fmt(N)}`},
+    {h:`Entonces <b>${T} = ${r}</b>.`,row:[T,String(r)],c:160,l:`${T} = ${r}`},
+    {h:`¡Listo! <b>${T} = ${r}</b>. Comprobación con la operación inversa: ${mult(r)} = ${fmt(N)}, el número del principio.`,row:[mult(r),fmt(N)],c:280,l:`${T} = ${r}`}];
+    return{T,end,rs,S,N,idx,r};
+  }
+  if(mode==="es"||mode==="ec"){
+    let a=1;while(pw(a+1,idx)<=N)a++;
+    const lo=pw(a,idx),hi=pw(a+1,idx),root=idx===2?Math.sqrt(N):Math.cbrt(N),cerca=(root-a)<0.5?a:a+1;
+    const adjEs=v.adj?` <i>(${fmt(v.adj)} ya tiene raíz ${nom} exacta, así que usamos ${fmt(N)} para practicar la estimación.)</i>`:"";
+    end=` está entre ${a} y ${a+1}`;rs=5;
+    S=[
+    {h:`Vamos a estimar <b>${T}</b>. Si ${fmt(N)} no es un ${pf} perfecto, la raíz no da exacta, pero podemos decir entre qué dos naturales consecutivos está.${adjEs}`},
+    {h:`Buscamos el mayor ${pf} perfecto que no se pasa de ${fmt(N)}: ${a}${sup} = ${mult(a)} = <b>${fmt(lo)}</b>.`,row:[`${a}${sup} = ${fmt(lo)}`,`menor que ${fmt(N)}`],c:205,l:`${a}${sup} = ${fmt(lo)}`},
+    {h:`El siguiente ${pf} perfecto es ${a+1}${sup} = ${mult(a+1)} = <b>${fmt(hi)}</b>, que ya se pasa de ${fmt(N)}.`,row:[`${a+1}${sup} = ${fmt(hi)}`,`mayor que ${fmt(N)}`],c:35,l:`${a+1}${sup} = ${fmt(hi)}`},
+    {h:`Entonces ${fmt(N)} está entre dos ${pf}s perfectos consecutivos: <b>${fmt(lo)} < ${fmt(N)} < ${fmt(hi)}</b>.`,row:[`${fmt(lo)} < ${fmt(N)} < ${fmt(hi)}`,`entre dos ${pf}s perfectos`],c:50,l:`${fmt(lo)} < ${fmt(N)} < ${fmt(hi)}`},
+    {h:`La raíz es la operación inversa de la potencia: ${sym}${fmt(lo)} = ${a} y ${sym}${fmt(hi)} = ${a+1}. Por lo tanto <b>${a} < ${T} < ${a+1}</b>.`,row:[`${sym}${fmt(lo)} y ${sym}${fmt(hi)}`,`${a} y ${a+1}`],c:160,l:`${a} < ${T} < ${a+1}`},
+    {h:`¡Listo! <b>${T} está entre ${a} y ${a+1}</b>, un poco más cerca de ${cerca}. No es exacta, por eso la ubicamos entre dos naturales consecutivos. Comprobación: ${a}${sup} = ${fmt(lo)} es menor que ${fmt(N)} y ${a+1}${sup} = ${fmt(hi)} es mayor.`,row:[T,`entre ${a} y ${a+1}`],c:280,l:`${T} está entre ${a} y ${a+1}`}];
+    return{T,end,rs,S,N,idx,a};
+  }
+  const r=rootOf(N,idx),f=factor(N),flat=f.flatMap(([p,e])=>Array(e).fill(fmt(p))).join(" · "),powers=f.map(([p,e])=>pot(p,e)).join(" × ");
+  const parts=f.map(([p,e])=>pot(p,e/idx)).join(" × "),vals=f.map(([p,e])=>fmt(pw(p,e/idx))).join(" × "),exps=f.map(([p,e])=>e).join(", ");
+  end=` = ${r}`;rs=5;
+  S=[
+  {h:`Vamos a calcular <b>${T}</b>. ${fmt(N)} es grande, así que lo <b>descomponemos en factores primos</b> y usamos que la raíz ${nom} deshace el ${pf}.${adjEx}`},
+  {h:`Dividimos ${fmt(N)} entre los primos más chicos (2, 3, 5, 7…) mientras se pueda, hasta llegar a 1. Los primos que usamos son: <b>${flat}</b>.`,row:[`${fmt(N)} ÷ primos`,flat],c:205,l:`Primos: ${flat}`},
+  {h:`Juntamos los iguales con potencias: ${fmt(N)} = <b>${powers}</b>. Los exponentes (${exps}) son todos múltiplos de ${idx}: por eso la raíz es exacta.`,row:[`${fmt(N)} =`,powers],c:35,l:`${fmt(N)} = ${powers}`},
+  {h:`La raíz ${nom} deshace el ${pf}, así que a cada exponente lo dividimos entre ${idx}: ${f.map(([p,e])=>`${sym}(${pot(p,e)}) = ${pot(p,e/idx)}`).join("; ")}.`,row:[`${sym}(${powers})`,parts],c:50,l:`${T} = ${parts}`},
+  {h:`Calculamos y multiplicamos lo que salió de cada raíz: ${vals} = <b>${fmt(r)}</b>.`,row:[vals,fmt(r)],c:160,l:`${vals} = ${fmt(r)}`},
+  {h:`¡Listo! <b>${T} = ${fmt(r)}</b>. Comprobación con la operación inversa: ${mult(fmt(r))} = ${fmt(N)}, el número del principio.`,row:[mult(fmt(r)),fmt(N)],c:280,l:`${T} = ${fmt(r)}`}];
+  return{T,end:` = ${fmt(r)}`,rs,S,N,idx,r,f};
+}
+function render(){
+  const M=build(),S=M.S;
+  $("note").innerHTML=S[step].h;
+  const cell=(k,c,t)=>step>=k?`<div class="d ${step===k?"on":""}" style="--c:${c}">${t}</div>`:`<div class="d ph"></div>`;
+  let g=`<div class="big">${M.T}${step>=M.rs?M.end:""}</div><div class="tbl"><div class="h">cuenta</div><div class="h">resultado</div>`;
+  S.forEach((o,k)=>{if(o.row)g+=cell(k,o.c,o.row[0])+cell(k,o.c,o.row[1]);});
+  g+=`</div>`;
+  const lines=S.map((o,k)=>step>=k&&o.l?`<div class="l ${k===T_-1?"res":(k===step?"cur":"")}">${o.l}</div>`:"").join("");
+  $("work").innerHTML=g+`<div class="lines">${lines}</div>`;
+  $("prev").disabled=step===0;$("next").disabled=step===T_-1;
+  $("again").classList.toggle("show",$("next").disabled);
+  $("dots").innerHTML=Array.from({length:T_},(_,k)=>`<i class="${k===step?"a":""}"></i>`).join("");
+}
+function clamp(x,min,max){x=parseInt(String(x).replace(/\D/g,""),10);return isNaN(x)?min:Math.max(min,Math.min(max,x));}
+function norm(x){
+  const idx=idxOf(mode);
+  if(mode==="es"||mode==="ec"){const n=clamp(x,2,mode==="es"?99999:999999);return isPerf(n,idx)?{x:n+1,adj:n}:{x:n,adj:null};}
+  const n=clamp(x,idx===2?4:8,(mode==="sq"?10000:mode==="cu"?1000000:mode==="ds"?99999:999999));
+  const r=Math.max(2,rootOf(n,idx)),s=pw(r,idx);return{x:s,adj:s!==n?n:null};
+}
+function setVals(x){v=norm(x);$("x").value=v.x;step=0;stop();render();}
+function setMode(m){mode=m;$("left").innerHTML=LEFT[m];setVals(D[m]);}
+function R_(a,b){return a+Math.floor(Math.random()*(b-a+1));}
+function rand(){
+  let n;const idx=idxOf(mode);
+  do{
+    if(mode==="sq")n=pw(R_(3,40),2);
+    else if(mode==="cu")n=pw(R_(2,30),3);
+    else if(mode==="es"){do{n=R_(10,999);}while(isPerf(n,2));}
+    else if(mode==="ec"){do{n=R_(20,5000);}while(isPerf(n,3));}
+    else if(mode==="ds")n=pw(R_(11,99),2);
+    else n=pw(R_(6,60),3);
+  }while(n===v.x);
+  return n;
+}
+function go(d){step=Math.max(0,Math.min(T_-1,step+d));render();if(step===T_-1)stop();}
+function stop(){if(timer){clearInterval(timer);timer=null;}$("auto").textContent="Auto";}
+$("next").onclick=()=>{stop();go(1)};
+$("prev").onclick=()=>{stop();go(-1)};
+$("rnd").onclick=()=>setVals(rand());
+$("rnd2").onclick=()=>$("rnd").click();
+$("mode").onchange=e=>setMode(e.target.value);
+$("mode").addEventListener("change",()=>$("mode").parentNode.classList.add("seen"));
+$("auto").onclick=()=>{if(timer){stop();return;}if(step===T_-1){step=0;render();}$("auto").textContent="Pausa";timer=setInterval(()=>go(1),3200);};
+$("x").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"");});
+$("x").addEventListener("change",()=>setVals($("x").value));
+document.addEventListener("keydown",e=>{if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT")return;if(e.key==="ArrowRight"){stop();go(1)}if(e.key==="ArrowLeft"){stop();go(-1)}});
+setMode("sq");
+</script>
+</body>
+</html>
