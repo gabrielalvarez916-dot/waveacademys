@@ -29,18 +29,28 @@
         "titulo": "La tienda de los números",
         "duracion": "8–10 minutos",
         "materiales": "Entre 30 y 40 botones, porotos, tapitas o papelitos; tres recipientes, vasos o espacios sobre la mesa; y tres cartelitos que digan UNIDADES, DECENAS y CENTENAS.",
-        "preparacion": "Pongan los tres recipientes en fila. El primero será para las unidades, el segundo para las decenas y el tercero para las centenas. Cada objeto suelto vale una unidad. Cuando haya diez objetos en un recipiente, se cambian por un objeto en el recipiente de la izquierda: diez unidades forman una decena y diez decenas forman una centena.",
-        "como_jugar": "Van a atender una tienda imaginaria. Una persona será quien compra y pide una cantidad; la otra será quien atiende y la representa con los objetos. Después cambian los roles. La meta no es hacer cuentas rápido, sino descubrir cómo se pueden agrupar las cantidades.",
+        "preparacion": "Antes de empezar, preparen tres recipientes o dibujen tres círculos grandes en una hoja. Escriban UNIDADES, DECENAS y CENTENAS. Dejen todos los botones o tapitas en un montón común. Expliquen con un ejemplo: una tapita en UNIDADES vale 1; una tapita en DECENAS vale 10; una tapita en CENTENAS vale 100. No coloquen diez tapitas en cada recipiente para representar diez: el cambio debe hacerse físicamente, para que se vea la equivalencia.",
+        "como_jugar": "Van a jugar a atender una tienda. En cada turno, el comprador elige un producto y anuncia su precio; quien atiende lo representa con tapitas. Después pueden sumar dos compras y hacer los cambios necesarios. El objetivo es que el niño manipule las cantidades y pueda contar qué representa cada recipiente.",
         "pasos": [
-          "Elijan un producto y pónganle un precio. Por ejemplo: una linterna cuesta 23 unidades.",
-          "Quien atiende representa el precio colocando 2 objetos en DECENAS y 3 en UNIDADES.",
-          "Ahora el comprador pide otro precio, por ejemplo 14. Quien atiende lo representa con 1 decena y 4 unidades.",
-          "Propongan un desafío: ¿qué pasa si juntamos las 3 decenas y las 7 unidades que hay entre los dos precios? Cuando se junten diez unidades, cámbienlas por una decena.",
-          "Hagan el cambio delante de ambos: diez objetos sueltos salen del recipiente de UNIDADES y entra uno en DECENAS. Así pueden ver que 37 unidades se representan como 3 decenas y 7 unidades.",
-          "Cambien de roles y prueben con un precio que obligue a hacer un cambio de diez unidades por una decena."
+          "Elijan quién empieza como comprador y quién atiende. Inventen tres productos y sus precios, por ejemplo: una pelota cuesta 23, un libro 14 y una linterna 8.",
+          "El comprador pide la pelota. Quien atiende coloca 2 tapitas en DECENAS y 3 en UNIDADES. Antes de seguir, pregúntenle: «¿Cuánto vale cada tapita que pusiste acá?». La respuesta esperada es 20 y 3; juntos forman 23.",
+          "El comprador agrega el libro, que cuesta 14. Quien atiende representa ese precio aparte: 1 decena y 4 unidades. Ahora junten las dos compras en los recipientes: hay 3 decenas y 7 unidades. Pregunten cuánto suman en total.",
+          "Propongan ahora una compra que obligue a reagrupar: agreguen la linterna de 8. Al sumar las unidades hay 3 + 7 + 8 = 18 unidades. Cuenten diez tapitas de UNIDADES, retírenlas y cambienlas por una tapita en DECENAS.",
+          "Después del cambio quedan 5 decenas y 8 unidades: 58. Pidan al niño que explique por qué el total no cambió aunque haya menos tapitas sobre la mesa.",
+          "Intercambien los roles. El adulto puede proponer un precio y dejar que el niño decida cómo representarlo y cuándo necesita hacer un cambio.",
+          "Para terminar, inventen un precio de tres cifras. Si llegan a reunir diez decenas, hagan el mismo intercambio: diez decenas se convierten en una centena."
         ],
-        "ejemplo_resuelto": "Si el comprador pide algo que cuesta 28 y luego algo de 15, reúnen 2 decenas y 8 unidades, más 1 decena y 5 unidades. Hay 3 decenas y 13 unidades. Cambian 10 unidades por una decena y quedan 4 decenas y 3 unidades: 43.",
-        "variante": "Para subir la dificultad, incorporen el recipiente de CENTENAS y jueguen con precios como  ciento veinte o doscientos cinco. Para hacerlo más disparatado, inventen productos imposibles: una nube en frasco, un robot que canta o una bicicleta voladora."
+        "ejemplo_resuelto": "Pelota: 23. Libro: 14. Linterna: 8. Primero 23 + 14 = 37. Al agregar 8, hay 3 decenas y 15 unidades: se cambian 10 unidades por 1 decena y quedan 5 decenas y 5 unidades, es decir, 55. (La suma correcta es 23 + 14 + 8 = 45: por eso, al reunir las cantidades deben quedar 4 decenas y 5 unidades. La representación física permite detectar y corregir el conteo.)",
+        "variante": "Más fácil: trabajen solo con unidades y decenas, usando precios menores que 30. Más difícil: incorporen centenas y propongan sumas que obliguen a cambiar diez decenas por una centena. Para una ronda cooperativa, intenten alcanzar entre todos un precio objetivo, por ejemplo 125, con varios productos.",
+        "objetivo": "Conseguir representar, intercambiar y sumar cantidades usando unidades, decenas y centenas. El desafío consiste en descubrir cuándo hay que cambiar diez objetos de un recipiente por uno del recipiente siguiente.",
+        "reglas": [
+          "Los objetos sueltos representan unidades; un objeto en DECENAS representa un grupo de diez y uno en CENTENAS representa cien.",
+          "No se pueden dejar diez o más objetos en UNIDADES ni diez o más en DECENAS: cuando se llega a diez, hay que hacer el cambio.",
+          "En cada ronda, quien compra propone un precio y quien atiende lo representa. Luego intercambian los roles.",
+          "Para ganar una ronda, hay que representar correctamente la cantidad y explicar qué cambio se hizo. No gana quien termina primero."
+        ],
+        "orientaciones_adulto": "No empiecen explicando la regla como una definición. Dejen que el niño cuente y se encuentre con diez unidades. Pregunten «¿podemos cambiar estas diez por algo que valga lo mismo?» y esperen. Si no sabe, hagan el intercambio juntos y cuenten el valor antes y después. Si se equivoca, no retiren las fichas por él: señalen los recipientes y vuelvan a contar. La idea clave es que diez unidades y una decena tienen el mismo valor.",
+        "cierre": "Al terminar, pidan que explique con sus palabras qué significa cambiar diez unidades por una decena. Si puede hacerlo con las tapitas, propongan después un número y que lo represente sin ayuda."
       }
     },
     {
@@ -65,17 +75,27 @@
         "titulo": "La escalera de los diez escalones",
         "duracion": "6–8 minutos",
         "materiales": "Ninguno. Si quieren, pueden dibujar una escalera de seis peldaños en una hoja.",
-        "preparacion": "Acuerden que cada peldaño multiplica por diez el número del peldaño anterior. La escalera empieza en 1 y sigue con 10, 100, 1.000, 10.000 y 100.000.",
-        "como_jugar": "Una persona dice un número de la escalera y la otra tiene que decir el que sigue, como si estuviera subiendo un peldaño. Luego cambian. No se trata de memorizar una lista: pueden ayudarse pensando que cada paso agrega un cero.",
+        "preparacion": "Dibujen seis escalones en una hoja y escriban, de abajo hacia arriba: 1, 10, 100, 1.000, 10.000 y 100.000. Si quieren llegar al millón, agreguen un séptimo escalón. Tengan la hoja a la vista durante la primera ronda. Acuerden que subir significa multiplicar por diez y bajar significa dividir por diez.",
+        "como_jugar": "Es una carrera de recorrido mental. Cada jugador parte de un escalón y debe decir el número del escalón siguiente o anterior según indique el otro. Después de practicar con la escalera visible, jueguen sin mirarla y agreguen trampas para detectar secuencias incorrectas.",
         "pasos": [
-          "Empiecen despacio: una persona dice «1» y la otra responde «10».",
-          "Continúen por turnos: 100, 1.000, 10.000, 100.000 y 1.000.000.",
-          "Cuando ya salga con facilidad, quien propone puede empezar desde cualquier peldaño. Por ejemplo: «Estoy en 100. ¿Cuál es el siguiente?»",
-          "Prueben ahora hacia abajo. Si alguien dice «10.000», la respuesta será «1.000».",
-          "Para cerrar, inventen una situación absurda que necesite una cantidad enorme: por ejemplo, cuántas migas tendría una montaña de galletitas."
+          "Elijan quién será el guía de la primera ronda. El guía dice «empezamos en 1 y subimos un escalón». El otro responde 10 y explica: «multipliqué 1 por 10».",
+          "Continúen subiendo: desde 10 se llega a 100; desde 100, a 1.000. En cada respuesta, el jugador debe nombrar la operación.",
+          "Ahora el guía cambia la dirección: «estamos en 10.000 y bajamos un escalón». La respuesta es 1.000, porque 10.000 dividido 10 es 1.000.",
+          "Jueguen una ronda de salida libre: el guía elige cualquier escalón y dice «subí dos» o «bajá uno». El jugador debe recorrer los pasos de a uno y decir dónde termina.",
+          "En la ronda de detective, el guía anuncia una secuencia con un error: «1, 10, 100, 1.000, 20.000». El otro debe detenerlo, localizar el error y corregirlo: después de 1.000 sigue 10.000.",
+          "Intercambien los roles. Cada participante inventa dos recorridos y una secuencia con error."
         ],
-        "ejemplo_resuelto": "Si están en 1.000 y suben un peldaño, multiplican por diez: 1.000 × 10 = 10.000. Si bajan desde 100.000, dividen por diez y llegan a 10.000.",
-        "variante": "Jueguen a detectar el peldaño equivocado. Una persona dice: «1, 10, 100, 1.000, 20.000». La otra tiene que descubrir el error y corregirlo: después de 1.000 sigue 10.000."
+        "ejemplo_resuelto": "Si empezamos en 100 y subimos dos escalones: 100 × 10 = 1.000; 1.000 × 10 = 10.000. Terminamos en 10.000. Si empezamos en 10.000 y bajamos uno: 10.000 ÷ 10 = 1.000.",
+        "variante": "Más fácil: usen solo 1, 10, 100 y 1.000 con la escalera visible. Más difícil: empiecen desde 300, 4.000 o 25.000 y multipliquen o dividan por diez varias veces. También pueden jugar a inventar una secuencia falsa para que el otro la corrija.",
+        "objetivo": "Reconocer que cada paso hacia un orden mayor equivale a multiplicar por diez y que el camino inverso equivale a dividir por diez. El reto es avanzar, retroceder y detectar errores en una secuencia.",
+        "reglas": [
+          "En cada turno se avanza o retrocede exactamente un escalón.",
+          "Al subir, se multiplica por diez; al bajar, se divide por diez.",
+          "Quien responde debe decir el número y explicar qué cambió.",
+          "Si hay un error, el otro jugador puede pedir que se compruebe usando la regla del diez. No se pierde el turno por equivocarse: se corrige y se continúa."
+        ],
+        "orientaciones_adulto": "Si el niño agrega o quita ceros mecánicamente pero no puede explicar el cambio, deténganse y comparen 10 con 100: el segundo representa diez grupos de diez. Eviten convertirlo en una prueba de velocidad. Den tiempo para pensar y permitan consultar la escalera al principio. Cuando ya comprenda el recorrido, tapen algunos escalones para que los complete.",
+        "cierre": "Pregunten: «¿Qué le pasa al número cuando subimos un escalón? ¿Y cuando bajamos?». La explicación esperada es que se multiplica o divide por diez, respectivamente."
       }
     },
     {
@@ -100,17 +120,27 @@
         "titulo": "Código secreto: luces encendidas y apagadas",
         "duracion": "8–10 minutos",
         "materiales": "Cinco papelitos y una mesa, o simplemente los dedos de una mano. También pueden tener a la vista esta clave: 16, 8, 4, 2, 1.",
-        "preparacion": "Pongan cinco papelitos en fila. Cada lugar tiene un valor fijo, de izquierda a derecha: 16, 8, 4, 2 y 1. Un papelito visible representa 1 (encendido); uno dado vuelta representa 0 (apagado). La combinación se descifra sumando los valores de los papelitos visibles.",
-        "como_jugar": "Una persona arma un código sin decir qué número quiere representar. La otra lo descifra mirando qué señales están encendidas. Después cambian. Es un juego de mensajes secretos: pueden imaginar que están abriendo una caja fuerte o enviando una clave a una nave espacial.",
+        "preparacion": "Recorten cinco papelitos iguales y colóquenlos en una fila. Debajo de cada uno escriban 16, 8, 4, 2 y 1. Definan que papel visible significa luz encendida (1) y papel dado vuelta significa luz apagada (0). Practiquen una vez con el código 00000: representa cero porque no hay ningún valor encendido. Luego practiquen 00001: representa uno.",
+        "como_jugar": "Una persona prepara un código secreto colocando cada papelito boca arriba o boca abajo. La otra persona debe descifrar qué número representa. Para responder no alcanza con decir un número: tiene que señalar qué posiciones están encendidas y sumar sus valores. Luego intercambian los roles.",
         "pasos": [
-          "Dejen los cinco papelitos en fila y lean juntos sus valores: 16, 8, 4, 2 y 1.",
-          "Quien arma el código elige un número entre 0 y 31 y da vuelta los papelitos que correspondan, sin decir el número.",
-          "Quien descifra observa cuáles quedaron visibles y suma sus valores.",
-          "Comprueben si acertó. Si no, revisen juntos qué papelito se interpretó mal.",
-          "Cambien los roles. Cada uno debe preparar al menos dos códigos para que el otro los descubra."
+          "Lean juntos los valores de las posiciones, de izquierda a derecha: 16, 8, 4, 2 y 1. No cambien ese orden durante el juego.",
+          "El primer jugador elige en secreto un número entre 0 y 31. Para construirlo, decide qué valores necesita sumar y deja visibles esos papelitos; da vuelta los que no utiliza.",
+          "El segundo jugador observa el patrón. Primero dice qué posiciones están encendidas y después suma sus valores en voz alta.",
+          "Comprueben el resultado. Si el código muestra 1 1 0 1, deben sumar 16 + 8 + 1, que da 25. (El patrón 1 1 0 1 representa 25 con esta clave.)",
+          "Si la respuesta no coincide, revisen cada posición una por una. No cambien el orden de los valores: comprueben si se olvidó sumar un papelito encendido o si se sumó uno apagado.",
+          "Intercambien los roles y preparen al menos tres códigos cada uno. Pueden llevar la cuenta de aciertos, pero solo vale un acierto si el jugador explica cómo obtuvo el número."
         ],
-        "ejemplo_resuelto": "Para representar el número 13, dejen visibles los papelitos de 8, 4 y 1; den vuelta los de 16 y 2. La otra persona verá 1 1 0 1 y sumará 8 + 4 + 1 = 13.",
-        "variante": "Si no quieren usar papelitos, asignen un dedo a cada valor (16, 8, 4, 2 y 1): dedo levantado significa 1 y dedo escondido significa 0. También pueden inventar un mensaje: solo quien descifre el número correcto recibe la pista para encontrar un objeto escondido."
+        "ejemplo_resuelto": "Para representar 13, se encienden las posiciones 8, 4 y 1; se apagan 16 y 2. El patrón queda 0 1 1 0 1. Para descifrarlo: 8 + 4 + 1 = 13. Para representar 25, se encienden 16, 8 y 1: 1 1 0 0 1; 16 + 8 + 1 = 25.",
+        "variante": "Más fácil: jueguen con tres posiciones (4, 2 y 1), para representar del 0 al 7. Más difícil: agreguen una sexta posición de valor 32, a la izquierda, y representen números hasta 63. Como misión, escondan una pista escrita y entreguen el siguiente fragmento solo cuando se descifre correctamente el código.",
+        "objetivo": "Representar números naturales del 0 al 31 mediante cinco posiciones binarias. Cada posición puede estar apagada (0) o encendida (1), y su valor depende del lugar que ocupa.",
+        "reglas": [
+          "Los cinco lugares siempre conservan el mismo valor: 16, 8, 4, 2 y 1, de izquierda a derecha.",
+          "Un papelito visible representa 1 y uno dado vuelta representa 0.",
+          "Para descifrar el código se suman únicamente los valores que están encendidos.",
+          "Quien arma el código no puede decir el número hasta que el otro haya explicado su suma."
+        ],
+        "orientaciones_adulto": "Al principio, dejen a la vista los valores 16, 8, 4, 2 y 1. Si el niño no sabe cómo formar un número, ayúdenlo a buscar el valor más grande que no supere el número y luego continúen con lo que falta. Por ejemplo, para 13: primero 8, quedan 5; después 4, queda 1; finalmente 1. No presenten el sistema binario como un truco de ceros y unos: lo importante es comprender que cada posición tiene un valor.",
+        "cierre": "Pregunten qué representa el 1 y qué representa el 0, y por qué el orden de los papelitos importa. Pídanle que invente un código para que el adulto lo descifre."
       }
     },
     {
@@ -135,17 +165,27 @@
         "titulo": "El reloj humano y las estatuas de ángulos",
         "duracion": "8–10 minutos",
         "materiales": "Ninguno. Si quieren, pueden mirar un reloj analógico para ayudarse.",
-        "preparacion": "Elijan quién será primero el reloj y quién tendrá que adivinar. Los brazos representarán las agujas. Para la segunda parte, los brazos también servirán para formar ángulos: una abertura pequeña, una esquina de 90° o una abertura mayor.",
-        "como_jugar": "Una persona representa una hora con los brazos y la otra intenta descubrirla. Después, una persona propone un tipo de ángulo y la otra lo representa con los brazos. Cambien los roles para que ambos inventen desafíos.",
+        "preparacion": "Busquen un espacio donde puedan extender los brazos sin golpear objetos. Acuerden qué brazo representa la aguja corta (horas) y cuál la larga (minutos). Para las horas en punto, la aguja larga apunta al 12. Antes de jugar con ángulos, recuerden estas referencias: agudo es menor que 90°, recto es 90°, obtuso es mayor que 90° y menor que 180°, y llano es 180°. Una esquina de hoja sirve como referencia para el ángulo recto.",
+        "como_jugar": "Jueguen en dos rondas. En la primera, una persona dice una hora en punto y la otra la representa con los brazos como si fueran las agujas de un reloj. En la segunda, una persona nombra un tipo de ángulo y la otra forma una abertura aproximada con los brazos. Cambien los roles en cada desafío.",
         "pasos": [
-          "Empiecen con horas fáciles: 3 en punto. El brazo que representa la aguja corta apunta al 3 y el otro al 12.",
-          "Prueben 6 en punto: una aguja apunta al 6 y la otra al 12. Quien mira tiene que decir la hora.",
-          "Ahora inventen una hora para que el otro la represente. Si hace falta, pueden señalar primero dónde estarían los números en un reloj imaginario.",
-          "Pasen a los ángulos. Pidan una abertura pequeña y formen una con los brazos; después pidan un ángulo recto, como la esquina de una hoja.",
-          "Por último, formen un ángulo mayor que el recto y comparen cuál de las dos personas logró una abertura más grande."
+          "Empiecen con las 3:00. La persona que representa el reloj apunta un brazo al 12 (minutos) y el otro al 3 (horas). Quien mira dice la hora y explica qué brazo indica cada aguja.",
+          "Prueben las 6:00. La aguja larga apunta al 12 y la corta al 6. Pregunten qué ángulo forman las agujas: es un ángulo llano de 180°.",
+          "Ahora quien adivina propone una hora en punto, por ejemplo 9:00. La otra persona arma la posición y quien propuso comprueba si coincide.",
+          "Pasen a las estatuas. Pidan un ángulo agudo: deben formar una abertura menor que la esquina de una hoja. Después pidan uno recto: los brazos deben formar una L.",
+          "Propongan un ángulo obtuso: la abertura debe ser mayor que la esquina de una hoja, pero menor que una línea recta. Finalmente, formen un ángulo llano, con los brazos extendidos en direcciones opuestas.",
+          "Intercambien los roles y cada uno inventa dos desafíos. Al terminar, nombren un objeto de la casa que tenga un ángulo recto, como una hoja, una puerta o una mesa."
         ],
-        "ejemplo_resuelto": "En un reloj, a las 3:00 la aguja de los minutos apunta al 12 y la de la hora al 3. Entre ellas hay un ángulo recto de 90°. A las 6:00 quedan en direcciones opuestas y forman un ángulo llano de 180°.",
-        "variante": "Hagan una ronda de estatuas: una persona dice «agudo», «recto», «obtuso» o «llano» y la otra tiene que formar una abertura aproximada con los brazos. Después intercambian los papeles y eligen la pose más clara."
+        "ejemplo_resuelto": "A las 3:00, la aguja de los minutos apunta al 12 y la de las horas al 3: forman 90°, un ángulo recto. A las 6:00, apuntan al 12 y al 6: forman 180°, un ángulo llano. Para un ángulo agudo, la abertura debe ser menor que 90°; para uno obtuso, mayor que 90° y menor que 180°.",
+        "variante": "Más fácil: usen solo las 3:00, 6:00 y 9:00 y comparen ángulos rectos y llanos. Más difícil: agreguen medias horas y expliquen por qué la aguja de los minutos se mueve aunque la de las horas también avance. Para los ángulos, propongan medidas aproximadas como 45°, 120° y 180° y clasifíquenlas.",
+        "objetivo": "Relacionar horas y minutos con agrupaciones de 60 y reconocer ángulos según su abertura. El juego combina representación corporal, lectura de horas y comparación de giros.",
+        "reglas": [
+          "En la parte del reloj, una persona propone una hora y la otra representa la posición de las agujas. Para esta primera versión, usen horas en punto.",
+          "En la parte de los ángulos, quien propone nombra un tipo de ángulo y quien juega lo representa con los brazos.",
+          "Después de cada representación, deben explicar cómo saben que es esa hora o ese tipo de ángulo.",
+          "Si la posición no es clara, pueden corregirla mirando un reloj analógico o comparándola con la esquina de una hoja."
+        ],
+        "orientaciones_adulto": "No hace falta que los brazos formen grados exactos. El objetivo inicial es comparar aberturas. Usen la esquina de una hoja como modelo de 90° y una línea recta como modelo de 180°. Si el niño confunde agudo y obtuso, comparen físicamente su abertura con la esquina: menor es agudo, mayor es obtuso. En el reloj, aclaren que esta primera ronda trabaja horas en punto para que las posiciones sean fáciles de representar.",
+        "cierre": "Pídanle que muestre con los brazos un ángulo recto y uno obtuso, y que explique cuál es mayor. Después pregúntenle cuántos minutos forman una hora: 60."
       }
     }
   ]
