@@ -1,0 +1,130 @@
+{
+ "slug": "medio-mat3-m8-n3",
+ "step_id": "1a68d468-bff4-4e47-9b70-1f3ff88a1be9",
+ "materia": "Matemática 3",
+ "titulo": "Teclas que no funcionan",
+ "sub": "Matemática 3 · Misión 8 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "lugar": "🧮",
+   "lineas": [
+    "A la calculadora de Tomi se le rompió el 5.",
+    "Necesita escribir 3.500.",
+    "¿Cómo hace?"
+   ],
+   "titulo": "TECLAS",
+   "sub": "que no funcionan",
+   "voz": [
+    "A la calculadora de Tomi se le rompió el *5*.",
+    "Necesita escribir *3.500*.",
+    "¿Cómo hace?",
+    "Hoy: *teclas que no funcionan*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "3.500",
+   "titulo": "SIN EL 5",
+   "partes": [
+    "3.400",
+    "100"
+   ],
+   "resultado": "= 3.500 ✓",
+   "voz": [
+    "Buscamos dos números *sin el 5*.",
+    "3.400 no tiene 5.",
+    "100 tampoco tiene 5.",
+    "Los sumamos.",
+    "¡3.400 más 100 es *3.500*!"
+   ]
+  },
+  {
+   "t": "calculadora",
+   "titulo": "SIN TOCAR EL 5",
+   "teclas": [
+    "3",
+    "4",
+    "0",
+    "0",
+    "+",
+    "1",
+    "0",
+    "0"
+   ],
+   "resultado": "3500",
+   "texto": "3400 + 100",
+   "voz": [
+    "Apretamos 3.400.",
+    "Después más 100, igual.",
+    "¡Aparece *3.500* sin tocar el 5!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "LA TECLA 7 NO ANDA",
+   "candados": [
+    {
+     "p": "¿Cómo hago 2.700?",
+     "r": "2.600 + 100"
+    },
+    {
+     "p": "¿Cómo hago 7.000?",
+     "r": "6.000 + 1.000"
+    }
+   ],
+   "voz": [
+    "¡Escape! La tecla 7 no anda.",
+    "2.700: 2.600 más *100*.",
+    "7.000: 6.000 más *1.000*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Usar un número que tiene la tecla rota",
+     "bien": "Revisar cada número"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Revisá que *ningún número* tenga la tecla rota."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TECLA ROTA",
+     "buscar otro camino"
+    ],
+    [
+     "DESARMAR",
+     "en partes"
+    ],
+    [
+     "REVISAR",
+     "cada número"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con una tecla rota, buscamos *otro camino*.",
+    "*Desarmamos* el número en partes.",
+    "Y *revisamos* cada número.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

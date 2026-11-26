@@ -1,0 +1,120 @@
+{
+ "slug": "medio-mat3-m9-n2",
+ "step_id": "ca9e85c8-a9d5-4205-bcde-5995c1d9d455",
+ "materia": "Matemática 3",
+ "titulo": "Series proporcionales",
+ "sub": "Matemática 3 · Misión 9 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "1 caja: 6 pastelitos. 2 cajas: 12. ¿Y 3 cajas?",
+   "segundos": 8,
+   "respuesta": "¡18!",
+   "emoji": "📦",
+   "titulo": "SERIES",
+   "sub": "proporcionales",
+   "voz": [
+    "Desafío: una caja trae 6, dos cajas traen 12.",
+    "¿Y tres cajas? ¡*18*!",
+    "Hoy: *series proporcionales*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "DE 6 EN 6",
+   "min": 0,
+   "max": 30,
+   "cada": 6,
+   "inicio": 0,
+   "saltos": [
+    {
+     "a": 6,
+     "txt": "1 caja"
+    },
+    {
+     "a": 12,
+     "txt": "2 cajas"
+    },
+    {
+     "a": 18,
+     "txt": "3 cajas"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 0: sin cajas no hay nada.",
+    "Una caja: *6*.",
+    "Dos cajas: *12*.",
+    "¡Tres cajas: *18*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "6",
+    "12",
+    "18",
+    "24"
+   ],
+   "falta": "30",
+   "regla": "Sumamos 6",
+   "voz": [
+    "Mirá la serie: 6, 12, 18, 24…",
+    "¿Qué número sigue en la serie?",
+    "¡*30*! Cada caja suma 6 más."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Serie proporcional",
+   "texto": "Cada vez se suma la misma cantidad.",
+   "emoji": "📈",
+   "voz": [
+    "En una *serie proporcional* siempre sumamos lo mismo.",
+    "Si hay 0 cajas, hay *0* pastelitos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "6, 12, 18, 20",
+     "bien": "6, 12, 18, 24"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Siempre se suma *6*: después del 18, el 24."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SERIE",
+     "suma siempre igual"
+    ],
+    [
+     "1 CAJA",
+     "6"
+    ],
+    [
+     "3 CAJAS",
+     "18"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la serie sumamos *siempre lo mismo*, cada vez.",
+    "Una caja tiene *6*.",
+    "Tres cajas tienen *18*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

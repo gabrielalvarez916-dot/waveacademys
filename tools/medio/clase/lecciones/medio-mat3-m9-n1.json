@@ -1,0 +1,99 @@
+{
+ "slug": "medio-mat3-m9-n1",
+ "step_id": "f29409f4-ff3f-4ada-b92e-8facd74e7f27",
+ "materia": "Matemática 3",
+ "titulo": "Grupos iguales",
+ "sub": "Matemática 3 · Misión 9 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🍪",
+   "final": "🤔",
+   "titulo": "GRUPOS",
+   "sub": "iguales",
+   "voz": [
+    "Doña Rosa pone *4 galletas* en cada bandeja.",
+    "Tiene *5 bandejas*. ¿Cuántas galletas hay?",
+    "Hoy: *grupos iguales*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍪",
+   "grupos": 5,
+   "cada": 4,
+   "texto": "5 × 4 = 20",
+   "titulo": "5 BANDEJAS DE 4",
+   "voz": [
+    "Mirá las bandejas: todas tienen *4*.",
+    "Contamos de 4 en 4: 4, 8, 12, 16, 20.",
+    "¡5 veces 4 es *20*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Multiplicar",
+   "texto": "Juntar grupos iguales: 5 grupos de 4 es 5 × 4.",
+   "emoji": "✖️",
+   "voz": [
+    "*Multiplicar* es juntar grupos *iguales*.",
+    "5 grupos de 4 se escribe *5 por 4*."
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🥖",
+   "filas": 3,
+   "cols": 6,
+   "texto": "3 × 6 = 18",
+   "titulo": "FILAS IGUALES",
+   "voz": [
+    "Ahora los panes están en *filas*.",
+    "3 filas de 6: 6, 12, 18.",
+    "¡3 por 6 es *18*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Multiplicar grupos que no son iguales",
+     "bien": "Solo con grupos iguales"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Solo multiplicamos si los grupos son *iguales*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPOS",
+     "todos iguales"
+    ],
+    [
+     "×",
+     "veces"
+    ],
+    [
+     "5 × 4",
+     "5 grupos de 4"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los grupos tienen que ser *iguales*.",
+    "El signo *por* quiere decir veces.",
+    "5 por 4 son 5 grupos de 4.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

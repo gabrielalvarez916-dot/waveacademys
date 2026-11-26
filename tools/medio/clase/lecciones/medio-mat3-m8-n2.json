@@ -1,0 +1,110 @@
+{
+ "slug": "medio-mat3-m8-n2",
+ "step_id": "61658faa-70d5-4194-8424-18f89730ff3e",
+ "materia": "Matemática 3",
+ "titulo": "La calculadora como control",
+ "sub": "Matemática 3 · Misión 8 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡La calculadora dio 29.130 tapitas!",
+   "bajada": "¿Será verdad?",
+   "emoji": "🧮",
+   "titulo": "CONTROLAR",
+   "sub": "con la calculadora",
+   "voz": [
+    "¡Último momento: la calculadora dio *29.130* tapitas!",
+    "¿Será verdad?",
+    "Hoy: *la calculadora como control*."
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "4.223",
+   "antes": "2.768 + 1.455",
+   "despues": "no 29.130",
+   "texto": "Se apretó una tecla de más",
+   "emoji": "🔍",
+   "voz": [
+    "Pero la cuenta era 2.768 más 1.455.",
+    "¡Da *4.223*! Se apretó una tecla de más."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DOS CAMINOS",
+   "pasos": [
+    {
+     "txt": "3.400 + 1.500 = 4.900"
+    },
+    {
+     "txt": "LO HAGO A MANO",
+     "nota": "o con calculadora"
+    },
+    {
+     "txt": "¡IGUAL! ✓"
+    }
+   ],
+   "voz": [
+    "Hicimos una suma con lápiz y papel: 4.900.",
+    "Después la hacemos otra vez con la *calculadora*.",
+    "¡Dan *igual*: la cuenta está bien!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "La calculadora nunca se equivoca",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Hace lo que apretamos",
+   "voz": [
+    "¿Verdadero o falso? La calculadora nunca se equivoca.",
+    "Pensá quién aprieta las teclas…",
+    "¡*Falso*! Hace *lo que apretamos*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Creer cualquier resultado",
+     "bien": "Comparar con lo estimado"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Siempre comparamos la pantalla con lo *estimado*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CONTROLAR",
+     "con la calculadora"
+    ],
+    [
+     "ESTIMAR",
+     "para revisar"
+    ],
+    [
+     "APRETAR",
+     "con cuidado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La calculadora sirve para *controlar*.",
+    "Estimamos para *revisar* lo que sale.",
+    "Y apretamos las teclas *con cuidado*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

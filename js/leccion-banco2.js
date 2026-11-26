@@ -2166,6 +2166,8 @@
         p.que === 'estimar' ? ctrl('a', 'PRIMER NÚMERO', 1000, 6999, 1, 3890) + ctrl('b', 'SEGUNDO NÚMERO', 1000, 2999, 1, 2105) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 500, 4500, 500, 2500) : ctrl('a', 'NÚMERO', 1100, 8900, 100, 3600),
       problema4: p.tipo === 'distancia' ? ctrl('a', 'TIENE', 1200, 4800, 10, 3750) + ctrl('b', 'QUIERE LLEGAR A', 5000, 9500, 100, 6000) : p.tipo === 'inicio' ? ctrl('a', p.dir === 'quitar' ? 'PRESTÓ' : 'LE REGALAN', 100, 2000, 10, 1250) + ctrl('c', p.dir === 'quitar' ? 'LE QUEDAN' : 'AHORA TIENE', 3000, 9000, 10, 4600) :
         p.tipo === 'pasos' ? ctrl('a', 'TENÍA', 2000, 6000, 100, 3400) + ctrl('b', 'COMPRA', 100, 2000, 100, 1200) + ctrl('c', 'PRESTA', 100, 1500, 100, 800) : ctrl('a', 'PRIMER NÚMERO', 1000, 6000, 100, 2500) + ctrl('b', 'SEGUNDO NÚMERO', 100, 3000, 100, 1300),
+      calcu4: p.que === 'rota' ? ctrl('m', 'MILES', 1, 9, 1, 3) + ctrl('k', 'TECLA QUE NO ANDA', 2, 9, 1, 5) : ctrl('a', 'PRIMER NÚMERO', 1000, 6999, 1, p.que === 'control' ? 2768 : 3890) + ctrl('b', 'SEGUNDO NÚMERO', 100, 2999, 1, p.que === 'control' ? 1455 : 2105),
+      serie_prop: p.que === 'problema' ? ctrl('k', 'EN CADA PAQUETE', 2, 10, 1, 8) + ctrl('n', 'PAQUETES', 2, 10, 1, 6) : ctrl('k', 'EN CADA CAJA', 2, 10, 1, p.que === 'tabla' ? 6 : 5) + ctrl('n', 'CAJAS', 3, 10, 1, p.que === 'tabla' ? 8 : 6),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2641,6 +2643,55 @@
         P.push({ vis: p1Big('RESPUESTA: ' + H4.r), txt: 'RESPONDEMOS CON UNA ORACIÓN: <b>' + H4.r + '</b>.' });
         return P;
       }
+      if (md === 'calcu4') {
+        var qc4 = p.que || 'estimar';
+        if (qc4 === 'rota') {
+          var kk = String(v.k), mm = v.m === v.k ? (v.k > 2 ? v.k - 1 : v.k + 1) : v.m, obj = mm * 1000 + v.k * 100, pa1 = mm * 1000 + (v.k - 1) * 100;
+          P.push({ vis: p1Calc('0', kk) + p1Big('LA TECLA ' + kk + ' NO ANDA'), txt: 'LA TECLA <b>' + kk + '</b> ESTÁ ROTA. QUEREMOS QUE APAREZCA <b>' + fmt(obj) + '</b>.' });
+          P.push({ vis: p1Big(fmt(obj) + ' = ' + fmt(pa1) + ' + 100'), txt: 'LO ARMAMOS CON NÚMEROS <b>SIN EL ' + kk + '</b>: ' + fmt(pa1) + ' Y 100.' });
+          P.push({ vis: p1Calc(pa1 + ' + 100', '+'), txt: 'APRETAMOS ' + pa1 + ', EL <b>+</b> Y 100.' });
+          P.push({ vis: p1Calc(obj, ['=', 'pan']), txt: 'APRETAMOS <b>=</b>: SALE <b>' + fmt(obj) + '</b>. ¡SIN USAR EL ' + kk + '!' });
+          return P;
+        }
+        var ex4 = v.a + v.b, ea = Math.round(v.a / 1000) * 1000, eb = Math.round(v.b / 1000) * 1000;
+        if (qc4 === 'control') {
+          var mal4 = Number(String(v.a).slice(0, 3) + String(v.a).slice(3)) + Math.floor(v.b / 10);
+          P.push({ vis: p1Calc(v.a + ' + ' + v.b + ' = ' + mal4, 'pan'), txt: 'LA CALCULADORA DICE <b>' + fmt(mal4) + '</b>. ¿ESTARÁ BIEN?' });
+          P.push({ vis: p1Big(fmt(ea) + ' + ' + fmt(eb) + ' = ' + fmt(ea + eb)), txt: 'ESTIMAMOS: TIENE QUE DAR <b>CERCA DE ' + fmt(ea + eb) + '</b>.' });
+          P.push({ vis: p1Big(fmt(mal4) + ' ≠ CERCA DE ' + fmt(ea + eb)), txt: 'DA MUY LEJOS: SE APRETÓ MAL UNA TECLA.' });
+          P.push({ vis: p1Calc(ex4, ['=', 'pan']), txt: 'LO HACEMOS DE NUEVO CON CUIDADO: <b>' + fmt(ex4) + '</b>. ¡AHORA SÍ!' });
+          return P;
+        }
+        P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.b)), txt: 'ANTES DE USAR LA CALCULADORA, <b>ESTIMAMOS</b>.' });
+        P.push({ vis: p1Big(fmt(ea) + ' + ' + fmt(eb) + ' = ' + fmt(ea + eb)), txt: 'CON REDONDOS: DA <b>CERCA DE ' + fmt(ea + eb) + '</b>.' });
+        P.push({ vis: p1Calc(v.a + ' + ' + v.b, '+'), txt: 'AHORA LA HACEMOS CON LA CALCULADORA.' });
+        P.push({ vis: p1Calc(ex4, ['=', 'pan']), txt: 'SALE <b>' + fmt(ex4) + '</b>: ESTÁ CERCA DE ' + fmt(ea + eb) + '. ¡TIENE SENTIDO!' });
+        return P;
+      }
+      if (md === 'serie_prop') {
+        var qs6 = p.que || 'serie', TBL = function (n, k, vis, hl) { var c = [], i2; for (i2 = 1; i2 <= n; i2++) c.push(i2); return '<table class="lb2-tab lb2-tabc"><tr><th>' + (qs6 === 'problema' ? '📦' : '🗃️') + '</th>' + c.map(function (x) { return '<td' + (x === hl ? ' class="on"' : '') + '>' + x + '</td>'; }).join('') + '</tr><tr><th>' + (qs6 === 'problema' ? '🃏' : '✏️') + '</th>' + c.map(function (x) { return '<td' + (x === hl ? ' class="on"' : '') + '>' + (x <= vis ? x * k : '') + '</td>'; }).join('') + '</tr></table>'; };
+        if (qs6 === 'serie') {
+          P.push({ vis: TBL(v.n, v.k, 1, 1), txt: 'UNA CAJA TIENE <b>' + v.k + '</b> LÁPICES.' });
+          for (i = 2; i <= v.n; i++) P.push({ vis: TBL(v.n, v.k, i, i), txt: i + ' CAJAS: SUMAMOS ' + v.k + ' MÁS. <b>' + i * v.k + '</b>.' });
+          P.push({ vis: TBL(v.n, v.k, v.n) + p1Big(v.n + ' × ' + v.k + ' = ' + v.n * v.k), txt: 'CADA CAJA SUMA LO MISMO: ES UNA <b>SERIE PROPORCIONAL</b>.' });
+          return P;
+        }
+        if (qs6 === 'tabla') {
+          var h2 = Math.max(2, Math.floor(v.n / 2));
+          P.push({ vis: TBL(v.n, v.k, 1, 1), txt: 'UNA CAJA: <b>' + v.k + '</b>. QUEREMOS COMPLETAR LA TABLA SIN CONTAR DE A UNO.' });
+          P.push({ vis: TBL(2, v.k, 2, 2), txt: 'EL <b>DOBLE</b> DE CAJAS TIENE EL DOBLE: 2 CAJAS, ' + 2 * v.k + '.' });
+          P.push({ vis: TBL(h2, v.k, h2, h2), txt: h2 + ' CAJAS: <b>' + h2 * v.k + '</b>.' });
+          if (2 * h2 <= v.n) P.push({ vis: TBL(2 * h2, v.k, 2 * h2, 2 * h2), txt: 'Y ' + 2 * h2 + ' CAJAS ES EL DOBLE DE ' + h2 + ': ' + h2 * v.k + ' + ' + h2 * v.k + ' = <b>' + 2 * h2 * v.k + '</b>.' });
+          P.push({ vis: TBL(v.n, v.k, v.n), txt: 'LA TABLA COMPLETA: SI SE DUPLICAN LAS CAJAS, SE DUPLICAN LOS LÁPICES.' });
+          return P;
+        }
+        P.push({ vis: '<div class="lb-p1-hist">CADA PAQUETE TRAE <b>' + v.k + '</b> ESTAMPAS. MÍA COMPRA <b>' + v.n + '</b> PAQUETES.<br>¿CUÁNTAS ESTAMPAS TIENE?</div>', txt: 'LEEMOS EL PROBLEMA.' });
+        P.push({ vis: TBL(v.n, v.k, 2), txt: 'ARMAMOS UNA <b>TABLA</b>: CADA PAQUETE SUMA ' + v.k + '.' });
+        P.push({ vis: TBL(v.n, v.k, v.n, v.n), txt: 'COMPLETAMOS HASTA ' + v.n + ' PAQUETES.' });
+        P.push({ vis: p1Big(v.n + ' × ' + v.k + ' = ' + v.n * v.k), txt: 'TAMBIÉN SALE CON UNA <b>MULTIPLICACIÓN</b>.' });
+        P.push({ vis: p1Big('RESPUESTA: ' + v.n * v.k + ' ESTAMPAS'), txt: 'RESPONDEMOS: TIENE <b>' + v.n * v.k + '</b> ESTAMPAS.' });
+        return P;
+      }
       if (md === 'sumar4') {
         var qs = p.que || 'falta1000', PT = function (n) { return [Math.floor(n / 1000) * 1000, Math.floor(n % 1000 / 100) * 100, Math.floor(n % 100 / 10) * 10, n % 10]; };
         if (qs === 'redondos') {
@@ -3088,6 +3139,23 @@
         else if (t4 === 'inicio') { var qt = p.dir === 'quitar' || (p.dir === 'mezcla' && Math.random() < 0.5); a = 10 * R(10, 200); c = 10 * R(300, 900); cons = 'LA BIBLIOTECA TENÍA ALGUNOS LIBROS. ' + (qt ? 'PRESTÓ <b>' + fmt(a) + '</b> Y LE QUEDAN <b>' + fmt(c) + '</b>.' : 'LE REGALAN <b>' + fmt(a) + '</b> Y AHORA TIENE <b>' + fmt(c) + '</b>.') + ' ¿CUÁNTOS TENÍA?'; r = qt ? c + a : c - a; h = qt ? 'SI SE FUERON, PARA VOLVER AL PRINCIPIO SUMÁ.' : 'SI LLEGARON, PARA VOLVER AL PRINCIPIO RESTÁ.'; }
         else { a = 100 * R(20, 60); b = 100 * R(1, 20); c = 100 * R(1, 15); cons = 'LA BIBLIOTECA TENÍA <b>' + fmt(a) + '</b> LIBROS. COMPRA <b>' + fmt(b) + '</b> Y PRESTA <b>' + fmt(c) + '</b>. ¿CUÁNTOS QUEDAN?'; r = a + b - c; h = 'DOS PASOS: PRIMERO SUMÁ, DESPUÉS RESTÁ.'; }
         return { cons: cons, campos: [{ v: r }], ayuda: h, bien: '¡MUY BIEN! SON ' + fmt(r) + '.' }; }); }
+    if (md === 'calcu4') { var qq4 = p.que || 'estimar';
+      if (qq4 === 'rota') return p1Elegir(el, api, function () { var k = R(2, 9), m = R(1, 9); while (m === k) m = R(1, 9); var t = m * 1000 + k * 100, ok = fmt(m * 1000 + (k - 1) * 100) + ' + 100', w1 = fmt(m * 1000) + ' + ' + k * 100, w2 = fmt(t) + ' + 0';
+        return { cons: 'LA TECLA <b>' + k + '</b> NO ANDA. ¿CÓMO HACEMOS APARECER <b>' + fmt(t) + '</b>?', ops: mezclar([ok, w1, w2]), ok: ok, ayuda: 'BUSCÁ LA CUENTA QUE NO USA EL ' + k + '.', bien: '¡MUY BIEN!' }; });
+      if (qq4 === 'control') return p1Elegir(el, api, function () { var a = R(1000, 5999), b = R(1000, 3999), r = a + b, bien = Math.random() < 0.5, mos = bien ? r : pick([r + 9000, Math.floor(r / 10), r + 900]);
+        return { cons: 'LA CALCULADORA DICE <b>' + fmt(a) + ' + ' + fmt(b) + ' = ' + fmt(mos) + '</b>. ¿ESTÁ BIEN?', ops: ['SÍ', 'NO'], ok: mos === r ? 'SÍ' : 'NO', ayuda: 'ESTIMÁ CON REDONDOS Y COMPARÁ.', bien: '¡MUY BIEN! DA ' + fmt(r) + '.' }; });
+      if (qq4 === 'problema') return respuesta(el, api, function () { var a = 10 * R(100, 400), b = 10 * R(100, 300), c = 10 * R(50, 200);
+        return { cons: 'UNA ESCUELA JUNTA <b>' + fmt(a) + '</b> TAPITAS, OTRA <b>' + fmt(b) + '</b> Y OTRA <b>' + fmt(c) + '</b>. ¿CUÁNTAS JUNTAN? USÁ LA CALCULADORA.', campos: [{ v: a + b + c }], ayuda: 'SUMÁ LAS TRES Y ESTIMÁ PARA CONTROLAR.', bien: '¡MUY BIEN! SON ' + fmt(a + b + c) + '.' }; });
+      return p1Elegir(el, api, function () { var a = R(1000, 5999), b = R(1000, 3999), r = a + b, op = mezclar([fmt(r), fmt(r * 10 > 99999 ? r + 20000 : r * 10), fmt(Math.floor(r / 10))]);
+        return { cons: 'SIN HACER LA CUENTA: <b>' + fmt(a) + ' + ' + fmt(b) + '</b>, ¿CUÁL PUEDE SER EL RESULTADO?', ops: op, ok: fmt(r), ayuda: 'ESTIMÁ CON REDONDOS: ' + fmt(Math.round(a / 1000) * 1000) + ' + ' + fmt(Math.round(b / 1000) * 1000) + '.', bien: '¡MUY BIEN!' }; }); }
+    if (md === 'serie_prop') { var qs7 = p.que || 'serie';
+      return respuesta(el, api, function () { var k = R(2, 10), n = R(5, 10), f = R(3, n), L = [], i;
+        for (i = 1; i <= n; i++) L.push(i * k);
+        if (qs7 === 'problema') { var nn = R(3, 10), kk = R(3, 10), ctx = pick([['CADA PAQUETE TRAE', 'ESTAMPAS', 'PAQUETES', 'CUÁNTAS'], ['CADA CAJA TIENE', 'LÁPICES', 'CAJAS', 'CUÁNTOS'], ['CADA BOLSA TIENE', 'NARANJAS', 'BOLSAS', 'CUÁNTAS']]);
+          return { cons: ctx[0] + ' <b>' + kk + '</b> ' + ctx[1] + '. ¿' + ctx[3] + ' HAY EN <b>' + nn + '</b> ' + ctx[2] + '?', campos: [{ v: nn * kk }], ayuda: 'ARMÁ LA TABLA O MULTIPLICÁ ' + nn + ' × ' + kk + '.', bien: '¡MUY BIEN! SON ' + nn * kk + '.' }; }
+        if (qs7 === 'tabla') { var g = R(2, Math.floor(n / 2)), h = 2 * g;
+          return { cons: 'CADA CAJA TIENE <b>' + k + '</b> LÁPICES. COMPLETÁ LA TABLA.', html: '<table class="lb2-tab"><tr><th>CAJAS</th><td>1</td><td>' + g + '</td><td>' + h + '</td></tr><tr><th>LÁPICES</th><td>' + k + '</td><td>?</td><td>?</td></tr></table>', campos: [{ lab: g + ' CAJAS', v: g * k }, { lab: h + ' CAJAS', v: h * k }], ayuda: h + ' CAJAS ES EL DOBLE DE ' + g + '.', bien: '¡MUY BIEN!' }; }
+        return { cons: 'LA SERIE SUMA <b>' + k + '</b> CADA VEZ. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren">' + L.map(function (x, i2) { return '<span class="lb-p1-vag' + (i2 === f - 1 ? ' oculto">?' : '">' + x) + '</span>'; }).join('') + '</div>', campos: [{ v: f * k }], ayuda: 'SUMÁ ' + k + ' AL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ES ' + f * k + '.' }; }); }
     if (md === 'sumar4') { var qx = p.que || 'falta1000';
       if (qx === 'estimar') return p1Elegir(el, api, function () { var a = R(1000, 6499), b = R(1000, 2499), r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; while (Math.abs(a - Math.round(a / 1000) * 1000) > 350 || Math.abs(b - Math.round(b / 1000) * 1000) > 350) { a = R(1000, 6499); b = R(1000, 2499); r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; }
         return { cons: '<b>' + fmt(a) + ' + ' + fmt(b) + '</b> DA MÁS O MENOS…', ops: mezclar([fmt(r), fmt(r + 2000), fmt(Math.max(1000, r - 2000))]), ok: fmt(r), ayuda: 'REDONDEÁ CADA NÚMERO AL MIL MÁS CERCANO.', bien: '¡MUY BIEN! LA CUENTA EXACTA DA ' + fmt(a + b) + '.' }; });
@@ -3192,7 +3260,7 @@
     '.lb2-svg .cT{fill:#7FD3C4;stroke:#253638}.lb2-svg .cL{fill:#087E83;stroke:#253638}.lb2-svg .cR{fill:#066A6E;stroke:#253638}.lb2-svg .fosf{stroke:#087E83;stroke-width:4;stroke-linecap:round}',
     '.lb2-svg .c0{fill:#fff;stroke:#9dbdb9}.lb2-svg .c1{fill:#D7F0E9;stroke:#9dbdb9}.lb2-svg .c2{fill:#087E83;stroke:#253638}.lb2-svg .pt{fill:#087E83}.lb2-svg .pt2{fill:none;stroke:#253638;stroke-width:2}.lb2-svg .graf{stroke:#087E83;stroke-width:3;fill:none}',
     '.lb2-svg text{font-size:12px;font-weight:800;fill:#253638;text-anchor:middle}.lb2-svg .ptx{font-size:13px;fill:#087E83;text-anchor:start}.lb2-svg .hit{fill:transparent;cursor:pointer}.lb2-svg .hit:hover{fill:rgba(8,126,131,.25)}.lb2-plano{max-width:260px}',
-    '.lb2-tab{border-collapse:collapse;margin:8px auto;background:#fff}.lb2-tab th,.lb2-tab td{border:2px solid #E3ECEA;padding:5px 9px;text-align:center;font-weight:700}.lb2-tab th{background:#F3FBF7}.lb2-tab td.on{background:#087E83;color:#fff}',
+    '.lb2-tab{border-collapse:collapse;margin:8px auto;background:#fff}.lb2-tab th,.lb2-tab td{border:2px solid #E3ECEA;padding:5px 9px;text-align:center;font-weight:700}.lb2-tab th{background:#F3FBF7}.lb2-tabc th,.lb2-tabc td{padding:4px 5px;font-size:15px}.lb2-tab td.on{background:#087E83;color:#fff}',
     '.lb2-bar{min-width:90px}.lb2-bar i{display:block;height:12px;border-radius:6px;background:#087E83}',
     '.lb2-barra{position:relative;height:34px;border-radius:10px;background:#E3ECEA;overflow:hidden}.lb2-barra i{display:block;height:100%;background:#087E83}.lb2-barra span{position:absolute;left:10px;top:7px;font-weight:900;color:#fff;text-shadow:0 0 3px #253638}.lb2-esc{display:flex;justify-content:space-between;font-size:.8rem;font-weight:700;color:#4b6a6c}',
     '.lb2-term{padding:2px 8px;border-radius:8px;font-weight:800}.lb2-term.t0{background:#253638;color:#fff}.lb2-term.t1{background:#087E83;color:#fff}.lb2-term.t2{background:#D7F0E9;color:#253638}',

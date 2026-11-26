@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat3-m9-n4",
+ "step_id": "6f8409ed-74a0-4b26-9362-d2ad25f2745c",
+ "materia": "Matemática 3",
+ "titulo": "Problemas de series",
+ "sub": "Matemática 3 · Misión 9 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Doña Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🥖",
+   "lineas": [
+    "Un vecino pide 7 cajas de 8 galletas.",
+    "Doña Rosa no quiere contar de a una.",
+    "¿Cuántas galletas son?"
+   ],
+   "titulo": "PROBLEMAS",
+   "sub": "de series",
+   "voz": [
+    "Un vecino pide *7 cajas* de 8 galletas.",
+    "Doña Rosa no quiere contar de a una.",
+    "¿Cuántas galletas son?",
+    "Hoy: *problemas de series*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CAJAS Y GALLETAS",
+   "columnas": [
+    "CAJAS",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "filas": [
+    [
+     "GALLETAS",
+     "8",
+     "16",
+     "24",
+     "32",
+     "40",
+     "48",
+     "56"
+    ]
+   ],
+   "voz": [
+    "Armamos la tabla: cada caja suma 8.",
+    "8, 16, 24, 32, 40, 48, ¡*56*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "MÁS CORTO",
+   "pasos": [
+    {
+     "txt": "8 + 8 + 8 + 8 + 8 + 8 + 8"
+    },
+    {
+     "txt": "7 VECES 8",
+     "nota": "grupos iguales"
+    },
+    {
+     "txt": "7 × 8 = 56"
+    }
+   ],
+   "voz": [
+    "Sumar 8 siete veces es largo.",
+    "Son 7 grupos de 8.",
+    "¡7 por 8 es *56*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Cada bandeja tiene 9 panes. ¿Cuántos hay en 4 bandejas?",
+   "pistas": [
+    "Son 4 grupos de 9",
+    "9, 18, 27, 36"
+   ],
+   "respuesta": "36",
+   "voz": [
+    "Cada bandeja tiene 9. ¿Cuántos en 4 bandejas?",
+    "Pista: son *4 grupos de 9*.",
+    "Pista: contamos 9, 18, 27, 36.",
+    "¡Hay *36* panes!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "7 cajas de 8: 7 + 8 = 15",
+     "bien": "7 × 8 = 56"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No se suman las cajas y las galletas: se *multiplica*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA",
+     "o multiplicar"
+    ],
+    [
+     "GRUPOS",
+     "por cantidad"
+    ],
+    [
+     "RESPONDER",
+     "con una oración"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Usamos una *tabla* o *multiplicamos*.",
+    "Grupos *por* lo que tiene cada uno.",
+    "Y respondemos *con una oración*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

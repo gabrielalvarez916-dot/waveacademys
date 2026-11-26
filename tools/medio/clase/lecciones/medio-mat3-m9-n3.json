@@ -1,0 +1,144 @@
+{
+ "slug": "medio-mat3-m9-n3",
+ "step_id": "b2009a77-9ccd-46be-aeb0-75ac68bc61c8",
+ "materia": "Matemática 3",
+ "titulo": "Tablas de una cantidad que se repite",
+ "sub": "Matemática 3 · Misión 9 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Doña Rosa",
+    "emoji": "👵"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Cada bolsa lleva 5 panes"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y si vendo 8 bolsas?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Armemos una tabla!"
+    }
+   ],
+   "titulo": "TABLAS",
+   "sub": "de una cantidad",
+   "voz": [
+    "Doña Rosa avisa: cada bolsa lleva *5 panes*.",
+    "¿Y si vende *8 bolsas*?",
+    "¡Armemos una tabla!",
+    "Hoy: *tablas de una cantidad que se repite*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "BOLSAS Y PANES",
+   "columnas": [
+    "BOLSAS",
+    "1",
+    "2",
+    "4",
+    "8"
+   ],
+   "filas": [
+    [
+     "PANES",
+     "5",
+     "10",
+     "20",
+     "40"
+    ]
+   ],
+   "voz": [
+    "En la tabla, cada bolsa suma 5 panes.",
+    "Uno, 5. Dos, *10*. Cuatro, *20*. Ocho, *40*."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "4 bolsas",
+    "emoji": "🛍️",
+    "datos": [
+     "20 panes"
+    ]
+   },
+   "b": {
+    "txt": "8 bolsas",
+    "emoji": "🛍️",
+    "datos": [
+     "40 panes"
+    ]
+   },
+   "gana": "b",
+   "veredicto": "El doble de bolsas, el doble de panes",
+   "voz": [
+    "Comparamos 4 bolsas y 8 bolsas.",
+    "4 bolsas tienen 20 panes.",
+    "8 bolsas son el *doble*.",
+    "¡El doble de bolsas tiene el *doble* de panes: 40!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Si 3 bolsas tienen 15, ¿cuánto tienen 6?",
+   "opciones": [
+    "30",
+    "18",
+    "21"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 3 bolsas tienen 15.",
+    "6 bolsas son el doble…",
+    "¡*30* panes!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El doble de bolsas tiene 5 panes más",
+     "bien": "Tiene el doble de panes"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si se duplican las bolsas, se *duplican* los panes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA",
+     "ordena la serie"
+    ],
+    [
+     "DOBLE",
+     "doble y doble"
+    ],
+    [
+     "SIN CONTAR",
+     "de a uno"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La *tabla* ordena la serie.",
+    "Doble de bolsas, *doble* de panes.",
+    "Así no contamos *de a uno*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

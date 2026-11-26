@@ -1,0 +1,139 @@
+{
+ "slug": "medio-mat3-m8-n1",
+ "step_id": "373731a4-a5b3-4d3a-ba76-432f6a45817b",
+ "materia": "Matemática 3",
+ "titulo": "Estimar antes de calcular",
+ "sub": "Matemática 3 · Misión 8 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Juntamos 3.890 y 2.105 tapitas"
+    },
+    {
+     "yo": true,
+     "txt": "¿Usamos la calculadora?"
+    },
+    {
+     "yo": false,
+     "txt": "Primero pensemos cuánto puede dar"
+    }
+   ],
+   "titulo": "ESTIMAR",
+   "sub": "antes de calcular",
+   "voz": [
+    "Tomi escribe: juntamos 3.890 y 2.105 tapitas.",
+    "¿Usamos la calculadora?",
+    "Primero pensemos *cuánto puede dar*.",
+    "Hoy: *estimar antes de calcular*."
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "ESTIMAMOS",
+   "lineas": [
+    {
+     "txt": "3.890 → 4.000"
+    },
+    {
+     "txt": "2.105 → 2.000"
+    },
+    {
+     "txt": "CERCA DE 6.000",
+     "color": "verde",
+     "marca": "circulo"
+    }
+   ],
+   "voz": [
+    "El 3.890 está muy cerca del *4.000*.",
+    "El 2.105 está muy cerca del *2.000*.",
+    "¡Tiene que dar *cerca de 6.000*!"
+   ]
+  },
+  {
+   "t": "calculadora",
+   "titulo": "AHORA SÍ",
+   "teclas": [
+    "3",
+    "8",
+    "9",
+    "0",
+    "+",
+    "2",
+    "1",
+    "0",
+    "5"
+   ],
+   "resultado": "5995",
+   "texto": "3890 + 2105",
+   "voz": [
+    "Ahora sí, apretamos las teclas con mucho cuidado.",
+    "3.890, más, 2.105, igual.",
+    "¡Sale *5.995*: está cerca de 6.000!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "4.120 + 2.950 da cerca de…",
+   "opciones": [
+    "7.000",
+    "70.000",
+    "700"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 4.120 más 2.950, ¿cerca de cuánto da?",
+    "4.000 más 3.000…",
+    "¡Cerca de *7.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Estimar después de la cuenta",
+     "bien": "Estimar antes, para saber qué esperar"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Estimamos *antes*, para saber qué número esperar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESTIMAR",
+     "antes de calcular"
+    ],
+    [
+     "REDONDOS",
+     "al mil cercano"
+    ],
+    [
+     "COMPARAR",
+     "con la pantalla"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Estimamos *antes* de calcular.",
+    "Usamos números *redondos*.",
+    "Después comparamos con la *pantalla*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat3-m8-n4",
+ "step_id": "72f158e2-5bb7-47b5-bacf-b5d8771bdd4b",
+ "materia": "Matemática 3",
+ "titulo": "Resolver problemas con calculadora",
+ "sub": "Matemática 3 · Misión 8 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Tres grados juntaron 2.350, 1.870 y 960 tapitas. ¿Cuántas?",
+   "segundos": 8,
+   "respuesta": "¡5.180!",
+   "emoji": "🧮",
+   "titulo": "PROBLEMAS",
+   "sub": "con calculadora",
+   "voz": [
+    "Desafío: tres grados juntaron tapitas.",
+    "2.350, 1.870 y 960.",
+    "¡Son *5.180*!",
+    "Hoy: *problemas con calculadora*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO HACEMOS",
+   "items": [
+    {
+     "txt": "Leo el problema",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Estimo",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Calculo",
+     "emoji": "🧮"
+    },
+    {
+     "txt": "Comparo",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Primero *leemos* el problema con atención.",
+    "Después *estimamos*: cerca de 5.000.",
+    "*Calculamos* con la calculadora.",
+    "Y *comparamos*: ¡5.180 tiene sentido!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Tienen 5.180 tapitas. Quieren llegar a 8.000.",
+   "pistas": [
+    "Es una distancia",
+    "8.000 − 5.180"
+   ],
+   "respuesta": "2.820",
+   "voz": [
+    "Ahora quieren llegar a *8.000* tapitas.",
+    "Pista: es una *distancia*.",
+    "Pista: en la calculadora, 8.000 menos 5.180.",
+    "¡Les faltan *2.820*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "¿TIENE SENTIDO?",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "1.900 + 2.100 = 4.000",
+     "r": "SÍ"
+    },
+    {
+     "p": "3.000 + 2.000 = 50.000",
+     "r": "NO"
+    },
+    {
+     "p": "6.000 − 1.000 = 5.000",
+     "r": "SÍ"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿Tiene sentido?",
+    "1.900 más 2.100, 4.000: *sí*.",
+    "3.000 más 2.000, 50.000: *no*.",
+    "6.000 menos 1.000, 5.000: *sí*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Escribir la respuesta sin mirar si tiene sentido",
+     "bien": "Comparar con lo estimado"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Antes de responder, mirá si *tiene sentido*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "el problema"
+    ],
+    [
+     "ESTIMAR",
+     "y calcular"
+    ],
+    [
+     "RESPONDER",
+     "con sentido"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *leemos* el problema.",
+    "*Estimamos* y después calculamos.",
+    "Respondemos si *tiene sentido*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
