@@ -12,3 +12,4 @@
 
 ## 26/11/2026 — El control de calidad salteaba misiones "existentes"
 Las misiones de `tools/calidad_existentes.txt` no pasaban el control de actividades, examen ni carpeta, y se dijo que estaban controladas. Desde ahora `control_calidad.py` revisa SIEMPRE lección, actividades, examen y carpeta en todas las misiones. Lo único que se saltea en las existentes es el control de las clases animadas (no se tocan). Nunca decir "pasó el control" si el control dijo "no se revisa".
+- 26/11/2026 (2): al sacar Matemática I 1-9 de `calidad_existentes.txt` volvió a controlarse su clase animada y la máquina frenó TODO lo que vino después (misiones 10 a 17 sin cargar). La lista ahora solo sirve para saltear el control de clases animadas: una misión con clase ya hecha NO se saca de la lista. En local el control de clases no se ve si las clases no están en el checkout parcial: después de subir, mirar que el workflow haya dado success.
