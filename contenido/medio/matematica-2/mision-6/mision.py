@@ -148,15 +148,82 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "$540. $200.", "solo": "Sí: 200 + 250 = 450.", "carpeta": ["La pelota: $600.", "$650.", "$100."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+N1["leccion"] = {"temas": [
+ T("BILLETES Y MONEDAS", [LD("EL DINERO", "HAY BILLETES DE <b>$50, $100, $200 Y $500</b>. EL NÚMERO DICE CUÁNTO VALE."),
+   LL("UN BILLETE DE $500 VALE 500.", "NO IMPORTA EL TAMAÑO.")],
+   {"modo": "dinero2"}, {"modo": "dinero2"}),
+ T("BILLETES IGUALES", [LD("CONTAR IGUALES", "PARA CONTAR BILLETES <b>IGUALES</b>, SALTAMOS DE A LO QUE VALE CADA UNO."),
+   LL("3 DE $100: 100, 200, 300.", "5 DE $100 SON $500, NO $5.")],
+   {"modo": "serie", "de": 100, "desde": 100, "hasta": 100}, {"modo": "dinero2"}),
+], "recuerda": [
+ RC("EL VALOR", "EL NÚMERO DEL BILLETE DICE CUÁNTO VALE.", "UN BILLETE DE $200 VALE 200"),
+ RC("IGUALES", "SALTAMOS DE A LO QUE VALE CADA BILLETE.", "2 DE $500 SON $1.000"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("EMPEZAR POR EL QUE MÁS VALE", [LD("EL ORDEN", "PARA CONTAR DINERO, EMPEZÁ POR EL BILLETE QUE <b>MÁS VALE</b>."),
+   LL("$200, $100 Y $50: 200, 300, 350.", "ASÍ NO TE PERDÉS.")],
+   {"modo": "dinero2"}, {"modo": "dinero2"}),
+ T("EL MISMO MONTO", [LD("OTRA FORMA", "EL MISMO MONTO SE PUEDE FORMAR CON <b>DISTINTOS</b> BILLETES."),
+   LL("$600 = $500 + $100.", "$600 = $200 + $200 + $200.")],
+   {"modo": "dinero2"}, {"modo": "dinero2"}),
+], "recuerda": [
+ RC("EL ORDEN", "EMPEZAMOS POR EL BILLETE QUE MÁS VALE Y SEGUIMOS SUMANDO.", "500, 700, 750"),
+ RC("OTRA FORMA", "UN MONTO SE PUEDE ARMAR CON BILLETES DISTINTOS.", "$300 = $200 + $100"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("LO QUE TE DEVUELVEN", [LD("DEVOLVER", "SI PAGÁS CON <b>MÁS</b> DE LO QUE CUESTA, TE DEVUELVEN LA DIFERENCIA."),
+   LL("CUESTA $80 Y PAGÁS $100: TE DEVUELVEN $20.", "SI PAGÁS JUSTO, NO TE DEVUELVEN NADA.")],
+   {"modo": "dinero2", "que": "vuelto"}, {"modo": "dinero2", "que": "vuelto"}),
+ T("CONTAR PARA ADELANTE", [LD("ADELANTE", "PARA SABER CUÁNTO TE DEVUELVEN, CONTÁ <b>DESDE EL PRECIO</b> HASTA LO QUE PAGASTE."),
+   LL("DE 300 A 500: 400, 500.", "SON DOS SALTOS DE 100: $200.")],
+   {"modo": "dinero2", "que": "vuelto"}, {"modo": "dinero2", "que": "vuelto"}),
+], "recuerda": [
+ RC("DEVOLVER", "ES LA DIFERENCIA ENTRE LO QUE PAGAMOS Y EL PRECIO.", "PAGO $100 POR $70: ME DAN $30"),
+ RC("CONTAR PARA ADELANTE", "CONTAMOS DESDE EL PRECIO HASTA LO QUE PAGAMOS.", "DE 150 A 200 HAY 50"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("MÁS CARO Y MÁS BARATO", [LD("COMPARAR", "COMPARAMOS PRECIOS COMO NÚMEROS: PRIMERO LAS <b>CENTENAS</b>."),
+   LL("$540 ES MÁS CARO QUE $450.", "$702 ES MÁS BARATO QUE $720.")],
+   {"modo": "dinero2", "que": "caro"}, {"modo": "dinero2", "que": "caro"}),
+ T("SUMAR PRECIOS", [LD("JUNTOS", "PARA SABER CUÁNTO CUESTAN <b>JUNTAS</b> DOS COSAS, SUMAMOS LOS PRECIOS."),
+   LL("$300 + $250 = $550.", "SI TENÉS $500, NO TE ALCANZA.")],
+   {"modo": "dinero2", "que": "sumar"}, {"modo": "dinero2", "que": "sumar"}),
+], "recuerda": [
+ RC("MÁS CARO", "ES EL PRECIO MÁS GRANDE; MIRAMOS PRIMERO LAS CENTENAS.", "$720 ES MÁS CARO QUE $270"),
+ RC("SUMAR PRECIOS", "SUMAMOS PARA SABER CUÁNTO CUESTA TODO.", "$400 + $350 = $750"),
+]}
+
 ACT = {
 "1": [N("💵 3 BILLETES DE $100. ¿CUÁNTO DINERO ES?", 300, "100, 200, 300.", n="aplicar"),
-      MC("¿CUÁNTO VALE UN BILLETE DE $500?", ["500", "5", "50"], "500", "EL NÚMERO DICE CUÁNTO VALE.", n="recordar")],
+      MC("¿CUÁNTO VALE UN BILLETE DE $500?", ["500", "5", "50"], "500", "EL NÚMERO DICE CUÁNTO VALE.", n="recordar"),
+      MC("LEO DICE QUE 4 BILLETES DE $100 SON $4. ¿CUÁNTO SON DE VERDAD?", ["$400", "$4", "$104"], "$400", "100, 200, 300, 400.", n="error"),
+      UNIR("UNÍ CADA GRUPO DE BILLETES CON SU TOTAL.", ["2 DE $100", "2 DE $200", "2 DE $500"], ["$1.000", "$200", "$400"], {"2 DE $100": "$200", "2 DE $200": "$400", "2 DE $500": "$1.000"}, "100 + 100, 200 + 200 Y 500 + 500.", n="aplicar")],
 "2": [N("$200, $100 Y $50. ¿CUÁNTO ES?", 350, "200, 300, 350.", n="aplicar"),
-      MC("¿CON QUÉ BILLETES FORMÁS $600?", ["$500 Y $100", "$200 Y $200", "$500 Y $50"], "$500 Y $100", "500 + 100 = 600.", n="analizar")],
+      MC("¿CON QUÉ BILLETES FORMÁS $600?", ["$500 Y $100", "$200 Y $200", "$500 Y $50"], "$500 Y $100", "500 + 100 = 600.", n="analizar", **NEU("¿CON QUÉ BILLETES FORMAS $600?")),
+      ORD("ORDENÁ LOS BILLETES PARA CONTAR: PRIMERO EL QUE MÁS VALE.", ["$50", "$500", "$100", "$200"], ["$500", "$200", "$100", "$50"], "DEL QUE MÁS VALE AL QUE MENOS.", n="aplicar"),
+      MC("SOFI CONTÓ $500 Y $50 Y DIJO $50050. ¿CUÁNTO ES?", ["$550", "$50050", "$505"], "$550", "500 + 50 = 550.", n="error")],
 "3": [N("ALGO CUESTA $80. PAGÁS CON $100. ¿CUÁNTO TE DEVUELVEN?", 20, "DE 80 A 100 HAY 20.", n="aplicar", **NEU("ALGO CUESTA $80. PAGAS CON $100. ¿CUÁNTO TE DEVUELVEN?")),
-      MC("PAGÁS JUSTO. ¿CUÁNTO TE DEVUELVEN?", ["NADA", "TODO", "LA MITAD"], "NADA", "SI PAGÁS JUSTO, NO SOBRA.", n="analizar", **NEU("PAGAS JUSTO. ¿CUÁNTO TE DEVUELVEN?"))],
+      MC("PAGÁS JUSTO. ¿CUÁNTO TE DEVUELVEN?", ["NADA", "TODO", "LA MITAD"], "NADA", "SI PAGÁS JUSTO, NO SOBRA.", n="analizar", **NEU("PAGAS JUSTO. ¿CUÁNTO TE DEVUELVEN?")),
+      FB("COMPLETÁ: CUESTA $350 Y PAGÁS $500. TE DEVUELVEN $___", [["150"]], "DE 350 A 500 HAY 150.", n="aplicar", **NEU("COMPLETA: CUESTA $350 Y PAGAS $500. TE DEVUELVEN $___")),
+      MC("JUAN PAGÓ $200 POR ALGO DE $120 Y LE DIERON $180. ¿CUÁNTO LE TENÍAN QUE DAR?", ["$80", "$180", "$120"], "$80", "DE 120 A 200 HAY 80.", n="error")],
 "4": [MC("¿CUÁL ES MÁS CARO?", ["$540", "$450"], "$540", "5 CENTENAS ES MÁS QUE 4.", n="analizar"),
-      N("UN ALFAJOR DE $300 Y UN JUGO DE $250. ¿CUÁNTO CUESTAN JUNTOS?", 550, "300 + 250 = 550.", n="aplicar")],
+      N("UN ALFAJOR DE $300 Y UN JUGO DE $250. ¿CUÁNTO CUESTAN JUNTOS?", 550, "300 + 250 = 550.", n="aplicar", **NEU("UNA GALLETA DE $300 Y UN JUGO DE $250. ¿CUÁNTO CUESTAN JUNTOS?")),
+      ORD("ORDENÁ DEL MÁS BARATO AL MÁS CARO.", ["$720", "$270", "$702"], ["$270", "$702", "$720"], "270, 702 Y 720.", n="aplicar"),
+      N("[[problema]] TENÉS $700 Y COMPRÁS UNA PELOTA DE $450. ¿CUÁNTO DINERO TE SOBRA?", 250, "DE 450 A 700 HAY 250.", n="analizar", **NEU("TIENES $700 Y COMPRAS UNA PELOTA DE $450. ¿CUÁNTO DINERO TE SOBRA?"))],
 "5": [N("RELÁMPAGO. 2 BILLETES DE $200. ¿CUÁNTO ES?", 400, "200, 400.", tiempo=30, n="aplicar"),
       MC("RELÁMPAGO. ¿CUÁL ES MÁS BARATO?", ["$200", "$600"], "$200", "200 ES MENOS QUE 600.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. PAGÁS $100 POR $90. ¿VUELTO?", 10, "DE 90 A 100 HAY 10.", tiempo=30, n="aplicar", **NEU("RELÁMPAGO. PAGAS $100 POR $90. ¿CAMBIO?")),
@@ -176,7 +243,7 @@ EXAMEN = [
  [4, N("ALGO DE $400 Y ALGO DE $350. ¿CUÁNTO CUESTAN JUNTOS?", 750, "400 + 350 = 750.", n="aplicar")],
  [4, MC("TENÉS $500. ¿TE ALCANZA PARA ALGO DE $300 Y ALGO DE $250?", ["SÍ", "NO"], "NO", "300 + 250 = 550: FALTAN $50.", n="analizar", **NEU("TIENES $500. ¿TE ALCANZA PARA ALGO DE $300 Y ALGO DE $250?"))],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 6, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 6, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: dinero hasta 1.000", "examen_titulo": "Nivel jefe: dinero hasta 1.000",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-6.json"), "w", encoding="utf-8"), ensure_ascii=False)

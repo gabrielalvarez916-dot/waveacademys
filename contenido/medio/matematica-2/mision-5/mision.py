@@ -146,15 +146,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "436. Decenas.", "solo": "740.", "carpeta": ["241.", "341.", "251."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("EL LUGAR DE CADA CIFRA", [LD("EL LUGAR", "CADA CIFRA VALE SEGÚN SU <b>LUGAR</b>: CENTENAS, DECENAS O UNIDADES."),
+   LL("EN 574, EL 5 VALE 500.", "EN 457, EL 5 VALE 50.")],
+   {"modo": "valor"}, {"modo": "valor"}),
+ T("LA MISMA CIFRA VALE DISTINTO", [LD("DISTINTO", "EN <b>444</b> HAY TRES 4, PERO CADA UNO VALE DISTINTO."),
+   LL("400, 40 Y 4.", "LO QUE CAMBIA ES EL LUGAR.")],
+   {"modo": "valor"}, {"modo": "valor"}),
+], "recuerda": [
+ RC("EL LUGAR", "LA CIFRA VALE SEGÚN DÓNDE ESTÁ EN EL NÚMERO.", "EN 245 EL 4 VALE 40"),
+ RC("LA MISMA CIFRA", "PUEDE VALER CIEN, DIEZ O UNO SEGÚN SU LUGAR.", "444 = 400 + 40 + 4"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("DESARMAR EN UNA SUMA", [LD("DESARMAR", "DESARMAR ES ESCRIBIR EL NÚMERO COMO <b>SUMA</b> DE LO QUE VALE CADA CIFRA."),
+   LL("465 = 400 + 60 + 5.", "NO ES 4 + 6 + 5.")],
+   {"modo": "valor"}, {"modo": "valor"}),
+ T("CUANDO HAY UN CERO", [LD("EL CERO", "SI UNA CIFRA ES <b>0</b>, ESA PARTE NO SE SUMA."),
+   LL("708 = 700 + 8.", "905 = 900 + 5.")],
+   {"modo": "centenas", "que": "escribir", "max": 9}, {"modo": "valor", "que": "desarmar"}),
+], "recuerda": [
+ RC("DESARMAR", "ESCRIBIMOS LA SUMA DE LO QUE VALE CADA CIFRA.", "382 = 300 + 80 + 2"),
+ RC("EL CERO", "CUANDO HAY UN CERO, ESA PARTE NO SE ESCRIBE.", "708 = 700 + 8"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("JUNTAR LAS PARTES", [LD("ARMAR", "PARA <b>ARMAR</b> UN NÚMERO, JUNTAMOS CENTENAS, DECENAS Y UNIDADES."),
+   LL("200 + 40 + 3 = 243.", "CADA PARTE VA EN SU LUGAR.")],
+   {"modo": "valor"}, {"modo": "valor", "que": "desarmar"}),
+ T("PARTES DESORDENADAS", [LD("EN DESORDEN", "SI LAS PARTES VIENEN <b>DESORDENADAS</b>, PRIMERO LAS ORDENAMOS."),
+   LL("5 + 60 + 200 = 265.", "500 + 70 = 570, NO 57.")],
+   {"modo": "valor"}, {"modo": "valor", "que": "desarmar"}),
+], "recuerda": [
+ RC("ARMAR", "JUNTAMOS LAS PARTES Y CADA UNA VA EN SU LUGAR.", "700 + 40 + 6 = 746"),
+ RC("DESORDENADAS", "PRIMERO LAS CENTENAS, DESPUÉS DECENAS Y UNIDADES.", "6 + 800 = 806"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("SUMAR 100 O 10", [LD("UNA CIFRA CAMBIA", "AL SUMAR <b>100</b> CAMBIAN LAS CENTENAS; AL SUMAR <b>10</b>, LAS DECENAS."),
+   LL("352 + 100 = 452.", "426 + 10 = 436.")],
+   {"modo": "cambia", "op": 100}, {"modo": "cambia"}),
+ T("SUMAR 1", [LD("UN SUELTO", "AL SUMAR <b>1</b> CAMBIAN LAS UNIDADES: SALE EL SIGUIENTE."),
+   LL("739 + 1 = 740.", "SI HAY UN 9, CAMBIA TAMBIÉN LA DE AL LADO.")],
+   {"modo": "cambia", "op": 1}, {"modo": "cambia"}),
+], "recuerda": [
+ RC("SUMAR 100", "CAMBIA LA CIFRA DE LAS CENTENAS.", "619 + 100 = 719"),
+ RC("SUMAR 10 O 1", "CAMBIAN LAS DECENAS O LAS UNIDADES.", "245 + 10 = 255"),
+]}
+
 ACT = {
 "1": [MC("¿CUÁNTO VALE EL 5 EN 452?", ["5", "50", "500"], "50", "ESTÁ EN LAS DECENAS.", n="aplicar"),
-      MC("¿EN CUÁL NÚMERO EL 7 VALE 700?", ["718", "171", "257"], "718", "EN 718 EL 7 ESTÁ EN LAS CENTENAS.", n="analizar")],
+      MC("¿EN CUÁL NÚMERO EL 7 VALE 700?", ["718", "171", "257"], "718", "EN 718 EL 7 ESTÁ EN LAS CENTENAS.", n="analizar"),
+      UNIR("EN EL 333, UNÍ CADA 3 CON LO QUE VALE.", ["EL PRIMER 3", "EL SEGUNDO 3", "EL TERCER 3"], ["3", "300", "30"], {"EL PRIMER 3": "300", "EL SEGUNDO 3": "30", "EL TERCER 3": "3"}, "300, 30 Y 3.", n="analizar"),
+      MC("LEO DICE QUE EN 628 EL 2 VALE 2. ¿CUÁNTO VALE DE VERDAD?", ["20", "2", "200"], "20", "ESTÁ EN LAS DECENAS: VALE 20.", n="error")],
 "2": [MC("¿CÓMO SE DESARMA 465?", ["400 + 60 + 5", "4 + 6 + 5", "40 + 60 + 50"], "400 + 60 + 5", "CADA CIFRA VALE SEGÚN SU LUGAR.", n="aplicar"),
-      N("708 = 700 + ___", 8, "NO HAY DECENAS.", n="aplicar")],
+      FB("COMPLETÁ: 708 = 700 + ___", [["8"]], "NO HAY DECENAS.", n="aplicar"),
+      FB("COMPLETÁ: 539 = ___ + 30 + 9", [["500"]], "EL 5 VALE 500.", n="aplicar"),
+      CLAS("¿ESTÁ BIEN DESARMADO?", ["275 = 200 + 70 + 5", "381 = 3 + 8 + 1", "604 = 600 + 4", "916 = 90 + 10 + 6"], ["BIEN", "MAL"],
+           {"275 = 200 + 70 + 5": "BIEN", "381 = 3 + 8 + 1": "MAL", "604 = 600 + 4": "BIEN", "916 = 90 + 10 + 6": "MAL"}, "CADA CIFRA VALE SEGÚN SU LUGAR.", n="analizar")],
 "3": [N("¿QUÉ NÚMERO ES 300 + 50 + 1?", 351, "3 CENTENAS, 5 DECENAS Y 1 UNIDAD.", n="aplicar"),
-      MC("¿QUÉ NÚMERO ES 600 + 8?", ["68", "608", "6.008"], "608", "NO HAY DECENAS: VA UN 0.", n="error")],
+      MC("SOFI DICE QUE 600 + 8 ES 68. ¿QUÉ NÚMERO ES?", ["608", "68", "6.008"], "608", "NO HAY DECENAS: VA UN 0.", n="error"),
+      N("[[problema]] ROSA ARMÓ UN PEDIDO CON 4 + 90 + 700 ALFAJORES. ¿QUÉ NÚMERO FORMA?", 794, "ORDENAMOS: 700 + 90 + 4 = 794.", n="analizar", **NEU("ROSA ARMÓ UN PEDIDO CON 4 + 90 + 700 GALLETAS. ¿QUÉ NÚMERO FORMA?")),
+      UNIR("UNÍ CADA SUMA CON SU NÚMERO.", ["200 + 5", "200 + 50", "20 + 5"], ["250", "25", "205"], {"200 + 5": "205", "200 + 50": "250", "20 + 5": "25"}, "205, 250 Y 25.", n="analizar")],
 "4": [N("ROSA TIENE 352. LLEGA UNA CAJA DE 100. ¿CUÁNTO TIENE?", 452, "CAMBIAN LAS CENTENAS.", n="aplicar"),
-      MC("426 + 10. ¿QUÉ CIFRA CAMBIA?", ["LA DE LAS DECENAS", "LA DE LAS UNIDADES", "LA DE LAS CENTENAS"], "LA DE LAS DECENAS", "426 + 10 = 436.", n="analizar")],
+      MC("426 + 10. ¿QUÉ CIFRA CAMBIA?", ["LA DE LAS DECENAS", "LA DE LAS UNIDADES", "LA DE LAS CENTENAS"], "LA DE LAS DECENAS", "426 + 10 = 436.", n="analizar"),
+      FB("COMPLETÁ: 518 + 100 = ___", [["618"]], "CAMBIAN LAS CENTENAS.", n="aplicar"),
+      MC("JUAN HIZO 245 + 10 Y LE DIO 246. ¿CUÁNTO DA DE VERDAD?", ["255", "246", "345"], "255", "SUMAR 10 CAMBIA LAS DECENAS.", n="error")],
 "5": [MC("RELÁMPAGO. ¿CUÁNTO VALE EL 9 EN 290?", ["90", "9"], "90", "ESTÁ EN LAS DECENAS.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. ¿QUÉ NÚMERO ES 400 + 20 + 1?", 421, "4 CENTENAS, 2 DECENAS Y 1 UNIDAD.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 518 + 100 = ___", 618, "CAMBIAN LAS CENTENAS.", tiempo=30, n="aplicar"),
@@ -174,7 +243,7 @@ EXAMEN = [
  [4, N("245 + 10 = ___", 255, "CAMBIAN LAS DECENAS.", n="aplicar")],
  [4, MC("ROSA TENÍA 352 Y AHORA 362. ¿QUÉ LLEGÓ?", ["UN PAQUETE DE 10", "UNA CAJA DE 100", "UN SUELTO"], "UN PAQUETE DE 10", "CAMBIARON LAS DECENAS.", n="analizar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 5, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 5, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: valor posicional con centenas", "examen_titulo": "Nivel jefe: valor posicional con centenas",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-5.json"), "w", encoding="utf-8"), ensure_ascii=False)

@@ -1544,6 +1544,9 @@
       comparar3: ctrl('a', 'UN NÚMERO', 100, 999, 1, 645) + ctrl('b', 'OTRO NÚMERO', 100, 999, 1, 654),
       orden3: ctrl('a', 'PRIMERO', 100, 999, 1, 460) + ctrl('b', 'SEGUNDO', 100, 999, 1, 406) + ctrl('c', 'TERCERO', 100, 999, 1, 640),
       recta1000: ctrl('n', 'NÚMERO', 10, 990, 10, 470),
+      cambia: ctrl('n', 'NÚMERO', 100, 899, 1, 352),
+      dinero2: p.que === 'vuelto' ? ctrl('n', 'PRECIO', 10, 490, 10, 80) : p.que === 'sumar' ? ctrl('a', 'PRECIO 1', 50, 500, 50, 300) + ctrl('b', 'PRECIO 2', 50, 450, 50, 250) : p.que === 'caro' ? ctrl('a', 'PRECIO 1', 100, 990, 10, 540) + ctrl('b', 'PRECIO 2', 100, 990, 10, 450) :
+        ctrl('q', 'BILLETES DE $500', 0, 1, 1, 1) + ctrl('d', 'BILLETES DE $200', 0, 2, 1, 1) + ctrl('c', 'BILLETES DE $100', 0, 3, 1, 1) + ctrl('m', 'BILLETES DE $50', 0, 1, 1, 1),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1987,6 +1990,44 @@
         P.push({ vis: p1R1000([[v.n, 'pb', v.n]]) + p1Big('MÁS A LA DERECHA, MÁS GRANDE'), txt: 'LOS DE LA DERECHA SON MAYORES QUE EL ' + v.n + '.' });
         return P;
       }
+      if (md === 'cambia') {
+        var ad = p.op || 100, nn2 = v.n + ad, pos = ad === 100 ? 0 : ad === 10 ? 1 : 2, NM = ['UNA CAJA DE 100', 'UN PAQUETE DE 10', 'UN SUELTO'];
+        P.push({ vis: p1CDUt(v.n), txt: 'TENEMOS EL <b>' + v.n + '</b>.' });
+        P.push({ vis: p1CDUt(v.n, pos), txt: 'LLEGA <b>' + NM[pos] + '</b>: SUMAMOS ' + ad + '.' });
+        P.push({ vis: p1CDUt(nn2, pos) + p1Big(v.n + ' + ' + ad + ' = ' + nn2), txt: 'CAMBIA SOLO LA CIFRA DE LAS <b>' + ['CENTENAS', 'DECENAS', 'UNIDADES'][pos] + '</b>' + (String(nn2).length > 3 || String(nn2)[pos] === '0' ? ' (Y PUEDE ARRASTRAR A LA DE AL LADO).' : '.') });
+        return P;
+      }
+      if (md === 'dinero2') {
+        var qd3 = p.que || 'contar';
+        if (qd3 === 'contar') {
+          var vs3 = [], k3; for (k3 = 0; k3 < v.q; k3++) vs3.push(500); for (k3 = 0; k3 < v.d; k3++) vs3.push(200); for (k3 = 0; k3 < v.c; k3++) vs3.push(100); for (k3 = 0; k3 < v.m; k3++) vs3.push(50);
+          if (!vs3.length) { P.push({ vis: p1Big('NO HAY DINERO'), txt: 'SUBÍ ALGÚN BILLETE.' }); return P; }
+          P.push({ vis: p1Plata(vs3), txt: 'EL NÚMERO DE CADA BILLETE DICE <b>CUÁNTO VALE</b>.' });
+          for (i = 1; i <= vs3.length; i++) P.push({ vis: p1Plata(vs3, i), txt: (i === 1 ? 'EMPEZAMOS POR EL QUE MÁS VALE: <b>' : 'SUMAMOS $' + vs3[i - 1] + ': <b>') + vs3.slice(0, i).reduce(function (x, y) { return x + y; }, 0) + '</b>.' });
+          var t3 = vs3.reduce(function (x, y) { return x + y; }, 0);
+          P.push({ vis: p1Plata(vs3, vs3.length) + p1Big('EN TOTAL $' + t3), txt: 'EN TOTAL HAY <b>$' + t3 + '</b>.' });
+          return P;
+        }
+        if (qd3 === 'vuelto') {
+          var pg = v.n <= 100 ? 100 : v.n <= 200 ? 200 : 500, sal = [], x3 = v.n; while (x3 < pg) { var st = (x3 % 100) ? (x3 % 50 ? 10 : 50) : 100; if (x3 + st > pg) st = 10; x3 += st; sal.push(x3); }
+          P.push({ vis: p1Big('CUESTA $' + v.n + ' · PAGÁS $' + pg), txt: 'PAGAMOS CON MÁS: NOS <b>DEVUELVEN</b> DINERO.' });
+          P.push({ vis: p1Big('$' + v.n + ' → ' + sal.map(function (x) { return '$' + x; }).join(' → ')), txt: 'CONTAMOS <b>PARA ADELANTE</b> DESDE EL PRECIO HASTA LO QUE PAGAMOS.' });
+          P.push({ vis: p1Big('TE DEVUELVEN $' + (pg - v.n)), txt: 'DE ' + v.n + ' A ' + pg + ' HAY <b>' + (pg - v.n) + '</b>: ES LO QUE TE DEVUELVEN.' });
+          return P;
+        }
+        if (qd3 === 'sumar') {
+          P.push({ vis: '<div class="lb-p1-dos"><div class="lb-p1-pre">🧃<b>$' + v.a + '</b></div><div class="lb-p1-pre">⚽<b>$' + v.b + '</b></div></div>', txt: 'QUEREMOS COMPRAR LAS <b>DOS</b> COSAS.' });
+          P.push({ vis: p1Big('$' + v.a + ' + $' + v.b), txt: 'SUMAMOS LOS PRECIOS.' });
+          P.push({ vis: p1Big('$' + v.a + ' + $' + v.b + ' = $' + (v.a + v.b)), txt: 'JUNTAS CUESTAN <b>$' + (v.a + v.b) + '</b>.' });
+          return P;
+        }
+        var Gc3 = function (h) { return '<div class="lb-p1-dos"><div class="lb-p1-pre' + (h === v.a ? ' on' : '') + '">🧃<b>$' + v.a + '</b></div><div class="lb-p1-pre' + (h === v.b ? ' on' : '') + '">⚽<b>$' + v.b + '</b></div></div>'; };
+        P.push({ vis: Gc3(), txt: 'COMPARAMOS LOS PRECIOS COMO NÚMEROS: PRIMERO LAS CENTENAS.' });
+        if (v.a === v.b) { P.push({ vis: Gc3() + p1Big('CUESTAN IGUAL'), txt: 'TIENEN EL MISMO PRECIO.' }); return P; }
+        P.push({ vis: Gc3(Math.max(v.a, v.b)), txt: '<b>$' + Math.max(v.a, v.b) + '</b> ES EL MÁS <b>CARO</b>.' });
+        P.push({ vis: Gc3(Math.min(v.a, v.b)) + p1Big('$' + Math.min(v.a, v.b) + ' ES MÁS BARATO'), txt: '<b>$' + Math.min(v.a, v.b) + '</b> ES EL MÁS <b>BARATO</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2143,6 +2184,16 @@
         return { cons: '¿QUÉ NÚMERO VA EN EL LUGAR DEL <b>?</b>', html: p1R1000([[n, 'pb', '?']]), campos: [{ v: n }], ayuda: 'MIRÁ LAS MARCAS DE 100 EN 100.', bien: '¡MUY BIEN! ES EL ' + n + '.' }; }); }
     if (md === 'redondos3') return p1Elegir(el, api, function () { var r = 10 * R(11, 99), a = r + R(1, 9), b = r - 10 * R(1, 5) + R(1, 9);
       return { cons: '¿CUÁL ES UN NÚMERO <b>REDONDO</b>?', ops: mezclar([String(r), String(a), String(b)]), ok: String(r), ayuda: 'UN NÚMERO REDONDO TERMINA EN 0.', bien: '¡MUY BIEN! ' + r + ' TERMINA EN 0.' }; });
+    if (md === 'cambia') return respuesta(el, api, function () { var n = R(100, 889), ad = pick([1, 10, 100]);
+      return { cons: '¿CUÁNTO ES <b>' + n + ' + ' + ad + '</b>?', html: p1CDUt(n), campos: [{ v: n + ad }], ayuda: 'SUMAR ' + ad + ' CAMBIA LA CIFRA DE LAS ' + (ad === 100 ? 'CENTENAS' : ad === 10 ? 'DECENAS' : 'UNIDADES') + '.', bien: '¡MUY BIEN! ES ' + (n + ad) + '.' }; });
+    if (md === 'dinero2') { var qd3 = p.que || 'contar';
+      if (qd3 === 'caro') return p1Elegir(el, api, function () { var a = 10 * R(10, 99), b = 10 * R(10, 99); while (b === a) b = 10 * R(10, 99); var car = Math.random() < 0.5;
+        return { cons: '¿CUÁL ES MÁS <b>' + (car ? 'CARO' : 'BARATO') + '</b>?', ops: ['$' + a, '$' + b], ok: '$' + (car ? Math.max(a, b) : Math.min(a, b)), ayuda: 'COMPARÁ COMO NÚMEROS: PRIMERO LAS CENTENAS.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var c, r, h = '';
+        if (qd3 === 'vuelto') { var pg = pick([100, 200, 500]), pr = 10 * R(pg / 20, pg / 10 - 1); r = pg - pr; c = 'ALGO CUESTA <b>$' + pr + '</b> Y PAGÁS CON <b>$' + pg + '</b>. ¿CUÁNTO TE DEVUELVEN?'; }
+        else if (qd3 === 'sumar') { var a = 50 * R(1, 9), b = 50 * R(1, 9); r = a + b; c = 'ALGO DE <b>$' + a + '</b> Y ALGO DE <b>$' + b + '</b>. ¿CUÁNTO CUESTAN JUNTOS?'; }
+        else { var vs = [], k; for (k = R(0, 1); k > 0; k--) vs.push(500); for (k = R(0, 2); k > 0; k--) vs.push(200); for (k = R(1, 3); k > 0; k--) vs.push(100); for (k = R(0, 1); k > 0; k--) vs.push(50); vs = mezclar(vs); r = vs.reduce(function (x, y) { return x + y; }, 0); c = '¿CUÁNTO DINERO HAY EN TOTAL?'; h = p1Plata(vs); }
+        return { cons: c, html: h, campos: [{ v: r, lab: '$' }], ayuda: qd3 === 'vuelto' ? 'CONTÁ PARA ADELANTE DESDE EL PRECIO HASTA LO QUE PAGÁS.' : 'EMPEZÁ POR LO QUE MÁS VALE Y SEGUÍ SUMANDO.', bien: '¡MUY BIEN! $' + r + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
