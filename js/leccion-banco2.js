@@ -403,6 +403,69 @@
     pintar();
   } };
 
+  // Descomponer (ejemplo visual): cada cifra se convierte en un bloque con su valor; modo 'aditiva' o 'potencias'
+  var SUP = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+  function partesDe(s) { var n = s.length, o = []; for (var k = n - 1; k >= 0; k--) { var d = s[n - 1 - k]; if (d !== '0') o.push({ d: d, k: k }); } return o; }
+  M.descomponer = { tipo: 'ejemplo', render: function (el, p) {
+    var pot = p.modo === 'potencias', N0 = pick(['60427', '305081', '7208']);
+    el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + N0 + '" maxlength="9"></div><div class="lb-vista"></div>';
+    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
+    function pintar() {
+      var s = String(inp.value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
+      if (!s) { v.innerHTML = '<p class="lb-ayuda">Escribí un número.</p>'; return; }
+      var P = partesDe(s), col = function (i) { return 'c' + (i % 5); };
+      var cif = s.split('').map(function (d, i) { var k = s.length - 1 - i, j = -1; P.forEach(function (x, q) { if (x.k === k) j = q; }); return '<span class="lb-dc-d ' + (j < 0 ? 'cero' : col(j)) + '">' + d + '</span>'; }).join('');
+      var bloques = P.map(function (x, i) { var val = fmt(Number(x.d) * Math.pow(10, x.k)); return '<span class="lb-dc-b ' + col(i) + '"><b>' + (pot ? x.d + ' × 10' + SUP[x.k] : val) + '</b><small>' + (pot ? val : x.d + ' × ' + fmt(Math.pow(10, x.k))) + '</small></span>'; }).join('<i class="lb-dc-mas">+</i>');
+      v.innerHTML = '<div class="lb-dc-cif">' + cif + '</div><div class="lb-dc-fl">↓</div><div class="lb-dc-bs">' + bloques + '</div><p class="lb-cn-res">= ' + fmt(Number(s)) + '</p>';
+    }
+    inp.addEventListener('input', pintar); pintar();
+  } };
+  // Descomponer (ejercicio): completar el valor de cada cifra (aditiva) o el exponente de cada potencia
+  M.descomponer_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var pot = p.modo === 'potencias';
+    respuesta(el, api, function () {
+      var n; do { n = R(1000, 999999); } while (partesDe(String(n)).length < 3);
+      var P = partesDe(String(n));
+      if (pot) return { cons: 'Descomponé <b>' + fmt(n) + '</b> con potencias de 10: completá cada exponente.', campos: P.map(function (x) { return { lab: x.d + ' × 10 elevado a', v: x.k }; }), ayuda: 'Contá los lugares desde la derecha empezando en 0: las unidades tienen exponente 0.', bien: '¡Bien! ' + fmt(n) + ' = ' + P.map(function (x) { return x.d + ' × 10' + SUP[x.k]; }).join(' + ') };
+      return { cons: 'Descomponé <b>' + fmt(n) + '</b>: escribí lo que vale cada cifra que no es 0, de izquierda a derecha.', campos: P.map(function (x, i) { return { lab: i ? '+' : fmt(n) + ' =', v: Number(x.d) * Math.pow(10, x.k) }; }), ayuda: 'Cada cifra vale la cifra por lo que vale su lugar: no te olvides de los ceros.', bien: '¡Bien! ' + fmt(n) + ' = ' + P.map(function (x) { return fmt(Number(x.d) * Math.pow(10, x.k)); }).join(' + ') };
+    });
+  } };
+  // Pasar entre decimal y binario (ejemplo visual): 'a_binario' muestra la escalera de divisiones; 'a_decimal', el valor de cada lugar
+  M.binario_pasar = { tipo: 'ejemplo', render: function (el, p) {
+    var aBin = p.modo !== 'a_decimal';
+    el.innerHTML = '<div class="lb-in-f"><label>' + (aBin ? 'Número decimal (hasta 255)' : 'Número binario (solo 0 y 1)') + '</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + (aBin ? pick(['19', '45', '100']) : pick(['101101', '11001', '1110'])) + '" maxlength="' + (aBin ? 3 : 8) + '"></div><div class="lb-vista"></div>';
+    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
+    function pintar() {
+      var s = String(inp.value).trim();
+      if (aBin) {
+        var n = parseInt(s.replace(/\D/g, ''), 10);
+        if (!(n >= 1 && n <= 255)) { v.innerHTML = '<p class="lb-ayuda">Escribí un número del 1 al 255.</p>'; return; }
+        var filas = '', x = n, restos = [];
+        while (x > 0) { var q = Math.floor(x / 2), r = x % 2; restos.push(r); filas += '<tr><td>' + x + ' ÷ 2</td><td>= ' + q + '</td><td class="lb-bp-r">' + r + '</td></tr>'; x = q; }
+        v.innerHTML = '<div class="lb-bp-w"><table class="lb-bp"><thead><tr><th></th><th>cociente</th><th>resto</th></tr></thead><tbody>' + filas + '</tbody></table><div class="lb-bp-fl">↑<small>de abajo<br>hacia arriba</small></div></div><p class="lb-cn-res">' + n + ' = ' + restos.slice().reverse().join('') + '₂</p>';
+      } else {
+        if (!/^[01]+$/.test(s)) { v.innerHTML = '<p class="lb-ayuda">Un número binario solo tiene ceros y unos.</p>'; return; }
+        var L = s.length, sum = [], cel = s.split('').map(function (d, i) { var val = Math.pow(2, L - 1 - i); if (d === '1') sum.push(val); return '<div class="lb-bp-c' + (d === '1' ? ' on' : '') + '"><small>' + val + '</small><b>' + d + '</b></div>'; }).join('');
+        v.innerHTML = '<div class="lb-bp-row">' + cel + '</div><p class="lb-cn-res">' + s + '₂ = ' + (sum.length ? sum.join(' + ') + ' = ' + sum.reduce(function (a, b) { return a + b; }, 0) : '0') + '</p>';
+      }
+    }
+    inp.addEventListener('input', pintar); pintar();
+  } };
+
+  // Operar en sexagesimal (ejercicio): sumar o restar dos tiempos o dos ángulos y escribir el resultado
+  M.sexa_operar_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var ang = p.modo === 'angulo', U = ang ? ['°', '′', '″'] : ['h', 'min', 's'];
+    respuesta(el, api, function () {
+      var a = [R(1, ang ? 90 : 5), R(10, 59), R(0, 59)], b = [R(1, ang ? 60 : 4), R(10, 59), R(0, 59)], suma = Math.random() < .5;
+      var A = a[0] * 3600 + a[1] * 60 + a[2], B = b[0] * 3600 + b[1] * 60 + b[2];
+      if (!suma && A < B) { var t = a; a = b; b = t; t = A; A = B; B = t; }
+      var T = suma ? A + B : A - B, r = [Math.floor(T / 3600), Math.floor(T / 60) % 60, T % 60];
+      var f = function (v) { return v[0] + ' ' + U[0] + ' ' + v[1] + ' ' + U[1] + ' ' + v[2] + ' ' + U[2]; };
+      return { cons: (suma ? 'Sumá' : 'Restá') + ': <b>' + f(a) + (suma ? ' + ' : ' − ') + f(b) + '</b>', campos: [{ v: r[0], un: U[0] }, { v: r[1], un: U[1] }, { v: r[2], un: U[2] }],
+        ayuda: suma ? 'Sumá cada columna y canjeá cada 60 por 1 de la columna de la izquierda.' : 'Si una columna no alcanza, pedí 1 a la izquierda: suma 60, no 100.', bien: '¡Bien! Da ' + f(r) + '.' };
+    });
+  } };
+
   M.binario_lamparas = { tipo: 'ejemplo', render: function (el) {
     var on = [0, 0, 1, 0, 1, 1, 0, 1];
     function pintar() { var v = 0; on.forEach(function (b, i) { if (b) v += Math.pow(2, 7 - i); });
@@ -640,6 +703,11 @@
     '.lb-cn-res{font-size:1.5rem;font-weight:800;text-align:center;margin:10px 0 0;color:#066A6E}.lb-cn-in{width:12ch!important;font-size:1.15rem}',
     '.lb-sx-op{display:flex;gap:8px;margin-bottom:10px}.lb-sx-dat{display:flex;flex-direction:column;gap:8px}.lb-sx-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.lb-sx-row em{font-style:normal;font-weight:800;color:#066A6E;margin-right:8px}.lb-sx-in{width:4ch!important;text-align:center;font-size:1.2rem}',
     '.lb-sx-pasos{margin:12px 0 0;padding-left:22px;line-height:1.55}.lb-sx-pasos li{margin:4px 0}',
+    '.lb-dc-cif{display:flex;justify-content:center;gap:4px;margin:6px 0}.lb-dc-d{width:40px;height:50px;display:grid;place-items:center;border-radius:10px;font-weight:800;font-size:1.6rem;border:2px solid currentColor}.lb-dc-d.cero{color:#9dbdb9}.lb-dc-fl{text-align:center;font-size:1.4rem;color:#087E83}',
+    '.lb-dc-bs{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px}.lb-dc-b{display:flex;flex-direction:column;align-items:center;padding:8px 12px;border-radius:12px;color:#fff}.lb-dc-b b{font-size:1.3rem}.lb-dc-b small{opacity:.9;font-weight:700}.lb-dc-mas{font-style:normal;font-weight:800;font-size:1.4rem;color:#253638}',
+    '.lb-dc-d.c0{color:#087E83}.lb-dc-d.c1{color:#253638}.lb-dc-d.c2{color:#3BA99C}.lb-dc-d.c3{color:#066A6E}.lb-dc-d.c4{color:#5C8D89}.lb-dc-b.c0{background:#087E83}.lb-dc-b.c1{background:#253638}.lb-dc-b.c2{background:#3BA99C}.lb-dc-b.c3{background:#066A6E}.lb-dc-b.c4{background:#5C8D89}',
+    '.lb-bp-w{display:flex;justify-content:center;align-items:center;gap:14px}.lb-bp{border-collapse:collapse;font-size:1.15rem}.lb-bp td,.lb-bp th{padding:4px 10px;text-align:left}.lb-bp th{font-size:.75rem;color:#4b6a6c}.lb-bp-r{font-weight:800;color:#fff;background:#087E83;text-align:center!important;border-radius:8px;border:3px solid #fff}',
+    '.lb-bp-fl{font-size:2.2rem;color:#087E83;text-align:center;line-height:1}.lb-bp-fl small{display:block;font-size:.7rem;font-weight:700}.lb-bp-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}.lb-bp-c{display:flex;flex-direction:column;align-items:center;gap:4px}.lb-bp-c small{font-weight:800;color:#4b6a6c}.lb-bp-c b{width:42px;height:50px;display:grid;place-items:center;border:2px solid #9dbdb9;border-radius:10px;font-size:1.5rem;color:#9dbdb9}.lb-bp-c.on b{background:#087E83;border-color:#087E83;color:#fff}.lb-bp-c.on small{color:#087E83}',
     '.lb-vp-w{overflow-x:auto}.lb-vp{border-collapse:separate;border-spacing:4px;margin:4px auto}.lb-vp th{font-size:.72rem;color:#4b6a6c;font-weight:800;text-align:center;padding:2px 4px}.lb-vp th.lb-vp-per{background:#D7F0E9;color:#066A6E;border-radius:8px;font-size:.78rem;padding:4px 6px}',
     '.lb-vp-c{width:44px;height:52px;border:2px solid #087E83;border-radius:12px;background:#fff;font-family:inherit;font-weight:800;font-size:1.6rem;line-height:1;color:#253638;cursor:pointer}.lb-vp.vplargo .lb-vp-c{width:32px;height:44px;font-size:1.25rem;border-radius:10px}.lb-vp.vplargo{border-spacing:2px}.lb-vp-in{width:14ch!important;font-size:1.2rem}.lb-vp-c.cero{color:#9dbdb9}.lb-vp-c.on{background:#087E83;color:#fff}',
     '.lb-vp-big{font-size:1.15rem;line-height:1.5;margin:12px 0 4px}.lb-vp-trozos{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}.lb-vp-tr{display:flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:14px;background:#D7F0E9}.lb-vp-tr b{font-size:1.5rem;letter-spacing:.08em;color:#066A6E}.lb-vp-tr.cero{opacity:.5}.lb-vp-tr small{font-weight:700;color:#4b6a6c}',

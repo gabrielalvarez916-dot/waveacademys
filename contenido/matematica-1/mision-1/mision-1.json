@@ -309,10 +309,8 @@
      {
       "titulo": "Descomponer un número",
       "ejemplo": {
-       "motor": "pasoapaso",
-       "p": {
-        "u": "/actividades/pasoapaso/descomposicion-aditiva.html"
-       }
+       "motor": "descomponer",
+       "p": {}
       },
       "explicacion": [
        {
@@ -332,7 +330,11 @@
          "Para controlar, la suma tiene que volver a dar el número."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "descomponer_x",
+       "p": {}
+      }
      }
     ],
     "recuerda": [
@@ -630,14 +632,20 @@
          "Dividir por 10, 100 o 1.000 un número terminado en ceros saca esos ceros: 63.000 ÷ 100 = 630."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "llevar",
+       "p": {
+        "modo": "potencias"
+       }
+      }
      },
      {
       "titulo": "Descomponer con potencias de 10",
       "ejemplo": {
-       "motor": "pasoapaso",
+       "motor": "descomponer",
        "p": {
-        "u": "/actividades/pasoapaso/descomposicion-multiplicativa.html"
+        "modo": "potencias"
        }
       },
       "explicacion": [
@@ -658,7 +666,13 @@
          "Las cifras que son 0 no se escriben."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "descomponer_x",
+       "p": {
+        "modo": "potencias"
+       }
+      }
      },
      {
       "titulo": "Comparar números grandes",
@@ -967,14 +981,18 @@
          "Un binario se lee cifra por cifra: 110₂ es «uno, uno, cero», no «ciento diez»."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "binario_conv",
+       "p": {}
+      }
      },
      {
       "titulo": "De decimal a binario",
       "ejemplo": {
-       "motor": "pasoapaso",
+       "motor": "binario_pasar",
        "p": {
-        "u": "/actividades/pasoapaso/decimal-a-binario.html"
+        "modo": "a_binario"
        }
       },
       "explicacion": [
@@ -1004,9 +1022,9 @@
      {
       "titulo": "De binario a decimal",
       "ejemplo": {
-       "motor": "pasoapaso",
+       "motor": "binario_pasar",
        "p": {
-        "u": "/actividades/pasoapaso/binario-a-decimal.html"
+        "modo": "a_decimal"
        }
       },
       "explicacion": [
@@ -1339,7 +1357,11 @@
          "En el resultado, los minutos y los segundos quedan entre 0 y 59."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "sexa_operar_x",
+       "p": {}
+      }
      },
      {
       "titulo": "Ángulos en grados, minutos y segundos",
@@ -1367,7 +1389,13 @@
          "El minuto de ángulo (′) no es tiempo: es una parte de un grado."
         ]
        }
-      ]
+      ],
+      "ejercicio": {
+       "motor": "sexa_operar_x",
+       "p": {
+        "modo": "angulo"
+       }
+      }
      }
     ],
     "recuerda": [

@@ -52,7 +52,15 @@ function practica(pr, donde) {
 }
 
 // ---------- LECCIÓN ESCRITA EN SESIÓN (docs/reglas-leccion-interactiva.md) ----------
-const MIN_TEMA = 60, MAX_TEMA = 160, MIN_TEMAS = 3, MAX_COPIA = 0.25;
+const MAX_COPIA = 0.25;
+// Reglas por etapa (mismo modelo, adaptado a la edad). Primaria = contenido/medio/<materia>-<grado>/: 1.º a 3.º es el primer ciclo.
+const ETAPAS = {
+  secundaria: { nombre: 'secundaria', min: 60, max: 160, def: 15, parrafo: true, temas: 3, rec: [4, 8], recDef: 10 },
+  ciclo2: { nombre: 'primaria, segundo ciclo (4.º a 6.º)', min: 40, max: 110, def: 10, parrafo: true, temas: 3, rec: [3, 6], recDef: 8 },
+  ciclo1: { nombre: 'primaria, primer ciclo (1.º a 3.º)', min: 12, max: 60, def: 6, parrafo: false, temas: 2, rec: [2, 4], recDef: 5 }
+};
+function etapa(ruta) { const m = String(ruta).replace(/\\/g, '/').match(/contenido\/medio\/[a-z]+-(\d+)\//); if (!m) return ETAPAS.secundaria; return Number(m[1]) <= 3 ? ETAPAS.ciclo1 : ETAPAS.ciclo2; }
+const EJEMPLO_CON_TEXTO = ['pasoapaso'];  // ejemplos que repiten la explicación en texto: no van en la lección
 const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const palabras = s => limpio(s).split(' ').filter(w => /[a-záéíóúñü0-9]/i.test(w));
 const textoBloques = bs => (bs || []).map(b => [b.texto, (b.items || []).join(' '), (b.filas || []).map(f => f.join(' ')).join(' ')].join(' ')).join(' ');
@@ -74,32 +82,35 @@ function promedioMateria(ruta) {  // palabras promedio de las lecciones ya escri
 }
 function leccion(ruta, M, n, L, donde) {
   if (!Array.isArray(L.temas) || !L.temas.length) return mal(donde, 'la lección no tiene temas');
-  let total = 0; const fu = fuentes(ruta, M, n);
+  let total = 0; const fu = fuentes(ruta, M, n), E = etapa(ruta), MIN_TEMA = E.min, MAX_TEMA = E.max;
   L.temas.forEach((t, i) => {
     const d = donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', bs = t.explicacion || [], tipos = bs.map(b => b.tipo), txt = textoBloques(bs), np = palabras(txt).length;
     total += np;
     if (np < MIN_TEMA) mal(d, 'explicación de ' + np + ' palabras: el mínimo es ' + MIN_TEMA);
     if (np > MAX_TEMA) mal(d, 'explicación de ' + np + ' palabras: el máximo es ' + MAX_TEMA + ' (modelo CIDEAD: texto corto, el ejemplo vivo hace el resto; si hay más, es otra pantalla)');
-    const def = bs.find(b => b.tipo === 'definicion'); if (!def || palabras(def.texto).length < 15) mal(d, 'falta la definición completa (bloque definicion de 15 palabras o más)');
-    if (!tipos.includes('parrafo')) mal(d, 'falta el párrafo que explica por qué es así o para qué sirve');
+    const def = bs.find(b => b.tipo === 'definicion'); if (!def || palabras(def.texto).length < E.def) mal(d, 'falta la definición (bloque definicion de ' + E.def + ' palabras o más, ' + E.nombre + ')');
+    if (E.parrafo && !tipos.includes('parrafo')) mal(d, 'falta el párrafo que explica por qué es así o para qué sirve');
+    if (E === ETAPAS.ciclo1 && tipos.filter(x => x === 'parrafo' || x === 'lista').length > 1) mal(d, 'primer ciclo: poco texto, todo visual. Definición corta y, como mucho, un párrafo o una lista corta');
     ['ejemplo', 'pasos', 'error'].forEach(k => { if (tipos.includes(k)) mal(d, 'no lleva bloque «' + k + '»: el procedimiento y el caso los muestra el ejemplo vivo de al lado (no se explica dos veces)'); });
     if (/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)\b/i.test(txt)) mal(d, 'menciona meses del calendario');
     if (/como (vimos|viste) en la clase/i.test(txt)) mal(d, 'remite a la clase en vez de explicar');
     const g = grams(txt); let rep = 0; g.forEach(x => { if (fu.has(x)) rep++; });
     if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
     ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
+    if (t.ejemplo && EJEMPLO_CON_TEXTO.includes(t.ejemplo.motor)) mal(d, 'el ejemplo «' + t.ejemplo.motor + '» repite en texto lo que ya dice la explicación: usá un ejemplo visual del banco (o agregalo al banco)');
+    if (!t.ejercicio || !t.ejercicio.motor) mal(d, 'todo tema lleva su ejercicio de práctica del banco (ejercicio con motor, con "Otros números")');
     if (!t.ejemplo || !t.ejemplo.motor) mal(d, 'todo tema lleva su ejemplo vivo del banco (ejemplo con motor), sin excepción. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
   });
   // "Recordá lo más importante" (formato CIDEAD): tarjetas con concepto + definición completa + ejemplo concreto
   const R = L.recuerda || [];
-  if (R.length < 4) mal(donde, '"Recordá lo más importante" necesita al menos 4 tarjetas (una por concepto o procedimiento clave)');
+  if (R.length < E.rec[0] || R.length > E.rec[1]) mal(donde, '"Recordá lo más importante" lleva de ' + E.rec[0] + ' a ' + E.rec[1] + ' tarjetas (' + E.nombre + ')');
   R.forEach((r, i) => {
     const d = donde + ' · recordá ' + (i + 1);
     if (!r.concepto) mal(d, 'falta el concepto');
-    if (palabras(r.definicion).length < 10) mal(d, 'la definición tiene que ser una oración completa (10 palabras o más), no dos palabras');
+    if (palabras(r.definicion).length < E.recDef) mal(d, 'la definición tiene que ser una oración completa (' + E.recDef + ' palabras o más), no dos palabras');
     if (!r.ejemplo || palabras(r.ejemplo).length < 2) mal(d, 'falta el ejemplo concreto (ej.: "D(18) = {1, 2, 3, 6, 9, 18}")');
   });
-  if (L.temas.length < MIN_TEMAS) mal(donde, 'la lección tiene ' + L.temas.length + ' pantallas: el mínimo es ' + MIN_TEMAS + ' (una por idea, cada una con su ejemplo vivo)');
+  if (L.temas.length < E.temas) mal(donde, 'la lección tiene ' + L.temas.length + ' pantallas: el mínimo es ' + E.temas + ' (una por idea, cada una con su ejemplo vivo)');
 }
 
 for (const ruta of process.argv.slice(2)) {

@@ -35,3 +35,9 @@ Si un tema necesita un motor que no está, se crea en el banco (con su prueba au
 | `valor_posicional` | ejemplo | escribís un número y ves cada cifra en su lugar, cuánto vale y la descomposición; con `leer`, los períodos y cómo se lee | `{"modo":"valor"\|"leer"}` |
 | `comparar_naturales` | ejemplo | dos números: cuenta cifras y marca la primera cifra distinta | — |
 | `sexa_operar` | ejemplo | suma y resta de tiempos (o ángulos con `angulo`) con los canjes de a 60 a la vista | `{"modo":"angulo"}` opcional |
+| `descomponer` | ejemplo | cada cifra se convierte en un bloque de color con su valor | `{"modo":"aditiva"\|"potencias"}` |
+| `descomponer_x` | ejercicio | escribir el valor de cada cifra (o el exponente de cada potencia) | `{"modo":"potencias"}` opcional |
+| `binario_pasar` | ejemplo | escalera de divisiones por 2 (a_binario) o valor de cada lugar (a_decimal) | `{"modo":"a_binario"\|"a_decimal"}` |
+| `sexa_operar_x` | ejercicio | sumar o restar dos tiempos (o ángulos con `angulo`) | `{"modo":"angulo"}` opcional |
+
+`pasoapaso` NO va como ejemplo de la lección: repite en texto la explicación. Queda para otros usos.

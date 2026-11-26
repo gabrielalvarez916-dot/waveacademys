@@ -110,10 +110,20 @@ window.WaveLeccion = (function () {
     var total = secs.length + (hayResumen ? 1 : 0), cur = 0, ejN = {}, ejPaso = {};
     var el = document.createElement('div'); el.className = 'li2';
     el.innerHTML = '<div class="li2-caja" role="dialog" aria-label="Lección interactiva"><div class="li2-barra"><b class="li2-t">' + esc(op.titulo) + '</b>' +
-      '<button type="button" class="li2-x" data-li="cerrar" aria-label="Cerrar">✕</button></div><div class="li2-cuerpo"><nav class="li2-idx" aria-label="Temas de la lección"></nav><main class="li2-main"></main></div></div>';
+      '<button type="button" class="li2-imp" data-li="imprimir" aria-label="Imprimir la lección">🖨 Imprimir</button>' + '<button type="button" class="li2-x" data-li="cerrar" aria-label="Cerrar">✕</button></div><div class="li2-cuerpo"><nav class="li2-idx" aria-label="Temas de la lección"></nav><main class="li2-main"></main></div></div>';
     document.body.appendChild(el); document.body.classList.add('wvp-abierto');
     var idx = el.querySelector('.li2-idx'), main = el.querySelector('.li2-main');
     function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); if (op.alCerrar) op.alCerrar(); }
+    // Imprimir: toda la lección en papel, como el PDF (texto de cada tema + Recordá); los ejemplos vivos quedan en la plataforma
+    function imprimir() {
+      var cuerpo = '<h1>' + esc(op.titulo) + '</h1>' + secs.map(function (t) { return '<section><h2>' + esc(t.titulo) + '</h2>' + lista(t.bloques).map(bloque).join('') + '</section>'; }).join('') + (hayResumen ? '<section class="rec">' + resumen() + '</section>' : '');
+      var css = 'body{font-family:Arial,Helvetica,sans-serif;color:#253638;margin:18mm 16mm;font-size:12pt;line-height:1.5}h1{color:#066A6E;font-size:20pt;margin:0 0 10px;border-bottom:3px solid #087E83;padding-bottom:6px}h2{color:#087E83;font-size:15pt;margin:18px 0 8px}h4{margin:10px 0 4px}' +
+        'section{break-inside:avoid-page}.li2-def,.li2-nota{border:2px solid #087E83;border-radius:10px;padding:8px 12px;margin:8px 0;background:#F3FBF7}.li2-kick{display:none}.li2-rec{display:grid;grid-template-columns:1fr 1fr;gap:8px}.li2-rec-c{border:1.5px solid #087E83;border-radius:10px;padding:8px 10px;break-inside:avoid}.li2-rec-c p{margin:0}' +
+        '.li2-rec-f{font-weight:700;margin:6px 0;padding:4px 8px;background:#D7F0E9;border-radius:6px}.li2-rec-x{margin-top:6px;font-style:italic}table{border-collapse:collapse}td,th{border:1px solid #9dbdb9;padding:4px 8px}img{max-width:100%}';
+      var fr = document.createElement('iframe'); fr.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0'; document.body.appendChild(fr);
+      var d = fr.contentDocument; d.open(); d.write('<!doctype html><html><head><meta charset="utf-8"><title>' + esc(op.titulo) + '</title><style>' + css + '</style></head><body>' + cuerpo + '</body></html>'); d.close();
+      setTimeout(function () { try { fr.contentWindow.focus(); fr.contentWindow.print(); } catch (e) {} setTimeout(function () { fr.remove(); }, 60000); }, 250);
+    }
 
     function pintarIdx() {
       idx.innerHTML = '<small>Temas</small>' + secs.map(function (s, k) { return '<button type="button" data-ir="' + k + '" class="' + (k === cur ? 'on' : '') + '"><i>' + (k + 1) + '</i><span>' + esc(s.titulo || 'Tema ' + (k + 1)) + '</span></button>'; }).join('') +
@@ -210,6 +220,7 @@ window.WaveLeccion = (function () {
       if (e.target.closest('.li2-pv')) return;
       var ir = e.target.closest('[data-ir]'); if (ir) { cur = +ir.getAttribute('data-ir'); return pintar(); }
       var b = e.target.closest('[data-li]'); if (!b) return;
+      if (b.getAttribute('data-li') === 'imprimir') return imprimir();
       var a = b.getAttribute('data-li');
       if (a === 'cerrar') return cerrar();
       if (a === 'ant' && cur > 0) { cur--; return pintar(); }
@@ -255,6 +266,7 @@ window.WaveLeccion = (function () {
     '.li2-btn{padding:12px 22px;border:0;border-radius:16px;background:#087E83;color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #066A6E}.li2-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #066A6E}',
     '.li2-btn.suave{background:#fff;color:#066A6E;border:2px solid #087E83;box-shadow:none}.li2-btn.prac{background:#253638;box-shadow:0 4px 0 #111c1d}',
     '.li2-resu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}.li2-rc{padding:14px;border-radius:16px;background:#fff;border:2px solid #D7F0E9}.li2-rc b{display:block;color:#087E83;margin-bottom:4px}',
+    '.li2-imp{margin-left:auto;margin-right:8px;border:2px solid #087E83;background:#fff;color:#066A6E;font-weight:800;border-radius:999px;padding:6px 14px;cursor:pointer;font-family:inherit}.li2-imp:hover{background:#D7F0E9}',
     '.li2-rec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.li2-rec-c{padding:14px 16px;border-radius:16px;line-height:1.5}.li2-rec-c p{margin:0}',
     '.li2-rec-c.t0{background:#D7F0E9}.li2-rec-c.t1{background:#E3ECEA}.li2-rec-c.t2{background:#fff;border:2px solid #D7F0E9}.li2-rec-c.t3{background:#F3FBF7;border:2px solid #9dbdb9}',
     '.li2-rec-f{margin:10px auto 2px;width:fit-content;padding:6px 16px;border:2px solid #087E83;border-radius:10px;background:#fff;font-weight:900;font-size:1.15rem;color:#087E83}',

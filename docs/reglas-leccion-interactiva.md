@@ -22,7 +22,9 @@ Una pantalla = una idea. Mitad izquierda: texto corto. Mitad derecha: el EJEMPLO
 2. **Por qué es así / para qué sirve**: un `parrafo` que dé el sentido, no solo la regla.
 3. **Lo clave**: una `lista` de 2 o 3 viñetas: reglas, casos especiales y el error típico en una línea.
 4. **Entre 60 y 160 palabras** de texto. Si hace falta más, es otra pantalla con su propio ejemplo.
-5. **Ejemplo vivo SIEMPRE** (`ejemplo` con motor del banco). Sin excepción: ninguna pantalla sin ejemplo. El `ejercicio` es aparte y opcional.
+5. **Ejemplo vivo SIEMPRE** (`ejemplo` con motor del banco): visual, con poquito texto. No repite la explicación (por eso `pasoapaso` no va).
+6. **Ejercicio SIEMPRE** (`ejercicio` con motor del banco, con "Otros números"): ninguna pantalla sin práctica.
+7. Cada lección tiene botón **Imprimir** (sale solo): imprime el texto de cada pantalla y el Recordá, como el PDF.
 - Lo de CONCEPTO (qué es una variable, qué es aleatorio) no es pantalla propia: se explica dentro de la pantalla práctica que corresponde.
 - Si el banco no tiene el ejemplo que la pantalla necesita, se agrega al banco de la lección (se avisa) y se anota en `docs/banco-leccion.md`. No se fuerza uno que no corresponde ni se deja la pantalla sin ejemplo.
 
