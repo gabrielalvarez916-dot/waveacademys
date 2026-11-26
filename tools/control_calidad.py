@@ -213,7 +213,8 @@ def _una_palabra(q):
     ac = (q.get('r') or {}).get('acepta') if isinstance(q.get('r'), dict) else None
     return bool(re.search(r'una (sola )?palabra|solo la palabra', p)) or bool(ac and all(len(str(a).split()) <= 1 for a in ac))
 
-def revisar_preguntas(M, nivel, err):
+def revisar_preguntas(M, nivel, err, err_pdf=None):
+    err_pdf = err if err_pdf is None else err_pdf
     qs = []
     for k, l in (M.get('act') or {}).items():
         if str(k) == '5': continue            # el Relámpago es velocidad a propósito
@@ -235,7 +236,7 @@ def revisar_preguntas(M, nivel, err):
     for k, N in (M.get('niveles') or {}).items():
         cs = [c if isinstance(c, str) else (c or {}).get('consigna', '') for c in (N.get('carpeta') or [])]
         con = sum(len(re.sub(r'\[\[[^\]]*\]\]', ' ', c).split()) >= PENSADA_MIN_PALABRAS[nivel] or bool(re.search(r'\d', c)) for c in cs)
-        if cs and con < min(CARPETA_CON_CASO[nivel], len(cs)): err.append(f'nivel {k} · carpeta: {con} consigna(s) con un caso (≥{PENSADA_MIN_PALABRAS[nivel]} palabras o una cuenta); el mínimo es {CARPETA_CON_CASO[nivel]}')
+        if cs and con < min(CARPETA_CON_CASO[nivel], len(cs)): err_pdf.append(f'nivel {k} · carpeta: {con} consigna(s) con un caso (≥{PENSADA_MIN_PALABRAS[nivel]} palabras o una cuenta); el mínimo es {CARPETA_CON_CASO[nivel]}')
 
 def _clases_de(ruta, M):
     """Clases animadas de la misión: se busca por materia y número de misión (docstring de mision-N.py / mision.py)."""
@@ -280,34 +281,44 @@ def revisar_clases(ruta, M, nivel, err, avi):
 def revisar_profundidad(ruta, M, nivel, err, avi, forzar=False, etiqueta=None):
     n = len(err)
     revisar_repeticion(ruta, M, err, avi, etiqueta)
-    revisar_pdf(M, nivel, err)
-    revisar_preguntas(M, nivel, err)
+    vieja = _sin_pdf_nuevo(ruta, M)
+    revisar_pdf(M, nivel, avi if vieja else err)
+    revisar_preguntas(M, nivel, err, avi if vieja else err)
     revisar_clases(ruta, M, nivel, err, avi)
     return len(err) - n
 
 
 
+def _sin_pdf_nuevo(ruta, M):
+    # 26/11/2026: lo que tiene PDF va tal cual a Recursos; lo que tiene lección y no PDF, no lleva PDF. Las reglas del PDF no aplican.
+    if os.path.relpath(os.path.abspath(ruta), os.path.dirname(AQUI)).replace('\\', '/') in existentes(): return True
+    N = M.get('niveles') or {}
+    return all((N.get(str(k)) or {}).get('leccion') for k in (1, 2, 3, 4))
+
 def revisar(ruta, forzar=False):
     M = json.load(open(ruta, encoding='utf-8'))
     nivel = tipo_nivel(ruta, M); R = REGLAS[nivel]
     err, avi = [], []
+    # 26/11/2026: en una misión existente el PDF ya está publicado y la lección lo reemplaza: no se le agrega texto.
+    # Lo que es del PDF (secciones y carpeta) queda como aviso; lección, actividades y examen siguen frenando.
+    err_pdf = avi if _sin_pdf_nuevo(ruta, M) else err
     # Carpeta de cada nivel (PDF)
     for k, N in sorted((M.get('niveles') or {}).items(), key=lambda x: int(x[0]) if str(x[0]).isdigit() else 0):
         if N.get('pdf_en_otra_mision'): continue
         cons = N.get('carpeta') or []; tags = [str(x).lower().strip() for x in (N.get('carpeta_nivel') or [])]
         resp = N.get('respuestas_carpeta') or []
         d = f'nivel {k} · carpeta'
-        if len(tags) != len(cons): err.append(f'{d}: "carpeta_nivel" tiene que tener una etiqueta por consigna ({len(cons)})'); continue
-        if any(x not in NIVELES for x in tags): err.append(f'{d}: etiqueta inválida (vale recordar, aplicar, analizar o error)')
+        if len(tags) != len(cons): err_pdf.append(f'{d}: "carpeta_nivel" tiene que tener una etiqueta por consigna ({len(cons)})'); continue
+        if any(x not in NIVELES for x in tags): err_pdf.append(f'{d}: etiqueta inválida (vale recordar, aplicar, analizar o error)')
         for i, (c, tg) in enumerate(zip(cons, tags)):
             texto = c if isinstance(c, str) else (c or {}).get('consigna', '')
-            if tg in PENSADAS and MEMORIA.search(texto): err.append(f'{d} {i + 1}: está como "{tg}" pero pide recordar un nombre o un sí/no')
+            if tg in PENSADAS and MEMORIA.search(texto): err_pdf.append(f'{d} {i + 1}: está como "{tg}" pero pide recordar un nombre o un sí/no')
             acepta = resp[i] if i < len(resp) else []
             acepta = acepta if isinstance(acepta, list) else [acepta]
-            if not [a for a in acepta if str(a).strip()]: err.append(f'{d} {i + 1}: sin respuesta válida en respuestas_carpeta')
-            elif any(len(str(a).split()) > 6 for a in acepta): err.append(f'{d} {i + 1}: respuesta válida de más de 6 palabras: la app la compara letra por letra; reformulá para que la respuesta sea corta')
+            if not [a for a in acepta if str(a).strip()]: err_pdf.append(f'{d} {i + 1}: sin respuesta válida en respuestas_carpeta')
+            elif any(len(str(a).split()) > 6 for a in acepta): err_pdf.append(f'{d} {i + 1}: respuesta válida de más de 6 palabras: la app la compara letra por letra; reformulá para que la respuesta sea corta')
         p = sum(t in PENSADAS for t in tags)
-        if p < R['carpeta']: err.append(f'{d}: {p} consigna(s) pensada(s); el mínimo es {R["carpeta"]} (caso nuevo, causa y consecuencia, comparar o error típico, con respuesta corta)')
+        if p < R['carpeta']: err_pdf.append(f'{d}: {p} consigna(s) pensada(s); el mínimo es {R["carpeta"]} (caso nuevo, causa y consecuencia, comparar o error típico, con respuesta corta)')
         if nivel != 'primeros' and 'error' not in tags: avi.append(f'{d}: ninguna consigna apunta a un error típico (regla del PDF)')
     # Actividades (niveles 1 a 4; el 5 es Relámpago)
     pens = 0
