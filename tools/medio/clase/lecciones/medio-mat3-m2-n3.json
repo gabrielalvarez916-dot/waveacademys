@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat3-m2-n3",
+ "step_id": "3444e1e9-57a1-4c81-af47-283064cca485",
+ "materia": "Matemática 3",
+ "titulo": "Anterior y siguiente de números grandes",
+ "sub": "Matemática 3 · Misión 2 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Nico tiene 3.999 puntos. Gana 1 más. ¿Cuántos tiene?",
+   "segundos": 8,
+   "respuesta": "¡4.000!",
+   "emoji": "🎮",
+   "titulo": "ANTERIOR",
+   "sub": "y siguiente",
+   "voz": [
+    "Desafío: Nico tiene 3.999 puntos y gana uno más.",
+    "¡*4.000*! Se llenó un mil.",
+    "Hoy: *anterior y siguiente*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 3996,
+   "max": 4002,
+   "paso": 1,
+   "marcas": [
+    {
+     "v": 3998,
+     "txt": "anterior"
+    },
+    {
+     "v": 3999,
+     "txt": "3.999"
+    },
+    {
+     "v": 4000,
+     "txt": "siguiente"
+    }
+   ],
+   "voz": [
+    "Mirá la recta alrededor del 3.999.",
+    "El *anterior* es uno menos: 3.998.",
+    "Acá está el *3.999*.",
+    "El *siguiente* es uno más: ¡4.000!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Siguiente",
+   "texto": "El siguiente es uno más. El anterior es uno menos.",
+   "emoji": "➡️",
+   "voz": [
+    "El *siguiente* es uno más.",
+    "El *anterior* es uno menos."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "siguiente de 2.499",
+     "r": "2.500"
+    },
+    {
+     "p": "anterior de 7.000",
+     "r": "6.999"
+    },
+    {
+     "p": "siguiente de 5.090",
+     "r": "5.091"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! Decí el número que falta.",
+    "El siguiente de 2.499 es *2.500*.",
+    "El anterior de 7.000 es *6.999*.",
+    "El siguiente de 5.090 es *5.091*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El anterior de 7.000 es 7.999",
+     "bien": "El anterior de 7.000 es 6.999"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El anterior de 7.000 es *6.999*: baja un mil."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SIGUIENTE",
+     "uno más"
+    ],
+    [
+     "ANTERIOR",
+     "uno menos"
+    ],
+    [
+     "3.999",
+     "y después 4.000"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *siguiente* es uno más.",
+    "El *anterior* es uno menos.",
+    "Después del 3.999 viene el *4.000*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

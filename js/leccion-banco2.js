@@ -2084,6 +2084,12 @@
     (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] / 10 + '%">' + (m[2] != null ? m[2] : m[0]) + '</span>'; });
     return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div>';
   }
+  // recta del 0 al 10.000 de 1.000 en 1.000; marcas = [[número, clase, texto]]
+  function p1R10000(marcas) {
+    var h = '', k; for (k = 0; k <= 10000; k += 1000) h += '<span class="lb-p1-t" style="left:' + k / 100 + '%"><i></i><b>' + (k ? k / 1000 + 'M' : 0) + '</b></span>';
+    (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] / 100 + '%">' + (m[2] != null ? m[2] : fmt(m[0])) + '</span>'; });
+    return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div><p class="lb-nota">1M = 1.000</p>';
+  }
   // cálculo mental: arma la cuenta según el tipo; devuelve {a, b, r, sg}
   function p1Ment(q, op, a, b, esc) {
     var res = op === 'resta', sg = res ? '−' : '+';
@@ -2143,6 +2149,13 @@
       prop: p.que === 'familia' ? ctrl('a', 'PRIMER NÚMERO', 10, 60, 10, 60) + ctrl('b', 'SEGUNDO NÚMERO', 10, 40, 10, 40) : p.que === 'amigos' ? ctrl('a', 'PRIMER NÚMERO', 11, 89, 1, 37) + ctrl('b', 'SEGUNDO NÚMERO', 11, 89, 1, 25) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 10, 60, 5, 25) : ctrl('a', 'NÚMERO CHICO', 1, 9, 1, 4) + ctrl('b', 'NÚMERO GRANDE', 100, 300, 1, 120),
       mult: p.que === 'arreglo' || p.que === 'girar' ? ctrl('f', 'FILAS', 2, 5, 1, 3) + ctrl('c', 'COLUMNAS', 2, 6, 1, 4) : ctrl('g', 'GRUPOS', 2, 5, 1, 3) + ctrl('n', 'EN CADA GRUPO', 2, 6, 1, 4),
       por10: ctrl('n', 'NÚMERO', 1, p.de === 100 ? 9 : (p.que === 'cifras' ? 45 : 9), 1, p.de === 100 ? 3 : (p.que === 'cifras' ? 24 : 4)),
+      comparar4: ctrl('a', 'UN NÚMERO', 1000, 9999, 1, 4735) + ctrl('b', 'OTRO NÚMERO', 1000, 9999, 1, 4753),
+      orden4: ctrl('a', 'PRIMERO', 1000, 9999, 1, 5280) + ctrl('b', 'SEGUNDO', 1000, 9999, 1, 2850) + ctrl('c', 'TERCERO', 1000, 9999, 1, 5208),
+      vecinos4: ctrl('n', 'NÚMERO', 1001, 9998, 1, 3999),
+      recta10000: ctrl('n', 'NÚMERO', 100, 9900, 100, 6400),
+      valor4: ctrl('m', 'MILES', 1, 9, 1, 4) + ctrl('c', 'CENTENAS', 0, 9, 1, 2) + ctrl('d', 'DECENAS', 0, 9, 1, 7) + ctrl('u', 'UNIDADES', 0, 9, 1, 6),
+      armar4: ctrl('a', 'TARJETA 1', 1, 9, 1, 3) + ctrl('b', 'TARJETA 2', 1, 9, 1, 8) + ctrl('c', 'TARJETA 3', 1, 9, 1, 1) + ctrl('d', 'TARJETA 4', 1, 9, 1, 6),
+      cambia4: ctrl('n', 'NÚMERO', 1000, 8899, 1, 3452),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2594,6 +2607,62 @@
         P.push({ vis: p1CDUt(nn2, pos) + p1Big(v.n + ' + ' + ad + ' = ' + nn2), txt: 'CAMBIA SOLO LA CIFRA DE LAS <b>' + ['CENTENAS', 'DECENAS', 'UNIDADES'][pos] + '</b>' + (String(nn2).length > 3 || String(nn2)[pos] === '0' ? ' (Y PUEDE ARRASTRAR A LA DE AL LADO).' : '.') });
         return P;
       }
+      if (md === 'comparar4') {
+        var sa4 = String(v.a), sb4 = String(v.b), G4 = function (h) { return '<div class="lb-p1-dos">' + p1CDUt(v.a, h) + p1CDUt(v.b, h) + '</div>'; }, NOM4 = ['MILES', 'CENTENAS', 'DECENAS', 'UNIDADES'];
+        P.push({ vis: G4(), txt: '¿CUÁL ES MAYOR: <b>' + fmt(v.a) + '</b> O <b>' + fmt(v.b) + '</b>?' });
+        if (v.a === v.b) { P.push({ vis: G4(9) + p1Big('SON IGUALES'), txt: 'ES EL MISMO NÚMERO.' }); return P; }
+        for (i = 0; i < 4; i++) { P.push({ vis: G4(i), txt: 'MIRAMOS ' + (i ? 'LAS ' : 'LOS ') + '<b>' + NOM4[i] + '</b>: ' + sa4[i] + ' Y ' + sb4[i] + (sa4[i] === sb4[i] ? '. EMPATAN.' : '.') }); if (sa4[i] !== sb4[i]) break; }
+        P.push({ vis: G4(i) + p1Big(fmt(Math.max(v.a, v.b)) + ' > ' + fmt(Math.min(v.a, v.b))), txt: '<b>' + fmt(Math.max(v.a, v.b)) + '</b> ES MAYOR QUE ' + fmt(Math.min(v.a, v.b)) + '.' });
+        return P;
+      }
+      if (md === 'orden4') {
+        var ds4 = p.orden === 'desc', Q0 = [v.a, v.b, v.c], Q1 = Q0.slice().sort(function (x, y) { return ds4 ? y - x : x - y; });
+        var Fq = function (lst, hl) { return '<div class="lb-p1-tren">' + lst.map(function (x, i) { return '<span class="lb-p1-vag' + (hl && hl.indexOf(i) >= 0 ? ' on' : '') + '">' + fmt(x) + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Fq(Q0), txt: 'ORDENAMOS DE <b>' + (ds4 ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>. PRIMERO MIRAMOS LOS MILES.' });
+        P.push({ vis: Fq(Q0, [Q0.indexOf(Q1[0])]), txt: 'EL MÁS ' + (ds4 ? 'GRANDE' : 'CHICO') + ' ES <b>' + fmt(Q1[0]) + '</b>.' });
+        P.push({ vis: Fq(Q1.slice(0, 2), [0, 1]), txt: 'DESPUÉS VA <b>' + fmt(Q1[1]) + '</b>.' });
+        P.push({ vis: Fq(Q1, [0, 1, 2]) + p1Big(Q1.map(fmt).join(ds4 ? ' > ' : ' < ')), txt: 'Y AL FINAL <b>' + fmt(Q1[2]) + '</b>.' });
+        return P;
+      }
+      if (md === 'vecinos4') {
+        var Tv = function (k) { return '<div class="lb-p1-tren">' + [v.n - 1, v.n, v.n + 1].map(function (x, i) { return '<span class="lb-p1-vag' + (i === 1 ? ' on' : '') + (k < 2 && i === 0 || k < 3 && i === 2 ? ' oculto">?' : '">' + fmt(x)) + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Tv(1), txt: 'TENEMOS EL <b>' + fmt(v.n) + '</b>.' });
+        P.push({ vis: Tv(2), txt: 'EL <b>ANTERIOR</b> ES UNO MENOS: <b>' + fmt(v.n - 1) + '</b>.' });
+        P.push({ vis: Tv(3), txt: 'EL <b>SIGUIENTE</b> ES UNO MÁS: <b>' + fmt(v.n + 1) + '</b>.' });
+        P.push({ vis: Tv(3) + p1Big(fmt(v.n - 1) + ' · ' + fmt(v.n) + ' · ' + fmt(v.n + 1)), txt: (v.n + 1) % 1000 === 0 ? 'OJO: DESPUÉS DEL ' + fmt(v.n) + ' SE LLENA UN MIL.' : (v.n + 1) % 100 === 0 ? 'OJO: DESPUÉS DEL ' + fmt(v.n) + ' CAMBIAN LAS CENTENAS.' : v.n % 1000 === 0 ? 'OJO: ANTES DEL ' + fmt(v.n) + ' VA UN 999.' : 'EL ANTERIOR VA A LA IZQUIERDA Y EL SIGUIENTE A LA DERECHA.' });
+        return P;
+      }
+      if (md === 'recta10000') {
+        var m0 = Math.floor(v.n / 1000) * 1000;
+        P.push({ vis: p1R10000([]), txt: 'LA RECTA VA DEL <b>0</b> AL <b>10.000</b>, DE 1.000 EN 1.000.' });
+        P.push({ vis: p1R10000([[m0, 'pa', fmt(m0)]]), txt: 'EL ' + fmt(v.n) + ' TIENE ' + m0 / 1000 + ' MILES: EMPEZAMOS EN EL <b>' + fmt(m0) + '</b>.' });
+        P.push({ vis: p1R10000([[m0, 'pa', fmt(m0)], [v.n, 'pb']]), txt: v.n === m0 ? 'ESTÁ JUSTO EN LA MARCA.' : 'ESTÁ ENTRE EL <b>' + fmt(m0) + '</b> Y EL <b>' + fmt(m0 + 1000) + '</b>.' });
+        P.push({ vis: p1R10000([[v.n, 'pb']]) + p1Big('MÁS A LA DERECHA, MÁS GRANDE'), txt: 'LOS DE LA DERECHA SON MAYORES QUE EL ' + fmt(v.n) + '.' });
+        return P;
+      }
+      if (md === 'valor4') {
+        var n4 = v.m * 1000 + v.c * 100 + v.d * 10 + v.u, VL = [v.m * 1000, v.c * 100, v.d * 10, v.u], NL = ['MILES', 'CENTENAS', 'DECENAS', 'UNIDADES'], CF = [v.m, v.c, v.d, v.u];
+        P.push({ vis: p1CDUt(n4), txt: 'EL <b>' + fmt(n4) + '</b> TIENE CUATRO CIFRAS.' });
+        for (i = 0; i < 4; i++) P.push({ vis: p1CDUt(n4, i) + p1Big(CF[i] + ' ' + NL[i] + ' = ' + fmt(VL[i])), txt: 'EL <b>' + CF[i] + '</b> ESTÁ EN ' + (i ? 'LAS ' : 'LOS ') + NL[i] + ': VALE <b>' + fmt(VL[i]) + '</b>.' });
+        P.push({ vis: p1CDUt(n4, 9) + p1Big(fmt(n4) + ' = ' + VL.map(fmt).join(' + ')), txt: 'LO ARMAMOS CON UNA <b>SUMA</b>: CADA CIFRA VALE SEGÚN SU LUGAR.' });
+        return P;
+      }
+      if (md === 'armar4') {
+        var TJ = [v.a, v.b, v.c, v.d], TA = TJ.slice().sort(function (x, y) { return y - x; }), TB = TA.slice().reverse(), menor = p.que === 'menor', TF = menor ? TB : TA;
+        var Tt = function (L, k) { return '<div class="lb-p1-tren">' + L.map(function (x, i) { return '<span class="lb-p1-vag' + (i < k ? ' on' : '') + '">' + x + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Tt(TJ, 0), txt: 'TENEMOS CUATRO TARJETAS. QUEREMOS EL NÚMERO MÁS <b>' + (menor ? 'CHICO' : 'GRANDE') + '</b>.' });
+        P.push({ vis: Tt(TF.slice(0, 1), 1), txt: 'EN LOS MILES VA LA CIFRA MÁS <b>' + (menor ? 'CHICA' : 'GRANDE') + '</b>: EL ' + TF[0] + '.' });
+        P.push({ vis: Tt(TF.slice(0, 2), 2), txt: 'EN LAS CENTENAS, LA QUE SIGUE: EL ' + TF[1] + '.' });
+        P.push({ vis: Tt(TF, 4) + p1Big(fmt(Number(TF.join('')))), txt: 'COMPLETAMOS: <b>' + fmt(Number(TF.join(''))) + '</b>.' });
+        return P;
+      }
+      if (md === 'cambia4') {
+        var a4 = p.op || 1000, r4 = v.n + a4, ps4 = [1000, 100, 10, 1].indexOf(a4), NM4 = ['UN MIL', 'UNA CENTENA', 'UNA DECENA', 'UNA UNIDAD'];
+        P.push({ vis: p1CDUt(v.n), txt: 'TENEMOS EL <b>' + fmt(v.n) + '</b>.' });
+        P.push({ vis: p1CDUt(v.n, ps4), txt: 'SUMAMOS <b>' + NM4[ps4] + '</b>: + ' + fmt(a4) + '.' });
+        P.push({ vis: p1CDUt(r4, ps4) + p1Big(fmt(v.n) + ' + ' + fmt(a4) + ' = ' + fmt(r4)), txt: 'CAMBIA LA CIFRA DE ' + ['LOS MILES', 'LAS CENTENAS', 'LAS DECENAS', 'LAS UNIDADES'][ps4] + (String(r4)[ps4] === '0' ? ' (Y SE PASA A LA DE AL LADO).' : '. LAS DEMÁS QUEDAN IGUAL.') });
+        return P;
+      }
       if (md === 'dinero2') {
         var qd3 = p.que || 'contar';
         if (qd3 === 'contar') {
@@ -2898,6 +2967,26 @@
       return { cons: '¿CUÁL ES UN NÚMERO <b>REDONDO</b>?', ops: mezclar([String(r), String(a), String(b)]), ok: String(r), ayuda: 'UN NÚMERO REDONDO TERMINA EN 0.', bien: '¡MUY BIEN! ' + r + ' TERMINA EN 0.' }; });
     if (md === 'cambia') return respuesta(el, api, function () { var n = R(100, 889), ad = pick([1, 10, 100]);
       return { cons: '¿CUÁNTO ES <b>' + n + ' + ' + ad + '</b>?', html: p1CDUt(n), campos: [{ v: n + ad }], ayuda: 'SUMAR ' + ad + ' CAMBIA LA CIFRA DE LAS ' + (ad === 100 ? 'CENTENAS' : ad === 10 ? 'DECENAS' : 'UNIDADES') + '.', bien: '¡MUY BIEN! ES ' + (n + ad) + '.' }; });
+    if (md === 'comparar4') return p1Elegir(el, api, function () { var a = R(1000, 9999), b = Math.random() < 0.6 ? Math.floor(a / 1000) * 1000 + R(0, 999) : R(1000, 9999); while (b === a) b = R(1000, 9999); var may = Math.random() < 0.5;
+      return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [fmt(a), fmt(b)], ok: fmt(may ? Math.max(a, b) : Math.min(a, b)), ayuda: 'MIRÁ PRIMERO LOS MILES; SI EMPATAN, LAS CENTENAS.', bien: '¡MUY BIEN!' }; });
+    if (md === 'orden4') return p1Elegir(el, api, function () { var m = R(1, 9), L = [], x; while (L.length < 3) { x = Math.random() < 0.5 ? m * 1000 + R(0, 999) : R(1000, 9999); if (L.indexOf(x) < 0) L.push(x); } var dsc = p.orden === 'desc', S = L.slice().sort(function (a, b) { return dsc ? b - a : a - b; }), pr = Math.random() < 0.6;
+      return { cons: 'DE <b>' + (dsc ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>, ¿CUÁL VA <b>' + (pr ? 'PRIMERO' : 'ÚLTIMO') + '</b>?', ops: L.map(fmt), ok: fmt(pr ? S[0] : S[2]), ayuda: 'MIRÁ PRIMERO LOS MILES.', bien: '¡MUY BIEN! ' + S.map(fmt).join(', ') + '.' }; });
+    if (md === 'vecinos4') return respuesta(el, api, function () { var n = pick([R(1001, 9998), 1000 * R(2, 9), 1000 * R(1, 8) + 999, 100 * R(11, 98) + 99]);
+      return { cons: 'ESCRIBÍ EL <b>ANTERIOR</b> Y EL <b>SIGUIENTE</b> DEL <b>' + fmt(n) + '</b>.', campos: [{ lab: 'ANTERIOR', v: n - 1 }, { lab: 'SIGUIENTE', v: n + 1 }], ayuda: 'EL ANTERIOR ES UNO MENOS Y EL SIGUIENTE, UNO MÁS.', bien: '¡MUY BIEN! ' + fmt(n - 1) + ' Y ' + fmt(n + 1) + '.' }; });
+    if (md === 'recta10000') { if (p.que === 'entre') return p1Elegir(el, api, function () { var n = R(11, 98) * 100, c = Math.floor(n / 1000) * 1000; if (n === c) n += 500; var ops = [fmt(c) + ' Y ' + fmt(c + 1000), fmt(c + 1000) + ' Y ' + fmt(c + 2000), fmt(Math.max(0, c - 1000)) + ' Y ' + fmt(Math.max(1000, c))]; ops = ops.filter(function (x, i) { return ops.indexOf(x) === i; });
+        return { cons: '¿ENTRE QUÉ MILES ESTÁ EL <b>' + fmt(n) + '</b>?', ops: mezclar(ops), ok: fmt(c) + ' Y ' + fmt(c + 1000), ayuda: 'MIRÁ LOS MILES: TIENE ' + c / 1000 + '.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var n = 1000 * R(1, 9) + pick([0, 500]);
+        return { cons: '¿QUÉ NÚMERO VA EN EL LUGAR DEL <b>?</b>', html: p1R10000([[n, 'pb', '?']]), campos: [{ v: n }], ayuda: 'MIRÁ LAS MARCAS DE 1.000 EN 1.000.', bien: '¡MUY BIEN! ES EL ' + fmt(n) + '.' }; }); }
+    if (md === 'valor4') { if (p.que === 'desarmar') return respuesta(el, api, function () { var m = R(1, 9), c = R(0, 9), d = R(0, 9), u = R(0, 9), n = m * 1000 + c * 100 + d * 10 + u;
+        return { cons: 'ESCRIBÍ CUÁNTO VALE CADA CIFRA DEL <b>' + fmt(n) + '</b>.', html: p1CDUt(n), campos: [{ lab: 'MILES', v: m * 1000 }, { lab: 'CENTENAS', v: c * 100 }, { lab: 'DECENAS', v: d * 10 }, { lab: 'UNIDADES', v: u }], ayuda: 'EL ' + m + ' DE LOS MILES VALE ' + fmt(m * 1000) + '.', bien: '¡MUY BIEN! ' + fmt(n) + ' = ' + [m * 1000, c * 100, d * 10, u].map(fmt).join(' + ') + '.' }; });
+      if (p.que === 'juntar') return respuesta(el, api, function () { var m = R(1, 9), c = R(0, 9), d = R(0, 9), u = R(0, 9), T = [[m * 1000, 0], [c * 100, 1], [d * 10, 2], [u, 3]].filter(function (x) { return x[0]; }); if (Math.random() < 0.5) T = mezclar(T);
+        return { cons: '¿QUÉ NÚMERO ES <b>' + T.map(function (x) { return fmt(x[0]); }).join(' + ') + '</b>?', campos: [{ v: m * 1000 + c * 100 + d * 10 + u }], ayuda: 'PONÉ CADA CIFRA EN SU LUGAR. SI FALTA UN LUGAR, VA UN 0.', bien: '¡MUY BIEN! ES ' + fmt(m * 1000 + c * 100 + d * 10 + u) + '.' }; });
+      return p1Elegir(el, api, function () { var D4 = mezclar([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, 4), n = Number(D4.join('')), k = R(0, 3), dig = String(D4[k]), val = D4[k] * [1000, 100, 10, 1][k];
+        return { cons: '¿CUÁNTO VALE EL <b>' + dig + '</b> EN EL ' + fmt(n) + '?', html: p1CDUt(n), ops: [dig, dig + '0', dig + '00', fmt(Number(dig + '000'))], ok: fmt(val), ayuda: 'MIRÁ EN QUÉ LUGAR ESTÁ: MILES, CENTENAS, DECENAS O UNIDADES.', bien: '¡MUY BIEN! VALE ' + fmt(val) + '.' }; }); }
+    if (md === 'armar4') return respuesta(el, api, function () { var D4 = mezclar([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, 4), menor = p.que === 'menor' || (p.que === 'mezcla' && Math.random() < 0.5), S = D4.slice().sort(function (a, b) { return menor ? a - b : b - a; });
+      return { cons: 'CON ESTAS TARJETAS, ARMÁ EL NÚMERO MÁS <b>' + (menor ? 'CHICO' : 'GRANDE') + '</b>.', html: '<div class="lb-p1-tren">' + D4.map(function (x) { return '<span class="lb-p1-vag">' + x + '</span>'; }).join('') + '</div>', campos: [{ v: Number(S.join('')) }], ayuda: 'EN LOS MILES VA LA CIFRA MÁS ' + (menor ? 'CHICA' : 'GRANDE') + '.', bien: '¡MUY BIEN! ' + fmt(Number(S.join(''))) + '.' }; });
+    if (md === 'cambia4') return respuesta(el, api, function () { var n = R(1000, 8899), ad = p.op || pick([1, 10, 100, 1000]);
+      return { cons: '¿CUÁNTO ES <b>' + fmt(n) + ' + ' + fmt(ad) + '</b>?', html: p1CDUt(n), campos: [{ v: n + ad }], ayuda: 'SUMAR ' + fmt(ad) + ' CAMBIA LA CIFRA DE ' + (ad === 1000 ? 'LOS MILES' : ad === 100 ? 'LAS CENTENAS' : ad === 10 ? 'LAS DECENAS' : 'LAS UNIDADES') + '.', bien: '¡MUY BIEN! ES ' + fmt(n + ad) + '.' }; });
     if (md === 'dinero2') { var qd3 = p.que || 'contar';
       if (qd3 === 'caro') return p1Elegir(el, api, function () { var a = 10 * R(10, 99), b = 10 * R(10, 99); while (b === a) b = 10 * R(10, 99); var car = Math.random() < 0.5;
         return { cons: '¿CUÁL ES MÁS <b>' + (car ? 'CARO' : 'BARATO') + '</b>?', ops: ['$' + a, '$' + b], ok: '$' + (car ? Math.max(a, b) : Math.min(a, b)), ayuda: 'COMPARÁ COMO NÚMEROS: PRIMERO LAS CENTENAS.', bien: '¡MUY BIEN!' }; });

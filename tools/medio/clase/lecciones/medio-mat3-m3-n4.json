@@ -1,0 +1,122 @@
+{
+ "slug": "medio-mat3-m3-n4",
+ "step_id": "f72af676-4d91-4baf-bba5-3217b04e5ac9",
+ "materia": "Matemática 3",
+ "titulo": "Cambiar una cifra y ver qué pasa",
+ "sub": "Matemática 3 · Misión 3 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Mía tiene 3.452 cubitos. Le dan un cubo de 1.000. ¿Cuántos tiene?",
+   "segundos": 8,
+   "respuesta": "¡4.452!",
+   "emoji": "📦",
+   "titulo": "CAMBIAR",
+   "sub": "una cifra",
+   "voz": [
+    "Desafío: Mía tiene 3.452.",
+    "Le dan un *cubo* de 1.000.",
+    "¡*4.452*! Cambió solo una cifra.",
+    "Hoy: *cambiar una cifra y ver qué pasa*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "SUMAMOS 100",
+   "pasos": [
+    {
+     "txt": "3.452"
+    },
+    {
+     "txt": "+ UNA PLACA DE 100",
+     "nota": "centenas"
+    },
+    {
+     "txt": "3.552"
+    }
+   ],
+   "voz": [
+    "Tenemos el *3.452*.",
+    "Le sumamos una *placa* de 100.",
+    "¡Queda *3.552*! Cambió solo la cifra de las centenas."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "+ 10",
+    "texto": "3.452 → 3.462",
+    "emoji": "📏"
+   },
+   "b": {
+    "cab": "+ 1.000",
+    "texto": "3.452 → 4.452",
+    "emoji": "📦"
+   },
+   "signo": "y",
+   "voz": [
+    "Si sumamos *10*, cambian las decenas: 3.462.",
+    "Si sumamos *1.000*, cambian los miles: 4.452.",
+    "¡Las demás cifras quedan *igual*!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Cuánto es 2.950 + 100?",
+   "pistas": [
+    "Cambian las centenas",
+    "9 centenas y 1 más son 10"
+   ],
+   "respuesta": "3.050",
+   "voz": [
+    "Un caso difícil: ¿cuánto es 2.950 + 100?",
+    "Pista: cambian las *centenas*.",
+    "Pista: 9 centenas y una más son 10.",
+    "¡Se llena un mil!",
+    "¡Es *3.050*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "4.271 + 10 = 5.271",
+     "bien": "4.271 + 10 = 4.281"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Sumar 10 cambia las *decenas*: 4.281."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "+ 1, + 10, + 100",
+     "cambia un lugar"
+    ],
+    [
+     "+ 1.000",
+     "cambian los miles"
+    ],
+    [
+     "SI LLEGA A 10",
+     "pasa al lado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Sumar 1, 10 o 100 cambia *un lugar*.",
+    "Sumar 1.000 cambia los *miles*.",
+    "Si llega a 10, *pasa al lugar de al lado*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

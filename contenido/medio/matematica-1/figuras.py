@@ -293,7 +293,7 @@ def recta_num(desde, hasta, marcas=(), flechas=()):
     fig, ax = lienzo(0.62 * n + 1.4, 2.4, n + 1.2, 2.4, -0.6, -0.9)
     ax.annotate("", xy=(n + .5, 0), xytext=(-.5, 0), arrowprops=dict(arrowstyle="-|>", color=OSC, lw=1.8))
     for v in range(desde, hasta + 1):
-        x = v - desde; ax.plot([x, x], [-.12, .12], color=OSC, lw=1.4); ax.text(x, -.45, str(v), ha="center", va="center", fontsize=11, color=OSC, **F)
+        x = v - desde; ax.plot([x, x], [-.12, .12], color=OSC, lw=1.4); ax.text(x, -.45, f"{v:,}".replace(",", ".") if v >= 1000 else str(v), ha="center", va="center", fontsize=11 if v < 1000 else 9, color=OSC, **F)
     for v, et in marcas:
         x = v - desde; ax.add_patch(Circle((x, 0), .2, color=AMBAR, ec=OSC, lw=1.2, zorder=3))
         if et: cartel(ax, x, .95, et, c=TEAL, fs=10)
@@ -633,4 +633,17 @@ def arreglo(obj, filas, cols, texto=None, contar=True):
         for c in range(cols): OBJ[obj](ax, .6 + c, filas - .4 - r)
         if contar: cartel(ax, cols + .7, filas - .4 - r, str((r + 1) * cols), c=AMBAR, tc=OSC, fs=11)
     if texto: ax.text(cols / 2 + .1, filas + .45, texto, ha="center", va="center", fontsize=14, color=OSC, **F)
+    return png(fig)
+
+
+# ---------------- números hasta 10.000 (Matemática 3) ----------------
+def recta_miles(marcas=()):
+    """Recta del 0 al 10.000, de 1.000 en 1.000. marcas: [(valor, etiqueta)]."""
+    fig, ax = lienzo(9.5, 2.2, 10.9, 2.2, -0.5, -0.9)
+    ax.annotate("", xy=(10.4, 0), xytext=(-.3, 0), arrowprops=dict(arrowstyle="-|>", color=OSC, lw=1.8))
+    for k in range(11):
+        ax.plot([k, k], [-.12, .12], color=OSC, lw=1.4); ax.text(k, -.45, f"{k*1000:,}".replace(",", "."), ha="center", va="center", fontsize=8, color=OSC, **F)
+    for v, et in marcas:
+        ax.add_patch(Circle((v / 1000, 0), .16, color=AMBAR, ec=OSC, lw=1.2, zorder=3))
+        if et: cartel(ax, v / 1000, .85, et, c=TEAL, fs=9)
     return png(fig)

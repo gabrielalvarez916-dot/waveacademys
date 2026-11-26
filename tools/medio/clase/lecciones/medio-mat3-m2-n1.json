@@ -1,0 +1,140 @@
+{
+ "slug": "medio-mat3-m2-n1",
+ "step_id": "308a395e-64e9-4ab1-b030-61aba69453d3",
+ "materia": "Matemática 3",
+ "titulo": "Mayor y menor hasta diez mil",
+ "sub": "Matemática 3 · Misión 2 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🎮",
+   "final": "🤔",
+   "titulo": "MAYOR Y MENOR",
+   "sub": "hasta 10.000",
+   "voz": [
+    "Nico juega a su videojuego.",
+    "Hizo *4.735* puntos. Su hermana hizo *4.753*.",
+    "¿Quién ganó? Hoy: *mayor y menor*."
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "4.735",
+   "cab": [
+    "MILES",
+    "CENTENAS",
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "4",
+    "7",
+    "3",
+    "5"
+   ],
+   "val": [
+    "4.000",
+    "700",
+    "30",
+    "5"
+   ],
+   "destacar": 0,
+   "etiqueta": "CADA CIFRA EN SU LUGAR",
+   "voz": [
+    "Mirá los puntos de Nico: *4.735*.",
+    "Tiene cuatro lugares.",
+    "Primero los *miles*: 4.",
+    "Después las *centenas*: 7.",
+    "Y al final, decenas y unidades."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "NICO",
+    "items": [
+     "4.735"
+    ]
+   },
+   "der": {
+    "cab": "SU HERMANA",
+    "items": [
+     "4.753"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Comparamos lugar por lugar.",
+    "Miles: 4 y 4. Centenas: 7 y 7. ¡Empatan!",
+    "Decenas: 3 y 5. ¡Gana *4.753*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Comparar",
+   "texto": "Miramos primero los miles. Si empatan, las centenas.",
+   "emoji": "🔍",
+   "voz": [
+    "Para comparar, miramos primero los *miles*.",
+    "Si empatan, seguimos con las *centenas*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es mayor?",
+   "opciones": [
+    "6.099",
+    "6.190",
+    "6.019"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Ahora vos: ¿cuál es mayor?",
+    "Todos tienen 6 miles. Mirá las centenas…",
+    "¡*6.190*! Tiene una centena."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "999 es mayor que 1.000",
+     "bien": "1.000 es mayor que 999"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Cuatro cifras le ganan a *tres cifras*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRIMERO",
+     "los miles"
+    ],
+    [
+     "SI EMPATAN",
+     "las centenas"
+    ],
+    [
+     "MÁS CIFRAS",
+     "más grande"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero miramos los *miles*.",
+    "Si empatan, las *centenas*.",
+    "Con más cifras, el número es *más grande*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat3-m2-n2",
+ "step_id": "764fc11c-ed8f-4647-93eb-382a2c707ef9",
+ "materia": "Matemática 3",
+ "titulo": "Ordenar números de cuatro cifras",
+ "sub": "Matemática 3 · Misión 2 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Nico",
+    "emoji": "🎮"
+   },
+   "lugar": "🏆",
+   "lineas": [
+    "Nico juega con tres amigos.",
+    "Quiere armar la tabla de puntos.",
+    "¿Quién va primero?"
+   ],
+   "titulo": "ORDENAR",
+   "sub": "cuatro cifras",
+   "voz": [
+    "Nico juega con *tres amigos*.",
+    "Quiere armar la *tabla de puntos*.",
+    "¿Quién va primero?",
+    "Hoy: *ordenar números de cuatro cifras*."
+   ]
+  },
+  {
+   "t": "ranking",
+   "titulo": "TABLA DE PUNTOS",
+   "items": [
+    {
+     "txt": "MÍA",
+     "emoji": "🥇",
+     "dato": "5.280"
+    },
+    {
+     "txt": "NICO",
+     "emoji": "🥈",
+     "dato": "5.208"
+    },
+    {
+     "txt": "LEO",
+     "emoji": "🥉",
+     "dato": "2.850"
+    }
+   ],
+   "voz": [
+    "Armamos la tabla de mayor a menor.",
+    "Tercero, *Leo*: 2.850. Tiene solo 2 miles.",
+    "Segundo, *Nico*: 5.208.",
+    "¡Y primera, *Mía*: 5.280! Le gana en las decenas."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "DE MENOR A MAYOR",
+   "items": [
+    {
+     "txt": "2.850",
+     "emoji": "🟢"
+    },
+    {
+     "txt": "5.208",
+     "emoji": "🟡"
+    },
+    {
+     "txt": "5.280",
+     "emoji": "🔴"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    1
+   ],
+   "voz": [
+    "Ahora al revés: de *menor a mayor*.",
+    "Primero el más chico: *2.850*.",
+    "Después *5.208* y al final *5.280*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "De menor a mayor, ¿cuál va primero?",
+   "opciones": [
+    "3.402",
+    "3.240",
+    "3.420"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Probá vos: ¿cuál va *primero*?",
+    "Todos tienen 3 miles. Mirá las centenas…",
+    "¡*3.240*! Tiene solo 2 centenas."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "5.208 va después de 5.280",
+     "bien": "5.208 va antes de 5.280"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "5.208 tiene *0 decenas*: va antes que 5.280."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ORDENAR",
+     "de a uno"
+    ],
+    [
+     "EL MÁS CHICO",
+     "va primero"
+    ],
+    [
+     "SI EMPATAN",
+     "miramos al lado"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Para ordenar, buscamos *de a uno*.",
+    "De menor a mayor, el más chico va *primero*.",
+    "Si empatan, miramos el lugar *de al lado*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

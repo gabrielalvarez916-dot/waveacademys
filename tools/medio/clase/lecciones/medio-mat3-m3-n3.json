@@ -1,0 +1,117 @@
+{
+ "slug": "medio-mat3-m3-n3",
+ "step_id": "dbadd26d-01cd-4343-b401-7cabfc436689",
+ "materia": "Matemática 3",
+ "titulo": "Armar números con tarjetas",
+ "sub": "Matemática 3 · Misión 3 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Mía",
+    "emoji": "👧"
+   },
+   "lugar": "🃏",
+   "lineas": [
+    "Mía tiene cuatro tarjetas: 3, 8, 1 y 6.",
+    "Quiere armar el número más grande.",
+    "¿Cómo las pone?"
+   ],
+   "titulo": "ARMAR NÚMEROS",
+   "sub": "con tarjetas",
+   "voz": [
+    "Mía tiene cuatro tarjetas: 3, 8, 1 y 6.",
+    "Quiere armar el número *más grande*.",
+    "¿Cómo las pone?",
+    "Hoy: *armar números con tarjetas*."
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "8",
+    "6",
+    "3",
+    "1"
+   ],
+   "grande": "8.631",
+   "etiqueta": "EL MÁS GRANDE",
+   "voz": [
+    "En los miles va la cifra *más grande*: el 8.",
+    "Después el 6, el 3 y el 1.",
+    "¡El más grande es *8.631*!"
+   ]
+  },
+  {
+   "t": "fichas",
+   "fichas": [
+    "1",
+    "3",
+    "6",
+    "8"
+   ],
+   "grande": "1.368",
+   "etiqueta": "EL MÁS CHICO",
+   "voz": [
+    "Para el más chico, al revés.",
+    "En los miles va la *más chica*: el 1.",
+    "¡El más chico es *1.368*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Con 2, 9, 4 y 7, el más grande es 2.947",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Es 9.742",
+   "voz": [
+    "¿Verdadero o falso?",
+    "Con 2, 9, 4 y 7, el mayor es 2.947.",
+    "Mirá qué cifra va en los miles…",
+    "¡*Falso*! Es *9.742*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El más chico empieza con la cifra más grande",
+     "bien": "El más chico empieza con la cifra más chica"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El más chico empieza con la cifra *más chica*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "EL MÁS GRANDE",
+     "la mayor adelante"
+    ],
+    [
+     "EL MÁS CHICO",
+     "la menor adelante"
+    ],
+    [
+     "LOS MILES",
+     "deciden"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Para el más grande, la cifra *mayor* adelante.",
+    "Para el más chico, la *menor* adelante.",
+    "¡Los *miles* deciden!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

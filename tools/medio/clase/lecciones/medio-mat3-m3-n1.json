@@ -1,0 +1,154 @@
+{
+ "slug": "medio-mat3-m3-n1",
+ "step_id": "2c99ef28-e290-43f0-86d0-de1f07a0a672",
+ "materia": "Matemática 3",
+ "titulo": "Unidades, decenas, centenas y miles",
+ "sub": "Matemática 3 · Misión 3 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Mía",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tengo bloques de todos los tamaños"
+    },
+    {
+     "yo": true,
+     "txt": "¿Cuántos cubitos hay en total?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Contemos juntos!"
+    }
+   ],
+   "titulo": "LOS CUATRO",
+   "sub": "lugares",
+   "voz": [
+    "Mía tiene bloques de *todos los tamaños*.",
+    "¿Cuántos cubitos hay en total?",
+    "¡Contemos juntos!",
+    "Hoy: *unidades, decenas, centenas y miles*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🟫",
+     "txt": "1 cubito"
+    },
+    {
+     "emoji": "📏",
+     "txt": "barra: 10"
+    },
+    {
+     "emoji": "🟧",
+     "txt": "placa: 100"
+    },
+    {
+     "emoji": "📦",
+     "txt": "cubo: 1.000"
+    }
+   ],
+   "voz": [
+    "Un *cubito* vale 1.",
+    "Diez cubitos forman una *barra*: 10.",
+    "Diez barras forman una *placa*: 100.",
+    "¡Diez placas forman un *cubo*: 1.000!"
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "2.476",
+   "cab": [
+    "MILES",
+    "CENTENAS",
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "2",
+    "4",
+    "7",
+    "6"
+   ],
+   "val": [
+    "2.000",
+    "400",
+    "70",
+    "6"
+   ],
+   "destacar": 0,
+   "etiqueta": "CADA CIFRA EN SU LUGAR",
+   "voz": [
+    "Mía tiene 2 cubos y 4 placas.",
+    "Y también 7 barras y 6 cubitos.",
+    "Es el *2.476*.",
+    "El 2 de los miles vale *2.000*.",
+    "El 4 de las centenas vale *400*.",
+    "¡El 7 vale 70 y el 6 vale 6!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto vale el 5 en 5.381?",
+   "opciones": [
+    "5",
+    "500",
+    "5.000"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos: ¿cuánto vale el 5 en 5.381?",
+    "Está en el lugar de los miles…",
+    "¡Vale *5.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "En 3.814, el 8 vale 8",
+     "bien": "En 3.814, el 8 vale 800"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El 8 está en las *centenas*: vale 800."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUBITO",
+     "1"
+    ],
+    [
+     "BARRA Y PLACA",
+     "10 y 100"
+    ],
+    [
+     "CUBO",
+     "1.000"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un *cubito* vale 1.",
+    "Una *barra* vale 10 y una *placa*, 100.",
+    "¡Un *cubo* vale 1.000!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

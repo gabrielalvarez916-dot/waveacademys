@@ -1,0 +1,114 @@
+{
+ "slug": "medio-mat3-m3-n2",
+ "step_id": "df63ef73-1ba9-4820-a13e-350e3944787b",
+ "materia": "Matemática 3",
+ "titulo": "Descomponer con sumas",
+ "sub": "Matemática 3 · Misión 3 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "📦",
+   "final": "✂️",
+   "titulo": "DESCOMPONER",
+   "sub": "con sumas",
+   "voz": [
+    "Mía guarda sus bloques en cajas separadas.",
+    "¿Cómo desarmamos un número grande?",
+    "Hoy: *descomponer con sumas*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "3.608",
+   "titulo": "DESARMAMOS EL 3.608",
+   "partes": [
+    "3.000",
+    "600",
+    "8"
+   ],
+   "resultado": "= 3.608 ✓",
+   "voz": [
+    "Tomamos el número *3.608*.",
+    "El 3 de los miles vale *3.000*.",
+    "El 6 de las centenas vale *600*.",
+    "No hay decenas. El 8 vale *8*.",
+    "3.000 + 600 + 8 = *3.608*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Descomponer",
+   "texto": "Escribir un número como suma del valor de cada cifra.",
+   "emoji": "➕",
+   "voz": [
+    "*Descomponer* es escribir el número como una suma.",
+    "Sumamos lo que vale *cada cifra*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "DE LA SUMA AL NÚMERO",
+   "items": [
+    {
+     "frente": "5.000 + 200 + 40 + 1",
+     "dorso": "5.241"
+    },
+    {
+     "frente": "7.000 + 30",
+     "dorso": "7.030"
+    },
+    {
+     "frente": "9.000 + 900 + 9",
+     "dorso": "9.909"
+    }
+   ],
+   "voz": [
+    "5.000 + 200 + 40 + 1 es *5.241*.",
+    "7.000 + 30 es *7.030*: los ceros guardan lugar.",
+    "¡9.000 + 900 + 9 es *9.909*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "7.000 + 30 = 730",
+     "bien": "7.000 + 30 = 7.030"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Son *cuatro cifras*: 7.030."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESCOMPONER",
+     "en una suma"
+    ],
+    [
+     "CADA CIFRA",
+     "con su valor"
+    ],
+    [
+     "EL CERO",
+     "guarda el lugar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Descomponer* es armar una suma.",
+    "Cada cifra va con *su valor*.",
+    "Y el *cero* guarda el lugar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
