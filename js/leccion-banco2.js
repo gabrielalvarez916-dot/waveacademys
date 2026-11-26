@@ -1237,6 +1237,221 @@
       return { cons: 'Resolvé: <b>x/' + a + ' + x/' + b + ' = ' + fmt(c) + '</b>', campos: [{ lab: 'x =', v: x }], ayuda: 'Multiplicá los dos miembros por el mcm de ' + a + ' y ' + b + ' (' + m + ') para sacar los denominadores: ' + m / a + 'x + ' + m / b + 'x = ' + fmt(c * m) + '.', bien: '¡Bien! x = ' + x + '.' }; });
   } };
 
+  // ======= PRIMER GRADO (Nivel Medio · Matemática 1, Misiones 1 y 2): contar, comparar, uno con uno, igualar, números hasta 20 =======
+  // Todo en IMPRENTA MAYÚSCULA, con dibujos (emojis) grandes y números chicos. Un ejemplo paso a paso (primeros) y una práctica (primeros_x), con un modo por tema.
+  var P1E = { manzana: '🍎', globo: '🎈', estrella: '⭐', caramelo: '🍬', pelota: '⚽', flor: '🌸', patito: '🐤', chico: '🧒', vaso: '🥤', perro: '🐶', hueso: '🦴', gato: '🐱', pescado: '🐟', silla: '🪑', tortita: '🧁' };
+  var P1PL = { manzana: 'MANZANAS', globo: 'GLOBOS', estrella: 'ESTRELLAS', caramelo: 'CARAMELOS', pelota: 'PELOTAS', flor: 'FLORES', patito: 'PATITOS', chico: 'CHICOS', vaso: 'VASOS', perro: 'PERROS', hueso: 'HUESOS', gato: 'GATOS', pescado: 'PESCADOS', silla: 'SILLAS', tortita: 'TORTITAS' };
+  var P1PARES = [['chico', 'vaso'], ['perro', 'hueso'], ['gato', 'pescado'], ['chico', 'silla'], ['chico', 'tortita']];
+  var P1NOM = [['ANA', 'LEO'], ['SOFI', 'JUAN'], ['MICA', 'TOMI']];
+  var P1M = { caramelo: 1, globo: 1, patito: 1, perro: 1, hueso: 1, gato: 1, pescado: 1, vaso: 1, chico: 1 };
+  function g(o, fem, masc) { return P1M[o] ? masc : fem; }
+  function p1Obj() { return pick(['manzana', 'globo', 'estrella', 'caramelo', 'pelota', 'flor', 'patito']); }
+  function p1Up(n) { return H.letras(n).toUpperCase(); }
+  // una fila de objetos: hasta = cuántos llevan número; marca = posición resaltada; tenue = desde qué posición se ven apagados
+  function p1Fila(n, o, op) {
+    op = op || {}; var h = '';
+    for (var i = 0; i < n; i++) {
+      var cls = 'lb-p1-o' + (op.marca === i + 1 ? ' on' : '') + (op.tenue != null && i >= op.tenue ? ' tenue' : '') + (op.nuevo != null && i >= op.nuevo ? ' nuevo' : '');
+      h += '<span class="' + cls + '">' + P1E[o] + (op.hasta && i < op.hasta ? '<small>' + (i + 1) + '</small>' : '') + '</span>';
+    }
+    return '<div class="lb-p1-fila">' + (h || '<span class="lb-p1-vac">—</span>') + '</div>';
+  }
+  function p1Grupo(nom, n, o, op) { return '<div class="lb-p1-g"><b>' + nom + '</b>' + p1Fila(n, o, op) + '</div>'; }
+  function p1Big(t) { return '<p class="lb-p1-big">' + t + '</p>'; }
+  // parejas uno con uno: columnas con un objeto arriba y uno abajo; unidas = cuántas columnas ya están unidas
+  function p1Parejas(a, oa, b, ob, unidas, marcarSobra) {
+    var m = Math.max(a, b), h = '';
+    for (var i = 0; i < m; i++) {
+      var par = i < Math.min(a, b) && i < unidas, sobra = marcarSobra && i >= Math.min(a, b);
+      h += '<div class="lb-p1-col' + (par ? ' par' : '') + (sobra ? ' sobra' : '') + '"><span>' + (i < a ? P1E[oa] : '') + '</span><i>' + (par ? '|' : '') + '</i><span>' + (i < b ? P1E[ob] : '') + '</span></div>';
+    }
+    return '<div class="lb-p1-pares">' + h + '</div>';
+  }
+  // tren de vagones con números
+  function p1Tren(desde, hasta, op) {
+    op = op || {}; var h = '';
+    for (var k = desde; k <= hasta; k++) {
+      var c = op[k] || '';
+      h += '<span class="lb-p1-vag ' + c + '">' + (c === 'oculto' ? '?' : k) + '</span>';
+    }
+    return '<div class="lb-p1-tren"><span class="lb-p1-loco">🚂</span>' + h + '</div>';
+  }
+  // recta del 0 al 20 con marcas
+  function p1Recta(marcas) {
+    var h = '';
+    for (var k = 0; k <= 20; k++) { var m = marcas[k]; h += '<span class="lb-p1-rc' + (m ? ' ' + m.c : '') + '"><i></i><b>' + k + '</b>' + (m && m.t ? '<em>' + m.t + '</em>' : '') + '</span>'; }
+    return '<div class="lb-p1-rw"><div class="lb-p1-recta">' + h + '</div></div>';
+  }
+  // caja de 10 llena + sueltos
+  function p1Caja(o, sueltos, op) {
+    op = op || {}; var c = ''; for (var i = 0; i < 10; i++) c += '<span>' + P1E[o] + '</span>';
+    var s = ''; for (var j = 0; j < sueltos; j++) s += '<span class="lb-p1-o' + (op.cuenta && j < op.cuenta ? ' on' : '') + '">' + P1E[o] + (op.cuenta && j < op.cuenta ? '<small>' + (11 + j) + '</small>' : '') + '</span>';
+    return '<div class="lb-p1-dz"><div class="lb-p1-caja' + (op.caja ? ' on' : '') + '">' + c + '<small>10</small></div><div class="lb-p1-fila">' + s + '</div></div>';
+  }
+  function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
+
+  M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'contar', o = p1Obj(), pr = pick(P1PARES), nm = pick(P1NOM), C = {
+      contar: ctrl('n', 'CANTIDAD', 1, p.max || 8, 1, R(4, Math.min(7, p.max || 8))),
+      cantidad: ctrl('n', 'CANTIDAD', 2, p.max || 8, 1, R(4, Math.min(7, p.max || 8))),
+      mas_menos: ctrl('a', nm[0], 1, 9, 1, p.igual ? 4 : 5) + ctrl('b', nm[1], 1, 9, 1, p.igual ? 4 : 2),
+      uno_a_uno: ctrl('a', P1PL[pr[0]], 1, 8, 1, 4) + ctrl('b', P1PL[pr[1]], 1, 8, 1, p.igual ? 4 : 6),
+      igualar: ctrl('a', 'GRUPO 1', 1, 9, 1, p.op === 'quitar' ? 7 : 5) + ctrl('b', 'GRUPO 2', 1, 9, 1, p.op === 'quitar' ? 4 : 2),
+      tren: ctrl('n', 'HASTA EL', (p.desde || 1) + 1, p.hasta || 10, 1, p.hasta || 10),
+      decena: ctrl('s', 'SUELTOS', 1, 10, 1, p.ini || 3),
+      leer: ctrl('n', 'NÚMERO', 10, 20, 1, pick([12, 15, 17])),
+      anterior_siguiente: ctrl('n', 'NÚMERO', 2, 19, 1, pick([9, 14, 17])),
+      mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
+    escena(el, C, function (v) {
+      var P = [], i;
+      if (md === 'contar') {
+        P.push({ vis: p1Fila(v.n, o), txt: 'MIRÁ ' + g(o, 'LAS ', 'LOS ') + P1PL[o] + '. ' + g(o, 'LAS', 'LOS') + ' VAMOS A CONTAR DE A ' + g(o, 'UNA', 'UNO') + '.' });
+        for (i = 1; i <= v.n; i++) P.push({ vis: p1Fila(v.n, o, { hasta: i, marca: i }), txt: (i === 1 ? 'TOCAMOS ' + g(o, 'LA PRIMERA', 'EL PRIMERO') + ' Y DECIMOS ' : 'TOCAMOS ' + g(o, 'OTRA', 'OTRO') + ' Y DECIMOS ') + '<b>' + i + '</b>.' });
+        P.push({ vis: p1Fila(v.n, o, { hasta: v.n }) + p1Big('HAY ' + v.n), txt: 'YA TOCAMOS ' + g(o, 'TODAS', 'TODOS') + '. HAY <b>' + v.n + '</b> ' + P1PL[o] + '.' });
+        return P;
+      }
+      if (md === 'cantidad') {
+        P.push({ vis: p1Fila(v.n, o, { hasta: v.n }), txt: 'CONTAMOS ' + g(o, 'LAS ', 'LOS ') + P1PL[o] + ' DE A ' + g(o, 'UNA', 'UNO') + '.' });
+        P.push({ vis: p1Fila(v.n, o, { hasta: v.n, marca: v.n }), txt: 'EL ÚLTIMO NÚMERO QUE DIJIMOS ES EL <b>' + v.n + '</b>.' });
+        P.push({ vis: p1Fila(v.n, o, { hasta: v.n, marca: v.n }) + p1Big('HAY ' + v.n), txt: 'ESE NÚMERO DICE ' + g(o, 'CUÁNTAS', 'CUÁNTOS') + ' HAY: <b>' + v.n + '</b>.' });
+        P.push({ vis: '<div class="lb-p1-mezcla">' + p1Fila(Math.ceil(v.n / 2), o) + p1Fila(Math.floor(v.n / 2), o) + '</div>' + p1Big('SIGUE HABIENDO ' + v.n), txt: 'SI ' + g(o, 'LAS', 'LOS') + ' CAMBIAMOS DE LUGAR, SIGUE HABIENDO <b>' + v.n + '</b>.' });
+        return P;
+      }
+      if (md === 'mas_menos') {
+        var G = function (ha, hb) { return p1Grupo(nm[0], v.a, o, { hasta: ha }) + p1Grupo(nm[1], v.b, o, { hasta: hb }); };
+        P.push({ vis: G(0, 0), txt: nm[0] + ' Y ' + nm[1] + ' TIENEN ' + P1PL[o] + '. ¿QUIÉN TIENE MÁS?' });
+        P.push({ vis: G(v.a, 0), txt: 'CONTAMOS ' + g(o, 'LAS', 'LOS') + ' DE ' + nm[0] + ': <b>' + v.a + '</b>.' });
+        P.push({ vis: G(v.a, v.b), txt: 'CONTAMOS ' + g(o, 'LAS', 'LOS') + ' DE ' + nm[1] + ': <b>' + v.b + '</b>.' });
+        if (v.a === v.b) P.push({ vis: G(v.a, v.b) + p1Big(v.a + ' Y ' + v.b + ': IGUAL'), txt: 'LOS DOS TIENEN <b>' + v.a + '</b>: TIENEN <b>IGUAL</b>.' });
+        else { var ma = v.a > v.b ? nm[0] : nm[1], me = v.a > v.b ? nm[1] : nm[0], x = Math.max(v.a, v.b), y = Math.min(v.a, v.b);
+          P.push({ vis: G(v.a, v.b) + p1Big(x + ' ES MÁS QUE ' + y), txt: '<b>' + ma + '</b> TIENE MÁS. <b>' + me + '</b> TIENE MENOS.' }); }
+        return P;
+      }
+      if (md === 'uno_a_uno') {
+        var A = pr[0], Bo = pr[1], mn = Math.min(v.a, v.b), d = Math.abs(v.a - v.b);
+        P.push({ vis: p1Parejas(v.a, A, v.b, Bo, 0), txt: '¿ALCANZAN ' + g(Bo, 'LAS ', 'LOS ') + P1PL[Bo] + ' PARA ' + g(A, 'LAS ', 'LOS ') + P1PL[A] + '? NO HACE FALTA CONTAR.' });
+        P.push({ vis: p1Parejas(v.a, A, v.b, Bo, 1), txt: 'UNIMOS UNO CON UNO: FORMAMOS UNA <b>PAREJA</b>.' });
+        P.push({ vis: p1Parejas(v.a, A, v.b, Bo, mn), txt: 'SEGUIMOS UNIENDO HASTA QUE NO SE PUEDE MÁS.' });
+        if (!d) P.push({ vis: p1Parejas(v.a, A, v.b, Bo, mn) + p1Big('HAY IGUAL'), txt: 'NO SOBRA NI FALTA NINGUNO: HAY <b>IGUAL</b>.' });
+        else { var sob = v.b > v.a;
+          P.push({ vis: p1Parejas(v.a, A, v.b, Bo, mn, true), txt: sob ? 'SOBRAN <b>' + d + '</b> ' + P1PL[Bo] + ' SIN PAREJA.' : 'FALTAN <b>' + d + '</b> ' + P1PL[Bo] + ': HAY ' + P1PL[A] + ' SIN PAREJA.' });
+          P.push({ vis: p1Parejas(v.a, A, v.b, Bo, mn, true) + p1Big(sob ? 'MÁS ' + P1PL[Bo] : 'MENOS ' + P1PL[Bo]), txt: sob ? 'SI SOBRAN, HAY <b>MÁS</b> ' + P1PL[Bo] + ' QUE ' + P1PL[A] + '.' : 'SI FALTAN, HAY <b>MENOS</b> ' + P1PL[Bo] + ' QUE ' + P1PL[A] + '.' }); }
+        return P;
+      }
+      if (md === 'igualar') {
+        var quitar = p.op === 'quitar', g1 = v.a, g2 = v.b, dd = Math.abs(g1 - g2), may = g1 > g2 ? 1 : 2;
+        var D = function (x1, x2, op1, op2) { return p1Grupo('GRUPO 1', x1, o, op1) + p1Grupo('GRUPO 2', x2, o, op2); };
+        P.push({ vis: D(g1, g2, { hasta: g1 }, { hasta: g2 }), txt: 'EL GRUPO 1 TIENE <b>' + g1 + '</b> Y EL GRUPO 2 TIENE <b>' + g2 + '</b>.' });
+        if (!dd) { P.push({ vis: D(g1, g2) + p1Big('YA HAY IGUAL'), txt: 'YA TIENEN LA MISMA CANTIDAD. PROBÁ CON OTROS NÚMEROS.' }); return P; }
+        if (!quitar) {
+          var chico = may === 1 ? 2 : 1, base = Math.min(g1, g2);
+          P.push({ vis: D(g1, g2), txt: 'EL GRUPO ' + chico + ' TIENE MENOS: A ESE LE <b>AGREGAMOS</b>.' });
+          for (i = 1; i <= dd; i++) { var t = base + i; P.push({ vis: chico === 2 ? D(g1, t, null, { nuevo: base, hasta: t }) : D(t, g2, { nuevo: base, hasta: t }, null), txt: 'AGREGAMOS ' + g(o, 'UNA', 'UNO') + ': AHORA TIENE <b>' + t + '</b>.' }); }
+          P.push({ vis: (chico === 2 ? D(g1, g1) : D(g2, g2)) + p1Big(Math.max(g1, g2) + ' Y ' + Math.max(g1, g2) + ': IGUAL'), txt: 'AGREGAMOS <b>' + dd + '</b>. AHORA LOS DOS TIENEN IGUAL.' });
+        } else {
+          var gr = may, alto = Math.max(g1, g2), bajo = Math.min(g1, g2);
+          P.push({ vis: D(g1, g2), txt: 'EL GRUPO ' + gr + ' TIENE MÁS: A ESE LE <b>QUITAMOS</b>.' });
+          for (i = 1; i <= dd; i++) { var q = alto - i; P.push({ vis: gr === 1 ? D(g1, g2, { tenue: q }) : D(g1, g2, null, { tenue: q }), txt: 'QUITAMOS ' + g(o, 'UNA', 'UNO') + ': AHORA TIENE <b>' + q + '</b>.' }); }
+          P.push({ vis: D(bajo, bajo) + p1Big(bajo + ' Y ' + bajo + ': IGUAL'), txt: 'QUITAMOS <b>' + dd + '</b>. AHORA LOS DOS TIENEN IGUAL.' });
+        }
+        return P;
+      }
+      if (md === 'tren') {
+        var de = p.desde || 1;
+        P.push({ vis: p1Tren(de, de), txt: 'EL PRIMER VAGÓN TIENE EL <b>' + de + '</b>.' });
+        for (i = de + 1; i <= v.n; i++) { var op = {}; op[i] = 'on'; P.push({ vis: p1Tren(de, i, op), txt: 'DESPUÉS DEL ' + (i - 1) + ' VIENE EL <b>' + i + '</b>.' }); }
+        P.push({ vis: p1Tren(de, v.n), txt: 'LOS NÚMEROS VAN EN ORDEN, SIN SALTEAR NINGUNO.' });
+        return P;
+      }
+      if (md === 'decena') {
+        var ob = pick(['caramelo', 'estrella', 'pelota']), tot = 10 + v.s;
+        P.push({ vis: p1Caja(ob, v.s, { caja: true }), txt: 'LA CAJA ESTÁ LLENA: TIENE <b>10</b>. NO LA CONTAMOS DE NUEVO.' });
+        for (i = 1; i <= v.s; i++) P.push({ vis: p1Caja(ob, v.s, { cuenta: i }), txt: 'SEGUIMOS DESDE EL 10: <b>' + (10 + i) + '</b>.' });
+        P.push({ vis: p1Caja(ob, v.s, { cuenta: v.s }) + p1Big('10 Y ' + v.s + ' SON ' + tot), txt: tot === 20 ? 'DOS GRUPOS DE 10 SON <b>20</b>: VEINTE.' : '10 Y ' + v.s + ' SON <b>' + tot + '</b>: ' + p1Up(tot) + '.' });
+        return P;
+      }
+      if (md === 'leer') {
+        var s = String(v.n), u = v.n % 10, esc_ = p.forma === 'escribir';
+        if (!esc_) {
+          P.push({ vis: p1Cifras(v.n), txt: 'ESTE NÚMERO TIENE <b>DOS CIFRAS</b>: ' + s[0] + ' Y ' + s[1] + '.' });
+          P.push({ vis: p1Cifras(v.n, 0), txt: v.n === 20 ? 'EMPIEZA CON <b>2</b>: SON DOS DIECES.' : 'EMPIEZA CON <b>1</b>: ES DIEZ Y ALGO MÁS.' });
+          P.push({ vis: p1Cifras(v.n, 1), txt: v.n === 20 ? 'DESPUÉS VA EL 0: NO HAY SUELTOS.' : 'DESPUÉS VA EL <b>' + u + '</b>: DIEZ Y ' + u + '.' });
+          P.push({ vis: p1Cifras(v.n, 9) + p1Big('SE LEE: ' + p1Up(v.n)), txt: 'CON PALABRAS SE LEE <b>' + p1Up(v.n) + '</b>.' });
+        } else {
+          P.push({ vis: p1Big(p1Up(v.n)), txt: 'QUEREMOS ESCRIBIR <b>' + p1Up(v.n) + '</b> CON CIFRAS.' });
+          P.push({ vis: p1Big(p1Up(v.n)) + '<div class="lb-p1-cif"><span class="on">' + s[0] + '</span><span class="vac">?</span></div>', txt: v.n === 20 ? 'SON DOS DIECES: PRIMERO VA EL <b>2</b>.' : 'ES DIEZ Y ALGO MÁS: PRIMERO VA EL <b>1</b>.' });
+          P.push({ vis: p1Big(p1Up(v.n)) + p1Cifras(v.n, 1), txt: 'DESPUÉS VA EL <b>' + s[1] + '</b>.' });
+          P.push({ vis: p1Cifras(v.n, 9) + p1Big('SE ESCRIBE ' + v.n), txt: 'SE ESCRIBE <b>' + v.n + '</b>. EL ORDEN DE LAS CIFRAS IMPORTA.' });
+        }
+        return P;
+      }
+      if (md === 'anterior_siguiente') {
+        var lo = Math.max(1, v.n - 3), hi = Math.min(20, v.n + 3), m1 = {}, m2 = {}, m3 = {};
+        m1[v.n] = 'on'; m2[v.n] = 'on'; m2[v.n - 1] = 'ant'; m3[v.n] = 'on'; m3[v.n - 1] = 'ant'; m3[v.n + 1] = 'sig';
+        P.push({ vis: p1Tren(lo, hi, m1), txt: 'BUSCAMOS EL <b>' + v.n + '</b> EN EL TREN.' });
+        P.push({ vis: p1Tren(lo, hi, m2), txt: 'ANTES DEL ' + v.n + ' VA EL <b>' + (v.n - 1) + '</b>: ES EL <b>ANTERIOR</b>.' });
+        P.push({ vis: p1Tren(lo, hi, m3), txt: 'DESPUÉS DEL ' + v.n + ' VA EL <b>' + (v.n + 1) + '</b>: ES EL <b>SIGUIENTE</b>.' });
+        P.push({ vis: p1Tren(lo, hi, m3) + p1Big((v.n - 1) + ' · ' + v.n + ' · ' + (v.n + 1)), txt: 'EL ANTERIOR VA ANTES Y EL SIGUIENTE VA DESPUÉS.' });
+        return P;
+      }
+      if (md === 'mayor_menor') {
+        var mk = function (lista) { var o2 = {}; lista.forEach(function (x) { o2[x[0]] = { c: x[1], t: x[2] }; }); return o2; };
+        P.push({ vis: p1Recta(mk([[0, 'cero', '']])), txt: 'LA RECTA EMPIEZA EN EL <b>0</b>. LOS NÚMEROS VAN CRECIENDO.' });
+        P.push({ vis: p1Recta(mk([[0, 'cero', ''], [v.a, 'pa', '']])), txt: 'MARCAMOS EL <b>' + v.a + '</b>.' });
+        P.push({ vis: p1Recta(mk([[0, 'cero', ''], [v.a, 'pa', ''], [v.b, 'pb', '']])), txt: 'MARCAMOS EL <b>' + v.b + '</b>.' });
+        if (v.a === v.b) P.push({ vis: p1Recta(mk([[v.a, 'pa', '']])) + p1Big('SON IGUALES'), txt: 'ES EL MISMO NÚMERO: NINGUNO ES MAYOR.' });
+        else { var Mx = Math.max(v.a, v.b), Mn = Math.min(v.a, v.b);
+          P.push({ vis: p1Recta(mk([[0, 'cero', ''], [Mn, 'pa', 'MENOR'], [Mx, 'pb', 'MAYOR']])), txt: 'EL <b>' + Mx + '</b> ESTÁ MÁS LEJOS DEL 0: ES EL <b>MAYOR</b>.' });
+          P.push({ vis: p1Recta(mk([[0, 'cero', ''], [Mn, 'pa', 'MENOR'], [Mx, 'pb', 'MAYOR']])) + p1Big(Mx + ' ES MAYOR QUE ' + Mn), txt: 'Y EL <b>' + Mn + '</b> ES EL <b>MENOR</b>: ESTÁ MÁS CERCA DEL 0.' }); }
+        return P;
+      }
+      return [{ vis: '', txt: '' }];
+    });
+  } };
+
+  // Práctica de primer grado: elegir una opción tocándola (fichas grandes) o escribir un número
+  function p1Elegir(el, api, datos) {
+    H.ejercicio(el, api, '', function (c) {
+      var D = datos(), sel = null; el.querySelector('.lb-cons').innerHTML = D.cons;
+      c.innerHTML = (D.html || '') + '<div class="lb-p1-ops">' + D.ops.map(function (x, i) { return '<button type="button" class="lb-p1-op" data-op="' + i + '">' + x + '</button>'; }).join('') + '</div>';
+      c.addEventListener('click', function (e) { var b = e.target.closest('[data-op]'); if (!b) return; [].forEach.call(c.querySelectorAll('[data-op]'), function (x) { x.classList.remove('on'); }); b.classList.add('on'); sel = Number(b.getAttribute('data-op')); });
+      return {
+        comprobar: function () { if (sel === null) return { ok: false, msg: 'Tocá una opción.' }; return D.ops[sel] === D.ok ? { ok: true, msg: D.bien || '¡MUY BIEN!' } : { ok: false, msg: D.ayuda || 'MIRÁ DE NUEVO.' }; },
+        resolver: function () { var k = D.ops.indexOf(D.ok); [].forEach.call(c.querySelectorAll('[data-op]'), function (x) { x.classList.toggle('on', Number(x.getAttribute('data-op')) === k); }); sel = k; }
+      };
+    });
+  }
+  M.primeros_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'contar';
+    if (md === 'contar') return respuesta(el, api, function () { var o = p1Obj(), n = R(p.min || 3, p.max || 8);
+      return { cons: '¿' + g(o, 'CUÁNTAS ', 'CUÁNTOS ') + P1PL[o] + ' HAY? CONTÁ CON EL DEDO.', html: p1Fila(n, o), campos: [{ v: n }], ayuda: 'TOCÁ CADA ' + g(o, 'UNA', 'UNO') + ' UNA SOLA VEZ Y DECÍ UN NÚMERO.', bien: '¡MUY BIEN! HAY ' + n + '.' }; });
+    if (md === 'grupo') return p1Elegir(el, api, function () { var o = p1Obj(), ns = mezclar([2, 3, 4, 5, 6, 7, 8]).slice(0, 3), n = pick(ns), op = ns.map(function (k) { return Array(k + 1).join(P1E[o]); });
+      return { cons: '¿EN QUÉ GRUPO HAY <b>' + n + '</b>?', ops: op, ok: Array(n + 1).join(P1E[o]), ayuda: 'CONTÁ CADA GRUPO: EL ÚLTIMO NÚMERO DICE CUÁNTOS HAY.', bien: '¡MUY BIEN! ESE GRUPO TIENE ' + n + '.' }; });
+    if (md === 'mas_menos' || md === 'igual') return p1Elegir(el, api, function () {
+      var o = p1Obj(), nm = pick(P1NOM), a = R(1, 8), b = md === 'igual' && Math.random() < 0.4 ? a : R(1, 8); if (md === 'mas_menos') while (b === a) b = R(1, 8);
+      var mas = Math.random() < 0.5, ok = a === b ? 'TIENEN IGUAL' : ((a > b) === mas ? nm[0] : nm[1]), ops = md === 'igual' ? [nm[0], nm[1], 'TIENEN IGUAL'] : [nm[0], nm[1]];
+      return { cons: '¿QUIÉN TIENE <b>' + (mas ? 'MÁS' : 'MENOS') + '</b>?', html: p1Grupo(nm[0], a, o) + p1Grupo(nm[1], b, o), ops: ops, ok: ok, ayuda: 'CONTÁ LOS DOS GRUPOS Y COMPARÁ LOS NÚMEROS.', bien: a === b ? '¡MUY BIEN! LOS DOS TIENEN ' + a + '.' : '¡MUY BIEN! ' + nm[0] + ' TIENE ' + a + ' Y ' + nm[1] + ' TIENE ' + b + '.' }; });
+    if (md === 'parejas') return respuesta(el, api, function () { var pr = pick(P1PARES), a = R(2, 7), b = R(2, 7); while (b === a) b = R(2, 7); var sob = b > a;
+      return { cons: 'UNÍ CADA UNO CON SU PAREJA. ¿' + g(pr[1], 'CUÁNTAS ', 'CUÁNTOS ') + P1PL[pr[1]] + ' <b>' + (sob ? 'SOBRAN' : 'FALTAN') + '</b>?', html: p1Parejas(a, pr[0], b, pr[1], 0), campos: [{ v: Math.abs(a - b) }], ayuda: 'ARMÁ LAS PAREJAS CON EL DEDO Y MIRÁ CUÁNTOS QUEDAN SIN PAREJA.', bien: '¡MUY BIEN! ' + (sob ? 'SOBRAN ' : 'FALTAN ') + Math.abs(a - b) + '.' }; });
+    if (md === 'alcanza') return p1Elegir(el, api, function () { var pr = pick(P1PARES), a = R(2, 7), r = Math.random(), b = r < 0.33 ? a : r < 0.66 ? Math.min(8, a + R(1, 2)) : Math.max(1, a - R(1, 2)), pl = P1PL[pr[1]];
+      var ok = a === b ? 'HAY IGUAL' : b > a ? 'SOBRAN ' + pl : 'FALTAN ' + pl;
+      return { cons: '¿ALCANZAN ' + g(pr[1], 'LAS ', 'LOS ') + pl + ' PARA ' + g(pr[0], 'LAS ', 'LOS ') + P1PL[pr[0]] + '?', html: p1Parejas(a, pr[0], b, pr[1], 0), ops: ['SOBRAN ' + pl, 'FALTAN ' + pl, 'HAY IGUAL'], ok: ok, ayuda: 'UNÍ UNO CON UNO: ¿QUEDA ALGUNO SIN PAREJA?', bien: '¡MUY BIEN!' }; });
+    if (md === 'agregar' || md === 'quitar') return respuesta(el, api, function () { var o = p1Obj(), a = R(3, 9), b = R(1, 8); while (b >= a) { a = R(3, 9); b = R(1, 8); } var ag = md === 'agregar';
+      return { cons: ag ? '¿' + g(o, 'CUÁNTAS ', 'CUÁNTOS ') + P1PL[o] + ' LE <b>AGREGÁS</b> AL GRUPO 2 PARA QUE HAYA IGUAL?' : '¿' + g(o, 'CUÁNTAS ', 'CUÁNTOS ') + P1PL[o] + ' LE <b>QUITÁS</b> AL GRUPO 1 PARA QUE HAYA IGUAL?', html: p1Grupo('GRUPO 1', a, o) + p1Grupo('GRUPO 2', b, o), campos: [{ v: a - b }], ayuda: ag ? 'AGREGÁ DE A ' + g(o, 'UNA', 'UNO') + ' AL GRUPO 2 HASTA LLEGAR A ' + a + '.' : 'QUITÁ DE A ' + g(o, 'UNA', 'UNO') + ' AL GRUPO 1 HASTA LLEGAR A ' + b + '.', bien: '¡MUY BIEN! ' + (ag ? 'AGREGANDO ' : 'QUITANDO ') + (a - b) + ' QUEDAN ' + (ag ? a + ' Y ' + a : b + ' Y ' + b) + '.' }; });
+    if (md === 'falta') return respuesta(el, api, function () { var de = p.desde || 1, ha = p.hasta || 10, ini = R(de, ha - 4), f = ini + R(1, 3), op = {}; op[f] = 'oculto';
+      return { cons: '¿QUÉ NÚMERO FALTA EN EL TREN?', html: p1Tren(ini, ini + 4, op), campos: [{ v: f }], ayuda: 'MIRÁ EL VAGÓN DE ANTES: EL QUE FALTA VIENE DESPUÉS.', bien: '¡MUY BIEN! DESPUÉS DEL ' + (f - 1) + ' VIENE EL ' + f + '.' }; });
+    if (md === 'decena') return respuesta(el, api, function () { var o = pick(['caramelo', 'estrella', 'pelota']), s = R(1, 10);
+      return { cons: 'UNA CAJA DE 10 Y ALGUNOS SUELTOS. ¿CUÁNTOS SON EN TOTAL?', html: p1Caja(o, s), campos: [{ v: 10 + s }], ayuda: 'NO CUENTES LA CAJA: ARRANCÁ EN 10 Y SEGUÍ CON LOS SUELTOS.', bien: '¡MUY BIEN! 10 Y ' + s + ' SON ' + (10 + s) + '.' }; });
+    if (md === 'leer') return p1Elegir(el, api, function () { var n = R(11, 20), u = n % 10, ops = mezclar([p1Up(n), p1Up(u || 2), p1Up(u ? u * 10 : 12)]);
+      return { cons: '¿CÓMO SE LEE ESTE NÚMERO?', html: p1Cifras(n), ops: ops, ok: p1Up(n), ayuda: 'MIRÁ LAS DOS CIFRAS: EMPIEZA CON ' + String(n)[0] + '.', bien: '¡MUY BIEN! ' + n + ' SE LEE ' + p1Up(n) + '.' }; });
+    if (md === 'escribir') return p1Elegir(el, api, function () { var n = R(12, 19), s = String(n), ops = mezclar([s, s[1] + s[0], s[1]]);
+      return { cons: '¿CÓMO SE ESCRIBE <b>' + p1Up(n) + '</b>?', ops: ops, ok: s, ayuda: 'ES DIEZ Y ALGO MÁS: PRIMERO VA EL 1.', bien: '¡MUY BIEN! SE ESCRIBE ' + n + '.' }; });
+    if (md === 'anterior_siguiente') return respuesta(el, api, function () { var n = R(2, 19), ant = Math.random() < 0.5;
+      return { cons: '¿QUÉ NÚMERO VA <b>' + (ant ? 'ANTES' : 'DESPUÉS') + '</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: ant ? n - 1 : n + 1 }], ayuda: 'PENSÁ EN EL TREN DE LOS NÚMEROS.', bien: '¡MUY BIEN! ' + (ant ? 'EL ANTERIOR DEL ' + n + ' ES EL ' + (n - 1) : 'EL SIGUIENTE DEL ' + n + ' ES EL ' + (n + 1)) + '.' }; });
+    if (md === 'mayor_menor') return p1Elegir(el, api, function () { var a = R(0, 20), b = R(0, 20); while (b === a) b = R(0, 20); var may = Math.random() < 0.5;
+      return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [String(a), String(b)], ok: String(may ? Math.max(a, b) : Math.min(a, b)), ayuda: may ? 'EL MAYOR ESTÁ MÁS LEJOS DEL 0.' : 'EL MENOR ESTÁ MÁS CERCA DEL 0.', bien: '¡MUY BIEN!' }; });
+  } };
+
   // ---------- estilos (prefijo lb2-, solo lección) ----------
   var css = document.createElement('style');
   css.textContent = [
@@ -1283,6 +1498,16 @@
     '.lb-vp-w{overflow-x:auto}.lb-vp{border-collapse:separate;border-spacing:4px;margin:4px auto}.lb-vp th{font-size:.72rem;color:#4b6a6c;font-weight:800;text-align:center;padding:2px 4px}.lb-vp th.lb-vp-per{background:#D7F0E9;color:#066A6E;border-radius:8px;font-size:.78rem;padding:4px 6px}',
     '.lb-vp-c{width:44px;height:52px;border:2px solid #087E83;border-radius:12px;background:#fff;font-family:inherit;font-weight:800;font-size:1.6rem;line-height:1;color:#253638;cursor:pointer}.lb-vp.vplargo .lb-vp-c{width:32px;height:44px;font-size:1.25rem;border-radius:10px}.lb-vp.vplargo{border-spacing:2px}.lb-vp-in{width:14ch!important;font-size:1.2rem}.lb-vp-c.cero{color:#9dbdb9}.lb-vp-c.on{background:#087E83;color:#fff}',
     '.lb-vp-big{font-size:1.15rem;line-height:1.5;margin:12px 0 4px}.lb-vp-trozos{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}.lb-vp-tr{display:flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:14px;background:#D7F0E9}.lb-vp-tr b{font-size:1.5rem;letter-spacing:.08em;color:#066A6E}.lb-vp-tr.cero{opacity:.5}.lb-vp-tr small{font-weight:700;color:#4b6a6c}',
+    '.lb-p1-fila{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0}.lb-p1-o{position:relative;font-size:2.1rem;line-height:1;padding:4px;border-radius:12px;transition:opacity .2s}.lb-p1-o small{position:absolute;right:-4px;top:-6px;min-width:20px;height:20px;border-radius:10px;background:#087E83;color:#fff;font-size:.8rem;font-weight:800;display:grid;place-items:center;padding:0 4px}',
+    '.lb-p1-o.on{background:#D7F0E9;outline:3px solid #087E83}.lb-p1-o.tenue{opacity:.18}.lb-p1-o.nuevo{background:#FFF3C4}.lb-p1-vac{font-size:1.4rem;color:#9dbdb9}.lb-p1-g{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 10px;margin:6px 0;border-radius:14px;background:#F3FBF7}.lb-p1-g>b{min-width:5.5em;font-size:1rem;color:#066A6E}',
+    '.lb-p1-big{font-size:1.7rem;font-weight:800;text-align:center;color:#066A6E;margin:10px 0 0;letter-spacing:.02em}.lb-p1-mezcla .lb-p1-fila:last-child{margin-left:30px}',
+    '.lb-p1-pares{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:6px 0}.lb-p1-col{display:flex;flex-direction:column;align-items:center;min-width:42px;padding:4px 2px;border-radius:14px;font-size:2rem;line-height:1.1}.lb-p1-col span{min-height:1.15em}.lb-p1-col i{font-style:normal;font-weight:800;color:#087E83;height:1em;font-size:1.3rem}.lb-p1-col.par{background:#D7F0E9}.lb-p1-col.sobra{background:#FFE1D6;outline:2px dashed #C2552E}',
+    '.lb-p1-tren{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center;margin:8px 0}.lb-p1-loco{font-size:2rem}.lb-p1-vag{min-width:42px;height:44px;border:2px solid #087E83;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:1.3rem;background:#fff;color:#253638}.lb-p1-vag.on{background:#087E83;color:#fff}.lb-p1-vag.ant{background:#FFF3C4;border-color:#C29A1E}.lb-p1-vag.sig{background:#FFE1D6;border-color:#C2552E}.lb-p1-vag.oculto{background:#F3FBF7;border-style:dashed;color:#C2552E}',
+    '.lb-p1-rw{padding:30px 0 4px}.lb-p1-recta{display:flex;width:100%;border-top:3px solid #253638}.lb-p1-rc{position:relative;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center}.lb-p1-rc i{width:2px;height:8px;background:#253638}.lb-p1-rc b{font-size:.7rem;color:#4b6a6c}.lb-p1-rc em{position:absolute;top:-30px;font-style:normal;font-size:.62rem;font-weight:800;color:#066A6E;white-space:nowrap}',
+    '.lb-p1-rc.pa b,.lb-p1-rc.pb b,.lb-p1-rc.cero b{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.66rem;flex:none}.lb-p1-rc.pa b{background:#C29A1E}.lb-p1-rc.pb b{background:#087E83}.lb-p1-rc.cero b{background:#253638}',
+    '.lb-p1-dz{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}.lb-p1-caja{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:6px;border:3px solid #087E83;border-radius:12px;font-size:1.4rem;line-height:1.1;background:#fff}.lb-p1-caja.on{background:#D7F0E9}.lb-p1-caja small{position:absolute;right:-10px;top:-12px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 6px;font-size:.85rem}',
+    '.lb-p1-cif{display:flex;justify-content:center;gap:8px;margin:8px 0}.lb-p1-cif span{width:58px;height:70px;display:grid;place-items:center;border:3px solid #087E83;border-radius:14px;background:#fff;font-weight:800;font-size:2.4rem;color:#253638}.lb-p1-cif span.on{background:#087E83;color:#fff}.lb-p1-cif span.vac{border-style:dashed;color:#9dbdb9}',
+    '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);
 })();

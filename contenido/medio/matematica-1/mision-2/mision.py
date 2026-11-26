@@ -137,36 +137,114 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "16. 18.", "solo": "11, 15, 19.", "carpeta": ["15: va entre 14 y 16.", "19: va entre 18 y 20.", "16: está más lejos del 0."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+
+N1["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+N1["leccion"] = {"temas": [
+ T("LOS NÚMEROS EN ORDEN", [LD("EN ORDEN", "LOS NÚMEROS VAN <b>EN ORDEN</b>: CADA UNO VIENE DESPUÉS DEL OTRO."),
+   LL("1, 2, 3, 4, 5, 6, 7, 8, 9, 10.", "NO SE SALTEA NINGUNO.")],
+   {"modo": "tren", "desde": 1, "hasta": 10}, {"modo": "falta", "desde": 1, "hasta": 10}),
+ T("CONTAR HASTA 10", [LD("CON LOS DEDOS", "PODÉS CONTAR CON LOS DEDOS: CADA DEDO ES UN NÚMERO Y DOS MANOS LLEGAN AL 10."),
+   LP("CUANDO TERMINÁS, EL ÚLTIMO NÚMERO TE DICE CUÁNTOS HAY.")],
+   {"modo": "contar", "max": 10}, {"modo": "contar", "min": 5, "max": 10}),
+], "recuerda": [
+ RC("EN ORDEN", "CADA NÚMERO VIENE DESPUÉS DEL ANTERIOR, SIN SALTEAR.", "5, 6, 7, 8, 9, 10"),
+ RC("DOS MANOS", "TIENEN DIEZ DEDOS QUE TE AYUDAN A CONTAR HASTA 10.", "🖐️ 5 Y 🖐️ 5 SON 10"),
+]}
+
+N2["carpeta_nivel"] = ["aplicar", "aplicar", "recordar"]
+N2["leccion"] = {"temas": [
+ T("DIEZ Y ALGO MÁS", [LD("LA CAJA DE 10", "UNA CAJA DE 10 Y ALGUNOS SUELTOS FORMAN LOS NÚMEROS DEL 11 AL 19."),
+   LP("YA SABEMOS QUE LA CAJA TIENE 10: SEGUIMOS CONTANDO LOS SUELTOS DESDE AHÍ.")],
+   {"modo": "decena", "ini": 3}, {"modo": "decena"}),
+ T("LLEGAMOS AL 20", [LD("VEINTE", "EL <b>20</b> SON DOS GRUPOS DE 10. SE LEE VEINTE."),
+   LL("DESPUÉS DEL 19 VIENE EL 20.", "DIEZ Y SEIS ES 16, NO 106.")],
+   {"modo": "tren", "desde": 10, "hasta": 20}, {"modo": "falta", "desde": 10, "hasta": 20}),
+], "recuerda": [
+ RC("DEL 11 AL 19", "SON UNA CAJA DE 10 Y ALGUNOS SUELTOS MÁS.", "📦 10 Y 4 SUELTOS SON 14"),
+ RC("VEINTE", "ES EL NÚMERO QUE FORMAN DOS GRUPOS DE 10.", "📦 10 Y 📦 10 SON 20"),
+]}
+
+N3["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+N3["leccion"] = {"temas": [
+ T("CIFRAS Y PALABRAS", [LD("ESCRIBIR Y LEER", "UN NÚMERO SE ESCRIBE CON <b>CIFRAS</b> Y SE LEE CON <b>PALABRAS</b>."),
+   LL("15 SE LEE QUINCE.", "LAS CIFRAS SON 0, 1, 2, 3, 4, 5, 6, 7, 8 Y 9.")],
+   {"modo": "leer"}, {"modo": "leer"}),
+ T("PRIMERO EL 1", [LD("DEL 10 AL 19", "DEL 10 AL 19, LA <b>PRIMERA CIFRA</b> SIEMPRE ES UN 1."),
+   LP("TRECE ES 13, NO 31: SI CAMBIÁS EL ORDEN DE LAS CIFRAS, CAMBIA EL NÚMERO.")],
+   {"modo": "leer", "forma": "escribir"}, {"modo": "escribir"}),
+], "recuerda": [
+ RC("CIFRAS", "CON CIFRAS ESCRIBIMOS LOS NÚMEROS, COMO EL 17.", "DIECISIETE SE ESCRIBE 17"),
+ RC("PALABRAS", "CON PALABRAS DECIMOS EL NOMBRE DEL NÚMERO.", "18 SE LEE DIECIOCHO"),
+ RC("PRIMERO EL 1", "DEL 10 AL 19 LA PRIMERA CIFRA ES UN 1.", "ONCE ES 11 Y CATORCE ES 14"),
+]}
+
+N4["carpeta_nivel"] = ["aplicar", "aplicar", "analizar"]
+N4["leccion"] = {"temas": [
+ T("ANTERIOR Y SIGUIENTE", [LD("ANTERIOR Y SIGUIENTE", "EL <b>ANTERIOR</b> VA JUSTO ANTES Y EL <b>SIGUIENTE</b> VA JUSTO DESPUÉS."),
+   LL("ANTES DEL 16 VA EL 15.", "DESPUÉS DEL 16 VA EL 17.")],
+   {"modo": "anterior_siguiente"}, {"modo": "anterior_siguiente"}),
+ T("MAYOR Y MENOR", [LD("MAYOR", "EL <b>MAYOR</b> ES EL QUE ESTÁ MÁS LEJOS DEL 0 EN LA RECTA."),
+   LP("Y EL <b>MENOR</b> ES EL QUE QUEDA MÁS CERCA DEL 0.")],
+   {"modo": "mayor_menor"}, {"modo": "mayor_menor"}),
+], "recuerda": [
+ RC("ANTERIOR", "ES EL NÚMERO QUE VA JUSTO ANTES.", "EL ANTERIOR DEL 12 ES 11"),
+ RC("SIGUIENTE", "ES EL NÚMERO QUE VA JUSTO DESPUÉS.", "EL SIGUIENTE DEL 12 ES 13"),
+ RC("MAYOR Y MENOR", "EL MAYOR ESTÁ MÁS LEJOS DEL 0 Y EL MENOR MÁS CERCA.", "19 ES MAYOR QUE 11"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+
 ACT = {
-"1": [N("¿CUÁNTOS PATITOS HAY? 🐤🐤🐤🐤🐤🐤🐤🐤", 8, "1, 2, 3, 4, 5, 6, 7, 8. HAY 8."),
-      MC("¿QUÉ NÚMERO VA DESPUÉS DEL 9?", ["8", "10", "7"], "10", "DESPUÉS DEL 9 VIENE EL 10.")],
-"2": [N("📦 10 Y 🍬🍬🍬🍬 ¿CUÁNTOS SON?", 14, "10 Y 4 SON 14."),
-      MC("¿CUÁNTO ES 10 Y 6?", ["16", "60", "106"], "16", "DIEZ Y SEIS: 16.")],
-"3": [MC("¿CÓMO SE ESCRIBE QUINCE?", ["51", "15", "5"], "15", "QUINCE ES UN 1 Y UN 5: 15."),
-      MC("¿CÓMO SE LEE 19?", ["NUEVE", "DIECINUEVE", "NOVENTA"], "DIECINUEVE", "19 SE LEE DIECINUEVE.")],
-"4": [N("¿QUÉ NÚMERO VA ANTES DEL 13?", 12, "ANTES DEL 13 VA EL 12."),
-      MC("¿CUÁL ES MAYOR?", ["17", "14"], "17", "17 ESTÁ MÁS LEJOS DEL 0.")],
-"5": [N("RELÁMPAGO. ¿QUÉ NÚMERO VA DESPUÉS DEL 19?", 20, "DESPUÉS DEL 19 VIENE EL 20.", tiempo=30),
-      MC("RELÁMPAGO. ¿CÓMO SE ESCRIBE DOCE?", ["21", "12"], "12", "DOCE ES UN 1 Y UN 2.", tiempo=30),
-      N("RELÁMPAGO. 📦 10 Y 🍬🍬🍬 ¿CUÁNTOS SON?", 13, "10 Y 3 SON 13.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁL ES MENOR?", ["11", "18"], "11", "11 ESTÁ MÁS CERCA DEL 0.", tiempo=30)],
+"1": [N("¿CUÁNTOS PATITOS HAY? CONTÁ CON EL DEDO. 🐤🐤🐤🐤🐤🐤🐤🐤", 8, "1, 2, 3, 4, 5, 6, 7, 8. HAY 8.", **A),
+      MC("EN EL TREN VAN EL 7, EL 8 Y EL 9. ¿QUÉ VAGÓN SIGUE?", ["8", "10", "7"], "10", "DESPUÉS DEL 9 VIENE EL 10.", **A),
+      FB("COMPLETÁ LOS VAGONES QUE FALTAN: 1, 2, 3, ___, 5, 6, ___, 8, 9, 10", [["4"], ["7"]], "DESPUÉS DEL 3 VA EL 4 Y DESPUÉS DEL 6 VA EL 7.", **A),
+      ORD("ORDENÁ LOS VAGONES DEL TREN, DEL MÁS CHICO AL MÁS GRANDE.", ["6", "3", "9", "1", "10"], ["1", "3", "6", "9", "10"], "1, 3, 6, 9 Y 10: EN ORDEN.", **A)],
+"2": [N("📦 10 Y 🍬🍬🍬🍬 ¿CUÁNTOS CARAMELOS SON EN TOTAL?", 14, "10 Y 4 SON 14.", **A),
+      MC("JUAN DICE QUE DIEZ Y SEIS SE ESCRIBE 106. ¿QUÉ NÚMERO ES DE VERDAD?", ["16", "106", "60"], "16", "DIEZ Y SEIS ES 16: UN 1 Y UN 6.", **ER),
+      UNIR("UNÍ CADA CAJA CON SU NÚMERO.", ["📦 10 Y ⭐⭐", "📦 10 Y ⭐⭐⭐⭐⭐", "📦 10 Y 📦 10"], ["20", "12", "15"],
+           {"📦 10 Y ⭐⭐": "12", "📦 10 Y ⭐⭐⭐⭐⭐": "15", "📦 10 Y 📦 10": "20"}, "10 Y 2 SON 12, 10 Y 5 SON 15, 10 Y 10 SON 20.", **A),
+      N("[[problema]] TENÉS 10 FIGURITAS Y TE REGALAN 7. ¿CUÁNTAS FIGURITAS TENÉS AHORA?", 17, "ARRANCAMOS EN 10 Y SEGUIMOS: 11, 12, 13, 14, 15, 16, 17.", **A)],
+"3": [MC("¿CÓMO SE ESCRIBE QUINCE?", ["51", "15", "5"], "15", "QUINCE ES UN 1 Y UN 5: 15.", **RE),
+      MC("¿CÓMO SE LEE 19?", ["NUEVE", "DIECINUEVE", "NOVENTA"], "DIECINUEVE", "19 SE LEE DIECINUEVE.", **RE),
+      UNIR("UNÍ CADA NÚMERO CON SU NOMBRE.", ["13", "17", "20"], ["VEINTE", "TRECE", "DIECISIETE"], {"13": "TRECE", "17": "DIECISIETE", "20": "VEINTE"}, "13 ES TRECE, 17 ES DIECISIETE Y 20 ES VEINTE.", **A),
+      MC("LUCÍA ESCRIBIÓ 21 PARA DECIR DOCE. ¿CÓMO SE ESCRIBE BIEN?", ["12", "21", "2"], "12", "DOCE EMPIEZA CON 1: SE ESCRIBE 12.", **ER)],
+"4": [N("EN EL TREN, ¿QUÉ NÚMERO VA JUSTO ANTES DEL 13?", 12, "ANTES DEL 13 VA EL 12.", **A),
+      MC("¿CUÁL ES MAYOR, 17 O 14? PENSÁ EN LA RECTA.", ["17", "14"], "17", "17 ESTÁ MÁS LEJOS DEL 0.", **A),
+      ORD("ORDENÁ DE MENOR A MAYOR.", ["18", "11", "15", "13"], ["11", "13", "15", "18"], "11, 13, 15 Y 18: DE MENOR A MAYOR.", **A),
+      CLAS("¿VA ANTES O DESPUÉS DEL 15? UBICÁ CADA NÚMERO.", ["12", "19", "14", "17"], ["ANTES DEL 15", "DESPUÉS DEL 15"],
+           {"12": "ANTES DEL 15", "19": "DESPUÉS DEL 15", "14": "ANTES DEL 15", "17": "DESPUÉS DEL 15"}, "12 Y 14 SON MENORES QUE 15; 17 Y 19 SON MAYORES.", **AN)],
+"5": [N("RELÁMPAGO. ¿QUÉ NÚMERO VA DESPUÉS DEL 19?", 20, "DESPUÉS DEL 19 VIENE EL 20.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CÓMO SE ESCRIBE DOCE?", ["21", "12"], "12", "DOCE ES UN 1 Y UN 2.", tiempo=30, **RE),
+      N("RELÁMPAGO. 📦 10 Y 🍬🍬🍬 ¿CUÁNTOS SON?", 13, "10 Y 3 SON 13.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CUÁL ES MENOR?", ["11", "18"], "11", "11 ESTÁ MÁS CERCA DEL 0.", tiempo=30, **A)],
 }
 EXAMEN = [
- [1, N("¿CUÁNTOS SOLES HAY? ☀️☀️☀️☀️☀️☀️", 6, "1, 2, 3, 4, 5, 6.")],
- [1, MC("¿QUÉ NÚMERO FALTA? 1, 2, 3, ___, 5", ["4", "6", "3"], "4", "DESPUÉS DEL 3 VA EL 4.")],
- [1, N("¿CUÁNTOS DEDOS HAY EN DOS MANOS?", 10, "CINCO Y CINCO: 10.")],
- [2, N("📦 10 Y 🍬🍬 ¿CUÁNTOS SON?", 12, "10 Y 2 SON 12.")],
- [2, MC("¿CUÁNTO ES 10 Y 8?", ["18", "80", "108"], "18", "DIEZ Y OCHO: 18.")],
- [2, MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 19?", ["20", "10", "21"], "20", "DESPUÉS DEL 19 VIENE EL 20.")],
- [3, MC("¿CÓMO SE ESCRIBE TRECE?", ["31", "13", "3"], "13", "TRECE ES UN 1 Y UN 3.")],
- [3, MC("¿CÓMO SE LEE 16?", ["SEIS", "DIECISÉIS", "SESENTA"], "DIECISÉIS", "16 SE LEE DIECISÉIS.")],
- [3, MC("¿CÓMO SE ESCRIBE VEINTE?", ["20", "12", "2"], "20", "VEINTE SE ESCRIBE 20.")],
- [4, N("¿QUÉ NÚMERO VA ANTES DEL 15?", 14, "ANTES DEL 15 VA EL 14.")],
- [4, N("¿QUÉ NÚMERO VA DESPUÉS DEL 17?", 18, "DESPUÉS DEL 17 VA EL 18.")],
- [4, MC("¿CUÁL ES MAYOR?", ["13", "19"], "19", "19 ESTÁ MÁS LEJOS DEL 0.")],
- [4, MC("¿CUÁL ES MENOR?", ["16", "10"], "10", "10 ESTÁ MÁS CERCA DEL 0.")],
+ [1, N("¿CUÁNTOS SOLES HAY? CONTÁ CON EL DEDO. ☀️☀️☀️☀️☀️☀️", 6, "1, 2, 3, 4, 5, 6.", **A)],
+ [1, MC("¿QUÉ NÚMERO FALTA EN EL TREN? 1, 2, 3, ___, 5", ["4", "6", "3"], "4", "DESPUÉS DEL 3 VA EL 4.", **A)],
+ [1, N("¿CUÁNTOS DEDOS HAY EN DOS MANOS?", 10, "CINCO Y CINCO: 10.", **RE)],
+ [2, N("📦 10 Y 🍬🍬 ¿CUÁNTOS CARAMELOS SON EN TOTAL?", 12, "10 Y 2 SON 12.", **A)],
+ [2, MC("UNA CAJA DE 10 Y 8 SUELTOS. ¿CUÁNTOS SON?", ["18", "80", "108"], "18", "DIEZ Y OCHO: 18.", **A)],
+ [2, MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 19?", ["20", "10", "21"], "20", "DESPUÉS DEL 19 VIENE EL 20.", **RE)],
+ [3, MC("¿CÓMO SE ESCRIBE TRECE?", ["31", "13", "3"], "13", "TRECE ES UN 1 Y UN 3.", **RE)],
+ [3, MC("¿CÓMO SE LEE 16?", ["SEIS", "DIECISÉIS", "SESENTA"], "DIECISÉIS", "16 SE LEE DIECISÉIS.", **RE)],
+ [3, MC("TOMI ESCRIBIÓ 41 PARA DECIR CATORCE. ¿CÓMO SE ESCRIBE BIEN?", ["14", "41", "4"], "14", "CATORCE EMPIEZA CON 1: SE ESCRIBE 14.", **ER)],
+ [4, N("EN EL TREN, ¿QUÉ NÚMERO VA JUSTO ANTES DEL 15?", 14, "ANTES DEL 15 VA EL 14.", **A)],
+ [4, N("EN EL TREN, ¿QUÉ NÚMERO VA JUSTO DESPUÉS DEL 17?", 18, "DESPUÉS DEL 17 VA EL 18.", **A)],
+ [4, ORD("ORDENÁ DE MENOR A MAYOR.", ["19", "12", "16"], ["12", "16", "19"], "12, 16 Y 19.", **A)],
+ [4, MC("¿CUÁL ES MENOR, 16 O 10? PENSÁ EN LA RECTA.", ["16", "10"], "10", "10 ESTÁ MÁS CERCA DEL 0.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 2, "estilo": "primeros",
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 2, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: los números hasta 20", "examen_titulo": "Nivel jefe: los números hasta 20",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-2.json"), "w", encoding="utf-8"), ensure_ascii=False)

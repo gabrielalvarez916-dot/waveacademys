@@ -76,3 +76,9 @@ En la práctica, un campo puede llevar `acepta: function (x) {…}` cuando hay v
 
 ### Fracciones (Matemática I · Misiones 8 y 9)
 - `fracciones` (ejemplo, paso a paso) y `fracciones_x` (ejercicio, `modo` obligatorio). Modos: parte, cociente, tipos (propias/impropias/mixtos), equivalentes, irreducible, cruzados, recta, entre (densidad), comparar, referentes, mixtos (suma), inverso, division (cuántas veces entra), combinadas, potencia.
+## Primer grado (Nivel Medio · Matemática 1, Misiones 1 y 2) — 26/11/2026
+Todo en imprenta mayúscula, con dibujos grandes y números chicos.
+| Motor | Tipo | `modo` |
+|---|---|---|
+| `primeros` | ejemplo paso a paso | contar (`max`), cantidad (`max`), mas_menos (`igual`), uno_a_uno (`igual`), igualar (`op`: agregar, quitar), tren (`desde`, `hasta`), decena (`ini`), leer (`forma`: escribir), anterior_siguiente, mayor_menor |
+| `primeros_x` | ejercicio | contar (`min`, `max`), grupo, mas_menos, igual, parejas, alcanza, agregar, quitar, falta (`desde`, `hasta`), decena, leer, escribir, anterior_siguiente, mayor_menor |

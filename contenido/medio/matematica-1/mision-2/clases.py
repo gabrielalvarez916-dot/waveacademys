@@ -31,7 +31,7 @@ N2 = [
   "voz": ["Desafío: ¿qué número viene después del 10?", "¡El *11*! Once.", "Hoy: *los números del 11 al 20*."]},
  {"t": "diezymas", "emoji": "🍬", "n": 13, "texto": "10 y 3 son 13",
   "voz": ["Esta caja tiene *10 caramelos*.", "Seguimos contando: 11, 12, 13.", "*10 y 3* son *13*."]},
- {"t": "consejo", "titulo": "10 Y ALGO MÁS", "texto": "Del 11 al 19: diez y algo más", "emoji": "📦",
+ {"t": "definicion", "palabra": "Diez y algo más", "texto": "Del 11 al 19: una caja de 10 y sueltos", "emoji": "📦",
   "voz": ["Truco: del 11 al 19 son *diez y algo más*."]},
  {"t": "diezymas", "emoji": "⭐", "n": 17, "texto": "10 y 7 son 17",
   "voz": ["Otra caja de 10, ahora con estrellas.", "11, 12, 13, 14, 15, 16, 17.", "*10 y 7* son *17*."]},
