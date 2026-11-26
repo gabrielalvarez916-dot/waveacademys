@@ -1,0 +1,134 @@
+{
+  "nivel": "Nivel Avanzado",
+  "anio": "Año 1",
+  "materia": "Matemática II",
+  "mision": 4,
+  "titulo": "Proporcionalidad directa e inversa",
+  "edad_orientativa": "Adolescentes de nivel secundario inicial. Actividades de estrategia, análisis y argumentación, sin consignas infantilizadas.",
+  "lecciones": [
+    {
+      "leccion": 1,
+      "titulo": "Proporcionalidad directa y constante",
+      "para_que_sirve": "Se reconocen magnitudes directamente proporcionales, se calcula la constante y se resuelven situaciones mediante tablas y regla de tres simple directa.",
+      "actividad": {
+        "titulo": "Control de precios: detectá la tarifa real",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con cantidades y precios.",
+        "preparacion": "Preparen casos: 3 kg cuestan $600; 4 entradas cuestan $1200; 2 lápices cuestan $10. Añadan tarjetas con cantidades nuevas y precios correctos e incorrectos.",
+        "como_jugar": "Un jugador administra una tabla de precios y el otro audita si cada precio mantiene la relación directa. Deben hallar la constante y completar pedidos.",
+        "pasos": [
+          "Para 3 kg por $600, calculen el precio unitario: 600 ÷ 3 = $200 por kilo.",
+          "Completen 1, 3 y 5 kg: $200, $600 y $1000.",
+          "Comprueben que el cociente precio/cantidad sea siempre 200.",
+          "Evalúen la tarjeta trampa «5 kg cuestan $602» y expliquen por qué no mantiene la proporción.",
+          "Para 4 entradas por $1200, hallen $300 por entrada y calculen 6 entradas: $1800.",
+          "Para 2 lápices por $10, refuten «6 cuestan $14»: cada lápiz cuesta $5, por lo tanto 6 cuestan $30.",
+          "Cambien los roles y creen un pedido nuevo."
+        ],
+        "ejemplo_resuelto": "3 kg cuestan $600: la constante es 600 ÷ 3 = $200 por kilo. Para 5 kg: 5 × 200 = $1000.",
+        "reglas": [
+          "En una relación directa, al multiplicar una magnitud por un número, la otra también se multiplica por ese número.",
+          "El cociente y/x se mantiene constante.",
+          "La regla de tres directa conserva la proporción.",
+          "No se suma la misma cantidad a ambas magnitudes: se mantiene un factor multiplicativo."
+        ],
+        "orientaciones_adulto": "Preguntá qué representa la constante en el contexto: pesos por kilo, pesos por entrada. Si suma en lugar de multiplicar, pedí que compare el precio unitario.",
+        "cierre": "Que invente una tabla con una constante y agregue una fila incorrecta para que el otro la detecte."
+      }
+    },
+    {
+      "leccion": 2,
+      "titulo": "Proporcionalidad inversa",
+      "para_que_sirve": "Se trabaja la relación inversa, el producto constante y la regla de tres inversa, comparándola con la proporcionalidad directa.",
+      "actividad": {
+        "titulo": "Planificación de equipos: directa o inversa",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con situaciones.",
+        "preparacion": "Preparen tarjetas: 6 obreros tardan 8 días; 4 canillas llenan un tanque en 6 horas; un auto a 60 km/h tarda 4 horas; 3 kg cuestan $600. Añadan cambios de cantidades.",
+        "como_jugar": "En cada ronda se presenta una situación y un cambio. Antes de calcular, hay que decidir si es directa o inversa y anticipar si el resultado sube o baja.",
+        "pasos": [
+          "Con 6 obreros durante 8 días, pasen a 12 obreros para la misma tarea. Más obreros implican menos días: relación inversa.",
+          "El producto constante es 6 × 8 = 48. Con 12 obreros: 48 ÷ 12 = 4 días.",
+          "Con 4 canillas en 6 horas, el producto es 24. Con 8 canillas: 24 ÷ 8 = 3 horas.",
+          "Un auto a 60 km/h tarda 4 horas en recorrer una distancia fija: 240 km. A 80 km/h tarda 240 ÷ 80 = 3 horas.",
+          "En 3 kg por $600, pasar a 5 kg aumenta también el precio: relación directa, $1000.",
+          "El rival audita la clasificación y el cálculo. Cambien roles y resuelvan una nueva situación."
+        ],
+        "ejemplo_resuelto": "6 obreros × 8 días = 48. Con 12 obreros: 12 × x = 48; x = 4 días. Se duplica la cantidad de obreros y el tiempo se reduce a la mitad.",
+        "reglas": [
+          "En la proporcionalidad inversa, el producto x · y se mantiene constante.",
+          "Si una magnitud se multiplica por un número, la otra se divide por ese mismo número.",
+          "Debe mantenerse fija la condición relevante: misma tarea, distancia o volumen.",
+          "No alcanza con que una suba y otra baje: hay que comprobar que el producto sea constante."
+        ],
+        "orientaciones_adulto": "Antes de operar, preguntá qué se mantiene fijo: la tarea, la distancia o el volumen. Esto evita aplicar proporcionalidad inversa donde no corresponde.",
+        "cierre": "Proponé una situación directa y otra inversa parecidas en su contexto. El otro jugador debe clasificar cada una y justificar."
+      }
+    },
+    {
+      "leccion": 3,
+      "titulo": "Función y gráfico de proporcionalidad directa e inversa",
+      "para_que_sirve": "Se presenta y = kx, su constante y recta por el origen, y y = k/x con su gráfico hiperbólico. También se distingue una recta proporcional de otras rectas.",
+      "actividad": {
+        "titulo": "Detectives de gráficos: encontrá la relación",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel cuadriculado, regla, lápiz y tarjetas con funciones y puntos.",
+        "preparacion": "Preparen tarjetas: y = 2x; y = 3x; y = 2x + 1; y = 12/x. Añadan puntos (2,6), (4,12), (5,20) y tablas sencillas.",
+        "como_jugar": "Cada jugador clasifica una función o tabla como proporcionalidad directa, inversa o ninguna. Después construye o interpreta el gráfico y justifica la decisión.",
+        "pasos": [
+          "Revelen y = 2x. Completen x = 0, 1, 3 y 5; obtengan y = 0, 2, 6 y 10.",
+          "Grafiquen los puntos: aparece una recta que pasa por el origen (0,0), por lo que es directa.",
+          "Revelen y = 2x + 1. Cuando x = 0, y = 1: aunque es recta, no representa proporcionalidad directa.",
+          "Con el punto (4,12), calculen k = y/x = 12/4 = 3. La función es y = 3x.",
+          "Para y = 12/x, completen x = 1, 2, 3 y 4; y = 12, 6, 4 y 3. El producto x·y vale 12 y el gráfico es una curva.",
+          "Cada jugador clasifica la tarjeta del otro y señala qué evidencia usó: cociente, producto, origen o forma del gráfico."
+        ],
+        "ejemplo_resuelto": "Una recta pasa por (2,6). En y = kx, 6 = 2k, por lo tanto k = 3 y la función es y = 3x. Es proporcionalidad directa porque pasa por el origen.",
+        "reglas": [
+          "La función directa es y = kx y su gráfico es una recta por (0,0).",
+          "La función inversa es y = k/x y su gráfico es una hipérbola que no toca los ejes.",
+          "No toda recta es proporcionalidad directa: debe pasar por el origen.",
+          "En la directa, k = y/x; en la inversa, k = x·y."
+        ],
+        "orientaciones_adulto": "No aceptes «es una recta» como justificación suficiente. Preguntá si pasa por el origen. Para la inversa, pedí que compruebe el producto en varios puntos.",
+        "cierre": "Que invente una función lineal que no sea proporcionalidad directa y otra que sí lo sea. Debe explicar cómo distinguirlas."
+      }
+    },
+    {
+      "leccion": 4,
+      "titulo": "Regla de tres compuesta",
+      "para_que_sirve": "Se combinan más de dos magnitudes. Se analiza cada una por separado respecto de la incógnita, se decide si la relación es directa o inversa y se verifica el resultado.",
+      "actividad": {
+        "titulo": "Jefatura de producción: calculá el plan correcto",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con problemas de producción.",
+        "preparacion": "Preparen el caso: 4 obreros construyen 120 m en 6 días. Cambios: 6 obreros y 10 días; 6 obreros y 6 días; 2 obreros y 6 días. Segundo caso: 5 máquinas durante 8 horas producen 400 piezas; luego 10 máquinas durante 4 horas.",
+        "como_jugar": "El equipo calcula la producción o el tiempo. Antes de operar, clasifica cada magnitud respecto de la incógnita. El rival verifica los factores y el sentido del resultado.",
+        "pasos": [
+          "Para 4 obreros, 120 m y 6 días, calculen cuántos metros hacen 6 obreros en 10 días.",
+          "Más obreros producen más metros si los días se mantienen fijos: directa, factor 6/4.",
+          "Más días producen más metros si los obreros se mantienen fijos: directa, factor 10/6.",
+          "Calculen 120 × 6/4 × 10/6 = 300 metros.",
+          "Comprueben el sentido: aumentaron obreros y días, por lo que la producción debe superar 120 metros.",
+          "En el caso de máquinas, 5 máquinas durante 8 horas producen 400 piezas. Para 10 máquinas y 4 horas: factor máquinas 10/5 y factor horas 4/8, ambos directos respecto de piezas.",
+          "Calculen 400 × 2 × 1/2 = 400 piezas. El rival audita la clasificación y las razones.",
+          "Variante: 4 obreros hacen 120 m en 6 días. ¿Cuántos metros hacen 2 obreros en 6 días? Resultado: 60 m."
+        ],
+        "ejemplo_resuelto": "5 máquinas durante 8 horas producen 400 piezas. Para 10 máquinas y 4 horas: 400 × (10/5) × (4/8) = 400 piezas. Tanto máquinas como horas son directas respecto de la cantidad producida, aunque las horas disminuyan en este cambio.",
+        "reglas": [
+          "Se analiza una magnitud por vez, manteniendo las demás fijas.",
+          "Una relación directa se multiplica por la razón nueva/anterior.",
+          "Una relación inversa se multiplica por la razón anterior/nueva.",
+          "El resultado debe ser coherente con los cambios del problema.",
+          "La clasificación depende de la relación con la incógnita, no de que una cantidad suba o baje en el caso concreto."
+        ],
+        "orientaciones_adulto": "Pedí que registre magnitud, relación y factor antes de multiplicar. Si invierte una razón, preguntá qué ocurriría si esa magnitud aumentara por sí sola.",
+        "cierre": "Que invente un problema con tres magnitudes: una directa y otra inversa respecto de la incógnita. El rival debe clasificar cada relación antes de calcular."
+      }
+    }
+  ]
+}
