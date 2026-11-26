@@ -1,0 +1,118 @@
+{
+ "slug": "medio-mat3-m7-n3",
+ "step_id": "e56c2ab1-a003-4577-9c4b-bee3ca6e154b",
+ "materia": "Matemática 3",
+ "titulo": "Problemas de varios pasos",
+ "sub": "Matemática 3 · Misión 7 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Mucho movimiento en la biblioteca!",
+   "bajada": "Compran libros y prestan otros",
+   "emoji": "📚",
+   "titulo": "VARIOS PASOS",
+   "sub": "en un problema",
+   "voz": [
+    "¡Último momento: mucho movimiento en la biblioteca!",
+    "Compran libros y *prestan* otros.",
+    "Hoy: *problemas de varios pasos*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "PASO A PASO",
+   "items": [
+    {
+     "txt": "Tenía 3.400",
+     "emoji": "📚"
+    },
+    {
+     "txt": "+ 1.200 = 4.600",
+     "emoji": "🛒"
+    },
+    {
+     "txt": "− 800 = 3.800",
+     "emoji": "📤"
+    }
+   ],
+   "voz": [
+    "La biblioteca tenía *3.400* libros.",
+    "Compra 1.200: ahora tiene *4.600*.",
+    "Presta 800: le quedan *3.800*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Tiene 5.000. Presta 1.500 y le devuelven 700. ¿Cuántos hay?",
+   "pistas": [
+    "Primero: 5.000 − 1.500",
+    "Después: + 700"
+   ],
+   "respuesta": "4.200",
+   "voz": [
+    "Tiene 5.000. Presta 1.500 y le devuelven 700.",
+    "Pista: primero, 5.000 menos 1.500: *3.500*.",
+    "Pista: después, más 700.",
+    "¡Hay *4.200* libros!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuántas cuentas hacen falta?",
+   "opciones": [
+    "Una",
+    "Dos",
+    "Ninguna"
+   ],
+   "correcta": 1,
+   "voz": [
+    "La biblioteca tenía, compró y después prestó.",
+    "¿Cuántas cuentas hacen falta?",
+    "¡*Dos*: una suma y una resta!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Hacer solo la primera cuenta",
+     "bien": "Hacer todos los pasos"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hay que hacer *todos* los pasos, no solo el primero."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "LEER",
+     "todo el problema"
+    ],
+    [
+     "PASO A PASO",
+     "una cuenta por vez"
+    ],
+    [
+     "RESPONDER",
+     "con una oración"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Leemos *todo* el problema.",
+    "Hacemos *una cuenta por vez*.",
+    "Respondemos *con una oración*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

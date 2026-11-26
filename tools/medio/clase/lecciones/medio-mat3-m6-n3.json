@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat3-m6-n3",
+ "step_id": "63ce5d94-b9ab-45da-8a6a-447c71f2bb0d",
+ "materia": "Matemática 3",
+ "titulo": "Reagrupar y canjear",
+ "sub": "Matemática 3 · Misión 6 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "7 manzanas + 8 manzanas. ¿Entran en una columna?",
+   "segundos": 8,
+   "respuesta": "¡15: me llevo 1!",
+   "emoji": "🍎",
+   "titulo": "REAGRUPAR",
+   "sub": "y canjear",
+   "voz": [
+    "Desafío: 7 más 8 en las unidades.",
+    "¡Da *15*! No entra en una sola columna.",
+    "Hoy: *reagrupar y canjear*."
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "268",
+   "b": "125",
+   "op": "+",
+   "resultado": "393",
+   "marcas": [
+    {
+     "col": "U",
+     "txt": "13",
+     "paso": 1
+    }
+   ],
+   "titulo": "ME LLEVO 1",
+   "voz": [
+    "Sumamos 268 más 125.",
+    "Unidades: 8 más 5, 13.",
+    "Escribo 3 y *me llevo 1*.",
+    "Decenas: 6 más 2 más 1, *9*.",
+    "Centenas: 2 más 1, *3*. ¡*393*!"
+   ]
+  },
+  {
+   "t": "canje",
+   "titulo": "ABRIMOS UN CANASTO",
+   "grande": {
+    "n": 4,
+    "txt": "10"
+   },
+   "chico": {
+    "n": 2,
+    "txt": "1"
+   },
+   "sueltos": 0,
+   "ec1": "4 canastos y 2 sueltas",
+   "ec2": "3 canastos y 12 sueltas",
+   "voz": [
+    "En la resta, a veces *no alcanza*.",
+    "Hay 4 canastos de 10 y 2 sueltas.",
+    "¡Abrimos un canasto! Salen *10 sueltas*.",
+    "Antes: 4 canastos y 2 sueltas.",
+    "¡Ahora: *3 canastos y 12 sueltas*!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "342",
+   "b": "127",
+   "op": "−",
+   "resultado": "215",
+   "marcas": [
+    {
+     "col": "U",
+     "txt": "12",
+     "paso": 1
+    }
+   ],
+   "tachar": [
+    {
+     "col": "D",
+     "nuevo": "3",
+     "paso": 1
+    }
+   ],
+   "titulo": "EL CANJE",
+   "voz": [
+    "Restamos 342 menos 127.",
+    "2 menos 7 no alcanza: el 4 pasa a 3.",
+    "Ahora 12 menos 7, 5. Decenas: 3 menos 2, *1*.",
+    "Centenas: 3 menos 1, *2*. ¡*215*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "268 + 125 = 3.813",
+     "bien": "268 + 125 = 393"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si da más de 9, *te llevás 1*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SUMA",
+     "me llevo 1"
+    ],
+    [
+     "RESTA",
+     "abro un canasto"
+    ],
+    [
+     "10 SUELTAS",
+     "un canasto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "En la suma, si pasa de 9, *me llevo 1*.",
+    "En la resta, si no alcanza, *abro un canasto*.",
+    "Diez sueltas forman *un canasto*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

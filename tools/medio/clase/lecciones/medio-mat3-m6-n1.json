@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat3-m6-n1",
+ "step_id": "05442b53-1b69-46ff-8245-a9505f7c12b4",
+ "materia": "Matemática 3",
+ "titulo": "Suma en columnas",
+ "sub": "Matemática 3 · Misión 6 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Ana",
+    "emoji": "👩‍🌾"
+   },
+   "lugar": "🍎",
+   "lineas": [
+    "Ana cosechó 3.241 manzanas el lunes.",
+    "El martes cosechó 2.516.",
+    "¿Cuántas juntó?"
+   ],
+   "titulo": "SUMA",
+   "sub": "en columnas",
+   "voz": [
+    "Ana tiene una *granja de manzanas*.",
+    "El lunes cosechó *3.241*. El martes, *2.516*.",
+    "¿Cuántas juntó?",
+    "Hoy: *la suma en columnas*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "3.241 + 2.516",
+   "columnas": [
+    "",
+    "M",
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "",
+     "3",
+     "2",
+     "4",
+     "1"
+    ],
+    [
+     "+",
+     "2",
+     "5",
+     "1",
+     "6"
+    ],
+    [
+     "=",
+     "5",
+     "7",
+     "5",
+     "7"
+    ]
+   ],
+   "voz": [
+    "Ponemos un número *debajo* del otro.",
+    "Unidades debajo de unidades, decenas debajo de decenas.",
+    "Sumamos de *derecha a izquierda*: 7, 5, 7 y 5.",
+    "¡Juntó *5.757* manzanas!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "432",
+   "b": "251",
+   "op": "+",
+   "resultado": "683",
+   "titulo": "DE DERECHA A IZQUIERDA",
+   "voz": [
+    "Probemos con una más corta: 432 más 251.",
+    "Unidades: 2 más 1, *3*.",
+    "Decenas: 3 más 5, *8*.",
+    "Centenas: 4 más 2, *6*. ¡*683*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Por dónde empezamos a sumar?",
+   "opciones": [
+    "Por las unidades",
+    "Por los miles",
+    "Por el medio"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿por dónde empezamos?",
+    "Pensá en la derecha…",
+    "¡Por las *unidades*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Poner las cifras corridas",
+     "bien": "Unidades debajo de unidades"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si las cifras quedan *corridas*, la suma da mal."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ENCOLUMNAR",
+     "cada cifra en su lugar"
+    ],
+    [
+     "EMPEZAR",
+     "por las unidades"
+    ],
+    [
+     "SUMAR",
+     "columna por columna"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Cada cifra va en *su columna*.",
+    "Empezamos por las *unidades*.",
+    "Sumamos *columna por columna*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

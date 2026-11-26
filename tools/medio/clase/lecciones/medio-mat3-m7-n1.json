@@ -1,0 +1,132 @@
+{
+ "slug": "medio-mat3-m7-n1",
+ "step_id": "ce9a3a6c-8e4a-454c-8f4c-95a8866d4b45",
+ "materia": "Matemática 3",
+ "titulo": "Distancia entre números",
+ "sub": "Matemática 3 · Misión 7 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "📚",
+   "final": "🤔",
+   "titulo": "DISTANCIA",
+   "sub": "entre números",
+   "voz": [
+    "La biblioteca tiene *3.750* libros.",
+    "Quiere llegar a *6.000*. ¿Cuántos le faltan?",
+    "Hoy: *la distancia entre números*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "CONTAMOS PARA ADELANTE",
+   "min": 3000,
+   "max": 6000,
+   "cada": 1000,
+   "inicio": 3750,
+   "saltos": [
+    {
+     "a": 4000,
+     "txt": "+ 250"
+    },
+    {
+     "a": 6000,
+     "txt": "+ 2.000"
+    }
+   ],
+   "voz": [
+    "Empezamos en el 3.750.",
+    "Saltamos hasta el 4.000: *250*.",
+    "Y del 4.000 al 6.000: *2.000*."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Distancia",
+   "texto": "Cuánto hay de un número a otro. Se cuenta para adelante o se resta.",
+   "emoji": "📏",
+   "voz": [
+    "La *distancia* es cuánto hay de un número a otro.",
+    "Contamos para adelante, o *restamos*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "CON UNA RESTA",
+   "pasos": [
+    {
+     "txt": "6.000 − 3.750"
+    },
+    {
+     "txt": "250 + 2.000",
+     "nota": "saltos"
+    },
+    {
+     "txt": "= 2.250"
+    }
+   ],
+   "voz": [
+    "También podemos *restar*: 6.000 menos 3.750.",
+    "Los saltos eran 250 y 2.000.",
+    "¡Le faltan *2.250* libros!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto hay del 4.800 al 5.000?",
+   "opciones": [
+    "200",
+    "800",
+    "1.200"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuánto hay del 4.800 al 5.000?",
+    "Contá de 100 en 100…",
+    "¡*200*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Sumar los dos números para la distancia",
+     "bien": "Restar o contar para adelante"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para la distancia *no se suman* los dos números."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DISTANCIA",
+     "cuánto falta"
+    ],
+    [
+     "CONTAR",
+     "para adelante"
+    ],
+    [
+     "RESTAR",
+     "grande menos chico"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La distancia dice *cuánto falta*.",
+    "Podemos *contar para adelante*.",
+    "O *restar*: el grande menos el chico.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

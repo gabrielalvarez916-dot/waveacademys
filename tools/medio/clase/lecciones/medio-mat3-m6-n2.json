@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat3-m6-n2",
+ "step_id": "550a7b4a-b5c7-4020-93c0-928eb3ff5887",
+ "materia": "Matemática 3",
+ "titulo": "Resta en columnas",
+ "sub": "Matemática 3 · Misión 6 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Ana",
+    "emoji": "👩‍🌾"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tenía 7.586 manzanas"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y cuántas vendiste?"
+    },
+    {
+     "yo": false,
+     "txt": "Vendí 2.345. ¿Cuántas quedan?"
+    }
+   ],
+   "titulo": "RESTA",
+   "sub": "en columnas",
+   "voz": [
+    "Ana escribe: tenía *7.586* manzanas.",
+    "Vendió *2.345*.",
+    "¿Cuántas le quedan?",
+    "Hoy: *la resta en columnas*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "7.586 − 2.345",
+   "items": [
+    {
+     "txt": "6 − 5 = 1",
+     "emoji": "1️⃣"
+    },
+    {
+     "txt": "8 − 4 = 4",
+     "emoji": "🔟"
+    },
+    {
+     "txt": "5 − 3 = 2",
+     "emoji": "💯"
+    },
+    {
+     "txt": "7 − 2 = 5",
+     "emoji": "🚚"
+    }
+   ],
+   "voz": [
+    "El *más grande* va arriba. Unidades: 6 menos 5, *1*.",
+    "Decenas: 8 menos 4, *4*.",
+    "Centenas: 5 menos 3, *2*.",
+    "Miles: 7 menos 2, *5*. ¡Le quedan *5.241*!"
+   ]
+  },
+  {
+   "t": "columnas",
+   "a": "869",
+   "b": "425",
+   "op": "−",
+   "resultado": "444",
+   "titulo": "869 − 425",
+   "voz": [
+    "Otra más corta: 869 menos 425.",
+    "Unidades: 9 menos 5, *4*.",
+    "Decenas: 6 menos 2, *4*.",
+    "Centenas: 8 menos 4, *4*. ¡*444*!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En la resta, el número más chico va arriba",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "El más grande va arriba",
+   "voz": [
+    "¿Verdadero o falso? El más chico va arriba.",
+    "Pensá: ¿de dónde sacamos?",
+    "¡*Falso*! El *más grande* va arriba."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Restar el de arriba menos el de abajo al revés",
+     "bien": "Siempre arriba menos abajo"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En cada columna es *arriba menos abajo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ARRIBA",
+     "el más grande"
+    ],
+    [
+     "EMPEZAR",
+     "por las unidades"
+    ],
+    [
+     "RESTAR",
+     "arriba menos abajo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Arriba va el *más grande*.",
+    "Empezamos por las *unidades*.",
+    "En cada columna, *arriba menos abajo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat3-m7-n4",
+ "step_id": "6c42c1b2-3553-425a-8ebf-d9cbf4f7626d",
+ "materia": "Matemática 3",
+ "titulo": "Inventar problemas",
+ "sub": "Matemática 3 · Misión 7 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Martín",
+    "emoji": "👨‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Te paso una cuenta: 2.500 + 1.300"
+    },
+    {
+     "yo": true,
+     "txt": "¿Y qué hago?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Inventá un problema!"
+    }
+   ],
+   "titulo": "INVENTAR",
+   "sub": "problemas",
+   "voz": [
+    "Martín manda una cuenta: 2.500 más 1.300.",
+    "Pide algo distinto.",
+    "¡Que inventemos un *problema*!",
+    "Hoy: *inventar problemas*."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "UN PROBLEMA TIENE",
+   "items": [
+    {
+     "cab": "DATOS",
+     "txt": "2.500 y 1.300"
+    },
+    {
+     "cab": "QUÉ PASA",
+     "txt": "llegan más"
+    },
+    {
+     "cab": "PREGUNTA",
+     "txt": "¿cuántos hay?"
+    }
+   ],
+   "voz": [
+    "Un problema tiene partes.",
+    "Los *datos*: 2.500 y 1.300.",
+    "*Qué pasa*: llegan más libros.",
+    "Y la *pregunta*: ¿cuántos hay?"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "SUMA",
+    "texto": "llegan, juntan, ganan",
+    "emoji": "➕"
+   },
+   "b": {
+    "cab": "RESTA",
+    "texto": "se van, prestan, faltan",
+    "emoji": "➖"
+   },
+   "signo": "y",
+   "voz": [
+    "Para una *suma*: algo llega, se junta o se gana.",
+    "Para una *resta*: algo se va, se presta o falta.",
+    "¡Elegimos la historia según la cuenta!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué historia va con 3.000 − 500?",
+   "opciones": [
+    "Prestó 500",
+    "Le regalan 500",
+    "Compra 500"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿qué historia va con una resta?",
+    "Algo tiene que irse…",
+    "¡*Prestó* 500!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un problema sin pregunta",
+     "bien": "Siempre lleva pregunta"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Un problema siempre lleva *pregunta*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DATOS",
+     "los números"
+    ],
+    [
+     "HISTORIA",
+     "suma o resta"
+    ],
+    [
+     "PREGUNTA",
+     "al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Ponemos los *datos*.",
+    "Inventamos una *historia* que vaya con la cuenta.",
+    "Y al final, la *pregunta*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

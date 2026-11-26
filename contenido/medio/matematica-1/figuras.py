@@ -588,12 +588,12 @@ def columnas(a, b, op="+", resultado=None, marcas=(), tachar=(), vacio=False):
     """Cuenta en columnas con C, D y U arriba. marcas: [(col, txt)] arriba de la columna ('U', 'D', 'C'): el «me llevo 1» o el 1 del canje.
     tachar: [(col, nuevo)] tacha la cifra de arriba y escribe el número nuevo (canje en la resta). vacio=True: el resultado queda en blanco (para completar)."""
     a, b = str(a), str(b); r = "" if resultado is None else str(resultado)
-    nc = max(len(a), len(b), len(r), 2); IDX = {"U": 0, "D": 1, "C": 2}
+    nc = max(len(a), len(b), len(r), 2); IDX = {"U": 0, "D": 1, "C": 2, "M": 3}
     fig, ax = lienzo(1.15 * nc + 1.6, 4.0, 1.15 * nc + 1.6, 4.4, 0, 0)
     X = lambda k: 1.2 + (nc - 1 - k) * 1.15 + .5
     for k in range(nc):
         ax.add_patch(FancyBboxPatch((X(k) - .4, 3.75), .8, .45, boxstyle="round,pad=0.02,rounding_size=0.1", color=TEAL))
-        ax.text(X(k), 3.97, ["U", "D", "C", "UM"][k], ha="center", va="center", fontsize=13, color="white", **F)
+        ax.text(X(k), 3.97, ["U", "D", "C", "M"][k], ha="center", va="center", fontsize=13, color="white", **F)
     def fila(s, y, c=OSC):
         for j, ch in enumerate(reversed(s)): ax.text(X(j), y, ch, ha="center", va="center", fontsize=26, color=c, **F)
     fila(a, 2.75); fila(b, 1.85)

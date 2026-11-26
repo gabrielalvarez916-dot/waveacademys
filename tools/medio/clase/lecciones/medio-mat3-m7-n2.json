@@ -1,0 +1,158 @@
+{
+ "slug": "medio-mat3-m7-n2",
+ "step_id": "d9858edc-839c-4cea-8edd-f2d618859f3b",
+ "materia": "Matemática 3",
+ "titulo": "Cantidad inicial desconocida",
+ "sub": "Matemática 3 · Misión 7 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Martín",
+    "emoji": "👨‍🏫"
+   },
+   "lugar": "📚",
+   "lineas": [
+    "Martín no sabe cuántos libros tenía.",
+    "Le regalaron 1.250.",
+    "Ahora tiene 4.600."
+   ],
+   "titulo": "EL PRINCIPIO",
+   "sub": "desconocido",
+   "voz": [
+    "Martín es el bibliotecario del barrio.",
+    "No sabe cuántos libros *tenía*.",
+    "Le regalaron 1.250 y ahora tiene *4.600*.",
+    "Hoy: *la cantidad inicial desconocida*."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "LA HISTORIA AL REVÉS",
+   "items": [
+    {
+     "txt": "Tenía ?",
+     "emoji": "❓"
+    },
+    {
+     "txt": "Llegan 1.250",
+     "emoji": "🎁"
+    },
+    {
+     "txt": "Tiene 4.600",
+     "emoji": "📚"
+    }
+   ],
+   "relato": [
+    2,
+    1,
+    0
+   ],
+   "voz": [
+    "Contamos la historia *al revés*.",
+    "Ahora tiene 4.600. Antes llegaron 1.250.",
+    "Si sacamos lo que llegó, ¡volvemos al *principio*!"
+   ]
+  },
+  {
+   "t": "platillos",
+   "titulo": "? + 1.250 = 4.600",
+   "estados": [
+    {
+     "izq": [
+      "?",
+      "1.250"
+     ],
+     "der": [
+      "4.600"
+     ],
+     "txt": "Algo más 1.250"
+    },
+    {
+     "izq": [
+      "?"
+     ],
+     "der": [
+      "4.600 − 1.250"
+     ],
+     "txt": "Sacamos 1.250"
+    },
+    {
+     "izq": [
+      "?"
+     ],
+     "der": [
+      "3.350"
+     ],
+     "txt": "¡Tenía 3.350!"
+    }
+   ],
+   "voz": [
+    "Algo más 1.250 es igual a 4.600.",
+    "Sacamos 1.250 de los dos lados.",
+    "¡Tenía *3.350* libros!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Prestó 800 y le quedan 2.500. ¿Tenía…?",
+   "a": {
+    "txt": "3.300",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "1.700",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡3.300! Sumamos",
+   "voz": [
+    "Martín prestó 800 y le quedan 2.500.",
+    "Si se fueron, para volver *sumamos*…",
+    "¡Tenía *3.300*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Si llegaron, para el principio sumo",
+     "bien": "Si llegaron, para el principio resto"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si llegaron libros, para volver al principio *restamos*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AL REVÉS",
+     "volvemos atrás"
+    ],
+    [
+     "SI LLEGARON",
+     "restamos"
+    ],
+    [
+     "SI SE FUERON",
+     "sumamos"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Contamos la historia *al revés*.",
+    "Si llegaron, *restamos*.",
+    "Si se fueron, *sumamos*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

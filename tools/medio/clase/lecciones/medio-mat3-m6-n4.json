@@ -1,0 +1,124 @@
+{
+ "slug": "medio-mat3-m6-n4",
+ "step_id": "b4d361cb-b94b-44ce-b7bf-6239f0a06d80",
+ "materia": "Matemática 3",
+ "titulo": "Controlar los resultados",
+ "sub": "Matemática 3 · Misión 6 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Error en la cuenta de la granja!",
+   "bajada": "Ana revisa sus números",
+   "emoji": "🔍",
+   "titulo": "CONTROLAR",
+   "sub": "los resultados",
+   "voz": [
+    "¡Último momento: hay un *error* en la granja!",
+    "Ana revisa sus números.",
+    "Hoy: *controlar los resultados*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "CONTROLAR UNA RESTA",
+   "pasos": [
+    {
+     "txt": "5.214 − 1.538 = 3.676"
+    },
+    {
+     "txt": "3.676 + 1.538",
+     "nota": "sumamos"
+    },
+    {
+     "txt": "= 5.214 ✓"
+    }
+   ],
+   "voz": [
+    "Ana restó: 5.214 menos 1.538, da 3.676.",
+    "Para controlar, sumamos el resultado y lo que restamos.",
+    "¡Da *5.214*! La cuenta está bien."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "2.768 + 1.455 = 3.000. ¿Está bien?",
+   "a": {
+    "txt": "Sí",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "No",
+    "emoji": "🤔"
+   },
+   "correcta": "b",
+   "resultado": "¡No! Da cerca de 4.000",
+   "voz": [
+    "¿Qué creés? 2.768 más 1.455 da 3.000.",
+    "Estimá: 3.000 más 1.000…",
+    "¡No! Da cerca de *4.000*. Es 4.223."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "DOS CONTROLES",
+   "items": [
+    {
+     "txt": "Estimar con redondos",
+     "emoji": "🎯"
+    },
+    {
+     "txt": "Hacer la cuenta al revés",
+     "emoji": "🔄"
+    }
+   ],
+   "voz": [
+    "Tenemos dos formas de controlar.",
+    "*Estimar* con números redondos.",
+    "Y hacer la cuenta *al revés*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Si la cuenta está hecha, está bien",
+     "bien": "Siempre conviene controlarla"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Siempre conviene *controlar* la cuenta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESTIMAR",
+     "da cerca"
+    ],
+    [
+     "AL REVÉS",
+     "resta con suma"
+    ],
+    [
+     "SI NO DA",
+     "revisar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Estimamos: el resultado tiene que dar *cerca*.",
+    "Controlamos la resta *con una suma*.",
+    "Si no da, *revisamos* la cuenta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
