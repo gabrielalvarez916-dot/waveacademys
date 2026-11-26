@@ -41,3 +41,8 @@ Si un tema necesita un motor que no está, se crea en el banco (con su prueba au
 | `sexa_operar_x` | ejercicio | sumar o restar dos tiempos (o ángulos con `angulo`) | `{"modo":"angulo"}` opcional |
 
 `pasoapaso` NO va como ejemplo de la lección: repite en texto la explicación. Queda para otros usos.
+| `potencias10_x` | ejercicio | solo potencias de 10 (exponentes naturales) y ×÷ por 10, 100, 1.000 | — |
+| `binario_lugares_x` | ejercicio | valores de los lugares en binario y qué números pueden ser binarios (sin pasar de sistema) | — |
+
+Modos agregados: `binario_conv` `{"modo":"a_binario"|"a_decimal"|"ambos"}` · `sexagesimal_conv` `{"modo":"convertir"|"ambos"}` (convertir = sin sumar).
+Para cargar actividades o examen cambiados en una misión YA cargada, el archivo lleva `"actualizar_preguntas": true` (si no, la máquina no las toca).

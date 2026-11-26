@@ -60,7 +60,9 @@ const ETAPAS = {
   ciclo1: { nombre: 'primaria, primer ciclo (1.º a 3.º)', min: 12, max: 60, def: 6, parrafo: false, temas: 2, rec: [2, 4], recDef: 5 }
 };
 function etapa(ruta) { const m = String(ruta).replace(/\\/g, '/').match(/contenido\/medio\/[a-z]+-(\d+)\//); if (!m) return ETAPAS.secundaria; return Number(m[1]) <= 3 ? ETAPAS.ciclo1 : ETAPAS.ciclo2; }
-const EJEMPLO_CON_TEXTO = ['pasoapaso'];  // ejemplos que repiten la explicación en texto: no van en la lección
+const EJEMPLO_CON_TEXTO = ['pasoapaso'];
+// Ejercicios que mezclan contenidos: en la lección se elige SIEMPRE el modo, para que la práctica pida solo lo explicado en esa pantalla (o antes)
+const MODO_OBLIGATORIO = { binario_conv: ['a_binario', 'a_decimal', 'ambos'], sexagesimal_conv: ['convertir', 'ambos'], llevar: null, ordenar: null, posicional: null, letras: null, descomponer_x: null };  // ejemplos que repiten la explicación en texto: no van en la lección
 const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const palabras = s => limpio(s).split(' ').filter(w => /[a-záéíóúñü0-9]/i.test(w));
 const textoBloques = bs => (bs || []).map(b => [b.texto, (b.items || []).join(' '), (b.filas || []).map(f => f.join(' ')).join(' ')].join(' ')).join(' ');
@@ -98,6 +100,9 @@ function leccion(ruta, M, n, L, donde) {
     if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
     ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
     if (t.ejemplo && EJEMPLO_CON_TEXTO.includes(t.ejemplo.motor)) mal(d, 'el ejemplo «' + t.ejemplo.motor + '» repite en texto lo que ya dice la explicación: usá un ejemplo visual del banco (o agregalo al banco)');
+    if (t.ejercicio && t.ejercicio.motor in MODO_OBLIGATORIO) { const ok = MODO_OBLIGATORIO[t.ejercicio.motor], md = (t.ejercicio.p || {}).modo;
+      if (!md && t.ejercicio.motor !== 'descomponer_x') mal(d, 'el ejercicio «' + t.ejercicio.motor + '» mezcla contenidos: elegí el modo que corresponde a ESTA pantalla (p.modo)');
+      else if (ok && md && !ok.includes(md)) mal(d, 'modo «' + md + '» no existe para ' + t.ejercicio.motor + ' (' + ok.join(', ') + ')'); }
     if (!t.ejercicio || !t.ejercicio.motor) mal(d, 'todo tema lleva su ejercicio de práctica del banco (ejercicio con motor, con "Otros números")');
     if (!t.ejemplo || !t.ejemplo.motor) mal(d, 'todo tema lleva su ejemplo vivo del banco (ejemplo con motor), sin excepción. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
   });

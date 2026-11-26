@@ -308,7 +308,12 @@
       return '<p class="lb-nota">Se agrupa de a 60: 60 segundos forman 1 minuto y 60 minutos forman 1 hora.</p><p class="lb-nota">' + fmt(o.s) + ' s ÷ 60 = ' + Math.floor(o.s / 60) + ' min y sobran ' + s + ' s · ' + Math.floor(o.s / 60) + ' min ÷ 60 = ' + h + ' h y sobran ' + m + ' min.</p><p class="lb-res">' + fmt(o.s) + ' s = ' + h + ' h ' + m + ' min ' + s + ' s</p>'; });
   } };
   M.sexagesimal_conv = { tipo: 'ejercicio', render: function (el, p, api) {
-    respuesta(el, api, function () { if (Math.random() < .5) { var t = R(3700, 30000), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
+    var md = p.modo || 'ambos';
+    respuesta(el, api, function () { if (md === 'convertir') { var cv = R(0, 2);
+        if (cv === 0) { var hh = R(1, 9); return { cons: '¿Cuántos minutos son <b>' + hh + ' horas</b>?', campos: [{ v: hh * 60, un: 'min' }], ayuda: 'Cada hora tiene 60 minutos: multiplicá por 60.', bien: '¡Bien! ' + hh + ' h = ' + hh * 60 + ' min.' }; }
+        if (cv === 1) { var mm = R(61, 400); return { cons: 'Pasá <b>' + mm + ' minutos</b> a horas y minutos.', campos: [{ lab: 'h', v: Math.floor(mm / 60) }, { lab: 'min', v: mm % 60 }], ayuda: 'Dividí por 60: el cociente son las horas y el resto, los minutos que sobran.', bien: '¡Bien! ' + mm + ' min = ' + Math.floor(mm / 60) + ' h ' + mm % 60 + ' min.' }; }
+      }
+      if (md === 'convertir' || (md === 'ambos' && Math.random() < .5)) { var t = R(3700, 30000), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
         return { cons: 'Pasá <b>' + fmt(t) + ' segundos</b> a horas, minutos y segundos.', campos: [{ lab: 'h', v: h }, { lab: 'min', v: m }, { lab: 's', v: s }], ayuda: 'Dividí por 60 para pasar a minutos (lo que sobra son segundos) y otra vez por 60 para pasar a horas.', bien: '¡Bien! ' + h + ' h ' + m + ' min ' + s + ' s.' }; }
       var h1 = R(0, 3), m1 = R(10, 59), s1 = R(10, 59), h2 = R(0, 3), m2 = R(10, 59), s2 = R(10, 59), T = (h1 + h2) * 3600 + (m1 + m2) * 60 + s1 + s2;
       return { cons: 'Sumá: <b>' + h1 + ' h ' + m1 + ' min ' + s1 + ' s</b> + <b>' + h2 + ' h ' + m2 + ' min ' + s2 + ' s</b>.', campos: [{ lab: 'h', v: Math.floor(T / 3600) }, { lab: 'min', v: Math.floor(T % 3600 / 60) }, { lab: 's', v: T % 60 }], ayuda: 'Sumá cada columna; si los segundos o minutos pasan de 60, cambiá 60 por 1 de la columna de al lado.', bien: '¡Bien sumado!' }; });
@@ -466,6 +471,26 @@
     });
   } };
 
+  // Potencias de 10 (ejercicio): solo base 10 y exponentes naturales; también multiplicar y dividir por 10, 100 y 1.000
+  M.potencias10_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    respuesta(el, api, function () {
+      var k = R(0, 3), e = R(1, 6), a = R(2, 99), q = pick([10, 100, 1000]);
+      if (k === 0) return { cons: '¿Cuánto es <b>10' + SUP[e] + '</b>?', campos: [{ v: Math.pow(10, e) }], ayuda: 'El exponente dice cuántos ceros lleva: 10' + SUP[e] + ' tiene ' + e + ' ceros.', bien: '¡Bien! 10' + SUP[e] + ' = ' + fmt(Math.pow(10, e)) + '.' };
+      if (k === 1) return { cons: 'Escribí <b>' + fmt(Math.pow(10, e)) + '</b> como potencia de 10: ¿cuál es el exponente?', campos: [{ lab: '10 elevado a', v: e }], ayuda: 'Contá los ceros: esa es la cantidad de veces que se multiplica el 10.', bien: '¡Bien! ' + fmt(Math.pow(10, e)) + ' = 10' + SUP[e] + '.' };
+      if (k === 2) return { cons: '¿Cuánto es <b>' + a + ' × ' + fmt(q) + '</b>?', campos: [{ v: a * q }], ayuda: 'Multiplicar por ' + fmt(q) + ' agrega ' + (String(q).length - 1) + ' ceros.', bien: '¡Bien! ' + a + ' × ' + fmt(q) + ' = ' + fmt(a * q) + '.' };
+      return { cons: '¿Cuánto es <b>' + fmt(a * q) + ' ÷ ' + fmt(q) + '</b>?', campos: [{ v: a }], ayuda: 'Dividir por ' + fmt(q) + ' saca ' + (String(q).length - 1) + ' ceros.', bien: '¡Bien! ' + fmt(a * q) + ' ÷ ' + fmt(q) + ' = ' + a + '.' };
+    });
+  } };
+  // Sistema binario, primera pantalla (ejercicio): valores de los lugares y qué números pueden ser binarios (todavía sin pasar de un sistema a otro)
+  M.binario_lugares_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    respuesta(el, api, function () {
+      if (Math.random() < .5) { var L = R(4, 7), vals = []; for (var i = 0; i < L; i++) vals.push(Math.pow(2, i)); var h = R(2, L - 1);
+        return { cons: 'En binario, cada lugar vale el doble que el de su derecha. Completá el valor que falta: <b>' + vals.map(function (v, i) { return i === h ? '__' : v; }).join(', ') + '</b>', campos: [{ v: vals[h] }], ayuda: 'Duplicá el valor del lugar anterior: ' + vals[h - 1] + ' × 2.', bien: '¡Bien! Va ' + vals[h] + '.' }; }
+      var cand = [], es; do { var largo = R(3, 6), x = '1'; for (var j = 1; j < largo; j++) x += String(R(0, Math.random() < .3 ? 2 : 1)); cand = x; es = !/2/.test(x); } while (false);
+      return { cons: '¿El número <b>' + cand + '</b> puede estar escrito en el sistema binario? Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: es ? ['si', 'sí'] : ['no'] }], ayuda: 'En binario solo existen las cifras 0 y 1.', bien: es ? '¡Bien! Solo tiene ceros y unos.' : '¡Bien! Tiene un 2: en binario no existe.' };
+    });
+  } };
+
   M.binario_lamparas = { tipo: 'ejemplo', render: function (el) {
     var on = [0, 0, 1, 0, 1, 1, 0, 1];
     function pintar() { var v = 0; on.forEach(function (b, i) { if (b) v += Math.pow(2, 7 - i); });
@@ -474,8 +499,9 @@
     el.onclick = function (e) { var b = e.target.closest('[data-l]'); if (b) { var i = +b.getAttribute('data-l'); on[i] = on[i] ? 0 : 1; pintar(); } }; pintar();
   } };
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);
-      if (Math.random() < .5) return { cons: 'Pasá a decimal el número binario <b>' + b + '</b>.', campos: [{ v: n }], ayuda: 'Cada lugar desde la derecha vale 1, 2, 4, 8, 16…: sumá los que tienen 1.', bien: '¡Bien! ' + b + ' = ' + n + '.' };
+      if (md === 'a_decimal' || (md === 'ambos' && Math.random() < .5)) return { cons: 'Pasá a decimal el número binario <b>' + b + '</b>.', campos: [{ v: n }], ayuda: 'Cada lugar desde la derecha vale 1, 2, 4, 8, 16…: sumá los que tienen 1.', bien: '¡Bien! ' + b + ' = ' + n + '.' };
       return { cons: 'Pasá a binario el número <b>' + n + '</b>.', campos: [{ tipo: 'texto', v: b }], ayuda: 'Dividí por 2 una y otra vez y leé los restos de abajo hacia arriba. Es ' + b + '.', bien: '¡Bien! ' + n + ' = ' + b + '.' }; });
   } };
   M.recta_explorar = { tipo: 'ejemplo', render: function (el) {

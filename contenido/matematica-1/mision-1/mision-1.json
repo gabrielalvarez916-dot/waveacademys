@@ -634,10 +634,8 @@
        }
       ],
       "ejercicio": {
-       "motor": "llevar",
-       "p": {
-        "modo": "potencias"
-       }
+       "motor": "potencias10_x",
+       "p": {}
       }
      },
      {
@@ -983,7 +981,7 @@
        }
       ],
       "ejercicio": {
-       "motor": "binario_conv",
+       "motor": "binario_lugares_x",
        "p": {}
       }
      },
@@ -1016,7 +1014,9 @@
       ],
       "ejercicio": {
        "motor": "binario_conv",
-       "p": {}
+       "p": {
+        "modo": "a_binario"
+       }
       }
      },
      {
@@ -1048,7 +1048,9 @@
       ],
       "ejercicio": {
        "motor": "binario_conv",
-       "p": {}
+       "p": {
+        "modo": "ambos"
+       }
       }
      }
     ],
@@ -1330,7 +1332,9 @@
       ],
       "ejercicio": {
        "motor": "sexagesimal_conv",
-       "p": {}
+       "p": {
+        "modo": "convertir"
+       }
       }
      },
      {
@@ -2058,5 +2062,6 @@
     "n": "recordar"
    }
   ]
- ]
+ ],
+ "actualizar_preguntas": true
 }
