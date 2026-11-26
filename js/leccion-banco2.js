@@ -1397,11 +1397,11 @@
 
   // ======= PRIMER GRADO (Nivel Medio · Matemática 1, Misiones 1 y 2): contar, comparar, uno con uno, igualar, números hasta 20 =======
   // Todo en IMPRENTA MAYÚSCULA, con dibujos (emojis) grandes y números chicos. Un ejemplo paso a paso (primeros) y una práctica (primeros_x), con un modo por tema.
-  var P1E = { manzana: '🍎', globo: '🎈', estrella: '⭐', caramelo: '🍬', pelota: '⚽', flor: '🌸', patito: '🐤', chico: '🧒', vaso: '🥤', perro: '🐶', hueso: '🦴', gato: '🐱', pescado: '🐟', silla: '🪑', tortita: '🧁' };
-  var P1PL = { manzana: 'MANZANAS', globo: 'GLOBOS', estrella: 'ESTRELLAS', caramelo: 'CARAMELOS', pelota: 'PELOTAS', flor: 'FLORES', patito: 'PATITOS', chico: 'CHICOS', vaso: 'VASOS', perro: 'PERROS', hueso: 'HUESOS', gato: 'GATOS', pescado: 'PESCADOS', silla: 'SILLAS', tortita: 'TORTITAS' };
+  var P1E = { manzana: '🍎', globo: '🎈', estrella: '⭐', caramelo: '🍬', pelota: '⚽', flor: '🌸', patito: '🐤', chico: '🧒', vaso: '🥤', perro: '🐶', hueso: '🦴', gato: '🐱', pescado: '🐟', silla: '🪑', tortita: '🧁', palito: '<i class="lb-p1-pal"></i>' };
+  var P1PL = { manzana: 'MANZANAS', globo: 'GLOBOS', estrella: 'ESTRELLAS', caramelo: 'CARAMELOS', pelota: 'PELOTAS', flor: 'FLORES', patito: 'PATITOS', chico: 'CHICOS', vaso: 'VASOS', perro: 'PERROS', hueso: 'HUESOS', gato: 'GATOS', pescado: 'PESCADOS', silla: 'SILLAS', tortita: 'TORTITAS', palito: 'PALITOS' };
   var P1PARES = [['chico', 'vaso'], ['perro', 'hueso'], ['gato', 'pescado'], ['chico', 'silla'], ['chico', 'tortita']];
   var P1NOM = [['ANA', 'LEO'], ['SOFI', 'JUAN'], ['MICA', 'TOMI']];
-  var P1M = { caramelo: 1, globo: 1, patito: 1, perro: 1, hueso: 1, gato: 1, pescado: 1, vaso: 1, chico: 1 };
+  var P1M = { caramelo: 1, globo: 1, patito: 1, perro: 1, hueso: 1, gato: 1, pescado: 1, vaso: 1, chico: 1, palito: 1 };
   function g(o, fem, masc) { return P1M[o] ? masc : fem; }
   function p1Obj() { return pick(['manzana', 'globo', 'estrella', 'caramelo', 'pelota', 'flor', 'patito']); }
   function p1Up(n) { return H.letras(n).toUpperCase(); }
@@ -1469,6 +1469,12 @@
     (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] + '%">' + (m[2] != null ? m[2] : m[0]) + '</span>'; });
     return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div>';
   }
+  // dinero: lista de valores (billetes de 10 o 20, monedas de 1 o 5); hasta = cuántos ya contados (con el total que va)
+  function p1Plata(vals, hasta) {
+    var t = 0; return '<div class="lb-p1-fila">' + vals.map(function (v, i) { t += v; var c = i < (hasta || 0);
+      return '<span class="lb-p1-pl ' + (v >= 10 ? 'bi' : 'mo') + (c ? ' on' : '') + '">' + (v >= 10 ? '💵' : '🪙') + '<b>$' + v + '</b>' + (c ? '<small>' + t + '</small>' : '') + '</span>'; }).join('') + '</div>';
+  }
+  function p1Desarmar(n) { var r = []; while (n >= 10) { r.push(10); n -= 10; } if (n >= 5) { r.push(5); n -= 5; } while (n > 0) { r.push(1); n--; } return r; }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1488,6 +1494,9 @@
       ordenar3: ctrl('a', 'PRIMERO', 10, 99, 1, 47) + ctrl('b', 'SEGUNDO', 10, 99, 1, 74) + ctrl('c', 'TERCERO', 10, 99, 1, 40),
       recta100: p.que === 'saltar' ? ctrl('a', 'ESTÁS EN EL', p.dir === 'atras' ? 6 : 0, p.dir === 'atras' ? 20 : 14, 1, p.dir === 'atras' ? 12 : 4) + ctrl('s', 'SALTÁS', 1, 6, 1, 3) : ctrl('n', 'NÚMERO', 1, 99, 1, 46),
       decenas: ctrl('d', 'BOLSITAS DE 10', p.que === 'contar' ? 1 : 1, 9, 1, 3) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
+      dinero: p.que === 'pagar' ? ctrl('n', 'PRECIO', 6, 39, 1, 17) : p.que === 'falta' ? ctrl('n', 'PRECIO', 6, 20, 1, 12) + ctrl('d', 'DAS', 1, 19, 1, 10) : p.que === 'caro' ? ctrl('a', 'PRECIO 1', 1, 50, 1, 20) + ctrl('b', 'PRECIO 2', 1, 50, 1, 8) :
+        ctrl('d', 'BILLETES DE $10', 0, 3, 1, 2) + ctrl('c', 'MONEDAS DE $5', 0, 1, 1, 1) + ctrl('u', 'MONEDAS DE $1', 0, 4, 1, 2),
+      sumar: ctrl('a', 'PRIMER GRUPO', 1, 7, 1, 4) + ctrl('b', 'SEGUNDO GRUPO', 1, 5, 1, 3),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1678,6 +1687,60 @@
         P.push({ vis: p1DU(nn, 'du') + p1Big(nn + ' = ' + v.d * 10 + ' + ' + v.u), txt: 'ENTONCES <b>' + nn + ' = ' + v.d * 10 + ' + ' + v.u + '</b>.' });
         return P;
       }
+      if (md === 'dinero') {
+        var qd = p.que || 'contar';
+        if (qd === 'contar') {
+          var vs = []; for (i = 0; i < v.d; i++) vs.push(10); for (i = 0; i < v.c; i++) vs.push(5); for (i = 0; i < v.u; i++) vs.push(1);
+          if (!vs.length) { P.push({ vis: p1Big('NO HAY DINERO'), txt: 'SUBÍ ALGÚN BILLETE O MONEDA.' }); return P; }
+          P.push({ vis: p1Plata(vs), txt: 'EL NÚMERO DE CADA BILLETE Y MONEDA DICE <b>CUÁNTO VALE</b>.' });
+          for (i = 1; i <= vs.length; i++) P.push({ vis: p1Plata(vs, i), txt: (i === 1 ? 'EMPEZAMOS POR LO QUE MÁS VALE: <b>' : 'SUMAMOS $' + vs[i - 1] + ': <b>') + vs.slice(0, i).reduce(function (x, y) { return x + y; }, 0) + '</b>.' });
+          var tt = vs.reduce(function (x, y) { return x + y; }, 0);
+          P.push({ vis: p1Plata(vs, vs.length) + p1Big('EN TOTAL $' + tt), txt: 'EN TOTAL HAY <b>$' + tt + '</b>.' });
+          return P;
+        }
+        if (qd === 'pagar') {
+          var ds = p1Desarmar(v.n);
+          P.push({ vis: p1Big('CUESTA $' + v.n), txt: 'QUEREMOS PAGAR <b>JUSTO</b>: NI MÁS NI MENOS.' });
+          for (i = 1; i <= ds.length; i++) P.push({ vis: p1Big('CUESTA $' + v.n) + p1Plata(ds.slice(0, i), i), txt: 'PONEMOS $' + ds[i - 1] + ': YA VAMOS <b>' + ds.slice(0, i).reduce(function (x, y) { return x + y; }, 0) + '</b>.' });
+          P.push({ vis: p1Plata(ds, ds.length) + p1Big('$' + v.n + ' ¡JUSTO!'), txt: 'LLEGAMOS AL PRECIO: PAGAMOS <b>JUSTO</b>.' });
+          return P;
+        }
+        if (qd === 'falta') {
+          var da2 = Math.min(v.d, v.n - 1), ft = v.n - da2, op3 = {};
+          P.push({ vis: p1Big('CUESTA $' + v.n + ' · DAS $' + da2), txt: 'CON $' + da2 + ' <b>NO ALCANZA</b> PARA PAGAR $' + v.n + '.' });
+          for (i = 1; i <= ft; i++) { op3[da2 + i] = 'on'; P.push({ vis: p1Tren(da2, v.n, op3), txt: 'CONTAMOS DESDE ' + da2 + ': <b>' + (da2 + i) + '</b>.' }); }
+          P.push({ vis: p1Tren(da2, v.n, op3) + p1Big('FALTAN $' + ft), txt: 'CONTAMOS ' + ft + ' VECES: FALTAN <b>$' + ft + '</b>.' });
+          return P;
+        }
+        var ia = '🧃', ib = '🎈', mx = Math.max(v.a, v.b), mn = Math.min(v.a, v.b), Gp = function (h) { return '<div class="lb-p1-dos"><div class="lb-p1-pre' + (h && v.a === h ? ' on' : '') + '">' + ia + '<b>$' + v.a + '</b></div><div class="lb-p1-pre' + (h && v.b === h ? ' on' : '') + '">' + ib + '<b>$' + v.b + '</b></div></div>'; };
+        P.push({ vis: Gp(), txt: 'EL JUGO CUESTA <b>$' + v.a + '</b> Y EL GLOBO <b>$' + v.b + '</b>.' });
+        if (v.a === v.b) { P.push({ vis: Gp() + p1Big('CUESTAN IGUAL'), txt: 'TIENEN EL MISMO PRECIO.' }); return P; }
+        P.push({ vis: Gp(mx), txt: 'EL PRECIO MÁS GRANDE ES <b>$' + mx + '</b>: ES EL MÁS <b>CARO</b>.' });
+        P.push({ vis: Gp(mn) + p1Big('$' + mn + ' ES MÁS BARATO'), txt: 'EL PRECIO MÁS CHICO ES <b>$' + mn + '</b>: ES EL MÁS <b>BARATO</b>.' });
+        return P;
+      }
+      if (md === 'sumar') {
+        var qs = p.que || 'juntar', os = qs === 'palitos' ? 'palito' : o, tot2 = v.a + v.b;
+        if (qs === 'juntar' || qs === 'palitos') {
+          P.push({ vis: p1Grupo('', v.a, os) + p1Grupo('', v.b, os), txt: qs === 'palitos' ? 'DIBUJAMOS UN PALITO POR CADA COSA: <b>' + v.a + '</b> Y <b>' + v.b + '</b>.' : 'HAY DOS GRUPOS: UNO DE <b>' + v.a + '</b> Y OTRO DE <b>' + v.b + '</b>.' });
+          P.push({ vis: p1Fila(tot2, os, { tenue: null }), txt: 'LOS <b>JUNTAMOS</b> EN UN SOLO GRUPO.' });
+          for (i = 1; i <= tot2; i++) P.push({ vis: p1Fila(tot2, os, { hasta: i, marca: i }), txt: 'CONTAMOS: <b>' + i + '</b>.' });
+          P.push({ vis: p1Fila(tot2, os, { hasta: tot2 }) + p1Big(v.a + ' Y ' + v.b + ' SON ' + tot2), txt: 'EN TOTAL HAY <b>' + tot2 + '</b>.' });
+          return P;
+        }
+        if (qs === 'agregar') {
+          P.push({ vis: p1Fila(v.a, o, { hasta: v.a }), txt: 'HABÍA <b>' + v.a + '</b> ' + P1PL[o] + '.' });
+          P.push({ vis: p1Fila(tot2, o, { hasta: v.a, nuevo: v.a }), txt: 'LLEGAN <b>' + v.b + '</b> MÁS. NO EMPEZAMOS DE NUEVO.' });
+          for (i = v.a + 1; i <= tot2; i++) P.push({ vis: p1Fila(tot2, o, { hasta: i, nuevo: v.a, marca: i }), txt: 'SEGUIMOS DESDE EL ' + v.a + ': <b>' + i + '</b>.' });
+          P.push({ vis: p1Fila(tot2, o, { hasta: tot2, nuevo: v.a }) + p1Big('AHORA HAY ' + tot2), txt: 'EL GRUPO CRECIÓ: AHORA HAY <b>' + tot2 + '</b>.' });
+          return P;
+        }
+        P.push({ vis: p1Grupo(String(v.a), v.a, o) + p1Grupo(String(v.b), v.b, o), txt: 'TENEMOS <b>' + v.a + '</b> Y <b>' + v.b + '</b>.' });
+        P.push({ vis: p1Big(v.a + ' + ' + v.b), txt: 'EL SIGNO <b>+</b> SE LEE MÁS: QUIERE DECIR JUNTAR.' });
+        P.push({ vis: p1Fila(tot2, o, { hasta: tot2 }) + p1Big(v.a + ' + ' + v.b + ' = ?'), txt: 'EL SIGNO <b>=</b> SE LEE IGUAL: DESPUÉS VA EL RESULTADO.' });
+        P.push({ vis: p1Big(v.a + ' + ' + v.b + ' = ' + tot2), txt: 'CONTAMOS TODO Y ESCRIBIMOS <b>' + tot2 + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -1754,6 +1817,22 @@
         return { cons: '¿QUÉ NÚMERO ES <b>' + d * 10 + ' + ' + u + '</b>?', campos: [{ v: d * 10 + u }], ayuda: d + ' DECENAS Y ' + u + ' UNIDADES.', bien: '¡MUY BIEN! ES EL ' + (d * 10 + u) + '.' }; });
       return respuesta(el, api, function () { var d = R(1, p.max ? Math.floor(p.max / 10) : 9), u = R(0, 9), n = d * 10 + u;
         return { cons: 'CADA BOLSITA TIENE 10. ¿CUÁNTOS CARAMELOS HAY EN TOTAL?', html: p1Bolsas(n), campos: [{ v: n }], ayuda: 'CONTÁ LAS BOLSITAS DE 10 EN 10 Y DESPUÉS LOS SUELTOS.', bien: '¡MUY BIEN! HAY ' + n + '.' }; }); }
+    if (md === 'dinero') { var qd = p.que || 'contar';
+      if (qd === 'contar') return respuesta(el, api, function () { var vs = [], k, d = R(0, 3), c = R(0, 1), u = R(0, 4); if (!d && !c && !u) d = 1; for (k = 0; k < d; k++) vs.push(10); for (k = 0; k < c; k++) vs.push(5); for (k = 0; k < u; k++) vs.push(1); vs = mezclar(vs); var t = 10 * d + 5 * c + u;
+        return { cons: '¿CUÁNTO DINERO HAY EN TOTAL?', html: p1Plata(vs), campos: [{ v: t, lab: '$' }], ayuda: 'EMPEZÁ POR LO QUE MÁS VALE Y SEGUÍ SUMANDO.', bien: '¡MUY BIEN! HAY $' + t + '.' }; });
+      if (qd === 'falta') return respuesta(el, api, function () { var n = R(6, 20), d = R(Math.max(1, n - 6), n - 1);
+        return { cons: 'ALGO CUESTA <b>$' + n + '</b>. DAS <b>$' + d + '</b>. ¿CUÁNTO FALTA?', html: p1Tren(d, n), campos: [{ v: n - d, lab: '$' }], ayuda: 'CONTÁ DESDE ' + d + ' HASTA ' + n + '.', bien: '¡MUY BIEN! FALTAN $' + (n - d) + '.' }; });
+      if (qd === 'caro') return p1Elegir(el, api, function () { var it = mezclar([['🧃', 'JUGO'], ['🎈', 'GLOBO'], ['⚽', 'PELOTA'], ['🍎', 'MANZANA']]).slice(0, 3), pr = []; while (pr.length < 3) { var x = R(2, 50); if (pr.indexOf(x) < 0) pr.push(x); } var car = Math.random() < 0.5, k = pr.indexOf(car ? Math.max.apply(null, pr) : Math.min.apply(null, pr)), ops = it.map(function (q, i) { return q[0] + ' $' + pr[i]; });
+        return { cons: '¿QUÉ ES MÁS <b>' + (car ? 'CARO' : 'BARATO') + '</b>?', ops: ops, ok: ops[k], ayuda: car ? 'BUSCÁ EL PRECIO MÁS GRANDE.' : 'BUSCÁ EL PRECIO MÁS CHICO.', bien: '¡MUY BIEN!' }; });
+      return p1Elegir(el, api, function () { var n = R(6, 39), ok = p1Desarmar(n), m1 = p1Desarmar(n + R(1, 5)), m2 = p1Desarmar(Math.max(1, n - R(1, 5))), f = function (l) { return l.map(function (x) { return '$' + x; }).join(' + '); };
+        return { cons: 'ALGO CUESTA <b>$' + n + '</b>. ¿CON QUÉ PAGÁS <b>JUSTO</b>?', ops: mezclar([f(ok), f(m1), f(m2)]), ok: f(ok), ayuda: 'SUMÁ CADA OPCIÓN: TIENE QUE DAR ' + n + '.', bien: '¡MUY BIEN! DA JUSTO $' + n + '.' }; }); }
+    if (md === 'sumar') { var qs = p.que || 'juntar';
+      return respuesta(el, api, function () { var o = p1Obj(), a = R(1, 6), b = R(1, 4), t = a + b, h, c;
+        if (qs === 'agregar') { c = 'HABÍA <b>' + a + '</b> ' + P1PL[o] + '. LLEGAN <b>' + b + '</b> MÁS. ¿CUÁNTOS HAY AHORA?'; h = p1Fila(t, o, { nuevo: a }); }
+        else if (qs === 'palitos') { c = 'CONTÁ TODOS LOS PALITOS. ¿CUÁNTOS HAY?'; h = p1Grupo('', a, 'palito') + p1Grupo('', b, 'palito'); }
+        else if (qs === 'cuenta') { c = '¿CUÁNTO ES <b>' + a + ' + ' + b + '</b>?'; h = p1Big(a + ' + ' + b + ' = ?'); }
+        else { c = 'JUNTÁ LOS DOS GRUPOS. ¿CUÁNTOS HAY EN TOTAL?'; h = p1Grupo('', a, o) + p1Grupo('', b, o); }
+        return { cons: c, html: h, campos: [{ v: t }], ayuda: qs === 'agregar' ? 'NO EMPIECES DE NUEVO: SEGUÍ CONTANDO DESDE ' + a + '.' : 'CONTÁ TODO JUNTO, DE A UNO.', bien: '¡MUY BIEN! ' + a + ' + ' + b + ' = ' + t + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -1818,6 +1897,8 @@
     '.lb-p1-cua{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;width:100%;max-width:360px;margin:6px auto}.lb-p1-cua span{height:28px;display:grid;place-items:center;border:2px solid #9dbdb9;border-radius:6px;background:#fff;font-weight:800;font-size:.8rem;color:#253638;overflow:hidden}.lb-p1-cua span.vac{border:0;background:none}.lb-p1-cua span.fila{background:#D7F0E9;border-color:#087E83}.lb-p1-cua span.on{background:#087E83;border-color:#087E83;color:#fff}.lb-p1-cua span.sig{background:#FFE1D6;border-color:#C2552E}.lb-p1-cua span.oculto{border-style:dashed;border-color:#C2552E;color:#C2552E;background:#FFF3C4}',
     '.lb-p1-du{display:flex;justify-content:center;gap:8px;margin:8px 0}.lb-p1-du span{display:flex;flex-direction:column;align-items:center;min-width:86px;padding:6px 8px;border:3px solid #9dbdb9;border-radius:14px;background:#fff}.lb-p1-du small{font-weight:800;font-size:.7rem;color:#4b6a6c}.lb-p1-du b{font-size:2rem;color:#253638}.lb-p1-du span.on{border-color:#087E83;background:#D7F0E9}.lb-p1-dos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.lb-p1-dos .lb-p1-du{padding:6px;border:2px dashed #9dbdb9;border-radius:16px;margin:4px 0}',
     '.lb-p1-r100w{padding:64px 18px 8px}.lb-p1-r100{position:relative;height:30px;border-top:3px solid #253638}.lb-p1-t{position:absolute;top:-3px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}.lb-p1-t i{width:2px;height:10px;background:#253638}.lb-p1-t b{font-size:.62rem;color:#4b6a6c}.lb-p1-m{position:absolute;top:-32px;transform:translateX(-50%);min-width:24px;padding:2px 4px;border-radius:10px;background:#087E83;color:#fff;font-weight:800;font-size:.75rem;text-align:center}.lb-p1-m.pa{background:#C29A1E;top:-60px}.lb-p1-m.pa:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:28px;background:#C29A1E}',
+    '.lb-p1-pal{display:inline-block;width:6px;height:34px;background:#253638;border-radius:3px;margin:0 4px}.lb-p1-pl{position:relative;display:flex;flex-direction:column;align-items:center;padding:4px 6px;border-radius:10px;font-size:1.6rem;line-height:1.1}.lb-p1-pl b{font-size:.85rem;color:#253638}.lb-p1-pl.bi{background:#E8F5E1}.lb-p1-pl.mo{background:#FFF3C4}.lb-p1-pl.on{outline:3px solid #087E83}.lb-p1-pl small{position:absolute;right:-6px;top:-8px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 5px;font-size:.75rem}',
+    '.lb-p1-pre{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border:3px solid #9dbdb9;border-radius:16px;font-size:2.2rem;background:#fff}.lb-p1-pre b{font-size:1.2rem;color:#253638}.lb-p1-pre.on{border-color:#087E83;background:#D7F0E9}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);

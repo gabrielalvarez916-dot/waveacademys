@@ -14,6 +14,7 @@ S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
+NEU = lambda p: {"neutro": {"p": p}}
 
 N1 = {**ESTILO,
 "objetivo": "Vas a juntar dos grupos y contar cuántos hay.",
@@ -69,7 +70,7 @@ N2 = {**ESTILO,
 "ojo": ["Al agregar, el grupo crece.", "Contá solo una vez lo que ya había."],
 "resumen": [{"titulo": "Grupo", "texto": "Lo que había."}, {"titulo": "Agregar", "texto": "Llegan más."}, {"titulo": "Ahora", "texto": "Hay más que antes."}],
 "glosario": [{"palabra": "Agregar", "significado": "Poner más cosas."}, {"palabra": "Seguir contando", "significado": "Contar desde donde estaba."}],
-"carpeta": ["¿Cuántas estrellas había antes?", "¿Cuántas estrellas llegaron?", "¿Cuántas estrellas hay ahora?"],
+"carpeta": ["¿Cuántas estrellas había antes?", "¿Cuántas estrellas llegaron?", "¿Cuántas estrellas hay ahora todas juntas?"],
 "respuestas_carpeta": [["6"], ["2"], ["8"]],
 "soluciones": {"incompleto": "9. 9.", "solo": "6 figuritas.", "carpeta": ["6.", "2.", "8."]},
 }
@@ -135,36 +136,107 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "2 + 6 = 8.", "solo": "1 + 7 = 8.", "carpeta": ["6.", "3.", "9."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("DOS GRUPOS", [LD("JUNTAR", "<b>JUNTAR</b> ES PONER DOS GRUPOS EN UNO SOLO."),
+   LL("3 MANZANAS Y 2 MANZANAS.", "AHORA ES UN SOLO GRUPO.")],
+   {"modo": "sumar", "que": "juntar"}, {"modo": "sumar", "que": "juntar"}),
+ T("CONTAR TODO JUNTO", [LD("EL TOTAL", "DESPUÉS DE JUNTAR, CONTAMOS <b>TODO</b> PARA SABER CUÁNTOS HAY."),
+   LL("TOCÁ CADA UNO UNA SOLA VEZ.", "EL ÚLTIMO NÚMERO ES EL TOTAL.")],
+   {"modo": "sumar", "que": "juntar"}, {"modo": "sumar", "que": "juntar"}),
+], "recuerda": [
+ RC("JUNTAR", "ES PONER DOS GRUPOS EN UNO SOLO.", "4 PELOTAS Y 4 PELOTAS"),
+ RC("EL TOTAL", "ES CUÁNTOS HAY CUANDO CONTAMOS TODO JUNTO.", "4 Y 4 SON 8"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("UN GRUPO QUE CRECE", [LD("AGREGAR", "SI <b>AGREGAMOS</b> COSAS A UN GRUPO, EL GRUPO CRECE."),
+   LL("HABÍA 5 GLOBOS Y LLEGAN 2.", "AHORA HAY MÁS QUE ANTES.")],
+   {"modo": "sumar", "que": "agregar"}, {"modo": "sumar", "que": "agregar"}),
+ T("SEGUIR CONTANDO", [LD("SEGUIR", "NO EMPEZAMOS DE NUEVO: <b>SEGUIMOS CONTANDO</b> DESDE LO QUE HABÍA."),
+   LL("HABÍA 6: 7, 8, 9.", "CONTÁ SOLO LOS QUE LLEGAN.")],
+   {"modo": "sumar", "que": "agregar"}, {"modo": "sumar", "que": "agregar"}),
+], "recuerda": [
+ RC("AGREGAR", "ES SUMAR COSAS A UN GRUPO QUE YA HABÍA.", "5 GLOBOS Y LLEGAN 2"),
+ RC("SEGUIR CONTANDO", "ARRANCAMOS DESDE LO QUE HABÍA, NO DESDE EL 1.", "6… 7, 8, 9"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("UN PALITO POR CADA COSA", [LD("DIBUJAR", "PARA SUMAR, PODEMOS DIBUJAR <b>UN PALITO</b> POR CADA COSA."),
+   LL("4 GLOBOS SON 4 PALITOS.", "NO HACE FALTA DIBUJAR LOS GLOBOS.")],
+   {"modo": "sumar", "que": "palitos"}, {"modo": "sumar", "que": "palitos"}),
+ T("CONTAR LOS DIBUJOS", [LD("CONTAR", "DESPUÉS CONTAMOS <b>TODOS</b> LOS PALITOS JUNTOS."),
+   LP("LOS PALITOS NOS AYUDAN A NO PERDERNOS CUANDO LAS COSAS NO ESTÁN.")],
+   {"modo": "sumar", "que": "palitos"}, {"modo": "sumar", "que": "palitos"}),
+], "recuerda": [
+ RC("PALITOS", "DIBUJAMOS UNO POR CADA COSA QUE QUEREMOS CONTAR.", "3 VASOS: I I I"),
+ RC("CONTAR TODO", "CONTAMOS TODOS LOS PALITOS JUNTOS.", "I I Y I I I SON 5"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("EL SIGNO +", [LD("MÁS", "EL SIGNO <b>+</b> SE LEE MÁS Y QUIERE DECIR JUNTAR O AGREGAR."),
+   LL("4 + 3 SE LEE CUATRO MÁS TRES.", "VA ENTRE LOS DOS NÚMEROS.")],
+   {"modo": "sumar", "que": "cuenta"}, {"modo": "sumar", "que": "cuenta"}),
+ T("EL SIGNO =", [LD("IGUAL", "EL SIGNO <b>=</b> SE LEE IGUAL. DESPUÉS VA EL RESULTADO."),
+   LL("5 + 1 = 6.", "PRIMERO LA SUMA, DESPUÉS EL RESULTADO.")],
+   {"modo": "sumar", "que": "cuenta"}, {"modo": "sumar", "que": "cuenta"}),
+], "recuerda": [
+ RC("EL SIGNO +", "SE LEE MÁS Y QUIERE DECIR JUNTAR.", "2 + 7"),
+ RC("EL SIGNO =", "SE LEE IGUAL Y DESPUÉS VA EL RESULTADO.", "2 + 7 = 9"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("🍎🍎🍎 Y 🍎🍎 ¿CUÁNTAS MANZANAS HAY EN TOTAL?", 5, "3 Y 2 SON 5."),
-      MC("SI JUNTAMOS 4 PELOTAS Y 4 PELOTAS, ¿CUÁNTAS HAY?", ["4", "8", "6"], "8", "CONTAMOS TODO: 8.")],
-"2": [N("HAY 5 GLOBOS. LLEGAN 2 MÁS. ¿CUÁNTOS HAY AHORA?", 7, "5… 6, 7."),
-      MC("SI AGREGAMOS COSAS A UN GRUPO, EL GRUPO…", ["CRECE", "SE ACHICA", "QUEDA IGUAL"], "CRECE", "AL AGREGAR HAY MÁS.")],
-"3": [N("I I I I Y I I I ¿CUÁNTOS PALITOS HAY?", 7, "4 Y 3 SON 7."),
-      MC("¿CUÁNTO ES 2 MÁS 6?", ["8", "4", "9"], "8", "2 PALITOS Y 6 PALITOS SON 8.")],
-"4": [N("¿CUÁNTO ES 4 + 3?", 7, "4… 5, 6, 7."),
-      MC("¿CÓMO SE ESCRIBE 5 MANZANAS Y 1 MANZANA?", ["5 + 1 = 6", "5 = 1 + 6", "5 + 6 = 1"], "5 + 1 = 6", "PRIMERO LA SUMA, DESPUÉS EL RESULTADO.")],
-"5": [N("RELÁMPAGO. ¿CUÁNTO ES 2 + 2?", 4, "2… 3, 4.", tiempo=30),
-      N("RELÁMPAGO. HAY 6 VASOS. LLEGAN 3. ¿CUÁNTOS HAY?", 9, "6… 7, 8, 9.", tiempo=30),
-      N("RELÁMPAGO. 🍎🍎🍎🍎🍎 Y 🍎 ¿CUÁNTAS SON?", 6, "5 Y 1 SON 6.", tiempo=30),
-      MC("RELÁMPAGO. ¿QUÉ SIGNO SE LEE MÁS?", ["+", "=", "-"], "+", "EL + ES EL SIGNO DE SUMAR.", tiempo=30)],
+"1": [N("🍎🍎🍎 Y 🍎🍎 ¿CUÁNTAS MANZANAS HAY EN TOTAL?", 5, "3 Y 2 SON 5.", **A),
+      MC("SI JUNTAMOS 4 PELOTAS Y 4 PELOTAS, ¿CUÁNTAS HAY?", ["4", "8", "6"], "8", "CONTAMOS TODO: 8.", **A),
+      MC("LEO JUNTÓ 3 AUTOS Y 2 AUTOS Y DICE QUE HAY 3. ¿CUÁNTOS HAY DE VERDAD?", ["5", "3", "2"], "5", "HAY QUE CONTAR LOS DOS GRUPOS: 5.", **ER),
+      UNIR("UNÍ CADA PAR DE GRUPOS CON SU TOTAL.", ["⭐⭐ Y ⭐", "⭐⭐⭐ Y ⭐⭐⭐", "⭐⭐⭐⭐ Y ⭐"], ["6", "3", "5"], {"⭐⭐ Y ⭐": "3", "⭐⭐⭐ Y ⭐⭐⭐": "6", "⭐⭐⭐⭐ Y ⭐": "5"}, "2 Y 1 SON 3, 3 Y 3 SON 6, 4 Y 1 SON 5.", **A)],
+"2": [N("HAY 5 GLOBOS. LLEGAN 2 MÁS. ¿CUÁNTOS HAY AHORA?", 7, "5… 6, 7.", **A),
+      MC("SI AGREGAMOS COSAS A UN GRUPO, EL GRUPO…", ["CRECE", "SE ACHICA", "QUEDA IGUAL"], "CRECE", "AL AGREGAR HAY MÁS.", **RE),
+      N("[[problema]] EN EL COLECTIVO VAN 6 CHICOS. SUBEN 3 MÁS. ¿CUÁNTOS CHICOS VAN AHORA?", 9, "6… 7, 8, 9.", **AN, **NEU("EN EL AUTOBÚS VAN 6 NIÑOS. SUBEN 3 MÁS. ¿CUÁNTOS NIÑOS VAN AHORA?")),
+      MC("HABÍA 7 FLORES Y TRAEN 2. SOFI CUENTA DESDE EL 1. ¿DESDE QUÉ NÚMERO CONVIENE SEGUIR?", ["DESDE EL 7", "DESDE EL 1", "DESDE EL 2"], "DESDE EL 7", "SEGUIMOS DESDE LO QUE HABÍA: 8, 9.", **ER)],
+"3": [N("I I I I Y I I I ¿CUÁNTOS PALITOS HAY?", 7, "4 Y 3 SON 7.", **A),
+      MC("¿CUÁNTO ES 2 MÁS 6?", ["8", "4", "9"], "8", "2 PALITOS Y 6 PALITOS SON 8.", **A),
+      FB("DIBUJÁ CON PALITOS Y COMPLETÁ: 3 Y 4 SON ___", [["7"]], "I I I Y I I I I SON 7.", **A),
+      MC("PARA SUMAR 5 PERROS Y 2 PERROS, JUAN DIBUJÓ UN SOLO PALITO POR GRUPO. ¿QUÉ HIZO MAL?", ["VA UN PALITO POR CADA PERRO", "NADA, ESTÁ BIEN", "TENÍA QUE DIBUJAR PERROS"], "VA UN PALITO POR CADA PERRO", "UN PALITO POR CADA COSA: 7 PALITOS.", **ER)],
+"4": [N("¿CUÁNTO ES 4 + 3?", 7, "4… 5, 6, 7.", **A),
+      MC("¿CÓMO SE ESCRIBE 5 MANZANAS Y 1 MANZANA?", ["5 + 1 = 6", "5 = 1 + 6", "5 + 6 = 1"], "5 + 1 = 6", "PRIMERO LA SUMA, DESPUÉS EL RESULTADO.", **A),
+      UNIR("UNÍ CADA CUENTA CON SU RESULTADO.", ["2 + 2", "3 + 4", "6 + 3"], ["9", "4", "7"], {"2 + 2": "4", "3 + 4": "7", "6 + 3": "9"}, "2 + 2 = 4, 3 + 4 = 7, 6 + 3 = 9.", **A),
+      ORD("ARMÁ LA CUENTA EN ORDEN.", ["=", "5", "+", "2", "7"], ["5", "+", "2", "=", "7"], "5 + 2 = 7.", **AN)],
+"5": [N("RELÁMPAGO. ¿CUÁNTO ES 2 + 2?", 4, "2… 3, 4.", tiempo=30, **A),
+      N("RELÁMPAGO. HAY 6 VASOS. LLEGAN 3. ¿CUÁNTOS HAY?", 9, "6… 7, 8, 9.", tiempo=30, **A),
+      N("RELÁMPAGO. 🍎🍎🍎🍎🍎 Y 🍎 ¿CUÁNTAS SON?", 6, "5 Y 1 SON 6.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿QUÉ SIGNO SE LEE MÁS?", ["+", "=", "-"], "+", "EL + ES EL SIGNO DE SUMAR.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("⚽⚽ Y ⚽⚽⚽ ¿CUÁNTAS PELOTAS HAY EN TOTAL?", 5, "2 Y 3 SON 5.")],
- [1, MC("JUNTAR ES…", ["PONER DOS GRUPOS EN UNO", "SACAR COSAS", "CONTAR SOLO UN GRUPO"], "PONER DOS GRUPOS EN UNO", "DESPUÉS CONTAMOS TODO.")],
- [1, N("SOFI TIENE 4 GLOBOS Y TOMI TIENE 2. ¿CUÁNTOS SON?", 6, "4 Y 2 SON 6.")],
- [2, N("HAY 7 MANZANAS. SOFI AGREGA 1. ¿CUÁNTAS HAY?", 8, "7… 8.")],
- [2, N("HAY 3 VASOS. LLEGAN 4 MÁS. ¿CUÁNTOS HAY AHORA?", 7, "3… 4, 5, 6, 7.")],
- [2, MC("HAY 5 PELOTAS Y AGREGAMOS 2. SEGUIMOS CONTANDO DESDE…", ["1", "5", "2"], "5", "NO EMPEZAMOS DE NUEVO.")],
- [3, N("I I I I I Y I I I ¿CUÁNTOS PALITOS HAY?", 8, "5 Y 3 SON 8.")],
- [3, MC("PARA SUMAR CON DIBUJOS, HACEMOS…", ["UN PALITO POR CADA COSA", "UN PALITO PARA TODO", "NINGÚN PALITO"], "UN PALITO POR CADA COSA", "ASÍ NO NOS PERDEMOS.")],
- [3, N("¿CUÁNTO ES 6 MÁS 4?", 10, "6 PALITOS Y 4 PALITOS SON 10.")],
- [4, N("¿CUÁNTO ES 3 + 5?", 8, "3… 4, 5, 6, 7, 8.")],
- [4, MC("EL SIGNO = SE LEE…", ["MÁS", "IGUAL", "MENOS"], "IGUAL", "DESPUÉS DEL = VA EL RESULTADO.")],
- [4, MC("¿CÓMO SE ESCRIBE 2 VASOS Y 7 VASOS?", ["2 + 7 = 9", "2 = 7 + 9", "9 + 2 = 7"], "2 + 7 = 9", "LA SUMA Y DESPUÉS EL RESULTADO.")],
- [4, N("¿CUÁNTO ES 1 + 8?", 9, "8… 9.")],
+ [1, N("⚽⚽ Y ⚽⚽⚽ ¿CUÁNTAS PELOTAS HAY EN TOTAL?", 5, "2 Y 3 SON 5.", **A)],
+ [1, MC("JUNTAR ES…", ["PONER DOS GRUPOS EN UNO", "SACAR COSAS", "CONTAR SOLO UN GRUPO"], "PONER DOS GRUPOS EN UNO", "DESPUÉS CONTAMOS TODO.", **RE)],
+ [1, N("[[problema]] SOFI TIENE 4 GLOBOS Y TOMI TIENE 2. SI LOS JUNTAN, ¿CUÁNTOS SON?", 6, "4 Y 2 SON 6.", **AN)],
+ [2, N("HAY 7 MANZANAS. SOFI AGREGA 1. ¿CUÁNTAS HAY?", 8, "7… 8.", **A)],
+ [2, N("HAY 3 VASOS. LLEGAN 4 MÁS. ¿CUÁNTOS HAY AHORA?", 7, "3… 4, 5, 6, 7.", **A)],
+ [2, MC("HAY 5 PELOTAS Y AGREGAMOS 2. SEGUIMOS CONTANDO DESDE…", ["1", "5", "2"], "5", "NO EMPEZAMOS DE NUEVO.", **A)],
+ [3, N("I I I I I Y I I I ¿CUÁNTOS PALITOS HAY?", 8, "5 Y 3 SON 8.", **A)],
+ [3, MC("PARA SUMAR CON DIBUJOS, HACEMOS…", ["UN PALITO POR CADA COSA", "UN PALITO PARA TODO", "NINGÚN PALITO"], "UN PALITO POR CADA COSA", "ASÍ NO NOS PERDEMOS.", **RE)],
+ [3, FB("COMPLETÁ: 6 PALITOS Y 4 PALITOS SON ___", [["10"]], "6 Y 4 SON 10.", **A)],
+ [4, N("¿CUÁNTO ES 3 + 5?", 8, "3… 4, 5, 6, 7, 8.", **A)],
+ [4, MC("EL SIGNO = SE LEE…", ["MÁS", "IGUAL", "MENOS"], "IGUAL", "DESPUÉS DEL = VA EL RESULTADO.", **RE)],
+ [4, MC("MICA ESCRIBIÓ 2 = 7 + 9 PARA 2 VASOS Y 7 VASOS. ¿CÓMO SE ESCRIBE BIEN?", ["2 + 7 = 9", "2 = 7 + 9", "9 + 2 = 7"], "2 + 7 = 9", "PRIMERO LA SUMA Y DESPUÉS EL RESULTADO.", **ER)],
+ [4, UNIR("UNÍ CADA CUENTA CON SU RESULTADO.", ["1 + 8", "4 + 4"], ["8", "9"], {"1 + 8": "9", "4 + 4": "8"}, "1 + 8 = 9 Y 4 + 4 = 8.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 8, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 8, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: juntar y agregar", "examen_titulo": "Nivel jefe: juntar y agregar",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-8.json"), "w", encoding="utf-8"), ensure_ascii=False)
