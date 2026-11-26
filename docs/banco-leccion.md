@@ -87,3 +87,4 @@ Todo en imprenta mayúscula, con dibujos grandes y números chicos.
 - `decimales` / `decimales_x` (`modo` obligatorio): frac_dec, dec_frac, comparar, cual (¿exacto o periódico?), puro_frac, suma, resta, producto, division, estimar.
 - `enteros` / `enteros_x` (`modo` obligatorio): situacion, opuesto, distancia, comparar, intervalo, absoluto; `enteros_x` además abs_opuesto.
 - Misiones 12 y 13: `enteros` / `enteros_x` suman modos suma, resta, suprimir, division, combinadas, cuadrado (−3² y (−3)²), raiz; `enteros_x` además producto y potencia.
+- Misiones 14 y 15: `razones` / `razones_x` (razon, proporcion, fundamental, desconocido) y `algebra` / `algebra_x` (equivalentes, un_valor, recursiva). `modo` obligatorio.

@@ -1,1 +1,1836 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 14, "practica": "Práctica general: proporcionalidad y porcentaje", "examen_titulo": "Nivel jefe: proporcionalidad y porcentaje", "niveles": {"1": {"objetivo": "Vas a poder escribir la razón entre dos cantidades, reconocer una proporción y calcular un término que falta con la propiedad fundamental.", "vas_a_ver": ["Qué es una razón", "Qué es una proporción y cuáles son sus términos", "La propiedad fundamental", "Calcular un término desconocido"], "secciones": [{"etapa": 1, "titulo": "Razón", "bloques": [{"tipo": "definicion", "titulo": "Razón", "texto": "La <b>razón</b> entre dos cantidades es su <b>cociente</b>: compara cuántas veces una contiene a la otra. Se escribe como fracción a/b."}, {"tipo": "parrafo", "texto": "En una jarra con 6 vasos de agua y 2 de jugo, la razón agua/jugo es 6/2 = 3: hay 3 vasos de agua por cada vaso de jugo. La diferencia (6 − 2 = 4) no es la razón. Y el orden importa: jugo/agua es 2/6 = 1/3."}]}, {"etapa": 1, "titulo": "Proporción", "bloques": [{"tipo": "definicion", "titulo": "Proporción", "texto": "Una <b>proporción</b> es una igualdad entre dos razones: a/b = c/d. Los números a y d son los <b>extremos</b>; b y c son los <b>medios</b>."}, {"tipo": "parrafo", "texto": "Ejemplo: 2/3 = 4/6. Los extremos son 2 y 6; los medios, 3 y 4."}]}, {"etapa": 2, "titulo": "Propiedad fundamental", "bloques": [{"tipo": "parrafo", "texto": "En toda proporción, el <b>producto de los extremos es igual al producto de los medios</b>: a × d = b × c. En 2/3 = 4/6: 2 × 6 = 12 y 3 × 4 = 12. Sirve para saber si dos razones forman proporción."}]}, {"etapa": 2, "titulo": "Término desconocido", "bloques": [{"tipo": "ejemplo", "titulo": "Calcular lo que falta", "texto": "3/5 = x/20.", "items": ["Producto de extremos: 3 × 20 = 60.", "Producto de medios: 5 × x.", "5 × x = 60, entonces x = 60 ÷ 5 = 12.", "Comprobación: 3/5 = 12/20."]}]}], "ejemplo_completo": {"titulo": "la receta", "planteo": "Una receta lleva 3 tazas de harina por cada 2 de leche. Si uso 9 tazas de harina, ¿cuántas de leche necesito?", "pasos": ["Proporción: 3/2 = 9/x.", "Extremos: 3 × x. Medios: 2 × 9 = 18.", "3 × x = 18, entonces x = 6.", "Comprobación: 3 × 6 = 18 y 2 × 9 = 18. Necesito 6 tazas de leche."]}, "ejemplo_incompleto": {"titulo": "4/7 = 12/x", "planteo": "Completá los espacios.", "pasos": ["4 × x = 7 × 12 = ___ .", "x = 84 ÷ 4 = ___ ."]}, "ejemplo_solo": {"titulo": "¿forman proporción?", "planteo": "¿Forman proporción 5/8 y 15/24? Justificá con la propiedad fundamental."}, "tip": {"titulo": "Multiplicá en cruz", "texto": "Para saber si dos razones forman proporción, multiplicá en cruz: si los dos productos dan igual, sí."}, "ojo": ["Confundir razón con diferencia: la razón entre 10 y 5 es 2, no 5.", "Invertir el orden: la razón de varones a mujeres no es la misma que la de mujeres a varones."], "resumen": [{"titulo": "Razón", "texto": "Cociente entre cantidades. Ej.: 6/2 = 3."}, {"titulo": "Proporción", "texto": "Dos razones iguales: 2/3 = 4/6."}, {"titulo": "Propiedad", "texto": "Extremos × = medios ×."}, {"titulo": "Término", "texto": "3/5 = x/20 → x = 12."}], "glosario": [{"palabra": "Razón", "significado": "Cociente que compara dos cantidades."}, {"palabra": "Proporción", "significado": "Igualdad de dos razones."}, {"palabra": "Extremos", "significado": "El primer y el último término de una proporción."}, {"palabra": "Medios", "significado": "Los dos términos del medio."}], "carpeta": ["En un curso hay 12 varones y 18 mujeres. ¿Cuál es la razón entre varones y mujeres, como fracción irreducible?", "Completá: 2/5 = 8/__. ¿Qué número va?", "En la proporción 3/4 = 9/12, ¿cuánto da el producto de los extremos?", "Un compañero dice que la razón entre 10 y 5 es 5. ¿Cuánto vale la razón 10/5?"], "respuestas_carpeta": [["2/3"], ["20"], ["36"], ["2"]], "soluciones": {"incompleto": "84. x = 21.", "solo": "5 × 24 = 120 y 8 × 15 = 120. Sí forman proporción.", "carpeta": ["2/3: 12/18 simplificado por 6.", "20: 2 × x = 5 × 8 = 40.", "36: 3 × 12.", "2: es el cociente, 10 ÷ 5. Restó en vez de dividir."]}}, "2": {"objetivo": "Vas a poder reconocer cuándo dos magnitudes son directamente proporcionales, encontrar la constante y resolver problemas.", "vas_a_ver": ["Magnitudes directamente proporcionales", "La constante de proporcionalidad", "El gráfico: puntos alineados con el origen", "Casos que no son proporcionales", "Problemas"], "secciones": [{"etapa": 1, "titulo": "Proporcionalidad directa", "bloques": [{"tipo": "definicion", "titulo": "Directamente proporcionales", "texto": "Dos magnitudes son <b>directamente proporcionales</b> si al multiplicar una por un número, la otra queda multiplicada por el mismo número. El <b>cociente</b> entre ellas es siempre el mismo: la <b>constante de proporcionalidad</b> k = y/x."}, {"tipo": "tabla", "titulo": "Kilos de pan y precio", "columnas": ["Kilos", "1", "2", "3", "5"], "filas": [["Precio ($)", "800", "1.600", "2.400", "4.000"]], "iguales": true, "texto": "Todos los cocientes dan 800: k = 800, el precio de un kilo."}]}, {"etapa": 1, "titulo": "El gráfico", "bloques": [{"tipo": "definicion", "titulo": "Gráfico de la directa", "texto": "Si se marcan los pares de la tabla en un sistema de ejes, los puntos quedan <b>alineados</b> en una recta que pasa por el <b>origen</b> (0; 0): 0 kilos cuestan $0."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Kilos de pan y precio", "texto": "Los puntos están alineados y la recta pasa por el origen: es proporcionalidad directa.", "imagen_descripcion": "Gráfico con los puntos (1; 800), (2; 1.600), (3; 2.400) y (5; 4.000) sobre una recta que pasa por (0; 0).", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "No todo lo que crece es proporcional", "bloques": [{"tipo": "parrafo", "texto": "Que las dos crezcan no alcanza. En un taxi con bajada de bandera de $500 más $100 por km, 1 km cuesta $600 y 2 km cuestan $700: el doble de kilómetros no cuesta el doble. Lo mismo con la edad y la altura de una persona."}]}, {"etapa": 2, "titulo": "Problemas", "bloques": [{"tipo": "ejemplo", "titulo": "Los cuadernos", "texto": "5 cuadernos cuestan $6.000. ¿Cuánto cuestan 8?", "items": ["Constante: 6.000 ÷ 5 = 1.200 por cuaderno.", "8 × 1.200 = 9.600.", "Cuestan $9.600."]}]}], "ejemplo_completo": {"titulo": "la nafta", "planteo": "Una tabla: 10 L cuestan $12.000; 20 L, $24.000; 30 L, $36.000. ¿Es proporcional? ¿Cuánto cuestan 45 L?", "pasos": ["Cocientes: 12.000 ÷ 10 = 1.200; 24.000 ÷ 20 = 1.200; 36.000 ÷ 30 = 1.200.", "Son todos iguales: es proporcional, k = 1.200.", "45 × 1.200 = 54.000.", "45 L cuestan $54.000."]}, "ejemplo_incompleto": {"titulo": "las entradas", "planteo": "3 entradas cuestan $7.500. Completá los espacios.", "pasos": ["Constante: 7.500 ÷ 3 = ___ .", "7 entradas: 7 × 2.500 = ___ ."]}, "ejemplo_solo": {"titulo": "el auto", "planteo": "Un auto recorre 180 km con 12 litros de nafta. ¿Cuántos km recorre con 20 litros?"}, "tip": {"titulo": "Verificá la constante", "texto": "Antes de usar la regla, dividí cada par de la tabla. Si los cocientes no dan igual, no es proporcional."}, "ojo": ["Sumar en vez de multiplicar: si 2 remeras cuestan $10.000, 4 cuestan $20.000, no $12.000.", "Creer que toda relación creciente es proporcional: el taxi con bajada de bandera no lo es."], "resumen": [{"titulo": "Directa", "texto": "El doble con el doble, el triple con el triple."}, {"titulo": "Constante", "texto": "k = y/x, siempre igual."}, {"titulo": "Gráfico", "texto": "Puntos alineados que pasan por el origen."}, {"titulo": "Ojo", "texto": "Crecer juntas no alcanza."}], "glosario": [{"palabra": "Magnitud", "significado": "Algo que se puede medir o contar."}, {"palabra": "Constante", "significado": "Que no cambia."}, {"palabra": "Origen", "significado": "El punto (0; 0) de los ejes."}], "carpeta": ["Si 4 kg de papas cuestan $3.200, ¿cuánto cuestan 7 kg?", "En una tabla de proporcionalidad directa, a x = 5 le corresponde y = 35. ¿Cuál es la constante?", "En esa misma tabla, ¿cuánto vale y cuando x = 9?", "Un compañero dice que si 2 remeras cuestan $10.000, entonces 4 remeras cuestan $12.000. ¿Cuánto cuestan 4 remeras?"], "respuestas_carpeta": [["5600"], ["7"], ["63"], ["20000"]], "soluciones": {"incompleto": "2.500. 17.500.", "solo": "k = 180 ÷ 12 = 15 km por litro. 20 × 15 = 300 km.", "carpeta": ["$5.600: 3.200 ÷ 4 = 800 por kilo; 7 × 800.", "7: 35 ÷ 5.", "63: 9 × 7.", "$20.000: el doble de remeras cuesta el doble."]}}, "3": {"objetivo": "Vas a poder reconocer magnitudes inversamente proporcionales, usar el producto constante y distinguirlas de las directas.", "vas_a_ver": ["Magnitudes inversamente proporcionales", "El producto constante", "Directa o inversa: cómo distinguirlas", "Problemas de obreros, velocidad y tiempo"], "secciones": [{"etapa": 1, "titulo": "Proporcionalidad inversa", "bloques": [{"tipo": "definicion", "titulo": "Inversamente proporcionales", "texto": "Dos magnitudes son <b>inversamente proporcionales</b> si al multiplicar una por un número, la otra queda <b>dividida</b> por ese número. El <b>producto</b> entre ellas es siempre el mismo."}, {"tipo": "tabla", "titulo": "Obreros y días", "columnas": ["Obreros", "2", "3", "4", "6"], "filas": [["Días", "12", "8", "6", "4"]], "iguales": true, "texto": "Todos los productos dan 24: 2 × 12 = 3 × 8 = 4 × 6 = 6 × 4."}]}, {"etapa": 1, "titulo": "Directa o inversa", "bloques": [{"tipo": "definicion", "titulo": "Cómo distinguirlas", "texto": "En la <b>directa</b> el <b>cociente</b> es constante (más de uno, más del otro). En la <b>inversa</b> el <b>producto</b> es constante (más de uno, menos del otro, en la misma proporción)."}]}, {"etapa": 2, "titulo": "No toda la que baja es inversa", "bloques": [{"tipo": "parrafo", "texto": "Que una crezca y la otra baje no alcanza. Un tanque tiene 40 L de nafta; después de 100 km le quedan 32 L y después de 200 km, 24 L. Los productos (100 × 32 = 3.200; 200 × 24 = 4.800) no son iguales: no es inversa."}]}, {"etapa": 2, "titulo": "Problemas", "bloques": [{"tipo": "ejemplo", "titulo": "Velocidad y tiempo", "texto": "Hay que hacer el mismo viaje a distinta velocidad.", "items": ["A 60 km/h se tarda 4 h: producto 240 (los km del viaje).", "A 80 km/h: 240 ÷ 80 = 3 h.", "A más velocidad, menos tiempo."]}]}], "ejemplo_completo": {"titulo": "los caramelos", "planteo": "Una bolsa de caramelos alcanza para darle 5 a cada uno de 12 chicos. ¿Cuántos recibe cada uno si son 15 chicos?", "pasos": ["Más chicos, menos caramelos para cada uno: es inversa.", "Producto: 12 × 5 = 60 caramelos en total.", "60 ÷ 15 = 4.", "Cada uno recibe 4 caramelos."]}, "ejemplo_incompleto": {"titulo": "las canillas", "planteo": "6 canillas iguales llenan una pileta en 10 horas. Completá los espacios.", "pasos": ["Producto: 6 × 10 = ___ .", "Con 4 canillas: 60 ÷ 4 = ___ horas."]}, "ejemplo_solo": {"titulo": "el viaje", "planteo": "Un micro tarda 6 horas a 70 km/h. ¿Cuánto tarda a 84 km/h?"}, "tip": {"titulo": "Preguntate qué pasa", "texto": "Si duplicás una, ¿la otra se duplica o se divide por 2? Esa pregunta te dice si es directa o inversa."}, "ojo": ["Resolver una inversa como directa: si 3 pintores tardan 8 días, 6 pintores no tardan 16, tardan 4.", "Pensar que toda relación que baja es inversa: hay que controlar que el producto sea constante."], "resumen": [{"titulo": "Inversa", "texto": "El doble de una, la mitad de la otra."}, {"titulo": "Producto", "texto": "x × y siempre igual. Ej.: obreros × días = 24."}, {"titulo": "Directa", "texto": "Cociente constante."}, {"titulo": "Control", "texto": "Que baje no alcanza: verificá el producto."}], "glosario": [{"palabra": "Inversa", "significado": "Cuando una crece, la otra disminuye en la misma proporción."}, {"palabra": "Producto constante", "significado": "La multiplicación de cada par da siempre lo mismo."}], "carpeta": ["8 obreros hacen un trabajo en 15 días. ¿Cuántos días tardan 12 obreros?", "En una tabla de proporcionalidad inversa, a x = 4 le corresponde y = 9. ¿Cuál es el producto constante?", "En esa misma tabla, ¿cuánto vale y cuando x = 6?", "Un compañero resolvió como directa: si 3 pintores tardan 8 días, 6 pintores tardan 16. ¿Cuántos días tardan 6 pintores?"], "respuestas_carpeta": [["10"], ["36"], ["6"], ["4"]], "soluciones": {"incompleto": "60. 15 horas.", "solo": "Producto: 70 × 6 = 420. 420 ÷ 84 = 5 horas.", "carpeta": ["10: 8 × 15 = 120; 120 ÷ 12.", "36: 4 × 9.", "6: 36 ÷ 6.", "4: 3 × 8 = 24; 24 ÷ 6. Más pintores, menos días."]}}, "4": {"objetivo": "Vas a poder calcular porcentajes de una cantidad, pasarlos a fracción y decimal, y resolver descuentos y aumentos simples.", "vas_a_ver": ["El porcentaje como razón sobre 100", "Porcentaje de una cantidad", "Porcentajes como fracción y decimal", "Descuentos y aumentos", "Qué porcentaje representa una parte"], "secciones": [{"etapa": 1, "titulo": "Qué es un porcentaje", "bloques": [{"tipo": "definicion", "titulo": "Porcentaje", "texto": "Un <b>porcentaje</b> es una razón con denominador 100: 25% = 25/100. Indica cuántos de cada 100."}, {"tipo": "tabla", "titulo": "Equivalencias útiles", "columnas": ["Porcentaje", "Fracción", "Decimal"], "filas": [["50%", "1/2", "0,5"], ["25%", "1/4", "0,25"], ["75%", "3/4", "0,75"], ["10%", "1/10", "0,1"], ["20%", "1/5", "0,2"]], "iguales": true}]}, {"etapa": 1, "titulo": "Porcentaje de una cantidad", "bloques": [{"tipo": "definicion", "titulo": "Calcularlo", "texto": "Para calcular el p% de una cantidad, se multiplica la cantidad por p/100 (o por el decimal)."}, {"tipo": "parrafo", "texto": "Ejemplo: 20% de 50 = 20/100 × 50 = 10. También: 50 × 0,2 = 10. No es 20 × 50."}]}, {"etapa": 2, "titulo": "Descuentos y aumentos", "bloques": [{"tipo": "parrafo", "texto": "Para un <b>descuento</b>, se calcula el porcentaje y se resta; para un <b>aumento</b>, se suma."}, {"tipo": "ejemplo", "titulo": "Dos casos", "texto": "Precio con descuento y con aumento.", "items": ["$8.000 con 15% de descuento: 15% de 8.000 = 1.200. Se paga 8.000 − 1.200 = 6.800.", "$4.500 con 10% de aumento: 10% de 4.500 = 450. Queda 4.500 + 450 = 4.950."]}]}, {"etapa": 2, "titulo": "¿Qué porcentaje es?", "bloques": [{"tipo": "parrafo", "texto": "Para saber qué porcentaje es una parte del total, se arma la razón parte/total y se lleva a denominador 100. En un curso de 25 alumnos, 5 usan anteojos: 5/25 = 20/100 = 20%."}]}], "ejemplo_completo": {"titulo": "las zapatillas", "planteo": "Unas zapatillas cuestan $45.000 y tienen un 20% de descuento. ¿Cuánto se paga?", "pasos": ["20% de 45.000 = 45.000 × 0,2 = 9.000.", "45.000 − 9.000 = 36.000.", "Otra forma: si descuentan el 20%, se paga el 80%: 45.000 × 0,8 = 36.000.", "Se pagan $36.000."]}, "ejemplo_incompleto": {"titulo": "el aumento", "planteo": "Un producto de $1.600 aumenta un 25%. Completá los espacios.", "pasos": ["25% es 1/4: 1.600 ÷ 4 = ___ .", "Nuevo precio: 1.600 + 400 = ___ ."]}, "ejemplo_solo": {"titulo": "el curso", "planteo": "En un curso de 30 alumnos, 12 son mujeres. ¿Qué porcentaje del curso son mujeres?"}, "tip": {"titulo": "El 10% es fácil", "texto": "El 10% se calcula dividiendo por 10. Desde ahí sacás otros: el 20% es el doble, el 5% es la mitad."}, "ojo": ["Multiplicar por el porcentaje entero: el 20% de 50 no es 20 × 50; es 10.", "Confundir el porcentaje con la cantidad: 25% de 80 es 20, no 25."], "resumen": [{"titulo": "Porcentaje", "texto": "De cada 100. Ej.: 25% = 25/100."}, {"titulo": "De una cantidad", "texto": "Cantidad × p/100. Ej.: 20% de 50 = 10."}, {"titulo": "Descuento", "texto": "Se resta. Ej.: 8.000 − 15% = 6.800."}, {"titulo": "Aumento", "texto": "Se suma. Ej.: 4.500 + 10% = 4.950."}], "glosario": [{"palabra": "Porcentaje", "significado": "Cantidad de cada 100."}, {"palabra": "Descuento", "significado": "Lo que se resta del precio."}, {"palabra": "Aumento", "significado": "Lo que se suma al precio."}], "carpeta": ["¿Cuánto es el 30% de 200?", "Escribí 75% como número decimal.", "Una campera de $20.000 tiene un 10% de descuento. ¿Cuánto se paga?", "Un compañero calculó el 20% de 50 haciendo 20 × 50 = 1.000. ¿Cuánto es el 20% de 50?"], "respuestas_carpeta": [["60"], ["0,75", "0.75"], ["18000"], ["10"]], "soluciones": {"incompleto": "400. 2.000.", "solo": "12/30 = 40/100. Son el 40%.", "carpeta": ["60: 200 × 0,3.", "0,75: 75/100.", "$18.000: 10% = 2.000; 20.000 − 2.000.", "10: 50 × 20/100. No se multiplica por 20 entero."]}}}, "act": {"1": [{"t": "fill_blank", "p": "3/4 = ___/20", "o": [], "r": {"huecos": [["15"]]}, "e": "3 × 20 = 4 × 15."}, {"t": "true_false", "p": "La razón entre 10 y 2 es 8.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "La razón es el cociente: 10 ÷ 2 = 5."}], "2": [{"t": "numeric", "p": "Si {n} cuadernos cuestan ${t}, ¿cuánto cuestan {m} cuadernos?", "o": {"vars": {"n": {"min": 2, "max": 6}, "p": {"min": 5, "max": 15}, "m": {"min": 7, "max": 12}}, "calculadas": {"t": "n*p*100"}}, "r": {"formula": "m*p*100"}, "e": "Se calcula el precio de uno (la constante) y se multiplica."}, {"t": "multiple_choice", "p": "¿Cuál de estas situaciones es de proporcionalidad directa?", "o": ["La edad y la altura de una persona", "Los kilos de pan y el precio a pagar", "Un viaje en taxi con bajada de bandera y los kilómetros", "La temperatura y la hora del día"], "r": {"correcta": "Los kilos de pan y el precio a pagar"}, "e": "El doble de kilos cuesta el doble."}], "3": [{"t": "numeric", "p": "4 pintores tardan 9 días en pintar una casa. ¿Cuántos días tardan 6 pintores?", "o": {}, "r": {"acepta": [6]}, "e": "Inversa: 4 × 9 = 36; 36 ÷ 6 = 6."}, {"t": "multiple_choice", "p": "En la proporcionalidad inversa, ¿qué se mantiene constante?", "o": ["El cociente", "El producto", "La suma", "La diferencia"], "r": {"correcta": "El producto"}, "e": "x × y da siempre lo mismo."}], "4": [{"t": "numeric", "p": "¿Cuánto es el {p}% de {n}?", "o": {"vars": {"p": {"valores": [10, 20, 25, 50]}, "n": {"valores": [40, 80, 120, 200, 400]}}}, "r": {"formula": "p*n/100"}, "e": "Se multiplica la cantidad por p/100."}, {"t": "numeric", "p": "Un pantalón de $12.000 tiene un 25% de descuento. ¿Cuánto se paga?", "o": {}, "r": {"acepta": [9000]}, "e": "25% de 12.000 = 3.000; 12.000 − 3.000 = 9.000."}], "5": [{"t": "numeric", "p": "Relámpago. ¿Cuánto es el 50% de 90?", "o": {}, "r": {"acepta": [45]}, "e": "La mitad.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. Si x se duplica, y se reduce a la mitad. ¿Qué proporcionalidad es?", "o": ["Directa", "Inversa"], "r": {"correcta": "Inversa"}, "e": "El producto queda igual.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Completá: 2/3 = 10/__.", "o": {}, "r": {"acepta": [15]}, "e": "2 × 15 = 3 × 10.", "tiempo": 30}, {"t": "numeric", "p": "Relámpago. Calculá (−4) × (−5).", "o": {}, "r": {"acepta": [20]}, "e": "Repaso de la misión 13.", "tiempo": 20}]}, "examen": [[1, {"t": "numeric", "p": "Completá la proporción 6/9 = 4/__.", "o": {}, "r": {"acepta": [6]}, "e": "6 × x = 9 × 4 = 36; x = 6."}], [1, {"t": "true_false", "p": "En una proporción, el producto de los extremos es igual al producto de los medios.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es la propiedad fundamental."}], [1, {"t": "multiple_choice", "p": "En un frutero hay 8 manzanas y 12 naranjas. ¿Cuál es la razón entre manzanas y naranjas?", "o": ["2/3", "3/2", "4", "8/20"], "r": {"correcta": "2/3"}, "e": "8/12 simplificado."}], [2, {"t": "numeric", "p": "Si 3 kg de carne cuestan $27.000, ¿cuánto cuestan 5 kg?", "o": {}, "r": {"acepta": [45000]}, "e": "9.000 por kilo; 5 × 9.000."}], [2, {"t": "multiple_choice", "p": "En una tabla de proporcionalidad directa, ¿qué se mantiene constante?", "o": ["El cociente y/x", "El producto x × y", "La suma x + y", "La diferencia y − x"], "r": {"correcta": "El cociente y/x"}, "e": "Es la constante de proporcionalidad."}], [2, {"t": "true_false", "p": "Si una cantidad crece cuando la otra crece, siempre son directamente proporcionales.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Ejemplo: taxi con bajada de bandera."}], [3, {"t": "numeric", "p": "Un auto a 90 km/h tarda 2 horas en un viaje. ¿Cuántas horas tarda a 60 km/h?", "o": {}, "r": {"acepta": [3]}, "e": "90 × 2 = 180; 180 ÷ 60 = 3."}], [3, {"t": "numeric", "p": "Con 5 canillas iguales una pileta se llena en 12 horas. ¿En cuántas horas se llena con 3 canillas?", "o": {}, "r": {"acepta": [20]}, "e": "5 × 12 = 60; 60 ÷ 3 = 20."}], [3, {"t": "classify", "p": "Clasificá cada relación.", "o": {"elementos": ["Kilos de pan y precio", "Obreros y días de trabajo", "Velocidad y tiempo de un mismo viaje", "Litros de nafta y kilómetros recorridos"], "categorias": ["Directa", "Inversa"]}, "r": {"categorias": {"Kilos de pan y precio": "Directa", "Obreros y días de trabajo": "Inversa", "Velocidad y tiempo de un mismo viaje": "Inversa", "Litros de nafta y kilómetros recorridos": "Directa"}}, "e": "Directa: cociente constante. Inversa: producto constante."}], [4, {"t": "numeric", "p": "¿Cuánto es el 15% de 300?", "o": {}, "r": {"acepta": [45]}, "e": "300 × 0,15 = 45."}], [4, {"t": "numeric", "p": "Un celular cuesta $150.000 y aumenta un 10%. ¿Cuál es el nuevo precio?", "o": {}, "r": {"acepta": [165000]}, "e": "10% = 15.000; 150.000 + 15.000."}], [4, {"t": "multiple_choice", "p": "¿Qué fracción es el 25%?", "o": ["1/25", "1/4", "25/10", "2/5"], "r": {"correcta": "1/4"}, "e": "25/100 = 1/4."}], [4, {"t": "numeric", "p": "En un grupo de 40 chicos, 10 usan anteojos. ¿Qué porcentaje usa anteojos? Escribí solo el número.", "o": {}, "r": {"acepta": [25]}, "e": "10/40 = 25/100."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 14,
+ "practica": "Práctica general: proporcionalidad y porcentaje",
+ "examen_titulo": "Nivel jefe: proporcionalidad y porcentaje",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder escribir la razón entre dos cantidades, reconocer una proporción y calcular un término que falta con la propiedad fundamental.",
+   "vas_a_ver": [
+    "Qué es una razón",
+    "Qué es una proporción y cuáles son sus términos",
+    "La propiedad fundamental",
+    "Calcular un término desconocido"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Razón",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Razón",
+       "texto": "La <b>razón</b> entre dos cantidades es su <b>cociente</b>: compara cuántas veces una contiene a la otra. Se escribe como fracción a/b."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "En una jarra con 6 vasos de agua y 2 de jugo, la razón agua/jugo es 6/2 = 3: hay 3 vasos de agua por cada vaso de jugo. La diferencia (6 − 2 = 4) no es la razón. Y el orden importa: jugo/agua es 2/6 = 1/3."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Proporción",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Proporción",
+       "texto": "Una <b>proporción</b> es una igualdad entre dos razones: a/b = c/d. Los números a y d son los <b>extremos</b>; b y c son los <b>medios</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: 2/3 = 4/6. Los extremos son 2 y 6; los medios, 3 y 4."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Propiedad fundamental",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En toda proporción, el <b>producto de los extremos es igual al producto de los medios</b>: a × d = b × c. En 2/3 = 4/6: 2 × 6 = 12 y 3 × 4 = 12. Sirve para saber si dos razones forman proporción."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Término desconocido",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "Calcular lo que falta",
+       "texto": "3/5 = x/20.",
+       "items": [
+        "Producto de extremos: 3 × 20 = 60.",
+        "Producto de medios: 5 × x.",
+        "5 × x = 60, entonces x = 60 ÷ 5 = 12.",
+        "Comprobación: 3/5 = 12/20."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "la receta",
+    "planteo": "Una receta lleva 3 tazas de harina por cada 2 de leche. Si uso 9 tazas de harina, ¿cuántas de leche necesito?",
+    "pasos": [
+     "Proporción: 3/2 = 9/x.",
+     "Extremos: 3 × x. Medios: 2 × 9 = 18.",
+     "3 × x = 18, entonces x = 6.",
+     "Comprobación: 3 × 6 = 18 y 2 × 9 = 18. Necesito 6 tazas de leche."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "4/7 = 12/x",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "4 × x = 7 × 12 = ___ .",
+     "x = 84 ÷ 4 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "¿forman proporción?",
+    "planteo": "¿Forman proporción 5/8 y 15/24? Justificá con la propiedad fundamental."
+   },
+   "tip": {
+    "titulo": "Multiplicá en cruz",
+    "texto": "Para saber si dos razones forman proporción, multiplicá en cruz: si los dos productos dan igual, sí."
+   },
+   "ojo": [
+    "Confundir razón con diferencia: la razón entre 10 y 5 es 2, no 5.",
+    "Invertir el orden: la razón de varones a mujeres no es la misma que la de mujeres a varones."
+   ],
+   "resumen": [
+    {
+     "titulo": "Razón",
+     "texto": "Cociente entre cantidades. Ej.: 6/2 = 3."
+    },
+    {
+     "titulo": "Proporción",
+     "texto": "Dos razones iguales: 2/3 = 4/6."
+    },
+    {
+     "titulo": "Propiedad",
+     "texto": "Extremos × = medios ×."
+    },
+    {
+     "titulo": "Término",
+     "texto": "3/5 = x/20 → x = 12."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Razón",
+     "significado": "Cociente que compara dos cantidades."
+    },
+    {
+     "palabra": "Proporción",
+     "significado": "Igualdad de dos razones."
+    },
+    {
+     "palabra": "Extremos",
+     "significado": "El primer y el último término de una proporción."
+    },
+    {
+     "palabra": "Medios",
+     "significado": "Los dos términos del medio."
+    }
+   ],
+   "carpeta": [
+    "En un curso hay 12 varones y 18 mujeres. ¿Cuál es la razón entre varones y mujeres, como fracción irreducible?",
+    "Completá: 2/5 = 8/__. ¿Qué número va?",
+    "En la proporción 3/4 = 9/12, ¿cuánto da el producto de los extremos?",
+    "Un compañero dice que la razón entre 10 y 5 es 5. ¿Cuánto vale la razón 10/5?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "2/3"
+    ],
+    [
+     "20"
+    ],
+    [
+     "36"
+    ],
+    [
+     "2"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "84. x = 21.",
+    "solo": "5 × 24 = 120 y 8 × 15 = 120. Sí forman proporción.",
+    "carpeta": [
+     "2/3: 12/18 simplificado por 6.",
+     "20: 2 × x = 5 × 8 = 40.",
+     "36: 3 × 12.",
+     "2: es el cociente, 10 ÷ 5. Restó en vez de dividir."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Razón",
+      "ejemplo": {
+       "motor": "razones",
+       "p": {
+        "modo": "razon"
+       }
+      },
+      "ejercicio": {
+       "motor": "razones_x",
+       "p": {
+        "modo": "razon"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Razón",
+        "texto": "Una razón es la comparación de dos cantidades mediante una división. Se escribe a : b o como fracción a/b y se lee «a es a b»."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La razón dice cuántas veces entra una cantidad en otra o cuánto hay de algo por cada unidad de otra cosa. Si en un grupo hay 12 varones y 18 mujeres, la razón es 12/18 = 2/3: por cada 2 varones hay 3 mujeres."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "12 : 18 = 2 : 3.",
+         "Se simplifica como una fracción."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Proporción",
+      "ejemplo": {
+       "motor": "razones",
+       "p": {
+        "modo": "proporcion"
+       }
+      },
+      "ejercicio": {
+       "motor": "razones_x",
+       "p": {
+        "modo": "proporcion"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Proporción",
+        "texto": "Una proporción es una igualdad entre dos razones, como 2/3 = 8/12. Las dos razones tienen el mismo cociente."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para saber si dos razones forman una proporción se pueden calcular los cocientes o simplificar las dos fracciones. Las recetas usan proporciones: si para 2 tortas van 3 huevos, para 8 tortas van 12, y 2/3 = 8/12."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "2/3 = 8/12: es proporción.",
+         "Mismo cociente."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Propiedad fundamental y término desconocido",
+      "ejemplo": {
+       "motor": "razones",
+       "p": {
+        "modo": "desconocido"
+       }
+      },
+      "ejercicio": {
+       "motor": "razones_x",
+       "p": {
+        "modo": "desconocido"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Propiedad fundamental",
+        "texto": "En toda proporción, el producto de los extremos es igual al producto de los medios: si a/b = c/d, entonces a × d = b × c."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Esta propiedad permite encontrar un término que falta. En 3/5 = 12/x, se hace 3 · x = 5 · 12 = 60, y entonces x = 60 ÷ 3 = 20. Siempre conviene controlar que las dos razones den lo mismo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "3/5 = 12/x → x = 20.",
+         "Extremos: a y d. Medios: b y c."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Una razón",
+      "definicion": "compara dos cantidades mediante una división y se escribe como fracción.",
+      "ejemplo": "12 varones y 18 mujeres: 2/3"
+     },
+     {
+      "concepto": "Una proporción",
+      "definicion": "es una igualdad entre dos razones que tienen el mismo cociente.",
+      "ejemplo": "2/3 = 8/12"
+     },
+     {
+      "concepto": "La propiedad fundamental",
+      "definicion": "dice que en una proporción el producto de los extremos es igual al de los medios.",
+      "ejemplo": "2 × 12 = 3 × 8",
+      "formula": "a/b = c/d → a·d = b·c"
+     },
+     {
+      "concepto": "Para encontrar un término que falta",
+      "definicion": "se usan los productos cruzados y después se despeja la incógnita dividiendo.",
+      "ejemplo": "3/5 = 12/x → x = 20"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder reconocer cuándo dos magnitudes son directamente proporcionales, encontrar la constante y resolver problemas.",
+   "vas_a_ver": [
+    "Magnitudes directamente proporcionales",
+    "La constante de proporcionalidad",
+    "El gráfico: puntos alineados con el origen",
+    "Casos que no son proporcionales",
+    "Problemas"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Proporcionalidad directa",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Directamente proporcionales",
+       "texto": "Dos magnitudes son <b>directamente proporcionales</b> si al multiplicar una por un número, la otra queda multiplicada por el mismo número. El <b>cociente</b> entre ellas es siempre el mismo: la <b>constante de proporcionalidad</b> k = y/x."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Kilos de pan y precio",
+       "columnas": [
+        "Kilos",
+        "1",
+        "2",
+        "3",
+        "5"
+       ],
+       "filas": [
+        [
+         "Precio ($)",
+         "800",
+         "1.600",
+         "2.400",
+         "4.000"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Todos los cocientes dan 800: k = 800, el precio de un kilo."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El gráfico",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Gráfico de la directa",
+       "texto": "Si se marcan los pares de la tabla en un sistema de ejes, los puntos quedan <b>alineados</b> en una recta que pasa por el <b>origen</b> (0; 0): 0 kilos cuestan $0."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Kilos de pan y precio",
+       "texto": "Los puntos están alineados y la recta pasa por el origen: es proporcionalidad directa.",
+       "imagen_descripcion": "Gráfico con los puntos (1; 800), (2; 1.600), (3; 2.400) y (5; 4.000) sobre una recta que pasa por (0; 0).",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "No todo lo que crece es proporcional",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Que las dos crezcan no alcanza. En un taxi con bajada de bandera de $500 más $100 por km, 1 km cuesta $600 y 2 km cuestan $700: el doble de kilómetros no cuesta el doble. Lo mismo con la edad y la altura de una persona."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Problemas",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "Los cuadernos",
+       "texto": "5 cuadernos cuestan $6.000. ¿Cuánto cuestan 8?",
+       "items": [
+        "Constante: 6.000 ÷ 5 = 1.200 por cuaderno.",
+        "8 × 1.200 = 9.600.",
+        "Cuestan $9.600."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "la nafta",
+    "planteo": "Una tabla: 10 L cuestan $12.000; 20 L, $24.000; 30 L, $36.000. ¿Es proporcional? ¿Cuánto cuestan 45 L?",
+    "pasos": [
+     "Cocientes: 12.000 ÷ 10 = 1.200; 24.000 ÷ 20 = 1.200; 36.000 ÷ 30 = 1.200.",
+     "Son todos iguales: es proporcional, k = 1.200.",
+     "45 × 1.200 = 54.000.",
+     "45 L cuestan $54.000."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "las entradas",
+    "planteo": "3 entradas cuestan $7.500. Completá los espacios.",
+    "pasos": [
+     "Constante: 7.500 ÷ 3 = ___ .",
+     "7 entradas: 7 × 2.500 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el auto",
+    "planteo": "Un auto recorre 180 km con 12 litros de nafta. ¿Cuántos km recorre con 20 litros?"
+   },
+   "tip": {
+    "titulo": "Verificá la constante",
+    "texto": "Antes de usar la regla, dividí cada par de la tabla. Si los cocientes no dan igual, no es proporcional."
+   },
+   "ojo": [
+    "Sumar en vez de multiplicar: si 2 remeras cuestan $10.000, 4 cuestan $20.000, no $12.000.",
+    "Creer que toda relación creciente es proporcional: el taxi con bajada de bandera no lo es."
+   ],
+   "resumen": [
+    {
+     "titulo": "Directa",
+     "texto": "El doble con el doble, el triple con el triple."
+    },
+    {
+     "titulo": "Constante",
+     "texto": "k = y/x, siempre igual."
+    },
+    {
+     "titulo": "Gráfico",
+     "texto": "Puntos alineados que pasan por el origen."
+    },
+    {
+     "titulo": "Ojo",
+     "texto": "Crecer juntas no alcanza."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Magnitud",
+     "significado": "Algo que se puede medir o contar."
+    },
+    {
+     "palabra": "Constante",
+     "significado": "Que no cambia."
+    },
+    {
+     "palabra": "Origen",
+     "significado": "El punto (0; 0) de los ejes."
+    }
+   ],
+   "carpeta": [
+    "Si 4 kg de papas cuestan $3.200, ¿cuánto cuestan 7 kg?",
+    "En una tabla de proporcionalidad directa, a x = 5 le corresponde y = 35. ¿Cuál es la constante?",
+    "En esa misma tabla, ¿cuánto vale y cuando x = 9?",
+    "Un compañero dice que si 2 remeras cuestan $10.000, entonces 4 remeras cuestan $12.000. ¿Cuánto cuestan 4 remeras?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "5600"
+    ],
+    [
+     "7"
+    ],
+    [
+     "63"
+    ],
+    [
+     "20000"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "2.500. 17.500.",
+    "solo": "k = 180 ÷ 12 = 15 km por litro. 20 × 15 = 300 km.",
+    "carpeta": [
+     "$5.600: 3.200 ÷ 4 = 800 por kilo; 7 × 800.",
+     "7: 35 ÷ 5.",
+     "63: 9 × 7.",
+     "$20.000: el doble de remeras cuesta el doble."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Proporcionalidad directa",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "proporcional",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Proporcionalidad directa",
+        "texto": "Dos magnitudes son directamente proporcionales cuando al multiplicar una por un número la otra queda multiplicada por el mismo número; su cociente es siempre el mismo, la constante de proporcionalidad."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si 1 cuaderno cuesta $3.000, 2 cuestan $6.000 y 5 cuestan $15.000: el precio dividido la cantidad da siempre 3.000. Esa constante permite completar cualquier valor de la tabla."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "y ÷ x = k, siempre igual.",
+         "Doble de una → doble de la otra."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El gráfico y no todo lo que crece",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "proporcional",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "El gráfico",
+        "texto": "El gráfico de una proporcionalidad directa son puntos sobre una recta que pasa por el origen (0; 0)."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "No todo lo que crece es proporcional: la edad y la altura de una persona crecen juntas, pero a los 20 años no medís el doble que a los 10. Para que sea proporcional el cociente tiene que mantenerse; si el gráfico no pasa por el 0 o no es una recta, no lo es."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Recta por el origen.",
+         "Crecer juntas no alcanza."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Problemas de proporcionalidad directa",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "regla_de_tres",
+       "p": {
+        "modo": "directa"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Regla de tres directa",
+        "texto": "Para resolver un problema de proporcionalidad directa se puede buscar el valor de una unidad y multiplicar, o armar la proporción y usar los productos cruzados."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si 3 kg de carne cuestan $27.000, 1 kg cuesta $9.000 y 5 kg cuestan $45.000. Antes de calcular hay que verificar que la situación sea realmente de proporcionalidad directa."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Reducción a la unidad.",
+         "3 kg → 27.000; 5 kg → 45.000."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Dos magnitudes directamente proporcionales",
+      "definicion": "se multiplican o se dividen por el mismo número al mismo tiempo.",
+      "ejemplo": "1 cuaderno $3.000; 5 cuadernos $15.000"
+     },
+     {
+      "concepto": "La constante de proporcionalidad directa",
+      "definicion": "es el cociente entre las dos magnitudes, que siempre da lo mismo.",
+      "ejemplo": "15.000 ÷ 5 = 3.000"
+     },
+     {
+      "concepto": "El gráfico de la proporcionalidad directa",
+      "definicion": "es una recta que pasa por el origen, el punto (0; 0).",
+      "ejemplo": "Puntos (1; 3), (2; 6), (3; 9)"
+     },
+     {
+      "concepto": "Que dos cantidades crezcan juntas",
+      "definicion": "no alcanza para decir que son proporcionales: hay que mirar el cociente.",
+      "ejemplo": "Edad y altura no lo son"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder reconocer magnitudes inversamente proporcionales, usar el producto constante y distinguirlas de las directas.",
+   "vas_a_ver": [
+    "Magnitudes inversamente proporcionales",
+    "El producto constante",
+    "Directa o inversa: cómo distinguirlas",
+    "Problemas de obreros, velocidad y tiempo"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Proporcionalidad inversa",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Inversamente proporcionales",
+       "texto": "Dos magnitudes son <b>inversamente proporcionales</b> si al multiplicar una por un número, la otra queda <b>dividida</b> por ese número. El <b>producto</b> entre ellas es siempre el mismo."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Obreros y días",
+       "columnas": [
+        "Obreros",
+        "2",
+        "3",
+        "4",
+        "6"
+       ],
+       "filas": [
+        [
+         "Días",
+         "12",
+         "8",
+         "6",
+         "4"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Todos los productos dan 24: 2 × 12 = 3 × 8 = 4 × 6 = 6 × 4."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Directa o inversa",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Cómo distinguirlas",
+       "texto": "En la <b>directa</b> el <b>cociente</b> es constante (más de uno, más del otro). En la <b>inversa</b> el <b>producto</b> es constante (más de uno, menos del otro, en la misma proporción)."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "No toda la que baja es inversa",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Que una crezca y la otra baje no alcanza. Un tanque tiene 40 L de nafta; después de 100 km le quedan 32 L y después de 200 km, 24 L. Los productos (100 × 32 = 3.200; 200 × 24 = 4.800) no son iguales: no es inversa."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Problemas",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "Velocidad y tiempo",
+       "texto": "Hay que hacer el mismo viaje a distinta velocidad.",
+       "items": [
+        "A 60 km/h se tarda 4 h: producto 240 (los km del viaje).",
+        "A 80 km/h: 240 ÷ 80 = 3 h.",
+        "A más velocidad, menos tiempo."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "los caramelos",
+    "planteo": "Una bolsa de caramelos alcanza para darle 5 a cada uno de 12 chicos. ¿Cuántos recibe cada uno si son 15 chicos?",
+    "pasos": [
+     "Más chicos, menos caramelos para cada uno: es inversa.",
+     "Producto: 12 × 5 = 60 caramelos en total.",
+     "60 ÷ 15 = 4.",
+     "Cada uno recibe 4 caramelos."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "las canillas",
+    "planteo": "6 canillas iguales llenan una pileta en 10 horas. Completá los espacios.",
+    "pasos": [
+     "Producto: 6 × 10 = ___ .",
+     "Con 4 canillas: 60 ÷ 4 = ___ horas."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el viaje",
+    "planteo": "Un micro tarda 6 horas a 70 km/h. ¿Cuánto tarda a 84 km/h?"
+   },
+   "tip": {
+    "titulo": "Preguntate qué pasa",
+    "texto": "Si duplicás una, ¿la otra se duplica o se divide por 2? Esa pregunta te dice si es directa o inversa."
+   },
+   "ojo": [
+    "Resolver una inversa como directa: si 3 pintores tardan 8 días, 6 pintores no tardan 16, tardan 4.",
+    "Pensar que toda relación que baja es inversa: hay que controlar que el producto sea constante."
+   ],
+   "resumen": [
+    {
+     "titulo": "Inversa",
+     "texto": "El doble de una, la mitad de la otra."
+    },
+    {
+     "titulo": "Producto",
+     "texto": "x × y siempre igual. Ej.: obreros × días = 24."
+    },
+    {
+     "titulo": "Directa",
+     "texto": "Cociente constante."
+    },
+    {
+     "titulo": "Control",
+     "texto": "Que baje no alcanza: verificá el producto."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Inversa",
+     "significado": "Cuando una crece, la otra disminuye en la misma proporción."
+    },
+    {
+     "palabra": "Producto constante",
+     "significado": "La multiplicación de cada par da siempre lo mismo."
+    }
+   ],
+   "carpeta": [
+    "8 obreros hacen un trabajo en 15 días. ¿Cuántos días tardan 12 obreros?",
+    "En una tabla de proporcionalidad inversa, a x = 4 le corresponde y = 9. ¿Cuál es el producto constante?",
+    "En esa misma tabla, ¿cuánto vale y cuando x = 6?",
+    "Un compañero resolvió como directa: si 3 pintores tardan 8 días, 6 pintores tardan 16. ¿Cuántos días tardan 6 pintores?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "10"
+    ],
+    [
+     "36"
+    ],
+    [
+     "6"
+    ],
+    [
+     "4"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "60. 15 horas.",
+    "solo": "Producto: 70 × 6 = 420. 420 ÷ 84 = 5 horas.",
+    "carpeta": [
+     "10: 8 × 15 = 120; 120 ÷ 12.",
+     "36: 4 × 9.",
+     "6: 36 ÷ 6.",
+     "4: 3 × 8 = 24; 24 ÷ 6. Más pintores, menos días."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Proporcionalidad inversa",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {
+        "modo": "inversa"
+       }
+      },
+      "ejercicio": {
+       "motor": "regla_de_tres",
+       "p": {
+        "modo": "inversa"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Proporcionalidad inversa",
+        "texto": "Dos magnitudes son inversamente proporcionales cuando al multiplicar una por un número la otra queda dividida por ese mismo número; su producto es siempre el mismo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si 4 pintores tardan 9 días, 2 pintores tardan el doble, 18 días, y 6 pintores tardan 6 días: el producto pintores × días da siempre 36. El gráfico es una curva que baja, no una recta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "x · y = k, siempre igual.",
+         "Doble de una → mitad de la otra."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Directa o inversa",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {
+        "modo": "inversa"
+       }
+      },
+      "ejercicio": {
+       "motor": "regla_de_tres",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Distinguirlas",
+        "texto": "Para saber si una relación es directa o inversa se piensa qué pasa con una magnitud cuando la otra se duplica: si también se duplica es directa, si se reduce a la mitad es inversa."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Más kilos, más precio: directa. Más velocidad, menos tiempo para el mismo viaje: inversa. Conviene decidirlo antes de hacer la cuenta, porque el cálculo es distinto en cada caso."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Más y más → directa.",
+         "Más y menos (a la mitad) → inversa."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "No toda la que baja es inversa",
+      "ejemplo": {
+       "motor": "proporcionalidad",
+       "p": {
+        "modo": "inversa"
+       }
+      },
+      "ejercicio": {
+       "motor": "regla_de_tres",
+       "p": {
+        "modo": "inversa"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cuidado",
+        "texto": "No toda relación en la que una cantidad baja cuando la otra sube es de proporcionalidad inversa: para serlo, el producto tiene que mantenerse constante."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si una vela de 20 cm se consume 2 cm por hora, a más horas queda menos vela, pero 1 × 18 no es igual a 2 × 16: no es inversa. Siempre hay que comprobar el producto en la tabla."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Comprobá el producto.",
+         "Bajar no alcanza."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Dos magnitudes inversamente proporcionales",
+      "definicion": "tienen un producto que se mantiene siempre constante en toda la tabla.",
+      "ejemplo": "4 pintores × 9 días = 6 × 6 = 36"
+     },
+     {
+      "concepto": "En la proporcionalidad inversa",
+      "definicion": "si una magnitud se duplica, la otra se reduce a la mitad.",
+      "ejemplo": "Doble de velocidad, mitad de tiempo"
+     },
+     {
+      "concepto": "Para distinguir directa de inversa",
+      "definicion": "se piensa qué pasa con una cuando la otra se duplica.",
+      "ejemplo": "Kilos y precio: directa"
+     },
+     {
+      "concepto": "Que una cantidad baje cuando la otra sube",
+      "definicion": "no alcanza para que sea inversa: hay que comprobar que el producto se mantenga.",
+      "ejemplo": "La vela que se consume no es inversa"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a poder calcular porcentajes de una cantidad, pasarlos a fracción y decimal, y resolver descuentos y aumentos simples.",
+   "vas_a_ver": [
+    "El porcentaje como razón sobre 100",
+    "Porcentaje de una cantidad",
+    "Porcentajes como fracción y decimal",
+    "Descuentos y aumentos",
+    "Qué porcentaje representa una parte"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es un porcentaje",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Porcentaje",
+       "texto": "Un <b>porcentaje</b> es una razón con denominador 100: 25% = 25/100. Indica cuántos de cada 100."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Equivalencias útiles",
+       "columnas": [
+        "Porcentaje",
+        "Fracción",
+        "Decimal"
+       ],
+       "filas": [
+        [
+         "50%",
+         "1/2",
+         "0,5"
+        ],
+        [
+         "25%",
+         "1/4",
+         "0,25"
+        ],
+        [
+         "75%",
+         "3/4",
+         "0,75"
+        ],
+        [
+         "10%",
+         "1/10",
+         "0,1"
+        ],
+        [
+         "20%",
+         "1/5",
+         "0,2"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Porcentaje de una cantidad",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Calcularlo",
+       "texto": "Para calcular el p% de una cantidad, se multiplica la cantidad por p/100 (o por el decimal)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: 20% de 50 = 20/100 × 50 = 10. También: 50 × 0,2 = 10. No es 20 × 50."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Descuentos y aumentos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para un <b>descuento</b>, se calcula el porcentaje y se resta; para un <b>aumento</b>, se suma."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Dos casos",
+       "texto": "Precio con descuento y con aumento.",
+       "items": [
+        "$8.000 con 15% de descuento: 15% de 8.000 = 1.200. Se paga 8.000 − 1.200 = 6.800.",
+        "$4.500 con 10% de aumento: 10% de 4.500 = 450. Queda 4.500 + 450 = 4.950."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "¿Qué porcentaje es?",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para saber qué porcentaje es una parte del total, se arma la razón parte/total y se lleva a denominador 100. En un curso de 25 alumnos, 5 usan anteojos: 5/25 = 20/100 = 20%."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "las zapatillas",
+    "planteo": "Unas zapatillas cuestan $45.000 y tienen un 20% de descuento. ¿Cuánto se paga?",
+    "pasos": [
+     "20% de 45.000 = 45.000 × 0,2 = 9.000.",
+     "45.000 − 9.000 = 36.000.",
+     "Otra forma: si descuentan el 20%, se paga el 80%: 45.000 × 0,8 = 36.000.",
+     "Se pagan $36.000."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "el aumento",
+    "planteo": "Un producto de $1.600 aumenta un 25%. Completá los espacios.",
+    "pasos": [
+     "25% es 1/4: 1.600 ÷ 4 = ___ .",
+     "Nuevo precio: 1.600 + 400 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el curso",
+    "planteo": "En un curso de 30 alumnos, 12 son mujeres. ¿Qué porcentaje del curso son mujeres?"
+   },
+   "tip": {
+    "titulo": "El 10% es fácil",
+    "texto": "El 10% se calcula dividiendo por 10. Desde ahí sacás otros: el 20% es el doble, el 5% es la mitad."
+   },
+   "ojo": [
+    "Multiplicar por el porcentaje entero: el 20% de 50 no es 20 × 50; es 10.",
+    "Confundir el porcentaje con la cantidad: 25% de 80 es 20, no 25."
+   ],
+   "resumen": [
+    {
+     "titulo": "Porcentaje",
+     "texto": "De cada 100. Ej.: 25% = 25/100."
+    },
+    {
+     "titulo": "De una cantidad",
+     "texto": "Cantidad × p/100. Ej.: 20% de 50 = 10."
+    },
+    {
+     "titulo": "Descuento",
+     "texto": "Se resta. Ej.: 8.000 − 15% = 6.800."
+    },
+    {
+     "titulo": "Aumento",
+     "texto": "Se suma. Ej.: 4.500 + 10% = 4.950."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Porcentaje",
+     "significado": "Cantidad de cada 100."
+    },
+    {
+     "palabra": "Descuento",
+     "significado": "Lo que se resta del precio."
+    },
+    {
+     "palabra": "Aumento",
+     "significado": "Lo que se suma al precio."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto es el 30% de 200?",
+    "Escribí 75% como número decimal.",
+    "Una campera de $20.000 tiene un 10% de descuento. ¿Cuánto se paga?",
+    "Un compañero calculó el 20% de 50 haciendo 20 × 50 = 1.000. ¿Cuánto es el 20% de 50?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "60"
+    ],
+    [
+     "0,75",
+     "0.75"
+    ],
+    [
+     "18000"
+    ],
+    [
+     "10"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "400. 2.000.",
+    "solo": "12/30 = 40/100. Son el 40%.",
+    "carpeta": [
+     "60: 200 × 0,3.",
+     "0,75: 75/100.",
+     "$18.000: 10% = 2.000; 20.000 − 2.000.",
+     "10: 50 × 20/100. No se multiplica por 20 entero."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es un porcentaje",
+      "ejemplo": {
+       "motor": "porcentaje_barra",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "porcentaje",
+       "p": {
+        "modo": "parte"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Porcentaje",
+        "texto": "Un porcentaje es una razón con denominador 100: el 25 % significa 25 de cada 100, es decir 25/100 = 1/4."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los porcentajes permiten comparar partes de totales distintos usando siempre la misma referencia, 100. Algunos conviene conocerlos como fracción: 50 % es la mitad, 25 % un cuarto, 10 % un décimo. Así se ve rápido cuánto es."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "25 % = 25/100 = 1/4.",
+         "50 % = mitad; 10 % = un décimo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Descuentos y aumentos",
+      "ejemplo": {
+       "motor": "porcentaje_barra",
+       "p": {
+        "modo": "descuento"
+       }
+      },
+      "ejercicio": {
+       "motor": "porcentaje",
+       "p": {
+        "modo": "descuento"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Descuentos y aumentos",
+        "texto": "Para aplicar un descuento se calcula el porcentaje del precio y se resta; para un aumento, se calcula y se suma."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un pantalón de $12.000 con 25 % de descuento: el 25 % es 3.000, así que se pagan $9.000. Otra forma: pagar el 75 % del precio. En un aumento del 10 %, se paga el 110 %."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "12.000 − 25 % = 9.000.",
+         "Aumento del 10 %: × 1,1."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "¿Qué porcentaje es?",
+      "ejemplo": {
+       "motor": "porcentaje_barra",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "porcentaje",
+       "p": {
+        "modo": "que"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Calcular el porcentaje",
+        "texto": "Para saber qué porcentaje representa una parte de un total se divide la parte por el total y se multiplica por 100."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si de 40 chicos 10 usan anteojos: 10 ÷ 40 = 0,25, y 0,25 × 100 = 25 %. Es como armar la proporción 10/40 = x/100 y buscar el término que falta. Siempre conviene controlar con una estimación."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "10 de 40 = 25 %.",
+         "Parte ÷ total × 100."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Un porcentaje",
+      "definicion": "es una razón con denominador 100, que indica cuántos de cada 100.",
+      "ejemplo": "25 % = 25/100 = 1/4"
+     },
+     {
+      "concepto": "Para calcular un porcentaje de una cantidad",
+      "definicion": "se multiplica la cantidad por el porcentaje y se divide por 100.",
+      "ejemplo": "15 % de 300 = 45"
+     },
+     {
+      "concepto": "En un descuento",
+      "definicion": "se resta el porcentaje calculado; en un aumento se suma al precio.",
+      "ejemplo": "$12.000 − 25 % = $9.000"
+     },
+     {
+      "concepto": "Para saber qué porcentaje es una parte",
+      "definicion": "se divide la parte por el total y se multiplica por 100.",
+      "ejemplo": "10 de 40 = 25 %"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "fill_blank",
+    "p": "3/4 = ___/20",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "15"
+      ]
+     ]
+    },
+    "e": "3 × 20 = 4 × 15.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "La razón entre 10 y 2 es 8.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "La razón es el cociente: 10 ÷ 2 = 5.",
+    "n": "recordar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada razón con su forma simplificada.",
+    "o": {
+     "izquierda": [
+      "12 : 18",
+      "10 : 25",
+      "14 : 21",
+      "8 : 32"
+     ],
+     "derecha": [
+      "2 : 3",
+      "2 : 5",
+      "2 : 3 ",
+      "1 : 4"
+     ]
+    },
+    "r": {
+     "pares": {
+      "12 : 18": "2 : 3",
+      "10 : 25": "2 : 5",
+      "14 : 21": "2 : 3 ",
+      "8 : 32": "1 : 4"
+     }
+    },
+    "e": "Se divide por el MCD como en las fracciones."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Maite buscó x en 4/6 = 10/x. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Productos cruzados: 4 · x = 6 · 10",
+      "4 · x = 60",
+      "x = 60 − 4 = 56"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      2
+     ]
+    },
+    "e": "Para despejar se divide: x = 60 ÷ 4 = 15."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "Si {n} cuadernos cuestan ${t}, ¿cuánto cuestan {m} cuadernos?",
+    "o": {
+     "vars": {
+      "n": {
+       "min": 2,
+       "max": 6
+      },
+      "p": {
+       "min": 5,
+       "max": 15
+      },
+      "m": {
+       "min": 7,
+       "max": 12
+      }
+     },
+     "calculadas": {
+      "t": "n*p*100"
+     }
+    },
+    "r": {
+     "formula": "m*p*100"
+    },
+    "e": "Se calcula el precio de uno (la constante) y se multiplica.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Las cuatro situaciones relacionan dos cantidades, pero solo en una el cociente se mantiene siempre. ¿Cuál es de proporcionalidad directa?",
+    "o": [
+     "La edad y la altura de una persona",
+     "Los kilos de pan y el precio a pagar",
+     "Un viaje en taxi con bajada de bandera y los kilómetros",
+     "La temperatura y la hora del día"
+    ],
+    "r": {
+     "correcta": "Los kilos de pan y el precio a pagar"
+    },
+    "e": "El doble de kilos cuesta el doble.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada relación: ¿es de proporcionalidad directa?",
+    "o": {
+     "elementos": [
+      "Kilos de pan y precio",
+      "Edad y altura",
+      "Litros de nafta y precio",
+      "Lado de un cuadrado y su perímetro",
+      "Años y cantidad de dientes"
+     ],
+     "categorias": [
+      "Directa",
+      "No es proporcional"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Kilos de pan y precio": "Directa",
+      "Edad y altura": "No es proporcional",
+      "Litros de nafta y precio": "Directa",
+      "Lado de un cuadrado y su perímetro": "Directa",
+      "Años y cantidad de dientes": "No es proporcional"
+     }
+    },
+    "e": "Es directa si el cociente se mantiene siempre."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Si 3 kg cuestan $27.000, tres chicos calcularon el precio de 5 kg. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | sumó 2 kg: 27.000 + 2 | $27.002",
+     "Beto: | 1 kg = 9.000; × 5 | $45.000",
+     "Caro: | 27.000 ÷ 5 | $5.400"
+    ],
+    "r": {
+     "correcta": "Beto: | 1 kg = 9.000; × 5 | $45.000"
+    },
+    "e": "Reducción a la unidad y después multiplicar."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "4 pintores tardan 9 días en pintar una casa. ¿Cuántos días tardan 6 pintores?",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "Inversa: 4 × 9 = 36; 36 ÷ 6 = 6.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En la proporcionalidad inversa, ¿qué se mantiene constante?",
+    "o": [
+     "El cociente",
+     "El producto",
+     "La suma",
+     "La diferencia"
+    ],
+    "r": {
+     "correcta": "El producto"
+    },
+    "e": "x × y da siempre lo mismo.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada relación según el tipo de proporcionalidad.",
+    "o": {
+     "elementos": [
+      "Velocidad y tiempo de un viaje",
+      "Cantidad de entradas y costo",
+      "Obreros y días de una obra",
+      "Canillas abiertas y tiempo de llenado",
+      "Metros de tela y precio"
+     ],
+     "categorias": [
+      "Directa",
+      "Inversa"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Velocidad y tiempo de un viaje": "Inversa",
+      "Cantidad de entradas y costo": "Directa",
+      "Obreros y días de una obra": "Inversa",
+      "Canillas abiertas y tiempo de llenado": "Inversa",
+      "Metros de tela y precio": "Directa"
+     }
+    },
+    "e": "Pensá qué pasa con una cuando la otra se duplica."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Benja resolvió: 4 pintores tardan 9 días; ¿cuánto tardan 6? Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Más pintores, menos días: es inversa",
+      "Planteo 4/9 = 6/x",
+      "x = 13,5 días"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "En la inversa se mantiene el producto: 4 × 9 = 6 × x, x = 6 días."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "¿Cuánto es el {p}% de {n}?",
+    "o": {
+     "vars": {
+      "p": {
+       "valores": [
+        10,
+        20,
+        25,
+        50
+       ]
+      },
+      "n": {
+       "valores": [
+        40,
+        80,
+        120,
+        200,
+        400
+       ]
+      }
+     }
+    },
+    "r": {
+     "formula": "p*n/100"
+    },
+    "e": "Se multiplica la cantidad por p/100.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Un pantalón de $12.000 tiene un 25% de descuento. ¿Cuánto se paga?",
+    "o": {},
+    "r": {
+     "acepta": [
+      9000
+     ]
+    },
+    "e": "25% de 12.000 = 3.000; 12.000 − 3.000 = 9.000.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada porcentaje con su fracción.",
+    "o": {
+     "izquierda": [
+      "50 %",
+      "25 %",
+      "10 %",
+      "75 %"
+     ],
+     "derecha": [
+      "1/2",
+      "1/4",
+      "1/10",
+      "3/4"
+     ]
+    },
+    "r": {
+     "pares": {
+      "50 %": "1/2",
+      "25 %": "1/4",
+      "10 %": "1/10",
+      "75 %": "3/4"
+     }
+    },
+    "e": "Un porcentaje es una fracción con denominador 100, simplificada."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Un precio de $1.000 aumenta 10 % y después baja 10 %. Tres chicos dijeron cuánto queda. ¿Quién tiene razón?",
+    "o": [
+     "Ana: | sube y baja lo mismo | $1.000",
+     "Beto: | 1.100 − 10 % de 1.100 | $990",
+     "Caro: | 1.000 − 10 % | $900"
+    ],
+    "r": {
+     "correcta": "Beto: | 1.100 − 10 % de 1.100 | $990"
+    },
+    "e": "El segundo 10 % se calcula sobre $1.100: es $110."
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "Relámpago. ¿Cuánto es el 50% de 90?",
+    "o": {},
+    "r": {
+     "acepta": [
+      45
+     ]
+    },
+    "e": "La mitad.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Si x se duplica, y se reduce a la mitad. ¿Qué proporcionalidad es?",
+    "o": [
+     "Directa",
+     "Inversa",
+     "Ninguna de las dos"
+    ],
+    "r": {
+     "correcta": "Inversa"
+    },
+    "e": "El producto queda igual.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Completá: 2/3 = 10/__.",
+    "o": {},
+    "r": {
+     "acepta": [
+      15
+     ]
+    },
+    "e": "2 × 15 = 3 × 10.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá (−4) × (−5).",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "Repaso de la misión 13.",
+    "tiempo": 20,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "Completá la proporción 6/9 = 4/__.",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "6 × x = 9 × 4 = 36; x = 6.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "En una proporción, el producto de los extremos es igual al producto de los medios.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es la propiedad fundamental.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "En un frutero hay 8 manzanas y 12 naranjas. ¿Cuál es la razón entre manzanas y naranjas?",
+    "o": [
+     "2/3",
+     "3/2",
+     "4",
+     "8/20"
+    ],
+    "r": {
+     "correcta": "2/3"
+    },
+    "e": "8/12 simplificado.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Si 3 kg de carne cuestan $27.000, ¿cuánto cuestan 5 kg?",
+    "o": {},
+    "r": {
+     "acepta": [
+      45000
+     ]
+    },
+    "e": "9.000 por kilo; 5 × 9.000.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "En una tabla de proporcionalidad directa, ¿qué se mantiene constante?",
+    "o": [
+     "El cociente y/x",
+     "El producto x × y",
+     "La suma x + y",
+     "La diferencia y − x"
+    ],
+    "r": {
+     "correcta": "El cociente y/x"
+    },
+    "e": "Es la constante de proporcionalidad.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "Si una cantidad crece cuando la otra crece, siempre son directamente proporcionales.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Ejemplo: taxi con bajada de bandera.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Un auto a 90 km/h tarda 2 horas en un viaje. ¿Cuántas horas tarda a 60 km/h?",
+    "o": {},
+    "r": {
+     "acepta": [
+      3
+     ]
+    },
+    "e": "90 × 2 = 180; 180 ÷ 60 = 3.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Con 5 canillas iguales una pileta se llena en 12 horas. ¿En cuántas horas se llena con 3 canillas?",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "5 × 12 = 60; 60 ÷ 3 = 20.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "classify",
+    "p": "Clasificá cada relación.",
+    "o": {
+     "elementos": [
+      "Kilos de pan y precio",
+      "Obreros y días de trabajo",
+      "Velocidad y tiempo de un mismo viaje",
+      "Litros de nafta y kilómetros recorridos"
+     ],
+     "categorias": [
+      "Directa",
+      "Inversa"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Kilos de pan y precio": "Directa",
+      "Obreros y días de trabajo": "Inversa",
+      "Velocidad y tiempo de un mismo viaje": "Inversa",
+      "Litros de nafta y kilómetros recorridos": "Directa"
+     }
+    },
+    "e": "Directa: cociente constante. Inversa: producto constante.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "¿Cuánto es el 15% de 300?",
+    "o": {},
+    "r": {
+     "acepta": [
+      45
+     ]
+    },
+    "e": "300 × 0,15 = 45.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un celular cuesta $150.000 y aumenta un 10%. ¿Cuál es el nuevo precio?",
+    "o": {},
+    "r": {
+     "acepta": [
+      165000
+     ]
+    },
+    "e": "10% = 15.000; 150.000 + 15.000.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué fracción es el 25%?",
+    "o": [
+     "1/25",
+     "1/4",
+     "25/10",
+     "2/5"
+    ],
+    "r": {
+     "correcta": "1/4"
+    },
+    "e": "25/100 = 1/4.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "En un grupo de 40 chicos, 10 usan anteojos. ¿Qué porcentaje usa anteojos? Escribí solo el número.",
+    "o": {},
+    "r": {
+     "acepta": [
+      25
+     ]
+    },
+    "e": "10/40 = 25/100.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}

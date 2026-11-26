@@ -1093,6 +1093,52 @@
     });
   } };
 
+  // ======= RAZONES Y PROPORCIONES (Matemática I · Misión 14) =======
+  M.razones = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'razon', C = {
+      razon: ctrl('a', 'Varones', 1, 30, 1, 12) + ctrl('b', 'Mujeres', 1, 30, 1, 18),
+      proporcion: ctrl('a', 'a', 1, 12, 1, 2) + ctrl('b', 'b', 1, 12, 1, 3) + ctrl('k', 'Multiplicar por', 2, 5, 1, 4),
+      fundamental: ctrl('a', 'a', 1, 12, 1, 3) + ctrl('b', 'b', 1, 12, 1, 4) + ctrl('k', 'Multiplicar por', 2, 5, 1, 3),
+      desconocido: ctrl('a', 'a', 1, 9, 1, 3) + ctrl('b', 'b', 1, 9, 1, 5) + ctrl('k', 'Multiplicar por', 2, 6, 1, 4) }[md];
+    escena(el, C, function (o) { var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, F = function (x) { return '<p class="lb-pt-f">' + x + '</p>'; };
+      if (md === 'razon') { var g = mcd(o.a, o.b); return [{ vis: G(o.a + ' varones y ' + o.b + ' mujeres'), txt: 'Queremos comparar las dos cantidades dividiendo.' }, { vis: G(fr(o.a, o.b)), txt: 'La <b>razón</b> entre varones y mujeres es ' + o.a + ' : ' + o.b + ', que se escribe como fracción.' }, { vis: RS(fr(o.a, o.b) + ' = ' + fr(o.a / g, o.b / g)), txt: 'Simplificada: por cada <b>' + o.a / g + '</b> varones hay <b>' + o.b / g + '</b> mujeres.' }]; }
+      var a = o.a, b = o.b, k = o.k, c = a * k, d = b * k;
+      if (md === 'proporcion') return [{ vis: G(fr(a, b) + ' ¿ = ? ' + fr(c, d)), txt: 'Dos razones.' }, { vis: F(a + ' ÷ ' + b + ' = ' + fmt(r2(a / b)) + ' · ' + c + ' ÷ ' + d + ' = ' + fmt(r2(c / d))), txt: 'Calculamos los dos cocientes.' }, { vis: RS(fr(a, b) + ' = ' + fr(c, d)), txt: 'Dan lo mismo: forman una <b>proporción</b>.' }];
+      if (md === 'fundamental') return [{ vis: G(fr(a, b) + ' = ' + fr(c, d)), txt: 'Una proporción: ' + a + ' y ' + d + ' son los <b>extremos</b>; ' + b + ' y ' + c + ', los <b>medios</b>.' }, { vis: F(a + ' × ' + d + ' = ' + a * d), txt: 'Multiplicamos los extremos.' }, { vis: F(b + ' × ' + c + ' = ' + b * c), txt: 'Multiplicamos los medios.' }, { vis: RS(a * d + ' = ' + b * c), txt: 'En toda proporción, extremos por extremos = medios por medios.' }];
+      return [{ vis: G(fr(a, b) + ' = ' + fr(c, 'x')), txt: 'Falta un término de la proporción.' }, { vis: G(a + ' · x = ' + b + ' · ' + c), txt: 'Usamos la propiedad fundamental: productos cruzados.' }, { vis: G('x = ' + b * c + ' ÷ ' + a), txt: 'Despejamos: dividimos por ' + a + '.' }, { vis: RS('x = ' + d), txt: 'Control: ' + a + '/' + b + ' = ' + c + '/' + d + '.' }];
+    });
+  } };
+  M.razones_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'razon';
+    respuesta(el, api, function () { var a = R(1, 9), b = R(2, 9), k = R(2, 6);
+      if (md === 'razon') { var A = a * k, B = b * k, g = mcd(A, B); return { cons: 'En una caja hay <b>' + A + '</b> lápices rojos y <b>' + B + '</b> azules. Escribí la razón entre rojos y azules, simplificada.', campos: [{ lab: 'rojos', v: A / g }, { lab: 'azules', v: B / g }], ayuda: 'Dividí los dos por ' + g + '.', bien: '¡Bien! Por cada ' + A / g + ' rojos hay ' + B / g + ' azules.' }; }
+      if (md === 'proporcion') { var eq = Math.random() < .5, c = a * k, d = eq ? b * k : b * k + 1; return { cons: '¿<b>' + a + '/' + b + '</b> y <b>' + c + '/' + d + '</b> forman una proporción? Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: eq ? ['si', 'sí'] : ['no'] }], ayuda: 'Comparalos: ' + a + ' × ' + d + ' y ' + b + ' × ' + c + '.', bien: '¡Bien!' }; }
+      return { cons: 'Encontrá x: <b>' + a + '/' + b + ' = ' + a * k + '/x</b>', campos: [{ v: b * k }], ayuda: 'Productos cruzados: ' + a + ' · x = ' + b + ' · ' + a * k + '.', bien: '¡Bien! x = ' + b * k + '.' };
+    });
+  } };
+  // ======= EXPRESIONES ALGEBRAICAS (Matemática I · Misión 15) =======
+  M.algebra = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'equivalentes', C = {
+      equivalentes: ctrl('k', 'Número de afuera', 2, 6, 1, 2) + ctrl('a', 'Número de adentro', 1, 9, 1, 4),
+      un_valor: ctrl('x', 'Probar con x =', 0, 6, 1, 2),
+      recursiva: ctrl('a', 'Primer término', 1, 10, 1, 4) + ctrl('d', 'Se suma siempre', 2, 6, 1, 3) + ctrl('n', 'Posición buscada', 5, 50, 1, 20) }[md];
+    escena(el, C, function (o) { var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; };
+      var tab = function (h, f1, f2, xs) { return '<table class="lb2-tab"><tr><th>m</th><th>' + h[0] + '</th><th>' + h[1] + '</th></tr>' + xs.map(function (x) { return '<tr><td>' + x + '</td><td>' + f1(x) + '</td><td>' + f2(x) + '</td></tr>'; }).join('') + '</table>'; };
+      if (md === 'equivalentes') { var k = o.k, a = o.a, f1 = function (m) { return k * (m + a); }, f2 = function (m) { return k * m + k * a; };
+        return [{ vis: G(k + '(m + ' + a + ')'), txt: 'Una expresión con paréntesis.' }, { vis: G(k + '(m + ' + a + ') = ' + k + 'm + ' + k * a), txt: 'Aplicamos la distributiva: el ' + k + ' multiplica a los dos términos.' }, { vis: tab([k + '(m + ' + a + ')', k + 'm + ' + k * a], f1, f2, [1, 2, 3, 10]), txt: 'Probamos con varios valores de m: dan siempre lo mismo.' }, { vis: RS(k + '(m + ' + a + ') ≡ ' + k + 'm + ' + k * a), txt: 'Son <b>equivalentes</b>: dan igual para <b>todos</b> los valores.' }]; }
+      if (md === 'un_valor') { var x = o.x; return [{ vis: G('x + x  y  x · x'), txt: '¿Son equivalentes? Probemos.' }, { vis: G('x = ' + x + ': ' + (x + x) + ' y ' + x * x), txt: x + x === x * x ? 'Con ' + x + ' dan igual…' : 'Con ' + x + ' ya dan distinto.' }, { vis: G('x = 3: 6 y 9'), txt: 'Con 3 dan distinto.' }, { vis: RS('No son equivalentes'), txt: 'Que coincidan para un valor no alcanza: con un solo valor que dé distinto, no son equivalentes.' }]; }
+      var a2 = o.a, d = o.d, n = o.n, c = a2 - d; return [{ vis: G(a2 + ', ' + (a2 + d) + ', ' + (a2 + 2 * d) + ', ' + (a2 + 3 * d) + ', …'), txt: 'Cada término es el anterior <b>+ ' + d + '</b>: esa es la regla <b>recursiva</b>.' }, { vis: G(d + 'n ' + (c >= 0 ? '+ ' + c : '− ' + -c)), txt: 'Como se suma ' + d + ' cada vez, la fórmula tiene ' + d + 'n; ajustamos para que el primero dé ' + a2 + '.' }, { vis: G(d + ' · ' + n + (c >= 0 ? ' + ' + c : ' − ' + -c)), txt: 'La fórmula <b>explícita</b> permite ir directo a la posición ' + n + '.' }, { vis: RS('Término ' + n + ' = ' + (d * n + c)), txt: 'Sin escribir todos los anteriores.' }];
+    });
+  } };
+  M.algebra_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'equivalentes';
+    respuesta(el, api, function () { var k = R(2, 7), a = R(1, 9);
+      if (md === 'equivalentes') return { cons: 'Completá para que sean equivalentes: <b>' + k + '(m + ' + a + ') = ' + k + 'm + ___</b>', campos: [{ v: k * a }], ayuda: 'El ' + k + ' multiplica también al ' + a + '.', bien: '¡Bien!' };
+      if (md === 'un_valor') { var P = pick([['2x', 'x + 2', false], ['3x + 3x', '6x', true], ['x · x', '2x', false], ['4(x − 1)', '4x − 4', true], ['x + 5', '5x', false]]); return { cons: '¿<b>' + P[0] + '</b> y <b>' + P[1] + '</b> son equivalentes? Probá con varios valores. Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: P[2] ? ['si', 'sí'] : ['no'] }], ayuda: 'Probá con x = 1, x = 2 y x = 3.', bien: '¡Bien!' }; }
+      var a2 = R(1, 9), d = R(2, 6), n = R(10, 40); return { cons: 'La secuencia empieza en <b>' + a2 + '</b> y cada término es el anterior <b>+ ' + d + '</b>. ¿Cuál es el término número <b>' + n + '</b>?', campos: [{ v: a2 + (n - 1) * d }], ayuda: 'Fórmula: ' + d + 'n ' + (a2 - d >= 0 ? '+ ' + (a2 - d) : '− ' + (d - a2)) + '.', bien: '¡Bien!' };
+    });
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);
