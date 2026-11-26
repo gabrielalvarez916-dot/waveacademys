@@ -147,15 +147,83 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "170. 150.", "solo": "107.", "carpeta": ["160.", "Sube: suma 10 cada vez.", "180: va entre el 190 y el 170."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("10 PAQUETES SON 100", [LD("CIEN", "<b>10 PAQUETES</b> DE 10 FORMAN 100. ES UNA <b>CENTENA</b>."),
+   LL("10, 20, 30… HASTA 100.", "100 ES UNA CAJA LLENA.")],
+   {"modo": "saltos", "de": 10}, {"modo": "decenas_op", "que": "contar10"}),
+ T("DESPUÉS DEL 100", [LD("SEGUIR CONTANDO", "DESPUÉS DEL 100 SEGUIMOS: <b>101, 102, 103…</b>"),
+   LL("100 Y 4 SUELTOS SON 104.", "DESPUÉS DEL 109 VIENE EL 110.")],
+   {"modo": "centenas", "max": 1, "min": 1}, {"modo": "centenas", "max": 1}),
+], "recuerda": [
+ RC("UNA CENTENA", "SON DIEZ PAQUETES DE DIEZ: CIEN.", "10 PAQUETES DE 10 = 100"),
+ RC("DESPUÉS DEL 100", "SEGUIMOS CONTANDO DE UNO EN UNO.", "100, 101, 102, 103"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("CAJAS, PAQUETES Y SUELTOS", [LD("CONTAR TODO", "CONTAMOS PRIMERO LAS <b>CAJAS</b> DE 100, DESPUÉS LOS <b>PAQUETES</b> DE 10 Y AL FINAL LOS <b>SUELTOS</b>."),
+   LL("1 CAJA, 5 PAQUETES Y 3 SUELTOS: 153.", "100 + 50 + 3 = 153.")],
+   {"modo": "centenas", "max": 1, "min": 1}, {"modo": "centenas", "max": 1}),
+ T("DEL 199 AL 200", [LD("DOS CAJAS", "DESPUÉS DEL <b>199</b> VIENE EL <b>200</b>: DOS CAJAS DE 100."),
+   LL("NO ES 1100.", "200 SE LEE DOSCIENTOS.")],
+   {"modo": "serie", "de": 1, "desde": 190, "hasta": 196}, {"modo": "serie", "de": 1, "desde": 150, "hasta": 200}),
+], "recuerda": [
+ RC("CONTAR TODO", "CAJAS DE CIEN, PAQUETES DE DIEZ Y SUELTOS DE UNO.", "1 CAJA, 7 PAQUETES Y 2: 172"),
+ RC("DOSCIENTOS", "DESPUÉS DEL 199 VIENE EL 200.", "198, 199, 200"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("SALTAR DE 10 EN 10", [LD("DE 10 EN 10", "SALTAR <b>DE 10 EN 10</b> ES SUMAR UN PAQUETE CADA VEZ."),
+   LL("130, 140, 150, 160.", "CAMBIA LA CIFRA DE LAS DECENAS.")],
+   {"modo": "serie", "de": 10, "desde": 100, "hasta": 150}, {"modo": "serie", "de": 10, "desde": 100, "hasta": 200}),
+ T("NO EMPIEZA EN 0", [LD("CUALQUIER NÚMERO", "PODEMOS SALTAR DE 10 EN 10 DESDE <b>CUALQUIER</b> NÚMERO."),
+   LL("104, 114, 124, 134.", "LA ÚLTIMA CIFRA NO CAMBIA.")],
+   {"modo": "serie", "de": 10, "desde": 101, "hasta": 149}, {"modo": "serie", "de": 10, "desde": 101, "hasta": 200}),
+], "recuerda": [
+ RC("DE 10 EN 10", "SUMAMOS DIEZ Y CAMBIA LA CIFRA DE LAS DECENAS.", "150, 160, 170"),
+ RC("DESDE CUALQUIER NÚMERO", "LA ÚLTIMA CIFRA QUEDA IGUAL.", "126, 136, 146"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("SERIES QUE SUBEN", [LD("SUBE", "UNA SERIE <b>SUBE</b> SI CADA NÚMERO ES MÁS GRANDE QUE EL ANTERIOR."),
+   LL("120, 130, 140: SUBE DE 10 EN 10.", "MIRÁ CUÁNTO CAMBIA CADA VEZ.")],
+   {"modo": "serie", "de": 10, "desde": 100, "hasta": 150}, {"modo": "serie", "de": 10, "dir": "sube", "desde": 100, "hasta": 200}),
+ T("SERIES QUE BAJAN", [LD("BAJA", "UNA SERIE <b>BAJA</b> SI CADA NÚMERO ES MÁS CHICO QUE EL ANTERIOR."),
+   LL("200, 190, 180: BAJA DE 10 EN 10.", "PARA SEGUIRLA, RESTAMOS.")],
+   {"modo": "serie", "de": 10, "dir": "baja", "desde": 150, "hasta": 200}, {"modo": "serie", "de": 10, "dir": "baja", "desde": 100, "hasta": 200}),
+], "recuerda": [
+ RC("SERIE QUE SUBE", "CADA NÚMERO ES MÁS GRANDE QUE EL ANTERIOR.", "130, 140, 150"),
+ RC("SERIE QUE BAJA", "CADA NÚMERO ES MÁS CHICO QUE EL ANTERIOR.", "190, 180, 170"),
+]}
+
 ACT = {
-"1": [N("📦 10 PAQUETES DE 10. ¿CUÁNTOS ALFAJORES SON?", 100, "10, 20, 30… 100.", n="recordar"),
-      N("ROSA TIENE 100 ALFAJORES Y LE TRAEN 4 MÁS. ¿CUÁNTOS TIENE?", 104, "101, 102, 103, 104.", n="aplicar")],
+"1": [N("📦 10 PAQUETES DE 10. ¿CUÁNTOS ALFAJORES SON?", 100, "10, 20, 30… 100.", n="recordar", **NEU("📦 10 PAQUETES DE 10. ¿CUÁNTAS GALLETAS SON?")),
+      N("ROSA TIENE 100 ALFAJORES Y LE TRAEN 4 MÁS. ¿CUÁNTOS TIENE?", 104, "101, 102, 103, 104.", n="aplicar", **NEU("ROSA TIENE 100 GALLETAS Y LE TRAEN 4 MÁS. ¿CUÁNTAS TIENE?")),
+      FB("COMPLETÁ: 107, 108, ___, 110", [["109"]], "108, 109, 110.", n="aplicar"),
+      MC("LEO CONTÓ 98, 99, 100, 1001. ¿QUÉ NÚMERO VA DESPUÉS DEL 100?", ["101", "1001", "110"], "101", "DESPUÉS DEL 100 VIENE EL 101.", n="error")],
 "2": [N("1 CAJA, 5 PAQUETES Y 3 SUELTOS. ¿CUÁNTOS SON?", 153, "100 + 50 + 3 = 153.", n="aplicar"),
-      MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 199?", ["200", "1.100", "190"], "200", "DESPUÉS DEL 199 VIENE EL 200.", n="recordar")],
+      MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 199?", ["200", "1.100", "190"], "200", "DESPUÉS DEL 199 VIENE EL 200.", n="recordar"),
+      UNIR("UNÍ CADA PEDIDO CON SU NÚMERO.", ["1 CAJA Y 2 PAQUETES", "1 CAJA Y 2 SUELTOS", "2 CAJAS"], ["200", "120", "102"], {"1 CAJA Y 2 PAQUETES": "120", "1 CAJA Y 2 SUELTOS": "102", "2 CAJAS": "200"}, "100 + 20, 100 + 2 Y 100 + 100.", n="analizar"),
+      N("[[problema]] ROSA ARMÓ 1 CAJA DE 100, 8 PAQUETES DE 10 Y 5 SUELTOS. ¿CUÁNTOS TIENE EN TOTAL?", 185, "100 + 80 + 5 = 185.", n="aplicar")],
 "3": [MC("DE 10 EN 10: 130, 140, 150, ___", ["160", "151", "250"], "160", "SUMAMOS UN PAQUETE.", n="aplicar"),
-      N("DE 10 EN 10 DESDE EL 104: 104, 114, ___", 124, "LA ÚLTIMA CIFRA SIGUE SIENDO 4.", n="aplicar")],
+      N("DE 10 EN 10 DESDE EL 104: 104, 114, ___", 124, "LA ÚLTIMA CIFRA SIGUE SIENDO 4.", n="aplicar"),
+      FB("COMPLETÁ DE 10 EN 10: 117, 127, ___, 147", [["137"]], "127 Y 10 MÁS SON 137.", n="aplicar"),
+      MC("SOFI CONTÓ DE 10 EN 10: 145, 155, 156. ¿QUÉ NÚMERO TENÍA QUE ESCRIBIR?", ["165", "156", "146"], "165", "155 Y 10 MÁS SON 165.", n="error")],
 "4": [MC("LA SERIE 160, 150, 140, ¿SUBE O BAJA?", ["SUBE", "BAJA"], "BAJA", "CADA VEZ RESTA 10.", n="analizar"),
-      ORD("ORDENÁ PARA QUE LA SERIE BAJE.", ["180", "200", "190"], ["200", "190", "180"], "DEL MÁS GRANDE AL MÁS CHICO.", n="aplicar")],
+      ORD("ORDENÁ PARA QUE LA SERIE BAJE.", ["180", "200", "190"], ["200", "190", "180"], "DEL MÁS GRANDE AL MÁS CHICO.", n="aplicar"),
+      CLAS("¿LA SERIE SUBE O BAJA?", ["110, 120, 130", "170, 160, 150", "195, 194, 193", "101, 102, 103"], ["SUBE", "BAJA"],
+           {"110, 120, 130": "SUBE", "170, 160, 150": "BAJA", "195, 194, 193": "BAJA", "101, 102, 103": "SUBE"}, "SI LOS NÚMEROS CRECEN, SUBE; SI SE ACHICAN, BAJA.", n="analizar"),
+      N("SEGUÍ LA SERIE QUE BAJA: 150, 140, 130, ___", 120, "CADA VEZ RESTA 10.", n="aplicar")],
 "5": [N("RELÁMPAGO. ¿QUÉ VIENE DESPUÉS DEL 100?", 101, "100, 101.", tiempo=30, n="recordar"),
       MC("RELÁMPAGO. ¿CUÁNTO ES 2 CAJAS DE 100?", ["200", "20"], "200", "100 Y 100 SON 200.", tiempo=30, n="recordar"),
       N("RELÁMPAGO. DE 10 EN 10: 170, 180, ___", 190, "SUMAMOS 10.", tiempo=30, n="aplicar"),
@@ -175,7 +243,7 @@ EXAMEN = [
  [4, N("SEGUÍ LA SERIE QUE BAJA: 200, 190, 180, ___", 170, "CADA VEZ RESTA 10.", n="aplicar")],
  [4, N("¿QUÉ NÚMERO VIENE ANTES DEL 100?", 99, "99, 100.", n="recordar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 1, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 1, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: la serie numérica hasta 200", "examen_titulo": "Nivel jefe: la serie numérica hasta 200",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-1.json"), "w", encoding="utf-8"), ensure_ascii=False)
