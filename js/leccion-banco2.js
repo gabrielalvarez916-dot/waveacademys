@@ -1475,6 +1475,9 @@
       return '<span class="lb-p1-pl ' + (v >= 10 ? 'bi' : 'mo') + (c ? ' on' : '') + '">' + (v >= 10 ? '💵' : '🪙') + '<b>$' + v + '</b>' + (c ? '<small>' + t + '</small>' : '') + '</span>'; }).join('') + '</div>';
   }
   function p1Desarmar(n) { var r = []; while (n >= 10) { r.push(10); n -= 10; } if (n >= 5) { r.push(5); n -= 5; } while (n > 0) { r.push(1); n--; } return r; }
+  // cuadro de 10 (dos filas de 5): a casilleros de un color, b de otro, el resto vacíos; nb = cuántos de b ya se ven
+  function p1Diez(a, b, nb) { var h = ''; nb = nb == null ? b : nb; for (var i = 0; i < 10; i++) h += '<span class="' + (i < a ? 'c1' : i < a + nb ? 'c2' : '') + '">' + (i < a ? '🔴' : i < a + nb ? '🔵' : '') + '</span>'; return '<div class="lb-p1-diez">' + h + '</div>'; }
+  var P1DADO = ['', '⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1497,6 +1500,8 @@
       dinero: p.que === 'pagar' ? ctrl('n', 'PRECIO', 6, 39, 1, 17) : p.que === 'falta' ? ctrl('n', 'PRECIO', 6, 20, 1, 12) + ctrl('d', 'DAS', 1, 19, 1, 10) : p.que === 'caro' ? ctrl('a', 'PRECIO 1', 1, 50, 1, 20) + ctrl('b', 'PRECIO 2', 1, 50, 1, 8) :
         ctrl('d', 'BILLETES DE $10', 0, 3, 1, 2) + ctrl('c', 'MONEDAS DE $5', 0, 1, 1, 1) + ctrl('u', 'MONEDAS DE $1', 0, 4, 1, 2),
       sumar: ctrl('a', 'PRIMER GRUPO', 1, 7, 1, 4) + ctrl('b', 'SEGUNDO GRUPO', 1, 5, 1, 3),
+      restar: ctrl('a', p.que === 'comparar' ? 'CHICOS' : 'HABÍA', 3, 10, 1, 8) + ctrl('b', p.que === 'comparar' ? 'VASOS' : 'SACAMOS', 1, p.que === 'comparar' ? 10 : 9, 1, 3),
+      diez: p.que === 'dados' ? ctrl('a', 'UN DADO', 1, 6, 1, 2) + ctrl('b', 'OTRO DADO', 1, 6, 1, 5) : ctrl('a', 'ROJOS', 1, 9, 1, 7),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1741,6 +1746,57 @@
         P.push({ vis: p1Big(v.a + ' + ' + v.b + ' = ' + tot2), txt: 'CONTAMOS TODO Y ESCRIBIMOS <b>' + tot2 + '</b>.' });
         return P;
       }
+      if (md === 'restar') {
+        var qr = p.que || 'sacar', ha = v.a, sb = Math.min(v.b, v.a), qd2 = ha - sb;
+        if (qr === 'comparar') {
+          var A2 = 'chico', B2 = 'vaso', mn3 = Math.min(v.a, v.b), df = Math.abs(v.a - v.b);
+          P.push({ vis: p1Parejas(v.a, A2, v.b, B2, 0), txt: 'HAY <b>' + v.a + '</b> CHICOS Y <b>' + v.b + '</b> VASOS.' });
+          P.push({ vis: p1Parejas(v.a, A2, v.b, B2, mn3), txt: 'UNIMOS <b>UNO CON UNO</b>: CADA CHICO CON UN VASO.' });
+          if (!df) { P.push({ vis: p1Parejas(v.a, A2, v.b, B2, mn3) + p1Big('HAY IGUAL'), txt: 'NO SOBRA NINGUNO: HAY IGUAL.' }); return P; }
+          P.push({ vis: p1Parejas(v.a, A2, v.b, B2, mn3, true), txt: 'SOBRAN <b>' + df + '</b> ' + (v.b > v.a ? 'VASOS' : 'CHICOS') + ' SIN PAREJA.' });
+          P.push({ vis: p1Parejas(v.a, A2, v.b, B2, mn3, true) + p1Big(Math.max(v.a, v.b) + ' − ' + mn3 + ' = ' + df), txt: 'HAY <b>' + df + ' MÁS</b> ' + (v.b > v.a ? 'VASOS QUE CHICOS' : 'CHICOS QUE VASOS') + '.' });
+          return P;
+        }
+        if (qr === 'atras') {
+          var opA = {}; opA[ha] = 'on';
+          P.push({ vis: p1Tren(qd2, ha, opA), txt: 'HABÍA <b>' + ha + '</b>. SE VAN ' + sb + ': CONTAMOS PARA ATRÁS.' });
+          for (i = 1; i <= sb; i++) { var opB = {}; opB[ha] = 'on'; for (var j = 1; j <= i; j++) opB[ha - j] = 'ant'; P.push({ vis: p1Tren(qd2, ha, opB), txt: 'SE VA ' + g(o, 'UNA', 'UNO') + ': <b>' + (ha - i) + '</b>.' }); }
+          P.push({ vis: p1Big('QUEDAN ' + qd2), txt: 'CONTAMOS ' + sb + ' PARA ATRÁS: QUEDAN <b>' + qd2 + '</b>.' });
+          return P;
+        }
+        P.push({ vis: p1Fila(ha, o, { hasta: ha }), txt: 'HABÍA <b>' + ha + '</b> ' + P1PL[o] + '.' });
+        if (qr === 'cuenta') {
+          P.push({ vis: p1Fila(ha, o, { tenue: qd2 }) + p1Big(ha + ' − ' + sb), txt: 'SACAMOS <b>' + sb + '</b>. EL SIGNO <b>−</b> SE LEE MENOS.' });
+          P.push({ vis: p1Fila(ha, o, { tenue: qd2, hasta: qd2 }) + p1Big(ha + ' − ' + sb + ' = ' + qd2), txt: 'CONTAMOS LOS QUE QUEDAN: <b>' + ha + ' − ' + sb + ' = ' + qd2 + '</b>.' });
+          return P;
+        }
+        for (i = 1; i <= sb; i++) P.push({ vis: p1Fila(ha, o, { tenue: ha - i }), txt: 'SACAMOS ' + g(o, 'UNA', 'UNO') + '. QUEDAN <b>' + (ha - i) + '</b>.' });
+        P.push({ vis: p1Fila(ha, o, { tenue: qd2, hasta: qd2 }) + p1Big('QUEDAN ' + qd2), txt: 'AL SACAR, EL GRUPO SE <b>ACHICA</b>: QUEDAN ' + qd2 + '.' });
+        return P;
+      }
+      if (md === 'diez') {
+        var qz = p.que || 'cuadro';
+        if (qz === 'dados') {
+          var gr2 = Math.max(v.a, v.b), ch2 = Math.min(v.a, v.b), Dd = '<p class="lb-p1-big lb-p1-dado">' + P1DADO[v.a] + ' ' + P1DADO[v.b] + '</p>';
+          P.push({ vis: Dd, txt: 'SALE <b>' + v.a + '</b> EN UN DADO Y <b>' + v.b + '</b> EN EL OTRO.' });
+          P.push({ vis: Dd + p1Big('EMPEZAMOS EN ' + gr2), txt: 'EMPEZAMOS POR EL <b>MÁS GRANDE</b>: ' + gr2 + '.' });
+          for (i = 1; i <= ch2; i++) P.push({ vis: Dd + p1Big(String(gr2 + i)), txt: 'SEGUIMOS CONTANDO: <b>' + (gr2 + i) + '</b>.' });
+          P.push({ vis: Dd + p1Big(v.a + ' + ' + v.b + ' = ' + (v.a + v.b)), txt: 'EN TOTAL: <b>' + (v.a + v.b) + '</b>.' });
+          return P;
+        }
+        var am = 10 - v.a;
+        P.push({ vis: p1Diez(v.a, 0), txt: 'EL CUADRO TIENE <b>10</b> LUGARES. HAY <b>' + v.a + '</b> ROJOS.' });
+        if (qz === 'falta') {
+          P.push({ vis: p1Diez(v.a, 0), txt: 'CONTAMOS LOS LUGARES <b>VACÍOS</b>.' });
+          P.push({ vis: p1Diez(v.a, am), txt: 'HAY <b>' + am + '</b> VACÍOS: AL ' + v.a + ' LE FALTAN ' + am + '.' });
+          P.push({ vis: p1Diez(v.a, am) + p1Big(v.a + ' + ' + am + ' = 10'), txt: 'EL <b>' + am + '</b> ES EL AMIGO DEL ' + v.a + ' PARA LLEGAR A 10.' });
+          return P;
+        }
+        for (i = 1; i <= am; i++) P.push({ vis: p1Diez(v.a, am, i), txt: 'PONEMOS UN AZUL: <b>' + (v.a + i) + '</b>.' });
+        P.push({ vis: p1Diez(v.a, am) + p1Big(v.a + ' + ' + am + ' = 10'), txt: 'EL CUADRO SE LLENÓ: <b>' + v.a + ' + ' + am + ' = 10</b>.' });
+        if (qz === 'parejas') P.push({ vis: p1Diez(am, v.a) + p1Big(am + ' + ' + v.a + ' = 10'), txt: 'SI LO DAMOS VUELTA, <b>' + am + ' + ' + v.a + '</b> TAMBIÉN ES 10.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -1833,6 +1889,20 @@
         else if (qs === 'cuenta') { c = '¿CUÁNTO ES <b>' + a + ' + ' + b + '</b>?'; h = p1Big(a + ' + ' + b + ' = ?'); }
         else { c = 'JUNTÁ LOS DOS GRUPOS. ¿CUÁNTOS HAY EN TOTAL?'; h = p1Grupo('', a, o) + p1Grupo('', b, o); }
         return { cons: c, html: h, campos: [{ v: t }], ayuda: qs === 'agregar' ? 'NO EMPIECES DE NUEVO: SEGUÍ CONTANDO DESDE ' + a + '.' : 'CONTÁ TODO JUNTO, DE A UNO.', bien: '¡MUY BIEN! ' + a + ' + ' + b + ' = ' + t + '.' }; }); }
+    if (md === 'restar') { var qr = p.que || 'sacar';
+      return respuesta(el, api, function () { var o = p1Obj(), a = R(4, 10), b = R(1, a - 1), c, h, r = a - b;
+        if (qr === 'comparar') { b = R(2, 9); while (b === a) b = R(2, 9); c = 'HAY <b>' + a + '</b> CHICOS Y <b>' + b + '</b> VASOS. ¿CUÁNTOS ' + (b > a ? 'VASOS' : 'CHICOS') + ' <b>SOBRAN</b>?'; h = p1Parejas(a, 'chico', b, 'vaso', 0); r = Math.abs(a - b); }
+        else if (qr === 'atras') { c = 'HABÍA <b>' + a + '</b> ' + P1PL[o] + '. SE VAN <b>' + b + '</b>. CONTÁ PARA ATRÁS: ¿CUÁNTOS QUEDAN?'; h = p1Tren(1, a); }
+        else if (qr === 'cuenta') { c = '¿CUÁNTO ES <b>' + a + ' − ' + b + '</b>?'; h = p1Big(a + ' − ' + b + ' = ?'); }
+        else { c = 'HAY ' + a + ' ' + P1PL[o] + '. SACAMOS <b>' + b + '</b>. ¿CUÁNTOS QUEDAN?'; h = p1Fila(a, o, { tenue: a - b }); }
+        return { cons: c, html: h, campos: [{ v: r }], ayuda: qr === 'comparar' ? 'UNÍ UNO CON UNO Y CONTÁ LOS QUE NO TIENEN PAREJA.' : 'CONTÁ LOS QUE QUEDAN O CONTÁ PARA ATRÁS DESDE ' + a + '.', bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
+    if (md === 'diez') { var qz = p.que || 'cuadro';
+      if (qz === 'parejas') return p1Elegir(el, api, function () { var a = R(1, 9), ok = a + ' + ' + (10 - a), ops = [ok]; while (ops.length < 3) { var x = R(1, 8), y = R(1, 8); if (x + y !== 10 && ops.indexOf(x + ' + ' + y) < 0) ops.push(x + ' + ' + y); }
+        return { cons: '¿QUÉ SUMA DA <b>10</b>?', ops: mezclar(ops), ok: ok, ayuda: 'PENSÁ EN EL CUADRO DE 10: ¿SE LLENA?', bien: '¡MUY BIEN! ' + ok + ' = 10.' }; });
+      return respuesta(el, api, function () { var a, b, c, h, r;
+        if (qz === 'dados') { a = R(1, 6); b = R(1, 6); r = a + b; c = 'SALE <b>' + a + '</b> Y <b>' + b + '</b>. ¿CUÁNTO ES EN TOTAL?'; h = '<p class="lb-p1-big lb-p1-dado">' + P1DADO[a] + ' ' + P1DADO[b] + '</p>'; }
+        else { a = R(1, 9); r = 10 - a; c = qz === 'falta' ? '¿CUÁNTO LE FALTA AL <b>' + a + '</b> PARA LLEGAR A 10?' : '<b>' + a + ' + ___ = 10</b>'; h = p1Diez(a, 0); }
+        return { cons: c, html: h, campos: [{ v: r }], ayuda: qz === 'dados' ? 'EMPEZÁ POR EL MÁS GRANDE Y SEGUÍ CONTANDO.' : 'CONTÁ LOS LUGARES VACÍOS DEL CUADRO.', bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -1899,6 +1969,7 @@
     '.lb-p1-r100w{padding:64px 18px 8px}.lb-p1-r100{position:relative;height:30px;border-top:3px solid #253638}.lb-p1-t{position:absolute;top:-3px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}.lb-p1-t i{width:2px;height:10px;background:#253638}.lb-p1-t b{font-size:.62rem;color:#4b6a6c}.lb-p1-m{position:absolute;top:-32px;transform:translateX(-50%);min-width:24px;padding:2px 4px;border-radius:10px;background:#087E83;color:#fff;font-weight:800;font-size:.75rem;text-align:center}.lb-p1-m.pa{background:#C29A1E;top:-60px}.lb-p1-m.pa:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:28px;background:#C29A1E}',
     '.lb-p1-pal{display:inline-block;width:6px;height:34px;background:#253638;border-radius:3px;margin:0 4px}.lb-p1-pl{position:relative;display:flex;flex-direction:column;align-items:center;padding:4px 6px;border-radius:10px;font-size:1.6rem;line-height:1.1}.lb-p1-pl b{font-size:.85rem;color:#253638}.lb-p1-pl.bi{background:#E8F5E1}.lb-p1-pl.mo{background:#FFF3C4}.lb-p1-pl.on{outline:3px solid #087E83}.lb-p1-pl small{position:absolute;right:-6px;top:-8px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 5px;font-size:.75rem}',
     '.lb-p1-pre{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border:3px solid #9dbdb9;border-radius:16px;font-size:2.2rem;background:#fff}.lb-p1-pre b{font-size:1.2rem;color:#253638}.lb-p1-pre.on{border-color:#087E83;background:#D7F0E9}',
+    '.lb-p1-diez{display:grid;grid-template-columns:repeat(5,46px);gap:4px;justify-content:center;margin:8px auto}.lb-p1-diez span{height:46px;display:grid;place-items:center;border:3px solid #253638;border-radius:8px;background:#fff;font-size:1.5rem}.lb-p1-diez span.c1{background:#FFE1D6}.lb-p1-diez span.c2{background:#D7E8FF}.lb-p1-dado{font-size:3.4rem;line-height:1}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);

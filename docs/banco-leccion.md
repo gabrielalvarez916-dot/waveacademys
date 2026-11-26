@@ -97,3 +97,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros_x` | ejercicio | cuadro (`que`: falta, fila, columna, bajar; `hasta`) · saltos (`de`) · redondo (`max`: después de un 9) · redondos (nombre de los redondos) · anterior_siguiente con `min`/`max` |
 | `primeros` / `primeros_x` (Misiones 5 y 6) | ejemplo / ejercicio | comparar2 (hasta 99, decenas primero) · ordenar3 (`orden`: asc, desc) · recta100 (`que`: ubicar o saltar con `dir`: adelante, atras) · decenas (`que`: contar, escribir, desarmar; ejercicio: contar con `max`, cuantas, armar, desarmar) |
 | `primeros` / `primeros_x` (Misiones 7 y 8) | ejemplo / ejercicio | dinero (`que`: contar, pagar, falta, caro; sin palabras de Argentina) · sumar (`que`: juntar, agregar, palitos, cuenta) |
+| `primeros` / `primeros_x` (Misiones 9 y 10) | ejemplo / ejercicio | restar (`que`: sacar, atras, comparar, cuenta) · diez (`que`: cuadro, falta, parejas, dados) |

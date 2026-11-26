@@ -39,7 +39,7 @@ N1 = {**ESTILO,
 "ojo": ["No cuentes las tachadas.", "Al sacar, quedan menos."],
 "resumen": [{"titulo": "Grupo", "texto": "Lo que había."}, {"titulo": "Sacar", "texto": "Quitar algunas."}, {"titulo": "Quedan", "texto": "Contamos las otras."}],
 "glosario": [{"palabra": "Sacar", "significado": "Quitar de un grupo."}, {"palabra": "Quedan", "significado": "Las que no sacamos."}],
-"carpeta": ["¿Cuántos vasos había?", "¿Cuántos vasos se sacan?", "¿Cuántos vasos quedan?"],
+"carpeta": ["¿Cuántos vasos había?", "¿Cuántos vasos se sacan?", "¿Cuántos vasos quedan en la mesa ahora?"],
 "respuestas_carpeta": [["8"], ["3"], ["5"]],
 "soluciones": {"incompleto": "2.", "solo": "5 lápices.", "carpeta": ["8.", "3.", "5."]},
 }
@@ -69,7 +69,7 @@ N2 = {**ESTILO,
 "ojo": ["Perder y gastar es sacar.", "Al final hay menos que al principio."],
 "resumen": [{"titulo": "Perder", "texto": "Se va algo."}, {"titulo": "Gastar", "texto": "Usamos algo."}, {"titulo": "Quedan", "texto": "Menos que antes."}],
 "glosario": [{"palabra": "Perder", "significado": "Ya no tener algo."}, {"palabra": "Gastar", "significado": "Usar algo hasta que no está."}],
-"carpeta": ["¿Cuántas estrellas tenía Sofi?", "¿Cuántas estrellas perdió?", "¿Cuántas estrellas le quedan?"],
+"carpeta": ["¿Cuántas estrellas tenía Sofi?", "¿Cuántas estrellas perdió?", "¿Cuántas estrellas le quedan a Sofi ahora?"],
 "respuestas_carpeta": [["9"], ["4"], ["5"]],
 "soluciones": {"incompleto": "5. 5.", "solo": "7 figuritas.", "carpeta": ["9.", "4.", "5."]},
 }
@@ -133,36 +133,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "6 − 4 = 2.", "solo": "10 − 3 = 7.", "carpeta": ["9.", "5.", "4."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("SACAR ALGUNAS", [LD("SACAR", "<b>SACAR</b> ES QUITAR COSAS DE UN GRUPO. EL GRUPO SE ACHICA."),
+   LL("HABÍA 5 MANZANAS Y SACAMOS 2.", "AHORA HAY MENOS QUE ANTES.")],
+   {"modo": "restar", "que": "sacar"}, {"modo": "restar", "que": "sacar"}),
+ T("LAS QUE QUEDAN", [LD("QUEDAN", "DESPUÉS DE SACAR, CONTAMOS SOLO LAS COSAS QUE <b>QUEDAN</b>."),
+   LL("NO CUENTES LAS QUE SACASTE.", "8 Y SACAMOS 3: QUEDAN 5.")],
+   {"modo": "restar", "que": "sacar"}, {"modo": "restar", "que": "sacar"}),
+], "recuerda": [
+ RC("SACAR", "ES QUITAR COSAS Y EL GRUPO SE ACHICA.", "5 MANZANAS Y SACAMOS 2"),
+ RC("QUEDAN", "SON LAS COSAS QUE SIGUEN EN EL GRUPO DESPUÉS DE SACAR.", "QUEDAN 3 MANZANAS"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("PERDER Y GASTAR", [LD("PERDER", "SI ALGO SE <b>PIERDE</b>, SE GASTA O SE VUELA, NOS QUEDAN MENOS."),
+   LL("TENÍA 6 GLOBOS Y SE VOLARON 2.", "COMER CARAMELOS TAMBIÉN ES SACAR.")],
+   {"modo": "restar", "que": "sacar"}, {"modo": "restar", "que": "sacar"}),
+ T("CONTAR PARA ATRÁS", [LD("PARA ATRÁS", "PODEMOS <b>CONTAR PARA ATRÁS</b> DESDE LO QUE HABÍA, UNO POR CADA COSA QUE SE VA."),
+   LL("HABÍA 8 Y SE VAN 3: 7, 6, 5.", "EL ÚLTIMO NÚMERO ES LO QUE QUEDA.")],
+   {"modo": "restar", "que": "atras"}, {"modo": "restar", "que": "atras"}),
+], "recuerda": [
+ RC("PERDER O GASTAR", "SON FORMAS DE SACAR: NOS QUEDAN MENOS.", "9 FIGURITAS Y PIERDO 2"),
+ RC("PARA ATRÁS", "CONTAMOS HACIA ATRÁS DESDE LO QUE HABÍA.", "9… 8, 7: QUEDAN 7"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("UNIR UNO CON UNO", [LD("PAREJAS", "PARA COMPARAR DOS GRUPOS, UNIMOS <b>UNO CON UNO</b>."),
+   LL("CADA CHICO CON UN VASO.", "NO HACE FALTA CONTAR TODO.")],
+   {"modo": "restar", "que": "comparar"}, {"modo": "restar", "que": "comparar"}),
+ T("CUÁNTOS MÁS", [LD("LO QUE SOBRA", "LOS QUE QUEDAN <b>SIN PAREJA</b> DICEN CUÁNTOS MÁS TIENE UN GRUPO."),
+   LL("7 PELOTAS Y 4 PELOTAS: SOBRAN 3.", "EL OTRO GRUPO TIENE 3 MENOS.")],
+   {"modo": "restar", "que": "comparar"}, {"modo": "restar", "que": "comparar"}),
+], "recuerda": [
+ RC("UNO CON UNO", "ARMAMOS PAREJAS PARA COMPARAR DOS GRUPOS.", "4 CHICOS Y 6 VASOS"),
+ RC("CUÁNTOS MÁS", "SON LOS QUE QUEDAN SIN PAREJA.", "SOBRAN 2 VASOS"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("EL SIGNO −", [LD("MENOS", "EL SIGNO <b>−</b> SE LEE MENOS Y QUIERE DECIR SACAR."),
+   LL("7 − 2 SE LEE SIETE MENOS DOS.", "PRIMERO VA LO QUE HABÍA.")],
+   {"modo": "restar", "que": "cuenta"}, {"modo": "restar", "que": "cuenta"}),
+ T("ESCRIBIR LA RESTA", [LD("LA CUENTA", "LA RESTA SE ESCRIBE: LO QUE HABÍA, <b>−</b>, LO QUE SACAMOS, <b>=</b>, LO QUE QUEDA."),
+   LL("9 − 4 = 5.", "SI SACAMOS TODO, QUEDA 0.")],
+   {"modo": "restar", "que": "cuenta"}, {"modo": "restar", "que": "cuenta"}),
+], "recuerda": [
+ RC("EL SIGNO −", "SE LEE MENOS Y QUIERE DECIR SACAR.", "8 − 3"),
+ RC("LA RESTA", "PRIMERO LO QUE HABÍA, DESPUÉS LO QUE SACAMOS Y EL RESULTADO.", "8 − 3 = 5"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("HAY 🍎🍎🍎🍎🍎. SACAMOS 2. ¿CUÁNTAS QUEDAN?", 3, "5 MENOS 2 SON 3."),
-      MC("SI SACAMOS COSAS DE UN GRUPO, EL GRUPO…", ["CRECE", "SE ACHICA", "QUEDA IGUAL"], "SE ACHICA", "AL SACAR QUEDAN MENOS.")],
-"2": [N("SOFI TIENE 6 GLOBOS. SE VUELAN 2. ¿CUÁNTOS LE QUEDAN?", 4, "6… 5, 4."),
-      N("TOMI TIENE 8 CARAMELOS. COME 3. ¿CUÁNTOS LE QUEDAN?", 5, "8… 7, 6, 5.")],
-"3": [N("SOFI TIENE 7 PELOTAS Y TOMI 4. ¿CUÁNTAS MÁS TIENE SOFI?", 3, "UNIMOS UNO CON UNO: SOBRAN 3."),
-      MC("⚽⚽⚽⚽⚽ Y ⭐⭐⭐ ¿QUÉ HAY MÁS?", ["PELOTAS", "ESTRELLAS", "HAY IGUAL"], "PELOTAS", "SOBRAN 2 PELOTAS.")],
-"4": [N("¿CUÁNTO ES 7 − 2?", 5, "7… 6, 5."),
-      MC("¿CÓMO SE ESCRIBE 9 VASOS Y SACAMOS 4?", ["9 − 4 = 5", "4 − 9 = 5", "9 + 4 = 5"], "9 − 4 = 5", "PRIMERO LO QUE HABÍA.")],
-"5": [N("RELÁMPAGO. ¿CUÁNTO ES 5 − 1?", 4, "5… 4.", tiempo=30),
-      N("RELÁMPAGO. HAY 10 GLOBOS. SE VUELAN 3. ¿CUÁNTOS QUEDAN?", 7, "10… 9, 8, 7.", tiempo=30),
-      N("RELÁMPAGO. SOFI TIENE 6 Y TOMI 4. ¿CUÁNTOS MÁS TIENE SOFI?", 2, "SOBRAN 2.", tiempo=30),
-      MC("RELÁMPAGO. ¿QUÉ SIGNO SE LEE MENOS?", ["−", "+", "="], "−", "EL − ES EL SIGNO DE RESTAR.", tiempo=30)],
+"1": [N("HAY 🍎🍎🍎🍎🍎. SACAMOS 2. ¿CUÁNTAS QUEDAN?", 3, "5 MENOS 2 SON 3.", **A),
+      MC("SI SACAMOS COSAS DE UN GRUPO, EL GRUPO…", ["CRECE", "SE ACHICA", "QUEDA IGUAL"], "SE ACHICA", "AL SACAR QUEDAN MENOS.", **RE),
+      MC("HABÍA 7 VASOS Y SACAMOS 2. LEO DICE QUE QUEDAN 9. ¿CUÁNTOS QUEDAN DE VERDAD?", ["5", "9", "7"], "5", "AL SACAR QUEDAN MENOS: 5.", **ER),
+      UNIR("UNÍ CADA GRUPO CON LO QUE QUEDA.", ["6 Y SACO 1", "4 Y SACO 3", "9 Y SACO 6"], ["3", "5", "1"], {"6 Y SACO 1": "5", "4 Y SACO 3": "1", "9 Y SACO 6": "3"}, "QUEDAN 5, 1 Y 3.", **A)],
+"2": [N("SOFI TIENE 6 GLOBOS. SE VUELAN 2. ¿CUÁNTOS LE QUEDAN?", 4, "6… 5, 4.", **A),
+      N("TOMI TIENE 8 CARAMELOS. COME 3. ¿CUÁNTOS LE QUEDAN?", 5, "8… 7, 6, 5.", **A),
+      FB("CONTÁ PARA ATRÁS DESDE EL 9: 9, 8, ___, 6, ___", [["7"], ["5"]], "9, 8, 7, 6, 5.", **A),
+      MC("[[problema]] ANA TENÍA 10 FIGURITAS Y PERDIÓ 4. ¿LE QUEDAN MÁS O MENOS DE 10?", ["MENOS DE 10", "MÁS DE 10", "10"], "MENOS DE 10", "SI PIERDE, LE QUEDAN MENOS: 6.", **AN)],
+"3": [N("SOFI TIENE 7 PELOTAS Y TOMI 4. ¿CUÁNTAS MÁS TIENE SOFI?", 3, "UNIMOS UNO CON UNO: SOBRAN 3.", **A),
+      MC("⚽⚽⚽⚽⚽ Y ⭐⭐⭐ ¿QUÉ HAY MÁS?", ["PELOTAS", "ESTRELLAS", "HAY IGUAL"], "PELOTAS", "SOBRAN 2 PELOTAS.", **A),
+      N("[[problema]] HAY 5 CHICOS Y 8 SILLAS. CADA CHICO SE SIENTA EN UNA. ¿CUÁNTAS SILLAS QUEDAN LIBRES?", 3, "UNA SILLA POR CHICO: SOBRAN 3.", **AN),
+      CLAS("¿SOBRAN O FALTAN VASOS?", ["4 CHICOS Y 6 VASOS", "5 CHICOS Y 3 VASOS", "2 CHICOS Y 5 VASOS"], ["SOBRAN VASOS", "FALTAN VASOS"],
+           {"4 CHICOS Y 6 VASOS": "SOBRAN VASOS", "5 CHICOS Y 3 VASOS": "FALTAN VASOS", "2 CHICOS Y 5 VASOS": "SOBRAN VASOS"}, "SI HAY MÁS VASOS QUE CHICOS, SOBRAN.", **AN)],
+"4": [N("¿CUÁNTO ES 7 − 2?", 5, "7… 6, 5.", **A),
+      MC("¿CÓMO SE ESCRIBE 9 VASOS Y SACAMOS 4?", ["9 − 4 = 5", "4 − 9 = 5", "9 + 4 = 5"], "9 − 4 = 5", "PRIMERO LO QUE HABÍA.", **A),
+      MC("JUAN ESCRIBIÓ 3 − 8 = 5 PARA 8 GLOBOS QUE PIERDEN 3. ¿CÓMO SE ESCRIBE BIEN?", ["8 − 3 = 5", "3 − 8 = 5", "8 + 3 = 5"], "8 − 3 = 5", "PRIMERO VA LO QUE HABÍA: 8.", **ER),
+      UNIR("UNÍ CADA RESTA CON SU RESULTADO.", ["6 − 2", "10 − 7", "5 − 5"], ["0", "4", "3"], {"6 − 2": "4", "10 − 7": "3", "5 − 5": "0"}, "6 − 2 = 4, 10 − 7 = 3 Y 5 − 5 = 0.", **A)],
+"5": [N("RELÁMPAGO. ¿CUÁNTO ES 5 − 1?", 4, "5… 4.", tiempo=30, **A),
+      N("RELÁMPAGO. HAY 10 GLOBOS. SE VUELAN 3. ¿CUÁNTOS QUEDAN?", 7, "10… 9, 8, 7.", tiempo=30, **A),
+      N("RELÁMPAGO. SOFI TIENE 6 Y TOMI 4. ¿CUÁNTOS MÁS TIENE SOFI?", 2, "SOBRAN 2.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿QUÉ SIGNO SE LEE MENOS?", ["−", "+", "="], "−", "EL − ES EL SIGNO DE RESTAR.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("HAY 6 MANZANAS. SACAMOS 2. ¿CUÁNTAS QUEDAN?", 4, "6 MENOS 2 SON 4.")],
- [1, MC("SACAR ES…", ["QUITAR COSAS DE UN GRUPO", "PONER MÁS COSAS", "JUNTAR DOS GRUPOS"], "QUITAR COSAS DE UN GRUPO", "AL SACAR QUEDAN MENOS.")],
- [1, N("⭐⭐⭐⭐⭐⭐⭐⭐ SACAMOS 5. ¿CUÁNTAS QUEDAN?", 3, "8 MENOS 5 SON 3.")],
- [2, N("SOFI TIENE 9 FIGURITAS. PIERDE 2. ¿CUÁNTAS LE QUEDAN?", 7, "9… 8, 7.")],
- [2, N("TOMI TIENE 5 CARAMELOS. COME 4. ¿CUÁNTOS LE QUEDAN?", 1, "5… 4, 3, 2, 1.")],
- [2, MC("SI PERDEMOS ALGO, NOS QUEDAN…", ["MÁS", "MENOS", "IGUAL"], "MENOS", "PERDER ES SACAR.")],
- [3, N("SOFI TIENE 8 GLOBOS Y TOMI 5. ¿CUÁNTOS MÁS TIENE SOFI?", 3, "UNIMOS UNO CON UNO: SOBRAN 3.")],
- [3, MC("🍎🍎🍎 Y 🍎🍎🍎🍎🍎 ¿QUÉ GRUPO TIENE MENOS?", ["EL DE 3", "EL DE 5", "HAY IGUAL"], "EL DE 3", "AL DE 3 LE FALTAN 2.")],
- [3, N("HAY 4 CHICOS Y 6 VASOS. ¿CUÁNTOS VASOS SOBRAN?", 2, "UN VASO POR CHICO: SOBRAN 2.")],
- [4, N("¿CUÁNTO ES 8 − 3?", 5, "8… 7, 6, 5.")],
- [4, MC("EL SIGNO − SE LEE…", ["MÁS", "MENOS", "IGUAL"], "MENOS", "ES EL SIGNO DE RESTAR.")],
- [4, MC("¿CÓMO SE ESCRIBE 10 GLOBOS Y SE VUELAN 6?", ["10 − 6 = 4", "6 − 10 = 4", "10 + 6 = 4"], "10 − 6 = 4", "PRIMERO LO QUE HABÍA.")],
- [4, N("¿CUÁNTO ES 6 − 6?", 0, "SI SACAMOS TODO, QUEDAN 0.")],
+ [1, N("HAY 6 MANZANAS. SACAMOS 2. ¿CUÁNTAS QUEDAN?", 4, "6 MENOS 2 SON 4.", **A)],
+ [1, MC("SACAR ES…", ["QUITAR COSAS DE UN GRUPO", "PONER MÁS COSAS", "JUNTAR DOS GRUPOS"], "QUITAR COSAS DE UN GRUPO", "AL SACAR QUEDAN MENOS.", **RE)],
+ [1, N("⭐⭐⭐⭐⭐⭐⭐⭐ SACAMOS 5. ¿CUÁNTAS QUEDAN?", 3, "8 MENOS 5 SON 3.", **A)],
+ [2, N("SOFI TIENE 9 FIGURITAS. PIERDE 2. ¿CUÁNTAS LE QUEDAN?", 7, "9… 8, 7.", **A)],
+ [2, N("TOMI TIENE 5 CARAMELOS. COME 4. ¿CUÁNTOS LE QUEDAN?", 1, "5… 4, 3, 2, 1.", **A)],
+ [2, FB("CONTÁ PARA ATRÁS: 7, 6, ___, 4", [["5"]], "7, 6, 5, 4.", **A)],
+ [3, N("SOFI TIENE 8 GLOBOS Y TOMI 5. ¿CUÁNTOS MÁS TIENE SOFI?", 3, "UNIMOS UNO CON UNO: SOBRAN 3.", **A)],
+ [3, MC("🍎🍎🍎 Y 🍎🍎🍎🍎🍎 ¿QUÉ GRUPO TIENE MENOS?", ["EL DE 3", "EL DE 5", "HAY IGUAL"], "EL DE 3", "AL DE 3 LE FALTAN 2.", **A)],
+ [3, N("[[problema]] HAY 4 CHICOS Y 6 VASOS. CADA UNO TOMA UN VASO. ¿CUÁNTOS VASOS SOBRAN?", 2, "UN VASO POR CHICO: SOBRAN 2.", **AN)],
+ [4, N("¿CUÁNTO ES 8 − 3?", 5, "8… 7, 6, 5.", **A)],
+ [4, MC("EL SIGNO − SE LEE…", ["MÁS", "MENOS", "IGUAL"], "MENOS", "ES EL SIGNO DE RESTAR.", **RE)],
+ [4, MC("MICA ESCRIBIÓ 6 − 10 = 4 PARA 10 GLOBOS Y SE VUELAN 6. ¿CÓMO SE ESCRIBE BIEN?", ["10 − 6 = 4", "6 − 10 = 4", "10 + 6 = 4"], "10 − 6 = 4", "PRIMERO LO QUE HABÍA.", **ER)],
+ [4, N("¿CUÁNTO ES 6 − 6?", 0, "SI SACAMOS TODO, QUEDAN 0.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 9, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 9, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: quitar y comparar", "examen_titulo": "Nivel jefe: quitar y comparar",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-9.json"), "w", encoding="utf-8"), ensure_ascii=False)

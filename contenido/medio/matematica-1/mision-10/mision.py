@@ -138,36 +138,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "8.", "solo": "Por ejemplo, 5 + 4 = 9.", "carpeta": ["3.", "5.", "8."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("EL CUADRO DE 10", [LD("DIEZ LUGARES", "EL <b>CUADRO DE 10</b> TIENE DOS FILAS DE 5: DIEZ LUGARES."),
+   LL("SI ESTÁ LLENO, HAY 10.", "PODEMOS LLENARLO CON DOS COLORES.")],
+   {"modo": "diez", "que": "cuadro"}, {"modo": "diez", "que": "cuadro"}),
+ T("MUCHAS SUMAS DAN 10", [LD("DOS COLORES", "SI DOS COLORES LLENAN EL CUADRO, SU SUMA <b>DA 10</b>."),
+   LL("7 ROJOS Y 3 AZULES: 7 + 3 = 10.", "6 + 4 Y 8 + 2 TAMBIÉN DAN 10.")],
+   {"modo": "diez", "que": "cuadro"}, {"modo": "diez", "que": "parejas"}),
+], "recuerda": [
+ RC("EL CUADRO DE 10", "TIENE DOS FILAS DE CINCO LUGARES.", "LLENO SON 10"),
+ RC("SUMAS QUE DAN 10", "SON LAS QUE LLENAN EL CUADRO CON DOS COLORES.", "6 + 4 = 10"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("LUGARES VACÍOS", [LD("LO QUE FALTA", "LOS LUGARES <b>VACÍOS</b> DEL CUADRO DICEN CUÁNTO FALTA PARA 10."),
+   LL("HAY 6: QUEDAN 4 VACÍOS.", "AL 6 LE FALTAN 4.")],
+   {"modo": "diez", "que": "falta"}, {"modo": "diez", "que": "falta"}),
+ T("EL AMIGO DEL 10", [LD("AMIGOS", "EL <b>AMIGO DEL 10</b> DE UN NÚMERO ES LO QUE LE FALTA PARA LLEGAR A 10."),
+   LL("EL AMIGO DEL 7 ES EL 3.", "EL AMIGO DEL 5 ES EL 5.")],
+   {"modo": "diez", "que": "falta"}, {"modo": "diez", "que": "cuadro"}),
+], "recuerda": [
+ RC("LO QUE FALTA", "SE VE CONTANDO LOS LUGARES VACÍOS DEL CUADRO.", "AL 6 LE FALTAN 4"),
+ RC("EL AMIGO DEL 10", "ES EL NÚMERO QUE COMPLETA HASTA 10.", "EL AMIGO DEL 8 ES 2"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("LAS PAREJAS DEL 10", [LD("PAREJAS", "LAS <b>PAREJAS DEL 10</b> SON 1 + 9, 2 + 8, 3 + 7, 4 + 6 Y 5 + 5."),
+   LL("SI LAS DAMOS VUELTA, SIGUEN DANDO 10.", "9 + 1 TAMBIÉN ES 10.")],
+   {"modo": "diez", "que": "parejas"}, {"modo": "diez", "que": "parejas"}),
+ T("PENSAR SIN CONTAR", [LD("DE MEMORIA", "CUANDO LAS SABEMOS <b>DE MEMORIA</b>, CONTESTAMOS RÁPIDO SIN CONTAR."),
+   LL("3 + ___ = 10: ES 7.", "PRACTICÁ HASTA QUE SALGA SOLO.")],
+   {"modo": "diez", "que": "parejas"}, {"modo": "diez", "que": "cuadro"}),
+], "recuerda": [
+ RC("PAREJAS DEL 10", "SON LAS SUMAS DE DOS NÚMEROS QUE DAN 10.", "2 + 8 Y 4 + 6"),
+ RC("DAR VUELTA", "CAMBIAR EL ORDEN NO CAMBIA EL RESULTADO.", "3 + 7 = 7 + 3 = 10"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("SUMAS CON DADOS", [LD("EL MÁS GRANDE", "PARA SUMAR DOS DADOS, EMPEZÁ POR EL <b>MÁS GRANDE</b> Y SEGUÍ CONTANDO."),
+   LL("5 Y 2: 5… 6, 7.", "ASÍ CONTÁS MENOS.")],
+   {"modo": "diez", "que": "dados"}, {"modo": "diez", "que": "dados"}),
+ T("SUMAS QUE NO LLEGAN A 10", [LD("MENOS DE 10", "NO TODAS LAS SUMAS DAN 10: ALGUNAS <b>NO LLEGAN</b>."),
+   LL("3 + 5 = 8: FALTAN 2 PARA 10.", "EN EL CUADRO QUEDAN LUGARES VACÍOS.")],
+   {"modo": "sumar", "que": "cuenta"}, {"modo": "sumar", "que": "cuenta"}),
+], "recuerda": [
+ RC("CON DADOS", "EMPEZAMOS POR EL MÁS GRANDE Y SEGUIMOS CONTANDO.", "6 Y 3: 7, 8, 9"),
+ RC("NO LLEGAN A 10", "SI QUEDAN LUGARES VACÍOS, LA SUMA ES MENOS DE 10.", "4 + 4 = 8"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("¿CUÁNTO ES 6 + 4?", 10, "6 Y 4 LLENAN EL CUADRO DE 10."),
-      MC("¿QUÉ SUMA DA 10?", ["7 + 3", "5 + 3", "6 + 2"], "7 + 3", "7 Y 3 SON 10.")],
-"2": [N("CAEN 8 BOLOS DE 10. ¿CUÁNTOS QUEDAN PARADOS?", 2, "8 + 2 = 10."),
-      N("¿CUÁNTO LE FALTA AL 6 PARA LLEGAR A 10?", 4, "6 + 4 = 10.")],
-"3": [N("5 + ___ = 10", 5, "5 Y 5 SON 10."),
-      MC("SI 3 + 7 = 10, ENTONCES 7 + 3 ES…", ["10", "4", "37"], "10", "DAR VUELTA NO CAMBIA EL RESULTADO.")],
-"4": [N("SALE 4 EN UN DADO Y 2 EN EL OTRO. ¿CUÁNTO ES?", 6, "4… 5, 6."),
-      N("CAEN 5 BOLOS Y DESPUÉS 3. ¿CUÁNTOS CAYERON?", 8, "5… 6, 7, 8.")],
-"5": [N("RELÁMPAGO. ¿CUÁNTO ES 9 + 1?", 10, "9 Y 1 SON 10.", tiempo=30),
-      N("RELÁMPAGO. 2 + ___ = 10", 8, "2 Y 8 SON 10.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 3 + 4?", 7, "4… 5, 6, 7.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁL ES EL AMIGO DEL 10 DEL 7?", ["3", "7", "10"], "3", "7 + 3 = 10.", tiempo=30)],
+"1": [N("¿CUÁNTO ES 6 + 4?", 10, "6 Y 4 LLENAN EL CUADRO DE 10.", **A),
+      MC("¿QUÉ SUMA DA 10?", ["7 + 3", "5 + 3", "6 + 2"], "7 + 3", "7 Y 3 SON 10.", **A),
+      CLAS("¿DA 10 O NO DA 10?", ["8 + 2", "4 + 5", "1 + 9", "3 + 3"], ["DA 10", "NO DA 10"],
+           {"8 + 2": "DA 10", "4 + 5": "NO DA 10", "1 + 9": "DA 10", "3 + 3": "NO DA 10"}, "8 + 2 Y 1 + 9 LLENAN EL CUADRO.", **AN),
+      MC("LEO DICE QUE 5 + 4 DA 10. ¿CUÁNTO DA DE VERDAD?", ["9", "10", "54"], "9", "5 Y 4 SON 9: FALTA 1 PARA 10.", **ER)],
+"2": [N("CAEN 8 BOLOS DE 10. ¿CUÁNTOS QUEDAN PARADOS?", 2, "8 + 2 = 10.", **A),
+      N("¿CUÁNTO LE FALTA AL 6 PARA LLEGAR A 10?", 4, "6 + 4 = 10.", **A),
+      UNIR("UNÍ CADA NÚMERO CON SU AMIGO DEL 10.", ["7", "2", "5"], ["8", "5", "3"], {"7": "3", "2": "8", "5": "5"}, "7 + 3, 2 + 8 Y 5 + 5 DAN 10.", **A),
+      N("[[problema]] SOFI QUIERE JUNTAR 10 FIGURITAS Y YA TIENE 3. ¿CUÁNTAS LE FALTAN?", 7, "3 + 7 = 10.", **AN)],
+"3": [FB("COMPLETÁ: 5 + ___ = 10", [["5"]], "5 Y 5 SON 10.", **A),
+      MC("SI 3 + 7 = 10, ENTONCES 7 + 3 ES…", ["10", "4", "37"], "10", "DAR VUELTA NO CAMBIA EL RESULTADO.", **A),
+      UNIR("UNÍ CADA PAREJA DEL 10.", ["1 +", "4 +", "8 +"], ["2", "9", "6"], {"1 +": "9", "4 +": "6", "8 +": "2"}, "1 + 9, 4 + 6 Y 8 + 2.", **A),
+      MC("TOMI DICE QUE 6 + 4 Y 4 + 6 DAN DISTINTO. ¿TIENE RAZÓN?", ["NO, LAS DOS DAN 10", "SÍ, DAN DISTINTO"], "NO, LAS DOS DAN 10", "DAR VUELTA NO CAMBIA EL RESULTADO.", **ER)],
+"4": [N("SALE 4 EN UN DADO Y 2 EN EL OTRO. ¿CUÁNTO ES?", 6, "4… 5, 6.", **A),
+      N("CAEN 5 BOLOS Y DESPUÉS 3. ¿CUÁNTOS CAYERON?", 8, "5… 6, 7, 8.", **A),
+      MC("PARA SUMAR 2 + 6, ¿DESDE QUÉ NÚMERO CONVIENE EMPEZAR A CONTAR?", ["DESDE EL 6", "DESDE EL 2", "DESDE EL 1"], "DESDE EL 6", "EMPEZAMOS POR EL MÁS GRANDE: 7, 8.", **AN),
+      CLAS("¿LLEGA A 10 O NO LLEGA?", ["3 + 5", "6 + 4", "2 + 2"], ["LLEGA A 10", "NO LLEGA"], {"3 + 5": "NO LLEGA", "6 + 4": "LLEGA A 10", "2 + 2": "NO LLEGA"}, "SOLO 6 + 4 LLENA EL CUADRO.", **A)],
+"5": [N("RELÁMPAGO. ¿CUÁNTO ES 9 + 1?", 10, "9 Y 1 SON 10.", tiempo=30, **A),
+      N("RELÁMPAGO. 2 + ___ = 10", 8, "2 Y 8 SON 10.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 3 + 4?", 7, "4… 5, 6, 7.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CUÁL ES EL AMIGO DEL 10 DEL 7?", ["3", "7", "10"], "3", "7 + 3 = 10.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("¿CUÁNTO ES 8 + 2?", 10, "8 Y 2 SON 10.")],
- [1, MC("¿CUÁNTOS LUGARES TIENE EL CUADRO DE 10?", ["5", "10", "2"], "10", "DOS FILAS DE 5.")],
- [1, MC("¿QUÉ SUMA DA 10?", ["4 + 6", "4 + 4", "3 + 5"], "4 + 6", "4 Y 6 SON 10.")],
- [2, N("¿CUÁNTO LE FALTA AL 9 PARA LLEGAR A 10?", 1, "9 + 1 = 10.")],
- [2, N("CAEN 3 BOLOS DE 10. ¿CUÁNTOS QUEDAN PARADOS?", 7, "3 + 7 = 10.")],
- [2, N("¿CUÁNTO LE FALTA AL 4 PARA LLEGAR A 10?", 6, "4 + 6 = 10.")],
- [3, N("1 + ___ = 10", 9, "1 Y 9 SON 10.")],
- [3, N("¿CUÁNTO ES 5 + 5?", 10, "5 Y 5 SON 10.")],
- [3, MC("SI 2 + 8 = 10, ENTONCES 8 + 2 ES…", ["6", "10", "28"], "10", "DAR VUELTA NO CAMBIA EL RESULTADO.")],
- [4, N("SALE 6 EN UN DADO Y 3 EN EL OTRO. ¿CUÁNTO ES?", 9, "6… 7, 8, 9.")],
- [4, N("¿CUÁNTO ES 2 + 5?", 7, "5… 6, 7.")],
- [4, MC("PARA SUMAR 1 + 6, CONVIENE EMPEZAR EN…", ["1", "6"], "6", "EMPEZAMOS POR EL GRANDE: 7.")],
- [4, N("CAEN 4 BOLOS Y DESPUÉS 4. ¿CUÁNTOS CAYERON?", 8, "4… 5, 6, 7, 8.")],
+ [1, N("¿CUÁNTO ES 8 + 2?", 10, "8 Y 2 SON 10.", **A)],
+ [1, MC("¿CUÁNTOS LUGARES TIENE EL CUADRO DE 10?", ["5", "10", "2"], "10", "DOS FILAS DE 5.", **RE)],
+ [1, MC("¿QUÉ SUMA DA 10?", ["4 + 6", "4 + 4", "3 + 5"], "4 + 6", "4 Y 6 SON 10.", **A)],
+ [2, N("¿CUÁNTO LE FALTA AL 9 PARA LLEGAR A 10?", 1, "9 + 1 = 10.", **A)],
+ [2, N("CAEN 3 BOLOS DE 10. ¿CUÁNTOS QUEDAN PARADOS?", 7, "3 + 7 = 10.", **A)],
+ [2, N("[[problema]] EN EL CUADRO DE 10 HAY 4 ESTRELLAS. ¿CUÁNTOS LUGARES QUEDAN VACÍOS?", 6, "4 + 6 = 10.", **AN)],
+ [3, FB("COMPLETÁ: 1 + ___ = 10", [["9"]], "1 Y 9 SON 10.", **A)],
+ [3, N("¿CUÁNTO ES 5 + 5?", 10, "5 Y 5 SON 10.", **A)],
+ [3, MC("SI 2 + 8 = 10, ENTONCES 8 + 2 ES…", ["6", "10", "28"], "10", "DAR VUELTA NO CAMBIA EL RESULTADO.", **A)],
+ [4, N("SALE 6 EN UN DADO Y 3 EN EL OTRO. ¿CUÁNTO ES?", 9, "6… 7, 8, 9.", **A)],
+ [4, N("¿CUÁNTO ES 2 + 5?", 7, "5… 6, 7.", **A)],
+ [4, MC("JUAN SUMÓ 1 + 6 EMPEZANDO A CONTAR DESDE EL 1. ¿DESDE DÓNDE CONVENÍA EMPEZAR?", ["DESDE EL 6", "DESDE EL 1"], "DESDE EL 6", "EMPEZAMOS POR EL GRANDE: 7.", **ER)],
+ [4, N("CAEN 4 BOLOS Y DESPUÉS 4. ¿CUÁNTOS CAYERON?", 8, "4… 5, 6, 7, 8.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 10, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 10, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: sumas y complementos a 10", "examen_titulo": "Nivel jefe: sumas y complementos a 10",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-10.json"), "w", encoding="utf-8"), ensure_ascii=False)
