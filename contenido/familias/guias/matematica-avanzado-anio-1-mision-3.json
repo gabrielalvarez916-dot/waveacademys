@@ -1,0 +1,132 @@
+{
+  "nivel": "Nivel Avanzado",
+  "anio": "Año 1",
+  "materia": "Matemática II",
+  "mision": 3,
+  "titulo": "Potenciación y radicación con números racionales",
+  "edad_orientativa": "Adolescentes de nivel secundario inicial. Actividades de estrategia, análisis y argumentación, sin consignas infantilizadas.",
+  "lecciones": [
+    {
+      "leccion": 1,
+      "titulo": "Potencias de exponente entero y sus propiedades",
+      "para_que_sirve": "Se trabaja qué representa una potencia, el exponente cero, potencias de fracciones y las propiedades del producto, cociente y potencia de una potencia con igual base.",
+      "actividad": {
+        "titulo": "Laboratorio de simplificación: encontrá el camino más corto",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con expresiones y resultados.",
+        "preparacion": "Escriban expresiones: 2³ × 2⁴; 5⁶ ÷ 5²; ((1/2)²)³; (2/3)²; 7⁰. En otras tarjetas, resultados: 2⁷; 5⁴; (1/2)⁶; 4/9; 1.",
+        "como_jugar": "En cada turno se revela una expresión. El jugador debe nombrar la propiedad antes de resolver; el rival audita que se cumplan sus condiciones. Gana quien consiga más simplificaciones correctas y justificadas.",
+        "pasos": [
+          "Revelen 2³ × 2⁴. El jugador debe reconocer producto de potencias de igual base y sumar exponentes: 2⁷.",
+          "Revelen 5⁶ ÷ 5². Debe reconocer cociente de igual base y restar exponentes: 5⁴.",
+          "Para ((1/2)²)³, se multiplican los exponentes: (1/2)⁶.",
+          "Para (2/3)², se elevan numerador y denominador: 4/9.",
+          "Para 7⁰, se aplica que todo número distinto de cero elevado a cero vale 1.",
+          "El rival puede impugnar una propiedad mal aplicada, pero debe explicar qué condición no se cumple.",
+          "Cambien los roles y creen una expresión nueva para que el otro la resuelva."
+        ],
+        "ejemplo_resuelto": "((1/2)²)³ = (1/2)⁶ = 1/64. Es una potencia elevada a otra potencia: se multiplican los exponentes.",
+        "reglas": [
+          "Producto de potencias de igual base: se suman exponentes.",
+          "Cociente de potencias de igual base: se restan exponentes.",
+          "Potencia de una potencia: se multiplican exponentes.",
+          "Solo se suman o restan exponentes cuando las bases son iguales.",
+          "Una fracción elevada a una potencia eleva numerador y denominador."
+        ],
+        "orientaciones_adulto": "Pedí que nombre la propiedad antes de operar. Si aplica una regla con bases distintas, preguntá qué condición exige. Si confunde (2/3)² con 4/3, que escriba la multiplicación de la fracción por sí misma.",
+        "cierre": "Que invente una expresión en la que se pueda aplicar una propiedad y otra parecida en la que no, y explique por qué."
+      }
+    },
+    {
+      "leccion": 2,
+      "titulo": "Exponentes negativos",
+      "para_que_sirve": "Se aborda el exponente negativo como inversa de la potencia positiva, aplicado a bases enteras y fraccionarias y a cálculos combinados. El signo negativo del exponente no vuelve negativo el resultado.",
+      "actividad": {
+        "titulo": "Desactivá el error: protocolo de exponentes negativos",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con potencias y afirmaciones.",
+        "preparacion": "Escriban potencias: 2⁻³; 10⁻²; (1/2)⁻²; (3/4)⁻¹. En tarjetas separadas escriban errores: «2⁻³ = −8»; «(1/2)⁻² = 1/4»; «(3/4)⁻¹ = 3/4».",
+        "como_jugar": "En cada ronda se debe calcular una potencia y evaluar una afirmación. Se puntúa la detección del error y la explicación de la inversión.",
+        "pasos": [
+          "Revelen 2⁻³ y «2⁻³ = −8». Reescriban: 2⁻³ = 1/2³ = 1/8. La afirmación es falsa.",
+          "Para (1/2)⁻², inviertan la base: 2² = 4.",
+          "Para (3/4)⁻¹, inviertan la fracción: 4/3.",
+          "Para 10⁻², escriban 1/10² = 1/100.",
+          "En cada ronda, el rival debe explicar por qué el signo menos del exponente no significa que el resultado sea negativo.",
+          "Cambien los roles y creen una tarjeta trampa nueva."
+        ],
+        "ejemplo_resuelto": " (1/2)⁻² = (2/1)² = 4. El exponente negativo invierte la base; luego se aplica el exponente positivo.",
+        "reglas": [
+          "a⁻ⁿ = 1/aⁿ, con a distinto de cero.",
+          "(a/b)⁻ⁿ = (b/a)ⁿ, con a y b distintos de cero.",
+          "El signo menos del exponente no determina el signo del resultado.",
+          "Después de invertir, todavía hay que aplicar la potencia."
+        ],
+        "orientaciones_adulto": "Si aparece −8 como resultado de 2⁻³, pedí que reescriba la potencia como fracción. Si invierte la base pero no eleva, preguntá qué indica el valor absoluto del exponente.",
+        "cierre": "Comparen 2⁻² y (−2)². Debe calcular ambos y explicar por qué uno vale 1/4 y el otro 4."
+      }
+    },
+    {
+      "leccion": 3,
+      "titulo": "Radicación de números y fracciones",
+      "para_que_sirve": "Se estudia la raíz como operación inversa de la potencia, raíces de fracciones y productos, y la propiedad que no puede aplicarse a sumas ni restas.",
+      "actividad": {
+        "titulo": "Peritaje de raíces: propiedad válida o falsa",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con expresiones y afirmaciones.",
+        "preparacion": "Preparen tarjetas: √(9/16); ∛(8/27); √4 × √9; √(9 + 16); √(1/25). Añadan afirmaciones sobre la raíz de un producto, una fracción y una suma.",
+        "como_jugar": "Los jugadores actúan como peritos: deben validar una propiedad con un ejemplo o refutarla con un contraejemplo, y luego resolver expresiones.",
+        "pasos": [
+          "Evalúen «la raíz de una fracción puede calcularse arriba y abajo»: √(9/16) = 3/4.",
+          "Evalúen «la raíz se distribuye en el producto»: √4 × √9 = 2 × 3 = 6 y √36 = 6.",
+          "Refuten «la raíz se distribuye en la suma»: √(9 + 16) = 5, pero √9 + √16 = 7.",
+          "Resuelvan ∛(8/27) = 2/3 y √(1/25) = 1/5.",
+          "Cada jugador inventa un ejemplo que confirme una propiedad y otro que refute una regla falsa."
+        ],
+        "ejemplo_resuelto": "√(9 + 16) = √25 = 5, mientras que √9 + √16 = 3 + 4 = 7. Por lo tanto, la raíz no se distribuye en la suma.",
+        "reglas": [
+          "La raíz de un producto puede expresarse como producto de raíces cuando están definidas en los reales.",
+          "La raíz de un cociente puede calcularse como cociente de raíces cuando corresponde.",
+          "La raíz no se distribuye en una suma ni en una resta.",
+          "Para hallar una raíz, se busca qué número elevado al índice produce el radicando."
+        ],
+        "orientaciones_adulto": "Pedí que pruebe las afirmaciones con números concretos. Si confunde √(9/16) con 9/4, que calcule por separado √9 y √16.",
+        "cierre": "Que escriba una igualdad falsa relacionada con raíces y la refute con un contraejemplo propio."
+      }
+    },
+    {
+      "leccion": 4,
+      "titulo": "Notación científica",
+      "para_que_sirve": "Se aprende a expresar números grandes y pequeños como a × 10ⁿ, convertirlos a forma decimal, comparar exponentes y multiplicar expresiones ajustando el coeficiente.",
+      "actividad": {
+        "titulo": "Centro de datos: clasificá magnitudes extremas",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos",
+        "materiales": "Papel, lápiz y tarjetas con números decimales y expresiones en notación científica.",
+        "preparacion": "Preparen tarjetas: 4.500.000; 0,00032; 300; 7.800.000; 0,0005; 6 × 10⁷; 3,2 × 10⁻⁴; 3 × 10². Escriban aparte las equivalencias.",
+        "como_jugar": "El objetivo es emparejar equivalencias, ordenar magnitudes y resolver una multiplicación. Cada respuesta debe respetar que el coeficiente esté entre 1 y 10.",
+        "pasos": [
+          "Transformen 4.500.000: la coma se desplaza seis lugares a la izquierda, 4,5 × 10⁶.",
+          "Transformen 0,00032: la coma se desplaza cuatro lugares a la derecha, 3,2 × 10⁻⁴.",
+          "Emparejen los números con sus expresiones equivalentes.",
+          "Expliquen por qué 45 × 10⁵ no está normalizada: el coeficiente 45 no está entre 1 y 10.",
+          "Resuelvan (2 × 10³) × (3 × 10⁴): 6 × 10⁷.",
+          "Resuelvan (5 × 10²) × (4 × 10³): 20 × 10⁵ = 2 × 10⁶.",
+          "Ordenen las magnitudes de menor a mayor y comprueben las equivalencias."
+        ],
+        "ejemplo_resuelto": "(5 × 10²) × (4 × 10³) = 20 × 10⁵ = 2 × 10⁶. Como 20 no está entre 1 y 10, se ajusta el coeficiente y aumenta un exponente.",
+        "reglas": [
+          "El coeficiente de la notación científica debe ser mayor o igual que 1 y menor que 10.",
+          "Al multiplicar potencias de 10 de igual base se suman exponentes.",
+          "Si el coeficiente queda fuera del intervalo, se ajusta y se modifica el exponente.",
+          "El exponente positivo representa desplazamientos hacia números grandes; el negativo, hacia números pequeños."
+        ],
+        "orientaciones_adulto": "Si el exponente queda con signo incorrecto, preguntá hacia qué lado se desplazó la coma. Si escribe 45 × 10⁵, pedí que revise la condición del coeficiente.",
+        "cierre": "Que invente un número muy pequeño, lo exprese en notación científica y explique por qué su exponente es negativo."
+      }
+    }
+  ]
+}
