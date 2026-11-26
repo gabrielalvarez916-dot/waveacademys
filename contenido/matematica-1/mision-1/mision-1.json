@@ -1,1 +1,2025 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 1, "practica": "Práctica general: sistemas de numeración", "examen_titulo": "Nivel jefe: sistemas de numeración", "niveles": {"1": {"objetivo": "Vas a poder explicar por qué nuestro sistema es decimal y posicional, leer y escribir números grandes y descomponerlos de forma aditiva y multiplicativa.", "vas_a_ver": ["Las 10 cifras y la base 10", "Agrupar de a 10: unidades, decenas, centenas", "El valor posicional: la misma cifra vale distinto según su lugar", "Leer y escribir números de hasta 12 cifras", "Descomposición aditiva y multiplicativa"], "secciones": [{"etapa": 1, "titulo": "Un sistema de base 10", "bloques": [{"tipo": "definicion", "titulo": "Sistema decimal", "texto": "Usamos <b>10 cifras</b> (0, 1, 2, …, 9) para escribir cualquier número, por grande que sea. Por eso se dice que es un sistema <b>decimal</b> o de <b>base 10</b>."}, {"tipo": "parrafo", "texto": "Cuando juntamos 10 elementos formamos un grupo que <b>pasa al lugar de la izquierda</b>: 10 unidades forman 1 decena, 10 decenas forman 1 centena y 10 centenas forman 1 unidad de mil."}, {"tipo": "ejemplo", "titulo": "Escribir 23 caramelos", "texto": "Agrupamos de a 10.", "items": ["Con 23 caramelos se arman 2 grupos de 10 y sobran 3.", "Los 2 grupos van al lugar de las decenas y los 3 sueltos, al de las unidades.", "Se escribe 23: 2 decenas y 3 unidades."]}]}, {"etapa": 1, "titulo": "Valor posicional", "bloques": [{"tipo": "definicion", "titulo": "Valor posicional", "texto": "El valor de una cifra <b>depende del lugar que ocupa</b>. En 353, el 3 de la izquierda vale 300 y el 3 de la derecha vale 3."}, {"tipo": "tabla", "titulo": "Valor de cada cifra en 4.808", "columnas": ["Cifra", "Lugar", "Valor"], "filas": [["4", "Unidades de mil", "4.000"], ["8", "Centenas", "800"], ["0", "Decenas", "0"], ["8", "Unidades", "8"]], "iguales": true, "texto": "El mismo 8 vale 800 o 8 según dónde esté."}, {"tipo": "importante", "titulo": "El cero", "texto": "El 0 marca un lugar vacío. En 4.808 no hay decenas, pero el 0 hace falta para que el 8 de las centenas no se corra de lugar."}]}, {"etapa": 2, "titulo": "Números grandes", "bloques": [{"tipo": "parrafo", "texto": "Para leer un número grande se separan las cifras <b>de a tres, de derecha a izquierda</b>: unidades, miles, millones y miles de millones. Cada grupo se lee como un número de hasta tres cifras y se le agrega su nombre."}, {"tipo": "tabla", "titulo": "Un número de 12 cifras", "columnas": ["Miles de millones", "Millones", "Miles", "Unidades"], "filas": [["845", "302", "017", "650"]], "iguales": true, "texto": "Se lee: ochocientos cuarenta y cinco mil trescientos dos millones diecisiete mil seiscientos cincuenta."}]}, {"etapa": 2, "titulo": "Descomponer un número", "bloques": [{"tipo": "definicion", "titulo": "Descomposición aditiva", "texto": "Escribir el número como <b>suma de los valores de sus cifras</b>: 3.506 = 3.000 + 500 + 6."}, {"tipo": "definicion", "titulo": "Descomposición multiplicativa", "texto": "Cada valor se escribe como <b>cifra por 1, 10, 100, 1.000…</b>: 3.506 = 3 × 1.000 + 5 × 100 + 6 × 1."}]}], "ejemplo_completo": {"titulo": "Leer y descomponer 60.723", "planteo": "Leé el número y hacé las dos descomposiciones.", "pasos": ["Separamos de a tres desde la derecha: 60 | 723.", "Se lee: sesenta mil setecientos veintitrés.", "Aditiva: 60.000 + 700 + 20 + 3.", "Multiplicativa: 6 × 10.000 + 7 × 100 + 2 × 10 + 3 × 1.", "El 0 de las unidades de mil vale 0, por eso no se escribe en la descomposición."]}, "ejemplo_incompleto": {"titulo": "Descomponer 9.045", "planteo": "Completá los espacios.", "pasos": ["Aditiva: 9.000 + ___ + 5.", "Multiplicativa: 9 × ___ + 4 × 10 + 5 × 1.", "El 0 está en el lugar de las ___ ."]}, "ejemplo_solo": {"titulo": "7.250.008", "planteo": "Escribí cómo se lee y hacé la descomposición aditiva."}, "tip": {"titulo": "Contá lugares desde la derecha", "texto": "Para saber cuánto vale una cifra, contá desde la derecha: 1.º unidades, 2.º decenas, 3.º centenas, 4.º unidades de mil…"}, "ojo": ["Olvidar el cero: cuatro mil cinco se escribe 4.005, no 45.", "Sumar las cifras en vez de sus valores: 352 no es 3 + 5 + 2, es 300 + 50 + 2."], "resumen": [{"titulo": "Base 10", "texto": "10 cifras. Cada 10 se forma un grupo que pasa a la izquierda."}, {"titulo": "Valor posicional", "texto": "En 353, el primer 3 vale 300 y el último, 3."}, {"titulo": "Números grandes", "texto": "Se separan de a tres desde la derecha."}, {"titulo": "Descomponer", "texto": "3.506 = 3.000 + 500 + 6 = 3 × 1.000 + 5 × 100 + 6 × 1."}], "glosario": [{"palabra": "Cifra", "significado": "Cada uno de los símbolos 0 a 9 con que se escriben los números."}, {"palabra": "Base", "significado": "De a cuánto se agrupa. En el sistema decimal, de a 10."}, {"palabra": "Valor posicional", "significado": "Lo que vale una cifra según el lugar que ocupa."}, {"palabra": "Decena, centena", "significado": "Grupo de 10 y grupo de 100."}, {"palabra": "Descomposición", "significado": "Escribir un número separado en partes según sus cifras."}], "carpeta": ["¿Cuánto vale el 7 en 47.215?", "Escribí con cifras: dos millones treinta mil cuatro.", "Hacé la descomposición aditiva de 8.064.", "Un compañero escribió \"cuatro mil cinco\" como 45. ¿Cómo se escribe bien?"], "respuestas_carpeta": [["7000"], ["2030004"], ["8000+60+4", "8000+0+60+4"], ["4005"]], "soluciones": {"incompleto": "40. 1.000. Centenas.", "solo": "Siete millones doscientos cincuenta mil ocho. 7.000.000 + 200.000 + 50.000 + 8.", "carpeta": ["7.000: está en el lugar de las unidades de mil.", "2.030.004: 2 | 030 | 004.", "8.000 + 60 + 4.", "4.005: el 0 ocupa los lugares vacíos de las centenas y las decenas."]}}, "2": {"objetivo": "Vas a poder escribir los lugares del sistema decimal como potencias de 10, descomponer números con ellas, multiplicar y dividir por 10, 100 y 1.000 y comparar números grandes.", "vas_a_ver": ["Cada lugar es una potencia de 10", "Por qué 10⁰ = 1", "Descomposición con potencias de 10", "Multiplicar y dividir por 10, 100 y 1.000", "Orden de magnitud y comparación de números grandes"], "secciones": [{"etapa": 1, "titulo": "Cada lugar es una potencia de 10", "bloques": [{"tipo": "definicion", "titulo": "Potencia de 10", "texto": "Es 10 multiplicado por sí mismo varias veces: 10³ = 10 × 10 × 10 = 1.000. El <b>exponente</b> dice cuántas veces se multiplica el 10 y coincide con la cantidad de ceros."}, {"tipo": "tabla", "titulo": "Lugares y potencias", "columnas": ["Lugar", "Grupos de", "Potencia"], "filas": [["Unidades", "1", "10⁰"], ["Decenas", "10", "10¹"], ["Centenas", "100", "10²"], ["Unidades de mil", "1.000", "10³"], ["Decenas de mil", "10.000", "10⁴"]], "iguales": true}, {"tipo": "importante", "titulo": "10⁰ = 1", "texto": "El lugar de las unidades corresponde a 10⁰, que vale 1: son grupos de a uno."}]}, {"etapa": 1, "titulo": "Descomponer con potencias", "bloques": [{"tipo": "parrafo", "texto": "Cada cifra se multiplica por la <b>potencia de 10 de su lugar</b> y se suman los resultados."}, {"tipo": "ejemplo", "titulo": "Descomponer 3.152", "texto": "Cifra por potencia.", "items": ["3 × 10³ + 1 × 10² + 5 × 10¹ + 2 × 10⁰.", "= 3 × 1.000 + 1 × 100 + 5 × 10 + 2 × 1.", "= 3.000 + 100 + 50 + 2 = 3.152."]}]}, {"etapa": 2, "titulo": "Multiplicar y dividir por 10, 100 y 1.000", "bloques": [{"tipo": "definicion", "titulo": "Regla", "texto": "Multiplicar por 10, 100 o 1.000 <b>agrega</b> 1, 2 o 3 ceros: cada cifra sube 1, 2 o 3 lugares. Dividir, cuando el número termina en esos ceros, los <b>saca</b>."}, {"tipo": "tabla", "titulo": "Ejemplos", "columnas": ["Cálculo", "Resultado"], "filas": [["45 × 100", "4.500"], ["7 × 1.000", "7.000"], ["38.000 ÷ 10", "3.800"], ["520.000 ÷ 1.000", "520"]], "iguales": true}]}, {"etapa": 2, "titulo": "Orden de magnitud y comparación", "bloques": [{"tipo": "definicion", "titulo": "Orden de magnitud", "texto": "Es la potencia de 10 del lugar de la <b>primera cifra</b> del número. 4.700 es del orden de los miles (10³)."}, {"tipo": "parrafo", "texto": "Para comparar números naturales: el que tiene <b>más cifras</b> es mayor. Si tienen la misma cantidad, se comparan las cifras de izquierda a derecha hasta encontrar una distinta."}, {"tipo": "ejemplo", "titulo": "Comparar 98.700 y 102.000", "texto": "Contamos cifras.", "items": ["98.700 tiene 5 cifras y 102.000 tiene 6.", "102.000 es mayor, aunque empiece con 1."]}]}], "ejemplo_completo": {"titulo": "Descomponer 40.608 con potencias de 10", "planteo": "Escribí cada cifra por su potencia y controlá.", "pasos": ["Lugares: 4 en 10⁴, 0 en 10³, 6 en 10², 0 en 10¹, 8 en 10⁰.", "Los ceros no se escriben: 4 × 10⁴ + 6 × 10² + 8 × 10⁰.", "Control: 40.000 + 600 + 8 = 40.608."]}, "ejemplo_incompleto": {"titulo": "Descomponer 5.230", "planteo": "Completá los espacios.", "pasos": ["El 5 está en el lugar de 10 elevado a ___ .", "El 3 está en el lugar de 10 elevado a ___ .", "Control: 5.000 + ___ + 30 = 5.230."]}, "ejemplo_solo": {"titulo": "63 × 1.000 y 63.000 ÷ 100", "planteo": "Resolvé los dos cálculos y decí el orden de magnitud de cada resultado."}, "tip": {"titulo": "Contá los ceros", "texto": "En una potencia de 10, el exponente es la cantidad de ceros: 10⁵ = 100.000."}, "ojo": ["Creer que 10⁰ es 0: vale 1.", "Confundir 10³ con 10 × 3: 10³ = 1.000, no 30."], "resumen": [{"titulo": "Potencias de 10", "texto": "10⁰ = 1, 10¹ = 10, 10² = 100, 10³ = 1.000."}, {"titulo": "Descomponer", "texto": "3.152 = 3 × 10³ + 1 × 10² + 5 × 10¹ + 2 × 10⁰."}, {"titulo": "× y ÷ por 10, 100, 1.000", "texto": "Agregan o sacan ceros. Ej.: 45 × 100 = 4.500."}, {"titulo": "Comparar", "texto": "Más cifras, mayor. Si empatan, de izquierda a derecha."}], "glosario": [{"palabra": "Potencia", "significado": "Multiplicación de un número por sí mismo varias veces."}, {"palabra": "Exponente", "significado": "El número chiquito arriba: cuántas veces se multiplica."}, {"palabra": "Orden de magnitud", "significado": "La potencia de 10 del lugar de la primera cifra."}, {"palabra": "Descomposición polinómica", "significado": "Cifra por potencia de 10, sumadas."}], "carpeta": ["Calculá 10⁴.", "Escribí el número: 7 × 10³ + 2 × 10² + 5 × 10⁰.", "Calculá 340 × 100.", "¿Cuál es mayor: 99.999 o 100.001?"], "respuestas_carpeta": [["10000"], ["7205"], ["34000"], ["100001"]], "soluciones": {"incompleto": "3. 1. 200.", "solo": "63.000, del orden de las decenas de mil (10⁴). 630, del orden de las centenas (10²).", "carpeta": ["10.000.", "7.205: 7.000 + 200 + 5 (no hay decenas).", "34.000: se agregan dos ceros.", "100.001: tiene 6 cifras y 99.999 tiene 5."]}}, "3": {"objetivo": "Vas a poder explicar cómo funciona el sistema binario y pasar números de decimal a binario y de binario a decimal.", "vas_a_ver": ["Base 2: solo dos cifras, 0 y 1", "Los lugares son potencias de 2", "Cómo se escribe y se lee un número en otra base", "De decimal a binario: divisiones sucesivas y restas sucesivas", "De binario a decimal"], "secciones": [{"etapa": 1, "titulo": "Base 2", "bloques": [{"tipo": "definicion", "titulo": "Sistema binario", "texto": "Usa solo <b>dos cifras: 0 y 1</b>. Es el sistema de las computadoras y los aparatos electrónicos: 0 es apagado (sin corriente) y 1 es encendido."}, {"tipo": "parrafo", "texto": "También es posicional, pero en vez de agrupar de a 10 se agrupa <b>de a 2</b>. Por eso cada lugar vale el doble que el anterior: son las potencias de 2."}, {"tipo": "tabla", "titulo": "Lugares del binario", "columnas": ["Potencia", "2⁰", "2¹", "2²", "2³", "2⁴", "2⁵"], "filas": [["Vale", "1", "2", "4", "8", "16", "32"]], "iguales": true}]}, {"etapa": 1, "titulo": "Cómo se escribe y se lee", "bloques": [{"tipo": "importante", "titulo": "La base se indica", "texto": "La base se escribe chiquita abajo: 101₂. Se lee cifra por cifra: \"uno, cero, uno en base 2\". No se dice \"ciento uno\", porque centena y decena son palabras de la base 10."}, {"tipo": "parrafo", "texto": "Lo mismo pasa con cualquier base. En base 8 se agrupa de a 8: 11 objetos son 1 grupo de 8 y 3 sueltos, o sea 13₈."}]}, {"etapa": 2, "titulo": "De decimal a binario", "bloques": [{"tipo": "parrafo", "texto": "Se divide por 2 una y otra vez (<b>divisiones sucesivas</b>) hasta llegar a cociente 0. Cada división arma grupos de 2 y su resto es lo que queda suelto en ese lugar. El número binario se forma con los <b>restos leídos de abajo hacia arriba</b>."}, {"tipo": "ejemplo", "titulo": "Pasar 11 a binario", "texto": "Divisiones sucesivas.", "items": ["11 ÷ 2 = 5, resto 1.", "5 ÷ 2 = 2, resto 1.", "2 ÷ 2 = 1, resto 0.", "1 ÷ 2 = 0, resto 1.", "Restos de abajo hacia arriba: 11 = 1011₂."]}, {"tipo": "parrafo", "texto": "Otra forma son las <b>restas sucesivas</b>: se resta la potencia de 2 más grande que entra; cada potencia que se pudo restar es un 1 y cada una que no, un 0. Ej.: 20 = 16 + 4, así que 20 = 10100₂."}]}, {"etapa": 2, "titulo": "De binario a decimal", "bloques": [{"tipo": "parrafo", "texto": "Se multiplica cada cifra por el valor de su lugar (1, 2, 4, 8… desde la derecha) y se suma."}, {"tipo": "ejemplo", "titulo": "Pasar 1110₂ a decimal", "texto": "Cifra por lugar.", "items": ["De derecha a izquierda: 0 × 1 + 1 × 2 + 1 × 4 + 1 × 8.", "= 0 + 2 + 4 + 8.", "= 14."]}]}], "ejemplo_completo": {"titulo": "Pasar 19 a binario y comprobar", "planteo": "Usá divisiones sucesivas.", "pasos": ["19 ÷ 2 = 9, resto 1.", "9 ÷ 2 = 4, resto 1.", "4 ÷ 2 = 2, resto 0.", "2 ÷ 2 = 1, resto 0.", "1 ÷ 2 = 0, resto 1.", "Restos de abajo hacia arriba: 10011₂.", "Comprobación: 16 + 0 + 0 + 2 + 1 = 19."]}, "ejemplo_incompleto": {"titulo": "Pasar 10110₂ a decimal", "planteo": "Completá los espacios.", "pasos": ["De derecha a izquierda: 0 × 1 + 1 × 2 + 1 × 4 + 0 × 8 + 1 × ___ .", "= 0 + 2 + 4 + 0 + ___ .", "= ___ ."]}, "ejemplo_solo": {"titulo": "Pasar 26 a binario", "planteo": "Usá divisiones sucesivas y comprobá el resultado."}, "tip": {"titulo": "Armá la tabla de potencias", "texto": "Antes de empezar escribí 1, 2, 4, 8, 16, 32… de derecha a izquierda. Te sirve para ir y volver entre binario y decimal."}, "ojo": ["Leer los restos de arriba hacia abajo: para 6 los restos son 0, 1, 1 y el número es 110₂, no 011₂.", "Leer 101₂ como \"ciento uno\": se lee uno, cero, uno en base 2 y vale 5."], "resumen": [{"titulo": "Base 2", "texto": "Solo 0 y 1. Lo usan las computadoras."}, {"titulo": "Lugares", "texto": "1, 2, 4, 8, 16, 32… (potencias de 2)."}, {"titulo": "Decimal → binario", "texto": "Dividir por 2 y leer los restos de abajo hacia arriba."}, {"titulo": "Binario → decimal", "texto": "Cifra por lugar y sumar. Ej.: 1110₂ = 14."}], "glosario": [{"palabra": "Binario", "significado": "Sistema de base 2, con las cifras 0 y 1."}, {"palabra": "Divisiones sucesivas", "significado": "Dividir varias veces seguidas el cociente anterior."}, {"palabra": "Resto", "significado": "Lo que sobra en una división."}, {"palabra": "Subíndice", "significado": "Número chiquito abajo que indica la base."}], "carpeta": ["Pasá 9 a binario.", "Pasá 111₂ a decimal.", "Pasá 12 a binario.", "Un compañero pasó 6 a binario y escribió 011₂. ¿Cuál es el resultado correcto?"], "respuestas_carpeta": [["1001", "1001₂", "1001(2)"], ["7"], ["1100", "1100₂", "1100(2)"], ["110", "110₂", "110(2)"]], "soluciones": {"incompleto": "16. 16. 22.", "solo": "26 ÷ 2 = 13 r 0; 13 ÷ 2 = 6 r 1; 6 ÷ 2 = 3 r 0; 3 ÷ 2 = 1 r 1; 1 ÷ 2 = 0 r 1. 26 = 11010₂. Comprobación: 16 + 8 + 2 = 26.", "carpeta": ["1001₂: 8 + 1 = 9.", "7: 4 + 2 + 1.", "1100₂: 8 + 4 = 12.", "110₂: leyó los restos al revés; van de abajo hacia arriba."]}}, "4": {"objetivo": "Vas a poder usar el sistema sexagesimal para medir el tiempo y los ángulos, pasar de una unidad a otra y sumar y restar medidas.", "vas_a_ver": ["Un sistema que agrupa de a 60", "Horas, minutos y segundos", "Pasar de una unidad a otra", "Sumar y restar tiempos", "Grados, minutos y segundos en los ángulos"], "secciones": [{"etapa": 1, "titulo": "Agrupar de a 60", "bloques": [{"tipo": "definicion", "titulo": "Sistema sexagesimal", "texto": "Agrupa <b>de a 60</b>: 60 segundos forman 1 minuto y 60 minutos forman 1 hora. Lo usamos para medir el tiempo y los ángulos."}, {"tipo": "tabla", "titulo": "Equivalencias", "columnas": ["Unidad", "Equivale a"], "filas": [["1 hora (h)", "60 minutos"], ["1 minuto (min)", "60 segundos"], ["1 hora", "3.600 segundos"]], "iguales": true}]}, {"etapa": 1, "titulo": "Pasar de una unidad a otra", "bloques": [{"tipo": "parrafo", "texto": "Para pasar a una unidad <b>más chica</b> se multiplica por 60. Para pasar a una <b>más grande</b> se divide por 60: el cociente son las unidades grandes y el resto, las que sobran."}, {"tipo": "ejemplo", "titulo": "Pasar 150 minutos a horas", "texto": "Dividimos por 60.", "items": ["150 ÷ 60 = 2, resto 30.", "150 min = 2 h 30 min."]}]}, {"etapa": 2, "titulo": "Sumar y restar tiempos", "bloques": [{"tipo": "parrafo", "texto": "Se suman o restan horas con horas, minutos con minutos y segundos con segundos. Si los minutos llegan a 60 o más, se canjean por horas. Si en una resta no alcanza, se pide 1 hora prestada, que son 60 minutos."}, {"tipo": "ejemplo", "titulo": "Sumar 1 h 45 min + 2 h 30 min", "texto": "Por columnas.", "items": ["Horas: 1 + 2 = 3. Minutos: 45 + 30 = 75.", "75 min = 1 h 15 min.", "Total: 4 h 15 min."]}, {"tipo": "ejemplo", "titulo": "Restar 3 h 10 min − 1 h 40 min", "texto": "Pedimos prestado.", "items": ["10 min no alcanza para restar 40 min.", "Pedimos 1 h: queda 2 h 70 min.", "2 h 70 min − 1 h 40 min = 1 h 30 min."]}]}, {"etapa": 2, "titulo": "Los ángulos", "bloques": [{"tipo": "definicion", "titulo": "Grados, minutos y segundos", "texto": "Los ángulos se miden en <b>grados (°)</b>. 1° = 60 minutos (60′) y 1′ = 60 segundos (60″). Se opera igual que con el tiempo."}, {"tipo": "parrafo", "texto": "Ejemplo: 25° 40′ + 10° 35′ = 35° 75′ = 36° 15′."}]}], "ejemplo_completo": {"titulo": "¿A qué hora termina la película?", "planteo": "Una película dura 135 minutos y empieza a las 20:50.", "pasos": ["135 ÷ 60 = 2, resto 15: dura 2 h 15 min.", "20 h 50 min + 2 h 15 min = 22 h 65 min.", "65 min = 1 h 5 min.", "Termina a las 23:05."]}, "ejemplo_incompleto": {"titulo": "Pasar 3 h 20 min a minutos", "planteo": "Completá los espacios.", "pasos": ["3 h = 3 × 60 = ___ min.", "180 + 20 = ___ min."]}, "ejemplo_solo": {"titulo": "5 h 15 min − 2 h 50 min", "planteo": "Resolvé la resta. Pensá si hace falta pedir prestado."}, "tip": {"titulo": "Pensá en el reloj", "texto": "Cuando los minutos llegan a 60, el reloj suma una hora y vuelve a 0. Así funciona cada canje de 60."}, "ojo": ["No canjear: 1 h 50 min + 20 min no es 1 h 70 min, es 2 h 10 min.", "Pedir prestado 100 en vez de 60: 1 hora prestada son 60 minutos."], "resumen": [{"titulo": "Base 60", "texto": "60 s = 1 min; 60 min = 1 h."}, {"titulo": "Pasar de unidad", "texto": "A más chica, × 60. A más grande, ÷ 60 (el resto sobra)."}, {"titulo": "Sumar y restar", "texto": "Por columnas, canjeando de a 60."}, {"titulo": "Ángulos", "texto": "1° = 60′ y 1′ = 60″."}], "glosario": [{"palabra": "Sexagesimal", "significado": "Sistema que agrupa de a 60."}, {"palabra": "Canjear", "significado": "Cambiar 60 unidades chicas por 1 grande."}, {"palabra": "Grado (°)", "significado": "Unidad para medir ángulos."}, {"palabra": "Minuto (′) y segundo (″)", "significado": "Partes del grado, igual que en el reloj."}], "carpeta": ["¿Cuántos minutos son 4 horas?", "Pasá 200 minutos a horas y minutos.", "Sumá 2 h 40 min + 1 h 35 min.", "Un compañero restó 4 h 10 min − 1 h 30 min pidiendo prestados 100 minutos y le dio 2 h 80 min. ¿Cuál es el resultado correcto?"], "respuestas_carpeta": [["240"], ["3h20min", "3h20m", "3h20", "3:20", "3horas20minutos"], ["4h15min", "4h15m", "4h15", "4:15", "4horas15minutos"], ["2h40min", "2h40m", "2h40", "2:40", "2horas40minutos"]], "soluciones": {"incompleto": "180. 200.", "solo": "Pedimos 1 h: 4 h 75 min − 2 h 50 min = 2 h 25 min.", "carpeta": ["240: 4 × 60.", "3 h 20 min: 200 ÷ 60 = 3, resto 20.", "4 h 15 min: 3 h 75 min y 75 min = 1 h 15 min.", "2 h 40 min: 1 h prestada son 60 min, así que queda 3 h 70 min − 1 h 30 min."]}}}, "act": {"1": [{"t": "multiple_choice", "p": "En 5.252, ¿cuánto vale el 5 de la izquierda?", "o": ["5", "50", "500", "5.000"], "r": {"correcta": "5.000"}, "e": "Está en el lugar de las unidades de mil: vale 5.000."}, {"t": "numeric", "p": "Escribí el número que forman {a} unidades de mil, {b} centenas y {c} unidades.", "o": {"vars": {"a": {"min": 1, "max": 9}, "b": {"min": 1, "max": 9}, "c": {"min": 1, "max": 9}}}, "r": {"formula": "a*1000+b*100+c"}, "e": "No hay decenas: en ese lugar va un 0."}], "2": [{"t": "numeric", "p": "Escribí el número: {a} × 10³ + {b} × 10² + {c} × 10⁰.", "o": {"vars": {"a": {"min": 1, "max": 9}, "b": {"min": 1, "max": 9}, "c": {"min": 1, "max": 9}}}, "r": {"formula": "a*1000+b*100+c"}, "e": "10³ = 1.000, 10² = 100 y 10⁰ = 1. No hay decenas."}, {"t": "multiple_choice", "p": "¿Cuál es mayor?", "o": ["98.765", "100.234", "Son iguales"], "r": {"correcta": "100.234"}, "e": "100.234 tiene 6 cifras y 98.765 tiene 5."}], "3": [{"t": "numeric", "p": "Pasá 1010₂ a decimal.", "o": {}, "r": {"acepta": [10]}, "e": "0 × 1 + 1 × 2 + 0 × 4 + 1 × 8 = 10."}, {"t": "numeric", "p": "Pasá 23 a binario. Escribí solo las cifras.", "o": {}, "r": {"acepta": [10111]}, "e": "Restos de 23 ÷ 2 sucesivas: 1, 1, 1, 0, 1. De abajo hacia arriba: 10111₂ (16 + 4 + 2 + 1)."}], "4": [{"t": "numeric", "p": "¿Cuántos minutos son {h} h {m} min?", "o": {"vars": {"h": {"min": 1, "max": 5}, "m": {"min": 1, "max": 59}}}, "r": {"formula": "h*60+m"}, "e": "Las horas se multiplican por 60 y se suman los minutos."}, {"t": "multiple_choice", "p": "Sumá 1 h 50 min + 1 h 25 min.", "o": ["2 h 75 min", "3 h 15 min", "3 h 75 min", "2 h 15 min"], "r": {"correcta": "3 h 15 min"}, "e": "50 + 25 = 75 min = 1 h 15 min; 2 h + 1 h 15 min = 3 h 15 min."}], "5": [{"t": "multiple_choice", "p": "Relámpago. ¿Cuánto vale el 3 en 4.307?", "o": ["3", "30", "300", "3.000"], "r": {"correcta": "300"}, "e": "Está en el lugar de las centenas.", "tiempo": 15}, {"t": "numeric", "p": "Relámpago. Pasá 110₂ a decimal.", "o": {}, "r": {"acepta": [6]}, "e": "4 + 2 + 0 = 6.", "tiempo": 30}, {"t": "true_false", "p": "Relámpago. 10³ es igual a 30.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "10³ = 10 × 10 × 10 = 1.000.", "tiempo": 15}, {"t": "numeric", "p": "Relámpago. ¿Cuántos segundos son 3 minutos?", "o": {}, "r": {"acepta": [180]}, "e": "3 × 60 = 180.", "tiempo": 20}]}, "examen": [[1, {"t": "numeric", "p": "Escribí el número que forman {a} decenas de mil, {b} centenas y {c} unidades.", "o": {"vars": {"a": {"min": 1, "max": 9}, "b": {"min": 1, "max": 9}, "c": {"min": 1, "max": 9}}}, "r": {"formula": "a*10000+b*100+c"}, "e": "Las unidades de mil y las decenas quedan vacías: van ceros."}], [1, {"t": "multiple_choice", "p": "¿Cuál es la descomposición aditiva de 7.408?", "o": ["7.000 + 400 + 8", "7 + 4 + 0 + 8", "7.000 + 40 + 8", "700 + 40 + 8"], "r": {"correcta": "7.000 + 400 + 8"}, "e": "Se suman los valores de las cifras, no las cifras."}], [1, {"t": "multiple_choice", "p": "¿Cómo se escribe con cifras \"tres millones cuarenta mil doce\"?", "o": ["3.040.012", "3.400.012", "3.040.120", "340.012"], "r": {"correcta": "3.040.012"}, "e": "3 | 040 | 012."}], [2, {"t": "numeric", "p": "Calculá 10⁵.", "o": {}, "r": {"acepta": [100000]}, "e": "Un 1 seguido de 5 ceros: 100.000."}], [2, {"t": "numeric", "p": "Calculá {a} × 1.000.", "o": {"vars": {"a": {"min": 2, "max": 99}}}, "r": {"formula": "a*1000"}, "e": "Multiplicar por 1.000 agrega tres ceros."}], [2, {"t": "multiple_choice", "p": "¿Qué número es 6 × 10⁴ + 3 × 10² + 5 × 10⁰?", "o": ["60.305", "6.305", "60.035", "635"], "r": {"correcta": "60.305"}, "e": "60.000 + 300 + 5 = 60.305."}], [3, {"t": "numeric", "p": "Pasá 1100₂ a decimal.", "o": {}, "r": {"acepta": [12]}, "e": "8 + 4 + 0 + 0 = 12."}], [3, {"t": "numeric", "p": "Pasá 18 a binario. Escribí solo las cifras.", "o": {}, "r": {"acepta": [10010]}, "e": "18 = 16 + 2: 10010₂."}], [3, {"t": "true_false", "p": "En el sistema binario se usan solo las cifras 0 y 1.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es un sistema de base 2: dos cifras."}], [4, {"t": "numeric", "p": "¿Cuántos segundos son {m} minutos?", "o": {"vars": {"m": {"min": 2, "max": 20}}}, "r": {"formula": "m*60"}, "e": "Cada minuto tiene 60 segundos."}], [4, {"t": "multiple_choice", "p": "¿Cuánto es 190 minutos en horas y minutos?", "o": ["1 h 90 min", "3 h 10 min", "1 h 9 min", "3 h 1 min"], "r": {"correcta": "3 h 10 min"}, "e": "190 ÷ 60 = 3, resto 10."}], [4, {"t": "multiple_choice", "p": "Restá 5 h 20 min − 2 h 45 min.", "o": ["3 h 25 min", "2 h 35 min", "2 h 75 min", "3 h 35 min"], "r": {"correcta": "2 h 35 min"}, "e": "Pedimos 1 h: 4 h 80 min − 2 h 45 min = 2 h 35 min."}], [4, {"t": "multiple_choice", "p": "¿A cuántos minutos (′) equivale 1 grado?", "o": ["10", "60", "100", "360"], "r": {"correcta": "60"}, "e": "1° = 60′."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 1,
+ "practica": "Práctica general: sistemas de numeración",
+ "examen_titulo": "Nivel jefe: sistemas de numeración",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder explicar por qué nuestro sistema es decimal y posicional, leer y escribir números grandes y descomponerlos de forma aditiva y multiplicativa.",
+   "vas_a_ver": [
+    "Las 10 cifras y la base 10",
+    "Agrupar de a 10: unidades, decenas, centenas",
+    "El valor posicional: la misma cifra vale distinto según su lugar",
+    "Leer y escribir números de hasta 12 cifras",
+    "Descomposición aditiva y multiplicativa"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Un sistema de base 10",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Sistema decimal",
+       "texto": "Usamos <b>10 cifras</b> (0, 1, 2, …, 9) para escribir cualquier número, por grande que sea. Por eso se dice que es un sistema <b>decimal</b> o de <b>base 10</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Cuando juntamos 10 elementos formamos un grupo que <b>pasa al lugar de la izquierda</b>: 10 unidades forman 1 decena, 10 decenas forman 1 centena y 10 centenas forman 1 unidad de mil."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Escribir 23 caramelos",
+       "texto": "Agrupamos de a 10.",
+       "items": [
+        "Con 23 caramelos se arman 2 grupos de 10 y sobran 3.",
+        "Los 2 grupos van al lugar de las decenas y los 3 sueltos, al de las unidades.",
+        "Se escribe 23: 2 decenas y 3 unidades."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Valor posicional",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Valor posicional",
+       "texto": "El valor de una cifra <b>depende del lugar que ocupa</b>. En 353, el 3 de la izquierda vale 300 y el 3 de la derecha vale 3."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Valor de cada cifra en 4.808",
+       "columnas": [
+        "Cifra",
+        "Lugar",
+        "Valor"
+       ],
+       "filas": [
+        [
+         "4",
+         "Unidades de mil",
+         "4.000"
+        ],
+        [
+         "8",
+         "Centenas",
+         "800"
+        ],
+        [
+         "0",
+         "Decenas",
+         "0"
+        ],
+        [
+         "8",
+         "Unidades",
+         "8"
+        ]
+       ],
+       "iguales": true,
+       "texto": "El mismo 8 vale 800 o 8 según dónde esté."
+      },
+      {
+       "tipo": "importante",
+       "titulo": "El cero",
+       "texto": "El 0 marca un lugar vacío. En 4.808 no hay decenas, pero el 0 hace falta para que el 8 de las centenas no se corra de lugar."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Números grandes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para leer un número grande se separan las cifras <b>de a tres, de derecha a izquierda</b>: unidades, miles, millones y miles de millones. Cada grupo se lee como un número de hasta tres cifras y se le agrega su nombre."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Un número de 12 cifras",
+       "columnas": [
+        "Miles de millones",
+        "Millones",
+        "Miles",
+        "Unidades"
+       ],
+       "filas": [
+        [
+         "845",
+         "302",
+         "017",
+         "650"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Se lee: ochocientos cuarenta y cinco mil trescientos dos millones diecisiete mil seiscientos cincuenta."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Descomponer un número",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Descomposición aditiva",
+       "texto": "Escribir el número como <b>suma de los valores de sus cifras</b>: 3.506 = 3.000 + 500 + 6."
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Descomposición multiplicativa",
+       "texto": "Cada valor se escribe como <b>cifra por 1, 10, 100, 1.000…</b>: 3.506 = 3 × 1.000 + 5 × 100 + 6 × 1."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Leer y descomponer 60.723",
+    "planteo": "Leé el número y hacé las dos descomposiciones.",
+    "pasos": [
+     "Separamos de a tres desde la derecha: 60 | 723.",
+     "Se lee: sesenta mil setecientos veintitrés.",
+     "Aditiva: 60.000 + 700 + 20 + 3.",
+     "Multiplicativa: 6 × 10.000 + 7 × 100 + 2 × 10 + 3 × 1.",
+     "El 0 de las unidades de mil vale 0, por eso no se escribe en la descomposición."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Descomponer 9.045",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Aditiva: 9.000 + ___ + 5.",
+     "Multiplicativa: 9 × ___ + 4 × 10 + 5 × 1.",
+     "El 0 está en el lugar de las ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "7.250.008",
+    "planteo": "Escribí cómo se lee y hacé la descomposición aditiva."
+   },
+   "tip": {
+    "titulo": "Contá lugares desde la derecha",
+    "texto": "Para saber cuánto vale una cifra, contá desde la derecha: 1.º unidades, 2.º decenas, 3.º centenas, 4.º unidades de mil…"
+   },
+   "ojo": [
+    "Olvidar el cero: cuatro mil cinco se escribe 4.005, no 45.",
+    "Sumar las cifras en vez de sus valores: 352 no es 3 + 5 + 2, es 300 + 50 + 2."
+   ],
+   "resumen": [
+    {
+     "titulo": "Base 10",
+     "texto": "10 cifras. Cada 10 se forma un grupo que pasa a la izquierda."
+    },
+    {
+     "titulo": "Valor posicional",
+     "texto": "En 353, el primer 3 vale 300 y el último, 3."
+    },
+    {
+     "titulo": "Números grandes",
+     "texto": "Se separan de a tres desde la derecha."
+    },
+    {
+     "titulo": "Descomponer",
+     "texto": "3.506 = 3.000 + 500 + 6 = 3 × 1.000 + 5 × 100 + 6 × 1."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Cifra",
+     "significado": "Cada uno de los símbolos 0 a 9 con que se escriben los números."
+    },
+    {
+     "palabra": "Base",
+     "significado": "De a cuánto se agrupa. En el sistema decimal, de a 10."
+    },
+    {
+     "palabra": "Valor posicional",
+     "significado": "Lo que vale una cifra según el lugar que ocupa."
+    },
+    {
+     "palabra": "Decena, centena",
+     "significado": "Grupo de 10 y grupo de 100."
+    },
+    {
+     "palabra": "Descomposición",
+     "significado": "Escribir un número separado en partes según sus cifras."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto vale el 7 en 47.215?",
+    "Escribí con cifras: dos millones treinta mil cuatro.",
+    "Hacé la descomposición aditiva de 8.064.",
+    "Un compañero escribió \"cuatro mil cinco\" como 45. ¿Cómo se escribe bien?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "7000"
+    ],
+    [
+     "2030004"
+    ],
+    [
+     "8000+60+4",
+     "8000+0+60+4"
+    ],
+    [
+     "4005"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "40. 1.000. Centenas.",
+    "solo": "Siete millones doscientos cincuenta mil ocho. 7.000.000 + 200.000 + 50.000 + 8.",
+    "carpeta": [
+     "7.000: está en el lugar de las unidades de mil.",
+     "2.030.004: 2 | 030 | 004.",
+     "8.000 + 60 + 4.",
+     "4.005: el 0 ocupa los lugares vacíos de las centenas y las decenas."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El valor de cada cifra",
+      "ejercicio": {
+       "motor": "posicional",
+       "p": {
+        "modo": "ubicar"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sistema decimal y posicional",
+        "texto": "Nuestro sistema de numeración usa solo diez símbolos, del 0 al 9, y con ellos escribe cualquier cantidad. Es <b>decimal</b> porque arma grupos de diez, y es <b>posicional</b> porque una misma cifra cambia de valor según el lugar donde está escrita."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "¿Por qué alcanzan diez cifras? Porque cada vez que se completan diez elementos de un lugar, se cambian por uno solo del lugar de la izquierda. Diez unidades se canjean por una decena, diez decenas por una centena, diez centenas por una unidad de mil, y así sin fin. Gracias a ese canje no hace falta inventar un símbolo nuevo para cada cantidad: el lugar de la cifra dice de qué tamaño es el grupo que está contando."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo saber cuánto vale una cifra",
+        "items": [
+         "Contá los lugares desde la derecha: unidades, decenas, centenas, unidades de mil, decenas de mil…",
+         "Fijate qué cifra está en el lugar que te interesa.",
+         "Multiplicá esa cifra por el valor del lugar (1, 10, 100, 1.000…): ese es su valor posicional."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "El 7 en 57.209",
+        "texto": "Buscamos cuánto vale el 7.",
+        "items": [
+         "Desde la derecha: 9 unidades, 0 decenas, 2 centenas, 7 unidades de mil y 5 decenas de mil.",
+         "El 7 está en las unidades de mil, que valen 1.000 cada una.",
+         "7 × 1.000 = 7.000: en 57.209, el 7 vale 7.000."
+        ]
+       },
+       {
+        "tipo": "importante",
+        "titulo": "El cero ocupa un lugar",
+        "texto": "En 57.209 no hay decenas, pero el 0 tiene que estar escrito: si lo sacáramos quedaría 5.729 y todas las cifras de la izquierda bajarían un lugar."
+       },
+       {
+        "tipo": "error",
+        "titulo": "Leer la cifra sin mirar su lugar",
+        "texto": "Decir que el 7 de 57.209 «vale 7» es confundir la cifra con su valor. La cifra es el símbolo; el valor depende del lugar. Para darte cuenta, preguntate siempre en qué lugar está y cuánto vale ese lugar."
+       }
+      ]
+     },
+     {
+      "titulo": "Leer y escribir números grandes",
+      "ejercicio": {
+       "motor": "letras",
+       "p": {
+        "modo": "pagare"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Períodos",
+        "texto": "Para leer números grandes se separan las cifras en grupos de tres, contando desde la derecha. Cada grupo se llama <b>período</b>: el primero son las unidades, el segundo los miles, el tercero los millones y el cuarto los miles de millones."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Separar de a tres sirve porque cada período se lee como un número de hasta tres cifras, que ya sabés leer, y después se le agrega el nombre del período. Así, un número de diez cifras se transforma en cuatro números chicos con su apellido: tantos miles de millones, tantos millones, tantos miles y tantas unidades. Escribirlo con letras es hacer el mismo camino al revés."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo leer un número grande",
+        "items": [
+         "Separá las cifras de a tres desde la derecha (con puntos o espacios).",
+         "Leé el grupo de la izquierda y decí el nombre de su período (millones, mil…).",
+         "Seguí con cada grupo hacia la derecha; el último no lleva nombre.",
+         "Si un período tiene solo ceros, no se nombra."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Leer 3.040.506.000",
+        "texto": "Separamos y leemos.",
+        "items": [
+         "Grupos: 3 | 040 | 506 | 000.",
+         "3 → tres mil (miles de millones); 040 → cuarenta millones; 506 → quinientos seis mil.",
+         "El último período es 000 y no se lee: queda «tres mil cuarenta millones quinientos seis mil»."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Agrupar desde la izquierda",
+        "texto": "Si en 3040506000 armás los grupos empezando por la izquierda (304.050.600.0), los períodos quedan corridos y el número se lee mal. Los grupos de tres siempre se arman desde la derecha; el único que puede quedar incompleto es el de la izquierda."
+       }
+      ]
+     },
+     {
+      "titulo": "Descomponer un número",
+      "ejemplo": {
+       "motor": "pasoapaso",
+       "p": {
+        "u": "/actividades/pasoapaso/descomposicion-aditiva.html"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Descomponer",
+        "texto": "Descomponer un número es escribirlo como la suma de lo que vale cada una de sus cifras. En la descomposición <b>aditiva</b> se suman los valores; en la <b>multiplicativa</b>, cada valor se muestra como la cifra multiplicada por 1, 10, 100, 1.000…"
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Descomponer muestra a simple vista cómo está armado el número y por qué cada cifra vale lo que vale. Sirve para calcular mentalmente, sumando o restando por partes, para comparar números y para entender después las potencias de 10. Las dos formas dicen lo mismo: la multiplicativa solo hace visible la cuenta que hay detrás de cada valor."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo descomponer",
+        "items": [
+         "Escribí el valor de cada cifra según su lugar.",
+         "Salteá las cifras que son 0: no suman nada.",
+         "Uní los valores con signos +: esa es la descomposición aditiva.",
+         "Para la multiplicativa, escribí cada valor como cifra × 1, 10, 100, 1.000…"
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Descomponer 60.427",
+        "texto": "Las dos formas.",
+        "items": [
+         "Valores: 60.000, 0 (unidades de mil), 400, 20 y 7.",
+         "Aditiva: 60.427 = 60.000 + 400 + 20 + 7.",
+         "Multiplicativa: 60.427 = 6 × 10.000 + 4 × 100 + 2 × 10 + 7 × 1."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Sumar las cifras sueltas",
+        "texto": "Escribir 60.427 = 6 + 0 + 4 + 2 + 7 no es descomponer: esa suma da 19. Cada sumando tiene que ser el valor de la cifra en su lugar, con sus ceros. Controlá siempre que la suma vuelva a dar el número original."
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El sistema decimal",
+      "definicion": "usa diez cifras y arma grupos de diez: cada diez de un lugar forman uno del lugar de la izquierda.",
+      "ejemplo": "10 unidades = 1 decena · 10 decenas = 1 centena"
+     },
+     {
+      "concepto": "Valor posicional",
+      "definicion": "es lo que vale una cifra según el lugar que ocupa en el número, y no solo por el símbolo.",
+      "ejemplo": "En 57.209, el 7 vale 7.000"
+     },
+     {
+      "concepto": "Leer números grandes",
+      "definicion": "se separan las cifras de a tres desde la derecha y cada grupo se lee con el nombre de su período.",
+      "esquema": [
+       "unidades · miles · millones · miles de millones"
+      ],
+      "ejemplo": "3.040.506.000 → tres mil cuarenta millones quinientos seis mil"
+     },
+     {
+      "concepto": "Descomponer",
+      "definicion": "es escribir el número como la suma de los valores de sus cifras, o como cifra por 1, 10, 100…",
+      "ejemplo": "60.427 = 60.000 + 400 + 20 + 7 = 6 × 10.000 + 4 × 100 + 2 × 10 + 7 × 1"
+     }
+    ]
+   }
+  },
+  "2": {
+   "objetivo": "Vas a poder escribir los lugares del sistema decimal como potencias de 10, descomponer números con ellas, multiplicar y dividir por 10, 100 y 1.000 y comparar números grandes.",
+   "vas_a_ver": [
+    "Cada lugar es una potencia de 10",
+    "Por qué 10⁰ = 1",
+    "Descomposición con potencias de 10",
+    "Multiplicar y dividir por 10, 100 y 1.000",
+    "Orden de magnitud y comparación de números grandes"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Cada lugar es una potencia de 10",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Potencia de 10",
+       "texto": "Es 10 multiplicado por sí mismo varias veces: 10³ = 10 × 10 × 10 = 1.000. El <b>exponente</b> dice cuántas veces se multiplica el 10 y coincide con la cantidad de ceros."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Lugares y potencias",
+       "columnas": [
+        "Lugar",
+        "Grupos de",
+        "Potencia"
+       ],
+       "filas": [
+        [
+         "Unidades",
+         "1",
+         "10⁰"
+        ],
+        [
+         "Decenas",
+         "10",
+         "10¹"
+        ],
+        [
+         "Centenas",
+         "100",
+         "10²"
+        ],
+        [
+         "Unidades de mil",
+         "1.000",
+         "10³"
+        ],
+        [
+         "Decenas de mil",
+         "10.000",
+         "10⁴"
+        ]
+       ],
+       "iguales": true
+      },
+      {
+       "tipo": "importante",
+       "titulo": "10⁰ = 1",
+       "texto": "El lugar de las unidades corresponde a 10⁰, que vale 1: son grupos de a uno."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Descomponer con potencias",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Cada cifra se multiplica por la <b>potencia de 10 de su lugar</b> y se suman los resultados."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Descomponer 3.152",
+       "texto": "Cifra por potencia.",
+       "items": [
+        "3 × 10³ + 1 × 10² + 5 × 10¹ + 2 × 10⁰.",
+        "= 3 × 1.000 + 1 × 100 + 5 × 10 + 2 × 1.",
+        "= 3.000 + 100 + 50 + 2 = 3.152."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Multiplicar y dividir por 10, 100 y 1.000",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Regla",
+       "texto": "Multiplicar por 10, 100 o 1.000 <b>agrega</b> 1, 2 o 3 ceros: cada cifra sube 1, 2 o 3 lugares. Dividir, cuando el número termina en esos ceros, los <b>saca</b>."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Ejemplos",
+       "columnas": [
+        "Cálculo",
+        "Resultado"
+       ],
+       "filas": [
+        [
+         "45 × 100",
+         "4.500"
+        ],
+        [
+         "7 × 1.000",
+         "7.000"
+        ],
+        [
+         "38.000 ÷ 10",
+         "3.800"
+        ],
+        [
+         "520.000 ÷ 1.000",
+         "520"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Orden de magnitud y comparación",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Orden de magnitud",
+       "texto": "Es la potencia de 10 del lugar de la <b>primera cifra</b> del número. 4.700 es del orden de los miles (10³)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Para comparar números naturales: el que tiene <b>más cifras</b> es mayor. Si tienen la misma cantidad, se comparan las cifras de izquierda a derecha hasta encontrar una distinta."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Comparar 98.700 y 102.000",
+       "texto": "Contamos cifras.",
+       "items": [
+        "98.700 tiene 5 cifras y 102.000 tiene 6.",
+        "102.000 es mayor, aunque empiece con 1."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Descomponer 40.608 con potencias de 10",
+    "planteo": "Escribí cada cifra por su potencia y controlá.",
+    "pasos": [
+     "Lugares: 4 en 10⁴, 0 en 10³, 6 en 10², 0 en 10¹, 8 en 10⁰.",
+     "Los ceros no se escriben: 4 × 10⁴ + 6 × 10² + 8 × 10⁰.",
+     "Control: 40.000 + 600 + 8 = 40.608."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Descomponer 5.230",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "El 5 está en el lugar de 10 elevado a ___ .",
+     "El 3 está en el lugar de 10 elevado a ___ .",
+     "Control: 5.000 + ___ + 30 = 5.230."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "63 × 1.000 y 63.000 ÷ 100",
+    "planteo": "Resolvé los dos cálculos y decí el orden de magnitud de cada resultado."
+   },
+   "tip": {
+    "titulo": "Contá los ceros",
+    "texto": "En una potencia de 10, el exponente es la cantidad de ceros: 10⁵ = 100.000."
+   },
+   "ojo": [
+    "Creer que 10⁰ es 0: vale 1.",
+    "Confundir 10³ con 10 × 3: 10³ = 1.000, no 30."
+   ],
+   "resumen": [
+    {
+     "titulo": "Potencias de 10",
+     "texto": "10⁰ = 1, 10¹ = 10, 10² = 100, 10³ = 1.000."
+    },
+    {
+     "titulo": "Descomponer",
+     "texto": "3.152 = 3 × 10³ + 1 × 10² + 5 × 10¹ + 2 × 10⁰."
+    },
+    {
+     "titulo": "× y ÷ por 10, 100, 1.000",
+     "texto": "Agregan o sacan ceros. Ej.: 45 × 100 = 4.500."
+    },
+    {
+     "titulo": "Comparar",
+     "texto": "Más cifras, mayor. Si empatan, de izquierda a derecha."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Potencia",
+     "significado": "Multiplicación de un número por sí mismo varias veces."
+    },
+    {
+     "palabra": "Exponente",
+     "significado": "El número chiquito arriba: cuántas veces se multiplica."
+    },
+    {
+     "palabra": "Orden de magnitud",
+     "significado": "La potencia de 10 del lugar de la primera cifra."
+    },
+    {
+     "palabra": "Descomposición polinómica",
+     "significado": "Cifra por potencia de 10, sumadas."
+    }
+   ],
+   "carpeta": [
+    "Calculá 10⁴.",
+    "Escribí el número: 7 × 10³ + 2 × 10² + 5 × 10⁰.",
+    "Calculá 340 × 100.",
+    "¿Cuál es mayor: 99.999 o 100.001?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "10000"
+    ],
+    [
+     "7205"
+    ],
+    [
+     "34000"
+    ],
+    [
+     "100001"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "3. 1. 200.",
+    "solo": "63.000, del orden de las decenas de mil (10⁴). 630, del orden de las centenas (10²).",
+    "carpeta": [
+     "10.000.",
+     "7.205: 7.000 + 200 + 5 (no hay decenas).",
+     "34.000: se agregan dos ceros.",
+     "100.001: tiene 6 cifras y 99.999 tiene 5."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Potencias de 10",
+      "ejemplo": {
+       "motor": "potencias_explorar",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Potencia de 10",
+        "texto": "Una potencia de 10 es el resultado de multiplicar el 10 por sí mismo una cierta cantidad de veces. El <b>exponente</b>, el número chiquito de arriba, indica cuántas veces aparece el 10 como factor, y coincide con la cantidad de ceros del resultado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada lugar de nuestro sistema vale diez veces más que el de su derecha, así que los valores de los lugares son justamente las potencias de 10: las unidades son 10⁰ = 1, las decenas 10¹ = 10, las centenas 10² = 100 y las unidades de mil 10³ = 1.000. Por eso multiplicar por 10, 100 o 1.000 corre cada cifra uno, dos o tres lugares a la izquierda, y en los naturales eso se ve como agregar ceros. Dividir, cuando el número termina en esos ceros, los corre a la derecha y los saca."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo multiplicar o dividir por 10, 100 y 1.000",
+        "items": [
+         "Contá los ceros del 10, 100 o 1.000: son los lugares que se corre cada cifra.",
+         "Para multiplicar, agregá esa cantidad de ceros a la derecha del número.",
+         "Para dividir un número que termina en esos ceros, sacá la misma cantidad de ceros."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "10⁵ y 63 × 1.000",
+        "texto": "Usamos el exponente y los ceros.",
+        "items": [
+         "10⁵ = 10 × 10 × 10 × 10 × 10 = 100.000: cinco factores 10, cinco ceros.",
+         "1.000 = 10³ tiene tres ceros: 63 × 1.000 = 63.000 (el 6 y el 3 suben tres lugares).",
+         "Al revés: 63.000 ÷ 1.000 = 63."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Confundir 10³ con 10 × 3",
+        "texto": "10³ no es 30: el exponente no multiplica a la base, indica cuántas veces se repite como factor. 10³ = 10 × 10 × 10 = 1.000. Si te da un número sin la cantidad de ceros que pide el exponente, revisalo."
+       }
+      ]
+     },
+     {
+      "titulo": "Descomponer con potencias de 10",
+      "ejemplo": {
+       "motor": "pasoapaso",
+       "p": {
+        "u": "/actividades/pasoapaso/descomposicion-multiplicativa.html"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Descomposición polinómica",
+        "texto": "Es escribir un número como la suma de cada cifra multiplicada por la potencia de 10 que corresponde a su lugar. Es la descomposición multiplicativa, pero usando la notación de potencias en lugar de 1, 10, 100…"
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Esta forma deja ver de un golpe el tamaño de cada parte: el exponente más grande indica el lugar de la primera cifra. Además prepara el terreno para entender otros sistemas, como el binario, donde los lugares son potencias de 2 en vez de potencias de 10. Las cifras que son 0 no hace falta escribirlas, porque cero por cualquier potencia da cero."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo descomponer con potencias",
+        "items": [
+         "Numerá los lugares desde la derecha empezando en 0: ese número es el exponente.",
+         "Multiplicá cada cifra por 10 elevado al exponente de su lugar.",
+         "Sumá los términos y controlá que vuelva a dar el número."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Descomponer 70.385",
+        "texto": "Cifra por potencia.",
+        "items": [
+         "Exponentes desde la derecha: el 5 tiene 0, el 8 tiene 1, el 3 tiene 2, el 0 tiene 3 y el 7 tiene 4.",
+         "70.385 = 7 × 10⁴ + 3 × 10² + 8 × 10¹ + 5 × 10⁰.",
+         "Control: 70.000 + 300 + 80 + 5 = 70.385."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Empezar los exponentes en 1",
+        "texto": "Si a las unidades les ponés exponente 1, todo el número queda diez veces más grande. Las unidades son 10⁰, porque valen 1. El exponente de la primera cifra de la izquierda es siempre uno menos que la cantidad de cifras del número."
+       }
+      ]
+     },
+     {
+      "titulo": "Orden de magnitud y comparación",
+      "ejercicio": {
+       "motor": "ordenar",
+       "p": {
+        "modo": "naturales"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Orden de magnitud",
+        "texto": "El orden de magnitud de un número es la potencia de 10 que corresponde al lugar de su primera cifra. Indica de qué tamaño es el número: de las decenas, de los miles, de los millones…"
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Conocer el orden de magnitud permite comparar números grandes casi sin mirar las cifras: un número del orden de los cientos de miles siempre es mayor que uno del orden de las decenas de miles, empiece con la cifra que empiece. Solo cuando dos números tienen el mismo orden de magnitud hay que mirar las cifras una por una, de izquierda a derecha."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo comparar números naturales",
+        "items": [
+         "Contá las cifras de cada uno: el que tiene más cifras es mayor.",
+         "Si tienen la misma cantidad, compará la primera cifra de la izquierda.",
+         "Si son iguales, pasá a la siguiente hasta encontrar una distinta: la mayor define cuál número es mayor."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Ordenar 405.000, 98.990 y 405.100",
+        "texto": "De menor a mayor.",
+        "items": [
+         "98.990 tiene 5 cifras (orden 10⁴) y los otros dos tienen 6 (orden 10⁵): 98.990 es el menor.",
+         "405.000 y 405.100 empatan en 4, 0 y 5; en las centenas, 0 es menor que 1.",
+         "Orden: 98.990 < 405.000 < 405.100."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Guiarse por la primera cifra sin contar",
+        "texto": "Pensar que 98.990 es mayor que 405.000 porque empieza con 9 es un error común. Antes de mirar la primera cifra hay que contar cuántas cifras tiene cada número: la cantidad de cifras manda."
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Potencia de 10",
+      "definicion": "es multiplicar el 10 por sí mismo; el exponente dice cuántas veces y cuántos ceros tiene el resultado.",
+      "formula": "10⁰ = 1 · 10¹ = 10 · 10² = 100 · 10³ = 1.000",
+      "ejemplo": "10⁵ = 100.000"
+     },
+     {
+      "concepto": "Multiplicar y dividir por 10, 100 y 1.000",
+      "definicion": "corre las cifras uno, dos o tres lugares, y por eso se agregan o se sacan ceros.",
+      "ejemplo": "63 × 1.000 = 63.000 · 63.000 ÷ 1.000 = 63"
+     },
+     {
+      "concepto": "Descomposición con potencias",
+      "definicion": "es sumar cada cifra multiplicada por la potencia de 10 de su lugar, contando los lugares desde 0.",
+      "ejemplo": "70.385 = 7 × 10⁴ + 3 × 10² + 8 × 10¹ + 5 × 10⁰"
+     },
+     {
+      "concepto": "Comparar números naturales",
+      "definicion": "el que tiene más cifras es mayor; si empatan, se comparan las cifras de izquierda a derecha.",
+      "esquema": [
+       "Contar las cifras",
+       "Comparar la primera",
+       "Seguir hasta encontrar una distinta"
+      ],
+      "ejemplo": "98.990 < 405.000 < 405.100"
+     }
+    ]
+   }
+  },
+  "3": {
+   "objetivo": "Vas a poder explicar cómo funciona el sistema binario y pasar números de decimal a binario y de binario a decimal.",
+   "vas_a_ver": [
+    "Base 2: solo dos cifras, 0 y 1",
+    "Los lugares son potencias de 2",
+    "Cómo se escribe y se lee un número en otra base",
+    "De decimal a binario: divisiones sucesivas y restas sucesivas",
+    "De binario a decimal"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Base 2",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Sistema binario",
+       "texto": "Usa solo <b>dos cifras: 0 y 1</b>. Es el sistema de las computadoras y los aparatos electrónicos: 0 es apagado (sin corriente) y 1 es encendido."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "También es posicional, pero en vez de agrupar de a 10 se agrupa <b>de a 2</b>. Por eso cada lugar vale el doble que el anterior: son las potencias de 2."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Lugares del binario",
+       "columnas": [
+        "Potencia",
+        "2⁰",
+        "2¹",
+        "2²",
+        "2³",
+        "2⁴",
+        "2⁵"
+       ],
+       "filas": [
+        [
+         "Vale",
+         "1",
+         "2",
+         "4",
+         "8",
+         "16",
+         "32"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cómo se escribe y se lee",
+     "bloques": [
+      {
+       "tipo": "importante",
+       "titulo": "La base se indica",
+       "texto": "La base se escribe chiquita abajo: 101₂. Se lee cifra por cifra: \"uno, cero, uno en base 2\". No se dice \"ciento uno\", porque centena y decena son palabras de la base 10."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Lo mismo pasa con cualquier base. En base 8 se agrupa de a 8: 11 objetos son 1 grupo de 8 y 3 sueltos, o sea 13₈."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "De decimal a binario",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se divide por 2 una y otra vez (<b>divisiones sucesivas</b>) hasta llegar a cociente 0. Cada división arma grupos de 2 y su resto es lo que queda suelto en ese lugar. El número binario se forma con los <b>restos leídos de abajo hacia arriba</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Pasar 11 a binario",
+       "texto": "Divisiones sucesivas.",
+       "items": [
+        "11 ÷ 2 = 5, resto 1.",
+        "5 ÷ 2 = 2, resto 1.",
+        "2 ÷ 2 = 1, resto 0.",
+        "1 ÷ 2 = 0, resto 1.",
+        "Restos de abajo hacia arriba: 11 = 1011₂."
+       ]
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Otra forma son las <b>restas sucesivas</b>: se resta la potencia de 2 más grande que entra; cada potencia que se pudo restar es un 1 y cada una que no, un 0. Ej.: 20 = 16 + 4, así que 20 = 10100₂."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "De binario a decimal",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se multiplica cada cifra por el valor de su lugar (1, 2, 4, 8… desde la derecha) y se suma."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Pasar 1110₂ a decimal",
+       "texto": "Cifra por lugar.",
+       "items": [
+        "De derecha a izquierda: 0 × 1 + 1 × 2 + 1 × 4 + 1 × 8.",
+        "= 0 + 2 + 4 + 8.",
+        "= 14."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Pasar 19 a binario y comprobar",
+    "planteo": "Usá divisiones sucesivas.",
+    "pasos": [
+     "19 ÷ 2 = 9, resto 1.",
+     "9 ÷ 2 = 4, resto 1.",
+     "4 ÷ 2 = 2, resto 0.",
+     "2 ÷ 2 = 1, resto 0.",
+     "1 ÷ 2 = 0, resto 1.",
+     "Restos de abajo hacia arriba: 10011₂.",
+     "Comprobación: 16 + 0 + 0 + 2 + 1 = 19."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Pasar 10110₂ a decimal",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "De derecha a izquierda: 0 × 1 + 1 × 2 + 1 × 4 + 0 × 8 + 1 × ___ .",
+     "= 0 + 2 + 4 + 0 + ___ .",
+     "= ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Pasar 26 a binario",
+    "planteo": "Usá divisiones sucesivas y comprobá el resultado."
+   },
+   "tip": {
+    "titulo": "Armá la tabla de potencias",
+    "texto": "Antes de empezar escribí 1, 2, 4, 8, 16, 32… de derecha a izquierda. Te sirve para ir y volver entre binario y decimal."
+   },
+   "ojo": [
+    "Leer los restos de arriba hacia abajo: para 6 los restos son 0, 1, 1 y el número es 110₂, no 011₂.",
+    "Leer 101₂ como \"ciento uno\": se lee uno, cero, uno en base 2 y vale 5."
+   ],
+   "resumen": [
+    {
+     "titulo": "Base 2",
+     "texto": "Solo 0 y 1. Lo usan las computadoras."
+    },
+    {
+     "titulo": "Lugares",
+     "texto": "1, 2, 4, 8, 16, 32… (potencias de 2)."
+    },
+    {
+     "titulo": "Decimal → binario",
+     "texto": "Dividir por 2 y leer los restos de abajo hacia arriba."
+    },
+    {
+     "titulo": "Binario → decimal",
+     "texto": "Cifra por lugar y sumar. Ej.: 1110₂ = 14."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Binario",
+     "significado": "Sistema de base 2, con las cifras 0 y 1."
+    },
+    {
+     "palabra": "Divisiones sucesivas",
+     "significado": "Dividir varias veces seguidas el cociente anterior."
+    },
+    {
+     "palabra": "Resto",
+     "significado": "Lo que sobra en una división."
+    },
+    {
+     "palabra": "Subíndice",
+     "significado": "Número chiquito abajo que indica la base."
+    }
+   ],
+   "carpeta": [
+    "Pasá 9 a binario.",
+    "Pasá 111₂ a decimal.",
+    "Pasá 12 a binario.",
+    "Un compañero pasó 6 a binario y escribió 011₂. ¿Cuál es el resultado correcto?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "1001",
+     "1001₂",
+     "1001(2)"
+    ],
+    [
+     "7"
+    ],
+    [
+     "1100",
+     "1100₂",
+     "1100(2)"
+    ],
+    [
+     "110",
+     "110₂",
+     "110(2)"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "16. 16. 22.",
+    "solo": "26 ÷ 2 = 13 r 0; 13 ÷ 2 = 6 r 1; 6 ÷ 2 = 3 r 0; 3 ÷ 2 = 1 r 1; 1 ÷ 2 = 0 r 1. 26 = 11010₂. Comprobación: 16 + 8 + 2 = 26.",
+    "carpeta": [
+     "1001₂: 8 + 1 = 9.",
+     "7: 4 + 2 + 1.",
+     "1100₂: 8 + 4 = 12.",
+     "110₂: leyó los restos al revés; van de abajo hacia arriba."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El sistema binario",
+      "ejemplo": {
+       "motor": "binario_lamparas",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sistema binario",
+        "texto": "El sistema binario es un sistema posicional que usa solo dos cifras, el 0 y el 1, y arma grupos de a dos. Cada lugar vale el doble que el de su derecha: 1, 2, 4, 8, 16, 32, 64…, es decir, las potencias de 2."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las computadoras y los celulares trabajan en binario porque sus circuitos solo distinguen dos estados: pasa corriente o no pasa, prendido o apagado, 1 o 0. Con suficientes lugares, esas dos cifras alcanzan para escribir cualquier número, igual que nuestras diez cifras. Para no confundir, la base se escribe chiquita abajo a la derecha, y un número binario se lee cifra por cifra: 110₂ se lee «uno, uno, cero en base dos», no «ciento diez»."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo se arman los lugares del binario",
+        "items": [
+         "Empezá por la derecha con el lugar que vale 1.",
+         "Cada lugar nuevo hacia la izquierda vale el doble: 2, 4, 8, 16…",
+         "Un 1 en un lugar significa que ese valor está; un 0, que no está."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "¿Qué número es 11001₂?",
+        "texto": "Miramos qué lugares tienen 1.",
+        "items": [
+         "Lugares desde la derecha: 1, 2, 4, 8 y 16.",
+         "Hay cifras 1 en los lugares que valen 16, 8 y 1.",
+         "16 + 8 + 1 = 25: 11001₂ = 25."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Leer un binario como si fuera decimal",
+        "texto": "Decir que 11001₂ es «once mil uno» mezcla dos sistemas. En base 2 no existen decenas ni centenas: los lugares valen 1, 2, 4, 8… Si un número tiene el subíndice 2, leelo cifra por cifra."
+       }
+      ]
+     },
+     {
+      "titulo": "De decimal a binario",
+      "ejemplo": {
+       "motor": "pasoapaso",
+       "p": {
+        "u": "/actividades/pasoapaso/decimal-a-binario.html"
+       }
+      },
+      "ejercicio": {
+       "motor": "binario_conv",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Divisiones sucesivas",
+        "texto": "Para pasar un número de decimal a binario se lo divide por 2 una y otra vez, hasta que el cociente sea 0. Los restos de esas divisiones, que siempre son 0 o 1, forman el número binario leídos desde el último hasta el primero."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada división por 2 arma parejas: el cociente cuenta cuántas parejas hay y el resto dice si sobró uno suelto. Al dividir otra vez, las parejas se juntan en grupos de cuatro, después de ocho, y así. Por eso el primer resto corresponde al lugar de las unidades y el último al lugar más grande, y hay que leerlos de abajo hacia arriba. Otra forma es restar la potencia de 2 más grande que entre y anotar un 1 por cada potencia usada."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo pasar de decimal a binario",
+        "items": [
+         "Dividí el número por 2 y anotá el cociente y el resto.",
+         "Dividí el cociente otra vez por 2; repetí hasta que el cociente sea 0.",
+         "Leé los restos de abajo hacia arriba: ese es el número en binario.",
+         "Controlá pasándolo de vuelta a decimal."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Pasar 19 a binario",
+        "texto": "Divisiones por 2.",
+        "items": [
+         "19 ÷ 2 = 9, resto 1 · 9 ÷ 2 = 4, resto 1.",
+         "4 ÷ 2 = 2, resto 0 · 2 ÷ 2 = 1, resto 0 · 1 ÷ 2 = 0, resto 1.",
+         "Restos de abajo hacia arriba: 19 = 10011₂ (control: 16 + 2 + 1 = 19)."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Leer los restos de arriba hacia abajo",
+        "texto": "Si en el ejemplo leés 11001, obtenés 25 y no 19. El primer resto es el de las unidades, así que va a la derecha del todo. Para detectarlo, hacé el control: pasá el resultado a decimal y fijate si vuelve el número original."
+       }
+      ]
+     },
+     {
+      "titulo": "De binario a decimal",
+      "ejemplo": {
+       "motor": "pasoapaso",
+       "p": {
+        "u": "/actividades/pasoapaso/binario-a-decimal.html"
+       }
+      },
+      "ejercicio": {
+       "motor": "binario_conv",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Valor de un número binario",
+        "texto": "Para pasar de binario a decimal se multiplica cada cifra por el valor de su lugar, que es una potencia de 2, y se suman los resultados. Como las cifras solo son 0 o 1, alcanza con sumar los valores de los lugares donde hay un 1."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Es lo mismo que hacemos al descomponer un número decimal con potencias de 10, pero con potencias de 2: 1, 2, 4, 8, 16, 32, 64, 128. Pensarlo así ayuda a no memorizar reglas sueltas: en cualquier base, cada cifra vale la cifra por el valor de su lugar, y el número es la suma de esos valores."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo pasar de binario a decimal",
+        "items": [
+         "Escribí arriba de cada cifra el valor de su lugar, empezando por 1 a la derecha y duplicando.",
+         "Marcá los lugares que tienen un 1.",
+         "Sumá esos valores: el resultado es el número en decimal."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Pasar 101101₂ a decimal",
+        "texto": "Lugares: 32, 16, 8, 4, 2 y 1.",
+        "items": [
+         "Cifras 1 0 1 1 0 1: hay un 1 en los lugares que valen 32, 8, 4 y 1.",
+         "Sumamos 32 + 8 + 4 + 1.",
+         "El resultado es 45: 101101₂ = 45."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Duplicar desde la izquierda",
+        "texto": "Si ponés el 1 en la primera cifra de la izquierda y vas duplicando hacia la derecha, los valores quedan al revés y el resultado es otro número. El lugar que vale 1 es siempre el de la derecha, igual que las unidades en base 10."
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El sistema binario",
+      "definicion": "usa solo 0 y 1 y agrupa de a dos, así que cada lugar vale el doble que el de su derecha.",
+      "formula": "1 · 2 · 4 · 8 · 16 · 32 · 64",
+      "ejemplo": "11001₂ = 16 + 8 + 1 = 25"
+     },
+     {
+      "concepto": "De decimal a binario",
+      "definicion": "se divide por 2 hasta llegar a cociente 0 y se leen los restos de abajo hacia arriba.",
+      "esquema": [
+       "19 ÷ 2 = 9, resto 1",
+       "9 ÷ 2 = 4, resto 1",
+       "4 ÷ 2 = 2, resto 0",
+       "2 ÷ 2 = 1, resto 0",
+       "1 ÷ 2 = 0, resto 1"
+      ],
+      "ejemplo": "19 = 10011₂"
+     },
+     {
+      "concepto": "De binario a decimal",
+      "definicion": "se suman los valores de los lugares que tienen un 1, empezando por 1 a la derecha.",
+      "ejemplo": "101101₂ = 32 + 8 + 4 + 1 = 45"
+     },
+     {
+      "concepto": "Cómo se lee",
+      "definicion": "un número binario se lee cifra por cifra, y la base se indica chiquita abajo a la derecha.",
+      "ejemplo": "110₂: «uno, uno, cero en base dos»"
+     }
+    ]
+   }
+  },
+  "4": {
+   "objetivo": "Vas a poder usar el sistema sexagesimal para medir el tiempo y los ángulos, pasar de una unidad a otra y sumar y restar medidas.",
+   "vas_a_ver": [
+    "Un sistema que agrupa de a 60",
+    "Horas, minutos y segundos",
+    "Pasar de una unidad a otra",
+    "Sumar y restar tiempos",
+    "Grados, minutos y segundos en los ángulos"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Agrupar de a 60",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Sistema sexagesimal",
+       "texto": "Agrupa <b>de a 60</b>: 60 segundos forman 1 minuto y 60 minutos forman 1 hora. Lo usamos para medir el tiempo y los ángulos."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Equivalencias",
+       "columnas": [
+        "Unidad",
+        "Equivale a"
+       ],
+       "filas": [
+        [
+         "1 hora (h)",
+         "60 minutos"
+        ],
+        [
+         "1 minuto (min)",
+         "60 segundos"
+        ],
+        [
+         "1 hora",
+         "3.600 segundos"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Pasar de una unidad a otra",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para pasar a una unidad <b>más chica</b> se multiplica por 60. Para pasar a una <b>más grande</b> se divide por 60: el cociente son las unidades grandes y el resto, las que sobran."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Pasar 150 minutos a horas",
+       "texto": "Dividimos por 60.",
+       "items": [
+        "150 ÷ 60 = 2, resto 30.",
+        "150 min = 2 h 30 min."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Sumar y restar tiempos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se suman o restan horas con horas, minutos con minutos y segundos con segundos. Si los minutos llegan a 60 o más, se canjean por horas. Si en una resta no alcanza, se pide 1 hora prestada, que son 60 minutos."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Sumar 1 h 45 min + 2 h 30 min",
+       "texto": "Por columnas.",
+       "items": [
+        "Horas: 1 + 2 = 3. Minutos: 45 + 30 = 75.",
+        "75 min = 1 h 15 min.",
+        "Total: 4 h 15 min."
+       ]
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Restar 3 h 10 min − 1 h 40 min",
+       "texto": "Pedimos prestado.",
+       "items": [
+        "10 min no alcanza para restar 40 min.",
+        "Pedimos 1 h: queda 2 h 70 min.",
+        "2 h 70 min − 1 h 40 min = 1 h 30 min."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Los ángulos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Grados, minutos y segundos",
+       "texto": "Los ángulos se miden en <b>grados (°)</b>. 1° = 60 minutos (60′) y 1′ = 60 segundos (60″). Se opera igual que con el tiempo."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: 25° 40′ + 10° 35′ = 35° 75′ = 36° 15′."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "¿A qué hora termina la película?",
+    "planteo": "Una película dura 135 minutos y empieza a las 20:50.",
+    "pasos": [
+     "135 ÷ 60 = 2, resto 15: dura 2 h 15 min.",
+     "20 h 50 min + 2 h 15 min = 22 h 65 min.",
+     "65 min = 1 h 5 min.",
+     "Termina a las 23:05."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Pasar 3 h 20 min a minutos",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "3 h = 3 × 60 = ___ min.",
+     "180 + 20 = ___ min."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "5 h 15 min − 2 h 50 min",
+    "planteo": "Resolvé la resta. Pensá si hace falta pedir prestado."
+   },
+   "tip": {
+    "titulo": "Pensá en el reloj",
+    "texto": "Cuando los minutos llegan a 60, el reloj suma una hora y vuelve a 0. Así funciona cada canje de 60."
+   },
+   "ojo": [
+    "No canjear: 1 h 50 min + 20 min no es 1 h 70 min, es 2 h 10 min.",
+    "Pedir prestado 100 en vez de 60: 1 hora prestada son 60 minutos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Base 60",
+     "texto": "60 s = 1 min; 60 min = 1 h."
+    },
+    {
+     "titulo": "Pasar de unidad",
+     "texto": "A más chica, × 60. A más grande, ÷ 60 (el resto sobra)."
+    },
+    {
+     "titulo": "Sumar y restar",
+     "texto": "Por columnas, canjeando de a 60."
+    },
+    {
+     "titulo": "Ángulos",
+     "texto": "1° = 60′ y 1′ = 60″."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Sexagesimal",
+     "significado": "Sistema que agrupa de a 60."
+    },
+    {
+     "palabra": "Canjear",
+     "significado": "Cambiar 60 unidades chicas por 1 grande."
+    },
+    {
+     "palabra": "Grado (°)",
+     "significado": "Unidad para medir ángulos."
+    },
+    {
+     "palabra": "Minuto (′) y segundo (″)",
+     "significado": "Partes del grado, igual que en el reloj."
+    }
+   ],
+   "carpeta": [
+    "¿Cuántos minutos son 4 horas?",
+    "Pasá 200 minutos a horas y minutos.",
+    "Sumá 2 h 40 min + 1 h 35 min.",
+    "Un compañero restó 4 h 10 min − 1 h 30 min pidiendo prestados 100 minutos y le dio 2 h 80 min. ¿Cuál es el resultado correcto?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "240"
+    ],
+    [
+     "3h20min",
+     "3h20m",
+     "3h20",
+     "3:20",
+     "3horas20minutos"
+    ],
+    [
+     "4h15min",
+     "4h15m",
+     "4h15",
+     "4:15",
+     "4horas15minutos"
+    ],
+    [
+     "2h40min",
+     "2h40m",
+     "2h40",
+     "2:40",
+     "2horas40minutos"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "180. 200.",
+    "solo": "Pedimos 1 h: 4 h 75 min − 2 h 50 min = 2 h 25 min.",
+    "carpeta": [
+     "240: 4 × 60.",
+     "3 h 20 min: 200 ÷ 60 = 3, resto 20.",
+     "4 h 15 min: 3 h 75 min y 75 min = 1 h 15 min.",
+     "2 h 40 min: 1 h prestada son 60 min, así que queda 3 h 70 min − 1 h 30 min."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Agrupar de a 60 y pasar de unidad",
+      "ejemplo": {
+       "motor": "sexagesimal",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "sexagesimal_conv",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sistema sexagesimal",
+        "texto": "El sistema sexagesimal agrupa de a sesenta: sesenta segundos forman un minuto y sesenta minutos forman una hora. Lo usamos para medir el tiempo y también los ángulos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Viene de los antiguos babilonios, que contaban en base 60. El 60 es práctico porque se puede dividir en partes iguales de muchas formas: por 2, 3, 4, 5, 6, 10, 12, 15, 20 y 30. Por eso media hora, un cuarto de hora o un tercio de hora son siempre minutos enteros. Como se agrupa de a 60 y no de a 10, no se puede pasar de unidad corriendo la coma: hay que multiplicar o dividir por 60."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo pasar de una unidad a otra",
+        "items": [
+         "Para pasar a una unidad más chica (horas a minutos, minutos a segundos), multiplicá por 60.",
+         "Para pasar a una más grande, dividí por 60.",
+         "El cociente son las unidades grandes y el resto, las chicas que sobran."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Pasar 4.000 segundos",
+        "texto": "Dividimos dos veces por 60.",
+        "items": [
+         "4.000 ÷ 60 = 66, resto 40: son 66 min 40 s.",
+         "66 ÷ 60 = 1, resto 6: son 1 h 6 min.",
+         "4.000 s = 1 h 6 min 40 s."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Usar la coma como en base 10",
+        "texto": "Escribir que 90 minutos son «1,30 h» es un error: 1,30 h significa una hora y treinta centésimos de hora, que son 1 h 18 min. Noventa minutos son 1 h 30 min, o 1,5 h. En el sistema sexagesimal se escriben las unidades separadas, sin coma."
+       }
+      ]
+     },
+     {
+      "titulo": "Sumar y restar tiempos",
+      "ejercicio": {
+       "motor": "sexagesimal_conv",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Operar con medidas sexagesimales",
+        "texto": "Para sumar o restar tiempos se opera por columnas: horas con horas, minutos con minutos y segundos con segundos. Después se acomoda el resultado para que ninguna columna llegue a 60."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Funciona igual que la suma y la resta en columnas que ya conocés, pero el canje se hace de a 60 en vez de a 10. Si al sumar los segundos llegan a 60 o más, cada 60 se convierte en un minuto que pasa a la columna de la izquierda. Si al restar no alcanzan los minutos, se pide prestada una hora, que se convierte en 60 minutos."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo sumar y restar tiempos",
+        "items": [
+         "Escribí las medidas una debajo de la otra, con horas, minutos y segundos en columnas.",
+         "Sumá o restá cada columna por separado.",
+         "Si una columna llega a 60 o más, canjeá 60 por 1 de la columna de la izquierda.",
+         "En la resta, si no alcanza, pedí 1 a la columna de la izquierda: suma 60."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "2 h 50 min 35 s + 1 h 25 min 40 s",
+        "texto": "Por columnas y canjeando.",
+        "items": [
+         "Segundos: 35 + 40 = 75, que son 1 min 15 s.",
+         "Minutos: 50 + 25 + 1 = 76, que son 1 h 16 min.",
+         "Horas: 2 + 1 + 1 = 4. Total: 4 h 16 min 15 s."
+        ]
+       },
+       {
+        "tipo": "error",
+        "titulo": "Pedir prestado 100 en vez de 60",
+        "texto": "Al restar 5 h 10 min − 2 h 45 min, si pedís una hora y la convertís en 100 minutos te da mal. Una hora son 60 minutos: queda 4 h 70 min − 2 h 45 min = 2 h 25 min."
+       }
+      ]
+     },
+     {
+      "titulo": "Medir ángulos en grados, minutos y segundos",
+      "ejemplo": {
+       "motor": "transportador",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Grados sexagesimales",
+        "texto": "Los ángulos se miden en grados. Un giro completo tiene 360 grados; cada grado se divide en 60 minutos y cada minuto en 60 segundos: 1° = 60′ y 1′ = 60″."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las mismas reglas del tiempo valen para los ángulos, porque los dos usan base 60. Medir con grados, minutos y segundos permite mucha precisión, y por eso se usa en mapas, en navegación y en astronomía. Un ángulo recto mide 90°, un llano 180° y un giro completo 360°; los minutos y segundos aparecen cuando hace falta una medida más fina que el grado."
+       },
+       {
+        "tipo": "pasos",
+        "titulo": "Cómo sumar ángulos",
+        "items": [
+         "Ubicá grados, minutos y segundos en columnas.",
+         "Sumá cada columna por separado.",
+         "Canjeá cada 60″ por 1′ y cada 60′ por 1°."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "48° 35′ + 27° 50′",
+        "texto": "Por columnas.",
+        "items": [
+         "Minutos: 35′ + 50′ = 85′, que son 1° 25′.",
+         "Grados: 48° + 27° + 1° = 76°.",
+         "Resultado: 76° 25′."
+        ]
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "90° − 37° 25′",
+        "texto": "Restar pidiendo prestado.",
+        "items": [
+         "No hay minutos para restarle 25′ a 90°: pedimos 1° prestado y lo cambiamos por 60′.",
+         "90° queda como 89° 60′.",
+         "89° 60′ − 37° 25′ = 52° 35′. Ese es el complemento de 37° 25′."
+        ]
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para pasar de una unidad a otra también se usa el 60: 3° son 3 × 60 = 180′, y 150′ son 150 ÷ 60 = 2, resto 30, es decir 2° 30′. Esto sirve, por ejemplo, para comparar dos ángulos escritos de distinta forma o para repartir un ángulo en partes iguales."
+       },
+       {
+        "tipo": "error",
+        "titulo": "Confundir minutos de ángulo con minutos de tiempo",
+        "texto": "El minuto de ángulo (′) no es tiempo: es una parte de un grado. Lo único que comparten es la forma de agrupar de a 60. Fijate en el símbolo: ° y ′ indican ángulos; h y min indican tiempo."
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El sistema sexagesimal",
+      "definicion": "agrupa de a 60 y se usa para medir el tiempo y los ángulos.",
+      "formula": "1 h = 60 min · 1 min = 60 s · 1 h = 3.600 s",
+      "ejemplo": "150 s = 2 min 30 s"
+     },
+     {
+      "concepto": "Pasar de unidad",
+      "definicion": "a una unidad más chica se multiplica por 60; a una más grande se divide por 60 y el resto sobra.",
+      "ejemplo": "4.000 s = 1 h 6 min 40 s"
+     },
+     {
+      "concepto": "Sumar y restar",
+      "definicion": "se opera por columnas y se canjea de a 60, nunca de a 100 como en el sistema decimal.",
+      "esquema": [
+       "Sumar cada columna",
+       "Canjear 60 por 1 a la izquierda",
+       "Al restar, pedir 1 = 60"
+      ],
+      "ejemplo": "2 h 50 min 35 s + 1 h 25 min 40 s = 4 h 16 min 15 s"
+     },
+     {
+      "concepto": "Ángulos",
+      "definicion": "se miden en grados, minutos y segundos, con las mismas reglas que el tiempo.",
+      "formula": "1° = 60′ · 1′ = 60″",
+      "ejemplo": "48° 35′ + 27° 50′ = 76° 25′"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "multiple_choice",
+    "p": "En 5.252, ¿cuánto vale el 5 de la izquierda?",
+    "o": [
+     "5",
+     "50",
+     "500",
+     "5.000"
+    ],
+    "r": {
+     "correcta": "5.000"
+    },
+    "e": "Está en el lugar de las unidades de mil: vale 5.000."
+   },
+   {
+    "t": "numeric",
+    "p": "Escribí el número que forman {a} unidades de mil, {b} centenas y {c} unidades.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 1,
+       "max": 9
+      },
+      "b": {
+       "min": 1,
+       "max": 9
+      },
+      "c": {
+       "min": 1,
+       "max": 9
+      }
+     }
+    },
+    "r": {
+     "formula": "a*1000+b*100+c"
+    },
+    "e": "No hay decenas: en ese lugar va un 0."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "Escribí el número: {a} × 10³ + {b} × 10² + {c} × 10⁰.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 1,
+       "max": 9
+      },
+      "b": {
+       "min": 1,
+       "max": 9
+      },
+      "c": {
+       "min": 1,
+       "max": 9
+      }
+     }
+    },
+    "r": {
+     "formula": "a*1000+b*100+c"
+    },
+    "e": "10³ = 1.000, 10² = 100 y 10⁰ = 1. No hay decenas."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es mayor?",
+    "o": [
+     "98.765",
+     "100.234",
+     "Son iguales"
+    ],
+    "r": {
+     "correcta": "100.234"
+    },
+    "e": "100.234 tiene 6 cifras y 98.765 tiene 5."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "Pasá 1010₂ a decimal.",
+    "o": {},
+    "r": {
+     "acepta": [
+      10
+     ]
+    },
+    "e": "0 × 1 + 1 × 2 + 0 × 4 + 1 × 8 = 10."
+   },
+   {
+    "t": "numeric",
+    "p": "Pasá 23 a binario. Escribí solo las cifras.",
+    "o": {},
+    "r": {
+     "acepta": [
+      10111
+     ]
+    },
+    "e": "Restos de 23 ÷ 2 sucesivas: 1, 1, 1, 0, 1. De abajo hacia arriba: 10111₂ (16 + 4 + 2 + 1)."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "¿Cuántos minutos son {h} h {m} min?",
+    "o": {
+     "vars": {
+      "h": {
+       "min": 1,
+       "max": 5
+      },
+      "m": {
+       "min": 1,
+       "max": 59
+      }
+     }
+    },
+    "r": {
+     "formula": "h*60+m"
+    },
+    "e": "Las horas se multiplican por 60 y se suman los minutos."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Sumá 1 h 50 min + 1 h 25 min.",
+    "o": [
+     "2 h 75 min",
+     "3 h 15 min",
+     "3 h 75 min",
+     "2 h 15 min"
+    ],
+    "r": {
+     "correcta": "3 h 15 min"
+    },
+    "e": "50 + 25 = 75 min = 1 h 15 min; 2 h + 1 h 15 min = 3 h 15 min."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. ¿Cuánto vale el 3 en 4.307?",
+    "o": [
+     "3",
+     "30",
+     "300",
+     "3.000"
+    ],
+    "r": {
+     "correcta": "300"
+    },
+    "e": "Está en el lugar de las centenas.",
+    "tiempo": 15
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Pasá 110₂ a decimal.",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "4 + 2 + 0 = 6.",
+    "tiempo": 30
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. 10³ es igual a 30.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "10³ = 10 × 10 × 10 = 1.000.",
+    "tiempo": 15
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. ¿Cuántos segundos son 3 minutos?",
+    "o": {},
+    "r": {
+     "acepta": [
+      180
+     ]
+    },
+    "e": "3 × 60 = 180.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "Escribí el número que forman {a} decenas de mil, {b} centenas y {c} unidades.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 1,
+       "max": 9
+      },
+      "b": {
+       "min": 1,
+       "max": 9
+      },
+      "c": {
+       "min": 1,
+       "max": 9
+      }
+     }
+    },
+    "r": {
+     "formula": "a*10000+b*100+c"
+    },
+    "e": "Las unidades de mil y las decenas quedan vacías: van ceros."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es la descomposición aditiva de 7.408?",
+    "o": [
+     "7.000 + 400 + 8",
+     "7 + 4 + 0 + 8",
+     "7.000 + 40 + 8",
+     "700 + 40 + 8"
+    ],
+    "r": {
+     "correcta": "7.000 + 400 + 8"
+    },
+    "e": "Se suman los valores de las cifras, no las cifras."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cómo se escribe con cifras \"tres millones cuarenta mil doce\"?",
+    "o": [
+     "3.040.012",
+     "3.400.012",
+     "3.040.120",
+     "340.012"
+    ],
+    "r": {
+     "correcta": "3.040.012"
+    },
+    "e": "3 | 040 | 012."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Calculá 10⁵.",
+    "o": {},
+    "r": {
+     "acepta": [
+      100000
+     ]
+    },
+    "e": "Un 1 seguido de 5 ceros: 100.000."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Calculá {a} × 1.000.",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 2,
+       "max": 99
+      }
+     }
+    },
+    "r": {
+     "formula": "a*1000"
+    },
+    "e": "Multiplicar por 1.000 agrega tres ceros."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué número es 6 × 10⁴ + 3 × 10² + 5 × 10⁰?",
+    "o": [
+     "60.305",
+     "6.305",
+     "60.035",
+     "635"
+    ],
+    "r": {
+     "correcta": "60.305"
+    },
+    "e": "60.000 + 300 + 5 = 60.305."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Pasá 1100₂ a decimal.",
+    "o": {},
+    "r": {
+     "acepta": [
+      12
+     ]
+    },
+    "e": "8 + 4 + 0 + 0 = 12."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Pasá 18 a binario. Escribí solo las cifras.",
+    "o": {},
+    "r": {
+     "acepta": [
+      10010
+     ]
+    },
+    "e": "18 = 16 + 2: 10010₂."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "En el sistema binario se usan solo las cifras 0 y 1.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es un sistema de base 2: dos cifras."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "¿Cuántos segundos son {m} minutos?",
+    "o": {
+     "vars": {
+      "m": {
+       "min": 2,
+       "max": 20
+      }
+     }
+    },
+    "r": {
+     "formula": "m*60"
+    },
+    "e": "Cada minuto tiene 60 segundos."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuánto es 190 minutos en horas y minutos?",
+    "o": [
+     "1 h 90 min",
+     "3 h 10 min",
+     "1 h 9 min",
+     "3 h 1 min"
+    ],
+    "r": {
+     "correcta": "3 h 10 min"
+    },
+    "e": "190 ÷ 60 = 3, resto 10."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Restá 5 h 20 min − 2 h 45 min.",
+    "o": [
+     "3 h 25 min",
+     "2 h 35 min",
+     "2 h 75 min",
+     "3 h 35 min"
+    ],
+    "r": {
+     "correcta": "2 h 35 min"
+    },
+    "e": "Pedimos 1 h: 4 h 80 min − 2 h 45 min = 2 h 35 min."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿A cuántos minutos (′) equivale 1 grado?",
+    "o": [
+     "10",
+     "60",
+     "100",
+     "360"
+    ],
+    "r": {
+     "correcta": "60"
+    },
+    "e": "1° = 60′."
+   }
+  ]
+ ]
+}

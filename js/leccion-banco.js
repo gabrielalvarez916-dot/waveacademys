@@ -276,6 +276,7 @@ window.WaveLeccionBanco = (function () {
     ejercicio(el, api, 'Colocá los números de forma que queden ordenados <b>de menor a mayor</b>.', function (c) {
       var vals = {}, L = [];
       var tope2 = 0; while (L.length < 4 && tope2++ < 3000) { var v = modo === 'decimales' ? Math.round(R(-20, 80) * 10 + R(0, 9) * (Math.random() < .5 ? 1 : 0)) / (Math.random() < .5 ? 10 : 100) : modo === 'fracciones' ? null : R(-99, 99), t;
+        if (modo === 'naturales') { var base = R(10, 99) * 1000; v = pick([base + R(0, 999), base * 10 + R(0, 9999), base - R(1000, 9000), Math.floor(base / 10) * 10 + R(0, 9)]); }
         if (modo === 'fracciones') { var b = R(2, 9), a = R(1, 2 * b); v = a / b; t = fr(a, b); } else t = modo === 'enteros' ? sig(v) : fmt(v);
         var key = v.toFixed(6); if (!vals[key]) { vals[key] = 1; L.push({ v: v, t: t }); } }
       c.innerHTML = '<div class="lb-orden">' + L.map(function (_, k) { return (k ? '<span class="lb-menor">&lt;</span>' : '') + '<span class="lb-hueco" data-dest="' + k + '" data-max="1"></span>'; }).join('') + '</div>' +
