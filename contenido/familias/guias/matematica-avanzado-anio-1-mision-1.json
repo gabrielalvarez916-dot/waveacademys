@@ -5,7 +5,7 @@
   "materia": "Matemática I",
   "mision": 1,
   "titulo": "Sistemas numéricos",
-  "introduccion": "Un momento breve para compartir. No es una clase: la familia no necesita enseñar, explicar ni comprobar si el estudiante aprendió.",
+  "introduccion": "No es una clase: la familia no necesita enseñar, explicar ni comprobar lo aprendido.",
   "guias": [
     {
       "leccion": 1,
@@ -19,33 +19,33 @@
         },
         {
           "pregunta": "¿Para qué sirve el cero en 4.005?",
-          "respuesta": "Para indicar que no hay centenas ni decenas y conservar esos lugares.",
+          "respuesta": "Indica que no hay centenas ni decenas y conserva esos lugares.",
           "por_que": "Sin el cero, el número sería otro."
         }
       ],
       "actividad": {
         "titulo": "La tienda de los números",
         "duracion": "5–8 minutos",
-        "materiales": "Un puñado de monedas o botones y tres recipientes",
-        "como_jugar": "Jueguen a una tienda imaginaria: cada recipiente representa unidades, decenas o centenas. No hay que hacer cuentas escritas.",
+        "materiales": "Monedas o botones y tres recipientes",
+        "como_jugar": "Jueguen a una tienda imaginaria: cada recipiente representa unidades, decenas o centenas. No hace falta escribir cuentas.",
         "pasos": [
-          "Elijan tres recipientes y pónganles los nombres unidad, decena y centena.",
-          "Por turnos, uno pide una cantidad de monedas o botones y el otro la arma usando los recipientes.",
-          "Cuando junten diez piezas en un recipiente, cámbienlas por una pieza en el recipiente de valor siguiente.",
-          "Gana quien logre atender más pedidos sin confundirse."
+          "Pongan nombre a tres recipientes: unidades, decenas y centenas.",
+          "Por turnos, uno pide una cantidad y el otro la arma con las piezas.",
+          "Cuando junten diez piezas en un recipiente, cámbienlas por una pieza del recipiente siguiente.",
+          "Cambien los roles e inventen pedidos cada vez más grandes."
         ],
-        "variante": "Para hacerlo más gracioso, pidan cantidades disparatadas o inventen productos con precios enormes."
+        "variante": "Inventen productos disparatados y precios enormes."
       }
     },
     {
       "leccion": 2,
       "titulo": "Potencias de 10 y números grandes",
-      "para_que_sirve": "Si el estudiante quiere, puede contarte cómo una misma cifra cambia de valor según el lugar que ocupa.",
+      "para_que_sirve": "Si quiere, puede contarte cómo una misma cifra cambia de valor según el lugar que ocupa.",
       "preguntas": [
         {
           "pregunta": "¿Qué significa 10³?",
           "respuesta": "10 × 10 × 10, que da 1.000.",
-          "por_que": "El exponente indica cuántas veces aparece la base como factor."
+          "por_que": "El exponente indica cuántas veces se multiplica la base."
         },
         {
           "pregunta": "¿Qué es mayor: 98.700 o 102.000?",
@@ -57,12 +57,12 @@
         "titulo": "La escalera de los saltos",
         "duracion": "5 minutos",
         "materiales": "Ninguno",
-        "como_jugar": "Imaginen que cada salto sube un escalón y multiplica por diez el número anterior. La idea es jugar a decir la secuencia sin escribir ni resolver ejercicios.",
+        "como_jugar": "Imaginen una escalera en la que cada salto multiplica por diez el número anterior.",
         "pasos": [
           "Uno dice «uno» y el otro responde «diez».",
           "Sigan por turnos: cien, mil, diez mil, cien mil…",
-          "Quien se equivoque debe inventar un nombre divertido para el siguiente escalón.",
-          "Vuelvan a empezar, esta vez intentando llegar más lejos."
+          "Quien se equivoque inventa un nombre divertido para el siguiente escalón.",
+          "Vuelvan a empezar e intenten llegar más lejos."
         ],
         "variante": "Hagan la escalera hacia abajo: diez mil, mil, cien, diez, uno."
       }
@@ -80,21 +80,21 @@
         {
           "pregunta": "En 1101₂, ¿qué posiciones suman?",
           "respuesta": "8, 4 y 1; en total representa 13.",
-          "por_que": "Solo se suman los valores de las posiciones que tienen un 1."
+          "por_que": "Se suman los valores de las posiciones que tienen un 1."
         }
       ],
       "actividad": {
         "titulo": "Código secreto: encendido o apagado",
         "duracion": "5–8 minutos",
         "materiales": "Cinco papelitos (opcional)",
-        "como_jugar": "Jueguen a enviarse números secretos usando cinco señales. Cada señal puede estar encendida o apagada.",
+        "como_jugar": "Envíense números secretos usando cinco señales: cada una puede estar encendida o apagada.",
         "pasos": [
-          "Si quieren, preparen cinco papelitos y acuerden que mostrarlo significa «encendido» y esconderlo significa «apagado».",
+          "Acuerden que mostrar un papelito significa «encendido» y esconderlo significa «apagado».",
           "Uno arma una combinación de cinco señales sin decir el número.",
-          "El otro intenta descifrarla usando los valores 16, 8, 4, 2 y 1, que pueden tener a la vista.",
-          "Cambien los roles e inventen un código para que el otro lo descubra."
+          "El otro intenta descifrarla con los valores 16, 8, 4, 2 y 1, que pueden tener a la vista.",
+          "Cambien los roles e inventen otro código."
         ],
-        "variante": "En vez de papelitos, usen los dedos de una mano: dedos levantados y escondidos."
+        "variante": "Usen los dedos de una mano en lugar de papelitos."
       }
     },
     {
@@ -117,11 +117,11 @@
         "titulo": "El reloj humano",
         "duracion": "5–8 minutos",
         "materiales": "Ninguno",
-        "como_jugar": "Con los brazos como agujas de un reloj, jueguen a representar horas y a adivinar posiciones. Después conviertan el cuerpo en un transportador de ángulos.",
+        "como_jugar": "Con los brazos como agujas de un reloj, representen horas y adivinen posiciones. Después usen los brazos para mostrar ángulos.",
         "pasos": [
           "Uno dice una hora en punto y ambos colocan los brazos como las agujas del reloj.",
-          "El otro adivina qué hora representa. Después cambian los roles.",
-          "Ahora uno dice «ángulo pequeño», «ángulo recto» o «ángulo grande» y el otro forma una abertura con los brazos.",
+          "El otro adivina qué hora representa. Cambien los roles.",
+          "Ahora digan «ángulo pequeño», «recto» o «grande» y formen la abertura con los brazos.",
           "Inventen poses cada vez más extrañas y adivinen cuál es más abierta."
         ],
         "variante": "Hagan una ronda sin hablar: solo pueden representar la hora o el ángulo con el cuerpo."
