@@ -324,7 +324,13 @@
       "ejemplo": "2.310: termina en 0 y suma 6 → divisible por 2, 3, 5, 10"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "recordar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder usar los criterios por 4, 6, 8, 10 y 11, y combinar criterios para decidir si un número es divisible.",
@@ -616,7 +622,13 @@
       "ejemplo": "1.386: (6 + 3) − (8 + 1) = 0 → sí"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder clasificar números en primos y compuestos, encontrar primos con la criba de Eratóstenes y decidir si un número es primo.",
@@ -791,7 +803,7 @@
    "carpeta": [
     "¿Cuántos números primos hay entre 1 y 20?",
     "¿Cuál es el único número primo par?",
-    "¿Cuál es el menor número compuesto impar?",
+    "Después del 1, los impares 3, 5 y 7 son primos. ¿Cuál es el menor número compuesto impar?",
     "Un compañero dice que 51 es primo porque es impar. Si 51 = 3 × ___, ¿qué número va en el espacio?"
    ],
    "respuestas_carpeta": [
@@ -942,7 +954,13 @@
       "ejemplo": "97: ni 2, 3, 5 ni 7 lo dividen → primo"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder descomponer un número en factores primos, escribirlo con potencias y usar esa descomposición para encontrar sus divisores.",
@@ -1262,7 +1280,13 @@
       "formula": "(a+1)(b+1)(c+1)"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1654,7 +1678,7 @@
    2,
    {
     "t": "multiple_choice",
-    "p": "¿Cuál de estos números es divisible por 4?",
+    "p": "Sofi quiere armar filas de 4 chicos sin que sobre nadie. ¿Con cuál de estas cantidades de chicos puede hacerlo?",
     "o": [
      "1.322",
      "2.514",
@@ -1718,7 +1742,7 @@
    3,
    {
     "t": "multiple_choice",
-    "p": "¿Cuál de estos números es compuesto?",
+    "p": "Un número compuesto se puede escribir como producto de dos números menores que él. ¿Cuál de estos números es compuesto?",
     "o": [
      "29",
      "31",
@@ -1820,15 +1844,15 @@
    4,
    {
     "t": "multiple_choice",
-    "p": "¿Cuál es la descomposición en factores primos de 36?",
+    "p": "Para descomponer 36 en factores primos, cuatro chicos escribieron un producto distinto. ¿Cuál es la descomposición en factores primos?",
     "o": [
      "4 × 9",
-     "2 elevado a 2 × 3 elevado a 2",
-     "6 elevado a 2",
+     "2² × 3²",
+     "6²",
      "2 × 18"
     ],
     "r": {
-     "correcta": "2 elevado a 2 × 3 elevado a 2"
+     "correcta": "2² × 3²"
     },
     "e": "Solo esa tiene todos los factores primos: 4, 9, 6 y 18 son compuestos.",
     "n": "aplicar"

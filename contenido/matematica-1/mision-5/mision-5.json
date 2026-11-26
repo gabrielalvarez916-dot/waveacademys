@@ -328,7 +328,13 @@
       "ejemplo": "Cada 4 y cada 6 s → juntas cada 12 s"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder encontrar todos los divisores de un número de forma ordenada, sin que se escape ninguno, y encontrar divisores comunes.",
@@ -654,7 +660,13 @@
       "ejemplo": "13 es primo · 24 es compuesto"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder usar propiedades de la divisibilidad para justificar respuestas y mostrar con un contraejemplo que una afirmación es falsa.",
@@ -968,7 +980,13 @@
       "ejemplo": "12 × 5 = 4 × 15: el 4 sigue siendo factor"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder resolver problemas de repartos y agrupamientos sin sobrantes, decidiendo si hay que buscar divisores o múltiplos.",
@@ -1289,7 +1307,13 @@
       "ejemplo": "Múltiplo de 3, divisor de 60 y mayor que 10: 12, 15, 30, 60"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1706,16 +1730,26 @@
   [
    2,
    {
-    "t": "numeric",
-    "p": "¿Cuántos divisores tiene 36?",
-    "o": {},
+    "t": "multi_select",
+    "n": "aplicar",
+    "p": "Se quieren armar grupos iguales con 36 alumnos sin que sobre nadie. ¿Cuáles de estos tamaños de grupo sirven?",
+    "o": [
+     "4",
+     "8",
+     "9",
+     "12",
+     "18",
+     "24"
+    ],
     "r": {
-     "acepta": [
-      9
+     "correctas": [
+      "4",
+      "9",
+      "12",
+      "18"
      ]
     },
-    "e": "1, 2, 3, 4, 6, 9, 12, 18 y 36.",
-    "n": "aplicar"
+    "e": "Sirven los divisores de 36: 4, 9, 12 y 18. 8 y 24 no dividen a 36."
    }
   ],
   [

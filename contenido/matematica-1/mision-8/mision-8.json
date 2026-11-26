@@ -339,7 +339,13 @@
       "ejemplo": "2/3 de 30 = 20"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder encontrar fracciones equivalentes, simplificar hasta la fracción irreducible usando el MCD y comprobar equivalencias con productos cruzados.",
@@ -654,7 +660,13 @@
       "formula": "a × d = b × c"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "recordar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder ubicar fracciones, propias e impropias, en la recta numérica y encontrar fracciones entre otras dos.",
@@ -962,7 +974,13 @@
       "ejemplo": "5/3 está entre 1 y 2"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder comparar y ordenar fracciones eligiendo el método más conveniente: mismo denominador, mismo numerador, denominador común o referentes.",
@@ -1250,7 +1268,13 @@
       "ejemplo": "1/3 < 1/2 < 3/4 < 5/4"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1276,17 +1300,16 @@
     "n": "aplicar"
    },
    {
-    "t": "multiple_choice",
-    "p": "¿Qué tipo de fracción es 7/4?",
-    "o": [
-     "Propia",
-     "Impropia"
-    ],
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Se reparten 7 pizzas iguales entre 4 amigos en partes iguales. Cada uno recibe 7/4. ¿Cuántas pizzas enteras le tocan a cada uno?",
+    "o": {},
     "r": {
-     "correcta": "Impropia"
+     "acepta": [
+      1
+     ]
     },
-    "e": "El numerador es mayor que el denominador: vale más que 1.",
-    "n": "recordar"
+    "e": "7/4 = 1 3/4: un entero y tres cuartos."
    },
    {
     "t": "classify",
@@ -1338,7 +1361,7 @@
   "2": [
    {
     "t": "fill_blank",
-    "p": "4/5 = ___/20",
+    "p": "Tomi pasa el jugo de botellas partidas en quintos a vasitos de veinteavos. Completá: 4/5 = ___/20",
     "o": [],
     "r": {
      "huecos": [
@@ -1352,7 +1375,7 @@
    },
    {
     "t": "multiple_choice",
-    "p": "¿Cuál es la fracción irreducible de 18/24?",
+    "p": "Lu tiene 18 de las 24 figuritas del álbum. ¿Qué fracción irreducible del álbum ya completó?",
     "o": [
      "9/12",
      "6/8",
@@ -1411,7 +1434,7 @@
   "3": [
    {
     "t": "multiple_choice",
-    "p": "¿Entre qué dos números enteros está 9/4?",
+    "p": "Un corredor recorrió 9/4 de kilómetro. ¿Entre qué dos números enteros de kilómetros está esa distancia?",
     "o": [
      "0 y 1",
      "1 y 2",
@@ -1471,17 +1494,16 @@
   ],
   "4": [
    {
-    "t": "multiple_choice",
-    "p": "¿Cuál es mayor?",
-    "o": [
-     "3/8",
-     "3/5"
-    ],
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Ana comió 3/8 de una torta y Beto 3/5 de otra torta igual. ¿Quién comió más? Escribí el denominador de su fracción.",
+    "o": {},
     "r": {
-     "correcta": "3/5"
+     "acepta": [
+      5
+     ]
     },
-    "e": "Mismo numerador: los quintos son más grandes que los octavos.",
-    "n": "aplicar"
+    "e": "Mismo numerador: los quintos son más grandes que los octavos, así que 3/5 > 3/8."
    },
    {
     "t": "ordering",
@@ -1580,7 +1602,8 @@
     "p": "Relámpago. ¿Cuál es mayor?",
     "o": [
      "5/8",
-     "1/2"
+     "1/2",
+     "Son iguales"
     ],
     "r": {
      "correcta": "5/8"
@@ -1624,7 +1647,7 @@
    1,
    {
     "t": "multiple_choice",
-    "p": "¿Cómo se escribe 13/4 como número mixto?",
+    "p": "Una receta lleva 13/4 tazas de harina. ¿Cómo se escribe esa cantidad como número mixto de tazas?",
     "o": [
      "3 1/4",
      "4 1/3",
@@ -1690,7 +1713,7 @@
    2,
    {
     "t": "multiple_choice",
-    "p": "¿Cuál de estas fracciones NO es equivalente a 2/3?",
+    "p": "Tres chicos dicen fracciones que, según ellos, valen lo mismo que 2/3. ¿Cuál de estas NO es equivalente a 2/3?",
     "o": [
      "4/6",
      "6/9",
@@ -1739,7 +1762,7 @@
    3,
    {
     "t": "multiple_choice",
-    "p": "¿Qué fracción está entre 1/3 y 2/3?",
+    "p": "Nico puso una marca en la pista, entre 1/3 y 2/3 del recorrido. ¿Cuál de estas fracciones puede ser la posición de la marca?",
     "o": [
      "1/6",
      "1/2",
@@ -1773,10 +1796,11 @@
    4,
    {
     "t": "multiple_choice",
-    "p": "¿Cuál es mayor?",
+    "p": "Mica leyó 7/12 de un libro y Juan leyó 2/3 del mismo libro. ¿Qué fracción leyó el que más leyó?",
     "o": [
      "7/12",
-     "2/3"
+     "2/3",
+     "Leyeron lo mismo"
     ],
     "r": {
      "correcta": "2/3"
@@ -1788,19 +1812,32 @@
   [
    4,
    {
-    "t": "multiple_choice",
-    "p": "¿Cuál de estas fracciones es mayor que 1?",
-    "o": [
-     "5/6",
-     "6/6",
-     "7/6",
-     "1/6"
-    ],
-    "r": {
-     "correcta": "7/6"
+    "t": "classify",
+    "n": "aplicar",
+    "p": "Clasificá cada fracción según si es mayor que 1 o no.",
+    "o": {
+     "elementos": [
+      "5/6",
+      "6/6",
+      "7/6",
+      "9/4",
+      "1/6"
+     ],
+     "categorias": [
+      "Mayor que 1",
+      "Menor o igual que 1"
+     ]
     },
-    "e": "Es impropia: el numerador supera al denominador.",
-    "n": "aplicar"
+    "r": {
+     "categorias": {
+      "5/6": "Menor o igual que 1",
+      "6/6": "Menor o igual que 1",
+      "7/6": "Mayor que 1",
+      "9/4": "Mayor que 1",
+      "1/6": "Menor o igual que 1"
+     }
+    },
+    "e": "Es mayor que 1 si el numerador supera al denominador; 6/6 es justo 1."
    }
   ],
   [

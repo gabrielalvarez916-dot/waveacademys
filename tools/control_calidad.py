@@ -60,7 +60,7 @@ def revisar_pregunta(q, donde, nivel, err, avi):
     if n in PENSADAS and MEMORIA.search(p): err.append(f'{donde}: está como "{n}" pero pide recordar un nombre o un sí/no: «{p[:70]}»')
     if t in ('multiple_choice', 'multi_select', 'odd_one_out') and isinstance(o, list):
         ops = [str(x) for x in o]
-        if len({(norm(x) or str(x).strip()) for x in ops}) < len(ops): err.append(f'{donde}: opciones repetidas')
+        if len({re.sub(r'\s+', '', str(x).lower()) for x in ops}) < len(ops): err.append(f'{donde}: opciones repetidas')
         if nivel != 'primeros' and t == 'multiple_choice' and len(ops) < 3 and {norm(x) for x in ops} != {'sí', 'no'}:
             err.append(f'{donde}: menos de 3 opciones')
         corr = r.get('correcta') if isinstance(r, dict) else r
@@ -254,6 +254,8 @@ def _clases_de(ruta, M):
     return materia, out
 
 def revisar_clases(ruta, M, nivel, err, avi):
+    # Regla 26/11/2026: las clases animadas de misiones ya existentes no se tocan ni se controlan.
+    if os.path.relpath(os.path.abspath(ruta), os.path.dirname(AQUI)).replace('\\', '/') in existentes(): return
     materia, cl = _clases_de(ruta, M)
     if not cl:
         avi.append('clases: no encontré las clases animadas de esta misión para medir su duración (se revisan cuando se suban)'); return
@@ -353,12 +355,14 @@ def main():
     if informe:
         base = os.path.join(os.path.dirname(AQUI), 'contenido')
         args = sorted(os.path.relpath(os.path.join(r, f), os.path.dirname(AQUI)) for r, _, fs in os.walk(base) for f in fs if re.fullmatch(r'mision-\d+\.json', f))
-    viejas = set() if informe else existentes()
+    # Regla 26/11/2026: lección, actividades, examen y carpeta se controlan SIEMPRE, también en misiones existentes.
+    # Lo único que se saltea en las existentes son las clases animadas (ver revisar_clases).
+    viejas = set()
     frenar = False
     for ruta in args:
         rel = ruta.replace('\\', '/')
         if rel in viejas: print(f'{rel}: misión anterior a la regla, no se revisa'); continue
-        nivel, err, avi = revisar(ruta, forzar=informe)
+        nivel, err, avi = revisar(ruta, forzar=True)
         if err:
             frenar = True
             print(f'\n✗ {rel} ({nivel}): {len(err)} problema(s) — NO se carga')

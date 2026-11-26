@@ -312,7 +312,13 @@
       "ejemplo": "MCD(12, 18, 30) = 6"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder calcular el mínimo común múltiplo (MCM) de dos o tres números por descomposición y comprobarlo con la relación entre MCD, MCM y el producto.",
@@ -624,7 +630,13 @@
       "ejemplo": "MCM(4, 6, 10) = 60"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder resolver problemas de repartos, coincidencias, cortes y embaldosados usando el MCD o el MCM.",
@@ -920,7 +932,13 @@
       "ejemplo": "Tiras de 12, 18 y 30 cm → trozos de 6 cm"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder decidir si un problema se resuelve con el MCD o con el MCM, sin guiarte solo por las palabras, y verificar que la respuesta cumpla las condiciones.",
@@ -1217,7 +1235,13 @@
       "ejemplo": "60 es múltiplo de 4, 6 y 10"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1296,16 +1320,18 @@
   ],
   "2": [
    {
-    "t": "numeric",
-    "p": "Calculá el MCM de 10 y 15.",
-    "o": {},
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "Los múltiplos de 10 son 10, 20, 30, 40… y los de 15 son 15, 30, 45… El MCM de 10 y 15 es ___.",
+    "o": [],
     "r": {
-     "acepta": [
-      30
+     "huecos": [
+      [
+       "30"
+      ]
      ]
     },
-    "e": "10 = 2 × 5 y 15 = 3 × 5. MCM = 2 × 3 × 5 = 30.",
-    "n": "aplicar"
+    "e": "El primer múltiplo que aparece en las dos listas es 30."
    },
    {
     "t": "fill_blank",
@@ -1350,16 +1376,19 @@
   ],
   "3": [
    {
-    "t": "numeric",
+    "t": "multiple_choice",
+    "n": "aplicar",
     "p": "Dos alarmas suenan cada 15 y cada 25 minutos. Sonaron juntas. ¿En cuántos minutos vuelven a sonar juntas?",
-    "o": {},
+    "o": [
+     "75",
+     "40",
+     "5",
+     "375"
+    ],
     "r": {
-     "acepta": [
-      75
-     ]
+     "correcta": "75"
     },
-    "e": "Coincidencia: MCM(15, 25) = 3 × 5² = 75.",
-    "n": "aplicar"
+    "e": "Coincidencia: MCM(15, 25) = 3 × 5² = 75."
    },
    {
     "t": "numeric",
@@ -1444,7 +1473,8 @@
     "p": "La respuesta de un problema tiene que ser múltiplo de todos los datos. ¿Qué calculás?",
     "o": [
      "MCD",
-     "MCM"
+     "MCM",
+     "La suma de los datos"
     ],
     "r": {
      "correcta": "MCM"
@@ -1578,31 +1608,37 @@
   [
    1,
    {
-    "t": "numeric",
-    "p": "Calculá el MCD de 30, 45 y 60.",
-    "o": {},
+    "t": "multiple_choice",
+    "n": "aplicar",
+    "p": "Tres cintas de 30, 45 y 60 cm se cortan en trozos iguales, lo más largos posible, sin que sobre. ¿Cuánto mide cada trozo?",
+    "o": [
+     "15 cm",
+     "5 cm",
+     "30 cm",
+     "60 cm"
+    ],
     "r": {
-     "acepta": [
-      15
-     ]
+     "correcta": "15 cm"
     },
-    "e": "30 = 2 × 3 × 5, 45 = 3² × 5, 60 = 2² × 3 × 5. MCD = 3 × 5.",
-    "n": "aplicar"
+    "e": "Es el MCD(30, 45, 60) = 15."
    }
   ],
   [
    2,
    {
-    "t": "numeric",
-    "p": "Calculá el MCM de 12 y 30.",
-    "o": {},
+    "t": "multiple_choice",
+    "n": "aplicar",
+    "p": "Dos luces titilan cada 12 y cada 30 segundos, y acaban de titilar juntas. ¿En cuántos segundos vuelven a coincidir?",
+    "o": [
+     "60",
+     "6",
+     "360",
+     "30"
+    ],
     "r": {
-     "acepta": [
-      60
-     ]
+     "correcta": "60"
     },
-    "e": "12 = 2² × 3 y 30 = 2 × 3 × 5. MCM = 2² × 3 × 5.",
-    "n": "aplicar"
+    "e": "Es el MCM(12, 30) = 60."
    }
   ],
   [
@@ -1626,16 +1662,18 @@
   [
    2,
    {
-    "t": "numeric",
-    "p": "El MCD de 8 y 20 es 4. Usando el producto de los dos números, ¿cuál es su MCM?",
-    "o": {},
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "El MCD de 8 y 20 es 4 y su producto es 160. Como MCD × MCM = producto, el MCM es ___.",
+    "o": [],
     "r": {
-     "acepta": [
-      40
+     "huecos": [
+      [
+       "40"
+      ]
      ]
     },
-    "e": "8 × 20 = 160 y 160 ÷ 4 = 40.",
-    "n": "aplicar"
+    "e": "160 ÷ 4 = 40."
    }
   ],
   [
@@ -1690,7 +1728,8 @@
     "p": "Problema: \"¿Cuál es la menor cantidad de bombones que se puede repartir en cajas de 12 y también en cajas de 15 sin que sobre?\". ¿Qué se calcula?",
     "o": [
      "MCD",
-     "MCM"
+     "MCM",
+     "La suma de los datos"
     ],
     "r": {
      "correcta": "MCM"

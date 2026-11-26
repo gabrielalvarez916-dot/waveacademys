@@ -325,7 +325,13 @@
       "ejemplo": "(3 + 4) × 5 = 35"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder resolver cálculos con paréntesis, corchetes y llaves, ubicar paréntesis para obtener un resultado y escribir enunciados como cálculos.",
@@ -641,7 +647,13 @@
       "ejemplo": "El doble de 7 más 3 → 2 × 7 + 3 = 17"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder resolver cálculos combinados que tienen potencias y raíces, en el orden correcto y escribiendo el paso a paso.",
@@ -965,7 +977,13 @@
       "ejemplo": "[2 + 3 × 2] × 4 = [2 + 6] × 4 = 32"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder usar la calculadora científica para cálculos combinados, ingresar bien los paréntesis y controlar el resultado con una estimación.",
@@ -1272,7 +1290,13 @@
       "ejemplo": "48 × 21 da 10.080: ¿se tipeó 480?"
      }
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1594,7 +1618,8 @@
     "p": "Relámpago. ¿Qué se resuelve primero en 6 + 8 ÷ 2?",
     "o": [
      "La suma",
-     "La división"
+     "La división",
+     "Da igual el orden"
     ],
     "r": {
      "correcta": "La división"
