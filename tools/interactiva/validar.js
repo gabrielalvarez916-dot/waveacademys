@@ -1,5 +1,5 @@
 // CONTROL DE CALIDAD de la lección interactiva (lo corre la máquina de misiones antes de cargar; si algo falla, no se carga nada).
-// Cada sección de cada nivel tiene que traer "practica" (ver docs/leccion-interactiva.md). Prueba 60 sorteos de cada plantilla.
+// La "practica" escrita a mano es opcional; si una sección la trae, se prueba en 60 sorteos (ver docs/leccion-interactiva.md).
 // Uso: node tools/interactiva/validar.js contenido/<materia>/mision-N/mision-N.json [...]
 'use strict';
 const fs = require('fs'), path = require('path');
@@ -55,7 +55,7 @@ for (const ruta of process.argv.slice(2)) {
     const secs = (niveles[n] || {}).secciones || [];
     if (!secs.length) mal(extra + 'nivel ' + n, 'no tiene secciones');
     secs.forEach((s, i) => {
-      practica(s.practica, extra + 'nivel ' + n + ' · tema ' + (i + 1) + ' «' + (s.titulo || '') + '»');
+      if (s.practica) practica(s.practica, extra + 'nivel ' + n + ' · tema ' + (i + 1) + ' «' + (s.titulo || '') + '»'); // opcional: la lección la arma la máquina con el banco
       if (s.practica && s.practica.neutro) practica(Object.assign({}, s.practica, s.practica.neutro, { neutro: undefined }), extra + 'nivel ' + n + ' · tema ' + (i + 1) + ' (neutro)');
     });
   });

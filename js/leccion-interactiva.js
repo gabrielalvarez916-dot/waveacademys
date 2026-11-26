@@ -83,9 +83,17 @@ window.WaveLeccion = (function () {
   // ---------- Pantalla ----------
   function abrir(op) {
     var c = op.neutro ? neutral(op.contenido) : argentino(op.contenido);
-    var secs = lista(c.secciones).filter(function (s) { return s && (lista(s.bloques).length || s.practica); });
+    var B = window.WaveLeccionBanco, todas = lista(c.secciones), secs;
+    if (c.leccion && lista(c.leccion.temas).length) { // armada por la máquina: temas (pueden juntar secciones) con motor del banco de la lección
+      secs = c.leccion.temas.map(function (t) {
+        var ss = lista(t.secs).map(function (i) { return todas[i]; }).filter(Boolean), pr = null;
+        ss.forEach(function (x) { if (!pr && x.practica) pr = x.practica; });
+        return { titulo: t.titulo, bloques: [].concat.apply([], ss.map(function (x) { return lista(x.bloques); })), practica: pr,
+          ejemplo: t.ejemplo && B && B.tiene(t.ejemplo.motor) ? t.ejemplo : null, ejercicio: t.ejercicio && B && B.tiene(t.ejercicio.motor) ? t.ejercicio : null };
+      }).filter(function (t) { return t.bloques.length; });
+    } else secs = todas.filter(function (s) { return s && (lista(s.bloques).length || s.practica); });
     if (!secs.length) throw new Error('Esta lección todavía no está lista.');
-    var hayResumen = lista(c.resumen).length || c.tip || lista(c.ojo).length;
+    var hayResumen = lista(c.resumen).length > 0;
     var total = secs.length + (hayResumen ? 1 : 0), cur = 0, ejN = {}, ejPaso = {};
     var el = document.createElement('div'); el.className = 'li2';
     el.innerHTML = '<div class="li2-caja" role="dialog" aria-label="Lección interactiva"><div class="li2-barra"><b class="li2-t">' + esc(op.titulo) + '</b>' +
@@ -112,14 +120,13 @@ window.WaveLeccion = (function () {
       var s = secs[k], primero = k === 0 && c.objetivo;
       return '<div class="li2-kick">Tema ' + (k + 1) + ' de ' + secs.length + '</div><h2>' + esc(s.titulo || 'Tema ' + (k + 1)) + '</h2>' +
         (primero ? '<p class="li2-obj">🎯 ' + rico(c.objetivo) + '</p>' : '') +
-        '<div class="li2-cols' + (s.practica ? '' : ' una') + '"><div class="li2-exp">' + lista(s.bloques).map(bloque).join('') + '</div>' + (s.practica ? '<div class="li2-lado">' + ejemploHtml(k) + '</div>' : '') + '</div>';
+        '<div class="li2-cols' + (s.ejemplo || s.practica ? '' : ' una') + '"><div class="li2-exp">' + lista(s.bloques).map(bloque).join('') + '</div>' +
+        (s.ejemplo ? '<div class="li2-lado"><section class="li2-ejem"><div class="li2-ejem-h"><small>Ejemplo interactivo</small></div><div class="li2-motor"></div></section></div>'
+          : s.practica ? '<div class="li2-lado">' + ejemploHtml(k) + '</div>' : '') + '</div>';
     }
     function resumen() {
-      var h = '<div class="li2-kick">Para cerrar</div><h2>Resumen</h2><div class="li2-resu">' + lista(c.resumen).map(function (r) {
+      var h = '<div class="li2-kick">Para cerrar</div><h2>Recordá lo más importante</h2><div class="li2-resu">' + lista(c.resumen).map(function (r) {
         return '<div class="li2-rc"><b>' + rico(r.titulo || '') + '</b><span>' + rico(r.texto || (typeof r === 'string' ? r : '')) + '</span></div>'; }).join('') + '</div>';
-      if (c.tip && (c.tip.texto || c.tip.titulo)) h += '<div class="li2-nota tip"><b>💡 ' + esc(c.tip.titulo || 'Tip') + '</b><div>' + rico(c.tip.texto || '') + '</div></div>';
-      lista(c.ojo).forEach(function (o) { var t = typeof o === 'string' ? o : (o.texto || ''); if (t) h += '<div class="li2-nota ojo"><b>⚠️ ' + esc((o && o.titulo) || 'Ojo con esto') + '</b><div>' + rico(t) + '</div></div>'; });
-      if (lista(c.glosario).length) h += '<details class="li2-glos"><summary>📖 Glosario</summary><dl>' + c.glosario.map(function (g) { return '<dt>' + esc(g.palabra) + '</dt><dd>' + rico(g.significado) + '</dd>'; }).join('') + '</dl></details>';
       return h;
     }
     function pintar() {
@@ -127,13 +134,22 @@ window.WaveLeccion = (function () {
       var esRes = cur === secs.length, s = secs[cur];
       main.innerHTML = '<div class="li2-hoja">' + (esRes ? resumen() : tema(cur)) + '</div><div class="li2-nav">' +
         '<button type="button" class="li2-btn suave" data-li="ant"' + (cur ? '' : ' style="visibility:hidden"') + ' aria-label="Anterior">‹<span class="li2-lg"> Anterior</span></button>' +
-        (!esRes && s.practica ? '<button type="button" class="li2-btn prac" data-li="practicar">✏️ Practicá<span class="li2-lg"> este tema</span></button>' : '<span></span>') +
+        (!esRes && (s.ejercicio || s.practica) ? '<button type="button" class="li2-btn prac" data-li="practicar">✏️ Practicá<span class="li2-lg"> este tema</span></button>' : '<span></span>') +
         (cur < total - 1 ? '<button type="button" class="li2-btn" data-li="sig" aria-label="Siguiente"><span class="li2-lg">Siguiente </span>›</button>' : '<button type="button" class="li2-btn" data-li="fin">Terminar la lección ✓</button>') + '</div>';
       main.scrollTop = 0;
+      var mt = main.querySelector('.li2-motor'); if (mt && s && s.ejemplo) B.render(mt, s.ejemplo);
     }
 
     // ---------- Práctica de un tema ----------
     function practicar(k) {
+      if (secs[k].ejercicio) { // ejercicio del banco de la lección
+        var pe = document.createElement('div'); pe.className = 'li2-pv';
+        pe.innerHTML = '<div class="li2-pv-c" role="dialog" aria-label="Ejercicio del tema"><div class="li2-pv-h"><b>✏️ ' + esc(secs[k].titulo || 'Ejercicio') + '</b><span class="li2-cont"></span><button type="button" class="li2-x" data-pv="x" aria-label="Cerrar">✕</button></div><div class="li2-pv-b"></div></div>';
+        el.appendChild(pe); var bien = 0, hechos = 0;
+        B.render(pe.querySelector('.li2-pv-b'), secs[k].ejercicio, { alResultado: function (ok) { hechos++; if (ok) bien++; pe.querySelector('.li2-cont').textContent = bien + ' de ' + hechos + ' bien'; } });
+        pe.addEventListener('click', function (e) { if (e.target === pe || e.target.closest('[data-pv="x"]')) pe.remove(); });
+        return;
+      }
       var pr = secs[k].practica, vN = pr.variantes ? (ejN[k] || 0) + 1 : null, bien = 0, hechas = 0, inst = null;
       var pv = document.createElement('div'); pv.className = 'li2-pv';
       pv.innerHTML = '<div class="li2-pv-c" role="dialog" aria-label="Práctica del tema"><div class="li2-pv-h"><b>✏️ Practicá: ' + esc(secs[k].titulo || '') + '</b><span class="li2-cont"></span><button type="button" class="li2-x" data-pv="x" aria-label="Cerrar">✕</button></div><div class="li2-pv-b"></div></div>';
@@ -221,7 +237,7 @@ window.WaveLeccion = (function () {
     '.li2-btn.suave{background:#fff;color:#066A6E;border:2px solid #087E83;box-shadow:none}.li2-btn.prac{background:#253638;box-shadow:0 4px 0 #111c1d}',
     '.li2-resu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}.li2-rc{padding:14px;border-radius:16px;background:#fff;border:2px solid #D7F0E9}.li2-rc b{display:block;color:#087E83;margin-bottom:4px}',
     '.li2-glos{margin-top:8px;padding:12px 16px;border-radius:16px;background:#fff;border:2px solid #E3ECEA}.li2-glos summary{font-weight:800;cursor:pointer}.li2-glos dt{font-weight:800;margin-top:8px}.li2-glos dd{margin:0}',
-    '.li2-pv{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:16px;background:rgba(37,54,56,.45)}.li2-pv-c{width:100%;max-width:560px;max-height:100%;overflow-y:auto;border-radius:22px;background:#fff}',
+    '.li2-pv{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:16px;background:rgba(37,54,56,.45)}.li2-pv-c{width:100%;max-width:640px;max-height:100%;overflow-y:auto;border-radius:22px;background:#fff}',
     '.li2-pv-h{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#087E83;color:#fff}.li2-pv-h b{flex:1}.li2-cont{font-weight:700;font-size:.85rem}.li2-pv-b{padding:18px}',
     '.li2-in{display:flex;align-items:center;gap:10px}.li2-inp{flex:1;min-width:0;padding:14px 16px;border:2px solid #E3ECEA;border-radius:16px;font:inherit;font-size:1.15rem;font-weight:700}.li2-inp:focus{outline:none;border-color:#087E83;box-shadow:0 0 0 3px #D7F0E9}.li2-in span{font-weight:800;color:#4b6a6c}',
     '.li2-ops{display:grid;gap:8px}.li2-op{padding:12px 14px;border:2px solid #E3ECEA;border-radius:14px;background:#fff;font:inherit;font-weight:700;text-align:left;cursor:pointer}.li2-op:hover{border-color:#9dbdb9}.li2-op.ok{border-color:#087E83;background:#D7F0E9}.li2-op.no{border-color:#253638;background:#E3ECEA}',
