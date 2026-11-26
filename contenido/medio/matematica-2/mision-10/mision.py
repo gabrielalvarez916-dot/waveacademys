@@ -147,15 +147,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "865. Sí.", "solo": "Está mal: 300 + 300 = 600. Da 400.", "carpeta": ["685: está bien.", "530 − 210: 310 + 210 = 520.", "320."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("EL GRANDE ARRIBA", [LD("ARMAR LA RESTA", "EN LA RESTA PONEMOS <b>ARRIBA EL MÁS GRANDE</b> Y ABAJO LO QUE SACAMOS."),
+   LL("UNIDADES DEBAJO DE UNIDADES.", "576 − 234: EL 576 VA ARRIBA.")],
+   {"modo": "columna", "op": "resta"}, {"modo": "columna", "op": "resta"}),
+ T("EMPEZAR POR LAS UNIDADES", [LD("DE DERECHA A IZQUIERDA", "RESTAMOS PRIMERO LAS <b>UNIDADES</b>, DESPUÉS DECENAS Y CENTENAS."),
+   LL("487 − 53: 7 − 3, 8 − 5, 4.", "DA 434.")],
+   {"modo": "columna", "op": "resta"}, {"modo": "columna", "op": "resta"}),
+], "recuerda": [
+ RC("ARRIBA EL GRANDE", "DEL NÚMERO DE ARRIBA SACAMOS EL DE ABAJO.", "576 − 234"),
+ RC("EL ORDEN", "RESTAMOS DE DERECHA A IZQUIERDA.", "576 − 234 = 342"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("COLUMNA POR COLUMNA", [LD("TRES CIFRAS", "CON TRES CIFRAS RESTAMOS <b>TRES COLUMNAS</b>, CADA UNA POR SEPARADO."),
+   LL("796 − 352 = 444.", "865 − 432 = 433.")],
+   {"modo": "columna", "op": "resta"}, {"modo": "columna", "op": "resta"}),
+ T("CUANDO DA CERO", [LD("EL CERO", "SI UNA COLUMNA <b>DA 0</b>, ESCRIBIMOS EL 0 PARA GUARDAR EL LUGAR."),
+   LL("579 − 274 = 305.", "NO ES 35.")],
+   {"modo": "columna", "op": "resta"}, {"modo": "columna", "op": "resta"}),
+], "recuerda": [
+ RC("COLUMNA POR COLUMNA", "RESTAMOS UNIDADES, DECENAS Y CENTENAS POR SEPARADO.", "796 − 352 = 444"),
+ RC("EL CERO", "SI UNA COLUMNA DA CERO, LO ESCRIBIMOS.", "579 − 274 = 305"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("CUANDO NO ALCANZA", [LD("NO ALCANZA", "SI ARRIBA HAY <b>MENOS</b> QUE ABAJO, NO PODEMOS RESTAR TODAVÍA."),
+   LL("EN 352 − 128: 2 − 8 NO ALCANZA.", "NO SE HACE 8 − 2.")],
+   {"modo": "columna", "op": "resta", "lleva": True}, {"modo": "columna", "op": "resta", "lleva": True}),
+ T("ABRIR UN PAQUETE", [LD("EL CANJE", "<b>ABRIMOS UN PAQUETE</b> DE AL LADO: SON 10 SUELTOS MÁS, Y AL PAQUETE LE QUEDA UNO MENOS."),
+   LL("12 − 8 = 4.", "352 − 128 = 224.")],
+   {"modo": "columna", "op": "resta", "lleva": True}, {"modo": "columna", "op": "resta", "lleva": True}),
+], "recuerda": [
+ RC("NO ALCANZA", "SI ARRIBA HAY MENOS, NO RESTAMOS AL REVÉS.", "2 − 8 NO ALCANZA"),
+ RC("EL CANJE", "UN PAQUETE SE CAMBIA POR 10 SUELTOS.", "463 − 247 = 216"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("LA SUMA DESHACE LA RESTA", [LD("CONTROLAR", "PARA <b>CONTROLAR</b> UNA RESTA, SUMAMOS EL RESULTADO Y LO QUE RESTAMOS."),
+   LL("685 − 243 = 442.", "442 + 243 = 685: ¡ESTÁ BIEN!")],
+   {"modo": "columna", "lleva": False}, {"modo": "columna", "op": "resta", "que": "control"}),
+ T("ENCONTRAR ERRORES", [LD("ERRORES", "SI LA SUMA <b>NO DA</b> EL NÚMERO DE ARRIBA, LA RESTA ESTÁ MAL."),
+   LL("463 − 247 = 226: 226 + 247 = 473.", "NO DA 463: HAY UN ERROR.")],
+   {"modo": "columna", "op": "resta", "lleva": True}, {"modo": "columna", "op": "resta", "que": "control"}),
+], "recuerda": [
+ RC("CONTROLAR", "SUMAMOS EL RESULTADO Y LO QUE RESTAMOS.", "224 + 128 = 352"),
+ RC("ERRORES", "SI LA SUMA NO DA EL NÚMERO DE ARRIBA, HAY UN ERROR.", "226 + 247 ≠ 463"),
+]}
+
 ACT = {
 "1": [N("RESTÁ EN COLUMNAS: 576 − 234", 342, "U: 6 − 4. D: 7 − 3. C: 5 − 2.", n="aplicar"),
-      MC("EN UNA RESTA, ¿QUÉ NÚMERO VA ARRIBA?", ["EL MÁS GRANDE", "EL MÁS CHICO", "EL QUE SE VENDIÓ"], "EL MÁS GRANDE", "DE ÉL SACAMOS.", n="analizar")],
+      MC("EN UNA RESTA, ¿QUÉ NÚMERO VA ARRIBA?", ["EL MÁS GRANDE", "EL MÁS CHICO", "EL QUE SE VENDIÓ"], "EL MÁS GRANDE", "DE ÉL SACAMOS.", n="analizar"),
+      FB("COMPLETÁ: 487 − 53 = ___", [["434"]], "7 − 3 = 4, 8 − 5 = 3, 4.", n="aplicar"),
+      MC("LEO PUSO EL 53 DEBAJO DEL 48 EN 487 − 53. ¿QUÉ HIZO MAL?", ["NO ALINEÓ LAS UNIDADES", "NADA, ESTÁ BIEN", "PUSO EL GRANDE ARRIBA"], "NO ALINEÓ LAS UNIDADES", "EL 3 VA DEBAJO DEL 7.", n="error")],
 "2": [N("¿CUÁNTO ES 865 − 432?", 433, "COLUMNA POR COLUMNA.", n="aplicar"),
-      UNI("UNÍ CADA RESTA CON SU RESULTADO.", [("865 − 432", "433"), ("579 − 274", "305"), ("796 − 352", "444")], "COLUMNA POR COLUMNA.", n="aplicar")],
+      UNIR("UNÍ CADA RESTA CON SU RESULTADO.", ["865 − 432", "579 − 274", "796 − 352"], ["444", "433", "305"], {"865 − 432": "433", "579 − 274": "305", "796 − 352": "444"}, "COLUMNA POR COLUMNA.", n="aplicar"),
+      MC("SOFI HIZO 579 − 274 Y LE DIO 35. ¿CUÁNTO DA?", ["305", "35", "350"], "305", "LAS DECENAS DAN 0: SE ESCRIBE.", n="error"),
+      N("[[problema]] EN UN COLEGIO HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?", 442, "685 − 243 = 442.", n="analizar", **NEU("EN UNA ESCUELA HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?"))],
 "3": [N("¿CUÁNTO ES 352 − 128?", 224, "ABRO UN PAQUETE: 12 − 8 = 4.", n="aplicar"),
-      MC("EN 352 − 128, 2 − 8 NO ALCANZA. ¿QUÉ HAGO?", ["ABRO UN PAQUETE", "HAGO 8 − 2", "PONGO 0"], "ABRO UN PAQUETE", "CANJE: 1 PAQUETE POR 10 SUELTOS.", n="analizar")],
+      MC("EN 352 − 128, 2 − 8 NO ALCANZA. ¿QUÉ HAGO?", ["ABRO UN PAQUETE", "HAGO 8 − 2", "PONGO 0"], "ABRO UN PAQUETE", "CANJE: 1 PAQUETE POR 10 SUELTOS.", n="analizar"),
+      FB("COMPLETÁ: 463 − 247 = ___", [["216"]], "13 − 7 = 6, 5 − 4 = 1, 4 − 2 = 2.", n="aplicar"),
+      MC("TOMI HIZO 352 − 128 Y LE DIO 236. ¿CUÁNTO DA?", ["224", "236", "230"], "224", "NO SE HACE 8 − 2: SE ABRE UN PAQUETE.", n="error")],
 "4": [N("224 + 128 = ___", 352, "VUELVE AL NÚMERO DE ARRIBA.", n="aplicar"),
-      TF("TOMI HIZO 463 − 247 = 226. ESTÁ BIEN.", "FALSO", "226 + 247 = 473, NO 463.", n="error")],
+      TF("TOMI HIZO 463 − 247 = 226. ESTÁ BIEN.", "FALSO", "226 + 247 = 473, NO 463.", n="error"),
+      CLAS("CONTROLÁ CON UNA SUMA. ¿ESTÁ BIEN O MAL?", ["685 − 243 = 442", "530 − 210 = 310", "796 − 352 = 444", "463 − 247 = 226"], ["BIEN", "MAL"],
+           {"685 − 243 = 442": "BIEN", "530 − 210 = 310": "MAL", "796 − 352 = 444": "BIEN", "463 − 247 = 226": "MAL"}, "SUMÁ EL RESULTADO Y LO QUE RESTÁS.", n="analizar"),
+      N("¿CUÁNTO ES DE VERDAD 530 − 210?", 320, "320 + 210 = 530.", n="aplicar")],
 "5": [N("RELÁMPAGO. 759 − 314 = ___", 445, "SIN CANJE.", tiempo=40, n="aplicar"),
       MC("RELÁMPAGO. 5 − 9: ¿ALCANZA?", ["NO", "SÍ"], "NO", "HAY QUE ABRIR UN PAQUETE.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 15 − 9 = ___", 6, "DESPUÉS DEL CANJE.", tiempo=30, n="aplicar"),
@@ -175,7 +244,7 @@ EXAMEN = [
  [4, TF("530 − 210 = 310 ESTÁ BIEN.", "FALSO", "310 + 210 = 520: DA 320.", n="analizar")],
  [4, MC("PARA CONTROLAR UNA RESTA, ¿QUÉ SUMO?", ["RESULTADO + LO QUE RESTÉ", "LOS DOS DE ARRIBA", "NADA"], "RESULTADO + LO QUE RESTÉ", "ASÍ VUELVO AL PRINCIPIO.", n="analizar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 10, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 10, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: restas con algoritmo", "examen_titulo": "Nivel jefe: restas con algoritmo",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-10.json"), "w", encoding="utf-8"), ensure_ascii=False)

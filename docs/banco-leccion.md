@@ -105,3 +105,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Matemática 2, Misiones 3 y 4) | ejemplo / ejercicio | valor (ejercicio también `que`: desarmar) · comparar3 · orden3 (`orden`: desc) · recta1000 (ejercicio también `que`: entre) · redondos3 (ejercicio) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 5 y 6) | ejemplo / ejercicio | cambia (`op`: 1, 10, 100) · dinero2 (`que`: contar, vuelto, sumar, caro; billetes de $50 a $500, sin la palabra vuelto) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 7 y 8) | ejemplo / ejercicio | mental (`que`: chica con `esc` 10 o 100, falta100, desarmar, truco; `op`: suma o resta) |
+| `primeros` / `primeros_x` (Matemática 2, Misiones 9 y 10) | ejemplo / ejercicio | columna (`op`: suma o resta; `lleva`: true para me llevo 1 / canje; ejercicio también `que`: estimar, control) |

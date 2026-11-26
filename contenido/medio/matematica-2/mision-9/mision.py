@@ -148,15 +148,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "400. 300. 700.", "solo": "No: 300 + 300 = 600.", "carpeta": ["500.", "410 + 290: da 700, no 1100.", "700."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("CADA CIFRA EN SU COLUMNA", [LD("EN COLUMNAS", "PARA SUMAR EN COLUMNAS, PONEMOS <b>UNIDADES DEBAJO DE UNIDADES</b> Y DECENAS DEBAJO DE DECENAS."),
+   LL("EN 234 + 52, EL 5 VA DEBAJO DEL 3.", "LOS NÚMEROS SE ALINEAN A LA DERECHA.")],
+   {"modo": "columna"}, {"modo": "columna"}),
+ T("EMPEZAR POR LAS UNIDADES", [LD("DE DERECHA A IZQUIERDA", "SUMAMOS PRIMERO LAS <b>UNIDADES</b>, DESPUÉS LAS DECENAS Y AL FINAL LAS CENTENAS."),
+   LL("231 + 45: 6 UNIDADES, 7 DECENAS, 2 CENTENAS.", "EL RESULTADO ES 276.")],
+   {"modo": "columna"}, {"modo": "columna"}),
+], "recuerda": [
+ RC("EN COLUMNAS", "CADA CIFRA VA DEBAJO DE OTRA DEL MISMO LUGAR.", "UNIDADES DEBAJO DE UNIDADES"),
+ RC("EL ORDEN", "SUMAMOS DE DERECHA A IZQUIERDA, EMPEZANDO POR LAS UNIDADES.", "231 + 45 = 276"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("COLUMNA POR COLUMNA", [LD("TRES CIFRAS", "CON NÚMEROS DE <b>TRES CIFRAS</b> SUMAMOS TRES COLUMNAS: U, D Y C."),
+   LL("342 + 125 = 467.", "CADA COLUMNA SE SUMA SOLA.")],
+   {"modo": "columna"}, {"modo": "columna"}),
+ T("CUANDO HAY UN CERO", [LD("EL CERO", "SI EN UNA COLUMNA HAY UN <b>0</b>, SUMAMOS IGUAL: 0 + 8 = 8."),
+   LL("503 + 284 = 787.", "EL RESULTADO TIENE TRES CIFRAS, NO CUATRO.")],
+   {"modo": "columna"}, {"modo": "columna"}),
+], "recuerda": [
+ RC("COLUMNA POR COLUMNA", "SUMAMOS UNIDADES, DECENAS Y CENTENAS POR SEPARADO.", "621 + 253 = 874"),
+ RC("EL CERO", "SUMAR CERO NO CAMBIA EL OTRO NÚMERO.", "0 + 8 = 8"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("ME LLEVO 1", [LD("PASAR DE 9", "SI UNA COLUMNA DA <b>10 O MÁS</b>, ESCRIBIMOS LAS UNIDADES Y NOS LLEVAMOS 1."),
+   LL("8 + 5 = 13: ESCRIBO 3, ME LLEVO 1.", "10 SUELTOS HACEN 1 PAQUETE.")],
+   {"modo": "columna", "lleva": True}, {"modo": "columna", "lleva": True}),
+ T("SUMAR EL 1", [LD("EL QUE ME LLEVÉ", "EL 1 QUE NOS LLEVAMOS SE <b>SUMA</b> EN LA COLUMNA DE AL LADO."),
+   LL("268 + 125 = 393.", "NO SE ESCRIBE 13 ABAJO.")],
+   {"modo": "columna", "lleva": True}, {"modo": "columna", "lleva": True}),
+], "recuerda": [
+ RC("ME LLEVO 1", "SI UNA COLUMNA PASA DE 9, ESCRIBIMOS LA UNIDAD Y LLEVAMOS 1.", "6 + 8 = 14: ESCRIBO 4"),
+ RC("SUMAR EL 1", "SE AGREGA EN LA COLUMNA DE LA IZQUIERDA.", "147 + 235 = 382"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("CALCULAR MÁS O MENOS", [LD("ESTIMAR", "ANTES DE SUMAR, PENSAMOS <b>MÁS O MENOS</b> CUÁNTO DA CON NÚMEROS REDONDOS."),
+   LL("298 + 405: CERCA DE 300 + 400 = 700.", "ASÍ SABEMOS QUÉ ESPERAR.")],
+   {"modo": "mental", "que": "chica", "esc": 100}, {"modo": "columna", "que": "estimar"}),
+ T("ENCONTRAR ERRORES", [LD("CONTROLAR", "SI EL RESULTADO ESTÁ <b>MUY LEJOS</b> DE LO QUE PENSAMOS, HAY UN ERROR."),
+   LL("410 + 290 NO PUEDE DAR 1100.", "REVISÁ COLUMNA POR COLUMNA.")],
+   {"modo": "columna", "lleva": True}, {"modo": "columna", "que": "control"}),
+], "recuerda": [
+ RC("ESTIMAR", "PENSAMOS EL RESULTADO CON NÚMEROS REDONDOS.", "199 + 302: CERCA DE 500"),
+ RC("CONTROLAR", "SI DA MUY LEJOS DE LO PENSADO, BUSCAMOS EL ERROR.", "410 + 290 = 700"),
+]}
+
 ACT = {
 "1": [N("SUMÁ EN COLUMNAS: 231 + 45", 276, "U: 1 + 5 = 6. D: 3 + 4 = 7. C: 2.", n="aplicar"),
-      MC("EN 234 + 52, ¿DEBAJO DE QUÉ VA EL 5?", ["DEL 3", "DEL 2", "DEL 4"], "DEL 3", "DECENAS DEBAJO DE DECENAS.", n="analizar")],
+      MC("EN 234 + 52, ¿DEBAJO DE QUÉ VA EL 5?", ["DEL 3", "DEL 2", "DEL 4"], "DEL 3", "DECENAS DEBAJO DE DECENAS.", n="analizar"),
+      FB("COMPLETÁ: 413 + 75 = ___", [["488"]], "U: 3 + 5 = 8. D: 1 + 7 = 8. C: 4.", n="aplicar"),
+      MC("TOMI PUSO EL 75 DEBAJO DEL 41 Y LE DIO 1163. ¿CUÁNTO ES 413 + 75?", ["488", "1163", "4175"], "488", "EL 5 VA DEBAJO DEL 3: UNIDADES CON UNIDADES.", n="error")],
 "2": [N("¿CUÁNTO ES 342 + 125?", 467, "COLUMNA POR COLUMNA.", n="aplicar"),
-      UNI("UNÍ CADA SUMA CON SU RESULTADO.", [("342 + 125", "467"), ("503 + 284", "787"), ("250 + 340", "590")], "COLUMNA POR COLUMNA.", n="aplicar")],
+      UNIR("UNÍ CADA SUMA CON SU RESULTADO.", ["342 + 125", "503 + 284", "250 + 340"], ["590", "467", "787"], {"342 + 125": "467", "503 + 284": "787", "250 + 340": "590"}, "COLUMNA POR COLUMNA.", n="aplicar"),
+      MC("SOFI HIZO 503 + 284 Y LE DIO 7087. ¿CUÁNTO DA?", ["787", "7087", "707"], "787", "CADA COLUMNA DA UNA SOLA CIFRA.", n="error"),
+      N("[[problema]] UNA ESCUELA TIENE 321 CHICOS Y 456 CHICAS. ¿CUÁNTOS ALUMNOS SON EN TOTAL?", 777, "321 + 456 = 777.", n="analizar", **NEU("UNA ESCUELA TIENE 321 NIÑOS Y 456 NIÑAS. ¿CUÁNTOS ALUMNOS SON EN TOTAL?"))],
 "3": [N("¿CUÁNTO ES 147 + 235?", 382, "7 + 5 = 12: ME LLEVO 1.", n="aplicar"),
-      MC("EN 356 + 128, 6 + 8 = 14. ¿QUÉ ESCRIBO ABAJO?", ["4", "14", "1"], "4", "ESCRIBO 4 Y ME LLEVO 1.", n="analizar")],
+      MC("EN 356 + 128, 6 + 8 = 14. ¿QUÉ ESCRIBO ABAJO?", ["4", "14", "1"], "4", "ESCRIBO 4 Y ME LLEVO 1.", n="analizar"),
+      FB("COMPLETÁ: 268 + 125 = ___", [["393"]], "8 + 5 = 13: ESCRIBO 3 Y ME LLEVO 1.", n="aplicar"),
+      MC("TOMI HIZO 147 + 235 Y LE DIO 3712. ¿CUÁNTO DA?", ["382", "3712", "372"], "382", "ESCRIBO 2, ME LLEVO 1 Y LO SUMO A LAS DECENAS.", n="error")],
 "4": [MC("298 + 405 DA MÁS O MENOS…", ["700", "600", "900"], "700", "300 + 400 = 700.", n="aplicar"),
-      TF("410 + 290 = 1100 TIENE SENTIDO.", "FALSO", "400 + 300 = 700: ESTÁ MUY LEJOS.", n="error")],
+      TF("410 + 290 = 1100 TIENE SENTIDO.", "FALSO", "400 + 300 = 700: ESTÁ MUY LEJOS.", n="error"),
+      CLAS("¿TIENE SENTIDO EL RESULTADO?", ["199 + 302 = 501", "410 + 290 = 1100", "123 + 456 = 579", "250 + 250 = 50"], ["TIENE SENTIDO", "ESTÁ MAL"],
+           {"199 + 302 = 501": "TIENE SENTIDO", "410 + 290 = 1100": "ESTÁ MAL", "123 + 456 = 579": "TIENE SENTIDO", "250 + 250 = 50": "ESTÁ MAL"}, "PENSÁ CON NÚMEROS REDONDOS.", n="analizar"),
+      N("¿CUÁNTO DA DE VERDAD 410 + 290?", 700, "10 + 90 = 100: 400 + 200 + 100 = 700.", n="aplicar")],
 "5": [N("RELÁMPAGO. 123 + 45 = ___", 168, "SIN LLEVARSE.", tiempo=40, n="aplicar"),
       N("RELÁMPAGO. 210 + 360 = ___", 570, "COLUMNA POR COLUMNA.", tiempo=40, n="aplicar"),
       MC("RELÁMPAGO. 8 + 6 = 14. ¿ME LLEVO 1?", ["SÍ", "NO"], "SÍ", "PASA DE 10.", tiempo=30, n="aplicar"),
@@ -176,7 +245,7 @@ EXAMEN = [
  [4, TF("199 + 199 = 598 TIENE SENTIDO.", "FALSO", "200 + 200 = 400.", n="analizar")],
  [4, N("¿CUÁNTO ES 298 + 405?", 703, "CERCA DE 700.", n="aplicar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 9, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 9, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: sumas con algoritmo", "examen_titulo": "Nivel jefe: sumas con algoritmo",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-9.json"), "w", encoding="utf-8"), ensure_ascii=False)

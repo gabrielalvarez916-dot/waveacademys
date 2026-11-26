@@ -1520,6 +1520,12 @@
       var B = bd * 10 + bu; return { a: a, b: B, r: res ? a - B : a + B, sg: sg, p: [[ac * 100, 0], [ad * 10, bd * 10], [au, bu]] }; }
     return { a: a, b: b, r: res ? a - b : a + b, sg: sg };
   }
+  // cuenta en columnas (3 cifras): arriba, abajo, resultado parcial (desde la derecha), marcas de "me llevo"/canje; col = columna marcada (0 C, 1 D, 2 U)
+  function p1Col3(a, b, sg, res, col, llevo) {
+    var A = ('   ' + a).slice(-3).split(''), B = ('   ' + b).slice(-3).split(''), Rr = ('   ' + (res || '')).slice(-3).split(''), Lv = llevo || ['', '', ''];
+    var fila = function (arr, cl) { return '<tr' + (cl ? ' class="' + cl + '"' : '') + '><td class="sg">' + (cl === 'ab' ? sg : '') + '</td>' + arr.map(function (x, i) { return '<td class="' + (i === col ? 'on' : '') + '">' + (x === ' ' ? '' : x) + '</td>'; }).join('') + '</tr>'; };
+    return '<table class="lb-p1-colc"><tr class="lv"><td></td>' + Lv.map(function (x) { return '<td>' + x + '</td>'; }).join('') + '</tr><tr class="hd"><td></td><td>C</td><td>D</td><td>U</td></tr>' + fila(A) + fila(B, 'ab') + fila(Rr, 'rs') + '</table>';
+  }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1559,6 +1565,7 @@
         ctrl('q', 'BILLETES DE $500', 0, 1, 1, 1) + ctrl('d', 'BILLETES DE $200', 0, 2, 1, 1) + ctrl('c', 'BILLETES DE $100', 0, 3, 1, 1) + ctrl('m', 'BILLETES DE $50', 0, 1, 1, 1),
       mental: p.que === 'falta100' ? ctrl('a', 'NÚMERO', 10, 90, 10, 70) : p.que === 'desarmar' ? ctrl('a', 'PRIMER NÚMERO', 110, 489, 1, p.op === 'resta' ? 365 : 234) + ctrl('b', 'SEGUNDO NÚMERO', 11, 59, 1, p.op === 'resta' ? 42 : 52) :
         p.que === 'truco' ? ctrl('a', 'NÚMERO', 110, 889, 1, 472) + ctrl('b', 'SUMO O RESTO', 10, 100, 90, 100) : ctrl('a', 'PRIMER NÚMERO', 1, 9, 1, p.op === 'resta' ? 8 : 3) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.op === 'resta' ? 3 : 4),
+      columna: ctrl('a', 'ARRIBA', 100, 899, 1, p.op === 'resta' ? (p.lleva ? 352 : 576) : (p.lleva ? 268 : 231)) + ctrl('b', 'ABAJO', 10, 399, 1, p.op === 'resta' ? (p.lleva ? 128 : 234) : (p.lleva ? 125 : 45)),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -2062,6 +2069,20 @@
         P.push({ vis: p1CDUt(nn3, v.b === 100 ? 0 : 1) + p1Big(v.a + (sb3 > 0 ? ' + ' : ' − ') + v.b + ' = ' + nn3), txt: 'LAS OTRAS CIFRAS QUEDAN IGUAL: <b>' + nn3 + '</b>.' });
         return P;
       }
+      if (md === 'columna') {
+        var rsC = p.op === 'resta', aC = v.a, bC = v.b, sgC = rsC ? '−' : '+';
+        if (rsC && bC > aC) { var tC = aC; aC = bC; bC = tC; } if (!rsC && aC + bC > 999) bC = 999 - aC; if (rsC && aC === bC) bC = Math.max(10, bC - 11);
+        var dA = String(aC).padStart(3, '0').split('').map(Number), dB = String(bC).padStart(3, '0').split('').map(Number), out = ['', '', ''], lv = ['', '', ''], car = 0, NMc = ['CENTENAS', 'DECENAS', 'UNIDADES'], resN = rsC ? aC - bC : aC + bC;
+        P.push({ vis: p1Col3(aC, bC, sgC, '', -1), txt: 'PONEMOS ' + (rsC ? 'EL MÁS GRANDE ARRIBA Y ' : '') + 'CADA CIFRA EN SU <b>COLUMNA</b>: UNIDADES DEBAJO DE UNIDADES.' });
+        for (var cI = 2; cI >= 0; cI--) {
+          var x1 = dA[cI], x2 = dB[cI], txC;
+          if (!rsC) { var sm = x1 + x2 + car; txC = (car ? x1 + ' + ' + x2 + ' + 1 (QUE ME LLEVÉ) = ' : x1 + ' + ' + x2 + ' = ') + sm; car = sm > 9 && cI > 0 ? 1 : 0; out[cI] = cI === 0 ? String(sm) : String(sm % 10); if (car) { lv[cI - 1] = '1'; txC += ': ESCRIBO ' + (sm % 10) + ' Y <b>ME LLEVO 1</b>.'; } else txC += '.'; }
+          else { var top = x1 - car, cj = top < x2; if (cj) { top += 10; lv[cI] = String(top); if (cI > 0) lv[cI - 1] = '−1'; } txC = (cj ? 'NO ALCANZA: ABRO UN PAQUETE Y TENGO ' + top + '. ' : '') + top + ' − ' + x2 + ' = ' + (top - x2) + '.'; out[cI] = String(top - x2); car = cj ? 1 : 0; }
+          var parc = out.join(''); P.push({ vis: p1Col3(aC, bC, sgC, parc, cI, lv.slice()), txt: 'LAS <b>' + NMc[cI] + '</b>: ' + txC });
+        }
+        P.push({ vis: p1Col3(aC, bC, sgC, resN, -1, lv) + p1Big(aC + ' ' + sgC + ' ' + bC + ' = ' + resN), txt: 'EL RESULTADO ES <b>' + resN + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2234,6 +2255,14 @@
       else if (qm === 'truco') { a = R(110, 889); b = pick([10, 100]); M2 = { a: a, b: b, sg: p.op === 'resta' ? '−' : '+', r: p.op === 'resta' ? a - b : a + b }; }
       else M2 = p1Ment('chica', p.op, R(1, 9), R(1, 9), p.esc || pick([10, 100]));
       return { cons: '¿CUÁNTO ES <b>' + M2.a + ' ' + M2.sg + ' ' + M2.b + '</b>? HACELO EN LA CABEZA.', campos: [{ v: M2.r }], ayuda: qm === 'chica' ? 'PENSÁ LA CUENTA CHICA SIN LOS CEROS.' : qm === 'falta100' ? 'CONTÁ DE 10 EN 10 HASTA EL 100.' : qm === 'desarmar' ? 'HACÉ CENTENAS, DECENAS Y UNIDADES POR SEPARADO.' : 'CAMBIA UNA SOLA CIFRA.', bien: '¡MUY BIEN! ' + M2.a + ' ' + M2.sg + ' ' + M2.b + ' = ' + M2.r + '.' }; });
+    if (md === 'columna') { var rsC = p.op === 'resta', qq = p.que || 'cuenta';
+      var gen = function () { var a, b, ok = false, t = 0; while (!ok && t++ < 200) { a = R(120, 899); b = R(11, rsC ? a - 1 : 999 - a); var A = String(a).padStart(3, '0'), B = String(b).padStart(3, '0'), lleva = rsC ? (+A[2] < +B[2] || +A[1] < +B[1]) : (+A[2] + +B[2] > 9 || +A[1] + +B[1] > 9); ok = b > 10 && (p.lleva ? lleva : !lleva) && (rsC || a + b < 1000); } return [a, b]; };
+      if (qq === 'estimar') return p1Elegir(el, api, function () { var ab = gen(), r = rsC ? ab[0] - ab[1] : ab[0] + ab[1], cerca = Math.round(r / 100) * 100, ops = [cerca, cerca + 200, Math.max(100, cerca - 300)];
+        return { cons: '<b>' + ab[0] + ' ' + (rsC ? '−' : '+') + ' ' + ab[1] + '</b> DA MÁS O MENOS…', ops: mezclar(ops.map(String)), ok: String(cerca), ayuda: 'REDONDEÁ CADA NÚMERO A LOS CIENES Y HACÉ LA CUENTA CHICA.', bien: '¡MUY BIEN! DA ' + r + ', CERCA DE ' + cerca + '.' }; });
+      if (qq === 'control') return p1Elegir(el, api, function () { var ab = gen(), r = rsC ? ab[0] - ab[1] : ab[0] + ab[1], bien = Math.random() < 0.5, mos = bien ? r : r + pick([10, 100, -10, 90]);
+        return { cons: rsC ? '¿ESTÁ BIEN <b>' + ab[0] + ' − ' + ab[1] + ' = ' + mos + '</b>? CONTROLÁ CON UNA SUMA.' : '¿ESTÁ BIEN <b>' + ab[0] + ' + ' + ab[1] + ' = ' + mos + '</b>?', ops: ['SÍ', 'NO'], ok: mos === r ? 'SÍ' : 'NO', ayuda: rsC ? 'SUMÁ ' + mos + ' + ' + ab[1] + ': TIENE QUE DAR ' + ab[0] + '.' : 'HACÉ LA CUENTA COLUMNA POR COLUMNA.', bien: '¡MUY BIEN! DA ' + r + '.' }; });
+      return respuesta(el, api, function () { var ab = gen(), r = rsC ? ab[0] - ab[1] : ab[0] + ab[1];
+        return { cons: 'RESOLVÉ EN COLUMNAS: <b>' + ab[0] + ' ' + (rsC ? '−' : '+') + ' ' + ab[1] + '</b>', html: p1Col3(ab[0], ab[1], rsC ? '−' : '+', '', -1), campos: [{ v: r }], ayuda: 'EMPEZÁ POR LAS UNIDADES' + (p.lleva ? (rsC ? '; SI NO ALCANZA, ABRÍ UN PAQUETE.' : '; SI PASA DE 9, TE LLEVÁS 1.') : '.'), bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -2304,6 +2333,7 @@
     '.lb-p1-esp{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}.lb-p1-esp>i{font-style:normal;font-size:2rem}.lb-p1-tab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-width:300px;margin:6px auto}.lb-p1-tab span{padding:4px 8px;border:2px solid #9dbdb9;border-radius:10px;background:#fff;font-weight:800;text-align:center}.lb-p1-tab span.on{background:#087E83;color:#fff;border-color:#087E83}',
     '.lb-p1-hist{margin:8px 0;padding:12px 14px;border:3px dashed #087E83;border-radius:16px;background:#fff;font-size:1.1rem;line-height:1.5;font-weight:700;color:#253638}',
     '.lb-p1-calc{width:200px;margin:6px auto;padding:10px;border-radius:18px;background:#253638}.lb-p1-pan{min-height:40px;padding:6px 10px;border-radius:8px;background:#D7F0E9;color:#253638;font:800 1.3rem/1.4 monospace;text-align:right;overflow:hidden;white-space:nowrap}.lb-p1-pan.on{outline:4px solid #FFC94D}.lb-p1-tec{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.lb-p1-tec span{height:32px;display:grid;place-items:center;border-radius:8px;background:#fff;font-weight:800;color:#253638}.lb-p1-tec span.sg{background:#9dbdb9}.lb-p1-tec span.cero{grid-column:span 2}.lb-p1-tec span.on{background:#FFC94D}',
+    '.lb-p1-colc{border-collapse:collapse;margin:6px auto;font-weight:800;font-size:1.6rem;color:#253638}.lb-p1-colc td{width:40px;height:40px;text-align:center}.lb-p1-colc tr.hd td{font-size:.75rem;color:#4b6a6c;height:18px}.lb-p1-colc tr.lv td{font-size:.85rem;color:#C2552E;height:18px}.lb-p1-colc td.sg{width:28px}.lb-p1-colc tr.ab td{border-bottom:3px solid #253638}.lb-p1-colc tr.rs td{color:#066A6E}.lb-p1-colc td.on{background:#D7F0E9;border-radius:8px}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);
