@@ -117,7 +117,7 @@ window.WaveLeccion = (function () {
 
     function pintarIdx() {
       idx.innerHTML = '<small>Temas</small>' + secs.map(function (s, k) { return '<button type="button" data-ir="' + k + '" class="' + (k === cur ? 'on' : '') + '"><i>' + (k + 1) + '</i><span>' + esc(s.titulo || 'Tema ' + (k + 1)) + '</span></button>'; }).join('') +
-        (hayResumen ? '<button type="button" data-ir="' + secs.length + '" class="' + (cur === secs.length ? 'on' : '') + '"><i>★</i><span>Resumen</span></button>' : '');
+        (hayResumen ? '<button type="button" data-ir="' + secs.length + '" class="' + (cur === secs.length ? 'on' : '') + '"><i>★</i><span>Recordá lo más importante</span></button>' : '');
     }
     function ejemploHtml(k) {
       var s = secs[k], pr = s.practica; if (!pr) return '';
