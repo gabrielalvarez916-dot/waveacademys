@@ -10,6 +10,8 @@ Una misión tiene 4 niveles (lecciones) y un nivel 5 de práctica general, más 
 ## 0. Preparación (rápido)
 - Repo `gabrielalvarez916-dot/waveacademys`, con el PAT que Gabriel da al empezar. Clon parcial: `git clone --filter=blob:none --sparse` y `git sparse-checkout add` solo lo necesario. Archivos nuevos: `git add --sparse`.
 - Leé primero `docs/errores-que-no-se-repiten.md` (errores que ya pasaron y no pueden volver a pasar), después `CLAUDE.md`, `docs/reglas-leccion-interactiva.md`, `docs/banco-leccion.md`, `docs/tipos-de-pregunta.md` y `docs/reglas-fijas-pdf.md`. Son reglas fijas: la calidad no baja nunca por cantidad.
+- **Rápido sin perder calidad:** de la misión existente leé SOLO los títulos de las secciones de cada nivel (no todas las preguntas viejas): escribí y dejá que el control diga qué arreglar. Compará la cantidad de niveles del JSON con la base: un nivel que está en la base y no en el JSON también lleva lección y 4 actividades (ver errores 26/11).
+- **Banco por materia, una sola vez:** antes de la primera misión de una materia, revisá con `docs/banco-leccion.md` (no el código) qué ejemplos faltan para TODAS sus misiones y agregalos juntos, probados una vez. Después escribí las misiones de corrido.
 - Secundaria: `contenido/<materia>-N/mision-K/mision-K.json`. Primaria (Nivel Medio): `contenido/medio/<materia>-<grado>/mision-K/mision-K.json`.
 
 ## 1. Clase animada
@@ -38,6 +40,7 @@ Modelo CIDEAD: una pantalla = una idea.
 - Si la misión YA estaba cargada y cambiás actividades o examen: poné `"actualizar_preguntas": true` en el archivo. Sin eso, la máquina no las toca.
 
 ## 4. Control antes de subir (obligatorio)
+Escribí las lecciones y actividades con `tools/interactiva/armar.py` (`from armar import *` → `T`, `R`, `m`, `guardar(ruta, L, acts, ajustes)`): antes de guardar corre los dos controles sobre una copia y, si algo falla (definición del Recordá de menos de 10 palabras, explicación de menos de 60, tipos repetidos…), muestra todo junto y NO guarda. Se corrige una vez y listo. A mano son:
 ```
 node tools/interactiva/validar.js <mision.json>
 python3 tools/control_calidad.py <mision.json>
@@ -45,13 +48,13 @@ python3 tools/control_calidad.py <mision.json>
 No se sube nada con errores. Probá en el navegador (playwright con /usr/bin/google-chrome) cada ejemplo y ejercicio nuevo del banco COMO LO VE EL ALUMNO: con `css/apoyos.css` y `js/apoyos.js` cargados (dictado y accesibilidad), sin errores en consola y sin nada que se salga del recuadro. Revisá solo lo nuevo o lo que se sospecha que quedó mal, sin revisar todo en detalle. Si tocás un script de control, corrélo antes de subirlo.
 
 ## 5. Subir
-Hacé commit y push a main. La máquina del nivel (`mision-avanzado.yml` o `mision-medio.yml`) controla, carga actividades, examen y lección, y publica. El PDF guardado pasa solo a Recursos cuando el nivel tiene lección. Cuando cambies un `js/` o un `css/`, subí el `?v=` en `alumno.html`.
+Hacé commit y push a main, de a 3 o 4 misiones por subida. La máquina del nivel (`mision-avanzado.yml` o `mision-medio.yml`) controla, carga actividades, examen y lección, y publica. El PDF guardado pasa solo a Recursos cuando el nivel tiene lección. Cuando cambies un `js/` o un `css/`, subí el `?v=` en `alumno.html`.
 
 ## 6. Verificar DE VERDAD
 No digas "está listo" porque un paso del workflow dio "success": verificalo en la base (Supabase, proyecto Wave Academy).
 - Lección de secundaria: `lesson_drafts.contenido ? 'leccion'`. Lección de primaria: tabla `leccion_medio`.
 - Actividades: `questions` del paso `final_activity` de cada nivel, 4 por nivel. Examen: `questions` con `exam_id`.
-No te quedes esperando la carga. Si Gabriel lo pide, dejá un recordatorio y verificá después.
+No te quedes esperando la carga: dejá un recordatorio a los 4-5 minutos y, cuando llegue, mirá que la corrida de la máquina haya dado **success** (si falló, leé el log del paso que falló y arreglalo) y verificá en la base. Que el control pase en tu copia no alcanza: la máquina ve archivos que tu checkout parcial no tiene.
 
 ## Forma de trabajo con Gabriel
 Español rioplatense informal. Rápido y con calidad, cambios quirúrgicos. Antes de un cambio masivo (algo que recargue muchas misiones), preguntá. No inventes actividades ni tipos nuevos sin que él lo decida. Contestá lo que pregunta, sin rodeos.
