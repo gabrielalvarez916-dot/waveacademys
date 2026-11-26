@@ -1090,14 +1090,14 @@
       }
       var enun = '<p>' + esc(pr(q)) + '</p>';
       if (t === 'multi_select' && listaOp(o).length) {
-        return enun + '<small class="mt-ayuda">Marcá todas las que sean correctas.</small>' + listaOp(o).map(function (x) {
-          return '<label class="mt-op"><input type="checkbox"' + w + ' value="' + esc(x) + '"><span>' + esc(x) + '</span></label>';
-        }).join('');
+        return enun + '<small class="mt-ayuda">Marcá todas las que sean correctas.</small><div class="mt-ops multi">' + listaOp(o).map(function (x) {
+          return '<label class="mt-op"><input type="checkbox"' + w + ' value="' + esc(x) + '"><b class="mt-op-l" aria-hidden="true">✔</b><span>' + esc(x) + '</span></label>';
+        }).join('') + '</div>';
       }
       if (t === 'odd_one_out' && listaOp(o).length) {
-        return enun + listaOp(o).map(function (x) {
-          return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(x) + '"><span>' + esc(x) + '</span></label>';
-        }).join('');
+        return enun + '<div class="mt-ops">' + listaOp(o).map(function (x, j) {
+          return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(x) + '"><b class="mt-op-l" aria-hidden="true">' + String.fromCharCode(65 + j) + '</b><span>' + esc(x) + '</span></label>';
+        }).join('') + '</div>';
       }
       if (t === 'ordering' && listaOp(o).length) {
         return enun + '<small class="mt-ayuda">Usá las flechas para poner los elementos en orden.</small><ol class="mt-orden"' + w + '>' +

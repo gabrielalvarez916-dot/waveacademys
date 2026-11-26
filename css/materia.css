@@ -537,3 +537,32 @@ html.ap-sin-anim .dm-op.on, html.ap-sin-anim .dm-chip.on { animation: none; }
 .wvp.act .mt-ops.vf .mt-op-l { width: 46px; height: 46px; font-size: 1.3rem; }
 @media (max-width: 480px) { .wvp.act .mt-ops.vf .mt-op { min-height: 96px; } }
 .ap-sin-anim .wvp.act .jf-seg { transition: none; }
+/* Todos los tipos del banco dentro de la tarjeta de actividad */
+.wvp.act .mt-ops.multi .mt-op-l { border-radius: 9px; color: transparent; }
+.wvp.act .mt-ops.multi .mt-op:has(input:checked) .mt-op-l { color: #fff; }
+.wvp.act .mt-ayuda { margin: -6px 0 12px; font-size: .88rem; }
+.wvp.act .mt-txt, .wvp.act .mt-sel { padding: 14px 16px; border-radius: 16px; font-size: 1.02rem; background: #fff; }
+.wvp.act .mt-txt:focus, .wvp.act .mt-sel:focus { border-color: var(--turquesa); box-shadow: 0 0 0 3px var(--menta); }
+.wvp.act .mt-hueco-p { font-size: 1.15rem; font-weight: 700; }
+.wvp.act .mt-hueco { background: var(--menta); }
+.wvp.act .mt-orden { list-style: none; padding-left: 0; counter-reset: ord; }
+.wvp.act .mt-orden li { counter-increment: ord; padding: 12px 14px; border-radius: 16px; background: #fff; font-weight: 700; }
+.wvp.act .mt-orden li::before { content: counter(ord); display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--turquesa); color: #fff; font-weight: 800; }
+.wvp.act .mt-orden-t { flex: 1; }
+.wvp.act .mt-flecha { width: 40px; height: 40px; }
+.wvp.act .mt-par { padding: 12px 14px; border-radius: 16px; background: #fff; font-weight: 700; flex-wrap: wrap; }
+.wvp.act .mt-par:has(select:valid:not([value=""])) { border-color: #9dbdb9; }
+.wvp.act .mt-par .mt-sel { max-width: 100%; min-width: 180px; padding: 10px 12px; }
+.wvp.act .mt-tabla th, .wvp.act .mt-tabla td { padding: 10px 12px; }
+.wvp.act .mt-tabla th { color: var(--petroleo); }
+.wvp.act .mt-celda { background: var(--menta); font-size: 1rem; }
+.wvp.act .nu-in { min-height: 56px; font-size: 1.4rem; }
+.wvp.act .tp-texto { font-size: 1.08rem; }
+.wvp.act .tk-obj { background: var(--menta); color: var(--petroleo); }
+.wvp.act .tk-arm { border-radius: 18px; }
+.wvp.act .tk-f { font-size: 1.02rem; }
+.wvp.act .tk-f:hover { border-color: #9dbdb9; }
+.wvp.act .li-pt, .wvp.act .li-n { background: var(--turquesa); }
+.wvp.act .rl-seg { background: var(--menta); color: var(--petroleo); }
+.wvp.act .rl-barra i { background: var(--turquesa); }
+.wvp.act .ap-comp { margin-top: 14px; }
