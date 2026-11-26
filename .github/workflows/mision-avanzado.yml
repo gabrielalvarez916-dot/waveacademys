@@ -57,9 +57,9 @@ jobs:
       - name: Cargar la práctica de cada tema (lección interactiva)
         if: steps.cuales.outputs.lista != '' && steps.cuales.outputs.solo_leccion != '1'
         run: python tools/interactiva/cargar.py ${{ steps.cuales.outputs.lista }}
-      - name: Armar la lección interactiva con el banco y cargarla (Matemática)
+      - name: Cargar la lección interactiva escrita en sesión (la máquina no inventa lecciones)
         if: steps.cuales.outputs.lista != ''
-        run: node tools/interactiva/armar.js --json /tmp/lecciones.json ${{ steps.cuales.outputs.lista }} && python tools/interactiva/cargar_leccion.py /tmp/lecciones.json
+        run: python tools/interactiva/cargar_leccion.py ${{ steps.cuales.outputs.lista }}
       - name: Armar y subir los PDF
         if: steps.cuales.outputs.lista != '' && steps.cuales.outputs.solo_leccion != '1'
         run: python tools/pdf/generar.py

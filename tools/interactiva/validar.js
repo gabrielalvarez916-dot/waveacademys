@@ -53,6 +53,7 @@ function practica(pr, donde) {
 
 // ---------- LECCIÓN ESCRITA EN SESIÓN (docs/reglas-leccion-interactiva.md) ----------
 const MAX_COPIA = 0.25;
+const EXISTENTES = new Set((() => { try { return fs.readFileSync(path.join(__dirname, '..', 'calidad_existentes.txt'), 'utf8').split('\n').map(x => x.trim()).filter(x => x && !x.startsWith('#')); } catch (e) { return []; } })());
 // Reglas por etapa (mismo modelo, adaptado a la edad). Primaria = contenido/medio/<materia>-<grado>/: 1.º a 3.º es el primer ciclo.
 const ETAPAS = {
   secundaria: { nombre: 'secundaria', min: 60, max: 160, def: 15, parrafo: true, temas: 3, rec: [4, 8], recDef: 10 },
@@ -130,6 +131,10 @@ for (const ruta of process.argv.slice(2)) {
     });
   });
   revisar(M.niveles, '');
+  // Misión nueva (no está en tools/calidad_existentes.txt): cada nivel 1 a 4 trae su lección interactiva escrita en sesión. La máquina ya no la inventa.
+  if (!EXISTENTES.has(ruta.replace(/\\/g, '/').replace(/^\.\//, ''))) Object.keys(M.niveles || {}).forEach(n => {
+    if (Number(n) >= 1 && Number(n) <= 4 && !(M.niveles[n].leccion && (M.niveles[n].leccion.temas || []).length)) mal('nivel ' + n, 'falta la lección interactiva (niveles.' + n + '.leccion), escrita en sesión con las reglas de docs/reglas-leccion-interactiva.md');
+  });
   Object.keys(M.niveles || {}).forEach(n => { const L = M.niveles[n].leccion; if (L && Array.isArray(L.temas) && L.temas.some(t => t.explicacion)) leccion(ruta, M, n, L, 'lección nivel ' + n); });
   if (M.alternativa && M.alternativa.niveles) revisar(M.alternativa.niveles, 'alternativa · ');
   console.log(errores === antes ? '  ✔ lección interactiva OK' : '  ' + (errores - antes) + ' problema(s)');

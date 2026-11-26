@@ -3,7 +3,7 @@
 La lección interactiva reemplaza al PDF dentro del nivel: es donde el alumno APRENDE. No es un resumen ni la clase repetida.
 Estas reglas no se relajan nunca: ni por cantidad, ni por apuro, ni porque "ya se hicieron muchas". La lección número 300 se escribe
 con el mismo cuidado y el mismo largo que la primera. Si no hay tiempo o uso para hacerla bien, se hacen menos lecciones, NUNCA peores.
-El control `node tools/interactiva/validar.js` las hace cumplir: si una lección no cumple, no se carga nada de esa misión.
+El control `node tools/interactiva/validar.js` las hace cumplir: si una lección no cumple, no se carga nada de esa misión. Las lecciones se escriben SIEMPRE en sesión: la máquina no inventa ninguna; una misión nueva sin lección en los niveles 1 a 4 no se carga.
 
 ## Dónde se escribe
 En `mision-N.json`, en cada nivel: `niveles.N.leccion = { "temas": [ ... ] }`. Cada tema:

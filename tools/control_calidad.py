@@ -311,6 +311,11 @@ def revisar(ruta, forzar=False):
         for j, q in enumerate(lista or []):
             n = revisar_pregunta(q, f'actividad {k}.{j + 1}', nivel, err, avi)
             if str(k) != '5' and n in PENSADAS: pens += 1
+    # Cantidad fija (regla acordada): 4 actividades después de cada lección (niveles 1 a 4) y 4 generales (nivel 5)
+    A = M.get('act') or {}
+    for k in ['1', '2', '3', '4', '5']:
+        cant = len(A.get(k) or A.get(int(k)) or [])
+        if cant != 4: err.append(f'actividades del nivel {k}: hay {cant}; tienen que ser 4' + (' (las generales)' if k == '5' else ' (las que van después de la lección)'))
     if M.get('act') and pens < R['act']: err.append(f'actividades: {pens} pensada(s) en los niveles 1 a 4; el mínimo es {R["act"]}')
     # Examen (banco del nivel jefe)
     ex = M.get('examen') or []
