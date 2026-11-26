@@ -1,0 +1,193 @@
+{
+  "nivel": "Nivel Avanzado",
+  "anio": "Año 1",
+  "materia": "Matemática II",
+  "mision": 2,
+  "titulo": "Operaciones combinadas con números racionales",
+  "edad_orientativa": "Adolescentes de nivel secundario inicial. La propuesta evita dinámicas infantiles y prioriza estrategia, argumentación y resolución colaborativa.",
+  "lecciones": [
+    {
+      "leccion": 1,
+      "titulo": "Jerarquía de operaciones con fracciones",
+      "para_que_sirve": "La lección trabaja la jerarquía de operaciones con fracciones: paréntesis, potencias y raíces, multiplicaciones y divisiones, y finalmente sumas y restas. El juego propone detectar errores de procedimiento y justificar qué operación corresponde resolver primero.",
+      "preguntas": [
+        {
+          "contexto": "En una revisión aparecen dos resoluciones distintas de la misma cuenta: 1/2 + 1/3 × 3/4. Una persona sumó primero y otra multiplicó primero.",
+          "pregunta": "¿Qué procedimiento respeta la jerarquía y por qué?",
+          "respuesta": "Primero se multiplica 1/3 × 3/4 = 1/4; después se suma 1/2 + 1/4 = 3/4.",
+          "por_que": "La multiplicación tiene prioridad sobre la suma, aunque la suma aparezca antes al leer la cuenta."
+        },
+        {
+          "contexto": "Una división de fracciones fue resuelta como si se dividieran numeradores y denominadores por separado.",
+          "pregunta": "¿Qué transformación permite resolver correctamente una división de fracciones?",
+          "respuesta": "Se conserva la primera fracción y se multiplica por la inversa de la segunda.",
+          "por_que": "Por ejemplo, 2/3 ÷ 1/2 = 2/3 × 2/1 = 4/3."
+        }
+      ],
+      "actividad": {
+        "titulo": "Auditoría matemática: encontrá el procedimiento correcto",
+        "duracion": "15–20 minutos",
+        "participantes": "2 jugadores o equipos. También puede jugar una persona contra el reloj, intentando superar su propio puntaje.",
+        "materiales": "Hojas, lápiz y calculadora solo para comprobar al final. Preparar 6 tarjetas con las cuentas propuestas en esta guía y 6 tarjetas con procedimientos posibles; pueden copiarse a mano.",
+        "preparacion": "Escriban cada cuenta en una tarjeta y, en otra, dos procedimientos: uno correcto y otro con un error frecuente. Barajen por separado. Para la primera ronda usen las cuentas 1/2 + 1/3 × 3/4; 3/4 − 1/2 × 1/2; 2/3 ÷ 1/2 + 1/6. En las rondas siguientes pueden inventar cuentas con paréntesis. Acuerden que no se puede dar por válida una respuesta sin explicar el orden elegido.",
+        "como_jugar": "Cada ronda funciona como una auditoría: se revela una cuenta y se comparan dos resoluciones. Los jugadores deben identificar cuál respeta la jerarquía, localizar el primer paso incorrecto de la otra y reconstruir la solución. Se obtienen puntos por detectar el error y por justificarlo matemáticamente.",
+        "pasos": [
+          "Revelen la primera cuenta: 1/2 + 1/3 × 3/4. Antes de calcular, cada jugador escribe qué operación resolvería primero.",
+          "Comparen las decisiones. La respuesta válida es la multiplicación, porque tiene prioridad sobre la suma. Si alguien eligió sumar primero, debe explicar qué regla pasó por alto.",
+          "Resuelvan la multiplicación: 1/3 × 3/4 = 3/12 = 1/4. Después queda 1/2 + 1/4 = 3/4.",
+          "En la segunda ronda usen 3/4 − 1/2 × 1/2. La primera operación es la multiplicación: 1/4. Luego 3/4 − 1/4 = 1/2.",
+          "En la tercera ronda usen 2/3 ÷ 1/2 + 1/6. Primero resuelvan la división: 2/3 × 2 = 4/3. Después sumen 4/3 + 1/6 = 8/6 + 1/6 = 9/6 = 3/2.",
+          "Para la ronda de auditoría, una persona inventa una resolución con un error deliberado. La otra debe señalar la primera línea incorrecta, explicar por qué está mal y corregirla.",
+          "Cambien los roles. Gana quien acumule más puntos, pero solo se suma el punto de una ronda cuando la explicación es correcta, no únicamente el resultado."
+        ],
+        "ejemplo_resuelto": "Cuenta: 1/2 + 1/3 × 3/4. Resolución incorrecta: 1/2 + 1/3 = 5/6; después 5/6 × 3/4 = 15/24 = 5/8. El primer error aparece al sumar antes de multiplicar. Resolución correcta: 1/3 × 3/4 = 1/4; luego 1/2 + 1/4 = 3/4.",
+        "reglas": [
+          "Se respeta la jerarquía: paréntesis; potencias y raíces; multiplicaciones y divisiones de izquierda a derecha; sumas y restas de izquierda a derecha.",
+          "Para sumar o restar fracciones se busca denominador común.",
+          "Para dividir fracciones se multiplica por la inversa de la segunda.",
+          "No se otorgan puntos por adivinar el resultado: hay que mostrar los pasos y justificar la primera operación.",
+          "Si ambos detectan el mismo error, el punto se obtiene explicando cómo corregirlo."
+        ],
+        "orientaciones_adulto": "Dejá que el estudiante defienda su procedimiento antes de intervenir. En lugar de decir qué operación va primero, preguntá qué regla de jerarquía está aplicando. Si aparece un error, pedile que identifique la primera línea en la que la cuenta deja de ser equivalente. Evitá transformar la actividad en una explicación larga: el foco es argumentar, revisar y corregir.",
+        "cierre": "Para cerrar, pedile que explique por qué no alcanza con resolver una cuenta de izquierda a derecha sin mirar qué operaciones aparecen. Como desafío final, que invente una cuenta en la que resolver primero la suma cambie el resultado."
+      }
+    },
+    {
+      "leccion": 2,
+      "titulo": "Fracciones y decimales juntos",
+      "para_que_sirve": "La lección enseña a operar cuando aparecen fracciones y decimales en una misma cuenta. El punto central es elegir una representación común y mantener la exactitud, especialmente cuando aparece un decimal periódico.",
+      "preguntas": [
+        {
+          "contexto": "Una cuenta mezcla 0,5 y 1/4. Se puede transformar 0,5 en 1/2 o 1/4 en 0,25.",
+          "pregunta": "¿Qué significa unificar el formato antes de operar?",
+          "respuesta": "Expresar todos los números como fracciones o todos como decimales, según convenga.",
+          "por_que": "Así se pueden aplicar correctamente las operaciones sin mezclar representaciones incompatibles."
+        },
+        {
+          "contexto": "En otra cuenta aparece 0,333… junto con 1/6.",
+          "pregunta": "¿Por qué conviene expresar 0,333… como fracción?",
+          "respuesta": "Porque 0,333… equivale exactamente a 1/3; si se redondea a 0,33 se pierde exactitud.",
+          "por_que": "Los decimales periódicos pueden representarse como fracciones exactas."
+        }
+      ],
+      "actividad": {
+        "titulo": "El desafío del formato: elegí la conversión más conveniente",
+        "duracion": "15–20 minutos",
+        "participantes": "2 jugadores o equipos.",
+        "materiales": "Papel, lápiz y 12 tarjetas. En seis tarjetas escriban cuentas mixtas; en otras seis, las opciones «todo a fracción» o «todo a decimal». Calculadora opcional para verificar, nunca para reemplazar la conversión.",
+        "preparacion": "Preparen estas cuentas: 0,5 + 1/4; 2/5 × 0,5; 0,25 + 3/4; 1/3 + 0,5; 0,2 + 0,75; 0,333… + 1/6. Dejen aparte una hoja para registrar conversión, operación y resultado. Acuerden que una respuesta solo es válida si se muestra la equivalencia usada.",
+        "como_jugar": "En cada turno se revela una cuenta y el jugador debe elegir si conviene trabajar con fracciones o con decimales. Después resuelve la cuenta y explica por qué eligió ese formato. El otro jugador puede cuestionar la elección si encuentra una forma más clara o exacta.",
+        "pasos": [
+          "Mezclen las seis tarjetas y colóquenlas boca abajo. El primer jugador toma una y lee la cuenta en voz alta.",
+          "Antes de calcular, elige «todo a fracción» o «todo a decimal» y anota la conversión que necesita.",
+          "Resuelvan 0,5 + 1/4 como ejemplo: 0,5 = 1/2; entonces 1/2 + 1/4 = 2/4 + 1/4 = 3/4 = 0,75.",
+          "Para 2/5 × 0,5 pueden elegir decimales: 2/5 = 0,4 y 0,4 × 0,5 = 0,2. También pueden resolver como fracciones: 2/5 × 1/2 = 1/5.",
+          "Cuando aparezca 1/3 + 0,5 o 0,333… + 1/6, el jugador debe justificar por qué trabajar con fracciones evita redondear el periódico.",
+          "El contrincante revisa la conversión y el resultado. Si encuentra un error, debe señalar exactamente dónde se produjo y proponer la corrección.",
+          "Cambien de turno hasta resolver todas las tarjetas. Gana quien consiga más rondas completas: elección razonada, equivalencia correcta y resultado exacto."
+        ],
+        "ejemplo_resuelto": "Cuenta: 0,333… + 1/6. Como 0,333… = 1/3, conviene trabajar con fracciones. Entonces 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2. Si se reemplazara 0,333… por 0,33, el resultado sería aproximado y no exacto.",
+        "reglas": [
+          "Antes de operar hay que convertir todos los términos al mismo formato.",
+          "Si aparece un decimal periódico, se trabaja con fracciones para conservar el valor exacto.",
+          "Los decimales exactos pueden convertirse a fracción o mantenerse como decimales si eso simplifica la cuenta.",
+          "No se acepta una conversión sin equivalencia demostrada: por ejemplo, 0,25 = 25/100 = 1/4.",
+          "El punto se obtiene por la cuenta correcta y por una explicación coherente de la elección."
+        ],
+        "orientaciones_adulto": "No impongas una única estrategia cuando hay más de una válida. Preguntá cuál formato hace más sencilla la cuenta y si el resultado seguirá siendo exacto. Si alguien elige decimales para un periódico, preguntá qué ocurre al redondear y qué información se pierde. La meta es que pueda justificar una decisión, no memorizar una regla sin contexto.",
+        "cierre": "Elegí una cuenta de las tarjetas y pedile que la resuelva de las dos maneras cuando sea posible. Comparen los pasos y expliquen por qué ambas representaciones dan el mismo valor."
+      }
+    },
+    {
+      "leccion": 3,
+      "titulo": "Cálculo con paréntesis y potencias",
+      "para_que_sirve": "La lección combina potencias de fracciones, signos y jerarquía de operaciones. Se trabaja la diferencia entre una base negativa entre paréntesis y un signo menos ubicado fuera de la potencia, además del orden en cuentas combinadas.",
+      "preguntas": [
+        {
+          "contexto": "Se comparan (−1/2)² y −(1/2)².",
+          "pregunta": "¿Por qué los resultados tienen signos diferentes?",
+          "respuesta": "En (−1/2)² el signo forma parte de la base y el producto de dos negativos es positivo. En −(1/2)² se calcula primero la potencia positiva y luego se aplica el signo menos.",
+          "por_que": "Los paréntesis determinan qué número está elevado al exponente."
+        },
+        {
+          "contexto": "Una persona calcula (2/3)² como 4/3.",
+          "pregunta": "¿Qué parte de la potencia olvidó elevar?",
+          "respuesta": "El denominador: (2/3)² = 2²/3² = 4/9.",
+          "por_que": "La potencia se aplica tanto al numerador como al denominador."
+        }
+      ],
+      "actividad": {
+        "titulo": "Sala de escape: desbloqueá la secuencia",
+        "duracion": "15–25 minutos",
+        "participantes": "2 jugadores o equipos. En modo cooperativo, ambos intentan abrir la secuencia antes de que termine el tiempo acordado.",
+        "materiales": "Papel, lápiz y cuatro sobres o cuatro hojas dobladas. En cada una escriban un desafío. No hace falta usar candados ni dispositivos: cada resultado correcto permite pasar al siguiente sobre.",
+        "preparacion": "Preparen cuatro etapas. Etapa 1: calcular (2/3)². Etapa 2: calcular (−1/2)³. Etapa 3: resolver (1/2 + 1/4)². Etapa 4: resolver 1/3 + (1/2)² × 4. Escriban las soluciones en una hoja aparte para quien coordine: 4/9; −1/8; 9/16; 4/3. La última etapa exige respetar paréntesis, potencia, multiplicación y suma.",
+        "como_jugar": "La misión consiste en superar cuatro controles matemáticos consecutivos. Cada sobre contiene una cuenta y una pista sobre el tipo de razonamiento requerido. Para abrir el siguiente, el equipo debe entregar el resultado y explicar el procedimiento. Una respuesta sin pasos no desbloquea la etapa.",
+        "pasos": [
+          "Entreguen el primer sobre: (2/3)². La clave es elevar numerador y denominador: 2²/3² = 4/9.",
+          "Al superar la primera etapa, entreguen la segunda: (−1/2)³. Deben calcular (−1)³/2³ = −1/8. El exponente impar conserva el signo negativo.",
+          "La tercera etapa es (1/2 + 1/4)². Primero se resuelve el paréntesis: 1/2 + 1/4 = 3/4. Después se eleva: (3/4)² = 9/16.",
+          "En la etapa final resuelvan 1/3 + (1/2)² × 4. Primero la potencia: 1/4. Después la multiplicación: 1. Por último la suma: 1/3 + 1 = 4/3.",
+          "Si el resultado no coincide, el equipo puede pedir una pista. La pista no revela el resultado: señala qué regla revisar, como «¿elevaste también el denominador?» o «¿resolviste primero el paréntesis?».",
+          "Cuando terminen, revisen las cuatro hojas y marquen en cuál etapa hubo más dudas. Repitan esa etapa con una cuenta nueva inventada por el otro jugador."
+        ],
+        "ejemplo_resuelto": "Etapa final: 1/3 + (1/2)² × 4. Primero (1/2)² = 1/4. Después 1/4 × 4 = 1. Finalmente 1/3 + 1 = 4/3. No corresponde sumar 1/3 + 1/2 antes de calcular la potencia y la multiplicación.",
+        "reglas": [
+          "Cada etapa debe resolverse en el orden correcto y con los pasos escritos.",
+          "La potencia de una fracción afecta al numerador y al denominador.",
+          "Si la base negativa está dentro del paréntesis, el signo forma parte de la potencia; si está afuera, se aplica después.",
+          "Las pistas pueden orientar sobre la regla que hay que revisar, pero no entregar el resultado.",
+          "El equipo puede corregir un intento y volver a presentarlo; el objetivo es completar la secuencia comprendiendo los errores."
+        ],
+        "orientaciones_adulto": "Esta actividad está pensada para adolescentes: dejá que organicen el procedimiento y discutan entre ellos. Si confunden −(1/2)² con (−1/2)², pediles que escriban la multiplicación desarrollada en cada caso. Si el error es de jerarquía, preguntá qué operación queda pendiente después de resolver la potencia. No conviertas las pistas en una clase anticipada.",
+        "cierre": "Pedile que invente dos expresiones casi iguales, una con el signo menos dentro del paréntesis y otra con el signo afuera. Después debe explicar por qué no dan el mismo resultado."
+      }
+    },
+    {
+      "leccion": 4,
+      "titulo": "Problemas con operaciones combinadas",
+      "para_que_sirve": "La lección aplica fracciones y operaciones a situaciones con cantidades, partes sucesivas y repartos. La distinción clave es identificar si una fracción se calcula sobre el total o sobre lo que queda, y comprobar que el resultado tenga sentido.",
+      "preguntas": [
+        {
+          "contexto": "Un tanque tiene 120 litros. El lunes se usa 1/3 del total y el martes 1/4 de lo que quedó.",
+          "pregunta": "¿La segunda fracción se calcula sobre los 120 litros iniciales o sobre el resto?",
+          "respuesta": "Sobre el resto: después de usar 40 litros quedan 80, y el martes se usa 1/4 de 80, es decir, 20 litros.",
+          "por_que": "La expresión «del resto» cambia la cantidad de referencia."
+        },
+        {
+          "contexto": "Una cinta de 3/4 de metro se corta en tres partes iguales.",
+          "pregunta": "¿Qué operación permite conocer la longitud de cada parte?",
+          "respuesta": "Dividir 3/4 por 3: 3/4 ÷ 3 = 3/12 = 1/4 de metro.",
+          "por_que": "Repartir una cantidad en partes iguales requiere dividirla por la cantidad de partes."
+        }
+      ],
+      "actividad": {
+        "titulo": "Gestión de recursos: que las cuentas cierren",
+        "duracion": "20–25 minutos",
+        "participantes": "2 jugadores o equipos. Una persona administra el recurso y la otra audita las decisiones; luego intercambian los roles.",
+        "materiales": "Una hoja para registrar el total, las operaciones y el saldo; lápiz; 8 tarjetas de situación escritas a mano. Calculadora opcional para la comprobación final.",
+        "preparacion": "Elijan un escenario: un tanque de agua, un presupuesto para una salida o un depósito de materiales. Para la primera partida usen un tanque de 120 litros. Preparen tarjetas con decisiones: «usar 1/3 del total», «usar 1/4 de lo que queda», «repartir 3/4 de litro en 3 recipientes iguales» y «comprobar cuánto queda». En las partidas siguientes cambien las cantidades, pero mantengan fracciones que puedan calcularse con los conocimientos de la lección.",
+        "como_jugar": "El administrador recibe una cantidad inicial y va aplicando las tarjetas de decisión. El auditor debe verificar si cada fracción se calculó sobre el total o sobre el resto, si la operación elegida es correcta y si el saldo final tiene sentido. El objetivo es terminar con un registro sin errores y justificar cada cambio de cantidad.",
+        "pasos": [
+          "Anoten el punto de partida: 120 litros. La primera tarjeta indica «usar 1/3 del total». Calculen 1/3 de 120 = 40 litros y resten: quedan 80.",
+          "La segunda tarjeta dice «usar 1/4 de lo que queda». Antes de calcular, el auditor debe decir cuál es la cantidad de referencia. Es 80, no 120.",
+          "Calculen 1/4 de 80 = 20 litros. Resten el uso al saldo: 80 − 20 = 60 litros.",
+          "El auditor revisa el registro completo: se usaron 40 + 20 = 60 litros y quedaron 60. Usado más restante debe dar el total inicial de 120.",
+          "Tomen la tarjeta de reparto: hay 3/4 de litro para distribuir en tres recipientes iguales. Calculen 3/4 ÷ 3 = 1/4 de litro por recipiente.",
+          "En la siguiente ronda, quien administra inventa una secuencia de dos decisiones, una sobre el total y otra sobre el resto. El auditor debe detectar qué cantidad funciona como referencia en cada paso.",
+          "Intercambien los roles. Para ganar, el equipo debe completar dos escenarios seguidos con todos los cálculos correctos y una comprobación final."
+        ],
+        "ejemplo_resuelto": "Tanque de 120 L: primero se usa 1/3 de 120 = 40 L; quedan 80 L. Después se usa 1/4 del resto: 1/4 de 80 = 20 L. Quedan 60 L. Comprobación: 40 L usados el primer día + 20 L usados el segundo + 60 L restantes = 120 L.",
+        "reglas": [
+          "Antes de calcular una fracción, hay que identificar con claridad cuál es la cantidad de referencia.",
+          "«Del total» se calcula sobre la cantidad inicial; «del resto» se calcula sobre el saldo después del paso anterior.",
+          "Una fracción de una cantidad se obtiene multiplicando la fracción por esa cantidad.",
+          "Un reparto en partes iguales se representa mediante una división.",
+          "Cada escenario se cierra con una comprobación: lo utilizado más lo que queda debe coincidir con el total inicial."
+        ],
+        "orientaciones_adulto": "No señales directamente si la fracción se calcula sobre el total o sobre el resto. Preguntá: «¿Cuánto había justo antes de esta decisión?» y «¿qué cantidad menciona la tarjeta?». Si el estudiante obtiene un saldo mayor que el inicial después de usar recursos, pedile que revise el sentido del resultado. La actividad busca que traduzca el texto a operaciones, no que adivine qué cuenta usar.",
+        "cierre": "Pedile que invente un problema breve con dos fracciones sucesivas. La segunda debe aplicarse al resto. Después intercambien los problemas y resuélvanlos mostrando cómo identificaron la cantidad de referencia."
+      }
+    }
+  ]
+}
