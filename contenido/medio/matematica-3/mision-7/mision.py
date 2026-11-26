@@ -155,11 +155,8 @@ T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"moto
 RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
 
 N1["leccion"] = {"temas": [
- T("CONTAR PARA ADELANTE", [LD("SALTOS", "DEL CHICO SALTAMOS AL <b>MIL</b>, Y DE AHÍ AL GRANDE."),
-   LL("JUNTAMOS LOS SALTOS.", "ESO ES LO QUE FALTA.")],
-   {"modo": "problema4", "tipo": "distancia"}, {"modo": "problema4", "tipo": "distancia"}),
- T("DISTANCIA CON UNA RESTA", [LD("RESTAR", "LA DISTANCIA TAMBIÉN SE CALCULA CON UNA <b>RESTA</b>: GRANDE MENOS CHICO."),
-   LL("NO SE SUMAN LOS DOS.", "LOS DOS CAMINOS DAN IGUAL.")],
+ T("CUÁNTO FALTA", [LD("SALTOS", "DEL CHICO SALTAMOS AL <b>MIL</b>, Y DE AHÍ AL GRANDE."),
+   LL("JUNTAMOS LOS SALTOS: ESO FALTA.", "TAMBIÉN SALE CON UNA <b>RESTA</b>: GRANDE MENOS CHICO.", "NO SE SUMAN LOS DOS.")],
    {"modo": "problema4", "tipo": "distancia"}, {"modo": "problema4", "tipo": "distancia"}),
 ], "recuerda": [
  RC("DISTANCIA", "ES LO QUE HAY ENTRE DOS NÚMEROS.", "DEL 1.600 AL 3.000 HAY 1.400"),
@@ -178,21 +175,15 @@ N2["leccion"] = {"temas": [
 ]}
 N3["leccion"] = {"temas": [
  T("DOS PASOS", [LD("UNA CUENTA POR VEZ", "SEGUIMOS EL <b>ORDEN</b> DE LO QUE PASA: PRIMERO UNA CUENTA, DESPUÉS LA OTRA."),
-   LL("EL RESULTADO DE UNA SIRVE PARA LA OTRA.", "NO TE SALTES NINGUNA.")],
-   {"modo": "problema4", "tipo": "pasos"}, {"modo": "problema4", "tipo": "pasos"}),
- T("RESPONDER", [LD("LA RESPUESTA", "AL FINAL ESCRIBIMOS UNA <b>ORACIÓN</b> QUE CONTESTA LA PREGUNTA."),
-   LL("QUEDAN 3.800 LIBROS.", "CON EL NÚMERO Y LA PALABRA.")],
+   LL("EL RESULTADO DE UNA SIRVE PARA LA OTRA.", "NO TE SALTES NINGUNA.", "AL FINAL, UNA <b>ORACIÓN</b>: QUEDAN 3.800 LIBROS.")],
    {"modo": "problema4", "tipo": "pasos"}, {"modo": "problema4", "tipo": "pasos"}),
 ], "recuerda": [
  RC("VARIOS PASOS", "HACEMOS LAS CUENTAS UNA POR VEZ, EN ORDEN.", "2.000 + 1.500 = 3.500 Y 3.500 − 300 = 3.200"),
- RC("RESPONDER", "CONTESTAMOS CON UNA ORACIÓN COMPLETA.", "HAY 3.200 LIBROS"),
+ RC("RESPONDER", "AL TERMINAR, CONTESTAMOS LA PREGUNTA CON UNA ORACIÓN COMPLETA.", "HAY 3.200 LIBROS"),
 ]}
 N4["leccion"] = {"temas": [
- T("LAS PARTES DE UN PROBLEMA", [LD("PARTES", "UN PROBLEMA TIENE <b>DATOS</b>, UNA HISTORIA Y UNA PREGUNTA."),
-   LL("LOS DATOS SON LOS NÚMEROS.", "LA PREGUNTA VA AL FINAL.")],
-   {"modo": "problema4"}, {"modo": "problema4"}),
- T("SUMA O RESTA", [LD("ELEGIR LA HISTORIA", "PARA SUMAR, ALGO <b>LLEGA</b>. PARA RESTAR, ALGO <b>SE VA</b>."),
-   LL("LE DAN, COMPRA, JUNTA: SUMA.", "PRESTA, REGALA, PIERDE: RESTA.")],
+ T("INVENTAR UN PROBLEMA", [LD("PARTES", "UN PROBLEMA TIENE <b>DATOS</b>, UNA HISTORIA Y UNA PREGUNTA."),
+   LL("PARA SUMAR, ALGO <b>LLEGA</b>: LE DAN, COMPRA, JUNTA.", "PARA RESTAR, ALGO <b>SE VA</b>: PRESTA, REGALA.", "LA PREGUNTA VA AL FINAL.")],
    {"modo": "problema4"}, {"modo": "problema4"}),
 ], "recuerda": [
  RC("PARTES", "DATOS, UNA HISTORIA Y UNA PREGUNTA.", "TENÍA 2.500 Y LLEGAN 1.300. ¿CUÁNTOS HAY?"),

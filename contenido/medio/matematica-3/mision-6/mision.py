@@ -155,22 +155,16 @@ T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"moto
 RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
 
 N1["leccion"] = {"temas": [
- T("ENCOLUMNAR", [LD("EN SU COLUMNA", "UNIDADES DEBAJO DE UNIDADES, DECENAS DEBAJO DE DECENAS, <b>Y ASÍ</b>."),
-   LL("SI QUEDAN CORRIDAS, DA MAL.", "EL SIGNO VA A LA IZQUIERDA.")],
-   {"modo": "columna", "cifras": 4}, {"modo": "columna", "cifras": 4}),
- T("DE DERECHA A IZQUIERDA", [LD("EMPEZAR", "SUMAMOS PRIMERO LAS <b>UNIDADES</b> Y VAMOS HACIA LA IZQUIERDA."),
-   LL("UNA COLUMNA POR VEZ.", "EL RESULTADO VA ABAJO DE LA RAYA.")],
+ T("SUMAR EN COLUMNAS", [LD("EN SU COLUMNA", "UNIDADES DEBAJO DE UNIDADES, DECENAS DEBAJO DE DECENAS, <b>Y ASÍ</b>."),
+   LL("SI QUEDAN CORRIDAS, DA MAL.", "EMPEZAMOS POR LAS <b>UNIDADES</b> Y VAMOS A LA IZQUIERDA.", "EL RESULTADO VA ABAJO DE LA RAYA.")],
    {"modo": "columna", "cifras": 4}, {"modo": "columna", "cifras": 4}),
 ], "recuerda": [
  RC("ENCOLUMNAR", "CADA CIFRA VA DEBAJO DE OTRA DEL MISMO LUGAR.", "LAS UNIDADES DEL 3.241 SOBRE LAS DEL 2.516"),
  RC("SUMAR EN COLUMNAS", "EMPEZAMOS POR LAS UNIDADES Y SEGUIMOS A LA IZQUIERDA.", "2.314 + 1.452 = 3.766"),
 ]}
 N2["leccion"] = {"temas": [
- T("EL MÁS GRANDE ARRIBA", [LD("ORDENAR LA CUENTA", "EN LA RESTA, EL NÚMERO <b>MÁS GRANDE</b> VA ARRIBA."),
-   LL("ES DE DONDE SACAMOS.", "EL OTRO VA DEBAJO.")],
-   {"modo": "columna", "cifras": 4, "op": "resta"}, {"modo": "columna", "cifras": 4, "op": "resta"}),
- T("ARRIBA MENOS ABAJO", [LD("CADA COLUMNA", "RESTAMOS <b>ARRIBA MENOS ABAJO</b>, EMPEZANDO POR LAS UNIDADES."),
-   LL("NUNCA AL REVÉS.", "UNA COLUMNA POR VEZ.")],
+ T("RESTAR EN COLUMNAS", [LD("ORDENAR LA CUENTA", "EN LA RESTA, EL NÚMERO <b>MÁS GRANDE</b> VA ARRIBA: DE AHÍ SACAMOS."),
+   LL("EN CADA COLUMNA, <b>ARRIBA MENOS ABAJO</b>.", "EMPEZAMOS POR LAS UNIDADES.", "NUNCA AL REVÉS.")],
    {"modo": "columna", "cifras": 4, "op": "resta"}, {"modo": "columna", "cifras": 4, "op": "resta"}),
 ], "recuerda": [
  RC("ARRIBA", "EN LA RESTA EL NÚMERO MÁS GRANDE VA ARRIBA.", "9.874 ARRIBA Y 3.512 ABAJO"),
@@ -191,8 +185,8 @@ N4["leccion"] = {"temas": [
  T("ESTIMAR PARA CONTROLAR", [LD("DA CERCA", "REDONDEAMOS AL MIL: EL RESULTADO TIENE QUE QUEDAR <b>CERCA</b>."),
    LL("SI DA MUY LEJOS, HAY UN ERROR.", "SE HACE ANTES O DESPUÉS.")],
    {"modo": "sumar4", "que": "estimar"}, {"modo": "columna", "cifras": 4, "que": "estimar"}),
- T("LA CUENTA AL REVÉS", [LD("CONTROLAR UNA RESTA", "SUMAMOS EL <b>RESULTADO</b> Y LO QUE RESTAMOS: TIENE QUE DAR EL DE ARRIBA."),
-   LL("LA SUMA DESHACE LA RESTA.", "SI NO DA, REVISAMOS.")],
+ T("LA CUENTA AL REVÉS", [LD("LA PRUEBA", "LA SUMA <b>DESHACE</b> LA RESTA: JUNTAMOS LO QUE QUEDÓ CON LO QUE SACAMOS."),
+   LL("TENEMOS QUE VOLVER AL NÚMERO DE ARRIBA.", "SI NO VOLVEMOS, BUSCAMOS EL ERROR.")],
    {"modo": "columna", "cifras": 4, "op": "resta"}, {"modo": "columna", "cifras": 4, "op": "resta", "que": "control"}),
 ], "recuerda": [
  RC("ESTIMAR", "EL RESULTADO EXACTO TIENE QUE QUEDAR CERCA DEL ESTIMADO.", "2.768 + 1.455 DA CERCA DE 4.000"),
