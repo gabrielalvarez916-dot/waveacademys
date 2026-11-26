@@ -2,7 +2,7 @@ name: Misiones del NIVEL AVANZADO (carga completa)
 # Al subir a main un contenido/<materia>/mision-N/mision-N.json nuevo, hace TODO solo:
 #   1) carga borradores, actividades, Relámpago y examen (cargar_mision_avanzado; si ya estaba, no pisa nada)
 #      y la práctica de cada tema de la lección interactiva (tools/interactiva; esto sí se actualiza aunque la misión ya estuviera)
-#   2) arma los PDF (argentino y neutro) y los sube a cada lección
+#   2) los PDF NO se arman: el que ya existe va tal cual a Recursos; sin PDF, la lección lo reemplaza
 #   3) publica las misiones que quedaron completas
 # Las clases animadas van por voz-clases.yml (al subir tools/clase/lecciones/*.json). Nada se publica hasta que la misión está completa.
 on:
@@ -67,9 +67,6 @@ jobs:
       - name: Cargar la lección interactiva escrita en sesión (la máquina no inventa lecciones)
         if: steps.cuales.outputs.lista != ''
         run: python tools/interactiva/cargar_leccion.py ${{ steps.cuales.outputs.lista }}
-      - name: Armar y subir los PDF
-        if: steps.cuales.outputs.lista != '' && steps.cuales.outputs.solo_leccion != '1'
-        run: python tools/pdf/generar.py
       - name: Publicar misiones completas (solo Nivel Avanzado)
         if: always()
         run: python tools/publicar_avanzado.py
