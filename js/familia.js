@@ -1466,58 +1466,31 @@
 
   // ---------- Guías de acompañamiento familiar ----------
   async function vistaGuias() {
-    vista.innerHTML = '<h1 class="vista-titulo">Guías para acompañar</h1><div id="guias-familia"><div class="vacio">Cargando las guías…</div></div>';
-    var cont = document.getElementById('guias-familia');
+    vista.innerHTML='<h1 class="vista-titulo">Guías para compartir</h1><div id="guias-familia"><div class="vacio">Cargando…</div></div>';
+    var cont=document.getElementById('guias-familia');
     try {
-      var resultados = await Promise.all([
-        cargarDatos(),
-        fetch('/contenido/familias/guias/matematica-avanzado-anio-1-mision-1.json', { cache: 'no-cache' })
-      ]);
-      if (!resultados[1].ok) throw new Error('No se encontró el material.');
-      var d = resultados[0], paquete = await resultados[1].json();
-      var hijos = d.hijos || [];
-      var elegido = hijos[0] || null;
-
-      function pintar(hijo) {
-        var persona = hijo
-          ? '<div class="gf-persona"><span>Estudiante</span><b>' + esc(hijo.first_name + ' ' + hijo.last_name) + '</b><small>' + esc(hijo.grades ? etiquetaAnio(hijo.grades) : 'Año no asignado') + '</small></div>'
-          : '<div class="gf-persona"><span>Material de acompañamiento</span><b>' + esc(paquete.nivel + ' · ' + paquete.anio) + '</b></div>';
-        var selector = hijos.length > 1
-          ? '<label class="gf-selector"><span>Ver las guías para</span><select id="gf-hijo">' + hijos.map(function (h) {
-              return '<option value="' + esc(h.id) + '"' + (hijo && h.id === hijo.id ? ' selected' : '') + '>' + esc(h.first_name + ' ' + h.last_name) + '</option>';
-            }).join('') + '</select></label>' : '';
-        var tarjetas = paquete.guias.map(function (g, i) {
-          var a = g.actividad || {};
-          return '<details class="gf-guia"' + (i === 0 ? ' open' : '') + '>' +
-            '<summary><span class="gf-num">' + String(g.nivel).padStart(2, '0') + '</span><span class="gf-resumen"><b>' + esc(g.titulo) + '</b><small>Lección ' + g.nivel + ' · Misión ' + paquete.mision + '</small></span><span class="gf-flecha" aria-hidden="true">⌄</span></summary>' +
-            '<div class="gf-cuerpo">' +
-              '<section class="gf-bloque"><h3>Qué está aprendiendo</h3><p class="gf-objetivo">' + esc(g.objetivo) + '</p><ul>' + (g.aprendizajes || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
-              '<section class="gf-bloque"><h3>Cómo podés acompañarlo</h3><ul>' + (g.acompanamiento || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
-              '<section class="gf-actividad"><div class="gf-actividad-top"><div><span>Una actividad para compartir</span><h3>' + esc(a.titulo || 'Actividad compartida') + '</h3></div><small>' + esc(a.duracion || '') + '</small></div>' +
-                (a.materiales ? '<p class="gf-materiales"><b>Necesitan:</b> ' + esc(a.materiales) + '</p>' : '') +
-                '<ol>' + (a.pasos || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' +
-                (a.cierre ? '<p class="gf-cierre"><b>Para conversar:</b> ' + esc(a.cierre) + '</p>' : '') +
-              '</section>' +
-              '<section class="gf-bloque gf-observar"><h3>Qué conviene observar</h3><ul>' + (g.observar || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul><p><b>Si se traba:</b> ' + esc(g.si_se_traba || '') + '</p></section>' +
-            '</div></details>';
-        }).join('');
-        cont.innerHTML =
-          '<div class="gf-intro"><span class="gf-kicker">' + esc(paquete.materia + ' · ' + paquete.nivel + ' · ' + paquete.anio) + '</span>' +
-            '<h2>' + esc(paquete.titulo) + '</h2><p>' + esc(paquete.introduccion) + '</p></div>' +
-          selector + persona +
-          '<div class="gf-lista">' + tarjetas + '</div>';
-        var sel = cont.querySelector('#gf-hijo');
-        if (sel) sel.addEventListener('change', function () {
-          elegido = hijos.filter(function (h) { return h.id === sel.value; })[0] || null;
-          pintar(elegido);
-        });
-      }
-      pintar(elegido);
-    } catch (e) {
-      cont.innerHTML = '<div class="vacio">No pudimos cargar las guías. Probá recargar la página.</div>';
-    }
+      var rs=await Promise.all([cargarDatos(),fetch('/contenido/familias/guias/index.json',{cache:'no-cache'})]);
+      if(!rs[1].ok) throw Error('Índice no disponible');
+      var d=rs[0],idx=await rs[1].json(),hijos=d.hijos||[],elegido=hijos[0]||null,paquetes=[];
+      await Promise.all((idx.guias||[]).map(async function(x){var r=await fetch('/'+x.archivo,{cache:'no-cache'});if(r.ok)paquetes.push(await r.json());}));
+      var fichas=[];paquetes.forEach(function(p){(p.guias||[]).forEach(function(g){fichas.push({paquete:p,guia:g});});});
+      function opts(k,t){var vals=Array.from(new Set(fichas.map(function(f){return f.paquete[k];}).filter(Boolean))).sort();return '<option value="">Todos los '+t+'</option>'+vals.map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>';}).join('');}
+      function pintar(){
+        cont.innerHTML='<div class="gf-intro"><span class="gf-kicker">Panel de acompañamiento familiar</span><h2>Un momento para compartir</h2><p>Estas propuestas no son clases ni tareas. No necesitás enseñar, explicar ni corregir: son ideas breves para jugar y pasar un rato juntos, sin computadora.</p></div>'+
+        (hijos.length>1?'<label class="gf-hijo"><span>Estudiante</span><select id="gf-hijo">'+hijos.map(function(x){return '<option value="'+esc(x.id)+'"'+(elegido&&x.id===elegido.id?' selected':'')+'>'+esc(x.first_name+' '+x.last_name)+'</option>';}).join('')+'</select></label>':'')+
+        (elegido?'<div class="gf-persona"><span>Guías para</span><b>'+esc(elegido.first_name+' '+elegido.last_name)+'</b><small>'+esc(elegido.grades?etiquetaAnio(elegido.grades):'')+'</small></div>':'')+
+        '<section class="gf-filtros"><label><span>Buscar</span><input id="gf-buscar" type="search" placeholder="Nombre o tema de la lección"></label><label><span>Nivel</span><select id="gf-nivel">'+opts('nivel','niveles')+'</select></label><label><span>Año</span><select id="gf-anio">'+opts('anio','años')+'</select></label><label><span>Materia</span><select id="gf-materia">'+opts('materia','materias')+'</select></label><label><span>Lección</span><select id="gf-leccion"><option value="">Todas las lecciones</option></select></label></section><p class="gf-cantidad" id="gf-cantidad"></p><div class="gf-tarjetas" id="gf-tarjetas"></div><div id="gf-detalle"></div>';
+        var q=cont.querySelector('#gf-buscar'),n=cont.querySelector('#gf-nivel'),y=cont.querySelector('#gf-anio'),m=cont.querySelector('#gf-materia'),l=cont.querySelector('#gf-leccion'),cards=cont.querySelector('#gf-tarjetas'),detail=cont.querySelector('#gf-detalle'),count=cont.querySelector('#gf-cantidad');
+        function subset(){return fichas.filter(function(f){return (!n.value||f.paquete.nivel===n.value)&&(!y.value||f.paquete.anio===y.value)&&(!m.value||f.paquete.materia===m.value);});}
+        function refresh(){var old=l.value,s=subset(),nums=Array.from(new Set(s.map(function(f){return String(f.guia.leccion);}))).sort(function(a,b){return +a- +b;});l.innerHTML='<option value="">Todas las lecciones</option>'+nums.map(function(v){var z=s.find(function(f){return String(f.guia.leccion)===v;});return '<option value="'+v+'">Lección '+v+' · '+esc(z.guia.titulo)+'</option>';}).join('');if(nums.includes(old))l.value=old;}
+        function filtered(){var term=q.value.trim().toLowerCase();return subset().filter(function(f){return (!l.value||String(f.guia.leccion)===l.value)&&(!term||[f.paquete.nivel,f.paquete.anio,f.paquete.materia,f.guia.titulo].join(' ').toLowerCase().includes(term));});}
+        function show(){var list=filtered();count.textContent=list.length+(list.length===1?' guía':' guías');cards.innerHTML=list.map(function(f){return '<button type="button" class="gf-tarjeta" data-i="'+fichas.indexOf(f)+'"><span class="gf-tarjeta-k">'+esc(f.paquete.nivel)+' · '+esc(f.paquete.anio)+'</span><b>'+esc(f.guia.titulo)+'</b><small>'+esc(f.paquete.materia)+' · Lección '+esc(f.guia.leccion)+'</small><span class="gf-abrir">Ver guía →</span></button>';}).join('')||'<div class="vacio">No hay guías con esos filtros.</div>';detail.innerHTML='';cards.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){open(fichas[+b.dataset.i]);});});}
+        function open(f){var g=f.guia,a=g.actividad||{};detail.innerHTML='<article class="gf-detalle"><button class="gf-volver" type="button">← Volver a las guías</button><span class="gf-kicker">'+esc(f.paquete.nivel)+' · '+esc(f.paquete.anio)+' · '+esc(f.paquete.materia)+' · Lección '+esc(g.leccion)+'</span><h2>'+esc(g.titulo)+'</h2><p class="gf-para">'+esc(g.para_que_sirve||'Una propuesta opcional para compartir un rato.')+'</p><section class="gf-bloque"><h3>Si surge la conversación</h3><p class="gf-ayuda">No hace falta dar una explicación. Estas preguntas son disparadores opcionales; alcanza con escuchar.</p><div class="gf-preguntas">'+(g.preguntas||[]).map(function(x){return '<div class="gf-pregunta"><b>'+esc(x.pregunta)+'</b><p><strong>Respuesta orientativa:</strong> '+esc(x.respuesta)+'</p><small>'+esc(x.por_que)+'</small></div>';}).join('')+'</div></section><section class="gf-actividad"><span class="gf-kicker">Juego para hacer juntos · sin pantallas</span><h3>'+esc(a.titulo||'Un juego para compartir')+'</h3><p class="gf-materiales"><b>Necesitan:</b> '+esc(a.materiales||'Nada especial')+' · '+esc(a.duracion||'5 minutos')+'</p><p class="gf-ayuda">'+esc(a.como_jugar||'')+'</p><ol>'+(a.pasos||[]).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol>'+(a.variante?'<p class="gf-cierre"><b>Variante:</b> '+esc(a.variante)+'</p>':'')+'</section><p class="gf-cierre gf-recordatorio">No es una evaluación ni una tarea. Si no tienen ganas, pueden dejarlo para otro momento.</p></article>';detail.querySelector('.gf-volver').addEventListener('click',function(){detail.innerHTML='';});detail.scrollIntoView({behavior:'smooth',block:'start'});}
+        [q,n,y,m].forEach(function(el){el.addEventListener('input',function(){refresh();show();});});l.addEventListener('change',show);
+        var sh=cont.querySelector('#gf-hijo');if(sh)sh.addEventListener('change',function(){elegido=hijos.find(function(x){return x.id===sh.value;})||null;pintar();});show();
+      }pintar();
+    }catch(e){cont.innerHTML='<div class="vacio">No pudimos cargar las guías. Probá recargar la página.</div>';console.error(e);}
   }
-
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
