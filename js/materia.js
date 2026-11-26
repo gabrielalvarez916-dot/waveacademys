@@ -234,7 +234,7 @@
     if (p.video && p.video.tiene) r.push('video');
     if (p.pdf && D.interactiva && D.interactiva[l.id]) r.push('leccion'); // lección interactiva en lugar del PDF
     else if (p.pdf && p.pdf.tiene) r.push('pdf');
-    if (p.pasoapaso && p.pasoapaso.tiene) r.push('pasoapaso'); // Paso a paso (solo en las lecciones que tienen ese paso en Supabase): después del PDF y antes de la carpeta
+    // Paso a paso como paso del nivel: oculto (lo reemplaza la lección interactiva). Las filas step_by_step siguen en Supabase por si se quiere volver. // Paso a paso (solo en las lecciones que tienen ese paso en Supabase): después del PDF y antes de la carpeta
     if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
     return r;
