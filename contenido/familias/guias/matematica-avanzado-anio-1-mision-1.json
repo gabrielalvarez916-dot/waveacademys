@@ -1,130 +1,151 @@
 {
-  "version": 2,
+  "version": 3,
   "nivel": "Nivel Avanzado",
   "anio": "Año 1",
   "materia": "Matemática I",
   "mision": 1,
   "titulo": "Sistemas numéricos",
-  "introduccion": "No es una clase: la familia no necesita enseñar, explicar ni comprobar lo aprendido.",
+  "introduccion": "Estas propuestas son momentos breves para compartir. No hace falta que la familia explique Matemática ni que convierta el juego en una evaluación. Lean la situación, jueguen por turnos y disfruten de pensar juntos. Si aparece una duda, pueden mirar la respuesta orientativa al final.",
   "guias": [
     {
       "leccion": 1,
       "titulo": "El sistema decimal y el valor posicional",
-      "para_que_sirve": "Una charla opcional para que te cuente algo que le llamó la atención de cómo se escriben los números.",
+      "para_que_sirve": "En esta lección se trabaja cómo cambia el valor de una cifra según el lugar que ocupa. El juego permite experimentar esa idea con objetos cotidianos: diez unidades se pueden cambiar por una decena, y diez decenas por una centena.",
       "preguntas": [
         {
-          "pregunta": "En 353, ¿los dos 3 valen lo mismo?",
-          "respuesta": "No. El primero vale 300 y el segundo vale 3.",
-          "por_que": "La posición cambia el valor de una cifra."
+          "contexto": "Imaginen que están contando el dinero de una tienda. Tienen dos billetes con el número 5, pero uno está en la columna de las centenas y otro en la de las unidades.",
+          "pregunta": "En el número 505, ¿los dos 5 representan la misma cantidad?",
+          "respuesta": "No. El primer 5 representa 500 y el último representa 5.",
+          "por_que": "La cifra es la misma, pero su posición determina si representa centenas, decenas o unidades."
         },
         {
-          "pregunta": "¿Para qué sirve el cero en 4.005?",
-          "respuesta": "Indica que no hay centenas ni decenas y conserva esos lugares.",
-          "por_que": "Sin el cero, el número sería otro."
+          "contexto": "La tienda anotó el precio de un producto como 4.005. Alguien propone borrar los ceros porque piensa que no cambian nada.",
+          "pregunta": "¿Podemos borrar esos ceros sin cambiar el precio?",
+          "respuesta": "No. Los ceros ocupan los lugares de las centenas y las decenas; si los quitamos, queda 45 y el número cambia.",
+          "por_que": "En la escritura de un número, el cero también cumple una función: indica que no hay unidades de ese orden y conserva el valor de las demás cifras."
         }
       ],
       "actividad": {
         "titulo": "La tienda de los números",
-        "duracion": "5–8 minutos",
-        "materiales": "Monedas o botones y tres recipientes",
-        "como_jugar": "Jueguen a una tienda imaginaria: cada recipiente representa unidades, decenas o centenas. No hace falta escribir cuentas.",
+        "duracion": "8–10 minutos",
+        "materiales": "Entre 30 y 40 botones, porotos, tapitas o papelitos; tres recipientes, vasos o espacios sobre la mesa; y tres cartelitos que digan UNIDADES, DECENAS y CENTENAS.",
+        "preparacion": "Pongan los tres recipientes en fila. El primero será para las unidades, el segundo para las decenas y el tercero para las centenas. Cada objeto suelto vale una unidad. Cuando haya diez objetos en un recipiente, se cambian por un objeto en el recipiente de la izquierda: diez unidades forman una decena y diez decenas forman una centena.",
+        "como_jugar": "Van a atender una tienda imaginaria. Una persona será quien compra y pide una cantidad; la otra será quien atiende y la representa con los objetos. Después cambian los roles. La meta no es hacer cuentas rápido, sino descubrir cómo se pueden agrupar las cantidades.",
         "pasos": [
-          "Pongan nombre a tres recipientes: unidades, decenas y centenas.",
-          "Por turnos, uno pide una cantidad y el otro la arma con las piezas.",
-          "Cuando junten diez piezas en un recipiente, cámbienlas por una pieza del recipiente siguiente.",
-          "Cambien los roles e inventen pedidos cada vez más grandes."
+          "Elijan un producto y pónganle un precio. Por ejemplo: una linterna cuesta 23 unidades.",
+          "Quien atiende representa el precio colocando 2 objetos en DECENAS y 3 en UNIDADES.",
+          "Ahora el comprador pide otro precio, por ejemplo 14. Quien atiende lo representa con 1 decena y 4 unidades.",
+          "Propongan un desafío: ¿qué pasa si juntamos las 3 decenas y las 7 unidades que hay entre los dos precios? Cuando se junten diez unidades, cámbienlas por una decena.",
+          "Hagan el cambio delante de ambos: diez objetos sueltos salen del recipiente de UNIDADES y entra uno en DECENAS. Así pueden ver que 37 unidades se representan como 3 decenas y 7 unidades.",
+          "Cambien de roles y prueben con un precio que obligue a hacer un cambio de diez unidades por una decena."
         ],
-        "variante": "Inventen productos disparatados y precios enormes."
+        "ejemplo_resuelto": "Si el comprador pide algo que cuesta 28 y luego algo de 15, reúnen 2 decenas y 8 unidades, más 1 decena y 5 unidades. Hay 3 decenas y 13 unidades. Cambian 10 unidades por una decena y quedan 4 decenas y 3 unidades: 43.",
+        "variante": "Para subir la dificultad, incorporen el recipiente de CENTENAS y jueguen con precios como  ciento veinte o doscientos cinco. Para hacerlo más disparatado, inventen productos imposibles: una nube en frasco, un robot que canta o una bicicleta voladora."
       }
     },
     {
       "leccion": 2,
       "titulo": "Potencias de 10 y números grandes",
-      "para_que_sirve": "Si quiere, puede contarte cómo una misma cifra cambia de valor según el lugar que ocupa.",
+      "para_que_sirve": "La idea central es reconocer que cada salto hacia un orden mayor multiplica por diez la cantidad anterior. El juego convierte esa secuencia en una carrera de imaginación y memoria, sin necesidad de preparar materiales.",
       "preguntas": [
         {
-          "pregunta": "¿Qué significa 10³?",
-          "respuesta": "10 × 10 × 10, que da 1.000.",
-          "por_que": "El exponente indica cuántas veces se multiplica la base."
+          "contexto": "Un videojuego entrega 10 puntos en el primer nivel. En cada nivel siguiente, la cantidad de puntos se multiplica por diez.",
+          "pregunta": "Si en el primer nivel se ganan 10 puntos, ¿cuántos se ganan en el segundo y en el tercero?",
+          "respuesta": "En el segundo, 100; en el tercero, 1.000.",
+          "por_que": "Cada nivel multiplica por diez el resultado anterior: 10, después 100 y después 1.000."
         },
         {
-          "pregunta": "¿Qué es mayor: 98.700 o 102.000?",
-          "respuesta": "102.000.",
-          "por_que": "Tiene seis cifras y el otro número tiene cinco."
+          "contexto": "Dos ciudades anuncian su población. Una tiene 98.700 habitantes y la otra 102.000. A simple vista, los números se parecen.",
+          "pregunta": "¿Cuál tiene más habitantes y qué detalle permite decidirlo rápidamente?",
+          "respuesta": "La ciudad de 102.000. Tiene seis cifras, mientras que 98.700 tiene cinco.",
+          "por_que": "En los números naturales positivos, cuando uno tiene más cifras que otro, es el mayor."
         }
       ],
       "actividad": {
-        "titulo": "La escalera de los saltos",
-        "duracion": "5 minutos",
-        "materiales": "Ninguno",
-        "como_jugar": "Imaginen una escalera en la que cada salto multiplica por diez el número anterior.",
+        "titulo": "La escalera de los diez escalones",
+        "duracion": "6–8 minutos",
+        "materiales": "Ninguno. Si quieren, pueden dibujar una escalera de seis peldaños en una hoja.",
+        "preparacion": "Acuerden que cada peldaño multiplica por diez el número del peldaño anterior. La escalera empieza en 1 y sigue con 10, 100, 1.000, 10.000 y 100.000.",
+        "como_jugar": "Una persona dice un número de la escalera y la otra tiene que decir el que sigue, como si estuviera subiendo un peldaño. Luego cambian. No se trata de memorizar una lista: pueden ayudarse pensando que cada paso agrega un cero.",
         "pasos": [
-          "Uno dice «uno» y el otro responde «diez».",
-          "Sigan por turnos: cien, mil, diez mil, cien mil…",
-          "Quien se equivoque inventa un nombre divertido para el siguiente escalón.",
-          "Vuelvan a empezar e intenten llegar más lejos."
+          "Empiecen despacio: una persona dice «1» y la otra responde «10».",
+          "Continúen por turnos: 100, 1.000, 10.000, 100.000 y 1.000.000.",
+          "Cuando ya salga con facilidad, quien propone puede empezar desde cualquier peldaño. Por ejemplo: «Estoy en 100. ¿Cuál es el siguiente?»",
+          "Prueben ahora hacia abajo. Si alguien dice «10.000», la respuesta será «1.000».",
+          "Para cerrar, inventen una situación absurda que necesite una cantidad enorme: por ejemplo, cuántas migas tendría una montaña de galletitas."
         ],
-        "variante": "Hagan la escalera hacia abajo: diez mil, mil, cien, diez, uno."
+        "ejemplo_resuelto": "Si están en 1.000 y suben un peldaño, multiplican por diez: 1.000 × 10 = 10.000. Si bajan desde 100.000, dividen por diez y llegan a 10.000.",
+        "variante": "Jueguen a detectar el peldaño equivocado. Una persona dice: «1, 10, 100, 1.000, 20.000». La otra tiene que descubrir el error y corregirlo: después de 1.000 sigue 10.000."
       }
     },
     {
       "leccion": 3,
       "titulo": "El sistema binario",
-      "para_que_sirve": "Pueden conversar sobre cómo una computadora representa información usando solo dos estados.",
+      "para_que_sirve": "Las computadoras trabajan con información representada mediante dos estados, que solemos escribir como 0 y 1. En esta actividad, esos estados serán señales apagadas y encendidas. La familia puede descubrir cómo una combinación de señales representa un número.",
       "preguntas": [
         {
-          "pregunta": "¿Qué dos cifras usa el sistema binario?",
-          "respuesta": "El 0 y el 1.",
-          "por_que": "Es un sistema de base dos."
+          "contexto": "Un control remoto tiene botones que pueden estar presionados o sin presionar. Para simplificar, imaginemos que cada botón solo puede estar en uno de dos estados.",
+          "pregunta": "Si solo existen esos dos estados, ¿qué dos símbolos podemos usar para representarlos?",
+          "respuesta": "0 para apagado y 1 para encendido.",
+          "por_que": "El sistema binario utiliza únicamente dos cifras: 0 y 1."
         },
         {
-          "pregunta": "En 1101₂, ¿qué posiciones suman?",
-          "respuesta": "8, 4 y 1; en total representa 13.",
-          "por_que": "Se suman los valores de las posiciones que tienen un 1."
+          "contexto": "Una combinación binaria tiene cuatro posiciones: 1 1 0 1. Los valores de esas posiciones, de izquierda a derecha, son 8, 4, 2 y 1.",
+          "pregunta": "¿Qué valores tenemos que sumar para descifrar el código 1101₂?",
+          "respuesta": "8 + 4 + 1 = 13. La posición que vale 2 está apagada, por eso no se suma.",
+          "por_que": "Cada posición tiene un valor; se suman solamente los valores de las posiciones que muestran un 1."
         }
       ],
       "actividad": {
-        "titulo": "Código secreto: encendido o apagado",
-        "duracion": "5–8 minutos",
-        "materiales": "Cinco papelitos (opcional)",
-        "como_jugar": "Envíense números secretos usando cinco señales: cada una puede estar encendida o apagada.",
+        "titulo": "Código secreto: luces encendidas y apagadas",
+        "duracion": "8–10 minutos",
+        "materiales": "Cinco papelitos y una mesa, o simplemente los dedos de una mano. También pueden tener a la vista esta clave: 16, 8, 4, 2, 1.",
+        "preparacion": "Pongan cinco papelitos en fila. Cada lugar tiene un valor fijo, de izquierda a derecha: 16, 8, 4, 2 y 1. Un papelito visible representa 1 (encendido); uno dado vuelta representa 0 (apagado). La combinación se descifra sumando los valores de los papelitos visibles.",
+        "como_jugar": "Una persona arma un código sin decir qué número quiere representar. La otra lo descifra mirando qué señales están encendidas. Después cambian. Es un juego de mensajes secretos: pueden imaginar que están abriendo una caja fuerte o enviando una clave a una nave espacial.",
         "pasos": [
-          "Acuerden que mostrar un papelito significa «encendido» y esconderlo significa «apagado».",
-          "Uno arma una combinación de cinco señales sin decir el número.",
-          "El otro intenta descifrarla con los valores 16, 8, 4, 2 y 1, que pueden tener a la vista.",
-          "Cambien los roles e inventen otro código."
+          "Dejen los cinco papelitos en fila y lean juntos sus valores: 16, 8, 4, 2 y 1.",
+          "Quien arma el código elige un número entre 0 y 31 y da vuelta los papelitos que correspondan, sin decir el número.",
+          "Quien descifra observa cuáles quedaron visibles y suma sus valores.",
+          "Comprueben si acertó. Si no, revisen juntos qué papelito se interpretó mal.",
+          "Cambien los roles. Cada uno debe preparar al menos dos códigos para que el otro los descubra."
         ],
-        "variante": "Usen los dedos de una mano en lugar de papelitos."
+        "ejemplo_resuelto": "Para representar el número 13, dejen visibles los papelitos de 8, 4 y 1; den vuelta los de 16 y 2. La otra persona verá 1 1 0 1 y sumará 8 + 4 + 1 = 13.",
+        "variante": "Si no quieren usar papelitos, asignen un dedo a cada valor (16, 8, 4, 2 y 1): dedo levantado significa 1 y dedo escondido significa 0. También pueden inventar un mensaje: solo quien descifre el número correcto recibe la pista para encontrar un objeto escondido."
       }
     },
     {
       "leccion": 4,
       "titulo": "El sistema sexagesimal: horas y ángulos",
-      "para_que_sirve": "Una oportunidad para relacionar el paso del tiempo y los giros que hacemos con el cuerpo.",
+      "para_que_sirve": "El sistema sexagesimal organiza algunas medidas agrupando de a 60. Lo usamos para medir el tiempo y también los ángulos. El juego permite representar horas y giros con el cuerpo, y comparar distintas aperturas sin usar instrumentos.",
       "preguntas": [
         {
-          "pregunta": "¿Cuántos minutos forman una hora?",
-          "respuesta": "60 minutos.",
-          "por_que": "El sistema sexagesimal agrupa de a 60."
+          "contexto": "Están preparando una película que dura 1 hora y 35 minutos. Quieren saber cuánto tiempo pasó desde que empezó, pero el contador marca 60 minutos y vuelve a empezar.",
+          "pregunta": "¿Cuántos minutos forman una hora y cómo se puede expresar 1 hora y 35 minutos solo en minutos?",
+          "respuesta": "Una hora tiene 60 minutos. Entonces, 1 hora y 35 minutos son 95 minutos.",
+          "por_que": "Para pasar horas a minutos, multiplicamos la cantidad de horas por 60 y después sumamos los minutos restantes."
         },
         {
-          "pregunta": "¿Qué pasa cuando una suma de minutos llega a 60?",
-          "respuesta": "Se cambia por una hora.",
-          "por_que": "Sesenta minutos equivalen a una hora."
+          "contexto": "Una persona abre los brazos formando una línea recta. Después los mueve hasta que uno apunta hacia arriba y el otro hacia un costado, formando una esquina.",
+          "pregunta": "¿Qué tipo de ángulo se parece a esa esquina de 90 grados?",
+          "respuesta": "Un ángulo recto.",
+          "por_que": "Un ángulo recto mide 90°. Es como la esquina de una hoja o de una mesa rectangular."
         }
       ],
       "actividad": {
-        "titulo": "El reloj humano",
-        "duracion": "5–8 minutos",
-        "materiales": "Ninguno",
-        "como_jugar": "Con los brazos como agujas de un reloj, representen horas y adivinen posiciones. Después usen los brazos para mostrar ángulos.",
+        "titulo": "El reloj humano y las estatuas de ángulos",
+        "duracion": "8–10 minutos",
+        "materiales": "Ninguno. Si quieren, pueden mirar un reloj analógico para ayudarse.",
+        "preparacion": "Elijan quién será primero el reloj y quién tendrá que adivinar. Los brazos representarán las agujas. Para la segunda parte, los brazos también servirán para formar ángulos: una abertura pequeña, una esquina de 90° o una abertura mayor.",
+        "como_jugar": "Una persona representa una hora con los brazos y la otra intenta descubrirla. Después, una persona propone un tipo de ángulo y la otra lo representa con los brazos. Cambien los roles para que ambos inventen desafíos.",
         "pasos": [
-          "Uno dice una hora en punto y ambos colocan los brazos como las agujas del reloj.",
-          "El otro adivina qué hora representa. Cambien los roles.",
-          "Ahora digan «ángulo pequeño», «recto» o «grande» y formen la abertura con los brazos.",
-          "Inventen poses cada vez más extrañas y adivinen cuál es más abierta."
+          "Empiecen con horas fáciles: 3 en punto. El brazo que representa la aguja corta apunta al 3 y el otro al 12.",
+          "Prueben 6 en punto: una aguja apunta al 6 y la otra al 12. Quien mira tiene que decir la hora.",
+          "Ahora inventen una hora para que el otro la represente. Si hace falta, pueden señalar primero dónde estarían los números en un reloj imaginario.",
+          "Pasen a los ángulos. Pidan una abertura pequeña y formen una con los brazos; después pidan un ángulo recto, como la esquina de una hoja.",
+          "Por último, formen un ángulo mayor que el recto y comparen cuál de las dos personas logró una abertura más grande."
         ],
-        "variante": "Hagan una ronda sin hablar: solo pueden representar la hora o el ángulo con el cuerpo."
+        "ejemplo_resuelto": "En un reloj, a las 3:00 la aguja de los minutos apunta al 12 y la de la hora al 3. Entre ellas hay un ángulo recto de 90°. A las 6:00 quedan en direcciones opuestas y forman un ángulo llano de 180°.",
+        "variante": "Hagan una ronda de estatuas: una persona dice «agudo», «recto», «obtuso» o «llano» y la otra tiene que formar una abertura aproximada con los brazos. Después intercambian los papeles y eligen la pose más clara."
       }
     }
   ]
