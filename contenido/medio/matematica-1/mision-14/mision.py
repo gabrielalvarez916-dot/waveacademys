@@ -14,6 +14,7 @@ S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
+NEU = lambda p: {"neutro": {"p": p}}
 
 N1 = {**ESTILO,
 "objetivo": "Vas a resolver problemas de quitar y perder.",
@@ -40,7 +41,7 @@ N1 = {**ESTILO,
 "ojo": ["Primero va lo que había.", "Quedan menos que al principio."],
 "resumen": [{"titulo": "Había", "texto": "El primer número."}, {"titulo": "Se va", "texto": "Restamos."}, {"titulo": "Quedan", "texto": "Menos que antes."}],
 "glosario": [{"palabra": "Perder", "significado": "Ya no tener algo."}, {"palabra": "Quedar", "significado": "Lo que sigue estando."}],
-"carpeta": ["¿Cuántas manzanas había?", "¿Cuántas se comen?", "¿Cuántas quedan?"],
+"carpeta": ["¿Cuántas manzanas había?", "¿Cuántas se comen?", "¿Cuántas manzanas quedan en el plato ahora?"],
 "respuestas_carpeta": [["9"], ["2"], ["7"]],
 "soluciones": {"incompleto": "2.", "solo": "10 lápices.", "carpeta": ["9.", "2.", "7."]},
 }
@@ -70,7 +71,7 @@ N2 = {**ESTILO,
 "ojo": ["No sumes: comparar es restar.", "Siempre grande menos chico."],
 "resumen": [{"titulo": "Comparar", "texto": "¿Cuántos más?"}, {"titulo": "Restar", "texto": "Grande menos chico."}, {"titulo": "Ejemplo", "texto": "9 − 6 = 3."}],
 "glosario": [{"palabra": "Comparar", "significado": "Ver la diferencia."}, {"palabra": "Diferencia", "significado": "Cuántos más hay."}],
-"carpeta": ["¿Cuántas pelotas hay arriba?", "¿Cuántas pelotas hay abajo?", "¿Cuántas más hay arriba?"],
+"carpeta": ["¿Cuántas pelotas hay arriba?", "¿Cuántas pelotas hay abajo?", "¿Cuántas pelotas más hay arriba que abajo?"],
 "respuestas_carpeta": [["8"], ["5"], ["3"]],
 "soluciones": {"incompleto": "4.", "solo": "5 hojas más.", "carpeta": ["8.", "5.", "3."]},
 }
@@ -100,7 +101,7 @@ N3 = {**ESTILO,
 "ojo": ["Necesito menos tengo.", "Si sumás, tiene que dar lo que necesitás."],
 "resumen": [{"titulo": "Necesito", "texto": "El grande."}, {"titulo": "Tengo", "texto": "El chico."}, {"titulo": "Falta", "texto": "Grande menos chico."}],
 "glosario": [{"palabra": "Necesitar", "significado": "Hacer falta."}, {"palabra": "Comprobar", "significado": "Ver si está bien."}],
-"carpeta": ["¿Cuántas manzanas hay?", "¿Cuántos lugares tiene el cuadro?", "¿Cuántas manzanas faltan?"],
+"carpeta": ["¿Cuántas manzanas hay?", "¿Cuántos lugares tiene el cuadro?", "¿Cuántas manzanas faltan para llenar el cuadro?"],
 "respuestas_carpeta": [["3"], ["10"], ["7"]],
 "soluciones": {"incompleto": "6.", "solo": "5 figuritas.", "carpeta": ["3.", "10.", "7."]},
 }
@@ -135,36 +136,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "¿Cuántos peces le quedan?", "solo": "Por ejemplo: tengo 10 caramelos y como 6. ¿Cuántos quedan? 4.", "carpeta": ["10.", "5.", "5."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("ALGO SE VA", [LD("QUITAR", "SI EN EL PROBLEMA ALGO <b>SE VA</b>, SE PIERDE O SE COME, HACEMOS UNA RESTA."),
+   LL("HAY 8 Y SE PINCHAN 3: 8 − 3.", "QUEDAN MENOS QUE ANTES.")],
+   {"modo": "problema", "tipo": "quitar"}, {"modo": "problema", "tipo": "quitar"}),
+ T("RESPONDER", [LD("LA RESPUESTA", "DESPUÉS DE LA CUENTA, <b>RESPONDEMOS</b> CON UNA ORACIÓN."),
+   LL("8 − 3 = 5: QUEDAN 5 GLOBOS.", "DECÍ DE QUÉ SON LOS NÚMEROS.")],
+   {"modo": "problema", "tipo": "quitar"}, {"modo": "problema", "tipo": "quitar"}),
+], "recuerda": [
+ RC("ALGO SE VA", "SI SE PIERDE, SE COME O SE VA, RESTAMOS.", "10 − 4 = 6"),
+ RC("LA RESPUESTA", "SE DICE CON UNA ORACIÓN COMPLETA.", "LE QUEDAN 6 CARAMELOS"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("CUÁNTOS MÁS", [LD("COMPARAR", "PARA SABER <b>CUÁNTOS MÁS</b> TIENE UNO, RESTAMOS: EL GRANDE MENOS EL CHICO."),
+   LL("TOMI 9 Y SOFI 6: 9 − 6 = 3.", "TOMI TIENE 3 MÁS.")],
+   {"modo": "problema", "tipo": "comparar"}, {"modo": "problema", "tipo": "comparar"}),
+ T("LA RESTA COMPARA", [LD("CUÁNTOS MENOS", "LA MISMA RESTA DICE CUÁNTOS <b>MENOS</b> TIENE EL OTRO."),
+   LL("SOFI TIENE 3 MENOS QUE TOMI.", "SIEMPRE EL GRANDE MENOS EL CHICO.")],
+   {"modo": "restar", "que": "comparar"}, {"modo": "problema", "tipo": "comparar"}),
+], "recuerda": [
+ RC("CUÁNTOS MÁS", "RESTAMOS EL NÚMERO GRANDE MENOS EL CHICO.", "9 − 6 = 3"),
+ RC("CUÁNTOS MENOS", "LA MISMA RESTA DICE CUÁNTOS LE FALTAN AL OTRO.", "6 TIENE 3 MENOS QUE 9"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("TENGO Y NECESITO", [LD("FALTA", "SI NECESITO MÁS DE LO QUE TENGO, UNA <b>RESTA</b> DICE CUÁNTO FALTA."),
+   LL("NECESITO 10 VASOS Y HAY 6: 10 − 6.", "FALTAN 4 VASOS.")],
+   {"modo": "problema", "tipo": "falta_resta"}, {"modo": "problema", "tipo": "falta_resta"}),
+ T("COMPROBAR CON UNA SUMA", [LD("COMPROBAR", "PARA <b>COMPROBAR</b>, SUMÁ LO QUE TENÉS Y LO QUE FALTA."),
+   LL("6 + 4 = 10: ¡ESTÁ BIEN!", "SI NO DA, REVISÁ LA CUENTA.")],
+   {"modo": "problema", "tipo": "completar"}, {"modo": "problema", "tipo": "falta_resta"}),
+], "recuerda": [
+ RC("CUÁNTO FALTA", "RESTAMOS LO QUE NECESITAMOS MENOS LO QUE TENEMOS.", "10 − 6 = 4"),
+ RC("COMPROBAR", "SUMAMOS LO QUE TENEMOS Y LO QUE FALTA.", "6 + 4 = 10"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("¿SUMA O RESTA?", [LD("ELEGIR", "LEÉ BIEN: SI ALGO <b>LLEGA</b> SUMÁS; SI ALGO <b>SE VA</b> O COMPARÁS, RESTÁS."),
+   LL("PIERDE, COME, SE ROMPE: RESTA.", "GANA, LE DAN, JUNTA: SUMA.")],
+   {"modo": "problema", "tipo": "quitar"}, {"modo": "problema", "tipo": "operacion"}),
+ T("INVENTAR UNA RESTA", [LD("INVENTAR", "PARA <b>INVENTAR</b> UN PROBLEMA DE RESTA, CONTÁ ALGO QUE SE VA."),
+   LL("10 − 5: HABÍA 10 PELOTAS Y SE PERDIERON 5.", "TERMINÁ CON UNA PREGUNTA.")],
+   {"modo": "problema", "tipo": "quitar"}, {"modo": "problema", "tipo": "mezcla"}),
+], "recuerda": [
+ RC("SUMA O RESTA", "SI LLEGA ALGO SUMAMOS; SI SE VA O COMPARAMOS, RESTAMOS.", "PIERDE 2: RESTA"),
+ RC("INVENTAR", "CONTAMOS ALGO QUE SE VA Y HACEMOS UNA PREGUNTA.", "TENGO 7 Y REGALO 2"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("HAY 8 GLOBOS. SE PINCHAN 3. ¿CUÁNTOS QUEDAN?", 5, "8 − 3 = 5."),
-      N("TOMI TIENE 10 CARAMELOS. COME 4. ¿CUÁNTOS LE QUEDAN?", 6, "10 − 4 = 6.")],
-"2": [N("TOMI TIENE 9 REGALOS Y SOFI 6. ¿CUÁNTOS MÁS TIENE TOMI?", 3, "9 − 6 = 3."),
-      MC("PARA COMPARAR, HACEMOS…", ["GRANDE MENOS CHICO", "CHICO MENOS GRANDE", "UNA SUMA"], "GRANDE MENOS CHICO", "LA RESTA COMPARA.")],
-"3": [N("VIENEN 10 CHICOS. HAY 6 VASOS. ¿CUÁNTOS VASOS FALTAN?", 4, "10 − 6 = 4."),
-      N("EL ÁLBUM TIENE 20 FIGURITAS. TENÉS 17. ¿CUÁNTAS FALTAN?", 3, "20 − 17 = 3.")],
-"4": [MC("¿QUÉ PALABRA NOS DICE QUE HAY QUE RESTAR?", ["PIERDE", "GANA", "LE DAN"], "PIERDE", "SI SE PIERDE, RESTAMOS."),
-      MC("¿QUÉ PROBLEMA SE RESUELVE CON 7 − 2?", ["TENGO 7 Y REGALO 2", "TENGO 7 Y ME DAN 2", "TENGO 2"], "TENGO 7 Y REGALO 2", "SE VA ALGO: RESTO.")],
-"5": [N("RELÁMPAGO. HAY 6 GALLETITAS. COMEN 2. ¿CUÁNTAS QUEDAN?", 4, "6 − 2 = 4.", tiempo=30),
-      N("RELÁMPAGO. SOFI TIENE 12 Y TOMI 10. ¿CUÁNTOS MÁS TIENE SOFI?", 2, "12 − 10 = 2.", tiempo=30),
-      N("RELÁMPAGO. NECESITO 9. TENGO 5. ¿CUÁNTOS FALTAN?", 4, "9 − 5 = 4.", tiempo=30),
-      MC("RELÁMPAGO. SI ALGO SE ROMPE, HACEMOS UNA…", ["RESTA", "SUMA"], "RESTA", "SE VA ALGO.", tiempo=30)],
+"1": [N("[[problema]] HAY 8 GLOBOS Y SE PINCHAN 3. ¿CUÁNTOS GLOBOS QUEDAN?", 5, "8 − 3 = 5.", **A),
+      N("[[problema]] TOMI TIENE 10 CARAMELOS Y COME 4. ¿CUÁNTOS LE QUEDAN?", 6, "10 − 4 = 6.", **A),
+      MC("LEO TENÍA 9 PELOTAS, PERDIÓ 2 Y SUMÓ 9 + 2 = 11. ¿QUÉ CUENTA TENÍA QUE HACER?", ["9 − 2 = 7", "9 + 2 = 11", "2 − 9"], "9 − 2 = 7", "SI SE PIERDE, RESTAMOS.", **ER),
+      FB("COMPLETÁ: HABÍA 7 FLORES Y SE SECARON 3. QUEDAN ___ FLORES.", [["4"]], "7 − 3 = 4.", **A)],
+"2": [N("[[problema]] TOMI TIENE 9 REGALOS Y SOFI 6. ¿CUÁNTOS REGALOS MÁS TIENE TOMI?", 3, "9 − 6 = 3.", **A),
+      MC("PARA COMPARAR, HACEMOS…", ["GRANDE MENOS CHICO", "CHICO MENOS GRANDE", "UNA SUMA"], "GRANDE MENOS CHICO", "LA RESTA COMPARA.", **RE),
+      MC("SOFI TIENE 5 Y ANA 8. JUAN DICE QUE SOFI TIENE 3 MÁS. ¿QUIÉN TIENE MÁS DE VERDAD?", ["ANA", "SOFI"], "ANA", "8 ES MÁS QUE 5: ANA TIENE 3 MÁS.", **ER),
+      N("[[problema]] EN EL AULA HAY 7 NENES Y 9 NENAS. ¿CUÁNTAS NENAS MÁS HAY?", 2, "9 − 7 = 2.", **AN, **NEU("EN EL SALÓN HAY 7 NIÑOS Y 9 NIÑAS. ¿CUÁNTAS NIÑAS MÁS HAY?"))],
+"3": [N("[[problema]] VIENEN 10 CHICOS Y HAY 6 VASOS. ¿CUÁNTOS VASOS FALTAN?", 4, "10 − 6 = 4.", **A, **NEU("VIENEN 10 NIÑOS Y HAY 6 VASOS. ¿CUÁNTOS VASOS FALTAN?")),
+      N("[[problema]] EL ÁLBUM TIENE 20 FIGURITAS Y TENÉS 17. ¿CUÁNTAS FIGURITAS FALTAN?", 3, "20 − 17 = 3.", **AN, **NEU("EL ÁLBUM TIENE 20 ESTAMPAS Y TIENES 17. ¿CUÁNTAS ESTAMPAS FALTAN?")),
+      MC("SI 10 − 6 = 4, ¿CÓMO COMPRUEBO?", ["6 + 4 = 10", "6 − 4 = 2", "10 + 4 = 14"], "6 + 4 = 10", "SUMO LO QUE TENGO Y LO QUE FALTA.", **AN),
+      UNIR("UNÍ CADA RESTA CON SU SUMA PARA COMPROBAR.", ["9 − 5 = 4", "8 − 2 = 6", "7 − 4 = 3"], ["2 + 6 = 8", "4 + 3 = 7", "5 + 4 = 9"], {"9 − 5 = 4": "5 + 4 = 9", "8 − 2 = 6": "2 + 6 = 8", "7 − 4 = 3": "4 + 3 = 7"}, "SUMAMOS LO QUE SE RESTÓ Y EL RESULTADO.", **A)],
+"4": [MC("¿QUÉ PALABRA NOS DICE QUE HAY QUE RESTAR?", ["PIERDE", "GANA", "LE DAN"], "PIERDE", "SI SE PIERDE, RESTAMOS.", **A),
+      MC("¿QUÉ PROBLEMA SE RESUELVE CON 7 − 2?", ["TENGO 7 Y REGALO 2", "TENGO 7 Y ME DAN 2", "TENGO 2"], "TENGO 7 Y REGALO 2", "SE VA ALGO: RESTO.", **AN),
+      CLAS("¿SUMA O RESTA?", ["SE ROMPEN 2", "LE REGALAN 3", "COME 4", "JUNTA 5"], ["SUMA", "RESTA"],
+           {"SE ROMPEN 2": "RESTA", "LE REGALAN 3": "SUMA", "COME 4": "RESTA", "JUNTA 5": "SUMA"}, "SI SE VA, RESTA; SI LLEGA, SUMA.", **AN),
+      N("[[problema]] HAY 15 GLOBOS Y SE VUELAN 5. ¿CUÁNTOS GLOBOS QUEDAN?", 10, "15 − 5 = 10.", **A)],
+"5": [N("RELÁMPAGO. HAY 6 GALLETITAS. COMEN 2. ¿CUÁNTAS QUEDAN?", 4, "6 − 2 = 4.", tiempo=30, **A, **NEU("RELÁMPAGO. HAY 6 GALLETAS. COMEN 2. ¿CUÁNTAS QUEDAN?")),
+      N("RELÁMPAGO. SOFI TIENE 12 Y TOMI 10. ¿CUÁNTOS MÁS TIENE SOFI?", 2, "12 − 10 = 2.", tiempo=30, **A),
+      N("RELÁMPAGO. NECESITO 9. TENGO 5. ¿CUÁNTOS FALTAN?", 4, "9 − 5 = 4.", tiempo=30, **A),
+      MC("RELÁMPAGO. SI ALGO SE ROMPE, HACEMOS UNA…", ["RESTA", "SUMA"], "RESTA", "SE VA ALGO.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("HAY 9 PELOTAS. SE PIERDEN 4. ¿CUÁNTAS QUEDAN?", 5, "9 − 4 = 5.")],
- [1, N("SOFI TIENE 7 FLORES. REGALA 7. ¿CUÁNTAS LE QUEDAN?", 0, "7 − 7 = 0.")],
- [1, MC("SI COMEMOS CARAMELOS, NOS QUEDAN…", ["MÁS", "MENOS"], "MENOS", "COMER ES QUITAR.")],
- [2, N("TOMI TIENE 10 AUTITOS Y SOFI 4. ¿CUÁNTOS MÁS TIENE TOMI?", 6, "10 − 4 = 6.")],
- [2, N("HAY 7 NENES Y 9 NENAS. ¿CUÁNTAS NENAS MÁS HAY?", 2, "9 − 7 = 2.")],
- [2, MC("PARA SABER CUÁNTOS MÁS, HACEMOS UNA…", ["RESTA", "SUMA"], "RESTA", "LA RESTA COMPARA.")],
- [3, N("SE NECESITAN 8 SILLAS. HAY 3. ¿CUÁNTAS FALTAN?", 5, "8 − 3 = 5.")],
- [3, N("NECESITO 10 PLATOS. TENGO 9. ¿CUÁNTOS FALTAN?", 1, "10 − 9 = 1.")],
- [3, MC("SI 10 − 6 = 4, ¿CÓMO COMPRUEBO?", ["6 + 4 = 10", "6 − 4 = 2", "10 + 4 = 14"], "6 + 4 = 10", "SUMO LO QUE TENGO Y LO QUE FALTA.")],
- [4, MC("¿QUÉ PROBLEMA SE RESUELVE CON 8 − 5?", ["TENGO 8 Y PIERDO 5", "TENGO 8 Y GANO 5", "TENGO 5"], "TENGO 8 Y PIERDO 5", "SE VA ALGO: RESTO.")],
- [4, MC("¿QUÉ PALABRA RESTA?", ["SE ROMPE", "LE REGALAN", "JUNTA"], "SE ROMPE", "SI SE ROMPE, YA NO ESTÁ.")],
- [4, N("TOMI TIENE 11 FIGURITAS Y PIERDE 1. ¿CUÁNTAS TIENE?", 10, "11 − 1 = 10.")],
- [4, N("HAY 15 GLOBOS Y SE VUELAN 5. ¿CUÁNTOS QUEDAN?", 10, "15 − 5 = 10.")],
+ [1, N("HAY 9 PELOTAS. SE PIERDEN 4. ¿CUÁNTAS QUEDAN?", 5, "9 − 4 = 5.", **A)],
+ [1, N("SOFI TIENE 7 FLORES. REGALA 7. ¿CUÁNTAS LE QUEDAN?", 0, "7 − 7 = 0.", **A)],
+ [1, MC("SI COMEMOS CARAMELOS, NOS QUEDAN…", ["MÁS", "MENOS"], "MENOS", "COMER ES QUITAR.", **RE)],
+ [2, N("[[problema]] TOMI TIENE 10 AUTITOS Y SOFI 4. ¿CUÁNTOS AUTITOS MÁS TIENE TOMI?", 6, "10 − 4 = 6.", **AN, **NEU("TOMI TIENE 10 CARRITOS Y SOFI 4. ¿CUÁNTOS CARRITOS MÁS TIENE TOMI?"))],
+ [2, FB("COMPLETÁ: 9 − 7 = ___", [["2"]], "9 − 7 = 2.", **A)],
+ [2, MC("PARA SABER CUÁNTOS MÁS, HACEMOS UNA…", ["RESTA", "SUMA"], "RESTA", "LA RESTA COMPARA.", **RE)],
+ [3, N("SE NECESITAN 8 SILLAS. HAY 3. ¿CUÁNTAS FALTAN?", 5, "8 − 3 = 5.", **A)],
+ [3, N("NECESITO 10 PLATOS. TENGO 9. ¿CUÁNTOS FALTAN?", 1, "10 − 9 = 1.", **A)],
+ [3, MC("SI 10 − 6 = 4, ¿CÓMO COMPRUEBO?", ["6 + 4 = 10", "6 − 4 = 2", "10 + 4 = 14"], "6 + 4 = 10", "SUMO LO QUE TENGO Y LO QUE FALTA.", **A)],
+ [4, MC("¿QUÉ PROBLEMA SE RESUELVE CON 8 − 5?", ["TENGO 8 Y PIERDO 5", "TENGO 8 Y GANO 5", "TENGO 5"], "TENGO 8 Y PIERDO 5", "SE VA ALGO: RESTO.", **A)],
+ [4, MC("JUAN DICE QUE «LE REGALAN 3» ES UNA RESTA. ¿QUÉ PALABRA SÍ ES DE RESTA?", ["SE ROMPE", "LE REGALAN", "JUNTA"], "SE ROMPE", "SI SE ROMPE, YA NO ESTÁ.", **ER)],
+ [4, N("TOMI TIENE 11 FIGURITAS Y PIERDE 1. ¿CUÁNTAS TIENE?", 10, "11 − 1 = 10.", **A, **NEU("TOMI TIENE 11 ESTAMPAS Y PIERDE 1. ¿CUÁNTAS TIENE?"))],
+ [4, N("HAY 15 GLOBOS Y SE VUELAN 5. ¿CUÁNTOS QUEDAN?", 10, "15 − 5 = 10.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 14, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 14, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: problemas de resta", "examen_titulo": "Nivel jefe: problemas de resta",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-14.json"), "w", encoding="utf-8"), ensure_ascii=False)

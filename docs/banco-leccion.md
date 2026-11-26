@@ -99,3 +99,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Misiones 7 y 8) | ejemplo / ejercicio | dinero (`que`: contar, pagar, falta, caro; sin palabras de Argentina) · sumar (`que`: juntar, agregar, palitos, cuenta) |
 | `primeros` / `primeros_x` (Misiones 9 y 10) | ejemplo / ejercicio | restar (`que`: sacar, atras, comparar, cuenta) · diez (`que`: cuadro, falta, parejas, dados) |
 | `primeros` / `primeros_x` (Misiones 11 y 12) | ejemplo / ejercicio | dobles (`que`: espejo, iguales, casi, tabla) · decenas_op (`que`: sumar, restar, atras10; ejercicio también contar10) |
+| `primeros` / `primeros_x` (Misiones 13 y 14) | ejemplo / ejercicio | problema (`tipo`: juntar, agregar, avanzar, completar, quitar, comparar, falta_resta; ejercicio también mezcla y operacion = ¿suma o resta?) |
