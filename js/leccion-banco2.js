@@ -1408,6 +1408,301 @@
       var Q = pick([['un cubo', 6, 12, 8], ['un prisma triangular', 5, 9, 6], ['una pirámide cuadrangular', 5, 8, 5], ['un prisma pentagonal', 7, 15, 10]]); return { cons: '¿Cuántas <b>aristas</b> tiene ' + Q[0] + ', si tiene ' + Q[1] + ' caras y ' + Q[3] + ' vértices?', campos: [{ v: Q[2] }], ayuda: 'Euler: caras + vértices − aristas = 2.', bien: '¡Bien!' };
     }); } };
 
+  // ======= LENGUA (datos escritos en sesión; el motor solo los muestra paso a paso) =======
+  // Marcas en el texto: {{frase|explicación del paso}}. Cada marca es un paso, en orden.
+  var MK = 'background:#d8f0ea;border-bottom:3px solid #0e7c7b;border-radius:4px;padding:0 2px';
+  function marcas(t) { var L = [], re = /\{\{([^|}]+)\|([^}]+)\}\}/g, m; while ((m = re.exec(t))) L.push({ f: m[1], e: m[2] }); return L; }
+  function pintar(t, hasta, actual) { var k = 0; return t.replace(/\{\{([^|}]+)\|([^}]+)\}\}/g, function (_, f) { k++; return k <= hasta ? '<mark style="' + MK + (k === actual ? ';outline:2px solid #0e7c7b' : '') + '">' + f + '</mark>' : f; }); }
+  function selItems(items, rot) { return items.length > 1 ? '<div class="lb-fila"><label>' + (rot || 'Ejemplo') + '</label><select data-k="i">' + items.map(function (it, i) { return '<option value="' + i + '">' + (it.nombre || (i + 1)) + '</option>'; }).join('') + '</select></div>' : ''; }
+  function caja(x) { return '<div class="lb2-texto" style="font-size:1.08em;line-height:1.7;text-align:left;padding:10px 12px;background:#fff;border-radius:10px">' + x + '</div>'; }
+  function otroEj(el) { var b = el.querySelector('[data-lb="otro"]'); if (b) b.textContent = '🔄 Otro ejemplo'; }
+  M.marcar = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [{ texto: p.texto || '', cierre: p.cierre }];
+    escena(el, selItems(items, p.rotulo), function (o) { var it = items[+(o.i || 0)] || items[0], L = marcas(it.texto), P = [{ vis: caja(pintar(it.texto, 0)), txt: it.inicio || p.inicio || 'Leemos el texto.' }];
+      L.forEach(function (x, k) { P.push({ vis: caja(pintar(it.texto, k + 1, k + 1)), txt: x.e }); });
+      if (it.cierre) P.push({ vis: caja(pintar(it.texto, L.length)) + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: it.cierre_txt || 'En resumen.' });
+      return P; });
+  } };
+  M.transformar = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items, p.rotulo), function (o) { var it = items[+(o.i || 0)] || items[0], P = [{ vis: caja(it.antes), txt: it.inicio || 'La primera versión.' }];
+      (it.pasos || []).forEach(function (x) { P.push({ vis: caja(x.v.replace(/\{\{([^}]+)\}\}/g, '<mark style="' + MK + '">$1</mark>')), txt: x.txt }); });
+      if (it.cierre) P.push({ vis: caja((it.pasos && it.pasos.length ? it.pasos[it.pasos.length - 1].v : it.antes).replace(/\{\{([^}]+)\}\}/g, '$1')) + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: 'Comparada con la primera, se entiende mejor.' });
+      return P; });
+  } };
+  M.palabra = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.s.join('') }; }), 'Palabra'), function (o) { var it = items[+(o.i || 0)] || items[0], s = it.s, t = it.t, n = s.length, pos = n - t, cl = pos === 1 ? 'aguda' : pos === 2 ? 'grave' : 'esdrújula', w = s.join(''), fin = w.slice(-1).normalize('NFD').replace(/[̀-ͯ]/g, ''), lleva = /[áéíóú]/.test(w), sil = function (hl) { return '<p class="lb-pt-g">' + s.map(function (x, i) { return i === hl ? '<b style="color:#0e7c7b;text-decoration:underline">' + x + '</b>' : x; }).join(' - ') + '</p>'; };
+      var regla = cl === 'aguda' ? 'Las agudas llevan tilde si terminan en n, s o vocal.' : cl === 'grave' ? 'Las graves llevan tilde si NO terminan en n, s o vocal.' : 'Las esdrújulas llevan tilde siempre.';
+      return [{ vis: sil(-1), txt: 'Separamos en sílabas: <b>' + n + '</b>.' }, { vis: sil(t), txt: 'La sílaba que suena más fuerte es la <b>tónica</b>: «' + s[t] + '».' }, { vis: sil(t) + '<p class="lb-pt-f">' + (pos === 1 ? 'Última' : pos === 2 ? 'Penúltima' : 'Antepenúltima') + ' sílaba → ' + cl + '</p>', txt: 'Contamos desde el final.' }, { vis: sil(t) + '<p class="lb-cn-res">' + w + ': ' + cl + ', ' + (lleva ? 'con tilde' : 'sin tilde') + '</p>', txt: regla + (cl !== 'esdrújula' ? ' Termina en «' + fin + '».' : '') }]; });
+  } };
+  M.marcar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], ult = -1;
+    H.ejercicio(el, api, p.consigna || 'Tocá lo que corresponde.', function (c) {
+      var k = items.length > 1 ? (function () { var x; do { x = R(0, items.length - 1); } while (x === ult); return x; })() : 0; ult = k; var it = items[k], n = 0;
+      var html = it.texto.replace(/\[\[([^|\]]+)\|([01])\]\]/g, function (_, f, ok) { n++; return '<button type="button" class="lb-chip" data-ok="' + ok + '" style="margin:2px">' + f + '</button>'; });
+      c.innerHTML = (it.cons ? '<p class="lb-ayuda">' + it.cons + '</p>' : '') + caja(html);
+      c.onclick = function (e) { var b = e.target.closest('.lb-chip'); if (b) b.classList.toggle('sel'); };
+      return { comprobar: function () { var B = [].slice.call(c.querySelectorAll('.lb-chip')), sel = B.filter(function (b) { return b.classList.contains('sel'); });
+          if (!sel.length) return { ok: false, msg: 'Tocá una ficha y después comprobá.' };
+          B.forEach(function (b) { b.classList.remove('bien', 'mal'); if (b.classList.contains('sel')) b.classList.add(b.getAttribute('data-ok') === '1' ? 'bien' : 'mal'); });
+          var ok = B.every(function (b) { return b.classList.contains('sel') === (b.getAttribute('data-ok') === '1'); });
+          return ok ? { ok: true, msg: it.bien || '¡Bien!' } : { ok: false, msg: it.ayuda || 'Revisalo: hay fichas de más o de menos.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('.lb-chip'), function (b) { b.classList.toggle('sel', b.getAttribute('data-ok') === '1'); }); } };
+    }); otroEj(el);
+  } };
+  M.clasificar_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    cajas(el, api, function () { var it = mezclar(p.items || []).slice(0, p.cuantos || 5); return { tit: p.consigna || 'Ubicá cada ficha en su caja.', cajas: p.cajas, items: it.map(function (x, i) { return { v: 'i' + i, t: x[0], c: x[1] }; }) }; }); otroEj(el);
+  } };
+  M.elegir_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], ult = -1;
+    H.ejercicio(el, api, p.consigna || 'Elegí la opción correcta.', function (c) {
+      var k = items.length > 1 ? (function () { var x; do { x = R(0, items.length - 1); } while (x === ult); return x; })() : 0; ult = k; var it = items[k], ops = mezclar(it.ops.map(function (o, i) { return { t: o, ok: i === 0 }; }));
+      c.innerHTML = '<p class="lb-pt-g" style="font-weight:normal">' + it.cons + '</p><div class="lb-banco">' + ops.map(function (o) { return '<button type="button" class="lb-chip" data-ok="' + (o.ok ? 1 : 0) + '">' + o.t + '</button>'; }).join('') + '</div>';
+      c.onclick = function (e) { var b = e.target.closest('.lb-chip'); if (!b) return; [].forEach.call(c.querySelectorAll('.lb-chip'), function (x) { x.classList.toggle('sel', x === b); }); };
+      return { comprobar: function () { var s = c.querySelector('.lb-chip.sel'); if (!s) return { ok: false, msg: 'Tocá una ficha y después comprobá.' }; var ok = s.getAttribute('data-ok') === '1'; s.classList.add(ok ? 'bien' : 'mal'); return ok ? { ok: true, msg: it.bien || '¡Bien!' } : { ok: false, msg: it.ayuda || 'Revisalo.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('.lb-chip'), function (x) { x.classList.toggle('sel', x.getAttribute('data-ok') === '1'); }); } };
+    }); otroEj(el);
+  } };
+
+  // ---- LENGUA: ejemplos (paso a paso) ----
+  var CL = ['#0e7c7b', '#e07a2f', '#5b5fc7', '#c2416b', '#3c8d2f', '#8a6d1d', '#2a7ab8', '#7a3fa0'];
+  function bloq(t, lab, col, sub) { return '<span style="display:inline-flex;flex-direction:column;align-items:center;margin:4px 3px;vertical-align:top"><span style="padding:4px 7px;border:2px solid ' + (col || '#bbb') + ';border-radius:8px;background:#fff">' + t + '</span>' + (lab ? '<small style="color:' + (col || '#666') + ';font-weight:700;margin-top:2px">' + lab + '</small>' : '') + (sub || '') + '</span>'; }
+  M.versiones = { tipo: 'ejemplo', pasos: true, render: function (el, p) { M.marcar.render(el, { items: p.items, rotulo: p.rotulo || 'Versión', inicio: p.inicio }); } };
+  M.oracion = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.nombre || x.partes.map(function (q) { return q[0]; }).join(' ').slice(0, 30) + '…' }; }), 'Oración'), function (o) { var it = items[+(o.i || 0)] || items[0], P = it.partes, plano = P.map(function (q) { return q[0]; }).join(' '), pasos = [{ vis: caja(plano), txt: it.inicio || 'Leemos la oración completa.' }];
+      var hecho = [];
+      P.forEach(function (q, k) { hecho.push(k); pasos.push({ vis: caja(P.map(function (r, j) { return hecho.indexOf(j) >= 0 ? bloq(r[0], r[1], CL[j % CL.length]) : r[0]; }).join(' ')), txt: q[2] || ('<b>' + q[1] + '</b>: «' + q[0] + '».') }); });
+      var sub = [];
+      P.forEach(function (q, k) { (q[3] || []).forEach(function (sq) { sub.push([k, sq]); }); });
+      var hechos2 = [];
+      sub.forEach(function (z, n) { hechos2.push(n); pasos.push({ vis: caja(P.map(function (r, j) { var hijos = sub.map(function (w, m) { return w[0] === j && hechos2.indexOf(m) >= 0 ? bloq(w[1][0], w[1][1], CL[(j + 3) % CL.length]) : null; }).filter(Boolean); return bloq(hijos.length ? hijos.join(' ') : r[0], r[1], CL[j % CL.length]); }).join(' ')), txt: z[1][2] || ('<b>' + z[1][1] + '</b>: «' + z[1][0] + '».') }); });
+      if (it.cierre) pasos.push({ vis: pasos[pasos.length - 1].vis + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: 'Así queda el análisis completo.' });
+      return pasos; });
+  } };
+  var VB = { ar: { presente: ['o', 'ás', 'a', 'amos', 'an', 'an'], 'pretérito perfecto simple': ['é', 'aste', 'ó', 'amos', 'aron', 'aron'], 'pretérito imperfecto': ['aba', 'abas', 'aba', 'ábamos', 'aban', 'aban'], futuro: ['aré', 'arás', 'ará', 'aremos', 'arán', 'arán'] }, er: { presente: ['o', 'és', 'e', 'emos', 'en', 'en'], 'pretérito perfecto simple': ['í', 'iste', 'ió', 'imos', 'ieron', 'ieron'], 'pretérito imperfecto': ['ía', 'ías', 'ía', 'íamos', 'ían', 'ían'], futuro: ['eré', 'erás', 'erá', 'eremos', 'erán', 'erán'] }, ir: { presente: ['o', 'ís', 'e', 'imos', 'en', 'en'], 'pretérito perfecto simple': ['í', 'iste', 'ió', 'imos', 'ieron', 'ieron'], 'pretérito imperfecto': ['ía', 'ías', 'ía', 'íamos', 'ían', 'ían'], futuro: ['iré', 'irás', 'irá', 'iremos', 'irán', 'irán'] } };
+  var PERS = ['yo', 'vos', 'él / ella', 'nosotros', 'ustedes', 'ellos / ellas'], VREG = ['cantar', 'caminar', 'mirar', 'saltar', 'comer', 'correr', 'aprender', 'temer', 'vivir', 'escribir', 'partir', 'subir'];
+  function conj(v, t, k) { var r = v.slice(0, -2), e = v.slice(-2); return [r, VB[e][t][k]]; }
+  M.conjugador = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var vs = p.verbos || VREG, ts = p.tiempos || ['presente', 'pretérito perfecto simple', 'pretérito imperfecto', 'futuro'];
+    var C = '<div class="lb-fila"><label>Verbo</label><select data-k="v">' + vs.map(function (v) { return '<option>' + v + '</option>'; }).join('') + '</select></div><div class="lb-fila"><label>Tiempo</label><select data-k="t">' + ts.map(function (v) { return '<option>' + v + '</option>'; }).join('') + '</select></div>' + ctrl('k', 'Persona (1 a 6)', 1, 6, 1, 1);
+    escena(el, C, function (o) { var v = o.v || vs[0], t = o.t || ts[0], k = (o.k || 1) - 1, c = conj(v, t, k), e = v.slice(-2), lin = '';
+      if (/pretérito/.test(t)) lin = '<svg viewBox="0 0 240 60" class="lb2-svg"><line class="rayo" x1="10" y1="30" x2="230" y2="30"/><text x="205" y="52">hoy</text><circle class="pt" cx="215" cy="30" r="4"/>' + (/perfecto/.test(t) ? '<circle class="pt" cx="90" cy="30" r="7"/><text x="55" y="52">una acción terminada</text>' : '<line class="diag" x1="40" y1="30" x2="150" y2="30" style="stroke-width:7"/><text x="45" y="52">algo que duraba</text>') + '</svg>';
+      return [{ vis: _G(v), txt: 'El <b>infinitivo</b>: termina en -' + e + ' (' + (e === 'ar' ? '1.ª' : e === 'er' ? '2.ª' : '3.ª') + ' conjugación).' }, { vis: _G('<b style="color:#0e7c7b">' + c[0] + '</b> + -' + e), txt: 'Separamos la <b>raíz</b> (' + c[0] + '-), que no cambia.' }, { vis: _G(PERS[k] + ' · ' + t), txt: 'Elegimos persona y tiempo: la <b>desinencia</b> los indica.' }, { vis: _G('<b style="color:#0e7c7b">' + c[0] + '</b><b style="color:#e07a2f">' + c[1] + '</b>') + lin, txt: PERS[k] + ' ' + c[0] + c[1] + '. ' + (/perfecto/.test(t) ? 'El perfecto simple cuenta acciones <b>terminadas</b>, que hacen avanzar la historia.' : /imperfecto/.test(t) ? 'El imperfecto describe lo que <b>duraba</b> o se repetía: el fondo de la historia.' : 'Cambiá la persona y mirá qué parte se mueve.') }]; });
+  } };
+  M.clases = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [], orden = p.clases || [];
+    escena(el, selItems(items), function (o) { var it = items[+(o.i || 0)] || items[0], cls = orden.length ? orden : [], re = /\{\{([^|}]+)\|([^}]+)\}\}/g, m;
+      if (!cls.length) while ((m = re.exec(it.texto))) if (cls.indexOf(m[2]) < 0) cls.push(m[2]);
+      var vis = function (h) { return caja(it.texto.replace(/\{\{([^|}]+)\|([^}]+)\}\}/g, function (_, w, c) { var j = cls.indexOf(c); return j < h ? '<span style="color:' + CL[j % CL.length] + ';font-weight:700;border-bottom:3px solid ' + CL[j % CL.length] + '">' + w + '</span>' : w; })) + '<p class="lb-ayuda">' + cls.slice(0, h).map(function (c, j) { return '<b style="color:' + CL[j % CL.length] + '">■ ' + c + '</b>'; }).join(' · ') + '</p>'; };
+      var P = [{ vis: vis(0), txt: 'Leemos la oración.' }]; cls.forEach(function (c, j) { P.push({ vis: vis(j + 1), txt: (it.expl && it.expl[c]) || ('Marcamos los <b>' + c + '</b>.') }); }); return P; });
+  } };
+  M.formacion = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.palabra }; }), 'Palabra'), function (o) { var it = items[+(o.i || 0)] || items[0], P = [], acc = [];
+      it.partes.forEach(function (q, k) { acc.push(q); P.push({ vis: '<p class="lb-pt-g">' + acc.map(function (r, j) { return bloq(r[0], r[1], CL[j % CL.length]); }).join('<b style="margin:0 2px">+</b>') + '</p>', txt: '<b>' + q[1] + '</b> «' + q[0] + '»' + (q[2] ? ': ' + q[2] + '.' : '.') }); });
+      P.push({ vis: P[P.length - 1].vis + '<p class="lb-cn-res">' + it.palabra + (it.significado ? ': ' + it.significado : '') + '</p>', txt: it.cierre || 'Las partes juntas forman la palabra nueva.' }); return P; });
+  } };
+  M.vocales = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.s.join('') }; }), 'Palabra'), function (o) { var it = items[+(o.i || 0)] || items[0], w = it.s.join(''), pint = function (x) { return x.replace(/[aeoáéíóú]/gi, function (v) { return '<b style="color:#e07a2f">' + v + '</b>'; }).replace(/(^|[^>])([iuü])/g, '$1<b style="color:#2a7ab8">$2</b>'); };
+      return [{ vis: _G(pint(w)) + '<p class="lb-ayuda"><b style="color:#e07a2f">■ abiertas</b> (a, e, o, í, ú) · <b style="color:#2a7ab8">■ cerradas</b> (i, u)</p>', txt: 'Miramos las vocales que están juntas: «' + it.g + '».' }, { vis: _G(it.s.join(' - ')), txt: it.tipo === 'diptongo' ? 'Quedan en la <b>misma sílaba</b>: es un <b>diptongo</b>.' : 'Quedan en <b>sílabas distintas</b>: es un <b>hiato</b>.' }, { vis: '<p class="lb-cn-res">' + w + ': ' + it.tipo + '</p>', txt: it.regla || (it.tipo === 'diptongo' ? 'Abierta + cerrada sin tilde, o dos cerradas: diptongo.' : 'Dos abiertas, o una cerrada con tilde (í, ú) junto a una abierta: hiato.') }]; });
+  } };
+  M.capas = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items), function (o) { var it = items[+(o.i || 0)] || items[0], cats = [], re = /\{\{([^|}]+)\|([^|}]+)(?:\|([^}]+))?\}\}/g, m, ex = {};
+      while ((m = re.exec(it.texto))) { if (cats.indexOf(m[2]) < 0) cats.push(m[2]); if (m[3]) ex[m[2]] = m[3]; }
+      var borrar = it.borrado, vis = function (h, tach) { return caja(it.texto.replace(/\{\{([^|}]+)\|([^|}]+)(?:\|[^}]+)?\}\}/g, function (_, f, c) { var j = cats.indexOf(c); if (tach && c !== borrar) return '<s style="opacity:.45">' + f + '</s>'; return j < h ? '<mark style="background:' + CL[j % CL.length] + '22;border-bottom:3px solid ' + CL[j % CL.length] + '">' + f + '</mark>' : f; })) + '<p class="lb-ayuda">' + cats.slice(0, h).map(function (c, j) { return '<b style="color:' + CL[j % CL.length] + '">■ ' + c + '</b>'; }).join(' · ') + '</p>'; };
+      var P = [{ vis: vis(0), txt: it.inicio || 'Leemos el texto completo.' }]; cats.forEach(function (c, j) { P.push({ vis: vis(j + 1), txt: ex[c] || ('Marcamos: <b>' + c + '</b>.') }); });
+      if (borrar) P.push({ vis: vis(cats.length, 1), txt: 'La <b>prueba del borrado</b>: tachamos lo demás y lo que queda se sigue entendiendo.' });
+      if (it.cierre) P.push({ vis: vis(cats.length, !!borrar) + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: 'En resumen.' }); return P; });
+  } };
+  M.esquema = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.nombre || x.raiz || 'Cuadro' }; })), function (o) { var it = items[+(o.i || 0)] || items[0], P = [];
+      if (it.cols) { var F = it.filas, tab = function (h) { var n = 0; return '<table class="lb2-tab"><tr>' + it.cols.map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr>' + F.map(function (f) { return '<tr>' + f.map(function (c, j) { n++; return j === 0 || n <= h ? '<td>' + (j === 0 ? '<b>' + c + '</b>' : c) + '</td>' : '<td style="color:#bbb">…</td>'; }).join('') + '</tr>'; }).join('') + '</table>'; }, tot = F.length * it.cols.length, celdas = [];
+        P.push({ vis: tab(0), txt: it.inicio || 'Armamos el cuadro: arriba los criterios, a la izquierda lo que comparamos.' });
+        F.forEach(function (f, i) { P.push({ vis: tab((i + 1) * it.cols.length), txt: 'Completamos la fila de <b>' + f[0] + '</b>.' }); });
+        if (it.cierre) P.push({ vis: tab(tot) + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: 'Con el cuadro se ven parecidos y diferencias de un vistazo.' }); return P; }
+      var R0 = it.raiz, ram = it.ramas, dib = function (h) { var k = 0; return '<div style="display:flex;align-items:center;gap:8px;text-align:left"><div style="padding:8px;border:2px solid #0e7c7b;border-radius:10px;font-weight:700">' + R0 + '</div><div style="font-size:2.4em;line-height:1;color:#0e7c7b">{</div><div>' + ram.map(function (r, j) { k++; var vis1 = k <= h; return vis1 ? '<div style="margin:4px 0"><b style="color:' + CL[j % CL.length] + '">' + r[0] + '</b>' + (r[1] && r[1].length ? ': ' + r[1].join(', ') : '') + '</div>' : '<div style="margin:4px 0;color:#bbb">…</div>'; }).join('') + '</div></div>'; };
+      P.push({ vis: dib(0), txt: 'En el centro va el <b>tema</b>: «' + R0 + '».' }); ram.forEach(function (r, j) { P.push({ vis: dib(j + 1), txt: r[2] || ('Agregamos <b>' + r[0] + '</b>.') }); });
+      if (it.cierre) P.push({ vis: dib(ram.length) + '<p class="lb-cn-res">' + it.cierre + '</p>', txt: 'El esquema muestra la jerarquía de las ideas.' }); return P; });
+  } };
+  M.linea_tiempo = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items), function (o) { var it = items[+(o.i || 0)] || items[0], H2 = it.hechos, tarj = function (lst, marca) { return '<div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center">' + lst.map(function (h, k) { return '<div style="padding:6px 8px;border:2px solid ' + (marca && h.flash ? '#e07a2f' : '#0e7c7b') + ';border-radius:8px;background:#fff;max-width:140px;font-size:.92em"><b>' + (k + 1) + '.</b> ' + h.t + '</div>'; }).join('<span style="align-self:center">→</span>') + '</div>'; };
+      var rel = H2.slice(), cro = H2.slice().sort(function (a, b) { return a.c - b.c; });
+      return [{ vis: tarj(rel), txt: 'Así aparecen los hechos en el relato: el <b>orden del relato</b>.' }, { vis: tarj(rel, 1), txt: it.marca || 'Marcamos el hecho que pasó antes pero se cuenta después.' }, { vis: tarj(cro), txt: 'Los acomodamos según cuándo ocurrieron: el <b>orden cronológico</b>.' }, { vis: tarj(cro) + '<p class="lb-cn-res">' + (it.cierre || 'El autor elige el orden para crear suspenso.') + '</p>', txt: it.cierre_txt || 'Comparar los dos órdenes muestra cómo está armada la historia.' }]; });
+  } };
+  M.recursos = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.recurso + ': ' + x.frase.slice(0, 22) + '…' }; })), function (o) { var it = items[+(o.i || 0)] || items[0];
+      return [{ vis: caja('«' + it.frase + '»'), txt: 'Leemos la frase: no dice las cosas de forma literal.' }, { vis: caja('«' + it.frase + '»') + _F('¿De qué se habla? <b>' + it.a + '</b>'), txt: 'Buscamos de qué se habla realmente.' }, { vis: caja('«' + it.frase + '»') + _F('¿Con qué se lo relaciona? <b>' + it.b + '</b>'), txt: 'Y con qué se lo relaciona.' }, { vis: _F('Lo que tienen en común: <b>' + it.rasgo + '</b>'), txt: 'El rasgo compartido es lo que se quiere destacar.' }, { vis: '<p class="lb-cn-res">' + it.recurso + '</p>' + _F('Dicho literal: «' + it.literal + '»'), txt: it.porque || 'Así se llama el recurso.' }]; });
+  } };
+  M.verso = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items), function (o) { var it = items[+(o.i || 0)] || items[0], V = it.versos, Rm = it.rima || [], cortes = it.estrofas || [V.length], fin = function (v) { return v.replace(/[.,;:!?¡¿»«"]+$/, ''); }, txtV = function (op) { var k = 0, html = ''; cortes.forEach(function (n, e) { for (var j = 0; j < n; j++, k++) { var v = V[k], l = Rm[k], col = l && l !== '-' ? CL[(l.charCodeAt(0) - 65) % CL.length] : '#999', w = fin(v).split(' '), ult = w.pop(); html += '<div>' + (op.num ? '<small style="color:#999">' + (k + 1) + '</small> ' : '') + w.join(' ') + ' ' + (op.rima ? '<b style="color:' + col + '">' + ult + '</b> <small style="color:' + col + '">' + (l || '') + '</small>' : ult) + v.slice(fin(v).length) + '</div>'; } if (e < cortes.length - 1) html += '<div style="height:10px"></div>'; }); return caja(html); };
+      return [{ vis: txtV({}), txt: 'Un poema: cada renglón es un <b>verso</b>.' }, { vis: txtV({ num: 1 }), txt: 'Contamos los versos: ' + V.length + '. Los grupos separados por un espacio son <b>estrofas</b>: ' + cortes.length + '.' }, { vis: txtV({ num: 1, rima: 1 }), txt: 'Miramos el final de cada verso: los que suenan igual llevan la misma letra.' }, { vis: txtV({ num: 1, rima: 1 }) + '<p class="lb-cn-res">' + (it.tipo || 'Verso libre') + '</p>', txt: it.expl || 'Si coinciden vocales y consonantes, la rima es consonante; si solo las vocales, asonante.' }]; });
+  } };
+  M.personaje = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.nombre }; }), 'Personaje'), function (o) { var it = items[+(o.i || 0)] || items[0], ficha = function (t, d, col) { return '<div style="flex:1;min-width:120px;padding:8px;border:2px solid ' + col + ';border-radius:10px;text-align:left"><b style="color:' + col + '">' + t + '</b><div style="font-size:.92em">Físicos: ' + d.f.join(', ') + '<br>Psicológicos: ' + d.p.join(', ') + '</div></div>'; };
+      var P = [{ vis: _G(it.nombre), txt: it.inicio || 'Un personaje del relato.' }, { vis: ficha('Al principio', it.antes, '#0e7c7b'), txt: 'Rasgos <b>físicos</b> (cómo es por fuera) y <b>psicológicos</b> (cómo es y cómo actúa).' }];
+      if (it.despues) P.push({ vis: '<div style="display:flex;gap:8px;flex-wrap:wrap">' + ficha('Al principio', it.antes, '#0e7c7b') + ficha('Al final', it.despues, '#e07a2f') + '</div>', txt: 'Comparamos con el final del relato.' });
+      P.push({ vis: P[P.length - 1].vis + '<p class="lb-cn-res">' + (it.cierre || (it.despues ? 'Es un personaje dinámico: cambia.' : 'Es un personaje estático.')) + '</p>', txt: it.porque || 'Lo que lo hace cambiar es clave para entender la historia.' }); return P; });
+  } };
+  M.conectores = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.relacion }; }), 'Relación'), function (o) { var it = items[+(o.i || 0)] || items[0], unir = function (c, col) { return caja(it.a + ' <b style="color:' + col + '">' + c + '</b> ' + it.b); };
+      return [{ vis: caja(it.a + ' <span style="color:#bbb">▢</span> ' + it.b), txt: 'Dos ideas que hay que unir.' }, { vis: caja(it.a + ' <span style="color:#bbb">▢</span> ' + it.b) + _F('Relación: <b>' + it.relacion + '</b>'), txt: '¿Qué relación hay entre ellas?' }, { vis: unir(it.ok[0], '#0e7c7b'), txt: 'Con un conector de ' + it.relacion + ' («' + it.ok.join('», «') + '») el sentido funciona.' }, { vis: unir(it.mal[0], '#c2416b') + _F('✘ ' + (it.porque_mal || 'Cambia el sentido.')), txt: 'Con «' + it.mal[0] + '» la relación cambia y el texto no tiene sentido.' }]; });
+  } };
+  M.formato = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.tipo }; }), 'Texto'), function (o) { var it = items[+(o.i || 0)] || items[0], pl = function (h) { return '<div style="text-align:left;border:2px dashed #0e7c7b;border-radius:10px;padding:8px;background:#fff">' + it.partes.map(function (q, j) { return j < h ? '<div style="margin:5px 0"><small style="color:' + CL[j % CL.length] + ';font-weight:700">' + q[0] + '</small><div style="' + (q[2] || '') + '">' + q[1] + '</div></div>' : '<div style="margin:5px 0;color:#bbb">' + q[0] + ': …</div>'; }).join('') + '</div>'; };
+      var P = [{ vis: pl(0), txt: 'La estructura de ' + it.tipo + ': cada parte tiene su lugar.' }]; it.partes.forEach(function (q, j) { P.push({ vis: pl(j + 1), txt: q[3] || ('Completamos: <b>' + q[0] + '</b>.') }); }); return P; });
+  } };
+  M.revision = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items), function (o) { var it = items[+(o.i || 0)] || items[0], lst = function (h) { return caja(it.borrador) + '<div style="text-align:left">' + it.criterios.map(function (c, j) { return j < h ? '<div>' + (c[1] ? '✅' : '❌') + ' ' + c[0] + (c[2] ? ' <small style="color:#666">— ' + c[2] + '</small>' : '') + '</div>' : '<div style="color:#bbb">☐ ' + c[0] + '</div>'; }).join('') + '</div>'; };
+      var P = [{ vis: lst(0), txt: 'Un borrador y la lista de revisión.' }]; it.criterios.forEach(function (c, j) { P.push({ vis: lst(j + 1), txt: c[1] ? 'Esto está bien.' : 'Hay que corregirlo.' }); });
+      if (it.final) P.push({ vis: caja(it.final) + '<p class="lb-cn-res">Versión corregida</p>', txt: 'Se reescribe arreglando cada punto marcado.' }); return P; });
+  } };
+  M.citar = { tipo: 'ejemplo', pasos: true, render: function (el, p) { var items = p.items || [];
+    escena(el, selItems(items.map(function (x) { return { nombre: x.f.autor }; }), 'Fuente'), function (o) { var it = items[+(o.i || 0)] || items[0], f = it.f, ref = [f.autor, '(' + f.anio + ').', '<i>' + f.titulo + '</i>.', f.editorial + '.'];
+      return [{ vis: caja(it.original), txt: 'El texto original de la fuente.' }, { vis: caja('«' + it.cita + '» (' + f.autor.split(',')[0] + ', ' + f.anio + ')'), txt: 'La <b>cita textual</b> copia las palabras exactas, entre comillas y con el autor.' }, { vis: caja(it.parafrasis + ' (' + f.autor.split(',')[0] + ', ' + f.anio + ')'), txt: 'La <b>paráfrasis</b> dice la idea con palabras propias, y también nombra al autor.' }, { vis: '<p class="lb-pt-g">' + ref.map(function (r, j) { return bloq(r, ['autor', 'año', 'título', 'editorial'][j], CL[j]); }).join(' ') + '</p>', txt: 'La <b>referencia bibliográfica</b>: autor, año, título y editorial, en ese orden.' }]; });
+  } };
+  // ---- LENGUA: ejercicios ----
+  function rot(items, ult) { if (items.length < 2) return 0; var x; do { x = R(0, items.length - 1); } while (x === ult.v); ult.v = x; return x; }
+  M.etiquetar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Tocá una etiqueta y después el fragmento que le corresponde.', function (c) { var it = items[rot(items, u)], labs = p.etiquetas || [], k = 0, act = null;
+      if (!labs.length) it.texto.replace(/\[\[[^|\]]+\|([^\]]+)\]\]/g, function (_, l) { if (labs.indexOf(l) < 0) labs.push(l); });
+      c.innerHTML = '<div class="lb-banco">' + labs.map(function (l, j) { return '<button type="button" class="lb-chip" data-lab="' + j + '" style="border-color:' + CL[j % CL.length] + '">' + l + '</button>'; }).join('') + '</div>' + caja(it.texto.replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, function (_, f, l) { return '<button type="button" class="lb-frag" data-ok="' + labs.indexOf(l) + '" style="border:2px dashed #999;border-radius:6px;background:#fff;padding:1px 4px;margin:1px;cursor:pointer">' + f + '</button>'; }));
+      c.onclick = function (e) { var l = e.target.closest('[data-lab]'), fg = e.target.closest('.lb-frag'); if (l) { act = +l.getAttribute('data-lab'); [].forEach.call(c.querySelectorAll('[data-lab]'), function (x) { x.classList.toggle('sel', x === l); }); }
+        if (fg && act !== null) { fg.setAttribute('data-puesto', act); fg.style.border = '2px solid ' + CL[act % CL.length]; fg.style.background = CL[act % CL.length] + '22'; fg.title = labs[act]; } };
+      return { comprobar: function () { var F2 = [].slice.call(c.querySelectorAll('.lb-frag')), falt = F2.filter(function (x) { return !x.hasAttribute('data-puesto'); }).length; if (falt) return { ok: false, msg: 'Te faltan ' + falt + ' fragmento(s) por etiquetar.' };
+          var mal = F2.filter(function (x) { return x.getAttribute('data-puesto') !== x.getAttribute('data-ok'); }); F2.forEach(function (x) { x.style.outline = mal.indexOf(x) >= 0 ? '3px solid #c2416b' : 'none'; });
+          return mal.length ? { ok: false, msg: 'Hay ' + mal.length + ' mal (con borde rojo). ' + (it.ayuda || '') } : { ok: true, msg: it.bien || '¡Todo bien etiquetado!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('.lb-frag'), function (x) { var a = +x.getAttribute('data-ok'); x.setAttribute('data-puesto', a); x.style.border = '2px solid ' + CL[a % CL.length]; x.style.background = CL[a % CL.length] + '22'; }); } };
+    }); otroEj(el);
+  } };
+  M.analizar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Analizá la oración: llevá cada etiqueta debajo de su parte.', function (c) { var it = items[rot(items, u)], B = it.bloques, labs = mezclar(B.map(function (b) { return b[1]; }).concat(it.extra || []));
+      c.innerHTML = '<div class="lb-cajas" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center">' + B.map(function (b, j) { return '<div class="lb-caja" data-dest="' + j + '" data-esp="' + esc(b[1]) + '" style="min-width:90px"><b>' + b[0] + '</b><div class="lb-dest-c"></div></div>'; }).join('') + '</div><div class="lb-banco">' + labs.map(function (l, j) { return chip('e' + j, l, ' data-c="' + esc(l) + '"'); }).join('') + '</div><p class="lb-ayuda">Tocá una etiqueta y después la parte de la oración.</p>';
+      H.tocarYUbicar(c);
+      return { comprobar: function () { var mal = 0, vac = 0; [].forEach.call(c.querySelectorAll('.lb-caja'), function (d) { var ch = d.querySelectorAll('.lb-chip'); if (!ch.length) { vac++; return; } [].forEach.call(ch, function (x) { var ok = x.getAttribute('data-c') === d.getAttribute('data-esp'); x.classList.toggle('bien', ok); x.classList.toggle('mal', !ok); if (!ok) mal++; }); });
+          if (vac) return { ok: false, msg: 'Te faltan ubicar etiquetas en ' + vac + ' parte(s).' }; return mal ? { ok: false, msg: 'Hay ' + mal + ' etiqueta(s) mal ubicadas. ' + (it.ayuda || 'Empezá por el verbo y preguntale «¿quién?».') } : { ok: true, msg: it.bien || '¡Análisis correcto!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('.lb-caja'), function (d) { var ch = [].filter.call(c.querySelectorAll('.lb-chip'), function (x) { return x.getAttribute('data-c') === d.getAttribute('data-esp') && !x.closest('.lb-caja'); })[0]; if (ch) d.querySelector('.lb-dest-c').appendChild(ch); }); } };
+    }); otroEj(el);
+  } };
+  M.completar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Elegí en cada hueco la opción correcta.', function (c) { var it = items[rot(items, u)];
+      c.innerHTML = caja(it.texto.replace(/\[\[([^\]]+)\]\]/g, function (_, o) { var ops = o.split('/'); return '<select class="lb-inp" data-ok="' + esc(ops[0]) + '" style="width:auto;display:inline-block;margin:2px"><option value="">…</option>' + mezclar(ops).map(function (x) { return '<option>' + x + '</option>'; }).join('') + '</select>'; }));
+      return { comprobar: function () { var S = [].slice.call(c.querySelectorAll('select')); if (S.some(function (x) { return !x.value; })) return { ok: false, msg: 'Completá todos los huecos.' }; var mal = S.filter(function (x) { return x.value !== x.getAttribute('data-ok'); }); S.forEach(function (x) { x.style.borderColor = mal.indexOf(x) >= 0 ? '#c2416b' : '#0e7c7b'; });
+          return mal.length ? { ok: false, msg: 'Hay ' + mal.length + ' hueco(s) mal. ' + (it.ayuda || '') } : { ok: true, msg: it.bien || '¡Bien!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('select'), function (x) { x.value = x.getAttribute('data-ok'); }); } };
+    }); otroEj(el);
+  } };
+  M.completar_banco_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Llevá cada ficha a su hueco.', function (c) { var it = items[rot(items, u)], fichas = [];
+      var html = it.texto.replace(/\[\[([^\]]+)\]\]/g, function (_, w) { fichas.push(w); return '<span class="lb-caja" data-dest="' + (fichas.length - 1) + '" data-esp="' + esc(w) + '" style="display:inline-block;min-width:70px;min-height:30px;vertical-align:middle;padding:2px"><span class="lb-dest-c"></span></span>'; });
+      c.innerHTML = caja(html) + '<div class="lb-banco">' + mezclar(fichas.concat(it.extra || [])).map(function (w, j) { return chip('f' + j, w, ' data-c="' + esc(w) + '"'); }).join('') + '</div><p class="lb-ayuda">Tocá una ficha y después el hueco.</p>';
+      H.tocarYUbicar(c);
+      return { comprobar: function () { var D2 = [].slice.call(c.querySelectorAll('.lb-caja')), vac = D2.filter(function (d) { return !d.querySelector('.lb-chip'); }).length; if (vac) return { ok: false, msg: 'Te faltan ' + vac + ' hueco(s).' };
+          var mal = 0; D2.forEach(function (d) { [].forEach.call(d.querySelectorAll('.lb-chip'), function (x) { var ok = x.getAttribute('data-c') === d.getAttribute('data-esp'); x.classList.toggle('bien', ok); x.classList.toggle('mal', !ok); if (!ok) mal++; }); });
+          return mal ? { ok: false, msg: 'Hay ' + mal + ' ficha(s) en un hueco equivocado. ' + (it.ayuda || '') } : { ok: true, msg: it.bien || '¡Bien!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('.lb-caja'), function (d) { var ch = [].filter.call(c.querySelectorAll('.lb-banco .lb-chip'), function (x) { return x.getAttribute('data-c') === d.getAttribute('data-esp'); })[0]; if (ch && !d.querySelector('.lb-chip')) d.querySelector('.lb-dest-c').appendChild(ch); }); } };
+    }); otroEj(el);
+  } };
+  M.conjugar_x = { tipo: 'ejercicio', render: function (el, p, api) { var vs = p.verbos || VREG, ts = p.tiempos || ['presente', 'pretérito perfecto simple', 'pretérito imperfecto', 'futuro'];
+    respuesta(el, api, function () { var v = pick(vs), t = pick(ts), k = R(0, 5), c = conj(v, t, k), w = c[0] + c[1]; return { cons: 'Conjugá <b>' + v + '</b> en <b>' + t + '</b>, persona: <b>' + PERS[k] + '</b>.', campos: [{ tipo: 'texto', lab: PERS[k], v: [w] }], ayuda: 'Raíz ' + c[0] + '- + la desinencia de ' + t + '. Cuidá la tilde.', bien: '¡Bien! ' + PERS[k] + ' ' + w + '.' }; }); otroEj(el);
+  } };
+  M.tilde_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Tocá la sílaba que lleva tilde, o «No lleva tilde».', function (c) { var it = items[rot(items, u)], sin = function (x) { return x.normalize('NFD').replace(/[́]/g, '').normalize('NFC'); }, con = it.s.map(function (x) { return /[áéíóú]/.test(x); }), idx = con.indexOf(true);
+      c.innerHTML = '<p class="lb-pt-g">' + it.s.map(function (x, j) { return '<button type="button" class="lb-chip" data-j="' + j + '">' + sin(x) + '</button>'; }).join(' - ') + '</p><div class="lb-banco"><button type="button" class="lb-chip" data-j="-1">No lleva tilde</button></div>';
+      c.onclick = function (e) { var b = e.target.closest('[data-j]'); if (!b) return; [].forEach.call(c.querySelectorAll('[data-j]'), function (x) { x.classList.toggle('sel', x === b); }); };
+      return { comprobar: function () { var s2 = c.querySelector('[data-j].sel'); if (!s2) return { ok: false, msg: 'Tocá una ficha y después comprobá.' }; var ok = +s2.getAttribute('data-j') === idx; s2.classList.add(ok ? 'bien' : 'mal'); return ok ? { ok: true, msg: '¡Bien! Se escribe «' + it.s.join('') + '».' } : { ok: false, msg: it.ayuda || 'Buscá la sílaba tónica, clasificá la palabra y aplicá la regla.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-j]'), function (x) { x.classList.toggle('sel', +x.getAttribute('data-j') === idx); }); } };
+    }); otroEj(el);
+  } };
+  M.silabas_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Tocá entre las letras para separar en sílabas.', function (c) { var it = items[rot(items, u)], partes = it.split('-'), w = partes.join(''), cortes = [], acc = 0; partes.slice(0, -1).forEach(function (q) { acc += q.length; cortes.push(acc); });
+      c.innerHTML = '<p class="lb-pt-g" style="letter-spacing:2px">' + w.split('').map(function (ch, j) { return ch + (j < w.length - 1 ? '<button type="button" data-c="' + (j + 1) + '" style="border:none;background:none;color:#ccc;cursor:pointer;padding:0 2px;font-weight:700">·</button>' : ''); }).join('') + '</p>';
+      c.onclick = function (e) { var b = e.target.closest('[data-c]'); if (!b) return; var on = b.textContent === '·'; b.textContent = on ? '-' : '·'; b.style.color = on ? '#0e7c7b' : '#ccc'; };
+      var mios = function () { return [].filter.call(c.querySelectorAll('[data-c]'), function (b) { return b.textContent === '-'; }).map(function (b) { return +b.getAttribute('data-c'); }); };
+      return { comprobar: function () { var m2 = mios(); if (!m2.length && cortes.length) return { ok: false, msg: 'Tocá entre las letras para marcar los cortes.' }; var ok = m2.join() === cortes.join(); return ok ? { ok: true, msg: '¡Bien! ' + it + '.' } : { ok: false, msg: 'Revisalo. Decila en voz alta, golpe por golpe.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-c]'), function (b) { var on = cortes.indexOf(+b.getAttribute('data-c')) >= 0; b.textContent = on ? '-' : '·'; b.style.color = on ? '#0e7c7b' : '#ccc'; }); } };
+    }); otroEj(el);
+  } };
+  M.puntuar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 }, SG = p.signos || ['', ',', '.', ';', ':'];
+    H.ejercicio(el, api, p.consigna || 'Tocá entre las palabras para poner el signo que falta (cada toque cambia el signo).', function (c) { var it = items[rot(items, u)], tok = it.texto.split(/\s+/), esp = [], pal = [];
+      tok.forEach(function (t) { var m = t.match(/^(.*?)(\[\[([^\]]+)\]\])?$/); pal.push(m[1]); esp.push(m[3] || ''); });
+      c.innerHTML = caja(pal.map(function (w, j) { return w + '<button type="button" data-g="' + j + '" data-ok="' + esc(esp[j]) + '" style="min-width:16px;border:1px dashed #bbb;border-radius:4px;background:#fff;margin:0 3px;padding:0 3px;color:#0e7c7b;font-weight:800;cursor:pointer">' + '&nbsp;' + '</button>'; }).join(''));
+      c.onclick = function (e) { var b = e.target.closest('[data-g]'); if (!b) return; var i = (SG.indexOf(b.getAttribute('data-v') || '') + 1) % SG.length; b.setAttribute('data-v', SG[i]); b.innerHTML = SG[i] || '&nbsp;'; };
+      return { comprobar: function () { var G = [].slice.call(c.querySelectorAll('[data-g]')), mal = G.filter(function (b) { return (b.getAttribute('data-v') || '') !== b.getAttribute('data-ok'); }); G.forEach(function (b) { b.style.borderColor = mal.indexOf(b) >= 0 ? '#c2416b' : '#bbb'; });
+          return mal.length ? { ok: false, msg: 'Hay ' + mal.length + ' lugar(es) para revisar (marcados). ' + (it.ayuda || '') } : { ok: true, msg: it.bien || '¡Bien puntuado!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-g]'), function (b) { b.setAttribute('data-v', b.getAttribute('data-ok')); b.innerHTML = b.getAttribute('data-ok') || '&nbsp;'; }); } };
+    }); otroEj(el);
+  } };
+  M.ordenar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Ordená las tarjetas: tocalas en el orden correcto.', function (c) { var it = items[rot(items, u)], L = it.lista || it, orden = [];
+      c.innerHTML = '<div class="lb-dest" style="min-height:44px;border:2px dashed #0e7c7b;border-radius:10px;padding:6px;text-align:left"></div><div class="lb-banco">' + mezclar(L.map(function (t, j) { return [t, j]; })).map(function (x) { return '<button type="button" class="lb-chip" data-j="' + x[1] + '">' + x[0] + '</button>'; }).join('') + '</div><p class="lb-ayuda">Tocá una tarjeta puesta para devolverla.</p>';
+      var dest = c.querySelector('.lb-dest'), banco = c.querySelector('.lb-banco');
+      c.onclick = function (e) { var b = e.target.closest('.lb-chip'); if (!b) return; (b.parentNode === banco ? dest : banco).appendChild(b); b.classList.remove('bien', 'mal'); };
+      return { comprobar: function () { var D2 = [].slice.call(dest.querySelectorAll('.lb-chip')); if (D2.length < L.length) return { ok: false, msg: 'Te faltan ubicar ' + (L.length - D2.length) + ' tarjeta(s).' }; var mal = 0; D2.forEach(function (b, k) { var ok = +b.getAttribute('data-j') === k; b.classList.toggle('bien', ok); b.classList.toggle('mal', !ok); if (!ok) mal++; });
+          return mal ? { ok: false, msg: 'Hay ' + mal + ' fuera de lugar. ' + (it.ayuda || '') } : { ok: true, msg: it.bien || '¡Orden correcto!' }; },
+        resolver: function () { var all = [].slice.call(c.querySelectorAll('.lb-chip')).sort(function (a, b) { return a.getAttribute('data-j') - b.getAttribute('data-j'); }); all.forEach(function (b) { dest.appendChild(b); }); } };
+    }); otroEj(el);
+  } };
+  M.unir_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Uní cada elemento de la izquierda con su pareja: tocá uno y después el otro.', function (c) { var it = items[rot(items, u)], pares = it.pares || it, izq = null, n = 0;
+      c.innerHTML = '<div style="display:flex;gap:12px;justify-content:center"><div>' + pares.map(function (q, j) { return '<button type="button" class="lb-chip" data-i="' + j + '" style="display:block;width:100%;margin:4px 0">' + q[0] + '</button>'; }).join('') + '</div><div>' + mezclar(pares.map(function (q, j) { return [q[1], j]; })).map(function (q) { return '<button type="button" class="lb-chip" data-d="' + q[1] + '" style="display:block;width:100%;margin:4px 0">' + q[0] + '</button>'; }).join('') + '</div></div>';
+      c.onclick = function (e) { var a = e.target.closest('[data-i]'), b = e.target.closest('[data-d]'); if (a) { izq = a; [].forEach.call(c.querySelectorAll('[data-i]'), function (x) { x.classList.toggle('sel', x === a); }); }
+        if (b && izq) { var col = CL[n++ % CL.length]; [].forEach.call(c.querySelectorAll('[data-par="' + izq.getAttribute('data-i') + '"]'), function (x) { x.removeAttribute('data-par'); x.style.borderColor = ''; }); izq.setAttribute('data-par', izq.getAttribute('data-i')); b.setAttribute('data-par', izq.getAttribute('data-i')); izq.style.borderColor = b.style.borderColor = col; izq.classList.remove('sel'); izq = null; } };
+      return { comprobar: function () { var D2 = [].slice.call(c.querySelectorAll('[data-d]')), falt = D2.filter(function (x) { return !x.hasAttribute('data-par'); }).length; if (falt) return { ok: false, msg: 'Te faltan ' + falt + ' pareja(s).' }; var mal = D2.filter(function (x) { return x.getAttribute('data-par') !== x.getAttribute('data-d'); }); D2.forEach(function (x) { x.classList.toggle('mal', mal.indexOf(x) >= 0); x.classList.toggle('bien', mal.indexOf(x) < 0); });
+          return mal.length ? { ok: false, msg: 'Hay ' + mal.length + ' pareja(s) mal.' } : { ok: true, msg: it.bien || '¡Todas bien!' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-d],[data-i]'), function (x) { x.setAttribute('data-par', x.getAttribute('data-d') || x.getAttribute('data-i')); x.style.borderColor = CL[+(x.getAttribute('data-d') || x.getAttribute('data-i')) % CL.length]; }); } };
+    }); otroEj(el);
+  } };
+  M.armar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Armá la respuesta tocando las piezas en orden.', function (c) { var it = items[rot(items, u)], piezas = it.piezas, junta = it.junto ? '' : ' ';
+      c.innerHTML = (it.cons ? '<p class="lb-ayuda">' + it.cons + '</p>' : '') + '<div class="lb-dest" style="min-height:44px;border:2px dashed #0e7c7b;border-radius:10px;padding:6px"></div><div class="lb-banco">' + mezclar(piezas.concat(it.extra || [])).map(function (w) { return '<button type="button" class="lb-chip" data-w="' + esc(w) + '">' + w + '</button>'; }).join('') + '</div>';
+      var dest = c.querySelector('.lb-dest'), banco = c.querySelector('.lb-banco'); c.onclick = function (e) { var b = e.target.closest('.lb-chip'); if (b) (b.parentNode === banco ? dest : banco).appendChild(b); };
+      return { comprobar: function () { var w = [].map.call(dest.querySelectorAll('.lb-chip'), function (b) { return b.getAttribute('data-w'); }); if (!w.length) return { ok: false, msg: 'Tocá las piezas para armar.' }; var ok = w.join(junta) === piezas.join(junta); dest.style.borderColor = ok ? '#0e7c7b' : '#c2416b'; return ok ? { ok: true, msg: it.bien || '¡Bien armado!' } : { ok: false, msg: it.ayuda || 'Revisá el orden o sobra alguna pieza.' }; },
+        resolver: function () { [].forEach.call(dest.querySelectorAll('.lb-chip'), function (b) { banco.appendChild(b); }); piezas.forEach(function (w) { var b = [].filter.call(banco.querySelectorAll('.lb-chip'), function (x) { return x.getAttribute('data-w') === w; })[0]; if (b) dest.appendChild(b); }); } };
+    }); otroEj(el);
+  } };
+  M.borrar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Prueba del borrado: tachá las oraciones que se pueden sacar sin perder la idea principal.', function (c) { var it = items[rot(items, u)];
+      c.innerHTML = caja(it.oraciones.map(function (o2, j) { return '<span data-o="' + j + '" data-es="' + (o2[1] ? 1 : 0) + '" style="cursor:pointer;border-radius:4px;padding:0 2px">' + o2[0] + '</span>'; }).join(' '));
+      c.onclick = function (e) { var s3 = e.target.closest('[data-o]'); if (!s3) return; var t = s3.getAttribute('data-t') === '1'; s3.setAttribute('data-t', t ? '0' : '1'); s3.style.textDecoration = t ? 'none' : 'line-through'; s3.style.opacity = t ? 1 : .45; };
+      return { comprobar: function () { var S = [].slice.call(c.querySelectorAll('[data-o]')); if (!S.some(function (x) { return x.getAttribute('data-t') === '1'; })) return { ok: false, msg: 'Tocá las oraciones para tacharlas.' }; var mal = S.filter(function (x) { return (x.getAttribute('data-t') === '1') === (x.getAttribute('data-es') === '1'); }); S.forEach(function (x) { x.style.background = mal.indexOf(x) >= 0 ? '#c2416b22' : 'transparent'; });
+          return mal.length ? { ok: false, msg: 'Revisá las marcadas: o tachaste algo importante o dejaste algo que se puede sacar.' } : { ok: true, msg: it.bien || '¡Bien! Lo que quedó es la idea principal.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-o]'), function (x) { var t = x.getAttribute('data-es') !== '1'; x.setAttribute('data-t', t ? '1' : '0'); x.style.textDecoration = t ? 'line-through' : 'none'; x.style.opacity = t ? .45 : 1; }); } };
+    }); otroEj(el);
+  } };
+  function tieneTodo(txt, lst) { var t = H.norm(txt); return (lst || []).filter(function (w) { return [].concat(w).every(function (x) { return x.split('|').some(function (y) { return t.indexOf(H.norm(y)) >= 0; }); }); }).length === (lst || []).length; }
+  M.transformar_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Reescribí el texto como se pide.', function (c) { var it = items[rot(items, u)];
+      c.innerHTML = '<p class="lb-ayuda">' + it.cons + '</p>' + caja(it.texto) + '<textarea class="lb-inp" rows="3" style="width:100%;margin-top:8px" placeholder="Escribí acá tu versión">' + '</textarea>';
+      var ta = c.querySelector('textarea');
+      return { comprobar: function () { var v = ta.value.trim(); if (v.length < 5) return { ok: false, msg: 'Escribí tu versión.' }; var faltan = (it.pide || []).filter(function (w) { return !tieneTodo(v, [w]); }), sobran = (it.prohibe || []).filter(function (w) { return tieneTodo(v, [w]); });
+          if (!faltan.length && !sobran.length) return { ok: true, msg: (it.bien || '¡Bien!') + (it.modelo ? ' Una versión posible: «' + it.modelo + '».' : '') };
+          return { ok: false, msg: (sobran.length ? 'Todavía aparece: «' + sobran.map(function (x) { return [].concat(x)[0].split('|')[0]; }).join('», «') + '». ' : '') + (faltan.length ? (it.ayuda || 'Te falta algo de lo pedido.') : '') }; },
+        resolver: function () { ta.value = it.modelo || ''; } };
+    }); otroEj(el);
+  } };
+  M.escribir_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Escribí siguiendo la lista: se va marcando mientras escribís.', function (c) { var it = items[rot(items, u)], K = it.criterios;
+      c.innerHTML = '<p class="lb-ayuda">' + it.cons + '</p><textarea class="lb-inp" rows="4" style="width:100%"></textarea><div class="lb-chk" style="text-align:left;margin-top:6px"></div>';
+      var ta = c.querySelector('textarea'), ck = c.querySelector('.lb-chk'), cumple = function (k) { var v = ta.value; if (k.min) return v.split(/\s+/).filter(Boolean).length >= k.min; if (k.re) return new RegExp(k.re, 'i').test(v); return tieneTodo(v, [k.alguna]); };
+      var pint = function () { ck.innerHTML = K.map(function (k) { return '<div>' + (cumple(k) ? '✅' : '☐') + ' ' + k.txt + '</div>'; }).join(''); }; ta.oninput = pint; pint();
+      return { comprobar: function () { var f = K.filter(function (k) { return !cumple(k); }); pint(); return f.length ? { ok: false, msg: 'Te falta: ' + f.map(function (k) { return k.txt; }).join('; ') + '.' } : { ok: true, msg: it.bien || '¡Cumple todo! Releelo una vez más antes de seguir.' }; },
+        resolver: function () { ta.value = it.modelo || ''; pint(); } };
+    }); otroEj(el);
+  } };
+  M.relacion_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 }, RL = p.relaciones || ['causa', 'consecuencia', 'oposición', 'adición', 'tiempo'];
+    H.ejercicio(el, api, p.consigna || 'Primero elegí la relación entre las ideas y después el conector.', function (c) { var it = items[rot(items, u)];
+      c.innerHTML = caja(it.a + ' <b class="lb-hueco" style="color:#0e7c7b">▢</b> ' + it.b) + '<p class="lb-ayuda">1. Relación</p><div class="lb-banco" data-g="r">' + RL.map(function (r) { return '<button type="button" class="lb-chip" data-v="' + r + '">' + r + '</button>'; }).join('') + '</div><p class="lb-ayuda">2. Conector</p><div class="lb-banco" data-g="c">' + mezclar(it.ok.slice(0, 1).concat(it.mal)).map(function (r) { return '<button type="button" class="lb-chip" data-v="' + esc(r) + '">' + r + '</button>'; }).join('') + '</div>';
+      c.onclick = function (e) { var b = e.target.closest('.lb-chip'); if (!b) return; var g = b.parentNode; [].forEach.call(g.querySelectorAll('.lb-chip'), function (x) { x.classList.toggle('sel', x === b); }); if (g.getAttribute('data-g') === 'c') c.querySelector('.lb-hueco').textContent = b.getAttribute('data-v'); };
+      var val = function (g) { var s3 = c.querySelector('[data-g="' + g + '"] .sel'); return s3 && s3.getAttribute('data-v'); };
+      return { comprobar: function () { if (!val('r') || !val('c')) return { ok: false, msg: 'Tocá una ficha en cada paso.' }; var okr = val('r') === it.relacion, okc = it.ok.indexOf(val('c')) >= 0; return okr && okc ? { ok: true, msg: it.bien || '¡Bien! La relación es de ' + it.relacion + '.' } : { ok: false, msg: !okr ? 'Revisá la relación: ¿una idea es causa, consecuencia o se opone a la otra?' : 'La relación está bien, pero ese conector no la expresa.' }; },
+        resolver: function () { [].forEach.call(c.querySelectorAll('[data-g="r"] .lb-chip'), function (x) { x.classList.toggle('sel', x.getAttribute('data-v') === it.relacion); }); [].forEach.call(c.querySelectorAll('[data-g="c"] .lb-chip'), function (x) { x.classList.toggle('sel', x.getAttribute('data-v') === it.ok[0]); }); c.querySelector('.lb-hueco').textContent = it.ok[0]; } };
+    }); otroEj(el);
+  } };
+  M.dictado_x = { tipo: 'ejercicio', render: function (el, p, api) { var items = p.items || [], u = { v: -1 };
+    H.ejercicio(el, api, p.consigna || 'Escuchá la oración y escribila.', function (c) { var it = items[rot(items, u)], frase = it.texto || it;
+      c.innerHTML = '<button type="button" class="lb-btn suave" data-hablar="1">🔊 Escuchar</button> <button type="button" class="lb-btn suave" data-hablar="2">🐢 Más lento</button><textarea class="lb-inp" rows="2" style="width:100%;margin-top:8px"></textarea><div class="lb-dif" style="text-align:left"></div>';
+      c.onclick = function (e) { var b = e.target.closest('[data-hablar]'); if (!b || !window.speechSynthesis) return; var us = new SpeechSynthesisUtterance(frase.replace(/[«»]/g, '')); us.lang = 'es-AR'; us.rate = b.getAttribute('data-hablar') === '2' ? .6 : .9; speechSynthesis.cancel(); speechSynthesis.speak(us); };
+      var ta = c.querySelector('textarea'), pal = function (x) { return x.toLowerCase().replace(/[.,;:¡!¿?«»"]/g, '').split(/\s+/).filter(Boolean); };
+      return { comprobar: function () { var a = pal(ta.value), b2 = pal(frase); if (!a.length) return { ok: false, msg: 'Escribí lo que escuchaste.' }; var mal = b2.filter(function (w, i) { return a[i] !== w; });
+          c.querySelector('.lb-dif').innerHTML = b2.map(function (w, i) { return a[i] === w ? w : '<b style="color:#c2416b;text-decoration:underline">' + (a[i] || '___') + '</b>'; }).join(' ');
+          return mal.length ? { ok: false, msg: 'Hay ' + mal.length + ' palabra(s) para revisar (en rojo). Fijate tildes y letras.' } : { ok: true, msg: '¡Perfecto!' }; },
+        resolver: function () { ta.value = frase; } };
+    }); otroEj(el);
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);

@@ -1,0 +1,49 @@
+<!doctype html><meta charset="utf-8"><div id="z"></div>
+<script src="../../js/apoyos.js"></script><script src="../../js/leccion-banco.js"></script><script src="../../js/leccion-banco2.js"></script>
+<script>
+var out=[],ok=0,api={sonar:function(){},confeti:function(){},alResultado:function(){}};
+var D={
+ marcar:{items:[{texto:'El {{detective|Protagonista}} encontró {{una pista|Pista}}.',cierre:'Fin'}]},
+ versiones:{items:[{nombre:'1.ª',texto:'{{Yo|primera persona}} vi todo.'},{nombre:'3.ª',texto:'{{Él|tercera}} vio todo.'}]},
+ transformar:{items:[{antes:'Juan vino. Juan comió.',pasos:[{v:'Juan vino. {{Él}} comió.',txt:'pronombre'}],cierre:'Mejor'}]},
+ palabra:{items:[{s:['can','ción'],t:1},{s:['mé','di','co'],t:0}]},
+ oracion:{items:[{partes:[['Los chicos del barrio','S','Sujeto',[['Los','MD'],['chicos','NS']]],['juegan en la plaza','P','Predicado',[['juegan','NV']]]],cierre:'OB'}]},
+ conjugador:{}, clases:{items:[{texto:'El {{perro|sustantivo}} {{grande|adjetivo}} {{corre|verbo}}.'}]},
+ formacion:{items:[{palabra:'desarmar',partes:[['des','prefijo','lo contrario'],['arm','raíz'],['ar','sufijo']]}]},
+ vocales:{items:[{s:['ra','í','z'],g:'aí',tipo:'hiato'}]},
+ capas:{items:[{texto:'{{Las abejas polinizan.|idea principal|La idea}} {{Son insectos.|secundaria}}',borrado:'idea principal',cierre:'ok'}]},
+ esquema:{items:[{raiz:'Narrador',ramas:[['Protagonista',['yo']],['Testigo',['ve']]],cierre:'ok'},{nombre:'c',cols:['Cuento','Rasgo'],filas:[['Policial','enigma'],['Terror','miedo']],cierre:'ok'}]},
+ linea_tiempo:{items:[{hechos:[{t:'B',c:2},{t:'A',c:1,flash:1}]}]},
+ recursos:{items:[{frase:'Tus ojos son luceros',a:'ojos',b:'luceros',rasgo:'brillo',recurso:'Metáfora',literal:'Tus ojos brillan'}]},
+ verso:{items:[{versos:['Caminante, son tus huellas','el camino y nada más;','caminante, no hay camino,','se hace camino al andar.'],estrofas:[4],rima:['-','A','-','A'],tipo:'Asonante'}]},
+ personaje:{items:[{nombre:'Sir Simon',antes:{f:['viejo'],p:['orgulloso']},despues:{f:['cansado'],p:['triste']}}]},
+ conectores:{items:[{a:'Llovía',b:'salimos igual',relacion:'oposición',ok:['pero','sin embargo'],mal:['porque','entonces']}]},
+ formato:{items:[{tipo:'una carta',partes:[['Lugar y fecha','Colón, 3 de mayo'],['Saludo','Querida Ana:']]}]},
+ revision:{items:[{borrador:'Juan vino juan comió',criterios:[['Mayúsculas',false,'juan'],['Punto final',false]],final:'Juan vino. Comió.'}]},
+ citar:{items:[{original:'Texto',cita:'frase',parafrasis:'idea',f:{autor:'Borges, J. L.',anio:1949,titulo:'El Aleph',editorial:'Losada'}}]},
+ marcar_x:{items:[{texto:'[[Juan|1]] y [[Ana|1]] [[corren|0]].'}]},
+ clasificar_x:{cajas:['Hecho','Opinión'],items:[['Llueve',0],['Es lindo',1],['Son las 3',0]]},
+ elegir_x:{items:[{cons:'¿Qué narrador?',ops:['testigo','protagonista']}]},
+ etiquetar_x:{items:[{texto:'[[Juan|S]] [[corre|P]].'}]},
+ analizar_x:{items:[{bloques:[['Los chicos','S'],['juegan','P']],extra:['OD']}]},
+ completar_x:{items:[{texto:'Llovía, [[pero/porque/entonces]] salimos.'}]},
+ completar_banco_x:{items:[{texto:'Juan vino. [[Él]] comió [[mucho]].',extra:['Ella']}]},
+ conjugar_x:{}, tilde_x:{items:[{s:['can','ción']},{s:['me','sa']}]}, silabas_x:{items:['ca-mión','me-sa']},
+ puntuar_x:{items:[{texto:'Compré pan[[,]] leche y huevos[[.]]'}]},
+ ordenar_x:{items:[{lista:['Inicio','Nudo','Desenlace']}]},
+ unir_x:{items:[{pares:[['des-','negación'],['re-','repetición']]}]},
+ armar_x:{items:[{piezas:['Borges,','J.','(1949).'],extra:['Losada']}]},
+ borrar_x:{items:[{oraciones:[['Las abejas polinizan.',1],['Son amarillas.',0]]}]},
+ transformar_x:{items:[{cons:'Sacá la repetición',texto:'Juan vino. Juan comió.',pide:['él|comió'],prohibe:['juan comió'],modelo:'Juan vino. Él comió.'}]},
+ escribir_x:{items:[{cons:'Escribí',criterios:[{txt:'10 palabras',min:10},{txt:'un conector',alguna:'pero|porque'}],modelo:'Me gusta leer pero hoy no tengo tiempo para hacerlo bien.'}]},
+ relacion_x:{items:[{a:'Llovía',b:'salimos',relacion:'oposición',ok:['pero'],mal:['porque','entonces']}]},
+ dictado_x:{items:['El perro corre.']}
+};
+Object.keys(D).forEach(function(m){ for(var r=0;r<4;r++){ var el=document.createElement('div'); document.getElementById('z').appendChild(el);
+ try{ WaveLeccionBanco.render(el,{motor:m,p:D[m]},api); var ej=/_x$/.test(m);
+  if(!ej){ var n=0,sg; while((sg=el.querySelector('[data-pp="1"]'))&&!sg.disabled&&n<30){ sg.click(); n++; } if(!n) out.push('SIN PASOS '+m); }
+  else { el._lb.resolver(); var rr=el._lb.comprobar(); if(!rr.ok) out.push('RESOLVER NO PASA '+m+': '+rr.msg); }
+  if(/NaN|undefined|\[object/.test(el.textContent)) out.push('TEXTO RARO '+m); ok++;
+ }catch(e){ out.push('ERROR '+m+': '+e.message); } } });
+document.title=JSON.stringify({ok:ok,mal:out});
+</script>
