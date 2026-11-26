@@ -134,36 +134,114 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "8. 40.", "solo": "15: 5, 10, 15.", "carpeta": ["25.", "40.", "40."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("LOS NÚMEROS REDONDOS", [LD("REDONDOS", "LOS NÚMEROS <b>REDONDOS</b> TERMINAN EN 0: 10, 20, 30… HASTA EL 100."),
+   LL("60 SE LEE SESENTA.", "90 SE LEE NOVENTA.")],
+   {"modo": "cuadro", "que": "contar", "hasta": 100}, {"modo": "redondos"}),
+ T("DESPUÉS DE UN 9", [LD("EL 9 Y EL REDONDO", "CUANDO UN NÚMERO TERMINA EN 9, EL QUE SIGUE ES <b>REDONDO</b>."),
+   LL("69 Y LUEGO 70.", "99 Y LUEGO 100: CIEN.")],
+   {"modo": "tren", "desde": 57, "hasta": 71}, {"modo": "redondo", "max": 100}),
+], "recuerda": [
+ RC("REDONDOS", "SON LOS NÚMEROS QUE TERMINAN EN 0.", "50, 60, 70, 80, 90"),
+ RC("DESPUÉS DE UN 9", "SIEMPRE VIENE UN NÚMERO REDONDO.", "89 Y DESPUÉS 90"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("LA TABLA DE CIEN", [LD("LA TABLA", "LA <b>TABLA DE CIEN</b> TIENE LOS NÚMEROS DEL 0 AL 100, DE A 10 POR FILA."),
+   LL("LOS REDONDOS QUEDAN A LA IZQUIERDA.", "EL 100 QUEDA SOLO, ABAJO.")],
+   {"modo": "cuadro", "que": "contar", "hasta": 100}, {"modo": "cuadro", "que": "falta", "hasta": 100}),
+ T("LA PRIMERA CIFRA", [LD("LA FILA", "LA <b>PRIMERA CIFRA</b> DE UN NÚMERO TE DICE EN QUÉ FILA ESTÁ."),
+   LL("EL 34 ESTÁ EN LA FILA DEL 30.", "EL 72 ESTÁ EN LA FILA DEL 70.")],
+   {"modo": "cuadro", "que": "fila", "hasta": 100}, {"modo": "cuadro", "que": "fila", "hasta": 100}),
+], "recuerda": [
+ RC("LA TABLA DE CIEN", "TIENE LOS NÚMEROS DEL 0 AL 100 EN FILAS DE 10.", "LA FILA DEL 50: 50, 51… 59"),
+ RC("LA PRIMERA CIFRA", "TE DICE EN QUÉ FILA BUSCAR EL NÚMERO.", "EL 86 ESTÁ EN LA FILA DEL 80"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("LAS COLUMNAS", [LD("UNA COLUMNA", "EN UNA <b>COLUMNA</b> DE LA TABLA, TODOS LOS NÚMEROS TERMINAN IGUAL."),
+   LL("LA COLUMNA VA PARA ABAJO.", "3, 13, 23, 33 TERMINAN EN 3.")],
+   {"modo": "cuadro", "que": "columna", "hasta": 100}, {"modo": "cuadro", "que": "columna", "hasta": 100}),
+ T("BAJAR UNA FILA", [LD("ABAJO", "EL NÚMERO DE <b>ABAJO</b> ES 10 MÁS QUE EL DE ARRIBA."),
+   LL("DEBAJO DEL 45 ESTÁ EL 55.", "LA PRIMERA CIFRA CRECE 1 Y LA ÚLTIMA QUEDA IGUAL.")],
+   {"modo": "cuadro", "que": "bajar", "hasta": 100}, {"modo": "cuadro", "que": "bajar", "hasta": 100}),
+], "recuerda": [
+ RC("LA COLUMNA", "VA PARA ABAJO Y SUS NÚMEROS TERMINAN IGUAL.", "8, 18, 28, 38 TERMINAN EN 8"),
+ RC("BAJAR UNA FILA", "ES SUMAR 10 AL NÚMERO DE ARRIBA.", "DEBAJO DEL 62 ESTÁ EL 72"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("CONTAR DE A 2", [LD("SALTOS DE 2", "CONTAR <b>DE A 2</b> ES SALTAR UN NÚMERO CADA VEZ."),
+   LL("0, 2, 4, 6, 8, 10.", "NO DECIMOS EL DE EN MEDIO.")],
+   {"modo": "saltos", "de": 2}, {"modo": "saltos", "de": 2}),
+ T("CONTAR DE A 5", [LD("SALTOS DE 5", "CONTAR <b>DE A 5</b> ES COMO CONTAR LOS DEDOS DE CADA MANO."),
+   LL("5, 10, 15, 20, 25.", "TERMINAN EN 5 O EN 0.")],
+   {"modo": "saltos", "de": 5}, {"modo": "saltos", "de": 5}),
+ T("CONTAR DE A 10", [LD("SALTOS DE 10", "CONTAR <b>DE A 10</b> ES BAJAR POR LA COLUMNA DE LOS REDONDOS."),
+   LL("10, 20, 30, 40, 50.", "ASÍ LLEGAMOS RÁPIDO AL 100.")],
+   {"modo": "saltos", "de": 10}, {"modo": "saltos", "de": 10}),
+], "recuerda": [
+ RC("DE A 2", "SALTAMOS DE DOS EN DOS SIN DECIR EL DE EN MEDIO.", "2, 4, 6, 8, 10"),
+ RC("DE A 5", "SALTAMOS DE CINCO EN CINCO, COMO LOS DEDOS.", "5, 10, 15, 20"),
+ RC("DE A 10", "SALTAMOS DE DIEZ EN DIEZ POR LOS REDONDOS.", "10, 20, 30, 40"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 79?", 80, "DESPUÉS DE UN 9 VIENE UN REDONDO."),
-      N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 99?", 100, "99, 100.")],
-"2": [MC("¿EN QUÉ FILA ESTÁ EL 34?", ["LA DEL 30", "LA DEL 40", "LA DEL 20"], "LA DEL 30", "EMPIEZA CON 3."),
-      MC("¿CUÁNTOS NÚMEROS TIENE LA TABLA DE CIEN?", ["10", "50", "100"], "100", "DIEZ FILAS DE DIEZ.")],
-"3": [N("¿QUÉ NÚMERO VA DEBAJO DEL 45?", 55, "BAJAR UNA FILA ES SUMAR 10."),
-      MC("3, 13, 23, 33… ¿QUÉ SIGUE?", ["34", "43", "44"], "43", "TODOS TERMINAN EN 3.")],
-"4": [N("2, 4, 6, 8… ¿QUÉ SIGUE?", 10, "DE A 2."),
-      N("5, 10, 15… ¿QUÉ SIGUE?", 20, "DE A 5.")],
-"5": [N("RELÁMPAGO. ¿QUÉ SIGUE DESPUÉS DEL 69?", 70, "69, 70.", tiempo=30),
-      N("RELÁMPAGO. 10, 20, 30… ¿QUÉ SIGUE?", 40, "DE A 10.", tiempo=30),
-      N("RELÁMPAGO. ¿QUÉ VA DEBAJO DEL 23?", 33, "SUMA 10.", tiempo=30),
-      N("RELÁMPAGO. 2, 4, 6… ¿QUÉ SIGUE?", 8, "DE A 2.", tiempo=30)],
+"1": [N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 79?", 80, "DESPUÉS DE UN 9 VIENE UN REDONDO.", **A),
+      UNIR("UNÍ CADA NÚMERO REDONDO CON SU NOMBRE.", ["60", "70", "90"], ["NOVENTA", "SESENTA", "SETENTA"], {"60": "SESENTA", "70": "SETENTA", "90": "NOVENTA"}, "60 ES SESENTA, 70 ES SETENTA Y 90 ES NOVENTA.", **RE),
+      MC("LEO CONTÓ: 97, 98, 99, 910. ¿QUÉ NÚMERO VA DESPUÉS DEL 99?", ["100", "910", "90"], "100", "DESPUÉS DEL 99 VIENE EL 100: CIEN.", **ER),
+      FB("COMPLETÁ: 58, 59, ___, 61", [["60"]], "DESPUÉS DEL 59 VIENE EL 60.", **A)],
+"2": [CLAS("¿EN QUÉ FILA DE LA TABLA VA CADA NÚMERO?", ["72", "65", "78", "61"], ["FILA DEL 60", "FILA DEL 70"],
+           {"72": "FILA DEL 70", "65": "FILA DEL 60", "78": "FILA DEL 70", "61": "FILA DEL 60"}, "65 Y 61 EMPIEZAN CON 6; 72 Y 78 CON 7.", **A),
+      MC("¿CUÁNTOS NÚMEROS HAY EN CADA FILA DE LA TABLA DE CIEN?", ["10", "100", "9"], "10", "CADA FILA TIENE 10 NÚMEROS.", **RE),
+      MC("SOFI BUSCA EL 56 EN LA TABLA. ¿EN QUÉ FILA LO TIENE QUE BUSCAR?", ["LA DEL 50", "LA DEL 60", "LA DEL 6"], "LA DEL 50", "56 EMPIEZA CON 5: FILA DEL 50.", **AN),
+      N("¿QUÉ NÚMERO REDONDO EMPIEZA LA FILA DONDE ESTÁ EL 84?", 80, "84 EMPIEZA CON 8: SU FILA EMPIEZA EN EL 80.", **A)],
+"3": [N("¿QUÉ NÚMERO VA DEBAJO DEL 45 EN LA TABLA?", 55, "BAJAR UNA FILA ES SUMAR 10.", **A),
+      MC("MIRÁ LA COLUMNA: 3, 13, 23, 33… ¿QUÉ SIGUE?", ["34", "43", "44"], "43", "TODOS TERMINAN EN 3.", **A),
+      MC("JUAN DICE QUE DEBAJO DEL 27 ESTÁ EL 28. ¿QUÉ NÚMERO ESTÁ DE VERDAD?", ["37", "28", "26"], "37", "EL 28 ESTÁ AL COSTADO; ABAJO ESTÁ EL 37.", **ER),
+      ORD("ORDENÁ LA COLUMNA DE ARRIBA ABAJO.", ["46", "16", "36", "26"], ["16", "26", "36", "46"], "CADA VEZ QUE BAJÁS, SUMÁS 10.", **A)],
+"4": [FB("CONTÁ DE A 2: 2, 4, ___, 8, ___", [["6"], ["10"]], "2, 4, 6, 8, 10.", **A),
+      N("5, 10, 15… ¿QUÉ SIGUE?", 20, "DE A 5: 15 Y 5 MÁS SON 20.", **A),
+      MC("[[problema]] CADA MANO TIENE 5 DEDOS. ¿CUÁNTOS DEDOS HAY EN 4 MANOS? CONTÁ DE A 5.", ["20", "9", "40"], "20", "5, 10, 15, 20.", **AN),
+      CLAS("¿DE A CUÁNTO SALTA CADA SERIE?", ["10, 20, 30", "5, 10, 15", "2, 4, 6"], ["DE A 2", "DE A 5", "DE A 10"],
+           {"10, 20, 30": "DE A 10", "5, 10, 15": "DE A 5", "2, 4, 6": "DE A 2"}, "MIRÁ CUÁNTO CRECE DE UN NÚMERO AL OTRO.", **AN)],
+"5": [N("RELÁMPAGO. ¿QUÉ SIGUE DESPUÉS DEL 69?", 70, "69, 70.", tiempo=30, **A),
+      N("RELÁMPAGO. 10, 20, 30… ¿QUÉ SIGUE?", 40, "DE A 10.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿QUÉ VA DEBAJO DEL 23?", 33, "SUMA 10.", tiempo=30, **A),
+      N("RELÁMPAGO. 2, 4, 6… ¿QUÉ SIGUE?", 8, "DE A 2.", tiempo=30, **A)],
 }
 EXAMEN = [
- [1, N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 59?", 60, "59, 60.")],
- [1, N("¿QUÉ NÚMERO FALTA? 86, 87, ___, 89", 88, "87, 88, 89.")],
- [1, MC("¿CUÁL ES UN NÚMERO REDONDO?", ["70", "73", "77"], "70", "TERMINA EN 0.")],
- [2, MC("¿EN QUÉ FILA ESTÁ EL 72?", ["LA DEL 70", "LA DEL 20", "LA DEL 80"], "LA DEL 70", "EMPIEZA CON 7.")],
- [2, MC("UNA COLUMNA VA…", ["PARA ABAJO", "DE COSTADO"], "PARA ABAJO", "LA FILA VA DE COSTADO.")],
- [2, N("¿CON QUÉ NÚMERO TERMINA LA FILA DEL 40?", 50, "41, 42… 50.")],
- [3, N("¿QUÉ NÚMERO VA DEBAJO DEL 62?", 72, "62 + 10 = 72.")],
- [3, MC("8, 18, 28, 38… ¿QUÉ SIGUE?", ["39", "48", "40"], "48", "TODOS TERMINAN EN 8.")],
- [3, N("¿QUÉ NÚMERO VA ARRIBA DEL 50?", 40, "ARRIBA RESTA 10.")],
- [4, N("2, 4, 6, 8, 10… ¿QUÉ SIGUE?", 12, "DE A 2.")],
- [4, N("5, 10, 15, 20… ¿QUÉ SIGUE?", 25, "DE A 5.")],
- [4, N("10, 20, 30, 40… ¿QUÉ SIGUE?", 50, "DE A 10.")],
- [4, N("¿CUÁNTOS DEDOS HAY EN 3 MANOS?", 15, "5, 10, 15.")],
+ [1, N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 59?", 60, "59, 60.", **A)],
+ [1, FB("COMPLETÁ: 86, 87, ___, 89", [["88"]], "87, 88, 89.", **A)],
+ [1, MC("¿CUÁL ES UN NÚMERO REDONDO?", ["70", "73", "77"], "70", "TERMINA EN 0.", **RE)],
+ [2, MC("¿EN QUÉ FILA DE LA TABLA ESTÁ EL 72?", ["LA DEL 70", "LA DEL 20", "LA DEL 80"], "LA DEL 70", "EMPIEZA CON 7.", **A)],
+ [2, MC("UNA COLUMNA DE LA TABLA VA…", ["PARA ABAJO", "DE COSTADO"], "PARA ABAJO", "LA FILA VA DE COSTADO.", **RE)],
+ [2, CLAS("¿EN QUÉ FILA VA CADA NÚMERO?", ["43", "38", "47", "31"], ["FILA DEL 30", "FILA DEL 40"],
+          {"43": "FILA DEL 40", "38": "FILA DEL 30", "47": "FILA DEL 40", "31": "FILA DEL 30"}, "38 Y 31 EMPIEZAN CON 3; 43 Y 47 CON 4.", **A)],
+ [3, N("¿QUÉ NÚMERO VA DEBAJO DEL 62?", 72, "62 Y 10 MÁS SON 72.", **A)],
+ [3, MC("8, 18, 28, 38… ¿QUÉ SIGUE?", ["39", "48", "40"], "48", "TODOS TERMINAN EN 8.", **A)],
+ [3, MC("MICA DICE QUE DEBAJO DEL 50 ESTÁ EL 51. ¿QUÉ NÚMERO ESTÁ DE VERDAD?", ["60", "51", "40"], "60", "ABAJO ES 10 MÁS: 60.", **ER)],
+ [4, N("2, 4, 6, 8, 10… ¿QUÉ SIGUE?", 12, "DE A 2.", **A)],
+ [4, FB("CONTÁ DE A 5: 5, 10, 15, ___, 25", [["20"]], "15 Y 5 MÁS SON 20.", **A)],
+ [4, N("10, 20, 30, 40… ¿QUÉ SIGUE?", 50, "DE A 10.", **A)],
+ [4, MC("[[problema]] HAY 3 MANOS LEVANTADAS. ¿CUÁNTOS DEDOS SON? CONTÁ DE A 5.", ["15", "8", "30"], "15", "5, 10, 15.", **AN)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 4, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 4, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: los números hasta 100", "examen_titulo": "Nivel jefe: los números hasta 100",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-4.json"), "w", encoding="utf-8"), ensure_ascii=False)

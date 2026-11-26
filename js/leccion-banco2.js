@@ -1446,6 +1446,15 @@
     var s = ''; for (var j = 0; j < sueltos; j++) s += '<span class="lb-p1-o' + (op.cuenta && j < op.cuenta ? ' on' : '') + '">' + P1E[o] + (op.cuenta && j < op.cuenta ? '<small>' + (11 + j) + '</small>' : '') + '</span>';
     return '<div class="lb-p1-dz"><div class="lb-p1-caja' + (op.caja ? ' on' : '') + '">' + c + '<small>10</small></div><div class="lb-p1-fila">' + s + '</div></div>';
   }
+  // cuadro de números desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo). cls = {número: clase}; ver = hasta qué número se ve
+  function p1Cuadro(hasta, cls, ver) {
+    cls = cls || {}; var h = '', tope = ver == null ? hasta : ver;
+    for (var k = 0; k <= hasta; k++) { var c = k > tope ? 'vac' : (cls[k] || ''); h += '<span class="' + c + '">' + (c === 'vac' ? '' : c.indexOf('oculto') >= 0 ? '?' : k) + '</span>'; }
+    return '<div class="lb-p1-cua">' + h + '</div>';
+  }
+  function p1Marca(lista, c, o) { o = o || {}; lista.forEach(function (k) { o[k] = c; }); return o; }
+  function p1Fil(n) { var a = Math.floor(n / 10) * 10, r = []; for (var k = a; k <= a + 9; k++) r.push(k); return r; }
+  function p1Col(n, hasta) { var r = []; for (var k = n % 10; k <= hasta; k += 10) r.push(k); return r; }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1458,7 +1467,10 @@
       tren: ctrl('n', 'HASTA EL', (p.desde || 1) + 1, p.hasta || 10, 1, p.hasta || 10),
       decena: ctrl('s', 'SUELTOS', 1, 10, 1, p.ini || 3),
       leer: ctrl('n', 'NÚMERO', 10, 20, 1, pick([12, 15, 17])),
-      anterior_siguiente: ctrl('n', 'NÚMERO', 2, 19, 1, pick([9, 14, 17])),
+      anterior_siguiente: ctrl('n', 'NÚMERO', p.min || 2, p.max || 19, 1, p.max ? R(p.min || 2, p.max) : pick([9, 14, 17])),
+      cuadro: p.que === 'contar' ? ctrl('n', 'HASTA EL', 10, p.hasta || 30, 10, p.hasta || 30) : p.que === 'bajar' ? ctrl('n', 'NÚMERO', 0, (p.hasta || 100) - 10, 1, R(11, 38)) :
+        ctrl('n', 'NÚMERO', p.que === 'columna' ? 0 : 10, Math.min(p.hasta || 100, 99), 1, R(12, Math.min(p.hasta || 100, 99) - 2)),
+      saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
       var P = [], i;
@@ -1544,7 +1556,7 @@
         return P;
       }
       if (md === 'anterior_siguiente') {
-        var lo = Math.max(1, v.n - 3), hi = Math.min(20, v.n + 3), m1 = {}, m2 = {}, m3 = {};
+        var lo = Math.max(1, v.n - 3), hi = Math.min((p.max || 19) + 1, v.n + 3), m1 = {}, m2 = {}, m3 = {};
         m1[v.n] = 'on'; m2[v.n] = 'on'; m2[v.n - 1] = 'ant'; m3[v.n] = 'on'; m3[v.n - 1] = 'ant'; m3[v.n + 1] = 'sig';
         P.push({ vis: p1Tren(lo, hi, m1), txt: 'BUSCAMOS EL <b>' + v.n + '</b> EN EL TREN.' });
         P.push({ vis: p1Tren(lo, hi, m2), txt: 'ANTES DEL ' + v.n + ' VA EL <b>' + (v.n - 1) + '</b>: ES EL <b>ANTERIOR</b>.' });
@@ -1561,6 +1573,41 @@
         else { var Mx = Math.max(v.a, v.b), Mn = Math.min(v.a, v.b);
           P.push({ vis: p1Recta(mk([[0, 'cero', ''], [Mn, 'pa', 'MENOR'], [Mx, 'pb', 'MAYOR']])), txt: 'EL <b>' + Mx + '</b> ESTÁ MÁS LEJOS DEL 0: ES EL <b>MAYOR</b>.' });
           P.push({ vis: p1Recta(mk([[0, 'cero', ''], [Mn, 'pa', 'MENOR'], [Mx, 'pb', 'MAYOR']])) + p1Big(Mx + ' ES MAYOR QUE ' + Mn), txt: 'Y EL <b>' + Mn + '</b> ES EL <b>MENOR</b>: ESTÁ MÁS CERCA DEL 0.' }); }
+        return P;
+      }
+      if (md === 'cuadro') {
+        var hc = p.hasta || 100, q = p.que || 'fila';
+        if (q === 'contar') {
+          P.push({ vis: p1Cuadro(v.n, null, 9), txt: 'LA PRIMERA FILA EMPIEZA EN EL <b>0</b> Y LLEGA AL <b>9</b>.' });
+          for (i = 10; i <= v.n; i += 10) P.push({ vis: p1Cuadro(v.n, p1Marca([i], 'on'), Math.min(v.n, i + 9)), txt: 'DESPUÉS DEL <b>' + (i - 1) + '</b> VIENE EL <b>' + i + '</b>: ' + p1Up(i) + '.' });
+          P.push({ vis: p1Cuadro(v.n, p1Marca(p1Col(0, v.n), 'on')), txt: 'LOS <b>REDONDOS</b> QUEDAN A LA IZQUIERDA: 10, 20, 30…' });
+          return P;
+        }
+        if (q === 'bajar') {
+          var ab = v.n + 10;
+          P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on')), txt: 'BUSCAMOS EL <b>' + v.n + '</b> EN EL CUADRO.' });
+          P.push({ vis: p1Cuadro(hc, p1Marca([ab], 'sig', p1Marca([v.n], 'on'))), txt: 'BAJAMOS UNA FILA: JUSTO ABAJO ESTÁ EL <b>' + ab + '</b>.' });
+          P.push({ vis: p1Cuadro(hc, p1Marca([ab], 'sig', p1Marca([v.n], 'on'))) + p1Big(v.n + ' Y 10 MÁS SON ' + ab), txt: 'BAJAR UNA FILA ES <b>SUMAR 10</b>.' });
+          return P;
+        }
+        if (q === 'columna') {
+          var u2 = v.n % 10, col = p1Col(v.n, hc);
+          P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on')), txt: 'BUSCAMOS EL <b>' + v.n + '</b> EN EL CUADRO.' });
+          P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on', p1Marca(col, 'fila'))), txt: 'MIRAMOS SU COLUMNA, DE ARRIBA ABAJO.' });
+          P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on', p1Marca(col, 'fila'))) + p1Big('TERMINAN EN ' + u2), txt: 'TODOS LOS DE ESA COLUMNA <b>TERMINAN EN ' + u2 + '</b>.' });
+          return P;
+        }
+        var fi = p1Fil(v.n).filter(function (k) { return k <= hc; }), d1 = Math.floor(v.n / 10);
+        P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on')), txt: 'BUSCAMOS EL <b>' + v.n + '</b> EN EL CUADRO.' });
+        P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on', p1Marca(fi, 'fila'))), txt: 'MIRAMOS SU FILA, DE IZQUIERDA A DERECHA.' });
+        P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on', p1Marca(fi, 'fila'))) + p1Big('EMPIEZAN CON ' + d1), txt: 'TODOS LOS DE ESA FILA <b>EMPIEZAN CON ' + d1 + '</b>: SON LOS DEL ' + p1Up(d1 * 10) + '.' });
+        return P;
+      }
+      if (md === 'saltos') {
+        var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
+        P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
+        for (i = de2; i <= v.n; i += de2) { ya.push(i); P.push({ vis: p1Cuadro(hs, p1Marca(ya.slice(0, -1), 'fila', p1Marca([i], 'on'))), txt: 'SALTAMOS ' + de2 + ' Y CAEMOS EN EL <b>' + i + '</b>.' }); }
+        P.push({ vis: p1Cuadro(hs, p1Marca(ya, 'on')) + p1Big(ya.slice(1, 6).join(', ') + '…'), txt: 'CONTAMOS DE A <b>' + de2 + '</b>: NO DECIMOS LOS DE EN MEDIO.' });
         return P;
       }
       return [{ vis: '', txt: '' }];
@@ -1604,10 +1651,21 @@
       return { cons: '¿CÓMO SE LEE ESTE NÚMERO?', html: p1Cifras(n), ops: ops, ok: p1Up(n), ayuda: 'MIRÁ LAS DOS CIFRAS: EMPIEZA CON ' + String(n)[0] + '.', bien: '¡MUY BIEN! ' + n + ' SE LEE ' + p1Up(n) + '.' }; });
     if (md === 'escribir') return p1Elegir(el, api, function () { var n = R(12, 19), s = String(n), ops = mezclar([s, s[1] + s[0], s[1]]);
       return { cons: '¿CÓMO SE ESCRIBE <b>' + p1Up(n) + '</b>?', ops: ops, ok: s, ayuda: 'ES DIEZ Y ALGO MÁS: PRIMERO VA EL 1.', bien: '¡MUY BIEN! SE ESCRIBE ' + n + '.' }; });
-    if (md === 'anterior_siguiente') return respuesta(el, api, function () { var n = R(2, 19), ant = Math.random() < 0.5;
+    if (md === 'anterior_siguiente') return respuesta(el, api, function () { var n = R(p.min || 2, p.max || 19), ant = Math.random() < 0.5;
       return { cons: '¿QUÉ NÚMERO VA <b>' + (ant ? 'ANTES' : 'DESPUÉS') + '</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: ant ? n - 1 : n + 1 }], ayuda: 'PENSÁ EN EL TREN DE LOS NÚMEROS.', bien: '¡MUY BIEN! ' + (ant ? 'EL ANTERIOR DEL ' + n + ' ES EL ' + (n - 1) : 'EL SIGUIENTE DEL ' + n + ' ES EL ' + (n + 1)) + '.' }; });
     if (md === 'mayor_menor') return p1Elegir(el, api, function () { var a = R(0, 20), b = R(0, 20); while (b === a) b = R(0, 20); var may = Math.random() < 0.5;
       return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [String(a), String(b)], ok: String(may ? Math.max(a, b) : Math.min(a, b)), ayuda: may ? 'EL MAYOR ESTÁ MÁS LEJOS DEL 0.' : 'EL MENOR ESTÁ MÁS CERCA DEL 0.', bien: '¡MUY BIEN!' }; });
+    if (md === 'cuadro') { var hc = p.hasta || 100, q = p.que || 'falta';
+      if (q === 'fila' || q === 'columna') return p1Elegir(el, api, function () { var n = R(10, Math.min(hc, 99)), fil = q === 'fila', ok = fil ? Math.floor(n / 10) : n % 10, lst = fil ? p1Fil(n) : p1Col(n, hc), ops = [ok]; while (ops.length < 3) { var x = R(0, fil ? Math.floor(Math.min(hc, 99) / 10) : 9); if (ops.indexOf(x) < 0) ops.push(x); }
+        return { cons: fil ? '¿CON QUÉ CIFRA <b>EMPIEZAN</b> LOS NÚMEROS DE LA FILA MARCADA?' : '¿EN QUÉ CIFRA <b>TERMINAN</b> LOS NÚMEROS DE LA COLUMNA MARCADA?', html: p1Cuadro(hc, p1Marca(lst, 'fila')), ops: mezclar(ops.map(String)), ok: String(ok), ayuda: fil ? 'MIRÁ LA PRIMERA CIFRA DE CADA NÚMERO DE LA FILA.' : 'MIRÁ LA ÚLTIMA CIFRA DE CADA NÚMERO DE LA COLUMNA.', bien: '¡MUY BIEN! ' + (fil ? 'EMPIEZAN CON ' : 'TERMINAN EN ') + ok + '.' }; });
+      return respuesta(el, api, function () { var baj = q === 'bajar', n = baj ? R(1, hc - 11) : R(11, hc - 1), f = baj ? n + 10 : n, cl = p1Marca([f], 'oculto'); if (baj) cl[n] = 'on';
+        return { cons: baj ? '¿QUÉ NÚMERO VA JUSTO <b>ABAJO</b> DEL ' + n + '?' : '¿QUÉ NÚMERO FALTA EN EL CUADRO?', html: p1Cuadro(hc, cl), campos: [{ v: f }], ayuda: baj ? 'BAJAR UNA FILA ES SUMAR 10.' : 'MIRÁ EL DE ANTES: EL QUE FALTA VIENE DESPUÉS.', bien: '¡MUY BIEN! ES EL ' + f + '.' }; }); }
+    if (md === 'saltos') return respuesta(el, api, function () { var de = p.de || pick([2, 5, 10]), ini = de * R(0, 4), s = [], k; for (k = 0; k < 5; k++) s.push(ini + de * k); var f = R(2, 4), op = s.map(function (x, i) { return '<span class="lb-p1-vag' + (i === f ? ' oculto">?' : '">' + x) + '</span>'; }).join('');
+      return { cons: 'CONTAMOS DE A <b>' + de + '</b>. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren"><span class="lb-p1-loco">🐸</span>' + op + '</div>', campos: [{ v: s[f] }], ayuda: 'SALTÁ ' + de + ' DESDE EL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ' + s[f - 1] + ' Y ' + de + ' MÁS SON ' + s[f] + '.' }; });
+    if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
+      return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
+    if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
+      return { cons: '¿CÓMO SE LEE ESTE NÚMERO REDONDO?', html: p1Cifras(n), ops: mezclar(ops.map(p1Up)), ok: p1Up(n), ayuda: 'MIRÁ LA PRIMERA CIFRA: ES UN ' + String(n)[0] + '.', bien: '¡MUY BIEN! ' + n + ' SE LEE ' + p1Up(n) + '.' }; });
   } };
 
   // ---------- estilos (prefijo lb2-, solo lección) ----------
@@ -1665,6 +1723,7 @@
     '.lb-p1-rc.pa b,.lb-p1-rc.pb b,.lb-p1-rc.cero b{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.66rem;flex:none}.lb-p1-rc.pa b{background:#C29A1E}.lb-p1-rc.pb b{background:#087E83}.lb-p1-rc.cero b{background:#253638}',
     '.lb-p1-dz{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}.lb-p1-caja{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:6px;border:3px solid #087E83;border-radius:12px;font-size:1.4rem;line-height:1.1;background:#fff}.lb-p1-caja.on{background:#D7F0E9}.lb-p1-caja small{position:absolute;right:-10px;top:-12px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 6px;font-size:.85rem}',
     '.lb-p1-cif{display:flex;justify-content:center;gap:8px;margin:8px 0}.lb-p1-cif span{width:58px;height:70px;display:grid;place-items:center;border:3px solid #087E83;border-radius:14px;background:#fff;font-weight:800;font-size:2.4rem;color:#253638}.lb-p1-cif span.on{background:#087E83;color:#fff}.lb-p1-cif span.vac{border-style:dashed;color:#9dbdb9}',
+    '.lb-p1-cua{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;width:100%;max-width:360px;margin:6px auto}.lb-p1-cua span{height:28px;display:grid;place-items:center;border:2px solid #9dbdb9;border-radius:6px;background:#fff;font-weight:800;font-size:.8rem;color:#253638;overflow:hidden}.lb-p1-cua span.vac{border:0;background:none}.lb-p1-cua span.fila{background:#D7F0E9;border-color:#087E83}.lb-p1-cua span.on{background:#087E83;border-color:#087E83;color:#fff}.lb-p1-cua span.sig{background:#FFE1D6;border-color:#C2552E}.lb-p1-cua span.oculto{border-style:dashed;border-color:#C2552E;color:#C2552E;background:#FFF3C4}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);

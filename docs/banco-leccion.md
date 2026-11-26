@@ -88,3 +88,10 @@ Todo en imprenta mayúscula, con dibujos grandes y números chicos.
 - `enteros` / `enteros_x` (`modo` obligatorio): situacion, opuesto, distancia, comparar, intervalo, absoluto; `enteros_x` además abs_opuesto.
 - Misiones 12 y 13: `enteros` / `enteros_x` suman modos suma, resta, suprimir, division, combinadas, cuadrado (−3² y (−3)²), raiz; `enteros_x` además producto y potencia.
 - Misiones 14 y 15: `razones` / `razones_x` (razon, proporcion, fundamental, desconocido) y `algebra` / `algebra_x` (equivalentes, un_valor, recursiva). `modo` obligatorio.
+
+## Primer grado hasta 100 (Nivel Medio · Matemática 1, Misiones 3 y 4) — 26/11/2026
+Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo).
+| Motor | Tipo | `modo` (y `p`) |
+|---|---|---|
+| `primeros` | ejemplo paso a paso | cuadro (`que`: contar, fila, columna, bajar; `hasta`: 30, 50, 100) · saltos (`de`: 2, 5, 10) · anterior_siguiente y tren ahora aceptan `min`/`max` y `desde`/`hasta` hasta 100 |
+| `primeros_x` | ejercicio | cuadro (`que`: falta, fila, columna, bajar; `hasta`) · saltos (`de`) · redondo (`max`: después de un 9) · redondos (nombre de los redondos) · anterior_siguiente con `min`/`max` |

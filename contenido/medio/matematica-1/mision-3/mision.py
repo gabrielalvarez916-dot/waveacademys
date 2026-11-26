@@ -135,36 +135,113 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "37. 49.", "solo": "11.", "carpeta": ["12.", "29.", "41."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("EL ÁLBUM DEL 0 AL 30", [LD("FILAS DE 10", "EN EL ÁLBUM, CADA FILA TIENE <b>10 NÚMEROS</b> Y EMPIEZA CON UN REDONDO."),
+   LL("LA PRIMERA FILA VA DEL 0 AL 9.", "DESPUÉS DEL 9 VIENE EL 10.")],
+   {"modo": "cuadro", "que": "contar", "hasta": 30}, {"modo": "cuadro", "que": "falta", "hasta": 30}),
+ T("LOS DEL VEINTE", [LD("DEL 20 AL 29", "TODOS LOS NÚMEROS DEL 20 AL 29 <b>EMPIEZAN CON 2</b>."),
+   LP("DESPUÉS DEL 29 VIENE EL 30, QUE ES UN NÚMERO REDONDO.")],
+   {"modo": "tren", "desde": 19, "hasta": 30}, {"modo": "falta", "desde": 18, "hasta": 30}),
+], "recuerda": [
+ RC("FILAS DE 10", "CADA FILA DEL ÁLBUM TIENE DIEZ NÚMEROS EN ORDEN.", "20, 21, 22… 29"),
+ RC("LOS DEL VEINTE", "LOS NÚMEROS DEL 20 AL 29 EMPIEZAN CON 2.", "DESPUÉS DEL 29 VIENE EL 30"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("EL ÁLBUM HASTA 50", [LD("HASTA 50", "EL ÁLBUM SIGUE CON LAS FILAS DEL <b>30</b> Y DEL <b>40</b> Y LLEGA AL 50."),
+   LL("CADA FILA EMPIEZA CON UN REDONDO.", "DESPUÉS DEL 49 VIENE EL 50.")],
+   {"modo": "cuadro", "que": "contar", "hasta": 50}, {"modo": "cuadro", "que": "falta", "hasta": 50}),
+ T("EN UNA FILA", [LD("UNA FILA", "EN UNA <b>FILA</b> DEL CUADRO, TODOS LOS NÚMEROS EMPIEZAN IGUAL."),
+   LL("LA FILA VA DE COSTADO.", "41, 42, 43… EMPIEZAN CON 4.")],
+   {"modo": "cuadro", "que": "fila", "hasta": 50}, {"modo": "cuadro", "que": "fila", "hasta": 50}),
+ T("EN UNA COLUMNA", [LD("UNA COLUMNA", "EN UNA <b>COLUMNA</b> DEL CUADRO, TODOS LOS NÚMEROS TERMINAN IGUAL."),
+   LL("LA COLUMNA VA PARA ABAJO.", "5, 15, 25, 35 Y 45 TERMINAN EN 5.")],
+   {"modo": "cuadro", "que": "columna", "hasta": 50}, {"modo": "cuadro", "que": "columna", "hasta": 50}),
+], "recuerda": [
+ RC("LA FILA", "VA DE COSTADO Y SUS NÚMEROS EMPIEZAN IGUAL.", "31, 32, 33 EMPIEZAN CON 3"),
+ RC("LA COLUMNA", "VA PARA ABAJO Y SUS NÚMEROS TERMINAN IGUAL.", "7, 17, 27 TERMINAN EN 7"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("ANTERIOR Y SIGUIENTE", [LD("ANTES Y DESPUÉS", "EL <b>ANTERIOR</b> VA JUSTO ANTES Y EL <b>SIGUIENTE</b> VA JUSTO DESPUÉS."),
+   LL("EL ANTERIOR DEL 35 ES 34.", "EL SIGUIENTE DEL 35 ES 36.")],
+   {"modo": "anterior_siguiente", "min": 21, "max": 49}, {"modo": "anterior_siguiente", "min": 21, "max": 49}),
+ T("DESPUÉS DE UN 9", [LD("UN 9 Y UN REDONDO", "DESPUÉS DE UN NÚMERO QUE TERMINA EN 9 VIENE UN <b>REDONDO</b>."),
+   LL("DESPUÉS DEL 39 VIENE EL 40.", "ANTES DEL 30 VA EL 29.")],
+   {"modo": "tren", "desde": 28, "hasta": 41}, {"modo": "redondo", "max": 50}),
+], "recuerda": [
+ RC("ANTERIOR", "ES EL NÚMERO QUE VA JUSTO ANTES.", "EL ANTERIOR DEL 42 ES 41"),
+ RC("SIGUIENTE", "ES EL NÚMERO QUE VA JUSTO DESPUÉS.", "EL SIGUIENTE DEL 42 ES 43"),
+ RC("DESPUÉS DE UN 9", "SIEMPRE VIENE UN NÚMERO REDONDO.", "29 Y DESPUÉS 30"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("EL VAGÓN VACÍO", [LD("EL QUE FALTA", "PARA SABER QUÉ NÚMERO FALTA, MIRÁ EL <b>DE ANTES</b> Y SEGUÍ CONTANDO."),
+   LL("31, 32, ?, 34: FALTA EL 33.", "NO HACE FALTA EMPEZAR DESDE EL 1.")],
+   {"modo": "tren", "desde": 30, "hasta": 38}, {"modo": "falta", "desde": 20, "hasta": 50}),
+ T("EN EL CUADRO", [LD("EL CASILLERO VACÍO", "EN EL CUADRO, EL QUE FALTA <b>SIGUE</b> AL NÚMERO DE SU IZQUIERDA."),
+   LP("SI ESTÁ AL PRINCIPIO DE LA FILA, ES UN NÚMERO REDONDO.")],
+   {"modo": "cuadro", "que": "fila", "hasta": 50}, {"modo": "cuadro", "que": "falta", "hasta": 50}),
+], "recuerda": [
+ RC("EL QUE FALTA", "SE ENCUENTRA CONTANDO DESDE EL NÚMERO DE ANTES.", "26, 27, ?, 29: ES EL 28"),
+ RC("AL PRINCIPIO DE LA FILA", "EL QUE FALTA ES UN NÚMERO REDONDO.", "?, 41, 42: ES EL 40"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 29?", 30, "DESPUÉS DEL 29 VIENE EL 30."),
-      MC("¿CON QUÉ NÚMERO EMPIEZAN LOS DEL VEINTE?", ["1", "2", "3"], "2", "20, 21, 22… EMPIEZAN CON 2.")],
-"2": [N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 39?", 40, "DESPUÉS DEL 39 VIENE EL 40."),
-      MC("5, 15, 25, 35… ¿QUÉ SIGUE?", ["36", "45", "40"], "45", "TODOS TERMINAN EN 5.")],
-"3": [N("¿CUÁL ES EL ANTERIOR DEL 33?", 32, "ANTES DEL 33 VA EL 32."),
-      N("¿CUÁL ES EL SIGUIENTE DEL 19?", 20, "DESPUÉS DEL 19 VA EL 20.")],
-"4": [N("¿QUÉ NÚMERO FALTA? 23, 24, ___, 26", 25, "DESPUÉS DEL 24 VIENE EL 25."),
-      N("¿QUÉ NÚMERO FALTA? 47, 48, ___, 50", 49, "DESPUÉS DEL 48 VIENE EL 49.")],
-"5": [N("RELÁMPAGO. ¿QUÉ SIGUE DESPUÉS DEL 49?", 50, "49, 50.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁL ES EL ANTERIOR DEL 40?", 39, "39, 40.", tiempo=30),
-      N("RELÁMPAGO. ¿QUÉ FALTA? 36, ___, 38", 37, "36, 37, 38.", tiempo=30),
-      MC("RELÁMPAGO. ¿CON QUÉ EMPIEZAN LOS DEL TREINTA?", ["3", "2"], "3", "30, 31, 32…", tiempo=30)],
+"1": [FB("COMPLETÁ EL TREN: 25, 26, ___, 28, ___, 30", [["27"], ["29"]], "DESPUÉS DEL 26 VA EL 27 Y DESPUÉS DEL 28 VA EL 29.", **A),
+      N("[[problema]] TOMI TIENE LA FIGURITA 19 Y LE DAN LA QUE SIGUE. ¿QUÉ NÚMERO TIENE LA NUEVA?", 20, "DESPUÉS DEL 19 VIENE EL 20.", **A),
+      MC("¿CON QUÉ NÚMERO EMPIEZAN LOS DEL VEINTE?", ["1", "2", "3"], "2", "20, 21, 22… EMPIEZAN CON 2.", **RE),
+      ORD("ORDENÁ LAS FIGURITAS DE MENOR A MAYOR.", ["27", "21", "30", "24"], ["21", "24", "27", "30"], "21, 24, 27 Y 30: EN ORDEN.", **A)],
+"2": [CLAS("¿EN QUÉ FILA DEL CUADRO VA CADA FIGURITA?", ["34", "41", "38", "46"], ["FILA DEL 30", "FILA DEL 40"],
+           {"34": "FILA DEL 30", "41": "FILA DEL 40", "38": "FILA DEL 30", "46": "FILA DEL 40"}, "34 Y 38 EMPIEZAN CON 3; 41 Y 46 EMPIEZAN CON 4.", **A),
+      MC("MIRÁ LA COLUMNA: 7, 17, 27, 37… ¿QUÉ NÚMERO SIGUE ABAJO?", ["38", "47", "40"], "47", "EN LA COLUMNA TODOS TERMINAN EN 7.", **A),
+      MC("LEO DICE QUE EL 43 ESTÁ EN LA FILA DEL 30. ¿EN QUÉ FILA ESTÁ DE VERDAD?", ["LA DEL 40", "LA DEL 30", "LA DEL 3"], "LA DEL 40", "43 EMPIEZA CON 4: ESTÁ EN LA FILA DEL 40.", **ER),
+      N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 39?", 40, "DESPUÉS DEL 39 VIENE EL 40.", **A)],
+"3": [N("¿CUÁL ES EL ANTERIOR DEL 33?", 32, "ANTES DEL 33 VA EL 32.", **A),
+      UNIR("UNÍ CADA NÚMERO CON SU SIGUIENTE.", ["32", "35", "38"], ["39", "33", "36"], {"32": "33", "35": "36", "38": "39"}, "EL SIGUIENTE ES EL QUE VA JUSTO DESPUÉS: 33, 36 Y 39.", **A),
+      MC("SOFI DICE QUE EL SIGUIENTE DEL 29 ES EL 210. ¿CUÁL ES DE VERDAD?", ["30", "210", "20"], "30", "DESPUÉS DE UN 9 VIENE UN REDONDO: 30.", **ER),
+      N("[[problema]] EN LA FILA PARA ENTRAR, ANA TIENE EL TURNO 41. ¿QUÉ TURNO TIENE EL QUE ESTÁ JUSTO ANTES?", 40, "EL ANTERIOR DEL 41 ES EL 40.", **AN)],
+"4": [FB("COMPLETÁ: 46, 47, ___, 49, ___", [["48"], ["50"]], "47, 48, 49 Y DESPUÉS 50.", **A),
+      N("¿QUÉ NÚMERO FALTA? 18, 19, ___, 21", 20, "DESPUÉS DEL 19 VIENE EL 20.", **A),
+      MC("PARA SABER QUÉ FALTA EN 33, ___, 35, ¿QUÉ CONVIENE HACER?", ["DECIR EL 33 Y SEGUIR", "EMPEZAR DESDE EL 1", "ADIVINAR"], "DECIR EL 33 Y SEGUIR", "DECÍS EL DE ANTES Y SEGUÍS: 33, 34.", **AN),
+      MC("JUAN COMPLETÓ ASÍ: 37, 38, 40. ¿QUÉ NÚMERO SE SALTEÓ?", ["39", "36", "41"], "39", "DESPUÉS DEL 38 VA EL 39.", **ER)],
+"5": [N("RELÁMPAGO. ¿QUÉ SIGUE DESPUÉS DEL 49?", 50, "49, 50.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁL ES EL ANTERIOR DEL 40?", 39, "39, 40.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿QUÉ FALTA? 36, ___, 38", 37, "36, 37, 38.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CON QUÉ EMPIEZAN LOS DEL TREINTA?", ["3", "2"], "3", "30, 31, 32…", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 19?", 20, "19, 20.")],
- [1, N("¿QUÉ NÚMERO FALTA? 26, 27, ___, 29", 28, "27, 28, 29.")],
- [1, MC("¿CUÁNTOS NÚMEROS HAY EN CADA FILA DEL ÁLBUM?", ["5", "10", "20"], "10", "CADA FILA TIENE 10.")],
- [2, N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 39?", 40, "39, 40.")],
- [2, MC("¿CON QUÉ NÚMERO EMPIEZAN LOS DEL CUARENTA?", ["4", "5", "3"], "4", "41, 42, 43…")],
- [2, MC("2, 12, 22, 32… ¿QUÉ SIGUE?", ["42", "33", "23"], "42", "TODOS TERMINAN EN 2.")],
- [3, N("¿CUÁL ES EL ANTERIOR DEL 27?", 26, "26 VA ANTES DEL 27.")],
- [3, N("¿CUÁL ES EL SIGUIENTE DEL 27?", 28, "28 VA DESPUÉS DEL 27.")],
- [3, MC("¿CUÁL ES EL SIGUIENTE DEL 29?", ["30", "210", "20"], "30", "29, 30.")],
- [4, N("¿QUÉ NÚMERO FALTA? 43, ___, 45", 44, "43, 44, 45.")],
- [4, N("¿QUÉ NÚMERO FALTA? 18, 19, ___, 21", 20, "19, 20, 21.")],
- [4, N("¿QUÉ NÚMERO FALTA? 38, ___, 40", 39, "38, 39, 40.")],
- [4, MC("PARA SABER QUÉ NÚMERO FALTA, ¿QUÉ HACÉS?", ["CONTAR DESDE EL ANTERIOR", "ADIVINAR"], "CONTAR DESDE EL ANTERIOR", "DECÍS EL DE ANTES Y SEGUÍS.")],
+ [1, N("¿QUÉ NÚMERO VIENE DESPUÉS DEL 19?", 20, "19, 20.", **A)],
+ [1, FB("COMPLETÁ: 27, 28, ___, 30", [["29"]], "28, 29, 30.", **A)],
+ [1, MC("¿CUÁNTOS NÚMEROS HAY EN CADA FILA DEL ÁLBUM?", ["5", "10", "20"], "10", "CADA FILA TIENE 10.", **RE)],
+ [2, MC("¿CON QUÉ NÚMERO EMPIEZAN LOS DEL CUARENTA?", ["4", "5", "3"], "4", "41, 42, 43…", **RE)],
+ [2, MC("EN UNA COLUMNA ESTÁN EL 2, EL 12, EL 22 Y EL 32. ¿QUÉ NÚMERO SIGUE?", ["42", "33", "23"], "42", "TODOS TERMINAN EN 2.", **A)],
+ [2, CLAS("¿EN QUÉ FILA VA CADA NÚMERO?", ["25", "31", "29", "36"], ["FILA DEL 20", "FILA DEL 30"],
+          {"25": "FILA DEL 20", "31": "FILA DEL 30", "29": "FILA DEL 20", "36": "FILA DEL 30"}, "25 Y 29 EMPIEZAN CON 2; 31 Y 36 CON 3.", **A)],
+ [3, N("¿CUÁL ES EL ANTERIOR DEL 27?", 26, "26 VA ANTES DEL 27.", **A)],
+ [3, N("¿CUÁL ES EL SIGUIENTE DEL 45?", 46, "46 VA DESPUÉS DEL 45.", **A)],
+ [3, MC("MICA DICE QUE DESPUÉS DEL 39 VIENE EL 310. ¿QUÉ NÚMERO VIENE DE VERDAD?", ["40", "310", "30"], "40", "DESPUÉS DE UN 9 VIENE UN REDONDO.", **ER)],
+ [4, N("¿QUÉ NÚMERO FALTA? 43, ___, 45", 44, "43, 44, 45.", **A)],
+ [4, ORD("ORDENÁ DE MENOR A MAYOR.", ["38", "42", "35", "40"], ["35", "38", "40", "42"], "35, 38, 40 Y 42.", **A)],
+ [4, MC("EN EL TREN 28, 29, ___, 31 FALTA UN VAGÓN. ¿CUÁL ES?", ["30", "210", "32"], "30", "DESPUÉS DEL 29 VIENE EL 30.", **A)],
+ [4, MC("TOMI ESCRIBIÓ 47, 48, 50. ¿QUÉ NÚMERO SE OLVIDÓ?", ["49", "46", "51"], "49", "DESPUÉS DEL 48 VA EL 49.", **ER)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 3, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 3, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: la serie numérica hasta 50", "examen_titulo": "Nivel jefe: la serie numérica hasta 50",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-3.json"), "w", encoding="utf-8"), ensure_ascii=False)
