@@ -1455,6 +1455,20 @@
   function p1Marca(lista, c, o) { o = o || {}; lista.forEach(function (k) { o[k] = c; }); return o; }
   function p1Fil(n) { var a = Math.floor(n / 10) * 10, r = []; for (var k = a; k <= a + 9; k++) r.push(k); return r; }
   function p1Col(n, hasta) { var r = []; for (var k = n % 10; k <= hasta; k += 10) r.push(k); return r; }
+  // bolsitas de 10 (decenas) y sueltos (unidades); op.bc = bolsitas contadas, op.sc = sueltos contados
+  function p1Bolsas(n, op) {
+    op = op || {}; var d = Math.floor(n / 10), u = n % 10, h = '', i;
+    for (i = 0; i < d; i++) h += '<span class="lb-p1-o' + (op.bc > i ? ' on' : '') + '">🛍️' + (op.bc > i ? '<small>' + (10 * (i + 1)) + '</small>' : '<small>10</small>') + '</span>';
+    var t = ''; for (i = 0; i < u; i++) t += '<span class="lb-p1-o' + (op.sc > i ? ' on' : '') + '">🍬' + (op.sc > i ? '<small>' + (10 * d + i + 1) + '</small>' : '') + '</span>';
+    return '<div class="lb-p1-dz"><div class="lb-p1-fila">' + (h || '<span class="lb-p1-vac">—</span>') + '</div><div class="lb-p1-fila">' + (t || '<span class="lb-p1-vac">SIN SUELTOS</span>') + '</div></div>';
+  }
+  function p1DU(n, hl) { var d = Math.floor(n / 10), u = n % 10; return '<div class="lb-p1-du"><span class="' + (hl === 'd' || hl === 'du' ? 'on' : '') + '"><small>DECENAS</small><b>' + d + '</b></span><span class="' + (hl === 'u' || hl === 'du' ? 'on' : '') + '"><small>UNIDADES</small><b>' + u + '</b></span></div>'; }
+  // recta del 0 al 100 con los redondos; marcas = [[número, clase, texto]]
+  function p1R100(marcas) {
+    var h = '', k; for (k = 0; k <= 100; k += 10) h += '<span class="lb-p1-t" style="left:' + k + '%"><i></i><b>' + k + '</b></span>';
+    (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] + '%">' + (m[2] != null ? m[2] : m[0]) + '</span>'; });
+    return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div>';
+  }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1470,6 +1484,10 @@
       anterior_siguiente: ctrl('n', 'NÚMERO', p.min || 2, p.max || 19, 1, p.max ? R(p.min || 2, p.max) : pick([9, 14, 17])),
       cuadro: p.que === 'contar' ? ctrl('n', 'HASTA EL', 10, p.hasta || 30, 10, p.hasta || 30) : p.que === 'bajar' ? ctrl('n', 'NÚMERO', 0, (p.hasta || 100) - 10, 1, R(11, 38)) :
         ctrl('n', 'NÚMERO', p.que === 'columna' ? 0 : 10, Math.min(p.hasta || 100, 99), 1, R(12, Math.min(p.hasta || 100, 99) - 2)),
+      comparar2: ctrl('a', 'UN NÚMERO', 10, 99, 1, 56) + ctrl('b', 'OTRO NÚMERO', 10, 99, 1, 65),
+      ordenar3: ctrl('a', 'PRIMERO', 10, 99, 1, 47) + ctrl('b', 'SEGUNDO', 10, 99, 1, 74) + ctrl('c', 'TERCERO', 10, 99, 1, 40),
+      recta100: p.que === 'saltar' ? ctrl('a', 'ESTÁS EN EL', p.dir === 'atras' ? 6 : 0, p.dir === 'atras' ? 20 : 14, 1, p.dir === 'atras' ? 12 : 4) + ctrl('s', 'SALTÁS', 1, 6, 1, 3) : ctrl('n', 'NÚMERO', 1, 99, 1, 46),
+      decenas: ctrl('d', 'BOLSITAS DE 10', p.que === 'contar' ? 1 : 1, 9, 1, 3) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1603,6 +1621,63 @@
         P.push({ vis: p1Cuadro(hc, p1Marca([v.n], 'on', p1Marca(fi, 'fila'))) + p1Big('EMPIEZAN CON ' + d1), txt: 'TODOS LOS DE ESA FILA <b>EMPIEZAN CON ' + d1 + '</b>: SON LOS DEL ' + p1Up(d1 * 10) + '.' });
         return P;
       }
+      if (md === 'comparar2') {
+        var da = Math.floor(v.a / 10), db = Math.floor(v.b / 10), Gc = function (h) { return '<div class="lb-p1-dos">' + p1DU(v.a, h) + p1DU(v.b, h) + '</div>'; };
+        P.push({ vis: Gc(''), txt: 'QUEREMOS SABER CUÁL ES MAYOR: <b>' + v.a + '</b> O <b>' + v.b + '</b>.' });
+        P.push({ vis: Gc('d'), txt: 'PRIMERO MIRAMOS LAS <b>DECENAS</b>: ' + da + ' Y ' + db + '.' });
+        if (v.a === v.b) { P.push({ vis: Gc('du') + p1Big('SON IGUALES'), txt: 'ES EL MISMO NÚMERO.' }); return P; }
+        if (da === db) P.push({ vis: Gc('u'), txt: 'EMPATAN EN DECENAS: MIRAMOS LAS <b>UNIDADES</b>.' });
+        var Mx2 = Math.max(v.a, v.b), Mn2 = Math.min(v.a, v.b);
+        P.push({ vis: Gc(da === db ? 'u' : 'd') + p1Big(Mx2 + ' ES MAYOR QUE ' + Mn2), txt: '<b>' + Mx2 + '</b> ES EL MAYOR Y <b>' + Mn2 + '</b> ES EL MENOR.' });
+        return P;
+      }
+      if (md === 'ordenar3') {
+        var desc = p.orden === 'desc', L0 = [v.a, v.b, v.c], L1 = L0.slice().sort(function (x, y) { return desc ? y - x : x - y; });
+        var Fi = function (lst, hl) { return '<div class="lb-p1-tren">' + lst.map(function (x, i) { return '<span class="lb-p1-vag' + (hl && hl.indexOf(i) >= 0 ? ' on' : '') + '">' + x + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Fi(L0), txt: 'VAMOS A ORDENAR DE <b>' + (desc ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>.' });
+        P.push({ vis: Fi(L0, [L0.indexOf(L1[0])]), txt: 'BUSCAMOS EL MÁS ' + (desc ? 'GRANDE' : 'CHICO') + ': <b>' + L1[0] + '</b>. VA PRIMERO.' });
+        P.push({ vis: Fi(L1.slice(0, 2), [0, 1]), txt: 'DE LOS QUE QUEDAN, EL MÁS ' + (desc ? 'GRANDE' : 'CHICO') + ' ES <b>' + L1[1] + '</b>.' });
+        P.push({ vis: Fi(L1, [0, 1, 2]) + p1Big(L1.join(desc ? ' > ' : ' < ')), txt: 'EL ÚLTIMO ES <b>' + L1[2] + '</b>. ¡LISTO!' });
+        return P;
+      }
+      if (md === 'recta100') {
+        if (p.que === 'saltar') {
+          var at = p.dir === 'atras', pos = v.a, mk2 = function (lst) { var o2 = {}; lst.forEach(function (x) { o2[x[0]] = { c: x[1], t: x[2] }; }); return o2; };
+          P.push({ vis: p1Recta(mk2([[pos, 'pa', 'ESTÁS']])), txt: 'ESTÁS EN EL <b>' + pos + '</b>. SALTÁS ' + v.s + ' PARA ' + (at ? 'ATRÁS' : 'ADELANTE') + '.' });
+          for (i = 1; i <= v.s; i++) { var q2 = at ? pos - i : pos + i; P.push({ vis: p1Recta(mk2([[pos, 'pa', ''], [q2, 'pb', String(i)]])), txt: 'SALTO ' + i + ': CAEMOS EN EL <b>' + q2 + '</b>.' }); }
+          var fin = at ? pos - v.s : pos + v.s;
+          P.push({ vis: p1Recta(mk2([[pos, 'pa', ''], [fin, 'pb', 'LLEGÁS']])) + p1Big('LLEGÁS AL ' + fin), txt: at ? 'PARA ATRÁS LOS NÚMEROS SE ACHICAN.' : 'PARA ADELANTE LOS NÚMEROS CRECEN.' });
+          return P;
+        }
+        var dd2 = Math.floor(v.n / 10) * 10;
+        P.push({ vis: p1R100([]), txt: 'LA RECTA VA DEL <b>0</b> AL <b>100</b>, DE 10 EN 10.' });
+        P.push({ vis: p1R100([[dd2, 'pa', dd2]]), txt: 'BUSCAMOS EL REDONDO DE ANTES: EL <b>' + dd2 + '</b>.' });
+        P.push({ vis: p1R100([[dd2, 'pa', dd2], [v.n, 'pb', v.n]]), txt: v.n === dd2 ? 'EL ' + v.n + ' ESTÁ JUSTO EN LA MARCA.' : 'AVANZAMOS ' + (v.n - dd2) + ' MÁS: AHÍ ESTÁ EL <b>' + v.n + '</b>.' });
+        P.push({ vis: p1R100([[v.n, 'pb', v.n]]) + p1Big('MÁS A LA DERECHA, MÁS GRANDE'), txt: 'LOS DE LA DERECHA SON MAYORES QUE EL ' + v.n + '.' });
+        return P;
+      }
+      if (md === 'decenas') {
+        var nn = v.d * 10 + v.u, q3 = p.que || 'contar';
+        if (q3 === 'contar') {
+          P.push({ vis: p1Bolsas(nn), txt: 'CADA BOLSITA TIENE <b>10</b>. ES UNA <b>DECENA</b>.' });
+          P.push({ vis: p1Bolsas(nn, { bc: v.d }), txt: 'CONTAMOS LAS BOLSITAS DE 10 EN 10: <b>' + v.d * 10 + '</b>.' });
+          if (v.u) P.push({ vis: p1Bolsas(nn, { bc: v.d, sc: v.u }), txt: 'SEGUIMOS CON LOS SUELTOS DE A UNO: <b>' + nn + '</b>.' });
+          P.push({ vis: p1Bolsas(nn, { bc: v.d, sc: v.u }) + p1Big('HAY ' + nn), txt: v.d + ' DECENAS Y ' + v.u + ' UNIDADES SON <b>' + nn + '</b>.' });
+          return P;
+        }
+        if (q3 === 'escribir') {
+          P.push({ vis: p1Bolsas(nn), txt: 'TENEMOS <b>' + v.d + '</b> BOLSITAS Y <b>' + v.u + '</b> SUELTOS.' });
+          P.push({ vis: p1DU(nn, 'd'), txt: 'LAS DECENAS VAN A LA <b>IZQUIERDA</b>: ' + v.d + '.' });
+          P.push({ vis: p1DU(nn, 'du'), txt: 'LAS UNIDADES VAN A LA <b>DERECHA</b>: ' + v.u + '.' });
+          P.push({ vis: p1DU(nn, 'du') + p1Big('SE ESCRIBE ' + nn), txt: 'SE ESCRIBE <b>' + nn + '</b> Y SE LEE <b>' + p1Up(nn) + '</b>.' });
+          return P;
+        }
+        P.push({ vis: p1DU(nn), txt: 'VAMOS A DESARMAR EL <b>' + nn + '</b>.' });
+        P.push({ vis: p1DU(nn, 'd') + p1Big(v.d + ' DECENAS VALEN ' + v.d * 10), txt: 'EL ' + v.d + ' ESTÁ EN LAS DECENAS: VALE <b>' + v.d * 10 + '</b>.' });
+        P.push({ vis: p1DU(nn, 'u') + p1Big(v.u + ' UNIDADES VALEN ' + v.u), txt: 'EL ' + v.u + ' ESTÁ EN LAS UNIDADES: VALE <b>' + v.u + '</b>.' });
+        P.push({ vis: p1DU(nn, 'du') + p1Big(nn + ' = ' + v.d * 10 + ' + ' + v.u), txt: 'ENTONCES <b>' + nn + ' = ' + v.d * 10 + ' + ' + v.u + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -1662,6 +1737,23 @@
         return { cons: baj ? '¿QUÉ NÚMERO VA JUSTO <b>ABAJO</b> DEL ' + n + '?' : '¿QUÉ NÚMERO FALTA EN EL CUADRO?', html: p1Cuadro(hc, cl), campos: [{ v: f }], ayuda: baj ? 'BAJAR UNA FILA ES SUMAR 10.' : 'MIRÁ EL DE ANTES: EL QUE FALTA VIENE DESPUÉS.', bien: '¡MUY BIEN! ES EL ' + f + '.' }; }); }
     if (md === 'saltos') return respuesta(el, api, function () { var de = p.de || pick([2, 5, 10]), ini = de * R(0, 4), s = [], k; for (k = 0; k < 5; k++) s.push(ini + de * k); var f = R(2, 4), op = s.map(function (x, i) { return '<span class="lb-p1-vag' + (i === f ? ' oculto">?' : '">' + x) + '</span>'; }).join('');
       return { cons: 'CONTAMOS DE A <b>' + de + '</b>. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren"><span class="lb-p1-loco">🐸</span>' + op + '</div>', campos: [{ v: s[f] }], ayuda: 'SALTÁ ' + de + ' DESDE EL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ' + s[f - 1] + ' Y ' + de + ' MÁS SON ' + s[f] + '.' }; });
+    if (md === 'comparar2') return p1Elegir(el, api, function () { var a = R(10, 99), b = Math.random() < 0.4 ? Math.floor(a / 10) * 10 + R(0, 9) : R(10, 99); while (b === a) b = R(10, 99); var may = Math.random() < 0.5;
+      return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [String(a), String(b)], ok: String(may ? Math.max(a, b) : Math.min(a, b)), ayuda: 'MIRÁ PRIMERO LAS DECENAS; SI EMPATAN, LAS UNIDADES.', bien: '¡MUY BIEN!' }; });
+    if (md === 'ordenar3') return p1Elegir(el, api, function () { var L = []; while (L.length < 3) { var x = R(10, 99); if (L.indexOf(x) < 0) L.push(x); } var desc = p.orden === 'desc', S = L.slice().sort(function (x, y) { return desc ? y - x : x - y; }), pr = Math.random() < 0.6;
+      return { cons: 'DE <b>' + (desc ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>, ¿CUÁL VA <b>' + (pr ? 'PRIMERO' : 'ÚLTIMO') + '</b>?', ops: L.map(String), ok: String(pr ? S[0] : S[2]), ayuda: (pr ? 'BUSCÁ EL MÁS ' : 'EL ÚLTIMO ES EL MÁS ') + ((pr !== desc) ? 'CHICO.' : 'GRANDE.'), bien: '¡MUY BIEN! ' + S.join(desc ? ', ' : ', ') + '.' }; });
+    if (md === 'recta100') { if (p.que === 'saltar') return respuesta(el, api, function () { var at = p.dir === 'atras', a = at ? R(6, 20) : R(0, 14), s2 = R(2, 6), f = at ? a - s2 : a + s2;
+        return { cons: 'ESTÁS EN EL <b>' + a + '</b> Y SALTÁS <b>' + s2 + '</b> PARA ' + (at ? 'ATRÁS' : 'ADELANTE') + '. ¿A QUÉ NÚMERO LLEGÁS?', html: p1Recta((function () { var o2 = {}; o2[a] = { c: 'pa', t: 'ESTÁS' }; return o2; })()), campos: [{ v: f }], ayuda: 'CONTÁ LOS SALTOS DE A UNO EN LA RECTA.', bien: '¡MUY BIEN! LLEGÁS AL ' + f + '.' }; });
+      return respuesta(el, api, function () { var n = 10 * R(1, 9) + pick([0, 5]);
+        return { cons: '¿QUÉ NÚMERO VA EN EL LUGAR DEL <b>?</b>', html: p1R100([[n, 'pb', '?']]), campos: [{ v: n }], ayuda: 'MIRÁ EL REDONDO DE ANTES Y EL DE DESPUÉS.', bien: '¡MUY BIEN! ES EL ' + n + '.' }; }); }
+    if (md === 'decenas') { var q4 = p.que || 'contar';
+      if (q4 === 'cuantas') return respuesta(el, api, function () { var n = R(11, 99), dec = Math.random() < 0.5;
+        return { cons: '¿CUÁNTAS <b>' + (dec ? 'DECENAS' : 'UNIDADES') + '</b> TIENE EL ' + n + '?', html: p1Cifras(n), campos: [{ v: dec ? Math.floor(n / 10) : n % 10 }], ayuda: dec ? 'LAS DECENAS SON LA CIFRA DE LA IZQUIERDA.' : 'LAS UNIDADES SON LA CIFRA DE LA DERECHA.', bien: '¡MUY BIEN!' }; });
+      if (q4 === 'desarmar') return respuesta(el, api, function () { var d = R(2, 9), u = R(1, 9), n = d * 10 + u;
+        return { cons: 'DESARMÁ EL <b>' + n + '</b>: ' + n + ' = ___ + ___', html: p1DU(n), campos: [{ v: d * 10, lab: n + ' =' }, { v: u, lab: '+' }], ayuda: 'LAS DECENAS VALEN ' + d + ' VECES 10.', bien: '¡MUY BIEN! ' + n + ' = ' + d * 10 + ' + ' + u + '.' }; });
+      if (q4 === 'armar') return respuesta(el, api, function () { var d = R(2, 9), u = R(0, 9);
+        return { cons: '¿QUÉ NÚMERO ES <b>' + d * 10 + ' + ' + u + '</b>?', campos: [{ v: d * 10 + u }], ayuda: d + ' DECENAS Y ' + u + ' UNIDADES.', bien: '¡MUY BIEN! ES EL ' + (d * 10 + u) + '.' }; });
+      return respuesta(el, api, function () { var d = R(1, p.max ? Math.floor(p.max / 10) : 9), u = R(0, 9), n = d * 10 + u;
+        return { cons: 'CADA BOLSITA TIENE 10. ¿CUÁNTOS CARAMELOS HAY EN TOTAL?', html: p1Bolsas(n), campos: [{ v: n }], ayuda: 'CONTÁ LAS BOLSITAS DE 10 EN 10 Y DESPUÉS LOS SUELTOS.', bien: '¡MUY BIEN! HAY ' + n + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -1724,6 +1816,8 @@
     '.lb-p1-dz{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}.lb-p1-caja{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:6px;border:3px solid #087E83;border-radius:12px;font-size:1.4rem;line-height:1.1;background:#fff}.lb-p1-caja.on{background:#D7F0E9}.lb-p1-caja small{position:absolute;right:-10px;top:-12px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 6px;font-size:.85rem}',
     '.lb-p1-cif{display:flex;justify-content:center;gap:8px;margin:8px 0}.lb-p1-cif span{width:58px;height:70px;display:grid;place-items:center;border:3px solid #087E83;border-radius:14px;background:#fff;font-weight:800;font-size:2.4rem;color:#253638}.lb-p1-cif span.on{background:#087E83;color:#fff}.lb-p1-cif span.vac{border-style:dashed;color:#9dbdb9}',
     '.lb-p1-cua{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;width:100%;max-width:360px;margin:6px auto}.lb-p1-cua span{height:28px;display:grid;place-items:center;border:2px solid #9dbdb9;border-radius:6px;background:#fff;font-weight:800;font-size:.8rem;color:#253638;overflow:hidden}.lb-p1-cua span.vac{border:0;background:none}.lb-p1-cua span.fila{background:#D7F0E9;border-color:#087E83}.lb-p1-cua span.on{background:#087E83;border-color:#087E83;color:#fff}.lb-p1-cua span.sig{background:#FFE1D6;border-color:#C2552E}.lb-p1-cua span.oculto{border-style:dashed;border-color:#C2552E;color:#C2552E;background:#FFF3C4}',
+    '.lb-p1-du{display:flex;justify-content:center;gap:8px;margin:8px 0}.lb-p1-du span{display:flex;flex-direction:column;align-items:center;min-width:86px;padding:6px 8px;border:3px solid #9dbdb9;border-radius:14px;background:#fff}.lb-p1-du small{font-weight:800;font-size:.7rem;color:#4b6a6c}.lb-p1-du b{font-size:2rem;color:#253638}.lb-p1-du span.on{border-color:#087E83;background:#D7F0E9}.lb-p1-dos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.lb-p1-dos .lb-p1-du{padding:6px;border:2px dashed #9dbdb9;border-radius:16px;margin:4px 0}',
+    '.lb-p1-r100w{padding:64px 18px 8px}.lb-p1-r100{position:relative;height:30px;border-top:3px solid #253638}.lb-p1-t{position:absolute;top:-3px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}.lb-p1-t i{width:2px;height:10px;background:#253638}.lb-p1-t b{font-size:.62rem;color:#4b6a6c}.lb-p1-m{position:absolute;top:-32px;transform:translateX(-50%);min-width:24px;padding:2px 4px;border-radius:10px;background:#087E83;color:#fff;font-weight:800;font-size:.75rem;text-align:center}.lb-p1-m.pa{background:#C29A1E;top:-60px}.lb-p1-m.pa:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:28px;background:#C29A1E}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);

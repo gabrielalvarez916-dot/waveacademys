@@ -95,3 +95,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 |---|---|---|
 | `primeros` | ejemplo paso a paso | cuadro (`que`: contar, fila, columna, bajar; `hasta`: 30, 50, 100) · saltos (`de`: 2, 5, 10) · anterior_siguiente y tren ahora aceptan `min`/`max` y `desde`/`hasta` hasta 100 |
 | `primeros_x` | ejercicio | cuadro (`que`: falta, fila, columna, bajar; `hasta`) · saltos (`de`) · redondo (`max`: después de un 9) · redondos (nombre de los redondos) · anterior_siguiente con `min`/`max` |
+| `primeros` / `primeros_x` (Misiones 5 y 6) | ejemplo / ejercicio | comparar2 (hasta 99, decenas primero) · ordenar3 (`orden`: asc, desc) · recta100 (`que`: ubicar o saltar con `dir`: adelante, atras) · decenas (`que`: contar, escribir, desarmar; ejercicio: contar con `max`, cuantas, armar, desarmar) |
