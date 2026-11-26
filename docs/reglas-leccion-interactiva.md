@@ -22,7 +22,7 @@ Una pantalla = una idea. Mitad izquierda: texto corto. Mitad derecha: el EJEMPLO
 2. **Por qué es así / para qué sirve**: un `parrafo` que dé el sentido, no solo la regla.
 3. **Lo clave**: una `lista` de 2 o 3 viñetas: reglas, casos especiales y el error típico en una línea.
 4. **Entre 60 y 160 palabras** de texto. Si hace falta más, es otra pantalla con su propio ejemplo.
-5. **Ejemplo vivo SIEMPRE** (`ejemplo` con motor del banco): visual, con poquito texto. No repite la explicación (por eso `pasoapaso` no va).
+5. **Ejemplo vivo SIEMPRE, y PASO A PASO** (`ejemplo` con motor del banco): el alumno cambia los números y avanza con "Siguiente paso ▶"; cada paso agrega una parte al dibujo con UNA línea corta. Muestra el procedimiento, no repite la explicación de la izquierda (por eso `pasoapaso`, que es texto largo, no va). Solo se usan ejemplos marcados `pasos: true` en el banco (el control lo exige); si el que hace falta no lo tiene, se convierte con `pasoAPaso()` antes de usarlo.
 6. **El ejercicio pide SOLO lo explicado en esa pantalla o en las anteriores.** Nunca un tema que viene después ni algo de otro año (ej.: en "Potencias de 10" solo base 10 y exponentes naturales; en "El sistema binario" todavía no se pasa de un sistema a otro). Antes de elegirlo, se lee qué pide el motor. Los motores que mezclan contenidos llevan siempre `modo` (el control lo exige).
 7. **Ejercicio SIEMPRE** (`ejercicio` con motor del banco, con "Otros números"): ninguna pantalla sin práctica.
 8. Cada lección tiene botón **Imprimir** (sale solo): imprime el texto de cada pantalla y el Recordá, como el PDF.

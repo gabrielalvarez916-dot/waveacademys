@@ -46,3 +46,6 @@ Si un tema necesita un motor que no está, se crea en el banco (con su prueba au
 
 Modos agregados: `binario_conv` `{"modo":"a_binario"|"a_decimal"|"ambos"}` · `sexagesimal_conv` `{"modo":"convertir"|"ambos"}` (convertir = sin sumar).
 Para cargar actividades o examen cambiados en una misión YA cargada, el archivo lleva `"actualizar_preguntas": true` (si no, la máquina no las toca).
+
+## Ejemplos PASO A PASO (26/11/2026)
+Todo ejemplo de una lección muestra el procedimiento de a un paso (helper `pasoAPaso(v, P)` en `js/leccion-banco2.js`, con `P = [{vis, txt}]`) y está marcado `pasos: true`. Hoy lo están: `valor_posicional`, `descomponer`, `comparar_naturales`, `binario_pasar`, `sexa_operar`, `sexagesimal`, `binario_lamparas`, `potencias10` (nuevo: solo potencias de 10). Los demás ejemplos del banco se convierten cuando una lección los necesite: el control no deja usarlos antes.

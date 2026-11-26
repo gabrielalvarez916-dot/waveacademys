@@ -303,10 +303,6 @@
     respuesta(el, api, function () { var i = R(0, 2), u = POSD[i][1], x = R(100, 99999) / 1000, r = Math.round(x / u) * u;
       return { cons: 'Redondeá <b>' + fmt(x) + '</b> a los <b>' + POSD[i][0] + '</b>.', campos: [{ v: r2(r) }], ayuda: 'Mirá la cifra que sigue a los ' + POSD[i][0] + ': si es 5 o más, sube; si es menos de 5, queda igual.', bien: '¡Bien! ' + fmt(x) + ' ≈ ' + fmt(r2(r)) + '.' }; });
   } };
-  M.sexagesimal = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('s', 'Segundos', 60, 20000, 1, 7384), function (o) { var h = Math.floor(o.s / 3600), m = Math.floor(o.s % 3600 / 60), s = o.s % 60;
-      return '<p class="lb-nota">Se agrupa de a 60: 60 segundos forman 1 minuto y 60 minutos forman 1 hora.</p><p class="lb-nota">' + fmt(o.s) + ' s ÷ 60 = ' + Math.floor(o.s / 60) + ' min y sobran ' + s + ' s · ' + Math.floor(o.s / 60) + ' min ÷ 60 = ' + h + ' h y sobran ' + m + ' min.</p><p class="lb-res">' + fmt(o.s) + ' s = ' + h + ' h ' + m + ' min ' + s + ' s</p>'; });
-  } };
   M.sexagesimal_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { if (md === 'convertir') { var cv = R(0, 2);
@@ -320,111 +316,14 @@
   } };
   // Valor posicional: escribí un número y se ve cada cifra en su lugar, lo que vale y cómo se lee (modo 'valor' | 'leer')
   function leerN(x) { var m = Math.floor(x / 1e6), r = x % 1e6, o = []; if (m) o.push(m === 1 ? 'un millón' : H.letras(m).replace(/veintiuno$/, 'veintiún').replace(/(^| )uno$/, '$1un') + ' millones'); if (r || !m) o.push(H.letras(r)); return o.join(' '); }
-  M.valor_posicional = { tipo: 'ejemplo', render: function (el, p) {
-    var modo = p.modo === 'leer' ? 'leer' : 'valor', N0 = modo === 'leer' ? pick(['3040506000', '12007450', '905300210']) : pick(['57209', '403718', '2060935']);
-    var LUG = ['U', 'D', 'C', 'UM', 'DM', 'CM', 'U millón', 'D millón', 'C millón', 'U mil millones', 'D mil millones', 'C mil millones'];
-    var NOM = ['unidades', 'decenas', 'centenas', 'unidades de mil', 'decenas de mil', 'centenas de mil', 'unidades de millón', 'decenas de millón', 'centenas de millón', 'unidades de mil millones', 'decenas de mil millones', 'centenas de mil millones'];
-    var PER = ['Unidades', 'Miles', 'Millones', 'Miles de millones'];
-    el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + N0 + '" maxlength="12"></div><div class="lb-vista"></div>';
-    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista'), sel = -1;
-    function pintar() {
-      var s = String(inp.value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
-      if (!s) { v.innerHTML = '<p class="lb-ayuda">Escribí un número de hasta 12 cifras.</p>'; return; }
-      var n = s.length, nper = Math.ceil(n / 3), cab = '', fil = '', sub = '';
-      for (var g = nper - 1; g >= 0; g--) {
-        var cols = []; for (var j = 2; j >= 0; j--) { var pos = g * 3 + j; if (pos < n) cols.push(pos); }
-        cab += '<th colspan="' + cols.length + '" class="lb-vp-per">' + PER[g] + '</th>';
-        cols.forEach(function (pos) { var c = s[n - 1 - pos]; sub += '<th>' + LUG[pos].replace(' millón', 'M').replace(' mil millones', 'MM') + '</th>'; fil += '<td><button type="button" class="lb-vp-c' + (pos === sel ? ' on' : '') + (c === '0' ? ' cero' : '') + '" data-pos="' + pos + '">' + c + '</button></td>'; });
-      }
-      var html = '<div class="lb-vp-w"><table class="lb-vp' + (n > 7 ? ' vplargo' : '') + '"><thead><tr>' + cab + '</tr><tr>' + sub + '</tr></thead><tbody><tr>' + fil + '</tr></tbody></table></div>';
-      if (modo === 'valor') {
-        var ps = sel >= 0 && sel < n ? sel : n - 1, c = s[n - 1 - ps], val = Number(c) * Math.pow(10, ps);
-        html += '<p class="lb-vp-big">El <b>' + c + '</b> está en las <b>' + NOM[ps] + '</b>: vale <b>' + c + ' × ' + fmt(Math.pow(10, ps)) + ' = ' + fmt(val) + '</b></p><p class="lb-ayuda">Tocá otra cifra de la tabla para ver cuánto vale.</p>';
-        var partes = []; for (var k = n - 1; k >= 0; k--) { var d = s[n - 1 - k]; if (d !== '0') partes.push(fmt(Number(d) * Math.pow(10, k))); }
-        html += '<p class="lb-nota">' + fmt(Number(s)) + ' = ' + partes.join(' + ') + '</p>';
-      } else {
-        var trozos = [], L = leerN(Number(s));
-        for (var g2 = nper - 1; g2 >= 0; g2--) { var t = s.slice(Math.max(0, n - (g2 + 1) * 3), n - g2 * 3); trozos.push('<span class="lb-vp-tr' + (/^0+$/.test(t) ? ' cero' : '') + '"><b>' + t + '</b><small>' + PER[g2].toLowerCase() + '</small></span>'); }
-        html += '<div class="lb-vp-trozos">' + trozos.join('') + '</div><p class="lb-vp-big">Se lee: <b>' + esc(L) + '</b></p><p class="lb-ayuda">Los grupos se arman de a tres desde la derecha; el que tiene solo ceros no se nombra.</p>';
-      }
-      v.innerHTML = html;
-    }
-    inp.addEventListener('input', function () { sel = -1; pintar(); });
-    v.addEventListener('click', function (e) { var b = e.target.closest('[data-pos]'); if (b) { sel = Number(b.getAttribute('data-pos')); pintar(); } });
-    pintar();
-  } };
 
   // Comparar naturales: dos números; cuenta cifras y, si empatan, marca la primera cifra distinta
-  M.comparar_naturales = { tipo: 'ejemplo', render: function (el) {
-    var pares = [['405000', '98990'], ['405100', '405000'], ['1203400', '1230400'], ['56789', '56798']], p0 = pick(pares);
-    el.innerHTML = '<div class="lb-in-f dos"><label>Un número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[0] + '" maxlength="10"><label>Otro número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[1] + '" maxlength="10"></div><div class="lb-vista"></div>';
-    var ins = el.querySelectorAll('input'), v = el.querySelector('.lb-vista');
-    function pintar() {
-      var a = String(ins[0].value).replace(/\D/g, '').replace(/^0+(?=\d)/, ''), b = String(ins[1].value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
-      if (!a || !b) { v.innerHTML = '<p class="lb-ayuda">Escribí dos números.</p>'; return; }
-      var L = Math.max(a.length, b.length), dif = -1, paso, sig2;
-      if (a.length !== b.length) { paso = 'Tienen distinta cantidad de cifras: ' + a.length + ' y ' + b.length + '. <b>El que tiene más cifras es mayor</b>, sin mirar con qué cifra empieza.'; sig2 = a.length > b.length ? '>' : '<'; }
-      else { for (var i = 0; i < L; i++) if (a[i] !== b[i]) { dif = i; break; }
-        if (dif < 0) { paso = 'Tienen las mismas cifras en los mismos lugares.'; sig2 = '='; }
-        else { paso = 'Los dos tienen ' + L + ' cifras. Se comparan de izquierda a derecha: la primera distinta es <b>' + a[dif] + '</b> contra <b>' + b[dif] + '</b>.'; sig2 = a[dif] > b[dif] ? '>' : '<'; } }
-      function fila(x) { var pad = L - x.length, h = ''; for (var k = 0; k < L; k++) { var c = k < pad ? '' : x[k - pad]; h += '<span class="lb-cn-c' + (c === '' ? ' vac' : '') + (k === dif ? ' on' : (dif > 0 && k < dif ? ' eq' : '')) + '">' + c + '</span>'; } return '<div class="lb-cn-f">' + h + '</div>'; }
-      v.innerHTML = '<div class="lb-cn">' + fila(a) + fila(b) + '</div><p class="lb-vp-big">' + paso + '</p><p class="lb-cn-res">' + fmt(Number(a)) + ' <b>' + sig2 + '</b> ' + fmt(Number(b)) + '</p>';
-    }
-    [].forEach.call(ins, function (i) { i.addEventListener('input', pintar); }); pintar();
-  } };
 
   // Operar en sexagesimal: suma o resta de tiempos (h, min, s) o de ángulos (°, ′, ″), con los canjes de a 60 a la vista
-  M.sexa_operar = { tipo: 'ejemplo', render: function (el, p) {
-    var ang = p.modo === 'angulo', U = ang ? ['°', '′', '″'] : ['h', 'min', 's'], X = [[2, 50, 35], [1, 25, 40]];
-    if (ang) X = [[48, 35, 20], [27, 50, 45]];
-    function caja(i, j) { return '<input type="text" inputmode="numeric" class="lb-inp lb-sx-in" data-i="' + i + '" data-j="' + j + '" value="' + X[i][j] + '" maxlength="3"><em>' + U[j] + '</em>'; }
-    el.innerHTML = '<div class="lb-sx-op"><button type="button" class="lb-chip on" data-op="+">Sumar</button><button type="button" class="lb-chip" data-op="-">Restar</button></div>' +
-      '<div class="lb-sx-dat">' + [0, 1].map(function (i) { return '<div class="lb-sx-row">' + caja(i, 0) + caja(i, 1) + caja(i, 2) + '</div>'; }).join('') + '</div><div class="lb-vista"></div>';
-    var op = '+', v = el.querySelector('.lb-vista');
-    function val(i, j) { var x = Math.floor(num(el.querySelector('[data-i="' + i + '"][data-j="' + j + '"]').value)); return isNaN(x) || x < 0 ? 0 : x; }
-    function t(v3) { return v3[0] + ' ' + U[0] + ' ' + v3[1] + ' ' + U[1] + ' ' + v3[2] + ' ' + U[2]; }
-    function pintar() {
-      var a = [val(0, 0), val(0, 1), val(0, 2)], b = [val(1, 0), val(1, 1), val(1, 2)], pasos = [], r;
-      if (a[1] > 59 || a[2] > 59 || b[1] > 59 || b[2] > 59) { v.innerHTML = '<p class="lb-ayuda">Los ' + U[1] + ' y los ' + U[2] + ' van de 0 a 59.</p>'; return; }
-      if (op === '+') {
-        r = [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
-        pasos.push('Sumamos cada columna: ' + t(r) + '.');
-        if (r[2] >= 60) { pasos.push(r[2] + ' ' + U[2] + ' son 1 ' + U[1] + ' y ' + (r[2] - 60) + ' ' + U[2] + ': pasamos 1 a la columna de los ' + U[1] + '.'); r[2] -= 60; r[1] += 1; }
-        if (r[1] >= 60) { pasos.push(r[1] + ' ' + U[1] + ' son 1 ' + U[0] + ' y ' + (r[1] - 60) + ' ' + U[1] + ': pasamos 1 a la columna de los ' + U[0] + '.'); r[1] -= 60; r[0] += 1; }
-        if (pasos.length === 1) pasos.push('Ninguna columna llega a 60: no hace falta canjear.');
-      } else {
-        var A = a[0] * 3600 + a[1] * 60 + a[2], Bt = b[0] * 3600 + b[1] * 60 + b[2];
-        if (A < Bt) { v.innerHTML = '<p class="lb-ayuda">Para restar, la primera medida tiene que ser mayor.</p>'; return; }
-        r = a.slice();
-        if (r[2] < b[2]) { pasos.push('No alcanzan los ' + U[2] + ' (' + r[2] + ' − ' + b[2] + '): pedimos 1 ' + U[1] + ' = 60 ' + U[2] + '. Queda ' + (r[2] + 60) + ' ' + U[2] + '.'); r[2] += 60; r[1] -= 1; }
-        if (r[1] < b[1]) { pasos.push('Quedan ' + r[1] + ' ' + U[1] + ', que no alcanzan para restar ' + b[1] + ': pedimos 1 ' + U[0] + ' = 60 ' + U[1] + '. Queda ' + (r[1] + 60) + ' ' + U[1] + '.'); r[1] += 60; r[0] -= 1; }
-        if (!pasos.length) pasos.push('Cada columna alcanza: no hace falta pedir prestado.');
-        r = [r[0] - b[0], r[1] - b[1], r[2] - b[2]]; pasos.push('Restamos cada columna.');
-      }
-      v.innerHTML = '<ol class="lb-sx-pasos">' + pasos.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol><p class="lb-cn-res">' + t(a) + ' ' + (op === '+' ? '+' : '−') + ' ' + t(b) + ' = <b>' + t(r) + '</b></p>';
-    }
-    el.addEventListener('input', pintar);
-    el.addEventListener('click', function (e) { var bt = e.target.closest('[data-op]'); if (!bt) return; op = bt.getAttribute('data-op'); [].forEach.call(el.querySelectorAll('[data-op]'), function (x) { x.classList.toggle('on', x === bt); }); if (op === '-') { var q = el.querySelectorAll('.lb-sx-in'); var d = ang ? [[90, 0, 0], [37, 25, 10]] : [[5, 10, 0], [2, 45, 30]]; [].forEach.call(q, function (x) { x.value = d[+x.getAttribute('data-i')][+x.getAttribute('data-j')]; }); } pintar(); });
-    pintar();
-  } };
 
   // Descomponer (ejemplo visual): cada cifra se convierte en un bloque con su valor; modo 'aditiva' o 'potencias'
   var SUP = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
   function partesDe(s) { var n = s.length, o = []; for (var k = n - 1; k >= 0; k--) { var d = s[n - 1 - k]; if (d !== '0') o.push({ d: d, k: k }); } return o; }
-  M.descomponer = { tipo: 'ejemplo', render: function (el, p) {
-    var pot = p.modo === 'potencias', N0 = pick(['60427', '305081', '7208']);
-    el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + N0 + '" maxlength="9"></div><div class="lb-vista"></div>';
-    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
-    function pintar() {
-      var s = String(inp.value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
-      if (!s) { v.innerHTML = '<p class="lb-ayuda">Escribí un número.</p>'; return; }
-      var P = partesDe(s), col = function (i) { return 'c' + (i % 5); };
-      var cif = s.split('').map(function (d, i) { var k = s.length - 1 - i, j = -1; P.forEach(function (x, q) { if (x.k === k) j = q; }); return '<span class="lb-dc-d ' + (j < 0 ? 'cero' : col(j)) + '">' + d + '</span>'; }).join('');
-      var bloques = P.map(function (x, i) { var val = fmt(Number(x.d) * Math.pow(10, x.k)); return '<span class="lb-dc-b ' + col(i) + '"><b>' + (pot ? x.d + ' × 10' + SUP[x.k] : val) + '</b><small>' + (pot ? val : x.d + ' × ' + fmt(Math.pow(10, x.k))) + '</small></span>'; }).join('<i class="lb-dc-mas">+</i>');
-      v.innerHTML = '<div class="lb-dc-cif">' + cif + '</div><div class="lb-dc-fl">↓</div><div class="lb-dc-bs">' + bloques + '</div><p class="lb-cn-res">= ' + fmt(Number(s)) + '</p>';
-    }
-    inp.addEventListener('input', pintar); pintar();
-  } };
   // Descomponer (ejercicio): completar el valor de cada cifra (aditiva) o el exponente de cada potencia
   M.descomponer_x = { tipo: 'ejercicio', render: function (el, p, api) {
     var pot = p.modo === 'potencias';
@@ -436,26 +335,6 @@
     });
   } };
   // Pasar entre decimal y binario (ejemplo visual): 'a_binario' muestra la escalera de divisiones; 'a_decimal', el valor de cada lugar
-  M.binario_pasar = { tipo: 'ejemplo', render: function (el, p) {
-    var aBin = p.modo !== 'a_decimal';
-    el.innerHTML = '<div class="lb-in-f"><label>' + (aBin ? 'Número decimal (hasta 255)' : 'Número binario (solo 0 y 1)') + '</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + (aBin ? pick(['19', '45', '100']) : pick(['101101', '11001', '1110'])) + '" maxlength="' + (aBin ? 3 : 8) + '"></div><div class="lb-vista"></div>';
-    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
-    function pintar() {
-      var s = String(inp.value).trim();
-      if (aBin) {
-        var n = parseInt(s.replace(/\D/g, ''), 10);
-        if (!(n >= 1 && n <= 255)) { v.innerHTML = '<p class="lb-ayuda">Escribí un número del 1 al 255.</p>'; return; }
-        var filas = '', x = n, restos = [];
-        while (x > 0) { var q = Math.floor(x / 2), r = x % 2; restos.push(r); filas += '<tr><td>' + x + ' ÷ 2</td><td>= ' + q + '</td><td class="lb-bp-r">' + r + '</td></tr>'; x = q; }
-        v.innerHTML = '<div class="lb-bp-w"><table class="lb-bp"><thead><tr><th></th><th>cociente</th><th>resto</th></tr></thead><tbody>' + filas + '</tbody></table><div class="lb-bp-fl">↑<small>de abajo<br>hacia arriba</small></div></div><p class="lb-cn-res">' + n + ' = ' + restos.slice().reverse().join('') + '₂</p>';
-      } else {
-        if (!/^[01]+$/.test(s)) { v.innerHTML = '<p class="lb-ayuda">Un número binario solo tiene ceros y unos.</p>'; return; }
-        var L = s.length, sum = [], cel = s.split('').map(function (d, i) { var val = Math.pow(2, L - 1 - i); if (d === '1') sum.push(val); return '<div class="lb-bp-c' + (d === '1' ? ' on' : '') + '"><small>' + val + '</small><b>' + d + '</b></div>'; }).join('');
-        v.innerHTML = '<div class="lb-bp-row">' + cel + '</div><p class="lb-cn-res">' + s + '₂ = ' + (sum.length ? sum.join(' + ') + ' = ' + sum.reduce(function (a, b) { return a + b; }, 0) : '0') + '</p>';
-      }
-    }
-    inp.addEventListener('input', pintar); pintar();
-  } };
 
   // Operar en sexagesimal (ejercicio): sumar o restar dos tiempos o dos ángulos y escribir el resultado
   M.sexa_operar_x = { tipo: 'ejercicio', render: function (el, p, api) {
@@ -491,13 +370,205 @@
     });
   } };
 
-  M.binario_lamparas = { tipo: 'ejemplo', render: function (el) {
-    var on = [0, 0, 1, 0, 1, 1, 0, 1];
-    function pintar() { var v = 0; on.forEach(function (b, i) { if (b) v += Math.pow(2, 7 - i); });
-      el.innerHTML = '<p class="lb-ayuda">Tocá las lámparas para prenderlas (1) o apagarlas (0).</p><div class="lb2-lamps">' + on.map(function (b, i) { return '<button type="button" class="lb2-lamp' + (b ? ' on' : '') + '" data-l="' + i + '"><i>' + (b ? '💡' : '○') + '</i><b>' + b + '</b><small>' + Math.pow(2, 7 - i) + '</small></button>'; }).join('') + '</div>' +
-        '<p class="lb-nota">Cada lugar vale el doble que el de su derecha. Sumamos los prendidos: ' + (on.map(function (b, i) { return b ? Math.pow(2, 7 - i) : null; }).filter(function (x) { return x !== null; }).join(' + ') || '0') + '.</p><p class="lb-res">' + on.join('') + ' (binario) = ' + v + ' (decimal)</p>'; }
-    el.onclick = function (e) { var b = e.target.closest('[data-l]'); if (b) { var i = +b.getAttribute('data-l'); on[i] = on[i] ? 0 : 1; pintar(); } }; pintar();
+  // ======= EJEMPLOS PASO A PASO (modelo CIDEAD): el dibujo se arma de a un paso con "Siguiente paso", una línea corta por paso =======
+  // P = [{ vis: html del dibujo en ese paso, txt: una línea corta }]. Al cambiar los datos vuelve al paso 1.
+  function pasoAPaso(v, P) {
+    var k = 0;
+    function show() {
+      v.innerHTML = '<div class="lb-pp-vis">' + P[k].vis + '</div><p class="lb-pp-txt">' + P[k].txt + '</p><div class="lb-pp-nav"><button type="button" class="lb-pp-b" data-pp="-1"' + (k ? '' : ' disabled') + '>◀ Anterior</button><span>Paso ' + (k + 1) + ' de ' + P.length + '</span><button type="button" class="lb-pp-b sig" data-pp="1"' + (k < P.length - 1 ? '' : ' disabled') + '>Siguiente paso ▶</button></div>';
+    }
+    v.onclick = function (e) { var b = e.target.closest('[data-pp]'); if (!b || b.disabled) return; k = Math.max(0, Math.min(P.length - 1, k + Number(b.getAttribute('data-pp')))); show(); };
+    show();
+  }
+  function entrada(el, lab, val, max, w) { el.innerHTML = '<div class="lb-in-f"><label>' + lab + '</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + val + '" maxlength="' + max + '"' + (w ? ' style="width:' + w + 'ch!important"' : '') + '></div><div class="lb-vista"></div>'; return [el.querySelector('input'), el.querySelector('.lb-vista')]; }
+  function soloNum(x) { return String(x).replace(/\D/g, '').replace(/^0+(?=\d)/, ''); }
+  function unLetras(x) { return H.letras(x).replace(/veintiuno$/, 'veintiún').replace(/(^| )uno$/, '$1un'); }
+
+  // Valor posicional: 'valor' = cifra por cifra, cuánto vale cada una; 'leer' = separar en períodos y leer grupo por grupo
+  var LUG = ['U', 'D', 'C', 'UM', 'DM', 'CM', 'UMi', 'DMi', 'CMi', 'UMM', 'DMM', 'CMM'];
+  var NOM = ['unidades', 'decenas', 'centenas', 'unidades de mil', 'decenas de mil', 'centenas de mil', 'unidades de millón', 'decenas de millón', 'centenas de millón', 'unidades de mil millones', 'decenas de mil millones', 'centenas de mil millones'];
+  var PER = ['Unidades', 'Miles', 'Millones', 'Miles de millones'];
+  function tablaVP(s, hl) {
+    var n = s.length, nper = Math.ceil(n / 3), cab = '', sub = '', fil = '';
+    for (var g = nper - 1; g >= 0; g--) { var cols = []; for (var j = 2; j >= 0; j--) { var pos = g * 3 + j; if (pos < n) cols.push(pos); }
+      cab += '<th colspan="' + cols.length + '" class="lb-vp-per">' + PER[g] + '</th>';
+      cols.forEach(function (pos) { var c = s[n - 1 - pos]; sub += '<th>' + LUG[pos] + '</th>'; fil += '<td><span class="lb-vp-c' + (pos === hl ? ' on' : '') + (c === '0' ? ' cero' : '') + '">' + c + '</span></td>'; }); }
+    return '<div class="lb-vp-w"><table class="lb-vp' + (n > 7 ? ' vplargo' : '') + '"><thead><tr>' + cab + '</tr><tr>' + sub + '</tr></thead><tbody><tr>' + fil + '</tr></tbody></table></div>';
+  }
+  function gruposDe(s) { var n = s.length, nper = Math.ceil(n / 3), o = []; for (var g = nper - 1; g >= 0; g--) o.push({ g: g, t: s.slice(Math.max(0, n - (g + 1) * 3), n - g * 3) }); return o; }
+  function leerGrupo(G, gs) { var v = Number(G.t); if (!v) return '';
+    if (G.g === 0) return H.letras(v);
+    if (G.g === 1 || G.g === 3) return v === 1 ? 'mil' : unLetras(v) + ' mil';
+    var hayMM = gs.some(function (x) { return x.g === 3 && Number(x.t); }); return (v === 1 && !hayMM) ? 'un millón' : (v === 1 ? 'un' : unLetras(v)) + ' millones'; }
+  M.valor_posicional = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var leer = p.modo === 'leer', io = entrada(el, 'Escribí un número', leer ? pick(['3040506000', '12007450', '905300210']) : pick(['57209', '403718', '2060935']), leer ? 12 : 9), inp = io[0], v = io[1];
+    function armar() {
+      var s = soloNum(inp.value); if (!s) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí un número.</p>'; return; }
+      var n = s.length, P = [];
+      if (!leer) {
+        P.push({ vis: tablaVP(s, -1), txt: 'Ubicamos cada cifra en su lugar, contando desde la derecha.' });
+        var partes = [];
+        for (var k = n - 1; k >= 0; k--) { var d = s[n - 1 - k]; if (d === '0') continue; var val = fmt(Number(d) * Math.pow(10, k)); partes.push(val);
+          P.push({ vis: tablaVP(s, k) + '<p class="lb-cn-res">' + partes.join(' + ') + '</p>', txt: 'El <b>' + d + '</b> está en las <b>' + NOM[k] + '</b>: vale ' + d + ' × ' + fmt(Math.pow(10, k)) + ' = <b>' + val + '</b>.' }); }
+        P.push({ vis: tablaVP(s, -1) + '<p class="lb-cn-res">' + partes.join(' + ') + ' = ' + fmt(Number(s)) + '</p>', txt: 'Sumando lo que vale cada cifra volvemos al número.' });
+      } else {
+        var gs = gruposDe(s), tro = function (hl, leidos) { return '<div class="lb-vp-trozos">' + gs.map(function (G, i) { return '<span class="lb-vp-tr' + (/^0+$/.test(G.t) ? ' cero' : '') + (i === hl ? ' on' : '') + '"><b>' + G.t + '</b><small>' + PER[G.g].toLowerCase() + '</small>' + (leidos && i <= leidos.i && leerGrupo(G, gs) ? '<em>' + leerGrupo(G, gs) + '</em>' : '') + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: '<p class="lb-vp-num">' + s + '</p>', txt: 'Para leerlo, primero hay que separarlo.' });
+        P.push({ vis: tro(-1), txt: 'Separamos las cifras de a tres, <b>desde la derecha</b>.' });
+        gs.forEach(function (G, i) { var l = leerGrupo(G, gs); P.push({ vis: tro(i, { i: i }), txt: l ? 'El grupo <b>' + G.t + '</b> se lee «<b>' + l + '</b>».' : 'El grupo <b>' + G.t + '</b> tiene solo ceros: no se nombra.' }); });
+        var todo = gs.map(function (G) { return leerGrupo(G, gs); }).filter(Boolean).join(' ') || 'cero';
+        P.push({ vis: tro(-1, { i: 99 }) + '<p class="lb-vp-big">Se lee: <b>' + esc(todo) + '</b></p>', txt: 'Juntamos los grupos en orden.' });
+      }
+      pasoAPaso(v, P);
+    }
+    inp.addEventListener('input', armar); armar();
   } };
+
+  // Descomponer: bloque por bloque
+  M.descomponer = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var pot = p.modo === 'potencias', io = entrada(el, 'Escribí un número', pick(['60427', '305081', '7208']), 9), inp = io[0], v = io[1];
+    function armar() {
+      var s = soloNum(inp.value); if (!s) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí un número.</p>'; return; }
+      var Pt = partesDe(s), col = function (i) { return 'c' + (i % 5); }, P = [];
+      var cif = function (hasta) { return '<div class="lb-dc-cif">' + s.split('').map(function (d, i) { var k = s.length - 1 - i, j = -1; Pt.forEach(function (x, q) { if (x.k === k) j = q; }); return '<span class="lb-dc-d ' + (j < 0 ? 'cero' : (j <= hasta ? col(j) : 'pend')) + '">' + d + '</span>'; }).join('') + '</div>'; };
+      var bl = function (hasta) { return '<div class="lb-dc-bs">' + Pt.slice(0, hasta + 1).map(function (x, i) { var val = fmt(Number(x.d) * Math.pow(10, x.k)); return '<span class="lb-dc-b ' + col(i) + '"><b>' + (pot ? x.d + ' × 10' + SUP[x.k] : val) + '</b><small>' + (pot ? val : x.d + ' × ' + fmt(Math.pow(10, x.k))) + '</small></span>'; }).join('<i class="lb-dc-mas">+</i>') + '</div>'; };
+      P.push({ vis: cif(-1), txt: 'Miramos las cifras. Los ceros no suman nada: los salteamos.' });
+      Pt.forEach(function (x, i) { P.push({ vis: cif(i) + bl(i), txt: 'El <b>' + x.d + '</b> vale <b>' + (pot ? x.d + ' × 10' + SUP[x.k] : fmt(Number(x.d) * Math.pow(10, x.k))) + '</b>' + (pot ? ' (su lugar es el ' + x.k + ' contando desde 0).' : '.') }); });
+      P.push({ vis: cif(99) + bl(99) + '<p class="lb-cn-res">= ' + fmt(Number(s)) + '</p>', txt: 'Sumando todos los bloques volvemos al número.' });
+      pasoAPaso(v, P);
+    }
+    inp.addEventListener('input', armar); armar();
+  } };
+
+  // Comparar dos naturales
+  M.comparar_naturales = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    var p0 = pick([['405000', '98990'], ['405100', '405000'], ['1203400', '1230400'], ['56789', '56798']]);
+    el.innerHTML = '<div class="lb-in-f dos"><label>Un número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[0] + '" maxlength="10"><label>Otro número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[1] + '" maxlength="10"></div><div class="lb-vista"></div>';
+    var ins = el.querySelectorAll('input'), v = el.querySelector('.lb-vista');
+    function armar() {
+      var a = soloNum(ins[0].value), b = soloNum(ins[1].value);
+      if (!a || !b) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí dos números.</p>'; return; }
+      var L = Math.max(a.length, b.length), dif = -1, P = [];
+      function fila(x, d) { var pad = L - x.length, h = ''; for (var k = 0; k < L; k++) { var c = k < pad ? '' : x[k - pad]; h += '<span class="lb-cn-c' + (c === '' ? ' vac' : '') + (d >= 0 && k === d ? ' on' : (d > 0 && k < d ? ' eq' : '')) + '">' + c + '</span>'; } return '<div class="lb-cn-f">' + h + '</div>'; }
+      var dos = function (d) { return '<div class="lb-cn">' + fila(a, d) + fila(b, d) + '</div>'; };
+      P.push({ vis: dos(-1), txt: 'Ponemos un número debajo del otro, alineados a la derecha.' });
+      var sg;
+      if (a.length !== b.length) { sg = a.length > b.length ? '>' : '<'; P.push({ vis: dos(-1), txt: 'Contamos las cifras: <b>' + a.length + '</b> y <b>' + b.length + '</b>. El que tiene más cifras es mayor.' }); }
+      else { for (var i = 0; i < L; i++) if (a[i] !== b[i]) { dif = i; break; }
+        P.push({ vis: dos(-1), txt: 'Los dos tienen <b>' + L + '</b> cifras: hay que comparar cifra por cifra, desde la izquierda.' });
+        if (dif < 0) sg = '=';
+        else { sg = a[dif] > b[dif] ? '>' : '<'; P.push({ vis: dos(dif), txt: (dif ? 'Las primeras cifras son iguales. ' : '') + 'La primera distinta: <b>' + a[dif] + '</b> contra <b>' + b[dif] + '</b>.' }); } }
+      P.push({ vis: dos(dif) + '<p class="lb-cn-res">' + fmt(Number(a)) + ' <b>' + sg + '</b> ' + fmt(Number(b)) + '</p>', txt: sg === '=' ? 'Son el mismo número.' : 'Ya sabemos cuál es mayor.' });
+      pasoAPaso(v, P);
+    }
+    [].forEach.call(ins, function (i) { i.addEventListener('input', armar); }); armar();
+  } };
+
+  // Pasar entre decimal y binario
+  M.binario_pasar = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var aBin = p.modo !== 'a_decimal', io = entrada(el, aBin ? 'Número decimal (hasta 255)' : 'Número binario (solo 0 y 1)', aBin ? pick(['19', '45', '100']) : pick(['101101', '11001', '1110']), aBin ? 3 : 8), inp = io[0], v = io[1];
+    function armar() {
+      var s = String(inp.value).trim(), P = [];
+      if (aBin) {
+        var n = parseInt(soloNum(s), 10);
+        if (!(n >= 1 && n <= 255)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí un número del 1 al 255.</p>'; return; }
+        var rows = [], x = n; while (x > 0) { rows.push({ x: x, q: Math.floor(x / 2), r: x % 2 }); x = Math.floor(x / 2); }
+        var tab = function (h, fin) { return '<div class="lb-bp-w"><table class="lb-bp"><thead><tr><th></th><th>cociente</th><th>resto</th></tr></thead><tbody>' + rows.slice(0, h).map(function (r) { return '<tr><td>' + r.x + ' ÷ 2</td><td>= ' + r.q + '</td><td class="lb-bp-r' + (fin ? '' : ' tenue') + '">' + r.r + '</td></tr>'; }).join('') + '</tbody></table>' + (fin ? '<div class="lb-bp-fl">↑<small>de abajo<br>hacia arriba</small></div>' : '') + '</div>'; };
+        rows.forEach(function (r, i) { P.push({ vis: tab(i + 1), txt: '<b>' + r.x + ' ÷ 2 = ' + r.q + '</b> y sobra <b>' + r.r + '</b>.' + (r.q === 0 ? ' El cociente dio 0: terminamos.' : '') }); });
+        P.push({ vis: tab(rows.length, true) + '<p class="lb-cn-res">' + n + ' = ' + rows.map(function (r) { return r.r; }).reverse().join('') + '₂</p>', txt: 'Leemos los restos <b>de abajo hacia arriba</b>.' });
+      } else {
+        if (!/^[01]+$/.test(s)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Un número binario solo tiene ceros y unos.</p>'; return; }
+        var Ln = s.length, fila = function (vals, marcar) { return '<div class="lb-bp-row">' + s.split('').map(function (d, i) { var val = Math.pow(2, Ln - 1 - i); return '<div class="lb-bp-c' + (marcar && d === '1' ? ' on' : '') + '"><small>' + (vals ? val : '&nbsp;') + '</small><b>' + d + '</b></div>'; }).join('') + '</div>'; };
+        var sum = []; s.split('').forEach(function (d, i) { if (d === '1') sum.push(Math.pow(2, Ln - 1 - i)); });
+        P.push({ vis: fila(false, false), txt: 'Este es el número en binario.' });
+        P.push({ vis: fila(true, false), txt: 'Arriba de cada cifra, el valor de su lugar: <b>1</b> a la derecha y el doble en cada lugar hacia la izquierda.' });
+        P.push({ vis: fila(true, true), txt: 'Nos quedamos con los lugares que tienen <b>1</b>.' });
+        P.push({ vis: fila(true, true) + '<p class="lb-cn-res">' + s + '₂ = ' + (sum.length ? sum.join(' + ') + ' = ' + sum.reduce(function (a, b) { return a + b; }, 0) : '0') + '</p>', txt: 'Sumamos esos valores.' });
+      }
+      pasoAPaso(v, P);
+    }
+    inp.addEventListener('input', armar); armar();
+  } };
+
+  // Operar en sexagesimal: tiempos (h, min, s) o ángulos (°, ′, ″), columna por columna
+  M.sexa_operar = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var ang = p.modo === 'angulo', U = ang ? ['°', '′', '″'] : ['h', 'min', 's'], X = ang ? [[48, 35, 20], [27, 50, 45]] : [[2, 50, 35], [1, 25, 40]];
+    function caja(i, j) { return '<input type="text" inputmode="numeric" class="lb-inp lb-sx-in" data-i="' + i + '" data-j="' + j + '" value="' + X[i][j] + '" maxlength="3"><em>' + U[j] + '</em>'; }
+    el.innerHTML = '<div class="lb-sx-op"><button type="button" class="lb-chip on" data-op="+">Sumar</button><button type="button" class="lb-chip" data-op="-">Restar</button></div>' +
+      '<div class="lb-sx-dat">' + [0, 1].map(function (i) { return '<div class="lb-sx-row">' + caja(i, 0) + caja(i, 1) + caja(i, 2) + '</div>'; }).join('') + '</div><div class="lb-vista"></div>';
+    var op = '+', v = el.querySelector('.lb-vista');
+    function val(i, j) { var x = Math.floor(num(el.querySelector('[data-i="' + i + '"][data-j="' + j + '"]').value)); return isNaN(x) || x < 0 ? 0 : x; }
+    function tabla(a, b, r, hl) { var c = function (v3, cls) { return '<tr class="' + (cls || '') + '"><td>' + (cls === 'res' ? '' : (cls === 'b' ? (op === '+' ? '+' : '−') : '')) + '</td>' + [0, 1, 2].map(function (j) { return '<td class="' + (hl === j ? 'on' : '') + '">' + (v3 ? v3[j] + ' ' + U[j] : '') + '</td>'; }).join('') + '</tr>'; };
+      return '<table class="lb-sx-t">' + c(a) + c(b, 'b') + c(r, 'res') + '</table>'; }
+    function armar() {
+      var a = [val(0, 0), val(0, 1), val(0, 2)], b = [val(1, 0), val(1, 1), val(1, 2)], P = [];
+      if (a[1] > 59 || a[2] > 59 || b[1] > 59 || b[2] > 59) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Los ' + U[1] + ' y los ' + U[2] + ' van de 0 a 59.</p>'; return; }
+      P.push({ vis: tabla(a, b, null), txt: 'Ponemos las medidas en columnas: ' + U[0] + ' con ' + U[0] + ', ' + U[1] + ' con ' + U[1] + ' y ' + U[2] + ' con ' + U[2] + '.' });
+      if (op === '+') {
+        var r = [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+        P.push({ vis: tabla(a, b, r.slice()), txt: 'Sumamos cada columna.' });
+        if (r[2] >= 60) { r[2] -= 60; r[1] += 1; P.push({ vis: tabla(a, b, r.slice(), 2), txt: 'Los ' + U[2] + ' pasan de 60: canjeamos 60 ' + U[2] + ' por <b>1 ' + U[1] + '</b>.' }); }
+        if (r[1] >= 60) { r[1] -= 60; r[0] += 1; P.push({ vis: tabla(a, b, r.slice(), 1), txt: 'Los ' + U[1] + ' pasan de 60: canjeamos 60 ' + U[1] + ' por <b>1 ' + U[0] + '</b>.' }); }
+        P.push({ vis: tabla(a, b, r) + '<p class="lb-cn-res">= ' + r[0] + ' ' + U[0] + ' ' + r[1] + ' ' + U[1] + ' ' + r[2] + ' ' + U[2] + '</p>', txt: 'Ninguna columna llega a 60: ese es el resultado.' });
+      } else {
+        if (a[0] * 3600 + a[1] * 60 + a[2] < b[0] * 3600 + b[1] * 60 + b[2]) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Para restar, la primera medida tiene que ser mayor.</p>'; return; }
+        var t = a.slice();
+        if (t[2] < b[2]) { t[2] += 60; t[1] -= 1; P.push({ vis: tabla(t.slice(), b, null, 2), txt: 'No alcanzan los ' + U[2] + ': pedimos 1 ' + U[1] + ' y lo cambiamos por <b>60 ' + U[2] + '</b>.' }); }
+        if (t[1] < b[1]) { t[1] += 60; t[0] -= 1; P.push({ vis: tabla(t.slice(), b, null, 1), txt: 'No alcanzan los ' + U[1] + ': pedimos 1 ' + U[0] + ' y lo cambiamos por <b>60 ' + U[1] + '</b>.' }); }
+        var rr = [t[0] - b[0], t[1] - b[1], t[2] - b[2]];
+        P.push({ vis: tabla(t, b, rr) + '<p class="lb-cn-res">= ' + rr[0] + ' ' + U[0] + ' ' + rr[1] + ' ' + U[1] + ' ' + rr[2] + ' ' + U[2] + '</p>', txt: 'Ahora restamos cada columna.' });
+      }
+      pasoAPaso(v, P);
+    }
+    el.addEventListener('input', armar);
+    el.addEventListener('click', function (e) { var bt = e.target.closest('[data-op]'); if (!bt) return; op = bt.getAttribute('data-op'); [].forEach.call(el.querySelectorAll('[data-op]'), function (x) { x.classList.toggle('on', x === bt); });
+      if (op === '-') { var d = ang ? [[90, 0, 0], [37, 25, 10]] : [[5, 10, 0], [2, 45, 30]]; [].forEach.call(el.querySelectorAll('.lb-sx-in'), function (x) { x.value = d[+x.getAttribute('data-i')][+x.getAttribute('data-j')]; }); } armar(); });
+    armar();
+  } };
+
+  // Agrupar de a 60: segundos a horas, minutos y segundos
+  M.sexagesimal = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    var io = entrada(el, 'Segundos', pick(['7384', '4000', '9125']), 6), inp = io[0], v = io[1];
+    function caj(h, m, s) { return '<div class="lb-sg">' + (h != null ? '<span><b>' + h + '</b><small>h</small></span>' : '') + (m != null ? '<span><b>' + m + '</b><small>min</small></span>' : '') + '<span><b>' + s + '</b><small>s</small></span></div>'; }
+    function armar() {
+      var t = parseInt(soloNum(inp.value), 10); if (!(t >= 1)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí una cantidad de segundos.</p>'; return; }
+      var m = Math.floor(t / 60), s = t % 60, h = Math.floor(m / 60), mm = m % 60, P = [];
+      P.push({ vis: caj(null, null, fmt(t)), txt: 'Tenemos <b>' + fmt(t) + ' segundos</b>.' });
+      P.push({ vis: caj(null, m, s), txt: 'Cada 60 s forman 1 min: <b>' + fmt(t) + ' ÷ 60 = ' + m + '</b> min y sobran <b>' + s + '</b> s.' });
+      if (m >= 60) P.push({ vis: caj(h, mm, s), txt: 'Cada 60 min forman 1 h: <b>' + m + ' ÷ 60 = ' + h + '</b> h y sobran <b>' + mm + '</b> min.' });
+      P.push({ vis: caj(m >= 60 ? h : null, m >= 60 ? mm : m, s) + '<p class="lb-cn-res">' + fmt(t) + ' s = ' + (m >= 60 ? h + ' h ' + mm + ' min ' : m + ' min ') + s + ' s</p>', txt: 'Ya no queda ningún grupo de 60.' });
+      pasoAPaso(v, P);
+    }
+    inp.addEventListener('input', armar); armar();
+  } };
+
+  // Sistema binario: los lugares valen 1, 2, 4, 8…; al final se prenden y apagan las lámparas
+  M.binario_lamparas = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    el.innerHTML = '<div class="lb-vista"></div>'; var v = el.querySelector('.lb-vista'), on = [0, 0, 1, 0, 1, 1, 0, 1];
+    function lamps(ver, toca) { return '<div class="lb2-lamps">' + on.map(function (b, i) { var val = Math.pow(2, 7 - i), vis = 7 - i < ver; return '<button type="button" class="lb2-lamp' + (b && toca ? ' on' : '') + '"' + (toca ? ' data-l="' + i + '"' : ' disabled') + '><i>' + (b && toca ? '💡' : '○') + '</i><b>' + (toca ? b : '') + '</b><small>' + (vis ? val : '?') + '</small></button>'; }).join('') + '</div>'; }
+    var P = [{ vis: lamps(0), txt: 'Cada lámpara es un lugar. Puede estar apagada (0) o prendida (1).' },
+      { vis: lamps(1), txt: 'El lugar de la derecha vale <b>1</b>.' }, { vis: lamps(2), txt: 'El siguiente vale el doble: <b>2</b>.' },
+      { vis: lamps(3), txt: 'El doble de 2: <b>4</b>.' }, { vis: lamps(4), txt: 'El doble de 4: <b>8</b>.' }, { vis: lamps(8), txt: 'Y así sigue: 16, 32, 64, 128.' }];
+    function fin() { var sum = []; on.forEach(function (b, i) { if (b) sum.push(Math.pow(2, 7 - i)); }); return lamps(8, true) + '<p class="lb-cn-res">' + on.join('') + '₂ = ' + (sum.join(' + ') || '0') + ' = ' + sum.reduce(function (a, b) { return a + b; }, 0) + '</p>'; }
+    P.push({ vis: fin(), txt: 'Tocá las lámparas: el número vale la suma de los lugares prendidos.' });
+    pasoAPaso(v, P);
+    el.addEventListener('click', function (e) { var b = e.target.closest('[data-l]'); if (!b) return; var i = +b.getAttribute('data-l'); on[i] = on[i] ? 0 : 1; P[P.length - 1].vis = fin(); v.querySelector('.lb-pp-vis').innerHTML = P[P.length - 1].vis; });
+  } };
+
+  // Potencias de 10: el 10 se multiplica por sí mismo, un factor por paso; cada factor agrega un cero
+  M.potencias10 = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    var io = entrada(el, 'Exponente (de 0 a 7)', pick(['3', '5', '4']), 1, 4), inp = io[0], v = io[1];
+    function armar() {
+      var e = parseInt(soloNum(inp.value), 10); if (!(e >= 0 && e <= 7)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Probá con un exponente del 0 al 7.</p>'; return; }
+      var P = [{ vis: '<p class="lb-pt-g">10' + SUP[e] + '</p>', txt: 'El exponente <b>' + e + '</b> dice cuántas veces se multiplica el 10.' }];
+      if (e === 0) P.push({ vis: '<p class="lb-pt-g">10⁰ = 1</p>', txt: 'Con exponente 0 no se multiplica ninguna vez: da <b>1</b>.' });
+      for (var i = 1; i <= e; i++) P.push({ vis: '<p class="lb-pt-f">' + Array(i + 1).join('10 × ').slice(0, -3) + '</p><p class="lb-pt-g">= ' + fmt(Math.pow(10, i)) + '</p>', txt: i === 1 ? 'Un 10.' : 'Otro × 10: se agrega un cero. Ya van <b>' + i + '</b> ceros.' });
+      if (e > 0) P.push({ vis: '<p class="lb-pt-g">10' + SUP[e] + ' = ' + fmt(Math.pow(10, e)) + '</p>', txt: 'Un 1 seguido de <b>' + e + '</b> ceros: tantos como el exponente.' });
+      pasoAPaso(v, P);
+    }
+    inp.addEventListener('input', armar); armar();
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);
@@ -734,6 +805,13 @@
     '.lb-dc-d.c0{color:#087E83}.lb-dc-d.c1{color:#253638}.lb-dc-d.c2{color:#3BA99C}.lb-dc-d.c3{color:#066A6E}.lb-dc-d.c4{color:#5C8D89}.lb-dc-b.c0{background:#087E83}.lb-dc-b.c1{background:#253638}.lb-dc-b.c2{background:#3BA99C}.lb-dc-b.c3{background:#066A6E}.lb-dc-b.c4{background:#5C8D89}',
     '.lb-bp-w{display:flex;justify-content:center;align-items:center;gap:14px}.lb-bp{border-collapse:collapse;font-size:1.15rem}.lb-bp td,.lb-bp th{padding:4px 10px;text-align:left}.lb-bp th{font-size:.75rem;color:#4b6a6c}.lb-bp-r{font-weight:800;color:#fff;background:#087E83;text-align:center!important;border-radius:8px;border:3px solid #fff}',
     '.lb-bp-fl{font-size:2.2rem;color:#087E83;text-align:center;line-height:1}.lb-bp-fl small{display:block;font-size:.7rem;font-weight:700}.lb-bp-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}.lb-bp-c{display:flex;flex-direction:column;align-items:center;gap:4px}.lb-bp-c small{font-weight:800;color:#4b6a6c}.lb-bp-c b{width:42px;height:50px;display:grid;place-items:center;border:2px solid #9dbdb9;border-radius:10px;font-size:1.5rem;color:#9dbdb9}.lb-bp-c.on b{background:#087E83;border-color:#087E83;color:#fff}.lb-bp-c.on small{color:#087E83}',
+    '.lb-pp-vis{min-height:180px;display:flex;flex-direction:column;justify-content:center}.lb-pp-txt{font-size:1.1rem;line-height:1.45;margin:12px 0 10px;padding:10px 14px;background:#D7F0E9;border-radius:12px;color:#253638;min-height:2.9em}',
+    '.lb-pp-nav{display:flex;align-items:center;justify-content:space-between;gap:8px}.lb-pp-nav span{font-weight:800;color:#4b6a6c;font-size:.9rem}.lb-pp-b{border:2px solid #087E83;background:#fff;color:#066A6E;font-weight:800;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:inherit}.lb-pp-b.sig{background:#087E83;color:#fff}.lb-pp-b:disabled{opacity:.35;cursor:default}',
+    '.lb-vp-c{display:inline-grid;place-items:center}.lb-vp-num{font-size:2rem;font-weight:800;letter-spacing:.12em;text-align:center;color:#066A6E;margin:0}.lb-vp-tr.on{background:#087E83}.lb-vp-tr.on b,.lb-vp-tr.on small{color:#fff}.lb-vp-tr em{font-style:normal;font-weight:700;font-size:.85rem;color:#066A6E;margin-top:4px;max-width:130px;text-align:center}.lb-vp-tr.on em{color:#fff}',
+    '.lb-dc-d.pend{color:#253638;border-color:#9dbdb9}.lb-bp-r.tenue{background:#5C8D89}',
+    '.lb-sx-t{border-collapse:collapse;margin:0 auto;font-size:1.2rem}.lb-sx-t td{padding:6px 12px;text-align:right;font-weight:700}.lb-sx-t td.on{background:#087E83;color:#fff;border-radius:8px}.lb-sx-t tr.res td{border-top:3px solid #253638;color:#066A6E;font-weight:800}',
+    '.lb-sg{display:flex;justify-content:center;gap:10px}.lb-sg span{display:flex;flex-direction:column;align-items:center;padding:10px 18px;border-radius:14px;background:#087E83;color:#fff}.lb-sg b{font-size:1.8rem}.lb-sg small{font-weight:700}',
+    '.lb-pt-g{font-size:2.2rem;font-weight:800;text-align:center;color:#066A6E;margin:4px 0}.lb-pt-f{font-size:1.2rem;text-align:center;margin:0;color:#253638}',
     '.lb-vp-w{overflow-x:auto}.lb-vp{border-collapse:separate;border-spacing:4px;margin:4px auto}.lb-vp th{font-size:.72rem;color:#4b6a6c;font-weight:800;text-align:center;padding:2px 4px}.lb-vp th.lb-vp-per{background:#D7F0E9;color:#066A6E;border-radius:8px;font-size:.78rem;padding:4px 6px}',
     '.lb-vp-c{width:44px;height:52px;border:2px solid #087E83;border-radius:12px;background:#fff;font-family:inherit;font-weight:800;font-size:1.6rem;line-height:1;color:#253638;cursor:pointer}.lb-vp.vplargo .lb-vp-c{width:32px;height:44px;font-size:1.25rem;border-radius:10px}.lb-vp.vplargo{border-spacing:2px}.lb-vp-in{width:14ch!important;font-size:1.2rem}.lb-vp-c.cero{color:#9dbdb9}.lb-vp-c.on{background:#087E83;color:#fff}',
     '.lb-vp-big{font-size:1.15rem;line-height:1.5;margin:12px 0 4px}.lb-vp-trozos{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}.lb-vp-tr{display:flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:14px;background:#D7F0E9}.lb-vp-tr b{font-size:1.5rem;letter-spacing:.08em;color:#066A6E}.lb-vp-tr.cero{opacity:.5}.lb-vp-tr small{font-weight:700;color:#4b6a6c}',
