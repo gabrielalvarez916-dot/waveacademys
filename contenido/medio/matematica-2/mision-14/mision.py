@@ -147,16 +147,83 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "5 filas de 4. 20.", "solo": "20 libros.", "carpeta": ["3.", "15: 3 × 5.", "Sumó 3 + 5 en vez de multiplicar."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("FILAS Y COLUMNAS", [LD("FILA Y COLUMNA", "LA <b>FILA</b> VA ACOSTADA Y LA <b>COLUMNA</b> VA PARADA."),
+   LL("UNA BANDEJA DE 3 FILAS Y 4 COLUMNAS.", "CONTAMOS LAS DOS.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "filas"}),
+ T("CONTAR LAS DOS", [LD("CUÁNTAS", "CONTAMOS CUÁNTAS <b>FILAS</b> Y CUÁNTAS <b>COLUMNAS</b> TIENE LA BANDEJA."),
+   LL("CADA FILA TIENE TANTOS COMO COLUMNAS.", "NO CONFUNDAS FILA CON COLUMNA.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "filas"}),
+], "recuerda": [
+ RC("LA FILA", "VA ACOSTADA, DE IZQUIERDA A DERECHA.", "3 FILAS"),
+ RC("LA COLUMNA", "VA PARADA, DE ARRIBA ABAJO.", "4 COLUMNAS"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("QUÉ ES UN ARREGLO", [LD("ARREGLO", "UN <b>ARREGLO</b> TIENE TODAS LAS FILAS CON LA MISMA CANTIDAD."),
+   LL("3 FILAS DE 5 ES UN ARREGLO.", "UNA FILA DE 6 Y OTRA DE 4 NO LO ES.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "arreglo"}),
+ T("CONTAR FILA POR FILA", [LD("FILA POR FILA", "CONTAMOS <b>FILA POR FILA</b>, SUMANDO LO QUE TIENE CADA UNA."),
+   LL("3 FILAS DE 5: 5, 10, 15.", "SON 15 EN TOTAL.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "arreglo"}),
+], "recuerda": [
+ RC("ARREGLO", "TODAS SUS FILAS TIENEN LA MISMA CANTIDAD.", "3 FILAS DE 5"),
+ RC("FILA POR FILA", "SUMAMOS LO QUE TIENE CADA FILA.", "5 + 5 + 5 = 15"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("FILAS POR COLUMNAS", [LD("MULTIPLICAR", "PARA CONTAR UN ARREGLO, HACEMOS <b>FILAS × COLUMNAS</b>."),
+   LL("4 FILAS DE 3: 4 × 3 = 12.", "ES MÁS RÁPIDO QUE CONTAR DE A UNO.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "arreglo"}),
+ T("DAR VUELTA EL ARREGLO", [LD("GIRAR", "SI <b>GIRAMOS</b> EL ARREGLO, LAS FILAS PASAN A SER COLUMNAS Y EL TOTAL NO CAMBIA."),
+   LL("3 × 4 = 4 × 3 = 12.", "2 × 5 NO ES 7.")],
+   {"modo": "mult", "que": "girar"}, {"modo": "mult", "que": "arreglo"}),
+], "recuerda": [
+ RC("FILAS × COLUMNAS", "MULTIPLICAMOS PARA SABER CUÁNTOS HAY.", "4 × 3 = 12"),
+ RC("GIRAR", "AL GIRAR EL ARREGLO EL TOTAL ES EL MISMO.", "2 × 6 = 6 × 2"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("ENCONTRAR EL ARREGLO", [LD("EN EL PROBLEMA", "BUSCAMOS EN EL PROBLEMA <b>CUÁNTAS FILAS</b> Y <b>CUÁNTOS EN CADA FILA</b>."),
+   LL("4 FILAS DE 10 SILLAS.", "UNA CAJA DE 2 FILAS DE 6 HUEVOS.")],
+   {"modo": "mult", "que": "arreglo"}, {"modo": "mult", "que": "arreglo"}),
+ T("MULTIPLICAR Y RESPONDER", [LD("RESPONDER", "MULTIPLICAMOS Y <b>RESPONDEMOS</b> CON UNA ORACIÓN."),
+   LL("4 × 10 = 40: HAY 40 SILLAS.", "NO SE SUMAN FILAS Y COLUMNAS.")],
+   {"modo": "mult", "que": "girar"}, {"modo": "mult", "que": "arreglo"}),
+], "recuerda": [
+ RC("EL ARREGLO", "BUSCAMOS FILAS Y CUÁNTOS HAY EN CADA UNA.", "2 FILAS DE 6 HUEVOS"),
+ RC("RESPONDER", "MULTIPLICAMOS Y CONTESTAMOS CON UNA ORACIÓN.", "2 × 6 = 12: HAY 12 HUEVOS"),
+]}
+
 ACT = {
 "1": [N("UNA BANDEJA TIENE 3 FILAS Y 4 COLUMNAS. ¿CUÁNTAS FILAS?", 3, "LA FILA VA ACOSTADA.", n="recordar"),
       TF("LA COLUMNA VA DE ARRIBA ABAJO.", "VERDADERO", "LA COLUMNA VA PARADA.", n="recordar"),
-      UNI("UNÍ CADA PALABRA CON SU FORMA.", [("FILA", "ACOSTADA"), ("COLUMNA", "PARADA")], "FILA ACOSTADA, COLUMNA PARADA.", n="analizar")],
-"2": [N("3 FILAS DE 5 ALFAJORES. ¿CUÁNTOS SON?", 15, "5, 10, 15.", n="aplicar"),
-      TF("2 FILAS: UNA DE 6 Y OTRA DE 4. ES UN ARREGLO.", "FALSO", "LAS FILAS TIENEN QUE SER IGUALES.", n="analizar")],
+      UNIR("UNÍ CADA PALABRA CON SU FORMA.", ["FILA", "COLUMNA"], ["PARADA", "ACOSTADA"], {"FILA": "ACOSTADA", "COLUMNA": "PARADA"}, "FILA ACOSTADA, COLUMNA PARADA.", n="analizar"),
+      MC("UNA BANDEJA TIENE 2 FILAS DE 5. TOMI DICE QUE TIENE 2 COLUMNAS. ¿CUÁNTAS COLUMNAS TIENE?", ["5", "2", "10"], "5", "CADA FILA TIENE 5: HAY 5 COLUMNAS.", n="error")],
+"2": [N("3 FILAS DE 5 ALFAJORES. ¿CUÁNTOS SON?", 15, "5, 10, 15.", n="aplicar", **NEU("3 FILAS DE 5 GALLETAS. ¿CUÁNTAS SON?")),
+      TF("2 FILAS: UNA DE 6 Y OTRA DE 4. ES UN ARREGLO.", "FALSO", "LAS FILAS TIENEN QUE SER IGUALES.", n="analizar"),
+      FB("COMPLETÁ: 4 FILAS DE 2 SON 2 + 2 + 2 + 2 = ___", [["8"]], "2, 4, 6, 8.", n="aplicar"),
+      MC("SOFI CONTÓ 3 FILAS DE 3 PELOTAS Y DIJO 6. ¿CUÁNTAS HAY?", ["9", "6", "33"], "9", "3 + 3 + 3 = 9.", n="error")],
 "3": [N("¿CUÁNTOS HAY EN 4 FILAS DE 3?", 12, "4 × 3 = 12.", n="aplicar"),
-      MC("SI GIRO 3 FILAS DE 4, ¿QUÉ PASA CON EL TOTAL?", ["QUEDA IGUAL", "AUMENTA", "BAJA"], "QUEDA IGUAL", "4 × 3 = 3 × 4 = 12.", n="analizar")],
+      MC("SI GIRO 3 FILAS DE 4, ¿QUÉ PASA CON EL TOTAL?", ["QUEDA IGUAL", "AUMENTA", "BAJA"], "QUEDA IGUAL", "4 × 3 = 3 × 4 = 12.", n="analizar"),
+      UNIR("UNÍ CADA ARREGLO CON SU TOTAL.", ["2 × 5", "3 × 3", "4 × 4"], ["16", "10", "9"], {"2 × 5": "10", "3 × 3": "9", "4 × 4": "16"}, "FILAS × COLUMNAS.", n="aplicar"),
+      MC("TOMI DICE QUE 2 × 5 = 7. ¿CUÁNTO ES?", ["10", "7", "25"], "10", "2 FILAS DE 5: 5 + 5 = 10.", n="error")],
 "4": [N("HAY 4 FILAS DE 10 SILLAS. ¿CUÁNTAS SILLAS?", 40, "4 × 10 = 40.", n="aplicar"),
-      N("UNA CAJA TIENE 2 FILAS DE 6 HUEVOS. ¿CUÁNTOS HUEVOS?", 12, "2 × 6 = 12.", n="aplicar")],
+      N("UNA CAJA TIENE 2 FILAS DE 6 HUEVOS. ¿CUÁNTOS HUEVOS?", 12, "2 × 6 = 12.", n="aplicar"),
+      N("[[problema]] EN LA HUERTA HAY 5 FILAS DE LECHUGAS Y 4 EN CADA FILA. ¿CUÁNTAS LECHUGAS HAY?", 20, "5 × 4 = 20.", n="analizar"),
+      MC("PARA 2 FILAS DE 4 FLORES, SOFI CONTESTÓ 6. ¿QUÉ HIZO MAL?", ["SUMÓ EN VEZ DE MULTIPLICAR", "NADA, ESTÁ BIEN", "RESTÓ"], "SUMÓ EN VEZ DE MULTIPLICAR", "2 × 4 = 8.", n="error")],
 "5": [N("RELÁMPAGO. 2 FILAS DE 5 = ___", 10, "2 × 5.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 3 FILAS DE 10 = ___", 30, "3 × 10.", tiempo=30, n="aplicar"),
       MC("RELÁMPAGO. LA FILA VA…", ["ACOSTADA", "PARADA"], "ACOSTADA", "DE LADO A LADO.", tiempo=30, n="recordar"),
@@ -176,7 +243,7 @@ EXAMEN = [
  [4, UNI("UNÍ CADA PROBLEMA CON SU CUENTA.", [("2 FILAS DE 6 HUEVOS", "2 × 6"), ("4 FILAS DE 10 SILLAS", "4 × 10"), ("3 FILAS DE 5 FLORES", "3 × 5")], "FILAS POR COLUMNAS.", n="analizar")],
  [4, N("HAY 2 FILAS DE 10 LIBROS. ¿CUÁNTOS LIBROS?", 20, "2 × 10 = 20.", n="aplicar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 14, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 14, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: organizaciones rectangulares", "examen_titulo": "Nivel jefe: organizaciones rectangulares",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-14.json"), "w", encoding="utf-8"), ensure_ascii=False)

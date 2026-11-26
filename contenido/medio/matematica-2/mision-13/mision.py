@@ -148,15 +148,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "2. 8.", "solo": "25: 5 × 5.", "carpeta": ["3.", "15: 3 × 5.", "Sumó 3 + 5 en vez de multiplicar."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("GRUPOS IGUALES", [LD("GRUPOS", "SI TODOS LOS GRUPOS TIENEN <b>LO MISMO</b>, SUMAMOS ESE NÚMERO VARIAS VECES."),
+   LL("3 BANDEJAS DE 4: 4 + 4 + 4.", "CONTAMOS CUÁNTOS GRUPOS HAY.")],
+   {"modo": "mult", "que": "grupos"}, {"modo": "mult", "que": "grupos"}),
+ T("SUMAR LO MISMO", [LD("VARIAS VECES", "SUMAR VARIAS VECES EL MISMO NÚMERO ES MÁS RÁPIDO QUE <b>CONTAR DE A UNO</b>."),
+   LL("2 + 2 + 2 + 2 = 8.", "SON 4 VECES EL 2.")],
+   {"modo": "mult", "que": "grupos"}, {"modo": "mult", "que": "grupos"}),
+], "recuerda": [
+ RC("GRUPOS IGUALES", "TODOS TIENEN LA MISMA CANTIDAD.", "3 BANDEJAS DE 4 CARAMELOS"),
+ RC("SUMAR LO MISMO", "SUMAMOS EL NÚMERO TANTAS VECES COMO GRUPOS HAY.", "4 + 4 + 4 = 12"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("DE 2 EN 2 Y DE 5 EN 5", [LD("SALTOS", "CONTAR <b>DE 2 EN 2</b> O <b>DE 5 EN 5</b> ES SUMAR EL MISMO NÚMERO CADA VEZ."),
+   LL("2, 4, 6, 8.", "5, 10, 15, 20.")],
+   {"modo": "saltos", "de": 5}, {"modo": "saltos", "de": 5}),
+ T("DE 10 EN 10", [LD("DE 10", "DE <b>10 EN 10</b> SUMAMOS UN PAQUETE CADA VEZ."),
+   LL("10, 20, 30, 40.", "MIRÁ CUÁNTO SALTA LA SERIE.")],
+   {"modo": "saltos", "de": 10}, {"modo": "saltos", "de": 2}),
+], "recuerda": [
+ RC("SALTOS", "SUMAMOS SIEMPRE EL MISMO NÚMERO.", "5, 10, 15, 20"),
+ RC("DE 10 EN 10", "SUMAMOS UN PAQUETE DE DIEZ CADA VEZ.", "10, 20, 30"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("EL SIGNO POR", [LD("POR", "SUMAR VARIAS VECES LO MISMO SE ESCRIBE CON EL SIGNO <b>×</b>, QUE SE LEE POR."),
+   LL("4 + 4 + 4 = 3 × 4.", "SE LEE TRES POR CUATRO.")],
+   {"modo": "mult", "que": "signo"}, {"modo": "mult", "que": "signo"}),
+ T("VECES", [LD("CUÁNTAS VECES", "EL PRIMER NÚMERO DICE <b>CUÁNTAS VECES</b> Y EL SEGUNDO QUÉ SUMAMOS."),
+   LL("5 × 2 = 2 + 2 + 2 + 2 + 2 = 10.", "2 × 5 NO ES 7.")],
+   {"modo": "mult", "que": "signo"}, {"modo": "mult", "que": "grupos"}),
+], "recuerda": [
+ RC("EL SIGNO ×", "SE LEE POR Y QUIERE DECIR SUMAR VARIAS VECES.", "3 × 4 = 12"),
+ RC("VECES", "EL PRIMER NÚMERO DICE CUÁNTAS VECES SUMAMOS.", "5 × 2 = 10"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("ENCONTRAR LOS GRUPOS", [LD("GRUPOS", "EN UN PROBLEMA, BUSCAMOS <b>CUÁNTOS GRUPOS</b> HAY Y <b>CUÁNTOS EN CADA UNO</b>."),
+   LL("4 CAJITAS CON 5: 4 GRUPOS DE 5.", "3 MESAS CON 4 SILLAS: 3 × 4.")],
+   {"modo": "mult", "que": "signo"}, {"modo": "mult", "que": "grupos"}),
+ T("RESOLVER CON ×", [LD("CON EL POR", "CON LOS GRUPOS ARMAMOS LA <b>MULTIPLICACIÓN</b> Y LA RESOLVEMOS."),
+   LL("4 × 5 = 20.", "NO SE SUMAN 4 + 5.")],
+   {"modo": "mult", "que": "grupos"}, {"modo": "mult", "que": "grupos"}),
+], "recuerda": [
+ RC("LOS GRUPOS", "CONTAMOS LOS GRUPOS Y LO QUE HAY EN CADA UNO.", "4 CAJITAS DE 5"),
+ RC("RESOLVER", "MULTIPLICAMOS GRUPOS POR LO QUE HAY EN CADA UNO.", "4 × 5 = 20"),
+]}
+
 ACT = {
-"1": [N("3 BANDEJAS CON 4 ALFAJORES CADA UNA. ¿CUÁNTOS SON?", 12, "4 + 4 + 4 = 12.", n="aplicar"),
-      TF("2 + 2 + 2 ES SUMAR VARIAS VECES LO MISMO.", "VERDADERO", "TRES VECES 2.", n="recordar")],
+"1": [N("3 BANDEJAS CON 4 ALFAJORES CADA UNA. ¿CUÁNTOS SON?", 12, "4 + 4 + 4 = 12.", n="aplicar", **NEU("3 BANDEJAS CON 4 GALLETAS CADA UNA. ¿CUÁNTAS SON?")),
+      TF("2 + 2 + 2 ES SUMAR VARIAS VECES LO MISMO.", "VERDADERO", "TRES VECES 2.", n="recordar"),
+      FB("COMPLETÁ: 5 + 5 + 5 + 5 = ___", [["20"]], "5, 10, 15, 20.", n="aplicar"),
+      CLAS("¿SON GRUPOS IGUALES?", ["3 + 3 + 3", "2 + 5 + 4", "6 + 6", "1 + 7"], ["IGUALES", "DISTINTOS"],
+           {"3 + 3 + 3": "IGUALES", "2 + 5 + 4": "DISTINTOS", "6 + 6": "IGUALES", "1 + 7": "DISTINTOS"}, "IGUALES CUANDO SE SUMA SIEMPRE EL MISMO NÚMERO.", n="analizar")],
 "2": [N("DE 5 EN 5: 5, 10, 15, ___", 20, "SUMAMOS 5.", n="aplicar"),
-      UNI("UNÍ CADA SERIE CON SU SALTO.", [("2, 4, 6", "DE 2 EN 2"), ("5, 10, 15", "DE 5 EN 5"), ("10, 20, 30", "DE 10 EN 10")], "MIRÁ CUÁNTO SALTA.", n="analizar")],
-"3": [MC("¿CÓMO SE ESCRIBE 4 + 4 + 4?", ["3 POR 4", "4 POR 4", "3 MÁS 4"], "3 POR 4", "TRES VECES 4.", n="aplicar"),
-      N("¿CUÁNTO ES 5 × 2?", 10, "2 + 2 + 2 + 2 + 2 = 10.", n="aplicar")],
-"4": [N("ROSA ARMA 4 CAJITAS CON 5 ALFAJORES. ¿CUÁNTOS USA?", 20, "4 × 5 = 20.", n="aplicar"),
-      MC("3 MESAS CON 4 SILLAS. ¿QUÉ CUENTA HAGO?", ["3 POR 4", "3 MÁS 4", "4 MENOS 3"], "3 POR 4", "3 GRUPOS DE 4.", n="analizar")],
+      UNIR("UNÍ CADA SERIE CON SU SALTO.", ["2, 4, 6", "5, 10, 15", "10, 20, 30"], ["DE 10 EN 10", "DE 2 EN 2", "DE 5 EN 5"], {"2, 4, 6": "DE 2 EN 2", "5, 10, 15": "DE 5 EN 5", "10, 20, 30": "DE 10 EN 10"}, "MIRÁ CUÁNTO SALTA.", n="analizar"),
+      MC("TOMI CONTÓ DE 5 EN 5: 5, 10, 15, 21. ¿QUÉ NÚMERO VA?", ["20", "21", "16"], "20", "15 Y 5 MÁS SON 20.", n="error"),
+      FB("COMPLETÁ DE 2 EN 2: 8, 10, ___, 14", [["12"]], "10 Y 2 MÁS SON 12.", n="aplicar")],
+"3": [MC("¿CÓMO SE ESCRIBE 4 + 4 + 4?", ["3 × 4", "4 × 4", "3 + 4"], "3 × 4", "TRES VECES 4.", n="aplicar"),
+      N("¿CUÁNTO ES 5 × 2?", 10, "2 + 2 + 2 + 2 + 2 = 10.", n="aplicar"),
+      UNIR("UNÍ CADA SUMA CON SU MULTIPLICACIÓN.", ["2 + 2 + 2", "6 + 6", "3 + 3 + 3 + 3"], ["4 × 3", "3 × 2", "2 × 6"], {"2 + 2 + 2": "3 × 2", "6 + 6": "2 × 6", "3 + 3 + 3 + 3": "4 × 3"}, "CONTÁ CUÁNTAS VECES SE SUMA.", n="analizar"),
+      MC("SOFI DICE QUE 2 × 5 = 7. ¿CUÁNTO DA?", ["10", "7", "25"], "10", "2 × 5 ES 5 + 5 = 10, NO 2 + 5.", n="error")],
+"4": [N("ROSA ARMA 4 CAJITAS CON 5 ALFAJORES. ¿CUÁNTOS USA?", 20, "4 × 5 = 20.", n="aplicar", **NEU("ROSA ARMA 4 CAJITAS CON 5 GALLETAS. ¿CUÁNTAS USA?")),
+      MC("3 MESAS CON 4 SILLAS. ¿QUÉ CUENTA HAGO?", ["3 × 4", "3 + 4", "4 − 3"], "3 × 4", "3 GRUPOS DE 4.", n="analizar"),
+      N("[[problema]] HAY 5 FLOREROS Y CADA UNO TIENE 3 FLORES. ¿CUÁNTAS FLORES HAY EN TOTAL?", 15, "5 × 3 = 15.", n="analizar"),
+      MC("PARA 2 BOLSAS DE 4 NARANJAS, TOMI SUMÓ 2 + 4 = 6. ¿QUÉ HIZO MAL?", ["TENÍA QUE HACER 2 × 4", "NADA, ESTÁ BIEN", "TENÍA QUE RESTAR"], "TENÍA QUE HACER 2 × 4", "SON 2 GRUPOS DE 4: 8.", n="error")],
 "5": [N("RELÁMPAGO. 10 + 10 + 10 = ___", 30, "3 VECES 10.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. DE 2 EN 2: 2, 4, 6, ___", 8, "SUMAMOS 2.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 2 × 5 = ___", 10, "5 + 5.", tiempo=30, n="aplicar"),
@@ -176,7 +245,7 @@ EXAMEN = [
  [4, N("2 AUTOS CON 4 RUEDAS. ¿CUÁNTAS RUEDAS?", 8, "2 × 4 = 8.", n="aplicar")],
  [4, UNI("UNÍ CADA PROBLEMA CON SU CUENTA.", [("3 MESAS DE 4 SILLAS", "3 × 4"), ("4 BOLSAS DE 10", "4 × 10"), ("5 CAJITAS DE 2", "5 × 2")], "GRUPOS POR CANTIDAD.", n="analizar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 13, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 13, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: la multiplicación como suma repetida", "examen_titulo": "Nivel jefe: la multiplicación como suma repetida",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-13.json"), "w", encoding="utf-8"), ensure_ascii=False)

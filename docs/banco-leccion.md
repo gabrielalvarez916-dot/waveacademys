@@ -107,3 +107,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Matemática 2, Misiones 7 y 8) | ejemplo / ejercicio | mental (`que`: chica con `esc` 10 o 100, falta100, desarmar, truco; `op`: suma o resta) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 9 y 10) | ejemplo / ejercicio | columna (`op`: suma o resta; `lleva`: true para me llevo 1 / canje; ejercicio también `que`: estimar, control) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 11 y 12) | ejemplo / ejercicio | problema ahora acepta `esc` (números grandes: 50 → de 100 a 450) y `tipo`: dospasos · prop (`que`: conmuta, amigos, dobles, familia) |
+| `primeros` / `primeros_x` (Matemática 2, Misiones 13 y 14) | ejemplo / ejercicio | mult (`que`: grupos, signo, arreglo, girar; ejercicio también filas) |

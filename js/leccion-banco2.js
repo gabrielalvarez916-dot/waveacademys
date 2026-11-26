@@ -1496,6 +1496,12 @@
     if (esc > 1) H.v = '<div class="lb-p1-dos"><div class="lb-p1-pre">' + P1E[o] + '<b>' + a + '</b></div><div class="lb-p1-pre">' + P1E[o] + '<b>' + b + '</b></div></div>';
     return H;
   }
+  // arreglo rectangular: f filas y c columnas; hl = 'f' + número de fila o 'c' + número de columna marcada, o 'todo'; hasta = cuántas filas ya contadas
+  function p1Arr(f, c, o, op) {
+    op = op || {}; var h = '', i, j;
+    for (i = 0; i < f; i++) { h += '<div class="lb-p1-arf' + (op.fila === i ? ' on' : '') + '">'; for (j = 0; j < c; j++) h += '<span class="' + (op.col === j ? 'on' : '') + (op.hasta != null && i < op.hasta ? ' ya' : '') + '">' + P1E[o] + '</span>'; h += (op.hasta != null && i < op.hasta ? '<small>' + c * (i + 1) + '</small>' : '') + '</div>'; }
+    return '<div class="lb-p1-arr">' + h + '</div>';
+  }
   // calculadora: pantalla + teclas; hl = tecla o lista de teclas marcadas ('pan' marca la pantalla)
   function p1Calc(pan, hl) { hl = [].concat(hl || []); var K = ['7', '8', '9', 'C', '4', '5', '6', '+', '1', '2', '3', '−', '0', '=']; return '<div class="lb-p1-calc"><div class="lb-p1-pan' + (hl.indexOf('pan') >= 0 ? ' on' : '') + '">' + pan + '</div><div class="lb-p1-tec">' + K.map(function (k) { return '<span class="' + (hl.indexOf(k) >= 0 ? 'on' : '') + ('+−=C'.indexOf(k) >= 0 ? ' sg' : '') + (k === '0' ? ' cero' : '') + '">' + k + '</span>'; }).join('') + '</div></div>'; }
   // cajas de 100, paquetes de 10 y sueltos; op.c/op.d/op.u = cuántos de cada uno ya se contaron (con el total que va)
@@ -1570,6 +1576,7 @@
         p.que === 'truco' ? ctrl('a', 'NÚMERO', 110, 889, 1, 472) + ctrl('b', 'SUMO O RESTO', 10, 100, 90, 100) : ctrl('a', 'PRIMER NÚMERO', 1, 9, 1, p.op === 'resta' ? 8 : 3) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.op === 'resta' ? 3 : 4),
       columna: ctrl('a', 'ARRIBA', 100, 899, 1, p.op === 'resta' ? (p.lleva ? 352 : 576) : (p.lleva ? 268 : 231)) + ctrl('b', 'ABAJO', 10, 399, 1, p.op === 'resta' ? (p.lleva ? 128 : 234) : (p.lleva ? 125 : 45)),
       prop: p.que === 'familia' ? ctrl('a', 'PRIMER NÚMERO', 10, 60, 10, 60) + ctrl('b', 'SEGUNDO NÚMERO', 10, 40, 10, 40) : p.que === 'amigos' ? ctrl('a', 'PRIMER NÚMERO', 11, 89, 1, 37) + ctrl('b', 'SEGUNDO NÚMERO', 11, 89, 1, 25) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 10, 60, 5, 25) : ctrl('a', 'NÚMERO CHICO', 1, 9, 1, 4) + ctrl('b', 'NÚMERO GRANDE', 100, 300, 1, 120),
+      mult: p.que === 'arreglo' || p.que === 'girar' ? ctrl('f', 'FILAS', 2, 5, 1, 3) + ctrl('c', 'COLUMNAS', 2, 6, 1, 4) : ctrl('g', 'GRUPOS', 2, 5, 1, 3) + ctrl('n', 'EN CADA GRUPO', 2, 6, 1, 4),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -2117,6 +2124,24 @@
         for (i = 1; i <= 4; i++) P.push({ vis: '<div class="lb-p1-tab">' + Fm.slice(0, i).map(function (x, k) { return '<span' + (k === i - 1 ? ' class="on"' : '') + '>' + x + '</span>'; }).join('') + '</div>', txt: i <= 2 ? 'DOS <b>SUMAS</b>: EL ORDEN NO IMPORTA.' : 'DOS <b>RESTAS</b>: LA RESTA DESHACE LA SUMA.' });
         return P;
       }
+      if (md === 'mult') {
+        var qx = p.que || 'grupos', ox = pick(['caramelo', 'pelota', 'estrella', 'manzana']);
+        if (qx === 'grupos' || qx === 'signo') {
+          var Gx = function (k) { var h2 = ''; for (var j2 = 0; j2 < v.g; j2++) h2 += p1Grupo('', v.n, ox, j2 < k ? { hasta: v.n } : null); return h2; }, sm = [];
+          P.push({ vis: Gx(0), txt: 'HAY <b>' + v.g + '</b> GRUPOS IGUALES Y CADA UNO TIENE <b>' + v.n + '</b>.' });
+          for (i = 1; i <= v.g; i++) { sm.push(v.n); P.push({ vis: Gx(i) + p1Big(sm.join(' + ')), txt: 'SUMAMOS OTRO ' + v.n + ': <b>' + v.n * i + '</b>.' }); }
+          if (qx === 'signo') P.push({ vis: p1Big(sm.join(' + ') + ' = ' + v.g + ' × ' + v.n), txt: 'SUMAR ' + v.g + ' VECES EL ' + v.n + ' SE ESCRIBE <b>' + v.g + ' × ' + v.n + '</b>: SE LEE ' + v.g + ' POR ' + v.n + '.' });
+          P.push({ vis: p1Big((qx === 'signo' ? v.g + ' × ' + v.n : sm.join(' + ')) + ' = ' + v.g * v.n), txt: 'EN TOTAL HAY <b>' + v.g * v.n + '</b>.' });
+          return P;
+        }
+        P.push({ vis: p1Arr(v.f, v.c, ox), txt: 'UN <b>ARREGLO</b>: TODAS LAS FILAS TIENEN LO MISMO.' });
+        P.push({ vis: p1Arr(v.f, v.c, ox, { fila: 0 }), txt: 'UNA <b>FILA</b> VA ACOSTADA: TIENE <b>' + v.c + '</b>.' });
+        P.push({ vis: p1Arr(v.f, v.c, ox, { col: 0 }), txt: 'UNA <b>COLUMNA</b> VA PARADA: HAY <b>' + v.f + '</b> FILAS.' });
+        for (i = 1; i <= v.f; i++) P.push({ vis: p1Arr(v.f, v.c, ox, { hasta: i }), txt: 'CONTAMOS FILA POR FILA: <b>' + v.c * i + '</b>.' });
+        P.push({ vis: p1Arr(v.f, v.c, ox, { hasta: v.f }) + p1Big(v.f + ' × ' + v.c + ' = ' + v.f * v.c), txt: '<b>FILAS × COLUMNAS</b>: ' + v.f + ' × ' + v.c + ' = ' + v.f * v.c + '.' });
+        if (qx === 'girar') P.push({ vis: p1Arr(v.c, v.f, ox) + p1Big(v.c + ' × ' + v.f + ' = ' + v.f * v.c), txt: 'SI LO <b>GIRAMOS</b>, CAMBIAN FILAS Y COLUMNAS PERO EL TOTAL ES EL MISMO.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2303,6 +2328,13 @@
       else if (qp === 'familia') { var x = 10 * R(1, 6), y = 10 * R(1, 4), z = x + y, rs = Math.random() < 0.5; r = rs ? x : y; c = 'SI <b>' + x + ' + ' + y + ' = ' + z + '</b>, ¿CUÁNTO ES <b>' + z + ' − ' + (rs ? y : x) + '</b>?'; }
       else { var s1 = R(1, 9), g1 = R(100, 300); r = s1 + g1; c = '¿CUÁNTO ES <b>' + s1 + ' + ' + g1 + '</b>? EMPEZÁ POR EL GRANDE.'; }
       return { cons: c, campos: [{ v: r }], ayuda: qp === 'amigos' ? 'JUNTÁ PRIMERO LOS QUE FORMAN UN REDONDO.' : qp === 'dobles' ? 'ES EL DOBLE CON UNO MÁS O UNO MENOS.' : qp === 'familia' ? 'LA RESTA DESHACE LA SUMA.' : 'DALA VUELTA: EL ORDEN NO IMPORTA EN LA SUMA.', bien: '¡MUY BIEN! ES ' + r + '.' }; });
+    if (md === 'mult') { var qx = p.que || 'grupos';
+      if (qx === 'signo') return p1Elegir(el, api, function () { var g2 = R(2, 5), n = R(2, 9), ok = g2 + ' × ' + n, ops = [ok, g2 + ' + ' + n, n + ' − ' + g2];
+        return { cons: '¿CÓMO SE ESCRIBE <b>' + Array(g2 + 1).join(n + ' + ').slice(0, -3) + '</b>?', ops: mezclar(ops), ok: ok, ayuda: 'CONTÁ CUÁNTAS VECES SE SUMA EL ' + n + '.', bien: '¡MUY BIEN! ' + ok + ' = ' + g2 * n + '.' }; });
+      return respuesta(el, api, function () { var o = pick(['caramelo', 'pelota', 'estrella', 'flor']), a, b, c, h = '', r;
+        if (qx === 'arreglo' || qx === 'filas') { a = R(2, 5); b = R(2, 6); h = p1Arr(a, b, o); if (qx === 'filas') { var fl = Math.random() < 0.5; r = fl ? a : b; c = '¿CUÁNTAS <b>' + (fl ? 'FILAS' : 'COLUMNAS') + '</b> TIENE EL ARREGLO?'; } else { r = a * b; c = '¿CUÁNTOS HAY EN TOTAL? PENSÁ FILAS × COLUMNAS.'; } }
+        else { a = R(2, 5); b = R(2, 6); for (var k = 0; k < a; k++) h += p1Grupo('', b, o); r = a * b; c = 'HAY ' + a + ' GRUPOS DE ' + b + '. ¿CUÁNTOS HAY EN TOTAL?'; }
+        return { cons: c, html: h, campos: [{ v: r }], ayuda: qx === 'filas' ? 'LA FILA VA ACOSTADA Y LA COLUMNA PARADA.' : 'SUMÁ EL MISMO NÚMERO TANTAS VECES COMO GRUPOS O FILAS HAYA.', bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -2374,6 +2406,7 @@
     '.lb-p1-hist{margin:8px 0;padding:12px 14px;border:3px dashed #087E83;border-radius:16px;background:#fff;font-size:1.1rem;line-height:1.5;font-weight:700;color:#253638}',
     '.lb-p1-calc{width:200px;margin:6px auto;padding:10px;border-radius:18px;background:#253638}.lb-p1-pan{min-height:40px;padding:6px 10px;border-radius:8px;background:#D7F0E9;color:#253638;font:800 1.3rem/1.4 monospace;text-align:right;overflow:hidden;white-space:nowrap}.lb-p1-pan.on{outline:4px solid #FFC94D}.lb-p1-tec{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.lb-p1-tec span{height:32px;display:grid;place-items:center;border-radius:8px;background:#fff;font-weight:800;color:#253638}.lb-p1-tec span.sg{background:#9dbdb9}.lb-p1-tec span.cero{grid-column:span 2}.lb-p1-tec span.on{background:#FFC94D}',
     '.lb-p1-colc{border-collapse:collapse;margin:6px auto;font-weight:800;font-size:1.6rem;color:#253638}.lb-p1-colc td{width:40px;height:40px;text-align:center}.lb-p1-colc tr.hd td{font-size:.75rem;color:#4b6a6c;height:18px}.lb-p1-colc tr.lv td{font-size:.85rem;color:#C2552E;height:18px}.lb-p1-colc td.sg{width:28px}.lb-p1-colc tr.ab td{border-bottom:3px solid #253638}.lb-p1-colc tr.rs td{color:#066A6E}.lb-p1-colc td.on{background:#D7F0E9;border-radius:8px}',
+    '.lb-p1-arr{display:flex;flex-direction:column;align-items:center;gap:4px;margin:8px 0}.lb-p1-arf{position:relative;display:flex;gap:4px;padding:2px 4px;border-radius:10px}.lb-p1-arf.on{background:#D7F0E9;outline:2px solid #087E83}.lb-p1-arf span{font-size:1.6rem;line-height:1.2;border-radius:8px;padding:0 2px}.lb-p1-arf span.on{background:#FFE1D6}.lb-p1-arf span.ya{opacity:.6}.lb-p1-arf small{position:absolute;right:-30px;top:6px;background:#087E83;color:#fff;font-weight:800;border-radius:10px;padding:0 6px;font-size:.8rem}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);
