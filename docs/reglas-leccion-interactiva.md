@@ -19,10 +19,15 @@ Los bloques son los mismos del PDF: `parrafo`, `definicion`, `pasos` (items), `e
 ## Qué tiene que tener cada tema (obligatorio)
 1. **Qué es**: definición clara y precisa (bloque `definicion`), con las palabras del nivel (1.º año: 12 años, no son bobos).
 2. **Por qué es así / para qué sirve**: un `parrafo` que explique el sentido, no solo la regla.
-3. **Cómo se hace**: si el tema tiene procedimiento, bloque `pasos` con 3 o más pasos concretos.
-4. **Ejemplo resuelto propio**: bloque `ejemplo` con 3 o más pasos y el resultado. Distinto del de la clase animada y del PDF (otros números, otro contexto).
+3. **Cómo se hace**: si el tema es práctico, bloque `pasos` con 3 o más pasos concretos (en temas de concepto no va).
+4. **Ejemplo resuelto propio**: bloque `ejemplo` con 3 o más pasos y el resultado (en temas de concepto, un caso concreto bien explicado). Distinto del de la clase animada y del PDF.
 5. **Error típico**: bloque `error` con el error, por qué está mal y cómo detectarlo.
 6. **Mínimo 170 palabras** de explicación por tema (sin contar títulos). Sin máximo: si el tema lo pide, más.
+
+## Dónde va ejemplo y ejercicio (y dónde NO)
+- Solo en temas PRÁCTICOS: operaciones, cálculos, descomposiciones, construcciones, procedimientos (lo que se HACE con pasos).
+- Los temas de CONCEPTO (qué es una variable, qué es aleatorio, para qué sirve cada medida, clasificar ideas) van solo con la explicación: sin ejemplo vivo, sin ejercicio, sin práctica. No todo es interactivo.
+- El control lo exige: un tema con ejemplo o ejercicio tiene que tener un bloque `pasos` en su explicación, y la práctica escrita a mano tiene que ser una cuenta (respuesta con `formula`).
 
 ## Qué tiene que tener cada lección
 - Los temas son los importantes de la clase: los que hagan falta (2, 3, 5…), no un número fijo. No se rellena para llegar a 4.

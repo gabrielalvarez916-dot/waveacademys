@@ -33,6 +33,9 @@ function caso(src, vars, donde) {
 
 function practica(pr, donde) {
   if (!pr || typeof pr !== 'object') return mal(donde, 'falta "practica"');
+  // la práctica es solo para temas prácticos: tiene que ser una cuenta (respuesta con fórmula), no una pregunta de concepto
+  const casos = Array.isArray(pr.variantes) ? pr.variantes : [pr];
+  if (casos.some(v => !(v.respuesta && v.respuesta.formula != null))) return mal(donde, 'la práctica tiene que ser una cuenta u operación (respuesta con "formula"); los temas de concepto van solo con la explicación');
   if (Array.isArray(pr.variantes)) {
     if (pr.variantes.length < 3) return mal(donde, 'con variantes hacen falta 3 o más ejemplos');
     return pr.variantes.forEach((v, i) => caso(v, null, donde + ' · variante ' + (i + 1)));
@@ -86,6 +89,7 @@ function leccion(ruta, M, n, L, donde) {
     const g = grams(txt); let rep = 0; g.forEach(x => { if (fu.has(x)) rep++; });
     if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
     ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
+    if ((t.ejemplo || t.ejercicio) && !tipos.includes('pasos')) mal(d, 'lleva ejemplo o ejercicio pero no es un tema práctico (su explicación no tiene un procedimiento con pasos). Los temas de concepto van solo con la explicación');
   });
   if (total < MIN_LECCION) mal(donde, 'la lección tiene ' + total + ' palabras: el mínimo es ' + MIN_LECCION);
   if (prom && total < prom * PROP_PROMEDIO) mal(donde, 'la lección es más corta que las anteriores de la materia (' + total + ' palabras; el promedio es ' + Math.round(prom) + ', mínimo ' + Math.round(prom * PROP_PROMEDIO) + '). Se completa, no se acorta.');

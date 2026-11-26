@@ -27,75 +27,7 @@
        "tipo": "parrafo",
        "texto": "Se preguntó a 25 alumnos su deporte favorito. La variable es \"deporte favorito\"; \"fútbol\" es un valor; si 10 alumnos dijeron fútbol, la frecuencia de fútbol es 10."
       }
-     ],
-     "practica": {
-      "variantes": [
-       {
-        "enunciado": "Se preguntó a 30 chicos cuántos hermanos tienen. ¿Cuál es la variable?",
-        "pasos": [
-         "La variable es lo que se pregunta o se mide.",
-         "Acá se pregunta la cantidad de hermanos: esa es la variable."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Cantidad de hermanos",
-          "Los 30 chicos",
-          "El número 2",
-          "La encuesta"
-         ],
-         "correcta": "Cantidad de hermanos"
-        }
-       },
-       {
-        "enunciado": "En una encuesta de comida favorita, 12 chicos eligieron pizza. ¿Qué es el 12?",
-        "pasos": [
-         "La frecuencia es cuántas veces aparece un valor.",
-         "Pizza apareció 12 veces: 12 es la frecuencia de pizza."
-        ],
-        "respuesta": {
-         "opciones": [
-          "La frecuencia de pizza",
-          "La variable",
-          "Un dato",
-          "El total de datos"
-         ],
-         "correcta": "La frecuencia de pizza"
-        }
-       },
-       {
-        "enunciado": "Se midió la altura de 20 plantas y una midió 15 cm. ¿Qué es «15 cm»?",
-        "pasos": [
-         "Cada respuesta o medida es un dato.",
-         "15 cm es la medida de una planta: es un dato."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Un dato",
-          "La variable",
-          "La frecuencia",
-          "El total de datos"
-         ],
-         "correcta": "Un dato"
-        }
-       },
-       {
-        "enunciado": "Se preguntó el color favorito a 40 personas. ¿Cuál es la variable?",
-        "pasos": [
-         "La variable es lo que se pregunta.",
-         "Se pregunta el color favorito: esa es la variable."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Color favorito",
-          "Las 40 personas",
-          "El rojo",
-          "La tabla"
-         ],
-         "correcta": "Color favorito"
-        }
-       }
-      ]
-     }
+     ]
     },
     {
      "etapa": 1,
@@ -530,56 +462,7 @@
        "tipo": "parrafo",
        "texto": "La <b>media</b> reparte el total en partes iguales: sirve para comparar rendimientos. La <b>moda</b> dice qué es lo más común: sirve para decidir qué talle comprar más o qué sabor gusta más. La moda también sirve con datos que no son números (colores, deportes); la media, no."
       }
-     ],
-     "practica": {
-      "variantes": [
-       {
-        "enunciado": "Una zapatería quiere saber qué talle comprar en mayor cantidad. ¿Qué le conviene mirar?",
-        "pasos": [
-         "La moda dice qué valor es el más común.",
-         "Para saber qué talle se vende más, conviene la moda."
-        ],
-        "respuesta": {
-         "opciones": [
-          "La moda",
-          "La media",
-          "Ninguna de las dos"
-         ],
-         "correcta": "La moda"
-        }
-       },
-       {
-        "enunciado": "Querés comparar qué equipo hace más goles por partido a lo largo del torneo. ¿Qué conviene usar?",
-        "pasos": [
-         "La media reparte el total en partes iguales.",
-         "Para comparar rendimientos, conviene la media de goles por partido."
-        ],
-        "respuesta": {
-         "opciones": [
-          "La media",
-          "La moda",
-          "El dato más grande"
-         ],
-         "correcta": "La media"
-        }
-       },
-       {
-        "enunciado": "En una encuesta de sabor de helado favorito, ¿qué se puede calcular?",
-        "pasos": [
-         "Los sabores no son números: no se pueden sumar ni dividir.",
-         "Solo se puede ver cuál se repite más: la moda."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Solo la moda",
-          "Solo la media",
-          "La media y la moda"
-         ],
-         "correcta": "Solo la moda"
-        }
-       }
-      ]
-     }
+     ]
     },
     {
      "etapa": 2,
@@ -763,67 +646,7 @@
         "Sacar una carta de un mazo mezclado: aleatorio."
        ]
       }
-     ],
-     "practica": {
-      "variantes": [
-       {
-        "enunciado": "Tirar un dado: ¿es un experimento aleatorio o determinista?",
-        "pasos": [
-         "Preguntamos si se puede saber el resultado antes de hacerlo.",
-         "No se sabe qué número va a salir: es aleatorio."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Aleatorio",
-          "Determinista"
-         ],
-         "correcta": "Aleatorio"
-        }
-       },
-       {
-        "enunciado": "Soltar un vaso desde la mesa y ver si cae al piso: ¿aleatorio o determinista?",
-        "pasos": [
-         "Preguntamos si se puede saber el resultado antes de hacerlo.",
-         "Se sabe que cae: es determinista."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Aleatorio",
-          "Determinista"
-         ],
-         "correcta": "Determinista"
-        }
-       },
-       {
-        "enunciado": "Sacar sin mirar una bolita de una bolsa con bolitas de 3 colores: ¿aleatorio o determinista?",
-        "pasos": [
-         "Preguntamos si se puede saber el resultado antes de hacerlo.",
-         "No se sabe qué color va a salir: es aleatorio."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Aleatorio",
-          "Determinista"
-         ],
-         "correcta": "Aleatorio"
-        }
-       },
-       {
-        "enunciado": "Mezclar pintura azul con amarilla y ver el color: ¿aleatorio o determinista?",
-        "pasos": [
-         "Preguntamos si se puede saber el resultado antes de hacerlo.",
-         "Siempre da verde: es determinista."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Aleatorio",
-          "Determinista"
-         ],
-         "correcta": "Determinista"
-        }
-       }
-      ]
-     }
+     ]
     },
     {
      "etapa": 1,
@@ -897,71 +720,7 @@
         "Sacar un número par: posible (2, 4 o 6)."
        ]
       }
-     ],
-     "practica": {
-      "variantes": [
-       {
-        "enunciado": "Tirás un dado. ¿Cómo es el suceso «sacar un número mayor que 6»?",
-        "pasos": [
-         "Los resultados posibles son 1, 2, 3, 4, 5 y 6.",
-         "Ninguno es mayor que 6: el suceso es imposible."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Imposible",
-          "Posible",
-          "Seguro"
-         ],
-         "correcta": "Imposible"
-        }
-       },
-       {
-        "enunciado": "Tirás un dado. ¿Cómo es el suceso «sacar un número menor que 10»?",
-        "pasos": [
-         "Los resultados posibles son 1, 2, 3, 4, 5 y 6.",
-         "Todos son menores que 10: el suceso es seguro."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Seguro",
-          "Posible",
-          "Imposible"
-         ],
-         "correcta": "Seguro"
-        }
-       },
-       {
-        "enunciado": "Tirás un dado. ¿Cómo es el suceso «sacar un número impar»?",
-        "pasos": [
-         "Los resultados posibles son 1, 2, 3, 4, 5 y 6.",
-         "A veces sale impar (1, 3 o 5) y a veces no: el suceso es posible."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Posible",
-          "Seguro",
-          "Imposible"
-         ],
-         "correcta": "Posible"
-        }
-       },
-       {
-        "enunciado": "Sacás una carta de un mazo español. ¿Cómo es el suceso «sacar una carta de oro»?",
-        "pasos": [
-         "El mazo tiene cartas de oro, copa, espada y basto.",
-         "A veces sale oro y a veces no: el suceso es posible."
-        ],
-        "respuesta": {
-         "opciones": [
-          "Posible",
-          "Seguro",
-          "Imposible"
-         ],
-         "correcta": "Posible"
-        }
-       }
-      ]
-     }
+     ]
     },
     {
      "etapa": 2,
@@ -1243,56 +1002,7 @@
        "tipo": "parrafo",
        "texto": "La probabilidad va de <b>0</b> (suceso imposible) a <b>1</b> (suceso seguro). Nunca da más que 1 ni menos que 0, porque los favorables no pueden ser más que los posibles."
       }
-     ],
-     "practica": {
-      "variantes": [
-       {
-        "enunciado": "¿Puede una probabilidad ser 5/4?",
-        "pasos": [
-         "Los favorables nunca pueden ser más que los posibles.",
-         "5/4 es mayor que 1: no puede ser una probabilidad."
-        ],
-        "respuesta": {
-         "opciones": [
-          "No, porque es mayor que 1",
-          "Sí, si el suceso es seguro",
-          "Sí, siempre"
-         ],
-         "correcta": "No, porque es mayor que 1"
-        }
-       },
-       {
-        "enunciado": "¿Cuál es la probabilidad de sacar un 7 con un dado común?",
-        "pasos": [
-         "Los resultados posibles son del 1 al 6: el 7 no está.",
-         "El suceso es imposible: la probabilidad es 0."
-        ],
-        "respuesta": {
-         "opciones": [
-          "0",
-          "1",
-          "1/7"
-         ],
-         "correcta": "0"
-        }
-       },
-       {
-        "enunciado": "¿Cuál es la probabilidad de sacar un número menor que 7 con un dado común?",
-        "pasos": [
-         "Todos los resultados (1 a 6) son menores que 7.",
-         "El suceso es seguro: la probabilidad es 1."
-        ],
-        "respuesta": {
-         "opciones": [
-          "1",
-          "6/7",
-          "0"
-         ],
-         "correcta": "1"
-        }
-       }
-      ]
-     }
+     ]
     },
     {
      "etapa": 2,
