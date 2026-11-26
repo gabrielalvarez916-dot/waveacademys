@@ -110,3 +110,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Matemática 2, Misiones 13 y 14) | ejemplo / ejercicio | mult (`que`: grupos, signo, arreglo, girar; ejercicio también filas) |
 | `primeros` / `primeros_x` (Matemática 2, Misión 15) | ejemplo / ejercicio | por10 (`de`: 10 o 100; `que`: cifras; ejercicio también problema, cuantos0) |
 - `primeros` / `primeros_x` modo `miles`: números de 4 cifras con camiones de 1.000, cajas de 100, paquetes de 10 y sueltos (que: contar | escribir | leer). `serie` acepta pasos de 1.000 y muestra el punto de miles. (Mat3 m1)
+- Misiones 16 y 17: `ecuaciones` (verificar, inversa, dos_miembros, problema) / `ecuaciones_x` (verificar, problema) y `geometria` (relaciones, rectas, bisectriz, mediatriz, copiar) / `geometria_x` (relaciones, rectas, bisectriz, mediatriz, triangulo). `modo` obligatorio.

@@ -1,1 +1,1852 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 17, "practica": "Práctica general: ángulos y construcciones", "examen_titulo": "Nivel jefe: ángulos y construcciones", "niveles": {"1": {"objetivo": "Vas a poder medir ángulos con el transportador, clasificarlos y usar las relaciones entre ángulos consecutivos, adyacentes y opuestos por el vértice.", "vas_a_ver": ["Qué es un ángulo y cómo se mide", "Clasificación de ángulos", "Ángulos consecutivos y adyacentes", "Ángulos opuestos por el vértice", "Grados y minutos"], "secciones": [{"etapa": 1, "titulo": "Medir con el transportador", "bloques": [{"tipo": "definicion", "titulo": "Ángulo", "texto": "Un <b>ángulo</b> está formado por dos semirrectas que salen del mismo punto, el <b>vértice</b>. Las semirrectas son sus <b>lados</b>. Se mide en <b>grados</b> (°)."}, {"tipo": "parrafo", "texto": "Para medir: el centro del transportador va justo sobre el vértice, un lado sobre la línea del 0, y se lee en la escala que <b>empieza en 0</b> sobre ese lado. El transportador tiene dos escalas: leer la otra da el ángulo equivocado."}]}, {"etapa": 1, "titulo": "Clasificación", "bloques": [{"tipo": "tabla", "titulo": "Tipos de ángulos", "columnas": ["Tipo", "Medida"], "filas": [["Agudo", "Menos de 90°"], ["Recto", "Exactamente 90°"], ["Obtuso", "Más de 90° y menos de 180°"], ["Llano", "Exactamente 180°"]], "iguales": true, "texto": "Una vuelta completa mide 360°."}]}, {"etapa": 2, "titulo": "Relaciones entre ángulos", "bloques": [{"tipo": "definicion", "titulo": "Consecutivos, adyacentes y opuestos", "texto": "<b>Consecutivos:</b> comparten el vértice y un lado. <b>Adyacentes:</b> son consecutivos y sus otros lados forman una recta; por eso <b>suman 180°</b>. <b>Opuestos por el vértice:</b> se forman al cruzarse dos rectas, uno enfrente del otro; <b>son iguales</b>."}, {"tipo": "ejemplo", "titulo": "Dos rectas que se cruzan", "texto": "Uno de los ángulos mide 65°.", "items": ["Su adyacente mide 180° − 65° = 115°.", "Su opuesto por el vértice mide 65°.", "El cuarto ángulo, opuesto al de 115°, mide 115°."]}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Dos rectas que se cortan", "texto": "Los opuestos por el vértice son iguales (65° y 65°; 115° y 115°) y los vecinos suman 180°.", "imagen_descripcion": "Dos rectas que se cortan formando ángulos de 65°, 115°, 65° y 115°.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Grados y minutos", "bloques": [{"tipo": "parrafo", "texto": "Los ángulos usan el sistema sexagesimal: 1° = 60′ (minutos). Al sumar, si los minutos pasan de 60, se canjean: 35°40′ + 20°30′ = 55°70′ = 56°10′."}]}], "ejemplo_completo": {"titulo": "rectas que se cortan", "planteo": "Dos rectas se cortan y uno de los ángulos mide 65°. Calculá los otros tres.", "pasos": ["El adyacente: 180° − 65° = 115°.", "El opuesto por el vértice al de 65° también mide 65°.", "El opuesto al de 115° mide 115°.", "Control: 65° + 115° + 65° + 115° = 360°, una vuelta."]}, "ejemplo_incompleto": {"titulo": "un ángulo de 47°", "planteo": "Completá los espacios.", "pasos": ["Su adyacente: 180° − 47° = ___ .", "Su opuesto por el vértice: ___ ."]}, "ejemplo_solo": {"titulo": "sumar ángulos", "planteo": "Calculá 48°35′ + 27°50′."}, "tip": {"titulo": "Estimá antes de medir", "texto": "Mirá si el ángulo es más chico o más grande que un recto. Así sabés qué escala del transportador leer."}, "ojo": ["Leer la escala equivocada: un ángulo agudo no puede medir 130°.", "No poner el centro del transportador sobre el vértice."], "resumen": [{"titulo": "Tipos", "texto": "Agudo, recto (90°), obtuso, llano (180°)."}, {"titulo": "Adyacentes", "texto": "Suman 180°."}, {"titulo": "Opuestos", "texto": "Son iguales."}, {"titulo": "Minutos", "texto": "1° = 60′."}], "glosario": [{"palabra": "Vértice", "significado": "Punto donde se juntan los lados del ángulo."}, {"palabra": "Transportador", "significado": "Instrumento para medir ángulos."}, {"palabra": "Adyacentes", "significado": "Ángulos consecutivos que suman 180°."}, {"palabra": "Opuestos por el vértice", "significado": "Ángulos enfrentados al cruzarse dos rectas."}], "carpeta": ["¿Cuánto mide el adyacente de un ángulo de 72°?", "Un ángulo mide 125°. ¿Es agudo, recto u obtuso?", "¿Cuánto mide el opuesto por el vértice de un ángulo de 38°?", "Un compañero leyó 130° en un ángulo agudo porque usó la otra escala. ¿Cuánto mide en realidad?"], "respuestas_carpeta": [["108", "108°"], ["obtuso"], ["38", "38°"], ["50", "50°"]], "soluciones": {"incompleto": "133°. 47°.", "solo": "75°85′ = 76°25′.", "carpeta": ["108°: 180° − 72°.", "Obtuso: está entre 90° y 180°.", "38°: los opuestos son iguales.", "50°: 180° − 130°."]}}, "2": {"objetivo": "Vas a poder reconocer y trazar rectas paralelas y perpendiculares con regla y escuadra, y medir la distancia entre rectas.", "vas_a_ver": ["Rectas paralelas, perpendiculares y secantes", "Trazar con regla y escuadra", "Distancia de un punto a una recta", "Distancia entre paralelas"], "secciones": [{"etapa": 1, "titulo": "Posiciones de dos rectas", "bloques": [{"tipo": "definicion", "titulo": "Paralelas, secantes y perpendiculares", "texto": "Dos rectas son <b>paralelas</b> si nunca se cortan y siempre están a la misma distancia. Son <b>secantes</b> si se cortan en un punto. Son <b>perpendiculares</b> si se cortan formando cuatro ángulos rectos (90°)."}, {"tipo": "parrafo", "texto": "Las vías del tren son paralelas; los bordes de una esquina de la hoja son perpendiculares. Toda perpendicular es secante, pero no toda secante es perpendicular."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Posiciones de dos rectas", "texto": "Las paralelas no se cortan; las perpendiculares forman 90°; las secantes se cortan en un punto.", "imagen_descripcion": "Tres dibujos: dos rectas paralelas con su distancia, dos perpendiculares con el ángulo recto marcado y dos secantes.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Trazar con instrumentos", "bloques": [{"tipo": "definicion", "titulo": "Con regla y escuadra", "texto": "<b>Perpendicular:</b> se apoya un lado del ángulo recto de la escuadra sobre la recta y se traza por el otro lado. <b>Paralela:</b> se apoya la escuadra sobre la recta, se pone la regla contra la escuadra y se desliza la escuadra sobre la regla hasta el punto."}]}, {"etapa": 2, "titulo": "Distancia", "bloques": [{"tipo": "parrafo", "texto": "La <b>distancia de un punto a una recta</b> se mide sobre la <b>perpendicular</b> que pasa por el punto: es el camino más corto. Entre dos paralelas, esa distancia es la misma en cualquier lugar."}]}, {"etapa": 2, "titulo": "Ángulos entre secantes", "bloques": [{"tipo": "parrafo", "texto": "Dos rectas secantes forman cuatro ángulos: dos pares de opuestos iguales, y los vecinos son adyacentes (suman 180°). Si uno mide 70°, los otros miden 110°, 70° y 110°."}]}], "ejemplo_completo": {"titulo": "una perpendicular por P", "planteo": "Explicá cómo trazar la perpendicular a una recta r que pasa por un punto P.", "pasos": ["Apoyar un lado del ángulo recto de la escuadra sobre r.", "Deslizar la escuadra sobre r hasta que el otro lado del ángulo recto toque P.", "Trazar la recta por ese lado.", "Verificar con el transportador que el ángulo mide 90°."]}, "ejemplo_incompleto": {"titulo": "rectas que se cortan a 90°", "planteo": "Completá los espacios.", "pasos": ["Si dos rectas se cortan formando un ángulo de 90°, son ___ .", "Forman cuatro ángulos de ___ cada uno."]}, "ejemplo_solo": {"titulo": "una paralela por P", "planteo": "Escribí los pasos para trazar una paralela a una recta r que pase por un punto P."}, "tip": {"titulo": "La regla no se mueve", "texto": "Para trazar paralelas, lo que se desliza es la escuadra. Si se mueve la regla, la recta sale torcida."}, "ojo": ["Confundir perpendicular con paralela: las perpendiculares se cortan; las paralelas no.", "Medir la distancia en diagonal: siempre se mide sobre una perpendicular."], "resumen": [{"titulo": "Paralelas", "texto": "No se cortan; misma distancia."}, {"titulo": "Perpendiculares", "texto": "Se cortan a 90°."}, {"titulo": "Secantes", "texto": "Se cortan en un punto."}, {"titulo": "Distancia", "texto": "Sobre la perpendicular."}], "glosario": [{"palabra": "Paralelas", "significado": "Rectas que nunca se cortan."}, {"palabra": "Perpendiculares", "significado": "Rectas que se cortan formando ángulos rectos."}, {"palabra": "Secantes", "significado": "Rectas que se cortan en un punto."}, {"palabra": "Escuadra", "significado": "Instrumento con un ángulo recto."}], "carpeta": ["Dos rectas perpendiculares forman cuatro ángulos. ¿Cuánto mide cada uno, en grados?", "r y s son paralelas y en un lugar están a 3 cm. ¿A cuántos cm están en otro lugar?", "Dos rectas secantes forman un ángulo de 70°. ¿Cuánto mide el ángulo adyacente?", "Un compañero dice que dos rectas que forman un ángulo de 90° son paralelas. ¿En cuántos puntos se cortan?"], "respuestas_carpeta": [["90", "90°"], ["3", "3cm"], ["110", "110°"], ["1"]], "soluciones": {"incompleto": "Perpendiculares. 90°.", "solo": "Apoyar la escuadra sobre r, poner la regla contra la escuadra, deslizar la escuadra sobre la regla hasta P y trazar.", "carpeta": ["90°: son ángulos rectos.", "3 cm: la distancia entre paralelas es siempre la misma.", "110°: 180° − 70°.", "1: se cortan en un punto, son perpendiculares, no paralelas."]}}, "3": {"objetivo": "Vas a poder construir la bisectriz de un ángulo y la mediatriz de un segmento con regla y compás, y usar sus propiedades.", "vas_a_ver": ["Qué es la bisectriz", "Cómo se construye", "Qué es la mediatriz", "Cómo se construye", "Para qué sirven"], "secciones": [{"etapa": 1, "titulo": "Bisectriz", "bloques": [{"tipo": "definicion", "titulo": "Bisectriz", "texto": "La <b>bisectriz</b> de un ángulo es la semirrecta que lo divide en <b>dos ángulos iguales</b>. Sus puntos están a la misma distancia de los dos lados del ángulo."}, {"tipo": "parrafo", "texto": "Construcción: 1) con centro en el vértice, un arco que corte los dos lados; 2) desde esos dos puntos, dos arcos con la misma abertura que se corten; 3) unir el vértice con ese punto de corte."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Construcción de la bisectriz", "texto": "Arco desde el vértice, dos arcos iguales desde los cortes y se une O con el cruce.", "imagen_descripcion": "Ángulo de 70° con vértice O, los arcos de la construcción y la bisectriz que lo divide en dos de 35°.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Mediatriz", "bloques": [{"tipo": "definicion", "titulo": "Mediatriz", "texto": "La <b>mediatriz</b> de un segmento es la recta <b>perpendicular</b> que pasa por su <b>punto medio</b>. Sus puntos están a la misma distancia de los dos extremos."}, {"tipo": "parrafo", "texto": "Construcción: 1) con centro en un extremo y una abertura mayor que la mitad del segmento, un arco arriba y otro abajo; 2) con la <b>misma abertura</b>, lo mismo desde el otro extremo; 3) unir los dos puntos donde se cortan los arcos."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Construcción de la mediatriz", "texto": "Arcos de igual abertura desde A y desde B; la recta que une los cruces es perpendicular en el punto medio.", "imagen_descripcion": "Segmento AB de 6 cm, arcos desde A y B y la mediatriz perpendicular que pasa por el punto medio.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "No confundirlas", "bloques": [{"tipo": "tabla", "titulo": "Bisectriz y mediatriz", "columnas": ["", "Bisectriz", "Mediatriz"], "filas": [["Se traza en", "un ángulo", "un segmento"], ["Divide en", "dos ángulos iguales", "dos segmentos iguales"], ["Sus puntos están", "a igual distancia de los lados", "a igual distancia de los extremos"]], "iguales": true}]}, {"etapa": 2, "titulo": "Para qué sirven", "bloques": [{"tipo": "parrafo", "texto": "Si dos casas están en A y B y se quiere una plaza a la misma distancia de las dos, hay que buscar el lugar sobre la mediatriz del segmento AB."}]}], "ejemplo_completo": {"titulo": "bisectriz de 80°", "planteo": "Se traza la bisectriz de un ángulo de 80°. ¿Cuánto mide cada parte? ¿Cómo se verifica?", "pasos": ["La bisectriz divide en dos partes iguales.", "80° ÷ 2 = 40°.", "Cada ángulo mide 40°.", "Verificación: se mide cada parte con el transportador."]}, "ejemplo_incompleto": {"titulo": "mediatriz de AB", "planteo": "El segmento AB mide 10 cm. Completá los espacios.", "pasos": ["La mediatriz corta a AB a ___ cm de A.", "Forma con AB un ángulo de ___ ."]}, "ejemplo_solo": {"titulo": "describir la mediatriz", "planteo": "Escribí los pasos para trazar la mediatriz de un segmento de 8 cm."}, "tip": {"titulo": "No toques el compás", "texto": "Entre los arcos de una misma construcción la abertura del compás no se cambia. Si se mueve, la construcción sale mal."}, "ojo": ["Cambiar la abertura del compás entre los arcos.", "Confundir bisectriz con mediatriz: una es de un ángulo, la otra de un segmento."], "resumen": [{"titulo": "Bisectriz", "texto": "Divide un ángulo en dos iguales."}, {"titulo": "Mediatriz", "texto": "Perpendicular por el punto medio de un segmento."}, {"titulo": "Propiedad", "texto": "Mediatriz: igual distancia a los extremos."}, {"titulo": "Compás", "texto": "Misma abertura en los arcos."}], "glosario": [{"palabra": "Bisectriz", "significado": "Semirrecta que divide un ángulo en dos iguales."}, {"palabra": "Mediatriz", "significado": "Perpendicular a un segmento por su punto medio."}, {"palabra": "Punto medio", "significado": "El punto que divide un segmento en dos partes iguales."}, {"palabra": "Compás", "significado": "Instrumento para trazar arcos y copiar medidas."}], "carpeta": ["La bisectriz de un ángulo de 130° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?", "Un segmento mide 14 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?", "Un punto P está sobre la mediatriz de AB y PA = 6 cm. ¿Cuánto mide PB, en cm?", "Un compañero cambió la abertura del compás entre los arcos de la mediatriz. ¿Qué ángulo tiene que formar la mediatriz con el segmento?"], "respuestas_carpeta": [["65", "65°"], ["7", "7cm"], ["6", "6cm"], ["90", "90°"]], "soluciones": {"incompleto": "5 cm. 90°.", "solo": "Con centro en un extremo y abertura mayor que 4 cm, un arco arriba y otro abajo. Con la misma abertura, lo mismo desde el otro extremo. Unir los dos puntos de corte.", "carpeta": ["65°: 130° ÷ 2.", "7 cm: la mitad de 14.", "6 cm: sus puntos están a igual distancia de A y de B.", "90°: la mediatriz es perpendicular."]}}, "4": {"objetivo": "Vas a poder copiar segmentos y ángulos, construir triángulos con regla y compás, escribir los pasos y verificar la construcción.", "vas_a_ver": ["Copiar un segmento", "Copiar un ángulo", "Construir un triángulo con sus tres lados", "Cuándo se puede construir un triángulo", "Escribir y verificar los pasos"], "secciones": [{"etapa": 1, "titulo": "Copiar segmentos y ángulos", "bloques": [{"tipo": "definicion", "titulo": "Copiar con el compás", "texto": "<b>Segmento:</b> se abre el compás del largo del segmento y se traslada esa medida sobre una recta. <b>Ángulo:</b> se traza un arco en el ángulo original y el mismo arco desde el nuevo vértice; con el compás se toma la distancia entre los cortes del arco original y se marca sobre el nuevo arco; se une el vértice con esa marca."}]}, {"etapa": 1, "titulo": "Triángulo con tres lados", "bloques": [{"tipo": "definicion", "titulo": "Construcción", "texto": "Para un triángulo de lados 6, 5 y 4 cm: 1) trazar un segmento de 6 cm; 2) desde un extremo, un arco de radio 5 cm; 3) desde el otro, un arco de radio 4 cm; 4) unir el punto donde se cortan con los dos extremos."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Triángulo de 6, 5 y 4 cm", "texto": "Sobre AB de 6 cm, arco de 5 cm desde A y de 4 cm desde B: se cortan en C.", "imagen_descripcion": "Triángulo ABC con AB = 6 cm, AC = 5 cm y BC = 4 cm, con los arcos de la construcción.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "¿Siempre se puede?", "bloques": [{"tipo": "parrafo", "texto": "No. Cada lado tiene que ser <b>menor que la suma de los otros dos</b>. Con 3, 4 y 9 cm: 3 + 4 = 7, que es menor que 9; los arcos no se cortan y el triángulo no existe."}]}, {"etapa": 2, "titulo": "Escribir y verificar", "bloques": [{"tipo": "parrafo", "texto": "Una construcción se describe con pasos numerados, nombrando cada punto y cada medida. Al terminar, se <b>verifica</b> midiendo los lados con la regla y los ángulos con el transportador."}]}], "ejemplo_completo": {"titulo": "triángulo de 6, 5 y 4 cm", "planteo": "Escribí los pasos para construir un triángulo de lados 6 cm, 5 cm y 4 cm y verificá que se puede.", "pasos": ["Control: 6 < 5 + 4 = 9; 5 < 6 + 4; 4 < 6 + 5. Se puede.", "Trazar AB de 6 cm.", "Con centro en A, arco de radio 5 cm. Con centro en B, arco de radio 4 cm.", "Llamar C al punto de corte y unir C con A y con B.", "Verificar midiendo AC = 5 cm y BC = 4 cm."]}, "ejemplo_incompleto": {"titulo": "3, 4 y 9 cm", "planteo": "¿Se puede construir un triángulo con lados de 3, 4 y 9 cm? Completá los espacios.", "pasos": ["3 + 4 = ___ .", "7 es menor que 9: ¿se puede? ___ ."]}, "ejemplo_solo": {"titulo": "el equilátero", "planteo": "Escribí los pasos para construir un triángulo equilátero de 5 cm de lado."}, "tip": {"titulo": "Nombrá todo", "texto": "Poné nombre a cada punto (A, B, C) y escribí cada medida. Así otra persona puede seguir tus pasos."}, "ojo": ["No escribir los pasos: una construcción sin instrucciones no se puede revisar.", "Mover el compás sin darse cuenta: verificá siempre midiendo al final."], "resumen": [{"titulo": "Copiar", "texto": "La abertura del compás traslada la medida."}, {"titulo": "Triángulo", "texto": "Un lado y dos arcos con las otras medidas."}, {"titulo": "Condición", "texto": "Cada lado menor que la suma de los otros dos."}, {"titulo": "Verificar", "texto": "Medir lados y ángulos al final."}], "glosario": [{"palabra": "Construir", "significado": "Dibujar una figura con instrumentos y medidas exactas."}, {"palabra": "Equilátero", "significado": "Triángulo con los tres lados iguales."}, {"palabra": "Radio", "significado": "La abertura del compás al trazar un arco."}], "carpeta": ["¿Se puede construir un triángulo con lados de 4, 5 y 12 cm? Respondé sí o no.", "¿Cuántos grados mide cada ángulo de un triángulo equilátero?", "Para un triángulo de lados 7, 5 y 4 cm se traza el lado de 7 cm y desde un extremo un arco de radio 5 cm. ¿De qué radio es el arco desde el otro extremo, en cm?", "Un compañero quiere un triángulo de lados 2, 3 y 5 cm y los arcos no se cortan. ¿Cuánto da 2 + 3?"], "respuestas_carpeta": [["no"], ["60", "60°"], ["4", "4cm"], ["5"]], "soluciones": {"incompleto": "7. No.", "solo": "Trazar AB de 5 cm. Con centro en A y en B, arcos de radio 5 cm. Unir el punto de corte C con A y con B. Verificar que los tres lados miden 5 cm.", "carpeta": ["No: 4 + 5 = 9, menor que 12.", "60°: los tres son iguales y suman 180°.", "4 cm: es la medida que falta.", "5: no es mayor que 5, así que el triángulo no existe."]}}}, "act": {"1": [{"t": "multiple_choice", "p": "Un ángulo de 90° es…", "o": ["Agudo", "Recto", "Obtuso", "Llano"], "r": {"correcta": "Recto"}, "e": "Mide exactamente 90°."}, {"t": "numeric", "p": "¿Cuánto mide el adyacente de un ángulo de {a}°?", "o": {"vars": {"a": {"min": 20, "max": 160}}}, "r": {"formula": "180-a"}, "e": "Los adyacentes suman 180°."}], "2": [{"t": "multiple_choice", "p": "Dos rectas que nunca se cortan y están siempre a la misma distancia son…", "o": ["Paralelas", "Perpendiculares", "Secantes"], "r": {"correcta": "Paralelas"}, "e": "Como las vías del tren."}, {"t": "true_false", "p": "Dos rectas perpendiculares también son secantes.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Se cortan en un punto, formando ángulos rectos."}], "3": [{"t": "numeric", "p": "La bisectriz de un ángulo de {d}° lo divide en dos ángulos iguales. ¿Cuántos grados mide cada uno?", "o": {"vars": {"h": {"min": 10, "max": 85}}, "calculadas": {"d": "2*h"}}, "r": {"formula": "h"}, "e": "Se divide por 2."}, {"t": "multiple_choice", "p": "¿Qué recta tiene todos sus puntos a igual distancia de los extremos de un segmento?", "o": ["La bisectriz", "La mediatriz", "Una paralela al segmento", "Cualquier perpendicular"], "r": {"correcta": "La mediatriz"}, "e": "Es la perpendicular por el punto medio."}], "4": [{"t": "multiple_choice", "p": "¿Con cuál de estas medidas se puede construir un triángulo?", "o": ["2, 3 y 6 cm", "4, 5 y 7 cm", "1, 2 y 3 cm", "3, 3 y 7 cm"], "r": {"correcta": "4, 5 y 7 cm"}, "e": "Cada lado es menor que la suma de los otros dos: 7 < 9."}, {"t": "ordering", "p": "Ordená los pasos para construir un triángulo de lados 6, 5 y 4 cm.", "o": ["Desde un extremo, trazar un arco de radio 5 cm", "Trazar un segmento de 6 cm", "Unir el punto de corte con los extremos", "Desde el otro extremo, trazar un arco de radio 4 cm"], "r": {"orden": ["Trazar un segmento de 6 cm", "Desde un extremo, trazar un arco de radio 5 cm", "Desde el otro extremo, trazar un arco de radio 4 cm", "Unir el punto de corte con los extremos"]}, "e": "Primero un lado, después los dos arcos y al final se une."}], "5": [{"t": "multiple_choice", "p": "Relámpago. Un ángulo de 120° es…", "o": ["Agudo", "Recto", "Obtuso"], "r": {"correcta": "Obtuso"}, "e": "Está entre 90° y 180°.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. ¿Cuánto mide el opuesto por el vértice de un ángulo de 55°?", "o": {}, "r": {"acepta": [55]}, "e": "Los opuestos son iguales.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. La bisectriz de un ángulo recto forma dos ángulos de…", "o": {}, "r": {"acepta": [45]}, "e": "90° ÷ 2.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Resolvé 2x + 4 = 18.", "o": {}, "r": {"acepta": [7]}, "e": "Repaso de la misión 16.", "tiempo": 30}]}, "examen": [[1, {"t": "numeric", "p": "¿Cuánto mide el adyacente de un ángulo de 37°?", "o": {}, "r": {"acepta": [143]}, "e": "180° − 37°."}], [1, {"t": "classify", "p": "Clasificá cada ángulo.", "o": {"elementos": ["30°", "90°", "150°", "180°", "89°"], "categorias": ["Agudo", "Recto", "Obtuso", "Llano"]}, "r": {"categorias": {"30°": "Agudo", "90°": "Recto", "150°": "Obtuso", "180°": "Llano", "89°": "Agudo"}}, "e": "Agudo: menos de 90°. Obtuso: entre 90° y 180°."}], [1, {"t": "multiple_choice", "p": "¿Cuánto da 48°35′ + 27°50′?", "o": ["75°85′", "76°25′", "75°25′", "76°85′"], "r": {"correcta": "76°25′"}, "e": "85′ = 1°25′."}], [2, {"t": "multiple_choice", "p": "¿Cómo son entre sí las vías de un tren?", "o": ["Paralelas", "Perpendiculares", "Secantes"], "r": {"correcta": "Paralelas"}, "e": "Nunca se cortan y mantienen la distancia."}], [2, {"t": "true_false", "p": "La distancia de un punto a una recta se mide sobre una perpendicular.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es el camino más corto."}], [2, {"t": "numeric", "p": "Dos rectas secantes forman un ángulo de 65°. ¿Cuánto mide su ángulo adyacente?", "o": {}, "r": {"acepta": [115]}, "e": "180° − 65°."}], [3, {"t": "numeric", "p": "La bisectriz de un ángulo de 150° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?", "o": {}, "r": {"acepta": [75]}, "e": "150° ÷ 2."}], [3, {"t": "numeric", "p": "Un segmento mide 18 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?", "o": {}, "r": {"acepta": [9]}, "e": "Pasa por el punto medio."}], [3, {"t": "multiple_choice", "p": "Para ubicar una plaza a igual distancia de dos casas, ¿sobre qué línea hay que buscar el lugar?", "o": ["La bisectriz", "La mediatriz del segmento entre las casas", "Una paralela", "Cualquier perpendicular"], "r": {"correcta": "La mediatriz del segmento entre las casas"}, "e": "Sus puntos equidistan de los extremos."}], [4, {"t": "true_false", "p": "Con lados de 3, 4 y 8 cm se puede construir un triángulo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "3 + 4 = 7, menor que 8."}], [4, {"t": "numeric", "p": "¿Cuántos grados mide cada ángulo de un triángulo equilátero?", "o": {}, "r": {"acepta": [60]}, "e": "180° ÷ 3."}], [4, {"t": "multiple_choice", "p": "Para copiar un segmento con el compás, la abertura tiene que ser…", "o": ["Igual al segmento", "El doble del segmento", "Cualquiera", "La mitad del segmento"], "r": {"correcta": "Igual al segmento"}, "e": "El compás traslada esa medida."}], [4, {"t": "multiple_choice", "p": "¿Para qué se mide con regla y transportador al terminar una construcción?", "o": ["Para verificarla", "Para empezarla", "No sirve para nada", "Para borrarla"], "r": {"correcta": "Para verificarla"}, "e": "Confirma que las medidas son las pedidas."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 17,
+ "practica": "Práctica general: ángulos y construcciones",
+ "examen_titulo": "Nivel jefe: ángulos y construcciones",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder medir ángulos con el transportador, clasificarlos y usar las relaciones entre ángulos consecutivos, adyacentes y opuestos por el vértice.",
+   "vas_a_ver": [
+    "Qué es un ángulo y cómo se mide",
+    "Clasificación de ángulos",
+    "Ángulos consecutivos y adyacentes",
+    "Ángulos opuestos por el vértice",
+    "Grados y minutos"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Medir con el transportador",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Ángulo",
+       "texto": "Un <b>ángulo</b> está formado por dos semirrectas que salen del mismo punto, el <b>vértice</b>. Las semirrectas son sus <b>lados</b>. Se mide en <b>grados</b> (°)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Para medir: el centro del transportador va justo sobre el vértice, un lado sobre la línea del 0, y se lee en la escala que <b>empieza en 0</b> sobre ese lado. El transportador tiene dos escalas: leer la otra da el ángulo equivocado."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Clasificación",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Tipos de ángulos",
+       "columnas": [
+        "Tipo",
+        "Medida"
+       ],
+       "filas": [
+        [
+         "Agudo",
+         "Menos de 90°"
+        ],
+        [
+         "Recto",
+         "Exactamente 90°"
+        ],
+        [
+         "Obtuso",
+         "Más de 90° y menos de 180°"
+        ],
+        [
+         "Llano",
+         "Exactamente 180°"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Una vuelta completa mide 360°."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Relaciones entre ángulos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Consecutivos, adyacentes y opuestos",
+       "texto": "<b>Consecutivos:</b> comparten el vértice y un lado. <b>Adyacentes:</b> son consecutivos y sus otros lados forman una recta; por eso <b>suman 180°</b>. <b>Opuestos por el vértice:</b> se forman al cruzarse dos rectas, uno enfrente del otro; <b>son iguales</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Dos rectas que se cruzan",
+       "texto": "Uno de los ángulos mide 65°.",
+       "items": [
+        "Su adyacente mide 180° − 65° = 115°.",
+        "Su opuesto por el vértice mide 65°.",
+        "El cuarto ángulo, opuesto al de 115°, mide 115°."
+       ]
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Dos rectas que se cortan",
+       "texto": "Los opuestos por el vértice son iguales (65° y 65°; 115° y 115°) y los vecinos suman 180°.",
+       "imagen_descripcion": "Dos rectas que se cortan formando ángulos de 65°, 115°, 65° y 115°.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Grados y minutos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Los ángulos usan el sistema sexagesimal: 1° = 60′ (minutos). Al sumar, si los minutos pasan de 60, se canjean: 35°40′ + 20°30′ = 55°70′ = 56°10′."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "rectas que se cortan",
+    "planteo": "Dos rectas se cortan y uno de los ángulos mide 65°. Calculá los otros tres.",
+    "pasos": [
+     "El adyacente: 180° − 65° = 115°.",
+     "El opuesto por el vértice al de 65° también mide 65°.",
+     "El opuesto al de 115° mide 115°.",
+     "Control: 65° + 115° + 65° + 115° = 360°, una vuelta."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "un ángulo de 47°",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Su adyacente: 180° − 47° = ___ .",
+     "Su opuesto por el vértice: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "sumar ángulos",
+    "planteo": "Calculá 48°35′ + 27°50′."
+   },
+   "tip": {
+    "titulo": "Estimá antes de medir",
+    "texto": "Mirá si el ángulo es más chico o más grande que un recto. Así sabés qué escala del transportador leer."
+   },
+   "ojo": [
+    "Leer la escala equivocada: un ángulo agudo no puede medir 130°.",
+    "No poner el centro del transportador sobre el vértice."
+   ],
+   "resumen": [
+    {
+     "titulo": "Tipos",
+     "texto": "Agudo, recto (90°), obtuso, llano (180°)."
+    },
+    {
+     "titulo": "Adyacentes",
+     "texto": "Suman 180°."
+    },
+    {
+     "titulo": "Opuestos",
+     "texto": "Son iguales."
+    },
+    {
+     "titulo": "Minutos",
+     "texto": "1° = 60′."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Vértice",
+     "significado": "Punto donde se juntan los lados del ángulo."
+    },
+    {
+     "palabra": "Transportador",
+     "significado": "Instrumento para medir ángulos."
+    },
+    {
+     "palabra": "Adyacentes",
+     "significado": "Ángulos consecutivos que suman 180°."
+    },
+    {
+     "palabra": "Opuestos por el vértice",
+     "significado": "Ángulos enfrentados al cruzarse dos rectas."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto mide el adyacente de un ángulo de 72°?",
+    "Un ángulo mide 125°. ¿Es agudo, recto u obtuso?",
+    "¿Cuánto mide el opuesto por el vértice de un ángulo de 38°?",
+    "Un compañero leyó 130° en un ángulo agudo porque usó la otra escala. ¿Cuánto mide en realidad?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "108",
+     "108°"
+    ],
+    [
+     "obtuso"
+    ],
+    [
+     "38",
+     "38°"
+    ],
+    [
+     "50",
+     "50°"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "133°. 47°.",
+    "solo": "75°85′ = 76°25′.",
+    "carpeta": [
+     "108°: 180° − 72°.",
+     "Obtuso: está entre 90° y 180°.",
+     "38°: los opuestos son iguales.",
+     "50°: 180° − 130°."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Medir y clasificar",
+      "ejemplo": {
+       "motor": "transportador",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "angulo_tipo",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ángulo",
+        "texto": "Un ángulo es la abertura entre dos semirrectas que salen de un mismo punto, el vértice. Se mide en grados con el transportador y se clasifica según su medida."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para medir, se apoya el centro del transportador en el vértice y el cero sobre un lado, y se lee dónde pasa el otro lado. Los agudos miden menos de 90°, el recto 90°, los obtusos entre 90° y 180° y el llano 180°."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Agudo < 90° · Recto = 90°.",
+         "Obtuso entre 90° y 180° · Llano = 180°."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Relaciones entre ángulos",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "relaciones"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "relaciones"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adyacentes y opuestos",
+        "texto": "Dos ángulos adyacentes comparten un lado y juntos forman un llano, así que suman 180°; dos ángulos opuestos por el vértice son iguales."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cuando dos rectas se cortan forman cuatro ángulos. Si uno mide 60°, su adyacente mide 120°, el opuesto también 60° y el que queda, 120°. Los complementarios suman 90°."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Adyacentes: suman 180°.",
+         "Opuestos por el vértice: iguales."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Grados y minutos",
+      "ejemplo": {
+       "motor": "sexa_operar",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "sexa_operar_x",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sistema sexagesimal",
+        "texto": "Los ángulos se miden en el sistema sexagesimal: un grado tiene 60 minutos (60′) y un minuto tiene 60 segundos (60″)."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Al sumar ángulos, si los minutos pasan de 60 se convierten en un grado más. 48°35′ + 27°50′ = 75°85′, y como 85′ = 1°25′, el resultado es 76°25′. Es como sumar horas y minutos. Con los segundos pasa lo mismo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "60′ = 1°.",
+         "75°85′ = 76°25′."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Un ángulo",
+      "definicion": "es la abertura entre dos semirrectas que salen del mismo punto, llamado vértice.",
+      "ejemplo": "∠ABC con vértice en B"
+     },
+     {
+      "concepto": "Los ángulos adyacentes",
+      "definicion": "comparten un lado, forman un llano y suman 180° entre los dos.",
+      "ejemplo": "60° y 120°"
+     },
+     {
+      "concepto": "Los ángulos opuestos por el vértice",
+      "definicion": "se forman al cortarse dos rectas y miden lo mismo.",
+      "ejemplo": "60° y 60°"
+     },
+     {
+      "concepto": "En el sistema sexagesimal",
+      "definicion": "un grado tiene 60 minutos y un minuto tiene 60 segundos.",
+      "ejemplo": "75°85′ = 76°25′"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder reconocer y trazar rectas paralelas y perpendiculares con regla y escuadra, y medir la distancia entre rectas.",
+   "vas_a_ver": [
+    "Rectas paralelas, perpendiculares y secantes",
+    "Trazar con regla y escuadra",
+    "Distancia de un punto a una recta",
+    "Distancia entre paralelas"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Posiciones de dos rectas",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Paralelas, secantes y perpendiculares",
+       "texto": "Dos rectas son <b>paralelas</b> si nunca se cortan y siempre están a la misma distancia. Son <b>secantes</b> si se cortan en un punto. Son <b>perpendiculares</b> si se cortan formando cuatro ángulos rectos (90°)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Las vías del tren son paralelas; los bordes de una esquina de la hoja son perpendiculares. Toda perpendicular es secante, pero no toda secante es perpendicular."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Posiciones de dos rectas",
+       "texto": "Las paralelas no se cortan; las perpendiculares forman 90°; las secantes se cortan en un punto.",
+       "imagen_descripcion": "Tres dibujos: dos rectas paralelas con su distancia, dos perpendiculares con el ángulo recto marcado y dos secantes.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Trazar con instrumentos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Con regla y escuadra",
+       "texto": "<b>Perpendicular:</b> se apoya un lado del ángulo recto de la escuadra sobre la recta y se traza por el otro lado. <b>Paralela:</b> se apoya la escuadra sobre la recta, se pone la regla contra la escuadra y se desliza la escuadra sobre la regla hasta el punto."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Distancia",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La <b>distancia de un punto a una recta</b> se mide sobre la <b>perpendicular</b> que pasa por el punto: es el camino más corto. Entre dos paralelas, esa distancia es la misma en cualquier lugar."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Ángulos entre secantes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Dos rectas secantes forman cuatro ángulos: dos pares de opuestos iguales, y los vecinos son adyacentes (suman 180°). Si uno mide 70°, los otros miden 110°, 70° y 110°."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "una perpendicular por P",
+    "planteo": "Explicá cómo trazar la perpendicular a una recta r que pasa por un punto P.",
+    "pasos": [
+     "Apoyar un lado del ángulo recto de la escuadra sobre r.",
+     "Deslizar la escuadra sobre r hasta que el otro lado del ángulo recto toque P.",
+     "Trazar la recta por ese lado.",
+     "Verificar con el transportador que el ángulo mide 90°."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "rectas que se cortan a 90°",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Si dos rectas se cortan formando un ángulo de 90°, son ___ .",
+     "Forman cuatro ángulos de ___ cada uno."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "una paralela por P",
+    "planteo": "Escribí los pasos para trazar una paralela a una recta r que pase por un punto P."
+   },
+   "tip": {
+    "titulo": "La regla no se mueve",
+    "texto": "Para trazar paralelas, lo que se desliza es la escuadra. Si se mueve la regla, la recta sale torcida."
+   },
+   "ojo": [
+    "Confundir perpendicular con paralela: las perpendiculares se cortan; las paralelas no.",
+    "Medir la distancia en diagonal: siempre se mide sobre una perpendicular."
+   ],
+   "resumen": [
+    {
+     "titulo": "Paralelas",
+     "texto": "No se cortan; misma distancia."
+    },
+    {
+     "titulo": "Perpendiculares",
+     "texto": "Se cortan a 90°."
+    },
+    {
+     "titulo": "Secantes",
+     "texto": "Se cortan en un punto."
+    },
+    {
+     "titulo": "Distancia",
+     "texto": "Sobre la perpendicular."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Paralelas",
+     "significado": "Rectas que nunca se cortan."
+    },
+    {
+     "palabra": "Perpendiculares",
+     "significado": "Rectas que se cortan formando ángulos rectos."
+    },
+    {
+     "palabra": "Secantes",
+     "significado": "Rectas que se cortan en un punto."
+    },
+    {
+     "palabra": "Escuadra",
+     "significado": "Instrumento con un ángulo recto."
+    }
+   ],
+   "carpeta": [
+    "Dos rectas perpendiculares forman cuatro ángulos. ¿Cuánto mide cada uno, en grados?",
+    "r y s son paralelas y en un lugar están a 3 cm. ¿A cuántos cm están en otro lugar?",
+    "Dos rectas secantes forman un ángulo de 70°. ¿Cuánto mide el ángulo adyacente?",
+    "Un compañero dice que dos rectas que forman un ángulo de 90° son paralelas. ¿En cuántos puntos se cortan?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "90",
+     "90°"
+    ],
+    [
+     "3",
+     "3cm"
+    ],
+    [
+     "110",
+     "110°"
+    ],
+    [
+     "1"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Perpendiculares. 90°.",
+    "solo": "Apoyar la escuadra sobre r, poner la regla contra la escuadra, deslizar la escuadra sobre la regla hasta P y trazar.",
+    "carpeta": [
+     "90°: son ángulos rectos.",
+     "3 cm: la distancia entre paralelas es siempre la misma.",
+     "110°: 180° − 70°.",
+     "1: se cortan en un punto, son perpendiculares, no paralelas."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Posiciones de dos rectas",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Rectas paralelas, perpendiculares y secantes",
+        "texto": "Dos rectas del plano pueden ser paralelas, si no se cortan nunca, o secantes, si se cortan en un punto; las secantes que forman cuatro ángulos rectos son perpendiculares."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las vías de un tren son paralelas; las calles que se cruzan en una esquina en escuadra son perpendiculares. Toda perpendicular es secante, pero no toda secante es perpendicular: las demás se llaman oblicuas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Paralelas: nunca se cortan.",
+         "Perpendiculares: se cortan en ángulo recto."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Trazar con instrumentos",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Trazar paralelas y perpendiculares",
+        "texto": "Las perpendiculares se trazan apoyando un cateto de la escuadra sobre la recta; las paralelas, deslizando la escuadra sobre una regla fija."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con la escuadra apoyada en la recta, el otro cateto marca el ángulo recto. Para una paralela, se apoya la regla, se coloca la escuadra contra ella y se la desliza: cada recta que se traza queda a la misma inclinación."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Escuadra para el ángulo recto.",
+         "Regla fija y escuadra que se desliza."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Distancia de un punto a una recta",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "rectas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Distancia a una recta",
+        "texto": "La distancia de un punto a una recta es la longitud del segmento perpendicular que va desde el punto hasta la recta, que es el camino más corto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cualquier otro segmento oblicuo desde el punto es más largo. Por eso, para medir la distancia hay que trazar primero la perpendicular con la escuadra. Dos rectas paralelas están siempre a la misma distancia."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Se mide sobre la perpendicular.",
+         "Es el camino más corto."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Dos rectas paralelas",
+      "definicion": "no se cortan nunca y están siempre a la misma distancia.",
+      "ejemplo": "Las vías de un tren"
+     },
+     {
+      "concepto": "Dos rectas perpendiculares",
+      "definicion": "se cortan formando cuatro ángulos rectos, y también son secantes.",
+      "ejemplo": "Las calles de una esquina en escuadra"
+     },
+     {
+      "concepto": "Las rectas secantes oblicuas",
+      "definicion": "se cortan en un punto formando ángulos que no son rectos.",
+      "ejemplo": "Las agujas del reloj a las 2"
+     },
+     {
+      "concepto": "La distancia de un punto a una recta",
+      "definicion": "se mide sobre la perpendicular trazada desde el punto hasta la recta.",
+      "ejemplo": "El camino más corto hasta la recta"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder construir la bisectriz de un ángulo y la mediatriz de un segmento con regla y compás, y usar sus propiedades.",
+   "vas_a_ver": [
+    "Qué es la bisectriz",
+    "Cómo se construye",
+    "Qué es la mediatriz",
+    "Cómo se construye",
+    "Para qué sirven"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Bisectriz",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Bisectriz",
+       "texto": "La <b>bisectriz</b> de un ángulo es la semirrecta que lo divide en <b>dos ángulos iguales</b>. Sus puntos están a la misma distancia de los dos lados del ángulo."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Construcción: 1) con centro en el vértice, un arco que corte los dos lados; 2) desde esos dos puntos, dos arcos con la misma abertura que se corten; 3) unir el vértice con ese punto de corte."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Construcción de la bisectriz",
+       "texto": "Arco desde el vértice, dos arcos iguales desde los cortes y se une O con el cruce.",
+       "imagen_descripcion": "Ángulo de 70° con vértice O, los arcos de la construcción y la bisectriz que lo divide en dos de 35°.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Mediatriz",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Mediatriz",
+       "texto": "La <b>mediatriz</b> de un segmento es la recta <b>perpendicular</b> que pasa por su <b>punto medio</b>. Sus puntos están a la misma distancia de los dos extremos."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Construcción: 1) con centro en un extremo y una abertura mayor que la mitad del segmento, un arco arriba y otro abajo; 2) con la <b>misma abertura</b>, lo mismo desde el otro extremo; 3) unir los dos puntos donde se cortan los arcos."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Construcción de la mediatriz",
+       "texto": "Arcos de igual abertura desde A y desde B; la recta que une los cruces es perpendicular en el punto medio.",
+       "imagen_descripcion": "Segmento AB de 6 cm, arcos desde A y B y la mediatriz perpendicular que pasa por el punto medio.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "No confundirlas",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Bisectriz y mediatriz",
+       "columnas": [
+        "",
+        "Bisectriz",
+        "Mediatriz"
+       ],
+       "filas": [
+        [
+         "Se traza en",
+         "un ángulo",
+         "un segmento"
+        ],
+        [
+         "Divide en",
+         "dos ángulos iguales",
+         "dos segmentos iguales"
+        ],
+        [
+         "Sus puntos están",
+         "a igual distancia de los lados",
+         "a igual distancia de los extremos"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para qué sirven",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Si dos casas están en A y B y se quiere una plaza a la misma distancia de las dos, hay que buscar el lugar sobre la mediatriz del segmento AB."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "bisectriz de 80°",
+    "planteo": "Se traza la bisectriz de un ángulo de 80°. ¿Cuánto mide cada parte? ¿Cómo se verifica?",
+    "pasos": [
+     "La bisectriz divide en dos partes iguales.",
+     "80° ÷ 2 = 40°.",
+     "Cada ángulo mide 40°.",
+     "Verificación: se mide cada parte con el transportador."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "mediatriz de AB",
+    "planteo": "El segmento AB mide 10 cm. Completá los espacios.",
+    "pasos": [
+     "La mediatriz corta a AB a ___ cm de A.",
+     "Forma con AB un ángulo de ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "describir la mediatriz",
+    "planteo": "Escribí los pasos para trazar la mediatriz de un segmento de 8 cm."
+   },
+   "tip": {
+    "titulo": "No toques el compás",
+    "texto": "Entre los arcos de una misma construcción la abertura del compás no se cambia. Si se mueve, la construcción sale mal."
+   },
+   "ojo": [
+    "Cambiar la abertura del compás entre los arcos.",
+    "Confundir bisectriz con mediatriz: una es de un ángulo, la otra de un segmento."
+   ],
+   "resumen": [
+    {
+     "titulo": "Bisectriz",
+     "texto": "Divide un ángulo en dos iguales."
+    },
+    {
+     "titulo": "Mediatriz",
+     "texto": "Perpendicular por el punto medio de un segmento."
+    },
+    {
+     "titulo": "Propiedad",
+     "texto": "Mediatriz: igual distancia a los extremos."
+    },
+    {
+     "titulo": "Compás",
+     "texto": "Misma abertura en los arcos."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Bisectriz",
+     "significado": "Semirrecta que divide un ángulo en dos iguales."
+    },
+    {
+     "palabra": "Mediatriz",
+     "significado": "Perpendicular a un segmento por su punto medio."
+    },
+    {
+     "palabra": "Punto medio",
+     "significado": "El punto que divide un segmento en dos partes iguales."
+    },
+    {
+     "palabra": "Compás",
+     "significado": "Instrumento para trazar arcos y copiar medidas."
+    }
+   ],
+   "carpeta": [
+    "La bisectriz de un ángulo de 130° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?",
+    "Un segmento mide 14 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?",
+    "Un punto P está sobre la mediatriz de AB y PA = 6 cm. ¿Cuánto mide PB, en cm?",
+    "Un compañero cambió la abertura del compás entre los arcos de la mediatriz. ¿Qué ángulo tiene que formar la mediatriz con el segmento?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "65",
+     "65°"
+    ],
+    [
+     "7",
+     "7cm"
+    ],
+    [
+     "6",
+     "6cm"
+    ],
+    [
+     "90",
+     "90°"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "5 cm. 90°.",
+    "solo": "Con centro en un extremo y abertura mayor que 4 cm, un arco arriba y otro abajo. Con la misma abertura, lo mismo desde el otro extremo. Unir los dos puntos de corte.",
+    "carpeta": [
+     "65°: 130° ÷ 2.",
+     "7 cm: la mitad de 14.",
+     "6 cm: sus puntos están a igual distancia de A y de B.",
+     "90°: la mediatriz es perpendicular."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Bisectriz",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "bisectriz"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "bisectriz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Bisectriz",
+        "texto": "La bisectriz de un ángulo es la semirrecta que sale del vértice y lo divide en dos ángulos iguales. Se traza con compás: un arco desde el vértice y dos arcos iguales desde los cortes."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada punto de la bisectriz está a la misma distancia de los dos lados del ángulo. La bisectriz de un ángulo de 80° forma dos de 40°; la de un recto, dos de 45°."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Divide el ángulo en dos iguales.",
+         "80° → 40° y 40°."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Mediatriz",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "mediatriz"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "mediatriz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Mediatriz",
+        "texto": "La mediatriz de un segmento es la recta perpendicular que pasa por su punto medio. Se traza con dos arcos de igual radio desde los extremos y uniendo los cruces."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada punto de la mediatriz está a la misma distancia de los dos extremos del segmento. Si el segmento mide 18 cm, la mediatriz lo corta a 9 cm de cada extremo, y forma ángulos rectos con él."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Perpendicular por el punto medio.",
+         "18 cm → 9 cm de cada lado."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "No confundirlas y para qué sirven",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "mediatriz"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "bisectriz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Bisectriz o mediatriz",
+        "texto": "La bisectriz se traza en un ángulo y reparte la abertura; la mediatriz se traza en un segmento y lo corta a la mitad en ángulo recto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las dos sirven para ubicar puntos equidistantes. Para poner una plaza a igual distancia de dos casas se busca sobre la mediatriz del segmento que las une. Para un camino a igual distancia de dos rutas que se cruzan, sobre la bisectriz."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Ángulo → bisectriz.",
+         "Segmento → mediatriz."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "La bisectriz de un ángulo",
+      "definicion": "es la semirrecta que sale del vértice y lo divide en dos ángulos iguales.",
+      "ejemplo": "80° → 40° y 40°"
+     },
+     {
+      "concepto": "La mediatriz de un segmento",
+      "definicion": "es la recta perpendicular al segmento que pasa por su punto medio.",
+      "ejemplo": "18 cm → 9 cm de cada extremo"
+     },
+     {
+      "concepto": "Los puntos de la mediatriz",
+      "definicion": "están a la misma distancia de los dos extremos del segmento.",
+      "ejemplo": "Una plaza a igual distancia de dos casas"
+     },
+     {
+      "concepto": "Los puntos de la bisectriz",
+      "definicion": "están a la misma distancia de los dos lados del ángulo.",
+      "ejemplo": "Un camino entre dos rutas que se cruzan"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a poder copiar segmentos y ángulos, construir triángulos con regla y compás, escribir los pasos y verificar la construcción.",
+   "vas_a_ver": [
+    "Copiar un segmento",
+    "Copiar un ángulo",
+    "Construir un triángulo con sus tres lados",
+    "Cuándo se puede construir un triángulo",
+    "Escribir y verificar los pasos"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Copiar segmentos y ángulos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Copiar con el compás",
+       "texto": "<b>Segmento:</b> se abre el compás del largo del segmento y se traslada esa medida sobre una recta. <b>Ángulo:</b> se traza un arco en el ángulo original y el mismo arco desde el nuevo vértice; con el compás se toma la distancia entre los cortes del arco original y se marca sobre el nuevo arco; se une el vértice con esa marca."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Triángulo con tres lados",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Construcción",
+       "texto": "Para un triángulo de lados 6, 5 y 4 cm: 1) trazar un segmento de 6 cm; 2) desde un extremo, un arco de radio 5 cm; 3) desde el otro, un arco de radio 4 cm; 4) unir el punto donde se cortan con los dos extremos."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Triángulo de 6, 5 y 4 cm",
+       "texto": "Sobre AB de 6 cm, arco de 5 cm desde A y de 4 cm desde B: se cortan en C.",
+       "imagen_descripcion": "Triángulo ABC con AB = 6 cm, AC = 5 cm y BC = 4 cm, con los arcos de la construcción.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "¿Siempre se puede?",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "No. Cada lado tiene que ser <b>menor que la suma de los otros dos</b>. Con 3, 4 y 9 cm: 3 + 4 = 7, que es menor que 9; los arcos no se cortan y el triángulo no existe."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Escribir y verificar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Una construcción se describe con pasos numerados, nombrando cada punto y cada medida. Al terminar, se <b>verifica</b> midiendo los lados con la regla y los ángulos con el transportador."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "triángulo de 6, 5 y 4 cm",
+    "planteo": "Escribí los pasos para construir un triángulo de lados 6 cm, 5 cm y 4 cm y verificá que se puede.",
+    "pasos": [
+     "Control: 6 < 5 + 4 = 9; 5 < 6 + 4; 4 < 6 + 5. Se puede.",
+     "Trazar AB de 6 cm.",
+     "Con centro en A, arco de radio 5 cm. Con centro en B, arco de radio 4 cm.",
+     "Llamar C al punto de corte y unir C con A y con B.",
+     "Verificar midiendo AC = 5 cm y BC = 4 cm."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "3, 4 y 9 cm",
+    "planteo": "¿Se puede construir un triángulo con lados de 3, 4 y 9 cm? Completá los espacios.",
+    "pasos": [
+     "3 + 4 = ___ .",
+     "7 es menor que 9: ¿se puede? ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el equilátero",
+    "planteo": "Escribí los pasos para construir un triángulo equilátero de 5 cm de lado."
+   },
+   "tip": {
+    "titulo": "Nombrá todo",
+    "texto": "Poné nombre a cada punto (A, B, C) y escribí cada medida. Así otra persona puede seguir tus pasos."
+   },
+   "ojo": [
+    "No escribir los pasos: una construcción sin instrucciones no se puede revisar.",
+    "Mover el compás sin darse cuenta: verificá siempre midiendo al final."
+   ],
+   "resumen": [
+    {
+     "titulo": "Copiar",
+     "texto": "La abertura del compás traslada la medida."
+    },
+    {
+     "titulo": "Triángulo",
+     "texto": "Un lado y dos arcos con las otras medidas."
+    },
+    {
+     "titulo": "Condición",
+     "texto": "Cada lado menor que la suma de los otros dos."
+    },
+    {
+     "titulo": "Verificar",
+     "texto": "Medir lados y ángulos al final."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Construir",
+     "significado": "Dibujar una figura con instrumentos y medidas exactas."
+    },
+    {
+     "palabra": "Equilátero",
+     "significado": "Triángulo con los tres lados iguales."
+    },
+    {
+     "palabra": "Radio",
+     "significado": "La abertura del compás al trazar un arco."
+    }
+   ],
+   "carpeta": [
+    "¿Se puede construir un triángulo con lados de 4, 5 y 12 cm? Respondé sí o no.",
+    "¿Cuántos grados mide cada ángulo de un triángulo equilátero?",
+    "Para un triángulo de lados 7, 5 y 4 cm se traza el lado de 7 cm y desde un extremo un arco de radio 5 cm. ¿De qué radio es el arco desde el otro extremo, en cm?",
+    "Un compañero quiere un triángulo de lados 2, 3 y 5 cm y los arcos no se cortan. ¿Cuánto da 2 + 3?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "no"
+    ],
+    [
+     "60",
+     "60°"
+    ],
+    [
+     "4",
+     "4cm"
+    ],
+    [
+     "5"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "7. No.",
+    "solo": "Trazar AB de 5 cm. Con centro en A y en B, arcos de radio 5 cm. Unir el punto de corte C con A y con B. Verificar que los tres lados miden 5 cm.",
+    "carpeta": [
+     "No: 4 + 5 = 9, menor que 12.",
+     "60°: los tres son iguales y suman 180°.",
+     "4 cm: es la medida que falta.",
+     "5: no es mayor que 5, así que el triángulo no existe."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Copiar segmentos",
+      "ejemplo": {
+       "motor": "geometria",
+       "p": {
+        "modo": "copiar"
+       }
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "mediatriz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Copiar con compás",
+        "texto": "Para copiar un segmento se abre el compás con la medida del segmento y, sin cambiar la abertura, se marca esa medida desde un punto de otra recta."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El compás transporta medidas sin usar números, y por eso las copias son exactas. Con la misma idea se copia un ángulo: se traza un arco en el original y se reproduce en la copia la abertura entre los cortes."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "La abertura es igual al segmento.",
+         "No se cambia la abertura."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Triángulo con tres lados",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "triangulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Construir un triángulo",
+        "texto": "Para construir un triángulo conociendo sus tres lados se traza uno de ellos y, desde cada extremo, un arco con la medida de cada uno de los otros dos; el cruce es el tercer vértice."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con lados de 6, 5 y 4 cm: se traza el de 6 cm, desde un extremo un arco de 5 cm y desde el otro uno de 4 cm. Donde se cruzan está el tercer vértice, y se unen los puntos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Primero un lado.",
+         "Dos arcos: el cruce es el vértice."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "¿Siempre se puede?",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "triangulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Desigualdad triangular",
+        "texto": "Un triángulo se puede construir solo si el lado más largo es menor que la suma de los otros dos; si no, los arcos no se cruzan."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con 3, 4 y 8 cm no se puede: 3 + 4 = 7, que es menos que 8, y los dos lados cortos no llegan a juntarse. Con 4, 5 y 7 sí, porque 4 + 5 = 9 es más que 7. Al terminar, se verifica midiendo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Lado mayor < suma de los otros.",
+         "3, 4 y 8: no se puede."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Para copiar un segmento con el compás",
+      "definicion": "la abertura tiene que ser igual al segmento y no se cambia al marcar.",
+      "ejemplo": "Copia exacta sin regla"
+     },
+     {
+      "concepto": "Para construir un triángulo con tres lados",
+      "definicion": "se traza un lado y dos arcos desde sus extremos con las otras medidas.",
+      "ejemplo": "6, 5 y 4 cm"
+     },
+     {
+      "concepto": "Un triángulo se puede construir",
+      "definicion": "solo si el lado más largo es menor que la suma de los otros dos.",
+      "ejemplo": "4, 5 y 7: sí · 3, 4 y 8: no"
+     },
+     {
+      "concepto": "Al terminar una construcción",
+      "definicion": "se mide con regla y transportador para verificar que quedó bien.",
+      "ejemplo": "Verificar los tres lados"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "recordar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "multiple_choice",
+    "p": "Un ángulo de 90° es…",
+    "o": [
+     "Agudo",
+     "Recto",
+     "Obtuso",
+     "Llano"
+    ],
+    "r": {
+     "correcta": "Recto"
+    },
+    "e": "Mide exactamente 90°.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "¿Cuánto mide el adyacente de un ángulo de {a}°?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 20,
+       "max": 160
+      }
+     }
+    },
+    "r": {
+     "formula": "180-a"
+    },
+    "e": "Los adyacentes suman 180°.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "aplicar",
+    "p": "Clasificá cada ángulo según su medida.",
+    "o": {
+     "elementos": [
+      "35°",
+      "90°",
+      "145°",
+      "180°",
+      "89°"
+     ],
+     "categorias": [
+      "Agudo",
+      "Recto",
+      "Obtuso",
+      "Llano"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "35°": "Agudo",
+      "90°": "Recto",
+      "145°": "Obtuso",
+      "180°": "Llano",
+      "89°": "Agudo"
+     }
+    },
+    "e": "Compará con 90° y con 180°."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Agus sumó 35°40′ + 20°30′. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Sumo grados: 55°",
+      "Sumo minutos: 70′",
+      "Resultado: 55°70′, que es 55,7°"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      2
+     ]
+    },
+    "e": "70′ = 1°10′: el resultado es 56°10′."
+   }
+  ],
+  "2": [
+   {
+    "t": "multiple_choice",
+    "p": "Dos rectas que nunca se cortan y están siempre a la misma distancia son…",
+    "o": [
+     "Paralelas",
+     "Perpendiculares",
+     "Secantes"
+    ],
+    "r": {
+     "correcta": "Paralelas"
+    },
+    "e": "Como las vías del tren.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "Dos rectas perpendiculares también son secantes.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Se cortan en un punto, formando ángulos rectos.",
+    "n": "recordar"
+   },
+   {
+    "t": "classify",
+    "n": "aplicar",
+    "p": "Clasificá cada par de rectas según su posición.",
+    "o": {
+     "elementos": [
+      "Las vías de un tren",
+      "Los bordes de una esquina de la hoja",
+      "Las agujas del reloj a las 2",
+      "Los renglones de un cuaderno",
+      "Una calle y una avenida que se cruzan en diagonal"
+     ],
+     "categorias": [
+      "Paralelas",
+      "Perpendiculares",
+      "Secantes oblicuas"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Las vías de un tren": "Paralelas",
+      "Los bordes de una esquina de la hoja": "Perpendiculares",
+      "Las agujas del reloj a las 2": "Secantes oblicuas",
+      "Los renglones de un cuaderno": "Paralelas",
+      "Una calle y una avenida que se cruzan en diagonal": "Secantes oblicuas"
+     }
+    },
+    "e": "Paralelas no se cortan; perpendiculares, en ángulo recto."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos midieron la distancia de un punto a una recta. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | un segmento cualquiera | el que salga",
+     "Beto: | la perpendicular desde el punto | el más corto",
+     "Caro: | un segmento inclinado a 45° | siempre a 45°"
+    ],
+    "r": {
+     "correcta": "Beto: | la perpendicular desde el punto | el más corto"
+    },
+    "e": "La distancia se mide sobre la perpendicular."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "La bisectriz de un ángulo de {d}° lo divide en dos ángulos iguales. ¿Cuántos grados mide cada uno?",
+    "o": {
+     "vars": {
+      "h": {
+       "min": 10,
+       "max": 85
+      }
+     },
+     "calculadas": {
+      "d": "2*h"
+     }
+    },
+    "r": {
+     "formula": "h"
+    },
+    "e": "Se divide por 2.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué recta tiene todos sus puntos a igual distancia de los extremos de un segmento?",
+    "o": [
+     "La bisectriz",
+     "La mediatriz",
+     "Una paralela al segmento",
+     "Cualquier perpendicular"
+    ],
+    "r": {
+     "correcta": "La mediatriz"
+    },
+    "e": "Es la perpendicular por el punto medio.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada situación según la línea que hay que trazar.",
+    "o": {
+     "elementos": [
+      "Repartir un ángulo de 70° en dos iguales",
+      "Cortar una tabla de 2 m en dos partes iguales y en escuadra",
+      "Un punto a igual distancia de dos casas",
+      "Un camino a igual distancia de dos rutas que se cruzan"
+     ],
+     "categorias": [
+      "Bisectriz",
+      "Mediatriz"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Repartir un ángulo de 70° en dos iguales": "Bisectriz",
+      "Cortar una tabla de 2 m en dos partes iguales y en escuadra": "Mediatriz",
+      "Un punto a igual distancia de dos casas": "Mediatriz",
+      "Un camino a igual distancia de dos rutas que se cruzan": "Bisectriz"
+     }
+    },
+    "e": "Ángulo → bisectriz; segmento → mediatriz."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Juli trazó la mediatriz de un segmento de 12 cm. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Abro el compás con menos de la mitad: 4 cm",
+      "Trazo un arco desde cada extremo",
+      "Uno los cruces de los arcos"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      0
+     ]
+    },
+    "e": "La abertura tiene que ser más de la mitad (más de 6 cm), si no los arcos no se cruzan."
+   }
+  ],
+  "4": [
+   {
+    "t": "multiple_choice",
+    "p": "¿Con cuál de estas medidas se puede construir un triángulo?",
+    "o": [
+     "2, 3 y 6 cm",
+     "4, 5 y 7 cm",
+     "1, 2 y 3 cm",
+     "3, 3 y 7 cm"
+    ],
+    "r": {
+     "correcta": "4, 5 y 7 cm"
+    },
+    "e": "Cada lado es menor que la suma de los otros dos: 7 < 9.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená los pasos para construir un triángulo de lados 6, 5 y 4 cm.",
+    "o": [
+     "Desde un extremo, trazar un arco de radio 5 cm",
+     "Trazar un segmento de 6 cm",
+     "Unir el punto de corte con los extremos",
+     "Desde el otro extremo, trazar un arco de radio 4 cm"
+    ],
+    "r": {
+     "orden": [
+      "Trazar un segmento de 6 cm",
+      "Desde un extremo, trazar un arco de radio 5 cm",
+      "Desde el otro extremo, trazar un arco de radio 4 cm",
+      "Unir el punto de corte con los extremos"
+     ]
+    },
+    "e": "Primero un lado, después los dos arcos y al final se une.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada terna de medidas: ¿se puede construir el triángulo?",
+    "o": {
+     "elementos": [
+      "4, 5 y 7 cm",
+      "3, 4 y 8 cm",
+      "5, 5 y 5 cm",
+      "2, 3 y 5 cm",
+      "6, 8 y 10 cm"
+     ],
+     "categorias": [
+      "Se puede",
+      "No se puede"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "4, 5 y 7 cm": "Se puede",
+      "3, 4 y 8 cm": "No se puede",
+      "5, 5 y 5 cm": "Se puede",
+      "2, 3 y 5 cm": "No se puede",
+      "6, 8 y 10 cm": "Se puede"
+     }
+    },
+    "e": "El lado mayor tiene que ser menor (no igual) que la suma de los otros dos."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos copiaron un segmento de 7 cm con el compás. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | abrió 7 cm y no cambió la abertura | 7 cm",
+     "Beto: | abrió 7 cm y la ajustó al marcar | 6,5 cm",
+     "Caro: | abrió 3,5 cm y marcó dos veces sin cuidar | 7,4 cm"
+    ],
+    "r": {
+     "correcta": "Ana: | abrió 7 cm y no cambió la abertura | 7 cm"
+    },
+    "e": "La abertura no se cambia entre medir y marcar."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Un ángulo de 120° es…",
+    "o": [
+     "Agudo",
+     "Recto",
+     "Obtuso"
+    ],
+    "r": {
+     "correcta": "Obtuso"
+    },
+    "e": "Está entre 90° y 180°.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. ¿Cuánto mide el opuesto por el vértice de un ángulo de 55°?",
+    "o": {},
+    "r": {
+     "acepta": [
+      55
+     ]
+    },
+    "e": "Los opuestos son iguales.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. La bisectriz de un ángulo recto forma dos ángulos de…",
+    "o": {},
+    "r": {
+     "acepta": [
+      45
+     ]
+    },
+    "e": "90° ÷ 2.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Resolvé 2x + 4 = 18.",
+    "o": {},
+    "r": {
+     "acepta": [
+      7
+     ]
+    },
+    "e": "Repaso de la misión 16.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "¿Cuánto mide el adyacente de un ángulo de 37°?",
+    "o": {},
+    "r": {
+     "acepta": [
+      143
+     ]
+    },
+    "e": "180° − 37°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "Clasificá cada ángulo.",
+    "o": {
+     "elementos": [
+      "30°",
+      "90°",
+      "150°",
+      "180°",
+      "89°"
+     ],
+     "categorias": [
+      "Agudo",
+      "Recto",
+      "Obtuso",
+      "Llano"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "30°": "Agudo",
+      "90°": "Recto",
+      "150°": "Obtuso",
+      "180°": "Llano",
+      "89°": "Agudo"
+     }
+    },
+    "e": "Agudo: menos de 90°. Obtuso: entre 90° y 180°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuánto da 48°35′ + 27°50′?",
+    "o": [
+     "75°85′",
+     "76°25′",
+     "75°25′",
+     "76°85′"
+    ],
+    "r": {
+     "correcta": "76°25′"
+    },
+    "e": "85′ = 1°25′.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cómo son entre sí las vías de un tren?",
+    "o": [
+     "Paralelas",
+     "Perpendiculares",
+     "Secantes"
+    ],
+    "r": {
+     "correcta": "Paralelas"
+    },
+    "e": "Nunca se cortan y mantienen la distancia.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "La distancia de un punto a una recta se mide sobre una perpendicular.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es el camino más corto.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Dos rectas secantes forman un ángulo de 65°. ¿Cuánto mide su ángulo adyacente?",
+    "o": {},
+    "r": {
+     "acepta": [
+      115
+     ]
+    },
+    "e": "180° − 65°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "La bisectriz de un ángulo de 150° lo divide en dos ángulos. ¿Cuántos grados mide cada uno?",
+    "o": {},
+    "r": {
+     "acepta": [
+      75
+     ]
+    },
+    "e": "150° ÷ 2.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Un segmento mide 18 cm. ¿A cuántos cm de un extremo lo corta su mediatriz?",
+    "o": {},
+    "r": {
+     "acepta": [
+      9
+     ]
+    },
+    "e": "Pasa por el punto medio.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Para ubicar una plaza a igual distancia de dos casas, ¿sobre qué línea hay que buscar el lugar?",
+    "o": [
+     "La bisectriz",
+     "La mediatriz del segmento entre las casas",
+     "Una paralela",
+     "Cualquier perpendicular"
+    ],
+    "r": {
+     "correcta": "La mediatriz del segmento entre las casas"
+    },
+    "e": "Sus puntos equidistan de los extremos.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "Con lados de 3, 4 y 8 cm se puede construir un triángulo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "3 + 4 = 7, menor que 8.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "¿Cuántos grados mide cada ángulo de un triángulo equilátero?",
+    "o": {},
+    "r": {
+     "acepta": [
+      60
+     ]
+    },
+    "e": "180° ÷ 3.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Para copiar un segmento con el compás, la abertura tiene que ser…",
+    "o": [
+     "Igual al segmento",
+     "El doble del segmento",
+     "Un poco más que el segmento, por las dudas",
+     "La mitad del segmento"
+    ],
+    "r": {
+     "correcta": "Igual al segmento"
+    },
+    "e": "El compás traslada esa medida.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Para qué se mide con regla y transportador al terminar una construcción?",
+    "o": [
+     "Para verificarla",
+     "Para empezarla",
+     "No sirve para nada",
+     "Para borrarla"
+    ],
+    "r": {
+     "correcta": "Para verificarla"
+    },
+    "e": "Confirma que las medidas son las pedidas.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}
