@@ -170,7 +170,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Razón",
+      "titulo": "Comparar dividiendo",
       "ejemplo": {
        "motor": "razones",
        "p": {
@@ -187,23 +187,23 @@
        {
         "tipo": "definicion",
         "titulo": "Razón",
-        "texto": "Una razón es la comparación de dos cantidades mediante una división. Se escribe a : b o como fracción a/b y se lee «a es a b»."
+        "texto": "Una razón compara dos cantidades dividiéndolas. Se escribe a : b o como fracción a/b, y se lee «a es a b»."
        },
        {
         "tipo": "parrafo",
-        "texto": "La razón dice cuántas veces entra una cantidad en otra o cuánto hay de algo por cada unidad de otra cosa. Si en un grupo hay 12 varones y 18 mujeres, la razón es 12/18 = 2/3: por cada 2 varones hay 3 mujeres."
+        "texto": "La razón dice cuánto hay de una cosa por cada cierta cantidad de otra. En un curso con 12 varones y 18 mujeres, la razón 12/18 se simplifica a 2/3: por cada 2 varones hay 3 mujeres. Simplificar no cambia la comparación, solo la hace más fácil de leer."
        },
        {
         "tipo": "lista",
         "items": [
          "12 : 18 = 2 : 3.",
-         "Se simplifica como una fracción."
+         "Se simplifica igual que una fracción."
         ]
        }
       ]
      },
      {
-      "titulo": "Proporción",
+      "titulo": "Dos razones iguales",
       "ejemplo": {
        "motor": "razones",
        "p": {
@@ -220,50 +220,17 @@
        {
         "tipo": "definicion",
         "titulo": "Proporción",
-        "texto": "Una proporción es una igualdad entre dos razones, como 2/3 = 8/12. Las dos razones tienen el mismo cociente."
+        "texto": "Una proporción es una igualdad entre dos razones, como 2/3 = 8/12. Para comprobarla, los productos cruzados tienen que dar lo mismo: 2 × 12 = 3 × 8."
        },
        {
         "tipo": "parrafo",
-        "texto": "Para saber si dos razones forman una proporción se pueden calcular los cocientes o simplificar las dos fracciones. Las recetas usan proporciones: si para 2 tortas van 3 huevos, para 8 tortas van 12, y 2/3 = 8/12."
+        "texto": "Las recetas funcionan con proporciones: si para 2 tortas van 3 huevos, para 8 tortas van 12. Esa misma propiedad permite encontrar un dato que falta: en 3/5 = 12/x se plantea 3 · x = 5 · 12, y al dividir 60 por 3 sale x = 20. Siempre conviene controlar que las dos razones queden iguales."
        },
        {
         "tipo": "lista",
         "items": [
-         "2/3 = 8/12: es proporción.",
-         "Mismo cociente."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Propiedad fundamental y término desconocido",
-      "ejemplo": {
-       "motor": "razones",
-       "p": {
-        "modo": "desconocido"
-       }
-      },
-      "ejercicio": {
-       "motor": "razones_x",
-       "p": {
-        "modo": "desconocido"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Propiedad fundamental",
-        "texto": "En toda proporción, el producto de los extremos es igual al producto de los medios: si a/b = c/d, entonces a × d = b × c."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Esta propiedad permite encontrar un término que falta. En 3/5 = 12/x, se hace 3 · x = 5 · 12 = 60, y entonces x = 60 ÷ 3 = 20. Siempre conviene controlar que las dos razones den lo mismo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "3/5 = 12/x → x = 20.",
-         "Extremos: a y d. Medios: b y c."
+         "2/3 = 8/12 porque 2 × 12 = 3 × 8.",
+         "3/5 = 12/x → x = 20."
         ]
        }
       ]
@@ -272,7 +239,7 @@
     "recuerda": [
      {
       "concepto": "Una razón",
-      "definicion": "compara dos cantidades mediante una división y se escribe como fracción.",
+      "definicion": "compara dos cantidades dividiendo una por la otra, y se escribe como fracción.",
       "ejemplo": "12 varones y 18 mujeres: 2/3"
      },
      {
@@ -281,14 +248,14 @@
       "ejemplo": "2/3 = 8/12"
      },
      {
-      "concepto": "La propiedad fundamental",
-      "definicion": "dice que en una proporción el producto de los extremos es igual al de los medios.",
+      "concepto": "En toda proporción",
+      "definicion": "el producto de los extremos es igual al producto de los medios.",
       "ejemplo": "2 × 12 = 3 × 8",
       "formula": "a/b = c/d → a·d = b·c"
      },
      {
-      "concepto": "Para encontrar un término que falta",
-      "definicion": "se usan los productos cruzados y después se despeja la incógnita dividiendo.",
+      "concepto": "Para encontrar un término desconocido",
+      "definicion": "se igualan los productos cruzados y se despeja dividiendo.",
       "ejemplo": "3/5 = 12/x → x = 20"
      }
     ]
@@ -485,65 +452,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Proporcionalidad directa",
-      "ejemplo": {
-       "motor": "proporcionalidad",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "proporcional",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Proporcionalidad directa",
-        "texto": "Dos magnitudes son directamente proporcionales cuando al multiplicar una por un número la otra queda multiplicada por el mismo número; su cociente es siempre el mismo, la constante de proporcionalidad."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si 1 cuaderno cuesta $3.000, 2 cuestan $6.000 y 5 cuestan $15.000: el precio dividido la cantidad da siempre 3.000. Esa constante permite completar cualquier valor de la tabla."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "y ÷ x = k, siempre igual.",
-         "Doble de una → doble de la otra."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "El gráfico y no todo lo que crece",
-      "ejemplo": {
-       "motor": "proporcionalidad",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "proporcional",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "El gráfico",
-        "texto": "El gráfico de una proporcionalidad directa son puntos sobre una recta que pasa por el origen (0; 0)."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "No todo lo que crece es proporcional: la edad y la altura de una persona crecen juntas, pero a los 20 años no medís el doble que a los 10. Para que sea proporcional el cociente tiene que mantenerse; si el gráfico no pasa por el 0 o no es una recta, no lo es."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Recta por el origen.",
-         "Crecer juntas no alcanza."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Problemas de proporcionalidad directa",
+      "titulo": "Cuando una crece igual que la otra",
       "ejemplo": {
        "motor": "proporcionalidad",
        "p": {}
@@ -557,18 +466,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Regla de tres directa",
-        "texto": "Para resolver un problema de proporcionalidad directa se puede buscar el valor de una unidad y multiplicar, o armar la proporción y usar los productos cruzados."
+        "titulo": "Proporcionalidad directa",
+        "texto": "Hay proporcionalidad directa cuando dos cantidades cambian al mismo ritmo: si una se duplica o se triplica, la otra también. Dividir una por la otra da siempre el mismo número, llamado constante de proporcionalidad."
        },
        {
         "tipo": "parrafo",
-        "texto": "Si 3 kg de carne cuestan $27.000, 1 kg cuesta $9.000 y 5 kg cuestan $45.000. Antes de calcular hay que verificar que la situación sea realmente de proporcionalidad directa."
+        "texto": "Si un litro de leche vale $1.200, cuatro litros valen $4.800 y diez valen $12.000: en toda la tabla el precio dividido por los litros da 1.200. En el gráfico los puntos quedan sobre una recta que pasa por el origen. Ojo, que crezcan al mismo tiempo no alcanza: un chico de 6 años no mide la mitad que uno de 12, así que edad y estatura no son proporcionales. Para resolver un problema se averigua cuánto vale una unidad y después se multiplica por la cantidad pedida."
        },
        {
         "tipo": "lista",
         "items": [
-         "Reducción a la unidad.",
-         "3 kg → 27.000; 5 kg → 45.000."
+         "Precio ÷ cantidad = constante.",
+         "3 kg $27.000 → 1 kg $9.000 → 5 kg $45.000.",
+         "Cuidado: crecer juntas no alcanza."
         ]
        }
       ]
@@ -577,23 +487,23 @@
     "recuerda": [
      {
       "concepto": "Dos magnitudes directamente proporcionales",
-      "definicion": "se multiplican o se dividen por el mismo número al mismo tiempo.",
+      "definicion": "quedan multiplicadas por el mismo número al mismo tiempo.",
       "ejemplo": "1 cuaderno $3.000; 5 cuadernos $15.000"
      },
      {
       "concepto": "La constante de proporcionalidad directa",
-      "definicion": "es el cociente entre las dos magnitudes, que siempre da lo mismo.",
+      "definicion": "es el cociente entre las dos magnitudes, y es igual en toda la tabla.",
       "ejemplo": "15.000 ÷ 5 = 3.000"
      },
      {
-      "concepto": "El gráfico de la proporcionalidad directa",
-      "definicion": "es una recta que pasa por el origen, el punto (0; 0).",
+      "concepto": "El gráfico de una proporcionalidad directa",
+      "definicion": "es una recta que pasa por el origen de coordenadas.",
       "ejemplo": "Puntos (1; 3), (2; 6), (3; 9)"
      },
      {
-      "concepto": "Que dos cantidades crezcan juntas",
-      "definicion": "no alcanza para decir que son proporcionales: hay que mirar el cociente.",
-      "ejemplo": "Edad y altura no lo son"
+      "concepto": "Para resolver un problema de proporcionalidad directa",
+      "definicion": "se calcula el valor de una unidad y se multiplica.",
+      "ejemplo": "1 kg $9.000 → 5 kg $45.000"
      }
     ]
    },
@@ -775,40 +685,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Proporcionalidad inversa",
-      "ejemplo": {
-       "motor": "proporcionalidad",
-       "p": {
-        "modo": "inversa"
-       }
-      },
-      "ejercicio": {
-       "motor": "regla_de_tres",
-       "p": {
-        "modo": "inversa"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Proporcionalidad inversa",
-        "texto": "Dos magnitudes son inversamente proporcionales cuando al multiplicar una por un número la otra queda dividida por ese mismo número; su producto es siempre el mismo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si 4 pintores tardan 9 días, 2 pintores tardan el doble, 18 días, y 6 pintores tardan 6 días: el producto pintores × días da siempre 36. El gráfico es una curva que baja, no una recta."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "x · y = k, siempre igual.",
-         "Doble de una → mitad de la otra."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Directa o inversa",
+      "titulo": "Cuando una crece y la otra achica",
       "ejemplo": {
        "motor": "proporcionalidad",
        "p": {
@@ -822,51 +699,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Distinguirlas",
-        "texto": "Para saber si una relación es directa o inversa se piensa qué pasa con una magnitud cuando la otra se duplica: si también se duplica es directa, si se reduce a la mitad es inversa."
+        "titulo": "Proporcionalidad inversa",
+        "texto": "Dos magnitudes son inversamente proporcionales cuando, al multiplicar una por un número, la otra queda dividida por ese número. Lo que se mantiene constante es el producto."
        },
        {
         "tipo": "parrafo",
-        "texto": "Más kilos, más precio: directa. Más velocidad, menos tiempo para el mismo viaje: inversa. Conviene decidirlo antes de hacer la cuenta, porque el cálculo es distinto en cada caso."
+        "texto": "Si 4 pintores tardan 9 días, 2 pintores tardan 18 y 6 pintores tardan 6: pintores por días da siempre 36. Para saber si una situación es directa o inversa se piensa qué pasa con una cuando la otra se duplica. Y no toda relación donde una baja es inversa: una vela de 20 cm que se consume 2 cm por hora baja, pero 1 × 18 no da lo mismo que 2 × 16, así que no lo es."
        },
        {
         "tipo": "lista",
         "items": [
-         "Más y más → directa.",
-         "Más y menos (a la mitad) → inversa."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "No toda la que baja es inversa",
-      "ejemplo": {
-       "motor": "proporcionalidad",
-       "p": {
-        "modo": "inversa"
-       }
-      },
-      "ejercicio": {
-       "motor": "regla_de_tres",
-       "p": {
-        "modo": "inversa"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Cuidado",
-        "texto": "No toda relación en la que una cantidad baja cuando la otra sube es de proporcionalidad inversa: para serlo, el producto tiene que mantenerse constante."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si una vela de 20 cm se consume 2 cm por hora, a más horas queda menos vela, pero 1 × 18 no es igual a 2 × 16: no es inversa. Siempre hay que comprobar el producto en la tabla."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Comprobá el producto.",
-         "Bajar no alcanza."
+         "4 × 9 = 6 × 6 = 36.",
+         "Doble de velocidad → mitad de tiempo.",
+         "Cuidado: comprobá que el producto se mantenga."
         ]
        }
       ]
@@ -875,7 +720,7 @@
     "recuerda": [
      {
       "concepto": "Dos magnitudes inversamente proporcionales",
-      "definicion": "tienen un producto que se mantiene siempre constante en toda la tabla.",
+      "definicion": "mantienen siempre constante el producto que se obtiene al multiplicarlas.",
       "ejemplo": "4 pintores × 9 días = 6 × 6 = 36"
      },
      {
@@ -884,13 +729,13 @@
       "ejemplo": "Doble de velocidad, mitad de tiempo"
      },
      {
-      "concepto": "Para distinguir directa de inversa",
-      "definicion": "se piensa qué pasa con una cuando la otra se duplica.",
+      "concepto": "Para saber si es directa o inversa",
+      "definicion": "se piensa qué le pasa a una cuando la otra se duplica.",
       "ejemplo": "Kilos y precio: directa"
      },
      {
       "concepto": "Que una cantidad baje cuando la otra sube",
-      "definicion": "no alcanza para que sea inversa: hay que comprobar que el producto se mantenga.",
+      "definicion": "no alcanza: hay que comprobar que el producto se mantenga.",
       "ejemplo": "La vela que se consume no es inversa"
      }
     ]
@@ -1101,7 +946,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Qué es un porcentaje",
+      "titulo": "De cada cien",
       "ejemplo": {
        "motor": "porcentaje_barra",
        "p": {}
@@ -1116,23 +961,23 @@
        {
         "tipo": "definicion",
         "titulo": "Porcentaje",
-        "texto": "Un porcentaje es una razón con denominador 100: el 25 % significa 25 de cada 100, es decir 25/100 = 1/4."
+        "texto": "Un porcentaje es una razón con denominador 100: el 25 % significa 25 de cada 100, es decir 25/100 = 1/4. Para calcular un porcentaje de una cantidad se multiplica por el porcentaje y se divide por 100."
        },
        {
         "tipo": "parrafo",
-        "texto": "Los porcentajes permiten comparar partes de totales distintos usando siempre la misma referencia, 100. Algunos conviene conocerlos como fracción: 50 % es la mitad, 25 % un cuarto, 10 % un décimo. Así se ve rápido cuánto es."
+        "texto": "Usar siempre 100 como referencia permite comparar partes de totales distintos. Al revés, para saber qué porcentaje representa una parte se divide la parte por el total y se multiplica por 100: si de 40 chicos 10 usan anteojos, son el 25 %. Algunos conviene conocerlos de memoria: 50 % es la mitad, 25 % un cuarto y 10 % un décimo."
        },
        {
         "tipo": "lista",
         "items": [
-         "25 % = 25/100 = 1/4.",
-         "50 % = mitad; 10 % = un décimo."
+         "15 % de 300 = 45.",
+         "10 de 40 = 25 %."
         ]
        }
       ]
      },
      {
-      "titulo": "Descuentos y aumentos",
+      "titulo": "Pagar más o pagar menos",
       "ejemplo": {
        "motor": "porcentaje_barra",
        "p": {
@@ -1149,48 +994,17 @@
        {
         "tipo": "definicion",
         "titulo": "Descuentos y aumentos",
-        "texto": "Para aplicar un descuento se calcula el porcentaje del precio y se resta; para un aumento, se calcula y se suma."
+        "texto": "En un descuento se calcula el porcentaje del precio y se resta; en un aumento, se calcula y se suma."
        },
        {
         "tipo": "parrafo",
-        "texto": "Un pantalón de $12.000 con 25 % de descuento: el 25 % es 3.000, así que se pagan $9.000. Otra forma: pagar el 75 % del precio. En un aumento del 10 %, se paga el 110 %."
+        "texto": "Un pantalón de $12.000 con 25 % de descuento: el 25 % es 3.000, así que se pagan $9.000. Otra forma de pensarlo es que se paga el 75 % del precio. En un aumento del 10 % se paga el 110 %, que es multiplicar por 1,1. Por eso un aumento y un descuento del mismo porcentaje no se anulan."
        },
        {
         "tipo": "lista",
         "items": [
-         "12.000 − 25 % = 9.000.",
+         "$12.000 − 25 % = $9.000.",
          "Aumento del 10 %: × 1,1."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "¿Qué porcentaje es?",
-      "ejemplo": {
-       "motor": "porcentaje_barra",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "porcentaje",
-       "p": {
-        "modo": "que"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Calcular el porcentaje",
-        "texto": "Para saber qué porcentaje representa una parte de un total se divide la parte por el total y se multiplica por 100."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si de 40 chicos 10 usan anteojos: 10 ÷ 40 = 0,25, y 0,25 × 100 = 25 %. Es como armar la proporción 10/40 = x/100 y buscar el término que falta. Siempre conviene controlar con una estimación."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "10 de 40 = 25 %.",
-         "Parte ÷ total × 100."
         ]
        }
       ]
@@ -1199,23 +1013,23 @@
     "recuerda": [
      {
       "concepto": "Un porcentaje",
-      "definicion": "es una razón con denominador 100, que indica cuántos de cada 100.",
+      "definicion": "es una razón con denominador 100, que dice cuántos de cada 100.",
       "ejemplo": "25 % = 25/100 = 1/4"
      },
      {
       "concepto": "Para calcular un porcentaje de una cantidad",
-      "definicion": "se multiplica la cantidad por el porcentaje y se divide por 100.",
+      "definicion": "se multiplica por el porcentaje y se divide por 100.",
       "ejemplo": "15 % de 300 = 45"
-     },
-     {
-      "concepto": "En un descuento",
-      "definicion": "se resta el porcentaje calculado; en un aumento se suma al precio.",
-      "ejemplo": "$12.000 − 25 % = $9.000"
      },
      {
       "concepto": "Para saber qué porcentaje es una parte",
       "definicion": "se divide la parte por el total y se multiplica por 100.",
       "ejemplo": "10 de 40 = 25 %"
+     },
+     {
+      "concepto": "En un descuento se resta el porcentaje calculado",
+      "definicion": "y en un aumento se suma al precio original.",
+      "ejemplo": "$12.000 − 25 % = $9.000"
      }
     ]
    },

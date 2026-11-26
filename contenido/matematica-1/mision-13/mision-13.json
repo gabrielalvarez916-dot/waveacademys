@@ -190,7 +190,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "La regla de los signos",
+      "titulo": "Menos por menos",
       "ejemplo": {
        "motor": "signos",
        "p": {}
@@ -204,80 +204,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Multiplicación de enteros",
-        "texto": "Para multiplicar dos enteros se multiplican sus valores absolutos; el resultado es positivo si los signos son iguales y negativo si son distintos."
+        "titulo": "Multiplicar enteros",
+        "texto": "Para multiplicar enteros se multiplican los valores absolutos; el resultado es positivo si los signos son iguales y negativo si son distintos. Con varios factores, alcanza con contar los negativos: si son una cantidad par el producto es positivo, y si es impar, negativo."
        },
        {
         "tipo": "parrafo",
-        "texto": "3 × (−4) es sumar tres veces −4: −12. Por eso más por menos da menos. Y si cambiar el signo de un factor cambia el signo del resultado, cambiar los dos lo deja positivo: (−3) × (−4) = 12."
+        "texto": "3 × (−4) es sumar tres veces −4, y da −12. Si se mira la tabla del −3 hacia abajo (−3 × 2 = −6, −3 × 1 = −3, −3 × 0 = 0), cada resultado sube 3; siguiendo el patrón, −3 × (−1) = 3. Por eso menos por menos da más: no es un capricho, sigue la regla de la tabla."
        },
        {
         "tipo": "lista",
         "items": [
-         "(+)(+) = + · (−)(−) = +.",
-         "(+)(−) = − · (−)(+) = −."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Por qué menos por menos da más",
-      "ejemplo": {
-       "motor": "signos",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "producto"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Menos por menos",
-        "texto": "Multiplicar por un número negativo da el opuesto de multiplicar por el positivo; por eso, si el otro factor ya es negativo, el resultado vuelve a ser positivo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Mirá el patrón: (−3) × 2 = −6, (−3) × 1 = −3, (−3) × 0 = 0. Cada vez sube 3, así que (−3) × (−1) = 3 y (−3) × (−2) = 6. La regla no es arbitraria: sigue el patrón."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "(−3) × (−2) = 6.",
-         "Cada paso del patrón suma 3."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Varios factores",
-      "ejemplo": {
-       "motor": "signos",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "producto"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Signo con varios factores",
-        "texto": "Con varios factores, el producto es positivo si la cantidad de factores negativos es par y negativo si es impar."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Cada par de negativos da un positivo, así que alcanza con contar los negativos. (−2) × (−3) × (−4) tiene tres negativos: el resultado es −24. Si algún factor es 0, el producto es 0. Es una forma rápida de saber el signo antes de hacer la cuenta."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "3 negativos → negativo.",
-         "4 negativos → positivo."
+         "(−3) × (−4) = 12.",
+         "(−2) × (−3) × (−4) = −24.",
+         "Si un factor es 0, el producto es 0."
         ]
        }
       ]
@@ -290,9 +229,9 @@
       "ejemplo": "(−3) × (−4) = 12"
      },
      {
-      "concepto": "Menos por menos",
-      "definicion": "da más porque multiplicar por un negativo da el opuesto.",
-      "ejemplo": "(−3) × (−2) = 6"
+      "concepto": "Menos por menos da más",
+      "definicion": "porque así se continúa el patrón de la tabla de multiplicar.",
+      "ejemplo": "−3 × (−1) = 3"
      },
      {
       "concepto": "Con varios factores",
@@ -301,7 +240,7 @@
      },
      {
       "concepto": "Un producto con un factor cero",
-      "definicion": "da siempre cero, sin importar los signos de los otros factores.",
+      "definicion": "da siempre cero, sin importar los demás factores.",
       "ejemplo": "(−7) × 0 = 0"
      }
     ]
@@ -476,7 +415,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Regla de los signos en la división",
+      "titulo": "Dividir con signos",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -492,84 +431,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "División de enteros",
-        "texto": "La división de enteros usa la misma regla de los signos que la multiplicación: signos iguales dan positivo y signos distintos dan negativo."
+        "titulo": "Dividir enteros",
+        "texto": "La división de enteros usa la misma regla de los signos que la multiplicación, porque es su operación inversa: (−42) ÷ (−7) = 6 porque 6 × (−7) = −42."
        },
        {
         "tipo": "parrafo",
-        "texto": "Tiene sentido porque la división es la operación inversa: (−42) ÷ (−7) = 6 porque 6 × (−7) = −42. Siempre se puede comprobar multiplicando el cociente por el divisor. Así nunca se pierde un signo por el camino."
+        "texto": "Para no equivocarse con el signo, conviene comprobar multiplicando el cociente por el divisor: tiene que dar el dividendo exacto, con su signo. Si alguien dice que (−48) ÷ (−6) = −8, al comprobar sale (−8) × (−6) = 48 y no −48. Con el cero hay que tener cuidado: 0 ÷ (−5) = 0, pero dividir por cero no tiene resultado."
        },
        {
         "tipo": "lista",
         "items": [
-         "(−42) ÷ (−7) = 6.",
-         "(−63) ÷ 9 = −7."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "El cero",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "division"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "division"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "El cero en la división",
-        "texto": "El cero dividido cualquier número distinto de cero da cero, pero no se puede dividir por cero: esa división no tiene resultado."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "0 ÷ (−5) = 0 porque 0 × (−5) = 0. En cambio (−5) ÷ 0 no existe: ningún número multiplicado por 0 da −5. Esto vale para todos los conjuntos de números. Por eso dividir por cero no tiene sentido."
-       },
-       {
-        "tipo": "lista",
-        "items": [
+         "(−63) ÷ 9 = −7.",
          "0 ÷ (−5) = 0.",
-         "(−5) ÷ 0: no existe."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Comprobar",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "division"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "division"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Comprobar una división",
-        "texto": "Para comprobar una división de enteros se multiplica el cociente por el divisor y se verifica que dé el dividendo, con su signo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Comprobar ayuda a no equivocarse con los signos, que es el error más frecuente. Si alguien dice (−48) ÷ (−6) = −8, al comprobar (−8) × (−6) = 48, no −48: el signo estaba mal."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Cociente × divisor = dividendo.",
-         "(−8) × (−6) = 48 ≠ −48."
+         "Cuidado: (−5) ÷ 0 no existe."
         ]
        }
       ]
@@ -582,19 +456,19 @@
       "ejemplo": "(−42) ÷ (−7) = 6"
      },
      {
-      "concepto": "El cero dividido",
-      "definicion": "por cualquier número distinto de cero da siempre como resultado cero.",
+      "concepto": "Para comprobar una división",
+      "definicion": "se multiplica el cociente por el divisor y tiene que dar el dividendo.",
+      "ejemplo": "6 × (−7) = −42"
+     },
+     {
+      "concepto": "El cero dividido por otro número",
+      "definicion": "da cero siempre que ese número sea distinto de cero.",
       "ejemplo": "0 ÷ (−5) = 0"
      },
      {
       "concepto": "Dividir por cero",
-      "definicion": "no se puede: esa división no tiene resultado en ningún conjunto de números.",
+      "definicion": "no se puede, porque ningún número multiplicado por cero da otro distinto de cero.",
       "ejemplo": "(−5) ÷ 0 no existe"
-     },
-     {
-      "concepto": "Para comprobar una división",
-      "definicion": "se multiplica el cociente por el divisor y tiene que dar el dividendo.",
-      "ejemplo": "6 × (−7) = −42"
      }
     ]
    },
@@ -764,7 +638,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Jerarquía con signos",
+      "titulo": "Cálculos combinados con signos",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -781,56 +655,23 @@
        {
         "tipo": "definicion",
         "titulo": "Combinadas con enteros",
-        "texto": "En los cálculos combinados con enteros se respeta la jerarquía: paréntesis, potencias y raíces, multiplicaciones y divisiones, y al final sumas y restas."
+        "texto": "En los cálculos combinados con enteros se respeta la jerarquía de siempre y en cada multiplicación o división se aplica la regla de los signos."
        },
        {
         "tipo": "parrafo",
-        "texto": "La novedad es aplicar la regla de los signos en cada paso. En 10 − 2 × (−6), primero 2 × (−6) = −12, y después 10 − (−12) = 22. Separar en términos ayuda a ordenar."
+        "texto": "En 10 − 2 × (−6), primero 2 × (−6) = −12, y después 10 − (−12) = 22. La propiedad distributiva también vale con negativos: (−5) × (3 − 7) da lo mismo resolviendo el paréntesis, (−5) × (−4) = 20, que distribuyendo, −15 + 35 = 20. Separar en términos ayuda a no perder ningún signo."
        },
        {
         "tipo": "lista",
         "items": [
          "10 − 2 × (−6) = 22.",
-         "Primero × y ÷."
+         "(−5) × (3 − 7) = 20."
         ]
        }
       ]
      },
      {
-      "titulo": "Distributiva con negativos",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "combinadas"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "combinadas"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Propiedad distributiva",
-        "texto": "La multiplicación se distribuye sobre la suma y la resta también con enteros: a × (b + c) = a × b + a × c, cuidando el signo de cada producto."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "(−5) × (3 − 7) se puede hacer resolviendo el paréntesis, (−5) × (−4) = 20, o distribuyendo: −15 + 35 = 20. Los dos caminos tienen que dar lo mismo. Elegí el camino más cómodo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "(−5) × (3 − 7) = 20.",
-         "−15 + 35 = 20."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "−3² y (−3)²",
+      "titulo": "¿Qué está elevado?",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -847,11 +688,11 @@
        {
         "tipo": "definicion",
         "titulo": "Paréntesis en las potencias",
-        "texto": "Con paréntesis, (−3)² eleva toda la base −3 y da 9; sin paréntesis, −3² eleva solo el 3 y el signo queda afuera, así que da −9."
+        "texto": "Con paréntesis, (−3)² eleva toda la base −3 y da 9; sin paréntesis, −3² eleva solo el 3 y el signo menos queda afuera, así que da −9."
        },
        {
         "tipo": "parrafo",
-        "texto": "Es uno de los errores más frecuentes del cálculo con enteros. Lo que está elevado es lo que está pegado al exponente: si es un paréntesis, todo lo de adentro; si es un número, solo ese número."
+        "texto": "Lo que queda elevado es lo que está pegado al exponente: si es un paréntesis, todo lo de adentro; si es un número, solo ese número. Es uno de los errores más frecuentes, y cambia el resultado entero de un cálculo. Por eso, cuando se reemplaza una letra por un negativo, se escribe entre paréntesis."
        },
        {
         "tipo": "lista",
@@ -866,7 +707,7 @@
     "recuerda": [
      {
       "concepto": "La jerarquía con enteros",
-      "definicion": "es la misma de siempre, aplicando la regla de los signos en cada paso.",
+      "definicion": "es la misma de siempre, aplicando la regla de los signos en cada producto.",
       "ejemplo": "10 − 2 × (−6) = 22"
      },
      {
@@ -875,8 +716,8 @@
       "ejemplo": "(−5) × (3 − 7) = −15 + 35 = 20"
      },
      {
-      "concepto": "Con paréntesis",
-      "definicion": "la potencia eleva toda la base que está adentro, incluido el signo menos.",
+      "concepto": "Con paréntesis, la potencia",
+      "definicion": "eleva toda la base, incluido el signo menos.",
       "ejemplo": "(−3)² = 9"
      },
      {
@@ -1088,11 +929,11 @@
        {
         "tipo": "definicion",
         "titulo": "Potencias de base negativa",
-        "texto": "Una potencia de base negativa da positivo si el exponente es par y negativo si es impar."
+        "texto": "Una potencia de base negativa da positivo si el exponente es par y negativo si es impar, porque cada par de factores negativos da un positivo."
        },
        {
         "tipo": "parrafo",
-        "texto": "Cada par de factores negativos da positivo. (−2)⁴ = 16 porque hay cuatro factores negativos; (−2)⁵ = −32 porque queda uno sin pareja. Con base positiva siempre da positivo. Así, el signo se decide mirando solo si el exponente es par o impar."
+        "texto": "(−2)⁴ = 16 porque los cuatro factores negativos forman dos pares; (−2)⁵ = −32 porque queda uno sin pareja. Las propiedades de las potencias siguen valiendo: (−2)³ × (−2)² = (−2)⁵. Lo que nunca se puede es distribuir la potencia en una suma o una resta."
        },
        {
         "tipo": "lista",
@@ -1120,51 +961,18 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Raíces de números enteros",
+        "titulo": "Raíces de enteros",
         "texto": "La raíz de índice impar de un número negativo existe y es negativa; la raíz de índice par de un número negativo no existe en los enteros."
        },
        {
         "tipo": "parrafo",
-        "texto": "∛(−8) = −2 porque (−2)³ = −8. Pero √(−16) no existe: ningún entero al cuadrado da negativo, porque tanto 4² como (−4)² dan 16. Por eso hay que mirar el índice de la raíz."
+        "texto": "La raíz cúbica de −8 es −2, porque (−2)³ = −8. Pero √(−16) no existe, porque ningún entero elevado al cuadrado da negativo: tanto 4² como (−4)² dan 16. Antes de calcular una raíz hay que mirar el índice y el signo del número."
        },
        {
         "tipo": "lista",
         "items": [
          "∛(−8) = −2.",
          "√(−16): no existe en los enteros."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Propiedades y cálculos",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "cuadrado"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "cuadrado"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Propiedades de las potencias",
-        "texto": "Las propiedades de las potencias valen también con base negativa: producto y cociente de igual base, potencia de potencia y distributiva respecto de × y ÷."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "(−2)³ × (−2)² = (−2)⁵ = −32. Pero, igual que con naturales, la potencia no se distribuye en la suma ni en la resta. Antes de usar una propiedad, fijate si la base está entre paréntesis."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "(−2)³ × (−2)² = (−2)⁵.",
-         "No se distribuye en + ni −."
         ]
        }
       ]
@@ -1177,19 +985,19 @@
       "ejemplo": "(−2)⁴ = 16 · (−2)⁵ = −32"
      },
      {
-      "concepto": "La raíz de índice impar",
-      "definicion": "de un número negativo existe siempre y su resultado es un número negativo.",
+      "concepto": "Las propiedades de las potencias",
+      "definicion": "valen también con base negativa, si la base está entre paréntesis.",
+      "ejemplo": "(−2)³ × (−2)² = (−2)⁵"
+     },
+     {
+      "concepto": "La raíz de índice impar de un número negativo",
+      "definicion": "existe y su resultado es un número negativo.",
       "ejemplo": "∛(−8) = −2"
      },
      {
-      "concepto": "La raíz cuadrada de un negativo",
+      "concepto": "La raíz cuadrada de un número negativo",
       "definicion": "no existe en los enteros, porque ningún cuadrado es negativo.",
       "ejemplo": "√(−16) no existe"
-     },
-     {
-      "concepto": "Las propiedades de las potencias",
-      "definicion": "valen también con base negativa, siempre que se cuiden bien los paréntesis.",
-      "ejemplo": "(−2)³ × (−2)² = (−2)⁵"
      }
     ]
    },

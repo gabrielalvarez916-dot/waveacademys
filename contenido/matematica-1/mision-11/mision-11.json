@@ -194,7 +194,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Positivos, negativos y cero",
+      "titulo": "Por debajo de cero",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -211,56 +211,24 @@
        {
         "tipo": "definicion",
         "titulo": "Números enteros",
-        "texto": "Los números enteros son los naturales (positivos), sus opuestos (negativos) y el cero. Los negativos se escriben con un signo menos adelante y sirven para cantidades por debajo de una referencia."
+        "texto": "Los números enteros son los naturales, sus opuestos negativos y el cero. Sirven para expresar cantidades que están por encima o por debajo de un punto de referencia, que se toma como cero."
        },
        {
         "tipo": "parrafo",
-        "texto": "Hacen falta para situaciones que los naturales no pueden expresar: temperaturas bajo cero, pisos del subsuelo, profundidades bajo el nivel del mar o deudas. El cero es la referencia y no es ni positivo ni negativo."
+        "texto": "Primero se decide qué es el cero en cada situación: la planta baja, el nivel del mar, el congelamiento del agua o no deber nada. Lo que está por encima o se tiene es positivo; lo que está por debajo o se debe, negativo, y se escribe con un signo menos adelante. Así −2 puede ser un subsuelo o dos grados bajo cero."
        },
        {
         "tipo": "lista",
         "items": [
          "−4 °C: cuatro grados bajo cero.",
-         "Subsuelo 2 → −2."
+         "Subsuelo 2 → −2.",
+         "El 0 no es positivo ni negativo."
         ]
        }
       ]
      },
      {
-      "titulo": "El cero como referencia",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "situacion"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "situacion"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "La referencia",
-        "texto": "En cada situación con enteros hay que decidir qué representa el cero: la planta baja, el nivel del mar, la temperatura de congelamiento del agua o no deber nada."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Una vez elegido el cero, lo que está por encima o se gana es positivo y lo que está por debajo o se debe es negativo. Por eso el mismo número cambia de sentido según el problema: −2 puede ser un subsuelo o dos grados bajo cero."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Planta baja = 0; subsuelo 2 = −2.",
-         "Nivel del mar = 0; 30 m de profundidad = −30."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "El opuesto",
+      "titulo": "Del otro lado del cero",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -277,17 +245,17 @@
        {
         "tipo": "definicion",
         "titulo": "Opuesto",
-        "texto": "El opuesto de un número entero es el que tiene el mismo valor pero con el signo cambiado. Un número y su opuesto están a la misma distancia del cero, uno de cada lado."
+        "texto": "El opuesto de un número entero es el que tiene el mismo valor con el signo cambiado; los dos están a la misma distancia del cero, uno de cada lado."
        },
        {
         "tipo": "parrafo",
-        "texto": "El opuesto de 5 es −5 y el de −5 es 5: cambiar dos veces el signo vuelve al número original. El opuesto de 0 es 0. En la recta, un número y su opuesto son simétricos respecto del 0."
+        "texto": "Si subís 5 pisos y después bajás 5, volvés a la planta baja: 5 y −5 se compensan. Cambiar el signo dos veces devuelve el número original, por eso el opuesto de −8 es 8. El cero es el único número que es su propio opuesto."
        },
        {
         "tipo": "lista",
         "items": [
          "Opuesto de 7: −7.",
-         "Opuesto de −3: 3."
+         "Opuesto de −8: 8."
         ]
        }
       ]
@@ -296,22 +264,22 @@
     "recuerda": [
      {
       "concepto": "Los números enteros",
-      "definicion": "son los positivos, los negativos y el cero, que sirve de referencia.",
+      "definicion": "son los positivos, los negativos y el cero, que funciona como referencia.",
       "ejemplo": "…, −2, −1, 0, 1, 2, …"
      },
      {
       "concepto": "Un número negativo",
-      "definicion": "indica una cantidad por debajo de la referencia y lleva signo menos.",
+      "definicion": "indica una cantidad por debajo de la referencia y se escribe con signo menos.",
       "ejemplo": "4 grados bajo cero = −4 °C"
      },
      {
       "concepto": "El opuesto de un número",
-      "definicion": "tiene el mismo valor con el signo cambiado y está del otro lado del 0.",
+      "definicion": "tiene el mismo valor con el signo cambiado y está del otro lado del cero.",
       "ejemplo": "Opuesto de 7: −7"
      },
      {
       "concepto": "El cero",
-      "definicion": "no es positivo ni negativo, y es el único número que es su propio opuesto.",
+      "definicion": "no es positivo ni negativo, y es el único número igual a su opuesto.",
       "ejemplo": "Opuesto de 0: 0"
      }
     ]
@@ -808,40 +776,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Comparar en la recta",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "comparar"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "comparar"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Comparar enteros",
-        "texto": "De dos números enteros es mayor el que está más a la derecha en la recta numérica. Todo positivo es mayor que cero y que cualquier negativo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Con los negativos hay que tener cuidado: −2 es mayor que −7, porque está más cerca del 0, más a la derecha. Pensá en temperaturas: −2 °C es menos frío que −7 °C."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "−2 > −7.",
-         "3 > −10."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Ordenar",
+      "titulo": "Más a la derecha, más grande",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -857,24 +792,24 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Ordenar enteros",
-        "texto": "Para ordenar números enteros de menor a mayor se escriben primero los negativos, del más lejano al más cercano al 0, después el 0 y por último los positivos."
+        "titulo": "Comparar y ordenar enteros",
+        "texto": "De dos números enteros es mayor el que está más a la derecha en la recta. Para ordenar varios de menor a mayor se escriben de izquierda a derecha, como aparecen en la recta."
        },
        {
         "tipo": "parrafo",
-        "texto": "Ubicar cada número en la recta ayuda a no confundirse: el orden de izquierda a derecha es el orden de menor a mayor. Entre negativos, el de mayor distancia al 0 es el menor."
+        "texto": "Con los negativos el orden parece al revés: −2 es mayor que −7, porque está más cerca del cero. Pensalo con temperaturas: dos grados bajo cero es menos frío que siete bajo cero. Todo positivo es mayor que el cero y que cualquier negativo."
        },
        {
         "tipo": "lista",
         "items": [
-         "−8 < −3 < 0 < 2 < 5.",
-         "De izquierda a derecha."
+         "−2 > −7.",
+         "−8 < −3 < 0 < 2 < 5."
         ]
        }
       ]
      },
      {
-      "titulo": "Enteros de un intervalo",
+      "titulo": "¿Cuántos hay entre dos?",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -890,12 +825,12 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Enteros entre dos números",
-        "texto": "Los enteros que están entre dos números son los que quedan en la recta después del primero y antes del segundo; si se dice «entre», los extremos no se cuentan."
+        "titulo": "Enteros de un intervalo",
+        "texto": "Los enteros que están entre dos números son los que quedan en la recta después del primero y antes del segundo; cuando se dice «entre», los extremos no se cuentan."
        },
        {
         "tipo": "parrafo",
-        "texto": "Para contarlos conviene escribirlos todos, sin olvidar el 0. Entre −4 y 3 están −3, −2, −1, 0, 1 y 2: son 6. Si el problema dice «desde … hasta», los extremos sí se incluyen."
+        "texto": "Para no equivocarse conviene escribirlos todos, sin olvidar el cero, que también es un entero. Entre −4 y 3 están −3, −2, −1, 0, 1 y 2: son seis. Si en cambio dice «desde −4 hasta 3», se incluyen los extremos y son ocho."
        },
        {
         "tipo": "lista",
@@ -909,23 +844,23 @@
     ],
     "recuerda": [
      {
-      "concepto": "De dos enteros",
+      "concepto": "De dos números enteros",
       "definicion": "es mayor el que está más a la derecha en la recta numérica.",
       "ejemplo": "−2 > −7"
      },
      {
-      "concepto": "Todo número positivo",
-      "definicion": "es mayor que el cero y que cualquier número negativo.",
-      "ejemplo": "1 > −100"
+      "concepto": "Entre dos números negativos",
+      "definicion": "es mayor el que está más cerca del cero en la recta.",
+      "ejemplo": "−3 > −8"
      },
      {
       "concepto": "Para ordenar de menor a mayor",
-      "definicion": "se ponen los negativos más lejanos primero, después el 0 y los positivos.",
+      "definicion": "se escriben los enteros como aparecen en la recta, de izquierda a derecha.",
       "ejemplo": "−8 < −3 < 0 < 5"
      },
      {
-      "concepto": "Los enteros entre dos números",
-      "definicion": "no incluyen los extremos, y hay que acordarse de contar el 0.",
+      "concepto": "Los enteros que hay entre dos números",
+      "definicion": "no incluyen los extremos y hay que acordarse de contar el cero.",
       "ejemplo": "Entre −4 y 3 hay 6"
      }
     ]
@@ -1122,40 +1057,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Valor absoluto",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "absoluto"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "absoluto"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Valor absoluto",
-        "texto": "El valor absoluto de un número entero es su distancia al 0 en la recta. Se escribe entre barras y nunca es negativo: |−6| = 6 y |6| = 6."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Como es una distancia, el valor absoluto «borra» el signo. Sirve para comparar cuán lejos de la referencia está algo, sin importar hacia qué lado: 6 metros bajo el agua y 6 metros de altura están igual de lejos del nivel del mar."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "|−6| = 6.",
-         "|0| = 0."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Opuesto y valor absoluto no son lo mismo",
+      "titulo": "La distancia al cero",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -1171,24 +1073,24 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Diferencia",
-        "texto": "El opuesto cambia el signo de un número, mientras que el valor absoluto da su distancia al 0, que siempre es positiva o cero."
+        "titulo": "Valor absoluto",
+        "texto": "El valor absoluto de un número entero es su distancia al cero en la recta. Se escribe entre barras y nunca es negativo: |−6| = 6 y |6| = 6."
        },
        {
         "tipo": "parrafo",
-        "texto": "Con números negativos se ve la diferencia: el opuesto de −5 es 5 y su valor absoluto también es 5, pero con 5 el opuesto es −5 y el valor absoluto es 5. El valor absoluto nunca da negativo; el opuesto sí puede."
+        "texto": "Como es una distancia, no importa hacia qué lado está el número. Un buzo a 6 metros bajo el agua y una gaviota a 6 metros de altura están igual de lejos del nivel del mar. No hay que confundirlo con el opuesto: el opuesto de 5 es −5, pero su valor absoluto es 5."
        },
        {
         "tipo": "lista",
         "items": [
-         "5: opuesto −5, |5| = 5.",
-         "−5: opuesto 5, |−5| = 5."
+         "|−6| = 6.",
+         "Opuesto de 5: −5; |5| = 5."
         ]
        }
       ]
      },
      {
-      "titulo": "Problemas de distancia",
+      "titulo": "Cuánto subió o bajó",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -1204,18 +1106,18 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Problemas con enteros",
-        "texto": "En los problemas con temperaturas, alturas o fechas, la diferencia entre dos valores enteros se calcula como la distancia entre ellos en la recta."
+        "titulo": "Diferencias entre enteros",
+        "texto": "La diferencia entre dos valores enteros, como dos temperaturas o dos alturas, es la distancia entre ellos en la recta numérica."
        },
        {
         "tipo": "parrafo",
-        "texto": "Si a la mañana hacían −4 °C y a la tarde 9 °C, la temperatura subió 13 grados: 4 hasta el 0 y 9 más. Dibujar la recta y marcar los dos valores evita errores con los signos."
+        "texto": "Si están del mismo lado del cero, se restan sus valores absolutos; si están a distinto lado, se suman. A la mañana −4 °C y a la tarde 9 °C: la temperatura subió 4 grados hasta el cero y 9 más, en total 13. Dibujar la recta ayuda a no confundir los signos."
        },
        {
         "tipo": "lista",
         "items": [
          "De −4 a 9: subió 13.",
-         "Dibujá la recta."
+         "De −7 a −2: subió 5."
         ]
        }
       ]
@@ -1223,23 +1125,23 @@
     ],
     "recuerda": [
      {
-      "concepto": "El valor absoluto",
-      "definicion": "de un número es su distancia al 0 y nunca es negativo.",
+      "concepto": "El valor absoluto de un número",
+      "definicion": "es su distancia al cero en la recta y nunca es negativo.",
       "ejemplo": "|−6| = 6"
      },
      {
-      "concepto": "El opuesto",
-      "definicion": "cambia el signo del número, y puede dar positivo o negativo.",
+      "concepto": "El opuesto de un número",
+      "definicion": "cambia su signo, y puede dar un resultado positivo o negativo.",
       "ejemplo": "Opuesto de 5: −5"
      },
      {
       "concepto": "Un número y su opuesto",
-      "definicion": "tienen siempre el mismo valor absoluto, porque están a igual distancia del 0.",
+      "definicion": "tienen el mismo valor absoluto, porque están a igual distancia del cero.",
       "ejemplo": "|5| = |−5| = 5"
      },
      {
-      "concepto": "En los problemas",
-      "definicion": "la diferencia entre dos temperaturas es la distancia entre ellas en la recta.",
+      "concepto": "La diferencia entre dos temperaturas",
+      "definicion": "es la distancia entre ellas en la recta numérica.",
       "ejemplo": "De −4 °C a 9 °C: 13 grados"
      }
     ]

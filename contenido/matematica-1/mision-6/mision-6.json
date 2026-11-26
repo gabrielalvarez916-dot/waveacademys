@@ -253,11 +253,11 @@
        {
         "tipo": "definicion",
         "titulo": "Criterios de 3 y 9",
-        "texto": "Un número es divisible por 3 si la suma de sus cifras es múltiplo de 3, y es divisible por 9 si la suma de sus cifras es múltiplo de 9."
+        "texto": "Para saber si un número se puede dividir por 3 o por 9 sin hacer la división, se suman sus cifras: si la suma es múltiplo de 3, el número es divisible por 3; si es múltiplo de 9, por 9."
        },
        {
         "tipo": "parrafo",
-        "texto": "La razón es que 10, 100 y 1.000 dejan resto 1 al dividirlos por 3 o por 9, así que lo único que importa es cuánto suman las cifras. Sirve para números enormes, donde dividir sería muy largo."
+        "texto": "Funciona porque 10, 100 y 1.000 dejan siempre resto 1 al dividirlos por 3 o por 9, así que cada cifra aporta solo su propio valor. Con 4.572, las cifras suman 18, y como 18 es múltiplo de 9, el número es divisible por 3 y por 9. Si la suma queda grande, se vuelven a sumar sus cifras."
        },
        {
         "tipo": "lista",
@@ -551,11 +551,11 @@
        {
         "tipo": "definicion",
         "titulo": "Criterio de 6",
-        "texto": "Un número es divisible por 6 si es divisible por 2 y por 3 al mismo tiempo, porque 6 = 2 × 3 y esos dos factores no tienen divisores comunes."
+        "texto": "Un número es divisible por 6 cuando es divisible por 2 y por 3 a la vez. Se puede combinar así porque 6 = 2 × 3 y el 2 y el 3 no tienen divisores en común."
        },
        {
         "tipo": "parrafo",
-        "texto": "Así se combinan criterios: para un divisor compuesto se usan los criterios de sus factores coprimos. Por eso 15 se revisa con 3 y 5, y 10 con 2 y 5."
+        "texto": "La misma idea sirve para otros divisores compuestos: para el 15 se usan los criterios del 3 y del 5, y para el 10, los del 2 y del 5. Hay que usar factores que no tengan divisores comunes: que un número sea divisible por 2 y por 4 no asegura que lo sea por 8, como pasa con el 12."
        },
        {
         "tipo": "lista",
@@ -850,50 +850,18 @@
        {
         "tipo": "definicion",
         "titulo": "La criba",
-        "texto": "La criba de Eratóstenes es un método para encontrar todos los números primos hasta un número dado, tachando los múltiplos de cada primo."
+        "texto": "La criba de Eratóstenes es una forma de encontrar todos los números primos hasta cierto número: se van tachando los múltiplos de cada primo y los que quedan sin tachar son primos."
        },
        {
         "tipo": "parrafo",
-        "texto": "Se escriben los números desde el 2, se deja el 2 y se tachan sus múltiplos; después el 3, el 5, el 7… Los que nunca se tachan son primos. Es un método de hace más de dos mil años que todavía se usa."
+        "texto": "Primero se arma una tabla con los números a partir del 2. Se deja el 2 y se borran todos los que están en su tabla de multiplicar; el primer número que sobrevive es el 3, y se borran los de su tabla; después se sigue con el 5 y con el 7. Lleva el nombre de un matemático griego que vivió hace más de dos mil años, y sigue siendo útil."
        },
        {
         "tipo": "lista",
         "items": [
          "Primos hasta 50: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.",
-         "El 1 no es primo: tiene un solo divisor."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "¿Es primo?",
-      "ejemplo": {
-       "motor": "factores",
-       "p": {
-        "modo": "esprimo"
-       }
-      },
-      "ejercicio": {
-       "motor": "factores_x",
-       "p": {
-        "modo": "esprimo"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Saber si un número es primo",
-        "texto": "Para saber si un número es primo, se lo divide por los primos 2, 3, 5, 7… hasta llegar a su raíz cuadrada; si ninguno lo divide, es primo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "No hace falta probar más allá de la raíz cuadrada, porque si tuviera un divisor más grande, el otro factor de la pareja sería más chico y ya lo habríamos encontrado. Así 91 = 7 × 13 se descubre probando solo hasta 9."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Usá los criterios para descartar rápido.",
-         "Alcanza con llegar a la raíz cuadrada."
+         "El 1 no es primo: tiene un solo divisor.",
+         "Para saber si un número es primo alcanza con probar dividirlo por los primos cuyo cuadrado no lo supere."
         ]
        }
       ]
@@ -1187,38 +1155,8 @@
         "tipo": "lista",
         "items": [
          "Empezá por el 2 y seguí con 3, 5, 7…",
-         "Usá los criterios para elegir el primo."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Siempre la misma",
-      "ejemplo": {
-       "motor": "escalera_factores",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "factores_x",
-       "p": {
-        "modo": "desc"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Unicidad",
-        "texto": "Cada número compuesto tiene una sola descomposición en factores primos: aunque se divida en otro orden, siempre se llega a los mismos primos con los mismos exponentes."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Por eso la descomposición es como el documento de identidad del número: dice exactamente cómo está armado. Si dos personas factorizan 60 de maneras distintas, las dos tienen que llegar a 2² · 3 · 5."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "60 = 2² · 3 · 5, se empiece por donde se empiece.",
-         "Si te da distinto, hay un error."
+         "Usá los criterios para elegir el primo.",
+         "La descomposición en factores primos de un número es siempre la misma, sin importar por qué divisor se empiece."
         ]
        }
       ]

@@ -287,11 +287,11 @@
        {
         "tipo": "definicion",
         "titulo": "Términos",
-        "texto": "Los signos + y − que no están dentro de un paréntesis separan el cálculo en <b>términos</b>. Cada término se resuelve por separado y al final se suman y restan los resultados."
+        "texto": "Un término es cada parte del cálculo que queda separada por un signo + o − que no está dentro de un paréntesis. Cada término se resuelve aparte y al final se suman o restan los resultados."
        },
        {
         "tipo": "parrafo",
-        "texto": "Separar en términos ordena el trabajo y evita errores: se marca cada término con una rayita y se resuelve uno por vez. Si un término es un solo número, queda como está."
+        "texto": "Marcar los términos antes de empezar ordena el trabajo: en 4 × 3 + 12 ÷ 2 − 5 hay tres términos, que dan 12, 6 y 5, y el resultado es 12 + 6 − 5 = 13. Un término formado por un solo número queda como está hasta el final."
        },
        {
         "tipo": "lista",
@@ -538,7 +538,7 @@
        {
         "tipo": "definicion",
         "titulo": "Paréntesis",
-        "texto": "Los paréntesis ( ) indican qué parte del cálculo se resuelve <b>primero</b>, aunque tenga operaciones de menor jerarquía. Funcionan como una cuenta aparte."
+        "texto": "Los paréntesis marcan qué parte del cálculo se resuelve primero, aunque adentro haya una suma o una resta. Lo que está entre paréntesis se trata como una cuenta separada que se hace antes que todo lo demás."
        },
        {
         "tipo": "parrafo",
@@ -876,7 +876,8 @@
         "tipo": "lista",
         "items": [
          "Orden: ( ) → potencias y raíces → × ÷ → + −.",
-         "3 × 2² = 3 × 4 = 12, no 6²."
+         "3 × 2² = 3 × 4 = 12, no 6².",
+         "Al terminar, conviene verificar rehaciendo el cálculo o estimando el resultado."
         ]
        }
       ]
@@ -910,40 +911,6 @@
         "items": [
          "√(36 + 64) = √100 = 10.",
          "La raíz no se distribuye en la suma."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Cálculos largos, paso a paso",
-      "ejemplo": {
-       "motor": "jerarquia",
-       "p": {
-        "modo": "corchetes"
-       }
-      },
-      "ejercicio": {
-       "motor": "combinadas",
-       "p": {
-        "modo": "potencias"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Resolver paso a paso",
-        "texto": "En un cálculo largo se escribe una línea por paso, resolviendo una sola cosa por vez y copiando igual todo lo que todavía no se tocó."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Así es fácil encontrar un error y verificar el resultado. Al terminar, se puede controlar con una estimación o rehaciendo el cálculo en otro orden permitido."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Una operación por renglón.",
-         "Lo que no se resuelve, se copia igual.",
-         "Al final, verificá."
         ]
        }
       ]

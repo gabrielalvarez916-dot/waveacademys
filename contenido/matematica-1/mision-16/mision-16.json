@@ -192,7 +192,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Igualdad y ecuación",
+      "titulo": "Una igualdad con un dato oculto",
       "ejemplo": {
        "motor": "ecuaciones",
        "p": {
@@ -208,57 +208,24 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Ecuación",
-        "texto": "Una ecuación es una igualdad en la que aparece un valor desconocido, la incógnita, que se representa con una letra. Tiene dos miembros separados por el signo igual."
+        "titulo": "Ecuación y solución",
+        "texto": "Una ecuación es una igualdad con un valor desconocido, la incógnita, que se representa con una letra. La solución es el valor que hace verdadera la igualdad, y verificar es reemplazarlo y comprobar que los dos miembros den lo mismo."
        },
        {
         "tipo": "parrafo",
-        "texto": "No todo lo que tiene letras es una ecuación: 2x + 1 es una expresión, porque no tiene igual. Y 3 + 4 = 7 es una igualdad sin incógnita. En x + 5 = 9, el primer miembro es x + 5 y el segundo es 9."
+        "texto": "No todo lo que tiene letras es una ecuación: 2x + 1 es una expresión, porque no tiene signo igual. Para saber si x = 3 es solución de 4x − 2 = 10 se reemplaza: 4 · 3 − 2 da 10, así que sí. Con x = 4 daría 14, y entonces no lo es."
        },
        {
         "tipo": "lista",
         "items": [
          "x + 5 = 9: ecuación.",
-         "2x + 1: expresión, no ecuación."
+         "4 · 3 − 2 = 10 ✓."
         ]
        }
       ]
      },
      {
-      "titulo": "Solución y verificación",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "verificar"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuaciones_x",
-       "p": {
-        "modo": "verificar"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Solución",
-        "texto": "La solución de una ecuación es el valor de la incógnita que hace verdadera la igualdad. Verificar es reemplazar ese valor y comprobar que los dos miembros den lo mismo."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Para saber si x = 3 es solución de 4x − 2 = 10 se reemplaza: 4 · 3 − 2 = 10, se cumple. Con x = 4 daría 14, que no es 10. Verificar al final evita entregar una solución equivocada."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "4 · 3 − 2 = 10 ✓.",
-         "Un valor que no cumple no es solución."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Balanzas en equilibrio",
+      "titulo": "La balanza en equilibrio",
       "ejemplo": {
        "motor": "balanza",
        "p": {}
@@ -272,18 +239,18 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "La balanza",
-        "texto": "Una ecuación funciona como una balanza en equilibrio: si se hace la misma operación en los dos platillos, sigue equilibrada."
+        "titulo": "Resolver con la balanza",
+        "texto": "Una ecuación funciona como una balanza en equilibrio: si se hace la misma operación en los dos platillos, la balanza sigue equilibrada y se puede ir dejando sola a la incógnita."
        },
        {
         "tipo": "parrafo",
-        "texto": "Si en un platillo hay 3 paquetes iguales y 2 kg, y en el otro 14 kg, se pueden sacar 2 kg de los dos lados y queda 3 paquetes = 12 kg. Repartiendo en 3, cada paquete pesa 4 kg. Así se resuelven las ecuaciones."
+        "texto": "Con 3 paquetes iguales y 2 kg en un platillo y 14 kg en el otro, se sacan 2 kg de cada lado y quedan 3 paquetes contra 12 kg. Repartiendo en 3, cada paquete pesa 4 kg. Lo mismo se escribe con números: 3x + 2 = 14, entonces 3x = 12 y x = 4."
        },
        {
         "tipo": "lista",
         "items": [
-         "Lo mismo en los dos miembros.",
-         "3x + 2 = 14 → 3x = 12 → x = 4."
+         "3x + 2 = 14 → 3x = 12 → x = 4.",
+         "Lo mismo en los dos miembros."
         ]
        }
       ]
@@ -301,13 +268,13 @@
       "ejemplo": "x = 4 en x + 5 = 9"
      },
      {
-      "concepto": "Verificar",
-      "definicion": "es reemplazar la solución en la ecuación y comprobar que los dos miembros dan igual.",
+      "concepto": "Verificar una solución",
+      "definicion": "es reemplazarla en la ecuación y comprobar que los dos miembros dan igual.",
       "ejemplo": "4 · 3 − 2 = 10 ✓"
      },
      {
       "concepto": "Una ecuación es como una balanza",
-      "definicion": "que sigue equilibrada si se hace lo mismo en los dos platillos.",
+      "definicion": "que sigue en equilibrio si se hace lo mismo en los dos platillos.",
       "ejemplo": "3x + 2 = 14 → 3x = 12"
      }
     ]
@@ -477,7 +444,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Operaciones inversas",
+      "titulo": "Desarmar al revés",
       "ejemplo": {
        "motor": "ecuaciones",
        "p": {
@@ -494,83 +461,17 @@
        {
         "tipo": "definicion",
         "titulo": "Operaciones inversas",
-        "texto": "Para despejar la incógnita se deshacen las operaciones en orden inverso, usando la operación contraria en los dos miembros: la suma se deshace restando y la multiplicación, dividiendo."
+        "texto": "Para despejar la incógnita se deshacen las operaciones en el orden inverso al que se hicieron, aplicando en los dos miembros la operación contraria: la suma se deshace restando y la multiplicación, dividiendo."
        },
        {
         "tipo": "parrafo",
-        "texto": "En 3x + 4 = 19, a x primero la multiplicaron por 3 y después le sumaron 4. Para deshacer, primero se resta 4: 3x = 15; después se divide por 3: x = 5. Es como desandar un camino."
+        "texto": "En 3x + 4 = 19, a x primero la multiplicaron por 3 y después le sumaron 4; para deshacer, primero se resta 4 y queda 3x = 15, y después se divide por 3: x = 5. La solución puede ser negativa: en 2x + 15 = 5 queda 2x = −10 y x = −5. Al final siempre se verifica en la ecuación original."
        },
        {
         "tipo": "lista",
         "items": [
-         "Suma ↔ resta.",
-         "Multiplicación ↔ división."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Con enteros",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "inversa"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuacion",
-       "p": {
-        "modo": "simple"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Ecuaciones con enteros",
-        "texto": "Las soluciones de una ecuación pueden ser números negativos, y se aplican las mismas operaciones inversas usando las reglas de los enteros."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En 2x + 15 = 5: restamos 15 y queda 2x = −10; dividimos por 2 y queda x = −5. Verificamos: 2 · (−5) + 15 = −10 + 15 = 5. Los negativos se reemplazan entre paréntesis."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "2x + 15 = 5 → x = −5.",
-         "Verificar con paréntesis."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Verificar siempre",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "verificar"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuaciones_x",
-       "p": {
-        "modo": "verificar"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Verificar la solución",
-        "texto": "Después de resolver una ecuación se reemplaza el valor obtenido en la ecuación original para comprobar que se cumpla la igualdad."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Verificar detecta errores de signos o de cuentas. Si en 4x − 9 = 23 obtenemos x = 8, reemplazamos: 4 · 8 − 9 = 23 ✓. Si hubiéramos obtenido 3,5, daría 5, y sabríamos que algo está mal."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "4 · 8 − 9 = 23 ✓.",
-         "Se reemplaza en la ecuación original."
+         "3x + 4 = 19 → x = 5.",
+         "2x + 15 = 5 → x = −5."
         ]
        }
       ]
@@ -583,8 +484,8 @@
       "ejemplo": "3x + 4 = 19 → 3x = 15 → x = 5"
      },
      {
-      "concepto": "La operación inversa de la suma",
-      "definicion": "es la resta, y la de la multiplicación es la división.",
+      "concepto": "La operación inversa de la suma es la resta",
+      "definicion": "y la de la multiplicación es la división.",
       "ejemplo": "+ 4 se deshace con − 4"
      },
      {
@@ -593,8 +494,8 @@
       "ejemplo": "2x + 15 = 5 → x = −5"
      },
      {
-      "concepto": "Al terminar",
-      "definicion": "se verifica reemplazando la solución en la ecuación original y comparando los dos miembros.",
+      "concepto": "Al terminar de resolver",
+      "definicion": "se verifica reemplazando la solución en la ecuación original.",
       "ejemplo": "4 · 8 − 9 = 23 ✓"
      }
     ]
@@ -773,7 +674,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "x en los dos miembros",
+      "titulo": "Juntar las x de un lado",
       "ejemplo": {
        "motor": "ecuaciones",
        "p": {
@@ -790,83 +691,17 @@
        {
         "tipo": "definicion",
         "titulo": "Incógnita en los dos miembros",
-        "texto": "Cuando la incógnita aparece en los dos miembros, primero se resta en los dos lados el término con x de uno de ellos, para que las x queden juntas en un solo miembro."
+        "texto": "Cuando la incógnita aparece en los dos miembros, primero se resta en ambos el término con x de uno de ellos, para que todas las x queden juntas de un solo lado; después se despeja como siempre."
        },
        {
         "tipo": "parrafo",
-        "texto": "En 7x − 4 = 3x + 12, restamos 3x: 4x − 4 = 12. Sumamos 4: 4x = 16. Dividimos por 4: x = 4. Conviene restar el término con menos x, así el coeficiente que queda es positivo."
+        "texto": "En 7x − 4 = 3x + 12, restando 3x queda 4x − 4 = 12; sumando 4, 4x = 16; y dividiendo, x = 4. Decir que el 3x «pasa restando» es un atajo de lo mismo. Conviene restar el término con menos x para que el coeficiente quede positivo, y no importa de qué lado quede la x: −8 = 2x es igual que 2x = −8."
        },
        {
         "tipo": "lista",
         "items": [
          "7x − 4 = 3x + 12 → x = 4.",
-         "Juntar las x de un lado."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "«Pasar» un término",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "dos_miembros"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuacion",
-       "p": {
-        "modo": "dos_miembros"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Pasar de miembro",
-        "texto": "Decir que un término «pasa» al otro miembro con la operación contraria es una forma corta de decir que se hizo la misma operación en los dos miembros."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En 5x + 3 = 2x + 18, «pasar» el 2x restando es restar 2x en los dos lados: 3x + 3 = 18. El atajo sirve, pero hay que cambiar bien la operación: lo que suma pasa restando y lo que multiplica pasa dividiendo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "+ 2x pasa como − 2x.",
-         "× 3 pasa como ÷ 3."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Con negativos",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "dos_miembros"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuacion",
-       "p": {
-        "modo": "dos_miembros"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Ecuaciones con negativos",
-        "texto": "Cuando hay términos negativos en los dos miembros, se aplican las mismas reglas cuidando los signos, y la solución puede ser negativa."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En 3x − 7 = 5x + 1, restamos 3x: −7 = 2x + 1. Restamos 1: −8 = 2x. Dividimos por 2: x = −4. No importa de qué lado queda la x: −8 = 2x es lo mismo que 2x = −8."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "3x − 7 = 5x + 1 → x = −4.",
-         "−8 = 2x es igual a 2x = −8."
+         "3x − 7 = 5x + 1 → x = −4."
         ]
        }
       ]
@@ -875,22 +710,22 @@
     "recuerda": [
      {
       "concepto": "Si la incógnita está en los dos miembros",
-      "definicion": "primero se juntan las x de un lado restando el mismo término en los dos.",
+      "definicion": "primero se juntan las x de un lado restando el mismo término en ambos.",
       "ejemplo": "7x − 4 = 3x + 12 → 4x − 4 = 12"
      },
      {
       "concepto": "Pasar un término al otro miembro",
-      "definicion": "es hacer la operación contraria en los dos miembros de la ecuación.",
+      "definicion": "es una forma corta de decir que se hizo la operación contraria en los dos.",
       "ejemplo": "+ 2x pasa como − 2x"
      },
      {
-      "concepto": "Conviene restar el término con menos x",
-      "definicion": "para que el coeficiente que queda en la incógnita sea un número positivo.",
+      "concepto": "Conviene restar el término que tiene menos x",
+      "definicion": "para que el coeficiente que queda sea positivo.",
       "ejemplo": "5x = 2x + 9 → 3x = 9"
      },
      {
-      "concepto": "No importa de qué lado queda la incógnita",
-      "definicion": "porque una igualdad se puede leer en los dos sentidos.",
+      "concepto": "Una igualdad se puede leer en los dos sentidos",
+      "definicion": "así que no importa de qué lado queda la incógnita.",
       "ejemplo": "−8 = 2x es igual a 2x = −8"
      }
     ]
@@ -1071,7 +906,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Cinco pasos",
+      "titulo": "Del enunciado a la respuesta",
       "ejemplo": {
        "motor": "ecuaciones",
        "p": {
@@ -1087,84 +922,18 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Resolver problemas con ecuaciones",
-        "texto": "Para resolver un problema con una ecuación se siguen cinco pasos: elegir la incógnita, plantear la ecuación, resolverla, verificar en el enunciado y responder con una oración."
+        "titulo": "Problemas con ecuaciones",
+        "texto": "Para resolver un problema con una ecuación se elige qué es la incógnita, se traduce el enunciado a una ecuación, se resuelve, se verifica en el enunciado y se responde con una oración."
        },
        {
         "tipo": "parrafo",
-        "texto": "Lo más importante es el planteo: traducir el enunciado. «El doble de un número más 7 es 31» se escribe 2x + 7 = 31, y x = 12. Al final se responde lo que se pregunta: «el número es 12»."
+        "texto": "El paso clave es el planteo. «Tres cuadernos iguales y una regla de $500 cuestan $4.100» se escribe 3x + 500 = 4.100, y da x = 1.200. En un rectángulo cuyo largo mide 3 cm más que el ancho y con 30 cm de perímetro, 2x + 2(x + 3) = 30 da x = 6: hay que responder el ancho y también el largo, 9 cm."
        },
        {
         "tipo": "lista",
         "items": [
-         "Incógnita, ecuación, resolver.",
-         "Verificar y responder."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Dinero y cantidades",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "problema"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuaciones_x",
-       "p": {
-        "modo": "problema"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Problemas de dinero",
-        "texto": "En los problemas de compras se llama x al precio desconocido y se plantea que la suma de lo que se compra es igual al total pagado."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Tres cuadernos iguales y una regla de $500 cuestan $4.100: 3x + 500 = 4.100, entonces 3x = 3.600 y x = 1.200. Cada cuaderno cuesta $1.200. Verificamos: 3 · 1.200 + 500 = 4.100."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "3x + 500 = 4.100.",
-         "x = 1.200."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Geometría e interpretar",
-      "ejemplo": {
-       "motor": "ecuaciones",
-       "p": {
-        "modo": "problema"
-       }
-      },
-      "ejercicio": {
-       "motor": "ecuaciones_x",
-       "p": {
-        "modo": "problema"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Problemas de geometría",
-        "texto": "En los problemas de perímetros se escriben los lados con la incógnita y se plantea que su suma es el perímetro; al final se interpreta qué representa x."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si el largo de un rectángulo mide 3 cm más que el ancho y el perímetro es 30 cm: 2x + 2(x + 3) = 30, 4x + 6 = 30, x = 6. El ancho mide 6 cm y el largo 9 cm: hay que responder las dos medidas."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Ancho x, largo x + 3.",
-         "Interpretar qué es x."
+         "3x + 500 = 4.100 → x = 1.200.",
+         "Interpretar qué representa x."
         ]
        }
       ]
@@ -1187,8 +956,8 @@
       "ejemplo": "3x + 500 = 4.100"
      },
      {
-      "concepto": "Al terminar",
-      "definicion": "hay que interpretar qué representa x y responder lo que pregunta el problema.",
+      "concepto": "Al terminar un problema",
+      "definicion": "hay que interpretar qué representa x y responder lo que se pregunta.",
       "ejemplo": "x = 6: ancho 6 cm, largo 9 cm"
      }
     ]

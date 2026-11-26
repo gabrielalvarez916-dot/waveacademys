@@ -208,7 +208,7 @@
        {
         "tipo": "definicion",
         "titulo": "MCD",
-        "texto": "El máximo común divisor de dos números es el mayor número que divide a los dos. Se escribe MCD(a, b)."
+        "texto": "El máximo común divisor de dos números es el mayor número que divide a los dos. Se escribe MCD(a, b), por ejemplo MCD(12, 18) = 6."
        },
        {
         "tipo": "parrafo",
@@ -232,10 +232,8 @@
        }
       },
       "ejercicio": {
-       "motor": "factores_x",
-       "p": {
-        "modo": "mcd"
-       }
+       "motor": "mcd_guiado",
+       "p": {}
       },
       "explicacion": [
        {
@@ -525,7 +523,7 @@
        {
         "tipo": "definicion",
         "titulo": "MCM",
-        "texto": "El mínimo común múltiplo de dos números es el menor número, distinto de 0, que es múltiplo de los dos. Se escribe MCM(a, b)."
+        "texto": "El mínimo común múltiplo de dos números es el menor número, distinto de 0, que es múltiplo de los dos. Se escribe MCM(a, b), por ejemplo MCM(4, 6) = 12."
        },
        {
         "tipo": "parrafo",
@@ -551,7 +549,7 @@
       "ejercicio": {
        "motor": "factores_x",
        "p": {
-        "modo": "mcm"
+        "modo": "producto"
        }
       },
       "explicacion": [
@@ -582,10 +580,8 @@
        }
       },
       "ejercicio": {
-       "motor": "factores_x",
-       "p": {
-        "modo": "producto"
-       }
+       "motor": "mcd_mcm_problemas",
+       "p": {}
       },
       "explicacion": [
        {
@@ -1141,40 +1137,8 @@
         "tipo": "lista",
         "items": [
          "Más chica → MCD.",
-         "Más grande → MCM."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Problemas mixtos",
-      "ejemplo": {
-       "motor": "divis",
-       "p": {
-        "modo": "cual"
-       }
-      },
-      "ejercicio": {
-       "motor": "divis_x",
-       "p": {
-        "modo": "cual"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Problemas mixtos",
-        "texto": "Un problema mixto combina el MCD o el MCM con otras cuentas, por ejemplo calcular el tamaño de las partes y después cuántas partes salen."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Primero se identifica qué se pide y si es de MCD o de MCM; después se calcula; y al final se responden las preguntas que siguen, como la cantidad de paquetes o la hora de la coincidencia."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Leé todas las preguntas antes de empezar.",
-         "Una pregunta por paso."
+         "Más grande → MCM.",
+         "En los problemas mixtos, primero se decide si se busca algo más chico que los datos (MCD) o más grande (MCM)."
         ]
        }
       ]

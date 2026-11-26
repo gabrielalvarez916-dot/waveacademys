@@ -10,14 +10,16 @@ Una misión tiene 4 niveles (lecciones) y un nivel 5 de práctica general, más 
 ## 0. Preparación (rápido)
 - Repo `gabrielalvarez916-dot/waveacademys`, con el PAT que Gabriel da al empezar. Clon parcial: `git clone --filter=blob:none --sparse` y `git sparse-checkout add` solo lo necesario. Archivos nuevos: `git add --sparse`.
 - Leé primero `docs/errores-que-no-se-repiten.md` (errores que ya pasaron y no pueden volver a pasar), después `CLAUDE.md`, `docs/reglas-leccion-interactiva.md`, `docs/banco-leccion.md`, `docs/tipos-de-pregunta.md` y `docs/reglas-fijas-pdf.md`. Son reglas fijas: la calidad no baja nunca por cantidad.
-- **Rápido sin perder calidad:** de la misión existente leé SOLO los títulos de las secciones de cada nivel (no todas las preguntas viejas): escribí y dejá que el control diga qué arreglar. Compará la cantidad de niveles del JSON con la base: un nivel que está en la base y no en el JSON también lleva lección y 4 actividades (ver errores 26/11).
+- **El contenido lo escribís vos:** nunca se copia ni se sigue sección por sección el PDF o la clase. Los títulos de las secciones solo dicen de qué trata el nivel. Compará los niveles del JSON con la base: un nivel que está en la base y no en el JSON también lleva lección y 4 actividades.
 - **Banco por materia, una sola vez:** antes de la primera misión de una materia, revisá con `docs/banco-leccion.md` (no el código) qué ejemplos faltan para TODAS sus misiones y agregalos juntos, probados una vez. Después escribí las misiones de corrido.
 - Secundaria: `contenido/<materia>-N/mision-K/mision-K.json`. Primaria (Nivel Medio): `contenido/medio/<materia>-<grado>/mision-K/mision-K.json`.
 
 ## 1. Clase animada
 Para la clase animada de cada nivel usá el skill `clase-animada-wave` (motor de plantillas del repo). Las voces en argentino y neutro las genera la máquina de voz sola, solo para las clases sin voz.
 
-## 2. Lección interactiva (`niveles.N.leccion`, niveles 1 a 4)
+## 2. Lección interactiva
+**Criterio de pantallas (fijo):** una pantalla = un saber nuevo del nivel (concepto o procedimiento) que tiene SU PROPIO ejemplo resuelto paso a paso y SU PROPIA práctica. Advertencias, contraejemplos, casos especiales (el cero, «no es conmutativa»), errores típicos y «verificar» NO son pantallas: van dentro de la pantalla a la que pertenecen (último paso del ejemplo, viñeta «Cuidado:» o práctica). No hay mínimo de pantallas: si el nivel tiene 2 ideas, son 2 pantallas completas. Nunca se agrega texto de relleno para llegar a un mínimo: si falta, la explicación está incompleta y se explica mejor. Nada de conceptos que se enseñan en misiones posteriores.
+ (`niveles.N.leccion`, niveles 1 a 4)
 Modelo CIDEAD: una pantalla = una idea.
 - Texto corto a la izquierda: `definicion` + `parrafo` (por qué es así o para qué sirve) + `lista` de 2 o 3 viñetas. Prohibidos los bloques `pasos`, `ejemplo` y `error`: no se explica dos veces.
 - A la derecha, el EJEMPLO VIVO grande del banco de la lección (`ejemplo: {motor, p}`), SIEMPRE PASO A PASO: el alumno cambia los números y avanza con "Siguiente paso ▶", y cada paso agrega una parte al dibujo con UNA línea corta. Solo se usan ejemplos marcados `pasos: true` (hoy lo están los 45 del banco); uno nuevo se hace con `pasoAPaso()` en `js/leccion-banco2.js`. El ejemplo `pasoapaso` (texto largo) no va.

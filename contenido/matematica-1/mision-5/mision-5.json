@@ -240,40 +240,7 @@
       ]
      },
      {
-      "titulo": "Múltiplos comunes",
-      "ejemplo": {
-       "motor": "explorador2",
-       "p": {
-        "modo": "mcm"
-       }
-      },
-      "ejercicio": {
-       "motor": "divis_x",
-       "p": {
-        "modo": "repite"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Múltiplo común",
-        "texto": "Un múltiplo común de dos números es un número que es múltiplo de los dos a la vez. El más chico (sin contar el 0) es el primero en que coinciden."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Para encontrarlos se escriben los múltiplos de cada número y se marcan los que se repiten en las dos listas. Después de la primera coincidencia, las siguientes aparecen siempre con la misma distancia."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Múltiplos comunes de 4 y 6: 12, 24, 36…",
-         "El primero que se repite es el más chico."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Cosas que se repiten",
+      "titulo": "Cuándo vuelven a coincidir",
       "ejemplo": {
        "motor": "divis",
        "p": {
@@ -290,17 +257,17 @@
        {
         "tipo": "definicion",
         "titulo": "Problemas de repetición",
-        "texto": "Cuando dos cosas se repiten cada cierto tiempo, vuelven a coincidir en los múltiplos comunes de esos tiempos: la primera vez, en el menor de ellos."
+        "texto": "Cuando un mismo número aparece a la vez en la tabla de uno y en la tabla de otro, se lo llama múltiplo común de los dos. Sirve para saber cuándo vuelven a coincidir dos cosas que se repiten cada cierto tiempo."
        },
        {
         "tipo": "parrafo",
-        "texto": "Dos luces que titilan cada 4 y cada 6 segundos se prenden juntas cada 12 segundos. Lo mismo pasa con colectivos que salen cada tantos minutos o con turnos que se repiten."
+        "texto": "Imaginá dos luces de un árbol de Navidad: una se prende cada 4 segundos y la otra cada 6, y arrancan juntas. Vuelven a encenderse a la vez a los 12 segundos, después a los 24 y a los 36, que son los números que están en la tabla del 4 y también en la del 6. Escribir las dos listas una debajo de la otra hace fácil ver dónde coinciden."
        },
        {
         "tipo": "lista",
         "items": [
-         "¿Cuándo vuelven a coincidir? → múltiplo común.",
-         "Después se repite: cada 12, 24, 36…"
+         "Las luces coinciden a los 12, 24 y 36 segundos.",
+         "Con 3 y 5 coincidirían a los 15, 30 y 45."
         ]
        }
       ]

@@ -203,39 +203,12 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Variables y constantes",
+      "titulo": "De palabras a letras",
       "ejemplo": {
-       "motor": "valor_numerico",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "valor_numerico_x",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Expresión algebraica",
-        "texto": "Una expresión algebraica combina números y letras con operaciones. Las letras son variables: representan números que pueden cambiar; los números fijos son constantes."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En 5k − 3, la k puede valer cualquier número y el 3 está siempre. Usar letras permite escribir una cuenta que sirve para muchos casos a la vez, por ejemplo el precio de k entradas a $5 menos un descuento de $3."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "5k − 3: k es variable, 3 es constante.",
-         "Una letra, muchos números posibles."
-        ]
+       "motor": "algebra",
+       "p": {
+        "modo": "traducir"
        }
-      ]
-     },
-     {
-      "titulo": "Traducir",
-      "ejemplo": {
-       "motor": "valor_numerico",
-       "p": {}
       },
       "ejercicio": {
        "motor": "traducir",
@@ -244,12 +217,12 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Lenguaje simbólico",
-        "texto": "Traducir es pasar una frase del lenguaje coloquial al simbólico: el doble de un número es 2n, un número aumentado en 7 es n + 7, la mitad es n/2."
+        "titulo": "Expresión algebraica",
+        "texto": "Una expresión algebraica combina números y letras con operaciones. Las letras, llamadas variables, representan números que pueden cambiar; los números fijos son constantes."
        },
        {
         "tipo": "parrafo",
-        "texto": "Hay que leer con cuidado el orden: «el doble de un número más 3» es 2n + 3, pero «el doble de un número más 3» entendido como «el doble de (n + 3)» es 2(n + 3). Los paréntesis cambian el significado."
+        "texto": "Usar una letra permite escribir una cuenta que vale para muchos casos a la vez: «el doble de un número» es 2n, sea cual sea ese número. Al traducir hay que leer con cuidado el orden de la frase, porque «el doble de un número, más 3» es 2n + 3, mientras que «el doble de la suma de un número y 3» es 2(n + 3), y dan resultados distintos."
        },
        {
         "tipo": "lista",
@@ -261,7 +234,7 @@
       ]
      },
      {
-      "titulo": "Generalizar",
+      "titulo": "Una fórmula para todos los casos",
       "ejemplo": {
        "motor": "patron_figuras",
        "p": {}
@@ -278,13 +251,13 @@
        },
        {
         "tipo": "parrafo",
-        "texto": "Mirando los primeros casos se descubre qué se repite y qué cambia. Si cada figura tiene 3 fósforos más que la anterior y la primera tiene 4, la figura n tiene 3n + 1. Con la fórmula se calcula cualquier figura sin dibujarla."
+        "texto": "Se miran los primeros casos para descubrir qué se repite y qué cambia. Si cada figura tiene 3 fósforos más que la anterior y la primera tiene 4, la figura número n tiene 3n + 1. Con la fórmula se calcula cualquier figura sin dibujarla, incluso la número 100."
        },
        {
         "tipo": "lista",
         "items": [
          "4, 7, 10, 13… → 3n + 1.",
-         "Lo que cambia va con n."
+         "Figura 100: 301 fósforos."
         ]
        }
       ]
@@ -302,13 +275,13 @@
       "ejemplo": "El doble de un número: 2n"
      },
      {
-      "concepto": "Los paréntesis",
-      "definicion": "cambian el significado de una expresión, porque indican qué se opera primero.",
+      "concepto": "Los paréntesis en una expresión",
+      "definicion": "indican qué se calcula primero y cambian su significado.",
       "ejemplo": "2n + 3 ≠ 2(n + 3)"
      },
      {
       "concepto": "Generalizar",
-      "definicion": "es encontrar una fórmula con letras que sirva para todos los casos.",
+      "definicion": "es encontrar una fórmula con letras que sirva para todos los casos de una situación.",
       "ejemplo": "Figura n: 3n + 1 fósforos"
      }
     ]
@@ -494,36 +467,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Patrones",
-      "ejemplo": {
-       "motor": "patron_figuras",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "patron_termino",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Patrón",
-        "texto": "Un patrón es una regularidad que se repite en una secuencia de números o figuras y permite predecir cómo siguen."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Para descubrirlo se comparan términos consecutivos: si siempre se suma lo mismo, la secuencia crece de a saltos iguales. En 4, 7, 10, 13 se suma 3 cada vez, así que sigue 16, 19…"
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "4, 7, 10, 13 → + 3.",
-         "El patrón predice los que siguen."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Recursiva y explícita",
+      "titulo": "Del anterior o directo a la posición",
       "ejemplo": {
        "motor": "algebra",
        "p": {
@@ -540,50 +484,17 @@
        {
         "tipo": "definicion",
         "titulo": "Fórmula recursiva y explícita",
-        "texto": "La fórmula recursiva dice cómo obtener un término a partir del anterior; la explícita da el término directamente a partir de su posición n."
+        "texto": "La fórmula recursiva dice cómo obtener cada término a partir del anterior; la explícita da el término directamente a partir de su posición n."
        },
        {
         "tipo": "parrafo",
-        "texto": "Con la recursiva, para llegar al término 50 hay que calcular los 49 anteriores. Con la explícita se reemplaza n por 50 y listo. Si se suma d cada vez, la explícita tiene la forma d · n + algo."
+        "texto": "En 4, 7, 10, 13… la regla recursiva es «sumar 3». Para llegar al término 50 con esa regla habría que calcular los 49 anteriores; con la explícita, 3n + 1, se reemplaza n por 50 y listo: 151. No hay que confundir la posición con el valor: en 2n + 5, el término de la posición 10 vale 25."
        },
        {
         "tipo": "lista",
         "items": [
          "Recursiva: el anterior + 3.",
-         "Explícita: 3n + 1."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Términos lejanos",
-      "ejemplo": {
-       "motor": "algebra",
-       "p": {
-        "modo": "recursiva"
-       }
-      },
-      "ejercicio": {
-       "motor": "algebra_x",
-       "p": {
-        "modo": "recursiva"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Posición y valor",
-        "texto": "En una secuencia, n es la posición del término y el resultado de la fórmula es su valor; no hay que confundirlos."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En 2n + 5, el término de la posición 10 vale 2 · 10 + 5 = 25. Para saber en qué posición está un valor, se busca qué n da ese resultado: 45 está en la posición 20, porque 2 · 20 + 5 = 45."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "n = posición.",
-         "2n + 5 con n = 10 → 25."
+         "Explícita: 3n + 1 → término 50 = 151."
         ]
        }
       ]
@@ -602,7 +513,7 @@
      },
      {
       "concepto": "La fórmula explícita",
-      "definicion": "da el valor de un término directamente a partir de su posición n.",
+      "definicion": "da el valor de un término directamente a partir de su posición.",
       "ejemplo": "3n + 1: término 50 = 151"
      },
      {
@@ -814,7 +725,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Valor numérico",
+      "titulo": "Reemplazar y calcular",
       "ejemplo": {
        "motor": "valor_numerico",
        "p": {}
@@ -827,75 +738,18 @@
        {
         "tipo": "definicion",
         "titulo": "Valor numérico",
-        "texto": "El valor numérico de una expresión algebraica es el número que se obtiene al reemplazar cada letra por un valor y resolver las operaciones."
+        "texto": "El valor numérico de una expresión es el número que se obtiene al reemplazar cada letra por un valor y resolver respetando la jerarquía de las operaciones."
        },
        {
         "tipo": "parrafo",
-        "texto": "Para 2a + 5 con a = 3: 2 · 3 + 5 = 11. Hay que respetar la jerarquía: primero potencias, después multiplicaciones y al final sumas y restas. 3x² con x = 2 es 3 · 4 = 12, no 6²."
+        "texto": "Para 3x² con x = 2, primero la potencia: 2² = 4, y después 3 · 4 = 12; no es 6². Cuando la letra vale un número negativo se escribe entre paréntesis: 5 − 2x con x = −4 es 5 − 2 · (−4) = 13. Las fórmulas, como d = v × t, se usan igual: se reemplazan los datos conocidos y se calcula."
        },
        {
         "tipo": "lista",
         "items": [
-         "2a + 5, a = 3 → 11.",
-         "3x², x = 2 → 12."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Con negativos",
-      "ejemplo": {
-       "motor": "valor_numerico",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "valor_numerico_x",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Reemplazar por un negativo",
-        "texto": "Cuando la letra se reemplaza por un número negativo, conviene escribirlo entre paréntesis para no equivocarse con los signos."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "5 − 2x con x = −4 es 5 − 2 · (−4) = 5 + 8 = 13. Y x² con x = −3 es (−3)² = 9, no −9: sin paréntesis el cálculo da mal. Por eso los paréntesis son clave."
-       },
-       {
-        "tipo": "lista",
-        "items": [
+         "3x² con x = 2 → 12.",
          "5 − 2 · (−4) = 13.",
-         "x² con x = −3: (−3)² = 9."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Fórmulas y tablas",
-      "ejemplo": {
-       "motor": "valor_numerico",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "valor_numerico_x",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Fórmulas",
-        "texto": "Una fórmula es una expresión algebraica que relaciona magnitudes, como d = v × t para la distancia; para usarla se reemplazan los valores conocidos."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Armar una tabla de valores ayuda a ver cómo cambia la expresión: para cada valor de la letra se calcula el resultado. Con d = v × t, a 90 km/h, en 3 horas se recorren 270 km."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "d = 90 × 3 = 270 km.",
-         "Tabla: un valor por fila."
+         "d = 90 × 3 = 270 km."
         ]
        }
       ]
@@ -903,18 +757,18 @@
     ],
     "recuerda": [
      {
-      "concepto": "El valor numérico",
-      "definicion": "de una expresión es el resultado de reemplazar las letras por números y calcular.",
+      "concepto": "El valor numérico de una expresión",
+      "definicion": "es el resultado de reemplazar las letras por números y calcular.",
       "ejemplo": "2a + 5 con a = 3: 11"
      },
      {
       "concepto": "Al reemplazar",
-      "definicion": "hay que respetar la jerarquía: primero potencias, después productos, al final sumas.",
+      "definicion": "hay que respetar la jerarquía: primero potencias, después productos y al final sumas.",
       "ejemplo": "3x² con x = 2: 12"
      },
      {
-      "concepto": "Los números negativos",
-      "definicion": "se reemplazan entre paréntesis para no equivocarse con los signos.",
+      "concepto": "Un número negativo",
+      "definicion": "se reemplaza entre paréntesis para no equivocarse con los signos.",
       "ejemplo": "5 − 2 · (−4) = 13"
      },
      {
@@ -1110,7 +964,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Expresiones equivalentes",
+      "titulo": "Escrituras que valen lo mismo",
       "ejemplo": {
        "motor": "algebra",
        "p": {
@@ -1120,63 +974,30 @@
       "ejercicio": {
        "motor": "algebra_x",
        "p": {
-        "modo": "equivalentes"
+        "modo": "un_valor"
        }
       },
       "explicacion": [
        {
         "tipo": "definicion",
         "titulo": "Expresiones equivalentes",
-        "texto": "Dos expresiones algebraicas son equivalentes si dan el mismo valor numérico para cualquier valor de las letras, como 2(m + 4) y 2m + 8."
+        "texto": "Dos expresiones son equivalentes si dan el mismo valor para cualquier número que se ponga en la letra, como 2(m + 4) y 2m + 8, que son iguales por la propiedad distributiva."
        },
        {
         "tipo": "parrafo",
-        "texto": "Las propiedades de las operaciones, como la distributiva, transforman una expresión en otra equivalente. Una tabla con varios valores ayuda a comprobarlo: en todas las filas tienen que dar igual."
+        "texto": "Probar con un solo número no alcanza: a + 1 y 2a coinciden cuando a vale 1, porque los dos dan 2, pero con a = 5 una da 6 y la otra 10. Basta un contraejemplo para mostrar que no son equivalentes; para asegurar que sí lo son, se usan las propiedades de las operaciones."
        },
        {
         "tipo": "lista",
         "items": [
          "2(m + 4) = 2m + 8.",
-         "Distributiva: multiplica los dos términos."
+         "x + x y x · x no son equivalentes."
         ]
        }
       ]
      },
      {
-      "titulo": "Un valor no alcanza",
-      "ejemplo": {
-       "motor": "algebra",
-       "p": {
-        "modo": "un_valor"
-       }
-      },
-      "ejercicio": {
-       "motor": "algebra_x",
-       "p": {
-        "modo": "un_valor"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Comprobar equivalencias",
-        "texto": "Que dos expresiones den el mismo resultado para un valor no alcanza para que sean equivalentes; en cambio, con un solo valor que dé distinto, ya no lo son."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "x + x y x · x dan 4 con x = 2, pero con x = 3 dan 6 y 9: no son equivalentes. Para mostrar que no son equivalentes alcanza un contraejemplo; para mostrar que sí, se usan las propiedades."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "x + x y x · x: con 2 dan igual, con 3 no.",
-         "Un contraejemplo alcanza."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Términos semejantes",
+      "titulo": "Juntar lo que es igual",
       "ejemplo": {
        "motor": "terminos_semejantes",
        "p": {}
@@ -1189,17 +1010,17 @@
        {
         "tipo": "definicion",
         "titulo": "Términos semejantes",
-        "texto": "Los términos semejantes son los que tienen la misma parte literal, como 3a y 2a. Solo los semejantes se pueden sumar o restar entre sí, sumando sus coeficientes."
+        "texto": "Los términos semejantes tienen la misma parte literal, como 3a y 2a. Solo esos se pueden sumar o restar entre sí, sumando sus coeficientes."
        },
        {
         "tipo": "parrafo",
-        "texto": "3a + 2a = 5a, igual que 3 manzanas más 2 manzanas. Pero 3a + 5 no se puede juntar: no son semejantes. Simplificar una expresión es reducir los términos semejantes."
+        "texto": "3a + 2a = 5a, igual que 3 manzanas más 2 manzanas son 5 manzanas. Pero 3a + 5 no se puede juntar, porque no son semejantes: queda así. Reducir los términos semejantes es la forma de simplificar una expresión."
        },
        {
         "tipo": "lista",
         "items": [
          "6n − 2n + n = 5n.",
-         "3a + 5 queda así."
+         "Cuidado: 3a + 5 no es 8a."
         ]
        }
       ]
@@ -1208,12 +1029,12 @@
     "recuerda": [
      {
       "concepto": "Dos expresiones equivalentes",
-      "definicion": "dan el mismo valor numérico para cualquier valor de las letras.",
+      "definicion": "dan el mismo valor para cualquier número que se ponga en la letra.",
       "ejemplo": "2(m + 4) y 2m + 8"
      },
      {
       "concepto": "Un solo valor que dé distinto",
-      "definicion": "alcanza para mostrar que dos expresiones algebraicas no son equivalentes entre sí.",
+      "definicion": "alcanza para mostrar que dos expresiones no son equivalentes.",
       "ejemplo": "x + x y x · x con x = 3"
      },
      {
@@ -1222,7 +1043,7 @@
       "ejemplo": "3a + 2a = 5a"
      },
      {
-      "concepto": "Los términos no semejantes",
+      "concepto": "Los términos que no son semejantes",
       "definicion": "no se pueden juntar en uno solo, aunque estén sumados.",
       "ejemplo": "3a + 5 no es 8a"
      }

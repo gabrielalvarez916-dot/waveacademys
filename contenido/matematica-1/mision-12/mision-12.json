@@ -201,7 +201,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Sumar en la recta",
+      "titulo": "Avanzar y retroceder",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -217,84 +217,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Suma de enteros en la recta",
-        "texto": "Para sumar enteros en la recta se parte del primer número y se avanza hacia la derecha si el segundo es positivo, o se retrocede hacia la izquierda si es negativo."
+        "titulo": "Sumar enteros",
+        "texto": "Sumar un positivo es avanzar hacia la derecha en la recta y sumar un negativo es retroceder hacia la izquierda. Si los dos sumandos tienen el mismo signo se suman sus valores absolutos y se deja ese signo; si tienen distinto signo se restan y queda el signo del de mayor valor absoluto."
        },
        {
         "tipo": "parrafo",
-        "texto": "La recta muestra por qué una suma puede dar un resultado menor: sumar un negativo es como bajar. Si estás en −7 y sumás 4, avanzás cuatro lugares y llegás a −3. Funciona igual que subir y bajar la temperatura."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "(−7) + 4 = −3.",
-         "Sumar un negativo hace retroceder."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Las reglas de la suma",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Reglas de signos en la suma",
-        "texto": "Si los sumandos tienen el mismo signo, se suman sus valores absolutos y se deja ese signo; si tienen distinto signo, se restan y queda el signo del que tiene mayor valor absoluto."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Las reglas resumen lo que pasa en la recta, así no hace falta dibujar cada vez. (−8) + (−5): mismo signo, 8 + 5 = 13, negativo: −13. (−15) + 9: distinto signo, 15 − 9 = 6, gana el 15: −6."
+        "texto": "La regla resume lo que muestra la recta: (−8) + (−5) es retroceder 8 y otros 5, así que se llega a −13; (−15) + 9 es retroceder 15 y avanzar 9, y quedan 6 lugares a la izquierda: −6. Con varios sumandos conviene juntar primero los positivos y los negativos, porque la suma se puede reordenar."
        },
        {
         "tipo": "lista",
         "items": [
          "(−8) + (−5) = −13.",
-         "(−15) + 9 = −6."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Propiedades y varios sumandos",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Propiedades de la suma",
-        "texto": "La suma de enteros es conmutativa y asociativa, el 0 es el elemento neutro y todo número sumado con su opuesto da 0."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Gracias a estas propiedades, con varios sumandos se pueden juntar primero los positivos, después los negativos, y al final hacer una sola cuenta. También conviene buscar opuestos que se anulen."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "5 + (−5) = 0.",
-         "−3 + 8 − 10 + 4: positivos 12, negativos −13 → −1."
+         "(−15) + 9 = −6.",
+         "Un número más su opuesto da 0."
         ]
        }
       ]
@@ -302,24 +237,24 @@
     ],
     "recuerda": [
      {
-      "concepto": "Para sumar en la recta",
-      "definicion": "se avanza a la derecha con positivos y se retrocede a la izquierda con negativos.",
+      "concepto": "Sumar un número negativo",
+      "definicion": "es retroceder en la recta numérica, hacia la izquierda.",
       "ejemplo": "(−7) + 4 = −3"
      },
      {
-      "concepto": "Con el mismo signo",
-      "definicion": "se suman los valores absolutos y el resultado conserva ese signo.",
+      "concepto": "Si los sumandos tienen el mismo signo",
+      "definicion": "se suman los valores absolutos y se conserva ese signo.",
       "ejemplo": "(−8) + (−5) = −13"
      },
      {
-      "concepto": "Con distinto signo",
-      "definicion": "se restan los valores absolutos y queda el signo del de mayor valor absoluto.",
+      "concepto": "Si los sumandos tienen distinto signo",
+      "definicion": "se restan los valores absolutos y queda el signo del mayor.",
       "ejemplo": "(−15) + 9 = −6"
      },
      {
-      "concepto": "Un número más su opuesto",
-      "definicion": "da siempre cero, porque los dos se anulan cuando se ubican en la recta.",
-      "ejemplo": "5 + (−5) = 0"
+      "concepto": "Con varios sumandos",
+      "definicion": "se pueden juntar los positivos y los negativos antes de sumar.",
+      "ejemplo": "−3 + 8 − 10 + 4 = 12 − 13 = −1"
      }
     ]
    },
@@ -535,57 +470,25 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Resta de enteros",
-        "texto": "Restar un número entero es lo mismo que sumar su opuesto: a − b = a + (−b). Así cualquier resta se convierte en una suma."
+        "titulo": "Restar enteros",
+        "texto": "Para restar un número entero se suma su opuesto: a − b = a + (−b). Así toda resta se convierte en una suma y se resuelve con las reglas que ya conocés."
        },
        {
         "tipo": "parrafo",
-        "texto": "Con esta idea alcanza con saber sumar. 3 − 8 = 3 + (−8) = −5. Y 3 − (−5) = 3 + 5 = 8: restar un negativo hace que el resultado aumente, como cuando te sacan una deuda."
+        "texto": "3 − 8 es 3 + (−8) = −5. Y 3 − (−5) es 3 + 5 = 8: restar un negativo hace que el resultado aumente, igual que cuando te perdonan una deuda tu saldo sube. Por eso el orden importa: 8 − 3 da 5, pero 3 − 8 da −5."
        },
        {
         "tipo": "lista",
         "items": [
          "3 − 8 = 3 + (−8) = −5.",
-         "3 − (−5) = 3 + 5 = 8."
+         "3 − (−5) = 3 + 5 = 8.",
+         "Cuidado: a − b y b − a dan resultados opuestos."
         ]
        }
       ]
      },
      {
-      "titulo": "La resta no es conmutativa",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "resta"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "resta"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Orden en la resta",
-        "texto": "En la resta el orden importa: a − b y b − a dan resultados opuestos, por eso la resta no es conmutativa."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "8 − 3 = 5 pero 3 − 8 = −5. Cuando se calcula una diferencia entre dos valores, como dos temperaturas, conviene restar el mayor menos el menor para obtener cuánto los separa."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "8 − 3 = 5 y 3 − 8 = −5.",
-         "Diferencia: mayor menos menor."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Diferencias",
+      "titulo": "La diferencia entre dos valores",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -601,18 +504,18 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Diferencia entre dos enteros",
-        "texto": "La diferencia entre dos enteros, restando el mayor menos el menor, coincide con la distancia que los separa en la recta numérica."
+        "titulo": "Diferencia",
+        "texto": "La diferencia entre dos enteros, restando el mayor menos el menor, es la distancia que los separa en la recta."
        },
        {
         "tipo": "parrafo",
-        "texto": "Entre una máxima de 8 °C y una mínima de −5 °C hay 8 − (−5) = 13 grados. La resta da el mismo número que contar los saltos en la recta, y el signo menos del menos se vuelve más."
+        "texto": "Entre una máxima de 8 °C y una mínima de −5 °C hay 8 − (−5) = 13 grados. La resta da el mismo número que contar los saltos en la recta. Si se resta al revés, sale −13: el signo dice en qué sentido se cambió, y el valor absoluto, cuánto."
        },
        {
         "tipo": "lista",
         "items": [
          "8 − (−5) = 13.",
-         "Es la distancia en la recta."
+         "Mayor menos menor."
         ]
        }
       ]
@@ -621,23 +524,23 @@
     "recuerda": [
      {
       "concepto": "Restar un número entero",
-      "definicion": "es lo mismo que sumar su opuesto, así toda resta se vuelve una suma.",
+      "definicion": "es lo mismo que sumarle al primero el opuesto del segundo.",
       "ejemplo": "3 − 8 = 3 + (−8) = −5",
       "formula": "a − b = a + (−b)"
      },
      {
-      "concepto": "Restar un negativo",
+      "concepto": "Restar un número negativo",
       "definicion": "hace que el resultado aumente, porque equivale a sumar un positivo.",
       "ejemplo": "3 − (−5) = 8"
      },
      {
-      "concepto": "La resta",
-      "definicion": "no es conmutativa: cambiar el orden da el resultado opuesto.",
+      "concepto": "En la resta el orden importa",
+      "definicion": "porque cambiar los números de lugar da el resultado opuesto.",
       "ejemplo": "8 − 3 = 5 · 3 − 8 = −5"
      },
      {
       "concepto": "La diferencia entre dos enteros",
-      "definicion": "restando mayor menos menor, es la distancia en la recta.",
+      "definicion": "restando mayor menos menor, es la distancia que los separa en la recta.",
       "ejemplo": "8 − (−5) = 13"
      }
     ]
@@ -816,40 +719,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Suma algebraica",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "suma"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Suma algebraica",
-        "texto": "Una suma algebraica es una sucesión de sumas y restas de enteros; se resuelve pasando cada resta a suma del opuesto y sumando de izquierda a derecha o agrupando."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En la escritura se simplifican los signos: + (−4) se escribe − 4 y − (−4) se escribe + 4. Así −3 + 8 − 10 + 4 se lee como una lista de números con su signo para sumar."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "+ (−4) = − 4.",
-         "− (−4) = + 4."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Suprimir paréntesis",
+      "titulo": "Sacar los paréntesis",
       "ejemplo": {
        "motor": "enteros",
        "p": {
@@ -866,50 +736,18 @@
        {
         "tipo": "definicion",
         "titulo": "Suprimir paréntesis",
-        "texto": "Para suprimir un paréntesis precedido por un signo menos se cambian los signos de todos los términos de adentro; si está precedido por un signo más, los signos quedan igual."
+        "texto": "En una cadena de sumas y restas con paréntesis, si delante del paréntesis hay un signo menos se cambian los signos de todos los términos de adentro al sacarlo; si hay un signo más, quedan igual."
        },
        {
         "tipo": "parrafo",
-        "texto": "El menos delante del paréntesis resta todo lo que hay adentro, y restar es sumar el opuesto de cada término. 8 − (3 − 5) = 8 − 3 + 5 = 10. El error más común es cambiar solo el primer signo."
+        "texto": "El menos resta todo lo que está adentro, y restar es sumar el opuesto de cada término. Por eso 8 − (3 − 5) es 8 − 3 + 5 = 10. El error más común es cambiar solo el primer signo. Con corchetes se trabaja de adentro hacia afuera, y para controlar se puede resolver primero lo de adentro: 8 − (−2) = 10."
        },
        {
         "tipo": "lista",
         "items": [
-         "8 − (3 − 5) = 8 − 3 + 5.",
-         "+ (3 − 5) = + 3 − 5."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Paréntesis y corchetes",
-      "ejemplo": {
-       "motor": "enteros",
-       "p": {
-        "modo": "suprimir"
-       }
-      },
-      "ejercicio": {
-       "motor": "enteros_x",
-       "p": {
-        "modo": "suprimir"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Paréntesis dentro de corchetes",
-        "texto": "Cuando hay paréntesis dentro de corchetes, se resuelven o se suprimen primero los de adentro y después los de afuera, siempre aplicando la regla del signo de adelante."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Otra forma es resolver primero la cuenta de adentro y después restar el resultado: 6 − (−2 + 7 − 1) = 6 − 4 = 2. Los dos caminos tienen que dar lo mismo, y eso sirve para controlar."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "De adentro hacia afuera.",
-         "6 − (−2 + 7 − 1) = 6 − 4 = 2."
+         "8 − (3 − 5) = 8 − 3 + 5 = 10.",
+         "2 + (3 − 5) = 2 + 3 − 5.",
+         "Cuidado: cambian todos los signos, no solo el primero."
         ]
        }
       ]
@@ -917,24 +755,24 @@
     ],
     "recuerda": [
      {
-      "concepto": "Una suma algebraica",
-      "definicion": "es una cadena de sumas y restas que se resuelve como suma de enteros.",
-      "ejemplo": "−3 + 8 − 10 + 4 = −1"
-     },
-     {
-      "concepto": "Un menos delante del paréntesis",
-      "definicion": "cambia el signo de todos los términos que están adentro.",
+      "concepto": "Un signo menos delante del paréntesis",
+      "definicion": "cambia el signo de todos los términos que están adentro al suprimirlo.",
       "ejemplo": "8 − (3 − 5) = 8 − 3 + 5 = 10"
      },
      {
-      "concepto": "Un más delante del paréntesis",
-      "definicion": "deja todos los signos de los términos de adentro sin ningún cambio.",
+      "concepto": "Un signo más delante del paréntesis",
+      "definicion": "deja todos los signos de adentro sin cambiar.",
       "ejemplo": "2 + (3 − 5) = 2 + 3 − 5"
      },
      {
-      "concepto": "Con paréntesis y corchetes",
-      "definicion": "se trabaja de adentro hacia afuera, aplicando en cada uno la regla del signo.",
+      "concepto": "Con paréntesis dentro de corchetes",
+      "definicion": "se suprimen primero los de adentro y después los de afuera.",
       "ejemplo": "[5 − (2 − 4)] = [5 − 2 + 4] = 7"
+     },
+     {
+      "concepto": "Para controlar",
+      "definicion": "se puede resolver primero lo de adentro y comparar los dos resultados.",
+      "ejemplo": "8 − (−2) = 10"
      }
     ]
    },

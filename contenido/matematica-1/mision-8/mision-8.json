@@ -272,11 +272,11 @@
        {
         "tipo": "definicion",
         "titulo": "Tipos de fracciones",
-        "texto": "Una fracción es propia si el numerador es menor que el denominador (es menor que 1) e impropia si es mayor o igual (es 1 o más). Las impropias se pueden escribir como número mixto."
+        "texto": "Si el numerador es más chico que el denominador, la fracción es propia y vale menos que un entero. Si es igual o más grande, es impropia y vale un entero o más, y se puede escribir como número mixto."
        },
        {
         "tipo": "parrafo",
-        "texto": "Para pasar a número mixto se divide el numerador por el denominador: el cociente son los enteros y el resto es el nuevo numerador. 11/4 = 2 enteros y 3/4, porque 11 ÷ 4 = 2 y sobran 3."
+        "texto": "Para escribir 11/4 como número mixto se piensa cuántos enteros de cuatro cuartos se pueden armar con once cuartos: se arman dos, que usan ocho, y sobran tres cuartos. Por eso 11/4 = 2 3/4. Es lo mismo que dividir 11 por 4: el cociente son los enteros y el resto, los cuartos que sobran."
        },
        {
         "tipo": "lista",
@@ -1174,7 +1174,8 @@
         "tipo": "lista",
         "items": [
          "5/8 > 3/8.",
-         "3/4 > 3/5: los cuartos son más grandes que los quintos."
+         "3/4 > 3/5: los cuartos son más grandes que los quintos.",
+         "Para ordenar varias fracciones, primero se separan con los referentes 1/2 y 1, y después se comparan con un denominador común."
         ]
        }
       ]
@@ -1208,39 +1209,6 @@
         "items": [
          "Numerador > mitad del denominador → más de 1/2.",
          "Numerador > denominador → más de 1."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Ordenar varias",
-      "ejemplo": {
-       "motor": "fracciones",
-       "p": {
-        "modo": "comparar"
-       }
-      },
-      "ejercicio": {
-       "motor": "ordenar",
-       "p": {
-        "modo": "fracciones"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Ordenar fracciones",
-        "texto": "Para ordenar varias fracciones se las lleva a un denominador común y se ordenan los numeradores, o se usan los referentes cuando alcanza."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Conviene primero separar las que son menores que 1/2, entre 1/2 y 1, y mayores que 1, y después ordenar dentro de cada grupo con denominador común."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Primero los referentes, después el denominador común.",
-         "De menor a mayor: < ; de mayor a menor: >."
         ]
        }
       ]

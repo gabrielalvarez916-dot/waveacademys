@@ -52,7 +52,7 @@ function practica(pr, donde) {
 }
 
 // ---------- LECCIÓN ESCRITA EN SESIÓN (docs/reglas-leccion-interactiva.md) ----------
-const MAX_COPIA = 0.25;
+const MAX_COPIA = 0.10;  // 26/11/2026: el texto de la lección es original, no se copia del PDF ni de la clase
 const EXISTENTES = new Set((() => { try { return fs.readFileSync(path.join(__dirname, '..', 'calidad_existentes.txt'), 'utf8').split('\n').map(x => x.trim()).filter(x => x && !x.startsWith('#')); } catch (e) { return []; } })());
 // Reglas por etapa (mismo modelo, adaptado a la edad). Primaria = contenido/medio/<materia>-<grado>/: 1.º a 3.º es el primer ciclo.
 const ETAPAS = {
@@ -116,10 +116,16 @@ function leccion(ruta, M, n, L, donde) {
   R.forEach((r, i) => {
     const d = donde + ' · recordá ' + (i + 1);
     if (!r.concepto) mal(d, 'falta el concepto');
-    if (palabras(r.definicion).length < E.recDef) mal(d, 'la definición tiene que ser una oración completa (' + E.recDef + ' palabras o más), no dos palabras');
+    if (palabras((r.concepto || '') + ' ' + (r.definicion || '')).length < E.recDef + 2) mal(d, 'la definición tiene que ser una oración completa (' + E.recDef + ' palabras o más), no dos palabras');
     if (!r.ejemplo || palabras(r.ejemplo).length < 2) mal(d, 'falta el ejemplo concreto (ej.: "D(18) = {1, 2, 3, 6, 9, 18}")');
   });
-  if (L.temas.length < E.temas) mal(donde, 'la lección tiene ' + L.temas.length + ' pantallas: el mínimo es ' + E.temas + ' (una por idea, cada una con su ejemplo vivo)');
+  // 26/11/2026: NO hay mínimo de pantallas. Una pantalla = un saber nuevo con ejemplo y práctica PROPIOS.
+  // Advertencias, contraejemplos, casos especiales y "verificar" van dentro de la pantalla a la que pertenecen.
+  const vistos = {};
+  L.temas.forEach((t, i) => { ['ejemplo', 'ejercicio'].forEach(k => { if (!t[k]) return; const key = k + JSON.stringify(t[k]);
+    if (vistos[key] !== undefined) mal(donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', 'repite el ' + k + ' del tema ' + (vistos[key] + 1) + ': si no tiene ' + k + ' propio no es una pantalla, va dentro de la otra (como paso, contraejemplo o «Cuidado»)');
+    else vistos[key] = i; }); });
+  if (E.parrafo) L.temas.forEach((t, i) => { (t.explicacion || []).filter(b => b.tipo === 'parrafo' || b.tipo === 'definicion').forEach(b => { limpio(b.texto).split(/(?<=[.!?])\s+/).forEach(o => { const w = palabras(o).length; if (w && w < 6 && !/[=×÷√∛]/.test(o)) mal(donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', 'oración de relleno o incompleta: «' + o.trim() + '» (' + w + ' palabras). Explicá, no rellenes'); }); }); });
 }
 
 for (const ruta of process.argv.slice(2)) {

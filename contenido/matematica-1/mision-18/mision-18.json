@@ -236,7 +236,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Según sus lados y sus ángulos",
+      "titulo": "Dos nombres para cada triángulo",
       "ejemplo": {
        "motor": "triangulo",
        "p": {}
@@ -251,79 +251,18 @@
        {
         "tipo": "definicion",
         "titulo": "Clasificar triángulos",
-        "texto": "Según sus lados, un triángulo es equilátero (tres lados iguales), isósceles (dos iguales) o escaleno (todos distintos); según sus ángulos, es acutángulo, rectángulo u obtusángulo."
+        "texto": "Según sus lados, un triángulo es equilátero, isósceles o escaleno; según su ángulo mayor, es acutángulo, rectángulo u obtusángulo. Todo triángulo lleva un nombre de cada clasificación."
        },
        {
         "tipo": "parrafo",
-        "texto": "Un triángulo tiene siempre dos nombres, uno por los lados y otro por los ángulos: un triángulo con ángulos de 90°, 45° y 45° es rectángulo isósceles. Un triángulo rectángulo tiene un ángulo recto y uno obtusángulo tiene un ángulo obtuso; nunca puede tener dos."
+        "texto": "Un triángulo con ángulos de 90°, 45° y 45° es rectángulo isósceles. Algunas combinaciones no existen: un equilátero tiene sus tres ángulos de 60°, así que siempre es acutángulo. Para nombrarlo completo conviene mirar primero el ángulo mayor y después comparar los lados."
        },
        {
         "tipo": "lista",
         "items": [
          "Lados: equilátero, isósceles, escaleno.",
-         "Ángulos: acutángulo, rectángulo, obtusángulo."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Un triángulo, dos nombres",
-      "ejemplo": {
-       "motor": "triangulo",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "figuras_x",
-       "p": {
-        "modo": "clasificar"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Dos clasificaciones a la vez",
-        "texto": "Las dos clasificaciones se combinan: un mismo triángulo se nombra por sus lados y por sus ángulos, y algunas combinaciones no existen."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Un triángulo equilátero tiene sus tres ángulos de 60°, así que siempre es acutángulo: no existe un equilátero rectángulo. En cambio, un rectángulo puede ser isósceles o escaleno. Para nombrarlo completo, primero se miran los ángulos y después se comparan los lados."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Equilátero → siempre acutángulo.",
-         "Rectángulo isósceles: sí existe."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "La desigualdad triangular",
-      "ejemplo": {
-       "motor": "triangulo",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "triangulo"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Desigualdad triangular",
-        "texto": "En todo triángulo, cada lado es menor que la suma de los otros dos; por eso alcanza con verificar que el lado más largo sea menor que la suma de los otros dos."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Con 2, 3 y 7 cm no se puede armar un triángulo: 2 + 3 = 5, que es menos que 7, y los lados cortos no llegan a juntarse. Con 5, 7 y 10 sí, porque 5 + 7 = 12 es más que 10. Si la suma da justo igual, los lados quedan acostados sobre el largo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Lado mayor < suma de los otros dos.",
-         "2, 3 y 7: no se puede."
+         "Ángulos: acutángulo, rectángulo, obtusángulo.",
+         "Un equilátero nunca es rectángulo."
         ]
        }
       ]
@@ -332,12 +271,12 @@
     "recuerda": [
      {
       "concepto": "Según sus lados",
-      "definicion": "un triángulo puede ser equilátero, isósceles o escaleno, según cuántos lados iguales tenga.",
+      "definicion": "un triángulo es equilátero, isósceles o escaleno, según cuántos lados iguales tenga.",
       "ejemplo": "5, 5 y 5 cm: equilátero"
      },
      {
-      "concepto": "Según sus ángulos",
-      "definicion": "un triángulo puede ser acutángulo, rectángulo u obtusángulo, según su ángulo mayor.",
+      "concepto": "Según su ángulo mayor",
+      "definicion": "un triángulo puede ser acutángulo, rectángulo u obtusángulo.",
       "ejemplo": "90°, 60° y 30°: rectángulo"
      },
      {
@@ -346,9 +285,9 @@
       "ejemplo": "90°, 45° y 45°: rectángulo isósceles"
      },
      {
-      "concepto": "Un triángulo se puede construir",
-      "definicion": "solo si el lado más largo es menor que la suma de los otros dos.",
-      "ejemplo": "5, 7 y 10 cm: sí"
+      "concepto": "Un triángulo equilátero",
+      "definicion": "tiene sus tres ángulos de 60°, por eso siempre es acutángulo.",
+      "ejemplo": "Nunca hay un equilátero rectángulo"
      }
     ]
    },
@@ -919,40 +858,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Cuadriláteros",
-      "ejemplo": {
-       "motor": "figuras",
-       "p": {
-        "modo": "cuadrilateros"
-       }
-      },
-      "ejercicio": {
-       "motor": "angulo_falta",
-       "p": {
-        "modo": "cuadrilatero"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Clasificar cuadriláteros",
-        "texto": "Los cuadriláteros se clasifican por sus lados paralelos: el trapezoide no tiene ninguno, el trapecio tiene un solo par y el paralelogramo tiene dos pares."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Dentro de los paralelogramos hay tres especiales: el rectángulo, con cuatro ángulos rectos; el rombo, con cuatro lados iguales; y el cuadrado, que tiene las dos cosas. Por eso todo cuadrado es rectángulo y también es rombo, pero no al revés."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "0 pares: trapezoide. 1 par: trapecio.",
-         "2 pares: paralelogramo."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Uno dentro de otro",
+      "titulo": "Familias de cuadriláteros",
       "ejemplo": {
        "motor": "figuras",
        "p": {
@@ -962,30 +868,30 @@
       "ejercicio": {
        "motor": "figuras_x",
        "p": {
-        "modo": "diagonales"
+        "modo": "cuadrilatero"
        }
       },
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Inclusión",
-        "texto": "Una figura está incluida en otra cuando cumple todas sus propiedades: el cuadrado está incluido en los rectángulos y en los rombos, y estos en los paralelogramos."
+        "titulo": "Clasificar cuadriláteros",
+        "texto": "Los cuadriláteros se clasifican por sus pares de lados paralelos: el trapezoide no tiene ninguno, el trapecio tiene uno y el paralelogramo tiene dos. Dentro de los paralelogramos están el rectángulo, el rombo y el cuadrado."
        },
        {
         "tipo": "parrafo",
-        "texto": "Para saber si una frase como «todo rombo es un cuadrado» es verdadera, se piensa si siempre se cumple: un rombo puede no tener ángulos rectos, así que es falsa. En cambio, «todo cuadrado es un rombo» es verdadera, porque el cuadrado tiene los cuatro lados iguales."
+        "texto": "El rectángulo tiene cuatro ángulos rectos y el rombo, cuatro lados iguales; el cuadrado tiene las dos cosas, así que es rectángulo y rombo a la vez. Una frase como «todo rombo es un cuadrado» es falsa, porque un rombo puede no tener ángulos rectos; en cambio «todo cuadrado es un rombo» es verdadera."
        },
        {
         "tipo": "lista",
         "items": [
-         "Todo cuadrado es rombo: verdadero.",
-         "Todo rombo es cuadrado: falso."
+         "0 pares: trapezoide · 1 par: trapecio.",
+         "Todo cuadrado es rombo; no al revés."
         ]
        }
       ]
      },
      {
-      "titulo": "Lados y ángulos del paralelogramo",
+      "titulo": "Lo que cumple todo paralelogramo",
       "ejemplo": {
        "motor": "figuras",
        "p": {
@@ -1006,7 +912,7 @@
        },
        {
         "tipo": "parrafo",
-        "texto": "Con un solo ángulo se conocen los cuatro. Si un ángulo mide 55°, el opuesto también mide 55° y los otros dos miden 125°. Los cuatro juntos suman 360°, como en cualquier cuadrilátero. Así se completan figuras rápido."
+        "texto": "Con un solo ángulo se conocen los cuatro: si uno mide 55°, el opuesto también mide 55° y los otros dos miden 125° cada uno. Estas propiedades valen para todos los paralelogramos, también para el rectángulo, el rombo y el cuadrado."
        },
        {
         "tipo": "lista",
@@ -1026,7 +932,7 @@
      },
      {
       "concepto": "El rectángulo, el rombo y el cuadrado",
-      "definicion": "son paralelogramos especiales, y el cuadrado es rectángulo y rombo a la vez.",
+      "definicion": "son paralelogramos, y el cuadrado es rectángulo y rombo a la vez.",
       "ejemplo": "Todo cuadrado es rombo"
      },
      {
@@ -1035,8 +941,8 @@
       "ejemplo": "55° y 125°"
      },
      {
-      "concepto": "Una frase con «todo»",
-      "definicion": "es verdadera solo si se cumple siempre, sin ninguna excepción.",
+      "concepto": "Una frase que empieza con «todo»",
+      "definicion": "es verdadera solo si se cumple siempre, sin excepciones.",
       "ejemplo": "Todo rombo es cuadrado: falso"
      }
     ]
@@ -1284,7 +1190,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Diagonales",
+      "titulo": "Las diagonales",
       "ejemplo": {
        "motor": "figuras",
        "p": {
@@ -1301,23 +1207,23 @@
        {
         "tipo": "definicion",
         "titulo": "Diagonales",
-        "texto": "Una diagonal es el segmento que une dos vértices no consecutivos; todo cuadrilátero tiene dos. En los paralelogramos, las diagonales se cortan en su punto medio."
+        "texto": "Una diagonal une dos vértices no consecutivos; todo cuadrilátero tiene dos. En los paralelogramos se cortan en su punto medio, y sus propiedades permiten reconocer los especiales."
        },
        {
         "tipo": "parrafo",
-        "texto": "Las diagonales permiten reconocer los paralelogramos especiales: en el rectángulo son iguales, en el rombo son perpendiculares y en el cuadrado son iguales y perpendiculares. Si una diagonal de un paralelogramo mide 18 cm, la otra la corta en dos partes de 9 cm."
+        "texto": "En el rectángulo las diagonales son iguales, en el rombo son perpendiculares y en el cuadrado son iguales y perpendiculares. Por eso, para construir un rombo se pueden trazar primero dos segmentos perpendiculares que se corten en su punto medio y después unir sus extremos."
        },
        {
         "tipo": "lista",
         "items": [
-         "Rectángulo: iguales. Rombo: perpendiculares.",
-         "Cuadrado: iguales y perpendiculares."
+         "Rectángulo: iguales · Rombo: perpendiculares.",
+         "Cuadrado: las dos cosas."
         ]
        }
       ]
      },
      {
-      "titulo": "Los ángulos suman 360°",
+      "titulo": "La suma es 360°",
       "ejemplo": {
        "motor": "figuras",
        "p": {
@@ -1334,50 +1240,17 @@
        {
         "tipo": "definicion",
         "titulo": "Suma de los ángulos de un cuadrilátero",
-        "texto": "Los cuatro ángulos interiores de cualquier cuadrilátero suman 360°, porque una diagonal lo divide en dos triángulos."
+        "texto": "Los cuatro ángulos interiores de cualquier cuadrilátero suman 360°, porque una diagonal lo divide en dos triángulos y cada uno aporta 180°."
        },
        {
         "tipo": "parrafo",
-        "texto": "Cada triángulo aporta 180°, y 2 × 180° = 360°. Si tres ángulos miden 85°, 95° y 100°, el cuarto mide 360° − 280° = 80°. Esto vale para todos los cuadriláteros, también para los trapezoides. Se verifica sumando los cuatro."
+        "texto": "Si tres ángulos miden 85°, 95° y 100°, el cuarto mide 360° − 280° = 80°. Esto vale para todos los cuadriláteros, también para los que no tienen ningún lado paralelo. Si la resta da cero o negativo, esos ángulos no pueden ser de un cuadrilátero."
        },
        {
         "tipo": "lista",
         "items": [
          "2 triángulos → 360°.",
          "360° − 85° − 95° − 100° = 80°."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Construir con diagonales",
-      "ejemplo": {
-       "motor": "figuras",
-       "p": {
-        "modo": "diagonales"
-       }
-      },
-      "ejercicio": {
-       "motor": "figuras_x",
-       "p": {
-        "modo": "diagonales"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Construir con diagonales",
-        "texto": "Para construir un paralelogramo especial se pueden trazar primero sus diagonales con las propiedades que corresponden y después unir sus extremos."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Para un rombo se trazan dos segmentos perpendiculares que se corten en su punto medio; para un rectángulo, dos segmentos iguales que se corten en su punto medio sin ser perpendiculares. Uniendo los cuatro extremos aparece la figura, y al final se verifica midiendo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Rombo: diagonales perpendiculares.",
-         "Rectángulo: diagonales iguales."
         ]
        }
       ]
@@ -1391,16 +1264,16 @@
      },
      {
       "concepto": "En todo paralelogramo",
-      "definicion": "las dos diagonales se cortan exactamente en su punto medio.",
+      "definicion": "las dos diagonales se cortan en su punto medio.",
       "ejemplo": "Diagonal de 18 cm → 9 y 9"
      },
      {
-      "concepto": "Las diagonales del rectángulo",
-      "definicion": "son iguales; las del rombo son perpendiculares; las del cuadrado, las dos cosas.",
+      "concepto": "Las diagonales del rectángulo son iguales",
+      "definicion": "las del rombo son perpendiculares y las del cuadrado, las dos cosas.",
       "ejemplo": "Cuadrado: iguales y perpendiculares"
      },
      {
-      "concepto": "Los ángulos de un cuadrilátero",
+      "concepto": "Los ángulos interiores de un cuadrilátero",
       "definicion": "suman siempre 360°, porque se puede partir en dos triángulos.",
       "ejemplo": "85° + 95° + 100° + 80° = 360°"
      }

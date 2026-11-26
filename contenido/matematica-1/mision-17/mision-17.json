@@ -256,7 +256,7 @@
        },
        {
         "tipo": "parrafo",
-        "texto": "Cuando dos rectas se cortan forman cuatro ángulos. Si uno mide 60°, su adyacente mide 120°, el opuesto también 60° y el que queda, 120°. Los complementarios suman 90°."
+        "texto": "Cuando dos rectas se cortan forman cuatro ángulos. Si uno mide 60°, su adyacente mide 120°, el opuesto también 60° y el que queda, 120°. Dos ángulos que juntos forman un recto se llaman complementarios y suman 90°."
        },
        {
         "tipo": "lista",
@@ -494,7 +494,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Posiciones de dos rectas",
+      "titulo": "Cortarse o no cortarse",
       "ejemplo": {
        "motor": "geometria",
        "p": {
@@ -510,84 +510,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Rectas paralelas, perpendiculares y secantes",
-        "texto": "Dos rectas del plano pueden ser paralelas, si no se cortan nunca, o secantes, si se cortan en un punto; las secantes que forman cuatro ángulos rectos son perpendiculares."
+        "titulo": "Posiciones de dos rectas",
+        "texto": "Dos rectas del plano son paralelas si no se cortan nunca y secantes si se cortan en un punto; las secantes que forman cuatro ángulos rectos se llaman perpendiculares, y las demás, oblicuas."
        },
        {
         "tipo": "parrafo",
-        "texto": "Las vías de un tren son paralelas; las calles que se cruzan en una esquina en escuadra son perpendiculares. Toda perpendicular es secante, pero no toda secante es perpendicular: las demás se llaman oblicuas."
+        "texto": "Las vías del tren son paralelas y las calles de una esquina en escuadra, perpendiculares. Las perpendiculares se trazan apoyando un cateto de la escuadra sobre la recta, y las paralelas, deslizando la escuadra sobre una regla fija. La distancia de un punto a una recta se mide sobre la perpendicular desde el punto, porque es el camino más corto."
        },
        {
         "tipo": "lista",
         "items": [
          "Paralelas: nunca se cortan.",
-         "Perpendiculares: se cortan en ángulo recto."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Trazar con instrumentos",
-      "ejemplo": {
-       "motor": "geometria",
-       "p": {
-        "modo": "rectas"
-       }
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "rectas"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Trazar paralelas y perpendiculares",
-        "texto": "Las perpendiculares se trazan apoyando un cateto de la escuadra sobre la recta; las paralelas, deslizando la escuadra sobre una regla fija."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Con la escuadra apoyada en la recta, el otro cateto marca el ángulo recto. Para una paralela, se apoya la regla, se coloca la escuadra contra ella y se la desliza: cada recta que se traza queda a la misma inclinación."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Escuadra para el ángulo recto.",
-         "Regla fija y escuadra que se desliza."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Distancia de un punto a una recta",
-      "ejemplo": {
-       "motor": "geometria",
-       "p": {
-        "modo": "rectas"
-       }
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "rectas"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Distancia a una recta",
-        "texto": "La distancia de un punto a una recta es la longitud del segmento perpendicular que va desde el punto hasta la recta, que es el camino más corto."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Cualquier otro segmento oblicuo desde el punto es más largo. Por eso, para medir la distancia hay que trazar primero la perpendicular con la escuadra. Dos rectas paralelas están siempre a la misma distancia."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Se mide sobre la perpendicular.",
-         "Es el camino más corto."
+         "Perpendiculares: ángulos rectos.",
+         "La distancia se mide sobre la perpendicular."
         ]
        }
       ]
@@ -828,7 +763,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Bisectriz",
+      "titulo": "Partir un ángulo en dos",
       "ejemplo": {
        "motor": "geometria",
        "p": {
@@ -845,23 +780,23 @@
        {
         "tipo": "definicion",
         "titulo": "Bisectriz",
-        "texto": "La bisectriz de un ángulo es la semirrecta que sale del vértice y lo divide en dos ángulos iguales. Se traza con compás: un arco desde el vértice y dos arcos iguales desde los cortes."
+        "texto": "La bisectriz de un ángulo es la semirrecta que sale del vértice y lo divide en dos ángulos iguales. Cada uno de sus puntos está a la misma distancia de los dos lados."
        },
        {
         "tipo": "parrafo",
-        "texto": "Cada punto de la bisectriz está a la misma distancia de los dos lados del ángulo. La bisectriz de un ángulo de 80° forma dos de 40°; la de un recto, dos de 45°."
+        "texto": "Para trazarla con compás se hace un arco con centro en el vértice que corte los dos lados, después dos arcos iguales desde esos cortes, y se une el vértice con el punto donde se cruzan. Sirve, por ejemplo, para ubicar un camino a igual distancia de dos rutas que se cruzan."
        },
        {
         "tipo": "lista",
         "items": [
-         "Divide el ángulo en dos iguales.",
-         "80° → 40° y 40°."
+         "80° → 40° y 40°.",
+         "Recto → 45° y 45°."
         ]
        }
       ]
      },
      {
-      "titulo": "Mediatriz",
+      "titulo": "Partir un segmento en dos",
       "ejemplo": {
        "motor": "geometria",
        "p": {
@@ -878,50 +813,17 @@
        {
         "tipo": "definicion",
         "titulo": "Mediatriz",
-        "texto": "La mediatriz de un segmento es la recta perpendicular que pasa por su punto medio. Se traza con dos arcos de igual radio desde los extremos y uniendo los cruces."
+        "texto": "La mediatriz es la recta que corta un segmento justo por la mitad y en ángulo recto. Cualquier punto que se elija sobre ella queda igual de lejos de las dos puntas del segmento."
        },
        {
         "tipo": "parrafo",
-        "texto": "Cada punto de la mediatriz está a la misma distancia de los dos extremos del segmento. Si el segmento mide 18 cm, la mediatriz lo corta a 9 cm de cada extremo, y forma ángulos rectos con él."
+        "texto": "Con el compás abierto un poco más que la mitad del segmento, se pincha en una punta y se dibuja un arco arriba y otro abajo; se repite desde la otra punta y la recta que une esos dos cruces es la mediatriz. Por ejemplo, en un segmento de 12 cm queda a 6 cm de cada punta. Sirve para ubicar una plaza a igual distancia de dos casas. No hay que confundirla con la bisectriz, que se traza en un ángulo."
        },
        {
         "tipo": "lista",
         "items": [
-         "Perpendicular por el punto medio.",
-         "18 cm → 9 cm de cada lado."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "No confundirlas y para qué sirven",
-      "ejemplo": {
-       "motor": "geometria",
-       "p": {
-        "modo": "mediatriz"
-       }
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "bisectriz"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Bisectriz o mediatriz",
-        "texto": "La bisectriz se traza en un ángulo y reparte la abertura; la mediatriz se traza en un segmento y lo corta a la mitad en ángulo recto."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Las dos sirven para ubicar puntos equidistantes. Para poner una plaza a igual distancia de dos casas se busca sobre la mediatriz del segmento que las une. Para un camino a igual distancia de dos rutas que se cruzan, sobre la bisectriz."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Ángulo → bisectriz.",
-         "Segmento → mediatriz."
+         "18 cm → 9 cm de cada lado.",
+         "Cuidado: ángulo → bisectriz; segmento → mediatriz."
         ]
        }
       ]
@@ -1117,40 +1019,7 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Copiar segmentos",
-      "ejemplo": {
-       "motor": "geometria",
-       "p": {
-        "modo": "copiar"
-       }
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "mediatriz"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Copiar con compás",
-        "texto": "Para copiar un segmento se abre el compás con la medida del segmento y, sin cambiar la abertura, se marca esa medida desde un punto de otra recta."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "El compás transporta medidas sin usar números, y por eso las copias son exactas. Con la misma idea se copia un ángulo: se traza un arco en el original y se reproduce en la copia la abertura entre los cortes."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "La abertura es igual al segmento.",
-         "No se cambia la abertura."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Triángulo con tres lados",
+      "titulo": "Construir con compás",
       "ejemplo": {
        "motor": "triangulo",
        "p": {}
@@ -1165,48 +1034,18 @@
        {
         "tipo": "definicion",
         "titulo": "Construir un triángulo",
-        "texto": "Para construir un triángulo conociendo sus tres lados se traza uno de ellos y, desde cada extremo, un arco con la medida de cada uno de los otros dos; el cruce es el tercer vértice."
+        "texto": "Para construir un triángulo con tres lados dados se traza uno de ellos y, desde cada extremo, un arco con la medida de cada uno de los otros dos; donde se cruzan los arcos está el tercer vértice."
        },
        {
         "tipo": "parrafo",
-        "texto": "Con lados de 6, 5 y 4 cm: se traza el de 6 cm, desde un extremo un arco de 5 cm y desde el otro uno de 4 cm. Donde se cruzan está el tercer vértice, y se unen los puntos."
+        "texto": "El compás traslada medidas sin usar números: se abre con la longitud que se quiere copiar y, sin cambiar la abertura, se marca en el lugar nuevo, así la copia es exacta. Antes de construir hay que comprobar que se pueda, porque el lado más largo tiene que ser menor que la suma de los otros dos: con 3, 4 y 8 cm los arcos no llegan a cruzarse. Al terminar se miden los lados para verificar."
        },
        {
         "tipo": "lista",
         "items": [
-         "Primero un lado.",
-         "Dos arcos: el cruce es el vértice."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "¿Siempre se puede?",
-      "ejemplo": {
-       "motor": "triangulo",
-       "p": {}
-      },
-      "ejercicio": {
-       "motor": "geometria_x",
-       "p": {
-        "modo": "triangulo"
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Desigualdad triangular",
-        "texto": "Un triángulo se puede construir solo si el lado más largo es menor que la suma de los otros dos; si no, los arcos no se cruzan."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Con 3, 4 y 8 cm no se puede: 3 + 4 = 7, que es menos que 8, y los dos lados cortos no llegan a juntarse. Con 4, 5 y 7 sí, porque 4 + 5 = 9 es más que 7. Al terminar, se verifica midiendo."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Lado mayor < suma de los otros.",
-         "3, 4 y 8: no se puede."
+         "6, 5 y 4 cm: se puede.",
+         "3, 4 y 8 cm: no se puede.",
+         "Cuidado: no cambiar la abertura al marcar."
         ]
        }
       ]
@@ -1220,7 +1059,7 @@
      },
      {
       "concepto": "Para construir un triángulo con tres lados",
-      "definicion": "se traza un lado y dos arcos desde sus extremos con las otras medidas.",
+      "definicion": "se traza uno y dos arcos desde sus extremos con las otras medidas.",
       "ejemplo": "6, 5 y 4 cm"
      },
      {
@@ -1230,7 +1069,7 @@
      },
      {
       "concepto": "Al terminar una construcción",
-      "definicion": "se mide con regla y transportador para verificar que quedó bien.",
+      "definicion": "se miden los lados con la regla para verificar que quedó bien.",
       "ejemplo": "Verificar los tres lados"
      }
     ]

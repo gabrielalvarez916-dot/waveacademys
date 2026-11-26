@@ -284,11 +284,11 @@
        {
         "tipo": "definicion",
         "titulo": "Períodos",
-        "texto": "Para leer un número grande se separan las cifras en grupos de tres, <b>siempre desde la derecha</b>. Cada grupo se llama período: unidades, miles, millones y miles de millones."
+        "texto": "Un número largo se lee partiéndolo en grupos de tres cifras, contando de derecha a izquierda. Cada grupo tiene un nombre: unidades, miles, millones y miles de millones."
        },
        {
         "tipo": "parrafo",
-        "texto": "Así, un número largo se convierte en varios números cortos que ya sabés leer: cada grupo se lee como un número de hasta tres cifras y se le agrega el nombre de su período. Para escribirlo con cifras se hace el camino al revés, completando con ceros los lugares vacíos."
+        "texto": "Partido así, el número largo se vuelve una serie de números cortos: cada grupo se dice como un número de hasta tres cifras, seguido del nombre de su grupo. Por ejemplo, 3.040.500 se lee «tres millones cuarenta mil quinientos». Para escribirlo con cifras se hace al revés, poniendo ceros en los lugares que no se nombran."
        },
        {
         "tipo": "lista",
@@ -1333,11 +1333,11 @@
        {
         "tipo": "definicion",
         "titulo": "Sistema sexagesimal",
-        "texto": "Es el sistema que agrupa de a sesenta: sesenta segundos forman un minuto y sesenta minutos forman una hora. Lo usamos para medir el tiempo y también los ángulos."
+        "texto": "En el sistema sexagesimal las unidades se juntan de a 60: 60 segundos hacen un minuto y 60 minutos hacen una hora. Con él medimos el tiempo y también los ángulos."
        },
        {
         "tipo": "parrafo",
-        "texto": "Viene de los babilonios, que contaban en base 60. El 60 se puede dividir en partes iguales de muchas formas, por eso media hora, un cuarto o un tercio de hora son siempre minutos enteros. Para pasar de una unidad a otra se multiplica o se divide por 60."
+        "texto": "Se usa 60 porque se reparte en partes iguales de muchas maneras: la mitad, la tercera, la cuarta o la sexta parte de una hora son siempre una cantidad entera de minutos. Para cambiar de unidad se multiplica por 60 al bajar a una unidad más chica y se divide por 60 al subir a una más grande."
        },
        {
         "tipo": "lista",

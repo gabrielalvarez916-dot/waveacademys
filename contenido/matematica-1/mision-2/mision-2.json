@@ -247,11 +247,11 @@
        {
         "tipo": "definicion",
         "titulo": "Conmutativa y asociativa",
-        "texto": "En una suma, el <b>orden</b> de los sumandos no cambia el resultado (conmutativa) y tampoco cambia si los <b>agrupamos</b> de otra manera (asociativa)."
+        "texto": "La suma tiene dos propiedades muy útiles: se pueden cambiar de lugar los sumandos (conmutativa) y se pueden agrupar como uno quiera (asociativa), sin que cambie el resultado."
        },
        {
         "tipo": "parrafo",
-        "texto": "Estas dos propiedades permiten elegir el camino más cómodo: juntar primero los números que forman una cantidad redonda y dejar para el final lo más difícil. El resultado siempre es el mismo."
+        "texto": "Gracias a ellas se puede sumar en el orden que más convenga. En 37 + 48 + 63, juntar primero 37 y 63 da 100, y después sumar 48 es muy fácil. La resta, en cambio, no las cumple: 9 − 4 da 5, pero 4 − 9 no da lo mismo."
        },
        {
         "tipo": "lista",
@@ -281,11 +281,11 @@
        {
         "tipo": "definicion",
         "titulo": "Operación inversa",
-        "texto": "La resta es la operación <b>inversa</b> de la suma: deshace lo que hizo la suma. Si a + b = c, entonces c − b = a y c − a = b."
+        "texto": "Sumar y restar son operaciones inversas: una deshace lo que hace la otra. Si 25 + 17 = 42, entonces 42 − 17 = 25 y 42 − 25 = 17."
        },
        {
         "tipo": "parrafo",
-        "texto": "Gracias a esto, si ya sabés cuánto da una suma, también sabés el resultado de las dos restas que salen de ella. Y cuando terminás una resta, podés controlarla sumando: el resultado más lo que restaste tiene que darte el número del principio."
+        "texto": "Por eso, para controlar una resta se suma el resultado con lo que se restó y tiene que dar el número del principio. Y para encontrar un número que falta en una suma, como en 25 + ▢ = 42, se resta: 42 − 25 = 17."
        },
        {
         "tipo": "lista",
@@ -998,11 +998,11 @@
        {
         "tipo": "definicion",
         "titulo": "División entera",
-        "texto": "Dividir es repartir en partes iguales o ver cuántas veces entra un número en otro. Sus partes son el <b>dividendo</b>, el <b>divisor</b>, el <b>cociente</b> y el <b>resto</b>."
+        "texto": "Dividir es repartir en partes iguales o averiguar cuántas veces entra un número en otro. En una división hay cuatro números: el dividendo, el divisor, el cociente y el resto."
        },
        {
         "tipo": "parrafo",
-        "texto": "El cociente dice cuántas veces entra el divisor y el resto es lo que sobra. El resto siempre tiene que ser menor que el divisor: si fuera igual o mayor, todavía entraría una vez más."
+        "texto": "Si 47 caramelos se reparten entre 5 chicos, a cada uno le tocan 9 y sobran 2: 47 es el dividendo, 5 el divisor, 9 el cociente y 2 el resto. El resto tiene que ser más chico que el divisor, porque si sobraran 5 o más, todavía alcanzaría para darle uno más a cada uno."
        },
        {
         "tipo": "lista",
@@ -1024,7 +1024,7 @@
       "ejercicio": {
        "motor": "naturales_x",
        "p": {
-        "modo": "division"
+        "modo": "relacion"
        }
       },
       "explicacion": [
@@ -1057,7 +1057,7 @@
       "ejercicio": {
        "motor": "naturales_x",
        "p": {
-        "modo": "relacion"
+        "modo": "falta"
        }
       },
       "explicacion": [
