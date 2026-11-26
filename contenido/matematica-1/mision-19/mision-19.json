@@ -1,1 +1,1640 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 19, "practica": "Práctica general: perímetro, área y volumen", "examen_titulo": "Nivel jefe: perímetro, área y volumen", "niveles": {"1": {"objetivo": "Vas a poder calcular el perímetro de polígonos y figuras compuestas, y pasar de una unidad de longitud a otra.", "vas_a_ver": ["Qué es el perímetro", "Unidades de longitud", "Perímetro de figuras compuestas", "Sumar con la misma unidad", "La vuelta a un círculo (idea)"], "secciones": [{"etapa": 1, "titulo": "Perímetro", "bloques": [{"tipo": "definicion", "titulo": "Perímetro", "texto": "El <b>perímetro</b> es la <b>longitud del borde</b> de una figura: la suma de las medidas de todos sus lados."}, {"tipo": "ejemplo", "titulo": "Rectángulo y cuadrado", "texto": "Sumamos todos los lados.", "items": ["Rectángulo de 8 cm por 5 cm: 8 + 5 + 8 + 5 = 26 cm.", "Cuadrado de 6 cm de lado: 6 + 6 + 6 + 6 = 4 × 6 = 24 cm."]}]}, {"etapa": 1, "titulo": "Unidades de longitud", "bloques": [{"tipo": "definicion", "titulo": "Unidades de longitud", "texto": "Se mide en <b>km, hm, dam, m, dm, cm y mm</b>. Cada unidad es <b>10 veces</b> la que sigue: para pasar a una más chica se multiplica, y a una más grande se divide."}, {"tipo": "tabla", "titulo": "Equivalencias que más se usan", "columnas": ["Unidad", "Equivale a"], "filas": [["1 km", "1.000 m"], ["1 m", "100 cm"], ["1 cm", "10 mm"]], "iguales": true, "texto": "Ejemplos: 3,5 m = 3,5 × 100 = 350 cm. 2.400 m = 2.400 ÷ 1.000 = 2,4 km."}]}, {"etapa": 2, "titulo": "Figuras compuestas", "bloques": [{"tipo": "parrafo", "texto": "En una figura armada con varias partes se suman <b>solo los lados del borde</b>. Si falta alguna medida, se calcula con las que hay."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Una figura en forma de L", "texto": "Se suman los seis lados del borde: 10 + 3 + 4 + 3 + 6 + 6 = 32 cm.", "imagen_descripcion": "Figura en forma de L con lados de 10, 3, 4, 3, 6 y 6 cm.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}, {"tipo": "ejemplo", "titulo": "La L de la figura", "texto": "El lado de 4 cm sale de 10 − 6.", "items": ["Lados: 10, 3, 4, 3, 6 y 6 cm.", "10 + 3 + 4 + 3 + 6 + 6 = 32.", "El perímetro es 32 cm."]}]}, {"etapa": 2, "titulo": "Todo en la misma unidad", "bloques": [{"tipo": "parrafo", "texto": "Antes de sumar, todas las medidas tienen que estar en la <b>misma unidad</b>. Un rectángulo de 2 m por 45 cm: 2 m = 200 cm, y el perímetro es 200 + 45 + 200 + 45 = 490 cm."}]}, {"etapa": 2, "titulo": "La vuelta a un círculo", "bloques": [{"tipo": "parrafo", "texto": "El borde de un círculo, la <b>circunferencia</b>, mide un poco más de <b>3 veces su diámetro</b>. Con un diámetro de 10 cm, la vuelta mide algo más de 30 cm. La cuenta exacta se ve en 2.º año."}]}], "ejemplo_completo": {"titulo": "el cerco", "planteo": "Un terreno rectangular mide 25 m por 12 m. Se quiere cercar con alambre, dejando un portón de 3 m. ¿Cuántos metros de alambre hacen falta?", "pasos": ["Perímetro: 25 + 12 + 25 + 12 = 74 m.", "El portón no lleva alambre: 74 − 3 = 71 m.", "Hacen falta 71 m de alambre."]}, "ejemplo_incompleto": {"titulo": "cuadrado de 1,5 m", "planteo": "Calculá en cm el perímetro de un cuadrado de 1,5 m de lado. Completá los espacios.", "pasos": ["1,5 m = ___ cm.", "4 × 150 = ___ cm."]}, "ejemplo_solo": {"titulo": "el equilátero", "planteo": "Un triángulo equilátero tiene lados de 35 cm. ¿Cuál es su perímetro en metros?"}, "tip": {"titulo": "Recorré el borde", "texto": "Marcá con el dedo un punto de partida y recorré el borde contando cada lado una sola vez hasta volver."}, "ojo": ["Sumar medidas en unidades distintas: 3 m + 50 cm no es 53.", "En figuras compuestas, sumar lados de adentro que no son borde."], "resumen": [{"titulo": "Perímetro", "texto": "Suma de los lados del borde."}, {"titulo": "Cuadrado", "texto": "4 × lado."}, {"titulo": "Unidades", "texto": "De a 10: 1 m = 100 cm."}, {"titulo": "Antes de sumar", "texto": "Todo en la misma unidad."}], "glosario": [{"palabra": "Perímetro", "significado": "Largo total del borde de una figura."}, {"palabra": "Figura compuesta", "significado": "Figura armada con varias partes."}, {"palabra": "Equivalencia", "significado": "Dos medidas que valen lo mismo."}, {"palabra": "Circunferencia", "significado": "El borde de un círculo."}, {"palabra": "Diámetro", "significado": "Segmento que cruza el círculo por el centro."}], "carpeta": ["¿Cuál es el perímetro, en cm, de un rectángulo de 12 cm por 7 cm?", "¿Cuántos cm son 4,2 m?", "¿Cuál es el perímetro, en cm, de un cuadrado de 9 cm de lado?", "Un compañero sumó 3 m + 50 cm y le dio 53. ¿Cuántos cm son en total?"], "respuestas_carpeta": [["38", "38cm", "38 cm"], ["420", "420cm", "420 cm"], ["36", "36cm", "36 cm"], ["350", "350cm", "350 cm"]], "soluciones": {"incompleto": "150 cm. 600 cm.", "solo": "3 × 35 = 105 cm = 1,05 m.", "carpeta": ["38 cm: 12 + 7 + 12 + 7.", "420 cm: 4,2 × 100.", "36 cm: 4 × 9.", "350 cm: 3 m = 300 cm, y 300 + 50 = 350."]}}, "2": {"objetivo": "Vas a poder calcular el área de rectángulos, triángulos, paralelogramos, rombos, trapecios y figuras compuestas, y pasar de una unidad de superficie a otra.", "vas_a_ver": ["Qué es el área", "Rectángulo y cuadrado", "Triángulo y paralelogramo", "Rombo y trapecio", "Unidades de superficie"], "secciones": [{"etapa": 1, "titulo": "Qué es el área", "bloques": [{"tipo": "definicion", "titulo": "Área", "texto": "El <b>área</b> es la <b>superficie</b> que ocupa una figura. Se mide contando cuadraditos de 1 cm de lado: cada uno es <b>1 cm²</b>. En un rectángulo, el área es <b>base × altura</b>."}, {"tipo": "ejemplo", "titulo": "Rectángulo y cuadrado", "texto": "Contamos filas por columnas.", "items": ["Rectángulo de 6 cm por 4 cm: 6 × 4 = 24 cm².", "Cuadrado de 5 cm de lado: 5 × 5 = 25 cm²."]}]}, {"etapa": 1, "titulo": "Triángulo y paralelogramo", "bloques": [{"tipo": "definicion", "titulo": "Fórmulas", "texto": "<b>Paralelogramo:</b> base × altura (si se recorta un triángulo de un costado y se pasa al otro, queda un rectángulo). <b>Triángulo:</b> base × altura ÷ 2, porque es la mitad de un rectángulo."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "El triángulo es la mitad", "texto": "El triángulo ocupa justo la mitad del rectángulo de 8 por 5.", "imagen_descripcion": "Triángulo de base 8 cm y altura 5 cm dentro de un rectángulo de 8 por 5 cm.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}, {"tipo": "ejemplo", "titulo": "Triángulo de base 8 cm y altura 5 cm", "texto": "La mitad del rectángulo.", "items": ["8 × 5 = 40.", "40 ÷ 2 = 20.", "El área es 20 cm²."]}]}, {"etapa": 2, "titulo": "Rombo y trapecio", "bloques": [{"tipo": "parrafo", "texto": "<b>Rombo:</b> diagonal mayor × diagonal menor ÷ 2. <b>Trapecio:</b> (base mayor + base menor) × altura ÷ 2."}, {"tipo": "ejemplo", "titulo": "Dos áreas", "texto": "Usamos las fórmulas.", "items": ["Rombo de diagonales 6 y 4 cm: 6 × 4 ÷ 2 = 12 cm².", "Trapecio de bases 10 y 6 cm y altura 4 cm: (10 + 6) × 4 ÷ 2 = 32 cm²."]}]}, {"etapa": 2, "titulo": "Unidades de superficie", "bloques": [{"tipo": "parrafo", "texto": "Como un cuadrado de 1 m de lado mide 100 cm por 100 cm, <b>1 m² = 10.000 cm²</b>. Entre unidades vecinas de superficie se salta de a <b>100</b>: 1 cm² = 100 mm²."}, {"tipo": "ejemplo", "titulo": "Pasar de unidad", "texto": "Multiplicamos o dividimos.", "items": ["3 m² = 3 × 10.000 = 30.000 cm².", "500 mm² = 500 ÷ 100 = 5 cm²."]}]}, {"etapa": 2, "titulo": "Figuras compuestas", "bloques": [{"tipo": "parrafo", "texto": "Se parte la figura en rectángulos y triángulos, o se calcula el rectángulo entero y se resta lo que falta. La L de 10 por 6 cm sin un rectángulo de 4 por 3: 60 − 12 = 48 cm²."}]}], "ejemplo_completo": {"titulo": "la pared", "planteo": "Hay que pintar una pared de 4 m por 2,5 m que tiene una ventana de 1,2 m por 1 m. ¿Cuántos m² se pintan?", "pasos": ["Pared: 4 × 2,5 = 10 m².", "Ventana: 1,2 × 1 = 1,2 m².", "Se pinta: 10 − 1,2 = 8,8 m²."]}, "ejemplo_incompleto": {"titulo": "un triángulo", "planteo": "Área de un triángulo de base 12 cm y altura 7 cm. Completá los espacios.", "pasos": ["12 × 7 = ___ .", "84 ÷ 2 = ___ cm²."]}, "ejemplo_solo": {"titulo": "el rombo", "planteo": "Un rombo tiene diagonales de 10 cm y 7 cm. ¿Cuál es su área?"}, "tip": {"titulo": "Perímetro o área", "texto": "Si la pregunta habla de bordes, cercos o marcos, es perímetro (cm). Si habla de cubrir, pintar o alfombrar, es área (cm²)."}, "ojo": ["Olvidar dividir por 2 en el triángulo.", "Creer que 1 m² son 100 cm²: son 10.000."], "resumen": [{"titulo": "Rectángulo", "texto": "base × altura."}, {"titulo": "Triángulo", "texto": "base × altura ÷ 2."}, {"titulo": "Rombo", "texto": "D × d ÷ 2."}, {"titulo": "Trapecio", "texto": "(B + b) × h ÷ 2."}, {"titulo": "Unidades", "texto": "De a 100: 1 m² = 10.000 cm²."}], "glosario": [{"palabra": "Área", "significado": "Superficie que ocupa una figura."}, {"palabra": "cm²", "significado": "Un cuadradito de 1 cm de lado."}, {"palabra": "Altura", "significado": "Distancia perpendicular de la base al lado opuesto."}, {"palabra": "Diagonal", "significado": "Segmento entre dos vértices no consecutivos."}, {"palabra": "Superficie", "significado": "Lo que cubre una figura."}], "carpeta": ["¿Cuál es el área, en cm², de un rectángulo de 9 cm por 6 cm?", "¿Cuál es el área, en cm², de un triángulo de base 10 cm y altura 6 cm?", "¿Cuántos cm² son 2 m²?", "Un compañero dice que 1 m² son 100 cm². ¿Cuántos cm² son en realidad?"], "respuestas_carpeta": [["54", "54cm²", "54 cm²"], ["30", "30cm²", "30 cm²"], ["20000", "20.000"], ["10000", "10.000"]], "soluciones": {"incompleto": "84. 42 cm².", "solo": "10 × 7 ÷ 2 = 35 cm².", "carpeta": ["54 cm²: 9 × 6.", "30 cm²: 10 × 6 ÷ 2.", "20.000 cm²: 2 × 10.000.", "10.000 cm²: 100 cm × 100 cm."]}}, "3": {"objetivo": "Vas a poder calcular el volumen de cubos y prismas, y relacionar unidades de volumen con litros.", "vas_a_ver": ["Qué es el volumen", "El cubo unidad", "Volumen del prisma y del cubo", "Unidades de volumen", "Volumen y capacidad: litros"], "secciones": [{"etapa": 1, "titulo": "Volumen y cubo unidad", "bloques": [{"tipo": "definicion", "titulo": "Volumen", "texto": "El <b>volumen</b> es el <b>espacio</b> que ocupa un cuerpo. Se mide contando cubitos de 1 cm de arista: cada uno es <b>1 cm³</b>."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Una caja de cubitos", "texto": "4 por 3 cubitos en cada piso, y 2 pisos: 24 cubitos.", "imagen_descripcion": "Prisma de 4 por 3 por 2 cm armado con cubitos de 1 cm.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}, {"tipo": "ejemplo", "titulo": "Caja de 4 × 3 × 2 cm", "texto": "Contamos por pisos.", "items": ["Cada piso: 4 × 3 = 12 cubitos.", "Hay 2 pisos: 12 × 2 = 24.", "El volumen es 24 cm³."]}]}, {"etapa": 1, "titulo": "Prisma y cubo", "bloques": [{"tipo": "definicion", "titulo": "Fórmulas", "texto": "<b>Prisma:</b> largo × ancho × alto (o área de la base × altura). <b>Cubo:</b> arista × arista × arista = arista³."}, {"tipo": "ejemplo", "titulo": "Dos volúmenes", "texto": "Multiplicamos las tres medidas.", "items": ["Cubo de 5 cm de arista: 5 × 5 × 5 = 125 cm³.", "Prisma con base de 12 cm² y altura 10 cm: 12 × 10 = 120 cm³."]}]}, {"etapa": 2, "titulo": "Unidades de volumen", "bloques": [{"tipo": "parrafo", "texto": "Un cubo de 1 dm de arista mide 10 × 10 × 10 cm, así que <b>1 dm³ = 1.000 cm³</b>. Entre unidades vecinas de volumen se salta de a <b>1.000</b>: 1 m³ = 1.000 dm³."}]}, {"etapa": 2, "titulo": "Volumen y capacidad", "bloques": [{"tipo": "parrafo", "texto": "La <b>capacidad</b> es lo que entra en un recipiente, y se mide en litros. <b>1 dm³ = 1 litro</b>, <b>1 cm³ = 1 ml</b> y <b>1 m³ = 1.000 litros</b>."}, {"tipo": "ejemplo", "titulo": "La pecera", "texto": "Pecera de 50 × 30 × 40 cm.", "items": ["50 × 30 × 40 = 60.000 cm³.", "60.000 cm³ = 60 dm³.", "Entran 60 litros."]}]}], "ejemplo_completo": {"titulo": "la pileta", "planteo": "Una pileta mide 8 m de largo, 4 m de ancho y 1,5 m de profundidad. ¿Cuántos litros de agua entran?", "pasos": ["Volumen: 8 × 4 × 1,5 = 48 m³.", "1 m³ = 1.000 litros.", "48 × 1.000 = 48.000 litros."]}, "ejemplo_incompleto": {"titulo": "caja de 10 cm", "planteo": "Una caja cúbica de 10 cm de arista. Completá los espacios.", "pasos": ["10 × 10 × 10 = ___ cm³.", "1.000 cm³ = ___ dm³, o sea 1 litro."]}, "ejemplo_solo": {"titulo": "un cubito", "planteo": "¿Cuál es el volumen de un cubo de 3 cm de arista?"}, "tip": {"titulo": "Fijate la unidad", "texto": "Perímetro en cm, área en cm², volumen en cm³. El número chiquito te dice cuántas medidas se multiplicaron."}, "ojo": ["Sumar las medidas en vez de multiplicarlas.", "Creer que 1 litro son 100 cm³: son 1.000."], "resumen": [{"titulo": "Volumen", "texto": "Espacio que ocupa, en cm³."}, {"titulo": "Prisma", "texto": "largo × ancho × alto."}, {"titulo": "Cubo", "texto": "arista³."}, {"titulo": "Litros", "texto": "1 dm³ = 1 L; 1 m³ = 1.000 L."}], "glosario": [{"palabra": "Volumen", "significado": "Espacio que ocupa un cuerpo."}, {"palabra": "Prisma", "significado": "Cuerpo con dos bases iguales y caras rectangulares."}, {"palabra": "Arista", "significado": "Borde donde se juntan dos caras."}, {"palabra": "Capacidad", "significado": "Lo que entra en un recipiente."}, {"palabra": "cm³", "significado": "Un cubito de 1 cm de arista."}], "carpeta": ["¿Cuál es el volumen, en cm³, de un prisma de 5 cm por 4 cm por 3 cm?", "¿Cuál es el volumen, en cm³, de un cubo de 4 cm de arista?", "¿Cuántos litros entran en un recipiente de 5 dm³?", "Un compañero dice que 1 litro son 100 cm³. ¿Cuántos cm³ son en realidad?"], "respuestas_carpeta": [["60", "60cm³", "60 cm³"], ["64", "64cm³", "64 cm³"], ["5"], ["1000", "1.000"]], "soluciones": {"incompleto": "1.000 cm³. 1 dm³.", "solo": "3 × 3 × 3 = 27 cm³.", "carpeta": ["60 cm³: 5 × 4 × 3.", "64 cm³: 4 × 4 × 4.", "5 litros: 1 dm³ = 1 litro.", "1.000 cm³: 1 litro = 1 dm³ = 1.000 cm³."]}}}, "act": {"1": [{"t": "numeric", "p": "¿Cuál es el perímetro de un rectángulo de {a} cm por {b} cm?", "o": {"vars": {"a": {"min": 6, "max": 30}, "b": {"min": 3, "max": 15}}}, "r": {"formula": "2*a+2*b"}, "e": "Se suman los cuatro lados: 2 veces el largo más 2 veces el ancho."}, {"t": "multiple_choice", "p": "¿Cuántos cm son 2,5 m?", "o": ["25", "250", "2.500", "0,25"], "r": {"correcta": "250"}, "e": "1 m = 100 cm: 2,5 × 100 = 250."}], "2": [{"t": "numeric", "p": "¿Cuál es el área de un triángulo de base {b} cm y altura {h} cm?", "o": {"vars": {"b": {"min": 4, "max": 20}, "k": {"min": 2, "max": 9}}, "calculadas": {"h": "2*k"}}, "r": {"formula": "b*k"}, "e": "Base × altura ÷ 2."}, {"t": "multiple_choice", "p": "¿Cuántos cm² tiene 1 m²?", "o": ["100", "1.000", "10.000", "1.000.000"], "r": {"correcta": "10.000"}, "e": "100 cm × 100 cm = 10.000 cm²."}], "3": [{"t": "numeric", "p": "¿Cuál es el volumen de un prisma de {a} cm por {b} cm por {c} cm?", "o": {"vars": {"a": {"min": 2, "max": 12}, "b": {"min": 2, "max": 10}, "c": {"min": 2, "max": 8}}}, "r": {"formula": "a*b*c"}, "e": "Largo × ancho × alto."}, {"t": "multiple_choice", "p": "¿Cuántos litros hay en 1 dm³?", "o": ["1", "10", "100", "1.000"], "r": {"correcta": "1"}, "e": "1 dm³ = 1 litro."}], "5": [{"t": "numeric", "p": "Relámpago. Perímetro de un cuadrado de 7 cm de lado (en cm).", "o": {}, "r": {"acepta": [28]}, "e": "4 × 7.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Área de un rectángulo de 8 cm por 3 cm (en cm²).", "o": {}, "r": {"acepta": [24]}, "e": "8 × 3.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. Volumen de un cubo de 2 cm de arista.", "o": ["6 cm³", "8 cm³", "12 cm³"], "r": {"correcta": "8 cm³"}, "e": "2 × 2 × 2.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Tres ángulos de un cuadrilátero miden 90°, 90° y 100°. ¿Cuánto mide el cuarto?", "o": {}, "r": {"acepta": [80]}, "e": "Repaso de la misión 18: suman 360°.", "tiempo": 30}]}, "examen": [[1, {"t": "numeric", "p": "¿Cuál es el perímetro de un rectángulo de 15 cm por 8 cm?", "o": {}, "r": {"acepta": [46]}, "e": "15 + 8 + 15 + 8."}], [1, {"t": "multiple_choice", "p": "¿Cuántos km son 3.200 m?", "o": ["32", "3,2", "0,32", "320"], "r": {"correcta": "3,2"}, "e": "Se divide por 1.000."}], [1, {"t": "numeric", "p": "¿Cuál es el perímetro de un triángulo de lados 12, 9 y 7 cm?", "o": {}, "r": {"acepta": [28]}, "e": "12 + 9 + 7."}], [2, {"t": "numeric", "p": "¿Cuál es el área de un paralelogramo de base 9 cm y altura 4 cm?", "o": {}, "r": {"acepta": [36]}, "e": "Base × altura."}], [2, {"t": "numeric", "p": "¿Cuál es el área de un trapecio de bases 12 y 8 cm y altura 5 cm?", "o": {}, "r": {"acepta": [50]}, "e": "(12 + 8) × 5 ÷ 2."}], [2, {"t": "true_false", "p": "1 m² equivale a 100 cm².", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Son 10.000 cm²."}], [2, {"t": "numeric", "p": "A un rectángulo de 10 cm por 6 cm se le recorta un cuadrado de 2 cm de lado. ¿Cuál es el área que queda, en cm²?", "o": {}, "r": {"acepta": [56]}, "e": "60 − 4."}], [3, {"t": "numeric", "p": "¿Cuál es el volumen de un prisma de 6 cm por 5 cm por 2 cm?", "o": {}, "r": {"acepta": [60]}, "e": "6 × 5 × 2."}], [3, {"t": "numeric", "p": "¿Cuántos litros entran en una pecera de 40 cm por 25 cm por 30 cm?", "o": {}, "r": {"acepta": [30]}, "e": "30.000 cm³ = 30 dm³ = 30 litros."}], [3, {"t": "multiple_choice", "p": "1 m³ equivale a…", "o": ["10 litros", "100 litros", "1.000 litros", "10.000 litros"], "r": {"correcta": "1.000 litros"}, "e": "1 m³ = 1.000 dm³ y cada dm³ es un litro."}], [4, {"t": "numeric", "p": "Un cuadrado tiene 81 cm² de área. ¿Cuánto mide su lado, en cm?", "o": {}, "r": {"acepta": [9]}, "e": "√81 = 9."}], [4, {"t": "numeric", "p": "Un cubo tiene 64 cm³ de volumen. ¿Cuánto mide su arista, en cm?", "o": {}, "r": {"acepta": [4]}, "e": "∛64 = 4."}], [4, {"t": "multiple_choice", "p": "¿Cuál de estos números es un cubo perfecto?", "o": ["36", "49", "100", "125"], "r": {"correcta": "125"}, "e": "125 = 5 × 5 × 5."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 19,
+ "practica": "Práctica general: perímetro, área y volumen",
+ "examen_titulo": "Nivel jefe: perímetro, área y volumen",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder calcular el perímetro de polígonos y figuras compuestas, y pasar de una unidad de longitud a otra.",
+   "vas_a_ver": [
+    "Qué es el perímetro",
+    "Unidades de longitud",
+    "Perímetro de figuras compuestas",
+    "Sumar con la misma unidad",
+    "La vuelta a un círculo (idea)"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Perímetro",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Perímetro",
+       "texto": "El <b>perímetro</b> es la <b>longitud del borde</b> de una figura: la suma de las medidas de todos sus lados."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Rectángulo y cuadrado",
+       "texto": "Sumamos todos los lados.",
+       "items": [
+        "Rectángulo de 8 cm por 5 cm: 8 + 5 + 8 + 5 = 26 cm.",
+        "Cuadrado de 6 cm de lado: 6 + 6 + 6 + 6 = 4 × 6 = 24 cm."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Unidades de longitud",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Unidades de longitud",
+       "texto": "Se mide en <b>km, hm, dam, m, dm, cm y mm</b>. Cada unidad es <b>10 veces</b> la que sigue: para pasar a una más chica se multiplica, y a una más grande se divide."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Equivalencias que más se usan",
+       "columnas": [
+        "Unidad",
+        "Equivale a"
+       ],
+       "filas": [
+        [
+         "1 km",
+         "1.000 m"
+        ],
+        [
+         "1 m",
+         "100 cm"
+        ],
+        [
+         "1 cm",
+         "10 mm"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Ejemplos: 3,5 m = 3,5 × 100 = 350 cm. 2.400 m = 2.400 ÷ 1.000 = 2,4 km."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Figuras compuestas",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En una figura armada con varias partes se suman <b>solo los lados del borde</b>. Si falta alguna medida, se calcula con las que hay."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Una figura en forma de L",
+       "texto": "Se suman los seis lados del borde: 10 + 3 + 4 + 3 + 6 + 6 = 32 cm.",
+       "imagen_descripcion": "Figura en forma de L con lados de 10, 3, 4, 3, 6 y 6 cm.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "La L de la figura",
+       "texto": "El lado de 4 cm sale de 10 − 6.",
+       "items": [
+        "Lados: 10, 3, 4, 3, 6 y 6 cm.",
+        "10 + 3 + 4 + 3 + 6 + 6 = 32.",
+        "El perímetro es 32 cm."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Todo en la misma unidad",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Antes de sumar, todas las medidas tienen que estar en la <b>misma unidad</b>. Un rectángulo de 2 m por 45 cm: 2 m = 200 cm, y el perímetro es 200 + 45 + 200 + 45 = 490 cm."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "La vuelta a un círculo",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El borde de un círculo, la <b>circunferencia</b>, mide un poco más de <b>3 veces su diámetro</b>. Con un diámetro de 10 cm, la vuelta mide algo más de 30 cm. La cuenta exacta se ve en 2.º año."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "el cerco",
+    "planteo": "Un terreno rectangular mide 25 m por 12 m. Se quiere cercar con alambre, dejando un portón de 3 m. ¿Cuántos metros de alambre hacen falta?",
+    "pasos": [
+     "Perímetro: 25 + 12 + 25 + 12 = 74 m.",
+     "El portón no lleva alambre: 74 − 3 = 71 m.",
+     "Hacen falta 71 m de alambre."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "cuadrado de 1,5 m",
+    "planteo": "Calculá en cm el perímetro de un cuadrado de 1,5 m de lado. Completá los espacios.",
+    "pasos": [
+     "1,5 m = ___ cm.",
+     "4 × 150 = ___ cm."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el equilátero",
+    "planteo": "Un triángulo equilátero tiene lados de 35 cm. ¿Cuál es su perímetro en metros?"
+   },
+   "tip": {
+    "titulo": "Recorré el borde",
+    "texto": "Marcá con el dedo un punto de partida y recorré el borde contando cada lado una sola vez hasta volver."
+   },
+   "ojo": [
+    "Sumar medidas en unidades distintas: 3 m + 50 cm no es 53.",
+    "En figuras compuestas, sumar lados de adentro que no son borde."
+   ],
+   "resumen": [
+    {
+     "titulo": "Perímetro",
+     "texto": "Suma de los lados del borde."
+    },
+    {
+     "titulo": "Cuadrado",
+     "texto": "4 × lado."
+    },
+    {
+     "titulo": "Unidades",
+     "texto": "De a 10: 1 m = 100 cm."
+    },
+    {
+     "titulo": "Antes de sumar",
+     "texto": "Todo en la misma unidad."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Perímetro",
+     "significado": "Largo total del borde de una figura."
+    },
+    {
+     "palabra": "Figura compuesta",
+     "significado": "Figura armada con varias partes."
+    },
+    {
+     "palabra": "Equivalencia",
+     "significado": "Dos medidas que valen lo mismo."
+    },
+    {
+     "palabra": "Circunferencia",
+     "significado": "El borde de un círculo."
+    },
+    {
+     "palabra": "Diámetro",
+     "significado": "Segmento que cruza el círculo por el centro."
+    }
+   ],
+   "carpeta": [
+    "¿Cuál es el perímetro, en cm, de un rectángulo de 12 cm por 7 cm?",
+    "¿Cuántos cm son 4,2 m?",
+    "¿Cuál es el perímetro, en cm, de un cuadrado de 9 cm de lado?",
+    "Un compañero sumó 3 m + 50 cm y le dio 53. ¿Cuántos cm son en total?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "38",
+     "38cm",
+     "38 cm"
+    ],
+    [
+     "420",
+     "420cm",
+     "420 cm"
+    ],
+    [
+     "36",
+     "36cm",
+     "36 cm"
+    ],
+    [
+     "350",
+     "350cm",
+     "350 cm"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "150 cm. 600 cm.",
+    "solo": "3 × 35 = 105 cm = 1,05 m.",
+    "carpeta": [
+     "38 cm: 12 + 7 + 12 + 7.",
+     "420 cm: 4,2 × 100.",
+     "36 cm: 4 × 9.",
+     "350 cm: 3 m = 300 cm, y 300 + 50 = 350."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Perímetro",
+      "ejemplo": {
+       "motor": "medida",
+       "p": {
+        "modo": "perimetro"
+       }
+      },
+      "ejercicio": {
+       "motor": "medida_x",
+       "p": {
+        "modo": "perimetro"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Perímetro",
+        "texto": "El perímetro de una figura es la longitud de su contorno, es decir, la suma de las medidas de todos sus lados. Se expresa en unidades de longitud."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "En un rectángulo, como los lados opuestos son iguales, el perímetro es dos veces el largo más dos veces el ancho. Sirve para saber cuánto alambre hace falta para cercar un terreno o cuánta cinta para bordear un cuadro."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Rectángulo: 2 × largo + 2 × ancho.",
+         "Se mide en cm, m, km."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Todo en la misma unidad",
+      "ejemplo": {
+       "motor": "medida",
+       "p": {
+        "modo": "misma_unidad"
+       }
+      },
+      "ejercicio": {
+       "motor": "medida_x",
+       "p": {
+        "modo": "misma_unidad"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Unidades de longitud",
+        "texto": "Para calcular un perímetro, todas las medidas tienen que estar en la misma unidad; si no, primero se convierten usando la escalera de unidades de longitud."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada escalón de la escalera (km, hm, dam, m, dm, cm, mm) vale 10: para bajar se multiplica por 10 y para subir se divide. Así 2,5 m son 250 cm y 3.200 m son 3,2 km. Sumar 2 m con 50 cm como si fueran 52 es un error muy común."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "1 m = 100 cm.",
+         "2,5 m = 250 cm."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Figuras compuestas y la vuelta al círculo",
+      "ejemplo": {
+       "motor": "medida",
+       "p": {
+        "modo": "circulo"
+       }
+      },
+      "ejercicio": {
+       "motor": "medida_x",
+       "p": {
+        "modo": "circulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Perímetro de figuras compuestas y del círculo",
+        "texto": "En una figura compuesta se suman solo los lados del borde exterior; en un círculo, el perímetro es aproximadamente 3,14 veces el diámetro."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Ese número, que vale un poco más de 3, se llama pi (π). Una rueda de 50 cm de diámetro avanza unos 157 cm en cada vuelta. En las figuras compuestas, los lados que quedan adentro de la figura no se cuentan, porque no forman parte del borde."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Círculo: 3,14 × diámetro.",
+         "Compuestas: solo el borde exterior."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El perímetro de una figura",
+      "definicion": "es la longitud de su contorno, la suma de todos sus lados.",
+      "ejemplo": "Rectángulo de 15 × 8 cm: 46 cm"
+     },
+     {
+      "concepto": "Antes de calcular un perímetro",
+      "definicion": "todas las medidas tienen que estar en la misma unidad de longitud.",
+      "ejemplo": "2 m y 50 cm → 200 cm y 50 cm"
+     },
+     {
+      "concepto": "En la escalera de unidades de longitud",
+      "definicion": "cada escalón vale 10: bajando se multiplica y subiendo se divide.",
+      "ejemplo": "2,5 m = 250 cm"
+     },
+     {
+      "concepto": "La longitud de la circunferencia",
+      "definicion": "mide aproximadamente 3,14 veces lo que mide el diámetro del círculo.",
+      "ejemplo": "Diámetro 10 cm → 31,4 cm"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder calcular el área de rectángulos, triángulos, paralelogramos, rombos, trapecios y figuras compuestas, y pasar de una unidad de superficie a otra.",
+   "vas_a_ver": [
+    "Qué es el área",
+    "Rectángulo y cuadrado",
+    "Triángulo y paralelogramo",
+    "Rombo y trapecio",
+    "Unidades de superficie"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es el área",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Área",
+       "texto": "El <b>área</b> es la <b>superficie</b> que ocupa una figura. Se mide contando cuadraditos de 1 cm de lado: cada uno es <b>1 cm²</b>. En un rectángulo, el área es <b>base × altura</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Rectángulo y cuadrado",
+       "texto": "Contamos filas por columnas.",
+       "items": [
+        "Rectángulo de 6 cm por 4 cm: 6 × 4 = 24 cm².",
+        "Cuadrado de 5 cm de lado: 5 × 5 = 25 cm²."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Triángulo y paralelogramo",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Fórmulas",
+       "texto": "<b>Paralelogramo:</b> base × altura (si se recorta un triángulo de un costado y se pasa al otro, queda un rectángulo). <b>Triángulo:</b> base × altura ÷ 2, porque es la mitad de un rectángulo."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "El triángulo es la mitad",
+       "texto": "El triángulo ocupa justo la mitad del rectángulo de 8 por 5.",
+       "imagen_descripcion": "Triángulo de base 8 cm y altura 5 cm dentro de un rectángulo de 8 por 5 cm.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Triángulo de base 8 cm y altura 5 cm",
+       "texto": "La mitad del rectángulo.",
+       "items": [
+        "8 × 5 = 40.",
+        "40 ÷ 2 = 20.",
+        "El área es 20 cm²."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Rombo y trapecio",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "<b>Rombo:</b> diagonal mayor × diagonal menor ÷ 2. <b>Trapecio:</b> (base mayor + base menor) × altura ÷ 2."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Dos áreas",
+       "texto": "Usamos las fórmulas.",
+       "items": [
+        "Rombo de diagonales 6 y 4 cm: 6 × 4 ÷ 2 = 12 cm².",
+        "Trapecio de bases 10 y 6 cm y altura 4 cm: (10 + 6) × 4 ÷ 2 = 32 cm²."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Unidades de superficie",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Como un cuadrado de 1 m de lado mide 100 cm por 100 cm, <b>1 m² = 10.000 cm²</b>. Entre unidades vecinas de superficie se salta de a <b>100</b>: 1 cm² = 100 mm²."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Pasar de unidad",
+       "texto": "Multiplicamos o dividimos.",
+       "items": [
+        "3 m² = 3 × 10.000 = 30.000 cm².",
+        "500 mm² = 500 ÷ 100 = 5 cm²."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Figuras compuestas",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se parte la figura en rectángulos y triángulos, o se calcula el rectángulo entero y se resta lo que falta. La L de 10 por 6 cm sin un rectángulo de 4 por 3: 60 − 12 = 48 cm²."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "la pared",
+    "planteo": "Hay que pintar una pared de 4 m por 2,5 m que tiene una ventana de 1,2 m por 1 m. ¿Cuántos m² se pintan?",
+    "pasos": [
+     "Pared: 4 × 2,5 = 10 m².",
+     "Ventana: 1,2 × 1 = 1,2 m².",
+     "Se pinta: 10 − 1,2 = 8,8 m²."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "un triángulo",
+    "planteo": "Área de un triángulo de base 12 cm y altura 7 cm. Completá los espacios.",
+    "pasos": [
+     "12 × 7 = ___ .",
+     "84 ÷ 2 = ___ cm²."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el rombo",
+    "planteo": "Un rombo tiene diagonales de 10 cm y 7 cm. ¿Cuál es su área?"
+   },
+   "tip": {
+    "titulo": "Perímetro o área",
+    "texto": "Si la pregunta habla de bordes, cercos o marcos, es perímetro (cm). Si habla de cubrir, pintar o alfombrar, es área (cm²)."
+   },
+   "ojo": [
+    "Olvidar dividir por 2 en el triángulo.",
+    "Creer que 1 m² son 100 cm²: son 10.000."
+   ],
+   "resumen": [
+    {
+     "titulo": "Rectángulo",
+     "texto": "base × altura."
+    },
+    {
+     "titulo": "Triángulo",
+     "texto": "base × altura ÷ 2."
+    },
+    {
+     "titulo": "Rombo",
+     "texto": "D × d ÷ 2."
+    },
+    {
+     "titulo": "Trapecio",
+     "texto": "(B + b) × h ÷ 2."
+    },
+    {
+     "titulo": "Unidades",
+     "texto": "De a 100: 1 m² = 10.000 cm²."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Área",
+     "significado": "Superficie que ocupa una figura."
+    },
+    {
+     "palabra": "cm²",
+     "significado": "Un cuadradito de 1 cm de lado."
+    },
+    {
+     "palabra": "Altura",
+     "significado": "Distancia perpendicular de la base al lado opuesto."
+    },
+    {
+     "palabra": "Diagonal",
+     "significado": "Segmento entre dos vértices no consecutivos."
+    },
+    {
+     "palabra": "Superficie",
+     "significado": "Lo que cubre una figura."
+    }
+   ],
+   "carpeta": [
+    "¿Cuál es el área, en cm², de un rectángulo de 9 cm por 6 cm?",
+    "¿Cuál es el área, en cm², de un triángulo de base 10 cm y altura 6 cm?",
+    "¿Cuántos cm² son 2 m²?",
+    "Un compañero dice que 1 m² son 100 cm². ¿Cuántos cm² son en realidad?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "54",
+     "54cm²",
+     "54 cm²"
+    ],
+    [
+     "30",
+     "30cm²",
+     "30 cm²"
+    ],
+    [
+     "20000",
+     "20.000"
+    ],
+    [
+     "10000",
+     "10.000"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "84. 42 cm².",
+    "solo": "10 × 7 ÷ 2 = 35 cm².",
+    "carpeta": [
+     "54 cm²: 9 × 6.",
+     "30 cm²: 10 × 6 ÷ 2.",
+     "20.000 cm²: 2 × 10.000.",
+     "10.000 cm²: 100 cm × 100 cm."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es el área",
+      "ejemplo": {
+       "motor": "area_figura",
+       "p": {
+        "figura": "rectangulo"
+       }
+      },
+      "ejercicio": {
+       "motor": "area_perimetro",
+       "p": {
+        "que": "area",
+        "figura": "rectangulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Área",
+        "texto": "El área de una figura es la medida de su superficie: cuántos cuadraditos de una unidad (cm², m²) entran adentro. En el rectángulo se calcula base × altura."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Área y perímetro miden cosas distintas: el perímetro es el borde y el área lo de adentro. Dos rectángulos pueden tener el mismo perímetro y áreas diferentes. Para pintar una pared se usa el área; para ponerle un zócalo, el perímetro."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Rectángulo: base × altura.",
+         "Se mide en cm², m²."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Triángulo, paralelogramo, rombo y trapecio",
+      "ejemplo": {
+       "motor": "area_figura",
+       "p": {
+        "figura": "trapecio"
+       }
+      },
+      "ejercicio": {
+       "motor": "area_perimetro",
+       "p": {
+        "que": "area"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Fórmulas de área",
+        "texto": "El paralelogramo tiene área base × altura; el triángulo, la mitad: base × altura ÷ 2; el rombo, diagonal mayor × diagonal menor ÷ 2; y el trapecio, (base mayor + base menor) × altura ÷ 2."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Todas salen del rectángulo: un triángulo es la mitad de un paralelogramo con la misma base y altura, y dos trapecios iguales forman un paralelogramo. La altura siempre es perpendicular a la base, no el lado inclinado."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Triángulo: b × h ÷ 2.",
+         "Trapecio: (B + b) × h ÷ 2."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Unidades de superficie y figuras compuestas",
+      "ejemplo": {
+       "motor": "medida",
+       "p": {
+        "modo": "compuesta"
+       }
+      },
+      "ejercicio": {
+       "motor": "medida_x",
+       "p": {
+        "modo": "compuesta"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Unidades de superficie",
+        "texto": "En la escalera de unidades de superficie cada escalón vale 100, porque un cuadrado de 1 m de lado tiene 100 × 100 = 10.000 cm²."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Por eso 1 m² no es 100 cm², sino 10.000. Para el área de una figura compuesta se la parte en figuras conocidas y se suman las áreas, o se completa y se resta lo que sobra, como en un rectángulo con un recorte."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "1 m² = 10.000 cm².",
+         "Compuestas: partir o completar y restar."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El área de una figura",
+      "definicion": "es la medida de su superficie, cuántas unidades cuadradas entran adentro.",
+      "ejemplo": "Rectángulo 8 × 3 cm: 24 cm²"
+     },
+     {
+      "concepto": "El área del triángulo",
+      "definicion": "es la mitad de base por altura, porque es la mitad de un paralelogramo.",
+      "ejemplo": "Base 9, altura 4: 18 cm²",
+      "formula": "A = b × h ÷ 2"
+     },
+     {
+      "concepto": "El área del trapecio",
+      "definicion": "se calcula sumando las dos bases, multiplicando por la altura y dividiendo por 2.",
+      "ejemplo": "(12 + 8) × 5 ÷ 2 = 50 cm²"
+     },
+     {
+      "concepto": "En las unidades de superficie",
+      "definicion": "cada escalón de la escalera vale 100, y no 10 como en longitud.",
+      "ejemplo": "1 m² = 10.000 cm²"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder calcular el volumen de cubos y prismas, y relacionar unidades de volumen con litros.",
+   "vas_a_ver": [
+    "Qué es el volumen",
+    "El cubo unidad",
+    "Volumen del prisma y del cubo",
+    "Unidades de volumen",
+    "Volumen y capacidad: litros"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Volumen y cubo unidad",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Volumen",
+       "texto": "El <b>volumen</b> es el <b>espacio</b> que ocupa un cuerpo. Se mide contando cubitos de 1 cm de arista: cada uno es <b>1 cm³</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Una caja de cubitos",
+       "texto": "4 por 3 cubitos en cada piso, y 2 pisos: 24 cubitos.",
+       "imagen_descripcion": "Prisma de 4 por 3 por 2 cm armado con cubitos de 1 cm.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Caja de 4 × 3 × 2 cm",
+       "texto": "Contamos por pisos.",
+       "items": [
+        "Cada piso: 4 × 3 = 12 cubitos.",
+        "Hay 2 pisos: 12 × 2 = 24.",
+        "El volumen es 24 cm³."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Prisma y cubo",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Fórmulas",
+       "texto": "<b>Prisma:</b> largo × ancho × alto (o área de la base × altura). <b>Cubo:</b> arista × arista × arista = arista³."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Dos volúmenes",
+       "texto": "Multiplicamos las tres medidas.",
+       "items": [
+        "Cubo de 5 cm de arista: 5 × 5 × 5 = 125 cm³.",
+        "Prisma con base de 12 cm² y altura 10 cm: 12 × 10 = 120 cm³."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Unidades de volumen",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Un cubo de 1 dm de arista mide 10 × 10 × 10 cm, así que <b>1 dm³ = 1.000 cm³</b>. Entre unidades vecinas de volumen se salta de a <b>1.000</b>: 1 m³ = 1.000 dm³."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Volumen y capacidad",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La <b>capacidad</b> es lo que entra en un recipiente, y se mide en litros. <b>1 dm³ = 1 litro</b>, <b>1 cm³ = 1 ml</b> y <b>1 m³ = 1.000 litros</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "La pecera",
+       "texto": "Pecera de 50 × 30 × 40 cm.",
+       "items": [
+        "50 × 30 × 40 = 60.000 cm³.",
+        "60.000 cm³ = 60 dm³.",
+        "Entran 60 litros."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "la pileta",
+    "planteo": "Una pileta mide 8 m de largo, 4 m de ancho y 1,5 m de profundidad. ¿Cuántos litros de agua entran?",
+    "pasos": [
+     "Volumen: 8 × 4 × 1,5 = 48 m³.",
+     "1 m³ = 1.000 litros.",
+     "48 × 1.000 = 48.000 litros."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "caja de 10 cm",
+    "planteo": "Una caja cúbica de 10 cm de arista. Completá los espacios.",
+    "pasos": [
+     "10 × 10 × 10 = ___ cm³.",
+     "1.000 cm³ = ___ dm³, o sea 1 litro."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "un cubito",
+    "planteo": "¿Cuál es el volumen de un cubo de 3 cm de arista?"
+   },
+   "tip": {
+    "titulo": "Fijate la unidad",
+    "texto": "Perímetro en cm, área en cm², volumen en cm³. El número chiquito te dice cuántas medidas se multiplicaron."
+   },
+   "ojo": [
+    "Sumar las medidas en vez de multiplicarlas.",
+    "Creer que 1 litro son 100 cm³: son 1.000."
+   ],
+   "resumen": [
+    {
+     "titulo": "Volumen",
+     "texto": "Espacio que ocupa, en cm³."
+    },
+    {
+     "titulo": "Prisma",
+     "texto": "largo × ancho × alto."
+    },
+    {
+     "titulo": "Cubo",
+     "texto": "arista³."
+    },
+    {
+     "titulo": "Litros",
+     "texto": "1 dm³ = 1 L; 1 m³ = 1.000 L."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Volumen",
+     "significado": "Espacio que ocupa un cuerpo."
+    },
+    {
+     "palabra": "Prisma",
+     "significado": "Cuerpo con dos bases iguales y caras rectangulares."
+    },
+    {
+     "palabra": "Arista",
+     "significado": "Borde donde se juntan dos caras."
+    },
+    {
+     "palabra": "Capacidad",
+     "significado": "Lo que entra en un recipiente."
+    },
+    {
+     "palabra": "cm³",
+     "significado": "Un cubito de 1 cm de arista."
+    }
+   ],
+   "carpeta": [
+    "¿Cuál es el volumen, en cm³, de un prisma de 5 cm por 4 cm por 3 cm?",
+    "¿Cuál es el volumen, en cm³, de un cubo de 4 cm de arista?",
+    "¿Cuántos litros entran en un recipiente de 5 dm³?",
+    "Un compañero dice que 1 litro son 100 cm³. ¿Cuántos cm³ son en realidad?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "60",
+     "60cm³",
+     "60 cm³"
+    ],
+    [
+     "64",
+     "64cm³",
+     "64 cm³"
+    ],
+    [
+     "5"
+    ],
+    [
+     "1000",
+     "1.000"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "1.000 cm³. 1 dm³.",
+    "solo": "3 × 3 × 3 = 27 cm³.",
+    "carpeta": [
+     "60 cm³: 5 × 4 × 3.",
+     "64 cm³: 4 × 4 × 4.",
+     "5 litros: 1 dm³ = 1 litro.",
+     "1.000 cm³: 1 litro = 1 dm³ = 1.000 cm³."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Volumen y cubo unidad",
+      "ejemplo": {
+       "motor": "volumen_cubitos",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "volumen",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Volumen",
+        "texto": "El volumen de un cuerpo es el espacio que ocupa: cuántos cubos de una unidad (cm³, m³) entran en él. En un prisma rectangular es largo × ancho × alto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Se puede pensar por capas: el largo por el ancho da cuántos cubitos hay en la primera capa, y el alto, cuántas capas se apilan. En un cubo las tres medidas son iguales: un cubo de 2 cm de arista tiene 2 × 2 × 2 = 8 cm³."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Prisma: largo × ancho × alto.",
+         "Cubo: arista × arista × arista."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Unidades de volumen",
+      "ejemplo": {
+       "motor": "escalera_unidades",
+       "p": {
+        "magnitud": "volumen"
+       }
+      },
+      "ejercicio": {
+       "motor": "convertir_unidades",
+       "p": {
+        "magnitud": "volumen"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Unidades de volumen",
+        "texto": "En la escalera de unidades de volumen cada escalón vale 1.000, porque un cubo de 1 dm de arista tiene 10 × 10 × 10 = 1.000 cm³."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para pasar de una unidad a la siguiente más chica se multiplica por 1.000 y para subir se divide por 1.000. Así 1 m³ = 1.000 dm³ y 1 dm³ = 1.000 cm³. Usar 10 o 100, como en longitud o superficie, es un error frecuente."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "1 dm³ = 1.000 cm³.",
+         "1 m³ = 1.000 dm³."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Volumen y capacidad",
+      "ejemplo": {
+       "motor": "medida",
+       "p": {
+        "modo": "capacidad"
+       }
+      },
+      "ejercicio": {
+       "motor": "medida_x",
+       "p": {
+        "modo": "capacidad"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Volumen y capacidad",
+        "texto": "La capacidad es lo que puede contener un recipiente y se mide en litros; se relaciona con el volumen porque 1 dm³ equivale a 1 litro."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para saber cuántos litros entran en una pecera de 40 × 25 × 30 cm, se calcula el volumen, 30.000 cm³, se pasa a dm³ dividiendo por 1.000 y da 30 dm³, es decir 30 litros. Y 1 m³ equivale a 1.000 litros."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "1 dm³ = 1 litro.",
+         "1 m³ = 1.000 litros."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El volumen de un cuerpo",
+      "definicion": "es el espacio que ocupa, cuántas unidades cúbicas entran en él.",
+      "ejemplo": "Prisma 6 × 5 × 2 cm: 60 cm³"
+     },
+     {
+      "concepto": "El volumen de un prisma rectangular",
+      "definicion": "se calcula multiplicando el largo por el ancho y por el alto del prisma.",
+      "ejemplo": "40 × 25 × 30 = 30.000 cm³",
+      "formula": "V = l × a × h"
+     },
+     {
+      "concepto": "En las unidades de volumen",
+      "definicion": "cada escalón de la escalera vale 1.000, porque se multiplica en tres direcciones.",
+      "ejemplo": "1 dm³ = 1.000 cm³"
+     },
+     {
+      "concepto": "Un decímetro cúbico",
+      "definicion": "equivale a un litro, y así se pasa del volumen a la capacidad.",
+      "ejemplo": "30 dm³ = 30 litros"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el perímetro de un rectángulo de {a} cm por {b} cm?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 6,
+       "max": 30
+      },
+      "b": {
+       "min": 3,
+       "max": 15
+      }
+     }
+    },
+    "r": {
+     "formula": "2*a+2*b"
+    },
+    "e": "Se suman los cuatro lados: 2 veces el largo más 2 veces el ancho.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Una cinta mide 2,5 m y hay que anotarla en centímetros. ¿Cuántos cm son?",
+    "o": [
+     "25",
+     "250",
+     "2.500",
+     "0,25"
+    ],
+    "r": {
+     "correcta": "250"
+    },
+    "e": "1 m = 100 cm: 2,5 × 100 = 250.",
+    "n": "aplicar"
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Nico calculó el perímetro de un rectángulo de 2 m por 40 cm. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "P = 2 × 2 + 2 × 40",
+      "P = 4 + 80 = 84",
+      "El perímetro es 84 cm"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      0
+     ]
+    },
+    "e": "Primero hay que pasar 2 m a 200 cm: P = 400 + 80 = 480 cm."
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada medida con su equivalente.",
+    "o": {
+     "izquierda": [
+      "2,5 m",
+      "3.200 m",
+      "45 mm",
+      "0,8 km"
+     ],
+     "derecha": [
+      "250 cm",
+      "3,2 km",
+      "4,5 cm",
+      "800 m"
+     ]
+    },
+    "r": {
+     "pares": {
+      "2,5 m": "250 cm",
+      "3.200 m": "3,2 km",
+      "45 mm": "4,5 cm",
+      "0,8 km": "800 m"
+     }
+    },
+    "e": "Cada escalón de longitud vale 10."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el área de un triángulo de base {b} cm y altura {h} cm?",
+    "o": {
+     "vars": {
+      "b": {
+       "min": 4,
+       "max": 20
+      },
+      "k": {
+       "min": 2,
+       "max": 9
+      }
+     },
+     "calculadas": {
+      "h": "2*k"
+     }
+    },
+    "r": {
+     "formula": "b*k"
+    },
+    "e": "Base × altura ÷ 2.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un cuadrado de 1 m de lado se cubre con cuadraditos de 1 cm de lado. ¿Cuántos cm² tiene 1 m²?",
+    "o": [
+     "100",
+     "1.000",
+     "10.000",
+     "1.000.000"
+    ],
+    "r": {
+     "correcta": "10.000"
+    },
+    "e": "100 cm × 100 cm = 10.000 cm².",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos calcularon el área de un triángulo de base 10 cm y altura 6 cm. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | 10 × 6 | 60 cm²",
+     "Beto: | 10 × 6 ÷ 2 | 30 cm²",
+     "Caro: | 10 + 6 + 10 | 26 cm²"
+    ],
+    "r": {
+     "correcta": "Beto: | 10 × 6 ÷ 2 | 30 cm²"
+    },
+    "e": "El triángulo es la mitad del rectángulo; Caro sumó como un perímetro."
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada situación según lo que hay que calcular.",
+    "o": {
+     "elementos": [
+      "Cercar un terreno con alambre",
+      "Pintar una pared",
+      "Poner zócalo en una habitación",
+      "Comprar césped para un patio",
+      "Ponerle un marco a un cuadro"
+     ],
+     "categorias": [
+      "Perímetro",
+      "Área"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Cercar un terreno con alambre": "Perímetro",
+      "Pintar una pared": "Área",
+      "Poner zócalo en una habitación": "Perímetro",
+      "Comprar césped para un patio": "Área",
+      "Ponerle un marco a un cuadro": "Perímetro"
+     }
+    },
+    "e": "El borde es perímetro; lo de adentro, área."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el volumen de un prisma de {a} cm por {b} cm por {c} cm?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 2,
+       "max": 12
+      },
+      "b": {
+       "min": 2,
+       "max": 10
+      },
+      "c": {
+       "min": 2,
+       "max": 8
+      }
+     }
+    },
+    "r": {
+     "formula": "a*b*c"
+    },
+    "e": "Largo × ancho × alto.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un cubo de 10 cm de arista (1 dm³) se llena de agua. ¿Cuántos litros entran?",
+    "o": [
+     "1",
+     "10",
+     "100",
+     "1.000"
+    ],
+    "r": {
+     "correcta": "1"
+    },
+    "e": "1 dm³ = 1 litro.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para saber cuántos litros entran en una caja de 50 × 20 × 30 cm.",
+    "o": [
+     "30.000 cm³ ÷ 1.000 = 30 dm³",
+     "V = 50 × 20 × 30 = 30.000 cm³",
+     "30 dm³ = 30 litros",
+     "Mido largo, ancho y alto"
+    ],
+    "r": {
+     "orden": [
+      "Mido largo, ancho y alto",
+      "V = 50 × 20 × 30 = 30.000 cm³",
+      "30.000 cm³ ÷ 1.000 = 30 dm³",
+      "30 dm³ = 30 litros"
+     ]
+    },
+    "e": "Volumen, pasar a dm³ y usar 1 dm³ = 1 litro."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Valen pasó 5 dm³ a cm³. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "De dm³ a cm³ hay un escalón",
+      "Cada escalón vale 10",
+      "5 × 10 = 50 cm³"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "En volumen cada escalón vale 1.000: 5.000 cm³."
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "Relámpago. Perímetro de un cuadrado de 7 cm de lado (en cm).",
+    "o": {},
+    "r": {
+     "acepta": [
+      28
+     ]
+    },
+    "e": "4 × 7.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Área de un rectángulo de 8 cm por 3 cm (en cm²).",
+    "o": {},
+    "r": {
+     "acepta": [
+      24
+     ]
+    },
+    "e": "8 × 3.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Volumen de un cubo de 2 cm de arista.",
+    "o": [
+     "6 cm³",
+     "8 cm³",
+     "12 cm³"
+    ],
+    "r": {
+     "correcta": "8 cm³"
+    },
+    "e": "2 × 2 × 2.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Tres ángulos de un cuadrilátero miden 90°, 90° y 100°. ¿Cuánto mide el cuarto?",
+    "o": {},
+    "r": {
+     "acepta": [
+      80
+     ]
+    },
+    "e": "Repaso de la misión 18: suman 360°.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Un patio cuadrado tiene 81 m² de área. ¿Cuántos metros mide cada lado?",
+    "o": {},
+    "r": {
+     "acepta": [
+      9
+     ]
+    },
+    "e": "Es la raíz cuadrada: 9 × 9 = 81."
+   },
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Una caja con forma de cubo tiene 125 cm³ de volumen. ¿Cuánto mide su arista, en cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      5
+     ]
+    },
+    "e": "Es la raíz cúbica: 5 × 5 × 5 = 125."
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada número según si es cuadrado perfecto, cubo perfecto o las dos cosas.",
+    "o": {
+     "elementos": [
+      "49",
+      "27",
+      "64",
+      "100",
+      "1"
+     ],
+     "categorias": [
+      "Solo cuadrado perfecto",
+      "Solo cubo perfecto",
+      "Las dos cosas"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "49": "Solo cuadrado perfecto",
+      "27": "Solo cubo perfecto",
+      "64": "Las dos cosas",
+      "100": "Solo cuadrado perfecto",
+      "1": "Las dos cosas"
+     }
+    },
+    "e": "64 = 8² = 4³ y 1 = 1² = 1³."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Lu calculó el lado de un cuadrado de 36 cm² de área. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "El área es lado × lado",
+      "Divido 36 ÷ 2 = 18",
+      "El lado mide 18 cm"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "Hay que buscar el número que por sí mismo da 36: el lado mide 6 cm."
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "Una huerta rectangular mide 15 m por 8 m. Para cercarla hace falta su perímetro: 2 × 15 + 2 × 8 = ___ m",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "46"
+      ]
+     ]
+    },
+    "e": "30 + 16 = 46."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Una carrera escolar mide 3.200 m y hay que escribirla en kilómetros. ¿Cuántos km son?",
+    "o": [
+     "32",
+     "3,2",
+     "0,32",
+     "320"
+    ],
+    "r": {
+     "correcta": "3,2"
+    },
+    "e": "Se divide por 1.000.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el perímetro de un triángulo de lados 12, 9 y 7 cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      28
+     ]
+    },
+    "e": "12 + 9 + 7.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "n": "aplicar",
+    "p": "Un cantero tiene forma de paralelogramo de base 9 m y altura 4 m. ¿Cuál es su área?",
+    "o": [
+     "36 m²",
+     "18 m²",
+     "26 m²",
+     "13 m²"
+    ],
+    "r": {
+     "correcta": "36 m²"
+    },
+    "e": "Base × altura = 36. 18 sería la de un triángulo; 26, el perímetro de un rectángulo."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el área de un trapecio de bases 12 y 8 cm y altura 5 cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      50
+     ]
+    },
+    "e": "(12 + 8) × 5 ÷ 2.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "1 m² equivale a 100 cm².",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Son 10.000 cm².",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "A un rectángulo de 10 cm por 6 cm se le recorta un cuadrado de 2 cm de lado. ¿Cuál es el área que queda, en cm²?",
+    "o": {},
+    "r": {
+     "acepta": [
+      56
+     ]
+    },
+    "e": "60 − 4.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para calcular el volumen de un prisma de 6 cm × 5 cm × 2 cm.",
+    "o": [
+     "6 × 5 = 30 cubitos en la primera capa",
+     "El volumen es 60 cm³",
+     "Mido largo, ancho y alto",
+     "30 × 2 capas = 60"
+    ],
+    "r": {
+     "orden": [
+      "Mido largo, ancho y alto",
+      "6 × 5 = 30 cubitos en la primera capa",
+      "30 × 2 capas = 60",
+      "El volumen es 60 cm³"
+     ]
+    },
+    "e": "Capa por capa."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "¿Cuántos litros entran en una pecera de 40 cm por 25 cm por 30 cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      30
+     ]
+    },
+    "e": "30.000 cm³ = 30 dm³ = 30 litros.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Una cisterna con forma de cubo de 1 m de arista se llena de agua. ¿Cuántos litros entran?",
+    "o": [
+     "10 litros",
+     "100 litros",
+     "1.000 litros",
+     "10.000 litros"
+    ],
+    "r": {
+     "correcta": "1.000 litros"
+    },
+    "e": "1 m³ = 1.000 dm³ y cada dm³ es un litro.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un cuadrado tiene 81 cm² de área. ¿Cuánto mide su lado, en cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      9
+     ]
+    },
+    "e": "√81 = 9.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un cubo tiene 64 cm³ de volumen. ¿Cuánto mide su arista, en cm?",
+    "o": {},
+    "r": {
+     "acepta": [
+      4
+     ]
+    },
+    "e": "∛64 = 4.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Se quiere armar un cubo grande juntando cubitos iguales sin que sobre ninguno. ¿Con cuál de estas cantidades se puede?",
+    "o": [
+     "36",
+     "49",
+     "100",
+     "125"
+    ],
+    "r": {
+     "correcta": "125"
+    },
+    "e": "125 = 5 × 5 × 5.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}

@@ -1,1 +1,2054 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 18, "practica": "Práctica general: triángulos y cuadriláteros", "examen_titulo": "Nivel jefe: triángulos y cuadriláteros", "niveles": {"1": {"objetivo": "Vas a poder clasificar triángulos según sus lados y según sus ángulos, y decidir si tres medidas forman un triángulo.", "vas_a_ver": ["Triángulos según sus lados", "Triángulos según sus ángulos", "Un triángulo, dos nombres", "La desigualdad triangular", "Construir según los datos"], "secciones": [{"etapa": 1, "titulo": "Según sus lados", "bloques": [{"tipo": "definicion", "titulo": "Clasificación por lados", "texto": "Un triángulo es <b>equilátero</b> si tiene los <b>tres lados iguales</b>, <b>isósceles</b> si tiene <b>dos lados iguales</b> y <b>escaleno</b> si tiene los <b>tres lados distintos</b>."}, {"tipo": "tabla", "titulo": "Mirando las medidas", "columnas": ["Lados", "Iguales", "Es"], "filas": [["5, 5 y 5 cm", "los tres", "Equilátero"], ["5, 5 y 3 cm", "dos", "Isósceles"], ["4, 5 y 6 cm", "ninguno", "Escaleno"]], "iguales": true, "texto": "Se cuenta cuántos lados miden lo mismo."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Triángulos según sus lados", "texto": "Las marquitas indican los lados iguales.", "imagen_descripcion": "Un triángulo equilátero, uno isósceles y uno escaleno, con marcas en los lados iguales.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Según sus ángulos", "bloques": [{"tipo": "definicion", "titulo": "Clasificación por ángulos", "texto": "Un triángulo es <b>acutángulo</b> si sus <b>tres ángulos son agudos</b>, <b>rectángulo</b> si tiene <b>un ángulo recto</b> y <b>obtusángulo</b> si tiene <b>un ángulo obtuso</b>."}, {"tipo": "ejemplo", "titulo": "Tres triángulos", "texto": "Miramos el ángulo más grande.", "items": ["60°, 60° y 60°: todos agudos, es acutángulo.", "90°, 45° y 45°: tiene uno recto, es rectángulo.", "120°, 30° y 30°: tiene uno obtuso, es obtusángulo."]}]}, {"etapa": 2, "titulo": "Un triángulo, dos nombres", "bloques": [{"tipo": "parrafo", "texto": "Todo triángulo tiene <b>un nombre por sus lados y otro por sus ángulos</b>, al mismo tiempo. El de 90°, 45° y 45° tiene dos lados iguales: es <b>rectángulo isósceles</b>. Uno con ángulos de 100°, 50° y 30° y los tres lados distintos es <b>obtusángulo escaleno</b>."}, {"tipo": "ejemplo", "titulo": "Nombre completo", "texto": "Lados 6, 6 y 6 cm.", "items": ["Por sus lados: los tres iguales, equilátero.", "Por sus ángulos: cada uno mide 60°, todos agudos, acutángulo.", "Nombre completo: equilátero acutángulo."]}]}, {"etapa": 2, "titulo": "La desigualdad triangular", "bloques": [{"tipo": "parrafo", "texto": "No con cualquier medida se arma un triángulo. <b>Cada lado tiene que ser menor que la suma de los otros dos</b>. Alcanza con mirar el lado más largo: si es menor que la suma de los otros dos, se puede."}, {"tipo": "ejemplo", "titulo": "¿Se puede?", "texto": "Probamos el lado más largo.", "items": ["3, 4 y 8 cm: 3 + 4 = 7, menor que 8. No se puede.", "5, 6 y 9 cm: 5 + 6 = 11, mayor que 9. Se puede.", "2, 3 y 5 cm: 2 + 3 = 5, igual a 5. No se puede: los lados quedan acostados."]}]}], "ejemplo_completo": {"titulo": "lados de 5, 5 y 8 cm", "planteo": "¿Se puede construir un triángulo con lados de 5, 5 y 8 cm? Si se puede, clasificalo por sus lados y por sus ángulos (su ángulo mayor mide unos 106°).", "pasos": ["Lado más largo: 8. Suma de los otros: 5 + 5 = 10.", "8 es menor que 10: se puede construir.", "Tiene dos lados iguales: es isósceles.", "Su ángulo mayor, de unos 106°, es obtuso: es obtusángulo.", "Nombre completo: isósceles obtusángulo."]}, "ejemplo_incompleto": {"titulo": "lados de 7, 7 y 7 cm", "planteo": "Completá los espacios.", "pasos": ["7 es menor que 7 + 7 = ___ : se puede.", "Los tres lados son iguales: es ___ .", "Cada ángulo mide 60°: es ___ ."]}, "ejemplo_solo": {"titulo": "4, 6 y 11 cm", "planteo": "¿Se puede construir un triángulo con lados de 4, 6 y 11 cm? Justificá."}, "tip": {"titulo": "Empezá por el más largo", "texto": "Para la desigualdad triangular no hace falta probar los tres lados: si el más largo es menor que la suma de los otros dos, ya está."}, "ojo": ["Creer que un triángulo tiene un solo nombre: siempre tiene uno por lados y otro por ángulos.", "Aceptar tres medidas sin probar: con 3, 4 y 8 cm no hay triángulo."], "resumen": [{"titulo": "Por lados", "texto": "Equilátero, isósceles, escaleno."}, {"titulo": "Por ángulos", "texto": "Acutángulo, rectángulo, obtusángulo."}, {"titulo": "Dos nombres", "texto": "90°, 45°, 45°: rectángulo isósceles."}, {"titulo": "Desigualdad", "texto": "El lado mayor, menor que la suma de los otros."}], "glosario": [{"palabra": "Equilátero", "significado": "Con los tres lados iguales."}, {"palabra": "Isósceles", "significado": "Con dos lados iguales."}, {"palabra": "Escaleno", "significado": "Con los tres lados distintos."}, {"palabra": "Acutángulo", "significado": "Con los tres ángulos agudos."}, {"palabra": "Obtusángulo", "significado": "Con un ángulo obtuso."}, {"palabra": "Desigualdad triangular", "significado": "Regla que dice si tres medidas forman un triángulo."}], "carpeta": ["Un triángulo tiene lados de 8, 8 y 5 cm. ¿Cómo se clasifica según sus lados?", "Un triángulo tiene ángulos de 90°, 35° y 55°. ¿Cómo se clasifica según sus ángulos?", "¿Se puede construir un triángulo con lados de 3, 5 y 9 cm? Respondé sí o no.", "Un compañero dice que un triángulo equilátero no puede ser acutángulo. ¿Cuántos grados mide cada ángulo de un equilátero?"], "respuestas_carpeta": [["isosceles", "isósceles"], ["rectangulo", "rectángulo"], ["no"], ["60", "60°"]], "soluciones": {"incompleto": "14. Equilátero. Acutángulo.", "solo": "No: 4 + 6 = 10, que es menor que 11.", "carpeta": ["Isósceles: tiene dos lados iguales.", "Rectángulo: tiene un ángulo de 90°.", "No: 3 + 5 = 8, menor que 9.", "60°: los tres ángulos son agudos, así que el equilátero siempre es acutángulo."]}}, "2": {"objetivo": "Vas a poder usar que los ángulos interiores de un triángulo suman 180° y la propiedad del ángulo exterior para calcular ángulos que faltan.", "vas_a_ver": ["Los ángulos interiores suman 180°", "Calcular el ángulo que falta", "El ángulo exterior", "Isósceles y equiláteros", "Ángulos con ecuaciones"], "secciones": [{"etapa": 1, "titulo": "La suma es 180°", "bloques": [{"tipo": "definicion", "titulo": "Suma de los ángulos interiores", "texto": "En <b>todo triángulo</b>, los tres ángulos interiores <b>suman 180°</b>."}, {"tipo": "parrafo", "texto": "Si recortás las tres puntas de un triángulo de papel y las juntás por el vértice, forman un ángulo llano: 180°. Ejemplo: 50° + 60° + 70° = 180°."}]}, {"etapa": 1, "titulo": "El ángulo que falta", "bloques": [{"tipo": "definicion", "titulo": "Calcular un ángulo", "texto": "Si conocés dos ángulos, el tercero es <b>180° menos la suma de los otros dos</b>."}, {"tipo": "ejemplo", "titulo": "Ángulos de 45° y 75°", "texto": "Sumamos y restamos de 180°.", "items": ["45° + 75° = 120°.", "180° − 120° = 60°.", "El tercer ángulo mide 60°."]}]}, {"etapa": 2, "titulo": "El ángulo exterior", "bloques": [{"tipo": "parrafo", "texto": "Si se prolonga un lado, se forma un <b>ángulo exterior</b>: es el adyacente a un ángulo interior, así que suman 180°. Además, el exterior es igual a la <b>suma de los dos interiores que no están pegados a él</b>."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Ángulo exterior", "texto": "Junto al 70° se forma un exterior de 110°, que es 50° + 60°.", "imagen_descripcion": "Triángulo con ángulos de 50°, 60° y 70° y el ángulo exterior de 110° marcado al prolongar un lado.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}, {"tipo": "ejemplo", "titulo": "Interiores de 50°, 60° y 70°", "texto": "Exterior junto al de 70°.", "items": ["Por adyacente: 180° − 70° = 110°.", "Por la propiedad: 50° + 60° = 110°.", "Las dos cuentas dan lo mismo."]}]}, {"etapa": 2, "titulo": "Isósceles y equiláteros", "bloques": [{"tipo": "parrafo", "texto": "En el <b>equilátero</b> los tres ángulos son iguales: 180° ÷ 3 = 60°. En el <b>isósceles</b>, los dos ángulos que están frente a los lados iguales son iguales."}, {"tipo": "ejemplo", "titulo": "Isósceles con un ángulo desigual de 40°", "texto": "Lo que queda se reparte entre los dos iguales.", "items": ["180° − 40° = 140°.", "140° ÷ 2 = 70°.", "Los ángulos miden 40°, 70° y 70°."]}]}, {"etapa": 2, "titulo": "Con ecuaciones", "bloques": [{"tipo": "parrafo", "texto": "Si los ángulos se dan con letras, se plantea que suman 180°. Con x, 2x y 3x: x + 2x + 3x = 180, o sea 6x = 180 y x = 30. Los ángulos miden 30°, 60° y 90°."}]}], "ejemplo_completo": {"titulo": "el isósceles de 36°", "planteo": "En un triángulo isósceles, el ángulo desigual mide 36°. ¿Cuánto miden los otros dos?", "pasos": ["Los otros dos ángulos son iguales.", "Entre los dos suman 180° − 36° = 144°.", "Cada uno mide 144° ÷ 2 = 72°.", "Verificación: 36° + 72° + 72° = 180°."]}, "ejemplo_incompleto": {"titulo": "ángulos de 48° y 67°", "planteo": "Completá los espacios para hallar el tercer ángulo.", "pasos": ["48° + 67° = ___ .", "180° − 115° = ___ ."]}, "ejemplo_solo": {"titulo": "x, x + 20 y 2x", "planteo": "Los ángulos de un triángulo miden x, x + 20° y 2x. ¿Cuánto vale x?"}, "tip": {"titulo": "Verificá sumando", "texto": "Cuando termines, sumá los tres ángulos: si no da 180°, hay un error de cuenta."}, "ojo": ["Confundir ángulo interior con exterior: el exterior está afuera, pegado a un lado prolongado.", "Olvidar que la suma es 180° y restar de 360°."], "resumen": [{"titulo": "Suma", "texto": "Los interiores suman 180°."}, {"titulo": "El que falta", "texto": "180° − la suma de los otros dos."}, {"titulo": "Exterior", "texto": "Suma de los dos interiores no pegados."}, {"titulo": "Equilátero", "texto": "60°, 60° y 60°."}], "glosario": [{"palabra": "Ángulo interior", "significado": "Ángulo de adentro del triángulo."}, {"palabra": "Ángulo exterior", "significado": "El que se forma al prolongar un lado."}, {"palabra": "Prolongar", "significado": "Alargar un lado con una línea."}, {"palabra": "Adyacente", "significado": "Ángulo pegado que suma 180° con otro."}, {"palabra": "Desigual", "significado": "El ángulo distinto en un isósceles."}], "carpeta": ["Dos ángulos de un triángulo miden 35° y 85°. ¿Cuánto mide el tercero?", "¿Cuánto mide el ángulo exterior adyacente a un ángulo interior de 72°?", "Los dos ángulos interiores no adyacentes a un ángulo exterior miden 40° y 75°. ¿Cuánto mide ese ángulo exterior?", "Un compañero dice que un triángulo puede tener dos ángulos rectos. ¿Cuántos grados sumarían esos dos ángulos solos?"], "respuestas_carpeta": [["60", "60°"], ["108", "108°"], ["115", "115°"], ["180", "180°"]], "soluciones": {"incompleto": "115°. 65°.", "solo": "x + x + 20 + 2x = 180, 4x = 160, x = 40. Los ángulos miden 40°, 60° y 80°.", "carpeta": ["60°: 180° − (35° + 85°).", "108°: 180° − 72°.", "115°: 40° + 75°.", "180°: ya sumarían todo, y el tercer ángulo mediría 0°. Es imposible."]}}, "3": {"objetivo": "Vas a poder reconocer y clasificar cuadriláteros, y usar las propiedades de los lados y los ángulos de los paralelogramos.", "vas_a_ver": ["Qué es un cuadrilátero", "Paralelogramos, trapecios y trapezoides", "Rectángulo, rombo y cuadrado", "Uno dentro de otro", "Lados y ángulos del paralelogramo"], "secciones": [{"etapa": 1, "titulo": "Cuadriláteros", "bloques": [{"tipo": "definicion", "titulo": "Cuadrilátero", "texto": "Un <b>cuadrilátero</b> es un polígono de <b>4 lados</b>, con 4 vértices y 4 ángulos. Se clasifican según cuántos pares de <b>lados paralelos</b> tienen."}, {"tipo": "tabla", "titulo": "Según los lados paralelos", "columnas": ["Pares de lados paralelos", "Se llama"], "filas": [["Dos pares", "Paralelogramo"], ["Un par", "Trapecio"], ["Ninguno", "Trapezoide"]], "iguales": true, "texto": "Se miran los lados opuestos: los que no se tocan."}]}, {"etapa": 1, "titulo": "La familia de los paralelogramos", "bloques": [{"tipo": "definicion", "titulo": "Paralelogramos especiales", "texto": "El <b>rectángulo</b> es un paralelogramo con <b>4 ángulos rectos</b>. El <b>rombo</b> es un paralelogramo con <b>4 lados iguales</b>. El <b>cuadrado</b> tiene las dos cosas: 4 ángulos rectos y 4 lados iguales."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Cuadriláteros", "texto": "Los cuatro primeros tienen dos pares de lados paralelos; el trapecio, uno solo.", "imagen_descripcion": "Un paralelogramo, un rectángulo, un rombo, un cuadrado y un trapecio.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Uno dentro de otro", "bloques": [{"tipo": "parrafo", "texto": "Las familias se incluyen: todo cuadrado <b>es</b> un rectángulo (tiene 4 ángulos rectos) y también <b>es</b> un rombo (tiene 4 lados iguales). Y todo rectángulo y todo rombo son paralelogramos. Al revés no: no todo rectángulo es cuadrado."}, {"tipo": "ejemplo", "titulo": "¿Es o no es?", "texto": "Se controlan las propiedades, no la apariencia.", "items": ["¿Un cuadrado es un rectángulo? Sí: tiene 4 ángulos rectos.", "¿Un rombo es un cuadrado? Solo si además tiene ángulos rectos.", "¿Un rectángulo es un paralelogramo? Sí: tiene dos pares de lados paralelos."]}]}, {"etapa": 2, "titulo": "Lados y ángulos del paralelogramo", "bloques": [{"tipo": "parrafo", "texto": "En todo paralelogramo, los <b>lados opuestos son iguales</b> y los <b>ángulos opuestos son iguales</b>. Además, dos ángulos <b>consecutivos suman 180°</b>."}, {"tipo": "ejemplo", "titulo": "Un ángulo de 70°", "texto": "Usamos opuestos y consecutivos.", "items": ["Su opuesto mide 70°.", "Su consecutivo mide 180° − 70° = 110°.", "Los cuatro ángulos: 70°, 110°, 70° y 110°."]}]}], "ejemplo_completo": {"titulo": "¿qué cuadrilátero es?", "planteo": "Un cuadrilátero tiene dos pares de lados paralelos, sus 4 lados miden 5 cm y sus ángulos miden 60°, 120°, 60° y 120°. ¿Qué cuadrilátero es?", "pasos": ["Dos pares de lados paralelos: es un paralelogramo.", "Los 4 lados iguales: es un rombo.", "No tiene ángulos rectos: no es cuadrado.", "Es un rombo."]}, "ejemplo_incompleto": {"titulo": "un ángulo de 65°", "planteo": "En un paralelogramo un ángulo mide 65°. Completá los espacios.", "pasos": ["Su ángulo opuesto mide ___ .", "Su ángulo consecutivo mide 180° − 65° = ___ ."]}, "ejemplo_solo": {"titulo": "un ángulo recto", "planteo": "Un paralelogramo de lados 6 cm y 4 cm tiene un ángulo de 90°. ¿Cuánto miden los otros tres ángulos y qué paralelogramo es?"}, "tip": {"titulo": "Propiedades, no apariencia", "texto": "Un cuadrado dibujado inclinado sigue siendo un cuadrado. Clasificá mirando lados y ángulos, no cómo está girado."}, "ojo": ["Creer que el cuadrado no es un rectángulo: tiene 4 ángulos rectos, así que sí lo es.", "Confundir rombo con cuadrado: el rombo no necesita ángulos rectos."], "resumen": [{"titulo": "Paralelogramo", "texto": "Dos pares de lados paralelos."}, {"titulo": "Trapecio", "texto": "Un solo par de lados paralelos."}, {"titulo": "Rectángulo y rombo", "texto": "4 ángulos rectos; 4 lados iguales."}, {"titulo": "Cuadrado", "texto": "Es rectángulo y rombo a la vez."}, {"titulo": "Ángulos", "texto": "Opuestos iguales, consecutivos suman 180°."}], "glosario": [{"palabra": "Cuadrilátero", "significado": "Figura de 4 lados."}, {"palabra": "Paralelogramo", "significado": "Cuadrilátero con dos pares de lados paralelos."}, {"palabra": "Trapecio", "significado": "Cuadrilátero con un solo par de lados paralelos."}, {"palabra": "Trapezoide", "significado": "Cuadrilátero sin lados paralelos."}, {"palabra": "Rombo", "significado": "Paralelogramo con 4 lados iguales."}, {"palabra": "Lados opuestos", "significado": "Los que no se tocan."}], "carpeta": ["¿Cómo se llama el cuadrilátero que tiene un solo par de lados paralelos?", "En un paralelogramo un ángulo mide 80°. ¿Cuánto mide su ángulo consecutivo?", "¿Cuántos lados iguales tiene un rombo?", "Un compañero dice que el cuadrado no es un rectángulo. ¿Cuántos ángulos rectos tiene un cuadrado?"], "respuestas_carpeta": [["trapecio"], ["100", "100°"], ["4", "cuatro"], ["4", "cuatro"]], "soluciones": {"incompleto": "65°. 115°.", "solo": "Los cuatro miden 90° (opuesto 90° y consecutivos 180° − 90° = 90°). Como sus lados no son todos iguales, es un rectángulo.", "carpeta": ["Trapecio.", "100°: los consecutivos suman 180°.", "4: todos sus lados son iguales.", "4: por eso el cuadrado también es un rectángulo."]}}, "4": {"objetivo": "Vas a poder usar las propiedades de las diagonales de los paralelogramos y que los ángulos de un cuadrilátero suman 360°.", "vas_a_ver": ["Qué es una diagonal", "Diagonales del paralelogramo", "Rectángulo, rombo y cuadrado", "Los ángulos suman 360°", "Construir con diagonales"], "secciones": [{"etapa": 1, "titulo": "Diagonales", "bloques": [{"tipo": "definicion", "titulo": "Diagonal", "texto": "Una <b>diagonal</b> es el segmento que une <b>dos vértices que no son consecutivos</b>. Todo cuadrilátero tiene <b>2 diagonales</b>."}, {"tipo": "parrafo", "texto": "En el cuadrilátero ABCD, las diagonales son AC y BD. AB no es diagonal: es un lado, porque A y B son consecutivos."}]}, {"etapa": 1, "titulo": "Diagonales del paralelogramo", "bloques": [{"tipo": "definicion", "titulo": "Se cortan en su punto medio", "texto": "En todo paralelogramo, las diagonales <b>se cortan en su punto medio</b>: cada diagonal queda partida en dos partes iguales."}, {"tipo": "ejemplo", "titulo": "Una diagonal de 10 cm", "texto": "El punto de corte la divide en dos.", "items": ["10 ÷ 2 = 5.", "Cada mitad mide 5 cm."]}]}, {"etapa": 2, "titulo": "Rectángulo, rombo y cuadrado", "bloques": [{"tipo": "tabla", "titulo": "Sus diagonales", "columnas": ["Cuadrilátero", "Iguales", "Perpendiculares"], "filas": [["Paralelogramo común", "No", "No"], ["Rectángulo", "Sí", "No"], ["Rombo", "No", "Sí"], ["Cuadrado", "Sí", "Sí"]], "iguales": true, "texto": "En los cuatro, además, se cortan en su punto medio."}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "Diagonales", "texto": "En el rectángulo son iguales; en el rombo, perpendiculares; en el cuadrado, las dos cosas.", "imagen_descripcion": "Un rectángulo, un rombo y un cuadrado con sus diagonales y el ángulo recto marcado donde corresponde.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Los ángulos suman 360°", "bloques": [{"tipo": "parrafo", "texto": "Una diagonal divide al cuadrilátero en <b>dos triángulos</b>. Cada uno suma 180°, así que los ángulos de un cuadrilátero suman <b>2 × 180° = 360°</b>."}, {"tipo": "ejemplo", "titulo": "Ángulos de 80°, 95° y 110°", "texto": "Falta el cuarto.", "items": ["80° + 95° + 110° = 285°.", "360° − 285° = 75°.", "El cuarto ángulo mide 75°."]}]}, {"etapa": 2, "titulo": "Construir con diagonales", "bloques": [{"tipo": "parrafo", "texto": "Un rombo de diagonales 6 cm y 4 cm: se trazan dos segmentos perpendiculares de 6 y 4 cm que se cortan en sus puntos medios (a 3 cm y a 2 cm de cada punta) y se unen los cuatro extremos."}]}], "ejemplo_completo": {"titulo": "diagonales de 8 cm", "planteo": "Las diagonales de un cuadrilátero miden 8 cm las dos, se cortan en su punto medio y son perpendiculares. ¿Qué cuadrilátero es? ¿Cuánto mide cada mitad de diagonal?", "pasos": ["Se cortan en su punto medio: es un paralelogramo.", "Son iguales: es un rectángulo.", "Son perpendiculares: es un rombo.", "Las dos cosas: es un cuadrado.", "Cada mitad mide 8 ÷ 2 = 4 cm."]}, "ejemplo_incompleto": {"titulo": "ángulos de 100°, 70° y 110°", "planteo": "Completá los espacios para hallar el cuarto ángulo.", "pasos": ["100° + 70° + 110° = ___ .", "360° − 280° = ___ ."]}, "ejemplo_solo": {"titulo": "el rombo", "planteo": "Un rombo tiene diagonales de 10 cm y 6 cm. ¿A cuántos cm del centro está cada extremo de la diagonal más corta?"}, "tip": {"titulo": "Pensá en dos triángulos", "texto": "Si te olvidás cuánto suman los ángulos de un cuadrilátero, trazá una diagonal: son dos triángulos, 180° + 180°."}, "ojo": ["Pensar que las diagonales siempre son perpendiculares: en el rectángulo común no lo son.", "Olvidar que los ángulos del cuadrilátero suman 360°, no 180°."], "resumen": [{"titulo": "Diagonal", "texto": "Une vértices no consecutivos."}, {"titulo": "Paralelogramo", "texto": "Se cortan en su punto medio."}, {"titulo": "Rectángulo y rombo", "texto": "Iguales; perpendiculares."}, {"titulo": "Cuadrado", "texto": "Iguales y perpendiculares."}, {"titulo": "Ángulos", "texto": "Suman 360°."}], "glosario": [{"palabra": "Diagonal", "significado": "Segmento entre dos vértices no consecutivos."}, {"palabra": "Punto medio", "significado": "El que parte un segmento en dos partes iguales."}, {"palabra": "Perpendiculares", "significado": "Que se cortan formando ángulos rectos."}, {"palabra": "Consecutivos", "significado": "Vértices que están uno al lado del otro."}, {"palabra": "Extremo", "significado": "Cada punta de un segmento."}], "carpeta": ["¿Cuánto suman los ángulos interiores de un cuadrilátero?", "Tres ángulos de un cuadrilátero miden 90°, 90° y 120°. ¿Cuánto mide el cuarto?", "Una diagonal de un rectángulo mide 14 cm. ¿Cuánto mide la otra?", "Un compañero dice que las diagonales de un rectángulo siempre son perpendiculares. ¿En cuál de estos sí lo son siempre: rectángulo o rombo?"], "respuestas_carpeta": [["360", "360°"], ["60", "60°"], ["14", "14cm", "14 cm"], ["rombo"]], "soluciones": {"incompleto": "280°. 80°.", "solo": "A 3 cm: la diagonal corta mide 6 cm y se corta en su punto medio.", "carpeta": ["360°: dos triángulos de 180°.", "60°: 360° − 300°.", "14 cm: en el rectángulo las diagonales son iguales.", "Rombo: en el rectángulo común las diagonales no son perpendiculares."]}}}, "act": {"1": [{"t": "classify", "p": "Clasificá cada triángulo según sus lados.", "o": {"elementos": ["5, 5 y 5 cm", "6, 6 y 4 cm", "3, 4 y 5 cm", "7, 7 y 2 cm"], "categorias": ["Equilátero", "Isósceles", "Escaleno"]}, "r": {"categorias": {"5, 5 y 5 cm": "Equilátero", "6, 6 y 4 cm": "Isósceles", "3, 4 y 5 cm": "Escaleno", "7, 7 y 2 cm": "Isósceles"}}, "e": "Se cuenta cuántos lados son iguales: tres, dos o ninguno."}, {"t": "multiple_choice", "p": "¿Con cuál de estas medidas se puede construir un triángulo?", "o": ["2, 3 y 7 cm", "4, 4 y 9 cm", "5, 7 y 10 cm", "1, 2 y 3 cm"], "r": {"correcta": "5, 7 y 10 cm"}, "e": "El lado mayor tiene que ser menor que la suma de los otros dos: 10 < 5 + 7 = 12."}], "2": [{"t": "numeric", "p": "Dos ángulos de un triángulo miden {a}° y {b}°. ¿Cuánto mide el tercero?", "o": {"vars": {"a": {"min": 25, "max": 80}, "b": {"min": 25, "max": 80}}}, "r": {"formula": "180-a-b"}, "e": "Los tres suman 180°: se resta la suma de los dos."}, {"t": "numeric", "p": "¿Cuánto mide el ángulo exterior adyacente a un ángulo interior de {a}°?", "o": {"vars": {"a": {"min": 30, "max": 150}}}, "r": {"formula": "180-a"}, "e": "El exterior y su interior adyacente suman 180°."}], "3": [{"t": "multi_select", "p": "¿Cuáles de estas frases son verdaderas?", "o": ["Todo cuadrado es un rectángulo", "Todo rombo es un cuadrado", "Todo rectángulo es un paralelogramo", "Un trapecio tiene dos pares de lados paralelos"], "r": {"correctas": ["Todo cuadrado es un rectángulo", "Todo rectángulo es un paralelogramo"]}, "e": "El cuadrado tiene 4 ángulos rectos; el rombo no siempre; el trapecio tiene un solo par de lados paralelos."}, {"t": "numeric", "p": "En un paralelogramo un ángulo mide {a}°. ¿Cuánto mide su ángulo consecutivo?", "o": {"vars": {"a": {"min": 40, "max": 140}}, "reglas": ["a!=90"]}, "r": {"formula": "180-a"}, "e": "Los ángulos consecutivos de un paralelogramo suman 180°."}], "4": [{"t": "numeric", "p": "Tres ángulos de un cuadrilátero miden {a}°, {b}° y {c}°. ¿Cuánto mide el cuarto?", "o": {"vars": {"a": {"min": 60, "max": 120}, "b": {"min": 60, "max": 120}, "c": {"min": 60, "max": 120}}, "reglas": ["a+b+c<330"]}, "r": {"formula": "360-a-b-c"}, "e": "Los ángulos de un cuadrilátero suman 360°."}, {"t": "matching", "p": "Uní cada cuadrilátero con la propiedad de sus diagonales.", "o": {"izquierda": ["Rectángulo", "Rombo", "Cuadrado"], "derecha": ["Iguales", "Perpendiculares", "Iguales y perpendiculares"]}, "r": {"pares": {"Rectángulo": "Iguales", "Rombo": "Perpendiculares", "Cuadrado": "Iguales y perpendiculares"}}, "e": "El cuadrado es rectángulo y rombo a la vez, así que tiene las dos propiedades."}], "5": [{"t": "multiple_choice", "p": "Relámpago. Un triángulo con ángulos de 90°, 60° y 30° es…", "o": ["Acutángulo", "Rectángulo", "Obtusángulo"], "r": {"correcta": "Rectángulo"}, "e": "Tiene un ángulo de 90°.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Dos ángulos de un triángulo miden 50° y 70°. ¿Cuánto mide el tercero?", "o": {}, "r": {"acepta": [60]}, "e": "180° − 120° = 60°.", "tiempo": 25}, {"t": "numeric", "p": "Relámpago. ¿Cuánto mide el adyacente de un ángulo de 40°?", "o": {}, "r": {"acepta": [140]}, "e": "Repaso de la misión 17: los adyacentes suman 180°.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Resolvé 3x − 6 = 24.", "o": {}, "r": {"acepta": [10]}, "e": "Repaso de la misión 16: 3x = 30, x = 10.", "tiempo": 30}]}, "examen": [[1, {"t": "classify", "p": "Clasificá cada triángulo según sus ángulos.", "o": {"elementos": ["60°, 60° y 60°", "90°, 50° y 40°", "110°, 40° y 30°", "80°, 55° y 45°"], "categorias": ["Acutángulo", "Rectángulo", "Obtusángulo"]}, "r": {"categorias": {"60°, 60° y 60°": "Acutángulo", "90°, 50° y 40°": "Rectángulo", "110°, 40° y 30°": "Obtusángulo", "80°, 55° y 45°": "Acutángulo"}}, "e": "Se mira el ángulo mayor: agudo, recto u obtuso."}], [1, {"t": "true_false", "p": "Con lados de 4, 5 y 10 cm se puede construir un triángulo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "4 + 5 = 9, menor que 10."}], [1, {"t": "multiple_choice", "p": "Un triángulo tiene ángulos de 90°, 45° y 45°. ¿Cuál es su nombre completo?", "o": ["Rectángulo isósceles", "Rectángulo escaleno", "Acutángulo isósceles", "Obtusángulo isósceles"], "r": {"correcta": "Rectángulo isósceles"}, "e": "Tiene un ángulo recto y dos ángulos iguales, frente a dos lados iguales."}], [2, {"t": "numeric", "p": "Dos ángulos de un triángulo miden 47° y 68°. ¿Cuánto mide el tercero?", "o": {}, "r": {"acepta": [65]}, "e": "180° − 115° = 65°."}], [2, {"t": "numeric", "p": "En un triángulo isósceles el ángulo desigual mide 50°. ¿Cuánto mide cada uno de los otros dos?", "o": {}, "r": {"acepta": [65]}, "e": "(180° − 50°) ÷ 2 = 65°."}], [2, {"t": "numeric", "p": "Los dos ángulos interiores no adyacentes a un ángulo exterior miden 35° y 80°. ¿Cuánto mide el exterior?", "o": {}, "r": {"acepta": [115]}, "e": "El exterior es la suma de los dos interiores no adyacentes."}], [2, {"t": "numeric", "p": "Los ángulos de un triángulo miden x, 2x y 3x. ¿Cuánto vale x?", "o": {}, "r": {"acepta": [30]}, "e": "6x = 180, x = 30."}], [3, {"t": "multiple_choice", "p": "¿Cómo se llama un cuadrilátero sin lados paralelos?", "o": ["Trapecio", "Trapezoide", "Paralelogramo", "Rombo"], "r": {"correcta": "Trapezoide"}, "e": "El trapecio tiene un par; el trapezoide, ninguno."}], [3, {"t": "true_false", "p": "Todo cuadrado es también un rombo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Tiene 4 lados iguales."}], [3, {"t": "numeric", "p": "En un paralelogramo un ángulo mide 55°. ¿Cuánto mide su ángulo opuesto?", "o": {}, "r": {"acepta": [55]}, "e": "Los ángulos opuestos son iguales."}], [4, {"t": "numeric", "p": "Tres ángulos de un cuadrilátero miden 85°, 95° y 100°. ¿Cuánto mide el cuarto?", "o": {}, "r": {"acepta": [80]}, "e": "360° − 280° = 80°."}], [4, {"t": "multiple_choice", "p": "¿En qué cuadrilátero las diagonales son iguales pero no perpendiculares?", "o": ["Rombo", "Cuadrado", "Rectángulo", "Trapezoide"], "r": {"correcta": "Rectángulo"}, "e": "En el rectángulo son iguales; en el cuadrado, además, perpendiculares."}], [4, {"t": "numeric", "p": "Una diagonal de un paralelogramo mide 18 cm. ¿Cuánto mide cada mitad?", "o": {}, "r": {"acepta": [9]}, "e": "Las diagonales se cortan en su punto medio."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 18,
+ "practica": "Práctica general: triángulos y cuadriláteros",
+ "examen_titulo": "Nivel jefe: triángulos y cuadriláteros",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder clasificar triángulos según sus lados y según sus ángulos, y decidir si tres medidas forman un triángulo.",
+   "vas_a_ver": [
+    "Triángulos según sus lados",
+    "Triángulos según sus ángulos",
+    "Un triángulo, dos nombres",
+    "La desigualdad triangular",
+    "Construir según los datos"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Según sus lados",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Clasificación por lados",
+       "texto": "Un triángulo es <b>equilátero</b> si tiene los <b>tres lados iguales</b>, <b>isósceles</b> si tiene <b>dos lados iguales</b> y <b>escaleno</b> si tiene los <b>tres lados distintos</b>."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Mirando las medidas",
+       "columnas": [
+        "Lados",
+        "Iguales",
+        "Es"
+       ],
+       "filas": [
+        [
+         "5, 5 y 5 cm",
+         "los tres",
+         "Equilátero"
+        ],
+        [
+         "5, 5 y 3 cm",
+         "dos",
+         "Isósceles"
+        ],
+        [
+         "4, 5 y 6 cm",
+         "ninguno",
+         "Escaleno"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Se cuenta cuántos lados miden lo mismo."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Triángulos según sus lados",
+       "texto": "Las marquitas indican los lados iguales.",
+       "imagen_descripcion": "Un triángulo equilátero, uno isósceles y uno escaleno, con marcas en los lados iguales.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Según sus ángulos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Clasificación por ángulos",
+       "texto": "Un triángulo es <b>acutángulo</b> si sus <b>tres ángulos son agudos</b>, <b>rectángulo</b> si tiene <b>un ángulo recto</b> y <b>obtusángulo</b> si tiene <b>un ángulo obtuso</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Tres triángulos",
+       "texto": "Miramos el ángulo más grande.",
+       "items": [
+        "60°, 60° y 60°: todos agudos, es acutángulo.",
+        "90°, 45° y 45°: tiene uno recto, es rectángulo.",
+        "120°, 30° y 30°: tiene uno obtuso, es obtusángulo."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Un triángulo, dos nombres",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Todo triángulo tiene <b>un nombre por sus lados y otro por sus ángulos</b>, al mismo tiempo. El de 90°, 45° y 45° tiene dos lados iguales: es <b>rectángulo isósceles</b>. Uno con ángulos de 100°, 50° y 30° y los tres lados distintos es <b>obtusángulo escaleno</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Nombre completo",
+       "texto": "Lados 6, 6 y 6 cm.",
+       "items": [
+        "Por sus lados: los tres iguales, equilátero.",
+        "Por sus ángulos: cada uno mide 60°, todos agudos, acutángulo.",
+        "Nombre completo: equilátero acutángulo."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "La desigualdad triangular",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "No con cualquier medida se arma un triángulo. <b>Cada lado tiene que ser menor que la suma de los otros dos</b>. Alcanza con mirar el lado más largo: si es menor que la suma de los otros dos, se puede."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "¿Se puede?",
+       "texto": "Probamos el lado más largo.",
+       "items": [
+        "3, 4 y 8 cm: 3 + 4 = 7, menor que 8. No se puede.",
+        "5, 6 y 9 cm: 5 + 6 = 11, mayor que 9. Se puede.",
+        "2, 3 y 5 cm: 2 + 3 = 5, igual a 5. No se puede: los lados quedan acostados."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "lados de 5, 5 y 8 cm",
+    "planteo": "¿Se puede construir un triángulo con lados de 5, 5 y 8 cm? Si se puede, clasificalo por sus lados y por sus ángulos (su ángulo mayor mide unos 106°).",
+    "pasos": [
+     "Lado más largo: 8. Suma de los otros: 5 + 5 = 10.",
+     "8 es menor que 10: se puede construir.",
+     "Tiene dos lados iguales: es isósceles.",
+     "Su ángulo mayor, de unos 106°, es obtuso: es obtusángulo.",
+     "Nombre completo: isósceles obtusángulo."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "lados de 7, 7 y 7 cm",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "7 es menor que 7 + 7 = ___ : se puede.",
+     "Los tres lados son iguales: es ___ .",
+     "Cada ángulo mide 60°: es ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "4, 6 y 11 cm",
+    "planteo": "¿Se puede construir un triángulo con lados de 4, 6 y 11 cm? Justificá."
+   },
+   "tip": {
+    "titulo": "Empezá por el más largo",
+    "texto": "Para la desigualdad triangular no hace falta probar los tres lados: si el más largo es menor que la suma de los otros dos, ya está."
+   },
+   "ojo": [
+    "Creer que un triángulo tiene un solo nombre: siempre tiene uno por lados y otro por ángulos.",
+    "Aceptar tres medidas sin probar: con 3, 4 y 8 cm no hay triángulo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Por lados",
+     "texto": "Equilátero, isósceles, escaleno."
+    },
+    {
+     "titulo": "Por ángulos",
+     "texto": "Acutángulo, rectángulo, obtusángulo."
+    },
+    {
+     "titulo": "Dos nombres",
+     "texto": "90°, 45°, 45°: rectángulo isósceles."
+    },
+    {
+     "titulo": "Desigualdad",
+     "texto": "El lado mayor, menor que la suma de los otros."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Equilátero",
+     "significado": "Con los tres lados iguales."
+    },
+    {
+     "palabra": "Isósceles",
+     "significado": "Con dos lados iguales."
+    },
+    {
+     "palabra": "Escaleno",
+     "significado": "Con los tres lados distintos."
+    },
+    {
+     "palabra": "Acutángulo",
+     "significado": "Con los tres ángulos agudos."
+    },
+    {
+     "palabra": "Obtusángulo",
+     "significado": "Con un ángulo obtuso."
+    },
+    {
+     "palabra": "Desigualdad triangular",
+     "significado": "Regla que dice si tres medidas forman un triángulo."
+    }
+   ],
+   "carpeta": [
+    "Un triángulo tiene lados de 8, 8 y 5 cm. ¿Cómo se clasifica según sus lados?",
+    "Un triángulo tiene ángulos de 90°, 35° y 55°. ¿Cómo se clasifica según sus ángulos?",
+    "¿Se puede construir un triángulo con lados de 3, 5 y 9 cm? Respondé sí o no.",
+    "Un compañero dice que un triángulo equilátero no puede ser acutángulo. ¿Cuántos grados mide cada ángulo de un equilátero?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "isosceles",
+     "isósceles"
+    ],
+    [
+     "rectangulo",
+     "rectángulo"
+    ],
+    [
+     "no"
+    ],
+    [
+     "60",
+     "60°"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "14. Equilátero. Acutángulo.",
+    "solo": "No: 4 + 6 = 10, que es menor que 11.",
+    "carpeta": [
+     "Isósceles: tiene dos lados iguales.",
+     "Rectángulo: tiene un ángulo de 90°.",
+     "No: 3 + 5 = 8, menor que 9.",
+     "60°: los tres ángulos son agudos, así que el equilátero siempre es acutángulo."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Según sus lados y sus ángulos",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "clasificar"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Clasificar triángulos",
+        "texto": "Según sus lados, un triángulo es equilátero (tres lados iguales), isósceles (dos iguales) o escaleno (todos distintos); según sus ángulos, es acutángulo, rectángulo u obtusángulo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un triángulo tiene siempre dos nombres, uno por los lados y otro por los ángulos: un triángulo con ángulos de 90°, 45° y 45° es rectángulo isósceles. Un triángulo rectángulo tiene un ángulo recto y uno obtusángulo tiene un ángulo obtuso; nunca puede tener dos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Lados: equilátero, isósceles, escaleno.",
+         "Ángulos: acutángulo, rectángulo, obtusángulo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Un triángulo, dos nombres",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "clasificar"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Dos clasificaciones a la vez",
+        "texto": "Las dos clasificaciones se combinan: un mismo triángulo se nombra por sus lados y por sus ángulos, y algunas combinaciones no existen."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un triángulo equilátero tiene sus tres ángulos de 60°, así que siempre es acutángulo: no existe un equilátero rectángulo. En cambio, un rectángulo puede ser isósceles o escaleno. Para nombrarlo completo, primero se miran los ángulos y después se comparan los lados."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Equilátero → siempre acutángulo.",
+         "Rectángulo isósceles: sí existe."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La desigualdad triangular",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "geometria_x",
+       "p": {
+        "modo": "triangulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Desigualdad triangular",
+        "texto": "En todo triángulo, cada lado es menor que la suma de los otros dos; por eso alcanza con verificar que el lado más largo sea menor que la suma de los otros dos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con 2, 3 y 7 cm no se puede armar un triángulo: 2 + 3 = 5, que es menos que 7, y los lados cortos no llegan a juntarse. Con 5, 7 y 10 sí, porque 5 + 7 = 12 es más que 10. Si la suma da justo igual, los lados quedan acostados sobre el largo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Lado mayor < suma de los otros dos.",
+         "2, 3 y 7: no se puede."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Según sus lados",
+      "definicion": "un triángulo puede ser equilátero, isósceles o escaleno, según cuántos lados iguales tenga.",
+      "ejemplo": "5, 5 y 5 cm: equilátero"
+     },
+     {
+      "concepto": "Según sus ángulos",
+      "definicion": "un triángulo puede ser acutángulo, rectángulo u obtusángulo, según su ángulo mayor.",
+      "ejemplo": "90°, 60° y 30°: rectángulo"
+     },
+     {
+      "concepto": "Todo triángulo",
+      "definicion": "tiene dos nombres, uno por sus lados y otro por sus ángulos.",
+      "ejemplo": "90°, 45° y 45°: rectángulo isósceles"
+     },
+     {
+      "concepto": "Un triángulo se puede construir",
+      "definicion": "solo si el lado más largo es menor que la suma de los otros dos.",
+      "ejemplo": "5, 7 y 10 cm: sí"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "recordar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder usar que los ángulos interiores de un triángulo suman 180° y la propiedad del ángulo exterior para calcular ángulos que faltan.",
+   "vas_a_ver": [
+    "Los ángulos interiores suman 180°",
+    "Calcular el ángulo que falta",
+    "El ángulo exterior",
+    "Isósceles y equiláteros",
+    "Ángulos con ecuaciones"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La suma es 180°",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Suma de los ángulos interiores",
+       "texto": "En <b>todo triángulo</b>, los tres ángulos interiores <b>suman 180°</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Si recortás las tres puntas de un triángulo de papel y las juntás por el vértice, forman un ángulo llano: 180°. Ejemplo: 50° + 60° + 70° = 180°."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El ángulo que falta",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Calcular un ángulo",
+       "texto": "Si conocés dos ángulos, el tercero es <b>180° menos la suma de los otros dos</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Ángulos de 45° y 75°",
+       "texto": "Sumamos y restamos de 180°.",
+       "items": [
+        "45° + 75° = 120°.",
+        "180° − 120° = 60°.",
+        "El tercer ángulo mide 60°."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "El ángulo exterior",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Si se prolonga un lado, se forma un <b>ángulo exterior</b>: es el adyacente a un ángulo interior, así que suman 180°. Además, el exterior es igual a la <b>suma de los dos interiores que no están pegados a él</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Ángulo exterior",
+       "texto": "Junto al 70° se forma un exterior de 110°, que es 50° + 60°.",
+       "imagen_descripcion": "Triángulo con ángulos de 50°, 60° y 70° y el ángulo exterior de 110° marcado al prolongar un lado.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Interiores de 50°, 60° y 70°",
+       "texto": "Exterior junto al de 70°.",
+       "items": [
+        "Por adyacente: 180° − 70° = 110°.",
+        "Por la propiedad: 50° + 60° = 110°.",
+        "Las dos cuentas dan lo mismo."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Isósceles y equiláteros",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En el <b>equilátero</b> los tres ángulos son iguales: 180° ÷ 3 = 60°. En el <b>isósceles</b>, los dos ángulos que están frente a los lados iguales son iguales."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Isósceles con un ángulo desigual de 40°",
+       "texto": "Lo que queda se reparte entre los dos iguales.",
+       "items": [
+        "180° − 40° = 140°.",
+        "140° ÷ 2 = 70°.",
+        "Los ángulos miden 40°, 70° y 70°."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Con ecuaciones",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Si los ángulos se dan con letras, se plantea que suman 180°. Con x, 2x y 3x: x + 2x + 3x = 180, o sea 6x = 180 y x = 30. Los ángulos miden 30°, 60° y 90°."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "el isósceles de 36°",
+    "planteo": "En un triángulo isósceles, el ángulo desigual mide 36°. ¿Cuánto miden los otros dos?",
+    "pasos": [
+     "Los otros dos ángulos son iguales.",
+     "Entre los dos suman 180° − 36° = 144°.",
+     "Cada uno mide 144° ÷ 2 = 72°.",
+     "Verificación: 36° + 72° + 72° = 180°."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "ángulos de 48° y 67°",
+    "planteo": "Completá los espacios para hallar el tercer ángulo.",
+    "pasos": [
+     "48° + 67° = ___ .",
+     "180° − 115° = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "x, x + 20 y 2x",
+    "planteo": "Los ángulos de un triángulo miden x, x + 20° y 2x. ¿Cuánto vale x?"
+   },
+   "tip": {
+    "titulo": "Verificá sumando",
+    "texto": "Cuando termines, sumá los tres ángulos: si no da 180°, hay un error de cuenta."
+   },
+   "ojo": [
+    "Confundir ángulo interior con exterior: el exterior está afuera, pegado a un lado prolongado.",
+    "Olvidar que la suma es 180° y restar de 360°."
+   ],
+   "resumen": [
+    {
+     "titulo": "Suma",
+     "texto": "Los interiores suman 180°."
+    },
+    {
+     "titulo": "El que falta",
+     "texto": "180° − la suma de los otros dos."
+    },
+    {
+     "titulo": "Exterior",
+     "texto": "Suma de los dos interiores no pegados."
+    },
+    {
+     "titulo": "Equilátero",
+     "texto": "60°, 60° y 60°."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Ángulo interior",
+     "significado": "Ángulo de adentro del triángulo."
+    },
+    {
+     "palabra": "Ángulo exterior",
+     "significado": "El que se forma al prolongar un lado."
+    },
+    {
+     "palabra": "Prolongar",
+     "significado": "Alargar un lado con una línea."
+    },
+    {
+     "palabra": "Adyacente",
+     "significado": "Ángulo pegado que suma 180° con otro."
+    },
+    {
+     "palabra": "Desigual",
+     "significado": "El ángulo distinto en un isósceles."
+    }
+   ],
+   "carpeta": [
+    "Dos ángulos de un triángulo miden 35° y 85°. ¿Cuánto mide el tercero?",
+    "¿Cuánto mide el ángulo exterior adyacente a un ángulo interior de 72°?",
+    "Los dos ángulos interiores no adyacentes a un ángulo exterior miden 40° y 75°. ¿Cuánto mide ese ángulo exterior?",
+    "Un compañero dice que un triángulo puede tener dos ángulos rectos. ¿Cuántos grados sumarían esos dos ángulos solos?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "60",
+     "60°"
+    ],
+    [
+     "108",
+     "108°"
+    ],
+    [
+     "115",
+     "115°"
+    ],
+    [
+     "180",
+     "180°"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "115°. 65°.",
+    "solo": "x + x + 20 + 2x = 180, 4x = 160, x = 40. Los ángulos miden 40°, 60° y 80°.",
+    "carpeta": [
+     "60°: 180° − (35° + 85°).",
+     "108°: 180° − 72°.",
+     "115°: 40° + 75°.",
+     "180°: ya sumarían todo, y el tercer ángulo mediría 0°. Es imposible."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La suma es 180° y el ángulo que falta",
+      "ejemplo": {
+       "motor": "triangulo",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "angulo_falta",
+       "p": {
+        "modo": "triangulo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Suma de los ángulos interiores",
+        "texto": "Los tres ángulos interiores de cualquier triángulo suman 180°; por eso, si se conocen dos, el tercero se calcula restando su suma a 180°."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si se recortan las tres puntas de un triángulo de papel y se juntan, forman un ángulo llano. Con ángulos de 47° y 68°, el tercero mide 180° − 47° − 68° = 65°. Si los dos ángulos conocidos ya suman 180° o más, ese triángulo no existe."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "A + B + C = 180°.",
+         "47° y 68° → 65°."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El ángulo exterior",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "exterior"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "exterior"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ángulo exterior",
+        "texto": "Un ángulo exterior de un triángulo es el que forma un lado con la prolongación de otro; es adyacente a un ángulo interior y mide lo mismo que la suma de los dos interiores no adyacentes."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Como el exterior y su interior adyacente suman 180°, y los tres interiores también suman 180°, el exterior es igual a los otros dos interiores juntos. Si los no adyacentes miden 35° y 80°, el exterior mide 115°."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Exterior + interior adyacente = 180°.",
+         "Exterior = suma de los no adyacentes."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Isósceles, equiláteros y ecuaciones",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "isosceles"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "isosceles"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Triángulos isósceles y equiláteros",
+        "texto": "En un triángulo isósceles los ángulos de la base son iguales; en un equilátero, los tres ángulos miden 60°."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si el ángulo desigual de un isósceles mide 50°, los otros dos se reparten 130°: 65° cada uno. Cuando los ángulos están escritos con letras, como x, 2x y 3x, se plantea que suman 180°: 6x = 180°, x = 30°."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Isósceles: (180° − desigual) ÷ 2.",
+         "x + 2x + 3x = 180° → x = 30°."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Los ángulos interiores de un triángulo",
+      "definicion": "suman siempre 180°, sea cual sea la forma o el tamaño del triángulo.",
+      "ejemplo": "47° + 68° + 65° = 180°"
+     },
+     {
+      "concepto": "Un ángulo exterior de un triángulo",
+      "definicion": "mide lo mismo que la suma de los dos interiores no adyacentes.",
+      "ejemplo": "35° + 80° = 115°"
+     },
+     {
+      "concepto": "En un triángulo isósceles",
+      "definicion": "los dos ángulos de la base son iguales entre sí.",
+      "ejemplo": "Desigual 50° → 65° y 65°"
+     },
+     {
+      "concepto": "Si los ángulos se escriben con letras",
+      "definicion": "se plantea una ecuación igualando la suma de los tres ángulos a 180°.",
+      "ejemplo": "x + 2x + 3x = 180° → x = 30°"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder reconocer y clasificar cuadriláteros, y usar las propiedades de los lados y los ángulos de los paralelogramos.",
+   "vas_a_ver": [
+    "Qué es un cuadrilátero",
+    "Paralelogramos, trapecios y trapezoides",
+    "Rectángulo, rombo y cuadrado",
+    "Uno dentro de otro",
+    "Lados y ángulos del paralelogramo"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Cuadriláteros",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Cuadrilátero",
+       "texto": "Un <b>cuadrilátero</b> es un polígono de <b>4 lados</b>, con 4 vértices y 4 ángulos. Se clasifican según cuántos pares de <b>lados paralelos</b> tienen."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Según los lados paralelos",
+       "columnas": [
+        "Pares de lados paralelos",
+        "Se llama"
+       ],
+       "filas": [
+        [
+         "Dos pares",
+         "Paralelogramo"
+        ],
+        [
+         "Un par",
+         "Trapecio"
+        ],
+        [
+         "Ninguno",
+         "Trapezoide"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Se miran los lados opuestos: los que no se tocan."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "La familia de los paralelogramos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Paralelogramos especiales",
+       "texto": "El <b>rectángulo</b> es un paralelogramo con <b>4 ángulos rectos</b>. El <b>rombo</b> es un paralelogramo con <b>4 lados iguales</b>. El <b>cuadrado</b> tiene las dos cosas: 4 ángulos rectos y 4 lados iguales."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Cuadriláteros",
+       "texto": "Los cuatro primeros tienen dos pares de lados paralelos; el trapecio, uno solo.",
+       "imagen_descripcion": "Un paralelogramo, un rectángulo, un rombo, un cuadrado y un trapecio.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Uno dentro de otro",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las familias se incluyen: todo cuadrado <b>es</b> un rectángulo (tiene 4 ángulos rectos) y también <b>es</b> un rombo (tiene 4 lados iguales). Y todo rectángulo y todo rombo son paralelogramos. Al revés no: no todo rectángulo es cuadrado."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "¿Es o no es?",
+       "texto": "Se controlan las propiedades, no la apariencia.",
+       "items": [
+        "¿Un cuadrado es un rectángulo? Sí: tiene 4 ángulos rectos.",
+        "¿Un rombo es un cuadrado? Solo si además tiene ángulos rectos.",
+        "¿Un rectángulo es un paralelogramo? Sí: tiene dos pares de lados paralelos."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Lados y ángulos del paralelogramo",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En todo paralelogramo, los <b>lados opuestos son iguales</b> y los <b>ángulos opuestos son iguales</b>. Además, dos ángulos <b>consecutivos suman 180°</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Un ángulo de 70°",
+       "texto": "Usamos opuestos y consecutivos.",
+       "items": [
+        "Su opuesto mide 70°.",
+        "Su consecutivo mide 180° − 70° = 110°.",
+        "Los cuatro ángulos: 70°, 110°, 70° y 110°."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "¿qué cuadrilátero es?",
+    "planteo": "Un cuadrilátero tiene dos pares de lados paralelos, sus 4 lados miden 5 cm y sus ángulos miden 60°, 120°, 60° y 120°. ¿Qué cuadrilátero es?",
+    "pasos": [
+     "Dos pares de lados paralelos: es un paralelogramo.",
+     "Los 4 lados iguales: es un rombo.",
+     "No tiene ángulos rectos: no es cuadrado.",
+     "Es un rombo."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "un ángulo de 65°",
+    "planteo": "En un paralelogramo un ángulo mide 65°. Completá los espacios.",
+    "pasos": [
+     "Su ángulo opuesto mide ___ .",
+     "Su ángulo consecutivo mide 180° − 65° = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "un ángulo recto",
+    "planteo": "Un paralelogramo de lados 6 cm y 4 cm tiene un ángulo de 90°. ¿Cuánto miden los otros tres ángulos y qué paralelogramo es?"
+   },
+   "tip": {
+    "titulo": "Propiedades, no apariencia",
+    "texto": "Un cuadrado dibujado inclinado sigue siendo un cuadrado. Clasificá mirando lados y ángulos, no cómo está girado."
+   },
+   "ojo": [
+    "Creer que el cuadrado no es un rectángulo: tiene 4 ángulos rectos, así que sí lo es.",
+    "Confundir rombo con cuadrado: el rombo no necesita ángulos rectos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Paralelogramo",
+     "texto": "Dos pares de lados paralelos."
+    },
+    {
+     "titulo": "Trapecio",
+     "texto": "Un solo par de lados paralelos."
+    },
+    {
+     "titulo": "Rectángulo y rombo",
+     "texto": "4 ángulos rectos; 4 lados iguales."
+    },
+    {
+     "titulo": "Cuadrado",
+     "texto": "Es rectángulo y rombo a la vez."
+    },
+    {
+     "titulo": "Ángulos",
+     "texto": "Opuestos iguales, consecutivos suman 180°."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Cuadrilátero",
+     "significado": "Figura de 4 lados."
+    },
+    {
+     "palabra": "Paralelogramo",
+     "significado": "Cuadrilátero con dos pares de lados paralelos."
+    },
+    {
+     "palabra": "Trapecio",
+     "significado": "Cuadrilátero con un solo par de lados paralelos."
+    },
+    {
+     "palabra": "Trapezoide",
+     "significado": "Cuadrilátero sin lados paralelos."
+    },
+    {
+     "palabra": "Rombo",
+     "significado": "Paralelogramo con 4 lados iguales."
+    },
+    {
+     "palabra": "Lados opuestos",
+     "significado": "Los que no se tocan."
+    }
+   ],
+   "carpeta": [
+    "¿Cómo se llama el cuadrilátero que tiene un solo par de lados paralelos?",
+    "En un paralelogramo un ángulo mide 80°. ¿Cuánto mide su ángulo consecutivo?",
+    "¿Cuántos lados iguales tiene un rombo?",
+    "Un compañero dice que el cuadrado no es un rectángulo. ¿Cuántos ángulos rectos tiene un cuadrado?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "trapecio"
+    ],
+    [
+     "100",
+     "100°"
+    ],
+    [
+     "4",
+     "cuatro"
+    ],
+    [
+     "4",
+     "cuatro"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "65°. 115°.",
+    "solo": "Los cuatro miden 90° (opuesto 90° y consecutivos 180° − 90° = 90°). Como sus lados no son todos iguales, es un rectángulo.",
+    "carpeta": [
+     "Trapecio.",
+     "100°: los consecutivos suman 180°.",
+     "4: todos sus lados son iguales.",
+     "4: por eso el cuadrado también es un rectángulo."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Cuadriláteros",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "cuadrilateros"
+       }
+      },
+      "ejercicio": {
+       "motor": "angulo_falta",
+       "p": {
+        "modo": "cuadrilatero"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Clasificar cuadriláteros",
+        "texto": "Los cuadriláteros se clasifican por sus lados paralelos: el trapezoide no tiene ninguno, el trapecio tiene un solo par y el paralelogramo tiene dos pares."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Dentro de los paralelogramos hay tres especiales: el rectángulo, con cuatro ángulos rectos; el rombo, con cuatro lados iguales; y el cuadrado, que tiene las dos cosas. Por eso todo cuadrado es rectángulo y también es rombo, pero no al revés."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "0 pares: trapezoide. 1 par: trapecio.",
+         "2 pares: paralelogramo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Uno dentro de otro",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "cuadrilateros"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "diagonales"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Inclusión",
+        "texto": "Una figura está incluida en otra cuando cumple todas sus propiedades: el cuadrado está incluido en los rectángulos y en los rombos, y estos en los paralelogramos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para saber si una frase como «todo rombo es un cuadrado» es verdadera, se piensa si siempre se cumple: un rombo puede no tener ángulos rectos, así que es falsa. En cambio, «todo cuadrado es un rombo» es verdadera, porque el cuadrado tiene los cuatro lados iguales."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Todo cuadrado es rombo: verdadero.",
+         "Todo rombo es cuadrado: falso."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Lados y ángulos del paralelogramo",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "paralelogramo"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "paralelogramo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Propiedades del paralelogramo",
+        "texto": "En un paralelogramo los lados opuestos son iguales, los ángulos opuestos son iguales y los ángulos consecutivos suman 180°."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con un solo ángulo se conocen los cuatro. Si un ángulo mide 55°, el opuesto también mide 55° y los otros dos miden 125°. Los cuatro juntos suman 360°, como en cualquier cuadrilátero. Así se completan figuras rápido."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Opuestos: iguales.",
+         "Consecutivos: suman 180°."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Los cuadriláteros",
+      "definicion": "se clasifican en trapezoides, trapecios y paralelogramos según sus pares de lados paralelos.",
+      "ejemplo": "Trapecio: un solo par"
+     },
+     {
+      "concepto": "El rectángulo, el rombo y el cuadrado",
+      "definicion": "son paralelogramos especiales, y el cuadrado es rectángulo y rombo a la vez.",
+      "ejemplo": "Todo cuadrado es rombo"
+     },
+     {
+      "concepto": "En un paralelogramo",
+      "definicion": "los ángulos opuestos son iguales y los consecutivos suman 180°.",
+      "ejemplo": "55° y 125°"
+     },
+     {
+      "concepto": "Una frase con «todo»",
+      "definicion": "es verdadera solo si se cumple siempre, sin ninguna excepción.",
+      "ejemplo": "Todo rombo es cuadrado: falso"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "recordar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a poder usar las propiedades de las diagonales de los paralelogramos y que los ángulos de un cuadrilátero suman 360°.",
+   "vas_a_ver": [
+    "Qué es una diagonal",
+    "Diagonales del paralelogramo",
+    "Rectángulo, rombo y cuadrado",
+    "Los ángulos suman 360°",
+    "Construir con diagonales"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Diagonales",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Diagonal",
+       "texto": "Una <b>diagonal</b> es el segmento que une <b>dos vértices que no son consecutivos</b>. Todo cuadrilátero tiene <b>2 diagonales</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "En el cuadrilátero ABCD, las diagonales son AC y BD. AB no es diagonal: es un lado, porque A y B son consecutivos."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Diagonales del paralelogramo",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Se cortan en su punto medio",
+       "texto": "En todo paralelogramo, las diagonales <b>se cortan en su punto medio</b>: cada diagonal queda partida en dos partes iguales."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Una diagonal de 10 cm",
+       "texto": "El punto de corte la divide en dos.",
+       "items": [
+        "10 ÷ 2 = 5.",
+        "Cada mitad mide 5 cm."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Rectángulo, rombo y cuadrado",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Sus diagonales",
+       "columnas": [
+        "Cuadrilátero",
+        "Iguales",
+        "Perpendiculares"
+       ],
+       "filas": [
+        [
+         "Paralelogramo común",
+         "No",
+         "No"
+        ],
+        [
+         "Rectángulo",
+         "Sí",
+         "No"
+        ],
+        [
+         "Rombo",
+         "No",
+         "Sí"
+        ],
+        [
+         "Cuadrado",
+         "Sí",
+         "Sí"
+        ]
+       ],
+       "iguales": true,
+       "texto": "En los cuatro, además, se cortan en su punto medio."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "Diagonales",
+       "texto": "En el rectángulo son iguales; en el rombo, perpendiculares; en el cuadrado, las dos cosas.",
+       "imagen_descripcion": "Un rectángulo, un rombo y un cuadrado con sus diagonales y el ángulo recto marcado donde corresponde.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Los ángulos suman 360°",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Una diagonal divide al cuadrilátero en <b>dos triángulos</b>. Cada uno suma 180°, así que los ángulos de un cuadrilátero suman <b>2 × 180° = 360°</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Ángulos de 80°, 95° y 110°",
+       "texto": "Falta el cuarto.",
+       "items": [
+        "80° + 95° + 110° = 285°.",
+        "360° − 285° = 75°.",
+        "El cuarto ángulo mide 75°."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Construir con diagonales",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Un rombo de diagonales 6 cm y 4 cm: se trazan dos segmentos perpendiculares de 6 y 4 cm que se cortan en sus puntos medios (a 3 cm y a 2 cm de cada punta) y se unen los cuatro extremos."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "diagonales de 8 cm",
+    "planteo": "Las diagonales de un cuadrilátero miden 8 cm las dos, se cortan en su punto medio y son perpendiculares. ¿Qué cuadrilátero es? ¿Cuánto mide cada mitad de diagonal?",
+    "pasos": [
+     "Se cortan en su punto medio: es un paralelogramo.",
+     "Son iguales: es un rectángulo.",
+     "Son perpendiculares: es un rombo.",
+     "Las dos cosas: es un cuadrado.",
+     "Cada mitad mide 8 ÷ 2 = 4 cm."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "ángulos de 100°, 70° y 110°",
+    "planteo": "Completá los espacios para hallar el cuarto ángulo.",
+    "pasos": [
+     "100° + 70° + 110° = ___ .",
+     "360° − 280° = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el rombo",
+    "planteo": "Un rombo tiene diagonales de 10 cm y 6 cm. ¿A cuántos cm del centro está cada extremo de la diagonal más corta?"
+   },
+   "tip": {
+    "titulo": "Pensá en dos triángulos",
+    "texto": "Si te olvidás cuánto suman los ángulos de un cuadrilátero, trazá una diagonal: son dos triángulos, 180° + 180°."
+   },
+   "ojo": [
+    "Pensar que las diagonales siempre son perpendiculares: en el rectángulo común no lo son.",
+    "Olvidar que los ángulos del cuadrilátero suman 360°, no 180°."
+   ],
+   "resumen": [
+    {
+     "titulo": "Diagonal",
+     "texto": "Une vértices no consecutivos."
+    },
+    {
+     "titulo": "Paralelogramo",
+     "texto": "Se cortan en su punto medio."
+    },
+    {
+     "titulo": "Rectángulo y rombo",
+     "texto": "Iguales; perpendiculares."
+    },
+    {
+     "titulo": "Cuadrado",
+     "texto": "Iguales y perpendiculares."
+    },
+    {
+     "titulo": "Ángulos",
+     "texto": "Suman 360°."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Diagonal",
+     "significado": "Segmento entre dos vértices no consecutivos."
+    },
+    {
+     "palabra": "Punto medio",
+     "significado": "El que parte un segmento en dos partes iguales."
+    },
+    {
+     "palabra": "Perpendiculares",
+     "significado": "Que se cortan formando ángulos rectos."
+    },
+    {
+     "palabra": "Consecutivos",
+     "significado": "Vértices que están uno al lado del otro."
+    },
+    {
+     "palabra": "Extremo",
+     "significado": "Cada punta de un segmento."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto suman los ángulos interiores de un cuadrilátero?",
+    "Tres ángulos de un cuadrilátero miden 90°, 90° y 120°. ¿Cuánto mide el cuarto?",
+    "Una diagonal de un rectángulo mide 14 cm. ¿Cuánto mide la otra?",
+    "Un compañero dice que las diagonales de un rectángulo siempre son perpendiculares. ¿En cuál de estos sí lo son siempre: rectángulo o rombo?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "360",
+     "360°"
+    ],
+    [
+     "60",
+     "60°"
+    ],
+    [
+     "14",
+     "14cm",
+     "14 cm"
+    ],
+    [
+     "rombo"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "280°. 80°.",
+    "solo": "A 3 cm: la diagonal corta mide 6 cm y se corta en su punto medio.",
+    "carpeta": [
+     "360°: dos triángulos de 180°.",
+     "60°: 360° − 300°.",
+     "14 cm: en el rectángulo las diagonales son iguales.",
+     "Rombo: en el rectángulo común las diagonales no son perpendiculares."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Diagonales",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "diagonales"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "diagonales"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Diagonales",
+        "texto": "Una diagonal es el segmento que une dos vértices no consecutivos; todo cuadrilátero tiene dos. En los paralelogramos, las diagonales se cortan en su punto medio."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las diagonales permiten reconocer los paralelogramos especiales: en el rectángulo son iguales, en el rombo son perpendiculares y en el cuadrado son iguales y perpendiculares. Si una diagonal de un paralelogramo mide 18 cm, la otra la corta en dos partes de 9 cm."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Rectángulo: iguales. Rombo: perpendiculares.",
+         "Cuadrado: iguales y perpendiculares."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Los ángulos suman 360°",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "suma360"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "suma360"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Suma de los ángulos de un cuadrilátero",
+        "texto": "Los cuatro ángulos interiores de cualquier cuadrilátero suman 360°, porque una diagonal lo divide en dos triángulos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada triángulo aporta 180°, y 2 × 180° = 360°. Si tres ángulos miden 85°, 95° y 100°, el cuarto mide 360° − 280° = 80°. Esto vale para todos los cuadriláteros, también para los trapezoides. Se verifica sumando los cuatro."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "2 triángulos → 360°.",
+         "360° − 85° − 95° − 100° = 80°."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Construir con diagonales",
+      "ejemplo": {
+       "motor": "figuras",
+       "p": {
+        "modo": "diagonales"
+       }
+      },
+      "ejercicio": {
+       "motor": "figuras_x",
+       "p": {
+        "modo": "diagonales"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Construir con diagonales",
+        "texto": "Para construir un paralelogramo especial se pueden trazar primero sus diagonales con las propiedades que corresponden y después unir sus extremos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para un rombo se trazan dos segmentos perpendiculares que se corten en su punto medio; para un rectángulo, dos segmentos iguales que se corten en su punto medio sin ser perpendiculares. Uniendo los cuatro extremos aparece la figura, y al final se verifica midiendo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Rombo: diagonales perpendiculares.",
+         "Rectángulo: diagonales iguales."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Una diagonal",
+      "definicion": "es el segmento que une dos vértices no consecutivos de un polígono.",
+      "ejemplo": "Todo cuadrilátero tiene 2"
+     },
+     {
+      "concepto": "En todo paralelogramo",
+      "definicion": "las dos diagonales se cortan exactamente en su punto medio.",
+      "ejemplo": "Diagonal de 18 cm → 9 y 9"
+     },
+     {
+      "concepto": "Las diagonales del rectángulo",
+      "definicion": "son iguales; las del rombo son perpendiculares; las del cuadrado, las dos cosas.",
+      "ejemplo": "Cuadrado: iguales y perpendiculares"
+     },
+     {
+      "concepto": "Los ángulos de un cuadrilátero",
+      "definicion": "suman siempre 360°, porque se puede partir en dos triángulos.",
+      "ejemplo": "85° + 95° + 100° + 80° = 360°"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "Clasificá cada triángulo según sus lados.",
+    "o": {
+     "elementos": [
+      "5, 5 y 5 cm",
+      "6, 6 y 4 cm",
+      "3, 4 y 5 cm",
+      "7, 7 y 2 cm"
+     ],
+     "categorias": [
+      "Equilátero",
+      "Isósceles",
+      "Escaleno"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "5, 5 y 5 cm": "Equilátero",
+      "6, 6 y 4 cm": "Isósceles",
+      "3, 4 y 5 cm": "Escaleno",
+      "7, 7 y 2 cm": "Isósceles"
+     }
+    },
+    "e": "Se cuenta cuántos lados son iguales: tres, dos o ninguno.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Con cuál de estas medidas se puede construir un triángulo?",
+    "o": [
+     "2, 3 y 7 cm",
+     "4, 4 y 9 cm",
+     "5, 7 y 10 cm",
+     "1, 2 y 3 cm"
+    ],
+    "r": {
+     "correcta": "5, 7 y 10 cm"
+    },
+    "e": "El lado mayor tiene que ser menor que la suma de los otros dos: 10 < 5 + 7 = 12.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada triángulo según sus ángulos.",
+    "o": {
+     "elementos": [
+      "60°, 60° y 60°",
+      "90°, 50° y 40°",
+      "120°, 30° y 30°",
+      "70°, 60° y 50°",
+      "100°, 45° y 35°"
+     ],
+     "categorias": [
+      "Acutángulo",
+      "Rectángulo",
+      "Obtusángulo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "60°, 60° y 60°": "Acutángulo",
+      "90°, 50° y 40°": "Rectángulo",
+      "120°, 30° y 30°": "Obtusángulo",
+      "70°, 60° y 50°": "Acutángulo",
+      "100°, 45° y 35°": "Obtusángulo"
+     }
+    },
+    "e": "Mirá el ángulo mayor: menor que 90°, igual o mayor."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Tomás decidió si se puede armar un triángulo con 3, 5 y 9 cm. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "El lado más largo es 9",
+      "3 + 5 = 8",
+      "8 está cerca de 9, así que se puede"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      2
+     ]
+    },
+    "e": "8 es menor que 9: los lados cortos no llegan. No se puede."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "Dos ángulos de un triángulo miden {a}° y {b}°. ¿Cuánto mide el tercero?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 25,
+       "max": 80
+      },
+      "b": {
+       "min": 25,
+       "max": 80
+      }
+     }
+    },
+    "r": {
+     "formula": "180-a-b"
+    },
+    "e": "Los tres suman 180°: se resta la suma de los dos.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "¿Cuánto mide el ángulo exterior adyacente a un ángulo interior de {a}°?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 30,
+       "max": 150
+      }
+     }
+    },
+    "r": {
+     "formula": "180-a"
+    },
+    "e": "El exterior y su interior adyacente suman 180°.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para resolver: los ángulos de un triángulo miden x, 2x y 3x.",
+    "o": [
+     "6x = 180°",
+     "x + 2x + 3x = 180°",
+     "Los ángulos miden 30°, 60° y 90°",
+     "x = 30°"
+    ],
+    "r": {
+     "orden": [
+      "x + 2x + 3x = 180°",
+      "6x = 180°",
+      "x = 30°",
+      "Los ángulos miden 30°, 60° y 90°"
+     ]
+    },
+    "e": "Plantear, juntar semejantes, despejar e interpretar."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Dos ángulos de un triángulo miden 40° y 75°. Tres chicos calcularon el ángulo exterior adyacente al tercero. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | 180° − 40° − 75° | 65°",
+     "Beto: | suma de los no adyacentes | 115°",
+     "Caro: | 360° − 40° − 75° | 245°"
+    ],
+    "r": {
+     "correcta": "Beto: | suma de los no adyacentes | 115°"
+    },
+    "e": "Ana calculó el interior, no el exterior."
+   }
+  ],
+  "3": [
+   {
+    "t": "multi_select",
+    "p": "¿Cuáles de estas frases son verdaderas?",
+    "o": [
+     "Todo cuadrado es un rectángulo",
+     "Todo rombo es un cuadrado",
+     "Todo rectángulo es un paralelogramo",
+     "Un trapecio tiene dos pares de lados paralelos"
+    ],
+    "r": {
+     "correctas": [
+      "Todo cuadrado es un rectángulo",
+      "Todo rectángulo es un paralelogramo"
+     ]
+    },
+    "e": "El cuadrado tiene 4 ángulos rectos; el rombo no siempre; el trapecio tiene un solo par de lados paralelos.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "En un paralelogramo un ángulo mide {a}°. ¿Cuánto mide su ángulo consecutivo?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 40,
+       "max": 140
+      }
+     },
+     "reglas": [
+      "a!=90"
+     ]
+    },
+    "r": {
+     "formula": "180-a"
+    },
+    "e": "Los ángulos consecutivos de un paralelogramo suman 180°.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada cuadrilátero con su descripción.",
+    "o": {
+     "izquierda": [
+      "Trapezoide",
+      "Trapecio",
+      "Rombo",
+      "Rectángulo"
+     ],
+     "derecha": [
+      "Ningún par de lados paralelos",
+      "Un solo par de lados paralelos",
+      "Paralelogramo con 4 lados iguales",
+      "Paralelogramo con 4 ángulos rectos"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Trapezoide": "Ningún par de lados paralelos",
+      "Trapecio": "Un solo par de lados paralelos",
+      "Rombo": "Paralelogramo con 4 lados iguales",
+      "Rectángulo": "Paralelogramo con 4 ángulos rectos"
+     }
+    },
+    "e": "Se clasifican por sus lados paralelos y sus propiedades."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Rami razonó sobre los cuadriláteros. Tocá la línea que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Todo cuadrado es un rectángulo",
+      "Todo cuadrado es un rombo",
+      "Todo rombo es un cuadrado"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      2
+     ]
+    },
+    "e": "Un rombo puede no tener ángulos rectos."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "Tres ángulos de un cuadrilátero miden {a}°, {b}° y {c}°. ¿Cuánto mide el cuarto?",
+    "o": {
+     "vars": {
+      "a": {
+       "min": 60,
+       "max": 120
+      },
+      "b": {
+       "min": 60,
+       "max": 120
+      },
+      "c": {
+       "min": 60,
+       "max": 120
+      }
+     },
+     "reglas": [
+      "a+b+c<330"
+     ]
+    },
+    "r": {
+     "formula": "360-a-b-c"
+    },
+    "e": "Los ángulos de un cuadrilátero suman 360°.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada cuadrilátero con la propiedad de sus diagonales.",
+    "o": {
+     "izquierda": [
+      "Rectángulo",
+      "Rombo",
+      "Cuadrado"
+     ],
+     "derecha": [
+      "Iguales",
+      "Perpendiculares",
+      "Iguales y perpendiculares"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Rectángulo": "Iguales",
+      "Rombo": "Perpendiculares",
+      "Cuadrado": "Iguales y perpendiculares"
+     }
+    },
+    "e": "El cuadrado es rectángulo y rombo a la vez, así que tiene las dos propiedades.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada propiedad de las diagonales según el paralelogramo que la tiene (el cuadrado cumple todas).",
+    "o": {
+     "elementos": [
+      "Son iguales pero no perpendiculares",
+      "Son perpendiculares pero no iguales",
+      "Son iguales y perpendiculares",
+      "Solo se cortan en su punto medio"
+     ],
+     "categorias": [
+      "Rectángulo",
+      "Rombo",
+      "Cuadrado",
+      "Paralelogramo común"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Son iguales pero no perpendiculares": "Rectángulo",
+      "Son perpendiculares pero no iguales": "Rombo",
+      "Son iguales y perpendiculares": "Cuadrado",
+      "Solo se cortan en su punto medio": "Paralelogramo común"
+     }
+    },
+    "e": "Todos los paralelogramos tienen diagonales que se cortan en su punto medio."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Euge calculó el cuarto ángulo de un cuadrilátero con 90°, 110° y 70°. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Sumo los tres: 270°",
+      "Los ángulos suman 180°",
+      "El cuarto mide 180° − 270°, no existe"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "En un cuadrilátero suman 360°: el cuarto mide 90°."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Un triángulo con ángulos de 90°, 60° y 30° es…",
+    "o": [
+     "Acutángulo",
+     "Rectángulo",
+     "Obtusángulo"
+    ],
+    "r": {
+     "correcta": "Rectángulo"
+    },
+    "e": "Tiene un ángulo de 90°.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Dos ángulos de un triángulo miden 50° y 70°. ¿Cuánto mide el tercero?",
+    "o": {},
+    "r": {
+     "acepta": [
+      60
+     ]
+    },
+    "e": "180° − 120° = 60°.",
+    "tiempo": 25,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. ¿Cuánto mide el adyacente de un ángulo de 40°?",
+    "o": {},
+    "r": {
+     "acepta": [
+      140
+     ]
+    },
+    "e": "Repaso de la misión 17: los adyacentes suman 180°.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Resolvé 3x − 6 = 24.",
+    "o": {},
+    "r": {
+     "acepta": [
+      10
+     ]
+    },
+    "e": "Repaso de la misión 16: 3x = 30, x = 10.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "Clasificá cada triángulo según sus ángulos.",
+    "o": {
+     "elementos": [
+      "60°, 60° y 60°",
+      "90°, 50° y 40°",
+      "110°, 40° y 30°",
+      "80°, 55° y 45°"
+     ],
+     "categorias": [
+      "Acutángulo",
+      "Rectángulo",
+      "Obtusángulo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "60°, 60° y 60°": "Acutángulo",
+      "90°, 50° y 40°": "Rectángulo",
+      "110°, 40° y 30°": "Obtusángulo",
+      "80°, 55° y 45°": "Acutángulo"
+     }
+    },
+    "e": "Se mira el ángulo mayor: agudo, recto u obtuso.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "Con lados de 4, 5 y 10 cm se puede construir un triángulo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "4 + 5 = 9, menor que 10.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Un triángulo tiene ángulos de 90°, 45° y 45°. ¿Cuál es su nombre completo?",
+    "o": [
+     "Rectángulo isósceles",
+     "Rectángulo escaleno",
+     "Acutángulo isósceles",
+     "Obtusángulo isósceles"
+    ],
+    "r": {
+     "correcta": "Rectángulo isósceles"
+    },
+    "e": "Tiene un ángulo recto y dos ángulos iguales, frente a dos lados iguales.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Dos ángulos de un triángulo miden 47° y 68°. ¿Cuánto mide el tercero?",
+    "o": {},
+    "r": {
+     "acepta": [
+      65
+     ]
+    },
+    "e": "180° − 115° = 65°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "En un triángulo isósceles el ángulo desigual mide 50°. ¿Cuánto mide cada uno de los otros dos?",
+    "o": {},
+    "r": {
+     "acepta": [
+      65
+     ]
+    },
+    "e": "(180° − 50°) ÷ 2 = 65°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Los dos ángulos interiores no adyacentes a un ángulo exterior miden 35° y 80°. ¿Cuánto mide el exterior?",
+    "o": {},
+    "r": {
+     "acepta": [
+      115
+     ]
+    },
+    "e": "El exterior es la suma de los dos interiores no adyacentes.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Los ángulos de un triángulo miden x, 2x y 3x. ¿Cuánto vale x?",
+    "o": {},
+    "r": {
+     "acepta": [
+      30
+     ]
+    },
+    "e": "6x = 180, x = 30.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Un terreno tiene cuatro lados y ningún par de lados es paralelo. ¿Qué tipo de cuadrilátero es?",
+    "o": [
+     "Trapecio",
+     "Trapezoide",
+     "Paralelogramo",
+     "Rombo"
+    ],
+    "r": {
+     "correcta": "Trapezoide"
+    },
+    "e": "El trapecio tiene un par; el trapezoide, ninguno.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "Todo cuadrado es también un rombo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Tiene 4 lados iguales.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "En un paralelogramo un ángulo mide 55°. ¿Cuánto mide su ángulo opuesto?",
+    "o": {},
+    "r": {
+     "acepta": [
+      55
+     ]
+    },
+    "e": "Los ángulos opuestos son iguales.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Tres ángulos de un cuadrilátero miden 85°, 95° y 100°. ¿Cuánto mide el cuarto?",
+    "o": {},
+    "r": {
+     "acepta": [
+      80
+     ]
+    },
+    "e": "360° − 280° = 80°.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿En qué cuadrilátero las diagonales son iguales pero no perpendiculares?",
+    "o": [
+     "Rombo",
+     "Cuadrado",
+     "Rectángulo",
+     "Trapezoide"
+    ],
+    "r": {
+     "correcta": "Rectángulo"
+    },
+    "e": "En el rectángulo son iguales; en el cuadrado, además, perpendiculares.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Una diagonal de un paralelogramo mide 18 cm. ¿Cuánto mide cada mitad?",
+    "o": {},
+    "r": {
+     "acepta": [
+      9
+     ]
+    },
+    "e": "Las diagonales se cortan en su punto medio.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}
