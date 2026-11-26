@@ -35,7 +35,7 @@
 
   // ---------- estilos ----------
   var css = document.createElement('style');
-  css.textContent = '.wj-racha{position:fixed;left:50%;top:18px;transform:translateX(-50%);z-index:9999;background:#F4B63F;color:#3a2a00;font-weight:900;border-radius:99px;padding:8px 18px;box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:18px;animation:wjPop .35s ease-out}' +
+  css.textContent = '.wj-racha{position:fixed;left:50%;top:18px;transform:translateX(-50%);z-index:9999;background:#087E83;color:#fff;font-weight:900;border-radius:99px;padding:8px 18px;box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:18px;animation:wjPop .35s ease-out}' +
     '@keyframes wjPop{0%{transform:translateX(-50%) scale(.4)}70%{transform:translateX(-50%) scale(1.12)}100%{transform:translateX(-50%) scale(1)}}' +
     '.wj-panel{margin:14px auto 4px;max-width:560px;text-align:center}.wj-est{font-size:44px;letter-spacing:6px;line-height:1}.wj-est i{font-style:normal;display:inline-block;opacity:.18;transition:opacity .2s,transform .25s}.wj-est i.on{opacity:1;transform:scale(1.15)}' +
     '.wj-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}.wj-chip{background:rgba(127,211,196,.14);border:2px solid rgba(127,211,196,.5);border-radius:99px;padding:5px 12px;font-weight:800;font-size:15px}' +

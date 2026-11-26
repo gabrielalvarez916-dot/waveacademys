@@ -124,7 +124,7 @@
     var qs = finIds.length ? await sb.from('questions').select('lesson_step_id').in('lesson_step_id', finIds) : { data: [] };
     if (qs.error) throw qs.error;
     var conPreg = {};
-    qs.data.forEach(function (q) { conPreg[q.lesson_step_id] = true; });
+    qs.data.forEach(function (q) { conPreg[q.lesson_step_id] = (conPreg[q.lesson_step_id] || 0) + 1; }); // cuántas actividades tiene cada lección
 
     var topIds = temas.map(function (t) { return t.id; });
     var exs = topIds.length ? await sb.from('exams').select('id, topic_id, passing_score').in('topic_id', topIds) : { data: [] };
@@ -153,7 +153,7 @@
         : k === 'pasoapaso' ? true
         : !!conPreg[p.id];
       (porLeccion[p.lesson_id] = porLeccion[p.lesson_id] || {})[k] = {
-        id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene, clase: k === 'video' && p.clase === true,
+        id: p.id, lesson_id: p.lesson_id, step_type: p.step_type, titulo: p.title, tiene: tiene, nAct: k === 'final' ? (conPreg[p.id] || 0) : 0, clase: k === 'video' && p.clase === true,
         videos: k !== 'video' || !p.stream_uid ? [] : (Array.isArray(p.videos) && p.videos.length ? p.videos
           : [{ uid: p.stream_uid, tramos: p.tramos || (p.inicio || p.fin ? [{ i: p.inicio || 0, f: p.fin || 0 }] : []) }]),
         files: k === 'complementary' && Array.isArray(p.files) ? p.files : [],
@@ -515,7 +515,7 @@
     pdf:     { icono: 'doc',    color: '#E4572E', titulo: 'Leé el PDF', sub: 'Con la explicación, los ejemplos y las consignas de tu carpeta. Tené la carpeta a mano.', boton: 'ABRIR EL PDF' },
     pasoapaso: { icono: 'bolt', color: '#0B7A80', titulo: 'Paso a paso', sub: 'Mirá cómo se hace el procedimiento, un paso por vez, y probalo con tu propio número.', boton: 'VER PASO A PASO' },
     carpeta: { icono: 'pencil', color: '#7C5CE0', titulo: 'Entregá tu carpeta', sub: 'Escribí lo que te dio en cada consigna. Las soluciones aparecen cuando entregás todo bien.', boton: 'ENTREGAR RESPUESTAS' },
-    final:   { icono: 'puzzle', color: '#E59A1B', titulo: 'Actividades', sub: 'Practicá lo que aprendiste en este nivel.', boton: 'EMPEZAR' }
+    final:   { icono: 'puzzle', color: '#253638', titulo: 'Actividades', sub: 'Actividades cortas sobre lo que aprendiste en este nivel. Al final ves tus estrellas.', boton: 'EMPEZAR' }
   };
 
   function buscarLeccion(id) {
@@ -537,8 +537,13 @@
         '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(hechoTxt) + '</p>' +
         '<div class="rc-pie"><button type="button" class="rc-btn" style="--k:' + u.color + '" data-rc="abrir" data-k="' + kk + '">' + bt + '</button></div></div>';
     }
-    if (k === 'final' && esGen) { titulo = 'Las 4 generales'; sub = 'Mezclan todo lo de la misión y repasan lo anterior.'; icono = 'bolt'; }
+    if (k === 'final' && esGen) { titulo = 'Las 4 generales'; sub = 'Mezclan todo lo de la misión y repasan lo anterior. Al final ves tus estrellas.'; icono = 'bolt'; }
     var extra = '';
+    if (k === 'final' && p.final && p.final.nAct) { // las actividades del nivel, numeradas (una por pantalla)
+      extra = '<div class="rc-acts" aria-label="' + p.final.nAct + ' actividades">' + Array.apply(null, Array(p.final.nAct)).map(function (_, i) {
+        return (i ? '<span class="rc-acts-l" aria-hidden="true"></span>' : '') + '<span class="rc-acts-n">' + (i + 1) + '</span>';
+      }).join('') + '</div>';
+    }
     if (k === 'carpeta') {
       extra = '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-cp-tg="1" aria-pressed="false">Ver de a una</button></div><div class="rl-top" data-cp-top style="display:none"><span class="rl-cont"></span></div><div class="rc-items">' + p.pdf.carpeta.map(function (x, i) {
         return '<label class="rc-item"><span class="mt-preg-n">' + (i + 1) + '</span><span class="rc-item-c"><span class="rc-consigna">' + esc(consigna(x)) +
@@ -1008,7 +1013,7 @@
 
   function abrirCuestionario(op) {
     var el = document.createElement('div');
-    el.className = 'wvp' + (op.examen ? ' jefe' : '');
+    el.className = 'wvp' + (op.examen ? ' jefe' : ' act');
     el.innerHTML = '<div class="wvp-caja"><div class="wvp-barra"><b class="wvp-titulo">' + esc(op.titulo) + '</b>' +
       '<button type="button" class="wvp-b wvp-x" data-cerrar="1" aria-label="Cerrar">✕</button></div>' +
       '<div class="mt-cuest"></div></div>';
@@ -1173,17 +1178,20 @@
 
     function campo(q, i) {
       var nuevo = NUEVOS.indexOf(q.question_type) >= 0 ? campoNuevo(q, i) : null;
-      if (nuevo !== null) return '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + nuevo + '</div></div>';
-      var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c"><p>' + esc(pr(q)) + '</p>';
+      var tipo = AVISOS[q.question_type] ? '<small class="mt-tipo"><span aria-hidden="true">' + AVISOS[q.question_type].i + '</span> ' + esc(AVISOS[q.question_type].n) + '</small>' : '';
+      if (nuevo !== null) return '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + tipo + nuevo + '</div></div>';
+      var h = '<div class="mt-preg"><div class="mt-preg-n">' + (i + 1) + '</div><div class="mt-preg-c">' + tipo + '<p>' + esc(pr(q)) + '</p>';
       if (q.question_type === 'multiple_choice' || q.question_type === 'true_false') {
         var ops = (q.options || []).slice();
         if (q.question_type === 'multiple_choice') { // mezcla fija por pregunta: la correcta no queda siempre primera
           var sem = 0; String(q.id || pr(q)).split('').forEach(function (ch) { sem = (sem * 31 + ch.charCodeAt(0)) >>> 0; });
           for (var m = ops.length - 1; m > 0; m--) { sem = (sem * 1103515245 + 12345) >>> 0; var r = sem % (m + 1), tmp = ops[m]; ops[m] = ops[r]; ops[r] = tmp; }
         }
-        h += ops.map(function (o, j) {
-          return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(o) + '"><span>' + esc(o) + '</span></label>';
-        }).join('');
+        var vf = q.question_type === 'true_false';
+        h += '<div class="mt-ops' + (vf ? ' vf' : '') + '">' + ops.map(function (o, j) {
+          var l = vf ? (/^v/i.test(String(o)) ? '✔' : '✘') : String.fromCharCode(65 + j);
+          return '<label class="mt-op"><input type="radio" name="q' + i + '" value="' + esc(o) + '"><b class="mt-op-l" aria-hidden="true">' + l + '</b><span>' + esc(o) + '</span></label>';
+        }).join('') + '</div>';
         if (op.justificar) h += '<div class="ap-just"><label>¿Por qué elegiste esa respuesta?</label><textarea class="mt-just" data-just="' + i + '" rows="2" maxlength="500" placeholder="Explicalo con tus palabras"></textarea></div>';
       } else if (q.question_type === 'short_answer') {
         h += '<input type="text" class="mt-txt" name="q' + i + '" maxlength="400" placeholder="Tu respuesta">';
@@ -1214,11 +1222,11 @@
       if (relamp) clearInterval(relamp.t);
       relamp = null;
       if (!ap('sinCrono') && lista.some(function (q) { return q.tiempo_seg; })) { relampago(); return; }
-      var barra = op.examen ? '' : '<div class="ap-barra-cuest"><button type="button" class="ap-tg" data-ap="deAUna" aria-pressed="false">Ver de a una</button>' +
+      var barra = op.examen ? '' : '<div class="ap-barra-cuest">' + // las actividades van siempre de a una
         (lista.some(function (q) { return q.tiempo_seg; }) ? '<button type="button" class="ap-tg" data-sincrono="1" aria-pressed="true">Sin cronómetro</button>' : '') +
         (op.comprobar ? '<button type="button" class="ap-tg" data-ap="comprobar" aria-pressed="false">Comprobar cada respuesta</button>' : '') + '</div>';
       // Todas las consignas quedan armadas (así se entregan juntas). Se muestran todas o de a una, a elección del alumno.
-      cuerpo.innerHTML = barra + (op.examen ? jfHud() : '') + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
+      cuerpo.innerHTML = barra + (op.examen ? jfHud() : actHud()) + '<div class="rl-top" data-cn-top><span class="rl-cont"></span></div>' + lista.map(function (q, i) {
         var h = campo(q, i), k = h.lastIndexOf('</div></div>');
         return op.comprobar && k > 0 ? h.slice(0, k) + compHtml(i) + h.slice(k) : h;
       }).join('') +
@@ -1230,11 +1238,11 @@
       verConsigna(0);
     }
     function verConsigna(n) {
-      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length, una = !!op.examen || ap('deAUna');
+      var ps = cuerpo.querySelectorAll(':scope > .mt-preg'), tot = ps.length, una = true; // examen y actividades: una consigna por pantalla
       if (!tot) return;
       n = Math.max(0, Math.min(tot - 1, n)); cuerpo._cn = n; qActual = lista[n] || null;
       [].forEach.call(ps, function (p, k) { p.style.display = (!una || k === n) ? '' : 'none'; });
-      var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = una ? 'Consigna ' + (n + 1) + ' de ' + tot : tot + (tot === 1 ? ' consigna' : ' consignas');
+      var top = cuerpo.querySelector('[data-cn-top] .rl-cont'); if (top) top.textContent = (op.examen ? 'Consigna ' : 'Actividad ') + (n + 1) + ' de ' + tot;
       var ant = cuerpo.querySelector('[data-cn="-1"]'), sig = cuerpo.querySelector('[data-cn="1"]'), env = cuerpo.querySelector('[data-enviar]');
       if (ant) { ant.style.display = una ? '' : 'none'; ant.style.visibility = n ? '' : 'hidden'; }
       if (sig) sig.style.display = una && n < tot - 1 ? '' : 'none';
@@ -1360,6 +1368,9 @@
     function jfHud() {
       return '<div class="jf-hud"><div class="jf-segs">' + lista.map(function (q, k) { return '<button type="button" class="jf-seg" data-jf-ir="' + k + '" aria-label="Ir a la pregunta ' + (k + 1) + '"></button>'; }).join('') + '</div>' +
         '<div class="jf-vida"><span>JEFE</span><div class="jf-vbar"><i></i></div></div></div>';
+    }
+    function actHud() { // avance de las actividades (sin vida del jefe): un tramo por actividad
+      return '<div class="jf-hud act-hud"><div class="jf-segs">' + lista.map(function (q, k) { return '<button type="button" class="jf-seg" data-jf-ir="' + k + '" aria-label="Ir a la actividad ' + (k + 1) + '"></button>'; }).join('') + '</div></div>';
     }
     function jfActualizar(n) {
       var segs = cuerpo.querySelectorAll('.jf-seg'); if (!segs.length) return;

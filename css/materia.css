@@ -509,3 +509,31 @@ html.ap-sin-anim .dm-op.on, html.ap-sin-anim .dm-chip.on { animation: none; }
 
 .wvp.jefe .mt-preg, .wvp.jefe .mt-res-item { color: var(--petroleo, #253638); }
 .jf-final .jf-medalla { margin-top: 10px; }
+
+/* ===== Actividades: una por pantalla, tarjeta grande, colores Wave (turquesa y petróleo) ===== */
+.rc-acts { display: flex; align-items: center; justify-content: center; margin: 4px auto 18px; }
+.rc-acts-n { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--turquesa); background: #fff; color: var(--petroleo); font-weight: 800; }
+.rc-acts-l { width: 26px; height: 3px; background: var(--menta); }
+.wvp.act .mt-cuest { background: #F3FBF7; }
+.wvp.act .act-hud { background: #fff; border: 2px solid #E3ECEA; padding: 10px 12px; }
+.wvp.act .jf-seg { background: #E3ECEA; }
+.wvp.act .jf-seg.resp { background: #7FD3C4; }
+.wvp.act .jf-seg.act { background: var(--turquesa); transform: scaleY(1.35); box-shadow: none; }
+.wvp.act .rl-top { justify-content: center; color: var(--turquesa-oscuro); }
+.wvp.act .mt-preg { display: block; padding: 22px 20px; border-radius: 24px; }
+.wvp.act .mt-preg-n { display: none; }
+.wvp.act .mt-preg-c > p { font-size: 1.2rem; margin: 6px 0 16px; }
+.mt-tipo { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 99px; background: var(--menta); color: var(--petroleo); font-weight: 800; font-size: .8rem; }
+.mt-ops { display: grid; gap: 10px; }
+.wvp.act .mt-op { position: relative; margin: 0; padding: 14px 16px; font-size: 1.02rem; transition: border-color .15s, background .15s; }
+.wvp.act .mt-op:hover { border-color: #9dbdb9; }
+.wvp.act .mt-op input { position: absolute; opacity: 0; pointer-events: none; }
+.wvp.act .mt-op:has(input:focus-visible) { outline: 3px solid var(--turquesa); outline-offset: 2px; }
+.mt-op-l { display: none; }
+.wvp.act .mt-op-l { display: grid; place-items: center; flex: none; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--turquesa); color: var(--turquesa-oscuro); font-weight: 800; }
+.wvp.act .mt-op:has(input:checked) .mt-op-l { background: var(--turquesa); color: #fff; }
+.wvp.act .mt-ops.vf { grid-template-columns: 1fr 1fr; }
+.wvp.act .mt-ops.vf .mt-op { flex-direction: column; justify-content: center; gap: 8px; min-height: 120px; text-align: center; font-size: 1.1rem; }
+.wvp.act .mt-ops.vf .mt-op-l { width: 46px; height: 46px; font-size: 1.3rem; }
+@media (max-width: 480px) { .wvp.act .mt-ops.vf .mt-op { min-height: 96px; } }
+.ap-sin-anim .wvp.act .jf-seg { transition: none; }
