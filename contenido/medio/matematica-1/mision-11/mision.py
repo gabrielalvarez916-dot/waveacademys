@@ -14,6 +14,7 @@ S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
+NEU = lambda p: {"neutro": {"p": p}}
 
 N1 = {**ESTILO,
 "objetivo": "Vas a saber qué es el doble de un número.",
@@ -136,36 +137,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "18. 20.", "solo": "4 ruedas.", "carpeta": ["4.", "14.", "18."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("EL ESPEJO MÁGICO", [LD("EL DOBLE", "EL <b>DOBLE</b> DE UN NÚMERO ES DOS VECES ESE NÚMERO."),
+   LL("EL DOBLE DE 3 ES 3 + 3 = 6.", "COMO SI LO VIERAS EN UN ESPEJO.")],
+   {"modo": "dobles", "que": "espejo"}, {"modo": "dobles", "que": "espejo"}),
+ T("DOS VECES LO MISMO", [LD("DOS IGUALES", "PARA HACER EL DOBLE, SUMAMOS EL MISMO NÚMERO <b>DOS VECES</b>."),
+   LL("LAS DOS MANOS: 5 + 5 = 10.", "EL DOBLE DE 1 ES 2.")],
+   {"modo": "dobles", "que": "espejo"}, {"modo": "dobles", "que": "espejo"}),
+], "recuerda": [
+ RC("EL DOBLE", "ES SUMAR EL MISMO NÚMERO DOS VECES.", "EL DOBLE DE 4 ES 8"),
+ RC("EL ESPEJO", "MUESTRA OTRO GRUPO IGUAL AL QUE TENEMOS.", "5 Y 5 SON 10"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("SUMAS CON EL MISMO NÚMERO", [LD("IGUALES", "PODEMOS SUMAR EL <b>MISMO NÚMERO</b> DOS O TRES VECES."),
+   LL("2 + 2 + 2 = 6.", "3 PARES DE MEDIAS SON 6 MEDIAS.")],
+   {"modo": "dobles", "que": "iguales"}, {"modo": "dobles", "que": "iguales"}),
+ T("DOBLES MÁS GRANDES", [LD("HASTA 20", "LOS DOBLES DE 6, 7, 8, 9 Y 10 PASAN EL <b>10</b>."),
+   LL("6 + 6 = 12.", "10 + 10 = 20.")],
+   {"modo": "dobles", "que": "tabla"}, {"modo": "dobles", "que": "tabla"}),
+], "recuerda": [
+ RC("SUMAR IGUALES", "ES SUMAR EL MISMO NÚMERO VARIAS VECES.", "3 + 3 + 3 = 9"),
+ RC("DOBLES GRANDES", "LOS DOBLES DE 6 A 10 PASAN EL DIEZ.", "9 + 9 = 18"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("UNO MÁS QUE EL DOBLE", [LD("CASI DOBLE", "UN <b>CASI DOBLE</b> SUMA DOS NÚMEROS QUE ESTÁN UNO AL LADO DEL OTRO."),
+   LL("4 + 5 ES UN CASI DOBLE.", "USAMOS 4 + 4 = 8 Y SUMAMOS 1: 9.")],
+   {"modo": "dobles", "que": "casi"}, {"modo": "dobles", "que": "casi"}),
+ T("UN TRUCO RÁPIDO", [LD("EL TRUCO", "BUSCÁ EL DOBLE DEL <b>MÁS CHICO</b> Y DESPUÉS SUMÁ UNO."),
+   LL("5 + 6: 5 + 5 = 10 Y UNO MÁS, 11.", "ASÍ NO HACE FALTA CONTAR TODO.")],
+   {"modo": "dobles", "que": "casi"}, {"modo": "dobles", "que": "casi"}),
+], "recuerda": [
+ RC("CASI DOBLE", "ES SUMAR DOS NÚMEROS QUE ESTÁN UNO AL LADO DEL OTRO.", "6 + 7"),
+ RC("EL TRUCO", "HACEMOS EL DOBLE DEL MÁS CHICO Y SUMAMOS UNO.", "6 + 6 = 12, ENTONCES 6 + 7 = 13"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("LA TABLA DE DOBLES", [LD("LA TABLA", "LA <b>TABLA DE DOBLES</b> VA DEL 1 + 1 AL 10 + 10."),
+   LL("LOS RESULTADOS VAN DE 2 EN 2.", "2, 4, 6, 8, 10… 20.")],
+   {"modo": "dobles", "que": "tabla"}, {"modo": "dobles", "que": "tabla"}),
+ T("DOBLES EN LA VIDA", [LD("DE MEMORIA", "SI SABÉS LOS DOBLES <b>DE MEMORIA</b>, CALCULÁS SIN CONTAR."),
+   LL("2 BICIS TIENEN 2 + 2 = 4 RUEDAS.", "UNA SEMANA Y OTRA: 7 + 7 = 14 DÍAS.")],
+   {"modo": "dobles", "que": "espejo"}, {"modo": "dobles", "que": "tabla"}),
+], "recuerda": [
+ RC("LA TABLA DE DOBLES", "SUS RESULTADOS VAN SALTANDO DE DOS EN DOS.", "7 + 7 = 14 Y 8 + 8 = 16"),
+ RC("SIN CONTAR", "SABER LOS DOBLES DE MEMORIA NOS AYUDA A CALCULAR RÁPIDO.", "10 + 10 = 20"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("¿CUÁL ES EL DOBLE DE 3?", 6, "3 + 3 = 6."),
-      MC("EL DOBLE ES…", ["DOS VECES LO MISMO", "SACAR UNO", "UNO SOLO"], "DOS VECES LO MISMO", "COMO EN EL ESPEJO.")],
-"2": [N("¿CUÁNTO ES 6 + 6?", 12, "EL DOBLE DE 6 ES 12."),
-      N("¿CUÁNTO ES 2 + 2 + 2?", 6, "TRES VECES EL 2: 6.")],
-"3": [N("SI 4 + 4 = 8, ¿CUÁNTO ES 4 + 5?", 9, "UNO MÁS QUE EL DOBLE."),
-      MC("¿QUÉ DOBLE AYUDA PARA 5 + 6?", ["5 + 5", "6 + 1", "3 + 3"], "5 + 5", "5 + 5 = 10 Y UNO MÁS: 11.")],
-"4": [N("¿CUÁNTO ES 8 + 8?", 16, "EL DOBLE DE 8 ES 16."),
-      N("¿CUÁNTO ES 10 + 10?", 20, "EL DOBLE DE 10 ES 20.")],
-"5": [N("RELÁMPAGO. ¿CUÁL ES EL DOBLE DE 5?", 10, "5 + 5 = 10.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 7 + 7?", 14, "EL DOBLE DE 7.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 3 + 4?", 7, "3 + 3 = 6 Y UNO MÁS.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁL ES UN DOBLE?", ["9 + 9", "9 + 2", "9 + 1"], "9 + 9", "EL MISMO NÚMERO DOS VECES.", tiempo=30)],
+"1": [N("¿CUÁL ES EL DOBLE DE 3?", 6, "3 + 3 = 6.", **A),
+      MC("EL DOBLE ES…", ["DOS VECES LO MISMO", "SACAR UNO", "UNO SOLO"], "DOS VECES LO MISMO", "COMO EN EL ESPEJO.", **RE),
+      MC("LEO DICE QUE EL DOBLE DE 4 ES 5 PORQUE ES UNO MÁS. ¿CUÁL ES DE VERDAD?", ["8", "5", "44"], "8", "EL DOBLE ES 4 + 4 = 8.", **ER),
+      UNIR("UNÍ CADA NÚMERO CON SU DOBLE.", ["2", "5", "3"], ["6", "4", "10"], {"2": "4", "5": "10", "3": "6"}, "2 + 2 = 4, 5 + 5 = 10, 3 + 3 = 6.", **A)],
+"2": [N("¿CUÁNTO ES 6 + 6?", 12, "EL DOBLE DE 6 ES 12.", **A),
+      N("¿CUÁNTO ES 2 + 2 + 2?", 6, "TRES VECES EL 2: 6.", **A),
+      N("[[problema]] HAY 3 PLATOS Y EN CADA UNO HAY 4 GALLETITAS. ¿CUÁNTAS GALLETITAS HAY?", 12, "4 + 4 + 4 = 12.", **AN, **NEU("HAY 3 PLATOS Y EN CADA UNO HAY 4 GALLETAS. ¿CUÁNTAS GALLETAS HAY?")),
+      FB("COMPLETÁ: 5 + 5 + 5 = ___", [["15"]], "5, 10, 15.", **A)],
+"3": [N("SI 4 + 4 = 8, ¿CUÁNTO ES 4 + 5?", 9, "UNO MÁS QUE EL DOBLE.", **A),
+      MC("¿QUÉ DOBLE AYUDA PARA 5 + 6?", ["5 + 5", "6 + 1", "3 + 3"], "5 + 5", "5 + 5 = 10 Y UNO MÁS: 11.", **AN),
+      CLAS("¿ES DOBLE O CASI DOBLE?", ["3 + 3", "3 + 4", "7 + 7", "7 + 8"], ["DOBLE", "CASI DOBLE"],
+           {"3 + 3": "DOBLE", "3 + 4": "CASI DOBLE", "7 + 7": "DOBLE", "7 + 8": "CASI DOBLE"}, "EL DOBLE TIENE DOS NÚMEROS IGUALES.", **A),
+      MC("SOFI DICE QUE 6 + 7 ES 12 PORQUE 6 + 6 = 12. ¿QUÉ SE OLVIDÓ?", ["SUMAR UNO MÁS: 13", "NADA, ESTÁ BIEN", "RESTAR UNO: 11"], "SUMAR UNO MÁS: 13", "EL 7 ES UNO MÁS QUE EL 6.", **ER)],
+"4": [N("¿CUÁNTO ES 8 + 8?", 16, "EL DOBLE DE 8 ES 16.", **A),
+      N("¿CUÁNTO ES 10 + 10?", 20, "EL DOBLE DE 10 ES 20.", **A),
+      ORD("ORDENÁ LOS DOBLES DE MENOR A MAYOR.", ["14", "6", "18", "10"], ["6", "10", "14", "18"], "VAN DE 2 EN 2 HACIA ARRIBA.", **A),
+      N("[[problema]] UNA SEMANA TIENE 7 DÍAS. ¿CUÁNTOS DÍAS TIENEN 2 SEMANAS?", 14, "7 + 7 = 14.", **AN)],
+"5": [N("RELÁMPAGO. ¿CUÁL ES EL DOBLE DE 5?", 10, "5 + 5 = 10.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 7 + 7?", 14, "EL DOBLE DE 7.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 3 + 4?", 7, "3 + 3 = 6 Y UNO MÁS.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CUÁL ES UN DOBLE?", ["9 + 9", "9 + 2", "9 + 1"], "9 + 9", "EL MISMO NÚMERO DOS VECES.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("¿CUÁL ES EL DOBLE DE 4?", 8, "4 + 4 = 8.")],
- [1, N("¿CUÁL ES EL DOBLE DE 1?", 2, "1 + 1 = 2.")],
- [1, MC("¿CUÁNTOS DEDOS HAY EN LAS DOS MANOS?", ["5", "10", "20"], "10", "5 + 5 = 10.")],
- [2, N("¿CUÁNTO ES 9 + 9?", 18, "EL DOBLE DE 9 ES 18.")],
- [2, N("¿CUÁNTO ES 3 + 3 + 3?", 9, "TRES VECES EL 3: 9.")],
- [2, N("TENÉS 3 PARES DE MEDIAS. ¿CUÁNTAS MEDIAS SON?", 6, "2 + 2 + 2 = 6.")],
- [3, N("SI 6 + 6 = 12, ¿CUÁNTO ES 6 + 7?", 13, "UNO MÁS QUE EL DOBLE.")],
- [3, N("¿CUÁNTO ES 2 + 3?", 5, "2 + 2 = 4 Y UNO MÁS.")],
- [3, MC("4 + 5 ES UN…", ["CASI DOBLE", "DOBLE", "NINGUNO"], "CASI DOBLE", "4 Y 5 ESTÁN UNO AL LADO DEL OTRO.")],
- [4, N("¿CUÁNTO ES 5 + 5?", 10, "EL DOBLE DE 5.")],
- [4, N("¿CUÁNTO ES 7 + 7?", 14, "EL DOBLE DE 7.")],
- [4, MC("¿CUÁNTO ES 10 + 10?", ["20", "1010", "11"], "20", "EL DOBLE DE 10 ES 20.")],
- [4, N("2 BICIS. CADA UNA TIENE 2 RUEDAS. ¿CUÁNTAS RUEDAS SON?", 4, "2 + 2 = 4.")],
+ [1, N("¿CUÁL ES EL DOBLE DE 4?", 8, "4 + 4 = 8.", **A)],
+ [1, N("¿CUÁL ES EL DOBLE DE 1?", 2, "1 + 1 = 2.", **A)],
+ [1, MC("¿CUÁNTOS DEDOS HAY EN LAS DOS MANOS?", ["5", "10", "20"], "10", "5 + 5 = 10.", **RE)],
+ [2, N("¿CUÁNTO ES 9 + 9?", 18, "EL DOBLE DE 9 ES 18.", **A)],
+ [2, FB("COMPLETÁ: 3 + 3 + 3 = ___", [["9"]], "TRES VECES EL 3: 9.", **A)],
+ [2, N("[[problema]] TENÉS 3 PARES DE MEDIAS. ¿CUÁNTAS MEDIAS SON EN TOTAL?", 6, "2 + 2 + 2 = 6.", **AN, **NEU("TIENES 3 PARES DE CALCETINES. ¿CUÁNTOS CALCETINES SON EN TOTAL?"))],
+ [3, N("SI 6 + 6 = 12, ¿CUÁNTO ES 6 + 7?", 13, "UNO MÁS QUE EL DOBLE.", **A)],
+ [3, N("¿CUÁNTO ES 2 + 3?", 5, "2 + 2 = 4 Y UNO MÁS.", **A)],
+ [3, MC("JUAN DICE QUE 4 + 5 ES UN DOBLE. ¿QUÉ ES DE VERDAD?", ["UN CASI DOBLE", "UN DOBLE"], "UN CASI DOBLE", "4 Y 5 NO SON IGUALES: ESTÁN UNO AL LADO DEL OTRO.", **ER)],
+ [4, N("¿CUÁNTO ES 5 + 5?", 10, "EL DOBLE DE 5.", **A)],
+ [4, N("¿CUÁNTO ES 7 + 7?", 14, "EL DOBLE DE 7.", **A)],
+ [4, UNIR("UNÍ CADA DOBLE CON SU RESULTADO.", ["6 + 6", "8 + 8"], ["16", "12"], {"6 + 6": "12", "8 + 8": "16"}, "6 + 6 = 12 Y 8 + 8 = 16.", **A)],
+ [4, N("[[problema]] HAY 2 BICIS Y CADA UNA TIENE 2 RUEDAS. ¿CUÁNTAS RUEDAS SON?", 4, "2 + 2 = 4.", **AN)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 11, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 11, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: dobles y sumas de iguales", "examen_titulo": "Nivel jefe: dobles y sumas de iguales",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-11.json"), "w", encoding="utf-8"), ensure_ascii=False)

@@ -14,6 +14,7 @@ S = lambda e, t, b: {"etapa": e, "titulo": t, "bloques": b}
 MC = lambda p, o, ok, e, **k: {"t": "multiple_choice", "p": p, "o": o, "r": {"correcta": ok}, "e": e, **k}
 N = lambda p, r, e, **k: {"t": "numeric", "p": p, "o": {}, "r": {"acepta": [r]}, "e": e, **k}
 ESTILO = {"estilo": "primeros"}
+NEU = lambda p: {"neutro": {"p": p}}
 
 N1 = {**ESTILO,
 "objetivo": "Vas a sumar decenas enteras: 20 + 30.",
@@ -135,36 +136,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "80. 30.", "solo": "Por ejemplo: tengo 60 figuritas y me regalan 30. Tengo 90.", "carpeta": ["70.", "30.", "100."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("JUNTAR BOLSITAS", [LD("SUMAR DECENAS", "PARA SUMAR <b>20 + 30</b>, SUMAMOS LAS BOLSITAS: 2 + 3 = 5."),
+   LL("5 BOLSITAS DE 10 SON 50.", "20 + 30 = 50.")],
+   {"modo": "decenas_op", "que": "sumar"}, {"modo": "decenas_op", "que": "sumar"}),
+ T("PENSAR EN BOLSITAS", [LD("UN TRUCO", "SI PENSÁS EN <b>BOLSITAS</b>, SUMÁS NÚMEROS CHICOS Y AL FINAL PONÉS EL 0."),
+   LL("40 + 10: 4 + 1 = 5, ES 50.", "NO ES 41 NI 14.")],
+   {"modo": "decenas_op", "que": "sumar"}, {"modo": "decenas_op", "que": "sumar"}),
+], "recuerda": [
+ RC("SUMAR DECENAS", "SUMAMOS LAS BOLSITAS DE DIEZ Y DESPUÉS VEMOS CUÁNTO VALEN.", "20 + 30 = 50"),
+ RC("EL TRUCO", "SUMAMOS COMO NÚMEROS CHICOS Y AGREGAMOS EL CERO.", "4 + 1 = 5, ENTONCES 40 + 10 = 50"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("VENDER BOLSITAS", [LD("RESTAR DECENAS", "PARA RESTAR <b>70 − 20</b>, SACAMOS BOLSITAS: 7 − 2 = 5."),
+   LL("QUEDAN 5 BOLSITAS: 50.", "70 − 20 = 50.")],
+   {"modo": "decenas_op", "que": "restar"}, {"modo": "decenas_op", "que": "restar"}),
+ T("CUÁNTAS QUEDAN", [LD("LO QUE QUEDA", "DESPUÉS DE VENDER, CONTAMOS LAS BOLSITAS QUE <b>QUEDAN</b>."),
+   LL("TENÍA 80 Y VENDO 30: QUEDAN 50.", "SI SE VAN, ES UNA RESTA.")],
+   {"modo": "decenas_op", "que": "restar"}, {"modo": "decenas_op", "que": "restar"}),
+], "recuerda": [
+ RC("RESTAR DECENAS", "SACAMOS BOLSITAS DE DIEZ Y CONTAMOS LAS QUE QUEDAN.", "70 − 20 = 50"),
+ RC("SI SE VAN", "HACEMOS UNA RESTA PARA SABER CUÁNTO QUEDA.", "80 − 30 = 50"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("DE 10 EN 10", [LD("PARA ADELANTE", "CONTAR <b>DE 10 EN 10</b> ES SUMAR UNA BOLSITA CADA VEZ."),
+   LL("10, 20, 30, 40.", "LA PRIMERA CIFRA SUBE 1.")],
+   {"modo": "saltos", "de": 10}, {"modo": "decenas_op", "que": "contar10"}),
+ T("PARA ATRÁS", [LD("PARA ATRÁS", "CONTAR <b>PARA ATRÁS</b> DE 10 EN 10 ES SACAR UNA BOLSITA CADA VEZ."),
+   LL("100, 90, 80, 70.", "LA PRIMERA CIFRA BAJA 1.")],
+   {"modo": "decenas_op", "que": "atras10"}, {"modo": "decenas_op", "que": "atras10"}),
+], "recuerda": [
+ RC("PARA ADELANTE", "SUMAMOS DIEZ CADA VEZ Y LA PRIMERA CIFRA SUBE.", "50, 60, 70"),
+ RC("PARA ATRÁS", "RESTAMOS DIEZ CADA VEZ Y LA PRIMERA CIFRA BAJA.", "60, 50, 40"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("¿SUMA O RESTA?", [LD("ELEGIR LA CUENTA", "SI <b>LLEGAN</b> MÁS, SUMAMOS. SI SE <b>VAN</b>, RESTAMOS."),
+   LL("HAY 50 Y LLEGAN 20: 50 + 20.", "HAY 90 Y SE VENDEN 60: 90 − 60.")],
+   {"modo": "decenas_op", "que": "sumar"}, {"modo": "decenas_op", "que": "restar"}),
+ T("LLEGAR A 100", [LD("CIEN", "10 BOLSITAS DE 10 SON <b>100</b>."),
+   LL("60 + 40 = 100.", "70 + 30 = 100.")],
+   {"modo": "decenas_op", "que": "sumar"}, {"modo": "decenas_op", "que": "sumar"}),
+], "recuerda": [
+ RC("SUMA O RESTA", "SI LLEGAN SUMAMOS Y SI SE VAN RESTAMOS.", "50 + 20 Y 90 − 60"),
+ RC("CIEN", "SON DIEZ BOLSITAS DE DIEZ.", "70 + 30 = 100"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [N("¿CUÁNTO ES 20 + 30?", 50, "2 + 3 = 5 BOLSITAS: 50."),
-      MC("¿CUÁNTO ES 40 + 10?", ["50", "41", "14"], "50", "4 + 1 = 5 BOLSITAS.")],
-"2": [N("¿CUÁNTO ES 70 − 20?", 50, "7 − 2 = 5 BOLSITAS: 50."),
-      N("SOFI TIENE 80 CARAMELOS. VENDE 30. ¿CUÁNTOS LE QUEDAN?", 50, "8 − 3 = 5 BOLSITAS.")],
-"3": [N("10, 20, 30, ___ ¿QUÉ NÚMERO SIGUE?", 40, "SUMAMOS 10."),
-      N("100, 90, 80, ___ ¿QUÉ NÚMERO SIGUE?", 70, "RESTAMOS 10.")],
-"4": [N("¿CUÁNTO ES 60 + 40?", 100, "6 + 4 = 10 BOLSITAS: 100."),
-      MC("HAY 50 CARAMELOS. LLEGAN 20 MÁS. ¿QUÉ CUENTA HACEMOS?", ["50 + 20", "50 − 20", "20 − 50"], "50 + 20", "SI LLEGAN MÁS, SUMAMOS.")],
-"5": [N("RELÁMPAGO. ¿CUÁNTO ES 30 + 30?", 60, "3 + 3 = 6 BOLSITAS.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 90 − 40?", 50, "9 − 4 = 5 BOLSITAS.", tiempo=30),
-      N("RELÁMPAGO. 50, 60, 70, ___", 80, "DE 10 EN 10.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁNTAS BOLSITAS DE 10 SON 100?", ["10", "100", "1"], "10", "10 BOLSITAS DE 10.", tiempo=30)],
+"1": [N("¿CUÁNTO ES 20 + 30?", 50, "2 + 3 = 5 BOLSITAS: 50.", **A),
+      MC("¿CUÁNTO ES 40 + 10?", ["50", "41", "14"], "50", "4 + 1 = 5 BOLSITAS.", **A),
+      MC("LEO DICE QUE 30 + 20 ES 3020. ¿CUÁNTO ES DE VERDAD?", ["50", "3020", "32"], "50", "3 + 2 = 5 BOLSITAS: 50.", **ER),
+      UNIR("UNÍ CADA SUMA CON SU RESULTADO.", ["10 + 10", "30 + 30", "50 + 20"], ["70", "20", "60"], {"10 + 10": "20", "30 + 30": "60", "50 + 20": "70"}, "20, 60 Y 70.", **A)],
+"2": [N("¿CUÁNTO ES 70 − 20?", 50, "7 − 2 = 5 BOLSITAS: 50.", **A),
+      N("SOFI TIENE 80 CARAMELOS. VENDE 30. ¿CUÁNTOS LE QUEDAN?", 50, "8 − 3 = 5 BOLSITAS.", **A),
+      FB("COMPLETÁ: 60 − 40 = ___", [["20"]], "6 − 4 = 2 BOLSITAS: 20.", **A),
+      MC("TOMI HIZO 90 − 30 = 120. ¿QUÉ HIZO MAL?", ["SUMÓ EN VEZ DE RESTAR", "NADA, ESTÁ BIEN", "LE FALTA UN 0"], "SUMÓ EN VEZ DE RESTAR", "90 − 30 = 60.", **ER)],
+"3": [N("10, 20, 30, ___ ¿QUÉ NÚMERO SIGUE?", 40, "SUMAMOS 10.", **A),
+      N("100, 90, 80, ___ ¿QUÉ NÚMERO SIGUE?", 70, "RESTAMOS 10.", **A),
+      ORD("ORDENÁ PARA CONTAR PARA ATRÁS DE 10 EN 10.", ["60", "90", "70", "80"], ["90", "80", "70", "60"], "90, 80, 70, 60.", **A),
+      FB("COMPLETÁ: 30, 40, ___, 60, ___", [["50"], ["70"]], "DE 10 EN 10.", **A)],
+"4": [N("¿CUÁNTO ES 60 + 40?", 100, "6 + 4 = 10 BOLSITAS: 100.", **A),
+      MC("HAY 50 CARAMELOS. LLEGAN 20 MÁS. ¿QUÉ CUENTA HACEMOS?", ["50 + 20", "50 − 20", "20 − 50"], "50 + 20", "SI LLEGAN MÁS, SUMAMOS.", **AN),
+      CLAS("¿SUMA O RESTA?", ["LLEGAN 30 MÁS", "SE VENDEN 20", "SE PIERDEN 10", "COMPRA 40 MÁS"], ["SUMA", "RESTA"],
+           {"LLEGAN 30 MÁS": "SUMA", "SE VENDEN 20": "RESTA", "SE PIERDEN 10": "RESTA", "COMPRA 40 MÁS": "SUMA"}, "SI LLEGAN SUMAMOS; SI SE VAN RESTAMOS.", **AN),
+      N("[[problema]] EL KIOSCO TENÍA 90 CHUPETINES Y VENDIÓ 50. ¿CUÁNTOS CHUPETINES LE QUEDAN?", 40, "9 − 5 = 4 BOLSITAS: 40.", **AN, **NEU("LA TIENDA TENÍA 90 PALETAS Y VENDIÓ 50. ¿CUÁNTAS PALETAS LE QUEDAN?"))],
+"5": [N("RELÁMPAGO. ¿CUÁNTO ES 30 + 30?", 60, "3 + 3 = 6 BOLSITAS.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 90 − 40?", 50, "9 − 4 = 5 BOLSITAS.", tiempo=30, **A),
+      N("RELÁMPAGO. 50, 60, 70, ___", 80, "DE 10 EN 10.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿CUÁNTAS BOLSITAS DE 10 SON 100?", ["10", "100", "1"], "10", "10 BOLSITAS DE 10.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, N("¿CUÁNTO ES 10 + 20?", 30, "1 + 2 = 3 BOLSITAS.")],
- [1, N("¿CUÁNTO ES 50 + 30?", 80, "5 + 3 = 8 BOLSITAS.")],
- [1, MC("20 + 30 ES…", ["23", "50", "5"], "50", "5 BOLSITAS DE 10.")],
- [2, N("¿CUÁNTO ES 60 − 20?", 40, "6 − 2 = 4 BOLSITAS.")],
- [2, N("¿CUÁNTO ES 90 − 50?", 40, "9 − 5 = 4 BOLSITAS.")],
- [2, N("TOMI TIENE 70 FIGURITAS. REGALA 40. ¿CUÁNTAS LE QUEDAN?", 30, "7 − 4 = 3 BOLSITAS.")],
- [3, N("20, 30, 40, ___ ¿QUÉ NÚMERO SIGUE?", 50, "SUMAMOS 10.")],
- [3, N("60, 50, 40, ___ ¿QUÉ NÚMERO SIGUE?", 30, "RESTAMOS 10.")],
- [3, MC("¿CUÁL CUENTA DE 10 EN 10?", ["10, 20, 30", "10, 11, 12", "1, 2, 3"], "10, 20, 30", "SUMAMOS UNA BOLSITA CADA VEZ.")],
- [4, N("¿CUÁNTO ES 70 + 30?", 100, "7 + 3 = 10 BOLSITAS: 100.")],
- [4, N("HAY 100 CARAMELOS. SE VENDEN 60. ¿CUÁNTOS QUEDAN?", 40, "10 − 6 = 4 BOLSITAS.")],
- [4, MC("SI SE VAN CARAMELOS, HACEMOS UNA…", ["SUMA", "RESTA"], "RESTA", "SI SE VAN, RESTAMOS.")],
- [4, N("SOFI TIENE 40 CARAMELOS Y COMPRA 50. ¿CUÁNTOS TIENE?", 90, "4 + 5 = 9 BOLSITAS.")],
+ [1, N("¿CUÁNTO ES 10 + 20?", 30, "1 + 2 = 3 BOLSITAS.", **A)],
+ [1, N("¿CUÁNTO ES 50 + 30?", 80, "5 + 3 = 8 BOLSITAS.", **A)],
+ [1, MC("MICA DICE QUE 20 + 30 ES 23. ¿CUÁNTO ES DE VERDAD?", ["50", "23", "5"], "50", "5 BOLSITAS DE 10.", **ER)],
+ [2, N("¿CUÁNTO ES 60 − 20?", 40, "6 − 2 = 4 BOLSITAS.", **A)],
+ [2, FB("COMPLETÁ: 90 − 50 = ___", [["40"]], "9 − 5 = 4 BOLSITAS.", **A)],
+ [2, N("[[problema]] TOMI TIENE 70 FIGURITAS. REGALA 40. ¿CUÁNTAS FIGURITAS LE QUEDAN?", 30, "7 − 4 = 3 BOLSITAS.", **AN, **NEU("TOMI TIENE 70 ESTAMPAS. REGALA 40. ¿CUÁNTAS ESTAMPAS LE QUEDAN?"))],
+ [3, N("20, 30, 40, ___ ¿QUÉ NÚMERO SIGUE?", 50, "SUMAMOS 10.", **A)],
+ [3, N("60, 50, 40, ___ ¿QUÉ NÚMERO SIGUE?", 30, "RESTAMOS 10.", **A)],
+ [3, MC("¿CUÁL CUENTA DE 10 EN 10?", ["10, 20, 30", "10, 11, 12", "1, 2, 3"], "10, 20, 30", "SUMAMOS UNA BOLSITA CADA VEZ.", **RE)],
+ [4, N("¿CUÁNTO ES 70 + 30?", 100, "7 + 3 = 10 BOLSITAS: 100.", **A)],
+ [4, N("HAY 100 CARAMELOS. SE VENDEN 60. ¿CUÁNTOS QUEDAN?", 40, "10 − 6 = 4 BOLSITAS.", **A)],
+ [4, MC("SI SE VAN CARAMELOS, HACEMOS UNA…", ["SUMA", "RESTA"], "RESTA", "SI SE VAN, RESTAMOS.", **RE)],
+ [4, N("SOFI TIENE 40 CARAMELOS Y COMPRA 50. ¿CUÁNTOS TIENE?", 90, "4 + 5 = 9 BOLSITAS.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 12, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 12, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: sumar y restar decenas", "examen_titulo": "Nivel jefe: sumar y restar decenas",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-12.json"), "w", encoding="utf-8"), ensure_ascii=False)
