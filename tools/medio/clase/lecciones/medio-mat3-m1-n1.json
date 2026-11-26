@@ -1,0 +1,149 @@
+{
+ "slug": "medio-mat3-m1-n1",
+ "step_id": "22ca20aa-6616-43b5-93f7-4c8eabf95aa1",
+ "materia": "Matemática 3",
+ "titulo": "Los miles",
+ "sub": "Matemática 3 · Misión 1 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Lola",
+    "emoji": "👩‍🔧"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Lola llena cajones de 100.",
+    "Diez cajones van al camión.",
+    "¿Cuántos lápices lleva?"
+   ],
+   "titulo": "LOS MILES",
+   "sub": "1.000",
+   "voz": [
+    "Lola llena *cajones* de 100 lápices.",
+    "Diez cajones suben al *camión*.",
+    "¿Cuántos lápices lleva el camión?",
+    "Hoy: *los miles*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "1 CAJÓN",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "10 CAJONES",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un cajón tiene *100* lápices.",
+    "Contamos: cien, doscientos, trescientos…",
+    "Diez cajones son *1.000*.",
+    "¡Mil es un camión lleno!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Mil",
+   "texto": "Diez cientos forman mil: 1.000",
+   "emoji": "🚚",
+   "voz": [
+    "Diez cientos forman *mil*.",
+    "Se escribe 1, punto, tres ceros."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "CAMIONES",
+   "items": [
+    {
+     "txt": "1.000",
+     "emoji": "🚚",
+     "valor": 1000
+    },
+    {
+     "txt": "2.000",
+     "emoji": "🚚",
+     "valor": 2000
+    },
+    {
+     "txt": "3.000",
+     "emoji": "🚚",
+     "valor": 3000
+    }
+   ],
+   "voz": [
+    "Un camión: *mil*.",
+    "Dos camiones: *dos mil*.",
+    "¡Tres camiones: *tres mil*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "1.000",
+    "2.000",
+    "3.000",
+    "4.000"
+   ],
+   "falta": "5.000",
+   "regla": "Sumamos mil",
+   "voz": [
+    "Mirá: mil, dos mil, tres mil, cuatro mil…",
+    "¿Qué sigue?",
+    "¡*Cinco mil*! Un camión más."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuántos cajones de 100 hay en 1.000?",
+   "opciones": [
+    "10",
+    "100",
+    "1"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuántos cajones forman mil?",
+    "Pensá en el camión…",
+    "¡*10* cajones!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MIL",
+     "diez cientos"
+    ],
+    [
+     "1.000",
+     "un camión"
+    ],
+    [
+     "DE MIL EN MIL",
+     "2.000, 3.000"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Mil* son diez cientos.",
+    "Un camión lleva *1.000* lápices.",
+    "Contamos *de mil en mil*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

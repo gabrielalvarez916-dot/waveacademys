@@ -1506,13 +1506,14 @@
   function p1Calc(pan, hl) { hl = [].concat(hl || []); var K = ['7', '8', '9', 'C', '4', '5', '6', '+', '1', '2', '3', '−', '0', '=']; return '<div class="lb-p1-calc"><div class="lb-p1-pan' + (hl.indexOf('pan') >= 0 ? ' on' : '') + '">' + pan + '</div><div class="lb-p1-tec">' + K.map(function (k) { return '<span class="' + (hl.indexOf(k) >= 0 ? 'on' : '') + ('+−=C'.indexOf(k) >= 0 ? ' sg' : '') + (k === '0' ? ' cero' : '') + '">' + k + '</span>'; }).join('') + '</div></div>'; }
   // cajas de 100, paquetes de 10 y sueltos; op.c/op.d/op.u = cuántos de cada uno ya se contaron (con el total que va)
   function p1CDU(n, op) {
-    op = op || {}; var c = Math.floor(n / 100), d = Math.floor(n / 10) % 10, u = n % 10, h = '', i, t = 0;
+    op = op || {}; var mi = Math.floor(n / 1000), c = Math.floor(n / 100) % 10, d = Math.floor(n / 10) % 10, u = n % 10, h = '', i, t = 0;
     var it = function (e, val, k, lab) { var on = op[k] != null && op[k] > 0; if (on) { op[k]--; t += val; } return '<span class="lb-p1-o' + (on ? ' on' : '') + '">' + e + (on || lab ? '<small>' + (on ? t : lab) + '</small>' : '') + '</span>'; };
-    var fc = '', fd = '', fu = '';
+    var fm = '', fc = '', fd = '', fu = '';
+    for (i = 0; i < mi; i++) fm += it('🚚', 1000, 'm', '1.000');
     for (i = 0; i < c; i++) fc += it('🗃️', 100, 'c', '100'); for (i = 0; i < d; i++) fd += it('📦', 10, 'd', '10'); for (i = 0; i < u; i++) fu += it('🍪', 1, 'u', '');
-    return '<div class="lb-p1-dz lb-p1-cdu">' + (fc ? '<div class="lb-p1-fila">' + fc + '</div>' : '') + (fd ? '<div class="lb-p1-fila">' + fd + '</div>' : '') + (fu ? '<div class="lb-p1-fila">' + fu + '</div>' : '') + '</div>';
+    return '<div class="lb-p1-dz lb-p1-cdu">' + (fm ? '<div class="lb-p1-fila">' + fm + '</div>' : '') + (fc ? '<div class="lb-p1-fila">' + fc + '</div>' : '') + (fd ? '<div class="lb-p1-fila">' + fd + '</div>' : '') + (fu ? '<div class="lb-p1-fila">' + fu + '</div>' : '') + '</div>';
   }
-  function p1CDUt(n, hl) { var s = String(n), L = ['CENTENAS', 'DECENAS', 'UNIDADES'].slice(3 - s.length); return '<div class="lb-p1-du">' + s.split('').map(function (d, i) { return '<span class="' + (hl === 9 || hl === i ? 'on' : '') + '"><small>' + L[i] + '</small><b>' + d + '</b></span>'; }).join('') + '</div>'; }
+  function p1CDUt(n, hl) { var s = String(n), L = ['MILES', 'CENTENAS', 'DECENAS', 'UNIDADES'].slice(4 - s.length); return '<div class="lb-p1-du">' + s.split('').map(function (d, i) { return '<span class="' + (hl === 9 || hl === i ? 'on' : '') + '"><small>' + L[i] + '</small><b>' + d + '</b></span>'; }).join('') + '</div>'; }
   // recta del 0 al 1.000 de 100 en 100; marcas = [[número, clase, texto]]
   function p1R1000(marcas) {
     var h = '', k; for (k = 0; k <= 1000; k += 100) h += '<span class="lb-p1-t" style="left:' + k / 10 + '%"><i></i><b>' + (k === 1000 ? '1.000' : k) + '</b></span>';
@@ -1578,6 +1579,7 @@
       prop: p.que === 'familia' ? ctrl('a', 'PRIMER NÚMERO', 10, 60, 10, 60) + ctrl('b', 'SEGUNDO NÚMERO', 10, 40, 10, 40) : p.que === 'amigos' ? ctrl('a', 'PRIMER NÚMERO', 11, 89, 1, 37) + ctrl('b', 'SEGUNDO NÚMERO', 11, 89, 1, 25) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 10, 60, 5, 25) : ctrl('a', 'NÚMERO CHICO', 1, 9, 1, 4) + ctrl('b', 'NÚMERO GRANDE', 100, 300, 1, 120),
       mult: p.que === 'arreglo' || p.que === 'girar' ? ctrl('f', 'FILAS', 2, 5, 1, 3) + ctrl('c', 'COLUMNAS', 2, 6, 1, 4) : ctrl('g', 'GRUPOS', 2, 5, 1, 3) + ctrl('n', 'EN CADA GRUPO', 2, 6, 1, 4),
       por10: ctrl('n', 'NÚMERO', 1, p.de === 100 ? 9 : (p.que === 'cifras' ? 45 : 9), 1, p.de === 100 ? 3 : (p.que === 'cifras' ? 24 : 4)),
+      miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1983,8 +1985,8 @@
       if (md === 'serie') {
         var pa = p.de || 10, baja = p.dir === 'baja', L5 = [];
         for (i = 0; i < 5; i++) L5.push(v.a + (baja ? -pa : pa) * i);
-        for (i = 1; i <= 5; i++) P.push({ vis: '<div class="lb-p1-tren">' + L5.map(function (x, k) { return '<span class="lb-p1-vag' + (k < i ? (k === i - 1 ? ' on' : '') : ' oculto') + '">' + (k < i ? x : '?') + '</span>'; }).join('') + '</div>', txt: i === 1 ? 'EMPEZAMOS EN EL <b>' + L5[0] + '</b>.' : (baja ? 'RESTAMOS ' : 'SUMAMOS ') + pa + ': <b>' + L5[i - 1] + '</b>.' });
-        P.push({ vis: p1Big(L5.join(', ')), txt: 'LA SERIE <b>' + (baja ? 'BAJA' : 'SUBE') + '</b> DE ' + pa + ' EN ' + pa + (pa === 10 ? ': CAMBIA LA CIFRA DE LAS DECENAS.' : pa === 100 ? ': CAMBIA LA CIFRA DE LAS CENTENAS.' : '.') });
+        for (i = 1; i <= 5; i++) P.push({ vis: '<div class="lb-p1-tren">' + L5.map(function (x, k) { return '<span class="lb-p1-vag' + (k < i ? (k === i - 1 ? ' on' : '') : ' oculto') + '">' + (k < i ? fmt(x) : '?') + '</span>'; }).join('') + '</div>', txt: i === 1 ? 'EMPEZAMOS EN EL <b>' + fmt(L5[0]) + '</b>.' : (baja ? 'RESTAMOS ' : 'SUMAMOS ') + fmt(pa) + ': <b>' + fmt(L5[i - 1]) + '</b>.' });
+        P.push({ vis: p1Big(L5.map(fmt).join(', ')), txt: 'LA SERIE <b>' + (baja ? 'BAJA' : 'SUBE') + '</b> DE ' + pa + ' EN ' + pa + (pa === 10 ? ': CAMBIA LA CIFRA DE LAS DECENAS.' : pa === 100 ? ': CAMBIA LA CIFRA DE LAS CENTENAS.' : pa === 1000 ? ': CAMBIA LA CIFRA DE LOS MILES.' : '.') });
         return P;
       }
       if (md === 'valor') {
@@ -2157,6 +2159,23 @@
         P.push({ vis: p1Big(v.n + ' × ' + de10 + ' = ' + rz), txt: v.n + ' × ' + de10 + ' = <b>' + rz + '</b>.' });
         return P;
       }
+      if (md === 'miles') {
+        var nM = v.m * 1000 + v.c * 100 + v.d * 10 + v.u, fM = function (x) { return H.fmt ? H.fmt(x) : String(x); }, qM = p.que || 'contar';
+        if (qM === 'contar') {
+          P.push({ vis: p1CDU(nM), txt: 'UN CAMIÓN TIENE <b>1.000</b>: SON 10 CAJAS DE 100.' });
+          P.push({ vis: p1CDU(nM, { m: v.m }), txt: 'CONTAMOS LOS CAMIONES DE 1.000 EN 1.000: <b>' + fM(v.m * 1000) + '</b>.' });
+          if (v.c) P.push({ vis: p1CDU(nM, { m: v.m, c: v.c }), txt: 'SEGUIMOS CON LAS CAJAS DE 100 EN 100: <b>' + fM(v.m * 1000 + v.c * 100) + '</b>.' });
+          if (v.d || v.u) P.push({ vis: p1CDU(nM, { m: v.m, c: v.c, d: v.d, u: v.u }), txt: 'Y LOS PAQUETES Y SUELTOS: <b>' + fM(nM) + '</b>.' });
+          P.push({ vis: p1CDU(nM, { m: v.m, c: v.c, d: v.d, u: v.u }) + p1Big('HAY ' + fM(nM)), txt: 'EN TOTAL HAY <b>' + fM(nM) + '</b>.' });
+          return P;
+        }
+        P.push({ vis: p1CDUt(nM, 0), txt: 'LOS CAMIONES SON <b>MILES</b>: VAN PRIMERO.' });
+        P.push({ vis: p1CDUt(nM, 1), txt: 'DESPUÉS LAS <b>CENTENAS</b>.' });
+        P.push({ vis: p1CDUt(nM, 2), txt: v.d ? 'DESPUÉS LAS <b>DECENAS</b>.' : 'NO HAY DECENAS: EL <b>0</b> GUARDA SU LUGAR.' });
+        P.push({ vis: p1CDUt(nM, 3), txt: 'AL FINAL LAS <b>UNIDADES</b>.' });
+        P.push({ vis: p1CDUt(nM, 9) + p1Big(fM(nM)), txt: 'SE ESCRIBE <b>' + fM(nM) + '</b> Y SE LEE <b>' + p1Up(nM) + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2298,7 +2317,7 @@
       return respuesta(el, api, function () { var c = R(1, mx), d = R(0, 9), u = R(0, 9), n = c * 100 + d * 10 + u;
         return { cons: 'CADA CAJA TIENE 100 Y CADA PAQUETE 10. ¿CUÁNTOS HAY EN TOTAL?', html: p1CDU(n), campos: [{ v: n }], ayuda: 'CONTÁ LAS CAJAS DE 100 EN 100, LOS PAQUETES DE 10 EN 10 Y DESPUÉS LOS SUELTOS.', bien: '¡MUY BIEN! HAY ' + n + '.' }; }); }
     if (md === 'serie') return respuesta(el, api, function () { var pa = p.de || pick([1, 10, 100].filter(function (x) { return x <= (p.max || 500) / 5; })), baja = p.dir === 'baja' || (p.dir === 'mezcla' && Math.random() < 0.5), lo = (p.desde || 100) + (baja ? pa * 4 : 0), hi = (p.hasta || 190) - (baja ? 0 : pa * 4), a = R(Math.min(lo, hi), Math.max(lo, hi)), L = [], f = R(2, 4), k; for (k = 0; k < 5; k++) L.push(a + (baja ? -pa : pa) * k);
-      return { cons: 'LA SERIE ' + (baja ? 'BAJA' : 'SUBE') + ' DE ' + pa + ' EN ' + pa + '. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren">' + L.map(function (x, i) { return '<span class="lb-p1-vag' + (i === f ? ' oculto">?' : '">' + x) + '</span>'; }).join('') + '</div>', campos: [{ v: L[f] }], ayuda: (baja ? 'RESTÁ ' : 'SUMÁ ') + pa + ' AL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ES EL ' + L[f] + '.' }; });
+      return { cons: 'LA SERIE ' + (baja ? 'BAJA' : 'SUBE') + ' DE ' + pa + ' EN ' + pa + '. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren">' + L.map(function (x, i) { return '<span class="lb-p1-vag' + (i === f ? ' oculto">?' : '">' + fmt(x)) + '</span>'; }).join('') + '</div>', campos: [{ v: L[f] }], ayuda: (baja ? 'RESTÁ ' : 'SUMÁ ') + pa + ' AL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ES EL ' + L[f] + '.' }; });
     if (md === 'valor') { if (p.que === 'desarmar') return respuesta(el, api, function () { var c = R(1, 9), d = R(0, 9), u = R(0, 9);
         return { cons: '¿QUÉ NÚMERO ES <b>' + c * 100 + ' + ' + d * 10 + ' + ' + u + '</b>?', campos: [{ v: c * 100 + d * 10 + u }], ayuda: c + ' CENTENAS, ' + d + ' DECENAS Y ' + u + ' UNIDADES.', bien: '¡MUY BIEN! ES ' + (c * 100 + d * 10 + u) + '.' }; });
       return p1Elegir(el, api, function () { var c = R(1, 9), d = R(1, 9), u = R(1, 9); while (d === c) d = R(1, 9); while (u === c || u === d) u = R(1, 9); var n = c * 100 + d * 10 + u, k = R(0, 2), dig = String(n)[k], val = [c * 100, d * 10, u][k];
@@ -2358,6 +2377,14 @@
         else c = '¿CUÁNTO ES <b>' + n + ' × ' + d + '</b>?';
         if (d === 10 && q10 !== 'cifras') h = p1BolsasN(n);
         return { cons: c, html: h, campos: [{ v: n * d }], ayuda: 'AGREGÁ ' + (d === 100 ? 'DOS CEROS' : 'UN CERO') + ' AL ' + n + '.', bien: '¡MUY BIEN! ' + n + ' × ' + d + ' = ' + n * d + '.' }; }); }
+    if (md === 'miles') { var qM = p.que || 'contar', fM = function (x) { return H.fmt ? H.fmt(x) : String(x); }, mxM = p.max || 9;
+      var nG = function () { var m = R(1, mxM), c = R(0, 9), d = pick([0, R(1, 9)]), u = R(0, 9); return { m: m, c: c, d: d, u: u, n: m * 1000 + c * 100 + d * 10 + u }; };
+      if (qM === 'escribir') return p1Elegir(el, api, function () { var x = nG(), ok = fM(x.n), w1 = fM(x.m * 10000 + x.c * 100 + x.d * 10 + x.u), w2 = fM(x.m * 100 + x.c * 10 + x.u);
+        return { cons: '¿CÓMO SE ESCRIBE <b>' + p1Up(x.n) + '</b>?', ops: mezclar([ok, w1, w2 === ok ? fM(x.n + 1000) : w2]), ok: ok, ayuda: 'SON CUATRO CIFRAS: MILES, CENTENAS, DECENAS Y UNIDADES.', bien: '¡MUY BIEN! SE ESCRIBE ' + ok + '.' }; });
+      if (qM === 'leer') return p1Elegir(el, api, function () { var x = nG(), o2 = [x.n], k; while (o2.length < 3) { k = x.n + pick([1000, -1000, 100, -100, 10]); if (k > 999 && k < 10000 && o2.indexOf(k) < 0) o2.push(k); }
+        return { cons: '¿CÓMO SE LEE ESTE NÚMERO?', html: p1CDUt(x.n), ops: mezclar(o2.map(p1Up)), ok: p1Up(x.n), ayuda: 'EMPEZÁ POR LOS MILES.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var x = nG();
+        return { cons: 'CADA CAMIÓN TIENE 1.000, CADA CAJA 100 Y CADA PAQUETE 10. ¿CUÁNTOS HAY?', html: p1CDU(x.n), campos: [{ v: x.n }], ayuda: 'CONTÁ CAMIONES, CAJAS, PAQUETES Y SUELTOS, EN ESE ORDEN.', bien: '¡MUY BIEN! HAY ' + fM(x.n) + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }

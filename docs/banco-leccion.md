@@ -109,3 +109,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Matemática 2, Misiones 11 y 12) | ejemplo / ejercicio | problema ahora acepta `esc` (números grandes: 50 → de 100 a 450) y `tipo`: dospasos · prop (`que`: conmuta, amigos, dobles, familia) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 13 y 14) | ejemplo / ejercicio | mult (`que`: grupos, signo, arreglo, girar; ejercicio también filas) |
 | `primeros` / `primeros_x` (Matemática 2, Misión 15) | ejemplo / ejercicio | por10 (`de`: 10 o 100; `que`: cifras; ejercicio también problema, cuantos0) |
+- `primeros` / `primeros_x` modo `miles`: números de 4 cifras con camiones de 1.000, cajas de 100, paquetes de 10 y sueltos (que: contar | escribir | leer). `serie` acepta pasos de 1.000 y muestra el punto de miles. (Mat3 m1)

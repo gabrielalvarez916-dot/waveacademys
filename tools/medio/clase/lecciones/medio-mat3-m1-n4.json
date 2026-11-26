@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat3-m1-n4",
+ "step_id": "d8230580-45e6-4f78-9910-9fe15ca13d98",
+ "materia": "Matemática 3",
+ "titulo": "Leer y escribir números de cuatro cifras",
+ "sub": "Matemática 3 · Misión 1 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Lola, ¿cómo escribo tres mil cuarenta?"
+    },
+    {
+     "yo": true,
+     "txt": "Fijate dónde van los ceros"
+    },
+    {
+     "yo": false,
+     "txt": "¿3.040?"
+    }
+   ],
+   "titulo": "LEER Y ESCRIBIR",
+   "sub": "cuatro cifras",
+   "voz": [
+    "Tomi pregunta: ¿cómo escribo tres mil cuarenta?",
+    "Lola le dice: fijate dónde van los *ceros*.",
+    "¿3.040?",
+    "Hoy: *leer y escribir números de cuatro cifras*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "ESCRIBIR",
+   "pasos": [
+    {
+     "txt": "TRES MIL CUARENTA"
+    },
+    {
+     "txt": "3 MILES · 0 CIENTOS · 4 DIECES · 0",
+     "nota": "cada lugar"
+    },
+    {
+     "txt": "3.040"
+    }
+   ],
+   "voz": [
+    "Queremos escribir tres mil cuarenta.",
+    "Tres miles, *cero* cientos, cuatro dieces y cero unidades.",
+    "¡Se escribe *3.040*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ",
+   "pares": [
+    [
+     "2.015",
+     "dos mil quince"
+    ],
+    [
+     "2.150",
+     "dos mil ciento cincuenta"
+    ],
+    [
+     "2.501",
+     "dos mil quinientos uno"
+    ]
+   ],
+   "voz": [
+    "Uní cada número con su nombre.",
+    "2.015: *dos mil quince*.",
+    "2.150: *dos mil ciento cincuenta*.",
+    "2.501: *dos mil quinientos uno*."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Seis mil ocho se escribe 6.8",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Se escribe 6.008",
+   "voz": [
+    "¿Verdadero o falso? Seis mil ocho es 6.8.",
+    "Contá las cifras…",
+    "¡*Falso*! Es *6.008*: los ceros guardan lugar."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "tres mil cinco = 30005",
+     "bien": "tres mil cinco = 3.005"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Tres mil cinco es *3.005*: cuatro cifras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUATRO CIFRAS",
+     "M, C, D y U"
+    ],
+    [
+     "EL CERO",
+     "guarda el lugar"
+    ],
+    [
+     "LEER",
+     "primero los miles"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Son *cuatro cifras*: miles, cientos, dieces y unidades.",
+    "El *cero* guarda el lugar.",
+    "Para leer, primero los *miles*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

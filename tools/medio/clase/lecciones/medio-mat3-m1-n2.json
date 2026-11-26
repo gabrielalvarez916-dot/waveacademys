@@ -1,0 +1,132 @@
+{
+ "slug": "medio-mat3-m1-n2",
+ "step_id": "ce6f573d-0b3a-4f94-82e5-e4655151ad47",
+ "materia": "Matemática 3",
+ "titulo": "Hasta 5.000",
+ "sub": "Matemática 3 · Misión 1 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "2 camiones, 3 cajones y 5 lápices. ¿Cuántos son?",
+   "segundos": 8,
+   "respuesta": "¡2.305!",
+   "emoji": "🚚",
+   "titulo": "HASTA",
+   "sub": "5.000",
+   "voz": [
+    "Desafío: 2 camiones, 3 cajones y 5 lápices.",
+    "¡*2.305*! Dos mil trescientos cinco.",
+    "Hoy: *los números hasta 5.000*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "2.305",
+   "columnas": [
+    "M",
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "2",
+     "3",
+     "0",
+     "5"
+    ]
+   ],
+   "voz": [
+    "Mirá el 2.305 en la tabla.",
+    "Tiene 2 miles y 3 cientos.",
+    "Tiene 0 dieces y 5 unidades.",
+    "El *cero* guarda el lugar de las decenas."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "3.400",
+    "emoji": "🚚",
+    "datos": [
+     "3 camiones",
+     "4 cajones"
+    ]
+   },
+   "b": {
+    "txt": "4.300",
+    "emoji": "🚚",
+    "datos": [
+     "4 camiones",
+     "3 cajones"
+    ]
+   },
+   "gana": "b",
+   "veredicto": "4.300 es mayor: tiene más miles",
+   "voz": [
+    "¿Cuál es más grande?",
+    "3.400 tiene 3 miles.",
+    "4.300 tiene *4 miles*.",
+    "¡Gana *4.300*: mirá primero los miles!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "4.997",
+    "4.998",
+    "4.999"
+   ],
+   "falta": "5.000",
+   "regla": "Sumamos 1",
+   "voz": [
+    "Mirá: 4.997, 4.998, 4.999…",
+    "¿Qué número sigue?",
+    "¡*Cinco mil*! Se llena otro camión."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Después del 4.999 va el 41.000",
+     "bien": "Después del 4.999 va el 5.000"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Después del 4.999 viene el *5.000*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MILES",
+     "van primero"
+    ],
+    [
+     "EL CERO",
+     "guarda el lugar"
+    ],
+    [
+     "4.999",
+     "y después 5.000"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *miles* van primero.",
+    "El *cero* guarda el lugar.",
+    "Después del 4.999 viene el *5.000*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

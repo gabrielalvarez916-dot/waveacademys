@@ -1,0 +1,160 @@
+{
+ "slug": "medio-intro-mat3",
+ "subject_id": "651eda34-d09a-45f2-82bf-e28abcc0c9ae",
+ "materia": "Matemática 3",
+ "titulo": "Bienvenidos a Matemática 3",
+ "sub": "Introducción · Nivel medio",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Lola",
+    "emoji": "👩‍🔧"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Lola tiene una fábrica de lápices.",
+    "Salen miles por día.",
+    "¡Y necesita tu ayuda!"
+   ],
+   "titulo": "¡BIENVENIDOS!",
+   "sub": "a Matemática 3",
+   "voz": [
+    "¡Hola! Ella es *Lola*.",
+    "Tiene una *fábrica de lápices*.",
+    "¡Y este año necesita tu ayuda!",
+    "¡Bienvenidos a *Matemática 3*!"
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "CAJA",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CAJÓN",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "CAMIÓN",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Diez lápices llenan una *caja*.",
+    "Diez cajas llenan un *cajón*: 100.",
+    "¡Y diez cajones llenan un *camión*: 1.000!",
+    "¡Este año vamos a contar hasta *10.000*!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuántos lápices hay en un camión?",
+   "opciones": [
+    "100",
+    "1.000",
+    "10"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Probemos. Un camión de Lola…",
+    "¿Cuántos lápices lleva?",
+    "¡*1.000*! ¡Ya sabés un montón!"
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 30 MISIONES",
+   "eventos": [
+    {
+     "fecha": "1",
+     "txt": "Los números hasta 10.000",
+     "emoji": "🔢"
+    },
+    {
+     "fecha": "2",
+     "txt": "Sumar y restar",
+     "emoji": "➕"
+    },
+    {
+     "fecha": "3",
+     "txt": "Multiplicar y dividir",
+     "emoji": "✖️"
+    },
+    {
+     "fecha": "4",
+     "txt": "Figuras y cuerpos",
+     "emoji": "🔺"
+    },
+    {
+     "fecha": "5",
+     "txt": "Medidas, hora y datos",
+     "emoji": "⏰"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *30 misiones*. Primero, los números hasta *10.000*.",
+    "Después vas a *sumar* y *restar*.",
+    "Vas a *multiplicar* y *dividir*.",
+    "Vas a conocer *figuras* y cuerpos.",
+    "¡Y a *medir*, leer la hora y usar datos!"
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "¿CÓMO SE JUEGA?",
+   "items": [
+    {
+     "txt": "Mirás la clase",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Leés el PDF",
+     "emoji": "📄"
+    },
+    {
+     "txt": "Hacés las actividades",
+     "emoji": "✏️"
+    }
+   ],
+   "voz": [
+    "Cada misión tiene *niveles*.",
+    "Primero mirás una *clase*, como esta.",
+    "Después leés el *PDF* con tu carpeta.",
+    "Y hacés las *actividades*."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión: ¡el NIVEL JEFE!",
+   "emoji": "🏆",
+   "voz": [
+    "Al final te espera el *nivel jefe*."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Tené tu carpeta y tus lápices a mano",
+   "emoji": "🎒",
+   "voz": [
+    "Tené tu *carpeta* y tus lápices a mano."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Tu primera misión: los números hasta 10.000. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listos? Primera misión: *los números hasta 10.000*. ¡Vamos!"
+   ]
+  }
+ ]
+}
