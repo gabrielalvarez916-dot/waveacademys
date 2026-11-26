@@ -848,6 +848,68 @@
     });
   } };
 
+  // ======= CRITERIOS Y FACTORIZACIÓN (Matemática I · Misiones 6 y 7) =======
+  function primo(n) { if (n < 2) return false; for (var i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; }
+  function fact(n) { var o = {}, f = 2; while (n > 1) { while (n % f === 0) { o[f] = (o[f] || 0) + 1; n /= f; } f++; } return o; }
+  function factTxt(F) { return Object.keys(F).map(function (k) { return k + (F[k] > 1 ? sup(F[k]) : ''); }).join(' · ') || '1'; }
+  M.criterios = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || '2_5_10';
+    escena(el, ctrl('n', 'Número', 10, 99999, 1, pick([4572, 2310, 7128, 1386])), function (o) {
+      var n = Math.round(o.n), s = String(n), u = +s.slice(-1), G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, si = function (b) { return b ? '✔ sí' : '✘ no'; };
+      var sum = s.split('').reduce(function (a, b) { return a + +b; }, 0), d2 = +s.slice(-2), d3 = +s.slice(-3);
+      if (md === '2_5_10') return [{ vis: G(fmt(n)), txt: 'Para 2, 5 y 10 alcanza con mirar la <b>última cifra</b>: ' + u + '.' }, { vis: G('… ' + u) + RS('por 2: ' + si(u % 2 === 0)), txt: 'Por 2: termina en cifra par (0, 2, 4, 6, 8).' }, { vis: G('… ' + u) + RS('por 5: ' + si(u % 5 === 0)), txt: 'Por 5: termina en 0 o en 5.' }, { vis: G('… ' + u) + RS('por 10: ' + si(u === 0)), txt: 'Por 10: termina en 0.' }];
+      if (md === '3_9') return [{ vis: G(fmt(n)), txt: 'Para 3 y 9 sumamos <b>todas las cifras</b>.' }, { vis: G(s.split('').join(' + ') + ' = ' + sum), txt: 'La suma de las cifras es ' + sum + '.' }, { vis: RS('por 3: ' + si(sum % 3 === 0)), txt: 'Es divisible por 3 si la suma es múltiplo de 3.' }, { vis: RS('por 9: ' + si(sum % 9 === 0)), txt: 'Es divisible por 9 si la suma es múltiplo de 9.' }];
+      if (md === '4_8') return [{ vis: G(fmt(n)), txt: 'Para 4 miramos las dos últimas cifras; para 8, las tres últimas.' }, { vis: G('… ' + (s.length > 1 ? s.slice(-2) : s)) + RS('por 4: ' + si(d2 % 4 === 0)), txt: s.slice(-2) + (d2 % 4 === 0 ? ' es' : ' no es') + ' múltiplo de 4.' }, { vis: G('… ' + (s.length > 2 ? s.slice(-3) : s)) + RS('por 8: ' + si(d3 % 8 === 0)), txt: s.slice(-3) + (d3 % 8 === 0 ? ' es' : ' no es') + ' múltiplo de 8.' }];
+      if (md === '6') return [{ vis: G(fmt(n)), txt: '6 = 2 × 3: hay que mirar los dos criterios.' }, { vis: RS('por 2: ' + si(u % 2 === 0)), txt: 'Por 2: ¿termina en cifra par?' }, { vis: RS('por 3: ' + si(sum % 3 === 0)), txt: 'Por 3: la suma de las cifras es ' + sum + '.' }, { vis: RS('por 6: ' + si(n % 6 === 0)), txt: 'Es divisible por 6 solo si cumple <b>los dos</b>.' }];
+      var imp = 0, par = 0; s.split('').reverse().forEach(function (d, i) { if (i % 2) par += +d; else imp += +d; });
+      if (md === '11') return [{ vis: G(fmt(n)), txt: 'Para 11 sumamos las cifras de lugares alternados, desde la derecha.' }, { vis: G('lugares impares: ' + imp + ' · lugares pares: ' + par), txt: 'Una suma con las cifras 1.ª, 3.ª, 5.ª… y otra con 2.ª, 4.ª…' }, { vis: G('Diferencia: ' + Math.abs(imp - par)), txt: 'Restamos las dos sumas.' }, { vis: RS('por 11: ' + si(Math.abs(imp - par) % 11 === 0)), txt: 'Es divisible por 11 si la diferencia es 0 o múltiplo de 11.' }];
+      var tab = '<table class="lb2-tab"><tr>' + [2, 3, 4, 5, 6, 9, 10].map(function (k) { return '<th>' + k + '</th>'; }).join('') + '</tr><tr>' + [2, 3, 4, 5, 6, 9, 10].map(function (k) { return '<td class="' + (n % k ? '' : 'on') + '">' + (n % k ? '✘' : '✔') + '</td>'; }).join('') + '</tr></table>';
+      return [{ vis: G(fmt(n)), txt: 'Aplicamos varios criterios al mismo número.' }, { vis: G('última cifra ' + u + ' · suma de cifras ' + sum), txt: 'Dos datos alcanzan para casi todo: la última cifra y la suma de las cifras.' }, { vis: tab, txt: 'Marcamos por cuáles es divisible.' }];
+    });
+  } };
+  M.criterios_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || '2_5_10', K = { '2_5_10': [2, 5, 10], '3_9': [3, 9], '4_8': [4, 8], '6': [6], '11': [11], combinar: [2, 3, 4, 5, 6, 9] }[md] || [2];
+    respuesta(el, api, function () { var k = pick(K), n = Math.random() < .5 ? k * R(50, 2000) : R(100, 20000), es = n % k === 0;
+      return { cons: '¿<b>' + fmt(n) + '</b> es divisible por <b>' + k + '</b>? Usá el criterio y escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: es ? ['si', 'sí'] : ['no'] }], ayuda: { 2: 'Mirá si termina en cifra par.', 5: 'Mirá si termina en 0 o 5.', 10: 'Mirá si termina en 0.', 3: 'Sumá las cifras: ¿es múltiplo de 3?', 9: 'Sumá las cifras: ¿es múltiplo de 9?', 4: 'Mirá las dos últimas cifras.', 8: 'Mirá las tres últimas cifras.', 6: 'Tiene que ser divisible por 2 y por 3.', 11: 'Restá las sumas de cifras alternadas.' }[k], bien: es ? '¡Bien! Sí es divisible.' : '¡Bien! No es divisible.' }; });
+  } };
+  M.factores = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'criba', C = { criba: ctrl('n', 'Hasta', 20, 60, 10, 50), esprimo: ctrl('n', 'Número', 2, 400, 1, 91), divisores: ctrl('a', 'Exponente del 2', 0, 4, 1, 2) + ctrl('b', 'Exponente del 3', 0, 3, 1, 1) + ctrl('c', 'Exponente del 5', 0, 2, 1, 1),
+      mcd_desc: ctrl('a', 'Un número', 4, 200, 1, 60) + ctrl('b', 'Otro número', 4, 200, 1, 84), mcm_desc: ctrl('a', 'Un número', 4, 100, 1, 12) + ctrl('b', 'Otro número', 4, 100, 1, 18), producto: ctrl('a', 'Un número', 2, 60, 1, 12) + ctrl('b', 'Otro número', 2, 60, 1, 18),
+      tres: ctrl('a', 'Primero', 2, 60, 1, 12) + ctrl('b', 'Segundo', 2, 60, 1, 18) + ctrl('c', 'Tercero', 2, 60, 1, 30) }[md];
+    escena(el, C, function (o) {
+      var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, F = function (x) { return '<p class="lb-pt-f">' + x + '</p>'; };
+      if (md === 'criba') { var N = o.n, tira = function (hasta) { var h = '<div class="lb2-tira">'; for (var i = 2; i <= N; i++) { var tach = false; for (var q = 2; q <= hasta; q++) if (primo(q) && i !== q && i % q === 0) tach = true; h += '<span class="' + (tach ? 'b' : (hasta > 7 && primo(i) ? 'ab' : '')) + '" style="' + (tach ? 'text-decoration:line-through;opacity:.45' : '') + '">' + i + '</span>'; } return h + '</div>'; };
+        return [{ vis: tira(1), txt: 'Escribimos los números del 2 al ' + N + '.' }, { vis: tira(2), txt: 'El 2 es primo: tachamos sus múltiplos.' }, { vis: tira(3), txt: 'El 3 es primo: tachamos sus múltiplos.' }, { vis: tira(5), txt: 'Lo mismo con el 5.' }, { vis: tira(N), txt: 'Y con el 7. Los que quedan sin tachar son los <b>primos</b>.' }]; }
+      if (md === 'esprimo') { var n = o.n, raiz = Math.floor(Math.sqrt(n)), d = null, pr = []; for (var k = 2; k <= raiz; k++) { if (primo(k)) pr.push(k); if (d === null && n % k === 0) d = k; }
+        return [{ vis: G(String(n)), txt: '¿Es primo? Probamos dividirlo por los primos.' }, { vis: F('√' + n + ' ≈ ' + raiz + ' → probamos: ' + (pr.join(', ') || 'ninguno')), txt: 'Alcanza con probar hasta la raíz cuadrada del número.' }, d ? { vis: RS(n + ' = ' + d + ' × ' + n / d + ' → compuesto'), txt: 'Lo divide el ' + d + ': no es primo.' } : { vis: RS(n + ' es primo'), txt: 'Ninguno lo divide: es <b>primo</b>.' }]; }
+      if (md === 'divisores') { var a = o.a, b = o.b, c = o.c, N2 = Math.pow(2, a) * Math.pow(3, b) * Math.pow(5, c), F2 = '2' + sup(a) + ' · 3' + sup(b) + ' · 5' + sup(c);
+        return [{ vis: G(fmt(N2) + ' = ' + F2), txt: 'El número ya está descompuesto en factores primos.' }, { vis: F('el 2 puede aparecer 0 a ' + a + ' veces → ' + (a + 1) + ' opciones'), txt: 'Cada divisor elige cuántas veces usa cada primo.' }, { vis: F((a + 1) + ' × ' + (b + 1) + ' × ' + (c + 1)), txt: 'Sumamos 1 a cada exponente y multiplicamos.' }, { vis: RS(fmt(N2) + ' tiene ' + (a + 1) * (b + 1) * (c + 1) + ' divisores'), txt: 'Así se cuentan sin escribirlos todos.' }]; }
+      if (md === 'mcd_desc' || md === 'mcm_desc' || md === 'producto') { var A = o.a, B = o.b, FA = fact(A), FB = fact(B), K = {}, M2 = {}; Object.keys(FA).concat(Object.keys(FB)).forEach(function (k) { if (FA[k] && FB[k]) K[k] = Math.min(FA[k], FB[k]); M2[k] = Math.max(FA[k] || 0, FB[k] || 0); });
+        var g = mcd(A, B), l = A * B / g, P = [{ vis: F(A + ' = ' + factTxt(FA)) + F(B + ' = ' + factTxt(FB)), txt: 'Descomponemos los dos números en factores primos.' }];
+        if (md === 'mcd_desc') return P.concat([{ vis: F('comunes: ' + (factTxt(K) === '1' ? 'ninguno' : factTxt(K))), txt: 'MCD: los factores <b>comunes</b>, con el <b>menor</b> exponente.' }, { vis: RS('MCD(' + A + ', ' + B + ') = ' + g), txt: g === 1 ? 'Da 1: los números son <b>coprimos</b>.' : 'Multiplicamos esos factores.' }]);
+        if (md === 'mcm_desc') return P.concat([{ vis: F('todos: ' + factTxt(M2)), txt: 'MCM: <b>todos</b> los factores, comunes y no comunes, con el <b>mayor</b> exponente.' }, { vis: RS('MCM(' + A + ', ' + B + ') = ' + l), txt: 'Multiplicamos esos factores.' }]);
+        return [{ vis: G(A + ' y ' + B), txt: 'Dos números.' }, { vis: F('MCD = ' + g + ' · MCM = ' + l), txt: 'Calculamos su MCD y su MCM.' }, { vis: F(g + ' × ' + l + ' = ' + g * l + ' · ' + A + ' × ' + B + ' = ' + A * B), txt: 'Multiplicamos MCD por MCM, y los números entre sí.' }, { vis: RS('MCD × MCM = a × b'), txt: 'Siempre da lo mismo: si sabés tres datos, calculás el cuarto.' }]; }
+      var a3 = o.a, b3 = o.b, c3 = o.c, g3 = mcd(mcd(a3, b3), c3), l1 = a3 * b3 / mcd(a3, b3), l3 = l1 * c3 / mcd(l1, c3);
+      return [{ vis: G(a3 + ', ' + b3 + ' y ' + c3), txt: 'Con tres números se trabaja de a dos.' }, { vis: F('MCD(' + a3 + ', ' + b3 + ') = ' + mcd(a3, b3) + ' → MCD(' + mcd(a3, b3) + ', ' + c3 + ') = ' + g3), txt: 'MCD: el de los dos primeros, y después con el tercero.' }, { vis: F('MCM(' + a3 + ', ' + b3 + ') = ' + l1 + ' → MCM(' + l1 + ', ' + c3 + ') = ' + l3), txt: 'MCM: lo mismo.' }, { vis: RS('MCD = ' + g3 + ' · MCM = ' + l3), txt: 'También se puede con la descomposición de los tres.' }];
+    });
+  } };
+  M.factores_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'esprimo';
+    respuesta(el, api, function () {
+      if (md === 'esprimo') { var n = pick([R(20, 150), pick([23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113])]), es = primo(n); return { cons: '¿<b>' + n + '</b> es primo? Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: es ? ['si', 'sí'] : ['no'] }], ayuda: 'Probá dividirlo por 2, 3, 5, 7… hasta √' + n + '.', bien: es ? '¡Bien! Es primo.' : '¡Bien! Es compuesto.' }; }
+      if (md === 'desc') { var a = R(1, 4), b = R(0, 2), c = R(0, 1), N = Math.pow(2, a) * Math.pow(3, b) * Math.pow(5, c); return { cons: 'Descomponé <b>' + N + '</b> = 2 elevado a ___ · 3 elevado a ___ · 5 elevado a ___', campos: [{ lab: '2', v: a }, { lab: '3', v: b }, { lab: '5', v: c }], ayuda: 'Dividí por 2 todas las veces que se pueda, después por 3 y por 5. Si un primo no está, su exponente es 0.', bien: '¡Bien! ' + N + ' = ' + factTxt(fact(N)) + '.' }; }
+      if (md === 'cuantos') { var a2 = R(1, 4), b2 = R(1, 2), c2 = R(0, 1), N2 = Math.pow(2, a2) * Math.pow(3, b2) * Math.pow(5, c2); return { cons: '<b>' + fmt(N2) + ' = ' + factTxt(fact(N2)) + '</b>. ¿Cuántos divisores tiene?', campos: [{ v: (a2 + 1) * (b2 + 1) * (c2 + 1) }], ayuda: 'Sumá 1 a cada exponente y multiplicá.', bien: '¡Bien!' }; }
+      var A = pick([12, 18, 20, 24, 30, 36, 40, 42, 45, 48, 60]), B = pick([8, 15, 16, 27, 28, 32, 35, 54, 56, 72, 90]); if (A === B) B = 50;
+      var g = mcd(A, B), l = A * B / g;
+      if (md === 'mcd') return { cons: 'Calculá el <b>MCD(' + A + ', ' + B + ')</b>.', campos: [{ v: g }], ayuda: 'Factores comunes con el menor exponente.', bien: '¡Bien! ' + g + '.' };
+      if (md === 'mcm') return { cons: 'Calculá el <b>MCM(' + A + ', ' + B + ')</b>.', campos: [{ v: l }], ayuda: 'Todos los factores con el mayor exponente.', bien: '¡Bien! ' + l + '.' };
+      if (md === 'coprimos') { var x = pick([8, 9, 14, 15, 21, 25, 16, 27]), y = pick([9, 10, 12, 14, 20, 35, 22, 49]); return { cons: '¿<b>' + x + '</b> y <b>' + y + '</b> son coprimos? Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: mcd(x, y) === 1 ? ['si', 'sí'] : ['no'] }], ayuda: 'Son coprimos si su único divisor común es 1.', bien: '¡Bien! MCD = ' + mcd(x, y) + '.' }; }
+      if (md === 'producto') return { cons: 'Dos números multiplicados dan <b>' + A * B + '</b> y su MCD es <b>' + g + '</b>. ¿Cuál es su MCM?', campos: [{ v: l }], ayuda: 'MCD × MCM = a × b, así que MCM = ' + A * B + ' ÷ ' + g + '.', bien: '¡Bien! ' + l + '.' };
+      var C2 = pick([6, 10, 15, 20, 30]), g3 = mcd(mcd(A, B), C2), l1 = l * C2 / mcd(l, C2), mcm3 = Math.random() < .5;
+      return { cons: 'Calculá el <b>' + (mcm3 ? 'MCM' : 'MCD') + '(' + A + ', ' + B + ', ' + C2 + ')</b>.', campos: [{ v: mcm3 ? l1 : g3 }], ayuda: 'Hacelo de a dos: primero con ' + A + ' y ' + B + ', y el resultado con ' + C2 + '.', bien: '¡Bien!' };
+    });
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);

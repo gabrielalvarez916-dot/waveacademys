@@ -66,3 +66,10 @@ TODOS los ejemplos del banco (45) muestran el procedimiento de a un paso: helper
 | `divis` | ejemplo | patron, suma, multiplo, contraejemplo, reparto, cual, pistas |
 | `divis_x` | ejercicio | multiplo_n, repite, cuantos_div, suma, multiplo, contraejemplo, reparto, cual, pistas |
 En la práctica, un campo puede llevar `acepta: function (x) {…}` cuando hay varias respuestas válidas.
+
+## Criterios y factorización (Matemática I, Misiones 6 y 7)
+| Motor | Tipo | `modo` |
+|---|---|---|
+| `criterios` / `criterios_x` | ejemplo / ejercicio | 2_5_10, 3_9, 4_8, 6, 11, combinar |
+| `factores` | ejemplo | criba, esprimo, divisores, mcd_desc, mcm_desc, producto, tres |
+| `factores_x` | ejercicio | esprimo, desc, cuantos, mcd, mcm, coprimos, producto, tres |

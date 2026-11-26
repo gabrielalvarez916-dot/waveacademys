@@ -65,7 +65,7 @@ const EJEMPLO_CON_TEXTO = ['pasoapaso'];
 // Ejemplos que ya muestran el procedimiento PASO A PASO (marcados con "pasos: true" en el banco). Solo esos van en una lección.
 const PASO_A_PASO = new Set((() => { const o = []; ['leccion-banco.js', 'leccion-banco2.js'].forEach(f => { try { const t = fs.readFileSync(path.join(__dirname, '..', '..', 'js', f), 'utf8'); let m; const re = /M\.(\w+)\s*=\s*\{\s*tipo:\s*'ejemplo',\s*pasos:\s*true/g; while ((m = re.exec(t))) o.push(m[1]); } catch (e) {} }); return o; })());
 // Ejercicios que mezclan contenidos: en la lección se elige SIEMPRE el modo, para que la práctica pida solo lo explicado en esa pantalla (o antes)
-const MODO_OBLIGATORIO = { binario_conv: ['a_binario', 'a_decimal', 'ambos'], sexagesimal_conv: ['convertir', 'ambos'], llevar: null, ordenar: null, posicional: null, letras: null, descomponer_x: null, naturales_x: null, potencias_n_x: null, combinadas: null, calculadora_x: null, divis_x: null };  // ejemplos que repiten la explicación en texto: no van en la lección
+const MODO_OBLIGATORIO = { binario_conv: ['a_binario', 'a_decimal', 'ambos'], sexagesimal_conv: ['convertir', 'ambos'], llevar: null, ordenar: null, posicional: null, letras: null, descomponer_x: null, naturales_x: null, potencias_n_x: null, combinadas: null, calculadora_x: null, divis_x: null, criterios_x: null, factores_x: null };  // ejemplos que repiten la explicación en texto: no van en la lección
 const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const palabras = s => limpio(s).split(' ').filter(w => /[a-záéíóúñü0-9]/i.test(w));
 const textoBloques = bs => (bs || []).map(b => [b.texto, (b.items || []).join(' '), (b.filas || []).map(f => f.join(' ')).join(' ')].join(' ')).join(' ');
