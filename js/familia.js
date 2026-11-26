@@ -1464,6 +1464,60 @@
     };
   }
 
+  // ---------- Guías de acompañamiento familiar ----------
+  async function vistaGuias() {
+    vista.innerHTML = '<h1 class="vista-titulo">Guías para acompañar</h1><div id="guias-familia"><div class="vacio">Cargando las guías…</div></div>';
+    var cont = document.getElementById('guias-familia');
+    try {
+      var resultados = await Promise.all([
+        cargarDatos(),
+        fetch('/contenido/familias/guias/matematica-avanzado-anio-1-mision-1.json', { cache: 'no-cache' })
+      ]);
+      if (!resultados[1].ok) throw new Error('No se encontró el material.');
+      var d = resultados[0], paquete = await resultados[1].json();
+      var hijos = d.hijos || [];
+      var elegido = hijos[0] || null;
+
+      function pintar(hijo) {
+        var persona = hijo
+          ? '<div class="gf-persona"><span>Estudiante</span><b>' + esc(hijo.first_name + ' ' + hijo.last_name) + '</b><small>' + esc(hijo.grades ? etiquetaAnio(hijo.grades) : 'Año no asignado') + '</small></div>'
+          : '<div class="gf-persona"><span>Material de acompañamiento</span><b>' + esc(paquete.nivel + ' · ' + paquete.anio) + '</b></div>';
+        var selector = hijos.length > 1
+          ? '<label class="gf-selector"><span>Ver las guías para</span><select id="gf-hijo">' + hijos.map(function (h) {
+              return '<option value="' + esc(h.id) + '"' + (hijo && h.id === hijo.id ? ' selected' : '') + '>' + esc(h.first_name + ' ' + h.last_name) + '</option>';
+            }).join('') + '</select></label>' : '';
+        var tarjetas = paquete.guias.map(function (g, i) {
+          var a = g.actividad || {};
+          return '<details class="gf-guia"' + (i === 0 ? ' open' : '') + '>' +
+            '<summary><span class="gf-num">' + String(g.nivel).padStart(2, '0') + '</span><span class="gf-resumen"><b>' + esc(g.titulo) + '</b><small>Lección ' + g.nivel + ' · Misión ' + paquete.mision + '</small></span><span class="gf-flecha" aria-hidden="true">⌄</span></summary>' +
+            '<div class="gf-cuerpo">' +
+              '<section class="gf-bloque"><h3>Qué está aprendiendo</h3><p class="gf-objetivo">' + esc(g.objetivo) + '</p><ul>' + (g.aprendizajes || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
+              '<section class="gf-bloque"><h3>Cómo podés acompañarlo</h3><ul>' + (g.acompanamiento || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
+              '<section class="gf-actividad"><div class="gf-actividad-top"><div><span>Una actividad para compartir</span><h3>' + esc(a.titulo || 'Actividad compartida') + '</h3></div><small>' + esc(a.duracion || '') + '</small></div>' +
+                (a.materiales ? '<p class="gf-materiales"><b>Necesitan:</b> ' + esc(a.materiales) + '</p>' : '') +
+                '<ol>' + (a.pasos || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' +
+                (a.cierre ? '<p class="gf-cierre"><b>Para conversar:</b> ' + esc(a.cierre) + '</p>' : '') +
+              '</section>' +
+              '<section class="gf-bloque gf-observar"><h3>Qué conviene observar</h3><ul>' + (g.observar || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul><p><b>Si se traba:</b> ' + esc(g.si_se_traba || '') + '</p></section>' +
+            '</div></details>';
+        }).join('');
+        cont.innerHTML =
+          '<div class="gf-intro"><span class="gf-kicker">' + esc(paquete.materia + ' · ' + paquete.nivel + ' · ' + paquete.anio) + '</span>' +
+            '<h2>' + esc(paquete.titulo) + '</h2><p>' + esc(paquete.introduccion) + '</p></div>' +
+          selector + persona +
+          '<div class="gf-lista">' + tarjetas + '</div>';
+        var sel = cont.querySelector('#gf-hijo');
+        if (sel) sel.addEventListener('change', function () {
+          elegido = hijos.filter(function (h) { return h.id === sel.value; })[0] || null;
+          pintar(elegido);
+        });
+      }
+      pintar(elegido);
+    } catch (e) {
+      cont.innerHTML = '<div class="vacio">No pudimos cargar las guías. Probá recargar la página.</div>';
+    }
+  }
+
   // ---------- Secciones que vienen después ----------
   function proximamente(titulo) {
     return function () {
@@ -1480,6 +1534,7 @@
 
   var VISTAS = {
     propuesta: vistaPropuesta,
+    guias: vistaGuias,
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
