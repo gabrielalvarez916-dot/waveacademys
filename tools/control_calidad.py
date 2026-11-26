@@ -332,6 +332,17 @@ def revisar(ruta, forzar=False):
         cant = len(A.get(k) or A.get(int(k)) or [])
         if cant != 4: err.append(f'actividades del nivel {k}: hay {cant}; tienen que ser 4' + (' (las generales)' if k == '5' else ' (las que van después de la lección)'))
     if M.get('act') and pens < R['act']: err.append(f'actividades: {pens} pensada(s) en los niveles 1 a 4; el mínimo es {R["act"]}')
+    # Nivel del libro (26/11/2026): misión de género con libro → nivel 5 «Libro: …», todo actividad sobre el libro (mínimo 4, pensadas)
+    if 'libro' in M:
+        LB = M.get('libro') or {}
+        if not str(LB.get('titulo') or '').strip(): err.append('libro: falta el título del libro')
+        la = LB.get('act') or []
+        if len(la) < 4: err.append(f'libro: hay {len(la)} actividad(es) sobre el libro; tienen que ser 4 o más')
+        lp = 0
+        for j, q in enumerate(la):
+            n = revisar_pregunta(q, f'libro {j + 1}', nivel, err, avi)
+            if n in PENSADAS: lp += 1
+        if la and lp < (len(la) + 1) // 2: err.append(f'libro: solo {lp} actividad(es) pensadas; al menos la mitad tienen que pensar el libro con lo aprendido del género')
     # Examen (banco del nivel jefe)
     ex = M.get('examen') or []
     if ex:

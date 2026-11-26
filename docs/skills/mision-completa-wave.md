@@ -64,3 +64,10 @@ No te quedes esperando la carga: dejá un recordatorio a los 4-5 minutos y, cuan
 
 ## Forma de trabajo con Gabriel
 Español rioplatense informal. Rápido y con calidad, cambios quirúrgicos. Antes de un cambio masivo (algo que recargue muchas misiones), preguntá. No inventes actividades ni tipos nuevos sin que él lo decida. Contestá lo que pregunta, sin rodeos.
+
+## Misiones de Lengua con libro (26/11/2026, decisión de Gabriel)
+- La clase animada, la lección interactiva, las actividades de los niveles 1 a 4, las generales y el examen son **sobre el género** (policial, terror, etc.), nunca sobre el libro. Se pueden usar ejemplos del libro, pero solo como ejemplos. Nada de "escribí tu policial": se enseña al estudiante a reconocer y analizar el género, no a escribirlo.
+- Mito, leyenda, teatro y cuentos breves no llevan libro: la lección trabaja con fragmentos de obras reconocidas (de dominio público).
+- El libro va en `"libro": {"titulo": "...", "act": [...]}`: la base crea el **nivel 5 «Libro: título»** (solo actividades sobre el libro, mínimo 4, la mitad pensadas) y la práctica general pasa al **nivel 6** (en el archivo sigue siendo `act["5"]`). El examen va al final.
+- En la app aparece al principio el círculo **«Libro del nivel: título»** para leer o bajar el PDF del libro (lo sube Gabriel al paso PDF del nivel «Libro: …»). No es un nivel ni lleva progreso.
+- Los PDF ya no son un paso ni se arman: el PDF viejo va a Recursos; el del libro, al círculo del libro.

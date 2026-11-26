@@ -231,6 +231,7 @@
   // Un nivel = PDF, entrega de la carpeta y actividades (las "generales" son solo actividades)
   function pasosNivel(l) {
     var p = D.pasos[l.id] || {}, r = [];
+    if (l.libro) return p.final && p.final.tiene ? ['final'] : []; // nivel del libro: solo actividades (el libro se baja del círculo «Libro del nivel»)
     if (p.video && p.video.tiene) r.push('video');
     if (p.pdf && D.interactiva && D.interactiva[l.id]) r.push('leccion'); // lección interactiva en lugar del PDF
     else if (p.pdf && p.pdf.tiene) r.push('pdf');
@@ -258,6 +259,9 @@
       t.bloqueado = !previoOk || D.sinAcceso;
       var ok = true;
       var ls = t.lecciones, conGen = ls.length >= 4;
+      // Misión de género con libro (26/11/2026): el nivel 5 se llama «Libro: …» y tiene las actividades sobre el libro
+      ls.forEach(function (l) { l.libro = /^Libro:/i.test(l.titulo || ''); });
+      t.libro = ls.filter(function (l) { return l.libro; })[0] || null;
       t.niveles = conGen ? ls.slice(0, ls.length - 1) : ls;
       t.generales = conGen ? ls[ls.length - 1] : null;
       // El video (clase animada) es el primer paso de cada nivel (ver pasosNivel)
@@ -373,7 +377,7 @@
     else if (e.completa) { cls = 'hecha'; contenido = ico('check', 56, 3.2); href = base() + '/' + t.id + '/' + l.id; }
     else { cls = 'libre' + (D.actual === l.id ? ' actual' : ''); contenido = esGen ? ico('bolt', 50) : '<span class="mt-num">' + (i + 1) + '</span>'; href = base() + '/' + t.id + '/' + l.id; }
     var burbuja = D.actual === l.id ? '<span class="mt-burbuja">¡Empezá!</span>' : '';
-    var nombre = esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + l.titulo;
+    var nombre = esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + (l.libro ? 'Actividades del libro' : l.titulo);
     return nodo(cls, burbuja + discoNodo(cls, contenido, e.completa ? 1 : e.frac) + '<span class="mt-nombre">' + esc(nombre) + '</span>', href, aviso);
   }
 
@@ -405,7 +409,7 @@
   // Recursos: los PDF de cada nivel quedan como material opcional cuando la misión tiene lección interactiva
   function recursosDe(t) {
     var out = [];
-    t.lecciones.forEach(function (l, i) { var p = D.pasos[l.id] || {}; if (p.pdf && p.pdf.tiene) out.push({ l: l, paso: p.pdf, nom: t.generales && l === t.generales ? 'Generales' : 'Nivel ' + (i + 1) }); });
+    t.lecciones.forEach(function (l, i) { var p = D.pasos[l.id] || {}; if (!l.libro && p.pdf && p.pdf.tiene) out.push({ l: l, paso: p.pdf, nom: t.generales && l === t.generales ? 'Generales' : 'Nivel ' + (i + 1) }); });
     return out;
   }
   function nodoRecursos(t) {
@@ -414,6 +418,20 @@
     var bloq = D.sinAcceso || t.bloqueado;
     return '<button type="button" class="mt-nodo recursos ' + (bloq ? 'bloq' : 'libre') + '"' + (bloq ? ' data-aviso="' + esc(D.sinAcceso ? 'La suscripción tiene que estar al día.' : 'Terminá la misión anterior.') + '"' : ' data-recursos="' + t.id + '"') + '>' +
       '<span class="mt-aro">' + aro(0) + '<span class="mt-disco">' + (bloq ? ico('lock', 34, 2.6) : '<span class="mt-num">📚</span>') + '</span></span><span class="mt-nombre">Recursos (opcional)</span></button>';
+  }
+  // Libro del nivel: círculo al principio de la misión para leer o bajar el libro (no es un nivel, no lleva progreso)
+  function nodoLibro(t) {
+    if (!t.libro) return '';
+    var p = (D.pasos[t.libro.id] || {}).pdf, tit = t.libro.titulo.replace(/^Libro:\s*/i, ''), bloq = D.sinAcceso || t.bloqueado, falta = !(p && p.tiene);
+    var aviso = D.sinAcceso ? 'La suscripción tiene que estar al día.' : t.bloqueado ? 'Terminá la misión anterior.' : falta ? 'El libro todavía no está cargado.' : '';
+    return '<button type="button" class="mt-nodo libro ' + (bloq || falta ? 'bloq' : 'libre') + '"' + (aviso ? ' data-aviso="' + esc(aviso) + '"' : ' data-libro="' + t.id + '"') + '>' +
+      '<span class="mt-aro">' + aro(0) + '<span class="mt-disco">' + (bloq ? ico('lock', 34, 2.6) : '<span class="mt-num">📖</span>') + '</span></span><span class="mt-nombre">Libro del nivel: ' + esc(tit) + '</span></button>';
+  }
+  function abrirLibro(temaId) {
+    var t = D.temas.filter(function (x) { return x.id === temaId; })[0]; if (!t || !t.libro) return;
+    var p = (D.pasos[t.libro.id] || {}).pdf; if (!p || !p.tiene) return;
+    WaveVisor.abrirPdf({ titulo: t.libro.titulo.replace(/^Libro:\s*/i, ''), descargable: true, modoLectura: (D.adaptaciones || []).indexOf('lec_modo') >= 0,
+      url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: p.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
   }
   function abrirRecursos(temaId) {
     var t = D.temas.filter(function (x) { return x.id === temaId; })[0]; if (!t) return;
@@ -508,7 +526,7 @@
     t.niveles.concat(t.generales ? [t.generales] : []).forEach(function (l, i) {
       var esGen = t.generales && l === t.generales;
       var req = l.est.req;
-      h += '<div class="ap-mp-nivel"><h3>' + (esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + esc(l.titulo)) + '</h3><ul>' +
+      h += '<div class="ap-mp-nivel"><h3>' + (esGen ? 'Las 4 generales' : 'Nivel ' + (i + 1) + ': ' + esc(l.libro ? 'Actividades del libro' : l.titulo)) + '</h3><ul>' +
         (l.est.vacia ? '<li class="ap-mp-bloq"><span class="ap-mp-i">…</span><span>En preparación</span></li>'
           : req.map(function (k) { return fila(ROT_PASO[k] || k, hechoK(l, k), l.bloqueada); }).join('')) + '</ul></div>';
     });
@@ -531,7 +549,7 @@
 
   function pantallaTema(t) {
     var idx = D.temas.indexOf(t), c = tono(idx);
-    var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
+    var nodos = nodoLibro(t) + t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
       (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
       nodoJuegos(t) + (t.examen ? nodoExamen(t) : '') + nodoRecursos(t) + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
@@ -1639,6 +1657,7 @@
       var vp = ev.target.closest('[data-ver]');
       if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
       var rcs = ev.target.closest('[data-recursos]'); if (rcs) return abrirRecursos(rcs.getAttribute('data-recursos'));
+      var lbr = ev.target.closest('[data-libro]'); if (lbr) return abrirLibro(lbr.getAttribute('data-libro'));
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
       var sl = ev.target.closest('[data-salto]');
