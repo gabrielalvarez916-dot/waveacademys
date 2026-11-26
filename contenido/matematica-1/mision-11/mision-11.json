@@ -1,1 +1,1846 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 11, "practica": "Práctica general: números enteros", "examen_titulo": "Nivel jefe: números enteros", "niveles": {"1": {"objetivo": "Vas a poder usar números negativos para describir situaciones, reconocer positivos, negativos y el cero, y encontrar el opuesto de un número.", "vas_a_ver": ["Situaciones que necesitan números negativos", "Positivos, negativos y el cero", "El signo del número y el signo de restar", "El opuesto de un número", "El conjunto de los enteros"], "secciones": [{"etapa": 1, "titulo": "Por qué hacen falta", "bloques": [{"tipo": "definicion", "titulo": "Números negativos", "texto": "Los <b>números negativos</b> sirven para indicar cantidades <b>por debajo de un punto de referencia</b>, el cero. Se escriben con el signo −: −3."}, {"tipo": "tabla", "titulo": "Situaciones", "columnas": ["Situación", "Número"], "filas": [["3 °C bajo cero", "−3"], ["Debo $500", "−500"], ["Segundo subsuelo", "−2"], ["Al nivel del mar", "0"], ["Piso 4", "4"]], "iguales": true, "texto": "El cero es la referencia: la planta baja, el nivel del mar, cero grados, no deber ni tener."}]}, {"etapa": 1, "titulo": "Positivos, negativos y cero", "bloques": [{"tipo": "definicion", "titulo": "Clasificación", "texto": "Los números mayores que 0 son <b>positivos</b> (se pueden escribir con + o sin signo); los menores que 0 son <b>negativos</b>. El <b>0 no es ni positivo ni negativo</b>."}, {"tipo": "importante", "titulo": "Dos usos del signo", "texto": "En 8 − 3 el signo indica una resta. En −3 indica que el número es negativo."}]}, {"etapa": 2, "titulo": "El opuesto", "bloques": [{"tipo": "parrafo", "texto": "El <b>opuesto</b> de un número es el que está a la misma distancia del 0, pero del otro lado: el opuesto de 5 es −5 y el opuesto de −3 es 3. El opuesto de 0 es 0. En situaciones: ganar $200 y perder $200 son opuestos."}]}, {"etapa": 2, "titulo": "Los números enteros", "bloques": [{"tipo": "parrafo", "texto": "Los naturales, el cero y los negativos forman el conjunto de los <b>números enteros</b>: …, −3, −2, −1, 0, 1, 2, 3, … No tiene principio ni fin."}]}], "ejemplo_completo": {"titulo": "el buzo y el avión", "planteo": "Escribí con números enteros: un buzo a 15 m bajo el agua, un avión a 3.000 m de altura y el nivel del mar. Después escribí el opuesto de cada uno.", "pasos": ["El nivel del mar es la referencia: 0.", "Buzo: −15. Avión: 3.000.", "Opuestos: el de −15 es 15; el de 3.000 es −3.000; el de 0 es 0."]}, "ejemplo_incompleto": {"titulo": "el saldo", "planteo": "Completá los espacios.", "pasos": ["Un saldo deudor de $800 se escribe ___ .", "Su opuesto es ___ .", "El opuesto de 0 es ___ ."]}, "ejemplo_solo": {"titulo": "escribir enteros", "planteo": "Escribí como número entero: 12 °C bajo cero; el piso 3; el opuesto de −25."}, "tip": {"titulo": "Buscá la referencia", "texto": "Antes de poner el signo, preguntate dónde está el cero en esa situación: planta baja, nivel del mar, cero grados."}, "ojo": ["Creer que el 0 es negativo: no es ni positivo ni negativo.", "Confundir el signo de resta con el del número: en 8 − 3 no hay ningún número negativo."], "resumen": [{"titulo": "Negativos", "texto": "Menores que 0. Ej.: −3 °C."}, {"titulo": "El cero", "texto": "Ni positivo ni negativo: es la referencia."}, {"titulo": "Opuesto", "texto": "Del otro lado del 0. Ej.: 5 y −5."}, {"titulo": "Enteros", "texto": "…, −2, −1, 0, 1, 2, …"}], "glosario": [{"palabra": "Negativo", "significado": "Número menor que 0."}, {"palabra": "Positivo", "significado": "Número mayor que 0."}, {"palabra": "Opuesto", "significado": "Número a la misma distancia del 0, del otro lado."}, {"palabra": "Enteros", "significado": "Los naturales, el 0 y los negativos."}], "carpeta": ["¿Qué número entero representa 8 °C bajo cero?", "¿Cuál es el opuesto de −14?", "¿Cuál es el opuesto del opuesto de 6?", "Un compañero dice que el 0 es negativo. ¿Cuál es el opuesto de 0?"], "respuestas_carpeta": [["-8", "−8"], ["14"], ["6"], ["0"]], "soluciones": {"incompleto": "−800. 800. 0.", "solo": "−12; 3; 25.", "carpeta": ["−8: bajo cero es negativo.", "14: del otro lado del 0.", "6: el opuesto de 6 es −6, y el opuesto de −6 es 6.", "0: el 0 es su propio opuesto; no es ni positivo ni negativo."]}}, "2": {"objetivo": "Vas a poder ubicar números enteros en la recta numérica y calcular la distancia entre dos enteros, aunque crucen el cero.", "vas_a_ver": ["La recta numérica entera", "Dónde van los negativos", "Simetría respecto del cero", "Distancia entre dos enteros"], "secciones": [{"etapa": 1, "titulo": "La recta entera", "bloques": [{"tipo": "definicion", "titulo": "Recta numérica entera", "texto": "Se marca el 0 y se dejan <b>espacios iguales</b> hacia los dos lados: a la <b>derecha</b> van los positivos (1, 2, 3…) y a la <b>izquierda</b> los negativos (−1, −2, −3…)."}, {"tipo": "parrafo", "texto": "Los negativos se numeran alejándose del cero: primero −1, después −2, después −3. Si los espacios no son iguales, la recta engaña."}]}, {"etapa": 1, "titulo": "Simetría", "bloques": [{"tipo": "definicion", "titulo": "Simétricos", "texto": "Un número y su opuesto están a la <b>misma distancia del 0</b>, uno a cada lado: −4 y 4 están los dos a 4 unidades del cero."}]}, {"etapa": 2, "titulo": "Distancia entre enteros", "bloques": [{"tipo": "parrafo", "texto": "La distancia entre dos enteros es la cantidad de unidades que hay de uno a otro en la recta. Siempre es un número positivo (o cero)."}, {"tipo": "ejemplo", "titulo": "Contar en la recta", "texto": "Tres casos.", "items": ["Del mismo lado: de −8 a −2 hay 6 unidades.", "Cruzando el cero: de −3 a 4 hay 3 hasta el 0 y 4 más: 7.", "Del 0 a −5 hay 5 unidades."]}, {"tipo": "imagen", "imagen_tipo": "diagrama", "titulo": "De −3 a 4", "texto": "Se cuentan 3 unidades hasta el 0 y 4 más: la distancia es 7.", "imagen_descripcion": "Recta entera de −5 a 5 con −3 y 4 marcados y las distancias 3 y 4 hasta el cero.", "imagen_fuente": "Dibujo propio (matplotlib).", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Situaciones", "bloques": [{"tipo": "ejemplo", "titulo": "El ascensor", "texto": "Un ascensor va del subsuelo −2 al piso 5.", "items": ["Del −2 al 0 (planta baja): 2 pisos.", "Del 0 al 5: 5 pisos.", "Recorre 7 pisos."]}]}], "ejemplo_completo": {"titulo": "de −5 a 3", "planteo": "¿Qué distancia hay entre −5 y 3?", "pasos": ["Están de lados distintos del cero.", "De −5 a 0 hay 5 unidades.", "De 0 a 3 hay 3 unidades.", "Distancia: 5 + 3 = 8."]}, "ejemplo_incompleto": {"titulo": "distancias", "planteo": "Completá los espacios.", "pasos": ["De −6 a −1, contando en la recta, hay ___ unidades.", "De −2 a 5: 2 + 5 = ___ ."]}, "ejemplo_solo": {"titulo": "el ascensor", "planteo": "Un ascensor está en el subsuelo −3 y sube al piso 6. ¿Cuántos pisos recorre?"}, "tip": {"titulo": "Si cruza el cero, sumá", "texto": "Si un número es negativo y el otro positivo, la distancia es la suma de las distancias de cada uno al cero."}, "ojo": ["Numerar los negativos al revés: a la izquierda del 0 va primero el −1.", "Contar mal cuando se cruza el cero: de −3 a 5 hay 8, no 2."], "resumen": [{"titulo": "Recta", "texto": "Positivos a la derecha, negativos a la izquierda, espacios iguales."}, {"titulo": "Simetría", "texto": "−4 y 4 están a 4 del cero."}, {"titulo": "Mismo lado", "texto": "De −8 a −2: 6."}, {"titulo": "Cruzando el cero", "texto": "De −3 a 4: 3 + 4 = 7."}], "glosario": [{"palabra": "Recta numérica", "significado": "Línea con los números ubicados en orden y a igual distancia."}, {"palabra": "Distancia", "significado": "Cantidad de unidades entre dos números."}, {"palabra": "Simétrico", "significado": "A la misma distancia, del otro lado."}], "carpeta": ["¿Qué distancia hay entre −4 y 0?", "¿Qué distancia hay entre −7 y 2?", "¿Qué número está a la misma distancia del 0 que −9, pero del otro lado?", "Un compañero contó la distancia entre −3 y 5 y le dio 2. ¿Cuál es la distancia correcta?"], "respuestas_carpeta": [["4"], ["9"], ["9"], ["8"]], "soluciones": {"incompleto": "5 unidades. 7.", "solo": "Del −3 al 0: 3 pisos. Del 0 al 6: 6 pisos. Recorre 9 pisos.", "carpeta": ["4: cuatro unidades hasta el cero.", "9: 7 + 2.", "9: es el opuesto de −9.", "8: 3 hasta el 0 y 5 más. Restó 5 − 3."]}}, "3": {"objetivo": "Vas a poder comparar y ordenar números enteros, incluidos los negativos, y listar los enteros de un intervalo.", "vas_a_ver": ["Comparar en la recta", "Por qué −5 es menor que −2", "Ordenar de menor a mayor y de mayor a menor", "Los enteros entre dos números"], "secciones": [{"etapa": 1, "titulo": "Comparar en la recta", "bloques": [{"tipo": "definicion", "titulo": "Mayor y menor", "texto": "En la recta, de dos números es <b>mayor el que está más a la derecha</b>. Por eso todo positivo es mayor que 0, y 0 es mayor que todo negativo."}, {"tipo": "parrafo", "texto": "Se escribe con los signos < (menor que) y > (mayor que): −3 < 0 < 2."}]}, {"etapa": 1, "titulo": "Los negativos", "bloques": [{"tipo": "definicion", "titulo": "Entre negativos", "texto": "Entre dos negativos, es <b>menor el que está más lejos del cero</b>: −5 < −2."}, {"tipo": "tabla", "titulo": "Temperaturas de una semana", "columnas": ["Día", "Lunes", "Martes", "Miércoles", "Jueves"], "filas": [["Temperatura", "−4 °C", "−1 °C", "2 °C", "−6 °C"]], "iguales": true, "texto": "El día más frío fue el jueves (−6 °C) y el más templado, el miércoles (2 °C)."}]}, {"etapa": 2, "titulo": "Ordenar", "bloques": [{"tipo": "ejemplo", "titulo": "De menor a mayor", "texto": "Ordenamos 3, −8, 0, −1, −12 y 5.", "items": ["Primero los negativos, del más lejano al más cercano al cero: −12, −8, −1.", "Después el 0.", "Después los positivos: 3, 5.", "−12 < −8 < −1 < 0 < 3 < 5."]}]}, {"etapa": 2, "titulo": "Enteros de un intervalo", "bloques": [{"tipo": "parrafo", "texto": "Los enteros mayores que −3 y menores que 2 son −2, −1, 0 y 1. Ojo de no olvidar el cero."}]}], "ejemplo_completo": {"titulo": "temperaturas", "planteo": "Ordená de menor a mayor las temperaturas de la tabla: −4, −1, 2 y −6.", "pasos": ["Negativos, del más lejano al cero: −6, −4, −1.", "Después el positivo: 2.", "−6 < −4 < −1 < 2."]}, "ejemplo_incompleto": {"titulo": "comparar", "planteo": "Completá los espacios.", "pasos": ["Entre −5 y −9, el mayor es ___ .", "Los enteros mayores que −3 y menores que 1 son −2, ___ y 0."]}, "ejemplo_solo": {"titulo": "de mayor a menor", "planteo": "Ordená de mayor a menor: −6, 4, −2, 0, −10."}, "tip": {"titulo": "Pensá en temperaturas", "texto": "−10 °C es más frío que −2 °C: el que está más lejos del cero hacia abajo es el menor."}, "ojo": ["Ordenar los negativos como si fueran positivos: −6 es menor que −2, aunque 6 sea mayor que 2.", "Olvidar el cero al listar los enteros de un intervalo."], "resumen": [{"titulo": "Mayor", "texto": "El de más a la derecha."}, {"titulo": "Negativos", "texto": "Más lejos del 0, más chico. Ej.: −5 < −2."}, {"titulo": "Orden", "texto": "Negativos < 0 < positivos."}, {"titulo": "Intervalo", "texto": "Entre −3 y 2: −2, −1, 0, 1."}], "glosario": [{"palabra": "Orden creciente", "significado": "De menor a mayor."}, {"palabra": "Orden decreciente", "significado": "De mayor a menor."}, {"palabra": "Intervalo", "significado": "Los números que están entre dos dados."}], "carpeta": ["¿Cuál es mayor: −5 o −2?", "¿Cuántos enteros hay entre −4 y 3, sin contar a −4 ni a 3?", "¿Cuál es el menor de estos números: −1, −15, 0, −7?", "Un compañero escribió −2 < −6 porque 2 es menor que 6. ¿Cuál de los dos es el menor?"], "respuestas_carpeta": [["-2", "−2"], ["6"], ["-15", "−15"], ["-6", "−6"]], "soluciones": {"incompleto": "−5. −1.", "solo": "4 > 0 > −2 > −6 > −10.", "carpeta": ["−2: está más cerca del cero.", "6: −3, −2, −1, 0, 1 y 2.", "−15: es el más lejano del cero hacia la izquierda.", "−6: está más a la izquierda en la recta."]}}, "4": {"objetivo": "Vas a poder calcular el valor absoluto de un entero como una distancia, diferenciarlo del opuesto y usarlo en problemas.", "vas_a_ver": ["El valor absoluto como distancia al cero", "El opuesto de un número", "Valor absoluto y opuesto juntos", "Problemas de distancia"], "secciones": [{"etapa": 1, "titulo": "Valor absoluto", "bloques": [{"tipo": "definicion", "titulo": "Valor absoluto", "texto": "El <b>valor absoluto</b> de un número es su <b>distancia al cero</b>. Se escribe entre barras: |−7| = 7 y |7| = 7. Como es una distancia, <b>nunca es negativo</b>."}, {"tipo": "parrafo", "texto": "|0| = 0. Y |−3| no es −3: es 3, porque −3 está a 3 unidades del cero."}]}, {"etapa": 1, "titulo": "Opuesto", "bloques": [{"tipo": "definicion", "titulo": "Opuesto", "texto": "El <b>opuesto</b> de un número es el que está del otro lado del cero, a la misma distancia. El opuesto de 5 es −5; el de −8 es 8."}]}, {"etapa": 2, "titulo": "No son lo mismo", "bloques": [{"tipo": "tabla", "titulo": "Valor absoluto y opuesto", "columnas": ["Número", "Valor absoluto", "Opuesto"], "filas": [["−3", "3", "3"], ["5", "5", "−5"], ["0", "0", "0"]], "iguales": true, "texto": "Para un negativo coinciden; para un positivo, no. El valor absoluto nunca da negativo; el opuesto sí puede."}]}, {"etapa": 2, "titulo": "Problemas de distancia", "bloques": [{"tipo": "ejemplo", "titulo": "Los buzos", "texto": "Un buzo está a −12 m y otro a −30 m. ¿Cuántos metros los separan?", "items": ["|−12| = 12 y |−30| = 30.", "Los dos están del mismo lado del cero.", "Los separan 30 − 12 = 18 m."]}]}], "ejemplo_completo": {"titulo": "−9 y 4", "planteo": "Compará −9 y 4, y compará sus valores absolutos.", "pasos": ["En la recta, −9 está a la izquierda: −9 < 4.", "|−9| = 9 y |4| = 4.", "Entonces |−9| > |4|.", "El menor número tiene el mayor valor absoluto: está más lejos del cero."]}, "ejemplo_incompleto": {"titulo": "−15 y 15", "planteo": "Completá los espacios.", "pasos": ["|−15| = ___ .", "El opuesto de −15 es ___ .", "El opuesto de 15 es ___ .", "|15| = 15."]}, "ejemplo_solo": {"titulo": "dos ciudades", "planteo": "Un termómetro marca −6 °C en una ciudad y 4 °C en otra. ¿Cuál está más lejos de 0 °C? ¿Qué diferencia de temperatura hay entre las dos?"}, "tip": {"titulo": "Pensá en distancia", "texto": "Para el valor absoluto, preguntate a cuántos pasos del cero está el número. No es una regla de cambiar signos."}, "ojo": ["Creer que el valor absoluto siempre cambia el signo: |5| = 5.", "Confundir opuesto con valor absoluto: el opuesto de 5 es −5, pero |5| = 5."], "resumen": [{"titulo": "Valor absoluto", "texto": "Distancia al 0. Ej.: |−7| = 7."}, {"titulo": "Nunca negativo", "texto": "|−3| = 3, no −3."}, {"titulo": "Opuesto", "texto": "Del otro lado. Ej.: 5 → −5."}, {"titulo": "Distancias", "texto": "Buzos a −12 y −30: 18 m."}], "glosario": [{"palabra": "Valor absoluto", "significado": "Distancia de un número al cero."}, {"palabra": "Barras", "significado": "El signo | | del valor absoluto."}, {"palabra": "Opuesto", "significado": "El número del otro lado del cero, a la misma distancia."}], "carpeta": ["Calculá |−23|.", "Escribí el número negativo cuyo valor absoluto es 8.", "¿Cuál es el opuesto de |−5|?", "Un compañero escribió |−3| = −3. ¿Cuánto vale |−3|?"], "respuestas_carpeta": [["23"], ["-8", "−8"], ["-5", "−5"], ["3"]], "soluciones": {"incompleto": "15. 15. −15.", "solo": "|−6| = 6 y |4| = 4: la de −6 °C está más lejos de 0. Diferencia: 6 + 4 = 10 grados.", "carpeta": ["23: está a 23 del cero.", "−8: |−8| = 8.", "−5: |−5| = 5 y su opuesto es −5.", "3: es una distancia, no puede ser negativa."]}}}, "act": {"1": [{"t": "multiple_choice", "p": "¿Qué número representa \"debo $300\"?", "o": ["300", "−300", "0", "3"], "r": {"correcta": "−300"}, "e": "Deber es estar por debajo del cero."}, {"t": "true_false", "p": "El 0 es un número negativo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "El 0 no es ni positivo ni negativo."}], "2": [{"t": "numeric", "p": "¿Qué distancia hay entre {a} y {b}?", "o": {"vars": {"x": {"min": 1, "max": 9}, "b": {"min": 1, "max": 9}}, "calculadas": {"a": "0-x"}}, "r": {"formula": "x+b"}, "e": "Se cruza el cero: se suman las distancias de cada uno al cero."}, {"t": "multiple_choice", "p": "En la recta numérica, ¿de qué lado del 0 están los negativos?", "o": ["A la izquierda", "A la derecha"], "r": {"correcta": "A la izquierda"}, "e": "Los positivos van a la derecha."}], "3": [{"t": "multiple_choice", "p": "¿Cuál es mayor?", "o": ["−8", "−3"], "r": {"correcta": "−3"}, "e": "Está más cerca del cero, más a la derecha."}, {"t": "ordering", "p": "Ordená de menor a mayor.", "o": ["0", "−4", "2", "−9"], "r": {"orden": ["−9", "−4", "0", "2"]}, "e": "Primero el negativo más lejano del cero."}], "4": [{"t": "numeric", "p": "Calculá |{a}|.", "o": {"vars": {"x": {"min": 2, "max": 50}}, "calculadas": {"a": "0-x"}}, "r": {"formula": "x"}, "e": "El valor absoluto es la distancia al cero."}, {"t": "multiple_choice", "p": "¿Cuál es el opuesto de 6 y cuál es su valor absoluto?", "o": ["−6 y 6", "6 y −6", "−6 y −6", "6 y 6"], "r": {"correcta": "−6 y 6"}, "e": "El opuesto está del otro lado; el valor absoluto es la distancia."}], "5": [{"t": "multiple_choice", "p": "Relámpago. ¿Cuál es menor?", "o": ["0", "−1"], "r": {"correcta": "−1"}, "e": "Todo negativo es menor que 0.", "tiempo": 15}, {"t": "numeric", "p": "Relámpago. Calculá |−12|.", "o": {}, "r": {"acepta": [12]}, "e": "Está a 12 del cero.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. ¿Qué distancia hay entre −2 y 3?", "o": {}, "r": {"acepta": [5]}, "e": "2 + 3 = 5.", "tiempo": 30}, {"t": "numeric", "p": "Relámpago. Calculá 0,5 + 0,25.", "o": {}, "r": {"acepta": [0.75]}, "e": "Repaso de la misión 10.", "tiempo": 30}]}, "examen": [[1, {"t": "multiple_choice", "p": "¿Qué número representa \"dos subsuelos debajo de la planta baja\"?", "o": ["2", "−2", "0", "−20"], "r": {"correcta": "−2"}, "e": "La planta baja es el 0."}], [1, {"t": "numeric", "p": "¿Cuál es el opuesto de −31?", "o": {}, "r": {"acepta": [31]}, "e": "Del otro lado del cero."}], [1, {"t": "classify", "p": "Clasificá cada número.", "o": {"elementos": ["−7", "0", "12", "−1", "5"], "categorias": ["Positivo", "Negativo", "Ni positivo ni negativo"]}, "r": {"categorias": {"−7": "Negativo", "0": "Ni positivo ni negativo", "12": "Positivo", "−1": "Negativo", "5": "Positivo"}}, "e": "El 0 no es ni positivo ni negativo."}], [2, {"t": "numeric", "p": "¿Qué distancia hay entre −8 y 5?", "o": {}, "r": {"acepta": [13]}, "e": "8 + 5 = 13."}], [2, {"t": "true_false", "p": "−4 y 4 están a la misma distancia del 0.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Son opuestos: los dos están a 4 unidades."}], [2, {"t": "numeric", "p": "¿Qué distancia hay entre −10 y −3?", "o": {}, "r": {"acepta": [7]}, "e": "Del mismo lado: 10 − 3 = 7."}], [3, {"t": "multiple_choice", "p": "¿Cuál es el mayor?", "o": ["−20", "−2", "−12", "−7"], "r": {"correcta": "−2"}, "e": "Es el más cercano al cero."}], [3, {"t": "ordering", "p": "Ordená de menor a mayor.", "o": ["−1", "−11", "6", "0", "−5"], "r": {"orden": ["−11", "−5", "−1", "0", "6"]}, "e": "Negativos del más lejano al más cercano al cero, después el 0 y los positivos."}], [3, {"t": "numeric", "p": "¿Cuántos números enteros hay que sean mayores que −5 y menores que 2?", "o": {}, "r": {"acepta": [6]}, "e": "−4, −3, −2, −1, 0 y 1."}], [4, {"t": "numeric", "p": "Calculá |−18|.", "o": {}, "r": {"acepta": [18]}, "e": "Distancia al cero."}], [4, {"t": "multiple_choice", "p": "¿Qué número tiene valor absoluto 9 y es menor que 0?", "o": ["9", "−9", "0", "1/9"], "r": {"correcta": "−9"}, "e": "|−9| = 9 y es negativo."}], [4, {"t": "true_false", "p": "El valor absoluto de un número nunca es negativo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es una distancia."}], [4, {"t": "numeric", "p": "Un buzo está a −12 m y otro a −30 m. ¿Cuántos metros los separan?", "o": {}, "r": {"acepta": [18]}, "e": "30 − 12 = 18."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 11,
+ "practica": "Práctica general: números enteros",
+ "examen_titulo": "Nivel jefe: números enteros",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder usar números negativos para describir situaciones, reconocer positivos, negativos y el cero, y encontrar el opuesto de un número.",
+   "vas_a_ver": [
+    "Situaciones que necesitan números negativos",
+    "Positivos, negativos y el cero",
+    "El signo del número y el signo de restar",
+    "El opuesto de un número",
+    "El conjunto de los enteros"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Por qué hacen falta",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Números negativos",
+       "texto": "Los <b>números negativos</b> sirven para indicar cantidades <b>por debajo de un punto de referencia</b>, el cero. Se escriben con el signo −: −3."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Situaciones",
+       "columnas": [
+        "Situación",
+        "Número"
+       ],
+       "filas": [
+        [
+         "3 °C bajo cero",
+         "−3"
+        ],
+        [
+         "Debo $500",
+         "−500"
+        ],
+        [
+         "Segundo subsuelo",
+         "−2"
+        ],
+        [
+         "Al nivel del mar",
+         "0"
+        ],
+        [
+         "Piso 4",
+         "4"
+        ]
+       ],
+       "iguales": true,
+       "texto": "El cero es la referencia: la planta baja, el nivel del mar, cero grados, no deber ni tener."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Positivos, negativos y cero",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Clasificación",
+       "texto": "Los números mayores que 0 son <b>positivos</b> (se pueden escribir con + o sin signo); los menores que 0 son <b>negativos</b>. El <b>0 no es ni positivo ni negativo</b>."
+      },
+      {
+       "tipo": "importante",
+       "titulo": "Dos usos del signo",
+       "texto": "En 8 − 3 el signo indica una resta. En −3 indica que el número es negativo."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "El opuesto",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El <b>opuesto</b> de un número es el que está a la misma distancia del 0, pero del otro lado: el opuesto de 5 es −5 y el opuesto de −3 es 3. El opuesto de 0 es 0. En situaciones: ganar $200 y perder $200 son opuestos."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Los números enteros",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Los naturales, el cero y los negativos forman el conjunto de los <b>números enteros</b>: …, −3, −2, −1, 0, 1, 2, 3, … No tiene principio ni fin."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "el buzo y el avión",
+    "planteo": "Escribí con números enteros: un buzo a 15 m bajo el agua, un avión a 3.000 m de altura y el nivel del mar. Después escribí el opuesto de cada uno.",
+    "pasos": [
+     "El nivel del mar es la referencia: 0.",
+     "Buzo: −15. Avión: 3.000.",
+     "Opuestos: el de −15 es 15; el de 3.000 es −3.000; el de 0 es 0."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "el saldo",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Un saldo deudor de $800 se escribe ___ .",
+     "Su opuesto es ___ .",
+     "El opuesto de 0 es ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "escribir enteros",
+    "planteo": "Escribí como número entero: 12 °C bajo cero; el piso 3; el opuesto de −25."
+   },
+   "tip": {
+    "titulo": "Buscá la referencia",
+    "texto": "Antes de poner el signo, preguntate dónde está el cero en esa situación: planta baja, nivel del mar, cero grados."
+   },
+   "ojo": [
+    "Creer que el 0 es negativo: no es ni positivo ni negativo.",
+    "Confundir el signo de resta con el del número: en 8 − 3 no hay ningún número negativo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Negativos",
+     "texto": "Menores que 0. Ej.: −3 °C."
+    },
+    {
+     "titulo": "El cero",
+     "texto": "Ni positivo ni negativo: es la referencia."
+    },
+    {
+     "titulo": "Opuesto",
+     "texto": "Del otro lado del 0. Ej.: 5 y −5."
+    },
+    {
+     "titulo": "Enteros",
+     "texto": "…, −2, −1, 0, 1, 2, …"
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Negativo",
+     "significado": "Número menor que 0."
+    },
+    {
+     "palabra": "Positivo",
+     "significado": "Número mayor que 0."
+    },
+    {
+     "palabra": "Opuesto",
+     "significado": "Número a la misma distancia del 0, del otro lado."
+    },
+    {
+     "palabra": "Enteros",
+     "significado": "Los naturales, el 0 y los negativos."
+    }
+   ],
+   "carpeta": [
+    "¿Qué número entero representa 8 °C bajo cero?",
+    "¿Cuál es el opuesto de −14?",
+    "¿Cuál es el opuesto del opuesto de 6?",
+    "Un compañero dice que el 0 es negativo. ¿Cuál es el opuesto de 0?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-8",
+     "−8"
+    ],
+    [
+     "14"
+    ],
+    [
+     "6"
+    ],
+    [
+     "0"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "−800. 800. 0.",
+    "solo": "−12; 3; 25.",
+    "carpeta": [
+     "−8: bajo cero es negativo.",
+     "14: del otro lado del 0.",
+     "6: el opuesto de 6 es −6, y el opuesto de −6 es 6.",
+     "0: el 0 es su propio opuesto; no es ni positivo ni negativo."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Positivos, negativos y cero",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "situacion"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "situacion"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Números enteros",
+        "texto": "Los números enteros son los naturales (positivos), sus opuestos (negativos) y el cero. Los negativos se escriben con un signo menos adelante y sirven para cantidades por debajo de una referencia."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Hacen falta para situaciones que los naturales no pueden expresar: temperaturas bajo cero, pisos del subsuelo, profundidades bajo el nivel del mar o deudas. El cero es la referencia y no es ni positivo ni negativo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "−4 °C: cuatro grados bajo cero.",
+         "Subsuelo 2 → −2."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El cero como referencia",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "situacion"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "situacion"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "La referencia",
+        "texto": "En cada situación con enteros hay que decidir qué representa el cero: la planta baja, el nivel del mar, la temperatura de congelamiento del agua o no deber nada."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Una vez elegido el cero, lo que está por encima o se gana es positivo y lo que está por debajo o se debe es negativo. Por eso el mismo número cambia de sentido según el problema: −2 puede ser un subsuelo o dos grados bajo cero."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Planta baja = 0; subsuelo 2 = −2.",
+         "Nivel del mar = 0; 30 m de profundidad = −30."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El opuesto",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "opuesto"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "opuesto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Opuesto",
+        "texto": "El opuesto de un número entero es el que tiene el mismo valor pero con el signo cambiado. Un número y su opuesto están a la misma distancia del cero, uno de cada lado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El opuesto de 5 es −5 y el de −5 es 5: cambiar dos veces el signo vuelve al número original. El opuesto de 0 es 0. En la recta, un número y su opuesto son simétricos respecto del 0."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Opuesto de 7: −7.",
+         "Opuesto de −3: 3."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Los números enteros",
+      "definicion": "son los positivos, los negativos y el cero, que sirve de referencia.",
+      "ejemplo": "…, −2, −1, 0, 1, 2, …"
+     },
+     {
+      "concepto": "Un número negativo",
+      "definicion": "indica una cantidad por debajo de la referencia y lleva signo menos.",
+      "ejemplo": "4 grados bajo cero = −4 °C"
+     },
+     {
+      "concepto": "El opuesto de un número",
+      "definicion": "tiene el mismo valor con el signo cambiado y está del otro lado del 0.",
+      "ejemplo": "Opuesto de 7: −7"
+     },
+     {
+      "concepto": "El cero",
+      "definicion": "no es positivo ni negativo, y es el único número que es su propio opuesto.",
+      "ejemplo": "Opuesto de 0: 0"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder ubicar números enteros en la recta numérica y calcular la distancia entre dos enteros, aunque crucen el cero.",
+   "vas_a_ver": [
+    "La recta numérica entera",
+    "Dónde van los negativos",
+    "Simetría respecto del cero",
+    "Distancia entre dos enteros"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La recta entera",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Recta numérica entera",
+       "texto": "Se marca el 0 y se dejan <b>espacios iguales</b> hacia los dos lados: a la <b>derecha</b> van los positivos (1, 2, 3…) y a la <b>izquierda</b> los negativos (−1, −2, −3…)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Los negativos se numeran alejándose del cero: primero −1, después −2, después −3. Si los espacios no son iguales, la recta engaña."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Simetría",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Simétricos",
+       "texto": "Un número y su opuesto están a la <b>misma distancia del 0</b>, uno a cada lado: −4 y 4 están los dos a 4 unidades del cero."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Distancia entre enteros",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La distancia entre dos enteros es la cantidad de unidades que hay de uno a otro en la recta. Siempre es un número positivo (o cero)."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Contar en la recta",
+       "texto": "Tres casos.",
+       "items": [
+        "Del mismo lado: de −8 a −2 hay 6 unidades.",
+        "Cruzando el cero: de −3 a 4 hay 3 hasta el 0 y 4 más: 7.",
+        "Del 0 a −5 hay 5 unidades."
+       ]
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "diagrama",
+       "titulo": "De −3 a 4",
+       "texto": "Se cuentan 3 unidades hasta el 0 y 4 más: la distancia es 7.",
+       "imagen_descripcion": "Recta entera de −5 a 5 con −3 y 4 marcados y las distancias 3 y 4 hasta el cero.",
+       "imagen_fuente": "Dibujo propio (matplotlib).",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Situaciones",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "El ascensor",
+       "texto": "Un ascensor va del subsuelo −2 al piso 5.",
+       "items": [
+        "Del −2 al 0 (planta baja): 2 pisos.",
+        "Del 0 al 5: 5 pisos.",
+        "Recorre 7 pisos."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "de −5 a 3",
+    "planteo": "¿Qué distancia hay entre −5 y 3?",
+    "pasos": [
+     "Están de lados distintos del cero.",
+     "De −5 a 0 hay 5 unidades.",
+     "De 0 a 3 hay 3 unidades.",
+     "Distancia: 5 + 3 = 8."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "distancias",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "De −6 a −1, contando en la recta, hay ___ unidades.",
+     "De −2 a 5: 2 + 5 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el ascensor",
+    "planteo": "Un ascensor está en el subsuelo −3 y sube al piso 6. ¿Cuántos pisos recorre?"
+   },
+   "tip": {
+    "titulo": "Si cruza el cero, sumá",
+    "texto": "Si un número es negativo y el otro positivo, la distancia es la suma de las distancias de cada uno al cero."
+   },
+   "ojo": [
+    "Numerar los negativos al revés: a la izquierda del 0 va primero el −1.",
+    "Contar mal cuando se cruza el cero: de −3 a 5 hay 8, no 2."
+   ],
+   "resumen": [
+    {
+     "titulo": "Recta",
+     "texto": "Positivos a la derecha, negativos a la izquierda, espacios iguales."
+    },
+    {
+     "titulo": "Simetría",
+     "texto": "−4 y 4 están a 4 del cero."
+    },
+    {
+     "titulo": "Mismo lado",
+     "texto": "De −8 a −2: 6."
+    },
+    {
+     "titulo": "Cruzando el cero",
+     "texto": "De −3 a 4: 3 + 4 = 7."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Recta numérica",
+     "significado": "Línea con los números ubicados en orden y a igual distancia."
+    },
+    {
+     "palabra": "Distancia",
+     "significado": "Cantidad de unidades entre dos números."
+    },
+    {
+     "palabra": "Simétrico",
+     "significado": "A la misma distancia, del otro lado."
+    }
+   ],
+   "carpeta": [
+    "¿Qué distancia hay entre −4 y 0?",
+    "¿Qué distancia hay entre −7 y 2?",
+    "¿Qué número está a la misma distancia del 0 que −9, pero del otro lado?",
+    "Un compañero contó la distancia entre −3 y 5 y le dio 2. ¿Cuál es la distancia correcta?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "4"
+    ],
+    [
+     "9"
+    ],
+    [
+     "9"
+    ],
+    [
+     "8"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "5 unidades. 7.",
+    "solo": "Del −3 al 0: 3 pisos. Del 0 al 6: 6 pisos. Recorre 9 pisos.",
+    "carpeta": [
+     "4: cuatro unidades hasta el cero.",
+     "9: 7 + 2.",
+     "9: es el opuesto de −9.",
+     "8: 3 hasta el 0 y 5 más. Restó 5 − 3."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La recta entera",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "situacion"
+       }
+      },
+      "ejercicio": {
+       "motor": "recta",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "La recta numérica entera",
+        "texto": "En la recta numérica entera el 0 está en el medio, los positivos a la derecha y los negativos a la izquierda, todos separados por la misma distancia."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La recta sirve para ver los enteros ordenados y medir distancias. Para leer un punto se cuentan las rayitas desde el 0, fijándose cuánto vale cada una: hacia la derecha suma, hacia la izquierda resta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "A la derecha del 0: positivos.",
+         "A la izquierda: negativos."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Simetría",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "opuesto"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "opuesto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Simetría respecto del 0",
+        "texto": "Dos números opuestos están ubicados en la recta a la misma distancia del 0, uno de cada lado: son simétricos respecto del 0, como reflejados en un espejo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Doblando la recta por el 0, cada número cae sobre su opuesto. Esto ayuda a ubicar negativos: −6 está tan lejos del 0 hacia la izquierda como 6 hacia la derecha."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "6 y −6: a 6 unidades del 0.",
+         "Doblar por el 0."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Distancia entre enteros",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "distancia"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "distancia"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Distancia",
+        "texto": "La distancia entre dos números enteros es la cantidad de unidades que hay entre ellos en la recta, y nunca es negativa."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si los dos están del mismo lado del 0 se restan sus distancias al 0; si están de distinto lado, se suman. Entre −3 y 5 hay 3 + 5 = 8 unidades: por ejemplo, de 3 grados bajo cero a 5 grados la temperatura sube 8 grados."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Entre −3 y 5: 8.",
+         "Entre −7 y −2: 5."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "En la recta entera",
+      "definicion": "los positivos están a la derecha del 0 y los negativos a la izquierda.",
+      "ejemplo": "−3 · 0 · 3"
+     },
+     {
+      "concepto": "Dos números opuestos",
+      "definicion": "son simétricos respecto del 0: están a la misma distancia, de cada lado.",
+      "ejemplo": "6 y −6"
+     },
+     {
+      "concepto": "La distancia entre dos enteros",
+      "definicion": "es la cantidad de unidades que los separan en la recta, siempre positiva.",
+      "ejemplo": "Entre −3 y 5 hay 8"
+     },
+     {
+      "concepto": "Si están de distinto lado del 0",
+      "definicion": "la distancia se calcula sumando las distancias de cada uno al 0.",
+      "ejemplo": "−3 y 5: 3 + 5 = 8"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder comparar y ordenar números enteros, incluidos los negativos, y listar los enteros de un intervalo.",
+   "vas_a_ver": [
+    "Comparar en la recta",
+    "Por qué −5 es menor que −2",
+    "Ordenar de menor a mayor y de mayor a menor",
+    "Los enteros entre dos números"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Comparar en la recta",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Mayor y menor",
+       "texto": "En la recta, de dos números es <b>mayor el que está más a la derecha</b>. Por eso todo positivo es mayor que 0, y 0 es mayor que todo negativo."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Se escribe con los signos < (menor que) y > (mayor que): −3 < 0 < 2."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Los negativos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Entre negativos",
+       "texto": "Entre dos negativos, es <b>menor el que está más lejos del cero</b>: −5 < −2."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Temperaturas de una semana",
+       "columnas": [
+        "Día",
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves"
+       ],
+       "filas": [
+        [
+         "Temperatura",
+         "−4 °C",
+         "−1 °C",
+         "2 °C",
+         "−6 °C"
+        ]
+       ],
+       "iguales": true,
+       "texto": "El día más frío fue el jueves (−6 °C) y el más templado, el miércoles (2 °C)."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Ordenar",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "De menor a mayor",
+       "texto": "Ordenamos 3, −8, 0, −1, −12 y 5.",
+       "items": [
+        "Primero los negativos, del más lejano al más cercano al cero: −12, −8, −1.",
+        "Después el 0.",
+        "Después los positivos: 3, 5.",
+        "−12 < −8 < −1 < 0 < 3 < 5."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Enteros de un intervalo",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Los enteros mayores que −3 y menores que 2 son −2, −1, 0 y 1. Ojo de no olvidar el cero."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "temperaturas",
+    "planteo": "Ordená de menor a mayor las temperaturas de la tabla: −4, −1, 2 y −6.",
+    "pasos": [
+     "Negativos, del más lejano al cero: −6, −4, −1.",
+     "Después el positivo: 2.",
+     "−6 < −4 < −1 < 2."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "comparar",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Entre −5 y −9, el mayor es ___ .",
+     "Los enteros mayores que −3 y menores que 1 son −2, ___ y 0."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "de mayor a menor",
+    "planteo": "Ordená de mayor a menor: −6, 4, −2, 0, −10."
+   },
+   "tip": {
+    "titulo": "Pensá en temperaturas",
+    "texto": "−10 °C es más frío que −2 °C: el que está más lejos del cero hacia abajo es el menor."
+   },
+   "ojo": [
+    "Ordenar los negativos como si fueran positivos: −6 es menor que −2, aunque 6 sea mayor que 2.",
+    "Olvidar el cero al listar los enteros de un intervalo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Mayor",
+     "texto": "El de más a la derecha."
+    },
+    {
+     "titulo": "Negativos",
+     "texto": "Más lejos del 0, más chico. Ej.: −5 < −2."
+    },
+    {
+     "titulo": "Orden",
+     "texto": "Negativos < 0 < positivos."
+    },
+    {
+     "titulo": "Intervalo",
+     "texto": "Entre −3 y 2: −2, −1, 0, 1."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Orden creciente",
+     "significado": "De menor a mayor."
+    },
+    {
+     "palabra": "Orden decreciente",
+     "significado": "De mayor a menor."
+    },
+    {
+     "palabra": "Intervalo",
+     "significado": "Los números que están entre dos dados."
+    }
+   ],
+   "carpeta": [
+    "¿Cuál es mayor: −5 o −2?",
+    "¿Cuántos enteros hay entre −4 y 3, sin contar a −4 ni a 3?",
+    "¿Cuál es el menor de estos números: −1, −15, 0, −7?",
+    "Un compañero escribió −2 < −6 porque 2 es menor que 6. ¿Cuál de los dos es el menor?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-2",
+     "−2"
+    ],
+    [
+     "6"
+    ],
+    [
+     "-15",
+     "−15"
+    ],
+    [
+     "-6",
+     "−6"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "−5. −1.",
+    "solo": "4 > 0 > −2 > −6 > −10.",
+    "carpeta": [
+     "−2: está más cerca del cero.",
+     "6: −3, −2, −1, 0, 1 y 2.",
+     "−15: es el más lejano del cero hacia la izquierda.",
+     "−6: está más a la izquierda en la recta."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Comparar en la recta",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "comparar"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "comparar"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Comparar enteros",
+        "texto": "De dos números enteros es mayor el que está más a la derecha en la recta numérica. Todo positivo es mayor que cero y que cualquier negativo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con los negativos hay que tener cuidado: −2 es mayor que −7, porque está más cerca del 0, más a la derecha. Pensá en temperaturas: −2 °C es menos frío que −7 °C."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "−2 > −7.",
+         "3 > −10."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Ordenar",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "comparar"
+       }
+      },
+      "ejercicio": {
+       "motor": "ordenar",
+       "p": {
+        "modo": "enteros"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ordenar enteros",
+        "texto": "Para ordenar números enteros de menor a mayor se escriben primero los negativos, del más lejano al más cercano al 0, después el 0 y por último los positivos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Ubicar cada número en la recta ayuda a no confundirse: el orden de izquierda a derecha es el orden de menor a mayor. Entre negativos, el de mayor distancia al 0 es el menor."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "−8 < −3 < 0 < 2 < 5.",
+         "De izquierda a derecha."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Enteros de un intervalo",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "intervalo"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "intervalo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Enteros entre dos números",
+        "texto": "Los enteros que están entre dos números son los que quedan en la recta después del primero y antes del segundo; si se dice «entre», los extremos no se cuentan."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para contarlos conviene escribirlos todos, sin olvidar el 0. Entre −4 y 3 están −3, −2, −1, 0, 1 y 2: son 6. Si el problema dice «desde … hasta», los extremos sí se incluyen."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Entre −4 y 3: 6 enteros.",
+         "«Desde … hasta» incluye los extremos."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "De dos enteros",
+      "definicion": "es mayor el que está más a la derecha en la recta numérica.",
+      "ejemplo": "−2 > −7"
+     },
+     {
+      "concepto": "Todo número positivo",
+      "definicion": "es mayor que el cero y que cualquier número negativo.",
+      "ejemplo": "1 > −100"
+     },
+     {
+      "concepto": "Para ordenar de menor a mayor",
+      "definicion": "se ponen los negativos más lejanos primero, después el 0 y los positivos.",
+      "ejemplo": "−8 < −3 < 0 < 5"
+     },
+     {
+      "concepto": "Los enteros entre dos números",
+      "definicion": "no incluyen los extremos, y hay que acordarse de contar el 0.",
+      "ejemplo": "Entre −4 y 3 hay 6"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a poder calcular el valor absoluto de un entero como una distancia, diferenciarlo del opuesto y usarlo en problemas.",
+   "vas_a_ver": [
+    "El valor absoluto como distancia al cero",
+    "El opuesto de un número",
+    "Valor absoluto y opuesto juntos",
+    "Problemas de distancia"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Valor absoluto",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Valor absoluto",
+       "texto": "El <b>valor absoluto</b> de un número es su <b>distancia al cero</b>. Se escribe entre barras: |−7| = 7 y |7| = 7. Como es una distancia, <b>nunca es negativo</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "|0| = 0. Y |−3| no es −3: es 3, porque −3 está a 3 unidades del cero."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Opuesto",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Opuesto",
+       "texto": "El <b>opuesto</b> de un número es el que está del otro lado del cero, a la misma distancia. El opuesto de 5 es −5; el de −8 es 8."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "No son lo mismo",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Valor absoluto y opuesto",
+       "columnas": [
+        "Número",
+        "Valor absoluto",
+        "Opuesto"
+       ],
+       "filas": [
+        [
+         "−3",
+         "3",
+         "3"
+        ],
+        [
+         "5",
+         "5",
+         "−5"
+        ],
+        [
+         "0",
+         "0",
+         "0"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Para un negativo coinciden; para un positivo, no. El valor absoluto nunca da negativo; el opuesto sí puede."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Problemas de distancia",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "Los buzos",
+       "texto": "Un buzo está a −12 m y otro a −30 m. ¿Cuántos metros los separan?",
+       "items": [
+        "|−12| = 12 y |−30| = 30.",
+        "Los dos están del mismo lado del cero.",
+        "Los separan 30 − 12 = 18 m."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "−9 y 4",
+    "planteo": "Compará −9 y 4, y compará sus valores absolutos.",
+    "pasos": [
+     "En la recta, −9 está a la izquierda: −9 < 4.",
+     "|−9| = 9 y |4| = 4.",
+     "Entonces |−9| > |4|.",
+     "El menor número tiene el mayor valor absoluto: está más lejos del cero."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "−15 y 15",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "|−15| = ___ .",
+     "El opuesto de −15 es ___ .",
+     "El opuesto de 15 es ___ .",
+     "|15| = 15."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "dos ciudades",
+    "planteo": "Un termómetro marca −6 °C en una ciudad y 4 °C en otra. ¿Cuál está más lejos de 0 °C? ¿Qué diferencia de temperatura hay entre las dos?"
+   },
+   "tip": {
+    "titulo": "Pensá en distancia",
+    "texto": "Para el valor absoluto, preguntate a cuántos pasos del cero está el número. No es una regla de cambiar signos."
+   },
+   "ojo": [
+    "Creer que el valor absoluto siempre cambia el signo: |5| = 5.",
+    "Confundir opuesto con valor absoluto: el opuesto de 5 es −5, pero |5| = 5."
+   ],
+   "resumen": [
+    {
+     "titulo": "Valor absoluto",
+     "texto": "Distancia al 0. Ej.: |−7| = 7."
+    },
+    {
+     "titulo": "Nunca negativo",
+     "texto": "|−3| = 3, no −3."
+    },
+    {
+     "titulo": "Opuesto",
+     "texto": "Del otro lado. Ej.: 5 → −5."
+    },
+    {
+     "titulo": "Distancias",
+     "texto": "Buzos a −12 y −30: 18 m."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Valor absoluto",
+     "significado": "Distancia de un número al cero."
+    },
+    {
+     "palabra": "Barras",
+     "significado": "El signo | | del valor absoluto."
+    },
+    {
+     "palabra": "Opuesto",
+     "significado": "El número del otro lado del cero, a la misma distancia."
+    }
+   ],
+   "carpeta": [
+    "Calculá |−23|.",
+    "Escribí el número negativo cuyo valor absoluto es 8.",
+    "¿Cuál es el opuesto de |−5|?",
+    "Un compañero escribió |−3| = −3. ¿Cuánto vale |−3|?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "23"
+    ],
+    [
+     "-8",
+     "−8"
+    ],
+    [
+     "-5",
+     "−5"
+    ],
+    [
+     "3"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "15. 15. −15.",
+    "solo": "|−6| = 6 y |4| = 4: la de −6 °C está más lejos de 0. Diferencia: 6 + 4 = 10 grados.",
+    "carpeta": [
+     "23: está a 23 del cero.",
+     "−8: |−8| = 8.",
+     "−5: |−5| = 5 y su opuesto es −5.",
+     "3: es una distancia, no puede ser negativa."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Valor absoluto",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "absoluto"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "absoluto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Valor absoluto",
+        "texto": "El valor absoluto de un número entero es su distancia al 0 en la recta. Se escribe entre barras y nunca es negativo: |−6| = 6 y |6| = 6."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Como es una distancia, el valor absoluto «borra» el signo. Sirve para comparar cuán lejos de la referencia está algo, sin importar hacia qué lado: 6 metros bajo el agua y 6 metros de altura están igual de lejos del nivel del mar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "|−6| = 6.",
+         "|0| = 0."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Opuesto y valor absoluto no son lo mismo",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "absoluto"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "abs_opuesto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Diferencia",
+        "texto": "El opuesto cambia el signo de un número, mientras que el valor absoluto da su distancia al 0, que siempre es positiva o cero."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con números negativos se ve la diferencia: el opuesto de −5 es 5 y su valor absoluto también es 5, pero con 5 el opuesto es −5 y el valor absoluto es 5. El valor absoluto nunca da negativo; el opuesto sí puede."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "5: opuesto −5, |5| = 5.",
+         "−5: opuesto 5, |−5| = 5."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Problemas de distancia",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "distancia"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "distancia"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Problemas con enteros",
+        "texto": "En los problemas con temperaturas, alturas o fechas, la diferencia entre dos valores enteros se calcula como la distancia entre ellos en la recta."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si a la mañana hacían −4 °C y a la tarde 9 °C, la temperatura subió 13 grados: 4 hasta el 0 y 9 más. Dibujar la recta y marcar los dos valores evita errores con los signos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "De −4 a 9: subió 13.",
+         "Dibujá la recta."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El valor absoluto",
+      "definicion": "de un número es su distancia al 0 y nunca es negativo.",
+      "ejemplo": "|−6| = 6"
+     },
+     {
+      "concepto": "El opuesto",
+      "definicion": "cambia el signo del número, y puede dar positivo o negativo.",
+      "ejemplo": "Opuesto de 5: −5"
+     },
+     {
+      "concepto": "Un número y su opuesto",
+      "definicion": "tienen siempre el mismo valor absoluto, porque están a igual distancia del 0.",
+      "ejemplo": "|5| = |−5| = 5"
+     },
+     {
+      "concepto": "En los problemas",
+      "definicion": "la diferencia entre dos temperaturas es la distancia entre ellas en la recta.",
+      "ejemplo": "De −4 °C a 9 °C: 13 grados"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "multiple_choice",
+    "p": "Sol anota sus cuentas: lo que tiene es positivo y lo que debe, negativo. ¿Qué número representa \"debo $300\"?",
+    "o": [
+     "300",
+     "−300",
+     "0",
+     "3"
+    ],
+    "r": {
+     "correcta": "−300"
+    },
+    "e": "Deber es estar por debajo del cero.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "El 0 es un número negativo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "El 0 no es ni positivo ni negativo.",
+    "n": "recordar"
+   },
+   {
+    "t": "classify",
+    "n": "aplicar",
+    "p": "Clasificá cada situación según el número que le corresponde.",
+    "o": {
+     "elementos": [
+      "3 grados bajo cero",
+      "Piso 4",
+      "Subsuelo 2",
+      "Una deuda de $50",
+      "Ganar 10 puntos"
+     ],
+     "categorias": [
+      "Positivo",
+      "Negativo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "3 grados bajo cero": "Negativo",
+      "Piso 4": "Positivo",
+      "Subsuelo 2": "Negativo",
+      "Una deuda de $50": "Negativo",
+      "Ganar 10 puntos": "Positivo"
+     }
+    },
+    "e": "Por debajo de la referencia (0) es negativo."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Dani escribió números enteros. Tocá la línea que tiene un error.",
+    "o": {
+     "segmentos": [
+      "5 grados bajo cero → −5",
+      "El opuesto de −8 es −8",
+      "El opuesto de 0 es 0"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "El opuesto cambia el signo: el opuesto de −8 es 8."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "¿Qué distancia hay entre {a} y {b}?",
+    "o": {
+     "vars": {
+      "x": {
+       "min": 1,
+       "max": 9
+      },
+      "b": {
+       "min": 1,
+       "max": 9
+      }
+     },
+     "calculadas": {
+      "a": "0-x"
+     }
+    },
+    "r": {
+     "formula": "x+b"
+    },
+    "e": "Se cruza el cero: se suman las distancias de cada uno al cero.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Ubicamos en la recta numérica −5, −2 y −8. ¿De qué lado del 0 quedan todos los negativos?",
+    "o": [
+     "A la izquierda",
+     "A la derecha",
+     "Depende del número"
+    ],
+    "r": {
+     "correcta": "A la izquierda"
+    },
+    "e": "Los positivos van a la derecha.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Un buzo está a 12 metros bajo el nivel del mar y una gaviota vuela a 7 metros sobre el agua. ¿Cuántos metros los separan?",
+    "o": {},
+    "r": {
+     "acepta": [
+      19
+     ]
+    },
+    "e": "Están de distinto lado del 0: 12 + 7 = 19."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos calcularon la distancia entre −6 y −2. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | 6 + 2 | 8",
+     "Beto: | del mismo lado: 6 − 2 | 4",
+     "Caro: | −6 − 2 | −8"
+    ],
+    "r": {
+     "correcta": "Beto: | del mismo lado: 6 − 2 | 4"
+    },
+    "e": "Del mismo lado del 0 se restan las distancias; una distancia nunca es negativa."
+   }
+  ],
+  "3": [
+   {
+    "t": "multiple_choice",
+    "p": "Una mañana hizo −8 °C y otra mañana −3 °C. ¿Cuál de las dos temperaturas es mayor?",
+    "o": [
+     "−8",
+     "−3",
+     "Son iguales"
+    ],
+    "r": {
+     "correcta": "−3"
+    },
+    "e": "Está más cerca del cero, más a la derecha.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená de menor a mayor.",
+    "o": [
+     "0",
+     "−4",
+     "2",
+     "−9"
+    ],
+    "r": {
+     "orden": [
+      "−9",
+      "−4",
+      "0",
+      "2"
+     ]
+    },
+    "e": "Primero el negativo más lejano del cero.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "Ordená estas temperaturas de la más fría a la más cálida.",
+    "o": [
+     "−2 °C",
+     "5 °C",
+     "−9 °C",
+     "0 °C",
+     "−5 °C"
+    ],
+    "r": {
+     "orden": [
+      "−9 °C",
+      "−5 °C",
+      "−2 °C",
+      "0 °C",
+      "5 °C"
+     ]
+    },
+    "e": "De menor a mayor: el más frío es el negativo más lejano al 0."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Pili ordenó −7, −1, 3 y −4 de menor a mayor. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Los negativos van primero",
+      "Entre negativos, el menor es el más cercano al 0",
+      "Queda −1 < −4 < −7 < 3"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "El menor es el más lejano al 0: −7 < −4 < −1 < 3."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "Calculá |{a}|.",
+    "o": {
+     "vars": {
+      "x": {
+       "min": 2,
+       "max": 50
+      }
+     },
+     "calculadas": {
+      "a": "0-x"
+     }
+    },
+    "r": {
+     "formula": "x"
+    },
+    "e": "El valor absoluto es la distancia al cero.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es el opuesto de 6 y cuál es su valor absoluto?",
+    "o": [
+     "−6 y 6",
+     "6 y −6",
+     "−6 y −6",
+     "6 y 6"
+    ],
+    "r": {
+     "correcta": "−6 y 6"
+    },
+    "e": "El opuesto está del otro lado; el valor absoluto es la distancia.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada expresión con su resultado.",
+    "o": {
+     "izquierda": [
+      "|−8|",
+      "Opuesto de 8",
+      "|3|",
+      "Opuesto de −3"
+     ],
+     "derecha": [
+      "8",
+      "−8",
+      "3 ",
+      "3"
+     ]
+    },
+    "r": {
+     "pares": {
+      "|−8|": "8",
+      "Opuesto de 8": "−8",
+      "|3|": "3 ",
+      "Opuesto de −3": "3"
+     }
+    },
+    "e": "El valor absoluto es la distancia; el opuesto cambia el signo."
+   },
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] A las 6 de la mañana el termómetro marcaba −4 °C y a las 3 de la tarde, 9 °C. ¿Cuántos grados subió la temperatura?",
+    "o": {},
+    "r": {
+     "acepta": [
+      13
+     ]
+    },
+    "e": "4 grados hasta el 0 y 9 más: 13."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. ¿Cuál es menor?",
+    "o": [
+     "0",
+     "−1",
+     "1"
+    ],
+    "r": {
+     "correcta": "−1"
+    },
+    "e": "Todo negativo es menor que 0.",
+    "tiempo": 15,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá |−12|.",
+    "o": {},
+    "r": {
+     "acepta": [
+      12
+     ]
+    },
+    "e": "Está a 12 del cero.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. ¿Qué distancia hay entre −2 y 3?",
+    "o": {},
+    "r": {
+     "acepta": [
+      5
+     ]
+    },
+    "e": "2 + 3 = 5.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá 0,5 + 0,25.",
+    "o": {},
+    "r": {
+     "acepta": [
+      0.75
+     ]
+    },
+    "e": "Repaso de la misión 10.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué número representa \"dos subsuelos debajo de la planta baja\"?",
+    "o": [
+     "2",
+     "−2",
+     "0",
+     "−20"
+    ],
+    "r": {
+     "correcta": "−2"
+    },
+    "e": "La planta baja es el 0.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "¿Cuál es el opuesto de −31?",
+    "o": {},
+    "r": {
+     "acepta": [
+      31
+     ]
+    },
+    "e": "Del otro lado del cero.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "Clasificá cada número.",
+    "o": {
+     "elementos": [
+      "−7",
+      "0",
+      "12",
+      "−1",
+      "5"
+     ],
+     "categorias": [
+      "Positivo",
+      "Negativo",
+      "Ni positivo ni negativo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "−7": "Negativo",
+      "0": "Ni positivo ni negativo",
+      "12": "Positivo",
+      "−1": "Negativo",
+      "5": "Positivo"
+     }
+    },
+    "e": "El 0 no es ni positivo ni negativo.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿Qué distancia hay entre −8 y 5?",
+    "o": {},
+    "r": {
+     "acepta": [
+      13
+     ]
+    },
+    "e": "8 + 5 = 13.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "−4 y 4 están a la misma distancia del 0.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Son opuestos: los dos están a 4 unidades.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿Qué distancia hay entre −10 y −3?",
+    "o": {},
+    "r": {
+     "acepta": [
+      7
+     ]
+    },
+    "e": "Del mismo lado: 10 − 3 = 7.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "En cuatro ciudades se midió la temperatura a la madrugada. ¿Cuál fue la temperatura mayor?",
+    "o": [
+     "−20",
+     "−2",
+     "−12",
+     "−7"
+    ],
+    "r": {
+     "correcta": "−2"
+    },
+    "e": "Es el más cercano al cero.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "ordering",
+    "p": "Ordená de menor a mayor.",
+    "o": [
+     "−1",
+     "−11",
+     "6",
+     "0",
+     "−5"
+    ],
+    "r": {
+     "orden": [
+      "−11",
+      "−5",
+      "−1",
+      "0",
+      "6"
+     ]
+    },
+    "e": "Negativos del más lejano al más cercano al cero, después el 0 y los positivos.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "¿Cuántos números enteros hay que sean mayores que −5 y menores que 2?",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "−4, −3, −2, −1, 0 y 1.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Calculá |−18|.",
+    "o": {},
+    "r": {
+     "acepta": [
+      18
+     ]
+    },
+    "e": "Distancia al cero.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué número tiene valor absoluto 9 y es menor que 0?",
+    "o": [
+     "9",
+     "−9",
+     "0",
+     "1/9"
+    ],
+    "r": {
+     "correcta": "−9"
+    },
+    "e": "|−9| = 9 y es negativo.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "El valor absoluto de un número nunca es negativo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es una distancia.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un buzo está a −12 m y otro a −30 m. ¿Cuántos metros los separan?",
+    "o": {},
+    "r": {
+     "acepta": [
+      18
+     ]
+    },
+    "e": "30 − 12 = 18.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}

@@ -82,3 +82,7 @@ Todo en imprenta mayúscula, con dibujos grandes y números chicos.
 |---|---|---|
 | `primeros` | ejemplo paso a paso | contar (`max`), cantidad (`max`), mas_menos (`igual`), uno_a_uno (`igual`), igualar (`op`: agregar, quitar), tren (`desde`, `hasta`), decena (`ini`), leer (`forma`: escribir), anterior_siguiente, mayor_menor |
 | `primeros_x` | ejercicio | contar (`min`, `max`), grupo, mas_menos, igual, parejas, alcanza, agregar, quitar, falta (`desde`, `hasta`), decena, leer, escribir, anterior_siguiente, mayor_menor |
+
+### Decimales y enteros (Matemática I · Misiones 10 y 11)
+- `decimales` / `decimales_x` (`modo` obligatorio): frac_dec, dec_frac, comparar, cual (¿exacto o periódico?), puro_frac, suma, resta, producto, division, estimar.
+- `enteros` / `enteros_x` (`modo` obligatorio): situacion, opuesto, distancia, comparar, intervalo, absoluto; `enteros_x` además abs_opuesto.

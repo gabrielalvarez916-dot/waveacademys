@@ -981,6 +981,93 @@
     });
   } };
 
+  // ======= DECIMALES (Matemática I · Misión 10) =======
+  function r4(x) { return Math.round(x * 1e4) / 1e4; }
+  function ndec(x) { var t = String(r4(x)); return t.indexOf('.') < 0 ? 0 : t.split('.')[1].length; }
+  function solo25(b) { while (b % 2 === 0) b /= 2; while (b % 5 === 0) b /= 5; return b === 1; }
+  function factoriza(n) { var f = [], p = 2; while (n > 1) { while (n % p === 0) { f.push(p); n /= p; } p++; } return f; }
+  function perS(ent, d) { return ent + ',<span class="lb2-per">' + d + '</span>'; }
+  M.decimales = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'frac_dec', C = {
+      frac_dec: ctrl('a', 'Numerador', 1, 999, 1, 37) + ctrl('p', 'Ceros del denominador', 1, 3, 1, 2),
+      dec_frac: ctrl('a', 'Cifras sin coma', 1, 999, 1, 45) + ctrl('p', 'Cifras decimales', 1, 3, 1, 2),
+      comparar: ctrl('x', 'Primer número', 0, 9, .01, 2.7) + ctrl('y', 'Segundo número', 0, 9, .01, 2.65),
+      cual: ctrl('a', 'Numerador', 1, 20, 1, 7) + ctrl('b', 'Denominador', 2, 40, 1, 12),
+      puro_frac: ctrl('q', 'Período', 1, 98, 1, 36),
+      suma: ctrl('x', 'Primer número', 0, 50, .1, 12.5) + ctrl('y', 'Segundo número', 0, 9, .01, 3.47),
+      resta: ctrl('x', 'Primer número', 0, 50, .1, 12.5) + ctrl('y', 'Segundo número', 0, 9, .01, 3.47),
+      producto: ctrl('x', 'Primer factor', 0, 20, .1, 2.4) + ctrl('y', 'Segundo factor', 0, 9, .01, 1.35),
+      division: ctrl('x', 'Dividendo', 1, 99, .1, 7.5) + ctrl('y', 'Divisor', .1, 9, .1, 2.5),
+      estimar: ctrl('x', 'Precio por kilo', 1, 20, .1, 4.9) + ctrl('y', 'Kilos', 1, 9, .1, 6.1) }[md];
+    escena(el, C, function (o) {
+      var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, F = function (x) { return '<p class="lb-pt-f">' + x + '</p>'; };
+      if (md === 'frac_dec') { var den = Math.pow(10, o.p), v = o.a / den; return [{ vis: G(fr(o.a, den)), txt: 'Una <b>fracción decimal</b>: el denominador es 10, 100 o 1.000.' }, { vis: F(o.p + ' cero' + (o.p > 1 ? 's' : '') + ' → ' + o.p + ' cifra' + (o.p > 1 ? 's' : '') + ' después de la coma'), txt: 'Cada cero del denominador es una cifra decimal.' }, { vis: RS(fr(o.a, den) + ' = ' + fmt(v)), txt: 'Escribimos el numerador y corremos la coma ' + o.p + ' lugar' + (o.p > 1 ? 'es' : '') + ' a la izquierda.' }]; }
+      if (md === 'dec_frac') { var den2 = Math.pow(10, o.p), v2 = o.a / den2, g = mcd(o.a, den2); return [{ vis: G(fmt(v2)), txt: 'Contamos las cifras después de la coma: <b>' + o.p + '</b>.' }, { vis: G(fmt(v2) + ' = ' + fr(o.a, den2)), txt: 'El número sin coma va arriba; abajo, un 1 con ' + o.p + ' cero' + (o.p > 1 ? 's' : '') + '.' }, { vis: RS(fmt(v2) + ' = ' + fr(o.a / g, den2 / g)), txt: g > 1 ? 'Simplificamos dividiendo por ' + g + '.' : 'Ya es irreducible.' }]; }
+      if (md === 'comparar') { var x = r4(o.x), y = r4(o.y), n = Math.max(ndec(x), ndec(y), 1), sx = x.toFixed(n).replace('.', ','), sy = y.toFixed(n).replace('.', ','), sg = x > y ? '>' : x < y ? '<' : '=';
+        return [{ vis: G(fmt(x) + ' ? ' + fmt(y)), txt: 'Primero la parte entera: ' + Math.floor(x) + ' y ' + Math.floor(y) + '.' + (Math.floor(x) !== Math.floor(y) ? ' Ya alcanza: gana la mayor.' : ' Es igual, seguimos.') }, { vis: G(sx + ' ? ' + sy), txt: 'Completamos con ceros para tener la misma cantidad de decimales.' }, { vis: RS(fmt(x) + ' ' + sg + ' ' + fmt(y)), txt: 'Comparamos cifra por cifra, de izquierda a derecha. Más cifras no quiere decir más grande.' }]; }
+      if (md === 'cual') { var g3 = mcd(o.a, o.b), a3 = o.a / g3, b3 = o.b / g3, fa = factoriza(b3), ex = solo25(b3), Q = periodo(a3, b3);
+        return [{ vis: G(fr(o.a, o.b) + (g3 > 1 ? ' = ' + fr(a3, b3) : '')), txt: g3 > 1 ? 'Primero la dejamos irreducible.' : 'Ya es irreducible.' }, { vis: F(b3 + ' = ' + (fa.join(' × ') || '1')), txt: 'Descomponemos el denominador en factores primos.' }, { vis: F(ex ? 'Solo 2 y 5' : 'Aparece otro primo además de 2 y 5'), txt: ex ? 'Solo tiene 2 y 5: se puede llevar a 10, 100, 1.000…' : 'Tiene otro primo: nunca llega a 10, 100, 1.000…' }, { vis: RS(fr(a3, b3) + ' = ' + (Q.ini < 0 ? Q.ent + (Q.dig ? ',' + Q.dig : '') : Q.ent + ',' + Q.dig.slice(0, Q.ini) + '<span class="lb2-per">' + Q.dig.slice(Q.ini) + '</span>')), txt: ex ? 'Es un <b>decimal exacto</b>.' : 'Es un <b>decimal periódico</b>.' }]; }
+      if (md === 'puro_frac') { var q = o.q, L = q < 10 ? 1 : 2, nueves = L === 1 ? 9 : 99, g4 = mcd(q, nueves), qs = L === 2 && q < 10 ? '0' + q : String(q);
+        return [{ vis: G('x = ' + perS(0, qs)), txt: 'Un periódico puro: el período es <b>' + qs + '</b>, de ' + L + ' cifra' + (L > 1 ? 's' : '') + '.' }, { vis: G((L === 1 ? '10' : '100') + 'x = ' + q + ',<span class="lb2-per">' + qs + '</span>'), txt: 'Multiplicamos por ' + (L === 1 ? '10' : '100') + ': la coma salta un período.' }, { vis: G(nueves + 'x = ' + q), txt: 'Restamos x: la parte que se repite desaparece.' }, { vis: RS(perS(0, qs) + ' = ' + fr(q, nueves) + (g4 > 1 ? ' = ' + fr(q / g4, nueves / g4) : '')), txt: 'Arriba el período, abajo tantos 9 como cifras tiene.' }]; }
+      if (md === 'suma' || md === 'resta') { var x5 = r4(o.x), y5 = r4(o.y); if (md === 'resta' && y5 > x5) { var t5 = x5; x5 = y5; y5 = t5; } var n5 = Math.max(ndec(x5), ndec(y5), 1), res = r4(md === 'suma' ? x5 + y5 : x5 - y5), col = '<pre class="lb2-col">  ' + x5.toFixed(n5).replace('.', ',').padStart(8) + '\n' + (md === 'suma' ? '+ ' : '− ') + y5.toFixed(n5).replace('.', ',').padStart(8) + '</pre>';
+        return [{ vis: col, txt: 'Encolumnamos con <b>coma debajo de coma</b>.' }, { vis: col, txt: 'Completamos con ceros: ' + x5.toFixed(n5).replace('.', ',') + ' y ' + y5.toFixed(n5).replace('.', ',') + '.' }, { vis: col + RS('= ' + fmt(res)), txt: (md === 'suma' ? 'Sumamos' : 'Restamos') + ' como con naturales y bajamos la coma.' }]; }
+      if (md === 'producto') { var x6 = r4(o.x), y6 = r4(o.y), d6 = ndec(x6) + ndec(y6), sinc = Math.round(x6 * Math.pow(10, ndec(x6))) * Math.round(y6 * Math.pow(10, ndec(y6)));
+        return [{ vis: G(fmt(x6) + ' × ' + fmt(y6)), txt: 'Multiplicamos como si no hubiera comas.' }, { vis: F(Math.round(x6 * Math.pow(10, ndec(x6))) + ' × ' + Math.round(y6 * Math.pow(10, ndec(y6))) + ' = ' + sinc), txt: 'El producto sin comas.' }, { vis: F(ndec(x6) + ' + ' + ndec(y6) + ' = ' + d6 + ' cifras decimales'), txt: 'Contamos las cifras decimales de los dos factores.' }, { vis: RS('= ' + fmt(r4(x6 * y6))), txt: 'Ponemos la coma dejando ' + d6 + ' cifras a la derecha.' }]; }
+      if (md === 'division') { var x7 = r4(o.x), y7 = r4(o.y), k7 = Math.pow(10, ndec(y7)), X7 = r4(x7 * k7), Y7 = r4(y7 * k7);
+        return [{ vis: G(fmt(x7) + ' ÷ ' + fmt(y7)), txt: 'Queremos que el divisor no tenga coma.' }, { vis: G(fmt(X7) + ' ÷ ' + fmt(Y7)), txt: k7 > 1 ? 'Multiplicamos los dos por ' + k7 + ': el cociente no cambia.' : 'El divisor ya es entero.' }, { vis: RS('= ' + fmt(r4(x7 / y7))), txt: 'Dividimos como siempre; si sigue, se agregan ceros después de la coma.' }]; }
+      var e1 = Math.round(o.x), e2 = Math.round(o.y);
+      return [{ vis: G(fmt(o.x) + ' × ' + fmt(o.y)), txt: 'Antes de calcular, estimamos.' }, { vis: G(e1 + ' × ' + e2 + ' = ' + e1 * e2), txt: 'Redondeamos a enteros: ' + fmt(o.x) + ' ≈ ' + e1 + ' y ' + fmt(o.y) + ' ≈ ' + e2 + '.' }, { vis: RS(fmt(r4(o.x * o.y)) + ' ≈ ' + e1 * e2), txt: 'La cuenta exacta tiene que dar cerca. Si da 300, la coma está mal puesta.' }];
+    });
+  } };
+  M.decimales_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'frac_dec';
+    respuesta(el, api, function () {
+      if (md === 'frac_dec') { var pp = R(1, 3), den = Math.pow(10, pp), a = R(1, den * 3); if (a % 10 === 0) a++; return { cons: 'Escribí <b>' + a + '/' + den + '</b> como número decimal.', campos: [{ v: r4(a / den) }], ayuda: den + ' tiene ' + pp + ' cero(s): ' + pp + ' cifra(s) después de la coma.', bien: '¡Bien! ' + fmt(r4(a / den)) + '.' }; }
+      if (md === 'dec_frac') { var b = pick([10, 100, 1000]), a2 = R(2, b - 1), g = mcd(a2, b); return { cons: 'Escribí <b>' + fmt(a2 / b) + '</b> como fracción irreducible.', campos: [{ lab: 'numerador', v: a2 / g }, { lab: 'denominador', v: b / g }], ayuda: 'Primero ' + a2 + '/' + b + ', después simplificá.', bien: '¡Bien! ' + a2 / g + '/' + b / g + '.' }; }
+      if (md === 'comparar') { var e = R(0, 9), x = r4(e + R(1, 9) / 10), y = r4(e + R(10, 99) / 100); if (x === y) y = r4(y + .01); return { cons: '¿Cuál es mayor: <b>' + fmt(x) + '</b> o <b>' + fmt(y) + '</b>? Escribí el mayor.', campos: [{ v: Math.max(x, y) }], ayuda: 'Completá con ceros: ' + x.toFixed(2).replace('.', ',') + ' y ' + y.toFixed(2).replace('.', ',') + '.', bien: '¡Bien!' }; }
+      if (md === 'cual') { var bb = pick([3, 4, 6, 7, 8, 9, 12, 15, 16, 20, 25, 40]), aa = R(1, bb - 1); while (mcd(aa, bb) > 1) aa = R(1, bb - 1); var ex = solo25(bb); return { cons: '<b>' + aa + '/' + bb + '</b>, ¿da un decimal exacto o periódico? Escribí <b>exacto</b> o <b>periódico</b>.', campos: [{ tipo: 'texto', v: ex ? ['exacto'] : ['periodico', 'periódico'] }], ayuda: 'Descomponé ' + bb + ': ¿tiene solo 2 y 5?', bien: '¡Bien! Es ' + (ex ? 'exacto' : 'periódico') + '.' }; }
+      if (md === 'puro_frac') { var L = pick([1, 2]), q = L === 1 ? R(1, 8) : R(10, 98), nv = L === 1 ? 9 : 99, g2 = mcd(q, nv); return { cons: 'Pasá <b>' + perS(0, String(q)) + '</b> a fracción irreducible.', campos: [{ lab: 'numerador', v: q / g2 }, { lab: 'denominador', v: nv / g2 }], ayuda: 'Arriba el período, abajo ' + nv + '; después simplificá.', bien: '¡Bien!' }; }
+      if (md === 'suma' || md === 'resta') { var x2 = R(10, 300) / 10, y2 = R(10, 900) / 100; if (md === 'resta' && y2 > x2) { var t = x2; x2 = y2; y2 = t; } return { cons: 'Calculá <b>' + fmt(x2) + (md === 'suma' ? ' + ' : ' − ') + fmt(y2) + '</b>', campos: [{ v: r4(md === 'suma' ? x2 + y2 : x2 - y2) }], ayuda: 'Coma debajo de coma y completá con ceros.', bien: '¡Bien!' }; }
+      if (md === 'producto') { var x3 = R(11, 99) / 10, y3 = R(2, 9) + (Math.random() < .5 ? R(1, 9) / 10 : 0); return { cons: 'Calculá <b>' + fmt(x3) + ' × ' + fmt(y3) + '</b>', campos: [{ v: r4(x3 * y3) }], ayuda: 'Multiplicá sin comas y después contá las cifras decimales de los dos factores.', bien: '¡Bien!' }; }
+      if (md === 'division') { var y4 = pick([.2, .5, .4, 2.5, 1.5, .25]), c4 = R(2, 30), x4 = r4(y4 * c4); return { cons: 'Calculá <b>' + fmt(x4) + ' ÷ ' + fmt(y4) + '</b>', campos: [{ v: c4 }], ayuda: 'Multiplicá los dos por 10 o por 100 hasta que el divisor no tenga coma.', bien: '¡Bien! ' + c4 + '.' }; }
+      var p5 = R(15, 99) / 10, k5 = R(2, 9) + (Math.random() < .5 ? .1 : -.1); return { cons: 'Un kilo cuesta $<b>' + fmt(p5) + '</b> y se compran <b>' + fmt(r4(k5)) + '</b> kilos. Estimá el total redondeando los dos números a enteros.', campos: [{ v: Math.round(p5) * Math.round(k5) }], ayuda: Math.round(p5) + ' × ' + Math.round(k5) + '.', bien: '¡Bien! Es una estimación.' };
+    });
+  } };
+  // ======= ENTEROS (Matemática I · Misión 11) =======
+  function rectaZ(marcas, extra) { var X = function (v) { return 130 + v * 11; }, t = '';
+    for (var k = -10; k <= 10; k++) t += '<line class="rayo" x1="' + X(k) + '" y1="' + (k ? 32 : 26) + '" x2="' + X(k) + '" y2="' + (k ? 40 : 46) + '"/>' + (k % 5 === 0 ? '<text x="' + X(k) + '" y="62">' + sig(k) + '</text>' : '');
+    (extra || []).forEach(function (s) { t += '<line class="diag" x1="' + X(s[0]) + '" y1="36" x2="' + X(s[1]) + '" y2="36" style="stroke-width:4"/>'; });
+    (marcas || []).forEach(function (m) { t += '<circle cx="' + X(m[0]) + '" cy="36" r="6" class="pt"/><text x="' + X(m[0]) + '" y="20" class="pt">' + (m[1] || sig(m[0])) + '</text>'; });
+    return '<svg viewBox="0 0 260 70" class="lb2-svg"><line class="rayo" x1="5" y1="36" x2="255" y2="36"/>' + t + '</svg>'; }
+  M.enteros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'situacion', C = {
+      situacion: ctrl('x', 'Temperatura', -10, 10, 1, -3, ' °C'), opuesto: ctrl('x', 'Número', -10, 10, 1, -4),
+      distancia: ctrl('a', 'Primer número', -10, 10, 1, -3) + ctrl('b', 'Segundo número', -10, 10, 1, 5),
+      comparar: ctrl('a', 'Primer número', -10, 10, 1, -7) + ctrl('b', 'Segundo número', -10, 10, 1, -2),
+      intervalo: ctrl('a', 'Desde', -10, 9, 1, -4) + ctrl('b', 'Hasta', -9, 10, 1, 3),
+      absoluto: ctrl('x', 'Número', -10, 10, 1, -6) }[md];
+    escena(el, C, function (o) { var RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; };
+      if (md === 'situacion') { var x = o.x; return [{ vis: rectaZ([[0, '0']]), txt: 'El <b>0</b> es la referencia: ni positivo ni negativo.' }, { vis: rectaZ([[x]]), txt: x < 0 ? 'Bajo cero: está a la <b>izquierda</b> del 0.' : x > 0 ? 'Sobre cero: a la <b>derecha</b> del 0.' : 'Justo en el 0.' }, { vis: rectaZ([[x]]) + RS(x < 0 ? x + ' °C → ' + sig(x) : x + ' °C → ' + sig(x)), txt: x < 0 ? 'Se escribe con signo <b>−</b>: es un número <b>negativo</b>.' : x > 0 ? 'Es <b>positivo</b>; el signo + se puede omitir.' : 'El 0 no lleva signo.' }]; }
+      if (md === 'opuesto') { var y = o.x; return [{ vis: rectaZ([[y]]), txt: 'Ubicamos el <b>' + sig(y) + '</b>: está a ' + Math.abs(y) + ' del 0.' }, { vis: rectaZ([[y], [-y]], [[y, -y]]), txt: 'Del otro lado del 0, a la misma distancia: son <b>simétricos</b> respecto del 0.' }, { vis: rectaZ([[y], [-y]]) + RS('El opuesto de ' + sig(y) + ' es ' + sig(-y)), txt: 'El opuesto tiene el mismo número con el signo cambiado.' }]; }
+      if (md === 'distancia') { var a = o.a, b = o.b; return [{ vis: rectaZ([[a], [b]]), txt: 'Ubicamos los dos números.' }, { vis: rectaZ([[a], [b]], [[a, b]]), txt: 'Contamos los saltos de uno en uno entre ellos.' }, { vis: rectaZ([[a], [b]], [[a, b]]) + RS('Distancia = ' + Math.abs(a - b)), txt: (a < 0) !== (b < 0) && a && b ? 'Si están a distinto lado del 0, se suman las distancias al 0: ' + Math.abs(a) + ' + ' + Math.abs(b) + '.' : 'Si están del mismo lado, se restan las distancias al 0.' }]; }
+      if (md === 'comparar') { var c = o.a, d = o.b, sg = c > d ? '>' : c < d ? '<' : '='; return [{ vis: rectaZ([[c], [d]]), txt: 'Ubicamos los dos en la recta.' }, { vis: rectaZ([[c], [d]]), txt: 'Es mayor el que está más a la <b>derecha</b>.' }, { vis: rectaZ([[c], [d]]) + RS(sig(c) + ' ' + sg + ' ' + sig(d)), txt: c < 0 && d < 0 ? 'Entre negativos, es mayor el que está más cerca del 0.' : 'Cualquier positivo es mayor que cualquier negativo.' }]; }
+      if (md === 'intervalo') { var lo = Math.min(o.a, o.b), hi = Math.max(o.a, o.b), L = []; for (var k = lo + 1; k < hi; k++) L.push(k); return [{ vis: rectaZ([[lo], [hi]]), txt: 'Marcamos los extremos: ' + sig(lo) + ' y ' + sig(hi) + '.' }, { vis: rectaZ([[lo], [hi]].concat(L.map(function (v) { return [v, ' ']; }))), txt: 'Marcamos los enteros que están <b>entre</b> ellos, sin contar los extremos.' }, { vis: RS(L.length ? L.map(sig).join(', ') : 'Ninguno') , txt: 'Hay <b>' + L.length + '</b>. Se cuentan de a uno, pasando por el 0.' }]; }
+      var z = o.x; return [{ vis: rectaZ([[z]]), txt: 'Ubicamos el <b>' + sig(z) + '</b>.' }, { vis: rectaZ([[z]], [[0, z]]), txt: 'Medimos la distancia al 0: <b>' + Math.abs(z) + '</b>.' }, { vis: rectaZ([[z]], [[0, z]]) + RS('|' + sig(z) + '| = ' + Math.abs(z)), txt: 'Esa distancia es el <b>valor absoluto</b>. Nunca es negativo. No es lo mismo que el opuesto: el opuesto de ' + sig(z) + ' es ' + sig(-z) + '.' }];
+    });
+  } };
+  M.enteros_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'situacion';
+    respuesta(el, api, function () { var n = R(1, 12), s = pick([-1, 1]), x = s * n;
+      if (md === 'situacion') { var S = pick([['Hacen ' + n + ' grados bajo cero.', -n], ['El auto está estacionado en el subsuelo ' + n + '.', -n], ['Un buzo está a ' + n + ' metros bajo el nivel del mar.', -n], ['El ascensor está en el piso ' + n + '.', n], ['Hacen ' + n + ' grados sobre cero.', n]]); return { cons: S[0] + ' Escribilo como número entero.', campos: [{ v: S[1] }], ayuda: 'Debajo del 0 (del nivel de referencia) es negativo: lleva signo −.', bien: '¡Bien! ' + sig(S[1]) + '.' }; }
+      if (md === 'opuesto') return { cons: '¿Cuál es el opuesto de <b>' + sig(x) + '</b>?', campos: [{ v: -x }], ayuda: 'Mismo número, signo cambiado.', bien: '¡Bien! ' + sig(-x) + '.' };
+      if (md === 'distancia') { var a = R(-10, 10), b = R(-10, 10); while (b === a) b = R(-10, 10); return { cons: '¿A cuántas unidades de distancia están <b>' + sig(a) + '</b> y <b>' + sig(b) + '</b> en la recta?', campos: [{ v: Math.abs(a - b) }], ayuda: 'Contá los saltos de uno en uno, pasando por el 0 si hace falta.', bien: '¡Bien!' }; }
+      if (md === 'comparar') { var c = R(-15, 10), d = R(-15, 10); while (d === c) d = R(-15, 10); return { cons: '¿Cuál es mayor: <b>' + sig(c) + '</b> o <b>' + sig(d) + '</b>? Escribí el mayor.', campos: [{ v: Math.max(c, d) }], ayuda: 'En la recta, el mayor está más a la derecha.', bien: '¡Bien!' }; }
+      if (md === 'intervalo') { var lo = R(-9, 0), hi = R(1, 8); return { cons: '¿Cuántos números enteros hay <b>entre</b> ' + sig(lo) + ' y ' + sig(hi) + ' (sin contar ' + sig(lo) + ' ni ' + sig(hi) + ')?', campos: [{ v: hi - lo - 1 }], ayuda: 'Escribilos todos, incluido el 0, y contalos.', bien: '¡Bien!' }; }
+      if (md === 'absoluto') return { cons: '¿Cuánto vale <b>|' + sig(x) + '|</b>?', campos: [{ v: n }], ayuda: 'Es la distancia al 0.', bien: '¡Bien! ' + n + '.' };
+      return { cons: 'Para el número <b>' + sig(x) + '</b>, escribí su opuesto y su valor absoluto.', campos: [{ lab: 'opuesto', v: -x }, { lab: 'valor absoluto', v: n }], ayuda: 'El opuesto cambia el signo; el valor absoluto es la distancia al 0.', bien: '¡Bien!' };
+    });
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);
