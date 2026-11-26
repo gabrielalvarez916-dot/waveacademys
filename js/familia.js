@@ -1533,7 +1533,8 @@
   }
 
   var VISTAS = {
-    propuesta: vistaPropuesta,\n    guias: vistaGuias,
+    propuesta: vistaPropuesta,
+    guias: vistaGuias,
     altas: vistaAltas,
     progreso: vistaProgreso,
     programacion: vistaProgramacion,
