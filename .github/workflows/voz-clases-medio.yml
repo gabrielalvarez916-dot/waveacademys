@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install edge-tts
-      - run: sudo apt-get install -y -qq ffmpeg   # para nivelar el audio de ElevenLabs
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg   # para nivelar el audio de ElevenLabs
       - name: Generar voz
         # ACTIVADO (23 nov, a pedido de Gaby): Lengua 1.º y 2.º año (nivel medio) sale con ElevenLabs (arg y neutro) en las lecciones NUEVAS (sin voz) o las que ya la tienen con ElevenLabs; las viejas con voz común no se rehacen solas (para eso está el flujo manual «Voz ElevenLabs de Lengua»). El resto sigue con la voz de siempre. Tope de caracteres por corrida; para pausar: ELEVEN_TOPE '0'.
         env: { VOZ_MINUTOS: '80', ELEVEN_KEY: '${{ secrets.ELEVEN_KEY }}', ELEVEN_TOPE: '8000', ELEVEN_SOLO_NUEVAS: '1', ELEVEN_VERSIONES: 'arg,neutro', ELEVEN_VOZ_NEUTRO: '${{ vars.ELEVEN_VOZ_NEUTRO }}' }
