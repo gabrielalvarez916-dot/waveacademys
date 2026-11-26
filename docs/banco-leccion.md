@@ -112,3 +112,11 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 - `primeros` / `primeros_x` modo `miles`: números de 4 cifras con camiones de 1.000, cajas de 100, paquetes de 10 y sueltos (que: contar | escribir | leer). `serie` acepta pasos de 1.000 y muestra el punto de miles. (Mat3 m1)
 - Misiones 16 y 17: `ecuaciones` (verificar, inversa, dos_miembros, problema) / `ecuaciones_x` (verificar, problema) y `geometria` (relaciones, rectas, bisectriz, mediatriz, copiar) / `geometria_x` (relaciones, rectas, bisectriz, mediatriz, triangulo). `modo` obligatorio.
 - Misiones 18 y 19: `figuras` / `figuras_x` (exterior, isosceles, ecuacion, paralelogramo, cuadrilateros, diagonales, suma360; `figuras_x` además clasificar) y `medida` / `medida_x` (perimetro, misma_unidad, circulo, compuesta, capacidad). `modo` obligatorio.
+
+### Matemática I M20 y Matemática II (todas) · `modo` obligatorio
+- `datos` / `datos_x`: circular, lineas, media_moda (sin mediana), muestral, azar.
+- `racionales` / `racionales_x`: recta_neg, punto_medio, mixto (periódico mixto → fracción), mezcla (fracción + decimal), pot_neg, exp_neg, raiz_frac.
+- `porcentajes` / `porcentajes_x`: factor, sucesivos, interes, variacion, compuesta (regla de tres compuesta).
+- `ecuaciones2` / `ecuaciones2_x`: parentesis, denominadores, casos (una / ninguna / infinitas), despejar; `ecuaciones2_x` además densidad.
+- `funciones` / `funciones_x`: es_funcion, grafico (creciente/decreciente, ordenada al origen).
+- `geometria2` / `geometria2_x`: paralelas (transversal), pitagoras, congruencia (LLL, LAL, ALA), cuerpos (caras, aristas, vértices, Euler).
