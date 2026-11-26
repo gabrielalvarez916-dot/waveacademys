@@ -89,6 +89,23 @@
       c.insertAdjacentElement('afterend', b);
     });
   }
+  // Campos de número (ejemplos y ejercicios de la lección, cuentas): lo dictado reemplaza lo que había y se pasa a cifras
+  function esNumero(c) { return /numeric|decimal/.test(c.inputMode || c.getAttribute('inputmode') || ''); }
+  var NUM = { cero: 0, un: 1, uno: 1, una: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8, nueve: 9, diez: 10, once: 11, doce: 12, trece: 13, catorce: 14, quince: 15, dieciseis: 16, diecisiete: 17, dieciocho: 18, diecinueve: 19, veinte: 20, veintiun: 21, veintiuno: 21, veintidos: 22, veintitres: 23, veinticuatro: 24, veinticinco: 25, veintiseis: 26, veintisiete: 27, veintiocho: 28, veintinueve: 29, treinta: 30, cuarenta: 40, cincuenta: 50, sesenta: 60, setenta: 70, ochenta: 80, noventa: 90, cien: 100, ciento: 100, doscientos: 200, trescientos: 300, cuatrocientos: 400, quinientos: 500, seiscientos: 600, setecientos: 700, ochocientos: 800, novecientos: 900 };
+  function aNumero(t) {
+    var s = String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    var d = s.replace(/(\d)[\s.](?=\d{3}\b)/g, '$1');
+    if (/^[\d\s,\/]+$/.test(d)) return d.replace(/\s+/g, '');
+    var tot = 0, cur = 0, ok = false;
+    s.split(/[\s-]+/).forEach(function (w) {
+      if (w === 'y' || w === 'con' || !w) return;
+      if (/^\d+$/.test(w)) { cur += Number(w); ok = true; }
+      else if (NUM[w] != null) { cur += NUM[w]; ok = true; }
+      else if (w === 'mil') { cur = (cur || 1) * 1000; ok = true; if (tot % 1e6 === 0 && tot) { tot += cur; cur = 0; } }
+      else if (w === 'millon' || w === 'millones') { tot += (cur || 1) * 1e6; cur = 0; ok = true; }
+    });
+    return ok ? String(tot + cur) : t.trim();
+  }
   function dictar(campo, btn) {
     var estabaEste = micActivo === btn;
     if (micActivo) { try { rec.stop(); } catch (e) {} }
@@ -96,7 +113,7 @@
     var cerrado = false, r = new SR(); rec = r; r.lang = 'es-AR'; r.interimResults = false; r.continuous = false;
     r.onresult = function (ev) {
       var t = ''; for (var i = ev.resultIndex; i < ev.results.length; i++) t += ev.results[i][0].transcript;
-      campo.value = (campo.value ? campo.value + ' ' : '') + t.trim();
+      campo.value = esNumero(campo) ? aNumero(t) : (campo.value ? campo.value + ' ' : '') + t.trim();
       campo.dispatchEvent(new Event('input', { bubbles: true }));
     };
     r.onend = function () {
