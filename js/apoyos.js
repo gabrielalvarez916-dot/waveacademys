@@ -63,7 +63,7 @@
   // ---------- Dictado por voz: el 🎤 está siempre junto a los campos donde se escribe una respuesta ----------
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null, micActivo = null;
   function candidatos() {
-    return Array.prototype.slice.call(document.querySelectorAll('textarea, input[type=text]')).filter(function (e) {
+    return Array.prototype.slice.call(document.querySelectorAll('textarea, input[type=text], input:not([type])')).filter(function (e) {
       return !e._apMic && !e.closest('.ap-panel-fondo, .wvp-chat, .wt-cuerpo') && !e.classList.contains('mt-hueco') && !e.classList.contains('mt-celda');
     });
   }
@@ -83,7 +83,9 @@
   function dictadoUI() {
     if (!SR) return;
     candidatos().forEach(function (c) {
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'ap-mic'; b.textContent = '🎤 Dictar respuesta'; b.title = 'Hablá y se escribe tu respuesta'; b.setAttribute('aria-label', 'Dictar respuesta con la voz');
+      // En la lección interactiva (ejemplos y prácticas con muchas casillas chicas) el micrófono va chiquito, adentro de la casilla: no desarma el dibujo
+      var mini = !!c.closest('.li2');
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ap-mic' + (mini ? ' mini' : ''); b.textContent = mini ? '🎤' : '🎤 Dictar respuesta'; if (mini) c.classList.add('ap-con-mic'); b.title = 'Hablá y se escribe tu respuesta'; b.setAttribute('aria-label', 'Dictar respuesta con la voz');
       c._apMic = true;
       b.onclick = function () { dictar(c, b); };
       c.insertAdjacentElement('afterend', b);
@@ -118,11 +120,11 @@
     };
     r.onend = function () {
       if (cerrado) return; cerrado = true;
-      btn.classList.remove('on'); btn.textContent = '🎤 Dictar respuesta'; if (micActivo === btn) micActivo = null;
+      btn.classList.remove('on'); btn.textContent = btn.classList.contains('mini') ? '🎤' : '🎤 Dictar respuesta'; if (micActivo === btn) micActivo = null;
       decir('Listo', function () {});
     };
     r.onerror = function () { r.onend(); };
-    micActivo = btn; btn.classList.add('on'); btn.textContent = '🔊 Te escucho…';
+    micActivo = btn; btn.classList.add('on'); btn.textContent = btn.classList.contains('mini') ? '🔊' : '🔊 Te escucho…';
     // primero habla ("Te escucho, hablá") y recién después abre el micrófono, para que no se grabe a sí misma
     decir('Te escucho, hablá', function () {
       if (micActivo !== btn || cerrado) return;

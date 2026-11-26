@@ -36,3 +36,9 @@ html.ap-sin-anim *,html.ap-sin-anim *::before,html.ap-sin-anim *::after{animatio
 .ap-mp-nivel li{display:flex;gap:10px;align-items:center;padding:4px 0;font-size:14px}
 .ap-mp-i{width:22px;text-align:center}
 .ap-mp-hecho{color:#14532d}.ap-mp-ahora{font-weight:800;color:#1f3a8a}.ap-mp-bloq{color:#777}
+
+/* Micrófono chico adentro de la casilla (lección interactiva: ejemplos y prácticas) */
+.ap-mic.mini{margin:0 4px 0 -30px;padding:0;width:26px;height:26px;border-radius:50%;font-size:13px;line-height:26px;text-align:center;background:#087E83;position:relative;z-index:1;flex:none}
+.ap-mic.mini.on{background:#c0262d}
+input.ap-con-mic{padding-right:30px!important}
+.lb-sx-in.ap-con-mic{width:7ch!important}
