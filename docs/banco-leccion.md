@@ -102,3 +102,4 @@ Cuadro desde el 0, de a 10 por fila (los redondos quedan en el margen izquierdo)
 | `primeros` / `primeros_x` (Misiones 13 y 14) | ejemplo / ejercicio | problema (`tipo`: juntar, agregar, avanzar, completar, quitar, comparar, falta_resta; ejercicio también mezcla y operacion = ¿suma o resta?) |
 | `primeros` / `primeros_x` (Misión 15) | ejemplo / ejercicio | calcu (`que`: partes, teclas con `op`: suma o resta, controlar, uno_diez con `op`: mas1, mas10, menos10) |
 | `primeros` / `primeros_x` (Matemática 2, Misiones 1 y 2) | ejemplo / ejercicio | centenas (`que`: contar, escribir; ejercicio también leer; `min`/`max` de cajas) · serie (`de`: 1, 10, 100; `dir`: sube, baja, mezcla; `desde`/`hasta`) |
+| `primeros` / `primeros_x` (Matemática 2, Misiones 3 y 4) | ejemplo / ejercicio | valor (ejercicio también `que`: desarmar) · comparar3 · orden3 (`orden`: desc) · recta1000 (ejercicio también `que`: entre) · redondos3 (ejercicio) |

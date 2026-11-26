@@ -137,36 +137,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "800. 900.", "solo": "870: es el mayor.", "carpeta": ["470.", "Entre el 800 y el 900.", "C."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("PRIMERO LAS CENTENAS", [LD("COMPARAR", "PARA COMPARAR, MIRÁ PRIMERO LAS <b>CENTENAS</b>: GANA EL QUE TIENE MÁS."),
+   LL("412 ES MAYOR QUE 398.", "4 CENTENAS SON MÁS QUE 3.")],
+   {"modo": "comparar3"}, {"modo": "comparar3"}),
+ T("SI EMPATAN", [LD("EMPATE", "SI LAS CENTENAS SON IGUALES, MIRÁ LAS <b>DECENAS</b>; SI TAMBIÉN EMPATAN, LAS UNIDADES."),
+   LL("654 ES MAYOR QUE 645.", "802 ES MENOR QUE 820.")],
+   {"modo": "comparar3"}, {"modo": "comparar3"}),
+], "recuerda": [
+ RC("PRIMERO LAS CENTENAS", "EL QUE TIENE MÁS CENTENAS ES EL MAYOR.", "700 ES MAYOR QUE 699"),
+ RC("SI EMPATAN", "MIRAMOS LAS DECENAS Y DESPUÉS LAS UNIDADES.", "372 ES MAYOR QUE 356"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("DE MENOR A MAYOR", [LD("ORDENAR", "PARA ORDENAR <b>DE MENOR A MAYOR</b>, BUSCÁ EL MÁS CHICO Y SEGUÍ."),
+   LL("406, 460, 640.", "MIRÁ PRIMERO LAS CENTENAS.")],
+   {"modo": "orden3"}, {"modo": "orden3"}),
+ T("DE MAYOR A MENOR", [LD("AL REVÉS", "<b>DE MAYOR A MENOR</b> EMPEZAMOS POR EL MÁS GRANDE."),
+   LL("531, 315, 153.", "ES LA LISTA DADA VUELTA.")],
+   {"modo": "orden3", "orden": "desc"}, {"modo": "orden3", "orden": "desc"}),
+], "recuerda": [
+ RC("DE MENOR A MAYOR", "DEL MÁS CHICO AL MÁS GRANDE.", "128, 281, 821"),
+ RC("DE MAYOR A MENOR", "DEL MÁS GRANDE AL MÁS CHICO.", "821, 281, 128"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("NÚMEROS REDONDOS", [LD("REDONDOS", "UN NÚMERO <b>REDONDO</b> TERMINA EN 0: 240, 560, 700."),
+   LL("347 NO ES REDONDO.", "SON FÁCILES PARA CONTAR Y CALCULAR.")],
+   {"modo": "serie", "de": 10, "desde": 400, "hasta": 450}, {"modo": "redondos3"}),
+ T("DE 10 Y DE 100", [LD("SALTOS REDONDOS", "CONTANDO <b>DE 10 EN 10</b> O <b>DE 100 EN 100</b> PASAMOS POR NÚMEROS REDONDOS."),
+   LL("670, 680, 690, 700.", "700, 800, 900, 1.000.")],
+   {"modo": "serie", "de": 100, "desde": 100, "hasta": 500}, {"modo": "serie", "de": 10, "desde": 400, "hasta": 1000}),
+], "recuerda": [
+ RC("REDONDOS", "SON LOS NÚMEROS QUE TERMINAN EN CERO.", "480 ES REDONDO; 485 NO"),
+ RC("SALTOS", "DE 10 EN 10 O DE 100 EN 100 LLEGAMOS A REDONDOS.", "300, 400, 500, 600"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("LA RECTA DEL 0 AL 1.000", [LD("UBICAR", "PARA UBICAR UN NÚMERO, BUSCÁ SUS <b>CENTENAS</b> EN LA RECTA."),
+   LL("EL 470 ESTÁ ENTRE 400 Y 500.", "MÁS A LA DERECHA, MÁS GRANDE.")],
+   {"modo": "recta1000"}, {"modo": "recta1000"}),
+ T("ENTRE QUÉ CIENTOS", [LD("ENTRE DOS", "CADA NÚMERO ESTÁ <b>ENTRE</b> DOS CIENTOS SEGUIDOS."),
+   LL("650 ESTÁ ENTRE 600 Y 700.", "LO DICE LA CIFRA DE LAS CENTENAS.")],
+   {"modo": "recta1000"}, {"modo": "recta1000", "que": "entre"}),
+], "recuerda": [
+ RC("UBICAR", "BUSCAMOS LAS CENTENAS Y AVANZAMOS.", "780 ESTÁ ANTES QUE 870"),
+ RC("ENTRE QUÉ CIENTOS", "LA CIFRA DE LAS CENTENAS DICE DESDE DÓNDE.", "650: ENTRE 600 Y 700"),
+]}
+
 ACT = {
-"1": [MC("¿CUÁL ES MAYOR?", ["518", "581"], "581", "EMPATAN EN CENTENAS. 8 DECENAS ES MÁS QUE 1."),
-      MC("¿CUÁL ES MENOR?", ["700", "699"], "699", "699 TIENE 6 CENTENAS.")],
-"2": [MC("DE MENOR A MAYOR, ¿CUÁL VA PRIMERO?", ["460", "406", "640"], "406", "4 CENTENAS Y 0 DECENAS."),
-      MC("DE MAYOR A MENOR, ¿CUÁL VA PRIMERO?", ["315", "531", "153"], "531", "TIENE 5 CENTENAS.")],
-"3": [MC("¿CUÁL ES UN NÚMERO REDONDO?", ["347", "560", "821"], "560", "TERMINA EN 0."),
-      N("¿QUÉ SIGUE? 670, 680, 690, ___", 700, "DE 10 EN 10: 700.")],
-"4": [MC("¿ENTRE QUÉ CIENTOS ESTÁ EL 470?", ["400 Y 500", "300 Y 400", "500 Y 600"], "400 Y 500", "TIENE 4 CENTENAS."),
-      N("ESTOY EN EL 520 Y SALTO 30 PARA ADELANTE. ¿A QUÉ NÚMERO LLEGO?", 550, "520 + 30 = 550.")],
-"5": [MC("RELÁMPAGO. ¿CUÁL ES MAYOR?", ["909", "990"], "990", "9 DECENAS ES MÁS QUE 0.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁL ES REDONDO?", ["480", "485"], "480", "TERMINA EN 0.", tiempo=30),
-      N("RELÁMPAGO. ¿QUÉ SIGUE? 300, 400, 500, ___", 600, "DE 100 EN 100.", tiempo=30),
-      MC("RELÁMPAGO. ¿CUÁL ESTÁ MÁS A LA DERECHA EN LA RECTA?", ["250", "520"], "520", "ES EL MAYOR.", tiempo=30)],
+"1": [MC("¿CUÁL ES MAYOR?", ["518", "581"], "581", "EMPATAN EN CENTENAS. 8 DECENAS ES MÁS QUE 1.", n="aplicar"),
+      FB("COMPLETÁ CON EL MENOR DE 700 Y 699: ___", [["699"]], "699 TIENE 6 CENTENAS.", n="aplicar"),
+      MC("LEO DICE QUE 398 ES MAYOR QUE 412 PORQUE TIENE UN 9. ¿CUÁL ES MAYOR?", ["412", "398"], "412", "PRIMERO LAS CENTENAS: 4 ES MÁS QUE 3.", n="error"),
+      CLAS("¿ES MAYOR O MENOR QUE 500?", ["499", "512", "350", "905"], ["MENOR QUE 500", "MAYOR QUE 500"],
+           {"499": "MENOR QUE 500", "512": "MAYOR QUE 500", "350": "MENOR QUE 500", "905": "MAYOR QUE 500"}, "MIRÁ LAS CENTENAS.", n="analizar")],
+"2": [MC("DE MENOR A MAYOR, ¿CUÁL VA PRIMERO?", ["460", "406", "640"], "406", "4 CENTENAS Y 0 DECENAS.", n="aplicar"),
+      N("DE MAYOR A MENOR: 315, 531, 153. ¿QUÉ NÚMERO VA PRIMERO?", 531, "TIENE 5 CENTENAS.", n="aplicar"),
+      ORD("ORDENÁ LOS CAMIONES DE MENOR A MAYOR.", ["734", "347", "473", "374"], ["347", "374", "473", "734"], "MIRÁ CENTENAS Y DESPUÉS DECENAS.", n="aplicar"),
+      N("[[problema]] TRES CAMIONES LLEVAN 250, 520 Y 205 CAJAS. ¿CUÁNTAS LLEVA EL QUE MÁS LLEVA?", 520, "520 TIENE 5 CENTENAS.", n="analizar")],
+"3": [MC("¿CUÁL ES UN NÚMERO REDONDO?", ["347", "560", "821"], "560", "TERMINA EN 0.", n="recordar"),
+      N("¿QUÉ SIGUE? 670, 680, 690, ___", 700, "DE 10 EN 10: 700.", n="aplicar"),
+      FB("COMPLETÁ DE 100 EN 100: 300, ___, 500, ___", [["400"], ["600"]], "SUMAMOS UNA CENTENA.", n="aplicar"),
+      MC("SOFI CONTÓ DE 10 EN 10: 880, 890, 8100. ¿QUÉ NÚMERO TENÍA QUE ESCRIBIR?", ["900", "8100", "891"], "900", "890 Y 10 MÁS SON 900.", n="error")],
+"4": [MC("¿ENTRE QUÉ CIENTOS ESTÁ EL 470?", ["400 Y 500", "300 Y 400", "500 Y 600"], "400 Y 500", "TIENE 4 CENTENAS.", n="aplicar"),
+      N("ESTOY EN EL 520 Y SALTO 30 PARA ADELANTE. ¿A QUÉ NÚMERO LLEGO?", 550, "520 + 30 = 550.", n="aplicar"),
+      ORD("ORDENÁ COMO ESTÁN EN LA RECTA, DE IZQUIERDA A DERECHA.", ["870", "250", "520"], ["250", "520", "870"], "MÁS A LA DERECHA, MÁS GRANDE.", n="aplicar"),
+      MC("JUAN UBICÓ EL 380 ENTRE EL 800 Y EL 900. ¿ENTRE QUÉ CIENTOS VA?", ["300 Y 400", "800 Y 900", "30 Y 40"], "300 Y 400", "380 TIENE 3 CENTENAS.", n="error")],
+"5": [MC("RELÁMPAGO. ¿CUÁL ES MAYOR?", ["909", "990"], "990", "9 DECENAS ES MÁS QUE 0.", tiempo=30, n="aplicar"),
+      MC("RELÁMPAGO. ¿CUÁL ES REDONDO?", ["480", "485"], "480", "TERMINA EN 0.", tiempo=30, n="recordar"),
+      N("RELÁMPAGO. ¿QUÉ SIGUE? 300, 400, 500, ___", 600, "DE 100 EN 100.", tiempo=30, n="aplicar"),
+      N("RELÁMPAGO. ¿CUÁL ESTÁ MÁS A LA DERECHA EN LA RECTA: 250 O 520?", 520, "ES EL MAYOR.", tiempo=30, n="aplicar")],
 }
 EXAMEN = [
- [1, MC("¿CUÁL ES MAYOR?", ["412", "398"], "412", "TIENE MÁS CENTENAS.")],
- [1, MC("¿CUÁL ES MAYOR?", ["356", "372"], "372", "EMPATAN EN CENTENAS; 7 DECENAS ES MÁS.")],
- [1, MC("¿CUÁL ES MENOR?", ["801", "810"], "801", "0 DECENAS ES MENOS QUE 1.")],
- [2, MC("DE MENOR A MAYOR, ¿CUÁL VA ÚLTIMO?", ["215", "812", "540"], "812", "ES EL MÁS GRANDE.")],
- [2, MC("DE MENOR A MAYOR, ¿CUÁL VA PRIMERO?", ["703", "370", "307"], "307", "ES EL MÁS CHICO.")],
- [2, MC("¿CUÁL ESTÁ ORDENADO DE MENOR A MAYOR?", ["128, 281, 821", "821, 281, 128", "281, 128, 821"], "128, 281, 821", "DEL MÁS CHICO AL MÁS GRANDE.")],
- [3, MC("¿CUÁL ES UN NÚMERO REDONDO?", ["204", "240", "241"], "240", "TERMINA EN 0.")],
- [3, N("¿QUÉ SIGUE? 410, 420, 430, ___", 440, "DE 10 EN 10.")],
- [3, N("¿QUÉ SIGUE? 700, 800, 900, ___", 1000, "DESPUÉS DEL 900 VIENE EL 1.000.")],
- [4, MC("¿ENTRE QUÉ CIENTOS ESTÁ EL 650?", ["600 Y 700", "500 Y 600", "700 Y 800"], "600 Y 700", "TIENE 6 CENTENAS.")],
- [4, MC("¿CUÁL ESTÁ MÁS A LA DERECHA EN LA RECTA?", ["780", "870"], "870", "ES EL MAYOR.")],
- [4, N("ESTOY EN EL 550 Y VUELVO 10. ¿A QUÉ NÚMERO LLEGO?", 540, "550 − 10 = 540.")],
- [4, MC("EN LA RECTA, ¿CUÁL ESTÁ MÁS CERCA DEL 0?", ["300", "900"], "300", "ES EL MENOR.")],
+ [1, MC("¿CUÁL ES MAYOR?", ["412", "398"], "412", "TIENE MÁS CENTENAS.", n="aplicar")],
+ [1, MC("¿CUÁL ES MAYOR?", ["356", "372"], "372", "EMPATAN EN CENTENAS; 7 DECENAS ES MÁS.", n="aplicar")],
+ [1, MC("MICA DICE QUE 810 ES MENOR QUE 801. ¿CUÁL ES MENOR DE VERDAD?", ["801", "810"], "801", "0 DECENAS ES MENOS QUE 1.", n="error")],
+ [2, N("DE MENOR A MAYOR: 215, 812, 540. ¿QUÉ NÚMERO VA ÚLTIMO?", 812, "ES EL MÁS GRANDE.", n="aplicar")],
+ [2, ORD("ORDENÁ DE MENOR A MAYOR.", ["703", "370", "307"], ["307", "370", "703"], "DEL MÁS CHICO AL MÁS GRANDE.", n="aplicar")],
+ [2, MC("¿CUÁL ESTÁ ORDENADO DE MENOR A MAYOR?", ["128, 281, 821", "821, 281, 128", "281, 128, 821"], "128, 281, 821", "DEL MÁS CHICO AL MÁS GRANDE.", n="aplicar")],
+ [3, MC("¿CUÁL ES UN NÚMERO REDONDO?", ["204", "240", "241"], "240", "TERMINA EN 0.", n="recordar")],
+ [3, N("¿QUÉ SIGUE? 410, 420, 430, ___", 440, "DE 10 EN 10.", n="aplicar")],
+ [3, N("¿QUÉ SIGUE? 700, 800, 900, ___", 1000, "DESPUÉS DEL 900 VIENE EL 1.000.", n="aplicar")],
+ [4, MC("¿ENTRE QUÉ CIENTOS ESTÁ EL 650?", ["600 Y 700", "500 Y 600", "700 Y 800"], "600 Y 700", "TIENE 6 CENTENAS.", n="aplicar")],
+ [4, N("¿CUÁL ESTÁ MÁS A LA DERECHA EN LA RECTA: 780 O 870?", 870, "ES EL MAYOR.", n="aplicar")],
+ [4, N("[[problema]] ESTOY EN EL 550 DE LA RECTA Y VUELVO 10 PARA ATRÁS. ¿A QUÉ NÚMERO LLEGO?", 540, "550 − 10 = 540.", n="analizar")],
+ [4, MC("EN LA RECTA, ¿CUÁL ESTÁ MÁS CERCA DEL 0?", ["300", "900"], "300", "ES EL MENOR.", n="aplicar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 4, "estilo": "primeros",
+
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 4, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: comparar y ordenar hasta 1.000", "examen_titulo": "Nivel jefe: comparar y ordenar hasta 1.000",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-4.json"), "w", encoding="utf-8"), ensure_ascii=False)

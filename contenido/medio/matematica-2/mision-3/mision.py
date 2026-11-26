@@ -139,36 +139,110 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "400. 80. 2.", "solo": "639.", "carpeta": ["517.", "500.", "342."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["carpeta_nivel"] = ["recordar", "aplicar", "aplicar"]
+N2["carpeta_nivel"] = ["recordar", "aplicar", "recordar"]
+N3["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+N4["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("UNIDAD, DECENA Y CENTENA", [LD("LA CENTENA", "UNA <b>CENTENA</b> ES UN GRUPO DE 100: DIEZ DECENAS."),
+   LL("1 SUELTO ES UNA UNIDAD.", "10 UNIDADES SON 1 DECENA; 10 DECENAS, 1 CENTENA.")],
+   {"modo": "centenas", "max": 3}, {"modo": "centenas", "max": 3}),
+ T("DE 100 EN 100", [LD("CONTAR CENTENAS", "CONTAMOS LAS CENTENAS <b>DE 100 EN 100</b>: 100, 200, 300…"),
+   LL("7 CAJAS DE 100 SON 700.", "CAMBIA LA PRIMERA CIFRA.")],
+   {"modo": "serie", "de": 100, "desde": 100, "hasta": 500}, {"modo": "serie", "de": 100, "desde": 100, "hasta": 900}),
+], "recuerda": [
+ RC("LA CENTENA", "ES UN GRUPO DE CIEN, IGUAL A DIEZ DECENAS.", "10 PAQUETES DE 10 = 100"),
+ RC("DE 100 EN 100", "SUMAMOS UNA CENTENA CADA VEZ.", "300, 400, 500"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("CONTAR HASTA 1.000", [LD("TODO JUNTO", "CONTAMOS <b>CAJAS</b>, DESPUÉS <b>PAQUETES</b> Y AL FINAL <b>SUELTOS</b>, HASTA EL 999."),
+   LL("2 CAJAS, 3 PAQUETES Y 5: 235.", "200 + 30 + 5 = 235.")],
+   {"modo": "centenas", "max": 9}, {"modo": "centenas", "max": 9}),
+ T("10 CENTENAS SON 1.000", [LD("MIL", "DESPUÉS DEL <b>999</b> VIENE EL <b>1.000</b>: DIEZ CENTENAS."),
+   LL("990, 991… 999, 1.000.", "1.000 SE LEE MIL.")],
+   {"modo": "serie", "de": 1, "desde": 990, "hasta": 996}, {"modo": "serie", "de": 10, "desde": 900, "hasta": 1000}),
+], "recuerda": [
+ RC("CONTAR TODO", "PRIMERO LAS CENTENAS, DESPUÉS DECENAS Y UNIDADES.", "1 CAJA, 4 PAQUETES Y 2 = 142"),
+ RC("MIL", "DIEZ CENTENAS JUNTAS FORMAN EL MIL.", "DESPUÉS DEL 999 VIENE EL 1.000"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("ESCRIBIR CON TRES CIFRAS", [LD("TRES CIFRAS", "ESCRIBIMOS <b>CENTENAS, DECENAS Y UNIDADES</b>, EN ESE ORDEN."),
+   LL("OCHOCIENTOS TREINTA: 830.", "SETECIENTOS OCHO: 708.")],
+   {"modo": "centenas", "que": "escribir", "max": 9}, {"modo": "centenas", "que": "escribir", "max": 9}),
+ T("LEER CON PALABRAS", [LD("LEER", "PARA LEER, DECIMOS PRIMERO LAS <b>CENTENAS</b> Y DESPUÉS EL RESTO."),
+   LL("345: TRESCIENTOS CUARENTA Y CINCO.", "620: SEISCIENTOS VEINTE.")],
+   {"modo": "centenas", "que": "escribir", "max": 9}, {"modo": "centenas", "que": "leer", "max": 9}),
+], "recuerda": [
+ RC("ESCRIBIR", "CENTENAS, DECENAS Y UNIDADES; EL CERO GUARDA EL LUGAR.", "QUINIENTOS SEIS ES 506"),
+ RC("LEER", "PARA LEER EMPEZAMOS POR LAS CENTENAS.", "620 ES SEISCIENTOS VEINTE"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("EL VALOR DE CADA CIFRA", [LD("EL LUGAR", "CADA CIFRA VALE SEGÚN SU <b>LUGAR</b>: CENTENAS, DECENAS O UNIDADES."),
+   LL("EN 365, EL 6 VALE 60.", "EN 950, EL 9 VALE 900.")],
+   {"modo": "valor"}, {"modo": "valor"}),
+ T("DESARMAR EN UNA SUMA", [LD("DESARMAR", "PODEMOS <b>DESARMAR</b> UN NÚMERO EN LO QUE VALE CADA CIFRA."),
+   LL("427 = 400 + 20 + 7.", "351 = 300 + 50 + 1.")],
+   {"modo": "valor"}, {"modo": "valor", "que": "desarmar"}),
+], "recuerda": [
+ RC("EL LUGAR", "LA MISMA CIFRA VALE DISTINTO SEGÚN DÓNDE ESTÁ.", "EN 243 EL 4 VALE 40"),
+ RC("DESARMAR", "SUMAMOS LO QUE VALE CADA CIFRA.", "407 = 400 + 7"),
+]}
+
 ACT = {
-"1": [N("📦📦📦 TRES CAJAS DE 100. ¿CUÁNTOS ALFAJORES SON?", 300, "100, 200, 300."),
-      MC("¿CUÁNTAS DECENAS FORMAN 1 CENTENA?", ["10", "100", "1"], "10", "10 PAQUETES DE 10 SON 100.")],
-"2": [N("2 CAJAS, 3 PAQUETES Y 5 SUELTOS. ¿CUÁNTOS SON?", 235, "200 + 30 + 5 = 235."),
-      MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 999?", ["1.000", "990", "9.991"], "1.000", "DESPUÉS DEL 999 VIENE EL 1.000.")],
-"3": [MC("¿CÓMO SE ESCRIBE SETECIENTOS OCHO?", ["78", "708", "7.008"], "708", "EL 0 GUARDA EL LUGAR DE LAS DECENAS."),
-      MC("¿CÓMO SE LEE 345?", ["TREINTA Y CUATRO", "TRESCIENTOS CUARENTA Y CINCO", "TRES CUATRO CINCO"], "TRESCIENTOS CUARENTA Y CINCO", "3 CENTENAS, 4 DECENAS Y 5 UNIDADES.")],
-"4": [MC("¿CUÁNTO VALE EL 6 EN 365?", ["6", "60", "600"], "60", "ESTÁ EN LAS DECENAS."),
-      N("¿QUÉ NÚMERO ES 400 + 20 + 7?", 427, "4 CENTENAS, 2 DECENAS Y 7 UNIDADES.")],
-"5": [N("RELÁMPAGO. ¿CUÁNTO ES 5 CENTENAS?", 500, "5 CAJAS DE 100.", tiempo=30),
-      MC("RELÁMPAGO. ¿QUÉ VIENE DESPUÉS DEL 499?", ["500", "400"], "500", "499, 500.", tiempo=30),
-      MC("RELÁMPAGO. ¿CÓMO SE ESCRIBE NOVECIENTOS DIEZ?", ["910", "9.010"], "910", "9 CENTENAS Y 1 DECENA.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO VALE EL 8 EN 182?", 80, "ESTÁ EN LAS DECENAS.", tiempo=40)],
+"1": [N("📦📦📦 TRES CAJAS DE 100. ¿CUÁNTOS ALFAJORES SON?", 300, "100, 200, 300.", n="aplicar", **NEU("📦📦📦 TRES CAJAS DE 100. ¿CUÁNTAS GALLETAS SON?")),
+      MC("¿CUÁNTAS DECENAS FORMAN 1 CENTENA?", ["10", "100", "1"], "10", "10 PAQUETES DE 10 SON 100.", n="recordar"),
+      UNIR("UNÍ CADA CANTIDAD CON SU NÚMERO.", ["10 DECENAS", "10 UNIDADES", "4 CENTENAS"], ["10", "400", "100"], {"10 DECENAS": "100", "10 UNIDADES": "10", "4 CENTENAS": "400"}, "10 DECENAS = 100, 10 UNIDADES = 10, 4 CENTENAS = 400.", n="analizar"),
+      MC("LEO DICE QUE 6 CAJAS DE 100 SON 60. ¿CUÁNTO ES DE VERDAD?", ["600", "60", "106"], "600", "CADA CAJA TIENE 100: 600.", n="error")],
+"2": [N("2 CAJAS, 3 PAQUETES Y 5 SUELTOS. ¿CUÁNTOS SON?", 235, "200 + 30 + 5 = 235.", n="aplicar"),
+      MC("¿QUÉ NÚMERO VIENE DESPUÉS DEL 999?", ["1.000", "990", "9.991"], "1.000", "DESPUÉS DEL 999 VIENE EL 1.000.", n="recordar"),
+      FB("COMPLETÁ DE 10 EN 10: 760, 770, ___, 790", [["780"]], "770 Y 10 MÁS SON 780.", n="aplicar"),
+      N("[[problema]] UN CAMIÓN LLEVA 6 CAJAS DE 100, 4 PAQUETES DE 10 Y 8 SUELTOS. ¿CUÁNTOS LLEVA?", 648, "600 + 40 + 8 = 648.", n="aplicar")],
+"3": [MC("¿CÓMO SE ESCRIBE SETECIENTOS OCHO?", ["78", "708", "7.008"], "708", "EL 0 GUARDA EL LUGAR DE LAS DECENAS.", n="aplicar"),
+      MC("¿CÓMO SE LEE 345?", ["TREINTA Y CUATRO", "TRESCIENTOS CUARENTA Y CINCO", "TRES CUATRO CINCO"], "TRESCIENTOS CUARENTA Y CINCO", "3 CENTENAS, 4 DECENAS Y 5 UNIDADES.", n="recordar"),
+      UNIR("UNÍ CADA NÚMERO CON SU NOMBRE.", ["905", "950", "590"], ["QUINIENTOS NOVENTA", "NOVECIENTOS CINCO", "NOVECIENTOS CINCUENTA"], {"905": "NOVECIENTOS CINCO", "950": "NOVECIENTOS CINCUENTA", "590": "QUINIENTOS NOVENTA"}, "MIRÁ DÓNDE ESTÁ EL CERO.", n="analizar"),
+      MC("SOFI ESCRIBIÓ 6004 PARA SEISCIENTOS CUATRO. ¿CÓMO VA?", ["604", "6004", "64"], "604", "TRES CIFRAS: EL 0 VA EN LAS DECENAS.", n="error")],
+"4": [MC("¿CUÁNTO VALE EL 6 EN 365?", ["6", "60", "600"], "60", "ESTÁ EN LAS DECENAS.", n="aplicar"),
+      N("¿QUÉ NÚMERO ES 400 + 20 + 7?", 427, "4 CENTENAS, 2 DECENAS Y 7 UNIDADES.", n="aplicar"),
+      FB("COMPLETÁ: 538 = ___ + 30 + 8", [["500"]], "EL 5 ESTÁ EN LAS CENTENAS: VALE 500.", n="aplicar"),
+      CLAS("EN EL 274, ¿QUÉ LUGAR OCUPA CADA CIFRA?", ["EL 2", "EL 7", "EL 4"], ["CENTENAS", "DECENAS", "UNIDADES"], {"EL 2": "CENTENAS", "EL 7": "DECENAS", "EL 4": "UNIDADES"}, "2 CENTENAS, 7 DECENAS Y 4 UNIDADES.", n="analizar")],
+"5": [N("RELÁMPAGO. ¿CUÁNTO ES 5 CENTENAS?", 500, "5 CAJAS DE 100.", tiempo=30, n="aplicar"),
+      MC("RELÁMPAGO. ¿QUÉ VIENE DESPUÉS DEL 499?", ["500", "400"], "500", "499, 500.", tiempo=30, n="recordar"),
+      MC("RELÁMPAGO. ¿CÓMO SE ESCRIBE NOVECIENTOS DIEZ?", ["910", "9.010"], "910", "9 CENTENAS Y 1 DECENA.", tiempo=30, n="aplicar"),
+      N("RELÁMPAGO. ¿CUÁNTO VALE EL 8 EN 182?", 80, "ESTÁ EN LAS DECENAS.", tiempo=40, n="aplicar")],
 }
 EXAMEN = [
- [1, N("¿CUÁNTO ES 1 CENTENA?", 100, "UNA CAJA DE 100.")],
- [1, MC("¿CUÁNTOS PAQUETES DE 10 HAY EN UNA CAJA DE 100?", ["10", "100", "5"], "10", "10 X 10 = 100.")],
- [1, N("7 CAJAS DE 100. ¿CUÁNTOS ALFAJORES SON?", 700, "100, 200… 700.")],
- [2, N("1 CAJA, 4 PAQUETES Y 2 SUELTOS. ¿CUÁNTOS SON?", 142, "100 + 40 + 2.")],
- [2, MC("¿QUÉ NÚMERO SIGUE? 330, 340, 350, ___", ["360", "351", "450"], "360", "DE 10 EN 10.")],
- [2, MC("¿CUÁNTAS CENTENAS TIENE EL 1.000?", ["10", "100", "1"], "10", "10 CAJAS DE 100.")],
- [3, MC("¿CÓMO SE ESCRIBE QUINIENTOS SEIS?", ["56", "506", "5.006"], "506", "NO HAY DECENAS: VA UN 0.")],
- [3, MC("¿CÓMO SE LEE 620?", ["SEISCIENTOS VEINTE", "SESENTA Y DOS", "SEIS DOS CERO"], "SEISCIENTOS VEINTE", "6 CENTENAS Y 2 DECENAS.")],
- [3, MC("¿CÓMO SE ESCRIBE OCHOCIENTOS TREINTA?", ["830", "8.030", "83"], "830", "8 CENTENAS Y 3 DECENAS.")],
- [4, MC("¿CUÁNTO VALE EL 4 EN 243?", ["4", "40", "400"], "40", "ESTÁ EN LAS DECENAS.")],
- [4, N("¿QUÉ NÚMERO ES 300 + 50 + 1?", 351, "3 CENTENAS, 5 DECENAS Y 1 UNIDAD.")],
- [4, MC("¿QUÉ NÚMERO TIENE 4 CENTENAS Y 7 UNIDADES?", ["47", "407", "470"], "407", "NO HAY DECENAS: VA UN 0.")],
- [4, MC("¿CUÁNTO VALE EL 9 EN 950?", ["9", "90", "900"], "900", "ESTÁ EN LAS CENTENAS.")],
+ [1, N("¿CUÁNTO ES 1 CENTENA?", 100, "UNA CAJA DE 100.", n="recordar")],
+ [1, MC("¿CUÁNTOS PAQUETES DE 10 HAY EN UNA CAJA DE 100?", ["10", "100", "5"], "10", "10 X 10 = 100.", n="recordar")],
+ [1, N("7 CAJAS DE 100. ¿CUÁNTOS ALFAJORES SON?", 700, "100, 200… 700.", n="aplicar", **NEU("7 CAJAS DE 100. ¿CUÁNTAS GALLETAS SON?"))],
+ [2, N("1 CAJA, 4 PAQUETES Y 2 SUELTOS. ¿CUÁNTOS SON?", 142, "100 + 40 + 2.", n="aplicar")],
+ [2, FB("COMPLETÁ: 330, 340, 350, ___", [["360"]], "DE 10 EN 10.", n="aplicar")],
+ [2, MC("JUAN DICE QUE DESPUÉS DEL 999 VIENE EL 9.100. ¿QUÉ NÚMERO VIENE?", ["1.000", "9.100", "990"], "1.000", "10 CENTENAS SON 1.000.", n="error")],
+ [3, MC("¿CÓMO SE ESCRIBE QUINIENTOS SEIS?", ["56", "506", "5.006"], "506", "NO HAY DECENAS: VA UN 0.", n="aplicar")],
+ [3, MC("¿CÓMO SE LEE 620?", ["SEISCIENTOS VEINTE", "SESENTA Y DOS", "SEIS DOS CERO"], "SEISCIENTOS VEINTE", "6 CENTENAS Y 2 DECENAS.", n="recordar")],
+ [3, MC("¿CÓMO SE ESCRIBE OCHOCIENTOS TREINTA?", ["830", "8.030", "83"], "830", "8 CENTENAS Y 3 DECENAS.", n="aplicar")],
+ [4, MC("¿CUÁNTO VALE EL 4 EN 243?", ["4", "40", "400"], "40", "ESTÁ EN LAS DECENAS.", n="aplicar")],
+ [4, N("¿QUÉ NÚMERO ES 300 + 50 + 1?", 351, "3 CENTENAS, 5 DECENAS Y 1 UNIDAD.", n="aplicar")],
+ [4, MC("[[problema]] UN NÚMERO TIENE 4 CENTENAS, NINGUNA DECENA Y 7 UNIDADES. ¿CUÁL ES?", ["407", "47", "470"], "407", "NO HAY DECENAS: VA UN 0.", n="analizar")],
+ [4, MC("¿CUÁNTO VALE EL 9 EN 950?", ["9", "90", "900"], "900", "ESTÁ EN LAS CENTENAS.", n="aplicar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 3, "estilo": "primeros",
+
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 3, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: los números hasta 1.000", "examen_titulo": "Nivel jefe: los números hasta 1.000",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-3.json"), "w", encoding="utf-8"), ensure_ascii=False)

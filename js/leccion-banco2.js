@@ -1504,6 +1504,12 @@
     return '<div class="lb-p1-dz lb-p1-cdu">' + (fc ? '<div class="lb-p1-fila">' + fc + '</div>' : '') + (fd ? '<div class="lb-p1-fila">' + fd + '</div>' : '') + (fu ? '<div class="lb-p1-fila">' + fu + '</div>' : '') + '</div>';
   }
   function p1CDUt(n, hl) { var s = String(n), L = ['CENTENAS', 'DECENAS', 'UNIDADES'].slice(3 - s.length); return '<div class="lb-p1-du">' + s.split('').map(function (d, i) { return '<span class="' + (hl === 9 || hl === i ? 'on' : '') + '"><small>' + L[i] + '</small><b>' + d + '</b></span>'; }).join('') + '</div>'; }
+  // recta del 0 al 1.000 de 100 en 100; marcas = [[número, clase, texto]]
+  function p1R1000(marcas) {
+    var h = '', k; for (k = 0; k <= 1000; k += 100) h += '<span class="lb-p1-t" style="left:' + k / 10 + '%"><i></i><b>' + (k === 1000 ? '1.000' : k) + '</b></span>';
+    (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] / 10 + '%">' + (m[2] != null ? m[2] : m[0]) + '</span>'; });
+    return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div>';
+  }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1534,6 +1540,10 @@
       calcu: p.que === 'uno_diez' ? ctrl('n', 'NÚMERO', 10, 89, 1, 47) : p.que === 'partes' ? ctrl('n', 'EN LA PANTALLA', 0, 99, 1, 8) : ctrl('a', 'PRIMER NÚMERO', 2, 30, 1, p.que === 'controlar' ? 20 : 9) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.que === 'controlar' ? 3 : 6),
       centenas: ctrl('c', 'CAJAS DE 100', p.min || 1, p.max || 4, 1, 1) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 5) + ctrl('u', 'SUELTOS', 0, 9, 1, 3),
       serie: ctrl('a', 'EMPIEZA EN', p.desde || 100, p.hasta || 190, 1, p.desde ? p.desde + 5 : 130),
+      valor: ctrl('c', 'CENTENAS', 1, 9, 1, 3) + ctrl('d', 'DECENAS', 0, 9, 1, 6) + ctrl('u', 'UNIDADES', 0, 9, 1, 5),
+      comparar3: ctrl('a', 'UN NÚMERO', 100, 999, 1, 645) + ctrl('b', 'OTRO NÚMERO', 100, 999, 1, 654),
+      orden3: ctrl('a', 'PRIMERO', 100, 999, 1, 460) + ctrl('b', 'SEGUNDO', 100, 999, 1, 406) + ctrl('c', 'TERCERO', 100, 999, 1, 640),
+      recta1000: ctrl('n', 'NÚMERO', 10, 990, 10, 470),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1943,6 +1953,40 @@
         P.push({ vis: p1Big(L5.join(', ')), txt: 'LA SERIE <b>' + (baja ? 'BAJA' : 'SUBE') + '</b> DE ' + pa + ' EN ' + pa + (pa === 10 ? ': CAMBIA LA CIFRA DE LAS DECENAS.' : pa === 100 ? ': CAMBIA LA CIFRA DE LAS CENTENAS.' : '.') });
         return P;
       }
+      if (md === 'valor') {
+        var nV = v.c * 100 + v.d * 10 + v.u;
+        P.push({ vis: p1CDUt(nV), txt: 'EL <b>' + nV + '</b> TIENE TRES CIFRAS.' });
+        P.push({ vis: p1CDUt(nV, 0) + p1Big(v.c + ' CENTENAS = ' + v.c * 100), txt: 'EL <b>' + v.c + '</b> ESTÁ EN LAS CENTENAS: VALE <b>' + v.c * 100 + '</b>.' });
+        P.push({ vis: p1CDUt(nV, 1) + p1Big(v.d + ' DECENAS = ' + v.d * 10), txt: 'EL <b>' + v.d + '</b> ESTÁ EN LAS DECENAS: VALE <b>' + v.d * 10 + '</b>.' });
+        P.push({ vis: p1CDUt(nV, 2) + p1Big(v.u + ' UNIDADES = ' + v.u), txt: 'EL <b>' + v.u + '</b> ESTÁ EN LAS UNIDADES: VALE <b>' + v.u + '</b>.' });
+        P.push({ vis: p1CDUt(nV, 9) + p1Big(nV + ' = ' + v.c * 100 + ' + ' + v.d * 10 + ' + ' + v.u), txt: 'CADA CIFRA VALE SEGÚN SU <b>LUGAR</b>.' });
+        return P;
+      }
+      if (md === 'comparar3') {
+        var sa = String(v.a), sb2 = String(v.b), Gk = function (h) { return '<div class="lb-p1-dos">' + p1CDUt(v.a, h) + p1CDUt(v.b, h) + '</div>'; }, NOM = ['CENTENAS', 'DECENAS', 'UNIDADES'];
+        P.push({ vis: Gk(), txt: '¿CUÁL ES MAYOR: <b>' + v.a + '</b> O <b>' + v.b + '</b>?' });
+        if (v.a === v.b) { P.push({ vis: Gk(9) + p1Big('SON IGUALES'), txt: 'ES EL MISMO NÚMERO.' }); return P; }
+        for (i = 0; i < 3; i++) { P.push({ vis: Gk(i), txt: 'MIRAMOS LAS <b>' + NOM[i] + '</b>: ' + sa[i] + ' Y ' + sb2[i] + (sa[i] === sb2[i] ? '. EMPATAN.' : '.') }); if (sa[i] !== sb2[i]) break; }
+        P.push({ vis: Gk(i) + p1Big(Math.max(v.a, v.b) + ' ES MAYOR QUE ' + Math.min(v.a, v.b)), txt: '<b>' + Math.max(v.a, v.b) + '</b> ES EL MAYOR.' });
+        return P;
+      }
+      if (md === 'orden3') {
+        var dsc = p.orden === 'desc', O0 = [v.a, v.b, v.c], O1 = O0.slice().sort(function (x, y) { return dsc ? y - x : x - y; });
+        var Fo = function (lst, hl) { return '<div class="lb-p1-tren">' + lst.map(function (x, i) { return '<span class="lb-p1-vag' + (hl && hl.indexOf(i) >= 0 ? ' on' : '') + '">' + x + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Fo(O0), txt: 'VAMOS A ORDENAR DE <b>' + (dsc ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>. MIRAMOS PRIMERO LAS CENTENAS.' });
+        P.push({ vis: Fo(O0, [O0.indexOf(O1[0])]), txt: 'EL MÁS ' + (dsc ? 'GRANDE' : 'CHICO') + ' ES <b>' + O1[0] + '</b>.' });
+        P.push({ vis: Fo(O1.slice(0, 2), [0, 1]), txt: 'DESPUÉS VA <b>' + O1[1] + '</b>.' });
+        P.push({ vis: Fo(O1, [0, 1, 2]) + p1Big(O1.join(dsc ? ' > ' : ' < ')), txt: 'Y AL FINAL <b>' + O1[2] + '</b>.' });
+        return P;
+      }
+      if (md === 'recta1000') {
+        var c0 = Math.floor(v.n / 100) * 100;
+        P.push({ vis: p1R1000([]), txt: 'LA RECTA VA DEL <b>0</b> AL <b>1.000</b>, DE 100 EN 100.' });
+        P.push({ vis: p1R1000([[c0, 'pa', c0]]), txt: 'EL ' + v.n + ' TIENE ' + (c0 / 100) + ' CENTENAS: EMPEZAMOS EN EL <b>' + c0 + '</b>.' });
+        P.push({ vis: p1R1000([[c0, 'pa', c0], [v.n, 'pb', v.n]]), txt: v.n === c0 ? 'ESTÁ JUSTO EN LA MARCA.' : 'ESTÁ ENTRE EL <b>' + c0 + '</b> Y EL <b>' + (c0 + 100) + '</b>.' });
+        P.push({ vis: p1R1000([[v.n, 'pb', v.n]]) + p1Big('MÁS A LA DERECHA, MÁS GRANDE'), txt: 'LOS DE LA DERECHA SON MAYORES QUE EL ' + v.n + '.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2085,6 +2129,20 @@
         return { cons: 'CADA CAJA TIENE 100 Y CADA PAQUETE 10. ¿CUÁNTOS HAY EN TOTAL?', html: p1CDU(n), campos: [{ v: n }], ayuda: 'CONTÁ LAS CAJAS DE 100 EN 100, LOS PAQUETES DE 10 EN 10 Y DESPUÉS LOS SUELTOS.', bien: '¡MUY BIEN! HAY ' + n + '.' }; }); }
     if (md === 'serie') return respuesta(el, api, function () { var pa = p.de || pick([1, 10, 100].filter(function (x) { return x <= (p.max || 500) / 5; })), baja = p.dir === 'baja' || (p.dir === 'mezcla' && Math.random() < 0.5), lo = (p.desde || 100) + (baja ? pa * 4 : 0), hi = (p.hasta || 190) - (baja ? 0 : pa * 4), a = R(Math.min(lo, hi), Math.max(lo, hi)), L = [], f = R(2, 4), k; for (k = 0; k < 5; k++) L.push(a + (baja ? -pa : pa) * k);
       return { cons: 'LA SERIE ' + (baja ? 'BAJA' : 'SUBE') + ' DE ' + pa + ' EN ' + pa + '. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren">' + L.map(function (x, i) { return '<span class="lb-p1-vag' + (i === f ? ' oculto">?' : '">' + x) + '</span>'; }).join('') + '</div>', campos: [{ v: L[f] }], ayuda: (baja ? 'RESTÁ ' : 'SUMÁ ') + pa + ' AL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ES EL ' + L[f] + '.' }; });
+    if (md === 'valor') { if (p.que === 'desarmar') return respuesta(el, api, function () { var c = R(1, 9), d = R(0, 9), u = R(0, 9);
+        return { cons: '¿QUÉ NÚMERO ES <b>' + c * 100 + ' + ' + d * 10 + ' + ' + u + '</b>?', campos: [{ v: c * 100 + d * 10 + u }], ayuda: c + ' CENTENAS, ' + d + ' DECENAS Y ' + u + ' UNIDADES.', bien: '¡MUY BIEN! ES ' + (c * 100 + d * 10 + u) + '.' }; });
+      return p1Elegir(el, api, function () { var c = R(1, 9), d = R(1, 9), u = R(1, 9); while (d === c) d = R(1, 9); while (u === c || u === d) u = R(1, 9); var n = c * 100 + d * 10 + u, k = R(0, 2), dig = String(n)[k], val = [c * 100, d * 10, u][k];
+        return { cons: '¿CUÁNTO VALE EL <b>' + dig + '</b> EN EL ' + n + '?', html: p1CDUt(n), ops: [dig, dig + '0', dig + '00'], ok: String(val), ayuda: 'MIRÁ EN QUÉ LUGAR ESTÁ: CENTENAS, DECENAS O UNIDADES.', bien: '¡MUY BIEN! VALE ' + val + '.' }; }); }
+    if (md === 'comparar3') return p1Elegir(el, api, function () { var a = R(100, 999), b = Math.random() < 0.5 ? Math.floor(a / 100) * 100 + R(0, 99) : R(100, 999); while (b === a) b = R(100, 999); var may = Math.random() < 0.5;
+      return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [String(a), String(b)], ok: String(may ? Math.max(a, b) : Math.min(a, b)), ayuda: 'MIRÁ PRIMERO LAS CENTENAS; SI EMPATAN, LAS DECENAS.', bien: '¡MUY BIEN!' }; });
+    if (md === 'orden3') return p1Elegir(el, api, function () { var L = [], x; while (L.length < 3) { x = R(100, 999); if (L.indexOf(x) < 0) L.push(x); } var dsc = p.orden === 'desc', S = L.slice().sort(function (a, b) { return dsc ? b - a : a - b; }), pr = Math.random() < 0.6;
+      return { cons: 'DE <b>' + (dsc ? 'MAYOR A MENOR' : 'MENOR A MAYOR') + '</b>, ¿CUÁL VA <b>' + (pr ? 'PRIMERO' : 'ÚLTIMO') + '</b>?', ops: L.map(String), ok: String(pr ? S[0] : S[2]), ayuda: 'MIRÁ PRIMERO LAS CENTENAS.', bien: '¡MUY BIEN! ' + S.join(', ') + '.' }; });
+    if (md === 'recta1000') { if (p.que === 'entre') return p1Elegir(el, api, function () { var n = R(11, 98) * 10, c = Math.floor(n / 100) * 100; if (n === c) n += 50; var ops = [c + ' Y ' + (c + 100), (c + 100) + ' Y ' + (c + 200), Math.max(0, c - 100) + ' Y ' + Math.max(100, c)]; ops = ops.filter(function (x, i) { return ops.indexOf(x) === i; });
+        return { cons: '¿ENTRE QUÉ CIENTOS ESTÁ EL <b>' + n + '</b>?', ops: mezclar(ops), ok: c + ' Y ' + (c + 100), ayuda: 'MIRÁ LAS CENTENAS: TIENE ' + c / 100 + '.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var n = 100 * R(1, 9) + pick([0, 50]);
+        return { cons: '¿QUÉ NÚMERO VA EN EL LUGAR DEL <b>?</b>', html: p1R1000([[n, 'pb', '?']]), campos: [{ v: n }], ayuda: 'MIRÁ LAS MARCAS DE 100 EN 100.', bien: '¡MUY BIEN! ES EL ' + n + '.' }; }); }
+    if (md === 'redondos3') return p1Elegir(el, api, function () { var r = 10 * R(11, 99), a = r + R(1, 9), b = r - 10 * R(1, 5) + R(1, 9);
+      return { cons: '¿CUÁL ES UN NÚMERO <b>REDONDO</b>?', ops: mezclar([String(r), String(a), String(b)]), ok: String(r), ayuda: 'UN NÚMERO REDONDO TERMINA EN 0.', bien: '¡MUY BIEN! ' + r + ' TERMINA EN 0.' }; });
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
