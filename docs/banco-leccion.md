@@ -73,3 +73,6 @@ En la práctica, un campo puede llevar `acepta: function (x) {…}` cuando hay v
 | `criterios` / `criterios_x` | ejemplo / ejercicio | 2_5_10, 3_9, 4_8, 6, 11, combinar |
 | `factores` | ejemplo | criba, esprimo, divisores, mcd_desc, mcm_desc, producto, tres |
 | `factores_x` | ejercicio | esprimo, desc, cuantos, mcd, mcm, coprimos, producto, tres |
+
+### Fracciones (Matemática I · Misiones 8 y 9)
+- `fracciones` (ejemplo, paso a paso) y `fracciones_x` (ejercicio, `modo` obligatorio). Modos: parte, cociente, tipos (propias/impropias/mixtos), equivalentes, irreducible, cruzados, recta, entre (densidad), comparar, referentes, mixtos (suma), inverso, division (cuántas veces entra), combinadas, potencia.
