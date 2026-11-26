@@ -57,3 +57,12 @@ TODOS los ejemplos del banco (45) muestran el procedimiento de a un paso: helper
 | `naturales_x` | ejercicio | asociativa, inversa, descomposicion, compensacion, multiplicar, distributiva (`op`: resta), mental, division, relacion, redondear, estimar, pasos |
 | `potencias_n` | ejemplo paso a paso (solo naturales) | potencia, cuadrado_cubo, crecen, producto, cociente, potencia_potencia, distributiva, no_suma, raiz_cubica, raiz_grande, lado_area, arista_volumen, perfectos |
 | `potencias_n_x` | ejercicio | potencia, base_exp, cuadrado_cubo, producto, cociente, potencia_potencia, distributiva, no_suma, raiz_cuadrada, raiz_cubica, raiz_grande, estimar_raiz, lado_area, arista_volumen, perfectos |
+
+## Combinadas, calculadora y divisibilidad (Matemática I, Misiones 4 y 5)
+| Motor | Tipo | `modo` |
+|---|---|---|
+| `jerarquia` / `combinadas` | ejemplo / ejercicio | basica, izq, terminos, parentesis, corchetes, enunciado, potencias, raiz (sin modo: mezcla, no usar en lecciones) |
+| `calculadora` / `calculadora_x` | ejemplo / ejercicio | comun, estimar, tipeo |
+| `divis` | ejemplo | patron, suma, multiplo, contraejemplo, reparto, cual, pistas |
+| `divis_x` | ejercicio | multiplo_n, repite, cuantos_div, suma, multiplo, contraejemplo, reparto, cual, pistas |
+En la práctica, un campo puede llevar `acepta: function (x) {…}` cuando hay varias respuestas válidas.

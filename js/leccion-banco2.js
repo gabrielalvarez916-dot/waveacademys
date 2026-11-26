@@ -33,7 +33,7 @@
         comprobar: function () {
           var vacio = D.campos.some(function (f, i) { var x = leer(i); return f.tipo === 'texto' ? !x : !isFinite(x); });
           if (vacio) return { ok: false, msg: 'Completá todos los casilleros.' };
-          var ok = D.campos.every(function (f, i) { var x = leer(i); if (f.tipo === 'texto') return [].concat(f.v).some(function (v) { return H.norm(v) === x; }); return Math.abs(x - f.v) <= (f.tol || 1e-9) + Math.abs(f.v) * 1e-9; });
+          var ok = D.campos.every(function (f, i) { var x = leer(i); if (typeof f.acepta === 'function') return f.acepta(x); if (f.tipo === 'texto') return [].concat(f.v).some(function (v) { return H.norm(v) === x; }); return Math.abs(x - f.v) <= (f.tol || 1e-9) + Math.abs(f.v) * 1e-9; });
           return ok ? { ok: true, msg: D.bien || '¡Bien!' } : { ok: false, msg: D.ayuda || 'Revisalo.' };
         },
         resolver: function () { D.campos.forEach(function (f, i) { if (f.tipo === 'frac') { c.querySelector('[data-i="' + i + '"][data-p="n"]').value = f.n; c.querySelector('[data-i="' + i + '"][data-p="d"]').value = f.d; } else c.querySelector('[data-i="' + i + '"]').value = f.tipo === 'texto' ? [].concat(f.v)[0] : String(f.v).replace('.', ','); }); }
@@ -266,6 +266,22 @@
       return { cons: 'Calculá el <b>' + pc + ' %</b> de <b>' + fmt(t) + '</b>.', campos: [{ v: parte }], ayuda: 'Multiplicá ' + fmt(t) + ' × ' + pc + ' y dividí por 100.', bien: '¡Bien! ' + fmt(parte) + '.' }; });
   } };
   // operaciones combinadas: genera expresión con jerarquía y la resuelve paso a paso
+  // Cuentas combinadas por modo (Matemática I · Misión 4): cada paso con su explicación. Solo naturales y divisiones exactas.
+  function expr2(modo) {
+    var a = R(2, 9), b = R(2, 9), c = R(2, 9), d = R(2, 6), q;
+    if (modo === 'izq') { if (Math.random() < .5) { var x = R(20, 60), y = R(2, 15), z = R(2, 15); return { e: x + ' − ' + y + ' + ' + z, P: [[(x - y) + ' + ' + z, 'Suma y resta están al mismo nivel: de izquierda a derecha. Primero ' + x + ' − ' + y + '.'], [String(x - y + z), 'Después la suma.']], v: x - y + z }; }
+      q = a * b; return { e: q * c + ' ÷ ' + a + ' × ' + d, P: [[q * c / a + ' × ' + d, '× y ÷ están al mismo nivel: de izquierda a derecha. Primero la división.'], [String(q * c / a * d), 'Después la multiplicación.']], v: q * c / a * d }; }
+    if (modo === 'terminos') { q = c * d; var e2 = R(1, 9); return { e: a + ' × ' + b + ' + ' + q + ' ÷ ' + d + ' − ' + e2, P: [[a * b + ' + ' + c + ' − ' + e2, 'Separamos en términos con los + y −: cada término se resuelve por separado.'], [(a * b + c) + ' − ' + e2, 'Ahora sumas y restas, de izquierda a derecha.'], [String(a * b + c - e2), 'Resultado.']], v: a * b + c - e2 }; }
+    if (modo === 'parentesis') { if (Math.random() < .5) return { e: '(' + a + ' + ' + b + ') × ' + c, P: [[(a + b) + ' × ' + c, 'Primero lo que está entre paréntesis.'], [String((a + b) * c), 'Después la multiplicación.']], v: (a + b) * c };
+      var m = R(b + 1, 15); return { e: a + ' × (' + m + ' − ' + b + ') + ' + c, P: [[a + ' × ' + (m - b) + ' + ' + c, 'Primero el paréntesis.'], [a * (m - b) + ' + ' + c, 'Después la multiplicación.'], [String(a * (m - b) + c), 'Al final la suma.']], v: a * (m - b) + c }; }
+    if (modo === 'corchetes') { var m2 = R(c + 1, 12), ins = a + b * (m2 - c); return { e: '[' + a + ' + ' + b + ' × (' + m2 + ' − ' + c + ')] × ' + d, P: [['[' + a + ' + ' + b + ' × ' + (m2 - c) + '] × ' + d, 'De adentro hacia afuera: primero el paréntesis.'], ['[' + a + ' + ' + b * (m2 - c) + '] × ' + d, 'Dentro del corchete, la multiplicación antes que la suma.'], [ins + ' × ' + d, 'Terminamos el corchete.'], [String(ins * d), 'Y la multiplicación de afuera.']], v: ins * d }; }
+    if (modo === 'potencias') { if (Math.random() < .5) return { e: a + '² + ' + b + ' × ' + c, P: [[a * a + ' + ' + b + ' × ' + c, 'Primero la potencia.'], [a * a + ' + ' + b * c, 'Después la multiplicación.'], [String(a * a + b * c), 'Al final la suma.']], v: a * a + b * c };
+      var p2 = R(1, 4), k = R(2, 3); return { e: '(' + p2 + ' + ' + k + ')² − ' + b + ' × ' + 2, P: [[(p2 + k) + '² − ' + b + ' × 2', 'Primero el paréntesis.'], [(p2 + k) * (p2 + k) + ' − ' + b * 2, 'Después la potencia y la multiplicación (cada término).'], [String((p2 + k) * (p2 + k) - 2 * b), 'Al final la resta.']], v: (p2 + k) * (p2 + k) - 2 * b }; }
+    if (modo === 'raiz') { var pr = pick([[9, 16, 5], [36, 64, 10], [25, 144, 13], [64, 36, 10], [81, 144, 15]]); return { e: '√(' + pr[0] + ' + ' + pr[1] + ') × ' + d, P: [['√' + (pr[0] + pr[1]) + ' × ' + d, 'La raíz agrupa como un paréntesis: primero lo de adentro.'], [pr[2] + ' × ' + d, 'Después la raíz.'], [String(pr[2] * d), 'Al final la multiplicación.']], v: pr[2] * d }; }
+    if (modo === 'enunciado') { return { e: 'Al doble de ' + a + ' sumale el triple de ' + b, P: [['2 × ' + a + ' + 3 × ' + b, 'Traducimos: «el doble de» es 2 ×, «el triple de» es 3 ×.'], [2 * a + ' + ' + 3 * b, 'Multiplicaciones primero.'], [String(2 * a + 3 * b), 'Al final la suma.']], v: 2 * a + 3 * b }; }
+    q = b * c; var t = R(0, 1);
+    return t ? { e: a + ' + ' + b + ' × ' + c, P: [[a + ' + ' + b * c, 'La multiplicación va antes que la suma.'], [String(a + b * c), 'Después la suma.']], v: a + b * c } : { e: a * d + ' − ' + q + ' ÷ ' + c, P: [[a * d + ' − ' + b, 'La división va antes que la resta.'], [String(a * d - b), 'Después la resta.']], v: a * d - b };
+  }
   function expresion() {
     var a = R(2, 9), b = R(2, 9), c = R(2, 9), d = R(1, 9), t = R(0, 3);
     if (t === 0) return { e: a + ' + ' + b + ' × ' + c, pasos: [a + ' + ' + (b * c), String(a + b * c)], v: a + b * c };
@@ -273,15 +289,16 @@
     if (t === 2) { var q = b * c; return { e: a * d + ' − ' + q + ' ÷ ' + c + ' + ' + b, pasos: [a * d + ' − ' + b + ' + ' + b, String(a * d - b + b)], v: a * d }; }
     return { e: a + '² − ' + b + ' × ' + (c > 1 ? '(' + c + ' − 1)' : c), pasos: [a * a + ' − ' + b + ' × ' + (c - 1), a * a + ' − ' + b * (c - 1), String(a * a - b * (c - 1))], v: a * a - b * (c - 1) };
   }
-  M.jerarquia = { tipo: 'ejemplo', pasos: true, render: function (el) {
-    var X = expresion();
+  M.jerarquia = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var gen = function () { return p && p.modo ? expr2(p.modo) : expresion(); }, X = gen();
     el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-o="1">🔄 Otra cuenta</button></div>'; var v = el.querySelector('.lb-vista');
     function armar() { var P = [{ vis: '<p class="lb-pt-g">' + X.e + '</p>', txt: 'Orden: 1) paréntesis, 2) potencias y raíces, 3) × y ÷, 4) + y − (de izquierda a derecha).' }];
-      X.pasos.forEach(function (st, i) { P.push({ vis: '<p class="lb-res">' + X.e + '</p><ol class="lb2-pasos">' + X.pasos.slice(0, i + 1).map(function (q, j) { return '<li' + (j === i ? ' class="on"' : '') + '>= ' + q + '</li>'; }).join('') + '</ol>', txt: i === X.pasos.length - 1 ? 'Último paso: ese es el resultado.' : 'Resolvemos lo que va primero según el orden.' }); });
+      var PS = X.P ? X.P.map(function (q) { return q[0]; }) : X.pasos;
+      PS.forEach(function (st, i) { P.push({ vis: '<p class="lb-res">' + X.e + '</p><ol class="lb2-pasos">' + PS.slice(0, i + 1).map(function (q, j) { return '<li' + (j === i ? ' class="on"' : '') + '>= ' + q + '</li>'; }).join('') + '</ol>', txt: X.P ? X.P[i][1] : (i === PS.length - 1 ? 'Último paso: ese es el resultado.' : 'Resolvemos lo que va primero según el orden.') }); });
       pasoAPaso(v, P); }
-    el.addEventListener('click', function (e) { if (e.target.closest('[data-o]')) { X = expresion(); armar(); } }); armar();
+    el.addEventListener('click', function (e) { if (e.target.closest('[data-o]')) { X = gen(); armar(); } }); armar();
   } };
-  M.combinadas = { tipo: 'ejercicio', render: function (el, p, api) { respuesta(el, api, function () { var X = expresion(); return { cons: 'Resolvé respetando la jerarquía: <b>' + X.e + '</b>', campos: [{ v: X.v }], ayuda: 'Paso a paso: ' + X.pasos.join(' = ') + '.', bien: '¡Bien! ' + X.e + ' = ' + X.v + '.' }; }); } };
+  M.combinadas = { tipo: 'ejercicio', render: function (el, p, api) { respuesta(el, api, function () { var X = p.modo ? expr2(p.modo) : expresion(); if (X.P) X.pasos = X.P.map(function (q) { return q[0]; }); return { cons: 'Resolvé respetando la jerarquía: <b>' + X.e + '</b>', campos: [{ v: X.v }], ayuda: 'Paso a paso: ' + X.pasos.join(' = ') + '.', bien: '¡Bien! ' + X.e + ' = ' + X.v + '.' }; }); } };
   function periodo(a, b) { var ent = Math.floor(a / b), r = a % b, vistos = {}, dig = '', pos = 0; while (r && vistos[r] == null && pos < 40) { vistos[r] = pos++; r *= 10; dig += Math.floor(r / b); r %= b; } return { ent: ent, dig: dig, ini: r ? vistos[r] : -1 }; }
   M.periodo = { tipo: 'ejemplo', pasos: true, render: function (el) {
     el.innerHTML = '<div class="lb2-ctls"><label class="lb2-ctl">Fracción: <input class="lb-inp chico" data-k="a" inputmode="numeric" value="' + pick([1, 2, 5, 7]) + '"> / <input class="lb-inp chico" data-k="b" inputmode="numeric" value="' + pick([3, 6, 7, 9, 11, 12]) + '"></label></div><div class="lb-vista"></div>';
@@ -763,6 +780,74 @@
     });
   } };
 
+  // Calculadora (Matemática I · Misión 4, nivel 4)
+  M.calculadora = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'comun';
+    el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-o="1">🔄 Otra cuenta</button></div>'; var v = el.querySelector('.lb-vista');
+    var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, pant = function (x) { return '<div class="lb2-calc">' + x + '</div>'; };
+    function armar() { var a = R(2, 9), b = R(2, 9), c = R(2, 9), P;
+      if (md === 'comun') P = [{ vis: G(a + ' + ' + b + ' × ' + c), txt: 'Tipeamos la cuenta tal cual, tecla por tecla.' }, { vis: G(a + ' + ' + b + ' × ' + c) + pant((a + b) * c), txt: 'Una calculadora <b>común</b> resuelve a medida que tipeás: hizo ' + a + ' + ' + b + ' = ' + (a + b) + ' y después × ' + c + '.' }, { vis: G(a + ' + ' + b + ' × ' + c) + pant(a + b * c), txt: 'Una calculadora <b>científica</b> respeta la jerarquía: primero ' + b + ' × ' + c + '.' }, { vis: RS(a + ' + ' + b + ' × ' + c + ' = ' + (a + b * c)), txt: 'El resultado correcto es el de la científica. Con una común, hay que hacer primero la multiplicación.' }];
+      else if (md === 'estimar') { var x = R(31, 89) * 10 + R(1, 9), y = R(21, 79), ex = x * y, rx = Math.round(x / 100) * 100, ry = Math.round(y / 10) * 10;
+        P = [{ vis: G(fmt(x) + ' × ' + y), txt: 'Antes de usar la calculadora, estimamos.' }, { vis: G(fmt(rx) + ' × ' + ry + ' = ' + fmt(rx * ry)), txt: 'Redondeamos y hacemos la cuenta de cabeza: da cerca de <b>' + fmt(rx * ry) + '</b>.' }, { vis: G(fmt(x) + ' × ' + y) + pant(fmt(ex)), txt: 'Ahora sí, la calculadora.' }, { vis: RS(fmt(ex) + ' ≈ ' + fmt(rx * ry)), txt: 'El resultado está cerca de la estimación: es razonable.' }]; }
+      else { var x2 = R(21, 89), y2 = R(11, 49), bien = x2 * y2, mal = x2 * 10 * y2;
+        P = [{ vis: G(x2 + ' × ' + y2), txt: 'Queremos calcular esta cuenta con la calculadora.' }, { vis: G(x2 + '0 × ' + y2) + pant(fmt(mal)), txt: 'Sin darnos cuenta tipeamos un 0 de más.' }, { vis: G('≈ ' + Math.round(x2 / 10) * 10 + ' × ' + Math.round(y2 / 10) * 10 + ' = ' + fmt(Math.round(x2 / 10) * 10 * Math.round(y2 / 10) * 10)), txt: 'La estimación da mucho menos: <b>algo está mal</b>.' }, { vis: pant(fmt(bien)) + RS(x2 + ' × ' + y2 + ' = ' + fmt(bien)), txt: 'Volvemos a tipear con cuidado. Estimar sirve para detectar errores de tipeo.' }]; }
+      pasoAPaso(v, P); }
+    el.addEventListener('click', function (e) { if (e.target.closest('[data-o]')) armar(); }); armar();
+  } };
+  M.calculadora_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'comun';
+    respuesta(el, api, function () { var a = R(2, 9), b = R(2, 9), c = R(2, 9);
+      if (md === 'comun') return { cons: 'Una calculadora <b>común</b> muestra <b>' + (a + b) * c + '</b> para <b>' + a + ' + ' + b + ' × ' + c + '</b>. ¿Cuál es el resultado correcto?', campos: [{ v: a + b * c }], ayuda: 'La común sumó primero. Respetá la jerarquía: primero ' + b + ' × ' + c + '.', bien: '¡Bien! ' + a + ' + ' + b * c + ' = ' + (a + b * c) + '.' };
+      var x = R(21, 89) * 10, y = R(21, 79), rx = Math.round(x / 100) * 100, ry = Math.round(y / 10) * 10;
+      if (md === 'estimar') return { cons: 'Estimá <b>' + fmt(x) + ' × ' + y + '</b> redondeando a ' + fmt(rx) + ' y ' + ry + '.', campos: [{ v: rx * ry }], ayuda: fmt(rx) + ' × ' + ry + '.', bien: '¡Bien! La cuenta exacta da ' + fmt(x * y) + ', cerca de tu estimación.' };
+      var mal = Math.random() < .5, mostrado = mal ? x * y * 10 : x * y;
+      return { cons: 'Para <b>' + fmt(x) + ' × ' + y + '</b> la calculadora mostró <b>' + fmt(mostrado) + '</b>. Estimá: ¿es razonable? Escribí <b>sí</b> o <b>no</b>.', campos: [{ tipo: 'texto', v: mal ? ['no'] : ['si', 'sí'] }], ayuda: 'Estimá: ' + fmt(rx) + ' × ' + ry + ' = ' + fmt(rx * ry) + '. ¿El resultado está cerca?', bien: mal ? '¡Bien! Tiene un cero de más.' : '¡Bien! Está cerca de la estimación.' }; });
+  } };
+
+  // ======= DIVISIBILIDAD (Matemática I · Misión 5) =======
+  function divs(n) { var o = []; for (var i = 1; i <= n; i++) if (n % i === 0) o.push(i); return o; }
+  M.divis = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
+    var md = p.modo || 'patron', C = {
+      patron: ctrl('a', 'Una luz titila cada (s)', 2, 9, 1, 4) + ctrl('b', 'Otra cada (s)', 2, 9, 1, 6),
+      suma: ctrl('d', 'Divisor', 2, 9, 1, 7) + ctrl('x', 'Primer múltiplo (veces)', 1, 9, 1, 3) + ctrl('y', 'Segundo múltiplo (veces)', 1, 9, 1, 5),
+      multiplo: ctrl('d', 'Divisor', 2, 9, 1, 4) + ctrl('a', 'Número que divide (veces el divisor)', 1, 9, 1, 3) + ctrl('k', 'Lo multiplicamos por', 2, 9, 1, 5),
+      contraejemplo: ctrl('d', '«Todo número divisible por…', 2, 6, 1, 3) + ctrl('e', '…también es divisible por…»', 2, 12, 1, 6),
+      reparto: ctrl('n', 'Cantidad para repartir', 6, 60, 1, 24),
+      cual: ctrl('a', 'Primer dato', 4, 30, 1, 12) + ctrl('b', 'Segundo dato', 4, 30, 1, 18),
+      pistas: ctrl('m', 'Es múltiplo de', 2, 9, 1, 3) + ctrl('v', 'Es divisor de', 12, 100, 1, 60) + ctrl('g', 'Es mayor que', 1, 30, 1, 10) }[md];
+    escena(el, C, function (o) {
+      var G = function (x) { return '<p class="lb-pt-g">' + x + '</p>'; }, RS = function (x) { return '<p class="lb-cn-res">' + x + '</p>'; }, F = function (x) { return '<p class="lb-pt-f">' + x + '</p>'; };
+      if (md === 'patron') { var tope = Math.min(60, o.a * o.b), m = o.a * o.b / mcd(o.a, o.b);
+        var tira = function (k) { var h = '<div class="lb2-tira">'; for (var i = 1; i <= Math.min(tope, 36); i++) { var A = i % o.a === 0, B = i % o.b === 0; h += '<span class="' + (k >= 1 && A ? 'a' : '') + (k >= 2 && B ? ' b' : '') + (k >= 3 && A && B ? ' ab' : '') + '">' + i + '</span>'; } return h + '</div>'; };
+        return [{ vis: tira(0), txt: 'Los segundos, uno por uno.' }, { vis: tira(1), txt: 'Una luz titila en los <b>múltiplos de ' + o.a + '</b>.' }, { vis: tira(2), txt: 'La otra, en los <b>múltiplos de ' + o.b + '</b>.' }, { vis: tira(3) + RS('Coinciden cada ' + m + ' s'), txt: 'Titilan juntas en los <b>múltiplos comunes</b>: el primero es ' + m + ', y después se repite.' }]; }
+      if (md === 'suma') { var a = o.d * o.x, b = o.d * o.y, gr = function (n, cls) { var h = ''; for (var i = 0; i < n / o.d; i++) h += '<i class="' + cls + '">' + o.d + '</i>'; return h; };
+        return [{ vis: G(a + ' y ' + b), txt: o.d + ' divide a ' + a + ' y a ' + b + ': se arman grupos justos de ' + o.d + '.' }, { vis: '<div class="lb2-grupos">' + gr(a, 'g1') + '</div><div class="lb2-grupos">' + gr(b, 'g2') + '</div>', txt: a + ' son ' + o.x + ' grupos de ' + o.d + ', y ' + b + ' son ' + o.y + ' grupos.' }, { vis: '<div class="lb2-grupos">' + gr(a, 'g1') + gr(b, 'g2') + '</div>', txt: 'Si juntamos todo, siguen siendo grupos justos: ' + (o.x + o.y) + ' grupos.' }, { vis: RS(o.d + ' divide a ' + a + ' + ' + b + ' = ' + (a + b)), txt: 'Si un número divide a dos números, divide a su suma (y a su resta).' }]; }
+      if (md === 'multiplo') { var n = o.d * o.a; return [{ vis: G(o.d + ' divide a ' + n), txt: n + ' = ' + o.d + ' × ' + o.a + '.' }, { vis: G(n + ' × ' + o.k + ' = ' + n * o.k), txt: 'Multiplicamos ' + n + ' por ' + o.k + '.' }, { vis: G(n * o.k + ' = ' + o.d + ' × ' + o.a * o.k), txt: 'El ' + o.d + ' sigue estando como factor.' }, { vis: RS(o.d + ' divide a ' + n * o.k), txt: 'Si un número divide a otro, divide a todos sus múltiplos.' }]; }
+      if (md === 'contraejemplo') { var d = o.d, e = o.e, hall = null; for (var i = d; i <= d * 30 && hall === null; i += d) if (i % e) hall = i; var pr = []; for (var j = d; j <= (hall || d * 6) && pr.length < 6; j += d) pr.push(j + (j % e ? ' ✘' : ' ✔'));
+        return [{ vis: G('¿Todo múltiplo de ' + d + ' es múltiplo de ' + e + '?'), txt: 'Una afirmación sobre <b>todos</b> los números.' }, { vis: F(pr.join(' · ')), txt: 'Probamos con múltiplos de ' + d + ' y miramos si ' + e + ' los divide.' }, hall ? { vis: RS(hall + ' es múltiplo de ' + d + ' pero no de ' + e), txt: 'Encontramos un <b>contraejemplo</b>: alcanza uno solo para saber que la afirmación es falsa.' } : { vis: RS('Siempre se cumple'), txt: 'No aparece ningún contraejemplo: acá la afirmación es verdadera (' + e + ' divide a ' + d + '), y se justifica con un razonamiento, no solo con ejemplos.' }]; }
+      if (md === 'reparto') { var n2 = o.n, D = divs(n2); return [{ vis: G(n2 + ' caramelos'), txt: '¿En cuántas bolsitas iguales se pueden repartir sin que sobre ninguno?' }, { vis: F(n2 + ' ÷ 5 = ' + Math.floor(n2 / 5) + ', resto ' + n2 % 5), txt: n2 % 5 ? 'En 5 bolsitas sobran ' + n2 % 5 + ': no sirve.' : 'En 5 bolsitas no sobra nada: sirve.' }, { vis: F(D.join(' · ')), txt: 'Sirven justo los <b>divisores de ' + n2 + '</b>.' }, { vis: RS(D.length + ' formas de repartir'), txt: 'Repartir sin sobrantes es buscar divisores.' }]; }
+      if (md === 'cual') { var mc = o.a * o.b / mcd(o.a, o.b), md2 = mcd(o.a, o.b);
+        return [{ vis: G(o.a + ' y ' + o.b), txt: 'Con estos dos datos pueden aparecer dos tipos de problema.' }, { vis: F('Cortar cintas de ' + o.a + ' y ' + o.b + ' cm en trozos iguales, sin que sobre'), txt: 'El trozo tiene que <b>entrar justo</b> en los dos: es un <b>divisor común</b> (más chico que los datos).' }, { vis: F('Dos colectivos salen cada ' + o.a + ' y ' + o.b + ' min. ¿Cuándo coinciden?'), txt: 'El momento tiene que ser <b>múltiplo</b> de los dos: es un <b>múltiplo común</b> (más grande que los datos).' }, { vis: RS('Trozo más largo: ' + md2 + ' cm · Coinciden a los ' + mc + ' min'), txt: 'Preguntate: ¿la respuesta divide a los datos o es múltiplo de ellos?' }]; }
+      var cand = [], todos = divs(o.v); var mul = todos.filter(function (x) { return x % o.m === 0; }), fin = mul.filter(function (x) { return x > o.g; });
+      return [{ vis: F('Divisores de ' + o.v + ': ' + todos.join(', ')), txt: 'Pista 1: es divisor de ' + o.v + '. Escribimos todos.' }, { vis: F('Múltiplos de ' + o.m + ': ' + (mul.join(', ') || 'ninguno')), txt: 'Pista 2: de esos, nos quedamos con los múltiplos de ' + o.m + '.' }, { vis: RS(fin.length ? 'Puede ser: ' + fin.join(', ') : 'Ningún número cumple todo'), txt: 'Pista 3: mayor que ' + o.g + '. Cada pista achica la lista.' }];
+    });
+  } };
+  M.divis_x = { tipo: 'ejercicio', render: function (el, p, api) {
+    var md = p.modo || 'multiplo_n';
+    respuesta(el, api, function () {
+      if (md === 'multiplo_n') { var n = R(3, 15), k = R(4, 12); return { cons: 'Si el primer múltiplo de <b>' + n + '</b> (sin contar el 0) es ' + n + ', ¿cuál es el múltiplo número <b>' + k + '</b>?', campos: [{ v: n * k }], ayuda: 'El múltiplo número ' + k + ' es ' + n + ' × ' + k + '.', bien: '¡Bien! ' + n * k + '.' }; }
+      if (md === 'repite') { var a = pick([2, 3, 4, 5, 6]), b = pick([4, 6, 8, 9, 10]); while (a === b) b = pick([4, 6, 8, 9, 10]); var m = a * b / mcd(a, b); return { cons: 'Una luz titila cada <b>' + a + ' segundos</b> y otra cada <b>' + b + '</b>. Si titilan juntas ahora, ¿dentro de cuántos segundos vuelven a titilar juntas?', campos: [{ v: m, un: 's' }], ayuda: 'Buscá el primer múltiplo común de ' + a + ' y ' + b + ' (sin contar el 0).', bien: '¡Bien! A los ' + m + ' segundos.' }; }
+      if (md === 'cuantos_div') { var n2 = pick([12, 16, 18, 20, 24, 28, 30, 36, 40, 45, 48]); return { cons: '¿Cuántos divisores tiene <b>' + n2 + '</b>?', campos: [{ v: divs(n2).length }], ayuda: 'Buscalos por parejas: 1 × ' + n2 + ', 2 × …', bien: '¡Bien! ' + divs(n2).join(', ') + '.' }; }
+      if (md === 'suma' || md === 'multiplo') { var d = R(3, 9), x = R(2, 9), y = R(2, 9), A = d * x, B = d * y, k = R(2, 9);
+        return md === 'suma' ? { cons: '<b>' + d + '</b> divide a <b>' + A + '</b> y a <b>' + B + '</b>. Sin hacer la cuenta, ¿cuántas veces entra ' + d + ' en ' + A + ' + ' + B + '?', campos: [{ v: x + y }], ayuda: A + ' son ' + x + ' grupos de ' + d + ' y ' + B + ' son ' + y + ' grupos.', bien: '¡Bien! ' + (x + y) + ' grupos: ' + d + ' divide a la suma.' } : { cons: '<b>' + d + '</b> divide a <b>' + A + '</b>. ¿Cuántas veces entra ' + d + ' en ' + A + ' × ' + k + '?', campos: [{ v: x * k }], ayuda: A + ' = ' + d + ' × ' + x + ', así que ' + A + ' × ' + k + ' = ' + d + ' × ' + x * k + '.', bien: '¡Bien! Divide también a sus múltiplos.' }; }
+      if (md === 'contraejemplo') { var pr = pick([[2, 4], [3, 6], [2, 6], [3, 9], [5, 10], [4, 8]]); return { cons: 'Encontrá un contraejemplo: «Todo número divisible por <b>' + pr[0] + '</b> también es divisible por <b>' + pr[1] + '</b>». Escribí un múltiplo de ' + pr[0] + ' que NO sea múltiplo de ' + pr[1] + ' (menor que 50).', campos: [{ v: pr[0], acepta: function (x) { return x > 0 && x < 50 && x % pr[0] === 0 && x % pr[1] !== 0; } }], ayuda: 'Probá con los múltiplos de ' + pr[0] + ': ' + pr[0] + ', ' + 2 * pr[0] + ', ' + 3 * pr[0] + '…', bien: '¡Bien! Con un solo contraejemplo alcanza.' }; }
+      if (md === 'reparto') { var n3 = pick([12, 18, 20, 24, 30, 36, 40]), g = pick(divs(n3).filter(function (x) { return x > 1 && x < n3; })); return { cons: 'Hay <b>' + n3 + '</b> figuritas para repartir en <b>' + g + '</b> sobres iguales, sin que sobre ninguna. ¿Cuántas van en cada sobre?', campos: [{ v: n3 / g }], ayuda: n3 + ' ÷ ' + g + '.', bien: '¡Bien! ' + g + ' divide a ' + n3 + '.' }; }
+      if (md === 'cual') { var a2 = pick([8, 12, 15, 18]), b2 = pick([20, 24, 30, 36]); var tipo = Math.random() < .5; return tipo ? { cons: 'Se cortan cintas de <b>' + a2 + '</b> y <b>' + b2 + ' cm</b> en trozos iguales, lo más largos posible, sin que sobre nada. ¿Cuánto mide cada trozo?', campos: [{ v: mcd(a2, b2), un: 'cm' }], ayuda: 'El trozo tiene que dividir a los dos: buscá el mayor divisor común.', bien: '¡Bien! ' + mcd(a2, b2) + ' cm.' } : { cons: 'Dos colectivos salen juntos, uno cada <b>' + a2 + '</b> y otro cada <b>' + b2 + '</b> minutos. ¿A los cuántos minutos vuelven a salir juntos?', campos: [{ v: a2 * b2 / mcd(a2, b2), un: 'min' }], ayuda: 'Tiene que ser múltiplo de los dos: buscá el menor múltiplo común.', bien: '¡Bien! A los ' + a2 * b2 / mcd(a2, b2) + ' minutos.' }; }
+      var m3 = pick([3, 4, 5, 6]), v3 = pick([24, 36, 48, 60, 72]), g3 = R(5, 20), ok = divs(v3).filter(function (x) { return x % m3 === 0 && x > g3; }); if (!ok.length) { g3 = 1; ok = divs(v3).filter(function (x) { return x % m3 === 0; }); }
+      return { cons: 'Pensé un número: es <b>múltiplo de ' + m3 + '</b>, es <b>divisor de ' + v3 + '</b> y es <b>mayor que ' + g3 + '</b>. Escribí uno que cumpla todo.', campos: [{ v: ok[0], acepta: function (x) { return ok.indexOf(x) >= 0; } }], ayuda: 'Escribí los divisores de ' + v3 + ', quedate con los múltiplos de ' + m3 + ' y después con los mayores que ' + g3 + '.', bien: '¡Bien! Podían ser: ' + ok.join(', ') + '.' };
+    });
+  } };
+
   M.binario_conv = { tipo: 'ejercicio', render: function (el, p, api) {
     var md = p.modo || 'ambos';
     respuesta(el, api, function () { var n = R(5, 200), b = n.toString(2);
@@ -1059,6 +1144,9 @@
     '.lb-sx-t{border-collapse:collapse;margin:0 auto;font-size:1.2rem}.lb-sx-t td{padding:6px 12px;text-align:right;font-weight:700}.lb-sx-t td.on{background:#087E83;color:#fff;border-radius:8px}.lb-sx-t tr.res td{border-top:3px solid #253638;color:#066A6E;font-weight:800}',
     '.lb-sg{display:flex;justify-content:center;gap:10px}.lb-sg span{display:flex;flex-direction:column;align-items:center;padding:10px 18px;border-radius:14px;background:#087E83;color:#fff}.lb-sg b{font-size:1.8rem}.lb-sg small{font-weight:700}',
     '.lb-pt-g{font-size:2.2rem;font-weight:800;text-align:center;color:#066A6E;margin:4px 0}.lb-pt-f{font-size:1.2rem;text-align:center;margin:0;color:#253638}',
+    '.lb2-calc{margin:8px auto;max-width:220px;padding:10px 14px;border-radius:12px;background:#253638;color:#D7F0E9;font:700 1.6rem/1.2 monospace;text-align:right}',
+    '.lb2-tira{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}.lb2-tira span{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:#F3FBF7;font-weight:700;font-size:.8rem}.lb2-tira span.a{background:#7FD3C4}.lb2-tira span.b{background:#9dbdb9}.lb2-tira span.ab{background:#087E83;color:#fff}',
+    '.lb2-grupos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0}.lb2-grupos i{font-style:normal;padding:8px 12px;border-radius:10px;font-weight:800;color:#fff}.lb2-grupos i.g1{background:#087E83}.lb2-grupos i.g2{background:#253638}',
     '.lb-vp-w{overflow-x:auto}.lb-vp{border-collapse:separate;border-spacing:4px;margin:4px auto}.lb-vp th{font-size:.72rem;color:#4b6a6c;font-weight:800;text-align:center;padding:2px 4px}.lb-vp th.lb-vp-per{background:#D7F0E9;color:#066A6E;border-radius:8px;font-size:.78rem;padding:4px 6px}',
     '.lb-vp-c{width:44px;height:52px;border:2px solid #087E83;border-radius:12px;background:#fff;font-family:inherit;font-weight:800;font-size:1.6rem;line-height:1;color:#253638;cursor:pointer}.lb-vp.vplargo .lb-vp-c{width:32px;height:44px;font-size:1.25rem;border-radius:10px}.lb-vp.vplargo{border-spacing:2px}.lb-vp-in{width:14ch!important;font-size:1.2rem}.lb-vp-c.cero{color:#9dbdb9}.lb-vp-c.on{background:#087E83;color:#fff}',
     '.lb-vp-big{font-size:1.15rem;line-height:1.5;margin:12px 0 4px}.lb-vp-trozos{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}.lb-vp-tr{display:flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:14px;background:#D7F0E9}.lb-vp-tr b{font-size:1.5rem;letter-spacing:.08em;color:#066A6E}.lb-vp-tr.cero{opacity:.5}.lb-vp-tr small{font-weight:700;color:#4b6a6c}',
