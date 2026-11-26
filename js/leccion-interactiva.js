@@ -105,7 +105,8 @@ window.WaveLeccion = (function () {
       }
     }
     if (!secs.length) throw new Error('Esta lección todavía no está lista.');
-    var hayResumen = lista(c.resumen).length > 0;
+    var recuerda = c.leccion && lista(c.leccion.recuerda).length ? c.leccion.recuerda : null; // escrito en sesión (formato CIDEAD)
+    var hayResumen = !!recuerda || lista(c.resumen).length > 0;
     var total = secs.length + (hayResumen ? 1 : 0), cur = 0, ejN = {}, ejPaso = {};
     var el = document.createElement('div'); el.className = 'li2';
     el.innerHTML = '<div class="li2-caja" role="dialog" aria-label="Lección interactiva"><div class="li2-barra"><b class="li2-t">' + esc(op.titulo) + '</b>' +
@@ -137,6 +138,12 @@ window.WaveLeccion = (function () {
           : s.practica ? '<div class="li2-lado">' + ejemploHtml(k) + '</div>' : '') + '</div>';
     }
     function resumen() {
+      if (recuerda) return '<div class="li2-kick">Para cerrar</div><h2>Recordá lo más importante</h2><div class="li2-rec">' + recuerda.map(function (r, i) {
+        return '<div class="li2-rec-c t' + (i % 4) + '"><p><b>' + rico(r.concepto) + '</b> ' + rico(r.definicion) + '</p>' +
+          (r.formula ? '<div class="li2-rec-f">' + rico(r.formula) + '</div>' : '') +
+          (lista(r.esquema).length ? '<ul class="li2-rec-e">' + r.esquema.map(function (x) { return '<li>' + rico(x) + '</li>'; }).join('') + '</ul>' : '') +
+          (r.ejemplo ? '<div class="li2-rec-x">' + rico(r.ejemplo) + '</div>' : '') + '</div>';
+      }).join('') + '</div>';
       var h = '<div class="li2-kick">Para cerrar</div><h2>Recordá lo más importante</h2><div class="li2-resu">' + lista(c.resumen).map(function (r) {
         return '<div class="li2-rc"><b>' + rico(r.titulo || '') + '</b><span>' + rico(r.texto || (typeof r === 'string' ? r : '')) + '</span></div>'; }).join('') + '</div>';
       return h;
@@ -248,6 +255,11 @@ window.WaveLeccion = (function () {
     '.li2-btn{padding:12px 22px;border:0;border-radius:16px;background:#087E83;color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #066A6E}.li2-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #066A6E}',
     '.li2-btn.suave{background:#fff;color:#066A6E;border:2px solid #087E83;box-shadow:none}.li2-btn.prac{background:#253638;box-shadow:0 4px 0 #111c1d}',
     '.li2-resu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}.li2-rc{padding:14px;border-radius:16px;background:#fff;border:2px solid #D7F0E9}.li2-rc b{display:block;color:#087E83;margin-bottom:4px}',
+    '.li2-rec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.li2-rec-c{padding:14px 16px;border-radius:16px;line-height:1.5}.li2-rec-c p{margin:0}',
+    '.li2-rec-c.t0{background:#D7F0E9}.li2-rec-c.t1{background:#E3ECEA}.li2-rec-c.t2{background:#fff;border:2px solid #D7F0E9}.li2-rec-c.t3{background:#F3FBF7;border:2px solid #9dbdb9}',
+    '.li2-rec-f{margin:10px auto 2px;width:fit-content;padding:6px 16px;border:2px solid #087E83;border-radius:10px;background:#fff;font-weight:900;font-size:1.15rem;color:#087E83}',
+    '.li2-rec-e{margin:8px 0 0;padding-left:18px;font-size:.95rem}.li2-rec-x{margin-top:8px;text-align:center;font-weight:800;color:#253638;font-size:.98rem}',
+    '@media (max-width:820px){.li2-rec{grid-template-columns:1fr}}',
     '.li2-glos{margin-top:8px;padding:12px 16px;border-radius:16px;background:#fff;border:2px solid #E3ECEA}.li2-glos summary{font-weight:800;cursor:pointer}.li2-glos dt{font-weight:800;margin-top:8px}.li2-glos dd{margin:0}',
     '.li2-pv{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:16px;background:rgba(37,54,56,.45)}.li2-pv-c{width:100%;max-width:640px;max-height:100%;overflow-y:auto;border-radius:22px;background:#fff}',
     '.li2-pv-h{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#087E83;color:#fff}.li2-pv-h b{flex:1}.li2-cont{font-weight:700;font-size:.85rem}.li2-pv-b{padding:18px}',

@@ -92,6 +92,15 @@ function leccion(ruta, M, n, L, donde) {
     if (!t.ejemplo && !t.ejercicio) mal(d, 'todo tema lleva su ejemplo vivo o su ejercicio del banco. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
     if ((t.ejemplo || t.ejercicio) && !tipos.includes('pasos')) mal(d, 'lleva ejemplo o ejercicio pero no es un tema práctico (su explicación no tiene un procedimiento con pasos). Los temas de concepto van solo con la explicación');
   });
+  // "Recordá lo más importante" (formato CIDEAD): tarjetas con concepto + definición completa + ejemplo concreto
+  const R = L.recuerda || [];
+  if (R.length < 4) mal(donde, '"Recordá lo más importante" necesita al menos 4 tarjetas (una por concepto o procedimiento clave)');
+  R.forEach((r, i) => {
+    const d = donde + ' · recordá ' + (i + 1);
+    if (!r.concepto) mal(d, 'falta el concepto');
+    if (palabras(r.definicion).length < 10) mal(d, 'la definición tiene que ser una oración completa (10 palabras o más), no dos palabras');
+    if (!r.ejemplo || palabras(r.ejemplo).length < 2) mal(d, 'falta el ejemplo concreto (ej.: "D(18) = {1, 2, 3, 6, 9, 18}")');
+  });
   if (total < MIN_LECCION) mal(donde, 'la lección tiene ' + total + ' palabras: el mínimo es ' + MIN_LECCION);
   if (prom && total < prom * PROP_PROMEDIO) mal(donde, 'la lección es más corta que las anteriores de la materia (' + total + ' palabras; el promedio es ' + Math.round(prom) + ', mínimo ' + Math.round(prom * PROP_PROMEDIO) + '). Se completa, no se acorta.');
 }

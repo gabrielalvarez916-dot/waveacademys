@@ -36,6 +36,17 @@ Los bloques son los mismos del PDF: `parrafo`, `definicion`, `pasos` (items), `e
 - Al final, "Recordá lo más importante" (sale del `resumen` del borrador).
 - En Matemática, cada tema con procedimiento lleva `ejemplo` y/o `ejercicio` del banco. Si el banco no tiene el motor que el tema necesita, se avisa (no se fuerza uno que no corresponde).
 
+## "Recordá lo más importante" (cierre, formato CIDEAD)
+Va en `niveles.N.leccion.recuerda`: 4 a 8 tarjetas, una por concepto o procedimiento clave de la lección, en grilla de dos columnas.
+```json
+{ "concepto": "Los divisores de un número", "definicion": "son los números que lo dividen de forma exacta, con resto 0.",
+  "formula": "a · d = b · c", "esquema": ["Dato: a → b", "Pregunta: c → x", "Se calcula x = c · b / a"],
+  "ejemplo": "D(18) = {1, 2, 3, 6, 9, 18}" }
+```
+- `concepto` en negrita + `definicion` como oración completa (10 palabras o más). Nada de "Media: suma ÷ cantidad".
+- `ejemplo` concreto y corto, siempre (números reales, no "por ejemplo un número").
+- `formula` (opcional) para propiedades y fórmulas: va destacada en recuadro. `esquema` (opcional) para procedimientos: los pasos como esquema.
+
 ## Prohibido
 - Copiar: no más del 25 % de la explicación puede repetir frases de 6 palabras del borrador o de la narración de la clase (el control lo mide).
 - Acortar con el tiempo: cada lección nueva tiene que tener al menos el 90 % de las palabras promedio de las lecciones ya escritas de esa materia (el control lo mide). Si una sale más corta, se completa, no se justifica.
