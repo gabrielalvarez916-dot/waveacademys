@@ -605,8 +605,8 @@
 .tst-luego { border: 0; background: none; font: inherit; font-weight: 700; text-decoration: underline; color: #4B6062; cursor: pointer; padding: 8px 4px; }
 
 
-/* ---------- Guías de acompañamiento familiar ---------- */
-.gf-intro,.gf-persona,.gf-guia{background:#fff;border-radius:20px;box-shadow:0 10px 30px -18px rgba(37,54,56,.28)}
+/* ---------- Guías familiares: buscador, tarjetas y lectura individual ---------- */
+.gf-intro,.gf-persona,.gf-detalle{background:#fff;border-radius:20px;box-shadow:0 10px 30px -18px rgba(37,54,56,.28)}
 .gf-intro{padding:26px 28px;margin-bottom:18px}
 .gf-kicker{display:block;color:var(--turquesa-oscuro);font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .gf-intro h2{margin:8px 0;font-size:1.45rem}
@@ -614,41 +614,39 @@
 .gf-persona{display:flex;align-items:center;gap:12px;padding:14px 20px;margin:14px 0 20px}
 .gf-persona span,.gf-persona small{color:var(--texto-suave);font-size:.82rem}
 .gf-persona b{font-size:1rem}
-.gf-selector{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
-.gf-selector span{font-weight:800}
-.gf-selector select{min-width:220px;padding:11px 14px;border:1px solid #cbdad7;border-radius:12px;background:#fff;color:var(--petroleo);font:inherit}
-.gf-lista{display:grid;gap:14px}
-.gf-guia{overflow:hidden;border:1px solid rgba(8,126,131,.12)}
-.gf-guia summary{display:flex;align-items:center;gap:15px;padding:18px 22px;cursor:pointer;list-style:none}
-.gf-guia summary::-webkit-details-marker{display:none}
-.gf-num{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:13px;background:#e3f2ef;color:#087e83;font-weight:900}
-.gf-resumen{display:grid;gap:3px;flex:1}
-.gf-resumen b{font-size:1.04rem}
-.gf-resumen small{color:var(--texto-suave)}
-.gf-flecha{font-size:1.3rem;color:var(--turquesa-oscuro);transition:transform .2s}
-.gf-guia[open] .gf-flecha{transform:rotate(180deg)}
-.gf-cuerpo{padding:0 24px 24px;border-top:1px solid #edf2f0}
-.gf-bloque{padding:20px 0 6px}
-.gf-bloque h3,.gf-actividad h3{margin:0 0 10px;font-size:1.05rem}
-.gf-bloque p,.gf-bloque li,.gf-actividad li{line-height:1.6}
-.gf-bloque ul,.gf-actividad ol{padding-left:22px;margin:8px 0}
-.gf-bloque li,.gf-actividad li{margin:7px 0}
-.gf-objetivo{color:var(--texto-suave);margin:0 0 10px}
+.gf-hijo{display:flex;align-items:center;gap:10px;margin:16px 0;font-weight:800}
+.gf-hijo select,.gf-filtros select,.gf-filtros input{min-height:44px;padding:9px 12px;border:1px solid #cbdad7;border-radius:12px;background:#fff;color:var(--petroleo);font:inherit}
+.gf-filtros{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:12px;margin:20px 0 12px;padding:18px;background:#fff;border-radius:18px;box-shadow:0 10px 30px -18px rgba(37,54,56,.28)}
+.gf-filtros label{display:grid;gap:6px;min-width:0}
+.gf-filtros label:first-child{grid-column:span 4}
+.gf-filtros label span{font-size:.82rem;font-weight:800;color:var(--texto-suave)}
+.gf-filtros input{width:100%;box-sizing:border-box}
+.gf-cantidad{margin:12px 2px;color:var(--texto-suave);font-size:.9rem;font-weight:700}
+.gf-tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gf-tarjeta{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-height:155px;padding:20px;text-align:left;background:#fff;border:1px solid rgba(8,126,131,.14);border-radius:18px;box-shadow:0 10px 30px -18px rgba(37,54,56,.28);font:inherit;color:var(--petroleo);cursor:pointer;transition:transform .15s,border-color .15s}
+.gf-tarjeta:hover{transform:translateY(-2px);border-color:var(--turquesa)}
+.gf-tarjeta-k{font-size:.72rem;font-weight:900;color:var(--turquesa-oscuro);text-transform:uppercase;letter-spacing:.04em}
+.gf-tarjeta b{font-size:1.08rem;line-height:1.3}
+.gf-tarjeta small{color:var(--texto-suave)}
+.gf-abrir{margin-top:auto;padding-top:7px;color:var(--turquesa-oscuro);font-size:.9rem;font-weight:900}
+.gf-detalle{margin-top:22px;padding:26px 30px;scroll-margin-top:20px}
+.gf-volver{margin-bottom:20px;padding:9px 13px;border:0;border-radius:10px;background:#e8f3f0;color:var(--turquesa-oscuro);font:inherit;font-weight:800;cursor:pointer}
+.gf-detalle h2{margin:8px 0 10px;font-size:1.5rem}
+.gf-para{max-width:780px;color:var(--texto-suave);line-height:1.6}
+.gf-bloque{padding:18px 0 4px}
+.gf-bloque h3,.gf-actividad h3{margin:0 0 10px;font-size:1.08rem}
+.gf-ayuda{margin:0 0 14px;color:var(--texto-suave);line-height:1.55}
+.gf-preguntas{display:grid;gap:10px}
+.gf-pregunta{padding:14px 16px;background:#f7f9f8;border-radius:13px}
+.gf-pregunta>b{display:block;line-height:1.45}
+.gf-pregunta p{margin:8px 0 3px;line-height:1.5}
+.gf-pregunta small{color:var(--texto-suave);line-height:1.45}
 .gf-actividad{margin-top:18px;padding:22px;background:#f0f7f5;border-radius:17px}
-.gf-actividad-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.gf-actividad-top span{display:block;margin-bottom:5px;color:#087e83;font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
-.gf-actividad-top h3{font-size:1.15rem}
-.gf-actividad-top small{white-space:nowrap;padding:6px 10px;background:#fff;border-radius:20px;color:var(--texto-suave);font-weight:800}
+.gf-actividad h3{margin-top:7px;font-size:1.2rem}
 .gf-materiales{margin:4px 0 12px;color:var(--texto-suave)}
+.gf-actividad ol{padding-left:22px;margin:10px 0}
+.gf-actividad li{margin:8px 0;line-height:1.55}
 .gf-cierre{margin:14px 0 0;padding-top:12px;border-top:1px solid #d6e6e1;line-height:1.6}
-.gf-observar{padding-bottom:0}
-.gf-observar>p{padding:12px 15px;background:#f7f8f7;border-radius:12px}
-@media(max-width:650px){
- .gf-intro{padding:21px}
- .gf-guia summary{padding:15px}
- .gf-cuerpo{padding:0 17px 18px}
- .gf-actividad{padding:17px}
- .gf-actividad-top{display:block}
- .gf-actividad-top small{display:inline-block}
- .gf-persona{align-items:flex-start;flex-direction:column;gap:3px}
-}
+.gf-recordatorio{color:var(--texto-suave);font-size:.92rem}
+@media(max-width:760px){.gf-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}.gf-filtros label:first-child{grid-column:span 2}}
+@media(max-width:560px){.gf-intro,.gf-detalle{padding:20px}.gf-filtros{grid-template-columns:1fr}.gf-filtros label:first-child{grid-column:auto}.gf-tarjetas{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.gf-tarjeta{min-height:150px;padding:14px}.gf-persona{align-items:flex-start;flex-direction:column;gap:3px}}
