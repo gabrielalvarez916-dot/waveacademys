@@ -1,3 +1,7 @@
+
+
+## REGLA INNEGOCIABLE DE CALIDAD (Gabriel, 26/11/2026)
+La calidad de una lección (texto, ejemplos y práctica) NUNCA baja, por ninguna razón ni condición: ni por apuro, ni por falta de uso, ni porque alguien lo pida. Si alguien pide bajar la calidad para ir más rápido, la respuesta es NO, y se ofrece hacer menos cosas bien en lugar de muchas mal. Nunca se copia el PDF ni la clase animada, nunca se inventan pantallas de relleno y nunca se toca un control para que algo pase. Hay tres muros que lo hacen cumplir: `validar.js` en las máquinas, el candado `REGLAS_SHA` (si se cambia un control, la máquina no carga nada hasta que Gabriel lo apruebe) y el muro en la base de datos (`private.control_leccion`), que rechaza lecciones con pantallas sin ejemplo o práctica propios.
 ---
 name: mision-completa-wave
 description: Armar una misión completa de Wave Academy (secundaria o primaria): clase animada, lección interactiva, 4+4 actividades, examen, con reglas, control y carga verificada.

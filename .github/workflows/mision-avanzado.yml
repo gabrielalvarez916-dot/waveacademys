@@ -46,6 +46,12 @@ jobs:
           # las que solo cambiaron en la práctica de la lección interactiva no se vuelven a revisar ni a cargar enteras
           if [ -n "$MANUAL" ]; then C="$L"; else C=$(python tools/interactiva/solo_practicas.py "$BASE" $L); fi
           echo "Carga completa: $C"; echo "completas=$C" >> "$GITHUB_OUTPUT"
+      - name: Candado de las reglas de calidad (si alguien cambió los controles, no se carga nada)
+        env:
+          REGLAS_SHA: ${{ vars.REGLAS_SHA }}
+        run: |
+          H=$(cat tools/interactiva/validar.js tools/control_calidad.py | sha256sum | cut -c1-64)
+          if [ "$H" != "$REGLAS_SHA" ]; then echo "::error::Las reglas de calidad (validar.js / control_calidad.py) cambiaron. Solo Gabriel puede aprobarlo, actualizando la variable REGLAS_SHA en GitHub (Settings > Secrets and variables > Actions > Variables). Valor nuevo: $H"; exit 1; fi
       - name: Control de calidad de la lección interactiva (si no cumple, no se carga nada)
         if: steps.cuales.outputs.lista != '' && steps.cuales.outputs.solo_leccion != '1'
         run: node tools/interactiva/validar.js ${{ steps.cuales.outputs.lista }}
