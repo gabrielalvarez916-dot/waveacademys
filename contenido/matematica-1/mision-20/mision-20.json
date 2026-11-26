@@ -312,7 +312,134 @@
      "100%: el círculo completo.",
      "El color, rojo: 12 es su frecuencia."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Contar y ordenar los datos",
+      "ejemplo": {
+       "motor": "frecuencias",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "tabla_frecuencias",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Tabla de frecuencias",
+        "texto": "Una tabla de frecuencias ordena los datos de una encuesta o un registro: en una columna van los valores que aparecieron y en la otra, cuántas veces apareció cada uno, que es su frecuencia."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Una lista de treinta respuestas sueltas no dice mucho; contada y ordenada en una tabla, se ve enseguida qué fue lo más elegido. Para no perder ninguna respuesta conviene ir marcando una rayita por cada dato y contarlas al final. Las frecuencias tienen que sumar la cantidad total de datos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Valor y frecuencia: cuántas veces aparece.",
+         "Las frecuencias suman el total."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Partes de un todo en un círculo",
+      "ejemplo": {
+       "motor": "datos",
+       "p": {
+        "modo": "circular"
+       }
+      },
+      "ejercicio": {
+       "motor": "datos_x",
+       "p": {
+        "modo": "circular"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Gráfico circular",
+        "texto": "El gráfico circular muestra cómo se reparte un total entre varias categorías: cada porción ocupa la parte del círculo que le corresponde a esa categoría."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si de 20 chicos 10 eligieron fútbol, la mitad de los votos es fútbol y ocupa la mitad del círculo, 180°. Para calcular cada porción se divide la frecuencia por el total y se multiplica por 360°. El gráfico de barras, en cambio, sirve mejor para comparar categorías entre sí, porque las alturas se ven lado a lado."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "10 de 20 → la mitad → 180°.",
+         "Porción = frecuencia ÷ total × 360°."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cómo cambia algo en el tiempo",
+      "ejemplo": {
+       "motor": "datos",
+       "p": {
+        "modo": "lineas"
+       }
+      },
+      "ejercicio": {
+       "motor": "datos_x",
+       "p": {
+        "modo": "lineas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Gráfico de líneas",
+        "texto": "El gráfico de líneas muestra cómo cambia un dato a lo largo del tiempo: se marca un punto por cada momento y se unen en orden."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Así se ve de un vistazo cuándo algo sube, cuándo baja y cuándo se mantiene, como la temperatura durante la semana o la cantidad de lluvia de cada mes. La línea solo tiene sentido cuando los datos siguen un orden, por eso no se usa para comparar categorías como colores o deportes."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Sube, baja o se mantiene.",
+         "Solo para datos ordenados en el tiempo."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Una tabla de frecuencias",
+      "definicion": "ordena los datos indicando cuántas veces aparece cada valor.",
+      "ejemplo": "Fútbol 10 · Vóley 6 · Tenis 4"
+     },
+     {
+      "concepto": "Las frecuencias de una tabla",
+      "definicion": "suman siempre la cantidad total de datos registrados.",
+      "ejemplo": "10 + 6 + 4 = 20"
+     },
+     {
+      "concepto": "En un gráfico circular",
+      "definicion": "cada porción es la parte del total que le toca a una categoría.",
+      "ejemplo": "10 de 20 → 180°"
+     },
+     {
+      "concepto": "El gráfico de líneas",
+      "definicion": "muestra cómo cambia un dato con el tiempo, uniendo los puntos en orden.",
+      "ejemplo": "Temperatura de lunes a jueves"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a poder calcular la media y la moda de un conjunto de datos y decidir qué dice cada una.",
@@ -615,7 +742,73 @@
      "8: la suma tiene que dar 32, y 7 + 8 + 9 = 24.",
      "4: 16 ÷ 4. El 2 es la moda, no la media."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Un número que resume todos",
+      "ejemplo": {
+       "motor": "datos",
+       "p": {
+        "modo": "media_moda"
+       }
+      },
+      "ejercicio": {
+       "motor": "datos_x",
+       "p": {
+        "modo": "media_moda"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Media y moda",
+        "texto": "La media, o promedio, se calcula sumando todos los datos y dividiendo por la cantidad de datos. La moda es el valor que más veces se repite."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las dos resumen un conjunto de datos, pero dicen cosas distintas. Si las notas de Luz son 7, 9, 7 y 5, la media es 28 ÷ 4 = 7 y la moda también es 7. Un valor muy distinto de los demás, como un 1 entre muchos 8, baja mucho la media pero no cambia la moda: por eso conviene mirar las dos antes de sacar conclusiones."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Notas 7, 9, 7, 5: media 7, moda 7.",
+         "Si ningún valor se repite, no hay moda.",
+         "Cuidado: un valor extremo mueve la media."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "La media de un conjunto de datos",
+      "definicion": "se obtiene sumando todos los datos y dividiendo por la cantidad que hay.",
+      "ejemplo": "7, 9, 7 y 5 → 28 ÷ 4 = 7"
+     },
+     {
+      "concepto": "La moda de un conjunto de datos",
+      "definicion": "es el valor que aparece más veces en la lista.",
+      "ejemplo": "7, 9, 7 y 5 → moda 7"
+     },
+     {
+      "concepto": "Un valor extremo",
+      "definicion": "cambia mucho la media pero no cambia la moda de los datos.",
+      "ejemplo": "8, 8, 8, 1 → media 6,25 · moda 8"
+     },
+     {
+      "concepto": "Si ningún valor se repite",
+      "definicion": "el conjunto de datos no tiene moda.",
+      "ejemplo": "3, 5, 8, 9 → sin moda"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a poder distinguir experimentos al azar, escribir todos los resultados posibles y clasificar sucesos en seguros, imposibles y posibles.",
@@ -856,7 +1049,134 @@
      "4: cara-cara, cara-ceca, ceca-cara, ceca-ceca.",
      "2: cara o ceca, igual que siempre. El azar no tiene memoria."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "¿Se puede saber antes?",
+      "ejemplo": {
+       "motor": "datos",
+       "p": {
+        "modo": "azar"
+       }
+      },
+      "ejercicio": {
+       "motor": "datos_x",
+       "p": {
+        "modo": "azar"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Experimento de azar",
+        "texto": "Un experimento es de azar cuando se conocen todos los resultados posibles pero no se puede saber cuál va a salir antes de hacerlo, como tirar una moneda o un dado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Sumar 2 + 3 siempre da 5, así que no es de azar. Soltar una piedra siempre termina con la piedra en el piso. En cambio, al sacar una bolita de una bolsa sin mirar, puede salir cualquiera. Distinguirlos es el primer paso para hablar de probabilidades, porque solo tiene sentido calcularlas en experimentos de azar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Tirar un dado: azar.",
+         "Calcular el doble de 8: no es azar."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Todos los resultados posibles",
+      "ejemplo": {
+       "motor": "datos",
+       "p": {
+        "modo": "muestral"
+       }
+      },
+      "ejercicio": {
+       "motor": "datos_x",
+       "p": {
+        "modo": "muestral"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Espacio muestral y sucesos",
+        "texto": "El espacio muestral es la lista de todos los resultados posibles de un experimento de azar, y un suceso es una parte de esa lista que cumple una condición."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Al tirar un dado, el espacio muestral es {1, 2, 3, 4, 5, 6}. El suceso «sale un número par» es {2, 4, 6}, y el suceso «sale más de 4» es {5, 6}. Escribir la lista completa evita olvidarse de algún caso, y contar cuántos resultados tiene cada suceso prepara el cálculo de probabilidades."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Dado: E = {1, 2, 3, 4, 5, 6}.",
+         "«Par» = {2, 4, 6}."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Contar combinaciones con una tabla",
+      "ejemplo": {
+       "motor": "combinaciones_tabla",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "combinaciones",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Contar casos con una tabla",
+        "texto": "Cuando un experimento combina dos elecciones, como una remera y una gorra o dos monedas, los casos posibles se cuentan con una tabla de doble entrada: cada casilla es una combinación."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Con 3 remeras y 2 gorras hay 3 × 2 = 6 combinaciones, porque cada remera puede ir con cada gorra. Al tirar dos monedas hay 4 casos: cara-cara, cara-ceca, ceca-cara y ceca-ceca. La tabla asegura que no falte ni se repita ninguno."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "3 remeras y 2 gorras: 6 combinaciones.",
+         "Dos monedas: 4 casos."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Un experimento de azar",
+      "definicion": "tiene resultados conocidos, pero no se sabe cuál va a salir antes de hacerlo.",
+      "ejemplo": "Tirar una moneda"
+     },
+     {
+      "concepto": "El espacio muestral",
+      "definicion": "es la lista completa de todos los resultados posibles de un experimento.",
+      "ejemplo": "Dado: {1, 2, 3, 4, 5, 6}"
+     },
+     {
+      "concepto": "Un suceso",
+      "definicion": "es una parte del espacio muestral que cumple una condición.",
+      "ejemplo": "«Sale par» = {2, 4, 6}"
+     },
+     {
+      "concepto": "Una tabla de doble entrada",
+      "definicion": "sirve para contar todas las combinaciones de dos elecciones.",
+      "ejemplo": "3 remeras × 2 gorras = 6"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a poder calcular la probabilidad de un suceso simple, escribirla como fracción, decimal y porcentaje, y comparar probabilidades.",
@@ -1136,7 +1456,69 @@
      "0.",
      "8: 3 + 5. La probabilidad es 3/8."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Favorables sobre posibles",
+      "ejemplo": {
+       "motor": "urna",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "probabilidad",
+       "p": {}
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Probabilidad",
+        "texto": "La probabilidad de un suceso se calcula dividiendo la cantidad de casos favorables por la cantidad de casos posibles, siempre que todos los casos tengan la misma chance de salir."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si en una bolsa hay 3 bolitas rojas y 5 azules, la probabilidad de sacar una roja es 3/8: hay 3 casos favorables de 8 posibles. Ese número se puede escribir como fracción, como decimal (0,375) o como porcentaje (37,5 %). Siempre está entre 0 y 1: vale 0 si el suceso es imposible y 1 si es seguro, y las probabilidades de todos los colores suman 1."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "3 rojas y 5 azules: P(roja) = 3/8.",
+         "P = 0: imposible · P = 1: seguro."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "La probabilidad de un suceso",
+      "definicion": "se calcula dividiendo los casos favorables por los casos posibles.",
+      "ejemplo": "3 rojas de 8 bolitas: 3/8",
+      "formula": "P = favorables ÷ posibles"
+     },
+     {
+      "concepto": "Una probabilidad",
+      "definicion": "se puede escribir como fracción, como decimal o como porcentaje.",
+      "ejemplo": "3/8 = 0,375 = 37,5 %"
+     },
+     {
+      "concepto": "La probabilidad siempre está entre 0 y 1",
+      "definicion": "y vale 0 si el suceso es imposible y 1 si es seguro.",
+      "ejemplo": "Sacar una verde de una bolsa sin verdes: 0"
+     },
+     {
+      "concepto": "Las probabilidades de todos los resultados",
+      "definicion": "de un experimento suman siempre 1.",
+      "ejemplo": "3/8 + 5/8 = 1"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
   }
  },
  "act": {
@@ -1163,7 +1545,8 @@
     "r": {
      "formula": "a+b+c"
     },
-    "e": "Se suman todas las frecuencias."
+    "e": "Se suman todas las frecuencias.",
+    "n": "aplicar"
    },
    {
     "t": "multiple_choice",
@@ -1177,7 +1560,53 @@
     "r": {
      "correcta": "20%"
     },
-    "e": "4/20 = 20/100."
+    "e": "4/20 = 20/100.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada situación según el gráfico que conviene usar.",
+    "o": {
+     "elementos": [
+      "La temperatura de cada día de la semana",
+      "Qué parte de la clase eligió cada deporte",
+      "Los ahorros de cada mes del año",
+      "Cómo se reparten los votos de una elección"
+     ],
+     "categorias": [
+      "Gráfico de líneas",
+      "Gráfico circular"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "La temperatura de cada día de la semana": "Gráfico de líneas",
+      "Qué parte de la clase eligió cada deporte": "Gráfico circular",
+      "Los ahorros de cada mes del año": "Gráfico de líneas",
+      "Cómo se reparten los votos de una elección": "Gráfico circular"
+     }
+    },
+    "e": "Líneas: cambio en el tiempo. Circular: partes de un total."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Juan armó un gráfico circular con 40 respuestas: 10 eligieron rojo. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "10 de 40 es un cuarto del total",
+      "Un cuarto del círculo es 360° ÷ 4",
+      "La porción del rojo mide 40°"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      2
+     ]
+    },
+    "e": "360° ÷ 4 = 90°: la porción mide 90°."
    }
   ],
   "2": [
@@ -1190,7 +1619,8 @@
       8
      ]
     },
-    "e": "32 ÷ 4 = 8."
+    "e": "32 ÷ 4 = 8.",
+    "n": "aplicar"
    },
    {
     "t": "multiple_choice",
@@ -1204,7 +1634,34 @@
     "r": {
      "correcta": "4"
     },
-    "e": "El 4 aparece tres veces."
+    "e": "El 4 aparece tres veces.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Las notas de Mati en Matemática fueron 6, 8, 9 y 5. ¿Qué nota tiene que sacarse en la quinta prueba para que su media sea 7?",
+    "o": {},
+    "r": {
+     "acepta": [
+      7
+     ]
+    },
+    "e": "Para media 7 en 5 notas la suma tiene que ser 35; ya tiene 28, le faltan 7."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] En un grupo, cuatro chicos tienen 12 años y uno tiene 40 (el profe). Tres chicos dicen qué representa mejor la edad típica del grupo. ¿Quién tiene razón?",
+    "o": [
+     "Ana: | la media, 17,6 años | es lo más justo",
+     "Beto: | la moda, 12 años | el 40 es un valor extremo",
+     "Caro: | el mayor, 40 años | manda el más grande"
+    ],
+    "r": {
+     "correcta": "Beto: | la moda, 12 años | el 40 es un valor extremo"
+    },
+    "e": "Un valor extremo sube mucho la media; la moda muestra mejor la edad típica."
    }
   ],
   "3": [
@@ -1232,7 +1689,8 @@
       "Sacar un número impar": "Posible"
      }
     },
-    "e": "El dado va del 1 al 6."
+    "e": "El dado va del 1 al 6.",
+    "n": "aplicar"
    },
    {
     "t": "numeric",
@@ -1243,7 +1701,47 @@
       12
      ]
     },
-    "e": "6 × 2 = 12."
+    "e": "6 × 2 = 12.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para contar las combinaciones de 3 remeras y 2 gorras.",
+    "o": [
+     "Cada casilla es una combinación",
+     "Pongo las remeras en las filas",
+     "Cuento las casillas: 3 × 2 = 6",
+     "Pongo las gorras en las columnas"
+    ],
+    "r": {
+     "orden": [
+      "Pongo las remeras en las filas",
+      "Pongo las gorras en las columnas",
+      "Cada casilla es una combinación",
+      "Cuento las casillas: 3 × 2 = 6"
+     ]
+    },
+    "e": "Filas, columnas, casillas y contar."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Sofi escribió el espacio muestral de tirar dos monedas. Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Cada moneda puede salir cara (C) o ceca (X)",
+      "Los casos son CC, CX y XX",
+      "Hay 3 resultados posibles"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "Falta XC: CX y XC son distintos. Hay 4 casos."
    }
   ],
   "4": [
@@ -1259,7 +1757,8 @@
     "r": {
      "correcta": "1/2"
     },
-    "e": "3 favorables de 6 posibles."
+    "e": "3 favorables de 6 posibles.",
+    "n": "aplicar"
    },
    {
     "t": "numeric",
@@ -1282,7 +1781,46 @@
     "r": {
      "formula": "r*100/(r+b)"
     },
-    "e": "Favorables ÷ posibles, llevado a 100."
+    "e": "Favorables ÷ posibles, llevado a 100.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "En una bolsa hay 4 bolitas rojas y ninguna verde. Clasificá cada suceso.",
+    "o": {
+     "elementos": [
+      "Sacar una bolita roja",
+      "Sacar una bolita verde",
+      "Sacar una bolita de color"
+     ],
+     "categorias": [
+      "Seguro (P = 1)",
+      "Imposible (P = 0)"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Sacar una bolita roja": "Seguro (P = 1)",
+      "Sacar una bolita verde": "Imposible (P = 0)",
+      "Sacar una bolita de color": "Seguro (P = 1)"
+     }
+    },
+    "e": "Si todos los casos son favorables, P = 1; si ninguno, P = 0."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] En una bolsa hay 2 bolitas rojas y 6 azules. Tres chicos calcularon la probabilidad de sacar una roja. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | rojas sobre azules | 2/6",
+     "Beto: | rojas sobre el total | 2/8 = 1/4",
+     "Caro: | hay dos colores | 1/2"
+    ],
+    "r": {
+     "correcta": "Beto: | rojas sobre el total | 2/8 = 1/4"
+    },
+    "e": "Casos posibles: todas las bolitas, 8. Los colores no tienen la misma chance."
    }
   ],
   "5": [
@@ -1296,7 +1834,8 @@
      ]
     },
     "e": "12 ÷ 3.",
-    "tiempo": 20
+    "tiempo": 20,
+    "n": "aplicar"
    },
    {
     "t": "multiple_choice",
@@ -1310,7 +1849,8 @@
      "correcta": "Imposible"
     },
     "e": "El dado llega al 6.",
-    "tiempo": 15
+    "tiempo": 15,
+    "n": "aplicar"
    },
    {
     "t": "multiple_choice",
@@ -1324,7 +1864,8 @@
      "correcta": "1/2"
     },
     "e": "1 de 2.",
-    "tiempo": 15
+    "tiempo": 15,
+    "n": "aplicar"
    },
    {
     "t": "numeric",
@@ -1336,7 +1877,8 @@
      ]
     },
     "e": "Repaso de la misión 19.",
-    "tiempo": 30
+    "tiempo": 30,
+    "n": "aplicar"
    }
   ]
  },
@@ -1344,15 +1886,18 @@
   [
    1,
    {
-    "t": "numeric",
-    "p": "Respondieron 8 alumnos rojo, 7 azul y 5 verde. ¿Cuántos respondieron en total?",
-    "o": {},
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "En una encuesta, 8 alumnos eligieron rojo, 7 azul y 5 verde. Como las frecuencias suman el total, respondieron ___ alumnos.",
+    "o": [],
     "r": {
-     "acepta": [
-      20
+     "huecos": [
+      [
+       "20"
+      ]
      ]
     },
-    "e": "8 + 7 + 5."
+    "e": "8 + 7 + 5 = 20."
    }
   ],
   [
@@ -1366,7 +1911,8 @@
       40
      ]
     },
-    "e": "10/25 = 40/100."
+    "e": "10/25 = 40/100.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1383,7 +1929,8 @@
     "r": {
      "correcta": "Líneas"
     },
-    "e": "Muestra cambios en el tiempo."
+    "e": "Muestra cambios en el tiempo.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1397,21 +1944,29 @@
       7
      ]
     },
-    "e": "35 ÷ 5."
+    "e": "35 ÷ 5.",
+    "n": "aplicar"
    }
   ],
   [
    2,
    {
-    "t": "numeric",
-    "p": "¿Cuál es la moda de 6, 7, 7, 8, 9, 7, 10?",
-    "o": {},
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para encontrar la moda de 6, 7, 7, 8, 9, 7, 10.",
+    "o": [
+     "El que más se repite es la moda: 7",
+     "Cuento cuántas veces aparece cada valor",
+     "Ordeno los datos: 6, 7, 7, 7, 8, 9, 10"
+    ],
     "r": {
-     "acepta": [
-      7
+     "orden": [
+      "Ordeno los datos: 6, 7, 7, 7, 8, 9, 10",
+      "Cuento cuántas veces aparece cada valor",
+      "El que más se repite es la moda: 7"
      ]
     },
-    "e": "Aparece tres veces."
+    "e": "Ordenar, contar y elegir el más repetido."
    }
   ],
   [
@@ -1426,7 +1981,8 @@
     "r": {
      "correcta": "Falso"
     },
-    "e": "12 ÷ 4 = 3. El 1 es la moda."
+    "e": "12 ÷ 4 = 3. El 1 es la moda.",
+    "n": "recordar"
    }
   ],
   [
@@ -1443,7 +1999,8 @@
     "r": {
      "correcta": "Tirar un dado"
     },
-    "e": "No se sabe el resultado antes."
+    "e": "No se sabe el resultado antes.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1457,7 +2014,8 @@
       4
      ]
     },
-    "e": "Cara-cara, cara-ceca, ceca-cara, ceca-ceca."
+    "e": "Cara-cara, cara-ceca, ceca-cara, ceca-ceca.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1473,7 +2031,8 @@
     "r": {
      "correcta": "Seguro"
     },
-    "e": "Pasa siempre."
+    "e": "Pasa siempre.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1490,7 +2049,8 @@
     "r": {
      "correcta": "3/8"
     },
-    "e": "3 favorables de 8 posibles."
+    "e": "3 favorables de 8 posibles.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1504,7 +2064,8 @@
       25
      ]
     },
-    "e": "1/4 = 25%."
+    "e": "1/4 = 25%.",
+    "n": "aplicar"
    }
   ],
   [
@@ -1519,22 +2080,43 @@
     "r": {
      "correcta": "Falso"
     },
-    "e": "Va de 0 a 1."
+    "e": "Va de 0 a 1.",
+    "n": "recordar"
    }
   ],
   [
    4,
    {
-    "t": "numeric",
-    "p": "¿Cuál es la probabilidad de un suceso seguro?",
-    "o": {},
-    "r": {
-     "acepta": [
-      1
+    "t": "classify",
+    "n": "aplicar",
+    "p": "Clasificá cada probabilidad según si es posible o no.",
+    "o": {
+     "elementos": [
+      "1",
+      "0",
+      "3/8",
+      "1,5",
+      "−0,2",
+      "0,75"
+     ],
+     "categorias": [
+      "Puede ser una probabilidad",
+      "No puede ser una probabilidad"
      ]
     },
-    "e": "Siempre pasa: vale 1."
+    "r": {
+     "categorias": {
+      "1": "Puede ser una probabilidad",
+      "0": "Puede ser una probabilidad",
+      "3/8": "Puede ser una probabilidad",
+      "1,5": "No puede ser una probabilidad",
+      "−0,2": "No puede ser una probabilidad",
+      "0,75": "Puede ser una probabilidad"
+     }
+    },
+    "e": "Toda probabilidad está entre 0 y 1."
    }
   ]
- ]
+ ],
+ "actualizar_preguntas": true
 }
