@@ -119,6 +119,12 @@ function leccion(ruta, M, n, L, donde) {
     if (palabras((r.concepto || '') + ' ' + (r.definicion || '')).length < E.recDef + 2) mal(d, 'la definición tiene que ser una oración completa (' + E.recDef + ' palabras o más), no dos palabras');
     if (!r.ejemplo || palabras(r.ejemplo).length < 2) mal(d, 'falta el ejemplo concreto (ej.: "D(18) = {1, 2, 3, 6, 9, 18}")');
   });
+  // 26/11/2026: los ejemplos son propios: ninguna cuenta del PDF o de la clase de ese nivel se repite en la lección.
+  { const fuente = ' ' + limpio(JSON.stringify(((M.niveles[n] || {}).secciones || []))).toLowerCase().replace(/\\u2212/g, '−') + ' ';
+    const todo = L.temas.map(t => textoBloques(t.explicacion || [])).concat((L.recuerda || []).map(r => (r.definicion || '') + ' ' + (r.ejemplo || ''))).join(' ');
+    const re = /\d[\d.,]*\s?(?:[×x+−\-÷:/]|y|por|de)\s?\d[\d.,]*/g, comunes = new Set(['60', '90', '100', '180', '360', '1.000', '10.000', '10']); const vistas = new Set();
+    (limpio(todo).toLowerCase().match(re) || []).forEach(g => { const nums = g.match(/\d[\d.,]*/g).map(x => x.replace(/[.,]$/, '')); if (!nums.some(x => parseFloat(x.replace(/\./g, '').replace(',', '.')) >= 13 && !comunes.has(x))) return;
+      const g2 = g.replace(/[.,]$/, ''); if (!vistas.has(g2) && fuente.includes(g2)) { vistas.add(g2); mal(donde, 'el ejemplo «' + g2 + '» es la misma cuenta del PDF del nivel: los ejemplos tienen que ser propios'); } }); }
   // 26/11/2026: NO hay mínimo de pantallas. Una pantalla = un saber nuevo con ejemplo y práctica PROPIOS.
   // Advertencias, contraejemplos, casos especiales y "verificar" van dentro de la pantalla a la que pertenecen.
   const vistos = {};

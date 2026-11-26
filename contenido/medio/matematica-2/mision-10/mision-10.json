@@ -175,7 +175,7 @@
         "tipo": "lista",
         "items": [
          "UNIDADES DEBAJO DE UNIDADES.",
-         "576 − 234: EL 576 VA ARRIBA.",
+         "687 − 352: EL 687 VA ARRIBA.",
          "RESTAMOS PRIMERO LAS <b>UNIDADES</b>, DESPUÉS DECENAS Y CENTENAS."
         ]
        }
@@ -200,12 +200,12 @@
      {
       "concepto": "ARRIBA EL GRANDE",
       "definicion": "DEL NÚMERO DE ARRIBA SACAMOS EL DE ABAJO.",
-      "ejemplo": "576 − 234"
+      "ejemplo": "687 − 352"
      },
      {
       "concepto": "EL ORDEN",
       "definicion": "RESTAMOS DE DERECHA A IZQUIERDA.",
-      "ejemplo": "576 − 234 = 342"
+      "ejemplo": "687 − 352 = 335"
      }
     ]
    }
@@ -379,7 +379,7 @@
         "tipo": "lista",
         "items": [
          "796 − 352 = 444.",
-         "865 − 432 = 433.",
+         "978 − 546 = 432.",
          "SI UNA COLUMNA <b>DA 0</b>, ESCRIBIMOS EL 0 PARA GUARDAR EL LUGAR."
         ]
        }
@@ -409,7 +409,7 @@
      {
       "concepto": "EL CERO",
       "definicion": "SI UNA COLUMNA DA CERO, LO ESCRIBIMOS.",
-      "ejemplo": "579 − 274 = 305"
+      "ejemplo": "698 − 395 = 303"
      }
     ]
    }
@@ -582,7 +582,7 @@
        {
         "tipo": "lista",
         "items": [
-         "EN 352 − 128: 2 − 8 NO ALCANZA.",
+         "EN 461 − 237: 1 − 7 NO ALCANZA.",
          "NO SE HACE 8 − 2.",
          "<b>ABRIMOS UN PAQUETE</b> DE AL LADO: SON 10 SUELTOS MÁS, Y AL PAQUETE LE QUEDA UNO MENOS."
         ]
@@ -825,7 +825,7 @@
        {
         "tipo": "lista",
         "items": [
-         "463 − 247 = 226: 226 + 247 = 473.",
+         "582 − 365 = 227: 227 + 365 = 592.",
          "NO DA 463: HAY UN ERROR."
         ]
        }
@@ -852,12 +852,12 @@
      {
       "concepto": "CONTROLAR",
       "definicion": "SUMAMOS EL RESULTADO Y LO QUE RESTAMOS.",
-      "ejemplo": "224 + 128 = 352"
+      "ejemplo": "224 + 237 = 461"
      },
      {
       "concepto": "ERRORES",
       "definicion": "SI LA SUMA NO DA EL NÚMERO DE ARRIBA, HAY UN ERROR.",
-      "ejemplo": "226 + 247 ≠ 463"
+      "ejemplo": "227 + 365 ≠ 582"
      }
     ]
    }

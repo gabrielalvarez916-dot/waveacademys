@@ -592,12 +592,12 @@
        },
        {
         "tipo": "parrafo",
-        "texto": "Simplificar de una sola vez con el MCD ahorra pasos: para 18/24, MCD(18, 24) = 6, y queda 3/4. También se puede simplificar de a poco, pero hay que llegar hasta el final."
+        "texto": "Simplificar de una sola vez con el MCD ahorra pasos: para 20/28, MCD(20, 28) = 4, y queda 5/7. También se puede simplificar de a poco, pero hay que llegar hasta el final."
        },
        {
         "tipo": "lista",
         "items": [
-         "18/24 = 3/4 (dividido 6).",
+         "20/28 = 5/7 (dividido 4).",
          "Si el MCD es 1, ya es irreducible."
         ]
        }
@@ -651,7 +651,7 @@
      {
       "concepto": "La fracción irreducible",
       "definicion": "se obtiene dividiendo el numerador y el denominador por su máximo común divisor.",
-      "ejemplo": "18/24 = 3/4"
+      "ejemplo": "20/28 = 5/7"
      },
      {
       "concepto": "Los productos cruzados",

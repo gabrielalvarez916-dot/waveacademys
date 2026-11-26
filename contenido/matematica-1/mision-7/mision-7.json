@@ -596,7 +596,7 @@
        {
         "tipo": "lista",
         "items": [
-         "12 y 18: 6 × 36 = 216 = 12 × 18.",
+         "8 y 20: 4 × 40 = 160 = 8 × 20.",
          "Si son coprimos, el MCM es el producto."
         ]
        }
@@ -617,7 +617,7 @@
      {
       "concepto": "La relación entre MCD y MCM",
       "definicion": "dice que su producto es igual al producto de los dos números.",
-      "ejemplo": "6 × 36 = 12 × 18 = 216",
+      "ejemplo": "4 × 40 = 8 × 20 = 160",
       "formula": "MCD × MCM = a × b"
      },
      {
@@ -830,7 +830,7 @@
        },
        {
         "tipo": "parrafo",
-        "texto": "La parte tiene que dividir a las dos cantidades, por eso es un divisor común; y como se pide la más grande, es el máximo. Con figuritas y stickers, o con tiras de distinto largo, se piensa igual."
+        "texto": "La parte tiene que dividir a las dos cantidades, por eso es un divisor común; y como se pide la más grande, es el máximo. Por ejemplo, con 30 lápices y 45 gomas se arman como máximo 15 kits iguales sin que sobre nada."
        },
        {
         "tipo": "lista",
@@ -873,44 +873,13 @@
         ]
        }
       ]
-     },
-     {
-      "titulo": "Cortar y embaldosar",
-      "ejemplo": {
-       "motor": "factores",
-       "p": {
-        "modo": "mcd_desc"
-       }
-      },
-      "ejercicio": {
-       "motor": "mcd_mcm_problemas",
-       "p": {}
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Elegir MCD o MCM",
-        "texto": "Para elegir entre MCD y MCM se piensa si la respuesta tiene que entrar justo en los datos (MCD, más chica) o tiene que contener a los datos (MCM, más grande)."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Embaldosar un patio de 12 × 20 con baldosas cuadradas lo más grandes posible es un problema de MCD: la baldosa entra justo en los dos lados. Armar el cuadrado más chico con rectángulos de 12 × 20 es de MCM."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "¿Más chica que los datos? → MCD.",
-         "¿Más grande que los datos? → MCM."
-        ]
-       }
-      ]
      }
     ],
     "recuerda": [
      {
       "concepto": "Un problema de MCD",
       "definicion": "pide repartir o cortar en partes iguales lo más grandes posible, sin que sobre.",
-      "ejemplo": "54 figuritas y 72 stickers → 18 paquetes"
+      "ejemplo": "30 lápices y 45 gomas → 15 kits iguales"
      },
      {
       "concepto": "Un problema de MCM",
@@ -918,9 +887,9 @@
       "ejemplo": "Alarmas cada 15 y 25 min → cada 75 min"
      },
      {
-      "concepto": "Para elegir",
-      "definicion": "se piensa si la respuesta entra justo en los datos o los contiene.",
-      "ejemplo": "Baldosa más grande → MCD · Cuadrado más chico → MCM"
+      "concepto": "Después de la primera coincidencia",
+      "definicion": "las cosas vuelven a coincidir cada vez que pasa esa misma cantidad, el MCM.",
+      "ejemplo": "Cada 15 y 25 min → a los 75, 150 y 225 min"
      },
      {
       "concepto": "Con tres cantidades",
