@@ -159,14 +159,16 @@ window.WaveLeccionBanco = (function () {
   } };
 
   // 4. Escalera de unidades (longitud, capacidad, masa)
-  var UNI = { longitud: ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'], capacidad: ['kl', 'hl', 'dal', 'l', 'dl', 'cl', 'ml'], masa: ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'] };
+  var UNI = { longitud: ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'], capacidad: ['kl', 'hl', 'dal', 'l', 'dl', 'cl', 'ml'], masa: ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'],
+    superficie: ['km²', 'hm²', 'dam²', 'm²', 'dm²', 'cm²', 'mm²'], volumen: ['km³', 'hm³', 'dam³', 'm³', 'dm³', 'cm³', 'mm³'] };
+  var BASE_U = { superficie: 100, volumen: 1000 };
   M.escalera_unidades = { tipo: 'ejemplo', nombre: 'Escalera de unidades', render: function (el, p) {
-    var us = UNI[p.magnitud] || UNI.longitud, de = 3, a = 5;
+    var us = UNI[p.magnitud] || UNI.longitud, base = BASE_U[p.magnitud] || 10, de = 3, a = 5;
     el.innerHTML = '<p class="lb-ayuda">Tocá la unidad de partida y después la de llegada.</p><div class="lb-esca"></div><div class="lb-in-f"><label>Cantidad</label><input type="text" inputmode="decimal" class="lb-inp" value="' + R(2, 90) + '"></div><div class="lb-vista"></div>';
     var esca = el.querySelector('.lb-esca'), inp = el.querySelector('input'), v = el.querySelector('.lb-vista'), paso = 0;
     function pintar() {
       esca.innerHTML = us.map(function (u, k) { return '<button type="button" class="lb-esc-u' + (k === de ? ' de' : '') + (k === a ? ' a' : '') + '" data-u="' + k + '" style="margin-left:' + k * 7 + '%">' + u + '</button>'; }).join('');
-      var x = num(inp.value), d = a - de, f = Math.pow(10, Math.abs(d));
+      var x = num(inp.value), d = a - de, f = Math.pow(base, Math.abs(d));
       if (!isFinite(x)) { v.innerHTML = '<p class="lb-ayuda">Escribí una cantidad.</p>'; return; }
       v.innerHTML = '<p class="lb-nota">Desde <b>' + us[de] + '</b> hasta <b>' + us[a] + '</b>: ' + (d === 0 ? 'es la misma unidad.' : (d > 0 ? 'bajás ' + d + ' escalón' + (d > 1 ? 'es' : '') + ': <b>× ' + fmt(f) + '</b>' : 'subís ' + (-d) + ' escalón' + (d < -1 ? 'es' : '') + ': <b>: ' + fmt(f) + '</b>')) + '</p>' +
         (d ? '<p class="lb-res">' + fmt(x) + ' ' + us[de] + ' = ' + fmt(d > 0 ? x * f : x / f) + ' ' + us[a] + '</p>' : '');
@@ -489,6 +491,8 @@ window.WaveLeccionBanco = (function () {
     motores: M,
     tiene: function (id) { return !!M[id]; },
     render: function (el, cfg, api) { var m = M[cfg && cfg.motor]; if (!m) return false; m.render(el, cfg.p || {}, Object.assign({}, api0, api || {})); return true; },
-    util: { letras: letras, fraccionEnLetras: fraccionEnLetras, divisores: divisores, esPrimo: esPrimo }
+    util: { letras: letras, fraccionEnLetras: fraccionEnLetras, divisores: divisores, esPrimo: esPrimo },
+    // herramientas internas para los motores de js/leccion-banco2.js (mismo banco, solo lección)
+    _h: { R: R, pick: pick, mezclar: mezclar, esc: esc, divisores: divisores, esPrimo: esPrimo, mcd: mcd, mcm: mcm, fmt: fmt, sig: sig, num: num, norm: norm, chip: chip, fr: fr, ejercicio: ejercicio, tocarYUbicar: tocarYUbicar }
   };
 })();

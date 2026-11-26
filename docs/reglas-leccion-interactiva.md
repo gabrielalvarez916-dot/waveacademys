@@ -14,7 +14,7 @@ En `mision-N.json`, en cada nivel: `niveles.N.leccion = { "temas": [ ... ] }`. C
   "ejercicio": {"motor": "mcd_guiado", "p": {}} }
 ```
 Los bloques son los mismos del PDF: `parrafo`, `definicion`, `pasos` (items), `ejemplo` (titulo, texto, items), `tabla`, `imagen`, `importante`, más `error` (titulo = el error, texto = por qué está mal y cómo darse cuenta).
-`ejemplo` y `ejercicio` salen del BANCO DE LA LECCIÓN (`js/leccion-banco.js`), que es otro banco, separado del de actividades: nunca se usan motores de actividades acá ni motores de la lección en actividades.
+`ejemplo` y `ejercicio` salen del BANCO DE LA LECCIÓN (`js/leccion-banco.js` + `js/leccion-banco2.js`, catálogo en `docs/banco-leccion.md`), que es otro banco, separado del de actividades: nunca se usan motores de actividades acá ni motores de la lección en actividades.
 
 ## Qué tiene que tener cada tema (obligatorio)
 1. **Qué es**: definición clara y precisa (bloque `definicion`), con las palabras del nivel (1.º año: 12 años, no son bobos).
