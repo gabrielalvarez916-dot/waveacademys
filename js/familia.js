@@ -1469,10 +1469,17 @@
     vista.innerHTML='<h1 class="vista-titulo">Guías para compartir</h1><div id="guias-familia"><div class="vacio">Cargando…</div></div>';
     var cont=document.getElementById('guias-familia');
     try {
-      var rs=await Promise.all([cargarDatos(),fetch('/contenido/familias/guias/index.json',{cache:'no-cache'})]);
-      if(!rs[1].ok) throw Error('Índice no disponible');
-      var d=rs[0],idx=await rs[1].json(),hijos=d.hijos||[],elegido=hijos[0]||null,paquetes=[];
-      await Promise.all((idx.guias||[]).map(async function(x){var r=await fetch('/'+x.archivo,{cache:'no-cache'});if(r.ok)paquetes.push(await r.json());}));
+      var rs=await Promise.all([
+        cargarDatos(),
+        sb.from('guias_familiares').select('nivel,anio,materia,titulo,contenido,orden').eq('publicado',true).order('orden')
+      ]);
+      if(rs[1].error) throw rs[1].error;
+      var d=rs[0],hijos=d.hijos||[],elegido=hijos[0]||null;
+      var paquetes=(rs[1].data||[]).map(function(x){
+        var p=x.contenido||{};
+        p.nivel=x.nivel; p.anio=x.anio; p.materia=x.materia; p.titulo=x.titulo;
+        return p;
+      });
       var fichas=[];paquetes.forEach(function(p){(p.guias||[]).forEach(function(g){fichas.push({paquete:p,guia:g});});});
       function opts(k,t){var vals=Array.from(new Set(fichas.map(function(f){return f.paquete[k];}).filter(Boolean))).sort();return '<option value="">Todos los '+t+'</option>'+vals.map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>';}).join('');}
       function pintar(){
