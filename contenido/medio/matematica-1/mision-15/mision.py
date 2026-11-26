@@ -136,36 +136,108 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "34. 24.", "solo": "El 8.", "carpeta": ["37.", "27.", "17."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+for _N in (N1, N2, N3, N4): _N["carpeta_nivel"] = ["aplicar", "aplicar", "aplicar"]
+
+N1["leccion"] = {"temas": [
+ T("LA PANTALLA Y LAS TECLAS", [LD("LA CALCULADORA", "LA <b>CALCULADORA</b> TIENE UNA PANTALLA Y TECLAS QUE SE APRIETAN."),
+   LL("LA PANTALLA MUESTRA LOS NÚMEROS.", "HAY TECLAS DE NÚMEROS Y DE SIGNOS.")],
+   {"modo": "calcu", "que": "partes"}, {"modo": "calcu", "que": "partes"}),
+ T("LAS TECLAS DE SIGNOS", [LD("LOS SIGNOS", "EL <b>+</b> SUMA, EL <b>−</b> RESTA, EL <b>=</b> DA EL RESULTADO Y LA <b>C</b> BORRA."),
+   LL("SIN EL = NO SALE EL RESULTADO.", "SI TE EQUIVOCÁS, APRETÁ C.")],
+   {"modo": "calcu", "que": "partes"}, {"modo": "calcu", "que": "partes"}),
+], "recuerda": [
+ RC("LA PANTALLA", "ES DONDE LA CALCULADORA MUESTRA LOS NÚMEROS.", "MUESTRA EL 8"),
+ RC("LOS SIGNOS", "EL MÁS SUMA, EL MENOS RESTA Y EL IGUAL DA EL RESULTADO.", "C BORRA TODO"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("EL ORDEN DE LAS TECLAS", [LD("EN ORDEN", "APRETAMOS EN ORDEN: <b>NÚMERO, SIGNO, NÚMERO E =</b>."),
+   LL("PARA 15 APRETAMOS 1 Y DESPUÉS 5.", "AL FINAL VA EL =.")],
+   {"modo": "calcu", "que": "teclas", "op": "suma"}, {"modo": "calcu", "que": "teclas"}),
+ T("SUMAR Y RESTAR", [LD("SUMAR Y RESTAR", "CON <b>+</b> HACEMOS SUMAS Y CON <b>−</b> HACEMOS RESTAS."),
+   LL("7, +, 5, = DA 12.", "1, 5, −, 4, = DA 11.")],
+   {"modo": "calcu", "que": "teclas", "op": "resta"}, {"modo": "calcu", "que": "teclas"}),
+], "recuerda": [
+ RC("EL ORDEN", "NÚMERO, SIGNO, NÚMERO Y DESPUÉS EL IGUAL.", "8, +, 6, = DA 14"),
+ RC("RESTAR", "USAMOS LA TECLA DEL MENOS Y DESPUÉS EL IGUAL.", "20, −, 5, = DA 15"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("PENSAR ANTES DE APRETAR", [LD("PENSAR", "ANTES DE APRETAR, <b>PENSÁ</b> MÁS O MENOS CUÁNTO VA A DAR."),
+   LL("20 + 3 TIENE QUE DAR CERCA DE 20.", "SI SALE 50, ALGO ESTÁ MAL.")],
+   {"modo": "calcu", "que": "controlar"}, {"modo": "calcu", "que": "controlar"}),
+ T("ENCONTRAR ERRORES", [LD("ERRORES", "LA CALCULADORA HACE <b>LO QUE APRETAMOS</b>: SI APRETAMOS MAL, SALE MAL."),
+   LL("6 + 2 NO PUEDE DAR 62.", "SI DUDÁS, BORRÁ Y HACELO DE NUEVO.")],
+   {"modo": "calcu", "que": "controlar"}, {"modo": "calcu", "que": "controlar"}),
+], "recuerda": [
+ RC("PENSAR ANTES", "IMAGINAMOS EL RESULTADO ANTES DE APRETAR LAS TECLAS.", "20 + 3 DA CERCA DE 20"),
+ RC("ERRORES", "SI APRETAMOS MAL, EL RESULTADO SALE MAL.", "6 + 2 = 8, NO 62"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("SUMAR 1", [LD("UNO MÁS", "AL <b>SUMAR 1</b>, CAMBIA LA ÚLTIMA CIFRA: SALE EL SIGUIENTE."),
+   LL("38 + 1 = 39.", "39 + 1 = 40: AHÍ CAMBIAN LAS DOS.")],
+   {"modo": "calcu", "que": "uno_diez", "op": "mas1"}, {"modo": "calcu", "que": "uno_diez"}),
+ T("SUMAR Y RESTAR 10", [LD("DIEZ MÁS O MENOS", "AL SUMAR O RESTAR <b>10</b>, CAMBIA LA PRIMERA CIFRA Y LA ÚLTIMA QUEDA IGUAL."),
+   LL("25 + 10 = 35.", "47 − 10 = 37.")],
+   {"modo": "calcu", "que": "uno_diez", "op": "menos10"}, {"modo": "calcu", "que": "uno_diez"}),
+], "recuerda": [
+ RC("SUMAR 1", "CAMBIA LA ÚLTIMA CIFRA Y SALE EL SIGUIENTE NÚMERO.", "52 + 1 = 53"),
+ RC("SUMAR O RESTAR 10", "CAMBIA LA PRIMERA CIFRA: UNA DECENA MÁS O MENOS.", "62 − 10 = 52"),
+]}
+
+# ---------- ACTIVIDADES (4 por nivel + 4 generales) y EXAMEN, con su nivel "n" ----------
 ACT = {
-"1": [MC("¿DÓNDE SE VE EL RESULTADO?", ["EN LA PANTALLA", "EN LAS TECLAS", "EN LA C"], "EN LA PANTALLA", "LA PANTALLA MUESTRA LOS NÚMEROS."),
-      MC("¿QUÉ TECLA BORRA TODO?", ["C", "=", "+"], "C", "LA C BORRA.")],
-"2": [N("APRETÁS 7, +, 5 Y =. ¿QUÉ SALE?", 12, "7 + 5 = 12."),
-      N("APRETÁS 1, 5, −, 4 Y =. ¿QUÉ SALE?", 11, "15 − 4 = 11.")],
-"3": [MC("TOMI HIZO 20 + 3 Y LE SALIÓ 50. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "20 + 3 = 23."),
-      N("¿CUÁNTO TIENE QUE DAR 10 − 4?", 6, "10 − 4 = 6.")],
-"4": [N("3, 13, 23, ___ ¿QUÉ SIGUE?", 33, "SUMAMOS 10."),
-      N("¿CUÁNTO ES 47 − 10?", 37, "BAJA UNA DECENA.")],
-"5": [N("RELÁMPAGO. APRETÁS 9, +, 9 Y =. ¿QUÉ SALE?", 18, "9 + 9 = 18.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 25 + 10?", 35, "CAMBIA EL PRIMER NÚMERO.", tiempo=30),
-      N("RELÁMPAGO. ¿CUÁNTO ES 8 + 1?", 9, "UNO MÁS.", tiempo=30),
-      MC("RELÁMPAGO. ¿QUÉ TECLA DA EL RESULTADO?", ["=", "+", "C"], "=", "SIN EL = NO SALE.", tiempo=30)],
+"1": [MC("¿DÓNDE SE VE EL RESULTADO?", ["EN LA PANTALLA", "EN LAS TECLAS", "EN LA C"], "EN LA PANTALLA", "LA PANTALLA MUESTRA LOS NÚMEROS.", **RE),
+      MC("¿QUÉ TECLA BORRA TODO?", ["C", "=", "+"], "C", "LA C BORRA.", **RE),
+      UNIR("UNÍ CADA TECLA CON LO QUE HACE.", ["+", "−", "="], ["DA EL RESULTADO", "SUMA", "RESTA"], {"+": "SUMA", "−": "RESTA", "=": "DA EL RESULTADO"}, "+ SUMA, − RESTA E = DA EL RESULTADO.", **A),
+      MC("LEO APRETÓ 4, + Y 3, PERO NO LE SALE EL RESULTADO. ¿QUÉ TECLA LE FALTÓ?", ["=", "C", "−"], "=", "SIN EL = NO SALE EL RESULTADO.", **ER)],
+"2": [N("APRETÁS 7, +, 5 Y =. ¿QUÉ SALE?", 12, "7 + 5 = 12.", **A),
+      N("APRETÁS 1, 5, −, 4 Y =. ¿QUÉ SALE?", 11, "15 − 4 = 11.", **A),
+      ORD("ORDENÁ LAS TECLAS PARA HACER 8 + 3.", ["=", "3", "8", "+"], ["8", "+", "3", "="], "NÚMERO, SIGNO, NÚMERO E IGUAL.", **A),
+      MC("SOFI QUERÍA ESCRIBIR 25 Y APRETÓ 5 Y DESPUÉS 2. ¿QUÉ NÚMERO LE QUEDÓ?", ["52", "25", "7"], "52", "EL ORDEN IMPORTA: PRIMERO VA EL 2.", **ER)],
+"3": [MC("TOMI HIZO 20 + 3 Y LE SALIÓ 50. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "20 + 3 = 23.", **ER),
+      N("¿CUÁNTO TIENE QUE DAR 10 − 4?", 6, "10 − 4 = 6.", **A),
+      CLAS("¿ESTÁ BIEN O MAL?", ["5 + 4 = 9", "6 + 2 = 62", "10 − 3 = 7", "30 + 5 = 80"], ["BIEN", "MAL"],
+           {"5 + 4 = 9": "BIEN", "6 + 2 = 62": "MAL", "10 − 3 = 7": "BIEN", "30 + 5 = 80": "MAL"}, "6 + 2 = 8 Y 30 + 5 = 35.", **AN),
+      MC("[[problema]] ANA SUMÓ 40 + 2 Y LA CALCULADORA DICE 402. ¿QUÉ LE CONVIENE HACER?", ["BORRAR Y HACERLO DE NUEVO", "ANOTAR 402", "APRETAR + OTRA VEZ"], "BORRAR Y HACERLO DE NUEVO", "40 + 2 = 42: SE APRETÓ MAL.", **AN)],
+"4": [N("3, 13, 23, ___ ¿QUÉ SIGUE?", 33, "SUMAMOS 10.", **A),
+      N("¿CUÁNTO ES 47 − 10?", 37, "BAJA UNA DECENA.", **A),
+      UNIR("UNÍ CADA CUENTA CON SU RESULTADO.", ["56 + 1", "56 + 10", "56 − 10"], ["46", "57", "66"], {"56 + 1": "57", "56 + 10": "66", "56 − 10": "46"}, "+1 CAMBIA LA ÚLTIMA CIFRA; ±10, LA PRIMERA.", **AN),
+      FB("COMPLETÁ: 29 + 1 = ___", [["30"]], "DESPUÉS DEL 29 VIENE EL 30.", **A)],
+"5": [N("RELÁMPAGO. APRETÁS 9, +, 9 Y =. ¿QUÉ SALE?", 18, "9 + 9 = 18.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 25 + 10?", 35, "CAMBIA EL PRIMER NÚMERO.", tiempo=30, **A),
+      N("RELÁMPAGO. ¿CUÁNTO ES 8 + 1?", 9, "UNO MÁS.", tiempo=30, **A),
+      MC("RELÁMPAGO. ¿QUÉ TECLA DA EL RESULTADO?", ["=", "+", "C"], "=", "SIN EL = NO SALE.", tiempo=30, **RE)],
 }
 EXAMEN = [
- [1, MC("¿CÓMO SE LLAMAN LOS BOTONES DE LA CALCULADORA?", ["TECLAS", "PANTALLAS", "NÚMEROS"], "TECLAS", "SE APRIETAN.")],
- [1, MC("¿QUÉ TECLA SIRVE PARA SUMAR?", ["+", "−", "C"], "+", "EL + ES EL SIGNO DE SUMAR.")],
- [1, MC("PARA ESCRIBIR 25 APRETAMOS…", ["2 Y 5", "5 Y 2", "25 VECES"], "2 Y 5", "PRIMERO EL 2.")],
- [2, N("APRETÁS 8, +, 6 Y =. ¿QUÉ SALE?", 14, "8 + 6 = 14.")],
- [2, N("APRETÁS 2, 0, −, 5 Y =. ¿QUÉ SALE?", 15, "20 − 5 = 15.")],
- [2, MC("¿QUÉ TECLA VA AL FINAL?", ["=", "+", "−"], "=", "EL = DA EL RESULTADO.")],
- [3, MC("LA CALCULADORA DICE 6 + 2 = 62. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "6 + 2 = 8.")],
- [3, N("¿CUÁNTO TIENE QUE DAR 30 + 10?", 40, "3 + 1 = 4 BOLSITAS.")],
- [3, MC("SI APRETAMOS MAL, EL RESULTADO…", ["SALE MAL", "SALE BIEN IGUAL"], "SALE MAL", "LA CALCULADORA HACE LO QUE APRETAMOS.")],
- [4, N("5, 15, 25, ___ ¿QUÉ SIGUE?", 35, "SUMAMOS 10.")],
- [4, N("¿CUÁNTO ES 62 − 10?", 52, "BAJA UNA DECENA.")],
- [4, N("¿CUÁNTO ES 39 + 1?", 40, "UNO MÁS.")],
- [4, MC("AL SUMAR 10, ¿QUÉ NÚMERO CAMBIA?", ["EL PRIMERO", "EL ÚLTIMO", "NINGUNO"], "EL PRIMERO", "CAMBIAN LAS DECENAS.")],
+ [1, MC("¿CÓMO SE LLAMAN LOS BOTONES DE LA CALCULADORA?", ["TECLAS", "PANTALLAS", "NÚMEROS"], "TECLAS", "SE APRIETAN.", **RE)],
+ [1, MC("¿QUÉ TECLA SIRVE PARA SUMAR?", ["+", "−", "C"], "+", "EL + ES EL SIGNO DE SUMAR.", **RE)],
+ [1, MC("PARA ESCRIBIR 25 APRETAMOS…", ["2 Y 5", "5 Y 2", "25 VECES"], "2 Y 5", "PRIMERO EL 2.", **A)],
+ [2, N("APRETÁS 8, +, 6 Y =. ¿QUÉ SALE?", 14, "8 + 6 = 14.", **A)],
+ [2, N("APRETÁS 2, 0, −, 5 Y =. ¿QUÉ SALE?", 15, "20 − 5 = 15.", **A)],
+ [2, ORD("ORDENÁ LAS TECLAS PARA HACER 9 − 4.", ["4", "=", "9", "−"], ["9", "−", "4", "="], "NÚMERO, SIGNO, NÚMERO E IGUAL.", **A)],
+ [3, MC("LA CALCULADORA DICE 6 + 2 = 62. ¿ESTÁ BIEN?", ["NO", "SÍ"], "NO", "6 + 2 = 8.", **ER)],
+ [3, N("¿CUÁNTO TIENE QUE DAR 30 + 10?", 40, "3 + 1 = 4 BOLSITAS.", **A)],
+ [3, MC("[[problema]] JUAN QUIERE SUMAR 10 + 5 Y LE SALE 105. ¿QUÉ PASÓ?", ["NO APRETÓ EL +", "LA CALCULADORA ESTÁ ROTA", "ESTÁ BIEN"], "NO APRETÓ EL +", "SIN EL + JUNTÓ LAS CIFRAS: 10 + 5 = 15.", **AN)],
+ [4, N("5, 15, 25, ___ ¿QUÉ SIGUE?", 35, "SUMAMOS 10.", **A)],
+ [4, N("¿CUÁNTO ES 62 − 10?", 52, "BAJA UNA DECENA.", **A)],
+ [4, FB("COMPLETÁ: 39 + 1 = ___", [["40"]], "UNO MÁS.", **A)],
+ [4, MC("AL SUMAR 10, ¿QUÉ NÚMERO CAMBIA?", ["EL PRIMERO", "EL ÚLTIMO", "NINGUNO"], "EL PRIMERO", "CAMBIAN LAS DECENAS.", **A)],
 ]
-M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 15, "estilo": "primeros",
+
+M = {"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 15, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: calculadora", "examen_titulo": "Nivel jefe: sumar y restar con calculadora",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-15.json"), "w", encoding="utf-8"), ensure_ascii=False)

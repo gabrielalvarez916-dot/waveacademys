@@ -1493,6 +1493,8 @@
     else H = { h: 'SE NECESITAN <b>' + a + '</b> ' + P + '. HAY <b>' + b + '</b>.', q: '¿' + CU + ' FALTAN?', op: '−', w: 'NECESITO MÁS DE LO QUE HAY', r: a - b, c: a + ' − ' + b + ' = ' + (a - b), v: p1Fila(a, o, { tenue: b }) };
     return H;
   }
+  // calculadora: pantalla + teclas; hl = tecla o lista de teclas marcadas ('pan' marca la pantalla)
+  function p1Calc(pan, hl) { hl = [].concat(hl || []); var K = ['7', '8', '9', 'C', '4', '5', '6', '+', '1', '2', '3', '−', '0', '=']; return '<div class="lb-p1-calc"><div class="lb-p1-pan' + (hl.indexOf('pan') >= 0 ? ' on' : '') + '">' + pan + '</div><div class="lb-p1-tec">' + K.map(function (k) { return '<span class="' + (hl.indexOf(k) >= 0 ? 'on' : '') + ('+−=C'.indexOf(k) >= 0 ? ' sg' : '') + (k === '0' ? ' cero' : '') + '">' + k + '</span>'; }).join('') + '</div></div>'; }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1520,6 +1522,7 @@
       dobles: p.que === 'iguales' ? ctrl('a', 'EN CADA GRUPO', 1, 5, 1, 3) + ctrl('k', 'GRUPOS', 2, 3, 1, 3) : ctrl('a', 'NÚMERO', 1, p.que === 'casi' ? 9 : 10, 1, 4),
       decenas_op: p.que === 'atras10' ? ctrl('a', 'DESDE EL', 30, 100, 10, 100) : ctrl('a', 'BOLSITAS', p.que === 'restar' ? 2 : 1, 9, 1, p.que === 'restar' ? 7 : 2) + ctrl('b', p.que === 'restar' ? 'SE VENDEN' : 'LLEGAN', 1, p.que === 'restar' ? 8 : 8, 1, 3),
       problema: ctrl('a', 'PRIMER NÚMERO', 2, 9, 1, 6) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, 3),
+      calcu: p.que === 'uno_diez' ? ctrl('n', 'NÚMERO', 10, 89, 1, 47) : p.que === 'partes' ? ctrl('n', 'EN LA PANTALLA', 0, 99, 1, 8) : ctrl('a', 'PRIMER NÚMERO', 2, 30, 1, p.que === 'controlar' ? 20 : 9) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.que === 'controlar' ? 3 : 6),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1872,6 +1875,39 @@
         P.push({ vis: p1Big('RESPUESTA: ' + Hh.r), txt: 'RESPONDEMOS LA PREGUNTA CON UNA ORACIÓN: SON <b>' + Hh.r + '</b>.' });
         return P;
       }
+      if (md === 'calcu') {
+        var qc = p.que || 'teclas', opc = p.op === 'resta' ? '−' : '+';
+        if (qc === 'partes') {
+          P.push({ vis: p1Calc(v.n, 'pan'), txt: 'ARRIBA ESTÁ LA <b>PANTALLA</b>: MUESTRA LOS NÚMEROS.' });
+          P.push({ vis: p1Calc(v.n, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']), txt: 'ESTAS SON LAS <b>TECLAS DE NÚMEROS</b>, DEL 0 AL 9.' });
+          P.push({ vis: p1Calc(v.n, ['+', '−']), txt: 'EL <b>+</b> SUMA Y EL <b>−</b> RESTA.' });
+          P.push({ vis: p1Calc(v.n, '='), txt: 'EL <b>=</b> MUESTRA EL RESULTADO.' });
+          P.push({ vis: p1Calc('0', 'C'), txt: 'LA <b>C</b> BORRA TODO Y LA PANTALLA VUELVE A 0.' });
+          return P;
+        }
+        if (qc === 'uno_diez') {
+          var opu = p.op || 'mas10', dl = opu === 'mas1' ? 1 : opu === 'menos10' ? -10 : 10, rs = v.n + dl, sg = dl > 0 ? '+' : '−';
+          P.push({ vis: p1Calc(v.n, 'pan'), txt: 'EN LA PANTALLA ESTÁ EL <b>' + v.n + '</b>.' });
+          P.push({ vis: p1Calc(v.n + ' ' + sg + ' ' + Math.abs(dl), [sg]), txt: 'APRETAMOS <b>' + sg + ' ' + Math.abs(dl) + '</b>.' });
+          P.push({ vis: p1Calc(rs, ['=', 'pan']), txt: 'APRETAMOS <b>=</b>: SALE <b>' + rs + '</b>.' });
+          P.push({ vis: p1Cifras(v.n) + p1Cifras(rs, opu === 'mas1' ? 1 : 0), txt: opu === 'mas1' ? 'CAMBIA LA <b>ÚLTIMA</b> CIFRA: UNO MÁS.' : 'CAMBIA LA <b>PRIMERA</b> CIFRA: UNA DECENA ' + (dl > 0 ? 'MÁS' : 'MENOS') + '.' });
+          return P;
+        }
+        var A3 = qc === 'teclas' && opc === '−' ? Math.max(v.a, v.b + 1) : v.a, res = opc === '+' ? A3 + v.b : A3 - v.b, ds2 = String(A3).split(''), pan = '';
+        if (qc === 'controlar') {
+          var malo = Number(String(A3) + String(v.b));
+          P.push({ vis: p1Calc(A3 + ' + ' + v.b + ' = ' + malo, 'pan'), txt: 'LA PANTALLA DICE <b>' + A3 + ' + ' + v.b + ' = ' + malo + '</b>. ¿ESTARÁ BIEN?' });
+          P.push({ vis: p1Big('¿' + malo + '?'), txt: 'PENSAMOS ANTES: SUMAR ' + v.b + ' AL ' + A3 + ' NO PUEDE DAR TANTO.' });
+          P.push({ vis: p1Calc(A3 + ' + ' + v.b + ' = ' + res, ['=', 'pan']), txt: 'LO HACEMOS DE NUEVO CON CUIDADO: SALE <b>' + res + '</b>.' });
+          P.push({ vis: p1Big('ESTABA MAL'), txt: 'SE APRETÓ MAL: LA CALCULADORA HACE <b>LO QUE APRETAMOS</b>.' });
+          return P;
+        }
+        ds2.forEach(function (d) { pan += d; P.push({ vis: p1Calc(pan, d), txt: 'APRETAMOS EL <b>' + d + '</b>.' }); });
+        P.push({ vis: p1Calc(A3 + ' ' + opc, opc), txt: 'APRETAMOS EL <b>' + opc + '</b>.' });
+        P.push({ vis: p1Calc(A3 + ' ' + opc + ' ' + v.b, String(v.b)), txt: 'APRETAMOS EL <b>' + v.b + '</b>.' });
+        P.push({ vis: p1Calc(res, ['=', 'pan']), txt: 'APRETAMOS EL <b>=</b>: SALE <b>' + res + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -1995,6 +2031,15 @@
         return { cons: H.h + ' ' + H.q + '<br><b>¿SE RESUELVE CON UNA SUMA O CON UNA RESTA?</b>', ops: ['SUMA', 'RESTA'], ok: H.op === '+' ? 'SUMA' : 'RESTA', ayuda: 'SI SE JUNTA O LLEGA MÁS, SUMÁS; SI SE VA O COMPARÁS, RESTÁS.', bien: '¡MUY BIEN! ' + H.c + '.' }; });
       return respuesta(el, api, function () { var t = tp === 'mezcla' ? pick(['juntar', 'agregar', 'quitar', 'comparar']) : tp, H = p1Hist(t, R(3, 9), R(1, 6), pick(P1NOM), p1Obj());
         return { cons: H.h + ' ' + H.q, html: H.v, campos: [{ v: H.r }], ayuda: H.w + ': HACÉ UNA ' + (H.op === '+' ? 'SUMA' : 'RESTA') + '.', bien: '¡MUY BIEN! ' + H.c + '.' }; }); }
+    if (md === 'calcu') { var qc = p.que || 'teclas';
+      if (qc === 'partes') return p1Elegir(el, api, function () { var q = pick([['¿QUÉ TECLA <b>BORRA</b> TODO?', 'C'], ['¿QUÉ TECLA MUESTRA EL <b>RESULTADO</b>?', '='], ['¿QUÉ TECLA SIRVE PARA <b>SUMAR</b>?', '+'], ['¿QUÉ TECLA SIRVE PARA <b>RESTAR</b>?', '−']]);
+        return { cons: q[0], html: p1Calc(R(0, 99)), ops: mezclar(['C', '=', '+', '−']), ok: q[1], ayuda: 'MIRÁ LAS TECLAS DE SIGNOS DE LA DERECHA.', bien: '¡MUY BIEN!' }; });
+      if (qc === 'controlar') return p1Elegir(el, api, function () { var a = 10 * R(1, 5), b = R(1, 9), bien = Math.random() < 0.4, mostr = bien ? a + b : Number(String(a) + String(b)) === a + b ? a + b + 10 : (Math.random() < 0.5 ? Number(String(a) + String(b)) : a + b + 10);
+        return { cons: 'LA CALCULADORA DICE <b>' + a + ' + ' + b + ' = ' + mostr + '</b>. ¿ESTÁ BIEN?', ops: ['SÍ', 'NO'], ok: mostr === a + b ? 'SÍ' : 'NO', ayuda: 'PENSÁ: ' + a + ' + ' + b + ' ES ' + a + ' Y ' + b + ' MÁS.', bien: '¡MUY BIEN! ' + a + ' + ' + b + ' = ' + (a + b) + '.' }; });
+      return respuesta(el, api, function () { var c, r;
+        if (qc === 'uno_diez') { var n = R(11, 88), d = pick([1, 10, -10]); r = n + d; c = '¿CUÁNTO ES <b>' + n + (d > 0 ? ' + ' : ' − ') + Math.abs(d) + '</b>?'; }
+        else { var a = R(5, 20), b = R(1, 9), rs2 = Math.random() < 0.5 && a > b; r = rs2 ? a - b : a + b; c = 'APRETÁS <b>' + String(a).split('').join(', ') + ', ' + (rs2 ? '−' : '+') + ', ' + b + '</b> Y <b>=</b>. ¿QUÉ SALE EN LA PANTALLA?'; }
+        return { cons: c, html: p1Calc('?'), campos: [{ v: r }], ayuda: qc === 'uno_diez' ? 'SUMAR O RESTAR 10 CAMBIA LA PRIMERA CIFRA; SUMAR 1, LA ÚLTIMA.' : 'HACÉ LA CUENTA QUE ARMASTE CON LAS TECLAS.', bien: '¡MUY BIEN! SALE ' + r + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
@@ -2064,6 +2109,7 @@
     '.lb-p1-diez{display:grid;grid-template-columns:repeat(5,46px);gap:4px;justify-content:center;margin:8px auto}.lb-p1-diez span{height:46px;display:grid;place-items:center;border:3px solid #253638;border-radius:8px;background:#fff;font-size:1.5rem}.lb-p1-diez span.c1{background:#FFE1D6}.lb-p1-diez span.c2{background:#D7E8FF}.lb-p1-dado{font-size:3.4rem;line-height:1}',
     '.lb-p1-esp{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}.lb-p1-esp>i{font-style:normal;font-size:2rem}.lb-p1-tab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-width:300px;margin:6px auto}.lb-p1-tab span{padding:4px 8px;border:2px solid #9dbdb9;border-radius:10px;background:#fff;font-weight:800;text-align:center}.lb-p1-tab span.on{background:#087E83;color:#fff;border-color:#087E83}',
     '.lb-p1-hist{margin:8px 0;padding:12px 14px;border:3px dashed #087E83;border-radius:16px;background:#fff;font-size:1.1rem;line-height:1.5;font-weight:700;color:#253638}',
+    '.lb-p1-calc{width:200px;margin:6px auto;padding:10px;border-radius:18px;background:#253638}.lb-p1-pan{min-height:40px;padding:6px 10px;border-radius:8px;background:#D7F0E9;color:#253638;font:800 1.3rem/1.4 monospace;text-align:right;overflow:hidden;white-space:nowrap}.lb-p1-pan.on{outline:4px solid #FFC94D}.lb-p1-tec{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.lb-p1-tec span{height:32px;display:grid;place-items:center;border-radius:8px;background:#fff;font-weight:800;color:#253638}.lb-p1-tec span.sg{background:#9dbdb9}.lb-p1-tec span.cero{grid-column:span 2}.lb-p1-tec span.on{background:#FFC94D}',
     '.lb-p1-ops{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}.lb-p1-op{min-width:90px;padding:12px 16px;border:3px solid #087E83;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.2rem;color:#253638;cursor:pointer;word-break:break-word}.lb-p1-op.on{background:#087E83;color:#fff}'
   ].join('');
   document.head.appendChild(css);
