@@ -603,3 +603,52 @@
 .tst-acc { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .tst-sec { background: #fff; color: var(--petroleo, #253638); border: 2px solid rgba(8,126,131,.35); }
 .tst-luego { border: 0; background: none; font: inherit; font-weight: 700; text-decoration: underline; color: #4B6062; cursor: pointer; padding: 8px 4px; }
+
+
+/* ---------- Guías de acompañamiento familiar ---------- */
+.gf-intro,.gf-persona,.gf-guia{background:#fff;border-radius:20px;box-shadow:0 10px 30px -18px rgba(37,54,56,.28)}
+.gf-intro{padding:26px 28px;margin-bottom:18px}
+.gf-kicker{display:block;color:var(--turquesa-oscuro);font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.gf-intro h2{margin:8px 0;font-size:1.45rem}
+.gf-intro p{max-width:850px;margin:0;color:var(--texto-suave);line-height:1.65}
+.gf-persona{display:flex;align-items:center;gap:12px;padding:14px 20px;margin:14px 0 20px}
+.gf-persona span,.gf-persona small{color:var(--texto-suave);font-size:.82rem}
+.gf-persona b{font-size:1rem}
+.gf-selector{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.gf-selector span{font-weight:800}
+.gf-selector select{min-width:220px;padding:11px 14px;border:1px solid #cbdad7;border-radius:12px;background:#fff;color:var(--petroleo);font:inherit}
+.gf-lista{display:grid;gap:14px}
+.gf-guia{overflow:hidden;border:1px solid rgba(8,126,131,.12)}
+.gf-guia summary{display:flex;align-items:center;gap:15px;padding:18px 22px;cursor:pointer;list-style:none}
+.gf-guia summary::-webkit-details-marker{display:none}
+.gf-num{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:13px;background:#e3f2ef;color:#087e83;font-weight:900}
+.gf-resumen{display:grid;gap:3px;flex:1}
+.gf-resumen b{font-size:1.04rem}
+.gf-resumen small{color:var(--texto-suave)}
+.gf-flecha{font-size:1.3rem;color:var(--turquesa-oscuro);transition:transform .2s}
+.gf-guia[open] .gf-flecha{transform:rotate(180deg)}
+.gf-cuerpo{padding:0 24px 24px;border-top:1px solid #edf2f0}
+.gf-bloque{padding:20px 0 6px}
+.gf-bloque h3,.gf-actividad h3{margin:0 0 10px;font-size:1.05rem}
+.gf-bloque p,.gf-bloque li,.gf-actividad li{line-height:1.6}
+.gf-bloque ul,.gf-actividad ol{padding-left:22px;margin:8px 0}
+.gf-bloque li,.gf-actividad li{margin:7px 0}
+.gf-objetivo{color:var(--texto-suave);margin:0 0 10px}
+.gf-actividad{margin-top:18px;padding:22px;background:#f0f7f5;border-radius:17px}
+.gf-actividad-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.gf-actividad-top span{display:block;margin-bottom:5px;color:#087e83;font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.gf-actividad-top h3{font-size:1.15rem}
+.gf-actividad-top small{white-space:nowrap;padding:6px 10px;background:#fff;border-radius:20px;color:var(--texto-suave);font-weight:800}
+.gf-materiales{margin:4px 0 12px;color:var(--texto-suave)}
+.gf-cierre{margin:14px 0 0;padding-top:12px;border-top:1px solid #d6e6e1;line-height:1.6}
+.gf-observar{padding-bottom:0}
+.gf-observar>p{padding:12px 15px;background:#f7f8f7;border-radius:12px}
+@media(max-width:650px){
+ .gf-intro{padding:21px}
+ .gf-guia summary{padding:15px}
+ .gf-cuerpo{padding:0 17px 18px}
+ .gf-actividad{padding:17px}
+ .gf-actividad-top{display:block}
+ .gf-actividad-top small{display:inline-block}
+ .gf-persona{align-items:flex-start;flex-direction:column;gap:3px}
+}
