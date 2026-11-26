@@ -52,7 +52,7 @@ function practica(pr, donde) {
 }
 
 // ---------- LECCIÓN ESCRITA EN SESIÓN (docs/reglas-leccion-interactiva.md) ----------
-const MIN_TEMA = 170, MIN_LECCION = 650, PROP_PROMEDIO = 0.9, MAX_COPIA = 0.25;
+const MIN_TEMA = 60, MAX_TEMA = 160, MIN_TEMAS = 3, MAX_COPIA = 0.25;
 const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const palabras = s => limpio(s).split(' ').filter(w => /[a-záéíóúñü0-9]/i.test(w));
 const textoBloques = bs => (bs || []).map(b => [b.texto, (b.items || []).join(' '), (b.filas || []).map(f => f.join(' ')).join(' ')].join(' ')).join(' ');
@@ -74,23 +74,21 @@ function promedioMateria(ruta) {  // palabras promedio de las lecciones ya escri
 }
 function leccion(ruta, M, n, L, donde) {
   if (!Array.isArray(L.temas) || !L.temas.length) return mal(donde, 'la lección no tiene temas');
-  let total = 0; const prom = promedioMateria(ruta), fu = fuentes(ruta, M, n);
+  let total = 0; const fu = fuentes(ruta, M, n);
   L.temas.forEach((t, i) => {
     const d = donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', bs = t.explicacion || [], tipos = bs.map(b => b.tipo), txt = textoBloques(bs), np = palabras(txt).length;
     total += np;
     if (np < MIN_TEMA) mal(d, 'explicación de ' + np + ' palabras: el mínimo es ' + MIN_TEMA);
-    if (!tipos.includes('definicion')) mal(d, 'falta la definición (bloque definicion)');
-    if (!tipos.includes('parrafo')) mal(d, 'falta el párrafo que explica por qué es así / para qué sirve');
-    const ej = bs.find(b => b.tipo === 'ejemplo'); if (!ej || (ej.items || []).length < 3) mal(d, 'falta un ejemplo resuelto propio con 3 o más pasos');
-    if (!tipos.includes('error')) mal(d, 'falta el error típico (bloque error)');
-    const pa = bs.find(b => b.tipo === 'pasos'); if (pa && (pa.items || []).length < 3) mal(d, 'el procedimiento tiene menos de 3 pasos');
+    if (np > MAX_TEMA) mal(d, 'explicación de ' + np + ' palabras: el máximo es ' + MAX_TEMA + ' (modelo CIDEAD: texto corto, el ejemplo vivo hace el resto; si hay más, es otra pantalla)');
+    const def = bs.find(b => b.tipo === 'definicion'); if (!def || palabras(def.texto).length < 15) mal(d, 'falta la definición completa (bloque definicion de 15 palabras o más)');
+    if (!tipos.includes('parrafo')) mal(d, 'falta el párrafo que explica por qué es así o para qué sirve');
+    ['ejemplo', 'pasos', 'error'].forEach(k => { if (tipos.includes(k)) mal(d, 'no lleva bloque «' + k + '»: el procedimiento y el caso los muestra el ejemplo vivo de al lado (no se explica dos veces)'); });
     if (/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)\b/i.test(txt)) mal(d, 'menciona meses del calendario');
     if (/como (vimos|viste) en la clase/i.test(txt)) mal(d, 'remite a la clase en vez de explicar');
     const g = grams(txt); let rep = 0; g.forEach(x => { if (fu.has(x)) rep++; });
     if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
     ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
-    if (!t.ejemplo && !t.ejercicio) mal(d, 'todo tema lleva su ejemplo vivo o su ejercicio del banco. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
-    if ((t.ejemplo || t.ejercicio) && !tipos.includes('pasos')) mal(d, 'lleva ejemplo o ejercicio pero no es un tema práctico (su explicación no tiene un procedimiento con pasos). Los temas de concepto van solo con la explicación');
+    if (!t.ejemplo || !t.ejemplo.motor) mal(d, 'todo tema lleva su ejemplo vivo del banco (ejemplo con motor), sin excepción. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
   });
   // "Recordá lo más importante" (formato CIDEAD): tarjetas con concepto + definición completa + ejemplo concreto
   const R = L.recuerda || [];
@@ -101,8 +99,7 @@ function leccion(ruta, M, n, L, donde) {
     if (palabras(r.definicion).length < 10) mal(d, 'la definición tiene que ser una oración completa (10 palabras o más), no dos palabras');
     if (!r.ejemplo || palabras(r.ejemplo).length < 2) mal(d, 'falta el ejemplo concreto (ej.: "D(18) = {1, 2, 3, 6, 9, 18}")');
   });
-  if (total < MIN_LECCION) mal(donde, 'la lección tiene ' + total + ' palabras: el mínimo es ' + MIN_LECCION);
-  if (prom && total < prom * PROP_PROMEDIO) mal(donde, 'la lección es más corta que las anteriores de la materia (' + total + ' palabras; el promedio es ' + Math.round(prom) + ', mínimo ' + Math.round(prom * PROP_PROMEDIO) + '). Se completa, no se acorta.');
+  if (L.temas.length < MIN_TEMAS) mal(donde, 'la lección tiene ' + L.temas.length + ' pantallas: el mínimo es ' + MIN_TEMAS + ' (una por idea, cada una con su ejemplo vivo)');
 }
 
 for (const ruta of process.argv.slice(2)) {

@@ -28,3 +28,10 @@ En la lección: `"ejemplo": {"motor": "<id>", "p": {...}}` (escena para explorar
 | Estadística y probabilidad | `tabla_frecuencias` · `media_moda_mediana` (`que`: media, moda, mediana) · `barras_armar` · `probabilidad` · `combinaciones` |
 
 Si un tema necesita un motor que no está, se crea en el banco (con su prueba automática) antes de escribir la lección: no se fuerza uno que no corresponde.
+
+## Agregados (26/11/2026)
+| Motor | Tipo | Para qué | `p` |
+|---|---|---|---|
+| `valor_posicional` | ejemplo | escribís un número y ves cada cifra en su lugar, cuánto vale y la descomposición; con `leer`, los períodos y cómo se lee | `{"modo":"valor"\|"leer"}` |
+| `comparar_naturales` | ejemplo | dos números: cuenta cifras y marca la primera cifra distinta | — |
+| `sexa_operar` | ejemplo | suma y resta de tiempos (o ángulos con `angulo`) con los canjes de a 60 a la vista | `{"modo":"angulo"}` opcional |

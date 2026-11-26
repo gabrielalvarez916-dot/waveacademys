@@ -313,6 +313,96 @@
       var h1 = R(0, 3), m1 = R(10, 59), s1 = R(10, 59), h2 = R(0, 3), m2 = R(10, 59), s2 = R(10, 59), T = (h1 + h2) * 3600 + (m1 + m2) * 60 + s1 + s2;
       return { cons: 'Sumá: <b>' + h1 + ' h ' + m1 + ' min ' + s1 + ' s</b> + <b>' + h2 + ' h ' + m2 + ' min ' + s2 + ' s</b>.', campos: [{ lab: 'h', v: Math.floor(T / 3600) }, { lab: 'min', v: Math.floor(T % 3600 / 60) }, { lab: 's', v: T % 60 }], ayuda: 'Sumá cada columna; si los segundos o minutos pasan de 60, cambiá 60 por 1 de la columna de al lado.', bien: '¡Bien sumado!' }; });
   } };
+  // Valor posicional: escribí un número y se ve cada cifra en su lugar, lo que vale y cómo se lee (modo 'valor' | 'leer')
+  function leerN(x) { var m = Math.floor(x / 1e6), r = x % 1e6, o = []; if (m) o.push(m === 1 ? 'un millón' : H.letras(m).replace(/veintiuno$/, 'veintiún').replace(/(^| )uno$/, '$1un') + ' millones'); if (r || !m) o.push(H.letras(r)); return o.join(' '); }
+  M.valor_posicional = { tipo: 'ejemplo', render: function (el, p) {
+    var modo = p.modo === 'leer' ? 'leer' : 'valor', N0 = modo === 'leer' ? pick(['3040506000', '12007450', '905300210']) : pick(['57209', '403718', '2060935']);
+    var LUG = ['U', 'D', 'C', 'UM', 'DM', 'CM', 'U millón', 'D millón', 'C millón', 'U mil millones', 'D mil millones', 'C mil millones'];
+    var NOM = ['unidades', 'decenas', 'centenas', 'unidades de mil', 'decenas de mil', 'centenas de mil', 'unidades de millón', 'decenas de millón', 'centenas de millón', 'unidades de mil millones', 'decenas de mil millones', 'centenas de mil millones'];
+    var PER = ['Unidades', 'Miles', 'Millones', 'Miles de millones'];
+    el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + N0 + '" maxlength="12"></div><div class="lb-vista"></div>';
+    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista'), sel = -1;
+    function pintar() {
+      var s = String(inp.value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
+      if (!s) { v.innerHTML = '<p class="lb-ayuda">Escribí un número de hasta 12 cifras.</p>'; return; }
+      var n = s.length, nper = Math.ceil(n / 3), cab = '', fil = '', sub = '';
+      for (var g = nper - 1; g >= 0; g--) {
+        var cols = []; for (var j = 2; j >= 0; j--) { var pos = g * 3 + j; if (pos < n) cols.push(pos); }
+        cab += '<th colspan="' + cols.length + '" class="lb-vp-per">' + PER[g] + '</th>';
+        cols.forEach(function (pos) { var c = s[n - 1 - pos]; sub += '<th>' + LUG[pos].replace(' millón', 'M').replace(' mil millones', 'MM') + '</th>'; fil += '<td><button type="button" class="lb-vp-c' + (pos === sel ? ' on' : '') + (c === '0' ? ' cero' : '') + '" data-pos="' + pos + '">' + c + '</button></td>'; });
+      }
+      var html = '<div class="lb-vp-w"><table class="lb-vp' + (n > 7 ? ' vplargo' : '') + '"><thead><tr>' + cab + '</tr><tr>' + sub + '</tr></thead><tbody><tr>' + fil + '</tr></tbody></table></div>';
+      if (modo === 'valor') {
+        var ps = sel >= 0 && sel < n ? sel : n - 1, c = s[n - 1 - ps], val = Number(c) * Math.pow(10, ps);
+        html += '<p class="lb-vp-big">El <b>' + c + '</b> está en las <b>' + NOM[ps] + '</b>: vale <b>' + c + ' × ' + fmt(Math.pow(10, ps)) + ' = ' + fmt(val) + '</b></p><p class="lb-ayuda">Tocá otra cifra de la tabla para ver cuánto vale.</p>';
+        var partes = []; for (var k = n - 1; k >= 0; k--) { var d = s[n - 1 - k]; if (d !== '0') partes.push(fmt(Number(d) * Math.pow(10, k))); }
+        html += '<p class="lb-nota">' + fmt(Number(s)) + ' = ' + partes.join(' + ') + '</p>';
+      } else {
+        var trozos = [], L = leerN(Number(s));
+        for (var g2 = nper - 1; g2 >= 0; g2--) { var t = s.slice(Math.max(0, n - (g2 + 1) * 3), n - g2 * 3); trozos.push('<span class="lb-vp-tr' + (/^0+$/.test(t) ? ' cero' : '') + '"><b>' + t + '</b><small>' + PER[g2].toLowerCase() + '</small></span>'); }
+        html += '<div class="lb-vp-trozos">' + trozos.join('') + '</div><p class="lb-vp-big">Se lee: <b>' + esc(L) + '</b></p><p class="lb-ayuda">Los grupos se arman de a tres desde la derecha; el que tiene solo ceros no se nombra.</p>';
+      }
+      v.innerHTML = html;
+    }
+    inp.addEventListener('input', function () { sel = -1; pintar(); });
+    v.addEventListener('click', function (e) { var b = e.target.closest('[data-pos]'); if (b) { sel = Number(b.getAttribute('data-pos')); pintar(); } });
+    pintar();
+  } };
+
+  // Comparar naturales: dos números; cuenta cifras y, si empatan, marca la primera cifra distinta
+  M.comparar_naturales = { tipo: 'ejemplo', render: function (el) {
+    var pares = [['405000', '98990'], ['405100', '405000'], ['1203400', '1230400'], ['56789', '56798']], p0 = pick(pares);
+    el.innerHTML = '<div class="lb-in-f dos"><label>Un número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[0] + '" maxlength="10"><label>Otro número</label><input type="text" inputmode="numeric" class="lb-inp lb-cn-in" value="' + p0[1] + '" maxlength="10"></div><div class="lb-vista"></div>';
+    var ins = el.querySelectorAll('input'), v = el.querySelector('.lb-vista');
+    function pintar() {
+      var a = String(ins[0].value).replace(/\D/g, '').replace(/^0+(?=\d)/, ''), b = String(ins[1].value).replace(/\D/g, '').replace(/^0+(?=\d)/, '');
+      if (!a || !b) { v.innerHTML = '<p class="lb-ayuda">Escribí dos números.</p>'; return; }
+      var L = Math.max(a.length, b.length), dif = -1, paso, sig2;
+      if (a.length !== b.length) { paso = 'Tienen distinta cantidad de cifras: ' + a.length + ' y ' + b.length + '. <b>El que tiene más cifras es mayor</b>, sin mirar con qué cifra empieza.'; sig2 = a.length > b.length ? '>' : '<'; }
+      else { for (var i = 0; i < L; i++) if (a[i] !== b[i]) { dif = i; break; }
+        if (dif < 0) { paso = 'Tienen las mismas cifras en los mismos lugares.'; sig2 = '='; }
+        else { paso = 'Los dos tienen ' + L + ' cifras. Se comparan de izquierda a derecha: la primera distinta es <b>' + a[dif] + '</b> contra <b>' + b[dif] + '</b>.'; sig2 = a[dif] > b[dif] ? '>' : '<'; } }
+      function fila(x) { var pad = L - x.length, h = ''; for (var k = 0; k < L; k++) { var c = k < pad ? '' : x[k - pad]; h += '<span class="lb-cn-c' + (c === '' ? ' vac' : '') + (k === dif ? ' on' : (dif > 0 && k < dif ? ' eq' : '')) + '">' + c + '</span>'; } return '<div class="lb-cn-f">' + h + '</div>'; }
+      v.innerHTML = '<div class="lb-cn">' + fila(a) + fila(b) + '</div><p class="lb-vp-big">' + paso + '</p><p class="lb-cn-res">' + fmt(Number(a)) + ' <b>' + sig2 + '</b> ' + fmt(Number(b)) + '</p>';
+    }
+    [].forEach.call(ins, function (i) { i.addEventListener('input', pintar); }); pintar();
+  } };
+
+  // Operar en sexagesimal: suma o resta de tiempos (h, min, s) o de ángulos (°, ′, ″), con los canjes de a 60 a la vista
+  M.sexa_operar = { tipo: 'ejemplo', render: function (el, p) {
+    var ang = p.modo === 'angulo', U = ang ? ['°', '′', '″'] : ['h', 'min', 's'], X = [[2, 50, 35], [1, 25, 40]];
+    if (ang) X = [[48, 35, 20], [27, 50, 45]];
+    function caja(i, j) { return '<input type="text" inputmode="numeric" class="lb-inp lb-sx-in" data-i="' + i + '" data-j="' + j + '" value="' + X[i][j] + '" maxlength="3"><em>' + U[j] + '</em>'; }
+    el.innerHTML = '<div class="lb-sx-op"><button type="button" class="lb-chip on" data-op="+">Sumar</button><button type="button" class="lb-chip" data-op="-">Restar</button></div>' +
+      '<div class="lb-sx-dat">' + [0, 1].map(function (i) { return '<div class="lb-sx-row">' + caja(i, 0) + caja(i, 1) + caja(i, 2) + '</div>'; }).join('') + '</div><div class="lb-vista"></div>';
+    var op = '+', v = el.querySelector('.lb-vista');
+    function val(i, j) { var x = Math.floor(num(el.querySelector('[data-i="' + i + '"][data-j="' + j + '"]').value)); return isNaN(x) || x < 0 ? 0 : x; }
+    function t(v3) { return v3[0] + ' ' + U[0] + ' ' + v3[1] + ' ' + U[1] + ' ' + v3[2] + ' ' + U[2]; }
+    function pintar() {
+      var a = [val(0, 0), val(0, 1), val(0, 2)], b = [val(1, 0), val(1, 1), val(1, 2)], pasos = [], r;
+      if (a[1] > 59 || a[2] > 59 || b[1] > 59 || b[2] > 59) { v.innerHTML = '<p class="lb-ayuda">Los ' + U[1] + ' y los ' + U[2] + ' van de 0 a 59.</p>'; return; }
+      if (op === '+') {
+        r = [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+        pasos.push('Sumamos cada columna: ' + t(r) + '.');
+        if (r[2] >= 60) { pasos.push(r[2] + ' ' + U[2] + ' son 1 ' + U[1] + ' y ' + (r[2] - 60) + ' ' + U[2] + ': pasamos 1 a la columna de los ' + U[1] + '.'); r[2] -= 60; r[1] += 1; }
+        if (r[1] >= 60) { pasos.push(r[1] + ' ' + U[1] + ' son 1 ' + U[0] + ' y ' + (r[1] - 60) + ' ' + U[1] + ': pasamos 1 a la columna de los ' + U[0] + '.'); r[1] -= 60; r[0] += 1; }
+        if (pasos.length === 1) pasos.push('Ninguna columna llega a 60: no hace falta canjear.');
+      } else {
+        var A = a[0] * 3600 + a[1] * 60 + a[2], Bt = b[0] * 3600 + b[1] * 60 + b[2];
+        if (A < Bt) { v.innerHTML = '<p class="lb-ayuda">Para restar, la primera medida tiene que ser mayor.</p>'; return; }
+        r = a.slice();
+        if (r[2] < b[2]) { pasos.push('No alcanzan los ' + U[2] + ' (' + r[2] + ' − ' + b[2] + '): pedimos 1 ' + U[1] + ' = 60 ' + U[2] + '. Queda ' + (r[2] + 60) + ' ' + U[2] + '.'); r[2] += 60; r[1] -= 1; }
+        if (r[1] < b[1]) { pasos.push('Quedan ' + r[1] + ' ' + U[1] + ', que no alcanzan para restar ' + b[1] + ': pedimos 1 ' + U[0] + ' = 60 ' + U[1] + '. Queda ' + (r[1] + 60) + ' ' + U[1] + '.'); r[1] += 60; r[0] -= 1; }
+        if (!pasos.length) pasos.push('Cada columna alcanza: no hace falta pedir prestado.');
+        r = [r[0] - b[0], r[1] - b[1], r[2] - b[2]]; pasos.push('Restamos cada columna.');
+      }
+      v.innerHTML = '<ol class="lb-sx-pasos">' + pasos.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol><p class="lb-cn-res">' + t(a) + ' ' + (op === '+' ? '+' : '−') + ' ' + t(b) + ' = <b>' + t(r) + '</b></p>';
+    }
+    el.addEventListener('input', pintar);
+    el.addEventListener('click', function (e) { var bt = e.target.closest('[data-op]'); if (!bt) return; op = bt.getAttribute('data-op'); [].forEach.call(el.querySelectorAll('[data-op]'), function (x) { x.classList.toggle('on', x === bt); }); if (op === '-') { var q = el.querySelectorAll('.lb-sx-in'); var d = ang ? [[90, 0, 0], [37, 25, 10]] : [[5, 10, 0], [2, 45, 30]]; [].forEach.call(q, function (x) { x.value = d[+x.getAttribute('data-i')][+x.getAttribute('data-j')]; }); } pintar(); });
+    pintar();
+  } };
+
   M.binario_lamparas = { tipo: 'ejemplo', render: function (el) {
     var on = [0, 0, 1, 0, 1, 1, 0, 1];
     function pintar() { var v = 0; on.forEach(function (b, i) { if (b) v += Math.pow(2, 7 - i); });
@@ -545,7 +635,14 @@
     '.lb2-mapa{position:relative;height:60px;border-radius:12px;background:repeating-linear-gradient(45deg,#F3FBF7,#F3FBF7 8px,#E3ECEA 8px,#E3ECEA 16px)}.lb2-mapa i{position:absolute;left:4%;top:26px;height:6px;border-radius:3px;background:#087E83}.lb2-mapa span{position:absolute;left:4%;top:4px;font-weight:800}',
     '.lb2-ruta{position:relative;height:40px;border-bottom:4px dashed #253638;margin:6px 0}.lb2-ruta span{position:absolute;bottom:2px;font-size:26px}',
     '.lb-cajas.n2 .lb-chip{max-width:100%;border-radius:14px;text-align:left;font-size:.9rem}',
-    '.lb-cajas.n4{grid-template-columns:1fr 1fr}@media (min-width:700px){.lb-cajas.n4{grid-template-columns:repeat(4,1fr)}}'
+    '.lb-cajas.n4{grid-template-columns:1fr 1fr}@media (min-width:700px){.lb-cajas.n4{grid-template-columns:repeat(4,1fr)}}',
+    '.lb-cn{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0}.lb-cn-f{display:flex;gap:4px}.lb-cn-c{width:36px;height:46px;display:grid;place-items:center;border:2px solid #087E83;border-radius:10px;background:#fff;font-weight:800;font-size:1.4rem}.lb-cn-c.vac{border-style:dashed;border-color:#D7F0E9}.lb-cn-c.eq{background:#F3FBF7;color:#9dbdb9}.lb-cn-c.on{background:#087E83;color:#fff}',
+    '.lb-cn-res{font-size:1.5rem;font-weight:800;text-align:center;margin:10px 0 0;color:#066A6E}.lb-cn-in{width:12ch!important;font-size:1.15rem}',
+    '.lb-sx-op{display:flex;gap:8px;margin-bottom:10px}.lb-sx-dat{display:flex;flex-direction:column;gap:8px}.lb-sx-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.lb-sx-row em{font-style:normal;font-weight:800;color:#066A6E;margin-right:8px}.lb-sx-in{width:4ch!important;text-align:center;font-size:1.2rem}',
+    '.lb-sx-pasos{margin:12px 0 0;padding-left:22px;line-height:1.55}.lb-sx-pasos li{margin:4px 0}',
+    '.lb-vp-w{overflow-x:auto}.lb-vp{border-collapse:separate;border-spacing:4px;margin:4px auto}.lb-vp th{font-size:.72rem;color:#4b6a6c;font-weight:800;text-align:center;padding:2px 4px}.lb-vp th.lb-vp-per{background:#D7F0E9;color:#066A6E;border-radius:8px;font-size:.78rem;padding:4px 6px}',
+    '.lb-vp-c{width:44px;height:52px;border:2px solid #087E83;border-radius:12px;background:#fff;font-family:inherit;font-weight:800;font-size:1.6rem;line-height:1;color:#253638;cursor:pointer}.lb-vp.vplargo .lb-vp-c{width:32px;height:44px;font-size:1.25rem;border-radius:10px}.lb-vp.vplargo{border-spacing:2px}.lb-vp-in{width:14ch!important;font-size:1.2rem}.lb-vp-c.cero{color:#9dbdb9}.lb-vp-c.on{background:#087E83;color:#fff}',
+    '.lb-vp-big{font-size:1.15rem;line-height:1.5;margin:12px 0 4px}.lb-vp-trozos{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}.lb-vp-tr{display:flex;flex-direction:column;align-items:center;padding:8px 14px;border-radius:14px;background:#D7F0E9}.lb-vp-tr b{font-size:1.5rem;letter-spacing:.08em;color:#066A6E}.lb-vp-tr.cero{opacity:.5}.lb-vp-tr small{font-weight:700;color:#4b6a6c}',
   ].join('');
   document.head.appendChild(css);
 })();

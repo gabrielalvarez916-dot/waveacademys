@@ -494,6 +494,6 @@ window.WaveLeccionBanco = (function () {
     render: function (el, cfg, api) { var m = M[cfg && cfg.motor]; if (!m) return false; m.render(el, cfg.p || {}, Object.assign({}, api0, api || {})); return true; },
     util: { letras: letras, fraccionEnLetras: fraccionEnLetras, divisores: divisores, esPrimo: esPrimo },
     // herramientas internas para los motores de js/leccion-banco2.js (mismo banco, solo lección)
-    _h: { R: R, pick: pick, mezclar: mezclar, esc: esc, divisores: divisores, esPrimo: esPrimo, mcd: mcd, mcm: mcm, fmt: fmt, sig: sig, num: num, norm: norm, chip: chip, fr: fr, ejercicio: ejercicio, tocarYUbicar: tocarYUbicar }
+    _h: { R: R, pick: pick, mezclar: mezclar, esc: esc, divisores: divisores, esPrimo: esPrimo, mcd: mcd, mcm: mcm, fmt: fmt, sig: sig, num: num, norm: norm, chip: chip, fr: fr, ejercicio: ejercicio, tocarYUbicar: tocarYUbicar, letras: letras }
   };
 })();

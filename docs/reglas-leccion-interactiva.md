@@ -13,28 +13,22 @@ En `mision-N.json`, en cada nivel: `niveles.N.leccion = { "temas": [ ... ] }`. C
   "ejemplo":   {"motor": "explorador2", "p": {"modo": "mcd"}},
   "ejercicio": {"motor": "mcd_guiado", "p": {}} }
 ```
-Los bloques son los mismos del PDF: `parrafo`, `definicion`, `pasos` (items), `ejemplo` (titulo, texto, items), `tabla`, `imagen`, `importante`, más `error` (titulo = el error, texto = por qué está mal y cómo darse cuenta).
+Bloques permitidos en la explicación: `definicion`, `parrafo`, `lista`, `importante`, `tabla`, `imagen`. **Prohibidos** `pasos`, `ejemplo` y `error`: el procedimiento y el caso los muestra el ejemplo vivo de al lado; no se explica dos veces.
 `ejemplo` y `ejercicio` salen del BANCO DE LA LECCIÓN (`js/leccion-banco.js` + `js/leccion-banco2.js`, catálogo en `docs/banco-leccion.md`), que es otro banco, separado del de actividades: nunca se usan motores de actividades acá ni motores de la lección en actividades.
 
-## Qué tiene que tener cada tema (obligatorio)
-1. **Qué es**: definición clara y precisa (bloque `definicion`), con las palabras del nivel (1.º año: 12 años, no son bobos).
-2. **Por qué es así / para qué sirve**: un `parrafo` que explique el sentido, no solo la regla.
-3. **Cómo se hace**: si el tema es práctico, bloque `pasos` con 3 o más pasos concretos (en temas de concepto no va).
-4. **Ejemplo resuelto propio**: bloque `ejemplo` con 3 o más pasos y el resultado (en temas de concepto, un caso concreto bien explicado). Distinto del de la clase animada y del PDF.
-5. **Error típico**: bloque `error` con el error, por qué está mal y cómo detectarlo.
-6. **Mínimo 170 palabras** de explicación por tema (sin contar títulos). Sin máximo: si el tema lo pide, más.
-
-## Cada tema es práctico y tiene su ejemplo (como en CIDEAD)
-- Una pantalla de la lección = un tema PRÁCTICO (operación, cálculo, descomposición, construcción, procedimiento) con su ejemplo vivo y/o su ejercicio del banco. Ningún tema queda sin ejemplo.
-- Lo de CONCEPTO (qué es una variable, qué es aleatorio, para qué sirve cada medida) NO es un tema propio: se explica dentro del tema práctico que corresponde (el siguiente, o el anterior si es lo último). Ej.: "Variables y datos" va adentro de "Tabla de frecuencias".
-- Si en un nivel ningún tema tiene motor en el banco, se avisa para crear el motor: no se deja la lección sin ejemplo ni se fuerza uno que no corresponde.
-- El control lo exige: todo tema lleva `ejemplo` o `ejercicio`, y su explicación tiene un bloque `pasos`.
+## Cómo es cada pantalla (modelo CIDEAD, obligatorio)
+Una pantalla = una idea. Mitad izquierda: texto corto. Mitad derecha: el EJEMPLO VIVO grande, donde el alumno cambia los números y ve el procedimiento. Abajo, el botón del ejercicio (opcional).
+1. **Qué es**: bloque `definicion` completo y preciso (15 palabras o más), con las palabras del nivel (1.º año: 12 años, no son bobos).
+2. **Por qué es así / para qué sirve**: un `parrafo` que dé el sentido, no solo la regla.
+3. **Lo clave**: una `lista` de 2 o 3 viñetas: reglas, casos especiales y el error típico en una línea.
+4. **Entre 60 y 160 palabras** de texto. Si hace falta más, es otra pantalla con su propio ejemplo.
+5. **Ejemplo vivo SIEMPRE** (`ejemplo` con motor del banco). Sin excepción: ninguna pantalla sin ejemplo. El `ejercicio` es aparte y opcional.
+- Lo de CONCEPTO (qué es una variable, qué es aleatorio) no es pantalla propia: se explica dentro de la pantalla práctica que corresponde.
+- Si el banco no tiene el ejemplo que la pantalla necesita, se agrega al banco de la lección (se avisa) y se anota en `docs/banco-leccion.md`. No se fuerza uno que no corresponde ni se deja la pantalla sin ejemplo.
 
 ## Qué tiene que tener cada lección
-- Los temas son los importantes de la clase: los que hagan falta (2, 3, 5…), no un número fijo. No se rellena para llegar a 4.
-- Mínimo 650 palabras de explicación en toda la lección.
-- Al final, "Recordá lo más importante" (sale del `resumen` del borrador).
-- En Matemática, cada tema con procedimiento lleva `ejemplo` y/o `ejercicio` del banco. Si el banco no tiene el motor que el tema necesita, se avisa (no se fuerza uno que no corresponde).
+- 3 pantallas o más: las ideas importantes de la clase, no un número fijo. No se rellena.
+- Al final, "Recordá lo más importante".
 
 ## "Recordá lo más importante" (cierre, formato CIDEAD)
 Va en `niveles.N.leccion.recuerda`: 4 a 8 tarjetas, una por concepto o procedimiento clave de la lección, en grilla de dos columnas.
@@ -49,8 +43,9 @@ Va en `niveles.N.leccion.recuerda`: 4 a 8 tarjetas, una por concepto o procedimi
 
 ## Prohibido
 - Copiar: no más del 25 % de la explicación puede repetir frases de 6 palabras del borrador o de la narración de la clase (el control lo mide).
-- Acortar con el tiempo: cada lección nueva tiene que tener al menos el 90 % de las palabras promedio de las lecciones ya escritas de esa materia (el control lo mide). Si una sale más corta, se completa, no se justifica.
-- Explicaciones de dos líneas, "como vimos en la clase", listas sin explicar, ejemplos sin resolver.
+- Bajar la calidad con la cantidad: cada pantalla cumple lo mismo que la primera (definición completa, párrafo con sentido, ejemplo vivo).
+- Repetir en el texto lo que muestra el ejemplo (pasos, caso resuelto, error largo).
+- Explicaciones de dos líneas, "como vimos en la clase", listas sin explicar, pantallas sin ejemplo vivo.
 - Fechas o meses del calendario (los alumnos entran en cualquier momento). Contenido de otro nivel.
 - Inventar contenido que no corresponde al tema o al mapa curricular.
 
