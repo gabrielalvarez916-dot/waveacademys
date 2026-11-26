@@ -1510,6 +1510,16 @@
     (marcas || []).forEach(function (m) { h += '<span class="lb-p1-m ' + (m[1] || '') + '" style="left:' + m[0] / 10 + '%">' + (m[2] != null ? m[2] : m[0]) + '</span>'; });
     return '<div class="lb-p1-r100w"><div class="lb-p1-r100">' + h + '</div></div>';
   }
+  // cálculo mental: arma la cuenta según el tipo; devuelve {a, b, r, sg}
+  function p1Ment(q, op, a, b, esc) {
+    var res = op === 'resta', sg = res ? '−' : '+';
+    if (q === 'chica') { if (res && b > a) { var t = a; a = b; b = t; } if (res && a === b) a = Math.min(9, a + 1); if (!res && a + b > 9) b = 9 - a || 1; return { a: a * esc, b: b * esc, r: res ? (a - b) * esc : (a + b) * esc, sg: sg, ca: a, cb: b }; }
+    if (q === 'falta100') return { a: res ? 100 : a, b: res ? a : 100 - a, r: 100 - a, sg: sg };
+    if (q === 'desarmar') { var ac = Math.floor(a / 100), ad = Math.floor(a / 10) % 10, au = a % 10, bd = Math.floor(b / 10) % 10, bu = b % 10;
+      if (res) { bd = Math.min(bd, ad); bu = Math.min(bu, au); } else { bd = Math.min(bd, 9 - ad); bu = Math.min(bu, 9 - au); }
+      var B = bd * 10 + bu; return { a: a, b: B, r: res ? a - B : a + B, sg: sg, p: [[ac * 100, 0], [ad * 10, bd * 10], [au, bu]] }; }
+    return { a: a, b: b, r: res ? a - b : a + b, sg: sg };
+  }
   function p1Cifras(n, hl) { return '<div class="lb-p1-cif">' + String(n).split('').map(function (d, i) { return '<span class="' + (hl === i || hl === 9 ? 'on' : '') + '">' + d + '</span>'; }).join('') + '</div>'; }
 
   M.primeros = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
@@ -1547,6 +1557,8 @@
       cambia: ctrl('n', 'NÚMERO', 100, 899, 1, 352),
       dinero2: p.que === 'vuelto' ? ctrl('n', 'PRECIO', 10, 490, 10, 80) : p.que === 'sumar' ? ctrl('a', 'PRECIO 1', 50, 500, 50, 300) + ctrl('b', 'PRECIO 2', 50, 450, 50, 250) : p.que === 'caro' ? ctrl('a', 'PRECIO 1', 100, 990, 10, 540) + ctrl('b', 'PRECIO 2', 100, 990, 10, 450) :
         ctrl('q', 'BILLETES DE $500', 0, 1, 1, 1) + ctrl('d', 'BILLETES DE $200', 0, 2, 1, 1) + ctrl('c', 'BILLETES DE $100', 0, 3, 1, 1) + ctrl('m', 'BILLETES DE $50', 0, 1, 1, 1),
+      mental: p.que === 'falta100' ? ctrl('a', 'NÚMERO', 10, 90, 10, 70) : p.que === 'desarmar' ? ctrl('a', 'PRIMER NÚMERO', 110, 489, 1, p.op === 'resta' ? 365 : 234) + ctrl('b', 'SEGUNDO NÚMERO', 11, 59, 1, p.op === 'resta' ? 42 : 52) :
+        p.que === 'truco' ? ctrl('a', 'NÚMERO', 110, 889, 1, 472) + ctrl('b', 'SUMO O RESTO', 10, 100, 90, 100) : ctrl('a', 'PRIMER NÚMERO', 1, 9, 1, p.op === 'resta' ? 8 : 3) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.op === 'resta' ? 3 : 4),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -2028,6 +2040,28 @@
         P.push({ vis: Gc3(Math.min(v.a, v.b)) + p1Big('$' + Math.min(v.a, v.b) + ' ES MÁS BARATO'), txt: '<b>$' + Math.min(v.a, v.b) + '</b> ES EL MÁS <b>BARATO</b>.' });
         return P;
       }
+      if (md === 'mental') {
+        var qm = p.que || 'chica', esc = p.esc || 100, Mm = p1Ment(qm, p.op, v.a, v.b, esc), cu = Mm.a + ' ' + Mm.sg + ' ' + Mm.b;
+        P.push({ vis: p1Big(cu + ' = ?'), txt: 'LO HACEMOS <b>EN LA CABEZA</b>, SIN CUENTA ESCRITA.' });
+        if (qm === 'chica') {
+          P.push({ vis: p1Big(Mm.ca + ' ' + Mm.sg + ' ' + Mm.cb + ' = ' + (Mm.r / esc)), txt: 'PENSAMOS LA <b>CUENTA CHICA</b>: ' + Mm.ca + ' ' + Mm.sg + ' ' + Mm.cb + ' = ' + (Mm.r / esc) + '.' });
+          P.push({ vis: p1Big(cu + ' = ' + Mm.r), txt: 'SON ' + (Mm.r / esc) + ' ' + (esc === 100 ? 'CAJAS DE 100' : 'PAQUETES DE 10') + ': <b>' + Mm.r + '</b>.' });
+          return P;
+        }
+        if (qm === 'falta100') { var base = p.op === 'resta' ? Mm.b : Mm.a, Lf = []; for (i = base; i <= 100; i += 10) Lf.push(i);
+          P.push({ vis: '<div class="lb-p1-tren">' + Lf.map(function (x, k) { return '<span class="lb-p1-vag' + (k ? ' sig' : ' on') + '">' + x + '</span>'; }).join('') + '</div>', txt: 'CONTAMOS DE 10 EN 10 DESDE EL <b>' + base + '</b> HASTA EL 100.' });
+          P.push({ vis: p1Big(cu + ' = ' + Mm.r), txt: 'SON ' + (Lf.length - 1) + ' SALTOS DE 10: <b>' + Mm.r + '</b>. ' + (Mm.r / 10) + ' + ' + (base / 10) + ' = 10.' });
+          return P; }
+        if (qm === 'desarmar') {
+          var NP = ['CENTENAS', 'DECENAS', 'UNIDADES'], acc = [];
+          Mm.p.forEach(function (pp, k) { var rr = p.op === 'resta' ? pp[0] - pp[1] : pp[0] + pp[1]; acc.push(rr); P.push({ vis: p1Big(pp[1] ? pp[0] + ' ' + Mm.sg + ' ' + pp[1] + ' = ' + rr : pp[0]), txt: (k ? 'AHORA LAS <b>' : 'PRIMERO LAS <b>') + NP[k] + '</b>' + (pp[1] ? ': ' + pp[0] + ' ' + Mm.sg + ' ' + pp[1] + ' = ' + rr + '.' : ': QUEDAN ' + pp[0] + '.') }); });
+          P.push({ vis: p1Big(acc.join(' + ') + ' = ' + Mm.r), txt: 'JUNTAMOS LAS PARTES: <b>' + cu + ' = ' + Mm.r + '</b>.' });
+          return P; }
+        var sb3 = p.op === 'resta' ? -v.b : v.b, nn3 = v.a + sb3;
+        P.push({ vis: p1CDUt(v.a, v.b === 100 ? 0 : 1), txt: (sb3 > 0 ? 'SUMAR ' : 'RESTAR ') + v.b + ' CAMBIA LA CIFRA DE LAS <b>' + (v.b === 100 ? 'CENTENAS' : 'DECENAS') + '</b>.' });
+        P.push({ vis: p1CDUt(nn3, v.b === 100 ? 0 : 1) + p1Big(v.a + (sb3 > 0 ? ' + ' : ' − ') + v.b + ' = ' + nn3), txt: 'LAS OTRAS CIFRAS QUEDAN IGUAL: <b>' + nn3 + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2194,6 +2228,12 @@
         else if (qd3 === 'sumar') { var a = 50 * R(1, 9), b = 50 * R(1, 9); r = a + b; c = 'ALGO DE <b>$' + a + '</b> Y ALGO DE <b>$' + b + '</b>. ¿CUÁNTO CUESTAN JUNTOS?'; }
         else { var vs = [], k; for (k = R(0, 1); k > 0; k--) vs.push(500); for (k = R(0, 2); k > 0; k--) vs.push(200); for (k = R(1, 3); k > 0; k--) vs.push(100); for (k = R(0, 1); k > 0; k--) vs.push(50); vs = mezclar(vs); r = vs.reduce(function (x, y) { return x + y; }, 0); c = '¿CUÁNTO DINERO HAY EN TOTAL?'; h = p1Plata(vs); }
         return { cons: c, html: h, campos: [{ v: r, lab: '$' }], ayuda: qd3 === 'vuelto' ? 'CONTÁ PARA ADELANTE DESDE EL PRECIO HASTA LO QUE PAGÁS.' : 'EMPEZÁ POR LO QUE MÁS VALE Y SEGUÍ SUMANDO.', bien: '¡MUY BIEN! $' + r + '.' }; }); }
+    if (md === 'mental') return respuesta(el, api, function () { var qm = p.que || 'chica', M2, a, b;
+      if (qm === 'falta100') M2 = p1Ment(qm, p.op, 10 * R(1, 9), 0);
+      else if (qm === 'desarmar') M2 = p1Ment(qm, p.op, R(110, 489), R(11, 59));
+      else if (qm === 'truco') { a = R(110, 889); b = pick([10, 100]); M2 = { a: a, b: b, sg: p.op === 'resta' ? '−' : '+', r: p.op === 'resta' ? a - b : a + b }; }
+      else M2 = p1Ment('chica', p.op, R(1, 9), R(1, 9), p.esc || pick([10, 100]));
+      return { cons: '¿CUÁNTO ES <b>' + M2.a + ' ' + M2.sg + ' ' + M2.b + '</b>? HACELO EN LA CABEZA.', campos: [{ v: M2.r }], ayuda: qm === 'chica' ? 'PENSÁ LA CUENTA CHICA SIN LOS CEROS.' : qm === 'falta100' ? 'CONTÁ DE 10 EN 10 HASTA EL 100.' : qm === 'desarmar' ? 'HACÉ CENTENAS, DECENAS Y UNIDADES POR SEPARADO.' : 'CAMBIA UNA SOLA CIFRA.', bien: '¡MUY BIEN! ' + M2.a + ' ' + M2.sg + ' ' + M2.b + ' = ' + M2.r + '.' }; });
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }

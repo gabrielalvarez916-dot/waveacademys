@@ -144,15 +144,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "618. Centenas.", "solo": "500.", "carpeta": ["375.", "800: doble de 400.", "100: pareja de 100."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("SUMAR CAJAS DE 100", [LD("CUENTA CHICA", "PARA SUMAR <b>CENTENAS</b>, PENSAMOS LA CUENTA CHICA Y DESPUÉS PONEMOS LOS CEROS."),
+   LL("300 + 400: 3 + 4 = 7, SON 700.", "SON CAJAS DE 100.")],
+   {"modo": "mental", "que": "chica", "esc": 100}, {"modo": "mental", "que": "chica", "esc": 100}),
+ T("SUMAR PAQUETES DE 10", [LD("DECENAS", "CON LAS <b>DECENAS</b> ES IGUAL: SUMAMOS LOS PAQUETES."),
+   LL("50 + 20: 5 + 2 = 7, SON 70.", "NO ES 7 NI 700.")],
+   {"modo": "mental", "que": "chica", "esc": 10}, {"modo": "mental", "que": "chica", "esc": 10}),
+], "recuerda": [
+ RC("SUMAR CENTENAS", "PENSAMOS LA CUENTA CHICA Y SON CAJAS DE CIEN.", "200 + 600 = 800"),
+ RC("SUMAR DECENAS", "PENSAMOS LA CUENTA CHICA Y SON PAQUETES DE DIEZ.", "50 + 40 = 90"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("PAREJAS QUE SUMAN 100", [LD("PAREJAS DEL 100", "SI DOS DECENAS SUMAN 10 PAQUETES, JUNTAS DAN <b>100</b>."),
+   LL("6 + 4 = 10, ENTONCES 60 + 40 = 100.", "70 + 30 = 100.")],
+   {"modo": "mental", "que": "falta100"}, {"modo": "mental", "que": "falta100"}),
+ T("CUÁNTO FALTA PARA 100", [LD("LO QUE FALTA", "PARA SABER CUÁNTO <b>FALTA</b> PARA 100, CONTAMOS DE 10 EN 10."),
+   LL("DE 60 A 100: 70, 80, 90, 100.", "SON 4 SALTOS: FALTAN 40.")],
+   {"modo": "mental", "que": "falta100"}, {"modo": "mental", "que": "falta100"}),
+], "recuerda": [
+ RC("PAREJAS DEL 100", "SON DOS DECENAS QUE JUNTAS DAN CIEN.", "70 + 30 = 100"),
+ RC("LO QUE FALTA", "CONTAMOS DE DIEZ EN DIEZ HASTA EL CIEN.", "A 90 LE FALTAN 10"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("SUMAR CADA PARTE", [LD("DESARMAR", "DESARMAMOS LOS NÚMEROS Y SUMAMOS <b>CADA PARTE</b> CON SU PARTE."),
+   LL("CENTENAS CON CENTENAS.", "DECENAS CON DECENAS Y UNIDADES CON UNIDADES.")],
+   {"modo": "mental", "que": "desarmar"}, {"modo": "mental", "que": "desarmar"}),
+ T("JUNTAR AL FINAL", [LD("JUNTAR", "AL FINAL <b>JUNTAMOS</b> LO QUE DIO CADA PARTE."),
+   LL("234 + 52: 200, 80 Y 6 SON 286.", "NO SE SUMA EL 50 CON EL 4.")],
+   {"modo": "mental", "que": "desarmar"}, {"modo": "mental", "que": "desarmar"}),
+], "recuerda": [
+ RC("CADA PARTE", "SUMAMOS CENTENAS, DECENAS Y UNIDADES POR SEPARADO.", "30 + 50 = 80 Y 4 + 2 = 6"),
+ RC("JUNTAR", "AL FINAL UNIMOS LO QUE DIO CADA PARTE.", "200 + 80 + 6 = 286"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("SUMAR 10 Y SUMAR 100", [LD("UNA CIFRA", "AL SUMAR <b>10</b> O <b>100</b> CAMBIA UNA SOLA CIFRA."),
+   LL("365 + 10 = 375.", "472 + 100 = 572.")],
+   {"modo": "mental", "que": "truco"}, {"modo": "mental", "que": "truco"}),
+ T("LOS DOBLES", [LD("DOBLES", "LOS <b>DOBLES</b> QUE YA SABÉS SIRVEN CON CENTENAS: 4 + 4 = 8, ENTONCES 400 + 400 = 800."),
+   LL("300 + 300 = 600.", "ELEGÍ EL TRUCO QUE TE SIRVA.")],
+   {"modo": "mental", "que": "chica", "esc": 100}, {"modo": "mental", "que": "truco"}),
+], "recuerda": [
+ RC("SUMAR 10 O 100", "CAMBIA SOLO UNA CIFRA DEL NÚMERO.", "365 + 10 = 375"),
+ RC("DOBLES", "USAMOS LOS DOBLES CHICOS PARA LAS CENTENAS.", "400 + 400 = 800"),
+]}
+
 ACT = {
 "1": [N("¿CUÁNTO ES 300 + 400?", 700, "3 + 4 = 7: SON 7 CAJAS.", n="aplicar"),
-      MC("SI 5 + 2 = 7, ¿CUÁNTO ES 50 + 20?", ["70", "7", "700"], "70", "SON 7 PAQUETES DE 10.", n="analizar")],
-"2": [N("70 + ___ = 100", 30, "7 + 3 = 10.", n="aplicar"),
-      MC("¿QUÉ PAREJA SUMA 100?", ["60 + 40", "60 + 30", "50 + 40"], "60 + 40", "6 + 4 = 10.", n="aplicar")],
+      MC("SI 5 + 2 = 7, ¿CUÁNTO ES 50 + 20?", ["70", "7", "700"], "70", "SON 7 PAQUETES DE 10.", n="analizar"),
+      UNIR("UNÍ CADA SUMA CON SU RESULTADO.", ["200 + 300", "20 + 30", "2 + 3"], ["50", "5", "500"], {"200 + 300": "500", "20 + 30": "50", "2 + 3": "5"}, "LA MISMA CUENTA CHICA: 500, 50 Y 5.", n="analizar"),
+      MC("LEO HIZO 60 + 30 Y LE DIO 9. ¿CUÁNTO DA DE VERDAD?", ["90", "9", "900"], "90", "SON 9 PAQUETES DE 10.", n="error")],
+"2": [FB("COMPLETÁ: 70 + ___ = 100", [["30"]], "7 + 3 = 10.", n="aplicar"),
+      MC("¿QUÉ PAREJA SUMA 100?", ["60 + 40", "60 + 30", "50 + 40"], "60 + 40", "6 + 4 = 10.", n="aplicar"),
+      UNIR("UNÍ CADA NÚMERO CON LO QUE LE FALTA PARA 100.", ["20", "50", "90"], ["50", "10", "80"], {"20": "80", "50": "50", "90": "10"}, "20 + 80, 50 + 50 Y 90 + 10.", n="aplicar"),
+      N("[[problema]] UN ÁLBUM TIENE 100 FIGURITAS Y YA PEGASTE 60. ¿CUÁNTAS TE FALTAN?", 40, "DE 60 A 100: 4 SALTOS DE 10.", n="analizar", **NEU("UN ÁLBUM TIENE 100 ESTAMPAS Y YA PEGASTE 60. ¿CUÁNTAS TE FALTAN?"))],
 "3": [N("¿CUÁNTO ES 234 + 52?", 286, "200; 30 + 50 = 80; 4 + 2 = 6.", n="aplicar"),
-      MC("PARA SUMAR 245 + 32, ¿QUÉ JUNTAMOS CON EL 40?", ["EL 30", "EL 2", "EL 200"], "EL 30", "PAQUETES CON PAQUETES.", n="analizar")],
+      MC("PARA SUMAR 245 + 32, ¿QUÉ JUNTAMOS CON EL 40?", ["EL 30", "EL 2", "EL 200"], "EL 30", "PAQUETES CON PAQUETES.", n="analizar"),
+      FB("COMPLETÁ: 123 + 45 = 100 + 60 + ___ = ___", [["8"], ["168"]], "20 + 40 = 60 Y 3 + 5 = 8.", n="aplicar"),
+      MC("SOFI HIZO 452 + 34 Y LE DIO 792. ¿CUÁNTO DA?", ["486", "792", "456"], "486", "EL 3 ES DE DECENAS, NO DE CENTENAS.", n="error")],
 "4": [N("¿CUÁNTO ES 472 + 100?", 572, "CAMBIAN LAS CENTENAS.", n="aplicar"),
-      N("¿CUÁNTO ES 300 + 300?", 600, "EL DOBLE DE 300.", n="aplicar")],
+      N("¿CUÁNTO ES 300 + 300?", 600, "EL DOBLE DE 300.", n="aplicar"),
+      CLAS("¿QUÉ TRUCO CONVIENE?", ["365 + 10", "400 + 400", "250 + 100", "200 + 200"], ["SUMAR 10 O 100", "USAR UN DOBLE"],
+           {"365 + 10": "SUMAR 10 O 100", "400 + 400": "USAR UN DOBLE", "250 + 100": "SUMAR 10 O 100", "200 + 200": "USAR UN DOBLE"}, "SI SUMÁS 10 O 100 CAMBIA UNA CIFRA; SI SON IGUALES, ES UN DOBLE.", n="analizar"),
+      FB("COMPLETÁ: 75 + 25 = ___", [["100"]], "7 + 2 = 9 PAQUETES Y 5 + 5 = 10: 100.", n="aplicar")],
 "5": [N("RELÁMPAGO. 200 + 500 = ___", 700, "2 + 5 = 7.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 80 + ___ = 100", 20, "8 + 2 = 10.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 125 + 10 = ___", 135, "CAMBIAN LAS DECENAS.", tiempo=30, n="aplicar"),
@@ -172,7 +241,7 @@ EXAMEN = [
  [4, N("¿CUÁNTO ES EL DOBLE DE 200?", 400, "200 + 200 = 400.", n="aplicar")],
  [4, MC("SOFI DICE: 365 + 10 = 465. ¿CUÁNTO ES?", ["375", "465", "366"], "375", "MÁS 10 CAMBIA LAS DECENAS.", n="error")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 7, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 7, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: cálculo mental de sumas", "examen_titulo": "Nivel jefe: cálculo mental de sumas",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-7.json"), "w", encoding="utf-8"), ensure_ascii=False)

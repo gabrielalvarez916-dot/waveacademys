@@ -146,15 +146,84 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "545. Centenas.", "solo": "273.", "carpeta": ["562.", "700.", "80: pareja de 100."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("RESTAR CAJAS Y PAQUETES", [LD("CUENTA CHICA", "PARA RESTAR <b>CENTENAS</b> O <b>DECENAS</b>, PENSAMOS LA CUENTA CHICA."),
+   LL("800 − 300: 8 − 3 = 5, SON 500.", "90 − 60: 9 − 6 = 3, SON 30.")],
+   {"modo": "mental", "que": "chica", "esc": 100, "op": "resta"}, {"modo": "mental", "que": "chica", "op": "resta"}),
+ T("RESTAR SUELTOS", [LD("SOLO LAS UNIDADES", "SI RESTAMOS <b>SUELTOS</b>, CAMBIAN SOLO LAS UNIDADES."),
+   LL("47 − 5 = 42.", "58 − 6 = 52, NO 2.")],
+   {"modo": "mental", "que": "desarmar", "op": "resta"}, {"modo": "mental", "que": "chica", "esc": 10, "op": "resta"}),
+], "recuerda": [
+ RC("CUENTA CHICA", "PENSAMOS SIN LOS CEROS Y DESPUÉS LOS PONEMOS.", "700 − 400 = 300"),
+ RC("SUELTOS", "AL RESTAR SUELTOS CAMBIAN SOLO LAS UNIDADES.", "47 − 5 = 42"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("CONTAR PARA ADELANTE", [LD("DESDE EL CHICO", "PARA RESTAR, PODEMOS CONTAR <b>DESDE EL CHICO</b> HASTA EL GRANDE."),
+   LL("100 − 70: 80, 90, 100.", "SON 3 SALTOS DE 10: 30.")],
+   {"modo": "mental", "que": "falta100", "op": "resta"}, {"modo": "mental", "que": "falta100", "op": "resta"}),
+ T("SALTOS DE 100", [LD("SALTOS GRANDES", "CON CENTENAS CONTAMOS <b>DE 100 EN 100</b>."),
+   LL("500 − 300: 400, 500.", "SON 2 SALTOS DE 100: 200.")],
+   {"modo": "mental", "que": "chica", "esc": 100, "op": "resta"}, {"modo": "mental", "que": "chica", "esc": 100, "op": "resta"}),
+], "recuerda": [
+ RC("CONTAR PARA ADELANTE", "CONTAMOS DESDE EL CHICO HASTA EL GRANDE.", "100 − 40: 60 SALTANDO DE 10"),
+ RC("SALTOS DE 100", "CONTAMOS LAS CAJAS QUE HAY ENTRE LOS DOS.", "600 − 400 = 200"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("RESTAR CADA PARTE", [LD("DESARMAR", "DESARMAMOS EL NÚMERO QUE RESTAMOS Y <b>RESTAMOS CADA PARTE</b> DE SU PARTE."),
+   LL("365 − 42: 60 − 40 Y 5 − 2.", "LAS CENTENAS QUEDAN IGUAL.")],
+   {"modo": "mental", "que": "desarmar", "op": "resta"}, {"modo": "mental", "que": "desarmar", "op": "resta"}),
+ T("JUNTAR AL FINAL", [LD("JUNTAR", "AL FINAL <b>JUNTAMOS</b> LO QUE QUEDÓ DE CADA PARTE."),
+   LL("300 + 20 + 3 = 323.", "SI DA IGUAL QUE ANTES, ALGO SALIÓ MAL.")],
+   {"modo": "mental", "que": "desarmar", "op": "resta"}, {"modo": "mental", "que": "desarmar", "op": "resta"}),
+], "recuerda": [
+ RC("CADA PARTE", "RESTAMOS DECENAS DE DECENAS Y UNIDADES DE UNIDADES.", "70 − 30 = 40 Y 8 − 5 = 3"),
+ RC("JUNTAR", "AL FINAL UNIMOS LO QUE QUEDÓ.", "178 − 35 = 143"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("RESTAR 10 Y RESTAR 100", [LD("UNA CIFRA", "AL RESTAR <b>10</b> O <b>100</b> CAMBIA UNA SOLA CIFRA."),
+   LL("572 − 10 = 562.", "483 − 100 = 383.")],
+   {"modo": "mental", "que": "truco", "op": "resta"}, {"modo": "mental", "que": "truco", "op": "resta"}),
+ T("RESTAR DESDE 100", [LD("DESDE 100", "PARA RESTAR <b>DESDE 100</b>, PENSAMOS QUÉ LE FALTA AL OTRO NÚMERO."),
+   LL("100 − 40 = 60, PORQUE 40 + 60 = 100.", "ELEGÍ EL TRUCO QUE TE SIRVA.")],
+   {"modo": "mental", "que": "falta100", "op": "resta"}, {"modo": "mental", "que": "falta100", "op": "resta"}),
+], "recuerda": [
+ RC("RESTAR 10 O 100", "CAMBIA SOLO UNA CIFRA DEL NÚMERO.", "800 − 100 = 700"),
+ RC("DESDE 100", "PENSAMOS LO QUE LE FALTA AL OTRO PARA LLEGAR A 100.", "100 − 20 = 80"),
+]}
+
 ACT = {
 "1": [N("¿CUÁNTO ES 800 − 300?", 500, "8 − 3 = 5: QUEDAN 5 CAJAS.", n="aplicar"),
-      MC("¿CUÁNTO ES 47 − 5?", ["42", "2", "37"], "42", "SOLO CAMBIAN LOS SUELTOS.", n="analizar")],
+      MC("¿CUÁNTO ES 47 − 5?", ["42", "2", "37"], "42", "SOLO CAMBIAN LOS SUELTOS.", n="analizar"),
+      UNIR("UNÍ CADA RESTA CON SU RESULTADO.", ["900 − 200", "90 − 20", "9 − 2"], ["70", "7", "700"], {"900 − 200": "700", "90 − 20": "70", "9 − 2": "7"}, "LA MISMA CUENTA CHICA: 700, 70 Y 7.", n="analizar"),
+      MC("TOMI DICE QUE 58 − 6 ES 2. ¿CUÁNTO ES?", ["52", "2", "12"], "52", "EL 6 SE RESTA DE LOS SUELTOS: 8 − 6 = 2. QUEDAN 52.", n="error")],
 "2": [N("100 − 70 = ___", 30, "70, 80, 90, 100: 3 SALTOS DE 10.", n="aplicar"),
-      MC("PARA HACER 500 − 300 CONTANDO, ¿DESDE DÓNDE EMPEZÁS?", ["DESDE 300", "DESDE 500", "DESDE 0"], "DESDE 300", "DESDE EL CHICO HASTA EL GRANDE.", n="analizar")],
+      MC("PARA HACER 500 − 300 CONTANDO, ¿DESDE DÓNDE EMPEZÁS?", ["DESDE 300", "DESDE 500", "DESDE 0"], "DESDE 300", "DESDE EL CHICO HASTA EL GRANDE.", n="analizar", **NEU("PARA HACER 500 − 300 CONTANDO, ¿DESDE DÓNDE EMPIEZAS?")),
+      FB("COMPLETÁ: 600 − 400 = ___", [["200"]], "500, 600: 2 SALTOS DE 100.", n="aplicar"),
+      N("[[problema]] TENÍAS 100 FIGURITAS Y REGALASTE 30. ¿CUÁNTAS TE QUEDAN?", 70, "100 − 30 = 70.", n="analizar", **NEU("TENÍAS 100 ESTAMPAS Y REGALASTE 30. ¿CUÁNTAS TE QUEDAN?"))],
 "3": [N("¿CUÁNTO ES 365 − 42?", 323, "300; 60 − 40 = 20; 5 − 2 = 3.", n="aplicar"),
-      MC("PARA RESTAR 365 − 42, ¿DE QUÉ RESTAMOS EL 40?", ["DEL 60", "DEL 5", "DEL 300"], "DEL 60", "PAQUETES DE PAQUETES.", n="analizar")],
+      MC("PARA RESTAR 365 − 42, ¿DE QUÉ RESTAMOS EL 40?", ["DEL 60", "DEL 5", "DEL 300"], "DEL 60", "PAQUETES DE PAQUETES.", n="analizar"),
+      FB("COMPLETÁ: 178 − 35 = 100 + 40 + ___ = ___", [["3"], ["143"]], "70 − 30 = 40 Y 8 − 5 = 3.", n="aplicar"),
+      MC("JUAN HIZO 259 − 27 Y LE DIO 259. ¿CUÁNTO DA?", ["232", "259", "286"], "232", "50 − 20 = 30 Y 9 − 7 = 2: 232.", n="error")],
 "4": [N("¿CUÁNTO ES 483 − 100?", 383, "CAMBIAN LAS CENTENAS.", n="aplicar"),
-      N("¿CUÁNTO ES 100 − 40?", 60, "60 + 40 = 100.", n="aplicar")],
+      N("¿CUÁNTO ES 100 − 40?", 60, "60 + 40 = 100.", n="aplicar"),
+      CLAS("¿QUÉ TRUCO CONVIENE?", ["572 − 10", "100 − 20", "800 − 100", "100 − 60"], ["RESTAR 10 O 100", "PENSAR CUÁNTO FALTA PARA 100"],
+           {"572 − 10": "RESTAR 10 O 100", "100 − 20": "PENSAR CUÁNTO FALTA PARA 100", "800 − 100": "RESTAR 10 O 100", "100 − 60": "PENSAR CUÁNTO FALTA PARA 100"}, "SI RESTÁS 10 O 100 CAMBIA UNA CIFRA; DESDE 100 PENSÁS LO QUE FALTA.", n="analizar"),
+      FB("COMPLETÁ: 572 − 10 = ___", [["562"]], "CAMBIAN LAS DECENAS.", n="aplicar")],
 "5": [N("RELÁMPAGO. 900 − 400 = ___", 500, "9 − 4 = 5.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 100 − 90 = ___", 10, "90 + 10 = 100.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 256 − 10 = ___", 246, "CAMBIAN LAS DECENAS.", tiempo=30, n="aplicar"),
@@ -174,7 +243,7 @@ EXAMEN = [
  [4, N("¿CUÁNTO ES 100 − 30?", 70, "70 + 30 = 100.", n="aplicar")],
  [4, MC("SOFI DICE: 364 − 10 = 264. ¿CUÁNTO ES?", ["354", "264", "363"], "354", "MENOS 10 CAMBIA LAS DECENAS.", n="error")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 8, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 8, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: cálculo mental de restas", "examen_titulo": "Nivel jefe: cálculo mental de restas",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-8.json"), "w", encoding="utf-8"), ensure_ascii=False)
