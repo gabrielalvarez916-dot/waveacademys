@@ -68,3 +68,28 @@ Armarlas con `tools/juegos_actividad.py` (no a mano):
 - `sopa([palabras], consigna)` → `multi_select` con `[[sopa]]`: todas las opciones son palabras a encontrar (la grilla se arma sola en la pantalla). Encontrar una palabra marca su opción.
 - `escape(pregunta)` → agrega `[[escape]]` a la primera pregunta de una ACTIVIDAD (no examen): un candado por pregunta que se abre al comprobarla bien; con todos abiertos, «¡Escapaste!».
 Sugerencia: crucigrama y sopa para vocabulario y conceptos clave; escape room para la práctica general o un nivel de cierre.
+
+## Actividades plus (solo actividades, nunca examen)
+
+Se activan con una marca al principio del enunciado. La marca no se ve. Cambian la pantalla, pero la corrección es la del tipo de siempre, con su clave de siempre (tabla de arriba). Una marca por pregunta. Cada actividad tiene que resolverse en uno o dos minutos.
+
+| Marca | Tipo | Qué hace el alumno | Clave |
+|---|---|---|---|
+| `[[error]]` | `tap_text` modo `lineas` | toca el paso con error de una cuenta o procedimiento (cada segmento es un paso) | `{"tocar":[1]}` |
+| `[[secuencia]]` | `fill_blank` | completa los pasos que faltan; los pasos se separan con `→` en el enunciado | `{"huecos":[..]}` |
+| `[[comparar]]` | `multiple_choice` | compara 2 o 3 resoluciones lado a lado y elige la correcta (` \| ` = salto de línea dentro de una opción) | texto de la correcta |
+| `[[causas]]` | `matching` | une cada causa (izquierda) con su consecuencia (derecha) | `{"pares":{..}}` |
+| `[[etapas]]` / `[[linea]]` | `ordering` | ordena etapas de un proceso / hechos en una línea de tiempo | `{"orden":[..]}` |
+| `[[oracion:Sujeto,Verbo,Complemento]]` | `tokens` | arma la oración por partes (las partes de la marca guían) | `{"soluciones":[[..]]}` |
+| `[[problema]]` | `numeric`, `short_answer`, `solve_complete` | problema verbal: los datos salen resaltados y tiene un borrador que no se entrega | la del tipo |
+| `[[piezas:4]]`, `[[piezas:4:circulo]]`, `[[piezas:4:barra:2]]` | `numeric` | pinta piezas de 1 o más enteros partidos en 4 → escribe `3/4` | `{"acepta":[0.75]}` |
+| `[[repartir:12:3:🍎]]` | `numeric` | reparte 12 objetos en 3 grupos → escribe cuántos hay en cada grupo (solo si quedaron iguales; puede sobrar) | `{"acepta":[4]}` |
+| `[[recta:0:2:1/4]]` | `numeric` | toca la recta (de 0 a 2, de a 1/4) → escribe `5/4` (con paso decimal escribe `1,25`) | `{"acepta":[1.25]}` |
+| `[[esquema]]` / `[[esquema:arbol]]` | `matching` o `classify` | completa un esquema tocando nombres (en `arbol` el primer elemento de la izquierda es el de arriba) | la del tipo |
+| `[[arrastrar]]` | `label_image` | rotula tocando el nombre y después el punto | `{"puntos":{..}}` |
+| `[[geoplano:6:area]]` / `[[geoplano:6:perimetro]]` | `numeric` | construye una figura en una cuadrícula de 6×6 → escribe el área (en cuadraditos) o el perímetro | `{"acepta":[6]}` (con diagonales usar `tolerancia`) |
+| `[[funcion]]` / `[[funcion:5]]` | `fill_blank` con 2 huecos: `y = ___x + ___` | marca dos puntos en el plano → completa pendiente y ordenada (enteros o fracción `1/2`) | `{"huecos":[["1/2","0,5"],["1"]]}` |
+| `[[molecula:H,O]]` | `short_answer` | arma la molécula con átomos → escribe la fórmula en el orden de la marca (`H2O`) | `{"acepta":["H2O"]}` |
+| `[[circuito]]` / `[[sistema]]` | `multi_select` | elige piezas o partes y se van armando en el circuito o el sistema | `{"correctas":[..]}` |
+| `[[simulador:Temperatura,0,100,10,°C;Tiempo,120-x,s]]` | cualquiera (casi siempre `multiple_choice` o `numeric`) | mueve el control (de 0 a 100, de a 10) y mira cómo cambian las salidas (fórmula con `x`); después responde | la del tipo |
+| `[[capas:Introducción\|Desarrollo\|Cierre]]` | `open` o `keywords` | escribe el texto por partes; se entrega todo junto | la del tipo |
