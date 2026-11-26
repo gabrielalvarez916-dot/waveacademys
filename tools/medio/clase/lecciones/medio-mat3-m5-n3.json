@@ -1,0 +1,142 @@
+{
+ "slug": "medio-mat3-m5-n3",
+ "step_id": "ec72f326-f881-496f-b8aa-a9699b148baf",
+ "materia": "Matemática 3",
+ "titulo": "Estimar una suma",
+ "sub": "Matemática 3 · Misión 5 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tenemos 3.890 y 2.105 botellas"
+    },
+    {
+     "yo": true,
+     "txt": "¿Llegamos a 6.000?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Calculemos más o menos!"
+    }
+   ],
+   "titulo": "ESTIMAR",
+   "sub": "una suma",
+   "voz": [
+    "Sofi escribe: tenemos 3.890 y 2.105 botellas.",
+    "¿Llegamos a *6.000*?",
+    "¡Calculemos *más o menos*!",
+    "Hoy: *estimar una suma*."
+   ]
+  },
+  {
+   "t": "recta",
+   "min": 3000,
+   "max": 5000,
+   "paso": 1000,
+   "marcas": [
+    {
+     "v": 3890,
+     "txt": "3.890"
+    },
+    {
+     "v": 4000,
+     "txt": "cerca: 4.000"
+    }
+   ],
+   "voz": [
+    "Buscamos el mil más cercano en la recta.",
+    "El 3.890 está acá, entre 3.000 y 4.000.",
+    "¡Está muy cerca del *4.000*! Le faltan solo 110."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "ESTIMAMOS",
+   "pasos": [
+    {
+     "txt": "3.890 + 2.105"
+    },
+    {
+     "txt": "4.000 + 2.000",
+     "nota": "redondos"
+    },
+    {
+     "txt": "CERCA DE 6.000"
+    }
+   ],
+   "voz": [
+    "Tenemos 3.890 más 2.105.",
+    "Cambiamos por redondos: 4.000 más *2.000*.",
+    "¡Da *cerca de 6.000*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿5.120 + 2.940 da cerca de…?",
+   "a": {
+    "txt": "8.000",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "5.000",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡Cerca de 8.000!",
+   "voz": [
+    "¿Qué creés? 5.120 más 2.940…",
+    "5.000 más 3.000…",
+    "¡Cerca de *8.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Estimar es hacer la cuenta exacta",
+     "bien": "Estimar es calcular más o menos"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Estimar es calcular *más o menos*, con redondos.",
+    "La cuenta exacta se hace después, para comparar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ESTIMAR",
+     "más o menos"
+    ],
+    [
+     "REDONDEAR",
+     "al mil cercano"
+    ],
+    [
+     "SIRVE",
+     "para controlar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Estimar es calcular *más o menos*.",
+    "Redondeamos al *mil más cercano*.",
+    "Sirve para *controlar* la cuenta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

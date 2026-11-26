@@ -1,0 +1,127 @@
+{
+ "slug": "medio-mat3-m4-n3",
+ "step_id": "bb190a37-8992-4dff-ad11-24c3027ab7db",
+ "materia": "Matemática 3",
+ "titulo": "Comparar precios de cantidades grandes",
+ "sub": "Matemática 3 · Misión 4 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🚲",
+   "final": "🤔",
+   "titulo": "COMPARAR",
+   "sub": "precios grandes",
+   "voz": [
+    "Una bici cuesta *4.250*. Un monopatín cuesta *4.520*.",
+    "¿Cuál es más caro?",
+    "Hoy: *comparar precios grandes*."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "BICI",
+    "items": [
+     "$4.250"
+    ]
+   },
+   "der": {
+    "cab": "MONOPATÍN",
+    "items": [
+     "$4.520"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Miramos primero los *miles*: 4 y 4. Empatan.",
+    "Después las *centenas*: 2 y 5.",
+    "¡El monopatín es *más caro*!"
+   ]
+  },
+  {
+   "t": "ranking",
+   "titulo": "DEL MÁS CARO AL MÁS BARATO",
+   "items": [
+    {
+     "txt": "BICI GRANDE",
+     "emoji": "🚲",
+     "dato": "$8.900"
+    },
+    {
+     "txt": "PATINES",
+     "emoji": "🛼",
+     "dato": "$3.200"
+    },
+    {
+     "txt": "CASCO",
+     "emoji": "⛑️",
+     "dato": "$1.950"
+    }
+   ],
+   "voz": [
+    "Ordenamos del más caro al más barato.",
+    "Tercero, el *casco*: 1.950.",
+    "Segundos, los *patines*: 3.200.",
+    "¡Y primera, la *bici grande*: 8.900!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál es más barato?",
+   "opciones": [
+    "$6.080",
+    "$6.800",
+    "$6.008"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Ahora vos: ¿cuál es *más barato*?",
+    "Todos tienen 6 miles. Mirá las centenas y las decenas…",
+    "¡*6.008*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "$999 es más caro que $1.200",
+     "bien": "$1.200 es más caro que $999"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "1.200 tiene *cuatro cifras*: es más caro."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PRIMERO",
+     "los miles"
+    ],
+    [
+     "SI EMPATAN",
+     "las centenas"
+    ],
+    [
+     "MÁS CARO",
+     "número mayor"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero miramos los *miles*.",
+    "Si empatan, las *centenas*.",
+    "El precio *mayor* es el más caro.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

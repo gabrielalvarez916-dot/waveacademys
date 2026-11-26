@@ -1,0 +1,130 @@
+{
+ "slug": "medio-mat3-m4-n1",
+ "step_id": "2cb62deb-dd54-4e25-b8ac-6b492a9959a9",
+ "materia": "Matemática 3",
+ "titulo": "Billetes y monedas de uso actual",
+ "sub": "Matemática 3 · Misión 4 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Abrió la bicicletería de Don Beto!",
+   "bajada": "Todo se paga con billetes",
+   "emoji": "🚲",
+   "titulo": "LOS BILLETES",
+   "sub": "de miles",
+   "voz": [
+    "¡Último momento: abrió la *bicicletería* de Don Beto!",
+    "Allá todo se paga con *billetes*.",
+    "Hoy: *los billetes de miles*."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "💵",
+     "txt": "$100"
+    },
+    {
+     "emoji": "💵",
+     "txt": "$500"
+    },
+    {
+     "emoji": "💵",
+     "txt": "$1.000"
+    },
+    {
+     "emoji": "💵",
+     "txt": "$2.000"
+    }
+   ],
+   "voz": [
+    "Este billete vale *100*.",
+    "Este vale *500*: cinco de cien.",
+    "Este vale *1.000*.",
+    "¡Y este vale *2.000*: dos de mil!"
+   ]
+  },
+  {
+   "t": "canje",
+   "titulo": "CAMBIAMOS UN BILLETE",
+   "grande": {
+    "n": 1,
+    "txt": "1.000"
+   },
+   "chico": {
+    "n": 0,
+    "txt": "100"
+   },
+   "sueltos": 0,
+   "ec1": "1 billete de $1.000",
+   "ec2": "10 billetes de $100",
+   "voz": [
+    "Don Beto tiene un billete de *1.000*.",
+    "Lo cambia por billetes de 100.",
+    "Le dan *diez* billetes.",
+    "Cuenta: cien, doscientos… ¡mil!",
+    "Un billete de 1.000 vale *diez* de 100."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuántos billetes de $1.000 forman $2.000?",
+   "opciones": [
+    "2",
+    "20",
+    "1"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuántos de 1.000 forman 2.000?",
+    "Contá de mil en mil…",
+    "¡*Dos* billetes!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Un billete de $500 vale lo mismo que uno de $1.000",
+     "bien": "Dos billetes de $500 valen $1.000"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hacen falta *dos* billetes de 500 para tener 1.000."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "$1.000",
+     "diez de $100"
+    ],
+    [
+     "$2.000",
+     "dos de $1.000"
+    ],
+    [
+     "EL NÚMERO",
+     "dice cuánto vale"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un billete de 1.000 vale *diez* de 100.",
+    "Uno de 2.000 vale *dos* de 1.000.",
+    "El número dice *cuánto vale*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

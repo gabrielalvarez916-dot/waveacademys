@@ -2036,7 +2036,7 @@
   // dinero: lista de valores (billetes de 10 o 20, monedas de 1 o 5); hasta = cuántos ya contados (con el total que va)
   function p1Plata(vals, hasta) {
     var t = 0; return '<div class="lb-p1-fila">' + vals.map(function (v, i) { t += v; var c = i < (hasta || 0);
-      return '<span class="lb-p1-pl ' + (v >= 10 ? 'bi' : 'mo') + (c ? ' on' : '') + '">' + (v >= 10 ? '💵' : '🪙') + '<b>$' + v + '</b>' + (c ? '<small>' + t + '</small>' : '') + '</span>'; }).join('') + '</div>';
+      return '<span class="lb-p1-pl ' + (v >= 10 ? 'bi' : 'mo') + (c ? ' on' : '') + '">' + (v >= 10 ? '💵' : '🪙') + '<b>$' + fmt(v) + '</b>' + (c ? '<small>' + fmt(t) + '</small>' : '') + '</span>'; }).join('') + '</div>';
   }
   function p1Desarmar(n) { var r = []; while (n >= 10) { r.push(10); n -= 10; } if (n >= 5) { r.push(5); n -= 5; } while (n > 0) { r.push(1); n--; } return r; }
   // cuadro de 10 (dos filas de 5): a casilleros de un color, b de otro, el resto vacíos; nb = cuántos de b ya se ven
@@ -2156,6 +2156,10 @@
       valor4: ctrl('m', 'MILES', 1, 9, 1, 4) + ctrl('c', 'CENTENAS', 0, 9, 1, 2) + ctrl('d', 'DECENAS', 0, 9, 1, 7) + ctrl('u', 'UNIDADES', 0, 9, 1, 6),
       armar4: ctrl('a', 'TARJETA 1', 1, 9, 1, 3) + ctrl('b', 'TARJETA 2', 1, 9, 1, 8) + ctrl('c', 'TARJETA 3', 1, 9, 1, 1) + ctrl('d', 'TARJETA 4', 1, 9, 1, 6),
       cambia4: ctrl('n', 'NÚMERO', 1000, 8899, 1, 3452),
+      dinero4: p.que === 'formar' ? ctrl('n', 'MONTO', 1100, 9900, 100, 3700) : p.que === 'caro' ? ctrl('a', 'PRECIO 1', 1000, 9900, 10, 4250) + ctrl('b', 'PRECIO 2', 1000, 9900, 10, 4520) : p.que === 'vuelto' ? ctrl('n', 'PRECIO', 1100, 9900, 100, p.pago === 10000 ? 7600 : 3700) :
+        ctrl('a', 'BILLETES DE $2.000', 0, 3, 1, 1) + ctrl('b', 'BILLETES DE $1.000', 0, 4, 1, 2) + ctrl('c', 'BILLETES DE $500', 0, 1, 1, 1) + ctrl('d', 'BILLETES DE $100', 0, 4, 1, 3),
+      sumar4: p.que === 'redondos' ? ctrl('a', 'PRIMER NÚMERO', 1000, 6000, 100, 2400) + ctrl('b', 'SEGUNDO NÚMERO', 100, 3000, 100, 1300) : p.que === 'descomp' ? ctrl('a', 'PRIMER NÚMERO', 1000, 5999, 1, 2345) + ctrl('b', 'SEGUNDO NÚMERO', 1000, 3999, 1, 1432) :
+        p.que === 'estimar' ? ctrl('a', 'PRIMER NÚMERO', 1000, 6999, 1, 3890) + ctrl('b', 'SEGUNDO NÚMERO', 1000, 2999, 1, 2105) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 500, 4500, 500, 2500) : ctrl('a', 'NÚMERO', 1100, 8900, 100, 3600),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2607,6 +2611,83 @@
         P.push({ vis: p1CDUt(nn2, pos) + p1Big(v.n + ' + ' + ad + ' = ' + nn2), txt: 'CAMBIA SOLO LA CIFRA DE LAS <b>' + ['CENTENAS', 'DECENAS', 'UNIDADES'][pos] + '</b>' + (String(nn2).length > 3 || String(nn2)[pos] === '0' ? ' (Y PUEDE ARRASTRAR A LA DE AL LADO).' : '.') });
         return P;
       }
+      if (md === 'sumar4') {
+        var qs = p.que || 'falta1000', PT = function (n) { return [Math.floor(n / 1000) * 1000, Math.floor(n % 1000 / 100) * 100, Math.floor(n % 100 / 10) * 10, n % 10]; };
+        if (qs === 'redondos') {
+          var Am = Math.floor(v.a / 1000) * 1000, Ac = v.a % 1000, Bm = Math.floor(v.b / 1000) * 1000, Bc = v.b % 1000;
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.b)), txt: 'SUMAMOS DOS NÚMEROS <b>REDONDOS</b>.' });
+          P.push({ vis: p1Big(fmt(Am) + ' + ' + fmt(Bm) + ' = ' + fmt(Am + Bm)), txt: 'PRIMERO LOS <b>MILES</b>: ' + Am / 1000 + ' + ' + Bm / 1000 + ' = ' + (Am + Bm) / 1000 + ' MILES.' });
+          P.push({ vis: p1Big(Ac + ' + ' + Bc + ' = ' + fmt(Ac + Bc)), txt: 'DESPUÉS LOS <b>CIENTOS</b>: ' + Ac / 100 + ' + ' + Bc / 100 + ' = ' + (Ac + Bc) / 100 + ' CIENTOS.' + (Ac + Bc >= 1000 ? ' ¡SE ARMA UN MIL!' : '') });
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.b) + ' = ' + fmt(v.a + v.b)), txt: 'JUNTAMOS: <b>' + fmt(v.a + v.b) + '</b>.' });
+          return P;
+        }
+        if (qs === 'descomp') {
+          var pa5 = PT(v.a), pb5 = PT(v.b), NN = ['MILES', 'CENTENAS', 'DECENAS', 'UNIDADES'], ac5 = [];
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.b)), txt: 'VAMOS A SUMAR <b>DESARMANDO</b> LOS NÚMEROS.' });
+          P.push({ vis: '<p class="lb-pt-g">' + pa5.map(fmt).join(' + ') + '</p><p class="lb-pt-g">' + pb5.map(fmt).join(' + ') + '</p>', txt: 'DESARMAMOS CADA NÚMERO EN MILES, CENTENAS, DECENAS Y UNIDADES.' });
+          for (i = 0; i < 4; i++) { ac5.push(pa5[i] + pb5[i]); P.push({ vis: p1Big(fmt(pa5[i]) + ' + ' + fmt(pb5[i]) + ' = ' + fmt(pa5[i] + pb5[i])), txt: 'SUMAMOS ' + (i ? 'LAS ' : 'LOS ') + '<b>' + NN[i] + '</b>.' }); }
+          P.push({ vis: p1Big(ac5.map(fmt).join(' + ') + ' = ' + fmt(v.a + v.b)), txt: 'JUNTAMOS LOS RESULTADOS: <b>' + fmt(v.a + v.b) + '</b>.' });
+          return P;
+        }
+        if (qs === 'estimar') {
+          var ra = Math.round(v.a / 1000) * 1000, rb = Math.round(v.b / 1000) * 1000;
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.b)), txt: '¿CUÁNTO DA <b>MÁS O MENOS</b>? NO HACE FALTA LA CUENTA EXACTA.' });
+          P.push({ vis: p1Big(fmt(v.a) + ' → ' + fmt(ra)), txt: 'EL ' + fmt(v.a) + ' ESTÁ CERCA DEL <b>' + fmt(ra) + '</b>.' });
+          P.push({ vis: p1Big(fmt(v.b) + ' → ' + fmt(rb)), txt: 'EL ' + fmt(v.b) + ' ESTÁ CERCA DEL <b>' + fmt(rb) + '</b>.' });
+          P.push({ vis: p1Big(fmt(ra) + ' + ' + fmt(rb) + ' = ' + fmt(ra + rb)), txt: 'SUMAMOS LOS REDONDOS: DA <b>CERCA DE ' + fmt(ra + rb) + '</b>.' });
+          P.push({ vis: p1Big('EXACTO: ' + fmt(v.a + v.b)), txt: 'LA CUENTA EXACTA DA ' + fmt(v.a + v.b) + ': ¡ESTÁ CERCA!' });
+          return P;
+        }
+        if (qs === 'dobles') {
+          var h5 = Math.floor(v.a / 1000) * 1000, c5 = v.a % 1000;
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.a)), txt: 'SUMAMOS EL MISMO NÚMERO DOS VECES: ES EL <b>DOBLE</b>.' });
+          P.push({ vis: p1Big(fmt(h5) + ' + ' + fmt(h5) + ' = ' + fmt(2 * h5)), txt: 'EL DOBLE DE LOS MILES: <b>' + fmt(2 * h5) + '</b>.' });
+          P.push({ vis: p1Big(c5 + ' + ' + c5 + ' = ' + fmt(2 * c5)), txt: 'EL DOBLE DE ' + c5 + ': <b>' + fmt(2 * c5) + '</b>.' });
+          P.push({ vis: p1Big(fmt(v.a) + ' + ' + fmt(v.a) + ' = ' + fmt(2 * v.a)), txt: 'JUNTAMOS: <b>' + fmt(2 * v.a) + '</b>.' });
+          return P;
+        }
+        var up5 = Math.ceil(v.a / 1000) * 1000; if (up5 === v.a) up5 += 1000;
+        P.push({ vis: p1Big(fmt(v.a) + ' + ? = ' + fmt(up5)), txt: '¿CUÁNTO LE FALTA AL ' + fmt(v.a) + ' PARA LLEGAR AL <b>' + fmt(up5) + '</b>?' });
+        P.push({ vis: p1Big(v.a % 1000 + ' + ? = 1.000'), txt: 'MIRAMOS SOLO LOS CIENTOS: ' + v.a % 1000 + '.' });
+        P.push({ vis: p1Big(v.a % 1000 + ' + ' + (1000 - v.a % 1000) + ' = 1.000'), txt: (v.a % 1000) / 100 + ' CIENTOS Y ' + (10 - (v.a % 1000) / 100) + ' CIENTOS FORMAN UN MIL.' });
+        P.push({ vis: p1Big(fmt(v.a) + ' + ' + (up5 - v.a) + ' = ' + fmt(up5)), txt: 'LE FALTAN <b>' + (up5 - v.a) + '</b>.' });
+        return P;
+      }
+      if (md === 'dinero4') {
+        var q4 = p.que || 'contar', sum4 = function (L) { return L.reduce(function (x, y) { return x + y; }, 0); };
+        if (q4 === 'contar') {
+          var B4 = [], k4; [[v.a, 2000], [v.b, 1000], [v.c, 500], [v.d, 100]].forEach(function (z) { for (k4 = 0; k4 < z[0]; k4++) B4.push(z[1]); });
+          if (!B4.length) { P.push({ vis: p1Big('NO HAY DINERO'), txt: 'SUBÍ ALGÚN BILLETE.' }); return P; }
+          P.push({ vis: p1Plata(B4), txt: 'EL NÚMERO DE CADA BILLETE DICE <b>CUÁNTO VALE</b>.' });
+          for (i = 1; i <= B4.length; i++) P.push({ vis: p1Plata(B4, i), txt: (i === 1 ? 'EMPEZAMOS POR EL QUE MÁS VALE: <b>$' : 'SUMAMOS $' + fmt(B4[i - 1]) + ': <b>$') + fmt(sum4(B4.slice(0, i))) + '</b>.' });
+          P.push({ vis: p1Plata(B4, B4.length) + p1Big('EN TOTAL $' + fmt(sum4(B4))), txt: 'EN TOTAL HAY <b>$' + fmt(sum4(B4)) + '</b>.' });
+          return P;
+        }
+        if (q4 === 'formar') {
+          var mi4 = Math.floor(v.n / 1000), ce4 = (v.n % 1000) / 100, F4 = [], j4;
+          for (j4 = 0; j4 < mi4; j4++) F4.push(1000); if (ce4 >= 5) { F4.push(500); ce4 -= 5; } for (j4 = 0; j4 < ce4; j4++) F4.push(100);
+          P.push({ vis: p1Big('QUEREMOS $' + fmt(v.n)), txt: 'VAMOS A JUNTAR <b>$' + fmt(v.n) + '</b> CON BILLETES.' });
+          P.push({ vis: p1Big('$' + fmt(v.n) + ' = $' + fmt(mi4 * 1000) + ' + $' + (v.n % 1000)), txt: 'LO SEPARAMOS: <b>MILES</b> Y <b>CIENTOS</b>.' });
+          P.push({ vis: p1Plata(F4.slice(0, mi4), mi4), txt: 'PARA LOS MILES: <b>' + mi4 + '</b> BILLETE' + (mi4 > 1 ? 'S' : '') + ' DE $1.000.' });
+          P.push({ vis: p1Plata(F4, F4.length) + p1Big('EN TOTAL $' + fmt(v.n)), txt: 'PARA LOS CIENTOS: ' + (v.n % 1000 >= 500 ? 'UNO DE $500 Y ' : '') + 'BILLETES DE $100.' });
+          return P;
+        }
+        if (q4 === 'caro') {
+          var Gp = function (h) { return '<div class="lb-p1-dos"><div class="lb-p1-pre' + (h === v.a ? ' on' : '') + '">🚲<b>$' + fmt(v.a) + '</b></div><div class="lb-p1-pre' + (h === v.b ? ' on' : '') + '">🛴<b>$' + fmt(v.b) + '</b></div></div>'; };
+          P.push({ vis: Gp(), txt: 'COMPARAMOS LOS PRECIOS COMO NÚMEROS: PRIMERO LOS <b>MILES</b>.' });
+          if (v.a === v.b) { P.push({ vis: Gp() + p1Big('CUESTAN IGUAL'), txt: 'TIENEN EL MISMO PRECIO.' }); return P; }
+          P.push({ vis: '<div class="lb-p1-dos">' + p1CDUt(v.a, 9) + p1CDUt(v.b, 9) + '</div>', txt: Math.floor(v.a / 1000) === Math.floor(v.b / 1000) ? 'LOS MILES EMPATAN: MIRAMOS LAS <b>CENTENAS</b>.' : 'LOS MILES SON DISTINTOS: YA SABEMOS CUÁL ES MAYOR.' });
+          P.push({ vis: Gp(Math.max(v.a, v.b)), txt: '<b>$' + fmt(Math.max(v.a, v.b)) + '</b> ES EL MÁS <b>CARO</b>.' });
+          P.push({ vis: Gp(Math.min(v.a, v.b)) + p1Big('$' + fmt(Math.min(v.a, v.b)) + ' ES MÁS BARATO'), txt: '<b>$' + fmt(Math.min(v.a, v.b)) + '</b> ES EL MÁS <b>BARATO</b>.' });
+          return P;
+        }
+        var pg4 = p.pago === 10000 ? 10000 : Math.ceil((v.n + 1) / 1000) * 1000, mid4 = Math.ceil((v.n + 1) / 1000) * 1000;
+        P.push({ vis: p1Big('CUESTA $' + fmt(v.n) + ' · PAGAMOS $' + fmt(pg4)), txt: 'PAGAMOS CON MÁS: NOS <b>DEVUELVEN</b> DINERO.' });
+        P.push({ vis: p1Big('$' + fmt(v.n) + ' → $' + fmt(mid4)), txt: 'CONTAMOS PARA ADELANTE HASTA EL MIL: <b>' + fmt(mid4 - v.n) + '</b>.' });
+        if (pg4 > mid4) P.push({ vis: p1Big('$' + fmt(mid4) + ' → $' + fmt(pg4)), txt: 'DE ' + fmt(mid4) + ' A ' + fmt(pg4) + ' HAY <b>' + fmt(pg4 - mid4) + '</b>.' });
+        P.push({ vis: p1Big('NOS DEVUELVEN $' + fmt(pg4 - v.n)), txt: 'EN TOTAL NOS DEVUELVEN <b>$' + fmt(pg4 - v.n) + '</b>.' });
+        return P;
+      }
       if (md === 'comparar4') {
         var sa4 = String(v.a), sb4 = String(v.b), G4 = function (h) { return '<div class="lb-p1-dos">' + p1CDUt(v.a, h) + p1CDUt(v.b, h) + '</div>'; }, NOM4 = ['MILES', 'CENTENAS', 'DECENAS', 'UNIDADES'];
         P.push({ vis: G4(), txt: '¿CUÁL ES MAYOR: <b>' + fmt(v.a) + '</b> O <b>' + fmt(v.b) + '</b>?' });
@@ -2967,6 +3048,24 @@
       return { cons: '¿CUÁL ES UN NÚMERO <b>REDONDO</b>?', ops: mezclar([String(r), String(a), String(b)]), ok: String(r), ayuda: 'UN NÚMERO REDONDO TERMINA EN 0.', bien: '¡MUY BIEN! ' + r + ' TERMINA EN 0.' }; });
     if (md === 'cambia') return respuesta(el, api, function () { var n = R(100, 889), ad = pick([1, 10, 100]);
       return { cons: '¿CUÁNTO ES <b>' + n + ' + ' + ad + '</b>?', html: p1CDUt(n), campos: [{ v: n + ad }], ayuda: 'SUMAR ' + ad + ' CAMBIA LA CIFRA DE LAS ' + (ad === 100 ? 'CENTENAS' : ad === 10 ? 'DECENAS' : 'UNIDADES') + '.', bien: '¡MUY BIEN! ES ' + (n + ad) + '.' }; });
+    if (md === 'sumar4') { var qx = p.que || 'falta1000';
+      if (qx === 'estimar') return p1Elegir(el, api, function () { var a = R(1000, 6499), b = R(1000, 2499), r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; while (Math.abs(a - Math.round(a / 1000) * 1000) > 350 || Math.abs(b - Math.round(b / 1000) * 1000) > 350) { a = R(1000, 6499); b = R(1000, 2499); r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; }
+        return { cons: '<b>' + fmt(a) + ' + ' + fmt(b) + '</b> DA MÁS O MENOS…', ops: mezclar([fmt(r), fmt(r + 2000), fmt(Math.max(1000, r - 2000))]), ok: fmt(r), ayuda: 'REDONDEÁ CADA NÚMERO AL MIL MÁS CERCANO.', bien: '¡MUY BIEN! LA CUENTA EXACTA DA ' + fmt(a + b) + '.' }; });
+      return respuesta(el, api, function () { var a, b, c, h;
+        if (qx === 'redondos') { a = 100 * R(10, 60); b = 100 * R(1, 30); c = a + b; h = 'SUMÁ MILES CON MILES Y CIENTOS CON CIENTOS.'; }
+        else if (qx === 'descomp') { a = R(1000, 5999); b = R(1000, 3999); c = a + b; h = 'DESARMÁ: MILES CON MILES, CENTENAS CON CENTENAS…'; }
+        else if (qx === 'dobles') { a = 500 * R(1, 9); b = a; c = 2 * a; h = 'EL DOBLE: LOS MILES Y LOS CIENTOS POR SEPARADO.'; }
+        else { a = 100 * R(11, 89); if (a % 1000 === 0) a += 400; b = null; c = Math.ceil(a / 1000) * 1000 - a; return { cons: '¿CUÁNTO LE FALTA AL <b>' + fmt(a) + '</b> PARA LLEGAR AL <b>' + fmt(a + c) + '</b>?', campos: [{ v: c }], ayuda: 'MIRÁ LOS CIENTOS: ¿CUÁNTOS FALTAN PARA 10?', bien: '¡MUY BIEN! FALTAN ' + c + '.' }; }
+        return { cons: '¿CUÁNTO ES <b>' + fmt(a) + ' + ' + fmt(b) + '</b>?', campos: [{ v: c }], ayuda: h, bien: '¡MUY BIEN! ES ' + fmt(c) + '.' }; }); }
+    if (md === 'dinero4') { var q5 = p.que || 'contar';
+      if (q5 === 'caro') return p1Elegir(el, api, function () { var a = 10 * R(100, 990), b = Math.random() < 0.6 ? Math.floor(a / 1000) * 1000 + 10 * R(0, 99) : 10 * R(100, 990); while (b === a) b = 10 * R(100, 990); var car = Math.random() < 0.5;
+        return { cons: '¿CUÁL ES MÁS <b>' + (car ? 'CARO' : 'BARATO') + '</b>?', ops: ['$' + fmt(a), '$' + fmt(b)], ok: '$' + fmt(car ? Math.max(a, b) : Math.min(a, b)), ayuda: 'COMPARÁ COMO NÚMEROS: PRIMERO LOS MILES.', bien: '¡MUY BIEN!' }; });
+      if (q5 === 'formar') return respuesta(el, api, function () { var n = 100 * R(11, 99); if (n % 1000 === 0) n += 300;
+        return { cons: 'CON BILLETES DE $1.000 Y DE $100, ¿CÓMO JUNTAMOS <b>$' + fmt(n) + '</b>?', campos: [{ lab: 'DE $1.000', v: Math.floor(n / 1000) }, { lab: 'DE $100', v: (n % 1000) / 100 }], ayuda: 'LOS MILES VAN CON BILLETES DE $1.000; LOS CIENTOS, CON DE $100.', bien: '¡MUY BIEN!' }; });
+      if (q5 === 'vuelto') return respuesta(el, api, function () { var n = 100 * R(11, 99), pg = p.pago === 10000 ? 10000 : Math.ceil((n + 1) / 1000) * 1000;
+        return { cons: 'ALGO CUESTA <b>$' + fmt(n) + '</b>. PAGAMOS CON <b>$' + fmt(pg) + '</b>. ¿CUÁNTO NOS DEVUELVEN?', campos: [{ v: pg - n }], ayuda: 'CONTÁ PARA ADELANTE DESDE ' + fmt(n) + ' HASTA ' + fmt(pg) + '.', bien: '¡MUY BIEN! $' + fmt(pg - n) + '.' }; });
+      return respuesta(el, api, function () { var B = [], k; [[R(0, 2), 2000], [R(1, 3), 1000], [R(0, 1), 500], [R(0, 4), 100]].forEach(function (z) { for (k = 0; k < z[0]; k++) B.push(z[1]); }); var t = B.reduce(function (x, y) { return x + y; }, 0);
+        return { cons: '¿CUÁNTO DINERO HAY?', html: p1Plata(B), campos: [{ v: t }], ayuda: 'EMPEZÁ POR EL BILLETE QUE MÁS VALE.', bien: '¡MUY BIEN! $' + fmt(t) + '.' }; }); }
     if (md === 'comparar4') return p1Elegir(el, api, function () { var a = R(1000, 9999), b = Math.random() < 0.6 ? Math.floor(a / 1000) * 1000 + R(0, 999) : R(1000, 9999); while (b === a) b = R(1000, 9999); var may = Math.random() < 0.5;
       return { cons: '¿CUÁL ES <b>' + (may ? 'MAYOR' : 'MENOR') + '</b>?', ops: [fmt(a), fmt(b)], ok: fmt(may ? Math.max(a, b) : Math.min(a, b)), ayuda: 'MIRÁ PRIMERO LOS MILES; SI EMPATAN, LAS CENTENAS.', bien: '¡MUY BIEN!' }; });
     if (md === 'orden4') return p1Elegir(el, api, function () { var m = R(1, 9), L = [], x; while (L.length < 3) { x = Math.random() < 0.5 ? m * 1000 + R(0, 999) : R(1000, 9999); if (L.indexOf(x) < 0) L.push(x); } var dsc = p.orden === 'desc', S = L.slice().sort(function (a, b) { return dsc ? b - a : a - b; }), pr = Math.random() < 0.6;

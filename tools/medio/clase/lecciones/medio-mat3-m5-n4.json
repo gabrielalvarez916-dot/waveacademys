@@ -1,0 +1,131 @@
+{
+ "slug": "medio-mat3-m5-n4",
+ "step_id": "625f8e80-e05f-4c29-bdde-b6e4f1445b6d",
+ "materia": "Matemática 3",
+ "titulo": "Sumas de memoria con miles",
+ "sub": "Matemática 3 · Misión 5 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🧠",
+   "final": "⚡",
+   "titulo": "DE MEMORIA",
+   "sub": "con miles",
+   "voz": [
+    "Sofi suma sin papel y sin calculadora.",
+    "¿Cómo lo hace tan rápido?",
+    "Hoy: *sumas de memoria con miles*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "AMIGOS DEL MIL",
+   "items": [
+    {
+     "frente": "300 + ?",
+     "dorso": "700"
+    },
+    {
+     "frente": "600 + ?",
+     "dorso": "400"
+    },
+    {
+     "frente": "800 + ?",
+     "dorso": "200"
+    }
+   ],
+   "voz": [
+    "300 y *700* forman mil.",
+    "600 y *400* forman mil.",
+    "¡800 y *200* forman mil!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "MILES",
+    "texto": "2.000 + 2.000 = 4.000",
+    "emoji": "♻️"
+   },
+   "b": {
+    "cab": "CIENTOS",
+    "texto": "500 + 500 = 1.000",
+    "emoji": "♻️"
+   },
+   "signo": "+",
+   "voz": [
+    "Dos bolsas iguales de *2.500*: es un doble.",
+    "El doble de 2.000 es *4.000*.",
+    "Y el doble de 500 es *1.000*.",
+    "¡En total, *5.000*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "3.600 + ? = 4.000",
+     "r": "400"
+    },
+    {
+     "p": "1.500 + 1.500",
+     "r": "3.000"
+    },
+    {
+     "p": "4.000 + 3.000",
+     "r": "7.000"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! De memoria.",
+    "A 3.600 le faltan *400* para 4.000.",
+    "1.500 más 1.500 es *3.000*.",
+    "4.000 más 3.000 es *7.000*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "A 3.600 le faltan 600 para 4.000",
+     "bien": "Le faltan 400"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "6 cientos y *4* cientos forman un mil: faltan 400."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AMIGOS DEL MIL",
+     "300 y 700"
+    ],
+    [
+     "DOBLES",
+     "2.500 + 2.500"
+    ],
+    [
+     "MILES",
+     "como unidades"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Los *amigos del mil* suman 1.000.",
+    "Los *dobles* son fáciles.",
+    "Los miles se suman *como unidades*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

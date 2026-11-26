@@ -1,0 +1,150 @@
+{
+ "slug": "medio-mat3-m4-n2",
+ "step_id": "be655e22-9d61-46b6-a229-9d6f21c19308",
+ "materia": "Matemática 3",
+ "titulo": "Formar montos grandes",
+ "sub": "Matemática 3 · Misión 4 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Don Beto",
+    "emoji": "👴"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "El casco cuesta $3.700"
+    },
+    {
+     "yo": true,
+     "txt": "¿Con qué billetes lo pago?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Probemos juntos!"
+    }
+   ],
+   "titulo": "FORMAR",
+   "sub": "montos grandes",
+   "voz": [
+    "Don Beto avisa: el casco cuesta *3.700*.",
+    "¿Con qué billetes lo pagamos?",
+    "¡Probemos juntos!",
+    "Hoy: *formar montos grandes*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "$3.700",
+   "titulo": "SEPARAMOS $3.700",
+   "partes": [
+    "$3.000",
+    "$700"
+   ],
+   "resultado": "= $3.700 ✓",
+   "voz": [
+    "Queremos juntar *3.700*.",
+    "Lo separamos en dos partes.",
+    "Los miles: *3.000*.",
+    "Los cientos: *700*.",
+    "Tres mil más setecientos: ¡*3.700*!"
+   ]
+  },
+  {
+   "t": "deslizador",
+   "titulo": "JUNTAMOS BILLETES",
+   "min": 0,
+   "max": 3700,
+   "unidad": "$",
+   "emoji": "💵",
+   "paradas": [
+    {
+     "v": 3000,
+     "txt": "3 de $1.000"
+    },
+    {
+     "v": 3500,
+     "txt": "+ $500"
+    },
+    {
+     "v": 3700,
+     "txt": "+ 2 de $100"
+    }
+   ],
+   "voz": [
+    "Tres billetes de 1.000: *3.000*.",
+    "Uno de 500: *3.500*.",
+    "¡Dos de 100: *3.700*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "2 de $1.000 y 4 de $100",
+     "r": "$2.400"
+    },
+    {
+     "p": "1 de $2.000 y 1 de $500",
+     "r": "$2.500"
+    },
+    {
+     "p": "5 de $1.000",
+     "r": "$5.000"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿Cuánto dinero es?",
+    "Dos de mil y cuatro de cien: *2.400*.",
+    "Uno de dos mil y uno de quinientos: *2.500*.",
+    "Cinco de mil: *5.000*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "4 de $1.000 y 3 de $100 son $7.000",
+     "bien": "4 de $1.000 y 3 de $100 son $4.300"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Miles con miles, cientos con cientos: *4.300*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "SEPARAR",
+     "miles y cientos"
+    ],
+    [
+     "MILES",
+     "billetes de $1.000"
+    ],
+    [
+     "CIENTOS",
+     "de $500 y $100"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Separamos en *miles* y *cientos*.",
+    "Los miles, con billetes de *1.000*.",
+    "Los cientos, con billetes de *500* y *100*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ],
+ "sin_variante": true
+}

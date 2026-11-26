@@ -1,0 +1,140 @@
+{
+ "slug": "medio-mat3-m5-n2",
+ "step_id": "56c3080d-65cd-48c5-bc1a-7f96354be596",
+ "materia": "Matemática 3",
+ "titulo": "Sumar con cuatro cifras descomponiendo",
+ "sub": "Matemática 3 · Misión 5 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Dos grados juntaron muchas botellas!",
+   "bajada": "Tercero 2.345 y cuarto 1.432",
+   "emoji": "♻️",
+   "titulo": "SUMAR",
+   "sub": "descomponiendo",
+   "voz": [
+    "¡Último momento: dos grados juntaron muchas botellas!",
+    "Tercero, *2.345*. Cuarto, *1.432*.",
+    "Hoy: *sumar descomponiendo*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "2.345",
+   "titulo": "DESARMAMOS EL 2.345",
+   "partes": [
+    "2.000",
+    "300",
+    "40",
+    "5"
+   ],
+   "resultado": "= 2.345 ✓",
+   "voz": [
+    "Primero desarmamos el *2.345*.",
+    "El 2 vale *2.000*.",
+    "El 3 vale *300*.",
+    "El 4 vale 40 y el 5 vale 5.",
+    "¡Así lo desarmamos!"
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "LUGAR POR LUGAR",
+   "columnas": [
+    "",
+    "M",
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "2.345",
+     "2.000",
+     "300",
+     "40",
+     "5"
+    ],
+    [
+     "1.432",
+     "1.000",
+     "400",
+     "30",
+     "2"
+    ],
+    [
+     "SUMA",
+     "3.000",
+     "700",
+     "70",
+     "7"
+    ]
+   ],
+   "voz": [
+    "Desarmamos también el 1.432.",
+    "Sumamos los *miles* y las *centenas*.",
+    "Después, las *decenas* y las *unidades*.",
+    "¡3.000 + 700 + 70 + 7 es *3.777*!"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "2.000 + 1.000 =",
+   "despues": "miles",
+   "opciones": [
+    "3.000",
+    "300",
+    "30"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: 2.000 más 1.000…",
+    "Miles con miles…",
+    "¡*3.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "2.345 + 1.432 = 3.000",
+     "bien": "2.345 + 1.432 = 3.777"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hay que sumar *todos* los lugares, no solo los miles."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESARMAR",
+     "los dos números"
+    ],
+    [
+     "SUMAR",
+     "lugar por lugar"
+    ],
+    [
+     "JUNTAR",
+     "los resultados"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *desarmamos* los dos números.",
+    "Sumamos *lugar por lugar*.",
+    "Y al final *juntamos* todo.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

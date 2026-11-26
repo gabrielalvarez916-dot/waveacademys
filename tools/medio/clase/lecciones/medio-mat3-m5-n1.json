@@ -1,0 +1,156 @@
+{
+ "slug": "medio-mat3-m5-n1",
+ "step_id": "0e37924c-34be-4ca6-903d-adc48bba2af9",
+ "materia": "Matemática 3",
+ "titulo": "Sumar centenas y miles",
+ "sub": "Matemática 3 · Misión 5 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Juntaron 2.400 botellas. Llegan 1.300 más. ¿Cuántas hay?",
+   "segundos": 8,
+   "respuesta": "¡3.700!",
+   "emoji": "♻️",
+   "titulo": "SUMAR",
+   "sub": "centenas y miles",
+   "voz": [
+    "Desafío: la escuela juntó *2.400* botellas.",
+    "Llegan *1.300* más. ¿Cuántas hay?",
+    "¡*3.700*!",
+    "Hoy: *sumar centenas y miles*."
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "2.000 + 3.000",
+     "r": "5.000"
+    },
+    {
+     "p": "400 + 500",
+     "r": "900"
+    },
+    {
+     "p": "1.200 + 1.300",
+     "r": "2.500"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida para entrar en calor!",
+    "2.000 más 3.000 es *5.000*.",
+    "400 más 500 es *900*.",
+    "1.200 más 1.300 es *2.500*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "MILES CON MILES",
+   "columnas": [
+    "",
+    "M",
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "2.400",
+     "2",
+     "4",
+     "0",
+     "0"
+    ],
+    [
+     "1.300",
+     "1",
+     "3",
+     "0",
+     "0"
+    ],
+    [
+     "SUMA",
+     "3",
+     "7",
+     "0",
+     "0"
+    ]
+   ],
+   "voz": [
+    "Ponemos los números en la tabla.",
+    "Cientos con cientos: 4 más 3, *7*.",
+    "Miles con miles: 2 más 1, *3*.",
+    "¡Son *3.700* botellas!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Sumar redondos",
+   "texto": "Sumamos miles con miles y cientos con cientos.",
+   "emoji": "➕",
+   "voz": [
+    "Sumamos *miles con miles*.",
+    "Y *cientos con cientos*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 3.000 + 4.000?",
+   "opciones": [
+    "7.000",
+    "700",
+    "34.000"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuánto es 3.000 más 4.000?",
+    "Tres miles más cuatro miles…",
+    "¡*7.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "2.000 + 500 = 7.000",
+     "bien": "2.000 + 500 = 2.500"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No se suman miles con cientos: es *2.500*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MILES",
+     "con miles"
+    ],
+    [
+     "CIENTOS",
+     "con cientos"
+    ],
+    [
+     "10 CIENTOS",
+     "un mil"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Sumamos *miles con miles*.",
+    "Y *cientos con cientos*.",
+    "Diez cientos forman *un mil*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

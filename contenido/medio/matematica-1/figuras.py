@@ -445,7 +445,7 @@ def tablero_du(numeros, vacios=()):
 def _plata(ax, x, y, v, sim="$"):
     if v >= 20:
         ax.add_patch(FancyBboxPatch((x - .5, y - .28), 1.0, .56, boxstyle="round,pad=0.03", fc="#2f8f5b", ec="#1d5e3b", lw=1.5))
-        ax.text(x, y, f"{sim}{v}", ha="center", va="center", fontsize=12, color="white", **F)
+        ax.text(x, y, f"{sim}{v:,}".replace(",", "."), ha="center", va="center", fontsize=12 if v < 1000 else 10, color="white", **F)
     else:
         ax.add_patch(Circle((x, y), .3, fc=AMBAR if v >= 5 else "#c9ccd3", ec=OSC, lw=1.2))
         ax.text(x, y, f"{sim}{v}", ha="center", va="center", fontsize=10, color=OSC, **F)

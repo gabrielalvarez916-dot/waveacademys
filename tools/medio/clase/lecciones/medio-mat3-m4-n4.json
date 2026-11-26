@@ -1,0 +1,158 @@
+{
+ "slug": "medio-mat3-m4-n4",
+ "step_id": "74963e44-2be0-46dd-a84b-8f9e36379e7d",
+ "materia": "Matemática 3",
+ "titulo": "Pagar y calcular el vuelto",
+ "sub": "Matemática 3 · Misión 4 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Don Beto",
+    "emoji": "👴"
+   },
+   "lugar": "🚲",
+   "lineas": [
+    "Tomi compra un timbre de $3.700.",
+    "Paga con $4.000.",
+    "¿Cuánto le devuelve Don Beto?"
+   ],
+   "titulo": "PAGAR",
+   "sub": "y el vuelto",
+   "voz": [
+    "Tomi compra un timbre de *3.700*.",
+    "Paga con *4.000*.",
+    "¿Cuánto le devuelve Don Beto?",
+    "Hoy: *pagar y calcular el vuelto*."
+   ],
+   "neutro": {
+    "sub": "y el cambio",
+    "voz": [
+     "Tomi compra un timbre de *3.700*.",
+     "Paga con *4.000*.",
+     "¿Cuánto le devuelve Don Beto?",
+     "Hoy: *pagar y calcular el cambio*."
+    ]
+   }
+  },
+  {
+   "t": "recta",
+   "min": 3700,
+   "max": 4000,
+   "paso": 100,
+   "marcas": [
+    {
+     "v": 3700,
+     "txt": "precio"
+    },
+    {
+     "v": 4000,
+     "txt": "paga"
+    }
+   ],
+   "voz": [
+    "Contamos para adelante desde el precio.",
+    "Empezamos en *3.700*.",
+    "3.800, 3.900, ¡*4.000*! Son tres saltos de 100."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Vuelto",
+   "texto": "Lo que te devuelven cuando pagás de más.",
+   "emoji": "🪙",
+   "voz": [
+    "El *vuelto* es lo que te devuelven.",
+    "Pasa cuando pagás *de más*."
+   ],
+   "neutro": {
+    "palabra": "Cambio",
+    "texto": "Lo que te devuelven cuando pagas de más.",
+    "voz": [
+     "El *cambio* es lo que te devuelven.",
+     "Pasa cuando pagas *de más*."
+    ]
+   }
+  },
+  {
+   "t": "pistas",
+   "problema": "Un inflador cuesta $7.600. Paga con $10.000.",
+   "pistas": [
+    "De 7.600 a 8.000 hay 400",
+    "De 8.000 a 10.000 hay 2.000"
+   ],
+   "respuesta": "$2.400",
+   "voz": [
+    "Un inflador cuesta 7.600. Pagan con *10.000*.",
+    "Pista: de 7.600 a 8.000 hay *400*.",
+    "Pista: de 8.000 a 10.000 hay *2.000*.",
+    "¡400 más 2.000: le devuelven *2.400*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Cuesta $3.700, paga $4.000: le devuelven $700",
+     "bien": "Le devuelven $300"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "De 3.700 a 4.000 hay *300*, no 700."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "VUELTO",
+     "lo que sobra"
+    ],
+    [
+     "CONTAR",
+     "del precio al pago"
+    ],
+    [
+     "SALTOS",
+     "hasta el mil"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *vuelto* es lo que sobra.",
+    "Contamos del *precio* al *pago*.",
+    "Primero saltamos *hasta el mil*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ],
+   "neutro": {
+    "items": [
+     [
+      "CAMBIO",
+      "lo que sobra"
+     ],
+     [
+      "CONTAR",
+      "del precio al pago"
+     ],
+     [
+      "SALTOS",
+      "hasta el mil"
+     ]
+    ],
+    "voz": [
+     "Repasemos lo que aprendimos.",
+     "El *cambio* es lo que sobra.",
+     "Contamos del *precio* al *pago*.",
+     "Primero saltamos *hasta el mil*.",
+     "¡Muy bien! Ahora, *a practicar*."
+    ]
+   }
+  }
+ ]
+}
