@@ -49,3 +49,11 @@ Para cargar actividades o examen cambiados en una misión YA cargada, el archivo
 
 ## Ejemplos PASO A PASO (26/11/2026)
 TODOS los ejemplos del banco (45) muestran el procedimiento de a un paso: helper `pasoAPaso(v, P)` en `js/leccion-banco2.js` (`P = [{vis, txt}]`, "Siguiente paso ▶", una línea por paso) y marca `pasos: true`. En `escena()`, `dibujar` puede devolver la lista de pasos. Un ejemplo NUEVO se hace igual; el control no deja usar en una lección un ejemplo sin `pasos: true`. (`pasoapaso`, el de texto largo, no va en lecciones.)
+
+## Naturales y potencias (Matemática I, Misiones 2 y 3)
+| Motor | Tipo | `modo` |
+|---|---|---|
+| `naturales` | ejemplo paso a paso | asociativa, inversa, descomposicion, compensacion, multiplicar, distributiva (`op`: resta), mental, division, relacion, falta, redondear, estimar, pasos |
+| `naturales_x` | ejercicio | asociativa, inversa, descomposicion, compensacion, multiplicar, distributiva (`op`: resta), mental, division, relacion, redondear, estimar, pasos |
+| `potencias_n` | ejemplo paso a paso (solo naturales) | potencia, cuadrado_cubo, crecen, producto, cociente, potencia_potencia, distributiva, no_suma, raiz_cubica, raiz_grande, lado_area, arista_volumen, perfectos |
+| `potencias_n_x` | ejercicio | potencia, base_exp, cuadrado_cubo, producto, cociente, potencia_potencia, distributiva, no_suma, raiz_cuadrada, raiz_cubica, raiz_grande, estimar_raiz, lado_area, arista_volumen, perfectos |

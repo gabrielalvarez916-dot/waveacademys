@@ -1,1 +1,2162 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 3, "practica": "Práctica general: potenciación y radicación", "examen_titulo": "Nivel jefe: potenciación y radicación", "niveles": {"1": {"objetivo": "Vas a poder explicar qué es una potencia, reconocer la base y el exponente y calcular potencias de números naturales.", "vas_a_ver": ["Qué es una potencia: base y exponente", "La potencia como producto de factores iguales", "Cuadrados y cubos", "El exponente 1 y el exponente 0", "Potencias que crecen rápido"], "secciones": [{"etapa": 1, "titulo": "Qué es una potencia", "bloques": [{"tipo": "definicion", "titulo": "Potencia", "texto": "Una <b>potencia</b> es una multiplicación de <b>factores iguales</b>. El número que se repite es la <b>base</b> y la cantidad de veces que se repite es el <b>exponente</b>: 2³ = 2 × 2 × 2 = 8."}, {"tipo": "tabla", "titulo": "Base, exponente y resultado", "columnas": ["Potencia", "Base", "Exponente", "Producto", "Resultado"], "filas": [["5²", "5", "2", "5 × 5", "25"], ["2⁵", "2", "5", "2 × 2 × 2 × 2 × 2", "32"], ["3⁴", "3", "4", "3 × 3 × 3 × 3", "81"]], "iguales": true, "texto": "El exponente no multiplica a la base: dice cuántas veces se escribe la base como factor."}]}, {"etapa": 1, "titulo": "Cuadrados y cubos", "bloques": [{"tipo": "definicion", "titulo": "Cuadrado y cubo", "texto": "Con exponente 2 se dice <b>al cuadrado</b> y con exponente 3, <b>al cubo</b>. Un cuadrado de lado 4 tiene 4² = 16 cuadraditos; un cubo de arista 3 tiene 3³ = 27 cubitos."}, {"tipo": "parrafo", "texto": "Por eso 5² se lee \"cinco al cuadrado\" y 5³, \"cinco al cubo\". Para los demás exponentes se dice \"elevado a\": 2⁵ es \"dos elevado a la quinta\"."}]}, {"etapa": 2, "titulo": "Exponente 1 y exponente 0", "bloques": [{"tipo": "parrafo", "texto": "Mirá qué pasa al bajar el exponente de a uno: cada vez se divide por la base."}, {"tipo": "tabla", "titulo": "Bajando el exponente", "columnas": ["2³", "2²", "2¹", "2⁰"], "filas": [["8", "4", "2", "1"]], "iguales": true, "texto": "Cada resultado es la mitad del anterior."}, {"tipo": "importante", "titulo": "Dos reglas", "texto": "Todo número elevado a 1 da el mismo número: 7¹ = 7. Todo número distinto de 0 elevado a 0 da <b>1</b>: 7⁰ = 1."}]}, {"etapa": 2, "titulo": "Potencias que crecen rápido", "bloques": [{"tipo": "parrafo", "texto": "Las potencias sirven para contar cosas que se duplican, se triplican o se multiplican siempre por el mismo número."}, {"tipo": "ejemplo", "titulo": "Una bacteria que se duplica", "texto": "Cada hora, cada bacteria se divide en 2.", "items": ["Después de 1 hora hay 2¹ = 2.", "Después de 3 horas hay 2³ = 8.", "Después de 5 horas hay 2⁵ = 32."]}]}], "ejemplo_completo": {"titulo": "4³ y 3⁴", "planteo": "Calculá 4³ y 3⁴ y decí cuál es mayor.", "pasos": ["4³ = 4 × 4 × 4.", "4 × 4 = 16 y 16 × 4 = 64.", "3⁴ = 3 × 3 × 3 × 3.", "3 × 3 = 9; 9 × 3 = 27; 27 × 3 = 81.", "81 es mayor que 64: 3⁴ es mayor, aunque tenga la base más chica."]}, "ejemplo_incompleto": {"titulo": "6² y 2⁶", "planteo": "Calculá 6² y 2⁶. Completá los espacios.", "pasos": ["6² = 6 × ___ = 36.", "2⁶ = 2 × 2 × 2 × 2 × 2 × 2 = ___ .", "La mayor es ___ ."]}, "ejemplo_solo": {"titulo": "5³ y 3⁵", "planteo": "Calculá 5³ y 3⁵ y decí cuál es mayor."}, "tip": {"titulo": "Multiplicá de a dos", "texto": "Para calcular una potencia, multiplicá el primer par y seguí multiplicando el resultado por la base: 3⁴ es 9, después 27, después 81."}, "ojo": ["Multiplicar base por exponente: 2³ no es 2 × 3 = 6; es 2 × 2 × 2 = 8.", "Pensar que un número elevado a 0 da 0: 5⁰ = 1."], "resumen": [{"titulo": "Potencia", "texto": "Producto de factores iguales. Ej.: 2³ = 2 × 2 × 2 = 8."}, {"titulo": "Base y exponente", "texto": "La base se repite tantas veces como dice el exponente."}, {"titulo": "Cuadrado y cubo", "texto": "Exponente 2 y 3. Ej.: 4² = 16 y 3³ = 27."}, {"titulo": "Exponente 1", "texto": "Da la base. Ej.: 7¹ = 7."}, {"titulo": "Exponente 0", "texto": "Da 1. Ej.: 7⁰ = 1."}], "glosario": [{"palabra": "Potencia", "significado": "Multiplicación de factores iguales."}, {"palabra": "Base", "significado": "El número que se repite como factor."}, {"palabra": "Exponente", "significado": "El número chico de arriba que dice cuántas veces se repite la base."}, {"palabra": "Al cuadrado", "significado": "Elevado a 2."}, {"palabra": "Al cubo", "significado": "Elevado a 3."}], "carpeta": ["Calculá 2⁵.", "Calculá 7⁰ + 7¹.", "Una caja tiene forma de cubo y en cada arista entran 4 cubitos. ¿Cuántos cubitos hay en total?", "Un compañero dice que 3⁴ = 12. ¿Cuánto vale 3⁴?"], "respuestas_carpeta": [["32"], ["8"], ["64"], ["81"]], "soluciones": {"incompleto": "6² = 6 × 6 = 36. 2⁶ = 64. La mayor es 2⁶.", "solo": "5³ = 125 y 3⁵ = 243. La mayor es 3⁵.", "carpeta": ["32: 2 × 2 × 2 × 2 × 2.", "8: 7⁰ = 1 y 7¹ = 7; 1 + 7 = 8.", "64: 4³ = 4 × 4 × 4.", "81: 3 × 3 × 3 × 3. Multiplicó la base por el exponente."]}}, "2": {"objetivo": "Vas a poder usar las propiedades de las potencias para calcular y simplificar, y reconocer cuándo no se pueden aplicar.", "vas_a_ver": ["Producto de potencias de igual base", "Cociente de potencias de igual base", "Potencia de una potencia", "Distributiva respecto del producto y del cociente", "Cuándo NO se distribuye: suma y resta"], "secciones": [{"etapa": 1, "titulo": "Producto y cociente de igual base", "bloques": [{"tipo": "definicion", "titulo": "Producto de igual base", "texto": "Para multiplicar potencias de <b>igual base</b>, se deja la base y se <b>suman los exponentes</b>: aᵐ × aⁿ = aᵐ⁺ⁿ."}, {"tipo": "parrafo", "texto": "Ejemplo: 2³ × 2² = (2 × 2 × 2) × (2 × 2) = 2⁵ = 32. Hay 3 + 2 = 5 factores 2."}, {"tipo": "definicion", "titulo": "Cociente de igual base", "texto": "Para dividir potencias de <b>igual base</b>, se deja la base y se <b>restan los exponentes</b>: aᵐ ÷ aⁿ = aᵐ⁻ⁿ."}, {"tipo": "parrafo", "texto": "Ejemplo: 3⁵ ÷ 3² = 3³ = 27. Comprobación: 243 ÷ 9 = 27."}]}, {"etapa": 1, "titulo": "Potencia de una potencia", "bloques": [{"tipo": "definicion", "titulo": "Potencia de potencia", "texto": "Para elevar una potencia a otro exponente, se <b>multiplican los exponentes</b>: (aᵐ)ⁿ = aᵐ×ⁿ."}, {"tipo": "parrafo", "texto": "Ejemplo: (2²)³ = 2² × 2² × 2² = 2⁶ = 64. Comprobación: 2² = 4 y 4³ = 64."}]}, {"etapa": 2, "titulo": "Distributiva con producto y cociente", "bloques": [{"tipo": "parrafo", "texto": "La potencia se puede repartir entre los factores de un producto o de un cociente: (a × b)ⁿ = aⁿ × bⁿ y (a ÷ b)ⁿ = aⁿ ÷ bⁿ."}, {"tipo": "ejemplo", "titulo": "Distribuir la potencia", "texto": "Calculamos de dos formas.", "items": ["(2 × 5)³ = 10³ = 1.000. Distribuyendo: 2³ × 5³ = 8 × 125 = 1.000.", "(12 ÷ 3)² = 4² = 16. Distribuyendo: 12² ÷ 3² = 144 ÷ 9 = 16."]}]}, {"etapa": 2, "titulo": "Cuándo NO se puede", "bloques": [{"tipo": "parrafo", "texto": "La potencia <b>no se distribuye</b> sobre una suma ni sobre una resta. Y al sumar potencias de igual base <b>no se suman los exponentes</b>."}, {"tipo": "ejemplo", "titulo": "Contraejemplos", "texto": "Las dos formas dan distinto.", "items": ["(2 + 3)² = 5² = 25, pero 2² + 3² = 4 + 9 = 13.", "(5 − 3)² = 2² = 4, pero 5² − 3² = 25 − 9 = 16.", "2³ + 2² = 8 + 4 = 12, que no es 2⁵ = 32."]}]}], "ejemplo_completo": {"titulo": "2⁴ × 2³ ÷ 2⁵", "planteo": "Escribí como una sola potencia y calculá.", "pasos": ["Producto de igual base: 2⁴ × 2³ = 2⁴⁺³ = 2⁷.", "Cociente de igual base: 2⁷ ÷ 2⁵ = 2⁷⁻⁵ = 2².", "2² = 4.", "Comprobación: 16 × 8 = 128 y 128 ÷ 32 = 4."]}, "ejemplo_incompleto": {"titulo": "(3²)² × 3", "planteo": "Escribí como una sola potencia. Completá los espacios.", "pasos": ["(3²)² = 3 elevado a ___ (se multiplican los exponentes).", "3 = 3¹, entonces 3⁴ × 3¹ = 3 elevado a ___ .", "3⁵ = ___ ."]}, "ejemplo_solo": {"titulo": "5⁶ ÷ 5⁴", "planteo": "Escribí 5⁶ ÷ 5⁴ como una sola potencia y calculá."}, "tip": {"titulo": "Primero mirá la base", "texto": "Las reglas de sumar y restar exponentes solo valen si la base es la misma y la operación es producto o cociente."}, "ojo": ["Distribuir sobre una suma: (a + b)² no es a² + b². Ej.: (2 + 3)² = 25, no 13.", "Multiplicar las bases: 2³ × 2² es 2⁵, no 4⁵."], "resumen": [{"titulo": "Producto", "texto": "Igual base: se suman exponentes. Ej.: 2³ × 2² = 2⁵."}, {"titulo": "Cociente", "texto": "Igual base: se restan exponentes. Ej.: 3⁵ ÷ 3² = 3³."}, {"titulo": "Potencia de potencia", "texto": "Se multiplican exponentes. Ej.: (2²)³ = 2⁶."}, {"titulo": "Distributiva", "texto": "Vale con × y ÷. Ej.: (2 × 5)³ = 2³ × 5³."}, {"titulo": "No vale", "texto": "Con + y −. Ej.: (2 + 3)² = 25 y 2² + 3² = 13."}], "glosario": [{"palabra": "Igual base", "significado": "Potencias que tienen el mismo número abajo."}, {"palabra": "Propiedad", "significado": "Regla que se cumple siempre en una operación."}, {"palabra": "Distribuir", "significado": "Aplicar la potencia a cada factor por separado."}, {"palabra": "Contraejemplo", "significado": "Un caso que muestra que una regla no se cumple."}, {"palabra": "Simplificar", "significado": "Escribir una cuenta de forma más corta."}], "carpeta": ["Escribí 2⁴ × 2² como una sola potencia y calculá el resultado.", "Calculá 10⁷ ÷ 10⁴.", "Calculá (2 × 3)².", "Un compañero dice que (3 + 1)² = 3² + 1² = 10. ¿Cuánto vale realmente (3 + 1)²?"], "respuestas_carpeta": [["64"], ["1000"], ["36"], ["16"]], "soluciones": {"incompleto": "(3²)² = 3⁴. 3⁴ × 3¹ = 3⁵. 3⁵ = 243.", "solo": "5⁶ ÷ 5⁴ = 5² = 25.", "carpeta": ["64: 2⁴ × 2² = 2⁶ = 64.", "1.000: 10⁷ ÷ 10⁴ = 10³ = 1.000.", "36: (2 × 3)² = 6² = 36 (o 2² × 3² = 4 × 9).", "16: primero la suma: 4² = 16. No se distribuye sobre la suma."]}}, "3": {"objetivo": "Vas a poder calcular raíces cuadradas y cúbicas exactas, entendiéndolas como la operación inversa de la potencia, y estimar raíces que no son exactas.", "vas_a_ver": ["Qué es la raíz cuadrada", "Qué es la raíz cúbica", "Cuadrados y cubos perfectos", "Estimar una raíz que no es exacta", "Raíces de números grandes"], "secciones": [{"etapa": 1, "titulo": "La raíz cuadrada", "bloques": [{"tipo": "definicion", "titulo": "Raíz cuadrada", "texto": "La <b>raíz cuadrada</b> de un número es el número que, <b>elevado al cuadrado</b>, da ese número. Se escribe √. El número de adentro se llama <b>radicando</b>. √49 = 7 porque 7² = 49."}, {"tipo": "tabla", "titulo": "Cuadrados perfectos", "columnas": ["n", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], "filas": [["n²", "1", "4", "9", "16", "25", "36", "49", "64", "81", "100"]], "iguales": true, "texto": "Los números de la fila de abajo tienen raíz cuadrada exacta: son <b>cuadrados perfectos</b>."}]}, {"etapa": 1, "titulo": "La raíz cúbica", "bloques": [{"tipo": "definicion", "titulo": "Raíz cúbica", "texto": "La <b>raíz cúbica</b> de un número es el número que, <b>elevado al cubo</b>, da ese número. Se escribe ∛. ∛64 = 4 porque 4³ = 64."}, {"tipo": "tabla", "titulo": "Cubos perfectos", "columnas": ["n", "1", "2", "3", "4", "5", "6"], "filas": [["n³", "1", "8", "27", "64", "125", "216"]], "iguales": true, "texto": "La raíz es la operación inversa de la potencia: deshace lo que hizo la potencia."}]}, {"etapa": 2, "titulo": "Estimar una raíz no exacta", "bloques": [{"tipo": "parrafo", "texto": "Si el número no es un cuadrado perfecto, su raíz no es un número natural. Pero podés decir <b>entre qué dos naturales está</b>, buscando los cuadrados perfectos de al lado."}, {"tipo": "ejemplo", "titulo": "¿Entre qué números está √50?", "texto": "Buscamos los cuadrados vecinos.", "items": ["49 = 7² y 64 = 8².", "50 está entre 49 y 64.", "Entonces √50 está entre 7 y 8 (muy cerca de 7)."]}]}, {"etapa": 2, "titulo": "Raíces de números grandes", "bloques": [{"tipo": "parrafo", "texto": "Para un número grande, lo partís en un producto de números con raíz conocida y sacás la raíz de cada factor. La raíz sí se reparte en un producto, pero <b>no en una suma</b>: √(9 + 16) = √25 = 5, y no 3 + 4 = 7."}, {"tipo": "ejemplo", "titulo": "Descomponer y sacar la raíz", "texto": "Dos ejemplos.", "items": ["√3.600 = √(36 × 100) = 6 × 10 = 60. Comprobación: 60² = 3.600.", "∛8.000 = ∛(8 × 1.000) = 2 × 10 = 20. Comprobación: 20³ = 8.000."]}]}], "ejemplo_completo": {"titulo": "√1.600", "planteo": "Calculá √1.600 descomponiendo y comprobá el resultado.", "pasos": ["1.600 = 16 × 100.", "√16 = 4 porque 4² = 16.", "√100 = 10 porque 10² = 100.", "√1.600 = 4 × 10 = 40.", "Comprobación: 40² = 40 × 40 = 1.600."]}, "ejemplo_incompleto": {"titulo": "∛27.000", "planteo": "Calculá ∛27.000 descomponiendo. Completá los espacios.", "pasos": ["27.000 = 27 × ___ .", "∛27 = ___ porque 3³ = 27.", "∛1.000 = 10.", "∛27.000 = 3 × 10 = ___ ."]}, "ejemplo_solo": {"titulo": "estimar √90", "planteo": "¿Entre qué dos números naturales está √90?"}, "tip": {"titulo": "Comprobá elevando", "texto": "Para saber si una raíz está bien, elevá el resultado: al cuadrado si es raíz cuadrada, al cubo si es cúbica. Tiene que darte el radicando."}, "ojo": ["Dividir por 2: √36 no es 18; es 6, porque 6² = 36.", "Repartir la raíz en una suma: √(9 + 16) es 5, no 3 + 4."], "resumen": [{"titulo": "Raíz cuadrada", "texto": "El número que al cuadrado da el radicando. Ej.: √49 = 7."}, {"titulo": "Raíz cúbica", "texto": "El número que al cubo da el radicando. Ej.: ∛64 = 4."}, {"titulo": "Operación inversa", "texto": "La raíz deshace la potencia."}, {"titulo": "Estimar", "texto": "√50 está entre 7 y 8, porque 49 < 50 < 64."}, {"titulo": "Números grandes", "texto": "Se descompone. Ej.: √3.600 = 6 × 10 = 60."}], "glosario": [{"palabra": "Raíz", "significado": "Operación inversa de la potencia."}, {"palabra": "Radicando", "significado": "El número que está adentro de la raíz."}, {"palabra": "Cuadrado perfecto", "significado": "Número que tiene raíz cuadrada exacta, como 49."}, {"palabra": "Cubo perfecto", "significado": "Número que tiene raíz cúbica exacta, como 64."}, {"palabra": "Estimar", "significado": "Decir aproximadamente cuánto da, sin el valor exacto."}], "carpeta": ["Calculá √121.", "Calculá ∛125.", "Calculá √4.900.", "Un compañero dice que √36 = 18 porque dividió por 2. ¿Cuánto vale √36?"], "respuestas_carpeta": [["11"], ["5"], ["70"], ["6"]], "soluciones": {"incompleto": "27.000 = 27 × 1.000. ∛27 = 3. Resultado: 30.", "solo": "81 = 9² y 100 = 10². 90 está entre 81 y 100, así que √90 está entre 9 y 10.", "carpeta": ["11: 11² = 121.", "5: 5³ = 125.", "70: √(49 × 100) = 7 × 10 = 70.", "6: 6² = 36. Dividir por 2 no es sacar la raíz."]}}, "4": {"objetivo": "Vas a poder resolver problemas con cuadrados y cubos: pasar de lado a área, de arista a volumen, y al revés.", "vas_a_ver": ["Lado y área de un cuadrado", "Arista y volumen de un cubo", "Cómo volver del área al lado y del volumen a la arista", "Reconocer cuadrados y cubos perfectos", "Problemas de baldosas y cajas"], "secciones": [{"etapa": 1, "titulo": "Cuadrado: lado y área", "bloques": [{"tipo": "definicion", "titulo": "Área del cuadrado", "texto": "El <b>área</b> de un cuadrado es lo que ocupa adentro: <b>lado²</b>. Se mide en unidades cuadradas (cm², m²). El <b>perímetro</b>, en cambio, es el borde: 4 × lado."}, {"tipo": "parrafo", "texto": "Ejemplo: un cuadrado de lado 7 cm tiene área 7² = 49 cm² y perímetro 4 × 7 = 28 cm. Al revés: si el área es 81 m², el lado es √81 = 9 m."}]}, {"etapa": 1, "titulo": "Cubo: arista y volumen", "bloques": [{"tipo": "definicion", "titulo": "Volumen del cubo", "texto": "El <b>volumen</b> de un cubo es lo que ocupa: <b>arista³</b>. Se mide en unidades cúbicas (cm³, m³)."}, {"tipo": "parrafo", "texto": "Ejemplo: un cubo de arista 5 cm tiene volumen 5³ = 125 cm³. Al revés: si el volumen es 216 cm³, la arista es ∛216 = 6 cm."}]}, {"etapa": 2, "titulo": "Reconocer cuadrados y cubos perfectos", "bloques": [{"tipo": "parrafo", "texto": "Un número es <b>cuadrado perfecto</b> si es el área de un cuadrado de lado natural, y <b>cubo perfecto</b> si es el volumen de un cubo de arista natural. Algunos son las dos cosas."}, {"tipo": "tabla", "titulo": "¿Cuadrado, cubo o los dos?", "columnas": ["Número", "Cuadrado perfecto", "Cubo perfecto"], "filas": [["36", "Sí (6²)", "No"], ["27", "No", "Sí (3³)"], ["64", "Sí (8²)", "Sí (4³)"], ["50", "No", "No"]], "iguales": true}]}, {"etapa": 2, "titulo": "Problemas de baldosas y cajas", "bloques": [{"tipo": "parrafo", "texto": "Primero fijate qué te dan (lado, área, arista o volumen) y qué te piden. Si te dan el área y piden el lado, sacás raíz cuadrada; si te dan el volumen y piden la arista, raíz cúbica."}, {"tipo": "ejemplo", "titulo": "El patio", "texto": "Un patio cuadrado tiene 36 m² y se cubre con baldosas de 1 m de lado.", "items": ["Lado del patio: √36 = 6 m.", "Baldosas: cada una ocupa 1 m², así que hacen falta 36.", "Borde para poner zócalo: perímetro = 4 × 6 = 24 m."]}]}], "ejemplo_completo": {"titulo": "la caja cúbica", "planteo": "Una caja con forma de cubo tiene un volumen de 343 cm³. ¿Cuánto mide la arista? ¿Cuál es el área de una de sus caras?", "pasos": ["Dan el volumen y piden la arista: raíz cúbica.", "∛343 = 7, porque 7³ = 7 × 7 × 7 = 343. La arista mide 7 cm.", "Cada cara es un cuadrado de lado 7 cm.", "Área de una cara: 7² = 49 cm²."]}, "ejemplo_incompleto": {"titulo": "el terreno cuadrado", "planteo": "Un terreno cuadrado tiene 144 m² de área. ¿Cuánto mide el lado? ¿Cuánto alambre hace falta para rodearlo? Completá los espacios.", "pasos": ["Lado: √144 = ___ m.", "Perímetro: 4 × 12 = ___ m.", "Hacen falta 48 m de alambre."]}, "ejemplo_solo": {"titulo": "el cubo de 9 cm", "planteo": "Un cubo tiene 9 cm de arista. ¿Cuál es su volumen?"}, "tip": {"titulo": "Mirá la unidad", "texto": "cm es largo (lado, arista, perímetro), cm² es área y cm³ es volumen. La unidad te dice qué estás calculando."}, "ojo": ["Confundir perímetro y área: un cuadrado de lado 6 cm tiene área 36 cm², no 24 (eso es el perímetro).", "Confundir lado con área: si el área es 49 m², el lado es 7 m, no 49 m."], "resumen": [{"titulo": "Área del cuadrado", "texto": "lado². Ej.: lado 7 cm → 49 cm²."}, {"titulo": "Volumen del cubo", "texto": "arista³. Ej.: arista 5 cm → 125 cm³."}, {"titulo": "Al revés", "texto": "Lado = √área; arista = ∛volumen."}, {"titulo": "Perímetro", "texto": "4 × lado: es el borde, no el área."}, {"titulo": "Perfectos", "texto": "64 es cuadrado (8²) y cubo (4³)."}], "glosario": [{"palabra": "Área", "significado": "Lo que ocupa una figura plana por dentro."}, {"palabra": "Perímetro", "significado": "La medida del borde de una figura."}, {"palabra": "Volumen", "significado": "Lo que ocupa un cuerpo en el espacio."}, {"palabra": "Arista", "significado": "Cada borde de un cubo."}, {"palabra": "Cara", "significado": "Cada uno de los 6 cuadrados que forman un cubo."}], "carpeta": ["Un cuadrado tiene 15 cm de lado. ¿Cuál es su área en cm²?", "Una habitación cuadrada tiene 64 m² de piso. ¿Cuánto mide el lado en metros?", "Un cubo tiene un volumen de 1.000 cm³. ¿Cuánto mide la arista en cm?", "Un compañero dice que un cuadrado de 6 cm de lado tiene un área de 24 cm². ¿Cuál es el área correcta en cm²?"], "respuestas_carpeta": [["225", "225cm2", "225cm²"], ["8", "8m"], ["10", "10cm"], ["36", "36cm2", "36cm²"]], "soluciones": {"incompleto": "Lado: 12 m. Perímetro: 48 m.", "solo": "9³ = 9 × 9 × 9 = 729 cm³.", "carpeta": ["225 cm²: 15² = 225.", "8 m: √64 = 8.", "10 cm: ∛1.000 = 10.", "36 cm²: 6² = 36. El 24 es el perímetro."]}}}, "act": {"1": [{"t": "numeric", "p": "Calculá {b} elevado a {e}.", "o": {"vars": {"b": {"min": 2, "max": 5}, "e": {"min": 2, "max": 4}}}, "r": {"formula": "b^e"}, "e": "Se multiplica la base por sí misma tantas veces como dice el exponente."}, {"t": "true_false", "p": "Cualquier número distinto de 0 elevado a 0 da 0.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Da 1. Por ejemplo, 7 elevado a 0 = 1."}], "2": [{"t": "fill_blank", "p": "2 elevado a 3 × 2 elevado a 4 = 2 elevado a ___.", "o": [], "r": {"huecos": [["7"]]}, "e": "Igual base: se suman los exponentes, 3 + 4 = 7."}, {"t": "multi_select", "p": "¿Cuáles de estas igualdades son verdaderas?", "o": ["(2 × 5) elevado a 2 = 2 elevado a 2 × 5 elevado a 2", "(2 + 5) elevado a 2 = 2 elevado a 2 + 5 elevado a 2", "3 elevado a 6 ÷ 3 elevado a 2 = 3 elevado a 4", "(4 elevado a 2) elevado a 3 = 4 elevado a 5", "10 elevado a 2 × 10 elevado a 3 = 10 elevado a 5"], "r": {"correctas": ["(2 × 5) elevado a 2 = 2 elevado a 2 × 5 elevado a 2", "3 elevado a 6 ÷ 3 elevado a 2 = 3 elevado a 4", "10 elevado a 2 × 10 elevado a 3 = 10 elevado a 5"]}, "e": "No se distribuye sobre la suma, y en la potencia de potencia los exponentes se multiplican (da 4 elevado a 6)."}], "3": [{"t": "numeric", "p": "Calculá la raíz cuadrada de {c}.", "o": {"vars": {"n": {"min": 2, "max": 15}}, "calculadas": {"c": "n*n"}}, "r": {"formula": "n"}, "e": "Buscá el número que elevado al cuadrado da el radicando."}, {"t": "multiple_choice", "p": "¿Entre qué dos números naturales está la raíz cuadrada de 30?", "o": ["4 y 5", "5 y 6", "6 y 7", "15 y 16"], "r": {"correcta": "5 y 6"}, "e": "25 = 5 al cuadrado y 36 = 6 al cuadrado; 30 está entre 25 y 36."}], "4": [{"t": "numeric", "p": "Un cuadrado tiene {a} cm² de área. ¿Cuánto mide su lado en cm?", "o": {"vars": {"n": {"min": 3, "max": 20}}, "calculadas": {"a": "n*n"}}, "r": {"formula": "n"}, "e": "El lado es la raíz cuadrada del área."}, {"t": "matching", "p": "Uní cada dato con lo que se calcula a partir de él.", "o": {"izquierda": ["Lado 4 cm", "Arista 4 cm", "Área 49 cm²", "Volumen 27 cm³"], "derecha": ["Área 16 cm²", "Volumen 64 cm³", "Lado 7 cm", "Arista 3 cm"]}, "r": {"pares": {"Lado 4 cm": "Área 16 cm²", "Arista 4 cm": "Volumen 64 cm³", "Área 49 cm²": "Lado 7 cm", "Volumen 27 cm³": "Arista 3 cm"}}, "e": "Lado al cuadrado da el área; arista al cubo da el volumen; las raíces hacen el camino inverso."}], "5": [{"t": "multiple_choice", "p": "Relámpago. ¿Cuánto es 2 elevado a 0?", "o": ["0", "1", "2", "20"], "r": {"correcta": "1"}, "e": "Todo número distinto de 0 elevado a 0 da 1.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Calculá la raíz cúbica de 8.000.", "o": {}, "r": {"acepta": [20]}, "e": "8.000 = 8 × 1.000; raíz cúbica: 2 × 10 = 20.", "tiempo": 40}, {"t": "true_false", "p": "Relámpago. (3 + 4) elevado a 2 = 9 + 16.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "(3 + 4) elevado a 2 = 7 elevado a 2 = 49. No se distribuye sobre la suma.", "tiempo": 25}, {"t": "numeric", "p": "Relámpago. Calculá 25 × 19 con la distributiva.", "o": {}, "r": {"acepta": [475]}, "e": "25 × 20 − 25 = 500 − 25 = 475 (repaso de la misión 2).", "tiempo": 40}]}, "examen": [[1, {"t": "numeric", "p": "Calculá {b} elevado a {e}.", "o": {"vars": {"b": {"min": 2, "max": 9}, "e": {"min": 2, "max": 3}}}, "r": {"formula": "b^e"}, "e": "Producto de factores iguales."}], [1, {"t": "multiple_choice", "p": "En 7 elevado a 4, ¿cuál es la base?", "o": ["7", "4", "28", "2.401"], "r": {"correcta": "7"}, "e": "La base es el número que se repite como factor."}], [1, {"t": "table_fill", "p": "Completá la tabla.", "o": {"columnas": ["Potencia", "Producto", "Resultado"], "filas": [["3 elevado a 2", "3 × 3", "9"], ["2 elevado a 4", "2 × 2 × 2 × 2", ""], ["5 elevado a 3", "5 × 5 × 5", ""]]}, "r": {"celdas": {"2|Resultado": ["16"], "3|Resultado": ["125"]}}, "e": "2 × 2 × 2 × 2 = 16 y 5 × 5 × 5 = 125."}], [2, {"t": "fill_blank", "p": "5 elevado a 8 ÷ 5 elevado a 3 = 5 elevado a ___.", "o": [], "r": {"huecos": [["5"]]}, "e": "Igual base en un cociente: se restan los exponentes, 8 − 3 = 5."}], [2, {"t": "true_false", "p": "(4 + 2) elevado a 2 es igual a 4 elevado a 2 + 2 elevado a 2.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "(4 + 2) elevado a 2 = 36, pero 16 + 4 = 20."}], [2, {"t": "numeric", "p": "Calculá (2 elevado a 3) elevado a 2.", "o": {}, "r": {"acepta": [64]}, "e": "Se multiplican los exponentes: 2 elevado a 6 = 64."}], [3, {"t": "numeric", "p": "Calculá la raíz cuadrada de {c}.", "o": {"vars": {"n": {"min": 11, "max": 20}}, "calculadas": {"c": "n*n"}}, "r": {"formula": "n"}, "e": "El número que elevado al cuadrado da el radicando."}], [3, {"t": "numeric", "p": "Calculá la raíz cúbica de 216.", "o": {}, "r": {"acepta": [6]}, "e": "6 × 6 × 6 = 216."}], [3, {"t": "multiple_choice", "p": "Un compañero dice que la raíz cuadrada de 64 es 32. ¿Qué error cometió?", "o": ["Dividió por 2", "Multiplicó por 2", "Restó 2", "No cometió ningún error"], "r": {"correcta": "Dividió por 2"}, "e": "La raíz cuadrada de 64 es 8, porque 8 × 8 = 64."}], [4, {"t": "numeric", "p": "Un cubo tiene 5 cm de arista. ¿Cuál es su volumen en cm³?", "o": {}, "r": {"acepta": [125]}, "e": "5 × 5 × 5 = 125 cm³."}], [4, {"t": "numeric", "p": "Un terreno cuadrado tiene 400 m² de área. ¿Cuánto mide cada lado en metros?", "o": {}, "r": {"acepta": [20]}, "e": "La raíz cuadrada de 400 es 20."}], [4, {"t": "classify", "p": "Clasificá cada número.", "o": {"elementos": ["16", "27", "36", "64", "125", "49"], "categorias": ["Solo cuadrado perfecto", "Solo cubo perfecto", "Cuadrado y cubo perfecto"]}, "r": {"categorias": {"16": "Solo cuadrado perfecto", "27": "Solo cubo perfecto", "36": "Solo cuadrado perfecto", "64": "Cuadrado y cubo perfecto", "125": "Solo cubo perfecto", "49": "Solo cuadrado perfecto"}}, "e": "64 = 8 al cuadrado = 4 al cubo."}], [4, {"t": "numeric", "p": "Un patio cuadrado de 9 m de lado se cubre con baldosas cuadradas de 1 m de lado. ¿Cuántas baldosas hacen falta?", "o": {}, "r": {"acepta": [81]}, "e": "El área es 9 al cuadrado = 81 m², y cada baldosa ocupa 1 m²."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 3,
+ "practica": "Práctica general: potenciación y radicación",
+ "examen_titulo": "Nivel jefe: potenciación y radicación",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder explicar qué es una potencia, reconocer la base y el exponente y calcular potencias de números naturales.",
+   "vas_a_ver": [
+    "Qué es una potencia: base y exponente",
+    "La potencia como producto de factores iguales",
+    "Cuadrados y cubos",
+    "El exponente 1 y el exponente 0",
+    "Potencias que crecen rápido"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es una potencia",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Potencia",
+       "texto": "Una <b>potencia</b> es una multiplicación de <b>factores iguales</b>. El número que se repite es la <b>base</b> y la cantidad de veces que se repite es el <b>exponente</b>: 2³ = 2 × 2 × 2 = 8."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Base, exponente y resultado",
+       "columnas": [
+        "Potencia",
+        "Base",
+        "Exponente",
+        "Producto",
+        "Resultado"
+       ],
+       "filas": [
+        [
+         "5²",
+         "5",
+         "2",
+         "5 × 5",
+         "25"
+        ],
+        [
+         "2⁵",
+         "2",
+         "5",
+         "2 × 2 × 2 × 2 × 2",
+         "32"
+        ],
+        [
+         "3⁴",
+         "3",
+         "4",
+         "3 × 3 × 3 × 3",
+         "81"
+        ]
+       ],
+       "iguales": true,
+       "texto": "El exponente no multiplica a la base: dice cuántas veces se escribe la base como factor."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cuadrados y cubos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Cuadrado y cubo",
+       "texto": "Con exponente 2 se dice <b>al cuadrado</b> y con exponente 3, <b>al cubo</b>. Un cuadrado de lado 4 tiene 4² = 16 cuadraditos; un cubo de arista 3 tiene 3³ = 27 cubitos."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Por eso 5² se lee \"cinco al cuadrado\" y 5³, \"cinco al cubo\". Para los demás exponentes se dice \"elevado a\": 2⁵ es \"dos elevado a la quinta\"."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Exponente 1 y exponente 0",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá qué pasa al bajar el exponente de a uno: cada vez se divide por la base."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Bajando el exponente",
+       "columnas": [
+        "2³",
+        "2²",
+        "2¹",
+        "2⁰"
+       ],
+       "filas": [
+        [
+         "8",
+         "4",
+         "2",
+         "1"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Cada resultado es la mitad del anterior."
+      },
+      {
+       "tipo": "importante",
+       "titulo": "Dos reglas",
+       "texto": "Todo número elevado a 1 da el mismo número: 7¹ = 7. Todo número distinto de 0 elevado a 0 da <b>1</b>: 7⁰ = 1."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Potencias que crecen rápido",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las potencias sirven para contar cosas que se duplican, se triplican o se multiplican siempre por el mismo número."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Una bacteria que se duplica",
+       "texto": "Cada hora, cada bacteria se divide en 2.",
+       "items": [
+        "Después de 1 hora hay 2¹ = 2.",
+        "Después de 3 horas hay 2³ = 8.",
+        "Después de 5 horas hay 2⁵ = 32."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "4³ y 3⁴",
+    "planteo": "Calculá 4³ y 3⁴ y decí cuál es mayor.",
+    "pasos": [
+     "4³ = 4 × 4 × 4.",
+     "4 × 4 = 16 y 16 × 4 = 64.",
+     "3⁴ = 3 × 3 × 3 × 3.",
+     "3 × 3 = 9; 9 × 3 = 27; 27 × 3 = 81.",
+     "81 es mayor que 64: 3⁴ es mayor, aunque tenga la base más chica."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "6² y 2⁶",
+    "planteo": "Calculá 6² y 2⁶. Completá los espacios.",
+    "pasos": [
+     "6² = 6 × ___ = 36.",
+     "2⁶ = 2 × 2 × 2 × 2 × 2 × 2 = ___ .",
+     "La mayor es ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "5³ y 3⁵",
+    "planteo": "Calculá 5³ y 3⁵ y decí cuál es mayor."
+   },
+   "tip": {
+    "titulo": "Multiplicá de a dos",
+    "texto": "Para calcular una potencia, multiplicá el primer par y seguí multiplicando el resultado por la base: 3⁴ es 9, después 27, después 81."
+   },
+   "ojo": [
+    "Multiplicar base por exponente: 2³ no es 2 × 3 = 6; es 2 × 2 × 2 = 8.",
+    "Pensar que un número elevado a 0 da 0: 5⁰ = 1."
+   ],
+   "resumen": [
+    {
+     "titulo": "Potencia",
+     "texto": "Producto de factores iguales. Ej.: 2³ = 2 × 2 × 2 = 8."
+    },
+    {
+     "titulo": "Base y exponente",
+     "texto": "La base se repite tantas veces como dice el exponente."
+    },
+    {
+     "titulo": "Cuadrado y cubo",
+     "texto": "Exponente 2 y 3. Ej.: 4² = 16 y 3³ = 27."
+    },
+    {
+     "titulo": "Exponente 1",
+     "texto": "Da la base. Ej.: 7¹ = 7."
+    },
+    {
+     "titulo": "Exponente 0",
+     "texto": "Da 1. Ej.: 7⁰ = 1."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Potencia",
+     "significado": "Multiplicación de factores iguales."
+    },
+    {
+     "palabra": "Base",
+     "significado": "El número que se repite como factor."
+    },
+    {
+     "palabra": "Exponente",
+     "significado": "El número chico de arriba que dice cuántas veces se repite la base."
+    },
+    {
+     "palabra": "Al cuadrado",
+     "significado": "Elevado a 2."
+    },
+    {
+     "palabra": "Al cubo",
+     "significado": "Elevado a 3."
+    }
+   ],
+   "carpeta": [
+    "Calculá 2⁵.",
+    "Calculá 7⁰ + 7¹.",
+    "Una caja tiene forma de cubo y en cada arista entran 4 cubitos. ¿Cuántos cubitos hay en total?",
+    "Un compañero dice que 3⁴ = 12. ¿Cuánto vale 3⁴?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "32"
+    ],
+    [
+     "8"
+    ],
+    [
+     "64"
+    ],
+    [
+     "81"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "6² = 6 × 6 = 36. 2⁶ = 64. La mayor es 2⁶.",
+    "solo": "5³ = 125 y 3⁵ = 243. La mayor es 3⁵.",
+    "carpeta": [
+     "32: 2 × 2 × 2 × 2 × 2.",
+     "8: 7⁰ = 1 y 7¹ = 7; 1 + 7 = 8.",
+     "64: 4³ = 4 × 4 × 4.",
+     "81: 3 × 3 × 3 × 3. Multiplicó la base por el exponente."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es una potencia",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "potencia"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "potencia"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Potencia",
+        "texto": "Una potencia es una multiplicación de factores iguales. La <b>base</b> es el número que se repite y el <b>exponente</b> indica cuántas veces aparece como factor."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Escribir 3⁴ es mucho más corto que 3 · 3 · 3 · 3, sobre todo cuando el exponente es grande. Por eso se usa en ciencia, en informática y para contar cosas que crecen muy rápido."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "3⁴ no es 3 × 4: es 3 · 3 · 3 · 3 = 81.",
+         "Exponente 1: queda la base (7¹ = 7).",
+         "Exponente 0: da 1 (5⁰ = 1)."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cuadrados y cubos",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "cuadrado_cubo"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "cuadrado_cubo"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cuadrado y cubo",
+        "texto": "Un número al <b>cuadrado</b> es ese número multiplicado por sí mismo (exponente 2), y al <b>cubo</b>, multiplicado tres veces (exponente 3)."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los nombres vienen de la geometría: un cuadrado de lado 4 tiene 4² = 16 cuadraditos, y un cubo de arista 4 está formado por 4³ = 64 cubitos. Por eso estas potencias aparecen al medir áreas y volúmenes."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "5² se lee «cinco al cuadrado» y vale 25.",
+         "2³ se lee «dos al cubo» y vale 8."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Potencias que crecen rápido",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "crecen"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "base_exp"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Crecimiento de las potencias",
+        "texto": "Cuando el exponente aumenta de a uno, la potencia se multiplica cada vez por la base, por eso el resultado crece mucho más rápido que en una suma."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "2¹⁰ ya es 1.024, aunque 2 sea un número chico. Esto explica cosas de la vida real, como un mensaje que cada persona reenvía a dos amigos: en pocos pasos llega a miles."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Cada paso multiplica por la base: 2, 4, 8, 16, 32…",
+         "Cuanto más grande el exponente, más rápido crece."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Una potencia",
+      "definicion": "es una multiplicación de factores iguales: la base se repite tantas veces como dice el exponente.",
+      "ejemplo": "3⁴ = 3 · 3 · 3 · 3 = 81",
+      "formula": "aⁿ = a · a · … · a (n veces)"
+     },
+     {
+      "concepto": "Exponente 1 y exponente 0",
+      "definicion": "dan la misma base y 1, respectivamente, para cualquier base distinta de 0.",
+      "ejemplo": "7¹ = 7 · 5⁰ = 1"
+     },
+     {
+      "concepto": "El cuadrado y el cubo",
+      "definicion": "son las potencias de exponente 2 y 3, que miden cuadraditos y cubitos.",
+      "ejemplo": "4² = 16 · 4³ = 64"
+     },
+     {
+      "concepto": "El crecimiento de una potencia",
+      "definicion": "es muy rápido, porque cada vez que el exponente sube se multiplica por la base.",
+      "ejemplo": "2¹⁰ = 1.024"
+     }
+    ]
+   }
+  },
+  "2": {
+   "objetivo": "Vas a poder usar las propiedades de las potencias para calcular y simplificar, y reconocer cuándo no se pueden aplicar.",
+   "vas_a_ver": [
+    "Producto de potencias de igual base",
+    "Cociente de potencias de igual base",
+    "Potencia de una potencia",
+    "Distributiva respecto del producto y del cociente",
+    "Cuándo NO se distribuye: suma y resta"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Producto y cociente de igual base",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Producto de igual base",
+       "texto": "Para multiplicar potencias de <b>igual base</b>, se deja la base y se <b>suman los exponentes</b>: aᵐ × aⁿ = aᵐ⁺ⁿ."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: 2³ × 2² = (2 × 2 × 2) × (2 × 2) = 2⁵ = 32. Hay 3 + 2 = 5 factores 2."
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Cociente de igual base",
+       "texto": "Para dividir potencias de <b>igual base</b>, se deja la base y se <b>restan los exponentes</b>: aᵐ ÷ aⁿ = aᵐ⁻ⁿ."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: 3⁵ ÷ 3² = 3³ = 27. Comprobación: 243 ÷ 9 = 27."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Potencia de una potencia",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Potencia de potencia",
+       "texto": "Para elevar una potencia a otro exponente, se <b>multiplican los exponentes</b>: (aᵐ)ⁿ = aᵐ×ⁿ."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: (2²)³ = 2² × 2² × 2² = 2⁶ = 64. Comprobación: 2² = 4 y 4³ = 64."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Distributiva con producto y cociente",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La potencia se puede repartir entre los factores de un producto o de un cociente: (a × b)ⁿ = aⁿ × bⁿ y (a ÷ b)ⁿ = aⁿ ÷ bⁿ."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Distribuir la potencia",
+       "texto": "Calculamos de dos formas.",
+       "items": [
+        "(2 × 5)³ = 10³ = 1.000. Distribuyendo: 2³ × 5³ = 8 × 125 = 1.000.",
+        "(12 ÷ 3)² = 4² = 16. Distribuyendo: 12² ÷ 3² = 144 ÷ 9 = 16."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Cuándo NO se puede",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La potencia <b>no se distribuye</b> sobre una suma ni sobre una resta. Y al sumar potencias de igual base <b>no se suman los exponentes</b>."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Contraejemplos",
+       "texto": "Las dos formas dan distinto.",
+       "items": [
+        "(2 + 3)² = 5² = 25, pero 2² + 3² = 4 + 9 = 13.",
+        "(5 − 3)² = 2² = 4, pero 5² − 3² = 25 − 9 = 16.",
+        "2³ + 2² = 8 + 4 = 12, que no es 2⁵ = 32."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "2⁴ × 2³ ÷ 2⁵",
+    "planteo": "Escribí como una sola potencia y calculá.",
+    "pasos": [
+     "Producto de igual base: 2⁴ × 2³ = 2⁴⁺³ = 2⁷.",
+     "Cociente de igual base: 2⁷ ÷ 2⁵ = 2⁷⁻⁵ = 2².",
+     "2² = 4.",
+     "Comprobación: 16 × 8 = 128 y 128 ÷ 32 = 4."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "(3²)² × 3",
+    "planteo": "Escribí como una sola potencia. Completá los espacios.",
+    "pasos": [
+     "(3²)² = 3 elevado a ___ (se multiplican los exponentes).",
+     "3 = 3¹, entonces 3⁴ × 3¹ = 3 elevado a ___ .",
+     "3⁵ = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "5⁶ ÷ 5⁴",
+    "planteo": "Escribí 5⁶ ÷ 5⁴ como una sola potencia y calculá."
+   },
+   "tip": {
+    "titulo": "Primero mirá la base",
+    "texto": "Las reglas de sumar y restar exponentes solo valen si la base es la misma y la operación es producto o cociente."
+   },
+   "ojo": [
+    "Distribuir sobre una suma: (a + b)² no es a² + b². Ej.: (2 + 3)² = 25, no 13.",
+    "Multiplicar las bases: 2³ × 2² es 2⁵, no 4⁵."
+   ],
+   "resumen": [
+    {
+     "titulo": "Producto",
+     "texto": "Igual base: se suman exponentes. Ej.: 2³ × 2² = 2⁵."
+    },
+    {
+     "titulo": "Cociente",
+     "texto": "Igual base: se restan exponentes. Ej.: 3⁵ ÷ 3² = 3³."
+    },
+    {
+     "titulo": "Potencia de potencia",
+     "texto": "Se multiplican exponentes. Ej.: (2²)³ = 2⁶."
+    },
+    {
+     "titulo": "Distributiva",
+     "texto": "Vale con × y ÷. Ej.: (2 × 5)³ = 2³ × 5³."
+    },
+    {
+     "titulo": "No vale",
+     "texto": "Con + y −. Ej.: (2 + 3)² = 25 y 2² + 3² = 13."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Igual base",
+     "significado": "Potencias que tienen el mismo número abajo."
+    },
+    {
+     "palabra": "Propiedad",
+     "significado": "Regla que se cumple siempre en una operación."
+    },
+    {
+     "palabra": "Distribuir",
+     "significado": "Aplicar la potencia a cada factor por separado."
+    },
+    {
+     "palabra": "Contraejemplo",
+     "significado": "Un caso que muestra que una regla no se cumple."
+    },
+    {
+     "palabra": "Simplificar",
+     "significado": "Escribir una cuenta de forma más corta."
+    }
+   ],
+   "carpeta": [
+    "Escribí 2⁴ × 2² como una sola potencia y calculá el resultado.",
+    "Calculá 10⁷ ÷ 10⁴.",
+    "Calculá (2 × 3)².",
+    "Un compañero dice que (3 + 1)² = 3² + 1² = 10. ¿Cuánto vale realmente (3 + 1)²?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "64"
+    ],
+    [
+     "1000"
+    ],
+    [
+     "36"
+    ],
+    [
+     "16"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "(3²)² = 3⁴. 3⁴ × 3¹ = 3⁵. 3⁵ = 243.",
+    "solo": "5⁶ ÷ 5⁴ = 5² = 25.",
+    "carpeta": [
+     "64: 2⁴ × 2² = 2⁶ = 64.",
+     "1.000: 10⁷ ÷ 10⁴ = 10³ = 1.000.",
+     "36: (2 × 3)² = 6² = 36 (o 2² × 3² = 4 × 9).",
+     "16: primero la suma: 4² = 16. No se distribuye sobre la suma."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Producto de potencias de igual base",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "producto"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "producto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Producto de igual base",
+        "texto": "Para multiplicar potencias que tienen la <b>misma base</b>, se deja la base y se <b>suman</b> los exponentes: aᵐ · aⁿ = aᵐ⁺ⁿ."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Funciona porque se juntan todos los factores: si hay 3 factores en una potencia y 2 en la otra, en total hay 5. Así se evita hacer cuentas largas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "2³ · 2² = 2⁵ = 32.",
+         "Solo vale si la base es la misma: 2³ · 3² no se simplifica así."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cociente de potencias de igual base",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "cociente"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "cociente"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cociente de igual base",
+        "texto": "Para dividir potencias de la <b>misma base</b>, se deja la base y se <b>restan</b> los exponentes: aᵐ : aⁿ = aᵐ⁻ⁿ (el de arriba menos el de abajo)."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada factor de abajo se simplifica con uno de arriba, así que quedan tantos factores como la diferencia de los exponentes. Por eso 5⁶ : 5⁴ = 5² = 25."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Se resta el exponente del dividendo menos el del divisor.",
+         "Si los exponentes son iguales, queda a⁰ = 1."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Potencia de una potencia",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "potencia_potencia"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "potencia_potencia"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Potencia de potencia",
+        "texto": "Cuando una potencia se eleva a otro exponente, se deja la base y se <b>multiplican</b> los exponentes: (aᵐ)ⁿ = aᵐ·ⁿ."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "(2³)² significa 2³ multiplicado dos veces: dos grupos de tres factores, seis factores en total. Hay que distinguirla del producto de igual base, donde los exponentes se suman."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(2³)² = 2⁶ = 64: dos grupos de tres factores.",
+         "No confundir: en el producto de igual base los exponentes se suman; acá se multiplican."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Distributiva con producto y cociente",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "distributiva"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "distributiva"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Distributiva de la potencia",
+        "texto": "La potencia se distribuye en una multiplicación y en una división exacta: (a · b)ⁿ = aⁿ · bⁿ y (a : b)ⁿ = aⁿ : bⁿ."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Sirve para calcular más fácil: (2 · 5)³ es 10³ = 1.000, y también 2³ · 5³ = 8 · 125 = 1.000. Se elige el camino con las cuentas más cómodas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Vale con × y con ÷ (si la división es exacta).",
+         "Cada factor queda elevado al mismo exponente."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cuándo NO se puede",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "no_suma"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "no_suma"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "La suma no se distribuye",
+        "texto": "La potencia <b>no</b> se distribuye en una suma ni en una resta: (a + b)² no es igual a a² + b². Primero se resuelve el paréntesis y después se eleva."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Es uno de los errores más comunes. Con un ejemplo se ve enseguida: (3 + 4)² = 7² = 49, pero 3² + 4² = 9 + 16 = 25, que es otro número."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Con + y − : primero el paréntesis.",
+         "Ante la duda, probá con números chicos."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El producto de igual base",
+      "definicion": "se resuelve dejando la misma base y sumando los dos exponentes.",
+      "ejemplo": "2³ · 2² = 2⁵",
+      "formula": "aᵐ · aⁿ = aᵐ⁺ⁿ"
+     },
+     {
+      "concepto": "El cociente de igual base",
+      "definicion": "se resuelve dejando la misma base y restando los exponentes, el de arriba menos el de abajo.",
+      "ejemplo": "5⁶ : 5⁴ = 5²",
+      "formula": "aᵐ : aⁿ = aᵐ⁻ⁿ"
+     },
+     {
+      "concepto": "La potencia de una potencia",
+      "definicion": "se resuelve dejando la misma base y multiplicando los dos exponentes.",
+      "ejemplo": "(2³)² = 2⁶",
+      "formula": "(aᵐ)ⁿ = aᵐ·ⁿ"
+     },
+     {
+      "concepto": "La propiedad distributiva",
+      "definicion": "vale con la multiplicación y la división, pero nunca con la suma ni con la resta.",
+      "ejemplo": "(2 · 5)³ = 2³ · 5³ · (3 + 4)² ≠ 3² + 4²"
+     }
+    ]
+   }
+  },
+  "3": {
+   "objetivo": "Vas a poder calcular raíces cuadradas y cúbicas exactas, entendiéndolas como la operación inversa de la potencia, y estimar raíces que no son exactas.",
+   "vas_a_ver": [
+    "Qué es la raíz cuadrada",
+    "Qué es la raíz cúbica",
+    "Cuadrados y cubos perfectos",
+    "Estimar una raíz que no es exacta",
+    "Raíces de números grandes"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La raíz cuadrada",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Raíz cuadrada",
+       "texto": "La <b>raíz cuadrada</b> de un número es el número que, <b>elevado al cuadrado</b>, da ese número. Se escribe √. El número de adentro se llama <b>radicando</b>. √49 = 7 porque 7² = 49."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Cuadrados perfectos",
+       "columnas": [
+        "n",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+       ],
+       "filas": [
+        [
+         "n²",
+         "1",
+         "4",
+         "9",
+         "16",
+         "25",
+         "36",
+         "49",
+         "64",
+         "81",
+         "100"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Los números de la fila de abajo tienen raíz cuadrada exacta: son <b>cuadrados perfectos</b>."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "La raíz cúbica",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Raíz cúbica",
+       "texto": "La <b>raíz cúbica</b> de un número es el número que, <b>elevado al cubo</b>, da ese número. Se escribe ∛. ∛64 = 4 porque 4³ = 64."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Cubos perfectos",
+       "columnas": [
+        "n",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+       ],
+       "filas": [
+        [
+         "n³",
+         "1",
+         "8",
+         "27",
+         "64",
+         "125",
+         "216"
+        ]
+       ],
+       "iguales": true,
+       "texto": "La raíz es la operación inversa de la potencia: deshace lo que hizo la potencia."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Estimar una raíz no exacta",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Si el número no es un cuadrado perfecto, su raíz no es un número natural. Pero podés decir <b>entre qué dos naturales está</b>, buscando los cuadrados perfectos de al lado."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "¿Entre qué números está √50?",
+       "texto": "Buscamos los cuadrados vecinos.",
+       "items": [
+        "49 = 7² y 64 = 8².",
+        "50 está entre 49 y 64.",
+        "Entonces √50 está entre 7 y 8 (muy cerca de 7)."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Raíces de números grandes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para un número grande, lo partís en un producto de números con raíz conocida y sacás la raíz de cada factor. La raíz sí se reparte en un producto, pero <b>no en una suma</b>: √(9 + 16) = √25 = 5, y no 3 + 4 = 7."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Descomponer y sacar la raíz",
+       "texto": "Dos ejemplos.",
+       "items": [
+        "√3.600 = √(36 × 100) = 6 × 10 = 60. Comprobación: 60² = 3.600.",
+        "∛8.000 = ∛(8 × 1.000) = 2 × 10 = 20. Comprobación: 20³ = 8.000."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "√1.600",
+    "planteo": "Calculá √1.600 descomponiendo y comprobá el resultado.",
+    "pasos": [
+     "1.600 = 16 × 100.",
+     "√16 = 4 porque 4² = 16.",
+     "√100 = 10 porque 10² = 100.",
+     "√1.600 = 4 × 10 = 40.",
+     "Comprobación: 40² = 40 × 40 = 1.600."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "∛27.000",
+    "planteo": "Calculá ∛27.000 descomponiendo. Completá los espacios.",
+    "pasos": [
+     "27.000 = 27 × ___ .",
+     "∛27 = ___ porque 3³ = 27.",
+     "∛1.000 = 10.",
+     "∛27.000 = 3 × 10 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "estimar √90",
+    "planteo": "¿Entre qué dos números naturales está √90?"
+   },
+   "tip": {
+    "titulo": "Comprobá elevando",
+    "texto": "Para saber si una raíz está bien, elevá el resultado: al cuadrado si es raíz cuadrada, al cubo si es cúbica. Tiene que darte el radicando."
+   },
+   "ojo": [
+    "Dividir por 2: √36 no es 18; es 6, porque 6² = 36.",
+    "Repartir la raíz en una suma: √(9 + 16) es 5, no 3 + 4."
+   ],
+   "resumen": [
+    {
+     "titulo": "Raíz cuadrada",
+     "texto": "El número que al cuadrado da el radicando. Ej.: √49 = 7."
+    },
+    {
+     "titulo": "Raíz cúbica",
+     "texto": "El número que al cubo da el radicando. Ej.: ∛64 = 4."
+    },
+    {
+     "titulo": "Operación inversa",
+     "texto": "La raíz deshace la potencia."
+    },
+    {
+     "titulo": "Estimar",
+     "texto": "√50 está entre 7 y 8, porque 49 < 50 < 64."
+    },
+    {
+     "titulo": "Números grandes",
+     "texto": "Se descompone. Ej.: √3.600 = 6 × 10 = 60."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Raíz",
+     "significado": "Operación inversa de la potencia."
+    },
+    {
+     "palabra": "Radicando",
+     "significado": "El número que está adentro de la raíz."
+    },
+    {
+     "palabra": "Cuadrado perfecto",
+     "significado": "Número que tiene raíz cuadrada exacta, como 49."
+    },
+    {
+     "palabra": "Cubo perfecto",
+     "significado": "Número que tiene raíz cúbica exacta, como 64."
+    },
+    {
+     "palabra": "Estimar",
+     "significado": "Decir aproximadamente cuánto da, sin el valor exacto."
+    }
+   ],
+   "carpeta": [
+    "Calculá √121.",
+    "Calculá ∛125.",
+    "Calculá √4.900.",
+    "Un compañero dice que √36 = 18 porque dividió por 2. ¿Cuánto vale √36?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "11"
+    ],
+    [
+     "5"
+    ],
+    [
+     "70"
+    ],
+    [
+     "6"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "27.000 = 27 × 1.000. ∛27 = 3. Resultado: 30.",
+    "solo": "81 = 9² y 100 = 10². 90 está entre 81 y 100, así que √90 está entre 9 y 10.",
+    "carpeta": [
+     "11: 11² = 121.",
+     "5: 5³ = 125.",
+     "70: √(49 × 100) = 7 × 10 = 70.",
+     "6: 6² = 36. Dividir por 2 no es sacar la raíz."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La raíz cuadrada",
+      "ejemplo": {
+       "motor": "raiz_explorar",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "raiz_cuadrada"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Raíz cuadrada",
+        "texto": "La raíz cuadrada de un número es otro número que, multiplicado por sí mismo, da el primero. Es la operación inversa de elevar al cuadrado: √49 = 7 porque 7² = 49."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si pensamos en un cuadrado armado con cuadraditos, la raíz cuadrada dice cuánto mide su lado. Por eso solo es exacta en los cuadrados perfectos: 1, 4, 9, 16, 25…"
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "√81 = 9 porque 9 · 9 = 81.",
+         "La raíz cuadrada no es la mitad: √64 = 8, no 32."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La raíz cúbica",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "raiz_cubica"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "raiz_cubica"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Raíz cúbica",
+        "texto": "La raíz cúbica de un número es otro número que, multiplicado <b>tres veces</b> por sí mismo, da el primero: ∛64 = 4 porque 4³ = 64."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Es la operación inversa de elevar al cubo. Si un cubo está armado con cubitos, la raíz cúbica dice cuánto mide su arista. Conviene conocer los primeros cubos: 1, 8, 27, 64, 125…"
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "∛125 = 5 porque 5 · 5 · 5 = 125.",
+         "El índice 3 va chiquito sobre la raíz."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Estimar una raíz no exacta",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "perfectos"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "estimar_raiz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Raíz no exacta",
+        "texto": "Cuando un número no es un cuadrado perfecto, su raíz cuadrada no es un número natural, pero se puede ubicar entre los dos naturales consecutivos cuyos cuadrados lo rodean."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "√30 no es exacta, pero 5² = 25 y 6² = 36, así que √30 está entre 5 y 6, más cerca de 5. Ubicarla así alcanza para estimar resultados y controlar cuentas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Buscá el cuadrado de abajo y el de arriba.",
+         "La raíz queda entre sus bases."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Raíces de números grandes",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "raiz_grande"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "raiz_grande"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Raíz de un número con ceros",
+        "texto": "Para calcular la raíz cuadrada de un número terminado en una cantidad par de ceros, se separa el número conocido de los ceros y se calcula cada raíz por separado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "√3.600 = √36 · √100 = 6 · 10 = 60. La raíz de 1 seguido de ceros tiene la mitad de ceros. Así se calculan de cabeza raíces que parecen difíciles."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "√100 = 10 y √10.000 = 100.",
+         "Controlá multiplicando el resultado por sí mismo."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "La raíz cuadrada",
+      "definicion": "es el número que multiplicado por sí mismo da el número de adentro.",
+      "ejemplo": "√49 = 7 porque 7² = 49"
+     },
+     {
+      "concepto": "La raíz cúbica",
+      "definicion": "es el número que multiplicado tres veces por sí mismo da el número de adentro.",
+      "ejemplo": "∛64 = 4 porque 4³ = 64"
+     },
+     {
+      "concepto": "Una raíz no exacta",
+      "definicion": "se ubica entre dos naturales buscando los cuadrados que rodean al número.",
+      "ejemplo": "25 < 30 < 36 → √30 está entre 5 y 6"
+     },
+     {
+      "concepto": "La raíz de un número con ceros",
+      "definicion": "se calcula separando los ceros, que quedan reducidos a la mitad.",
+      "ejemplo": "√3.600 = √36 · √100 = 60"
+     }
+    ]
+   }
+  },
+  "4": {
+   "objetivo": "Vas a poder resolver problemas con cuadrados y cubos: pasar de lado a área, de arista a volumen, y al revés.",
+   "vas_a_ver": [
+    "Lado y área de un cuadrado",
+    "Arista y volumen de un cubo",
+    "Cómo volver del área al lado y del volumen a la arista",
+    "Reconocer cuadrados y cubos perfectos",
+    "Problemas de baldosas y cajas"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Cuadrado: lado y área",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Área del cuadrado",
+       "texto": "El <b>área</b> de un cuadrado es lo que ocupa adentro: <b>lado²</b>. Se mide en unidades cuadradas (cm², m²). El <b>perímetro</b>, en cambio, es el borde: 4 × lado."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: un cuadrado de lado 7 cm tiene área 7² = 49 cm² y perímetro 4 × 7 = 28 cm. Al revés: si el área es 81 m², el lado es √81 = 9 m."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cubo: arista y volumen",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Volumen del cubo",
+       "texto": "El <b>volumen</b> de un cubo es lo que ocupa: <b>arista³</b>. Se mide en unidades cúbicas (cm³, m³)."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: un cubo de arista 5 cm tiene volumen 5³ = 125 cm³. Al revés: si el volumen es 216 cm³, la arista es ∛216 = 6 cm."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Reconocer cuadrados y cubos perfectos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Un número es <b>cuadrado perfecto</b> si es el área de un cuadrado de lado natural, y <b>cubo perfecto</b> si es el volumen de un cubo de arista natural. Algunos son las dos cosas."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "¿Cuadrado, cubo o los dos?",
+       "columnas": [
+        "Número",
+        "Cuadrado perfecto",
+        "Cubo perfecto"
+       ],
+       "filas": [
+        [
+         "36",
+         "Sí (6²)",
+         "No"
+        ],
+        [
+         "27",
+         "No",
+         "Sí (3³)"
+        ],
+        [
+         "64",
+         "Sí (8²)",
+         "Sí (4³)"
+        ],
+        [
+         "50",
+         "No",
+         "No"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Problemas de baldosas y cajas",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Primero fijate qué te dan (lado, área, arista o volumen) y qué te piden. Si te dan el área y piden el lado, sacás raíz cuadrada; si te dan el volumen y piden la arista, raíz cúbica."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "El patio",
+       "texto": "Un patio cuadrado tiene 36 m² y se cubre con baldosas de 1 m de lado.",
+       "items": [
+        "Lado del patio: √36 = 6 m.",
+        "Baldosas: cada una ocupa 1 m², así que hacen falta 36.",
+        "Borde para poner zócalo: perímetro = 4 × 6 = 24 m."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "la caja cúbica",
+    "planteo": "Una caja con forma de cubo tiene un volumen de 343 cm³. ¿Cuánto mide la arista? ¿Cuál es el área de una de sus caras?",
+    "pasos": [
+     "Dan el volumen y piden la arista: raíz cúbica.",
+     "∛343 = 7, porque 7³ = 7 × 7 × 7 = 343. La arista mide 7 cm.",
+     "Cada cara es un cuadrado de lado 7 cm.",
+     "Área de una cara: 7² = 49 cm²."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "el terreno cuadrado",
+    "planteo": "Un terreno cuadrado tiene 144 m² de área. ¿Cuánto mide el lado? ¿Cuánto alambre hace falta para rodearlo? Completá los espacios.",
+    "pasos": [
+     "Lado: √144 = ___ m.",
+     "Perímetro: 4 × 12 = ___ m.",
+     "Hacen falta 48 m de alambre."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "el cubo de 9 cm",
+    "planteo": "Un cubo tiene 9 cm de arista. ¿Cuál es su volumen?"
+   },
+   "tip": {
+    "titulo": "Mirá la unidad",
+    "texto": "cm es largo (lado, arista, perímetro), cm² es área y cm³ es volumen. La unidad te dice qué estás calculando."
+   },
+   "ojo": [
+    "Confundir perímetro y área: un cuadrado de lado 6 cm tiene área 36 cm², no 24 (eso es el perímetro).",
+    "Confundir lado con área: si el área es 49 m², el lado es 7 m, no 49 m."
+   ],
+   "resumen": [
+    {
+     "titulo": "Área del cuadrado",
+     "texto": "lado². Ej.: lado 7 cm → 49 cm²."
+    },
+    {
+     "titulo": "Volumen del cubo",
+     "texto": "arista³. Ej.: arista 5 cm → 125 cm³."
+    },
+    {
+     "titulo": "Al revés",
+     "texto": "Lado = √área; arista = ∛volumen."
+    },
+    {
+     "titulo": "Perímetro",
+     "texto": "4 × lado: es el borde, no el área."
+    },
+    {
+     "titulo": "Perfectos",
+     "texto": "64 es cuadrado (8²) y cubo (4³)."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Área",
+     "significado": "Lo que ocupa una figura plana por dentro."
+    },
+    {
+     "palabra": "Perímetro",
+     "significado": "La medida del borde de una figura."
+    },
+    {
+     "palabra": "Volumen",
+     "significado": "Lo que ocupa un cuerpo en el espacio."
+    },
+    {
+     "palabra": "Arista",
+     "significado": "Cada borde de un cubo."
+    },
+    {
+     "palabra": "Cara",
+     "significado": "Cada uno de los 6 cuadrados que forman un cubo."
+    }
+   ],
+   "carpeta": [
+    "Un cuadrado tiene 15 cm de lado. ¿Cuál es su área en cm²?",
+    "Una habitación cuadrada tiene 64 m² de piso. ¿Cuánto mide el lado en metros?",
+    "Un cubo tiene un volumen de 1.000 cm³. ¿Cuánto mide la arista en cm?",
+    "Un compañero dice que un cuadrado de 6 cm de lado tiene un área de 24 cm². ¿Cuál es el área correcta en cm²?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "225",
+     "225cm2",
+     "225cm²"
+    ],
+    [
+     "8",
+     "8m"
+    ],
+    [
+     "10",
+     "10cm"
+    ],
+    [
+     "36",
+     "36cm2",
+     "36cm²"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Lado: 12 m. Perímetro: 48 m.",
+    "solo": "9³ = 9 × 9 × 9 = 729 cm³.",
+    "carpeta": [
+     "225 cm²: 15² = 225.",
+     "8 m: √64 = 8.",
+     "10 cm: ∛1.000 = 10.",
+     "36 cm²: 6² = 36. El 24 es el perímetro."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Cuadrado: lado y área",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "lado_area"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "lado_area"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Área del cuadrado",
+        "texto": "El área de un cuadrado se calcula elevando el lado al cuadrado (A = l²); al revés, el lado es la raíz cuadrada del área."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Por eso la potencia y la raíz sirven para resolver problemas de pisos, terrenos y baldosas: si un patio cuadrado tiene 81 m², cada lado mide 9 m, y se necesitan 81 baldosas de 1 m²."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Del lado al área: se eleva al cuadrado.",
+         "Del área al lado: raíz cuadrada."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cubo: arista y volumen",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "arista_volumen"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "arista_volumen"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Volumen del cubo",
+        "texto": "El volumen de un cubo se calcula elevando la arista al cubo (V = a³); al revés, la arista es la raíz cúbica del volumen."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Una caja cúbica de 5 cm de arista tiene 5 · 5 · 5 = 125 cm³: entran 125 cubitos de 1 cm. Si sabemos que una caja cúbica tiene 1.000 cm³, su arista mide 10 cm."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "De la arista al volumen: al cubo.",
+         "Del volumen a la arista: raíz cúbica."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Reconocer cuadrados y cubos perfectos",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "perfectos"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "perfectos"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cuadrado y cubo perfecto",
+        "texto": "Un número es un cuadrado perfecto si es el cuadrado de un natural, y es un cubo perfecto si es el cubo de un natural; solo en ellos la raíz es exacta."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Reconocerlos ayuda a saber de antemano si con cierta cantidad de baldosas se puede armar un cuadrado justo, o con cierta cantidad de cubitos un cubo sin que sobre ninguno."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Cuadrados: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100…",
+         "Cubos: 1, 8, 27, 64, 125, 216…",
+         "64 es las dos cosas: 8² y 4³."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "El área del cuadrado",
+      "definicion": "es el lado elevado al cuadrado; el lado es la raíz cuadrada del área.",
+      "ejemplo": "l = 9 m → A = 81 m²",
+      "formula": "A = l²"
+     },
+     {
+      "concepto": "El volumen del cubo",
+      "definicion": "es la arista elevada al cubo; la arista es la raíz cúbica del volumen.",
+      "ejemplo": "a = 5 cm → V = 125 cm³",
+      "formula": "V = a³"
+     },
+     {
+      "concepto": "Un cuadrado perfecto",
+      "definicion": "es el cuadrado de un número natural, y su raíz cuadrada es exacta.",
+      "ejemplo": "49 = 7²"
+     },
+     {
+      "concepto": "Un cubo perfecto",
+      "definicion": "es el cubo de un número natural, y su raíz cúbica es exacta.",
+      "ejemplo": "216 = 6³"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "Calculá {b} elevado a {e}.",
+    "o": {
+     "vars": {
+      "b": {
+       "min": 2,
+       "max": 5
+      },
+      "e": {
+       "min": 2,
+       "max": 4
+      }
+     }
+    },
+    "r": {
+     "formula": "b^e"
+    },
+    "e": "Se multiplica la base por sí misma tantas veces como dice el exponente.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "Cualquier número distinto de 0 elevado a 0 da 0.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Da 1. Por ejemplo, 7 elevado a 0 = 1.",
+    "n": "error"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada multiplicación con la potencia que la representa.",
+    "o": {
+     "izquierda": [
+      "4 · 4 · 4",
+      "3 · 3 · 3 · 3",
+      "2 · 2 · 2 · 2 · 2 · 2",
+      "6 · 6"
+     ],
+     "derecha": [
+      "4³",
+      "3⁴",
+      "2⁶",
+      "6²"
+     ]
+    },
+    "r": {
+     "pares": {
+      "4 · 4 · 4": "4³",
+      "3 · 3 · 3 · 3": "3⁴",
+      "2 · 2 · 2 · 2 · 2 · 2": "2⁶",
+      "6 · 6": "6²"
+     }
+    },
+    "e": "El exponente es la cantidad de veces que aparece el factor."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos calcularon 2⁵. ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | 2 × 5 | = 10",
+     "Beto: | 2 · 2 · 2 · 2 · 2 | = 32",
+     "Caro: | 5 · 5 | = 25"
+    ],
+    "r": {
+     "correcta": "Beto: | 2 · 2 · 2 · 2 · 2 | = 32"
+    },
+    "e": "El exponente dice cuántas veces se multiplica la base: cinco veces el 2. Ana multiplicó base por exponente y Caro los cambió."
+   }
+  ],
+  "2": [
+   {
+    "t": "fill_blank",
+    "p": "2 elevado a 3 × 2 elevado a 4 = 2 elevado a ___.",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "7"
+      ]
+     ]
+    },
+    "e": "Igual base: se suman los exponentes, 3 + 4 = 7.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multi_select",
+    "p": "¿Cuáles de estas igualdades son verdaderas?",
+    "o": [
+     "(2 × 5) elevado a 2 = 2 elevado a 2 × 5 elevado a 2",
+     "(2 + 5) elevado a 2 = 2 elevado a 2 + 5 elevado a 2",
+     "3 elevado a 6 ÷ 3 elevado a 2 = 3 elevado a 4",
+     "(4 elevado a 2) elevado a 3 = 4 elevado a 5",
+     "10 elevado a 2 × 10 elevado a 3 = 10 elevado a 5"
+    ],
+    "r": {
+     "correctas": [
+      "(2 × 5) elevado a 2 = 2 elevado a 2 × 5 elevado a 2",
+      "3 elevado a 6 ÷ 3 elevado a 2 = 3 elevado a 4",
+      "10 elevado a 2 × 10 elevado a 3 = 10 elevado a 5"
+     ]
+    },
+    "e": "No se distribuye sobre la suma, y en la potencia de potencia los exponentes se multiplican (da 4 elevado a 6).",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada cuenta según la propiedad que se usa para resolverla.",
+    "o": {
+     "elementos": [
+      "3² · 3⁴",
+      "7⁵ : 7²",
+      "(2³)⁴",
+      "5 · 5³",
+      "(4²)²",
+      "10⁶ : 10"
+     ],
+     "categorias": [
+      "Se suman los exponentes",
+      "Se restan los exponentes",
+      "Se multiplican los exponentes"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "3² · 3⁴": "Se suman los exponentes",
+      "7⁵ : 7²": "Se restan los exponentes",
+      "(2³)⁴": "Se multiplican los exponentes",
+      "5 · 5³": "Se suman los exponentes",
+      "(4²)²": "Se multiplican los exponentes",
+      "10⁶ : 10": "Se restan los exponentes"
+     }
+    },
+    "e": "Producto de igual base: se suman. Cociente: se restan. Potencia de potencia: se multiplican. Ojo: 5 es 5¹ y 10 es 10¹."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Lucía resolvió (3 + 2)². Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "(3 + 2)² = 3² + 2²",
+      "= 9 + 4",
+      "= 13"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      0
+     ]
+    },
+    "e": "La potencia no se distribuye en la suma: (3 + 2)² = 5² = 25."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "Calculá la raíz cuadrada de {c}.",
+    "o": {
+     "vars": {
+      "n": {
+       "min": 2,
+       "max": 15
+      }
+     },
+     "calculadas": {
+      "c": "n*n"
+     }
+    },
+    "r": {
+     "formula": "n"
+    },
+    "e": "Buscá el número que elevado al cuadrado da el radicando.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Entre qué dos números naturales está la raíz cuadrada de 30?",
+    "o": [
+     "4 y 5",
+     "5 y 6",
+     "6 y 7",
+     "15 y 16"
+    ],
+    "r": {
+     "correcta": "5 y 6"
+    },
+    "e": "25 = 5 al cuadrado y 36 = 6 al cuadrado; 30 está entre 25 y 36.",
+    "n": "analizar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "Ordená de menor a mayor.",
+    "o": [
+     "√81",
+     "∛27",
+     "√16",
+     "∛125"
+    ],
+    "r": {
+     "orden": [
+      "∛27",
+      "√16",
+      "∛125",
+      "√81"
+     ]
+    },
+    "e": "√16 = 4, √81 = 9, ∛27 = 3 y ∛125 = 5: queda 3, 4, 5, 9."
+   },
+   {
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "[[secuencia]] Calculá √4.900: √4.900 = √49 · √100 → = ___ · ___ → = ___",
+    "o": {},
+    "r": {
+     "huecos": [
+      [
+       "7"
+      ],
+      [
+       "10"
+      ],
+      [
+       "70"
+      ]
+     ]
+    },
+    "e": "Se separan los ceros: √49 = 7 y √100 = 10, así que √4.900 = 70."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "Un cuadrado tiene {a} cm² de área. ¿Cuánto mide su lado en cm?",
+    "o": {
+     "vars": {
+      "n": {
+       "min": 3,
+       "max": 20
+      }
+     },
+     "calculadas": {
+      "a": "n*n"
+     }
+    },
+    "r": {
+     "formula": "n"
+    },
+    "e": "El lado es la raíz cuadrada del área.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada dato con lo que se calcula a partir de él.",
+    "o": {
+     "izquierda": [
+      "Lado 4 cm",
+      "Arista 4 cm",
+      "Área 49 cm²",
+      "Volumen 27 cm³"
+     ],
+     "derecha": [
+      "Área 16 cm²",
+      "Volumen 64 cm³",
+      "Lado 7 cm",
+      "Arista 3 cm"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Lado 4 cm": "Área 16 cm²",
+      "Arista 4 cm": "Volumen 64 cm³",
+      "Área 49 cm²": "Lado 7 cm",
+      "Volumen 27 cm³": "Arista 3 cm"
+     }
+    },
+    "e": "Lado al cuadrado da el área; arista al cubo da el volumen; las raíces hacen el camino inverso.",
+    "n": "analizar"
+   },
+   {
+    "t": "numeric",
+    "n": "aplicar",
+    "p": "[[problema]] Con 144 baldosas cuadradas iguales se quiere armar un piso cuadrado, sin que sobre ninguna. ¿Cuántas baldosas van en cada fila?",
+    "o": {},
+    "r": {
+     "acepta": [
+      12
+     ]
+    },
+    "e": "Se busca la raíz cuadrada: √144 = 12, porque 12 · 12 = 144."
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada cantidad de cubitos: ¿alcanza justo para armar un cubo?",
+    "o": {
+     "elementos": [
+      "27",
+      "50",
+      "64",
+      "100",
+      "125",
+      "200"
+     ],
+     "categorias": [
+      "Se arma un cubo justo",
+      "Sobran o faltan cubitos"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "27": "Se arma un cubo justo",
+      "50": "Sobran o faltan cubitos",
+      "64": "Se arma un cubo justo",
+      "100": "Sobran o faltan cubitos",
+      "125": "Se arma un cubo justo",
+      "200": "Sobran o faltan cubitos"
+     }
+    },
+    "e": "Solo los cubos perfectos sirven: 27 = 3³, 64 = 4³ y 125 = 5³."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. ¿Cuánto es 2 elevado a 0?",
+    "o": [
+     "0",
+     "1",
+     "2",
+     "20"
+    ],
+    "r": {
+     "correcta": "1"
+    },
+    "e": "Todo número distinto de 0 elevado a 0 da 1.",
+    "tiempo": 20,
+    "n": "recordar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá la raíz cúbica de 8.000.",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "8.000 = 8 × 1.000; raíz cúbica: 2 × 10 = 20.",
+    "tiempo": 40,
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. (3 + 4) elevado a 2 = 9 + 16.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "(3 + 4) elevado a 2 = 7 elevado a 2 = 49. No se distribuye sobre la suma.",
+    "tiempo": 25,
+    "n": "error"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá 25 × 19 con la distributiva.",
+    "o": {},
+    "r": {
+     "acepta": [
+      475
+     ]
+    },
+    "e": "25 × 20 − 25 = 500 − 25 = 475 (repaso de la misión 2).",
+    "tiempo": 40,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "Calculá {b} elevado a {e}.",
+    "o": {
+     "vars": {
+      "b": {
+       "min": 2,
+       "max": 9
+      },
+      "e": {
+       "min": 2,
+       "max": 3
+      }
+     }
+    },
+    "r": {
+     "formula": "b^e"
+    },
+    "e": "Producto de factores iguales.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "En 7 elevado a 4, ¿cuál es la base?",
+    "o": [
+     "7",
+     "4",
+     "28",
+     "2.401"
+    ],
+    "r": {
+     "correcta": "7"
+    },
+    "e": "La base es el número que se repite como factor.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "table_fill",
+    "p": "Completá la tabla.",
+    "o": {
+     "columnas": [
+      "Potencia",
+      "Producto",
+      "Resultado"
+     ],
+     "filas": [
+      [
+       "3 elevado a 2",
+       "3 × 3",
+       "9"
+      ],
+      [
+       "2 elevado a 4",
+       "2 × 2 × 2 × 2",
+       ""
+      ],
+      [
+       "5 elevado a 3",
+       "5 × 5 × 5",
+       ""
+      ]
+     ]
+    },
+    "r": {
+     "celdas": {
+      "2|Resultado": [
+       "16"
+      ],
+      "3|Resultado": [
+       "125"
+      ]
+     }
+    },
+    "e": "2 × 2 × 2 × 2 = 16 y 5 × 5 × 5 = 125.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "fill_blank",
+    "p": "5 elevado a 8 ÷ 5 elevado a 3 = 5 elevado a ___.",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "5"
+      ]
+     ]
+    },
+    "e": "Igual base en un cociente: se restan los exponentes, 8 − 3 = 5.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "(4 + 2) elevado a 2 es igual a 4 elevado a 2 + 2 elevado a 2.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "(4 + 2) elevado a 2 = 36, pero 16 + 4 = 20.",
+    "n": "error"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Calculá (2 elevado a 3) elevado a 2.",
+    "o": {},
+    "r": {
+     "acepta": [
+      64
+     ]
+    },
+    "e": "Se multiplican los exponentes: 2 elevado a 6 = 64.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Calculá la raíz cuadrada de {c}.",
+    "o": {
+     "vars": {
+      "n": {
+       "min": 11,
+       "max": 20
+      }
+     },
+     "calculadas": {
+      "c": "n*n"
+     }
+    },
+    "r": {
+     "formula": "n"
+    },
+    "e": "El número que elevado al cuadrado da el radicando.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Calculá la raíz cúbica de 216.",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "6 × 6 × 6 = 216.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice que la raíz cuadrada de 64 es 32. ¿Qué error cometió?",
+    "o": [
+     "Dividió por 2",
+     "Multiplicó por 2",
+     "Restó 2",
+     "No cometió ningún error"
+    ],
+    "r": {
+     "correcta": "Dividió por 2"
+    },
+    "e": "La raíz cuadrada de 64 es 8, porque 8 × 8 = 64.",
+    "n": "error"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un cubo tiene 5 cm de arista. ¿Cuál es su volumen en cm³?",
+    "o": {},
+    "r": {
+     "acepta": [
+      125
+     ]
+    },
+    "e": "5 × 5 × 5 = 125 cm³.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un terreno cuadrado tiene 400 m² de área. ¿Cuánto mide cada lado en metros?",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "La raíz cuadrada de 400 es 20.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
+    "p": "Clasificá cada número.",
+    "o": {
+     "elementos": [
+      "16",
+      "27",
+      "36",
+      "64",
+      "125",
+      "49"
+     ],
+     "categorias": [
+      "Solo cuadrado perfecto",
+      "Solo cubo perfecto",
+      "Cuadrado y cubo perfecto"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "16": "Solo cuadrado perfecto",
+      "27": "Solo cubo perfecto",
+      "36": "Solo cuadrado perfecto",
+      "64": "Cuadrado y cubo perfecto",
+      "125": "Solo cubo perfecto",
+      "49": "Solo cuadrado perfecto"
+     }
+    },
+    "e": "64 = 8 al cuadrado = 4 al cubo.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Un patio cuadrado de 9 m de lado se cubre con baldosas cuadradas de 1 m de lado. ¿Cuántas baldosas hacen falta?",
+    "o": {},
+    "r": {
+     "acepta": [
+      81
+     ]
+    },
+    "e": "El área es 9 al cuadrado = 81 m², y cada baldosa ocupa 1 m².",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}
