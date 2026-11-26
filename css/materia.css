@@ -566,3 +566,10 @@ html.ap-sin-anim .dm-op.on, html.ap-sin-anim .dm-chip.on { animation: none; }
 .wvp.act .rl-seg { background: var(--menta); color: var(--petroleo); }
 .wvp.act .rl-barra i { background: var(--turquesa); }
 .wvp.act .ap-comp { margin-top: 14px; }
+
+/* Recursos (PDF opcionales) */
+.rec-lista { display: grid; gap: 8px; margin: 10px 0 14px; }
+.rec-it { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; padding: 12px 14px; border: 2px solid #E3ECEA; border-radius: 16px; background: #fff; font: inherit; text-align: left; cursor: pointer; color: var(--petroleo); }
+.rec-it:hover { border-color: var(--turquesa); background: #F3FBF7; }
+.rec-it span { grid-row: 1 / 3; font-size: 1.6rem; }
+.rec-it small { color: var(--texto-suave); }

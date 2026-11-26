@@ -206,12 +206,16 @@
       (ce.error ? [] : ce.data || []).forEach(function (c) { if (c.entregada) carpeta[c.lesson_step_id] = true; });
     }
 
+    // Lecciones con lección interactiva (reemplaza al PDF dentro del nivel; el PDF pasa a Recursos)
+    var liq = await sb.rpc('lecciones_con_interactiva', { p_materia: materiaId });
+    var interactiva = {}; (liq.error ? [] : liq.data || []).forEach(function (x) { interactiva[typeof x === 'string' ? x : x.lecciones_con_interactiva] = true; });
+
     var acc = await sb.rpc('my_content_access');
     var susOk = !acc.error && acc.data === true;
 
     return {
       neutro: neutro,
-      adaptaciones: adaptaciones, sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, juegos: juegos, juegoMejor: juegoMejor, saltos: saltos, desafio: desafio,
+      adaptaciones: adaptaciones, interactiva: interactiva, sid: sid, prueba: CUENTAS_PRUEBA.indexOf(sid) >= 0, introWave: introWave, materia: mat.data, temas: temas, pasos: porLeccion, carpeta: carpeta, progreso: progreso, repaso: repaso, hechas: hechas, examen: examen, juegos: juegos, juegoMejor: juegoMejor, saltos: saltos, desafio: desafio,
       sinAcceso: !susOk || (temas.some(function (t) { return t.lecciones.length; }) && !pasos.data.length)
     };
   }
@@ -228,7 +232,8 @@
   function pasosNivel(l) {
     var p = D.pasos[l.id] || {}, r = [];
     if (p.video && p.video.tiene) r.push('video');
-    if (p.pdf && p.pdf.tiene) r.push('pdf');
+    if (p.pdf && D.interactiva && D.interactiva[l.id]) r.push('leccion'); // lección interactiva en lugar del PDF
+    else if (p.pdf && p.pdf.tiene) r.push('pdf');
     if (p.pasoapaso && p.pasoapaso.tiene) r.push('pasoapaso'); // Paso a paso (solo en las lecciones que tienen ese paso en Supabase): después del PDF y antes de la carpeta
     if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
@@ -237,6 +242,7 @@
   function hechoK(l, k) {
     var p = D.pasos[l.id] || {};
     if (k === 'carpeta') return !!(p.pdf && D.carpeta[p.pdf.id]);
+    if (k === 'leccion') return !!(p.pdf && hecho(p.pdf)); // se marca en el mismo paso del PDF
     return !!(p[k] && hecho(p[k]));
   }
   function estadoLeccion(l) {
@@ -396,6 +402,35 @@
       '<span class="mt-nombre">Nivel jefe' + (ex.aprobado && ex.mejor != null ? ' · ' + Math.round(ex.mejor) : '') + '</span></button>';
   }
 
+  // Recursos: los PDF de cada nivel quedan como material opcional cuando la misión tiene lección interactiva
+  function recursosDe(t) {
+    var out = [];
+    t.lecciones.forEach(function (l, i) { var p = D.pasos[l.id] || {}; if (p.pdf && p.pdf.tiene) out.push({ l: l, paso: p.pdf, nom: t.generales && l === t.generales ? 'Generales' : 'Nivel ' + (i + 1) }); });
+    return out;
+  }
+  function nodoRecursos(t) {
+    var conLi = t.lecciones.some(function (l) { return D.interactiva && D.interactiva[l.id]; }), rs = recursosDe(t);
+    if (!conLi || !rs.length) return '';
+    var bloq = D.sinAcceso || t.bloqueado;
+    return '<button type="button" class="mt-nodo recursos ' + (bloq ? 'bloq' : 'libre') + '"' + (bloq ? ' data-aviso="' + esc(D.sinAcceso ? 'La suscripción tiene que estar al día.' : 'Terminá la misión anterior.') + '"' : ' data-recursos="' + t.id + '"') + '>' +
+      '<span class="mt-aro">' + aro(0) + '<span class="mt-disco">' + (bloq ? ico('lock', 34, 2.6) : '<span class="mt-num">📚</span>') + '</span></span><span class="mt-nombre">Recursos (opcional)</span></button>';
+  }
+  function abrirRecursos(temaId) {
+    var t = D.temas.filter(function (x) { return x.id === temaId; })[0]; if (!t) return;
+    var rs = recursosDe(t), ea = document.createElement('div'); ea.className = 'ap-panel-fondo';
+    ea.innerHTML = '<div class="ap-panel rec-panel" role="dialog" aria-label="Recursos de la misión"><h2>📚 Recursos</h2><p>Material opcional para leer, descargar o imprimir.</p><div class="rec-lista">' +
+      rs.map(function (r, k) { return '<button type="button" class="rec-it" data-rec="' + k + '"><span>📄</span><b>PDF · ' + esc(r.nom) + '</b><small>' + esc(r.l.titulo) + '</small></button>'; }).join('') + '</div><button class="ap-cerrar" type="button">Cerrar</button></div>';
+    document.body.appendChild(ea);
+    ea.onclick = function (e) {
+      if (e.target === ea || e.target.closest('.ap-cerrar')) return ea.remove();
+      var b = e.target.closest('[data-rec]'); if (!b) return;
+      var r = rs[+b.getAttribute('data-rec')]; ea.remove();
+      WaveVisor.abrirPdf({ titulo: r.l.titulo + ' · PDF', descargable: true, modoLectura: (D.adaptaciones || []).indexOf('lec_modo') >= 0,
+        chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: r.paso.id }; }, chatConfig: tutorOps('pdf', {}).config,
+        url: async function (desc) { return (await llamar('content-access', { action: 'pdf', step_id: r.paso.id, descarga: !!desc, neutro: !!D.neutro })).url; } });
+    };
+  }
+
   function nodoSiguiente(t, idx) {
     var sig = D.temas[idx + 1];
     if (!sig) return '';
@@ -408,10 +443,10 @@
   }
 
   // Mapa de la misión: todo el recorrido de un vistazo y dónde está parado el alumno
-  var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', pasoapaso: 'Paso a paso', carpeta: 'Entregar la carpeta', final: 'Práctica' };
+  var ROT_PASO = { video: 'Clase en video', pdf: 'Leer el PDF', leccion: 'Lección interactiva', pasoapaso: 'Paso a paso', carpeta: 'Entregar la carpeta', final: 'Práctica' };
   // Trayecto Anticipación: el camino en dibujos y el cartel «Ahora / Después» (sin listas de texto)
   function esAnt() { return !!(D && D.adaptaciones && D.adaptaciones.indexOf('ant_mapa') >= 0); }
-  var ANT_ICO = { video: ['🎬', 'Clase', 'Mirar la clase'], pdf: ['📄', 'PDF', 'Leer el PDF'], pasoapaso: ['👣', 'Paso a paso', 'Ver el paso a paso'], carpeta: ['📁', 'Carpeta', 'Entregar la carpeta'], interactive: ['🎮', 'Juego', 'Hacer la actividad'], final: ['✏️', 'Práctica', 'Hacer la práctica'], examen: ['🏆', 'Examen', 'Hacer el examen'] };
+  var ANT_ICO = { video: ['🎬', 'Clase', 'Mirar la clase'], pdf: ['📄', 'PDF', 'Leer el PDF'], leccion: ['📘', 'Lección', 'Hacer la lección'], pasoapaso: ['👣', 'Paso a paso', 'Ver el paso a paso'], carpeta: ['📁', 'Carpeta', 'Entregar la carpeta'], interactive: ['🎮', 'Juego', 'Hacer la actividad'], final: ['✏️', 'Práctica', 'Hacer la práctica'], examen: ['🏆', 'Examen', 'Hacer el examen'] };
   function antPasos(t) {
     var out = [], marcado = false;
     function add(k, hecho, bloq, nivel) {
@@ -498,7 +533,7 @@
     var idx = D.temas.indexOf(t), c = tono(idx);
     var nodos = t.niveles.map(function (l, i) { return nodoNivel(l, i, t, false); }).join('') +
       (t.generales ? nodoNivel(t.generales, 0, t, true) : '') +
-      nodoJuegos(t) + (t.examen ? nodoExamen(t) : '') + nodoSiguiente(t, idx);
+      nodoJuegos(t) + (t.examen ? nodoExamen(t) : '') + nodoRecursos(t) + nodoSiguiente(t, idx);
     vista.innerHTML = '<div class="mt mt-p2" style="--c:' + c + '">' +
       '<div class="mt-escena"><div class="mt-escena-top"><a class="mt-volver claro" href="' + base() + '">' + ico('back', 20, 3) + ' ' + esc(D.materia.name) + '</a>' +
       '<div class="mt-escena-tit"><span>Misión ' + (idx + 1) + '</span><h1>' + esc(t.titulo) + '</h1></div>' +
@@ -513,6 +548,7 @@
   var PASO_UI = {
     video:   { icono: 'play',   color: '#087E83', titulo: 'Mirá la clase', sub: 'Una clase animada que te explica todo el nivel. Después vas a leer el PDF y practicar.', boton: 'VER LA CLASE' },
     pdf:     { icono: 'doc',    color: '#E4572E', titulo: 'Leé el PDF', sub: 'Con la explicación, los ejemplos y las consignas de tu carpeta. Tené la carpeta a mano.', boton: 'ABRIR EL PDF' },
+    leccion: { icono: 'doc',  color: '#087E83', titulo: 'Lección interactiva', sub: 'Cada tema con su explicación, un ejemplo paso a paso y una práctica con números que cambian. Al final, el resumen.', boton: 'EMPEZAR LA LECCIÓN' },
     pasoapaso: { icono: 'bolt', color: '#0B7A80', titulo: 'Paso a paso', sub: 'Mirá cómo se hace el procedimiento, un paso por vez, y probalo con tu propio número.', boton: 'VER PASO A PASO' },
     carpeta: { icono: 'pencil', color: '#7C5CE0', titulo: 'Entregá tu carpeta', sub: 'Escribí lo que te dio en cada consigna. Las soluciones aparecen cuando entregás todo bien.', boton: 'ENTREGAR RESPUESTAS' },
     final:   { icono: 'puzzle', color: '#253638', titulo: 'Actividades', sub: 'Actividades cortas sobre lo que aprendiste en este nivel. Al final ves tus estrellas.', boton: 'EMPEZAR' }
@@ -532,7 +568,7 @@
     var titulo = u.titulo, sub = u.sub, icono = u.icono;
     if (yaHecho) { // repaso de un paso terminado: se puede volver a ver, sin rehacer la entrega
       var hechoTxt = k === 'carpeta' ? 'Ya entregaste tu carpeta ✓ Podés volver a mirar el PDF.' : 'Ya hiciste este paso ✓ Podés volver a verlo cuando quieras.';
-      var kk = k === 'carpeta' ? 'pdf' : k, bt = k === 'carpeta' ? 'VER EL PDF' : u.boton.replace('EMPEZAR', 'VOLVER A HACERLAS');
+      var conLi = !!(D.interactiva && D.interactiva[l.id]), kk = k === 'carpeta' ? (conLi ? 'leccion' : 'pdf') : k, bt = k === 'carpeta' ? (conLi ? 'VER LA LECCIÓN' : 'VER EL PDF') : u.boton.replace('EMPEZAR', 'VOLVER A HACERLAS');
       return '<div class="rc-cuerpo"><span class="rc-disco" style="--k:#1FB57A">' + ico('check', 56, 3) + '</span>' +
         '<small class="rc-kick">PASO ' + n + ' DE ' + total + '</small><h1>' + esc(titulo) + '</h1><p class="rc-sub">' + esc(hechoTxt) + '</p>' +
         '<div class="rc-pie"><button type="button" class="rc-btn" style="--k:' + u.color + '" data-rc="abrir" data-k="' + kk + '">' + bt + '</button></div></div>';
@@ -659,7 +695,7 @@
   }
 
   // ---------- Abrir cada recuadro ----------
-  function pasoActual(k) { var f = buscarLeccion(hojaAbierta); return f && (D.pasos[f.l.id] || {})[k]; }
+  function pasoActual(k) { var f = buscarLeccion(hojaAbierta); return f && (D.pasos[f.l.id] || {})[k === 'leccion' ? 'pdf' : k]; }
 
   // ---------- Paso a paso: HTML en marco aislado. El paso es una fila step_by_step en lesson_steps (solo en las lecciones que lo tienen) ----------
   async function abrirPasoAPaso(paso, titulo) {
@@ -707,6 +743,10 @@
             return /^yt:/.test(v.uid || '') ? { youtube: v.uid.slice(3), tramos: v.tramos }
               : { tramos: v.tramos, url: async function () { return (await llamar('content-access', { action: 'video', step_id: paso.id, index: n })).url; } };
           }) });
+      } else if (k === 'leccion') {
+        var li = await sb.rpc('leccion_interactiva', { p_lesson: f.l.id });
+        if (li.error || !li.data) throw new Error('No pudimos abrir la lección.');
+        WaveLeccion.abrir({ titulo: f.l.titulo, contenido: li.data, neutro: !!D.neutro, alTerminar: function () { if (!hecho(paso)) marcar(paso); } });
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, modoLectura: !!D && (D.adaptaciones || []).indexOf('lec_modo') >= 0, alTerminar: function () { marcar(paso); },
           chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: paso.id }; }, chatConfig: tutorOps('pdf', {}).config,
@@ -1595,6 +1635,7 @@
       }
       var vp = ev.target.closest('[data-ver]');
       if (vp && hojaAbierta) { verPaso[hojaAbierta] = +vp.getAttribute('data-ver'); return refrescar(); }
+      var rcs = ev.target.closest('[data-recursos]'); if (rcs) return abrirRecursos(rcs.getAttribute('data-recursos'));
       var vd = ev.target.closest('[data-video]');
       if (vd) return abrirVideoMision(ruta.tema, vd.getAttribute('data-video'));
       var sl = ev.target.closest('[data-salto]');
