@@ -7,6 +7,7 @@
     actividad: [['consigna', 'No entiendo la consigna'], ['pista', 'Dame una pista'], ['paso', 'Un ejemplo guiado'], ['otra_forma', 'Otra forma de hacerlo'], ['concreto', 'Con objetos de casa'], ['tutoria', 'Pedir tutoría individual']]
   };
   BOTONES.practica = BOTONES.actividad;
+  BOTONES.leccion = [['simple', 'No entendí esta parte'], ['ejemplo', 'Un ejemplo de la vida real'], ['visual', 'Mostrámelo con un dibujo'], ['resumen', 'Resumime este tema'], ['tutoria', 'Pedir tutoría individual']];
   var PERSONALIDADES = [['calido', 'Cálido'], ['divertido', 'Divertido'], ['calmado', 'Calmado'], ['curioso', 'Curioso'], ['motivador', 'Motivador']];
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }

@@ -747,6 +747,9 @@
         var li = await sb.rpc('leccion_interactiva', { p_lesson: f.l.id });
         if (li.error || !li.data) throw new Error('No pudimos abrir la lección.');
         WaveLeccion.abrir({ titulo: f.l.titulo, contenido: li.data, neutro: !!D.neutro, alTerminar: function () { if (!hecho(paso)) marcar(paso); } });
+        // Tutor en la lección: sabe de qué misión y de qué pantalla (tema) le preguntan
+        var cajaL = document.querySelector('.li2 .li2-caja');
+        if (cajaL && window.WaveTutor) WaveTutor.flotante(cajaL, tutorOps('leccion', function () { var h = document.querySelector('.li2 .li2-main h2'); return { lesson_id: f.l.id, tema: h ? h.textContent.trim().slice(0, 120) : '' }; }));
       } else if (k === 'pdf') {
         WaveVisor.abrirPdf({ titulo: f.l.titulo + ' · PDF', descargable: true, modoLectura: !!D && (D.adaptaciones || []).indexOf('lec_modo') >= 0, alTerminar: function () { marcar(paso); },
           chat: function (payload) { return llamar('chat-tutor', payload); }, chatCtx: function () { return { lesson_step_id: paso.id }; }, chatConfig: tutorOps('pdf', {}).config,

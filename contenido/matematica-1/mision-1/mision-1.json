@@ -1499,30 +1499,30 @@
    {
     "t": "matching",
     "n": "aplicar",
-    "p": "[[esquema]] En el número 4.072.315, uní cada cifra con lo que vale según su lugar.",
+    "p": "[[esquema]] En el número 4.072.315, uní cada lugar con lo que vale la cifra que está ahí.",
     "o": {
      "izquierda": [
-      "el 4",
-      "el 7",
-      "el 2",
-      "el 3"
+      "las unidades de mil",
+      "las decenas de mil",
+      "las centenas",
+      "las unidades de millón"
      ],
      "derecha": [
-      "4.000.000",
-      "70.000",
       "2.000",
-      "300"
+      "70.000",
+      "300",
+      "4.000.000"
      ]
     },
     "r": {
      "pares": {
-      "el 4": "4.000.000",
-      "el 7": "70.000",
-      "el 2": "2.000",
-      "el 3": "300"
+      "las unidades de mil": "2.000",
+      "las decenas de mil": "70.000",
+      "las centenas": "300",
+      "las unidades de millón": "4.000.000"
      }
     },
-    "e": "Contando desde la derecha: el 3 está en las centenas, el 2 en las unidades de mil, el 7 en las decenas de mil y el 4 en las unidades de millón."
+    "e": "Contando desde la derecha: 5 unidades, 1 decena, 3 centenas, 2 unidades de mil, 7 decenas de mil, 0 centenas de mil y 4 unidades de millón."
    }
   ],
   "2": [

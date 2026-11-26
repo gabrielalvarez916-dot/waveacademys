@@ -189,7 +189,45 @@
     blk.addEventListener('change', function (ev) { if (ev.target.matches('select.mt-sel')) usados(); });
     blk.addEventListener('mousedown', function (ev) { if (elegido != null && ev.target.matches('select.mt-sel')) ev.preventDefault(); }); // con un nombre elegido, tocar el desplegable lo completa
   }
-  A.esquema = function (blk, arg) { bancoNombres(blk, arg === 'arbol' ? 'arbol' : 'grilla'); };
+
+  // ===== UNIR y CLASIFICAR tocando (sin desplegables) · actividades y examen =====
+  // Los <select> siguen existiendo (ocultos): de ahí lee el corrector. Esto solo cambia cómo se elige.
+  var PCOL = ['#087E83', '#253638', '#3BA99C', '#066A6E', '#5C8D89', '#1F6F6B', '#2F4F4F', '#4E9F94'];
+  function parejas(blk) {
+    var ps = blk.querySelector('.mt-pares'), sels = blk.querySelectorAll('select.mt-sel'); if (!ps || !sels.length || ps.getAttribute('data-tocar')) return;
+    ps.setAttribute('data-tocar', '1');
+    var opts = []; [].forEach.call(sels[0].options, function (o) { if (o.value && opts.indexOf(o.value) < 0) opts.push(o.value); });
+    var items = [].map.call(ps.querySelectorAll('.mt-par'), function (p) { var sp = p.querySelector('span'); return sp ? sp.textContent : ''; });
+    var esClasif = opts.length < items.length;   // clasificar: pocas categorías para muchos elementos
+    ps.classList.add('ap2-oculto'); var ayuda = ps.previousElementSibling; if (ayuda && ayuda.classList.contains('mt-ayuda')) ayuda.textContent = esClasif ? 'Tocá un elemento y después la caja donde va.' : 'Tocá un elemento de la izquierda y después su pareja de la derecha.';
+    var w = mk('div', esClasif ? 'ap2-clas' : 'ap2-uni'); ps.parentNode.insertBefore(w, ps.nextSibling);
+    var sel = -1;
+    function val(k) { return sels[k].value; }
+    function pintar() {
+      if (esClasif) {
+        var suelto = items.map(function (t, k) { return val(k) ? '' : '<button type="button" class="ap2-it' + (k === sel ? ' on' : '') + '" data-k="' + k + '">' + esc(t) + '</button>'; }).join('');
+        w.innerHTML = '<div class="ap2-pool2">' + (suelto || '<em>¡Ya ubicaste todos!</em>') + '</div><div class="ap2-cajas">' + opts.map(function (c, j) {
+          return '<div class="ap2-caja2" data-c="' + j + '" style="--c:' + PCOL[j % PCOL.length] + '"><b>' + esc(c) + '</b><div>' + items.map(function (t, k) { return val(k) === c ? '<button type="button" class="ap2-it dentro" data-k="' + k + '">' + esc(t) + '</button>' : ''; }).join('') + '</div></div>'; }).join('') + '</div>';
+      } else {
+        var usados = items.map(function (t, k) { return val(k); });
+        w.innerHTML = '<div class="ap2-col">' + items.map(function (t, k) { var v = val(k), j = opts.indexOf(v);
+            return '<button type="button" class="ap2-it' + (k === sel ? ' on' : '') + (v ? ' par' : '') + '" data-k="' + k + '"' + (v ? ' style="--c:' + PCOL[k % PCOL.length] + '"' : '') + '>' + (v ? '<i>' + (k + 1) + '</i>' : '') + esc(t) + '</button>'; }).join('') +
+          '</div><div class="ap2-col">' + opts.map(function (o, j) { var k = usados.indexOf(o);
+            return '<button type="button" class="ap2-op' + (k >= 0 ? ' par' : '') + '" data-o="' + j + '"' + (k >= 0 ? ' style="--c:' + PCOL[k % PCOL.length] + '"' : '') + '>' + (k >= 0 ? '<i>' + (k + 1) + '</i>' : '') + esc(o) + '</button>'; }).join('') + '</div>';
+      }
+    }
+    w.addEventListener('click', function (ev) {
+      var it = ev.target.closest('[data-k]'), op = ev.target.closest('[data-o]'), caja = ev.target.closest('[data-c]');
+      if (it) { var k = +it.getAttribute('data-k');
+        if (val(k) && (esClasif ? it.classList.contains('dentro') : true) && sel !== k) { setVal(sels[k], ''); sel = -1; pintar(); return; }   // volver a tocar uno ya ubicado lo saca
+        sel = sel === k ? -1 : k; pintar(); return; }
+      if (sel < 0) return;
+      if (op && !esClasif) { var o = opts[+op.getAttribute('data-o')]; [].forEach.call(sels, function (s2, k2) { if (k2 !== sel && s2.value === o) setVal(s2, ''); }); setVal(sels[sel], o); sonar('bien'); sel = -1; pintar(); return; }
+      if (caja && esClasif) { setVal(sels[sel], opts[+caja.getAttribute('data-c')]); sonar('bien'); sel = -1; pintar(); }
+    });
+    pintar();
+  }
+  A.esquema = function (blk, arg) { if (arg === 'arbol' || blk.querySelector('.li-pt')) bancoNombres(blk, arg === 'arbol' ? 'arbol' : 'grilla'); else parejas(blk); };
   A.arrastrar = function (blk) { bancoNombres(blk, null); };
   A.geoplano = function (blk, arg) {
     var inp = campoNum(blk); if (!inp) return;
@@ -333,6 +371,8 @@
       ms.forEach(function (x) { try { A[x[1]](blk, x[2]); } catch (e) { if (window.console) console.warn('Actividad plus', x[1], e); } });
     });
     [].forEach.call(document.querySelectorAll('.wvp'), function (v) { if ((v.textContent || '').indexOf('[[') >= 0) quitar(v); });
+    // Unir y clasificar: siempre tocando, también sin marca y en el examen (los de esquema con dibujo o árbol ya tienen lo suyo)
+    [].forEach.call(document.querySelectorAll('.wvp .mt-preg'), function (blk) { if (!blk.querySelector('.ap2-banco') && !blk.querySelector('.li-pt')) parejas(blk); });
   }
   var css = document.createElement('style');
   css.textContent = [
@@ -361,6 +401,14 @@
     '.ap2-sis.circ .ap2-sis-c{border:4px solid #253638;border-radius:26px}.ap2-sis.circ .ap2-sis-u{width:22px;height:4px;background:#253638}.ap2-sis-u{color:#087E83}',
     '.ap2-sim{text-align:left;padding:14px;border:2px solid #E3ECEA;border-radius:18px;background:#fff;margin-bottom:12px}.ap2-sim-in{display:block}.ap2-sim-in input{width:100%;accent-color:#087E83;margin:8px 0}.ap2-sim-o{display:grid;grid-template-columns:minmax(90px,auto) 1fr auto;gap:10px;align-items:center;margin-top:8px;font-weight:800}.ap2-sim-b{height:14px;border-radius:99px;background:#E3ECEA;overflow:hidden}.ap2-sim-b i{display:block;height:100%;background:#087E83;transition:width .2s}',
     '.ap2-capas-h{display:flex;flex-wrap:wrap;gap:6px}.ap2-capas-h span{padding:4px 12px;border-radius:99px;background:#E3ECEA;font-weight:800;font-size:.8rem;color:#4b6a6c}.ap2-capas-h span.on{background:#087E83;color:#fff}',
+    '.ap2-uni{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}.ap2-col{display:flex;flex-direction:column;gap:10px}',
+    '.ap2-it,.ap2-op{position:relative;padding:14px 16px;border:2px solid #E3ECEA;border-bottom-width:5px;border-radius:16px;background:#fff;font:inherit;font-weight:800;font-size:1.05rem;color:#253638;cursor:pointer;text-align:left;transition:transform .12s,background .15s}',
+    '.ap2-it:hover,.ap2-op:hover{border-color:#7FD3C4}.ap2-it.on{border-color:#087E83;background:#D7F0E9;transform:scale(1.03)}.ap2-it.par,.ap2-op.par{background:var(--c);border-color:var(--c);color:#fff}',
+    '.ap2-it i,.ap2-op i{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:8px;border-radius:50%;background:#fff;color:var(--c);font-style:normal;font-size:.8rem}',
+    '.ap2-pool2{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:60px;padding:12px;border:2px dashed #9dbdb9;border-radius:18px;margin:6px 0 12px}.ap2-pool2 em{color:#066A6E;font-weight:700;align-self:center}',
+    '.ap2-cajas{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.ap2-caja2{min-height:120px;padding:10px;border:3px solid var(--c);border-radius:18px;background:#fff;cursor:pointer}.ap2-caja2>b{display:block;margin:-10px -10px 10px;padding:8px;background:var(--c);color:#fff;border-radius:14px 14px 0 0;text-align:center}',
+    '.ap2-caja2>div{display:flex;flex-wrap:wrap;gap:6px}.ap2-it.dentro{padding:8px 12px;font-size:.95rem;border-bottom-width:3px}',
+    '@media(max-width:560px){.ap2-uni{gap:8px}.ap2-it,.ap2-op{padding:12px;font-size:.95rem}}',
     '.ap-sin-anim .ap2-sim-b i{transition:none}'
   ].join('');
   document.head.appendChild(css);

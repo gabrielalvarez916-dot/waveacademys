@@ -104,13 +104,29 @@ Deno.serve(async (req) => {
       lessonIds = ((tp as any).lessons ?? []).filter((l: any) => l.position <= 4).sort((a: any, b: any) => a.position - b.position).map((l: any) => l.id);
       lessonId = lessonIds[0] ?? null;
     }
+    // Lección interactiva (reemplaza al PDF): su texto es el material principal del tutor
+    if (lessonIds.length) {
+      const txt = (x: unknown) => String(x ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      const deLeccion = (L0: any) => !L0 || !Array.isArray(L0.temas) ? "" :
+        L0.temas.map((t: any) => `Tema: ${txt(t.titulo)}\n` + (t.explicacion ?? []).map((b: any) => [txt(b.titulo), txt(b.texto), ...(b.items ?? []).map(txt)].filter(Boolean).join(" ")).join("\n")).join("\n\n") +
+        ((L0.recuerda ?? []).length ? "\nRecordá: " + L0.recuerda.map((r: any) => `${txt(r.concepto)} ${txt(r.definicion)} Ej.: ${txt(r.ejemplo)}`).join(" | ") : "");
+      const { data: drs } = await admin.from("lesson_drafts").select("lesson_id,contenido,updated_at").in("lesson_id", lessonIds).order("updated_at", { ascending: false });
+      const { data: med } = await admin.from("leccion_medio").select("lesson_id,leccion").in("lesson_id", lessonIds);
+      const porLec = new Map<string, string>();
+      (med ?? []).forEach((m: any) => porLec.set(m.lesson_id, deLeccion(m.leccion)));
+      (drs ?? []).forEach((d: any) => { if (!porLec.get(d.lesson_id) && d.contenido?.leccion) porLec.set(d.lesson_id, deLeccion(d.contenido.leccion)); });
+      const lecTxt = lessonIds.map((id) => porLec.get(id) ?? "").filter(Boolean).join("\n---\n");
+      if (lecTxt) material = (lecTxt + (material ? "\n---\nPDF de apoyo:\n" + material : "")).slice(0, MAX_MATERIAL);
+    }
     if (!material && lessonIds.length) {
       const { data: pdfs } = await admin.from("lesson_steps").select("lesson_id,extracted_text").in("lesson_id", lessonIds).eq("step_type", "pdf");
       const orden = new Map(lessonIds.map((id, i) => [id, i]));
       material = (pdfs ?? []).sort((a: any, b: any) => (orden.get(a.lesson_id) ?? 0) - (orden.get(b.lesson_id) ?? 0))
         .map((p: any) => p.extracted_text ?? "").filter(Boolean).join("\n---\n").slice(0, MAX_MATERIAL);
     }
-    const pantalla = ["pdf", "clase", "actividad", "practica", "jefe"].includes(body.pantalla) ? body.pantalla : "pdf";
+    const pantalla = ["pdf", "clase", "actividad", "practica", "jefe", "leccion"].includes(body.pantalla) ? body.pantalla : "pdf";
+    const temaLeccion = String(body.tema ?? "").slice(0, 120);
+    if (temaLeccion) etiqueta += ` | Pantalla de la lección interactiva que está mirando: ${temaLeccion}`;
     const textoPregunta = String(body.pregunta_texto ?? "").slice(0, 600);
     if (textoPregunta) etiqueta += ` | Pregunta que está resolviendo: ${textoPregunta}`;
     etiqueta += ` | Pantalla: ${pantalla}`;
