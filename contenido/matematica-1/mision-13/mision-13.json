@@ -1,1 +1,1792 @@
-{"subject_id": "1260de30-041b-4324-b819-2de1a344f189", "tema": 13, "practica": "Práctica general: producto, cociente y potencias de enteros", "examen_titulo": "Nivel jefe: producto, cociente y potencias de enteros", "niveles": {"1": {"objetivo": "Vas a poder multiplicar números enteros aplicando la regla de los signos y entender por qué funciona.", "vas_a_ver": ["La multiplicación como suma repetida", "La regla de los signos", "Por qué menos por menos da más", "Productos de varios factores"], "secciones": [{"etapa": 1, "titulo": "Suma repetida", "bloques": [{"tipo": "definicion", "titulo": "Multiplicar por un positivo", "texto": "Multiplicar por un número positivo es sumar varias veces: 3 × (−4) = (−4) + (−4) + (−4) = −12."}]}, {"etapa": 1, "titulo": "La regla de los signos", "bloques": [{"tipo": "definicion", "titulo": "Regla de los signos", "texto": "Se multiplican los valores absolutos y el signo es: <b>signos iguales, resultado positivo</b>; <b>signos distintos, resultado negativo</b>."}, {"tipo": "tabla", "titulo": "La regla", "columnas": ["Factores", "Signo del producto", "Ejemplo"], "filas": [["+ × +", "+", "3 × 4 = 12"], ["− × −", "+", "(−3) × (−4) = 12"], ["+ × −", "−", "3 × (−4) = −12"], ["− × +", "−", "(−3) × 4 = −12"]], "iguales": true}]}, {"etapa": 2, "titulo": "Por qué menos por menos da más", "bloques": [{"tipo": "parrafo", "texto": "Mirá el patrón: (−3) × 2 = −6; (−3) × 1 = −3; (−3) × 0 = 0. Cada vez que el segundo factor baja 1, el resultado sube 3. Siguiendo: (−3) × (−1) = 3 y (−3) × (−2) = 6."}]}, {"etapa": 2, "titulo": "Varios factores", "bloques": [{"tipo": "parrafo", "texto": "Se cuentan los factores negativos: si son una cantidad <b>par</b>, el resultado es positivo; si son <b>impar</b>, negativo."}, {"tipo": "ejemplo", "titulo": "Contar negativos", "texto": "Dos productos.", "items": ["(−2) × 3 × (−5): dos negativos, positivo. 2 × 3 × 5 = 30. Resultado 30.", "(−1) × (−2) × (−3): tres negativos, negativo. 1 × 2 × 3 = 6. Resultado −6."]}]}], "ejemplo_completo": {"titulo": "(−4) × 5 × (−2) × (−1)", "planteo": "Calculá (−4) × 5 × (−2) × (−1).", "pasos": ["Factores negativos: −4, −2 y −1. Son tres: impar.", "El resultado es negativo.", "Valores absolutos: 4 × 5 × 2 × 1 = 40.", "Resultado: −40."]}, "ejemplo_incompleto": {"titulo": "(−6) × (−7)", "planteo": "Completá los espacios.", "pasos": ["Los signos son iguales: el resultado es ___ .", "6 × 7 = ___ .", "(−6) × (−7) = 42."]}, "ejemplo_solo": {"titulo": "2 × (−3) × (−4) × (−5)", "planteo": "Calculá 2 × (−3) × (−4) × (−5)."}, "tip": {"titulo": "Primero el signo", "texto": "Decidí el signo contando negativos y después multiplicá los números sin signo. Así no se te pierde."}, "ojo": ["Creer que menos por menos es menos: (−5) × (−2) = 10.", "Sumar en vez de multiplicar: (−3) × (−4) no es −7."], "resumen": [{"titulo": "Iguales", "texto": "Signos iguales: positivo. Ej.: (−3) × (−4) = 12."}, {"titulo": "Distintos", "texto": "Signos distintos: negativo. Ej.: 3 × (−4) = −12."}, {"titulo": "Varios", "texto": "Cantidad par de negativos: +; impar: −."}], "glosario": [{"palabra": "Factor", "significado": "Cada número que se multiplica."}, {"palabra": "Producto", "significado": "El resultado de una multiplicación."}, {"palabra": "Regla de los signos", "significado": "Indica el signo de un producto o cociente."}], "carpeta": ["Calculá (−8) × 3.", "Calculá (−9) × (−4).", "Calculá (−1) × (−1) × (−1) × (−1).", "Un compañero dice que (−5) × (−2) = −10. ¿Cuál es el resultado correcto?"], "respuestas_carpeta": [["-24", "−24"], ["36"], ["1"], ["10"]], "soluciones": {"incompleto": "Positivo. 42.", "solo": "Tres negativos: negativo. 2 × 3 × 4 × 5 = 120. Resultado −120.", "carpeta": ["−24: signos distintos.", "36: signos iguales.", "1: cuatro negativos, cantidad par.", "10: menos por menos da más."]}}, "2": {"objetivo": "Vas a poder dividir números enteros con la regla de los signos, resolver divisiones con resto y saber qué pasa con el cero.", "vas_a_ver": ["La regla de los signos en la división", "Comprobar con la multiplicación", "Casos con cero", "División con resto"], "secciones": [{"etapa": 1, "titulo": "Regla de los signos", "bloques": [{"tipo": "definicion", "titulo": "División de enteros", "texto": "Se dividen los valores absolutos y el signo sigue la <b>misma regla que la multiplicación</b>: iguales, positivo; distintos, negativo."}, {"tipo": "parrafo", "texto": "Ejemplos: (−20) ÷ 4 = −5. (−18) ÷ (−3) = 6. 15 ÷ (−5) = −3. Se comprueba multiplicando: 4 × (−5) = −20."}]}, {"etapa": 1, "titulo": "El cero", "bloques": [{"tipo": "definicion", "titulo": "Casos con cero", "texto": "0 dividido cualquier número (distinto de 0) da <b>0</b>: 0 ÷ (−7) = 0. Pero <b>no se puede dividir por 0</b>: ningún número multiplicado por 0 da −7."}]}, {"etapa": 2, "titulo": "División con resto", "bloques": [{"tipo": "parrafo", "texto": "Se mantiene la relación de siempre, dividendo = divisor × cociente + resto, con el resto <b>positivo o cero</b> y menor que el valor absoluto del divisor."}, {"tipo": "ejemplo", "titulo": "(−17) ÷ 5", "texto": "Buscamos un resto entre 0 y 4.", "items": ["5 × (−3) = −15, pero de −15 a −17 habría que restar: no sirve.", "5 × (−4) = −20, y de −20 a −17 hay que sumar 3.", "Cociente −4 y resto 3: −17 = 5 × (−4) + 3."]}]}, {"etapa": 2, "titulo": "Comprobar", "bloques": [{"tipo": "parrafo", "texto": "Siempre podés comprobar: divisor × cociente + resto tiene que dar el dividendo, con el signo correcto."}]}], "ejemplo_completo": {"titulo": "(−84) ÷ (−7)", "planteo": "Calculá (−84) ÷ (−7) y comprobá.", "pasos": ["Signos iguales: positivo.", "84 ÷ 7 = 12.", "Resultado: 12.", "Comprobación: (−7) × 12 = −84."]}, "ejemplo_incompleto": {"titulo": "(−56) ÷ 8", "planteo": "Completá los espacios.", "pasos": ["Signos distintos: el resultado es ___ .", "56 ÷ 8 = ___ .", "Comprobación: 8 × (−7) = ___ ."]}, "ejemplo_solo": {"titulo": "(−23) ÷ 4", "planteo": "Calculá el cociente y el resto de (−23) ÷ 4, con el resto positivo o cero."}, "tip": {"titulo": "La misma regla", "texto": "Si ya sabés la regla de la multiplicación, ya sabés la de la división: es la misma."}, "ojo": ["Dividir por cero: no tiene resultado.", "Dar un resto negativo: el resto siempre es positivo o cero."], "resumen": [{"titulo": "Signos", "texto": "Iguales: +; distintos: −."}, {"titulo": "Ejemplo", "texto": "(−18) ÷ (−3) = 6."}, {"titulo": "Cero", "texto": "0 ÷ a = 0; a ÷ 0 no existe."}, {"titulo": "Resto", "texto": "−17 = 5 × (−4) + 3."}], "glosario": [{"palabra": "Cociente", "significado": "El resultado de la división."}, {"palabra": "Resto", "significado": "Lo que sobra; positivo o cero."}, {"palabra": "Comprobar", "significado": "Verificar multiplicando."}], "carpeta": ["Calculá (−45) ÷ 9.", "Calculá (−36) ÷ (−6).", "Calculá 0 ÷ (−8).", "Un compañero dice que (−30) ÷ (−5) = −6. ¿Cuál es el resultado correcto?"], "respuestas_carpeta": [["-5", "−5"], ["6"], ["0"], ["6"]], "soluciones": {"incompleto": "Negativo. 7. −56.", "solo": "4 × (−6) = −24, y −24 + 1 = −23. Cociente −6, resto 1.", "carpeta": ["−5: signos distintos.", "6: signos iguales.", "0: cero dividido cualquier número da cero.", "6: signos iguales, resultado positivo."]}}, "3": {"objetivo": "Vas a poder resolver cálculos combinados con enteros respetando la jerarquía y los signos, y aplicar la distributiva con negativos.", "vas_a_ver": ["La jerarquía con enteros", "La distributiva con negativos", "Paréntesis y signos", "La diferencia entre −3² y (−3)²"], "secciones": [{"etapa": 1, "titulo": "Jerarquía con signos", "bloques": [{"tipo": "definicion", "titulo": "El orden de siempre", "texto": "Primero <b>paréntesis</b>, después <b>potencias</b>, después <b>× y ÷</b> (con la regla de los signos) y al final <b>sumas y restas</b>."}, {"tipo": "parrafo", "texto": "Ejemplo: (−3) + 4 × (−2) = (−3) + (−8) = −11. Primero la multiplicación."}]}, {"etapa": 1, "titulo": "Distributiva con negativos", "bloques": [{"tipo": "definicion", "titulo": "Distribuir un negativo", "texto": "El factor multiplica a <b>cada término</b>, con su signo: −2 × (5 − 3) = −2 × 5 − 2 × (−3) = −10 + 6 = −4."}, {"tipo": "parrafo", "texto": "Comprobación: −2 × (5 − 3) = −2 × 2 = −4."}]}, {"etapa": 2, "titulo": "−3² y (−3)²", "bloques": [{"tipo": "parrafo", "texto": "La potencia afecta solo a lo que tiene pegado. En <b>(−3)²</b> la base es −3: (−3) × (−3) = 9. En <b>−3²</b> la base es 3 y el signo queda afuera: −(3 × 3) = −9."}]}, {"etapa": 2, "titulo": "Cálculos largos", "bloques": [{"tipo": "ejemplo", "titulo": "(−12) ÷ (−4) − 2 × (−5)", "texto": "Términos y signos.", "items": ["(−12) ÷ (−4) = 3.", "2 × (−5) = −10, y restar −10 es sumar 10.", "3 + 10 = 13."]}]}], "ejemplo_completo": {"titulo": "5 − 3 × (−4) + (−20) ÷ 5", "planteo": "Resolvé con una igualdad por línea.", "pasos": ["Multiplicación y división: 3 × (−4) = −12 y (−20) ÷ 5 = −4.", "= 5 − (−12) + (−4).", "= 5 + 12 − 4.", "= 13."]}, "ejemplo_incompleto": {"titulo": "(−2) × (7 − 10)", "planteo": "Completá los espacios.", "pasos": ["Paréntesis: 7 − 10 = ___ .", "(−2) × (−3) = ___ ."]}, "ejemplo_solo": {"titulo": "18 ÷ (−6) − (−4) × 3", "planteo": "Resolvé respetando la jerarquía."}, "tip": {"titulo": "Escribí el signo del resultado", "texto": "Después de cada multiplicación o división, escribí el resultado entre paréntesis si es negativo: así ves bien qué signo queda adelante."}, "ojo": ["Perder el signo al distribuir: −4 × (3 − 5) = −12 + 20 = 8.", "Confundir −3² con (−3)²: valen −9 y 9."], "resumen": [{"titulo": "Jerarquía", "texto": "Paréntesis, potencias, × y ÷, + y −."}, {"titulo": "Distributiva", "texto": "−2 × (5 − 3) = −10 + 6 = −4."}, {"titulo": "Potencia", "texto": "(−3)² = 9; −3² = −9."}], "glosario": [{"palabra": "Jerarquía", "significado": "Orden en que se resuelven las operaciones."}, {"palabra": "Distribuir", "significado": "Multiplicar un factor por cada término."}, {"palabra": "Base", "significado": "El número que se multiplica en una potencia."}], "carpeta": ["Calculá (−2) + 3 × (−4).", "Calculá −3 × (2 − 6).", "Calculá (−20) ÷ (−5) − 7.", "Un compañero distribuyó −4 × (3 − 5) y escribió −12 − 20. ¿Cuál es el resultado correcto?"], "respuestas_carpeta": [["-14", "−14"], ["12"], ["-3", "−3"], ["8"]], "soluciones": {"incompleto": "−3. 6.", "solo": "18 ÷ (−6) = −3 y (−4) × 3 = −12. −3 − (−12) = −3 + 12 = 9.", "carpeta": ["−14: 3 × (−4) = −12; −2 − 12.", "12: −3 × (−4).", "−3: 4 − 7.", "8: −4 × 3 = −12 y −4 × (−5) = 20. −12 + 20 = 8."]}}, "4": {"objetivo": "Vas a poder calcular potencias de base negativa, saber su signo según el exponente y calcular raíces de enteros cuando existen.", "vas_a_ver": ["Potencias de base negativa", "El signo según el exponente", "−2² no es (−2)²", "Raíces cuadradas y cúbicas de enteros", "Propiedades con enteros"], "secciones": [{"etapa": 1, "titulo": "Base negativa", "bloques": [{"tipo": "definicion", "titulo": "Signo de la potencia", "texto": "Si la base es negativa: con <b>exponente par</b> el resultado es <b>positivo</b>; con <b>exponente impar</b>, <b>negativo</b>."}, {"tipo": "tabla", "titulo": "Potencias de −2", "columnas": ["Potencia", "Producto", "Resultado"], "filas": [["(−2)²", "(−2) × (−2)", "4"], ["(−2)³", "(−2) × (−2) × (−2)", "−8"], ["(−2)⁴", "(−2) × (−2) × (−2) × (−2)", "16"]], "iguales": true, "texto": "Es la regla de contar negativos: cada factor es un negativo."}]}, {"etapa": 1, "titulo": "Ojo con los paréntesis", "bloques": [{"tipo": "definicion", "titulo": "−2² y (−2)²", "texto": "Sin paréntesis, la potencia es solo del número: −2² = −(2 × 2) = −4. Con paréntesis, es del negativo: (−2)² = 4."}]}, {"etapa": 2, "titulo": "Raíces de enteros", "bloques": [{"tipo": "parrafo", "texto": "<b>Raíz cúbica</b> de un negativo: existe y es negativa. ∛(−8) = −2, porque (−2)³ = −8. <b>Raíz cuadrada</b> de un negativo: <b>no existe</b> en los enteros, porque ningún número al cuadrado da negativo. La raíz cuadrada de un positivo se toma positiva: √25 = 5."}]}, {"etapa": 2, "titulo": "Propiedades", "bloques": [{"tipo": "parrafo", "texto": "Las propiedades de las potencias valen igual con base negativa: (−2)³ × (−2)² = (−2)⁵ = −32. Y (−1) elevado a cualquier par da 1; a cualquier impar, −1."}]}], "ejemplo_completo": {"titulo": "(−3)³ + (−2)⁴ − ∛(−64)", "planteo": "Resolvé.", "pasos": ["(−3)³ = −27 (exponente impar).", "(−2)⁴ = 16 (exponente par).", "∛(−64) = −4, porque (−4)³ = −64.", "−27 + 16 − (−4) = −27 + 16 + 4 = −7."]}, "ejemplo_incompleto": {"titulo": "con y sin paréntesis", "planteo": "Completá los espacios.", "pasos": ["(−5)² = ___ .", "−5² = ___ .", "∛(−125) = ___ ."]}, "ejemplo_solo": {"titulo": "(−1)⁵ + (−2)³ − √49", "planteo": "Resolvé."}, "tip": {"titulo": "Par o impar", "texto": "Antes de calcular una potencia de base negativa, mirá el exponente: par, positivo; impar, negativo."}, "ojo": ["Creer que (−2)⁴ es negativo: es 16, exponente par.", "Pensar que −2² = 4: sin paréntesis da −4."], "resumen": [{"titulo": "Exponente par", "texto": "Positivo. Ej.: (−2)⁴ = 16."}, {"titulo": "Exponente impar", "texto": "Negativo. Ej.: (−2)³ = −8."}, {"titulo": "Paréntesis", "texto": "−2² = −4; (−2)² = 4."}, {"titulo": "Raíces", "texto": "∛(−8) = −2; √(−9) no existe en los enteros."}], "glosario": [{"palabra": "Exponente par", "significado": "2, 4, 6…"}, {"palabra": "Exponente impar", "significado": "1, 3, 5…"}, {"palabra": "Raíz cúbica", "significado": "Número que elevado al cubo da el radicando."}], "carpeta": ["Calculá (−4)³.", "Calculá (−3)⁴.", "Calculá ∛(−1.000).", "Un compañero dice que −6² = 36. ¿Cuánto vale −6²?"], "respuestas_carpeta": [["-64", "−64"], ["81"], ["-10", "−10"], ["-36", "−36"]], "soluciones": {"incompleto": "25. −25. −5.", "solo": "−1 + (−8) − 7 = −16.", "carpeta": ["−64: exponente impar.", "81: exponente par.", "−10: (−10)³ = −1.000.", "−36: sin paréntesis, la potencia es solo del 6."]}}}, "act": {"1": [{"t": "numeric", "p": "Calculá ({a}) × ({c}).", "o": {"vars": {"x": {"min": 2, "max": 12}, "y": {"min": 2, "max": 12}}, "calculadas": {"a": "0-x", "c": "0-y"}}, "r": {"formula": "x*y"}, "e": "Signos iguales: resultado positivo."}, {"t": "multiple_choice", "p": "¿Qué signo tiene (−2) × (−3) × (−4)?", "o": ["Positivo", "Negativo"], "r": {"correcta": "Negativo"}, "e": "Tres factores negativos: cantidad impar."}], "2": [{"t": "numeric", "p": "Calculá ({d}) ÷ {b}.", "o": {"vars": {"b": {"min": 2, "max": 9}, "q": {"min": 2, "max": 12}}, "calculadas": {"d": "0-b*q"}}, "r": {"formula": "0-q"}, "e": "Signos distintos: resultado negativo."}, {"t": "true_false", "p": "Se puede dividir cualquier entero por 0.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Dividir por 0 no tiene resultado."}], "3": [{"t": "numeric", "p": "Calculá (−3) × 4 + (−18) ÷ 3.", "o": {}, "r": {"acepta": [-18]}, "e": "−12 + (−6) = −18."}, {"t": "multiple_choice", "p": "¿Cuánto vale −3 elevado a 2, si el exponente afecta solo al 3 (sin paréntesis)?", "o": ["9", "−9", "6", "−6"], "r": {"correcta": "−9"}, "e": "−(3 × 3) = −9."}], "4": [{"t": "numeric", "p": "Calculá (−2) elevado a 5.", "o": {}, "r": {"acepta": [-32]}, "e": "Exponente impar: negativo. 2⁵ = 32."}, {"t": "classify", "p": "Clasificá cada potencia según el signo del resultado.", "o": {"elementos": ["(−2) elevado a 2", "(−2) elevado a 3", "(−1) elevado a 10", "(−5) elevado a 3"], "categorias": ["Positivo", "Negativo"]}, "r": {"categorias": {"(−2) elevado a 2": "Positivo", "(−2) elevado a 3": "Negativo", "(−1) elevado a 10": "Positivo", "(−5) elevado a 3": "Negativo"}}, "e": "Exponente par: positivo; impar: negativo."}], "5": [{"t": "numeric", "p": "Relámpago. Calculá (−6) × 5.", "o": {}, "r": {"acepta": [-30]}, "e": "Signos distintos.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Calculá (−42) ÷ (−7).", "o": {}, "r": {"acepta": [6]}, "e": "Signos iguales.", "tiempo": 25}, {"t": "numeric", "p": "Relámpago. Calculá (−3) elevado a 2.", "o": {}, "r": {"acepta": [9]}, "e": "Exponente par.", "tiempo": 20}, {"t": "numeric", "p": "Relámpago. Calculá (−8) + 3.", "o": {}, "r": {"acepta": [-5]}, "e": "Repaso de la misión 12.", "tiempo": 25}]}, "examen": [[1, {"t": "numeric", "p": "Calculá (−7) × (−8).", "o": {}, "r": {"acepta": [56]}, "e": "Signos iguales: positivo."}], [1, {"t": "numeric", "p": "Calculá (−1) × 2 × (−3) × (−4).", "o": {}, "r": {"acepta": [-24]}, "e": "Tres negativos: negativo. 1 × 2 × 3 × 4 = 24."}], [1, {"t": "multiple_choice", "p": "Si un producto tiene 4 factores negativos, el resultado es…", "o": ["Positivo", "Negativo", "Cero"], "r": {"correcta": "Positivo"}, "e": "Cantidad par de negativos."}], [2, {"t": "numeric", "p": "Calculá (−63) ÷ 9.", "o": {}, "r": {"acepta": [-7]}, "e": "Signos distintos."}], [2, {"t": "numeric", "p": "Calculá (−48) ÷ (−6).", "o": {}, "r": {"acepta": [8]}, "e": "Signos iguales."}], [2, {"t": "multiple_choice", "p": "En la división (−17) ÷ 5, con resto positivo y menor que 5, ¿cuál es el cociente?", "o": ["−3", "−4", "3", "4"], "r": {"correcta": "−4"}, "e": "5 × (−4) = −20 y −20 + 3 = −17: resto 3."}], [3, {"t": "numeric", "p": "Calculá 10 − 2 × (−6).", "o": {}, "r": {"acepta": [22]}, "e": "2 × (−6) = −12; 10 − (−12) = 22."}], [3, {"t": "numeric", "p": "Calculá (−5) × (3 − 7).", "o": {}, "r": {"acepta": [20]}, "e": "(−5) × (−4) = 20."}], [3, {"t": "true_false", "p": "(−4) elevado a 2 y −4 elevado a 2 (sin paréntesis) tienen el mismo valor.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "(−4)² = 16 y −4² = −16."}], [4, {"t": "numeric", "p": "Calculá (−3) elevado a 3.", "o": {}, "r": {"acepta": [-27]}, "e": "Exponente impar: negativo."}], [4, {"t": "numeric", "p": "Calculá la raíz cúbica de −8.", "o": {}, "r": {"acepta": [-2]}, "e": "(−2)³ = −8."}], [4, {"t": "multiple_choice", "p": "¿Cuánto vale la raíz cuadrada de −16 en los números enteros?", "o": ["4", "−4", "No existe", "16"], "r": {"correcta": "No existe"}, "e": "Ningún entero al cuadrado da un número negativo."}], [4, {"t": "numeric", "p": "Calculá (−1) elevado a 7 + (−1) elevado a 8.", "o": {}, "r": {"acepta": [0]}, "e": "−1 + 1 = 0."}]]}
+{
+ "subject_id": "1260de30-041b-4324-b819-2de1a344f189",
+ "tema": 13,
+ "practica": "Práctica general: producto, cociente y potencias de enteros",
+ "examen_titulo": "Nivel jefe: producto, cociente y potencias de enteros",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a poder multiplicar números enteros aplicando la regla de los signos y entender por qué funciona.",
+   "vas_a_ver": [
+    "La multiplicación como suma repetida",
+    "La regla de los signos",
+    "Por qué menos por menos da más",
+    "Productos de varios factores"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Suma repetida",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Multiplicar por un positivo",
+       "texto": "Multiplicar por un número positivo es sumar varias veces: 3 × (−4) = (−4) + (−4) + (−4) = −12."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "La regla de los signos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Regla de los signos",
+       "texto": "Se multiplican los valores absolutos y el signo es: <b>signos iguales, resultado positivo</b>; <b>signos distintos, resultado negativo</b>."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "La regla",
+       "columnas": [
+        "Factores",
+        "Signo del producto",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "+ × +",
+         "+",
+         "3 × 4 = 12"
+        ],
+        [
+         "− × −",
+         "+",
+         "(−3) × (−4) = 12"
+        ],
+        [
+         "+ × −",
+         "−",
+         "3 × (−4) = −12"
+        ],
+        [
+         "− × +",
+         "−",
+         "(−3) × 4 = −12"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Por qué menos por menos da más",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá el patrón: (−3) × 2 = −6; (−3) × 1 = −3; (−3) × 0 = 0. Cada vez que el segundo factor baja 1, el resultado sube 3. Siguiendo: (−3) × (−1) = 3 y (−3) × (−2) = 6."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Varios factores",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se cuentan los factores negativos: si son una cantidad <b>par</b>, el resultado es positivo; si son <b>impar</b>, negativo."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "Contar negativos",
+       "texto": "Dos productos.",
+       "items": [
+        "(−2) × 3 × (−5): dos negativos, positivo. 2 × 3 × 5 = 30. Resultado 30.",
+        "(−1) × (−2) × (−3): tres negativos, negativo. 1 × 2 × 3 = 6. Resultado −6."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "(−4) × 5 × (−2) × (−1)",
+    "planteo": "Calculá (−4) × 5 × (−2) × (−1).",
+    "pasos": [
+     "Factores negativos: −4, −2 y −1. Son tres: impar.",
+     "El resultado es negativo.",
+     "Valores absolutos: 4 × 5 × 2 × 1 = 40.",
+     "Resultado: −40."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "(−6) × (−7)",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Los signos son iguales: el resultado es ___ .",
+     "6 × 7 = ___ .",
+     "(−6) × (−7) = 42."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "2 × (−3) × (−4) × (−5)",
+    "planteo": "Calculá 2 × (−3) × (−4) × (−5)."
+   },
+   "tip": {
+    "titulo": "Primero el signo",
+    "texto": "Decidí el signo contando negativos y después multiplicá los números sin signo. Así no se te pierde."
+   },
+   "ojo": [
+    "Creer que menos por menos es menos: (−5) × (−2) = 10.",
+    "Sumar en vez de multiplicar: (−3) × (−4) no es −7."
+   ],
+   "resumen": [
+    {
+     "titulo": "Iguales",
+     "texto": "Signos iguales: positivo. Ej.: (−3) × (−4) = 12."
+    },
+    {
+     "titulo": "Distintos",
+     "texto": "Signos distintos: negativo. Ej.: 3 × (−4) = −12."
+    },
+    {
+     "titulo": "Varios",
+     "texto": "Cantidad par de negativos: +; impar: −."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Factor",
+     "significado": "Cada número que se multiplica."
+    },
+    {
+     "palabra": "Producto",
+     "significado": "El resultado de una multiplicación."
+    },
+    {
+     "palabra": "Regla de los signos",
+     "significado": "Indica el signo de un producto o cociente."
+    }
+   ],
+   "carpeta": [
+    "Calculá (−8) × 3.",
+    "Calculá (−9) × (−4).",
+    "Calculá (−1) × (−1) × (−1) × (−1).",
+    "Un compañero dice que (−5) × (−2) = −10. ¿Cuál es el resultado correcto?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-24",
+     "−24"
+    ],
+    [
+     "36"
+    ],
+    [
+     "1"
+    ],
+    [
+     "10"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Positivo. 42.",
+    "solo": "Tres negativos: negativo. 2 × 3 × 4 × 5 = 120. Resultado −120.",
+    "carpeta": [
+     "−24: signos distintos.",
+     "36: signos iguales.",
+     "1: cuatro negativos, cantidad par.",
+     "10: menos por menos da más."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La regla de los signos",
+      "ejemplo": {
+       "motor": "signos",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "producto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Multiplicación de enteros",
+        "texto": "Para multiplicar dos enteros se multiplican sus valores absolutos; el resultado es positivo si los signos son iguales y negativo si son distintos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "3 × (−4) es sumar tres veces −4: −12. Por eso más por menos da menos. Y si cambiar el signo de un factor cambia el signo del resultado, cambiar los dos lo deja positivo: (−3) × (−4) = 12."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(+)(+) = + · (−)(−) = +.",
+         "(+)(−) = − · (−)(+) = −."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Por qué menos por menos da más",
+      "ejemplo": {
+       "motor": "signos",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "producto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Menos por menos",
+        "texto": "Multiplicar por un número negativo da el opuesto de multiplicar por el positivo; por eso, si el otro factor ya es negativo, el resultado vuelve a ser positivo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Mirá el patrón: (−3) × 2 = −6, (−3) × 1 = −3, (−3) × 0 = 0. Cada vez sube 3, así que (−3) × (−1) = 3 y (−3) × (−2) = 6. La regla no es arbitraria: sigue el patrón."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−3) × (−2) = 6.",
+         "Cada paso del patrón suma 3."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Varios factores",
+      "ejemplo": {
+       "motor": "signos",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "producto"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Signo con varios factores",
+        "texto": "Con varios factores, el producto es positivo si la cantidad de factores negativos es par y negativo si es impar."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada par de negativos da un positivo, así que alcanza con contar los negativos. (−2) × (−3) × (−4) tiene tres negativos: el resultado es −24. Si algún factor es 0, el producto es 0. Es una forma rápida de saber el signo antes de hacer la cuenta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "3 negativos → negativo.",
+         "4 negativos → positivo."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Al multiplicar dos enteros",
+      "definicion": "con signos iguales el resultado es positivo y con signos distintos es negativo.",
+      "ejemplo": "(−3) × (−4) = 12"
+     },
+     {
+      "concepto": "Menos por menos",
+      "definicion": "da más porque multiplicar por un negativo da el opuesto.",
+      "ejemplo": "(−3) × (−2) = 6"
+     },
+     {
+      "concepto": "Con varios factores",
+      "definicion": "el producto es negativo si la cantidad de factores negativos es impar.",
+      "ejemplo": "(−2) × (−3) × (−4) = −24"
+     },
+     {
+      "concepto": "Un producto con un factor cero",
+      "definicion": "da siempre cero, sin importar los signos de los otros factores.",
+      "ejemplo": "(−7) × 0 = 0"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a poder dividir números enteros con la regla de los signos, resolver divisiones con resto y saber qué pasa con el cero.",
+   "vas_a_ver": [
+    "La regla de los signos en la división",
+    "Comprobar con la multiplicación",
+    "Casos con cero",
+    "División con resto"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Regla de los signos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "División de enteros",
+       "texto": "Se dividen los valores absolutos y el signo sigue la <b>misma regla que la multiplicación</b>: iguales, positivo; distintos, negativo."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplos: (−20) ÷ 4 = −5. (−18) ÷ (−3) = 6. 15 ÷ (−5) = −3. Se comprueba multiplicando: 4 × (−5) = −20."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El cero",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Casos con cero",
+       "texto": "0 dividido cualquier número (distinto de 0) da <b>0</b>: 0 ÷ (−7) = 0. Pero <b>no se puede dividir por 0</b>: ningún número multiplicado por 0 da −7."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "División con resto",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Se mantiene la relación de siempre, dividendo = divisor × cociente + resto, con el resto <b>positivo o cero</b> y menor que el valor absoluto del divisor."
+      },
+      {
+       "tipo": "ejemplo",
+       "titulo": "(−17) ÷ 5",
+       "texto": "Buscamos un resto entre 0 y 4.",
+       "items": [
+        "5 × (−3) = −15, pero de −15 a −17 habría que restar: no sirve.",
+        "5 × (−4) = −20, y de −20 a −17 hay que sumar 3.",
+        "Cociente −4 y resto 3: −17 = 5 × (−4) + 3."
+       ]
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Comprobar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Siempre podés comprobar: divisor × cociente + resto tiene que dar el dividendo, con el signo correcto."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "(−84) ÷ (−7)",
+    "planteo": "Calculá (−84) ÷ (−7) y comprobá.",
+    "pasos": [
+     "Signos iguales: positivo.",
+     "84 ÷ 7 = 12.",
+     "Resultado: 12.",
+     "Comprobación: (−7) × 12 = −84."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "(−56) ÷ 8",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Signos distintos: el resultado es ___ .",
+     "56 ÷ 8 = ___ .",
+     "Comprobación: 8 × (−7) = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "(−23) ÷ 4",
+    "planteo": "Calculá el cociente y el resto de (−23) ÷ 4, con el resto positivo o cero."
+   },
+   "tip": {
+    "titulo": "La misma regla",
+    "texto": "Si ya sabés la regla de la multiplicación, ya sabés la de la división: es la misma."
+   },
+   "ojo": [
+    "Dividir por cero: no tiene resultado.",
+    "Dar un resto negativo: el resto siempre es positivo o cero."
+   ],
+   "resumen": [
+    {
+     "titulo": "Signos",
+     "texto": "Iguales: +; distintos: −."
+    },
+    {
+     "titulo": "Ejemplo",
+     "texto": "(−18) ÷ (−3) = 6."
+    },
+    {
+     "titulo": "Cero",
+     "texto": "0 ÷ a = 0; a ÷ 0 no existe."
+    },
+    {
+     "titulo": "Resto",
+     "texto": "−17 = 5 × (−4) + 3."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Cociente",
+     "significado": "El resultado de la división."
+    },
+    {
+     "palabra": "Resto",
+     "significado": "Lo que sobra; positivo o cero."
+    },
+    {
+     "palabra": "Comprobar",
+     "significado": "Verificar multiplicando."
+    }
+   ],
+   "carpeta": [
+    "Calculá (−45) ÷ 9.",
+    "Calculá (−36) ÷ (−6).",
+    "Calculá 0 ÷ (−8).",
+    "Un compañero dice que (−30) ÷ (−5) = −6. ¿Cuál es el resultado correcto?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-5",
+     "−5"
+    ],
+    [
+     "6"
+    ],
+    [
+     "0"
+    ],
+    [
+     "6"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Negativo. 7. −56.",
+    "solo": "4 × (−6) = −24, y −24 + 1 = −23. Cociente −6, resto 1.",
+    "carpeta": [
+     "−5: signos distintos.",
+     "6: signos iguales.",
+     "0: cero dividido cualquier número da cero.",
+     "6: signos iguales, resultado positivo."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Regla de los signos en la división",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "División de enteros",
+        "texto": "La división de enteros usa la misma regla de los signos que la multiplicación: signos iguales dan positivo y signos distintos dan negativo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Tiene sentido porque la división es la operación inversa: (−42) ÷ (−7) = 6 porque 6 × (−7) = −42. Siempre se puede comprobar multiplicando el cociente por el divisor. Así nunca se pierde un signo por el camino."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−42) ÷ (−7) = 6.",
+         "(−63) ÷ 9 = −7."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El cero",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "El cero en la división",
+        "texto": "El cero dividido cualquier número distinto de cero da cero, pero no se puede dividir por cero: esa división no tiene resultado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "0 ÷ (−5) = 0 porque 0 × (−5) = 0. En cambio (−5) ÷ 0 no existe: ningún número multiplicado por 0 da −5. Esto vale para todos los conjuntos de números. Por eso dividir por cero no tiene sentido."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "0 ÷ (−5) = 0.",
+         "(−5) ÷ 0: no existe."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Comprobar",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "division"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Comprobar una división",
+        "texto": "Para comprobar una división de enteros se multiplica el cociente por el divisor y se verifica que dé el dividendo, con su signo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Comprobar ayuda a no equivocarse con los signos, que es el error más frecuente. Si alguien dice (−48) ÷ (−6) = −8, al comprobar (−8) × (−6) = 48, no −48: el signo estaba mal."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Cociente × divisor = dividendo.",
+         "(−8) × (−6) = 48 ≠ −48."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Al dividir enteros",
+      "definicion": "se usa la misma regla de los signos que en la multiplicación.",
+      "ejemplo": "(−42) ÷ (−7) = 6"
+     },
+     {
+      "concepto": "El cero dividido",
+      "definicion": "por cualquier número distinto de cero da siempre como resultado cero.",
+      "ejemplo": "0 ÷ (−5) = 0"
+     },
+     {
+      "concepto": "Dividir por cero",
+      "definicion": "no se puede: esa división no tiene resultado en ningún conjunto de números.",
+      "ejemplo": "(−5) ÷ 0 no existe"
+     },
+     {
+      "concepto": "Para comprobar una división",
+      "definicion": "se multiplica el cociente por el divisor y tiene que dar el dividendo.",
+      "ejemplo": "6 × (−7) = −42"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a poder resolver cálculos combinados con enteros respetando la jerarquía y los signos, y aplicar la distributiva con negativos.",
+   "vas_a_ver": [
+    "La jerarquía con enteros",
+    "La distributiva con negativos",
+    "Paréntesis y signos",
+    "La diferencia entre −3² y (−3)²"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Jerarquía con signos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "El orden de siempre",
+       "texto": "Primero <b>paréntesis</b>, después <b>potencias</b>, después <b>× y ÷</b> (con la regla de los signos) y al final <b>sumas y restas</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Ejemplo: (−3) + 4 × (−2) = (−3) + (−8) = −11. Primero la multiplicación."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Distributiva con negativos",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Distribuir un negativo",
+       "texto": "El factor multiplica a <b>cada término</b>, con su signo: −2 × (5 − 3) = −2 × 5 − 2 × (−3) = −10 + 6 = −4."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Comprobación: −2 × (5 − 3) = −2 × 2 = −4."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "−3² y (−3)²",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La potencia afecta solo a lo que tiene pegado. En <b>(−3)²</b> la base es −3: (−3) × (−3) = 9. En <b>−3²</b> la base es 3 y el signo queda afuera: −(3 × 3) = −9."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Cálculos largos",
+     "bloques": [
+      {
+       "tipo": "ejemplo",
+       "titulo": "(−12) ÷ (−4) − 2 × (−5)",
+       "texto": "Términos y signos.",
+       "items": [
+        "(−12) ÷ (−4) = 3.",
+        "2 × (−5) = −10, y restar −10 es sumar 10.",
+        "3 + 10 = 13."
+       ]
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "5 − 3 × (−4) + (−20) ÷ 5",
+    "planteo": "Resolvé con una igualdad por línea.",
+    "pasos": [
+     "Multiplicación y división: 3 × (−4) = −12 y (−20) ÷ 5 = −4.",
+     "= 5 − (−12) + (−4).",
+     "= 5 + 12 − 4.",
+     "= 13."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "(−2) × (7 − 10)",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "Paréntesis: 7 − 10 = ___ .",
+     "(−2) × (−3) = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "18 ÷ (−6) − (−4) × 3",
+    "planteo": "Resolvé respetando la jerarquía."
+   },
+   "tip": {
+    "titulo": "Escribí el signo del resultado",
+    "texto": "Después de cada multiplicación o división, escribí el resultado entre paréntesis si es negativo: así ves bien qué signo queda adelante."
+   },
+   "ojo": [
+    "Perder el signo al distribuir: −4 × (3 − 5) = −12 + 20 = 8.",
+    "Confundir −3² con (−3)²: valen −9 y 9."
+   ],
+   "resumen": [
+    {
+     "titulo": "Jerarquía",
+     "texto": "Paréntesis, potencias, × y ÷, + y −."
+    },
+    {
+     "titulo": "Distributiva",
+     "texto": "−2 × (5 − 3) = −10 + 6 = −4."
+    },
+    {
+     "titulo": "Potencia",
+     "texto": "(−3)² = 9; −3² = −9."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Jerarquía",
+     "significado": "Orden en que se resuelven las operaciones."
+    },
+    {
+     "palabra": "Distribuir",
+     "significado": "Multiplicar un factor por cada término."
+    },
+    {
+     "palabra": "Base",
+     "significado": "El número que se multiplica en una potencia."
+    }
+   ],
+   "carpeta": [
+    "Calculá (−2) + 3 × (−4).",
+    "Calculá −3 × (2 − 6).",
+    "Calculá (−20) ÷ (−5) − 7.",
+    "Un compañero distribuyó −4 × (3 − 5) y escribió −12 − 20. ¿Cuál es el resultado correcto?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-14",
+     "−14"
+    ],
+    [
+     "12"
+    ],
+    [
+     "-3",
+     "−3"
+    ],
+    [
+     "8"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "−3. 6.",
+    "solo": "18 ÷ (−6) = −3 y (−4) × 3 = −12. −3 − (−12) = −3 + 12 = 9.",
+    "carpeta": [
+     "−14: 3 × (−4) = −12; −2 − 12.",
+     "12: −3 × (−4).",
+     "−3: 4 − 7.",
+     "8: −4 × 3 = −12 y −4 × (−5) = 20. −12 + 20 = 8."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Jerarquía con signos",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "combinadas"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "combinadas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Combinadas con enteros",
+        "texto": "En los cálculos combinados con enteros se respeta la jerarquía: paréntesis, potencias y raíces, multiplicaciones y divisiones, y al final sumas y restas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La novedad es aplicar la regla de los signos en cada paso. En 10 − 2 × (−6), primero 2 × (−6) = −12, y después 10 − (−12) = 22. Separar en términos ayuda a ordenar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "10 − 2 × (−6) = 22.",
+         "Primero × y ÷."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Distributiva con negativos",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "combinadas"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "combinadas"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Propiedad distributiva",
+        "texto": "La multiplicación se distribuye sobre la suma y la resta también con enteros: a × (b + c) = a × b + a × c, cuidando el signo de cada producto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "(−5) × (3 − 7) se puede hacer resolviendo el paréntesis, (−5) × (−4) = 20, o distribuyendo: −15 + 35 = 20. Los dos caminos tienen que dar lo mismo. Elegí el camino más cómodo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−5) × (3 − 7) = 20.",
+         "−15 + 35 = 20."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "−3² y (−3)²",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "cuadrado"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "cuadrado"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Paréntesis en las potencias",
+        "texto": "Con paréntesis, (−3)² eleva toda la base −3 y da 9; sin paréntesis, −3² eleva solo el 3 y el signo queda afuera, así que da −9."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Es uno de los errores más frecuentes del cálculo con enteros. Lo que está elevado es lo que está pegado al exponente: si es un paréntesis, todo lo de adentro; si es un número, solo ese número."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−3)² = 9.",
+         "−3² = −9."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "La jerarquía con enteros",
+      "definicion": "es la misma de siempre, aplicando la regla de los signos en cada paso.",
+      "ejemplo": "10 − 2 × (−6) = 22"
+     },
+     {
+      "concepto": "La propiedad distributiva",
+      "definicion": "también vale con negativos, cuidando el signo de cada producto.",
+      "ejemplo": "(−5) × (3 − 7) = −15 + 35 = 20"
+     },
+     {
+      "concepto": "Con paréntesis",
+      "definicion": "la potencia eleva toda la base que está adentro, incluido el signo menos.",
+      "ejemplo": "(−3)² = 9"
+     },
+     {
+      "concepto": "Sin paréntesis",
+      "definicion": "el exponente afecta solo al número y el signo menos queda afuera.",
+      "ejemplo": "−3² = −9"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a poder calcular potencias de base negativa, saber su signo según el exponente y calcular raíces de enteros cuando existen.",
+   "vas_a_ver": [
+    "Potencias de base negativa",
+    "El signo según el exponente",
+    "−2² no es (−2)²",
+    "Raíces cuadradas y cúbicas de enteros",
+    "Propiedades con enteros"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Base negativa",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Signo de la potencia",
+       "texto": "Si la base es negativa: con <b>exponente par</b> el resultado es <b>positivo</b>; con <b>exponente impar</b>, <b>negativo</b>."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Potencias de −2",
+       "columnas": [
+        "Potencia",
+        "Producto",
+        "Resultado"
+       ],
+       "filas": [
+        [
+         "(−2)²",
+         "(−2) × (−2)",
+         "4"
+        ],
+        [
+         "(−2)³",
+         "(−2) × (−2) × (−2)",
+         "−8"
+        ],
+        [
+         "(−2)⁴",
+         "(−2) × (−2) × (−2) × (−2)",
+         "16"
+        ]
+       ],
+       "iguales": true,
+       "texto": "Es la regla de contar negativos: cada factor es un negativo."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Ojo con los paréntesis",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "−2² y (−2)²",
+       "texto": "Sin paréntesis, la potencia es solo del número: −2² = −(2 × 2) = −4. Con paréntesis, es del negativo: (−2)² = 4."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Raíces de enteros",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "<b>Raíz cúbica</b> de un negativo: existe y es negativa. ∛(−8) = −2, porque (−2)³ = −8. <b>Raíz cuadrada</b> de un negativo: <b>no existe</b> en los enteros, porque ningún número al cuadrado da negativo. La raíz cuadrada de un positivo se toma positiva: √25 = 5."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Propiedades",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Las propiedades de las potencias valen igual con base negativa: (−2)³ × (−2)² = (−2)⁵ = −32. Y (−1) elevado a cualquier par da 1; a cualquier impar, −1."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "(−3)³ + (−2)⁴ − ∛(−64)",
+    "planteo": "Resolvé.",
+    "pasos": [
+     "(−3)³ = −27 (exponente impar).",
+     "(−2)⁴ = 16 (exponente par).",
+     "∛(−64) = −4, porque (−4)³ = −64.",
+     "−27 + 16 − (−4) = −27 + 16 + 4 = −7."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "con y sin paréntesis",
+    "planteo": "Completá los espacios.",
+    "pasos": [
+     "(−5)² = ___ .",
+     "−5² = ___ .",
+     "∛(−125) = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "(−1)⁵ + (−2)³ − √49",
+    "planteo": "Resolvé."
+   },
+   "tip": {
+    "titulo": "Par o impar",
+    "texto": "Antes de calcular una potencia de base negativa, mirá el exponente: par, positivo; impar, negativo."
+   },
+   "ojo": [
+    "Creer que (−2)⁴ es negativo: es 16, exponente par.",
+    "Pensar que −2² = 4: sin paréntesis da −4."
+   ],
+   "resumen": [
+    {
+     "titulo": "Exponente par",
+     "texto": "Positivo. Ej.: (−2)⁴ = 16."
+    },
+    {
+     "titulo": "Exponente impar",
+     "texto": "Negativo. Ej.: (−2)³ = −8."
+    },
+    {
+     "titulo": "Paréntesis",
+     "texto": "−2² = −4; (−2)² = 4."
+    },
+    {
+     "titulo": "Raíces",
+     "texto": "∛(−8) = −2; √(−9) no existe en los enteros."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Exponente par",
+     "significado": "2, 4, 6…"
+    },
+    {
+     "palabra": "Exponente impar",
+     "significado": "1, 3, 5…"
+    },
+    {
+     "palabra": "Raíz cúbica",
+     "significado": "Número que elevado al cubo da el radicando."
+    }
+   ],
+   "carpeta": [
+    "Calculá (−4)³.",
+    "Calculá (−3)⁴.",
+    "Calculá ∛(−1.000).",
+    "Un compañero dice que −6² = 36. ¿Cuánto vale −6²?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "-64",
+     "−64"
+    ],
+    [
+     "81"
+    ],
+    [
+     "-10",
+     "−10"
+    ],
+    [
+     "-36",
+     "−36"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "25. −25. −5.",
+    "solo": "−1 + (−8) − 7 = −16.",
+    "carpeta": [
+     "−64: exponente impar.",
+     "81: exponente par.",
+     "−10: (−10)³ = −1.000.",
+     "−36: sin paréntesis, la potencia es solo del 6."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Base negativa",
+      "ejemplo": {
+       "motor": "potencias_explorar",
+       "p": {}
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "potencia"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Potencias de base negativa",
+        "texto": "Una potencia de base negativa da positivo si el exponente es par y negativo si es impar."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada par de factores negativos da positivo. (−2)⁴ = 16 porque hay cuatro factores negativos; (−2)⁵ = −32 porque queda uno sin pareja. Con base positiva siempre da positivo. Así, el signo se decide mirando solo si el exponente es par o impar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−2)⁴ = 16.",
+         "(−2)⁵ = −32."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Raíces de enteros",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "raiz"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "raiz"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Raíces de números enteros",
+        "texto": "La raíz de índice impar de un número negativo existe y es negativa; la raíz de índice par de un número negativo no existe en los enteros."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "∛(−8) = −2 porque (−2)³ = −8. Pero √(−16) no existe: ningún entero al cuadrado da negativo, porque tanto 4² como (−4)² dan 16. Por eso hay que mirar el índice de la raíz."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "∛(−8) = −2.",
+         "√(−16): no existe en los enteros."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Propiedades y cálculos",
+      "ejemplo": {
+       "motor": "enteros",
+       "p": {
+        "modo": "cuadrado"
+       }
+      },
+      "ejercicio": {
+       "motor": "enteros_x",
+       "p": {
+        "modo": "cuadrado"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Propiedades de las potencias",
+        "texto": "Las propiedades de las potencias valen también con base negativa: producto y cociente de igual base, potencia de potencia y distributiva respecto de × y ÷."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "(−2)³ × (−2)² = (−2)⁵ = −32. Pero, igual que con naturales, la potencia no se distribuye en la suma ni en la resta. Antes de usar una propiedad, fijate si la base está entre paréntesis."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "(−2)³ × (−2)² = (−2)⁵.",
+         "No se distribuye en + ni −."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Una potencia de base negativa",
+      "definicion": "da positivo con exponente par y negativo con exponente impar.",
+      "ejemplo": "(−2)⁴ = 16 · (−2)⁵ = −32"
+     },
+     {
+      "concepto": "La raíz de índice impar",
+      "definicion": "de un número negativo existe siempre y su resultado es un número negativo.",
+      "ejemplo": "∛(−8) = −2"
+     },
+     {
+      "concepto": "La raíz cuadrada de un negativo",
+      "definicion": "no existe en los enteros, porque ningún cuadrado es negativo.",
+      "ejemplo": "√(−16) no existe"
+     },
+     {
+      "concepto": "Las propiedades de las potencias",
+      "definicion": "valen también con base negativa, siempre que se cuiden bien los paréntesis.",
+      "ejemplo": "(−2)³ × (−2)² = (−2)⁵"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "Calculá ({a}) × ({c}).",
+    "o": {
+     "vars": {
+      "x": {
+       "min": 2,
+       "max": 12
+      },
+      "y": {
+       "min": 2,
+       "max": 12
+      }
+     },
+     "calculadas": {
+      "a": "0-x",
+      "c": "0-y"
+     }
+    },
+    "r": {
+     "formula": "x*y"
+    },
+    "e": "Signos iguales: resultado positivo.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Contá cuántos factores negativos hay en el producto (−2) × (−3) × (−4). ¿Qué signo tiene?",
+    "o": [
+     "Positivo",
+     "Negativo",
+     "Cero"
+    ],
+    "r": {
+     "correcta": "Negativo"
+    },
+    "e": "Tres factores negativos: cantidad impar.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "n": "analizar",
+    "p": "Clasificá cada producto según su signo, contando los factores negativos.",
+    "o": {
+     "elementos": [
+      "(−2) × (−3)",
+      "(−1) × 4 × (−5)",
+      "(−2) × (−2) × (−2)",
+      "6 × (−7)",
+      "(−1) × (−1) × (−1) × (−1)"
+     ],
+     "categorias": [
+      "Positivo",
+      "Negativo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "(−2) × (−3)": "Positivo",
+      "(−1) × 4 × (−5)": "Positivo",
+      "(−2) × (−2) × (−2)": "Negativo",
+      "6 × (−7)": "Negativo",
+      "(−1) × (−1) × (−1) × (−1)": "Positivo"
+     }
+    },
+    "e": "Cantidad par de negativos: positivo; impar: negativo."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Ian calculó (−4) × (−5) × (−1). Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "(−4) × (−5) = 20",
+      "20 × (−1) = 20",
+      "Resultado: 20"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      1
+     ]
+    },
+    "e": "20 × (−1) = −20: signos distintos dan negativo."
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "Calculá ({d}) ÷ {b}.",
+    "o": {
+     "vars": {
+      "b": {
+       "min": 2,
+       "max": 9
+      },
+      "q": {
+       "min": 2,
+       "max": 12
+      }
+     },
+     "calculadas": {
+      "d": "0-b*q"
+     }
+    },
+    "r": {
+     "formula": "0-q"
+    },
+    "e": "Signos distintos: resultado negativo.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "Se puede dividir cualquier entero por 0.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Dividir por 0 no tiene resultado.",
+    "n": "recordar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada división con su cociente.",
+    "o": {
+     "izquierda": [
+      "(−36) ÷ 4",
+      "(−36) ÷ (−4)",
+      "0 ÷ (−9)",
+      "36 ÷ (−9)"
+     ],
+     "derecha": [
+      "−9",
+      "9",
+      "0",
+      "−4"
+     ]
+    },
+    "r": {
+     "pares": {
+      "(−36) ÷ 4": "−9",
+      "(−36) ÷ (−4)": "9",
+      "0 ÷ (−9)": "0",
+      "36 ÷ (−9)": "−4"
+     }
+    },
+    "e": "Misma regla de signos que la multiplicación."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos resolvieron (−56) ÷ (−8). ¿Quién lo hizo bien?",
+    "o": [
+     "Ana: | signos iguales | 7",
+     "Beto: | hay negativos | −7",
+     "Caro: | dividió y restó | −48"
+    ],
+    "r": {
+     "correcta": "Ana: | signos iguales | 7"
+    },
+    "e": "Signos iguales: positivo. Comprobación: 7 × (−8) = −56."
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "Calculá (−3) × 4 + (−18) ÷ 3.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -18
+     ]
+    },
+    "e": "−12 + (−6) = −18.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuánto vale −3 elevado a 2, si el exponente afecta solo al 3 (sin paréntesis)?",
+    "o": [
+     "9",
+     "−9",
+     "6",
+     "−6"
+    ],
+    "r": {
+     "correcta": "−9"
+    },
+    "e": "−(3 × 3) = −9.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "n": "aplicar",
+    "p": "[[etapas]] Ordená los pasos para resolver −2² + (−3) × 4.",
+    "o": [
+     "−4 + (−12)",
+     "−2² = −4 (el signo queda afuera)",
+     "(−3) × 4 = −12",
+     "−16"
+    ],
+    "r": {
+     "orden": [
+      "−2² = −4 (el signo queda afuera)",
+      "(−3) × 4 = −12",
+      "−4 + (−12)",
+      "−16"
+     ]
+    },
+    "e": "Potencia, multiplicación y al final la suma."
+   },
+   {
+    "t": "tap_text",
+    "n": "error",
+    "p": "[[error]] Male calculó 5 − 3 × (−2). Tocá el paso que tiene un error.",
+    "o": {
+     "segmentos": [
+      "Primero resto: 5 − 3 = 2",
+      "Después multiplico: 2 × (−2) = −4",
+      "Resultado: −4"
+     ],
+     "modo": "lineas"
+    },
+    "r": {
+     "tocar": [
+      0
+     ]
+    },
+    "e": "Primero la multiplicación: 3 × (−2) = −6; 5 − (−6) = 11."
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "Calculá (−2) elevado a 5.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -32
+     ]
+    },
+    "e": "Exponente impar: negativo. 2⁵ = 32.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "Clasificá cada potencia según el signo del resultado.",
+    "o": {
+     "elementos": [
+      "(−2) elevado a 2",
+      "(−2) elevado a 3",
+      "(−1) elevado a 10",
+      "(−5) elevado a 3"
+     ],
+     "categorias": [
+      "Positivo",
+      "Negativo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "(−2) elevado a 2": "Positivo",
+      "(−2) elevado a 3": "Negativo",
+      "(−1) elevado a 10": "Positivo",
+      "(−5) elevado a 3": "Negativo"
+     }
+    },
+    "e": "Exponente par: positivo; impar: negativo.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "n": "aplicar",
+    "p": "[[esquema]] Uní cada cálculo con su resultado.",
+    "o": {
+     "izquierda": [
+      "(−3)²",
+      "−3²",
+      "(−3)³",
+      "∛(−27)"
+     ],
+     "derecha": [
+      "9",
+      "−9",
+      "−27",
+      "−3"
+     ]
+    },
+    "r": {
+     "pares": {
+      "(−3)²": "9",
+      "−3²": "−9",
+      "(−3)³": "−27",
+      "∛(−27)": "−3"
+     }
+    },
+    "e": "Mirá qué está pegado al exponente y la paridad del exponente."
+   },
+   {
+    "t": "multiple_choice",
+    "n": "error",
+    "p": "[[comparar]] Tres chicos calcularon √(−25) en los números enteros. ¿Quién razonó bien?",
+    "o": [
+     "Ana: | 5 × 5 = 25 | 5",
+     "Beto: | (−5) × (−5) = 25, no −25 | no existe",
+     "Caro: | la raíz de un negativo es negativa | −5"
+    ],
+    "r": {
+     "correcta": "Beto: | (−5) × (−5) = 25, no −25 | no existe"
+    },
+    "e": "Ningún entero al cuadrado da negativo."
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá (−6) × 5.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -30
+     ]
+    },
+    "e": "Signos distintos.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá (−42) ÷ (−7).",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "Signos iguales.",
+    "tiempo": 25,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá (−3) elevado a 2.",
+    "o": {},
+    "r": {
+     "acepta": [
+      9
+     ]
+    },
+    "e": "Exponente par.",
+    "tiempo": 20,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "Relámpago. Calculá (−8) + 3.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -5
+     ]
+    },
+    "e": "Repaso de la misión 12.",
+    "tiempo": 25,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "n": "aplicar",
+    "p": "Los dos factores son negativos, así que hay que aplicar la regla de los signos. ¿Cuánto da (−7) × (−8)?",
+    "o": [
+     "56",
+     "−56",
+     "−15",
+     "15"
+    ],
+    "r": {
+     "correcta": "56"
+    },
+    "e": "Signos iguales: positivo."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "Calculá (−1) × 2 × (−3) × (−4).",
+    "o": {},
+    "r": {
+     "acepta": [
+      -24
+     ]
+    },
+    "e": "Tres negativos: negativo. 1 × 2 × 3 × 4 = 24.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Si un producto tiene 4 factores negativos, el resultado es…",
+    "o": [
+     "Positivo",
+     "Negativo",
+     "Cero"
+    ],
+    "r": {
+     "correcta": "Positivo"
+    },
+    "e": "Cantidad par de negativos.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "fill_blank",
+    "n": "aplicar",
+    "p": "El dividendo es negativo y el divisor positivo, así que el cociente es negativo: (−63) ÷ 9 = ___",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "-7",
+       "−7"
+      ]
+     ]
+    },
+    "e": "63 ÷ 9 = 7, con signo menos."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "Calculá (−48) ÷ (−6).",
+    "o": {},
+    "r": {
+     "acepta": [
+      8
+     ]
+    },
+    "e": "Signos iguales.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "En la división (−17) ÷ 5, con resto positivo y menor que 5, ¿cuál es el cociente?",
+    "o": [
+     "−3",
+     "−4",
+     "3",
+     "4"
+    ],
+    "r": {
+     "correcta": "−4"
+    },
+    "e": "5 × (−4) = −20 y −20 + 3 = −17: resto 3.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Calculá 10 − 2 × (−6).",
+    "o": {},
+    "r": {
+     "acepta": [
+      22
+     ]
+    },
+    "e": "2 × (−6) = −12; 10 − (−12) = 22.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "Calculá (−5) × (3 − 7).",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "(−5) × (−4) = 20.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "(−4) elevado a 2 y −4 elevado a 2 (sin paréntesis) tienen el mismo valor.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "(−4)² = 16 y −4² = −16.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Calculá (−3) elevado a 3.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -27
+     ]
+    },
+    "e": "Exponente impar: negativo.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Calculá la raíz cúbica de −8.",
+    "o": {},
+    "r": {
+     "acepta": [
+      -2
+     ]
+    },
+    "e": "(−2)³ = −8.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuánto vale la raíz cuadrada de −16 en los números enteros?",
+    "o": [
+     "4",
+     "−4",
+     "No existe",
+     "16"
+    ],
+    "r": {
+     "correcta": "No existe"
+    },
+    "e": "Ningún entero al cuadrado da un número negativo.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "Calculá (−1) elevado a 7 + (−1) elevado a 8.",
+    "o": {},
+    "r": {
+     "acepta": [
+      0
+     ]
+    },
+    "e": "−1 + 1 = 0.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
+}

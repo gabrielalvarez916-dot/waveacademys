@@ -86,3 +86,4 @@ Todo en imprenta mayúscula, con dibujos grandes y números chicos.
 ### Decimales y enteros (Matemática I · Misiones 10 y 11)
 - `decimales` / `decimales_x` (`modo` obligatorio): frac_dec, dec_frac, comparar, cual (¿exacto o periódico?), puro_frac, suma, resta, producto, division, estimar.
 - `enteros` / `enteros_x` (`modo` obligatorio): situacion, opuesto, distancia, comparar, intervalo, absoluto; `enteros_x` además abs_opuesto.
+- Misiones 12 y 13: `enteros` / `enteros_x` suman modos suma, resta, suprimir, division, combinadas, cuadrado (−3² y (−3)²), raiz; `enteros_x` además producto y potencia.
