@@ -1,7 +1,7 @@
 name: Misiones del NIVEL MEDIO (carga completa)
 # MÁQUINA DEL NIVEL MEDIO (separada de todo lo del Avanzado, que no se toca).
 # Al subir a main un contenido/medio/**/mision-N.json nuevo o cambiado, hace TODO solo:
-#   1) carga actividades, Relámpago y examen (cargar_mision_medio; si ya estaba, no pisa nada)
+#   1) carga actividades, Relámpago y examen (cargar_mision_medio; si ya estaba, no pisa nada) y la lección interactiva (cargar_leccion_medio)
 #   2) arma los PDF (argentino y neutro) y los sube a cada lección (pdf-medio)
 # Las clases animadas van por voz-clases-medio.yml. Nada se publica: queda para revisar en Contenidos.
 on:
@@ -42,12 +42,18 @@ jobs:
           if git diff --name-only "$BASE" "$GITHUB_SHA" 2>/dev/null | grep -qx 'contenido/medio/recargar.txt'; then L="$L $(grep -v '^#' contenido/medio/recargar.txt)"; fi
           L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
           echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
+      - name: Control de la lección interactiva (reglas por ciclo; si no cumple, no se carga nada)
+        if: steps.cuales.outputs.lista != ''
+        run: node tools/interactiva/validar.js ${{ steps.cuales.outputs.lista }}
       - name: Control de calidad (si no cumple, no se carga nada)
         if: steps.cuales.outputs.lista != ''
         run: python tools/control_calidad.py ${{ steps.cuales.outputs.lista }}
       - name: Cargar actividades y examen
         if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
         run: python tools/medio/cargar_mision.py ${{ steps.cuales.outputs.lista }}
+      - name: Cargar la lección interactiva (la escrita en sesión)
+        if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
+        run: python tools/medio/cargar_leccion.py ${{ steps.cuales.outputs.lista }}
       - name: Armar y subir los PDF
         if: steps.cuales.outputs.lista != '' && env.MEDIO_TOKEN != ''
         run: python tools/medio/pdf/generar.py ${{ steps.cuales.outputs.lista }}

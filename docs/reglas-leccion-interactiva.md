@@ -32,6 +32,20 @@ Una pantalla = una idea. Mitad izquierda: texto corto. Mitad derecha: el EJEMPLO
 - 3 pantallas o más: las ideas importantes de la clase, no un número fijo. No se rellena.
 - Al final, "Recordá lo más importante".
 
+## Primaria (Nivel Medio): mismo modelo, adaptado a la edad
+Mismo banco de ejemplos y ejercicios (es compartido) y mismas reglas; cambia cuánto texto lleva cada pantalla. El control lo saca de la carpeta: `contenido/medio/<materia>-<grado>/`.
+| | Secundaria | Primaria 4.º a 6.º | Primaria 1.º a 3.º |
+|---|---|---|---|
+| Palabras por pantalla | 60 a 160 | 40 a 110 | 12 a 60 |
+| Definición | completa, 15+ palabras | clara, 10+ palabras | una frase corta, 6+ palabras |
+| Párrafo de sentido | obligatorio | obligatorio | no; como mucho un párrafo o una lista corta |
+| Pantallas mínimas | 3 | 3 | 2 |
+| Tarjetas del Recordá | 4 a 8 | 3 a 6 | 2 a 4 |
+- **1.º a 3.º: poco texto, todo visual.** Frases cortas, palabras simples, el ejemplo hace casi todo. Nada de vocabulario técnico sin explicar.
+- **4.º a 6.º: más texto pero no formal.** Se explica con palabras cercanas, como le hablaría la maestra; no con el tono de secundaria.
+- Ejemplo y ejercicio en todas las pantallas, adaptados al contenido y a la edad (números chicos en 1.º, sin bloques de texto en el ejemplo).
+- Se escribe en `niveles.N.leccion` del `mision-N.json` de primaria; la máquina del Nivel Medio la controla y la carga (tabla `leccion_medio`).
+
 ## "Recordá lo más importante" (cierre, formato CIDEAD)
 Va en `niveles.N.leccion.recuerda`: 4 a 8 tarjetas, una por concepto o procedimiento clave de la lección, en grilla de dos columnas.
 ```json
