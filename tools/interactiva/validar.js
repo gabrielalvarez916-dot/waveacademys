@@ -127,7 +127,7 @@ for (const ruta of process.argv.slice(2)) {
   console.log(ruta);
   const revisar = (niveles, extra) => Object.keys(niveles || {}).forEach(n => {
     const secs = (niveles[n] || {}).secciones || [];
-    if (!secs.length) mal(extra + 'nivel ' + n, 'no tiene secciones');
+    if (!secs.length && !(niveles[n] || {}).pdf_en_otra_mision) mal(extra + 'nivel ' + n, 'no tiene secciones');
     secs.forEach((s, i) => {
       if (s.practica) practica(s.practica, extra + 'nivel ' + n + ' · tema ' + (i + 1) + ' «' + (s.titulo || '') + '»'); // opcional: la lección la arma la máquina con el banco
       if (s.practica && s.practica.neutro) practica(Object.assign({}, s.practica, s.practica.neutro, { neutro: undefined }), extra + 'nivel ' + n + ' · tema ' + (i + 1) + ' (neutro)');

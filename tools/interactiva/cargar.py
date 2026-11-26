@@ -9,7 +9,8 @@ TOKEN = os.environ['WAVE_GEN_TOKEN'].strip()
 error = False
 for ruta in sys.argv[1:]:
     M = json.load(open(ruta, encoding='utf-8'))
-    p = {'subject_id': M['subject_id'], 'tema': M['tema'], 'niveles': M.get('niveles')}
+    # Los niveles marcados pdf_en_otra_mision no traen secciones: no se mandan, así no se borran sus prácticas.
+    p = {'subject_id': M['subject_id'], 'tema': M['tema'], 'niveles': {k: v for k, v in (M.get('niveles') or {}).items() if not (isinstance(v, dict) and v.get('pdf_en_otra_mision'))}}
     if isinstance(M.get('alternativa'), dict) and M['alternativa'].get('niveles'): p['alternativa'] = {'niveles': M['alternativa']['niveles']}
     req = urllib.request.Request(URL, data=json.dumps({'p_token': TOKEN, 'p': p}).encode(), method='POST',
                                  headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'})

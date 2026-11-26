@@ -191,6 +191,7 @@ def revisar_repeticion(ruta, M, err, avi, etiqueta=None):
 
 def revisar_pdf(M, nivel, err):
     for k, N in (M.get('niveles') or {}).items():
+        if N.get('pdf_en_otra_mision'): continue  # nivel que ya existía con PDF cargado desde otra misión: acá solo va su lección
         secs = N.get('secciones') or []
         for et in (1, 2):
             c = sum(1 for s in secs if s.get('etapa') == et)
@@ -292,6 +293,7 @@ def revisar(ruta, forzar=False):
     err, avi = [], []
     # Carpeta de cada nivel (PDF)
     for k, N in sorted((M.get('niveles') or {}).items(), key=lambda x: int(x[0]) if str(x[0]).isdigit() else 0):
+        if N.get('pdf_en_otra_mision'): continue
         cons = N.get('carpeta') or []; tags = [str(x).lower().strip() for x in (N.get('carpeta_nivel') or [])]
         resp = N.get('respuestas_carpeta') or []
         d = f'nivel {k} · carpeta'

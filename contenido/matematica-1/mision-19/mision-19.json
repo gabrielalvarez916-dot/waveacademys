@@ -1033,6 +1033,134 @@
     "aplicar",
     "error"
    ]
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Cuadrados perfectos y áreas",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "lado_area"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "lado_area"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cuadrado perfecto",
+        "texto": "Un cuadrado perfecto es un número que se obtiene al multiplicar un natural por sí mismo, como 49 = 7 × 7. Es el área de un cuadrado cuyo lado mide un número natural."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Por eso, si se conoce el área de un cuadrado, el lado es la raíz cuadrada: un patio cuadrado de 81 m² tiene lados de 9 m. Si el área no es un cuadrado perfecto, el lado no es un número natural, y conviene estimarlo entre dos naturales."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Área 81 m² → lado 9 m.",
+         "1, 4, 9, 16, 25, 36, 49…"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cubos perfectos y volúmenes",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "arista_volumen"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "arista_volumen"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Cubo perfecto",
+        "texto": "Un cubo perfecto es un número que se obtiene al multiplicar un natural tres veces por sí mismo, como 125 = 5 × 5 × 5. Es el volumen de un cubo cuya arista mide un número natural."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si se conoce el volumen de una caja con forma de cubo, la arista es la raíz cúbica: 64 cm³ corresponden a una arista de 4 cm. También sirve para saber si con cierta cantidad de cubitos iguales se puede armar un cubo grande sin que sobre ninguno."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Volumen 64 cm³ → arista 4 cm.",
+         "1, 8, 27, 64, 125…"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Reconocer y resolver problemas",
+      "ejemplo": {
+       "motor": "potencias_n",
+       "p": {
+        "modo": "perfectos"
+       }
+      },
+      "ejercicio": {
+       "motor": "potencias_n_x",
+       "p": {
+        "modo": "perfectos"
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Problemas con cuadrados y cubos",
+        "texto": "En un problema, el área de un cuadrado lleva a un cuadrado perfecto y la raíz cuadrada; el volumen de un cubo lleva a un cubo perfecto y la raíz cúbica."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Antes de calcular hay que decidir si la medida es de superficie o de volumen. Un error común es dividir el área por 2 o el volumen por 3 en lugar de buscar la raíz: el lado de un cuadrado de 36 cm² es 6 cm, no 18. Algunos números, como 64, son cuadrado y cubo a la vez."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Área → raíz cuadrada.",
+         "Volumen → raíz cúbica."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Un cuadrado perfecto",
+      "definicion": "es el resultado de multiplicar un número natural por sí mismo, y es el área de un cuadrado.",
+      "ejemplo": "7 × 7 = 49"
+     },
+     {
+      "concepto": "El lado de un cuadrado",
+      "definicion": "se obtiene calculando la raíz cuadrada del área, porque el área es lado por lado.",
+      "ejemplo": "Área 81 m² → lado 9 m"
+     },
+     {
+      "concepto": "Un cubo perfecto",
+      "definicion": "es el resultado de multiplicar un natural tres veces por sí mismo, y es el volumen de un cubo.",
+      "ejemplo": "5 × 5 × 5 = 125"
+     },
+     {
+      "concepto": "La arista de un cubo",
+      "definicion": "se obtiene calculando la raíz cúbica del volumen, porque el volumen es arista por arista por arista.",
+      "ejemplo": "Volumen 64 cm³ → arista 4 cm"
+     }
+    ]
+   },
+   "pdf_en_otra_mision": true
   }
  },
  "act": {
