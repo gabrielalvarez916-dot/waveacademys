@@ -1,1 +1,1358 @@
-{"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 10, "estilo": "primeros", "actualizar_preguntas": true, "practica": "Práctica general: restas con algoritmo", "examen_titulo": "Nivel jefe: restas con algoritmo", "niveles": {"1": {"estilo": "primeros", "objetivo": "Vas a armar una resta en columnas.", "vas_a_ver": ["El número grande arriba", "Cada cifra en su columna", "Empezar por las unidades"], "secciones": [{"etapa": 1, "titulo": "El grande arriba", "bloques": [{"tipo": "parrafo", "texto": "Rosa tenía 576 alfajores. Vendió 234."}, {"tipo": "definicion", "titulo": "Restar en columnas", "texto": "El número <b>más grande</b> va arriba. Cada cifra en su columna."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "La resta armada", "texto": "576 arriba, 234 abajo.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Empezar por las unidades", "bloques": [{"tipo": "parrafo", "texto": "Unidades: 6 − 4 = <b>2</b>. Decenas: 7 − 3 = <b>4</b>."}, {"tipo": "parrafo", "texto": "Centenas: 5 − 2 = <b>3</b>. Quedan <b>342</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "El resultado", "texto": "576 − 234 = 342.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá la resta. La vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Resta para resolver", "texto": "Empezá por las unidades.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "368 − 45", "planteo": "Restá en columnas.", "pasos": ["Unidades: 8 − 5 = 3.", "Decenas: 6 − 4 = 2.", "Centenas: 3.", "Resultado: 323."]}, "ejemplo_incompleto": {"titulo": "259 − 34", "planteo": "Completá.", "pasos": ["Unidades: 9 − 4 = ___ .", "Decenas: 5 − 3 = ___ .", "Resultado: ___ ."]}, "ejemplo_solo": {"titulo": "Tu resta", "planteo": "Armá y resolvé 675 − 52."}, "tip": {"titulo": "Arriba el grande", "texto": "Siempre restamos el de abajo al de arriba."}, "ojo": ["El 53 va debajo del 87, no del 48.", "En la resta no se suma: se saca."], "resumen": [{"titulo": "Arriba", "texto": "El número grande."}, {"titulo": "Columnas", "texto": "U con U, D con D."}, {"titulo": "Empezar", "texto": "Por las unidades."}], "glosario": [{"palabra": "Resta", "significado": "Sacar una cantidad de otra."}, {"palabra": "Diferencia", "significado": "El resultado de la resta."}], "carpeta": ["En la resta, ¿cuánto dan las unidades: 7 − 3?", "¿Cuánto dan las decenas: 8 − 5?", "¿Cuánto es 487 − 53?"], "carpeta_nivel": ["aplicar", "aplicar", "aplicar"], "respuestas_carpeta": [["4"], ["3"], ["434"]], "soluciones": {"incompleto": "5. 2. 225.", "solo": "623.", "carpeta": ["4.", "3.", "434."]}, "leccion": {"temas": [{"titulo": "EL GRANDE ARRIBA", "explicacion": [{"tipo": "definicion", "titulo": "ARMAR LA RESTA", "texto": "EN LA RESTA PONEMOS <b>ARRIBA EL MÁS GRANDE</b> Y ABAJO LO QUE SACAMOS."}, {"tipo": "lista", "items": ["UNIDADES DEBAJO DE UNIDADES.", "576 − 234: EL 576 VA ARRIBA."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta"}}}, {"titulo": "EMPEZAR POR LAS UNIDADES", "explicacion": [{"tipo": "definicion", "titulo": "DE DERECHA A IZQUIERDA", "texto": "RESTAMOS PRIMERO LAS <b>UNIDADES</b>, DESPUÉS DECENAS Y CENTENAS."}, {"tipo": "lista", "items": ["487 − 53: 7 − 3, 8 − 5, 4.", "DA 434."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta"}}}], "recuerda": [{"concepto": "ARRIBA EL GRANDE", "definicion": "DEL NÚMERO DE ARRIBA SACAMOS EL DE ABAJO.", "ejemplo": "576 − 234"}, {"concepto": "EL ORDEN", "definicion": "RESTAMOS DE DERECHA A IZQUIERDA.", "ejemplo": "576 − 234 = 342"}]}}, "2": {"estilo": "primeros", "objetivo": "Vas a resolver restas en columnas de tres cifras.", "vas_a_ver": ["Restar columna por columna", "Cuando da cero", "Restas de tres cifras"], "secciones": [{"etapa": 1, "titulo": "Columna por columna", "bloques": [{"tipo": "parrafo", "texto": "Rosa tenía 865 alfajores. Vendió 432."}, {"tipo": "parrafo", "texto": "Unidades: 5 − 2 = 3. Decenas: 6 − 3 = 3. Centenas: 8 − 4 = 4."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "865 − 432", "texto": "Resultado: 433.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Cuando da cero", "bloques": [{"tipo": "definicion", "titulo": "El cero", "texto": "Si los dos números son iguales, queda <b>0</b>: 7 − 7 = 0."}, {"tipo": "parrafo", "texto": "579 − 274: decenas 7 − 7 = <b>0</b>. Quedan <b>305</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "579 − 274", "texto": "El 0 guarda el lugar de las decenas.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá la resta. La vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Resta para resolver", "texto": "Columna por columna.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "684 − 251", "planteo": "Restá en columnas.", "pasos": ["Unidades: 4 − 1 = 3.", "Decenas: 8 − 5 = 3.", "Centenas: 6 − 2 = 4.", "Resultado: 433."]}, "ejemplo_incompleto": {"titulo": "958 − 316", "planteo": "Completá.", "pasos": ["Unidades: 8 − 6 = ___ .", "Decenas: 5 − 1 = ___ .", "Centenas: 9 − 3 = ___ ."]}, "ejemplo_solo": {"titulo": "Tu resta", "planteo": "Resolvé 747 − 325."}, "tip": {"titulo": "Una columna por vez", "texto": "Terminá una antes de pasar a la otra."}, "ojo": ["7 − 7 es 0, no 7.", "No restes el de arriba al de abajo."], "resumen": [{"titulo": "Unidades", "texto": "Primero."}, {"titulo": "Decenas", "texto": "Después."}, {"titulo": "Centenas", "texto": "Al final."}], "glosario": [{"palabra": "Minuendo", "significado": "El número de arriba."}, {"palabra": "Sustraendo", "significado": "El número que restamos."}], "carpeta": ["En 796 − 352, ¿cuánto dan las unidades?", "¿Cuánto es 796 − 352?", "Sofi hizo 579 − 274 y le dio 35. ¿Cuánto da?"], "carpeta_nivel": ["aplicar", "aplicar", "error"], "respuestas_carpeta": [["4"], ["444"], ["305"]], "soluciones": {"incompleto": "2. 4. 6.", "solo": "422.", "carpeta": ["4.", "444.", "305: se olvidó el 0 de las decenas."]}, "leccion": {"temas": [{"titulo": "COLUMNA POR COLUMNA", "explicacion": [{"tipo": "definicion", "titulo": "TRES CIFRAS", "texto": "CON TRES CIFRAS RESTAMOS <b>TRES COLUMNAS</b>, CADA UNA POR SEPARADO."}, {"tipo": "lista", "items": ["796 − 352 = 444.", "865 − 432 = 433."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta"}}}, {"titulo": "CUANDO DA CERO", "explicacion": [{"tipo": "definicion", "titulo": "EL CERO", "texto": "SI UNA COLUMNA <b>DA 0</b>, ESCRIBIMOS EL 0 PARA GUARDAR EL LUGAR."}, {"tipo": "lista", "items": ["579 − 274 = 305.", "NO ES 35."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta"}}}], "recuerda": [{"concepto": "COLUMNA POR COLUMNA", "definicion": "RESTAMOS UNIDADES, DECENAS Y CENTENAS POR SEPARADO.", "ejemplo": "796 − 352 = 444"}, {"concepto": "EL CERO", "definicion": "SI UNA COLUMNA DA CERO, LO ESCRIBIMOS.", "ejemplo": "579 − 274 = 305"}]}}, "3": {"estilo": "primeros", "objetivo": "Vas a restar cuando arriba hay menos que abajo.", "vas_a_ver": ["Cuando no alcanza", "Abrir un paquete", "El canje"], "secciones": [{"etapa": 1, "titulo": "Cuando no alcanza", "bloques": [{"tipo": "parrafo", "texto": "Rosa tiene 352 alfajores. Vende 128."}, {"tipo": "parrafo", "texto": "Unidades: 2 − 8. ¡No alcanza! Tiene 2 sueltos y necesita 8."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "352 alfajores", "texto": "3 cajas, 5 paquetes y 2 sueltos.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "El canje", "bloques": [{"tipo": "definicion", "titulo": "Canje", "texto": "Abro <b>un paquete</b>: quedan 4 paquetes y <b>12 sueltos</b>."}, {"tipo": "parrafo", "texto": "12 − 8 = 4. Decenas: 4 − 2 = 2. Centenas: 3 − 1 = 2. Quedan <b>224</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "352 − 128", "texto": "El 5 pasa a 4 y el 2 pasa a 12.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá la resta. La vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Resta para resolver", "texto": "¿Alcanza en las unidades?", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "541 − 316", "planteo": "Restá en columnas.", "pasos": ["1 − 6 no alcanza: abro un paquete.", "El 4 pasa a 3. El 1 pasa a 11.", "11 − 6 = 5. 3 − 1 = 2. 5 − 3 = 2.", "Resultado: 225."]}, "ejemplo_incompleto": {"titulo": "372 − 145", "planteo": "Completá.", "pasos": ["2 − 5 no alcanza: el 7 pasa a ___ .", "El 2 pasa a ___ . 12 − 5 = ___ .", "Resultado: ___ ."]}, "ejemplo_solo": {"titulo": "Tu resta", "planteo": "Resolvé 650 − 234."}, "tip": {"titulo": "Mirá antes de restar", "texto": "Si arriba hay menos, abrí un paquete."}, "ojo": ["No des vuelta: 2 − 8 no es 8 − 2.", "Si abriste un paquete, hay uno menos."], "resumen": [{"titulo": "No alcanza", "texto": "Arriba hay menos."}, {"titulo": "Canje", "texto": "Abro un paquete: 10 sueltos."}, {"titulo": "Después", "texto": "Hay un paquete menos."}], "glosario": [{"palabra": "Canje", "significado": "Cambiar 1 paquete por 10 sueltos."}, {"palabra": "Desagrupar", "significado": "Abrir un paquete."}], "carpeta": ["En 463 − 247, ¿alcanza 3 para restar 7?", "Después del canje, ¿cuánto es 13 − 7?", "Tomi hizo 352 − 128 y le dio 236. ¿Cuánto da?"], "carpeta_nivel": ["analizar", "aplicar", "error"], "respuestas_carpeta": [["no"], ["6"], ["224"]], "soluciones": {"incompleto": "6. 12. 7. 227.", "solo": "416.", "carpeta": ["No: hay que abrir un paquete.", "6. Resultado: 216.", "224: Tomi dio vuelta 2 − 8."]}, "leccion": {"temas": [{"titulo": "CUANDO NO ALCANZA", "explicacion": [{"tipo": "definicion", "titulo": "NO ALCANZA", "texto": "SI ARRIBA HAY <b>MENOS</b> QUE ABAJO, NO PODEMOS RESTAR TODAVÍA."}, {"tipo": "lista", "items": ["EN 352 − 128: 2 − 8 NO ALCANZA.", "NO SE HACE 8 − 2."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta", "lleva": true}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta", "lleva": true}}}, {"titulo": "ABRIR UN PAQUETE", "explicacion": [{"tipo": "definicion", "titulo": "EL CANJE", "texto": "<b>ABRIMOS UN PAQUETE</b> DE AL LADO: SON 10 SUELTOS MÁS, Y AL PAQUETE LE QUEDA UNO MENOS."}, {"tipo": "lista", "items": ["12 − 8 = 4.", "352 − 128 = 224."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta", "lleva": true}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta", "lleva": true}}}], "recuerda": [{"concepto": "NO ALCANZA", "definicion": "SI ARRIBA HAY MENOS, NO RESTAMOS AL REVÉS.", "ejemplo": "2 − 8 NO ALCANZA"}, {"concepto": "EL CANJE", "definicion": "UN PAQUETE SE CAMBIA POR 10 SUELTOS.", "ejemplo": "463 − 247 = 216"}]}}, "4": {"estilo": "primeros", "objetivo": "Vas a controlar una resta con una suma.", "vas_a_ver": ["La suma deshace la resta", "Sumar para controlar", "Encontrar errores"], "secciones": [{"etapa": 1, "titulo": "La suma deshace la resta", "bloques": [{"tipo": "parrafo", "texto": "Rosa tenía 352. Vendió 128. Le quedan 224."}, {"tipo": "definicion", "titulo": "Controlar", "texto": "Si sumo lo que quedó y lo que vendí, vuelvo al <b>principio</b>."}, {"tipo": "parrafo", "texto": "224 + 128 = <b>352</b>. ¡La resta está bien!"}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Para controlar", "texto": "224 + 128 = 352.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Encontrar un error", "bloques": [{"tipo": "parrafo", "texto": "Tomi hizo 463 − 247 = 226."}, {"tipo": "parrafo", "texto": "Controla: 226 + 247 = 473. ¡No da 463! Hay un error."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "El control", "texto": "La suma no vuelve al principio.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá las restas. Las vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "¿Están bien?", "texto": "Controlá con una suma.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Controlar 576 − 234", "planteo": "La resta dio 342.", "pasos": ["Sumo 342 + 234.", "Da 576.", "¡Es el número de arriba: está bien!"]}, "ejemplo_incompleto": {"titulo": "Controlar 865 − 432", "planteo": "Dio 433. Completá.", "pasos": ["433 + 432 = ___ .", "¿Volvió al 865? ___ ."]}, "ejemplo_solo": {"titulo": "¿Está bien?", "planteo": "Alguien hizo 700 − 300 = 300. Controlá con una suma."}, "tip": {"titulo": "Volver al principio", "texto": "Resultado + lo que restaste = el de arriba."}, "ojo": ["Se suma el resultado con el de abajo.", "Si no vuelve al principio, hay un error."], "resumen": [{"titulo": "Controlar", "texto": "Con una suma."}, {"titulo": "Sumar", "texto": "Resultado + lo que restaste."}, {"titulo": "Comparar", "texto": "Con el de arriba."}], "glosario": [{"palabra": "Controlar", "significado": "Revisar si está bien."}, {"palabra": "Deshacer", "significado": "Volver a como estaba."}], "carpeta": ["Controlá 685 − 243 = 442. ¿Cuánto es 442 + 243?", "¿Cuál de las restas está mal?", "¿Cuánto es de verdad 530 − 210?"], "carpeta_nivel": ["aplicar", "analizar", "error"], "respuestas_carpeta": [["685"], ["530 − 210", "530 - 210", "la del medio", "la segunda"], ["320"]], "soluciones": {"incompleto": "865. Sí.", "solo": "Está mal: 300 + 300 = 600. Da 400.", "carpeta": ["685: está bien.", "530 − 210: 310 + 210 = 520.", "320."]}, "leccion": {"temas": [{"titulo": "LA SUMA DESHACE LA RESTA", "explicacion": [{"tipo": "definicion", "titulo": "CONTROLAR", "texto": "PARA <b>CONTROLAR</b> UNA RESTA, SUMAMOS EL RESULTADO Y LO QUE RESTAMOS."}, {"tipo": "lista", "items": ["685 − 243 = 442.", "442 + 243 = 685: ¡ESTÁ BIEN!"]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "lleva": false}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta", "que": "control"}}}, {"titulo": "ENCONTRAR ERRORES", "explicacion": [{"tipo": "definicion", "titulo": "ERRORES", "texto": "SI LA SUMA <b>NO DA</b> EL NÚMERO DE ARRIBA, LA RESTA ESTÁ MAL."}, {"tipo": "lista", "items": ["463 − 247 = 226: 226 + 247 = 473.", "NO DA 463: HAY UN ERROR."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "columna", "op": "resta", "lleva": true}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "columna", "op": "resta", "que": "control"}}}], "recuerda": [{"concepto": "CONTROLAR", "definicion": "SUMAMOS EL RESULTADO Y LO QUE RESTAMOS.", "ejemplo": "224 + 128 = 352"}, {"concepto": "ERRORES", "definicion": "SI LA SUMA NO DA EL NÚMERO DE ARRIBA, HAY UN ERROR.", "ejemplo": "226 + 247 ≠ 463"}]}}}, "act": {"1": [{"t": "numeric", "p": "RESTÁ EN COLUMNAS: 576 − 234", "o": {}, "r": {"acepta": [342]}, "e": "U: 6 − 4. D: 7 − 3. C: 5 − 2.", "n": "aplicar"}, {"t": "multiple_choice", "p": "EN UNA RESTA, ¿QUÉ NÚMERO VA ARRIBA?", "o": ["EL MÁS GRANDE", "EL MÁS CHICO", "EL QUE SE VENDIÓ"], "r": {"correcta": "EL MÁS GRANDE"}, "e": "DE ÉL SACAMOS.", "n": "analizar"}, {"t": "fill_blank", "p": "COMPLETÁ: 487 − 53 = ___", "o": {}, "r": {"huecos": [["434"]]}, "e": "7 − 3 = 4, 8 − 5 = 3, 4.", "n": "aplicar"}, {"t": "multiple_choice", "p": "LEO PUSO EL 53 DEBAJO DEL 48 EN 487 − 53. ¿QUÉ HIZO MAL?", "o": ["NO ALINEÓ LAS UNIDADES", "NADA, ESTÁ BIEN", "PUSO EL GRANDE ARRIBA"], "r": {"correcta": "NO ALINEÓ LAS UNIDADES"}, "e": "EL 3 VA DEBAJO DEL 7.", "n": "error"}], "2": [{"t": "numeric", "p": "¿CUÁNTO ES 865 − 432?", "o": {}, "r": {"acepta": [433]}, "e": "COLUMNA POR COLUMNA.", "n": "aplicar"}, {"t": "matching", "p": "UNÍ CADA RESTA CON SU RESULTADO.", "o": {"izquierda": ["865 − 432", "579 − 274", "796 − 352"], "derecha": ["444", "433", "305"]}, "r": {"pares": {"865 − 432": "433", "579 − 274": "305", "796 − 352": "444"}}, "e": "COLUMNA POR COLUMNA.", "n": "aplicar"}, {"t": "multiple_choice", "p": "SOFI HIZO 579 − 274 Y LE DIO 35. ¿CUÁNTO DA?", "o": ["305", "35", "350"], "r": {"correcta": "305"}, "e": "LAS DECENAS DAN 0: SE ESCRIBE.", "n": "error"}, {"t": "numeric", "p": "[[problema]] EN UN COLEGIO HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?", "o": {}, "r": {"acepta": [442]}, "e": "685 − 243 = 442.", "n": "analizar", "neutro": {"p": "EN UNA ESCUELA HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?"}}], "3": [{"t": "numeric", "p": "¿CUÁNTO ES 352 − 128?", "o": {}, "r": {"acepta": [224]}, "e": "ABRO UN PAQUETE: 12 − 8 = 4.", "n": "aplicar"}, {"t": "multiple_choice", "p": "EN 352 − 128, 2 − 8 NO ALCANZA. ¿QUÉ HAGO?", "o": ["ABRO UN PAQUETE", "HAGO 8 − 2", "PONGO 0"], "r": {"correcta": "ABRO UN PAQUETE"}, "e": "CANJE: 1 PAQUETE POR 10 SUELTOS.", "n": "analizar"}, {"t": "fill_blank", "p": "COMPLETÁ: 463 − 247 = ___", "o": {}, "r": {"huecos": [["216"]]}, "e": "13 − 7 = 6, 5 − 4 = 1, 4 − 2 = 2.", "n": "aplicar"}, {"t": "multiple_choice", "p": "TOMI HIZO 352 − 128 Y LE DIO 236. ¿CUÁNTO DA?", "o": ["224", "236", "230"], "r": {"correcta": "224"}, "e": "NO SE HACE 8 − 2: SE ABRE UN PAQUETE.", "n": "error"}], "4": [{"t": "numeric", "p": "224 + 128 = ___", "o": {}, "r": {"acepta": [352]}, "e": "VUELVE AL NÚMERO DE ARRIBA.", "n": "aplicar"}, {"t": "true_false", "p": "TOMI HIZO 463 − 247 = 226. ESTÁ BIEN.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "FALSO"}, "e": "226 + 247 = 473, NO 463.", "n": "error"}, {"t": "classify", "p": "CONTROLÁ CON UNA SUMA. ¿ESTÁ BIEN O MAL?", "o": {"elementos": ["685 − 243 = 442", "530 − 210 = 310", "796 − 352 = 444", "463 − 247 = 226"], "categorias": ["BIEN", "MAL"]}, "r": {"categorias": {"685 − 243 = 442": "BIEN", "530 − 210 = 310": "MAL", "796 − 352 = 444": "BIEN", "463 − 247 = 226": "MAL"}}, "e": "SUMÁ EL RESULTADO Y LO QUE RESTÁS.", "n": "analizar"}, {"t": "numeric", "p": "¿CUÁNTO ES DE VERDAD 530 − 210?", "o": {}, "r": {"acepta": [320]}, "e": "320 + 210 = 530.", "n": "aplicar"}], "5": [{"t": "numeric", "p": "RELÁMPAGO. 759 − 314 = ___", "o": {}, "r": {"acepta": [445]}, "e": "SIN CANJE.", "tiempo": 40, "n": "aplicar"}, {"t": "multiple_choice", "p": "RELÁMPAGO. 5 − 9: ¿ALCANZA?", "o": ["NO", "SÍ"], "r": {"correcta": "NO"}, "e": "HAY QUE ABRIR UN PAQUETE.", "tiempo": 30, "n": "aplicar"}, {"t": "numeric", "p": "RELÁMPAGO. 15 − 9 = ___", "o": {}, "r": {"acepta": [6]}, "e": "DESPUÉS DEL CANJE.", "tiempo": 30, "n": "aplicar"}, {"t": "numeric", "p": "RELÁMPAGO. 300 + 200 = ___ (CONTROL DE 500 − 200)", "o": {}, "r": {"acepta": [500]}, "e": "VUELVE AL PRINCIPIO.", "tiempo": 30, "n": "aplicar"}]}, "examen": [[1, {"t": "numeric", "p": "RESTÁ EN COLUMNAS: 498 − 65", "o": {}, "r": {"acepta": [433]}, "e": "U: 8 − 5. D: 9 − 6. C: 4.", "n": "aplicar"}], [1, {"t": "multiple_choice", "p": "¿POR QUÉ COLUMNA SE EMPIEZA A RESTAR?", "o": ["UNIDADES", "CENTENAS", "DECENAS"], "r": {"correcta": "UNIDADES"}, "e": "DE DERECHA A IZQUIERDA.", "n": "recordar"}], [1, {"t": "true_false", "p": "SOFI PUSO 234 ARRIBA Y 576 ABAJO. ESTÁ BIEN.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "FALSO"}, "e": "EL MÁS GRANDE VA ARRIBA.", "n": "error"}], [2, {"t": "numeric", "p": "¿CUÁNTO ES 967 − 523?", "o": {}, "r": {"acepta": [444]}, "e": "7 − 3, 6 − 2, 9 − 5.", "n": "aplicar"}], [2, {"t": "numeric", "p": "¿CUÁNTO ES 688 − 380?", "o": {}, "r": {"acepta": [308]}, "e": "8 − 0, 8 − 8, 6 − 3.", "n": "aplicar"}], [2, {"t": "numeric", "p": "¿CUÁNTO ES 745 − 132?", "o": {}, "r": {"acepta": [613]}, "e": "COLUMNA POR COLUMNA.", "n": "aplicar"}], [3, {"t": "numeric", "p": "¿CUÁNTO ES 463 − 247?", "o": {}, "r": {"acepta": [216]}, "e": "13 − 7 = 6. 5 − 4 = 1. 4 − 2 = 2.", "n": "aplicar"}], [3, {"t": "numeric", "p": "¿CUÁNTO ES 541 − 316?", "o": {}, "r": {"acepta": [225]}, "e": "11 − 6 = 5. 3 − 1 = 2. 5 − 3 = 2.", "n": "aplicar"}], [3, {"t": "multiple_choice", "p": "TOMI HIZO 352 − 128 = 236. ¿QUÉ HIZO MAL?", "o": ["DIO VUELTA 2 − 8", "NADA", "SUMÓ"], "r": {"correcta": "DIO VUELTA 2 − 8"}, "e": "HAY QUE ABRIR UN PAQUETE.", "n": "error"}], [4, {"t": "numeric", "p": "CONTROLÁ 576 − 234 = 342. ¿CUÁNTO ES 342 + 234?", "o": {}, "r": {"acepta": [576]}, "e": "VUELVE AL NÚMERO DE ARRIBA.", "n": "aplicar"}], [4, {"t": "true_false", "p": "530 − 210 = 310 ESTÁ BIEN.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "FALSO"}, "e": "310 + 210 = 520: DA 320.", "n": "analizar"}], [4, {"t": "multiple_choice", "p": "PARA CONTROLAR UNA RESTA, ¿QUÉ SUMO?", "o": ["RESULTADO + LO QUE RESTÉ", "LOS DOS DE ARRIBA", "NADA"], "r": {"correcta": "RESULTADO + LO QUE RESTÉ"}, "e": "ASÍ VUELVO AL PRINCIPIO.", "n": "analizar"}]]}
+{
+ "subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920",
+ "tema": 10,
+ "estilo": "primeros",
+ "actualizar_preguntas": true,
+ "practica": "Práctica general: restas con algoritmo",
+ "examen_titulo": "Nivel jefe: restas con algoritmo",
+ "niveles": {
+  "1": {
+   "estilo": "primeros",
+   "objetivo": "Vas a armar una resta en columnas.",
+   "vas_a_ver": [
+    "El número grande arriba",
+    "Cada cifra en su columna",
+    "Empezar por las unidades"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "El grande arriba",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Rosa tenía 576 alfajores. Vendió 234."
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Restar en columnas",
+       "texto": "El número <b>más grande</b> va arriba. Cada cifra en su columna."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "La resta armada",
+       "texto": "576 arriba, 234 abajo.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Empezar por las unidades",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Unidades: 6 − 4 = <b>2</b>. Decenas: 7 − 3 = <b>4</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Centenas: 5 − 2 = <b>3</b>. Quedan <b>342</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "El resultado",
+       "texto": "576 − 234 = 342.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá la resta. La vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Resta para resolver",
+       "texto": "Empezá por las unidades.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "368 − 45",
+    "planteo": "Restá en columnas.",
+    "pasos": [
+     "Unidades: 8 − 5 = 3.",
+     "Decenas: 6 − 4 = 2.",
+     "Centenas: 3.",
+     "Resultado: 323."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "259 − 34",
+    "planteo": "Completá.",
+    "pasos": [
+     "Unidades: 9 − 4 = ___ .",
+     "Decenas: 5 − 3 = ___ .",
+     "Resultado: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Tu resta",
+    "planteo": "Armá y resolvé 675 − 52."
+   },
+   "tip": {
+    "titulo": "Arriba el grande",
+    "texto": "Siempre restamos el de abajo al de arriba."
+   },
+   "ojo": [
+    "El 53 va debajo del 87, no del 48.",
+    "En la resta no se suma: se saca."
+   ],
+   "resumen": [
+    {
+     "titulo": "Arriba",
+     "texto": "El número grande."
+    },
+    {
+     "titulo": "Columnas",
+     "texto": "U con U, D con D."
+    },
+    {
+     "titulo": "Empezar",
+     "texto": "Por las unidades."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Resta",
+     "significado": "Sacar una cantidad de otra."
+    },
+    {
+     "palabra": "Diferencia",
+     "significado": "El resultado de la resta."
+    }
+   ],
+   "carpeta": [
+    "En la resta, ¿cuánto dan las unidades: 7 − 3?",
+    "¿Cuánto dan las decenas: 8 − 5?",
+    "¿Cuánto es 487 − 53?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ],
+   "respuestas_carpeta": [
+    [
+     "4"
+    ],
+    [
+     "3"
+    ],
+    [
+     "434"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "5. 2. 225.",
+    "solo": "623.",
+    "carpeta": [
+     "4.",
+     "3.",
+     "434."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "EL GRANDE ARRIBA",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "ARMAR LA RESTA",
+        "texto": "EN LA RESTA PONEMOS <b>ARRIBA EL MÁS GRANDE</b> Y ABAJO LO QUE SACAMOS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "UNIDADES DEBAJO DE UNIDADES.",
+         "576 − 234: EL 576 VA ARRIBA.",
+         "RESTAMOS PRIMERO LAS <b>UNIDADES</b>, DESPUÉS DECENAS Y CENTENAS."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "columna",
+        "op": "resta"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "columna",
+        "op": "resta"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "ARRIBA EL GRANDE",
+      "definicion": "DEL NÚMERO DE ARRIBA SACAMOS EL DE ABAJO.",
+      "ejemplo": "576 − 234"
+     },
+     {
+      "concepto": "EL ORDEN",
+      "definicion": "RESTAMOS DE DERECHA A IZQUIERDA.",
+      "ejemplo": "576 − 234 = 342"
+     }
+    ]
+   }
+  },
+  "2": {
+   "estilo": "primeros",
+   "objetivo": "Vas a resolver restas en columnas de tres cifras.",
+   "vas_a_ver": [
+    "Restar columna por columna",
+    "Cuando da cero",
+    "Restas de tres cifras"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Columna por columna",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Rosa tenía 865 alfajores. Vendió 432."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Unidades: 5 − 2 = 3. Decenas: 6 − 3 = 3. Centenas: 8 − 4 = 4."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "865 − 432",
+       "texto": "Resultado: 433.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cuando da cero",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "El cero",
+       "texto": "Si los dos números son iguales, queda <b>0</b>: 7 − 7 = 0."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "579 − 274: decenas 7 − 7 = <b>0</b>. Quedan <b>305</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "579 − 274",
+       "texto": "El 0 guarda el lugar de las decenas.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá la resta. La vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Resta para resolver",
+       "texto": "Columna por columna.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "684 − 251",
+    "planteo": "Restá en columnas.",
+    "pasos": [
+     "Unidades: 4 − 1 = 3.",
+     "Decenas: 8 − 5 = 3.",
+     "Centenas: 6 − 2 = 4.",
+     "Resultado: 433."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "958 − 316",
+    "planteo": "Completá.",
+    "pasos": [
+     "Unidades: 8 − 6 = ___ .",
+     "Decenas: 5 − 1 = ___ .",
+     "Centenas: 9 − 3 = ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Tu resta",
+    "planteo": "Resolvé 747 − 325."
+   },
+   "tip": {
+    "titulo": "Una columna por vez",
+    "texto": "Terminá una antes de pasar a la otra."
+   },
+   "ojo": [
+    "7 − 7 es 0, no 7.",
+    "No restes el de arriba al de abajo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Unidades",
+     "texto": "Primero."
+    },
+    {
+     "titulo": "Decenas",
+     "texto": "Después."
+    },
+    {
+     "titulo": "Centenas",
+     "texto": "Al final."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Minuendo",
+     "significado": "El número de arriba."
+    },
+    {
+     "palabra": "Sustraendo",
+     "significado": "El número que restamos."
+    }
+   ],
+   "carpeta": [
+    "En 796 − 352, ¿cuánto dan las unidades?",
+    "¿Cuánto es 796 − 352?",
+    "Sofi hizo 579 − 274 y le dio 35. ¿Cuánto da?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "4"
+    ],
+    [
+     "444"
+    ],
+    [
+     "305"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "2. 4. 6.",
+    "solo": "422.",
+    "carpeta": [
+     "4.",
+     "444.",
+     "305: se olvidó el 0 de las decenas."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "COLUMNA POR COLUMNA",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "TRES CIFRAS",
+        "texto": "CON TRES CIFRAS RESTAMOS <b>TRES COLUMNAS</b>, CADA UNA POR SEPARADO."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "796 − 352 = 444.",
+         "865 − 432 = 433.",
+         "SI UNA COLUMNA <b>DA 0</b>, ESCRIBIMOS EL 0 PARA GUARDAR EL LUGAR."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "columna",
+        "op": "resta"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "columna",
+        "op": "resta"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "COLUMNA POR COLUMNA",
+      "definicion": "RESTAMOS UNIDADES, DECENAS Y CENTENAS POR SEPARADO.",
+      "ejemplo": "796 − 352 = 444"
+     },
+     {
+      "concepto": "EL CERO",
+      "definicion": "SI UNA COLUMNA DA CERO, LO ESCRIBIMOS.",
+      "ejemplo": "579 − 274 = 305"
+     }
+    ]
+   }
+  },
+  "3": {
+   "estilo": "primeros",
+   "objetivo": "Vas a restar cuando arriba hay menos que abajo.",
+   "vas_a_ver": [
+    "Cuando no alcanza",
+    "Abrir un paquete",
+    "El canje"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Cuando no alcanza",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Rosa tiene 352 alfajores. Vende 128."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Unidades: 2 − 8. ¡No alcanza! Tiene 2 sueltos y necesita 8."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "352 alfajores",
+       "texto": "3 cajas, 5 paquetes y 2 sueltos.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El canje",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Canje",
+       "texto": "Abro <b>un paquete</b>: quedan 4 paquetes y <b>12 sueltos</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "12 − 8 = 4. Decenas: 4 − 2 = 2. Centenas: 3 − 1 = 2. Quedan <b>224</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "352 − 128",
+       "texto": "El 5 pasa a 4 y el 2 pasa a 12.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá la resta. La vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Resta para resolver",
+       "texto": "¿Alcanza en las unidades?",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "541 − 316",
+    "planteo": "Restá en columnas.",
+    "pasos": [
+     "1 − 6 no alcanza: abro un paquete.",
+     "El 4 pasa a 3. El 1 pasa a 11.",
+     "11 − 6 = 5. 3 − 1 = 2. 5 − 3 = 2.",
+     "Resultado: 225."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "372 − 145",
+    "planteo": "Completá.",
+    "pasos": [
+     "2 − 5 no alcanza: el 7 pasa a ___ .",
+     "El 2 pasa a ___ . 12 − 5 = ___ .",
+     "Resultado: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Tu resta",
+    "planteo": "Resolvé 650 − 234."
+   },
+   "tip": {
+    "titulo": "Mirá antes de restar",
+    "texto": "Si arriba hay menos, abrí un paquete."
+   },
+   "ojo": [
+    "No des vuelta: 2 − 8 no es 8 − 2.",
+    "Si abriste un paquete, hay uno menos."
+   ],
+   "resumen": [
+    {
+     "titulo": "No alcanza",
+     "texto": "Arriba hay menos."
+    },
+    {
+     "titulo": "Canje",
+     "texto": "Abro un paquete: 10 sueltos."
+    },
+    {
+     "titulo": "Después",
+     "texto": "Hay un paquete menos."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Canje",
+     "significado": "Cambiar 1 paquete por 10 sueltos."
+    },
+    {
+     "palabra": "Desagrupar",
+     "significado": "Abrir un paquete."
+    }
+   ],
+   "carpeta": [
+    "En 463 − 247, ¿alcanza 3 para restar 7?",
+    "Después del canje, ¿cuánto es 13 − 7?",
+    "Tomi hizo 352 − 128 y le dio 236. ¿Cuánto da?"
+   ],
+   "carpeta_nivel": [
+    "analizar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "no"
+    ],
+    [
+     "6"
+    ],
+    [
+     "224"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "6. 12. 7. 227.",
+    "solo": "416.",
+    "carpeta": [
+     "No: hay que abrir un paquete.",
+     "6. Resultado: 216.",
+     "224: Tomi dio vuelta 2 − 8."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "CUANDO NO ALCANZA",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "NO ALCANZA",
+        "texto": "SI ARRIBA HAY <b>MENOS</b> QUE ABAJO, NO PODEMOS RESTAR TODAVÍA."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "EN 352 − 128: 2 − 8 NO ALCANZA.",
+         "NO SE HACE 8 − 2.",
+         "<b>ABRIMOS UN PAQUETE</b> DE AL LADO: SON 10 SUELTOS MÁS, Y AL PAQUETE LE QUEDA UNO MENOS."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "columna",
+        "op": "resta",
+        "lleva": true
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "columna",
+        "op": "resta",
+        "lleva": true
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "NO ALCANZA",
+      "definicion": "SI ARRIBA HAY MENOS, NO RESTAMOS AL REVÉS.",
+      "ejemplo": "2 − 8 NO ALCANZA"
+     },
+     {
+      "concepto": "EL CANJE",
+      "definicion": "UN PAQUETE SE CAMBIA POR 10 SUELTOS.",
+      "ejemplo": "463 − 247 = 216"
+     }
+    ]
+   }
+  },
+  "4": {
+   "estilo": "primeros",
+   "objetivo": "Vas a controlar una resta con una suma.",
+   "vas_a_ver": [
+    "La suma deshace la resta",
+    "Sumar para controlar",
+    "Encontrar errores"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La suma deshace la resta",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Rosa tenía 352. Vendió 128. Le quedan 224."
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Controlar",
+       "texto": "Si sumo lo que quedó y lo que vendí, vuelvo al <b>principio</b>."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "224 + 128 = <b>352</b>. ¡La resta está bien!"
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Para controlar",
+       "texto": "224 + 128 = 352.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Encontrar un error",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Tomi hizo 463 − 247 = 226."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Controla: 226 + 247 = 473. ¡No da 463! Hay un error."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "El control",
+       "texto": "La suma no vuelve al principio.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá las restas. Las vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "¿Están bien?",
+       "texto": "Controlá con una suma.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Controlar 576 − 234",
+    "planteo": "La resta dio 342.",
+    "pasos": [
+     "Sumo 342 + 234.",
+     "Da 576.",
+     "¡Es el número de arriba: está bien!"
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Controlar 865 − 432",
+    "planteo": "Dio 433. Completá.",
+    "pasos": [
+     "433 + 432 = ___ .",
+     "¿Volvió al 865? ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "¿Está bien?",
+    "planteo": "Alguien hizo 700 − 300 = 300. Controlá con una suma."
+   },
+   "tip": {
+    "titulo": "Volver al principio",
+    "texto": "Resultado + lo que restaste = el de arriba."
+   },
+   "ojo": [
+    "Se suma el resultado con el de abajo.",
+    "Si no vuelve al principio, hay un error."
+   ],
+   "resumen": [
+    {
+     "titulo": "Controlar",
+     "texto": "Con una suma."
+    },
+    {
+     "titulo": "Sumar",
+     "texto": "Resultado + lo que restaste."
+    },
+    {
+     "titulo": "Comparar",
+     "texto": "Con el de arriba."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Controlar",
+     "significado": "Revisar si está bien."
+    },
+    {
+     "palabra": "Deshacer",
+     "significado": "Volver a como estaba."
+    }
+   ],
+   "carpeta": [
+    "Controlá 685 − 243 = 442. ¿Cuánto es 442 + 243?",
+    "¿Cuál de las restas está mal?",
+    "¿Cuánto es de verdad 530 − 210?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "685"
+    ],
+    [
+     "530 − 210",
+     "530 - 210",
+     "la del medio",
+     "la segunda"
+    ],
+    [
+     "320"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "865. Sí.",
+    "solo": "Está mal: 300 + 300 = 600. Da 400.",
+    "carpeta": [
+     "685: está bien.",
+     "530 − 210: 310 + 210 = 520.",
+     "320."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "LA SUMA DESHACE LA RESTA",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "CONTROLAR",
+        "texto": "PARA <b>CONTROLAR</b> UNA RESTA, SUMAMOS EL RESULTADO Y LO QUE RESTAMOS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "685 − 243 = 442.",
+         "442 + 243 = 685: ¡ESTÁ BIEN!"
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "columna",
+        "lleva": false
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "columna",
+        "op": "resta",
+        "que": "control"
+       }
+      }
+     },
+     {
+      "titulo": "ENCONTRAR ERRORES",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "ERRORES",
+        "texto": "SI LA SUMA <b>NO DA</b> EL NÚMERO DE ARRIBA, LA RESTA ESTÁ MAL."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "463 − 247 = 226: 226 + 247 = 473.",
+         "NO DA 463: HAY UN ERROR."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "columna",
+        "op": "resta",
+        "lleva": true
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "columna",
+        "op": "resta",
+        "lleva": true
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "CONTROLAR",
+      "definicion": "SUMAMOS EL RESULTADO Y LO QUE RESTAMOS.",
+      "ejemplo": "224 + 128 = 352"
+     },
+     {
+      "concepto": "ERRORES",
+      "definicion": "SI LA SUMA NO DA EL NÚMERO DE ARRIBA, HAY UN ERROR.",
+      "ejemplo": "226 + 247 ≠ 463"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "RESTÁ EN COLUMNAS: 576 − 234",
+    "o": {},
+    "r": {
+     "acepta": [
+      342
+     ]
+    },
+    "e": "U: 6 − 4. D: 7 − 3. C: 5 − 2.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "EN UNA RESTA, ¿QUÉ NÚMERO VA ARRIBA?",
+    "o": [
+     "EL MÁS GRANDE",
+     "EL MÁS CHICO",
+     "EL QUE SE VENDIÓ"
+    ],
+    "r": {
+     "correcta": "EL MÁS GRANDE"
+    },
+    "e": "DE ÉL SACAMOS.",
+    "n": "analizar"
+   },
+   {
+    "t": "fill_blank",
+    "p": "COMPLETÁ: 487 − 53 = ___",
+    "o": {},
+    "r": {
+     "huecos": [
+      [
+       "434"
+      ]
+     ]
+    },
+    "e": "7 − 3 = 4, 8 − 5 = 3, 4.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "LEO PUSO EL 53 DEBAJO DEL 48 EN 487 − 53. ¿QUÉ HIZO MAL?",
+    "o": [
+     "NO ALINEÓ LAS UNIDADES",
+     "NADA, ESTÁ BIEN",
+     "PUSO EL GRANDE ARRIBA"
+    ],
+    "r": {
+     "correcta": "NO ALINEÓ LAS UNIDADES"
+    },
+    "e": "EL 3 VA DEBAJO DEL 7.",
+    "n": "error"
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 865 − 432?",
+    "o": {},
+    "r": {
+     "acepta": [
+      433
+     ]
+    },
+    "e": "COLUMNA POR COLUMNA.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "UNÍ CADA RESTA CON SU RESULTADO.",
+    "o": {
+     "izquierda": [
+      "865 − 432",
+      "579 − 274",
+      "796 − 352"
+     ],
+     "derecha": [
+      "444",
+      "433",
+      "305"
+     ]
+    },
+    "r": {
+     "pares": {
+      "865 − 432": "433",
+      "579 − 274": "305",
+      "796 − 352": "444"
+     }
+    },
+    "e": "COLUMNA POR COLUMNA.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "SOFI HIZO 579 − 274 Y LE DIO 35. ¿CUÁNTO DA?",
+    "o": [
+     "305",
+     "35",
+     "350"
+    ],
+    "r": {
+     "correcta": "305"
+    },
+    "e": "LAS DECENAS DAN 0: SE ESCRIBE.",
+    "n": "error"
+   },
+   {
+    "t": "numeric",
+    "p": "[[problema]] EN UN COLEGIO HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      442
+     ]
+    },
+    "e": "685 − 243 = 442.",
+    "n": "analizar",
+    "neutro": {
+     "p": "EN UNA ESCUELA HABÍA 685 LIBROS Y SE PRESTARON 243. ¿CUÁNTOS LIBROS QUEDAN?"
+    }
+   }
+  ],
+  "3": [
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 352 − 128?",
+    "o": {},
+    "r": {
+     "acepta": [
+      224
+     ]
+    },
+    "e": "ABRO UN PAQUETE: 12 − 8 = 4.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "EN 352 − 128, 2 − 8 NO ALCANZA. ¿QUÉ HAGO?",
+    "o": [
+     "ABRO UN PAQUETE",
+     "HAGO 8 − 2",
+     "PONGO 0"
+    ],
+    "r": {
+     "correcta": "ABRO UN PAQUETE"
+    },
+    "e": "CANJE: 1 PAQUETE POR 10 SUELTOS.",
+    "n": "analizar"
+   },
+   {
+    "t": "fill_blank",
+    "p": "COMPLETÁ: 463 − 247 = ___",
+    "o": {},
+    "r": {
+     "huecos": [
+      [
+       "216"
+      ]
+     ]
+    },
+    "e": "13 − 7 = 6, 5 − 4 = 1, 4 − 2 = 2.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "TOMI HIZO 352 − 128 Y LE DIO 236. ¿CUÁNTO DA?",
+    "o": [
+     "224",
+     "236",
+     "230"
+    ],
+    "r": {
+     "correcta": "224"
+    },
+    "e": "NO SE HACE 8 − 2: SE ABRE UN PAQUETE.",
+    "n": "error"
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "224 + 128 = ___",
+    "o": {},
+    "r": {
+     "acepta": [
+      352
+     ]
+    },
+    "e": "VUELVE AL NÚMERO DE ARRIBA.",
+    "n": "aplicar"
+   },
+   {
+    "t": "true_false",
+    "p": "TOMI HIZO 463 − 247 = 226. ESTÁ BIEN.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "FALSO"
+    },
+    "e": "226 + 247 = 473, NO 463.",
+    "n": "error"
+   },
+   {
+    "t": "classify",
+    "p": "CONTROLÁ CON UNA SUMA. ¿ESTÁ BIEN O MAL?",
+    "o": {
+     "elementos": [
+      "685 − 243 = 442",
+      "530 − 210 = 310",
+      "796 − 352 = 444",
+      "463 − 247 = 226"
+     ],
+     "categorias": [
+      "BIEN",
+      "MAL"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "685 − 243 = 442": "BIEN",
+      "530 − 210 = 310": "MAL",
+      "796 − 352 = 444": "BIEN",
+      "463 − 247 = 226": "MAL"
+     }
+    },
+    "e": "SUMÁ EL RESULTADO Y LO QUE RESTÁS.",
+    "n": "analizar"
+   },
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES DE VERDAD 530 − 210?",
+    "o": {},
+    "r": {
+     "acepta": [
+      320
+     ]
+    },
+    "e": "320 + 210 = 530.",
+    "n": "aplicar"
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. 759 − 314 = ___",
+    "o": {},
+    "r": {
+     "acepta": [
+      445
+     ]
+    },
+    "e": "SIN CANJE.",
+    "tiempo": 40,
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "RELÁMPAGO. 5 − 9: ¿ALCANZA?",
+    "o": [
+     "NO",
+     "SÍ"
+    ],
+    "r": {
+     "correcta": "NO"
+    },
+    "e": "HAY QUE ABRIR UN PAQUETE.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. 15 − 9 = ___",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "DESPUÉS DEL CANJE.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. 300 + 200 = ___ (CONTROL DE 500 − 200)",
+    "o": {},
+    "r": {
+     "acepta": [
+      500
+     ]
+    },
+    "e": "VUELVE AL PRINCIPIO.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "RESTÁ EN COLUMNAS: 498 − 65",
+    "o": {},
+    "r": {
+     "acepta": [
+      433
+     ]
+    },
+    "e": "U: 8 − 5. D: 9 − 6. C: 4.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿POR QUÉ COLUMNA SE EMPIEZA A RESTAR?",
+    "o": [
+     "UNIDADES",
+     "CENTENAS",
+     "DECENAS"
+    ],
+    "r": {
+     "correcta": "UNIDADES"
+    },
+    "e": "DE DERECHA A IZQUIERDA.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "SOFI PUSO 234 ARRIBA Y 576 ABAJO. ESTÁ BIEN.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "FALSO"
+    },
+    "e": "EL MÁS GRANDE VA ARRIBA.",
+    "n": "error"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 967 − 523?",
+    "o": {},
+    "r": {
+     "acepta": [
+      444
+     ]
+    },
+    "e": "7 − 3, 6 − 2, 9 − 5.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 688 − 380?",
+    "o": {},
+    "r": {
+     "acepta": [
+      308
+     ]
+    },
+    "e": "8 − 0, 8 − 8, 6 − 3.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 745 − 132?",
+    "o": {},
+    "r": {
+     "acepta": [
+      613
+     ]
+    },
+    "e": "COLUMNA POR COLUMNA.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 463 − 247?",
+    "o": {},
+    "r": {
+     "acepta": [
+      216
+     ]
+    },
+    "e": "13 − 7 = 6. 5 − 4 = 1. 4 − 2 = 2.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 541 − 316?",
+    "o": {},
+    "r": {
+     "acepta": [
+      225
+     ]
+    },
+    "e": "11 − 6 = 5. 3 − 1 = 2. 5 − 3 = 2.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "TOMI HIZO 352 − 128 = 236. ¿QUÉ HIZO MAL?",
+    "o": [
+     "DIO VUELTA 2 − 8",
+     "NADA",
+     "SUMÓ"
+    ],
+    "r": {
+     "correcta": "DIO VUELTA 2 − 8"
+    },
+    "e": "HAY QUE ABRIR UN PAQUETE.",
+    "n": "error"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "CONTROLÁ 576 − 234 = 342. ¿CUÁNTO ES 342 + 234?",
+    "o": {},
+    "r": {
+     "acepta": [
+      576
+     ]
+    },
+    "e": "VUELVE AL NÚMERO DE ARRIBA.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "530 − 210 = 310 ESTÁ BIEN.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "FALSO"
+    },
+    "e": "310 + 210 = 520: DA 320.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "PARA CONTROLAR UNA RESTA, ¿QUÉ SUMO?",
+    "o": [
+     "RESULTADO + LO QUE RESTÉ",
+     "LOS DOS DE ARRIBA",
+     "NADA"
+    ],
+    "r": {
+     "correcta": "RESULTADO + LO QUE RESTÉ"
+    },
+    "e": "ASÍ VUELVO AL PRINCIPIO.",
+    "n": "analizar"
+   }
+  ]
+ ]
+}

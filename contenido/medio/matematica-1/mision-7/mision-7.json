@@ -1,1 +1,1386 @@
-{"subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3", "tema": 7, "estilo": "primeros", "actualizar_preguntas": true, "practica": "Práctica general: dinero y números", "examen_titulo": "Nivel jefe: dinero y números", "niveles": {"1": {"estilo": "primeros", "objetivo": "Vas a conocer las monedas y los billetes.", "vas_a_ver": ["Monedas y billetes", "El número dice cuánto vale", "Juntar dinero"], "secciones": [{"etapa": 1, "titulo": "Monedas y billetes", "bloques": [{"tipo": "parrafo", "texto": "En Argentina pagamos con <b>pesos</b>.", "neutro": {"texto": "Para comprar usamos <b>dinero</b>."}}, {"tipo": "definicion", "titulo": "Moneda y billete", "texto": "La <b>moneda</b> es de metal. El <b>billete</b> es de papel."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Monedas y billetes", "texto": "El número dice cuánto vale.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Juntar dinero", "bloques": [{"tipo": "parrafo", "texto": "Tres monedas de 10: <b>10, 20, 30</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Tres monedas de 10", "texto": "Son 30.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá el dinero. Lo vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Dinero de Sofi", "texto": "Contá monedas y billetes.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Dos monedas de 5", "planteo": "¿Cuánto son?", "pasos": ["Una de 5: 5.", "Otra de 5: 10.", "Son $10."]}, "ejemplo_incompleto": {"titulo": "Un billete y una moneda", "planteo": "$20 y $10. Completá.", "pasos": ["Billete: ___ .", "Con la moneda: ___ ."]}, "ejemplo_solo": {"titulo": "Tu alcancía", "planteo": "Si tenés 2 monedas de 10, ¿cuánto tenés?"}, "tip": {"titulo": "Mirá el número", "texto": "El número dice cuánto vale."}, "ojo": ["Una moneda de 10 vale 10, no 1.", "Billete y moneda sirven para pagar."], "resumen": [{"titulo": "Moneda", "texto": "De metal."}, {"titulo": "Billete", "texto": "De papel."}, {"titulo": "Número", "texto": "Dice cuánto vale."}], "glosario": [{"palabra": "Moneda", "significado": "Dinero de metal."}, {"palabra": "Billete", "significado": "Dinero de papel."}], "carpeta": ["¿Cuántos billetes hay?", "¿Cuántas monedas hay?", "¿Cuánto dinero vale el billete del dibujo?"], "respuestas_carpeta": [["1"], ["2"], ["20"]], "soluciones": {"incompleto": "20. 30.", "solo": "$20.", "carpeta": ["1.", "2.", "20."]}, "carpeta_nivel": ["aplicar", "aplicar", "aplicar"], "leccion": {"temas": [{"titulo": "MONEDAS Y BILLETES", "explicacion": [{"tipo": "definicion", "titulo": "EL DINERO", "texto": "EL DINERO TIENE <b>MONEDAS</b> DE METAL Y <b>BILLETES</b> DE PAPEL."}, {"tipo": "lista", "items": ["EL NÚMERO DICE CUÁNTO VALE.", "UNA MONEDA DE $5 VALE 5."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "contar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "contar"}}}, {"titulo": "JUNTAR DINERO", "explicacion": [{"tipo": "definicion", "titulo": "JUNTAR", "texto": "PARA SABER CUÁNTO HAY, SUMAMOS LO QUE <b>VALE</b> CADA UNO."}, {"tipo": "lista", "items": ["3 MONEDAS DE $10 SON $30, NO $3.", "CONTAMOS 10, 20, 30."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "contar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "contar"}}}], "recuerda": [{"concepto": "MONEDAS Y BILLETES", "definicion": "LAS MONEDAS SON DE METAL Y LOS BILLETES DE PAPEL.", "ejemplo": "UN BILLETE DE $20 VALE 20"}, {"concepto": "JUNTAR", "definicion": "SUMAMOS LO QUE VALE CADA MONEDA O BILLETE.", "ejemplo": "$10 + $10 = $20"}]}}, "2": {"estilo": "primeros", "objetivo": "Vas a contar dinero sumando.", "vas_a_ver": ["Contar sumando", "Empezar por lo que más vale", "El total"], "secciones": [{"etapa": 1, "titulo": "La caja de Sofi", "bloques": [{"tipo": "parrafo", "texto": "Sofi cuenta: <b>10, 20, 25, 26, 27</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "La caja", "texto": "Hay $27.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Primero lo grande", "bloques": [{"tipo": "definicion", "titulo": "Contar dinero", "texto": "Sumamos lo que <b>vale</b> cada una. Empezamos por la que <b>más vale</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Otra cuenta", "texto": "20, 30, 35.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá el dinero. Lo vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Para contar", "texto": "Empezá por el billete.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Contar $10, $5 y $1", "planteo": "¿Cuánto hay?", "pasos": ["10.", "10 y 5: 15.", "15 y 1: 16."]}, "ejemplo_incompleto": {"titulo": "Contar $20 y $5", "planteo": "Completá.", "pasos": ["20.", "20 y 5: ___ ."]}, "ejemplo_solo": {"titulo": "Tus monedas", "planteo": "¿Cuánto son 3 monedas de 10?"}, "tip": {"titulo": "Primero lo grande", "texto": "Empezá por el que más vale."}, "ojo": ["No cuentes monedas: sumá lo que valen.", "3 monedas de 10 son 30, no 3."], "resumen": [{"titulo": "Contar", "texto": "Sumando lo que vale."}, {"titulo": "Empezar", "texto": "Por lo que más vale."}, {"titulo": "Total", "texto": "Todo junto."}], "glosario": [{"palabra": "Total", "significado": "Todo junto."}, {"palabra": "Valer", "significado": "Lo que se puede comprar con eso."}], "carpeta": ["¿Cuánto vale el billete?", "¿Cuánto valen las dos monedas juntas?", "¿Cuánto hay en total?"], "respuestas_carpeta": [["20"], ["12"], ["32"]], "soluciones": {"incompleto": "25.", "solo": "$30.", "carpeta": ["20.", "12.", "32."]}, "carpeta_nivel": ["aplicar", "aplicar", "aplicar"], "leccion": {"temas": [{"titulo": "EMPEZAR POR LO QUE MÁS VALE", "explicacion": [{"tipo": "definicion", "titulo": "EL ORDEN", "texto": "PARA CONTAR DINERO, EMPEZÁ POR LO QUE <b>MÁS VALE</b> Y SEGUÍ SUMANDO."}, {"tipo": "lista", "items": ["$10 + $10 + $5: 10, 20, 25.", "DESPUÉS SUMÁS LAS MONEDAS DE $1."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "contar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "contar"}}}, {"titulo": "EL TOTAL", "explicacion": [{"tipo": "definicion", "titulo": "CUÁNTO HAY", "texto": "EL <b>TOTAL</b> ES TODO EL DINERO JUNTO, DESPUÉS DE SUMAR."}, {"tipo": "lista", "items": ["$20 + $10 + $2 = $32.", "SI TE PERDÉS, VOLVÉ A EMPEZAR."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "contar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "contar"}}}], "recuerda": [{"concepto": "PRIMERO LO QUE MÁS VALE", "definicion": "ASÍ CONTAMOS MÁS RÁPIDO Y SIN PERDERNOS.", "ejemplo": "10, 20, 25, 26"}, {"concepto": "EL TOTAL", "definicion": "ES TODO EL DINERO JUNTO DESPUÉS DE SUMAR.", "ejemplo": "$20 + $5 = $25"}]}}, "3": {"estilo": "primeros", "objetivo": "Vas a pagar justo, ni más ni menos.", "vas_a_ver": ["Pagar justo", "Contar hasta el precio", "Cuando no alcanza"], "secciones": [{"etapa": 1, "titulo": "Pagar justo", "bloques": [{"tipo": "parrafo", "texto": "El alfajor cuesta <b>$15</b>. Tomi da <b>$10 y $5</b>.", "neutro": {"texto": "La galleta cuesta <b>$15</b>. Tomi da <b>$10 y $5</b>."}}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Paga justo", "texto": "10, 15. ¡Justo!", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Cuando no alcanza", "bloques": [{"tipo": "definicion", "titulo": "Pagar justo", "texto": "Dar <b>lo mismo</b> que el precio. Si falta, <b>no alcanza</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Precios del kiosco", "texto": "Cada cosa con su precio.", "png_base64": "iVBORw0KGgoAAAANSUhEUgAAAgYAAADICAMAAACknNl/AAAAYFBMVEX////5+vrp6+zQ1Nf0tj+8qc/orj/Uoz+/l0OfoZpamdhMr1FKq09KkNlHkqaeg+Gbf+CkhkHiRTzHQzyDfYB2bGRNaXVJWF9ZST09TE0xR0soPkIqOz4kO0AkOz8kOz4OxBQhAAANuUlEQVR42u2d2XajOhBFA4Tpduw2bUAgYeX///JKTAYzOAwScnzOS8cOK12ITVWpNH18QBAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRCkRVbvkxMmhJDQRru8meIsCWsU7Jhylgsx5qJh3ktJlmWVI4g5JV9/pL7yHA3zXjFBUBDLH0JGvyoIJAccYeGt5AgMQhEP0htpIfjzJydombdSKDBwPuycdiD488VCtMybZYhZZlukTwFNLbTM+2WIMetTQJAZvGGGaFHSgYDcUlDwjhmiw786rsCEvMByY8Ko/ImKXmzsIkZpyBBbDL6+KE+do22SVSypGoPq5xgkqM4QP2Keky+SixpifDgELqkePKOp/JgSysrPt+P5/EWy3bCUY3VqiHZIGGN5evxYQli+/TQ9n06n/+QX/4kfTmdSopCjxL1HwHXCtPaxUiQObZkhJkl+/zKPwwNfOltacqOSgR4GkoTScnRkNzdxWHrbIqtUfEvHK51Bxvl3Xn2Zf5dtfVRGFt6ESempUQ8DISJ/DYewqUcQM4nA9fqv1fWafZcP/+HLQjjlI6JD6Qro/akPMDidKBzCpnAQCgiyztNuHrqkYPitBEH7W+cIE9n5NIvBKRUOgaKqsbKFySgEQqMYSDw4j23tFNDeIx/DoHQI4GBdyGW8GIVgEoPSI2h1CI54zdPTDzCQHDBwsDwgxMIVjENQBoXr1K/4LdTqCx4pmMDgROAPVlHwPfGkZzEQnoJzXRzYYxRMYSA5wOSoxRQUkw+6xODf9G+1cUDGKJjEQMaFGI92iWYpEN3D6wwGkgMt+UE4yA7nMTgJ5/FalWXLOrSb68xEhB8o0xKFRUi4nRZhcDYlLFhu+OT5OmGc5jdZqiNJ6NrPSnyOoopM9u/fJg7So0LCHAYyPTAiLAg/Njc5w4k7dfpSs8M2rrjaVhMSNlEg+43Kw4I7HhJmMZBhwTYDAz45P6MaK2UkTWOplJRe4TY1iGvH8nLbuJBQpQfKwwIZDwnzGJzNcAchT9MJhyBrdmKo9NJTnMqh0tHKnJOL8RSqAgOyMSRUYUFxc9tTzmAWA9FbYGZgcBGTZGg4Vq0Rw7WXoeQg77AyJ68nl4sKDJytIaFyB4prduL+zyswSPVVNZ5gcLmQgUOwUzlhaoCAa/+VILCBKxOug8m/pAKDeAdnIN2B0ua22JQzmMfgdDOhs1BhcBHDt70X3JJgDB3BX+vDkhxc8j4HVixuprxCAQY225wZVO6AqM61V2FATKgdhM3TJt2IbwlfMBIP/soL3ObysOsKbvWfUYBBuIsz+PevUNrckwniMwxOJiSJLQbSIbRz5OJRX3CRT9i5tNi490kAeXOJAgwIv+6CgdokkU7GhGcYME4MwqDjEJxxCuTLVOYGlyouEOvBFSjBQATdXSgQUUFhCcmajgnPMDChr9DFQKZ+uXzWKacjFMiX3/p7/1yGBekKuhfvj8Eu/YRSnFkqa0fnlRikBlSQwv57Lx2C5YwnBlabGDTXUkt2KHp/YH8M9koN1CYHIoyeVmJw1jTwtQAD6RBIPOYMOunh3R3IDkafmP0xiHdKDdR2GUV/eS0GJuSI4SALkIMI6Xx62D7y4ZX7Y0B2xEBdcxNK/ptUicG0cpqah8FltLPYTw+bC9ngQpMxuGKSxwIMhLN/mh7WGOQX9RjkwMAUDAbpITD49RjEg6Awkh7WQeGCoPBLMUiHid9IeliniIPRp3fF4LeliGLSAHlw9mPpYRU8SDm4jA6jDF1bOoymYSDW1hHH7ScHo+lhFRMssYy/7xDetXyUbCofhWZhkIsZZmIsOe++4+PpoRCTPvaxjKiimJzvhMH3zVI5zvxbismygujUBfL4SXpY1pLtemVhxyHsj4HNv/dKDRSO5Nm/ZmipHE+ovu30ASbSw8t98pTTdQgKBpr36jGq7SiwDQPNuTkYNKOLzboANp8exp19GrqjjAowiHebdqJyBGcmR3w67SQ1BgPSn27s0LpQbE+lh73dOu5zDhRgsNNIs5iibh0yI/UJBqkBA4w1Bt2ZRy0HFSCONZIYiOGn/j607QwkFVNS96kcKJ6SOj0//QkGrNo30QAMyMjKA5vwaq7x0BfILZwGuzzWDkEFBu4u7uBbcT5OJruMsxiYsV5FYPA4K7m7zxBLH8uEcbmIxR3fhiJXgoFFd3AHylcxOpN9hSfLVUxYvRZyNrmK0Za7jsm1a3G7ZEk6Ap5PrH6VaxWYipsKt7uD67fyaeB0KkmcxYBzYsYaRho+24Owq1s6vQS6XOmkAANr++q1Qr3rnVypMIcBNWOHAzt+stu82JG0XMBaLWqNn6xsd0hoqdlS6LoxJBDl+zOI2DXeWZjBIDXDGfx0d1rHdV3Htg50WoXhIaHKDthCDG7YDW0RiOkWDq6Fnmw8Hg8L0xhQI9axvpBE/7XYQoEWRzYRFiYxeKmQ8OocCAp07U8swsLt/GMMUmyQuY6DNXli9s31nWgSjnEwgYEoHN2wj/pyDlK+vN94zTnXea5NPMLBOAZysh8oWLl/+kKHIFxB7mjewHHAwSgGkgKkh+sdwigI1+t1bO/UQvsG6tWmYvQZBvKMFUSEDQ5BOPnvh/2Rr/LghMcvy03069lU2jd67zuEIQbSFVCcvLVpP8+0OmPnWimTr7w445BVB+90vzzq+DW7HH07T2JwxuEq+xy0Ux1g1ojKYQ47THtfsiOPX5MOQZg1ikFpJkVA2OnwtThNidi4s7N/r+W49Zex61hH925LFM8PGJzLIVq4gvdxWZVzuonTOM/y8+mc1udxshg1o7dKZ5sDeT/uh/Nygl7i+7kEMUrPWgyMOC4WOoyFMmsEARAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRBULsEkT5Qm+hflWWL/ArJMaaxvpwPDzVuq4bbp47qlWjeVcRLG14jq2RCvOnZgjXm2oef1cpoEgT+vIMoYZxo5cMTmV1n0zKyhmbmezUXsDebZRlJQRJ8/kpdo5EBQkHmfa+TnGjgQFGT+avPM40Cccxb8+BYSnusKbelaCsqGVr7FSGK2eR/Ld/lMFtxCrutsEJsVa5v58zNQvlG5xbjJ5n2sOFYyWHAHka5jw8SB3Z/rVaim1d1kHuWOcTEhX+TQdB0sm/JoQzsnqt1ubLZ5yrHmXE9yQLi/oZ2VO610kQ89zKcuwOAhNfD9J+7W1hSr+nZ4vmdSOxOzzVsRg/sYeHfv4EetumFNFwbeQ8t12t3vG+VHWZZFvs52fqQ0unsHL0oyaY83bV7Ak9fBIGoLX5lRGCRFaVSb00T1ZqSRERi0rdbYE1XmdoszpmMgSoWcZlGFrjkYiBdMVGuSKCi/y3gPg7uZ0UEY9My7m1ORMWae2Rh4WVv3rm+gMCIoBEWvJTPR4ncMPPHLIvDkNdQ7BIO+eVGRBZ4X0frtacxjXfPMxiCRpgtvQFsM8pEur3YMfPmExeuWF/cX6o5BVDd/0n3fdGJQPmhpHiv//zrFjuqXadQ8szEQ9xOVuYEf1XdCfTHkdDQG0it5MjfwomCIQVZ736gbvHRiUJsXdM2TBZbKwsa8oGue2RjwBoN+0M2jwzGgXtTPye4YSO/rd9r9OAwecsbqsedj5pmNAZXH1twHzu7JTXI0BjzPeOSNYiDt8+p2pgdhMDDv0xOPv/ArD1ua58nOwmtg0Dx3mnhVT0fkYkne5rxHYeA1RxNk0RADr4tBcUhuMGKenzepAH89DJourswJ5L14bfchO7Sn4GeDPtfdGxRHe4OOeU1T+rS1tRij1PS6gRdEvHgIA0E3qh1UPhKFuMouf4BBE3yDo1LEoXmyB9kUj14wN6iriPL9z83CoKwiRh13MN5TSI6sIrbmRWWp4HOmI2M2BkFdTK4LBlGnmnBo3aAqzvneKAbN48+6KYxODGrzgs+mfiRt6yWQyWvVDcopljwL8uq5cyo+Blm/DnpET6FIIj/hUdK4f1HWlImA+CeoMrQi8qOez9LaUyiyrnllnp1V8qouA6/N816mblCr7OtwQ8YUOlX6pHFPnZQxaI0OPo/qMHbaqfOxvIW21MyCFxlTiLJ6MKwqHdSfeJF4h2IQVJ3Wto71gMFnUPXY8uCYEUa/b94jBmPmGZ8i+oEoH3n3fkOSRP26yDEpoic6Ze2IvShwN/LrEb6oGX08JkXsmtexLvicMO+l5htMzKY0YNrJ8dN7Zqad/GhqMjAABi+AwWcUGYlBEHkmY7DMvBfA4OkU+2MwMGzqb75p4jQw0NPO2mcmv/4E9WzheiCsU/iFGDjLMPCr48g/NKxa2rYeJDR5UZV5GFjUrBR8bbDSvOJ22xLLzLg1jAtX42Xc1eWl6Ppm9pWvv7f5hgXXwqUat/ON2xkO+0GKy3TdANngdjP1Pstw85ZHBfJzDsRs+1AfnqsbWkyyV+50XWa0eSv8GxGDRz/IxzwxxUYnxqGc3bc8H/fF7kI6mtm9GW3eCg5SOYxI83nJcTKmdVl+KNcmPjPrUXJUNNfSzK5skcJY81Zti/iDLfFYqntjRLHv4PI953JtOw8K8+iK7fDM3RhR3pPtzMu2jjHrmV0PVtowD4IgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgaJ3+B1rad+uWYahtAAAAAElFTkSuQmCC"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá los precios. Los vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Para pagar", "texto": "¿Con qué pagás justo?", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Pagar $20", "planteo": "Una pelota cuesta $20.", "pasos": ["Doy $10: 10.", "Doy otra de $10: 20.", "¡Justo!"]}, "ejemplo_incompleto": {"titulo": "Pagar $7", "planteo": "Completá.", "pasos": ["Doy $5: 5.", "Me faltan ___ ."]}, "ejemplo_solo": {"titulo": "Un caramelo", "planteo": "Un caramelo cuesta $5. ¿Alcanza con $2?"}, "tip": {"titulo": "Contá hasta el precio", "texto": "Pagar justo es llegar al precio."}, "ojo": ["Con $10 no alcanza para $15.", "Pagar justo: ni más ni menos."], "resumen": [{"titulo": "Justo", "texto": "Ni más ni menos."}, {"titulo": "Contar", "texto": "Hasta el precio."}, {"titulo": "Si falta", "texto": "No alcanza."}], "glosario": [{"palabra": "Precio", "significado": "Lo que cuesta algo."}, {"palabra": "Alcanzar", "significado": "Tener lo que hace falta."}], "carpeta": ["¿Cuánto cuesta el vaso?", "¿Cuánto cuesta la estrella?", "Para el vaso das $10. ¿Cuánto falta?"], "respuestas_carpeta": [["12"], ["25"], ["2"]], "soluciones": {"incompleto": "2.", "solo": "No. Faltan 3.", "carpeta": ["12.", "25.", "2."]}, "carpeta_nivel": ["aplicar", "aplicar", "aplicar"], "leccion": {"temas": [{"titulo": "PAGAR JUSTO", "explicacion": [{"tipo": "definicion", "titulo": "JUSTO", "texto": "PAGAR <b>JUSTO</b> ES DAR EL MISMO DINERO QUE EL PRECIO: NI MÁS NI MENOS."}, {"tipo": "lista", "items": ["SI CUESTA $15: $10 + $5.", "CONTÁ HASTA LLEGAR AL PRECIO."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "pagar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "pagar"}}}, {"titulo": "CUANDO NO ALCANZA", "explicacion": [{"tipo": "definicion", "titulo": "FALTA", "texto": "SI DAS MENOS QUE EL PRECIO, <b>NO ALCANZA</b>: FALTA DINERO."}, {"tipo": "lista", "items": ["CUESTA $7 Y DAS $5: FALTAN $2.", "CONTÁ DESDE LO QUE DAS HASTA EL PRECIO."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "falta"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "falta"}}}], "recuerda": [{"concepto": "PAGAR JUSTO", "definicion": "ES DAR EL MISMO DINERO QUE DICE EL PRECIO.", "ejemplo": "CUESTA $12: $10 + $1 + $1"}, {"concepto": "CUÁNTO FALTA", "definicion": "CONTAMOS DESDE LO QUE DAMOS HASTA EL PRECIO.", "ejemplo": "DE $10 A $12 FALTAN $2"}]}}, "4": {"estilo": "primeros", "objetivo": "Vas a comparar precios.", "vas_a_ver": ["Más caro", "Más barato", "El precio"], "secciones": [{"etapa": 1, "titulo": "Más caro y más barato", "bloques": [{"tipo": "parrafo", "texto": "El jugo cuesta <b>$20</b>. El chupetín, <b>$5</b>.", "neutro": {"texto": "El jugo cuesta <b>$20</b>. La paleta, <b>$5</b>."}}, {"tipo": "definicion", "titulo": "Comparar precios", "texto": "El número <b>más grande</b> es el <b>más caro</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Precios", "texto": "¿Cuál es más caro?", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Ordenar precios", "bloques": [{"tipo": "parrafo", "texto": "Del más barato al más caro: <b>$5, $10, $20</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "En orden", "texto": "Del más barato al más caro.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá los precios. Los vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Para comparar", "texto": "Compará los precios.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "$10 y $30", "planteo": "¿Cuál es más caro?", "pasos": ["30 es más que 10.", "El de $30 es más caro."]}, "ejemplo_incompleto": {"titulo": "$8 y $18", "planteo": "Completá.", "pasos": ["___ es más que 8.", "El más barato es el de $ ___ ."]}, "ejemplo_solo": {"titulo": "Elegí", "planteo": "¿Qué es más barato: algo de $20 o algo de $12?"}, "tip": {"titulo": "Mirá el número", "texto": "El más grande es el más caro."}, "ojo": ["Más caro no es más grande de tamaño.", "Comparamos los números del precio."], "resumen": [{"titulo": "Más caro", "texto": "Número más grande."}, {"titulo": "Más barato", "texto": "Número más chico."}, {"titulo": "Precio", "texto": "Lo que cuesta."}], "glosario": [{"palabra": "Caro", "significado": "Que cuesta mucho."}, {"palabra": "Barato", "significado": "Que cuesta poco."}], "carpeta": ["¿Cuánto cuesta lo más caro?", "¿Cuánto cuesta lo más barato?", "¿Cuánto cuesta el globo que está dibujado?"], "respuestas_carpeta": [["30"], ["8"], ["15"]], "soluciones": {"incompleto": "18. 8.", "solo": "El de $12.", "carpeta": ["30.", "8.", "15."]}, "carpeta_nivel": ["aplicar", "aplicar", "aplicar"], "leccion": {"temas": [{"titulo": "MÁS CARO Y MÁS BARATO", "explicacion": [{"tipo": "definicion", "titulo": "COMPARAR PRECIOS", "texto": "LO MÁS <b>CARO</b> TIENE EL PRECIO MÁS GRANDE Y LO MÁS <b>BARATO</b>, EL MÁS CHICO."}, {"tipo": "lista", "items": ["$20 ES MÁS CARO QUE $5.", "COMPARÁ COMO COMPARÁS NÚMEROS."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "caro"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "caro"}}}, {"titulo": "EL PRECIO", "explicacion": [{"tipo": "definicion", "titulo": "EL PRECIO", "texto": "EL <b>PRECIO</b> ES EL NÚMERO QUE DICE CUÁNTO CUESTA ALGO."}, {"tipo": "lista", "items": ["UN GLOBO DE $15 CUESTA 15.", "PARA COMPRARLO HAY QUE JUNTAR ESE DINERO."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero", "que": "pagar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero", "que": "caro"}}}], "recuerda": [{"concepto": "MÁS CARO", "definicion": "ES LO QUE TIENE EL PRECIO MÁS GRANDE.", "ejemplo": "$30 ES MÁS CARO QUE $8"}, {"concepto": "MÁS BARATO", "definicion": "ES LO QUE TIENE EL PRECIO MÁS CHICO.", "ejemplo": "$8 ES MÁS BARATO QUE $30"}]}}}, "act": {"1": [{"t": "multiple_choice", "p": "¿CUÁNTO VALE UNA MONEDA DE $5?", "o": ["1", "5", "10"], "r": {"correcta": "5"}, "e": "LO DICE SU NÚMERO.", "n": "recordar"}, {"t": "numeric", "p": "🪙 $10 + 🪙 $10 + 🪙 $10. ¿CUÁNTOS PESOS SON?", "o": {}, "r": {"acepta": [30]}, "e": "10, 20, 30.", "n": "aplicar", "neutro": {"p": "🪙 $10 + 🪙 $10 + 🪙 $10. ¿CUÁNTO ES?"}}, {"t": "multiple_choice", "p": "LEO TIENE 3 MONEDAS DE $10 Y DICE QUE TIENE $3. ¿CUÁNTO TIENE DE VERDAD?", "o": ["$30", "$3", "$13"], "r": {"correcta": "$30"}, "e": "CADA MONEDA VALE 10: 10, 20, 30.", "n": "error"}, {"t": "classify", "p": "¿ES MONEDA O BILLETE?", "o": {"elementos": ["DE METAL", "DE PAPEL", "REDONDA Y CHICA", "RECTANGULAR"], "categorias": ["MONEDA", "BILLETE"]}, "r": {"categorias": {"DE METAL": "MONEDA", "DE PAPEL": "BILLETE", "REDONDA Y CHICA": "MONEDA", "RECTANGULAR": "BILLETE"}}, "e": "LAS MONEDAS SON DE METAL; LOS BILLETES, DE PAPEL.", "n": "aplicar"}], "2": [{"t": "numeric", "p": "$10 + $10 + $5 + $1 + $1. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [27]}, "e": "10, 20, 25, 26, 27.", "n": "aplicar"}, {"t": "numeric", "p": "$20 + $10 + $5. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [35]}, "e": "20, 30, 35.", "n": "aplicar"}, {"t": "ordering", "p": "ORDENÁ PARA CONTAR: PRIMERO LO QUE MÁS VALE.", "o": ["$1", "$10", "$5", "$20"], "r": {"orden": ["$20", "$10", "$5", "$1"]}, "e": "DE LO QUE MÁS VALE A LO QUE MENOS.", "n": "aplicar"}, {"t": "numeric", "p": "[[problema]] SOFI TIENE UN BILLETE DE $20 Y DOS MONEDAS DE $1. ¿CUÁNTO DINERO TIENE?", "o": {}, "r": {"acepta": [22]}, "e": "20, 21, 22.", "n": "analizar"}], "3": [{"t": "multiple_choice", "p": "EL ALFAJOR CUESTA $15. ¿QUÉ DAS PARA PAGAR JUSTO?", "o": ["$10 + $5", "$10", "$5 + $5"], "r": {"correcta": "$10 + $5"}, "e": "10, 15. ¡JUSTO!", "n": "aplicar", "neutro": {"p": "LA GALLETA CUESTA $15. ¿QUÉ DAS PARA PAGAR JUSTO?"}}, {"t": "numeric", "p": "ALGO CUESTA $7. DAS $5. ¿CUÁNTO FALTA?", "o": {}, "r": {"acepta": [2]}, "e": "5, 6, 7: FALTAN 2.", "n": "aplicar"}, {"t": "multiple_choice", "p": "JUAN QUIERE UN JUGO DE $12 Y DA $10. DICE QUE LE ALCANZA. ¿TIENE RAZÓN?", "o": ["NO, FALTAN $2", "SÍ, ALCANZA", "NO, FALTAN $10"], "r": {"correcta": "NO, FALTAN $2"}, "e": "10 ES MENOS QUE 12: FALTAN 2.", "n": "error"}, {"t": "fill_blank", "p": "COMPLETÁ PARA PAGAR $16 JUSTO: $10 + $5 + $___", "o": {}, "r": {"huecos": [["1"]]}, "e": "10, 15, 16.", "n": "aplicar"}], "4": [{"t": "multiple_choice", "p": "¿CUÁL DE LOS DOS CUESTA MÁS?", "o": ["🧃 $20", "🍭 $5"], "r": {"correcta": "🧃 $20"}, "e": "20 ES MÁS QUE 5.", "n": "aplicar"}, {"t": "multiple_choice", "p": "¿CUÁL DE LOS DOS CUESTA MENOS?", "o": ["🍎 $10", "⚽ $30"], "r": {"correcta": "🍎 $10"}, "e": "10 ES MENOS QUE 30.", "n": "aplicar"}, {"t": "ordering", "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.", "o": ["🎈 $15", "⚽ $30", "🍎 $8"], "r": {"orden": ["🍎 $8", "🎈 $15", "⚽ $30"]}, "e": "8, 15 Y 30: DEL PRECIO MÁS CHICO AL MÁS GRANDE.", "n": "analizar"}, {"t": "multiple_choice", "p": "MICA DICE QUE UN LÁPIZ DE $9 ES MÁS CARO QUE UNA GOMA DE $12 PORQUE 9 ES UN NÚMERO GRANDE. ¿CUÁL ES MÁS CARO?", "o": ["LA GOMA", "EL LÁPIZ"], "r": {"correcta": "LA GOMA"}, "e": "12 ES MÁS QUE 9.", "n": "error"}], "5": [{"t": "numeric", "p": "RELÁMPAGO. $10 + $10. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [20]}, "e": "10, 20.", "tiempo": 30, "n": "aplicar"}, {"t": "numeric", "p": "RELÁMPAGO. $20 + $5. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [25]}, "e": "20, 25.", "tiempo": 30, "n": "aplicar"}, {"t": "multiple_choice", "p": "RELÁMPAGO. ¿CUÁL ES MÁS CARO?", "o": ["$8", "$18"], "r": {"correcta": "$18"}, "e": "18 ES MÁS QUE 8.", "tiempo": 30, "n": "aplicar"}, {"t": "numeric", "p": "RELÁMPAGO. ALGO CUESTA $12. DAS $10. ¿CUÁNTO FALTA?", "o": {}, "r": {"acepta": [2]}, "e": "10, 11, 12.", "tiempo": 30, "n": "aplicar"}]}, "examen": [[1, {"t": "multiple_choice", "p": "LA MONEDA ES DE…", "o": ["PAPEL", "METAL"], "r": {"correcta": "METAL"}, "e": "EL BILLETE ES DE PAPEL.", "n": "recordar"}], [1, {"t": "multiple_choice", "p": "¿CUÁNTO VALE UN BILLETE DE $20?", "o": ["2", "20", "200"], "r": {"correcta": "20"}, "e": "LO DICE SU NÚMERO.", "n": "recordar"}], [1, {"t": "numeric", "p": "TRES MONEDAS DE $10. ¿CUÁNTOS PESOS SON?", "o": {}, "r": {"acepta": [30]}, "e": "10, 20, 30.", "n": "aplicar", "neutro": {"p": "TRES MONEDAS DE $10. ¿CUÁNTO ES?"}}], [2, {"t": "numeric", "p": "$10 + $5 + $1. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [16]}, "e": "10, 15, 16.", "n": "aplicar"}], [2, {"t": "numeric", "p": "$20 + $10 + $2. ¿CUÁNTO ES?", "o": {}, "r": {"acepta": [32]}, "e": "20, 30, 32.", "n": "aplicar"}], [2, {"t": "multiple_choice", "p": "TOMI TIENE 3 MONEDAS DE $10 Y DICE QUE SON $3. ¿CUÁNTO ES DE VERDAD?", "o": ["$30", "$3"], "r": {"correcta": "$30"}, "e": "SUMAMOS LO QUE VALEN.", "n": "error"}], [3, {"t": "multiple_choice", "p": "ALGO CUESTA $12. ¿QUÉ DAS PARA PAGAR JUSTO?", "o": ["$10 + $1 + $1", "$10 + $5", "$5 + $5"], "r": {"correcta": "$10 + $1 + $1"}, "e": "10, 11, 12. ¡JUSTO!", "n": "aplicar"}], [3, {"t": "fill_blank", "p": "COMPLETÁ PARA PAGAR $25 JUSTO: $20 + $___", "o": {}, "r": {"huecos": [["5"]]}, "e": "20, 25.", "n": "aplicar"}], [3, {"t": "numeric", "p": "ALGO CUESTA $20. DAS $10. ¿CUÁNTO FALTA?", "o": {}, "r": {"acepta": [10]}, "e": "10, 20: FALTAN 10.", "n": "aplicar"}], [4, {"t": "multiple_choice", "p": "¿CUÁL DE LOS DOS CUESTA MÁS?", "o": ["$8", "$18"], "r": {"correcta": "$18"}, "e": "18 ES MÁS QUE 8.", "n": "aplicar"}], [4, {"t": "multiple_choice", "p": "¿CUÁL DE LOS DOS CUESTA MENOS?", "o": ["$20", "$12"], "r": {"correcta": "$12"}, "e": "12 ES MENOS QUE 20.", "n": "aplicar"}], [4, {"t": "ordering", "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.", "o": ["$25", "$9", "$14"], "r": {"orden": ["$9", "$14", "$25"]}, "e": "9, 14 Y 25.", "n": "aplicar"}], [4, {"t": "multiple_choice", "p": "[[problema]] UN JUGO CUESTA $20 Y UN CHUPETÍN $5. ¿CUÁL ES MÁS CARO?", "o": ["EL JUGO", "EL DE $5"], "r": {"correcta": "EL JUGO"}, "e": "20 ES MÁS QUE 5.", "n": "analizar", "neutro": {"p": "UN JUGO CUESTA $20 Y UNA PALETA $5. ¿CUÁL ES MÁS CARO?"}}]]}
+{
+ "subject_id": "37dacb79-7f3f-4f6f-a520-5dd41b97ebb3",
+ "tema": 7,
+ "estilo": "primeros",
+ "actualizar_preguntas": true,
+ "practica": "Práctica general: dinero y números",
+ "examen_titulo": "Nivel jefe: dinero y números",
+ "niveles": {
+  "1": {
+   "estilo": "primeros",
+   "objetivo": "Vas a conocer las monedas y los billetes.",
+   "vas_a_ver": [
+    "Monedas y billetes",
+    "El número dice cuánto vale",
+    "Juntar dinero"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Monedas y billetes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En Argentina pagamos con <b>pesos</b>.",
+       "neutro": {
+        "texto": "Para comprar usamos <b>dinero</b>."
+       }
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Moneda y billete",
+       "texto": "La <b>moneda</b> es de metal. El <b>billete</b> es de papel."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Monedas y billetes",
+       "texto": "El número dice cuánto vale.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Juntar dinero",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Tres monedas de 10: <b>10, 20, 30</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Tres monedas de 10",
+       "texto": "Son 30.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá el dinero. Lo vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Dinero de Sofi",
+       "texto": "Contá monedas y billetes.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Dos monedas de 5",
+    "planteo": "¿Cuánto son?",
+    "pasos": [
+     "Una de 5: 5.",
+     "Otra de 5: 10.",
+     "Son $10."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Un billete y una moneda",
+    "planteo": "$20 y $10. Completá.",
+    "pasos": [
+     "Billete: ___ .",
+     "Con la moneda: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Tu alcancía",
+    "planteo": "Si tenés 2 monedas de 10, ¿cuánto tenés?"
+   },
+   "tip": {
+    "titulo": "Mirá el número",
+    "texto": "El número dice cuánto vale."
+   },
+   "ojo": [
+    "Una moneda de 10 vale 10, no 1.",
+    "Billete y moneda sirven para pagar."
+   ],
+   "resumen": [
+    {
+     "titulo": "Moneda",
+     "texto": "De metal."
+    },
+    {
+     "titulo": "Billete",
+     "texto": "De papel."
+    },
+    {
+     "titulo": "Número",
+     "texto": "Dice cuánto vale."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Moneda",
+     "significado": "Dinero de metal."
+    },
+    {
+     "palabra": "Billete",
+     "significado": "Dinero de papel."
+    }
+   ],
+   "carpeta": [
+    "¿Cuántos billetes hay?",
+    "¿Cuántas monedas hay?",
+    "¿Cuánto dinero vale el billete del dibujo?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "1"
+    ],
+    [
+     "2"
+    ],
+    [
+     "20"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "20. 30.",
+    "solo": "$20.",
+    "carpeta": [
+     "1.",
+     "2.",
+     "20."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "MONEDAS Y BILLETES",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "EL DINERO",
+        "texto": "EL DINERO TIENE <b>MONEDAS</b> DE METAL Y <b>BILLETES</b> DE PAPEL."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "EL NÚMERO DICE CUÁNTO VALE.",
+         "UNA MONEDA DE $5 VALE 5.",
+         "PARA SABER CUÁNTO HAY, SUMAMOS LO QUE <b>VALE</b> CADA UNO."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "contar"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "contar"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "MONEDAS Y BILLETES",
+      "definicion": "LAS MONEDAS SON DE METAL Y LOS BILLETES DE PAPEL.",
+      "ejemplo": "UN BILLETE DE $20 VALE 20"
+     },
+     {
+      "concepto": "JUNTAR",
+      "definicion": "SUMAMOS LO QUE VALE CADA MONEDA O BILLETE.",
+      "ejemplo": "$10 + $10 = $20"
+     }
+    ]
+   }
+  },
+  "2": {
+   "estilo": "primeros",
+   "objetivo": "Vas a contar dinero sumando.",
+   "vas_a_ver": [
+    "Contar sumando",
+    "Empezar por lo que más vale",
+    "El total"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La caja de Sofi",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Sofi cuenta: <b>10, 20, 25, 26, 27</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "La caja",
+       "texto": "Hay $27.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Primero lo grande",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Contar dinero",
+       "texto": "Sumamos lo que <b>vale</b> cada una. Empezamos por la que <b>más vale</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Otra cuenta",
+       "texto": "20, 30, 35.",
+       "png_base64": "iVBORw0KGgoAAAANSUhEUgAAAYIAAADECAMAAAClUtZ+AAAAYFBMVEX////6+/v0tj/r8e3S6dbiwXyu1rW2vr9uunlMr1Dbpz/Alz+MnZNIoGEvj1ufhD94gntwcFVfaV5Qgmg+iUo8a1Ilckgha0MoZkQeYj0dXjtQV0U2S0ksQEElOz8kOz89bSVfAAAI/0lEQVR42u2d65aiOhCFxWQBDXG4dHOmRwJ5/7c8lQCCSiuXBLXd358e7FmTsXZSVbkVux0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAURPrpEOHBwncVOLolXagBC4RIUyFEwNwbgbeNBdx7jAJ/3fHveBQLLCJyqXqKVDiUIRB51bdV52mwsQzp8fjHJf+OnzP/R16Qa1tUZWLISm2gKuVOvj4ThW5Mnhqr9ZPgW0rwefzrVIK/x2KmTaj/V1kS7XviRFsmt987WUryyiS+aEzpxt5WgoAEKJP9FVFCxsotd05B/2YZXzcWZ/SLlL2lBCwdt4khkaoSFr85J3+XReNtacVl8IYS0BCokv2PRBkNBGt9MyAjxzcaKzcbCE8kQVCrMtrfIpZKWnJG4uch0I26yqLgryEBGSXZ34H6ph0NUlXfb0yqgr2TBMEEBQg7GqSqiu+3RYJvocGzSEBeaIoCRgO23gtNUcBokHvvIgGTExXQGuRrI7Gq42ltkS8S7yJBrsqJCuyjSq1LF73pcu/juubvIUGgqmg/2SyqYuvc0GS5KS9ShfcOEsxwQ5pslSua7oZavyfeQYJ0Tr9c64qKWXJv4IqeQQJW1dEcq5B3yFcMAjmrLRpz4vdLIFQ2zyr7SvHlU4JkXluRqrwHS3AQB7cSUIYS7+f2zHTp+nQ9c8TpaBA8WoKdaP8U+px5O4+H3TMfPi2WIJgXCdqeyZamQ3NHnE6KHixBuPPbP50Gf/OBf/a0XIIL15CdhkQUx3G/k5LENnrm2IiLuy4QN1wOE6n4AyU4NPvZjB+MBMz3zf8mNNLQmrt5DNdJINXZd5bJaX+AiE9Lx2q4jpos9ERMVWMTjW5sNZRXbi94nASHUyDSZvbDrvPrjk+egPc/lktwZpWIdm+r0gwE2h2oWwkivZcmh7aJF+ZEI04vzqQqS71T+pMEyeLIY0ECMjcnR3QQA49/aCRofxhFDmskGFolqnojkEMoWwkSpT14OVxLrZelKdehIGntHhsJkoi4HiX54yQgNyP6cNzFhp3+RLRDQ9z2RPclGFoloyVMmURJ0nn8RoLmZyPEKRhwOylpRXvVKoqTVoLrSLBcb1ujgPkX8Za+Ojs0vT/sFVkuwdAqJa0VyeFjIwGNjUh3xsF4WeifL+KOMXt2Hgvq66270mk8vi1B2LprPxwq4IV/LEqQD3IU6uh1XZ5OsHQSqE6CavA3F81ZK7W/SndUpZpDMyRBVY3EAsczgzsZ0ekYm+gypFYBNxLsy8YxZz9IIFdK4Kl6ZD/anBzTDWkh4up6++6hEuj52I7mYzuvUYB1CtiLBcWZb6DjI7JLhG45oqUSjOWkmRpmW5m6CtnZYyXQs2Odm+qsJ2RNHBgkRuszouLCPdPptq4f3gjH1kZBMy8o+188mQR6eUhnRMyYOSQl+MnctuYFQ0ekfbJMkiZFjOPSpCjG+GWkJwex9VgQUeSJlT6ZQf+mno8ktbqaQD/SEXGa//o7rpOgxto7z8Atzo6HEpQ6HNeNV+gSdnUVIlYsIY9lRDQDrM2405PBejwc80fOC9qcKGwlaOAW14jEIPrRmVpJs+OkOUrVYixuzt+ut0p+1cPN0W1pjlHG5hC3TEbWxtnjYkGoF4WY36xX+7zDt7hSerlmIMfX8y8mrXW9cHac/LxGZFqJxn5fPMtitZv9An6xjSWTSVv4ha01ojMJflitTn+3BJf+OYkmreEvXSmVY+eoH7p1OUGCO65mtQT53K3ENVa5iscTkI9crN5k73jJrlldb7drFivp/XIJFuwdL/fOfGx+/NiTRK95gmKFa5jt9qK6Yr9eAj7nOOPaLHG223OcDz3Jabp85jBY4xq8eYcn9UbeG5ym2/FqVjTIVh21DeaNudL1IHiSk9VizinDtac803knqyV7Cwm8Oa5obYYy5xz36ssMr3PFg1xRsokbal1R/DRu6Hnumompp/7pkAVff9tPRptdbHudG5cTr+CRAus9A/m9SRqU1q45v8a94ylXge0oYDSYIPg2CjzT7Xuh7sVk2l+s7ERHL71Za8HyVf/XqUEhbpeF0CUJrBnFS9XtcgtWC168TiWWW8VR9rHlwhw3i47EuuyL9471iDwaCFU2NhJ0oSbL5Wl06Z1qTPFIN5bzd63KxVN9gOJi5yzWdw2k/QJ1pgTbVWPmqMCGlSU/j//+PFdtOlMajUrTZYm58tLWi8vdFO3jadXWwWsbM8cb800rBFKFxn//ueMvVcmcHyqDdFigUdVF6s4rsPNqkKrKty0OSF/303Gd0k+2tExpmmtS4b52aN/YQwqVemnx7Y5iuyp7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4aRgP5sFxa8EmXBRqNnUeQAVbCH2/S868vGMuBAYwniUF6u+vj/l8fUMDawosEUDzbaEqDtC1+pYqoDVIYcHVUH2sxQp8fDmuovsufqhYLsHHBnXjfj/5Cj/08VE4fyf6GyDVCgXIE0EC6xKE/tkTcVsCxGPrEvi7k83bNQh6sWDz6HWEkGAjCfoFJPNRPwWABO4k8Nt+z42R6afffOJDgo0k6I1sbB62w4LW8drf+ogFbiXQb6qjF3iFoc8Gtg4hwXYS6FcrD2NBPzS6WGBeqBZCApcSeOGZBPRWO/1iWf/cTfmQwKUjMm/NvMiJ/NFIAQlchGP/tI0WnqWlTVLqa2lCLYQHCZwlpWFXmo8NPurCcQsbZqWQwMnUzD8zcjMULsKzDwnczo7Dcwm880eOUeAwI/LPJPD7qZnXhYI2XkACZ0mpx+j14joPZaa70xM/LVDoWUP7yBGO3c0LhilQn4Ty899yzAucxYLQTMW477e5kOnyXpehNs8e9zE73myxul+q++kREmwgwd2NS0gACbB9DwkgASSABKspcJTr0aSrJPjGgcadhWO93yskqGvctFkNq9SaUJDDgjY8kVysQA0/ZGUYFEp+LVUgxfUCSxqoqviayze98Q8KWHu7nlRLyAUU2Fm8eZzORSAXAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAi/A/LOtX8h7jtkAAAAAASUVORK5CYII="
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá el dinero. Lo vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Para contar",
+       "texto": "Empezá por el billete.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Contar $10, $5 y $1",
+    "planteo": "¿Cuánto hay?",
+    "pasos": [
+     "10.",
+     "10 y 5: 15.",
+     "15 y 1: 16."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Contar $20 y $5",
+    "planteo": "Completá.",
+    "pasos": [
+     "20.",
+     "20 y 5: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Tus monedas",
+    "planteo": "¿Cuánto son 3 monedas de 10?"
+   },
+   "tip": {
+    "titulo": "Primero lo grande",
+    "texto": "Empezá por el que más vale."
+   },
+   "ojo": [
+    "No cuentes monedas: sumá lo que valen.",
+    "3 monedas de 10 son 30, no 3."
+   ],
+   "resumen": [
+    {
+     "titulo": "Contar",
+     "texto": "Sumando lo que vale."
+    },
+    {
+     "titulo": "Empezar",
+     "texto": "Por lo que más vale."
+    },
+    {
+     "titulo": "Total",
+     "texto": "Todo junto."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Total",
+     "significado": "Todo junto."
+    },
+    {
+     "palabra": "Valer",
+     "significado": "Lo que se puede comprar con eso."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto vale el billete?",
+    "¿Cuánto valen las dos monedas juntas?",
+    "¿Cuánto hay en total?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "20"
+    ],
+    [
+     "12"
+    ],
+    [
+     "32"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "25.",
+    "solo": "$30.",
+    "carpeta": [
+     "20.",
+     "12.",
+     "32."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "EMPEZAR POR LO QUE MÁS VALE",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "EL ORDEN",
+        "texto": "PARA CONTAR DINERO, EMPEZÁ POR LO QUE <b>MÁS VALE</b> Y SEGUÍ SUMANDO."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "$10 + $10 + $5: 10, 20, 25.",
+         "DESPUÉS SUMÁS LAS MONEDAS DE $1.",
+         "EL <b>TOTAL</b> ES TODO EL DINERO JUNTO, DESPUÉS DE SUMAR."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "contar"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "contar"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "PRIMERO LO QUE MÁS VALE",
+      "definicion": "ASÍ CONTAMOS MÁS RÁPIDO Y SIN PERDERNOS.",
+      "ejemplo": "10, 20, 25, 26"
+     },
+     {
+      "concepto": "EL TOTAL",
+      "definicion": "ES TODO EL DINERO JUNTO DESPUÉS DE SUMAR.",
+      "ejemplo": "$20 + $5 = $25"
+     }
+    ]
+   }
+  },
+  "3": {
+   "estilo": "primeros",
+   "objetivo": "Vas a pagar justo, ni más ni menos.",
+   "vas_a_ver": [
+    "Pagar justo",
+    "Contar hasta el precio",
+    "Cuando no alcanza"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Pagar justo",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El alfajor cuesta <b>$15</b>. Tomi da <b>$10 y $5</b>.",
+       "neutro": {
+        "texto": "La galleta cuesta <b>$15</b>. Tomi da <b>$10 y $5</b>."
+       }
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Paga justo",
+       "texto": "10, 15. ¡Justo!",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cuando no alcanza",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Pagar justo",
+       "texto": "Dar <b>lo mismo</b> que el precio. Si falta, <b>no alcanza</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Precios del kiosco",
+       "texto": "Cada cosa con su precio.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá los precios. Los vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Para pagar",
+       "texto": "¿Con qué pagás justo?",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Pagar $20",
+    "planteo": "Una pelota cuesta $20.",
+    "pasos": [
+     "Doy $10: 10.",
+     "Doy otra de $10: 20.",
+     "¡Justo!"
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Pagar $7",
+    "planteo": "Completá.",
+    "pasos": [
+     "Doy $5: 5.",
+     "Me faltan ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Un caramelo",
+    "planteo": "Un caramelo cuesta $5. ¿Alcanza con $2?"
+   },
+   "tip": {
+    "titulo": "Contá hasta el precio",
+    "texto": "Pagar justo es llegar al precio."
+   },
+   "ojo": [
+    "Con $10 no alcanza para $15.",
+    "Pagar justo: ni más ni menos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Justo",
+     "texto": "Ni más ni menos."
+    },
+    {
+     "titulo": "Contar",
+     "texto": "Hasta el precio."
+    },
+    {
+     "titulo": "Si falta",
+     "texto": "No alcanza."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Precio",
+     "significado": "Lo que cuesta algo."
+    },
+    {
+     "palabra": "Alcanzar",
+     "significado": "Tener lo que hace falta."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto cuesta el vaso?",
+    "¿Cuánto cuesta la estrella?",
+    "Para el vaso das $10. ¿Cuánto falta?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "12"
+    ],
+    [
+     "25"
+    ],
+    [
+     "2"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "2.",
+    "solo": "No. Faltan 3.",
+    "carpeta": [
+     "12.",
+     "25.",
+     "2."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "PAGAR JUSTO",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "JUSTO",
+        "texto": "PAGAR <b>JUSTO</b> ES DAR EL MISMO DINERO QUE EL PRECIO: NI MÁS NI MENOS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "SI CUESTA $15: $10 + $5.",
+         "CONTÁ HASTA LLEGAR AL PRECIO."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "pagar"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "pagar"
+       }
+      }
+     },
+     {
+      "titulo": "CUANDO NO ALCANZA",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "FALTA",
+        "texto": "SI DAS MENOS QUE EL PRECIO, <b>NO ALCANZA</b>: FALTA DINERO."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "CUESTA $7 Y DAS $5: FALTAN $2.",
+         "CONTÁ DESDE LO QUE DAS HASTA EL PRECIO."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "falta"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "falta"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "PAGAR JUSTO",
+      "definicion": "ES DAR EL MISMO DINERO QUE DICE EL PRECIO.",
+      "ejemplo": "CUESTA $12: $10 + $1 + $1"
+     },
+     {
+      "concepto": "CUÁNTO FALTA",
+      "definicion": "CONTAMOS DESDE LO QUE DAMOS HASTA EL PRECIO.",
+      "ejemplo": "DE $10 A $12 FALTAN $2"
+     }
+    ]
+   }
+  },
+  "4": {
+   "estilo": "primeros",
+   "objetivo": "Vas a comparar precios.",
+   "vas_a_ver": [
+    "Más caro",
+    "Más barato",
+    "El precio"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Más caro y más barato",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El jugo cuesta <b>$20</b>. El chupetín, <b>$5</b>.",
+       "neutro": {
+        "texto": "El jugo cuesta <b>$20</b>. La paleta, <b>$5</b>."
+       }
+      },
+      {
+       "tipo": "definicion",
+       "titulo": "Comparar precios",
+       "texto": "El número <b>más grande</b> es el <b>más caro</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Precios",
+       "texto": "¿Cuál es más caro?",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Ordenar precios",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Del más barato al más caro: <b>$5, $10, $20</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "En orden",
+       "texto": "Del más barato al más caro.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá los precios. Los vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Para comparar",
+       "texto": "Compará los precios.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "$10 y $30",
+    "planteo": "¿Cuál es más caro?",
+    "pasos": [
+     "30 es más que 10.",
+     "El de $30 es más caro."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "$8 y $18",
+    "planteo": "Completá.",
+    "pasos": [
+     "___ es más que 8.",
+     "El más barato es el de $ ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Elegí",
+    "planteo": "¿Qué es más barato: algo de $20 o algo de $12?"
+   },
+   "tip": {
+    "titulo": "Mirá el número",
+    "texto": "El más grande es el más caro."
+   },
+   "ojo": [
+    "Más caro no es más grande de tamaño.",
+    "Comparamos los números del precio."
+   ],
+   "resumen": [
+    {
+     "titulo": "Más caro",
+     "texto": "Número más grande."
+    },
+    {
+     "titulo": "Más barato",
+     "texto": "Número más chico."
+    },
+    {
+     "titulo": "Precio",
+     "texto": "Lo que cuesta."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Caro",
+     "significado": "Que cuesta mucho."
+    },
+    {
+     "palabra": "Barato",
+     "significado": "Que cuesta poco."
+    }
+   ],
+   "carpeta": [
+    "¿Cuánto cuesta lo más caro?",
+    "¿Cuánto cuesta lo más barato?",
+    "¿Cuánto cuesta el globo que está dibujado?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "30"
+    ],
+    [
+     "8"
+    ],
+    [
+     "15"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "18. 8.",
+    "solo": "El de $12.",
+    "carpeta": [
+     "30.",
+     "8.",
+     "15."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "MÁS CARO Y MÁS BARATO",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "COMPARAR PRECIOS",
+        "texto": "LO MÁS <b>CARO</b> TIENE EL PRECIO MÁS GRANDE Y LO MÁS <b>BARATO</b>, EL MÁS CHICO."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "$20 ES MÁS CARO QUE $5.",
+         "COMPARÁ COMO COMPARÁS NÚMEROS."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "caro"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "caro"
+       }
+      }
+     },
+     {
+      "titulo": "EL PRECIO",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "EL PRECIO",
+        "texto": "EL <b>PRECIO</b> ES EL NÚMERO QUE DICE CUÁNTO CUESTA ALGO."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "UN GLOBO DE $15 CUESTA 15.",
+         "PARA COMPRARLO HAY QUE JUNTAR ESE DINERO."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero",
+        "que": "pagar"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero",
+        "que": "pagar"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "MÁS CARO",
+      "definicion": "ES LO QUE TIENE EL PRECIO MÁS GRANDE.",
+      "ejemplo": "$30 ES MÁS CARO QUE $8"
+     },
+     {
+      "concepto": "MÁS BARATO",
+      "definicion": "ES LO QUE TIENE EL PRECIO MÁS CHICO.",
+      "ejemplo": "$8 ES MÁS BARATO QUE $30"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁNTO VALE UNA MONEDA DE $5?",
+    "o": [
+     "1",
+     "5",
+     "10"
+    ],
+    "r": {
+     "correcta": "5"
+    },
+    "e": "LO DICE SU NÚMERO.",
+    "n": "recordar"
+   },
+   {
+    "t": "numeric",
+    "p": "🪙 $10 + 🪙 $10 + 🪙 $10. ¿CUÁNTOS PESOS SON?",
+    "o": {},
+    "r": {
+     "acepta": [
+      30
+     ]
+    },
+    "e": "10, 20, 30.",
+    "n": "aplicar",
+    "neutro": {
+     "p": "🪙 $10 + 🪙 $10 + 🪙 $10. ¿CUÁNTO ES?"
+    }
+   },
+   {
+    "t": "multiple_choice",
+    "p": "LEO TIENE 3 MONEDAS DE $10 Y DICE QUE TIENE $3. ¿CUÁNTO TIENE DE VERDAD?",
+    "o": [
+     "$30",
+     "$3",
+     "$13"
+    ],
+    "r": {
+     "correcta": "$30"
+    },
+    "e": "CADA MONEDA VALE 10: 10, 20, 30.",
+    "n": "error"
+   },
+   {
+    "t": "classify",
+    "p": "¿ES MONEDA O BILLETE?",
+    "o": {
+     "elementos": [
+      "DE METAL",
+      "DE PAPEL",
+      "REDONDA Y CHICA",
+      "RECTANGULAR"
+     ],
+     "categorias": [
+      "MONEDA",
+      "BILLETE"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "DE METAL": "MONEDA",
+      "DE PAPEL": "BILLETE",
+      "REDONDA Y CHICA": "MONEDA",
+      "RECTANGULAR": "BILLETE"
+     }
+    },
+    "e": "LAS MONEDAS SON DE METAL; LOS BILLETES, DE PAPEL.",
+    "n": "aplicar"
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "$10 + $10 + $5 + $1 + $1. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      27
+     ]
+    },
+    "e": "10, 20, 25, 26, 27.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "$20 + $10 + $5. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      35
+     ]
+    },
+    "e": "20, 30, 35.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "ORDENÁ PARA CONTAR: PRIMERO LO QUE MÁS VALE.",
+    "o": [
+     "$1",
+     "$10",
+     "$5",
+     "$20"
+    ],
+    "r": {
+     "orden": [
+      "$20",
+      "$10",
+      "$5",
+      "$1"
+     ]
+    },
+    "e": "DE LO QUE MÁS VALE A LO QUE MENOS.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "[[problema]] SOFI TIENE UN BILLETE DE $20 Y DOS MONEDAS DE $1. ¿CUÁNTO DINERO TIENE?",
+    "o": {},
+    "r": {
+     "acepta": [
+      22
+     ]
+    },
+    "e": "20, 21, 22.",
+    "n": "analizar"
+   }
+  ],
+  "3": [
+   {
+    "t": "multiple_choice",
+    "p": "EL ALFAJOR CUESTA $15. ¿QUÉ DAS PARA PAGAR JUSTO?",
+    "o": [
+     "$10 + $5",
+     "$10",
+     "$5 + $5"
+    ],
+    "r": {
+     "correcta": "$10 + $5"
+    },
+    "e": "10, 15. ¡JUSTO!",
+    "n": "aplicar",
+    "neutro": {
+     "p": "LA GALLETA CUESTA $15. ¿QUÉ DAS PARA PAGAR JUSTO?"
+    }
+   },
+   {
+    "t": "numeric",
+    "p": "ALGO CUESTA $7. DAS $5. ¿CUÁNTO FALTA?",
+    "o": {},
+    "r": {
+     "acepta": [
+      2
+     ]
+    },
+    "e": "5, 6, 7: FALTAN 2.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "JUAN QUIERE UN JUGO DE $12 Y DA $10. DICE QUE LE ALCANZA. ¿TIENE RAZÓN?",
+    "o": [
+     "NO, FALTAN $2",
+     "SÍ, ALCANZA",
+     "NO, FALTAN $10"
+    ],
+    "r": {
+     "correcta": "NO, FALTAN $2"
+    },
+    "e": "10 ES MENOS QUE 12: FALTAN 2.",
+    "n": "error"
+   },
+   {
+    "t": "fill_blank",
+    "p": "COMPLETÁ PARA PAGAR $16 JUSTO: $10 + $5 + $___",
+    "o": {},
+    "r": {
+     "huecos": [
+      [
+       "1"
+      ]
+     ]
+    },
+    "e": "10, 15, 16.",
+    "n": "aplicar"
+   }
+  ],
+  "4": [
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL DE LOS DOS CUESTA MÁS?",
+    "o": [
+     "🧃 $20",
+     "🍭 $5"
+    ],
+    "r": {
+     "correcta": "🧃 $20"
+    },
+    "e": "20 ES MÁS QUE 5.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL DE LOS DOS CUESTA MENOS?",
+    "o": [
+     "🍎 $10",
+     "⚽ $30"
+    ],
+    "r": {
+     "correcta": "🍎 $10"
+    },
+    "e": "10 ES MENOS QUE 30.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.",
+    "o": [
+     "🎈 $15",
+     "⚽ $30",
+     "🍎 $8"
+    ],
+    "r": {
+     "orden": [
+      "🍎 $8",
+      "🎈 $15",
+      "⚽ $30"
+     ]
+    },
+    "e": "8, 15 Y 30: DEL PRECIO MÁS CHICO AL MÁS GRANDE.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "MICA DICE QUE UN LÁPIZ DE $9 ES MÁS CARO QUE UNA GOMA DE $12 PORQUE 9 ES UN NÚMERO GRANDE. ¿CUÁL ES MÁS CARO?",
+    "o": [
+     "LA GOMA",
+     "EL LÁPIZ"
+    ],
+    "r": {
+     "correcta": "LA GOMA"
+    },
+    "e": "12 ES MÁS QUE 9.",
+    "n": "error"
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. $10 + $10. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      20
+     ]
+    },
+    "e": "10, 20.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. $20 + $5. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      25
+     ]
+    },
+    "e": "20, 25.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "RELÁMPAGO. ¿CUÁL ES MÁS CARO?",
+    "o": [
+     "$8",
+     "$18"
+    ],
+    "r": {
+     "correcta": "$18"
+    },
+    "e": "18 ES MÁS QUE 8.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. ALGO CUESTA $12. DAS $10. ¿CUÁNTO FALTA?",
+    "o": {},
+    "r": {
+     "acepta": [
+      2
+     ]
+    },
+    "e": "10, 11, 12.",
+    "tiempo": 30,
+    "n": "aplicar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "LA MONEDA ES DE…",
+    "o": [
+     "PAPEL",
+     "METAL"
+    ],
+    "r": {
+     "correcta": "METAL"
+    },
+    "e": "EL BILLETE ES DE PAPEL.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁNTO VALE UN BILLETE DE $20?",
+    "o": [
+     "2",
+     "20",
+     "200"
+    ],
+    "r": {
+     "correcta": "20"
+    },
+    "e": "LO DICE SU NÚMERO.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "TRES MONEDAS DE $10. ¿CUÁNTOS PESOS SON?",
+    "o": {},
+    "r": {
+     "acepta": [
+      30
+     ]
+    },
+    "e": "10, 20, 30.",
+    "n": "aplicar",
+    "neutro": {
+     "p": "TRES MONEDAS DE $10. ¿CUÁNTO ES?"
+    }
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "$10 + $5 + $1. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      16
+     ]
+    },
+    "e": "10, 15, 16.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "$20 + $10 + $2. ¿CUÁNTO ES?",
+    "o": {},
+    "r": {
+     "acepta": [
+      32
+     ]
+    },
+    "e": "20, 30, 32.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "TOMI TIENE 3 MONEDAS DE $10 Y DICE QUE SON $3. ¿CUÁNTO ES DE VERDAD?",
+    "o": [
+     "$30",
+     "$3"
+    ],
+    "r": {
+     "correcta": "$30"
+    },
+    "e": "SUMAMOS LO QUE VALEN.",
+    "n": "error"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "ALGO CUESTA $12. ¿QUÉ DAS PARA PAGAR JUSTO?",
+    "o": [
+     "$10 + $1 + $1",
+     "$10 + $5",
+     "$5 + $5"
+    ],
+    "r": {
+     "correcta": "$10 + $1 + $1"
+    },
+    "e": "10, 11, 12. ¡JUSTO!",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "fill_blank",
+    "p": "COMPLETÁ PARA PAGAR $25 JUSTO: $20 + $___",
+    "o": {},
+    "r": {
+     "huecos": [
+      [
+       "5"
+      ]
+     ]
+    },
+    "e": "20, 25.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "numeric",
+    "p": "ALGO CUESTA $20. DAS $10. ¿CUÁNTO FALTA?",
+    "o": {},
+    "r": {
+     "acepta": [
+      10
+     ]
+    },
+    "e": "10, 20: FALTAN 10.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL DE LOS DOS CUESTA MÁS?",
+    "o": [
+     "$8",
+     "$18"
+    ],
+    "r": {
+     "correcta": "$18"
+    },
+    "e": "18 ES MÁS QUE 8.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL DE LOS DOS CUESTA MENOS?",
+    "o": [
+     "$20",
+     "$12"
+    ],
+    "r": {
+     "correcta": "$12"
+    },
+    "e": "12 ES MENOS QUE 20.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "ordering",
+    "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.",
+    "o": [
+     "$25",
+     "$9",
+     "$14"
+    ],
+    "r": {
+     "orden": [
+      "$9",
+      "$14",
+      "$25"
+     ]
+    },
+    "e": "9, 14 Y 25.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "[[problema]] UN JUGO CUESTA $20 Y UN CHUPETÍN $5. ¿CUÁL ES MÁS CARO?",
+    "o": [
+     "EL JUGO",
+     "EL DE $5"
+    ],
+    "r": {
+     "correcta": "EL JUGO"
+    },
+    "e": "20 ES MÁS QUE 5.",
+    "n": "analizar",
+    "neutro": {
+     "p": "UN JUGO CUESTA $20 Y UNA PALETA $5. ¿CUÁL ES MÁS CARO?"
+    }
+   }
+  ]
+ ]
+}

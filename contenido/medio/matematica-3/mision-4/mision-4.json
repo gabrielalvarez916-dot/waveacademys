@@ -1,1 +1,1375 @@
-{"subject_id": "651eda34-d09a-45f2-82bf-e28abcc0c9ae", "tema": 4, "estilo": "primeros", "actualizar_preguntas": true, "practica": "Práctica general: dinero y números grandes", "examen_titulo": "Nivel jefe: dinero y números grandes", "niveles": {"1": {"estilo": "primeros", "objetivo": "Vas a conocer billetes de miles.", "vas_a_ver": ["Billetes de $100 y $500", "Billetes de $1.000 y $2.000", "Cuánto vale cada uno"], "secciones": [{"etapa": 1, "titulo": "Los billetes", "bloques": [{"tipo": "parrafo", "texto": "En la bicicletería de Don Beto se paga con billetes."}, {"tipo": "parrafo", "texto": "Hay de $100, $500, <b>$1.000</b> y <b>$2.000</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Billetes", "texto": "El número dice cuánto vale.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Cambiar billetes", "bloques": [{"tipo": "definicion", "titulo": "Billete de mil", "texto": "Un billete de <b>$1.000</b> vale lo mismo que diez de $100."}, {"tipo": "parrafo", "texto": "Uno de $2.000 vale dos de $1.000."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Lo mismo", "texto": "$1.000 = diez de $100.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá los billetes. Los vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Billetes para contar", "texto": "¿Cuánto dinero hay?", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Contar", "planteo": "Un billete de $2.000 y uno de $500.", "pasos": ["2.000 + 500.", "Hay $2.500."]}, "ejemplo_incompleto": {"titulo": "Completá", "planteo": "Cambiá billetes.", "pasos": ["$1.000 = ___ billetes de $100.", "$2.000 = ___ billetes de $1.000."]}, "ejemplo_solo": {"titulo": "Contá", "planteo": "¿Cuánto son 3 billetes de $1.000?"}, "tip": {"titulo": "El que más vale", "texto": "Empezá a contar por el billete más grande."}, "ojo": ["Dos de $500 valen $1.000.", "El número del billete dice cuánto vale."], "resumen": [{"titulo": "$1.000", "texto": "Diez de $100."}, {"titulo": "$2.000", "texto": "Dos de $1.000."}, {"titulo": "Contar", "texto": "Del más grande."}], "glosario": [{"palabra": "Billete", "significado": "Papel que vale dinero."}, {"palabra": "Valor", "significado": "Cuánto dinero es."}], "carpeta": ["En los billetes para contar, ¿cuánto dinero hay?", "¿Cuántos billetes de $100 forman $1.000?", "Leo cree que $500 y $1.000 valen igual. ¿Cuántos de $500 forman $1.000?"], "carpeta_nivel": ["aplicar", "aplicar", "error"], "respuestas_carpeta": [["4500", "4.500"], ["10"], ["2"]], "soluciones": {"incompleto": "10. 2.", "solo": "$3.000.", "carpeta": ["$4.500.", "10.", "2."]}, "leccion": {"temas": [{"titulo": "CONTAR BILLETES", "explicacion": [{"tipo": "definicion", "titulo": "CONTAR DINERO", "texto": "EMPEZAMOS POR EL BILLETE QUE <b>MÁS VALE</b> Y SUMAMOS LOS DEMÁS."}, {"tipo": "lista", "items": ["HAY DE $100, $500, $1.000 Y $2.000.", "EL NÚMERO DICE CUÁNTO VALE."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4"}}}, {"titulo": "BILLETES QUE VALEN LO MISMO", "explicacion": [{"tipo": "definicion", "titulo": "CAMBIAR", "texto": "PODEMOS CAMBIAR UN BILLETE GRANDE POR <b>VARIOS CHICOS</b> QUE SUMAN IGUAL."}, {"tipo": "lista", "items": ["CINCO DE CIEN SON QUINIENTOS.", "CUATRO DE QUINIENTOS SON DOS MIL."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4"}}}], "recuerda": [{"concepto": "CONTAR DINERO", "definicion": "SUMAMOS EMPEZANDO POR EL BILLETE QUE MÁS VALE.", "ejemplo": "$2.000 + $500 = $2.500"}, {"concepto": "CAMBIAR", "definicion": "VARIOS BILLETES CHICOS PUEDEN VALER LO MISMO QUE UNO GRANDE.", "ejemplo": "10 DE $100 = $1.000"}]}}, "2": {"estilo": "primeros", "objetivo": "Vas a juntar montos grandes con billetes.", "vas_a_ver": ["Separar miles y cientos", "Billetes para los miles", "Billetes para los cientos"], "secciones": [{"etapa": 1, "titulo": "Separar", "bloques": [{"tipo": "parrafo", "texto": "El casco cuesta $3.700."}, {"tipo": "parrafo", "texto": "Lo separamos: <b>$3.000 + $700</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "El casco", "texto": "$3.000 y $700.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Juntar con billetes", "bloques": [{"tipo": "definicion", "titulo": "Formar un monto", "texto": "Miles con billetes de <b>$1.000</b>. Cientos con $500 y $100."}, {"tipo": "parrafo", "texto": "Tres de $1.000, uno de $500 y dos de $100."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "$3.700", "texto": "Billetes para el casco.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá los montos. Los vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Montos para formar", "texto": "¿Cuántos billetes?", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Formar", "planteo": "Juntá $4.200.", "pasos": ["Cuatro de $1.000.", "Dos de $100."]}, "ejemplo_incompleto": {"titulo": "Completá", "planteo": "Juntá $6.100.", "pasos": ["___ billetes de $1.000.", "___ billete de $100."]}, "ejemplo_solo": {"titulo": "Pensá", "planteo": "¿Cuánto son 2 de $2.000 y 3 de $100?"}, "tip": {"titulo": "Separá", "texto": "Primero los miles, después los cientos."}, "ojo": ["Miles con miles, cientos con cientos.", "4 de $1.000 y 3 de $100 son $4.300."], "resumen": [{"titulo": "Separar", "texto": "Miles y cientos."}, {"titulo": "Miles", "texto": "Billetes de $1.000."}, {"titulo": "Cientos", "texto": "$500 y $100."}], "glosario": [{"palabra": "Monto", "significado": "Cantidad de dinero."}, {"palabra": "Formar", "significado": "Juntar hasta llegar."}], "carpeta": ["Para $5.300, ¿cuántos billetes de $1.000 usás?", "Para $2.800, ¿cuántos billetes de $100 usás si no usás de $500?", "Mía dice que 4 de $1.000 y 3 de $100 son $7.000. ¿Cuánto es?"], "carpeta_nivel": ["aplicar", "aplicar", "error"], "respuestas_carpeta": [["5"], ["8"], ["4300", "4.300"]], "soluciones": {"incompleto": "6. 1.", "solo": "$4.300.", "carpeta": ["5.", "8.", "$4.300."]}, "leccion": {"temas": [{"titulo": "SEPARAR EL MONTO", "explicacion": [{"tipo": "definicion", "titulo": "SEPARAR", "texto": "PARTIMOS EL MONTO EN <b>MILES</b> Y <b>CIENTOS</b>."}, {"tipo": "lista", "items": ["$3.700 = $3.000 + $700.", "LOS MILES PRIMERO."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "formar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4", "que": "formar"}}}, {"titulo": "JUNTAR CON BILLETES", "explicacion": [{"tipo": "definicion", "titulo": "FORMAR", "texto": "ELEGIMOS BILLETES PARA CADA PARTE HASTA <b>LLEGAR JUSTO</b> AL MONTO."}, {"tipo": "lista", "items": ["PARA 6.100: SEIS DE MIL Y UNO DE CIEN.", "SE PUEDE ARMAR DE VARIAS MANERAS."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "formar"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4"}}}], "recuerda": [{"concepto": "SEPARAR", "definicion": "UN MONTO GRANDE SE PARTE EN MILES Y CIENTOS.", "ejemplo": "$5.300 = $5.000 + $300"}, {"concepto": "FORMAR", "definicion": "PARA CADA PARTE ELEGIMOS LOS BILLETES QUE SIRVEN.", "ejemplo": "$2.800: DOS DE $1.000 Y OCHO DE $100"}]}}, "3": {"estilo": "primeros", "objetivo": "Vas a comparar precios grandes.", "vas_a_ver": ["Más caro y más barato", "Primero los miles", "Ordenar precios"], "secciones": [{"etapa": 1, "titulo": "Más caro", "bloques": [{"tipo": "parrafo", "texto": "La bici cuesta $4.250. El monopatín, $4.520."}, {"tipo": "parrafo", "texto": "Miles empatan. Centenas: 2 y 5. Es más caro el <b>monopatín</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Precios", "texto": "Comparamos como números.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "Ordenar precios", "bloques": [{"tipo": "definicion", "titulo": "Más caro", "texto": "Es el precio con el número <b>mayor</b>. Miramos primero los miles."}, {"tipo": "parrafo", "texto": "$8.900, $3.200 y $1.950."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Del más caro al más barato", "texto": "Miles primero.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá los precios. Los vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Precios para comparar", "texto": "¿Cuál es más caro?", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Comparar", "planteo": "$6.080 o $6.800.", "pasos": ["Miles empatan.", "$6.800 es más caro."]}, "ejemplo_incompleto": {"titulo": "Completá", "planteo": "Poné > o <.", "pasos": ["$2.900 ___ $3.100", "$7.450 ___ $7.405"]}, "ejemplo_solo": {"titulo": "Elegí", "planteo": "¿Cuál es más barato: $5.010 o $5.100?"}, "tip": {"titulo": "Como números", "texto": "Los precios se comparan como números."}, "ojo": ["$999 es más barato que $1.200.", "El cero también cuenta."], "resumen": [{"titulo": "Primero", "texto": "Los miles."}, {"titulo": "Empate", "texto": "Las centenas."}, {"titulo": "Caro", "texto": "Número mayor."}], "glosario": [{"palabra": "Caro", "significado": "Cuesta más."}, {"palabra": "Barato", "significado": "Cuesta menos."}], "carpeta": ["En los precios para comparar, ¿cuál es el más caro?", "¿Cuál es el más barato?", "Tomi dice que $1.080 es más caro que $1.800. ¿Cuál es más caro?"], "carpeta_nivel": ["aplicar", "aplicar", "error"], "respuestas_carpeta": [["1800", "1.800"], ["1008", "1.008"], ["1800", "1.800"]], "soluciones": {"incompleto": "<. >.", "solo": "$5.010.", "carpeta": ["$1.800 (la luz).", "$1.008 (el canasto).", "$1.800."]}, "leccion": {"temas": [{"titulo": "MÁS CARO Y MÁS BARATO", "explicacion": [{"tipo": "definicion", "titulo": "COMPARAR PRECIOS", "texto": "LOS PRECIOS SE COMPARAN COMO NÚMEROS: PRIMERO LOS <b>MILES</b>."}, {"tipo": "lista", "items": ["EL MAYOR ES EL MÁS CARO.", "EL MENOR ES EL MÁS BARATO."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "caro"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4", "que": "caro"}}}, {"titulo": "CUANDO LOS MILES EMPATAN", "explicacion": [{"tipo": "definicion", "titulo": "EMPATE", "texto": "SI LOS MILES SON IGUALES, MIRAMOS LAS <b>CENTENAS</b>."}, {"tipo": "lista", "items": ["$4.520 ES MÁS CARO QUE $4.250.", "EL CERO TAMBIÉN CUENTA."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "caro"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "comparar4"}}}], "recuerda": [{"concepto": "MÁS CARO", "definicion": "ES EL PRECIO CON EL NÚMERO MAYOR.", "ejemplo": "$6.800 ES MÁS CARO QUE $6.080"}, {"concepto": "EMPATE", "definicion": "SI LOS MILES SON IGUALES, DECIDEN LAS CENTENAS.", "ejemplo": "$7.450 ES MÁS CARO QUE $7.405"}]}}, "4": {"estilo": "primeros", "objetivo": "Vas a pagar y calcular el vuelto.", "neutro": {"objetivo": "Vas a pagar y calcular el cambio."}, "vas_a_ver": ["Pagar con más", "Contar para adelante", "Llegar al mil"], "secciones": [{"etapa": 1, "titulo": "Pagar con más", "bloques": [{"tipo": "parrafo", "texto": "Tomi compra un timbre de $3.700. Paga con $4.000."}, {"tipo": "parrafo", "texto": "De 3.700 a 4.000 hay <b>300</b>."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Contar para adelante", "texto": "Tres saltos de 100.", "png_base64": "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"}]}, {"etapa": 1, "titulo": "El vuelto", "bloques": [{"tipo": "definicion", "titulo": "Vuelto", "texto": "Es lo que te devuelven cuando pagás <b>de más</b>.", "neutro": {"titulo": "Cambio", "texto": "Es lo que te devuelven cuando pagas <b>de más</b>."}}, {"tipo": "parrafo", "texto": "Cuesta $7.600, paga $10.000: le devuelven $2.400."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Dos saltos", "texto": "400 y 2.000.", "png_base64": "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"}]}, {"etapa": 2, "titulo": "Para practicar", "bloques": [{"tipo": "parrafo", "texto": "Mirá las compras. Las vas a usar en la carpeta."}, {"tipo": "imagen", "imagen_tipo": "ilustracion", "titulo": "Compras", "texto": "Precio y pago.", "png_base64": "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"}]}], "ejemplo_completo": {"titulo": "Contar", "planteo": "Cuesta $2.600. Paga $3.000.", "pasos": ["2.700, 2.800, 2.900, 3.000.", "Le devuelven $400."]}, "ejemplo_incompleto": {"titulo": "Completá", "planteo": "¿Cuánto le devuelven?", "pasos": ["Cuesta $4.900, paga $5.000: ___ .", "Cuesta $8.500, paga $9.000: ___ ."]}, "ejemplo_solo": {"titulo": "Pensá", "planteo": "Cuesta $6.200. Paga con $7.000. ¿Cuánto le devuelven?"}, "tip": {"titulo": "Hasta el mil", "texto": "Primero saltá hasta el mil más cercano."}, "ojo": ["De 3.700 a 4.000 hay 300, no 700.", "Si paga justo, no le devuelven nada."], "resumen": [{"titulo": "Vuelto", "texto": "Lo que sobra.", "neutro": {"titulo": "Cambio", "texto": "Lo que sobra."}}, {"titulo": "Contar", "texto": "Del precio al pago."}, {"titulo": "Saltos", "texto": "Hasta el mil."}], "glosario": [{"palabra": "Vuelto", "significado": "Dinero que te devuelven.", "neutro": {"palabra": "Cambio", "significado": "Dinero que te devuelven."}}, {"palabra": "Pagar", "significado": "Dar dinero por algo."}], "carpeta": ["Cuesta $1.800 y paga $2.000. ¿Cuánto le devuelven?", "Cuesta $5.500 y paga $6.000. ¿Cuánto le devuelven?", "Leo dice que si cuesta $3.700 y paga $4.000 le devuelven $700. ¿Cuánto es?"], "carpeta_nivel": ["aplicar", "aplicar", "error"], "respuestas_carpeta": [["200"], ["500"], ["300"]], "soluciones": {"incompleto": "$100. $500.", "solo": "$800.", "carpeta": ["$200.", "$500.", "$300."]}, "leccion": {"temas": [{"titulo": "CONTAR PARA ADELANTE", "explicacion": [{"tipo": "definicion", "titulo": "LO QUE TE DEVUELVEN", "texto": "CONTAMOS DESDE EL <b>PRECIO</b> HASTA LO QUE PAGAMOS."}, {"tipo": "lista", "items": ["SALTAMOS DE 100 EN 100.", "LOS SALTOS SON LO QUE SOBRA."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "vuelto"}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4", "que": "vuelto"}}}, {"titulo": "PAGAR CON 10.000", "explicacion": [{"tipo": "definicion", "titulo": "DOS SALTOS", "texto": "PRIMERO HASTA EL <b>MIL</b> MÁS CERCANO, DESPUÉS HASTA LO QUE PAGAMOS."}, {"tipo": "lista", "items": ["$7.600 → $8.000: 400.", "$8.000 → $10.000: 2.000."]}], "ejemplo": {"motor": "primeros", "p": {"modo": "dinero4", "que": "vuelto", "pago": 10000}}, "ejercicio": {"motor": "primeros_x", "p": {"modo": "dinero4", "que": "vuelto", "pago": 10000}}}], "recuerda": [{"concepto": "CONTAR PARA ADELANTE", "definicion": "VAMOS DEL PRECIO AL PAGO Y SUMAMOS LOS SALTOS.", "ejemplo": "CUESTA $2.600, PAGAMOS $3.000: NOS DEVUELVEN $400"}, {"concepto": "DOS SALTOS", "definicion": "PRIMERO HASTA EL MIL Y DESPUÉS HASTA EL PAGO.", "ejemplo": "CUESTA $7.600, PAGAMOS $10.000: NOS DEVUELVEN $2.400"}]}}}, "act": {"1": [{"t": "numeric", "p": "¿CUÁNTO SON 3 BILLETES DE $1.000?", "o": {}, "r": {"acepta": [3000]}, "e": "1.000, 2.000, 3.000.", "n": "aplicar"}, {"t": "numeric", "p": "¿CUÁNTOS BILLETES DE $100 FORMAN $1.000?", "o": {}, "r": {"acepta": [10]}, "e": "DIEZ DE CIEN.", "n": "aplicar"}, {"t": "multiple_choice", "p": "LEO DICE QUE UNO DE $500 VALE IGUAL QUE UNO DE $1.000. ¿CUÁNTOS DE $500 FORMAN $1.000?", "o": ["2", "1", "5"], "r": {"correcta": "2"}, "e": "500 + 500 = 1.000.", "n": "error"}, {"t": "matching", "p": "UNÍ CADA GRUPO CON LO QUE VALE.", "o": {"izquierda": ["2 DE $1.000", "4 DE $500", "1 DE $2.000 Y 1 DE $500"], "derecha": ["$2.500", "$2.000 ", "$2.000"]}, "r": {"pares": {"2 DE $1.000": "$2.000", "4 DE $500": "$2.000 ", "1 DE $2.000 Y 1 DE $500": "$2.500"}}, "e": "SUMÁ LOS BILLETES.", "n": "analizar", "neutro": {"p": "UNE CADA GRUPO CON LO QUE VALE."}}], "2": [{"t": "numeric", "p": "¿CUÁNTOS BILLETES DE $1.000 HACEN FALTA PARA $5.300?", "o": {}, "r": {"acepta": [5]}, "e": "LOS MILES: 5.", "n": "aplicar"}, {"t": "multiple_choice", "p": "¿CON QUÉ BILLETES SE FORMA $3.700?", "o": ["3 DE $1.000, 1 DE $500 Y 2 DE $100", "3 DE $1.000 Y 7 DE $1.000", "37 DE $1.000"], "r": {"correcta": "3 DE $1.000, 1 DE $500 Y 2 DE $100"}, "e": "3.000 + 500 + 200.", "n": "analizar"}, {"t": "multiple_choice", "p": "MÍA DICE QUE 4 DE $1.000 Y 3 DE $100 SON $7.000. ¿CUÁNTO ES?", "o": ["$4.300", "$7.000", "$430"], "r": {"correcta": "$4.300"}, "e": "MILES CON MILES.", "n": "error"}, {"t": "numeric", "p": "[[problema]] DON BETO JUNTA 2 DE $2.000 Y 3 DE $100. ¿CUÁNTO DINERO TIENE?", "o": {}, "r": {"acepta": [4300]}, "e": "4.000 + 300.", "n": "aplicar"}], "3": [{"t": "multiple_choice", "p": "¿CUÁL ES MÁS CARO: $6.080 O $6.800?", "o": ["$6.800", "$6.080"], "r": {"correcta": "$6.800"}, "e": "CENTENAS: 8 Y 0.", "n": "aplicar"}, {"t": "ordering", "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.", "o": ["$3.200", "$8.900", "$1.950"], "r": {"orden": ["$1.950", "$3.200", "$8.900"]}, "e": "PRIMERO LOS MILES.", "n": "aplicar", "neutro": {"p": "ORDENA DEL MÁS BARATO AL MÁS CARO."}}, {"t": "multiple_choice", "p": "TOMI DICE QUE $1.080 ES MÁS CARO QUE $1.800. ¿CUÁL ES MÁS CARO?", "o": ["$1.800", "$1.080"], "r": {"correcta": "$1.800"}, "e": "CENTENAS: 8 Y 0.", "n": "error"}, {"t": "classify", "p": "¿CUESTA MÁS O MENOS DE $5.000?", "o": {"elementos": ["$4.990", "$5.100", "$900", "$7.000"], "categorias": ["MENOS DE $5.000", "MÁS DE $5.000"]}, "r": {"categorias": {"$4.990": "MENOS DE $5.000", "$5.100": "MÁS DE $5.000", "$900": "MENOS DE $5.000", "$7.000": "MÁS DE $5.000"}}, "e": "MIRÁ LOS MILES.", "n": "analizar"}], "4": [{"t": "numeric", "p": "CUESTA $2.600 Y PAGA $3.000. ¿CUÁNTO LE DEVUELVEN?", "o": {}, "r": {"acepta": [400]}, "e": "2.700, 2.800, 2.900, 3.000.", "n": "aplicar"}, {"t": "numeric", "p": "[[problema]] UN INFLADOR CUESTA $7.600. PAGA CON $10.000. ¿CUÁNTO LE DEVUELVEN?", "o": {}, "r": {"acepta": [2400]}, "e": "400 + 2.000.", "n": "analizar"}, {"t": "multiple_choice", "p": "LEO DICE QUE SI CUESTA $3.700 Y PAGA $4.000 LE DEVUELVEN $700. ¿CUÁNTO ES?", "o": ["$300", "$700", "$1.300"], "r": {"correcta": "$300"}, "e": "DE 3.700 A 4.000 HAY 300.", "n": "error"}, {"t": "true_false", "p": "SI PAGA JUSTO, NO LE DAN VUELTO.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "VERDADERO"}, "e": "NO SOBRA NADA.", "n": "recordar", "neutro": {"p": "SI PAGA JUSTO, NO LE DAN CAMBIO."}}], "5": [{"t": "numeric", "p": "RELÁMPAGO. 2 BILLETES DE $2.000 SON $___", "o": {}, "r": {"acepta": [4000]}, "e": "4.000.", "tiempo": 30, "n": "aplicar"}, {"t": "multiple_choice", "p": "RELÁMPAGO. ¿CUÁL ES MÁS BARATO?", "o": ["$5.010", "$5.100"], "r": {"correcta": "$5.010"}, "e": "CENTENAS.", "tiempo": 30, "n": "aplicar"}, {"t": "numeric", "p": "RELÁMPAGO. CUESTA $4.900, PAGA $5.000. ¿VUELTO?", "o": {}, "r": {"acepta": [100]}, "e": "100.", "tiempo": 30, "n": "aplicar", "neutro": {"p": "RELÁMPAGO. CUESTA $4.900, PAGA $5.000. ¿CAMBIO?"}}, {"t": "numeric", "p": "RELÁMPAGO. ¿CUÁNTOS DE $500 FORMAN $2.000?", "o": {}, "r": {"acepta": [4]}, "e": "4.", "tiempo": 30, "n": "recordar"}]}, "examen": [[1, {"t": "numeric", "p": "¿CUÁNTO ES 1 DE $2.000, 2 DE $1.000 Y 1 DE $500?", "o": {}, "r": {"acepta": [4500]}, "e": "2.000 + 2.000 + 500.", "n": "aplicar"}], [1, {"t": "multiple_choice", "p": "¿CUÁNTOS BILLETES DE $1.000 FORMAN $2.000?", "o": ["2", "20", "1"], "r": {"correcta": "2"}, "e": "MIL Y MIL.", "n": "recordar"}], [1, {"t": "true_false", "p": "DIEZ BILLETES DE $100 VALEN LO MISMO QUE UNO DE $1.000.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "VERDADERO"}, "e": "10 × 100 = 1.000.", "n": "recordar"}], [2, {"t": "numeric", "p": "PARA $6.100, ¿CUÁNTOS BILLETES DE $1.000 SE USAN?", "o": {}, "r": {"acepta": [6]}, "e": "LOS MILES: 6.", "n": "aplicar"}], [2, {"t": "numeric", "p": "[[problema]] TOMI TIENE 3 DE $1.000 Y 6 DE $100. ¿CUÁNTO DINERO TIENE?", "o": {}, "r": {"acepta": [3600]}, "e": "3.000 + 600.", "n": "aplicar"}], [2, {"t": "multiple_choice", "p": "SOFI FORMA $2.800 CON 2 DE $1.000 Y 8 DE $1.000. ¿ESTÁ BIEN?", "o": ["NO: SON 8 DE $100", "SÍ"], "r": {"correcta": "NO: SON 8 DE $100"}, "e": "LOS CIENTOS VAN CON $100.", "n": "error"}], [3, {"t": "multiple_choice", "p": "¿CUÁL ES MÁS CARO: $7.450 O $7.405?", "o": ["$7.450", "$7.405"], "r": {"correcta": "$7.450"}, "e": "DECENAS: 5 Y 0.", "n": "aplicar"}], [3, {"t": "ordering", "p": "ORDENÁ DEL MÁS CARO AL MÁS BARATO.", "o": ["$2.090", "$9.020", "$2.900"], "r": {"orden": ["$9.020", "$2.900", "$2.090"]}, "e": "MILES Y DESPUÉS CENTENAS.", "n": "analizar", "neutro": {"p": "ORDENA DEL MÁS CARO AL MÁS BARATO."}}], [3, {"t": "true_false", "p": "$999 ES MÁS CARO QUE $1.200.", "o": ["VERDADERO", "FALSO"], "r": {"correcta": "FALSO"}, "e": "1.200 TIENE CUATRO CIFRAS.", "n": "error"}], [4, {"t": "numeric", "p": "CUESTA $6.200 Y PAGA CON $7.000. ¿CUÁNTO LE DEVUELVEN?", "o": {}, "r": {"acepta": [800]}, "e": "DE 6.200 A 7.000 HAY 800.", "n": "aplicar"}], [4, {"t": "numeric", "p": "[[problema]] UNA BICI CUESTA $8.500. PAGA CON $10.000. ¿CUÁNTO LE DEVUELVEN?", "o": {}, "r": {"acepta": [1500]}, "e": "500 + 1.000.", "n": "analizar"}], [4, {"t": "multiple_choice", "p": "CUESTA $5.500 Y PAGA $6.000. LE DAN $500. ¿ESTÁ BIEN?", "o": ["SÍ", "NO"], "r": {"correcta": "SÍ"}, "e": "DE 5.500 A 6.000 HAY 500.", "n": "analizar"}]]}
+{
+ "subject_id": "651eda34-d09a-45f2-82bf-e28abcc0c9ae",
+ "tema": 4,
+ "estilo": "primeros",
+ "actualizar_preguntas": true,
+ "practica": "Práctica general: dinero y números grandes",
+ "examen_titulo": "Nivel jefe: dinero y números grandes",
+ "niveles": {
+  "1": {
+   "estilo": "primeros",
+   "objetivo": "Vas a conocer billetes de miles.",
+   "vas_a_ver": [
+    "Billetes de $100 y $500",
+    "Billetes de $1.000 y $2.000",
+    "Cuánto vale cada uno"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Los billetes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En la bicicletería de Don Beto se paga con billetes."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Hay de $100, $500, <b>$1.000</b> y <b>$2.000</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Billetes",
+       "texto": "El número dice cuánto vale.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Cambiar billetes",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Billete de mil",
+       "texto": "Un billete de <b>$1.000</b> vale lo mismo que diez de $100."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Uno de $2.000 vale dos de $1.000."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Lo mismo",
+       "texto": "$1.000 = diez de $100.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá los billetes. Los vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Billetes para contar",
+       "texto": "¿Cuánto dinero hay?",
+       "png_base64": "iVBORw0KGgoAAAANSUhEUgAAAecAAADBCAMAAADCUYj5AAAAYFBMVEX////6/Pvs9PDp7+zo7+vh7+jW6N/H3dKt076uy7umx7WXuKaBu5t9pI91nIdymoVmrIZRoXZCmGo1kmAwj1wvj1s/jWIti1grhFQne04ka0UkY0EfYz4eYz4eYT0dXjsnLHMiAAAHxElEQVR42u2d23abOBRALWIQBrXRBbeTtBP//1+ObmARZ9qSWmRWZ++HxJiYI50thCTI8uEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPDH0BxrIXYL9XAT6qFaqNeRRLVQzR0tD8+Xarx8WZVUfasX6rspTYvPFUN9e1yFMjVDfbqb5ktVStGfKoe6Zl881g1ViBambqg7iRb+pHuqxnNZzq5qqO+Xy7CEkv78rhqqL8+TiqFeLpfuLp598p/O9Xi5PC6h+qqhvpZNyif/r3qh/rpcxrKT+lo11OkunmXVjJy/X8wS6lQ31Evheaya/K9rzy9nPOMZz3jGM57xjGc84xnPeMYznvGMZzzjGc94xjOe8YxnPOP5P+jZGDz/Hzx33fxq6DM6bjol2y6/9ltjubWrZ6XmV9Zou943Gb20U6uve/3b0zs8j9cKOmvXR3DrUK4I9R7Pg/lhKHsNZdwblf0Nz8vDUzGvts0PXsQimPxcYf8BnuUp/e5jAduyralmecf1/jEp0cf86FD2Rm333I7pt5bhwKtWHUN1Mc9WhmecTjH9+uhfH/V2z/PRVQxV+puG8MCXjDUxMdRYlEC/x7Ovjzg0+TxdeXb+SSAhw+NAQ9g6hq2QvXFnz5MamrZXIQ/CP7MaXF5rqoLO8PRbaA3+t9/b+WYZHrZs5vb6656d6kWXQqWHu8qUjilU47Pv2hQqtHmdQgm9zbMPdegGZVO5X3n2j3sJf8yjb0c2hBTJQVnZjZ6XZ9Vk9qxNwOajqhTTplrq8xRy6Xb17PKDZ23oeZSLvczSp7gmJNiXtIvl7Vz4axVTp4KBxm3xPHdgIRdaabnybEVI8BCD+2TIKfy13x9/phJs8Gyaa++olGlXnn0ZH+zUR7l96E/9X3sHobImxt7s2YQuoWv1KGfP16ufr2aT/iRkrks10W+cJHU9+xSOvrsZQ0am/MZSUZ1KFcsd3aa91ldrijXQWzwPB6GOgx6GJQF6VQ5fBBfbeRf3jOEdk1rgWtTPPff+oiJGPeTOsVt9fIiG05GTkj50o6niTsTzbpvn+NF4fXbZs+w6qcLGJFI+XWx1Lrc9m7vx/Tz7Stv5+lxkYelL+5QmfT7G5JvQOrP+/uYi82PP0p//7Vg2dL3qS8MuP0oxITU2N7Lc6uRN8/+x5847LLr6ted0sJByF1rs3MhyxdvXrfcXPPuiCnU7DutsMtrnN7t4Vg/Zutz7fG6aTi1NOPTG9pXzmBgRcxUTk5M/3LTJn53Ph6OQyzh67TmbDFkOqXExee3c0m6b1M/O50N76JdQa8+pu4gVMqlTjRVKHfm8d5NnG82KebrU+BFZG4Z6Xeqvbz2fd/fs0jBFDIvm4jz4qefTputzGgoIVd+zPab/79L7eD7r+b+wotI40jRpQvH2+Tzt7tmXcQgDzlQ55c9msxoDl/22+b1++zzpIQyj84D2X/tt9/v9dhxvi8N8qf23ftua+/Tb/mg+i6+mEGmg7fL1+SzyyGa5PvcfMH/WqY6+qm1OiLXurXGYzqVt3jEOS/NnNSubPz7FUHkcJl6Nw3IJto7DYmLVMBdw9pxCLeOw4zwOG67jsOk947C8TmK68kqm0yS5TTXII68mWTdvT6BrXp/9qFCebAzrz6mHOPGLF5DmnKcaxbxqktd5ldk6rxr99bIddTqbbFgL0TaNVLo4r/LjgnGeV/VxEu1nmnH4p9Oo+9c9D3ry4zAV9fpQoZlYm1tpHGnb8zKvGsLl1VfTiVzZd8yrbFoPSy1IL/1VaGZDmryrtJWn0cPhpuFW9nw6iLZpUnc9/1tgO3sOpRNtWqWYujBiu66ThIHGtnUS6Y8lfKhjXi+IuOw5VD2GMmmdpMktX6e3D9vWSbrwIf//2J2LqU0X69lzTPZDWpIJI6jjdZ1kLsHWeZWQo+7asJ6mQt3kqFTQHM4DG9aW1ChSLc2yJfddD9N9qKaQaT3stee0FPigl8XIvFoYFyPFxnXPtNaZQt16PofK5yXWtO7Zu6UEt0usP/ac1jqbuEh76zmu4OYl1tDX+lHo9KoEm+fPc4Knom5pRDvvTAOfeau1u69vT10/X5Mz6XUeYFxvWBT3MfyKv3bb72O447jcWZhDTWWo672LJZR/W0/b72O4ubcpQrk5lF2HctdQt3dnfsGz0313FOIoVfi06eNoPzXo0L5jU5K5PvHWQL5N8EH3MXa4L9mOu92XPOiPui8Z7/sZV26utlb79rwvqXfzPOrdPA/m4zzznMGf+5yBlHjm+TA84xnPeMYznvGMZzzjGc94xjOe8YxnPOMZz3jGM57xjGc84xnPeP7jPD/h+c/3fLxcnqsW83PZpJ53+jKDU9XW+1R+FcdYtfX6LxiRd/F8+BK+E6gWl7I5Nj4/L7Ui/e2Pfc1I+1wxlP9ukm/XLyeRvpJ/Vwz1fKfvsHr4UvVrecYiVPdUM9JL2cHJ55qhvpXn2Ol7zVDP9/m6myB6/PxYi0/ri0tbM9S6f+vqhfo8rnMv1eNeoQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+R/wD8NMTrABqITEAAAAASUVORK5CYII="
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Contar",
+    "planteo": "Un billete de $2.000 y uno de $500.",
+    "pasos": [
+     "2.000 + 500.",
+     "Hay $2.500."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Completá",
+    "planteo": "Cambiá billetes.",
+    "pasos": [
+     "$1.000 = ___ billetes de $100.",
+     "$2.000 = ___ billetes de $1.000."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Contá",
+    "planteo": "¿Cuánto son 3 billetes de $1.000?"
+   },
+   "tip": {
+    "titulo": "El que más vale",
+    "texto": "Empezá a contar por el billete más grande."
+   },
+   "ojo": [
+    "Dos de $500 valen $1.000.",
+    "El número del billete dice cuánto vale."
+   ],
+   "resumen": [
+    {
+     "titulo": "$1.000",
+     "texto": "Diez de $100."
+    },
+    {
+     "titulo": "$2.000",
+     "texto": "Dos de $1.000."
+    },
+    {
+     "titulo": "Contar",
+     "texto": "Del más grande."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Billete",
+     "significado": "Papel que vale dinero."
+    },
+    {
+     "palabra": "Valor",
+     "significado": "Cuánto dinero es."
+    }
+   ],
+   "carpeta": [
+    "En los billetes para contar, ¿cuánto dinero hay?",
+    "¿Cuántos billetes de $100 forman $1.000?",
+    "Leo cree que $500 y $1.000 valen igual. ¿Cuántos de $500 forman $1.000?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "4500",
+     "4.500"
+    ],
+    [
+     "10"
+    ],
+    [
+     "2"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "10. 2.",
+    "solo": "$3.000.",
+    "carpeta": [
+     "$4.500.",
+     "10.",
+     "2."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "CONTAR BILLETES",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "CONTAR DINERO",
+        "texto": "EMPEZAMOS POR EL BILLETE QUE <b>MÁS VALE</b> Y SUMAMOS LOS DEMÁS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "HAY DE $100, $500, $1.000 Y $2.000.",
+         "EL NÚMERO DICE CUÁNTO VALE.",
+         "PODEMOS CAMBIAR UN BILLETE GRANDE POR <b>VARIOS CHICOS</b> QUE SUMAN IGUAL."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero4"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero4"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "CONTAR DINERO",
+      "definicion": "SUMAMOS EMPEZANDO POR EL BILLETE QUE MÁS VALE.",
+      "ejemplo": "$2.000 + $500 = $2.500"
+     },
+     {
+      "concepto": "CAMBIAR",
+      "definicion": "VARIOS BILLETES CHICOS PUEDEN VALER LO MISMO QUE UNO GRANDE.",
+      "ejemplo": "10 DE $100 = $1.000"
+     }
+    ]
+   }
+  },
+  "2": {
+   "estilo": "primeros",
+   "objetivo": "Vas a juntar montos grandes con billetes.",
+   "vas_a_ver": [
+    "Separar miles y cientos",
+    "Billetes para los miles",
+    "Billetes para los cientos"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Separar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El casco cuesta $3.700."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Lo separamos: <b>$3.000 + $700</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "El casco",
+       "texto": "$3.000 y $700.",
+       "png_base64": "iVBORw0KGgoAAAANSUhEUgAAAfgAAAD1CAMAAACLHxcnAAAAYFBMVEX////z+PjY8OrT7efT6uXK5uDH39vD3t6+4NvC2tWr1NClysafwr+Jw76Jvr6Ev7yNuLVwtLFvtLCCrKp6kpFRoZ9AmJY/mJY+mJUwj44ngYARfXwOfHtMY2UtREgkOz9d4bUmAAARBElEQVR42u2d6WKyOhCGWyAUEjgoi5+A4P3f5Ql7gITFaivpO7+sImXyZCaTySR+fEAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQL4tnxb5OqAQy/hT+n4R4/NpzA0vuWa3w0qeJoG1izkNL8fW9+w8wdK9y00DSYOtlk+TXAN9s5B8jzvN+n50vf47nFyvaa/Af1t8ILn2+qYH1PffoO8t/IbPN5K6DS4BJcZhhVC/MeL0a9W9hY17ODPHPKy+psPCmn7GHuaeVl8PDgy9bwxWqZKvDH2fVT/PQ+f4+hq0Nln/ce55qAH2Gn2QrZGvuSeOHvoadVd/jDwf7nJmaCNORX4pxKv8/Fkffa0qKqcPcPf04t6QTxbiOr24N+TT/RGewZspMLQSytE6Sw4u0UtfUiHcDf7Mu4upV0NUk5SrcuJahQCa6etznXabPO8tTLN2MAif1qmSeLxThLrpW4Xn3k7uDp/IadcOlckrfN8n7xOOdvoGi1GNKsTVzwAMHrCmSk+f6qdvFbDu9PXcSVD9GsLKVQ0RahbSt/Jv74yu8nyWhg3BQ3d54vaiYUjDhffn//ZN5rQc4utBnqliWUdDffkgH+6N7S46gj8rortPPvExNdSXcY67wDPtshn9zFZqAZaWsR3PViqjWYX4Wgb1dVifKPK1WoLnemW7wP+nKXimAP/Fc3o66ss9Wb4X/PmPgf+no74mwAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wAM8wP9h8EHKpd6klVSvHB3As0qTEOCNlfK39p/Up1BoAd6vNNlVs0YrsQD+z4FPX6s7wAP824AnDheiF/hapy+AH9qD9K++pNtbROWJQ7/GNe5Va5pvC95yqOKsJPPLcSxp9zDV4E1+OzL7B+RI4M0qxr0azoXvx0r9yhNWatav6j+4+FPwX2HdFHnS79zzLs3Bc1lyJu8HnpzT5kit+sykOqo/jx48TwNTUDgw2LU+h67qEDRtv1xJrbDpX9vbfQ3/oDu30D8M+PqBWXtg4NkIb90r5RjvD6cLhma36akX+nbghef1x2O8cx1OV3S67Uxcq64RLmZzREcv1dY9Jx0OqGwwC+88Uvn/m+D7EwZ7hM3JEzLwvtgSYUvqjcEHwsONwZNUPGfS6S8ezkoN5uCd0Umq/rTfHwt85da6U0K7V6ECvNN8Sh0/62ygPnrOd4jDzte3A988b574/vkyAV8DSz2nOXDuIvSStG0EjtFJmpeXhAttGyIP/SDt7MOsPr9Sx+GnNGYHA5+STufqVY37qgCf9L2C5u1lF2F+5LzbGF8/b0bbTIwIvrblrH7eS+ermkZIzPayZpOmGNzVX8pp7y/Ceu/bsH+bHgu8b7TPP7xKFeBrOydDtEtaiw+edsLoU8HX5njzZfP4c9+Fm/fCDnxeq5f3uEXw4RAh+G0zkdpOmHOs6VwDnrRHcgivMjn4ulPk11rytqsHw9njzruBbyzUkoFvPH2tSdr5+qB3+gJuEfylHfp7SyHt501Mbx0LfN7u3WtfLYGn08O3uTFZQpCUWO8FnvW6zMBfp8em91H9Avj6tSfYDH+f5dM4/3jgs0fAG0Q4Pz55Q4uXg//3LPAGvY5nfDqC/2oO2x6kaRCLBUmbxCFvBd6ZPdPY1YeDJnQL+Jmrbzyc45+TJtGTaAq+Ce6GoVyM6MzkKRP550b12UBqAl6APJ70T8FfBbXCIQgIpvP2euaY6go+7FJataph1YKMGkKr0DeczrUnPTMmgq855e3jmn41kZWDvwypzHao84wuk1O9HXwJnUxb8KTJbASM+WF7pnDIc/QBoyzM+7nQuyVwbteQ+2JZAoendigfp7JmPJCCbzK4eZZd+jRdck6yPg2Q5dfQZ9S/aO3qxRj21oGfvPFWKVvxecfgrXFcrwRPxfBvlOdtPEk2TefrCZ6vV02S9SL4y/utzgnPO1mkscQse6YEbwS5kIgnw09+tQlBAXweHGY6V6Wgk/Erq3/lVS/qPnyuXjndeJhkeZOwqEc34oX/2jfYO67HN8+bZ5f6p3topUk33XbCKhbnH50bhmz4MKxetqO3E9R/hd2PyVRfyhK/i3SCJG30f+i3cg5WXm1NM7Sm9dYVOOqne+jBZ+pL3kFdPerqAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAR7gAf7XwNvtz4oB/B8DH93v9+IpT1V3IXvtIsqvsgH+fcG78ZJMf1fHjovyXktZRKof3bEj4SIb4N8TPL0viTvpJKMPy1iG3o7L0VWx/Zvgo7Isl0Y4i+z/HRVr5RdczLV7rt3g3cBH5fTj0pvdz5tfdPpF8FVXlf0ulEmjuGgcU1kW8VbH1DkzlSszvcYl8lvKf43KbW9QLPrC9wIfyy44Sf7NTOK3Ax/Pumex4WfDxh4vdiX+RbzjvMO7xTZf+ETwdvXMpSTc2gw+ll/hrXO/36N3A1/KuueaAz6Vy67MLqadiSz0C7nDfCZ4coqHJyqLIj65D4D3FFeU4s2Y6j7sAODvhbnqM5c69Iz7lHy87jCfCN6OJUqWhbsJfNkbARHuUvDRUfhLACe+XcTiX9YvgLe8qH4GPoR7rrkOftkxnVb8nVWs9KVou0U8AbxXrnhot5hJKRmch95a0Ml9TxLVylohVu5z9k8F7xWTvh6fyAz8uHXKBZMn0oYsicyeS1lfsuVexnoN+JPKlr2FLxVztQa1S3vqKXqTN8up/3fLue/4GfBusRiJllVczmwO2hY7CFseM9oo0DRZMTMNt9eU5zfsfjQv7VmrFlR6g6eCd+8PgGcSg4/mjRfPmus0/2K0Npq9CLxbLk9BYs+UWUe03pLxZFBzJ1zbPs+mTUEVNyjJK8ALQV0zu+zduLflS67ECVjzThXPvmjPPUXxk+At+QB3WrPmeNXgO069444nisbTL5iTv61J80UvAN/fvPD6ebzr1QGPt8FLDM1gy0K5oTNMPb30IusHwQ9+ufr/cZdnPq0NiGrwU669YsXEtdlTC/fGjaO6wVPBR8JAIyZw3Ljw1gezO5U4w1h2oascIiQDwk+AbxuVz1266Zx74rMbFXhvdTyisyuisfJzjGPSbDbGzrrKE8HHwv+eZO6U8asts9tYFhvEExcayYbK05703bPAu0PPFebx1omu9XV7dQ7vKrrCzKAnXWGO2VsIt74LvlCD32DwnmzYp2qm0m+y3wDf/VNTnasfmXO5eYi/9wZDRnq5CxNgazTEq8LFl1h8FWBsBG9JozFJ2Cbm8orJRUwWMRQ/B96TWrwyAT+feilNqJyP+sWoLaI5eCofCqyFhnkW+Cp1uBG8fP41BMmWLNlbKGcD8rDw1eC7JyvsJfDRJFtVuOu+s1CAP82dXTR6q1y5wWuCu3oit6nth/mpmMUyhxmRoTbmUuYWyP0+N5ZXg7fGarO1Qa3WIVrK1Jfq+UoxpzweCU8/D36Wv5ks0Cxl+sTppZyeO3l3AE/W+swPRfVDttazVsAXp8Xp5gL4cnQvNm/KSGyGnwFvSNcNYrYrWzvy10vg7zLwxq+A9yTLUt6yxfNU68KT3b8Jnqzd4NkpW3kGS1l0oIjB7aNZvLR4oKAr1ywsy37X4q0Fi38FeOXiXGyueIhRgLvm6gs1eOs3xnh+Jxn5Sd1DVY5XltsqhdbAr47xP+zqFatUKh1dxcdys6VvG9zVT1esFI10D8iEggXv0ag+eq+oXrYuvaSjLFurns6xLdO5X5nHT6u8V0x6KJ0pXjGPZ/KeY95fDL5qgVhSFbQxW6tm6k3aU5rAob8Hvi81XK20GBS3NmfurM2ZOyLvOfYLM3eiR4uXS+aVOVc100iZsj2pe8ev1NzR3puvTenZ/lx9tClXH8/iH/bCXP2svNo9FeqiA0u9di5lOu0n0kWaaE/x1euKLU/Lg3i8NsjPKZ3Go6J6da5QLMlEagt8SV19pLTAhWoZqd1OpwD0fZZlZ+C75fDTRvCEtTI1itiQF1rMLHpSaEF+dD1euqGiUIAXKuZmIyG5L0xH+veWCzHMnwNvu7Py6lIES5S+zp1a+IyzJe8Js4KaaclOPEkWkKUlwR8Fv1h5JsnozZM98Tx+cHftpnnesmzhmSPw7sgvn8YbPq15mdAM/LSGLlbW3JFx6iyeOs1IcYOnrs5F1nbwi0VSknqK+Rq9ZECIN5X1vmI9vmyWJRrw3aS+7LXhRbbU7GZ98+eegR/UrTbcDKFyMRsN6wThUFhOV27wkirbmKtPJ+D7qctpwzAucYbd3lNP4v2LKWa2ZzL3/EIMvjhXdIV3omqn4ePxVJ+pwQuV4sKXSle280C6M4HepTewXwO+XpTx3AH8UNBNVAZvr6zwnrilWLGsGP0krHjwbm1F5a7q6qeDV21/UO02iA01ePnewchY3jAh7peItxf+Pq0Qo+36pVh2oNo7Ga8s1I97rKpSZ+GiXwPfm6cCvEBJAl4GbtRWrFzOEZvF5n3ETwO/nraO70vBhliYpt5EpFwNlCbJX1lsKc1SF/by/iJx4UoGft6c8UoTTWp65itHkfHT4KcbdDdUSMlba3LcBCt3b9h6yTx+tEO4Ob2DLi7glOPd7lLwwjgpX9wmow2q5XzftVds25L/MvCzjdlb8iwy8iXbsA5cer9yMIJFT80iBd8sO41b7FMsBFjzCp3+ZKCpeh3aMvbkawPtbRVHZpj9DRbrYb4L3vJke6QlZ9ds2+nEZoYiqU+cu9mCvuFRKPW/c/nRXNQl+xIilsuYu1CnVd2VLg1thC7f4EkJHDeKR1OWYrRfcN/eRmt8pEMhvdiMinFFk2m8KXhD/1OviMvqo1BUx9Mxr5MVSt3hPurTferbbbkI4I92wOGG47o2XwTwhwJvHOdIU4AHeID/S+BZFEU2wOP0aoAHeIAHeJ3BE5cLwOOnSQAe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AEe4AH++ODDPwb+qqO+1l7w/h8DTzQFz/XKdoH3NAXvK8Bzy0h11NfZC57yBtKxIc48dpHp+8ldoo76co7XXeB1tYDkdvOkCme3G/lDHk4plQWYGjbEv9vNkSp8vd2ohvqGt1uwC3xlAY6GsxuuliHVl7uCQE8Px/aBT7ScyFNlrMOj2YuGs7n8drM+9kZ3qZae7yzX1+BjG9FxiE/3cf/4zDX09ZWn/1IofNHR13O//d9O8JWvv2g4mcsWMhcZ0W9k2+vp61zWjenVDk6umsxVLi7TLmdlpnsnc7VU5qGVs7eui9kMbh450y2iyY394CsT0Im8xefwyhG+Hdy0Is+53/yPB+SLe8bM06UZaLrWDga/Ig90SVsR3o8fcfQd+dtFC6MnYb7e/yvyt1QLo7eC/HHunDz39rwpzs6xzcAJLlUz5N6avsa10jcLqXXsXu4llb638ONh+TzfasnTSxiG58MJf+gkzRsdki1xjpc1F2eX5Kj6XlsVUufjO0KStt0OLhe6tatnWuib+p8f35RPmhy8LbLE2zOrccL02J09vwbWx3Pk06Ke/98BxfcoeaDrfxoOO6S+/3nsy/iAQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAII/I/8K8+ChZQp6PAAAAAElFTkSuQmCC"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Juntar con billetes",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Formar un monto",
+       "texto": "Miles con billetes de <b>$1.000</b>. Cientos con $500 y $100."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Tres de $1.000, uno de $500 y dos de $100."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "$3.700",
+       "texto": "Billetes para el casco.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá los montos. Los vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Montos para formar",
+       "texto": "¿Cuántos billetes?",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Formar",
+    "planteo": "Juntá $4.200.",
+    "pasos": [
+     "Cuatro de $1.000.",
+     "Dos de $100."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Completá",
+    "planteo": "Juntá $6.100.",
+    "pasos": [
+     "___ billetes de $1.000.",
+     "___ billete de $100."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Pensá",
+    "planteo": "¿Cuánto son 2 de $2.000 y 3 de $100?"
+   },
+   "tip": {
+    "titulo": "Separá",
+    "texto": "Primero los miles, después los cientos."
+   },
+   "ojo": [
+    "Miles con miles, cientos con cientos.",
+    "4 de $1.000 y 3 de $100 son $4.300."
+   ],
+   "resumen": [
+    {
+     "titulo": "Separar",
+     "texto": "Miles y cientos."
+    },
+    {
+     "titulo": "Miles",
+     "texto": "Billetes de $1.000."
+    },
+    {
+     "titulo": "Cientos",
+     "texto": "$500 y $100."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Monto",
+     "significado": "Cantidad de dinero."
+    },
+    {
+     "palabra": "Formar",
+     "significado": "Juntar hasta llegar."
+    }
+   ],
+   "carpeta": [
+    "Para $5.300, ¿cuántos billetes de $1.000 usás?",
+    "Para $2.800, ¿cuántos billetes de $100 usás si no usás de $500?",
+    "Mía dice que 4 de $1.000 y 3 de $100 son $7.000. ¿Cuánto es?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "5"
+    ],
+    [
+     "8"
+    ],
+    [
+     "4300",
+     "4.300"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "6. 1.",
+    "solo": "$4.300.",
+    "carpeta": [
+     "5.",
+     "8.",
+     "$4.300."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "SEPARAR EL MONTO",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "SEPARAR",
+        "texto": "PARTIMOS EL MONTO EN <b>MILES</b> Y <b>CIENTOS</b>."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "$3.700 = $3.000 + $700.",
+         "LOS MILES PRIMERO.",
+         "ELEGIMOS BILLETES PARA CADA PARTE HASTA <b>LLEGAR JUSTO</b> AL MONTO."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero4",
+        "que": "formar"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero4",
+        "que": "formar"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "SEPARAR",
+      "definicion": "UN MONTO GRANDE SE PARTE EN MILES Y CIENTOS.",
+      "ejemplo": "$5.300 = $5.000 + $300"
+     },
+     {
+      "concepto": "FORMAR",
+      "definicion": "PARA CADA PARTE ELEGIMOS LOS BILLETES QUE SIRVEN.",
+      "ejemplo": "$2.800: DOS DE $1.000 Y OCHO DE $100"
+     }
+    ]
+   }
+  },
+  "3": {
+   "estilo": "primeros",
+   "objetivo": "Vas a comparar precios grandes.",
+   "vas_a_ver": [
+    "Más caro y más barato",
+    "Primero los miles",
+    "Ordenar precios"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Más caro",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La bici cuesta $4.250. El monopatín, $4.520."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Miles empatan. Centenas: 2 y 5. Es más caro el <b>monopatín</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Precios",
+       "texto": "Comparamos como números.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Ordenar precios",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Más caro",
+       "texto": "Es el precio con el número <b>mayor</b>. Miramos primero los miles."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "$8.900, $3.200 y $1.950."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Del más caro al más barato",
+       "texto": "Miles primero.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá los precios. Los vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Precios para comparar",
+       "texto": "¿Cuál es más caro?",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Comparar",
+    "planteo": "$6.080 o $6.800.",
+    "pasos": [
+     "Miles empatan.",
+     "$6.800 es más caro."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Completá",
+    "planteo": "Poné > o <.",
+    "pasos": [
+     "$2.900 ___ $3.100",
+     "$7.450 ___ $7.405"
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Elegí",
+    "planteo": "¿Cuál es más barato: $5.010 o $5.100?"
+   },
+   "tip": {
+    "titulo": "Como números",
+    "texto": "Los precios se comparan como números."
+   },
+   "ojo": [
+    "$999 es más barato que $1.200.",
+    "El cero también cuenta."
+   ],
+   "resumen": [
+    {
+     "titulo": "Primero",
+     "texto": "Los miles."
+    },
+    {
+     "titulo": "Empate",
+     "texto": "Las centenas."
+    },
+    {
+     "titulo": "Caro",
+     "texto": "Número mayor."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Caro",
+     "significado": "Cuesta más."
+    },
+    {
+     "palabra": "Barato",
+     "significado": "Cuesta menos."
+    }
+   ],
+   "carpeta": [
+    "En los precios para comparar, ¿cuál es el más caro?",
+    "¿Cuál es el más barato?",
+    "Tomi dice que $1.080 es más caro que $1.800. ¿Cuál es más caro?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "1800",
+     "1.800"
+    ],
+    [
+     "1008",
+     "1.008"
+    ],
+    [
+     "1800",
+     "1.800"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "<. >.",
+    "solo": "$5.010.",
+    "carpeta": [
+     "$1.800 (la luz).",
+     "$1.008 (el canasto).",
+     "$1.800."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "MÁS CARO Y MÁS BARATO",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "COMPARAR PRECIOS",
+        "texto": "LOS PRECIOS SE COMPARAN COMO NÚMEROS: PRIMERO LOS <b>MILES</b>."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "EL MAYOR ES EL MÁS CARO.",
+         "EL MENOR ES EL MÁS BARATO.",
+         "SI LOS MILES SON IGUALES, MIRAMOS LAS <b>CENTENAS</b>."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero4",
+        "que": "caro"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero4",
+        "que": "caro"
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "MÁS CARO",
+      "definicion": "ES EL PRECIO CON EL NÚMERO MAYOR.",
+      "ejemplo": "$6.800 ES MÁS CARO QUE $6.080"
+     },
+     {
+      "concepto": "EMPATE",
+      "definicion": "SI LOS MILES SON IGUALES, DECIDEN LAS CENTENAS.",
+      "ejemplo": "$7.450 ES MÁS CARO QUE $7.405"
+     }
+    ]
+   }
+  },
+  "4": {
+   "estilo": "primeros",
+   "objetivo": "Vas a pagar y calcular el vuelto.",
+   "neutro": {
+    "objetivo": "Vas a pagar y calcular el cambio."
+   },
+   "vas_a_ver": [
+    "Pagar con más",
+    "Contar para adelante",
+    "Llegar al mil"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Pagar con más",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Tomi compra un timbre de $3.700. Paga con $4.000."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "De 3.700 a 4.000 hay <b>300</b>."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Contar para adelante",
+       "texto": "Tres saltos de 100.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El vuelto",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Vuelto",
+       "texto": "Es lo que te devuelven cuando pagás <b>de más</b>.",
+       "neutro": {
+        "titulo": "Cambio",
+        "texto": "Es lo que te devuelven cuando pagas <b>de más</b>."
+       }
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Cuesta $7.600, paga $10.000: le devuelven $2.400."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Dos saltos",
+       "texto": "400 y 2.000.",
+       "png_base64": "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"
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Para practicar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Mirá las compras. Las vas a usar en la carpeta."
+      },
+      {
+       "tipo": "imagen",
+       "imagen_tipo": "ilustracion",
+       "titulo": "Compras",
+       "texto": "Precio y pago.",
+       "png_base64": "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"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "Contar",
+    "planteo": "Cuesta $2.600. Paga $3.000.",
+    "pasos": [
+     "2.700, 2.800, 2.900, 3.000.",
+     "Le devuelven $400."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "Completá",
+    "planteo": "¿Cuánto le devuelven?",
+    "pasos": [
+     "Cuesta $4.900, paga $5.000: ___ .",
+     "Cuesta $8.500, paga $9.000: ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "Pensá",
+    "planteo": "Cuesta $6.200. Paga con $7.000. ¿Cuánto le devuelven?"
+   },
+   "tip": {
+    "titulo": "Hasta el mil",
+    "texto": "Primero saltá hasta el mil más cercano."
+   },
+   "ojo": [
+    "De 3.700 a 4.000 hay 300, no 700.",
+    "Si paga justo, no le devuelven nada."
+   ],
+   "resumen": [
+    {
+     "titulo": "Vuelto",
+     "texto": "Lo que sobra.",
+     "neutro": {
+      "titulo": "Cambio",
+      "texto": "Lo que sobra."
+     }
+    },
+    {
+     "titulo": "Contar",
+     "texto": "Del precio al pago."
+    },
+    {
+     "titulo": "Saltos",
+     "texto": "Hasta el mil."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Vuelto",
+     "significado": "Dinero que te devuelven.",
+     "neutro": {
+      "palabra": "Cambio",
+      "significado": "Dinero que te devuelven."
+     }
+    },
+    {
+     "palabra": "Pagar",
+     "significado": "Dar dinero por algo."
+    }
+   ],
+   "carpeta": [
+    "Cuesta $1.800 y paga $2.000. ¿Cuánto le devuelven?",
+    "Cuesta $5.500 y paga $6.000. ¿Cuánto le devuelven?",
+    "Leo dice que si cuesta $3.700 y paga $4.000 le devuelven $700. ¿Cuánto es?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "200"
+    ],
+    [
+     "500"
+    ],
+    [
+     "300"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "$100. $500.",
+    "solo": "$800.",
+    "carpeta": [
+     "$200.",
+     "$500.",
+     "$300."
+    ]
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "CONTAR PARA ADELANTE",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "LO QUE TE DEVUELVEN",
+        "texto": "CONTAMOS DESDE EL <b>PRECIO</b> HASTA LO QUE PAGAMOS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "SALTAMOS DE 100 EN 100.",
+         "LOS SALTOS SON LO QUE SOBRA."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero4",
+        "que": "vuelto"
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero4",
+        "que": "vuelto"
+       }
+      }
+     },
+     {
+      "titulo": "PAGAR CON 10.000",
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "DOS SALTOS",
+        "texto": "PRIMERO HASTA EL <b>MIL</b> MÁS CERCANO, DESPUÉS HASTA LO QUE PAGAMOS."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "$7.600 → $8.000: 400.",
+         "$8.000 → $10.000: 2.000."
+        ]
+       }
+      ],
+      "ejemplo": {
+       "motor": "primeros",
+       "p": {
+        "modo": "dinero4",
+        "que": "vuelto",
+        "pago": 10000
+       }
+      },
+      "ejercicio": {
+       "motor": "primeros_x",
+       "p": {
+        "modo": "dinero4",
+        "que": "vuelto",
+        "pago": 10000
+       }
+      }
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "CONTAR PARA ADELANTE",
+      "definicion": "VAMOS DEL PRECIO AL PAGO Y SUMAMOS LOS SALTOS.",
+      "ejemplo": "CUESTA $2.600, PAGAMOS $3.000: NOS DEVUELVEN $400"
+     },
+     {
+      "concepto": "DOS SALTOS",
+      "definicion": "PRIMERO HASTA EL MIL Y DESPUÉS HASTA EL PAGO.",
+      "ejemplo": "CUESTA $7.600, PAGAMOS $10.000: NOS DEVUELVEN $2.400"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO SON 3 BILLETES DE $1.000?",
+    "o": {},
+    "r": {
+     "acepta": [
+      3000
+     ]
+    },
+    "e": "1.000, 2.000, 3.000.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTOS BILLETES DE $100 FORMAN $1.000?",
+    "o": {},
+    "r": {
+     "acepta": [
+      10
+     ]
+    },
+    "e": "DIEZ DE CIEN.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "LEO DICE QUE UNO DE $500 VALE IGUAL QUE UNO DE $1.000. ¿CUÁNTOS DE $500 FORMAN $1.000?",
+    "o": [
+     "2",
+     "1",
+     "5"
+    ],
+    "r": {
+     "correcta": "2"
+    },
+    "e": "500 + 500 = 1.000.",
+    "n": "error"
+   },
+   {
+    "t": "matching",
+    "p": "UNÍ CADA GRUPO CON LO QUE VALE.",
+    "o": {
+     "izquierda": [
+      "2 DE $1.000",
+      "4 DE $500",
+      "1 DE $2.000 Y 1 DE $500"
+     ],
+     "derecha": [
+      "$2.500",
+      "$2.000 ",
+      "$2.000"
+     ]
+    },
+    "r": {
+     "pares": {
+      "2 DE $1.000": "$2.000",
+      "4 DE $500": "$2.000 ",
+      "1 DE $2.000 Y 1 DE $500": "$2.500"
+     }
+    },
+    "e": "SUMÁ LOS BILLETES.",
+    "n": "analizar",
+    "neutro": {
+     "p": "UNE CADA GRUPO CON LO QUE VALE."
+    }
+   }
+  ],
+  "2": [
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTOS BILLETES DE $1.000 HACEN FALTA PARA $5.300?",
+    "o": {},
+    "r": {
+     "acepta": [
+      5
+     ]
+    },
+    "e": "LOS MILES: 5.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿CON QUÉ BILLETES SE FORMA $3.700?",
+    "o": [
+     "3 DE $1.000, 1 DE $500 Y 2 DE $100",
+     "3 DE $1.000 Y 7 DE $1.000",
+     "37 DE $1.000"
+    ],
+    "r": {
+     "correcta": "3 DE $1.000, 1 DE $500 Y 2 DE $100"
+    },
+    "e": "3.000 + 500 + 200.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "MÍA DICE QUE 4 DE $1.000 Y 3 DE $100 SON $7.000. ¿CUÁNTO ES?",
+    "o": [
+     "$4.300",
+     "$7.000",
+     "$430"
+    ],
+    "r": {
+     "correcta": "$4.300"
+    },
+    "e": "MILES CON MILES.",
+    "n": "error"
+   },
+   {
+    "t": "numeric",
+    "p": "[[problema]] DON BETO JUNTA 2 DE $2.000 Y 3 DE $100. ¿CUÁNTO DINERO TIENE?",
+    "o": {},
+    "r": {
+     "acepta": [
+      4300
+     ]
+    },
+    "e": "4.000 + 300.",
+    "n": "aplicar"
+   }
+  ],
+  "3": [
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL ES MÁS CARO: $6.080 O $6.800?",
+    "o": [
+     "$6.800",
+     "$6.080"
+    ],
+    "r": {
+     "correcta": "$6.800"
+    },
+    "e": "CENTENAS: 8 Y 0.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "ORDENÁ DEL MÁS BARATO AL MÁS CARO.",
+    "o": [
+     "$3.200",
+     "$8.900",
+     "$1.950"
+    ],
+    "r": {
+     "orden": [
+      "$1.950",
+      "$3.200",
+      "$8.900"
+     ]
+    },
+    "e": "PRIMERO LOS MILES.",
+    "n": "aplicar",
+    "neutro": {
+     "p": "ORDENA DEL MÁS BARATO AL MÁS CARO."
+    }
+   },
+   {
+    "t": "multiple_choice",
+    "p": "TOMI DICE QUE $1.080 ES MÁS CARO QUE $1.800. ¿CUÁL ES MÁS CARO?",
+    "o": [
+     "$1.800",
+     "$1.080"
+    ],
+    "r": {
+     "correcta": "$1.800"
+    },
+    "e": "CENTENAS: 8 Y 0.",
+    "n": "error"
+   },
+   {
+    "t": "classify",
+    "p": "¿CUESTA MÁS O MENOS DE $5.000?",
+    "o": {
+     "elementos": [
+      "$4.990",
+      "$5.100",
+      "$900",
+      "$7.000"
+     ],
+     "categorias": [
+      "MENOS DE $5.000",
+      "MÁS DE $5.000"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "$4.990": "MENOS DE $5.000",
+      "$5.100": "MÁS DE $5.000",
+      "$900": "MENOS DE $5.000",
+      "$7.000": "MÁS DE $5.000"
+     }
+    },
+    "e": "MIRÁ LOS MILES.",
+    "n": "analizar"
+   }
+  ],
+  "4": [
+   {
+    "t": "numeric",
+    "p": "CUESTA $2.600 Y PAGA $3.000. ¿CUÁNTO LE DEVUELVEN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      400
+     ]
+    },
+    "e": "2.700, 2.800, 2.900, 3.000.",
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "[[problema]] UN INFLADOR CUESTA $7.600. PAGA CON $10.000. ¿CUÁNTO LE DEVUELVEN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      2400
+     ]
+    },
+    "e": "400 + 2.000.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "LEO DICE QUE SI CUESTA $3.700 Y PAGA $4.000 LE DEVUELVEN $700. ¿CUÁNTO ES?",
+    "o": [
+     "$300",
+     "$700",
+     "$1.300"
+    ],
+    "r": {
+     "correcta": "$300"
+    },
+    "e": "DE 3.700 A 4.000 HAY 300.",
+    "n": "error"
+   },
+   {
+    "t": "true_false",
+    "p": "SI PAGA JUSTO, NO LE DAN VUELTO.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "VERDADERO"
+    },
+    "e": "NO SOBRA NADA.",
+    "n": "recordar",
+    "neutro": {
+     "p": "SI PAGA JUSTO, NO LE DAN CAMBIO."
+    }
+   }
+  ],
+  "5": [
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. 2 BILLETES DE $2.000 SON $___",
+    "o": {},
+    "r": {
+     "acepta": [
+      4000
+     ]
+    },
+    "e": "4.000.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "RELÁMPAGO. ¿CUÁL ES MÁS BARATO?",
+    "o": [
+     "$5.010",
+     "$5.100"
+    ],
+    "r": {
+     "correcta": "$5.010"
+    },
+    "e": "CENTENAS.",
+    "tiempo": 30,
+    "n": "aplicar"
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. CUESTA $4.900, PAGA $5.000. ¿VUELTO?",
+    "o": {},
+    "r": {
+     "acepta": [
+      100
+     ]
+    },
+    "e": "100.",
+    "tiempo": 30,
+    "n": "aplicar",
+    "neutro": {
+     "p": "RELÁMPAGO. CUESTA $4.900, PAGA $5.000. ¿CAMBIO?"
+    }
+   },
+   {
+    "t": "numeric",
+    "p": "RELÁMPAGO. ¿CUÁNTOS DE $500 FORMAN $2.000?",
+    "o": {},
+    "r": {
+     "acepta": [
+      4
+     ]
+    },
+    "e": "4.",
+    "tiempo": 30,
+    "n": "recordar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "numeric",
+    "p": "¿CUÁNTO ES 1 DE $2.000, 2 DE $1.000 Y 1 DE $500?",
+    "o": {},
+    "r": {
+     "acepta": [
+      4500
+     ]
+    },
+    "e": "2.000 + 2.000 + 500.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁNTOS BILLETES DE $1.000 FORMAN $2.000?",
+    "o": [
+     "2",
+     "20",
+     "1"
+    ],
+    "r": {
+     "correcta": "2"
+    },
+    "e": "MIL Y MIL.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "DIEZ BILLETES DE $100 VALEN LO MISMO QUE UNO DE $1.000.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "VERDADERO"
+    },
+    "e": "10 × 100 = 1.000.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "PARA $6.100, ¿CUÁNTOS BILLETES DE $1.000 SE USAN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      6
+     ]
+    },
+    "e": "LOS MILES: 6.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "numeric",
+    "p": "[[problema]] TOMI TIENE 3 DE $1.000 Y 6 DE $100. ¿CUÁNTO DINERO TIENE?",
+    "o": {},
+    "r": {
+     "acepta": [
+      3600
+     ]
+    },
+    "e": "3.000 + 600.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "SOFI FORMA $2.800 CON 2 DE $1.000 Y 8 DE $1.000. ¿ESTÁ BIEN?",
+    "o": [
+     "NO: SON 8 DE $100",
+     "SÍ"
+    ],
+    "r": {
+     "correcta": "NO: SON 8 DE $100"
+    },
+    "e": "LOS CIENTOS VAN CON $100.",
+    "n": "error"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿CUÁL ES MÁS CARO: $7.450 O $7.405?",
+    "o": [
+     "$7.450",
+     "$7.405"
+    ],
+    "r": {
+     "correcta": "$7.450"
+    },
+    "e": "DECENAS: 5 Y 0.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "ordering",
+    "p": "ORDENÁ DEL MÁS CARO AL MÁS BARATO.",
+    "o": [
+     "$2.090",
+     "$9.020",
+     "$2.900"
+    ],
+    "r": {
+     "orden": [
+      "$9.020",
+      "$2.900",
+      "$2.090"
+     ]
+    },
+    "e": "MILES Y DESPUÉS CENTENAS.",
+    "n": "analizar",
+    "neutro": {
+     "p": "ORDENA DEL MÁS CARO AL MÁS BARATO."
+    }
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "$999 ES MÁS CARO QUE $1.200.",
+    "o": [
+     "VERDADERO",
+     "FALSO"
+    ],
+    "r": {
+     "correcta": "FALSO"
+    },
+    "e": "1.200 TIENE CUATRO CIFRAS.",
+    "n": "error"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "CUESTA $6.200 Y PAGA CON $7.000. ¿CUÁNTO LE DEVUELVEN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      800
+     ]
+    },
+    "e": "DE 6.200 A 7.000 HAY 800.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "numeric",
+    "p": "[[problema]] UNA BICI CUESTA $8.500. PAGA CON $10.000. ¿CUÁNTO LE DEVUELVEN?",
+    "o": {},
+    "r": {
+     "acepta": [
+      1500
+     ]
+    },
+    "e": "500 + 1.000.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "CUESTA $5.500 Y PAGA $6.000. LE DAN $500. ¿ESTÁ BIEN?",
+    "o": [
+     "SÍ",
+     "NO"
+    ],
+    "r": {
+     "correcta": "SÍ"
+    },
+    "e": "DE 5.500 A 6.000 HAY 500.",
+    "n": "analizar"
+   }
+  ]
+ ]
+}
