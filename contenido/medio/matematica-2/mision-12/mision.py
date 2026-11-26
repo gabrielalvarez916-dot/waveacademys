@@ -147,15 +147,83 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "500. 200. 300.", "solo": "45.", "carpeta": ["60.", "40.", "100 − 40 = 60: el grande va primero."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+ORD = lambda p, o, orden, e, **k: {"t": "ordering", "p": p, "o": o, "r": {"orden": orden}, "e": e, **k}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("DAR VUELTA LA SUMA", [LD("EL ORDEN", "EN LA SUMA, EL <b>ORDEN NO IMPORTA</b>: 3 + 250 DA LO MISMO QUE 250 + 3."),
+   LL("CONVIENE EMPEZAR POR EL GRANDE.", "EN LA RESTA NO SE PUEDE DAR VUELTA.")],
+   {"modo": "prop", "que": "conmuta"}, {"modo": "prop", "que": "conmuta"}),
+ T("EMPEZAR POR EL GRANDE", [LD("EL GRANDE PRIMERO", "SI EMPEZAMOS POR EL <b>NÚMERO GRANDE</b>, CONTAMOS MENOS."),
+   LL("5 + 195: 195… 196, 197, 198, 199, 200.", "8 − 3 NO ES IGUAL A 3 − 8.")],
+   {"modo": "prop", "que": "conmuta"}, {"modo": "prop", "que": "conmuta"}),
+], "recuerda": [
+ RC("EL ORDEN", "EN LA SUMA PODEMOS CAMBIAR EL ORDEN Y DA LO MISMO.", "30 + 40 = 40 + 30"),
+ RC("EL GRANDE PRIMERO", "EMPEZAMOS POR EL GRANDE Y CONTAMOS MENOS.", "4 + 120: 121, 122, 123, 124"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("PAREJAS AMIGAS", [LD("AMIGOS", "BUSCAMOS NÚMEROS QUE JUNTOS FORMAN UN <b>REDONDO</b> Y LOS SUMAMOS PRIMERO."),
+   LL("8 + 45 + 2: 8 + 2 = 10.", "10 + 45 = 55.")],
+   {"modo": "prop", "que": "amigos"}, {"modo": "prop", "que": "amigos"}),
+ T("SUMAR LO QUE QUEDA", [LD("DESPUÉS", "AL REDONDO LE <b>SUMAMOS</b> LO QUE QUEDA."),
+   LL("70 + 18 + 30: 70 + 30 = 100.", "100 + 18 = 118.")],
+   {"modo": "prop", "que": "amigos"}, {"modo": "prop", "que": "amigos"}),
+], "recuerda": [
+ RC("PAREJAS AMIGAS", "SON NÚMEROS QUE JUNTOS FORMAN UN REDONDO.", "37 + 3 = 40"),
+ RC("LO QUE QUEDA", "AL REDONDO LE SUMAMOS EL RESTO.", "40 + 25 = 65"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("USAR LOS DOBLES", [LD("DOBLES", "UN <b>DOBLE</b> QUE YA SABEMOS NOS AYUDA CON SUMAS PARECIDAS."),
+   LL("25 + 25 = 50.", "25 + 26 = 51: UNO MÁS.")],
+   {"modo": "prop", "que": "dobles"}, {"modo": "prop", "que": "dobles"}),
+ T("UNO MÁS, UNO MENOS", [LD("PARECIDAS", "SI UN NÚMERO CAMBIA <b>UNO</b>, EL RESULTADO CAMBIA UNO."),
+   LL("30 + 30 = 60, ENTONCES 30 + 31 = 61.", "PERO 30 + 40 = 70: CAMBIÓ DIEZ.")],
+   {"modo": "prop", "que": "dobles"}, {"modo": "prop", "que": "dobles"}),
+], "recuerda": [
+ RC("USAR DOBLES", "PARTIMOS DE UN DOBLE QUE YA SABEMOS.", "50 + 50 = 100"),
+ RC("UNO MÁS O UNO MENOS", "EL RESULTADO CAMBIA LO MISMO QUE CAMBIÓ EL NÚMERO.", "50 + 51 = 101"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("UNA FAMILIA DE CUENTAS", [LD("LA FAMILIA", "CON <b>TRES NÚMEROS</b> PODEMOS ARMAR DOS SUMAS Y DOS RESTAS."),
+   LL("60 + 40 = 100 Y 40 + 60 = 100.", "100 − 40 = 60 Y 100 − 60 = 40.")],
+   {"modo": "prop", "que": "familia"}, {"modo": "prop", "que": "familia"}),
+ T("DE LA SUMA A LA RESTA", [LD("DESHACER", "LA RESTA <b>DESHACE</b> LA SUMA: SI SABEMOS UNA, SABEMOS LA OTRA."),
+   LL("70 + 30 = 100, ENTONCES 100 − 30 = 70.", "EN LA RESTA, EL GRANDE VA PRIMERO.")],
+   {"modo": "prop", "que": "familia"}, {"modo": "prop", "que": "familia"}),
+], "recuerda": [
+ RC("LA FAMILIA", "TRES NÚMEROS ARMAN DOS SUMAS Y DOS RESTAS.", "25 + 15 = 40 Y 40 − 15 = 25"),
+ RC("DESHACER", "LA RESTA DESHACE LO QUE HIZO LA SUMA.", "100 − 40 = 60"),
+]}
+
 ACT = {
 "1": [N("¿CUÁNTO ES 4 + 120? EMPEZÁ POR EL GRANDE.", 124, "120, 121, 122, 123, 124.", n="aplicar"),
-      TF("30 + 40 DA LO MISMO QUE 40 + 30.", "VERDADERO", "EN LA SUMA EL ORDEN NO CAMBIA.", n="analizar")],
+      TF("30 + 40 DA LO MISMO QUE 40 + 30.", "VERDADERO", "EN LA SUMA EL ORDEN NO CAMBIA.", n="analizar"),
+      FB("COMPLETÁ: 5 + 195 = 195 + 5 = ___", [["200"]], "195… 196, 197, 198, 199, 200.", n="aplicar"),
+      MC("TOMI DICE QUE 8 − 3 ES IGUAL A 3 − 8. ¿TIENE RAZÓN?", ["NO", "SÍ"], "NO", "EN LA RESTA EL ORDEN SÍ IMPORTA.", n="error")],
 "2": [N("¿CUÁNTO ES 37 + 25 + 3?", 65, "37 + 3 = 40. 40 + 25 = 65.", n="aplicar"),
-      MC("EN 60 + 75 + 40, ¿QUÉ CONVIENE JUNTAR PRIMERO?", ["60 Y 40", "60 Y 75", "75 Y 40"], "60 Y 40", "DAN 100.", n="analizar")],
+      MC("EN 60 + 75 + 40, ¿QUÉ CONVIENE JUNTAR PRIMERO?", ["60 Y 40", "60 Y 75", "75 Y 40"], "60 Y 40", "DAN 100.", n="analizar"),
+      UNIR("UNÍ CADA NÚMERO CON SU AMIGO PARA LLEGAR A UN REDONDO.", ["37", "54", "81"], ["9", "3", "6"], {"37": "3", "54": "6", "81": "9"}, "37 + 3 = 40, 54 + 6 = 60, 81 + 9 = 90.", n="aplicar"),
+      MC("SOFI HIZO 37 + 25 + 3 Y LE DIO 62. ¿CUÁNTO DA?", ["65", "62", "55"], "65", "SE OLVIDÓ DE SUMAR EL 3: 37 + 3 = 40 Y 40 + 25 = 65.", n="error")],
 "3": [N("SI 25 + 25 = 50, ¿CUÁNTO ES 25 + 26?", 51, "UNO MÁS.", n="aplicar"),
-      UNI("UNÍ CADA SUMA CON SU RESULTADO.", [("40 + 40", "80"), ("40 + 41", "81"), ("40 + 39", "79")], "UNO MÁS, UNO MENOS.", n="analizar")],
+      UNIR("UNÍ CADA SUMA CON SU RESULTADO.", ["40 + 40", "40 + 41", "40 + 39"], ["79", "80", "81"], {"40 + 40": "80", "40 + 41": "81", "40 + 39": "79"}, "UNO MÁS, UNO MENOS.", n="analizar"),
+      FB("COMPLETÁ: 100 + 100 = 200, ENTONCES 100 + 99 = ___", [["199"]], "UNO MENOS.", n="aplicar"),
+      MC("TOMI SABE QUE 30 + 30 = 60 Y DICE QUE 30 + 40 = 61. ¿CUÁNTO ES?", ["70", "61", "60"], "70", "EL 40 TIENE DIEZ MÁS QUE EL 30: DA DIEZ MÁS.", n="error")],
 "4": [N("SI 70 + 30 = 100, ¿CUÁNTO ES 100 − 30?", 70, "LA RESTA DESHACE LA SUMA.", n="aplicar"),
-      MC("¿CUÁL ES DE LA FAMILIA DE 25, 15 Y 40?", ["40 MENOS 15", "40 MÁS 15", "25 MENOS 40"], "40 MENOS 15", "TRES NÚMEROS, CUATRO CUENTAS.", n="analizar")],
+      MC("¿CUÁL ES DE LA FAMILIA DE 25, 15 Y 40?", ["40 MENOS 15", "40 MÁS 15", "25 MENOS 40"], "40 MENOS 15", "TRES NÚMEROS, CUATRO CUENTAS.", n="analizar"),
+      ORD("ARMÁ LA RESTA DE LA FAMILIA 60, 40 Y 100.", ["40", "=", "100", "60", "−"], ["100", "−", "40", "=", "60"], "EL GRANDE VA PRIMERO: 100 − 40 = 60.", n="aplicar"),
+      MC("SOFI DICE QUE 40 − 100 = 60. ¿CÓMO SE ESCRIBE BIEN?", ["100 − 40 = 60", "40 − 100 = 60", "60 − 100 = 40"], "100 − 40 = 60", "EN LA RESTA EL GRANDE VA PRIMERO.", n="error")],
 "5": [N("RELÁMPAGO. 2 + 98 = ___", 100, "98 + 2.", tiempo=30, n="aplicar"),
       N("RELÁMPAGO. 6 + 17 + 4 = ___", 27, "6 + 4 = 10.", tiempo=40, n="aplicar"),
       N("RELÁMPAGO. 50 + 51 = ___", 101, "DOBLE + 1.", tiempo=30, n="aplicar"),
@@ -175,7 +243,7 @@ EXAMEN = [
  [4, UNI("UNÍ CADA RESTA CON LA SUMA QUE LA AYUDA.", [("100 − 30", "70 + 30"), ("500 − 200", "300 + 200"), ("13 − 5", "8 + 5")], "MISMA FAMILIA.", n="analizar")],
  [4, MC("CON 8, 5 Y 13, ¿CUÁNTAS CUENTAS ARMO?", ["4", "2", "3"], "4", "DOS SUMAS Y DOS RESTAS.", n="recordar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 12, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 12, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: propiedades de la suma", "examen_titulo": "Nivel jefe: propiedades de la suma",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-12.json"), "w", encoding="utf-8"), ensure_ascii=False)

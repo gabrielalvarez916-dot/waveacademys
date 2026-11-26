@@ -148,15 +148,83 @@ N4 = {**ESTILO,
 "soluciones": {"incompleto": "80. 80 − 10 = 70.", "solo": "150.", "carpeta": ["400.", "280.", "Se olvidó de restar los 120."]},
 }
 
+# ---------- LECCIÓN INTERACTIVA (escrita en sesión, docs/reglas-leccion-interactiva.md, primer ciclo: poco texto, todo visual) ----------
+LD = lambda t, x: {"tipo": "definicion", "titulo": t, "texto": x}
+LP = lambda x: {"tipo": "parrafo", "texto": x}
+LL = lambda *it: {"tipo": "lista", "items": list(it)}
+T = lambda tit, bl, ej, ex: {"titulo": tit, "explicacion": bl, "ejemplo": {"motor": "primeros", "p": ej}, "ejercicio": {"motor": "primeros_x", "p": ex}}
+RC = lambda c, d, e: {"concepto": c, "definicion": d, "ejemplo": e}
+UNIR = lambda p, iz, de, pares, e, **k: {"t": "matching", "p": p, "o": {"izquierda": iz, "derecha": de}, "r": {"pares": pares}, "e": e, **k}
+CLAS = lambda p, el, cats, r, e, **k: {"t": "classify", "p": p, "o": {"elementos": el, "categorias": cats}, "r": {"categorias": r}, "e": e, **k}
+FB = lambda p, huecos, e, **k: {"t": "fill_blank", "p": p, "o": {}, "r": {"huecos": huecos}, "e": e, **k}
+A, AN, RE, ER = {"n": "aplicar"}, {"n": "analizar"}, {"n": "recordar"}, {"n": "error"}
+NEU = lambda p: {"neutro": {"p": p}}
+N1["leccion"] = {"temas": [
+ T("AGREGAR ES SUMAR", [LD("SUMAR", "SI EN EL PROBLEMA <b>LLEGAN</b>, SE HACEN O SE JUNTAN MÁS, SUMAMOS."),
+   LL("TENÍA 250 Y HIZO 140 MÁS: 250 + 140.", "PALABRAS QUE AYUDAN: LLEGAN, GANA, JUNTA.")],
+   {"modo": "problema", "tipo": "agregar", "esc": 50}, {"modo": "problema", "tipo": "agregar", "esc": 50}),
+ T("QUITAR ES RESTAR", [LD("RESTAR", "SI ALGO <b>SE VA</b>, SE VENDE O SE PIERDE, RESTAMOS."),
+   LL("TENÍA 470 Y VENDIÓ 130: 470 − 130.", "PALABRAS QUE AYUDAN: VENDE, PIERDE, REGALA.")],
+   {"modo": "problema", "tipo": "quitar", "esc": 50}, {"modo": "problema", "tipo": "operacion", "esc": 50}),
+], "recuerda": [
+ RC("AGREGAR", "SI LLEGA O SE JUNTA MÁS, HACEMOS UNA SUMA.", "250 + 140 = 390"),
+ RC("QUITAR", "SI SE VA O SE VENDE, HACEMOS UNA RESTA.", "470 − 130 = 340"),
+]}
+
+N2["leccion"] = {"temas": [
+ T("¿QUIÉN TIENE MÁS?", [LD("COMPARAR", "PARA SABER QUIÉN TIENE MÁS, <b>COMPARAMOS</b> LOS NÚMEROS: PRIMERO LAS CENTENAS."),
+   LL("450 ES MÁS QUE 320.", "EL CAMIÓN DE 450 LLEVA MÁS.")],
+   {"modo": "dinero2", "que": "caro"}, {"modo": "comparar3"}),
+ T("¿CUÁNTOS MÁS?", [LD("LA DIFERENCIA", "PARA SABER <b>CUÁNTOS MÁS</b>, RESTAMOS EL GRANDE MENOS EL CHICO."),
+   LL("450 − 320 = 130.", "NO SE SUMA.")],
+   {"modo": "problema", "tipo": "comparar", "esc": 50}, {"modo": "problema", "tipo": "comparar", "esc": 50}),
+], "recuerda": [
+ RC("QUIÉN TIENE MÁS", "PARA SABERLO COMPARAMOS PRIMERO LAS CENTENAS.", "450 ES MÁS QUE 320"),
+ RC("CUÁNTOS MÁS", "RESTAMOS EL NÚMERO GRANDE MENOS EL CHICO.", "450 − 320 = 130"),
+]}
+
+N3["leccion"] = {"temas": [
+ T("¿CUÁNTO FALTA?", [LD("LO QUE FALTA", "SI QUEREMOS LLEGAR A UN NÚMERO, <b>CONTAMOS PARA ADELANTE</b> DESDE LO QUE TENEMOS."),
+   LL("DE 600 A 1.000: 700, 800, 900, 1.000.", "FALTAN 400.")],
+   {"modo": "serie", "de": 100, "desde": 100, "hasta": 500}, {"modo": "problema", "tipo": "completar", "esc": 50}),
+ T("RESTAR PARA SABER", [LD("CON UNA RESTA", "TAMBIÉN PODEMOS <b>RESTAR</b>: LO QUE QUIERO MENOS LO QUE TENGO."),
+   LL("1.000 − 750 = 250.", "500 − 350 = 150.")],
+   {"modo": "problema", "tipo": "falta_resta", "esc": 50}, {"modo": "problema", "tipo": "falta_resta", "esc": 50}),
+], "recuerda": [
+ RC("CONTAR PARA ADELANTE", "CONTAMOS DESDE LO QUE TENEMOS HASTA LO QUE QUEREMOS.", "DE 600 A 1.000 FALTAN 400"),
+ RC("RESTAR", "LO QUE QUEREMOS MENOS LO QUE TENEMOS.", "100 − 70 = 30"),
+]}
+
+N4["leccion"] = {"temas": [
+ T("LEER TODO EL PROBLEMA", [LD("DOS CUENTAS", "ALGUNOS PROBLEMAS NECESITAN <b>DOS CUENTAS</b>. PRIMERO LEEMOS TODO."),
+   LL("TENÍA 150, HIZO 250 Y VENDIÓ 120.", "HAY QUE SUMAR Y DESPUÉS RESTAR.")],
+   {"modo": "problema", "tipo": "dospasos", "esc": 50}, {"modo": "problema", "tipo": "dospasos", "esc": 50}),
+ T("PRIMERA Y SEGUNDA CUENTA", [LD("PASO A PASO", "CON EL RESULTADO DE LA <b>PRIMERA</b> CUENTA HACEMOS LA <b>SEGUNDA</b>."),
+   LL("150 + 250 = 400.", "400 − 120 = 280.")],
+   {"modo": "problema", "tipo": "dospasos", "esc": 50}, {"modo": "problema", "tipo": "dospasos", "esc": 50}),
+], "recuerda": [
+ RC("DOS CUENTAS", "LEEMOS TODO Y VEMOS QUÉ CUENTAS HACEN FALTA.", "SUMAR Y DESPUÉS RESTAR"),
+ RC("PASO A PASO", "USAMOS EL PRIMER RESULTADO PARA LA SEGUNDA CUENTA.", "150 + 250 = 400 Y 400 − 120 = 280"),
+]}
+
 ACT = {
-"1": [N("ROSA TENÍA 230 ALFAJORES Y HIZO 150 MÁS. ¿CUÁNTOS TIENE?", 380, "LLEGAN MÁS: SUMAMOS.", n="aplicar"),
-      UNI("UNÍ CADA PROBLEMA CON SU CUENTA.", [("LLEGAN MÁS", "SUMA"), ("SE VAN", "RESTA")], "AGREGAR ES SUMAR, QUITAR ES RESTAR.", n="analizar")],
+"1": [N("ROSA TENÍA 230 ALFAJORES Y HIZO 150 MÁS. ¿CUÁNTOS TIENE?", 380, "LLEGAN MÁS: SUMAMOS.", n="aplicar", **NEU("ROSA TENÍA 230 GALLETAS E HIZO 150 MÁS. ¿CUÁNTAS TIENE?")),
+      CLAS("¿SE SUMA O SE RESTA?", ["HIZO 100 MÁS", "VENDIÓ 50", "LE REGALARON 30", "SE ROMPIERON 20"], ["SUMA", "RESTA"],
+           {"HIZO 100 MÁS": "SUMA", "VENDIÓ 50": "RESTA", "LE REGALARON 30": "SUMA", "SE ROMPIERON 20": "RESTA"}, "AGREGAR ES SUMAR, QUITAR ES RESTAR.", n="analizar"),
+      N("[[problema]] ROSA TENÍA 470 ALFAJORES Y VENDIÓ 130. ¿CUÁNTOS LE QUEDAN?", 340, "SE VAN: 470 − 130 = 340.", n="aplicar", **NEU("ROSA TENÍA 470 GALLETAS Y VENDIÓ 130. ¿CUÁNTAS LE QUEDAN?")),
+      MC("TOMI RESOLVIÓ «TENÍA 470 Y VENDIÓ 130» SUMANDO: 600. ¿CUÁNTO DA BIEN?", ["340", "600", "470"], "340", "SI VENDE, LE QUEDAN MENOS: RESTAMOS.", n="error")],
 "2": [N("ROSA HIZO 450 Y ANA 320. ¿CUÁNTOS MÁS HIZO ROSA?", 130, "450 − 320 = 130.", n="aplicar"),
-      TF("PARA SABER CUÁNTOS MÁS, SIEMPRE SE SUMA.", "FALSO", "SE RESTA EL CHICO AL GRANDE.", n="error")],
+      TF("PARA SABER CUÁNTOS MÁS, SIEMPRE SE SUMA.", "FALSO", "SE RESTA EL CHICO AL GRANDE.", n="error"),
+      MC("UN CAMIÓN LLEVA 380 CAJAS Y OTRO 250. ¿CUÁL LLEVA MÁS?", ["EL DE 380", "EL DE 250"], "EL DE 380", "3 CENTENAS ES MÁS QUE 2.", n="aplicar"),
+      FB("COMPLETÁ: 380 − 250 = ___ CAJAS MÁS", [["130"]], "380 − 250 = 130.", n="aplicar")],
 "3": [N("ROSA TIENE 350 Y QUIERE 500. ¿CUÁNTOS LE FALTAN?", 150, "DE 350 A 500 HAY 150.", n="aplicar"),
-      MC("TOMI TIENE 70 Y QUIERE 100. ¿QUÉ CUENTA SIRVE?", ["RESTAR 100 MENOS 70", "SUMAR 100 MÁS 70", "RESTAR 70 MENOS 100"], "RESTAR 100 MENOS 70", "LO QUE QUIERO MENOS LO QUE HAY.", n="analizar")],
+      MC("TOMI TIENE 70 Y QUIERE 100. ¿QUÉ CUENTA SIRVE?", ["RESTAR 100 MENOS 70", "SUMAR 100 MÁS 70", "RESTAR 70 MENOS 100"], "RESTAR 100 MENOS 70", "LO QUE QUIERO MENOS LO QUE HAY.", n="analizar"),
+      FB("COMPLETÁ: TENGO 750 Y QUIERO 1.000. ME FALTAN ___", [["250"]], "750 + 250 = 1.000.", n="aplicar"),
+      MC("TOMI DICE QUE DE 600 A 1.000 FALTAN 1.600. ¿CUÁNTOS FALTAN?", ["400", "1.600", "600"], "400", "700, 800, 900, 1.000: FALTAN 400.", n="error")],
 "4": [N("ROSA TENÍA 400, HIZO 200 Y VENDIÓ 350. ¿CUÁNTOS TIENE?", 250, "400 + 200 = 600. 600 − 350 = 250.", n="aplicar"),
-      ORD("ORDENÁ LOS PASOS DEL PROBLEMA.", ["RESTO LO QUE VENDIÓ", "LEO TODO", "SUMO LO QUE HIZO"], ["LEO TODO", "SUMO LO QUE HIZO", "RESTO LO QUE VENDIÓ"], "PRIMERO LEO, DESPUÉS CADA PASO.", n="analizar")],
+      ORD("ORDENÁ LOS PASOS DEL PROBLEMA.", ["RESTO LO QUE VENDIÓ", "LEO TODO", "SUMO LO QUE HIZO"], ["LEO TODO", "SUMO LO QUE HIZO", "RESTO LO QUE VENDIÓ"], "PRIMERO LEO, DESPUÉS CADA PASO.", n="analizar"),
+      MC("SOFI RESOLVIÓ «TENÍA 150, HIZO 250 Y VENDIÓ 120» Y CONTESTÓ 400. ¿QUÉ SE OLVIDÓ?", ["RESTAR LO QUE VENDIÓ", "SUMAR LO QUE HIZO", "NADA"], "RESTAR LO QUE VENDIÓ", "400 − 120 = 280.", n="error"),
+      N("[[problema]] EN LA FÁBRICA HABÍA 300 CAJAS, LLEGARON 200 Y SE LLEVARON 150. ¿CUÁNTAS QUEDAN?", 350, "300 + 200 = 500 Y 500 − 150 = 350.", n="analizar")],
 "5": [N("RELÁMPAGO. TENÍA 200 Y LLEGARON 300. ¿CUÁNTOS HAY?", 500, "200 + 300.", tiempo=40, n="aplicar"),
       N("RELÁMPAGO. TENÍA 600 Y SE FUERON 200. ¿CUÁNTOS QUEDAN?", 400, "600 − 200.", tiempo=40, n="aplicar"),
       N("RELÁMPAGO. HAY 80 Y QUIERO 100. ¿CUÁNTOS FALTAN?", 20, "80, 90, 100.", tiempo=30, n="aplicar"),
@@ -176,7 +244,7 @@ EXAMEN = [
  [4, N("ROSA TENÍA 300, HIZO 100 Y VENDIÓ 250. ¿CUÁNTOS TIENE?", 150, "300 + 100 = 400. 400 − 250 = 150.", n="aplicar")],
  [4, MC("EN UN PROBLEMA DE DOS PASOS, ¿QUÉ HACÉS CON EL PRIMER RESULTADO?", ["LO USO EN LA OTRA CUENTA", "LO TACHO", "ES LA RESPUESTA"], "LO USO EN LA OTRA CUENTA", "PASO POR PASO.", n="analizar")],
 ]
-M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 11, "estilo": "primeros",
+M = {"subject_id": "1a53eca0-e27f-4ab1-9ab6-b23941c7d920", "tema": 11, "estilo": "primeros", "actualizar_preguntas": True,
      "practica": "Práctica general: problemas de suma y resta", "examen_titulo": "Nivel jefe: problemas de suma y resta",
      "niveles": {"1": N1, "2": N2, "3": N3, "4": N4}, "act": ACT, "examen": EXAMEN}
 json.dump(M, open(os.path.join(AQUI, "mision-11.json"), "w", encoding="utf-8"), ensure_ascii=False)

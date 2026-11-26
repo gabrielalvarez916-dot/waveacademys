@@ -1481,7 +1481,9 @@
   // fila de bolsitas de 10: n bolsitas; desde 'tenue' en adelante se ven apagadas; 'nuevo' desde dónde son nuevas
   function p1BolsasN(n, op) { op = op || {}; var h = ''; for (var i = 0; i < n; i++) h += '<span class="lb-p1-o' + (op.tenue != null && i >= op.tenue ? ' tenue' : '') + (op.nuevo != null && i >= op.nuevo ? ' nuevo' : '') + '">🛍️<small>10</small></span>'; return '<div class="lb-p1-fila">' + (h || '<span class="lb-p1-vac">—</span>') + '</div>'; }
   // problemas: arma la historia, la pregunta, la cuenta y el dibujo según el tipo
-  function p1Hist(t, a, b, nm, o) {
+  function p1Hist(t, a, b, nm, o, esc) {
+    if (esc > 1) { a *= esc; b *= esc; }
+    if (t === 'dospasos') { var c = Math.max(esc || 1, Math.round((a + b) * 0.6 / (esc || 1)) * (esc || 1)), Pl = P1PL[o]; return { h: 'HABÍA <b>' + a + '</b> ' + Pl + '. LLEGARON <b>' + b + '</b> MÁS Y DESPUÉS SE VENDIERON <b>' + c + '</b>.', q: '¿' + g(o, 'CUÁNTAS', 'CUÁNTOS') + ' QUEDAN?', op: '+', w: 'DOS PASOS: PRIMERO SUMAMOS Y DESPUÉS RESTAMOS', r: a + b - c, c: a + ' + ' + b + ' = ' + (a + b) + ' · ' + (a + b) + ' − ' + c + ' = ' + (a + b - c), v: p1Big('1) ' + a + ' + ' + b + ' = ' + (a + b)) + p1Big('2) ' + (a + b) + ' − ' + c + ' = ' + (a + b - c)) }; }
     var P = P1PL[o], H = {}, CU = g(o, 'CUÁNTAS', 'CUÁNTOS');
     if (t === 'completar' || t === 'falta_resta' || t === 'quitar' || t === 'comparar') { if (b > a && t !== 'completar') { var x = a; a = b; b = x; } if (t === 'completar' && b <= a) b = a + 2; if (a === b) a = b + 1; }
     if (t === 'juntar') H = { h: nm[0] + ' TIENE <b>' + a + '</b> ' + P + ' Y ' + nm[1] + ' TIENE <b>' + b + '</b>.', q: '¿' + CU + ' TIENEN ENTRE LOS DOS?', op: '+', w: 'SE JUNTAN', r: a + b, c: a + ' + ' + b + ' = ' + (a + b), v: p1Grupo(nm[0], a, o) + p1Grupo(nm[1], b, o) };
@@ -1491,6 +1493,7 @@
     else if (t === 'quitar') H = { h: 'HAY <b>' + a + '</b> ' + P + '. SE PIERDEN <b>' + b + '</b>.', q: '¿' + CU + ' QUEDAN?', op: '−', w: 'SE VAN', r: a - b, c: a + ' − ' + b + ' = ' + (a - b), v: p1Fila(a, o, { tenue: a - b }) };
     else if (t === 'comparar') H = { h: nm[0] + ' TIENE <b>' + a + '</b> ' + P + ' Y ' + nm[1] + ' TIENE <b>' + b + '</b>.', q: '¿' + CU + ' MÁS TIENE ' + nm[0] + '?', op: '−', w: 'COMPARAMOS', r: a - b, c: a + ' − ' + b + ' = ' + (a - b), v: p1Grupo(nm[0], a, o) + p1Grupo(nm[1], b, o) };
     else H = { h: 'SE NECESITAN <b>' + a + '</b> ' + P + '. HAY <b>' + b + '</b>.', q: '¿' + CU + ' FALTAN?', op: '−', w: 'NECESITO MÁS DE LO QUE HAY', r: a - b, c: a + ' − ' + b + ' = ' + (a - b), v: p1Fila(a, o, { tenue: b }) };
+    if (esc > 1) H.v = '<div class="lb-p1-dos"><div class="lb-p1-pre">' + P1E[o] + '<b>' + a + '</b></div><div class="lb-p1-pre">' + P1E[o] + '<b>' + b + '</b></div></div>';
     return H;
   }
   // calculadora: pantalla + teclas; hl = tecla o lista de teclas marcadas ('pan' marca la pantalla)
@@ -1552,7 +1555,7 @@
       diez: p.que === 'dados' ? ctrl('a', 'UN DADO', 1, 6, 1, 2) + ctrl('b', 'OTRO DADO', 1, 6, 1, 5) : ctrl('a', 'ROJOS', 1, 9, 1, 7),
       dobles: p.que === 'iguales' ? ctrl('a', 'EN CADA GRUPO', 1, 5, 1, 3) + ctrl('k', 'GRUPOS', 2, 3, 1, 3) : ctrl('a', 'NÚMERO', 1, p.que === 'casi' ? 9 : 10, 1, 4),
       decenas_op: p.que === 'atras10' ? ctrl('a', 'DESDE EL', 30, 100, 10, 100) : ctrl('a', 'BOLSITAS', p.que === 'restar' ? 2 : 1, 9, 1, p.que === 'restar' ? 7 : 2) + ctrl('b', p.que === 'restar' ? 'SE VENDEN' : 'LLEGAN', 1, p.que === 'restar' ? 8 : 8, 1, 3),
-      problema: ctrl('a', 'PRIMER NÚMERO', 2, 9, 1, 6) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, 3),
+      problema: ctrl('a', 'PRIMER NÚMERO', 2 * (p.esc || 1), 9 * (p.esc || 1), p.esc || 1, 6 * (p.esc || 1)) + ctrl('b', 'SEGUNDO NÚMERO', p.esc || 1, 9 * (p.esc || 1), p.esc || 1, 3 * (p.esc || 1)),
       calcu: p.que === 'uno_diez' ? ctrl('n', 'NÚMERO', 10, 89, 1, 47) : p.que === 'partes' ? ctrl('n', 'EN LA PANTALLA', 0, 99, 1, 8) : ctrl('a', 'PRIMER NÚMERO', 2, 30, 1, p.que === 'controlar' ? 20 : 9) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.que === 'controlar' ? 3 : 6),
       centenas: ctrl('c', 'CAJAS DE 100', p.min || 1, p.max || 4, 1, 1) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 5) + ctrl('u', 'SUELTOS', 0, 9, 1, 3),
       serie: ctrl('a', 'EMPIEZA EN', p.desde || 100, p.hasta || 190, 1, p.desde ? p.desde + 5 : 130),
@@ -1566,6 +1569,7 @@
       mental: p.que === 'falta100' ? ctrl('a', 'NÚMERO', 10, 90, 10, 70) : p.que === 'desarmar' ? ctrl('a', 'PRIMER NÚMERO', 110, 489, 1, p.op === 'resta' ? 365 : 234) + ctrl('b', 'SEGUNDO NÚMERO', 11, 59, 1, p.op === 'resta' ? 42 : 52) :
         p.que === 'truco' ? ctrl('a', 'NÚMERO', 110, 889, 1, 472) + ctrl('b', 'SUMO O RESTO', 10, 100, 90, 100) : ctrl('a', 'PRIMER NÚMERO', 1, 9, 1, p.op === 'resta' ? 8 : 3) + ctrl('b', 'SEGUNDO NÚMERO', 1, 9, 1, p.op === 'resta' ? 3 : 4),
       columna: ctrl('a', 'ARRIBA', 100, 899, 1, p.op === 'resta' ? (p.lleva ? 352 : 576) : (p.lleva ? 268 : 231)) + ctrl('b', 'ABAJO', 10, 399, 1, p.op === 'resta' ? (p.lleva ? 128 : 234) : (p.lleva ? 125 : 45)),
+      prop: p.que === 'familia' ? ctrl('a', 'PRIMER NÚMERO', 10, 60, 10, 60) + ctrl('b', 'SEGUNDO NÚMERO', 10, 40, 10, 40) : p.que === 'amigos' ? ctrl('a', 'PRIMER NÚMERO', 11, 89, 1, 37) + ctrl('b', 'SEGUNDO NÚMERO', 11, 89, 1, 25) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 10, 60, 5, 25) : ctrl('a', 'NÚMERO CHICO', 1, 9, 1, 4) + ctrl('b', 'NÚMERO GRANDE', 100, 300, 1, 120),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -1909,11 +1913,11 @@
         return P;
       }
       if (md === 'problema') {
-        var Hh = p1Hist(p.tipo || 'juntar', v.a, v.b, nm, o), Bx = function (x) { return '<div class="lb-p1-hist">' + x + '</div>'; };
+        var Hh = p1Hist(p.tipo || 'juntar', v.a / (p.esc || 1), v.b / (p.esc || 1), nm, o, p.esc || 1), Bx = function (x) { return '<div class="lb-p1-hist">' + x + '</div>'; };
         P.push({ vis: Bx(Hh.h + '<br>' + Hh.q), txt: 'LEEMOS EL PROBLEMA CON ATENCIÓN.' });
         P.push({ vis: Bx(Hh.h), txt: 'LOS <b>DATOS</b> SON LOS NÚMEROS QUE YA SABEMOS.' });
         P.push({ vis: Bx('<b>' + Hh.q + '</b>'), txt: 'LA <b>PREGUNTA</b> DICE QUÉ TENEMOS QUE AVERIGUAR.' });
-        P.push({ vis: Hh.v, txt: Hh.w + ': HACEMOS UNA <b>' + (Hh.op === '+' ? 'SUMA' : 'RESTA') + '</b>.' });
+        P.push({ vis: Hh.v, txt: p.tipo === 'dospasos' ? Hh.w + '.' : Hh.w + ': HACEMOS UNA <b>' + (Hh.op === '+' ? 'SUMA' : 'RESTA') + '</b>.' });
         P.push({ vis: Hh.v + p1Big(Hh.c), txt: 'LA CUENTA ES <b>' + Hh.c + '</b>.' });
         P.push({ vis: p1Big('RESPUESTA: ' + Hh.r), txt: 'RESPONDEMOS LA PREGUNTA CON UNA ORACIÓN: SON <b>' + Hh.r + '</b>.' });
         return P;
@@ -2083,6 +2087,36 @@
         P.push({ vis: p1Col3(aC, bC, sgC, resN, -1, lv) + p1Big(aC + ' ' + sgC + ' ' + bC + ' = ' + resN), txt: 'EL RESULTADO ES <b>' + resN + '</b>.' });
         return P;
       }
+      if (md === 'prop') {
+        var qp = p.que || 'conmuta';
+        if (qp === 'conmuta') {
+          P.push({ vis: p1Big(v.a + ' + ' + v.b), txt: 'QUEREMOS SUMAR <b>' + v.a + ' + ' + v.b + '</b>.' });
+          P.push({ vis: p1Big(v.b + ' + ' + v.a), txt: 'EN LA SUMA EL <b>ORDEN NO IMPORTA</b>: LA DAMOS VUELTA.' });
+          var Lc = []; for (i = 1; i <= v.a; i++) Lc.push(v.b + i);
+          P.push({ vis: p1Big(v.b + '… ' + Lc.join(', ')), txt: 'EMPEZAMOS POR EL <b>GRANDE</b> Y CONTAMOS ' + v.a + ' MÁS.' });
+          P.push({ vis: p1Big(v.a + ' + ' + v.b + ' = ' + v.b + ' + ' + v.a + ' = ' + (v.a + v.b)), txt: 'DA LO MISMO: <b>' + (v.a + v.b) + '</b>. EN LA RESTA, EN CAMBIO, NO SE PUEDE DAR VUELTA.' });
+          return P;
+        }
+        if (qp === 'amigos') {
+          var cA = (10 - v.a % 10) % 10 || 10, rd = v.a + cA;
+          P.push({ vis: p1Big(v.a + ' + ' + v.b + ' + ' + cA), txt: 'TENEMOS QUE SUMAR <b>TRES</b> NÚMEROS.' });
+          P.push({ vis: p1Big('(' + v.a + ' + ' + cA + ') + ' + v.b), txt: 'BUSCAMOS <b>AMIGOS</b>: ' + v.a + ' Y ' + cA + ' FORMAN UN REDONDO.' });
+          P.push({ vis: p1Big(rd + ' + ' + v.b), txt: v.a + ' + ' + cA + ' = <b>' + rd + '</b>.' });
+          P.push({ vis: p1Big(rd + ' + ' + v.b + ' = ' + (rd + v.b)), txt: 'SUMAMOS LO QUE QUEDA: <b>' + (rd + v.b) + '</b>.' });
+          return P;
+        }
+        if (qp === 'dobles') {
+          P.push({ vis: p1Big(v.a + ' + ' + v.a + ' = ' + 2 * v.a), txt: 'EMPEZAMOS CON UN DOBLE QUE SABEMOS: <b>' + 2 * v.a + '</b>.' });
+          P.push({ vis: p1Big(v.a + ' + ' + (v.a + 1) + ' = ' + (2 * v.a + 1)), txt: 'SI UNO TIENE <b>UNO MÁS</b>, EL RESULTADO TIENE UNO MÁS.' });
+          P.push({ vis: p1Big(v.a + ' + ' + (v.a - 1) + ' = ' + (2 * v.a - 1)), txt: 'SI TIENE <b>UNO MENOS</b>, EL RESULTADO TIENE UNO MENOS.' });
+          P.push({ vis: p1Big(v.a + ' + ' + (v.a + 10) + ' = ' + (2 * v.a + 10)), txt: 'Y SI TIENE <b>DIEZ MÁS</b>, DA DIEZ MÁS.' });
+          return P;
+        }
+        var cF = v.a + v.b, Fm = [v.a + ' + ' + v.b + ' = ' + cF, v.b + ' + ' + v.a + ' = ' + cF, cF + ' − ' + v.b + ' = ' + v.a, cF + ' − ' + v.a + ' = ' + v.b];
+        P.push({ vis: p1Big(v.a + ', ' + v.b + ' Y ' + cF), txt: 'ESTOS TRES NÚMEROS FORMAN UNA <b>FAMILIA</b> DE CUENTAS.' });
+        for (i = 1; i <= 4; i++) P.push({ vis: '<div class="lb-p1-tab">' + Fm.slice(0, i).map(function (x, k) { return '<span' + (k === i - 1 ? ' class="on"' : '') + '>' + x + '</span>'; }).join('') + '</div>', txt: i <= 2 ? 'DOS <b>SUMAS</b>: EL ORDEN NO IMPORTA.' : 'DOS <b>RESTAS</b>: LA RESTA DESHACE LA SUMA.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2202,9 +2236,9 @@
         else { a = R(1, 8); b = R(1, 10 - a); r = 10 * (a + b); c = '¿CUÁNTO ES <b>' + a * 10 + ' + ' + b * 10 + '</b>?'; h = p1BolsasN(a + b, { nuevo: a }); }
         return { cons: c, html: h, campos: [{ v: r }], ayuda: qo.indexOf('10') > 0 ? 'SUMÁ O RESTÁ UNA BOLSITA DE 10.' : 'CONTÁ LAS BOLSITAS Y DESPUÉS PENSÁ CUÁNTO VALEN.', bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
     if (md === 'problema') { var tp = p.tipo || 'juntar';
-      if (tp === 'operacion') return p1Elegir(el, api, function () { var t = pick(['juntar', 'agregar', 'avanzar', 'quitar', 'comparar', 'falta_resta']), H = p1Hist(t, R(4, 9), R(1, 4), pick(P1NOM), p1Obj());
+      if (tp === 'operacion') return p1Elegir(el, api, function () { var t = pick(['juntar', 'agregar', 'quitar', 'comparar', 'falta_resta'].concat(p.esc ? [] : ['avanzar'])), H = p1Hist(t, R(4, 9), R(1, 4), pick(P1NOM), p1Obj(), p.esc || 1);
         return { cons: H.h + ' ' + H.q + '<br><b>¿SE RESUELVE CON UNA SUMA O CON UNA RESTA?</b>', ops: ['SUMA', 'RESTA'], ok: H.op === '+' ? 'SUMA' : 'RESTA', ayuda: 'SI SE JUNTA O LLEGA MÁS, SUMÁS; SI SE VA O COMPARÁS, RESTÁS.', bien: '¡MUY BIEN! ' + H.c + '.' }; });
-      return respuesta(el, api, function () { var t = tp === 'mezcla' ? pick(['juntar', 'agregar', 'quitar', 'comparar']) : tp, H = p1Hist(t, R(3, 9), R(1, 6), pick(P1NOM), p1Obj());
+      return respuesta(el, api, function () { var t = tp === 'mezcla' ? pick(['juntar', 'agregar', 'quitar', 'comparar']) : tp, H = p1Hist(t, R(3, 9), R(1, 6), pick(P1NOM), p1Obj(), p.esc || 1);
         return { cons: H.h + ' ' + H.q, html: H.v, campos: [{ v: H.r }], ayuda: H.w + ': HACÉ UNA ' + (H.op === '+' ? 'SUMA' : 'RESTA') + '.', bien: '¡MUY BIEN! ' + H.c + '.' }; }); }
     if (md === 'calcu') { var qc = p.que || 'teclas';
       if (qc === 'partes') return p1Elegir(el, api, function () { var q = pick([['¿QUÉ TECLA <b>BORRA</b> TODO?', 'C'], ['¿QUÉ TECLA MUESTRA EL <b>RESULTADO</b>?', '='], ['¿QUÉ TECLA SIRVE PARA <b>SUMAR</b>?', '+'], ['¿QUÉ TECLA SIRVE PARA <b>RESTAR</b>?', '−']]);
@@ -2263,6 +2297,12 @@
         return { cons: rsC ? '¿ESTÁ BIEN <b>' + ab[0] + ' − ' + ab[1] + ' = ' + mos + '</b>? CONTROLÁ CON UNA SUMA.' : '¿ESTÁ BIEN <b>' + ab[0] + ' + ' + ab[1] + ' = ' + mos + '</b>?', ops: ['SÍ', 'NO'], ok: mos === r ? 'SÍ' : 'NO', ayuda: rsC ? 'SUMÁ ' + mos + ' + ' + ab[1] + ': TIENE QUE DAR ' + ab[0] + '.' : 'HACÉ LA CUENTA COLUMNA POR COLUMNA.', bien: '¡MUY BIEN! DA ' + r + '.' }; });
       return respuesta(el, api, function () { var ab = gen(), r = rsC ? ab[0] - ab[1] : ab[0] + ab[1];
         return { cons: 'RESOLVÉ EN COLUMNAS: <b>' + ab[0] + ' ' + (rsC ? '−' : '+') + ' ' + ab[1] + '</b>', html: p1Col3(ab[0], ab[1], rsC ? '−' : '+', '', -1), campos: [{ v: r }], ayuda: 'EMPEZÁ POR LAS UNIDADES' + (p.lleva ? (rsC ? '; SI NO ALCANZA, ABRÍ UN PAQUETE.' : '; SI PASA DE 9, TE LLEVÁS 1.') : '.'), bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
+    if (md === 'prop') return respuesta(el, api, function () { var qp = p.que || 'conmuta', c, r;
+      if (qp === 'amigos') { var a = R(11, 89), b = R(11, 89), k = (10 - a % 10) % 10 || 10; r = a + b + k; c = '¿CUÁNTO ES <b>' + a + ' + ' + b + ' + ' + k + '</b>? BUSCÁ AMIGOS.'; }
+      else if (qp === 'dobles') { var d = 5 * R(2, 12), dd = pick([1, -1]); r = 2 * d + dd; c = 'SI <b>' + d + ' + ' + d + ' = ' + 2 * d + '</b>, ¿CUÁNTO ES <b>' + d + ' + ' + (d + dd) + '</b>?'; }
+      else if (qp === 'familia') { var x = 10 * R(1, 6), y = 10 * R(1, 4), z = x + y, rs = Math.random() < 0.5; r = rs ? x : y; c = 'SI <b>' + x + ' + ' + y + ' = ' + z + '</b>, ¿CUÁNTO ES <b>' + z + ' − ' + (rs ? y : x) + '</b>?'; }
+      else { var s1 = R(1, 9), g1 = R(100, 300); r = s1 + g1; c = '¿CUÁNTO ES <b>' + s1 + ' + ' + g1 + '</b>? EMPEZÁ POR EL GRANDE.'; }
+      return { cons: c, campos: [{ v: r }], ayuda: qp === 'amigos' ? 'JUNTÁ PRIMERO LOS QUE FORMAN UN REDONDO.' : qp === 'dobles' ? 'ES EL DOBLE CON UNO MÁS O UNO MENOS.' : qp === 'familia' ? 'LA RESTA DESHACE LA SUMA.' : 'DALA VUELTA: EL ORDEN NO IMPORTA EN LA SUMA.', bien: '¡MUY BIEN! ES ' + r + '.' }; });
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }
