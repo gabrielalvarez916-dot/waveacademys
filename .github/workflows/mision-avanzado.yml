@@ -40,6 +40,7 @@ jobs:
           if [ "$MANUAL" = "lecciones-mate" ]; then L=$(ls contenido/matematica-*/mision-*/mision-*.json | tr '\n' ' '); echo "lista=$L" >> "$GITHUB_OUTPUT"; echo "solo_leccion=1" >> "$GITHUB_OUTPUT"; exit 0; fi
           if [ -n "$MANUAL" ]; then L="$MANUAL"
           else L=$(git diff --name-only "$BASE" "$GITHUB_SHA" -- 'contenido/*/mision-*/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/*/mision-*/mision-*.json'); fi
+          L=$(echo "$L" | tr ' ' '\n' | grep -v '^contenido/medio/' | tr '\n' ' ')  # primaria va por mision-medio.yml
           L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
           echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
           # las que solo cambiaron en la práctica de la lección interactiva no se vuelven a revisar ni a cargar enteras
