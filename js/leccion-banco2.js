@@ -15,7 +15,8 @@
     el.innerHTML = '<div class="lb2-ctls">' + ctrls + '</div><div class="lb-vista"></div>' + (extra || '');
     var v = el.querySelector('.lb-vista');
     function val() { var o = {}; [].forEach.call(el.querySelectorAll('[data-k]'), function (i) { o[i.getAttribute('data-k')] = i.type === 'range' || i.inputMode === 'numeric' || i.inputMode === 'decimal' ? num(i.value) : i.value; var out = el.querySelector('[data-o="' + i.getAttribute('data-k') + '"]'); if (out) out.textContent = fmt(num(i.value)); }); return o; }
-    function pintar() { v.innerHTML = dibujar(val()); }
+    // dibujar puede devolver un html (vista fija) o una lista de pasos [{vis, txt}] (ejemplo PASO A PASO)
+    function pintar() { var r = dibujar(val()); if (Array.isArray(r)) pasoAPaso(v, r); else { v.onclick = null; v.innerHTML = r; } }
     el.addEventListener('input', function (e) { if (e.target.matches('[data-k]')) pintar(); });
     el._pintar = pintar; pintar();
   }
@@ -65,26 +66,34 @@
   function tipoAng(g) { return g === 0 ? 'nulo' : g < 90 ? 'agudo' : g === 90 ? 'recto' : g < 180 ? 'obtuso' : g === 180 ? 'llano' : g < 360 ? 'cóncavo' : 'de un giro'; }
 
   // ======================= GEOMETRÍA =======================
-  M.transportador = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('g', 'Abertura', 0, 360, 5, R(4, 30) * 5, '°'), function (o) { return svgAng(o.g, 260, 160) + '<p class="lb-res">' + o.g + '° · ángulo ' + tipoAng(o.g) + '</p><p class="lb-nota">Agudo: menos de 90°. Recto: 90°. Obtuso: entre 90° y 180°. Llano: 180°. Cóncavo: más de 180°.</p>'; });
+  M.transportador = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('g', 'Abertura', 0, 360, 5, R(4, 30) * 5, '°'), function (o) { var g = o.g, d = svgAng(g, 260, 160);
+      var cmp = g < 90 ? 'Es <b>menor que 90°</b> (menos que un recto).' : g === 90 ? 'Mide <b>justo 90°</b>.' : g < 180 ? 'Está <b>entre 90° y 180°</b>.' : g === 180 ? 'Mide <b>180°</b>: los lados forman una recta.' : 'Es <b>más de 180°</b>.';
+      return [{ vis: d, txt: 'El ángulo abre <b>' + g + '°</b>.' }, { vis: d, txt: 'Lo comparamos con el recto (90°) y el llano (180°). ' + cmp }, { vis: d + '<p class="lb-cn-res">' + g + '° · ángulo ' + tipoAng(g) + '</p>', txt: 'Por eso es un ángulo <b>' + tipoAng(g) + '</b>.' }]; });
   } };
-  M.triangulo = { tipo: 'ejemplo', render: function (el) {
+  M.triangulo = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('a', 'Lado a', 1, 12, 1, 5, ' cm') + ctrl('b', 'Lado b', 1, 12, 1, 5, ' cm') + ctrl('c', 'Lado c', 1, 12, 1, 6, ' cm'), function (o) {
-      var a = o.a, b = o.b, c = o.c;
-      if (!(a < b + c && b < a + c && c < a + b)) return '<p class="lb-res">No se puede armar</p><p class="lb-nota">Cada lado tiene que ser menor que la suma de los otros dos (desigualdad triangular): ' + Math.max(a, b, c) + ' no es menor que ' + (a + b + c - Math.max(a, b, c)) + '.</p>';
+      var a = o.a, b = o.b, c = o.c, mx = Math.max(a, b, c), resto = a + b + c - mx, P0 = { vis: '<p class="lb-cn-res">' + a + ' cm · ' + b + ' cm · ' + c + ' cm</p>', txt: 'Tenemos tres lados.' };
+      if (!(mx < resto)) return [P0, { vis: '<p class="lb-cn-res">' + mx + ' no es menor que ' + resto + '</p>', txt: 'El lado más largo tiene que ser <b>menor</b> que la suma de los otros dos. No se cumple: <b>no se puede armar</b>.' }];
       var A = Math.acos((b * b + c * c - a * a) / (2 * b * c)), Bg = Math.acos((a * a + c * c - b * b) / (2 * a * c)), Cg = Math.PI - A - Bg, deg = function (x) { return Math.round(x * 180 / Math.PI); };
-      var s = 200 / Math.max(a, b, c), P = [[20, 150], [20 + c * s, 150], [20 + b * s * Math.cos(A), 150 - b * s * Math.sin(A)]];
-      var lados = a === b && b === c ? 'equilátero' : (a === b || b === c || a === c) ? 'isósceles' : 'escaleno', mx = Math.max(deg(A), deg(Bg), deg(Cg)), ang = Math.abs(Math.max(a, b, c) ** 2 - (a * a + b * b + c * c - Math.max(a, b, c) ** 2)) < 1e-9 ? 'rectángulo' : mx > 90 ? 'obtusángulo' : 'acutángulo';
-      return '<svg viewBox="0 0 250 165" class="lb2-svg"><polygon class="fig" points="' + P.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ') + '"/></svg>' +
-        '<p class="lb-res">Triángulo ' + lados + ' y ' + ang + '</p><p class="lb-nota">Ángulos: ' + deg(A) + '° + ' + deg(Bg) + '° + ' + deg(Cg) + '° = 180°.</p>';
+      var sc = 200 / mx, Pt = [[20, 150], [20 + c * sc, 150], [20 + b * sc * Math.cos(A), 150 - b * sc * Math.sin(A)]];
+      var svg = '<svg viewBox="0 0 250 165" class="lb2-svg"><polygon class="fig" points="' + Pt.map(function (q) { return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' ') + '"/></svg>';
+      var lados = a === b && b === c ? 'equilátero' : (a === b || b === c || a === c) ? 'isósceles' : 'escaleno', mg = Math.max(deg(A), deg(Bg), deg(Cg)), ang = Math.abs(mx * mx - (a * a + b * b + c * c - mx * mx)) < 1e-9 ? 'rectángulo' : mg > 90 ? 'obtusángulo' : 'acutángulo';
+      return [P0, { vis: svg, txt: 'El lado más largo (' + mx + ') es menor que la suma de los otros dos (' + resto + '): <b>se puede armar</b>.' },
+        { vis: svg, txt: 'Por sus lados es <b>' + lados + '</b>' + (lados === 'equilátero' ? ': los tres iguales.' : lados === 'isósceles' ? ': dos iguales.' : ': los tres distintos.') },
+        { vis: svg + '<p class="lb-nota">' + deg(A) + '° + ' + deg(Bg) + '° + ' + deg(Cg) + '° = 180°</p>', txt: 'Sus ángulos suman 180°. El mayor mide <b>' + mg + '°</b>: es <b>' + ang + '</b>.' },
+        { vis: svg + '<p class="lb-cn-res">Triángulo ' + lados + ' y ' + ang + '</p>', txt: 'Lo clasificamos por sus lados y por sus ángulos.' }];
     });
   } };
-  M.poligono_angulos = { tipo: 'ejemplo', render: function (el) {
+  M.poligono_angulos = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('n', 'Cantidad de lados', 3, 10, 1, 4), function (o) {
       var n = o.n, P = [], cx = 120, cy = 95, r = 80; for (var i = 0; i < n; i++) { var t = -Math.PI / 2 + 2 * Math.PI * i / n; P.push([cx + r * Math.cos(t), cy + r * Math.sin(t)]); }
       var diag = ''; for (var j = 2; j < n - 1; j++) diag += '<line class="diag" x1="' + P[0][0].toFixed(1) + '" y1="' + P[0][1].toFixed(1) + '" x2="' + P[j][0].toFixed(1) + '" y2="' + P[j][1].toFixed(1) + '"/>';
-      return '<svg viewBox="0 0 240 190" class="lb2-svg"><polygon class="fig" points="' + P.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ') + '"/>' + diag + '</svg>' +
-        '<p class="lb-nota">Desde un vértice salen ' + (n - 3) + ' diagonal' + (n - 3 === 1 ? '' : 'es') + ' que lo parten en <b>' + (n - 2) + ' triángulos</b>.</p><p class="lb-res">Suma de ángulos = ' + (n - 2) + ' × 180° = ' + fmt((n - 2) * 180) + '°</p>';
+      var pol = '<polygon class="fig" points="' + P.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ') + '"/>', sv = function (x) { return '<svg viewBox="0 0 240 190" class="lb2-svg">' + pol + x + '</svg>'; };
+      return [{ vis: sv(''), txt: 'Un polígono de <b>' + n + ' lados</b>.' },
+        { vis: sv(diag), txt: n === 3 ? 'Es un triángulo: no hace falta trazar diagonales.' : 'Desde un vértice trazamos <b>' + (n - 3) + ' diagonal' + (n - 3 === 1 ? '' : 'es') + '</b>.' },
+        { vis: sv(diag), txt: 'Quedan <b>' + (n - 2) + ' triángulos</b> (siempre 2 menos que los lados).' },
+        { vis: sv(diag) + '<p class="lb-cn-res">' + (n - 2) + ' × 180° = ' + fmt((n - 2) * 180) + '°</p>', txt: 'Cada triángulo suma 180°: multiplicamos.' }];
     });
   } };
   var FIG = { rectangulo: ['Rectángulo', 'base × altura'], triangulo: ['Triángulo', '(base × altura) ÷ 2'], paralelogramo: ['Paralelogramo', 'base × altura'], rombo: ['Rombo', '(D × d) ÷ 2'], trapecio: ['Trapecio', '(B + b) × altura ÷ 2'] };
@@ -96,26 +105,35 @@
     return '<svg viewBox="0 0 ' + (x0 * 2 + (Math.max(b, b2 || 0) + 2) * u) + ' ' + (y0 + 12) + '" class="lb2-svg">' + grid + '<polygon class="fig" points="' + pts.map(function (p) { return (x0 + p[0] * u).toFixed(1) + ',' + (y0 - p[1] * u).toFixed(1); }).join(' ') + '"/></svg>';
   }
   function areaFig(f, b, h, b2) { return f === 'triangulo' || f === 'rombo' ? b * h / 2 : f === 'trapecio' ? (b + b2) * h / 2 : b * h; }
-  M.area_figura = { tipo: 'ejemplo', render: function (el, p) {
+  M.area_figura = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
     var f = FIG[p.figura] ? p.figura : 'rectangulo';
     escena(el, ctrl('b', f === 'rombo' ? 'Diagonal mayor D' : f === 'trapecio' ? 'Base mayor B' : 'Base', 2, 10, 1, 6, ' cm') + (f === 'trapecio' ? ctrl('c', 'Base menor b', 1, 9, 1, 3, ' cm') : '') + ctrl('h', f === 'rombo' ? 'Diagonal menor d' : 'Altura', 1, 6, 1, 4, ' cm'), function (o) {
-      var b2 = f === 'trapecio' ? Math.min(o.c, o.b - 1) : 0, A = areaFig(f, o.b, o.h, b2);
-      return dibFig(f, o.b, o.h, b2) + '<p class="lb-nota">' + FIG[f][0] + ': área = ' + FIG[f][1] + '. Cada cuadradito es 1 cm².</p><p class="lb-res">A = ' + (f === 'trapecio' ? '(' + o.b + ' + ' + b2 + ') × ' + o.h + ' ÷ 2' : f === 'triangulo' || f === 'rombo' ? o.b + ' × ' + o.h + ' ÷ 2' : o.b + ' × ' + o.h) + ' = ' + fmt(A) + ' cm²</p>';
+      var b2 = f === 'trapecio' ? Math.min(o.c, o.b - 1) : 0, A = areaFig(f, o.b, o.h, b2), d = dibFig(f, o.b, o.h, b2);
+      var cuenta = f === 'trapecio' ? '(' + o.b + ' + ' + b2 + ') × ' + o.h + ' ÷ 2' : f === 'triangulo' || f === 'rombo' ? o.b + ' × ' + o.h + ' ÷ 2' : o.b + ' × ' + o.h;
+      return [{ vis: d, txt: 'Un ' + FIG[f][0].toLowerCase() + '. Cada cuadradito es <b>1 cm²</b>.' },
+        { vis: d + '<p class="lb-nota">Área = ' + FIG[f][1] + '</p>', txt: 'La fórmula del ' + FIG[f][0].toLowerCase() + '.' },
+        { vis: d + '<p class="lb-nota">A = ' + cuenta + '</p>', txt: 'Reemplazamos por las medidas.' },
+        { vis: d + '<p class="lb-cn-res">A = ' + cuenta + ' = ' + fmt(A) + ' cm²</p>', txt: 'Hacemos la cuenta.' }];
     });
   } };
-  M.volumen_cubitos = { tipo: 'ejemplo', render: function (el) {
+  M.volumen_cubitos = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('a', 'Largo', 1, 6, 1, 4) + ctrl('b', 'Ancho', 1, 5, 1, 3) + ctrl('c', 'Alto', 1, 5, 1, 2), function (o) {
-      var s = 16, cubos = '', ox = 30, oy = 170;
-      function cubo(x, y, z) { var px = ox + (x - y) * s * .87 + o.b * s * .87, py = oy - (x + y) * s * .5 - z * s;
-        return '<polygon class="cT" points="' + [[px, py - s], [px + s * .87, py - s * 1.5], [px, py - s * 2], [px - s * .87, py - s * 1.5]].map(function (q) { return q.join(','); }).join(' ') + '"/><polygon class="cL" points="' + [[px - s * .87, py - s * 1.5], [px, py - s], [px, py], [px - s * .87, py - s * .5]].map(function (q) { return q.join(','); }).join(' ') + '"/><polygon class="cR" points="' + [[px, py - s], [px + s * .87, py - s * 1.5], [px + s * .87, py - s * .5], [px, py]].map(function (q) { return q.join(','); }).join(' ') + '"/>'; }
-      for (var z = 0; z < o.c; z++) for (var y = o.b - 1; y >= 0; y--) for (var x = o.a - 1; x >= 0; x--) cubos += cubo(x, y, z);
-      return '<svg viewBox="0 0 260 190" class="lb2-svg">' + cubos + '</svg><p class="lb-nota">Una capa tiene ' + o.a + ' × ' + o.b + ' = ' + o.a * o.b + ' cubitos, y hay ' + o.c + ' capa' + (o.c > 1 ? 's' : '') + '.</p><p class="lb-res">V = ' + o.a + ' × ' + o.b + ' × ' + o.c + ' = ' + o.a * o.b * o.c + ' cm³</p>';
+      var s = 16, ox = 30, oy = 170;
+      function cubo(x, y, z) { var px = ox + (x - y) * s * .87 + o.b * s * .87, py = oy - (x + y) * s * .5 - z * s, P = function (L) { return L.map(function (q) { return q.join(','); }).join(' '); };
+        return '<polygon class="cT" points="' + P([[px, py - s], [px + s * .87, py - s * 1.5], [px, py - s * 2], [px - s * .87, py - s * 1.5]]) + '"/><polygon class="cL" points="' + P([[px - s * .87, py - s * 1.5], [px, py - s], [px, py], [px - s * .87, py - s * .5]]) + '"/><polygon class="cR" points="' + P([[px, py - s], [px + s * .87, py - s * 1.5], [px + s * .87, py - s * .5], [px, py]]) + '"/>'; }
+      function sv(capas) { var c = ''; for (var z = 0; z < capas; z++) for (var y = o.b - 1; y >= 0; y--) for (var x = o.a - 1; x >= 0; x--) c += cubo(x, y, z); return '<svg viewBox="0 0 260 190" class="lb2-svg">' + c + '</svg>'; }
+      return [{ vis: sv(1), txt: 'Armamos la primera capa: <b>' + o.a + ' × ' + o.b + ' = ' + o.a * o.b + '</b> cubitos.' },
+        { vis: sv(o.c), txt: 'Apilamos <b>' + o.c + ' capa' + (o.c > 1 ? 's' : '') + '</b> iguales.' },
+        { vis: sv(o.c) + '<p class="lb-cn-res">V = ' + o.a + ' × ' + o.b + ' × ' + o.c + ' = ' + o.a * o.b * o.c + ' cm³</p>', txt: 'Cubitos por capa × capas: ese es el volumen.' }];
     });
   } };
-  M.circulo = { tipo: 'ejemplo', render: function (el) {
+  M.circulo = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('r', 'Radio', 1, 10, 1, 4, ' cm'), function (o) {
-      return '<svg viewBox="0 0 240 230" class="lb2-svg"><circle class="fig" cx="120" cy="115" r="' + o.r * 10 + '"/><line class="rayo" x1="120" y1="115" x2="' + (120 + o.r * 10) + '" y2="115"/></svg>' +
-        '<p class="lb-nota">Diámetro = 2 × radio = ' + 2 * o.r + ' cm. Usamos π ≈ 3,14.</p><p class="lb-res">Longitud = 2 × π × r = ' + fmt(r2(2 * PI * o.r)) + ' cm · Área = π × r² = ' + fmt(r2(PI * o.r * o.r)) + ' cm²</p>';
+      var c = '<circle class="fig" cx="120" cy="115" r="' + o.r * 10 + '"/>', rad = '<line class="rayo" x1="120" y1="115" x2="' + (120 + o.r * 10) + '" y2="115"/>', dia = '<line class="rayo" x1="' + (120 - o.r * 10) + '" y1="115" x2="' + (120 + o.r * 10) + '" y2="115"/>', sv = function (x) { return '<svg viewBox="0 0 240 230" class="lb2-svg">' + c + x + '</svg>'; };
+      return [{ vis: sv(rad), txt: 'El radio mide <b>' + o.r + ' cm</b>: va del centro al borde.' },
+        { vis: sv(dia), txt: 'El diámetro es el doble: <b>2 × ' + o.r + ' = ' + 2 * o.r + ' cm</b>.' },
+        { vis: sv(rad) + '<p class="lb-nota">Longitud = 2 × π × r = 2 × 3,14 × ' + o.r + ' = ' + fmt(r2(2 * PI * o.r)) + ' cm</p>', txt: 'El borde (circunferencia) mide 2 × π × r. Usamos π ≈ 3,14.' },
+        { vis: sv(rad) + '<p class="lb-cn-res">Área = π × r² = 3,14 × ' + o.r + ' × ' + o.r + ' = ' + fmt(r2(PI * o.r * o.r)) + ' cm²</p>', txt: 'La superficie del círculo es π × r × r.' }];
     });
   } };
   // ejercicios de geometría
@@ -163,29 +181,42 @@
 
   // ======================= ÁLGEBRA =======================
   var EXPR = [['3x + 2', function (x) { return 3 * x + 2; }], ['2x − 5', function (x) { return 2 * x - 5; }], ['x² + 1', function (x) { return x * x + 1; }], ['2(x + 3)', function (x) { return 2 * (x + 3); }], ['x² − 2x', function (x) { return x * x - 2 * x; }], ['10 − 3x', function (x) { return 10 - 3 * x; }], ['(x + 1)²', function (x) { return (x + 1) * (x + 1); }]];
-  M.valor_numerico = { tipo: 'ejemplo', render: function (el) {
+  M.valor_numerico = { tipo: 'ejemplo', pasos: true, render: function (el) {
     var e = pick(EXPR);
-    escena(el, ctrl('x', 'x', -5, 10, 1, 2), function (o) { var x = o.x, xs = x < 0 ? '(' + sig(x) + ')' : String(x);
-      return '<p class="lb-res">' + e[0] + '</p><p class="lb-nota">Reemplazamos x por ' + xs + ': <b>' + e[0].replace(/x/g, xs) + ' = ' + sig(e[1](x)).replace('+', '') + '</b></p><table class="lb2-tab"><tr><th>x</th>' + [-2, -1, 0, 1, 2, 3].map(function (k) { return '<td' + (k === x ? ' class="on"' : '') + '>' + k + '</td>'; }).join('') + '</tr><tr><th>valor</th>' + [-2, -1, 0, 1, 2, 3].map(function (k) { return '<td' + (k === x ? ' class="on"' : '') + '>' + e[1](k) + '</td>'; }).join('') + '</tr></table>'; },
+    escena(el, ctrl('x', 'x', -5, 10, 1, 2), function (o) { var x = o.x, xs = x < 0 ? '(' + sig(x) + ')' : String(x), v = sig(e[1](x)).replace('+', '');
+      var tab = '<table class="lb2-tab"><tr><th>x</th>' + [-2, -1, 0, 1, 2, 3].map(function (k) { return '<td' + (k === x ? ' class="on"' : '') + '>' + k + '</td>'; }).join('') + '</tr><tr><th>valor</th>' + [-2, -1, 0, 1, 2, 3].map(function (k) { return '<td' + (k === x ? ' class="on"' : '') + '>' + e[1](k) + '</td>'; }).join('') + '</tr></table>';
+      return [{ vis: '<p class="lb-pt-g">' + e[0] + '</p>', txt: 'Esta es la expresión. Queremos su valor para <b>x = ' + x + '</b>.' },
+        { vis: '<p class="lb-pt-g">' + e[0].replace(/x/g, '<span class="lb2-on">' + xs + '</span>') + '</p>', txt: 'Reemplazamos cada x por ' + xs + '.' },
+        { vis: '<p class="lb-pt-g">' + e[0].replace(/x/g, xs) + ' = ' + v + '</p>', txt: 'Resolvemos: primero potencias, después multiplicaciones y al final sumas y restas.' },
+        { vis: '<p class="lb-pt-g">' + e[0].replace(/x/g, xs) + ' = ' + v + '</p>' + tab, txt: 'Con cada valor de x la expresión da otro número.' }]; },
       '<div class="lb-pie"><button type="button" class="lb-btn suave" data-otra="1">🔄 Otra expresión</button></div>');
     el.addEventListener('click', function (ev) { if (ev.target.closest('[data-otra]')) { e = pick(EXPR); el._pintar(); } });
   } };
   function terminos() { var L = [], g = { x2: 0, x: 0, c: 0 }; for (var i = 0; i < 6; i++) { var t = pick(['x2', 'x', 'x', 'c']), k = R(1, 9) * pick([1, -1]); g[t] += k; L.push([t, k]); } return { L: L, g: g }; }
   function termTxt(t, k, primero) { var a = Math.abs(k), s = k < 0 ? '− ' : primero ? '' : '+ ', lit = t === 'x2' ? 'x²' : t === 'x' ? 'x' : ''; return s + (lit && a === 1 ? '' : a) + lit; }
-  M.terminos_semejantes = { tipo: 'ejemplo', render: function (el) {
+  M.terminos_semejantes = { tipo: 'ejemplo', pasos: true, render: function (el) {
     var T = terminos();
-    function pintar() { var orden = ['x2', 'x', 'c'], col = { x2: 't0', x: 't1', c: 't2' };
-      el.innerHTML = '<p class="lb-res">' + T.L.map(function (q, i) { return '<span class="lb2-term ' + col[q[0]] + '">' + termTxt(q[0], q[1], !i) + '</span>'; }).join(' ') + '</p><p class="lb-nota">Mismo color = misma parte literal: son <b>semejantes</b> y se suman sus coeficientes.</p>' +
-        orden.map(function (t) { var ks = T.L.filter(function (q) { return q[0] === t; }); if (!ks.length) return ''; return '<p class="lb-nota"><span class="lb2-term ' + col[t] + '">' + (t === 'x2' ? 'x²' : t === 'x' ? 'x' : 'números') + '</span>: ' + ks.map(function (q) { return sig(q[1]); }).join(' ') + ' = <b>' + sig(T.g[t]) + '</b></p>'; }).join('') +
-        '<p class="lb-res">= ' + orden.filter(function (t) { return T.g[t]; }).map(function (t, i) { return termTxt(t, T.g[t], !i); }).join(' ') + '</p><div class="lb-pie"><button type="button" class="lb-btn suave" data-otra="1">🔄 Otra expresión</button></div>'; }
-    el.onclick = function (e) { if (e.target.closest('[data-otra]')) { T = terminos(); pintar(); } }; pintar();
+    el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-otra="1">🔄 Otra expresión</button></div>';
+    var v = el.querySelector('.lb-vista');
+    function armar() { var orden = ['x2', 'x', 'c'], col = { x2: 't0', x: 't1', c: 't2' }, nom = { x2: 'x²', x: 'x', c: 'números' };
+      var expr = '<p class="lb-res">' + T.L.map(function (q, i) { return '<span class="lb2-term ' + col[q[0]] + '">' + termTxt(q[0], q[1], !i) + '</span>'; }).join(' ') + '</p>', P = [{ vis: expr, txt: 'Mismo color = misma parte literal: son <b>semejantes</b>.' }], hechos = '';
+      orden.forEach(function (t) { var ks = T.L.filter(function (q) { return q[0] === t; }); if (!ks.length) return;
+        hechos += '<p class="lb-nota"><span class="lb2-term ' + col[t] + '">' + nom[t] + '</span>: ' + ks.map(function (q) { return sig(q[1]); }).join(' ') + ' = <b>' + sig(T.g[t]) + '</b></p>';
+        P.push({ vis: expr + hechos, txt: 'Juntamos los términos con <b>' + nom[t] + '</b>: sumamos sus coeficientes con su signo.' }); });
+      P.push({ vis: expr + hechos + '<p class="lb-cn-res">= ' + (orden.filter(function (t) { return T.g[t]; }).map(function (t, i) { return termTxt(t, T.g[t], !i); }).join(' ') || '0') + '</p>', txt: 'Escribimos lo que quedó de cada parte.' });
+      pasoAPaso(v, P); }
+    el.addEventListener('click', function (e) { if (e.target.closest('[data-otra]')) { T = terminos(); armar(); } }); armar();
   } };
-  M.patron_figuras = { tipo: 'ejemplo', render: function (el) {
+  M.patron_figuras = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('n', 'Figura número', 1, 8, 1, 3), function (o) { var n = o.n, s = 22, lin = '';
       for (var i = 0; i <= n; i++) lin += '<line class="fosf" x1="' + (10 + i * s) + '" y1="10" x2="' + (10 + i * s) + '" y2="' + (10 + s) + '"/>';
       for (var j = 0; j < n; j++) lin += '<line class="fosf" x1="' + (10 + j * s) + '" y1="10" x2="' + (10 + (j + 1) * s) + '" y2="10"/><line class="fosf" x1="' + (10 + j * s) + '" y1="' + (10 + s) + '" x2="' + (10 + (j + 1) * s) + '" y2="' + (10 + s) + '"/>';
-      return '<svg viewBox="0 0 ' + (20 + n * s) + ' 45" class="lb2-svg" style="max-height:90px">' + lin + '</svg><table class="lb2-tab"><tr><th>Figura</th>' + [1, 2, 3, 4, 5].map(function (k) { return '<td' + (k === n ? ' class="on"' : '') + '>' + k + '</td>'; }).join('') + '</tr><tr><th>Fósforos</th>' + [1, 2, 3, 4, 5].map(function (k) { return '<td' + (k === n ? ' class="on"' : '') + '>' + (3 * k + 1) + '</td>'; }).join('') + '</tr></table>' +
-        '<p class="lb-nota">Cada cuadradito nuevo agrega 3 fósforos al primero: la fórmula es <b>3n + 1</b>.</p><p class="lb-res">Figura ' + n + ': 3 × ' + n + ' + 1 = ' + (3 * n + 1) + ' fósforos</p>'; });
+      var fig = '<svg viewBox="0 0 ' + (20 + n * s) + ' 45" class="lb2-svg" style="max-height:90px">' + lin + '</svg>';
+      var tab = '<table class="lb2-tab"><tr><th>Figura</th>' + [1, 2, 3, 4, 5].map(function (k) { return '<td' + (k === n ? ' class="on"' : '') + '>' + k + '</td>'; }).join('') + '</tr><tr><th>Fósforos</th>' + [1, 2, 3, 4, 5].map(function (k) { return '<td' + (k === n ? ' class="on"' : '') + '>' + (3 * k + 1) + '</td>'; }).join('') + '</tr></table>';
+      return [{ vis: fig, txt: 'La figura <b>' + n + '</b> tiene ' + n + ' cuadradito' + (n > 1 ? 's' : '') + ' hechos con fósforos.' },
+        { vis: fig + tab, txt: 'Contamos los fósforos de las primeras figuras: 4, 7, 10, 13…' },
+        { vis: fig + tab, txt: 'Cada figura tiene <b>3 más</b> que la anterior: hay 1 fósforo inicial y 3 por cada cuadradito.' },
+        { vis: fig + tab + '<p class="lb-cn-res">Figura ' + n + ': 3 × ' + n + ' + 1 = ' + (3 * n + 1) + '</p>', txt: 'La fórmula es <b>3n + 1</b>: sirve para cualquier figura.' }]; });
   } };
   M.valor_numerico_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var e = pick(EXPR), x = R(-4, 6), xs = x < 0 ? '(' + sig(x) + ')' : x;
@@ -217,13 +248,16 @@
   } };
 
   // ======================= NÚMEROS =======================
-  M.porcentaje_barra = { tipo: 'ejemplo', render: function (el, p) {
+  M.porcentaje_barra = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
     var modo = p.modo || 'parte';
     escena(el, ctrl('p', 'Porcentaje', 5, 95, 5, 25, ' %') + ctrl('t', 'Cantidad', 100, 5000, 100, 2400), function (o) { var parte = o.t * o.p / 100;
-      var barra = '<div class="lb2-barra"><i style="width:' + o.p + '%"></i><span>' + o.p + ' %</span></div><div class="lb2-esc"><span>0</span><span>' + fmt(o.t) + ' = 100 %</span></div>';
+      var barra = function (w) { return '<div class="lb2-barra"><i style="width:' + w + '%"></i><span>' + (w ? o.p + ' %' : '') + '</span></div><div class="lb2-esc"><span>0</span><span>' + fmt(o.t) + ' = 100 %</span></div>'; };
+      var P = [{ vis: barra(0), txt: 'La barra entera es el total: <b>' + fmt(o.t) + ' = 100 %</b>.' },
+        { vis: barra(o.p), txt: 'Pintamos el <b>' + o.p + ' %</b>: ' + o.p + ' de cada 100 partes.' },
+        { vis: barra(o.p) + '<p class="lb-cn-res">' + fmt(o.t) + ' × ' + o.p + ' ÷ 100 = ' + fmt(parte) + '</p>', txt: 'Para calcularlo: multiplicamos por ' + o.p + ' y dividimos por 100.' }];
       if (modo === 'aumento' || modo === 'descuento') { var fin = modo === 'aumento' ? o.t + parte : o.t - parte;
-        return barra + '<p class="lb-nota">' + (modo === 'aumento' ? 'Aumento' : 'Descuento') + ': ' + o.p + ' % de ' + fmt(o.t) + ' = ' + fmt(parte) + '. También: ' + fmt(o.t) + ' × ' + fmt((modo === 'aumento' ? 100 + o.p : 100 - o.p) / 100) + '.</p><p class="lb-res">Precio final: $' + fmt(fin) + '</p>'; }
-      return barra + '<p class="lb-nota">El ' + o.p + ' % es ' + o.p + ' de cada 100: ' + fmt(o.t) + ' × ' + o.p + ' ÷ 100.</p><p class="lb-res">' + o.p + ' % de ' + fmt(o.t) + ' = ' + fmt(parte) + '</p>'; });
+        P.push({ vis: barra(o.p) + '<p class="lb-cn-res">' + fmt(o.t) + (modo === 'aumento' ? ' + ' : ' − ') + fmt(parte) + ' = $' + fmt(fin) + '</p>', txt: (modo === 'aumento' ? 'Es un aumento: lo sumamos' : 'Es un descuento: lo restamos') + ' al precio.' }); }
+      return P; });
   } };
   M.porcentaje = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var m = p.modo || pick(['parte', 'que', 'descuento', 'aumento']), pc = pick([5, 10, 15, 20, 25, 30, 40, 50, 75]), t = R(2, 60) * 100, parte = t * pc / 100;
@@ -239,22 +273,29 @@
     if (t === 2) { var q = b * c; return { e: a * d + ' − ' + q + ' ÷ ' + c + ' + ' + b, pasos: [a * d + ' − ' + b + ' + ' + b, String(a * d - b + b)], v: a * d }; }
     return { e: a + '² − ' + b + ' × ' + (c > 1 ? '(' + c + ' − 1)' : c), pasos: [a * a + ' − ' + b + ' × ' + (c - 1), a * a + ' − ' + b * (c - 1), String(a * a - b * (c - 1))], v: a * a - b * (c - 1) };
   }
-  M.jerarquia = { tipo: 'ejemplo', render: function (el) {
-    var X = expresion(), k = 0;
-    function pintar() { el.innerHTML = '<p class="lb-res">' + X.e + '</p><ol class="lb2-pasos">' + X.pasos.slice(0, k).map(function (s, i) { return '<li>= ' + s + (i === X.pasos.length - 1 ? ' ✔' : '') + '</li>'; }).join('') + '</ol>' +
-      '<p class="lb-nota">Orden: 1) paréntesis, 2) potencias y raíces, 3) multiplicaciones y divisiones, 4) sumas y restas (de izquierda a derecha).</p><div class="lb-pie">' + (k < X.pasos.length ? '<button type="button" class="lb-btn" data-s="1">Siguiente paso</button>' : '') + '<button type="button" class="lb-btn suave" data-o="1">🔄 Otra cuenta</button></div>'; }
-    el.onclick = function (e) { if (e.target.closest('[data-s]')) { k++; pintar(); } if (e.target.closest('[data-o]')) { X = expresion(); k = 0; pintar(); } }; pintar();
+  M.jerarquia = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    var X = expresion();
+    el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-o="1">🔄 Otra cuenta</button></div>'; var v = el.querySelector('.lb-vista');
+    function armar() { var P = [{ vis: '<p class="lb-pt-g">' + X.e + '</p>', txt: 'Orden: 1) paréntesis, 2) potencias y raíces, 3) × y ÷, 4) + y − (de izquierda a derecha).' }];
+      X.pasos.forEach(function (st, i) { P.push({ vis: '<p class="lb-res">' + X.e + '</p><ol class="lb2-pasos">' + X.pasos.slice(0, i + 1).map(function (q, j) { return '<li' + (j === i ? ' class="on"' : '') + '>= ' + q + '</li>'; }).join('') + '</ol>', txt: i === X.pasos.length - 1 ? 'Último paso: ese es el resultado.' : 'Resolvemos lo que va primero según el orden.' }); });
+      pasoAPaso(v, P); }
+    el.addEventListener('click', function (e) { if (e.target.closest('[data-o]')) { X = expresion(); armar(); } }); armar();
   } };
   M.combinadas = { tipo: 'ejercicio', render: function (el, p, api) { respuesta(el, api, function () { var X = expresion(); return { cons: 'Resolvé respetando la jerarquía: <b>' + X.e + '</b>', campos: [{ v: X.v }], ayuda: 'Paso a paso: ' + X.pasos.join(' = ') + '.', bien: '¡Bien! ' + X.e + ' = ' + X.v + '.' }; }); } };
   function periodo(a, b) { var ent = Math.floor(a / b), r = a % b, vistos = {}, dig = '', pos = 0; while (r && vistos[r] == null && pos < 40) { vistos[r] = pos++; r *= 10; dig += Math.floor(r / b); r %= b; } return { ent: ent, dig: dig, ini: r ? vistos[r] : -1 }; }
-  M.periodo = { tipo: 'ejemplo', render: function (el) {
+  M.periodo = { tipo: 'ejemplo', pasos: true, render: function (el) {
     el.innerHTML = '<div class="lb2-ctls"><label class="lb2-ctl">Fracción: <input class="lb-inp chico" data-k="a" inputmode="numeric" value="' + pick([1, 2, 5, 7]) + '"> / <input class="lb-inp chico" data-k="b" inputmode="numeric" value="' + pick([3, 6, 7, 9, 11, 12]) + '"></label></div><div class="lb-vista"></div>';
     var v = el.querySelector('.lb-vista');
-    function pintar() { var a = Math.floor(num(el.querySelector('[data-k="a"]').value)), b = Math.floor(num(el.querySelector('[data-k="b"]').value));
-      if (!(a >= 0 && b >= 1 && b <= 99 && a <= 999)) { v.innerHTML = '<p class="lb-ayuda">Probá con números chicos (denominador hasta 99).</p>'; return; }
-      var P = periodo(a, b), d = P.dig, txt = P.ini < 0 ? P.ent + (d ? ',' + d : '') : P.ent + ',' + d.slice(0, P.ini) + '<span class="lb2-per">' + d.slice(P.ini) + '</span>';
-      v.innerHTML = '<p class="lb-res">' + a + '/' + b + ' = ' + txt + (P.ini < 0 ? '' : '…') + '</p><p class="lb-nota">' + (P.ini < 0 ? 'La división termina: es un <b>decimal exacto</b>.' : 'Al dividir, un resto se repite y desde ahí las cifras se repiten: el <b>período</b> (marcado) es ' + d.slice(P.ini) + '. ' + (P.ini === 0 ? 'Empieza enseguida: <b>periódico puro</b>.' : 'Antes hay cifras que no se repiten: <b>periódico mixto</b>.')) + '</p>'; }
-    el.addEventListener('input', pintar); pintar();
+    function armar() { var a = Math.floor(num(el.querySelector('[data-k="a"]').value)), b = Math.floor(num(el.querySelector('[data-k="b"]').value));
+      if (!(a >= 0 && b >= 1 && b <= 99 && a <= 999)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Probá con números chicos (denominador hasta 99).</p>'; return; }
+      var Q = periodo(a, b), d = Q.dig, plano = Q.ent + (d ? ',' + d : ''), marc = Q.ini < 0 ? plano : Q.ent + ',' + d.slice(0, Q.ini) + '<span class="lb2-per">' + d.slice(Q.ini) + '</span>…';
+      var P = [{ vis: '<p class="lb-pt-g">' + a + '/' + b + '</p>', txt: 'Una fracción es una división: <b>' + a + ' ÷ ' + b + '</b>.' },
+        { vis: '<p class="lb-pt-g">' + a + ' ÷ ' + b + ' = ' + plano + (Q.ini < 0 ? '' : '…') + '</p>', txt: 'Hacemos la división y miramos las cifras decimales.' }];
+      if (Q.ini < 0) P.push({ vis: '<p class="lb-cn-res">' + a + '/' + b + ' = ' + plano + '</p>', txt: 'La división <b>termina</b> (da resto 0): es un <b>decimal exacto</b>.' });
+      else { P.push({ vis: '<p class="lb-pt-g">' + marc + '</p>', txt: 'Un resto se repite y desde ahí se repiten las cifras: el <b>período</b> es ' + d.slice(Q.ini) + '.' });
+        P.push({ vis: '<p class="lb-cn-res">' + a + '/' + b + ' = ' + marc + '</p>', txt: Q.ini === 0 ? 'El período empieza enseguida: <b>periódico puro</b>.' : 'Antes hay cifras que no se repiten: <b>periódico mixto</b>.' }); }
+      pasoAPaso(v, P); }
+    el.addEventListener('input', armar); armar();
   } };
   M.decimal_tipo = { tipo: 'ejercicio', render: function (el, p, api) {
     cajas(el, api, function () { var it = [], vis = {}, tope = 0;
@@ -262,29 +303,39 @@
       return { tit: 'Ubicá cada fracción según el decimal que da.', cajas: ['Exacto', 'Periódico puro', 'Periódico mixto'], items: it }; });
   } };
   function cientif(x) { var e = Math.floor(Math.log10(Math.abs(x))), m = Math.round(x / Math.pow(10, e) * 1000) / 1000; if (m >= 10) { m /= 10; e++; } return { m: m, e: e }; }
-  M.notacion_cientifica = { tipo: 'ejemplo', render: function (el) {
+  M.notacion_cientifica = { tipo: 'ejemplo', pasos: true, render: function (el) {
     el.innerHTML = '<div class="lb2-ctls"><label class="lb2-ctl">Número: <input class="lb-inp largo" data-k="n" inputmode="decimal" value="' + pick(['3.450.000', '0,00072', '58.000.000', '0,0305']) + '"></label></div><div class="lb-vista"></div>';
     var v = el.querySelector('.lb-vista');
-    function pintar() { var x = num(el.querySelector('[data-k="n"]').value); if (!isFinite(x) || !x) { v.innerHTML = '<p class="lb-ayuda">Escribí un número distinto de 0.</p>'; return; }
-      var C = cientif(x); v.innerHTML = '<p class="lb-nota">Movemos la coma hasta dejar <b>una sola cifra distinta de 0</b> antes de ella: ' + Math.abs(C.e) + ' lugar' + (Math.abs(C.e) === 1 ? '' : 'es') + ' hacia la ' + (C.e >= 0 ? 'izquierda (número grande: exponente positivo)' : 'derecha (número chico: exponente negativo)') + '.</p><p class="lb-res">' + fmt(x) + ' = ' + fmt(C.m) + ' × 10<sup>' + C.e + '</sup></p>'; }
-    el.addEventListener('input', pintar); pintar();
+    function armar() { var x = num(el.querySelector('[data-k="n"]').value); if (!isFinite(x) || !x) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí un número distinto de 0.</p>'; return; }
+      var C = cientif(x), L = Math.abs(C.e);
+      pasoAPaso(v, [{ vis: '<p class="lb-pt-g">' + fmt(x) + '</p>', txt: 'Queremos escribirlo como un número entre 1 y 10 por una potencia de 10.' },
+        { vis: '<p class="lb-pt-g">' + fmt(C.m) + '</p>', txt: 'Movemos la coma hasta dejar <b>una sola cifra distinta de 0</b> antes de ella.' },
+        { vis: '<p class="lb-pt-g">' + fmt(C.m) + ' × 10<sup>' + C.e + '</sup></p>', txt: 'La coma se movió <b>' + L + ' lugar' + (L === 1 ? '' : 'es') + '</b> hacia la ' + (C.e >= 0 ? 'izquierda: el exponente es <b>positivo</b>.' : 'derecha: el exponente es <b>negativo</b>.') },
+        { vis: '<p class="lb-cn-res">' + fmt(x) + ' = ' + fmt(C.m) + ' × 10<sup>' + C.e + '</sup></p>', txt: 'Ese es el número en notación científica.' }]); }
+    el.addEventListener('input', armar); armar();
   } };
   M.notacion = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var m = R(11, 99) / 10, e = pick([R(3, 8), -R(2, 6)]), x = Math.round(m * Math.pow(10, e) * 1e8) / 1e8;
       return { cons: 'Escribí <b>' + fmt(x) + '</b> en notación científica: mantisa × 10 elevado al exponente.', campos: [{ lab: 'Mantisa', v: m }, { lab: '× 10 elevado a', v: e }], ayuda: 'La mantisa tiene una sola cifra antes de la coma; el exponente es cuántos lugares corriste la coma (negativo si el número es menor que 1).', bien: '¡Bien! ' + fmt(m) + ' × 10^' + e + '.' }; });
   } };
-  M.fraccion_barras = { tipo: 'ejemplo', render: function (el, p) {
+  M.fraccion_barras = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
     var resta = p.op === 'resta';
     escena(el, ctrl('a', 'Numerador 1', 1, 5, 1, 1) + ctrl('b', 'Denominador 1', 2, 6, 1, 2) + ctrl('c', 'Numerador 2', 1, 5, 1, 1) + ctrl('d', 'Denominador 2', 2, 6, 1, 3), function (o) {
       var den = o.b * o.d / mcd(o.b, o.d), n1 = o.a * den / o.b, n2 = o.c * den / o.d, res = resta ? n1 - n2 : n1 + n2;
-      function barra(n, cls) { var s = ''; for (var i = 0; i < Math.max(den, n); i++) s += '<i class="' + (i < n ? cls : '') + (i >= den ? ' fuera' : '') + '"></i>'; return '<div class="lb2-fb">' + s + '</div>'; }
-      return barra(n1, 'p1') + barra(n2, 'p2') + '<p class="lb-nota">Con denominador común ' + den + ': ' + fr(o.a, o.b) + ' = ' + fr(n1, den) + ' y ' + fr(o.c, o.d) + ' = ' + fr(n2, den) + '.</p><p class="lb-res">' + fr(n1, den) + (resta ? ' − ' : ' + ') + fr(n2, den) + ' = ' + fr(res, den) + (mcd(Math.abs(res), den) > 1 && res ? ' = ' + frHtml(res, den) : '') + '</p>'; });
+      function barra(n, partes, cls) { var s = ''; for (var i = 0; i < Math.max(partes, n); i++) s += '<i class="' + (i < n ? cls : '') + (i >= partes ? ' fuera' : '') + '"></i>'; return '<div class="lb2-fb">' + s + '</div>'; }
+      var op = resta ? ' − ' : ' + ';
+      return [{ vis: barra(o.a, o.b, 'p1') + barra(o.c, o.d, 'p2'), txt: fr(o.a, o.b) + op + fr(o.c, o.d) + ': las partes son de distinto tamaño, no se pueden juntar así.' },
+        { vis: barra(n1, den, 'p1') + barra(n2, den, 'p2'), txt: 'Partimos las dos barras en <b>' + den + '</b> partes iguales (denominador común): ' + fr(o.a, o.b) + ' = ' + fr(n1, den) + ' y ' + fr(o.c, o.d) + ' = ' + fr(n2, den) + '.' },
+        { vis: barra(n1, den, 'p1') + barra(n2, den, 'p2') + '<p class="lb-cn-res">' + fr(n1, den) + op + fr(n2, den) + ' = ' + fr(res, den) + (mcd(Math.abs(res), den) > 1 && res ? ' = ' + frHtml(res, den) : '') + '</p>', txt: 'Ahora las partes son iguales: ' + (resta ? 'restamos' : 'sumamos') + ' los numeradores.' }]; });
   } };
-  M.fraccion_area = { tipo: 'ejemplo', render: function (el) {
+  M.fraccion_area = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('a', 'Tomo', 1, 5, 1, 2) + ctrl('b', 'de', 2, 6, 1, 3) + ctrl('c', 'partes de', 1, 5, 1, 3) + ctrl('d', 'de', 2, 6, 1, 4), function (o) {
-      var a = Math.min(o.a, o.b), c = Math.min(o.c, o.d), s = 26, g = '';
-      for (var i = 0; i < o.d; i++) for (var j = 0; j < o.b; j++) g += '<rect x="' + (5 + i * s) + '" y="' + (5 + j * s) + '" width="' + s + '" height="' + s + '" class="' + (i < c && j < a ? 'c2' : i < c ? 'c1' : 'c0') + '"/>';
-      return '<svg viewBox="0 0 ' + (10 + o.d * s) + ' ' + (10 + o.b * s) + '" class="lb2-svg" style="max-height:170px">' + g + '</svg><p class="lb-nota">Columnas pintadas: ' + fr(c, o.d) + '. De eso tomo ' + fr(a, o.b) + ' (lo más oscuro): ' + a * c + ' de ' + o.b * o.d + ' cuadraditos.</p><p class="lb-res">' + fr(a, o.b) + ' de ' + fr(c, o.d) + ' = ' + fr(a * c, o.b * o.d) + '</p>'; });
+      var a = Math.min(o.a, o.b), c = Math.min(o.c, o.d), s = 26;
+      function sv(k) { var g = ''; for (var i = 0; i < o.d; i++) for (var j = 0; j < o.b; j++) g += '<rect x="' + (5 + i * s) + '" y="' + (5 + j * s) + '" width="' + s + '" height="' + s + '" class="' + (k >= 2 && i < c && j < a ? 'c2' : k >= 1 && i < c ? 'c1' : 'c0') + '"/>'; return '<svg viewBox="0 0 ' + (10 + o.d * s) + ' ' + (10 + o.b * s) + '" class="lb2-svg" style="max-height:170px">' + g + '</svg>'; }
+      return [{ vis: sv(0), txt: 'El cuadrado es el entero, partido en ' + o.d + ' columnas y ' + o.b + ' filas.' },
+        { vis: sv(1), txt: 'Pintamos ' + fr(c, o.d) + ': ' + c + ' de las ' + o.d + ' columnas.' },
+        { vis: sv(2), txt: 'De lo pintado tomamos ' + fr(a, o.b) + ': ' + a + ' de las ' + o.b + ' filas (lo más oscuro).' },
+        { vis: sv(2) + '<p class="lb-cn-res">' + fr(a, o.b) + ' de ' + fr(c, o.d) + ' = ' + fr(a * c, o.b * o.d) + '</p>', txt: 'Quedan <b>' + a * c + '</b> cuadraditos oscuros de <b>' + o.b * o.d + '</b>.' }]; });
   } };
   M.fraccion_operar = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var op = p.op || pick(['suma', 'resta', 'producto', 'division']), a, b, c, d, n, dd, s, tt = 0;
@@ -293,11 +344,11 @@
       return { cons: 'Resolvé: <b>' + fr(a, b) + ' ' + s + ' ' + fr(c, d) + '</b> (podés simplificar o no).', campos: [{ tipo: 'frac', v: n / dd, n: n, d: dd }], ayuda: op === 'suma' || op === 'resta' ? 'Buscá un denominador común y ' + (op === 'suma' ? 'sumá' : 'restá') + ' los numeradores.' : op === 'producto' ? 'Multiplicá numerador por numerador y denominador por denominador.' : 'Multiplicá por la inversa de la segunda fracción.', bien: '¡Bien! = ' + frs(n, dd) + '.' }; });
   } };
   var POSD = [['unidades', 1], ['décimos', .1], ['centésimos', .01]];
-  M.redondeo = { tipo: 'ejemplo', render: function (el) {
+  M.redondeo = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('x', 'Número', 0, 20, .01, 7.36) + '<label class="lb2-ctl"><span>Redondear a</span><select class="lb-inp largo" data-k="p">' + POSD.map(function (q, i) { return '<option value="' + i + '"' + (i === 1 ? ' selected' : '') + '>' + q[0] + '</option>'; }).join('') + '</select></label>', function (o) {
       var u = POSD[+o.p][1], lo = Math.floor(o.x / u + 1e-9) * u, hi = lo + u, r = (o.x - lo) < u / 2 - 1e-9 ? lo : hi, W = 260, X = function (v) { return 20 + (v - lo) / u * (W - 40); };
-      return '<svg viewBox="0 0 ' + W + ' 70" class="lb2-svg"><line class="rayo" x1="10" y1="35" x2="' + (W - 10) + '" y2="35"/><line class="rayo" x1="' + X(lo) + '" y1="27" x2="' + X(lo) + '" y2="43"/><line class="rayo" x1="' + X(hi) + '" y1="27" x2="' + X(hi) + '" y2="43"/><line class="diag" x1="' + X(lo + u / 2) + '" y1="25" x2="' + X(lo + u / 2) + '" y2="45"/><circle cx="' + X(o.x).toFixed(1) + '" cy="35" r="6" class="pt"/><text x="' + X(lo) + '" y="62">' + fmt(r2(lo)) + '</text><text x="' + X(hi) + '" y="62">' + fmt(r2(hi)) + '</text></svg>' +
-        '<p class="lb-nota">' + fmt(o.x) + ' está entre ' + fmt(r2(lo)) + ' y ' + fmt(r2(hi)) + '. La rayita del medio es ' + fmt(r2(lo + u / 2)) + ': si llega o pasa, se redondea para arriba.</p><p class="lb-res">' + fmt(o.x) + ' ≈ ' + fmt(r2(r)) + '</p>'; });
+      var sv = '<svg viewBox="0 0 ' + W + ' 70" class="lb2-svg"><line class="rayo" x1="10" y1="35" x2="' + (W - 10) + '" y2="35"/><line class="rayo" x1="' + X(lo) + '" y1="27" x2="' + X(lo) + '" y2="43"/><line class="rayo" x1="' + X(hi) + '" y1="27" x2="' + X(hi) + '" y2="43"/><line class="diag" x1="' + X(lo + u / 2) + '" y1="25" x2="' + X(lo + u / 2) + '" y2="45"/><circle cx="' + X(o.x).toFixed(1) + '" cy="35" r="6" class="pt"/><text x="' + X(lo) + '" y="62">' + fmt(r2(lo)) + '</text><text x="' + X(hi) + '" y="62">' + fmt(r2(hi)) + '</text></svg>';
+      return [{ vis: sv, txt: 'El número <b>' + fmt(o.x) + '</b> está entre <b>' + fmt(r2(lo)) + '</b> y <b>' + fmt(r2(hi)) + '</b>.' }, { vis: sv, txt: 'La rayita del medio es <b>' + fmt(r2(lo + u / 2)) + '</b>: si el número llega o la pasa, se redondea para arriba.' }, { vis: sv + '<p class="lb-cn-res">' + fmt(o.x) + ' ≈ ' + fmt(r2(r)) + '</p>', txt: 'Queda más cerca de <b>' + fmt(r2(r)) + '</b>.' }]; });
   } };
   M.redondear = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var i = R(0, 2), u = POSD[i][1], x = R(100, 99999) / 1000, r = Math.round(x / u) * u;
@@ -380,6 +431,7 @@
     v.onclick = function (e) { var b = e.target.closest('[data-pp]'); if (!b || b.disabled) return; k = Math.max(0, Math.min(P.length - 1, k + Number(b.getAttribute('data-pp')))); show(); };
     show();
   }
+  H.pasoAPaso = pasoAPaso;   // también lo usan los ejemplos de js/leccion-banco.js
   function entrada(el, lab, val, max, w) { el.innerHTML = '<div class="lb-in-f"><label>' + lab + '</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + val + '" maxlength="' + max + '"' + (w ? ' style="width:' + w + 'ch!important"' : '') + '></div><div class="lb-vista"></div>'; return [el.querySelector('input'), el.querySelector('.lb-vista')]; }
   function soloNum(x) { return String(x).replace(/\D/g, '').replace(/^0+(?=\d)/, ''); }
   function unLetras(x) { return H.letras(x).replace(/veintiuno$/, 'veintiún').replace(/(^| )uno$/, '$1un'); }
@@ -575,34 +627,44 @@
       if (md === 'a_decimal' || (md === 'ambos' && Math.random() < .5)) return { cons: 'Pasá a decimal el número binario <b>' + b + '</b>.', campos: [{ v: n }], ayuda: 'Cada lugar desde la derecha vale 1, 2, 4, 8, 16…: sumá los que tienen 1.', bien: '¡Bien! ' + b + ' = ' + n + '.' };
       return { cons: 'Pasá a binario el número <b>' + n + '</b>.', campos: [{ tipo: 'texto', v: b }], ayuda: 'Dividí por 2 una y otra vez y leé los restos de abajo hacia arriba. Es ' + b + '.', bien: '¡Bien! ' + n + ' = ' + b + '.' }; });
   } };
-  M.recta_explorar = { tipo: 'ejemplo', render: function (el) {
+  M.recta_explorar = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('x', 'Número', -10, 10, 1, -4), function (o) { var X = function (v) { return 130 + v * 11; }, t = '';
       for (var k = -10; k <= 10; k++) t += '<line class="rayo" x1="' + X(k) + '" y1="' + (k ? 32 : 26) + '" x2="' + X(k) + '" y2="' + (k ? 40 : 46) + '"/>';
-      return '<svg viewBox="0 0 260 70" class="lb2-svg"><line class="rayo" x1="5" y1="36" x2="255" y2="36"/>' + t + '<text x="130" y="62">0</text><circle cx="' + X(o.x) + '" cy="36" r="6" class="pt"/><circle cx="' + X(-o.x) + '" cy="36" r="5" class="pt2"/></svg>' +
-        '<p class="lb-nota">El opuesto de ' + sig(o.x) + ' es ' + sig(-o.x) + ' (mismo lugar del otro lado del 0). El valor absoluto es la distancia al 0.</p><p class="lb-res">|' + sig(o.x) + '| = ' + Math.abs(o.x) + '</p>'; });
+      var sv = function (op, dist) { return '<svg viewBox="0 0 260 70" class="lb2-svg"><line class="rayo" x1="5" y1="36" x2="255" y2="36"/>' + t + '<text x="130" y="62">0</text>' + (dist ? '<line class="diag" x1="130" y1="36" x2="' + X(o.x) + '" y2="36" style="stroke-width:4"/>' : '') + '<circle cx="' + X(o.x) + '" cy="36" r="6" class="pt"/>' + (op ? '<circle cx="' + X(-o.x) + '" cy="36" r="5" class="pt2"/>' : '') + '</svg>'; };
+      return [{ vis: sv(0, 0), txt: 'Ubicamos el <b>' + sig(o.x) + '</b> en la recta: ' + (o.x < 0 ? 'a la izquierda del 0.' : o.x > 0 ? 'a la derecha del 0.' : 'es el 0.') },
+        { vis: sv(1, 0), txt: 'Su <b>opuesto</b> está a la misma distancia, del otro lado del 0: <b>' + sig(-o.x) + '</b>.' },
+        { vis: sv(1, 1) + '<p class="lb-cn-res">|' + sig(o.x) + '| = ' + Math.abs(o.x) + '</p>', txt: 'El <b>valor absoluto</b> es la distancia al 0: siempre positiva.' }]; });
   } };
-  M.signos = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('a', 'Primer factor', -9, 9, 1, -3) + ctrl('b', 'Segundo factor', -9, 9, 1, 4), function (o) { var a = o.a, b = o.b, s = a * b;
-      return '<table class="lb2-tab"><tr><th>×</th><th>+</th><th>−</th></tr><tr><th>+</th><td class="' + (a > 0 && b > 0 ? 'on' : '') + '">+</td><td class="' + (a > 0 && b < 0 ? 'on' : '') + '">−</td></tr><tr><th>−</th><td class="' + (a < 0 && b > 0 ? 'on' : '') + '">−</td><td class="' + (a < 0 && b < 0 ? 'on' : '') + '">+</td></tr></table>' +
-        '<p class="lb-nota">Signos iguales dan +; signos distintos dan −. Para dividir vale la misma regla.</p><p class="lb-res">(' + sig(a) + ') × (' + sig(b) + ') = ' + sig(s) + (b && a % b === 0 ? ' · (' + sig(a) + ') ÷ (' + sig(b) + ') = ' + sig(a / b) : '') + '</p>'; });
+  M.signos = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('a', 'Primer factor', -9, 9, 1, -3) + ctrl('b', 'Segundo factor', -9, 9, 1, 4), function (o) { var a = o.a, b = o.b, sm = a * b;
+      var tab = function (on) { var c = function (x, y, t) { return '<td class="' + (on && (a > 0) === x && (b > 0) === y ? 'on' : '') + '">' + t + '</td>'; }; return '<table class="lb2-tab"><tr><th>×</th><th>+</th><th>−</th></tr><tr><th>+</th>' + c(true, true, '+') + c(true, false, '−') + '</tr><tr><th>−</th>' + c(false, true, '−') + c(false, false, '+') + '</tr></table>'; };
+      if (!a || !b) return [{ vis: '<p class="lb-cn-res">(' + sig(a) + ') × (' + sig(b) + ') = 0</p>', txt: 'Si un factor es 0, el producto es 0.' }];
+      return [{ vis: tab(false) + '<p class="lb-pt-f">(' + sig(a) + ') × (' + sig(b) + ')</p>', txt: 'Primero miramos los <b>signos</b>: ' + (a > 0 ? '+' : '−') + ' y ' + (b > 0 ? '+' : '−') + '.' },
+        { vis: tab(true) + '<p class="lb-pt-f">(' + sig(a) + ') × (' + sig(b) + ')</p>', txt: (a > 0) === (b > 0) ? 'Signos <b>iguales</b>: el resultado es <b>+</b>.' : 'Signos <b>distintos</b>: el resultado es <b>−</b>.' },
+        { vis: tab(true) + '<p class="lb-cn-res">(' + sig(a) + ') × (' + sig(b) + ') = ' + sig(sm) + '</p>', txt: 'Después multiplicamos los números sin signo: ' + Math.abs(a) + ' × ' + Math.abs(b) + ' = ' + Math.abs(sm) + '. Para dividir vale la misma regla.' }]; });
   } };
-  M.potencias_explorar = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('b', 'Base', -6, 10, 1, -2) + ctrl('e', 'Exponente', 0, 6, 1, 3), function (o) { var b = o.b, e = o.e, v = Math.pow(b, e), bs = b < 0 ? '(' + sig(b) + ')' : b;
-      return '<p class="lb-res">' + bs + '<sup>' + e + '</sup> = ' + (e === 0 ? '1' : Array(e + 1).join(bs + ' · ').slice(0, -3) + ' = ' + fmt(v)) + '</p><p class="lb-nota">' + (e === 0 ? 'Todo número (distinto de 0) elevado a 0 da 1.' : e === 1 ? 'Elevado a 1 da la misma base.' : 'El exponente dice cuántas veces se multiplica la base.') + (b < 0 && e > 0 ? ' Base negativa: exponente ' + (e % 2 ? 'impar → resultado negativo.' : 'par → resultado positivo.') : '') + '</p>'; });
+  M.potencias_explorar = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('b', 'Base', -6, 10, 1, -2) + ctrl('e', 'Exponente', 0, 6, 1, 3), function (o) { var b = o.b, e = o.e, bs = b < 0 ? '(' + sig(b) + ')' : String(b), P = [{ vis: '<p class="lb-pt-g">' + bs + '<sup>' + e + '</sup></p>', txt: 'La base es <b>' + bs + '</b> y el exponente <b>' + e + '</b>: se multiplica la base ' + e + ' veces.' }];
+      if (e === 0) P.push({ vis: '<p class="lb-cn-res">' + bs + '<sup>0</sup> = 1</p>', txt: 'Todo número (distinto de 0) elevado a 0 da 1.' });
+      for (var i = 1; i <= e; i++) P.push({ vis: '<p class="lb-pt-f">' + Array(i + 1).join(bs + ' · ').slice(0, -3) + '</p><p class="lb-pt-g">= ' + fmt(Math.pow(b, i)) + '</p>', txt: i === 1 ? 'Un factor: la misma base.' : 'Multiplicamos otra vez por ' + bs + '.' + (b < 0 ? ' El signo cambia en cada factor negativo.' : '') });
+      if (e > 0) P.push({ vis: '<p class="lb-cn-res">' + bs + '<sup>' + e + '</sup> = ' + fmt(Math.pow(b, e)) + '</p>', txt: b < 0 ? 'Base negativa: con exponente par da positivo, con impar, negativo.' : 'Ese es el resultado.' });
+      return P; });
   } };
-  M.raiz_explorar = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('n', 'Número', 1, 200, 1, 49), function (o) { var n = o.n, k = Math.floor(Math.sqrt(n)), exacta = k * k === n, s = Math.min(10, 140 / Math.max(k, 1)), g = '';
-      for (var i = 0; i < k; i++) for (var j = 0; j < k; j++) g += '<rect x="' + (5 + i * s) + '" y="' + (5 + j * s) + '" width="' + s + '" height="' + s + '" class="c1"/>';
-      return '<svg viewBox="0 0 ' + (10 + k * s) + ' ' + (10 + k * s) + '" class="lb2-svg" style="max-height:150px">' + g + '</svg>' + (exacta ? '<p class="lb-res">√' + n + ' = ' + k + ' (porque ' + k + ' × ' + k + ' = ' + n + ')</p><p class="lb-nota">' + n + ' es un cuadrado perfecto: con ' + n + ' cuadraditos se arma un cuadrado de lado ' + k + '.</p>'
-        : '<p class="lb-res">√' + n + ' está entre ' + k + ' y ' + (k + 1) + '</p><p class="lb-nota">' + k * k + ' < ' + n + ' < ' + (k + 1) * (k + 1) + ': con ' + n + ' cuadraditos no se arma un cuadrado justo (el más grande es de lado ' + k + ').</p>'); });
+  M.raiz_explorar = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('n', 'Número', 1, 200, 1, 49), function (o) { var n = o.n, k = Math.floor(Math.sqrt(n)), exacta = k * k === n, s = Math.min(10, 140 / Math.max(k, 1));
+      var sv = function (lado) { var g = ''; for (var i = 0; i < lado; i++) for (var j = 0; j < lado; j++) g += '<rect x="' + (5 + i * s) + '" y="' + (5 + j * s) + '" width="' + s + '" height="' + s + '" class="c1"/>'; return '<svg viewBox="0 0 ' + (10 + k * s) + ' ' + (10 + k * s) + '" class="lb2-svg" style="max-height:150px">' + g + '</svg>'; };
+      return [{ vis: '<p class="lb-pt-g">√' + n + '</p>', txt: 'Buscamos un número que multiplicado por sí mismo dé <b>' + n + '</b>.' },
+        { vis: sv(k), txt: 'Con ' + n + ' cuadraditos armamos el cuadrado más grande posible: de lado <b>' + k + '</b> (' + k + ' × ' + k + ' = ' + k * k + ').' },
+        { vis: sv(k) + '<p class="lb-cn-res">' + (exacta ? '√' + n + ' = ' + k : '√' + n + ' está entre ' + k + ' y ' + (k + 1)) + '</p>', txt: exacta ? 'No sobra ninguno: ' + n + ' es un <b>cuadrado perfecto</b>.' : 'Sobran cuadraditos: ' + k * k + ' < ' + n + ' < ' + (k + 1) * (k + 1) + ', la raíz no es exacta.' }]; });
   } };
-  M.proporcionalidad = { tipo: 'ejemplo', render: function (el, p) {
+  M.proporcionalidad = { tipo: 'ejemplo', pasos: true, render: function (el, p) {
     var inv = p.modo === 'inversa';
     escena(el, ctrl('k', inv ? 'Producto constante' : 'Constante k', inv ? 12 : 1, inv ? 60 : 8, inv ? 12 : 1, inv ? 24 : 3), function (o) { var xs = [1, 2, 3, 4, 6], k = o.k, ys = xs.map(function (x) { return inv ? r2(k / x) : k * x; }), W = 230, Hh = 140, my = Math.max.apply(null, ys);
       var pts = xs.map(function (x, i) { return (20 + x * 32) + ',' + (Hh - 10 - ys[i] / my * (Hh - 30)).toFixed(1); });
-      return '<table class="lb2-tab"><tr><th>x</th>' + xs.map(function (x) { return '<td>' + x + '</td>'; }).join('') + '</tr><tr><th>y</th>' + ys.map(function (y) { return '<td>' + fmt(y) + '</td>'; }).join('') + '</tr></table>' +
-        '<svg viewBox="0 0 ' + W + ' ' + Hh + '" class="lb2-svg"><line class="rayo" x1="20" y1="' + (Hh - 10) + '" x2="' + (W - 5) + '" y2="' + (Hh - 10) + '"/><line class="rayo" x1="20" y1="5" x2="20" y2="' + (Hh - 10) + '"/><polyline class="graf" points="' + (inv ? '' : '20,' + (Hh - 10) + ' ') + pts.join(' ') + '"/>' + pts.map(function (q) { return '<circle r="4" class="pt" cx="' + q.split(',')[0] + '" cy="' + q.split(',')[1] + '"/>'; }).join('') + '</svg>' +
-        '<p class="lb-nota">' + (inv ? 'Inversa: si x se duplica, y se reduce a la mitad. Siempre x · y = ' + k + '.' : 'Directa: si x se duplica, y también. Siempre y ÷ x = ' + k + ' (la constante): y = ' + k + 'x.') + '</p>'; });
+      var tab = '<table class="lb2-tab"><tr><th>x</th>' + xs.map(function (x) { return '<td>' + x + '</td>'; }).join('') + '</tr><tr><th>y</th>' + ys.map(function (y) { return '<td>' + fmt(y) + '</td>'; }).join('') + '</tr></table>';
+      var graf = 
+        '<svg viewBox="0 0 ' + W + ' ' + Hh + '" class="lb2-svg"><line class="rayo" x1="20" y1="' + (Hh - 10) + '" x2="' + (W - 5) + '" y2="' + (Hh - 10) + '"/><line class="rayo" x1="20" y1="5" x2="20" y2="' + (Hh - 10) + '"/><polyline class="graf" points="' + (inv ? '' : '20,' + (Hh - 10) + ' ') + pts.join(' ') + '"/>' + pts.map(function (q) { return '<circle r="4" class="pt" cx="' + q.split(',')[0] + '" cy="' + q.split(',')[1] + '"/>'; }).join('') + '</svg>' ;
+      return [{ vis: tab, txt: 'Armamos la tabla con algunos valores de x.' }, { vis: tab, txt: '' + (inv ? 'Inversa: si x se duplica, y se reduce a la mitad. Siempre x · y = ' + k + '.' : 'Directa: si x se duplica, y también. Siempre y ÷ x = ' + k + ' (la constante): y = ' + k + 'x.') + '' }, { vis: tab + graf, txt: inv ? 'En el gráfico queda una curva que baja.' : 'En el gráfico los puntos quedan en una recta que pasa por el 0.' }]; });
   } };
   M.regla_de_tres = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var inv = p.modo === 'inversa' || (p.modo !== 'directa' && Math.random() < .35);
@@ -615,18 +677,29 @@
   // ======================= FUNCIONES =======================
   function plano(r, extra) { var s = 14, c = 10 + r * s, g = ''; for (var k = -r; k <= r; k++) g += '<line class="grid' + (k ? '' : ' eje') + '" x1="' + (c + k * s) + '" y1="10" x2="' + (c + k * s) + '" y2="' + (2 * c - 10) + '"/><line class="grid' + (k ? '' : ' eje') + '" x1="10" y1="' + (c + k * s) + '" x2="' + (2 * c - 10) + '" y2="' + (c + k * s) + '"/>';
     return { s: s, c: c, svg: '<svg viewBox="0 0 ' + 2 * c + ' ' + 2 * c + '" class="lb2-svg lb2-plano">' + g + (extra || '') + '</svg>' }; }
-  M.plano = { tipo: 'ejemplo', render: function (el) {
+  M.plano = { tipo: 'ejemplo', pasos: true, render: function (el) {
     var x = R(-5, 5), y = R(-5, 5);
-    function pintar() { var P = plano(6), cx = P.c + x * P.s, cy = P.c - y * P.s, celdas = ''; for (var i = -6; i <= 6; i++) for (var j = -6; j <= 6; j++) celdas += '<circle class="hit" r="6" cx="' + (P.c + i * P.s) + '" cy="' + (P.c - j * P.s) + '" data-x="' + i + '" data-y="' + j + '"/>';
-      el.innerHTML = '<p class="lb-ayuda">Tocá cualquier punto del plano.</p>' + P.svg.replace('</svg>', '<line class="diag" x1="' + cx + '" y1="' + cy + '" x2="' + cx + '" y2="' + P.c + '"/><line class="diag" x1="' + cx + '" y1="' + cy + '" x2="' + P.c + '" y2="' + cy + '"/><circle class="pt" r="6" cx="' + cx + '" cy="' + cy + '"/>' + celdas + '</svg>') +
-        '<p class="lb-res">P = (' + x + ', ' + y + ')</p><p class="lb-nota">Primero se lee x (cuánto a la derecha o izquierda) y después y (cuánto arriba o abajo). ' + (x && y ? 'Está en el ' + (x > 0 ? (y > 0 ? 'primer' : 'cuarto') : (y > 0 ? 'segundo' : 'tercer')) + ' cuadrante.' : 'Está sobre un eje.') + '</p>'; }
-    el.onclick = function (e) { var h = e.target.closest('[data-x]'); if (h) { x = +h.getAttribute('data-x'); y = +h.getAttribute('data-y'); pintar(); } }; pintar();
+    el.innerHTML = '<p class="lb-ayuda">Tocá cualquier punto del plano para cambiarlo.</p><div class="lb-vista"></div>'; var v = el.querySelector('.lb-vista');
+    function armar() { var Pl = plano(6), cx = Pl.c + x * Pl.s, cy = Pl.c - y * Pl.s, celdas = ''; for (var i = -6; i <= 6; i++) for (var j = -6; j <= 6; j++) celdas += '<circle class="hit" r="6" cx="' + (Pl.c + i * Pl.s) + '" cy="' + (Pl.c - j * Pl.s) + '" data-x="' + i + '" data-y="' + j + '"/>';
+      var sv = function (lx, ly) { return '<div style="max-width:280px;margin:auto">' + Pl.svg.replace('</svg>', (lx ? '<line class="diag" x1="' + cx + '" y1="' + cy + '" x2="' + cx + '" y2="' + Pl.c + '"/>' : '') + (ly ? '<line class="diag" x1="' + cx + '" y1="' + cy + '" x2="' + Pl.c + '" y2="' + cy + '"/>' : '') + '<circle class="pt" r="6" cx="' + cx + '" cy="' + cy + '"/>' + celdas + '</svg>') + '</div>'; };
+      var cuad = x && y ? 'Está en el <b>' + (x > 0 ? (y > 0 ? 'primer' : 'cuarto') : (y > 0 ? 'segundo' : 'tercer')) + ' cuadrante</b>.' : 'Está sobre un eje.';
+      pasoAPaso(v, [{ vis: sv(0, 0), txt: 'Queremos saber dónde está este punto.' },
+        { vis: sv(1, 0), txt: 'Primero <b>x</b>: bajamos al eje horizontal. Está en <b>' + x + '</b> (' + (x > 0 ? 'a la derecha' : x < 0 ? 'a la izquierda' : 'en el centro') + ').' },
+        { vis: sv(1, 1), txt: 'Después <b>y</b>: vamos al eje vertical. Está en <b>' + y + '</b> (' + (y > 0 ? 'arriba' : y < 0 ? 'abajo' : 'en el centro') + ').' },
+        { vis: sv(1, 1) + '<p class="lb-cn-res">P = (' + x + ', ' + y + ')</p>', txt: 'Se escribe (x, y), siempre en ese orden. ' + cuad }]); }
+    el.addEventListener('click', function (e) { var h = e.target.closest('[data-x]'); if (h) { x = +h.getAttribute('data-x'); y = +h.getAttribute('data-y'); armar(); } }); armar();
   } };
-  M.funcion_lineal = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('a', 'Pendiente a', -3, 3, 1, 2) + ctrl('b', 'Ordenada b', -4, 4, 1, 1), function (o) { var P = plano(6), xs = [-2, -1, 0, 1, 2], f = function (x) { return o.a * x + o.b; };
-      var lin = '<line class="graf" x1="' + (P.c - 6 * P.s) + '" y1="' + (P.c - f(-6) * P.s) + '" x2="' + (P.c + 6 * P.s) + '" y2="' + (P.c - f(6) * P.s) + '"/>' + xs.map(function (x) { return '<circle class="pt" r="4" cx="' + (P.c + x * P.s) + '" cy="' + (P.c - f(x) * P.s) + '"/>'; }).join('');
-      return '<p class="lb-res">y = ' + (o.a === 1 ? '' : o.a === -1 ? '−' : o.a) + (o.a ? 'x' : '') + (o.b ? (o.b > 0 ? (o.a ? ' + ' : '') + o.b : ' − ' + -o.b) : (o.a ? '' : '0')) + '</p><table class="lb2-tab"><tr><th>x</th>' + xs.map(function (x) { return '<td>' + x + '</td>'; }).join('') + '</tr><tr><th>y</th>' + xs.map(function (x) { return '<td>' + f(x) + '</td>'; }).join('') + '</tr></table>' +
-        '<div style="max-width:260px;margin:auto">' + P.svg.replace('</svg>', '<g style="clip-path:inset(0)">' + lin + '</g></svg>') + '</div><p class="lb-nota">b es donde corta al eje y; a es cuánto sube (o baja) la recta por cada paso a la derecha. ' + (o.a > 0 ? 'Creciente.' : o.a < 0 ? 'Decreciente.' : 'Constante.') + '</p>'; });
+  M.funcion_lineal = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('a', 'Pendiente a', -3, 3, 1, 2) + ctrl('b', 'Ordenada b', -4, 4, 1, 1), function (o) { var Pl = plano(6), xs = [-2, -1, 0, 1, 2], f = function (x) { return o.a * x + o.b; };
+      var form = 'y = ' + (o.a === 1 ? '' : o.a === -1 ? '−' : o.a) + (o.a ? 'x' : '') + (o.b ? (o.b > 0 ? (o.a ? ' + ' : '') + o.b : ' − ' + -o.b) : (o.a ? '' : '0'));
+      var tab = '<table class="lb2-tab"><tr><th>x</th>' + xs.map(function (x) { return '<td>' + x + '</td>'; }).join('') + '</tr><tr><th>y</th>' + xs.map(function (x) { return '<td>' + f(x) + '</td>'; }).join('') + '</tr></table>';
+      var pts = xs.map(function (x) { return '<circle class="pt" r="4" cx="' + (Pl.c + x * Pl.s) + '" cy="' + (Pl.c - f(x) * Pl.s) + '"/>'; }).join(''), lin = '<line class="graf" x1="' + (Pl.c - 6 * Pl.s) + '" y1="' + (Pl.c - f(-6) * Pl.s) + '" x2="' + (Pl.c + 6 * Pl.s) + '" y2="' + (Pl.c - f(6) * Pl.s) + '"/>';
+      var gr = function (conLinea) { return '<div style="max-width:220px;margin:auto">' + Pl.svg.replace('</svg>', '<g style="clip-path:inset(0)">' + (conLinea ? lin : '') + pts + '</g></svg>') + '</div>'; };
+      return [{ vis: '<p class="lb-pt-g">' + form + '</p>', txt: 'La fórmula dice cómo se calcula y a partir de x.' },
+        { vis: '<p class="lb-res">' + form + '</p>' + tab, txt: 'Armamos una tabla: elegimos valores de x y calculamos y.' },
+        { vis: tab + gr(false), txt: 'Ubicamos cada par (x, y) en el plano.' },
+        { vis: gr(true), txt: 'Los puntos quedan alineados: los unimos con una recta.' },
+        { vis: gr(true) + '<p class="lb-nota">b = ' + o.b + ': corta al eje y en ' + o.b + '. a = ' + o.a + ': por cada paso a la derecha ' + (o.a > 0 ? 'sube ' + o.a : o.a < 0 ? 'baja ' + -o.a : 'no cambia') + '.</p>', txt: o.a > 0 ? 'Es <b>creciente</b>.' : o.a < 0 ? 'Es <b>decreciente</b>.' : 'Es <b>constante</b>.' }]; });
   } };
   M.coordenadas = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var x = R(-5, 5), y = R(-5, 5), P = plano(6);
@@ -640,12 +713,16 @@
   // ======================= ESTADÍSTICA Y PROBABILIDAD =======================
   var CATS = [['Fútbol', 'Vóley', 'Básquet', 'Natación'], ['Perro', 'Gato', 'Pez', 'Ninguna'], ['Rojo', 'Azul', 'Verde', 'Amarillo'], ['Pizza', 'Empanadas', 'Milanesa', 'Pastas']];
   function datos() { var cs = pick(CATS), n = pick([10, 20, 20, 25]), L = []; for (var i = 0; i < n; i++) L.push(cs[Math.min(cs.length - 1, Math.floor(Math.pow(Math.random(), 1.4) * cs.length))]); return { cs: cs, L: L }; }
-  M.frecuencias = { tipo: 'ejemplo', render: function (el) {
+  M.frecuencias = { tipo: 'ejemplo', pasos: true, render: function (el) {
     var D = datos();
-    function pintar() { var f = D.cs.map(function (c) { return D.L.filter(function (x) { return x === c; }).length; }), n = D.L.length, mx = Math.max.apply(null, f);
-      el.innerHTML = '<p class="lb-nota">Datos (' + n + ' respuestas): ' + D.L.join(', ') + '.</p><table class="lb2-tab"><tr><th>Valor</th><th>Frecuencia</th><th>%</th><th></th></tr>' + D.cs.map(function (c, i) { return '<tr><td>' + c + '</td><td>' + f[i] + '</td><td>' + fmt(r2(f[i] / n * 100)) + ' %</td><td class="lb2-bar"><i style="width:' + (mx ? f[i] / mx * 100 : 0) + '%"></i></td></tr>'; }).join('') + '<tr><th>Total</th><th>' + n + '</th><th>100 %</th><th></th></tr></table>' +
-        '<p class="lb-nota">La frecuencia es cuántas veces aparece cada valor; el porcentaje es la frecuencia ÷ total × 100. Las frecuencias suman el total.</p><div class="lb-pie"><button type="button" class="lb-btn suave" data-o="1">🔄 Otros datos</button></div>'; }
-    el.onclick = function (e) { if (e.target.closest('[data-o]')) { D = datos(); pintar(); } }; pintar();
+    el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-o="1">🔄 Otros datos</button></div>'; var v = el.querySelector('.lb-vista');
+    function armar() { var f = D.cs.map(function (c) { return D.L.filter(function (x) { return x === c; }).length; }), n = D.L.length, mx = Math.max.apply(null, f);
+      var tab = function (filas, pct) { return '<table class="lb2-tab"><tr><th>Valor</th><th>Frecuencia</th>' + (pct ? '<th>%</th>' : '') + '<th></th></tr>' + D.cs.map(function (c, i) { return '<tr><td>' + c + '</td><td>' + (i < filas ? f[i] : '') + '</td>' + (pct ? '<td>' + fmt(r2(f[i] / n * 100)) + ' %</td>' : '') + '<td class="lb2-bar"><i style="width:' + (i < filas && mx ? f[i] / mx * 100 : 0) + '%"></i></td></tr>'; }).join('') + (filas >= D.cs.length ? '<tr><th>Total</th><th>' + n + '</th>' + (pct ? '<th>100 %</th>' : '') + '<th></th></tr>' : '') + '</table>'; };
+      var dat = '<p class="lb-nota">Datos: ' + D.L.join(', ') + '.</p>', P = [{ vis: dat + tab(0), txt: 'Tenemos <b>' + n + '</b> respuestas. Hacemos una fila por cada valor distinto.' }];
+      D.cs.forEach(function (c, i) { P.push({ vis: dat + tab(i + 1), txt: 'Contamos cuántas veces aparece <b>' + c + '</b>: ' + f[i] + '.' }); });
+      P.push({ vis: tab(99, true), txt: 'Las frecuencias suman el total (' + n + '). El % es la frecuencia ÷ ' + n + ' × 100.' });
+      pasoAPaso(v, P); }
+    el.addEventListener('click', function (e) { if (e.target.closest('[data-o]')) { D = datos(); armar(); } }); armar();
   } };
   M.tabla_frecuencias = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var D = datos(), f = D.cs.map(function (c) { return D.L.filter(function (x) { return x === c; }).length; });
@@ -653,12 +730,15 @@
   } };
   function stats(L) { var s = L.slice().sort(function (a, b) { return a - b; }), n = s.length, media = L.reduce(function (a, b) { return a + b; }, 0) / n, med = n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2, c = {}, mx = 0;
     L.forEach(function (x) { c[x] = (c[x] || 0) + 1; mx = Math.max(mx, c[x]); }); var moda = Object.keys(c).filter(function (k) { return c[k] === mx; }).map(Number); return { media: media, med: med, moda: mx > 1 ? moda : [], s: s }; }
-  M.medidas = { tipo: 'ejemplo', render: function (el) {
+  M.medidas = { tipo: 'ejemplo', pasos: true, render: function (el) {
     var L = [6, 8, 7, 8, 9, 4];
-    escena(el, L.map(function (x, i) { return ctrl('d' + i, 'Dato ' + (i + 1), 0, 10, 1, x); }).join(''), function (o) { var D = [0, 1, 2, 3, 4, 5].map(function (i) { return o['d' + i]; }), S = stats(D), pts = '', cnt = {};
+    escena(el, L.map(function (x, i) { return ctrl('d' + i, 'Dato ' + (i + 1), 0, 10, 1, x); }).join(''), function (o) { var D = [0, 1, 2, 3, 4, 5].map(function (i) { return o['d' + i]; }), S = stats(D), cnt = {}, pts = '', suma = D.reduce(function (a, b) { return a + b; }, 0);
       D.forEach(function (x) { cnt[x] = (cnt[x] || 0) + 1; pts += '<circle class="pt" r="6" cx="' + (15 + x * 22) + '" cy="' + (60 - (cnt[x] - 1) * 13) + '"/>'; });
-      return '<svg viewBox="0 0 250 95" class="lb2-svg"><line class="rayo" x1="10" y1="70" x2="240" y2="70"/>' + [0, 2, 4, 6, 8, 10].map(function (k) { return '<text x="' + (15 + k * 22) + '" y="88">' + k + '</text>'; }).join('') + '<line class="graf" x1="' + (15 + S.media * 22) + '" y1="5" x2="' + (15 + S.media * 22) + '" y2="72"/>' + pts + '</svg>' +
-        '<p class="lb-res">Media = ' + fmt(r2(S.media)) + ' · Mediana = ' + fmt(S.med) + ' · Moda = ' + (S.moda.length ? S.moda.join(' y ') : 'no hay') + '</p><p class="lb-nota">Media: suma ' + D.join(' + ') + ' = ' + D.reduce(function (a, b) { return a + b; }, 0) + ', dividido 6. Mediana: el del medio de los datos ordenados (' + S.s.join(', ') + '). Moda: el que más se repite. Probá llevar un dato a 0: la media se mueve mucho más que la mediana.</p>'; });
+      var sv = function (med) { return '<svg viewBox="0 0 250 95" class="lb2-svg"><line class="rayo" x1="10" y1="70" x2="240" y2="70"/>' + [0, 2, 4, 6, 8, 10].map(function (k) { return '<text x="' + (15 + k * 22) + '" y="88">' + k + '</text>'; }).join('') + (med ? '<line class="graf" x1="' + (15 + S.media * 22) + '" y1="5" x2="' + (15 + S.media * 22) + '" y2="72"/>' : '') + pts + '</svg>'; };
+      return [{ vis: sv(0), txt: 'Los 6 datos sobre la recta. Ordenados: ' + S.s.join(', ') + '.' },
+        { vis: sv(1) + '<p class="lb-nota">Media = ' + suma + ' ÷ 6 = ' + fmt(r2(S.media)) + '</p>', txt: '<b>Media</b>: sumamos todos y dividimos por la cantidad.' },
+        { vis: sv(1) + '<p class="lb-nota">Mediana = ' + fmt(S.med) + '</p>', txt: '<b>Mediana</b>: el valor del medio de los datos ordenados (con 6 datos, el promedio de los dos del medio).' },
+        { vis: sv(1) + '<p class="lb-cn-res">Media ' + fmt(r2(S.media)) + ' · Mediana ' + fmt(S.med) + ' · Moda ' + (S.moda.length ? S.moda.join(' y ') : 'no hay') + '</p>', txt: '<b>Moda</b>: el que más se repite. Probá llevar un dato a 0: la media se mueve mucho más que la mediana.' }]; });
   } };
   M.media_moda_mediana = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var que = p.que || pick(['media', 'moda', 'mediana']), L, S, t = 0;
@@ -677,15 +757,17 @@
         resolver: function () { f.forEach(function (x, i) { h[i] = x; }); pintar(); } };
     });
   } };
-  M.urna = { tipo: 'ejemplo', render: function (el) {
+  M.urna = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('r', 'Bolitas rojas', 0, 8, 1, 3) + ctrl('a', 'Bolitas azules', 0, 8, 1, 2) + ctrl('v', 'Bolitas verdes', 0, 8, 1, 5), function (o) { var t = o.r + o.a + o.v; if (!t) return '<p class="lb-ayuda">Poné al menos una bolita.</p>';
       var bol = '', cols = [['r', '#253638', 'roja'], ['a', '#087E83', 'azul'], ['v', '#7FD3C4', 'verde']]; cols.forEach(function (q) { for (var i = 0; i < o[q[0]]; i++) bol += '<i style="background:' + q[1] + '"></i>'; });
-      return '<div class="lb2-urna">' + bol + '</div><table class="lb2-tab"><tr><th>Sacar</th><th>Probabilidad</th><th>Decimal</th><th>%</th></tr>' + cols.map(function (q) { return '<tr><td>' + q[2] + '</td><td>' + o[q[0]] + '/' + t + (mcd(o[q[0]], t) > 1 && o[q[0]] ? ' = ' + frs(o[q[0]], t) : '') + '</td><td>' + fmt(r2(o[q[0]] / t)) + '</td><td>' + fmt(r2(o[q[0]] / t * 100)) + ' %</td></tr>'; }).join('') + '</table>' +
-        '<p class="lb-nota">Probabilidad = casos favorables ÷ casos posibles (' + t + ' bolitas). Las tres suman 1.</p><div class="lb-pie"><button type="button" class="lb-btn suave" data-sim="1">Sacar 100 veces (con reposición)</button></div><div class="lb2-sim"></div>'; },
-      '');
-    el.addEventListener('click', function (e) { if (!e.target.closest('[data-sim]')) return; var g = function (k) { return num(el.querySelector('[data-k="' + k + '"]').value); }, r = g('r'), a = g('a'), v = g('v'), t = r + a + v, c = [0, 0, 0];
+      var urna = '<div class="lb2-urna">' + bol + '</div>', P = [{ vis: urna, txt: 'En la urna hay <b>' + t + '</b> bolitas: esos son los <b>casos posibles</b>.' }];
+      cols.forEach(function (q) { var k = o[q[0]]; P.push({ vis: urna + '<p class="lb-cn-res">P(' + q[2] + ') = ' + k + '/' + t + (mcd(k, t) > 1 && k ? ' = ' + frs(k, t) : '') + ' = ' + fmt(r2(k / t * 100)) + ' %</p>', txt: 'Hay <b>' + k + '</b> ' + q[2] + (k === 1 ? '' : 's') + ': casos favorables ÷ casos posibles.' }); });
+      P.push({ vis: urna + '<p class="lb-nota">' + o.r + '/' + t + ' + ' + o.a + '/' + t + ' + ' + o.v + '/' + t + ' = 1</p>', txt: 'Las tres probabilidades suman 1 (el 100 %).' });
+      return P; },
+      '<div class="lb-pie"><button type="button" class="lb-btn suave" data-sim="1">Sacar 100 veces (con reposición)</button></div><div class="lb2-sim"></div>');
+    el.addEventListener('click', function (e) { if (!e.target.closest('[data-sim]')) return; var g = function (k) { return num(el.querySelector('[data-k="' + k + '"]').value); }, r = g('r'), a = g('a'), v = g('v'), t = r + a + v, c = [0, 0, 0]; if (!t) return;
       for (var i = 0; i < 100; i++) { var x = Math.random() * t; c[x < r ? 0 : x < r + a ? 1 : 2]++; }
-      el.querySelector('.lb2-sim').innerHTML = '<p class="lb-nota">Salieron: roja ' + c[0] + ', azul ' + c[1] + ', verde ' + c[2] + ' de 100. Con muchas repeticiones, la frecuencia se acerca a la probabilidad (' + fmt(r2(r / t * 100)) + ' %, ' + fmt(r2(a / t * 100)) + ' %, ' + fmt(r2(v / t * 100)) + ' %).</p>'; });
+      el.querySelector('.lb2-sim').innerHTML = '<p class="lb-nota">Salieron: roja ' + c[0] + ', azul ' + c[1] + ', verde ' + c[2] + ' de 100. Con muchas repeticiones, la frecuencia se acerca a la probabilidad.</p>'; });
   } };
   M.probabilidad = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { if (Math.random() < .4) { var ev = pick([['un número par', 3], ['un número mayor que 4', 2], ['un múltiplo de 3', 2], ['un número menor que 3', 2], ['un 6', 1]]);
@@ -693,9 +775,13 @@
       var r = R(1, 7), a = R(1, 7), v = R(1, 7), t = r + a + v, q = pick([['roja', r], ['azul', a], ['verde', v]]);
       return { cons: 'En una bolsa hay <b>' + r + ' rojas, ' + a + ' azules y ' + v + ' verdes</b>. Sacás una sin mirar. ¿Cuál es la probabilidad de que sea <b>' + q[0] + '</b>? (Fracción.)', campos: [{ tipo: 'frac', v: q[1] / t, n: q[1], d: t }], ayuda: 'Favorables: las ' + q[0] + 's (' + q[1] + '). Posibles: todas (' + t + ').', bien: '¡Bien! ' + q[1] + '/' + t + '.' }; });
   } };
-  M.combinaciones_tabla = { tipo: 'ejemplo', render: function (el) {
+  M.combinaciones_tabla = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('a', 'Remeras', 1, 5, 1, 3) + ctrl('b', 'Gorras', 1, 5, 1, 2), function (o) { var R1 = ['Roja', 'Azul', 'Verde', 'Negra', 'Blanca'], G = ['🧢A', '🧢B', '🧢C', '🧢D', '🧢E'];
-      return '<table class="lb2-tab"><tr><th></th>' + G.slice(0, o.b).map(function (g) { return '<th>' + g + '</th>'; }).join('') + '</tr>' + R1.slice(0, o.a).map(function (r) { return '<tr><th>' + r + '</th>' + G.slice(0, o.b).map(function () { return '<td class="on">✔</td>'; }).join('') + '</tr>'; }).join('') + '</table><p class="lb-nota">Cada casilla es una combinación distinta: no se olvida ninguna.</p><p class="lb-res">' + o.a + ' × ' + o.b + ' = ' + o.a * o.b + ' combinaciones</p>'; });
+      var tab = function (filas) { return '<table class="lb2-tab"><tr><th></th>' + G.slice(0, o.b).map(function (g) { return '<th>' + g + '</th>'; }).join('') + '</tr>' + R1.slice(0, o.a).map(function (r, i) { return '<tr><th>' + r + '</th>' + G.slice(0, o.b).map(function () { return '<td class="' + (i < filas ? 'on' : '') + '">' + (i < filas ? '✔' : '') + '</td>'; }).join('') + '</tr>'; }).join('') + '</table>'; };
+      var P = [{ vis: tab(0), txt: 'Una tabla: las remeras en las filas y las gorras en las columnas.' }];
+      for (var i = 0; i < o.a; i++) P.push({ vis: tab(i + 1), txt: 'La remera ' + R1[i].toLowerCase() + ' va con cada gorra: <b>' + o.b + '</b> combinaciones.' });
+      P.push({ vis: tab(o.a) + '<p class="lb-cn-res">' + o.a + ' × ' + o.b + ' = ' + o.a * o.b + ' combinaciones</p>', txt: 'Cada casilla es una combinación: filas × columnas.' });
+      return P; });
   } };
   M.combinaciones = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var a = R(2, 6), b = R(2, 5), c = Math.random() < .4 ? R(2, 4) : 0;
@@ -708,28 +794,37 @@
       ['Dos colectivos salen juntos, uno cada 12 minutos y otro cada 18: ¿cuándo vuelven a coincidir?', 1], ['Dos luces titilan cada 4 y cada 6 segundos: ¿cuándo prenden juntas otra vez?', 1], ['El menor número de alumnos que se pueden agrupar de a 3, de a 4 o de a 5 sin que sobre nadie', 1], ['Juan va al club cada 6 días y Sofía cada 8: ¿cuándo se encuentran de nuevo?', 1]];
     cajas(el, api, function () { var S = mezclar(PB).slice(0, 6); return { tit: '¿Se resuelve con el <b>MCD</b> o con el <b>MCM</b>? Pensá si la respuesta tiene que dividir a los datos (más chica) o ser múltiplo de ellos (más grande).', cajas: ['MCD (divide a los datos)', 'MCM (múltiplo de los datos)'], items: S.map(function (x, i) { return { v: 'p' + i, t: x[0], c: x[1] }; }) }; });
   } };
-  M.fraccion_cantidad = { tipo: 'ejemplo', render: function (el) {
+  M.fraccion_cantidad = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('t', 'Total', 12, 120, 12, 60) + ctrl('a', 'Primero uso', 1, 3, 1, 1) + ctrl('b', 'de', 2, 6, 1, 3) + ctrl('c', 'Después uso', 1, 3, 1, 1) + ctrl('d', 'del resto, de', 2, 6, 1, 4), function (o) {
       var a = Math.min(o.a, o.b - 1), c = Math.min(o.c, o.d - 1), u1 = o.t * a / o.b, resto = o.t - u1, u2 = resto * c / o.d, fin = resto - u2;
-      return '<div class="lb2-barra3"><i style="width:' + (u1 / o.t * 100) + '%" class="x1"></i><i style="width:' + (u2 / o.t * 100) + '%" class="x2"></i><i style="width:' + (fin / o.t * 100) + '%" class="x3"></i></div>' +
-        '<p class="lb-nota">Primero: ' + fr(a, o.b) + ' de ' + o.t + ' = ' + fmt(r2(u1)) + '. Queda ' + fmt(r2(resto)) + '. Después: ' + fr(c, o.d) + ' <b>del resto</b> = ' + fmt(r2(u2)) + '. Ojo: es del resto, no del total.</p><p class="lb-res">Queda ' + fmt(r2(fin)) + ' de ' + o.t + '</p>'; });
+      var barra = function (k) { return '<div class="lb2-barra3"><i style="width:' + (k >= 1 ? u1 / o.t * 100 : 0) + '%" class="x1"></i><i style="width:' + (k >= 2 ? u2 / o.t * 100 : 0) + '%" class="x2"></i><i style="width:' + (k >= 2 ? fin / o.t * 100 : (k >= 1 ? resto / o.t * 100 : 100)) + '%" class="x3"></i></div>'; };
+      return [{ vis: barra(0), txt: 'El total es <b>' + o.t + '</b>.' },
+        { vis: barra(1), txt: 'Primero uso ' + fr(a, o.b) + ' del total: ' + o.t + ' × ' + a + ' ÷ ' + o.b + ' = <b>' + fmt(r2(u1)) + '</b>. Queda <b>' + fmt(r2(resto)) + '</b>.' },
+        { vis: barra(2), txt: 'Después uso ' + fr(c, o.d) + ' <b>del resto</b> (no del total): ' + fmt(r2(resto)) + ' × ' + c + ' ÷ ' + o.d + ' = <b>' + fmt(r2(u2)) + '</b>.' },
+        { vis: barra(2) + '<p class="lb-cn-res">Queda ' + fmt(r2(fin)) + ' de ' + o.t + '</p>', txt: 'Restamos lo usado: ' + fmt(r2(resto)) + ' − ' + fmt(r2(u2)) + '.' }]; });
   } };
   M.fraccion_cantidad_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var b = pick([2, 3, 4, 5]), d = pick([2, 3, 4]), a = R(1, b - 1), c = R(1, d - 1), t = b * d * R(2, 10), u1 = t * a / b, rest = t - u1, u2 = rest * c / d;
       return { cons: 'De <b>' + t + '</b> se usa ' + fr(a, b) + ' el lunes y ' + fr(c, d) + ' <b>del resto</b> el martes. ¿Cuánto queda?', campos: [{ v: rest - u2 }], ayuda: 'Lunes: ' + fr(a, b) + ' de ' + t + ' = ' + u1 + '; queda ' + rest + '. Martes: ' + fr(c, d) + ' de ' + rest + ' = ' + u2 + '.', bien: '¡Bien! Quedan ' + (rest - u2) + '.' }; });
   } };
-  M.escala = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('n', 'Escala 1 :', 1000, 100000, 1000, 50000) + ctrl('m', 'Medida en el mapa (cm)', 1, 20, 1, 6), function (o) { var real = o.n * o.m;
-      return '<div class="lb2-mapa"><i style="width:' + o.m * 4.5 + '%"></i><span>' + o.m + ' cm</span></div><p class="lb-nota">1 cm en el mapa representa ' + fmt(o.n) + ' cm reales. Del mapa a la realidad se <b>multiplica</b> por la escala; de la realidad al mapa se <b>divide</b>.</p><p class="lb-res">' + o.m + ' cm × ' + fmt(o.n) + ' = ' + fmt(real) + ' cm = ' + fmt(real / 100) + ' m = ' + fmt(real / 100000) + ' km</p>'; });
+  M.escala = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('n', 'Escala 1 :', 1000, 100000, 1000, 50000) + ctrl('m', 'Medida en el mapa (cm)', 1, 20, 1, 6), function (o) { var real = o.n * o.m, mapa = '<div class="lb2-mapa"><i style="width:' + o.m * 4.5 + '%"></i><span>' + o.m + ' cm</span></div>';
+      return [{ vis: mapa, txt: 'En el mapa mide <b>' + o.m + ' cm</b>.' },
+        { vis: mapa, txt: 'Escala 1 : ' + fmt(o.n) + ': cada 1 cm del mapa son <b>' + fmt(o.n) + ' cm</b> reales.' },
+        { vis: mapa + '<p class="lb-nota">' + o.m + ' × ' + fmt(o.n) + ' = ' + fmt(real) + ' cm</p>', txt: 'Del mapa a la realidad se <b>multiplica</b> por la escala.' },
+        { vis: mapa + '<p class="lb-cn-res">' + fmt(real) + ' cm = ' + fmt(real / 100) + ' m = ' + fmt(real / 100000) + ' km</p>', txt: 'Pasamos a metros (÷ 100) y a kilómetros (÷ 100.000).' }]; });
   } };
   M.escala_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var n = pick([10000, 20000, 25000, 50000, 100000]), m = R(2, 15), km = n * m / 100000;
       if (Math.random() < .5) return { cons: 'En un mapa de escala <b>1 : ' + fmt(n) + '</b>, dos pueblos están a <b>' + m + ' cm</b>. ¿A cuántos <b>km</b> están en la realidad?', campos: [{ v: km, un: 'km' }], ayuda: m + ' × ' + fmt(n) + ' = ' + fmt(n * m) + ' cm; para pasar a km dividí por 100.000.', bien: '¡Bien! ' + fmt(km) + ' km.' };
       return { cons: 'Con escala <b>1 : ' + fmt(n) + '</b>, ¿cuántos <b>cm</b> mide en el mapa una distancia real de <b>' + fmt(km) + ' km</b>?', campos: [{ v: m, un: 'cm' }], ayuda: 'Pasá ' + fmt(km) + ' km a cm (× 100.000) y dividí por ' + fmt(n) + '.', bien: '¡Bien! ' + m + ' cm.' }; });
   } };
-  M.velocidad = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('d', 'Distancia (km)', 10, 600, 10, 240) + ctrl('t', 'Tiempo (h)', 1, 10, 1, 3), function (o) { var v = o.d / o.t;
-      return '<div class="lb2-ruta"><span style="left:' + Math.min(92, o.d / 6.5) + '%">🚗</span></div><p class="lb-nota">La velocidad es la razón distancia ÷ tiempo: cuántos km recorre en cada hora. Despejando: d = v · t y t = d ÷ v. Para pasar de km/h a m/s se divide por 3,6.</p><p class="lb-res">v = ' + o.d + ' ÷ ' + o.t + ' = ' + fmt(r2(v)) + ' km/h ≈ ' + fmt(r2(v / 3.6)) + ' m/s</p>'; });
+  M.velocidad = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('d', 'Distancia (km)', 10, 600, 10, 240) + ctrl('t', 'Tiempo (h)', 1, 10, 1, 3), function (o) { var v = o.d / o.t, ruta = '<div class="lb2-ruta"><span style="left:' + Math.min(92, o.d / 6.5) + '%">🚗</span></div>';
+      return [{ vis: ruta, txt: 'Recorre <b>' + o.d + ' km</b> en <b>' + o.t + ' h</b>.' },
+        { vis: ruta + '<p class="lb-nota">v = distancia ÷ tiempo</p>', txt: 'La velocidad dice cuántos km recorre en cada hora.' },
+        { vis: ruta + '<p class="lb-cn-res">v = ' + o.d + ' ÷ ' + o.t + ' = ' + fmt(r2(v)) + ' km/h</p>', txt: 'Dividimos.' },
+        { vis: ruta + '<p class="lb-cn-res">' + fmt(r2(v)) + ' km/h ≈ ' + fmt(r2(v / 3.6)) + ' m/s</p>', txt: 'Para pasar de km/h a m/s se divide por 3,6. Despejando: d = v · t y t = d ÷ v.' }]; });
   } };
   M.velocidad_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var v = R(4, 24) * 5, t = R(2, 8), d = v * t, q = pick(['v', 'd', 't']);
@@ -742,9 +837,13 @@
       return { cons: '<b>' + ob + ' pintores</b> trabajando <b>' + h + ' horas</b> pintan <b>' + m + ' m²</b>. ¿Cuántos m² pintan <b>' + ob2 + ' pintores</b> en <b>' + h2 + ' horas</b>?', html: '<table class="lb2-tab"><tr><th>Pintores</th><th>Horas</th><th>m²</th></tr><tr><td>' + ob + '</td><td>' + h + '</td><td>' + m + '</td></tr><tr><td>' + ob2 + '</td><td>' + h2 + '</td><td>x</td></tr></table>', campos: [{ v: m2, un: 'm²' }], ayuda: 'Las dos magnitudes son directas con los m²: x = ' + m + ' × ' + ob2 + '/' + ob + ' × ' + h2 + '/' + h + '.', bien: '¡Bien! ' + fmt(m2) + ' m².' }; });
   } };
   function monoTxt(k, e) { return (k === 1 && e ? '' : k === -1 && e ? '−' : String(k).replace('-', '−')) + (e ? 'x' + (e > 1 ? '<sup>' + e + '</sup>' : '') : ''); }
-  M.monomio = { tipo: 'ejemplo', render: function (el) {
-    escena(el, ctrl('k', 'Coeficiente', -9, 9, 1, 5) + ctrl('e', 'Exponente de x', 0, 5, 1, 2) + ctrl('f', 'Exponente de y', 0, 3, 1, 1), function (o) { var lit = (o.e ? 'x' + (o.e > 1 ? '<sup>' + o.e + '</sup>' : '') : '') + (o.f ? 'y' + (o.f > 1 ? '<sup>' + o.f + '</sup>' : '') : '');
-      return '<p class="lb-res" style="font-size:1.6rem">' + String(o.k).replace('-', '−') + lit + '</p><table class="lb2-tab"><tr><th>Coeficiente</th><td>' + String(o.k).replace('-', '−') + '</td></tr><tr><th>Parte literal</th><td>' + (lit || '(no tiene)') + '</td></tr><tr><th>Grado</th><td>' + o.e + ' + ' + o.f + ' = ' + (o.e + o.f) + '</td></tr></table><p class="lb-nota">Dos monomios son semejantes si tienen la misma parte literal: ahí se pueden sumar sus coeficientes. Para multiplicar, se multiplican los coeficientes y se suman los exponentes.</p>'; });
+  M.monomio = { tipo: 'ejemplo', pasos: true, render: function (el) {
+    escena(el, ctrl('k', 'Coeficiente', -9, 9, 1, 5) + ctrl('e', 'Exponente de x', 0, 5, 1, 2) + ctrl('f', 'Exponente de y', 0, 3, 1, 1), function (o) { var lit = (o.e ? 'x' + (o.e > 1 ? '<sup>' + o.e + '</sup>' : '') : '') + (o.f ? 'y' + (o.f > 1 ? '<sup>' + o.f + '</sup>' : '') : ''), k = String(o.k).replace('-', '−');
+      var m = function (hk, hl) { return '<p class="lb-res" style="font-size:1.8rem"><span class="' + (hk ? 'lb2-on' : '') + '">' + k + '</span><span class="' + (hl ? 'lb2-on' : '') + '">' + lit + '</span></p>'; };
+      return [{ vis: m(0, 0), txt: 'Un monomio: un número multiplicado por letras.' },
+        { vis: m(1, 0), txt: 'El <b>coeficiente</b> es el número: <b>' + k + '</b>.' },
+        { vis: m(0, 1), txt: 'La <b>parte literal</b> son las letras con sus exponentes: ' + (lit || '(no tiene)') + '.' },
+        { vis: m(0, 1) + '<p class="lb-cn-res">Grado = ' + o.e + ' + ' + o.f + ' = ' + (o.e + o.f) + '</p>', txt: 'El <b>grado</b> es la suma de los exponentes de las letras.' }]; });
   } };
   M.monomio_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var a = R(2, 7) * pick([1, -1]), b = R(2, 6), m = R(1, 4), n = R(1, 4);
@@ -757,11 +856,17 @@
       var S = A.map(function (x, i) { return resta ? x - Bp[i] : x + Bp[i]; });
       return { cons: 'Calculá: <b>(' + poliTxt(A) + ') ' + (resta ? '−' : '+') + ' (' + poliTxt(Bp) + ')</b>. Escribí el coeficiente de cada término.', campos: [{ lab: 'x²:', v: S[0] }, { lab: 'x:', v: S[1] }, { lab: 'número:', v: S[2] }], ayuda: (resta ? 'Al restar se cambia el signo de todos los términos del segundo polinomio; después ' : '') + 'se suman los términos semejantes.', bien: '¡Bien! ' + poliTxt(S) + '.' }; });
   } };
-  M.distributiva = { tipo: 'ejemplo', render: function (el) {
+  M.distributiva = { tipo: 'ejemplo', pasos: true, render: function (el) {
     escena(el, ctrl('a', 'a', 1, 6, 1, 3) + ctrl('b', 'b', 1, 6, 1, 2), function (o) { var a = o.a, b = o.b, X = 70, s = 14;
-      return '<svg viewBox="0 0 ' + (X + b * s + 40) + ' ' + (X + a * s + 40) + '" class="lb2-svg" style="max-width:240px"><rect x="20" y="20" width="' + X + '" height="' + X + '" class="c2"/><rect x="' + (20 + X) + '" y="20" width="' + b * s + '" height="' + X + '" class="c1"/><rect x="20" y="' + (20 + X) + '" width="' + X + '" height="' + a * s + '" class="c1"/><rect x="' + (20 + X) + '" y="' + (20 + X) + '" width="' + b * s + '" height="' + a * s + '" class="c0"/>' +
-        '<text x="' + (20 + X / 2) + '" y="14">x</text><text x="' + (20 + X + b * s / 2) + '" y="14">' + b + '</text><text x="10" y="' + (24 + X / 2) + '">x</text><text x="10" y="' + (24 + X + a * s / 2) + '">' + a + '</text></svg>' +
-        '<p class="lb-nota">El rectángulo de lados (x + ' + a + ') y (x + ' + b + ') se parte en cuatro: x², ' + b + 'x, ' + a + 'x y ' + a * b + '. Cada término de un paréntesis multiplica a cada término del otro.</p><p class="lb-res">(x + ' + a + ')(x + ' + b + ') = x² + ' + (a + b) + 'x + ' + a * b + '</p>'; });
+      var sv = function (k) { var rect = function (x, y, w, h, c, show) { return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" class="' + (show ? c : 'c0') + '" style="' + (show ? '' : 'opacity:.25') + '"/>'; };
+        return '<svg viewBox="0 0 ' + (X + b * s + 40) + ' ' + (X + a * s + 40) + '" class="lb2-svg" style="max-width:240px">' + rect(20, 20, X, X, 'c2', k >= 2) + rect(20 + X, 20, b * s, X, 'c1', k >= 3) + rect(20, 20 + X, X, a * s, 'c1', k >= 4) + rect(20 + X, 20 + X, b * s, a * s, 'c2', k >= 5) +
+        '<text x="' + (20 + X / 2) + '" y="14">x</text><text x="' + (20 + X + b * s / 2) + '" y="14">' + b + '</text><text x="10" y="' + (24 + X / 2) + '">x</text><text x="10" y="' + (24 + X + a * s / 2) + '">' + a + '</text></svg>'; };
+      return [{ vis: sv(1), txt: 'Un rectángulo de lados <b>(x + ' + a + ')</b> y <b>(x + ' + b + ')</b>: su área es (x + ' + a + ')(x + ' + b + ').' },
+        { vis: sv(2), txt: 'Lo partimos en 4. El primero: x · x = <b>x²</b>.' },
+        { vis: sv(3), txt: 'x · ' + b + ' = <b>' + b + 'x</b>.' },
+        { vis: sv(4), txt: a + ' · x = <b>' + a + 'x</b>.' },
+        { vis: sv(5), txt: a + ' · ' + b + ' = <b>' + a * b + '</b>.' },
+        { vis: sv(5) + '<p class="lb-cn-res">(x + ' + a + ')(x + ' + b + ') = x² + ' + (a + b) + 'x + ' + a * b + '</p>', txt: 'Sumamos las 4 partes y juntamos las x: cada término de un paréntesis multiplica a cada término del otro.' }]; });
   } };
   M.distributiva_x = { tipo: 'ejercicio', render: function (el, p, api) {
     respuesta(el, api, function () { var a = R(-6, 7) || 2, b = R(-6, 7) || 3, sa = a < 0 ? '− ' + -a : '+ ' + a, sb = b < 0 ? '− ' + -b : '+ ' + b;

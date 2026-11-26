@@ -89,107 +89,103 @@ window.WaveLeccionBanco = (function () {
 
   // =============== EJEMPLOS (escena viva) ===============
   // 1. Explorador de un número: múltiplos, divisores o primo
-  M.explorador = { tipo: 'ejemplo', nombre: 'Explorador de un número', render: function (el, p) {
+  M.explorador = { tipo: 'ejemplo', pasos: true, nombre: 'Explorador de un número', render: function (el, p) {
     var modo = p.modo || 'multiplos', n0 = modo === 'multiplos' ? R(3, 15) : pick([12, 18, 20, 24, 30, 36, 13, 17, 28, 45]);
     el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp" value="' + n0 + '" maxlength="4"></div><div class="lb-vista"></div>';
     var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
-    function pintar() {
+    function armar() {
       var n = Math.floor(num(inp.value));
-      if (!(n >= 1 && n <= 9999)) { v.innerHTML = '<p class="lb-ayuda">Probá con un número del 1 al 9999.</p>'; return; }
+      if (!(n >= 1 && n <= 9999)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Probá con un número del 1 al 9999.</p>'; return; }
+      var P = [];
       if (modo === 'multiplos') {
-        v.innerHTML = '<h5>Los múltiplos de ' + fmt(n) + ' son:</h5><div class="lb-grilla">' + Array.apply(null, Array(30)).map(function (_, k) { return '<span>' + fmt(n * k) + '</span>'; }).join('') + '<span>…</span></div><p class="lb-nota">Tiene infinitos múltiplos: se obtienen multiplicando ' + fmt(n) + ' por 0, 1, 2, 3…</p>';
+        var g = function (k) { return '<h5>Múltiplos de ' + fmt(n) + '</h5><div class="lb-grilla">' + Array.apply(null, Array(k)).map(function (_, i) { return '<span>' + fmt(n * i) + '</span>'; }).join('') + (k >= 30 ? '<span>…</span>' : '') + '</div>'; };
+        P.push({ vis: g(1), txt: fmt(n) + ' × 0 = 0: el 0 es múltiplo de todos.' });
+        P.push({ vis: g(5), txt: 'Multiplicamos por 1, 2, 3, 4…: ' + fmt(n) + ', ' + fmt(2 * n) + ', ' + fmt(3 * n) + '…' });
+        P.push({ vis: g(30), txt: 'Siempre se puede seguir: tiene <b>infinitos</b> múltiplos.' });
       } else {
-        var d = divisores(n), pr = d.length === 2;
-        v.innerHTML = '<h5>Los divisores de ' + fmt(n) + ' son:</h5><div class="lb-grilla">' + d.map(function (x) { return '<span class="on">' + fmt(x) + '</span>'; }).join('') + '</div>' +
-          '<p class="lb-nota">Tiene <b>' + d.length + '</b> divisor' + (d.length === 1 ? '' : 'es') + '.' + (modo === 'primo' ? (n === 1 ? ' El 1 no es primo ni compuesto.' : pr ? ' Solo se divide por 1 y por sí mismo: <b>es primo</b>.' : ' Tiene más de dos divisores: <b>es compuesto</b>.') : '') + '</p>';
+        var d = divisores(n), pares = []; d.forEach(function (x) { if (x <= n / x) pares.push([x, n / x]); });
+        var g2 = function (k) { var vis = {}; pares.slice(0, k).forEach(function (q) { vis[q[0]] = vis[q[1]] = 1; }); return '<h5>Divisores de ' + fmt(n) + '</h5><div class="lb-grilla">' + d.map(function (x) { return '<span class="' + (vis[x] ? 'on' : '') + '">' + (vis[x] ? fmt(x) : '?') + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: g2(0), txt: 'Buscamos los números que dividen a ' + fmt(n) + ' con resto 0.' });
+        pares.forEach(function (q, i) { P.push({ vis: g2(i + 1), txt: fmt(n) + ' ÷ ' + q[0] + ' = ' + q[1] + ' (resto 0): <b>' + q[0] + '</b>' + (q[0] !== q[1] ? ' y <b>' + q[1] + '</b> son divisores.' : ' es divisor.') }); });
+        var pr = d.length === 2;
+        P.push({ vis: g2(99), txt: 'Tiene <b>' + d.length + '</b> divisor' + (d.length === 1 ? '' : 'es') + '.' + (modo === 'primo' ? (n === 1 ? ' El 1 no es primo ni compuesto.' : pr ? ' Solo 1 y él mismo: <b>es primo</b>.' : ' Más de dos: <b>es compuesto</b>.') : '') });
       }
+      window.WaveLeccionBanco._h.pasoAPaso(v, P);
     }
-    inp.addEventListener('input', pintar); pintar();
+    inp.addEventListener('input', armar); armar();
   } };
 
   // 2. Explorador de dos números: mcd (divisores comunes) o mcm (múltiplos comunes)
-  M.explorador2 = { tipo: 'ejemplo', nombre: 'Explorador de dos números', render: function (el, p) {
+  M.explorador2 = { tipo: 'ejemplo', pasos: true, nombre: 'Explorador de dos números', render: function (el, p) {
     var modo = p.modo === 'mcm' ? 'mcm' : 'mcd', a0 = modo === 'mcd' ? pick([12, 18, 24, 30, 36, 40]) : pick([4, 6, 8, 9, 10, 12]), b0 = modo === 'mcd' ? pick([16, 20, 27, 42, 45, 60]) : pick([6, 10, 14, 15, 16]);
     el.innerHTML = '<div class="lb-in-f dos"><label>Un número</label><input type="text" inputmode="numeric" class="lb-inp" value="' + a0 + '" maxlength="3"><label>Otro número</label><input type="text" inputmode="numeric" class="lb-inp" value="' + b0 + '" maxlength="3"></div><div class="lb-vista"></div>';
     var ins = el.querySelectorAll('input'), v = el.querySelector('.lb-vista');
-    function pintar() {
+    function armar() {
       var a = Math.floor(num(ins[0].value)), b = Math.floor(num(ins[1].value));
-      if (!(a >= 1 && a <= 200 && b >= 1 && b <= 200)) { v.innerHTML = '<p class="lb-ayuda">Probá con números del 1 al 200.</p>'; return; }
-      if (modo === 'mcd') {
-        var da = divisores(a), db = divisores(b), m = mcd(a, b);
-        function fila(n, d, o) { return '<h5>Divisores de ' + n + '</h5><div class="lb-grilla">' + d.map(function (x) { return '<span class="' + (o.indexOf(x) >= 0 ? 'com' : '') + (x === m ? ' max' : '') + '">' + x + '</span>'; }).join('') + '</div>'; }
-        v.innerHTML = fila(a, da, db) + fila(b, db, da) + '<p class="lb-nota">Los marcados son <b>divisores comunes</b>. El mayor es el <b>m.c.d.(' + a + ', ' + b + ') = ' + m + '</b>' + (m === 1 ? ': son primos entre sí.' : '.') + '</p>';
-      } else {
-        var m2 = mcm(a, b), tope = Math.max(m2 * 2, a * 6, b * 6), ma = [], mb = [];
-        for (var x = a; x <= tope && ma.length < 14; x += a) ma.push(x);
-        for (var y = b; y <= tope && mb.length < 14; y += b) mb.push(y);
-        function fila2(n, l, o) { return '<h5>Múltiplos de ' + n + '</h5><div class="lb-grilla">' + l.map(function (x) { return '<span class="' + (o.indexOf(x) >= 0 ? 'com' : '') + (x === m2 ? ' max' : '') + '">' + fmt(x) + '</span>'; }).join('') + '<span>…</span></div>'; }
-        v.innerHTML = fila2(a, ma, mb) + fila2(b, mb, ma) + '<p class="lb-nota">Los marcados son <b>múltiplos comunes</b> (sin contar el 0). El más chico es el <b>m.c.m.(' + a + ', ' + b + ') = ' + fmt(m2) + '</b>.</p>';
-      }
+      if (!(a >= 1 && a <= 200 && b >= 1 && b <= 200)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Probá con números del 1 al 200.</p>'; return; }
+      var la, lb, m, nom;
+      if (modo === 'mcd') { la = divisores(a); lb = divisores(b); m = mcd(a, b); nom = 'Divisores'; }
+      else { m = mcm(a, b); var tope = Math.max(m * 2, a * 6, b * 6); la = []; lb = []; for (var x = a; x <= tope && la.length < 14; x += a) la.push(x); for (var y = b; y <= tope && lb.length < 14; y += b) lb.push(y); nom = 'Múltiplos'; }
+      function fila(n, l, o, marca, max) { return '<h5>' + nom + ' de ' + n + '</h5><div class="lb-grilla">' + l.map(function (x) { return '<span class="' + (marca && o.indexOf(x) >= 0 ? 'com' : '') + (max && x === m ? ' max' : '') + '">' + fmt(x) + '</span>'; }).join('') + (modo === 'mcm' ? '<span>…</span>' : '') + '</div>'; }
+      var P = [{ vis: fila(a, la, lb), txt: 'Escribimos los ' + nom.toLowerCase() + ' de <b>' + a + '</b>.' },
+        { vis: fila(a, la, lb) + fila(b, lb, la), txt: 'Ahora los de <b>' + b + '</b>.' },
+        { vis: fila(a, la, lb, 1) + fila(b, lb, la, 1), txt: 'Marcamos los que están en las dos listas: los <b>' + nom.toLowerCase() + ' comunes</b>' + (modo === 'mcm' ? ' (sin contar el 0).' : '.') },
+        { vis: fila(a, la, lb, 1, 1) + fila(b, lb, la, 1, 1) + '<p class="lb-cn-res">' + (modo === 'mcd' ? 'm.c.d.(' + a + ', ' + b + ') = ' + m : 'm.c.m.(' + a + ', ' + b + ') = ' + fmt(m)) + '</p>', txt: modo === 'mcd' ? 'El <b>mayor</b> de los comunes es el m.c.d.' + (m === 1 ? ' Si es 1, son primos entre sí.' : '') : 'El <b>menor</b> de los comunes es el m.c.m.' }];
+      window.WaveLeccionBanco._h.pasoAPaso(v, P);
     }
-    [].forEach.call(ins, function (i) { i.addEventListener('input', pintar); }); pintar();
+    [].forEach.call(ins, function (i) { i.addEventListener('input', armar); }); armar();
   } };
 
   // 3. Escalera de factores primos: el alumno pone cada factor
-  M.escalera_factores = { tipo: 'ejemplo', nombre: 'Descomposición en factores primos', render: function (el, p, api) {
-    var POOL = [12, 18, 24, 30, 36, 42, 45, 48, 60, 63, 72, 84, 90, 96, 100, 108, 120, 126, 150, 180, 210, 252, 300, 360];
-    el.innerHTML = '<div class="lb-esc-w"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-e="otro">🔄 Otro número</button></div>';
-    var w = el.querySelector('.lb-esc-w');
-    function nuevo(n) {
-      var filas = [n], fac = [];
-      function pintar(msg) {
-        var resto = filas[filas.length - 1], fin = resto === 1;
-        var cuenta = {}; fac.forEach(function (f) { cuenta[f] = (cuenta[f] || 0) + 1; });
-        w.innerHTML = '<div class="lb-esc"><div class="lb-esc-l">' + filas.map(function (x) { return '<span>' + fmt(x) + '</span>'; }).join('') + '</div><div class="lb-esc-r">' + fac.map(function (f) { return '<span>' + f + '</span>'; }).join('') +
-          (fin ? '' : '<input type="text" inputmode="numeric" class="lb-inp chico" aria-label="Factor primo" placeholder="?" maxlength="3">') + '</div></div>' +
-          (fin ? '<p class="lb-nota lb-res">' + fmt(n) + ' = ' + Object.keys(cuenta).map(function (k) { return k + (cuenta[k] > 1 ? '<sup>' + cuenta[k] + '</sup>' : ''); }).join(' · ') + '</p>'
-            : '<p class="lb-ayuda">' + (msg || 'Escribí un número primo que divida a ' + fmt(resto) + ' y apretá Enter.') + '</p>');
-        var i = w.querySelector('input'); if (i) { i.focus(); i.addEventListener('keydown', function (e) { if (e.key === 'Enter') probar(i.value); }); }
-      }
-      function probar(s) {
-        var f = Math.floor(num(s)), r = filas[filas.length - 1];
-        if (!esPrimo(f)) return pintar(f >= 1 ? f + ' no es primo. Usá 2, 3, 5, 7…' : 'Escribí un número primo.');
-        if (r % f) return pintar(fmt(r) + ' no se puede dividir por ' + f + '. Probá con otro primo.');
-        fac.push(f); filas.push(r / f); api.sonar('bien'); pintar();
-      }
-      pintar();
+  M.escalera_factores = { tipo: 'ejemplo', pasos: true, nombre: 'Descomposición en factores primos', render: function (el) {
+    el.innerHTML = '<div class="lb-in-f"><label>Escribí un número</label><input type="text" inputmode="numeric" class="lb-inp" value="' + pick([60, 72, 90, 84, 120, 150]) + '" maxlength="4"></div><div class="lb-vista"></div>';
+    var inp = el.querySelector('input'), v = el.querySelector('.lb-vista');
+    function armar() {
+      var n = Math.floor(num(inp.value)); if (!(n >= 2 && n <= 9999)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Probá con un número del 2 al 9999.</p>'; return; }
+      var filas = [n], fac = [], r = n; while (r > 1) { var f = 2; while (r % f) f++; fac.push(f); r = r / f; filas.push(r); }
+      var esc = function (k) { return '<div class="lb-esc"><div class="lb-esc-l">' + filas.slice(0, k + 1).map(function (x) { return '<span>' + fmt(x) + '</span>'; }).join('') + '</div><div class="lb-esc-r">' + fac.slice(0, k).map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div></div>'; };
+      var P = [{ vis: esc(0), txt: 'Escribimos el número y vamos dividiendo por el primo más chico que lo divida.' }];
+      fac.forEach(function (f2, i) { P.push({ vis: esc(i + 1), txt: fmt(filas[i]) + ' ÷ ' + f2 + ' = ' + fmt(filas[i + 1]) + (filas[i + 1] === 1 ? '. Llegamos a 1: terminamos.' : '.') }); });
+      var cnt = {}; fac.forEach(function (f3) { cnt[f3] = (cnt[f3] || 0) + 1; });
+      P.push({ vis: esc(fac.length) + '<p class="lb-cn-res">' + fmt(n) + ' = ' + Object.keys(cnt).map(function (k) { return k + (cnt[k] > 1 ? '<sup>' + cnt[k] + '</sup>' : ''); }).join(' · ') + '</p>', txt: 'Multiplicamos los primos de la derecha (los repetidos, como potencia).' });
+      window.WaveLeccionBanco._h.pasoAPaso(v, P);
     }
-    el.addEventListener('click', function (e) { if (e.target.closest('[data-e="otro"]')) nuevo(pick(POOL)); });
-    nuevo(pick(POOL));
+    inp.addEventListener('input', armar); armar();
   } };
 
   // 4. Escalera de unidades (longitud, capacidad, masa)
   var UNI = { longitud: ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'], capacidad: ['kl', 'hl', 'dal', 'l', 'dl', 'cl', 'ml'], masa: ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'],
     superficie: ['km²', 'hm²', 'dam²', 'm²', 'dm²', 'cm²', 'mm²'], volumen: ['km³', 'hm³', 'dam³', 'm³', 'dm³', 'cm³', 'mm³'] };
   var BASE_U = { superficie: 100, volumen: 1000 };
-  M.escalera_unidades = { tipo: 'ejemplo', nombre: 'Escalera de unidades', render: function (el, p) {
+  M.escalera_unidades = { tipo: 'ejemplo', pasos: true, nombre: 'Escalera de unidades', render: function (el, p) {
     var us = UNI[p.magnitud] || UNI.longitud, base = BASE_U[p.magnitud] || 10, de = 3, a = 5;
     el.innerHTML = '<p class="lb-ayuda">Tocá la unidad de partida y después la de llegada.</p><div class="lb-esca"></div><div class="lb-in-f"><label>Cantidad</label><input type="text" inputmode="decimal" class="lb-inp" value="' + R(2, 90) + '"></div><div class="lb-vista"></div>';
     var esca = el.querySelector('.lb-esca'), inp = el.querySelector('input'), v = el.querySelector('.lb-vista'), paso = 0;
-    function pintar() {
+    function armar() {
       esca.innerHTML = us.map(function (u, k) { return '<button type="button" class="lb-esc-u' + (k === de ? ' de' : '') + (k === a ? ' a' : '') + '" data-u="' + k + '" style="margin-left:' + k * 7 + '%">' + u + '</button>'; }).join('');
       var x = num(inp.value), d = a - de, f = Math.pow(base, Math.abs(d));
-      if (!isFinite(x)) { v.innerHTML = '<p class="lb-ayuda">Escribí una cantidad.</p>'; return; }
-      v.innerHTML = '<p class="lb-nota">Desde <b>' + us[de] + '</b> hasta <b>' + us[a] + '</b>: ' + (d === 0 ? 'es la misma unidad.' : (d > 0 ? 'bajás ' + d + ' escalón' + (d > 1 ? 'es' : '') + ': <b>× ' + fmt(f) + '</b>' : 'subís ' + (-d) + ' escalón' + (d < -1 ? 'es' : '') + ': <b>: ' + fmt(f) + '</b>')) + '</p>' +
-        (d ? '<p class="lb-res">' + fmt(x) + ' ' + us[de] + ' = ' + fmt(d > 0 ? x * f : x / f) + ' ' + us[a] + '</p>' : '');
+      if (!isFinite(x)) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Escribí una cantidad.</p>'; return; }
+      if (!d) { v.onclick = null; v.innerHTML = '<p class="lb-ayuda">Es la misma unidad: elegí otra de llegada.</p>'; return; }
+      window.WaveLeccionBanco._h.pasoAPaso(v, [{ vis: '<p class="lb-pt-g">' + fmt(x) + ' ' + us[de] + ' → ' + us[a] + '</p>', txt: 'Partimos de <b>' + us[de] + '</b> y llegamos a <b>' + us[a] + '</b>.' },
+        { vis: '<p class="lb-pt-g">' + Math.abs(d) + ' escalón' + (Math.abs(d) > 1 ? 'es' : '') + ' ' + (d > 0 ? '↓' : '↑') + '</p>', txt: d > 0 ? 'Bajamos: la unidad es más chica, entran más. <b>Multiplicamos</b>.' : 'Subimos: la unidad es más grande, entran menos. <b>Dividimos</b>.' },
+        { vis: '<p class="lb-pt-g">' + (d > 0 ? '× ' : '÷ ') + fmt(f) + '</p>', txt: 'Cada escalón es ' + (d > 0 ? '× ' : '÷ ') + base + ': con ' + Math.abs(d) + ' escalón' + (Math.abs(d) > 1 ? 'es' : '') + ' es ' + (d > 0 ? '× ' : '÷ ') + fmt(f) + '.' },
+        { vis: '<p class="lb-cn-res">' + fmt(x) + ' ' + us[de] + ' = ' + fmt(d > 0 ? x * f : x / f) + ' ' + us[a] + '</p>', txt: 'Hacemos la cuenta.' }]);
     }
-    esca.addEventListener('click', function (e) { var b = e.target.closest('[data-u]'); if (!b) return; var k = +b.getAttribute('data-u'); if (paso === 0) { de = k; paso = 1; } else { a = k; paso = 0; } pintar(); });
-    inp.addEventListener('input', pintar); pintar();
+    esca.addEventListener('click', function (e) { var b = e.target.closest('[data-u]'); if (!b) return; var k = +b.getAttribute('data-u'); if (paso === 0) { de = k; paso = 1; } else { a = k; paso = 0; } armar(); });
+    inp.addEventListener('input', armar); armar();
   } };
 
   // 5. Balanza de ecuaciones (inventada): a·x + b = c
-  M.balanza = { tipo: 'ejemplo', nombre: 'Balanza de ecuaciones', render: function (el, p, api) {
-    el.innerHTML = '<div class="lb-bal-w"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-b="otro">🔄 Otra ecuación</button></div>';
-    var w = el.querySelector('.lb-bal-w');
+  M.balanza = { tipo: 'ejemplo', pasos: true, nombre: 'Balanza de ecuaciones', render: function (el) {
+    el.innerHTML = '<div class="lb-vista"></div><div class="lb-pie"><button type="button" class="lb-btn suave" data-b="otro">🔄 Otra ecuación</button></div>';
+    var v = el.querySelector('.lb-vista');
     function nueva() {
-      var a = R(2, 6), x = R(1, 12), b = R(1, 20), c = a * x + b, paso = 0;
-      function pintar() {
-        var izq = paso === 0 ? a + 'x + ' + b : paso === 1 ? a + 'x' : 'x', der = paso === 0 ? c : paso === 1 ? c - b : x;
-        w.innerHTML = '<div class="lb-bal"><div class="lb-plato">' + izq + '</div><div class="lb-fiel">=</div><div class="lb-plato">' + fmt(der) + '</div></div>' +
-          (paso === 0 ? '<button type="button" class="lb-btn" data-b="p">Sacar ' + b + ' de los dos platos</button>' : paso === 1 ? '<button type="button" class="lb-btn" data-b="p">Repartir los dos platos en ' + a + '</button>' : '<p class="lb-res">x = ' + x + '</p><p class="lb-nota">Comprobación: ' + a + ' · ' + x + ' + ' + b + ' = ' + c + ' ✔</p>');
-      }
-      w.onclick = function (e) { if (e.target.closest('[data-b="p"]')) { paso++; api.sonar('bien'); pintar(); } };
-      pintar();
+      var a = R(2, 6), x = R(1, 12), b = R(1, 20), c = a * x + b;
+      var bal = function (i, d) { return '<div class="lb-bal"><div class="lb-plato">' + i + '</div><div class="lb-fiel">=</div><div class="lb-plato">' + fmt(d) + '</div></div>'; };
+      window.WaveLeccionBanco._h.pasoAPaso(v, [{ vis: bal(a + 'x + ' + b, c), txt: 'La balanza está equilibrada: los dos platos pesan lo mismo.' },
+        { vis: bal(a + 'x', c - b), txt: 'Sacamos <b>' + b + '</b> de los dos platos: sigue equilibrada.' },
+        { vis: bal('x', x), txt: 'Repartimos los dos platos en <b>' + a + '</b>: queda una sola x.' },
+        { vis: bal('x', x) + '<p class="lb-cn-res">x = ' + x + '</p><p class="lb-nota">Comprobación: ' + a + ' · ' + x + ' + ' + b + ' = ' + c + ' ✔</p>', txt: 'Reemplazamos para comprobar.' }]);
     }
     el.addEventListener('click', function (e) { if (e.target.closest('[data-b="otro"]')) nueva(); });
     nueva();

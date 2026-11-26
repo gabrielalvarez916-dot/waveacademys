@@ -63,7 +63,7 @@ const ETAPAS = {
 function etapa(ruta) { const m = String(ruta).replace(/\\/g, '/').match(/contenido\/medio\/[a-z]+-(\d+)\//); if (!m) return ETAPAS.secundaria; return Number(m[1]) <= 3 ? ETAPAS.ciclo1 : ETAPAS.ciclo2; }
 const EJEMPLO_CON_TEXTO = ['pasoapaso'];
 // Ejemplos que ya muestran el procedimiento PASO A PASO (marcados con "pasos: true" en el banco). Solo esos van en una lección.
-const PASO_A_PASO = new Set((() => { const o = []; ['leccion-banco.js', 'leccion-banco2.js'].forEach(f => { try { const t = fs.readFileSync(path.join(__dirname, '..', '..', 'js', f), 'utf8'); let m; const re = /M\.(\w+)\s*=\s*\{\s*tipo:\s*'ejemplo',\s*pasos:\s*true/g; while ((m = re.exec(t))) o.push(m[1]); } catch (e) {} }); return o; })());
+const PASO_A_PASO = new Set((() => { const o = []; ['leccion-banco.js', 'leccion-banco2.js'].forEach(f => { try { const t = fs.readFileSync(path.join(__dirname, '..', '..', 'js', f), 'utf8'); let m; const re = /M\.(\w+)\s*=\s*\{\s*tipo:\s*'ejemplo',\s*pasos:\s*true/g;  // con o sin "nombre" después while ((m = re.exec(t))) o.push(m[1]); } catch (e) {} }); return o; })());
 // Ejercicios que mezclan contenidos: en la lección se elige SIEMPRE el modo, para que la práctica pida solo lo explicado en esa pantalla (o antes)
 const MODO_OBLIGATORIO = { binario_conv: ['a_binario', 'a_decimal', 'ambos'], sexagesimal_conv: ['convertir', 'ambos'], llevar: null, ordenar: null, posicional: null, letras: null, descomponer_x: null };  // ejemplos que repiten la explicación en texto: no van en la lección
 const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
