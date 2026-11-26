@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "nivel": "Nivel Avanzado",
+  "anio": "Año 1",
+  "materia": "Matemática I",
+  "mision": 1,
+  "titulo": "Sistemas numéricos",
+  "introduccion": "Estas guías no están pensadas para que la familia dé la clase ni para que vuelva a explicar todo el contenido. La idea es que pueda entender qué está trabajando el estudiante, acompañarlo con algunas preguntas y compartir una actividad breve. No hace falta corregir cada paso ni adelantarse a la explicación: primero conviene escucharlo.",
+  "guias": [
+    {
+      "nivel": 1,
+      "titulo": "El sistema decimal y el valor posicional",
+      "objetivo": "Comprender cómo funciona el sistema decimal, leer y escribir números grandes y descomponerlos de forma aditiva y multiplicativa.",
+      "aprendizajes": [
+        "El sistema decimal utiliza diez cifras, del 0 al 9, y agrupa de a diez.",
+        "Diez unidades forman una decena, diez decenas una centena y así sucesivamente.",
+        "El valor de una cifra depende de la posición que ocupa. El cero conserva los lugares vacíos.",
+        "Los números grandes se leen agrupando las cifras de a tres desde la derecha: unidades, miles, millones y miles de millones.",
+        "Un número puede descomponerse como suma de los valores de sus cifras o como suma de cada cifra multiplicada por el valor de su posición."
+      ],
+      "acompanamiento": [
+        "Pedile que te explique por qué el 3 vale 300 en 353 y vale 3 en el mismo número. La idea es que pueda distinguir la cifra del valor que representa.",
+        "Cuando aparezca un número grande, preguntale cómo lo separaría en grupos de tres antes de leerlo. No le leas el número directamente.",
+        "Si descompone 352 como 3 + 5 + 2, preguntale cuánto vale cada cifra en ese número. Dejá que reconstruya la suma correcta.",
+        "Prestá especial atención al cero: preguntale qué lugar ocupa y qué pasaría si lo quitara de 4.005. El cero no suma, pero mantiene la posición de las otras cifras."
+      ],
+      "actividad": {
+        "titulo": "Armamos y desarmamos números",
+        "duracion": "8 a 10 minutos",
+        "materiales": "Papel y lápiz.",
+        "pasos": [
+          "Escriban 4.808 y armen una tabla con cuatro columnas: unidades de mil, centenas, decenas y unidades.",
+          "El estudiante ubica cada cifra y explica cuánto vale. La familia puede preguntarle por qué los dos ochos no representan la misma cantidad.",
+          "Después, la familia propone 60.723. El estudiante lo separa en grupos de tres, lo lee y hace su descomposición aditiva.",
+          "Cambien los roles: el estudiante dicta una descomposición —por ejemplo, 5 × 1.000 + 3 × 100 + 2 × 10— y la familia intenta reconstruir el número."
+        ],
+        "cierre": "Para terminar, conversen sobre esta pregunta: ¿por qué 4.005 no se puede escribir como 45?"
+      },
+      "observar": [
+        "Puede explicar cuánto vale una cifra según su posición, incluso cuando se repite.",
+        "Agrupa correctamente los números grandes de a tres cifras desde la derecha.",
+        "Puede reconstruir el número a partir de una descomposición.",
+        "Comprende que el cero puede no aparecer en la suma, pero sigue siendo necesario al escribir el número."
+      ],
+      "si_se_traba": "En lugar de decirle el valor, señalá la columna donde está la cifra y preguntale qué unidad representa ese lugar. Si se confunde al leer un número grande, vuelvan a separarlo en grupos de tres."
+    },
+    {
+      "nivel": 2,
+      "titulo": "Potencias de 10 y números grandes",
+      "objetivo": "Reconocer cada posición del sistema decimal como una potencia de 10, descomponer números con potencias, multiplicar y dividir por 10, 100 y 1.000, y comparar números grandes.",
+      "aprendizajes": [
+        "Las posiciones del sistema decimal corresponden a potencias de 10: 10⁰ = 1, 10¹ = 10, 10² = 100 y así sucesivamente.",
+        "El exponente indica cuántas veces se multiplica la base; no significa multiplicar la base por ese número.",
+        "Un número puede escribirse como suma de cifras multiplicadas por la potencia de 10 correspondiente a cada posición.",
+        "Multiplicar por 10, 100 o 1.000 desplaza las cifras uno, dos o tres lugares; dividir por esos números hace el recorrido inverso cuando corresponde.",
+        "Para comparar números naturales, primero se observa cuántas cifras tienen y, si tienen la misma cantidad, se comparan de izquierda a derecha."
+      ],
+      "acompanamiento": [
+        "Preguntale qué significa el exponente en 10³. Si responde 10 × 3, pedile que escriba la multiplicación completa: 10 × 10 × 10.",
+        "Detenete especialmente en 10⁰ = 1. No lo presentes como una regla para memorizar: pedile que relacione ese valor con la posición de las unidades.",
+        "Cuando multiplique por 10, 100 o 1.000, preguntale cuántos lugares se desplaza cada cifra. Así evitás que la explicación quede reducida a agregar ceros mecánicamente.",
+        "Al comparar dos números, pedile que explique primero cuántas cifras tiene cada uno y después cómo decide si necesita mirar las cifras de izquierda a derecha."
+      ],
+      "actividad": {
+        "titulo": "El número escrito de dos maneras",
+        "duracion": "8 a 10 minutos",
+        "materiales": "Papel y lápiz.",
+        "pasos": [
+          "La familia escribe 3.152. El estudiante lo descompone como 3 × 10³ + 1 × 10² + 5 × 10¹ + 2 × 10⁰.",
+          "Ahora la familia dicta una expresión: 4 × 10³ + 2 × 10² + 5 × 10⁰. El estudiante calcula el número y explica por qué no aparece un término con 10¹.",
+          "Comparen 98.700 y 102.000. Antes de decidir, el estudiante cuenta las cifras de cada número y explica qué criterio utilizó.",
+          "Para cerrar, intercambien los roles: el estudiante inventa una expresión con potencias de 10 y la familia intenta descubrir el número."
+        ],
+        "cierre": "Preguntale qué diferencia hay entre 10³ y 10 × 3, y por qué 10⁰ vale 1."
+      },
+      "observar": [
+        "Interpreta correctamente la base y el exponente.",
+        "Reconoce que 10⁰ vale 1.",
+        "Puede pasar de una descomposición con potencias al número y volver a descomponerlo.",
+        "Justifica una comparación por cantidad de cifras o por la primera cifra diferente."
+      ],
+      "si_se_traba": "Volvé a la tabla de posiciones: unidades, decenas, centenas, unidades de mil. Relacioná cada lugar con su potencia. Para comparar, tapen las cifras y cuenten primero cuántas tiene cada número."
+    },
+    {
+      "nivel": 3,
+      "titulo": "El sistema binario",
+      "objetivo": "Comprender el sistema de base 2, reconocer el valor de sus posiciones y convertir números de decimal a binario y de binario a decimal.",
+      "aprendizajes": [
+        "El sistema binario utiliza solamente dos cifras: 0 y 1.",
+        "Cada posición vale el doble que la posición de su derecha: 1, 2, 4, 8, 16, 32 y así sucesivamente.",
+        "Un número binario se lee cifra por cifra y se identifica con un subíndice que indica la base.",
+        "Para pasar de binario a decimal se suman los valores de las posiciones que tienen un 1.",
+        "Para pasar de decimal a binario se puede dividir sucesivamente por 2 y leer los restos de abajo hacia arriba. También se puede usar el método de restas sucesivas con potencias de 2."
+      ],
+      "acompanamiento": [
+        "Relacioná el 0 y el 1 con dos estados posibles —apagado y encendido—, pero después preguntale cómo varios lugares permiten representar números mayores.",
+        "Hacé que escriba los valores 1, 2, 4, 8, 16 y 32 antes de convertir. Es importante que entienda por qué cada posición duplica la anterior.",
+        "Cuando convierta de binario a decimal, preguntale qué posiciones aportan valor y cuáles no. Un cero ocupa un lugar, aunque no sume.",
+        "Al convertir de decimal a binario, pedile que te muestre el orden en que lee los restos. El error más común es leerlos de arriba hacia abajo."
+      ],
+      "actividad": {
+        "titulo": "Encendemos las posiciones",
+        "duracion": "8 a 10 minutos",
+        "materiales": "Cinco papelitos con los números 16, 8, 4, 2 y 1.",
+        "pasos": [
+          "Coloquen los cinco papelitos en fila, de mayor a menor: 16, 8, 4, 2 y 1.",
+          "La familia propone formar el número 19. El estudiante elige qué valores necesita: 16, 2 y 1.",
+          "Por cada papelito elegido escribe 1; por cada uno que no utiliza escribe 0. El resultado debe ser 10011₂.",
+          "Ahora la familia muestra 1101₂. El estudiante suma los valores correspondientes: 8 + 4 + 1, y descubre que representa el 13.",
+          "Cambien los roles y propongan otros números. Cada uno debe explicar cómo sabe que la representación es correcta."
+        ],
+        "cierre": "Preguntale por qué 101₂ no se lee «ciento uno» y cuánto vale realmente."
+      },
+      "observar": [
+        "Reconoce que en binario solo se utilizan 0 y 1.",
+        "Puede escribir los valores de las posiciones empezando por la derecha.",
+        "Convierte un número binario a decimal sumando los lugares que tienen 1.",
+        "En las divisiones sucesivas, lee los restos de abajo hacia arriba."
+      ],
+      "si_se_traba": "Volvé a los papelitos con 1, 2, 4, 8 y 16. Primero construyan el número eligiendo valores; después escriban los ceros y unos. No empieces por las divisiones si todavía no comprende el valor de cada posición."
+    },
+    {
+      "nivel": 4,
+      "titulo": "El sistema sexagesimal: horas y ángulos",
+      "objetivo": "Utilizar el sistema sexagesimal para medir el tiempo y los ángulos, convertir unidades y resolver sumas y restas con canjes de 60.",
+      "aprendizajes": [
+        "El sistema sexagesimal agrupa de a 60: 60 segundos forman un minuto y 60 minutos forman una hora.",
+        "Los ángulos también se expresan en grados, minutos y segundos: 1° = 60′ y 1′ = 60″.",
+        "Para pasar a una unidad más pequeña se multiplica por 60; para pasar a una unidad más grande se divide por 60 y se interpreta el resto.",
+        "Los tiempos y los ángulos se suman y se restan por columnas, haciendo canjes de 60.",
+        "En una resta, pedir una unidad prestada significa sumar 60 unidades a la posición siguiente, no 100."
+      ],
+      "acompanamiento": [
+        "Usá un reloj como referencia: preguntale qué ocurre cuando el minutero completa 60 minutos. La idea es que pueda explicar el canje, no solo recordar una cuenta.",
+        "Cuando convierta 150 minutos, preguntale cuántas horas completas puede formar y cuántos minutos sobran.",
+        "Si suma y obtiene 75 minutos, no le digas directamente que está mal: preguntale si un reloj puede mostrar 75 minutos dentro de una hora.",
+        "Aclarale que los minutos de un ángulo se escriben con el símbolo ′ y no son minutos de tiempo, aunque se agrupen de la misma manera."
+      ],
+      "actividad": {
+        "titulo": "Organizamos una función y medimos un ángulo",
+        "duracion": "8 a 10 minutos",
+        "materiales": "Papel, lápiz y un reloj.",
+        "pasos": [
+          "La familia propone una película que dura 135 minutos y empieza a las 20:50.",
+          "El estudiante convierte 135 minutos en horas y minutos: 2 h 15 min.",
+          "Después suma la duración a la hora de inicio. Debe obtener 23:05, haciendo el canje de los 60 minutos.",
+          "En una segunda ronda, resuelvan juntos 25° 40′ + 10° 35′. El estudiante explica por qué 75 minutos de ángulo se convierten en 1° 15′.",
+          "Cambien los roles: el estudiante inventa una suma de tiempos o de ángulos para que la familia la resuelva."
+        ],
+        "cierre": "Preguntale qué tienen en común el reloj y la medida de los ángulos, y qué diferencia hay entre este sistema y el decimal."
+      },
+      "observar": [
+        "Reconoce cuándo debe multiplicar o dividir por 60.",
+        "Interpreta el cociente y el resto al convertir minutos en horas.",
+        "Realiza canjes cuando una columna llega a 60 o más.",
+        "En una resta, comprende que una hora prestada equivale a 60 minutos."
+      ],
+      "si_se_traba": "Dibujen una hora dividida en 60 minutos y marquen el grupo que se canjea. Para una resta, escriban explícitamente que 1 hora se transforma en 60 minutos antes de continuar."
+    }
+  ]
+}
