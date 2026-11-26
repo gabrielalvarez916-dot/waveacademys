@@ -45,6 +45,7 @@ window.WaveLeccion = (function () {
     if (t === 'pasos') return (ti ? '<h4>' + esc(ti) + '</h4>' : '') + '<ol class="li2-pasos">' + lista(b.items).map(function (x) { return '<li>' + rico(x) + '</li>'; }).join('') + '</ol>';
     if (t === 'ejemplo') return '<div class="li2-ej"><small>Ejemplo' + (ti ? '' : '') + '</small>' + (ti ? '<b>' + rico(ti) + '</b>' : '') + (txt(b) ? '<p>' + rico(txt(b)) + '</p>' : '') +
       (lista(b.items).length ? '<ul>' + lista(b.items).map(function (x) { return '<li>' + rico(x) + '</li>'; }).join('') + '</ul>' : '') + '</div>';
+    if (t === 'error') return '<div class="li2-nota error"><b>✘ Error típico' + (ti ? ': ' + esc(ti) : '') + '</b><div>' + rico(txt(b)) + '</div></div>';
     if (t === 'tabla') return (ti ? '<h4>' + esc(ti) + '</h4>' : '') + '<div class="li2-tabla-w"><table class="li2-tabla"><thead><tr>' + lista(b.columnas).map(function (c) { return '<th>' + rico(c) + '</th>'; }).join('') +
       '</tr></thead><tbody>' + lista(b.filas).map(function (f) { return '<tr>' + lista(f).map(function (c) { return '<td>' + rico(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
     if (t === 'imagen') return b.png_base64 ? '<figure class="li2-fig"><img src="data:image/png;base64,' + esc(b.png_base64) + '" alt="' + esc(ti || b.descripcion || 'Imagen') + '">' + (ti ? '<figcaption>' + esc(ti) + '</figcaption>' : '') + '</figure>' : '';
@@ -88,7 +89,7 @@ window.WaveLeccion = (function () {
       secs = c.leccion.temas.map(function (t) {
         var ss = lista(t.secs).map(function (i) { return todas[i]; }).filter(Boolean), pr = null;
         ss.forEach(function (x) { if (!pr && x.practica) pr = x.practica; });
-        return { titulo: t.titulo, bloques: [].concat.apply([], ss.map(function (x) { return lista(x.bloques); })), practica: pr,
+        return { titulo: t.titulo, bloques: lista(t.explicacion).length ? t.explicacion : [].concat.apply([], ss.map(function (x) { return lista(x.bloques); })), practica: pr,
           ejemplo: t.ejemplo && B && B.tiene(t.ejemplo.motor) ? t.ejemplo : null, ejercicio: t.ejercicio && B && B.tiene(t.ejercicio.motor) ? t.ejercicio : null };
       }).filter(function (t) { return t.bloques.length; });
     } else secs = todas.filter(function (s) { return s && (lista(s.bloques).length || s.practica); });
@@ -221,7 +222,7 @@ window.WaveLeccion = (function () {
     '.li2-cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px;align-items:start}.li2-cols.una{grid-template-columns:1fr}',
     '.li2-exp{line-height:1.6}.li2-exp p{margin:0 0 12px}.li2-exp h4{margin:14px 0 6px;color:#066A6E}.li2-exp ul,.li2-exp ol{margin:0 0 12px;padding-left:22px}',
     '.li2-def{margin:0 0 14px;padding:14px 16px;border-radius:16px;background:#253638;color:#fff}.li2-def small{display:block;font-weight:800;color:#7FD3C4;text-transform:uppercase;font-size:.75rem;letter-spacing:.05em;margin-bottom:4px}',
-    '.li2-nota{margin:0 0 14px;padding:12px 16px;border-radius:16px;background:#fff;border:2px solid #D7F0E9}.li2-nota>b{display:block;margin-bottom:4px;color:#066A6E}.li2-nota.importante{border-color:#087E83}.li2-nota.ojo{border-color:#253638}.li2-nota.ojo>b{color:#253638}',
+    '.li2-nota{margin:0 0 14px;padding:12px 16px;border-radius:16px;background:#fff;border:2px solid #D7F0E9}.li2-nota>b{display:block;margin-bottom:4px;color:#066A6E}.li2-nota.importante{border-color:#087E83}.li2-nota.ojo,.li2-nota.error{border-color:#253638}.li2-nota.error>b{color:#253638}.li2-nota.ojo>b{color:#253638}',
     '.li2-ej{margin:0 0 14px;padding:12px 16px;border-radius:16px;background:#D7F0E9}.li2-ej small{font-weight:800;color:#066A6E;text-transform:uppercase;font-size:.72rem}.li2-ej b{display:block}.li2-ej ul{margin:6px 0 0}',
     '.li2-tabla-w{overflow-x:auto;margin:0 0 14px}.li2-tabla{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden}.li2-tabla th{background:#087E83;color:#fff;text-align:left}.li2-tabla th,.li2-tabla td{padding:8px 10px;border:1px solid #E3ECEA}',
     '.li2-fig{margin:0 0 14px;text-align:center}.li2-fig img{max-width:100%;border-radius:14px;background:#fff;border:2px solid #E3ECEA}.li2-fig figcaption{font-size:.85rem;color:#4b6a6c;margin-top:4px}',

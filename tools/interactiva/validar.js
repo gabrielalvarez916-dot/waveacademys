@@ -48,6 +48,49 @@ function practica(pr, donde) {
   if (vistos.size < 5) return mal(donde, 'los números casi no cambian (' + vistos.size + ' ejercicios distintos)');
 }
 
+// ---------- LECCIÓN ESCRITA EN SESIÓN (docs/reglas-leccion-interactiva.md) ----------
+const MIN_TEMA = 170, MIN_LECCION = 650, PROP_PROMEDIO = 0.9, MAX_COPIA = 0.25;
+const limpio = s => String(s || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const palabras = s => limpio(s).split(' ').filter(w => /[a-záéíóúñü0-9]/i.test(w));
+const textoBloques = bs => (bs || []).map(b => [b.texto, (b.items || []).join(' '), (b.filas || []).map(f => f.join(' ')).join(' ')].join(' ')).join(' ');
+function grams(txt) { const w = palabras(txt).map(x => x.toLowerCase()), g = new Set(); for (let i = 0; i + 6 <= w.length; i++) g.add(w.slice(i, i + 6).join(' ')); return g; }
+function fuentes(ruta, M, n) {   // borrador del nivel + narración y textos de la clase animada de ese nivel
+  let t = textoBloques([].concat(...((M.niveles[n] || {}).secciones || []).map(s => s.bloques || [])));
+  const mat = (ruta.match(/contenido\/([a-z]+)-(\d)/) || []), pref = mat[1] ? mat[1].slice(0, 3) + mat[2] : '';
+  const f = path.join(__dirname, '..', 'clase', 'lecciones', pref + '-m' + M.tema + '-n' + n + '.json');
+  try { const C = JSON.parse(fs.readFileSync(f, 'utf8')); t += ' ' + JSON.stringify(C.escenas || []).replace(/[{}\[\]"]/g, ' '); } catch (_) {}
+  return grams(t);
+}
+function promedioMateria(ruta) {  // palabras promedio de las lecciones ya escritas de la misma materia (otras misiones)
+  const dir = path.dirname(path.dirname(ruta)), tot = [];
+  for (const d of fs.readdirSync(dir)) {
+    const f = path.join(dir, d, d + '.json'); if (!fs.existsSync(f) || path.resolve(f) === path.resolve(ruta)) continue;
+    try { const M = JSON.parse(fs.readFileSync(f, 'utf8')); Object.values(M.niveles || {}).forEach(nv => { if (nv.leccion && nv.leccion.temas) tot.push(palabras(nv.leccion.temas.map(t => textoBloques(t.explicacion)).join(' ')).length); }); } catch (_) {}
+  }
+  return tot.length >= 3 ? tot.reduce((a, b) => a + b, 0) / tot.length : 0;
+}
+function leccion(ruta, M, n, L, donde) {
+  if (!Array.isArray(L.temas) || !L.temas.length) return mal(donde, 'la lección no tiene temas');
+  let total = 0; const prom = promedioMateria(ruta), fu = fuentes(ruta, M, n);
+  L.temas.forEach((t, i) => {
+    const d = donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', bs = t.explicacion || [], tipos = bs.map(b => b.tipo), txt = textoBloques(bs), np = palabras(txt).length;
+    total += np;
+    if (np < MIN_TEMA) mal(d, 'explicación de ' + np + ' palabras: el mínimo es ' + MIN_TEMA);
+    if (!tipos.includes('definicion')) mal(d, 'falta la definición (bloque definicion)');
+    if (!tipos.includes('parrafo')) mal(d, 'falta el párrafo que explica por qué es así / para qué sirve');
+    const ej = bs.find(b => b.tipo === 'ejemplo'); if (!ej || (ej.items || []).length < 3) mal(d, 'falta un ejemplo resuelto propio con 3 o más pasos');
+    if (!tipos.includes('error')) mal(d, 'falta el error típico (bloque error)');
+    const pa = bs.find(b => b.tipo === 'pasos'); if (pa && (pa.items || []).length < 3) mal(d, 'el procedimiento tiene menos de 3 pasos');
+    if (/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)\b/i.test(txt)) mal(d, 'menciona meses del calendario');
+    if (/como (vimos|viste) en la clase/i.test(txt)) mal(d, 'remite a la clase en vez de explicar');
+    const g = grams(txt); let rep = 0; g.forEach(x => { if (fu.has(x)) rep++; });
+    if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
+    ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
+  });
+  if (total < MIN_LECCION) mal(donde, 'la lección tiene ' + total + ' palabras: el mínimo es ' + MIN_LECCION);
+  if (prom && total < prom * PROP_PROMEDIO) mal(donde, 'la lección es más corta que las anteriores de la materia (' + total + ' palabras; el promedio es ' + Math.round(prom) + ', mínimo ' + Math.round(prom * PROP_PROMEDIO) + '). Se completa, no se acorta.');
+}
+
 for (const ruta of process.argv.slice(2)) {
   const M = JSON.parse(fs.readFileSync(ruta, 'utf8')), antes = errores;
   console.log(ruta);
@@ -60,6 +103,7 @@ for (const ruta of process.argv.slice(2)) {
     });
   });
   revisar(M.niveles, '');
+  Object.keys(M.niveles || {}).forEach(n => { const L = M.niveles[n].leccion; if (L && Array.isArray(L.temas) && L.temas.some(t => t.explicacion)) leccion(ruta, M, n, L, 'lección nivel ' + n); });
   if (M.alternativa && M.alternativa.niveles) revisar(M.alternativa.niveles, 'alternativa · ');
   console.log(errores === antes ? '  ✔ lección interactiva OK' : '  ' + (errores - antes) + ' problema(s)');
 }

@@ -77,7 +77,8 @@ for (const ruta of args) {
   if (!/contenido\/matematica-/.test(ruta)) continue;   // por ahora el banco es de Matemática
   const M = JSON.parse(fs.readFileSync(ruta, 'utf8')), niveles = {};
   for (const n of Object.keys(M.niveles || {})) {
-    const L = armarNivel(M.niveles[n]); niveles[n] = L;
+    const escrita = M.niveles[n].leccion && Array.isArray(M.niveles[n].leccion.temas) && M.niveles[n].leccion.temas.some(t => t.explicacion);
+    const L = escrita ? M.niveles[n].leccion : armarNivel(M.niveles[n]); niveles[n] = L;   // la lección escrita en sesión manda
     L.temas.forEach(t => { nt++; if (t.ejemplo) nej++; if (t.ejercicio) nex++; if (!t.ejemplo && !t.ejercicio) sinMotor.push(ruta.split('/')[1] + ' M' + M.tema + ' N' + n + ' · ' + t.titulo); });
   }
   const r = { subject_id: M.subject_id, tema: M.tema, niveles };
