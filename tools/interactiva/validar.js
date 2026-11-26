@@ -89,6 +89,7 @@ function leccion(ruta, M, n, L, donde) {
     const g = grams(txt); let rep = 0; g.forEach(x => { if (fu.has(x)) rep++; });
     if (g.size && rep / g.size > MAX_COPIA) mal(d, 'copia el borrador o la clase (' + Math.round(rep / g.size * 100) + ' % de frases repetidas; máximo ' + MAX_COPIA * 100 + ' %)');
     ['ejemplo', 'ejercicio'].forEach(k => { if (t[k] && !t[k].motor) mal(d, k + ' sin motor'); });
+    if (!t.ejemplo && !t.ejercicio) mal(d, 'todo tema lleva su ejemplo vivo o su ejercicio del banco. Lo de concepto no es un tema propio: se acopla al tema práctico que corresponde');
     if ((t.ejemplo || t.ejercicio) && !tipos.includes('pasos')) mal(d, 'lleva ejemplo o ejercicio pero no es un tema práctico (su explicación no tiene un procedimiento con pasos). Los temas de concepto van solo con la explicación');
   });
   if (total < MIN_LECCION) mal(donde, 'la lección tiene ' + total + ' palabras: el mínimo es ' + MIN_LECCION);

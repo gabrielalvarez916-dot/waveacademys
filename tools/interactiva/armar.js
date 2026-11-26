@@ -54,13 +54,15 @@ function elegir(reglas, t, c) { for (const [cond, m, extra] of reglas) if (cond(
 
 function armarNivel(nv) {
   const secs = nv.secciones || [], ctx = N([nv.objetivo, (nv.vas_a_ver || []).join(' '), secs.map(s => s.titulo).join(' ')].join(' '));
-  const temas = [];
+  // Cada tema es PRÁCTICO (tiene ejemplo o ejercicio). Lo de concepto no es un tema propio: se acopla al tema práctico siguiente
+  // (o al anterior si es lo último), como en CIDEAD. Si en todo el nivel no hay ningún tema práctico, queda una sola pantalla y se avisa.
+  const temas = []; let pend = [];
   secs.forEach((s, i) => {
-    const t = N(s.titulo).trim(), tx = texto(s), ej = elegir(EJEMPLO, t, ctx), ex = elegir(EJERCICIO, t, ctx);
-    const corta = !ej && !ex && !pesado(s) && tx.length < 180 && !s.practica;
-    if (corta && temas.length) { temas[temas.length - 1].secs.push(i); return; }   // un párrafo suelto se junta con el tema anterior
-    temas.push({ titulo: s.titulo, secs: [i], ejemplo: ej || undefined, ejercicio: ex || undefined });
+    const t = N(s.titulo).trim(), ej = elegir(EJEMPLO, t, ctx), ex = elegir(EJERCICIO, t, ctx);
+    if (!ej && !ex && !s.practica) { pend.push(i); return; }
+    temas.push({ titulo: s.titulo, secs: pend.concat([i]), ejemplo: ej || undefined, ejercicio: ex || undefined }); pend = [];
   });
+  if (pend.length) { if (temas.length) temas[temas.length - 1].secs = temas[temas.length - 1].secs.concat(pend); else temas.push({ titulo: (secs[0] || {}).titulo, secs: pend, sinMotor: true }); }
   // dos temas seguidos con el mismo ejemplo y el mismo ejercicio no se repiten: el segundo se suma al primero
   for (let k = temas.length - 1; k > 0; k--) {
     const a = temas[k - 1], b = temas[k];
@@ -79,12 +81,12 @@ for (const ruta of args) {
   for (const n of Object.keys(M.niveles || {})) {
     const escrita = M.niveles[n].leccion && Array.isArray(M.niveles[n].leccion.temas) && M.niveles[n].leccion.temas.some(t => t.explicacion);
     const L = escrita ? M.niveles[n].leccion : armarNivel(M.niveles[n]); niveles[n] = L;   // la lección escrita en sesión manda
-    L.temas.forEach(t => { nt++; if (t.ejemplo) nej++; if (t.ejercicio) nex++; if (!t.ejemplo && !t.ejercicio) sinMotor.push(ruta.split('/')[1] + ' M' + M.tema + ' N' + n + ' · ' + t.titulo); });
+    L.temas.forEach(t => { nt++; if (t.ejemplo) nej++; if (t.ejercicio) nex++; if (!t.ejemplo && !t.ejercicio && !t.secs.some(i => (M.niveles[n].secciones[i] || {}).practica)) sinMotor.push(ruta.split('/')[1] + ' M' + M.tema + ' N' + n + ' · ' + t.titulo); });
   }
   const r = { subject_id: M.subject_id, tema: M.tema, niveles };
   if (M.alternativa && M.alternativa.niveles) { r.alternativa = { niveles: {} }; for (const n of Object.keys(M.alternativa.niveles)) r.alternativa.niveles[n] = armarNivel(M.alternativa.niveles[n]); }
   out.push(r);
 }
-console.log(`Misiones: ${out.length} · temas: ${nt} · con ejemplo vivo: ${nej} · con ejercicio: ${nex} · solo explicación: ${sinMotor.length}`);
+console.log(`Misiones: ${out.length} · temas: ${nt} · con ejemplo vivo: ${nej} · con ejercicio: ${nex} · niveles sin ningún motor (faltan en el banco): ${sinMotor.length}`);
 if (process.env.VER_SIN_MOTOR) sinMotor.forEach(x => console.log('  sin motor ·', x));
 if (salida) fs.writeFileSync(salida, JSON.stringify(out));

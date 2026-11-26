@@ -92,7 +92,18 @@ window.WaveLeccion = (function () {
         return { titulo: t.titulo, bloques: lista(t.explicacion).length ? t.explicacion : [].concat.apply([], ss.map(function (x) { return lista(x.bloques); })), practica: pr,
           ejemplo: t.ejemplo && B && B.tiene(t.ejemplo.motor) ? t.ejemplo : null, ejercicio: t.ejercicio && B && B.tiene(t.ejercicio.motor) ? t.ejercicio : null };
       }).filter(function (t) { return t.bloques.length; });
-    } else secs = todas.filter(function (s) { return s && (lista(s.bloques).length || s.practica); });
+    } else { // borrador con prácticas: lo de concepto se acopla al tema práctico siguiente (o al anterior, si es lo último); cada pantalla tiene su ejemplo
+      var vale = todas.filter(function (s) { return s && (lista(s.bloques).length || s.practica); }), pend = [];
+      secs = [];
+      if (!vale.some(function (s) { return s.practica; })) secs = vale;
+      else {
+        vale.forEach(function (s) {
+          if (!s.practica) { pend = pend.concat(lista(s.bloques)); return; }
+          secs.push({ titulo: s.titulo, bloques: pend.concat(lista(s.bloques)), practica: s.practica }); pend = [];
+        });
+        if (pend.length) secs[secs.length - 1].bloques = secs[secs.length - 1].bloques.concat(pend);
+      }
+    }
     if (!secs.length) throw new Error('Esta lección todavía no está lista.');
     var hayResumen = lista(c.resumen).length > 0;
     var total = secs.length + (hayResumen ? 1 : 0), cur = 0, ejN = {}, ejPaso = {};

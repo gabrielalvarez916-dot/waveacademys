@@ -24,10 +24,11 @@ Los bloques son los mismos del PDF: `parrafo`, `definicion`, `pasos` (items), `e
 5. **Error típico**: bloque `error` con el error, por qué está mal y cómo detectarlo.
 6. **Mínimo 170 palabras** de explicación por tema (sin contar títulos). Sin máximo: si el tema lo pide, más.
 
-## Dónde va ejemplo y ejercicio (y dónde NO)
-- Solo en temas PRÁCTICOS: operaciones, cálculos, descomposiciones, construcciones, procedimientos (lo que se HACE con pasos).
-- Los temas de CONCEPTO (qué es una variable, qué es aleatorio, para qué sirve cada medida, clasificar ideas) van solo con la explicación: sin ejemplo vivo, sin ejercicio, sin práctica. No todo es interactivo.
-- El control lo exige: un tema con ejemplo o ejercicio tiene que tener un bloque `pasos` en su explicación, y la práctica escrita a mano tiene que ser una cuenta (respuesta con `formula`).
+## Cada tema es práctico y tiene su ejemplo (como en CIDEAD)
+- Una pantalla de la lección = un tema PRÁCTICO (operación, cálculo, descomposición, construcción, procedimiento) con su ejemplo vivo y/o su ejercicio del banco. Ningún tema queda sin ejemplo.
+- Lo de CONCEPTO (qué es una variable, qué es aleatorio, para qué sirve cada medida) NO es un tema propio: se explica dentro del tema práctico que corresponde (el siguiente, o el anterior si es lo último). Ej.: "Variables y datos" va adentro de "Tabla de frecuencias".
+- Si en un nivel ningún tema tiene motor en el banco, se avisa para crear el motor: no se deja la lección sin ejemplo ni se fuerza uno que no corresponde.
+- El control lo exige: todo tema lleva `ejemplo` o `ejercicio`, y su explicación tiene un bloque `pasos`.
 
 ## Qué tiene que tener cada lección
 - Los temas son los importantes de la clase: los que hagan falta (2, 3, 5…), no un número fijo. No se rellena para llegar a 4.
