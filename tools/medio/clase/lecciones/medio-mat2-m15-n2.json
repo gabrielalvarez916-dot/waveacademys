@@ -1,0 +1,158 @@
+{
+ "slug": "medio-mat2-m15-n2",
+ "step_id": "f7628e18-7953-4bd6-9881-ab5150aaa9c2",
+ "materia": "Matemática 2",
+ "titulo": "Multiplicar por 100",
+ "sub": "Matemática 2 · Misión 15 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Rosa",
+    "emoji": "👵"
+   },
+   "lugar": "🏭",
+   "lineas": [
+    "Rosa llena cajas grandes.",
+    "En cada caja entran 100.",
+    "¿Cuántos hay en 3 cajas?"
+   ],
+   "titulo": "POR 100",
+   "sub": "cajas",
+   "voz": [
+    "Rosa llena *cajas grandes*.",
+    "En cada caja entran *100* alfajores.",
+    "¿Cuántos hay en 3 cajas?",
+    "Hoy: *multiplicar por 100*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "CAJAS QUE CRECEN",
+   "items": [
+    {
+     "txt": "100",
+     "emoji": "📦",
+     "valor": 100
+    },
+    {
+     "txt": "200",
+     "emoji": "📦",
+     "valor": 200
+    },
+    {
+     "txt": "300",
+     "emoji": "📦",
+     "valor": 300
+    }
+   ],
+   "voz": [
+    "Una caja: *100*.",
+    "Dos cajas: *200*.",
+    "¡Tres cajas: *300*!"
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DOS CEROS",
+   "pasos": [
+    {
+     "txt": "4 × 100"
+    },
+    {
+     "txt": "4 → 400",
+     "nota": "agregamos dos 0"
+    },
+    {
+     "txt": "4 × 100 = 400"
+    }
+   ],
+   "voz": [
+    "Ahora: 4 por 100.",
+    "Al 4 le pegamos *dos ceros*.",
+    "¡4 por 100 es *400*!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ",
+   "pares": [
+    [
+     "2 × 100",
+     "200"
+    ],
+    [
+     "5 × 100",
+     "500"
+    ],
+    [
+     "8 × 100",
+     "800"
+    ]
+   ],
+   "voz": [
+    "Uní cada cuenta con su resultado.",
+    "2 por 100: *200*.",
+    "5 por 100: *500*.",
+    "8 por 100: *800*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 6 × 100?",
+   "opciones": [
+    "600",
+    "60",
+    "106"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 6 por 100.",
+    "Pensá: ¿cuántos ceros van?",
+    "¡*600*! Dos ceros."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "6 × 100 = 60",
+     "bien": "6 × 100 = 600"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Por 100 van *dos ceros*: 600."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CAJA",
+     "tiene 100"
+    ],
+    [
+     "POR 100",
+     "dos 0 al final"
+    ],
+    [
+     "3 × 100",
+     "es 300"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Una caja tiene *100*.",
+    "Por 100, *dos ceros* al final.",
+    "3 por 100 es *300*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

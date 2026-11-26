@@ -1577,6 +1577,7 @@
       columna: ctrl('a', 'ARRIBA', 100, 899, 1, p.op === 'resta' ? (p.lleva ? 352 : 576) : (p.lleva ? 268 : 231)) + ctrl('b', 'ABAJO', 10, 399, 1, p.op === 'resta' ? (p.lleva ? 128 : 234) : (p.lleva ? 125 : 45)),
       prop: p.que === 'familia' ? ctrl('a', 'PRIMER NÚMERO', 10, 60, 10, 60) + ctrl('b', 'SEGUNDO NÚMERO', 10, 40, 10, 40) : p.que === 'amigos' ? ctrl('a', 'PRIMER NÚMERO', 11, 89, 1, 37) + ctrl('b', 'SEGUNDO NÚMERO', 11, 89, 1, 25) : p.que === 'dobles' ? ctrl('a', 'NÚMERO', 10, 60, 5, 25) : ctrl('a', 'NÚMERO CHICO', 1, 9, 1, 4) + ctrl('b', 'NÚMERO GRANDE', 100, 300, 1, 120),
       mult: p.que === 'arreglo' || p.que === 'girar' ? ctrl('f', 'FILAS', 2, 5, 1, 3) + ctrl('c', 'COLUMNAS', 2, 6, 1, 4) : ctrl('g', 'GRUPOS', 2, 5, 1, 3) + ctrl('n', 'EN CADA GRUPO', 2, 6, 1, 4),
+      por10: ctrl('n', 'NÚMERO', 1, p.de === 100 ? 9 : (p.que === 'cifras' ? 45 : 9), 1, p.de === 100 ? 3 : (p.que === 'cifras' ? 24 : 4)),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
     escena(el, C, function (v) {
@@ -2142,6 +2143,20 @@
         if (qx === 'girar') P.push({ vis: p1Arr(v.c, v.f, ox) + p1Big(v.c + ' × ' + v.f + ' = ' + v.f * v.c), txt: 'SI LO <b>GIRAMOS</b>, CAMBIAN FILAS Y COLUMNAS PERO EL TOTAL ES EL MISMO.' });
         return P;
       }
+      if (md === 'por10') {
+        var de10 = p.de || 10, rz = v.n * de10, ceros = de10 === 100 ? '00' : '0';
+        if (p.que === 'cifras') {
+          P.push({ vis: p1CDUt(v.n), txt: 'EL <b>' + v.n + '</b> TIENE ESTAS CIFRAS.' });
+          P.push({ vis: p1CDUt(rz, 9), txt: 'POR ' + de10 + ': CADA CIFRA SE CORRE ' + (de10 === 100 ? 'DOS LUGARES' : 'UN LUGAR') + ' A LA IZQUIERDA.' });
+          P.push({ vis: p1CDUt(rz, 9) + p1Big(v.n + ' × ' + de10 + ' = ' + rz), txt: 'Y EN EL LUGAR QUE QUEDA VACÍO VA <b>' + (de10 === 100 ? 'DOS CEROS' : 'UN CERO') + '</b>.' });
+          return P;
+        }
+        P.push({ vis: de10 === 100 ? p1CDU(v.n * 100) : p1BolsasN(v.n), txt: 'TENEMOS <b>' + v.n + '</b> ' + (de10 === 100 ? 'CAJAS DE 100' : 'PAQUETES DE 10') + '.' });
+        P.push({ vis: (de10 === 100 ? p1CDU(v.n * 100, { c: v.n }) : p1BolsasN(v.n)) + p1Big(v.n + ' × ' + de10), txt: 'ES <b>' + v.n + ' VECES ' + de10 + '</b>: ' + v.n + ' × ' + de10 + '.' });
+        P.push({ vis: p1Big(v.n + ' → ' + v.n + '<span style="color:#C2552E">' + ceros + '</span>'), txt: 'TRUCO: AL ' + v.n + ' LE AGREGAMOS <b>' + (de10 === 100 ? 'DOS CEROS' : 'UN CERO') + '</b>.' });
+        P.push({ vis: p1Big(v.n + ' × ' + de10 + ' = ' + rz), txt: v.n + ' × ' + de10 + ' = <b>' + rz + '</b>.' });
+        return P;
+      }
       if (md === 'saltos') {
         var de2 = p.de || 2, hs = Math.ceil(v.n / 10) * 10, ya = [0];
         P.push({ vis: p1Cuadro(hs, p1Marca([0], 'on')), txt: 'EMPEZAMOS EN EL <b>0</b>. VAMOS A SALTAR DE A <b>' + de2 + '</b>.' });
@@ -2335,6 +2350,14 @@
         if (qx === 'arreglo' || qx === 'filas') { a = R(2, 5); b = R(2, 6); h = p1Arr(a, b, o); if (qx === 'filas') { var fl = Math.random() < 0.5; r = fl ? a : b; c = '¿CUÁNTAS <b>' + (fl ? 'FILAS' : 'COLUMNAS') + '</b> TIENE EL ARREGLO?'; } else { r = a * b; c = '¿CUÁNTOS HAY EN TOTAL? PENSÁ FILAS × COLUMNAS.'; } }
         else { a = R(2, 5); b = R(2, 6); for (var k = 0; k < a; k++) h += p1Grupo('', b, o); r = a * b; c = 'HAY ' + a + ' GRUPOS DE ' + b + '. ¿CUÁNTOS HAY EN TOTAL?'; }
         return { cons: c, html: h, campos: [{ v: r }], ayuda: qx === 'filas' ? 'LA FILA VA ACOSTADA Y LA COLUMNA PARADA.' : 'SUMÁ EL MISMO NÚMERO TANTAS VECES COMO GRUPOS O FILAS HAYA.', bien: '¡MUY BIEN! ES ' + r + '.' }; }); }
+    if (md === 'por10') { var q10 = p.que || 'cuenta';
+      if (q10 === 'cuantos0') return p1Elegir(el, api, function () { var d = pick([10, 100]);
+        return { cons: 'PARA HACER <b>× ' + d + '</b>, ¿CUÁNTOS CEROS AGREGÁS AL FINAL?', ops: ['UN CERO', 'DOS CEROS', 'NINGUNO'], ok: d === 100 ? 'DOS CEROS' : 'UN CERO', ayuda: 'CONTÁ LOS CEROS DEL ' + d + '.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var d = p.de || pick([10, 100]), n = d === 100 ? R(1, 9) : R(1, q10 === 'cifras' ? 45 : 9), c, h = '';
+        if (q10 === 'problema') { var o = pick(['caramelo', 'pelota', 'estrella']); c = 'HAY <b>' + n + '</b> ' + (d === 100 ? 'CAJAS' : 'PAQUETES') + ' Y CADA UNO TIENE <b>' + d + '</b> ' + P1PL[o] + '. ¿' + g(o, 'CUÁNTAS', 'CUÁNTOS') + ' HAY?'; }
+        else c = '¿CUÁNTO ES <b>' + n + ' × ' + d + '</b>?';
+        if (d === 10 && q10 !== 'cifras') h = p1BolsasN(n);
+        return { cons: c, html: h, campos: [{ v: n * d }], ayuda: 'AGREGÁ ' + (d === 100 ? 'DOS CEROS' : 'UN CERO') + ' AL ' + n + '.', bien: '¡MUY BIEN! ' + n + ' × ' + d + ' = ' + n * d + '.' }; }); }
     if (md === 'redondo') return respuesta(el, api, function () { var n = 10 * R(1, Math.floor((p.max || 100) / 10) - 1) - 1;
       return { cons: '¿QUÉ NÚMERO VIENE <b>DESPUÉS</b> DEL ' + n + '?', html: p1Big(n), campos: [{ v: n + 1 }], ayuda: 'DESPUÉS DE UN 9 VIENE UN NÚMERO REDONDO.', bien: '¡MUY BIEN! DESPUÉS DEL ' + n + ' VIENE EL ' + (n + 1) + '.' }; });
     if (md === 'redondos') return p1Elegir(el, api, function () { var n = 10 * R(2, 9), ops = [n]; while (ops.length < 3) { var x = 10 * R(2, 9); if (ops.indexOf(x) < 0) ops.push(x); }

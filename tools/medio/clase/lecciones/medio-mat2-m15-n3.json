@@ -1,0 +1,158 @@
+{
+ "slug": "medio-mat2-m15-n3",
+ "step_id": "41055c46-b0f2-42cd-bb9e-ed10e7e5c2d0",
+ "materia": "Matemática 2",
+ "titulo": "Qué pasa con las cifras",
+ "sub": "Matemática 2 · Misión 15 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomi",
+    "emoji": "👦"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Abu, ¿24 × 10 es 2410?"
+    },
+    {
+     "yo": true,
+     "txt": "¡No! Mirá las cifras"
+    },
+    {
+     "yo": false,
+     "txt": "¿Se corren?"
+    }
+   ],
+   "titulo": "LAS CIFRAS",
+   "sub": "se corren",
+   "voz": [
+    "Tomi pregunta: ¿24 por 10 es 2410?",
+    "Rosa le dice: ¡no! Mirá las cifras.",
+    "¿Las cifras se *corren*?",
+    "Hoy: *qué pasa con las cifras*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "24 POR 10",
+   "columnas": [
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "",
+     "2",
+     "4"
+    ],
+    [
+     "2",
+     "4",
+     "0"
+    ]
+   ],
+   "voz": [
+    "Mirá el 24 en la tabla.",
+    "Tiene 2 decenas y 4 unidades.",
+    "Por 10, cada cifra se corre *un lugar*. ¡240!"
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "ANTES",
+    "emoji": "🔢",
+    "texto": "3 unidades"
+   },
+   "despues": {
+    "cab": "DESPUÉS",
+    "emoji": "🚀",
+    "texto": "3 × 100 = 300"
+   },
+   "voz": [
+    "*Antes*: el 3 estaba en las unidades.",
+    "*Después* de por 100, ¡está en las centenas: *300*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Cuánto da 35 × 10?",
+   "a": {
+    "txt": "3510",
+    "emoji": "😱"
+   },
+   "b": {
+    "txt": "350",
+    "emoji": "😎"
+   },
+   "correcta": "b",
+   "resultado": "¡350! Se corren un lugar",
+   "voz": [
+    "¿Qué creés? ¿Cuánto da 35 por 10?",
+    "¿3510 o 350? Pensá…",
+    "¡*350*! Las cifras se corren un lugar."
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "1",
+    "10",
+    "100"
+   ],
+   "falta": "1.000",
+   "regla": "Por 10 cada vez",
+   "voz": [
+    "Mirá: 1, 10, 100…",
+    "Cada vez, por 10. ¿Qué sigue?",
+    "¡El *mil*! Otro cero más."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "24 × 10 = 2410",
+     "bien": "24 × 10 = 240"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Se agrega *un cero*, no un 10: 240."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "POR 10",
+     "se corren un lugar"
+    ],
+    [
+     "POR 100",
+     "se corren dos lugares"
+    ],
+    [
+     "ATRÁS",
+     "van los ceros"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Por 10, las cifras se corren *un lugar*.",
+    "Por 100, se corren *dos lugares*.",
+    "Atrás van los *ceros*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

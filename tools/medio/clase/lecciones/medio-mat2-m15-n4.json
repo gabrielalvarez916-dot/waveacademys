@@ -1,0 +1,128 @@
+{
+ "slug": "medio-mat2-m15-n4",
+ "step_id": "5776913c-1be0-40f4-9925-bc19e0bcce5d",
+ "materia": "Matemática 2",
+ "titulo": "Problemas con 10 y 100",
+ "sub": "Matemática 2 · Misión 15 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Llega un pedido gigante!",
+   "bajada": "Paquetes de 10 y cajas de 100",
+   "emoji": "🚚",
+   "titulo": "PROBLEMAS",
+   "sub": "con 10 y 100",
+   "voz": [
+    "¡Último momento: llega un pedido gigante!",
+    "Hay paquetes de 10 y cajas de 100.",
+    "Hoy: *problemas con 10 y 100*."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "Rosa tiene 8 paquetes de 10. ¿Cuántos alfajores tiene?",
+   "pistas": [
+    "Cada paquete tiene 10",
+    "Son 8 veces 10",
+    "8 × 10"
+   ],
+   "respuesta": "80 alfajores",
+   "voz": [
+    "Primer problema: 8 paquetes de 10.",
+    "Pista uno: cada paquete tiene *10*.",
+    "Pista dos: son *8 veces* 10.",
+    "Pista tres: 8 por 10.",
+    "¡*80* alfajores!"
+   ]
+  },
+  {
+   "t": "calculadora",
+   "titulo": "LA CALCULADORA DE ROSA",
+   "teclas": [
+    "5",
+    "×",
+    "1",
+    "0",
+    "0"
+   ],
+   "resultado": "500",
+   "texto": "5 CAJAS DE 100",
+   "voz": [
+    "Rosa controla con la *calculadora*.",
+    "5 cajas de 100: 5 por 100.",
+    "¡En la pantalla dice *500*!"
+   ]
+  },
+  {
+   "t": "jefe",
+   "jefe": {
+    "nombre": "Pulpo de los Ceros",
+    "emoji": "🐙"
+   },
+   "preguntas": [
+    {
+     "p": "9 × 10",
+     "r": "90"
+    },
+    {
+     "p": "3 × 100",
+     "r": "300"
+    },
+    {
+     "p": "12 × 10",
+     "r": "120"
+    }
+   ],
+   "voz": [
+    "¡Apareció el *Pulpo de los Ceros*!",
+    "Lo vencemos con por 10 y por 100.",
+    "9 por 10: *90*.",
+    "3 por 100: *300*.",
+    "¡12 por 10: *120*! ¡Ganamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "5 paquetes de 10 = 15",
+     "bien": "5 × 10 = 50"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No se suma: 5 por 10 es *50*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAQUETES",
+     "por 10"
+    ],
+    [
+     "CAJAS",
+     "por 100"
+    ],
+    [
+     "RESPONDER",
+     "con palabras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Paquetes de 10: multiplicamos *por 10*.",
+    "Cajas de 100: *por 100*.",
+    "Respondemos *con palabras*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

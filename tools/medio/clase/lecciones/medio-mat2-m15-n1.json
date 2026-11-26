@@ -1,0 +1,133 @@
+{
+ "slug": "medio-mat2-m15-n1",
+ "step_id": "b73396c3-57c3-4333-a6f8-77dbcae4fa1d",
+ "materia": "Matemática 2",
+ "titulo": "Multiplicar por 10",
+ "sub": "Matemática 2 · Misión 15 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "¿Cuántos alfajores hay en 4 paquetes de 10?",
+   "segundos": 6,
+   "respuesta": "¡40!",
+   "emoji": "📦",
+   "titulo": "POR 10",
+   "sub": "paquetes",
+   "voz": [
+    "Desafío: 4 paquetes de 10 alfajores.",
+    "¡*40*! 10, 20, 30, 40.",
+    "Hoy: *multiplicar por 10*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "1 ALFAJOR",
+     "valor": "1",
+     "icono": "alf"
+    },
+    {
+     "nombre": "1 PAQUETE",
+     "valor": "10",
+     "icono": "pack"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Diez alfajores llenan un paquete.",
+    "Un paquete tiene *10*.",
+    "Contamos paquetes de 10 en 10."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Por 10",
+   "texto": "Agregamos un 0 al final",
+   "emoji": "0️⃣",
+   "voz": [
+    "Multiplicar por 10 tiene un truco.",
+    "Agregamos *un cero* al final."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "UN 0 AL FINAL",
+   "pasos": [
+    {
+     "txt": "6 × 10"
+    },
+    {
+     "txt": "6 → 60",
+     "nota": "agregamos un 0"
+    },
+    {
+     "txt": "6 × 10 = 60"
+    }
+   ],
+   "voz": [
+    "Mirá: 6 por 10.",
+    "Al 6 le pegamos un *cero*.",
+    "¡6 por 10 es *60*!"
+   ]
+  },
+  {
+   "t": "patron",
+   "titulo": "¿QUÉ SIGUE?",
+   "items": [
+    "10",
+    "20",
+    "30",
+    "40"
+   ],
+   "falta": "50",
+   "regla": "Sumamos un paquete",
+   "voz": [
+    "Mirá: 10, 20, 30, 40…",
+    "¿Qué número sigue?",
+    "¡El *50*! Cinco paquetes."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "7 × 10 = 17",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "No se suma: es 70",
+   "voz": [
+    "¿Verdadero o falso? 7 por 10 es 17.",
+    "Pensá en los paquetes…",
+    "¡*Falso*! Es *70*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PAQUETE",
+     "tiene 10"
+    ],
+    [
+     "POR 10",
+     "un 0 al final"
+    ],
+    [
+     "7 × 10",
+     "es 70"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un paquete tiene *10*.",
+    "Por 10, *un cero* al final.",
+    "7 por 10 es *70*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
