@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat3-m14-n4",
+ "step_id": "b541572e-dfb2-4f4d-b99c-194bde10e0ff",
+ "materia": "Matemática 3",
+ "titulo": "Problemas de reparto con resto",
+ "sub": "Matemática 3 · Misión 14 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Van 26 chicos al paseo. En cada auto entran 4. ¿Cuántos autos?",
+   "segundos": 8,
+   "respuesta": "¡7 autos!",
+   "emoji": "🚗",
+   "titulo": "PROBLEMAS",
+   "sub": "con resto",
+   "voz": [
+    "Desafío: van *26* chicos y en cada auto entran 4.",
+    "¿Cuántos autos? ¡*7*!",
+    "Hoy: *problemas de reparto con resto*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "26 ÷ 4",
+   "pasos": [
+    {
+     "txt": "26 ÷ 4 = 6, SOBRAN 2"
+    },
+    {
+     "txt": "2 CHICOS SIN LUGAR",
+     "nota": "no se quedan"
+    },
+    {
+     "txt": "6 + 1 = 7 AUTOS"
+    }
+   ],
+   "voz": [
+    "Dividimos: se llenan *6* autos y sobran 2 chicos.",
+    "¡Los 2 chicos no se pueden quedar!",
+    "Hace falta un auto más: *7* autos."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "30 globos para 4 mesas. ¿Cuántos en cada una?",
+   "a": {
+    "txt": "7",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "8",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡7 y sobran 2!",
+   "voz": [
+    "30 globos para 4 mesas, todas iguales.",
+    "4 por 7 es 28, 4 por 8 es 32…",
+    "¡*7* en cada mesa y sobran 2!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿QUÉ HACEMOS CON EL RESTO?",
+   "pares": [
+    [
+     "Sobran chicos",
+     "Un auto más"
+    ],
+    [
+     "Sobran caramelos",
+     "Quedan en la bolsa"
+    ],
+    [
+     "Sobra una pizza",
+     "Se corta en porciones"
+    ]
+   ],
+   "voz": [
+    "Uní cada resto con lo que hacemos.",
+    "Si sobran chicos: *un auto más*.",
+    "Si sobran caramelos: *quedan en la bolsa*.",
+    "Si sobra una pizza: *se corta en porciones*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "26 chicos, autos de 4: 6 autos",
+     "bien": "7 autos: los 2 que sobran también viajan"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Los que sobran *también* tienen que viajar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DIVIDIR",
+     "primero"
+    ],
+    [
+     "MIRAR",
+     "el resto"
+    ],
+    [
+     "DECIDIR",
+     "y responder"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Primero *dividimos*.",
+    "Después *miramos* qué pasa con el resto.",
+    "Y *respondemos* con sentido.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

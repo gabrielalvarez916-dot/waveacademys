@@ -1,0 +1,129 @@
+{
+ "slug": "medio-mat3-m14-n2",
+ "step_id": "be071863-cff7-4f7d-8fda-de1f5355867a",
+ "materia": "Matemática 3",
+ "titulo": "Armar grupos",
+ "sub": "Matemática 3 · Misión 14 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "La profe Ana",
+    "emoji": "👩‍🏫"
+   },
+   "lugar": "⛺",
+   "lineas": [
+    "Hay 24 chicos en el campamento.",
+    "En cada carpa duermen 4.",
+    "¿Cuántas carpas armamos?"
+   ],
+   "titulo": "ARMAR",
+   "sub": "grupos",
+   "voz": [
+    "Hay *24 chicos* en el campamento.",
+    "En cada carpa duermen *4*.",
+    "¿Cuántas carpas hay que armar?",
+    "Hoy: *armar grupos*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🧒",
+   "grupos": 6,
+   "cada": 4,
+   "texto": "24 ÷ 4 = 6",
+   "titulo": "CARPAS DE 4",
+   "voz": [
+    "Ponemos 4 chicos en cada carpa.",
+    "Contamos: 4, 8, 12, 16, 20, 24.",
+    "¡Son *6* carpas!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "REPARTIR",
+    "texto": "24 entre 4 carpas: ¿cuántos en cada una?",
+    "emoji": "🎁"
+   },
+   "b": {
+    "cab": "AGRUPAR",
+    "texto": "24 de a 4: ¿cuántas carpas?",
+    "emoji": "📦"
+   },
+   "signo": "y",
+   "voz": [
+    "Repartir: sabemos cuántos grupos, buscamos *cuánto va en cada uno*.",
+    "Agrupar: sabemos cuánto va en cada uno, buscamos *cuántos grupos*.",
+    "¡Las dos se resuelven *dividiendo*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "18 de a 3",
+     "r": "6 grupos"
+    },
+    {
+     "p": "30 de a 5",
+     "r": "6 grupos"
+    },
+    {
+     "p": "28 de a 4",
+     "r": "7 grupos"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida! ¿Cuántos grupos?",
+    "18 de a 3: *6* grupos.",
+    "30 de a 5: *6* grupos.",
+    "28 de a 4: *7* grupos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "24 chicos de a 4: 24 + 4 = 28 carpas",
+     "bien": "24 ÷ 4 = 6 carpas"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para armar grupos, *dividimos*: no sumamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "AGRUPAR",
+     "de a la misma cantidad"
+    ],
+    [
+     "CONTAR",
+     "los grupos"
+    ],
+    [
+     "DIVIDIR",
+     "24 ÷ 4 = 6"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Armamos grupos con la *misma cantidad*.",
+    "Contamos *cuántos grupos* salen.",
+    "Es una *división*: 24 entre 4, 6.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

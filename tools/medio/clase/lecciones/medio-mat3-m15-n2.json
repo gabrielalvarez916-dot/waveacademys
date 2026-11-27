@@ -1,0 +1,133 @@
+{
+ "slug": "medio-mat3-m15-n2",
+ "step_id": "6b7fe869-4b85-4388-912b-c458f7c5cf63",
+ "materia": "Matemática 3",
+ "titulo": "Dividir con la tabla pitagórica",
+ "sub": "Matemática 3 · Misión 15 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Bruno descubrió un atajo!",
+   "bajada": "Usa la tabla pitagórica para dividir",
+   "emoji": "🔢",
+   "titulo": "DIVIDIR",
+   "sub": "con la tabla",
+   "voz": [
+    "¡Último momento: Bruno descubrió un *atajo*!",
+    "Usa la *tabla pitagórica* para dividir.",
+    "Hoy: *dividir con la tabla pitagórica*."
+   ]
+  },
+  {
+   "t": "ranking",
+   "titulo": "TABLA DEL 6 HASTA 38",
+   "items": [
+    {
+     "txt": "6 × 6 = 36",
+     "emoji": "✅",
+     "dato": "el más cerca"
+    },
+    {
+     "txt": "6 × 5 = 30",
+     "emoji": "🔵",
+     "dato": "menos"
+    },
+    {
+     "txt": "6 × 7 = 42",
+     "emoji": "❌",
+     "dato": "se pasa"
+    }
+   ],
+   "voz": [
+    "Queremos 38 entre 6. Miramos la tabla del 6.",
+    "6 por 7 es 42: *se pasa*.",
+    "6 por 5 es 30: queda lejos.",
+    "¡6 por 6 es *36*: el más cerca sin pasarse!"
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "6 × 6",
+    "items": [
+     "36"
+    ]
+   },
+   "der": {
+    "cab": "TENEMOS",
+    "items": [
+     "38"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "6 por 6 es 36.",
+    "Tenemos 38: un poquito más.",
+    "¡38 entre 6 es *6* y sobran 2!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "CANDADOS DE LA TABLA",
+   "candados": [
+    {
+     "p": "45 ÷ 9",
+     "r": "5"
+    },
+    {
+     "p": "29 ÷ 7",
+     "r": "4, sobra 1"
+    }
+   ],
+   "voz": [
+    "¡Escape! Usamos la tabla.",
+    "45 entre 9: 9 por 5 es 45, *5*.",
+    "29 entre 7: *4* y sobra 1.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "38 ÷ 6 = 7",
+     "bien": "6 × 7 = 42 se pasa: es 6"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El número de la tabla *no se puede pasar*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "TABLA",
+     "del divisor"
+    ],
+    [
+     "BUSCAR",
+     "el más cerca"
+    ],
+    [
+     "SIN PASARSE",
+     "nunca"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Usamos la *tabla* del número que divide.",
+    "Buscamos el *más cerca*.",
+    "¡Pero *sin pasarnos*!",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

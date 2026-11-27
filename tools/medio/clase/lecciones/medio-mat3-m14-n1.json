@@ -1,0 +1,120 @@
+{
+ "slug": "medio-mat3-m14-n1",
+ "step_id": "873ef20d-ed24-4627-aa5e-34387a0ad45b",
+ "materia": "Matemática 3",
+ "titulo": "Repartir cantidades grandes",
+ "sub": "Matemática 3 · Misión 14 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Nos vamos de campamento!",
+   "bajada": "Hay 84 linternas para 4 grupos",
+   "emoji": "⛺",
+   "titulo": "REPARTIR",
+   "sub": "cantidades grandes",
+   "voz": [
+    "¡Último momento: nos vamos de *campamento*!",
+    "Hay *84* linternas para repartir entre 4 grupos.",
+    "Hoy: *repartir cantidades grandes*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "84",
+   "titulo": "PARTIMOS EL 84",
+   "partes": [
+    "80",
+    "4"
+   ],
+   "resultado": "= 84 ✓",
+   "voz": [
+    "El 84 es grande para repartir de a una.",
+    "Lo partimos en partes fáciles.",
+    "Una parte: *80*.",
+    "La otra parte: *4*.",
+    "¡80 más 4 es 84!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "REPARTIMOS CADA PARTE",
+   "items": [
+    {
+     "frente": "80 ÷ 4",
+     "dorso": "20"
+    },
+    {
+     "frente": "4 ÷ 4",
+     "dorso": "1"
+    },
+    {
+     "frente": "84 ÷ 4",
+     "dorso": "20 + 1 = 21"
+    }
+   ],
+   "voz": [
+    "80 entre 4: a cada grupo le tocan *20*.",
+    "4 entre 4: le toca *1* más.",
+    "¡En total, *21* linternas por grupo!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto le toca a cada uno si repartimos 66 entre 3?",
+   "opciones": [
+    "22",
+    "63",
+    "33"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 66 entre 3.",
+    "20 y 2…",
+    "¡*22* a cada uno!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "84 ÷ 4: repartir solo el 80",
+     "bien": "Repartir también el 4: son 21"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hay que repartir *todas* las partes."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PARTIR",
+     "en partes fáciles"
+    ],
+    [
+     "REPARTIR",
+     "cada parte"
+    ],
+    [
+     "SUMAR",
+     "lo que toca"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Partimos* el número en partes fáciles.",
+    "*Repartimos* cada parte.",
+    "Y *sumamos* lo que le toca a cada uno.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

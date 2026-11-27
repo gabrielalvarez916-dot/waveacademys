@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat3-m14-n3",
+ "step_id": "93ab0678-9dd2-4d25-acb2-a3ee29cd21fe",
+ "materia": "Matemática 3",
+ "titulo": "Qué hacer con lo que sobra",
+ "sub": "Matemática 3 · Misión 14 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "La profe Ana",
+    "emoji": "👩‍🏫"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tengo 23 galletas para 4 chicos"
+    },
+    {
+     "yo": true,
+     "txt": "¡No da justo!"
+    },
+    {
+     "yo": false,
+     "txt": "¿Qué hacemos con las que sobran?"
+    }
+   ],
+   "titulo": "LO QUE",
+   "sub": "sobra",
+   "voz": [
+    "La profe escribe: tengo *23 galletas* para 4 chicos.",
+    "¡No da justo!",
+    "¿Qué hacemos con las que sobran?",
+    "Hoy: *qué hacer con lo que sobra*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🍪",
+   "grupos": 4,
+   "cada": 5,
+   "texto": "23 ÷ 4 = 5 · sobran 3",
+   "titulo": "5 A CADA UNO",
+   "voz": [
+    "Damos 5 galletas a cada uno.",
+    "4 chicos por 5: 20 galletas repartidas.",
+    "¡Sobran *3*! No alcanzan para otra vuelta."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Resto",
+   "texto": "Lo que sobra en un reparto y no alcanza para otra vuelta.",
+   "emoji": "🍪",
+   "voz": [
+    "Lo que sobra se llama *resto*.",
+    "Siempre es *menor* que la cantidad de chicos."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
+    {
+     "emoji": "🍪",
+     "txt": "Galletas: se pueden partir"
+    },
+    {
+     "emoji": "🎈",
+     "txt": "Globos: quedan guardados"
+    },
+    {
+     "emoji": "🚗",
+     "txt": "Chicos: hace falta un auto más"
+    }
+   ],
+   "voz": [
+    "Las galletas que sobran se pueden *partir* en pedacitos.",
+    "Los globos que sobran quedan *guardados*.",
+    "¡Y si sobran chicos, hace falta *un auto más*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "23 entre 4: 5 a cada uno y sobran 7",
+     "bien": "Sobran 3: con 7 se da otra vuelta"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si sobran *más* que los chicos, hay otra vuelta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RESTO",
+     "lo que sobra"
+    ],
+    [
+     "MENOR",
+     "que los grupos"
+    ],
+    [
+     "DECIDIR",
+     "según la situación"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Lo que sobra se llama *resto*.",
+    "Siempre es *menor* que la cantidad de grupos.",
+    "Qué hacemos con él *depende de la situación*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

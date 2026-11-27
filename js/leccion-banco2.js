@@ -2172,6 +2172,7 @@
       por10m: p.que === 'redondos' ? ctrl('a', 'NÚMERO', 2, 9, 1, 4) + ctrl('b', 'REDONDO', 20, 90, 10, 30) : p.que === 'problema' ? ctrl('a', 'CAJAS', 2, 9, 1, 6) + ctrl('b', 'EN CADA CAJA', 10, 90, 10, 40) : ctrl('n', 'NÚMERO', 1, p.de === 1000 ? 9 : p.max || 99, 1, p.de === 1000 ? 4 : 23),
       mult1: ctrl('a', 'NÚMERO', p.que === 'lleva' || p.que === 'estimar' ? 12 : 11, p.max || 99, 1, p.que === 'lleva' ? 47 : p.que === 'estimar' ? 38 : p.que === 'columna' ? 32 : 23) + ctrl('b', 'POR', 2, p.que === 'columna' ? 3 : 9, 1, p.que === 'columna' ? 3 : 4),
       combina: p.que === 'prendas' || p.que === 'problema' ? ctrl('a', p.que === 'problema' ? 'SABORES' : 'CAMISETAS', 2, 4, 1, 3) + ctrl('b', p.que === 'problema' ? 'CONOS' : 'PANTALONES', 2, 4, 1, 2) : p.que === 'grande' ? ctrl('f', 'FILAS', 11, 19, 1, 12) + ctrl('c', 'EN CADA FILA', 3, 9, 1, 8) : ctrl('f', 'FILAS', 2, 6, 1, 3) + ctrl('c', 'COLUMNAS', 2, 8, 1, 5),
+      divide3: p.que === 'grande' ? ctrl('b', 'ENTRE', 2, 5, 1, 4) + ctrl('c', 'A CADA UNO', 11, 24, 1, 21) : p.que === 'grupos' ? ctrl('b', 'DE A', 2, 6, 1, 4) + ctrl('c', 'GRUPOS', 2, 8, 1, 6) : ctrl('a', 'CANTIDAD', 10, p.que === 'problema' ? 60 : 45, 1, p.que === 'restando' ? 20 : 23) + ctrl('b', p.que === 'problema' ? 'EN CADA AUTO' : 'ENTRE', 2, 6, 1, p.que === 'restando' ? 4 : p.que === 'problema' ? 4 : 4),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2803,6 +2804,63 @@
         P.push({ vis: CB(v.a * v.b) + p1Big(v.a + ' × ' + v.b + ' = ' + v.a * v.b), txt: 'SON <b>' + v.a * v.b + '</b> COMBINACIONES: ' + v.a + ' × ' + v.b + '.' });
         return P;
       }
+      if (md === 'divide3') {
+        var qd = p.que || 'resto', CJ = function (n, k, e, sob) { var h = '', i3; for (i3 = 0; i3 < n; i3++) h += '<span style="display:inline-block;border:2px solid #1E9E86;border-radius:10px;padding:3px 5px;margin:3px;font-size:18px">' + Array(k + 1).join(e) + '</span>'; if (sob) h += '<span style="display:inline-block;border:2px dashed #E67E22;border-radius:10px;padding:3px 5px;margin:3px;font-size:18px">' + Array(sob + 1).join(e) + '</span>'; return '<div style="text-align:center;line-height:1.2">' + h + '</div>'; };
+        if (qd === 'grande') {
+          var a6 = v.b * v.c, dz = Math.floor(v.c / 10) * 10 * v.b, rs6 = a6 - dz;
+          P.push({ vis: p1Big(a6 + ' ÷ ' + v.b), txt: 'REPARTIMOS <b>' + a6 + '</b> ESTAMPAS ENTRE <b>' + v.b + '</b> CHICOS.' });
+          P.push({ vis: p1Big(a6 + ' = ' + dz + ' + ' + rs6), txt: 'LO PARTIMOS EN DOS PARTES FÁCILES DE REPARTIR: ' + dz + ' Y ' + rs6 + '.' });
+          P.push({ vis: p1Big(dz + ' ÷ ' + v.b + ' = ' + dz / v.b), txt: 'PRIMERO ' + dz + ': A CADA UNO LE TOCAN <b>' + dz / v.b + '</b>.' });
+          P.push({ vis: p1Big(rs6 + ' ÷ ' + v.b + ' = ' + rs6 / v.b), txt: 'DESPUÉS ' + rs6 + ': A CADA UNO, <b>' + rs6 / v.b + '</b> MÁS.' });
+          P.push({ vis: p1Big(dz / v.b + ' + ' + rs6 / v.b + ' = ' + v.c), txt: 'A CADA UNO LE TOCAN <b>' + v.c + '</b>.' });
+          return P;
+        }
+        if (qd === 'grupos') {
+          var tot = v.b * v.c;
+          P.push({ vis: p1Big(tot + ' 🥚'), txt: 'TENEMOS <b>' + tot + '</b> HUEVOS. LOS PONEMOS EN CAJAS DE <b>' + v.b + '</b>.' });
+          P.push({ vis: CJ(1, v.b, '🥚'), txt: 'UNA CAJA LLEVA ' + v.b + '.' });
+          P.push({ vis: CJ(v.c, v.b, '🥚'), txt: 'SEGUIMOS ARMANDO CAJAS HASTA QUE NO QUEDA NINGUNO.' });
+          P.push({ vis: CJ(v.c, v.b, '🥚') + p1Big(tot + ' ÷ ' + v.b + ' = ' + v.c), txt: 'SE ARMAN <b>' + v.c + '</b> CAJAS, PORQUE ' + v.c + ' × ' + v.b + ' = ' + tot + '.' });
+          return P;
+        }
+        var cc = Math.floor(v.a / v.b), rr6 = v.a % v.b;
+        if (qd === 'restando') {
+          var L6 = [], x6 = v.a; while (x6 >= v.b) { L6.push(x6 + ' − ' + v.b + ' = ' + (x6 - v.b)); x6 -= v.b; }
+          P.push({ vis: p1Big(v.a + ' ÷ ' + v.b), txt: '¿CUÁNTAS VECES ENTRA EL ' + v.b + ' EN EL ' + v.a + '? VAMOS <b>RESTANDO</b>.' });
+          P.push({ vis: '<div class="lb-p1-hist">' + L6.slice(0, Math.min(3, L6.length)).join('<br>') + '</div>', txt: 'LE SACAMOS ' + v.b + ' UNA VEZ, Y OTRA, Y OTRA…' });
+          P.push({ vis: '<div class="lb-p1-hist">' + L6.join('<br>') + '</div>', txt: 'SEGUIMOS HASTA QUE NO SE PUEDE SACAR MÁS: QUEDA <b>' + rr6 + '</b>.' });
+          P.push({ vis: p1Big(L6.length + ' VECES · QUEDA ' + rr6), txt: 'CONTAMOS LAS RESTAS: <b>' + L6.length + '</b>. ' + v.a + ' ÷ ' + v.b + ' = ' + cc + (rr6 ? ' Y SOBRAN ' + rr6 : '') + '.' });
+          return P;
+        }
+        if (qd === 'tabla') {
+          var TB6 = [], j6; for (j6 = 1; j6 <= Math.min(10, cc + 1); j6++) TB6.push(j6 + ' × ' + v.b + ' = ' + j6 * v.b);
+          P.push({ vis: p1Big(v.a + ' ÷ ' + v.b), txt: 'BUSCAMOS EN LA <b>TABLA DEL ' + v.b + '</b> EL NÚMERO MÁS CERCANO A ' + v.a + ' SIN PASARNOS.' });
+          P.push({ vis: '<div class="lb-p1-hist">' + TB6.join('<br>') + '</div>', txt: 'RECORREMOS LA TABLA DEL ' + v.b + '.' });
+          P.push({ vis: p1Big(cc + ' × ' + v.b + ' = ' + cc * v.b), txt: cc + ' × ' + v.b + ' = ' + cc * v.b + (cc < 10 ? ' Y ' + (cc + 1) + ' × ' + v.b + ' = ' + (cc + 1) * v.b + ' YA SE PASA' : '') + '.' });
+          P.push({ vis: p1Big(v.a + ' ÷ ' + v.b + ' = ' + cc + (rr6 ? ' · RESTO ' + rr6 : '')), txt: 'EL COCIENTE ES <b>' + cc + '</b>' + (rr6 ? ' Y SOBRAN ' + v.a + ' − ' + cc * v.b + ' = <b>' + rr6 + '</b>' : '') + '.' });
+          return P;
+        }
+        if (qd === 'comprobar') {
+          P.push({ vis: p1Big(v.a + ' ÷ ' + v.b + ' = ' + cc + (rr6 ? ' · RESTO ' + rr6 : '')), txt: 'HICIMOS LA DIVISIÓN. ¿ESTÁ BIEN?' });
+          P.push({ vis: p1Big(cc + ' × ' + v.b + ' = ' + cc * v.b), txt: 'MULTIPLICAMOS EL <b>COCIENTE</b> POR EL DIVISOR.' });
+          P.push({ vis: p1Big(cc * v.b + ' + ' + rr6 + ' = ' + v.a), txt: 'LE SUMAMOS EL <b>RESTO</b>.' });
+          P.push({ vis: p1Big('= ' + v.a + ' ✓'), txt: 'DA ' + v.a + ', EL NÚMERO DEL PRINCIPIO: <b>LA DIVISIÓN ESTÁ BIEN</b>.' });
+          return P;
+        }
+        if (qd === 'problema') {
+          var nec = cc + (rr6 ? 1 : 0);
+          P.push({ vis: '<div class="lb-p1-hist">VAN <b>' + v.a + '</b> CHICOS DE PASEO. EN CADA AUTO ENTRAN <b>' + v.b + '</b>.<br>¿CUÁNTOS AUTOS HACEN FALTA?</div>', txt: 'LEEMOS EL PROBLEMA.' });
+          P.push({ vis: p1Big(v.a + ' ÷ ' + v.b + ' = ' + cc + (rr6 ? ' · RESTO ' + rr6 : '')), txt: 'DIVIDIMOS: SE LLENAN <b>' + cc + '</b> AUTOS' + (rr6 ? ' Y QUEDAN ' + rr6 + ' CHICOS SIN LUGAR' : '') + '.' });
+          P.push({ vis: p1Big(rr6 ? cc + ' + 1 = ' + nec : 'NO SOBRA NADIE'), txt: rr6 ? 'LOS QUE SOBRAN NO SE PUEDEN QUEDAR: HACE FALTA <b>UN AUTO MÁS</b>.' : 'NO SOBRA NADIE: ALCANZAN JUSTO.' });
+          P.push({ vis: p1Big('RESPUESTA: ' + nec + ' AUTOS'), txt: 'RESPONDEMOS: HACEN FALTA <b>' + nec + '</b> AUTOS.' });
+          return P;
+        }
+        P.push({ vis: p1Big(v.a + ' 🍪 ÷ ' + v.b), txt: 'REPARTIMOS <b>' + v.a + '</b> GALLETAS ENTRE <b>' + v.b + '</b> AMIGOS, EN PARTES IGUALES.' });
+        P.push({ vis: CJ(v.b, 1, '🍪'), txt: 'DAMOS UNA A CADA UNO, Y OTRA, Y OTRA…' });
+        P.push({ vis: CJ(v.b, cc, '🍪', rr6), txt: 'A CADA UNO LE TOCAN <b>' + cc + '</b>.' + (rr6 ? ' QUEDAN ' + rr6 + ': NO ALCANZAN PARA DAR OTRA VUELTA.' : '') });
+        P.push({ vis: CJ(v.b, cc, '🍪', rr6) + p1Big(v.a + ' ÷ ' + v.b + ' = ' + cc + (rr6 ? ' · SOBRAN ' + rr6 : '')), txt: rr6 ? 'LO QUE SOBRA SE LLAMA <b>RESTO</b>: ' + rr6 + '.' : 'NO SOBRA NADA: EL REPARTO ES EXACTO.' });
+        return P;
+      }
       if (md === 'sumar4') {
         var qs = p.que || 'falta1000', PT = function (n) { return [Math.floor(n / 1000) * 1000, Math.floor(n % 1000 / 100) * 100, Math.floor(n % 100 / 10) * 10, n % 10]; };
         if (qs === 'redondos') {
@@ -3292,6 +3350,17 @@
         else if (qcx === 'problema') { a = R(2, 6); b = R(2, 4); var ctx = pick([['SABORES DE HELADO', 'TIPOS DE CONO', 'HELADOS DISTINTOS'], ['TIPOS DE PAN', 'RELLENOS', 'SÁNDWICHES DISTINTOS'], ['COLORES DE GORRA', 'COLORES DE BUFANDA', 'CONJUNTOS DISTINTOS']]); cons = 'HAY <b>' + a + '</b> ' + ctx[0] + ' Y <b>' + b + '</b> ' + ctx[1] + '. ¿CUÁNTOS ' + ctx[2] + ' SE PUEDEN ARMAR?'; h = 'CADA UNO DEL PRIMER GRUPO VA CON CADA UNO DEL SEGUNDO.'; }
         else { a = R(2, 6); b = R(2, 8); cons = 'HAY <b>' + a + '</b> FILAS CON <b>' + b + '</b> SILLAS EN CADA UNA. ¿CUÁNTAS SILLAS HAY?'; h = 'FILAS POR COLUMNAS.'; }
         return { cons: cons, campos: [{ v: a * b }], ayuda: h, bien: '¡MUY BIEN! SON ' + a * b + '.' }; }); }
+    if (md === 'divide3') { var qe = p.que || 'resto';
+      if (qe === 'comprobar') return p1Elegir(el, api, function () { var b = R(2, 9), c = R(2, 9), r = R(0, b - 1), a = b * c + r, bien = Math.random() < 0.5, cm = bien ? c : c + pick([1, -1]), rm = bien ? r : r;
+        if (cm < 1) cm = c + 1; if (!bien && a - b * cm < 0 || !bien && a - b * cm >= b) rm = r + pick([1, 2]); var ok = b * cm + rm === a && rm < b;
+        return { cons: 'DICEN QUE <b>' + a + ' ÷ ' + b + ' = ' + cm + '</b> Y SOBRAN <b>' + rm + '</b>. ¿ESTÁ BIEN?', ops: ['SÍ', 'NO'], ok: ok ? 'SÍ' : 'NO', ayuda: 'COMPROBÁ: ' + cm + ' × ' + b + ' + ' + rm + ' TIENE QUE DAR ' + a + '.', bien: '¡MUY BIEN! ' + c + ' × ' + b + ' + ' + r + ' = ' + a + '.' }; });
+      return respuesta(el, api, function () { var a, b, c, r;
+        if (qe === 'grande') { b = R(2, 5); c = R(11, 24); a = b * c; return { cons: 'REPARTIMOS <b>' + a + '</b> ENTRE <b>' + b + '</b>. ¿CUÁNTO LE TOCA A CADA UNO?', campos: [{ v: c }], ayuda: 'PARTÍ EL ' + a + ' EN ' + Math.floor(c / 10) * 10 * b + ' Y ' + (a - Math.floor(c / 10) * 10 * b) + '.', bien: '¡MUY BIEN! ' + c + ' A CADA UNO.' }; }
+        if (qe === 'grupos') { b = R(2, 6); c = R(2, 9); a = b * c; return { cons: 'HAY <b>' + a + '</b> HUEVOS. ¿CUÁNTAS CAJAS DE <b>' + b + '</b> SE ARMAN?', campos: [{ v: c }], ayuda: '¿QUÉ NÚMERO POR ' + b + ' DA ' + a + '?', bien: '¡MUY BIEN! ' + c + ' CAJAS.' }; }
+        b = R(2, 6); a = R(b * 2 + 1, b * 9 + b - 1); c = Math.floor(a / b); r = a % b;
+        if (qe === 'restando') return { cons: '¿CUÁNTAS VECES SE PUEDE RESTAR <b>' + b + '</b> AL <b>' + a + '</b>? ¿CUÁNTO QUEDA AL FINAL?', campos: [{ lab: 'VECES', v: c }, { lab: 'QUEDA', v: r }], ayuda: 'RESTÁ ' + b + ' HASTA QUE NO SE PUEDA MÁS.', bien: '¡MUY BIEN!' };
+        if (qe === 'problema') { var nec = c + (r ? 1 : 0); return { cons: 'VAN <b>' + a + '</b> CHICOS Y EN CADA AUTO ENTRAN <b>' + b + '</b>. ¿CUÁNTOS AUTOS HACEN FALTA?', campos: [{ v: nec }], ayuda: r ? 'SI SOBRAN CHICOS, HACE FALTA UN AUTO MÁS.' : 'DIVIDÍ ' + a + ' ENTRE ' + b + '.', bien: '¡MUY BIEN! ' + nec + ' AUTOS.' }; }
+        return { cons: (qe === 'tabla' ? '¿CUÁNTO ES <b>' + a + ' ÷ ' + b + '</b>?' : 'REPARTIMOS <b>' + a + '</b> GALLETAS ENTRE <b>' + b + '</b>. ¿CUÁNTAS A CADA UNO? ¿CUÁNTAS SOBRAN?'), campos: [{ lab: qe === 'tabla' ? 'COCIENTE' : 'A CADA UNO', v: c }, { lab: qe === 'tabla' ? 'RESTO' : 'SOBRAN', v: r }], ayuda: 'BUSCÁ EN LA TABLA DEL ' + b + ' EL MÁS CERCANO A ' + a + ' SIN PASARTE.', bien: '¡MUY BIEN! ' + c + ' Y SOBRAN ' + r + '.' }; }); }
     if (md === 'sumar4') { var qx = p.que || 'falta1000';
       if (qx === 'estimar') return p1Elegir(el, api, function () { var a = R(1000, 6499), b = R(1000, 2499), r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; while (Math.abs(a - Math.round(a / 1000) * 1000) > 350 || Math.abs(b - Math.round(b / 1000) * 1000) > 350) { a = R(1000, 6499); b = R(1000, 2499); r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; }
         return { cons: '<b>' + fmt(a) + ' + ' + fmt(b) + '</b> DA MÁS O MENOS…', ops: mezclar([fmt(r), fmt(r + 2000), fmt(Math.max(1000, r - 2000))]), ok: fmt(r), ayuda: 'REDONDEÁ CADA NÚMERO AL MIL MÁS CERCANO.', bien: '¡MUY BIEN! LA CUENTA EXACTA DA ' + fmt(a + b) + '.' }; });

@@ -1,0 +1,135 @@
+{
+ "slug": "medio-mat3-m15-n4",
+ "step_id": "0f315c2f-815e-49a8-abfb-d5480fa31ac2",
+ "materia": "Matemática 3",
+ "titulo": "Comprobar con una multiplicación",
+ "sub": "Matemática 3 · Misión 15 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Bruno",
+    "emoji": "🧑‍🔧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Dividí 31 ÷ 5 = 6 y sobra 1"
+    },
+    {
+     "yo": true,
+     "txt": "¿Cómo sabés que está bien?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Con una multiplicación!"
+    }
+   ],
+   "titulo": "COMPROBAR",
+   "sub": "multiplicando",
+   "voz": [
+    "Bruno escribe: 31 entre 5 es 6 y sobra 1.",
+    "¿Cómo sabemos que está bien?",
+    "¡Con una *multiplicación*!",
+    "Hoy: *comprobar con una multiplicación*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "LA PRUEBA",
+   "pasos": [
+    {
+     "txt": "6 × 5 = 30"
+    },
+    {
+     "txt": "30 + 1",
+     "nota": "más el resto"
+    },
+    {
+     "txt": "= 31 ✓"
+    }
+   ],
+   "voz": [
+    "Multiplicamos el cociente por el divisor: 6 por 5, 30.",
+    "Le sumamos el resto: 30 más 1.",
+    "¡Da *31*, el número del principio!"
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "BIEN",
+    "texto": "4 × 7 + 1 = 29 ✓",
+    "emoji": "✅"
+   },
+   "b": {
+    "cab": "MAL",
+    "texto": "5 × 7 + 1 = 36 ✗",
+    "emoji": "❌"
+   },
+   "signo": "y",
+   "voz": [
+    "Con 4, sobra 1: da *29*. ¡Bien!",
+    "Con 5, sobra 1: da 36. ¡*Mal*!",
+    "La prueba nos *avisa* del error."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Para comprobar 23 ÷ 4 = 5 resto 3…",
+   "opciones": [
+    "5 × 4 + 3",
+    "5 + 4 + 3",
+    "23 − 5"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cómo comprobamos 23 entre 4?",
+    "Cociente por divisor, más el resto…",
+    "¡5 por 4 más 3: *23*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Olvidar sumar el resto en la prueba",
+     "bien": "Cociente × divisor + resto"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En la prueba, ¡no te olvides de *sumar el resto*!"
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "MULTIPLICAR",
+     "cociente × divisor"
+    ],
+    [
+     "SUMAR",
+     "el resto"
+    ],
+    [
+     "COMPARAR",
+     "con el dividendo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Multiplicamos* el cociente por el divisor.",
+    "*Sumamos* el resto.",
+    "Y *comparamos* con el número del principio.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

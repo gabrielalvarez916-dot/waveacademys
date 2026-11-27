@@ -1,0 +1,125 @@
+{
+ "slug": "medio-mat3-m15-n1",
+ "step_id": "843261e0-334c-4ca3-9976-80806eb31f8c",
+ "materia": "Matemática 3",
+ "titulo": "Dividir restando",
+ "sub": "Matemática 3 · Misión 15 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🧸",
+   "final": "🤔",
+   "titulo": "DIVIDIR",
+   "sub": "restando",
+   "voz": [
+    "Bruno arma juguetes con *20 ruedas*.",
+    "Cada auto lleva 4. ¿Cuántos autos salen?",
+    "Hoy: *dividir restando*."
+   ]
+  },
+  {
+   "t": "saltos",
+   "titulo": "SACAMOS DE A 4",
+   "min": 0,
+   "max": 20,
+   "cada": 4,
+   "inicio": 20,
+   "saltos": [
+    {
+     "a": 16,
+     "txt": "− 4"
+    },
+    {
+     "a": 12,
+     "txt": "− 4"
+    },
+    {
+     "a": 8,
+     "txt": "− 4"
+    },
+    {
+     "a": 4,
+     "txt": "− 4"
+    },
+    {
+     "a": 0,
+     "txt": "− 4"
+    }
+   ],
+   "voz": [
+    "Empezamos con 20 ruedas.",
+    "Sacamos 4: quedan *16*.",
+    "Sacamos 4: quedan *12*.",
+    "Sacamos 4: quedan *8*.",
+    "Sacamos 4: quedan *4*.",
+    "¡Sacamos 4: quedan *0*!"
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "5",
+   "antes": "20 − 4 − 4 − 4 − 4 − 4",
+   "despues": "veces",
+   "texto": "20 ÷ 4 = 5",
+   "emoji": "🚗",
+   "voz": [
+    "Contamos cuántas veces sacamos 4: *5* veces.",
+    "¡20 entre 4 es *5* autos!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "Para dividir 15 ÷ 5 restamos 5 tres veces",
+   "emoji": "🤔",
+   "verdadero": true,
+   "explicacion": "15, 10, 5, 0",
+   "voz": [
+    "¿Verdadero o falso? 15 entre 5: restamos 5 tres veces.",
+    "15, 10, 5, 0…",
+    "¡*Verdadero*! 15 entre 5 es 3."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Contar cuánto queda en vez de las veces",
+     "bien": "El resultado es cuántas veces restamos"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El resultado es *cuántas veces* restamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RESTAR",
+     "siempre lo mismo"
+    ],
+    [
+     "CONTAR",
+     "las veces"
+    ],
+    [
+     "LO QUE QUEDA",
+     "el resto"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Restamos* siempre la misma cantidad.",
+    "*Contamos* las veces que restamos.",
+    "Lo que queda al final es *el resto*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "slug": "medio-mat3-m15-n3",
+ "step_id": "8ba3b8db-693a-4b09-b8c9-11ed59b7bd24",
+ "materia": "Matemática 3",
+ "titulo": "El resto",
+ "sub": "Matemática 3 · Misión 15 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Bruno",
+    "emoji": "🧑‍🔧"
+   },
+   "lugar": "🧸",
+   "lineas": [
+    "Bruno tiene 31 tornillos.",
+    "Los guarda en cajas de 5.",
+    "¡Quedan tornillos sueltos!"
+   ],
+   "titulo": "EL",
+   "sub": "resto",
+   "voz": [
+    "Bruno tiene *31 tornillos*.",
+    "Los guarda en cajas de *5*.",
+    "¡Quedan tornillos sueltos!",
+    "Hoy: *el resto*."
+   ]
+  },
+  {
+   "t": "grupos",
+   "emoji": "🔩",
+   "grupos": 6,
+   "cada": 5,
+   "texto": "31 ÷ 5 = 6 · resto 1",
+   "titulo": "CAJAS DE 5",
+   "voz": [
+    "Llenamos cajas de 5.",
+    "Contamos: 5, 10, 15, 20, 25, 30.",
+    "¡Salen *6* cajas y queda *1* tornillo suelto!"
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "LAS PARTES",
+   "items": [
+    {
+     "cab": "DIVIDENDO",
+     "txt": "31"
+    },
+    {
+     "cab": "COCIENTE",
+     "txt": "6"
+    },
+    {
+     "cab": "RESTO",
+     "txt": "1"
+    }
+   ],
+   "voz": [
+    "La división tiene partes con nombre.",
+    "Lo que repartimos: *dividendo*, 31.",
+    "Cuánto sale: *cociente*, 6.",
+    "Lo que sobra: *resto*, 1."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Dividimos por 5. ¿El resto puede ser 7?",
+   "a": {
+    "txt": "No",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "Sí",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡No! Con 7 se llena otra caja",
+   "voz": [
+    "Dividimos por 5. ¿El resto puede ser 7?",
+    "Con 7 tornillos se llena otra caja…",
+    "¡*No*! El resto siempre es menor que 5."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El resto es más grande que el divisor",
+     "bien": "El resto siempre es más chico"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El resto siempre es *más chico* que el divisor."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DIVIDENDO",
+     "lo que repartimos"
+    ],
+    [
+     "COCIENTE",
+     "cuánto sale"
+    ],
+    [
+     "RESTO",
+     "lo que sobra"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El *dividendo* es lo que repartimos.",
+    "El *cociente* es cuánto sale.",
+    "El *resto* es lo que sobra, siempre más chico.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
