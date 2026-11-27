@@ -3,228 +3,215 @@
  "step_id": "9b6ebe52-340e-4dd4-8b15-57295f27e190",
  "materia": "Lengua y Literatura I",
  "titulo": "Pronombres y conjunciones",
- "sub": "Lengua y Literatura I · Misión 12 · Nivel 4",
+ "sub": "Lengua y Literatura I · Misión 3 · Nivel 4",
  "escenas": [
   {
    "t": "antesdespues",
    "antes": {
-    "cab": "REPETIDO",
-    "emoji": "🔁",
-    "texto": "Lucas compró un libro. Lucas leyó el libro."
+    "cab": "Sin pronombres",
+    "emoji": "😵",
+    "texto": "Lucas compró un libro. Lucas leyó el libro y Lucas prestó el libro."
    },
    "despues": {
-    "cab": "MEJORADO",
-    "emoji": "✨",
-    "texto": "Lucas compró un libro y lo leyó."
+    "cab": "Con pronombres",
+    "emoji": "😌",
+    "texto": "Lucas compró un libro. Lo leyó y después lo prestó."
    },
-   "titulo": "PRONOMBRES Y CONJUNCIONES",
-   "sub": "evitar repeticiones y unir ideas",
    "voz": [
-    "Repetido: Lucas compró un libro. Lucas leyó el libro. Mejorado: Lucas compró un libro y lo leyó.",
-    "Hoy: *pronombres* y *conjunciones*."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "PRONOMBRE",
-    "texto": "Reemplaza a un sustantivo",
-    "emoji": "👤"
-   },
-   "b": {
-    "cab": "CONJUNCIÓN",
-    "texto": "Une palabras u oraciones",
-    "emoji": "🔗"
-   },
-   "signo": "vs",
-   "voz": [
-    "Dos clases de palabras.",
-    "El *pronombre* reemplaza a un sustantivo para no repetirlo.",
-    "La *conjunción* une palabras u oraciones."
-   ]
-  },
-  {
-   "t": "tabla",
-   "titulo": "CLASES DE PRONOMBRES",
-   "columnas": [
-    "Clase",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Personales",
-     "yo, ella"
-    ],
-    [
-     "Posesivos",
-     "mío, suyo"
-    ],
-    [
-     "Demostrativos",
-     "este, ese"
-    ]
-   ],
-   "voz": [
-    "Tres clases.",
-    "*Personales*: yo, ella.",
-    "*Posesivos*: mío, suyo.",
-    "*Demostrativos*: este, ese."
-   ]
-  },
-  {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "SUMA",
-     "emoji": "➕"
-    },
-    {
-     "cab": "OPOSICIÓN",
-     "emoji": "↔️"
-    },
-    {
-     "cab": "CAUSA",
-     "emoji": "❓"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "y",
-     "caja": 0
-    },
-    {
-     "txt": "pero",
-     "caja": 1
-    },
-    {
-     "txt": "porque",
-     "caja": 2
-    }
-   ],
-   "voz": [
-    "¿Qué idea une?",
-    "*Y*: suma.",
-    "*Pero*: oposición.",
-    "*Porque*: causa."
+    "Leé este texto: Lucas compró un libro, Lucas leyó el libro y Lucas prestó el libro. Cansa, ¿no?",
+    "Ahora: Lucas compró un libro, lo leyó y después lo prestó. Los *pronombres* evitan repetir, y las *conjunciones* unen las ideas."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Pronombre",
-   "texto": "Palabra que reemplaza a un sustantivo para no repetirlo.",
-   "emoji": "📘",
+   "texto": "Palabra que ocupa el lugar de un sustantivo o señala a alguien sin nombrarlo.",
+   "emoji": "👉",
    "voz": [
-    "Veamos *Pronombre*.",
-    "Palabra que reemplaza a un sustantivo para no repetirlo."
+    "El *pronombre* ocupa el lugar de un sustantivo que ya conocemos, o señala a alguien sin nombrarlo.",
+    "En «lo leyó», *lo* reemplaza a «el libro»; y en «ella llegó», *ella* señala a una persona."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES CLASES",
+   "columnas": [
+    "Clase",
+    "Qué hace",
+    "Ejemplos"
+   ],
+   "filas": [
+    [
+     "Personales",
+     "nombran a las personas",
+     "yo, vos, ella, nosotros, lo, me"
+    ],
+    [
+     "Posesivos",
+     "indican de quién es",
+     "mío, tuyo, suyo"
+    ],
+    [
+     "Demostrativos",
+     "señalan por distancia",
+     "este, ese, aquel"
+    ]
+   ],
+   "voz": [
+    "Veamos tres clases de pronombres.",
+    "Los *personales* nombran a las personas gramaticales: yo, vos, ella, y también formas como lo o me.",
+    "Los *posesivos* indican de quién es algo: el mío, el tuyo.",
+    "Los *demostrativos* señalan según la distancia: este, cerca; ese, a media distancia; aquel, lejos."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "Pronombre",
+    "emoji": "🧍",
+    "datos": [
+     "va solo",
+     "«Quiero este»"
+    ]
+   },
+   "b": {
+    "txt": "Adjetivo",
+    "emoji": "🤝",
+    "datos": [
+     "acompaña a un sustantivo",
+     "«Quiero este libro»"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Depende de si va solo o acompañado",
+   "voz": [
+    "Ojo con una trampa: la misma palabra puede ser pronombre o adjetivo.",
+    "En «quiero *este*», va sola y reemplaza al sustantivo: es *pronombre*.",
+    "En «quiero este *libro*», acompaña al sustantivo: es *adjetivo*.",
+    "La clave es mirar si va sola o acompañada."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Conjunción",
-   "texto": "Palabra invariable que une palabras u oraciones.",
-   "emoji": "📘",
+   "texto": "Palabra invariable que une palabras u oraciones y muestra qué relación hay entre ellas.",
+   "emoji": "🧷",
    "voz": [
-    "Veamos *Conjunción*.",
-    "Palabra invariable que une palabras u oraciones."
+    "La *conjunción* es una palabra invariable que une palabras u oraciones.",
+    "Igual que la preposición, no cambia; pero no tiene término: une elementos del mismo nivel y muestra su relación."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "REEMPLAZAR",
+   "t": "bloques",
+   "titulo": "CONJUNCIONES Y RELACIONES",
    "items": [
     {
-     "txt": "Reemplazar el segundo Lucas por él.",
-     "emoji": "1️⃣"
+     "cab": "y, ni",
+     "txt": "suman: «leo y escribo»"
     },
     {
-     "txt": "Reemplazar el libro por lo.",
-     "emoji": "2️⃣"
+     "cab": "o",
+     "txt": "dan opciones: «té o café»"
     },
     {
-     "txt": "Lucas compró un libro y lo leyó enseguida.",
-     "emoji": "3️⃣"
+     "cab": "pero, aunque",
+     "txt": "oponen: «quiero, pero no puedo»"
+    },
+    {
+     "cab": "porque",
+     "txt": "dan la causa: «me quedé porque llovía»"
     }
    ],
    "voz": [
-    "Resolvamos un caso: Evitá repetir: «Lucas compró un libro. Lucas leyó el libro enseguida».",
-    "Reemplazar el segundo Lucas por él.",
-    "Reemplazar el libro por lo.",
-    "Lucas compró un libro y lo leyó enseguida."
+    "Cada conjunción muestra una relación.",
+    "*Y* y *ni* suman: leo y escribo.",
+    "*O* presenta opciones: té o café.",
+    "*Pero* y *aunque* oponen: quiero, pero no puedo.",
+    "*Porque* da la causa: me quedé porque llovía."
    ]
   },
   {
-   "t": "consejo",
-   "texto": "Si repetís una palabra, probá con un pronombre.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: Si repetís una palabra, probá con un pronombre."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "¿Qué palabra reemplaza a un sustantivo?",
+   "t": "completa",
+   "antes": "Compré pan",
+   "despues": "higos para el desayuno.",
    "opciones": [
-    "Pronombre",
-    "Conjunción",
-    "Adverbio"
+    "e",
+    "y"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿qué palabra reemplaza a un sustantivo?",
-    "¿Pronombre, conjunción o adverbio?",
-    "El *pronombre*."
+    "Una regla especial: completá «compré pan… higos».",
+    "La palabra que sigue empieza con el sonido *i*: «higos».",
+    "Entonces la y cambia por *e*: pan e higos, para que no se junten dos sonidos iguales."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En «Me lo dijo», «me» y «lo» son pronombres personales.",
+   "emoji": "💬",
+   "verdadero": true,
+   "explicacion": "Son formas de los pronombres personales que van pegadas al verbo.",
+   "voz": [
+    "Verdadero o falso: en «me lo dijo», me y lo son pronombres personales.",
+    "Pensá a quién se refieren.",
+    "Verdadero: me y lo son formas de los pronombres personales que van junto al verbo."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Repetir el sustantivo siempre",
-     "bien": "Usar pronombres"
+     "mal": "Usar un pronombre sin saber a quién se refiere",
+     "bien": "«Juan y Pedro vinieron; él trajo…»: ¿quién? Aclaralo"
     },
     {
-     "mal": "Confundir pero con porque",
-     "bien": "Oposición y causa"
+     "mal": "«Madre y hija»",
+     "bien": "«Madre e hija»: antes del sonido i, la y cambia por e"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "*Repetir* el sustantivo.",
-    "Y confundir *pero* con *porque*."
+    "Dos errores para evitar.",
+    "Usar un pronombre ambiguo: si vinieron Juan y Pedro, «él» no dice cuál. Hay que aclararlo.",
+    "Y olvidar el cambio de la y: «madre y hija» se escribe *madre e hija*, porque hija empieza con el sonido i."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *pronombre* reemplaza.",
-    "Hay *personales*, *posesivos* y *demostrativos*.",
-    "La *conjunción* une.",
-    "Evitá *repeticiones*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "PRONOMBRE",
-     "reemplaza"
+     "Pronombre",
+     "reemplaza o señala sin nombrar"
     ],
     [
-     "CLASES",
-     "personales, posesivos"
+     "Personales, posesivos, demostrativos",
+     "personas, pertenencia, distancia"
     ],
     [
-     "CONJUNCIÓN",
-     "une"
+     "Pronombre o adjetivo",
+     "solo o acompañando"
     ],
     [
-     "MEJORA",
-     "menos repetición"
+     "Conjunción",
+     "une palabras u oraciones"
+    ],
+    [
+     "y → e",
+     "antes del sonido i"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 4"
+   },
+   "voz": [
+    "Repasemos.",
+    "Palabras que evitan repetir y palabras que unen.",
+    "El pronombre reemplaza o señala.",
+    "Personales, posesivos y demostrativos.",
+    "Si va solo es pronombre; si acompaña, adjetivo.",
+    "La conjunción une palabras u oraciones.",
+    "Y la y se vuelve e antes del sonido i. ¡A practicar!"
+   ]
   }
  ]
 }

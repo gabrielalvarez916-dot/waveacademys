@@ -3,29 +3,45 @@
  "step_id": "ccce7fff-1b21-4add-971f-683902c6906b",
  "materia": "Lengua y Literatura I",
  "titulo": "Adverbios y preposiciones",
- "sub": "Lengua y Literatura I · Misión 12 · Nivel 3",
+ "sub": "Lengua y Literatura I · Misión 3 · Nivel 3",
  "escenas": [
   {
-   "t": "gancho",
-   "grande": "Invariables",
-   "emoji": "🔒",
-   "final": "no cambian de género ni de número",
+   "t": "chat",
+   "contacto": {
+    "nombre": "Mati",
+    "emoji": "🧑"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Llego"
+    },
+    {
+     "yo": true,
+     "txt": "¿Cuándo? ¿Dónde? ¿Cómo?"
+    },
+    {
+     "yo": false,
+     "txt": "Llego tarde, acá cerca, caminando despacio 😅"
+    }
+   ],
    "titulo": "ADVERBIOS Y PREPOSICIONES",
-   "sub": "palabras que no cambian",
+   "sub": "las palabras que no cambian",
    "voz": [
-    "Hay palabras que nunca cambian.",
-    "No tienen género ni número.",
-    "Hoy: *adverbios* y *preposiciones*."
+    "Mati escribe solo «llego».",
+    "Vos le preguntás cuándo, dónde y cómo.",
+    "Y responde: tarde, acá cerca, despacio.",
+    "Esas palabras que agregan las circunstancias son los *adverbios*. Hoy, también, las *preposiciones*."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Adverbio",
-   "texto": "Modifica a un verbo, un adjetivo u otro adverbio",
-   "emoji": "🧭",
+   "texto": "Palabra invariable que agrega una circunstancia: lugar, tiempo, modo o cantidad.",
+   "emoji": "📍",
    "voz": [
-    "El *adverbio* modifica al verbo, a un adjetivo o a otro adverbio.",
-    "Es *invariable*."
+    "El *adverbio* agrega una circunstancia a lo que se dice: dónde, cuándo, cómo o cuánto.",
+    "Y es *invariable*: no cambia de género ni de número. Nunca existe «tardes» ni «despacia»."
    ]
   },
   {
@@ -33,129 +49,190 @@
    "titulo": "CLASES DE ADVERBIOS",
    "celdas": [
     {
-     "cab": "LUGAR",
-     "txt": "aquí, cerca"
+     "cab": "Lugar",
+     "txt": "acá, lejos, arriba"
     },
     {
-     "cab": "TIEMPO",
-     "txt": "hoy, nunca"
+     "cab": "Tiempo",
+     "txt": "hoy, tarde, siempre"
     },
     {
-     "cab": "MODO",
-     "txt": "bien, rápido"
+     "cab": "Modo",
+     "txt": "bien, despacio, rápidamente"
     },
     {
-     "cab": "CANTIDAD",
-     "txt": "muy, poco"
+     "cab": "Cantidad",
+     "txt": "mucho, muy, bastante"
     }
    ],
    "voz": [
-    "Cuatro clases.",
-    "*Lugar*: aquí, cerca.",
-    "*Tiempo*: hoy, nunca.",
-    "*Modo*: bien, rápido.",
-    "*Cantidad*: muy, poco."
+    "Se agrupan según la pregunta que responden.",
+    "De *lugar*, responden dónde: acá, lejos, arriba.",
+    "De *tiempo*, cuándo: hoy, tarde, siempre.",
+    "De *modo*, cómo: bien, despacio, y muchos terminados en *mente*.",
+    "De *cantidad*, cuánto: mucho, muy, bastante."
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
+   "t": "flujo",
+   "titulo": "¿A QUIÉN MODIFICA?",
    "items": [
-    {
-     "cab": "LUGAR",
-     "txt": "allá"
-    },
-    {
-     "cab": "TIEMPO",
-     "txt": "ayer"
-    },
-    {
-     "cab": "CANTIDAD",
-     "txt": "mucho"
-    }
+    "a un verbo: corre rápido",
+    "a un adjetivo: muy alto",
+    "a otro adverbio: bastante lejos"
    ],
    "voz": [
-    "¿Qué clase?",
-    "*Allá*: lugar.",
-    "*Ayer*: tiempo.",
-    "*Mucho*: cantidad."
+    "El adverbio puede modificar a un *verbo*: corre rápido.",
+    "A un *adjetivo*: muy alto.",
+    "O a otro *adverbio*: bastante lejos. A un sustantivo, nunca: para eso está el adjetivo."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "¿Está bien decir «Las chicas llegaron medias cansadas»?",
+   "a": {
+    "txt": "Sí, concuerda",
+    "emoji": "👍"
+   },
+   "b": {
+    "txt": "No: va «medio»",
+    "emoji": "✋"
+   },
+   "correcta": "b",
+   "resultado": "«Medio» es adverbio: modifica al adjetivo y no cambia.",
+   "voz": [
+    "¿Qué creés? ¿Está bien decir «las chicas llegaron medias cansadas»?",
+    "Pensá qué modifica «medio».",
+    "No: «medio» es un adverbio que modifica al adjetivo cansadas, y los adverbios no cambian. Va *medio cansadas*."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Preposición",
-   "texto": "Une una palabra con su complemento",
+   "texto": "Palabra invariable que une una palabra con otra, llamada término, y muestra la relación entre ellas.",
    "emoji": "🔗",
    "voz": [
-    "La *preposición* une una palabra con su complemento.",
-    "Como *a*, *con*, *de*, *en*, *para*, *por*, *sin* y *sobre*."
+    "La *preposición* también es invariable, pero hace otro trabajo: *une* una palabra con otra, que se llama *término*.",
+    "Y muestra qué relación hay: no es lo mismo café *con* leche que café *sin* leche."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "«Sin» es…",
-   "opciones": [
-    "Una preposición",
-    "Un adverbio",
-    "Un verbo"
+   "t": "pasos",
+   "titulo": "LAS PREPOSICIONES",
+   "items": [
+    "a, ante, bajo, con, contra",
+    "de, desde, durante, en, entre",
+    "hacia, hasta, mediante, para, por",
+    "según, sin, sobre, tras"
    ],
-   "correcta": 0,
    "voz": [
-    "Te toca: «sin» es…",
-    "¿Una preposición, un adverbio o un verbo?",
-    "*Una preposición*."
+    "Son una lista cerrada; conviene conocerla.",
+    "A, ante, bajo, con, contra.",
+    "De, desde, durante, en, entre.",
+    "Hacia, hasta, mediante, para, por.",
+    "Según, sin, sobre y tras."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "Dejé la mochila sobre la silla de mi hermano.",
+   "marcas": [
+    {
+     "desde": 3,
+     "hasta": 5,
+     "etiqueta": "PREP. + TÉRMINO"
+    },
+    {
+     "desde": 6,
+     "hasta": 8,
+     "etiqueta": "PREP. + TÉRMINO"
+    }
+   ],
+   "voz": [
+    "Busquemos preposiciones en una oración.",
+    "*Sobre la silla*: la preposición sobre y su término, la silla. Indica lugar.",
+    "*De mi hermano*: la preposición de y su término, mi hermano. Indica pertenencia."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿QUÉ RELACIÓN?",
+   "pares": [
+    [
+     "con leche",
+     "compañía"
+    ],
+    [
+     "hacia el río",
+     "dirección"
+    ],
+    [
+     "de madera",
+     "material"
+    ],
+    [
+     "sin miedo",
+     "falta"
+    ]
+   ],
+   "voz": [
+    "Cada preposición muestra una relación.",
+    "*Con* leche: compañía.",
+    "*Hacia* el río: dirección.",
+    "*De* madera: el material.",
+    "*Sin* miedo: la falta de algo."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Poner plural a un adverbio",
-     "bien": "Son invariables"
+     "mal": "«Delante mío»",
+     "bien": "«Delante de mí»"
     },
     {
-     "mal": "Confundir adverbio con adjetivo",
-     "bien": "El adverbio no concuerda"
+     "mal": "«En base a»",
+     "bien": "«Con base en» o «según»"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Poner *plural* a un adverbio.",
-    "Y confundirlo con un *adjetivo*."
+    "Dos errores muy comunes.",
+    "«Delante mío» está mal: lo correcto es *delante de mí*.",
+    "Y «en base a» se reemplaza por *según* o *con base en*."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *adverbio* modifica al verbo.",
-    "Hay de *lugar*, *tiempo*, *modo* y *cantidad*.",
-    "La *preposición* une.",
-    "Ambos son *invariables*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "ADVERBIO",
-     "modifica"
+     "Adverbio",
+     "circunstancia: lugar, tiempo, modo, cantidad"
     ],
     [
-     "CLASES",
-     "lugar, tiempo, modo"
+     "Invariable",
+     "no cambia de género ni número"
     ],
     [
-     "PREPOSICIÓN",
-     "une"
+     "Modifica",
+     "verbo, adjetivo u otro adverbio"
     ],
     [
-     "INVARIABLES",
-     "no cambian"
+     "Preposición",
+     "une una palabra con su término"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "Dos clases de palabras que nunca cambian.",
+    "El adverbio agrega una circunstancia.",
+    "Es invariable.",
+    "Modifica a verbos, adjetivos y otros adverbios.",
+    "Y la preposición une una palabra con su término. ¡A practicar!"
+   ]
   }
  ]
 }

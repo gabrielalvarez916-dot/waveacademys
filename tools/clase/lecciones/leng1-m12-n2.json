@@ -2,206 +2,222 @@
  "slug": "leng1-m12-n2",
  "step_id": "bd232aa5-3e5a-415b-a1dd-e2a146736cab",
  "materia": "Lengua y Literatura I",
- "titulo": "El verbo y sus modos",
- "sub": "Lengua y Literatura I · Misión 12 · Nivel 2",
+ "titulo": "El verbo y sus accidentes",
+ "sub": "Lengua y Literatura I · Misión 3 · Nivel 2",
  "escenas": [
   {
    "t": "reto",
-   "texto": "¿En qué modo está «Cerrá la puerta»?",
+   "texto": "«Ayer jugamos». ¿Quiénes jugaron y cuándo? Sin más datos.",
    "segundos": 6,
-   "respuesta": "Imperativo",
-   "emoji": "🚪",
-   "titulo": "EL VERBO Y SUS MODOS",
-   "sub": "hecho, deseo u orden",
+   "respuesta": "Nosotros, en el pasado: lo dice el verbo",
+   "emoji": "⚽",
+   "titulo": "EL VERBO",
+   "sub": "la palabra que más informa",
    "voz": [
-    "Desafío: ¿en qué modo está cerrá la puerta? Seis segundos.",
-    "Imperativo.",
-    "Hoy: *el verbo y sus modos*."
+    "Desafío: la oración dice solo «ayer jugamos». ¿Quiénes jugaron y cuándo?",
+    "Seis segundos.",
+    "Nosotros, y en el pasado. Todo eso lo dice una sola palabra: *jugamos*. Hoy vemos por qué el verbo informa tanto."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Verbo",
-   "texto": "Persona, número, tiempo y modo",
-   "emoji": "🏃",
+   "texto": "Palabra que expresa acciones, estados o procesos y cambia su forma según quién, cuántos y cuándo.",
+   "emoji": "⚙️",
    "voz": [
-    "El *verbo* expresa acciones, estados o procesos.",
-    "Varía en *persona*, *número*, *tiempo* y *modo*."
+    "El *verbo* expresa acciones, como correr; estados, como estar cansado; o procesos, como crecer.",
+    "Y es la palabra que más cambia de forma: canto, cantamos, cantaron. Cada cambio da información."
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "TRES MODOS",
-   "items": [
-    {
-     "cab": "INDICATIVO",
-     "txt": "Hechos reales"
-    },
-    {
-     "cab": "SUBJUNTIVO",
-     "txt": "Deseos y dudas"
-    },
-    {
-     "cab": "IMPERATIVO",
-     "txt": "Órdenes"
-    }
-   ],
+   "t": "comparar",
+   "a": {
+    "cab": "Raíz",
+    "texto": "cant-: lo que significa",
+    "emoji": "🌱"
+   },
+   "b": {
+    "cab": "Desinencia",
+    "texto": "-amos: quién y cuándo",
+    "emoji": "🔚"
+   },
+   "signo": "+",
+   "def": {
+    "cab": "Infinitivo",
+    "texto": "el nombre del verbo: cantar, comer, vivir"
+   },
    "voz": [
-    "Los tres modos.",
-    "*Indicativo*: hechos reales.",
-    "*Subjuntivo*: deseos y dudas.",
-    "*Imperativo*: órdenes."
-   ]
-  },
-  {
-   "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    {
-     "cab": "INDICATIVO",
-     "txt": "Estudio"
-    },
-    {
-     "cab": "SUBJUNTIVO",
-     "txt": "Ojalá estudie"
-    },
-    {
-     "cab": "IMPERATIVO",
-     "txt": "Estudiá"
-    }
-   ],
-   "voz": [
-    "¿Qué modo?",
-    "*Estudio*: indicativo.",
-    "*Ojalá estudie*: subjuntivo.",
-    "*Estudiá*: imperativo."
+    "Todo verbo tiene dos partes.",
+    "La *raíz*: cant-, que guarda el significado.",
+    "La *desinencia*: -amos, que cambia y dice quién hace la acción y cuándo.",
+    "Y para nombrar al verbo usamos el *infinitivo*, que termina en ar, er o ir: cantar, comer, vivir."
    ]
   },
   {
    "t": "tabla",
-   "titulo": "FORMAS NO PERSONALES",
+   "titulo": "PERSONA Y NÚMERO",
    "columnas": [
-    "Forma",
-    "Terminación"
+    "Persona",
+    "Singular",
+    "Plural"
    ],
    "filas": [
     [
-     "Infinitivo",
-     "-ar, -er, -ir"
+     "1.ª (quien habla)",
+     "yo canto",
+     "nosotros cantamos"
     ],
     [
-     "Gerundio",
-     "-ando, -iendo"
+     "2.ª (a quien se habla)",
+     "vos cantás",
+     "ustedes cantan"
     ],
     [
-     "Participio",
-     "-ado, -ido"
+     "3.ª (de quien se habla)",
+     "ella canta",
+     "ellas cantan"
     ]
    ],
    "voz": [
-    "Tres formas no personales.",
-    "*Infinitivo*: cantar.",
-    "*Gerundio*: cantando.",
-    "*Participio*: cantado."
+    "La desinencia marca la *persona* y el *número*.",
+    "Primera persona, quien habla: yo canto, nosotros cantamos.",
+    "Segunda, a quien se habla: vos cantás, ustedes cantan.",
+    "Tercera, de quien se habla: ella canta, ellas cantan."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "IDENTIFICAR",
-   "items": [
+   "t": "linea",
+   "titulo": "EL TIEMPO",
+   "eventos": [
     {
-     "txt": "Expresa un deseo.",
-     "emoji": "1️⃣"
+     "fecha": "Ayer",
+     "txt": "canté",
+     "emoji": "⏪"
     },
     {
-     "txt": "El deseo va con subjuntivo.",
-     "emoji": "2️⃣"
+     "fecha": "Hoy",
+     "txt": "canto",
+     "emoji": "⏺️"
     },
     {
-     "txt": "Modo subjuntivo.",
-     "emoji": "3️⃣"
+     "fecha": "Mañana",
+     "txt": "cantaré",
+     "emoji": "⏩"
     }
    ],
    "voz": [
-    "Resolvamos un caso: ¿En qué modo está «Ojalá llueva mañana»?",
-    "Expresa un deseo.",
-    "El deseo va con subjuntivo.",
-    "Modo subjuntivo."
+    "También marca el *tiempo*. Pasado: ayer canté.",
+    "Presente: hoy canto.",
+    "Futuro: mañana cantaré. Persona, número y tiempo son los *accidentes* del verbo."
    ]
   },
   {
-   "t": "consejo",
-   "texto": "El modo depende de lo que querés decir, no del tiempo.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: El modo depende de lo que querés decir, no del tiempo."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "«Ojalá llueva» está en modo…",
-   "opciones": [
-    "Subjuntivo",
-    "Indicativo",
-    "Imperativo"
+   "t": "bloques",
+   "titulo": "LOS MODOS",
+   "items": [
+    {
+     "cab": "Indicativo",
+     "txt": "un hecho: «Mañana llueve»"
+    },
+    {
+     "cab": "Subjuntivo",
+     "txt": "un deseo o una duda: «Ojalá llueva»"
+    },
+    {
+     "cab": "Imperativo",
+     "txt": "una orden o un pedido: «Llevá el paraguas»"
+    }
    ],
-   "correcta": 0,
    "voz": [
-    "Te toca: «ojalá llueva».",
-    "¿Subjuntivo, indicativo o imperativo?",
-    "*Subjuntivo*: expresa un deseo."
+    "El verbo además tiene *modo*, que muestra la actitud de quien habla.",
+    "El *indicativo* presenta algo como un hecho: mañana llueve.",
+    "El *subjuntivo*, como un deseo o una posibilidad: ojalá llueva.",
+    "Y el *imperativo* da una orden o un pedido: llevá el paraguas."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En «Quizás vengan mañana», el verbo está en modo indicativo.",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Expresa una posibilidad, no un hecho seguro: es subjuntivo.",
+   "voz": [
+    "Verdadero o falso: en «quizás vengan mañana», el verbo está en modo indicativo.",
+    "Pensá si lo presenta como un hecho seguro.",
+    "Falso: es una posibilidad, así que está en *subjuntivo*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "«Cerrá la ventana, por favor». ¿En qué modo está «cerrá»?",
+   "opciones": [
+    "Indicativo",
+    "Subjuntivo",
+    "Imperativo",
+    "Infinitivo"
+   ],
+   "correcta": 2,
+   "voz": [
+    "Rápido: en «cerrá la ventana, por favor», ¿en qué modo está el verbo?",
+    "Fijate qué hace quien habla.",
+    "*Imperativo*: está pidiendo algo."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Confundir tiempo y modo",
-     "bien": "El modo depende de lo que digo"
+     "mal": "«Correr» es un sustantivo porque no dice quién",
+     "bien": "Es el infinitivo: el nombre del verbo"
     },
     {
-     "mal": "El gerundio es una persona",
-     "bien": "Es una forma no personal"
+     "mal": "«Haiga» en lugar de «haya»",
+     "bien": "El subjuntivo de haber es «haya»"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "*Confundir* tiempo con modo.",
-    "Y creer que el gerundio es una *persona*."
+    "Dos errores frecuentes.",
+    "Pensar que el infinitivo no es verbo: correr es el *nombre* del verbo, aunque no diga quién.",
+    "Y decir «haiga»: la forma correcta del subjuntivo de haber es *haya*."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El verbo varía en *persona*, *número*, *tiempo* y *modo*.",
-    "*Indicativo*, hechos.",
-    "*Subjuntivo*, deseos.",
-    "*Imperativo*, órdenes.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "VERBO",
-     "cuatro variaciones"
+     "Verbo",
+     "acción, estado o proceso"
     ],
     [
-     "INDICATIVO",
-     "hechos"
+     "Raíz y desinencia",
+     "significado y terminación que cambia"
     ],
     [
-     "SUBJUNTIVO",
-     "deseos"
+     "Persona y número",
+     "quién y cuántos"
     ],
     [
-     "IMPERATIVO",
-     "órdenes"
+     "Tiempo",
+     "pasado, presente, futuro"
+    ],
+    [
+     "Modo",
+     "hecho, deseo u orden"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "Una sola palabra que dice muchísimo.",
+    "El verbo expresa acciones, estados o procesos.",
+    "Tiene raíz y desinencia.",
+    "La desinencia marca persona y número.",
+    "También el tiempo.",
+    "Y el modo: indicativo, subjuntivo o imperativo. ¡A practicar!"
+   ]
   }
  ]
 }
