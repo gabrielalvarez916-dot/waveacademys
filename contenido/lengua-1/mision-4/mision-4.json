@@ -142,23 +142,20 @@
     }
    ],
    "carpeta": [
-    "¿Cuál es el sujeto de \"Mis primos llegaron tarde\"?",
-    "¿Cuál es el verbo de \"Los perros ladran fuerte\"?",
-    "¿Qué pregunta se le hace al verbo para encontrar el sujeto?",
-    "Corregí: \"Los chicos juega\". Escribí solo el verbo correcto."
+    "En la oración «Mis primos de Salta llegaron tarde a la fiesta», ¿cuál es el sujeto?",
+    "En la oración «Los perros del vecino ladran fuerte toda la noche», ¿cuál es el verbo?",
+    "En «A la tarde juegan al fútbol los chicos del barrio», el sujeto está al final. ¿Cuál es?",
+    "Un compañero escribió «Los chicos juega en la plaza todos los días». Corregí el verbo."
    ],
    "respuestas_carpeta": [
     [
-     "mis primos"
+     "mis primos de salta"
     ],
     [
      "ladran"
     ],
     [
-     "quien",
-     "quién",
-     "¿quién?",
-     "¿quien?"
+     "los chicos del barrio"
     ],
     [
      "juegan"
@@ -168,10 +165,10 @@
     "incompleto": "¿Quién? Concordar.",
     "solo": "Respuesta personal: el sujeto responde a ¿quién?",
     "carpeta": [
-     "Mis primos.",
-     "Ladran.",
-     "¿Quién?",
-     "Juegan."
+     "Mis primos de Salta: concuerda con el verbo «llegaron».",
+     "Ladran: es el núcleo del predicado.",
+     "Los chicos del barrio: preguntás «¿quiénes juegan?».",
+     "Juegan: el verbo concuerda en número con el sujeto plural."
     ]
    },
    "leccion": {
@@ -425,8 +422,8 @@
    "carpeta_nivel": [
     "aplicar",
     "aplicar",
-    "aplicar",
-    "aplicar"
+    "analizar",
+    "error"
    ]
   },
   "2": {
@@ -600,10 +597,10 @@
     }
    ],
    "carpeta": [
-    "¿Cuál es el núcleo de \"La perra de Juan\"?",
-    "En \"el té sin azúcar\", ¿qué es \"sin azúcar\": MD o MI?",
-    "¿Entre qué signos va la aposición?",
-    "En \"El gato negro duerme\", ¿qué es \"negro\": MD o MI?"
+    "En el sujeto «La perra de Juan duerme en el sillón», ¿cuál es el núcleo?",
+    "En «El té sin azúcar está frío», ¿qué es «sin azúcar»: modificador directo o indirecto?",
+    "En «Pedro, mi vecino, toca la guitarra», ¿qué función cumple «mi vecino»?",
+    "Clara dice que en «El gato negro duerme» la palabra «negro» es modificador indirecto. ¿Qué es en realidad?"
    ],
    "respuestas_carpeta": [
     [
@@ -611,14 +608,16 @@
     ],
     [
      "mi",
+     "indirecto",
      "modificador indirecto"
     ],
     [
-     "comas",
-     "entre comas"
+     "aposición",
+     "aposicion"
     ],
     [
      "md",
+     "directo",
      "modificador directo"
     ]
    ],
@@ -626,10 +625,10 @@
     "incompleto": "MI. Comas.",
     "solo": "Respuesta personal con MD, MI y aposición.",
     "carpeta": [
-     "Perra.",
-     "MI.",
-     "Entre comas.",
-     "MD."
+     "Perra: es el sustantivo central del sujeto.",
+     "Modificador indirecto: se une al núcleo con una preposición.",
+     "Aposición: es otro sustantivo que nombra al mismo núcleo, entre comas.",
+     "Modificador directo: se une al núcleo sin preposición."
     ]
    },
    "leccion": {
@@ -1060,8 +1059,8 @@
    "carpeta_nivel": [
     "aplicar",
     "aplicar",
-    "aplicar",
-    "aplicar"
+    "analizar",
+    "error"
    ]
   },
   "3": {
@@ -1212,15 +1211,14 @@
     }
    ],
    "carpeta": [
-    "¿Cuál es el sujeto tácito de \"Fuimos al cine\"?",
-    "\"Llueve mucho\": ¿bimembre o unimembre?",
-    "\"Hay pan en la mesa\": ¿bimembre o unimembre?",
-    "¿Cuál es el sujeto tácito de \"Estudié toda la tarde\"?"
+    "En «Fuimos al cine con mis amigos el sábado», no aparece el sujeto. ¿Cuál es el sujeto tácito?",
+    "La oración «Llueve mucho en el sur durante el invierno», ¿es bimembre o unimembre?",
+    "La oración «Hay pan fresco en la mesa de la cocina», ¿es bimembre o unimembre?",
+    "Juan dice que en «Estudié toda la tarde para la prueba» no hay sujeto. ¿Cuál es el sujeto tácito?"
    ],
    "respuestas_carpeta": [
     [
-     "nosotros",
-     "nosotras"
+     "nosotros"
     ],
     [
      "unimembre"
@@ -1236,10 +1234,10 @@
     "incompleto": "Ellos o ellas. Unimembre.",
     "solo": "Respuesta personal.",
     "carpeta": [
-     "Nosotros.",
-     "Unimembre.",
-     "Unimembre.",
-     "Yo."
+     "Nosotros: lo indica la terminación del verbo «fuimos».",
+     "Unimembre: el verbo «llover» no tiene sujeto.",
+     "Unimembre: «hay» no tiene sujeto; «pan» es objeto.",
+     "Yo: el sujeto está, aunque no se escriba; lo marca «estudié»."
     ]
    },
    "leccion": {
@@ -1427,9 +1425,9 @@
    },
    "carpeta_nivel": [
     "aplicar",
-    "aplicar",
-    "aplicar",
-    "aplicar"
+    "analizar",
+    "analizar",
+    "error"
    ]
   },
   "4": {
@@ -1587,10 +1585,10 @@
     }
    ],
    "carpeta": [
-    "¿Cuál es el núcleo del sujeto en \"Mi abuela, una gran cocinera, prepara empanadas\"?",
-    "En esa oración, ¿cuál es el verbo?",
-    "¿Qué es \"una gran cocinera\" en esa oración?",
-    "¿Cuál es el primer paso del análisis: buscar el verbo o el sujeto?"
+    "En la oración «Mi abuela, una gran cocinera, prepara empanadas», ¿cuál es el núcleo del sujeto?",
+    "En la oración «Mi abuela, una gran cocinera, prepara empanadas», ¿cuál es el verbo?",
+    "En «Mi abuela, una gran cocinera, prepara empanadas», ¿qué función cumple «una gran cocinera»?",
+    "Para analizar «Los alumnos de primero ganaron el torneo», Lara buscó primero el sujeto y se trabó. ¿Qué conviene buscar primero?"
    ],
    "respuestas_carpeta": [
     [
@@ -1600,25 +1598,22 @@
      "prepara"
     ],
     [
-     "aposicion",
      "aposición",
-     "una aposición",
-     "una aposicion"
+     "aposicion"
     ],
     [
-     "verbo",
      "el verbo",
-     "buscar el verbo"
+     "verbo"
     ]
    ],
    "soluciones": {
     "incompleto": "Verbo. Preposición.",
     "solo": "Respuesta personal: revisá MD, MI y aposición.",
     "carpeta": [
-     "Abuela.",
-     "Prepara.",
-     "Aposición.",
-     "Buscar el verbo."
+     "Abuela: es el sustantivo central del sujeto.",
+     "Prepara: es el núcleo del predicado.",
+     "Aposición: nombra a la abuela de otra manera, entre comas.",
+     "El verbo: con él preguntás quién hace la acción y encontrás el sujeto."
     ]
    },
    "leccion": {
@@ -1939,8 +1934,8 @@
    "carpeta_nivel": [
     "aplicar",
     "aplicar",
-    "aplicar",
-    "aplicar"
+    "analizar",
+    "error"
    ]
   }
  },

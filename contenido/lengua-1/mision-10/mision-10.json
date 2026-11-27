@@ -1,1 +1,1276 @@
-{"subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2", "tema": 10, "practica": "Práctica general: cartas, mails y formularios", "examen_titulo": "Nivel jefe: cartas, mails y formularios", "niveles": {"1": {"objetivo": "Vas a distinguir una carta formal de una informal y reconocer sus partes.", "vas_a_ver": ["Para qué se escribe una carta", "Las partes", "Formal e informal", "Cómo elegir"], "secciones": [{"etapa": 1, "titulo": "La carta", "bloques": [{"tipo": "definicion", "titulo": "Carta", "texto": "Texto escrito que una persona envía a otra para comunicarle algo, pedir o agradecer."}, {"tipo": "parrafo", "texto": "Aunque hoy casi todo se hace por mail, las cartas y los mensajes largos siguen la misma estructura."}]}, {"etapa": 1, "titulo": "Las partes", "bloques": [{"tipo": "tabla", "titulo": "Estructura", "columnas": ["Parte", "Qué lleva"], "filas": [["Lugar y fecha", "Dónde y cuándo se escribe"], ["Destinatario", "A quién va dirigida"], ["Saludo", "Estimado/a..., Querido/a..."], ["Cuerpo", "El mensaje"], ["Despedida", "Atentamente, Un abrazo"], ["Firma", "Nombre de quien escribe"]], "iguales": true}]}, {"etapa": 2, "titulo": "Formal e informal", "bloques": [{"tipo": "tabla", "titulo": "Diferencias", "columnas": ["", "Formal", "Informal"], "filas": [["A quién", "Alguien que no conozco o con autoridad", "Familia, amigos"], ["Saludo", "Estimado Sr. Pérez", "Querida Sofi"], ["Despedida", "Atentamente", "Un beso grande"], ["Lenguaje", "Cuidado, sin abreviaturas ni chistes", "Cercano y cotidiano"]], "iguales": true}]}, {"etapa": 2, "titulo": "Cómo elegir", "bloques": [{"tipo": "parrafo", "texto": "Preguntate <b>a quién le escribo</b> y <b>para qué</b>. Si pido un trabajo, un trámite o hablo con una autoridad, uso la carta formal. Si cuento algo a un amigo, la informal."}]}], "ejemplo_completo": {"titulo": "elegir", "planteo": "Vas a pedirle a la directora una autorización. ¿Carta formal o informal?", "pasos": ["Es una autoridad.", "Es un pedido.", "Formal: Estimada Directora..., Atentamente."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La persona a quien va dirigida la carta es el ___ .", "La carta formal termina con una despedida como ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí el saludo y la despedida de una carta formal y de una informal."}, "tip": {"titulo": "A quién y para qué", "texto": "Antes de escribir, definí a quién le escribís y para qué."}, "ojo": ["Usar «Hola, qué tal» con una autoridad.", "Olvidar la firma."], "resumen": [{"titulo": "Partes", "texto": "Lugar, destinatario, saludo, cuerpo, despedida, firma."}, {"titulo": "Formal", "texto": "Cuidado y respetuoso."}, {"titulo": "Informal", "texto": "Cercano."}, {"titulo": "Elegir", "texto": "A quién y para qué."}], "glosario": [{"palabra": "Destinatario", "significado": "Persona a quien va dirigido un mensaje."}, {"palabra": "Remitente", "significado": "Quien envía el mensaje."}, {"palabra": "Formal", "significado": "Cuidado y respetuoso."}], "carpeta": ["¿Cómo se llama la persona a quien va dirigida una carta?", "¿Qué despedida es formal: «Atentamente» o «Un beso grande»?", "¿Cómo se llama quien envía el mensaje?", "Una carta a un amigo, ¿es formal o informal?"], "respuestas_carpeta": [["destinatario", "el destinatario"], ["atentamente"], ["remitente", "el remitente"], ["informal", "es informal"]], "soluciones": {"incompleto": "Destinatario. Atentamente.", "solo": "Formal: Estimada Directora / Atentamente. Informal: Querida Sofi / Un abrazo.", "carpeta": ["Destinatario.", "Atentamente.", "Remitente.", "Informal."]}}, "2": {"objetivo": "Vas a escribir un mail claro, con asunto, saludo, mensaje breve y cierre.", "vas_a_ver": ["Las partes de un mail", "El asunto", "Un mensaje claro", "Antes de enviar"], "secciones": [{"etapa": 1, "titulo": "Partes", "bloques": [{"tipo": "tabla", "titulo": "Un mail", "columnas": ["Parte", "Para qué sirve"], "filas": [["Para", "Destinatario principal"], ["CC", "Con copia visible a otras personas"], ["CCO", "Copia oculta"], ["Asunto", "Dice de qué trata"], ["Cuerpo", "El mensaje"], ["Adjunto", "Archivo que acompaña"]], "iguales": true}]}, {"etapa": 1, "titulo": "El asunto", "bloques": [{"tipo": "parrafo", "texto": "El <b>asunto</b> tiene que ser corto y concreto: «Consulta sobre la tarea de Lengua» sirve; «Hola» o «Importante» no."}]}, {"etapa": 2, "titulo": "Un mensaje claro", "bloques": [{"tipo": "tabla", "titulo": "Estructura del cuerpo", "columnas": ["Paso", "Ejemplo"], "filas": [["Saludo", "Buenas tardes, profesora:"], ["Motivo", "Le escribo para consultarle..."], ["Detalle", "Una o dos frases claras"], ["Cierre", "Muchas gracias. Saludos cordiales."], ["Firma", "Nombre y curso"]], "iguales": true}]}, {"etapa": 2, "titulo": "Antes de enviar", "bloques": [{"tipo": "parrafo", "texto": "Revisá: ¿está el <b>adjunto</b>? ¿Escribí bien el destinatario? ¿Releí el texto en busca de errores? Un mail se puede reenviar: escribí como si lo fuera a leer alguien más."}]}], "ejemplo_completo": {"titulo": "armar", "planteo": "Escribí un mail a tu profesor para consultar una fecha.", "pasos": ["Asunto: Consulta sobre la fecha de entrega.", "Saludo: Buenas tardes, profesor:", "Motivo y detalle: ¿Podría confirmarme hasta cuándo se entrega el trabajo?", "Cierre y firma: Muchas gracias. Saludos cordiales, Lucía, 1.º B."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["El campo que dice de qué trata el mail es el ___ .", "El archivo que acompaña un mail es el ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí un mail a un docente pidiendo una aclaración."}, "tip": {"titulo": "Un mail, un motivo", "texto": "Si tenés dos pedidos distintos, escribí dos mails."}, "ojo": ["Dejar el asunto vacío.", "Olvidar el adjunto."], "resumen": [{"titulo": "Asunto", "texto": "Corto y concreto."}, {"titulo": "Cuerpo", "texto": "Saludo, motivo, cierre."}, {"titulo": "Adjunto", "texto": "Archivo."}, {"titulo": "Revisar", "texto": "Antes de enviar."}], "glosario": [{"palabra": "Asunto", "significado": "Tema del mail."}, {"palabra": "Adjunto", "significado": "Archivo que acompaña."}, {"palabra": "CC", "significado": "Con copia."}], "carpeta": ["¿Qué campo dice de qué trata el mail?", "¿Cómo se llama el archivo que acompaña un mail?", "¿Conviene revisar antes de enviar? Respondé sí o no.", "¿Qué asunto sirve más: «Hola» o «Consulta sobre la tarea»?"], "respuestas_carpeta": [["asunto", "el asunto"], ["adjunto", "el adjunto"], ["si", "sí"], ["consulta sobre la tarea", "la segunda", "consulta"]], "soluciones": {"incompleto": "Asunto. Adjunto.", "solo": "Asunto: Consulta sobre la tarea. Buenas tardes, profesora: le escribo para... Muchas gracias. Saludos cordiales, Lucía.", "carpeta": ["El asunto.", "Adjunto.", "Sí.", "Consulta sobre la tarea."]}}, "3": {"objetivo": "Vas a completar un formulario con datos exactos, sin dejar campos vacíos ni cometer errores.", "vas_a_ver": ["Para qué sirven los formularios", "Leer antes de completar", "Datos exactos", "Revisar y firmar"], "secciones": [{"etapa": 1, "titulo": "Formularios", "bloques": [{"tipo": "definicion", "titulo": "Formulario", "texto": "Documento con campos para completar datos que pide una institución."}, {"tipo": "parrafo", "texto": "Se usan para inscribirse, pedir un trámite o dar datos personales."}]}, {"etapa": 1, "titulo": "Leer primero", "bloques": [{"tipo": "tabla", "titulo": "Antes de escribir", "columnas": ["Mirá", "Por qué"], "filas": [["Las instrucciones", "Dicen cómo completar"], ["Campos obligatorios", "Sin ellos no se acepta"], ["Formato de la fecha", "día/mes/año, por ejemplo 05/10/2012"]], "iguales": true}]}, {"etapa": 2, "titulo": "Datos exactos", "bloques": [{"tipo": "parrafo", "texto": "Escribí tu <b>nombre completo</b> como figura en el documento, con letra clara (si es en papel) o sin errores de tipeo. Los números (DNI, teléfono) se escriben sin puntos si no se indica otra cosa."}]}, {"etapa": 2, "titulo": "Revisar y firmar", "bloques": [{"tipo": "tabla", "titulo": "Lista final", "columnas": ["Chequeo", "Sí / No"], "filas": [["¿Completé todos los campos obligatorios?", ""], ["¿Los datos son exactos?", ""], ["¿Firmé donde corresponde?", ""], ["¿Entregué a quien correspondía?", ""]], "iguales": true}]}], "ejemplo_completo": {"titulo": "detectar", "planteo": "Un formulario pide fecha de nacimiento «día/mes/año» y alguien escribió 2012/10/05. ¿Qué falla?", "pasos": ["El formato pide día primero.", "Está escrito año primero.", "Corrección: 05/10/2012."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Los campos que no se pueden dejar vacíos son los ___ .", "Antes de completar, hay que leer las ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Completá con datos inventados un formulario de inscripción a un taller."}, "tip": {"titulo": "Leer, completar, revisar", "texto": "El orden es siempre el mismo: leer, completar y revisar."}, "ojo": ["Dejar un campo obligatorio vacío.", "Escribir la fecha en otro formato."], "resumen": [{"titulo": "Formulario", "texto": "Datos para una institución."}, {"titulo": "Instrucciones", "texto": "Leer primero."}, {"titulo": "Datos exactos", "texto": "Sin errores."}, {"titulo": "Firma", "texto": "Al final."}], "glosario": [{"palabra": "Formulario", "significado": "Documento con campos para completar."}, {"palabra": "Campo", "significado": "Espacio para un dato."}, {"palabra": "Obligatorio", "significado": "Que no se puede omitir."}], "carpeta": ["¿Qué se hace primero con un formulario: completarlo o leerlo?", "¿Cómo se llaman los campos que no se pueden dejar vacíos?", "¿Hay que revisar antes de entregar? Respondé sí o no.", "¿Cómo se llama el espacio donde se escribe un dato?"], "respuestas_carpeta": [["leerlo", "leer", "se lee"], ["obligatorios", "los obligatorios"], ["si", "sí"], ["campo", "un campo", "el campo"]], "soluciones": {"incompleto": "Obligatorios. Instrucciones.", "solo": "Nombre completo, fecha 05/10/2012, DNI sin puntos, firma.", "carpeta": ["Leerlo.", "Obligatorios.", "Sí.", "Campo."]}}, "4": {"objetivo": "Vas a adaptar el registro de un mensaje al destinatario y a la situación.", "vas_a_ver": ["Qué es el registro", "Formal, neutro e informal", "Adaptar un mismo mensaje", "Errores frecuentes"], "secciones": [{"etapa": 1, "titulo": "Registro", "bloques": [{"tipo": "definicion", "titulo": "Registro", "texto": "Manera de hablar o escribir que se elige según con quién hablo y en qué situación."}, {"tipo": "parrafo", "texto": "Una misma persona usa distintos registros: con sus amigos, con un profesor, con un médico."}]}, {"etapa": 1, "titulo": "Tres registros", "bloques": [{"tipo": "tabla", "titulo": "Cómo suenan", "columnas": ["Registro", "Cuándo", "Ejemplo"], "filas": [["Formal", "Con autoridades o desconocidos", "Le solicito que me indique el horario"], ["Neutro", "En textos comunes", "¿Me decís el horario?"], ["Informal", "Con amigos y familia", "¿A qué hora es, che?"]], "iguales": true}]}, {"etapa": 2, "titulo": "Un mensaje, tres versiones", "bloques": [{"tipo": "tabla", "titulo": "Pedir una fecha", "columnas": ["Destinatario", "Mensaje"], "filas": [["Directora", "Le solicito que me informe la fecha de la muestra."], ["Profesor", "¿Podría decirme cuándo es la muestra?"], ["Amiga", "¿Cuándo es la muestra?"]], "iguales": true}]}, {"etapa": 2, "titulo": "Errores frecuentes", "bloques": [{"tipo": "parrafo", "texto": "Los errores más comunes son usar jerga con un adulto desconocido o ser demasiado rígido con un amigo. También conviene evitar abreviaturas de chat (<i>xq, tmb</i>) en textos formales."}]}], "ejemplo_completo": {"titulo": "adaptar", "planteo": "Reescribí con registro formal: «Che, pasame el horario».", "pasos": ["Eliminar el che y el imperativo informal.", "Usar un pedido educado.", "Versión: ¿Podría indicarme el horario, por favor?"]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La manera de escribir que se elige según el destinatario es el ___ .", "Con una autoridad conviene el registro ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí el mismo pedido para una directora y para un amigo."}, "tip": {"titulo": "A quién le hablo", "texto": "Para elegir el registro, preguntate quién va a leer tu mensaje."}, "ojo": ["Usar abreviaturas de chat en un texto formal.", "Ser rígido con un amigo."], "resumen": [{"titulo": "Registro", "texto": "Según el destinatario."}, {"titulo": "Formal", "texto": "Con autoridades."}, {"titulo": "Informal", "texto": "Con amigos."}, {"titulo": "Adaptar", "texto": "Cambia el mensaje."}], "glosario": [{"palabra": "Registro", "significado": "Manera de escribir según la situación."}, {"palabra": "Jerga", "significado": "Lenguaje propio de un grupo."}, {"palabra": "Rígido", "significado": "Demasiado serio y duro."}], "carpeta": ["¿Cómo se llama la manera de escribir que se elige según el destinatario?", "¿Qué registro uso con una autoridad?", "¿Se usan abreviaturas de chat en un texto formal? Respondé sí o no.", "¿Qué registro uso con un amigo?"], "respuestas_carpeta": [["registro", "el registro"], ["formal", "el formal"], ["no"], ["informal", "el informal"]], "soluciones": {"incompleto": "Registro. Formal.", "solo": "Directora: ¿Podría informarme la fecha? Amigo: ¿Cuándo es?", "carpeta": ["Registro.", "Formal.", "No.", "Informal."]}}}, "act": {"1": [{"t": "matching", "p": "Uní cada parte de la carta con lo que lleva.", "o": {"izquierda": ["Saludo", "Cuerpo", "Despedida", "Firma"], "derecha": ["Estimado Sr. Pérez", "El mensaje", "Atentamente", "Nombre de quien escribe"]}, "r": {"pares": {"Saludo": "Estimado Sr. Pérez", "Cuerpo": "El mensaje", "Despedida": "Atentamente", "Firma": "Nombre de quien escribe"}}, "e": "Cada parte tiene su función."}, {"t": "tap_text", "p": "Tocá las palabras que muestran que la carta es formal: «Estimada directora: Le solicito que me autorice a participar. Atentamente».", "o": {"segmentos": ["Estimada", "directora", "Le", "solicito", "que", "me", "autorice", "a", "participar", "Atentamente"], "modo": "palabras"}, "r": {"tocar": [0, 3, 9]}, "e": "Estimada, solicito y atentamente son formales."}], "2": [{"t": "keywords", "p": "Escribí un mail a un profesor para pedirle que te explique de nuevo un tema. Incluí asunto, saludo, motivo, cierre y firma.", "o": {"ayuda": "Asunto corto, saludo, motivo claro, agradecimiento y firma."}, "r": "Mail con asunto concreto, saludo formal, motivo claro (pedir una explicación), cierre educado y firma con nombre y curso.", "e": "Se evalúa estructura, claridad y registro."}, {"t": "ordering", "p": "Ordená las partes del cuerpo de un mail.", "o": ["Cierre", "Saludo", "Detalle", "Motivo", "Firma"], "r": {"orden": ["Saludo", "Motivo", "Detalle", "Cierre", "Firma"]}, "e": "De la presentación a la despedida."}], "3": [{"t": "multi_select", "p": "¿Qué conviene hacer al completar un formulario?", "o": ["Leer las instrucciones", "Completar los campos obligatorios", "Escribir datos inventados", "Revisar antes de entregar"], "r": {"correctas": ["Leer las instrucciones", "Completar los campos obligatorios", "Revisar antes de entregar"]}, "e": "Los datos tienen que ser exactos."}, {"t": "fill_blank", "p": "Si el formulario pide la fecha como día/mes/año, 05/10/2012 está ___ y 2012/10/05 está mal.", "o": [], "r": {"huecos": [["bien", "correcto", "correcta"]]}, "e": "Respeta el formato pedido."}], "4": [{"t": "classify", "p": "¿Qué registro es?", "o": {"elementos": ["Le solicito que me informe", "¿Cuándo es, che?", "¿Podría decirme el horario?", "Atentamente"], "categorias": ["Formal", "Informal"]}, "r": {"categorias": {"Le solicito que me informe": "Formal", "¿Cuándo es, che?": "Informal", "¿Podría decirme el horario?": "Formal", "Atentamente": "Formal"}}, "e": "Cuidado frente a cercanía."}, {"t": "true_false", "p": "Las abreviaturas de chat sirven en un mail formal.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Conviene evitarlas."}], "5": [{"t": "multiple_choice", "p": "Relámpago. La persona a quien va una carta es el…", "o": ["Destinatario", "Remitente", "Asunto"], "r": {"correcta": "Destinatario"}, "e": "Recibe el mensaje.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. El asunto de un mail puede quedar vacío.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Dice de qué trata.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. Los campos obligatorios…", "o": ["No se pueden omitir", "Son opcionales", "Se borran"], "r": {"correcta": "No se pueden omitir"}, "e": "Sin ellos no se acepta.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. Con una autoridad conviene registro formal.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Es lo adecuado.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "¿Con qué despedida termina una carta formal?", "o": ["Atentamente", "Un beso grande", "Chau", "Nos vemos"], "r": {"correcta": "Atentamente"}, "e": "Es la despedida formal."}], [1, {"t": "multi_select", "p": "Partes de una carta:", "o": ["Saludo", "Cuerpo", "Firma", "Emoji"], "r": {"correctas": ["Saludo", "Cuerpo", "Firma"]}, "e": "El emoji no es una parte."}], [1, {"t": "true_false", "p": "A un amigo se le puede escribir una carta informal.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Con lenguaje cercano."}], [2, {"t": "multiple_choice", "p": "¿Qué dice el asunto de un mail?", "o": ["De qué trata", "Quién lo recibe", "Cuándo se envió", "El adjunto"], "r": {"correcta": "De qué trata"}, "e": "Corto y concreto."}], [2, {"t": "fill_blank", "p": "El archivo que acompaña un mail es el ___ .", "o": [], "r": {"huecos": [["adjunto"]]}, "e": "Se envía junto con el mensaje."}], [2, {"t": "true_false", "p": "Antes de enviar un mail conviene revisarlo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Se evitan errores."}], [3, {"t": "multiple_choice", "p": "¿Qué se hace primero con un formulario?", "o": ["Leer las instrucciones", "Firmar", "Entregarlo", "Dibujarlo"], "r": {"correcta": "Leer las instrucciones"}, "e": "Dicen cómo completarlo."}], [3, {"t": "multi_select", "p": "Datos de un formulario:", "o": ["Nombre completo", "DNI", "Fecha de nacimiento", "Chiste"], "r": {"correctas": ["Nombre completo", "DNI", "Fecha de nacimiento"]}, "e": "El chiste no es un dato."}], [3, {"t": "true_false", "p": "Un campo obligatorio puede quedar vacío.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "No se acepta."}], [4, {"t": "multiple_choice", "p": "El registro es…", "o": ["La manera de escribir según el destinatario", "Un tipo de letra", "Una lista", "Un archivo"], "r": {"correcta": "La manera de escribir según el destinatario"}, "e": "Se adapta."}], [4, {"t": "multiple_choice", "p": "Con una autoridad conviene…", "o": ["Registro formal", "Jerga", "Abreviaturas de chat", "Chistes"], "r": {"correcta": "Registro formal"}, "e": "Respeto y cuidado."}], [4, {"t": "fill_blank", "p": "Un lenguaje cercano, para amigos, es el registro ___ .", "o": [], "r": {"huecos": [["informal", "coloquial"]]}, "e": "Para la familia y amigos."}], [4, {"t": "true_false", "p": "Con un amigo conviene ser muy rígido.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "El registro es informal."}]]}
+{
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "tema": 10,
+ "practica": "Práctica general: cartas, mails y formularios",
+ "examen_titulo": "Nivel jefe: cartas, mails y formularios",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a distinguir una carta formal de una informal y reconocer sus partes.",
+   "vas_a_ver": [
+    "Para qué se escribe una carta",
+    "Las partes",
+    "Formal e informal",
+    "Cómo elegir"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La carta",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Carta",
+       "texto": "Texto escrito que una persona envía a otra para comunicarle algo, pedir o agradecer."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Aunque hoy casi todo se hace por mail, las cartas y los mensajes largos siguen la misma estructura."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Las partes",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Estructura",
+       "columnas": [
+        "Parte",
+        "Qué lleva"
+       ],
+       "filas": [
+        [
+         "Lugar y fecha",
+         "Dónde y cuándo se escribe"
+        ],
+        [
+         "Destinatario",
+         "A quién va dirigida"
+        ],
+        [
+         "Saludo",
+         "Estimado/a..., Querido/a..."
+        ],
+        [
+         "Cuerpo",
+         "El mensaje"
+        ],
+        [
+         "Despedida",
+         "Atentamente, Un abrazo"
+        ],
+        [
+         "Firma",
+         "Nombre de quien escribe"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Formal e informal",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Diferencias",
+       "columnas": [
+        "",
+        "Formal",
+        "Informal"
+       ],
+       "filas": [
+        [
+         "A quién",
+         "Alguien que no conozco o con autoridad",
+         "Familia, amigos"
+        ],
+        [
+         "Saludo",
+         "Estimado Sr. Pérez",
+         "Querida Sofi"
+        ],
+        [
+         "Despedida",
+         "Atentamente",
+         "Un beso grande"
+        ],
+        [
+         "Lenguaje",
+         "Cuidado, sin abreviaturas ni chistes",
+         "Cercano y cotidiano"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Cómo elegir",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Preguntate <b>a quién le escribo</b> y <b>para qué</b>. Si pido un trabajo, un trámite o hablo con una autoridad, uso la carta formal. Si cuento algo a un amigo, la informal."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "elegir",
+    "planteo": "Vas a pedirle a la directora una autorización. ¿Carta formal o informal?",
+    "pasos": [
+     "Es una autoridad.",
+     "Es un pedido.",
+     "Formal: Estimada Directora..., Atentamente."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La persona a quien va dirigida la carta es el ___ .",
+     "La carta formal termina con una despedida como ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí el saludo y la despedida de una carta formal y de una informal."
+   },
+   "tip": {
+    "titulo": "A quién y para qué",
+    "texto": "Antes de escribir, definí a quién le escribís y para qué."
+   },
+   "ojo": [
+    "Usar «Hola, qué tal» con una autoridad.",
+    "Olvidar la firma."
+   ],
+   "resumen": [
+    {
+     "titulo": "Partes",
+     "texto": "Lugar, destinatario, saludo, cuerpo, despedida, firma."
+    },
+    {
+     "titulo": "Formal",
+     "texto": "Cuidado y respetuoso."
+    },
+    {
+     "titulo": "Informal",
+     "texto": "Cercano."
+    },
+    {
+     "titulo": "Elegir",
+     "texto": "A quién y para qué."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Destinatario",
+     "significado": "Persona a quien va dirigido un mensaje."
+    },
+    {
+     "palabra": "Remitente",
+     "significado": "Quien envía el mensaje."
+    },
+    {
+     "palabra": "Formal",
+     "significado": "Cuidado y respetuoso."
+    }
+   ],
+   "carpeta": [
+    "Le escribís una carta a tu prima de Mendoza para contarle tus vacaciones. ¿Es una carta formal o informal?",
+    "Una carta al intendente para pedir un semáforo termina con «Un beso grande». ¿Qué despedida conviene: «Atentamente» o la que usó?",
+    "En una carta, Julieta firma al final y la manda a su abuela Rosa. ¿Quién es la destinataria?",
+    "Una carta empieza «Estimada señora directora:» y usa «usted». ¿Qué registro tiene: formal o informal?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "informal"
+    ],
+    [
+     "atentamente"
+    ],
+    [
+     "rosa",
+     "la abuela rosa",
+     "su abuela"
+    ],
+    [
+     "formal"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Destinatario. Atentamente.",
+    "solo": "Formal: Estimada Directora / Atentamente. Informal: Querida Sofi / Un abrazo.",
+    "carpeta": [
+     "Informal: hay confianza con la destinataria.",
+     "Atentamente: es una despedida formal, adecuada para una autoridad.",
+     "La abuela Rosa: es a quien va dirigida la carta.",
+     "Formal: el saludo y el «usted» marcan distancia y respeto."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "error",
+    "aplicar",
+    "analizar"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a escribir un mail claro, con asunto, saludo, mensaje breve y cierre.",
+   "vas_a_ver": [
+    "Las partes de un mail",
+    "El asunto",
+    "Un mensaje claro",
+    "Antes de enviar"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Partes",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Un mail",
+       "columnas": [
+        "Parte",
+        "Para qué sirve"
+       ],
+       "filas": [
+        [
+         "Para",
+         "Destinatario principal"
+        ],
+        [
+         "CC",
+         "Con copia visible a otras personas"
+        ],
+        [
+         "CCO",
+         "Copia oculta"
+        ],
+        [
+         "Asunto",
+         "Dice de qué trata"
+        ],
+        [
+         "Cuerpo",
+         "El mensaje"
+        ],
+        [
+         "Adjunto",
+         "Archivo que acompaña"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "El asunto",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El <b>asunto</b> tiene que ser corto y concreto: «Consulta sobre la tarea de Lengua» sirve; «Hola» o «Importante» no."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Un mensaje claro",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Estructura del cuerpo",
+       "columnas": [
+        "Paso",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Saludo",
+         "Buenas tardes, profesora:"
+        ],
+        [
+         "Motivo",
+         "Le escribo para consultarle..."
+        ],
+        [
+         "Detalle",
+         "Una o dos frases claras"
+        ],
+        [
+         "Cierre",
+         "Muchas gracias. Saludos cordiales."
+        ],
+        [
+         "Firma",
+         "Nombre y curso"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Antes de enviar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Revisá: ¿está el <b>adjunto</b>? ¿Escribí bien el destinatario? ¿Releí el texto en busca de errores? Un mail se puede reenviar: escribí como si lo fuera a leer alguien más."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "armar",
+    "planteo": "Escribí un mail a tu profesor para consultar una fecha.",
+    "pasos": [
+     "Asunto: Consulta sobre la fecha de entrega.",
+     "Saludo: Buenas tardes, profesor:",
+     "Motivo y detalle: ¿Podría confirmarme hasta cuándo se entrega el trabajo?",
+     "Cierre y firma: Muchas gracias. Saludos cordiales, Lucía, 1.º B."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "El campo que dice de qué trata el mail es el ___ .",
+     "El archivo que acompaña un mail es el ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí un mail a un docente pidiendo una aclaración."
+   },
+   "tip": {
+    "titulo": "Un mail, un motivo",
+    "texto": "Si tenés dos pedidos distintos, escribí dos mails."
+   },
+   "ojo": [
+    "Dejar el asunto vacío.",
+    "Olvidar el adjunto."
+   ],
+   "resumen": [
+    {
+     "titulo": "Asunto",
+     "texto": "Corto y concreto."
+    },
+    {
+     "titulo": "Cuerpo",
+     "texto": "Saludo, motivo, cierre."
+    },
+    {
+     "titulo": "Adjunto",
+     "texto": "Archivo."
+    },
+    {
+     "titulo": "Revisar",
+     "texto": "Antes de enviar."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Asunto",
+     "significado": "Tema del mail."
+    },
+    {
+     "palabra": "Adjunto",
+     "significado": "Archivo que acompaña."
+    },
+    {
+     "palabra": "CC",
+     "significado": "Con copia."
+    }
+   ],
+   "carpeta": [
+    "Vas a mandarle un mail a tu profesora para preguntar por la tarea de Lengua. ¿Qué asunto sirve más: «Hola» o «Consulta sobre la tarea de Lengua»?",
+    "En tu mail escribís «Te mando el trabajo», pero el archivo no está. ¿Qué te olvidaste de agregar?",
+    "Un mail a la escuela tiene saludo, un pedido claro y firma, pero cinco párrafos de anécdotas. ¿Qué le sobra?",
+    "Antes de enviar un mail a la secretaría, ¿qué conviene hacer para no mandar errores: revisarlo o mandarlo rápido?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "consulta sobre la tarea de lengua",
+     "consulta sobre la tarea",
+     "el segundo"
+    ],
+    [
+     "el adjunto",
+     "adjunto",
+     "el archivo"
+    ],
+    [
+     "las anécdotas",
+     "anécdotas",
+     "anecdotas"
+    ],
+    [
+     "revisarlo",
+     "revisar"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Asunto. Adjunto.",
+    "solo": "Asunto: Consulta sobre la tarea. Buenas tardes, profesora: le escribo para... Muchas gracias. Saludos cordiales, Lucía.",
+    "carpeta": [
+     "El segundo: el asunto tiene que decir de qué trata el mail.",
+     "El adjunto: el archivo que acompaña el mail.",
+     "Las anécdotas: un mail formal va al punto.",
+     "Revisarlo: así corregís datos, tono y ortografía."
+    ]
+   },
+   "carpeta_nivel": [
+    "analizar",
+    "error",
+    "analizar",
+    "aplicar"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a completar un formulario con datos exactos, sin dejar campos vacíos ni cometer errores.",
+   "vas_a_ver": [
+    "Para qué sirven los formularios",
+    "Leer antes de completar",
+    "Datos exactos",
+    "Revisar y firmar"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Formularios",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Formulario",
+       "texto": "Documento con campos para completar datos que pide una institución."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Se usan para inscribirse, pedir un trámite o dar datos personales."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Leer primero",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Antes de escribir",
+       "columnas": [
+        "Mirá",
+        "Por qué"
+       ],
+       "filas": [
+        [
+         "Las instrucciones",
+         "Dicen cómo completar"
+        ],
+        [
+         "Campos obligatorios",
+         "Sin ellos no se acepta"
+        ],
+        [
+         "Formato de la fecha",
+         "día/mes/año, por ejemplo 05/10/2012"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Datos exactos",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Escribí tu <b>nombre completo</b> como figura en el documento, con letra clara (si es en papel) o sin errores de tipeo. Los números (DNI, teléfono) se escriben sin puntos si no se indica otra cosa."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Revisar y firmar",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Lista final",
+       "columnas": [
+        "Chequeo",
+        "Sí / No"
+       ],
+       "filas": [
+        [
+         "¿Completé todos los campos obligatorios?",
+         ""
+        ],
+        [
+         "¿Los datos son exactos?",
+         ""
+        ],
+        [
+         "¿Firmé donde corresponde?",
+         ""
+        ],
+        [
+         "¿Entregué a quien correspondía?",
+         ""
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "detectar",
+    "planteo": "Un formulario pide fecha de nacimiento «día/mes/año» y alguien escribió 2012/10/05. ¿Qué falla?",
+    "pasos": [
+     "El formato pide día primero.",
+     "Está escrito año primero.",
+     "Corrección: 05/10/2012."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Los campos que no se pueden dejar vacíos son los ___ .",
+     "Antes de completar, hay que leer las ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Completá con datos inventados un formulario de inscripción a un taller."
+   },
+   "tip": {
+    "titulo": "Leer, completar, revisar",
+    "texto": "El orden es siempre el mismo: leer, completar y revisar."
+   },
+   "ojo": [
+    "Dejar un campo obligatorio vacío.",
+    "Escribir la fecha en otro formato."
+   ],
+   "resumen": [
+    {
+     "titulo": "Formulario",
+     "texto": "Datos para una institución."
+    },
+    {
+     "titulo": "Instrucciones",
+     "texto": "Leer primero."
+    },
+    {
+     "titulo": "Datos exactos",
+     "texto": "Sin errores."
+    },
+    {
+     "titulo": "Firma",
+     "texto": "Al final."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Formulario",
+     "significado": "Documento con campos para completar."
+    },
+    {
+     "palabra": "Campo",
+     "significado": "Espacio para un dato."
+    },
+    {
+     "palabra": "Obligatorio",
+     "significado": "Que no se puede omitir."
+    }
+   ],
+   "carpeta": [
+    "Te dan un formulario de inscripción al club. ¿Qué hacés primero: completarlo o leerlo entero?",
+    "Un formulario marca con asterisco (*) los campos «Nombre» y «DNI». ¿Qué significa el asterisco?",
+    "En el campo «Fecha de nacimiento (dd/mm/aaaa)», Nico escribió «el 5 de marzo». ¿Qué hizo mal?",
+    "En el formulario de una biblioteca, el espacio que dice «Correo electrónico: ____», ¿cómo se llama?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "leerlo",
+     "leerlo entero"
+    ],
+    [
+     "obligatorio",
+     "que son obligatorios",
+     "obligatorios"
+    ],
+    [
+     "no respetó el formato",
+     "el formato",
+     "formato"
+    ],
+    [
+     "campo",
+     "un campo"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Obligatorios. Instrucciones.",
+    "solo": "Nombre completo, fecha 05/10/2012, DNI sin puntos, firma.",
+    "carpeta": [
+     "Leerlo entero: así sabés qué datos piden y cómo.",
+     "Obligatorio: esos campos no se pueden dejar vacíos.",
+     "No respetó el formato pedido: tenía que escribir 05/03/aaaa.",
+     "Campo: es el espacio donde va un dato."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "error",
+    "aplicar"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a adaptar el registro de un mensaje al destinatario y a la situación.",
+   "vas_a_ver": [
+    "Qué es el registro",
+    "Formal, neutro e informal",
+    "Adaptar un mismo mensaje",
+    "Errores frecuentes"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Registro",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Registro",
+       "texto": "Manera de hablar o escribir que se elige según con quién hablo y en qué situación."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Una misma persona usa distintos registros: con sus amigos, con un profesor, con un médico."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Tres registros",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Cómo suenan",
+       "columnas": [
+        "Registro",
+        "Cuándo",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Formal",
+         "Con autoridades o desconocidos",
+         "Le solicito que me indique el horario"
+        ],
+        [
+         "Neutro",
+         "En textos comunes",
+         "¿Me decís el horario?"
+        ],
+        [
+         "Informal",
+         "Con amigos y familia",
+         "¿A qué hora es, che?"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Un mensaje, tres versiones",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Pedir una fecha",
+       "columnas": [
+        "Destinatario",
+        "Mensaje"
+       ],
+       "filas": [
+        [
+         "Directora",
+         "Le solicito que me informe la fecha de la muestra."
+        ],
+        [
+         "Profesor",
+         "¿Podría decirme cuándo es la muestra?"
+        ],
+        [
+         "Amiga",
+         "¿Cuándo es la muestra?"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Errores frecuentes",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Los errores más comunes son usar jerga con un adulto desconocido o ser demasiado rígido con un amigo. También conviene evitar abreviaturas de chat (<i>xq, tmb</i>) en textos formales."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "adaptar",
+    "planteo": "Reescribí con registro formal: «Che, pasame el horario».",
+    "pasos": [
+     "Eliminar el che y el imperativo informal.",
+     "Usar un pedido educado.",
+     "Versión: ¿Podría indicarme el horario, por favor?"
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La manera de escribir que se elige según el destinatario es el ___ .",
+     "Con una autoridad conviene el registro ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí el mismo pedido para una directora y para un amigo."
+   },
+   "tip": {
+    "titulo": "A quién le hablo",
+    "texto": "Para elegir el registro, preguntate quién va a leer tu mensaje."
+   },
+   "ojo": [
+    "Usar abreviaturas de chat en un texto formal.",
+    "Ser rígido con un amigo."
+   ],
+   "resumen": [
+    {
+     "titulo": "Registro",
+     "texto": "Según el destinatario."
+    },
+    {
+     "titulo": "Formal",
+     "texto": "Con autoridades."
+    },
+    {
+     "titulo": "Informal",
+     "texto": "Con amigos."
+    },
+    {
+     "titulo": "Adaptar",
+     "texto": "Cambia el mensaje."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Registro",
+     "significado": "Manera de escribir según la situación."
+    },
+    {
+     "palabra": "Jerga",
+     "significado": "Lenguaje propio de un grupo."
+    },
+    {
+     "palabra": "Rígido",
+     "significado": "Demasiado serio y duro."
+    }
+   ],
+   "carpeta": [
+    "Le escribís al director para pedir una reunión. ¿Qué registro usás: formal o informal?",
+    "Le contás a un amigo por chat que ganaste un partido. ¿Qué registro usás: formal o informal?",
+    "Un pedido a la municipalidad dice «xq necesitamos q arreglen la plaza». ¿Qué falla: el registro o el tema?",
+    "El mismo pedido, «arreglen la plaza», va primero a un vecino y después al intendente. ¿Qué cambia entre los dos mensajes: el registro o el pedido?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "formal"
+    ],
+    [
+     "informal"
+    ],
+    [
+     "el registro",
+     "registro"
+    ],
+    [
+     "el registro",
+     "registro"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Registro. Formal.",
+    "solo": "Directora: ¿Podría informarme la fecha? Amigo: ¿Cuándo es?",
+    "carpeta": [
+     "Formal: el destinatario es una autoridad.",
+     "Informal: hay confianza y la situación es cotidiana.",
+     "El registro: las abreviaturas de chat no van en un texto formal.",
+     "El registro: el pedido es el mismo; cambia cómo se dice según el destinatario."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "error",
+    "analizar"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "matching",
+    "p": "Uní cada parte de la carta con lo que lleva.",
+    "o": {
+     "izquierda": [
+      "Saludo",
+      "Cuerpo",
+      "Despedida",
+      "Firma"
+     ],
+     "derecha": [
+      "Estimado Sr. Pérez",
+      "El mensaje",
+      "Atentamente",
+      "Nombre de quien escribe"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Saludo": "Estimado Sr. Pérez",
+      "Cuerpo": "El mensaje",
+      "Despedida": "Atentamente",
+      "Firma": "Nombre de quien escribe"
+     }
+    },
+    "e": "Cada parte tiene su función."
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá las palabras que muestran que la carta es formal: «Estimada directora: Le solicito que me autorice a participar. Atentamente».",
+    "o": {
+     "segmentos": [
+      "Estimada",
+      "directora",
+      "Le",
+      "solicito",
+      "que",
+      "me",
+      "autorice",
+      "a",
+      "participar",
+      "Atentamente"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      0,
+      3,
+      9
+     ]
+    },
+    "e": "Estimada, solicito y atentamente son formales."
+   }
+  ],
+  "2": [
+   {
+    "t": "keywords",
+    "p": "Escribí un mail a un profesor para pedirle que te explique de nuevo un tema. Incluí asunto, saludo, motivo, cierre y firma.",
+    "o": {
+     "ayuda": "Asunto corto, saludo, motivo claro, agradecimiento y firma."
+    },
+    "r": "Mail con asunto concreto, saludo formal, motivo claro (pedir una explicación), cierre educado y firma con nombre y curso.",
+    "e": "Se evalúa estructura, claridad y registro."
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená las partes del cuerpo de un mail.",
+    "o": [
+     "Cierre",
+     "Saludo",
+     "Detalle",
+     "Motivo",
+     "Firma"
+    ],
+    "r": {
+     "orden": [
+      "Saludo",
+      "Motivo",
+      "Detalle",
+      "Cierre",
+      "Firma"
+     ]
+    },
+    "e": "De la presentación a la despedida."
+   }
+  ],
+  "3": [
+   {
+    "t": "multi_select",
+    "p": "¿Qué conviene hacer al completar un formulario?",
+    "o": [
+     "Leer las instrucciones",
+     "Completar los campos obligatorios",
+     "Escribir datos inventados",
+     "Revisar antes de entregar"
+    ],
+    "r": {
+     "correctas": [
+      "Leer las instrucciones",
+      "Completar los campos obligatorios",
+      "Revisar antes de entregar"
+     ]
+    },
+    "e": "Los datos tienen que ser exactos."
+   },
+   {
+    "t": "fill_blank",
+    "p": "Si el formulario pide la fecha como día/mes/año, 05/10/2012 está ___ y 2012/10/05 está mal.",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "bien",
+       "correcto",
+       "correcta"
+      ]
+     ]
+    },
+    "e": "Respeta el formato pedido."
+   }
+  ],
+  "4": [
+   {
+    "t": "classify",
+    "p": "¿Qué registro es?",
+    "o": {
+     "elementos": [
+      "Le solicito que me informe",
+      "¿Cuándo es, che?",
+      "¿Podría decirme el horario?",
+      "Atentamente"
+     ],
+     "categorias": [
+      "Formal",
+      "Informal"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Le solicito que me informe": "Formal",
+      "¿Cuándo es, che?": "Informal",
+      "¿Podría decirme el horario?": "Formal",
+      "Atentamente": "Formal"
+     }
+    },
+    "e": "Cuidado frente a cercanía."
+   },
+   {
+    "t": "true_false",
+    "p": "Las abreviaturas de chat sirven en un mail formal.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Conviene evitarlas."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. La persona a quien va una carta es el…",
+    "o": [
+     "Destinatario",
+     "Remitente",
+     "Asunto"
+    ],
+    "r": {
+     "correcta": "Destinatario"
+    },
+    "e": "Recibe el mensaje.",
+    "tiempo": 20
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. El asunto de un mail puede quedar vacío.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Dice de qué trata.",
+    "tiempo": 20
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Los campos obligatorios…",
+    "o": [
+     "No se pueden omitir",
+     "Son opcionales",
+     "Se borran"
+    ],
+    "r": {
+     "correcta": "No se pueden omitir"
+    },
+    "e": "Sin ellos no se acepta.",
+    "tiempo": 20
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. Con una autoridad conviene registro formal.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Es lo adecuado.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Con qué despedida termina una carta formal?",
+    "o": [
+     "Atentamente",
+     "Un beso grande",
+     "Chau",
+     "Nos vemos"
+    ],
+    "r": {
+     "correcta": "Atentamente"
+    },
+    "e": "Es la despedida formal."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multi_select",
+    "p": "Partes de una carta:",
+    "o": [
+     "Saludo",
+     "Cuerpo",
+     "Firma",
+     "Emoji"
+    ],
+    "r": {
+     "correctas": [
+      "Saludo",
+      "Cuerpo",
+      "Firma"
+     ]
+    },
+    "e": "El emoji no es una parte."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "A un amigo se le puede escribir una carta informal.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Con lenguaje cercano."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué dice el asunto de un mail?",
+    "o": [
+     "De qué trata",
+     "Quién lo recibe",
+     "Cuándo se envió",
+     "El adjunto"
+    ],
+    "r": {
+     "correcta": "De qué trata"
+    },
+    "e": "Corto y concreto."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "fill_blank",
+    "p": "El archivo que acompaña un mail es el ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "adjunto"
+      ]
+     ]
+    },
+    "e": "Se envía junto con el mensaje."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "Antes de enviar un mail conviene revisarlo.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Se evitan errores."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué se hace primero con un formulario?",
+    "o": [
+     "Leer las instrucciones",
+     "Firmar",
+     "Entregarlo",
+     "Dibujarlo"
+    ],
+    "r": {
+     "correcta": "Leer las instrucciones"
+    },
+    "e": "Dicen cómo completarlo."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multi_select",
+    "p": "Datos de un formulario:",
+    "o": [
+     "Nombre completo",
+     "DNI",
+     "Fecha de nacimiento",
+     "Chiste"
+    ],
+    "r": {
+     "correctas": [
+      "Nombre completo",
+      "DNI",
+      "Fecha de nacimiento"
+     ]
+    },
+    "e": "El chiste no es un dato."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "Un campo obligatorio puede quedar vacío.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "No se acepta."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "El registro es…",
+    "o": [
+     "La manera de escribir según el destinatario",
+     "Un tipo de letra",
+     "Una lista",
+     "Un archivo"
+    ],
+    "r": {
+     "correcta": "La manera de escribir según el destinatario"
+    },
+    "e": "Se adapta."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Con una autoridad conviene…",
+    "o": [
+     "Registro formal",
+     "Jerga",
+     "Abreviaturas de chat",
+     "Chistes"
+    ],
+    "r": {
+     "correcta": "Registro formal"
+    },
+    "e": "Respeto y cuidado."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "fill_blank",
+    "p": "Un lenguaje cercano, para amigos, es el registro ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "informal",
+       "coloquial"
+      ]
+     ]
+    },
+    "e": "Para la familia y amigos."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "Con un amigo conviene ser muy rígido.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "El registro es informal."
+   }
+  ]
+ ]
+}

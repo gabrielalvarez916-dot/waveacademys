@@ -152,10 +152,10 @@
     }
    ],
    "carpeta": [
-    "¿Qué conector expresa oposición: «sin embargo» o «además»?",
-    "¿Qué conector expresa consecuencia: «por eso» o «pero»?",
-    "¿«Porque» expresa causa o consecuencia?",
-    "¿Hace falta un conector en cada oración? Respondé sí o no."
+    "Completá con el conector que expresa oposición: «Estudié mucho; ___, me fue mal en la prueba». ¿«Sin embargo» o «además»?",
+    "Completá con el conector de consecuencia: «Llovió toda la noche; ___, se suspendió el partido». ¿«Por eso» o «pero»?",
+    "En «No fui al club porque me dolía la pierna», ¿«porque» introduce la causa o la consecuencia?",
+    "Un texto de seis oraciones empieza cada una con «además». ¿Qué problema tiene: abusa del conector o le faltan oraciones?"
    ],
    "respuestas_carpeta": [
     [
@@ -165,23 +165,31 @@
      "por eso"
     ],
     [
-     "causa",
-     "expresa causa"
+     "la causa",
+     "causa"
     ],
     [
-     "no"
+     "abusa del conector",
+     "abusa",
+     "repite el conector"
     ]
    ],
    "soluciones": {
     "incompleto": "Oposición. Causa.",
     "solo": "Estudié mucho; por eso aprobé. Es difícil; sin embargo, me gusta.",
     "carpeta": [
-     "Sin embargo.",
-     "Por eso.",
-     "Causa.",
-     "No."
+     "«Sin embargo»: une ideas que se oponen.",
+     "«Por eso»: presenta lo que resulta de lo anterior.",
+     "La causa: explica por qué no fue.",
+     "Abusa del conector: no hace falta uno en cada oración, y conviene variar."
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
   },
   "2": {
    "objetivo": "Vas a evitar repeticiones con pronombres, sinónimos y otros recursos de referencia.",
@@ -334,42 +342,44 @@
     }
    ],
    "carpeta": [
-    "¿Qué palabra evita repetir «Sofía»?",
-    "«Hogar» por «casa», ¿es un sinónimo o un pronombre?",
-    "Omitir una palabra que se entiende por el contexto, ¿es una elipsis o un conector?",
-    "¿Se puede cambiar una palabra si el lector deja de entender? Respondé sí o no."
+    "En «Sofía llegó temprano. Sofía abrió la ventana», ¿qué palabra evita repetir «Sofía» en la segunda oración?",
+    "En «La casa era vieja. El hogar tenía goteras», ¿qué recurso usa «hogar»: sinónimo o pronombre?",
+    "En «Juan trajo gaseosa y Ana, galletitas», se omitió «trajo» en la segunda parte. ¿Qué recurso es: elipsis o conector?",
+    "Un texto dice «El perro y el gato jugaban. Él se cansó». ¿Qué problema tiene «él»?"
    ],
    "respuestas_carpeta": [
     [
-     "ella",
-     "un pronombre",
-     "pronombre"
+     "ella"
     ],
     [
-     "sinonimo",
      "sinónimo",
-     "es un sinonimo",
-     "es un sinónimo"
+     "sinonimo"
     ],
     [
-     "elipsis",
-     "una elipsis",
-     "es una elipsis"
+     "elipsis"
     ],
     [
-     "no"
+     "es ambiguo",
+     "ambiguo",
+     "no se sabe a quién"
     ]
    ],
    "soluciones": {
     "incompleto": "Pronombre. Elipsis.",
     "solo": "María tiene un gato negro y lo quiere mucho.",
     "carpeta": [
-     "Ella.",
-     "Sinónimo.",
-     "Elipsis.",
-     "No."
+     "Ella: el pronombre reemplaza al nombre.",
+     "Sinónimo: otra palabra con el mismo significado.",
+     "Elipsis: se omite lo que se entiende por el contexto.",
+     "Es ambiguo: no se sabe si se refiere al perro o al gato."
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
   },
   "3": {
    "objetivo": "Vas a usar la coma, el punto y los párrafos para organizar las ideas.",
@@ -540,40 +550,45 @@
     }
    ],
    "carpeta": [
-    "¿Qué signo cierra un párrafo?",
-    "¿Qué signo cierra una oración pero el párrafo sigue?",
-    "¿Un párrafo desarrolla una idea o cinco?",
-    "¿Se pone coma después de «sin embargo»? Respondé sí o no."
+    "Terminás de explicar una idea y vas a empezar otra distinta en el texto. ¿Qué signo usás: punto y seguido o punto y aparte?",
+    "Terminás una oración, pero seguís hablando del mismo tema en el mismo párrafo. ¿Qué signo usás?",
+    "En «Estaba cansado sin embargo siguió corriendo», ¿qué signo falta después de «sin embargo»?",
+    "Un párrafo habla del clima, de fútbol, de una receta y de un viaje. ¿Qué problema tiene?"
    ],
    "respuestas_carpeta": [
     [
-     "punto y aparte",
-     "el punto y aparte"
+     "punto y aparte"
     ],
     [
-     "punto y seguido",
-     "el punto y seguido"
+     "punto y seguido"
     ],
     [
-     "una",
-     "una idea",
-     "1"
+     "la coma",
+     "coma",
+     "una coma"
     ],
     [
-     "si",
-     "sí"
+     "tiene muchas ideas",
+     "muchas ideas",
+     "mezcla temas"
     ]
    ],
    "soluciones": {
     "incompleto": "Aparte. Principal.",
     "solo": "Dos párrafos: el primero presenta la idea; el segundo, el ejemplo.",
     "carpeta": [
-     "Punto y aparte.",
-     "Punto y seguido.",
-     "Una.",
-     "Sí."
+     "Punto y aparte: cierra el párrafo.",
+     "Punto y seguido: separa oraciones de un mismo párrafo.",
+     "Una coma: el conector va seguido de coma (y precedido de punto y coma o punto).",
+     "Mezcla temas: cada párrafo desarrolla una sola idea."
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
   },
   "4": {
    "objetivo": "Vas a revisar la cohesión de un texto y reescribirlo mejorando conectores, referencias y puntuación.",
@@ -717,42 +732,48 @@
     }
    ],
    "carpeta": [
-    "¿Cómo conviene revisar: todo a la vez o una pasada por vez?",
-    "¿Qué se usa para evitar repetir una palabra?",
-    "¿Qué agrega relaciones entre ideas: los conectores o los títulos?",
-    "¿Cada párrafo desarrolla una sola idea? Respondé sí o no."
+    "Para revisar la cohesión de un texto, Mara busca a la vez repeticiones, conectores y comas, y se le escapan errores. ¿Cómo conviene revisar?",
+    "Un texto repite «el volcán» cinco veces en un párrafo. ¿Qué podés usar para evitarlo: pronombres o más adjetivos?",
+    "«Llovió. Se inundó la calle. Suspendieron las clases.» ¿Qué agregarías para mostrar la relación entre esas ideas: conectores o títulos?",
+    "Reescribí con un conector de consecuencia: «Se cortó la luz. No pudimos ver la película». ¿Qué conector usaste?"
    ],
    "respuestas_carpeta": [
     [
      "una pasada por vez",
-     "una por vez",
-     "por vez"
+     "de a una cosa",
+     "en varias pasadas"
     ],
     [
      "pronombres",
-     "pronombre",
-     "sinonimos",
-     "sinónimos"
+     "sinónimos",
+     "pronombres o sinónimos"
     ],
     [
-     "conectores",
-     "los conectores"
+     "conectores"
     ],
     [
-     "si",
-     "sí"
+     "por eso",
+     "entonces",
+     "por lo tanto",
+     "así que"
     ]
    ],
    "soluciones": {
     "incompleto": "Pronombres. Idea.",
     "solo": "Fui a la plaza con mi perro, que corrió tanto que me cansé.",
     "carpeta": [
-     "Una pasada por vez.",
-     "Pronombres.",
-     "Los conectores.",
-     "Sí."
+     "Una pasada por vez: cada pasada busca una sola cosa.",
+     "Pronombres o sinónimos: reemplazan la palabra sin perder el sentido.",
+     "Conectores: por ejemplo, «por eso» y «entonces».",
+     "Por ejemplo: «Se cortó la luz; por eso, no pudimos ver la película»."
     ]
-   }
+   },
+   "carpeta_nivel": [
+    "error",
+    "aplicar",
+    "analizar",
+    "aplicar"
+   ]
   }
  },
  "act": {

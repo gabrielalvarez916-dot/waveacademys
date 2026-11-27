@@ -1,1 +1,1242 @@
-{"subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2", "tema": 13, "practica": "Práctica general: argumentar una opinión", "examen_titulo": "Nivel jefe: argumentar una opinión", "niveles": {"1": {"objetivo": "Vas a distinguir un hecho de una opinión y reconocer las marcas de la subjetividad.", "vas_a_ver": ["Hecho", "Opinión", "Marcas de opinión", "Cómo comprobar"], "secciones": [{"etapa": 1, "titulo": "Hecho y opinión", "bloques": [{"tipo": "tabla", "titulo": "No son lo mismo", "columnas": ["", "Hecho", "Opinión"], "filas": [["Qué es", "Algo que se puede comprobar", "Lo que alguien piensa o siente"], ["Ejemplo", "El colegio abre a las 8", "El colegio es aburrido"], ["Cómo se prueba", "Con datos", "No se prueba: se argumenta"]], "iguales": true}]}, {"etapa": 1, "titulo": "Marcas de opinión", "bloques": [{"tipo": "tabla", "titulo": "Qué delata una opinión", "columnas": ["Marca", "Ejemplo"], "filas": [["Verbos de pensamiento", "creo, pienso, me parece"], ["Adjetivos valorativos", "injusto, genial, aburrido"], ["Exageraciones", "siempre, nunca, todos"]], "iguales": true}]}, {"etapa": 2, "titulo": "Comprobar", "bloques": [{"tipo": "parrafo", "texto": "Para saber si algo es un hecho, preguntate: ¿puedo <b>verificarlo</b> con una fuente, un número o una prueba? Si la respuesta es no, es una opinión."}]}, {"etapa": 2, "titulo": "Mezcla", "bloques": [{"tipo": "parrafo", "texto": "Muchas oraciones mezclan ambos: <i>\"El nuevo parque, que abrió el año pasado, es hermoso\"</i>. Abrir el año pasado es un hecho; hermoso es una opinión."}]}], "ejemplo_completo": {"titulo": "clasificar", "planteo": "¿«La ciudad tiene tres millones de habitantes» es hecho u opinión?", "pasos": ["Se puede verificar con datos.", "Es un hecho."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Lo que se puede comprobar es un ___ .", "Lo que alguien piensa o siente es una ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí tres hechos y tres opiniones sobre tu escuela."}, "tip": {"titulo": "¿Puedo probarlo?", "texto": "Si lo podés probar con datos, es un hecho; si no, es una opinión."}, "ojo": ["Creer que una opinión es siempre falsa.", "Tomar un dato dudoso como hecho."], "resumen": [{"titulo": "Hecho", "texto": "Se comprueba."}, {"titulo": "Opinión", "texto": "Se argumenta."}, {"titulo": "Marcas", "texto": "Creo, adjetivos, siempre."}, {"titulo": "Mezcla", "texto": "Pueden ir juntos."}], "glosario": [{"palabra": "Hecho", "significado": "Lo que se puede comprobar."}, {"palabra": "Opinión", "significado": "Lo que alguien piensa."}, {"palabra": "Valorativo", "significado": "Que expresa un juicio."}], "carpeta": ["«El colegio abre a las 8», ¿es hecho u opinión?", "«El colegio es aburrido», ¿es hecho u opinión?", "¿«Creo que» marca un hecho o una opinión?", "¿Se puede comprobar una opinión con datos? Respondé sí o no."], "respuestas_carpeta": [["hecho", "es un hecho"], ["opinion", "opinión", "es una opinion", "es una opinión"], ["opinion", "opinión", "una opinion", "una opinión"], ["no"]], "soluciones": {"incompleto": "Hecho. Opinión.", "solo": "Hechos: hay 40 alumnos. Opiniones: la escuela es linda.", "carpeta": ["Hecho.", "Opinión.", "Opinión.", "No."]}}, "2": {"objetivo": "Vas a armar una opinión con tesis y argumentos de distintos tipos.", "vas_a_ver": ["La tesis", "Tipos de argumentos", "Conectores", "Un párrafo argumentativo"], "secciones": [{"etapa": 1, "titulo": "La tesis", "bloques": [{"tipo": "definicion", "titulo": "Tesis", "texto": "Idea principal que se defiende en un texto argumentativo."}, {"tipo": "parrafo", "texto": "Se formula con claridad: <i>Los celulares deberían usarse en el aula con fines educativos.</i>"}]}, {"etapa": 1, "titulo": "Tipos de argumentos", "bloques": [{"tipo": "tabla", "titulo": "Cómo se apoya una tesis", "columnas": ["Tipo", "Ejemplo"], "filas": [["Ejemplo", "En mi curso, usamos el celular para buscar datos"], ["Dato", "Según una encuesta, el 80 % usa el celular para estudiar"], ["Autoridad", "Una docente de Ciencias lo recomienda"], ["Causa y efecto", "Si lo usamos bien, aprendemos más"]], "iguales": true}]}, {"etapa": 2, "titulo": "Conectores", "bloques": [{"tipo": "tabla", "titulo": "Para argumentar", "columnas": ["Función", "Conectores"], "filas": [["Introducir un argumento", "en primer lugar, además"], ["Dar un ejemplo", "por ejemplo"], ["Explicar una causa", "porque, ya que"], ["Concluir", "por lo tanto, en conclusión"]], "iguales": true}]}, {"etapa": 2, "titulo": "Un párrafo", "bloques": [{"tipo": "parrafo", "texto": "Un buen párrafo: <b>tesis + argumento + ejemplo + cierre</b>. <i>Creo que el recreo debería durar más. Porque descansar mejora la atención; por ejemplo, después del recreo participamos más. Por eso conviene extenderlo.</i>"}]}], "ejemplo_completo": {"titulo": "argumentar", "planteo": "Tesis: «Debería haber más espacios verdes en la escuela».", "pasos": ["Argumento: los espacios verdes mejoran el ánimo.", "Ejemplo: en el patio con árboles, los chicos juegan más tranquilos.", "Cierre: por lo tanto, conviene plantar más árboles."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La idea que se defiende es la ___ .", "Las razones que la apoyan son los ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una tesis y dos argumentos de tipos distintos."}, "tip": {"titulo": "Una razón por vez", "texto": "Cada argumento tiene que apoyar la tesis, no repetirla."}, "ojo": ["Repetir la tesis como argumento.", "Argumentar con insultos."], "resumen": [{"titulo": "Tesis", "texto": "Lo que defiendo."}, {"titulo": "Argumentos", "texto": "Razones."}, {"titulo": "Tipos", "texto": "Ejemplo, dato, autoridad, causa."}, {"titulo": "Cierre", "texto": "Vuelve a la tesis."}], "glosario": [{"palabra": "Tesis", "significado": "Idea que se defiende."}, {"palabra": "Argumento", "significado": "Razón que apoya una tesis."}, {"palabra": "Autoridad", "significado": "Persona experta en un tema."}], "carpeta": ["¿Cómo se llama la idea principal que defendés?", "¿Cómo se llaman las razones que la apoyan?", "¿Qué tipo de argumento usa números de una encuesta?", "¿Qué conector uso para dar un ejemplo?"], "respuestas_carpeta": [["tesis", "la tesis"], ["argumentos", "los argumentos"], ["dato", "de dato", "un dato", "argumento de dato"], ["por ejemplo"]], "soluciones": {"incompleto": "Tesis. Argumentos.", "solo": "Tesis: más recreo. Argumento: descansar mejora la atención. Ejemplo: después del recreo participamos más.", "carpeta": ["La tesis.", "Los argumentos.", "De dato.", "Por ejemplo."]}}, "3": {"objetivo": "Vas a escribir una carta de lectores con tesis, argumentos, cierre y datos del remitente.", "vas_a_ver": ["Qué es una carta de lectores", "Partes", "Tono y registro", "Antes de enviarla"], "secciones": [{"etapa": 1, "titulo": "Qué es", "bloques": [{"tipo": "definicion", "titulo": "Carta de lectores", "texto": "Texto breve que un lector envía a un diario o revista para opinar sobre un tema o responder a una nota."}, {"tipo": "parrafo", "texto": "Se publica con el nombre de quien la escribe y busca convencer a otros lectores."}]}, {"etapa": 1, "titulo": "Partes", "bloques": [{"tipo": "tabla", "titulo": "Estructura", "columnas": ["Parte", "Qué lleva"], "filas": [["Título", "Resume el tema"], ["Saludo", "Señor director:"], ["Tesis", "Lo que opino"], ["Argumentos", "Razones con ejemplos"], ["Cierre", "Conclusión"], ["Firma y datos", "Nombre y localidad"]], "iguales": true}]}, {"etapa": 2, "titulo": "Tono y registro", "bloques": [{"tipo": "parrafo", "texto": "El tono es <b>respetuoso y formal</b>: sin insultos ni abreviaturas de chat. Se puede opinar con fuerza, pero siempre con respeto y razones."}]}, {"etapa": 2, "titulo": "Antes de enviarla", "bloques": [{"tipo": "parrafo", "texto": "Verificá que: la tesis se entienda en la primera frase, haya al menos dos argumentos, no pase de unas 150 palabras y esté firmada."}]}], "ejemplo_completo": {"titulo": "armar", "planteo": "Tema: más ciclovías en la ciudad.", "pasos": ["Título: Más ciclovías, menos tránsito.", "Saludo: Señor director:", "Tesis: Creo que hacen falta más ciclovías.", "Argumentos: reducen el tránsito y mejoran la salud.", "Cierre y firma: Por eso pido al municipio ampliarlas. Lucía Gómez, Rosario."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La carta de lectores se envía a un diario o ___ .", "El tono de la carta es respetuoso y ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una carta de lectores sobre un tema que te importe."}, "tip": {"titulo": "Primero la tesis", "texto": "Que el lector sepa qué pensás ya desde la primera frase."}, "ojo": ["Insultar a quien piensa distinto.", "Olvidar la firma."], "resumen": [{"titulo": "Carta de lectores", "texto": "Opinión pública."}, {"titulo": "Partes", "texto": "Título, tesis, argumentos, cierre."}, {"titulo": "Tono", "texto": "Respetuoso."}, {"titulo": "Firma", "texto": "Nombre y localidad."}], "glosario": [{"palabra": "Remitente", "significado": "Quien envía la carta."}, {"palabra": "Tono", "significado": "Actitud con la que se escribe."}, {"palabra": "Localidad", "significado": "Lugar donde vive el remitente."}], "carpeta": ["¿A dónde se envía una carta de lectores: a un diario o a una tienda?", "¿Qué tono se usa: respetuoso o agresivo?", "¿Lleva firma? Respondé sí o no.", "¿Qué parte dice lo que opina quien escribe?"], "respuestas_carpeta": [["diario", "a un diario", "revista", "a una revista"], ["respetuoso", "respetuoso y formal"], ["si", "sí"], ["tesis", "la tesis"]], "soluciones": {"incompleto": "Revista. Formal.", "solo": "Carta con título, saludo, tesis, dos argumentos, cierre y firma.", "carpeta": ["A un diario.", "Respetuoso.", "Sí.", "La tesis."]}}, "4": {"objetivo": "Vas a responder a otra opinión reconociendo lo valioso, discrepando con razones y proponiendo una alternativa.", "vas_a_ver": ["Responder con respeto", "Pasos de una respuesta", "Contraargumentar", "Conectores"], "secciones": [{"etapa": 1, "titulo": "Responder con respeto", "bloques": [{"tipo": "parrafo", "texto": "Responder no es atacar: es <b>discrepar con razones</b>. Se critica la idea, no a la persona."}]}, {"etapa": 1, "titulo": "Pasos", "bloques": [{"tipo": "tabla", "titulo": "Estructura de la respuesta", "columnas": ["Paso", "Ejemplo"], "filas": [["Reconozco", "Es cierto que el celular distrae"], ["Discrepo", "Sin embargo, no creo que haya que prohibirlo"], ["Argumento", "Porque puede usarse para buscar información"], ["Propongo", "Se podría usar solo con permiso del docente"]], "iguales": true}]}, {"etapa": 2, "titulo": "Contraargumentar", "bloques": [{"tipo": "definicion", "titulo": "Contraargumento", "texto": "Razón que se opone al argumento de otro."}, {"tipo": "parrafo", "texto": "Para contraargumentar, mostrá una <b>falla</b> en la razón del otro: un dato que no es cierto, un caso que no se cumple o una consecuencia que no se tuvo en cuenta."}]}, {"etapa": 2, "titulo": "Conectores", "bloques": [{"tipo": "tabla", "titulo": "Para discrepar", "columnas": ["Función", "Conectores"], "filas": [["Reconocer", "es cierto que, tienes razón en que"], ["Oponer", "sin embargo, en cambio, pero"], ["Concesión", "aunque, si bien"], ["Proponer", "por eso, una alternativa es"]], "iguales": true}]}], "ejemplo_completo": {"titulo": "responder", "planteo": "Opinión ajena: «Hay que prohibir los celulares en la escuela».", "pasos": ["Reconozco: es cierto que a veces distraen.", "Discrepo: sin embargo, no hace falta prohibirlos.", "Argumento: sirven para buscar información y organizarse.", "Propongo: usarlos con reglas claras."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La razón que se opone al argumento de otro es un ___ .", "Se critica la idea y no a la ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una respuesta a una opinión con la que no estás de acuerdo."}, "tip": {"titulo": "Idea, no persona", "texto": "Cuando discrepás, discutí lo que dijo, no cómo es quien lo dijo."}, "ojo": ["Atacar a la persona en lugar de la idea.", "Discrepar sin dar razones."], "resumen": [{"titulo": "Respeto", "texto": "Se critica la idea."}, {"titulo": "Pasos", "texto": "Reconozco, discrepo, argumento, propongo."}, {"titulo": "Contraargumento", "texto": "Razón en contra."}, {"titulo": "Conectores", "texto": "Sin embargo, aunque."}], "glosario": [{"palabra": "Contraargumento", "significado": "Razón que se opone a otra."}, {"palabra": "Discrepar", "significado": "No estar de acuerdo."}, {"palabra": "Concesión", "significado": "Reconocer algo del otro."}], "carpeta": ["¿Cómo se llama la razón que se opone al argumento de otro?", "¿Se critica la idea o a la persona?", "¿Qué conector introduce una oposición: sin embargo o por ejemplo?", "¿Conviene reconocer algo valioso del otro? Respondé sí o no."], "respuestas_carpeta": [["contraargumento", "un contraargumento", "el contraargumento"], ["la idea", "idea"], ["sin embargo"], ["si", "sí"]], "soluciones": {"incompleto": "Contraargumento. Persona.", "solo": "Es cierto que distraen; sin embargo, sirven para buscar información; propongo usarlos con reglas.", "carpeta": ["Contraargumento.", "La idea.", "Sin embargo.", "Sí."]}}}, "act": {"1": [{"t": "classify", "p": "¿Hecho u opinión?", "o": {"elementos": ["El colegio abre a las 8", "El colegio es aburrido", "Hay 40 alumnos", "La clase es genial"], "categorias": ["Hecho", "Opinión"]}, "r": {"categorias": {"El colegio abre a las 8": "Hecho", "El colegio es aburrido": "Opinión", "Hay 40 alumnos": "Hecho", "La clase es genial": "Opinión"}}, "e": "Los hechos se comprueban."}, {"t": "multi_select", "p": "¿Qué marcas delatan una opinión?", "o": ["creo que", "injusto", "hay 40 alumnos", "siempre"], "r": {"correctas": ["creo que", "injusto", "siempre"]}, "e": "Hay 40 alumnos es un dato."}], "2": [{"t": "matching", "p": "Uní cada tipo de argumento con su ejemplo.", "o": {"izquierda": ["Ejemplo", "Dato", "Autoridad", "Causa y efecto"], "derecha": ["En mi curso", "El 80 % lo usa", "Una docente lo recomienda", "Si lo usamos bien, aprendemos más"]}, "r": {"pares": {"Ejemplo": "En mi curso", "Dato": "El 80 % lo usa", "Autoridad": "Una docente lo recomienda", "Causa y efecto": "Si lo usamos bien, aprendemos más"}}, "e": "Cada tipo apoya la tesis de otra forma."}, {"t": "fill_blank", "p": "La idea principal que se defiende es la ___ .", "o": [], "r": {"huecos": [["tesis"]]}, "e": "La tesis."}], "3": [{"t": "keywords", "p": "Escribí una carta de lectores de unas 100 palabras sobre un tema que te importe, con título, saludo, tesis, dos argumentos, cierre y firma.", "o": {"ayuda": "Tono respetuoso, tesis clara en la primera frase y dos argumentos distintos."}, "r": "Carta de lectores con título, saludo formal (Señor director:), tesis clara, dos argumentos de tipos distintos con un ejemplo, cierre y firma con nombre y localidad; tono respetuoso.", "e": "Se evalúa estructura, argumentos y tono."}, {"t": "ordering", "p": "Ordená las partes de la carta.", "o": ["Argumentos", "Título", "Firma", "Tesis", "Saludo", "Cierre"], "r": {"orden": ["Título", "Saludo", "Tesis", "Argumentos", "Cierre", "Firma"]}, "e": "De arriba hacia abajo."}], "4": [{"t": "tap_text", "p": "Tocá el conector que introduce una oposición: «Es cierto que distraen; sin embargo, pueden ayudar».", "o": {"segmentos": ["Es", "cierto", "que", "distraen;", "sin", "embargo,", "pueden", "ayudar"], "modo": "palabras"}, "r": {"tocar": [4, 5]}, "e": "Sin embargo opone ideas."}, {"t": "keywords", "p": "Respondé a esta opinión: «Hay que prohibir los celulares en la escuela». Reconocé algo, discrepá con una razón y proponé una alternativa.", "o": {"ayuda": "Usá sin embargo, porque y una propuesta."}, "r": "Respuesta que reconoce algo valioso, discrepa con una razón (contraargumento) y propone una alternativa, en tono respetuoso y con conectores.", "e": "Se evalúa respeto, razones y propuesta."}], "5": [{"t": "multiple_choice", "p": "Relámpago. Lo que se puede comprobar es un…", "o": ["Hecho", "Deseo", "Título"], "r": {"correcta": "Hecho"}, "e": "Se verifica.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. La tesis es la idea que se defiende.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Principal.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. «Sin embargo» introduce…", "o": ["Una oposición", "Una suma", "Un saludo"], "r": {"correcta": "Una oposición"}, "e": "Contrasta ideas.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. Al discrepar se ataca a la persona.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Se critica la idea.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "«El colegio abre a las 8» es…", "o": ["Un hecho", "Una opinión", "Una tesis", "Un deseo"], "r": {"correcta": "Un hecho"}, "e": "Se puede comprobar."}], [1, {"t": "multi_select", "p": "Marcas de opinión:", "o": ["Creo que", "Adjetivos valorativos", "Fechas exactas", "Siempre y nunca"], "r": {"correctas": ["Creo que", "Adjetivos valorativos", "Siempre y nunca"]}, "e": "Las fechas exactas son datos."}], [1, {"t": "true_false", "p": "Una opinión se prueba con una medición.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Se argumenta."}], [2, {"t": "multiple_choice", "p": "La idea principal que se defiende es…", "o": ["La tesis", "El saludo", "La firma", "El título"], "r": {"correcta": "La tesis"}, "e": "Se apoya con argumentos."}], [2, {"t": "multiple_choice", "p": "Un argumento que usa un número de una encuesta es de…", "o": ["Dato", "Ejemplo", "Autoridad", "Causa"], "r": {"correcta": "Dato"}, "e": "Cifras."}], [2, {"t": "fill_blank", "p": "Para dar un ejemplo uso el conector «por ___ ».", "o": [], "r": {"huecos": [["ejemplo"]]}, "e": "Por ejemplo."}], [3, {"t": "multiple_choice", "p": "Una carta de lectores se envía a…", "o": ["Un diario o revista", "Un amigo", "Un banco", "Un médico"], "r": {"correcta": "Un diario o revista"}, "e": "Para opinar públicamente."}], [3, {"t": "multi_select", "p": "Partes de una carta de lectores:", "o": ["Título", "Tesis", "Argumentos", "Receta"], "r": {"correctas": ["Título", "Tesis", "Argumentos"]}, "e": "La receta no es parte."}], [3, {"t": "true_false", "p": "Una carta de lectores usa un tono respetuoso.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Sin insultos."}], [4, {"t": "multiple_choice", "p": "Un contraargumento es…", "o": ["Una razón que se opone a otra", "Un saludo", "Una firma", "Un hecho"], "r": {"correcta": "Una razón que se opone a otra"}, "e": "Muestra una falla."}], [4, {"t": "multiple_choice", "p": "Al discrepar se critica…", "o": ["La idea", "A la persona", "Su ropa", "Nada"], "r": {"correcta": "La idea"}, "e": "Con respeto."}], [4, {"t": "fill_blank", "p": "«Sin embargo» es un conector de ___ .", "o": [], "r": {"huecos": [["oposicion", "oposición"]]}, "e": "Contrasta."}], [4, {"t": "true_false", "p": "Conviene reconocer algo valioso de la otra opinión.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Da respeto y fuerza."}]]}
+{
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "tema": 13,
+ "practica": "Práctica general: argumentar una opinión",
+ "examen_titulo": "Nivel jefe: argumentar una opinión",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a distinguir un hecho de una opinión y reconocer las marcas de la subjetividad.",
+   "vas_a_ver": [
+    "Hecho",
+    "Opinión",
+    "Marcas de opinión",
+    "Cómo comprobar"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Hecho y opinión",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "No son lo mismo",
+       "columnas": [
+        "",
+        "Hecho",
+        "Opinión"
+       ],
+       "filas": [
+        [
+         "Qué es",
+         "Algo que se puede comprobar",
+         "Lo que alguien piensa o siente"
+        ],
+        [
+         "Ejemplo",
+         "El colegio abre a las 8",
+         "El colegio es aburrido"
+        ],
+        [
+         "Cómo se prueba",
+         "Con datos",
+         "No se prueba: se argumenta"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Marcas de opinión",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Qué delata una opinión",
+       "columnas": [
+        "Marca",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Verbos de pensamiento",
+         "creo, pienso, me parece"
+        ],
+        [
+         "Adjetivos valorativos",
+         "injusto, genial, aburrido"
+        ],
+        [
+         "Exageraciones",
+         "siempre, nunca, todos"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Comprobar",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Para saber si algo es un hecho, preguntate: ¿puedo <b>verificarlo</b> con una fuente, un número o una prueba? Si la respuesta es no, es una opinión."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Mezcla",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Muchas oraciones mezclan ambos: <i>\"El nuevo parque, que abrió el año pasado, es hermoso\"</i>. Abrir el año pasado es un hecho; hermoso es una opinión."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "clasificar",
+    "planteo": "¿«La ciudad tiene tres millones de habitantes» es hecho u opinión?",
+    "pasos": [
+     "Se puede verificar con datos.",
+     "Es un hecho."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Lo que se puede comprobar es un ___ .",
+     "Lo que alguien piensa o siente es una ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí tres hechos y tres opiniones sobre tu escuela."
+   },
+   "tip": {
+    "titulo": "¿Puedo probarlo?",
+    "texto": "Si lo podés probar con datos, es un hecho; si no, es una opinión."
+   },
+   "ojo": [
+    "Creer que una opinión es siempre falsa.",
+    "Tomar un dato dudoso como hecho."
+   ],
+   "resumen": [
+    {
+     "titulo": "Hecho",
+     "texto": "Se comprueba."
+    },
+    {
+     "titulo": "Opinión",
+     "texto": "Se argumenta."
+    },
+    {
+     "titulo": "Marcas",
+     "texto": "Creo, adjetivos, siempre."
+    },
+    {
+     "titulo": "Mezcla",
+     "texto": "Pueden ir juntos."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Hecho",
+     "significado": "Lo que se puede comprobar."
+    },
+    {
+     "palabra": "Opinión",
+     "significado": "Lo que alguien piensa."
+    },
+    {
+     "palabra": "Valorativo",
+     "significado": "Que expresa un juicio."
+    }
+   ],
+   "carpeta": [
+    "«La escuela abre a las 8 de la mañana.» ¿Es un hecho o una opinión?",
+    "«El colegio debería empezar más tarde porque dormimos poco.» ¿Es un hecho o una opinión?",
+    "En «Creo que la música fuerte molesta a los vecinos», ¿qué palabras marcan que es una opinión?",
+    "Tomás dice que «Messi es el mejor jugador de la historia» es un hecho porque mucha gente lo piensa. ¿Qué es en realidad?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "hecho",
+     "un hecho"
+    ],
+    [
+     "opinión",
+     "opinion",
+     "una opinión"
+    ],
+    [
+     "creo que"
+    ],
+    [
+     "opinión",
+     "opinion",
+     "una opinión"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Hecho. Opinión.",
+    "solo": "Hechos: hay 40 alumnos. Opiniones: la escuela es linda.",
+    "carpeta": [
+     "Hecho: se puede comprobar.",
+     "Opinión: expresa lo que alguien piensa que debería pasar.",
+     "«Creo que»: marca la postura de quien habla.",
+     "Opinión: que mucha gente lo piense no lo vuelve comprobable."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a armar una opinión con tesis y argumentos de distintos tipos.",
+   "vas_a_ver": [
+    "La tesis",
+    "Tipos de argumentos",
+    "Conectores",
+    "Un párrafo argumentativo"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La tesis",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Tesis",
+       "texto": "Idea principal que se defiende en un texto argumentativo."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Se formula con claridad: <i>Los celulares deberían usarse en el aula con fines educativos.</i>"
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Tipos de argumentos",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Cómo se apoya una tesis",
+       "columnas": [
+        "Tipo",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Ejemplo",
+         "En mi curso, usamos el celular para buscar datos"
+        ],
+        [
+         "Dato",
+         "Según una encuesta, el 80 % usa el celular para estudiar"
+        ],
+        [
+         "Autoridad",
+         "Una docente de Ciencias lo recomienda"
+        ],
+        [
+         "Causa y efecto",
+         "Si lo usamos bien, aprendemos más"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Conectores",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Para argumentar",
+       "columnas": [
+        "Función",
+        "Conectores"
+       ],
+       "filas": [
+        [
+         "Introducir un argumento",
+         "en primer lugar, además"
+        ],
+        [
+         "Dar un ejemplo",
+         "por ejemplo"
+        ],
+        [
+         "Explicar una causa",
+         "porque, ya que"
+        ],
+        [
+         "Concluir",
+         "por lo tanto, en conclusión"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Un párrafo",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Un buen párrafo: <b>tesis + argumento + ejemplo + cierre</b>. <i>Creo que el recreo debería durar más. Porque descansar mejora la atención; por ejemplo, después del recreo participamos más. Por eso conviene extenderlo.</i>"
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "argumentar",
+    "planteo": "Tesis: «Debería haber más espacios verdes en la escuela».",
+    "pasos": [
+     "Argumento: los espacios verdes mejoran el ánimo.",
+     "Ejemplo: en el patio con árboles, los chicos juegan más tranquilos.",
+     "Cierre: por lo tanto, conviene plantar más árboles."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La idea que se defiende es la ___ .",
+     "Las razones que la apoyan son los ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí una tesis y dos argumentos de tipos distintos."
+   },
+   "tip": {
+    "titulo": "Una razón por vez",
+    "texto": "Cada argumento tiene que apoyar la tesis, no repetirla."
+   },
+   "ojo": [
+    "Repetir la tesis como argumento.",
+    "Argumentar con insultos."
+   ],
+   "resumen": [
+    {
+     "titulo": "Tesis",
+     "texto": "Lo que defiendo."
+    },
+    {
+     "titulo": "Argumentos",
+     "texto": "Razones."
+    },
+    {
+     "titulo": "Tipos",
+     "texto": "Ejemplo, dato, autoridad, causa."
+    },
+    {
+     "titulo": "Cierre",
+     "texto": "Vuelve a la tesis."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Tesis",
+     "significado": "Idea que se defiende."
+    },
+    {
+     "palabra": "Argumento",
+     "significado": "Razón que apoya una tesis."
+    },
+    {
+     "palabra": "Autoridad",
+     "significado": "Persona experta en un tema."
+    }
+   ],
+   "carpeta": [
+    "En una opinión, alguien sostiene «Hay que prohibir los celulares en clase». ¿Esa frase es la tesis o un argumento?",
+    "Para defender más recreos, alguien dice «Según una encuesta, el 70 % se concentra mejor después de descansar». ¿Qué tipo de argumento es?",
+    "Para defender la tesis, alguien cuenta «A mi primo le pasó que...». ¿Qué tipo de argumento es: ejemplo o dato?",
+    "Una opinión dice solo «Los deberes son malos y punto». ¿Qué le falta para convencer?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "la tesis",
+     "tesis"
+    ],
+    [
+     "de dato",
+     "dato",
+     "un dato",
+     "estadístico"
+    ],
+    [
+     "ejemplo",
+     "de ejemplo"
+    ],
+    [
+     "argumentos",
+     "los argumentos",
+     "razones"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Tesis. Argumentos.",
+    "solo": "Tesis: más recreo. Argumento: descansar mejora la atención. Ejemplo: después del recreo participamos más.",
+    "carpeta": [
+     "La tesis: es la idea que se defiende.",
+     "De dato: se apoya en números comprobables.",
+     "De ejemplo: usa un caso concreto.",
+     "Argumentos: sin razones, la tesis no se sostiene."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "aplicar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a escribir una carta de lectores con tesis, argumentos, cierre y datos del remitente.",
+   "vas_a_ver": [
+    "Qué es una carta de lectores",
+    "Partes",
+    "Tono y registro",
+    "Antes de enviarla"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Qué es",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Carta de lectores",
+       "texto": "Texto breve que un lector envía a un diario o revista para opinar sobre un tema o responder a una nota."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Se publica con el nombre de quien la escribe y busca convencer a otros lectores."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Partes",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Estructura",
+       "columnas": [
+        "Parte",
+        "Qué lleva"
+       ],
+       "filas": [
+        [
+         "Título",
+         "Resume el tema"
+        ],
+        [
+         "Saludo",
+         "Señor director:"
+        ],
+        [
+         "Tesis",
+         "Lo que opino"
+        ],
+        [
+         "Argumentos",
+         "Razones con ejemplos"
+        ],
+        [
+         "Cierre",
+         "Conclusión"
+        ],
+        [
+         "Firma y datos",
+         "Nombre y localidad"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Tono y registro",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El tono es <b>respetuoso y formal</b>: sin insultos ni abreviaturas de chat. Se puede opinar con fuerza, pero siempre con respeto y razones."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Antes de enviarla",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Verificá que: la tesis se entienda en la primera frase, haya al menos dos argumentos, no pase de unas 150 palabras y esté firmada."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "armar",
+    "planteo": "Tema: más ciclovías en la ciudad.",
+    "pasos": [
+     "Título: Más ciclovías, menos tránsito.",
+     "Saludo: Señor director:",
+     "Tesis: Creo que hacen falta más ciclovías.",
+     "Argumentos: reducen el tránsito y mejoran la salud.",
+     "Cierre y firma: Por eso pido al municipio ampliarlas. Lucía Gómez, Rosario."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La carta de lectores se envía a un diario o ___ .",
+     "El tono de la carta es respetuoso y ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí una carta de lectores sobre un tema que te importe."
+   },
+   "tip": {
+    "titulo": "Primero la tesis",
+    "texto": "Que el lector sepa qué pensás ya desde la primera frase."
+   },
+   "ojo": [
+    "Insultar a quien piensa distinto.",
+    "Olvidar la firma."
+   ],
+   "resumen": [
+    {
+     "titulo": "Carta de lectores",
+     "texto": "Opinión pública."
+    },
+    {
+     "titulo": "Partes",
+     "texto": "Título, tesis, argumentos, cierre."
+    },
+    {
+     "titulo": "Tono",
+     "texto": "Respetuoso."
+    },
+    {
+     "titulo": "Firma",
+     "texto": "Nombre y localidad."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Remitente",
+     "significado": "Quien envía la carta."
+    },
+    {
+     "palabra": "Tono",
+     "significado": "Actitud con la que se escribe."
+    },
+    {
+     "palabra": "Localidad",
+     "significado": "Lugar donde vive el remitente."
+    }
+   ],
+   "carpeta": [
+    "Querés quejarte públicamente porque no hay rampas en la plaza de tu barrio. ¿A dónde enviás tu carta de lectores: a un diario o a una tienda?",
+    "Una carta de lectores dice «Los del municipio son unos inútiles». ¿Qué falla: el tono o la firma?",
+    "Una carta empieza contando el problema, sigue con la opinión y cierra pidiendo una solución. ¿En qué parte va la tesis?",
+    "Una carta de lectores sobre el transporte termina sin nombre ni ciudad. ¿Qué le falta al final?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "a un diario",
+     "diario",
+     "un diario"
+    ],
+    [
+     "el tono",
+     "tono"
+    ],
+    [
+     "en la opinión",
+     "opinión",
+     "la opinión",
+     "al principio"
+    ],
+    [
+     "la firma",
+     "firma"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Revista. Formal.",
+    "solo": "Carta con título, saludo, tesis, dos argumentos, cierre y firma.",
+    "carpeta": [
+     "A un diario: la carta de lectores se publica en un medio.",
+     "El tono: hay que criticar con respeto, sin insultar.",
+     "En la parte de la opinión: ahí se dice qué piensa quien escribe.",
+     "La firma: nombre y datos de quien escribe."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "error",
+    "analizar",
+    "aplicar"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a responder a otra opinión reconociendo lo valioso, discrepando con razones y proponiendo una alternativa.",
+   "vas_a_ver": [
+    "Responder con respeto",
+    "Pasos de una respuesta",
+    "Contraargumentar",
+    "Conectores"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Responder con respeto",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Responder no es atacar: es <b>discrepar con razones</b>. Se critica la idea, no a la persona."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Pasos",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Estructura de la respuesta",
+       "columnas": [
+        "Paso",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Reconozco",
+         "Es cierto que el celular distrae"
+        ],
+        [
+         "Discrepo",
+         "Sin embargo, no creo que haya que prohibirlo"
+        ],
+        [
+         "Argumento",
+         "Porque puede usarse para buscar información"
+        ],
+        [
+         "Propongo",
+         "Se podría usar solo con permiso del docente"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Contraargumentar",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Contraargumento",
+       "texto": "Razón que se opone al argumento de otro."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Para contraargumentar, mostrá una <b>falla</b> en la razón del otro: un dato que no es cierto, un caso que no se cumple o una consecuencia que no se tuvo en cuenta."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Conectores",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Para discrepar",
+       "columnas": [
+        "Función",
+        "Conectores"
+       ],
+       "filas": [
+        [
+         "Reconocer",
+         "es cierto que, tienes razón en que"
+        ],
+        [
+         "Oponer",
+         "sin embargo, en cambio, pero"
+        ],
+        [
+         "Concesión",
+         "aunque, si bien"
+        ],
+        [
+         "Proponer",
+         "por eso, una alternativa es"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "responder",
+    "planteo": "Opinión ajena: «Hay que prohibir los celulares en la escuela».",
+    "pasos": [
+     "Reconozco: es cierto que a veces distraen.",
+     "Discrepo: sin embargo, no hace falta prohibirlos.",
+     "Argumento: sirven para buscar información y organizarse.",
+     "Propongo: usarlos con reglas claras."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "La razón que se opone al argumento de otro es un ___ .",
+     "Se critica la idea y no a la ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí una respuesta a una opinión con la que no estás de acuerdo."
+   },
+   "tip": {
+    "titulo": "Idea, no persona",
+    "texto": "Cuando discrepás, discutí lo que dijo, no cómo es quien lo dijo."
+   },
+   "ojo": [
+    "Atacar a la persona en lugar de la idea.",
+    "Discrepar sin dar razones."
+   ],
+   "resumen": [
+    {
+     "titulo": "Respeto",
+     "texto": "Se critica la idea."
+    },
+    {
+     "titulo": "Pasos",
+     "texto": "Reconozco, discrepo, argumento, propongo."
+    },
+    {
+     "titulo": "Contraargumento",
+     "texto": "Razón en contra."
+    },
+    {
+     "titulo": "Conectores",
+     "texto": "Sin embargo, aunque."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Contraargumento",
+     "significado": "Razón que se opone a otra."
+    },
+    {
+     "palabra": "Discrepar",
+     "significado": "No estar de acuerdo."
+    },
+    {
+     "palabra": "Concesión",
+     "significado": "Reconocer algo del otro."
+    }
+   ],
+   "carpeta": [
+    "Alguien dice «El uniforme iguala a todos», y vos respondés «Pero no deja expresar la personalidad». ¿Qué es tu respuesta?",
+    "En un debate en el chat, Lucas responde «Vos no sabés nada porque sos chico». ¿Qué está criticando: la idea o a la persona?",
+    "Para oponerte a una idea, ¿qué conector conviene: «sin embargo» o «por ejemplo»?",
+    "Respondés: «Es cierto que el uniforme es cómodo; sin embargo, limita la expresión». ¿Qué hiciste primero: reconocer algo valioso o atacar?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "un contraargumento",
+     "contraargumento"
+    ],
+    [
+     "a la persona",
+     "la persona"
+    ],
+    [
+     "sin embargo"
+    ],
+    [
+     "reconocer algo valioso",
+     "reconocer"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Contraargumento. Persona.",
+    "solo": "Es cierto que distraen; sin embargo, sirven para buscar información; propongo usarlos con reglas.",
+    "carpeta": [
+     "Un contraargumento: se opone al argumento del otro.",
+     "A la persona: hay que discutir la idea, no atacar a quien la dice.",
+     "«Sin embargo»: introduce una oposición.",
+     "Reconocer algo valioso: así la respuesta es más justa y convincente."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "error",
+    "aplicar",
+    "analizar"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "¿Hecho u opinión?",
+    "o": {
+     "elementos": [
+      "El colegio abre a las 8",
+      "El colegio es aburrido",
+      "Hay 40 alumnos",
+      "La clase es genial"
+     ],
+     "categorias": [
+      "Hecho",
+      "Opinión"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El colegio abre a las 8": "Hecho",
+      "El colegio es aburrido": "Opinión",
+      "Hay 40 alumnos": "Hecho",
+      "La clase es genial": "Opinión"
+     }
+    },
+    "e": "Los hechos se comprueban."
+   },
+   {
+    "t": "multi_select",
+    "p": "¿Qué marcas delatan una opinión?",
+    "o": [
+     "creo que",
+     "injusto",
+     "hay 40 alumnos",
+     "siempre"
+    ],
+    "r": {
+     "correctas": [
+      "creo que",
+      "injusto",
+      "siempre"
+     ]
+    },
+    "e": "Hay 40 alumnos es un dato."
+   }
+  ],
+  "2": [
+   {
+    "t": "matching",
+    "p": "Uní cada tipo de argumento con su ejemplo.",
+    "o": {
+     "izquierda": [
+      "Ejemplo",
+      "Dato",
+      "Autoridad",
+      "Causa y efecto"
+     ],
+     "derecha": [
+      "En mi curso",
+      "El 80 % lo usa",
+      "Una docente lo recomienda",
+      "Si lo usamos bien, aprendemos más"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Ejemplo": "En mi curso",
+      "Dato": "El 80 % lo usa",
+      "Autoridad": "Una docente lo recomienda",
+      "Causa y efecto": "Si lo usamos bien, aprendemos más"
+     }
+    },
+    "e": "Cada tipo apoya la tesis de otra forma."
+   },
+   {
+    "t": "fill_blank",
+    "p": "La idea principal que se defiende es la ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "tesis"
+      ]
+     ]
+    },
+    "e": "La tesis."
+   }
+  ],
+  "3": [
+   {
+    "t": "keywords",
+    "p": "Escribí una carta de lectores de unas 100 palabras sobre un tema que te importe, con título, saludo, tesis, dos argumentos, cierre y firma.",
+    "o": {
+     "ayuda": "Tono respetuoso, tesis clara en la primera frase y dos argumentos distintos."
+    },
+    "r": "Carta de lectores con título, saludo formal (Señor director:), tesis clara, dos argumentos de tipos distintos con un ejemplo, cierre y firma con nombre y localidad; tono respetuoso.",
+    "e": "Se evalúa estructura, argumentos y tono."
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená las partes de la carta.",
+    "o": [
+     "Argumentos",
+     "Título",
+     "Firma",
+     "Tesis",
+     "Saludo",
+     "Cierre"
+    ],
+    "r": {
+     "orden": [
+      "Título",
+      "Saludo",
+      "Tesis",
+      "Argumentos",
+      "Cierre",
+      "Firma"
+     ]
+    },
+    "e": "De arriba hacia abajo."
+   }
+  ],
+  "4": [
+   {
+    "t": "tap_text",
+    "p": "Tocá el conector que introduce una oposición: «Es cierto que distraen; sin embargo, pueden ayudar».",
+    "o": {
+     "segmentos": [
+      "Es",
+      "cierto",
+      "que",
+      "distraen;",
+      "sin",
+      "embargo,",
+      "pueden",
+      "ayudar"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      4,
+      5
+     ]
+    },
+    "e": "Sin embargo opone ideas."
+   },
+   {
+    "t": "keywords",
+    "p": "Respondé a esta opinión: «Hay que prohibir los celulares en la escuela». Reconocé algo, discrepá con una razón y proponé una alternativa.",
+    "o": {
+     "ayuda": "Usá sin embargo, porque y una propuesta."
+    },
+    "r": "Respuesta que reconoce algo valioso, discrepa con una razón (contraargumento) y propone una alternativa, en tono respetuoso y con conectores.",
+    "e": "Se evalúa respeto, razones y propuesta."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Lo que se puede comprobar es un…",
+    "o": [
+     "Hecho",
+     "Deseo",
+     "Título"
+    ],
+    "r": {
+     "correcta": "Hecho"
+    },
+    "e": "Se verifica.",
+    "tiempo": 20
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. La tesis es la idea que se defiende.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Principal.",
+    "tiempo": 20
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. «Sin embargo» introduce…",
+    "o": [
+     "Una oposición",
+     "Una suma",
+     "Un saludo"
+    ],
+    "r": {
+     "correcta": "Una oposición"
+    },
+    "e": "Contrasta ideas.",
+    "tiempo": 20
+   },
+   {
+    "t": "true_false",
+    "p": "Relámpago. Al discrepar se ataca a la persona.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Se critica la idea.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "«El colegio abre a las 8» es…",
+    "o": [
+     "Un hecho",
+     "Una opinión",
+     "Una tesis",
+     "Un deseo"
+    ],
+    "r": {
+     "correcta": "Un hecho"
+    },
+    "e": "Se puede comprobar."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multi_select",
+    "p": "Marcas de opinión:",
+    "o": [
+     "Creo que",
+     "Adjetivos valorativos",
+     "Fechas exactas",
+     "Siempre y nunca"
+    ],
+    "r": {
+     "correctas": [
+      "Creo que",
+      "Adjetivos valorativos",
+      "Siempre y nunca"
+     ]
+    },
+    "e": "Las fechas exactas son datos."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "Una opinión se prueba con una medición.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Se argumenta."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "La idea principal que se defiende es…",
+    "o": [
+     "La tesis",
+     "El saludo",
+     "La firma",
+     "El título"
+    ],
+    "r": {
+     "correcta": "La tesis"
+    },
+    "e": "Se apoya con argumentos."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "Un argumento que usa un número de una encuesta es de…",
+    "o": [
+     "Dato",
+     "Ejemplo",
+     "Autoridad",
+     "Causa"
+    ],
+    "r": {
+     "correcta": "Dato"
+    },
+    "e": "Cifras."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "fill_blank",
+    "p": "Para dar un ejemplo uso el conector «por ___ ».",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "ejemplo"
+      ]
+     ]
+    },
+    "e": "Por ejemplo."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Una carta de lectores se envía a…",
+    "o": [
+     "Un diario o revista",
+     "Un amigo",
+     "Un banco",
+     "Un médico"
+    ],
+    "r": {
+     "correcta": "Un diario o revista"
+    },
+    "e": "Para opinar públicamente."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multi_select",
+    "p": "Partes de una carta de lectores:",
+    "o": [
+     "Título",
+     "Tesis",
+     "Argumentos",
+     "Receta"
+    ],
+    "r": {
+     "correctas": [
+      "Título",
+      "Tesis",
+      "Argumentos"
+     ]
+    },
+    "e": "La receta no es parte."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "Una carta de lectores usa un tono respetuoso.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Sin insultos."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Un contraargumento es…",
+    "o": [
+     "Una razón que se opone a otra",
+     "Un saludo",
+     "Una firma",
+     "Un hecho"
+    ],
+    "r": {
+     "correcta": "Una razón que se opone a otra"
+    },
+    "e": "Muestra una falla."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Al discrepar se critica…",
+    "o": [
+     "La idea",
+     "A la persona",
+     "Su ropa",
+     "Nada"
+    ],
+    "r": {
+     "correcta": "La idea"
+    },
+    "e": "Con respeto."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "fill_blank",
+    "p": "«Sin embargo» es un conector de ___ .",
+    "o": [],
+    "r": {
+     "huecos": [
+      [
+       "oposicion",
+       "oposición"
+      ]
+     ]
+    },
+    "e": "Contrasta."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "Conviene reconocer algo valioso de la otra opinión.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Da respeto y fuerza."
+   }
+  ]
+ ]
+}

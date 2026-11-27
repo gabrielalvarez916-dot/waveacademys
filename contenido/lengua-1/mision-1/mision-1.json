@@ -292,6 +292,51 @@
       "ejemplo": "un audio entrecortado"
      }
     ]
+   },
+   "carpeta": [
+    "Tu tía te manda por WhatsApp: «Llego a las 8, abrime». ¿Quién es el emisor de ese mensaje?",
+    "El profesor explica en una videollamada, pero el micrófono se corta cada dos frases y nadie entiende. ¿Qué elemento del circuito falla?",
+    "Un turista que solo habla japonés le pregunta algo a un kiosquero de Rosario y no se entienden. ¿Qué no comparten?",
+    "Martina dice: «El receptor es el que manda el mensaje». ¿Qué confundió? Escribí el nombre correcto de quien lo manda."
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "tu tía",
+     "la tía",
+     "tía",
+     "tia"
+    ],
+    [
+     "el canal",
+     "canal",
+     "el ruido",
+     "ruido"
+    ],
+    [
+     "el código",
+     "codigo",
+     "código",
+     "el idioma",
+     "idioma"
+    ],
+    [
+     "emisor",
+     "el emisor"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "La tía: es quien produce el mensaje.",
+     "Falla el canal (hay ruido): el medio por el que viaja el mensaje no funciona bien.",
+     "El código: no comparten el mismo sistema de signos.",
+     "Confundió receptor con emisor: el que manda el mensaje es el emisor."
+    ]
    }
   },
   "2": {
@@ -561,6 +606,43 @@
       "definicion": "es ajustar las palabras y el tono al destinatario y a la situación.",
       "ejemplo": "Hola, profe… ¿Puedo enviarla mañana?"
      }
+    ]
+   },
+   "carpeta": [
+    "Escribís para pedir una prórroga a la directora de la escuela. ¿Qué registro conviene: formal o informal?",
+    "Un afiche dice «¡Vení a la feria del libro este sábado!». ¿Cuál es su intención principal: informar, convencer o entretener?",
+    "Tomás le escribe a un profesor «Ey, mandame la nota bro». ¿Qué falla en ese mensaje: el registro o el código?",
+    "Una noticia cuenta cuándo y dónde fue un choque en la ruta, sin dar opiniones. ¿Cuál es su intención principal?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "error",
+    "aplicar"
+   ],
+   "respuestas_carpeta": [
+    [
+     "formal",
+     "el formal"
+    ],
+    [
+     "convencer",
+     "persuadir"
+    ],
+    [
+     "el registro",
+     "registro"
+    ],
+    [
+     "informar"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Formal: el destinatario es una autoridad y la situación es seria.",
+     "Convencer: busca que el lector vaya a la feria.",
+     "El registro: usa un tono de amigos con un profesor.",
+     "Informar: transmite datos de un hecho."
     ]
    }
   },
@@ -848,6 +930,48 @@
       "ejemplo": "¿«Haber» va con hache?"
      }
     ]
+   },
+   "carpeta": [
+    "En el mensaje «¡Qué miedo me dio la película!», ¿qué función del lenguaje predomina?",
+    "Un cartel en la ruta dice «Reduzca la velocidad». ¿Qué función del lenguaje predomina?",
+    "Al atender el teléfono decís «¿Hola? ¿Me escuchás?». ¿Qué función predomina, si solo comprobás que la comunicación funciona?",
+    "Lucía dice que «El agua hierve a 100 °C» tiene función poética porque es una frase linda. ¿Qué función predomina en realidad?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "expresiva",
+     "emotiva",
+     "la expresiva"
+    ],
+    [
+     "apelativa",
+     "conativa",
+     "la apelativa"
+    ],
+    [
+     "fática",
+     "fatica",
+     "la fática"
+    ],
+    [
+     "referencial",
+     "informativa",
+     "la referencial"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Expresiva: muestra lo que siente el emisor.",
+     "Apelativa: busca que el receptor haga algo.",
+     "Fática: sirve para abrir o comprobar el contacto.",
+     "Referencial: informa un dato objetivo; no juega con la forma del mensaje."
+    ]
    }
   },
   "4": {
@@ -1056,6 +1180,47 @@
       "definicion": "combina palabras con imágenes, colores o sonidos para comunicar un mismo mensaje.",
       "ejemplo": "un afiche con dibujo y frase"
      }
+    ]
+   },
+   "carpeta": [
+    "Un semáforo en rojo te indica que frenes sin usar ninguna palabra. ¿Es un código verbal o no verbal?",
+    "Una historieta combina dibujos, globos con diálogos y onomatopeyas como «¡Pum!». ¿Qué tipo de texto es: verbal, no verbal o mixto?",
+    "En un video, alguien dice «estoy feliz» con cara triste y los brazos cruzados. ¿Qué código contradice a las palabras?",
+    "Joaquín dice que un emoji 😂 es código verbal porque está escrito en el chat. ¿Qué código es en realidad?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "no verbal",
+     "noverbal"
+    ],
+    [
+     "mixto",
+     "un texto mixto"
+    ],
+    [
+     "el no verbal",
+     "no verbal",
+     "el gestual",
+     "gestos"
+    ],
+    [
+     "no verbal",
+     "icónico",
+     "iconico"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "No verbal: comunica con colores, no con palabras.",
+     "Mixto: usa palabras e imágenes a la vez.",
+     "El no verbal (gestos y postura) contradice lo que dicen las palabras.",
+     "No verbal: es una imagen, no una palabra, aunque aparezca en un texto escrito."
     ]
    }
   }

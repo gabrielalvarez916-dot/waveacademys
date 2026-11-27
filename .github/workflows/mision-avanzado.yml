@@ -54,6 +54,9 @@ jobs:
         run: |
           H=$(cat tools/interactiva/validar.js tools/control_calidad.py | sha256sum | cut -c1-64)
           if [ "$H" != "$REGLAS_SHA" ]; then echo "::error::Las reglas de calidad (validar.js / control_calidad.py) cambiaron. Solo Gabriel puede aprobarlo, actualizando la variable REGLAS_SHA en GitHub (Settings > Secrets and variables > Actions > Variables). Valor nuevo: $H"; exit 1; fi
+      - name: Cargar la carpeta (actividades del tema, sin PDF; se controla sola y no depende del resto)
+        if: steps.cuales.outputs.lista != '' && env.WAVE_GEN_TOKEN != ''
+        run: python tools/cargar_carpeta.py ${{ steps.cuales.outputs.lista }}
       - name: Control de calidad de la lección interactiva (si no cumple, no se carga nada)
         if: steps.cuales.outputs.lista != '' && steps.cuales.outputs.solo_leccion != '1'
         run: node tools/interactiva/validar.js ${{ steps.cuales.outputs.lista }}

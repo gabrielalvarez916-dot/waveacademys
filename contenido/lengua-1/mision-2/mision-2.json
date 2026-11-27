@@ -227,39 +227,39 @@
     }
    ],
    "carpeta": [
-    "¿Cómo se llama el detective del cuento?",
-    "¿Quién narra las historias de Holmes?",
-    "¿De qué color tenía el pelo Jabez Wilson?",
-    "¿Cuál es el oficio de Jabez Wilson: prestamista o médico?"
+    "En un relato, alguien encuentra pistas, interroga a los testigos y al final descubre al culpable. ¿Qué personaje es?",
+    "En muchos policiales clásicos la historia la cuenta el amigo del investigador, que lo acompaña y no entiende todo. ¿Qué tipo de narrador es: protagonista o testigo?",
+    "En un policial aparece un pañuelo con iniciales junto a la ventana rota. ¿Qué es ese objeto para el investigador: una pista o un testigo?",
+    "«La señora Ruiz vio salir a un hombre de sombrero a las diez.» En un policial, ¿qué es la señora Ruiz: testigo o sospechosa?"
    ],
    "respuestas_carpeta": [
     [
-     "sherlock holmes",
-     "holmes",
-     "sherlock"
+     "el detective",
+     "detective",
+     "el investigador",
+     "investigador"
     ],
     [
-     "watson",
-     "el doctor watson",
-     "doctor watson"
+     "testigo",
+     "narrador testigo"
     ],
     [
-     "rojo",
-     "pelirrojo",
-     "colorado"
+     "pista",
+     "una pista"
     ],
     [
-     "prestamista"
+     "testigo",
+     "una testigo"
     ]
    ],
    "soluciones": {
     "incompleto": "Watson. Enigma.",
     "solo": "Copiar a mano la enciclopedia, cuatro horas por día.",
     "carpeta": [
-     "Sherlock Holmes.",
-     "El doctor Watson.",
-     "Rojo (pelirrojo).",
-     "Prestamista."
+     "El detective.",
+     "Testigo.",
+     "Pista.",
+     "Testigo."
     ]
    },
    "leccion": {
@@ -721,42 +721,37 @@
     }
    ],
    "carpeta": [
-    "¿Cuántas libras por semana pagaba la liga?",
-    "¿Cuántas semanas trabajó Wilson para la liga?",
-    "¿Dónde pasaba horas el ayudante?",
-    "¿La liga era una pista o una distracción?"
+    "Un investigador sabe que el robo fue a las 22 y que el sospechoso salió del cine a las 23. ¿Pudo ser él? Escribí sí o no.",
+    "El ladrón dejó huellas de barro de una zapatilla número 40. Hay tres sospechosos: calzan 38, 40 y 43. ¿Qué número calza el que sigue sospechado?",
+    "En un policial, el investigador nota que el empleado siempre tiene las rodillas sucias de tierra. ¿Eso es una pista o un dato sin importancia?",
+    "Un sospechoso inventa un trabajo falso para que la víctima salga de su casa todos los días. ¿Ese trabajo es una pista o una distracción?"
    ],
    "respuestas_carpeta": [
     [
-     "4",
-     "cuatro"
+     "no"
     ],
     [
-     "8",
-     "ocho"
+     "40",
+     "cuarenta"
     ],
     [
-     "sotano",
-     "sótano",
-     "en el sotano",
-     "en el sótano"
+     "una pista",
+     "pista"
     ],
     [
-     "distraccion",
-     "distracción",
-     "una distraccion",
      "una distracción",
-     "falsa pista"
+     "distracción",
+     "distraccion"
     ]
    ],
    "soluciones": {
     "incompleto": "Falsa. Rodillas.",
     "solo": "Respuesta personal: nombrá la pista y qué sugiere.",
     "carpeta": [
-     "Cuatro.",
-     "Ocho.",
-     "En el sótano.",
-     "Una distracción."
+     "No.",
+     "40.",
+     "Una pista: un detalle raro que puede explicar qué está haciendo.",
+     "Una distracción: aleja a la víctima para que los ladrones actúen."
     ]
    },
    "leccion": {
@@ -1033,8 +1028,8 @@
    "carpeta_nivel": [
     "aplicar",
     "aplicar",
-    "aplicar",
-    "aplicar"
+    "analizar",
+    "analizar"
    ]
   },
   "3": {
@@ -1184,42 +1179,43 @@
     }
    ],
    "carpeta": [
-    "¿Cómo se llamaba en realidad el ayudante de Wilson?",
-    "¿Qué querían robar los ladrones del banco: oro o cuadros?",
-    "¿Qué estaban cavando desde el sótano?",
-    "¿Con qué golpea Holmes la vereda?"
+    "En un policial, el ayudante amable resulta ser el que planeó el robo. ¿Cómo se llama ese giro del final: desenlace sorpresivo o introducción?",
+    "Unos ladrones cavan un túnel desde un negocio hasta el sótano de al lado, donde hay un banco. ¿Qué buscan: el oro del banco o los muebles del negocio?",
+    "El investigador une tres pistas: rodillas sucias, ruidos en el sótano y un banco al lado. ¿Qué deduce que están cavando?",
+    "El detective golpea el piso y escucha que suena hueco. ¿Qué deduce: que debajo hay un pozo o túnel, o que el piso es nuevo?"
    ],
    "respuestas_carpeta": [
     [
-     "john clay",
-     "clay"
+     "desenlace sorpresivo",
+     "desenlace"
     ],
     [
-     "oro"
+     "el oro del banco",
+     "oro",
+     "el oro"
     ],
     [
+     "un túnel",
      "tunel",
-     "túnel",
-     "un tunel",
-     "un túnel"
+     "túnel"
     ],
     [
-     "baston",
-     "bastón",
-     "su baston",
-     "su bastón",
-     "con su bastón",
-     "con el bastón"
+     "un túnel o pozo",
+     "túnel",
+     "tunel",
+     "pozo",
+     "un túnel",
+     "un pozo"
     ]
    ],
    "soluciones": {
     "incompleto": "Clay. Bastón.",
     "solo": "Respuesta personal en cinco oraciones ordenadas.",
     "carpeta": [
-     "John Clay.",
-     "Oro.",
-     "Un túnel.",
-     "Con su bastón."
+     "Desenlace sorpresivo.",
+     "El oro del banco.",
+     "Un túnel: las tres pistas llevan a esa conclusión.",
+     "Un túnel o pozo."
     ]
    },
    "leccion": {
@@ -1533,7 +1529,7 @@
    "carpeta_nivel": [
     "aplicar",
     "aplicar",
-    "aplicar",
+    "analizar",
     "aplicar"
    ]
   }

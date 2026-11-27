@@ -1,1 +1,1207 @@
-{"subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2", "tema": 7, "practica": "Práctica general: ortografía en uso", "examen_titulo": "Nivel jefe: ortografía en uso", "niveles": {"1": {"objetivo": "Vas a clasificar las palabras según su sílaba tónica y aplicar las reglas de tilde.", "vas_a_ver": ["Sílaba tónica", "Agudas, graves y esdrújulas", "Cuándo llevan tilde", "Practicar"], "secciones": [{"etapa": 1, "titulo": "La sílaba tónica", "bloques": [{"tipo": "definicion", "titulo": "Sílaba tónica", "texto": "La que se pronuncia con más fuerza en una palabra."}, {"tipo": "parrafo", "texto": "En <b>ca-nción</b> la fuerte es <b>ción</b>; en <b>ár-bol</b>, <b>ár</b>; en <b>te-lé-fo-no</b>, <b>lé</b>."}]}, {"etapa": 1, "titulo": "Tres clases", "bloques": [{"tipo": "tabla", "titulo": "Según dónde cae la fuerza", "columnas": ["Clase", "Sílaba tónica", "Ejemplo"], "filas": [["Aguda", "La última", "canción, papel, café"], ["Grave", "La penúltima", "árbol, casa, lápiz"], ["Esdrújula", "La antepenúltima", "teléfono, música, pájaro"]], "iguales": true}]}, {"etapa": 2, "titulo": "Reglas de tilde", "bloques": [{"tipo": "tabla", "titulo": "Cuándo llevan tilde", "columnas": ["Clase", "Regla"], "filas": [["Aguda", "Si termina en n, s o vocal: canción, compás, café"], ["Grave", "Si NO termina en n, s o vocal: árbol, lápiz, cárcel"], ["Esdrújula", "Siempre: teléfono, música"]], "iguales": true}, {"tipo": "parrafo", "texto": "Por eso <b>papel</b> (aguda terminada en l) no lleva tilde, y <b>casa</b> (grave terminada en vocal) tampoco."}]}], "ejemplo_completo": {"titulo": "aplicar la regla", "planteo": "¿Lleva tilde «arbol»?", "pasos": ["Se pronuncia ár-bol: la fuerza cae en la penúltima: es grave.", "Termina en l, no en n, s ni vocal.", "Entonces lleva tilde: árbol."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Las palabras con la fuerza en la última sílaba son ___ .", "Las esdrújulas llevan tilde ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí tres palabras de cada clase (aguda, grave y esdrújula) y marcá la sílaba tónica."}, "tip": {"titulo": "Primero la fuerza", "texto": "Antes de poner tilde, decí la palabra en voz alta y buscá dónde cae la fuerza."}, "ojo": ["Poner tilde a todas las palabras que suenan fuerte.", "Olvidar que las esdrújulas siempre llevan tilde."], "resumen": [{"titulo": "Aguda", "texto": "Última sílaba."}, {"titulo": "Grave", "texto": "Penúltima."}, {"titulo": "Esdrújula", "texto": "Antepenúltima."}, {"titulo": "Tilde", "texto": "Según la clase y la terminación."}], "glosario": [{"palabra": "Tilde", "significado": "Signo que marca la sílaba tónica."}, {"palabra": "Sílaba tónica", "significado": "La que se pronuncia con más fuerza."}, {"palabra": "Aguda", "significado": "Palabra con fuerza en la última sílaba."}, {"palabra": "Esdrújula", "significado": "Palabra con fuerza en la antepenúltima sílaba."}], "carpeta": ["¿Cuál es la sílaba tónica de «canción»?", "«Árbol», ¿es aguda, grave o esdrújula?", "«Teléfono», ¿es aguda, grave o esdrújula?", "«Papel», ¿lleva tilde? Respondé sí o no."], "respuestas_carpeta": [["cion", "ción", "la ultima", "la última"], ["grave", "es grave"], ["esdrujula", "esdrújula", "es esdrujula", "es esdrújula"], ["no"]], "soluciones": {"incompleto": "Agudas. Siempre.", "solo": "Aguda: café. Grave: árbol. Esdrújula: música.", "carpeta": ["Ción.", "Grave.", "Esdrújula.", "No."]}}, "2": {"objetivo": "Vas a distinguir diptongos de hiatos y decidir cuándo llevan tilde.", "vas_a_ver": ["Vocales abiertas y cerradas", "Diptongo", "Hiato", "Tilde en el hiato"], "secciones": [{"etapa": 1, "titulo": "Vocales abiertas y cerradas", "bloques": [{"tipo": "tabla", "titulo": "Clases de vocales", "columnas": ["Clase", "Vocales"], "filas": [["Abiertas (fuertes)", "a, e, o"], ["Cerradas (débiles)", "i, u"]], "iguales": true}]}, {"etapa": 1, "titulo": "Diptongo", "bloques": [{"tipo": "definicion", "titulo": "Diptongo", "texto": "Dos vocales juntas que se pronuncian en una sola sílaba."}, {"tipo": "parrafo", "texto": "Se forma con una abierta y una cerrada (<b>cuo-ta</b>, <b>pei-ne</b>) o con dos cerradas distintas (<b>ciu-dad</b>)."}]}, {"etapa": 2, "titulo": "Hiato", "bloques": [{"tipo": "definicion", "titulo": "Hiato", "texto": "Dos vocales juntas que se pronuncian en sílabas distintas."}, {"tipo": "tabla", "titulo": "Casos", "columnas": ["Caso", "Ejemplo"], "filas": [["Dos abiertas", "le-er, ca-er, po-e-ta"], ["Cerrada tónica + abierta", "pa-ís, dí-a, rí-o"]], "iguales": true}]}, {"etapa": 2, "titulo": "Tilde", "bloques": [{"tipo": "parrafo", "texto": "El hiato con una vocal cerrada tónica <b>siempre lleva tilde</b> en la cerrada: país, día, río, baúl, reír. Los demás casos siguen las reglas generales."}]}], "ejemplo_completo": {"titulo": "decidir", "planteo": "¿«río» lleva tilde?", "pasos": ["Se separa en rí-o: dos sílabas.", "Es hiato: i tónica y o abierta.", "Lleva tilde en la i: río."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Dos vocales en la misma sílaba forman un ___ .", "Una cerrada tónica con una abierta forma un ___ con tilde."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí tres palabras con diptongo y tres con hiato."}, "tip": {"titulo": "Separá en sílabas", "texto": "Para saber si es diptongo o hiato, separá la palabra en sílabas y contá."}, "ojo": ["Poner tilde en un diptongo por costumbre.", "Olvidar la tilde en país, día o río."], "resumen": [{"titulo": "Abiertas", "texto": "a, e, o."}, {"titulo": "Cerradas", "texto": "i, u."}, {"titulo": "Diptongo", "texto": "Una sílaba."}, {"titulo": "Hiato", "texto": "Dos sílabas."}], "glosario": [{"palabra": "Diptongo", "significado": "Dos vocales en una sílaba."}, {"palabra": "Hiato", "significado": "Dos vocales en sílabas distintas."}, {"palabra": "Vocal abierta", "significado": "a, e, o."}, {"palabra": "Vocal cerrada", "significado": "i, u."}], "carpeta": ["«País», ¿tiene diptongo o hiato?", "«Ciudad», ¿tiene diptongo o hiato?", "«Río», ¿tiene diptongo o hiato?", "«Reír», ¿lleva tilde? Respondé sí o no."], "respuestas_carpeta": [["hiato", "tiene hiato"], ["diptongo", "tiene diptongo"], ["hiato", "tiene hiato"], ["si", "sí"]], "soluciones": {"incompleto": "Diptongo. Hiato.", "solo": "Diptongos: cuota, peine, ciudad. Hiatos: país, día, leer.", "carpeta": ["Hiato.", "Diptongo.", "Hiato.", "Sí."]}}, "3": {"objetivo": "Vas a escribir con la letra correcta en los casos que más confunden.", "vas_a_ver": ["B y V", "G y J", "H", "Palabras que se confunden"], "secciones": [{"etapa": 1, "titulo": "B y V", "bloques": [{"tipo": "tabla", "titulo": "Reglas", "columnas": ["Regla", "Ejemplo"], "filas": [["Se escriben con b los pretéritos en -aba", "cantaba, jugaba"], ["Con b antes de l y r", "blanco, brazo"], ["Con v el presente de ir", "voy, vas, va"]], "iguales": true}]}, {"etapa": 1, "titulo": "G y J", "bloques": [{"tipo": "tabla", "titulo": "Reglas", "columnas": ["Regla", "Ejemplo"], "filas": [["Verbos terminados en -ger y -gir llevan g", "coger, elegir"], ["Excepciones: tejer, crujir", "tejer, crujir"]], "iguales": true}]}, {"etapa": 2, "titulo": "La H", "bloques": [{"tipo": "parrafo", "texto": "La <b>h</b> no suena, pero se escribe. <b>Hecho</b> (de hacer) lleva h; <b>echo</b> (de echar) no. <b>Haber</b> lleva h; <b>a ver</b> (mirar) no."}]}, {"etapa": 2, "titulo": "Parejas que se confunden", "bloques": [{"tipo": "tabla", "titulo": "Distinguilas", "columnas": ["Palabra", "Cuándo"], "filas": [["hay / ahí / ay", "Hay: existir; ahí: lugar; ay: queja"], ["porque / por qué", "Porque: respuesta; por qué: pregunta"], ["tuvo / tubo", "Tuvo: del verbo tener; tubo: un caño"]], "iguales": true}]}], "ejemplo_completo": {"titulo": "elegir", "planteo": "¿«Ayer ___ a mi abuela»: visite o visité? ¿Y cantaba o cantava?", "pasos": ["Pasado de cantar: cantaba, con b.", "El verbo visitar lleva v: visité.", "Cada regla resuelve una duda."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Los pretéritos en -aba se escriben con ___ .", "Los verbos terminados en -ger se escriben con ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí tres oraciones con hay, ahí y ay."}, "tip": {"titulo": "Una regla por vez", "texto": "No memorices todo: aprendé una regla por vez y usala en tus textos."}, "ojo": ["Escribir cantava en lugar de cantaba.", "Confundir porque con por qué."], "resumen": [{"titulo": "B", "texto": "-aba y bl, br."}, {"titulo": "G", "texto": "-ger, -gir."}, {"titulo": "H", "texto": "Hecho, haber."}, {"titulo": "Parejas", "texto": "Hay, ahí, ay."}], "glosario": [{"palabra": "Pretérito", "significado": "Tiempo verbal que expresa el pasado."}, {"palabra": "Homófono", "significado": "Palabra que suena igual a otra pero se escribe distinto."}], "carpeta": ["«Cantaba», ¿lleva b o v?", "«Coger», ¿lleva g o j?", "«Hecho», de hacer, ¿lleva h? Respondé sí o no.", "¿Se escribe «porque» o «por qué» en «¿___ llegaste tarde?»"], "respuestas_carpeta": [["b", "con b"], ["g", "con g"], ["si", "sí"], ["por que", "por qué"]], "soluciones": {"incompleto": "B. G.", "solo": "Hay un libro. Ahí está. ¡Ay, me duele!", "carpeta": ["B.", "G.", "Sí.", "Por qué."]}}, "4": {"objetivo": "Vas a revisar un texto en varias pasadas y a escribir un dictado con atención a la ortografía.", "vas_a_ver": ["Revisar es releer", "Las pasadas", "El dictado", "Cómo se corrige"], "secciones": [{"etapa": 1, "titulo": "Revisar es releer", "bloques": [{"tipo": "parrafo", "texto": "Nadie escribe bien de una sola vez: <b>revisar</b> es leer de nuevo el texto buscando errores. Conviene leerlo en <b>voz alta</b>, porque así se escuchan las faltas."}]}, {"etapa": 1, "titulo": "Las pasadas", "bloques": [{"tipo": "tabla", "titulo": "Una cosa por vez", "columnas": ["Pasada", "Qué busco"], "filas": [["1", "Que se entienda"], ["2", "Tildes"], ["3", "Letras que confunden (b/v, g/j, h)"], ["4", "Mayúsculas y puntuación"]], "iguales": true}]}, {"etapa": 2, "titulo": "El dictado", "bloques": [{"tipo": "parrafo", "texto": "En un dictado se escribe lo que alguien dice. Para hacerlo bien: escuchá toda la frase, escribila y <b>releé</b> al final con las reglas en la cabeza."}]}, {"etapa": 2, "titulo": "Corregir", "bloques": [{"tipo": "parrafo", "texto": "Si dudás de una palabra, usá el <b>diccionario</b>. Anotá tus errores más frecuentes: son los que más tenés que revisar."}]}], "ejemplo_completo": {"titulo": "revisar", "planteo": "Corregí: «el avion aterrizo temprano».", "pasos": ["Mayúscula inicial: El.", "Avión: aguda terminada en n, lleva tilde.", "Aterrizó: aguda terminada en vocal, lleva tilde.", "Versión: El avión aterrizó temprano."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Para escuchar las faltas conviene leer en ___ alta.", "Para una duda de escritura uso el ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Pedile a alguien que te dicte cuatro oraciones y revisalas en cuatro pasadas."}, "tip": {"titulo": "Una pasada, una cosa", "texto": "No intentes corregir todo a la vez: una pasada para cada tipo de error."}, "ojo": ["Revisar una sola vez.", "No usar el diccionario por pereza."], "resumen": [{"titulo": "Revisar", "texto": "Releer varias veces."}, {"titulo": "Voz alta", "texto": "Se escuchan las faltas."}, {"titulo": "Pasadas", "texto": "Una por tipo de error."}, {"titulo": "Diccionario", "texto": "Para dudas."}], "glosario": [{"palabra": "Revisar", "significado": "Leer de nuevo para corregir."}, {"palabra": "Dictado", "significado": "Escritura de lo que se oye."}, {"palabra": "Diccionario", "significado": "Libro que explica palabras."}], "carpeta": ["¿Conviene revisar un texto una vez o varias veces?", "¿Qué se usa para resolver una duda de escritura?", "Corregí: «el avion aterrizo temprano». ¿Cuántas tildes faltan? Respondé solo el número.", "¿Se escribe «a ver» o «haber» en «___ qué pasa»?"], "respuestas_carpeta": [["varias", "varias veces"], ["diccionario", "el diccionario"], ["2", "dos"], ["a ver"]], "soluciones": {"incompleto": "Voz. Diccionario.", "solo": "Cuatro oraciones revisadas con las cuatro pasadas.", "carpeta": ["Varias veces.", "El diccionario.", "2.", "A ver."]}}}, "act": {"1": [{"t": "classify", "p": "¿Aguda, grave o esdrújula?", "o": {"elementos": ["canción", "árbol", "teléfono", "papel"], "categorias": ["Aguda", "Grave", "Esdrújula"]}, "r": {"categorias": {"canción": "Aguda", "árbol": "Grave", "teléfono": "Esdrújula", "papel": "Aguda"}}, "e": "Se mira dónde cae la fuerza."}, {"t": "multiple_choice", "p": "¿Cuál lleva tilde?", "o": ["lápiz", "papel", "casa", "reloj"], "r": {"correcta": "lápiz"}, "e": "Grave terminada en z."}], "2": [{"t": "classify", "p": "¿Diptongo o hiato?", "o": {"elementos": ["ciudad", "país", "cuota", "día"], "categorias": ["Diptongo", "Hiato"]}, "r": {"categorias": {"ciudad": "Diptongo", "país": "Hiato", "cuota": "Diptongo", "día": "Hiato"}}, "e": "Cuenta las sílabas."}, {"t": "multiple_choice", "p": "¿Cuál lleva tilde en el hiato?", "o": ["río", "peine", "cuota", "ciudad"], "r": {"correcta": "río"}, "e": "Cerrada tónica más abierta."}], "3": [{"t": "matching", "p": "Uní cada palabra con su uso.", "o": {"izquierda": ["hay", "ahí", "ay", "por qué"], "derecha": ["Existir", "Lugar", "Queja", "Pregunta"]}, "r": {"pares": {"hay": "Existir", "ahí": "Lugar", "ay": "Queja", "por qué": "Pregunta"}}, "e": "Cada una tiene su función."}, {"t": "multiple_choice", "p": "¿Cuál está bien escrita?", "o": ["cantaba", "cantava", "kantaba", "cantabba"], "r": {"correcta": "cantaba"}, "e": "Pretérito en -aba."}], "4": [{"t": "ordering", "p": "Ordená las pasadas de revisión.", "o": ["Mayúsculas y puntuación", "Que se entienda", "Letras que confunden", "Tildes"], "r": {"orden": ["Que se entienda", "Tildes", "Letras que confunden", "Mayúsculas y puntuación"]}, "e": "De lo general a lo detallado."}, {"t": "multiple_choice", "p": "¿Qué conviene hacer para escuchar las faltas?", "o": ["Leer en voz alta", "Leer mirando el techo", "No leer", "Copiar"], "r": {"correcta": "Leer en voz alta"}, "e": "Así se oyen."}], "5": [{"t": "multiple_choice", "p": "Relámpago. La esdrújula…", "o": ["Siempre lleva tilde", "Nunca lleva tilde", "A veces"], "r": {"correcta": "Siempre lleva tilde"}, "e": "Teléfono.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. «País» tiene…", "o": ["Hiato", "Diptongo", "Nada"], "r": {"correcta": "Hiato"}, "e": "Rí-o, pa-ís.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. «Hecho» (de hacer) lleva…", "o": ["H", "J", "Nada"], "r": {"correcta": "H"}, "e": "Participio de hacer.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. Revisar conviene hacerlo…", "o": ["Varias veces", "Una sola vez", "Nunca"], "r": {"correcta": "Varias veces"}, "e": "Una pasada por error.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "¿Cuál es una palabra aguda?", "o": ["canción", "árbol", "teléfono", "casa"], "r": {"correcta": "canción"}, "e": "Fuerza en la última sílaba."}], [1, {"t": "multiple_choice", "p": "¿Cuál lleva tilde?", "o": ["árbol", "casa", "papel", "reloj"], "r": {"correcta": "árbol"}, "e": "Grave terminada en l."}], [1, {"t": "true_false", "p": "Las esdrújulas llevan tilde siempre.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Teléfono, música."}], [2, {"t": "multiple_choice", "p": "¿Cuál es un diptongo?", "o": ["ciudad", "país", "río", "día"], "r": {"correcta": "ciudad"}, "e": "Dos vocales en una sílaba."}], [2, {"t": "multiple_choice", "p": "¿Cuál es un hiato con tilde?", "o": ["país", "ciudad", "cuota", "peine"], "r": {"correcta": "país"}, "e": "Cerrada tónica y abierta."}], [2, {"t": "true_false", "p": "«Reír» lleva tilde.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Hiato con i tónica."}], [3, {"t": "multiple_choice", "p": "¿Cuál es el pretérito de cantar?", "o": ["cantaba", "cantava", "cantaua", "cantab"], "r": {"correcta": "cantaba"}, "e": "Pretérito en -aba."}], [3, {"t": "multiple_choice", "p": "¿Cuál está bien escrita?", "o": ["coger", "cojer", "kojer", "coguer"], "r": {"correcta": "coger"}, "e": "Verbos en -ger con g."}], [3, {"t": "true_false", "p": "«Hecho» (de hacer) se escribe sin h.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Lleva h."}], [4, {"t": "multiple_choice", "p": "Revisar un texto conviene hacerlo…", "o": ["En varias pasadas", "Una sola vez", "Sin releer", "Al final del año"], "r": {"correcta": "En varias pasadas"}, "e": "Una por tipo de error."}], [4, {"t": "multiple_choice", "p": "Para una duda de escritura se usa…", "o": ["El diccionario", "El azar", "Nada", "La televisión"], "r": {"correcta": "El diccionario"}, "e": "Resuelve la duda."}], [4, {"t": "multiple_choice", "p": "¿Cuál está bien: «a ver» o «haber» en «___ si llega»?", "o": ["A ver", "Haber", "Aver", "Ha ver"], "r": {"correcta": "A ver"}, "e": "Es mirar."}], [4, {"t": "true_false", "p": "En un dictado no hace falta releer.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Conviene releer al final."}]]}
+{
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "tema": 7,
+ "practica": "Práctica general: ortografía en uso",
+ "examen_titulo": "Nivel jefe: ortografía en uso",
+ "niveles": {
+  "1": {
+   "objetivo": "Vas a clasificar las palabras según su sílaba tónica y aplicar las reglas de tilde.",
+   "vas_a_ver": [
+    "Sílaba tónica",
+    "Agudas, graves y esdrújulas",
+    "Cuándo llevan tilde",
+    "Practicar"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "La sílaba tónica",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Sílaba tónica",
+       "texto": "La que se pronuncia con más fuerza en una palabra."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "En <b>ca-nción</b> la fuerte es <b>ción</b>; en <b>ár-bol</b>, <b>ár</b>; en <b>te-lé-fo-no</b>, <b>lé</b>."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Tres clases",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Según dónde cae la fuerza",
+       "columnas": [
+        "Clase",
+        "Sílaba tónica",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Aguda",
+         "La última",
+         "canción, papel, café"
+        ],
+        [
+         "Grave",
+         "La penúltima",
+         "árbol, casa, lápiz"
+        ],
+        [
+         "Esdrújula",
+         "La antepenúltima",
+         "teléfono, música, pájaro"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Reglas de tilde",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Cuándo llevan tilde",
+       "columnas": [
+        "Clase",
+        "Regla"
+       ],
+       "filas": [
+        [
+         "Aguda",
+         "Si termina en n, s o vocal: canción, compás, café"
+        ],
+        [
+         "Grave",
+         "Si NO termina en n, s o vocal: árbol, lápiz, cárcel"
+        ],
+        [
+         "Esdrújula",
+         "Siempre: teléfono, música"
+        ]
+       ],
+       "iguales": true
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Por eso <b>papel</b> (aguda terminada en l) no lleva tilde, y <b>casa</b> (grave terminada en vocal) tampoco."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "aplicar la regla",
+    "planteo": "¿Lleva tilde «arbol»?",
+    "pasos": [
+     "Se pronuncia ár-bol: la fuerza cae en la penúltima: es grave.",
+     "Termina en l, no en n, s ni vocal.",
+     "Entonces lleva tilde: árbol."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Las palabras con la fuerza en la última sílaba son ___ .",
+     "Las esdrújulas llevan tilde ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí tres palabras de cada clase (aguda, grave y esdrújula) y marcá la sílaba tónica."
+   },
+   "tip": {
+    "titulo": "Primero la fuerza",
+    "texto": "Antes de poner tilde, decí la palabra en voz alta y buscá dónde cae la fuerza."
+   },
+   "ojo": [
+    "Poner tilde a todas las palabras que suenan fuerte.",
+    "Olvidar que las esdrújulas siempre llevan tilde."
+   ],
+   "resumen": [
+    {
+     "titulo": "Aguda",
+     "texto": "Última sílaba."
+    },
+    {
+     "titulo": "Grave",
+     "texto": "Penúltima."
+    },
+    {
+     "titulo": "Esdrújula",
+     "texto": "Antepenúltima."
+    },
+    {
+     "titulo": "Tilde",
+     "texto": "Según la clase y la terminación."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Tilde",
+     "significado": "Signo que marca la sílaba tónica."
+    },
+    {
+     "palabra": "Sílaba tónica",
+     "significado": "La que se pronuncia con más fuerza."
+    },
+    {
+     "palabra": "Aguda",
+     "significado": "Palabra con fuerza en la última sílaba."
+    },
+    {
+     "palabra": "Esdrújula",
+     "significado": "Palabra con fuerza en la antepenúltima sílaba."
+    }
+   ],
+   "carpeta": [
+    "En la palabra «canción», el golpe de voz cae al final. ¿Cuál es la sílaba tónica?",
+    "«Árbol» tiene la sílaba tónica en la anteúltima sílaba. ¿Es aguda, grave o esdrújula?",
+    "«Papel» es aguda y termina en L. Según la regla, ¿lleva tilde? Escribí sí o no.",
+    "Tomás escribió «telefono» en un mensaje. ¿Cómo se escribe bien, si es esdrújula?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "ción",
+     "cion"
+    ],
+    [
+     "grave",
+     "llana"
+    ],
+    [
+     "no"
+    ],
+    [
+     "teléfono"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Agudas. Siempre.",
+    "solo": "Aguda: café. Grave: árbol. Esdrújula: música.",
+    "carpeta": [
+     "Ción: es la sílaba que se pronuncia con más fuerza.",
+     "Grave: la tónica es la anteúltima.",
+     "No: las agudas llevan tilde solo si terminan en n, s o vocal.",
+     "Teléfono: todas las esdrújulas llevan tilde."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
+  },
+  "2": {
+   "objetivo": "Vas a distinguir diptongos de hiatos y decidir cuándo llevan tilde.",
+   "vas_a_ver": [
+    "Vocales abiertas y cerradas",
+    "Diptongo",
+    "Hiato",
+    "Tilde en el hiato"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Vocales abiertas y cerradas",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Clases de vocales",
+       "columnas": [
+        "Clase",
+        "Vocales"
+       ],
+       "filas": [
+        [
+         "Abiertas (fuertes)",
+         "a, e, o"
+        ],
+        [
+         "Cerradas (débiles)",
+         "i, u"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Diptongo",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Diptongo",
+       "texto": "Dos vocales juntas que se pronuncian en una sola sílaba."
+      },
+      {
+       "tipo": "parrafo",
+       "texto": "Se forma con una abierta y una cerrada (<b>cuo-ta</b>, <b>pei-ne</b>) o con dos cerradas distintas (<b>ciu-dad</b>)."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Hiato",
+     "bloques": [
+      {
+       "tipo": "definicion",
+       "titulo": "Hiato",
+       "texto": "Dos vocales juntas que se pronuncian en sílabas distintas."
+      },
+      {
+       "tipo": "tabla",
+       "titulo": "Casos",
+       "columnas": [
+        "Caso",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Dos abiertas",
+         "le-er, ca-er, po-e-ta"
+        ],
+        [
+         "Cerrada tónica + abierta",
+         "pa-ís, dí-a, rí-o"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Tilde",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "El hiato con una vocal cerrada tónica <b>siempre lleva tilde</b> en la cerrada: país, día, río, baúl, reír. Los demás casos siguen las reglas generales."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "decidir",
+    "planteo": "¿«río» lleva tilde?",
+    "pasos": [
+     "Se separa en rí-o: dos sílabas.",
+     "Es hiato: i tónica y o abierta.",
+     "Lleva tilde en la i: río."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Dos vocales en la misma sílaba forman un ___ .",
+     "Una cerrada tónica con una abierta forma un ___ con tilde."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí tres palabras con diptongo y tres con hiato."
+   },
+   "tip": {
+    "titulo": "Separá en sílabas",
+    "texto": "Para saber si es diptongo o hiato, separá la palabra en sílabas y contá."
+   },
+   "ojo": [
+    "Poner tilde en un diptongo por costumbre.",
+    "Olvidar la tilde en país, día o río."
+   ],
+   "resumen": [
+    {
+     "titulo": "Abiertas",
+     "texto": "a, e, o."
+    },
+    {
+     "titulo": "Cerradas",
+     "texto": "i, u."
+    },
+    {
+     "titulo": "Diptongo",
+     "texto": "Una sílaba."
+    },
+    {
+     "titulo": "Hiato",
+     "texto": "Dos sílabas."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Diptongo",
+     "significado": "Dos vocales en una sílaba."
+    },
+    {
+     "palabra": "Hiato",
+     "significado": "Dos vocales en sílabas distintas."
+    },
+    {
+     "palabra": "Vocal abierta",
+     "significado": "a, e, o."
+    },
+    {
+     "palabra": "Vocal cerrada",
+     "significado": "i, u."
+    }
+   ],
+   "carpeta": [
+    "En «país», la í y la a se pronuncian en sílabas separadas: pa-ís. ¿Hay diptongo o hiato?",
+    "En «ciudad», la i y la u se pronuncian juntas: ciu-dad. ¿Hay diptongo o hiato?",
+    "«Reír» se separa re-ír y la tónica es la í. ¿Por qué lleva tilde: por ser aguda o por el hiato?",
+    "Lucía escribió «Mi tio vive en el campo». ¿Cómo se escribe bien «tio»?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "hiato"
+    ],
+    [
+     "diptongo"
+    ],
+    [
+     "por el hiato",
+     "hiato"
+    ],
+    [
+     "tío"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Diptongo. Hiato.",
+    "solo": "Diptongos: cuota, peine, ciudad. Hiatos: país, día, leer.",
+    "carpeta": [
+     "Hiato: las vocales van en sílabas distintas.",
+     "Diptongo: dos vocales en la misma sílaba.",
+     "Por el hiato: la vocal cerrada tónica junto a una abierta lleva tilde siempre.",
+     "Tío: hay hiato con i tónica, que lleva tilde."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
+  },
+  "3": {
+   "objetivo": "Vas a escribir con la letra correcta en los casos que más confunden.",
+   "vas_a_ver": [
+    "B y V",
+    "G y J",
+    "H",
+    "Palabras que se confunden"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "B y V",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Reglas",
+       "columnas": [
+        "Regla",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Se escriben con b los pretéritos en -aba",
+         "cantaba, jugaba"
+        ],
+        [
+         "Con b antes de l y r",
+         "blanco, brazo"
+        ],
+        [
+         "Con v el presente de ir",
+         "voy, vas, va"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "G y J",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Reglas",
+       "columnas": [
+        "Regla",
+        "Ejemplo"
+       ],
+       "filas": [
+        [
+         "Verbos terminados en -ger y -gir llevan g",
+         "coger, elegir"
+        ],
+        [
+         "Excepciones: tejer, crujir",
+         "tejer, crujir"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "La H",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "La <b>h</b> no suena, pero se escribe. <b>Hecho</b> (de hacer) lleva h; <b>echo</b> (de echar) no. <b>Haber</b> lleva h; <b>a ver</b> (mirar) no."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Parejas que se confunden",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Distinguilas",
+       "columnas": [
+        "Palabra",
+        "Cuándo"
+       ],
+       "filas": [
+        [
+         "hay / ahí / ay",
+         "Hay: existir; ahí: lugar; ay: queja"
+        ],
+        [
+         "porque / por qué",
+         "Porque: respuesta; por qué: pregunta"
+        ],
+        [
+         "tuvo / tubo",
+         "Tuvo: del verbo tener; tubo: un caño"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "elegir",
+    "planteo": "¿«Ayer ___ a mi abuela»: visite o visité? ¿Y cantaba o cantava?",
+    "pasos": [
+     "Pasado de cantar: cantaba, con b.",
+     "El verbo visitar lleva v: visité.",
+     "Cada regla resuelve una duda."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Los pretéritos en -aba se escriben con ___ .",
+     "Los verbos terminados en -ger se escriben con ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Escribí tres oraciones con hay, ahí y ay."
+   },
+   "tip": {
+    "titulo": "Una regla por vez",
+    "texto": "No memorices todo: aprendé una regla por vez y usala en tus textos."
+   },
+   "ojo": [
+    "Escribir cantava en lugar de cantaba.",
+    "Confundir porque con por qué."
+   ],
+   "resumen": [
+    {
+     "titulo": "B",
+     "texto": "-aba y bl, br."
+    },
+    {
+     "titulo": "G",
+     "texto": "-ger, -gir."
+    },
+    {
+     "titulo": "H",
+     "texto": "Hecho, haber."
+    },
+    {
+     "titulo": "Parejas",
+     "texto": "Hay, ahí, ay."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Pretérito",
+     "significado": "Tiempo verbal que expresa el pasado."
+    },
+    {
+     "palabra": "Homófono",
+     "significado": "Palabra que suena igual a otra pero se escribe distinto."
+    }
+   ],
+   "carpeta": [
+    "«Cantaba» es pasado de «cantar», un verbo terminado en -ar. ¿Lleva b o v la terminación -aba?",
+    "«Hecho» viene del verbo hacer, como en «Ya está hecho». ¿Lleva h? Escribí sí o no.",
+    "Completá con «porque» o «por qué»: «¿___ llegaste tarde a la clase?»",
+    "Martín escribió «No vino porqué estaba enfermo». ¿Cómo va «porqué» en esa oración?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "b"
+    ],
+    [
+     "sí",
+     "si"
+    ],
+    [
+     "por qué",
+     "por que"
+    ],
+    [
+     "porque"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "B. G.",
+    "solo": "Hay un libro. Ahí está. ¡Ay, me duele!",
+    "carpeta": [
+     "B: las terminaciones -aba del pretérito imperfecto se escriben con b.",
+     "Sí: «hecho» de hacer lleva h, como el verbo.",
+     "Por qué: en una pregunta va separado y con tilde.",
+     "Porque: introduce una causa, va junto y sin tilde."
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ]
+  },
+  "4": {
+   "objetivo": "Vas a revisar un texto en varias pasadas y a escribir un dictado con atención a la ortografía.",
+   "vas_a_ver": [
+    "Revisar es releer",
+    "Las pasadas",
+    "El dictado",
+    "Cómo se corrige"
+   ],
+   "secciones": [
+    {
+     "etapa": 1,
+     "titulo": "Revisar es releer",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Nadie escribe bien de una sola vez: <b>revisar</b> es leer de nuevo el texto buscando errores. Conviene leerlo en <b>voz alta</b>, porque así se escuchan las faltas."
+      }
+     ]
+    },
+    {
+     "etapa": 1,
+     "titulo": "Las pasadas",
+     "bloques": [
+      {
+       "tipo": "tabla",
+       "titulo": "Una cosa por vez",
+       "columnas": [
+        "Pasada",
+        "Qué busco"
+       ],
+       "filas": [
+        [
+         "1",
+         "Que se entienda"
+        ],
+        [
+         "2",
+         "Tildes"
+        ],
+        [
+         "3",
+         "Letras que confunden (b/v, g/j, h)"
+        ],
+        [
+         "4",
+         "Mayúsculas y puntuación"
+        ]
+       ],
+       "iguales": true
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "El dictado",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "En un dictado se escribe lo que alguien dice. Para hacerlo bien: escuchá toda la frase, escribila y <b>releé</b> al final con las reglas en la cabeza."
+      }
+     ]
+    },
+    {
+     "etapa": 2,
+     "titulo": "Corregir",
+     "bloques": [
+      {
+       "tipo": "parrafo",
+       "texto": "Si dudás de una palabra, usá el <b>diccionario</b>. Anotá tus errores más frecuentes: son los que más tenés que revisar."
+      }
+     ]
+    }
+   ],
+   "ejemplo_completo": {
+    "titulo": "revisar",
+    "planteo": "Corregí: «el avion aterrizo temprano».",
+    "pasos": [
+     "Mayúscula inicial: El.",
+     "Avión: aguda terminada en n, lleva tilde.",
+     "Aterrizó: aguda terminada en vocal, lleva tilde.",
+     "Versión: El avión aterrizó temprano."
+    ]
+   },
+   "ejemplo_incompleto": {
+    "titulo": "completar",
+    "planteo": "Completá.",
+    "pasos": [
+     "Para escuchar las faltas conviene leer en ___ alta.",
+     "Para una duda de escritura uso el ___ ."
+    ]
+   },
+   "ejemplo_solo": {
+    "titulo": "tu turno",
+    "planteo": "Pedile a alguien que te dicte cuatro oraciones y revisalas en cuatro pasadas."
+   },
+   "tip": {
+    "titulo": "Una pasada, una cosa",
+    "texto": "No intentes corregir todo a la vez: una pasada para cada tipo de error."
+   },
+   "ojo": [
+    "Revisar una sola vez.",
+    "No usar el diccionario por pereza."
+   ],
+   "resumen": [
+    {
+     "titulo": "Revisar",
+     "texto": "Releer varias veces."
+    },
+    {
+     "titulo": "Voz alta",
+     "texto": "Se escuchan las faltas."
+    },
+    {
+     "titulo": "Pasadas",
+     "texto": "Una por tipo de error."
+    },
+    {
+     "titulo": "Diccionario",
+     "texto": "Para dudas."
+    }
+   ],
+   "glosario": [
+    {
+     "palabra": "Revisar",
+     "significado": "Leer de nuevo para corregir."
+    },
+    {
+     "palabra": "Dictado",
+     "significado": "Escritura de lo que se oye."
+    },
+    {
+     "palabra": "Diccionario",
+     "significado": "Libro que explica palabras."
+    }
+   ],
+   "carpeta": [
+    "Para revisar un texto largo, Sol lo lee una vez buscando todo junto. ¿Conviene revisar una vez o en varias pasadas?",
+    "Dudás si «excursión» se escribe con x o con s y no tenés a quién preguntar. ¿Qué herramienta usás para resolverlo?",
+    "Corregí la oración «El avion aterrizo temprano». ¿Cuántas tildes faltan? Escribí el número.",
+    "Iván escribió «Vamos haber qué pasa mañana». ¿Qué tendría que haber escrito en lugar de «haber»?"
+   ],
+   "respuestas_carpeta": [
+    [
+     "varias",
+     "en varias pasadas",
+     "varias pasadas"
+    ],
+    [
+     "diccionario",
+     "el diccionario"
+    ],
+    [
+     "2",
+     "dos"
+    ],
+    [
+     "a ver"
+    ]
+   ],
+   "soluciones": {
+    "incompleto": "Voz. Diccionario.",
+    "solo": "Cuatro oraciones revisadas con las cuatro pasadas.",
+    "carpeta": [
+     "En varias pasadas: cada pasada busca una cosa (tildes, letras, puntuación).",
+     "El diccionario: confirma la forma correcta de la palabra.",
+     "Dos: avión y aterrizó, agudas terminadas en n y vocal.",
+     "A ver: es la preposición «a» más el verbo «ver»."
+    ]
+   },
+   "carpeta_nivel": [
+    "analizar",
+    "aplicar",
+    "aplicar",
+    "error"
+   ]
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "¿Aguda, grave o esdrújula?",
+    "o": {
+     "elementos": [
+      "canción",
+      "árbol",
+      "teléfono",
+      "papel"
+     ],
+     "categorias": [
+      "Aguda",
+      "Grave",
+      "Esdrújula"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "canción": "Aguda",
+      "árbol": "Grave",
+      "teléfono": "Esdrújula",
+      "papel": "Aguda"
+     }
+    },
+    "e": "Se mira dónde cae la fuerza."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál lleva tilde?",
+    "o": [
+     "lápiz",
+     "papel",
+     "casa",
+     "reloj"
+    ],
+    "r": {
+     "correcta": "lápiz"
+    },
+    "e": "Grave terminada en z."
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "¿Diptongo o hiato?",
+    "o": {
+     "elementos": [
+      "ciudad",
+      "país",
+      "cuota",
+      "día"
+     ],
+     "categorias": [
+      "Diptongo",
+      "Hiato"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "ciudad": "Diptongo",
+      "país": "Hiato",
+      "cuota": "Diptongo",
+      "día": "Hiato"
+     }
+    },
+    "e": "Cuenta las sílabas."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál lleva tilde en el hiato?",
+    "o": [
+     "río",
+     "peine",
+     "cuota",
+     "ciudad"
+    ],
+    "r": {
+     "correcta": "río"
+    },
+    "e": "Cerrada tónica más abierta."
+   }
+  ],
+  "3": [
+   {
+    "t": "matching",
+    "p": "Uní cada palabra con su uso.",
+    "o": {
+     "izquierda": [
+      "hay",
+      "ahí",
+      "ay",
+      "por qué"
+     ],
+     "derecha": [
+      "Existir",
+      "Lugar",
+      "Queja",
+      "Pregunta"
+     ]
+    },
+    "r": {
+     "pares": {
+      "hay": "Existir",
+      "ahí": "Lugar",
+      "ay": "Queja",
+      "por qué": "Pregunta"
+     }
+    },
+    "e": "Cada una tiene su función."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál está bien escrita?",
+    "o": [
+     "cantaba",
+     "cantava",
+     "kantaba",
+     "cantabba"
+    ],
+    "r": {
+     "correcta": "cantaba"
+    },
+    "e": "Pretérito en -aba."
+   }
+  ],
+  "4": [
+   {
+    "t": "ordering",
+    "p": "Ordená las pasadas de revisión.",
+    "o": [
+     "Mayúsculas y puntuación",
+     "Que se entienda",
+     "Letras que confunden",
+     "Tildes"
+    ],
+    "r": {
+     "orden": [
+      "Que se entienda",
+      "Tildes",
+      "Letras que confunden",
+      "Mayúsculas y puntuación"
+     ]
+    },
+    "e": "De lo general a lo detallado."
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué conviene hacer para escuchar las faltas?",
+    "o": [
+     "Leer en voz alta",
+     "Leer mirando el techo",
+     "No leer",
+     "Copiar"
+    ],
+    "r": {
+     "correcta": "Leer en voz alta"
+    },
+    "e": "Así se oyen."
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. La esdrújula…",
+    "o": [
+     "Siempre lleva tilde",
+     "Nunca lleva tilde",
+     "A veces"
+    ],
+    "r": {
+     "correcta": "Siempre lleva tilde"
+    },
+    "e": "Teléfono.",
+    "tiempo": 20
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. «País» tiene…",
+    "o": [
+     "Hiato",
+     "Diptongo",
+     "Nada"
+    ],
+    "r": {
+     "correcta": "Hiato"
+    },
+    "e": "Rí-o, pa-ís.",
+    "tiempo": 20
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. «Hecho» (de hacer) lleva…",
+    "o": [
+     "H",
+     "J",
+     "Nada"
+    ],
+    "r": {
+     "correcta": "H"
+    },
+    "e": "Participio de hacer.",
+    "tiempo": 20
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Relámpago. Revisar conviene hacerlo…",
+    "o": [
+     "Varias veces",
+     "Una sola vez",
+     "Nunca"
+    ],
+    "r": {
+     "correcta": "Varias veces"
+    },
+    "e": "Una pasada por error.",
+    "tiempo": 20
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es una palabra aguda?",
+    "o": [
+     "canción",
+     "árbol",
+     "teléfono",
+     "casa"
+    ],
+    "r": {
+     "correcta": "canción"
+    },
+    "e": "Fuerza en la última sílaba."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál lleva tilde?",
+    "o": [
+     "árbol",
+     "casa",
+     "papel",
+     "reloj"
+    ],
+    "r": {
+     "correcta": "árbol"
+    },
+    "e": "Grave terminada en l."
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "Las esdrújulas llevan tilde siempre.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Teléfono, música."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es un diptongo?",
+    "o": [
+     "ciudad",
+     "país",
+     "río",
+     "día"
+    ],
+    "r": {
+     "correcta": "ciudad"
+    },
+    "e": "Dos vocales en una sílaba."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es un hiato con tilde?",
+    "o": [
+     "país",
+     "ciudad",
+     "cuota",
+     "peine"
+    ],
+    "r": {
+     "correcta": "país"
+    },
+    "e": "Cerrada tónica y abierta."
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "«Reír» lleva tilde.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Hiato con i tónica."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es el pretérito de cantar?",
+    "o": [
+     "cantaba",
+     "cantava",
+     "cantaua",
+     "cantab"
+    ],
+    "r": {
+     "correcta": "cantaba"
+    },
+    "e": "Pretérito en -aba."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál está bien escrita?",
+    "o": [
+     "coger",
+     "cojer",
+     "kojer",
+     "coguer"
+    ],
+    "r": {
+     "correcta": "coger"
+    },
+    "e": "Verbos en -ger con g."
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "«Hecho» (de hacer) se escribe sin h.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Lleva h."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Revisar un texto conviene hacerlo…",
+    "o": [
+     "En varias pasadas",
+     "Una sola vez",
+     "Sin releer",
+     "Al final del año"
+    ],
+    "r": {
+     "correcta": "En varias pasadas"
+    },
+    "e": "Una por tipo de error."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Para una duda de escritura se usa…",
+    "o": [
+     "El diccionario",
+     "El azar",
+     "Nada",
+     "La televisión"
+    ],
+    "r": {
+     "correcta": "El diccionario"
+    },
+    "e": "Resuelve la duda."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál está bien: «a ver» o «haber» en «___ si llega»?",
+    "o": [
+     "A ver",
+     "Haber",
+     "Aver",
+     "Ha ver"
+    ],
+    "r": {
+     "correcta": "A ver"
+    },
+    "e": "Es mirar."
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "En un dictado no hace falta releer.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Conviene releer al final."
+   }
+  ]
+ ]
+}
