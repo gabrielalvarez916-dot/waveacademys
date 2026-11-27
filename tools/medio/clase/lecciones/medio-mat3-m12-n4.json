@@ -1,0 +1,122 @@
+{
+ "slug": "medio-mat3-m12-n4",
+ "step_id": "9e879efd-0001-4e59-833b-e3c565c66778",
+ "materia": "Matemática 3",
+ "titulo": "Controlar con estimaciones",
+ "sub": "Matemática 3 · Misión 12 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Nina calculó 38 × 6 = 2.280. ¿Puede ser?",
+   "segundos": 8,
+   "respuesta": "¡No! Da cerca de 240",
+   "emoji": "🔍",
+   "titulo": "CONTROLAR",
+   "sub": "estimando",
+   "voz": [
+    "Desafío: Nina calculó 38 por 6 y le dio *2.280*.",
+    "¡No puede ser! Da cerca de *240*.",
+    "Hoy: *controlar con estimaciones*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "ESTIMAMOS",
+   "pasos": [
+    {
+     "txt": "38 × 6"
+    },
+    {
+     "txt": "40 × 6",
+     "nota": "redondeamos"
+    },
+    {
+     "txt": "CERCA DE 240"
+    }
+   ],
+   "voz": [
+    "Tenemos 38 por 6.",
+    "El 38 está cerca del *40*: 40 por 6.",
+    "¡Da cerca de *240*!"
+   ]
+  },
+  {
+   "t": "dato",
+   "numero": "228",
+   "antes": "38 × 6",
+   "despues": "cerca de 240",
+   "texto": "La cuenta exacta",
+   "emoji": "✅",
+   "voz": [
+    "La cuenta exacta da *228*.",
+    "Está cerca de 240: ¡tiene sentido!"
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "¿CERCA DE CUÁNTO?",
+   "pares": [
+    [
+     "19 × 5",
+     "cerca de 100"
+    ],
+    [
+     "31 × 4",
+     "cerca de 120"
+    ],
+    [
+     "52 × 3",
+     "cerca de 150"
+    ]
+   ],
+   "voz": [
+    "Uní cada cuenta con su estimación.",
+    "19 por 5: cerca de *100*.",
+    "31 por 4: cerca de *120*.",
+    "52 por 3: cerca de *150*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "38 × 6 = 2.280",
+     "bien": "Da cerca de 240: es 228"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si da *muy lejos* de lo estimado, revisá la cuenta."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "REDONDEAR",
+     "a la decena"
+    ],
+    [
+     "ESTIMAR",
+     "antes"
+    ],
+    [
+     "COMPARAR",
+     "con la cuenta"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Redondeamos* a la decena más cercana.",
+    "*Estimamos* antes de calcular.",
+    "Y *comparamos* con la cuenta exacta.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

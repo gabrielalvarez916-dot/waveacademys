@@ -1,0 +1,145 @@
+{
+ "slug": "medio-mat3-m12-n2",
+ "step_id": "2626c786-2742-4bff-91da-2f24c7597f63",
+ "materia": "Matemática 3",
+ "titulo": "Multiplicar en columnas",
+ "sub": "Matemática 3 · Misión 12 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡La huerta tiene 3 canteros de 32 lechugas!",
+   "bajada": "Nina las cuenta en columnas",
+   "emoji": "🥬",
+   "titulo": "EN COLUMNAS",
+   "sub": "multiplicar",
+   "voz": [
+    "¡Último momento: la huerta tiene *3 canteros* de 32 lechugas!",
+    "Nina las cuenta en columnas.",
+    "Hoy: *multiplicar en columnas*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "32 × 3",
+   "columnas": [
+    "",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "",
+     "3",
+     "2"
+    ],
+    [
+     "×",
+     "",
+     "3"
+    ],
+    [
+     "=",
+     "9",
+     "6"
+    ]
+   ],
+   "voz": [
+    "Ponemos el 32 arriba.",
+    "El 3 va abajo, en las unidades.",
+    "Unidades: 3 por 2, *6*. Decenas: 3 por 3, *9*.",
+    "¡Son *96* lechugas!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "CIFRA POR CIFRA",
+   "items": [
+    {
+     "frente": "21 × 4: unidades",
+     "dorso": "4 × 1 = 4"
+    },
+    {
+     "frente": "21 × 4: decenas",
+     "dorso": "4 × 2 = 8"
+    },
+    {
+     "frente": "21 × 4",
+     "dorso": "84"
+    }
+   ],
+   "voz": [
+    "Unidades: 4 por 1, *4*.",
+    "Decenas: 4 por 2, *8*.",
+    "¡21 por 4 es *84*!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA RÁPIDA",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "21 × 4",
+     "r": "84"
+    },
+    {
+     "p": "13 × 3",
+     "r": "39"
+    },
+    {
+     "p": "42 × 2",
+     "r": "84"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida en columnas!",
+    "21 por 4 es *84*.",
+    "13 por 3 es *39*.",
+    "42 por 2 es *84*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Multiplicar solo las unidades",
+     "bien": "Multiplicar todas las cifras"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "El número de abajo multiplica a *todas* las cifras."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "ABAJO",
+     "en las unidades"
+    ],
+    [
+     "EMPEZAR",
+     "por las unidades"
+    ],
+    [
+     "TODAS",
+     "las cifras"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "El número chico va *abajo*, en las unidades.",
+    "Empezamos por las *unidades*.",
+    "Multiplicamos *todas* las cifras.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

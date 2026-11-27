@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat3-m13-n3",
+ "step_id": "701fa710-2302-4635-811d-9fd0afb9190f",
+ "materia": "Matemática 3",
+ "titulo": "Combinar prendas y sabores",
+ "sub": "Matemática 3 · Misión 13 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Muestra de ropa en la feria!",
+   "bajada": "3 camisetas y 2 pantalones",
+   "emoji": "👕",
+   "titulo": "COMBINAR",
+   "sub": "prendas y sabores",
+   "voz": [
+    "¡Último momento: hay una *muestra de ropa* en la feria!",
+    "Sofi tiene 3 camisetas y 2 pantalones.",
+    "Hoy: *combinar prendas y sabores*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "CAMISETAS Y PANTALONES",
+   "columnas": [
+    "",
+    "👖",
+    "🩳"
+   ],
+   "filas": [
+    [
+     "🟥",
+     "🟥👖",
+     "🟥🩳"
+    ],
+    [
+     "🟦",
+     "🟦👖",
+     "🟦🩳"
+    ],
+    [
+     "🟩",
+     "🟩👖",
+     "🟩🩳"
+    ]
+   ],
+   "voz": [
+    "Armamos un cuadro: camisetas a un lado, pantalones arriba.",
+    "La camiseta roja va con los *dos* pantalones.",
+    "La azul también, y la verde también.",
+    "¡Son *6* combinaciones!"
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "MÁS PRENDAS, MÁS COMBINACIONES",
+   "items": [
+    {
+     "txt": "2 × 2 = 4",
+     "emoji": "👕",
+     "valor": 4
+    },
+    {
+     "txt": "3 × 2 = 6",
+     "emoji": "👕",
+     "valor": 6
+    },
+    {
+     "txt": "3 × 3 = 9",
+     "emoji": "👕",
+     "valor": 9
+    }
+   ],
+   "voz": [
+    "2 camisetas y 2 pantalones: *4*.",
+    "3 camisetas y 2 pantalones: *6*.",
+    "¡3 y 3: *9* combinaciones!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "4 sabores y 2 conos. ¿Cuántos helados?",
+   "opciones": [
+    "8",
+    "6",
+    "42"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 4 sabores y 2 tipos de cono.",
+    "Cada sabor va con cada cono…",
+    "¡*8* helados distintos!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "3 camisetas y 2 pantalones: 3 + 2 = 5",
+     "bien": "3 × 2 = 6"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Cada camiseta va con *cada* pantalón: multiplicamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "CUADRO",
+     "una fila por cada uno"
+    ],
+    [
+     "CADA UNO",
+     "con cada otro"
+    ],
+    [
+     "MULTIPLICAR",
+     "las cantidades"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Armamos un *cuadro* para no perder ninguna.",
+    "Cada uno va con *cada* uno del otro grupo.",
+    "Y *multiplicamos* las cantidades.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

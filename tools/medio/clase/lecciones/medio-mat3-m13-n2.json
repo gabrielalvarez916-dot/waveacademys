@@ -1,0 +1,141 @@
+{
+ "slug": "medio-mat3-m13-n2",
+ "step_id": "aa0d99e3-ecf2-485f-883f-47ef174c47dd",
+ "materia": "Matemática 3",
+ "titulo": "Arreglos grandes",
+ "sub": "Matemática 3 · Misión 13 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "El teatro tiene 12 filas de 8 butacas"
+    },
+    {
+     "yo": true,
+     "txt": "¡Son un montón!"
+    },
+    {
+     "yo": false,
+     "txt": "Partamos las filas"
+    }
+   ],
+   "titulo": "ARREGLOS",
+   "sub": "grandes",
+   "voz": [
+    "Sofi escribe: el teatro tiene *12 filas* de 8 butacas.",
+    "¡Son un montón para contar!",
+    "Partamos las filas en dos grupos.",
+    "Hoy: *arreglos grandes*."
+   ]
+  },
+  {
+   "t": "grilla",
+   "titulo": "EL TEATRO",
+   "filas": 12,
+   "cols": 8,
+   "resaltar": [
+    {
+     "fila": 10,
+     "col": 8,
+     "txt": "80"
+    },
+    {
+     "fila": 12,
+     "col": 8,
+     "txt": "96"
+    }
+   ],
+   "voz": [
+    "Las primeras 10 filas: 10 por 8, *80*.",
+    "Con 2 filas más llegamos a la fila 12.",
+    "¡En total hay *96* butacas!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "12 × 8",
+   "lineas": [
+    {
+     "txt": "10 × 8 = 80"
+    },
+    {
+     "txt": "2 × 8 = 16"
+    },
+    {
+     "txt": "80 + 16 = 96",
+     "color": "verde",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "Partimos el 12 en 10 y 2.",
+    "10 por 8 es 80. 2 por 8 es *16*.",
+    "¡80 más 16 es *96*!"
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "15 filas de 4: 10 × 4 + 5 × 4 =",
+   "despues": "butacas",
+   "opciones": [
+    "60",
+    "19",
+    "54"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Completá: 15 filas de 4.",
+    "40 más 20…",
+    "¡*60* butacas!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "12 × 8 = 10 × 8 = 80",
+     "bien": "Faltan las otras 2 filas: 96"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "No te olvides de las filas que *sobran*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PARTIR",
+     "en 10 y el resto"
+    ],
+    [
+     "MULTIPLICAR",
+     "cada parte"
+    ],
+    [
+     "SUMAR",
+     "todo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Partimos las filas en *10 y el resto*.",
+    "Multiplicamos *cada parte*.",
+    "Y *sumamos* todo al final.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

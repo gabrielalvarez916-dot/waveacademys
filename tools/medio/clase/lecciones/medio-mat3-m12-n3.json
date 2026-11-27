@@ -1,0 +1,148 @@
+{
+ "slug": "medio-mat3-m12-n3",
+ "step_id": "9ee3d124-24e6-4fab-abc0-19a5ded75ce3",
+ "materia": "Matemática 3",
+ "titulo": "Multiplicar con reagrupamiento",
+ "sub": "Matemática 3 · Misión 12 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Nina",
+    "emoji": "👩‍🌾"
+   },
+   "lugar": "🌱",
+   "lineas": [
+    "Nina tiene 4 bandejas de 47 semillas.",
+    "7 por 4 da 28.",
+    "¡No entra en una columna!"
+   ],
+   "titulo": "ME LLEVO",
+   "sub": "al multiplicar",
+   "voz": [
+    "Nina tiene 4 bandejas de *47 semillas*.",
+    "En las unidades, 7 por 4 da *28*.",
+    "¡No entra en una sola columna!",
+    "Hoy: *multiplicar con reagrupamiento*."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "47 × 4",
+   "columnas": [
+    "",
+    "C",
+    "D",
+    "U"
+   ],
+   "filas": [
+    [
+     "",
+     "",
+     "²4",
+     "7"
+    ],
+    [
+     "×",
+     "",
+     "",
+     "4"
+    ],
+    [
+     "=",
+     "1",
+     "8",
+     "8"
+    ]
+   ],
+   "voz": [
+    "Unidades: 7 por 4, 28.",
+    "Escribo 8 y *me llevo 2*.",
+    "Decenas: 4 por 4, 16, más 2: *18*.",
+    "¡Son *188* semillas!"
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "SIN LLEVAR",
+    "items": [
+     "47 × 4 = 168"
+    ]
+   },
+   "der": {
+    "cab": "LLEVANDO",
+    "items": [
+     "47 × 4 = 188"
+    ]
+   },
+   "gana": "der",
+   "voz": [
+    "Si nos olvidamos lo que llevamos, da 168.",
+    "Si lo sumamos, da *188*.",
+    "¡La correcta es *188*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "25 × 3: ¿me llevo algo?",
+   "a": {
+    "txt": "Sí: 1",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "No",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡5 × 3 = 15: me llevo 1!",
+   "voz": [
+    "25 por 3: ¿nos llevamos algo?",
+    "5 por 3 da 15…",
+    "¡Sí: escribimos 5 y *nos llevamos 1*! Da 75."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Olvidar sumar lo que me llevo",
+     "bien": "Sumarlo después de multiplicar"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Lo que nos llevamos se *suma* después de multiplicar."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "PASA DE 9",
+     "me llevo"
+    ],
+    [
+     "ANOTO",
+     "arriba"
+    ],
+    [
+     "SUMO",
+     "después de multiplicar"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Si da más de 9, *nos llevamos* las decenas.",
+    "Lo *anotamos* arriba, chiquito.",
+    "Y lo *sumamos* después de multiplicar.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

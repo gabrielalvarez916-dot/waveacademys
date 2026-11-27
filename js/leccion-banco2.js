@@ -2170,6 +2170,8 @@
       serie_prop: p.que === 'problema' ? ctrl('k', 'EN CADA PAQUETE', 2, 10, 1, 8) + ctrl('n', 'PAQUETES', 2, 10, 1, 6) : ctrl('k', 'EN CADA CAJA', 2, 10, 1, p.que === 'tabla' ? 6 : 5) + ctrl('n', 'CAJAS', 3, 10, 1, p.que === 'tabla' ? 8 : 6),
       pitagorica: p.que === 'tabla' ? ctrl('n', 'TABLA DEL', p.min || 3, p.max || 6, 1, p.min || 3) : p.que === 'regular' ? ctrl('n', 'FILA', 1, 5, 1, 2) : ctrl('f', 'FILA', 1, 10, 1, 4) + ctrl('c', 'COLUMNA', 1, 10, 1, 7),
       por10m: p.que === 'redondos' ? ctrl('a', 'NÚMERO', 2, 9, 1, 4) + ctrl('b', 'REDONDO', 20, 90, 10, 30) : p.que === 'problema' ? ctrl('a', 'CAJAS', 2, 9, 1, 6) + ctrl('b', 'EN CADA CAJA', 10, 90, 10, 40) : ctrl('n', 'NÚMERO', 1, p.de === 1000 ? 9 : p.max || 99, 1, p.de === 1000 ? 4 : 23),
+      mult1: ctrl('a', 'NÚMERO', p.que === 'lleva' || p.que === 'estimar' ? 12 : 11, p.max || 99, 1, p.que === 'lleva' ? 47 : p.que === 'estimar' ? 38 : p.que === 'columna' ? 32 : 23) + ctrl('b', 'POR', 2, p.que === 'columna' ? 3 : 9, 1, p.que === 'columna' ? 3 : 4),
+      combina: p.que === 'prendas' || p.que === 'problema' ? ctrl('a', p.que === 'problema' ? 'SABORES' : 'CAMISETAS', 2, 4, 1, 3) + ctrl('b', p.que === 'problema' ? 'CONOS' : 'PANTALONES', 2, 4, 1, 2) : p.que === 'grande' ? ctrl('f', 'FILAS', 11, 19, 1, 12) + ctrl('c', 'EN CADA FILA', 3, 9, 1, 8) : ctrl('f', 'FILAS', 2, 6, 1, 3) + ctrl('c', 'COLUMNAS', 2, 8, 1, 5),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2746,6 +2748,61 @@
         P.push({ vis: p1CDUt(r10) + p1Big(v.n + ' × ' + fmt(K10) + ' = ' + fmt(r10)), txt: 'ES COMO AGREGAR <b>' + Z + '</b>: ' + fmt(r10) + '.' });
         return P;
       }
+      if (md === 'mult1') {
+        var qm1 = p.que || 'descomp', dd = Math.floor(v.a / 10) * 10, uu = v.a % 10, rr = v.a * v.b;
+        if (qm1 === 'descomp') {
+          P.push({ vis: p1Big(v.a + ' × ' + v.b), txt: 'QUEREMOS <b>' + v.a + ' × ' + v.b + '</b>.' });
+          P.push({ vis: p1Big(v.a + ' = ' + dd + ' + ' + uu), txt: 'DESARMAMOS EL ' + v.a + ': <b>' + dd + ' Y ' + uu + '</b>.' });
+          P.push({ vis: p1Big(dd + ' × ' + v.b + ' = ' + fmt(dd * v.b)), txt: 'MULTIPLICAMOS LA PRIMERA PARTE: ' + dd + ' × ' + v.b + '.' });
+          P.push({ vis: p1Big(uu + ' × ' + v.b + ' = ' + uu * v.b), txt: 'Y LA SEGUNDA: ' + uu + ' × ' + v.b + '.' });
+          P.push({ vis: p1Big(fmt(dd * v.b) + ' + ' + uu * v.b + ' = ' + fmt(rr)), txt: 'SUMAMOS LAS DOS PARTES: <b>' + fmt(rr) + '</b>.' });
+          return P;
+        }
+        if (qm1 === 'estimar') {
+          var re1 = Math.round(v.a / 10) * 10;
+          P.push({ vis: p1Big(v.a + ' × ' + v.b), txt: 'ANTES DE CALCULAR, <b>ESTIMAMOS</b>.' });
+          P.push({ vis: p1Big(v.a + ' → ' + re1), txt: 'EL ' + v.a + ' ESTÁ CERCA DEL <b>' + re1 + '</b>.' });
+          P.push({ vis: p1Big(re1 + ' × ' + v.b + ' = ' + fmt(re1 * v.b)), txt: 'CON EL REDONDO: DA <b>CERCA DE ' + fmt(re1 * v.b) + '</b>.' });
+          P.push({ vis: p1Big('EXACTO: ' + fmt(rr)), txt: 'LA CUENTA EXACTA DA ' + fmt(rr) + ': ESTÁ CERCA, ¡TIENE SENTIDO!' });
+          return P;
+        }
+        var dg = String(v.a).split('').map(Number), W1 = dg.length, out1 = [], lv1 = Array(Math.max(3, W1 + 1)).fill(''), car1 = 0, NMm = ['UNIDADES', 'DECENAS', 'CENTENAS'], kk1;
+        P.push({ vis: p1Col3(v.a, v.b, '×', '', -1), txt: 'PONEMOS EL ' + v.a + ' ARRIBA Y EL <b>' + v.b + '</b> DEBAJO DE LAS UNIDADES.' });
+        for (kk1 = W1 - 1; kk1 >= 0; kk1--) {
+          var pr1 = dg[kk1] * v.b + car1, pos = W1 - 1 - kk1, tx1 = dg[kk1] + ' × ' + v.b + (car1 ? ' = ' + dg[kk1] * v.b + ', MÁS ' + car1 + ' QUE NOS LLEVAMOS' : '') + ' = ' + pr1;
+          car1 = Math.floor(pr1 / 10); out1.unshift(kk1 === 0 ? pr1 : pr1 % 10);
+          if (car1 && kk1 > 0) { lv1[lv1.length - 2 - pos] = String(car1); tx1 += ': ESCRIBIMOS ' + pr1 % 10 + ' Y <b>NOS LLEVAMOS ' + car1 + '</b>'; }
+          P.push({ vis: p1Col3(v.a, v.b, '×', out1.join(''), 2 - pos, lv1.slice(-3)), txt: 'LAS <b>' + NMm[pos] + '</b>: ' + tx1 + '.' });
+        }
+        P.push({ vis: p1Col3(v.a, v.b, '×', rr, -1, lv1.slice(-3)) + p1Big(v.a + ' × ' + v.b + ' = ' + fmt(rr)), txt: 'EL RESULTADO ES <b>' + fmt(rr) + '</b>.' });
+        return P;
+      }
+      if (md === 'combina') {
+        var qcb = p.que || 'arreglo', EMJ = function (n, e) { return Array(n + 1).join(e); };
+        if (qcb === 'arreglo') {
+          var FIL = function (k) { var h = '', r; for (r = 0; r < v.f; r++) h += '<div style="font-size:22px;letter-spacing:2px;' + (r < k ? '' : 'opacity:.25') + '">' + EMJ(v.c, '🪑') + '</div>'; return '<div style="text-align:center">' + h + '</div>'; };
+          P.push({ vis: FIL(0), txt: 'LAS SILLAS ESTÁN EN <b>' + v.f + ' FILAS</b> Y <b>' + v.c + ' COLUMNAS</b>.' });
+          P.push({ vis: FIL(1), txt: 'CADA FILA TIENE <b>' + v.c + '</b> SILLAS.' });
+          P.push({ vis: FIL(v.f), txt: 'SON ' + v.f + ' FILAS IGUALES: CONTAMOS DE ' + v.c + ' EN ' + v.c + '.' });
+          P.push({ vis: FIL(v.f) + p1Big(v.f + ' × ' + v.c + ' = ' + v.f * v.c), txt: 'FILAS POR COLUMNAS: <b>' + v.f * v.c + '</b> SILLAS.' });
+          return P;
+        }
+        if (qcb === 'grande') {
+          P.push({ vis: p1Big(v.f + ' FILAS DE ' + v.c), txt: 'UN TEATRO TIENE <b>' + v.f + '</b> FILAS CON <b>' + v.c + '</b> BUTACAS CADA UNA.' });
+          P.push({ vis: p1Big(v.f + ' = 10 + ' + (v.f - 10)), txt: 'SON MUCHAS FILAS: LAS PARTIMOS EN <b>10 Y ' + (v.f - 10) + '</b>.' });
+          P.push({ vis: p1Big('10 × ' + v.c + ' = ' + 10 * v.c), txt: 'LAS PRIMERAS 10 FILAS: <b>' + 10 * v.c + '</b>.' });
+          P.push({ vis: p1Big((v.f - 10) + ' × ' + v.c + ' = ' + (v.f - 10) * v.c), txt: 'LAS OTRAS ' + (v.f - 10) + ': <b>' + (v.f - 10) * v.c + '</b>.' });
+          P.push({ vis: p1Big(10 * v.c + ' + ' + (v.f - 10) * v.c + ' = ' + v.f * v.c), txt: 'JUNTAMOS: <b>' + v.f * v.c + '</b> BUTACAS.' });
+          return P;
+        }
+        var A1 = qcb === 'problema' ? ['🍓', '🍫', '🍋', '🍌'] : ['🟥', '🟦', '🟩', '🟨'], B1 = qcb === 'problema' ? ['🍦', '🍨', '🧁', '🥤'] : ['👖', '🩳', '👗', '🥾'], CB = function (k) { var h = '<table class="lb2-tab lb2-tabc"><tr><th></th>' + B1.slice(0, v.b).map(function (x) { return '<th>' + x + '</th>'; }).join('') + '</tr>', r, c, n9 = 0; for (r = 0; r < v.a; r++) { h += '<tr><th>' + A1[r] + '</th>'; for (c = 0; c < v.b; c++) { n9++; h += '<td' + (n9 <= k ? ' class="on"' : '') + '>' + (n9 <= k ? A1[r] + B1[c] : '') + '</td>'; } h += '</tr>'; } return h + '</table>'; };
+        var nmA = qcb === 'problema' ? 'SABORES' : 'CAMISETAS', nmB = qcb === 'problema' ? 'CONOS' : 'PANTALONES';
+        P.push({ vis: CB(0), txt: 'HAY <b>' + v.a + '</b> ' + nmA + ' Y <b>' + v.b + '</b> ' + nmB + '. ¿CUÁNTAS COMBINACIONES HAY?' });
+        P.push({ vis: CB(v.b), txt: 'CON EL PRIMERO ARMAMOS <b>' + v.b + '</b> COMBINACIONES.' });
+        P.push({ vis: CB(v.a * v.b), txt: 'CADA UNO DE LOS ' + v.a + ' ARMA ' + v.b + ': COMPLETAMOS EL CUADRO.' });
+        P.push({ vis: CB(v.a * v.b) + p1Big(v.a + ' × ' + v.b + ' = ' + v.a * v.b), txt: 'SON <b>' + v.a * v.b + '</b> COMBINACIONES: ' + v.a + ' × ' + v.b + '.' });
+        return P;
+      }
       if (md === 'sumar4') {
         var qs = p.que || 'falta1000', PT = function (n) { return [Math.floor(n / 1000) * 1000, Math.floor(n % 1000 / 100) * 100, Math.floor(n % 100 / 10) * 10, n % 10]; };
         if (qs === 'redondos') {
@@ -3222,6 +3279,19 @@
         else if (qm === 'problema') { a = R(2, 9); b = 10 * R(2, 9); c = a * b; return { cons: 'HAY <b>' + a + '</b> PAQUETES CON <b>' + b + '</b> HOJAS CADA UNO. ¿CUÁNTAS HOJAS HAY?', campos: [{ v: c }], ayuda: a + ' × ' + b / 10 + ' Y AGREGÁ UN CERO.', bien: '¡MUY BIEN! SON ' + fmt(c) + '.' }; }
         else { var de = p.de || pick([10, 100, 1000]); a = de === 1000 ? R(1, 9) : de === 100 ? R(1, 99) : R(1, 999); b = de; c = a * b; h = 'AGREGÁ ' + (de === 10 ? 'UN CERO' : de === 100 ? 'DOS CEROS' : 'TRES CEROS') + '.'; }
         return { cons: '¿CUÁNTO ES <b>' + fmt(a) + ' × ' + fmt(b) + '</b>?', campos: [{ v: c }], ayuda: h, bien: '¡MUY BIEN! ES ' + fmt(c) + '.' }; }); }
+    if (md === 'mult1') { var qn1 = p.que || 'descomp';
+      if (qn1 === 'estimar') return p1Elegir(el, api, function () { var a = R(12, 98), b = R(2, 9), r = a * b, ok = Math.random() < 0.5, mos = ok ? r : pick([r * 10, r + 100, Math.floor(r / 10)]); if (mos === r) ok = true;
+        return { cons: '<b>' + a + ' × ' + b + ' = ' + fmt(mos) + '</b>. ¿PUEDE SER?', ops: ['SÍ', 'NO'], ok: ok ? 'SÍ' : 'NO', ayuda: 'ESTIMÁ: ' + Math.round(a / 10) * 10 + ' × ' + b + ' = ' + Math.round(a / 10) * 10 * b + '.', bien: '¡MUY BIEN! DA ' + fmt(r) + '.' }; });
+      return respuesta(el, api, function () { var a, b, t = 0;
+        do { a = R(12, p.max || 99); b = R(2, qn1 === 'columna' ? 3 : 9); t++; } while (t < 200 && (qn1 === 'columna' ? String(a).split('').some(function (d) { return d * b > 9; }) : qn1 === 'lleva' ? (a % 10) * b < 10 : false));
+        return { cons: '¿CUÁNTO ES <b>' + a + ' × ' + b + '</b>?', html: qn1 === 'descomp' ? '' : p1Col3(a, b, '×', '', -1), campos: [{ v: a * b }], ayuda: qn1 === 'descomp' ? 'DESARMÁ: ' + Math.floor(a / 10) * 10 + ' × ' + b + ' Y ' + a % 10 + ' × ' + b + '.' : 'EMPEZÁ POR LAS UNIDADES' + (qn1 === 'lleva' ? ' Y ANOTÁ LO QUE TE LLEVÁS.' : '.'), bien: '¡MUY BIEN! ES ' + fmt(a * b) + '.' }; }); }
+    if (md === 'combina') { var qcx = p.que || 'arreglo';
+      return respuesta(el, api, function () { var a, b, cons, h;
+        if (qcx === 'grande') { a = R(11, 19); b = R(3, 9); cons = 'UN TEATRO TIENE <b>' + a + '</b> FILAS DE <b>' + b + '</b> BUTACAS. ¿CUÁNTAS BUTACAS HAY?'; h = 'PARTÍ LAS FILAS: 10 × ' + b + ' Y ' + (a - 10) + ' × ' + b + '.'; }
+        else if (qcx === 'prendas') { a = R(2, 5); b = R(2, 4); cons = 'SOFI TIENE <b>' + a + '</b> CAMISETAS Y <b>' + b + '</b> PANTALONES. ¿CUÁNTAS COMBINACIONES DISTINTAS PUEDE ARMAR?'; h = 'CADA CAMISETA VA CON CADA PANTALÓN: ' + a + ' × ' + b + '.'; }
+        else if (qcx === 'problema') { a = R(2, 6); b = R(2, 4); var ctx = pick([['SABORES DE HELADO', 'TIPOS DE CONO', 'HELADOS DISTINTOS'], ['TIPOS DE PAN', 'RELLENOS', 'SÁNDWICHES DISTINTOS'], ['COLORES DE GORRA', 'COLORES DE BUFANDA', 'CONJUNTOS DISTINTOS']]); cons = 'HAY <b>' + a + '</b> ' + ctx[0] + ' Y <b>' + b + '</b> ' + ctx[1] + '. ¿CUÁNTOS ' + ctx[2] + ' SE PUEDEN ARMAR?'; h = 'CADA UNO DEL PRIMER GRUPO VA CON CADA UNO DEL SEGUNDO.'; }
+        else { a = R(2, 6); b = R(2, 8); cons = 'HAY <b>' + a + '</b> FILAS CON <b>' + b + '</b> SILLAS EN CADA UNA. ¿CUÁNTAS SILLAS HAY?'; h = 'FILAS POR COLUMNAS.'; }
+        return { cons: cons, campos: [{ v: a * b }], ayuda: h, bien: '¡MUY BIEN! SON ' + a * b + '.' }; }); }
     if (md === 'sumar4') { var qx = p.que || 'falta1000';
       if (qx === 'estimar') return p1Elegir(el, api, function () { var a = R(1000, 6499), b = R(1000, 2499), r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; while (Math.abs(a - Math.round(a / 1000) * 1000) > 350 || Math.abs(b - Math.round(b / 1000) * 1000) > 350) { a = R(1000, 6499); b = R(1000, 2499); r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; }
         return { cons: '<b>' + fmt(a) + ' + ' + fmt(b) + '</b> DA MÁS O MENOS…', ops: mezclar([fmt(r), fmt(r + 2000), fmt(Math.max(1000, r - 2000))]), ok: fmt(r), ayuda: 'REDONDEÁ CADA NÚMERO AL MIL MÁS CERCANO.', bien: '¡MUY BIEN! LA CUENTA EXACTA DA ' + fmt(a + b) + '.' }; });

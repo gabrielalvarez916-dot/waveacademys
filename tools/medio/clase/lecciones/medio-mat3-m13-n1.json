@@ -1,0 +1,111 @@
+{
+ "slug": "medio-mat3-m13-n1",
+ "step_id": "cd36d06d-e6e5-471a-82d5-3d1a0acb111d",
+ "materia": "Matemática 3",
+ "titulo": "Filas y columnas",
+ "sub": "Matemática 3 · Misión 13 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🪑",
+   "final": "🤔",
+   "titulo": "FILAS",
+   "sub": "y columnas",
+   "voz": [
+    "Para la feria, ponen sillas en *filas* ordenadas.",
+    "¿Cómo las contamos rápido, sin contar de a una?",
+    "Hoy: *filas y columnas*."
+   ]
+  },
+  {
+   "t": "arreglo",
+   "emoji": "🪑",
+   "filas": 3,
+   "cols": 5,
+   "texto": "3 × 5 = 15",
+   "titulo": "3 FILAS DE 5",
+   "voz": [
+    "Hay 3 filas y en cada fila hay *5* sillas.",
+    "Contamos de 5 en 5: 5, 10, 15.",
+    "¡3 por 5 es *15* sillas!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Organización rectangular",
+   "texto": "Cosas en filas y columnas iguales: filas por columnas.",
+   "emoji": "▦",
+   "voz": [
+    "Cuando las cosas forman un *rectángulo*, multiplicamos.",
+    "Filas *por* columnas."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "3 FILAS DE 5",
+    "emoji": "🪑",
+    "datos": [
+     "15 sillas"
+    ]
+   },
+   "b": {
+    "txt": "5 FILAS DE 3",
+    "emoji": "🪑",
+    "datos": [
+     "15 sillas"
+    ]
+   },
+   "gana": "a",
+   "veredicto": "¡Empate! Dan lo mismo",
+   "voz": [
+    "Comparamos: 3 filas de 5 y 5 filas de 3.",
+    "3 por 5 es 15.",
+    "5 por 3 es 15.",
+    "¡Empate! Si giramos el rectángulo, da *lo mismo*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "3 filas de 5: 3 + 5 = 8",
+     "bien": "3 × 5 = 15"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Filas y columnas se *multiplican*, no se suman."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "RECTÁNGULO",
+     "filas y columnas"
+    ],
+    [
+     "MULTIPLICAR",
+     "filas por columnas"
+    ],
+    [
+     "GIRAR",
+     "da lo mismo"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Las cosas forman un *rectángulo*.",
+    "Multiplicamos *filas por columnas*.",
+    "Si lo giramos, da *lo mismo*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

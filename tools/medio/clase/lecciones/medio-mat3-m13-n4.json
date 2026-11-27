@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat3-m13-n4",
+ "step_id": "8e82756d-bc32-478c-9d0a-8f7124f7ea90",
+ "materia": "Matemática 3",
+ "titulo": "Problemas de combinaciones",
+ "sub": "Matemática 3 · Misión 13 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
+    "emoji": "👧"
+   },
+   "lugar": "🍦",
+   "lineas": [
+    "En la heladería hay 5 sabores.",
+    "Y 3 tipos de cono.",
+    "¿Cuántos helados distintos hay?"
+   ],
+   "titulo": "PROBLEMAS",
+   "sub": "de combinaciones",
+   "voz": [
+    "En la heladería de la feria hay *5 sabores*.",
+    "Y hay *3* tipos de cono.",
+    "¿Cuántos helados distintos se pueden armar?",
+    "Hoy: *problemas de combinaciones*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO PENSAMOS",
+   "items": [
+    {
+     "txt": "Dos grupos",
+     "emoji": "🍓"
+    },
+    {
+     "txt": "Cada uno con cada uno",
+     "emoji": "🔗"
+    },
+    {
+     "txt": "5 × 3 = 15",
+     "emoji": "✖️"
+    }
+   ],
+   "voz": [
+    "Hay *dos grupos*: sabores y conos.",
+    "Cada sabor va con *cada* cono.",
+    "¡5 por 3: *15* helados!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "4 tipos de pan y 3 rellenos. ¿Cuántos sándwiches distintos?",
+   "pistas": [
+    "Cada pan con cada relleno",
+    "4 × 3"
+   ],
+   "respuesta": "12",
+   "voz": [
+    "Otro: 4 panes y 3 rellenos. ¿Cuántos sándwiches?",
+    "Pista: cada pan va con *cada* relleno.",
+    "Pista: multiplicamos 4 por 3.",
+    "¡Hay *12* sándwiches distintos!"
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "COMBINACIONES",
+   "items": [
+    "2 × 3 = 6",
+    "3 × 3 = 9",
+    "4 × 2 = 8",
+    "5 × 3 = 15"
+   ],
+   "falta": 1,
+   "voz": [
+    "Mirá estas combinaciones.",
+    "Se tapan… ¿cuál desapareció?",
+    "¡Faltaba 3 por 3, *9*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "5 sabores y 3 conos: 8 helados",
+     "bien": "5 × 3 = 15 helados"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Para combinar, *multiplicamos*: no sumamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DOS GRUPOS",
+     "a combinar"
+    ],
+    [
+     "MULTIPLICAR",
+     "uno por otro"
+    ],
+    [
+     "RESPONDER",
+     "con oración"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Buscamos los *dos grupos* que se combinan.",
+    "*Multiplicamos* uno por el otro.",
+    "Y respondemos *con una oración*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

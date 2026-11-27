@@ -1,0 +1,134 @@
+{
+ "slug": "medio-mat3-m12-n1",
+ "step_id": "37ba5ec1-4ab0-4014-8f94-234a19aa8017",
+ "materia": "Matemática 3",
+ "titulo": "Multiplicar descomponiendo",
+ "sub": "Matemática 3 · Misión 12 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Nina",
+    "emoji": "👩‍🌾"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Tengo 4 cajones con 23 plantines"
+    },
+    {
+     "yo": true,
+     "txt": "¡23 no está en la tabla!"
+    },
+    {
+     "yo": false,
+     "txt": "Desarmémoslo"
+    }
+   ],
+   "titulo": "DESCOMPONER",
+   "sub": "para multiplicar",
+   "voz": [
+    "Nina escribe: tengo 4 cajones con *23 plantines*.",
+    "¡El 23 no está en la tabla!",
+    "Desarmémoslo en partes.",
+    "Hoy: *multiplicar descomponiendo*."
+   ]
+  },
+  {
+   "t": "descomponer",
+   "numero": "23",
+   "titulo": "DESARMAMOS EL 23",
+   "partes": [
+    "20",
+    "3"
+   ],
+   "resultado": "= 23 ✓",
+   "voz": [
+    "Tomamos el *23* de los plantines.",
+    "Tiene 2 decenas: *20*.",
+    "Y tiene 3 unidades sueltas: *3*.",
+    "20 más 3.",
+    "¡Es 23!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "4 × 23",
+   "lineas": [
+    {
+     "txt": "4 × 20 = 80"
+    },
+    {
+     "txt": "4 × 3 = 12"
+    },
+    {
+     "txt": "80 + 12 = 92",
+     "color": "verde",
+     "marca": "circulo"
+    }
+   ],
+   "voz": [
+    "Primero multiplicamos 4 por 20: *80*.",
+    "Después multiplicamos 4 por 3: *12*.",
+    "¡Sumamos: 80 más 12, *92* plantines!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 3 × 14?",
+   "opciones": [
+    "42",
+    "312",
+    "17"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 3 por 14.",
+    "30 más 12…",
+    "¡*42*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "4 × 23 = 4 × 20 = 80",
+     "bien": "Falta 4 × 3: son 92"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Hay que multiplicar *las dos partes*, no una sola."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DESARMAR",
+     "decenas y unidades"
+    ],
+    [
+     "MULTIPLICAR",
+     "cada parte"
+    ],
+    [
+     "SUMAR",
+     "las partes"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "*Desarmamos* el número en decenas y unidades.",
+    "Multiplicamos *cada parte*.",
+    "Y al final *sumamos* las partes.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
