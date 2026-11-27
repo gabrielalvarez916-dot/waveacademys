@@ -305,4 +305,5 @@
   M.sistema_solar_x = { tipo: 'ejercicio', render: function (el, p, api) {
     ordenar(el, api, function () { var L = mezclar(PLAN.slice()).slice(0, 4).sort(function (a, b) { return a[1] - b[1]; }); return { cons: 'Ordená estos planetas del <b>más cercano</b> al más lejano del Sol.', items: L.map(function (q) { return q[0]; }), ayuda: 'Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano, Neptuno.', bien: '¡Bien! ' + L.map(function (q) { return q[0]; }).join(' → ') + '.' }; });
   } };
+  N.d = N.d || {}; N.d.circuito = circuito; N.d.lunaVista = lunaVista;
 })();

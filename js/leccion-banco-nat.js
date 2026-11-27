@@ -324,7 +324,7 @@
   // 7) ÓSMOSIS: membrana con partículas y la célula que se hincha o se arruga
   // =====================================================================================
   var MEDIOS = [['Agua destilada', 0, 'hipotónico'], ['Suero fisiológico', 9, 'isotónico'], ['Agua muy salada', 30, 'hipertónico']];
-  function puntos(x, y, w, h, n, seed, col) { var s = ''; for (var i = 0; i < n; i++) { var a = (i * 97 + seed * 31) % 100 / 100, bb = (i * 53 + seed * 17) % 100 / 100; s += ci(x + 6 + a * (w - 12), y + 6 + bb * (h - 12), 3.2, col || C.coral); } return s; }
+  function puntos(x, y, w, h, n, seed, col) { var s = ''; for (var i = 0; i < n; i++) { var a = Math.abs(Math.sin(i * 12.9898 + seed * 78.233) * 43758.5453) % 1, bb = Math.abs(Math.sin(i * 39.3468 + seed * 11.135) * 24634.6345) % 1; s += ci(x + 6 + a * (w - 12), y + 6 + bb * (h - 12), 3.2, col || C.coral); } return s; }
   function celulaOs(cx, cy, tipo, estado) { var esc = estado === 'hinchada' ? 1.25 : estado === 'arrugada' ? 0.7 : 1;
     if (tipo === 'vegetal') { var w = 70, h = 70; return rc(cx - 40, cy - 40, 80, 80, '#E8F5E9', C.verde, 10, ' stroke-width="6"') + (estado === 'arrugada' ? '<path d="M' + (cx - 22) + ',' + (cy - 20) + ' q22,-14 44,0 q12,22 0,40 q-22,12 -44,0 q-10,-20 0,-40" fill="#D6EEF8" stroke="#2a7ab8" stroke-width="2"/>' : rc(cx - 34 * (estado === 'hinchada' ? 1 : .95), cy - 34 * (estado === 'hinchada' ? 1 : .95), 68 * (estado === 'hinchada' ? 1 : .95), 68 * (estado === 'hinchada' ? 1 : .95), '#D6EEF8', '#2a7ab8', 12)); }
     return estado === 'arrugada' ? '<path d="M' + (cx - 30) + ',' + cy + ' q8,-22 18,-8 q8,-20 18,-4 q12,-10 14,8 q14,10 0,16 q4,18 -16,12 q-10,14 -20,0 q-20,4 -14,-24" fill="#FCE4EC" stroke="#c2416b" stroke-width="3"/>' : '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + r1(36 * esc) + '" ry="' + r1(30 * esc) + '" fill="#FCE4EC" stroke="#c2416b" stroke-width="3"' + (estado === 'hinchada' ? ' stroke-dasharray="6 3"' : '') + '/>'; }
@@ -556,6 +556,9 @@
     respuesta(el, api, function () { if (rot(2, u)) { var R0 = pick([2, 3, 4]), g = pick([2, 3, 4]), v = Math.pow(R0, g); return { cons: 'Una enfermedad tiene <b>R₀ = ' + R0 + '</b> y nadie está vacunado. Si empieza con 1 caso, ¿cuántos casos nuevos habrá en la generación <b>' + g + '</b>?', campos: [{ lab: 'Casos', v: v }], ayuda: 'En cada generación se multiplica por ' + R0 + '.', bien: '¡Bien! ' + R0 + (g > 1 ? '^' + g : '') + ' = ' + v + '.' }; }
       var R1 = pick([2, 4, 5, 10]), w = Math.round((1 - 1 / R1) * 100); return { cons: 'Una enfermedad tiene <b>R₀ = ' + R1 + '</b>. ¿Qué porcentaje de la población hay que vacunar como mínimo para frenarla? (umbral = 1 − 1/R₀)', campos: [{ lab: 'Umbral', v: w, un: '%' }], ayuda: 'Calculá 1 − 1/' + R1 + ' y pasalo a porcentaje.', bien: '¡Bien! 1 − 1/' + R1 + ' = ' + w + ' %.' }; });
   } };
+
+  // Piezas de dibujo que reusan los formatos de actividades de Naturales (js/actividades-nat.js). Solo dibujos y datos, no ejemplos.
+  H.nat.d = { FIG: FIG, REC: REC, CIC: CIC, REDES: REDES, CLAVES: CLAVES, GRU: GRU, MEDIOS: MEDIOS, puntos: puntos, celulaOs: celulaOs };
 
   // ---------- estilos del banco de Naturales ----------
   var css = document.createElement('style');

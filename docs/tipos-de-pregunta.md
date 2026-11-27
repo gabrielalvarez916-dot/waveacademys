@@ -93,3 +93,32 @@ Se activan con una marca al principio del enunciado. La marca no se ve. Cambian 
 | `[[circuito]]` / `[[sistema]]` | `multi_select` | elige piezas o partes y se van armando en el circuito o el sistema | `{"correctas":[..]}` |
 | `[[simulador:Temperatura,0,100,10,°C;Tiempo,120-x,s]]` | cualquiera (casi siempre `multiple_choice` o `numeric`) | mueve el control (de 0 a 100, de a 10) y mira cómo cambian las salidas (fórmula con `x`); después responde | la del tipo |
 | `[[capas:Introducción\|Desarrollo\|Cierre]]` | `open` o `keywords` | escribe el texto por partes; se entrega todo junto | la del tipo |
+
+
+## Actividades de Naturales (solo actividades de nivel y generales, nunca examen) · `js/actividades-nat.js` (27/11/2026)
+
+Mismo mecanismo que las actividades plus: una marca al principio del enunciado cambia la pantalla y lo que arma el alumno se escribe en el campo del tipo de siempre (la corrección y la clave no cambian). Los dibujos se reusan del banco de la lección de Naturales. Prueba: `python3 tools/interactiva/prueba-act-nat.py`.
+
+| Marca | Tipo | Qué hace el alumno | Clave |
+|---|---|---|---|
+| `[[rotular:celula_animal]]` (también celula_vegetal, flor, planta, ojo, corazon, tierra, neurona, bacteria, virus, suelo) | `matching`: izquierda `"1","2",…` en el orden de las partes del dibujo; derecha, los nombres | toca un nombre y el número del dibujo; el rótulo queda pegado | `{"pares":{"1":"Membrana plasmática",…}}` |
+| `[[red:pastizal]]` (laguna, monte) | `classify`: elementos = especies de esa red; categorías = niveles tróficos (de productor hacia arriba) | ubica cada especie en su fila; se dibujan las flechas y la energía | `{"categorias":{..}}` |
+| `[[recorrido:digestion]]` (sangre, aire, savia, reflejo, orina) | `ordering` con los nombres de las estaciones | toca las estaciones en orden; la ficha se transforma | `{"orden":[..]}` |
+| `[[clave:vertebrados]]` (invertebrados, plantas, reinos) | `multiple_choice` con los grupos | recorre la clave con sí / no; al llegar se marca el grupo | texto del grupo |
+| `[[punnett:Aa,Aa]]` | cualquiera (casi siempre `numeric`) | completa el cuadro; se cuentan los genotipos | la del tipo |
+| `[[adn:TACGGA]]` / `[[arn:TACGGA]]` | `short_answer` | arma la cadena con fichas de bases | `{"acepta":["ATGCCT"]}` |
+| `[[osmosis:0:animal]]` (0 agua destilada, 1 suero, 2 agua salada; animal o vegetal) | `multiple_choice` | mira el medio y la célula antes de predecir | texto de la correcta |
+| `[[mezclas]]` | `matching`: izquierda mezclas; derecha Filtración, Evaporación, Imantación, Decantación, Tamización | elige el método y ve el aparato | `{"pares":{..}}` |
+| `[[densidad:120:30]]` (masa en g : volumen en cm³, hasta 40) | `numeric` | pesa en la balanza, sumerge en la probeta y calcula | `{"acepta":[4]}` |
+| `[[instrumento:termometro:46]]` (probeta, regla en mm, balanza de a 50 g) | `numeric` | lee el instrumento, con lupa | `{"acepta":[46]}` |
+| `[[atomo]]` | cualquiera | arma el átomo con protones, neutrones y electrones | la del tipo |
+| `[[tabla]]` | `short_answer` (se escribe el símbolo) | toca el elemento en la tabla | `{"acepta":["Mg"]}` |
+| `[[balancear:CH4+O2>CO2+H2O]]` | `fill_blank` con un `___` por fórmula | balancea con + y −; los contadores se ponen verdes | `{"huecos":[["1"],["2"],["1"],["2"]]}` |
+| `[[ph]]` | `classify`: categorías Ácida, Neutra, Básica | ubica cada sustancia en la zona de la escala | `{"categorias":{..}}` |
+| `[[ohm:serie:6:4:2]]` (o paralelo) | cualquiera | mueve las perillas y lee amperímetro y voltímetros | la del tipo |
+| `[[pista:mruv:0:2]]` (mru:v o mruv:v0:a) | cualquiera | el auto avanza segundo a segundo con cinta y tabla | la del tipo |
+| `[[dcl]]` | `multi_select` con fuerzas que digan «hacia arriba / abajo / la izquierda / la derecha» | marca fuerzas y se dibujan sobre la caja | `{"correctas":[..]}` |
+| `[[graficar:0,-20;2,-10;4,0\|tiempo (min)\|temperatura (°C)]]` | cualquiera | ubica los puntos de la tabla y se traza la línea | la del tipo |
+| `[[experimento]]` | `classify`: categorías Cambia…, Se mide…, Queda igual… | arma los dos montajes | `{"categorias":{..}}` |
+| `[[luna]]` | `matching`: izquierda `"1".."4"` (1 izquierda, 2 abajo, 3 derecha, 4 arriba; el Sol a la izquierda) | ubica cada fase en la órbita | `{"pares":{"1":"Luna nueva",…}}` |
+| `[[plato]]` | `classify`: categorías = grupos de alimentos | arma el plato | `{"categorias":{..}}` |

@@ -331,4 +331,5 @@
     elegir(el, api, function () { var E = L[rot(L.length, u)], q = rot(2, uq), ok = q ? E.dep : E.ind, ops = [E.ind, E.dep, E.ctl.split(',')[0]];
       return { cons: 'Experimento: <b>' + E.nombre + '</b> ¿Cuál es la variable <b>' + (q ? 'dependiente (la que se mide)' : 'independiente (la que se cambia)') + '</b>?', html: montaje(E, false), ops: ops, ok: ok, ayuda: 'La independiente es lo que el investigador cambia a propósito; la dependiente, lo que mide para ver el efecto.' }; });
   } };
+  N.d = N.d || {}; N.d.aparato = aparato; N.d.MEZ = MEZ; N.d.instrumento = instrumento; N.d.INS = INS; N.d.bohr = bohr; N.d.EL = EL; N.d.tabla = tabla; N.d.PCOL = PCOL; N.d.vaso = vaso; N.d.LIQ = LIQ;
 })();

@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""PRUEBA EN EL NAVEGADOR de las actividades de Naturales (js/actividades-nat.js).
+Arma preguntas con la misma estructura que dibuja js/materia.js, carga los scripts de la plataforma, toca cada actividad como un alumno
+y verifica que lo que arma llegue al campo que se corrige. Falla con errores de JavaScript o si algo se sale del recuadro. Capturas en /tmp/prueba-act-nat/.
+Uso: python3 tools/interactiva/prueba-act-nat.py"""
+import asyncio, json, pathlib, sys, html as H
+from playwright.async_api import async_playwright
+RAIZ = pathlib.Path(__file__).resolve().parents[2]
+OUT = pathlib.Path('/tmp/prueba-act-nat'); OUT.mkdir(exist_ok=True)
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/actividades-plus.js', 'js/actividades-nat.js']
+
+def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
+def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
+def preg(i, enun, cuerpo, p_tag=True): return '<div class="mt-preg" id="q%d"><div class="mt-tipo">tipo</div><div class="mt-preg-c">%s%s</div></div>' % (i, ('<p>%s</p>' % enun) if p_tag else enun, cuerpo)
+def num(i): return '<div class="nu-fila"><input type="text" class="mt-txt nu-in" data-w="%d"></div>' % i
+def txt(i): return '<input type="text" class="mt-txt" name="q%d">' % i
+def radios(i, ops): return '<div class="mt-ops">' + ''.join('<label class="mt-op"><input type="radio" name="q%d" value="%s"><span>%s</span></label>' % (i, H.escape(o), H.escape(o)) for o in ops) + '</div>'
+def checks(i, ops): return '<div class="mt-ops">' + ''.join('<label class="mt-op"><input type="checkbox" data-w="%d" value="%s"><span>%s</span></label>' % (i, H.escape(o), H.escape(o)) for o in ops) + '</div>'
+def orden(i, ops): return '<small class="mt-ayuda">Usá las flechas.</small><ol class="mt-orden" data-w="%d">' % i + ''.join('<li data-v="%s"><span class="mt-orden-t">%s</span></li>' % (H.escape(o), H.escape(o)) for o in ops) + '</ol>'
+
+NIV = ['Productor', 'Consumidor primario', 'Consumidor secundario', 'Consumidor terciario']
+Q = [
+ ('rotular', preg(0, '[[rotular:celula_animal]] Rotulá la célula animal.', pares(0, ['1', '2', '3', '4', '5', '6', '7', '8'], ['Membrana plasmática', 'Citoplasma', 'Núcleo', 'Mitocondria', 'Retículo endoplasmático', 'Ribosomas', 'Aparato de Golgi', 'Lisosoma']))),
+ ('red', preg(1, '[[red:pastizal]] Ubicá cada especie en su nivel trófico.', pares(1, ['Pasto', 'Liebre', 'Ratón', 'Zorro', 'Puma'], NIV))),
+ ('recorrido', preg(2, '[[recorrido:digestion]] Ordená el recorrido del alimento.', orden(2, ['Estómago', 'Boca', 'Intestino grueso', 'Esófago', 'Intestino delgado', 'Ano']))),
+ ('clave', preg(3, '[[clave:vertebrados]] El yacaré tiene escamas duras y pone huevos en tierra. ¿A qué grupo pertenece?', radios(3, ['Aves', 'Mamíferos', 'Peces', 'Anfibios', 'Reptiles']))),
+ ('punnett', preg(4, '[[punnett:Aa,Aa]] ¿Qué porcentaje de los hijos será verde (aa)?', num(4))),
+ ('adn', preg(5, '[[adn:TACGGA]] Escribí la cadena complementaria.', txt(5))),
+ ('arn', preg(6, '[[arn:TACGGA]] Transcribí a ARN mensajero.', txt(6))),
+ ('osmosis', preg(7, '[[osmosis:2:animal]] ¿Qué le pasa al glóbulo rojo?', radios(7, ['Se hincha', 'Se arruga', 'Queda igual']))),
+ ('mezclas', preg(8, '[[mezclas]] Elegí el método para cada mezcla.', pares(8, ['Arena y agua', 'Sal disuelta en agua', 'Limaduras de hierro y arena'], ['Filtración', 'Evaporación', 'Imantación', 'Decantación']))),
+ ('densidad', preg(9, '[[densidad:120:30]] Calculá la densidad del objeto en g/cm³.', num(9))),
+ ('instrumento', preg(10, '[[instrumento:termometro:46]] ¿Qué temperatura marca?', num(10))),
+ ('atomo', preg(11, '[[atomo]] Armá el átomo de oxígeno (Z = 8, A = 16). ¿Cuántos electrones tiene en la última capa?', num(11))),
+ ('tabla', preg(12, '[[tabla]] Tocá el elemento del período 3 y grupo 2.', txt(12))),
+ ('balancear', preg(13, '<p class="mt-hueco-p">[[balancear:CH4+O2>CO2+H2O]] <input class="mt-hueco"> CH₄ + <input class="mt-hueco"> O₂ → <input class="mt-hueco"> CO₂ + <input class="mt-hueco"> H₂O</p>', '', p_tag=False)),
+ ('ph', preg(14, '[[ph]] Clasificá cada sustancia según su pH.', pares(14, ['Limón', 'Agua pura', 'Lavandina', 'Vinagre'], ['Ácida', 'Neutra', 'Básica']))),
+ ('ohm', preg(15, '[[ohm:serie:6:4:2]] Si duplicás la pila, ¿qué pasa con la corriente?', radios(15, ['Se duplica', 'Se reduce a la mitad', 'No cambia']))),
+ ('pista', preg(16, '[[pista:mruv:0:2]] ¿Qué posición tiene a los 4 s?', num(16))),
+ ('dcl', preg(17, '[[dcl]] Marcá las fuerzas que actúan sobre la caja empujada.', checks(17, ['Peso hacia abajo', 'Normal hacia arriba', 'Fuerza aplicada hacia la derecha', 'Rozamiento hacia la izquierda', 'Fuerza misteriosa hacia arriba']))),
+ ('graficar', preg(18, '[[graficar:0,-20;2,-10;4,0;6,0;8,0;10,25|tiempo (min)|temperatura (°C)]] ¿Cuántos minutos dura la meseta?', num(18))),
+ ('experimento', preg(19, '[[experimento]] ¿La luz influye en el crecimiento?', pares(19, ['La luz', 'La altura de la planta', 'El tipo de tierra', 'La cantidad de agua'], ['Cambia (variable independiente)', 'Se mide (variable dependiente)', 'Queda igual (controlada)']))),
+ ('luna', preg(20, '[[luna]] Ubicá cada fase.', pares(20, ['1', '2', '3', '4'], ['Luna nueva', 'Cuarto creciente', 'Luna llena', 'Cuarto menguante']))),
+ ('plato', preg(21, '[[plato]] Ubicá cada alimento en su grupo.', pares(21, ['Manzana', 'Lentejas', 'Yogur', 'Pollo'], ['Verduras y frutas', 'Legumbres, cereales, papa, pan y pastas', 'Leche, yogur y quesos', 'Carnes y huevos']))),
+]
+
+# Acciones de alumno (JS) y qué tiene que quedar en el campo que se corrige
+ACC = {
+ 'rotular': ("b=>{const f=b.querySelector('.an-ficha');f.click();b.querySelector('[data-dest=\"2\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('select')].map(s=>s.value).join('|')}", 'Membrana plasmática'),
+ 'red': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Productor'),
+ 'recorrido': ("b=>{b.querySelectorAll('[data-dest]')[1].dispatchEvent(new MouseEvent('click',{bubbles:true}));b.querySelectorAll('[data-dest]')[3].dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('li')].map(l=>l.dataset.v).slice(0,2).join('|')}", 'Boca|Esófago'),
+ 'clave': ("b=>{for(const r of ['no','no','no','no']){b.querySelector('[data-r=\"'+r+'\"]').click()}return (b.querySelector('input:checked')||{}).value}", 'Reptiles'),
+ 'punnett': ("b=>{const i=[...b.querySelectorAll('.an-pun-in')];['AA','Aa','aA','aa'].forEach((v,k)=>{i[k].value=v;i[k].dispatchEvent(new Event('input',{bubbles:true}))});return b.querySelector('.an-val').textContent}", 'aa: 1 de 4'),
+ 'adn': ("b=>{'ATGCCT'.split('').forEach(x=>b.querySelector('[data-b=\"'+x+'\"]').click());return b.querySelector('input.mt-txt').value}", 'ATGCCT'),
+ 'arn': ("b=>{'AUGCCU'.split('').forEach(x=>b.querySelector('[data-b=\"'+x+'\"]').click());return b.querySelector('input.mt-txt').value}", 'AUGCCU'),
+ 'mezclas': ("b=>{b.querySelector('.an-ficha').click();b.querySelector('[data-dest=\"0\"]').click();return b.querySelector('select').value}", 'Filtración'),
+ 'densidad': ("b=>{[...b.querySelectorAll('.an-btn')].forEach(x=>x.click());return String(b.querySelectorAll('svg').length)}", '2'),
+ 'tabla': ("b=>{b.querySelector('[data-t=\"12\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('input.mt-txt').value}", 'Mg'),
+ 'balancear': ("b=>{const bs=[...b.querySelectorAll('[data-i=\"1\"][data-d=\"1\"]')];bs[0].click();b.querySelector('[data-i=\"3\"][data-d=\"1\"]').click();return [...b.querySelectorAll('.mt-hueco')].map(h=>h.value).join(',')+' '+b.querySelectorAll('.an-at.ok').length}", '1,2,1,2 3'),
+ 'ph': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Ácida'),
+ 'pista': ("b=>{for(let k=0;k<4;k++)b.querySelector('.an-btn').click();return b.querySelector('.an-tab').textContent}", '16'),
+ 'dcl': ("b=>{const c=b.querySelector('input[type=checkbox]');c.checked=true;c.dispatchEvent(new Event('change',{bubbles:true}));return String(b.querySelectorAll('.an-caja line').length)}", '2'),
+ 'experimento': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.an-zona').click();return b.querySelector('select').value}", 'Cambia (variable independiente)'),
+ 'luna': ("b=>{b.querySelector('.an-ficha').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Luna nueva'),
+ 'plato': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Verduras y frutas'),
+}
+
+async def main():
+    page = OUT / 'p.html'
+    page.write_text('<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="%s"><style>body{margin:0;padding:10px}.wvp{width:560px}.mt-preg{margin:0 0 18px;padding:10px;border:1px solid #ddd}</style></head><body><div class="wvp act">%s</div>%s</body></html>' % (
+        RAIZ / 'css/styles.css', ''.join(q[1] for q in Q), ''.join('<script src="%s"></script>' % (RAIZ / s) for s in SCRIPTS)), encoding='utf-8')
+    malos = []
+    async with async_playwright() as p:
+        b = await p.chromium.launch(executable_path='/usr/bin/google-chrome')
+        pg = await b.new_page(viewport={'width': 600, 'height': 900})
+        errs = []; pg.on('pageerror', lambda e: errs.append(str(e))); pg.on('console', lambda m: errs.append(m.text) if m.type == 'warning' and 'Naturales' in m.text else None)
+        await pg.goto(page.as_uri()); await pg.wait_for_timeout(600)
+        for i, (nom, _) in enumerate(Q):
+            blk = f'#q{i}'
+            ok = await pg.evaluate(f"!!document.querySelector('{blk} .an-caja')")
+            if not ok: malos.append(f'{nom}: no se armó la actividad'); continue
+            if '[[' in await pg.inner_text(blk): malos.append(f'{nom}: quedó la marca a la vista')
+            if nom in ACC:
+                js, esperado = ACC[nom]
+                r = await pg.evaluate(f"(()=>{{const b=document.querySelector('{blk}');return ({js})(b)}})()")
+                if esperado not in str(r): malos.append(f'{nom}: el alumno armó y el campo quedó «{r}» (esperaba «{esperado}»)')
+            sale = await pg.evaluate(f"""() => {{ const c = document.querySelector('{blk}').getBoundingClientRect(); const f = [];
+                document.querySelectorAll('{blk} .an-caja *').forEach(e => {{ const q = e.getBoundingClientRect(); if (q.width && !e.closest('.an-lupa') && (q.right > c.right + 2 || q.left < c.left - 2)) f.push(e.tagName + ':' + (e.textContent||'').slice(0,25)); }});
+                document.querySelectorAll('{blk} svg text').forEach(t => {{ const s = t.closest('svg').getBoundingClientRect(), q = t.getBoundingClientRect(); if (q.width && (q.right > s.right + 1 || q.left < s.left - 1 || q.top < s.top - 1 || q.bottom > s.bottom + 1)) f.push('texto fuera: ' + t.textContent.slice(0,25)); }});
+                return f.slice(0,3); }}""")
+            if sale: malos.append(f'{nom}: se sale → {sale}')
+            await (await pg.query_selector(blk)).screenshot(path=str(OUT / f'{nom}.png'))
+        for e in errs: malos.append('error: ' + e)
+        await b.close()
+    for x in malos: print('  ✘', x)
+    print(f'{len(malos)} problema(s) en {len(Q)} actividades. Capturas en {OUT}/')
+    sys.exit(1 if malos else 0)
+asyncio.run(main())
