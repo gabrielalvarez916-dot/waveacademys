@@ -42,6 +42,8 @@ jobs:
           else L=$(git diff --name-only "$BASE" "$GITHUB_SHA" -- 'contenido/*/mision-*/mision-*.json' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- 'contenido/*/mision-*/mision-*.json'); fi
           L=$(echo "$L" | tr ' ' '\n' | grep -v '^contenido/medio/' | tr '\n' ' ')  # primaria va por mision-medio.yml
           L=$(for f in $L; do [ -f "$f" ] && echo "$f"; done | sort -u | tr '\n' ' ')
+          # misiones en preparación (sin lección ni actividades, solo material mudado) no se mandan al control: no frenan a las demás
+          L=$(python3 -c "import json,sys; print(' '.join(f for f in sys.argv[1:] if (lambda M: any((v or {}).get('leccion') for v in (M.get('niveles') or {}).values()) or any(M.get('act', {}).values()))(json.load(open(f)))))" $L)
           echo "Misiones: $L"; echo "lista=$L" >> "$GITHUB_OUTPUT"
           # las que solo cambiaron en la práctica de la lección interactiva no se vuelven a revisar ni a cargar enteras
           if [ -n "$MANUAL" ]; then C="$L"; else C=$(python tools/interactiva/solo_practicas.py "$BASE" $L); fi

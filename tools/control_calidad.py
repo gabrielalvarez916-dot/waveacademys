@@ -222,7 +222,8 @@ def revisar_preguntas(M, nivel, err, err_pdf=None):
     for it in (M.get('examen') or []):
         q = it[1] if isinstance(it, list) and len(it) > 1 else it
         if isinstance(q, dict): qs.append(q)
-    car = [c for N in (M.get('niveles') or {}).values() for c in (N.get('carpeta') or [])]
+    # La carpeta es del PDF: si la lección lo reemplaza (err_pdf ≠ err), no cuenta para las reglas de preguntas
+    car = [] if err_pdf is not err else [c for N in (M.get('niveles') or {}).values() for c in (N.get('carpeta') or [])]
     if qs:
         pens = sum(_es_pensada_real(q, nivel) for q in qs)
         rec = len(qs) - pens
