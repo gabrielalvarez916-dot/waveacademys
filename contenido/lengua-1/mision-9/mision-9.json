@@ -1,9 +1,2066 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 9,
- "practica": "Práctica general: El fantasma de Canterville, segunda parte",
- "examen_titulo": "Nivel jefe: El fantasma de Canterville, segunda parte",
- "niveles": {},
- "act": {},
- "examen": []
+ "practica": "Actividades generales",
+ "examen_titulo": "Nivel jefe: la épica",
+ "niveles": {
+  "1": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es la épica",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Ilíada",
+          "raiz": "La Ilíada (Grecia, siglo VIII a. C.)",
+          "ramas": [
+           [
+            "El héroe",
+            [
+             "Aquiles, el mejor guerrero griego"
+            ],
+            "Encarna el valor y la fuerza."
+           ],
+           [
+            "La hazaña",
+            [
+             "vence a Héctor, el gran defensor de Troya"
+            ],
+            "Una acción extraordinaria."
+           ],
+           [
+            "El pueblo",
+            [
+             "los griegos, en guerra contra Troya"
+            ],
+            "El héroe representa a todo un pueblo."
+           ],
+           [
+            "La forma",
+            [
+             "un largo poema en verso, cantado de memoria"
+            ],
+            "Así se conservaba."
+           ]
+          ],
+          "cierre": "Héroe, hazaña, pueblo y verso: los rasgos de una epopeya."
+         },
+         {
+          "nombre": "Cantar de mio Cid",
+          "raiz": "El Cantar de mio Cid (España, hacia 1200)",
+          "ramas": [
+           [
+            "El héroe",
+            [
+             "Rodrigo Díaz de Vivar, el Cid"
+            ],
+            "Un guerrero castellano real, idealizado."
+           ],
+           [
+            "La hazaña",
+            [
+             "recupera su honra después de ser desterrado"
+            ],
+            "Vence batallas y conquista Valencia."
+           ],
+           [
+            "El pueblo",
+            [
+             "Castilla en la Edad Media"
+            ],
+            "Encarna la lealtad y el valor."
+           ],
+           [
+            "La forma",
+            [
+             "un poema que cantaban los juglares"
+            ],
+            "También para recordar y cantar."
+           ]
+          ],
+          "cierre": "Dos epopeyas separadas por dos mil años, con los mismos rasgos."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Cuál de estos argumentos corresponde a una epopeya?",
+        "items": [
+         {
+          "cons": "Elegí el argumento épico.",
+          "ops": [
+           "Un rey parte a buscar la planta de la inmortalidad y enfrenta monstruos en su camino",
+           "Una chica cuenta en su diario su primer día de clases",
+           "Un detective descubre quién robó un collar"
+          ],
+          "ayuda": "Buscá un héroe y hazañas extraordinarias."
+         },
+         {
+          "cons": "Elegí el argumento épico.",
+          "ops": [
+           "Un guerrero defiende a su pueblo de un monstruo que ataca de noche el salón del rey",
+           "Dos amigos discuten por un partido de fútbol",
+           "Una familia se muda a una casa embrujada y se ríe del fantasma"
+          ],
+          "ayuda": "El héroe defiende a todo un pueblo."
+         },
+         {
+          "cons": "Elegí el argumento épico.",
+          "ops": [
+           "Un caballero desterrado gana batallas para recuperar el honor ante su rey",
+           "Un científico explica cómo funciona un volcán",
+           "Una vendedora cuenta cómo abrió su negocio"
+          ],
+          "ayuda": "Honor, batallas y un héroe."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Épica",
+        "texto": "La épica es el género literario que narra, casi siempre en verso, las hazañas de un héroe que representa los valores de un pueblo; cada obra épica se llama epopeya."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las epopeyas nacieron cuando la mayoría de la gente no sabía leer: se cantaban en plazas, palacios y fiestas, y servían para recordar quiénes eran y qué admiraban. Por eso el héroe no es solo un personaje: es el modelo de lo que ese pueblo valoraba."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Un héroe que realiza hazañas.",
+         "Representa los valores de un pueblo.",
+         "En verso, para cantarse y recordarse."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Los rasgos del héroe épico",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Héroe",
+        "items": [
+         {
+          "nombre": "Aquiles",
+          "texto": "Aquiles es {{hijo de una diosa del mar y de un rey|Origen extraordinario: mitad divino.}}. {{En el combate nadie lo iguala en fuerza y velocidad|Fuerza y valor sobrehumanos.}}, pero {{su orgullo herido lo hace retirarse de la guerra y los griegos empiezan a perder|También tiene defectos humanos.}}.",
+          "cierre": "Extraordinario, pero humano."
+         },
+         {
+          "nombre": "Odiseo",
+          "texto": "Odiseo es {{rey de una pequeña isla, Ítaca|Origen noble.}}. No es el más fuerte, pero {{es el más ingenioso: idea el caballo de madera que permite entrar en Troya|Su gran virtud es la astucia.}} y {{soporta diez años de viaje para volver con los suyos|Paciencia y resistencia.}}.",
+          "cierre": "La inteligencia también es heroica."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "unir_x",
+       "p": {
+        "consigna": "Uní cada héroe con la virtud que más lo caracteriza.",
+        "items": [
+         {
+          "pares": [
+           [
+            "Aquiles",
+            "la fuerza en el combate"
+           ],
+           [
+            "Odiseo",
+            "la astucia"
+           ],
+           [
+            "El Cid",
+            "la lealtad a su rey"
+           ],
+           [
+            "Gilgamesh",
+            "el deseo de vencer a la muerte"
+           ]
+          ]
+         },
+         {
+          "pares": [
+           [
+            "Héctor",
+            "la defensa de su ciudad"
+           ],
+           [
+            "Beowulf",
+            "el valor frente al monstruo"
+           ],
+           [
+            "Penélope",
+            "la fidelidad y el ingenio"
+           ],
+           [
+            "Aquiles",
+            "la búsqueda de gloria"
+           ]
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Héroe épico",
+        "texto": "El héroe épico es el protagonista de la epopeya: tiene un origen noble o divino, virtudes extraordinarias como la fuerza, el valor o la astucia, y representa los valores de su pueblo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Aunque parezca invencible, el héroe épico es humano: se enoja, sufre, se equivoca y puede morir, y eso lo vuelve cercano para quien escucha su historia. Cada epopeya destaca una virtud distinta: la fuerza en Aquiles, la astucia en Odiseo, la lealtad en el Cid."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Origen noble o divino.",
+         "Virtudes extraordinarias: fuerza, valor, astucia.",
+         "Humano: sufre, se equivoca y puede morir."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El epíteto épico",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Fragmento",
+        "items": [
+         {
+          "nombre": "Ilíada",
+          "texto": "Entonces {{Aquiles, el de los pies ligeros|Epíteto: destaca su velocidad.}}, tomó la lanza, y {{Héctor, el domador de caballos|Epíteto del héroe troyano.}}, lo esperó frente a las murallas.",
+          "cierre": "Cada vez que aparece un héroe, aparece su epíteto."
+         },
+         {
+          "nombre": "Cantar de mio Cid",
+          "texto": "Salió de Burgos {{el que en buena hora nació|Epíteto del Cid: anuncia su destino glorioso.}}, con sesenta caballeros, y {{su leal Álvar Fáñez|Otro epíteto: la lealtad del compañero.}} cabalgaba a su lado.",
+          "cierre": "También en la épica medieval."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué rasgo destaca cada epíteto?",
+        "items": [
+         {
+          "cons": "«Odiseo, el de muchos recursos»",
+          "ops": [
+           "Su ingenio para salir de los problemas",
+           "Su riqueza",
+           "Su fuerza física"
+          ],
+          "ayuda": "Los «recursos» son ideas, trucos, soluciones."
+         },
+         {
+          "cons": "«Atenea, la de ojos brillantes»",
+          "ops": [
+           "Una mirada viva e inteligente",
+           "Que está siempre enojada",
+           "Que es muy alta"
+          ],
+          "ayuda": "Atenea es la diosa de la sabiduría."
+         },
+         {
+          "cons": "«La Aurora, de dedos rosados»",
+          "ops": [
+           "El color del cielo al amanecer",
+           "Que tiene las manos lastimadas",
+           "Que es una mujer anciana"
+          ],
+          "ayuda": "La aurora es el amanecer."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Epíteto épico",
+        "texto": "El epíteto épico es una frase fija que acompaña el nombre de un personaje y destaca su rasgo principal, como «Aquiles, el de los pies ligeros»."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los epítetos se repiten cada vez que aparece el personaje. Para los aedos y juglares, que cantaban de memoria, eran fórmulas que ayudaban a recordar y a completar el verso; para el público, eran una manera de reconocer enseguida a cada héroe."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Frase fija junto al nombre.",
+         "Destaca el rasgo principal.",
+         "Se repite: ayudaba a recordar y cantar."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Épica",
+      "definicion": "es el género que narra, casi siempre en verso, las hazañas de un héroe que representa los valores de un pueblo.",
+      "ejemplo": "La Ilíada, el Cantar de mio Cid"
+     },
+     {
+      "concepto": "Epopeya",
+      "definicion": "es cada obra extensa del género épico, que cuenta las hazañas de uno o varios héroes.",
+      "ejemplo": "La Odisea"
+     },
+     {
+      "concepto": "Héroe épico",
+      "definicion": "tiene origen noble o divino y virtudes extraordinarias, pero sigue siendo humano y puede morir.",
+      "ejemplo": "Aquiles, hijo de una diosa"
+     },
+     {
+      "concepto": "Virtudes heroicas",
+      "definicion": "son las cualidades que cada epopeya destaca en su héroe, como la fuerza, la astucia o la lealtad.",
+      "ejemplo": "La astucia de Odiseo"
+     },
+     {
+      "concepto": "Epíteto épico",
+      "definicion": "es una frase fija que acompaña el nombre de un personaje y destaca su rasgo principal.",
+      "ejemplo": "Aquiles, el de los pies ligeros"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un poema antiguo cuenta cómo un guerrero defiende a su pueblo de un monstruo que ataca de noche. ¿A qué género pertenece?",
+    "En «Héctor, el domador de caballos», ¿cómo se llama la frase que acompaña al nombre?",
+    "Odiseo no es el más fuerte de los griegos, pero idea el caballo de madera para entrar en Troya. ¿Qué virtud muestra?",
+    "Tomi dice que Aquiles no puede ser un héroe porque se enoja y llora. ¿Qué tiene el héroe épico además de virtudes extraordinarias?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "épica",
+     "epica",
+     "la épica",
+     "género épico",
+     "epopeya"
+    ],
+    [
+     "epíteto",
+     "epiteto",
+     "un epíteto"
+    ],
+    [
+     "astucia",
+     "la astucia",
+     "ingenio",
+     "inteligencia"
+    ],
+    [
+     "defectos humanos",
+     "es humano",
+     "humanidad",
+     "defectos"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "A la épica: hazañas de un héroe que defiende a su pueblo.",
+     "Epíteto: frase fija que destaca un rasgo del héroe.",
+     "La astucia: gana con inteligencia, no con fuerza.",
+     "Es humano: tiene defectos, sufre y puede morir."
+    ]
+   }
+  },
+  "2": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El viaje del héroe",
+      "ejemplo": {
+       "motor": "linea_tiempo",
+       "p": {
+        "items": [
+         {
+          "nombre": "Odisea",
+          "hechos": [
+           {
+            "t": "Odiseo parte de Troya con sus barcos",
+            "c": 1
+           },
+           {
+            "t": "Enfrenta al cíclope, las sirenas y otras pruebas",
+            "c": 2
+           },
+           {
+            "t": "Atenea y otros lo ayudan a seguir",
+            "c": 3
+           },
+           {
+            "t": "Llega a Ítaca disfrazado de mendigo",
+            "c": 4
+           },
+           {
+            "t": "Recupera su casa y vuelve con Penélope",
+            "c": 5
+           }
+          ],
+          "marca": "Partida, pruebas, ayudas y regreso.",
+          "cierre": "El viaje transforma al héroe."
+         },
+         {
+          "nombre": "Gilgamesh",
+          "hechos": [
+           {
+            "t": "Gilgamesh pierde a su amigo Enkidu y teme a la muerte",
+            "c": 1
+           },
+           {
+            "t": "Parte a buscar el secreto de la inmortalidad",
+            "c": 2
+           },
+           {
+            "t": "Cruza montañas y aguas de la muerte",
+            "c": 3
+           },
+           {
+            "t": "Consigue una planta mágica, pero una serpiente se la roba",
+            "c": 4
+           },
+           {
+            "t": "Vuelve a su ciudad y acepta ser mortal",
+            "c": 5
+           }
+          ],
+          "marca": "El regreso trae sabiduría, no premios.",
+          "cierre": "La estructura es la misma en epopeyas muy lejanas."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "ordenar_x",
+       "p": {
+        "consigna": "Ordená las etapas del viaje del héroe.",
+        "items": [
+         {
+          "lista": [
+           "Beowulf deja su tierra para ayudar a un rey vecino",
+           "Enfrenta al monstruo Grendel en el gran salón",
+           "Recibe armas y consejos del rey",
+           "Vuelve a su tierra con gloria"
+          ]
+         },
+         {
+          "lista": [
+           "El Cid sale desterrado de Castilla",
+           "Gana batallas con pocos hombres",
+           "Sus fieles caballeros lo acompañan y lo ayudan",
+           "Conquista Valencia y recupera su honra"
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Viaje del héroe",
+        "texto": "El viaje del héroe es la estructura que siguen muchas epopeyas: el héroe parte, enfrenta pruebas, recibe ayudas y regresa transformado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El viaje no es solo un traslado de un lugar a otro: es una transformación. El héroe que vuelve no es el mismo que partió; aprendió algo sobre el mundo o sobre sí mismo. Gilgamesh, por ejemplo, no consigue la inmortalidad, pero regresa aceptando su condición humana."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Partida: deja su lugar.",
+         "Pruebas y ayudas en el camino.",
+         "Regreso: vuelve transformado."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Las pruebas: fuerza y astucia",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Prueba",
+        "items": [
+         {
+          "nombre": "El cíclope",
+          "texto": "Encerrados en la cueva de Polifemo, {{los hombres de Odiseo no pueden mover la roca de la entrada|La fuerza no alcanza.}}. Odiseo {{le dice al gigante que se llama «Nadie»|Astucia: prepara la trampa.}} y, cuando lo deja ciego, {{el cíclope grita que «Nadie» lo ataca y nadie viene a ayudarlo|El engaño funciona.}}.",
+          "cierre": "Una prueba que se gana pensando."
+         },
+         {
+          "nombre": "Las sirenas",
+          "texto": "Las sirenas atraen a los marineros con su canto hasta hacerlos naufragar. Odiseo {{tapa con cera los oídos de sus hombres|Astucia: anula el peligro.}} y {{se hace atar al mástil para escucharlas sin poder ir hacia ellas|Resiste la tentación.}}.",
+          "cierre": "Una prueba de tentación, no de combate."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué se necesita para superar cada prueba?",
+        "cajas": [
+         "Fuerza y valor",
+         "Astucia"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Beowulf lucha cuerpo a cuerpo con el monstruo Grendel",
+          0
+         ],
+         [
+          "Aquiles enfrenta a Héctor frente a las murallas",
+          0
+         ],
+         [
+          "El Cid vence a un ejército más numeroso en el campo de batalla",
+          0
+         ],
+         [
+          "Odiseo se hace llamar «Nadie» ante el cíclope",
+          1
+         ],
+         [
+          "Los griegos se esconden en un caballo de madera para entrar en Troya",
+          1
+         ],
+         [
+          "Penélope desteje de noche el manto que teje de día para no elegir esposo",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Pruebas del héroe",
+        "texto": "Las pruebas son los obstáculos que el héroe enfrenta en su viaje, como monstruos, combates, tempestades o tentaciones, y que muestran sus virtudes."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada prueba está pensada para poner en juego una virtud. Algunas se ganan con fuerza y valor, como los combates; otras, con astucia, como el engaño al cíclope; y otras, con dominio de sí mismo, como resistir el canto de las sirenas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Combates: fuerza y valor.",
+         "Trampas y engaños: astucia.",
+         "Tentaciones: dominio de sí mismo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Empezar en medio de la acción",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Comienzo",
+        "items": [
+         {
+          "nombre": "Cronológico",
+          "texto": "{{Termina la guerra de Troya y Odiseo parte hacia su casa.|Empieza por el principio: el lector sigue el orden de los hechos.}}"
+         },
+         {
+          "nombre": "In medias res",
+          "texto": "{{Hace siete años que Odiseo está atrapado en la isla de la ninfa Calipso, llorando frente al mar.|Empieza en medio de la historia: el lector quiere saber cómo llegó ahí.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Empieza in medias res o en orden cronológico?",
+        "items": [
+         {
+          "cons": "«La espada todavía goteaba cuando el guerrero levantó la vista: el dragón volvía.»",
+          "ops": [
+           "In medias res",
+           "Cronológico"
+          ],
+          "ayuda": "Arranca en plena acción."
+         },
+         {
+          "cons": "«Había una vez, en un reino lejano, un niño que nació la noche de una tormenta.»",
+          "ops": [
+           "Cronológico",
+           "In medias res"
+          ],
+          "ayuda": "Empieza por el nacimiento."
+         },
+         {
+          "cons": "«Llevaban tres días sitiados y el agua se terminaba. Entonces el capitán recordó cómo había empezado todo.»",
+          "ops": [
+           "In medias res",
+           "Cronológico"
+          ],
+          "ayuda": "Empieza en medio y después vuelve atrás."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "In medias res",
+        "texto": "In medias res es la técnica de comenzar un relato en medio de la acción y recuperar después, con recuerdos o relatos de los personajes, lo que pasó antes."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La Odisea empieza con Odiseo atrapado en una isla, diez años después de la guerra, y sus aventuras anteriores las cuenta él mismo en un banquete. Este comienzo atrapa al lector desde la primera página, porque lo obliga a preguntarse cómo se llegó hasta ahí."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Empieza en plena acción.",
+         "Lo anterior se cuenta después.",
+         "Genera intriga desde el inicio."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Viaje del héroe",
+      "definicion": "es la estructura de partida, pruebas, ayudas y regreso que siguen muchas epopeyas.",
+      "ejemplo": "Odiseo vuelve de Troya a Ítaca"
+     },
+     {
+      "concepto": "Pruebas",
+      "definicion": "son los obstáculos del viaje que ponen en juego las virtudes del héroe.",
+      "ejemplo": "El cíclope, las sirenas, Grendel"
+     },
+     {
+      "concepto": "Astucia",
+      "definicion": "es la inteligencia para engañar o resolver un problema, que a veces vale más que la fuerza.",
+      "ejemplo": "Me llamo Nadie"
+     },
+     {
+      "concepto": "Transformación del héroe",
+      "definicion": "es el cambio que produce el viaje: el héroe vuelve distinto de como partió.",
+      "ejemplo": "Gilgamesh acepta que es mortal"
+     },
+     {
+      "concepto": "In medias res",
+      "definicion": "es empezar el relato en medio de la acción y contar después lo anterior.",
+      "ejemplo": "La Odisea empieza con Odiseo atrapado en una isla"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un héroe deja su tierra, enfrenta monstruos, recibe ayuda de un sabio y vuelve cambiado. ¿Cómo se llama esa estructura?",
+    "Encerrado con un cíclope, Odiseo dice que se llama «Nadie» y así logra escapar. ¿Con qué virtud supera la prueba?",
+    "La Odisea empieza con el héroe atrapado en una isla, muchos años después de la guerra. ¿Qué técnica de comienzo usa?",
+    "Juli dice que el viaje del héroe es solo ir de un lugar a otro. ¿Qué le pasa además al héroe cuando regresa?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "viaje del héroe",
+     "el viaje del héroe"
+    ],
+    [
+     "astucia",
+     "la astucia",
+     "ingenio"
+    ],
+    [
+     "in medias res"
+    ],
+    [
+     "se transforma",
+     "cambia",
+     "vuelve cambiado",
+     "transformado"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "El viaje del héroe: partida, pruebas, ayudas y regreso.",
+     "Con astucia: cuando el cíclope grita, nadie lo ayuda.",
+     "In medias res: empieza en medio de la historia.",
+     "Se transforma: vuelve distinto de como partió."
+    ]
+   }
+  },
+  "3": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Los dioses intervienen",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Episodio",
+        "items": [
+         {
+          "nombre": "Atenea",
+          "texto": "Cuando Odiseo llega a Ítaca, {{Atenea lo disfraza de mendigo viejo|Un dios ayuda: le da una ventaja.}} para que {{nadie lo reconozca y pueda descubrir quién le es fiel|La ayuda sirve al plan del héroe.}}.",
+          "cierre": "La diosa protege a su héroe favorito."
+         },
+         {
+          "nombre": "Poseidón",
+          "texto": "{{Poseidón, furioso porque Odiseo dejó ciego a su hijo|Un dios con pasiones humanas: la venganza.}}, {{levanta una tormenta que destroza la balsa del héroe|El dios es un obstáculo.}}.",
+          "cierre": "Los dioses ayudan y también castigan."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿El dios ayuda u obstaculiza al héroe?",
+        "cajas": [
+         "Ayuda",
+         "Obstaculiza"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Atenea aconseja a Odiseo en sueños",
+          0
+         ],
+         [
+          "Hermes le da una hierba contra los hechizos de Circe",
+          0
+         ],
+         [
+          "Una diosa del mar le presta un velo que lo salva del naufragio",
+          0
+         ],
+         [
+          "Poseidón le manda tempestades",
+          1
+         ],
+         [
+          "El dios del sol castiga a los marineros que comieron sus vacas",
+          1
+         ],
+         [
+          "Una diosa enojada favorece a los enemigos del héroe",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Intervención divina",
+        "texto": "La intervención divina es la participación de los dioses en la epopeya, ayudando o castigando a los héroes según sus simpatías y enojos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los dioses de la épica griega no son lejanos ni perfectos: se enojan, tienen favoritos y se pelean entre ellos. Por eso el héroe nunca está solo; su suerte depende también de qué dioses lo apoyan y cuáles lo persiguen."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Los dioses ayudan o castigan.",
+         "Tienen pasiones humanas: favoritos y enojos.",
+         "El héroe actúa, pero no controla todo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El destino",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Destino",
+        "items": [
+         {
+          "nombre": "Aquiles",
+          "texto": "{{Su madre le anuncia que tiene dos destinos posibles|El destino está escrito, pero hay una elección.}}: {{una vida larga y olvidada en su casa|Opción segura.}}, o {{una muerte joven en Troya y gloria eterna|Opción heroica.}}. {{Aquiles elige ir a la guerra|Muestra su grandeza en cómo enfrenta el destino.}}.",
+          "cierre": "El héroe elige cómo enfrentar lo que está escrito."
+         },
+         {
+          "nombre": "Héctor",
+          "texto": "{{Héctor sabe que Troya va a caer|Conoce su destino.}}, pero {{igual sale a defenderla y se despide de su esposa y de su hijo|Cumple con su deber aunque sabe que va a perder.}}.",
+          "cierre": "El héroe no huye de su destino."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué muestra cada decisión sobre el héroe?",
+        "items": [
+         {
+          "cons": "Aquiles elige una vida corta y gloriosa en lugar de una larga y tranquila.",
+          "ops": [
+           "Valora más la gloria que la seguridad",
+           "Tiene miedo a la guerra",
+           "No conoce su destino"
+          ],
+          "ayuda": "Pensá qué eligió y qué dejó."
+         },
+         {
+          "cons": "Héctor sale a pelear sabiendo que Troya caerá.",
+          "ops": [
+           "Cumple con su deber aunque no pueda ganar",
+           "Cree que va a ganar fácilmente",
+           "Quiere escapar de la ciudad"
+          ],
+          "ayuda": "Sabe el final y sale igual."
+         },
+         {
+          "cons": "Gilgamesh, después de buscar la inmortalidad, acepta que va a morir.",
+          "ops": [
+           "Aprende a aceptar su condición humana",
+           "Consigue vencer a la muerte",
+           "Se olvida de su viaje"
+          ],
+          "ayuda": "El viaje le enseñó algo."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Destino",
+        "texto": "En la épica, el destino es lo que está decidido para cada personaje y que nadie puede cambiar; la grandeza del héroe está en cómo lo enfrenta."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Que el destino esté escrito no vuelve pasivo al héroe: al contrario, lo que lo hace grande es que lo enfrenta con valor. Aquiles elige la gloria sabiendo que morirá joven, y Héctor defiende Troya sabiendo que caerá. En esas decisiones se ve qué valoraba su pueblo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "El destino no se puede cambiar.",
+         "El héroe elige cómo enfrentarlo.",
+         "Sus decisiones muestran sus valores."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Gloria, honra y lealtad",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Episodio",
+        "items": [
+         {
+          "nombre": "El destierro del Cid",
+          "texto": "{{El rey Alfonso destierra al Cid por intrigas de sus enemigos|Pierde la honra: una injusticia.}}. Aun así, {{después de cada victoria, el Cid le envía al rey parte de lo que gana|Lealtad: sigue sirviendo a su rey.}}, hasta que {{el rey lo perdona y le devuelve su lugar|Recupera la honra.}}.",
+          "cierre": "La honra se recupera con hechos."
+         },
+         {
+          "nombre": "Aquiles y la gloria",
+          "texto": "Para los guerreros griegos, {{lo peor no era morir, sino ser olvidado|La gloria vale más que la vida.}}. Por eso {{las hazañas se cantaban: para que la fama del héroe durara para siempre|La epopeya misma es la gloria del héroe.}}.",
+          "cierre": "Ser recordado: el gran premio del héroe."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "unir_x",
+       "p": {
+        "consigna": "Uní cada valor con el episodio que lo muestra.",
+        "items": [
+         {
+          "pares": [
+           [
+            "Lealtad",
+            "El Cid le envía regalos al rey que lo desterró"
+           ],
+           [
+            "Gloria",
+            "Aquiles elige una vida corta pero recordada"
+           ],
+           [
+            "Honra",
+            "El Cid gana batallas para recuperar su buen nombre"
+           ],
+           [
+            "Fidelidad",
+            "Penélope espera veinte años a Odiseo"
+           ]
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Honra y gloria",
+        "texto": "La honra es la buena fama y el respeto que un héroe tiene ante su comunidad; la gloria es el recuerdo de sus hazañas, que lo hace inmortal en la memoria."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para el héroe épico, perder la honra es peor que perder la vida, y ser olvidado es la verdadera muerte. Por eso pelea, se sacrifica y cumple con su palabra. La epopeya, al cantar sus hazañas, es justamente la que le da esa gloria."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Honra: el respeto de su comunidad.",
+         "Gloria: ser recordado para siempre.",
+         "Lealtad: cumplir con su rey y su gente."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Intervención divina",
+      "definicion": "es la participación de los dioses en la epopeya, que ayudan o castigan al héroe.",
+      "ejemplo": "Atenea disfraza a Odiseo; Poseidón lo persigue"
+     },
+     {
+      "concepto": "Destino",
+      "definicion": "es lo que está decidido para cada personaje y que nadie puede cambiar.",
+      "ejemplo": "Héctor sabe que Troya caerá"
+     },
+     {
+      "concepto": "Elección del héroe",
+      "definicion": "consiste en decidir cómo enfrentar el destino, y muestra sus valores.",
+      "ejemplo": "Aquiles elige la gloria"
+     },
+     {
+      "concepto": "Honra",
+      "definicion": "es la buena fama y el respeto de la comunidad, que el héroe defiende o recupera.",
+      "ejemplo": "El Cid desterrado gana batallas"
+     },
+     {
+      "concepto": "Gloria",
+      "definicion": "es el recuerdo eterno de las hazañas, el gran premio del héroe épico.",
+      "ejemplo": "Las hazañas se cantan para que duren"
+     }
+    ]
+   },
+   "carpeta": [
+    "En la Odisea, Poseidón persigue a Odiseo con tormentas porque dejó ciego a su hijo. ¿El dios lo ayuda o lo obstaculiza?",
+    "Aquiles sabe que si va a la guerra morirá joven, pero será recordado para siempre, y va igual. ¿Qué busca?",
+    "Desterrado injustamente, el Cid gana batallas y le envía regalos a su rey. ¿Qué valor muestra con los regalos?",
+    "Lucas cree que, como el destino de Héctor estaba escrito, Héctor no tiene mérito. ¿Qué elige el héroe frente a su destino?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "lo obstaculiza",
+     "obstaculiza"
+    ],
+    [
+     "la gloria",
+     "gloria",
+     "fama"
+    ],
+    [
+     "lealtad",
+     "la lealtad"
+    ],
+    [
+     "cómo enfrentarlo",
+     "como enfrentarlo",
+     "enfrentarlo con valor"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Lo obstaculiza: los dioses también castigan.",
+     "La gloria: ser recordado por sus hazañas.",
+     "Lealtad: sigue sirviendo al rey que lo echó.",
+     "Cómo enfrentarlo: Héctor defiende Troya aunque sabe que caerá."
+    ]
+   }
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La transmisión oral",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Recurso",
+        "items": [
+         {
+          "nombre": "Fórmulas",
+          "texto": "En la Odisea, cada mañana empieza igual: {{«Cuando apareció la Aurora, de dedos rosados»|Fórmula fija: se repite muchas veces.}}. Y cada vez que habla un héroe, {{«le respondió así el divino Odiseo»|Otra fórmula que ayuda a encadenar el relato.}}.",
+          "cierre": "Las fórmulas eran ladrillos que el cantor ya tenía armados."
+         },
+         {
+          "nombre": "El juglar",
+          "texto": "El juglar se dirigía al público: {{«¡Oíd, señores, lo que hizo el Cid!»|Llamado al público: se cantaba frente a gente.}}, y {{repetía los nombres y los epítetos de los héroes|Repeticiones que ayudaban a recordar y a seguir el relato.}}.",
+          "cierre": "Huellas de un relato pensado para ser escuchado."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Para qué servía cada recurso en una epopeya que se cantaba de memoria?",
+        "items": [
+         {
+          "cons": "El verso con ritmo regular.",
+          "ops": [
+           "Ayudaba a memorizar y a cantar el relato",
+           "Hacía el relato más corto",
+           "Servía para que solo lo entendieran los reyes"
+          ],
+          "ayuda": "Pensá en una canción que sabés de memoria."
+         },
+         {
+          "cons": "Las fórmulas que se repiten, como «la Aurora, de dedos rosados».",
+          "ops": [
+           "Daban al cantor partes ya armadas para improvisar",
+           "Mostraban que el autor no tenía ideas",
+           "Eran errores de copia"
+          ],
+          "ayuda": "El cantor no tenía el texto escrito."
+         },
+         {
+          "cons": "Los llamados al público, como «¡Oíd, señores!».",
+          "ops": [
+           "Mantenían la atención de quienes escuchaban",
+           "Indicaban el final del libro",
+           "Servían para cambiar de idioma"
+          ],
+          "ayuda": "El relato se cantaba frente a gente."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Transmisión oral",
+        "texto": "La transmisión oral es la forma de conservar un relato contándolo o cantándolo de memoria, de generación en generación, antes de ser escrito."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los aedos en Grecia y los juglares en la Edad Media cantaban epopeyas enteras sin leerlas. Para lograrlo usaban el verso, los epítetos, las fórmulas repetidas y los llamados al público. Cuando esas historias por fin se escribieron, esas huellas de la oralidad quedaron en el texto."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Aedos y juglares cantaban de memoria.",
+         "Verso, fórmulas y epítetos ayudaban a recordar.",
+         "Esas marcas quedaron en el texto escrito."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El héroe épico y el héroe de hoy",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Dos héroes",
+          "cols": [
+           "",
+           "Héroe épico",
+           "Héroe de relatos actuales"
+          ],
+          "filas": [
+           [
+            "¿Cómo es?",
+            "casi perfecto, de origen noble o divino",
+            "común, con dudas, miedos y defectos"
+           ],
+           [
+            "¿A quién representa?",
+            "a todo su pueblo",
+            "muchas veces, solo a sí mismo"
+           ],
+           [
+            "¿Qué busca?",
+            "gloria y honra",
+            "su lugar en el mundo, justicia, a su familia"
+           ],
+           [
+            "¿Cómo termina?",
+            "con fama eterna, aunque muera",
+            "transformado, no siempre famoso"
+           ]
+          ],
+          "cierre": "El modelo cambia, pero el viaje del héroe sigue."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Rasgo del héroe épico o del héroe de relatos actuales?",
+        "cajas": [
+         "Héroe épico",
+         "Héroe actual"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Es hijo de una diosa y nadie lo vence en combate",
+          0
+         ],
+         [
+          "Pelea para que su nombre sea recordado para siempre",
+          0
+         ],
+         [
+          "Representa el valor de todo su pueblo",
+          0
+         ],
+         [
+          "Es una chica común que duda de si podrá lograrlo",
+          1
+         ],
+         [
+          "Se equivoca, pide perdón y aprende de sus errores",
+          1
+         ],
+         [
+          "Busca salvar a su familia más que ganar fama",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Héroe actual",
+        "texto": "El héroe de muchos relatos actuales es una persona común, con dudas y defectos, que enfrenta pruebas y se transforma, sin buscar necesariamente la gloria."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los valores cambian con las épocas, y los héroes también. Hoy valoramos que un personaje tenga miedo y lo supere, que se equivoque y aprenda. Aun así, muchas historias actuales conservan el esquema épico: un viaje, pruebas, ayudas y un regreso transformado."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Épico: casi perfecto, busca gloria.",
+         "Actual: común, con dudas y defectos.",
+         "El viaje del héroe se mantiene."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Huellas de la épica hoy",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Relato actual",
+        "items": [
+         {
+          "nombre": "La saga",
+          "texto": "En una saga de fantasía, {{un chico huérfano deja la granja de sus tíos|Partida: deja su mundo conocido.}}, {{un viejo sabio le enseña a usar sus poderes|Ayuda: el mentor, como Atenea con Odiseo.}}, {{enfrenta a un villano que amenaza a todos|Prueba: el gran combate.}} y {{vuelve cambiado, más seguro de sí|Regreso transformado.}}.",
+          "cierre": "El viaje del héroe, miles de años después."
+         },
+         {
+          "nombre": "El videojuego",
+          "texto": "En muchos videojuegos, {{el personaje sale de su aldea|Partida.}}, {{supera niveles cada vez más difíciles|Pruebas.}}, {{recibe objetos de personajes que lo ayudan|Ayudas.}} y {{enfrenta al jefe final|La gran prueba.}}.",
+          "cierre": "La estructura épica también organiza los juegos."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué elemento épico aparece en cada caso?",
+        "items": [
+         {
+          "cons": "En una película, una vieja maestra entrena a la protagonista antes de la batalla final.",
+          "ops": [
+           "La ayuda de un mentor",
+           "El epíteto",
+           "La transmisión oral"
+          ],
+          "ayuda": "Pensá en Atenea y Odiseo."
+         },
+         {
+          "cons": "Una novela empieza con la heroína escondida en un túnel, y después cuenta cómo llegó ahí.",
+          "ops": [
+           "El comienzo in medias res",
+           "La intervención divina",
+           "El verso"
+          ],
+          "ayuda": "Empieza en plena acción."
+         },
+         {
+          "cons": "Al final de una serie, el protagonista vuelve a su pueblo, pero ya no es el mismo.",
+          "ops": [
+           "El regreso transformado",
+           "El destierro",
+           "La fórmula repetida"
+          ],
+          "ayuda": "La última etapa del viaje."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Huellas de la épica",
+        "texto": "Las huellas de la épica son los elementos del género, como el viaje del héroe, el mentor o el comienzo in medias res, que siguen apareciendo en relatos actuales."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Reconocer esas huellas permite leer mejor películas, novelas y videojuegos: cuando aparece un mentor, sabemos que viene una prueba; cuando el héroe parte, esperamos su regreso transformado. La épica no desapareció: cambió de forma y sigue organizando muchas de las historias que nos gustan."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Viaje del héroe en sagas y videojuegos.",
+         "El mentor, heredero de los dioses que ayudan.",
+         "In medias res y regreso transformado."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Transmisión oral",
+      "definicion": "es conservar un relato contándolo o cantándolo de memoria, de generación en generación.",
+      "ejemplo": "Aedos y juglares cantaban epopeyas"
+     },
+     {
+      "concepto": "Fórmulas",
+      "definicion": "son frases fijas que se repiten en la epopeya y ayudaban al cantor a recordar e improvisar.",
+      "ejemplo": "«La Aurora, de dedos rosados»"
+     },
+     {
+      "concepto": "Aedo y juglar",
+      "definicion": "son los cantores que recitaban epopeyas: el aedo en Grecia y el juglar en la Edad Media.",
+      "ejemplo": "«¡Oíd, señores, lo que hizo el Cid!»"
+     },
+     {
+      "concepto": "Héroe actual",
+      "definicion": "es una persona común, con dudas y defectos, que se transforma sin buscar necesariamente la gloria.",
+      "ejemplo": "Una chica que duda y aprende"
+     },
+     {
+      "concepto": "Huellas de la épica",
+      "definicion": "son elementos del género que siguen en relatos de hoy, como el viaje del héroe o el mentor.",
+      "ejemplo": "El sabio que entrena al protagonista"
+     }
+    ]
+   },
+   "carpeta": [
+    "En Grecia, las epopeyas las cantaban de memoria unos poetas que recorrían pueblos y palacios. ¿Cómo se llamaban?",
+    "En la Odisea, cada amanecer se nombra igual: «la Aurora, de dedos rosados». ¿Para qué servían esas repeticiones?",
+    "En una película, un viejo maestro entrena a la protagonista antes de la batalla final. ¿Qué elemento épico es?",
+    "Sofi dice que el héroe de hoy es igual al épico. ¿Qué tiene el héroe actual que el épico casi no muestra?"
+   ],
+   "carpeta_nivel": [
+    "recordar",
+    "analizar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "aedos",
+     "los aedos",
+     "aedo"
+    ],
+    [
+     "para recordar",
+     "recordar",
+     "memorizar",
+     "ayudar a recordar"
+    ],
+    [
+     "el mentor",
+     "mentor",
+     "la ayuda",
+     "ayuda"
+    ],
+    [
+     "dudas y miedos",
+     "dudas",
+     "miedos",
+     "defectos"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Aedos: en la Edad Media, juglares.",
+     "Para recordar: el relato se cantaba de memoria.",
+     "El mentor: la ayuda que recibe el héroe, como Atenea con Odiseo.",
+     "Dudas, miedos y defectos: es una persona común."
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "matching",
+    "p": "Uní cada epopeya con su héroe.",
+    "o": {
+     "izquierda": [
+      "Ilíada",
+      "Odisea",
+      "Cantar de mio Cid",
+      "Beowulf"
+     ],
+     "derecha": [
+      "un guerrero que vence a un monstruo",
+      "Rodrigo Díaz de Vivar",
+      "Odiseo",
+      "Aquiles"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Ilíada": "Aquiles",
+      "Odisea": "Odiseo",
+      "Cantar de mio Cid": "Rodrigo Díaz de Vivar",
+      "Beowulf": "un guerrero que vence a un monstruo"
+     }
+    },
+    "e": "Cada epopeya gira alrededor de un héroe.",
+    "n": "recordar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Rasgo del héroe épico o no?",
+    "o": {
+     "elementos": [
+      "Tiene un origen noble o divino",
+      "Representa los valores de su pueblo",
+      "Resuelve un robo interrogando sospechosos",
+      "Es un personaje de una historieta de humor"
+     ],
+     "categorias": [
+      "Rasgo del héroe épico",
+      "No es un rasgo épico"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Tiene un origen noble o divino": "Rasgo del héroe épico",
+      "Representa los valores de su pueblo": "Rasgo del héroe épico",
+      "Resuelve un robo interrogando sospechosos": "No es un rasgo épico",
+      "Es un personaje de una historieta de humor": "No es un rasgo épico"
+     }
+    },
+    "e": "Repasá qué hace épico a un héroe.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En «Odiseo, el de muchos recursos», ¿qué función cumple la frase «el de muchos recursos»?",
+    "o": [
+     "Es un epíteto: destaca su ingenio",
+     "Es el título de la epopeya",
+     "Es el nombre de su barco"
+    ],
+    "r": {
+     "correcta": "Es un epíteto: destaca su ingenio"
+    },
+    "e": "Frase fija que acompaña el nombre y lo caracteriza.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice que Aquiles no es un héroe porque se enoja y abandona la guerra. ¿Qué le contestás?",
+    "o": [
+     "El héroe épico es extraordinario, pero también humano y con defectos",
+     "Tiene razón: un héroe nunca se enoja",
+     "Aquiles no aparece en ninguna epopeya"
+    ],
+    "r": {
+     "correcta": "El héroe épico es extraordinario, pero también humano y con defectos"
+    },
+    "e": "La humanidad del héroe es parte del género.",
+    "n": "error"
+   }
+  ],
+  "2": [
+   {
+    "t": "ordering",
+    "p": "Ordená el viaje de Odiseo.",
+    "o": [
+     "Enfrenta al cíclope y a las sirenas",
+     "Recibe la ayuda de Atenea",
+     "Llega a Ítaca y recupera su hogar",
+     "Parte de Troya hacia su casa"
+    ],
+    "r": {
+     "orden": [
+      "Parte de Troya hacia su casa",
+      "Enfrenta al cíclope y a las sirenas",
+      "Recibe la ayuda de Atenea",
+      "Llega a Ítaca y recupera su hogar"
+     ]
+    },
+    "e": "Partida, pruebas, ayudas y regreso.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Fuerza o astucia?",
+    "o": {
+     "elementos": [
+      "Beowulf vence a Grendel cuerpo a cuerpo",
+      "Odiseo se hace llamar «Nadie»",
+      "Aquiles enfrenta a Héctor",
+      "El caballo de madera para entrar en Troya"
+     ],
+     "categorias": [
+      "Fuerza y valor",
+      "Astucia"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Beowulf vence a Grendel cuerpo a cuerpo": "Fuerza y valor",
+      "Odiseo se hace llamar «Nadie»": "Astucia",
+      "Aquiles enfrenta a Héctor": "Fuerza y valor",
+      "El caballo de madera para entrar en Troya": "Astucia"
+     }
+    },
+    "e": "Qué virtud pone en juego cada prueba.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "La Odisea empieza con Odiseo atrapado en una isla, años después de la guerra. ¿Qué técnica usa?",
+    "o": [
+     "In medias res",
+     "Orden cronológico",
+     "Narrador testigo"
+    ],
+    "r": {
+     "correcta": "In medias res"
+    },
+    "e": "Empieza en medio de la historia y después vuelve atrás.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué Odiseo se hace atar al mástil frente a las sirenas?",
+    "o": [
+     "Para escuchar su canto sin poder ir hacia ellas",
+     "Para pelear mejor contra ellas",
+     "Porque sus hombres querían castigarlo"
+    ],
+    "r": {
+     "correcta": "Para escuchar su canto sin poder ir hacia ellas"
+    },
+    "e": "Es una prueba de tentación que supera con astucia.",
+    "n": "analizar"
+   }
+  ],
+  "3": [
+   {
+    "t": "classify",
+    "p": "¿El dios ayuda u obstaculiza a Odiseo?",
+    "o": {
+     "elementos": [
+      "Atenea lo disfraza de mendigo",
+      "Poseidón le manda una tormenta",
+      "Hermes le da una hierba contra hechizos",
+      "El dios del sol castiga a su tripulación"
+     ],
+     "categorias": [
+      "Ayuda",
+      "Obstaculiza"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Atenea lo disfraza de mendigo": "Ayuda",
+      "Poseidón le manda una tormenta": "Obstaculiza",
+      "Hermes le da una hierba contra hechizos": "Ayuda",
+      "El dios del sol castiga a su tripulación": "Obstaculiza"
+     }
+    },
+    "e": "Los dioses tienen favoritos y enojos.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada valor con el episodio que lo muestra.",
+    "o": {
+     "izquierda": [
+      "Gloria",
+      "Honra",
+      "Lealtad",
+      "Deber"
+     ],
+     "derecha": [
+      "Héctor defiende Troya sabiendo que caerá",
+      "El Cid envía regalos al rey que lo desterró",
+      "El Cid gana batallas para recuperar su buen nombre",
+      "Aquiles elige morir joven pero ser recordado"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Gloria": "Aquiles elige morir joven pero ser recordado",
+      "Honra": "El Cid gana batallas para recuperar su buen nombre",
+      "Lealtad": "El Cid envía regalos al rey que lo desterró",
+      "Deber": "Héctor defiende Troya sabiendo que caerá"
+     }
+    },
+    "e": "Los valores que mueven al héroe.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Si el destino de Héctor ya estaba escrito, ¿por qué es un héroe?",
+    "o": [
+     "Porque enfrenta su destino con valor en lugar de huir",
+     "Porque logra cambiar su destino",
+     "Porque los dioses pelean por él"
+    ],
+    "r": {
+     "correcta": "Porque enfrenta su destino con valor en lugar de huir"
+    },
+    "e": "La grandeza está en cómo se enfrenta lo inevitable.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Lola dice que «honra» y «riqueza» significan lo mismo en el Cantar de mio Cid. ¿Qué le falta entender?",
+    "o": [
+     "Que la honra es la buena fama y el respeto, no el dinero",
+     "Que la honra es el nombre de un castillo",
+     "Que en la épica no existe la honra"
+    ],
+    "r": {
+     "correcta": "Que la honra es la buena fama y el respeto, no el dinero"
+    },
+    "e": "El Cid gana riquezas, pero lo que busca es recuperar la honra.",
+    "n": "error"
+   }
+  ],
+  "4": [
+   {
+    "t": "matching",
+    "p": "Uní cada recurso de la oralidad con su función.",
+    "o": {
+     "izquierda": [
+      "Epíteto repetido",
+      "Verso con ritmo",
+      "«¡Oíd, señores!»",
+      "Fórmula fija"
+     ],
+     "derecha": [
+      "tener partes ya armadas para recitar",
+      "llamar la atención del público",
+      "memorizar y cantar",
+      "reconocer enseguida al personaje"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Epíteto repetido": "reconocer enseguida al personaje",
+      "Verso con ritmo": "memorizar y cantar",
+      "«¡Oíd, señores!»": "llamar la atención del público",
+      "Fórmula fija": "tener partes ya armadas para recitar"
+     }
+    },
+    "e": "Recursos de un relato pensado para cantarse.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Héroe épico o héroe actual?",
+    "o": {
+     "elementos": [
+      "Hijo de una diosa, invencible en combate",
+      "Un chico común que tiene miedo y lo supera",
+      "Pelea para que su nombre dure para siempre",
+      "Se equivoca, pide perdón y aprende"
+     ],
+     "categorias": [
+      "Héroe épico",
+      "Héroe actual"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Hijo de una diosa, invencible en combate": "Héroe épico",
+      "Un chico común que tiene miedo y lo supera": "Héroe actual",
+      "Pelea para que su nombre dure para siempre": "Héroe épico",
+      "Se equivoca, pide perdón y aprende": "Héroe actual"
+     }
+    },
+    "e": "Compará los dos modelos.",
+    "n": "analizar"
+   },
+   {
+    "t": "odd_one_out",
+    "p": "Tres de estos elementos de una película vienen de la épica y uno no. ¿Cuál no?",
+    "o": [
+     "Un mentor que entrena al protagonista",
+     "Un viaje lleno de pruebas",
+     "El regreso del héroe transformado",
+     "Un detective que interroga sospechosos"
+    ],
+    "r": {
+     "correcta": "Un detective que interroga sospechosos"
+    },
+    "e": "El detective es propio del policial, no de la épica.",
+    "n": "analizar"
+   },
+   {
+    "t": "keywords",
+    "p": "Elegí una película, serie, novela o videojuego que conozcas y explicá qué elementos del viaje del héroe tiene.",
+    "o": {
+     "ayuda": "Nombrá la obra y al menos dos etapas: partida, pruebas, ayuda, regreso."
+    },
+    "r": {
+     "grupos": [
+      [
+       "parte",
+       "partida",
+       "sale",
+       "deja",
+       "viaje*"
+      ],
+      [
+       "prueba*",
+       "enfrenta*",
+       "lucha*",
+       "pelea*",
+       "monstruo*",
+       "villano*",
+       "nivel*"
+      ],
+      [
+       "ayuda*",
+       "mentor",
+       "maestr*",
+       "vuelve",
+       "regres*",
+       "cambi*",
+       "transform*"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Por ejemplo: el protagonista deja su pueblo, un maestro lo entrena, enfrenta al villano y vuelve cambiado.",
+    "n": "aplicar"
+   }
+  ],
+  "5": [
+   {
+    "t": "classify",
+    "p": "¿A qué aspecto de la épica corresponde cada ejemplo?",
+    "o": {
+     "elementos": [
+      "Aquiles, hijo de una diosa",
+      "Las sirenas y el cíclope",
+      "Poseidón persigue a Odiseo",
+      "«La Aurora, de dedos rosados» se repite"
+     ],
+     "categorias": [
+      "El héroe",
+      "El viaje",
+      "Los dioses",
+      "La oralidad"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Aquiles, hijo de una diosa": "El héroe",
+      "Las sirenas y el cíclope": "El viaje",
+      "Poseidón persigue a Odiseo": "Los dioses",
+      "«La Aurora, de dedos rosados» se repite": "La oralidad"
+     }
+    },
+    "e": "Repasá los cuatro niveles.",
+    "n": "analizar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená la historia de Gilgamesh.",
+    "o": [
+     "Parte a buscar la inmortalidad",
+     "Consigue una planta mágica, pero una serpiente se la roba",
+     "Vuelve a su ciudad y acepta ser mortal",
+     "Pierde a su amigo Enkidu y teme a la muerte"
+    ],
+    "r": {
+     "orden": [
+      "Pierde a su amigo Enkidu y teme a la muerte",
+      "Parte a buscar la inmortalidad",
+      "Consigue una planta mágica, pero una serpiente se la roba",
+      "Vuelve a su ciudad y acepta ser mortal"
+     ]
+    },
+    "e": "El viaje transforma al héroe.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multi_select",
+    "p": "En el Cantar de mio Cid, el héroe desterrado gana batallas y sigue enviando regalos al rey. Elegí los DOS valores que muestra.",
+    "o": [
+     "Lealtad",
+     "Búsqueda de honra",
+     "Cobardía",
+     "Deseo de venganza contra el rey"
+    ],
+    "r": {
+     "correctas": [
+      "Lealtad",
+      "Búsqueda de honra"
+     ]
+    },
+    "e": "Cumple con su rey y quiere recuperar su buen nombre.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué las epopeyas antiguas tienen tantas repeticiones?",
+    "o": [
+     "Porque se cantaban de memoria y las repeticiones ayudaban a recordar",
+     "Porque los autores escribían apurados",
+     "Porque estaban pensadas para leerse en silencio"
+    ],
+    "r": {
+     "correcta": "Porque se cantaban de memoria y las repeticiones ayudaban a recordar"
+    },
+    "e": "Son huellas de la transmisión oral.",
+    "n": "analizar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué es la épica?",
+    "o": [
+     "El género que narra las hazañas de un héroe que representa a un pueblo",
+     "El género que cuenta crímenes y su investigación",
+     "El género que se burla de otros textos"
+    ],
+    "r": {
+     "correcta": "El género que narra las hazañas de un héroe que representa a un pueblo"
+    },
+    "e": "Héroe, hazañas y pueblo.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "matching",
+    "p": "Uní cada héroe con su virtud principal.",
+    "o": {
+     "izquierda": [
+      "Aquiles",
+      "Odiseo",
+      "El Cid"
+     ],
+     "derecha": [
+      "la lealtad",
+      "la astucia",
+      "la fuerza"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Aquiles": "la fuerza",
+      "Odiseo": "la astucia",
+      "El Cid": "la lealtad"
+     }
+    },
+    "e": "Cada epopeya destaca una virtud.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "short_answer",
+    "p": "En «Aquiles, el de los pies ligeros», ¿cómo se llama la frase «el de los pies ligeros»?",
+    "r": {
+     "acepta": [
+      "epíteto",
+      "epiteto",
+      "un epíteto",
+      "epíteto épico"
+     ]
+    },
+    "e": "Frase fija que destaca el rasgo principal.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "ordering",
+    "p": "Ordená las etapas del viaje del héroe.",
+    "o": [
+     "Pruebas",
+     "Ayudas",
+     "Regreso",
+     "Partida"
+    ],
+    "r": {
+     "orden": [
+      "Partida",
+      "Pruebas",
+      "Ayudas",
+      "Regreso"
+     ]
+    },
+    "e": "La estructura de muchas epopeyas.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "¿Fuerza o astucia?",
+    "o": {
+     "elementos": [
+      "Beowulf lucha con Grendel",
+      "El caballo de Troya",
+      "Odiseo se llama «Nadie»"
+     ],
+     "categorias": [
+      "Fuerza",
+      "Astucia"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Beowulf lucha con Grendel": "Fuerza",
+      "El caballo de Troya": "Astucia",
+      "Odiseo se llama «Nadie»": "Astucia"
+     }
+    },
+    "e": "Qué virtud gana cada prueba.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "Un relato empieza: «La flecha ya volaba hacia el rey cuando el guardia saltó». ¿Qué técnica usa?",
+    "o": [
+     "In medias res",
+     "Orden cronológico",
+     "Epíteto"
+    ],
+    "r": {
+     "correcta": "In medias res"
+    },
+    "e": "Empieza en plena acción.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "classify",
+    "p": "¿El dios ayuda u obstaculiza?",
+    "o": {
+     "elementos": [
+      "Atenea aconseja a Odiseo",
+      "Poseidón le manda tormentas",
+      "Hermes le da una hierba protectora"
+     ],
+     "categorias": [
+      "Ayuda",
+      "Obstaculiza"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Atenea aconseja a Odiseo": "Ayuda",
+      "Poseidón le manda tormentas": "Obstaculiza",
+      "Hermes le da una hierba protectora": "Ayuda"
+     }
+    },
+    "e": "Los dioses toman partido.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Aquiles elige una vida corta y gloriosa. ¿Qué valor muestra esa elección?",
+    "o": [
+     "Valora la gloria más que la seguridad",
+     "Tiene miedo a la guerra",
+     "Quiere ser rico"
+    ],
+    "r": {
+     "correcta": "Valora la gloria más que la seguridad"
+    },
+    "e": "Ser recordado era el gran premio del héroe.",
+    "n": "analizar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "true_false",
+    "p": "Para el héroe épico, la honra es la buena fama y el respeto de su comunidad.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "Perder la honra era peor que perder la vida.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué la épica usa verso, epítetos y fórmulas repetidas?",
+    "o": [
+     "Porque se transmitía de memoria y eso ayudaba a recordar",
+     "Porque así se ahorraba papel",
+     "Porque era un texto para leer en silencio"
+    ],
+    "r": {
+     "correcta": "Porque se transmitía de memoria y eso ayudaba a recordar"
+    },
+    "e": "Huellas de la transmisión oral.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
+    "p": "¿Héroe épico o héroe actual?",
+    "o": {
+     "elementos": [
+      "Busca la gloria eterna",
+      "Tiene dudas y miedos que supera",
+      "Representa a todo su pueblo",
+      "Es una persona común"
+     ],
+     "categorias": [
+      "Héroe épico",
+      "Héroe actual"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Busca la gloria eterna": "Héroe épico",
+      "Tiene dudas y miedos que supera": "Héroe actual",
+      "Representa a todo su pueblo": "Héroe épico",
+      "Es una persona común": "Héroe actual"
+     }
+    },
+    "e": "Dos modelos de héroe.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "odd_one_out",
+    "p": "Tres elementos vienen de la épica y uno no. ¿Cuál no?",
+    "o": [
+     "El mentor que ayuda al héroe",
+     "El viaje con pruebas",
+     "El comienzo in medias res",
+     "La revelación del culpable"
+    ],
+    "r": {
+     "correcta": "La revelación del culpable"
+    },
+    "e": "La revelación es propia del policial.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Explicá con tus palabras qué es el viaje del héroe y por qué decimos que sigue presente en relatos de hoy.",
+    "o": {
+     "ayuda": "Nombrá las etapas y un ejemplo actual."
+    },
+    "r": {
+     "grupos": [
+      [
+       "parti*",
+       "sale",
+       "deja"
+      ],
+      [
+       "prueba*",
+       "obstáculo*",
+       "enfrenta*",
+       "peligro*"
+      ],
+      [
+       "regres*",
+       "vuelve",
+       "transform*",
+       "cambi*"
+      ],
+      [
+       "película*",
+       "serie*",
+       "novela*",
+       "videojuego*",
+       "saga*",
+       "hoy",
+       "actual*"
+      ]
+     ],
+     "minimo": 3
+    },
+    "e": "Por ejemplo: el héroe parte, enfrenta pruebas, recibe ayuda y vuelve transformado; muchas sagas y videojuegos siguen ese esquema.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
 }

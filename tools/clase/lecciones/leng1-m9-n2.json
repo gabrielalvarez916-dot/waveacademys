@@ -2,198 +2,149 @@
  "slug": "leng1-m9-n2",
  "step_id": "b920ef72-c182-4ebd-87c6-9ffaaa804b76",
  "materia": "Lengua y Literatura I",
- "titulo": "Los personajes cambian",
+ "titulo": "El viaje y las pruebas",
  "sub": "Lengua y Literatura I · Misión 9 · Nivel 2",
  "escenas": [
   {
-   "t": "reto",
-   "texto": "¿Sir Simon cambia a lo largo del cuento?",
-   "segundos": 6,
-   "respuesta": "Sí: de orgulloso a agradecido",
-   "emoji": "👻",
-   "titulo": "LOS PERSONAJES CAMBIAN",
-   "sub": "dinámicos y estáticos",
-   "voz": [
-    "Desafío: ¿Sir Simon cambia a lo largo del cuento? Seis segundos.",
-    "Sí: de orgulloso a agradecido.",
-    "Hoy: *los personajes cambian*."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "DINÁMICO",
-    "texto": "Cambia",
-    "emoji": "🔄"
+   "t": "historia",
+   "personaje": {
+    "nombre": "Odiseo",
+    "emoji": "⛵"
    },
-   "b": {
-    "cab": "ESTÁTICO",
-    "texto": "Casi no cambia",
-    "emoji": "⏸️"
-   },
-   "signo": "vs",
-   "voz": [
-    "Dos clases de personajes.",
-    "El *dinámico* cambia.",
-    "El *estático* casi no cambia."
-   ]
-  },
-  {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "DINÁMICO",
-     "emoji": "🔄"
-    },
-    {
-     "cab": "ESTÁTICO",
-     "emoji": "⏸️"
-    }
+   "lugar": "🌊",
+   "lineas": [
+    "Termina la guerra de Troya.",
+    "Odiseo quiere volver a su casa, en Ítaca.",
+    "El viaje le lleva diez años."
    ],
-   "fichas": [
-    {
-     "txt": "Sir Simon",
-     "caja": 0
-    },
-    {
-     "txt": "Los Otis",
-     "caja": 1
-    },
-    {
-     "txt": "Virginia",
-     "caja": 0
-    }
+   "titulo": "EL VIAJE",
+   "sub": "y las pruebas del héroe",
+   "voz": [
+    "Termina la guerra de Troya.",
+    "Odiseo solo quiere volver a su isla, Ítaca, con su esposa y su hijo.",
+    "Pero el viaje, que tendría que durar unas semanas, le lleva *diez años*.",
+    "Esa vuelta llena de peligros es la *Odisea*. Hoy vemos por qué el viaje es tan importante en la épica."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "EL VIAJE DEL HÉROE",
+   "items": [
+    "Partida",
+    "Pruebas",
+    "Ayudas",
+    "Regreso"
    ],
    "voz": [
-    "¿Dinámico o estático?",
-    "*Sir Simon* y *Virginia*: dinámicos.",
-    "*Los Otis*: estáticos."
+    "Muchas epopeyas siguen un mismo camino.",
+    "La *partida*: el héroe deja su lugar.",
+    "Las *pruebas*: monstruos, tormentas y tentaciones.",
+    "Las *ayudas*: dioses o personajes que le dan una mano.",
+    "Y el *regreso*: vuelve transformado, con más sabiduría."
    ]
   },
   {
-   "t": "antesdespues",
-   "antes": {
-    "cab": "AL PRINCIPIO",
-    "emoji": "😠",
-    "texto": "Orgulloso y quiere asustar"
-   },
-   "despues": {
-    "cab": "AL FINAL",
-    "emoji": "🙏",
-    "texto": "Cansado y agradecido"
-   },
+   "t": "pistas",
+   "problema": "Odiseo y sus hombres están encerrados en la cueva de un cíclope gigante. ¿Cómo escapan?",
+   "pistas": [
+    "Le dice al cíclope que se llama «Nadie»",
+    "Lo deja ciego mientras duerme"
+   ],
+   "respuesta": "Cuando el cíclope pide ayuda gritando «¡Nadie me ataca!», nadie viene",
    "voz": [
-    "Sir Simon cambia. Al principio, *orgulloso* y quiere asustar.",
-    "Al final, *cansado* y *agradecido*."
+    "Una de las pruebas más famosas: Odiseo y sus hombres quedan encerrados en la cueva de Polifemo, un cíclope gigante. ¿Cómo escapan?",
+    "No pueden ganarle por la fuerza: tienen que pensar.",
+    "Primera pista: Odiseo le dice al cíclope que su nombre es «Nadie».",
+    "Segunda: mientras el gigante duerme, lo deja ciego. Cuando Polifemo grita pidiendo ayuda, dice «¡Nadie me ataca!», y nadie viene. La astucia vence a la fuerza."
+   ]
+  },
+  {
+   "t": "orden",
+   "titulo": "ASÍ PASÓ / ASÍ SE CUENTA",
+   "items": [
+    {
+     "txt": "Termina la guerra",
+     "emoji": "🏛️"
+    },
+    {
+     "txt": "Años de viaje y pruebas",
+     "emoji": "⛵"
+    },
+    {
+     "txt": "Odiseo, atrapado en una isla",
+     "emoji": "🏝️"
+    },
+    {
+     "txt": "Vuelve a Ítaca",
+     "emoji": "🏠"
+    }
+   ],
+   "relato": [
+    2,
+    0,
+    1,
+    3
+   ],
+   "voz": [
+    "Mirá el orden real: termina la guerra, Odiseo viaja durante años, queda atrapado en una isla y finalmente vuelve.",
+    "Pero la Odisea no empieza por el principio: arranca con Odiseo ya atrapado en la isla, muchos años después de la guerra.",
+    "Sus aventuras anteriores las cuenta él mismo más adelante, recordándolas."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Valentía",
-   "texto": "Valor para enfrentar el miedo",
+   "palabra": "In medias res",
+   "texto": "Comienzo de un relato en medio de la acción, que después recupera lo que pasó antes.",
+   "emoji": "⏯️",
+   "voz": [
+    "Esa técnica se llama *in medias res*, que en latín significa «en medio del asunto».",
+    "El relato empieza en plena acción y después vuelve atrás para contar lo anterior. La épica la usa desde hace miles de años."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En la épica, el héroe vence todas sus pruebas solo con la fuerza.",
    "emoji": "💪",
+   "verdadero": false,
+   "explicacion": "También necesita astucia, paciencia y, muchas veces, la ayuda de otros.",
    "voz": [
-    "*Virginia* muestra *valentía* y *compasión*.",
-    "Se atreve a acompañar al fantasma."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "CLASIFICAR",
-   "items": [
-    {
-     "txt": "Al principio es orgulloso y quiere asustar.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Al final está agradecido y descansa.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Cambió: es dinámico.",
-     "emoji": "3️⃣"
-    }
-   ],
-   "voz": [
-    "Resolvamos un caso: ¿Sir Simon es dinámico o estático?",
-    "Al principio es orgulloso y quiere asustar.",
-    "Al final está agradecido y descansa.",
-    "Cambió: es dinámico."
-   ]
-  },
-  {
-   "t": "consejo",
-   "texto": "Para ver el cambio, compará cómo es al principio y cómo es al final.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: Para ver el cambio, compará cómo es al principio y cómo es al final."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "Un personaje que cambia es…",
-   "opciones": [
-    "Dinámico",
-    "Estático",
-    "Fantasma"
-   ],
-   "correcta": 0,
-   "voz": [
-    "Te toca: un personaje que cambia es…",
-    "¿Dinámico, estático o fantasma?",
-    "*Dinámico*."
-   ]
-  },
-  {
-   "t": "errores",
-   "items": [
-    {
-     "mal": "Todos los personajes cambian",
-     "bien": "Algunos son estáticos"
-    },
-    {
-     "mal": "Cambia sin motivo",
-     "bien": "Explicar qué lo cambia"
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "Creer que *todos cambian*.",
-    "Y decir que cambia *sin explicar por qué*."
+    "Verdadero o falso: en la épica, el héroe vence todas sus pruebas solo con la fuerza.",
+    "Acordate del cíclope.",
+    "Falso: también necesita astucia, paciencia y, muchas veces, ayuda."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *dinámico* cambia.",
-    "El *estático* no.",
-    "Sir Simon va del *orgullo* a la *gratitud*.",
-    "Y Virginia muestra *valentía* y *compasión*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "DINÁMICO",
-     "cambia"
+     "El viaje",
+     "partida, pruebas, ayudas y regreso"
     ],
     [
-     "ESTÁTICO",
-     "no cambia"
+     "Las pruebas",
+     "monstruos, peligros y tentaciones"
     ],
     [
-     "SIR SIMON",
-     "orgullo a gratitud"
+     "Astucia",
+     "a veces vale más que la fuerza"
     ],
     [
-     "VIRGINIA",
-     "valentía"
+     "In medias res",
+     "empezar en medio de la acción"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "El viaje pone a prueba al héroe y lo transforma.",
+    "La estructura del viaje.",
+    "Las pruebas.",
+    "La astucia.",
+    "Y el comienzo in medias res. ¡A practicar!"
+   ]
   }
  ]
 }

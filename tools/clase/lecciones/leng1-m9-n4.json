@@ -2,198 +2,127 @@
  "slug": "leng1-m9-n4",
  "step_id": "a8476b20-35d3-4d28-b1eb-aae7b765ba9b",
  "materia": "Lengua y Literatura I",
- "titulo": "Escribo una reseña",
+ "titulo": "De la epopeya al relato",
  "sub": "Lengua y Literatura I · Misión 9 · Nivel 4",
  "escenas": [
   {
-   "t": "noticia",
-   "cinta": "RECOMENDADO",
-   "titular": "Una reseña te cuenta si vale la pena",
-   "bajada": "Sin arruinar el final",
-   "emoji": "⭐",
-   "titulo": "ESCRIBO UNA RESEÑA",
-   "sub": "presentar y valorar",
+   "t": "personaje",
+   "personaje": {
+    "nombre": "El aedo",
+    "emoji": "🎶"
+   },
+   "lineas": [
+    {
+     "txt": "Canto la cólera de Aquiles…",
+     "animo": "feliz"
+    },
+    {
+     "txt": "Y la repito cada noche, igual y distinta.",
+     "animo": "piensa"
+    }
+   ],
    "voz": [
-    "Recomendado: una reseña te cuenta si vale la pena.",
-    "Sin arruinar el final.",
-    "Hoy: *escribo una reseña*."
+    "En la antigua Grecia, las epopeyas las cantaban los *aedos*, poetas que recorrían pueblos y palacios. Empezaban invocando a la diosa de la poesía para cantar la cólera de Aquiles.",
+    "Cada noche repetían el relato de memoria, sin libro, y por eso la épica tiene tantas fórmulas y repeticiones."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Reseña",
-   "texto": "Presenta una obra y da una opinión fundamentada",
-   "emoji": "⭐",
+   "palabra": "Transmisión oral",
+   "texto": "Forma de conservar un relato contándolo o cantándolo de memoria, de generación en generación.",
+   "emoji": "🗣️",
    "voz": [
-    "Una *reseña* presenta una obra y da una opinión *fundamentada*.",
-    "Sirve para que otro decida si la quiere leer."
+    "Eso se llama *transmisión oral*: un relato que se conserva contándolo de memoria, de generación en generación.",
+    "Los epítetos, el verso y las frases repetidas ayudaban a recordar historias larguísimas."
    ]
   },
   {
-   "t": "matriz",
-   "titulo": "PARTES",
-   "celdas": [
+   "t": "linea",
+   "titulo": "EPOPEYAS DEL MUNDO",
+   "eventos": [
     {
-     "cab": "DATOS",
-     "txt": "Título y autor"
+     "fecha": "Hace +4.000 años",
+     "txt": "Gilgamesh, en Mesopotamia",
+     "emoji": "🏺"
     },
     {
-     "cab": "RESUMEN",
-     "txt": "Sin el final"
+     "fecha": "Siglo VIII a. C.",
+     "txt": "Ilíada y Odisea, en Grecia",
+     "emoji": "🏛️"
     },
     {
-     "cab": "VALORACIÓN",
-     "txt": "Opinión con razones"
+     "fecha": "Edad Media",
+     "txt": "Beowulf, en Inglaterra",
+     "emoji": "🐉"
     },
     {
-     "cab": "RECOMENDACIÓN",
-     "txt": "A quién le gusta"
+     "fecha": "Hacia 1200",
+     "txt": "Cantar de mio Cid, en España",
+     "emoji": "🐎"
     }
    ],
    "voz": [
-    "Las cuatro partes.",
-    "*Datos*: título y autor.",
-    "*Resumen*: sin el final.",
-    "*Valoración*: opinión con razones.",
-    "*Recomendación*: a quién le gusta."
+    "La épica es de todo el mundo. Hace más de cuatro mil años, en Mesopotamia, se contaba la historia de *Gilgamesh*, un rey que busca la inmortalidad.",
+    "En Grecia, hacia el siglo octavo antes de Cristo, la *Ilíada* y la *Odisea*.",
+    "En la Inglaterra medieval, *Beowulf*, el guerrero que enfrenta a un monstruo y a un dragón.",
+    "Y hacia el año 1200, en España, el *Cantar de mio Cid*, que cantaban los juglares."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Spoiler",
-   "texto": "Adelantar el final",
-   "emoji": "🚫",
+   "t": "comparar",
+   "a": {
+    "cab": "Héroe épico",
+    "texto": "perfecto, representa a su pueblo, busca la gloria",
+    "emoji": "🛡️"
+   },
+   "b": {
+    "cab": "Héroe de hoy",
+    "texto": "con dudas y miedos, busca su propio camino",
+    "emoji": "🎒"
+   },
+   "signo": "→",
    "voz": [
-    "Un *spoiler* es adelantar el final.",
-    "En una reseña se evita."
+    "¿Y qué quedó de todo eso?",
+    "El héroe épico es casi perfecto: representa a su pueblo y busca la gloria.",
+    "El héroe de los relatos actuales tiene dudas, miedos y defectos, y muchas veces busca su propio camino más que la fama."
    ]
   },
   {
-   "t": "tabla",
-   "titulo": "CÓMO SE CLASIFICA",
-   "columnas": [
-    "",
-    ""
-   ],
-   "filas": [
-    [
-     "SÍ",
-     "Contar el comienzo, Dar un ejemplo"
-    ],
-    [
-     "NO",
-     "Contar el final"
-    ]
-   ],
+   "t": "prediccion",
+   "pregunta": "Una saga actual: un chico deja su pueblo, enfrenta pruebas, recibe ayuda de un mentor y vuelve cambiado. ¿Tiene algo de épica?",
+   "a": {
+    "txt": "Nada que ver",
+    "emoji": "🙅"
+   },
+   "b": {
+    "txt": "Sí: el viaje del héroe",
+    "emoji": "🗺️"
+   },
+   "correcta": "b",
+   "resultado": "Repite la estructura de partida, pruebas, ayuda y regreso.",
    "voz": [
-    "¿Va en una reseña?",
-    "*Contar el comienzo* y *dar un ejemplo*: sí.",
-    "*Contar el final*: no."
+    "¿Qué creés? En una saga actual, un chico deja su pueblo, enfrenta pruebas, recibe ayuda de un mentor y vuelve cambiado. ¿Tiene algo de épica?",
+    "Pensá en Odiseo.",
+    "Sí: repite el *viaje del héroe*. Muchas películas, novelas y videojuegos de hoy usan esa estructura milenaria."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "ARMAR",
+   "t": "logro",
+   "titulo": "¡Misión cumplida!",
    "items": [
-    {
-     "txt": "Datos: escrito por Oscar Wilde, relato gótico y humorístico.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Resumen: una familia compra un castillo con fantasma y no se asusta.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Valoración: es divertido porque el fantasma se toma muy en serio.",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "Recomendación: para quienes disfrutan del humor y el misterio.",
-     "emoji": "4️⃣"
-    }
+    "El héroe épico y sus epítetos",
+    "El viaje y las pruebas",
+    "Dioses, destino y fama",
+    "La épica en el tiempo"
    ],
+   "xp": 100,
    "voz": [
-    "Resolvamos un caso: Armá una reseña breve de «El fantasma de Canterville».",
-    "Datos: escrito por Oscar Wilde, relato gótico y humorístico.",
-    "Resumen: una familia compra un castillo con fantasma y no se asusta.",
-    "Valoración: es divertido porque el fantasma se toma muy en serio.",
-    "Recomendación: para quienes disfrutan del humor y el misterio."
+    "¡Terminaste las clases de la misión!",
+    "Ya conocés al héroe épico y sus epítetos.",
+    "El viaje y sus pruebas.",
+    "El papel de los dioses, el destino y la fama.",
+    "Y cómo la épica llega hasta los relatos de hoy. ¡A practicar!"
    ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "¿La valoración necesita argumentos?",
-   "opciones": [
-    "Sí",
-    "No",
-    "A veces nada"
-   ],
-   "correcta": 0,
-   "voz": [
-    "Te toca: ¿la valoración necesita argumentos?",
-    "¿Sí, no o a veces nada?",
-    "*Sí*."
-   ]
-  },
-  {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Escribí una reseña breve de un libro, película o serie que conozcas",
-   "emoji": "✍️",
-   "voz": [
-    "Ahora te toca: escribí una reseña breve. Con *datos*, *resumen sin final*, *valoración* y *recomendación*."
-   ]
-  },
-  {
-   "t": "errores",
-   "items": [
-    {
-     "mal": "Contar el final",
-     "bien": "Guardar la sorpresa"
-    },
-    {
-     "mal": "Opinar sin razones",
-     "bien": "Dar un ejemplo"
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "*Contar el final*.",
-    "Y *opinar sin razones*."
-   ]
-  },
-  {
-   "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "La *reseña* presenta y valora.",
-    "Tiene *datos*, *resumen*, *valoración* y *recomendación*.",
-    "El resumen *no cuenta el final*.",
-    "Y la valoración lleva *argumentos*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
-   "items": [
-    [
-     "RESEÑA",
-     "presenta y valora"
-    ],
-    [
-     "PARTES",
-     "cuatro"
-    ],
-    [
-     "RESUMEN",
-     "sin final"
-    ],
-    [
-     "VALORACIÓN",
-     "con razones"
-    ]
-   ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
   }
  ]
 }

@@ -2,219 +2,183 @@
  "slug": "leng1-m9-n1",
  "step_id": "94351222-b38d-4ae2-bdd6-915c413fecbc",
  "materia": "Lengua y Literatura I",
- "titulo": "Un final que sorprende",
+ "titulo": "El héroe épico",
  "sub": "Lengua y Literatura I · Misión 9 · Nivel 1",
  "escenas": [
   {
-   "t": "noticia",
-   "cinta": "ÚLTIMA HORA",
-   "titular": "El fantasma pide ayuda a una chica",
-   "bajada": "Está cansado y quiere descansar",
-   "emoji": "👻",
-   "titulo": "UN FINAL QUE SORPRENDE",
-   "sub": "segunda parte",
-   "voz": [
-    "Última hora: el fantasma le pide ayuda a una chica.",
-    "Está cansado y quiere descansar.",
-    "Hoy: *un final que sorprende*."
-   ]
-  },
-  {
-   "t": "pizarra",
-   "lineas": [
+   "t": "documental",
+   "emojis": [
+    "🏛️",
+    "⚔️",
+    "🔥"
+   ],
+   "lugar": "Troya, hace casi tres mil años",
+   "rotulos": [
     {
-     "txt": "Crisis",
-     "color": "sol",
-     "marca": "subraya"
+     "txt": "Una guerra de diez años",
+     "sub": "griegos contra troyanos"
     },
     {
-     "txt": "El fantasma necesita ayuda"
+     "txt": "Un relato que se cantó por siglos",
+     "sub": "la Ilíada"
     }
    ],
    "voz": [
-    "La *crisis* llega cuando Sir Simon *necesita ayuda*.",
-    "El tono cambia: el conflicto se vuelve serio."
-   ]
-  },
-  {
-   "t": "pizarra",
-   "lineas": [
-    {
-     "txt": "Clímax",
-     "color": "sol",
-     "marca": "subraya"
-    },
-    {
-     "txt": "Máxima tensión"
-    }
-   ],
-   "voz": [
-    "El *clímax* es el momento de mayor tensión.",
-    "Aquí, cuando *Virginia* acompaña al fantasma."
-   ]
-  },
-  {
-   "t": "linea",
-   "titulo": "EL FINAL",
-   "eventos": [
-    {
-     "fecha": "1",
-     "txt": "Sir Simon pide ayuda",
-     "emoji": "🆘"
-    },
-    {
-     "fecha": "2",
-     "txt": "Virginia reza por él",
-     "emoji": "🙏"
-    },
-    {
-     "fecha": "3",
-     "txt": "El fantasma descansa",
-     "emoji": "🕊️"
-    },
-    {
-     "fecha": "4",
-     "txt": "Un cofre de joyas",
-     "emoji": "💎"
-    }
-   ],
-   "voz": [
-    "Los hechos en orden. Sir Simon *pide ayuda*.",
-    "Virginia *reza* por él.",
-    "El fantasma *descansa en paz*.",
-    "Y la familia recibe un *cofre de joyas*."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "COMIENZO",
-    "texto": "Humor y burla",
-    "emoji": "😂"
-   },
-   "b": {
-    "cab": "FINAL",
-    "texto": "Compasión y emoción",
-    "emoji": "🥹"
-   },
-   "signo": "→",
-   "voz": [
-    "El tono cambia.",
-    "Al comienzo, *humor* y burla.",
-    "Al final, *compasión* y emoción."
-   ]
-  },
-  {
-   "t": "quiz4",
-   "pregunta": "¿Quién ayuda al fantasma?",
-   "opciones": [
-    "Washington",
-    "Lord Canterville",
-    "Virginia"
-   ],
-   "correcta": 2,
-   "voz": [
-    "Te toca: ¿quién ayuda al fantasma?",
-    "¿washington, lord Canterville, o virginia?",
-    "*Virginia*."
-   ]
-  },
-  {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Escribí en dos oraciones por qué el final te sorprende o no",
-   "emoji": "✍️",
-   "voz": [
-    "Ahora te toca: escribí en dos oraciones. Explicá por qué el *final* te sorprende o no."
-   ]
-  },
-  {
-   "t": "corrige",
-   "titulo": "ERRORES TÍPICOS",
-   "cambios": [
-    {
-     "antes": "Sigue siendo solo una burla",
-     "despues": "Termina con compasión",
-     "motivo": ""
-    },
-    {
-     "antes": "Los Otis ayudan al fantasma",
-     "despues": "Ayuda Virginia",
-     "motivo": ""
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "Creer que sigue siendo *solo burla*.",
-    "Y olvidar que ayuda *Virginia*."
+    "Troya, hace casi tres mil años: griegos y troyanos llevan diez años en guerra frente a las murallas de la ciudad.",
+    "Esa guerra se contó cantando, de generación en generación, durante siglos, hasta que se escribió. Es la *Ilíada*, una de las grandes epopeyas de la historia."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Clímax",
-   "texto": "Momento de mayor tensión de una historia, donde el conflicto llega a su punto más alto.",
-   "emoji": "📘",
+   "palabra": "Épica",
+   "texto": "Género que narra, casi siempre en verso, las hazañas de un héroe que representa los valores de un pueblo.",
+   "emoji": "🛡️",
    "voz": [
-    "Veamos *Clímax*.",
-    "Momento de mayor tensión de una historia, donde el conflicto llega a su punto más alto."
+    "La *épica* es el género que narra las hazañas de un héroe, casi siempre en verso.",
+    "Y ese héroe no es cualquiera: representa lo que su pueblo más admira. Cada obra épica se llama *epopeya*."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "IDENTIFICAR",
-   "items": [
+   "t": "zoom",
+   "niveles": [
     {
-     "txt": "Al comienzo se ríen del fantasma.",
-     "emoji": "1️⃣"
+     "emoji": "🏘️",
+     "txt": "un pueblo y sus valores"
     },
     {
-     "txt": "Al final alguien lo comprende y lo ayuda.",
-     "emoji": "2️⃣"
+     "emoji": "🦸",
+     "txt": "un héroe que los encarna"
     },
     {
-     "txt": "El humor da paso a la compasión.",
-     "emoji": "3️⃣"
+     "emoji": "⚔️",
+     "txt": "hazañas extraordinarias"
     }
    ],
    "voz": [
-    "Resolvamos un caso: ¿Qué cambia entre el comienzo y el final del cuento?",
-    "Al comienzo se ríen del fantasma.",
-    "Al final alguien lo comprende y lo ayuda.",
-    "El humor da paso a la compasión."
+    "Mirá cómo se arma una epopeya. Primero hay un *pueblo* con sus valores: el valor, la lealtad, el honor.",
+    "Después, un *héroe* que encarna esos valores mejor que nadie.",
+    "Y finalmente, sus *hazañas*: acciones extraordinarias que lo vuelven inolvidable."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "Aquiles",
+    "emoji": "🗡️",
+    "datos": [
+     "la fuerza",
+     "el mejor guerrero",
+     "Ilíada"
+    ]
+   },
+   "b": {
+    "txt": "Odiseo",
+    "emoji": "🧠",
+    "datos": [
+     "la astucia",
+     "el más ingenioso",
+     "Odisea"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Dos formas de ser héroe",
+   "voz": [
+    "Dos grandes héroes griegos, cara a cara.",
+    "*Aquiles*, el protagonista de la Ilíada, es el guerrero más fuerte y veloz: casi invencible en combate.",
+    "*Odiseo*, el de la Odisea, gana con la *astucia*: engaña, inventa planes y sale de cualquier trampa.",
+    "No hay ganador: fuerza e ingenio son dos maneras de ser héroe épico."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "LOS EPÍTETOS",
+   "pares": [
+    [
+     "Aquiles",
+     "el de los pies ligeros"
+    ],
+    [
+     "Odiseo",
+     "el de muchos recursos"
+    ],
+    [
+     "el Cid",
+     "el que en buena hora nació"
+    ]
+   ],
+   "voz": [
+    "Las epopeyas usan *epítetos*: frases fijas que acompañan siempre el nombre del héroe y lo caracterizan.",
+    "Aquiles es «el de los pies ligeros», por su velocidad.",
+    "Odiseo, «el de muchos recursos», por su ingenio.",
+    "Y el Cid, el héroe castellano, «el que en buena hora nació»."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Qué tiene que tener un relato para ser épico?",
+   "opciones": [
+    "Un héroe y sus hazañas",
+    "Un detective",
+    "Una historia de amor",
+    "Un narrador que sea niño"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Pregunta: ¿qué tiene que tener un relato para ser épico?",
+    "Pensá en el centro de la Ilíada.",
+    "*Un héroe y sus hazañas*: ese es el corazón del género."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "El héroe épico es un superhéroe con poderes",
+     "bien": "Es humano, aunque a veces hijo de un dios, y puede morir"
+    },
+    {
+     "mal": "La épica se escribió en prosa",
+     "bien": "Las epopeyas clásicas están en verso, para recordarlas y cantarlas"
+    }
+   ],
+   "voz": [
+    "Dos confusiones comunes.",
+    "El héroe épico no es un superhéroe: es humano, aunque a veces sea hijo de un dios, y puede sufrir y morir.",
+    "Y las epopeyas clásicas no están en prosa: están en *verso*, porque se cantaban y había que recordarlas."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "La *crisis*: el fantasma pide ayuda.",
-    "El *clímax*: Virginia lo acompaña.",
-    "La *resolución*: descansa en paz.",
-    "Y la sorpresa: del humor a la *compasión*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "CRISIS",
-     "pide ayuda"
+     "Épica",
+     "hazañas de un héroe, en verso"
     ],
     [
-     "CLÍMAX",
-     "máxima tensión"
+     "Epopeya",
+     "cada obra del género"
     ],
     [
-     "RESOLUCIÓN",
-     "descansa"
+     "Héroe épico",
+     "encarna los valores de un pueblo"
     ],
     [
-     "SORPRESA",
-     "compasión"
+     "Epíteto",
+     "frase fija que acompaña al nombre"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "La épica es el relato de los grandes héroes.",
+    "El género.",
+    "La epopeya.",
+    "El héroe que encarna los valores de su pueblo.",
+    "Y el epíteto que lo acompaña. ¡A practicar!"
+   ]
   }
  ]
 }

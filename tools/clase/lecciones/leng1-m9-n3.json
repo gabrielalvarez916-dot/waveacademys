@@ -2,180 +2,165 @@
  "slug": "leng1-m9-n3",
  "step_id": "c5cfa4f1-f01d-4846-b1dd-d74d4ada8387",
  "materia": "Lengua y Literatura I",
- "titulo": "Comparo el libro con una versión audiovisual",
+ "titulo": "Dioses, destino y fama",
  "sub": "Lengua y Literatura I · Misión 9 · Nivel 3",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Lu",
-    "emoji": "👧"
-   },
-   "mensajes": [
-    {
-     "yo": false,
-     "txt": "Vi la película del fantasma 🎬"
-    },
-    {
-     "yo": true,
-     "txt": "¿Es igual al libro?"
-    },
-    {
-     "yo": false,
-     "txt": "No, cambian cosas 😮"
-    }
-   ],
-   "titulo": "LIBRO Y PANTALLA",
-   "sub": "comparo con una versión audiovisual",
+   "t": "reto",
+   "texto": "En plena tormenta, una diosa calma el mar para salvar a un héroe. ¿Quién decide su suerte: él o los dioses?",
+   "segundos": 6,
+   "respuesta": "Los dos: el héroe actúa, los dioses intervienen",
+   "emoji": "🌩️",
+   "titulo": "DIOSES Y DESTINO",
+   "sub": "más allá del héroe",
    "voz": [
-    "Lu vio una película del fantasma.",
-    "Juan: ¿es igual al libro?",
-    "Lu: no, cambian cosas.",
-    "Hoy: *comparo el libro con una versión audiovisual*."
+    "Reto: en plena tormenta, una diosa calma el mar para salvar a un héroe. ¿Quién decide su suerte: él o los dioses?",
+    "Seis segundos.",
+    "Los dos: el héroe actúa, pero en la épica los dioses también intervienen. Hoy vemos cómo."
+   ]
+  },
+  {
+   "t": "balanza",
+   "izq": {
+    "cab": "Lo ayudan",
+    "items": [
+     "Atenea lo aconseja",
+     "Hermes le da un antídoto"
+    ]
+   },
+   "der": {
+    "cab": "Lo frenan",
+    "items": [
+     "Poseidón le manda tormentas",
+     "Circe lo retiene"
+    ]
+   },
+   "gana": "izq",
+   "voz": [
+    "En la Odisea, los dioses se dividen. Atenea, diosa de la sabiduría, lo aconseja y lo protege; Hermes le da un antídoto contra una hechicera.",
+    "Del otro lado, Poseidón, el dios del mar, lo persigue con tormentas, furioso porque Odiseo dejó ciego a su hijo, el cíclope.",
+    "Al final pesa más la ayuda: con la protección de Atenea, Odiseo consigue volver."
+   ]
+  },
+  {
+   "t": "dilema",
+   "situacion": "A Aquiles le anuncian su destino: puede elegir entre dos vidas.",
+   "emoji": "⚖️",
+   "a": {
+    "txt": "Quedarse en su casa",
+    "consecuencia": "vida larga, pero nadie lo recordará",
+    "emoji": "🏡"
+   },
+   "b": {
+    "txt": "Ir a la guerra",
+    "consecuencia": "vida corta, pero gloria eterna",
+    "emoji": "🏆"
+   },
+   "voz": [
+    "Un dilema famoso: a Aquiles le anuncian que su destino tiene dos caminos.",
+    "Si se queda en su casa, tendrá una vida larga, pero nadie lo recordará.",
+    "Si va a la guerra, morirá joven, pero su gloria será eterna. Aquiles elige la gloria."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Adaptación",
-   "texto": "Versión de una obra en otro medio",
-   "emoji": "🎬",
+   "palabra": "Destino",
+   "texto": "En la épica, lo que está decidido para cada personaje y que ni los héroes pueden cambiar.",
+   "emoji": "🧵",
    "voz": [
-    "Una *adaptación* es una versión de una obra en otro medio.",
-    "Como pasar de un libro a una película."
-   ]
-  },
-  {
-   "t": "matriz",
-   "titulo": "QUÉ SE COMPARA",
-   "celdas": [
-    {
-     "cab": "PERSONAJES",
-     "txt": "¿Son como en el libro?"
-    },
-    {
-     "cab": "AMBIENTE",
-     "txt": "¿Cómo se ve el castillo?"
-    },
-    {
-     "cab": "HECHOS",
-     "txt": "¿Qué se agregó o sacó?"
-    },
-    {
-     "cab": "FINAL",
-     "txt": "¿Es igual?"
-    }
-   ],
-   "voz": [
-    "Los criterios.",
-    "*Personajes*: ¿son como en el libro?",
-    "*Ambiente*: ¿cómo se ve el castillo?",
-    "*Hechos*: ¿qué se agregó o sacó?",
-    "*Final*: ¿es igual?"
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "LIBRO",
-    "texto": "Pensamientos con palabras",
-    "emoji": "📖"
-   },
-   "b": {
-    "cab": "PANTALLA",
-    "texto": "Imagen, música y actuación",
-    "emoji": "🎬"
-   },
-   "signo": "vs",
-   "voz": [
-    "Cada medio tiene ventajas.",
-    "El *libro* cuenta pensamientos con palabras.",
-    "La *pantalla* muestra imágenes, música y actuación."
+    "Esa idea se llama *destino*: lo que está decidido para cada personaje, y que ni siquiera los héroes pueden evitar.",
+    "Lo que el héroe sí elige es *cómo* enfrentarlo, y en eso muestra su grandeza."
    ]
   },
   {
    "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
+   "titulo": "LO QUE BUSCA EL HÉROE",
    "items": [
     {
-     "cab": "LIBRO",
-     "txt": "Cada lector imagina, Se lee a tu ritmo"
+     "cab": "Gloria",
+     "txt": "ser recordado por sus hazañas"
     },
     {
-     "cab": "PANTALLA",
-     "txt": "Música de misterio, Rostros y gestos"
+     "cab": "Honra",
+     "txt": "el respeto y la buena fama"
+    },
+    {
+     "cab": "Lealtad",
+     "txt": "cumplir con su rey y su gente"
     }
    ],
    "voz": [
-    "¿Libro o pantalla?",
-    "*Cada lector imagina* y *se lee a tu ritmo*: libro.",
-    "*Música* y *rostros*: pantalla."
+    "¿Qué busca el héroe épico?",
+    "La *gloria*: que sus hazañas se recuerden después de su muerte.",
+    "La *honra*: el respeto de los demás. El Cid, desterrado por su rey, pelea para recuperarla.",
+    "Y la *lealtad*: aun desterrado, el Cid sigue enviándole regalos al rey que lo echó."
    ]
   },
   {
    "t": "pregunta",
-   "pregunta": "¿Qué se arma antes de opinar?",
+   "pregunta": "¿Por qué Poseidón persigue a Odiseo?",
    "opciones": [
-    "Un cuadro de criterios",
-    "Un chiste",
-    "Un dibujo"
+    "Porque Odiseo dejó ciego a su hijo",
+    "Porque Odiseo le robó el mar",
+    "Porque Atenea se lo pidió"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿qué se arma antes de opinar?",
-    "¿Un cuadro de criterios, un chiste o un dibujo?",
-    "*Un cuadro de criterios*."
+    "Pregunta: ¿por qué Poseidón persigue a Odiseo durante todo el viaje?",
+    "Pensá en el cíclope.",
+    "Porque Odiseo dejó ciego a su hijo, Polifemo. Los dioses de la épica tienen pasiones muy humanas."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "La película es mejor porque sí",
-     "bien": "Dar razones con ejemplos"
+     "mal": "Si los dioses deciden todo, el héroe no importa",
+     "bien": "El héroe elige cómo enfrentar su destino"
     },
     {
-     "mal": "Una adaptación es idéntica",
-     "bien": "Siempre cambia algo"
+     "mal": "La honra es lo mismo que la riqueza",
+     "bien": "La honra es la buena fama y el respeto"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Opinar *sin razones*.",
-    "Y creer que una adaptación es *idéntica*."
+    "Dos errores para evitar.",
+    "Creer que el héroe no importa porque los dioses intervienen: el héroe elige *cómo* enfrenta su destino.",
+    "Y confundir honra con riqueza: la honra es la *buena fama*, el respeto de los demás."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Una *adaptación* cambia de medio.",
-    "Se comparan *criterios*.",
-    "Cada medio tiene *ventajas*.",
-    "Y la conclusión lleva *ejemplos*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "ADAPTACIÓN",
-     "otro medio"
+     "Dioses",
+     "ayudan o castigan al héroe"
     ],
     [
-     "CRITERIOS",
-     "personajes, final"
+     "Destino",
+     "lo decidido, que no se puede cambiar"
     ],
     [
-     "MEDIOS",
-     "ventajas"
+     "Gloria y honra",
+     "fama y respeto"
     ],
     [
-     "CONCLUSIÓN",
-     "con ejemplos"
+     "Lealtad",
+     "cumplir con su gente"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "El héroe épico no está solo: lo rodean fuerzas más grandes.",
+    "Los dioses.",
+    "El destino.",
+    "La gloria y la honra.",
+    "Y la lealtad. ¡A practicar!"
+   ]
   }
  ]
 }
