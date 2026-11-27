@@ -1,0 +1,23 @@
+name: Libro del nivel (sube el PDF del libro al nivel «Libro: …»)
+on:
+  push:
+    branches: [main]
+    paths: ['libros/**.pdf']
+  workflow_dispatch:
+    inputs:
+      pdf: { description: 'libros/archivo.pdf (vacío = todos)', required: false }
+jobs:
+  subir:
+    runs-on: ubuntu-latest
+    env: { WAVE_GEN_TOKEN: '${{ secrets.WAVE_GEN_TOKEN }}' }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Subir los libros nuevos o cambiados
+        env: { MANUAL: '${{ github.event.inputs.pdf }}' }
+        run: |
+          if [ -n "$MANUAL" ]; then L="$MANUAL"; elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then L=""; else L=$(git diff --name-only HEAD~1 HEAD -- 'libros/*.pdf' | tr '\n' ' '); fi
+          echo "Libros: ${L:-todos}"
+          python tools/subir_libros.py $L

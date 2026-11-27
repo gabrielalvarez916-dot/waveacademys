@@ -288,7 +288,7 @@ A = {
 }
 
 # ============================ LIBRO DEL NIVEL ============================
-LIBRO = {'titulo': 'La liga de los pelirrojos', 'act': [
+LIBRO = {'titulo': 'La liga de los pelirrojos', 'pdf': 'libros/la-liga-de-los-pelirrojos.pdf', 'act': [
   ORD('Ordená la historia del crimen de «La liga de los pelirrojos» como ocurrió en el tiempo (no como se cuenta).', ['John Clay se emplea con Wilson por la mitad del sueldo', 'Clay y su cómplice inventan la Liga de los Pelirrojos', 'Wilson pasa las mañanas copiando la enciclopedia', 'Clay cava un túnel desde el sótano de Wilson hasta el banco', 'La liga se disuelve y Wilson consulta a Holmes'], 'La historia del crimen empezó mucho antes de que Wilson visitara a Holmes.', 'aplicar'),
   UNI('Uní cada detalle del cuento con lo que le revela a Holmes.', [('El ayudante cobra la mitad de lo normal', 'Le interesa estar en esa casa por otro motivo'), ('Pasa horas en el sótano', 'Hace algo a escondidas'), ('Tiene las rodillas del pantalón gastadas', 'Pasa mucho tiempo arrodillado, cavando'), ('Detrás de la casa hay un banco', 'Ahí está el objetivo del plan')], 'Holmes une detalles pequeños en una sola explicación.', 'analizar'),
   MC('¿Por qué la Liga de los Pelirrojos funciona como una falsa pista en el cuento?', ['Parece el misterio principal, pero solo sirve para vaciar la casa', 'Porque Wilson no es pelirrojo', 'Porque la liga existe de verdad y paga bien'], 'Parece el misterio principal, pero solo sirve para vaciar la casa', 'Lo más llamativo distrae de lo importante: el túnel.', 'analizar'),
