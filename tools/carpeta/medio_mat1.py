@@ -18,7 +18,7 @@ NUEVAS = {
  (10, '3', 1): f'¿Cuántas estrellas hay? {E("⭐",9)}',
  (10, '4', 0): f'¿Cuántas estrellas hay? {E("⭐",3)}',
  (10, '4', 1): f'¿Cuántas manzanas hay? {E("🍎",5)}',
- (11, '1', 1): f'En la mesa roja hay {E("⭐",4)} y en la mesa azul hay {E("⭐",5)}. ¿Cuántas estrellas hay en la mesa azul?',
+ (11, '1', 1): f'En la mesa roja hay {E("⭐",5)} y en la mesa azul hay {E("⭐",5)}. ¿Cuántas estrellas hay en la mesa azul?',
  (11, '2', 0): f'Mirá: [⭐⭐⭐] [⭐⭐⭐] [⭐⭐⭐]. ¿Cuántos grupos hay?',
  (11, '2', 1): f'Mirá: [⭐⭐⭐] [⭐⭐⭐] [⭐⭐⭐]. ¿Cuántas estrellas hay en cada grupo?',
  (11, '3', 1): f'Primer grupo: {E("🍎",2)} · segundo grupo: {E("🍎",4)}. ¿Cuántas manzanas hay en el segundo grupo?',

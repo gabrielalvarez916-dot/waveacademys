@@ -9,7 +9,7 @@ import re
 FUERTE = re.compile(
     r"\b(del dibujo|de la imagen|la figura|la l[aá]mina|pdf|de la p[aá]gina|recuadro|la foto|que ves|"
     r"del texto|el texto anterior|la historia de arriba|del cuento|de arriba|de abajo|del otro lado|"
-    r"ese pedido|esa lista|ese cuadro|esa tabla|el ejemplo|del ejemplo|el resultado de arriba|"
+    r"ese pedido|esa lista|ese cuadro|esa tabla|el ejemplo|del ejemplo|el resultado de arriba|de un lado|ese grupo|el grupo [A-Z]\b|"
     r"la primera palabra|los dos t[ií]tulos|qu[eé] d[ií]a)\b", re.I)
 # Referencias numeradas a un material (lugar 2, pista 1, tarjeta 1): los números no cuentan como datos
 NUMERADA = re.compile(r"\b(el lugar \d|la pista \d|la tarjeta \d|las tarjetas|la escena|el cartel|marcad[oa]|el verso \d)\b", re.I)
