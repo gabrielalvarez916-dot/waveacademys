@@ -1,4 +1,4 @@
-name: Libro del nivel (sube el PDF del libro al nivel «Libro: …»)
+name: 'Libro del nivel (sube el PDF del libro al nivel del libro)'
 on:
   push:
     branches: [main]
