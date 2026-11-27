@@ -54,6 +54,9 @@ def controlar(ruta, M):
         if os.path.exists(tmp): os.remove(tmp)
     probs = [l.strip() for l in v.splitlines() if '✘' in l]
     probs += [l.strip() for l in c.splitlines() if l.strip().startswith('- ')]
+    # Si un control se cae (falta un archivo, error de Python), no hay veredicto: eso NUNCA cuenta como aprobado
+    if '✓' not in c and not probs: probs.append('control_calidad no dio veredicto (¿se cayó?): ' + (c.strip()[-200:] or 'sin salida'))
+    if 'lección interactiva OK' not in v and not any('✘' in l for l in v.splitlines()): probs.append('validar.js no dio veredicto (¿se cayó?)')
     return probs
 
 

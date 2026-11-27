@@ -2005,17 +2005,28 @@
     "n": "aplicar"
    },
    {
-    "t": "multiple_choice",
-    "p": "El robo fue a las 22. El sospechoso dice que estaba en un partido, pero el partido se suspendió por lluvia. ¿Qué concluís?",
-    "o": [
-     "Su coartada es falsa: sigue sospechado",
-     "Se descarta: dijo dónde estaba",
-     "Es inocente: le gusta el fútbol"
-    ],
-    "r": {
-     "correcta": "Su coartada es falsa: sigue sospechado"
+    "t": "matching",
+    "p": "El robo fue a las 22. Uní cada coartada con lo que pasa con ese sospechoso.",
+    "o": {
+     "izquierda": [
+      "Estaba en una cena con diez invitados que lo vieron",
+      "Dice que estaba en un partido que se suspendió por lluvia",
+      "Estaba solo en su casa y nadie puede confirmarlo"
+     ],
+     "derecha": [
+      "Sigue en la lista",
+      "Su coartada falsa es una pista",
+      "Se descarta"
+     ]
     },
-    "e": "Una coartada falsa se convierte en una pista.",
+    "r": {
+     "pares": {
+      "Estaba en una cena con diez invitados que lo vieron": "Se descarta",
+      "Dice que estaba en un partido que se suspendió por lluvia": "Su coartada falsa es una pista",
+      "Estaba solo en su casa y nadie puede confirmarlo": "Sigue en la lista"
+     }
+    },
+    "e": "Coartada firme, falsa o sin testigos.",
     "n": "analizar"
    },
    {
@@ -2055,17 +2066,26 @@
     "n": "aplicar"
    },
    {
-    "t": "multiple_choice",
-    "p": "«Mi amigo levantó el sobre a contraluz y sonrió. Yo, como siempre, no entendí nada hasta la noche.» ¿Qué tipo de narrador es y qué efecto logra?",
-    "o": [
-     "Testigo: mantiene el suspenso porque sabe menos",
-     "Protagonista: cuenta su propio razonamiento",
-     "Omnisciente: sabe lo que piensan todos"
-    ],
-    "r": {
-     "correcta": "Testigo: mantiene el suspenso porque sabe menos"
+    "t": "tap_text",
+    "p": "Es un narrador testigo. Tocá las DOS partes que lo muestran: una dice que el protagonista es otro y la otra, que el narrador sabe menos que él.",
+    "o": {
+     "segmentos": [
+      "Mi amigo levantó el sobre",
+      "a contraluz",
+      "y sonrió.",
+      "Yo, como siempre,",
+      "no entendí nada",
+      "hasta la noche."
+     ],
+     "modo": "palabras"
     },
-    "e": "El testigo cuenta lo que hace el detective sin entenderlo a tiempo.",
+    "r": {
+     "tocar": [
+      0,
+      4
+     ]
+    },
+    "e": "Cuenta con «yo» lo que hace otro y no lo entiende a tiempo: así se mantiene el suspenso.",
     "n": "analizar"
    },
    {
@@ -2139,17 +2159,18 @@
     "n": "aplicar"
    },
    {
-    "t": "multiple_choice",
-    "p": "«Me pagaron para encontrar a una chica. La encontré, pero también encontré a los que la buscaban, y todos tenían placa de policía.» ¿Por qué es un fragmento de policial negro?",
+    "t": "odd_one_out",
+    "p": "Tres fragmentos son de policial negro y uno es de enigma. ¿Cuál es el de enigma?",
     "o": [
-     "Porque muestra que la corrupción llega a la policía",
-     "Porque el detective razona desde el sillón",
-     "Porque reúne a los sospechosos al final"
+     "«Todos los que la buscaban tenían placa de policía.»",
+     "«Me partieron el labio en el bar, pero conseguí el nombre.»",
+     "«Con una lupa, la detective notó que la firma estaba calcada.»",
+     "«En esta ciudad, hasta el juez cobra de la banda.»"
     ],
     "r": {
-     "correcta": "Porque muestra que la corrupción llega a la policía"
+     "correcta": "«Con una lupa, la detective notó que la firma estaba calcada.»"
     },
-    "e": "El negro liga el crimen con el poder.",
+    "e": "Observar un detalle con lupa es propio del detective de enigma; los demás muestran violencia y corrupción.",
     "n": "analizar"
    },
    {
@@ -2283,12 +2304,12 @@
     "t": "multiple_choice",
     "p": "¿Qué define a un relato policial?",
     "o": [
-     "Un enigma que alguien investiga hasta descubrir la verdad",
-     "Que aparezca la policía",
-     "Que haya mucha violencia"
+     "Un enigma que alguien investiga hasta resolverlo",
+     "Un policía que patrulla las calles de la ciudad",
+     "Muchas escenas de peleas, persecuciones y disparos"
     ],
     "r": {
-     "correcta": "Un enigma que alguien investiga hasta descubrir la verdad"
+     "correcta": "Un enigma que alguien investiga hasta resolverlo"
     },
     "e": "El género se define por el enigma y la investigación.",
     "n": "recordar"
@@ -2414,32 +2435,42 @@
   [
    3,
    {
-    "t": "multiple_choice",
-    "p": "¿Cuáles son las dos historias de un policial de enigma?",
-    "o": [
-     "La del crimen, oculta, y la de la investigación",
-     "La del detective y la de su ayudante",
-     "La del principio y la del final"
-    ],
-    "r": {
-     "correcta": "La del crimen, oculta, y la de la investigación"
+    "t": "matching",
+    "p": "Uní cada parte del policial de enigma con su descripción.",
+    "o": {
+     "izquierda": [
+      "Historia del crimen",
+      "Historia de la investigación",
+      "Revelación"
+     ],
+     "derecha": [
+      "El detective explica cómo resolvió el caso",
+      "La que el lector sigue paso a paso",
+      "Pasó antes y queda oculta"
+     ]
     },
-    "e": "La del crimen recién se conoce en la revelación.",
+    "r": {
+     "pares": {
+      "Historia del crimen": "Pasó antes y queda oculta",
+      "Historia de la investigación": "La que el lector sigue paso a paso",
+      "Revelación": "El detective explica cómo resolvió el caso"
+     }
+    },
+    "e": "Las dos historias se unen en la revelación.",
     "n": "recordar"
    }
   ],
   [
    3,
    {
-    "t": "multiple_choice",
-    "p": "«Mi compañero miró el piso un largo rato; yo me aburría y no veía nada.» ¿Qué tipo de narrador es?",
-    "o": [
-     "Testigo",
-     "Protagonista",
-     "Omnisciente"
-    ],
+    "t": "short_answer",
+    "p": "«Mi compañero miró el piso un largo rato; yo me aburría y no veía nada.» ¿Qué tipo de narrador es? Escribí una palabra.",
     "r": {
-     "correcta": "Testigo"
+     "acepta": [
+      "testigo",
+      "narrador testigo",
+      "un narrador testigo"
+     ]
     },
     "e": "Cuenta con «yo» lo que hace el protagonista, sin entenderlo.",
     "n": "aplicar"
@@ -2992,17 +3023,31 @@
     "n": "aplicar"
    },
    {
-    "t": "multiple_choice",
-    "p": "Holmes golpea con el bastón la vereda frente a la casa de Wilson. ¿Qué paso del método del detective está aplicando?",
-    "o": [
-     "Comprobar una hipótesis: si suena hueco, hay un túnel",
-     "Distraer al culpable",
-     "Adivinar al azar"
-    ],
-    "r": {
-     "correcta": "Comprobar una hipótesis: si suena hueco, hay un túnel"
+    "t": "matching",
+    "p": "Uní cada paso del método del detective con lo que hace Holmes en el cuento.",
+    "o": {
+     "izquierda": [
+      "Observar",
+      "Relacionar",
+      "Deducir",
+      "Comprobar"
+     ],
+     "derecha": [
+      "Golpea la vereda con el bastón para oír si suena hueco",
+      "Concluye que están cavando un túnel hacia el banco",
+      "Recuerda que detrás de la casa hay un banco",
+      "Mira las rodillas gastadas del ayudante"
+     ]
     },
-    "e": "Antes de actuar, Holmes comprueba lo que dedujo.",
+    "r": {
+     "pares": {
+      "Observar": "Mira las rodillas gastadas del ayudante",
+      "Relacionar": "Recuerda que detrás de la casa hay un banco",
+      "Deducir": "Concluye que están cavando un túnel hacia el banco",
+      "Comprobar": "Golpea la vereda con el bastón para oír si suena hueco"
+     }
+    },
+    "e": "Holmes sigue el método completo antes de actuar.",
     "n": "analizar"
    },
    {
