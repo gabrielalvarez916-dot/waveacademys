@@ -2,173 +2,130 @@
  "slug": "leng1-m11-n4",
  "step_id": "3f322f49-dfce-457f-b2ae-fda9c2419a59",
  "materia": "Lengua y Literatura I",
- "titulo": "Escribo un poema",
+ "titulo": "Viajes en el tiempo y el espacio",
  "sub": "Lengua y Literatura I · Misión 11 · Nivel 4",
  "escenas": [
   {
-   "t": "noticia",
-   "cinta": "TALLER",
-   "titular": "Hoy escribís tu primer poema",
-   "bajada": "Con una imagen y una emoción",
-   "emoji": "🖋️",
-   "titulo": "ESCRIBO UN POEMA",
-   "sub": "mostrar, no explicar",
+   "t": "historia",
+   "personaje": {
+    "nombre": "El viajero",
+    "emoji": "🧑‍🔬"
+   },
+   "lugar": "⏳",
+   "lineas": [
+    "Un científico sube a su máquina y viaja al año 802.701.",
+    "Encuentra una humanidad dividida en dos especies."
+   ],
+   "titulo": "VIAJES",
+   "sub": "en el tiempo y el espacio",
    "voz": [
-    "Taller: hoy escribís tu primer poema.",
-    "Con una imagen y una emoción.",
-    "Hoy: *escribo un poema*."
+    "En La máquina del tiempo, de Wells, un científico sube a su invento y viaja al año 802.701.",
+    "Allí encuentra a la humanidad dividida en dos especies: unos viven en la superficie sin trabajar, y otros, bajo tierra, haciendo funcionar las máquinas.",
+    "El viaje le sirve al autor para preguntarse adónde nos llevan las diferencias sociales. Hoy vemos los grandes *viajes* de la ciencia ficción."
    ]
   },
   {
-   "t": "linea",
-   "titulo": "PASOS",
-   "eventos": [
+   "t": "definicion",
+   "palabra": "Paradoja temporal",
+   "texto": "Contradicción que surge cuando un viaje al pasado cambia algo que hace imposible el propio viaje.",
+   "emoji": "🌀",
+   "voz": [
+    "Los viajes en el tiempo traen un problema famoso: la *paradoja temporal*.",
+    "Es la contradicción que aparece cuando un viajero cambia el pasado de tal forma que su propio viaje ya no podría haber ocurrido."
+   ]
+  },
+  {
+   "t": "ciclo",
+   "titulo": "LA PARADOJA",
+   "items": [
+    "Viaja al pasado",
+    "Impide que se conozcan sus padres",
+    "No nace",
+    "¿Quién viajó entonces?"
+   ],
+   "voz": [
+    "Mirá el círculo imposible.",
+    "Alguien viaja al pasado.",
+    "Por accidente, impide que sus padres se conozcan.",
+    "Entonces nunca nace.",
+    "Pero si nunca nació, ¿quién viajó al pasado? Los relatos juegan con estas preguntas sin respuesta."
+   ]
+  },
+  {
+   "t": "zoom",
+   "niveles": [
     {
-     "fecha": "1",
-     "txt": "Anoto ideas",
-     "emoji": "📝"
+     "emoji": "🌍",
+     "txt": "la Tierra: el punto de partida"
     },
     {
-     "fecha": "2",
-     "txt": "Elijo tres imágenes",
-     "emoji": "🖼️"
+     "emoji": "🔴",
+     "txt": "la Luna y Marte: los primeros destinos"
     },
     {
-     "fecha": "3",
-     "txt": "Las ordeno en versos",
-     "emoji": "📜"
-    },
-    {
-     "fecha": "4",
-     "txt": "Leo en voz alta",
-     "emoji": "🎙️"
+     "emoji": "🌌",
+     "txt": "otras galaxias: lo desconocido"
     }
    ],
    "voz": [
-    "Cuatro pasos. *Anotá* ideas.",
-    "*Elegí* tres imágenes.",
-    "*Ordenalas* en versos.",
-    "Y *leé en voz alta*."
+    "Los viajes espaciales empiezan en la Tierra, muchas veces desde lugares reales que el autor conocía.",
+    "Los primeros destinos imaginados fueron la Luna y Marte, como en Verne y Holmberg.",
+    "Después, otras galaxias. Pero lo importante no es el lugar: es lo que el viaje le muestra al personaje, y al lector, sobre la humanidad."
    ]
   },
   {
-   "t": "comparar",
+   "t": "dilema",
+   "situacion": "Una nave llega a un planeta habitado. Los tripulantes pueden presentarse o esconderse.",
+   "emoji": "👽",
    "a": {
-    "cab": "EXPLICAR",
-    "texto": "Estoy triste",
-    "emoji": "🙁"
+    "txt": "Presentarse",
+    "consecuencia": "arriesgarse a un encuentro desconocido",
+    "emoji": "🤝"
    },
    "b": {
-    "cab": "MOSTRAR",
-    "texto": "La tarde llueve en mi ventana",
-    "emoji": "🌧️"
+    "txt": "Esconderse",
+    "consecuencia": "observar sin ser vistos, pero sin conocer de verdad",
+    "emoji": "🫣"
    },
-   "signo": "→",
    "voz": [
-    "Mostrá, no expliques.",
-    "Explicar: *estoy triste*.",
-    "Mostrar: *la tarde llueve en mi ventana*."
+    "Un dilema clásico: una nave llega a un planeta habitado.",
+    "Si los tripulantes se presentan, arriesgan un encuentro con lo desconocido.",
+    "Si se esconden, observan sin ser vistos, pero nunca conocen de verdad al otro. El encuentro con extraterrestres es, en el fondo, una pregunta sobre cómo tratamos a quien es distinto."
    ]
   },
   {
-   "t": "unir",
-   "titulo": "BANCO DE RECURSOS",
-   "pares": [
-    [
-     "Comparación",
-     "Lenta como un caracol"
-    ],
-    [
-     "Metáfora",
-     "La lluvia es un tambor"
-    ],
-    [
-     "Personificación",
-     "La ciudad bostezaba"
-    ]
-   ],
-   "mezclar": false,
-   "voz": [
-    "Algunos recursos.",
-    "*Comparación*: lenta como un caracol.",
-    "*Metáfora*: la lluvia es un tambor.",
-    "*Personificación*: la ciudad bostezaba."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "¿Cómo se revisa un poema?",
+   "t": "quiz4",
+   "pregunta": "En La guerra de los mundos (1898), los marcianos invasores son vencidos al final por…",
    "opciones": [
-    "Leyéndolo en voz alta",
-    "Sin leerlo",
-    "Cambiando el título"
+    "Las bacterias terrestres",
+    "Un ejército de robots",
+    "Un superhéroe",
+    "Una tormenta"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿cómo se revisa un poema?",
-    "¿Leyéndolo en voz alta, sin leerlo o cambiando el título?",
-    "*Leyéndolo en voz alta*."
+    "Pregunta: en La guerra de los mundos, de Wells, los marcianos invaden la Tierra. ¿Qué los vence al final?",
+    "Pensá en algo diminuto.",
+    "*Las bacterias terrestres*: los invasores no tienen defensas contra ellas. La victoria no la logran los humanos, sino la naturaleza."
    ]
   },
   {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Escribí un poema breve de entre cuatro y ocho versos",
-   "emoji": "✍️",
-   "voz": [
-    "Ahora te toca: escribí un poema breve. Entre *cuatro y ocho versos*, con una *imagen* y una *emoción*."
-   ]
-  },
-  {
-   "t": "errores",
+   "t": "logro",
+   "titulo": "¡Misión cumplida!",
    "items": [
-    {
-     "mal": "Explicar la emoción",
-     "bien": "Mostrarla con una imagen"
-    },
-    {
-     "mal": "No leerlo en voz alta",
-     "bien": "Leerlo para revisar"
-    }
+    "Qué es la ciencia ficción",
+    "Mundos posibles: utopías y distopías",
+    "Ciencia, tecnología y sociedad",
+    "Viajes en el tiempo y el espacio"
    ],
+   "xp": 100,
    "voz": [
-    "Errores típicos.",
-    "*Explicar* la emoción.",
-    "Y *no leerlo* en voz alta."
+    "¡Terminaste las clases de la misión!",
+    "Ya sabés qué es la ciencia ficción.",
+    "Conocés los mundos posibles, las utopías y las distopías.",
+    "Pensaste la relación entre tecnología y sociedad.",
+    "Y viajaste en el tiempo y el espacio. ¡A practicar!"
    ]
-  },
-  {
-   "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Partí de una *emoción*.",
-    "Mostrala con *imágenes*.",
-    "Ordenalas en *versos*.",
-    "Y *revisá* leyendo en voz alta.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
-   "items": [
-    [
-     "EMOCIÓN",
-     "punto de partida"
-    ],
-    [
-     "IMÁGENES",
-     "mostrar"
-    ],
-    [
-     "VERSOS",
-     "ordenar"
-    ],
-    [
-     "REVISAR",
-     "voz alta"
-    ]
-   ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
   }
  ]
 }

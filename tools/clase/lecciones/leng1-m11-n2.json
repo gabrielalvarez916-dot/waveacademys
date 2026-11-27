@@ -2,183 +2,165 @@
  "slug": "leng1-m11-n2",
  "step_id": "c0284020-79da-452d-a4a3-0839c75df444",
  "materia": "Lengua y Literatura I",
- "titulo": "Metáfora y comparación",
+ "titulo": "Mundos posibles",
  "sub": "Lengua y Literatura I · Misión 11 · Nivel 2",
  "escenas": [
   {
-   "t": "reto",
-   "texto": "Completá: «La luna es un ___ de papel».",
-   "segundos": 6,
-   "respuesta": "Barco, por ejemplo: es una metáfora",
-   "emoji": "🌙",
-   "titulo": "METÁFORA Y COMPARACIÓN",
-   "sub": "ver de otra manera",
+   "t": "noticia",
+   "cinta": "AÑO 2190",
+   "titular": "En Neo Córdoba está prohibido estar triste",
+   "bajada": "Un sensor en la muñeca avisa a las autoridades",
+   "emoji": "🙂",
+   "titulo": "MUNDOS POSIBLES",
+   "sub": "utopías y distopías",
    "voz": [
-    "Desafío: completá. La luna es un, qué, de papel. Seis segundos.",
-    "Barco, por ejemplo. Eso es una metáfora.",
-    "Hoy: *metáfora y comparación*."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "COMPARACIÓN",
-    "texto": "Con «como»: manos como pájaros",
-    "emoji": "🕊️"
-   },
-   "b": {
-    "cab": "METÁFORA",
-    "texto": "Sin «como»: manos son pájaros",
-    "emoji": "🕊️"
-   },
-   "signo": "vs",
-   "voz": [
-    "Dos recursos.",
-    "La *comparación* usa *como*.",
-    "La *metáfora* dice que una cosa *es* otra."
+    "Noticia del año 2190: en la ciudad de Neo Córdoba está prohibido estar triste.",
+    "Un sensor en la muñeca de cada habitante avisa a las autoridades si alguien deja de sonreír.",
+    "¿Es un mundo perfecto o una pesadilla? La ciencia ficción construye *mundos posibles* para hacernos esa pregunta."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Personificación",
-   "texto": "Dar cualidades humanas a lo que no es humano",
-   "emoji": "🌬️",
+   "palabra": "Mundo posible",
+   "texto": "Lugar imaginado, con sus propias reglas, tecnologías y costumbres, donde ocurre un relato de ciencia ficción.",
+   "emoji": "🌐",
    "voz": [
-    "La *personificación* da cualidades humanas a un objeto.",
-    "El viento susurra un secreto: el viento no susurra, pero lo decimos así."
+    "Un *mundo posible* es el lugar imaginado donde transcurre el relato: con sus propias reglas, tecnologías y costumbres.",
+    "Puede ser la Tierra dentro de mil años, otro planeta o una ciudad bajo el mar."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "Utopía",
+    "emoji": "🌈",
+    "datos": [
+     "sociedad ideal",
+     "todos viven en armonía"
+    ]
+   },
+   "b": {
+    "txt": "Distopía",
+    "emoji": "🏭",
+    "datos": [
+     "sociedad opresiva",
+     "el control parece perfecto"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Dos caras del futuro",
+   "voz": [
+    "Hay dos grandes tipos de mundos posibles.",
+    "La *utopía*: una sociedad ideal, donde todos viven en armonía.",
+    "La *distopía*: una sociedad que parece perfecta, pero en realidad controla y oprime a las personas.",
+    "Neo Córdoba, con su sensor de sonrisas, es una distopía."
    ]
   },
   {
    "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
+   "titulo": "CÓMO SE ARMA UN MUNDO",
    "items": [
     {
-     "cab": "COMPARACIÓN",
-     "txt": "Como una estrella"
+     "cab": "Las reglas",
+     "txt": "qué se permite, qué se prohíbe"
     },
     {
-     "cab": "METÁFORA",
-     "txt": "Noche, un manto"
+     "cab": "La tecnología",
+     "txt": "qué inventos cambian la vida"
     },
     {
-     "cab": "PERSONIFICACIÓN",
-     "txt": "El viento susurró"
+     "cab": "Las costumbres",
+     "txt": "cómo viven y se relacionan"
     }
    ],
    "voz": [
-    "¿Qué recurso es?",
-    "*Como una estrella*: comparación.",
-    "*Noche, un manto*: metáfora.",
-    "*El viento susurró*: personificación."
+    "¿Cómo se construye un mundo posible?",
+    "Con sus *reglas*: qué está permitido y qué prohibido.",
+    "Con su *tecnología*: los inventos que cambiaron la vida.",
+    "Y con sus *costumbres*: cómo se visten, se comunican y se relacionan."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Imagen sensorial",
-   "texto": "Apela a un sentido",
-   "emoji": "👃",
+   "t": "prediccion",
+   "pregunta": "En un mundo sin gravedad, un personaje deja caer un vaso y se rompe contra el piso. ¿Funciona el relato?",
+   "a": {
+    "txt": "Sí, da igual",
+    "emoji": "🤷"
+   },
+   "b": {
+    "txt": "No: rompe sus propias reglas",
+    "emoji": "❌"
+   },
+   "correcta": "b",
+   "resultado": "Un mundo posible tiene que ser coherente con las reglas que planteó.",
    "voz": [
-    "Una *imagen sensorial* apela a un sentido.",
-    "Como el olor a lluvia sobre la tierra caliente."
+    "¿Qué creés? En un relato ambientado en un mundo sin gravedad, alguien deja caer un vaso y se rompe contra el piso.",
+    "Pensalo.",
+    "No funciona: el relato rompe sus propias reglas. Un mundo posible tiene que ser *coherente*."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "ANALIZAR",
-   "items": [
-    {
-     "txt": "Dice que la noche ES un manto: sin como.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Es una metáfora.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Crea la imagen de algo que cubre y abriga.",
-     "emoji": "3️⃣"
-    }
-   ],
+   "t": "vof",
+   "afirmacion": "Las distopías son mundos que los personajes viven como perfectos, aunque esconden un control opresivo.",
+   "emoji": "👁️",
+   "verdadero": true,
+   "explicacion": "La apariencia de perfección esconde la falta de libertad.",
    "voz": [
-    "Resolvamos un caso: «La noche es un manto negro». ¿Qué recurso es y qué imagen crea?",
-    "Dice que la noche ES un manto: sin como.",
-    "Es una metáfora.",
-    "Crea la imagen de algo que cubre y abriga."
-   ]
-  },
-  {
-   "t": "consejo",
-   "texto": "Una buena metáfora te hace ver algo conocido como si fuera nuevo.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: Una buena metáfora te hace ver algo conocido como si fuera nuevo."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "«El mar es un gigante dormido» es una…",
-   "opciones": [
-    "Metáfora",
-    "Comparación",
-    "Rima"
-   ],
-   "correcta": 0,
-   "voz": [
-    "Te toca: «el mar es un gigante dormido».",
-    "¿Metáfora, comparación o rima?",
-    "Una *metáfora*: no usa como."
+    "Verdadero o falso: las distopías suelen parecer perfectas, aunque esconden un control opresivo.",
+    "Pensá en Neo Córdoba.",
+    "Verdadero: muchas veces el protagonista es el primero en darse cuenta de que algo anda mal."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Confundir comparación y metáfora",
-     "bien": "Mirar si usa como"
+     "mal": "Un mundo posible puede cambiar sus reglas cuando conviene",
+     "bien": "Tiene que ser coherente de principio a fin"
     },
     {
-     "mal": "Explicarla literalmente",
-     "bien": "Pensar la imagen"
+     "mal": "Distopía es cualquier mundo triste",
+     "bien": "Es una sociedad de control que se presenta como ideal"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "*Confundir* comparación y metáfora.",
-    "Y explicar la imagen *literalmente*."
+    "Dos errores comunes.",
+    "Cambiar las reglas del mundo cuando conviene: el lector deja de creer.",
+    "Y llamar distopía a cualquier mundo triste: la distopía es una sociedad de *control* que se presenta como ideal."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "La *comparación* usa como.",
-    "La *metáfora* dice que una cosa es otra.",
-    "La *personificación* da rasgos humanos.",
-    "Y la *imagen sensorial* apela a un sentido.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "COMPARACIÓN",
-     "como"
+     "Mundo posible",
+     "lugar imaginado con sus reglas"
     ],
     [
-     "METÁFORA",
-     "es otra cosa"
+     "Utopía",
+     "sociedad ideal"
     ],
     [
-     "PERSONIFICACIÓN",
-     "rasgos humanos"
+     "Distopía",
+     "sociedad opresiva que parece perfecta"
     ],
     [
-     "IMAGEN",
-     "un sentido"
+     "Coherencia",
+     "respetar las propias reglas"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "Los mundos posibles son espejos de nuestro mundo.",
+    "El mundo posible.",
+    "La utopía.",
+    "La distopía.",
+    "Y la coherencia. ¡A practicar!"
+   ]
   }
  ]
 }

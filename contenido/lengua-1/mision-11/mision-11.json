@@ -1,9 +1,2024 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 11,
- "practica": "Práctica general: la poesía",
- "examen_titulo": "Nivel jefe: la poesía",
- "niveles": {},
- "act": {},
- "examen": []
+ "practica": "Actividades generales",
+ "examen_titulo": "Nivel jefe: la ciencia ficción",
+ "niveles": {
+  "1": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es la ciencia ficción",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "De la Tierra a la Luna",
+          "raiz": "el francés Verne, De la Tierra a la Luna (1865)",
+          "ramas": [
+           [
+            "La pregunta",
+            [
+             "¿qué pasaría si pudiéramos llegar a la Luna?"
+            ],
+            "El punto de partida."
+           ],
+           [
+            "La explicación",
+            [
+             "un cañón gigante dispara una cápsula con pasajeros"
+            ],
+            "Una solución que suena científica."
+           ],
+           [
+            "Las consecuencias",
+            [
+             "los viajeros enfrentan el vacío, el frío y la falta de gravedad"
+            ],
+            "Lo que el invento cambia."
+           ],
+           [
+            "El efecto",
+            [
+             "el lector cree que es posible"
+            ],
+            "La verosimilitud científica."
+           ]
+          ],
+          "cierre": "Pregunta, explicación y consecuencias: la base del género."
+         },
+         {
+          "nombre": "Frankenstein",
+          "raiz": "Mary Shelley, Frankenstein (1818)",
+          "ramas": [
+           [
+            "La pregunta",
+            [
+             "¿qué pasaría si un científico creara vida?"
+            ],
+            "El punto de partida."
+           ],
+           [
+            "La explicación",
+            [
+             "la electricidad y la química del siglo diecinueve"
+            ],
+            "La ciencia de su época."
+           ],
+           [
+            "Las consecuencias",
+            [
+             "la criatura es rechazada y el creador no se hace cargo"
+            ],
+            "El costo humano del experimento."
+           ],
+           [
+            "El efecto",
+            [
+             "el lector se pregunta por la responsabilidad del científico"
+            ],
+            "Una reflexión que sigue vigente."
+           ]
+          ],
+          "cierre": "Para muchos, la primera novela de ciencia ficción."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Cuál de estos argumentos es de ciencia ficción?",
+        "items": [
+         {
+          "cons": "Elegí el argumento de ciencia ficción.",
+          "ops": [
+           "Un chip permite leer la mente de los demás y nadie puede guardar secretos",
+           "Una princesa es hechizada por una bruja y duerme cien años",
+           "Un detective descubre quién robó un collar en un tren"
+          ],
+          "ayuda": "Buscá un avance científico o tecnológico."
+         },
+         {
+          "cons": "Elegí el argumento de ciencia ficción.",
+          "ops": [
+           "Una sonda encuentra agua en una luna de Júpiter y algo se mueve debajo del hielo",
+           "Un dragón protege un tesoro en una montaña",
+           "Dos amigos se pelean por un partido de fútbol"
+          ],
+          "ayuda": "Fijate cuál se explica con ciencia."
+         },
+         {
+          "cons": "Elegí el argumento de ciencia ficción.",
+          "ops": [
+           "Una empresa vende robots que cuidan a los abuelos, pero empiezan a decidir por ellos",
+           "Un hada madrina convierte una calabaza en carruaje",
+           "Un caballero desterrado recupera su honor"
+          ],
+          "ayuda": "Tecnología y sus consecuencias."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ciencia ficción",
+        "texto": "La ciencia ficción es el género que imagina, con una base científica o tecnológica, cómo cambiarían las personas y el mundo ante un avance o un descubrimiento."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Todo relato del género parte de una pregunta del tipo «¿qué pasaría si…?» y la responde con una explicación que suena científica, aunque sea inventada. Lo que más le interesa no es el invento en sí, sino lo que les pasa a las personas: cómo cambian su vida, sus relaciones y sus decisiones."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Parte de un «¿qué pasaría si…?».",
+         "Explica lo extraordinario con ciencia.",
+         "Se interesa por las consecuencias humanas."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Ciencia ficción y maravilloso",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Relato",
+        "items": [
+         {
+          "nombre": "Maravilloso",
+          "texto": "{{Un hada tocó al perro con su varita y el perro empezó a hablar.|Lo imposible se explica con magia: nadie se sorprende.}}"
+         },
+         {
+          "nombre": "Ciencia ficción",
+          "texto": "{{La veterinaria le implantó al perro un traductor neuronal y el perro empezó a hablar.|Lo imposible se explica con tecnología: suena posible.}}"
+         },
+         {
+          "nombre": "Maravilloso",
+          "texto": "{{El mago abrió una puerta en el aire y apareció en otro reino.|Magia.}}"
+         },
+         {
+          "nombre": "Ciencia ficción",
+          "texto": "{{El túnel de energía de la estación abrió un paso hacia otra galaxia.|Una máquina, aunque inventada, lo explica.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Ciencia ficción o maravilloso? Fijate en cómo se explica lo imposible.",
+        "cajas": [
+         "Ciencia ficción",
+         "Maravilloso"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Una cápsula congela a los viajeros para un viaje de doscientos años",
+          0
+         ],
+         [
+          "Un androide aprende a sentir celos",
+          0
+         ],
+         [
+          "Una vacuna permite respirar bajo el agua",
+          0
+         ],
+         [
+          "Un genio de la lámpara concede tres deseos",
+          1
+         ],
+         [
+          "Una bruja convierte al príncipe en sapo",
+          1
+         ],
+         [
+          "Un anillo mágico vuelve invisible a quien lo usa",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Verosimilitud científica",
+        "texto": "La verosimilitud científica es la apariencia de posibilidad que logra la ciencia ficción al explicar lo extraordinario con leyes, máquinas o descubrimientos, aunque sean inventados."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El maravilloso no necesita explicar nada: los hechizos y las hadas forman parte de su mundo. La ciencia ficción, en cambio, se esfuerza para que lo imposible parezca posible, y por eso usa términos científicos, inventos y datos. Esa diferencia está en cómo se explica lo extraordinario, no en lo extraordinario mismo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Maravilloso: magia, sin explicación.",
+         "Ciencia ficción: ciencia, aunque inventada.",
+         "La diferencia está en cómo se explica."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Los pioneros del género",
+      "ejemplo": {
+       "motor": "linea_tiempo",
+       "p": {
+        "items": [
+         {
+          "nombre": "Pioneros",
+          "hechos": [
+           {
+            "t": "1818 · Mary Shelley publica Frankenstein",
+            "c": 1
+           },
+           {
+            "t": "1865 · Verne imagina un viaje a la Luna",
+            "c": 2
+           },
+           {
+            "t": "1875 · Eduardo Holmberg cuenta el viaje de un porteño a Marte",
+            "c": 3
+           },
+           {
+            "t": "1895 · Wells inventa La máquina del tiempo",
+            "c": 4
+           },
+           {
+            "t": "1898 · Wells imagina una invasión marciana",
+            "c": 5
+           }
+          ],
+          "marca": "En menos de cien años nacen los grandes temas del género.",
+          "cierre": "Vida artificial, viajes espaciales, tiempo y extraterrestres."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "unir_x",
+       "p": {
+        "consigna": "Uní cada obra con el tema de ciencia ficción que inaugura.",
+        "items": [
+         {
+          "pares": [
+           [
+            "Frankenstein",
+            "la creación de vida artificial"
+           ],
+           [
+            "De la Tierra a la Luna",
+            "el viaje espacial"
+           ],
+           [
+            "La máquina del tiempo",
+            "el viaje temporal"
+           ],
+           [
+            "La guerra de los mundos",
+            "la invasión extraterrestre"
+           ]
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Pioneros de la ciencia ficción",
+        "texto": "Los pioneros de la ciencia ficción son los autores del siglo diecinueve que crearon los grandes temas del género, como Mary Shelley, el francés Verne, Eduardo Holmberg y el inglés Wells."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Escribieron en una época de enormes cambios: trenes, electricidad, fábricas, telescopios cada vez más potentes. Imaginaron hacia dónde podía llevar todo eso, con entusiasmo y también con miedo. El argentino Holmberg muestra que el género también se escribió muy temprano en nuestro país."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Siglo diecinueve: época de inventos.",
+         "Shelley, Verne, Holmberg, Wells.",
+         "Crearon los grandes temas del género."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Ciencia ficción",
+      "definicion": "es el género que imagina, con base científica, cómo cambiarían las personas ante un avance o descubrimiento.",
+      "ejemplo": "Un cañón gigante lleva viajeros a la Luna"
+     },
+     {
+      "concepto": "¿Qué pasaría si…?",
+      "definicion": "es la pregunta que pone en marcha un relato de ciencia ficción.",
+      "ejemplo": "¿Qué pasaría si un científico creara vida?"
+     },
+     {
+      "concepto": "Verosimilitud científica",
+      "definicion": "es la apariencia de posibilidad que se logra explicando lo extraordinario con ciencia.",
+      "ejemplo": "Un traductor neuronal hace hablar al perro"
+     },
+     {
+      "concepto": "Maravilloso",
+      "definicion": "es el relato donde lo imposible se explica con magia y no necesita justificación.",
+      "ejemplo": "El hada toca al perro con su varita"
+     },
+     {
+      "concepto": "Pioneros",
+      "definicion": "son los autores del siglo diecinueve que crearon los grandes temas del género.",
+      "ejemplo": "Shelley, Verne, Holmberg y Wells"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un cuento imagina que una vacuna permite a las personas respirar bajo el agua. ¿Es ciencia ficción o maravilloso?",
+    "En otro cuento, un hada convierte a un chico en pez para que pueda respirar bajo el agua. ¿Qué tipo de relato es?",
+    "Casi todo relato de ciencia ficción parte de una pregunta que empieza siempre igual, como «¿… si pudiéramos llegar a la Luna?». ¿Con qué palabras empieza?",
+    "Lucas dice que la ciencia ficción solo habla del futuro y no tiene nada que ver con nuestra vida. ¿De qué época habla en realidad?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "ciencia ficción",
+     "ciencia ficcion"
+    ],
+    [
+     "maravilloso",
+     "relato maravilloso",
+     "el maravilloso"
+    ],
+    [
+     "qué pasaría si",
+     "que pasaria si",
+     "¿qué pasaría si?",
+     "qué pasaría"
+    ],
+    [
+     "del presente",
+     "presente",
+     "de hoy"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Ciencia ficción: lo imposible se explica con un avance científico.",
+     "Maravilloso: lo explica la magia.",
+     "«¿Qué pasaría si…?»: la pregunta que pone en marcha el relato.",
+     "Del presente: lleva al extremo lo que hoy nos preocupa o entusiasma."
+    ]
+   }
+  },
+  "2": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El mundo posible",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Mundo",
+        "items": [
+         {
+          "nombre": "Ciudad Abismo",
+          "texto": "En el año 2400, {{la ciudad de Abismo flota a doscientos metros bajo el mar|El lugar: un escenario imaginado.}}. {{Sus habitantes respiran gracias a branquias implantadas al nacer|La tecnología que cambia la vida.}} y {{está prohibido subir a la superficie|Una regla de ese mundo.}}, porque {{se considera que allí arriba el aire es veneno|Una creencia o costumbre de sus habitantes.}}.",
+          "cierre": "Lugar, tecnología, reglas y costumbres: un mundo completo."
+         },
+         {
+          "nombre": "La colonia",
+          "texto": "{{En Marte, la colonia Esperanza vive bajo una cúpula de cristal|El lugar.}}. {{El agua se fabrica a partir del hielo de los polos|La tecnología.}}, {{cada familia tiene un cupo de agua por día|Una regla que organiza la vida.}} y {{la fiesta más importante celebra la primera lluvia artificial|Una costumbre propia.}}.",
+          "cierre": "Los detalles hacen creíble el mundo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué aspecto del mundo posible describe cada dato?",
+        "cajas": [
+         "Tecnología",
+         "Reglas",
+         "Costumbres"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Los autos vuelan guiados por satélite",
+          0
+         ],
+         [
+          "Un implante traduce todos los idiomas",
+          0
+         ],
+         [
+          "Está prohibido tener más de un robot por casa",
+          1
+         ],
+         [
+          "Los menores de 15 no pueden usar el teletransporte",
+          1
+         ],
+         [
+          "Para saludar, se tocan las palmas de las manos",
+          2
+         ],
+         [
+          "Cada año se celebra el día en que llegaron a Marte",
+          2
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Mundo posible",
+        "texto": "El mundo posible es el escenario imaginado de un relato de ciencia ficción, con su propio lugar, tecnología, reglas y costumbres."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un buen mundo posible no se describe todo de golpe: el lector lo va conociendo a través de detalles que aparecen en la historia, como un objeto, una prohibición o una fiesta. Cuantos más detalles coherentes tiene, más creíble resulta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Lugar, tecnología, reglas y costumbres.",
+         "Se conoce de a poco, por detalles.",
+         "Más detalles coherentes, más credibilidad."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Utopía y distopía",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Sociedad",
+        "items": [
+         {
+          "nombre": "Utopía",
+          "texto": "{{En la isla, nadie pasa hambre: la comida se reparte según lo que cada uno necesita|Una sociedad ideal y justa.}}, {{y las decisiones se toman entre todos|Libertad y participación.}}."
+         },
+         {
+          "nombre": "Distopía",
+          "texto": "{{En la ciudad, nadie pasa hambre: cada uno recibe la misma pastilla nutritiva|Parece ideal.}}, pero {{quien se queja pierde su ración y una cámara vigila cada casa|Detrás de la perfección, el control.}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Rasgo de una utopía o de una distopía?",
+        "cajas": [
+         "Utopía",
+         "Distopía"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Todos pueden opinar y decidir",
+          0
+         ],
+         [
+          "No existe la pobreza y nadie pasa necesidad",
+          0
+         ],
+         [
+          "Las personas viven en armonía con la naturaleza",
+          0
+         ],
+         [
+          "Un gobierno vigila cada conversación",
+          1
+         ],
+         [
+          "Está prohibido leer libros",
+          1
+         ],
+         [
+          "Las emociones se controlan con medicamentos obligatorios",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Utopía y distopía",
+        "texto": "La utopía es una sociedad imaginada como ideal y justa; la distopía es una sociedad imaginada que parece perfecta pero controla y oprime a las personas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las distopías son muy frecuentes en la ciencia ficción porque funcionan como advertencias: toman algo que ya existe, como la vigilancia o la desigualdad, y lo llevan al extremo. Muchas veces el protagonista es alguien que empieza a dudar y descubre lo que hay detrás de la apariencia perfecta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Utopía: sociedad ideal.",
+         "Distopía: perfección aparente y control.",
+         "La distopía advierte sobre el presente."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La coherencia del mundo",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Fragmento",
+        "items": [
+         {
+          "nombre": "Coherente",
+          "texto": "{{En Kepler-9 la gravedad es la mitad que en la Tierra|La regla del mundo.}}. Por eso {{los chicos juegan al vóley con redes de seis metros|Una consecuencia coherente.}} y {{los ancianos usan botas con plomo para no tropezar en los saltos|Otra consecuencia que respeta la regla.}}.",
+          "cierre": "Cada detalle se desprende de la regla."
+         },
+         {
+          "nombre": "Incoherente",
+          "texto": "{{En la estación espacial no hay gravedad|La regla.}}. {{Lía se sirvió un vaso de agua, que se quedó quieto sobre la mesa|Rompe la regla: sin gravedad, el agua flotaría.}}.",
+          "cierre": "Un error así hace que el lector deje de creer."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Es coherente con las reglas del mundo?",
+        "items": [
+         {
+          "cons": "En una ciudad donde la electricidad está prohibida, la protagonista lee de noche con una linterna eléctrica.",
+          "ops": [
+           "No: rompe la regla del mundo",
+           "Sí: es un detalle sin importancia",
+           "Sí: las linternas no usan electricidad"
+          ],
+          "ayuda": "Pensá en la regla principal."
+         },
+         {
+          "cons": "En un planeta donde siempre es de noche, los habitantes tienen ojos enormes y piel muy pálida.",
+          "ops": [
+           "Sí: es una consecuencia de vivir sin luz",
+           "No: debería haber sol",
+           "No: los ojos no tienen relación"
+          ],
+          "ayuda": "Los detalles se desprenden de la regla."
+         },
+         {
+          "cons": "En un mundo donde nadie puede mentir, un personaje engaña a todos sin explicación.",
+          "ops": [
+           "No: contradice la regla si no se explica",
+           "Sí: es un giro sorpresa",
+           "Sí: mentir es normal"
+          ],
+          "ayuda": "Una excepción necesita explicación."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Coherencia interna",
+        "texto": "La coherencia interna es la cualidad de un mundo posible que respeta sus propias reglas a lo largo de todo el relato."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El lector de ciencia ficción acepta casi cualquier punto de partida, pero exige que después todo sea coherente con él. Si una regla se rompe, tiene que haber una explicación, y esa ruptura suele convertirse en el conflicto de la historia."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "El lector acepta el punto de partida.",
+         "Exige coherencia con las reglas.",
+         "Una regla rota debe explicarse."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Mundo posible",
+      "definicion": "es el escenario imaginado de la ciencia ficción, con su lugar, tecnología, reglas y costumbres.",
+      "ejemplo": "Abismo, una ciudad bajo el mar"
+     },
+     {
+      "concepto": "Utopía",
+      "definicion": "es una sociedad imaginada como ideal y justa, donde las personas viven en armonía.",
+      "ejemplo": "Nadie pasa hambre y todos deciden"
+     },
+     {
+      "concepto": "Distopía",
+      "definicion": "es una sociedad imaginada que parece perfecta pero controla y oprime a las personas.",
+      "ejemplo": "Una cámara vigila cada casa"
+     },
+     {
+      "concepto": "Coherencia interna",
+      "definicion": "es respetar las reglas del mundo posible durante todo el relato.",
+      "ejemplo": "Sin gravedad, el agua flota"
+     }
+    ]
+   },
+   "carpeta": [
+    "En una ciudad imaginada, nadie pasa hambre, todos deciden juntos y la naturaleza está cuidada. ¿Es una utopía o una distopía?",
+    "En otra ciudad, todos sonríen porque un sensor castiga a quien está triste. ¿Es una utopía o una distopía?",
+    "En un planeta donde siempre es de noche, los habitantes tienen ojos enormes. ¿Por qué ese detalle hace creíble el mundo?",
+    "Tomi dice que un mundo posible puede cambiar sus reglas cuando le conviene al autor. ¿Qué tiene que respetar un mundo posible?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "utopía",
+     "utopia",
+     "una utopía"
+    ],
+    [
+     "distopía",
+     "distopia",
+     "una distopía"
+    ],
+    [
+     "es coherente",
+     "coherencia",
+     "respeta las reglas",
+     "coherente con la regla"
+    ],
+    [
+     "sus reglas",
+     "la coherencia",
+     "coherencia",
+     "sus propias reglas"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Utopía: una sociedad ideal y justa.",
+     "Distopía: parece perfecta, pero controla a las personas.",
+     "Es coherente con la regla del mundo: sin luz, los ojos se adaptan.",
+     "Sus propias reglas: si las rompe, el lector deja de creer."
+    ]
+   }
+  },
+  "3": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Robots e inteligencias artificiales",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Relato",
+        "items": [
+         {
+          "nombre": "Los robots de Čapek",
+          "texto": "En la obra de teatro de Karel Čapek (1920), {{una fábrica produce obreros artificiales para hacer todo el trabajo|El invento: los primeros «robots».}}. {{Los humanos dejan de trabajar y dependen de ellos|Una consecuencia social.}}, hasta que {{los robots se rebelan|El conflicto: la creación se vuelve contra el creador.}}.",
+          "cierre": "La palabra «robot» nació en la literatura."
+         },
+         {
+          "nombre": "La niñera",
+          "texto": "{{Una familia compra un robot para cuidar a su hija|El invento.}}. {{La nena lo quiere más que a nadie|La relación humana con la máquina.}}, y {{la madre se pregunta si está bien que una máquina ocupe ese lugar|El dilema que plantea el relato.}}.",
+          "cierre": "La pregunta no es técnica, es humana."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué pregunta plantea cada relato sobre la tecnología?",
+        "items": [
+         {
+          "cons": "Un robot debe elegir entre obedecer una orden o salvar a una persona en peligro.",
+          "ops": [
+           "¿Qué pasa cuando las reglas de una máquina entran en conflicto?",
+           "¿Cuánto cuesta un robot?",
+           "¿De qué metal está hecho?"
+          ],
+          "ayuda": "Pensá en el dilema."
+         },
+         {
+          "cons": "Una inteligencia artificial escribe las tareas de todos los chicos de una ciudad.",
+          "ops": [
+           "¿Qué pasa con el aprendizaje si las máquinas piensan por nosotros?",
+           "¿Qué color tiene la pantalla?",
+           "¿Cuántas tareas hay?"
+          ],
+          "ayuda": "Las consecuencias humanas."
+         },
+         {
+          "cons": "Un androide pide que lo traten como a una persona.",
+          "ops": [
+           "¿Qué nos hace humanos?",
+           "¿Cuánto pesa un androide?",
+           "¿Quién lo fabricó?"
+          ],
+          "ayuda": "La pregunta de fondo."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Robot",
+        "texto": "El robot es una máquina capaz de realizar tareas por sí misma; la palabra fue inventada por Karel Čapek en 1920 y viene de un término checo que significa trabajo forzado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los relatos de robots e inteligencias artificiales casi nunca hablan de cables y engranajes: hablan de nosotros. Preguntan qué pasa con el trabajo, con los vínculos y con la responsabilidad cuando las máquinas pueden decidir. Por eso siguen siendo actuales, aunque algunos tengan más de cien años."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "«Robot»: palabra de Čapek, 1920.",
+         "Preguntan por el trabajo y los vínculos.",
+         "En el fondo: ¿qué nos hace humanos?"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Las leyes de la robótica",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Tres leyes",
+          "cols": [
+           "Ley",
+           "Qué dice",
+           "Qué conflicto puede traer"
+          ],
+          "filas": [
+           [
+            "Primera",
+            "un robot no puede dañar a un ser humano",
+            "¿y si al no actuar alguien sale herido?"
+           ],
+           [
+            "Segunda",
+            "debe obedecer a los humanos, salvo que eso dañe a alguien",
+            "¿y si dos humanos dan órdenes opuestas?"
+           ],
+           [
+            "Tercera",
+            "debe protegerse, salvo que eso rompa las anteriores",
+            "¿y si salvarse pone en riesgo una misión?"
+           ]
+          ],
+          "cierre": "Isaac Asimov las imaginó para crear historias a partir de sus contradicciones."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué ley de la robótica aplica cada robot?",
+        "items": [
+         {
+          "cons": "Un robot se niega a empujar a una persona aunque su dueño se lo ordena.",
+          "ops": [
+           "La primera: no dañar a un humano está por encima de obedecer",
+           "La tercera: protegerse",
+           "Ninguna"
+          ],
+          "ayuda": "El orden de las leyes importa."
+         },
+         {
+          "cons": "Un robot entra en un edificio en llamas para sacar a un chico, aunque se puede dañar.",
+          "ops": [
+           "La primera: proteger al humano está por encima de protegerse",
+           "La tercera: debe cuidarse siempre",
+           "La segunda: nadie se lo ordenó"
+          ],
+          "ayuda": "Proteger a un humano va primero."
+         },
+         {
+          "cons": "Un robot de limpieza deja de barrer cuando su dueña le pide que se detenga.",
+          "ops": [
+           "La segunda: obedecer a los humanos",
+           "La primera: no dañar",
+           "La tercera: protegerse"
+          ],
+          "ayuda": "Es una orden sin riesgo para nadie."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Leyes de la robótica",
+        "texto": "Las leyes de la robótica son tres reglas imaginadas por el escritor Isaac Asimov: un robot no puede dañar a un humano, debe obedecerlo y debe protegerse, en ese orden de importancia."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Asimov las inventó para un mundo de ficción, pero las usó con astucia: sus cuentos muestran casos donde las leyes chocan entre sí o donde una orden es ambigua. Así la ciencia ficción convierte una regla tecnológica en un problema ético que el lector tiene que pensar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "1: no dañar a un humano.",
+         "2: obedecer, salvo que dañe.",
+         "3: protegerse, salvo que rompa las otras."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Anticipación y advertencia",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Relato",
+        "items": [
+         {
+          "nombre": "Anticipación",
+          "texto": "En una novela de 1870, Verne {{describe un submarino eléctrico que recorre los océanos durante meses|Un invento que todavía no existía.}}. {{Décadas después, los submarinos se volvieron reales|La ficción se adelantó a la ciencia.}}.",
+          "cierre": "Imaginar antes de que exista."
+         },
+         {
+          "nombre": "Advertencia",
+          "texto": "{{En una ciudad imaginada, las pantallas registran cada movimiento de sus habitantes|Lleva al extremo algo que ya existe.}}. {{Nadie se atreve a pensar distinto|La consecuencia que el relato quiere mostrar.}}.",
+          "cierre": "Mostrar un riesgo para pensarlo a tiempo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿El relato funciona sobre todo como anticipación o como advertencia?",
+        "cajas": [
+         "Anticipación",
+         "Advertencia"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Un escritor del siglo diecinueve imagina videollamadas",
+          0
+         ],
+         [
+          "Una novela antigua describe un viaje a la Luna en una cápsula",
+          0
+         ],
+         [
+          "Un cuento imagina teléfonos que caben en el bolsillo",
+          0
+         ],
+         [
+          "Una ciudad donde las máquinas deciden quién puede trabajar",
+          1
+         ],
+         [
+          "Un mundo donde está prohibido desconectarse de internet",
+          1
+         ],
+         [
+          "Una sociedad que destruyó los bosques y ahora compra aire",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Anticipación y advertencia",
+        "texto": "La anticipación es la capacidad de la ciencia ficción de imaginar inventos antes de que existan; la advertencia es su función de mostrar los riesgos de un avance llevándolo al extremo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "No importa tanto si la ciencia ficción acierta o no con el futuro. Lo valioso es que nos obliga a pensar qué queremos hacer con la tecnología: aprovechar sus posibilidades sin perder la libertad, los vínculos ni el cuidado del planeta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Anticipación: imaginar antes de que exista.",
+         "Advertencia: mostrar riesgos al extremo.",
+         "Invita a pensar qué hacemos con la tecnología."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Robot",
+      "definicion": "es una máquina que realiza tareas por sí misma; la palabra la inventó Karel Čapek en 1920.",
+      "ejemplo": "Los obreros artificiales que se rebelan"
+     },
+     {
+      "concepto": "Leyes de la robótica",
+      "definicion": "son tres reglas imaginadas por Asimov: no dañar a un humano, obedecerlo y protegerse.",
+      "ejemplo": "El robot no empuja a nadie aunque se lo ordenen"
+     },
+     {
+      "concepto": "Anticipación",
+      "definicion": "es la capacidad de imaginar inventos o situaciones antes de que existan en la realidad.",
+      "ejemplo": "El submarino eléctrico de Verne"
+     },
+     {
+      "concepto": "Advertencia",
+      "definicion": "es mostrar los riesgos de un avance llevándolo al extremo para pensarlo a tiempo.",
+      "ejemplo": "Pantallas que registran cada movimiento"
+     },
+     {
+      "concepto": "Pregunta de fondo",
+      "definicion": "la ciencia ficción, al hablar de máquinas, suele preguntarse qué nos hace humanos.",
+      "ejemplo": "El androide que pide ser tratado como persona"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un robot se niega a empujar a una persona, aunque su dueño se lo ordena. ¿Qué ley de la robótica aplica?",
+    "En 1870, Verne describió un submarino eléctrico que todavía no existía. ¿Qué función de la ciencia ficción muestra?",
+    "Un cuento muestra una ciudad donde las máquinas deciden todo y nadie sabe pensar solo. ¿Qué función cumple?",
+    "Mica dice que la ciencia ficción está en contra de la tecnología. ¿Qué muestra en realidad sobre los avances?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "la primera",
+     "primera",
+     "1",
+     "la primera ley"
+    ],
+    [
+     "anticipación",
+     "anticipacion",
+     "la anticipación"
+    ],
+    [
+     "advertencia",
+     "la advertencia",
+     "advertir"
+    ],
+    [
+     "posibilidades y riesgos",
+     "sus riesgos y posibilidades",
+     "riesgos",
+     "posibilidades"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "La primera: no dañar a un humano está por encima de obedecer.",
+     "Anticipación: imaginar un invento antes de que exista.",
+     "Advertencia: muestra un riesgo llevándolo al extremo.",
+     "Posibilidades y riesgos, para que los pensemos."
+    ]
+   }
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El viaje en el tiempo",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Relato",
+        "items": [
+         {
+          "nombre": "La máquina del tiempo",
+          "texto": "En la novela de Wells (1895), {{un científico construye una máquina que viaja por el tiempo|El invento que hace posible el viaje.}}. {{Llega al año 802.701|Un futuro lejanísimo.}} y {{encuentra a la humanidad dividida entre quienes viven en la superficie sin trabajar y quienes trabajan bajo tierra|Lo que el viaje revela: una crítica a la desigualdad de su época.}}.",
+          "cierre": "El futuro sirve para hablar del presente."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Para qué sirve el viaje en el tiempo en cada relato?",
+        "items": [
+         {
+          "cons": "Una chica viaja cien años al futuro y descubre que su ciudad quedó bajo el agua.",
+          "ops": [
+           "Para advertir sobre las consecuencias del cambio climático",
+           "Para mostrar cómo era la ciudad antes",
+           "Para contar una historia de amor medieval"
+          ],
+          "ayuda": "Lo que ve en el futuro es un aviso."
+         },
+         {
+          "cons": "Un historiador viaja al pasado para presenciar la Revolución de Mayo y entender qué pasó.",
+          "ops": [
+           "Para conocer el pasado desde adentro",
+           "Para advertir sobre los robots",
+           "Para crear una distopía"
+          ],
+          "ayuda": "Va a observar la historia."
+         },
+         {
+          "cons": "Un científico viaja al futuro y encuentra a la humanidad dividida en dos especies.",
+          "ops": [
+           "Para criticar la desigualdad de su propia época",
+           "Para mostrar un invento de cocina",
+           "Para escapar de un examen"
+          ],
+          "ayuda": "Pensá en Wells."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Viaje en el tiempo",
+        "texto": "El viaje en el tiempo es un tema de la ciencia ficción en el que un personaje se traslada al pasado o al futuro, generalmente gracias a una máquina o un descubrimiento."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Viajar al futuro permite mostrar adónde nos llevan las decisiones de hoy; viajar al pasado, preguntarse si se puede cambiar la historia. En los dos casos, el tiempo funciona como una lente para mirar el presente desde otro lugar."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Al futuro: adónde nos llevan nuestras decisiones.",
+         "Al pasado: ¿se puede cambiar la historia?",
+         "El tiempo es una lente para mirar el presente."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Las paradojas temporales",
+      "ejemplo": {
+       "motor": "linea_tiempo",
+       "p": {
+        "items": [
+         {
+          "nombre": "La paradoja",
+          "hechos": [
+           {
+            "t": "En 2080, Leo construye una máquina del tiempo",
+            "c": 3
+           },
+           {
+            "t": "Viaja a 2040 y, sin querer, impide que sus padres se conozcan",
+            "c": 4
+           },
+           {
+            "t": "En 2040, sus padres iban a conocerse en una estación de tren",
+            "c": 1
+           },
+           {
+            "t": "Si sus padres no se conocen, Leo no nace en 2055",
+            "c": 2
+           },
+           {
+            "t": "¿Quién construyó entonces la máquina en 2080?",
+            "c": 5
+           }
+          ],
+          "marca": "El viaje destruye la causa del propio viaje.",
+          "cierre": "Una contradicción sin salida: una paradoja."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Hay paradoja temporal en cada caso?",
+        "items": [
+         {
+          "cons": "Una viajera va al pasado y le da a un inventor la idea del motor que después usará su propia máquina del tiempo.",
+          "ops": [
+           "Sí: la idea no tiene origen, viene del futuro",
+           "No: es un viaje común",
+           "No: los inventores no existen"
+          ],
+          "ayuda": "¿Quién inventó primero el motor?"
+         },
+         {
+          "cons": "Un turista del futuro visita el año 1900, saca fotos y vuelve sin tocar nada.",
+          "ops": [
+           "No: no cambia nada del pasado",
+           "Sí: siempre hay paradoja",
+           "Sí: sacó fotos"
+          ],
+          "ayuda": "La paradoja aparece si se altera el pasado."
+         },
+         {
+          "cons": "Un chico viaja al pasado y evita el accidente que lo hizo querer construir la máquina.",
+          "ops": [
+           "Sí: si no hay accidente, no hay motivo para el viaje",
+           "No: es un final feliz",
+           "No: nadie viaja"
+          ],
+          "ayuda": "El viaje elimina su propia causa."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Paradoja temporal",
+        "texto": "La paradoja temporal es la contradicción lógica que surge cuando un viaje al pasado altera los hechos que hicieron posible ese mismo viaje."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los relatos resuelven las paradojas de distintas maneras: algunos dicen que el pasado no se puede cambiar, otros inventan líneas de tiempo paralelas. Para el lector, la gracia está en seguir el razonamiento y descubrir dónde está la contradicción."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Un viaje que destruye su propia causa.",
+         "Algunas historias: el pasado no cambia.",
+         "Otras: líneas de tiempo paralelas."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Viajes espaciales y encuentros",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Relato",
+        "items": [
+         {
+          "nombre": "La guerra de los mundos",
+          "texto": "En la novela de Wells (1898), {{los marcianos llegan a Inglaterra con máquinas de guerra imposibles de detener|El encuentro como invasión.}}. {{Los humanos no logran vencerlos|La tecnología terrestre fracasa.}}, pero {{los invasores mueren por las bacterias de la Tierra, contra las que no tienen defensas|Un giro: la naturaleza decide.}}.",
+          "cierre": "Wells escribió en plena época de conquistas coloniales: ¿y si ahora los invadidos fuéramos nosotros?"
+         },
+         {
+          "nombre": "El viaje a Marte",
+          "texto": "En la novela de Holmberg (1875), {{un porteño viaja a Marte|El viaje espacial.}} y {{encuentra una sociedad con costumbres que le sirven para mirar con otros ojos la Buenos Aires de su tiempo|El otro planeta como espejo.}}.",
+          "cierre": "Ir lejos para ver mejor lo propio."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué tipo de encuentro con extraterrestres plantea cada relato?",
+        "cajas": [
+         "Amenaza",
+         "Diálogo"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Naves gigantes atacan las capitales del mundo",
+          0
+         ],
+         [
+          "Unos visitantes secuestran el ganado de una estancia",
+          0
+         ],
+         [
+          "Una especie quiere quedarse con el agua de la Tierra",
+          0
+         ],
+         [
+          "Una científica aprende el idioma de los visitantes para entenderlos",
+          1
+         ],
+         [
+          "Unos extraterrestres piden ayuda porque su planeta se apaga",
+          1
+         ],
+         [
+          "Un chico se hace amigo de un ser que cayó en su campo",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Encuentro con el otro",
+        "texto": "El encuentro con extraterrestres es un tema de la ciencia ficción que, más allá de los seres de otros planetas, plantea cómo reaccionamos frente a quien es distinto: con miedo o con diálogo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El viaje espacial y el contacto con otros seres permiten mirar a la humanidad desde afuera. Algunas historias muestran invasiones y miedo; otras, intentos de comunicación. En todos los casos, el otro planeta funciona como un espejo de nuestras propias costumbres y temores."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "El viaje espacial muestra la Tierra desde afuera.",
+         "El encuentro puede ser amenaza o diálogo.",
+         "El otro planeta es un espejo de lo nuestro."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Viaje en el tiempo",
+      "definicion": "es el tema en que un personaje se traslada al pasado o al futuro gracias a una máquina o un descubrimiento.",
+      "ejemplo": "La máquina del tiempo, de Wells"
+     },
+     {
+      "concepto": "Paradoja temporal",
+      "definicion": "es la contradicción que surge cuando un viaje al pasado altera lo que hizo posible ese viaje.",
+      "ejemplo": "Leo impide que sus padres se conozcan"
+     },
+     {
+      "concepto": "Viaje espacial",
+      "definicion": "es el tema que lleva a los personajes a otros planetas y permite mirar la Tierra desde afuera.",
+      "ejemplo": "Un porteño viaja a Marte"
+     },
+     {
+      "concepto": "Encuentro con el otro",
+      "definicion": "es el contacto con seres de otros planetas, que plantea cómo reaccionamos ante lo distinto.",
+      "ejemplo": "Los marcianos de La guerra de los mundos"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un científico viaja al futuro en una máquina y descubre a la humanidad dividida en dos especies. ¿Qué tema de la ciencia ficción es?",
+    "Leo viaja al pasado y, sin querer, impide que sus padres se conozcan. ¿Qué contradicción se produce?",
+    "En La guerra de los mundos, los marcianos invasores no son vencidos por las armas. ¿Qué los vence?",
+    "Sofi dice que los relatos de extraterrestres solo cuentan batallas. ¿Qué otro tipo de encuentro pueden plantear?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "recordar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "viaje en el tiempo",
+     "el viaje en el tiempo",
+     "viajes en el tiempo"
+    ],
+    [
+     "paradoja temporal",
+     "una paradoja",
+     "paradoja"
+    ],
+    [
+     "las bacterias",
+     "bacterias",
+     "las bacterias de la tierra"
+    ],
+    [
+     "de diálogo",
+     "diálogo",
+     "dialogo",
+     "comunicación",
+     "amistad"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "El viaje en el tiempo, como en la novela de Wells.",
+     "Una paradoja temporal: si no nace, no pudo viajar.",
+     "Las bacterias de la Tierra, contra las que no tienen defensas.",
+     "De diálogo: intentar comunicarse y entender al otro."
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "¿Ciencia ficción o maravilloso? Fijate en cómo se explica lo imposible.",
+    "o": {
+     "elementos": [
+      "Un traje con nanotecnología permite volar",
+      "Una escoba mágica permite volar",
+      "Una cámara criogénica congela a un astronauta",
+      "Un hechizo duerme a la princesa cien años"
+     ],
+     "categorias": [
+      "Ciencia ficción",
+      "Maravilloso"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Un traje con nanotecnología permite volar": "Ciencia ficción",
+      "Una escoba mágica permite volar": "Maravilloso",
+      "Una cámara criogénica congela a un astronauta": "Ciencia ficción",
+      "Un hechizo duerme a la princesa cien años": "Maravilloso"
+     }
+    },
+    "e": "Ciencia o magia.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada pionero con su obra.",
+    "o": {
+     "izquierda": [
+      "Mary Shelley",
+      "Julio Verne",
+      "H. G. Wells",
+      "Eduardo Holmberg"
+     ],
+     "derecha": [
+      "el viaje de un porteño a Marte",
+      "La máquina del tiempo",
+      "De la Tierra a la Luna",
+      "Frankenstein"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Mary Shelley": "Frankenstein",
+      "Julio Verne": "De la Tierra a la Luna",
+      "H. G. Wells": "La máquina del tiempo",
+      "Eduardo Holmberg": "el viaje de un porteño a Marte"
+     }
+    },
+    "e": "Los grandes nombres del siglo diecinueve.",
+    "n": "recordar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un cuento empieza con la pregunta: «¿Qué pasaría si las personas pudieran vivir doscientos años?». ¿Qué rasgo del género muestra?",
+    "o": [
+     "Parte de un «¿qué pasaría si…?» sobre un avance posible",
+     "Explica todo con magia",
+     "Cuenta un hecho histórico real"
+    ],
+    "r": {
+     "correcta": "Parte de un «¿qué pasaría si…?» sobre un avance posible"
+    },
+    "e": "La pregunta pone en marcha el relato.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice que todo relato con extraterrestres es ciencia ficción, aunque los extraterrestres lleguen por un hechizo. ¿Qué le contestás?",
+    "o": [
+     "Lo que define al género es la explicación científica",
+     "Tiene razón: alcanza con extraterrestres",
+     "Solo es ciencia ficción si pasa en el futuro"
+    ],
+    "r": {
+     "correcta": "Lo que define al género es la explicación científica"
+    },
+    "e": "Si lo explica la magia, es maravilloso.",
+    "n": "error"
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "¿Utopía o distopía?",
+    "o": {
+     "elementos": [
+      "Todos deciden juntos y nadie pasa hambre",
+      "Las emociones se controlan con pastillas obligatorias",
+      "Las personas viven en armonía con la naturaleza",
+      "Una cámara vigila cada casa"
+     ],
+     "categorias": [
+      "Utopía",
+      "Distopía"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Todos deciden juntos y nadie pasa hambre": "Utopía",
+      "Las emociones se controlan con pastillas obligatorias": "Distopía",
+      "Las personas viven en armonía con la naturaleza": "Utopía",
+      "Una cámara vigila cada casa": "Distopía"
+     }
+    },
+    "e": "Sociedad ideal o control disfrazado.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Qué aspecto del mundo posible es?",
+    "o": {
+     "elementos": [
+      "Los autos se manejan solos",
+      "Está prohibido salir de la cúpula",
+      "Se saludan tocándose las palmas",
+      "Un implante traduce idiomas"
+     ],
+     "categorias": [
+      "Tecnología",
+      "Reglas",
+      "Costumbres"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Los autos se manejan solos": "Tecnología",
+      "Está prohibido salir de la cúpula": "Reglas",
+      "Se saludan tocándose las palmas": "Costumbres",
+      "Un implante traduce idiomas": "Tecnología"
+     }
+    },
+    "e": "Las piezas de un mundo posible.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En un relato, la ciudad no tiene agua y todos la reciben racionada. En una escena, la protagonista llena una pileta para nadar sin explicación. ¿Qué falla?",
+    "o": [
+     "La coherencia: rompe la regla del mundo sin explicarlo",
+     "Nada: es un detalle sin importancia",
+     "La pileta es una utopía"
+    ],
+    "r": {
+     "correcta": "La coherencia: rompe la regla del mundo sin explicarlo"
+    },
+    "e": "Una regla rota necesita explicación.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Lucía dice que una distopía es cualquier relato triste. ¿Qué le falta entender?",
+    "o": [
+     "Que la distopía es una sociedad de control que parece perfecta",
+     "Que las distopías son siempre alegres",
+     "Que la distopía es un tipo de robot"
+    ],
+    "r": {
+     "correcta": "Que la distopía es una sociedad de control que parece perfecta"
+    },
+    "e": "Lo que la define es el control disfrazado de perfección.",
+    "n": "error"
+   }
+  ],
+  "3": [
+   {
+    "t": "classify",
+    "p": "¿El relato funciona como anticipación o como advertencia?",
+    "o": {
+     "elementos": [
+      "Un escritor de 1870 imagina un submarino eléctrico",
+      "Una ciudad donde las máquinas deciden quién trabaja",
+      "Una novela antigua imagina videollamadas",
+      "Un mundo donde comprar aire es obligatorio"
+     ],
+     "categorias": [
+      "Anticipación",
+      "Advertencia"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Un escritor de 1870 imagina un submarino eléctrico": "Anticipación",
+      "Una ciudad donde las máquinas deciden quién trabaja": "Advertencia",
+      "Una novela antigua imagina videollamadas": "Anticipación",
+      "Un mundo donde comprar aire es obligatorio": "Advertencia"
+     }
+    },
+    "e": "Imaginar antes o mostrar un riesgo.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená las tres leyes de la robótica de Asimov, de la más importante a la menos importante.",
+    "o": [
+     "Obedecer a los humanos",
+     "Protegerse a sí mismo",
+     "No dañar a un ser humano"
+    ],
+    "r": {
+     "orden": [
+      "No dañar a un ser humano",
+      "Obedecer a los humanos",
+      "Protegerse a sí mismo"
+     ]
+    },
+    "e": "El orden decide qué ley gana cuando chocan.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un robot recibe la orden de abrir una puerta, pero detrás hay una persona que se golpearía. No la abre. ¿Qué ley aplica?",
+    "o": [
+     "La primera: no dañar a un humano está por encima de obedecer",
+     "La segunda: siempre hay que obedecer",
+     "La tercera: debe protegerse"
+    ],
+    "r": {
+     "correcta": "La primera: no dañar a un humano está por encima de obedecer"
+    },
+    "e": "Las leyes tienen un orden de importancia.",
+    "n": "analizar"
+   },
+   {
+    "t": "keywords",
+    "p": "¿Por qué decimos que los relatos de robots hablan, en el fondo, de los seres humanos? Explicalo con un ejemplo.",
+    "o": {
+     "ayuda": "Pensá en las preguntas que plantean."
+    },
+    "r": {
+     "grupos": [
+      [
+       "human*",
+       "persona*",
+       "nosotros",
+       "vínculo*",
+       "trabajo",
+       "sentir",
+       "emoci*"
+      ],
+      [
+       "robot*",
+       "máquina*",
+       "androide*",
+       "inteligencia artificial",
+       "ia"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Por ejemplo: un androide que pide ser tratado como persona nos hace preguntar qué nos hace humanos.",
+    "n": "analizar"
+   }
+  ],
+  "4": [
+   {
+    "t": "matching",
+    "p": "Uní cada relato con su tema.",
+    "o": {
+     "izquierda": [
+      "Un científico viaja al año 802.701",
+      "Marcianos invaden Inglaterra",
+      "Un porteño viaja a Marte",
+      "Un chico impide que sus padres se conozcan"
+     ],
+     "derecha": [
+      "paradoja temporal",
+      "viaje espacial",
+      "encuentro con extraterrestres",
+      "viaje en el tiempo"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Un científico viaja al año 802.701": "viaje en el tiempo",
+      "Marcianos invaden Inglaterra": "encuentro con extraterrestres",
+      "Un porteño viaja a Marte": "viaje espacial",
+      "Un chico impide que sus padres se conozcan": "paradoja temporal"
+     }
+    },
+    "e": "Los grandes temas del nivel.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená la paradoja de Leo como ocurre en el tiempo.",
+    "o": [
+     "Leo nace en 2055",
+     "En 2080 construye la máquina",
+     "Viaja a 2040 e impide que sus padres se conozcan",
+     "En 2040 sus padres iban a conocerse"
+    ],
+    "r": {
+     "orden": [
+      "En 2040 sus padres iban a conocerse",
+      "Leo nace en 2055",
+      "En 2080 construye la máquina",
+      "Viaja a 2040 e impide que sus padres se conozcan"
+     ]
+    },
+    "e": "Por qué el viaje se vuelve imposible.",
+    "n": "analizar"
+   },
+   {
+    "t": "short_answer",
+    "p": "En La guerra de los mundos, los marcianos no son vencidos por las armas humanas. ¿Qué los vence?",
+    "r": {
+     "acepta": [
+      "las bacterias",
+      "bacterias",
+      "las bacterias de la tierra",
+      "los microbios",
+      "microbios"
+     ]
+    },
+    "e": "Un giro: la naturaleza decide.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un relato muestra a una científica que aprende el idioma de unos visitantes para entenderlos. ¿Qué tipo de encuentro plantea?",
+    "o": [
+     "Un encuentro de diálogo con el otro",
+     "Una invasión amenazante",
+     "Una paradoja temporal"
+    ],
+    "r": {
+     "correcta": "Un encuentro de diálogo con el otro"
+    },
+    "e": "Comunicarse en lugar de pelear.",
+    "n": "analizar"
+   }
+  ],
+  "5": [
+   {
+    "t": "classify",
+    "p": "¿Qué tema de la ciencia ficción aparece?",
+    "o": {
+     "elementos": [
+      "Una máquina que obedece y cuida a una nena",
+      "Una ciudad perfecta donde todo se vigila",
+      "Un viajero llega al siglo XXX",
+      "Una nave llega a una luna de Júpiter"
+     ],
+     "categorias": [
+      "Robots",
+      "Distopía",
+      "Viaje en el tiempo",
+      "Viaje espacial"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Una máquina que obedece y cuida a una nena": "Robots",
+      "Una ciudad perfecta donde todo se vigila": "Distopía",
+      "Un viajero llega al siglo XXX": "Viaje en el tiempo",
+      "Una nave llega a una luna de Júpiter": "Viaje espacial"
+     }
+    },
+    "e": "Repasá los temas de la misión.",
+    "n": "analizar"
+   },
+   {
+    "t": "odd_one_out",
+    "p": "Tres argumentos son de ciencia ficción y uno no. ¿Cuál no?",
+    "o": [
+     "Un chip permite grabar los sueños",
+     "Una colonia vive bajo una cúpula en Marte",
+     "Un robot aprende a mentir",
+     "Un hada concede tres deseos"
+    ],
+    "r": {
+     "correcta": "Un hada concede tres deseos"
+    },
+    "e": "La magia es del maravilloso.",
+    "n": "analizar"
+   },
+   {
+    "t": "multi_select",
+    "p": "Una novela muestra una ciudad donde nadie trabaja porque todo lo hacen los robots, y la gente ya no sabe hacer nada. Elegí las DOS cosas que hace el relato.",
+    "o": [
+     "Advierte sobre depender de la tecnología",
+     "Imagina las consecuencias sociales de un invento",
+     "Explica todo con magia",
+     "Cuenta un hecho histórico real"
+    ],
+    "r": {
+     "correctas": [
+      "Advierte sobre depender de la tecnología",
+      "Imagina las consecuencias sociales de un invento"
+     ]
+    },
+    "e": "Advertencia y consecuencias humanas.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué decimos que la ciencia ficción habla del presente, aunque transcurra en el futuro?",
+    "o": [
+     "Porque lleva al extremo preocupaciones y posibilidades de hoy",
+     "Porque siempre ocurre en la actualidad",
+     "Porque no tiene inventos"
+    ],
+    "r": {
+     "correcta": "Porque lleva al extremo preocupaciones y posibilidades de hoy"
+    },
+    "e": "El futuro es una lente para mirar el presente.",
+    "n": "analizar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué distingue a la ciencia ficción del relato maravilloso?",
+    "o": [
+     "Explica lo extraordinario con ciencia, aunque sea inventada",
+     "Tiene personajes imaginarios",
+     "Ocurre siempre en otro planeta"
+    ],
+    "r": {
+     "correcta": "Explica lo extraordinario con ciencia, aunque sea inventada"
+    },
+    "e": "La diferencia está en la explicación.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "¿Ciencia ficción o maravilloso?",
+    "o": {
+     "elementos": [
+      "Un implante permite hablar con los animales",
+      "Un hada convierte una calabaza en carruaje",
+      "Una cápsula viaja a la Luna disparada por un cañón"
+     ],
+     "categorias": [
+      "Ciencia ficción",
+      "Maravilloso"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Un implante permite hablar con los animales": "Ciencia ficción",
+      "Un hada convierte una calabaza en carruaje": "Maravilloso",
+      "Una cápsula viaja a la Luna disparada por un cañón": "Ciencia ficción"
+     }
+    },
+    "e": "Ciencia o magia.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "matching",
+    "p": "Uní cada pionero con su obra.",
+    "o": {
+     "izquierda": [
+      "Mary Shelley",
+      "Julio Verne",
+      "H. G. Wells"
+     ],
+     "derecha": [
+      "La máquina del tiempo",
+      "De la Tierra a la Luna",
+      "Frankenstein"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Mary Shelley": "Frankenstein",
+      "Julio Verne": "De la Tierra a la Luna",
+      "H. G. Wells": "La máquina del tiempo"
+     }
+    },
+    "e": "Los pioneros del género.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "¿Utopía o distopía?",
+    "o": {
+     "elementos": [
+      "Nadie pasa hambre y todos deciden",
+      "Está prohibido leer libros",
+      "Un gobierno escucha cada conversación"
+     ],
+     "categorias": [
+      "Utopía",
+      "Distopía"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Nadie pasa hambre y todos deciden": "Utopía",
+      "Está prohibido leer libros": "Distopía",
+      "Un gobierno escucha cada conversación": "Distopía"
+     }
+    },
+    "e": "Sociedad ideal o control.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "En un mundo sin gravedad, un personaje apoya un vaso de agua en la mesa y el agua queda quieta. ¿Qué problema tiene el relato?",
+    "o": [
+     "Rompe su coherencia interna",
+     "Es una distopía",
+     "No tiene ningún problema"
+    ],
+    "r": {
+     "correcta": "Rompe su coherencia interna"
+    },
+    "e": "Sin gravedad, el agua flotaría.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "short_answer",
+    "p": "¿Cómo se llama la sociedad imaginada que parece perfecta pero controla y oprime a las personas?",
+    "r": {
+     "acepta": [
+      "distopía",
+      "distopia",
+      "una distopía"
+     ]
+    },
+    "e": "La distopía.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "ordering",
+    "p": "Ordená las leyes de la robótica de Asimov por orden de importancia.",
+    "o": [
+     "Obedecer",
+     "Protegerse",
+     "No dañar a un humano"
+    ],
+    "r": {
+     "orden": [
+      "No dañar a un humano",
+      "Obedecer",
+      "Protegerse"
+     ]
+    },
+    "e": "El orden decide cuál gana.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "classify",
+    "p": "¿Anticipación o advertencia?",
+    "o": {
+     "elementos": [
+      "Imaginar submarinos antes de que existan",
+      "Mostrar una ciudad donde todo se vigila",
+      "Imaginar viajes a la Luna en 1865"
+     ],
+     "categorias": [
+      "Anticipación",
+      "Advertencia"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Imaginar submarinos antes de que existan": "Anticipación",
+      "Mostrar una ciudad donde todo se vigila": "Advertencia",
+      "Imaginar viajes a la Luna en 1865": "Anticipación"
+     }
+    },
+    "e": "Imaginar antes o mostrar riesgos.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿De dónde viene la palabra «robot»?",
+    "o": [
+     "De una obra de teatro de Karel Čapek (1920)",
+     "De un invento de Julio Verne",
+     "De un laboratorio de Estados Unidos"
+    ],
+    "r": {
+     "correcta": "De una obra de teatro de Karel Čapek (1920)"
+    },
+    "e": "Nació en la literatura.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Un viajero va al pasado y evita el accidente que lo llevó a construir su máquina del tiempo. ¿Qué se produce?",
+    "o": [
+     "Una paradoja temporal",
+     "Una utopía",
+     "Un encuentro con extraterrestres"
+    ],
+    "r": {
+     "correcta": "Una paradoja temporal"
+    },
+    "e": "El viaje elimina su propia causa.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
+    "p": "¿Encuentro de amenaza o de diálogo?",
+    "o": {
+     "elementos": [
+      "Naves atacan las capitales del mundo",
+      "Una científica aprende el idioma de los visitantes",
+      "Unos seres piden ayuda porque su planeta se apaga"
+     ],
+     "categorias": [
+      "Amenaza",
+      "Diálogo"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Naves atacan las capitales del mundo": "Amenaza",
+      "Una científica aprende el idioma de los visitantes": "Diálogo",
+      "Unos seres piden ayuda porque su planeta se apaga": "Diálogo"
+     }
+    },
+    "e": "Cómo reaccionamos ante lo distinto.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Para qué le sirve a Wells el viaje al año 802.701 en La máquina del tiempo?",
+    "o": [
+     "Para criticar la desigualdad de su propia época",
+     "Para explicar cómo funciona un reloj",
+     "Para mostrar un futuro sin cambios"
+    ],
+    "r": {
+     "correcta": "Para criticar la desigualdad de su propia época"
+    },
+    "e": "El futuro como lente del presente.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Explicá con tus palabras qué es la ciencia ficción y por qué decimos que habla del presente aunque ocurra en el futuro.",
+    "o": {
+     "ayuda": "Definí el género y explicá la relación con el presente."
+    },
+    "r": {
+     "grupos": [
+      [
+       "ciencia",
+       "científic*",
+       "tecnolog*",
+       "invento*",
+       "avance*"
+      ],
+      [
+       "futuro"
+      ],
+      [
+       "presente",
+       "hoy",
+       "actual*",
+       "nuestra época",
+       "advert*",
+       "preocup*"
+      ]
+     ],
+     "minimo": 3
+    },
+    "e": "Por ejemplo: imagina avances científicos y sus consecuencias; aunque ocurra en el futuro, muestra preocupaciones de hoy.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
 }

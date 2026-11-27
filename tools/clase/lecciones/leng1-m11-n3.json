@@ -2,165 +2,159 @@
  "slug": "leng1-m11-n3",
  "step_id": "73cdc080-b436-4934-a959-071f22710e5a",
  "materia": "Lengua y Literatura I",
- "titulo": "Rima y verso libre",
+ "titulo": "Ciencia, tecnología y sociedad",
  "sub": "Lengua y Literatura I · Misión 11 · Nivel 3",
  "escenas": [
   {
    "t": "chat",
    "contacto": {
-    "nombre": "Lu",
-    "emoji": "👧"
+    "nombre": "Asistente IA",
+    "emoji": "🤖"
    },
    "mensajes": [
     {
-     "yo": false,
-     "txt": "Sol rima con farol 🌞"
-    },
-    {
      "yo": true,
-     "txt": "¿Y gato con lado?"
+     "txt": "¿Me hacés la tarea?"
     },
     {
      "yo": false,
-     "txt": "Casi: solo coinciden las vocales"
+     "txt": "Puedo ayudarte a entenderla. ¿Por dónde empezamos?"
     }
    ],
-   "titulo": "RIMA Y VERSO LIBRE",
-   "sub": "consonante y asonante",
+   "titulo": "CIENCIA Y SOCIEDAD",
+   "sub": "robots, inventos y advertencias",
    "voz": [
-    "Lu dice: sol rima con farol.",
-    "Juan: ¿y gato con lado?",
-    "Lu: casi, solo coinciden las vocales.",
-    "Hoy: *rima y verso libre*."
+    "Hoy hablar con una inteligencia artificial es algo común, pero hace cien años era pura ciencia ficción.",
+    "Fijate que la máquina no hace la tarea: propone ayudar a entenderla.",
+    "El género lleva más de un siglo preguntándose qué pasa cuando las máquinas piensan. Hoy vemos cómo la ciencia ficción discute la relación entre *tecnología y sociedad*."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Rima",
-   "texto": "Coincidencia de sonidos al final del verso",
-   "emoji": "🎶",
+   "t": "datoloco",
+   "texto": "La palabra «robot» la inventó un escritor: Karel Čapek, en una obra de teatro de 1920. Viene de una palabra checa que significa «trabajo forzado».",
+   "emoji": "🤖",
    "voz": [
-    "La *rima* es la coincidencia de sonidos al final de los versos.",
-    "Da música al poema."
+    "¿Sabías que la palabra *robot* la inventó un escritor?",
+    "Fue el checo Karel Čapek, en una obra de teatro de 1920. Viene de una palabra que significa «trabajo forzado», y en su obra los robots terminan rebelándose."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "LAS LEYES DE LOS ROBOTS",
+   "items": [
+    "No dañar a ningún ser humano",
+    "Obedecer a los humanos",
+    "Protegerse a sí mismo"
+   ],
+   "voz": [
+    "A mediados del siglo veinte, el escritor Isaac Asimov imaginó tres leyes que todo robot debía cumplir, en este orden.",
+    "Primera: no dañar a ningún ser humano.",
+    "Segunda: obedecer a los humanos, salvo que eso dañe a alguien.",
+    "Tercera: protegerse a sí mismo, siempre que no rompa las otras dos. Sus cuentos muestran qué pasa cuando esas leyes chocan."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "Un invento nuevo",
+    "emoji": "💡"
+   },
+   "items": [
+    "cambia el trabajo",
+    "cambia las relaciones",
+    "trae nuevos peligros"
+   ],
+   "voz": [
+    "La ciencia ficción se pregunta por las *consecuencias* de un invento.",
+    "Puede cambiar el trabajo: ¿quién hace lo que hacen las máquinas?",
+    "Puede cambiar las relaciones: ¿cómo nos comunicamos?",
+    "Y puede traer peligros nuevos que nadie había previsto."
    ]
   },
   {
    "t": "comparar",
    "a": {
-    "cab": "CONSONANTE",
-    "texto": "Coinciden todos los sonidos: sol, farol",
-    "emoji": "🔔"
+    "cab": "Anticipación",
+    "texto": "imagina inventos que después existen",
+    "emoji": "🔭"
    },
    "b": {
-    "cab": "ASONANTE",
-    "texto": "Coinciden solo las vocales: gato, lado",
-    "emoji": "🔕"
+    "cab": "Advertencia",
+    "texto": "muestra los riesgos de un avance",
+    "emoji": "⚠️"
    },
-   "signo": "vs",
+   "signo": "+",
    "voz": [
-    "Dos tipos de rima.",
-    "*Consonante*: coinciden todos los sonidos.",
-    "*Asonante*: coinciden solo las vocales."
-   ]
-  },
-  {
-   "t": "tabla",
-   "titulo": "CÓMO SE CLASIFICA",
-   "columnas": [
-    "",
-    ""
-   ],
-   "filas": [
-    [
-     "CONSONANTE",
-     "sol / farol, canción / corazón"
-    ],
-    [
-     "ASONANTE",
-     "gato / lado, casa / mesa"
-    ]
-   ],
-   "voz": [
-    "¿Consonante o asonante?",
-    "*Sol / farol* y *canción / corazón*: consonantes.",
-    "*Gato / lado* y *casa / mesa*: asonantes."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Verso libre",
-   "texto": "Sin rima ni medida fija",
-   "emoji": "🕊️",
-   "voz": [
-    "El *verso libre* no tiene rima ni medida fija.",
-    "El poeta decide según el ritmo y la emoción."
+    "Por eso el género cumple dos funciones.",
+    "La *anticipación*: Verne imaginó submarinos y viajes a la Luna antes de que existieran.",
+    "La *advertencia*: muchas historias muestran los riesgos de un avance para que lo pensemos antes de que ocurra."
    ]
   },
   {
    "t": "pregunta",
-   "pregunta": "¿Todos los poemas tienen que rimar?",
+   "pregunta": "Un cuento muestra una ciudad donde las máquinas deciden todo y nadie sabe ya cómo funcionan. ¿Qué función cumple?",
    "opciones": [
-    "No",
-    "Sí",
-    "Solo los de amor"
+    "Advertencia",
+    "Anticipación",
+    "Ninguna"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿todos los poemas tienen que rimar?",
-    "¿No, sí o solo los de amor?",
-    "*No*: hay verso libre."
+    "Pregunta: un cuento muestra una ciudad donde las máquinas deciden todo y nadie sabe ya cómo funcionan. ¿Qué función cumple?",
+    "Pensá qué quiere que pensemos.",
+    "*Advertencia*: nos muestra un riesgo de depender por completo de la tecnología."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Todo poema rima",
-     "bien": "Hay verso libre"
+     "mal": "La ciencia ficción está en contra de la tecnología",
+     "bien": "Muestra posibilidades y riesgos para pensarlos"
     },
     {
-     "mal": "Asonante igual a consonante",
-     "bien": "Asonante solo vocales"
+     "mal": "Si un invento del relato no existe, el relato falló",
+     "bien": "Lo que importa es lo que el invento dice de las personas"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Creer que *todo poema rima*.",
-    "Y confundir *asonante* con *consonante*."
+    "Dos errores para evitar.",
+    "La ciencia ficción no está en contra de la tecnología: muestra posibilidades y riesgos para que los pensemos.",
+    "Y no importa si el invento existe o no: importa lo que dice sobre las personas."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "La *rima* son sonidos finales.",
-    "*Consonante*: todos coinciden.",
-    "*Asonante*: solo las vocales.",
-    "Y el *verso libre* no rima.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "RIMA",
-     "sonidos finales"
+     "Robot",
+     "palabra inventada por Čapek en 1920"
     ],
     [
-     "CONSONANTE",
-     "todos"
+     "Leyes de Asimov",
+     "no dañar, obedecer, protegerse"
     ],
     [
-     "ASONANTE",
-     "vocales"
+     "Anticipación",
+     "imaginar inventos antes de que existan"
     ],
     [
-     "VERSO LIBRE",
-     "sin rima fija"
+     "Advertencia",
+     "mostrar riesgos de un avance"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "La ciencia ficción piensa la tecnología y sus efectos.",
+    "El robot.",
+    "Las leyes de Asimov.",
+    "La anticipación.",
+    "Y la advertencia. ¡A practicar!"
+   ]
   }
  ]
 }

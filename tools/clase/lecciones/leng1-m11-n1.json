@@ -2,208 +2,176 @@
  "slug": "leng1-m11-n1",
  "step_id": "be53950a-a3e7-4ca1-932f-ecd2d657b98e",
  "materia": "Lengua y Literatura I",
- "titulo": "Leo poemas en voz alta",
+ "titulo": "Qué es la ciencia ficción",
  "sub": "Lengua y Literatura I · Misión 11 · Nivel 1",
  "escenas": [
   {
-   "t": "gancho",
-   "grande": "Cómo suena",
-   "emoji": "🎙️",
-   "final": "importa tanto como qué dice",
-   "titulo": "LEO POEMAS EN VOZ ALTA",
-   "sub": "versos, pausas y entonación",
+   "t": "reto",
+   "texto": "¿Qué pasaría si las personas pudieran borrar sus recuerdos tristes con una pastilla?",
+   "segundos": 8,
+   "respuesta": "Esa pregunta ya es el comienzo de un relato de ciencia ficción",
+   "emoji": "💊",
+   "titulo": "CIENCIA FICCIÓN",
+   "sub": "¿qué pasaría si…?",
    "voz": [
-    "Un poema no es solo lo que dice.",
-    "Importa *cómo suena*.",
-    "Hoy: *leo poemas en voz alta*."
+    "Reto: ¿qué pasaría si las personas pudieran borrar sus recuerdos tristes con una pastilla?",
+    "Ocho segundos para imaginar.",
+    "Seguro pensaste en ventajas y en peligros. Esa pregunta ya es el comienzo de un relato de *ciencia ficción*."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Verso",
-   "texto": "Cada línea de un poema",
-   "emoji": "📜",
+   "palabra": "Ciencia ficción",
+   "texto": "Género que imagina, con una base científica o tecnológica, cómo cambiarían las personas y el mundo ante un avance o un descubrimiento.",
+   "emoji": "🚀",
    "voz": [
-    "Cada línea de un poema es un *verso*.",
-    "Un grupo de versos es una *estrofa*."
+    "La *ciencia ficción* imagina cómo cambiarían las personas y el mundo ante un avance científico o tecnológico.",
+    "Lo que la distingue es que intenta explicar lo extraordinario con la ciencia, aunque sea una ciencia inventada."
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "PAUSAS",
-   "items": [
-    {
-     "cab": "COMA",
-     "txt": "Corta"
-    },
-    {
-     "cab": "PUNTO",
-     "txt": "Larga"
-    },
-    {
-     "cab": "FIN DE VERSO",
-     "txt": "Breve"
-    }
-   ],
-   "voz": [
-    "Las pausas.",
-    "La *coma*: pausa corta.",
-    "El *punto*: pausa larga.",
-    "El *fin de verso* sin signo: pausa breve."
-   ]
-  },
-  {
-   "t": "causas",
-   "causa": {
-    "txt": "Entonación según la emoción",
-    "emoji": "🎙️"
+   "t": "comparar",
+   "a": {
+    "cab": "Maravilloso",
+    "texto": "una varita mágica convierte el agua en vino",
+    "emoji": "🪄"
    },
-   "items": [
-    {
-     "txt": "Ternura: voz suave",
-     "emoji": "🌸"
-    },
-    {
-     "txt": "Enojo: voz fuerte",
-     "emoji": "🔥"
-    },
-    {
-     "txt": "Tristeza: voz lenta",
-     "emoji": "🌧️"
-    }
-   ],
+   "b": {
+    "cab": "Ciencia ficción",
+    "texto": "una máquina reordena las moléculas del agua",
+    "emoji": "🔬"
+   },
+   "signo": "≠",
    "voz": [
-    "Cambiá la voz según lo que transmite.",
-    "Si es tierno, *suave*.",
-    "Si es enojado, *fuerte*.",
-    "Si es triste, *lenta*."
+    "Compará dos relatos donde pasa algo imposible.",
+    "En el *maravilloso*, una varita mágica lo hace, y nadie pide explicaciones.",
+    "En la *ciencia ficción*, una máquina lo logra reordenando moléculas: hay una explicación que suena científica."
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
+   "t": "linea",
+   "titulo": "LOS PIONEROS",
+   "eventos": [
     {
-     "cab": "PAUSA CORTA",
-     "emoji": "➖"
+     "fecha": "1818",
+     "txt": "Mary Shelley: Frankenstein",
+     "emoji": "⚡"
     },
     {
-     "cab": "PAUSA LARGA",
-     "emoji": "⏸️"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Coma",
-     "caja": 0
+     "fecha": "1865",
+     "txt": "Julio Verne: De la Tierra a la Luna",
+     "emoji": "🌕"
     },
     {
-     "txt": "Punto",
-     "caja": 1
-    }
-   ],
-   "voz": [
-    "¿Pausa corta o larga?",
-    "La *coma*: corta.",
-    "El *punto*: larga."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "LEER",
-   "items": [
-    {
-     "txt": "Cada línea es un verso.",
-     "emoji": "1️⃣"
+     "fecha": "1875",
+     "txt": "Holmberg: un viaje a Marte, en Buenos Aires",
+     "emoji": "🇦🇷"
     },
     {
-     "txt": "Pausa breve al terminar el primero.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Voz suave: la imagen es tierna.",
-     "emoji": "3️⃣"
+     "fecha": "1895",
+     "txt": "H. G. Wells: La máquina del tiempo",
+     "emoji": "⏳"
     }
    ],
    "voz": [
-    "Resolvamos un caso: Leé con pausas: «La luna es un barco de papel / que navega sobre el techo de la noche».",
-    "Cada línea es un verso.",
-    "Pausa breve al terminar el primero.",
-    "Voz suave: la imagen es tierna."
+    "En 1818, Mary Shelley imagina a un científico que da vida a un ser hecho de partes de cadáveres: *Frankenstein*.",
+    "En 1865, Julio Verne cuenta un viaje a la Luna en una enorme bala de cañón, casi cien años antes de que llegara el primer astronauta.",
+    "En 1875, el argentino Eduardo Holmberg publica el viaje de un porteño a Marte.",
+    "Y en 1895, H. G. Wells inventa *La máquina del tiempo*."
    ]
   },
   {
-   "t": "consejo",
-   "texto": "La primera para entender; la segunda para sentirlo.",
-   "emoji": "💡",
+   "t": "pizarra",
+   "titulo": "LA FÓRMULA",
+   "lineas": [
+    {
+     "txt": "¿Qué pasaría si…?",
+     "color": "sol",
+     "marca": "subraya"
+    },
+    {
+     "txt": "+ una explicación científica",
+     "color": "azul",
+     "marca": ""
+    },
+    {
+     "txt": "= consecuencias para las personas",
+     "color": "verde",
+     "marca": "circulo"
+    }
+   ],
    "voz": [
-    "Un consejo: La primera para entender; la segunda para sentirlo."
+    "Casi todo relato de ciencia ficción parte de una pregunta: *¿qué pasaría si…?*",
+    "Le suma una explicación que suene científica, para que el lector lo crea posible.",
+    "Y lo importante viene después: las *consecuencias* que ese cambio tiene para las personas."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "¿Cómo se llama cada línea de un poema?",
+   "t": "quiz4",
+   "pregunta": "Un cuento: una nena descubre que su perro habla porque un hada lo tocó. ¿Es ciencia ficción?",
    "opciones": [
-    "Verso",
-    "Párrafo",
-    "Capítulo"
+    "Sí",
+    "No: es maravilloso",
+    "Es un policial",
+    "Es épica"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
-    "Te toca: cada línea de un poema.",
-    "¿Verso, párrafo o capítulo?",
-    "*Verso*."
+    "Pregunta: un cuento cuenta que un perro habla porque un hada lo tocó. ¿Es ciencia ficción?",
+    "Fijate cómo se explica lo imposible.",
+    "No: lo explica la magia, así que es *maravilloso*. Si un chip le diera el habla, sí sería ciencia ficción."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Leer como una lista",
-     "bien": "Leer con ritmo y emoción"
+     "mal": "Ciencia ficción es cualquier historia con extraterrestres",
+     "bien": "Lo central es la explicación científica y sus consecuencias"
     },
     {
-     "mal": "Ignorar las pausas",
-     "bien": "Respetarlas"
+     "mal": "La ciencia ficción habla solo del futuro",
+     "bien": "Habla del presente: lo que nos preocupa hoy"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Leer un poema *como una lista*.",
-    "Y *ignorar las pausas*."
+    "Dos ideas equivocadas.",
+    "No alcanza con poner extraterrestres: lo central es la explicación científica y sus consecuencias.",
+    "Y aunque transcurra en el futuro, la ciencia ficción habla del *presente*: de lo que hoy nos ilusiona o nos preocupa."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *verso* es una línea.",
-    "La *estrofa* es un grupo de versos.",
-    "Respetá las *pausas*.",
-    "Y cambiá la *entonación* según la emoción.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "VERSO",
-     "línea"
+     "Ciencia ficción",
+     "avances imaginados y sus consecuencias"
     ],
     [
-     "ESTROFA",
-     "grupo"
+     "¿Qué pasaría si…?",
+     "la pregunta que la pone en marcha"
     ],
     [
-     "PAUSAS",
-     "por signos"
+     "Explicación científica",
+     "la distingue del maravilloso"
     ],
     [
-     "ENTONACIÓN",
-     "emoción"
+     "Pioneros",
+     "Shelley, Verne, Holmberg, Wells"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "La ciencia ficción es el género de las preguntas sobre el futuro.",
+    "Qué es.",
+    "La pregunta que la pone en marcha.",
+    "La explicación científica.",
+    "Y sus pioneros. ¡A practicar!"
+   ]
   }
  ]
 }
