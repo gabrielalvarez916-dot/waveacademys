@@ -1,0 +1,346 @@
+[
+ {
+  "que": "nivel 4: planificar y escribir un relato de terror (taller de escritor)",
+  "contenido": {
+   "niveles": {
+    "objetivo": "Vas a planificar y escribir un relato de miedo propio: elegís escenario, narrador, conflicto y final.",
+    "vas_a_ver": [
+     "Planificar",
+     "Estructura",
+     "Escribir",
+     "Revisar"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Planificar",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Plan del relato",
+        "texto": "Antes de escribir decidí: <b>dónde</b> pasa, <b>quién cuenta</b>, <b>qué amenaza</b> aparece y <b>cómo termina</b>."
+       },
+       {
+        "tipo": "importante",
+        "titulo": "Idea clave",
+        "texto": "Un plan corto evita perderse a mitad del cuento."
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Estructura",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Partes del relato",
+        "columnas": [
+         "Parte",
+         "Qué pasa"
+        ],
+        "filas": [
+         [
+          "Inicio",
+          "Se presenta el lugar y el personaje"
+         ],
+         [
+          "Conflicto",
+          "Aparece la amenaza"
+         ],
+         [
+          "Clímax",
+          "El momento de más tensión"
+         ],
+         [
+          "Final",
+          "Se resuelve o queda abierto"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Escribir",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Escribir el relato",
+        "texto": "Se escribe en <b>párrafos</b>, con un narrador que no cambia, sentidos para describir y suspenso antes del clímax."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Revisar",
+      "bloques": [
+       {
+        "tipo": "ejemplo",
+        "titulo": "Mejorar una frase",
+        "texto": "«Había un fantasma.»",
+        "items": [
+         "Es muy general: no dice dónde ni cómo.",
+         "Se agrega un sentido: «una sombra».",
+         "Se agrega el lugar: «Una sombra se movía en el pasillo.»"
+        ]
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "Mejorar una frase",
+     "planteo": "Mejorá «Había un fantasma» sumando lugar y un sentido.",
+     "pasos": [
+      "Pregunto: ¿dónde y cómo?",
+      "Agrego un sentido: una sombra.",
+      "Queda: «Una sombra se movía en el pasillo»."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "Ordená",
+     "planteo": "Ordená las partes del relato: clímax, inicio, final, conflicto.",
+     "pasos": [
+      "Primero va el inicio.",
+      "Después el conflicto y el clímax.",
+      "Al final, el final."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Escribí un relato de miedo de cuatro párrafos: inicio, conflicto, clímax y final, con narrador fijo y tres sentidos."
+    },
+    "tip": {
+     "titulo": "Plan primero",
+     "texto": "Anotá en cuatro renglones el lugar, el narrador, la amenaza y el final. Después, escribí."
+    },
+    "ojo": [
+     "Cambiar de narrador a mitad del cuento sin darse cuenta.",
+     "Resolver el miedo en la primera línea y no hacer esperar."
+    ],
+    "resumen": [
+     {
+      "titulo": "Plan",
+      "texto": "Lugar, narrador, amenaza y final."
+     },
+     {
+      "titulo": "Estructura",
+      "texto": "Inicio, conflicto, clímax y final."
+     },
+     {
+      "titulo": "Narrador",
+      "texto": "Se mantiene todo el cuento."
+     },
+     {
+      "titulo": "Revisar",
+      "texto": "Releer y mejorar frases."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Clímax",
+      "significado": "Momento de mayor tensión."
+     },
+     {
+      "palabra": "Conflicto",
+      "significado": "Problema que mueve la historia."
+     },
+     {
+      "palabra": "Final abierto",
+      "significado": "Termina sin resolver todo."
+     },
+     {
+      "palabra": "Revisar",
+      "significado": "Volver sobre el texto para corregirlo y mejorarlo."
+     }
+    ],
+    "carpeta": [
+     "¿Cómo se llama el momento de mayor tensión de un relato? Escribí una palabra.",
+     "¿Qué va primero en un relato: el inicio o el clímax? Escribí una palabra.",
+     "«Había un fantasma» es muy general. ¿Qué conviene sumar: un lugar o un título? Escribí «un lugar» o «un título».",
+     "Una compañera cambió de narrador a la mitad del cuento sin darse cuenta. ¿Qué tendría que hacer al revisar: mantener un solo narrador o cambiar el final? Escribí «mantener un solo narrador» o «cambiar el final»."
+    ],
+    "carpeta_nivel": [
+     "recordar",
+     "recordar",
+     "aplicar",
+     "error"
+    ],
+    "respuestas_carpeta": [
+     [
+      "clímax",
+      "climax",
+      "el clímax"
+     ],
+     [
+      "inicio",
+      "el inicio"
+     ],
+     [
+      "un lugar",
+      "lugar"
+     ],
+     [
+      "mantener un solo narrador",
+      "un solo narrador"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Clímax. Inicio.",
+     "solo": "Una casa vieja, yo cuento lo que me pasó, una sombra me sigue, el final queda abierto.",
+     "carpeta": [
+      "Clímax.",
+      "Inicio.",
+      "Un lugar.",
+      "Mantener un solo narrador."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "ordering",
+     "p": "Ordená las partes de un relato.",
+     "o": [
+      "Clímax",
+      "Inicio",
+      "Final",
+      "Conflicto"
+     ],
+     "r": {
+      "orden": [
+       "Inicio",
+       "Conflicto",
+       "Clímax",
+       "Final"
+      ]
+     },
+     "e": "Primero se presenta el lugar.",
+     "n": "aplicar"
+    },
+    {
+     "t": "multi_select",
+     "p": "¿Qué conviene incluir en el plan de un relato?",
+     "o": [
+      "Dónde pasa",
+      "Quién cuenta",
+      "La amenaza",
+      "Los datos del autor"
+     ],
+     "r": {
+      "correctas": [
+       "Dónde pasa",
+       "Quién cuenta",
+       "La amenaza"
+      ]
+     },
+     "e": "El plan define lugar, narrador y amenaza.",
+     "n": "aplicar"
+    },
+    {
+     "t": "classify",
+     "p": "¿En qué parte del relato va cada momento?",
+     "o": {
+      "elementos": [
+       "Se presenta la casa abandonada",
+       "Una sombra bloquea la salida",
+       "Alguien llega al pueblo de noche",
+       "La puerta se cierra de golpe"
+      ],
+      "categorias": [
+       "Inicio",
+       "Clímax"
+      ]
+     },
+     "r": {
+      "categorias": {
+       "Se presenta la casa abandonada": "Inicio",
+       "Una sombra bloquea la salida": "Clímax",
+       "Alguien llega al pueblo de noche": "Inicio",
+       "La puerta se cierra de golpe": "Clímax"
+      }
+     },
+     "e": "El inicio presenta el lugar; el clímax es el punto de más tensión.",
+     "n": "analizar"
+    }
+   ],
+   "examen": [
+    [
+     4,
+     {
+      "t": "ordering",
+      "p": "Ordená las partes de un relato.",
+      "o": [
+       "Clímax",
+       "Inicio",
+       "Final",
+       "Conflicto"
+      ],
+      "r": {
+       "orden": [
+        "Inicio",
+        "Conflicto",
+        "Clímax",
+        "Final"
+       ]
+      },
+      "e": "Primero se presenta el lugar.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "multi_select",
+      "p": "¿Qué tiene un buen relato de miedo?",
+      "o": [
+       "Un narrador fijo",
+       "Suspenso",
+       "Descripciones con sentidos",
+       "Cambios de narrador sin motivo"
+      ],
+      "r": {
+       "correctas": [
+        "Un narrador fijo",
+        "Suspenso",
+        "Descripciones con sentidos"
+       ]
+      },
+      "e": "Se mantiene el narrador y se construye el miedo.",
+      "n": "analizar"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "matching",
+      "p": "Uní cada parte del relato con lo que pasa.",
+      "o": {
+       "izquierda": [
+        "Inicio",
+        "Conflicto",
+        "Clímax",
+        "Final"
+       ],
+       "derecha": [
+        "Se presenta el lugar",
+        "Aparece la amenaza",
+        "Máxima tensión",
+        "Se resuelve o queda abierto"
+       ]
+      },
+      "r": {
+       "pares": {
+        "Inicio": "Se presenta el lugar",
+        "Conflicto": "Aparece la amenaza",
+        "Clímax": "Máxima tensión",
+        "Final": "Se resuelve o queda abierto"
+       }
+      },
+      "e": "Cada parte cumple una función.",
+      "n": "aplicar"
+     }
+    ]
+   ]
+  }
+ }
+]

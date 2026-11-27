@@ -1,0 +1,129 @@
+{
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "tema": 18,
+ "niveles": {},
+ "act": {},
+ "examen": [],
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 1 · nivel 4 · pantalla «La ficha bibliográfica»",
+   "para": "cito y armo bibliografía",
+   "nota": "ficha bibliográfica",
+   "tema": {
+    "titulo": "La ficha bibliográfica",
+    "ejemplo": {
+     "motor": "transformar",
+     "p": {
+      "items": [
+       {
+        "nombre": "Verne",
+        "antes": "Datos sueltos: Julio Verne — Ediciones del Sur — El faro del fin del mundo — 2019",
+        "pasos": [
+         {
+          "v": "{{Verne, Julio.}}",
+          "txt": "Primero el autor: apellido, coma y nombre."
+         },
+         {
+          "v": "Verne, Julio. {{El faro del fin del mundo.}}",
+          "txt": "Después el título, tal como figura en la tapa."
+         },
+         {
+          "v": "Verne, Julio. El faro del fin del mundo. {{Ediciones del Sur,}}",
+          "txt": "Sigue la editorial, que figura en la portada."
+         },
+         {
+          "v": "Verne, Julio. El faro del fin del mundo. Ediciones del Sur, {{2019.}}",
+          "txt": "Al final, el año de la edición."
+         }
+        ],
+        "cierre": "Así cualquiera puede encontrar ese libro."
+       },
+       {
+        "nombre": "Montes",
+        "antes": "Datos sueltos: 2022 — Graciela Montes — Loqueleo — Doña Clementina Queridita",
+        "pasos": [
+         {
+          "v": "{{Montes, Graciela.}}",
+          "txt": "El apellido va primero."
+         },
+         {
+          "v": "Montes, Graciela. {{Doña Clementina Queridita.}}",
+          "txt": "Después el título."
+         },
+         {
+          "v": "Montes, Graciela. Doña Clementina Queridita. {{Loqueleo, 2022.}}",
+          "txt": "Editorial y año cierran la ficha."
+         }
+        ],
+        "cierre": "El orden es siempre el mismo."
+       }
+      ]
+     }
+    },
+    "ejercicio": {
+     "motor": "armar_x",
+     "p": {
+      "consigna": "Armá la ficha bibliográfica con las piezas en orden.",
+      "items": [
+       {
+        "cons": "Libro: «Las aventuras de Pinocho», de Carlo Collodi, editorial Colihue, edición 2015.",
+        "piezas": [
+         "Collodi, Carlo.",
+         "Las aventuras de Pinocho.",
+         "Colihue,",
+         "2015."
+        ],
+        "extra": [
+         "Carlo Collodi."
+        ]
+       },
+       {
+        "cons": "Libro: «Cuentos de la selva», de Horacio Quiroga, editorial Losada, edición 2018.",
+        "piezas": [
+         "Quiroga, Horacio.",
+         "Cuentos de la selva.",
+         "Losada,",
+         "2018."
+        ],
+        "extra": [
+         "Horacio Quiroga."
+        ]
+       },
+       {
+        "cons": "Libro: «Mujercitas», de Louisa May Alcott, editorial Gárgola, edición 2020.",
+        "piezas": [
+         "Alcott, Louisa May.",
+         "Mujercitas.",
+         "Gárgola,",
+         "2020."
+        ],
+        "extra": [
+         "Louisa May Alcott."
+        ]
+       }
+      ]
+     }
+    },
+    "explicacion": [
+     {
+      "tipo": "definicion",
+      "titulo": "Ficha bibliográfica",
+      "texto": "La ficha bibliográfica registra los datos de un libro en un orden fijo: autor, título, editorial y año de edición."
+     },
+     {
+      "tipo": "parrafo",
+      "texto": "Sirve para recordar qué leímos y para que otra persona pueda encontrar exactamente el mismo libro. El autor se escribe con el apellido primero porque así se ordenan los libros en las bibliotecas."
+     },
+     {
+      "tipo": "lista",
+      "items": [
+       "Autor: apellido, nombre.",
+       "Título tal como aparece en la tapa.",
+       "Editorial y año, al final."
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

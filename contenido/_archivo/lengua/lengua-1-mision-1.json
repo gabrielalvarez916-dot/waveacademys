@@ -1,0 +1,2846 @@
+[
+ {
+  "que": "misión completa antes de la mudanza",
+  "contenido": {
+   "niveles": {
+    "1": {
+     "objetivo": "Vas a repasar las estrategias de lectura: usar el paratexto, leer en tres momentos, reconocer la estructura de un relato y el narrador.",
+     "vas_a_ver": [
+      "El paratexto",
+      "Leer en tres momentos",
+      "Inferir",
+      "Estructura del relato",
+      "El narrador"
+     ],
+     "secciones": [
+      {
+       "etapa": 1,
+       "titulo": "El paratexto",
+       "bloques": [
+        {
+         "tipo": "definicion",
+         "titulo": "Paratexto",
+         "texto": "Todo lo que acompaña al texto: <b>tapa, contratapa, título, autor, índice e imágenes</b>. Sirve para <b>anticipar</b> de qué trata antes de leer."
+        },
+        {
+         "tipo": "imagen",
+         "imagen_tipo": "diagrama",
+         "titulo": "Las partes de un libro",
+         "texto": "Tapa, lomo, contratapa e índice: el paratexto.",
+         "imagen_descripcion": "Libro desplegado con contratapa, lomo, tapa e índice marcados.",
+         "imagen_fuente": "Dibujo propio (matplotlib).",
+         "png_base64": "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"
+        }
+       ]
+      },
+      {
+       "etapa": 1,
+       "titulo": "Leer en tres momentos",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Los tres momentos",
+         "columnas": [
+          "Momento",
+          "Qué hago"
+         ],
+         "filas": [
+          [
+           "Antes",
+           "Miro el paratexto y anticipo"
+          ],
+          [
+           "Durante",
+           "Me hago preguntas, subrayo e infiero"
+          ],
+          [
+           "Después",
+           "Resumo con mis palabras y opino"
+          ]
+         ],
+         "iguales": true
+        },
+        {
+         "tipo": "definicion",
+         "titulo": "Inferir",
+         "texto": "Deducir lo que el texto <b>no dice</b> a partir de pistas. Si el perro volvió con barro hasta las orejas, se infiere que estuvo en un charco."
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "La estructura del relato",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Partes de un relato",
+         "columnas": [
+          "Parte",
+          "Qué cuenta",
+          "Ejemplo"
+         ],
+         "filas": [
+          [
+           "Situación inicial",
+           "Quiénes, dónde, cómo están",
+           "Lara vive con su abuelo, guardián de un faro"
+          ],
+          [
+           "Conflicto",
+           "Algo rompe la calma",
+           "En una tormenta el faro se apaga y un barco se acerca a las rocas"
+          ],
+          [
+           "Desenlace",
+           "Cómo se resuelve",
+           "Lara sube los 200 escalones y enciende la luz a mano"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "El narrador",
+       "bloques": [
+        {
+         "tipo": "parrafo",
+         "texto": "El <b>narrador</b> es la voz que cuenta la historia; no es el autor. En <b>primera persona</b> es un personaje (\"yo busqué\"); en <b>tercera persona</b> cuenta desde afuera (\"Lara subió\"). Si conoce todo, incluso lo que piensan y sienten los personajes, es un narrador <b>omnisciente</b>."
+        }
+       ]
+      }
+     ],
+     "ejemplo_completo": {
+      "titulo": "leer un cuento",
+      "planteo": "Un cuento se titula \"La noche del apagón\" y en la tapa hay una vela. Aplicá los tres momentos.",
+      "pasos": [
+       "Antes: anticipo que habrá una noche sin luz y quizás algo de miedo.",
+       "Durante: me pregunto qué pasará y busco pistas.",
+       "Después: resumo la historia en tres oraciones.",
+       "Opino si me gustó y por qué."
+      ]
+     },
+     "ejemplo_incompleto": {
+      "titulo": "completar",
+      "planteo": "Completá los espacios.",
+      "pasos": [
+       "La parte del relato donde algo rompe la calma se llama ___ .",
+       "Si el narrador dice \"yo corrí\", está en ___ persona."
+      ]
+     },
+     "ejemplo_solo": {
+      "titulo": "inferir",
+      "planteo": "\"Ana entró empapada y dejó el paraguas roto en la puerta.\" ¿Qué podés inferir del tiempo afuera?"
+     },
+     "tip": {
+      "titulo": "Antes de leer, mirá",
+      "texto": "Dedicale un minuto al paratexto: tapa, contratapa e índice. Vas a entender mucho más rápido."
+     },
+     "ojo": [
+      "Confundir al autor con el narrador.",
+      "Empezar a leer sin mirar el paratexto."
+     ],
+     "resumen": [
+      {
+       "titulo": "Paratexto",
+       "texto": "Tapa, contratapa, índice: sirven para anticipar."
+      },
+      {
+       "titulo": "Tres momentos",
+       "texto": "Antes, durante y después."
+      },
+      {
+       "titulo": "Estructura",
+       "texto": "Situación inicial, conflicto, desenlace."
+      },
+      {
+       "titulo": "Narrador",
+       "texto": "Primera o tercera persona."
+      }
+     ],
+     "glosario": [
+      {
+       "palabra": "Paratexto",
+       "significado": "Lo que acompaña al texto."
+      },
+      {
+       "palabra": "Anticipar",
+       "significado": "Imaginar de qué trata antes de leer."
+      },
+      {
+       "palabra": "Inferir",
+       "significado": "Deducir lo que el texto no dice."
+      },
+      {
+       "palabra": "Conflicto",
+       "significado": "Problema que rompe la situación inicial."
+      },
+      {
+       "palabra": "Narrador",
+       "significado": "Voz que cuenta la historia."
+      }
+     ],
+     "carpeta": [
+      "¿Cómo se llama la parte del relato donde se resuelve el problema?",
+      "\"Yo abrí la puerta\": ¿primera o tercera persona?",
+      "¿Cómo se llama todo lo que acompaña al texto (tapa, índice, contratapa)?",
+      "¿Quién cuenta la historia: el autor o el narrador?"
+     ],
+     "respuestas_carpeta": [
+      [
+       "desenlace",
+       "el desenlace"
+      ],
+      [
+       "primera",
+       "primera persona",
+       "1.ª",
+       "1ra"
+      ],
+      [
+       "paratexto",
+       "el paratexto"
+      ],
+      [
+       "narrador",
+       "el narrador"
+      ]
+     ],
+     "soluciones": {
+      "incompleto": "Conflicto. Primera.",
+      "solo": "Que llovía fuerte y había viento.",
+      "carpeta": [
+       "El desenlace.",
+       "Primera persona.",
+       "Paratexto.",
+       "El narrador."
+      ]
+     },
+     "leccion": {
+      "temas": [
+       {
+        "titulo": "Antes de leer: el paratexto",
+        "ejemplo": {
+         "motor": "marcar",
+         "p": {
+          "rotulo": "Libro",
+          "items": [
+           {
+            "nombre": "Contratapa 1",
+            "texto": "{{Los que nadan de noche|El título promete algo misterioso que pasa en el agua.}} · Novela juvenil. Cuando el río crece, {{Mateo ve luces en el muelle abandonado del pueblo|La contratapa adelanta el conflicto: algo raro rompe la calma.}}. {{¿Quién se mete en el agua a medianoche, y para qué?|Termina con una pregunta: invita a leer sin contar el final.}}",
+            "cierre": "Hipótesis: un misterio en un pueblo junto al río."
+           },
+           {
+            "nombre": "Contratapa 2",
+            "texto": "{{El último vagón|El título hace pensar en un tren y en algo que queda atrás.}} · Cuentos. {{Siete historias que ocurren en trenes nocturnos|Anticipa que es un libro de varios relatos breves.}}, donde {{nadie es quien dice ser|Sugiere engaños y personajes con secretos.}}.",
+            "cierre": "Hipótesis: cuentos de suspenso con personajes que mienten."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "elegir_x",
+         "p": {
+          "consigna": "Mirá el paratexto y elegí la hipótesis más razonable.",
+          "items": [
+           {
+            "cons": "Tapa: una chica con linterna frente a una puerta entreabierta. Título: «Lo que guarda el altillo».",
+            "ops": [
+             "Un relato de misterio dentro de una casa",
+             "Un manual para ordenar la casa",
+             "Una noticia sobre mudanzas"
+            ],
+            "ayuda": "La linterna, la puerta entreabierta y el altillo sugieren algo oculto."
+           },
+           {
+            "cons": "Contratapa: «Un perro callejero, una nena que se muda y un verano para hacerse amigos».",
+            "ops": [
+             "Una historia de amistad entre una nena y un perro",
+             "Un libro sobre razas de perros",
+             "Una obra de teatro sobre veterinarios"
+            ],
+            "ayuda": "La contratapa nombra a los personajes y lo que les pasa."
+           },
+           {
+            "cons": "Índice: «1. La nave despega · 2. Rumbo a Titán · 3. La señal desconocida».",
+            "ops": [
+             "Una aventura en el espacio",
+             "Un cuento de hadas",
+             "Un libro de recetas"
+            ],
+            "ayuda": "Los capítulos hablan de una nave y de una luna de Saturno."
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Paratexto",
+          "texto": "El paratexto es todo lo que rodea al texto principal y lo presenta: tapa, título, autor, ilustraciones, contratapa e índice."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Mirarlo antes de empezar permite armar una hipótesis de lectura, es decir, una idea de qué vamos a encontrar. La hipótesis no tiene que acertar: se confirma o se corrige mientras leemos, y eso nos mantiene atentos."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "El título y la imagen de tapa dan la primera pista.",
+           "La contratapa adelanta el conflicto sin contar el final.",
+           "El índice muestra cómo está organizado el libro."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Inferir: leer lo que no está escrito",
+        "ejemplo": {
+         "motor": "marcar",
+         "p": {
+          "rotulo": "Texto",
+          "items": [
+           {
+            "nombre": "Sofía",
+            "texto": "Sofía entró {{con el pelo chorreando|Pista 1: viene de afuera y está empapada.}} y dejó {{el paraguas dado vuelta en la entrada|Pista 2: hubo viento fuerte.}}. {{Se frotaba las manos sin parar|Pista 3: tiene frío.}}",
+            "cierre": "Se infiere: afuera hay una tormenta fría y con viento."
+           },
+           {
+            "nombre": "Joaquín",
+            "texto": "Joaquín {{miró el reloj por quinta vez|Pista 1: espera algo o a alguien.}}, {{se acomodó la camisa planchada|Pista 2: se preparó con cuidado.}} y {{ensayó en voz baja un «hola»|Pista 3: está nervioso por un encuentro.}}",
+            "cierre": "Se infiere: espera a alguien importante para él y está nervioso."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "elegir_x",
+         "p": {
+          "consigna": "¿Qué se puede inferir? Elegí la opción que se apoya en las pistas.",
+          "items": [
+           {
+            "cons": "«Martina abrió la heladera, suspiró y volvió a cerrarla. Después agarró la billetera y las llaves.»",
+            "ops": [
+             "Va a salir a comprar comida",
+             "Está enojada con su hermano",
+             "Se va de vacaciones"
+            ],
+            "ayuda": "La heladera vacía y la billetera son las pistas."
+           },
+           {
+            "cons": "«El abuelo dejó la pala, se secó la frente y se sentó a la sombra del nogal.»",
+            "ops": [
+             "Estuvo trabajando al sol y está cansado",
+             "Está por llover",
+             "Perdió algo en el jardín"
+            ],
+            "ayuda": "Secarse la frente y buscar sombra dicen mucho."
+           },
+           {
+            "cons": "«Cuando sonó el timbre del recreo, Tomás guardó la carta en la mochila y se puso colorado.»",
+            "ops": [
+             "La carta es algo que le da vergüenza mostrar",
+             "La carta está en blanco",
+             "Tomás no sabe leer"
+            ],
+            "ayuda": "Esconderla y ponerse colorado son las pistas."
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Inferencia",
+          "texto": "Inferir es sacar una conclusión que el texto no dice con todas las letras, uniendo las pistas del texto con lo que ya sabemos."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Los autores no explican todo: dejan detalles para que el lector complete el sentido. Una inferencia válida siempre se puede apoyar en una pista concreta; si no hay ninguna que la sostenga, es un invento del lector."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Fijate en gestos, objetos y reacciones de los personajes.",
+           "Preguntate qué explicación une todas las pistas.",
+           "Volvé al texto para comprobarla."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Cómo se arma un relato",
+        "ejemplo": {
+         "motor": "esquema",
+         "p": {
+          "items": [
+           {
+            "nombre": "Luna",
+            "raiz": "La perra perdida",
+            "ramas": [
+             [
+              "Situación inicial",
+              [
+               "Nico y su perra Luna viven en una chacra tranquila"
+              ],
+              "Presentamos personajes, lugar y cómo están."
+             ],
+             [
+              "Conflicto",
+              [
+               "una noche Luna no vuelve y Nico la busca con una linterna"
+              ],
+              "Un hecho rompe la calma: empieza la historia."
+             ],
+             [
+              "Desenlace",
+              [
+               "la encuentra en el galpón, cuidando a sus cachorros recién nacidos"
+              ],
+              "Se resuelve el problema y la situación cambia."
+             ]
+            ],
+            "cierre": "Al final la chacra tiene tres perros más."
+           },
+           {
+            "nombre": "El partido",
+            "raiz": "La final del barrio",
+            "ramas": [
+             [
+              "Situación inicial",
+              [
+               "el equipo de Abril entrena para la final"
+              ],
+              "Quiénes son y qué quieren."
+             ],
+             [
+              "Conflicto",
+              [
+               "el día del partido se lesiona la arquera"
+              ],
+              "Algo sale mal y hay que resolverlo."
+             ],
+             [
+              "Desenlace",
+              [
+               "Abril ataja por primera vez y empatan"
+              ],
+              "Cómo termina: no siempre es un final feliz completo."
+             ]
+            ],
+            "cierre": "El desenlace muestra qué cambió en los personajes."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "ordenar_x",
+         "p": {
+          "consigna": "Ordená los momentos del relato: situación inicial, conflicto y desenlace.",
+          "items": [
+           {
+            "lista": [
+             "Un pescador vive solo en una isla del Paraná",
+             "Una crecida se lleva su bote",
+             "Los vecinos de la costa le construyen uno nuevo"
+            ]
+           },
+           {
+            "lista": [
+             "Ema guarda sus ahorros en una lata para comprar una bici",
+             "Su hermano usa la plata sin avisar",
+             "El hermano trabaja todo el verano y se la devuelve"
+            ]
+           },
+           {
+            "lista": [
+             "El circo llega al pueblo y todos van a la función",
+             "El elefante se escapa durante el show",
+             "Un nene lo calma con una canción y vuelve a la carpa"
+            ]
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Estructura narrativa",
+          "texto": "La mayoría de los relatos se organizan en tres momentos: situación inicial, conflicto y desenlace, que muestran cómo cambia la historia."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Reconocer los tres momentos sirve para resumir una historia y para entender por qué pasa cada cosa. El conflicto es el motor del relato: sin un problema que rompa la calma, no habría nada que contar."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Situación inicial: quiénes son, dónde están y cómo viven.",
+           "Conflicto: un hecho rompe ese equilibrio.",
+           "Desenlace: el problema se resuelve, bien o mal."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Quién cuenta: el narrador",
+        "ejemplo": {
+         "motor": "versiones",
+         "p": {
+          "rotulo": "Versión",
+          "items": [
+           {
+            "nombre": "Primera persona",
+            "texto": "{{Yo|Un personaje cuenta lo que le pasa: primera persona.}} abrí la caja y {{me temblaron las manos|Solo sabe lo que siente él.}}."
+           },
+           {
+            "nombre": "Tercera persona",
+            "texto": "{{Lucas|Cuenta alguien de afuera: tercera persona.}} abrió la caja y {{le temblaron las manos|Ve lo que se nota desde afuera.}}."
+           },
+           {
+            "nombre": "Omnisciente",
+            "texto": "Lucas abrió la caja; {{temía que fuera otra broma de su primo|Sabe lo que piensa el personaje: narrador omnisciente.}}, aunque {{el primo, escondido detrás de la puerta, ya estaba arrepentido|También sabe lo que piensa otro personaje.}}."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "clasificar_x",
+         "p": {
+          "consigna": "¿Qué narrador cuenta cada fragmento?",
+          "cajas": [
+           "Primera persona",
+           "Tercera, desde afuera",
+           "Tercera omnisciente"
+          ],
+          "cuantos": 5,
+          "items": [
+           [
+            "Corrí hasta la esquina y no vi a nadie.",
+            0
+           ],
+           [
+            "Nunca me animé a contarle la verdad a mi abuela.",
+            0
+           ],
+           [
+            "Cuando llegamos, la casa estaba a oscuras.",
+            0
+           ],
+           [
+            "La mujer cruzó la plaza y se sentó en un banco.",
+            1
+           ],
+           [
+            "El chico tocó el timbre dos veces y esperó.",
+            1
+           ],
+           [
+            "Los perros ladraron cuando el cartero abrió la reja.",
+            1
+           ],
+           [
+            "Ana sonreía, pero por dentro sentía que todo iba a salir mal.",
+            2
+           ],
+           [
+            "El viejo recordaba a su hermano cada vez que veía el río.",
+            2
+           ],
+           [
+            "Pedro creía que nadie lo había visto; la vecina, en cambio, lo había reconocido.",
+            2
+           ]
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Narrador",
+          "texto": "El narrador es la voz que cuenta la historia dentro del relato; no es el autor, que es la persona real que la escribió."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Según quién cuente, el lector sabe más o menos cosas. Un narrador en primera persona solo conoce lo que vive y piensa él mismo; uno omnisciente puede entrar en la cabeza de todos los personajes."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Primera persona: un personaje cuenta con «yo» o «nosotros».",
+           "Tercera persona: cuenta desde afuera, con «él» o «ella».",
+           "Omnisciente: además sabe lo que piensan y sienten."
+          ]
+         }
+        ]
+       }
+      ],
+      "recuerda": [
+       {
+        "concepto": "Paratexto",
+        "definicion": "es todo lo que acompaña al texto y lo presenta: tapa, título, contratapa, índice e imágenes.",
+        "ejemplo": "Título «Lo que guarda el altillo» → hipótesis: misterio"
+       },
+       {
+        "concepto": "Hipótesis de lectura",
+        "definicion": "es lo que anticipamos antes de leer y que después confirmamos o corregimos.",
+        "ejemplo": "Contratapa con luces en el muelle → algo raro en el río"
+       },
+       {
+        "concepto": "Inferir",
+        "definicion": "es sacar una conclusión que el texto no dice, apoyada en pistas concretas.",
+        "ejemplo": "Pelo chorreando y paraguas roto → hay tormenta"
+       },
+       {
+        "concepto": "Estructura del relato",
+        "definicion": "tiene situación inicial, conflicto que rompe la calma y desenlace que lo resuelve.",
+        "ejemplo": "Chacra tranquila → la perra no vuelve → aparece con cachorros"
+       },
+       {
+        "concepto": "Narrador",
+        "definicion": "es la voz que cuenta la historia y no se confunde con el autor que la escribió.",
+        "ejemplo": "«Yo abrí la caja» → primera persona"
+       },
+       {
+        "concepto": "Narrador omnisciente",
+        "definicion": "cuenta en tercera persona y conoce lo que piensan y sienten todos los personajes.",
+        "ejemplo": "«Lucas temía que fuera otra broma»"
+       }
+      ]
+     },
+     "carpeta_nivel": [
+      "aplicar",
+      "aplicar",
+      "aplicar",
+      "aplicar"
+     ]
+    },
+    "2": {
+     "objetivo": "Vas a reconocer los géneros literarios y no literarios, y los subgéneros narrativos, para elegir mejor qué leer.",
+     "vas_a_ver": [
+      "Qué es un género",
+      "Narrativo, poético, teatral y no literario",
+      "Subgéneros narrativos",
+      "Mito, leyenda, fábula y cuento"
+     ],
+     "secciones": [
+      {
+       "etapa": 1,
+       "titulo": "Las grandes familias",
+       "bloques": [
+        {
+         "tipo": "definicion",
+         "titulo": "Género",
+         "texto": "Familia de textos que se parecen en su forma y en lo que buscan."
+        },
+        {
+         "tipo": "tabla",
+         "titulo": "Géneros",
+         "columnas": [
+          "Género",
+          "Qué hace",
+          "Ejemplos"
+         ],
+         "filas": [
+          [
+           "Narrativo",
+           "Cuenta una historia",
+           "cuento, novela"
+          ],
+          [
+           "Poético",
+           "Versos, ritmo, emociones",
+           "poema, canción"
+          ],
+          [
+           "Teatral",
+           "Diálogos para actuar",
+           "obra de teatro"
+          ],
+          [
+           "No literario",
+           "Informa o explica",
+           "noticia, enciclopedia"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 1,
+       "titulo": "Subgéneros narrativos",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Subgéneros",
+         "columnas": [
+          "Subgénero",
+          "Qué tiene"
+         ],
+         "filas": [
+          [
+           "Maravilloso",
+           "Magia, hadas, dragones"
+          ],
+          [
+           "Ciencia ficción",
+           "Futuro, ciencia y tecnología"
+          ],
+          [
+           "Policial",
+           "Un enigma y alguien que lo resuelve"
+          ],
+          [
+           "Terror",
+           "Busca provocar miedo"
+          ],
+          [
+           "Realista",
+           "Hechos que podrían pasar"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "Historias de siempre",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Relatos tradicionales",
+         "columnas": [
+          "Tipo",
+          "Qué tiene"
+         ],
+         "filas": [
+          [
+           "Mito",
+           "Dioses y héroes; explica el origen del mundo"
+          ],
+          [
+           "Leyenda",
+           "Explica el origen de algo, en un lugar real"
+          ],
+          [
+           "Fábula",
+           "Animales que hablan y una moraleja"
+          ],
+          [
+           "Cuento",
+           "Ficción breve, de cualquier subgénero"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "Elegir por género",
+       "bloques": [
+        {
+         "tipo": "parrafo",
+         "texto": "Conocer los géneros ayuda a saber qué esperar de un libro. Tener un género favorito está bien, pero probar otros puede llevarte a tu próximo libro preferido."
+        }
+       ]
+      }
+     ],
+     "ejemplo_completo": {
+      "titulo": "clasificar",
+      "planteo": "Un relato cuenta cómo una diosa creó el río Paraná. ¿Qué es?",
+      "pasos": [
+       "Aparece una diosa.",
+       "Explica el origen de algo de la naturaleza.",
+       "Los relatos con dioses que explican orígenes son mitos.",
+       "Es un mito."
+      ]
+     },
+     "ejemplo_incompleto": {
+      "titulo": "completar",
+      "planteo": "Completá los espacios.",
+      "pasos": [
+       "Una historia con robots en el año 3000 es de ciencia ___ .",
+       "La enseñanza final de una fábula se llama ___ ."
+      ]
+     },
+     "ejemplo_solo": {
+      "titulo": "tu turno",
+      "planteo": "Pensá en un libro, película o serie que te guste. ¿A qué subgénero pertenece y por qué?"
+     },
+     "tip": {
+      "titulo": "Mirá los elementos",
+      "texto": "Para saber el subgénero, buscá qué elementos aparecen: magia, tecnología, un crimen, algo que da miedo o hechos posibles."
+     },
+     "ojo": [
+      "Confundir mito y leyenda: el mito tiene dioses y explica el origen del mundo.",
+      "Creer que todo texto es literario: la noticia informa."
+     ],
+     "resumen": [
+      {
+       "titulo": "Género",
+       "texto": "Familia de textos parecidos."
+      },
+      {
+       "titulo": "Familias",
+       "texto": "Narrativo, poético, teatral, no literario."
+      },
+      {
+       "titulo": "Subgéneros",
+       "texto": "Maravilloso, ciencia ficción, policial, terror, realista."
+      },
+      {
+       "titulo": "Tradicionales",
+       "texto": "Mito, leyenda, fábula."
+      }
+     ],
+     "glosario": [
+      {
+       "palabra": "Género",
+       "significado": "Familia de textos."
+      },
+      {
+       "palabra": "Subgénero",
+       "significado": "Grupo dentro de un género."
+      },
+      {
+       "palabra": "Moraleja",
+       "significado": "Enseñanza final de una fábula."
+      },
+      {
+       "palabra": "Mito",
+       "significado": "Relato de dioses sobre el origen del mundo."
+      },
+      {
+       "palabra": "Leyenda",
+       "significado": "Relato del origen de algo en un lugar real."
+      }
+     ],
+     "carpeta": [
+      "Una historia con un crimen y un detective, ¿de qué subgénero es?",
+      "¿Cómo se llama la enseñanza al final de una fábula?",
+      "¿A qué género pertenece una noticia: literario o no literario?",
+      "Un relato sobre el origen de la yerba mate en la selva misionera, ¿es mito o leyenda?"
+     ],
+     "respuestas_carpeta": [
+      [
+       "policial"
+      ],
+      [
+       "moraleja",
+       "la moraleja"
+      ],
+      [
+       "no literario"
+      ],
+      [
+       "leyenda"
+      ]
+     ],
+     "soluciones": {
+      "incompleto": "Ficción. Moraleja.",
+      "solo": "Respuesta personal: nombrá el subgénero y los elementos que lo muestran.",
+      "carpeta": [
+       "Policial.",
+       "Moraleja.",
+       "No literario.",
+       "Leyenda."
+      ]
+     },
+     "leccion": {
+      "temas": [
+       {
+        "titulo": "Las grandes familias de textos",
+        "ejemplo": {
+         "motor": "esquema",
+         "p": {
+          "items": [
+           {
+            "nombre": "Géneros",
+            "cols": [
+             "Género",
+             "Cómo se reconoce",
+             "Ejemplo"
+            ],
+            "filas": [
+             [
+              "Narrativo",
+              "cuenta hechos con un narrador",
+              "una novela de aventuras"
+             ],
+             [
+              "Poético",
+              "versos, ritmo e imágenes",
+              "un poema sobre el mar"
+             ],
+             [
+              "Teatral",
+              "diálogos y acotaciones para actuar",
+              "una obra para el acto escolar"
+             ],
+             [
+              "No literario",
+              "informa o explica hechos reales",
+              "una nota de enciclopedia"
+             ]
+            ],
+            "cierre": "La forma y el propósito definen la familia."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "clasificar_x",
+         "p": {
+          "consigna": "¿A qué género pertenece cada fragmento?",
+          "cajas": [
+           "Narrativo",
+           "Poético",
+           "Teatral",
+           "No literario"
+          ],
+          "cuantos": 5,
+          "items": [
+           [
+            "Había una vez un herrero que no sabía decir que no.",
+            0
+           ],
+           [
+            "Aquella tarde, el tren llegó con tres horas de atraso.",
+            0
+           ],
+           [
+            "Tus pasos en la arena / se los lleva la marea",
+            1
+           ],
+           [
+            "Luna de los techos, / vigilás mi sueño",
+            1
+           ],
+           [
+            "ROSA. —¡No abras esa puerta! (Se interpone, asustada.)",
+            2
+           ],
+           [
+            "(Entra el cartero con un paquete enorme.) CARTERO. —¿Vive acá la señora Ruiz?",
+            2
+           ],
+           [
+            "El yacaré overo vive en esteros y lagunas del noreste argentino.",
+            3
+           ],
+           [
+            "Mañana el servicio de colectivos funcionará con horario reducido.",
+            3
+           ]
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Género",
+          "texto": "Un género es una familia de textos que se parecen en la forma en que están escritos y en lo que buscan provocar en el lector."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Reconocer el género antes de leer prepara la lectura: no se lee igual un poema que una noticia. Los tres primeros son literarios porque inventan mundos; el último trabaja con hechos reales."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Narrativo: un narrador cuenta una historia.",
+           "Poético: versos que transmiten emociones.",
+           "Teatral: diálogos pensados para ser actuados."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Subgéneros narrativos",
+        "ejemplo": {
+         "motor": "marcar",
+         "p": {
+          "rotulo": "Fragmento",
+          "items": [
+           {
+            "nombre": "Ciencia ficción",
+            "texto": "{{En el año 2190|Un tiempo futuro.}}, la ingeniera abrió la compuerta de {{la estación orbital|Tecnología que hoy no existe.}} y {{el robot de limpieza le negó el paso|Máquinas con voluntad propia.}}.",
+            "cierre": "Futuro + ciencia y tecnología → ciencia ficción."
+           },
+           {
+            "nombre": "Maravilloso",
+            "texto": "La princesa {{guardó en el bolsillo la piedra que hablaba|Un objeto mágico.}} y {{montó al dragón|Un ser fantástico.}} {{sin que a nadie le pareciera raro|En ese mundo la magia es normal.}}.",
+            "cierre": "Magia aceptada por todos → maravilloso."
+           },
+           {
+            "nombre": "Terror",
+            "texto": "Cuando apagó la luz, {{algo rasguñó la puerta del placard|Un hecho amenazante y sin explicación.}}. {{Se quedó quieto, sin respirar|El relato busca que el lector sienta miedo.}}.",
+            "cierre": "Lo que asusta es el centro del relato → terror."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "clasificar_x",
+         "p": {
+          "consigna": "Ubicá cada argumento en su subgénero.",
+          "cajas": [
+           "Maravilloso",
+           "Ciencia ficción",
+           "Policial",
+           "Terror",
+           "Realista"
+          ],
+          "cuantos": 5,
+          "items": [
+           [
+            "Un hada concede tres deseos a un zapatero",
+            0
+           ],
+           [
+            "Un chico descubre que su gato es un mago",
+            0
+           ],
+           [
+            "Colonos de Marte pierden contacto con la Tierra",
+            1
+           ],
+           [
+            "Una máquina permite viajar al pasado",
+            1
+           ],
+           [
+            "Una detective investiga el robo de un cuadro",
+            2
+           ],
+           [
+            "Desaparece un collar durante una fiesta y hay cinco sospechosos",
+            2
+           ],
+           [
+            "Una muñeca cambia de lugar cada noche",
+            3
+           ],
+           [
+            "En la casa abandonada se oyen pasos",
+            3
+           ],
+           [
+            "Dos amigas se pelean por un malentendido en la escuela",
+            4
+           ],
+           [
+            "Una familia se muda a otra provincia y empieza de cero",
+            4
+           ]
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Subgénero",
+          "texto": "Dentro del género narrativo, cada subgénero reúne relatos que comparten un tipo de mundo, de personajes y de efecto sobre el lector."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "El subgénero se descubre por las pistas del mundo que se cuenta: si hay magia aceptada, si hay tecnología del futuro o si hay un enigma por resolver. Un mismo libro puede mezclar dos, como un policial con fantasmas."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Maravilloso: magia que nadie discute. Ciencia ficción: futuro y tecnología.",
+           "Policial: un enigma y alguien que lo investiga.",
+           "Terror: busca el miedo. Realista: hechos que podrían pasar."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Relatos tradicionales",
+        "ejemplo": {
+         "motor": "esquema",
+         "p": {
+          "items": [
+           {
+            "nombre": "Relatos tradicionales",
+            "cols": [
+             "Relato",
+             "Personajes",
+             "Qué busca"
+            ],
+            "filas": [
+             [
+              "Mito",
+              "dioses y héroes",
+              "explicar el origen del mundo o de la humanidad"
+             ],
+             [
+              "Leyenda",
+              "personas de un pueblo, en un lugar real",
+              "explicar el origen de algo de esa región"
+             ],
+             [
+              "Fábula",
+              "animales que hablan y actúan como personas",
+              "dejar una enseñanza, la moraleja"
+             ]
+            ],
+            "cierre": "Nacieron contados de boca en boca, antes de escribirse."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "elegir_x",
+         "p": {
+          "consigna": "¿Qué tipo de relato tradicional es?",
+          "items": [
+           {
+            "cons": "Un dios del fuego roba la luz del sol para regalársela a los primeros humanos.",
+            "ops": [
+             "Mito",
+             "Leyenda",
+             "Fábula"
+            ],
+            "ayuda": "Hay dioses y se explica un origen de toda la humanidad."
+           },
+           {
+            "cons": "Una hormiga trabajadora y un grillo que solo canta: cuando llega el invierno, el grillo no tiene qué comer.",
+            "ops": [
+             "Fábula",
+             "Mito",
+             "Leyenda"
+            ],
+            "ayuda": "Animales que hablan y una enseñanza al final."
+           },
+           {
+            "cons": "Los pobladores de un cerro de Jujuy cuentan por qué sus piedras tienen siete colores.",
+            "ops": [
+             "Leyenda",
+             "Fábula",
+             "Mito"
+            ],
+            "ayuda": "Explica algo de un lugar real."
+           },
+           {
+            "cons": "Un zorro engaña a un cuervo para quedarse con su queso, y el cuervo aprende a no creer en halagos.",
+            "ops": [
+             "Fábula",
+             "Leyenda",
+             "Mito"
+            ],
+            "ayuda": "Animales que hablan y una moraleja."
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Relato tradicional",
+          "texto": "Los relatos tradicionales son historias anónimas que los pueblos transmitieron oralmente durante siglos antes de que alguien las escribiera."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Por eso existen muchas versiones de un mismo relato. Para distinguirlos conviene mirar dos cosas: qué personajes aparecen y qué quiere explicar o enseñar la historia."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Mito: dioses y orígenes del mundo.",
+           "Leyenda: un lugar real y el origen de algo de allí.",
+           "Fábula: animales y una moraleja."
+          ]
+         }
+        ]
+       }
+      ],
+      "recuerda": [
+       {
+        "concepto": "Género",
+        "definicion": "es una familia de textos que comparten la forma en que se escriben y su propósito.",
+        "ejemplo": "Diálogos con acotaciones → teatral"
+       },
+       {
+        "concepto": "Texto no literario",
+        "definicion": "informa o explica sobre hechos reales, sin inventar mundos ni personajes.",
+        "ejemplo": "Una nota de enciclopedia sobre el yacaré"
+       },
+       {
+        "concepto": "Subgénero narrativo",
+        "definicion": "agrupa relatos según el tipo de mundo y el efecto que buscan en el lector.",
+        "ejemplo": "Año 2190 y estación orbital → ciencia ficción"
+       },
+       {
+        "concepto": "Mito",
+        "definicion": "es un relato con dioses o héroes que explica el origen del mundo o de la humanidad.",
+        "ejemplo": "Un dios regala el fuego a los humanos"
+       },
+       {
+        "concepto": "Leyenda",
+        "definicion": "explica el origen de algo de un lugar real, con personajes de un pueblo.",
+        "ejemplo": "Por qué un cerro de Jujuy tiene siete colores"
+       },
+       {
+        "concepto": "Fábula",
+        "definicion": "es un relato breve con animales que hablan y una moraleja al final.",
+        "ejemplo": "La hormiga y el grillo"
+       }
+      ]
+     },
+     "carpeta_nivel": [
+      "aplicar",
+      "aplicar",
+      "aplicar",
+      "aplicar"
+     ]
+    },
+    "3": {
+     "objetivo": "Vas a escribir un texto de punto de partida usando el proceso de escritura, párrafos y conectores.",
+     "vas_a_ver": [
+      "El proceso de escritura",
+      "Oración y párrafo",
+      "Conectores",
+      "Cómo armar mi punto de partida"
+     ],
+     "secciones": [
+      {
+       "etapa": 1,
+       "titulo": "El proceso de escritura",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Pasos para escribir",
+         "columnas": [
+          "Paso",
+          "Qué hago"
+         ],
+         "filas": [
+          [
+           "Planificar",
+           "Decido qué digo y en qué orden"
+          ],
+          [
+           "Borrador",
+           "Escribo sin miedo a equivocarme"
+          ],
+          [
+           "Revisar",
+           "Leo, corrijo y mejoro"
+          ],
+          [
+           "Pasar en limpio",
+           "Escribo la versión final"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 1,
+       "titulo": "Oración y párrafo",
+       "bloques": [
+        {
+         "tipo": "definicion",
+         "titulo": "Oración",
+         "texto": "Empieza con <b>mayúscula</b> y termina en <b>punto</b>. Tiene sentido completo."
+        },
+        {
+         "tipo": "definicion",
+         "titulo": "Párrafo",
+         "texto": "Grupo de oraciones sobre <b>una misma idea</b>. Termina en punto y aparte."
+        },
+        {
+         "tipo": "imagen",
+         "imagen_tipo": "diagrama",
+         "titulo": "Un párrafo, marcado",
+         "texto": "Sangría, mayúscula, punto seguido y punto y aparte.",
+         "imagen_descripcion": "Párrafo de tres líneas con sus marcas señaladas.",
+         "imagen_fuente": "Dibujo propio (matplotlib).",
+         "png_base64": "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"
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "Conectores",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Conectores básicos",
+         "columnas": [
+          "Para…",
+          "Conectores"
+         ],
+         "filas": [
+          [
+           "Sumar",
+           "y, también, además"
+          ],
+          [
+           "Oponer",
+           "pero, sin embargo"
+          ],
+          [
+           "Dar una causa",
+           "porque, ya que"
+          ],
+          [
+           "Dar una consecuencia",
+           "entonces, por eso"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "Mi punto de partida",
+       "bloques": [
+        {
+         "tipo": "ejemplo",
+         "titulo": "Cuatro párrafos",
+         "texto": "Un texto sobre mí como lector.",
+         "items": [
+          "1) Quién soy como lector.",
+          "2) Un libro o historia que me gustó y por qué.",
+          "3) Qué me cuesta al leer o escribir.",
+          "4) Qué quiero lograr este año."
+         ]
+        }
+       ]
+      }
+     ],
+     "ejemplo_completo": {
+      "titulo": "un párrafo",
+      "planteo": "Escribí el párrafo 2 del punto de partida.",
+      "pasos": [
+       "Elijo una historia: un cuento de terror que leí el año pasado.",
+       "Digo por qué me gustó: me tuvo nervioso hasta el final.",
+       "Uso un conector: \"porque\".",
+       "Resultado: \"Me gustó mucho un cuento de terror porque me tuvo nervioso hasta el final.\""
+      ]
+     },
+     "ejemplo_incompleto": {
+      "titulo": "conectores",
+      "planteo": "Completá con el conector adecuado.",
+      "pasos": [
+       "Me gusta leer, ___ no tengo mucho tiempo.",
+       "Leí mucho este verano, ___ ahora leo más rápido."
+      ]
+     },
+     "ejemplo_solo": {
+      "titulo": "tu punto de partida",
+      "planteo": "Escribí tu texto de punto de partida con los cuatro párrafos en la actividad de este nivel: ahí lo corrige el tutor y te da pistas."
+     },
+     "tip": {
+      "titulo": "Leelo en voz alta",
+      "texto": "Al revisar, leé tu texto en voz alta: donde te quedás sin aire, falta un punto."
+     },
+     "ojo": [
+      "Escribir todo en una sola oración larguísima.",
+      "Repetir \"y entonces\" en lugar de variar los conectores."
+     ],
+     "resumen": [
+      {
+       "titulo": "Proceso",
+       "texto": "Planificar, escribir, revisar, pasar en limpio."
+      },
+      {
+       "titulo": "Oración",
+       "texto": "Mayúscula y punto."
+      },
+      {
+       "titulo": "Párrafo",
+       "texto": "Una idea; punto y aparte."
+      },
+      {
+       "titulo": "Conectores",
+       "texto": "Unen ideas: y, pero, porque, por eso."
+      }
+     ],
+     "glosario": [
+      {
+       "palabra": "Borrador",
+       "significado": "Primera versión de un texto."
+      },
+      {
+       "palabra": "Revisar",
+       "significado": "Releer para corregir y mejorar."
+      },
+      {
+       "palabra": "Oración",
+       "significado": "De mayúscula a punto, con sentido completo."
+      },
+      {
+       "palabra": "Párrafo",
+       "significado": "Oraciones sobre una misma idea."
+      },
+      {
+       "palabra": "Conector",
+       "significado": "Palabra que une ideas."
+      }
+     ],
+     "carpeta": [
+      "¿Cuántas oraciones hay en: \"Llegué tarde. Llovía y perdí el colectivo.\"? Respondé con un número.",
+      "¿Qué conector opone ideas: \"porque\" o \"pero\"?",
+      "¿Cómo termina un párrafo: con punto seguido o con punto y aparte?",
+      "¿Cuál es el primer paso del proceso de escritura?"
+     ],
+     "respuestas_carpeta": [
+      [
+       "2",
+       "dos"
+      ],
+      [
+       "pero"
+      ],
+      [
+       "punto y aparte",
+       "con punto y aparte"
+      ],
+      [
+       "planificar"
+      ]
+     ],
+     "soluciones": {
+      "incompleto": "pero. por eso.",
+      "solo": "Respuesta personal: revisá que tenga cuatro párrafos, mayúsculas, puntos y conectores.",
+      "carpeta": [
+       "2.",
+       "Pero.",
+       "Con punto y aparte.",
+       "Planificar."
+      ]
+     },
+     "leccion": {
+      "temas": [
+       {
+        "titulo": "Escribir en pasos",
+        "ejemplo": {
+         "motor": "revision",
+         "p": {
+          "items": [
+           {
+            "nombre": "Mi mascota",
+            "borrador": "mi gata se llama Pimienta es naranja. le gusta dormir en la ventana y tambien le gusta dormir en la ventana del comedor",
+            "criterios": [
+             [
+              "Empieza con mayúscula",
+              false,
+              "«mi» → «Mi»"
+             ],
+             [
+              "Cada oración termina en punto",
+              false,
+              "falta punto después de «Pimienta»"
+             ],
+             [
+              "No repite ideas",
+              false,
+              "«dormir en la ventana» aparece dos veces"
+             ],
+             [
+              "Las tildes están",
+              false,
+              "«tambien» → «también»"
+             ]
+            ],
+            "final": "Mi gata se llama Pimienta y es naranja. Le gusta dormir al sol, en la ventana del comedor."
+           },
+           {
+            "nombre": "Mi barrio",
+            "borrador": "En mi barrio hay una plaza grande. los domingos hay feria. me gusta ir con mi abuela porque compramos pan casero",
+            "criterios": [
+             [
+              "Empieza con mayúscula",
+              true
+             ],
+             [
+              "Cada oración empieza con mayúscula",
+              false,
+              "«los» y «me»"
+             ],
+             [
+              "Termina en punto",
+              false,
+              "falta el punto final"
+             ],
+             [
+              "Usa conectores",
+              true,
+              "«porque»"
+             ]
+            ],
+            "final": "En mi barrio hay una plaza grande. Los domingos hay feria. Me gusta ir con mi abuela porque compramos pan casero."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "ordenar_x",
+         "p": {
+          "consigna": "Ordená lo que hace Valentina para escribir sobre su viaje.",
+          "items": [
+           {
+            "lista": [
+             "Anota en una lista lo que quiere contar del viaje",
+             "Escribe una primera versión de corrido",
+             "Relee, tacha repeticiones y agrega lo que falta",
+             "Copia la versión corregida, prolija"
+            ]
+           },
+           {
+            "lista": [
+             "Decide contar el día que conoció el mar y en qué orden",
+             "Escribe el texto sin frenar a corregir",
+             "Lo lee en voz alta y marca lo que suena raro",
+             "Pasa en limpio la versión final"
+            ]
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Proceso de escritura",
+          "texto": "Escribir bien no sale de una vez: es un proceso con pasos de planificación, borrador, revisión y versión final."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Separar los pasos alivia: en el borrador se escribe sin miedo a equivocarse, y recién después se corrige. Revisar no es solo buscar faltas; también es ver si se entiende y si sobra o falta algo."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Planificar: qué quiero decir y en qué orden.",
+           "Borrador y revisión: escribir, releer, corregir.",
+           "Pasar en limpio: la versión para otros."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Oración y párrafo",
+        "ejemplo": {
+         "motor": "marcar",
+         "p": {
+          "rotulo": "Párrafo",
+          "items": [
+           {
+            "nombre": "La tormenta",
+            "texto": "{{El|Mayúscula: empieza una oración.}} cielo se puso negro de golpe{{.|Punto seguido: termina una oración y la idea sigue.}} En diez minutos se cortó la luz en todo el barrio{{.|Punto y aparte: se cierra la idea del párrafo.}}",
+            "cierre": "Un párrafo = varias oraciones sobre una misma idea."
+           },
+           {
+            "nombre": "El recreo",
+            "texto": "{{En|Mayúscula al empezar.}} el recreo jugamos al quemado{{.|Punto seguido.}} {{Siempre|Después del punto, mayúscula otra vez.}} gana el equipo de Lautaro{{.|Punto y aparte: terminó el párrafo.}}",
+            "cierre": "Cada oración tiene sentido completo."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "puntuar_x",
+         "p": {
+          "consigna": "Tocá entre las palabras para poner el punto donde termina cada oración.",
+          "signos": [
+           "",
+           "."
+          ],
+          "items": [
+           {
+            "texto": "Mi hermano tiene un loro verde[[.]] El loro repite todo lo que oye[[.]]"
+           },
+           {
+            "texto": "Ayer fuimos al río[[.]] El agua estaba helada[[.]] Igual nos metimos[[.]]"
+           },
+           {
+            "texto": "La biblioteca abre temprano[[.]] Los martes hay lectura de cuentos[[.]]"
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Oración y párrafo",
+          "texto": "La oración es un conjunto de palabras con sentido completo, que empieza con mayúscula y termina en punto; el párrafo agrupa oraciones sobre una misma idea."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "El punto seguido separa oraciones que siguen hablando de lo mismo. El punto y aparte avisa que esa idea terminó y que el texto cambia de tema, por eso conviene empezar el párrafo nuevo con sangría."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Mayúscula al empezar cada oración.",
+           "Punto seguido: la idea continúa.",
+           "Punto y aparte: empieza otra idea."
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "Conectores: unir ideas",
+        "ejemplo": {
+         "motor": "conectores",
+         "p": {
+          "items": [
+           {
+            "relacion": "adición",
+            "a": "Juego al vóley",
+            "b": "voy a clases de guitarra",
+            "ok": [
+             "y",
+             "además"
+            ],
+            "mal": [
+             "porque"
+            ],
+            "porque_mal": "No hay ninguna causa entre las dos cosas."
+           },
+           {
+            "relacion": "oposición",
+            "a": "Me encanta leer",
+            "b": "este libro no lo pude terminar",
+            "ok": [
+             "pero",
+             "sin embargo"
+            ],
+            "mal": [
+             "por eso"
+            ],
+            "porque_mal": "Haría pensar que no terminarlo es consecuencia de que te guste leer."
+           },
+           {
+            "relacion": "causa",
+            "a": "Llegué tarde",
+            "b": "se rompió el colectivo",
+            "ok": [
+             "porque",
+             "ya que"
+            ],
+            "mal": [
+             "pero"
+            ],
+            "porque_mal": "Las ideas no se oponen: una explica la otra."
+           },
+           {
+            "relacion": "consecuencia",
+            "a": "Ensayamos todos los días",
+            "b": "la obra salió perfecta",
+            "ok": [
+             "por eso",
+             "entonces"
+            ],
+            "mal": [
+             "aunque"
+            ],
+            "porque_mal": "El buen resultado no se opone al ensayo: es su efecto."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "relacion_x",
+         "p": {
+          "relaciones": [
+           "adición",
+           "oposición",
+           "causa",
+           "consecuencia"
+          ],
+          "items": [
+           {
+            "a": "Estudié toda la semana",
+            "b": "la prueba me salió muy bien",
+            "relacion": "consecuencia",
+            "ok": [
+             "por eso",
+             "entonces"
+            ],
+            "mal": [
+             "pero",
+             "porque"
+            ]
+           },
+           {
+            "a": "El perro ladró toda la noche",
+            "b": "había un gato en el techo",
+            "relacion": "causa",
+            "ok": [
+             "porque",
+             "ya que"
+            ],
+            "mal": [
+             "por eso",
+             "además"
+            ]
+           },
+           {
+            "a": "Hacía mucho frío",
+            "b": "salimos a andar en bici",
+            "relacion": "oposición",
+            "ok": [
+             "pero",
+             "sin embargo"
+            ],
+            "mal": [
+             "porque",
+             "entonces"
+            ]
+           },
+           {
+            "a": "La casa tiene patio",
+            "b": "tiene una huerta al fondo",
+            "relacion": "adición",
+            "ok": [
+             "y",
+             "además"
+            ],
+            "mal": [
+             "pero",
+             "porque"
+            ]
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Conector",
+          "texto": "Un conector es una palabra o expresión que une ideas y muestra qué relación hay entre ellas: suma, oposición, causa o consecuencia."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Elegir mal el conector cambia el sentido del texto. Antes de escribirlo hay que preguntarse cómo se relacionan las dos ideas: si una explica la otra, si se oponen o si simplemente se agregan."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Sumar: y, también, además.",
+           "Oponer: pero, sin embargo. Causa: porque, ya que.",
+           "Consecuencia: por eso, entonces."
+          ]
+         }
+        ]
+       }
+      ],
+      "recuerda": [
+       {
+        "concepto": "Proceso de escritura",
+        "definicion": "tiene cuatro pasos: planificar, escribir el borrador, revisar y pasar en limpio.",
+        "ejemplo": "Lista de ideas → borrador → correcciones → versión final"
+       },
+       {
+        "concepto": "Revisar",
+        "definicion": "es releer el borrador para corregir errores y ver si se entiende, sobra o falta algo.",
+        "ejemplo": "«tambien» → «también»; sacar una repetición"
+       },
+       {
+        "concepto": "Oración",
+        "definicion": "es un grupo de palabras con sentido completo que empieza con mayúscula y termina en punto.",
+        "ejemplo": "El cielo se puso negro de golpe."
+       },
+       {
+        "concepto": "Párrafo",
+        "definicion": "reúne oraciones sobre una misma idea y termina con punto y aparte.",
+        "ejemplo": "Dos oraciones sobre la tormenta del barrio"
+       },
+       {
+        "concepto": "Conector",
+        "definicion": "une dos ideas y muestra si se suman, se oponen o una es causa de la otra.",
+        "ejemplo": "Llegué tarde porque se rompió el colectivo."
+       }
+      ]
+     },
+     "carpeta_nivel": [
+      "aplicar",
+      "aplicar",
+      "aplicar",
+      "aplicar"
+     ]
+    },
+    "4": {
+     "objetivo": "Vas a elegir libros usando el paratexto, armar fichas bibliográficas y planificar tu año lector.",
+     "vas_a_ver": [
+      "Elegir con el paratexto",
+      "Cuatro preguntas para elegir",
+      "La ficha bibliográfica",
+      "Mi plan de lectura"
+     ],
+     "secciones": [
+      {
+       "etapa": 1,
+       "titulo": "Elegir con el paratexto",
+       "bloques": [
+        {
+         "tipo": "tabla",
+         "titulo": "Qué mirar",
+         "columnas": [
+          "Parte",
+          "Qué me dice"
+         ],
+         "filas": [
+          [
+           "Tapa",
+           "Título, autor, editorial"
+          ],
+          [
+           "Contratapa",
+           "De qué trata, sin contar el final"
+          ],
+          [
+           "Índice",
+           "Los capítulos y cómo está armado"
+          ]
+         ],
+         "iguales": true
+        }
+       ]
+      },
+      {
+       "etapa": 1,
+       "titulo": "Cuatro preguntas",
+       "bloques": [
+        {
+         "tipo": "parrafo",
+         "texto": "<b>Género</b>: ¿qué tengo ganas de leer? <b>Recomendación</b>: ¿quién me lo aconsejó? <b>Primera página</b>: ¿me engancha? <b>Largo</b>: ¿me da el tiempo?"
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "La ficha bibliográfica",
+       "bloques": [
+        {
+         "tipo": "definicion",
+         "titulo": "Ficha bibliográfica",
+         "texto": "Registra un libro con <b>autor</b> (apellido, nombre), <b>título</b>, <b>editorial</b> y <b>año</b>."
+        },
+        {
+         "tipo": "imagen",
+         "imagen_tipo": "diagrama",
+         "titulo": "Una ficha bibliográfica",
+         "texto": "Autor, título, editorial y año.",
+         "imagen_descripcion": "Ficha de cartulina con los cuatro datos de un libro.",
+         "imagen_fuente": "Dibujo propio (matplotlib).",
+         "png_base64": "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"
+        }
+       ]
+      },
+      {
+       "etapa": 2,
+       "titulo": "Mi plan de lectura",
+       "bloques": [
+        {
+         "tipo": "parrafo",
+         "texto": "Tu año ya tiene paradas: un cuento policial, la novela <b>El fantasma de Canterville</b> de Oscar Wilde, poesía, teatro y un libro que elijas vos. Anotá en tu carpeta qué otros libros querés sumar. Y recordá: si un libro no te engancha, podés cambiarlo."
+        }
+       ]
+      }
+     ],
+     "ejemplo_completo": {
+      "titulo": "armar una ficha",
+      "planteo": "El libro \"La isla del viento\", de Pablo Sosa, editorial Faro, año 2019. Armá la ficha.",
+      "pasos": [
+       "Autor: apellido primero, Sosa, Pablo.",
+       "Título: La isla del viento.",
+       "Editorial: Faro.",
+       "Año: 2019."
+      ]
+     },
+     "ejemplo_incompleto": {
+      "titulo": "completar",
+      "planteo": "Completá los espacios.",
+      "pasos": [
+       "En la ficha, el autor se escribe primero con el ___ .",
+       "El resumen que dice de qué trata un libro está en la ___ ."
+      ]
+     },
+     "ejemplo_solo": {
+      "titulo": "tu ficha",
+      "planteo": "Elegí un libro que tengas en casa y armá su ficha bibliográfica."
+     },
+     "tip": {
+      "titulo": "La primera página",
+      "texto": "Antes de llevarte un libro, leé la primera página: si te dan ganas de seguir, es buena señal."
+     },
+     "ojo": [
+      "Elegir un libro solo por la tapa.",
+      "Escribir el nombre antes del apellido en la ficha."
+     ],
+     "resumen": [
+      {
+       "titulo": "Paratexto",
+       "texto": "Tapa, contratapa, índice."
+      },
+      {
+       "titulo": "Elegir",
+       "texto": "Género, recomendación, primera página, largo."
+      },
+      {
+       "titulo": "Ficha",
+       "texto": "Autor, título, editorial, año."
+      },
+      {
+       "titulo": "Plan",
+       "texto": "Mi año lector."
+      }
+     ],
+     "glosario": [
+      {
+       "palabra": "Contratapa",
+       "significado": "Parte de atrás del libro con un resumen."
+      },
+      {
+       "palabra": "Índice",
+       "significado": "Lista de capítulos."
+      },
+      {
+       "palabra": "Editorial",
+       "significado": "Empresa que publica el libro."
+      },
+      {
+       "palabra": "Ficha bibliográfica",
+       "significado": "Registro de los datos de un libro."
+      },
+      {
+       "palabra": "Plan de lectura",
+       "significado": "Lista de libros para leer en un tiempo."
+      }
+     ],
+     "carpeta": [
+      "¿Qué parte del libro tiene el resumen de qué trata?",
+      "En la ficha, ¿qué va primero: el apellido o el nombre del autor?",
+      "¿Qué dato falta en esta ficha: \"Ríos, Ana. El faro de los gatos. 2021.\"?",
+      "¿Dónde están los capítulos de un libro?"
+     ],
+     "respuestas_carpeta": [
+      [
+       "contratapa",
+       "la contratapa"
+      ],
+      [
+       "apellido",
+       "el apellido"
+      ],
+      [
+       "editorial",
+       "la editorial"
+      ],
+      [
+       "indice",
+       "índice",
+       "en el indice",
+       "en el índice",
+       "el índice"
+      ]
+     ],
+     "soluciones": {
+      "incompleto": "Apellido. Contratapa.",
+      "solo": "Respuesta personal: apellido, nombre. Título. Editorial. Año.",
+      "carpeta": [
+       "La contratapa.",
+       "El apellido.",
+       "La editorial.",
+       "En el índice."
+      ]
+     },
+     "leccion": {
+      "temas": [
+       {
+        "titulo": "Elegir qué leer",
+        "ejemplo": {
+         "motor": "marcar",
+         "p": {
+          "rotulo": "Libro",
+          "items": [
+           {
+            "nombre": "Un libro",
+            "texto": "Tapa: {{«El faro del fin del mundo» · Julio Verne|Título y autor: un clásico de aventuras.}} · Contratapa: {{Tres guardianes de un faro en la Isla de los Estados enfrentan a una banda de piratas|De qué trata, sin contar el final.}} · Índice: {{15 capítulos|Cuánto lleva leerlo.}}",
+            "cierre": "Si te gustan las aventuras y tenés tiempo, es una buena elección."
+           },
+           {
+            "nombre": "Otro libro",
+            "texto": "Tapa: {{«Cuentos para leer en la oscuridad»|El título anticipa el subgénero: terror.}} · Contratapa: {{Nueve relatos breves para leer de a uno|Son cuentos cortos: sirven si hay poco tiempo.}} · Recomendación: {{«Mi prima no pudo dormir», dice Uma|Alguien lo recomienda y sabemos por qué.}}",
+            "cierre": "Ideal para quien busca miedo en lecturas cortas."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "elegir_x",
+         "p": {
+          "consigna": "¿Qué libro le conviene a cada lector?",
+          "items": [
+           {
+            "cons": "Bruno tiene poco tiempo esta semana y le gusta el misterio.",
+            "ops": [
+             "Un libro de cuentos policiales breves",
+             "Una novela de aventuras de 400 páginas",
+             "Un libro de poemas de amor"
+            ],
+            "ayuda": "Pensá en el género que le gusta y en el largo."
+           },
+           {
+            "cons": "A Pilar le encantan los dragones y los hechizos, y tiene todo el verano.",
+            "ops": [
+             "Una novela larga del subgénero maravilloso",
+             "Un manual de ciencias",
+             "Una obra de teatro realista"
+            ],
+            "ayuda": "Dragones y hechizos: maravilloso. Tiene mucho tiempo."
+           },
+           {
+            "cons": "Leo leyó la primera página de una novela y no le enganchó nada.",
+            "ops": [
+             "Probar otro libro",
+             "Obligarse a terminarla igual",
+             "Dejar de leer por un tiempo"
+            ],
+            "ayuda": "Si un libro no engancha, se puede cambiar."
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Elegir un libro",
+          "texto": "Para elegir un libro conviene combinar lo que dice el paratexto con lo que uno tiene ganas de leer y el tiempo disponible."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "La tapa y la contratapa muestran el género y el conflicto; una recomendación cuenta la experiencia de otro lector. Leer la primera página es la mejor prueba: si no engancha, está bien cambiar."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "¿De qué género tengo ganas?",
+           "¿Quién me lo recomendó y por qué?",
+           "¿Me engancha la primera página y me da el tiempo?"
+          ]
+         }
+        ]
+       },
+       {
+        "titulo": "La ficha bibliográfica",
+        "ejemplo": {
+         "motor": "transformar",
+         "p": {
+          "items": [
+           {
+            "nombre": "Verne",
+            "antes": "Datos sueltos: Julio Verne — Ediciones del Sur — El faro del fin del mundo — 2019",
+            "pasos": [
+             {
+              "v": "{{Verne, Julio.}}",
+              "txt": "Primero el autor: apellido, coma y nombre."
+             },
+             {
+              "v": "Verne, Julio. {{El faro del fin del mundo.}}",
+              "txt": "Después el título, tal como figura en la tapa."
+             },
+             {
+              "v": "Verne, Julio. El faro del fin del mundo. {{Ediciones del Sur,}}",
+              "txt": "Sigue la editorial, que figura en la portada."
+             },
+             {
+              "v": "Verne, Julio. El faro del fin del mundo. Ediciones del Sur, {{2019.}}",
+              "txt": "Al final, el año de la edición."
+             }
+            ],
+            "cierre": "Así cualquiera puede encontrar ese libro."
+           },
+           {
+            "nombre": "Montes",
+            "antes": "Datos sueltos: 2022 — Graciela Montes — Loqueleo — Doña Clementina Queridita",
+            "pasos": [
+             {
+              "v": "{{Montes, Graciela.}}",
+              "txt": "El apellido va primero."
+             },
+             {
+              "v": "Montes, Graciela. {{Doña Clementina Queridita.}}",
+              "txt": "Después el título."
+             },
+             {
+              "v": "Montes, Graciela. Doña Clementina Queridita. {{Loqueleo, 2022.}}",
+              "txt": "Editorial y año cierran la ficha."
+             }
+            ],
+            "cierre": "El orden es siempre el mismo."
+           }
+          ]
+         }
+        },
+        "ejercicio": {
+         "motor": "armar_x",
+         "p": {
+          "consigna": "Armá la ficha bibliográfica con las piezas en orden.",
+          "items": [
+           {
+            "cons": "Libro: «Las aventuras de Pinocho», de Carlo Collodi, editorial Colihue, edición 2015.",
+            "piezas": [
+             "Collodi, Carlo.",
+             "Las aventuras de Pinocho.",
+             "Colihue,",
+             "2015."
+            ],
+            "extra": [
+             "Carlo Collodi."
+            ]
+           },
+           {
+            "cons": "Libro: «Cuentos de la selva», de Horacio Quiroga, editorial Losada, edición 2018.",
+            "piezas": [
+             "Quiroga, Horacio.",
+             "Cuentos de la selva.",
+             "Losada,",
+             "2018."
+            ],
+            "extra": [
+             "Horacio Quiroga."
+            ]
+           },
+           {
+            "cons": "Libro: «Mujercitas», de Louisa May Alcott, editorial Gárgola, edición 2020.",
+            "piezas": [
+             "Alcott, Louisa May.",
+             "Mujercitas.",
+             "Gárgola,",
+             "2020."
+            ],
+            "extra": [
+             "Louisa May Alcott."
+            ]
+           }
+          ]
+         }
+        },
+        "explicacion": [
+         {
+          "tipo": "definicion",
+          "titulo": "Ficha bibliográfica",
+          "texto": "La ficha bibliográfica registra los datos de un libro en un orden fijo: autor, título, editorial y año de edición."
+         },
+         {
+          "tipo": "parrafo",
+          "texto": "Sirve para recordar qué leímos y para que otra persona pueda encontrar exactamente el mismo libro. El autor se escribe con el apellido primero porque así se ordenan los libros en las bibliotecas."
+         },
+         {
+          "tipo": "lista",
+          "items": [
+           "Autor: apellido, nombre.",
+           "Título tal como aparece en la tapa.",
+           "Editorial y año, al final."
+          ]
+         }
+        ]
+       }
+      ],
+      "recuerda": [
+       {
+        "concepto": "Elegir un libro",
+        "definicion": "es combinar el género que tengo ganas de leer, las recomendaciones, la primera página y el tiempo.",
+        "ejemplo": "Poco tiempo y gusto por el misterio → cuentos policiales"
+       },
+       {
+        "concepto": "Contratapa",
+        "definicion": "cuenta de qué trata el libro y presenta el conflicto, sin revelar cómo termina.",
+        "ejemplo": "Tres guardianes de un faro enfrentan a unos piratas"
+       },
+       {
+        "concepto": "Ficha bibliográfica",
+        "definicion": "registra autor, título, editorial y año, siempre en ese orden.",
+        "ejemplo": "Verne, Julio. El faro del fin del mundo. Ediciones del Sur, 2019."
+       },
+       {
+        "concepto": "El autor en la ficha",
+        "definicion": "se escribe con el apellido primero, una coma y después el nombre.",
+        "ejemplo": "Montes, Graciela"
+       }
+      ]
+     },
+     "carpeta_nivel": [
+      "aplicar",
+      "aplicar",
+      "aplicar",
+      "aplicar"
+     ]
+    }
+   },
+   "act": {
+    "1": [
+     {
+      "t": "ordering",
+      "p": "Ordená los momentos de este relato: «Un nene que vive en la costa sueña con navegar. Una tormenta hunde el bote de su papá. Juntos arman uno nuevo con maderas del puerto».",
+      "o": [
+       "Una tormenta hunde el bote de su papá",
+       "Juntos arman uno nuevo con maderas del puerto",
+       "Un nene de la costa sueña con navegar"
+      ],
+      "r": {
+       "orden": [
+        "Un nene de la costa sueña con navegar",
+        "Una tormenta hunde el bote de su papá",
+        "Juntos arman uno nuevo con maderas del puerto"
+       ]
+      },
+      "e": "Situación inicial, conflicto y desenlace.",
+      "n": "aplicar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "«Camila llegó a casa, tiró la mochila, se encerró en su cuarto y no quiso cenar.» ¿Qué se puede inferir?",
+      "o": [
+       "Le pasó algo que la puso mal",
+       "Está muy contenta con el día",
+       "Tiene mucha hambre"
+      ],
+      "r": {
+       "correcta": "Le pasó algo que la puso mal"
+      },
+      "e": "Encerrarse y no cenar son pistas de que algo la afectó.",
+      "n": "analizar"
+     },
+     {
+      "t": "classify",
+      "p": "Clasificá cada fragmento según su narrador.",
+      "o": {
+       "elementos": [
+        "Me desperté y la casa estaba vacía.",
+        "Nunca supe quién dejó la nota.",
+        "El cartero dejó la caja en la vereda.",
+        "Ana subió al tren sin mirar atrás."
+       ],
+       "categorias": [
+        "Primera persona",
+        "Tercera persona"
+       ]
+      },
+      "r": {
+       "categorias": {
+        "Me desperté y la casa estaba vacía.": "Primera persona",
+        "Nunca supe quién dejó la nota.": "Primera persona",
+        "El cartero dejó la caja en la vereda.": "Tercera persona",
+        "Ana subió al tren sin mirar atrás.": "Tercera persona"
+       }
+      },
+      "e": "Con «yo» cuenta un personaje; con «él» o «ella», alguien de afuera.",
+      "n": "aplicar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Un compañero dice: «En \"Yo subí corriendo la escalera\", el narrador es el autor del libro». ¿Qué le contestás?",
+      "o": [
+       "Es un narrador en primera persona, no el autor",
+       "Tiene razón: el que dice «yo» es el autor",
+       "Es un narrador omnisciente"
+      ],
+      "r": {
+       "correcta": "Es un narrador en primera persona, no el autor"
+      },
+      "e": "El narrador es una voz dentro del relato, aunque diga «yo».",
+      "n": "error"
+     }
+    ],
+    "2": [
+     {
+      "t": "classify",
+      "p": "Clasificá cada texto en su género.",
+      "o": {
+       "elementos": [
+        "Érase una vez un pueblo sin relojes.",
+        "Verde la hoja, / verde el río",
+        "JUAN. —¿Quién anda ahí? (Apaga la vela.)",
+        "El colibrí bate sus alas unas 50 veces por segundo."
+       ],
+       "categorias": [
+        "Narrativo",
+        "Poético",
+        "Teatral",
+        "No literario"
+       ]
+      },
+      "r": {
+       "categorias": {
+        "Érase una vez un pueblo sin relojes.": "Narrativo",
+        "Verde la hoja, / verde el río": "Poético",
+        "JUAN. —¿Quién anda ahí? (Apaga la vela.)": "Teatral",
+        "El colibrí bate sus alas unas 50 veces por segundo.": "No literario"
+       }
+      },
+      "e": "Forma y propósito definen el género.",
+      "n": "aplicar"
+     },
+     {
+      "t": "classify",
+      "p": "¿De qué subgénero es cada argumento?",
+      "o": {
+       "elementos": [
+        "Un hechicero convierte al rey en sapo",
+        "Una nave encuentra vida en una luna helada",
+        "Una inspectora busca al ladrón de un banco",
+        "Una voz llama desde el pozo cada noche"
+       ],
+       "categorias": [
+        "Maravilloso",
+        "Ciencia ficción",
+        "Policial",
+        "Terror"
+       ]
+      },
+      "r": {
+       "categorias": {
+        "Un hechicero convierte al rey en sapo": "Maravilloso",
+        "Una nave encuentra vida en una luna helada": "Ciencia ficción",
+        "Una inspectora busca al ladrón de un banco": "Policial",
+        "Una voz llama desde el pozo cada noche": "Terror"
+       }
+      },
+      "e": "Cada subgénero tiene su tipo de mundo.",
+      "n": "aplicar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Un relato de Misiones cuenta por qué el picaflor vuela de flor en flor: era un joven que buscaba a su amada. ¿Qué es?",
+      "o": [
+       "Leyenda",
+       "Fábula",
+       "Mito"
+      ],
+      "r": {
+       "correcta": "Leyenda"
+      },
+      "e": "Explica el origen de algo en un lugar real; no hay moraleja ni dioses creadores.",
+      "n": "analizar"
+     },
+     {
+      "t": "odd_one_out",
+      "p": "¿Cuál NO es un relato tradicional?",
+      "o": [
+       "Un mito sobre el origen del fuego",
+       "Una fábula de un zorro y un cuervo",
+       "Una leyenda del cerro de siete colores",
+       "Una noticia sobre una inundación"
+      ],
+      "r": {
+       "correcta": "Una noticia sobre una inundación"
+      },
+      "e": "La noticia es un texto no literario sobre hechos reales.",
+      "n": "analizar"
+     }
+    ],
+    "3": [
+     {
+      "t": "ordering",
+      "p": "Ordená el proceso de escritura de Iván, que escribe sobre su abuelo.",
+      "o": [
+       "Escribe el borrador sin frenar",
+       "Relee y corrige mayúsculas, puntos y repeticiones",
+       "Pasa en limpio la versión final",
+       "Anota recuerdos de su abuelo y decide el orden"
+      ],
+      "r": {
+       "orden": [
+        "Anota recuerdos de su abuelo y decide el orden",
+        "Escribe el borrador sin frenar",
+        "Relee y corrige mayúsculas, puntos y repeticiones",
+        "Pasa en limpio la versión final"
+       ]
+      },
+      "e": "Planificar, borrador, revisar y pasar en limpio.",
+      "n": "aplicar"
+     },
+     {
+      "t": "fill_blank",
+      "p": "Completá con el conector que corresponde: «Ensayamos toda la semana, ___ la obra salió muy bien. Me encanta bailar, ___ hoy estoy muy cansada.»",
+      "r": {
+       "huecos": [
+        [
+         "por eso",
+         "entonces"
+        ],
+        [
+         "pero",
+         "sin embargo"
+        ]
+       ]
+      },
+      "e": "El primero indica consecuencia; el segundo, oposición.",
+      "n": "aplicar"
+     },
+     {
+      "t": "tap_text",
+      "p": "Tocá las dos palabras que deberían empezar con mayúscula: «el perro ladró toda la noche. nadie pudo dormir.»",
+      "o": {
+       "segmentos": [
+        "el",
+        "perro",
+        "ladró",
+        "toda",
+        "la",
+        "noche.",
+        "nadie",
+        "pudo",
+        "dormir."
+       ],
+       "modo": "palabras"
+      },
+      "r": {
+       "tocar": [
+        0,
+        6
+       ]
+      },
+      "e": "Cada oración empieza con mayúscula.",
+      "n": "error"
+     },
+     {
+      "t": "keywords",
+      "p": "Escribí un párrafo de tres oraciones sobre un libro o una historia que te haya gustado. Usá al menos un conector que explique por qué te gustó (porque, ya que, por eso).",
+      "o": {
+       "ayuda": "Mayúscula al empezar, punto al terminar cada oración y un conector de causa."
+      },
+      "r": {
+       "grupos": [
+        [
+         "porque",
+         "ya que",
+         "por eso"
+        ],
+        [
+         "gust*",
+         "me encant*"
+        ]
+       ],
+       "minimo": 2
+      },
+      "e": "El párrafo cuenta qué historia te gustó y por qué, con conectores.",
+      "n": "aplicar"
+     }
+    ],
+    "4": [
+     {
+      "t": "matching",
+      "p": "Uní cada parte del libro con lo que te dice.",
+      "o": {
+       "izquierda": [
+        "Tapa",
+        "Contratapa",
+        "Índice",
+        "Primera página"
+       ],
+       "derecha": [
+        "Si te engancha",
+        "Cómo está organizado",
+        "De qué trata, sin el final",
+        "Título y autor"
+       ]
+      },
+      "r": {
+       "pares": {
+        "Tapa": "Título y autor",
+        "Contratapa": "De qué trata, sin el final",
+        "Índice": "Cómo está organizado",
+        "Primera página": "Si te engancha"
+       }
+      },
+      "e": "Cada parte del paratexto da una pista distinta.",
+      "n": "aplicar"
+     },
+     {
+      "t": "ordering",
+      "p": "Ordená los datos de la ficha bibliográfica de «Cuentos de la selva», de Horacio Quiroga (Losada, 2018).",
+      "o": [
+       "Cuentos de la selva.",
+       "Losada,",
+       "2018.",
+       "Quiroga, Horacio."
+      ],
+      "r": {
+       "orden": [
+        "Quiroga, Horacio.",
+        "Cuentos de la selva.",
+        "Losada,",
+        "2018."
+       ]
+      },
+      "e": "Autor, título, editorial y año.",
+      "n": "aplicar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Un compañero armó esta ficha: «Horacio Quiroga. Cuentos de la selva. Losada, 2018.» ¿Qué tiene mal?",
+      "o": [
+       "El autor va con el apellido primero",
+       "Falta el color de la tapa",
+       "El año va antes del título"
+      ],
+      "r": {
+       "correcta": "El autor va con el apellido primero"
+      },
+      "e": "Se escribe «Quiroga, Horacio».",
+      "n": "error"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Delfina tiene una semana, le gustan los relatos de miedo y la novela que empezó no le engancha. ¿Qué le conviene?",
+      "o": [
+       "Cambiar por un libro de cuentos de terror breves",
+       "Terminar la novela aunque no le guste",
+       "Leer un manual de ciencias"
+      ],
+      "r": {
+       "correcta": "Cambiar por un libro de cuentos de terror breves"
+      },
+      "e": "Gusto, tiempo y primera página: los tres criterios apuntan a cambiar.",
+      "n": "analizar"
+     }
+    ],
+    "5": [
+     {
+      "t": "multiple_choice",
+      "p": "Relámpago. \"Yo encontré la llave\" está en…",
+      "o": [
+       "Primera persona",
+       "Tercera persona",
+       "Narrador omnisciente"
+      ],
+      "r": {
+       "correcta": "Primera persona"
+      },
+      "e": "El narrador es un personaje.",
+      "tiempo": 20,
+      "n": "recordar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Relámpago. Un relato con dioses que explica el origen del mundo es un…",
+      "o": [
+       "Mito",
+       "Cuento",
+       "Poema"
+      ],
+      "r": {
+       "correcta": "Mito"
+      },
+      "e": "Explica orígenes con dioses.",
+      "tiempo": 20,
+      "n": "recordar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Relámpago. Cada párrafo desarrolla…",
+      "o": [
+       "Una idea",
+       "Todas las ideas",
+       "Un diálogo"
+      ],
+      "r": {
+       "correcta": "Una idea"
+      },
+      "e": "Y termina en punto y aparte.",
+      "tiempo": 20,
+      "n": "recordar"
+     },
+     {
+      "t": "multiple_choice",
+      "p": "Relámpago. En la ficha, el autor se escribe…",
+      "o": [
+       "Apellido, nombre",
+       "Nombre apellido",
+       "Solo el nombre"
+      ],
+      "r": {
+       "correcta": "Apellido, nombre"
+      },
+      "e": "Ej.: Ríos, Ana.",
+      "tiempo": 20,
+      "n": "recordar"
+     }
+    ]
+   },
+   "examen": [
+    [
+     1,
+     {
+      "t": "multiple_choice",
+      "p": "«Al ver el boletín, Lautaro lo guardó en el fondo de la mochila y dijo que no le habían dado nada.» ¿Qué se infiere?",
+      "o": [
+       "Le fue mal y no quiere mostrarlo",
+       "Le fue excelente",
+       "Perdió la mochila"
+      ],
+      "r": {
+       "correcta": "Le fue mal y no quiere mostrarlo"
+      },
+      "e": "Esconderlo y mentir son las pistas.",
+      "n": "analizar"
+     }
+    ],
+    [
+     1,
+     {
+      "t": "multiple_choice",
+      "p": "«Nadie sabía que la vecina, desde su ventana, había visto todo y pensaba callarlo.» ¿Qué narrador es?",
+      "o": [
+       "Tercera persona omnisciente",
+       "Primera persona",
+       "Tercera persona que solo cuenta desde afuera"
+      ],
+      "r": {
+       "correcta": "Tercera persona omnisciente"
+      },
+      "e": "Conoce lo que la vecina piensa hacer.",
+      "n": "analizar"
+     }
+    ],
+    [
+     1,
+     {
+      "t": "ordering",
+      "p": "Ordená: «Una golondrina se queda sola cuando su bandada parte al norte. Un chico la cuida todo el invierno. En primavera vuelve a volar con las demás».",
+      "o": [
+       "Un chico la cuida todo el invierno",
+       "En primavera vuelve a volar con las demás",
+       "Una golondrina se queda sola cuando su bandada parte"
+      ],
+      "r": {
+       "orden": [
+        "Una golondrina se queda sola cuando su bandada parte",
+        "Un chico la cuida todo el invierno",
+        "En primavera vuelve a volar con las demás"
+       ]
+      },
+      "e": "Situación inicial, conflicto y desenlace.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     1,
+     {
+      "t": "true_false",
+      "p": "El narrador y el autor de un cuento son siempre la misma persona.",
+      "o": [
+       "Verdadero",
+       "Falso"
+      ],
+      "r": {
+       "correcta": "Falso"
+      },
+      "e": "El autor escribe; el narrador es una voz dentro del relato.",
+      "n": "recordar"
+     }
+    ],
+    [
+     2,
+     {
+      "t": "classify",
+      "p": "Clasificá cada fragmento según su género.",
+      "o": {
+       "elementos": [
+        "La niña encontró una llave en el barro.",
+        "Duerme el río / bajo la luna",
+        "MARTA. —¡Volviste! (Lo abraza.)",
+        "El tero vive en pastizales y lagunas."
+       ],
+       "categorias": [
+        "Narrativo",
+        "Poético",
+        "Teatral",
+        "No literario"
+       ]
+      },
+      "r": {
+       "categorias": {
+        "La niña encontró una llave en el barro.": "Narrativo",
+        "Duerme el río / bajo la luna": "Poético",
+        "MARTA. —¡Volviste! (Lo abraza.)": "Teatral",
+        "El tero vive en pastizales y lagunas.": "No literario"
+       }
+      },
+      "e": "Forma y propósito.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "En un relato, los dioses del cielo y del mar se pelean y de esa pelea nacen las islas. ¿Qué es?",
+      "o": [
+       "Un mito",
+       "Una fábula",
+       "Una leyenda"
+      ],
+      "r": {
+       "correcta": "Un mito"
+      },
+      "e": "Dioses y origen del mundo.",
+      "n": "analizar"
+     }
+    ],
+    [
+     2,
+     {
+      "t": "short_answer",
+      "p": "Un cuento transcurre en el año 2300, en una ciudad bajo el mar con robots. ¿De qué subgénero narrativo es?",
+      "r": {
+       "acepta": [
+        "ciencia ficcion",
+        "ciencia ficción",
+        "de ciencia ficción",
+        "de ciencia ficcion"
+       ]
+      },
+      "e": "Futuro y tecnología: ciencia ficción.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     3,
+     {
+      "t": "fill_blank",
+      "p": "Completá con el conector justo: «Se cortó la luz, ___ cenamos con velas. Quería ir al cine, ___ no había entradas.»",
+      "r": {
+       "huecos": [
+        [
+         "por eso",
+         "entonces"
+        ],
+        [
+         "pero",
+         "sin embargo"
+        ]
+       ]
+      },
+      "e": "Consecuencia y oposición.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     3,
+     {
+      "t": "tap_text",
+      "p": "Tocá la palabra que debería empezar con mayúscula: «Fuimos a la plaza. después tomamos un helado.»",
+      "o": {
+       "segmentos": [
+        "Fuimos",
+        "a",
+        "la",
+        "plaza.",
+        "después",
+        "tomamos",
+        "un",
+        "helado."
+       ],
+       "modo": "palabras"
+      },
+      "r": {
+       "tocar": [
+        4
+       ]
+      },
+      "e": "Después del punto, mayúscula.",
+      "n": "error"
+     }
+    ],
+    [
+     3,
+     {
+      "t": "ordering",
+      "p": "Ordená el proceso de escritura de Lola, que escribe una carta a su prima.",
+      "o": [
+       "Escribe el borrador",
+       "Relee y corrige",
+       "Pasa la carta en limpio",
+       "Decide qué le va a contar y en qué orden"
+      ],
+      "r": {
+       "orden": [
+        "Decide qué le va a contar y en qué orden",
+        "Escribe el borrador",
+        "Relee y corrige",
+        "Pasa la carta en limpio"
+       ]
+      },
+      "e": "Planificar, borrador, revisar y pasar en limpio.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     3,
+     {
+      "t": "multiple_choice",
+      "p": "«Me encanta el fútbol, por eso hoy no fui al partido.» ¿Qué problema tiene la oración?",
+      "o": [
+       "El conector debería ser de oposición, como «pero»",
+       "Le falta la mayúscula inicial",
+       "No tiene ningún problema"
+      ],
+      "r": {
+       "correcta": "El conector debería ser de oposición, como «pero»"
+      },
+      "e": "No ir no es consecuencia de que te guste.",
+      "n": "error"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "ordering",
+      "p": "Ordená la ficha bibliográfica de «Mujercitas», de Louisa May Alcott (Gárgola, 2020).",
+      "o": [
+       "Mujercitas.",
+       "Gárgola,",
+       "2020.",
+       "Alcott, Louisa May."
+      ],
+      "r": {
+       "orden": [
+        "Alcott, Louisa May.",
+        "Mujercitas.",
+        "Gárgola,",
+        "2020."
+       ]
+      },
+      "e": "Autor, título, editorial y año.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "multiple_choice",
+      "p": "Rodrigo tiene solo los fines de semana para leer y quiere aventuras. ¿Qué mira primero para decidir?",
+      "o": [
+       "La contratapa y la cantidad de páginas",
+       "El código de barras",
+       "El color del lomo"
+      ],
+      "r": {
+       "correcta": "La contratapa y la cantidad de páginas"
+      },
+      "e": "La contratapa muestra el género y el conflicto; las páginas, el largo.",
+      "n": "analizar"
+     }
+    ]
+   ],
+   "practica": "Práctica general: volver a leer",
+   "examen_titulo": "Nivel jefe: volver a leer"
+  }
+ }
+]

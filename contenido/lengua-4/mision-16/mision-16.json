@@ -1,0 +1,309 @@
+{
+ "subject_id": null,
+ "tema": 16,
+ "niveles": {},
+ "act": {},
+ "examen": [],
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 9 · nivel 3",
+   "para": "Cine y literatura",
+   "nota": "adaptación: libro y versión audiovisual",
+   "niveles": {
+    "objetivo": "Vas a comparar el libro con una versión audiovisual (película, serie o dibujo animado) y reconocer qué cambia al adaptar.",
+    "vas_a_ver": [
+     "Qué es una adaptación",
+     "Qué se compara",
+     "Ventajas de cada medio",
+     "Una comparación"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Adaptación",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adaptación",
+        "texto": "Versión de una obra en otro medio, por ejemplo de un libro a una película."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Adaptar es transformar: se cambia el lenguaje (palabras por imágenes y sonido), y a menudo se agregan, sacan o modifican escenas."
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Qué se compara",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Criterios",
+        "columnas": [
+         "Criterio",
+         "Pregunta"
+        ],
+        "filas": [
+         [
+          "Personajes",
+          "¿Son como en el libro?"
+         ],
+         [
+          "Ambiente",
+          "¿Cómo se ve el castillo?"
+         ],
+         [
+          "Hechos",
+          "¿Qué se agregó o se sacó?"
+         ],
+         [
+          "Final",
+          "¿Es igual o distinto?"
+         ],
+         [
+          "Humor",
+          "¿Se mantiene la ironía?"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Ventajas de cada medio",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Libro y pantalla",
+        "columnas": [
+         "Libro",
+         "Versión audiovisual"
+        ],
+        "filas": [
+         [
+          "Cada lector imagina a su manera",
+          "Muestra rostros, lugares y sonidos"
+         ],
+         [
+          "Cuenta pensamientos con palabras",
+          "Usa música, luz y actuación"
+         ],
+         [
+          "Se lee a su ritmo",
+          "Dura un tiempo fijo"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Comparar con orden",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Para comparar, usá un cuadro con los criterios y anotá qué pasa en cada versión. Después sacá una <b>conclusión fundamentada</b>: cuál te gustó más y por qué, con ejemplos."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "comparar",
+     "planteo": "¿Qué puede mostrar mejor una película que el libro?",
+     "pasos": [
+      "Los rostros y gestos de los personajes.",
+      "El castillo y la música de misterio.",
+      "El libro, en cambio, muestra pensamientos con palabras."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá.",
+     "pasos": [
+      "Una versión de una obra en otro medio es una ___ .",
+      "Para comparar uso un cuadro de ___ ."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Elegí un criterio y comparé el libro con una versión audiovisual."
+    },
+    "tip": {
+     "titulo": "Cuadro primero",
+     "texto": "Armá el cuadro antes de opinar: así tu conclusión tiene pruebas."
+    },
+    "ojo": [
+     "Decir que la película es mejor sin explicar por qué.",
+     "Olvidar que cada medio tiene sus ventajas."
+    ],
+    "resumen": [
+     {
+      "titulo": "Adaptación",
+      "texto": "Otro medio."
+     },
+     {
+      "titulo": "Criterios",
+      "texto": "Personajes, ambiente, hechos."
+     },
+     {
+      "titulo": "Medios",
+      "texto": "Cada uno con ventajas."
+     },
+     {
+      "titulo": "Conclusión",
+      "texto": "Con ejemplos."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Adaptación",
+      "significado": "Versión de una obra en otro medio."
+     },
+     {
+      "palabra": "Criterio",
+      "significado": "Aspecto que se compara."
+     },
+     {
+      "palabra": "Medio",
+      "significado": "Forma de comunicar."
+     }
+    ],
+    "carpeta": [
+     "¿Cómo se llama una versión de un libro en otro medio?",
+     "¿Qué se arma antes de opinar: un cuadro o un chiste?",
+     "¿Qué puede mostrar mejor la pantalla: rostros o pensamientos con palabras?",
+     "¿Cada medio tiene ventajas propias? Respondé sí o no."
+    ],
+    "respuestas_carpeta": [
+     [
+      "adaptacion",
+      "adaptación",
+      "una adaptacion",
+      "una adaptación"
+     ],
+     [
+      "cuadro",
+      "un cuadro"
+     ],
+     [
+      "rostros",
+      "los rostros"
+     ],
+     [
+      "si",
+      "sí"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Adaptación. Criterios.",
+     "solo": "En el libro los pensamientos se cuentan con palabras; la película muestra gestos y música.",
+     "carpeta": [
+      "Adaptación.",
+      "Un cuadro.",
+      "Rostros.",
+      "Sí."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "matching",
+     "p": "Uní cada criterio con su pregunta.",
+     "o": {
+      "izquierda": [
+       "Personajes",
+       "Ambiente",
+       "Hechos",
+       "Final"
+      ],
+      "derecha": [
+       "¿Son como en el libro?",
+       "¿Cómo se ve el castillo?",
+       "¿Qué se agregó o sacó?",
+       "¿Es igual o distinto?"
+      ]
+     },
+     "r": {
+      "pares": {
+       "Personajes": "¿Son como en el libro?",
+       "Ambiente": "¿Cómo se ve el castillo?",
+       "Hechos": "¿Qué se agregó o sacó?",
+       "Final": "¿Es igual o distinto?"
+      }
+     },
+     "e": "Cada criterio tiene su pregunta."
+    },
+    {
+     "t": "true_false",
+     "p": "Una adaptación es siempre idéntica al libro.",
+     "o": [
+      "Verdadero",
+      "Falso"
+     ],
+     "r": {
+      "correcta": "Falso"
+     },
+     "e": "Se cambian cosas al pasar de medio."
+    }
+   ],
+   "examen": [
+    [
+     3,
+     {
+      "t": "multiple_choice",
+      "p": "Una versión de una obra en otro medio es…",
+      "o": [
+       "Una adaptación",
+       "Una reseña",
+       "Un prólogo",
+       "Una rima"
+      ],
+      "r": {
+       "correcta": "Una adaptación"
+      },
+      "e": "Cambia el lenguaje."
+     }
+    ],
+    [
+     3,
+     {
+      "t": "multi_select",
+      "p": "Criterios para comparar libro y película:",
+      "o": [
+       "Personajes",
+       "Ambiente",
+       "Final",
+       "Tamaño del cine"
+      ],
+      "r": {
+       "correctas": [
+        "Personajes",
+        "Ambiente",
+        "Final"
+       ]
+      },
+      "e": "El tamaño del cine no es un criterio."
+     }
+    ],
+    [
+     3,
+     {
+      "t": "true_false",
+      "p": "Cada medio tiene ventajas propias.",
+      "o": [
+       "Verdadero",
+       "Falso"
+      ],
+      "r": {
+       "correcta": "Verdadero"
+      },
+      "e": "El libro cuenta pensamientos; la pantalla muestra imágenes."
+     }
+    ]
+   ]
+  }
+ ]
+}

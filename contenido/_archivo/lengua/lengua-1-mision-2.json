@@ -1,0 +1,584 @@
+[
+ {
+  "que": "nivel 4: planificar y escribir un policial (taller de escritor)",
+  "contenido": {
+   "niveles": {
+    "objetivo": "Vas a planificar y escribir un enigma breve con pistas y revelación.",
+    "vas_a_ver": [
+     "Planificar",
+     "Estructura",
+     "Juego limpio"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Planificar",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Plan",
+        "columnas": [
+         "Parte",
+         "Qué decido"
+        ],
+        "filas": [
+         [
+          "Misterio",
+          "Qué pasó"
+         ],
+         [
+          "Detective",
+          "Quién investiga"
+         ],
+         [
+          "Pistas",
+          "Dos verdaderas y una falsa"
+         ],
+         [
+          "Revelación",
+          "Cómo se resuelve"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Estructura",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Situación inicial: aparece el <b>enigma</b>. Desarrollo: la <b>investigación</b>, pista por pista. Desenlace: la <b>revelación</b>."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Juego limpio",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Como en «La liga de los pelirrojos», la solución tiene que salir de las pistas que el lector ya vio. Nada de resolver por casualidad."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "la torta",
+     "planteo": "Planificá un enigma: desapareció la torta del cumpleaños.",
+     "pasos": [
+      "Misterio: la torta no está.",
+      "Detective: Juan.",
+      "Pistas: migas en el sillón y el perro escondido; falsa pista: la ventana abierta.",
+      "Revelación: el perro se la comió."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá.",
+     "pasos": [
+      "El momento en que se explica todo es la ___ .",
+      "Un enigma tiene que tener al menos dos ___ verdaderas."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu enigma",
+     "planteo": "Escribí tu enigma (una página, con dos pistas, una falsa pista y la revelación) en la actividad de este nivel: ahí lo corrige el tutor."
+    },
+    "tip": {
+     "titulo": "Empezá por el final",
+     "texto": "Decidí primero la solución y después escondé las pistas que llevan a ella."
+    },
+    "ojo": [
+     "Resolver por casualidad.",
+     "Contar la solución al principio."
+    ],
+    "resumen": [
+     {
+      "titulo": "Planificar",
+      "texto": "Misterio, detective, pistas."
+     },
+     {
+      "titulo": "Estructura",
+      "texto": "Enigma, investigación, revelación."
+     },
+     {
+      "titulo": "Pistas",
+      "texto": "Dos verdaderas, una falsa."
+     },
+     {
+      "titulo": "Juego limpio",
+      "texto": "La solución en las pistas."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Planificar",
+      "significado": "Pensar antes de escribir."
+     },
+     {
+      "palabra": "Desarrollo",
+      "significado": "Parte central del relato."
+     },
+     {
+      "palabra": "Juego limpio",
+      "significado": "Regla: la solución sale de las pistas."
+     }
+    ],
+    "carpeta": [
+     "¿Cuántas pistas verdaderas lleva tu enigma como mínimo?",
+     "¿Cómo se llama la parte final donde se explica el caso?",
+     "¿Conviene contar la solución al principio? Respondé sí o no.",
+     "¿Qué se decide primero según el consejo: la solución o el título?"
+    ],
+    "respuestas_carpeta": [
+     [
+      "2",
+      "dos"
+     ],
+     [
+      "revelacion",
+      "revelación",
+      "la revelación",
+      "la revelacion"
+     ],
+     [
+      "no"
+     ],
+     [
+      "solucion",
+      "solución",
+      "la solución",
+      "la solucion"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Revelación. Pistas.",
+     "solo": "Respuesta personal: revisá que tenga enigma, investigación y revelación.",
+     "carpeta": [
+      "Dos.",
+      "La revelación.",
+      "No.",
+      "La solución."
+     ]
+    },
+    "leccion": {
+     "temas": [
+      {
+       "titulo": "Planificar un enigma",
+       "ejemplo": {
+        "motor": "esquema",
+        "p": {
+         "items": [
+          {
+           "nombre": "La guitarra",
+           "raiz": "Mi policial",
+           "ramas": [
+            [
+             "Misterio",
+             [
+              "desaparece la guitarra del acto escolar"
+             ],
+             "Primero se decide qué pasó y quién fue."
+            ],
+            [
+             "Detective",
+             [
+              "Nina, la más observadora de primero"
+             ],
+             "Alguien con un rasgo que lo ayude a investigar."
+            ],
+            [
+             "Pistas",
+             [
+              "verdaderas: cuerdas nuevas en la mochila del profe de música; resina en sus manos",
+              "falsa: el portero estaba nervioso"
+             ],
+             "Dos o más verdaderas y una falsa."
+            ],
+            [
+             "Revelación",
+             [
+              "el profe la llevó a arreglar y se olvidó de avisar"
+             ],
+             "Se explica con las pistas ya dadas."
+            ]
+           ],
+           "cierre": "Se planifica al revés: primero la solución, después las pistas."
+          },
+          {
+           "nombre": "El gato",
+           "raiz": "Mi policial",
+           "ramas": [
+            [
+             "Misterio",
+             [
+              "el gato de la vecina aparece cada noche con un moño nuevo"
+             ],
+             "El enigma no tiene que ser un crimen."
+            ],
+            [
+             "Detective",
+             [
+              "Bauti y su hermana"
+             ],
+             "Pueden ser dos."
+            ],
+            [
+             "Pistas",
+             [
+              "verdaderas: lana en el patio del fondo; la señora del fondo teje",
+              "falsa: un camión de mudanzas"
+             ],
+             "Cada pista se puede comprobar."
+            ],
+            [
+             "Revelación",
+             [
+              "la señora del fondo le teje moños al gato"
+             ],
+             "Una solución sorprendente pero lógica."
+            ]
+           ],
+           "cierre": "Con el plan listo, se escribe sin perderse."
+          }
+         ]
+        }
+       },
+       "ejercicio": {
+        "motor": "completar_x",
+        "p": {
+         "consigna": "Completá el plan del policial con la opción que corresponde.",
+         "items": [
+          {
+           "texto": "Misterio: desaparecen las llaves del gimnasio. Solución: las tomó [[la preceptora/una paloma/nadie]]. Pista verdadera: [[ella cerró el gimnasio ese día/hacía calor/hubo un acto]]. Falsa pista: [[un alumno se fue temprano/la preceptora tenía la llave/la puerta estaba cerrada]]."
+          },
+          {
+           "texto": "Misterio: alguien comió las galletas del concurso. Solución: fue [[el abuelo jurado/el perro/la lluvia]]. Pista verdadera: [[tenía azúcar en la corbata/era martes/sonó el timbre]]. Falsa pista: [[el perro ladraba cerca de la mesa/el abuelo tenía azúcar/faltaban galletas]]."
+          }
+         ]
+        }
+       },
+       "explicacion": [
+        {
+         "tipo": "definicion",
+         "titulo": "Planificar un policial",
+         "texto": "Planificar un policial es decidir primero la solución del enigma y después las pistas que llevan a ella y las que distraen."
+        },
+        {
+         "tipo": "parrafo",
+         "texto": "Si se empieza a escribir sin saber quién lo hizo, las pistas no encajan y el final parece inventado. Con el plan armado, cada escena puede dejar una pista en su lugar sin que el lector lo note."
+        },
+        {
+         "tipo": "lista",
+         "items": [
+          "Primero la solución: qué pasó y quién fue.",
+          "Después el detective y las pistas, con una falsa.",
+          "Por último, cómo será la revelación."
+         ]
+        }
+       ]
+      },
+      {
+       "titulo": "Escribir con juego limpio",
+       "ejemplo": {
+        "motor": "revision",
+        "p": {
+         "items": [
+          {
+           "nombre": "La guitarra",
+           "borrador": "La guitarra del acto desapareció. Nina buscó por toda la escuela. Al final un nene confesó que la había escondido porque sí.",
+           "criterios": [
+            [
+             "El enigma aparece al principio",
+             true
+            ],
+            [
+             "Hay pistas antes de la solución",
+             false,
+             "no hay ninguna pista"
+            ],
+            [
+             "Hay una falsa pista",
+             false
+            ],
+            [
+             "La solución sale de las pistas",
+             false,
+             "la confesión aparece de golpe"
+            ]
+           ],
+           "final": "La guitarra del acto desapareció. Nina notó resina en las manos del profe de música y cuerdas nuevas en su mochila; el portero, nervioso, parecía culpable, pero solo había perdido sus anteojos. Al final, Nina reveló que el profe la había llevado a arreglar."
+          },
+          {
+           "nombre": "El gato",
+           "borrador": "El gato de la vecina tenía moños. Bauti vio lana en el patio. La señora del fondo teje. Era la señora del fondo.",
+           "criterios": [
+            [
+             "El enigma aparece al principio",
+             true
+            ],
+            [
+             "Hay pistas antes de la solución",
+             true
+            ],
+            [
+             "Hay una falsa pista",
+             false,
+             "agregar el camión de mudanzas"
+            ],
+            [
+             "La revelación explica el caso",
+             false,
+             "falta contar cómo lo dedujo"
+            ]
+           ],
+           "final": "Cada noche, el gato de la vecina volvía con un moño nuevo. Bauti sospechó de los de la mudanza, pero encontró lana en el patio del fondo. Como la señora del fondo tejía, la esperaron una noche y la vieron atándole un moño rojo."
+          }
+         ]
+        }
+       },
+       "ejercicio": {
+        "motor": "escribir_x",
+        "p": {
+         "items": [
+          {
+           "cons": "Escribí el comienzo de un cuento policial: presentá el misterio y dejá una primera pista.",
+           "criterios": [
+            {
+             "txt": "Al menos 30 palabras",
+             "min": 30
+            },
+            {
+             "txt": "Plantea qué desapareció o qué pasó",
+             "re": "desapareci|robaron|faltaba|alguien|nadie sab"
+            },
+            {
+             "txt": "Deja una pista (huella, marca, objeto, testigo…)",
+             "re": "huella|marca|barro|testigo|vio|encontr|pista|mancha"
+            }
+           ],
+           "modelo": "El lunes a la mañana, la copa del torneo desapareció de la vitrina de la dirección. Nadie sabía quién tenía la llave, pero Nina encontró una huella de barro junto a la puerta y una servilleta del bar de la esquina."
+          }
+         ]
+        }
+       },
+       "explicacion": [
+        {
+         "tipo": "definicion",
+         "titulo": "Juego limpio",
+         "texto": "El juego limpio es la regla del policial de enigma según la cual el lector recibe todas las pistas necesarias antes de la revelación."
+        },
+        {
+         "tipo": "parrafo",
+         "texto": "Así el lector puede competir con el detective. Una solución que aparece de golpe, por casualidad o por una confesión sin pistas previas, decepciona: parece que el autor hizo trampa."
+        },
+        {
+         "tipo": "lista",
+         "items": [
+          "Inicio: aparece el enigma.",
+          "Desarrollo: la investigación, pista por pista.",
+          "Desenlace: la revelación usa las pistas ya dadas."
+         ]
+        }
+       ]
+      }
+     ],
+     "recuerda": [
+      {
+       "concepto": "Planificar al revés",
+       "definicion": "significa decidir primero la solución y después las pistas que llevan a ella.",
+       "ejemplo": "Solución: el profe llevó la guitarra a arreglar"
+      },
+      {
+       "concepto": "Pistas del plan",
+       "definicion": "son dos o más verdaderas que se pueden comprobar y al menos una falsa que distrae.",
+       "ejemplo": "Resina en las manos del profe / el portero nervioso"
+      },
+      {
+       "concepto": "Estructura del policial",
+       "definicion": "tiene un inicio con el enigma, un desarrollo con la investigación y un desenlace con la revelación.",
+       "ejemplo": "Desaparece la guitarra → Nina investiga → explica el caso"
+      },
+      {
+       "concepto": "Juego limpio",
+       "definicion": "es dar al lector todas las pistas antes de la revelación, sin resolver por casualidad.",
+       "ejemplo": "La solución sale de la resina y las cuerdas, no de una confesión"
+      }
+     ]
+    },
+    "carpeta_nivel": [
+     "aplicar",
+     "aplicar",
+     "aplicar",
+     "aplicar"
+    ]
+   },
+   "act": [
+    {
+     "t": "ordering",
+     "p": "Ordená los pasos para planificar un cuento policial.",
+     "o": [
+      "Elegir al detective",
+      "Pensar las pistas verdaderas y una falsa",
+      "Decidir cómo será la revelación",
+      "Decidir qué pasó y quién fue"
+     ],
+     "r": {
+      "orden": [
+       "Decidir qué pasó y quién fue",
+       "Elegir al detective",
+       "Pensar las pistas verdaderas y una falsa",
+       "Decidir cómo será la revelación"
+      ]
+     },
+     "e": "Se planifica empezando por la solución.",
+     "n": "aplicar"
+    },
+    {
+     "t": "multiple_choice",
+     "p": "En el cuento de Marcos, la detective no encuentra ninguna pista y al final el culpable confiesa porque sí. ¿Qué regla no cumple?",
+     "o": [
+      "El juego limpio",
+      "El narrador testigo",
+      "La ficha bibliográfica"
+     ],
+     "r": {
+      "correcta": "El juego limpio"
+     },
+     "e": "La solución tiene que salir de pistas que el lector ya vio.",
+     "n": "error"
+    },
+    {
+     "t": "classify",
+     "p": "Plan: «Desaparece la torta del cumpleaños; fue el tío». Clasificá cada dato.",
+     "o": {
+      "elementos": [
+       "El tío tiene crema en el bigote",
+       "El tío pidió quedarse solo en la cocina",
+       "El perro ladraba cerca de la mesa",
+       "La prima llegó tarde y despeinada"
+      ],
+      "categorias": [
+       "Pista verdadera",
+       "Falsa pista"
+      ]
+     },
+     "r": {
+      "categorias": {
+       "El tío tiene crema en el bigote": "Pista verdadera",
+       "El tío pidió quedarse solo en la cocina": "Pista verdadera",
+       "El perro ladraba cerca de la mesa": "Falsa pista",
+       "La prima llegó tarde y despeinada": "Falsa pista"
+      }
+     },
+     "e": "Las verdaderas llevan al tío; las falsas distraen.",
+     "n": "aplicar"
+    },
+    {
+     "t": "keywords",
+     "p": "Escribí en tres o cuatro oraciones el plan de un cuento policial: qué pasó, quién investiga, una pista verdadera, una falsa pista y cómo se resuelve.",
+     "o": {
+      "ayuda": "Nombrá el misterio, el detective, las pistas y la revelación."
+     },
+     "r": {
+      "grupos": [
+       [
+        "desapareci*",
+        "robo",
+        "robaron",
+        "falta*"
+       ],
+       [
+        "detective",
+        "investig*"
+       ],
+       [
+        "pista*"
+       ],
+       [
+        "falsa",
+        "distrae*"
+       ],
+       [
+        "revela*",
+        "descubr*",
+        "resuelv*"
+       ]
+      ],
+      "minimo": 4
+     },
+     "e": "El plan tiene misterio, detective, pistas verdaderas y falsas, y revelación.",
+     "n": "aplicar"
+    }
+   ],
+   "examen": [
+    [
+     4,
+     {
+      "t": "multiple_choice",
+      "p": "En el cuento de Sol, la detective resuelve el caso porque ve al culpable por casualidad en la última página, sin pistas previas. ¿Qué falla?",
+      "o": [
+       "No hay juego limpio",
+       "No tiene narrador",
+       "No tiene título"
+      ],
+      "r": {
+       "correcta": "No hay juego limpio"
+      },
+      "e": "La solución tiene que salir de pistas ya dadas.",
+      "n": "error"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "fill_blank",
+      "p": "Completá: «Para planificar un policial, primero se decide la ___ del caso y después las ___ que llevan a ella.»",
+      "r": {
+       "huecos": [
+        [
+         "solucion",
+         "solución"
+        ],
+        [
+         "pistas"
+        ]
+       ]
+      },
+      "e": "Se planifica al revés.",
+      "n": "aplicar"
+     }
+    ],
+    [
+     4,
+     {
+      "t": "keywords",
+      "p": "Escribí la revelación de este caso en dos o tres oraciones: «Desapareció el trofeo; pistas: barro en las zapatillas del capitán y la llave de la vitrina en su campera».",
+      "o": {
+       "ayuda": "Explicá quién fue y cómo lo prueban las pistas."
+      },
+      "r": {
+       "grupos": [
+        [
+         "capitan",
+         "capitán"
+        ],
+        [
+         "barro"
+        ],
+        [
+         "llave"
+        ]
+       ],
+       "minimo": 3
+      },
+      "e": "La revelación explica el caso usando las pistas.",
+      "n": "aplicar"
+     }
+    ]
+   ]
+  }
+ }
+]

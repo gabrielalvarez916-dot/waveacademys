@@ -1,1 +1,293 @@
-{"subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2", "tema": 12, "practica": "Práctica general: clases de palabras", "examen_titulo": "Nivel jefe: clases de palabras", "niveles": {"1": {"objetivo": "Vas a reconocer sustantivos y adjetivos, sus clases y cómo concuerdan.", "vas_a_ver": ["El sustantivo", "Clases de sustantivos", "El adjetivo", "La concordancia"], "secciones": [{"etapa": 1, "titulo": "El sustantivo", "bloques": [{"tipo": "definicion", "titulo": "Sustantivo", "texto": "Palabra que nombra personas, animales, cosas, lugares, ideas o sentimientos."}, {"tipo": "tabla", "titulo": "Clases", "columnas": ["Clase", "Ejemplo"], "filas": [["Común", "niña, ciudad, perro"], ["Propio", "Sofía, Córdoba, Rex"], ["Concreto", "mesa, río, gato"], ["Abstracto", "alegría, libertad, miedo"]], "iguales": true}]}, {"etapa": 1, "titulo": "Género y número", "bloques": [{"tipo": "parrafo", "texto": "El sustantivo tiene <b>género</b> (masculino o femenino) y <b>número</b> (singular o plural): <i>el gato, las gatas</i>."}]}, {"etapa": 2, "titulo": "El adjetivo", "bloques": [{"tipo": "definicion", "titulo": "Adjetivo", "texto": "Palabra que acompaña al sustantivo y dice cómo es: calificativos (alto, simpática) o determinativos (esta, tres, mi)."}, {"tipo": "parrafo", "texto": "Los adjetivos <b>concuerdan</b> con el sustantivo en género y número: <i>casas blancas</i>."}]}, {"etapa": 2, "titulo": "Concordancia", "bloques": [{"tipo": "tabla", "titulo": "Corregí", "columnas": ["Mal", "Bien"], "filas": [["los niños cansada", "los niños cansados"], ["una casa grandes", "una casa grande"], ["mis amigo simpático", "mis amigos simpáticos"]], "iguales": true}]}], "ejemplo_completo": {"titulo": "clasificar", "planteo": "¿«Alegría» es concreto o abstracto?", "pasos": ["No se puede tocar ni ver.", "Es un sentimiento.", "Es un sustantivo abstracto."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Los sustantivos que nombran sentimientos o ideas son ___ .", "El adjetivo concuerda con el sustantivo en género y ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí cuatro sustantivos de clases distintas y un adjetivo para cada uno."}, "tip": {"titulo": "Quién acompaña a quién", "texto": "Para saber si concuerdan, buscá el sustantivo y fijate en su género y número."}, "ojo": ["Dejar el adjetivo en singular con un sustantivo plural.", "Confundir abstracto con propio."], "resumen": [{"titulo": "Sustantivo", "texto": "Nombra."}, {"titulo": "Clases", "texto": "Común, propio, concreto, abstracto."}, {"titulo": "Adjetivo", "texto": "Dice cómo es."}, {"titulo": "Concordancia", "texto": "Género y número."}], "glosario": [{"palabra": "Sustantivo", "significado": "Palabra que nombra."}, {"palabra": "Adjetivo", "significado": "Palabra que dice cómo es algo."}, {"palabra": "Concordancia", "significado": "Acuerdo en género y número."}], "carpeta": ["¿«Libertad» es sustantivo concreto o abstracto?", "¿«Córdoba» es sustantivo común o propio?", "¿Qué palabra acompaña al sustantivo y dice cómo es?", "Corregí: «las flores blanco». Escribí solo el adjetivo correcto."], "respuestas_carpeta": [["abstracto", "es abstracto"], ["propio", "es propio"], ["adjetivo", "el adjetivo"], ["blancas"]], "soluciones": {"incompleto": "Abstractos. Número.", "solo": "Perro (común), Rex (propio), mesa (concreto), alegría (abstracto).", "carpeta": ["Abstracto.", "Propio.", "El adjetivo.", "Blancas."]}}, "2": {"objetivo": "Vas a reconocer las formas del verbo y distinguir sus modos: indicativo, subjuntivo e imperativo.", "vas_a_ver": ["Persona, número y tiempo", "El modo", "Formas no personales", "Practicar"], "secciones": [{"etapa": 1, "titulo": "Persona, número y tiempo", "bloques": [{"tipo": "definicion", "titulo": "Verbo", "texto": "Palabra que expresa acciones, estados o procesos y varía en persona, número, tiempo y modo."}, {"tipo": "tabla", "titulo": "Un verbo conjugado", "columnas": ["Forma", "Persona", "Número", "Tiempo"], "filas": [["canto", "1.ª", "singular", "presente"], ["cantaron", "3.ª", "plural", "pasado"], ["cantaremos", "1.ª", "plural", "futuro"]], "iguales": true}]}, {"etapa": 1, "titulo": "El modo", "bloques": [{"tipo": "tabla", "titulo": "Tres modos", "columnas": ["Modo", "Expresa", "Ejemplo"], "filas": [["Indicativo", "Hechos reales", "Estudio todos los días"], ["Subjuntivo", "Deseos, dudas, posibilidades", "Ojalá estudie más"], ["Imperativo", "Órdenes, pedidos", "Estudiá ahora"]], "iguales": true}]}, {"etapa": 2, "titulo": "Formas no personales", "bloques": [{"tipo": "tabla", "titulo": "No indican persona", "columnas": ["Forma", "Terminación", "Ejemplo"], "filas": [["Infinitivo", "-ar, -er, -ir", "cantar"], ["Gerundio", "-ando, -iendo", "cantando"], ["Participio", "-ado, -ido", "cantado"]], "iguales": true}]}, {"etapa": 2, "titulo": "Practicar", "bloques": [{"tipo": "parrafo", "texto": "Para reconocer el modo, preguntate: ¿afirmo un hecho (indicativo), deseo o dudo (subjuntivo) o doy una orden (imperativo)?"}]}], "ejemplo_completo": {"titulo": "identificar", "planteo": "¿En qué modo está «Ojalá llueva mañana»?", "pasos": ["Expresa un deseo.", "El deseo va con subjuntivo.", "Modo subjuntivo."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["El modo que expresa órdenes es el ___ .", "Los hechos reales se expresan en modo ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una oración en cada modo."}, "tip": {"titulo": "Hecho, deseo u orden", "texto": "El modo depende de lo que querés decir, no del tiempo."}, "ojo": ["Confundir tiempo con modo.", "Creer que el gerundio es una persona."], "resumen": [{"titulo": "Verbo", "texto": "Persona, número, tiempo, modo."}, {"titulo": "Indicativo", "texto": "Hechos."}, {"titulo": "Subjuntivo", "texto": "Deseos y dudas."}, {"titulo": "Imperativo", "texto": "Órdenes."}], "glosario": [{"palabra": "Modo", "significado": "Manera de expresar la acción."}, {"palabra": "Conjugar", "significado": "Cambiar el verbo según persona, número, tiempo y modo."}, {"palabra": "Gerundio", "significado": "Forma terminada en -ando o -iendo."}], "carpeta": ["¿En qué modo está «Cerrá la puerta»?", "¿En qué modo está «Ojalá gane»?", "¿Cuál es el infinitivo de «cantaron»?", "¿«Cantando» es gerundio o participio?"], "respuestas_carpeta": [["imperativo", "en imperativo", "modo imperativo"], ["subjuntivo", "en subjuntivo", "modo subjuntivo"], ["cantar"], ["gerundio", "es gerundio"]], "soluciones": {"incompleto": "Imperativo. Indicativo.", "solo": "Indicativo: leo. Subjuntivo: ojalá lea. Imperativo: leé.", "carpeta": ["Imperativo.", "Subjuntivo.", "Cantar.", "Gerundio."]}}, "3": {"objetivo": "Vas a reconocer adverbios y preposiciones y explicar qué función cumplen.", "vas_a_ver": ["El adverbio", "Clases de adverbios", "La preposición", "Practicar"], "secciones": [{"etapa": 1, "titulo": "El adverbio", "bloques": [{"tipo": "definicion", "titulo": "Adverbio", "texto": "Palabra invariable que modifica a un verbo, un adjetivo u otro adverbio."}, {"tipo": "parrafo", "texto": "No cambia de género ni de número: <i>corre rápido, corren rápido</i>."}]}, {"etapa": 1, "titulo": "Clases", "bloques": [{"tipo": "tabla", "titulo": "Qué indican", "columnas": ["Clase", "Ejemplos"], "filas": [["Lugar", "aquí, allá, cerca, lejos"], ["Tiempo", "hoy, ayer, siempre, nunca"], ["Modo", "bien, mal, rápido, despacio"], ["Cantidad", "muy, poco, mucho, bastante"], ["Afirmación y negación", "sí, claro, no, tampoco"]], "iguales": true}]}, {"etapa": 2, "titulo": "La preposición", "bloques": [{"tipo": "definicion", "titulo": "Preposición", "texto": "Palabra invariable que une una palabra con su complemento."}, {"tipo": "parrafo", "texto": "Las preposiciones son: <b>a, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras</b>."}]}, {"etapa": 2, "titulo": "Practicar", "bloques": [{"tipo": "parrafo", "texto": "En <i>Vivo cerca de la plaza</i>, <b>cerca</b> es adverbio de lugar y <b>de</b> es preposición que une con <i>la plaza</i>."}]}], "ejemplo_completo": {"titulo": "clasificar", "planteo": "¿Qué clase de adverbio es «siempre»?", "pasos": ["Dice cuándo ocurre algo.", "Es un adverbio de tiempo."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["Las palabras invariables que modifican un verbo son los ___ .", "Las que unen una palabra con su complemento son las ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí una oración con un adverbio de lugar y una preposición."}, "tip": {"titulo": "No cambian", "texto": "Adverbios y preposiciones son invariables: no tienen género ni número."}, "ojo": ["Poner plural a un adverbio.", "Confundir adverbio con adjetivo."], "resumen": [{"titulo": "Adverbio", "texto": "Modifica."}, {"titulo": "Clases", "texto": "Lugar, tiempo, modo, cantidad."}, {"titulo": "Preposición", "texto": "Une."}, {"titulo": "Invariables", "texto": "Sin género ni número."}], "glosario": [{"palabra": "Adverbio", "significado": "Palabra invariable que modifica un verbo."}, {"palabra": "Preposición", "significado": "Palabra que une."}, {"palabra": "Invariable", "significado": "Que no cambia de forma."}], "carpeta": ["¿«Aquí» es adverbio de lugar o de tiempo?", "¿«Mucho» es adverbio de cantidad o de modo?", "¿«Sin» es preposición o adverbio?", "¿Los adverbios cambian de género y número? Respondé sí o no."], "respuestas_carpeta": [["lugar", "de lugar", "adverbio de lugar"], ["cantidad", "de cantidad", "adverbio de cantidad"], ["preposicion", "preposición", "es preposicion", "es preposición"], ["no"]], "soluciones": {"incompleto": "Adverbios. Preposiciones.", "solo": "Vivo cerca de la plaza: cerca (adverbio de lugar), de (preposición).", "carpeta": ["De lugar.", "De cantidad.", "Preposición.", "No."]}}, "4": {"objetivo": "Vas a reconocer pronombres y conjunciones y usar cada uno para evitar repeticiones y unir ideas.", "vas_a_ver": ["El pronombre", "Clases de pronombres", "La conjunción", "Unir oraciones"], "secciones": [{"etapa": 1, "titulo": "El pronombre", "bloques": [{"tipo": "definicion", "titulo": "Pronombre", "texto": "Palabra que reemplaza a un sustantivo para no repetirlo."}, {"tipo": "parrafo", "texto": "<i>Sofía llegó tarde. Ella se disculpó.</i> «Ella» reemplaza a «Sofía»."}]}, {"etapa": 1, "titulo": "Clases", "bloques": [{"tipo": "tabla", "titulo": "Pronombres", "columnas": ["Clase", "Ejemplos"], "filas": [["Personales", "yo, tú/vos, él, ella, nosotros"], ["Posesivos", "mío, tuyo, suyo, nuestro"], ["Demostrativos", "este, ese, aquel"]], "iguales": true}]}, {"etapa": 2, "titulo": "La conjunción", "bloques": [{"tipo": "definicion", "titulo": "Conjunción", "texto": "Palabra invariable que une palabras u oraciones."}, {"tipo": "tabla", "titulo": "Clases", "columnas": ["Función", "Conjunciones"], "filas": [["Suma", "y, e, ni"], ["Opción", "o, u"], ["Oposición", "pero, sino, aunque"], ["Causa", "porque"]], "iguales": true}]}, {"etapa": 2, "titulo": "Unir oraciones", "bloques": [{"tipo": "parrafo", "texto": "Para evitar repeticiones: <i>Tengo un perro. El perro es grande.</i> → <i>Tengo un perro y es grande.</i>"}]}], "ejemplo_completo": {"titulo": "reemplazar", "planteo": "Evitá repetir: «Lucas compró un libro. Lucas leyó el libro enseguida».", "pasos": ["Reemplazar el segundo Lucas por él.", "Reemplazar el libro por lo.", "Lucas compró un libro y lo leyó enseguida."]}, "ejemplo_incompleto": {"titulo": "completar", "planteo": "Completá.", "pasos": ["La palabra que reemplaza a un sustantivo es el ___ .", "La palabra invariable que une ideas es la ___ ."]}, "ejemplo_solo": {"titulo": "tu turno", "planteo": "Escribí dos oraciones repetitivas y mejorá cada una con un pronombre."}, "tip": {"titulo": "Menos repeticiones", "texto": "Si repetís una palabra, probá con un pronombre."}, "ojo": ["Repetir el sustantivo en cada oración.", "Confundir pero con porque."], "resumen": [{"titulo": "Pronombre", "texto": "Reemplaza."}, {"titulo": "Clases", "texto": "Personales, posesivos."}, {"titulo": "Conjunción", "texto": "Une."}, {"titulo": "Oposición", "texto": "Pero."}], "glosario": [{"palabra": "Pronombre", "significado": "Reemplaza a un sustantivo."}, {"palabra": "Conjunción", "significado": "Une palabras u oraciones."}, {"palabra": "Nexo", "significado": "Palabra que une."}], "carpeta": ["¿Qué palabra reemplaza a un sustantivo?", "¿«Pero» es una conjunción de oposición o de causa?", "¿«Este» es pronombre demostrativo o personal?", "En «Sofía llegó y ella se disculpó», ¿qué pronombre reemplaza a Sofía?"], "respuestas_carpeta": [["pronombre", "el pronombre"], ["oposicion", "oposición", "de oposicion", "de oposición"], ["demostrativo", "es demostrativo"], ["ella"]], "soluciones": {"incompleto": "Pronombre. Conjunción.", "solo": "Lucas compró un libro y lo leyó enseguida.", "carpeta": ["El pronombre.", "De oposición.", "Demostrativo.", "Ella."]}}}, "act": {"1": [{"t": "tap_text", "p": "Tocá los adjetivos: «La casa grande tiene ventanas azules».", "o": {"segmentos": ["La", "casa", "grande", "tiene", "ventanas", "azules"], "modo": "palabras"}, "r": {"tocar": [2, 5]}, "e": "Grande y azules dicen cómo son."}, {"t": "classify", "p": "¿Concreto o abstracto?", "o": {"elementos": ["mesa", "alegría", "río", "libertad"], "categorias": ["Concreto", "Abstracto"]}, "r": {"categorias": {"mesa": "Concreto", "alegría": "Abstracto", "río": "Concreto", "libertad": "Abstracto"}}, "e": "Lo que se toca o ve es concreto."}], "2": [{"t": "matching", "p": "Uní cada modo con su expresión.", "o": {"izquierda": ["Indicativo", "Subjuntivo", "Imperativo"], "derecha": ["Hechos reales", "Deseos y dudas", "Órdenes"]}, "r": {"pares": {"Indicativo": "Hechos reales", "Subjuntivo": "Deseos y dudas", "Imperativo": "Órdenes"}}, "e": "Cada modo tiene su valor."}, {"t": "fill_blank", "p": "Cantar, cantando y cantado son formas ___ personales.", "o": [], "r": {"huecos": [["no"]]}, "e": "No indican persona."}], "3": [{"t": "fill_blank", "p": "«Hoy» es un adverbio de ___ .", "o": [], "r": {"huecos": [["tiempo"]]}, "e": "Dice cuándo."}, {"t": "multi_select", "p": "Marcá las preposiciones:", "o": ["con", "rápido", "sin", "aquí", "sobre"], "r": {"correctas": ["con", "sin", "sobre"]}, "e": "Rápido y aquí son adverbios."}], "4": [{"t": "classify", "p": "¿Pronombre o conjunción?", "o": {"elementos": ["ella", "pero", "yo", "porque"], "categorias": ["Pronombre", "Conjunción"]}, "r": {"categorias": {"ella": "Pronombre", "pero": "Conjunción", "yo": "Pronombre", "porque": "Conjunción"}}, "e": "Reemplazar o unir."}, {"t": "ordering", "p": "Ordená para armar la oración.", "o": ["se disculpó", "Ella", "llegó tarde y"], "r": {"orden": ["Ella", "llegó tarde y", "se disculpó"]}, "e": "Sujeto, verbo y conjunción."}], "5": [{"t": "multiple_choice", "p": "Relámpago. «Alegría» es sustantivo…", "o": ["Abstracto", "Concreto", "Propio"], "r": {"correcta": "Abstracto"}, "e": "Un sentimiento.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. «Ojalá venga» está en subjuntivo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Expresa un deseo.", "tiempo": 20}, {"t": "multiple_choice", "p": "Relámpago. «Siempre» es adverbio de…", "o": ["Tiempo", "Lugar", "Modo"], "r": {"correcta": "Tiempo"}, "e": "Cuándo.", "tiempo": 20}, {"t": "true_false", "p": "Relámpago. Los pronombres unen oraciones.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Reemplazan sustantivos.", "tiempo": 20}]}, "examen": [[1, {"t": "multiple_choice", "p": "¿Qué palabra nombra personas, cosas o ideas?", "o": ["Sustantivo", "Verbo", "Adverbio", "Preposición"], "r": {"correcta": "Sustantivo"}, "e": "Nombra."}], [1, {"t": "multiple_choice", "p": "«Libertad» es un sustantivo…", "o": ["Abstracto", "Concreto", "Propio", "Plural"], "r": {"correcta": "Abstracto"}, "e": "Es una idea."}], [1, {"t": "true_false", "p": "El adjetivo concuerda con el sustantivo en género y número.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Casas blancas."}], [2, {"t": "multiple_choice", "p": "El modo que expresa órdenes es…", "o": ["Imperativo", "Indicativo", "Subjuntivo", "Gerundio"], "r": {"correcta": "Imperativo"}, "e": "Cerrá la puerta."}], [2, {"t": "multi_select", "p": "Formas no personales del verbo:", "o": ["Infinitivo", "Gerundio", "Participio", "Imperativo"], "r": {"correctas": ["Infinitivo", "Gerundio", "Participio"]}, "e": "El imperativo es un modo."}], [2, {"t": "fill_blank", "p": "Los hechos reales se expresan en modo ___ .", "o": [], "r": {"huecos": [["indicativo"]]}, "e": "Indicativo."}], [3, {"t": "multiple_choice", "p": "«Aquí» es adverbio de…", "o": ["Lugar", "Tiempo", "Modo", "Cantidad"], "r": {"correcta": "Lugar"}, "e": "Dice dónde."}], [3, {"t": "multi_select", "p": "Preposiciones:", "o": ["con", "sin", "rápido", "hacia"], "r": {"correctas": ["con", "sin", "hacia"]}, "e": "Rápido es adverbio."}], [3, {"t": "true_false", "p": "Los adverbios cambian de género y número.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Falso"}, "e": "Son invariables."}], [4, {"t": "multiple_choice", "p": "El pronombre…", "o": ["Reemplaza a un sustantivo", "Une oraciones", "Nombra", "Modifica al verbo"], "r": {"correcta": "Reemplaza a un sustantivo"}, "e": "Evita repeticiones."}], [4, {"t": "multiple_choice", "p": "«Pero» es una conjunción de…", "o": ["Oposición", "Suma", "Opción", "Causa"], "r": {"correcta": "Oposición"}, "e": "Contrasta ideas."}], [4, {"t": "fill_blank", "p": "La palabra que une ideas se llama ___ .", "o": [], "r": {"huecos": [["conjuncion", "conjunción", "nexo"]]}, "e": "Une palabras u oraciones."}], [4, {"t": "true_false", "p": "«Este» puede ser un pronombre demostrativo.", "o": ["Verdadero", "Falso"], "r": {"correcta": "Verdadero"}, "e": "Señala algo."}]]}
+{
+ "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
+ "tema": 12,
+ "practica": "Práctica general: clases de palabras",
+ "examen_titulo": "Nivel jefe: clases de palabras",
+ "niveles": {},
+ "act": {},
+ "examen": [],
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 3 · nivel 2",
+   "para": "nivel 4 «Los pretéritos en el relato»",
+   "nota": "pretérito perfecto simple e imperfecto, acción y fondo",
+   "niveles": {
+    "objetivo": "Vas a usar el pretérito perfecto simple y el imperfecto para narrar.",
+    "vas_a_ver": [
+     "Las formas",
+     "Acción y fondo",
+     "Coherencia de tiempos"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Las formas",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Dos pasados",
+        "columnas": [
+         "Persona",
+         "Perfecto simple",
+         "Imperfecto"
+        ],
+        "filas": [
+         [
+          "Yo",
+          "caminé, tuve",
+          "caminaba, tenía"
+         ],
+         [
+          "Vos",
+          "caminaste, tuviste",
+          "caminabas, tenías"
+         ],
+         [
+          "Él / ella",
+          "caminó, tuvo",
+          "caminaba, tenía"
+         ],
+         [
+          "Nosotros",
+          "caminamos, tuvimos",
+          "caminábamos, teníamos"
+         ],
+         [
+          "Ellos",
+          "caminaron, tuvieron",
+          "caminaban, tenían"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Acción y fondo",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "El <b>perfecto simple</b> expresa acciones puntuales y terminadas: son las que hacen <b>avanzar</b> la historia (abrió, gritó, corrió). El <b>imperfecto</b> pinta el <b>fondo</b>: descripciones, acciones que duraban o que se repetían (era de noche, llovía, siempre llegaba tarde)."
+       },
+       {
+        "tipo": "ejemplo",
+        "titulo": "Fondo + acción",
+        "texto": "Era tarde y llovía cuando alguien golpeó la puerta.",
+        "items": [
+         "Era: imperfecto, describe.",
+         "Llovía: imperfecto, acción que duraba.",
+         "Golpeó: perfecto simple, la acción que irrumpe."
+        ]
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Coherencia",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Un relato en pasado no salta al presente sin motivo: \"Entró y <b>ve</b> la carta\" es incorrecto; lo correcto es \"Entró y <b>vio</b> la carta\". Para lo que dura de fondo, imperfecto: \"mientras <b>leía</b>\", no \"mientras <b>leí</b>\"."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "elegir",
+     "planteo": "Completá: \"Todos los veranos mi abuela (preparar) dulce de higos. Un día, el frasco (explotar).\"",
+     "pasos": [
+      "Todos los veranos: costumbre → preparaba (imperfecto).",
+      "Un día: acción puntual → explotó (perfecto simple)."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá con el pasado adecuado.",
+     "pasos": [
+      "Mientras ___ (cocinar), sonó el teléfono.",
+      "De pronto, la luz se ___ (apagar)."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Escribí un párrafo que empiece describiendo el lugar en imperfecto y siga con dos acciones en perfecto simple."
+    },
+    "tip": {
+     "titulo": "Preguntá: ¿duraba o pasó?",
+     "texto": "Si duraba o se repetía, imperfecto. Si pasó de una vez y terminó, perfecto simple."
+    },
+    "ojo": [
+     "Saltar del pasado al presente.",
+     "Usar perfecto simple para lo que es fondo."
+    ],
+    "resumen": [
+     {
+      "titulo": "Perfecto simple",
+      "texto": "Acción que avanza."
+     },
+     {
+      "titulo": "Imperfecto",
+      "texto": "Fondo y costumbre."
+     },
+     {
+      "titulo": "Juntos",
+      "texto": "Fondo + acción."
+     },
+     {
+      "titulo": "Coherencia",
+      "texto": "No saltar al presente."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Pretérito",
+      "significado": "Tiempo pasado."
+     },
+     {
+      "palabra": "Perfecto simple",
+      "significado": "Pasado de acciones puntuales: cantó."
+     },
+     {
+      "palabra": "Imperfecto",
+      "significado": "Pasado de fondo o costumbre: cantaba."
+     }
+    ],
+    "carpeta": [
+     "Conjugá en perfecto simple: él (abrir).",
+     "Conjugá en imperfecto: nosotros (vivir).",
+     "\"Siempre llegaba tarde\": ¿perfecto simple o imperfecto?",
+     "Corregí: \"Entró y ve la carta\". Escribí solo el verbo correcto."
+    ],
+    "respuestas_carpeta": [
+     [
+      "abrio",
+      "abrió"
+     ],
+     [
+      "viviamos",
+      "vivíamos"
+     ],
+     [
+      "imperfecto"
+     ],
+     [
+      "vio"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "cocinaba. apagó.",
+     "solo": "Respuesta personal.",
+     "carpeta": [
+      "Abrió.",
+      "Vivíamos.",
+      "Imperfecto.",
+      "Vio."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "tap_text",
+     "p": "Clasificá los verbos: \"Era tarde y llovía cuando alguien golpeó la puerta y gritó.\"",
+     "o": {
+      "segmentos": [
+       "Era",
+       "tarde",
+       "y",
+       "llovía",
+       "cuando",
+       "alguien",
+       "golpeó",
+       "la",
+       "puerta",
+       "y",
+       "gritó"
+      ],
+      "modo": "palabras",
+      "categorias": [
+       "Imperfecto",
+       "Perfecto simple"
+      ]
+     },
+     "r": {
+      "categorias": {
+       "0": "Imperfecto",
+       "3": "Imperfecto",
+       "6": "Perfecto simple",
+       "10": "Perfecto simple"
+      }
+     },
+     "e": "El imperfecto pinta el fondo; el perfecto simple, las acciones."
+    },
+    {
+     "t": "multiple_choice",
+     "p": "\"Mientras ___, sonó el teléfono.\"",
+     "o": [
+      "cocinaba",
+      "cociné",
+      "cocino",
+      "cocinaré"
+     ],
+     "r": {
+      "correcta": "cocinaba"
+     },
+     "e": "Acción que duraba de fondo: imperfecto."
+    }
+   ],
+   "examen": [
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "\"Era de noche y el viento ___ cuando la luz se ___.\"",
+      "o": [
+       "soplaba / apagó",
+       "sopló / apagaba",
+       "soplaba / apagaba",
+       "sopla / apaga"
+      ],
+      "r": {
+       "correcta": "soplaba / apagó"
+      },
+      "e": "Fondo en imperfecto, acción en perfecto simple."
+     }
+    ],
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "¿Qué expresa el imperfecto en un relato?",
+      "o": [
+       "El fondo, descripciones y costumbres",
+       "Solo acciones terminadas",
+       "El futuro",
+       "Órdenes"
+      ],
+      "r": {
+       "correcta": "El fondo, descripciones y costumbres"
+      },
+      "e": "El perfecto simple hace avanzar."
+     }
+    ],
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "¿Cuál tiene un error de tiempo verbal?",
+      "o": [
+       "Entró y ve la carta.",
+       "Entró y vio la carta.",
+       "Mientras leía, sonó el timbre.",
+       "Siempre llegaba tarde."
+      ],
+      "r": {
+       "correcta": "Entró y ve la carta."
+      },
+      "e": "Salta al presente."
+     }
+    ]
+   ]
+  }
+ ]
+}

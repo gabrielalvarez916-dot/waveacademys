@@ -1,0 +1,288 @@
+{
+ "subject_id": null,
+ "tema": 11,
+ "niveles": {},
+ "act": {},
+ "examen": [],
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 11 · nivel 2",
+   "para": "Las vanguardias poéticas",
+   "nota": "comparación, metáfora y personificación",
+   "niveles": {
+    "objetivo": "Vas a reconocer metáforas, comparaciones y personificaciones, y a explicar qué imagen crean.",
+    "vas_a_ver": [
+     "Comparación",
+     "Metáfora",
+     "Personificación",
+     "Imagen sensorial"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Comparación y metáfora",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Dos recursos",
+        "columnas": [
+         "Recurso",
+         "Cómo es",
+         "Ejemplo propio"
+        ],
+        "filas": [
+         [
+          "Comparación",
+          "Une dos cosas con como o parece",
+          "Tus manos, como pájaros inquietos"
+         ],
+         [
+          "Metáfora",
+          "Dice que una cosa es otra",
+          "Tus manos son pájaros inquietos"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Qué hacen",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Sirven para <b>ver algo de otra manera</b>. Al comparar las manos con pájaros, el lector imagina movimiento y ligereza."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Personificación",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Personificación",
+        "texto": "Dar a un animal, objeto o fenómeno cualidades humanas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Ejemplo: <i>«El viento susurró un secreto a las hojas»</i>. El viento no susurra: se le da una acción humana."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Imagen sensorial",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Una <b>imagen sensorial</b> apela a un sentido: <i>«olor a lluvia sobre la tierra caliente»</i> (olfato), <i>«luz de miel»</i> (vista y gusto)."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "analizar",
+     "planteo": "«La noche es un manto negro». ¿Qué recurso es y qué imagen crea?",
+     "pasos": [
+      "Dice que la noche ES un manto: sin como.",
+      "Es una metáfora.",
+      "Crea la imagen de algo que cubre y abriga."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá.",
+     "pasos": [
+      "Dar cualidades humanas a un objeto es una ___ .",
+      "La metáfora dice que una cosa ___ otra."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Inventá una comparación, una metáfora y una personificación sobre el mar."
+    },
+    "tip": {
+     "titulo": "Mirar distinto",
+     "texto": "Una buena metáfora te hace ver algo conocido como si fuera nuevo."
+    },
+    "ojo": [
+     "Confundir comparación y metáfora.",
+     "Explicar la imagen de forma literal."
+    ],
+    "resumen": [
+     {
+      "titulo": "Comparación",
+      "texto": "Con como."
+     },
+     {
+      "titulo": "Metáfora",
+      "texto": "Una cosa es otra."
+     },
+     {
+      "titulo": "Personificación",
+      "texto": "Cualidades humanas."
+     },
+     {
+      "titulo": "Imagen",
+      "texto": "Apela a un sentido."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Metáfora",
+      "significado": "Decir que una cosa es otra."
+     },
+     {
+      "palabra": "Comparación",
+      "significado": "Relacionar con como."
+     },
+     {
+      "palabra": "Personificación",
+      "significado": "Dar rasgos humanos a lo que no es humano."
+     }
+    ],
+    "carpeta": [
+     "«El viento susurró», ¿es una personificación o una comparación?",
+     "«Sus ojos son estrellas», ¿es metáfora o comparación?",
+     "¿Qué palabra usa la comparación: como o es?",
+     "Una imagen que apela al olfato, ¿es sensorial? Respondé sí o no."
+    ],
+    "respuestas_carpeta": [
+     [
+      "personificacion",
+      "personificación",
+      "una personificacion",
+      "una personificación"
+     ],
+     [
+      "metafora",
+      "metáfora",
+      "es metafora",
+      "es metáfora"
+     ],
+     [
+      "como"
+     ],
+     [
+      "si",
+      "sí"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Personificación. Es.",
+     "solo": "El mar es un gigante dormido; el mar ruge como un león; el mar nos abraza con sus olas.",
+     "carpeta": [
+      "Personificación.",
+      "Metáfora.",
+      "Como.",
+      "Sí."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "tap_text",
+     "p": "Tocá la personificación: «El viento susurró un secreto a las hojas».",
+     "o": {
+      "segmentos": [
+       "El",
+       "viento",
+       "susurró",
+       "un",
+       "secreto",
+       "a",
+       "las",
+       "hojas"
+      ],
+      "modo": "palabras"
+     },
+     "r": {
+      "tocar": [
+       2
+      ]
+     },
+     "e": "Susurrar es una acción humana."
+    },
+    {
+     "t": "classify",
+     "p": "¿Comparación o metáfora?",
+     "o": {
+      "elementos": [
+       "Tus manos, como pájaros",
+       "Tus manos son pájaros",
+       "La noche es un manto",
+       "Brilla como una estrella"
+      ],
+      "categorias": [
+       "Comparación",
+       "Metáfora"
+      ]
+     },
+     "r": {
+      "categorias": {
+       "Tus manos, como pájaros": "Comparación",
+       "Tus manos son pájaros": "Metáfora",
+       "La noche es un manto": "Metáfora",
+       "Brilla como una estrella": "Comparación"
+      }
+     },
+     "e": "Con como o es."
+    }
+   ],
+   "examen": [
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "«La noche es un manto negro» es…",
+      "o": [
+       "Una metáfora",
+       "Una comparación",
+       "Una rima",
+       "Una estrofa"
+      ],
+      "r": {
+       "correcta": "Una metáfora"
+      },
+      "e": "No usa como."
+     }
+    ],
+    [
+     2,
+     {
+      "t": "multiple_choice",
+      "p": "«El viento susurró» es…",
+      "o": [
+       "Una personificación",
+       "Una rima",
+       "Una pregunta",
+       "Un título"
+      ],
+      "r": {
+       "correcta": "Una personificación"
+      },
+      "e": "Susurrar es humano."
+     }
+    ],
+    [
+     2,
+     {
+      "t": "fill_blank",
+      "p": "Una comparación usa la palabra ___ .",
+      "o": [],
+      "r": {
+       "huecos": [
+        [
+         "como"
+        ]
+       ]
+      },
+      "e": "O parece."
+     }
+    ]
+   ]
+  }
+ ]
+}

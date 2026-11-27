@@ -1536,419 +1536,6 @@
     "aplicar",
     "aplicar"
    ]
-  },
-  "4": {
-   "objetivo": "Vas a planificar y escribir un enigma breve con pistas y revelación.",
-   "vas_a_ver": [
-    "Planificar",
-    "Estructura",
-    "Juego limpio"
-   ],
-   "secciones": [
-    {
-     "etapa": 1,
-     "titulo": "Planificar",
-     "bloques": [
-      {
-       "tipo": "tabla",
-       "titulo": "Plan",
-       "columnas": [
-        "Parte",
-        "Qué decido"
-       ],
-       "filas": [
-        [
-         "Misterio",
-         "Qué pasó"
-        ],
-        [
-         "Detective",
-         "Quién investiga"
-        ],
-        [
-         "Pistas",
-         "Dos verdaderas y una falsa"
-        ],
-        [
-         "Revelación",
-         "Cómo se resuelve"
-        ]
-       ],
-       "iguales": true
-      }
-     ]
-    },
-    {
-     "etapa": 1,
-     "titulo": "Estructura",
-     "bloques": [
-      {
-       "tipo": "parrafo",
-       "texto": "Situación inicial: aparece el <b>enigma</b>. Desarrollo: la <b>investigación</b>, pista por pista. Desenlace: la <b>revelación</b>."
-      }
-     ]
-    },
-    {
-     "etapa": 2,
-     "titulo": "Juego limpio",
-     "bloques": [
-      {
-       "tipo": "parrafo",
-       "texto": "Como en «La liga de los pelirrojos», la solución tiene que salir de las pistas que el lector ya vio. Nada de resolver por casualidad."
-      }
-     ]
-    }
-   ],
-   "ejemplo_completo": {
-    "titulo": "la torta",
-    "planteo": "Planificá un enigma: desapareció la torta del cumpleaños.",
-    "pasos": [
-     "Misterio: la torta no está.",
-     "Detective: Juan.",
-     "Pistas: migas en el sillón y el perro escondido; falsa pista: la ventana abierta.",
-     "Revelación: el perro se la comió."
-    ]
-   },
-   "ejemplo_incompleto": {
-    "titulo": "completar",
-    "planteo": "Completá.",
-    "pasos": [
-     "El momento en que se explica todo es la ___ .",
-     "Un enigma tiene que tener al menos dos ___ verdaderas."
-    ]
-   },
-   "ejemplo_solo": {
-    "titulo": "tu enigma",
-    "planteo": "Escribí tu enigma (una página, con dos pistas, una falsa pista y la revelación) en la actividad de este nivel: ahí lo corrige el tutor."
-   },
-   "tip": {
-    "titulo": "Empezá por el final",
-    "texto": "Decidí primero la solución y después escondé las pistas que llevan a ella."
-   },
-   "ojo": [
-    "Resolver por casualidad.",
-    "Contar la solución al principio."
-   ],
-   "resumen": [
-    {
-     "titulo": "Planificar",
-     "texto": "Misterio, detective, pistas."
-    },
-    {
-     "titulo": "Estructura",
-     "texto": "Enigma, investigación, revelación."
-    },
-    {
-     "titulo": "Pistas",
-     "texto": "Dos verdaderas, una falsa."
-    },
-    {
-     "titulo": "Juego limpio",
-     "texto": "La solución en las pistas."
-    }
-   ],
-   "glosario": [
-    {
-     "palabra": "Planificar",
-     "significado": "Pensar antes de escribir."
-    },
-    {
-     "palabra": "Desarrollo",
-     "significado": "Parte central del relato."
-    },
-    {
-     "palabra": "Juego limpio",
-     "significado": "Regla: la solución sale de las pistas."
-    }
-   ],
-   "carpeta": [
-    "¿Cuántas pistas verdaderas lleva tu enigma como mínimo?",
-    "¿Cómo se llama la parte final donde se explica el caso?",
-    "¿Conviene contar la solución al principio? Respondé sí o no.",
-    "¿Qué se decide primero según el consejo: la solución o el título?"
-   ],
-   "respuestas_carpeta": [
-    [
-     "2",
-     "dos"
-    ],
-    [
-     "revelacion",
-     "revelación",
-     "la revelación",
-     "la revelacion"
-    ],
-    [
-     "no"
-    ],
-    [
-     "solucion",
-     "solución",
-     "la solución",
-     "la solucion"
-    ]
-   ],
-   "soluciones": {
-    "incompleto": "Revelación. Pistas.",
-    "solo": "Respuesta personal: revisá que tenga enigma, investigación y revelación.",
-    "carpeta": [
-     "Dos.",
-     "La revelación.",
-     "No.",
-     "La solución."
-    ]
-   },
-   "leccion": {
-    "temas": [
-     {
-      "titulo": "Planificar un enigma",
-      "ejemplo": {
-       "motor": "esquema",
-       "p": {
-        "items": [
-         {
-          "nombre": "La guitarra",
-          "raiz": "Mi policial",
-          "ramas": [
-           [
-            "Misterio",
-            [
-             "desaparece la guitarra del acto escolar"
-            ],
-            "Primero se decide qué pasó y quién fue."
-           ],
-           [
-            "Detective",
-            [
-             "Nina, la más observadora de primero"
-            ],
-            "Alguien con un rasgo que lo ayude a investigar."
-           ],
-           [
-            "Pistas",
-            [
-             "verdaderas: cuerdas nuevas en la mochila del profe de música; resina en sus manos",
-             "falsa: el portero estaba nervioso"
-            ],
-            "Dos o más verdaderas y una falsa."
-           ],
-           [
-            "Revelación",
-            [
-             "el profe la llevó a arreglar y se olvidó de avisar"
-            ],
-            "Se explica con las pistas ya dadas."
-           ]
-          ],
-          "cierre": "Se planifica al revés: primero la solución, después las pistas."
-         },
-         {
-          "nombre": "El gato",
-          "raiz": "Mi policial",
-          "ramas": [
-           [
-            "Misterio",
-            [
-             "el gato de la vecina aparece cada noche con un moño nuevo"
-            ],
-            "El enigma no tiene que ser un crimen."
-           ],
-           [
-            "Detective",
-            [
-             "Bauti y su hermana"
-            ],
-            "Pueden ser dos."
-           ],
-           [
-            "Pistas",
-            [
-             "verdaderas: lana en el patio del fondo; la señora del fondo teje",
-             "falsa: un camión de mudanzas"
-            ],
-            "Cada pista se puede comprobar."
-           ],
-           [
-            "Revelación",
-            [
-             "la señora del fondo le teje moños al gato"
-            ],
-            "Una solución sorprendente pero lógica."
-           ]
-          ],
-          "cierre": "Con el plan listo, se escribe sin perderse."
-         }
-        ]
-       }
-      },
-      "ejercicio": {
-       "motor": "completar_x",
-       "p": {
-        "consigna": "Completá el plan del policial con la opción que corresponde.",
-        "items": [
-         {
-          "texto": "Misterio: desaparecen las llaves del gimnasio. Solución: las tomó [[la preceptora/una paloma/nadie]]. Pista verdadera: [[ella cerró el gimnasio ese día/hacía calor/hubo un acto]]. Falsa pista: [[un alumno se fue temprano/la preceptora tenía la llave/la puerta estaba cerrada]]."
-         },
-         {
-          "texto": "Misterio: alguien comió las galletas del concurso. Solución: fue [[el abuelo jurado/el perro/la lluvia]]. Pista verdadera: [[tenía azúcar en la corbata/era martes/sonó el timbre]]. Falsa pista: [[el perro ladraba cerca de la mesa/el abuelo tenía azúcar/faltaban galletas]]."
-         }
-        ]
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Planificar un policial",
-        "texto": "Planificar un policial es decidir primero la solución del enigma y después las pistas que llevan a ella y las que distraen."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Si se empieza a escribir sin saber quién lo hizo, las pistas no encajan y el final parece inventado. Con el plan armado, cada escena puede dejar una pista en su lugar sin que el lector lo note."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Primero la solución: qué pasó y quién fue.",
-         "Después el detective y las pistas, con una falsa.",
-         "Por último, cómo será la revelación."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Escribir con juego limpio",
-      "ejemplo": {
-       "motor": "revision",
-       "p": {
-        "items": [
-         {
-          "nombre": "La guitarra",
-          "borrador": "La guitarra del acto desapareció. Nina buscó por toda la escuela. Al final un nene confesó que la había escondido porque sí.",
-          "criterios": [
-           [
-            "El enigma aparece al principio",
-            true
-           ],
-           [
-            "Hay pistas antes de la solución",
-            false,
-            "no hay ninguna pista"
-           ],
-           [
-            "Hay una falsa pista",
-            false
-           ],
-           [
-            "La solución sale de las pistas",
-            false,
-            "la confesión aparece de golpe"
-           ]
-          ],
-          "final": "La guitarra del acto desapareció. Nina notó resina en las manos del profe de música y cuerdas nuevas en su mochila; el portero, nervioso, parecía culpable, pero solo había perdido sus anteojos. Al final, Nina reveló que el profe la había llevado a arreglar."
-         },
-         {
-          "nombre": "El gato",
-          "borrador": "El gato de la vecina tenía moños. Bauti vio lana en el patio. La señora del fondo teje. Era la señora del fondo.",
-          "criterios": [
-           [
-            "El enigma aparece al principio",
-            true
-           ],
-           [
-            "Hay pistas antes de la solución",
-            true
-           ],
-           [
-            "Hay una falsa pista",
-            false,
-            "agregar el camión de mudanzas"
-           ],
-           [
-            "La revelación explica el caso",
-            false,
-            "falta contar cómo lo dedujo"
-           ]
-          ],
-          "final": "Cada noche, el gato de la vecina volvía con un moño nuevo. Bauti sospechó de los de la mudanza, pero encontró lana en el patio del fondo. Como la señora del fondo tejía, la esperaron una noche y la vieron atándole un moño rojo."
-         }
-        ]
-       }
-      },
-      "ejercicio": {
-       "motor": "escribir_x",
-       "p": {
-        "items": [
-         {
-          "cons": "Escribí el comienzo de un cuento policial: presentá el misterio y dejá una primera pista.",
-          "criterios": [
-           {
-            "txt": "Al menos 30 palabras",
-            "min": 30
-           },
-           {
-            "txt": "Plantea qué desapareció o qué pasó",
-            "re": "desapareci|robaron|faltaba|alguien|nadie sab"
-           },
-           {
-            "txt": "Deja una pista (huella, marca, objeto, testigo…)",
-            "re": "huella|marca|barro|testigo|vio|encontr|pista|mancha"
-           }
-          ],
-          "modelo": "El lunes a la mañana, la copa del torneo desapareció de la vitrina de la dirección. Nadie sabía quién tenía la llave, pero Nina encontró una huella de barro junto a la puerta y una servilleta del bar de la esquina."
-         }
-        ]
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Juego limpio",
-        "texto": "El juego limpio es la regla del policial de enigma según la cual el lector recibe todas las pistas necesarias antes de la revelación."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Así el lector puede competir con el detective. Una solución que aparece de golpe, por casualidad o por una confesión sin pistas previas, decepciona: parece que el autor hizo trampa."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Inicio: aparece el enigma.",
-         "Desarrollo: la investigación, pista por pista.",
-         "Desenlace: la revelación usa las pistas ya dadas."
-        ]
-       }
-      ]
-     }
-    ],
-    "recuerda": [
-     {
-      "concepto": "Planificar al revés",
-      "definicion": "significa decidir primero la solución y después las pistas que llevan a ella.",
-      "ejemplo": "Solución: el profe llevó la guitarra a arreglar"
-     },
-     {
-      "concepto": "Pistas del plan",
-      "definicion": "son dos o más verdaderas que se pueden comprobar y al menos una falsa que distrae.",
-      "ejemplo": "Resina en las manos del profe / el portero nervioso"
-     },
-     {
-      "concepto": "Estructura del policial",
-      "definicion": "tiene un inicio con el enigma, un desarrollo con la investigación y un desenlace con la revelación.",
-      "ejemplo": "Desaparece la guitarra → Nina investiga → explica el caso"
-     },
-     {
-      "concepto": "Juego limpio",
-      "definicion": "es dar al lector todas las pistas antes de la revelación, sin resolver por casualidad.",
-      "ejemplo": "La solución sale de la resina y las cuerdas, no de una confesión"
-     }
-    ]
-   },
-   "carpeta_nivel": [
-    "aplicar",
-    "aplicar",
-    "aplicar",
-    "aplicar"
-   ]
   }
  },
  "act": {
@@ -2196,104 +1783,6 @@
      ]
     },
     "e": "Es la revelación.",
-    "n": "aplicar"
-   }
-  ],
-  "4": [
-   {
-    "t": "ordering",
-    "p": "Ordená los pasos para planificar un cuento policial.",
-    "o": [
-     "Elegir al detective",
-     "Pensar las pistas verdaderas y una falsa",
-     "Decidir cómo será la revelación",
-     "Decidir qué pasó y quién fue"
-    ],
-    "r": {
-     "orden": [
-      "Decidir qué pasó y quién fue",
-      "Elegir al detective",
-      "Pensar las pistas verdaderas y una falsa",
-      "Decidir cómo será la revelación"
-     ]
-    },
-    "e": "Se planifica empezando por la solución.",
-    "n": "aplicar"
-   },
-   {
-    "t": "multiple_choice",
-    "p": "En el cuento de Marcos, la detective no encuentra ninguna pista y al final el culpable confiesa porque sí. ¿Qué regla no cumple?",
-    "o": [
-     "El juego limpio",
-     "El narrador testigo",
-     "La ficha bibliográfica"
-    ],
-    "r": {
-     "correcta": "El juego limpio"
-    },
-    "e": "La solución tiene que salir de pistas que el lector ya vio.",
-    "n": "error"
-   },
-   {
-    "t": "classify",
-    "p": "Plan: «Desaparece la torta del cumpleaños; fue el tío». Clasificá cada dato.",
-    "o": {
-     "elementos": [
-      "El tío tiene crema en el bigote",
-      "El tío pidió quedarse solo en la cocina",
-      "El perro ladraba cerca de la mesa",
-      "La prima llegó tarde y despeinada"
-     ],
-     "categorias": [
-      "Pista verdadera",
-      "Falsa pista"
-     ]
-    },
-    "r": {
-     "categorias": {
-      "El tío tiene crema en el bigote": "Pista verdadera",
-      "El tío pidió quedarse solo en la cocina": "Pista verdadera",
-      "El perro ladraba cerca de la mesa": "Falsa pista",
-      "La prima llegó tarde y despeinada": "Falsa pista"
-     }
-    },
-    "e": "Las verdaderas llevan al tío; las falsas distraen.",
-    "n": "aplicar"
-   },
-   {
-    "t": "keywords",
-    "p": "Escribí en tres o cuatro oraciones el plan de un cuento policial: qué pasó, quién investiga, una pista verdadera, una falsa pista y cómo se resuelve.",
-    "o": {
-     "ayuda": "Nombrá el misterio, el detective, las pistas y la revelación."
-    },
-    "r": {
-     "grupos": [
-      [
-       "desapareci*",
-       "robo",
-       "robaron",
-       "falta*"
-      ],
-      [
-       "detective",
-       "investig*"
-      ],
-      [
-       "pista*"
-      ],
-      [
-       "falsa",
-       "distrae*"
-      ],
-      [
-       "revela*",
-       "descubr*",
-       "resuelv*"
-      ]
-     ],
-     "minimo": 4
-    },
-    "e": "El plan tiene misterio, detective, pistas verdaderas y falsas, y revelación.",
     "n": "aplicar"
    }
   ],
@@ -2565,71 +2054,339 @@
     "e": "Así ocurrieron los hechos; el cuento los revela al final.",
     "n": "aplicar"
    }
-  ],
-  [
-   4,
-   {
-    "t": "multiple_choice",
-    "p": "En el cuento de Sol, la detective resuelve el caso porque ve al culpable por casualidad en la última página, sin pistas previas. ¿Qué falla?",
-    "o": [
-     "No hay juego limpio",
-     "No tiene narrador",
-     "No tiene título"
-    ],
-    "r": {
-     "correcta": "No hay juego limpio"
-    },
-    "e": "La solución tiene que salir de pistas ya dadas.",
-    "n": "error"
-   }
-  ],
-  [
-   4,
-   {
-    "t": "fill_blank",
-    "p": "Completá: «Para planificar un policial, primero se decide la ___ del caso y después las ___ que llevan a ella.»",
-    "r": {
-     "huecos": [
-      [
-       "solucion",
-       "solución"
-      ],
-      [
-       "pistas"
-      ]
-     ]
-    },
-    "e": "Se planifica al revés.",
-    "n": "aplicar"
-   }
-  ],
-  [
-   4,
-   {
-    "t": "keywords",
-    "p": "Escribí la revelación de este caso en dos o tres oraciones: «Desapareció el trofeo; pistas: barro en las zapatillas del capitán y la llave de la vitrina en su campera».",
-    "o": {
-     "ayuda": "Explicá quién fue y cómo lo prueban las pistas."
-    },
-    "r": {
-     "grupos": [
-      [
-       "capitan",
-       "capitán"
-      ],
-      [
-       "barro"
-      ],
-      [
-       "llave"
-      ]
-     ],
-     "minimo": 3
-    },
-    "e": "La revelación explica el caso usando las pistas.",
-    "n": "aplicar"
-   }
   ]
  ],
- "actualizar_preguntas": true
+ "actualizar_preguntas": true,
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 1 · nivel 1 · pantalla «Antes de leer: el paratexto»",
+   "para": "libro del nivel (nivel 5)",
+   "nota": "paratexto e hipótesis de lectura, para las actividades del libro",
+   "tema": {
+    "titulo": "Antes de leer: el paratexto",
+    "ejemplo": {
+     "motor": "marcar",
+     "p": {
+      "rotulo": "Libro",
+      "items": [
+       {
+        "nombre": "Contratapa 1",
+        "texto": "{{Los que nadan de noche|El título promete algo misterioso que pasa en el agua.}} · Novela juvenil. Cuando el río crece, {{Mateo ve luces en el muelle abandonado del pueblo|La contratapa adelanta el conflicto: algo raro rompe la calma.}}. {{¿Quién se mete en el agua a medianoche, y para qué?|Termina con una pregunta: invita a leer sin contar el final.}}",
+        "cierre": "Hipótesis: un misterio en un pueblo junto al río."
+       },
+       {
+        "nombre": "Contratapa 2",
+        "texto": "{{El último vagón|El título hace pensar en un tren y en algo que queda atrás.}} · Cuentos. {{Siete historias que ocurren en trenes nocturnos|Anticipa que es un libro de varios relatos breves.}}, donde {{nadie es quien dice ser|Sugiere engaños y personajes con secretos.}}.",
+        "cierre": "Hipótesis: cuentos de suspenso con personajes que mienten."
+       }
+      ]
+     }
+    },
+    "ejercicio": {
+     "motor": "elegir_x",
+     "p": {
+      "consigna": "Mirá el paratexto y elegí la hipótesis más razonable.",
+      "items": [
+       {
+        "cons": "Tapa: una chica con linterna frente a una puerta entreabierta. Título: «Lo que guarda el altillo».",
+        "ops": [
+         "Un relato de misterio dentro de una casa",
+         "Un manual para ordenar la casa",
+         "Una noticia sobre mudanzas"
+        ],
+        "ayuda": "La linterna, la puerta entreabierta y el altillo sugieren algo oculto."
+       },
+       {
+        "cons": "Contratapa: «Un perro callejero, una nena que se muda y un verano para hacerse amigos».",
+        "ops": [
+         "Una historia de amistad entre una nena y un perro",
+         "Un libro sobre razas de perros",
+         "Una obra de teatro sobre veterinarios"
+        ],
+        "ayuda": "La contratapa nombra a los personajes y lo que les pasa."
+       },
+       {
+        "cons": "Índice: «1. La nave despega · 2. Rumbo a Titán · 3. La señal desconocida».",
+        "ops": [
+         "Una aventura en el espacio",
+         "Un cuento de hadas",
+         "Un libro de recetas"
+        ],
+        "ayuda": "Los capítulos hablan de una nave y de una luna de Saturno."
+       }
+      ]
+     }
+    },
+    "explicacion": [
+     {
+      "tipo": "definicion",
+      "titulo": "Paratexto",
+      "texto": "El paratexto es todo lo que rodea al texto principal y lo presenta: tapa, título, autor, ilustraciones, contratapa e índice."
+     },
+     {
+      "tipo": "parrafo",
+      "texto": "Mirarlo antes de empezar permite armar una hipótesis de lectura, es decir, una idea de qué vamos a encontrar. La hipótesis no tiene que acertar: se confirma o se corrige mientras leemos, y eso nos mantiene atentos."
+     },
+     {
+      "tipo": "lista",
+      "items": [
+       "El título y la imagen de tapa dan la primera pista.",
+       "La contratapa adelanta el conflicto sin contar el final.",
+       "El índice muestra cómo está organizado el libro."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "de": "Lengua 1 · misión 1 · nivel 1 · pantalla «Inferir: leer lo que no está escrito»",
+   "para": "libro del nivel (nivel 5)",
+   "nota": "inferir con pistas del texto",
+   "tema": {
+    "titulo": "Inferir: leer lo que no está escrito",
+    "ejemplo": {
+     "motor": "marcar",
+     "p": {
+      "rotulo": "Texto",
+      "items": [
+       {
+        "nombre": "Sofía",
+        "texto": "Sofía entró {{con el pelo chorreando|Pista 1: viene de afuera y está empapada.}} y dejó {{el paraguas dado vuelta en la entrada|Pista 2: hubo viento fuerte.}}. {{Se frotaba las manos sin parar|Pista 3: tiene frío.}}",
+        "cierre": "Se infiere: afuera hay una tormenta fría y con viento."
+       },
+       {
+        "nombre": "Joaquín",
+        "texto": "Joaquín {{miró el reloj por quinta vez|Pista 1: espera algo o a alguien.}}, {{se acomodó la camisa planchada|Pista 2: se preparó con cuidado.}} y {{ensayó en voz baja un «hola»|Pista 3: está nervioso por un encuentro.}}",
+        "cierre": "Se infiere: espera a alguien importante para él y está nervioso."
+       }
+      ]
+     }
+    },
+    "ejercicio": {
+     "motor": "elegir_x",
+     "p": {
+      "consigna": "¿Qué se puede inferir? Elegí la opción que se apoya en las pistas.",
+      "items": [
+       {
+        "cons": "«Martina abrió la heladera, suspiró y volvió a cerrarla. Después agarró la billetera y las llaves.»",
+        "ops": [
+         "Va a salir a comprar comida",
+         "Está enojada con su hermano",
+         "Se va de vacaciones"
+        ],
+        "ayuda": "La heladera vacía y la billetera son las pistas."
+       },
+       {
+        "cons": "«El abuelo dejó la pala, se secó la frente y se sentó a la sombra del nogal.»",
+        "ops": [
+         "Estuvo trabajando al sol y está cansado",
+         "Está por llover",
+         "Perdió algo en el jardín"
+        ],
+        "ayuda": "Secarse la frente y buscar sombra dicen mucho."
+       },
+       {
+        "cons": "«Cuando sonó el timbre del recreo, Tomás guardó la carta en la mochila y se puso colorado.»",
+        "ops": [
+         "La carta es algo que le da vergüenza mostrar",
+         "La carta está en blanco",
+         "Tomás no sabe leer"
+        ],
+        "ayuda": "Esconderla y ponerse colorado son las pistas."
+       }
+      ]
+     }
+    },
+    "explicacion": [
+     {
+      "tipo": "definicion",
+      "titulo": "Inferencia",
+      "texto": "Inferir es sacar una conclusión que el texto no dice con todas las letras, uniendo las pistas del texto con lo que ya sabemos."
+     },
+     {
+      "tipo": "parrafo",
+      "texto": "Los autores no explican todo: dejan detalles para que el lector complete el sentido. Una inferencia válida siempre se puede apoyar en una pista concreta; si no hay ninguna que la sostenga, es un invento del lector."
+     },
+     {
+      "tipo": "lista",
+      "items": [
+       "Fijate en gestos, objetos y reacciones de los personajes.",
+       "Preguntate qué explicación une todas las pistas.",
+       "Volvé al texto para comprobarla."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "de": "Lengua 1 · misión 1 · nivel 1 · pantalla «Quién cuenta: el narrador»",
+   "para": "nivel 3 «El narrador y las dos historias»",
+   "nota": "narrador y autor; primera, tercera y omnisciente",
+   "tema": {
+    "titulo": "Quién cuenta: el narrador",
+    "ejemplo": {
+     "motor": "versiones",
+     "p": {
+      "rotulo": "Versión",
+      "items": [
+       {
+        "nombre": "Primera persona",
+        "texto": "{{Yo|Un personaje cuenta lo que le pasa: primera persona.}} abrí la caja y {{me temblaron las manos|Solo sabe lo que siente él.}}."
+       },
+       {
+        "nombre": "Tercera persona",
+        "texto": "{{Lucas|Cuenta alguien de afuera: tercera persona.}} abrió la caja y {{le temblaron las manos|Ve lo que se nota desde afuera.}}."
+       },
+       {
+        "nombre": "Omnisciente",
+        "texto": "Lucas abrió la caja; {{temía que fuera otra broma de su primo|Sabe lo que piensa el personaje: narrador omnisciente.}}, aunque {{el primo, escondido detrás de la puerta, ya estaba arrepentido|También sabe lo que piensa otro personaje.}}."
+       }
+      ]
+     }
+    },
+    "ejercicio": {
+     "motor": "clasificar_x",
+     "p": {
+      "consigna": "¿Qué narrador cuenta cada fragmento?",
+      "cajas": [
+       "Primera persona",
+       "Tercera, desde afuera",
+       "Tercera omnisciente"
+      ],
+      "cuantos": 5,
+      "items": [
+       [
+        "Corrí hasta la esquina y no vi a nadie.",
+        0
+       ],
+       [
+        "Nunca me animé a contarle la verdad a mi abuela.",
+        0
+       ],
+       [
+        "Cuando llegamos, la casa estaba a oscuras.",
+        0
+       ],
+       [
+        "La mujer cruzó la plaza y se sentó en un banco.",
+        1
+       ],
+       [
+        "El chico tocó el timbre dos veces y esperó.",
+        1
+       ],
+       [
+        "Los perros ladraron cuando el cartero abrió la reja.",
+        1
+       ],
+       [
+        "Ana sonreía, pero por dentro sentía que todo iba a salir mal.",
+        2
+       ],
+       [
+        "El viejo recordaba a su hermano cada vez que veía el río.",
+        2
+       ],
+       [
+        "Pedro creía que nadie lo había visto; la vecina, en cambio, lo había reconocido.",
+        2
+       ]
+      ]
+     }
+    },
+    "explicacion": [
+     {
+      "tipo": "definicion",
+      "titulo": "Narrador",
+      "texto": "El narrador es la voz que cuenta la historia dentro del relato; no es el autor, que es la persona real que la escribió."
+     },
+     {
+      "tipo": "parrafo",
+      "texto": "Según quién cuente, el lector sabe más o menos cosas. Un narrador en primera persona solo conoce lo que vive y piensa él mismo; uno omnisciente puede entrar en la cabeza de todos los personajes."
+     },
+     {
+      "tipo": "lista",
+      "items": [
+       "Primera persona: un personaje cuenta con «yo» o «nosotros».",
+       "Tercera persona: cuenta desde afuera, con «él» o «ella».",
+       "Omnisciente: además sabe lo que piensan y sienten."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "de": "Lengua 1 · misión 2 · nivel 2 · pantalla «Las pistas de «La liga de los pelirrojos»»",
+   "para": "libro del nivel (nivel 5)",
+   "nota": "las pistas de «La liga de los pelirrojos»",
+   "tema": {
+    "titulo": "Las pistas de «La liga de los pelirrojos»",
+    "ejemplo": {
+     "motor": "marcar",
+     "p": {
+      "rotulo": "Detalle",
+      "items": [
+       {
+        "nombre": "El ayudante",
+        "texto": "El ayudante de Wilson {{acepta trabajar por poca plata|Contradicción: alguien hábil no se conforma con eso, salvo que busque otra cosa.}} y {{baja todo el tiempo al sótano|Pista: hace algo a escondidas.}}. Además, {{sus pantalones están gastados en las rodillas|Pista material: pasa horas arrodillado.}}.",
+        "cierre": "El ayudante tiene un plan propio en esa casa."
+       },
+       {
+        "nombre": "La liga",
+        "texto": "{{Un trabajo raro y bien pagado|Falsa pista: parece el misterio principal.}} saca a Wilson de su casa {{todas las mañanas|Pista: alguien necesita la casa vacía.}}. {{Cuando ya no hace falta, la liga desaparece|Pista: era solo una excusa.}}.",
+        "cierre": "La liga es la gran distracción del cuento."
+       }
+      ]
+     }
+    },
+    "ejercicio": {
+     "motor": "unir_x",
+     "p": {
+      "consigna": "Uní cada detalle del cuento con lo que revela.",
+      "items": [
+       {
+        "pares": [
+         [
+          "El ayudante cobra la mitad de lo normal",
+          "Le interesa estar en la casa por otro motivo"
+         ],
+         [
+          "Pasa horas en el sótano",
+          "Hace algo a escondidas"
+         ],
+         [
+          "Tiene las rodillas gastadas",
+          "Excava"
+         ],
+         [
+          "Detrás de la casa hay un banco",
+          "Ahí está el objetivo del plan"
+         ]
+        ]
+       }
+      ]
+     }
+    },
+    "explicacion": [
+     {
+      "tipo": "definicion",
+      "titulo": "Lectura de pistas",
+      "texto": "Leer un policial como detective es preguntarse, ante cada detalle raro, qué explicación lo une con los demás."
+     },
+     {
+      "tipo": "parrafo",
+      "texto": "En «La liga de los pelirrojos», lo más llamativo, un trabajo absurdo y bien pagado, no es el crimen sino la manera de vaciar la casa. Las pistas verdaderas están en detalles pequeños del ayudante de Wilson."
+     },
+     {
+      "tipo": "lista",
+      "items": [
+       "Lo llamativo puede ser una distracción.",
+       "Los detalles chicos suelen ser las pistas.",
+       "Todas las pistas deben encajar en una explicación."
+      ]
+     }
+    ]
+   }
+  }
+ ]
 }

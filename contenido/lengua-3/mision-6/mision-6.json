@@ -1,0 +1,549 @@
+{
+ "subject_id": null,
+ "tema": 6,
+ "niveles": {},
+ "act": {},
+ "examen": [],
+ "mudado": [
+  {
+   "de": "Lengua 1 · misión 11 · nivel 1",
+   "para": "La gauchesca y la poesía popular",
+   "nota": "verso, estrofa, pausas y entonación",
+   "niveles": {
+    "objetivo": "Vas a leer un poema en voz alta respetando versos, pausas y entonación, y a decir qué sentís al leerlo.",
+    "vas_a_ver": [
+     "Verso y estrofa",
+     "Ritmo y pausas",
+     "Entonación",
+     "Qué me transmite"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "Verso y estrofa",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Verso",
+        "texto": "Cada línea de un poema."
+       },
+       {
+        "tipo": "definicion",
+        "titulo": "Estrofa",
+        "texto": "Grupo de versos separado por un espacio."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un poema se lee distinto que un cuento: importa cómo suena, no solo qué dice."
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Pausas",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Qué marcan",
+        "columnas": [
+         "Signo",
+         "Pausa"
+        ],
+        "filas": [
+         [
+          "Coma",
+          "Pausa corta"
+         ],
+         [
+          "Punto",
+          "Pausa larga"
+         ],
+         [
+          "Fin de verso sin signo",
+          "Pausa breve, seguí la idea"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Entonación",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Cambiá la <b>voz</b> según lo que el poema transmite: más suave si es tierno, más fuerte si es enojado, más lenta si es triste. Leé en voz alta dos veces: la segunda, con intención."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Qué me transmite",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Después de leer, preguntate: ¿qué <b>emoción</b> sentí? ¿Qué <b>imagen</b> apareció en mi cabeza? Un mismo poema puede emocionar a cada lector de manera distinta."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "leer",
+     "planteo": "Leé con pausas: «La luna es un barco de papel / que navega sobre el techo de la noche».",
+     "pasos": [
+      "Cada línea es un verso.",
+      "Pausa breve al terminar el primero.",
+      "Voz suave: la imagen es tierna."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá.",
+     "pasos": [
+      "Cada línea de un poema es un ___ .",
+      "Un grupo de versos es una ___ ."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Leé en voz alta un poema que te guste y contá qué emoción te dio."
+    },
+    "tip": {
+     "titulo": "Leelo dos veces",
+     "texto": "La primera para entender; la segunda para sentirlo."
+    },
+    "ojo": [
+     "Leer un poema como si fuera una lista.",
+     "Ignorar las pausas."
+    ],
+    "resumen": [
+     {
+      "titulo": "Verso",
+      "texto": "Una línea."
+     },
+     {
+      "titulo": "Estrofa",
+      "texto": "Grupo de versos."
+     },
+     {
+      "titulo": "Pausas",
+      "texto": "Según los signos."
+     },
+     {
+      "titulo": "Entonación",
+      "texto": "Según la emoción."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Verso",
+      "significado": "Línea de un poema."
+     },
+     {
+      "palabra": "Estrofa",
+      "significado": "Grupo de versos."
+     },
+     {
+      "palabra": "Entonación",
+      "significado": "Tono de voz al leer."
+     }
+    ],
+    "carpeta": [
+     "¿Cómo se llama cada línea de un poema?",
+     "¿Cómo se llama el grupo de versos?",
+     "¿Se lee un poema solo para entender o también para sentirlo?",
+     "¿Qué pausa marca un punto: corta o larga?"
+    ],
+    "respuestas_carpeta": [
+     [
+      "verso",
+      "el verso"
+     ],
+     [
+      "estrofa",
+      "la estrofa"
+     ],
+     [
+      "tambien para sentirlo",
+      "también para sentirlo",
+      "tambien",
+      "también",
+      "sentirlo"
+     ],
+     [
+      "larga",
+      "pausa larga"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Verso. Estrofa.",
+     "solo": "Leí con voz suave el poema de la luna y me dio ternura.",
+     "carpeta": [
+      "Verso.",
+      "Estrofa.",
+      "También para sentirlo.",
+      "Larga."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "ordering",
+     "p": "Ordená de menor a mayor.",
+     "o": [
+      "Estrofa",
+      "Verso",
+      "Poema"
+     ],
+     "r": {
+      "orden": [
+       "Verso",
+       "Estrofa",
+       "Poema"
+      ]
+     },
+     "e": "Verso, estrofa, poema."
+    },
+    {
+     "t": "multi_select",
+     "p": "¿Qué conviene hacer al leer un poema en voz alta?",
+     "o": [
+      "Respetar las pausas",
+      "Cambiar la entonación según la emoción",
+      "Leer rápido sin sentir",
+      "Leerlo dos veces"
+     ],
+     "r": {
+      "correctas": [
+       "Respetar las pausas",
+       "Cambiar la entonación según la emoción",
+       "Leerlo dos veces"
+      ]
+     },
+     "e": "No se lee como una lista."
+    }
+   ],
+   "examen": [
+    [
+     1,
+     {
+      "t": "multiple_choice",
+      "p": "Cada línea de un poema es un…",
+      "o": [
+       "Verso",
+       "Capítulo",
+       "Párrafo",
+       "Título"
+      ],
+      "r": {
+       "correcta": "Verso"
+      },
+      "e": "Un conjunto de versos es una estrofa."
+     }
+    ],
+    [
+     1,
+     {
+      "t": "multi_select",
+      "p": "Al leer un poema en voz alta conviene…",
+      "o": [
+       "Respetar las pausas",
+       "Usar la entonación adecuada",
+       "Leer como una lista",
+       "Leerlo dos veces"
+      ],
+      "r": {
+       "correctas": [
+        "Respetar las pausas",
+        "Usar la entonación adecuada",
+        "Leerlo dos veces"
+       ]
+      },
+      "e": "No como una lista."
+     }
+    ],
+    [
+     1,
+     {
+      "t": "true_false",
+      "p": "Un punto marca una pausa larga.",
+      "o": [
+       "Verdadero",
+       "Falso"
+      ],
+      "r": {
+       "correcta": "Verdadero"
+      },
+      "e": "Más larga que la coma."
+     }
+    ]
+   ]
+  },
+  {
+   "de": "Lengua 1 · misión 11 · nivel 3",
+   "para": "La gauchesca y la poesía popular",
+   "nota": "rima consonante y asonante, verso libre",
+   "niveles": {
+    "objetivo": "Vas a reconocer la rima consonante, la rima asonante y el verso libre.",
+    "vas_a_ver": [
+     "Qué es la rima",
+     "Consonante y asonante",
+     "Verso libre",
+     "Cómo se mide un verso"
+    ],
+    "secciones": [
+     {
+      "etapa": 1,
+      "titulo": "La rima",
+      "bloques": [
+       {
+        "tipo": "definicion",
+        "titulo": "Rima",
+        "texto": "Coincidencia de sonidos al final de los versos, a partir de la última vocal acentuada."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La rima da música al poema, pero no todos los poemas riman."
+       }
+      ]
+     },
+     {
+      "etapa": 1,
+      "titulo": "Consonante y asonante",
+      "bloques": [
+       {
+        "tipo": "tabla",
+        "titulo": "Dos tipos",
+        "columnas": [
+         "Rima",
+         "Qué coincide",
+         "Ejemplo"
+        ],
+        "filas": [
+         [
+          "Consonante",
+          "Todos los sonidos (vocales y consonantes)",
+          "canción / corazón"
+         ],
+         [
+          "Asonante",
+          "Solo las vocales",
+          "gato / lado"
+         ]
+        ],
+        "iguales": true
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Verso libre",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "El <b>verso libre</b> no tiene rima ni medida fija: el poeta decide cuándo termina cada verso según el ritmo y la emoción. Hoy muchos poemas son de verso libre."
+       }
+      ]
+     },
+     {
+      "etapa": 2,
+      "titulo": "Medida del verso",
+      "bloques": [
+       {
+        "tipo": "parrafo",
+        "texto": "Los versos se miden contando sílabas, pero para empezar alcanza con notar si son <b>cortos o largos</b> y qué ritmo producen."
+       }
+      ]
+     }
+    ],
+    "ejemplo_completo": {
+     "titulo": "clasificar",
+     "planteo": "¿«Sol» y «farol» tienen rima consonante o asonante?",
+     "pasos": [
+      "Terminan en -ol: coinciden todos los sonidos.",
+      "Es rima consonante."
+     ]
+    },
+    "ejemplo_incompleto": {
+     "titulo": "completar",
+     "planteo": "Completá.",
+     "pasos": [
+      "Si coinciden solo las vocales, la rima es ___ .",
+      "El poema sin rima ni medida fija es de verso ___ ."
+     ]
+    },
+    "ejemplo_solo": {
+     "titulo": "tu turno",
+     "planteo": "Escribí dos versos con rima consonante y dos con rima asonante."
+    },
+    "tip": {
+     "titulo": "Escuchá el final",
+     "texto": "Leé en voz alta y fijate qué sonidos se repiten al final."
+    },
+    "ojo": [
+     "Creer que todo poema tiene que rimar.",
+     "Confundir rima asonante con consonante."
+    ],
+    "resumen": [
+     {
+      "titulo": "Rima",
+      "texto": "Sonidos finales."
+     },
+     {
+      "titulo": "Consonante",
+      "texto": "Todos coinciden."
+     },
+     {
+      "titulo": "Asonante",
+      "texto": "Solo vocales."
+     },
+     {
+      "titulo": "Verso libre",
+      "texto": "Sin rima fija."
+     }
+    ],
+    "glosario": [
+     {
+      "palabra": "Rima",
+      "significado": "Coincidencia de sonidos finales."
+     },
+     {
+      "palabra": "Consonante",
+      "significado": "Todos los sonidos coinciden."
+     },
+     {
+      "palabra": "Asonante",
+      "significado": "Solo coinciden las vocales."
+     }
+    ],
+    "carpeta": [
+     "Si coinciden todos los sonidos, ¿la rima es consonante o asonante?",
+     "«Gato» y «lado», ¿riman en consonante o asonante?",
+     "El poema sin rima fija es de verso…",
+     "¿Todos los poemas tienen que rimar? Respondé sí o no."
+    ],
+    "respuestas_carpeta": [
+     [
+      "consonante",
+      "es consonante"
+     ],
+     [
+      "asonante",
+      "es asonante"
+     ],
+     [
+      "libre",
+      "verso libre"
+     ],
+     [
+      "no"
+     ]
+    ],
+    "soluciones": {
+     "incompleto": "Asonante. Libre.",
+     "solo": "Consonante: sol, farol. Asonante: gato, lado.",
+     "carpeta": [
+      "Consonante.",
+      "Asonante.",
+      "Libre.",
+      "No."
+     ]
+    }
+   },
+   "act": [
+    {
+     "t": "matching",
+     "p": "Uní cada par con su rima.",
+     "o": {
+      "izquierda": [
+       "sol / farol",
+       "gato / lado",
+       "canción / corazón",
+       "casa / mesa"
+      ],
+      "derecha": [
+       "Consonante",
+       "Asonante",
+       "Consonante",
+       "Asonante"
+      ]
+     },
+     "r": {
+      "pares": {
+       "sol / farol": "Consonante",
+       "gato / lado": "Asonante",
+       "canción / corazón": "Consonante",
+       "casa / mesa": "Asonante"
+      }
+     },
+     "e": "Solo vocales o todos los sonidos."
+    },
+    {
+     "t": "fill_blank",
+     "p": "El poema sin rima ni medida fija es de verso ___ .",
+     "o": [],
+     "r": {
+      "huecos": [
+       [
+        "libre"
+       ]
+      ]
+     },
+     "e": "Libre."
+    }
+   ],
+   "examen": [
+    [
+     3,
+     {
+      "t": "multiple_choice",
+      "p": "La rima en la que coinciden todos los sonidos es…",
+      "o": [
+       "Consonante",
+       "Asonante",
+       "Libre",
+       "Muda"
+      ],
+      "r": {
+       "correcta": "Consonante"
+      },
+      "e": "Sol y farol."
+     }
+    ],
+    [
+     3,
+     {
+      "t": "multiple_choice",
+      "p": "«Gato» y «lado» riman en…",
+      "o": [
+       "Asonante",
+       "Consonante",
+       "Libre",
+       "Nada"
+      ],
+      "r": {
+       "correcta": "Asonante"
+      },
+      "e": "Solo vocales."
+     }
+    ],
+    [
+     3,
+     {
+      "t": "true_false",
+      "p": "En un poema de verso libre no hay rima fija.",
+      "o": [
+       "Verdadero",
+       "Falso"
+      ],
+      "r": {
+       "correcta": "Verdadero"
+      },
+      "e": "El poeta decide."
+     }
+    ]
+   ]
+  }
+ ]
+}
