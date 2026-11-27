@@ -6,8 +6,8 @@ Uso: python3 tools/interactiva/prueba-act-nat.py"""
 import asyncio, json, pathlib, sys, html as H
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
-OUT = pathlib.Path('/tmp/prueba-act-nat'); OUT.mkdir(exist_ok=True)
-SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/actividades-plus.js', 'js/actividades-nat.js']
+OUT = pathlib.Path('/tmp/prueba-act-' + (sys.argv[1] if len(sys.argv) > 1 else 'nat')); OUT.mkdir(exist_ok=True)
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js']
 
 def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
 def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
@@ -18,6 +18,7 @@ def radios(i, ops): return '<div class="mt-ops">' + ''.join('<label class="mt-op
 def checks(i, ops): return '<div class="mt-ops">' + ''.join('<label class="mt-op"><input type="checkbox" data-w="%d" value="%s"><span>%s</span></label>' % (i, H.escape(o), H.escape(o)) for o in ops) + '</div>'
 def orden(i, ops): return '<small class="mt-ayuda">Usá las flechas.</small><ol class="mt-orden" data-w="%d">' % i + ''.join('<li data-v="%s"><span class="mt-orden-t">%s</span></li>' % (H.escape(o), H.escape(o)) for o in ops) + '</ol>'
 
+import os
 NIV = ['Productor', 'Consumidor primario', 'Consumidor secundario', 'Consumidor terciario']
 Q = [
  ('rotular', preg(0, '[[rotular:celula_animal]] Rotulá la célula animal.', pares(0, ['1', '2', '3', '4', '5', '6', '7', '8'], ['Membrana plasmática', 'Citoplasma', 'Núcleo', 'Mitocondria', 'Retículo endoplasmático', 'Ribosomas', 'Aparato de Golgi', 'Lisosoma']))),
@@ -64,6 +65,44 @@ ACC = {
  'luna': ("b=>{b.querySelector('.an-ficha').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Luna nueva'),
  'plato': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('[data-dest=\"0\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", 'Verduras y frutas'),
 }
+
+QS = [
+ ('cronologia', preg(0, '[[cronologia]] Ordená los hechos.', orden(0, ['Constitución Nacional (1853)', 'Revolución de Mayo (1810)', 'Llegada de Colón (1492)', 'Declaración de la Independencia (1816)']))),
+ ('coordenadas', preg(1, '[[coordenadas]] ¿Qué ciudad está a 36° N y 140° E?', txt(1))),
+ ('escala', preg(2, '[[escala:1000000:6]] ¿Cuántos km separan A y B?', num(2))),
+ ('husos', preg(3, '[[husos:-3:9:10]] En Buenos Aires son las 10. ¿Qué hora es en Tokio?', num(3))),
+ ('piramide', preg(4, '[[piramide:2]] ¿Qué tipo de pirámide es?', radios(4, ['Joven', 'Adulta', 'Envejecida']))),
+ ('fuente', preg(5, '[[fuente]] «Mendoza, 1816. Querida madre: seguimos preparando mulas para cruzar la cordillera…»', pares(5, ['Autor', 'Fecha', 'Tipo de fuente'], ['Un soldado', '1816', 'Primaria', 'Una historiadora', 'Secundaria']))),
+ ('arbol', preg(6, '[[arbol:Revolución de Mayo]] Ubicá cada tarjeta.', pares(6, ['Invasión de Napoleón a España', 'Primera Junta', 'Ideas de la Ilustración', 'Guerras de independencia'], ['Causa', 'Consecuencia']))),
+ ('dhondt', preg(7, '<p class="mt-hueco-p">[[dhondt:42000,31000,15000:5]] A obtiene <input class="mt-hueco"> bancas, B <input class="mt-hueco"> y C <input class="mt-hueco">.</p>', '', p_tag=False)),
+ ('ley', preg(8, '[[ley]] Ordená el camino de la ley.', orden(8, ['Proyecto', 'Cámara de origen', 'Cámara revisora', 'Sanción', 'Promulgación o veto', 'Publicación']))),
+ ('poderes', preg(9, '[[poderes]] ¿A qué poder pertenece?', pares(9, ['Presidente', 'Congreso', 'Corte Suprema', 'Intendente'], ['Ejecutivo', 'Legislativo', 'Judicial']))),
+ ('sectores', preg(10, '[[sectores]] Ubicá cada actividad.', pares(10, ['Cultivo de soja', 'Fábrica de autos', 'Supermercado'], ['Primario', 'Secundario', 'Terciario']))),
+ ('mercado', preg(11, '[[mercado:100,1:0,1]] ¿Cuál es el precio de equilibrio?', num(11))),
+ ('carrito', preg(12, '[[carrito]] Pan $1800 $2700; Leche $1300 $1950; Yerba $4500 $6750. ¿Qué % aumentó la canasta?', num(12))),
+ ('balanza', preg(13, '[[balanza]] ¿Uniforme obligatorio?', pares(13, ['Evita la competencia por marcas', 'Limita la expresión personal', 'Es un gasto extra'], ['A favor', 'En contra']))),
+ ('dilema', preg(14, '[[dilema]] Encontrás una billetera. ¿Qué hacés y por qué?', '<textarea class="mt-txt" name="q14"></textarea>')),
+ ('chequeo', preg(15, '[[chequeo]] ¡¡URGENTE!! Comprobado: el agua con limón cura todo. ¡Compartí antes de que lo borren!', checks(15, ['No dice la fuente', 'Usa mayúsculas y urgencia', 'Pide compartir rápido', 'Está bien escrito']))),
+ ('sociedad', preg(16, '[[sociedad]] Armá la pirámide feudal.', orden(16, ['Campesinos y siervos', 'Rey', 'Caballeros y bajo clero', 'Nobleza y alto clero']))),
+ ('comparativa', preg(17, '[[comparativa]] Completá.', '<div class="mt-tabla-w"><table class="mt-tabla"><thead><tr><th>Aspecto</th><th>Grecia</th><th>Roma</th></tr></thead><tbody><tr><td>Gobierno</td><td><input class="mt-celda"></td><td><input class="mt-celda"></td></tr></tbody></table></div>')),
+]
+ACCS = {
+ 'cronologia': ("b=>{b.querySelectorAll('[data-dest]')[2].dispatchEvent(new MouseEvent('click',{bubbles:true}));b.querySelector('[data-dest=\"1\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('li')].map(l=>l.dataset.v).slice(0,2).join('|')}", 'Llegada de Colón (1492)|Revolución de Mayo (1810)'),
+ 'coordenadas': ("b=>{b.querySelector('[data-t=\"8\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('input.mt-txt').value}", 'Tokio'),
+ 'husos': ("b=>{for(let k=0;k<10;k++)b.querySelector('[data-d=\"1\"]').click();return b.querySelector('input.nu-in').value}", '22'),
+ 'fuente': ("b=>{b.querySelector('[data-o]').click();b.querySelector('[data-k=\"0\"]').click();return b.querySelector('select').value}", 'Un soldado'),
+ 'arbol': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Causa'),
+ 'dhondt': ("b=>{['0-0','1-0','0-1','1-1','2-0'].forEach(k=>b.querySelector('[data-k=\"'+k+'\"]').click());return [...b.querySelectorAll('.mt-hueco')].map(h=>h.value).join(',')}", '2,2,1'),
+ 'ley': ("b=>{b.querySelectorAll('[data-dest]')[0].dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('li')][0].dataset.v}", 'Proyecto'),
+ 'poderes': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Ejecutivo'),
+ 'mercado': ("b=>{const r=b.querySelector('input[type=range]');r.value=50;r.dispatchEvent(new Event('input',{bubbles:true}));return b.querySelector('input.nu-in').value+' '+b.textContent.includes('Equilibrio')}", '50 true'),
+ 'carrito': ("b=>{for(let i=0;i<3;i++)b.querySelector('[data-i=\"'+i+'\"]').click();return b.querySelector('.soa-tot').textContent}", '11.400'),
+ 'balanza': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'A favor'),
+ 'dilema': ("b=>{b.querySelector('[data-v=\"Estoy a favor\"]').click();b.querySelector('.soa-mir').click();const t=b.querySelector('.soa-razon');t.value='porque es lo justo';t.dispatchEvent(new Event('input',{bubbles:true}));return b.querySelector('textarea[name=q14]').value}", 'Estoy a favor. Lo pienso'),
+ 'chequeo': ("b=>{const c=b.querySelector('input[type=checkbox]');c.checked=true;c.dispatchEvent(new Event('change',{bubbles:true}));return b.querySelector('.soa-sellos').textContent}", 'No dice la fuente'),
+ 'sociedad': ("b=>{b.querySelectorAll('[data-dest]')[1].dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('li')][0].dataset.v}", 'Rey'),
+}
+if len(sys.argv) > 1 and sys.argv[1] == 'soc': Q, ACC = QS, ACCS
 
 async def main():
     page = OUT / 'p.html'

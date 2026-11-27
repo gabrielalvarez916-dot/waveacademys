@@ -345,6 +345,9 @@
     elegir(el, api, function () { var D = pick(DIL), k = rot(3, u); return { cons: 'Dilema «' + D[0].toLowerCase() + '»: ' + D[1] + ' ¿Desde qué mirada ética está este razonamiento?<br><b>«' + D[2][k] + '»</b>', ops: TEO.map(function (t) { return t[0]; }), ok: TEO[k][0], ayuda: '¿Habla de los resultados, de una regla o deber, o de qué haría una buena persona?' }; });
   } };
 
+  // Piezas de dibujo que reusan las actividades de Sociales (js/actividades-soc.js). Solo dibujos y datos.
+  N.soc = { grilla: grilla, CIU: CIU, mapaEsc: mapaEsc, reloj: reloj, hh: hh, piramide: piramide, PIR: PIR, dhondt: dhondt, leyDib: leyDib, LEY: LEY, piraSoc: piraSoc, SOCS: SOCS, lineas: lineas };
+
   var css = document.createElement('style');
   css.textContent = '.soc-doc{margin:6px auto;max-width:460px;padding:14px 16px;border:2px solid #d8c9a3;border-radius:6px;background:#fff;text-align:left;font-size:.95rem;line-height:1.5}.soc-doc.viejo{background:#FBF3DF;font-family:Georgia,serif}.soc-doc p{margin:6px 0}.soc-et{display:flex;flex-direction:column;gap:4px;margin-top:8px;font-family:inherit}.soc-et span{padding:4px 8px;border-radius:8px;background:#FFF3C4;font-weight:700;font-size:.88rem}' +
     '.soc-teo{display:grid;gap:8px;margin-top:6px}.soc-teo div{padding:8px 10px;border-radius:12px;background:#F3FBF7;border:2px solid #D7F0E9;text-align:left}.soc-teo small{display:block;color:#066A6E}.soc-teo em{display:block;margin-top:4px}';

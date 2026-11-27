@@ -122,3 +122,28 @@ Mismo mecanismo que las actividades plus: una marca al principio del enunciado c
 | `[[experimento]]` | `classify`: categorías Cambia…, Se mide…, Queda igual… | arma los dos montajes | `{"categorias":{..}}` |
 | `[[luna]]` | `matching`: izquierda `"1".."4"` (1 izquierda, 2 abajo, 3 derecha, 4 arriba; el Sol a la izquierda) | ubica cada fase en la órbita | `{"pares":{"1":"Luna nueva",…}}` |
 | `[[plato]]` | `classify`: categorías = grupos de alimentos | arma el plato | `{"categorias":{..}}` |
+
+
+## Actividades de Sociales (js/actividades-soc.js)
+Solo actividades de nivel y generales, nunca examen. La marca va al principio del enunciado; lo que arma el alumno se escribe en el campo del tipo de siempre.
+
+```
+[[cronologia]]                      ordering (hechos con su año entre paréntesis: "Revolución de Mayo (1810)") · ubica los hechos en la línea
+[[coordenadas]]                     short_answer (nombre de la ciudad)            · toca la ciudad en la grilla de latitud y longitud
+[[escala:1000000:6]]                numeric                                        · mide con la regla en el mapa y calcula
+[[husos:-3:9:10]]                   numeric (hora de 0 a 23)                       · gira la aguja del reloj de la otra ciudad (UTC origen : UTC destino : hora)
+[[piramide:0]]                      multiple_choice                                · lee la pirámide (0 joven, 1 adulta, 2 envejecida)
+[[fuente]]                          matching (izquierda: Autor, Fecha, Intención, Tipo) · analiza el documento del enunciado con fichas
+[[arbol:Revolución de Mayo]]        classify (Causa / Consecuencia)                · arma el árbol del proceso
+[[dhondt:42000,31000,15000:5]]      fill_blank (un ___ por partido)                · marca los cocientes más grandes de la tabla
+[[ley]]                             ordering (etapas de la ley)                    · lleva el proyecto por el Congreso
+[[poderes]]                         classify (Ejecutivo / Legislativo / Judicial)  · ubica cada institución en su edificio
+[[sectores]]                        classify (Primario / Secundario / Terciario)   · ubica cada actividad en el campo, la fábrica o el comercio
+[[mercado:100,1:0,1]]               numeric                                        · mueve el precio hasta el equilibrio (Qd = a − b·p ; Qo = c + d·p)
+[[carrito]]                         numeric                                        · arma la canasta y compara precios (enunciado con "producto $viejo $nuevo; …")
+[[balanza]]                         classify (A favor / En contra)                 · los argumentos inclinan la balanza
+[[dilema]]                          open o keywords                                · elige postura y la justifica desde una mirada ética
+[[chequeo]]                         multi_select (señales de alerta)               · revisa la publicación con la lista de verificación
+[[sociedad:feudal]]                 ordering (grupos)                              · arma la pirámide social de arriba hacia abajo
+[[comparativa]]                     table_fill                                     · completa la tabla comparativa con encabezados ilustrados
+```
