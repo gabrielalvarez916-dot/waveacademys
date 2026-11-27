@@ -214,3 +214,46 @@ Historia, Geografía, Ciudadanía, Filosofía, Economía y Ciencias Sociales. Ca
 | `migraciones` | `migraciones_x` (expulsión o atracción) | origen, destino y factores | `caso`: europea, regional, campo |
 | `balanza_argumentos` | `balanza_argumentos_x` | argumentos a favor y en contra que inclinan la balanza | `debate`: uniforme, celulares, voto16 |
 | `dilema` | `dilema_x` | un dilema desde la ética de las consecuencias, del deber y de la virtud | — |
+
+## Nivel Medio: todas las áreas (js/leccion-banco-medio.js) — 27/11/2026
+Para primaria, sobre todo de 1.º a 3.º: dibujos grandes y poco texto. Cada motor tiene su ejemplo paso a paso y su práctica (`_x`). Con `may: true` todo va en IMPRENTA MAYÚSCULA (1.º y 2.º); Tecnología y Ciudadanía escriben la explicación en minúscula. Para 4.º a 6.º sirven además los motores de secundaria que encajan (Naturales: partes, ciclo, red_trofica, recorrido, particulas, mezclas, densidad, circuito, iman, luz, calor, fuerzas, energia, sistema_solar, tierra_luna; Sociales: linea_historica, coordenadas, escala_mapa, circuito_productivo; Lengua: los de gramática y tildes de leccion-banco2.js).
+
+| Área | Motor | Parámetros (`p`) |
+|---|---|---|
+| Lengua | `letras` / `letras_x` | `letras` (lista, ej. ["M","P"]); práctica `modo`: inicial, dibujo |
+| Lengua | `silabas` / `silabas_x` | `palabras`; práctica `modo`: contar, armar |
+| Lengua | `armar_palabra` / `armar_palabra_x` | — |
+| Lengua | `oracion` / `oracion_x` | `modo`: (orden, mayúscula y punto) o signos (¿? ¡!) |
+| Lengua | `rimas` / `rimas_x` | — |
+| Lengua | `abecedario` / `abecedario_x` | orden alfabético |
+| Lengua | `numero_genero` / `numero_genero_x` | `modo`: (singular y plural) o genero |
+| Lengua | `ortografia` / `ortografia_x` | `modo`: mp_mb, r_rr, gue_gui, b_v, c_s_z, h |
+| Lengua | `cuento` / `cuento_x` | inicio, problema y final con viñetas; práctica: ordenar el cuento |
+| Naturales | `cuerpo` / `cuerpo_x` | `modo`: (partes) o sentidos |
+| Naturales | `animales` / `animales_x` | ficha por fuera; práctica `criterio` 0 a 4 (cubierta, se mueve, come, vive, nace) |
+| Naturales | `planta` / `planta_x` | `modo`: (partes) o ciclo |
+| Naturales | `materiales` / `materiales_x` | pruebas de propiedades; práctica `prop` 0 a 3 |
+| Naturales | `calor_frio` / `calor_frio_x` | `t`: temperatura inicial; estados del agua |
+| Naturales | `sombras` / `sombras_x` | `h`: hora; día, noche y sombras |
+| Naturales | `clima` / `clima_x` | tiempo atmosférico y ropa |
+| Naturales | `crecer` / `crecer_x` | `ser`: personas, gallina, rana, mariposa, vaca |
+| Sociales | `plano` / `plano_x` | plano del barrio, puntos cardinales y recorridos |
+| Sociales | `campo_ciudad` / `campo_ciudad_x` | — |
+| Sociales | `campo_mesa` / `campo_mesa_x` | `producto`: leche, pan, dulce |
+| Sociales | `servicios` / `servicios_x` | servicios que llegan a casa |
+| Sociales | `antes_ahora` / `antes_ahora_x` | objetos de antes y de ahora |
+| Sociales | `tiempo` / `tiempo_x` | `modo`: (semana: ayer, hoy, mañana) o dia |
+| Sociales | `instituciones` / `instituciones_x` | — |
+| Inglés | `vocab` / `vocab_x` | `tema`: numbers, colours, family, body, animals, food, clothes, house, weather, feelings, places, jobs; práctica `modo`: escuchar, leer. Con audio 🔊 |
+| Inglés | `rutina` / `rutina_x` | daily routine con reloj (o'clock) |
+| Inglés | `frase_en` / `frase_en_x` | quién + qué hace + el resto |
+| Tecnología | `herramientas` / `herramientas_x` | herramienta, operación y seguridad |
+| Tecnología | `fabricar` / `fabricar_x` | `objeto`: mesa, remera, maceta; secuencia y producción en serie |
+| Tecnología | `engranajes` / `engranajes_x` | `modo`: (engranajes) o polea; sentido y vueltas |
+| Tecnología | `compu` / `compu_x` | entrada, proceso, salida y almacenamiento |
+| Tecnología | `robot` / `robot_x` | programar con flechas (la práctica es programar de verdad) |
+| Tecnología | `control` / `control_x` | sensor, controlador y actuador |
+| Ciudadanía | `emociones` / `emociones_x` | emoción, cuerpo, termómetro y qué hacer |
+| Ciudadanía | `normas` / `normas_x` | acuerdos de convivencia |
+| Ciudadanía | `conflictos` / `conflictos_x` | semáforo: paro, pienso, actúo |
+| Ciudadanía | `derechos` / `derechos_x` | derechos de chicas y chicos |

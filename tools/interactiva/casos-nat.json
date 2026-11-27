@@ -664,5 +664,461 @@
   "p": {
    "linea": "antigua"
   }
+ },
+ {
+  "motor": "letras",
+  "nombre": "md-letras",
+  "p": {}
+ },
+ {
+  "motor": "letras_x",
+  "nombre": "md-letras_x",
+  "p": {}
+ },
+ {
+  "motor": "silabas",
+  "nombre": "md-silabas",
+  "p": {}
+ },
+ {
+  "motor": "silabas_x",
+  "nombre": "md-silabas_x",
+  "p": {}
+ },
+ {
+  "motor": "silabas_x",
+  "nombre": "md-silabas_x-armar",
+  "p": {
+   "modo": "armar"
+  }
+ },
+ {
+  "motor": "armar_palabra",
+  "nombre": "md-armar_palabra",
+  "p": {}
+ },
+ {
+  "motor": "armar_palabra_x",
+  "nombre": "md-armar_palabra_x",
+  "p": {}
+ },
+ {
+  "motor": "oracion",
+  "nombre": "md-oracion",
+  "p": {}
+ },
+ {
+  "motor": "oracion",
+  "nombre": "md-oracion-signos",
+  "p": {
+   "modo": "signos"
+  }
+ },
+ {
+  "motor": "oracion_x",
+  "nombre": "md-oracion_x",
+  "p": {}
+ },
+ {
+  "motor": "oracion_x",
+  "nombre": "md-oracion_x-signos",
+  "p": {
+   "modo": "signos"
+  }
+ },
+ {
+  "motor": "rimas",
+  "nombre": "md-rimas",
+  "p": {}
+ },
+ {
+  "motor": "rimas_x",
+  "nombre": "md-rimas_x",
+  "p": {}
+ },
+ {
+  "motor": "abecedario",
+  "nombre": "md-abecedario",
+  "p": {}
+ },
+ {
+  "motor": "abecedario_x",
+  "nombre": "md-abecedario_x",
+  "p": {}
+ },
+ {
+  "motor": "numero_genero",
+  "nombre": "md-numero_genero",
+  "p": {}
+ },
+ {
+  "motor": "numero_genero",
+  "nombre": "md-numero_genero-genero",
+  "p": {
+   "modo": "genero"
+  }
+ },
+ {
+  "motor": "numero_genero_x",
+  "nombre": "md-numero_genero_x",
+  "p": {}
+ },
+ {
+  "motor": "numero_genero_x",
+  "nombre": "md-numero_genero_x-genero",
+  "p": {
+   "modo": "genero"
+  }
+ },
+ {
+  "motor": "ortografia",
+  "nombre": "md-ortografia",
+  "p": {}
+ },
+ {
+  "motor": "ortografia_x",
+  "nombre": "md-ortografia_x",
+  "p": {}
+ },
+ {
+  "motor": "cuento",
+  "nombre": "md-cuento",
+  "p": {}
+ },
+ {
+  "motor": "cuento_x",
+  "nombre": "md-cuento_x",
+  "p": {}
+ },
+ {
+  "motor": "cuerpo",
+  "nombre": "md-cuerpo",
+  "p": {}
+ },
+ {
+  "motor": "cuerpo",
+  "nombre": "md-cuerpo-sentidos",
+  "p": {
+   "modo": "sentidos"
+  }
+ },
+ {
+  "motor": "cuerpo_x",
+  "nombre": "md-cuerpo_x",
+  "p": {}
+ },
+ {
+  "motor": "cuerpo_x",
+  "nombre": "md-cuerpo_x-sentidos",
+  "p": {
+   "modo": "sentidos"
+  }
+ },
+ {
+  "motor": "animales",
+  "nombre": "md-animales",
+  "p": {}
+ },
+ {
+  "motor": "animales_x",
+  "nombre": "md-animales_x",
+  "p": {}
+ },
+ {
+  "motor": "planta",
+  "nombre": "md-planta",
+  "p": {}
+ },
+ {
+  "motor": "planta",
+  "nombre": "md-planta-ciclo",
+  "p": {
+   "modo": "ciclo"
+  }
+ },
+ {
+  "motor": "planta_x",
+  "nombre": "md-planta_x",
+  "p": {}
+ },
+ {
+  "motor": "planta_x",
+  "nombre": "md-planta_x-ciclo",
+  "p": {
+   "modo": "ciclo"
+  }
+ },
+ {
+  "motor": "materiales",
+  "nombre": "md-materiales",
+  "p": {}
+ },
+ {
+  "motor": "materiales_x",
+  "nombre": "md-materiales_x",
+  "p": {}
+ },
+ {
+  "motor": "calor_frio",
+  "nombre": "md-calor_frio",
+  "p": {}
+ },
+ {
+  "motor": "calor_frio_x",
+  "nombre": "md-calor_frio_x",
+  "p": {}
+ },
+ {
+  "motor": "sombras",
+  "nombre": "md-sombras",
+  "p": {}
+ },
+ {
+  "motor": "sombras_x",
+  "nombre": "md-sombras_x",
+  "p": {}
+ },
+ {
+  "motor": "clima",
+  "nombre": "md-clima",
+  "p": {}
+ },
+ {
+  "motor": "clima_x",
+  "nombre": "md-clima_x",
+  "p": {}
+ },
+ {
+  "motor": "crecer",
+  "nombre": "md-crecer",
+  "p": {}
+ },
+ {
+  "motor": "crecer_x",
+  "nombre": "md-crecer_x",
+  "p": {}
+ },
+ {
+  "motor": "plano",
+  "nombre": "md-plano",
+  "p": {}
+ },
+ {
+  "motor": "plano_x",
+  "nombre": "md-plano_x",
+  "p": {}
+ },
+ {
+  "motor": "campo_ciudad",
+  "nombre": "md-campo_ciudad",
+  "p": {}
+ },
+ {
+  "motor": "campo_ciudad_x",
+  "nombre": "md-campo_ciudad_x",
+  "p": {}
+ },
+ {
+  "motor": "campo_mesa",
+  "nombre": "md-campo_mesa",
+  "p": {}
+ },
+ {
+  "motor": "campo_mesa_x",
+  "nombre": "md-campo_mesa_x",
+  "p": {}
+ },
+ {
+  "motor": "servicios",
+  "nombre": "md-servicios",
+  "p": {}
+ },
+ {
+  "motor": "servicios_x",
+  "nombre": "md-servicios_x",
+  "p": {}
+ },
+ {
+  "motor": "antes_ahora",
+  "nombre": "md-antes_ahora",
+  "p": {}
+ },
+ {
+  "motor": "antes_ahora_x",
+  "nombre": "md-antes_ahora_x",
+  "p": {}
+ },
+ {
+  "motor": "tiempo",
+  "nombre": "md-tiempo",
+  "p": {}
+ },
+ {
+  "motor": "tiempo",
+  "nombre": "md-tiempo-dia",
+  "p": {
+   "modo": "dia"
+  }
+ },
+ {
+  "motor": "tiempo_x",
+  "nombre": "md-tiempo_x",
+  "p": {}
+ },
+ {
+  "motor": "instituciones",
+  "nombre": "md-instituciones",
+  "p": {}
+ },
+ {
+  "motor": "instituciones_x",
+  "nombre": "md-instituciones_x",
+  "p": {}
+ },
+ {
+  "motor": "vocab",
+  "nombre": "md-vocab",
+  "p": {}
+ },
+ {
+  "motor": "vocab_x",
+  "nombre": "md-vocab_x-leer",
+  "p": {
+   "modo": "leer"
+  }
+ },
+ {
+  "motor": "rutina",
+  "nombre": "md-rutina",
+  "p": {}
+ },
+ {
+  "motor": "rutina_x",
+  "nombre": "md-rutina_x",
+  "p": {}
+ },
+ {
+  "motor": "frase_en",
+  "nombre": "md-frase_en",
+  "p": {}
+ },
+ {
+  "motor": "frase_en_x",
+  "nombre": "md-frase_en_x",
+  "p": {}
+ },
+ {
+  "motor": "herramientas",
+  "nombre": "md-herramientas",
+  "p": {}
+ },
+ {
+  "motor": "herramientas_x",
+  "nombre": "md-herramientas_x",
+  "p": {}
+ },
+ {
+  "motor": "fabricar",
+  "nombre": "md-fabricar",
+  "p": {}
+ },
+ {
+  "motor": "fabricar_x",
+  "nombre": "md-fabricar_x",
+  "p": {}
+ },
+ {
+  "motor": "engranajes",
+  "nombre": "md-engranajes",
+  "p": {}
+ },
+ {
+  "motor": "engranajes",
+  "nombre": "md-engranajes-polea",
+  "p": {
+   "modo": "polea"
+  }
+ },
+ {
+  "motor": "engranajes_x",
+  "nombre": "md-engranajes_x",
+  "p": {}
+ },
+ {
+  "motor": "engranajes_x",
+  "nombre": "md-engranajes_x-polea",
+  "p": {
+   "modo": "polea"
+  }
+ },
+ {
+  "motor": "compu",
+  "nombre": "md-compu",
+  "p": {}
+ },
+ {
+  "motor": "compu_x",
+  "nombre": "md-compu_x",
+  "p": {}
+ },
+ {
+  "motor": "robot",
+  "nombre": "md-robot",
+  "p": {}
+ },
+ {
+  "motor": "robot_x",
+  "nombre": "md-robot_x",
+  "p": {}
+ },
+ {
+  "motor": "control",
+  "nombre": "md-control",
+  "p": {}
+ },
+ {
+  "motor": "control_x",
+  "nombre": "md-control_x",
+  "p": {}
+ },
+ {
+  "motor": "emociones",
+  "nombre": "md-emociones",
+  "p": {}
+ },
+ {
+  "motor": "emociones_x",
+  "nombre": "md-emociones_x",
+  "p": {}
+ },
+ {
+  "motor": "normas",
+  "nombre": "md-normas",
+  "p": {}
+ },
+ {
+  "motor": "normas_x",
+  "nombre": "md-normas_x",
+  "p": {}
+ },
+ {
+  "motor": "conflictos",
+  "nombre": "md-conflictos",
+  "p": {}
+ },
+ {
+  "motor": "conflictos_x",
+  "nombre": "md-conflictos_x",
+  "p": {}
+ },
+ {
+  "motor": "derechos",
+  "nombre": "md-derechos",
+  "p": {}
+ },
+ {
+  "motor": "derechos_x",
+  "nombre": "md-derechos_x",
+  "p": {}
  }
 ]
