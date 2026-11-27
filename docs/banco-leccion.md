@@ -171,3 +171,21 @@ Herramientas comunes en `H.nat` (dibujo SVG, elegir, ordenar, tocar) para los ar
 | `tamanos` | `tamanos_x` (ordenar) | escala de potencias de 10, de una persona a un átomo |
 | `grafico` | `grafico_x` | gráfico que se dibuja punto por punto; `p.items` propios {nombre, x, y, series, marcas, cierre} |
 | `experimento` | `experimento_x` | pregunta, hipótesis, variables, montaje, resultados, conclusión; `p.items` propios |
+
+### Naturales parte 3 · `js/leccion-banco-nat3.js`: física, Tierra y espacio
+| Ejemplo | Ejercicio | Qué muestra |
+|---|---|---|
+| `circuito` | `circuito_x` | ley de Ohm, serie y paralelo, lámparas que brillan, qué pasa si se quita una (`p.modo`) |
+| `movimiento` | `movimiento_x` | MRU, MRUV, caída libre y tiro vertical: el móvil y los gráficos x-t y v-t (`p.modo`) |
+| `fuerzas` | `fuerzas_x` | diagrama de cuerpo libre en el piso o en un plano inclinado, leyes de Newton |
+| `vectores` | `vectores_x` | suma gráfica, resultante y componentes |
+| `palanca` | `palanca_x` | ley de la palanca y los tres géneros (`p.genero`) |
+| `energia` | `energia_x` | montaña rusa o péndulo con barras de energía (`p.escena`) |
+| `onda` | `onda_x` | amplitud, longitud de onda, frecuencia, v = λ·f, sonido |
+| `luz` | `luz_x` | sombras, reflexión y refracción (`p.modo`) |
+| `calor` | `calor_x` | equilibrio térmico y Q = m·c·ΔT |
+| `fluidos` | `fluidos_x` | presión hidrostática y empuje (`p.modo`: presion, empuje) |
+| `iman` | `iman_x` | polos, campo magnético, brújula y electroimán (`p.modo`) |
+| `tierra_luna` | `tierra_luna_x` | día y noche, estaciones y fases de la Luna (`p.modo`: dia, estaciones, fases) |
+| `sistema_solar` | `sistema_solar_x` (ordenar) | distancias y tamaños a escala (`p.modo`: dist, tam) |
+En total el banco de Naturales tiene 42 ejemplos y 42 ejercicios. La prueba `prueba-nat.py` corre 91 casos.
