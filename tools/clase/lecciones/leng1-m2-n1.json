@@ -2,131 +2,31 @@
  "slug": "leng1-m2-n1",
  "step_id": "a43342fa-65b1-47f7-b044-597883c9a1a2",
  "materia": "Lengua y Literatura I",
- "titulo": "El detective y su método",
+ "titulo": "El policial y sus personajes",
  "sub": "Lengua y Literatura I · Misión 2 · Nivel 1",
  "escenas": [
   {
-   "t": "historia",
-   "personaje": {
-    "nombre": "Sherlock Holmes",
-    "emoji": "🕵️"
-   },
-   "lugar": "🏙️",
-   "lineas": [
-    "Un hombre entra a Baker Street.",
-    "Holmes lo mira dos segundos…",
-    "…y ya sabe a qué se dedica."
-   ],
-   "titulo": "EL DETECTIVE",
-   "sub": "y su método",
+   "t": "noticia",
+   "cinta": "MISTERIO",
+   "titular": "Desaparece un trofeo de una vitrina cerrada",
+   "bajada": "La llave nunca salió del bolsillo del director",
+   "emoji": "🏆",
+   "titulo": "EL POLICIAL",
+   "sub": "un enigma por resolver",
    "voz": [
-    "Londres. Un hombre entra al departamento de *Baker Street*.",
-    "Sherlock Holmes lo mira apenas dos segundos…",
-    "… y ya sabe a qué se dedica, sin preguntarle nada.",
-    "Hoy: *el detective y su método*."
+    "Un trofeo desaparece de una vitrina cerrada con llave.",
+    "Y la única llave nunca salió del bolsillo del director.",
+    "¿Cómo pudo pasar? Esa pregunta es el motor de todo *relato policial*."
    ]
   },
   {
-   "t": "pizarra",
-   "lineas": [
-    {
-     "txt": "Cuento policial",
-     "color": "sol",
-     "marca": "subraya"
-    },
-    {
-     "txt": "Relato con un enigma que un detective resuelve"
-    }
-   ],
+   "t": "definicion",
+   "palabra": "Relato policial",
+   "texto": "Narración que gira alrededor de un enigma, casi siempre un crimen, que alguien investiga hasta descubrir la verdad.",
+   "emoji": "🔍",
    "voz": [
-    "El *cuento policial* gira alrededor de un *enigma*: un misterio que alguien tiene que resolver.",
-    "Y ese alguien es el *detective*."
-   ]
-  },
-  {
-   "t": "linea",
-   "titulo": "HISTORIA DEL POLICIAL",
-   "eventos": [
-    {
-     "fecha": "1841",
-     "txt": "Poe: el detective Dupin",
-     "emoji": "🐒"
-    },
-    {
-     "fecha": "1887",
-     "txt": "Conan Doyle: Holmes",
-     "emoji": "🕵️"
-    },
-    {
-     "fecha": "1920",
-     "txt": "Christie: Poirot",
-     "emoji": "🥚"
-    },
-    {
-     "fecha": "1942",
-     "txt": "Borges y Bioy: Isidro Parodi",
-     "emoji": "🇦🇷"
-    },
-    {
-     "fecha": "1953",
-     "txt": "Walsh: Variaciones en rojo",
-     "emoji": "🎨"
-    }
-   ],
-   "voz": [
-    "El género nace en 1841, con *Los crímenes de la calle Morgue*, de Edgar Allan Poe, y su detective, *Dupin*.",
-    "En 1887, Arthur Conan Doyle crea a *Sherlock Holmes*, el detective más famoso de la historia.",
-    "Desde 1920, Agatha Christie suma a *Hércules Poirot* y sus misterios imposibles.",
-    "En la Argentina, *Borges y Bioy Casares* inventan a Isidro Parodi, que resuelve crímenes desde una celda.",
-    "Y *Rodolfo Walsh* escribe *Variaciones en rojo*, con un detective que es corrector de pruebas."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "POLICIAL DE ENIGMA",
-    "texto": "razonar, como un rompecabezas",
-    "emoji": "🧩"
-   },
-   "b": {
-    "cab": "POLICIAL NEGRO",
-    "texto": "violencia, ciudad y peligro",
-    "emoji": "🌃"
-   },
-   "signo": "vs",
-   "voz": [
-    "Hay dos grandes tipos de policial.",
-    "El *de enigma*: el crimen es un rompecabezas y el detective lo resuelve *razonando*, casi sin moverse. Holmes es de este tipo.",
-    "El *negro*: el detective se mete en la ciudad, corre peligro, y el crimen muestra una sociedad corrupta."
-   ]
-  },
-  {
-   "t": "matriz",
-   "titulo": "LOS ELEMENTOS",
-   "celdas": [
-    {
-     "cab": "CRIMEN",
-     "txt": "el hecho que rompe el orden"
-    },
-    {
-     "cab": "ENIGMA",
-     "txt": "quién, cómo y por qué"
-    },
-    {
-     "cab": "SOSPECHOSOS",
-     "txt": "con motivo y oportunidad"
-    },
-    {
-     "cab": "RESOLUCIÓN",
-     "txt": "la verdad y el orden vuelven"
-    }
-   ],
-   "voz": [
-    "Los elementos del policial de enigma.",
-    "Un *crimen*: el hecho que rompe el orden.",
-    "Un *enigma*: quién lo hizo, cómo y por qué.",
-    "*Sospechosos*: cada uno con un motivo y una oportunidad.",
-    "Y la *resolución*: la verdad sale a la luz y el orden se recupera."
+    "Un *relato policial* gira alrededor de un *enigma*, casi siempre un crimen.",
+    "Alguien lo investiga paso a paso hasta descubrir la verdad, y el lector investiga con él."
    ]
   },
   {
@@ -134,136 +34,150 @@
    "titulo": "LOS PERSONAJES",
    "celdas": [
     {
-     "cab": "DETECTIVE",
-     "txt": "Holmes: resuelve"
+     "cab": "Detective",
+     "txt": "investiga y razona"
     },
     {
-     "cab": "AYUDANTE",
-     "txt": "Watson: cuenta y pregunta"
+     "cab": "Víctima",
+     "txt": "sufre el delito"
     },
     {
-     "cab": "CULPABLE",
-     "txt": "esconde la verdad"
+     "cab": "Sospechosos",
+     "txt": "pudieron hacerlo"
     },
     {
-     "cab": "VÍCTIMA / CLIENTE",
-     "txt": "trae el caso"
+     "cab": "Culpable",
+     "txt": "lo hizo y lo oculta"
     }
    ],
    "voz": [
-    "Los personajes de siempre.",
-    "El *detective*: Sherlock Holmes.",
-    "Su *ayudante*: el doctor Watson, que narra las historias.",
-    "El *culpable*, que esconde la verdad.",
-    "Y el *cliente*, que trae el caso."
+    "Todo policial tiene un elenco fijo.",
+    "El *detective*, que investiga y razona.",
+    "La *víctima*, que sufre el delito.",
+    "Los *sospechosos*, que tenían motivos u ocasión.",
+    "Y el *culpable*, que se esconde entre ellos."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "EL MÉTODO DE HOLMES",
+   "t": "bloques",
+   "titulo": "DOS PAPELES MÁS",
    "items": [
     {
-     "txt": "Observar cada detalle",
-     "emoji": "👀"
+     "cab": "Ayudante",
+     "txt": "acompaña al detective y entiende menos que él"
     },
     {
-     "txt": "Juntar pistas",
-     "emoji": "🧩"
-    },
-    {
-     "txt": "Deducir",
-     "emoji": "🧠"
-    },
-    {
-     "txt": "Comprobar",
-     "emoji": "✅"
+     "cab": "Testigo",
+     "txt": "vio u oyó algo y lo cuenta"
     }
    ],
    "voz": [
-    "El método de Holmes.",
-    "*Observar* cada detalle: la ropa, las manos, los zapatos.",
-    "*Juntar pistas*.",
-    "*Deducir*: sacar conclusiones lógicas.",
-    "Y *comprobar* antes de acusar."
+    "Aparecen dos papeles más.",
+    "El *ayudante*, que acompaña al detective y muchas veces se equivoca, como el lector.",
+    "Y los *testigos*, que vieron u oyeron algo y dan datos, aunque a veces se confunden."
    ]
   },
   {
-   "t": "frase",
-   "texto": "1891: se publica «La liga de los pelirrojos»",
-   "emoji": "📖",
-   "color": "#F4B63F",
+   "t": "linea",
+   "titulo": "DETECTIVES FAMOSOS",
+   "eventos": [
+    {
+     "fecha": "1841",
+     "txt": "Dupin, de Edgar Allan Poe",
+     "emoji": "🎩"
+    },
+    {
+     "fecha": "1887",
+     "txt": "Sherlock Holmes, de Conan Doyle",
+     "emoji": "🔎"
+    },
+    {
+     "fecha": "1920",
+     "txt": "Hércules Poirot, de Agatha Christie",
+     "emoji": "🥚"
+    }
+   ],
    "voz": [
-    "En 1891 Arthur Conan Doyle publicó *La liga de los pelirrojos*, uno de los casos más famosos de Holmes. Es el cuento que vamos a leer en esta misión."
+    "En 1841, Edgar Allan Poe crea a Auguste *Dupin*, el primer gran detective de la literatura.",
+    "En 1887 aparece *Sherlock Holmes*, el más famoso de todos.",
+    "Y en 1920, *Hércules Poirot*, el detective belga de Agatha Christie."
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "Cuando Poe inventó a Dupin, la policía de su ciudad casi no investigaba: el detective literario llegó antes que el real.",
+   "emoji": "🤯",
+   "voz": [
+    "¿Sabías que el detective de las novelas apareció antes que muchos detectives de verdad?",
+    "Cuando Poe inventó a Dupin, las policías recién empezaban a investigar con método."
    ]
   },
   {
    "t": "quiz4",
-   "pregunta": "Manga derecha gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
+   "pregunta": "Una señora vio salir a un hombre de sombrero a medianoche. ¿Qué papel cumple?",
    "opciones": [
-    "Trabaja cargando bolsas",
-    "Escribe mucho apoyando el brazo",
-    "Es zurdo"
+    "Detective",
+    "Testigo",
+    "Culpable",
+    "Víctima"
    ],
    "correcta": 1,
    "voz": [
-    "Te toca: la manga derecha está gastada y brillante; la izquierda, como nueva. ¿Qué deduce Holmes?",
-    "¿trabaja cargando bolsas, escribe mucho apoyando el brazo, o es zurdo?",
-    "¡Que *escribe mucho*! Solo se gasta la manga que se apoya en el escritorio. Si fuera zurdo, sería la otra."
+    "Pregunta: una señora vio salir a un hombre de sombrero a medianoche. ¿Qué papel cumple ella en el relato?",
+    "Pensá qué hace: ¿investiga, sufre el delito o cuenta lo que vio?",
+    "Es *testigo*: aporta un dato, pero no investiga."
    ]
   },
   {
-   "t": "corrige",
-   "titulo": "ERRORES TÍPICOS",
-   "cambios": [
+   "t": "errores",
+   "items": [
     {
-     "antes": "Adivinar",
-     "despues": "Deducir con pistas",
-     "motivo": ""
+     "mal": "El primer sospechoso es el culpable",
+     "bien": "El culpable suele estar escondido entre los menos sospechados"
     },
     {
-     "antes": "Narra Holmes",
-     "despues": "Narra Watson",
-     "motivo": ""
+     "mal": "El policial es solo un relato de crímenes",
+     "bien": "Lo central es el enigma y la investigación"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Confundir *adivinar* con *deducir*: Holmes nunca adivina.",
-    "Y creer que Holmes narra: el narrador es *Watson*."
+    "Dos errores comunes.",
+    "El primer sospechoso casi nunca es el culpable: el género juega a esconderlo.",
+    "Y el policial no es solo violencia: lo central es el *enigma* y cómo se resuelve."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Policial*: un enigma a resolver.",
-    "*Detective*: Sherlock Holmes.",
-    "*Narrador*: el doctor Watson.",
-    "*Método*: observar, juntar pistas y deducir.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "POLICIAL",
-     "un enigma a resolver"
+     "Relato policial",
+     "un enigma que se investiga"
     ],
     [
-     "DETECTIVE",
-     "Sherlock Holmes"
+     "Detective",
+     "investiga y razona"
     ],
     [
-     "NARRADOR",
-     "Watson"
+     "Víctima y culpable",
+     "quien sufre y quien comete el delito"
     ],
     [
-     "MÉTODO",
-     "observar y deducir"
+     "Sospechosos y testigos",
+     "quienes pudieron hacerlo y quienes vieron algo"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "Un policial es un enigma que alguien investiga.",
+    "El detective.",
+    "La víctima y el culpable.",
+    "Los sospechosos y los testigos.",
+    "Con estos personajes se arma cualquier caso. ¡A practicar!"
+   ]
   }
  ]
 }

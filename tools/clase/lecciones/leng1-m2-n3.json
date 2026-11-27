@@ -2,315 +2,184 @@
  "slug": "leng1-m2-n3",
  "step_id": "b70f8efb-7ed8-46e7-a598-caf51740345b",
  "materia": "Lengua y Literatura I",
- "titulo": "Reconstruyo el caso",
+ "titulo": "Las dos historias del policial",
  "sub": "Lengua y Literatura I · Misión 2 · Nivel 3",
  "escenas": [
   {
-   "t": "reto",
-   "texto": "¿Por qué Holmes golpea la vereda con su bastón frente a la casa de Wilson?",
-   "segundos": 5,
-   "respuesta": "Para ver si abajo está hueco",
-   "emoji": "🦯",
-   "titulo": "RECONSTRUIR",
-   "sub": "el caso",
+   "t": "historia",
+   "personaje": {
+    "nombre": "Inspectora Lugo",
+    "emoji": "🕵️‍♀️"
+   },
+   "lugar": "🏛️",
+   "lineas": [
+    "El cuento empieza con el robo ya hecho.",
+    "La inspectora junta pistas durante días.",
+    "Recién al final sabemos cómo pasó todo."
+   ],
+   "titulo": "DOS HISTORIAS",
+   "sub": "en un mismo relato",
    "voz": [
-    "Desafío: ¿por qué Holmes golpea la vereda con su bastón? 5 segundos.",
-    "¡Para saber si *abajo está hueco*! Sospecha de un túnel.",
-    "Hoy: *reconstruimos el caso*."
+    "El cuento empieza con el robo del museo ya cometido.",
+    "Durante días, la inspectora Lugo junta pistas.",
+    "Y recién en la última página sabemos cómo pasó todo.",
+    "Es raro: lo primero que ocurrió es lo último que se cuenta. Así funciona el policial."
    ]
   },
   {
-   "t": "mundo",
-   "fondo": "nada",
-   "tuneles": [
-    [
-     [
-      470,
-      430
-     ],
-     [
-      470,
-      640
-     ],
-     [
-      1430,
-      640
-     ],
-     [
-      1430,
-      500
-     ]
-    ]
-   ],
-   "camaras": [
+   "t": "orden",
+   "titulo": "ASÍ PASÓ / ASÍ SE CUENTA",
+   "items": [
     {
-     "x": 470,
-     "y": 420,
-     "rx": 110,
-     "ry": 60
+     "txt": "El guardia copia la llave",
+     "emoji": "🔑"
     },
     {
-     "x": 1430,
-     "y": 470,
-     "rx": 150,
-     "ry": 75
+     "txt": "Roba el cuadro de noche",
+     "emoji": "🖼️"
+    },
+    {
+     "txt": "La inspectora investiga",
+     "emoji": "🕵️‍♀️"
+    },
+    {
+     "txt": "Revela al culpable",
+     "emoji": "💡"
     }
    ],
-   "pasos": [
-    {
-     "acc": [
-      {
-       "pon": "casa",
-       "e": "🏠",
-       "x": 470,
-       "y": 240,
-       "s": 160,
-       "etq": "casa de Wilson"
-      },
-      {
-       "pon": "banco",
-       "e": "🏦",
-       "x": 1430,
-       "y": 240,
-       "s": 160,
-       "etq": "banco"
-      },
-      {
-       "dib": "rect",
-       "x": 200,
-       "y": 330,
-       "w": 1520,
-       "h": 8,
-       "fill": "#5daa45",
-       "color": "#5daa45",
-       "r": 2
-      },
-      {
-       "dib": "flecha",
-       "de": [
-        470,
-        430
-       ],
-       "a": [
-        1430,
-        470
-       ]
-      }
-     ],
-     "txt": "La casa de Wilson y, detrás, el banco"
-    },
-    {
-     "acc": [
-      {
-       "pon": "cl",
-       "e": "⛏️",
-       "x": 950,
-       "y": 640,
-       "s": 90,
-       "etq": "cavando"
-      }
-     ],
-     "txt": "Desde el sótano, cavaban un túnel"
-    },
-    {
-     "acc": [
-      {
-       "pon": "oro",
-       "e": "💰",
-       "x": 1430,
-       "y": 470,
-       "s": 110,
-       "etq": "bóveda con oro"
-      }
-     ],
-     "txt": "Hasta la bóveda del banco"
-    }
+   "relato": [
+    2,
+    3,
+    0,
+    1
    ],
    "voz": [
-    "Así estaba armado el lugar: la *casa de Wilson* y, justo detrás, un *banco*.",
-    "Desde el *sótano* de la casa, el ayudante cavaba un *túnel* por debajo de la tierra.",
-    "El túnel llegaba hasta la *bóveda*, donde el banco guardaba el oro."
+    "Mirá el orden real de los hechos: el guardia copia la llave, roba el cuadro, la inspectora investiga y revela al culpable.",
+    "Ahora mirá el orden en que se cuenta: primero la investigación y la revelación.",
+    "La copia de la llave y el robo aparecen al final, cuando la inspectora explica el caso."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Las dos historias",
+   "texto": "La del crimen, que pasó antes y queda oculta, y la de la investigación, que el lector sigue paso a paso.",
+   "emoji": "📚",
+   "voz": [
+    "Por eso se dice que todo policial de enigma cuenta *dos historias*.",
+    "La del *crimen*, que pasó antes y queda oculta, y la de la *investigación*, que leemos paso a paso."
    ]
   },
   {
    "t": "flujo",
-   "titulo": "LA DEDUCCIÓN",
+   "titulo": "LA ESTRUCTURA",
    "items": [
+    "Crimen",
+    "Investigación",
+    "Revelación"
+   ],
+   "voz": [
+    "La estructura tiene tres momentos. Primero, el *crimen* o el hecho misterioso.",
+    "Después, la *investigación*: pistas, testigos, sospechosos.",
+    "Y al final, la *revelación*: el detective explica todo y la historia oculta sale a la luz."
+   ]
+  },
+  {
+   "t": "dialogo",
+   "personas": [
     {
-     "txt": "Ayudante en el sótano",
-     "emoji": "🕳️"
+     "nombre": "Ayudante",
+     "emoji": "🧑"
     },
     {
-     "txt": "Rodillas gastadas",
-     "emoji": "👖"
-    },
-    {
-     "txt": "Banco al lado",
-     "emoji": "🏦"
-    },
-    {
-     "txt": "¡Un túnel!",
-     "emoji": "⛏️"
+     "nombre": "Detective",
+     "emoji": "🕵️"
     }
    ],
-   "voz": [
-    "Holmes une las pistas. El ayudante pasa horas en el *sótano*.",
-    "Tiene las *rodillas gastadas*: excava.",
-    "Detrás de la casa hay un *banco* lleno de oro.",
-    "Conclusión: están cavando *un túnel* hasta la bóveda."
-   ]
-  },
-  {
-   "t": "comparar",
-   "voz": [
-    "En el policial hay dos historias.",
-    "La *historia del crimen*: lo que pasó de verdad, oculto.",
-    "La *historia de la investigación*: cómo el detective lo descubre."
-   ],
-   "a": {
-    "cab": "EL CRIMEN",
-    "texto": "Clay cava un túnel al banco",
-    "emoji": "⛏️"
-   },
-   "b": {
-    "cab": "LA INVESTIGACIÓN",
-    "texto": "Holmes une pistas",
-    "emoji": "🕵️"
-   },
-   "signo": "+"
-  },
-  {
-   "t": "definicion",
-   "palabra": "Narrador testigo",
-   "texto": "Watson cuenta lo que ve, pero sabe menos que Holmes: eso crea el suspenso",
-   "emoji": "📓",
-   "voz": [
-    "¿Por qué narra Watson y no Holmes? Porque es un *narrador testigo*: cuenta lo que ve, pero *sabe menos* que el detective.",
-    "Así el lector descubre la verdad *al mismo tiempo* que él. Si narrara Holmes, el misterio se arruinaría."
-   ]
-  },
-  {
-   "t": "pizarra",
    "lineas": [
     {
-     "txt": "Revelación",
-     "color": "sol",
-     "marca": "subraya"
+     "quien": 0,
+     "txt": "Yo no veía nada raro en la alfombra."
     },
     {
-     "txt": "El detective explica cómo resolvió el enigma"
+     "quien": 1,
+     "txt": "Mirá esa ceniza: no es de este cigarro."
+    },
+    {
+     "quien": 0,
+     "txt": "¡Entonces había alguien más en la sala!"
     }
    ],
    "voz": [
-    "El momento en que el detective explica todo se llama *desenlace* o *revelación*.",
-    "Holmes y la policía esperan en la bóveda y atrapan a *John Clay*, el falso ayudante."
+    "¿Quién cuenta? Muchas veces, el *ayudante*: «yo no veía nada raro en la alfombra».",
+    "El detective sí ve: la ceniza no es de ese cigarro.",
+    "El ayudante entiende tarde, igual que el lector. Es un *narrador testigo*: cuenta con «yo», pero el protagonista es otro."
    ]
   },
   {
-   "t": "quiz4",
-   "pregunta": "¿Por qué Holmes no le avisa antes a la policía?",
+   "t": "pregunta",
+   "pregunta": "¿Por qué conviene que narre el ayudante y no el detective?",
    "opciones": [
-    "No confía en Wilson",
-    "Quiere el oro para él",
-    "Necesita atraparlos en el acto"
+    "Para mantener el suspenso",
+    "Porque el detective no sabe escribir",
+    "Para contar el final al principio"
    ],
-   "correcta": 2,
+   "correcta": 0,
    "voz": [
-    "Te toca: Holmes ya sospecha del túnel. ¿Por qué no avisa enseguida a la policía?",
-    "¿no confía en Wilson, quiere el oro para él, o necesita atraparlos en el acto?",
-    "Porque necesita *atraparlos en el acto*: sin pruebas, John Clay podría escaparse otra vez."
+    "Pregunta: ¿por qué conviene que narre el ayudante y no el detective?",
+    "Pensá qué pasaría si contara el que ya sabe la solución.",
+    "Para mantener el *suspenso*: el ayudante sabe menos, y el lector descubre la verdad con él."
    ]
   },
   {
-   "t": "corrige",
-   "titulo": "ERRORES TÍPICOS",
-   "cambios": [
-    {
-     "antes": "Contar desordenado",
-     "despues": "Seguir el orden",
-     "motivo": ""
-    },
-    {
-     "antes": "Pistas sueltas",
-     "despues": "Unirlas con porque",
-     "motivo": ""
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "Contar el caso *desordenado*.",
-    "Y olvidar *por qué* cada pista lleva a la siguiente."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "ORDENAR",
+   "t": "errores",
    "items": [
     {
-     "txt": "El ayudante pasa horas en el sótano.",
-     "emoji": "1️⃣"
+     "mal": "La revelación cuenta algo nuevo que no estaba en el relato",
+     "bien": "La revelación une pistas que el lector ya había visto"
     },
     {
-     "txt": "Tiene las rodillas gastadas.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "El banco está detrás de la casa.",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "Conclusión: un túnel al banco.",
-     "emoji": "4️⃣"
+     "mal": "El narrador testigo es el autor",
+     "bien": "Es un personaje inventado que cuenta la historia"
     }
    ],
    "voz": [
-    "Resolvamos un caso: Ordená la deducción de Holmes.",
-    "El ayudante pasa horas en el sótano.",
-    "Tiene las rodillas gastadas.",
-    "El banco está detrás de la casa.",
-    "Conclusión: un túnel al banco."
-   ]
-  },
-  {
-   "t": "consejo",
-   "texto": "Para explicar una deducción, uní las pistas con porque y entonces: así se ve la lógica.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: Para explicar una deducción, uní las pistas con porque y entonces: así se ve la lógica."
+    "Dos errores para evitar.",
+    "La revelación no saca un dato nuevo de la galera: une pistas que el lector ya tenía. Eso se llama *juego limpio*.",
+    "Y el narrador testigo no es el autor: es un personaje inventado."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Dos historias: *crimen e investigación*.",
-    "*Deducción*: unir pistas con lógica.",
-    "*Revelación*: el detective explica.",
-    "Y el culpable: *John Clay*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "DOS HISTORIAS",
-     "crimen e investigación"
+     "Historia del crimen",
+     "pasó antes y queda oculta"
     ],
     [
-     "DEDUCCIÓN",
-     "unir pistas"
+     "Historia de la investigación",
+     "la que seguimos"
     ],
     [
-     "REVELACIÓN",
-     "el detective explica"
+     "Revelación",
+     "el detective explica todo"
     ],
     [
-     "CULPABLE",
-     "John Clay"
+     "Narrador testigo",
+     "el ayudante cuenta con «yo»"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "Dos historias y un narrador que sabe menos que el detective.",
+    "La historia del crimen.",
+    "La de la investigación.",
+    "La revelación.",
+    "Y el narrador testigo. ¡A practicar!"
+   ]
   }
  ]
 }

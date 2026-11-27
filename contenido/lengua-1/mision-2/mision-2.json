@@ -1,8 +1,8 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 2,
- "practica": "Práctica general: el cuento policial",
- "examen_titulo": "Nivel jefe: el cuento policial",
+ "practica": "Actividades generales",
+ "examen_titulo": "Nivel jefe: el policial",
  "niveles": {
   "1": {
    "objetivo": "Vas a reconocer el cuento policial, sus personajes y el método de Sherlock Holmes.",
@@ -265,69 +265,115 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "El cuento policial",
+      "titulo": "Qué es un relato policial",
       "ejemplo": {
-       "motor": "marcar",
+       "motor": "esquema",
        "p": {
-        "rotulo": "Caso",
         "items": [
          {
-          "nombre": "La medalla",
-          "texto": "{{Desaparece la medalla de oro del club|El crimen: el hecho que rompe el orden.}}. {{¿Quién la sacó de la vitrina cerrada con llave?|El enigma: la pregunta que mueve el relato.}} {{La entrenadora Ríos|La detective: investiga y razona.}} interroga {{al utilero, al presidente y a una jugadora|Los sospechosos.}}, y encuentra {{una llave copiada en el vestuario|Una pista.}}.",
-          "cierre": "Crimen, enigma, detective, sospechosos y pistas."
+          "nombre": "El trofeo",
+          "raiz": "Enigma: ¿quién sacó el trofeo de una vitrina cerrada?",
+          "ramas": [
+           [
+            "El hecho",
+            [
+             "el trofeo desaparece de noche"
+            ],
+            "Rompe el orden y abre el misterio."
+           ],
+           [
+            "La pregunta",
+            [
+             "¿cómo, si la llave la tenía el director?"
+            ],
+            "Es lo que el relato promete responder."
+           ],
+           [
+            "La investigación",
+            [
+             "la preceptora interroga y busca detalles"
+            ],
+            "Ocupa casi todo el relato."
+           ],
+           [
+            "La solución",
+            [
+             "el portero había hecho una copia de la llave"
+            ],
+            "Responde el enigma al final."
+           ]
+          ],
+          "cierre": "Todo el relato gira alrededor de una pregunta."
          },
          {
-          "nombre": "El cuadro",
-          "texto": "En el museo {{cambiaron un cuadro por una copia|El crimen.}}. {{¿Cómo, si las cámaras no muestran a nadie?|El enigma.}} {{El inspector Lugo|El detective.}} descubre que {{la copia tiene la pintura todavía fresca|La pista que lo lleva a la solución.}}.",
-          "cierre": "Todo gira alrededor de resolver el enigma."
+          "nombre": "El collar",
+          "raiz": "Enigma: ¿cómo desapareció un collar en plena fiesta?",
+          "ramas": [
+           [
+            "El hecho",
+            [
+             "el collar no está en el joyero"
+            ],
+            "Algo que no tendría que haber pasado."
+           ],
+           [
+            "La pregunta",
+            [
+             "¿quién, si nadie salió de la casa?"
+            ],
+            "El misterio que hay que resolver."
+           ],
+           [
+            "La investigación",
+            [
+             "el inspector revisa a cada invitado"
+            ],
+            "La búsqueda de la verdad."
+           ],
+           [
+            "La solución",
+            [
+             "el sobrino lo escondió en una maceta"
+            ],
+            "Se descubre al final."
+           ]
+          ],
+          "cierre": "Cambia la historia, pero la forma es la misma."
          }
         ]
        }
       },
       "ejercicio": {
-       "motor": "unir_x",
+       "motor": "elegir_x",
        "p": {
-        "consigna": "Uní cada elemento del policial con su ejemplo.",
+        "consigna": "¿Cuál de estos argumentos corresponde a un relato policial?",
         "items": [
          {
-          "pares": [
-           [
-            "Crimen",
-            "Roban el trofeo del colegio"
-           ],
-           [
-            "Enigma",
-            "¿Quién tenía la llave de la vitrina?"
-           ],
-           [
-            "Detective",
-            "La preceptora que investiga"
-           ],
-           [
-            "Pista",
-            "Una huella de barro junto a la vitrina"
-           ]
-          ]
+          "cons": "Elegí el argumento policial.",
+          "ops": [
+           "Una jugadora investiga quién cambió las pelotas del torneo antes de la final",
+           "Una jugadora entrena todos los días para ganar la final",
+           "Una jugadora cuenta cómo fue su primer partido"
+          ],
+          "ayuda": "Buscá el que tiene un enigma y una investigación."
          },
          {
-          "pares": [
-           [
-            "Crimen",
-            "Desaparece un collar en la fiesta"
-           ],
-           [
-            "Sospechoso",
-            "El mozo que salió temprano"
-           ],
-           [
-            "Pista",
-            "Una perla en el bolsillo de un saco"
-           ],
-           [
-            "Ayudante",
-            "El sobrino que acompaña a la detective"
-           ]
-          ]
+          "cons": "Elegí el argumento policial.",
+          "ops": [
+           "En un tren nocturno aparece un pasajero sin vida y un médico interroga a todos",
+           "Un tren cruza la cordillera y los pasajeros miran el paisaje",
+           "Un maquinista se jubila después de cuarenta años"
+          ],
+          "ayuda": "Fijate dónde hay un misterio que alguien investiga."
+         },
+         {
+          "cons": "Elegí el argumento policial.",
+          "ops": [
+           "Una bibliotecaria descubre que alguien arranca páginas de los libros y busca al responsable",
+           "Una bibliotecaria ordena los libros por autor",
+           "Un chico lee su primera novela en la biblioteca"
+          ],
+          "ayuda": "Pensá en qué caso hay que responder una pregunta oculta."
          }
         ]
        }
@@ -335,54 +381,39 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Cuento policial",
-        "texto": "El cuento policial es un relato que gira en torno a un enigma, casi siempre un crimen, que un detective investiga hasta descubrir la verdad."
+        "titulo": "Relato policial",
+        "texto": "El relato policial es una narración que gira alrededor de un enigma, casi siempre un crimen o un hecho misterioso, que un personaje investiga hasta descubrir la verdad."
        },
        {
         "tipo": "parrafo",
-        "texto": "Su atractivo está en que el lector también investiga: recibe las mismas pistas que el detective y trata de adelantarse a la solución. El género nació en el siglo diecinueve con los relatos de Edgar Allan Poe."
+        "texto": "Lo que define al género no es la violencia, sino la pregunta: quién lo hizo, cómo o por qué. El relato propone un desafío y el lector lo acepta, porque recibe las mismas pistas que el investigador y puede intentar adelantarse a la solución."
        },
        {
         "tipo": "lista",
         "items": [
-         "Un crimen o hecho misterioso rompe el orden.",
-         "Un detective y, a veces, un ayudante investigan.",
-         "Hay sospechosos, pistas y una solución final."
+         "Un hecho misterioso rompe el orden.",
+         "Alguien investiga para responder el enigma.",
+         "Al final, la verdad sale a la luz."
         ]
        }
       ]
      },
      {
-      "titulo": "Dos tipos de policial",
+      "titulo": "Los personajes del policial",
       "ejemplo": {
-       "motor": "esquema",
+       "motor": "marcar",
        "p": {
+        "rotulo": "Caso",
         "items": [
          {
-          "nombre": "Enigma y negro",
-          "cols": [
-           "",
-           "Policial de enigma",
-           "Policial negro"
-          ],
-          "filas": [
-           [
-            "El detective",
-            "razona desde su escritorio o la escena del crimen",
-            "recorre calles peligrosas y se arriesga"
-           ],
-           [
-            "El crimen",
-            "es un rompecabezas que hay que armar",
-            "muestra una sociedad violenta o corrupta"
-           ],
-           [
-            "El final",
-            "la verdad sale a la luz y el orden vuelve",
-            "se resuelve el caso, pero el mundo sigue igual de duro"
-           ]
-          ],
-          "cierre": "Sherlock Holmes es el gran detective del policial de enigma."
+          "nombre": "La quinta",
+          "texto": "{{Don Ramiro|Víctima: sufre el robo.}} denuncia que le robaron los ahorros. {{El comisario Ferreyra|Detective: investiga el caso.}} llega con {{su sobrina Ana|Ayudante: lo acompaña y anota todo.}}. {{La cocinera recuerda un auto azul en el portón|Testigo: aporta un dato que vio.}}. Sospechan {{del jardinero y del hijo de don Ramiro|Sospechosos: tenían ocasión de hacerlo.}}, pero {{fue el contador, que nadie había mirado|Culpable: el que menos parecía.}}.",
+          "cierre": "Seis papeles que aparecen en casi todos los policiales."
+         },
+         {
+          "nombre": "El hotel",
+          "texto": "En un hotel de montaña {{desaparece la cámara de una turista|Víctima: la turista.}}. {{Una huésped jubilada, maestra de química|Detective: no es policía, pero razona mejor que nadie.}} pregunta a todos. {{El conserje vio a alguien en la escalera|Testigo.}}. {{El botones y un viajante|Sospechosos.}} tienen coartadas débiles, pero {{la ladrona es la recepcionista|Culpable.}}.",
+          "cierre": "El detective puede ser un aficionado."
          }
         ]
        }
@@ -390,36 +421,46 @@
       "ejercicio": {
        "motor": "clasificar_x",
        "p": {
-        "consigna": "¿Qué tipo de policial es cada fragmento?",
+        "consigna": "¿Qué papel cumple cada personaje en su relato?",
         "cajas": [
-         "De enigma",
-         "Negro"
+         "Detective",
+         "Víctima",
+         "Testigo",
+         "Culpable"
         ],
-        "cuantos": 5,
+        "cuantos": 6,
         "items": [
          [
-          "La detective observó la taza y supo enseguida quién había mentido.",
+          "La periodista que reúne las pistas y descubre al estafador",
           0
          ],
          [
-          "Reunió a los cinco sospechosos en la biblioteca para explicar el caso.",
+          "El profesor que interroga a los sospechosos del robo del examen",
           0
          ],
          [
-          "Una sola pista, una ceniza en la alfombra, alcanzó para resolverlo.",
-          0
-         ],
-         [
-          "El investigador caminó bajo la lluvia por el puerto, con miedo de que lo siguieran.",
+          "El vecino al que le robaron la bicicleta",
           1
          ],
          [
-          "Descubrió que el jefe de policía también cobraba a la banda.",
+          "La dueña del collar desaparecido",
           1
          ],
          [
-          "Cerró el caso, pero sabía que mañana habría otro muerto en esa ciudad.",
-          1
+          "El kiosquero que vio a un hombre con capucha",
+          2
+         ],
+         [
+          "La nena que escuchó un golpe a las tres",
+          2
+         ],
+         [
+          "El sobrino que escondió el collar en la maceta",
+          3
+         ],
+         [
+          "La cajera que se quedó con la recaudación",
+          3
          ]
         ]
        }
@@ -427,63 +468,76 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Policial de enigma",
-        "texto": "El policial de enigma, o clásico, presenta el crimen como un rompecabezas que el detective resuelve usando la razón."
+        "titulo": "Personajes del policial",
+        "texto": "Los personajes del policial cumplen papeles fijos: el detective investiga, la víctima sufre el delito, los sospechosos pudieron cometerlo, los testigos aportan datos y el culpable se esconde entre ellos."
        },
        {
         "tipo": "parrafo",
-        "texto": "El policial negro, en cambio, pone al detective en una ciudad peligrosa donde el delito muestra los problemas de toda la sociedad. Distinguirlos ayuda a saber qué esperar del final."
+        "texto": "Muchas veces el detective tiene un ayudante que lo acompaña y entiende menos que él. Ese personaje es importante: se equivoca como se equivocaría el lector, y así el misterio se mantiene. El culpable, en cambio, suele ser el menos sospechado."
        },
        {
         "tipo": "lista",
         "items": [
-         "Enigma: deducción y orden recuperado.",
-         "Negro: violencia, riesgo y corrupción.",
-         "Holmes, Poirot y Dupin son detectives de enigma."
+         "Detective y ayudante: investigan.",
+         "Víctima, testigos y sospechosos: el mundo del caso.",
+         "Culpable: casi nunca el primero que parece."
         ]
        }
       ]
      },
      {
-      "titulo": "El método del detective",
+      "titulo": "El detective de enigma",
       "ejemplo": {
-       "motor": "marcar",
+       "motor": "versiones",
        "p": {
-        "rotulo": "Deducción",
+        "rotulo": "Detective",
         "items": [
          {
-          "nombre": "Los zapatos",
-          "texto": "La detective {{nota barro rojizo en los zapatos del jardinero|Observar: un detalle que otros no ven.}}. {{Ese barro solo está junto al estanque|Relacionar el detalle con lo que sabe.}}. {{Entonces él estuvo en el estanque, aunque dijo que no salió del galpón|Deducir: sacar una conclusión lógica.}}. {{Revisa el estanque y encuentra la caja escondida|Comprobar antes de acusar.}}.",
-          "cierre": "Observar → relacionar → deducir → comprobar."
+          "nombre": "Dupin (1841)",
+          "texto": "Creado por Edgar Allan Poe. {{Resuelve los casos pensando, casi sin salir de su cuarto|Rasgo clásico: la razón por encima de la acción.}} y {{lo acompaña un amigo que narra|Ayudante y narrador.}}."
          },
          {
-          "nombre": "La taza",
-          "texto": "El inspector {{ve dos tazas de café en la mesa|Observar.}}. {{La víctima vivía sola|Relacionar con un dato conocido.}}. {{Alguien la visitó esa mañana|Deducir.}}. {{Busca huellas en la segunda taza|Comprobar.}}.",
-          "cierre": "Nunca adivina: cada paso se apoya en el anterior."
+          "nombre": "Holmes (1887)",
+          "texto": "Creado por Arthur Conan Doyle. {{Observa detalles mínimos: una mancha, un callo, un barro|Rasgo clásico: la observación.}} y {{tiene costumbres raras: toca el violín a deshora|Es un genio excéntrico.}}. Lo acompaña el doctor Watson."
+         },
+         {
+          "nombre": "Poirot (1920)",
+          "texto": "Creado por Agatha Christie. {{Confía en «las pequeñas células grises» de su cerebro|Rasgo clásico: el razonamiento.}} y {{al final reúne a todos los sospechosos para explicar el caso|La revelación frente a todos.}}."
          }
         ]
        }
       },
       "ejercicio": {
-       "motor": "ordenar_x",
+       "motor": "elegir_x",
        "p": {
-        "consigna": "Ordená los pasos que sigue la detective.",
+        "consigna": "¿Qué rasgo del detective de enigma muestra cada caso?",
         "items": [
          {
-          "lista": [
-           "Observa que la ventana tiene el vidrio roto hacia afuera",
-           "Relaciona: un vidrio que cae afuera se rompió desde adentro",
-           "Deduce que el robo lo simuló alguien de la casa",
-           "Comprueba que no hay huellas en el jardín"
-          ]
+          "cons": "La detective nota que el reloj del sospechoso marca la hora de otro país.",
+          "ops": [
+           "Observa detalles que otros no ven",
+           "Usa la fuerza para que confiese",
+           "Confía en la suerte"
+          ],
+          "ayuda": "Pensá qué hace con el reloj."
          },
          {
-          "lista": [
-           "Ve que el reloj del sospechoso está mojado",
-           "Recuerda que esa noche solo llovió en la costa",
-           "Deduce que él estuvo en la costa y no en el centro",
-           "Confirma que su auto pasó por el peaje de la costa"
-          ]
+          "cons": "Sin moverse del sillón, el detective escucha el relato del cliente y resuelve el caso.",
+          "ops": [
+           "Razona a partir de lo que sabe",
+           "Persigue al culpable por la ciudad",
+           "Espera que alguien confiese"
+          ],
+          "ayuda": "No sale a buscar: piensa."
+         },
+         {
+          "cons": "El investigador reúne a todos en el salón y explica paso a paso quién fue y cómo.",
+          "ops": [
+           "Revela la solución frente a todos",
+           "Deja el caso sin resolver",
+           "Le pide ayuda a la policía"
+          ],
+          "ayuda": "Es el final típico del género."
          }
         ]
        }
@@ -491,19 +545,19 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Deducción",
-        "texto": "La deducción es el razonamiento que va de los detalles observados a una conclusión que se sigue de ellos de manera lógica."
+        "titulo": "Detective de enigma",
+        "texto": "El detective de enigma, o clásico, es un personaje de inteligencia excepcional que resuelve el caso observando detalles y razonando, más que usando la fuerza."
        },
        {
         "tipo": "parrafo",
-        "texto": "El detective clásico no adivina ni confía en la suerte: observa lo que otros pasan por alto, lo relaciona con lo que sabe y recién acusa cuando puede comprobarlo. Sherlock Holmes es el modelo de este método."
+        "texto": "Suele ser un aficionado, no un policía, y tiene rasgos llamativos que lo hacen inolvidable. La policía oficial casi siempre aparece equivocada o atrasada, para que se luzca su método. Dupin, Holmes y Poirot son los grandes modelos."
        },
        {
         "tipo": "lista",
         "items": [
-         "Observar cada detalle.",
-         "Relacionar las pistas y deducir.",
-         "Comprobar antes de acusar."
+         "Observa y razona; no usa la fuerza.",
+         "Suele ser aficionado y excéntrico.",
+         "Muchas veces lo acompaña un ayudante."
         ]
        }
       ]
@@ -511,29 +565,34 @@
     ],
     "recuerda": [
      {
-      "concepto": "Cuento policial",
-      "definicion": "es un relato con un enigma, casi siempre un crimen, que un detective investiga.",
-      "ejemplo": "Desaparece la medalla del club y la entrenadora investiga"
+      "concepto": "Relato policial",
+      "definicion": "es una narración que gira alrededor de un enigma que un personaje investiga hasta descubrir la verdad.",
+      "ejemplo": "Una preceptora investiga quién sacó el trofeo de la vitrina"
      },
      {
       "concepto": "Enigma",
-      "definicion": "es la pregunta central del policial: quién lo hizo, cómo o por qué.",
-      "ejemplo": "¿Quién sacó la medalla de una vitrina con llave?"
+      "definicion": "es la pregunta central del relato policial: quién lo hizo, cómo lo hizo o por qué.",
+      "ejemplo": "¿Cómo desapareció el collar si nadie salió de la casa?"
      },
      {
-      "concepto": "Policial de enigma",
-      "definicion": "presenta el crimen como un rompecabezas que el detective resuelve razonando.",
-      "ejemplo": "Una ceniza en la alfombra alcanza para resolverlo"
+      "concepto": "Detective",
+      "definicion": "es el personaje que investiga el caso y lo resuelve, sea policía o aficionado.",
+      "ejemplo": "La maestra jubilada que resuelve el robo del hotel"
      },
      {
-      "concepto": "Policial negro",
-      "definicion": "muestra un detective en una ciudad peligrosa y un crimen que revela una sociedad corrupta.",
-      "ejemplo": "El jefe de policía cobraba a la banda"
+      "concepto": "Víctima y culpable",
+      "definicion": "la víctima es quien sufre el delito; el culpable, quien lo comete y lo oculta.",
+      "ejemplo": "Don Ramiro y el contador que le robó"
      },
      {
-      "concepto": "Deducción",
-      "definicion": "es llegar a una conclusión lógica a partir de detalles observados, y comprobarla.",
-      "ejemplo": "Barro del estanque en los zapatos → estuvo en el estanque"
+      "concepto": "Sospechosos y testigos",
+      "definicion": "los sospechosos pudieron cometer el delito; los testigos vieron u oyeron algo y lo cuentan.",
+      "ejemplo": "El jardinero sospechado y la cocinera que vio un auto"
+     },
+     {
+      "concepto": "Detective de enigma",
+      "definicion": "es el investigador clásico que resuelve el caso observando y razonando, sin usar la fuerza.",
+      "ejemplo": "Dupin, Holmes, Poirot"
      }
     ]
    },
@@ -765,12 +824,12 @@
         "items": [
          {
           "nombre": "La bicicleta",
-          "texto": "Robaron la bici de Tomi del patio. {{Todos miran al chico nuevo, que llegó tarde y con la ropa sucia|Falsa pista: parece sospechoso, pero llegó tarde por ayudar a su abuela.}}. En cambio, {{el candado está abierto con su propia llave|Pista: quien la llevó sabía dónde estaba la llave.}} y {{la hermana de Tomi tiene esa llave|Pista: la verdad empieza a aparecer.}}.",
+          "texto": "Robaron la bici de Tomi del patio. {{Todos miran al chico nuevo, que llegó tarde y con la ropa sucia|Falsa pista: parece sospechoso, pero llegó tarde por ayudar a su abuela.}}. En cambio, {{el candado se abrió con su propia llave|Pista: quien la llevó sabía dónde estaba la llave.}} y {{la hermana de Tomi tiene una copia|Pista: la verdad empieza a aparecer.}}.",
           "cierre": "La hermana la llevó prestada sin avisar."
          },
          {
-          "nombre": "El pastel",
-          "texto": "Desapareció medio pastel de la cocina. {{El perro tiene crema en el hocico|Falsa pista: la crema era de su comida.}}. Pero {{falta un plato del armario alto|Pista: el perro no llega ahí.}} y {{hay migas en la escalera hacia el cuarto del abuelo|Pista: marca un camino.}}.",
+          "nombre": "La torta",
+          "texto": "Desapareció media torta de la cocina. {{El perro tiene crema en el hocico|Falsa pista: era crema de su propia comida.}}. Pero {{falta un plato del estante alto|Pista: el perro no llega ahí.}} y {{hay migas en la escalera que va al cuarto del abuelo|Pista: marca un camino.}}.",
           "cierre": "Fue el abuelo, que no resistió la tentación."
          }
         ]
@@ -782,12 +841,12 @@
         "consigna": "Tocá solo las pistas verdaderas: las que acercan a la verdad.",
         "items": [
          {
-          "cons": "Caso: desapareció la recaudación del kiosco escolar. Fue la cajera.",
-          "texto": "[[La cajera pidió cambiar de turno ese día|1]] · [[El portero tiene cara de enojado|0]] · [[La caja no fue forzada|1]] · [[Un alumno llegó corriendo al recreo|0]]"
+          "cons": "Caso: desapareció la recaudación de la cantina del club. Fue la cajera.",
+          "texto": "[[La cajera pidió cambiar de turno justo ese día|1]] · [[El portero tiene cara de pocos amigos|0]] · [[La caja no fue forzada|1]] · [[Un socio llegó corriendo al vestuario|0]]"
          },
          {
-          "cons": "Caso: alguien rompió el vidrio del aula. Fue la pelota de un chico de sexto.",
-          "texto": "[[Hay una pelota debajo del pupitre|1]] · [[La directora estaba de mal humor|0]] · [[Sexto tenía educación física en el patio de al lado|1]] · [[Llovió a la tarde|0]]"
+          "cons": "Caso: alguien rompió el vidrio del vestuario. Fue una pelota del entrenamiento de las chicas.",
+          "texto": "[[Hay una pelota debajo del banco|1]] · [[El encargado estaba de mal humor|0]] · [[Las chicas entrenaban en la cancha de al lado|1]] · [[Llovió a la tarde|0]]"
          }
         ]
        }
@@ -796,176 +855,61 @@
        {
         "tipo": "definicion",
         "titulo": "Pista",
-        "texto": "Una pista es un dato que acerca a la verdad del caso; una falsa pista es un dato que distrae y hace mirar hacia el lado equivocado."
+        "texto": "Una pista es un detalle concreto que acerca a la verdad del caso; una falsa pista es un dato que distrae y hace mirar hacia el lado equivocado."
        },
        {
         "tipo": "parrafo",
-        "texto": "Los autores de policiales usan falsas pistas a propósito para que el lector sospeche de quien no es. Por eso un buen lector, como un buen detective, desconfía de lo que parece demasiado evidente."
+        "texto": "Las falsas pistas son parte del juego: el autor las pone a propósito para que el lector sospeche de quien no es. Una buena regla es desconfiar de las impresiones, como una cara de enojo o una mala fama, y confiar en los datos que se pueden comprobar."
        },
        {
         "tipo": "lista",
         "items": [
-         "La pista verdadera se puede comprobar.",
-         "La falsa pista parece importante, pero tiene otra explicación.",
-         "Lo evidente no siempre es lo cierto."
+         "Pista: un dato concreto y comprobable.",
+         "Falsa pista: una impresión que distrae.",
+         "El autor esconde la verdad entre las dos."
         ]
        }
       ]
      },
      {
-      "titulo": "Tipos de pistas",
-      "ejemplo": {
-       "motor": "esquema",
-       "p": {
-        "items": [
-         {
-          "nombre": "Tipos de pistas",
-          "raiz": "Pistas",
-          "ramas": [
-           [
-            "Materiales",
-            [
-             "un objeto o una marca: una huella, un botón, barro"
-            ],
-            "Se pueden ver y tocar."
-           ],
-           [
-            "Testimonios",
-            [
-             "lo que dicen los testigos y sospechosos"
-            ],
-            "Hay que comprobar si dicen la verdad."
-           ],
-           [
-            "Contradicciones",
-            [
-             "dos datos que no encajan entre sí"
-            ],
-            "Alguien dijo que dormía, pero tiene las zapatillas mojadas."
-           ],
-           [
-            "Ausencias",
-            [
-             "algo que debería estar o pasar y no está"
-            ],
-            "La alarma no sonó: quien entró conocía la clave."
-           ]
-          ],
-          "cierre": "La coartada es un testimonio que el detective pone a prueba."
-         }
-        ]
-       }
-      },
-      "ejercicio": {
-       "motor": "clasificar_x",
-       "p": {
-        "consigna": "¿Qué tipo de pista es cada una?",
-        "cajas": [
-         "Material",
-         "Testimonio",
-         "Contradicción",
-         "Ausencia"
-        ],
-        "cuantos": 6,
-        "items": [
-         [
-          "Un pelo rubio en el sillón",
-          0
-         ],
-         [
-          "Una colilla junto a la ventana",
-          0
-         ],
-         [
-          "La vecina dice que oyó un portazo a las diez",
-          1
-         ],
-         [
-          "El chofer cuenta que vio un auto gris",
-          1
-         ],
-         [
-          "Dice que no sabe nadar, pero tiene una medalla de natación",
-          2
-         ],
-         [
-          "Asegura que estuvo en casa, pero su celular estaba en el centro",
-          2
-         ],
-         [
-          "El perro guardián no ladró esa noche",
-          3
-         ],
-         [
-          "Falta la foto que siempre estaba en la repisa",
-          3
-         ]
-        ]
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Coartada",
-        "texto": "La coartada es la prueba de que un sospechoso estaba en otro lugar cuando ocurrió el crimen; el detective siempre la pone a prueba."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Clasificar las pistas ayuda a pensar qué hacer con cada una: un objeto se analiza, un testimonio se contrasta con otros y una contradicción delata a quien miente. La ausencia es la más difícil de ver."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Materiales: objetos y marcas.",
-         "Testimonios: lo que dicen las personas.",
-         "Contradicciones y ausencias: lo que no encaja o falta."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Las pistas de «La liga de los pelirrojos»",
+      "titulo": "Deducir: de los detalles a la conclusión",
       "ejemplo": {
        "motor": "marcar",
        "p": {
-        "rotulo": "Detalle",
+        "rotulo": "Deducción",
         "items": [
          {
-          "nombre": "El ayudante",
-          "texto": "El ayudante de Wilson {{acepta trabajar por poca plata|Contradicción: alguien hábil no se conforma con eso, salvo que busque otra cosa.}} y {{baja todo el tiempo al sótano|Pista: hace algo a escondidas.}}. Además, {{sus pantalones están gastados en las rodillas|Pista material: pasa horas arrodillado.}}.",
-          "cierre": "El ayudante tiene un plan propio en esa casa."
+          "nombre": "Los zapatos",
+          "texto": "La detective {{nota barro rojizo en los zapatos del jardinero|Observar: un detalle que otros no ven.}}. {{Ese barro solo está junto al estanque|Relacionar el detalle con lo que sabe.}}. {{Entonces él estuvo en el estanque, aunque dijo que no salió del galpón|Deducir: sacar una conclusión lógica.}}. {{Revisa el estanque y encuentra la caja escondida|Comprobar antes de acusar.}}.",
+          "cierre": "Observar → relacionar → deducir → comprobar."
          },
          {
-          "nombre": "La liga",
-          "texto": "{{Un trabajo raro y bien pagado|Falsa pista: parece el misterio principal.}} saca a Wilson de su casa {{todas las mañanas|Pista: alguien necesita la casa vacía.}}. {{Cuando ya no hace falta, la liga desaparece|Pista: era solo una excusa.}}.",
-          "cierre": "La liga es la gran distracción del cuento."
+          "nombre": "El vidrio",
+          "texto": "El inspector {{ve que los vidrios rotos cayeron hacia el jardín|Observar.}}. {{Si alguien hubiera entrado desde afuera, habrían caído adentro|Relacionar con lo que sabe.}}. {{El vidrio se rompió desde adentro: el robo lo fingió alguien de la casa|Deducir.}}. {{No hay huellas en el jardín húmedo|Comprobar.}}.",
+          "cierre": "Cada paso se apoya en el anterior."
          }
         ]
        }
       },
       "ejercicio": {
-       "motor": "unir_x",
+       "motor": "ordenar_x",
        "p": {
-        "consigna": "Uní cada detalle del cuento con lo que revela.",
+        "consigna": "Ordená los pasos que sigue el detective.",
         "items": [
          {
-          "pares": [
-           [
-            "El ayudante cobra la mitad de lo normal",
-            "Le interesa estar en la casa por otro motivo"
-           ],
-           [
-            "Pasa horas en el sótano",
-            "Hace algo a escondidas"
-           ],
-           [
-            "Tiene las rodillas gastadas",
-            "Excava"
-           ],
-           [
-            "Detrás de la casa hay un banco",
-            "Ahí está el objetivo del plan"
-           ]
+          "lista": [
+           "Ve que el reloj del sospechoso está mojado",
+           "Recuerda que esa noche solo llovió en la costa",
+           "Deduce que el sospechoso estuvo en la costa y no en el centro",
+           "Confirma que su auto pasó por el peaje de la costa"
+          ]
+         },
+         {
+          "lista": [
+           "Nota que en la mesa hay dos tazas usadas",
+           "Recuerda que la víctima vivía sola",
+           "Deduce que alguien la visitó esa mañana",
+           "Busca huellas en la segunda taza"
           ]
          }
         ]
@@ -974,19 +918,94 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Lectura de pistas",
-        "texto": "Leer un policial como detective es preguntarse, ante cada detalle raro, qué explicación lo une con los demás."
+        "titulo": "Deducción",
+        "texto": "La deducción es el razonamiento que va de los detalles observados a una conclusión que se sigue de ellos de manera lógica y que después se comprueba."
        },
        {
         "tipo": "parrafo",
-        "texto": "En «La liga de los pelirrojos», lo más llamativo, un trabajo absurdo y bien pagado, no es el crimen sino la manera de vaciar la casa. Las pistas verdaderas están en detalles pequeños del ayudante de Wilson."
+        "texto": "El detective de enigma no adivina ni confía en la suerte: observa lo que otros pasan por alto, lo relaciona con lo que ya sabe y recién acusa cuando puede probarlo. Por eso el lector atento puede seguir el razonamiento y llegar a la misma conclusión."
        },
        {
         "tipo": "lista",
         "items": [
-         "Lo llamativo puede ser una distracción.",
-         "Los detalles chicos suelen ser las pistas.",
-         "Todas las pistas deben encajar en una explicación."
+         "Observar: el detalle que nadie ve.",
+         "Relacionar y deducir: la conclusión lógica.",
+         "Comprobar: recién entonces, acusar."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Descartar sospechosos",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Caso",
+        "items": [
+         {
+          "nombre": "La medalla",
+          "texto": "Desaparece una medalla del club a las 18. {{La tesorera estaba en el banco a esa hora, y hay un recibo|Coartada comprobada: se descarta.}}. {{El utilero dice que estaba en su casa, solo|Coartada sin testigos: sigue en la lista.}}. {{El presidente estaba en la reunión con otras doce personas|Coartada firme: se descarta.}}.",
+          "cierre": "Queda un sospechoso: el utilero."
+         },
+         {
+          "nombre": "El celular",
+          "texto": "Un celular desaparece en la sala de profesores a las 10. {{La profesora de Música daba clase a esa hora frente a un curso|Se descarta.}}. {{El preceptor dice que fue a buscar tizas, pero el depósito estaba cerrado|Su coartada no se sostiene.}}.",
+          "cierre": "Una coartada que falla es una pista."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Se descarta o sigue sospechado?",
+        "items": [
+         {
+          "cons": "El robo fue a las 21. El sospechoso estaba en una cena con diez invitados que lo vieron toda la noche.",
+          "ops": [
+           "Se descarta: tiene una coartada firme",
+           "Sigue sospechado: es el que más se beneficia",
+           "Es el culpable seguro"
+          ],
+          "ayuda": "Pensá si pudo estar en dos lugares."
+         },
+         {
+          "cons": "La sospechosa dice que esa tarde estaba en el cine, pero la película que nombra no se daba ese día.",
+          "ops": [
+           "Sigue sospechada: su coartada es falsa",
+           "Se descarta: dijo dónde estaba",
+           "Es inocente porque le gusta el cine"
+          ],
+          "ayuda": "Una coartada falsa no descarta: despierta sospechas."
+         },
+         {
+          "cons": "El sospechoso estaba solo en su casa y nadie puede confirmarlo.",
+          "ops": [
+           "Sigue en la lista: su coartada no se puede comprobar",
+           "Se descarta: estaba en su casa",
+           "Es el culpable: estaba solo"
+          ],
+          "ayuda": "Sin coartada, ni se descarta ni se condena."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Coartada",
+        "texto": "La coartada es la prueba de que un sospechoso estaba en otro lugar cuando ocurrió el delito; si se comprueba, ese sospechoso queda descartado."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Investigar no es solo encontrar al culpable: también es descartar a los inocentes. Cada coartada comprobada achica la lista, y una coartada falsa se convierte en una nueva pista. Así el detective llega a una sola explicación posible."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Coartada firme: se descarta.",
+         "Coartada sin testigos: sigue en la lista.",
+         "Coartada falsa: es una nueva pista."
         ]
        }
       ]
@@ -995,33 +1014,28 @@
     "recuerda": [
      {
       "concepto": "Pista",
-      "definicion": "es un dato que acerca a la verdad y que se puede comprobar.",
+      "definicion": "es un detalle concreto y comprobable que acerca a la verdad del caso.",
       "ejemplo": "El candado se abrió con su propia llave"
      },
      {
       "concepto": "Falsa pista",
-      "definicion": "es un dato que distrae y hace sospechar de quien no es.",
+      "definicion": "es un dato que distrae y hace sospechar de quien no es, muchas veces una impresión.",
       "ejemplo": "El chico nuevo llegó tarde y con la ropa sucia"
      },
      {
-      "concepto": "Contradicción",
-      "definicion": "son dos datos que no pueden ser ciertos a la vez y delatan una mentira.",
-      "ejemplo": "Dice que no sabe nadar y tiene una medalla de natación"
+      "concepto": "Deducción",
+      "definicion": "es llegar a una conclusión lógica a partir de detalles observados, y comprobarla antes de acusar.",
+      "ejemplo": "Barro del estanque en los zapatos → estuvo en el estanque"
      },
      {
-      "concepto": "Pista de ausencia",
-      "definicion": "es algo que debería estar o pasar y no está, y por eso llama la atención.",
-      "ejemplo": "El perro guardián no ladró esa noche"
+      "concepto": "Método del detective",
+      "definicion": "consiste en observar, relacionar, deducir y comprobar, en ese orden.",
+      "ejemplo": "Dos tazas → vivía sola → hubo una visita → huellas"
      },
      {
       "concepto": "Coartada",
-      "definicion": "es la prueba de que un sospechoso estaba en otro lugar cuando ocurrió el crimen.",
-      "ejemplo": "Estaba en el cine: lo dice la entrada con la hora"
-     },
-     {
-      "concepto": "La gran distracción",
-      "definicion": "en «La liga de los pelirrojos» es el trabajo raro que saca a Wilson de su casa.",
-      "ejemplo": "Copiar libros por un sueldo alto"
+      "definicion": "es la prueba de que un sospechoso estaba en otro lugar a la hora del delito.",
+      "ejemplo": "La tesorera estaba en el banco y tiene el recibo"
      }
     ]
    },
@@ -1221,234 +1235,64 @@
    "leccion": {
     "temas": [
      {
-      "titulo": "Unir las pistas",
-      "ejemplo": {
-       "motor": "esquema",
-       "p": {
-        "items": [
-         {
-          "nombre": "El túnel",
-          "raiz": "Conclusión: un túnel hacia el banco",
-          "ramas": [
-           [
-            "Pista 1",
-            [
-             "el ayudante pasa horas en el sótano"
-            ],
-            "Hace algo bajo tierra."
-           ],
-           [
-            "Pista 2",
-            [
-             "tiene las rodillas gastadas"
-            ],
-            "Excava arrodillado."
-           ],
-           [
-            "Pista 3",
-            [
-             "la vereda suena hueca al golpearla"
-            ],
-            "Hay un espacio vacío debajo."
-           ],
-           [
-            "Pista 4",
-            [
-             "detrás de la casa hay un banco"
-            ],
-            "El túnel tiene un destino."
-           ]
-          ],
-          "cierre": "Ninguna pista sola alcanza; juntas, explican todo."
-         },
-         {
-          "nombre": "El kiosco",
-          "raiz": "Conclusión: fue la cajera",
-          "ramas": [
-           [
-            "Pista 1",
-            [
-             "la caja no fue forzada"
-            ],
-            "Quien la abrió tenía la llave."
-           ],
-           [
-            "Pista 2",
-            [
-             "la cajera pidió cambiar de turno"
-            ],
-            "Quería estar sola."
-           ],
-           [
-            "Pista 3",
-            [
-             "compró una campera cara al día siguiente"
-            ],
-            "Tuvo plata de golpe."
-           ]
-          ],
-          "cierre": "La conclusión tiene que explicar todas las pistas."
-         }
-        ]
-       }
-      },
-      "ejercicio": {
-       "motor": "elegir_x",
-       "p": {
-        "consigna": "¿Qué conclusión explica TODAS las pistas?",
-        "items": [
-         {
-          "cons": "Pistas: la puerta no fue forzada · el perro no ladró · falta la llave de repuesto de la cocina.",
-          "ops": [
-           "Entró alguien conocido que tenía la llave",
-           "Un desconocido rompió la ventana",
-           "Nadie entró y el objeto se perdió"
-          ],
-          "ayuda": "El perro no ladra a quien conoce, y la llave explica la puerta."
-         },
-         {
-          "cons": "Pistas: el sospechoso tiene arena en los zapatos · dice que estuvo en la ciudad · su auto pasó por el peaje de la playa.",
-          "ops": [
-           "Mintió: estuvo en la playa",
-           "Dice la verdad: estuvo en la ciudad",
-           "Le prestó el auto a otra persona"
-          ],
-          "ayuda": "La arena y el peaje coinciden; su testimonio no."
-         }
-        ]
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Unir pistas",
-        "texto": "Resolver un enigma es encontrar la única explicación que une todas las pistas, sin dejar ninguna afuera."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "Cada pista por separado puede tener muchas explicaciones; juntas, solo encajan en una. Por eso el detective no se apura: si una pista no entra en su conclusión, la conclusión está mal y vuelve a pensar."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Reunir todas las pistas.",
-         "Buscar la explicación que las une.",
-         "Si una pista no encaja, revisar la conclusión."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "El narrador testigo",
-      "ejemplo": {
-       "motor": "versiones",
-       "p": {
-        "rotulo": "Versión",
-        "items": [
-         {
-          "nombre": "Testigo",
-          "texto": "{{Yo|Watson cuenta en primera persona.}} no entendía por qué Holmes golpeaba la vereda con el bastón; {{él no me explicó nada|El testigo sabe menos que el detective: el lector tampoco sabe.}}."
-         },
-         {
-          "nombre": "Detective",
-          "texto": "{{Golpeé la vereda para saber si había un túnel debajo|Si narrara Holmes, revelaría su plan enseguida.}}; {{sonó hueca, como esperaba|Se perdería el suspenso.}}."
-         },
-         {
-          "nombre": "Omnisciente",
-          "texto": "Holmes golpeó la vereda {{buscando el túnel que Clay cavaba en ese momento|El omnisciente sabe todo: revelaría al culpable antes de tiempo.}}."
-         }
-        ]
-       }
-      },
-      "ejercicio": {
-       "motor": "elegir_x",
-       "p": {
-        "consigna": "Pensá en el efecto del narrador.",
-        "items": [
-         {
-          "cons": "Si «La liga de los pelirrojos» la contara Holmes en primera persona, ¿qué se perdería?",
-          "ops": [
-           "El suspenso, porque él sabe la solución",
-           "Los diálogos",
-           "El nombre de los personajes"
-          ],
-          "ayuda": "El que narra sabe lo que sabe el detective."
-         },
-         {
-          "cons": "¿Por qué Watson es un buen narrador para un policial de enigma?",
-          "ops": [
-           "Ve todo pero entiende menos que Holmes, como el lector",
-           "Porque él es el culpable",
-           "Porque sabe lo que piensan todos"
-          ],
-          "ayuda": "El testigo participa pero no deduce como el detective."
-         },
-         {
-          "cons": "Un narrador cuenta: «Mi amigo examinó la alfombra en silencio; yo no veía nada raro». ¿Qué tipo de narrador es?",
-          "ops": [
-           "Testigo",
-           "Protagonista",
-           "Omnisciente"
-          ],
-          "ayuda": "Cuenta lo que hace otro, el protagonista, y sabe menos que él."
-         }
-        ]
-       }
-      },
-      "explicacion": [
-       {
-        "tipo": "definicion",
-        "titulo": "Narrador testigo",
-        "texto": "El narrador testigo participa de los hechos y los cuenta en primera persona, pero el protagonista de la historia es otro personaje."
-       },
-       {
-        "tipo": "parrafo",
-        "texto": "En los cuentos de Sherlock Holmes narra el doctor Watson, que acompaña al detective y entiende menos que él. Así el lector descubre la verdad al mismo tiempo que Watson y el suspenso dura hasta el final."
-       },
-       {
-        "tipo": "lista",
-        "items": [
-         "Cuenta con «yo», pero no es el protagonista.",
-         "Sabe menos que el detective.",
-         "Mantiene el suspenso hasta la revelación."
-        ]
-       }
-      ]
-     },
-     {
-      "titulo": "Las dos historias y la revelación",
+      "titulo": "Las dos historias del policial",
       "ejemplo": {
        "motor": "linea_tiempo",
        "p": {
         "items": [
          {
-          "nombre": "La liga",
+          "nombre": "El museo",
           "hechos": [
            {
-            "t": "Wilson consulta a Holmes por la liga que desapareció",
+            "t": "La inspectora llega al museo: falta un cuadro",
             "c": 3
            },
            {
-            "t": "Holmes investiga la casa y la vereda",
+            "t": "Interroga al guardia y a la directora",
             "c": 4
            },
            {
-            "t": "Esperan de noche en la bóveda del banco",
+            "t": "Descubre una copia de la llave en el vestuario",
             "c": 5
            },
            {
-            "t": "Holmes explica que Clay cavaba un túnel desde hacía semanas",
+            "t": "Explica: el guardia copió la llave un mes antes",
             "c": 1,
             "flash": 1
            },
            {
-            "t": "La liga saca a Wilson de su casa cada mañana",
+            "t": "Y la noche del robo desconectó la alarma",
             "c": 2,
             "flash": 1
            }
           ],
-          "marca": "La historia del crimen (el túnel) empezó antes, pero se cuenta al final, en la revelación.",
-          "cierre": "El crimen se reconstruye al final: así se mantiene el misterio."
+          "marca": "La historia del crimen empezó antes, pero se cuenta al final, en la revelación.",
+          "cierre": "El orden del relato no es el orden de los hechos."
+         },
+         {
+          "nombre": "El tren",
+          "hechos": [
+           {
+            "t": "Un pasajero denuncia que le robaron un maletín",
+            "c": 3
+           },
+           {
+            "t": "El médico revisa el vagón y habla con todos",
+            "c": 4
+           },
+           {
+            "t": "Explica: el guarda subió el maletín a otro vagón en la estación anterior",
+            "c": 2,
+            "flash": 1
+           },
+           {
+            "t": "El guarda y su cómplice lo habían planeado en el andén",
+            "c": 1,
+            "flash": 1
+           }
+          ],
+          "marca": "Lo que pasó primero aparece último.",
+          "cierre": "Así se mantiene el misterio hasta el final."
          }
         ]
        }
@@ -1469,7 +1313,7 @@
          {
           "lista": [
            "El sobrino planea quedarse con el collar",
-           "Esconde el collar en la maceta durante la fiesta",
+           "Lo esconde en una maceta durante la fiesta",
            "La dueña denuncia el robo",
            "El inspector encuentra el collar y explica el caso"
           ]
@@ -1480,19 +1324,171 @@
       "explicacion": [
        {
         "tipo": "definicion",
-        "titulo": "Dos historias",
-        "texto": "Todo policial de enigma cuenta dos historias: la del crimen, que pasó antes y queda oculta, y la de la investigación, que leemos paso a paso."
+        "titulo": "Las dos historias",
+        "texto": "Todo policial de enigma cuenta dos historias: la del crimen, que ocurrió antes y queda oculta, y la de la investigación, que el lector sigue paso a paso."
        },
        {
         "tipo": "parrafo",
-        "texto": "La historia del crimen recién se cuenta completa al final, en la revelación, cuando el detective explica cómo lo dedujo. Por eso el orden del relato no coincide con el orden en que ocurrieron los hechos."
+        "texto": "La historia del crimen recién se conoce completa al final, cuando el detective explica cómo lo resolvió. Por eso el orden en que se cuenta no coincide con el orden en que ocurrieron los hechos, y esa diferencia es la que mantiene el misterio."
        },
        {
         "tipo": "lista",
         "items": [
-         "Historia del crimen: oculta hasta el final.",
-         "Historia de la investigación: la que seguimos.",
-         "Revelación: el detective explica todo."
+         "Historia del crimen: pasó antes y está oculta.",
+         "Historia de la investigación: la que leemos.",
+         "Se unen al final, en la revelación."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El narrador testigo",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Narrador",
+        "items": [
+         {
+          "nombre": "Testigo",
+          "texto": "{{Yo no veía nada raro en la alfombra|Cuenta con «yo», pero no es el protagonista.}}; {{mi amigo, en cambio, se agachó y sonrió|El protagonista es el detective.}}. {{Recién en la cena entendí por qué|Sabe menos que el detective, como el lector.}}."
+         },
+         {
+          "nombre": "Omnisciente",
+          "texto": "El detective vio la ceniza y {{supo en ese instante que el mayordomo mentía|Sabe lo que piensa: el misterio se acaba.}}. {{El mayordomo, nervioso, ya pensaba en huir|Sabe también lo que piensa el culpable.}}."
+         },
+         {
+          "nombre": "Protagonista",
+          "texto": "{{Vi la ceniza y supe que el mayordomo mentía|El detective cuenta su propio razonamiento.}}. {{Decidí no decir nada hasta la cena|Si lo cuenta todo, el lector ya sabe la solución.}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "Pensá en el narrador y su efecto.",
+        "items": [
+         {
+          "cons": "«Mi amiga examinó el reloj en silencio; yo no entendía qué buscaba.» ¿Qué tipo de narrador es?",
+          "ops": [
+           "Testigo",
+           "Protagonista",
+           "Omnisciente"
+          ],
+          "ayuda": "Cuenta con «yo» lo que hace otra persona."
+         },
+         {
+          "cons": "Si el caso lo contara el detective desde el principio con todo lo que piensa, ¿qué se perdería?",
+          "ops": [
+           "El suspenso, porque ya sabe la solución",
+           "Los diálogos",
+           "Los nombres de los personajes"
+          ],
+          "ayuda": "El que narra sabe lo que sabe el detective."
+         },
+         {
+          "cons": "¿Por qué el ayudante es un buen narrador para un policial de enigma?",
+          "ops": [
+           "Ve todo, pero entiende menos que el detective, como el lector",
+           "Porque siempre es el culpable",
+           "Porque sabe lo que piensan todos"
+          ],
+          "ayuda": "El testigo participa, pero no deduce como el detective."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Narrador testigo",
+        "texto": "El narrador testigo es un personaje que participa de los hechos y los cuenta en primera persona, pero el protagonista de la historia es otro."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "En el policial de enigma suele narrar el ayudante del detective. Ve las mismas pistas que él, pero no las entiende a tiempo, y por eso el lector descubre la verdad junto con él. Si narrara el detective, el misterio se terminaría enseguida."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Cuenta con «yo», pero no es el protagonista.",
+         "Sabe menos que el detective.",
+         "Mantiene el suspenso hasta la revelación."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La revelación y el juego limpio",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Final",
+        "items": [
+         {
+          "nombre": "Juego limpio",
+          "texto": "En la cena, la detective explica: {{«¿Recuerdan que el jardinero tenía barro rojo en los zapatos?»|Retoma una pista que el lector ya había visto.}} {{«Ese barro solo está junto al estanque»|Une la pista con un dato que también se había mencionado.}}. {{«Ahí escondió la caja.»|La solución sale de pistas conocidas.}}",
+          "cierre": "El lector tenía todo para resolverlo."
+         },
+         {
+          "nombre": "Trampa",
+          "texto": "En la cena, el detective explica: {{«El culpable es el hermano gemelo del mayordomo»|Un personaje que nunca apareció.}}, {{«que llegó en secreto desde Europa»|Un dato nuevo que el lector no podía saber.}}.",
+          "cierre": "Así el final decepciona: el lector no tuvo ninguna oportunidad."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿El final respeta el juego limpio con el lector?",
+        "items": [
+         {
+          "cons": "Al final, el detective revela que la culpable es la cocinera, que había mentido sobre la hora en el capítulo dos.",
+          "ops": [
+           "Sí: la mentira ya estaba en el relato",
+           "No: la cocinera no aparecía",
+           "No: el detective adivinó"
+          ],
+          "ayuda": "Pensá si el lector tenía el dato."
+         },
+         {
+          "cons": "Al final, el detective dice que el culpable es un ladrón famoso que nunca había sido mencionado.",
+          "ops": [
+           "No: aparece alguien que el lector no conocía",
+           "Sí: es un ladrón famoso",
+           "Sí: el detective siempre tiene razón"
+          ],
+          "ayuda": "El culpable tiene que estar a la vista."
+         },
+         {
+          "cons": "La revelación une tres pistas: una huella, un reloj atrasado y una carta, que aparecieron antes.",
+          "ops": [
+           "Sí: todo estaba en el relato",
+           "No: son demasiadas pistas",
+           "No: las pistas se explican al principio"
+          ],
+          "ayuda": "El juego limpio es dar todas las pistas antes del final."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Revelación",
+        "texto": "La revelación es el final del policial de enigma, en el que el detective explica cómo resolvió el caso y la historia oculta del crimen sale a la luz."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Una buena revelación respeta el juego limpio: la solución se arma con pistas que el lector ya había visto, aunque no les haya dado importancia. Si el culpable aparece de la nada o el detective usa un dato que nunca se mostró, el lector se siente engañado."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "El detective explica el razonamiento.",
+         "La historia del crimen se cuenta completa.",
+         "Juego limpio: todas las pistas, antes del final."
         ]
        }
       ]
@@ -1500,29 +1496,34 @@
     ],
     "recuerda": [
      {
-      "concepto": "Resolver un enigma",
-      "definicion": "es encontrar la única explicación que une todas las pistas sin dejar ninguna afuera.",
-      "ejemplo": "Sótano + rodillas gastadas + vereda hueca + banco → túnel"
+      "concepto": "Historia del crimen",
+      "definicion": "es lo que ocurrió antes de la investigación y queda oculto hasta el final.",
+      "ejemplo": "El guardia copió la llave un mes antes"
+     },
+     {
+      "concepto": "Historia de la investigación",
+      "definicion": "es la que el lector sigue paso a paso: pistas, testigos y sospechosos.",
+      "ejemplo": "La inspectora interroga y encuentra la copia"
      },
      {
       "concepto": "Narrador testigo",
-      "definicion": "participa y cuenta en primera persona, pero el protagonista es otro.",
-      "ejemplo": "Watson narra los casos de Holmes"
+      "definicion": "participa de los hechos y cuenta en primera persona, pero el protagonista es otro.",
+      "ejemplo": "«Yo no veía nada raro; mi amigo sonrió»"
      },
      {
       "concepto": "Efecto del narrador testigo",
       "definicion": "es mantener el suspenso, porque sabe menos que el detective, igual que el lector.",
-      "ejemplo": "«Yo no entendía por qué golpeaba la vereda»"
-     },
-     {
-      "concepto": "Las dos historias",
-      "definicion": "son la del crimen, oculta, y la de la investigación, que se lee paso a paso.",
-      "ejemplo": "Clay cava el túnel / Holmes reúne pistas"
+      "ejemplo": "Recién en la cena entendí por qué"
      },
      {
       "concepto": "Revelación",
       "definicion": "es el final donde el detective explica cómo resolvió el caso.",
-      "ejemplo": "Holmes explica el plan del túnel después de atrapar a Clay"
+      "ejemplo": "La detective une el barro, el estanque y la caja"
+     },
+     {
+      "concepto": "Juego limpio",
+      "definicion": "es dar al lector todas las pistas antes del final, para que pueda resolver el caso.",
+      "ejemplo": "La mentira de la cocinera ya estaba en el capítulo dos"
      }
     ]
    },
@@ -1532,47 +1533,594 @@
     "analizar",
     "aplicar"
    ]
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El policial negro",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Dos policiales",
+          "cols": [
+           "",
+           "Policial de enigma",
+           "Policial negro"
+          ],
+          "filas": [
+           [
+            "El detective",
+            "un genio aficionado que razona",
+            "un profesional que se arriesga y cobra"
+           ],
+           [
+            "El lugar",
+            "una casa, un tren, un hotel",
+            "la ciudad de noche: calles, bares, puertos"
+           ],
+           [
+            "El crimen",
+            "un rompecabezas",
+            "muestra violencia y corrupción"
+           ],
+           [
+            "La pregunta",
+            "¿quién lo hizo?",
+            "¿por qué pasa esto?"
+           ],
+           [
+            "El final",
+            "el orden vuelve",
+            "se resuelve un caso, pero el mal sigue"
+           ]
+          ],
+          "cierre": "Mismo género, dos miradas sobre el delito."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué tipo de policial es cada fragmento?",
+        "cajas": [
+         "De enigma",
+         "Negro"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "La detective observó la taza y supo enseguida quién había mentido.",
+          0
+         ],
+         [
+          "Reunió a los cinco sospechosos en la biblioteca para explicar el caso.",
+          0
+         ],
+         [
+          "Una sola ceniza en la alfombra alcanzó para resolverlo.",
+          0
+         ],
+         [
+          "Caminó bajo la lluvia por el puerto, con miedo de que lo siguieran.",
+          1
+         ],
+         [
+          "Descubrió que el jefe de policía también cobraba a la banda.",
+          1
+         ],
+         [
+          "Cerró el caso, pero sabía que mañana habría otro muerto en esa ciudad.",
+          1
+         ],
+         [
+          "Le partieron el labio en el bar, pero consiguió el nombre.",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Policial negro",
+        "texto": "El policial negro es la variante del género en la que el crimen muestra una sociedad violenta y corrupta, y el detective investiga en la calle, arriesgando su propio cuerpo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Nació en los Estados Unidos hacia 1930, en una época de mafias y policías comprados. Ya no importa tanto quién lo hizo, sino por qué pasa: el delito aparece ligado al dinero y al poder, y aunque el caso se resuelva, el mundo sigue igual de duro."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Ciudad de noche, violencia y corrupción.",
+         "Detective profesional que se arriesga.",
+         "Pregunta central: ¿por qué pasa?"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El detective duro",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Fragmento",
+        "items": [
+         {
+          "nombre": "La oficina",
+          "texto": "{{Hacía tres semanas que nadie me pagaba un caso|Detective profesional: vive de su trabajo y está en la mala.}}. Cuando entró la mujer del sombrero, {{supe que traía problemas, y que igual iba a aceptarlos|Tono desencantado: no se hace ilusiones.}}. {{Afuera, la lluvia lavaba la sangre de la vereda|La ciudad violenta como escenario.}}.",
+          "cierre": "Primera persona, ironía y ciudad: rasgos del negro."
+         },
+         {
+          "nombre": "El puerto",
+          "texto": "{{El comisario me dijo que me olvidara del caso|El poder quiere tapar el crimen.}}. {{Esa noche me esperaron dos tipos en el puerto|El detective arriesga el cuerpo.}}. {{Volví con una costilla rota y un nombre|Paga un precio por la verdad.}}.",
+          "cierre": "Investigar es peligroso."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué rasgo del detective duro muestra cada fragmento?",
+        "items": [
+         {
+          "cons": "«Cobro cincuenta pesos por día, más los gastos. Y no hago preguntas que no me pagan.»",
+          "ops": [
+           "Es un profesional que vive de su trabajo",
+           "Es un genio que resuelve desde el sillón",
+           "Es un policía de uniforme"
+          ],
+          "ayuda": "Fijate en cómo habla del dinero."
+         },
+         {
+          "cons": "«Me ofrecieron el doble para que dejara el caso. Dije que no y me fui caminando bajo la lluvia.»",
+          "ops": [
+           "Tiene su propio código moral",
+           "Hace todo por dinero",
+           "No le interesa el caso"
+          ],
+          "ayuda": "Rechaza algo que le conviene."
+         },
+         {
+          "cons": "«En esta ciudad, hasta los semáforos están comprados.»",
+          "ops": [
+           "Mira la ciudad con ironía y desencanto",
+           "Admira el orden de la ciudad",
+           "Describe el tránsito con datos"
+          ],
+          "ayuda": "Es una exageración amarga."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Detective duro",
+        "texto": "El detective duro es el investigador del policial negro: un profesional solitario, irónico y desencantado, que se mueve por la ciudad, recibe golpes y se guía por un código moral propio."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "A diferencia del genio de enigma, no es infalible ni elegante: se equivoca, tiene miedo y está siempre corto de plata. Muchas veces narra él mismo, en primera persona, con frases breves y cortantes. Su honestidad, en un mundo corrupto, es lo que lo vuelve un héroe."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Profesional, solitario y desencantado.",
+         "Arriesga el cuerpo y se equivoca.",
+         "Tiene un código moral propio."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El policial en la Argentina",
+      "ejemplo": {
+       "motor": "linea_tiempo",
+       "p": {
+        "items": [
+         {
+          "nombre": "Recorrido",
+          "hechos": [
+           {
+            "t": "1841 · Poe crea a Dupin en Estados Unidos",
+            "c": 1
+           },
+           {
+            "t": "1887 · Conan Doyle crea a Sherlock Holmes en Inglaterra",
+            "c": 2
+           },
+           {
+            "t": "1929 · Hammett publica Cosecha roja: nace el negro",
+            "c": 3
+           },
+           {
+            "t": "1942 · Borges y Bioy Casares crean a Isidro Parodi",
+            "c": 4
+           },
+           {
+            "t": "1953 · Walsh publica Variaciones en rojo",
+            "c": 5
+           }
+          ],
+          "marca": "El género nace en inglés y se reescribe en la Argentina.",
+          "cierre": "Los autores argentinos lo adaptan a su propia realidad."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "Leé el dato y elegí la conclusión correcta.",
+        "items": [
+         {
+          "cons": "Isidro Parodi, el detective de Borges y Bioy Casares, está preso y resuelve los casos desde su celda, escuchando a quienes lo visitan.",
+          "ops": [
+           "Es un detective de enigma: razona sin moverse",
+           "Es un detective duro: pelea en la calle",
+           "No es un detective"
+          ],
+          "ayuda": "Pensá cómo resuelve los casos."
+         },
+         {
+          "cons": "En los cuentos de Rodolfo Walsh, el detective Daniel Hernández es corrector de pruebas de imprenta y descubre detalles en las palabras.",
+          "ops": [
+           "Observa detalles mínimos, como los detectives de enigma",
+           "Usa la fuerza para que confiesen",
+           "Resuelve por casualidad"
+          ],
+          "ayuda": "Fijate en qué se apoya para investigar."
+         },
+         {
+          "cons": "Muchos policiales argentinos muestran que la policía o el poder están del lado del culpable.",
+          "ops": [
+           "Tienen rasgos del policial negro",
+           "Son siempre de enigma",
+           "No son policiales"
+          ],
+          "ayuda": "La corrupción es un rasgo del negro."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Policial argentino",
+        "texto": "El policial argentino toma las formas del enigma y del negro y las adapta a su propia sociedad, con detectives y escenarios locales."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Borges y Bioy Casares jugaron con el enigma clásico y lo llenaron de humor; Rodolfo Walsh empezó con cuentos de enigma y después mostró que, en la realidad, el crimen muchas veces lo cometía el poder. Conocer estas variantes permite reconocer qué tipo de policial estamos leyendo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "El género viaja y cambia con cada país.",
+         "Parodi: enigma con humor, desde una celda.",
+         "Walsh: del enigma a la denuncia."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Policial negro",
+      "definicion": "es la variante en la que el crimen muestra una sociedad violenta y corrupta, y el detective investiga en la calle.",
+      "ejemplo": "El jefe de policía cobraba a la banda"
+     },
+     {
+      "concepto": "Policial de enigma",
+      "definicion": "presenta el crimen como un rompecabezas que un detective genial resuelve razonando.",
+      "ejemplo": "Una ceniza en la alfombra alcanza para resolverlo"
+     },
+     {
+      "concepto": "Detective duro",
+      "definicion": "es un profesional solitario y desencantado que arriesga el cuerpo y tiene un código moral propio.",
+      "ejemplo": "Rechaza el doble de plata y sigue con el caso"
+     },
+     {
+      "concepto": "Pregunta del negro",
+      "definicion": "el policial negro no pregunta tanto quién lo hizo, sino por qué pasa.",
+      "ejemplo": "El crimen está ligado al dinero y al poder"
+     },
+     {
+      "concepto": "Policial argentino",
+      "definicion": "adapta el enigma y el negro a la sociedad argentina, con detectives propios.",
+      "ejemplo": "Isidro Parodi; Daniel Hernández, de Walsh"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un fragmento dice: «Llovía sobre el puerto y el comisario también cobraba de la banda». ¿Es policial de enigma o negro?",
+    "Un detective resuelve el robo sin salir del sillón, escuchando el relato de su cliente. ¿Es un detective de enigma o un detective duro?",
+    "Al final de una novela, el detective descubre al asesino, pero el político que lo protegía sigue en su cargo. ¿Qué rasgo del policial negro muestra ese final?",
+    "Juli dice que un relato es policial negro porque el crimen ocurre de noche, aunque el detective lo resuelve razonando en una mansión. ¿Qué tipo de policial es en realidad?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "negro",
+     "policial negro"
+    ],
+    [
+     "de enigma",
+     "enigma"
+    ],
+    [
+     "que el mal sigue",
+     "el mal sigue",
+     "la corrupción sigue",
+     "corrupción"
+    ],
+    [
+     "de enigma",
+     "enigma"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Negro: la ciudad de noche y la corrupción de la policía son rasgos del negro.",
+     "De enigma: razona sin moverse ni arriesgarse.",
+     "Que el mal sigue: se resuelve un caso, pero la sociedad corrupta no cambia.",
+     "De enigma: la noche no alcanza; lo define el detective que razona en un lugar cerrado."
+    ]
+   }
   }
  },
  "act": {
   "1": [
    {
+    "t": "classify",
+    "p": "¿Qué papel cumple cada personaje del caso «El robo del laboratorio»?",
+    "o": {
+     "elementos": [
+      "La profesora de Química, a la que le robaron el microscopio",
+      "El portero que vio salir a alguien con una caja",
+      "La preceptora que reúne las pistas y resuelve el caso",
+      "El ayudante de laboratorio, que lo vendió"
+     ],
+     "categorias": [
+      "Detective",
+      "Víctima",
+      "Testigo",
+      "Culpable"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "La profesora de Química, a la que le robaron el microscopio": "Víctima",
+      "El portero que vio salir a alguien con una caja": "Testigo",
+      "La preceptora que reúne las pistas y resuelve el caso": "Detective",
+      "El ayudante de laboratorio, que lo vendió": "Culpable"
+     }
+    },
+    "e": "Cada personaje cumple un papel fijo del género.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es el enigma en este argumento? «En un barco, alguien abre la caja fuerte del capitán sin forzarla. La única combinación la conocían tres personas.»",
+    "o": [
+     "¿Quién abrió la caja fuerte sin forzarla?",
+     "¿Adónde va el barco?",
+     "¿Cuánto dinero tiene el capitán?"
+    ],
+    "r": {
+     "correcta": "¿Quién abrió la caja fuerte sin forzarla?"
+    },
+    "e": "El enigma es la pregunta que el relato promete responder.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice: «Este relato no es policial porque no hay ningún muerto». El relato trata de una detective que averigua quién falsificó unas firmas. ¿Qué le contestás?",
+    "o": [
+     "Es policial: lo que lo define es el enigma y la investigación",
+     "Tiene razón: sin muerto no hay policial",
+     "Es policial solo si aparece la policía"
+    ],
+    "r": {
+     "correcta": "Es policial: lo que lo define es el enigma y la investigación"
+    },
+    "e": "El género se define por el enigma, no por la violencia.",
+    "n": "error"
+   },
+   {
+    "t": "multi_select",
+    "p": "En un relato, la detective resuelve el caso sin salir de su casa, observando una foto con lupa. Su sobrino la acompaña y no entiende nada. Elegí los DOS rasgos del detective de enigma que aparecen.",
+    "o": [
+     "Observa detalles mínimos",
+     "Razona más que actúa",
+     "Usa la fuerza",
+     "Es un policía de uniforme"
+    ],
+    "r": {
+     "correctas": [
+      "Observa detalles mínimos",
+      "Razona más que actúa"
+     ]
+    },
+    "e": "El detective clásico observa y razona.",
+    "n": "analizar"
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "Caso: desaparecieron las llaves del auto de la abuela. Fue el nieto, que quería sacar el auto. ¿Pista o falsa pista?",
+    "o": {
+     "elementos": [
+      "El asiento del conductor está corrido hacia atrás",
+      "El gato estaba durmiendo sobre el capó",
+      "El nieto tiene barro fresco en las zapatillas",
+      "La vecina tiene cara de enojada"
+     ],
+     "categorias": [
+      "Pista",
+      "Falsa pista"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El asiento del conductor está corrido hacia atrás": "Pista",
+      "El gato estaba durmiendo sobre el capó": "Falsa pista",
+      "El nieto tiene barro fresco en las zapatillas": "Pista",
+      "La vecina tiene cara de enojada": "Falsa pista"
+     }
+    },
+    "e": "Una pista es un dato que se puede comprobar.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená el razonamiento de la detective.",
+    "o": [
+     "Recuerda que llovió toda la tarde",
+     "Deduce que no salió de la casa, aunque dijo que fue al banco",
+     "Comprueba en el banco que no estuvo ahí",
+     "Ve que el paraguas del sospechoso está seco"
+    ],
+    "r": {
+     "orden": [
+      "Ve que el paraguas del sospechoso está seco",
+      "Recuerda que llovió toda la tarde",
+      "Deduce que no salió de la casa, aunque dijo que fue al banco",
+      "Comprueba en el banco que no estuvo ahí"
+     ]
+    },
+    "e": "Observar, relacionar, deducir y comprobar.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "El robo fue a las 22. El sospechoso dice que estaba en un partido, pero el partido se suspendió por lluvia. ¿Qué concluís?",
+    "o": [
+     "Su coartada es falsa: sigue sospechado",
+     "Se descarta: dijo dónde estaba",
+     "Es inocente: le gusta el fútbol"
+    ],
+    "r": {
+     "correcta": "Su coartada es falsa: sigue sospechado"
+    },
+    "e": "Una coartada falsa se convierte en una pista.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un investigador acusa al jardinero «porque tiene mirada de culpable». ¿Qué error comete?",
+    "o": [
+     "Se guía por una impresión, no por una pista",
+     "Acusa demasiado rápido a la víctima",
+     "Usa demasiadas pistas"
+    ],
+    "r": {
+     "correcta": "Se guía por una impresión, no por una pista"
+    },
+    "e": "Las impresiones son falsas pistas: no prueban nada.",
+    "n": "error"
+   }
+  ],
+  "3": [
+   {
+    "t": "ordering",
+    "p": "Ordená la historia del crimen como ocurrió en el tiempo, aunque el relato la cuente al final.",
+    "o": [
+     "Saca el dinero de a poco durante un año",
+     "El dueño nota que falta plata y llama a la detective",
+     "La detective descubre los números cambiados y lo revela",
+     "El contador cambia los números del libro de cuentas"
+    ],
+    "r": {
+     "orden": [
+      "El contador cambia los números del libro de cuentas",
+      "Saca el dinero de a poco durante un año",
+      "El dueño nota que falta plata y llama a la detective",
+      "La detective descubre los números cambiados y lo revela"
+     ]
+    },
+    "e": "La historia del crimen empieza antes que la investigación.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "«Mi amigo levantó el sobre a contraluz y sonrió. Yo, como siempre, no entendí nada hasta la noche.» ¿Qué tipo de narrador es y qué efecto logra?",
+    "o": [
+     "Testigo: mantiene el suspenso porque sabe menos",
+     "Protagonista: cuenta su propio razonamiento",
+     "Omnisciente: sabe lo que piensan todos"
+    ],
+    "r": {
+     "correcta": "Testigo: mantiene el suspenso porque sabe menos"
+    },
+    "e": "El testigo cuenta lo que hace el detective sin entenderlo a tiempo.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Al final de un cuento, la detective revela que la culpable es una prima que nunca había sido mencionada. ¿Qué falla?",
+    "o": [
+     "No respeta el juego limpio con el lector",
+     "La revelación es demasiado larga",
+     "Falta un narrador testigo"
+    ],
+    "r": {
+     "correcta": "No respeta el juego limpio con el lector"
+    },
+    "e": "La culpable tiene que estar a la vista antes del final.",
+    "n": "error"
+   },
+   {
     "t": "matching",
-    "p": "Uní cada elemento del policial con su ejemplo en un caso nuevo.",
+    "p": "Uní cada momento del policial con su ejemplo.",
     "o": {
      "izquierda": [
       "Crimen",
-      "Enigma",
-      "Detective",
-      "Pista"
+      "Investigación",
+      "Revelación",
+      "Historia oculta"
      ],
      "derecha": [
-      "Un pétalo de rosa en la alfombra",
-      "La nieta que observa todo",
-      "¿Quién entró al cuarto con la puerta cerrada?",
-      "Desaparece el anillo de la abuela"
+      "El padrino lo escondió para pedir rescate",
+      "Explica que el anillo cayó en la copa del padrino",
+      "El detective interroga a los invitados",
+      "Desaparece el anillo de la novia en la fiesta"
      ]
     },
     "r": {
      "pares": {
-      "Crimen": "Desaparece el anillo de la abuela",
-      "Enigma": "¿Quién entró al cuarto con la puerta cerrada?",
-      "Detective": "La nieta que observa todo",
-      "Pista": "Un pétalo de rosa en la alfombra"
+      "Crimen": "Desaparece el anillo de la novia en la fiesta",
+      "Investigación": "El detective interroga a los invitados",
+      "Revelación": "Explica que el anillo cayó en la copa del padrino",
+      "Historia oculta": "El padrino lo escondió para pedir rescate"
      }
     },
-    "e": "Son los elementos del policial.",
+    "e": "La estructura en tres momentos y la historia oculta.",
     "n": "aplicar"
-   },
+   }
+  ],
+  "4": [
    {
     "t": "classify",
-    "p": "¿Policial de enigma o negro?",
+    "p": "¿Policial de enigma o policial negro?",
     "o": {
      "elementos": [
-      "El detective resuelve el caso con una sola deducción en la sala",
-      "Todos los sospechosos reunidos escuchan la explicación final",
-      "El investigador se esconde de una banda en el puerto",
-      "El caso revela que el intendente protegía a los ladrones"
+      "El detective reúne a los sospechosos en el salón del hotel",
+      "El detective recibe una paliza en un bar del puerto",
+      "Una mancha de tinta alcanza para resolver el caso",
+      "El juez que lleva la causa está comprado por la mafia"
      ],
      "categorias": [
       "De enigma",
@@ -1581,267 +2129,150 @@
     },
     "r": {
      "categorias": {
-      "El detective resuelve el caso con una sola deducción en la sala": "De enigma",
-      "Todos los sospechosos reunidos escuchan la explicación final": "De enigma",
-      "El investigador se esconde de una banda en el puerto": "Negro",
-      "El caso revela que el intendente protegía a los ladrones": "Negro"
+      "El detective reúne a los sospechosos en el salón del hotel": "De enigma",
+      "El detective recibe una paliza en un bar del puerto": "Negro",
+      "Una mancha de tinta alcanza para resolver el caso": "De enigma",
+      "El juez que lleva la causa está comprado por la mafia": "Negro"
      }
     },
-    "e": "Enigma: razonamiento. Negro: riesgo y corrupción.",
-    "n": "aplicar"
-   },
-   {
-    "t": "ordering",
-    "p": "Ordená el método de la detective en este caso: «Ve tierra húmeda en las botas del sobrino, recuerda que solo se regó el jardín de atrás, deduce que estuvo allí y lo confirma encontrando sus huellas».",
-    "o": [
-     "Recuerda que solo se regó el jardín de atrás",
-     "Deduce que él estuvo en ese jardín",
-     "Lo confirma encontrando sus huellas",
-     "Ve tierra húmeda en las botas del sobrino"
-    ],
-    "r": {
-     "orden": [
-      "Ve tierra húmeda en las botas del sobrino",
-      "Recuerda que solo se regó el jardín de atrás",
-      "Deduce que él estuvo en ese jardín",
-      "Lo confirma encontrando sus huellas"
-     ]
-    },
-    "e": "Observar, relacionar, deducir y comprobar.",
+    "e": "Rompecabezas o sociedad corrupta.",
     "n": "aplicar"
    },
    {
     "t": "multiple_choice",
-    "p": "Un compañero dice: «Holmes resuelve los casos porque tiene suerte y adivina quién fue». ¿Qué le contestás?",
+    "p": "«Me pagaron para encontrar a una chica. La encontré, pero también encontré a los que la buscaban, y todos tenían placa de policía.» ¿Por qué es un fragmento de policial negro?",
     "o": [
-     "No: observa, deduce y comprueba antes de acusar",
-     "Sí: los detectives siempre adivinan",
-     "No: siempre confiesa el culpable solo"
+     "Porque muestra que la corrupción llega a la policía",
+     "Porque el detective razona desde el sillón",
+     "Porque reúne a los sospechosos al final"
     ],
     "r": {
-     "correcta": "No: observa, deduce y comprueba antes de acusar"
+     "correcta": "Porque muestra que la corrupción llega a la policía"
     },
-    "e": "El método del detective clásico es la deducción.",
+    "e": "El negro liga el crimen con el poder.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Una compañera dice que el policial negro se llama así porque los crímenes ocurren de noche. ¿Qué le contestás?",
+    "o": [
+     "El nombre viene de su mirada oscura sobre la sociedad: violencia y corrupción",
+     "Tiene razón: todo pasa de noche",
+     "Se llama así porque el detective se viste de negro"
+    ],
+    "r": {
+     "correcta": "El nombre viene de su mirada oscura sobre la sociedad: violencia y corrupción"
+    },
+    "e": "La noche es un escenario típico, pero lo que lo define es la mirada sobre la sociedad.",
     "n": "error"
-   }
-  ],
-  "2": [
+   },
    {
-    "t": "tap_text",
-    "p": "Caso: desapareció el celular de la profe y lo tomó el preceptor. Tocá las DOS pistas verdaderas: «El preceptor tenía la llave de la sala · Un alumno estaba muy nervioso · El celular sonó en el armario del preceptor · Llovía mucho esa tarde».",
+    "t": "keywords",
+    "p": "Elegí un detective (de enigma o duro) y explicá con tus palabras dos rasgos que lo ubican en ese tipo de policial.",
     "o": {
-     "segmentos": [
-      "El preceptor tenía la llave de la sala",
-      "Un alumno estaba muy nervioso",
-      "El celular sonó en el armario del preceptor",
-      "Llovía mucho esa tarde"
+     "ayuda": "Nombrá el tipo y dos rasgos."
+    },
+    "r": {
+     "grupos": [
+      [
+       "enigma",
+       "negro",
+       "duro",
+       "clásico"
+      ],
+      [
+       "observa*",
+       "razona*",
+       "deduc*",
+       "arriesga*",
+       "calle",
+       "ciudad",
+       "corrup*",
+       "golpe*",
+       "pista*"
+      ]
      ],
-     "modo": "palabras"
+     "minimo": 2
     },
-    "r": {
-     "tocar": [
-      0,
-      2
-     ]
-    },
-    "e": "Las otras distraen: no se relacionan con el robo.",
-    "n": "analizar"
-   },
-   {
-    "t": "classify",
-    "p": "Clasificá cada pista.",
-    "o": {
-     "elementos": [
-      "Una huella de zapatilla en el barro",
-      "El kiosquero dice que lo vio pasar a las ocho",
-      "Dice que estaba enfermo, pero subió fotos jugando al fútbol",
-      "La alarma no sonó esa noche"
-     ],
-     "categorias": [
-      "Material",
-      "Testimonio",
-      "Contradicción",
-      "Ausencia"
-     ]
-    },
-    "r": {
-     "categorias": {
-      "Una huella de zapatilla en el barro": "Material",
-      "El kiosquero dice que lo vio pasar a las ocho": "Testimonio",
-      "Dice que estaba enfermo, pero subió fotos jugando al fútbol": "Contradicción",
-      "La alarma no sonó esa noche": "Ausencia"
-     }
-    },
-    "e": "Cada tipo de pista se trabaja distinto.",
-    "n": "aplicar"
-   },
-   {
-    "t": "matching",
-    "p": "Uní cada detalle de «La liga de los pelirrojos» con lo que revela.",
-    "o": {
-     "izquierda": [
-      "Un ayudante hábil que cobra poco",
-      "Las horas en el sótano",
-      "Las rodillas gastadas",
-      "El trabajo absurdo de la liga"
-     ],
-     "derecha": [
-      "Saca a Wilson de su casa",
-      "Excava",
-      "Hace algo a escondidas",
-      "Quiere estar en esa casa por otra razón"
-     ]
-    },
-    "r": {
-     "pares": {
-      "Un ayudante hábil que cobra poco": "Quiere estar en esa casa por otra razón",
-      "Las horas en el sótano": "Hace algo a escondidas",
-      "Las rodillas gastadas": "Excava",
-      "El trabajo absurdo de la liga": "Saca a Wilson de su casa"
-     }
-    },
-    "e": "Las pistas apuntan al plan del túnel.",
-    "n": "aplicar"
-   },
-   {
-    "t": "multiple_choice",
-    "p": "Un sospechoso dice que estaba en el cine cuando ocurrió el robo y muestra la entrada con la hora. ¿Qué es eso?",
-    "o": [
-     "Su coartada, que hay que comprobar",
-     "Una falsa pista",
-     "La revelación del caso"
-    ],
-    "r": {
-     "correcta": "Su coartada, que hay que comprobar"
-    },
-    "e": "La coartada es la prueba de que estaba en otro lugar.",
-    "n": "aplicar"
-   }
-  ],
-  "3": [
-   {
-    "t": "multiple_choice",
-    "p": "Pistas: no hay ventanas rotas · el perro no ladró · falta la copia de la llave que guardaba la tía. ¿Qué conclusión explica todas las pistas?",
-    "o": [
-     "Entró alguien de confianza que usó la copia",
-     "Entró un ladrón por la ventana",
-     "El perro abrió la puerta"
-    ],
-    "r": {
-     "correcta": "Entró alguien de confianza que usó la copia"
-    },
-    "e": "La conclusión tiene que explicar todas las pistas a la vez.",
-    "n": "analizar"
-   },
-   {
-    "t": "ordering",
-    "p": "Ordená la historia del crimen como ocurrió en el tiempo: el sobrino esconde el collar en la maceta, la dueña denuncia el robo, el sobrino planea el robo, el inspector lo descubre.",
-    "o": [
-     "El sobrino esconde el collar en la maceta",
-     "La dueña denuncia el robo",
-     "El inspector lo descubre",
-     "El sobrino planea el robo"
-    ],
-    "r": {
-     "orden": [
-      "El sobrino planea el robo",
-      "El sobrino esconde el collar en la maceta",
-      "La dueña denuncia el robo",
-      "El inspector lo descubre"
-     ]
-    },
-    "e": "El crimen ocurre antes de la investigación.",
-    "n": "aplicar"
-   },
-   {
-    "t": "multiple_choice",
-    "p": "«Mi amiga revisó el reloj del muerto y sonrió; yo no entendí qué había visto.» ¿Qué narrador es y qué efecto logra?",
-    "o": [
-     "Testigo: mantiene el suspenso",
-     "Omnisciente: revela todo",
-     "Protagonista: es la detective"
-    ],
-    "r": {
-     "correcta": "Testigo: mantiene el suspenso"
-    },
-    "e": "Cuenta lo que hace otra y sabe menos que ella.",
-    "n": "analizar"
-   },
-   {
-    "t": "short_answer",
-    "p": "Al final de un policial, la detective reúne a todos y explica cómo descubrió al culpable. ¿Cómo se llama esa parte del relato?",
-    "r": {
-     "acepta": [
-      "revelacion",
-      "revelación",
-      "la revelación",
-      "la revelacion"
-     ]
-    },
-    "e": "Es la revelación.",
+    "e": "Por ejemplo: Holmes es de enigma porque observa detalles y razona sin usar la fuerza.",
     "n": "aplicar"
    }
   ],
   "5": [
    {
     "t": "multiple_choice",
-    "p": "Relámpago. El misterio de un policial es el…",
+    "p": "En un relato, una detective descubre que el robo del banco lo organizó el propio gerente, y aunque lo denuncia, el gerente queda libre. ¿Qué tipo de policial es?",
     "o": [
-     "Enigma",
-     "Narrador",
-     "Título"
+     "Negro: el crimen muestra corrupción y el mal sigue",
+     "De enigma: el orden vuelve al final",
+     "No es policial"
     ],
     "r": {
-     "correcta": "Enigma"
+     "correcta": "Negro: el crimen muestra corrupción y el mal sigue"
     },
-    "e": "Hay que resolverlo.",
-    "tiempo": 20,
-    "n": "recordar"
+    "e": "Final sin orden recuperado y poder corrupto.",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "p": "Caso: desapareció la tablet de la biblioteca. ¿Qué es cada dato?",
+    "o": {
+     "elementos": [
+      "La funda apareció en la mochila del bibliotecario",
+      "El chico nuevo parecía nervioso",
+      "La profesora estaba dando clase online frente a 30 alumnos",
+      "El registro muestra que la tablet se conectó desde la casa del bibliotecario"
+     ],
+     "categorias": [
+      "Pista",
+      "Falsa pista",
+      "Coartada"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "La funda apareció en la mochila del bibliotecario": "Pista",
+      "El chico nuevo parecía nervioso": "Falsa pista",
+      "La profesora estaba dando clase online frente a 30 alumnos": "Coartada",
+      "El registro muestra que la tablet se conectó desde la casa del bibliotecario": "Pista"
+     }
+    },
+    "e": "Datos que acercan, impresiones que distraen y pruebas de que alguien estaba en otro lado.",
+    "n": "analizar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená cómo se CUENTA un policial de enigma.",
+    "o": [
+     "El detective investiga y descarta sospechosos",
+     "El detective reúne pistas y deduce",
+     "En la revelación se cuenta cómo ocurrió el crimen",
+     "Aparece el crimen ya cometido"
+    ],
+    "r": {
+     "orden": [
+      "Aparece el crimen ya cometido",
+      "El detective investiga y descarta sospechosos",
+      "El detective reúne pistas y deduce",
+      "En la revelación se cuenta cómo ocurrió el crimen"
+     ]
+    },
+    "e": "Lo que pasó primero se cuenta al final.",
+    "n": "aplicar"
    },
    {
     "t": "multiple_choice",
-    "p": "Relámpago. La liga pagaba por copiar…",
+    "p": "¿Cuál de estos finales respeta el juego limpio?",
     "o": [
-     "Una enciclopedia",
-     "Cartas",
-     "Mapas"
+     "El culpable es el vecino que en el primer capítulo mintió sobre su perro",
+     "El culpable es un desconocido que llega en el último párrafo",
+     "El detective adivina el nombre sin explicar cómo"
     ],
     "r": {
-     "correcta": "Una enciclopedia"
+     "correcta": "El culpable es el vecino que en el primer capítulo mintió sobre su perro"
     },
-    "e": "Cuatro horas por día.",
-    "tiempo": 20,
-    "n": "recordar"
-   },
-   {
-    "t": "multiple_choice",
-    "p": "Relámpago. Los ladrones cavaban un…",
-    "o": [
-     "Túnel",
-     "Pozo de agua",
-     "Jardín"
-    ],
-    "r": {
-     "correcta": "Túnel"
-    },
-    "e": "Hasta el banco.",
-    "tiempo": 20,
-    "n": "recordar"
-   },
-   {
-    "t": "multiple_choice",
-    "p": "Relámpago. La explicación final es la…",
-    "o": [
-     "Revelación",
-     "Pista",
-     "Introducción"
-    ],
-    "r": {
-     "correcta": "Revelación"
-    },
-    "e": "El detective explica.",
-    "tiempo": 20,
-    "n": "recordar"
+    "e": "La solución se arma con pistas que el lector ya vio.",
+    "n": "analizar"
    }
   ]
  },
@@ -1850,30 +2281,198 @@
    1,
    {
     "t": "multiple_choice",
-    "p": "En un relato, desaparece un violín antes del concierto y una música lo busca interrogando a la orquesta. ¿Qué es el enigma?",
+    "p": "¿Qué define a un relato policial?",
     "o": [
-     "¿Quién tomó el violín y por qué?",
-     "La música que investiga",
-     "El concierto de la orquesta"
+     "Un enigma que alguien investiga hasta descubrir la verdad",
+     "Que aparezca la policía",
+     "Que haya mucha violencia"
     ],
     "r": {
-     "correcta": "¿Quién tomó el violín y por qué?"
+     "correcta": "Un enigma que alguien investiga hasta descubrir la verdad"
     },
-    "e": "El enigma es la pregunta central.",
-    "n": "analizar"
+    "e": "El género se define por el enigma y la investigación.",
+    "n": "recordar"
    }
   ],
   [
    1,
    {
     "t": "classify",
+    "p": "¿Qué papel cumple cada uno en el caso del robo en la estancia?",
+    "o": {
+     "elementos": [
+      "El veterinario que investiga y resuelve el caso",
+      "El dueño al que le robaron los caballos",
+      "El peón que vio luces de un camión de noche",
+      "El capataz, que vendió los caballos"
+     ],
+     "categorias": [
+      "Detective",
+      "Víctima",
+      "Testigo",
+      "Culpable"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El veterinario que investiga y resuelve el caso": "Detective",
+      "El dueño al que le robaron los caballos": "Víctima",
+      "El peón que vio luces de un camión de noche": "Testigo",
+      "El capataz, que vendió los caballos": "Culpable"
+     }
+    },
+    "e": "Los papeles fijos del policial.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Un detective resuelve el caso mirando una foto con lupa y sin salir de su escritorio. ¿Qué tipo de detective es?",
+    "o": [
+     "De enigma: observa y razona",
+     "Duro: arriesga el cuerpo en la calle",
+     "No es un detective"
+    ],
+    "r": {
+     "correcta": "De enigma: observa y razona"
+    },
+    "e": "El detective clásico razona más de lo que actúa.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "Caso: alguien se llevó el dinero de la alcancía de la escuela. Fue la tesorera. ¿Pista o falsa pista?",
+    "o": {
+     "elementos": [
+      "La alcancía se abrió con la llave que tiene la tesorera",
+      "El chico de tercero estaba muy callado",
+      "La tesorera pagó una deuda grande al día siguiente",
+      "El portero no saludó a nadie esa mañana"
+     ],
+     "categorias": [
+      "Pista",
+      "Falsa pista"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "La alcancía se abrió con la llave que tiene la tesorera": "Pista",
+      "El chico de tercero estaba muy callado": "Falsa pista",
+      "La tesorera pagó una deuda grande al día siguiente": "Pista",
+      "El portero no saludó a nadie esa mañana": "Falsa pista"
+     }
+    },
+    "e": "Datos comprobables frente a impresiones.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "ordering",
+    "p": "Ordená el método del detective.",
+    "o": [
+     "Relacionar",
+     "Deducir",
+     "Comprobar",
+     "Observar"
+    ],
+    "r": {
+     "orden": [
+      "Observar",
+      "Relacionar",
+      "Deducir",
+      "Comprobar"
+     ]
+    },
+    "e": "Ese es el orden del razonamiento.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "El sospechoso dice que a la hora del robo estaba en el hospital, y lo confirman dos médicas. ¿Qué pasa con él?",
+    "o": [
+     "Se descarta: tiene una coartada firme",
+     "Sigue sospechado: es el que más gana",
+     "Es el culpable"
+    ],
+    "r": {
+     "correcta": "Se descarta: tiene una coartada firme"
+    },
+    "e": "Una coartada comprobada descarta al sospechoso.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuáles son las dos historias de un policial de enigma?",
+    "o": [
+     "La del crimen, oculta, y la de la investigación",
+     "La del detective y la de su ayudante",
+     "La del principio y la del final"
+    ],
+    "r": {
+     "correcta": "La del crimen, oculta, y la de la investigación"
+    },
+    "e": "La del crimen recién se conoce en la revelación.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "«Mi compañero miró el piso un largo rato; yo me aburría y no veía nada.» ¿Qué tipo de narrador es?",
+    "o": [
+     "Testigo",
+     "Protagonista",
+     "Omnisciente"
+    ],
+    "r": {
+     "correcta": "Testigo"
+    },
+    "e": "Cuenta con «yo» lo que hace el protagonista, sin entenderlo.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Un lector se queja: «El culpable apareció recién en la última página». ¿Qué no respetó el autor?",
+    "o": [
+     "El juego limpio: el culpable tiene que estar a la vista",
+     "El narrador testigo",
+     "La historia de la investigación"
+    ],
+    "r": {
+     "correcta": "El juego limpio: el culpable tiene que estar a la vista"
+    },
+    "e": "La solución se arma con lo que el lector ya vio.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
     "p": "¿Policial de enigma o negro?",
     "o": {
      "elementos": [
-      "Una deducción en la biblioteca resuelve el caso",
-      "El detective arriesga su vida en los callejones",
-      "El orden se recupera al final",
-      "El crimen muestra la corrupción de la ciudad"
+      "Un genio aficionado reúne a todos en la biblioteca",
+      "El detective camina por el puerto con miedo de que lo sigan",
+      "El comisario está pagado por la banda",
+      "Una ceniza en la alfombra resuelve el caso"
      ],
      "categorias": [
       "De enigma",
@@ -1882,172 +2481,84 @@
     },
     "r": {
      "categorias": {
-      "Una deducción en la biblioteca resuelve el caso": "De enigma",
-      "El detective arriesga su vida en los callejones": "Negro",
-      "El orden se recupera al final": "De enigma",
-      "El crimen muestra la corrupción de la ciudad": "Negro"
+      "Un genio aficionado reúne a todos en la biblioteca": "De enigma",
+      "El detective camina por el puerto con miedo de que lo sigan": "Negro",
+      "El comisario está pagado por la banda": "Negro",
+      "Una ceniza en la alfombra resuelve el caso": "De enigma"
      }
     },
-    "e": "Razonamiento vs. riesgo y corrupción.",
+    "e": "Rompecabezas o sociedad corrupta.",
     "n": "aplicar"
    }
   ],
   [
-   1,
+   4,
    {
-    "t": "ordering",
-    "p": "Ordená el método del detective.",
+    "t": "multiple_choice",
+    "p": "¿Qué pregunta importa más en el policial negro?",
     "o": [
-     "Relacionar las pistas",
-     "Deducir una conclusión",
-     "Comprobar antes de acusar",
-     "Observar los detalles"
+     "¿Por qué pasa esto en esta sociedad?",
+     "¿Quién tenía la llave?",
+     "¿A qué hora fue el robo?"
     ],
     "r": {
-     "orden": [
-      "Observar los detalles",
-      "Relacionar las pistas",
-      "Deducir una conclusión",
-      "Comprobar antes de acusar"
-     ]
+     "correcta": "¿Por qué pasa esto en esta sociedad?"
     },
-    "e": "El detective nunca adivina.",
-    "n": "aplicar"
-   }
-  ],
-  [
-   1,
-   {
-    "t": "true_false",
-    "p": "Sherlock Holmes es un detective del policial negro.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
-    },
-    "e": "Pertenece al policial de enigma, o clásico.",
+    "e": "El negro liga el crimen con el dinero y el poder.",
     "n": "recordar"
    }
   ],
   [
-   2,
+   4,
    {
-    "t": "tap_text",
-    "p": "Caso: se perdió la llave del aula y la tenía el delegado. Tocá la pista verdadera: «El delegado cerró el aula el viernes · La directora estaba apurada · Hubo viento a la tarde».",
+    "t": "multiple_choice",
+    "p": "«Me ofrecieron el triple para cerrar el caso. Lo rechacé y esa noche me esperaron en el estacionamiento.» ¿Qué rasgos del detective duro aparecen?",
+    "o": [
+     "Tiene un código moral propio y arriesga el cuerpo",
+     "Razona desde el sillón y nunca corre peligro",
+     "Trabaja gratis y la policía lo ayuda"
+    ],
+    "r": {
+     "correcta": "Tiene un código moral propio y arriesga el cuerpo"
+    },
+    "e": "Rechaza el soborno y paga el precio en la calle.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Explicá con tus palabras una diferencia entre el policial de enigma y el policial negro.",
     "o": {
-     "segmentos": [
-      "El delegado cerró el aula el viernes",
-      "La directora estaba apurada",
-      "Hubo viento a la tarde"
+     "ayuda": "Nombrá los dos tipos y en qué se diferencian."
+    },
+    "r": {
+     "grupos": [
+      [
+       "enigma",
+       "clásico"
+      ],
+      [
+       "negro"
+      ],
+      [
+       "razona*",
+       "rompecabezas",
+       "deduc*",
+       "ciudad",
+       "violen*",
+       "corrup*",
+       "calle",
+       "orden",
+       "arriesga*",
+       "por qué",
+       "quién"
+      ]
      ],
-     "modo": "palabras"
+     "minimo": 3
     },
-    "r": {
-     "tocar": [
-      0
-     ]
-    },
-    "e": "Es la única que se relaciona con la llave.",
-    "n": "analizar"
-   }
-  ],
-  [
-   2,
-   {
-    "t": "multiple_choice",
-    "p": "El sospechoso dice que no salió de su casa en toda la noche, pero su auto tiene barro fresco del camino de tierra. ¿Qué tipo de pista es?",
-    "o": [
-     "Contradicción",
-     "Ausencia",
-     "Testimonio confirmado"
-    ],
-    "r": {
-     "correcta": "Contradicción"
-    },
-    "e": "Dos datos que no pueden ser ciertos a la vez.",
-    "n": "analizar"
-   }
-  ],
-  [
-   2,
-   {
-    "t": "multiple_choice",
-    "p": "En «La liga de los pelirrojos», ¿para qué sirve en realidad la liga?",
-    "o": [
-     "Para sacar a Wilson de su casa",
-     "Para pagarle bien a Wilson",
-     "Para enseñarle a copiar libros"
-    ],
-    "r": {
-     "correcta": "Para sacar a Wilson de su casa"
-    },
-    "e": "Es la gran distracción del cuento.",
-    "n": "recordar"
-   }
-  ],
-  [
-   3,
-   {
-    "t": "multi_select",
-    "p": "Pistas del cuento: elegí TODAS las que llevan a la conclusión del túnel.",
-    "o": [
-     "El ayudante pasa horas en el sótano",
-     "Tiene las rodillas gastadas",
-     "La vereda suena hueca",
-     "Wilson es pelirrojo",
-     "Detrás de la casa hay un banco"
-    ],
-    "r": {
-     "correctas": [
-      "El ayudante pasa horas en el sótano",
-      "Tiene las rodillas gastadas",
-      "La vereda suena hueca",
-      "Detrás de la casa hay un banco"
-     ]
-    },
-    "e": "El pelo de Wilson es la excusa, no una pista del túnel.",
-    "n": "analizar"
-   }
-  ],
-  [
-   3,
-   {
-    "t": "multiple_choice",
-    "p": "¿Por qué conviene que Watson, y no Holmes, narre los casos?",
-    "o": [
-     "Sabe menos y así dura el suspenso",
-     "Es el culpable de los crímenes",
-     "Conoce los pensamientos de todos"
-    ],
-    "r": {
-     "correcta": "Sabe menos y así dura el suspenso"
-    },
-    "e": "Es un narrador testigo.",
-    "n": "analizar"
-   }
-  ],
-  [
-   3,
-   {
-    "t": "ordering",
-    "p": "Ordená la historia del crimen de «La liga» como ocurrió en el tiempo.",
-    "o": [
-     "La liga saca a Wilson de su casa",
-     "Clay cava el túnel hacia el banco",
-     "Holmes lo atrapa en la bóveda",
-     "Clay se emplea como ayudante de Wilson"
-    ],
-    "r": {
-     "orden": [
-      "Clay se emplea como ayudante de Wilson",
-      "La liga saca a Wilson de su casa",
-      "Clay cava el túnel hacia el banco",
-      "Holmes lo atrapa en la bóveda"
-     ]
-    },
-    "e": "Así ocurrieron los hechos; el cuento los revela al final.",
+    "e": "Por ejemplo: en el de enigma el detective razona y el orden vuelve; en el negro investiga en una ciudad corrupta y el mal sigue.",
     "n": "aplicar"
    }
   ]
@@ -2384,5 +2895,146 @@
     ]
    }
   }
- ]
+ ],
+ "libro": {
+  "titulo": "La liga de los pelirrojos",
+  "act": [
+   {
+    "t": "ordering",
+    "p": "Ordená la historia del crimen de «La liga de los pelirrojos» como ocurrió en el tiempo (no como se cuenta).",
+    "o": [
+     "Clay y su cómplice inventan la Liga de los Pelirrojos",
+     "Wilson pasa las mañanas copiando la enciclopedia",
+     "Clay cava un túnel desde el sótano de Wilson hasta el banco",
+     "La liga se disuelve y Wilson consulta a Holmes",
+     "John Clay se emplea con Wilson por la mitad del sueldo"
+    ],
+    "r": {
+     "orden": [
+      "John Clay se emplea con Wilson por la mitad del sueldo",
+      "Clay y su cómplice inventan la Liga de los Pelirrojos",
+      "Wilson pasa las mañanas copiando la enciclopedia",
+      "Clay cava un túnel desde el sótano de Wilson hasta el banco",
+      "La liga se disuelve y Wilson consulta a Holmes"
+     ]
+    },
+    "e": "La historia del crimen empezó mucho antes de que Wilson visitara a Holmes.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada detalle del cuento con lo que le revela a Holmes.",
+    "o": {
+     "izquierda": [
+      "El ayudante cobra la mitad de lo normal",
+      "Pasa horas en el sótano",
+      "Tiene las rodillas del pantalón gastadas",
+      "Detrás de la casa hay un banco"
+     ],
+     "derecha": [
+      "Ahí está el objetivo del plan",
+      "Pasa mucho tiempo arrodillado, cavando",
+      "Hace algo a escondidas",
+      "Le interesa estar en esa casa por otro motivo"
+     ]
+    },
+    "r": {
+     "pares": {
+      "El ayudante cobra la mitad de lo normal": "Le interesa estar en esa casa por otro motivo",
+      "Pasa horas en el sótano": "Hace algo a escondidas",
+      "Tiene las rodillas del pantalón gastadas": "Pasa mucho tiempo arrodillado, cavando",
+      "Detrás de la casa hay un banco": "Ahí está el objetivo del plan"
+     }
+    },
+    "e": "Holmes une detalles pequeños en una sola explicación.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué la Liga de los Pelirrojos funciona como una falsa pista en el cuento?",
+    "o": [
+     "Parece el misterio principal, pero solo sirve para vaciar la casa",
+     "Porque Wilson no es pelirrojo",
+     "Porque la liga existe de verdad y paga bien"
+    ],
+    "r": {
+     "correcta": "Parece el misterio principal, pero solo sirve para vaciar la casa"
+    },
+    "e": "Lo más llamativo distrae de lo importante: el túnel.",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "p": "Ubicá a cada personaje del cuento en su papel dentro del género.",
+    "o": {
+     "elementos": [
+      "Sherlock Holmes",
+      "El doctor Watson",
+      "Jabez Wilson",
+      "John Clay"
+     ],
+     "categorias": [
+      "Detective",
+      "Narrador testigo",
+      "Víctima",
+      "Culpable"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Sherlock Holmes": "Detective",
+      "El doctor Watson": "Narrador testigo",
+      "Jabez Wilson": "Víctima",
+      "John Clay": "Culpable"
+     }
+    },
+    "e": "Los papeles fijos del policial, en el cuento.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Holmes golpea con el bastón la vereda frente a la casa de Wilson. ¿Qué paso del método del detective está aplicando?",
+    "o": [
+     "Comprobar una hipótesis: si suena hueco, hay un túnel",
+     "Distraer al culpable",
+     "Adivinar al azar"
+    ],
+    "r": {
+     "correcta": "Comprobar una hipótesis: si suena hueco, hay un túnel"
+    },
+    "e": "Antes de actuar, Holmes comprueba lo que dedujo.",
+    "n": "analizar"
+   },
+   {
+    "t": "keywords",
+    "p": "¿«La liga de los pelirrojos» es un policial de enigma o negro? Justificá con dos rasgos del cuento.",
+    "o": {
+     "ayuda": "Nombrá el tipo y dos rasgos con ejemplos del cuento."
+    },
+    "r": {
+     "grupos": [
+      [
+       "enigma",
+       "clásico"
+      ],
+      [
+       "holmes",
+       "deduc*",
+       "razona*",
+       "observa*",
+       "pista*",
+       "watson",
+       "revela*",
+       "túnel",
+       "tunel",
+       "orden"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Es de enigma: Holmes resuelve el caso observando y razonando, y al final el orden vuelve con la captura de Clay.",
+    "n": "analizar"
+   }
+  ]
+ }
 }

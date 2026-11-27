@@ -2,252 +2,213 @@
  "slug": "leng1-m2-n2",
  "step_id": "35d71616-c7e2-4000-9579-86a55c4f3c7a",
  "materia": "Lengua y Literatura I",
- "titulo": "Pistas y falsas pistas",
+ "titulo": "Pistas y deducción",
  "sub": "Lengua y Literatura I · Misión 2 · Nivel 2",
  "escenas": [
   {
-   "t": "noticia",
-   "cinta": "LONDRES, 1890",
-   "titular": "Pagan por copiar una enciclopedia",
-   "bajada": "Solo aceptan hombres pelirrojos",
-   "emoji": "🦰",
-   "titulo": "PISTAS",
-   "sub": "y falsas pistas",
+   "t": "reto",
+   "texto": "Un hombre dice que pasó la tarde en su casa, pero sus zapatos tienen arena de playa. ¿Qué pensás?",
+   "segundos": 5,
+   "respuesta": "Que mintió: estuvo en la playa",
+   "emoji": "👞",
+   "titulo": "LEER PISTAS",
+   "sub": "pensar como detective",
    "voz": [
-    "Londres: una liga paga *cuatro libras por semana* por copiar a mano una enciclopedia.",
-    "El único requisito: *ser pelirrojo*. Raro, ¿no?",
-    "Hoy: *pistas y falsas pistas*."
-   ]
-  },
-  {
-   "t": "flujo",
-   "titulo": "EL CASO DE JABEZ WILSON",
-   "items": [
-    {
-     "txt": "1: Su ayudante le muestra el aviso",
-     "emoji": "📰"
-    },
-    {
-     "txt": "2: Copia la enciclopedia 8 semanas",
-     "emoji": "✍️"
-    },
-    {
-     "txt": "3: La liga desaparece",
-     "emoji": "🚪"
-    },
-    {
-     "txt": "4: Va a ver a Holmes",
-     "emoji": "🕵️"
-    }
-   ],
-   "voz": [
-    "Jabez Wilson, un prestamista pelirrojo, ve el aviso gracias a su *ayudante*.",
-    "Durante *ocho semanas* copia la enciclopedia, cuatro horas por día, fuera de su negocio.",
-    "Un día encuentra un cartel: *la liga se disolvió*.",
-    "Desconcertado, va a ver a *Sherlock Holmes*."
-   ]
-  },
-  {
-   "t": "pizarra",
-   "lineas": [
-    {
-     "txt": "Falsa pista",
-     "color": "sol",
-     "marca": "subraya"
-    },
-    {
-     "txt": "Dato que distrae y aleja de la verdad"
-    }
-   ],
-   "voz": [
-    "Una *pista* es un dato que acerca a la verdad.",
-    "Una *falsa pista* distrae: hace mirar hacia el lado equivocado."
-   ]
-  },
-  {
-   "t": "matriz",
-   "titulo": "TIPOS DE PISTAS",
-   "celdas": [
-    {
-     "cab": "MATERIALES",
-     "txt": "objetos, huellas, marcas"
-    },
-    {
-     "cab": "TESTIMONIOS",
-     "txt": "lo que dicen los testigos"
-    },
-    {
-     "cab": "CONTRADICCIONES",
-     "txt": "lo que no encaja"
-    },
-    {
-     "cab": "AUSENCIAS",
-     "txt": "lo que debería estar y no está"
-    }
-   ],
-   "voz": [
-    "Las pistas no son todas iguales.",
-    "*Materiales*: objetos, huellas, marcas en la ropa.",
-    "*Testimonios*: lo que cuentan los testigos, que pueden mentir o equivocarse.",
-    "*Contradicciones*: algo que no encaja con lo demás.",
-    "Y las más finas, las *ausencias*: en otro caso de Holmes, la pista clave es un perro que *no ladró* esa noche."
+    "Reto: un hombre jura que pasó la tarde en su casa, pero sus zapatos tienen arena de playa.",
+    "Tenés cinco segundos.",
+    "Mintió: estuvo en la playa. Acabás de *leer una pista*."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Coartada",
-   "texto": "Prueba de que un sospechoso estaba en otro lugar cuando ocurrió el crimen",
-   "emoji": "⏰",
+   "palabra": "Pista",
+   "texto": "Detalle que acerca a la verdad del caso y permite sacar una conclusión.",
+   "emoji": "🧩",
    "voz": [
-    "Un sospechoso puede tener *coartada*: una prueba de que estaba en otro lugar cuando ocurrió el crimen.",
-    "El detective la pone a prueba: si la coartada se cae, el sospechoso queda en la mira."
+    "Una *pista* es un detalle que acerca a la verdad del caso.",
+    "Sola no dice mucho; unida a otras, permite sacar una conclusión."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "Pista",
+    "texto": "el candado se abrió con su propia llave",
+    "emoji": "🔑"
+   },
+   "b": {
+    "cab": "Falsa pista",
+    "texto": "el vecino nuevo tiene cara de malo",
+    "emoji": "🎭"
+   },
+   "signo": "≠",
+   "voz": [
+    "Ahora compará.",
+    "Una *pista*: el candado se abrió con su propia llave. Dice algo concreto sobre quién fue.",
+    "Una *falsa pista*: el vecino nuevo tiene cara de malo. Distrae, pero no prueba nada."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "EL MÉTODO DEL DETECTIVE",
+   "items": [
+    {
+     "txt": "Observar",
+     "emoji": "👀"
+    },
+    {
+     "txt": "Relacionar",
+     "emoji": "🔗"
+    },
+    {
+     "txt": "Deducir",
+     "emoji": "💡"
+    },
+    {
+     "txt": "Comprobar",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "El detective de enigma sigue siempre el mismo método.",
+    "Primero *observa* lo que los demás pasan por alto.",
+    "Después *relaciona* ese detalle con lo que ya sabe.",
+    "Entonces *deduce*: saca una conclusión lógica.",
+    "Y antes de acusar, *comprueba*."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "UNA DEDUCCIÓN",
+   "vinetas": [
+    {
+     "emojis": [
+      "🕵️",
+      "☕"
+     ],
+     "txt": "Hay dos tazas en la mesa.",
+     "quien": "Detective"
+    },
+    {
+     "emojis": [
+      "🏠"
+     ],
+     "txt": "Pero la víctima vivía sola.",
+     "quien": "Detective"
+    },
+    {
+     "emojis": [
+      "💡"
+     ],
+     "txt": "Alguien la visitó esta mañana.",
+     "quien": "Detective"
+    }
+   ],
+   "voz": [
+    "Mirá el método en acción. La detective ve dos tazas de café en la mesa.",
+    "Lo relaciona con un dato: la víctima vivía sola.",
+    "Deduce que esa mañana alguien la visitó. Ahora tiene que averiguar quién."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "Tres sospechosos. Uno estaba en un hospital a la hora del robo, con testigos. ¿Sigue en la lista?",
+   "a": {
+    "txt": "Sí, sigue",
+    "emoji": "🤔"
+   },
+   "b": {
+    "txt": "No, se descarta",
+    "emoji": "❌"
+   },
+   "correcta": "b",
+   "resultado": "Tiene coartada: no pudo estar en dos lugares a la vez.",
+   "voz": [
+    "¿Qué creés? Uno de los tres sospechosos estaba en un hospital a la hora del robo, y hay testigos.",
+    "Pensalo.",
+    "Se descarta: tiene una *coartada*. Descartar también es investigar."
    ]
   },
   {
    "t": "clasificar",
-   "voz": [
-    "¿Pista o distracción?",
-    "*Pistas*: el ayudante cobra la mitad del sueldo, pasa horas en el sótano y tiene las rodillas gastadas.",
-    "*Distracciones*: la liga misma y la enciclopedia."
-   ],
    "cajas": [
     {
-     "cab": "PISTA",
+     "cab": "Pista",
      "emoji": "🧩"
     },
     {
-     "cab": "DISTRACCIÓN",
+     "cab": "Falsa pista",
      "emoji": "🎭"
     }
    ],
    "fichas": [
     {
-     "txt": "Ayudante barato",
+     "txt": "huella de barro",
      "caja": 0
     },
     {
-     "txt": "Horas en el sótano",
+     "txt": "reloj mojado",
      "caja": 0
     },
     {
-     "txt": "Rodillas gastadas",
-     "caja": 0
-    },
-    {
-     "txt": "La enciclopedia",
+     "txt": "mirada nerviosa",
      "caja": 1
     },
     {
-     "txt": "La liga",
+     "txt": "mala fama",
      "caja": 1
     }
-   ]
-  },
-  {
-   "t": "quiz4",
-   "pregunta": "¿Para qué querría alguien a Wilson fuera de su casa cuatro horas por día?",
-   "opciones": [
-    "Para hacerle un favor",
-    "Para robarle a él",
-    "Para usar su casa sin que lo vea"
-   ],
-   "correcta": 2,
-   "voz": [
-    "Pensá como Holmes: ¿para qué querría alguien a Wilson *fuera de su casa* cuatro horas por día?",
-    "¿para hacerle un favor, para robarle a él, o para usar su casa sin que lo vea?",
-    "Para *usar la casa sin que lo vea*. Si quisieran robarle, no le pagarían cuatro libras por semana."
-   ]
-  },
-  {
-   "t": "corrige",
-   "titulo": "ERRORES TÍPICOS",
-   "cambios": [
-    {
-     "antes": "Seguir lo llamativo",
-     "despues": "Dudar de lo raro",
-     "motivo": ""
-    },
-    {
-     "antes": "Ignorar detalles",
-     "despues": "Anotar todo",
-     "motivo": ""
-    }
    ],
    "voz": [
-    "Errores típicos.",
-    "Creerle todo al primer dato *llamativo*.",
-    "Y dejar de lado los *detalles chicos*, como unas rodillas gastadas."
+    "Clasifiquemos lo que encontró la detective.",
+    "Una huella de barro y un reloj mojado son *pistas*: datos que se pueden comprobar.",
+    "Una mirada nerviosa o la mala fama de alguien son *falsas pistas*: impresiones que no prueban nada."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "PENSAR EL MOTIVO",
-   "items": [
-    {
-     "txt": "El trabajo no tiene utilidad real.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Obliga a Wilson a salir cuatro horas por día.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Alguien necesita la casa vacía.",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "La liga es una trampa.",
-     "emoji": "4️⃣"
-    }
-   ],
+   "t": "vof",
+   "afirmacion": "El buen detective adivina quién fue y después busca pruebas.",
+   "emoji": "🕵️",
+   "verdadero": false,
+   "explicacion": "No adivina: cada conclusión sale de pistas que se pueden comprobar.",
    "voz": [
-    "Resolvamos un caso: ¿Para qué alguien inventaría una liga que paga por copiar una enciclopedia?",
-    "El trabajo no tiene utilidad real.",
-    "Obliga a Wilson a salir cuatro horas por día.",
-    "Alguien necesita la casa vacía.",
-    "La liga es una trampa."
-   ]
-  },
-  {
-   "t": "consejo",
-   "texto": "En un policial, lo más raro suele ser la distracción; la verdad está en los detalles chicos.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: En un policial, lo más raro suele ser la distracción; la verdad está en los detalles chicos."
+    "Verdadero o falso: el buen detective adivina quién fue y después busca pruebas.",
+    "Pensá en el método.",
+    "Falso: el detective de enigma no adivina. Cada conclusión sale de las pistas."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Pista*: acerca a la verdad.",
-    "*Falsa pista*: distrae.",
-    "En el caso, *la liga era una trampa*.",
-    "Y la clave está en *los detalles chicos*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "PISTA",
-     "acerca a la verdad"
+     "Pista",
+     "detalle que acerca a la verdad"
     ],
     [
-     "FALSA PISTA",
-     "distrae"
+     "Falsa pista",
+     "detalle que distrae"
     ],
     [
-     "EL CASO",
-     "la liga era una trampa"
+     "Deducción",
+     "conclusión lógica a partir de pistas"
     ],
     [
-     "CLAVE",
-     "los detalles chicos"
+     "Coartada",
+     "prueba de que alguien estaba en otro lugar"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "Leer como detective es separar lo que sirve de lo que distrae.",
+    "La pista.",
+    "La falsa pista.",
+    "La deducción.",
+    "Y la coartada, que descarta sospechosos. ¡A practicar!"
+   ]
   }
  ]
 }

@@ -2,185 +2,171 @@
  "slug": "leng1-m2-n4",
  "step_id": "af7346be-4827-4ab0-a5c2-13ed09056a5d",
  "materia": "Lengua y Literatura I",
- "titulo": "Escribo un enigma",
+ "titulo": "Del enigma al policial negro",
  "sub": "Lengua y Literatura I · Misión 2 · Nivel 4",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Juan",
-    "emoji": "👦"
-   },
-   "mensajes": [
+   "t": "documental",
+   "emojis": [
+    "🌃",
+    "🌧️",
+    "🚬"
+   ],
+   "lugar": "Una ciudad de noche",
+   "rotulos": [
     {
-     "yo": false,
-     "txt": "¡Desapareció la torta del cumple! 🎂"
+     "txt": "Estados Unidos, 1929",
+     "sub": "gángsters y policías comprados"
     },
     {
-     "yo": true,
-     "txt": "¿Alguna pista?"
-    },
-    {
-     "yo": false,
-     "txt": "Migas en el sillón y el perro escondido 🐕"
+     "txt": "Otro tipo de detective",
+     "sub": "cansado, solo y en la calle"
     }
    ],
-   "titulo": "ESCRIBO",
-   "sub": "un enigma",
    "voz": [
-    "Juan escribe: ¡desapareció la torta del cumple!",
-    "Lu: ¿alguna pista?",
-    "Juan: migas en el sillón y el perro escondido…",
-    "¡Ya tenés un enigma! Hoy: *escribo un enigma*."
+    "Estados Unidos, fines de la década de 1920: ciudades con gángsters, contrabando y policías comprados.",
+    "En los relatos de esa época aparece otro tipo de detective, que no razona tranquilo en un sillón: camina de noche, recibe golpes y desconfía de todos. Nace el *policial negro*."
+   ]
+  },
+  {
+   "t": "versus",
+   "a": {
+    "txt": "Policial de enigma",
+    "emoji": "🧩",
+    "datos": [
+     "un rompecabezas",
+     "el detective razona",
+     "el orden vuelve"
+    ]
+   },
+   "b": {
+    "txt": "Policial negro",
+    "emoji": "🌃",
+    "datos": [
+     "una ciudad violenta",
+     "el detective se arriesga",
+     "el mal sigue"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Dos formas del mismo género",
+   "voz": [
+    "Cara a cara. El *policial de enigma*: el crimen es un rompecabezas y el detective lo resuelve con la razón.",
+    "El *policial negro*: el crimen muestra una ciudad violenta y el detective arriesga el cuerpo.",
+    "En el de enigma, al final, el orden vuelve. En el negro, se resuelve un caso, pero la corrupción sigue.",
+    "No hay ganador: son dos formas del mismo género."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "QUÉ CAMBIA",
+   "columnas": [
+    "",
+    "Enigma",
+    "Negro"
+   ],
+   "filas": [
+    [
+     "¿Quién investiga?",
+     "genio aficionado",
+     "detective profesional"
+    ],
+    [
+     "¿Dónde?",
+     "una casa, un tren",
+     "la calle, los bares"
+    ],
+    [
+     "¿Qué importa?",
+     "quién lo hizo",
+     "por qué pasa"
+    ]
+   ],
+   "voz": [
+    "Mirá qué cambia de un tipo al otro.",
+    "En el de enigma investiga un genio aficionado; en el negro, un detective profesional que cobra por su trabajo.",
+    "El de enigma ocurre en lugares cerrados, como una mansión o un tren; el negro, en la calle y en los bares.",
+    "Y la pregunta cambia: el enigma pregunta *quién lo hizo*; el negro pregunta *por qué pasa*, qué está podrido en esa sociedad."
    ]
   },
   {
    "t": "linea",
-   "titulo": "PLANIFICO MI ENIGMA",
+   "titulo": "EL GÉNERO VIAJA",
    "eventos": [
     {
-     "fecha": "1",
-     "txt": "El misterio: qué pasó",
-     "emoji": "❓"
+     "fecha": "1929",
+     "txt": "Cosecha roja, de Dashiell Hammett",
+     "emoji": "🇺🇸"
     },
     {
-     "fecha": "2",
-     "txt": "El detective",
-     "emoji": "🕵️"
+     "fecha": "1942",
+     "txt": "Borges y Bioy: Isidro Parodi",
+     "emoji": "🇦🇷"
     },
     {
-     "fecha": "3",
-     "txt": "2 pistas y 1 falsa pista",
-     "emoji": "🧩"
-    },
-    {
-     "fecha": "4",
-     "txt": "La revelación",
-     "emoji": "💡"
+     "fecha": "1953",
+     "txt": "Walsh: Variaciones en rojo",
+     "emoji": "🇦🇷"
     }
    ],
    "voz": [
-    "Antes de escribir, planificá. *El misterio*: qué pasó.",
-    "*El detective*: quién investiga.",
-    "*Las pistas*: dos verdaderas y una falsa.",
-    "*La revelación*: cómo se resuelve."
+    "En 1929, Dashiell Hammett publica *Cosecha roja*, una de las primeras novelas negras.",
+    "En 1942, Borges y Bioy Casares crean a Isidro Parodi, un detective que resuelve casos desde la cárcel, sin moverse.",
+    "Y en 1953, Rodolfo Walsh publica *Variaciones en rojo*. El policial también se escribe en la Argentina."
    ]
   },
   {
-   "t": "flujo",
-   "titulo": "LA ESTRUCTURA",
+   "t": "dilema",
+   "situacion": "Un detective descubre que el asesino trabaja para el político más poderoso de la ciudad.",
+   "emoji": "🕴️",
+   "a": {
+    "txt": "Lo denuncia igual",
+    "consecuencia": "arriesga su vida y su trabajo",
+    "emoji": "⚖️"
+   },
+   "b": {
+    "txt": "Se calla",
+    "consecuencia": "cobra, pero el crimen queda impune",
+    "emoji": "💰"
+   },
+   "voz": [
+    "Un dilema típico del policial negro: el detective descubre que el asesino trabaja para el político más poderoso de la ciudad.",
+    "Si lo denuncia, arriesga la vida y el trabajo.",
+    "Si se calla, cobra, pero el crimen queda impune. En el negro, el detective siempre tiene que elegir."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "Fragmento: «Llovía sobre el puerto. Sabía que el comisario también cobraba de la banda.» ¿Qué tipo de policial es?",
+   "opciones": [
+    "De enigma",
+    "Negro",
+    "No es policial"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Leé este fragmento: llovía sobre el puerto, y el detective sabía que el comisario también cobraba de la banda.",
+    "Fijate en el lugar y en lo que muestra de la sociedad.",
+    "Es *policial negro*: ciudad de noche y corrupción en la propia policía."
+   ]
+  },
+  {
+   "t": "logro",
+   "titulo": "¡Misión cumplida!",
    "items": [
-    {
-     "txt": "Aparece el enigma",
-     "emoji": "❓"
-    },
-    {
-     "txt": "Investigación",
-     "emoji": "🔍"
-    },
-    {
-     "txt": "Revelación",
-     "emoji": "💡"
-    }
+    "El policial y sus personajes",
+    "Pistas, falsas pistas y deducción",
+    "Las dos historias y el narrador testigo",
+    "Del enigma al policial negro"
    ],
+   "xp": 100,
    "voz": [
-    "Situación inicial: aparece el *enigma*.",
-    "Desarrollo: la *investigación*, pista por pista.",
-    "Desenlace: la *revelación*."
+    "¡Terminaste las clases de la misión!",
+    "Ya reconocés un policial y sus personajes.",
+    "Sabés separar pistas de falsas pistas.",
+    "Entendés las dos historias y al narrador testigo.",
+    "Y distinguís el enigma del policial negro. Ahora, ¡a leer como detective!"
    ]
-  },
-  {
-   "t": "bloques",
-   "titulo": "MIS SOSPECHOSOS",
-   "items": [
-    {
-     "cab": "PASO 1",
-     "txt": "Motivo: ¿por qué lo haría?"
-    },
-    {
-     "cab": "PASO 2",
-     "txt": "Oportunidad: ¿pudo estar ahí?"
-    },
-    {
-     "cab": "PASO 3",
-     "txt": "Coartada: ¿dónde dice que estaba?"
-    }
-   ],
-   "voz": [
-    "Un buen enigma tiene *al menos tres sospechosos*. De cada uno, pensá:",
-    "*Motivo*: ¿por qué lo haría?",
-    "*Oportunidad*: ¿pudo estar en el lugar?",
-    "*Coartada*: ¿dónde dice que estaba? Y el culpable, ¿cómo la falsificó?"
-   ]
-  },
-  {
-   "t": "consejo",
-   "voz": [
-    "Truco: la solución tiene que estar *en las pistas*. El lector tiene que poder decir: ¡claro, estaba ahí!"
-   ],
-   "titulo": "JUEGO LIMPIO",
-   "texto": "La solución tiene que salir de las pistas",
-   "emoji": "🤝"
-  },
-  {
-   "t": "errores",
-   "voz": [
-    "Errores típicos.",
-    "Resolver el caso *por casualidad*.",
-    "Y contar la solución *al principio*."
-   ],
-   "items": [
-    {
-     "mal": "Resolver por casualidad",
-     "bien": "Resolver con pistas"
-    },
-    {
-     "mal": "Contar el final antes",
-     "bien": "Guardar la revelación"
-    }
-   ]
-  },
-  {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Escribí tu propio enigma, con pistas y revelación",
-   "emoji": "✍️",
-   "voz": [
-    "Ahora te toca a vos: escribí *tu propio enigma*, con detective, pistas, sospechosos y revelación. Lo escribís en las *actividades* de este nivel, y el tutor te lo corrige con pistas."
-   ]
-  },
-  {
-   "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Planificar*: misterio, detective y pistas.",
-    "*Estructura*: enigma, investigación y revelación.",
-    "*Pistas*: dos verdaderas y una falsa.",
-    "Y *juego limpio*: la solución en las pistas.",
-    "¡Misión 2 terminada! Ahora, *a practicar*."
-   ],
-   "items": [
-    [
-     "PLANIFICAR",
-     "misterio, detective, pistas"
-    ],
-    [
-     "ESTRUCTURA",
-     "enigma, investigación, revelación"
-    ],
-    [
-     "PISTAS",
-     "2 verdaderas, 1 falsa"
-    ],
-    [
-     "JUEGO LIMPIO",
-     "la solución en las pistas"
-    ]
-   ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
   }
  ]
 }
