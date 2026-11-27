@@ -1,7 +1,7 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 8,
- "practica": "Práctica general: la descripción",
+ "practica": "Actividades generales",
  "examen_titulo": "Nivel jefe: la descripción",
  "niveles": {
   "1": {
@@ -182,7 +182,277 @@
     "aplicar",
     "analizar",
     "error"
-   ]
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Describir es elegir rasgos",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Versión",
+        "items": [
+         {
+          "nombre": "Lista",
+          "texto": "{{Don Ernesto tiene dos ojos, una nariz, dos orejas, pelo, camisa y zapatos.|Enumera todo sin elegir: no se distingue de nadie.}}"
+         },
+         {
+          "nombre": "Selección",
+          "texto": "{{Don Ernesto tiene las cejas tan espesas que parecen dos techos sobre los ojos|Un rasgo único que lo hace reconocible.}}, y {{siempre lleva un lápiz detrás de la oreja|Un detalle que dice algo de él.}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué rasgo describe mejor a cada persona, para que el lector la reconozca?",
+        "items": [
+         {
+          "cons": "Querés describir a la bibliotecaria del barrio.",
+          "ops": [
+           "Lleva los anteojos colgados de una cadenita y habla en susurros",
+           "Tiene dos brazos y dos piernas",
+           "Es una persona"
+          ],
+          "ayuda": "Buscá lo que la distingue de los demás."
+         },
+         {
+          "cons": "Querés describir a tu entrenador de fútbol.",
+          "ops": [
+           "Tiene la voz ronca de tanto gritar indicaciones",
+           "Tiene pelo en la cabeza",
+           "Usa ropa"
+          ],
+          "ayuda": "Un rasgo propio vale más que uno que tiene todo el mundo."
+         },
+         {
+          "cons": "Querés describir a una vecina muy vieja.",
+          "ops": [
+           "Tiene las manos llenas de arrugas y siempre huelen a jabón",
+           "Es una señora",
+           "Vive en una casa"
+          ],
+          "ayuda": "Elegí un detalle concreto y sensorial."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Descripción",
+        "texto": "La descripción es el texto o el fragmento que muestra cómo es una persona, un lugar o un objeto, eligiendo los rasgos que mejor lo distinguen."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Describir no es hacer un inventario: si se nombra todo, nada se destaca. Quien describe selecciona pocos rasgos, los más llamativos o significativos, para que el lector pueda imaginar a esa persona y no a cualquier otra."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Se eligen rasgos, no se enumera todo.",
+         "Mejor lo propio que lo que tienen todos.",
+         "El objetivo: que el lector pueda imaginar."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Retrato físico y retrato psicológico",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Retrato",
+        "items": [
+         {
+          "nombre": "La abuela",
+          "texto": "Mi abuela es {{bajita, de pelo blanco recogido en un rodete|Físico: cómo se ve.}} y {{ojos chiquitos detrás de unos anteojos enormes|Físico.}}. {{Es paciente con todos|Psicológico: su forma de ser.}}, pero {{se enoja si alguien llega tarde a la mesa|Psicológico: un rasgo de carácter.}}.",
+          "cierre": "Por fuera y por dentro: un retrato completo."
+         },
+         {
+          "nombre": "El vecino",
+          "texto": "El vecino del quinto es {{altísimo y flaco, con la espalda un poco encorvada|Físico.}}. {{Es tímido: saluda bajando la vista|Psicológico, mostrado con un gesto.}} y {{generoso: les arregla la bici a todos los chicos del edificio|Psicológico, mostrado con una acción.}}.",
+          "cierre": "El carácter se muestra mejor con acciones."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Rasgo físico o psicológico?",
+        "cajas": [
+         "Físico",
+         "Psicológico"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Tiene una cicatriz en la ceja izquierda",
+          0
+         ],
+         [
+          "Usa el pelo rapado",
+          0
+         ],
+         [
+          "Camina arrastrando los pies",
+          0
+         ],
+         [
+          "Tiene las uñas pintadas de verde",
+          0
+         ],
+         [
+          "Nunca pierde la calma",
+          1
+         ],
+         [
+          "Es desconfiada con los desconocidos",
+          1
+         ],
+         [
+          "Le encanta hacer reír a los demás",
+          1
+         ],
+         [
+          "Es muy orgulloso",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Retrato",
+        "texto": "El retrato es la descripción de una persona; puede ser físico, cuando muestra cómo se ve, o psicológico, cuando muestra cómo es su carácter."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un retrato completo suele combinar los dos: primero lo que se ve, después cómo es la persona. Conviene seguir un orden, de lo general a lo particular, para que el lector arme la imagen de a poco y no se pierda entre detalles sueltos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Físico: cuerpo, cara, ropa, gestos.",
+         "Psicológico: carácter y forma de ser.",
+         "Orden: de lo general a lo particular."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Mostrar en lugar de decir",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Carácter",
+        "items": [
+         {
+          "nombre": "Decir",
+          "texto": "{{Tomás es muy distraído.|Nombra el rasgo: el lector tiene que creerle al narrador.}}"
+         },
+         {
+          "nombre": "Mostrar",
+          "texto": "{{Tomás salió a la calle con una zapatilla de cada color y el cepillo de dientes en el bolsillo.|Muestra el rasgo con un hecho: el lector lo descubre solo.}}"
+         },
+         {
+          "nombre": "Decir",
+          "texto": "{{Ana es valiente.|Solo nombra.}}"
+         },
+         {
+          "nombre": "Mostrar",
+          "texto": "{{Cuando el perro grande se acercó gruñendo, Ana se puso delante de su hermanito y no se movió.|Una acción concreta muestra la valentía.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué rasgo de carácter muestra cada acción?",
+        "items": [
+         {
+          "cons": "«Lucía cuenta las monedas tres veces antes de pagar y nunca invita nada.»",
+          "ops": [
+           "Es tacaña",
+           "Es generosa",
+           "Es distraída"
+          ],
+          "ayuda": "Pensá qué dice de ella lo que hace."
+         },
+         {
+          "cons": "«Martín se queda después de clase a ayudar a los que no entendieron, sin que nadie se lo pida.»",
+          "ops": [
+           "Es solidario",
+           "Es tímido",
+           "Es impaciente"
+          ],
+          "ayuda": "Ayuda sin que se lo pidan."
+         },
+         {
+          "cons": "«La señora Rita revisa tres veces que la puerta esté cerrada y mira por la ventana cada vez que pasa un auto.»",
+          "ops": [
+           "Es desconfiada",
+           "Es alegre",
+           "Es perezosa"
+          ],
+          "ayuda": "Fijate en lo que repite."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Mostrar el carácter",
+        "texto": "Mostrar el carácter es presentar un rasgo psicológico a través de acciones, gestos o palabras del personaje, en lugar de nombrarlo directamente."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cuando el texto dice «es valiente», el lector tiene que creerle; cuando muestra a alguien que se planta frente a un perro furioso, el lector lo comprueba y lo recuerda. Los buenos retratos combinan pocas afirmaciones con muchas acciones que las prueban."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Decir: nombra el rasgo («es generosa»).",
+         "Mostrar: lo prueba con una acción.",
+         "Mostrar convence y se recuerda más."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Descripción",
+      "definicion": "muestra cómo es una persona, un lugar o un objeto eligiendo los rasgos que mejor lo distinguen.",
+      "ejemplo": "Las cejas espesas como dos techos"
+     },
+     {
+      "concepto": "Retrato físico",
+      "definicion": "describe cómo se ve una persona: cuerpo, cara, ropa y gestos.",
+      "ejemplo": "Bajita, con el pelo blanco en un rodete"
+     },
+     {
+      "concepto": "Retrato psicológico",
+      "definicion": "describe el carácter y la forma de ser de una persona.",
+      "ejemplo": "Paciente, pero se enoja si llegan tarde"
+     },
+     {
+      "concepto": "Selección de rasgos",
+      "definicion": "es elegir pocos rasgos propios y significativos en lugar de enumerarlo todo.",
+      "ejemplo": "Un lápiz siempre detrás de la oreja"
+     },
+     {
+      "concepto": "Mostrar el carácter",
+      "definicion": "es presentar un rasgo con acciones o gestos, en lugar de nombrarlo.",
+      "ejemplo": "Se planta frente al perro: es valiente"
+     }
+    ]
+   }
   },
   "2": {
    "objetivo": "Vas a describir un lugar con orden, usando los sentidos y conectores de ubicación.",
@@ -379,7 +649,257 @@
     "aplicar",
     "analizar",
     "error"
-   ]
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El orden espacial",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Lugar",
+        "items": [
+         {
+          "nombre": "La cocina",
+          "texto": "{{Al entrar|Punto de partida: la puerta.}}, se ve una mesa de madera con un mantel a cuadros. {{A la derecha|Conector de lugar: sigue el recorrido.}}, la heladera vieja. {{Al fondo|Más lejos.}}, una ventana que da al patio, y {{sobre la ventana|Hacia arriba.}}, una planta que cuelga.",
+          "cierre": "Un recorrido ordenado, como si camináramos por el lugar."
+         },
+         {
+          "nombre": "La plaza",
+          "texto": "{{En el centro de la plaza|Punto de partida: el centro.}} hay una fuente seca. {{Alrededor|Se abre hacia afuera.}}, bancos verdes descascarados. {{Más allá|Más lejos todavía.}}, los juegos, y {{detrás de los juegos|Al final del recorrido.}}, una hilera de paraísos.",
+          "cierre": "Del centro hacia afuera: otro orden posible."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "ordenar_x",
+       "p": {
+        "consigna": "Ordená la descripción para que siga un recorrido de afuera hacia adentro.",
+        "items": [
+         {
+          "lista": [
+           "Desde la vereda se ve una casa de rejas negras",
+           "Al cruzar el portón aparece un jardín con rosales",
+           "Adentro, el living tiene un sillón gastado",
+           "En el fondo del living, una escalera sube al primer piso"
+          ]
+         },
+         {
+          "lista": [
+           "Desde la ruta se ve el techo rojo de la escuela rural",
+           "Junto a la tranquera hay un mástil con la bandera",
+           "En el patio, dos árboles dan sombra a los bancos",
+           "Dentro del aula, los pupitres miran hacia el pizarrón"
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Orden espacial",
+        "texto": "El orden espacial es el recorrido que sigue una descripción para presentar un lugar: de afuera hacia adentro, de cerca a lejos, de arriba hacia abajo o de izquierda a derecha."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Si los elementos aparecen mezclados, el lector no puede armar el lugar en su cabeza. Por eso se elige un punto de partida y un recorrido, y se usan conectores de lugar, como «al fondo», «a la derecha» o «sobre», que funcionan como las indicaciones de un mapa."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Un punto de partida y un recorrido.",
+         "Conectores: al fondo, junto a, sobre, detrás de.",
+         "Sin orden, el lector se pierde."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Describir con los cinco sentidos",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Lugar",
+        "items": [
+         {
+          "nombre": "La panadería",
+          "texto": "En la panadería {{el aire huele a pan recién horneado y a canela|Olfato.}}. {{Las medialunas brillan en la vidriera|Vista.}}, {{se escucha el chirrido de la puerta del horno|Oído.}} y {{el mostrador está tibio al tacto|Tacto.}}.",
+          "cierre": "Cuatro sentidos: el lector casi está ahí."
+         },
+         {
+          "nombre": "La playa",
+          "texto": "{{El sol rebota en la arena blanca|Vista.}}, {{las olas rompen con un rugido parejo|Oído.}}, {{la brisa trae olor a sal|Olfato.}} y {{en los labios queda un gusto salado|Gusto.}}.",
+          "cierre": "Hasta el gusto puede aparecer."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Con qué sentido se percibe cada detalle?",
+        "cajas": [
+         "Vista",
+         "Oído",
+         "Olfato",
+         "Tacto"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Una pared pintada de amarillo",
+          0
+         ],
+         [
+          "La luz que entra por las persianas",
+          0
+         ],
+         [
+          "El tic tac de un reloj de pared",
+          1
+         ],
+         [
+          "Perros que ladran a lo lejos",
+          1
+         ],
+         [
+          "Olor a humedad en el sótano",
+          2
+         ],
+         [
+          "Perfume de jazmines en el patio",
+          2
+         ],
+         [
+          "La baranda helada de la escalera",
+          3
+         ],
+         [
+          "Una alfombra suave bajo los pies",
+          3
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Descripción sensorial",
+        "texto": "La descripción sensorial presenta un lugar a través de lo que se percibe con varios sentidos: vista, oído, olfato, tacto y gusto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La vista es el sentido que más usamos, pero los olores, los sonidos y las texturas hacen que el lector sienta que está en el lugar. Un buen detalle sensorial, como el olor a pan o el frío de una baranda, vale más que muchas líneas sobre colores y tamaños."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "No te quedes solo con la vista.",
+         "Olores y sonidos dan vida al lugar.",
+         "Un detalle exacto vale más que muchos generales."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La atmósfera",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Atmósfera",
+        "items": [
+         {
+          "nombre": "Acogedora",
+          "texto": "La casa {{olía a torta en el horno|Olor agradable.}}; {{la luz amarilla de la lámpara caía sobre el sillón|Luz cálida.}} y {{se oía a alguien tararear en la cocina|Sonido familiar.}}."
+         },
+         {
+          "nombre": "Inquietante",
+          "texto": "La casa {{olía a encierro|Olor desagradable.}}; {{una sola lamparita parpadeaba al final del pasillo|Luz débil y cambiante.}} y {{algo crujía en el piso de arriba|Sonido sin explicación.}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué atmósfera crea cada descripción?",
+        "items": [
+         {
+          "cons": "«Las nubes negras tapaban la luna; el viento hacía golpear una persiana suelta y nadie contestaba en la casa.»",
+          "ops": [
+           "Inquietante",
+           "Alegre",
+           "Tranquila"
+          ],
+          "ayuda": "Oscuridad, ruidos y silencio."
+         },
+         {
+          "cons": "«Los chicos corrían entre los puestos de la feria, sonaba una cumbia y olía a garrapiñada.»",
+          "ops": [
+           "Festiva",
+           "Triste",
+           "Amenazante"
+          ],
+          "ayuda": "Movimiento, música y olores dulces."
+         },
+         {
+          "cons": "«El lago estaba quieto como un espejo; solo se oía, a lo lejos, el canto de un zorzal.»",
+          "ops": [
+           "Serena",
+           "Caótica",
+           "Peligrosa"
+          ],
+          "ayuda": "Quietud y un solo sonido suave."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Atmósfera",
+        "texto": "La atmósfera es la sensación general que transmite un lugar descripto, como calma, alegría o miedo, y se construye con la elección de los detalles."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un mismo lugar puede parecer acogedor o amenazante según qué detalles se elijan: la luz, los sonidos, los olores y el clima. Cuando leas una descripción, preguntate qué sensación te deja; cuando escribas, elegí todos los detalles en la misma dirección."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "La atmósfera es la sensación del lugar.",
+         "Se arma con luz, sonidos, olores y clima.",
+         "Todos los detalles apuntan a la misma sensación."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Orden espacial",
+      "definicion": "es el recorrido que sigue la descripción de un lugar: de afuera hacia adentro, de cerca a lejos o de arriba hacia abajo.",
+      "ejemplo": "Al entrar… a la derecha… al fondo"
+     },
+     {
+      "concepto": "Conectores de lugar",
+      "definicion": "son palabras que ubican los elementos y guían al lector por el recorrido.",
+      "ejemplo": "junto a, sobre, detrás de, al fondo"
+     },
+     {
+      "concepto": "Descripción sensorial",
+      "definicion": "usa varios sentidos, no solo la vista, para que el lector sienta el lugar.",
+      "ejemplo": "Olor a canela y el chirrido del horno"
+     },
+     {
+      "concepto": "Atmósfera",
+      "definicion": "es la sensación general que transmite un lugar, construida con los detalles elegidos.",
+      "ejemplo": "Una lamparita que parpadea: inquietante"
+     }
+    ]
+   }
   },
   "3": {
    "objetivo": "Vas a elegir adjetivos precisos y usar comparaciones y metáforas para que la descripción diga más.",
@@ -573,7 +1093,307 @@
     "aplicar",
     "analizar",
     "error"
-   ]
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Adjetivos precisos",
+      "ejemplo": {
+       "motor": "transformar",
+       "p": {
+        "items": [
+         {
+          "nombre": "La casa",
+          "antes": "Era una casa linda.",
+          "pasos": [
+           {
+            "v": "Era una casa {{luminosa}}.",
+            "txt": "«Linda» no dice cómo es; «luminosa» sí."
+           },
+           {
+            "v": "Era una casa luminosa, {{con ventanales que daban al río}}.",
+            "txt": "Un detalle concreto completa la imagen."
+           }
+          ],
+          "cierre": "Del adjetivo vago al preciso."
+         },
+         {
+          "nombre": "La comida",
+          "antes": "La sopa estaba rica.",
+          "pasos": [
+           {
+            "v": "La sopa estaba {{espesa y humeante}}.",
+            "txt": "Dos adjetivos exactos reemplazan uno vago."
+           },
+           {
+            "v": "La sopa estaba espesa y humeante, {{con olor a zapallo}}.",
+            "txt": "Se suma un sentido."
+           }
+          ],
+          "cierre": "El lector ya puede imaginarla."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué adjetivo da una imagen más precisa?",
+        "items": [
+         {
+          "cons": "Un perro ___ dormía en el umbral.",
+          "ops": [
+           "sarnoso",
+           "feo",
+           "normal"
+          ],
+          "ayuda": "Buscá el que te permite verlo."
+         },
+         {
+          "cons": "Llegamos a un pueblo ___ y silencioso.",
+          "ops": [
+           "polvoriento",
+           "lindo",
+           "bueno"
+          ],
+          "ayuda": "Uno vago y uno exacto: elegí el exacto."
+         },
+         {
+          "cons": "La abuela tenía las manos ___.",
+          "ops": [
+           "arrugadas",
+           "raras",
+           "normales"
+          ],
+          "ayuda": "Un rasgo que se puede ver."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adjetivo preciso",
+        "texto": "Un adjetivo preciso es el que muestra un rasgo concreto que el lector puede imaginar, a diferencia de los vagos, como lindo, feo, bueno o raro."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los adjetivos vagos dicen la opinión de quien escribe, pero no cómo es la cosa: «linda» puede significar mil cosas. Los precisos, como luminosa, polvoriento o arrugadas, muestran. Además, conviene usar pocos: uno exacto vale más que tres parecidos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Evitá: lindo, feo, bueno, raro, normal.",
+         "Preferí rasgos que se vean, se oigan o se toquen.",
+         "Pocos y exactos, no muchos y parecidos."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Comparación y metáfora",
+      "ejemplo": {
+       "motor": "recursos",
+       "p": {
+        "items": [
+         {
+          "recurso": "Comparación",
+          "frase": "Sus ojos brillaban como dos faroles",
+          "a": "los ojos",
+          "b": "los faroles",
+          "rasgo": "brillan en la oscuridad",
+          "literal": "Sus ojos brillaban mucho",
+          "porque": "Une las dos cosas con «como»: es una comparación."
+         },
+         {
+          "recurso": "Metáfora",
+          "frase": "Sus ojos eran dos faroles en la noche",
+          "a": "los ojos",
+          "b": "los faroles",
+          "rasgo": "brillan en la oscuridad",
+          "literal": "Sus ojos brillaban mucho",
+          "porque": "Dice que una cosa ES la otra, sin «como»: es una metáfora."
+         },
+         {
+          "recurso": "Comparación",
+          "frase": "El lago estaba quieto como un espejo",
+          "a": "el lago",
+          "b": "un espejo",
+          "rasgo": "superficie lisa que refleja",
+          "literal": "El lago estaba muy quieto",
+          "porque": "Usa «como»: comparación."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Comparación o metáfora?",
+        "cajas": [
+         "Comparación",
+         "Metáfora"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Su voz era suave como el terciopelo",
+          0
+         ],
+         [
+          "Corría como un rayo",
+          0
+         ],
+         [
+          "El pan estaba duro como una piedra",
+          0
+         ],
+         [
+          "Su voz era terciopelo",
+          1
+         ],
+         [
+          "El estadio era un hervidero",
+          1
+         ],
+         [
+          "La luna, un plato de plata sobre el techo",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Comparación y metáfora",
+        "texto": "La comparación relaciona dos cosas por un rasgo común usando «como» u otro nexo; la metáfora las identifica directamente, diciendo que una es la otra."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las dos sirven para describir de manera más viva: en lugar de decir que el lago estaba muy quieto, se lo relaciona con un espejo y el lector lo ve. Para entenderlas hay que encontrar el rasgo compartido: los ojos y los faroles tienen en común que brillan en la oscuridad."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Comparación: con «como» (o «parecía»).",
+         "Metáfora: sin nexo, «es» la otra cosa.",
+         "Clave: el rasgo que comparten."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La personificación",
+      "ejemplo": {
+       "motor": "recursos",
+       "p": {
+        "items": [
+         {
+          "recurso": "Personificación",
+          "frase": "El viento aullaba entre los árboles",
+          "a": "el viento",
+          "b": "un ser que aúlla",
+          "rasgo": "un sonido fuerte y lastimero",
+          "literal": "El viento soplaba fuerte y hacía ruido",
+          "porque": "Le da al viento una acción de un ser vivo."
+         },
+         {
+          "recurso": "Personificación",
+          "frase": "La casa vieja nos miraba con sus ventanas rotas",
+          "a": "la casa",
+          "b": "alguien que mira",
+          "rasgo": "parece vigilar",
+          "literal": "La casa tenía las ventanas rotas",
+          "porque": "Atribuye a un objeto la capacidad de mirar."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué efecto produce cada personificación?",
+        "items": [
+         {
+          "cons": "«Los árboles se abrazaban sobre el camino.»",
+          "ops": [
+           "Las ramas se juntan y forman un techo",
+           "Los árboles se mueven de lugar",
+           "Hay gente abrazada en el camino"
+          ],
+          "ayuda": "Pensá cómo se ven los árboles."
+         },
+         {
+          "cons": "«La ciudad dormía bajo la nieve.»",
+          "ops": [
+           "Todo estaba quieto y en silencio",
+           "La gente se había ido de vacaciones",
+           "Había mucho ruido"
+          ],
+          "ayuda": "¿Cómo está algo que duerme?"
+         },
+         {
+          "cons": "«El reloj se burlaba de mi apuro.»",
+          "ops": [
+           "El tiempo parecía pasar lento a propósito",
+           "El reloj estaba roto",
+           "El reloj se reía de verdad"
+          ],
+          "ayuda": "Es una impresión de quien espera."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Personificación",
+        "texto": "La personificación es el recurso que atribuye a objetos, animales o fenómenos naturales acciones o sentimientos propios de las personas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Es muy usada en la descripción de lugares porque les da vida y ayuda a crear la atmósfera: una casa que «mira» con sus ventanas rotas resulta inquietante, y una ciudad que «duerme» transmite calma. Como los demás recursos, no se lee al pie de la letra."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Da a las cosas acciones humanas.",
+         "Ayuda a crear la atmósfera.",
+         "No se lee al pie de la letra."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Adjetivo preciso",
+      "definicion": "muestra un rasgo concreto que el lector puede imaginar, a diferencia de los vagos.",
+      "ejemplo": "luminosa en lugar de linda"
+     },
+     {
+      "concepto": "Adjetivo vago",
+      "definicion": "expresa una opinión sin mostrar cómo es la cosa, como lindo, feo, bueno o raro.",
+      "ejemplo": "Era una casa linda"
+     },
+     {
+      "concepto": "Comparación",
+      "definicion": "relaciona dos cosas por un rasgo común usando «como» u otro nexo.",
+      "ejemplo": "Quieto como un espejo"
+     },
+     {
+      "concepto": "Metáfora",
+      "definicion": "identifica una cosa con otra sin nexo, diciendo que una es la otra.",
+      "ejemplo": "Sus ojos eran dos faroles"
+     },
+     {
+      "concepto": "Personificación",
+      "definicion": "atribuye a objetos, animales o fenómenos naturales acciones o sentimientos propios de las personas.",
+      "ejemplo": "El viento aullaba entre los árboles"
+     }
+    ]
+   }
   },
   "4": {
    "objetivo": "Vas a revisar una descripción pobre y reescribirla con rasgos concretos, sentidos y orden.",
@@ -782,83 +1602,384 @@
     "aplicar",
     "error",
     "aplicar"
-   ]
+   ],
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué falla en una descripción",
+      "ejemplo": {
+       "motor": "revision",
+       "p": {
+        "items": [
+         {
+          "nombre": "Mi barrio",
+          "borrador": "Mi barrio es lindo. Hay casas lindas y una plaza linda. También hay árboles y gente. Es un lugar bueno.",
+          "criterios": [
+           [
+            "Tiene rasgos concretos",
+            false,
+            "lindo, bueno: todo vago"
+           ],
+           [
+            "Sigue un orden",
+            false,
+            "salta de las casas a la gente"
+           ],
+           [
+            "Usa más de un sentido",
+            false,
+            "solo dice lo que hay"
+           ],
+           [
+            "Transmite una atmósfera",
+            false,
+            "no se siente nada"
+           ]
+          ],
+          "final": "Mi barrio es tranquilo. Desde la esquina se ven casas bajas con rejas verdes; al fondo, la plaza, con sus tilos que perfuman todo en noviembre y los chicos que gritan en la hamaca."
+         },
+         {
+          "nombre": "Mi tía",
+          "borrador": "Mi tía es buena. Tiene pelo y ojos. Es muy buena con todos y es buena persona.",
+          "criterios": [
+           [
+            "Tiene rasgos concretos",
+            false,
+            "pelo y ojos tiene todo el mundo"
+           ],
+           [
+            "Muestra el carácter con acciones",
+            false,
+            "solo repite «buena»"
+           ],
+           [
+            "Evita repeticiones",
+            false,
+            "buena aparece tres veces"
+           ]
+          ],
+          "final": "Mi tía tiene el pelo colorado siempre atado con un lápiz. Cada domingo cocina una olla enorme de guiso por si cae alguien sin avisar."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "marcar_x",
+       "p": {
+        "consigna": "Tocá las palabras vagas que habría que reemplazar.",
+        "items": [
+         {
+          "cons": "Descripción de una casa de campo.",
+          "texto": "[[La|0]] [[casa|0]] [[era|0]] [[linda|1]] [[y|0]] [[tenía|0]] [[un|0]] [[jardín|0]] [[bueno|1]] [[con|0]] [[cosas|1]] [[raras|1]] [[por|0]] [[todos|0]] [[lados|0]]."
+         },
+         {
+          "cons": "Retrato de un profesor.",
+          "texto": "[[El|0]] [[profesor|0]] [[era|0]] [[normal|1]], [[con|0]] [[barba|0]] [[gris|0]] [[y|0]] [[una|0]] [[voz|0]] [[rara|1]] [[que|0]] [[era|0]] [[muy|0]] [[buena|1]]."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Revisión de una descripción",
+        "texto": "Revisar una descripción es releerla con preguntas concretas para encontrar lo que falla: palabras vagas, falta de orden, repeticiones o un solo sentido."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Las descripciones pobres suelen tener los mismos problemas: adjetivos vagos que se repiten, rasgos que tiene cualquiera y ningún orden. Hacerse preguntas, como «¿el lector puede imaginarlo?» o «¿hay algo que se oiga o se huela?», permite detectarlos uno por uno."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "¿Hay palabras vagas o repetidas?",
+         "¿Sigue un orden?",
+         "¿Usa más de un sentido? ¿Se siente algo?"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Reescribir para mejorar",
+      "ejemplo": {
+       "motor": "transformar",
+       "p": {
+        "items": [
+         {
+          "nombre": "El aula",
+          "antes": "El aula era fea y vieja.",
+          "pasos": [
+           {
+            "v": "El aula tenía {{las paredes descascaradas}} y vieja.",
+            "txt": "Cambiamos «fea» por un rasgo concreto."
+           },
+           {
+            "v": "El aula tenía las paredes descascaradas {{y un pizarrón con manchas de tiza antiguas}}.",
+            "txt": "Mostramos lo viejo con un detalle."
+           },
+           {
+            "v": "El aula tenía las paredes descascaradas y un pizarrón con manchas de tiza antiguas; {{olía a humedad}}.",
+            "txt": "Sumamos otro sentido."
+           }
+          ],
+          "cierre": "Misma idea, mucho más clara."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "transformar_x",
+       "p": {
+        "consigna": "Reescribí la descripción como se pide.",
+        "items": [
+         {
+          "cons": "Reemplazá «lindo» por rasgos concretos y agregá un olor.",
+          "texto": "El parque era lindo.",
+          "pide": [
+           "olor|olía|perfume|aroma"
+          ],
+          "prohibe": [
+           "lindo"
+          ]
+         },
+         {
+          "cons": "Reemplazá «buena» por una acción que muestre cómo es.",
+          "texto": "Mi vecina es buena.",
+          "pide": [],
+          "prohibe": [
+           "buena"
+          ]
+         },
+         {
+          "cons": "Agregá un sonido y un conector de lugar a esta descripción.",
+          "texto": "La estación estaba llena de gente.",
+          "pide": [
+           "junto|al fondo|detrás|sobre|frente|a la derecha|a la izquierda|cerca|lejos"
+          ],
+          "prohibe": []
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Reescribir",
+        "texto": "Reescribir una descripción es conservar lo que se quiere mostrar y mejorar la forma: cambiar lo vago por lo concreto, ordenar y sumar sentidos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Reescribir no es copiar ni empezar de cero: la idea se mantiene y se cambian las palabras que no funcionan. Conviene ir de a un problema por vez: primero los adjetivos vagos, después el orden, al final los sentidos y la atmósfera."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Conservá la idea.",
+         "Cambiá lo vago por lo concreto.",
+         "Mejorá de a un problema por vez."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Comparar versiones",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Versión",
+        "items": [
+         {
+          "nombre": "Primera",
+          "texto": "{{El mercado era grande y tenía muchas cosas.|Vago: no se ve nada.}}"
+         },
+         {
+          "nombre": "Segunda",
+          "texto": "{{El mercado era enorme, con puestos de frutas y verduras.|Más concreto, pero solo con la vista.}}"
+         },
+         {
+          "nombre": "Tercera",
+          "texto": "{{En el mercado, los puestos de frutas formaban pasillos de colores|Vista precisa.}}; {{los vendedores gritaban ofertas|Oído.}} y {{todo olía a mandarina|Olfato.}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué versión describe mejor?",
+        "items": [
+         {
+          "cons": "Descripción de un perro.",
+          "ops": [
+           "Un perro petiso y panzón, que mueve la cola en círculos cuando escucha la llave",
+           "Un perro lindo y bueno",
+           "Un perro normal con cuatro patas"
+          ],
+          "ayuda": "Buscá rasgos propios y una acción."
+         },
+         {
+          "cons": "Descripción de una tormenta.",
+          "ops": [
+           "El cielo se puso violeta y los truenos hacían temblar los vidrios",
+           "Hubo una tormenta fea",
+           "Llovió mucho y fue raro"
+          ],
+          "ayuda": "Buscá detalles que se vean y se oigan."
+         },
+         {
+          "cons": "Descripción de un abuelo.",
+          "ops": [
+           "Huele a tabaco dulce y silba tangos mientras arregla la radio",
+           "Es un abuelo bueno y viejo",
+           "Es una persona mayor normal"
+          ],
+          "ayuda": "Sentidos y acciones."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Comparar versiones",
+        "texto": "Comparar versiones de una descripción permite ver qué cambios la mejoran: rasgos concretos, más sentidos, orden y acciones que muestran."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Al poner una al lado de la otra, se nota que la mejor versión no es la más larga, sino la que tiene detalles mejor elegidos. Esta comparación también sirve para revisar tus propios textos: leé tu primera versión y preguntate qué le faltaría para parecerse a la mejor."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "La mejor no es la más larga.",
+         "Gana la que tiene detalles mejor elegidos.",
+         "Usá la comparación para revisar lo tuyo."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Revisar una descripción",
+      "definicion": "es releerla con preguntas concretas para detectar palabras vagas, falta de orden o un solo sentido.",
+      "ejemplo": "¿El lector puede imaginarlo?"
+     },
+     {
+      "concepto": "Palabras vagas",
+      "definicion": "son las que expresan una opinión sin mostrar cómo es algo y suelen repetirse.",
+      "ejemplo": "lindo, bueno, normal, raro"
+     },
+     {
+      "concepto": "Reescribir",
+      "definicion": "es conservar la idea y mejorar la forma, cambiando lo vago por lo concreto.",
+      "ejemplo": "Fea → paredes descascaradas"
+     },
+     {
+      "concepto": "Mejor versión",
+      "definicion": "es la que tiene los detalles mejor elegidos, no necesariamente la más larga.",
+      "ejemplo": "Pasillos de colores y olor a mandarina"
+     }
+    ]
+   }
   }
  },
  "act": {
   "1": [
    {
-    "t": "tap_text",
-    "p": "Tocá las palabras que describen el aspecto físico: «Es un hombre alto, de pelo canoso, muy generoso y bromista».",
+    "t": "classify",
+    "p": "¿Rasgo físico o psicológico?",
     "o": {
-     "segmentos": [
-      "Es",
-      "un",
-      "hombre",
-      "alto",
-      "de",
-      "pelo",
-      "canoso",
-      "muy",
-      "generoso",
-      "y",
-      "bromista"
+     "elementos": [
+      "Tiene las orejas grandes y despegadas",
+      "Es muy terca",
+      "Usa una campera de cuero gastada",
+      "Se pone nerviosa antes de hablar en público"
      ],
-     "modo": "palabras"
-    },
-    "r": {
-     "tocar": [
-      3,
-      5,
-      6
+     "categorias": [
+      "Físico",
+      "Psicológico"
      ]
     },
-    "e": "Alto y pelo canoso son rasgos físicos; generoso y bromista son de carácter."
+    "r": {
+     "categorias": {
+      "Tiene las orejas grandes y despegadas": "Físico",
+      "Es muy terca": "Psicológico",
+      "Usa una campera de cuero gastada": "Físico",
+      "Se pone nerviosa antes de hablar en público": "Psicológico"
+     }
+    },
+    "e": "Lo que se ve o la forma de ser.",
+    "n": "aplicar"
    },
    {
-    "t": "multi_select",
-    "p": "¿Qué rasgos son del retrato psicológico?",
-    "o": [
-     "Generosa",
-     "De ojos claros",
-     "Impaciente",
-     "De pelo corto"
-    ],
-    "r": {
-     "correctas": [
-      "Generosa",
-      "Impaciente"
+    "t": "matching",
+    "p": "Uní cada acción con el rasgo de carácter que muestra.",
+    "o": {
+     "izquierda": [
+      "Comparte su merienda con quien no trajo",
+      "Revisa tres veces que la puerta esté cerrada",
+      "Se ríe de sus propios errores",
+      "Interrumpe a todos para hablar"
+     ],
+     "derecha": [
+      "impaciente",
+      "de buen humor",
+      "desconfiado",
+      "generoso"
      ]
     },
-    "e": "El carácter es la forma de ser."
+    "r": {
+     "pares": {
+      "Comparte su merienda con quien no trajo": "generoso",
+      "Revisa tres veces que la puerta esté cerrada": "desconfiado",
+      "Se ríe de sus propios errores": "de buen humor",
+      "Interrumpe a todos para hablar": "impaciente"
+     }
+    },
+    "e": "Las acciones muestran el carácter.",
+    "n": "analizar"
+   },
+   {
+    "t": "odd_one_out",
+    "p": "Tres rasgos sirven para reconocer a alguien y uno no. ¿Cuál no sirve?",
+    "o": [
+     "Tiene una nariz",
+     "Siempre lleva una boina roja",
+     "Tiene una cicatriz en el mentón",
+     "Habla con acento cordobés"
+    ],
+    "r": {
+     "correcta": "Tiene una nariz"
+    },
+    "e": "Es un rasgo que tiene todo el mundo.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero describe a su abuela así: «Es buena, buena y muy buena». ¿Qué le recomendás?",
+    "o": [
+     "Mostrar su bondad con una acción concreta",
+     "Agregar más veces la palabra «buena»",
+     "Describir solo su ropa"
+    ],
+    "r": {
+     "correcta": "Mostrar su bondad con una acción concreta"
+    },
+    "e": "Mostrar convence más que repetir el adjetivo.",
+    "n": "error"
    }
   ],
   "2": [
    {
-    "t": "fill_blank",
-    "p": "Para describir un lugar se recorre de ___ hacia adentro, usando varios ___ .",
-    "o": [],
-    "r": {
-     "huecos": [
-      [
-       "afuera"
-      ],
-      [
-       "sentidos"
-      ]
-     ]
-    },
-    "e": "Orden espacial y sentidos."
-   },
-   {
     "t": "classify",
-    "p": "¿Qué sentido aparece?",
+    "p": "¿Con qué sentido se percibe?",
     "o": {
      "elementos": [
-      "Olor a pan",
-      "Paredes descascaradas",
-      "El zumbido de la heladera",
-      "El frío del piso"
+      "El brillo del sol en la ventana",
+      "El zumbido de las moscas",
+      "El olor a tierra mojada",
+      "La arena caliente bajo los pies"
      ],
      "categorias": [
       "Vista",
@@ -869,124 +1990,349 @@
     },
     "r": {
      "categorias": {
-      "Olor a pan": "Olfato",
-      "Paredes descascaradas": "Vista",
-      "El zumbido de la heladera": "Oído",
-      "El frío del piso": "Tacto"
+      "El brillo del sol en la ventana": "Vista",
+      "El zumbido de las moscas": "Oído",
+      "El olor a tierra mojada": "Olfato",
+      "La arena caliente bajo los pies": "Tacto"
      }
     },
-    "e": "Cada detalle apela a un sentido."
+    "e": "Pensá cómo te enterás de cada detalle.",
+    "n": "aplicar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená la descripción de arriba hacia abajo.",
+    "o": [
+     "De las paredes colgaban fotos viejas",
+     "Sobre la mesa había un mantel bordado",
+     "El piso de madera crujía a cada paso",
+     "El techo de chapa estaba oxidado"
+    ],
+    "r": {
+     "orden": [
+      "El techo de chapa estaba oxidado",
+      "De las paredes colgaban fotos viejas",
+      "Sobre la mesa había un mantel bordado",
+      "El piso de madera crujía a cada paso"
+     ]
+    },
+    "e": "Un recorrido vertical.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "«El pasillo estaba oscuro, olía a encierro y una puerta golpeaba sola.» ¿Qué atmósfera crea?",
+    "o": [
+     "Inquietante",
+     "Festiva",
+     "Tranquila"
+    ],
+    "r": {
+     "correcta": "Inquietante"
+    },
+    "e": "Oscuridad, mal olor y un ruido sin explicación.",
+    "n": "analizar"
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá los DOS conectores de lugar: «Junto a la puerta había un paragüero y, al fondo del pasillo, una ventana con rejas.»",
+    "o": {
+     "segmentos": [
+      "Junto a",
+      "la puerta",
+      "había un paragüero",
+      "y,",
+      "al fondo",
+      "del pasillo,",
+      "una ventana con rejas."
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      0,
+      4
+     ]
+    },
+    "e": "Los conectores de lugar ubican los elementos.",
+    "n": "analizar"
    }
   ],
   "3": [
    {
-    "t": "true_false",
-    "p": "«Sus manos eran dos bloques de hielo» es una comparación.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
-    },
-    "e": "Es una metáfora: no usa como."
-   },
-   {
-    "t": "ordering",
-    "p": "Ordená de más vago a más preciso.",
-    "o": [
-     "una casa luminosa y ordenada",
-     "una casa",
-     "una casa linda"
-    ],
-    "r": {
-     "orden": [
-      "una casa",
-      "una casa linda",
-      "una casa luminosa y ordenada"
+    "t": "classify",
+    "p": "¿Comparación, metáfora o personificación?",
+    "o": {
+     "elementos": [
+      "Dormía como un tronco",
+      "Su risa era una cascada",
+      "El sol se escondió avergonzado",
+      "Frío como el hielo"
+     ],
+     "categorias": [
+      "Comparación",
+      "Metáfora",
+      "Personificación"
      ]
     },
-    "e": "Cada versión dice más."
+    "r": {
+     "categorias": {
+      "Dormía como un tronco": "Comparación",
+      "Su risa era una cascada": "Metáfora",
+      "El sol se escondió avergonzado": "Personificación",
+      "Frío como el hielo": "Comparación"
+     }
+    },
+    "e": "Con como, sin como o acciones humanas.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada adjetivo vago con un reemplazo preciso.",
+    "o": {
+     "izquierda": [
+      "una casa linda",
+      "un perro feo",
+      "una comida rica",
+      "un día raro"
+     ],
+     "derecha": [
+      "un día nublado y ventoso",
+      "una comida picante",
+      "un perro sarnoso",
+      "una casa luminosa"
+     ]
+    },
+    "r": {
+     "pares": {
+      "una casa linda": "una casa luminosa",
+      "un perro feo": "un perro sarnoso",
+      "una comida rica": "una comida picante",
+      "un día raro": "un día nublado y ventoso"
+     }
+    },
+    "e": "Lo preciso muestra cómo es.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En «Sus ojos eran dos faroles», ¿qué rasgo comparten los ojos y los faroles?",
+    "o": [
+     "Brillan en la oscuridad",
+     "Son redondos y de vidrio",
+     "Están en la calle"
+    ],
+    "r": {
+     "correcta": "Brillan en la oscuridad"
+    },
+    "e": "La metáfora se apoya en un rasgo común.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Mica dice que «El viento silbaba» es una comparación. ¿Qué recurso es en realidad?",
+    "o": [
+     "Personificación: el viento hace algo humano",
+     "Comparación: usa «como»",
+     "Metáfora: dice que el viento es otra cosa"
+    ],
+    "r": {
+     "correcta": "Personificación: el viento hace algo humano"
+    },
+    "e": "No hay «como»: se le atribuye una acción humana.",
+    "n": "error"
    }
   ],
   "4": [
    {
-    "t": "keywords",
-    "p": "Reescribí esta descripción pobre: «Mi abuela es buena y tiene una casa linda con cosas». Cambiá lo vago por lo concreto, sumá un sentido y mantené un orden.",
+    "t": "tap_text",
+    "p": "Tocá las TRES palabras vagas: «El patio era lindo, con plantas raras y un banco bueno.»",
     "o": {
-     "ayuda": "Usá adjetivos precisos, al menos un detalle de olor, sonido o tacto, y un orden claro."
+     "segmentos": [
+      "El patio",
+      "era",
+      "lindo,",
+      "con plantas",
+      "raras",
+      "y un banco",
+      "bueno."
+     ],
+     "modo": "palabras"
     },
-    "r": "Descripción reescrita con adjetivos precisos (no lindo ni bueno), un rasgo de carácter con ejemplo, detalle de otro sentido (olor, sonido o tacto) y orden espacial claro.",
-    "e": "Se evalúa precisión, orden y sentidos."
-   },
-   {
-    "t": "fill_blank",
-    "p": "Reescribir es conservar la ___ y mejorar la forma.",
-    "o": [],
     "r": {
-     "huecos": [
-      [
-       "idea"
-      ]
+     "tocar": [
+      2,
+      4,
+      6
      ]
     },
-    "e": "La idea se mantiene."
+    "e": "Lindo, raras y bueno no muestran nada.",
+    "n": "error"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená las versiones de la peor a la mejor.",
+    "o": [
+     "La escuela era grande y antigua.",
+     "La escuela era antigua, con escaleras de mármol gastadas.",
+     "La escuela era antigua: escaleras de mármol gastadas y un eco que repetía cada paso.",
+     "La escuela era linda."
+    ],
+    "r": {
+     "orden": [
+      "La escuela era linda.",
+      "La escuela era grande y antigua.",
+      "La escuela era antigua, con escaleras de mármol gastadas.",
+      "La escuela era antigua: escaleras de mármol gastadas y un eco que repetía cada paso."
+     ]
+    },
+    "e": "Cada versión suma algo concreto.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué cambio mejora más la oración «La plaza era bonita»?",
+    "o": [
+     "«En la plaza, los jacarandás cubrían de violeta los bancos»",
+     "«La plaza era muy pero muy bonita»",
+     "«La plaza era bonita y linda»"
+    ],
+    "r": {
+     "correcta": "«En la plaza, los jacarandás cubrían de violeta los bancos»"
+    },
+    "e": "Cambia lo vago por un detalle concreto.",
+    "n": "aplicar"
+   },
+   {
+    "t": "keywords",
+    "p": "Reescribí la descripción «La cocina era linda» con al menos un rasgo concreto y un sentido que no sea la vista.",
+    "o": {
+     "ayuda": "Cambiá «linda» y sumá un olor, un sonido o una textura."
+    },
+    "r": {
+     "grupos": [
+      [
+       "olía",
+       "olor",
+       "perfume",
+       "aroma",
+       "sonaba",
+       "ruido",
+       "se oía",
+       "tibi*",
+       "frío",
+       "suave",
+       "áspero",
+       "calor"
+      ],
+      [
+       "mesa",
+       "azulejo*",
+       "ventana",
+       "horno",
+       "olla*",
+       "pared*",
+       "mantel",
+       "heladera",
+       "cocina"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Por ejemplo: «La cocina tenía azulejos verdes y olía a pan recién horneado».",
+    "n": "aplicar"
    }
   ],
   "5": [
    {
+    "t": "classify",
+    "p": "¿Qué recurso de la descripción aparece?",
+    "o": {
+     "elementos": [
+      "Es paciente, pero no soporta las mentiras",
+      "Olía a café y se oía la radio",
+      "Al entrar, la mesa; al fondo, la ventana",
+      "La luna era una moneda de plata"
+     ],
+     "categorias": [
+      "Retrato psicológico",
+      "Descripción sensorial",
+      "Orden espacial",
+      "Metáfora"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Es paciente, pero no soporta las mentiras": "Retrato psicológico",
+      "Olía a café y se oía la radio": "Descripción sensorial",
+      "Al entrar, la mesa; al fondo, la ventana": "Orden espacial",
+      "La luna era una moneda de plata": "Metáfora"
+     }
+    },
+    "e": "Repasá lo aprendido en la misión.",
+    "n": "analizar"
+   },
+   {
     "t": "multiple_choice",
-    "p": "Relámpago. La descripción del carácter es el retrato…",
+    "p": "¿Cuál es el mejor retrato?",
     "o": [
-     "Psicológico",
-     "Físico",
-     "Digital"
+     "«Tiene la voz ronca y se ríe tapándose la boca»",
+     "«Es una persona normal y simpática»",
+     "«Tiene ojos, pelo y una boca»"
     ],
     "r": {
-     "correcta": "Psicológico"
+     "correcta": "«Tiene la voz ronca y se ríe tapándose la boca»"
     },
-    "e": "Cómo es por dentro.",
-    "tiempo": 20
+    "e": "Rasgos propios y un gesto que muestra.",
+    "n": "aplicar"
    },
    {
-    "t": "true_false",
-    "p": "Relámpago. Un lugar se describe solo con la vista.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
+    "t": "matching",
+    "p": "Uní cada descripción con la atmósfera que crea.",
+    "o": {
+     "izquierda": [
+      "Una lamparita que parpadea y pasos en el techo",
+      "Música, risas y olor a pochoclo",
+      "Un lago quieto y el canto lejano de un pájaro",
+      "Bocinas, gritos y gente que corre"
+     ],
+     "derecha": [
+      "caótica",
+      "serena",
+      "festiva",
+      "inquietante"
+     ]
     },
-    "e": "Conviene usar varios sentidos.",
-    "tiempo": 20
+    "r": {
+     "pares": {
+      "Una lamparita que parpadea y pasos en el techo": "inquietante",
+      "Música, risas y olor a pochoclo": "festiva",
+      "Un lago quieto y el canto lejano de un pájaro": "serena",
+      "Bocinas, gritos y gente que corre": "caótica"
+     }
+    },
+    "e": "Los detalles construyen la sensación.",
+    "n": "analizar"
    },
    {
-    "t": "multiple_choice",
-    "p": "Relámpago. «Sus ojos eran como luces» es…",
+    "t": "ordering",
+    "p": "Ordená los pasos para mejorar una descripción.",
     "o": [
-     "Una comparación",
-     "Una metáfora",
-     "Un título"
+     "Marcar las palabras vagas",
+     "Reemplazarlas por rasgos concretos",
+     "Sumar otro sentido y revisar el orden",
+     "Releerla con preguntas"
     ],
     "r": {
-     "correcta": "Una comparación"
+     "orden": [
+      "Releerla con preguntas",
+      "Marcar las palabras vagas",
+      "Reemplazarlas por rasgos concretos",
+      "Sumar otro sentido y revisar el orden"
+     ]
     },
-    "e": "Usa como.",
-    "tiempo": 20
-   },
-   {
-    "t": "true_false",
-    "p": "Relámpago. Reescribir es copiar el texto.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
-    },
-    "e": "Es mejorarlo.",
-    "tiempo": 20
+    "e": "Revisar, detectar, reemplazar, completar.",
+    "n": "aplicar"
    }
   ]
  },
@@ -994,45 +2340,54 @@
   [
    1,
    {
-    "t": "multiple_choice",
-    "p": "¿Qué es una descripción?",
-    "o": [
-     "Un texto que muestra cómo es algo o alguien",
-     "Un texto que da órdenes",
-     "Una noticia",
-     "Una carta"
-    ],
-    "r": {
-     "correcta": "Un texto que muestra cómo es algo o alguien"
+    "t": "classify",
+    "p": "¿Rasgo físico o psicológico?",
+    "o": {
+     "elementos": [
+      "Tiene pecas en toda la cara",
+      "Es muy desconfiado",
+      "Camina con bastón",
+      "Le cuesta pedir perdón"
+     ],
+     "categorias": [
+      "Físico",
+      "Psicológico"
+     ]
     },
-    "e": "Para que el lector lo imagine."
+    "r": {
+     "categorias": {
+      "Tiene pecas en toda la cara": "Físico",
+      "Es muy desconfiado": "Psicológico",
+      "Camina con bastón": "Físico",
+      "Le cuesta pedir perdón": "Psicológico"
+     }
+    },
+    "e": "Lo que se ve o la forma de ser.",
+    "n": "aplicar"
    }
   ],
   [
    1,
    {
-    "t": "multi_select",
-    "p": "Rasgos del retrato físico:",
+    "t": "multiple_choice",
+    "p": "¿Qué oración MUESTRA que alguien es generoso, en lugar de decirlo?",
     "o": [
-     "Alta",
-     "Generosa",
-     "De pelo corto",
-     "Impaciente"
+     "Le regaló su campera nueva a un compañero con frío",
+     "Es una persona muy generosa",
+     "Todos dicen que es generoso"
     ],
     "r": {
-     "correctas": [
-      "Alta",
-      "De pelo corto"
-     ]
+     "correcta": "Le regaló su campera nueva a un compañero con frío"
     },
-    "e": "Lo físico es lo que se ve."
+    "e": "Una acción concreta prueba el rasgo.",
+    "n": "analizar"
    }
   ],
   [
    1,
    {
     "t": "true_false",
-    "p": "Un buen retrato es una lista de rasgos sin orden.",
+    "p": "Describir bien es nombrar todos los rasgos de una persona, sin dejar ninguno.",
     "o": [
      "Verdadero",
      "Falso"
@@ -1040,175 +2395,258 @@
     "r": {
      "correcta": "Falso"
     },
-    "e": "Se eligen y ordenan los rasgos."
+    "e": "Describir es elegir los rasgos que la distinguen.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "ordering",
+    "p": "Ordená la descripción de afuera hacia adentro.",
+    "o": [
+     "Detrás del portón, un jardín con limoneros",
+     "Al entrar, un hall con piso de baldosas",
+     "Al fondo del hall, la escalera",
+     "Desde la calle se ve un portón de hierro"
+    ],
+    "r": {
+     "orden": [
+      "Desde la calle se ve un portón de hierro",
+      "Detrás del portón, un jardín con limoneros",
+      "Al entrar, un hall con piso de baldosas",
+      "Al fondo del hall, la escalera"
+     ]
+    },
+    "e": "Un recorrido para no perder al lector.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "¿Con qué sentido se percibe?",
+    "o": {
+     "elementos": [
+      "Paredes amarillas",
+      "Un perro que ladra",
+      "Olor a lavandina"
+     ],
+     "categorias": [
+      "Vista",
+      "Oído",
+      "Olfato"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Paredes amarillas": "Vista",
+      "Un perro que ladra": "Oído",
+      "Olor a lavandina": "Olfato"
+     }
+    },
+    "e": "Cómo te enterás de cada detalle.",
+    "n": "aplicar"
    }
   ],
   [
    2,
    {
     "t": "multiple_choice",
-    "p": "Un orden espacial posible es…",
+    "p": "«Las persianas golpeaban con el viento y en la casa vacía nadie respondía.» ¿Qué atmósfera crea?",
     "o": [
-     "De afuera hacia adentro",
-     "Al azar",
-     "Solo por tamaño de letra",
-     "Alfabético"
+     "Inquietante",
+     "Alegre",
+     "Festiva"
     ],
     "r": {
-     "correcta": "De afuera hacia adentro"
+     "correcta": "Inquietante"
     },
-    "e": "Ayuda a imaginar el lugar."
+    "e": "Ruidos sin explicación y una casa vacía.",
+    "n": "analizar"
    }
   ],
   [
-   2,
+   3,
    {
-    "t": "fill_blank",
-    "p": "La descripción de un lugar usa varios ___ además de la vista.",
-    "o": [],
+    "t": "classify",
+    "p": "¿Comparación, metáfora o personificación?",
+    "o": {
+     "elementos": [
+      "Blanco como la nieve",
+      "El río era una serpiente de plata",
+      "Las olas besaban la orilla"
+     ],
+     "categorias": [
+      "Comparación",
+      "Metáfora",
+      "Personificación"
+     ]
+    },
     "r": {
-     "huecos": [
+     "categorias": {
+      "Blanco como la nieve": "Comparación",
+      "El río era una serpiente de plata": "Metáfora",
+      "Las olas besaban la orilla": "Personificación"
+     }
+    },
+    "e": "Con como, sin como, o acciones humanas.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "short_answer",
+    "p": "Reemplazá el adjetivo vago por uno preciso: «Un día ___ (en lugar de feo), con nubes negras y viento».",
+    "r": {
+     "acepta": [
+      "tormentoso",
+      "nublado",
+      "gris",
+      "oscuro",
+      "lluvioso",
+      "ventoso",
+      "frío",
+      "helado",
+      "sombrío"
+     ]
+    },
+    "e": "Un adjetivo que muestre cómo era el día.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué «Sus manos eran dos ramas secas» es una metáfora?",
+    "o": [
+     "Porque dice que las manos son ramas, sin usar «como»",
+     "Porque usa «como» para comparar",
+     "Porque las manos hablan como personas"
+    ],
+    "r": {
+     "correcta": "Porque dice que las manos son ramas, sin usar «como»"
+    },
+    "e": "La metáfora identifica una cosa con otra.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "tap_text",
+    "p": "Tocá las DOS palabras vagas: «El cuarto era lindo y tenía cosas en la pared.»",
+    "o": {
+     "segmentos": [
+      "El cuarto",
+      "era",
+      "lindo",
+      "y tenía",
+      "cosas",
+      "en la pared."
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      2,
+      4
+     ]
+    },
+    "e": "Lindo y cosas no muestran nada concreto.",
+    "n": "error"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "ordering",
+    "p": "Ordená los pasos para revisar una descripción.",
+    "o": [
+     "Marcar lo vago",
+     "Reemplazar por lo concreto",
+     "Sumar sentidos y revisar el orden",
+     "Releer con preguntas"
+    ],
+    "r": {
+     "orden": [
+      "Releer con preguntas",
+      "Marcar lo vago",
+      "Reemplazar por lo concreto",
+      "Sumar sentidos y revisar el orden"
+     ]
+    },
+    "e": "Un paso por vez.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Entre dos versiones de una descripción, ¿cuál es mejor?",
+    "o": [
+     "La que tiene detalles mejor elegidos",
+     "La más larga",
+     "La que repite más adjetivos"
+    ],
+    "r": {
+     "correcta": "La que tiene detalles mejor elegidos"
+    },
+    "e": "No gana la más larga, sino la más precisa.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Describí en dos oraciones un lugar que conozcas: usá un conector de lugar y al menos dos sentidos.",
+    "o": {
+     "ayuda": "Ubicá los elementos y sumá olores, sonidos o texturas."
+    },
+    "r": {
+     "grupos": [
       [
-       "sentidos"
-      ]
-     ]
-    },
-    "e": "Oído, olfato, tacto y gusto."
-   }
-  ],
-  [
-   2,
-   {
-    "t": "true_false",
-    "p": "«Junto a» es un conector de lugar.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Verdadero"
-    },
-    "e": "Sirve para ubicar."
-   }
-  ],
-  [
-   3,
-   {
-    "t": "multiple_choice",
-    "p": "¿Cuál es el adjetivo más preciso?",
-    "o": [
-     "frondosa",
-     "linda",
-     "buena",
-     "cosa"
-    ],
-    "r": {
-     "correcta": "frondosa"
-    },
-    "e": "Muestra algo concreto."
-   }
-  ],
-  [
-   3,
-   {
-    "t": "multiple_choice",
-    "p": "«Sus manos eran dos bloques de hielo» es…",
-    "o": [
-     "Una metáfora",
-     "Una comparación",
-     "Un diálogo",
-     "Una rima"
-    ],
-    "r": {
-     "correcta": "Una metáfora"
-    },
-    "e": "No usa como."
-   }
-  ],
-  [
-   3,
-   {
-    "t": "true_false",
-    "p": "Conviene usar pocos adjetivos exactos.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Verdadero"
-    },
-    "e": "Valen más que muchos parecidos."
-   }
-  ],
-  [
-   4,
-   {
-    "t": "multiple_choice",
-    "p": "Reescribir es…",
-    "o": [
-     "Mejorar la forma conservando la idea",
-     "Copiar",
-     "Borrar todo",
-     "Cambiar la idea"
-    ],
-    "r": {
-     "correcta": "Mejorar la forma conservando la idea"
-    },
-    "e": "No es copiar."
-   }
-  ],
-  [
-   4,
-   {
-    "t": "multi_select",
-    "p": "¿Qué conviene revisar en una descripción?",
-    "o": [
-     "Palabras vagas",
-     "Orden",
-     "Sentidos",
-     "El color del papel"
-    ],
-    "r": {
-     "correctas": [
-      "Palabras vagas",
-      "Orden",
-      "Sentidos"
-     ]
-    },
-    "e": "El papel no cambia el texto."
-   }
-  ],
-  [
-   4,
-   {
-    "t": "fill_blank",
-    "p": "Lo vago se cambia por lo ___ .",
-    "o": [],
-    "r": {
-     "huecos": [
+       "junto a",
+       "al fondo",
+       "detrás",
+       "sobre",
+       "frente",
+       "a la derecha",
+       "a la izquierda",
+       "cerca",
+       "lejos",
+       "arriba",
+       "abajo",
+       "al entrar"
+      ],
       [
-       "preciso",
-       "concreto"
+       "olía",
+       "olor",
+       "perfume",
+       "aroma",
+       "sonaba",
+       "ruido",
+       "se oía",
+       "se escuchaba",
+       "frío",
+       "tibi*",
+       "suave",
+       "áspero",
+       "calor",
+       "gusto"
       ]
-     ]
+     ],
+     "minimo": 2
     },
-    "e": "Preciso o concreto."
-   }
-  ],
-  [
-   4,
-   {
-    "t": "true_false",
-    "p": "Corregir solo tildes mejora la descripción.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
-    },
-    "e": "También hay que mejorar el contenido."
+    "e": "Por ejemplo: «Al entrar al club, se oye el rebote de las pelotas. Junto a la cancha, el buffet huele a café».",
+    "n": "aplicar"
    }
   ]
- ]
+ ],
+ "actualizar_preguntas": true
 }
