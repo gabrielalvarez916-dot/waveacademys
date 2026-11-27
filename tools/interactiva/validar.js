@@ -152,6 +152,18 @@ for (const ruta of process.argv.slice(2)) {
   });
   Object.keys(M.niveles || {}).forEach(n => { const L = M.niveles[n].leccion; if (L && Array.isArray(L.temas) && L.temas.some(t => t.explicacion)) leccion(ruta, M, n, L, 'lección nivel ' + n); });
   if (M.alternativa && M.alternativa.niveles) revisar(M.alternativa.niveles, 'alternativa · ');
+  // Misión VARIANTE (trae bloques "neutro" o "variante": true): la lección, las actividades y el examen no pueden tener palabras
+  // que solo se usan en la Argentina sin su versión para alumnos de otros países ("neutro": {"campo": ".."} al lado).
+  if (M.variante === true || JSON.stringify({ n: M.niveles, a: M.act, e: M.examen }).includes('"neutro"')) {
+    const LOC = /(^|[^a-záéíóúñ])(pesos?|vuelto|argentin[oa]s?|colectivos?|subtes?)(?![a-záéíóúñ])/i;
+    const mirar = (o, donde) => { if (!o || typeof o !== 'object' || o.motor) return; if (Array.isArray(o)) return o.forEach(x => mirar(x, donde));
+      Object.keys(o).forEach(k => { if (k === 'neutro') return; const v = o[k];
+        if (typeof v === 'string') { const m = LOC.exec(limpio(v)); if (m && !(o.neutro && o.neutro[k] !== undefined)) mal(donde, 'misión VARIANTE: «' + m[2] + '» se usa solo en la Argentina y falta su versión para otros países ("neutro": {"' + k + '": ".."} al lado)'); }
+        else mirar(v, donde); }); };
+    Object.keys(M.niveles || {}).forEach(n => mirar((M.niveles[n] || {}).leccion, 'variante · lección nivel ' + n));
+    Object.keys(M.act || {}).forEach(n => mirar(M.act[n], 'variante · actividades nivel ' + n));
+    mirar(M.examen, 'variante · examen');
+  }
   console.log(errores === antes ? '  ✔ lección interactiva OK' : '  ' + (errores - antes) + ' problema(s)');
 }
 process.exit(errores ? 1 : 0);
