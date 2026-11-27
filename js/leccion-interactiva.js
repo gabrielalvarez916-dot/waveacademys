@@ -35,10 +35,13 @@ window.WaveLeccion = (function () {
     function botonVoz() { var b = el.querySelector('[data-acc="leer"]'); b.textContent = voz.on ? '⏹ Parar' : '🔊 Leer'; b.setAttribute('aria-pressed', voz.on ? 'true' : 'false'); b.classList.toggle('on', voz.on); }
     function desmarcar() { [].forEach.call(el.querySelectorAll('.li2-leyendo'), function (x) { x.classList.remove('li2-leyendo'); }); }
     function parar() { voz.ses++; voz.on = false; try { speechSynthesis.cancel(); } catch (e) {} desmarcar(); if (el.querySelector('[data-acc="leer"]')) botonVoz(); }
-    function leer() { if (!('speechSynthesis' in window)) { alertaSuave('Este navegador no puede leer en voz alta.'); return; } parar(); var L = bloques(), ses = ++voz.ses, k = 0, v = vozES(), vel = 1; try { vel = parseFloat(localStorage.getItem('wave_voz_vel')) || 1; } catch (e) {}
+    function leer() { if (!('speechSynthesis' in window)) { alertaSuave('Este navegador no puede leer en voz alta.'); return; } parar(); var L = bloques(), ses = ++voz.ses, k = 0, v = vozES();
       voz.on = true; botonVoz();
       (function decir() { if (ses !== voz.ses) return; desmarcar(); if (k >= L.length) { voz.on = false; botonVoz(); return; } var it = L[k++]; it[0].classList.add('li2-leyendo'); try { it[0].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
-        var u = new SpeechSynthesisUtterance(it[1].replace(/[·•]/g, ',')); u.lang = (v && v.lang) || 'es-AR'; if (v) u.voice = v; u.rate = vel; u.onend = decir; u.onerror = decir; speechSynthesis.speak(u); })(); }
+        var u = new SpeechSynthesisUtterance(it[1].replace(/[·•]/g, ',')); u.lang = (v && v.lang) || 'es-AR'; if (v) u.voice = v; u.rate = velocidad(); u.onend = decir; u.onerror = decir; speechSynthesis.speak(u); })(); }
+    var selVel = el.querySelector('[data-acc-vel]'); try { selVel.value = localStorage.getItem('wave_voz_vel') || '1'; if (!selVel.value) selVel.value = '1'; } catch (e) {}
+    function velocidad() { return parseFloat(selVel.value) || 1; }
+    selVel.addEventListener('change', function () { try { localStorage.setItem('wave_voz_vel', selVel.value); } catch (e) {} });
     function alertaSuave(t) { var n = document.createElement('div'); n.className = 'li2-aviso'; n.textContent = t; el.querySelector('.li2-caja').appendChild(n); setTimeout(function () { n.remove(); }, 3000); }
     el.addEventListener('click', function (e) { var b = e.target.closest('[data-acc]'); if (!b) return; var a = b.getAttribute('data-acc');
       if (a === 'leer') return voz.on ? parar() : leer(); if (a === 'lectura') { LEC.on = !LEC.on; guardar(); return aplicar(); } ajustar(a); });
@@ -46,7 +49,7 @@ window.WaveLeccion = (function () {
     aplicar(); return { parar: parar };
   }
   (function () { if (document.getElementById('li2-acc-css')) return; var st = document.createElement('style'); st.id = 'li2-acc-css';
-    st.textContent = '.li2-imp.on{background:#087E83;color:#fff}.li2-lec-ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:8px 14px;background:#F3FBF7;border-bottom:1px solid #D7F0E9;font-size:.9rem}.li2-lec-ctl span{display:inline-flex;gap:4px;align-items:center;font-weight:700}.li2-lec-ctl button{min-width:34px;padding:4px 8px;border:2px solid #9dbdb9;border-radius:8px;background:#fff;font:inherit;font-weight:800;cursor:pointer}.li2-lec-ctl select{font:inherit;padding:3px}' +
+    st.textContent = '.li2-imp.on{background:#087E83;color:#fff}.li2-vel{margin-left:4px;padding:5px 6px;border-radius:999px;border:2px solid #9dbdb9;font:inherit;font-size:.85rem;font-weight:700;background:#fff}.li2-lec-ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:8px 14px;background:#F3FBF7;border-bottom:1px solid #D7F0E9;font-size:.9rem}.li2-lec-ctl span{display:inline-flex;gap:4px;align-items:center;font-weight:700}.li2-lec-ctl button{min-width:34px;padding:4px 8px;border:2px solid #9dbdb9;border-radius:8px;background:#fff;font:inherit;font-weight:800;cursor:pointer}.li2-lec-ctl select{font:inherit;padding:3px}' +
       '.li2-lec .li2-exp,.li2-lec .li2-rec,.li2-lec .li2-resu,.li2-lec .lb-pp-txt,.li2-lec .lb-cons,.li2-lec .li2-hoja h2,.li2-lec .li2-obj,.li2-lec .li2-pv-b{font-family:var(--lf);word-spacing:var(--lp);letter-spacing:var(--ll)}' +
       '.li2-lec .li2-exp,.li2-lec .li2-rec,.li2-lec .li2-resu,.li2-lec .lb-pp-txt,.li2-lec .lb-cons,.li2-lec .li2-obj{font-size:var(--lt);line-height:var(--li)}.li2-lec .li2-exp *{line-height:inherit}' +
       '.li2-leyendo{background:#FFF3C4!important;outline:3px solid #C29A1E;outline-offset:3px;border-radius:6px}.li2-aviso{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:10px 16px;border-radius:12px;background:#253638;color:#fff;z-index:5}';
@@ -154,6 +157,7 @@ window.WaveLeccion = (function () {
     var el = document.createElement('div'); el.className = 'li2';
     el.innerHTML = '<div class="li2-caja" role="dialog" aria-label="Lección interactiva"><div class="li2-barra"><b class="li2-t">' + esc(op.titulo) + '</b>' +
       '<button type="button" class="li2-imp li2-voz" data-acc="leer" aria-pressed="false" aria-label="Leer en voz alta esta pantalla">🔊 Leer</button>' +
+      '<select class="li2-vel" data-acc-vel="1" aria-label="Velocidad de la voz"><option value="0.8">🐢 Lenta</option><option value="1">Normal</option><option value="1.25">🐇 Rápida</option></select>' +
       '<button type="button" class="li2-imp" data-acc="lectura" aria-pressed="false" aria-label="Modo lectura: tamaño de letra y espacios">Aa Modo lectura</button>' +
       '<button type="button" class="li2-imp" data-li="imprimir" aria-label="Imprimir la lección">🖨 Imprimir</button>' + '<button type="button" class="li2-x" data-li="cerrar" aria-label="Cerrar">✕</button></div><div class="li2-cuerpo"><nav class="li2-idx" aria-label="Temas de la lección"></nav><main class="li2-main"></main></div></div>';
     document.body.appendChild(el); document.body.classList.add('wvp-abierto');
