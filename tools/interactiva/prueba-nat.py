@@ -7,7 +7,7 @@ Uso: python3 tools/interactiva/prueba-nat.py [motor ...]   (sin argumentos prueb
 import asyncio, json, pathlib, sys
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
-SCRIPTS = ['js/apoyos.js', 'js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js']
+SCRIPTS = ['js/apoyos.js', 'js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js']
 CSS = ['css/styles.css', 'css/apoyos.css']
 OUT = pathlib.Path('/tmp/prueba-nat'); OUT.mkdir(exist_ok=True)
 

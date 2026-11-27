@@ -189,3 +189,28 @@ Herramientas comunes en `H.nat` (dibujo SVG, elegir, ordenar, tocar) para los ar
 | `tierra_luna` | `tierra_luna_x` | día y noche, estaciones y fases de la Luna (`p.modo`: dia, estaciones, fases) |
 | `sistema_solar` | `sistema_solar_x` (ordenar) | distancias y tamaños a escala (`p.modo`: dist, tam) |
 En total el banco de Naturales tiene 42 ejemplos y 42 ejercicios. La prueba `prueba-nat.py` corre 91 casos.
+
+## Sociales · `js/leccion-banco-soc.js` (27/11/2026)
+Historia, Geografía, Ciudadanía, Filosofía, Economía y Ciencias Sociales. Cada ejemplo con formato visual propio, paso a paso, y su práctica. Prueba: `python3 tools/interactiva/prueba-nat.py <motor>`.
+| Ejemplo | Ejercicio | Qué muestra | `p` |
+|---|---|---|---|
+| `linea_historica` | `linea_historica_x` (siglo, años entre fechas, también a. C.) | línea de tiempo con siglos y años transcurridos | `linea`: america, antigua, contemporanea · o `items` [{t, a, e}] |
+| `coordenadas` | `coordenadas_x` (tocar la ciudad) | latitud y longitud en la grilla | — |
+| `escala_mapa` | `escala_mapa_x` | medir con regla y pasar a km | — |
+| `husos` | `husos_x` | husos horarios y relojes | — |
+| `piramide_poblacion` | `piramide_poblacion_x` | pirámide joven, adulta y envejecida (datos aproximados) | — |
+| `indicadores` | `indicadores_x` | densidad, natalidad, mortalidad, crecimiento natural | — |
+| `circuito_productivo` | `circuito_productivo_x` (sectores) | etapas, sectores y valor agregado | `producto`: pan, yerba, remera |
+| `mercado` | `mercado_x` | oferta, demanda, escasez, exceso y equilibrio | — |
+| `inflacion` | `inflacion_x` | canasta que se encarece y poder de compra | — |
+| `flujo_circular` | `flujo_circular_x` | familias, empresas y Estado | — |
+| `desigualdad` | `desigualdad_x` | ingreso por quintiles y brecha | — |
+| `estado` | `estado_x` (poderes) | tres poderes en tres niveles | `nivel` |
+| `ley` | `ley_x` (ordenar) | cómo se hace una ley | — |
+| `dhondt` | `dhondt_x` | reparto de bancas | — |
+| `fuente` | `fuente_x` (primaria o secundaria) | análisis de una fuente: autor, fecha, intención | — |
+| `causas` | `causas_x` (tipo de causa) | árbol de causas y consecuencias | `proceso`: mayo, industrial, crisis29 |
+| `piramide_social` | `piramide_social_x` (ordenar) | sociedad feudal y colonial | `sociedad` |
+| `migraciones` | `migraciones_x` (expulsión o atracción) | origen, destino y factores | `caso`: europea, regional, campo |
+| `balanza_argumentos` | `balanza_argumentos_x` | argumentos a favor y en contra que inclinan la balanza | `debate`: uniforme, celulares, voto16 |
+| `dilema` | `dilema_x` | un dilema desde la ética de las consecuencias, del deber y de la virtud | — |
