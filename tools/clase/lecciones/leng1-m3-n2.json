@@ -2,205 +2,237 @@
  "slug": "leng1-m3-n2",
  "step_id": "c3a38f12-93bb-45de-8f7e-89956607b7b8",
  "materia": "Lengua y Literatura I",
- "titulo": "Pretérito perfecto simple e imperfecto",
- "sub": "Lengua y Literatura I · Misión 3 · Nivel 2",
+ "titulo": "Tiempos simples del indicativo",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 2",
  "escenas": [
   {
-   "t": "reto",
-   "texto": "¿Qué cambia? \"Llovía cuando sonó el timbre.\"",
-   "segundos": 5,
-   "respuesta": "Llovía es el fondo; sonó, la acción",
-   "emoji": "🔔",
-   "titulo": "LOS PASADOS",
-   "sub": "perfecto simple e imperfecto",
+   "t": "chat",
+   "contacto": {
+    "nombre": "Tomás",
+    "emoji": "🧑"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¿Venís al partido?"
+    },
+    {
+     "yo": true,
+     "txt": "Ayer jugué, hoy descanso, el sábado iré seguro"
+    }
+   ],
+   "titulo": "TIEMPOS SIMPLES",
+   "sub": "del modo indicativo",
    "voz": [
-    "Desafío: llovía cuando sonó el timbre. ¿Por qué un verbo es *llovía* y el otro *sonó*? 5 segundos.",
-    "*Llovía* pinta el fondo, algo que duraba. *Sonó* es una acción puntual que irrumpe.",
-    "Hoy: *los dos pasados del relato*."
+    "Tomás pregunta si venís al partido.",
+    "La respuesta usa tres tiempos en una sola línea: ayer jugué, hoy descanso, el sábado iré.",
+    "Pasado, presente y futuro. Hoy vemos los *tiempos simples* del modo indicativo: el modo de los hechos que se presentan como reales."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Tiempo verbal",
+   "texto": "Forma del verbo que ubica la acción en el presente, el pasado o el futuro respecto del momento en que se habla.",
+   "emoji": "⏱️",
+   "voz": [
+    "El *tiempo verbal* ubica la acción respecto del momento en que hablamos: antes, ahora o después.",
+    "Los tiempos *simples* son los que se arman con una sola palabra, como canto, canté o cantaré."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "CINCO TIEMPOS SIMPLES",
+   "eventos": [
+    {
+     "fecha": "Antes",
+     "txt": "canté / cantaba",
+     "emoji": "⏪"
+    },
+    {
+     "fecha": "Ahora",
+     "txt": "canto",
+     "emoji": "🎤"
+    },
+    {
+     "fecha": "Después",
+     "txt": "cantaré",
+     "emoji": "⏩"
+    },
+    {
+     "fecha": "Si…",
+     "txt": "cantaría",
+     "emoji": "🤔"
+    }
+   ],
+   "voz": [
+    "En el pasado hay dos tiempos: el pretérito perfecto simple, canté, y el pretérito imperfecto, cantaba.",
+    "En el momento en que hablamos, el presente: canto.",
+    "Lo que todavía no pasó, el futuro: cantaré.",
+    "Y lo que pasaría si se cumpliera una condición, el condicional: cantaría. Cinco tiempos simples en total."
    ]
   },
   {
    "t": "tabla",
-   "titulo": "DOS PASADOS",
+   "titulo": "YO, CON EL VERBO COMER",
    "columnas": [
-    "",
-    "Perfecto simple",
-    "Imperfecto"
+    "Tiempo",
+    "Forma"
    ],
    "filas": [
     [
-     "Yo",
-     "caminé · tuve",
-     "caminaba · tenía"
+     "Presente",
+     "como"
     ],
     [
-     "Él / ella",
-     "caminó · tuvo",
-     "caminaba · tenía"
+     "Perfecto simple",
+     "comí"
     ],
     [
-     "Ellos",
-     "caminaron · tuvieron",
-     "caminaban · tenían"
+     "Imperfecto",
+     "comía"
+    ],
+    [
+     "Futuro",
+     "comeré"
+    ],
+    [
+     "Condicional",
+     "comería"
     ]
    ],
    "voz": [
-    "Las formas.",
-    "Yo: *caminé* o *caminaba*.",
-    "Él o ella: *caminó* o *caminaba*.",
-    "Ellos: *caminaron* o *caminaban*."
+    "Veamos los cinco tiempos con el verbo comer, en primera persona.",
+    "Presente: como.",
+    "Pretérito perfecto simple: comí.",
+    "Pretérito imperfecto: comía.",
+    "Futuro: comeré.",
+    "Condicional: comería. Fijate el truco del futuro y el condicional: se arman agregando la terminación al infinitivo entero: comer, más é; comer, más ía."
    ]
   },
   {
    "t": "comparar",
    "a": {
-    "cab": "PERFECTO SIMPLE",
-    "texto": "acción puntual y terminada: hace avanzar",
+    "cab": "Perfecto simple",
+    "texto": "una acción terminada: llovió",
     "emoji": "⚡"
    },
    "b": {
-    "cab": "IMPERFECTO",
-    "texto": "fondo, descripción, costumbre",
-    "emoji": "🎨"
+    "cab": "Imperfecto",
+    "texto": "algo que duraba: llovía",
+    "emoji": "🌧️"
    },
-   "signo": "vs",
+   "signo": "≠",
    "voz": [
-    "¿Cuándo se usa cada uno?",
-    "El *perfecto simple*: acciones puntuales y terminadas. Son las que hacen *avanzar* la historia: abrió, gritó, corrió.",
-    "El *imperfecto*: el *fondo*: descripciones, acciones que duraban o se repetían. Era de noche, siempre llegaba tarde."
+    "Los dos pretéritos no son intercambiables.",
+    "El *perfecto simple* cuenta una acción terminada, que pasó de una vez: anoche llovió.",
+    "El *imperfecto* muestra algo que duraba o se repetía: llovía toda la noche. Lo vamos a usar mucho al narrar."
    ]
   },
   {
-   "t": "texto",
-   "oracion": "Era tarde y llovía cuando alguien golpeó la puerta.",
-   "marcas": [
+   "t": "pizarra",
+   "titulo": "USOS DEL PRESENTE",
+   "lineas": [
     {
-     "desde": 0,
-     "hasta": 0,
-     "etiqueta": "imperfecto: fondo",
-     "color": "#C3A8FF"
+     "txt": "Ahora: leo el diario",
+     "color": "azul"
     },
     {
-     "desde": 3,
-     "hasta": 3,
-     "etiqueta": "imperfecto: fondo",
-     "color": "#C3A8FF"
+     "txt": "Siempre: el agua hierve",
+     "color": "verde"
     },
     {
-     "desde": 6,
-     "hasta": 6,
-     "etiqueta": "perfecto: acción",
-     "color": "#F4B63F"
+     "txt": "Historia: en 1816 declaran",
+     "color": "sol",
+     "marca": "subraya"
     }
    ],
    "voz": [
-    "Mirá cómo trabajan juntos.",
-    "*Era*: imperfecto, describe el momento.",
-    "*Llovía*: imperfecto, una acción que duraba, el escenario.",
-    "*Golpeó*: perfecto simple, la acción que irrumpe y hace avanzar la historia."
+    "El presente no sirve solo para lo que pasa ahora: leo el diario.",
+    "También dice lo que siempre es verdad o se repite: el agua hierve a cien grados.",
+    "Y puede contar hechos pasados para acercarlos al lector: en 1816 los diputados declaran la independencia. Es el *presente histórico*."
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "ACCIÓN",
-     "emoji": "⚡"
-    },
-    {
-     "cab": "FONDO",
-     "emoji": "🎨"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "abrió la carta",
-     "caja": 0
-    },
-    {
-     "txt": "gritó su nombre",
-     "caja": 0
-    },
-    {
-     "txt": "hacía frío",
-     "caja": 1
-    },
-    {
-     "txt": "siempre leía",
-     "caja": 1
-    }
-   ],
+   "t": "prediccion",
+   "pregunta": "«Si tuviera tiempo, ___ más libros.» ¿Qué forma va?",
+   "a": {
+    "txt": "leería",
+    "emoji": "📖"
+   },
+   "b": {
+    "txt": "leeré",
+    "emoji": "📅"
+   },
+   "correcta": "a",
+   "resultado": "Depende de una condición: condicional.",
    "voz": [
-    "¿Acción o fondo?",
-    "*Acción*, perfecto simple: abrió la carta, gritó su nombre.",
-    "*Fondo*, imperfecto: hacía frío, siempre leía antes de dormir."
+    "¿Qué creés? Si tuviera tiempo, ¿leería o leeré más libros?",
+    "Pensá si es seguro o si depende de algo.",
+    "*Leería*: la acción depende de una condición que no se cumple, tener tiempo. Ese es el trabajo del condicional."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "\"Todos los veranos, mi abuela ___ dulce de higos.\"",
-   "opciones": [
-    "preparaba",
-    "preparó",
-    "prepara"
-   ],
-   "correcta": 0,
+   "t": "vof",
+   "afirmacion": "Futuro y condicional se arman sobre el infinitivo.",
+   "emoji": "🧩",
+   "verdadero": true,
+   "explicacion": "vivir + é = viviré · vivir + ía = viviría",
    "voz": [
-    "Te toca: todos los veranos, mi abuela ___ dulce de higos.",
-    "¿Preparaba, preparó o prepara?",
-    "*Preparaba*: es una costumbre que se repetía en el pasado. Por eso, imperfecto."
+    "Verdadero o falso: el futuro y el condicional se pueden formar agregando una terminación al infinitivo entero.",
+    "Probá con vivir.",
+    "Verdadero: vivir más é, viviré; vivir más ía, viviría. En los otros tiempos, en cambio, se parte de la raíz."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Entró y ve la carta",
-     "bien": "Entró y vio la carta"
+     "mal": "Vos cantastes",
+     "bien": "Vos cantaste"
     },
     {
-     "mal": "Ayer llovió toda la tarde mientras leí",
-     "bien": "…mientras leía"
+     "mal": "Si podría, iría",
+     "bien": "Si pudiera, iría"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Saltar del pasado al *presente* sin querer: entró y *ve* la carta.",
-    "Y usar perfecto simple para lo que *dura de fondo*: mientras *leí*, en lugar de mientras *leía*."
+    "Dos errores muy comunes.",
+    "Agregar una ese al perfecto simple: no es cantastes, es cantaste.",
+    "Y poner condicional después de «si»: no se dice si podría, iría, sino si pudiera, iría. El condicional va en la otra parte de la oración."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Perfecto simple*: la acción que hace avanzar.",
-    "*Imperfecto*: el fondo, la descripción, la costumbre.",
-    "Juntos: *fondo más acción*.",
-    "Y *coherencia*: no saltar al presente.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "PERFECTO SIMPLE",
-     "acción que avanza"
+     "Presente",
+     "ahora, siempre, histórico"
     ],
     [
-     "IMPERFECTO",
-     "fondo y costumbre"
+     "Perfecto simple",
+     "acción terminada"
     ],
     [
-     "JUNTOS",
-     "fondo + acción"
+     "Imperfecto",
+     "lo que duraba o se repetía"
     ],
     [
-     "COHERENCIA",
-     "no saltar al presente"
+     "Futuro y condicional",
+     "lo que pasará o pasaría"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "El indicativo tiene cinco tiempos simples.",
+    "El presente y sus usos.",
+    "El perfecto simple, para lo terminado.",
+    "El imperfecto, para lo que duraba.",
+    "Y el futuro y el condicional, que se arman sobre el infinitivo. ¡A practicar!"
+   ]
   }
  ]
 }

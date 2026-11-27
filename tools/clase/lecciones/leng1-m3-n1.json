@@ -2,225 +2,230 @@
  "slug": "leng1-m3-n1",
  "step_id": "73870d75-773f-4a42-a65a-c28b296d5281",
  "materia": "Lengua y Literatura I",
- "titulo": "Los hechos y su orden",
- "sub": "Lengua y Literatura I · Misión 3 · Nivel 1",
+ "titulo": "Raíz y desinencia",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 1",
  "escenas": [
   {
-   "t": "historia",
-   "personaje": {
-    "nombre": "Lucía",
-    "emoji": "👧"
-   },
-   "lugar": "🚑",
-   "lineas": [
-    "Lucía despertó en un hospital.",
-    "No recordaba nada.",
-    "Tres horas antes, había salido en bici bajo la lluvia."
-   ],
-   "titulo": "NARRAR",
-   "sub": "con orden",
+   "t": "reto",
+   "texto": "Sin ver el resto de la palabra: ¿quién hace la acción y cuándo? «…ábamos»",
+   "segundos": 7,
+   "respuesta": "Nosotros, en el pasado",
+   "emoji": "🔎",
+   "titulo": "RAÍZ Y DESINENCIA",
+   "sub": "las dos partes del verbo",
    "voz": [
-    "Lucía despertó en una cama de hospital.",
-    "No recordaba cómo había llegado ahí.",
-    "Tres horas antes, había salido en bici bajo la lluvia… La historia *no empezó por el principio*, y eso la hace atrapante.",
-    "Hoy: *los hechos y su orden*."
+    "Reto: te muestro solo el final de un verbo, «ábamos». ¿Quién hace la acción y cuándo?",
+    "Siete segundos.",
+    "Nosotros, en el pasado: caminábamos, saltábamos, mirábamos. La terminación sola ya lo dice. Hoy vemos las dos partes del verbo: la *raíz* y la *desinencia*."
    ]
   },
   {
-   "t": "comparar",
+   "t": "definicion",
+   "palabra": "Raíz y desinencia",
+   "texto": "La raíz guarda el significado del verbo; la desinencia es la terminación que indica persona, número y tiempo.",
+   "emoji": "🌱",
+   "voz": [
+    "Todo verbo conjugado tiene dos partes. La *raíz* guarda el significado: en caminábamos, «camin» nos dice que se trata de caminar.",
+    "La *desinencia* es la terminación que cambia: indica quién hace la acción, si es uno o son varios, y cuándo ocurre."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "SEPARAMOS UN VERBO",
+   "pasos": [
+    {
+     "txt": "caminábamos"
+    },
+    {
+     "txt": "camin + ábamos",
+     "nota": "raíz + desinencia"
+    },
+    {
+     "txt": "camin = caminar",
+     "nota": "el significado"
+    },
+    {
+     "txt": "ábamos = nosotros, pasado",
+     "nota": "la información"
+    }
+   ],
+   "voz": [
+    "Hagamos el análisis paso a paso con la forma caminábamos.",
+    "Primero buscamos la raíz: sacamos la terminación ar del infinitivo, caminar, y nos queda «camin». Lo que sigue, «ábamos», es la desinencia.",
+    "La raíz aporta el significado: la acción de caminar.",
+    "Y la desinencia aporta la información: primera persona del plural, nosotros, en tiempo pasado."
+   ]
+  },
+  {
+   "t": "tabla",
+   "titulo": "TRES CONJUGACIONES",
+   "columnas": [
+    "Infinitivo",
+    "Conjugación",
+    "Ejemplos"
+   ],
+   "filas": [
+    [
+     "-ar",
+     "primera",
+     "cantar, saltar"
+    ],
+    [
+     "-er",
+     "segunda",
+     "comer, temer"
+    ],
+    [
+     "-ir",
+     "tercera",
+     "vivir, partir"
+    ]
+   ],
+   "voz": [
+    "El infinitivo es el nombre del verbo, como aparece en el diccionario. Según cómo termina, el verbo pertenece a una de tres conjugaciones.",
+    "Los que terminan en ar forman la primera conjugación: cantar, saltar.",
+    "Los que terminan en er, la segunda: comer, temer.",
+    "Y los que terminan en ir, la tercera: vivir, partir. Cada conjugación tiene sus propias desinencias."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "Nosotros caminábamos y ellos corrían por la plaza.",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 1,
+     "etiqueta": "1.ª PLURAL"
+    },
+    {
+     "desde": 4,
+     "hasta": 4,
+     "etiqueta": "3.ª PLURAL"
+    }
+   ],
+   "voz": [
+    "La desinencia también dice la *persona* y el *número*. Mirá esta oración.",
+    "*Caminábamos*: primera persona, la de quien habla, en plural.",
+    "*Corrían*: tercera persona, la de quienes no participan de la conversación, también en plural. Por eso, muchas veces, ni hace falta nombrar el sujeto."
+   ]
+  },
+  {
+   "t": "versus",
    "a": {
-    "cab": "ORDEN CRONOLÓGICO",
-    "texto": "como pasaron los hechos",
-    "emoji": "⏱️"
+    "txt": "Regular",
+    "emoji": "🧱",
+    "datos": [
+     "la raíz no cambia",
+     "cant-o, cant-é, cant-aré"
+    ]
    },
    "b": {
-    "cab": "ORDEN DEL RELATO",
-    "texto": "como el narrador decide contarlos",
-    "emoji": "📖"
+    "txt": "Irregular",
+    "emoji": "🔀",
+    "datos": [
+     "la raíz cambia",
+     "pued-o, pud-e, podr-é"
+    ]
    },
-   "signo": "≠",
+   "gana": "empate",
+   "veredicto": "Mirá la raíz",
    "voz": [
-    "Toda historia tiene dos órdenes.",
-    "El *cronológico*: cómo pasaron los hechos, uno detrás de otro.",
-    "El *del relato*: cómo el narrador *decide* contarlos. No tienen por qué coincidir."
+    "Ahora, dos clases de verbos.",
+    "Los *regulares* mantienen la raíz en todas sus formas: cant-o, cant-é, cant-aré.",
+    "Los *irregulares* la cambian: el verbo poder dice pued-o, pud-e, podr-é.",
+    "Para saber de qué tipo es un verbo, conjugalo en presente, pasado y futuro y mirá si la raíz se mantiene."
    ]
   },
   {
-   "t": "orden",
-   "titulo": "LA HISTORIA DE LUCÍA",
-   "items": [
-    {
-     "txt": "Sale en bici",
-     "emoji": "🚲"
-    },
-    {
-     "txt": "Llueve fuerte",
-     "emoji": "🌧️"
-    },
-    {
-     "txt": "Se cae",
-     "emoji": "💥"
-    },
-    {
-     "txt": "Despierta",
-     "emoji": "🏥"
-    }
-   ],
-   "relato": [
-    3,
-    0,
-    1,
-    2
-   ],
-   "voz": [
-    "Mirá la historia de Lucía.",
-    "*Así se cuenta*: empieza por el final, despertando en el hospital, y después vuelve atrás.",
-    "*Así pasó*: salió en bici, se largó a llover, se cayó y despertó en el hospital."
-   ]
-  },
-  {
-   "t": "matriz",
-   "titulo": "JUGAR CON EL TIEMPO",
-   "celdas": [
-    {
-     "cab": "RETROSPECCIÓN",
-     "txt": "volver al pasado"
-    },
-    {
-     "cab": "ANTICIPACIÓN",
-     "txt": "adelantar el futuro"
-    },
-    {
-     "cab": "IN MEDIAS RES",
-     "txt": "empezar por la mitad"
-    },
-    {
-     "cab": "LINEAL",
-     "txt": "del principio al final"
-    }
-   ],
-   "voz": [
-    "Los narradores juegan con el tiempo.",
-    "*Retrospección*: volver al pasado, como hicimos con Lucía.",
-    "*Anticipación*: adelantar algo que pasará. Nunca imaginó que esa sería su última carrera.",
-    "*In medias res*: empezar en plena acción.",
-    "Y el orden *lineal*, del principio al final."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Núcleos narrativos",
-   "texto": "Acciones principales: si se quitan, la historia cambia",
-   "emoji": "🧱",
-   "voz": [
-    "Las acciones que sostienen la historia son los *núcleos narrativos*: si sacás una, la historia cambia o deja de entenderse.",
-    "Las demás, como describir el color de la bici, enriquecen, pero se pueden quitar."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "CONECTORES TEMPORALES",
-   "items": [
-    {
-     "txt": "Antes: años atrás, la noche anterior",
-     "emoji": "🔹"
-    },
-    {
-     "txt": "Mientras: mientras, en ese momento",
-     "emoji": "🔸"
-    },
-    {
-     "txt": "Después: luego, al día siguiente",
-     "emoji": "🟣"
-    },
-    {
-     "txt": "De golpe: de pronto, en ese instante",
-     "emoji": "🟡"
-    }
-   ],
-   "voz": [
-    "Para que el lector no se pierda, usamos *conectores temporales*.",
-    "Para ir al pasado: años atrás, la noche anterior.",
-    "Para hechos simultáneos: mientras, en ese momento.",
-    "Para avanzar: luego, al día siguiente.",
-    "Y para lo inesperado: de pronto."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Orden cronológico",
-   "texto": "Cómo pasaron los hechos, uno detrás de otro.",
-   "emoji": "📘",
-   "voz": [
-    "Veamos *Orden cronológico*.",
-    "Cómo pasaron los hechos, uno detrás de otro."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Orden del relato",
-   "texto": "Cómo el narrador decide contarlos.",
-   "emoji": "📘",
-   "voz": [
-    "Veamos *Orden del relato*.",
-    "Cómo el narrador decide contarlos."
-   ]
-  },
-  {
-   "t": "consejo",
-   "texto": "Cuando cambies de momento, avisale al lector con un conector temporal: así no se pierde.",
-   "emoji": "💡",
-   "voz": [
-    "Un consejo: Cuando cambies de momento, avisale al lector con un conector temporal: así no se pierde."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "\"Nunca imaginó que aquel mensaje le cambiaría la vida.\" ¿Qué recurso es?",
+   "t": "quiz4",
+   "pregunta": "«Tuvimos» es una forma de un verbo irregular. ¿Cuál es su infinitivo?",
    "opciones": [
-    "Anticipación",
-    "Retrospección",
-    "In medias res"
+    "tener",
+    "tuver",
+    "tuvir",
+    "tomar"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: nunca imaginó que aquel mensaje le cambiaría la vida. ¿Qué recurso es?",
-    "¿Anticipación, retrospección o in medias res?",
-    "*Anticipación*: el narrador adelanta algo que todavía no pasó y genera intriga."
+    "Pregunta: tuvimos es una forma de un verbo irregular. ¿Cuál es su infinitivo?",
+    "Pensá cómo diría la oración en presente: yo…",
+    "*Tener*. La raíz cambia de ten a tuv, y por eso cuesta reconocerlo. Tuver o tuvir no existen."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "FORMAS NO PERSONALES",
+   "items": [
+    {
+     "cab": "Infinitivo",
+     "txt": "saltar, temer, vivir"
+    },
+    {
+     "cab": "Gerundio",
+     "txt": "saltando, viviendo"
+    },
+    {
+     "cab": "Participio",
+     "txt": "saltado, vivido"
+    }
+   ],
+   "voz": [
+    "Hay tres formas del verbo que no tienen persona ni tiempo: las *formas no personales*.",
+    "El *infinitivo*, terminado en ar, er o ir: es el nombre del verbo.",
+    "El *gerundio*, terminado en ando o iendo: muestra una acción en curso.",
+    "Y el *participio*, terminado en ado o ido: lo vamos a necesitar para armar los tiempos compuestos."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "«Corriendo» dice quién corre",
+     "bien": "El gerundio no tiene persona"
+    },
+    {
+     "mal": "La raíz es lo que cambia",
+     "bien": "Cambia la desinencia"
+    }
+   ],
+   "voz": [
+    "Dos confusiones frecuentes.",
+    "Creer que corriendo dice quién corre: el gerundio no indica persona; puede ser yo, vos o ellos.",
+    "Y creer que la raíz es la parte que cambia: lo que cambia es la desinencia. En los irregulares también cambia la raíz, y por eso se llaman así."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Dos órdenes: *cronológico* y *del relato*.",
-    "Recursos: *retrospección, anticipación, in medias res*.",
-    "*Núcleos narrativos*: las acciones que sostienen la historia.",
-    "Y los *conectores temporales* guían al lector.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "DOS ÓRDENES",
-     "cronológico y del relato"
+     "Raíz",
+     "guarda el significado"
     ],
     [
-     "RECURSOS",
-     "retrospección, anticipación"
+     "Desinencia",
+     "persona, número y tiempo"
     ],
     [
-     "NÚCLEOS",
-     "acciones principales"
+     "Regular e irregular",
+     "según cambie o no la raíz"
     ],
     [
-     "CONECTORES",
-     "ubican en el tiempo"
+     "No personales",
+     "infinitivo, gerundio, participio"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "Cada forma verbal se puede desarmar en dos partes.",
+    "La raíz guarda el significado.",
+    "La desinencia dice persona, número y tiempo.",
+    "Los regulares no cambian la raíz; los irregulares sí.",
+    "Y las formas no personales son el infinitivo, el gerundio y el participio. ¡A practicar!"
+   ]
   }
  ]
 }

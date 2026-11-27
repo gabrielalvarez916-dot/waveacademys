@@ -2,153 +2,232 @@
  "slug": "leng1-m3-n3",
  "step_id": "b2bdf1f6-5fa4-49cb-8e22-a7b819bd22f1",
  "materia": "Lengua y Literatura I",
- "titulo": "Narrar con detalle",
- "sub": "Lengua y Literatura I · Misión 3 · Nivel 3",
+ "titulo": "Tiempos compuestos",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 3",
  "escenas": [
   {
-   "t": "antesdespues",
-   "antes": {
-    "cab": "CONTADO",
-    "emoji": "😐",
-    "texto": "Tenía miedo."
-   },
-   "despues": {
-    "cab": "MOSTRADO",
-    "emoji": "😱",
-    "texto": "Le temblaban las manos y no podía tragar."
-   },
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "Llegaron los bomberos, pero el fuego ya se había apagado",
+   "bajada": "Un vecino lo había controlado con un matafuegos",
+   "emoji": "🚒",
+   "titulo": "TIEMPOS COMPUESTOS",
+   "sub": "haber + participio",
    "voz": [
-    "Comparalas. *Tenía miedo* lo dice, pero no se siente.",
-    "*Le temblaban las manos y no podía tragar*: el lector lo ve y lo siente. Hoy: *narrar con detalle*."
+    "Último momento: cuando llegaron los bomberos, el fuego ya se había apagado.",
+    "Un vecino lo había controlado con un matafuegos.",
+    "Fijate en «se había apagado»: son dos palabras y cuentan algo que pasó antes de otro hecho. Hoy vemos los *tiempos compuestos*."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Mostrar, no decir",
-   "texto": "En vez de nombrar la emoción, mostrar lo que el personaje hace, siente y percibe",
-   "emoji": "🎥",
+   "palabra": "Tiempo compuesto",
+   "texto": "Tiempo verbal formado por el auxiliar haber conjugado más el participio del verbo principal.",
+   "emoji": "🧩",
    "voz": [
-    "Los escritores tienen una regla: *mostrar, no decir*.",
-    "En vez de nombrar la emoción, mostrás lo que el personaje *hace, siente y percibe*. El lector saca la conclusión."
+    "Un *tiempo compuesto* se arma con dos palabras: el verbo *haber* conjugado y el *participio* del verbo que lleva el significado.",
+    "Haber se encarga de la persona, el número y el tiempo; el participio no cambia nunca."
    ]
   },
   {
    "t": "pasos",
-   "titulo": "LOS CINCO SENTIDOS",
+   "titulo": "CÓMO SE ARMA",
    "items": [
     {
-     "txt": "Vista: la luz amarilla del farol",
-     "emoji": "🔹"
+     "txt": "Elegí el tiempo de haber: había",
+     "emoji": "1️⃣"
     },
     {
-     "txt": "Oído: el crujido de la escalera",
-     "emoji": "🔸"
+     "txt": "Sumá el participio: cantado",
+     "emoji": "2️⃣"
     },
     {
-     "txt": "Olfato: olor a tierra mojada",
-     "emoji": "🟣"
-    },
-    {
-     "txt": "Tacto: la baranda helada",
-     "emoji": "🟡"
-    },
-    {
-     "txt": "Gusto: sabor a óxido",
-     "emoji": "🟢"
+     "txt": "Listo: había cantado",
+     "emoji": "✅"
     }
    ],
    "voz": [
-    "El detalle entra por los *sentidos*.",
-    "*Vista*: la luz amarilla del farol.",
-    "*Oído*: el crujido de la escalera.",
-    "*Olfato*: olor a tierra mojada.",
-    "*Tacto*: la baranda helada.",
-    "*Gusto*: un sabor a óxido en la boca."
+    "Armemos uno paso a paso.",
+    "Primero conjugamos haber en el tiempo y la persona que necesitamos: yo había.",
+    "Después sumamos el participio del verbo principal, terminado en ado o ido: cantado.",
+    "Resultado: había cantado. Si cambiamos la persona, cambia solo haber: habíamos cantado."
    ]
   },
   {
-   "t": "corrige",
-   "titulo": "VERBOS Y ADJETIVOS PRECISOS",
-   "cambios": [
-    {
-     "antes": "caminó despacio",
-     "despues": "se arrastró",
-     "motivo": "un verbo preciso dice más"
-    },
-    {
-     "antes": "una casa fea",
-     "despues": "una casa descascarada",
-     "motivo": "un adjetivo que se puede ver"
-    },
-    {
-     "antes": "dijo enojado",
-     "despues": "escupió",
-     "motivo": "el verbo ya muestra el enojo"
-    }
+   "t": "tabla",
+   "titulo": "CADA SIMPLE, SU COMPUESTO",
+   "columnas": [
+    "Simple",
+    "Compuesto"
+   ],
+   "filas": [
+    [
+     "canto",
+     "he cantado"
+    ],
+    [
+     "cantaba",
+     "había cantado"
+    ],
+    [
+     "cantaré",
+     "habré cantado"
+    ],
+    [
+     "cantaría",
+     "habría cantado"
+    ]
    ],
    "voz": [
-    "Otra clave: palabras *precisas*.",
-    "*Caminó despacio* cambia por *se arrastró*: un solo verbo que dice más.",
-    "*Una casa fea* cambia por *descascarada*: un adjetivo que se puede ver.",
-    "*Dijo enojado* cambia por *escupió*: el verbo ya muestra el enojo."
+    "Cada tiempo simple tiene su compuesto, y el nombre sale del tiempo en que está haber.",
+    "Haber en presente, he cantado: pretérito perfecto compuesto.",
+    "Haber en imperfecto, había cantado: pretérito pluscuamperfecto.",
+    "Haber en futuro, habré cantado: futuro perfecto.",
+    "Y haber en condicional, habría cantado: condicional perfecto."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "¿Cuál MUESTRA que el personaje está nervioso?",
+   "t": "orden",
+   "titulo": "ASÍ PASÓ / ASÍ SE CUENTA",
+   "items": [
+    {
+     "txt": "Apagan el fuego",
+     "emoji": "🧯"
+    },
+    {
+     "txt": "Llegan los bomberos",
+     "emoji": "🚒"
+    },
+    {
+     "txt": "Todo está apagado",
+     "emoji": "✅"
+    }
+   ],
+   "relato": [
+    1,
+    2,
+    0
+   ],
+   "voz": [
+    "Mirá el orden real de los hechos: primero un vecino apaga el fuego, después llegan los bomberos y encuentran todo apagado.",
+    "Pero la noticia empieza contando la llegada de los bomberos.",
+    "Lo que pasó antes aparece al final, con el pluscuamperfecto: el fuego se había apagado. Los compuestos marcan *anterioridad*."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "PARTICIPIOS IRREGULARES",
+   "pares": [
+    [
+     "escribir",
+     "escrito"
+    ],
+    [
+     "romper",
+     "roto"
+    ],
+    [
+     "volver",
+     "vuelto"
+    ],
+    [
+     "decir",
+     "dicho"
+    ],
+    [
+     "hacer",
+     "hecho"
+    ]
+   ],
+   "voz": [
+    "Algunos participios no terminan en ado ni en ido. Hay que aprenderlos.",
+    "Escribir: escrito.",
+    "Romper: roto, nunca rompido.",
+    "Volver: vuelto.",
+    "Decir: dicho.",
+    "Y hacer: hecho, con hache."
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "¿Cómo se llama el tiempo de «habremos terminado»?",
+   "pistas": [
+    "Tiene haber + participio: es compuesto",
+    "«Habremos» es haber en futuro"
+   ],
+   "respuesta": "Futuro perfecto",
+   "voz": [
+    "Un problema con pistas: ¿cómo se llama el tiempo de habremos terminado?",
+    "Primera pista: tiene haber más un participio, así que es un tiempo compuesto.",
+    "Segunda pista: habremos es el verbo haber en futuro, como cantaremos.",
+    "Respuesta: *futuro perfecto*. Cuenta algo que va a estar terminado antes de un momento futuro: para el viernes, habremos terminado."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuál está bien escrita?",
    "opciones": [
-    "Se mordía las uñas y miraba el reloj cada minuto",
-    "Estaba muy nervioso",
-    "Sentía nervios"
+    "Había roto el vaso",
+    "Había rompido el vaso",
+    "Hube rompí el vaso"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿cuál *muestra* que el personaje está nervioso?",
-    "Se mordía las uñas y miraba el reloj cada minuto; estaba muy nervioso; o sentía nervios.",
-    "La primera: no nombra la emoción, la *muestra* con acciones."
+    "Pregunta: ¿cuál de estas oraciones está bien escrita?",
+    "Acordate de los participios irregulares.",
+    "*Había roto el vaso*. Rompido no existe, y con haber siempre va el participio, no una forma conjugada."
    ]
   },
   {
-   "t": "consejo",
-   "titulo": "NI DE MÁS NI DE MENOS",
-   "texto": "Detalle en los momentos importantes; el resto, rápido",
-   "emoji": "⚖️",
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Ha rompido",
+     "bien": "Ha roto"
+    },
+    {
+     "mal": "Había ya llegado",
+     "bien": "Ya había llegado"
+    }
+   ],
    "voz": [
-    "Ojo: no hace falta describir todo. Poné el detalle en los *momentos importantes* de la historia y contá rápido lo demás."
+    "Dos errores para evitar.",
+    "Usar participios regulares inventados: no es ha rompido, es ha roto.",
+    "Y meter palabras entre haber y el participio: no conviene decir había ya llegado; lo natural es ya había llegado. Las dos piezas del compuesto van juntas."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Mostrar*, no decir.",
-    "Los *cinco sentidos*.",
-    "*Verbos y adjetivos precisos*.",
-    "Y el detalle, *donde importa*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "MOSTRAR",
-     "no nombrar la emoción"
+     "Tiempo compuesto",
+     "haber + participio"
     ],
     [
-     "SENTIDOS",
-     "vista, oído, olfato, tacto, gusto"
+     "Haber",
+     "lleva persona y tiempo"
     ],
     [
-     "PRECISIÓN",
-     "verbos y adjetivos justos"
+     "Pluscuamperfecto",
+     "había + participio: lo anterior"
     ],
     [
-     "DOSIS",
-     "detalle donde importa"
+     "Irregulares",
+     "roto, escrito, vuelto, dicho"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "Los tiempos compuestos cuentan lo que ya estaba terminado.",
+    "Se arman con haber y el participio.",
+    "Haber es el que cambia.",
+    "El pluscuamperfecto cuenta lo anterior a otro pasado.",
+    "Y hay participios irregulares que conviene saber de memoria. ¡A practicar!"
+   ]
   }
  ]
 }

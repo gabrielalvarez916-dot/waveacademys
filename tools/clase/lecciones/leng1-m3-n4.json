@@ -2,172 +2,198 @@
  "slug": "leng1-m3-n4",
  "step_id": "4254c521-afcf-4d4d-8125-959ea313785a",
  "materia": "Lengua y Literatura I",
- "titulo": "Corrijo mi relato",
- "sub": "Lengua y Literatura I · Misión 3 · Nivel 4",
+ "titulo": "Los pretéritos en el relato",
+ "sub": "Lengua y Literatura I · Misión 12 · Nivel 4",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Juan",
-    "emoji": "👦"
+   "t": "historia",
+   "personaje": {
+    "nombre": "La narradora",
+    "emoji": "👩"
    },
-   "mensajes": [
-    {
-     "yo": false,
-     "txt": "Terminé el cuento!! 📝"
-    },
-    {
-     "yo": true,
-     "txt": "¿Lo releíste?"
-    },
-    {
-     "yo": false,
-     "txt": "Para qué, si ya está 😎"
-    }
+   "lugar": "🌧️",
+   "lineas": [
+    "Era tarde y llovía sin parar.",
+    "De pronto, alguien golpeó la puerta."
    ],
-   "titulo": "CORRIJO",
-   "sub": "mi relato",
+   "titulo": "LOS PRETÉRITOS",
+   "sub": "en el relato",
    "voz": [
-    "Juan: ¡terminé el cuento!",
-    "Lu: ¿lo releíste?",
-    "Juan: ¿para qué, si ya está? Error: *todo texto mejora cuando se revisa*.",
-    "Hoy: *corrijo mi relato*."
+    "Escuchá cómo empieza este relato: era tarde y llovía sin parar.",
+    "De pronto, alguien golpeó la puerta.",
+    "Dos oraciones, dos pretéritos distintos, y cada uno cumple una tarea. Hoy vemos cómo se usan los *pretéritos al narrar*."
    ]
   },
   {
-   "t": "linea",
-   "titulo": "REVISO EN CUATRO PASADAS",
-   "eventos": [
+   "t": "texto",
+   "oracion": "Era tarde y llovía cuando alguien golpeó la puerta.",
+   "marcas": [
     {
-     "fecha": "1",
-     "txt": "El orden: ¿se entiende qué pasó?",
-     "emoji": "🧭"
+     "desde": 0,
+     "hasta": 0,
+     "etiqueta": "FONDO"
     },
     {
-     "fecha": "2",
-     "txt": "Los tiempos verbales",
-     "emoji": "⏳"
+     "desde": 3,
+     "hasta": 3,
+     "etiqueta": "FONDO"
     },
     {
-     "fecha": "3",
-     "txt": "Repeticiones",
-     "emoji": "🔁"
-    },
-    {
-     "fecha": "4",
-     "txt": "Puntuación y diálogos",
-     "emoji": "✒️"
+     "desde": 6,
+     "hasta": 6,
+     "etiqueta": "ACCIÓN"
     }
    ],
    "voz": [
-    "No se revisa todo junto: se hacen *pasadas*. Primera: el *orden*. ¿Se entiende qué pasó y cuándo?",
-    "Segunda: los *tiempos verbales*. ¿Mantengo el pasado?",
-    "Tercera: *repeticiones*. ¿Digo veinte veces la misma palabra?",
-    "Cuarta: *puntuación y diálogos*."
+    "Analicemos la oración verbo por verbo.",
+    "*Era*: imperfecto. Describe el momento, arma el escenario.",
+    "*Llovía*: imperfecto. Algo que duraba mientras pasaban las otras cosas.",
+    "*Golpeó*: perfecto simple. Una acción que pasa de una vez e interrumpe la escena: la historia avanza."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "Preguntá: ¿duraba o pasó?",
+   "texto": "Si duraba o se repetía, imperfecto. Si pasó de una vez y terminó, perfecto simple.",
+   "emoji": "💡",
+   "voz": [
+    "Un truco para elegir: preguntate si la acción duraba o si pasó de una vez. Si duraba, se repetía o describe, va en imperfecto; si ocurrió y terminó, va en perfecto simple."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "QUÉ TIEMPO USAR",
+   "celdas": [
+    {
+     "cab": "Perfecto simple",
+     "txt": "acciones que avanzan"
+    },
+    {
+     "cab": "Imperfecto",
+     "txt": "fondo y costumbres"
+    },
+    {
+     "cab": "Pluscuamperfecto",
+     "txt": "lo que pasó antes"
+    },
+    {
+     "cab": "Presente histórico",
+     "txt": "acerca lo pasado"
+    }
+   ],
+   "voz": [
+    "Cada tiempo tiene su trabajo en un relato.",
+    "El *perfecto simple* cuenta las acciones que hacen avanzar la historia.",
+    "El *imperfecto* describe el fondo y las costumbres: todos los veranos, el abuelo preparaba dulce.",
+    "El *pluscuamperfecto* vuelve atrás: cuenta lo que había pasado antes.",
+    "Y el *presente histórico* cuenta hechos pasados como si ocurrieran ahora, para acercarlos al lector."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "UN RELATO, TRES PRETÉRITOS",
+   "items": [
+    "La casa estaba vacía",
+    "Ana abrió la puerta",
+    "Alguien había entrado antes"
+   ],
+   "voz": [
+    "Mirá cómo trabajan juntos en un relato breve. Primero, el fondo en imperfecto: la casa estaba vacía.",
+    "Después, la acción en perfecto simple: Ana abrió la puerta.",
+    "Y al final, lo anterior en pluscuamperfecto: alguien había entrado antes. Con tres tiempos el lector entiende la escena, lo que pasa y lo que ya había pasado."
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "«Todos los veranos, el abuelo ___ dulce de higos.»",
+   "a": {
+    "txt": "preparaba",
+    "emoji": "🔁"
+   },
+   "b": {
+    "txt": "preparó",
+    "emoji": "1️⃣"
+   },
+   "correcta": "a",
+   "resultado": "Una costumbre que se repetía: imperfecto.",
+   "voz": [
+    "¿Qué creés? Todos los veranos, el abuelo ¿preparaba o preparó dulce de higos?",
+    "Mirá la expresión «todos los veranos».",
+    "*Preparaba*: es una costumbre que se repetía. Si dijéramos «un verano, el frasco explotó», ahí sí iría el perfecto simple."
    ]
   },
   {
    "t": "corrige",
-   "titulo": "UN RELATO, CORREGIDO",
+   "titulo": "CORREGIMOS UN RELATO",
    "cambios": [
     {
-     "antes": "Lucía entra al cuarto",
-     "despues": "Lucía entró al cuarto",
-     "motivo": "mantener el pasado"
+     "antes": "Entró y ve la carta",
+     "despues": "Entró y vio la carta",
+     "motivo": "no saltar al presente"
     },
     {
-     "antes": "Lucía vio a Lucía",
-     "despues": "vio su reflejo",
-     "motivo": "evitar la repetición"
-    },
-    {
-     "antes": "y entonces y entonces",
-     "despues": "de pronto",
-     "motivo": "variar los conectores"
+     "antes": "Mientras leí, sonó",
+     "despues": "Mientras leía, sonó",
+     "motivo": "lo que dura: imperfecto"
     }
    ],
    "voz": [
-    "Corrijamos un relato.",
-    "*Lucía entra al cuarto* pasa a *entró*: mantenemos el pasado.",
-    "*Lucía vio a Lucía en el espejo* pasa a *vio su reflejo*: evitamos la repetición.",
-    "*Y entonces, y entonces* pasa a *de pronto*: variamos los conectores."
+    "Corrijamos dos errores típicos de un relato.",
+    "Entró y ve la carta: el relato salta al presente sin motivo. Se corrige con el pasado: entró y vio la carta.",
+    "Mientras leí, sonó el timbre: leer duraba de fondo, así que va en imperfecto. Mientras leía, sonó el timbre."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Raya de diálogo",
-   "texto": "En los diálogos, cada intervención empieza en un renglón nuevo con raya (—)",
-   "emoji": "💬",
+   "t": "causas",
+   "causa": {
+    "txt": "Mezclar tiempos sin motivo",
+    "emoji": "🌀"
+   },
+   "items": [
+    "el lector se pierde",
+    "no se sabe qué pasó antes",
+    "la historia pierde fuerza"
+   ],
    "voz": [
-    "Y los diálogos: cada vez que habla un personaje, va en *renglón nuevo* con una *raya*.",
-    "—¿Hay alguien ahí? —preguntó Lucía. La segunda raya separa lo que dice del narrador."
+    "¿Qué pasa cuando un relato mezcla tiempos sin motivo?",
+    "El lector se pierde: no sabe si la historia ocurre ahora o ya ocurrió.",
+    "Tampoco queda claro qué pasó antes y qué después.",
+    "Y la historia pierde fuerza. Por eso, al revisar un texto, conviene hacer una pasada solo para mirar los verbos."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "¿Cuál está bien escrito?",
+   "t": "quiz4",
+   "pregunta": "«Cuando llegué a la estación, el tren ya ___.»",
    "opciones": [
-    "—¿Quién es? —preguntó Lucía.",
-    "-¿Quién es? preguntó Lucía.",
-    "\"¿Quién es?\" —Lucía preguntó—"
+    "había salido",
+    "salía",
+    "sale",
+    "saldrá"
    ],
    "correcta": 0,
    "voz": [
-    "Te toca: ¿cuál diálogo está bien escrito?",
-    "Fijate en las rayas y en dónde van.",
-    "El primero: raya al empezar, y otra raya antes de lo que agrega el narrador."
+    "Pregunta final: cuando llegué a la estación, el tren ya… ¿qué?",
+    "Pensá qué pasó primero.",
+    "*Había salido*: el tren salió antes de que yo llegara, y eso lo marca el pluscuamperfecto."
    ]
   },
   {
-   "t": "consejo",
-   "titulo": "LEELO EN VOZ ALTA",
-   "texto": "El oído encuentra errores que el ojo no ve",
-   "emoji": "🗣️",
-   "voz": [
-    "El mejor truco: *leé tu texto en voz alta*. El oído encuentra errores que el ojo se saltea."
-   ]
-  },
-  {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Corregí un relato con errores",
-   "emoji": "✍️",
-   "voz": [
-    "Ahora te toca a vos: en las *actividades* de este nivel vas a *corregir un relato* con errores de tiempos, repeticiones y diálogo. El tutor revisa tu versión y te da pistas."
-   ]
-  },
-  {
-   "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Revisá en *pasadas*.",
-    "Mantené los *tiempos*.",
-    "Evitá *repeticiones*.",
-    "Y los *diálogos*, con raya.",
-    "¡Misión 3 terminada! Ahora, *a practicar*."
-   ],
+   "t": "logro",
+   "titulo": "¡Misión cumplida!",
    "items": [
-    [
-     "PASADAS",
-     "orden, tiempos, repeticiones, puntuación"
-    ],
-    [
-     "TIEMPOS",
-     "mantener el pasado"
-    ],
-    [
-     "REPETICIONES",
-     "sinónimos y pronombres"
-    ],
-    [
-     "DIÁLOGOS",
-     "renglón nuevo y raya"
-    ]
+    "Raíz y desinencia",
+    "Tiempos simples del indicativo",
+    "Tiempos compuestos",
+    "Los pretéritos en el relato"
    ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+   "xp": 100,
+   "voz": [
+    "¡Terminaste las clases de la misión del verbo!",
+    "Sabés separar la raíz y la desinencia.",
+    "Conocés los cinco tiempos simples del indicativo.",
+    "Armás los tiempos compuestos con haber y el participio.",
+    "Y elegís el pretérito justo para cada parte de un relato. ¡A practicar!"
+   ]
   }
  ]
 }
