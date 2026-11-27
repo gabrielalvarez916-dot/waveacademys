@@ -68,3 +68,11 @@ Va en `niveles.N.leccion.recuerda`: 4 a 8 tarjetas, una por concepto o procedimi
 
 ## Ritmo
 Se pueden hacer muchas seguidas, pero cada tanda se controla igual. Si el control rechaza, se corrige esa lección antes de seguir con la siguiente.
+
+## Variedad real de herramientas (27/11/2026, obligatorio)
+El banco tiene muchas herramientas y hay que usarlas. `validar.js` lo controla, por herramienta (motor sin `_x`), por separado para el EJEMPLO y para la PRÁCTICA:
+- En una lección, la misma herramienta no va en dos pantallas seguidas ni más de 2 veces.
+- En la misión (niveles 1 a 4), ninguna herramienta en más de la cuarta parte de las pantallas (mínimo 2), y al menos una herramienta distinta cada 3 pantallas.
+- Siempre con herramientas que correspondan al tema. Si el banco no tiene otra forma de mostrar ese tema, se agrega al banco (nunca se fuerza una que no corresponde).
+- Antes de elegir, correr `python3 tools/interactiva/uso-banco.py <materia>`: muestra lo más repetido y lo que nunca se usó.
+- Las misiones hechas antes de este control están en `tools/variedad_pendientes.txt` (solo avisan). Cuando se rehace una, se saca de la lista.

@@ -71,3 +71,5 @@ Español rioplatense informal. Rápido y con calidad, cambios quirúrgicos. Ante
 - El libro va en `"libro": {"titulo": "...", "act": [...]}`: la base crea el **nivel 5 «Libro: título»** (solo actividades sobre el libro, mínimo 4, la mitad pensadas) y la práctica general pasa al **nivel 6** (en el archivo sigue siendo `act["5"]`). El examen va al final.
 - En la app aparece al principio el círculo **«Libro del nivel: título»** para leer o bajar el PDF del libro (lo sube Gabriel al paso PDF del nivel «Libro: …»). No es un nivel ni lleva progreso.
 - Los PDF ya no son un paso ni se arman: el PDF viejo va a Recursos; el del libro, al círculo del libro.
+
+- **Variedad (obligatoria):** antes de elegir ejemplos y prácticas, correr `python3 tools/interactiva/uso-banco.py <materia>` y priorizar herramientas sin usar que correspondan al tema. `validar.js` rechaza repetir la misma herramienta en pantallas seguidas, más de 2 veces por lección o en más de 1/4 de la misión.

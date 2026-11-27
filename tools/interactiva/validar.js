@@ -7,6 +7,7 @@ require(path.join(__dirname, '..', '..', 'js', 'wave-calc.js'));
 const W = globalThis.WaveCalc;
 let errores = 0;
 const mal = (donde, m) => { errores++; console.log('  ✘', donde, '·', m); };
+const malV = (donde, m) => mal(donde, m);
 const quedan = s => /\{[A-Za-z_][A-Za-z_0-9]*\}/.test(String(s));
 
 function caso(src, vars, donde) {
@@ -134,6 +135,34 @@ function leccion(ruta, M, n, L, donde) {
   if (E.parrafo) L.temas.forEach((t, i) => { (t.explicacion || []).filter(b => b.tipo === 'parrafo' || b.tipo === 'definicion').forEach(b => { limpio(b.texto).split(/(?<=[.!?])\s+/).forEach(o => { const w = palabras(o).length; if (w && w < 6 && !/[=×÷√∛]/.test(o)) mal(donde + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»', 'oración de relleno o incompleta: «' + o.trim() + '» (' + w + ' palabras). Explicá, no rellenes'); }); }); });
 }
 
+// 27/11/2026 (Gabriel): VARIEDAD REAL. El banco tiene muchas herramientas y hay que usarlas: una misión no puede repetir siempre el mismo
+// ejemplo ni la misma práctica. Se cuenta por herramienta (motor sin "_x"; en los motores que cambian de dibujo según el modo, motor + modo).
+// · En una lección: la misma herramienta no va en dos pantallas seguidas ni más de 2 veces.
+// · En la misión (niveles 1 a 4): ninguna herramienta en más de la cuarta parte de las pantallas (mínimo 2) y al menos una herramienta
+//   distinta cada 3 pantallas. Se cumple siempre con herramientas que correspondan al tema: si el banco no tiene otra, se agrega al banco.
+const MULTI_MODO = ['primeros', 'cuerpo', 'planta', 'oracion', 'tiempo', 'engranajes', 'numero_genero'];
+function herramienta(o) { if (!o || !o.motor) return null; const b = String(o.motor).replace(/_x$/, ''); const p = o.p || {}; return MULTI_MODO.includes(b) ? b + ':' + (p.modo || p.que || '') : b; }
+const VAR_PENDIENTES = new Set((() => { try { return fs.readFileSync(path.join(__dirname, '..', 'variedad_pendientes.txt'), 'utf8').split('\n').map(x => x.trim()).filter(x => x && !x.startsWith('#')); } catch (e) { return []; } })());
+function variedad(M, ruta) {
+  // Las misiones que ya estaban hechas antes de este control (tools/variedad_pendientes.txt) solo reciben AVISO hasta que se rehagan.
+  const viejo = VAR_PENDIENTES.has(String(ruta).replace(/\\/g, '/').replace(/^\.\//, ''));
+  const mal = viejo ? (d, m) => console.log('  ⚠', d, '·', m, '(pendiente de rehacer)') : malV;
+  ['ejemplo', 'ejercicio'].forEach(k => {
+    const todos = [];
+    Object.keys(M.niveles || {}).filter(n => Number(n) >= 1 && Number(n) <= 4).forEach(n => { const L = (M.niveles[n] || {}).leccion; if (!L || !Array.isArray(L.temas)) return;
+      const cuenta = {}; let previo = null;
+      L.temas.forEach((t, i) => { const h = herramienta(t[k]); if (!h) return; todos.push(h); const d = 'lección nivel ' + n + ' · tema ' + (i + 1) + ' «' + (t.titulo || '') + '»';
+        if (h === previo) mal(d, 'variedad: el ' + k + ' «' + h + '» es el mismo de la pantalla anterior. Usá otra herramienta del banco que muestre este tema de otra forma (si no hay, agregala al banco)');
+        cuenta[h] = (cuenta[h] || 0) + 1; if (cuenta[h] === 3) mal('lección nivel ' + n, 'variedad: el ' + k + ' «' + h + '» se usa 3 veces o más en la misma lección (máximo 2)');
+        previo = h; }); });
+    const S = todos.length; if (S < 4) return;
+    const tope = Math.max(2, Math.ceil(S / 4)), dist = new Set(todos).size, minDist = Math.min(S, Math.max(2, Math.ceil(S / 3))), c = {};
+    todos.forEach(h => { c[h] = (c[h] || 0) + 1; });
+    Object.keys(c).forEach(h => { if (c[h] > tope) mal('misión', 'variedad: el ' + k + ' «' + h + '» está en ' + c[h] + ' de ' + S + ' pantallas (máximo ' + tope + '). Repartí entre otras herramientas del banco que correspondan al tema'); });
+    if (dist < minDist) mal('misión', 'variedad: solo ' + dist + ' ' + (k === 'ejemplo' ? 'ejemplos' : 'prácticas') + ' distintos en ' + S + ' pantallas (mínimo ' + minDist + ')');
+  });
+}
+
 for (const ruta of process.argv.slice(2)) {
   const M = JSON.parse(fs.readFileSync(ruta, 'utf8')), antes = errores;
   console.log(ruta);
@@ -151,6 +180,7 @@ for (const ruta of process.argv.slice(2)) {
     if (Number(n) >= 1 && Number(n) <= 4 && !(M.niveles[n].leccion && (M.niveles[n].leccion.temas || []).length)) mal('nivel ' + n, 'falta la lección interactiva (niveles.' + n + '.leccion), escrita en sesión con las reglas de docs/reglas-leccion-interactiva.md');
   });
   Object.keys(M.niveles || {}).forEach(n => { const L = M.niveles[n].leccion; if (L && Array.isArray(L.temas) && L.temas.some(t => t.explicacion)) leccion(ruta, M, n, L, 'lección nivel ' + n); });
+  variedad(M, ruta);
   if (M.alternativa && M.alternativa.niveles) revisar(M.alternativa.niveles, 'alternativa · ');
   // Misión VARIANTE (trae bloques "neutro" o "variante": true): la lección, las actividades y el examen no pueden tener palabras
   // que solo se usan en la Argentina sin su versión para alumnos de otros países ("neutro": {"campo": ".."} al lado).

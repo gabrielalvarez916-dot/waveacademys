@@ -8,6 +8,49 @@
    La práctica es formativa: se comprueba en el momento y no se guarda nota. */
 window.WaveLeccion = (function () {
   'use strict';
+
+  // ---------- ACCESIBILIDAD de la lección (como el visor de PDF): leer en voz alta y modo lectura ----------
+  // Modo lectura: tipo de letra (Lexend, Atkinson, OpenDyslexic…), tamaño, espacio entre renglones, palabras y letras. Se guarda en el
+  // mismo lugar que el del PDF (wave_modo_lectura), así el alumno lo configura una vez. La voz usa la misma velocidad (wave_voz_vel).
+  var FUENTES_L = { normal: ['La de siempre', ''], lexend: ['Lexend', '"Lexend", Verdana, sans-serif', 'https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap'], atkinson: ['Atkinson Hyperlegible', '"Atkinson Hyperlegible", Verdana, sans-serif', 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap'], opendys: ['OpenDyslexic', '"OpenDyslexic", "Comic Sans MS", sans-serif', 'https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5/400.css'], arial: ['Arial', 'Arial, Helvetica, sans-serif', ''], verdana: ['Verdana', 'Verdana, Geneva, sans-serif', ''] };
+  function accesibilidad(el, main) {
+    var LEC = { on: false, f: 'lexend', t: 1.15, i: 1.7, p: 0.15, l: 0 }, voz = { ses: 0, on: false };
+    try { var g = JSON.parse(localStorage.getItem('wave_modo_lectura') || 'null'); if (g) { if (g.f && FUENTES_L[g.f]) LEC.f = g.f; LEC.t = Math.min(1.8, Math.max(0.9, (+g.t || 1.25) * 0.92)); LEC.i = +g.i || LEC.i; LEC.p = g.p === 0 ? 0 : (+g.p || LEC.p); LEC.l = +g.l || 0; LEC.on = !!g.leccion; } } catch (e) {}
+    function guardar() { try { var g = JSON.parse(localStorage.getItem('wave_modo_lectura') || '{}') || {}; g.f = LEC.f === 'normal' ? g.f : LEC.f; g.t = +(LEC.t / 0.92).toFixed(2); g.i = LEC.i; g.p = LEC.p; g.l = LEC.l; g.leccion = LEC.on; localStorage.setItem('wave_modo_lectura', JSON.stringify(g)); } catch (e) {} }
+    function fuente(k) { var f = FUENTES_L[k]; if (!f || !f[2] || document.querySelector('link[data-wfuente="' + k + '"]')) return; var ln = document.createElement('link'); ln.rel = 'stylesheet'; ln.href = f[2]; ln.setAttribute('data-wfuente', k); document.head.appendChild(ln); }
+    var panel = document.createElement('div'); panel.className = 'li2-lec-ctl'; panel.hidden = true; panel.setAttribute('role', 'group'); panel.setAttribute('aria-label', 'Ajustes de lectura');
+    el.querySelector('.li2-barra').insertAdjacentElement('afterend', panel);
+    function aplicar() { var c = el.querySelector('.li2-caja'); c.classList.toggle('li2-lec', LEC.on); c.style.setProperty('--lt', LEC.t + 'rem'); c.style.setProperty('--li', String(LEC.i)); c.style.setProperty('--lp', LEC.p + 'em'); c.style.setProperty('--ll', LEC.l + 'em'); c.style.setProperty('--lf', FUENTES_L[LEC.f][1] || 'inherit'); fuente(LEC.f);
+      var b = el.querySelector('[data-acc="lectura"]'); b.setAttribute('aria-pressed', LEC.on ? 'true' : 'false'); b.classList.toggle('on', LEC.on); panel.hidden = !LEC.on;
+      panel.innerHTML = '<span>Letra <select data-acc-f="1" aria-label="Tipo de letra">' + Object.keys(FUENTES_L).map(function (k) { return '<option value="' + k + '"' + (k === LEC.f ? ' selected' : '') + '>' + FUENTES_L[k][0] + '</option>'; }).join('') + '</select></span>' +
+        '<span>Tamaño <button type="button" data-acc="t-" aria-label="Letra más chica">A−</button><button type="button" data-acc="t+" aria-label="Letra más grande">A+</button></span>' +
+        '<span>Renglones <button type="button" data-acc="i-" aria-label="Renglones más juntos">−</button><button type="button" data-acc="i+" aria-label="Renglones más separados">+</button></span>' +
+        '<span>Palabras <button type="button" data-acc="p-" aria-label="Palabras más juntas">−</button><button type="button" data-acc="p+" aria-label="Palabras más separadas">+</button></span>' +
+        '<span>Letras <button type="button" data-acc="l-" aria-label="Letras más juntas">−</button><button type="button" data-acc="l+" aria-label="Letras más separadas">+</button></span>'; }
+    function ajustar(a) { if (a === 't-') LEC.t = Math.max(0.9, +(LEC.t - 0.1).toFixed(2)); else if (a === 't+') LEC.t = Math.min(1.8, +(LEC.t + 0.1).toFixed(2)); else if (a === 'i-') LEC.i = Math.max(1.3, +(LEC.i - 0.2).toFixed(2)); else if (a === 'i+') LEC.i = Math.min(3, +(LEC.i + 0.2).toFixed(2));
+      else if (a === 'p-') LEC.p = Math.max(0, +(LEC.p - 0.1).toFixed(2)); else if (a === 'p+') LEC.p = Math.min(1, +(LEC.p + 0.1).toFixed(2)); else if (a === 'l-') LEC.l = Math.max(0, +(LEC.l - 0.03).toFixed(2)); else if (a === 'l+') LEC.l = Math.min(0.3, +(LEC.l + 0.03).toFixed(2)); guardar(); aplicar(); }
+    // Voz: lee el título, la explicación y el paso visible del ejemplo (o las tarjetas de "Recordá"), marcando el bloque que está leyendo
+    function bloques() { var L = []; [].forEach.call(main.querySelectorAll('.li2-hoja h2, .li2-obj, .li2-exp > *, .li2-rec-c, .li2-rc, .lb-pp-txt'), function (b) { var t = (b.innerText || b.textContent || '').replace(/\s+/g, ' ').trim(); if (t) L.push([b, t]); }); return L; }
+    function vozES() { try { var vs = speechSynthesis.getVoices().filter(function (v) { return /^es/i.test(v.lang); }); return vs.filter(function (v) { return /AR|419|US|MX/i.test(v.lang); })[0] || vs[0] || null; } catch (e) { return null; } }
+    function botonVoz() { var b = el.querySelector('[data-acc="leer"]'); b.textContent = voz.on ? '⏹ Parar' : '🔊 Leer'; b.setAttribute('aria-pressed', voz.on ? 'true' : 'false'); b.classList.toggle('on', voz.on); }
+    function desmarcar() { [].forEach.call(el.querySelectorAll('.li2-leyendo'), function (x) { x.classList.remove('li2-leyendo'); }); }
+    function parar() { voz.ses++; voz.on = false; try { speechSynthesis.cancel(); } catch (e) {} desmarcar(); if (el.querySelector('[data-acc="leer"]')) botonVoz(); }
+    function leer() { if (!('speechSynthesis' in window)) { alertaSuave('Este navegador no puede leer en voz alta.'); return; } parar(); var L = bloques(), ses = ++voz.ses, k = 0, v = vozES(), vel = 1; try { vel = parseFloat(localStorage.getItem('wave_voz_vel')) || 1; } catch (e) {}
+      voz.on = true; botonVoz();
+      (function decir() { if (ses !== voz.ses) return; desmarcar(); if (k >= L.length) { voz.on = false; botonVoz(); return; } var it = L[k++]; it[0].classList.add('li2-leyendo'); try { it[0].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+        var u = new SpeechSynthesisUtterance(it[1].replace(/[·•]/g, ',')); u.lang = (v && v.lang) || 'es-AR'; if (v) u.voice = v; u.rate = vel; u.onend = decir; u.onerror = decir; speechSynthesis.speak(u); })(); }
+    function alertaSuave(t) { var n = document.createElement('div'); n.className = 'li2-aviso'; n.textContent = t; el.querySelector('.li2-caja').appendChild(n); setTimeout(function () { n.remove(); }, 3000); }
+    el.addEventListener('click', function (e) { var b = e.target.closest('[data-acc]'); if (!b) return; var a = b.getAttribute('data-acc');
+      if (a === 'leer') return voz.on ? parar() : leer(); if (a === 'lectura') { LEC.on = !LEC.on; guardar(); return aplicar(); } ajustar(a); });
+    el.addEventListener('change', function (e) { var s2 = e.target.closest && e.target.closest('[data-acc-f]'); if (!s2 || !FUENTES_L[s2.value]) return; LEC.f = s2.value; guardar(); aplicar(); });
+    aplicar(); return { parar: parar };
+  }
+  (function () { if (document.getElementById('li2-acc-css')) return; var st = document.createElement('style'); st.id = 'li2-acc-css';
+    st.textContent = '.li2-imp.on{background:#087E83;color:#fff}.li2-lec-ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:8px 14px;background:#F3FBF7;border-bottom:1px solid #D7F0E9;font-size:.9rem}.li2-lec-ctl span{display:inline-flex;gap:4px;align-items:center;font-weight:700}.li2-lec-ctl button{min-width:34px;padding:4px 8px;border:2px solid #9dbdb9;border-radius:8px;background:#fff;font:inherit;font-weight:800;cursor:pointer}.li2-lec-ctl select{font:inherit;padding:3px}' +
+      '.li2-lec .li2-exp,.li2-lec .li2-rec,.li2-lec .li2-resu,.li2-lec .lb-pp-txt,.li2-lec .lb-cons,.li2-lec .li2-hoja h2,.li2-lec .li2-obj,.li2-lec .li2-pv-b{font-family:var(--lf);word-spacing:var(--lp);letter-spacing:var(--ll)}' +
+      '.li2-lec .li2-exp,.li2-lec .li2-rec,.li2-lec .li2-resu,.li2-lec .lb-pp-txt,.li2-lec .lb-cons,.li2-lec .li2-obj{font-size:var(--lt);line-height:var(--li)}.li2-lec .li2-exp *{line-height:inherit}' +
+      '.li2-leyendo{background:#FFF3C4!important;outline:3px solid #C29A1E;outline-offset:3px;border-radius:6px}.li2-aviso{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:10px 16px;border-radius:12px;background:#253638;color:#fff;z-index:5}';
+    document.head.appendChild(st); })();
   var C = function () { return window.WaveCalc; };
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   // el borrador trae <b>, <i>, <br>, <sup>, <sub>: se respetan solo esas etiquetas
@@ -110,10 +153,12 @@ window.WaveLeccion = (function () {
     var total = secs.length + (hayResumen ? 1 : 0), cur = 0, ejN = {}, ejPaso = {};
     var el = document.createElement('div'); el.className = 'li2';
     el.innerHTML = '<div class="li2-caja" role="dialog" aria-label="Lección interactiva"><div class="li2-barra"><b class="li2-t">' + esc(op.titulo) + '</b>' +
+      '<button type="button" class="li2-imp li2-voz" data-acc="leer" aria-pressed="false" aria-label="Leer en voz alta esta pantalla">🔊 Leer</button>' +
+      '<button type="button" class="li2-imp" data-acc="lectura" aria-pressed="false" aria-label="Modo lectura: tamaño de letra y espacios">Aa Modo lectura</button>' +
       '<button type="button" class="li2-imp" data-li="imprimir" aria-label="Imprimir la lección">🖨 Imprimir</button>' + '<button type="button" class="li2-x" data-li="cerrar" aria-label="Cerrar">✕</button></div><div class="li2-cuerpo"><nav class="li2-idx" aria-label="Temas de la lección"></nav><main class="li2-main"></main></div></div>';
     document.body.appendChild(el); document.body.classList.add('wvp-abierto');
-    var idx = el.querySelector('.li2-idx'), main = el.querySelector('.li2-main');
-    function cerrar() { document.body.classList.remove('wvp-abierto'); el.remove(); if (op.alCerrar) op.alCerrar(); }
+    var idx = el.querySelector('.li2-idx'), main = el.querySelector('.li2-main'), acc = accesibilidad(el, main);
+    function cerrar() { acc.parar(); document.body.classList.remove('wvp-abierto'); el.remove(); if (op.alCerrar) op.alCerrar(); }
     // Imprimir: toda la lección en papel, como el PDF (texto de cada tema + Recordá); los ejemplos vivos quedan en la plataforma
     function imprimir() {
       var cuerpo = '<h1>' + esc(op.titulo) + '</h1>' + secs.map(function (t) { return '<section><h2>' + esc(t.titulo) + '</h2>' + lista(t.bloques).map(bloque).join('') + '</section>'; }).join('') + (hayResumen ? '<section class="rec">' + resumen() + '</section>' : '');
@@ -159,7 +204,7 @@ window.WaveLeccion = (function () {
       return h;
     }
     function pintar() {
-      pintarIdx();
+      acc.parar(); pintarIdx();
       var esRes = cur === secs.length, s = secs[cur];
       main.innerHTML = '<div class="li2-hoja">' + (esRes ? resumen() : tema(cur)) + '</div><div class="li2-nav">' +
         '<button type="button" class="li2-btn suave" data-li="ant"' + (cur ? '' : ' style="visibility:hidden"') + ' aria-label="Anterior">‹<span class="li2-lg"> Anterior</span></button>' +
