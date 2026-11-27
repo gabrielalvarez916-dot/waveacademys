@@ -152,3 +152,22 @@ Regla del área: cada ejemplo tiene su propio formato visual (no se repite el mi
 | `poblacion` | `poblacion_x` | curvas J y S | `modelo` |
 | `epidemia` | `epidemia_x` | cadena de contagios, R₀ y vacunación | — |
 Herramientas comunes en `H.nat` (dibujo SVG, elegir, ordenar, tocar) para los archivos que siguen: `leccion-banco-nat2.js` (materia y química) y `leccion-banco-nat3.js` (física, Tierra y espacio).
+
+### Naturales parte 2 · `js/leccion-banco-nat2.js`: materia, química y laboratorio
+| Ejemplo | Ejercicio | Qué muestra |
+|---|---|---|
+| `particulas` | `particulas_x` | modelo de partículas, estados y cambios de estado (agua, alcohol, hierro, nitrógeno, mercurio) |
+| `mezclas` | `mezclas_x` | separar mezclas con el aparato dibujado (filtración, evaporación, imantación, decantación, tamización) |
+| `densidad` | `densidad_x` | d = m/V, el objeto flota o se hunde en distintos líquidos |
+| `atomo` | `atomo_x` | modelo de Bohr de Z = 1 a 20, iones (`p.z`) |
+| `tabla_periodica` | `tabla_periodica_x` (tocar) | período, grupo, valencia, metales y tendencias |
+| `enlace` | `enlace_x` (clasificar) | iónico y covalente con puntos de Lewis (NaCl, H₂O, O₂, CO₂, CH₄) |
+| `ecuacion_quimica` | `ecuacion_quimica_x` | balancear contando átomos |
+| `ph` | `ph_x` | escala de pH con sustancias de la casa |
+| `gases` | `gases_x` | pistón: Boyle, Charles y Gay-Lussac (`p.ley`) |
+| `carbono` | `carbono_x` | cadenas de carbono, hidrógenos, fórmula y nombre (alcanos, alquenos, alquinos, alcoholes, ácidos) |
+| `radiactividad` | `radiactividad_x` | semivida con grilla de átomos |
+| `instrumento` | `instrumento_x` | leer termómetro, probeta, regla y balanza; apreciación (`p.instrumentos`) |
+| `tamanos` | `tamanos_x` (ordenar) | escala de potencias de 10, de una persona a un átomo |
+| `grafico` | `grafico_x` | gráfico que se dibuja punto por punto; `p.items` propios {nombre, x, y, series, marcas, cierre} |
+| `experimento` | `experimento_x` | pregunta, hipótesis, variables, montaje, resultados, conclusión; `p.items` propios |
