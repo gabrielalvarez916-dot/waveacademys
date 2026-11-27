@@ -280,7 +280,7 @@ def revisar_clases(ruta, M, nivel, err, avi):
 
 def revisar_profundidad(ruta, M, nivel, err, avi, forzar=False, etiqueta=None):
     n = len(err)
-    revisar_repeticion(ruta, M, err, avi, etiqueta)
+    revisar_repeticion(ruta, M, avi if _sin_pdf_nuevo(ruta, M) else err, avi, etiqueta)  # lo ya visto en el PDF no frena si la lección lo reemplaza
     vieja = _sin_pdf_nuevo(ruta, M)
     revisar_pdf(M, nivel, avi if vieja else err)
     revisar_preguntas(M, nivel, err, avi if vieja else err)

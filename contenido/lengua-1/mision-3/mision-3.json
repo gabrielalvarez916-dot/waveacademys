@@ -199,7 +199,290 @@
      "El adjetivo.",
      "Blancas."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El sustantivo",
+      "ejemplo": {
+       "motor": "clases",
+       "p": {
+        "items": [
+         {
+          "nombre": "En el club",
+          "texto": "{{Martina|propio}} dejó la {{mochila|común concreto}} en el {{vestuario|común concreto}} del {{Club Atlético Paraná|propio}} con mucha {{alegría|común abstracto}}.",
+          "expl": {
+           "propio": "Los <b>propios</b> nombran a uno solo y van con mayúscula.",
+           "común concreto": "Los <b>comunes concretos</b> nombran cosas que se pueden ver o tocar.",
+           "común abstracto": "Los <b>abstractos</b> nombran ideas o sentimientos: no se tocan."
+          }
+         },
+         {
+          "nombre": "El viaje",
+          "texto": "El {{tren|común concreto}} salió de {{Rosario|propio}} y el {{miedo|común abstracto}} de {{Tomás|propio}} desapareció al ver el {{río|común concreto}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué clase de sustantivo es cada palabra?",
+        "cajas": [
+         "Propio",
+         "Común concreto",
+         "Común abstracto"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Mendoza",
+          0
+         ],
+         [
+          "Lucía",
+          0
+         ],
+         [
+          "Atlántico",
+          0
+         ],
+         [
+          "bicicleta",
+          1
+         ],
+         [
+          "ventana",
+          1
+         ],
+         [
+          "perro",
+          1
+         ],
+         [
+          "libertad",
+          2
+         ],
+         [
+          "tristeza",
+          2
+         ],
+         [
+          "paciencia",
+          2
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sustantivo",
+        "texto": "El sustantivo es la palabra que nombra personas, animales, objetos, lugares, ideas o sentimientos, y puede llevar un artículo delante."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Una prueba rápida para reconocerlo es ponerle un artículo adelante: si «el», «la», «los» o «las» encajan, seguramente es un sustantivo. Los propios se escriben con mayúscula porque nombran a uno solo, como una persona o una ciudad."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Propios: nombran a uno solo y van con mayúscula.",
+         "Comunes concretos: se pueden ver o tocar.",
+         "Comunes abstractos: ideas, sentimientos y cualidades."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Género y número",
+      "ejemplo": {
+       "motor": "transformar",
+       "p": {
+        "items": [
+         {
+          "nombre": "Lápiz",
+          "antes": "el lápiz",
+          "pasos": [
+           {
+            "v": "{{los}} lápiz",
+            "txt": "El artículo pasa a plural."
+           },
+           {
+            "v": "los lápi{{ces}}",
+            "txt": "Termina en z: la z cambia por c y se agrega -es."
+           }
+          ],
+          "cierre": "el lápiz → los lápices"
+         },
+         {
+          "nombre": "Canción",
+          "antes": "la canción",
+          "pasos": [
+           {
+            "v": "{{las}} canción",
+            "txt": "El artículo en plural."
+           },
+           {
+            "v": "las cancion{{es}}",
+            "txt": "Termina en consonante: se agrega -es (y se va la tilde)."
+           }
+          ],
+          "cierre": "la canción → las canciones"
+         },
+         {
+          "nombre": "Actor",
+          "antes": "el actor",
+          "pasos": [
+           {
+            "v": "{{la}} actor",
+            "txt": "Cambiamos el género del artículo."
+           },
+           {
+            "v": "la actr{{iz}}",
+            "txt": "Algunos femeninos cambian la terminación entera."
+           }
+          ],
+          "cierre": "el actor → la actriz"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "completar_x",
+       "p": {
+        "consigna": "Elegí la forma correcta.",
+        "items": [
+         {
+          "texto": "Compré dos [[peces/pezes/pez]] para la pecera y tres [[lápices/lápizs/lápiz]] de colores."
+         },
+         {
+          "texto": "En el acto cantaron todas las [[canciones/cancións/canción]] y aplaudieron los [[actores/actors/actor]]."
+         },
+         {
+          "texto": "La [[actriz/actora/actor]] saludó al público junto a la [[poeta/poetisa/poeto]] invitada."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Género y número",
+        "texto": "Los sustantivos tienen género, masculino o femenino, y número, singular o plural; el artículo que los acompaña muestra ese género y número."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El plural casi siempre se forma con -s o con -es, pero hay casos que conviene mirar: si la palabra termina en z, la z cambia por c. Algunos sustantivos no cambian nada en plural, como «la crisis, las crisis», y ahí el artículo es la única pista."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Vocal sin tilde: se agrega -s (casa, casas).",
+         "Consonante: se agrega -es (árbol, árboles).",
+         "Terminada en z: cambia a c (luz, luces)."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El adjetivo y la concordancia",
+      "ejemplo": {
+       "motor": "clases",
+       "p": {
+        "items": [
+         {
+          "nombre": "La casa",
+          "texto": "{{Esta|adjetivo determinativo}} casa {{antigua|adjetivo calificativo}} tiene {{tres|adjetivo determinativo}} ventanas {{enormes|adjetivo calificativo}}.",
+          "expl": {
+           "adjetivo determinativo": "Los <b>determinativos</b> precisan al sustantivo: cuál, cuántos, de quién.",
+           "adjetivo calificativo": "Los <b>calificativos</b> dicen cómo es: una cualidad."
+          }
+         },
+         {
+          "nombre": "El perro",
+          "texto": "{{Mi|adjetivo determinativo}} perro {{negro|adjetivo calificativo}} persigue a {{aquellas|adjetivo determinativo}} palomas {{grises|adjetivo calificativo}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "completar_x",
+       "p": {
+        "consigna": "Hacé concordar el adjetivo con el sustantivo.",
+        "items": [
+         {
+          "texto": "Las calles [[mojadas/mojado/mojada]] brillaban bajo los faroles [[viejos/vieja/viejas]]."
+         },
+         {
+          "texto": "Mi hermana es muy [[alegre/alegra/alegres]] y sus amigos son [[simpáticos/simpática/simpático]]."
+         },
+         {
+          "texto": "Encontramos unas piedras [[redondas/redondo/redonda]] y un caracol [[pequeño/pequeña/pequeños]]."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adjetivo",
+        "texto": "El adjetivo acompaña al sustantivo para decir cómo es o para precisarlo, y concuerda con él en género y número."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Concordar significa que el adjetivo copia el género y el número del sustantivo: «calles mojadas», nunca «calles mojado». Algunos adjetivos tienen una sola forma para los dos géneros, como «alegre», «feliz» o «grande», y solo cambian en plural."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Calificativos: una cualidad (alto, dulce, oscuro).",
+         "Determinativos: cuál, cuántos o de quién (este, tres, mi).",
+         "Concuerdan en género y número con el sustantivo."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Sustantivo",
+      "definicion": "es la palabra que nombra personas, animales, objetos, lugares, ideas o sentimientos.",
+      "ejemplo": "mochila, Rosario, alegría"
+     },
+     {
+      "concepto": "Sustantivo propio",
+      "definicion": "nombra a uno solo, en particular, y se escribe siempre con mayúscula.",
+      "ejemplo": "Martina, Mendoza"
+     },
+     {
+      "concepto": "Sustantivo abstracto",
+      "definicion": "nombra ideas, sentimientos o cualidades que no se pueden tocar.",
+      "ejemplo": "libertad, miedo"
+     },
+     {
+      "concepto": "Plural",
+      "definicion": "se forma con -s después de vocal, con -es después de consonante y con -ces si termina en z.",
+      "ejemplo": "luz → luces"
+     },
+     {
+      "concepto": "Adjetivo",
+      "definicion": "acompaña al sustantivo para decir cómo es o precisar cuál, cuántos o de quién.",
+      "ejemplo": "esta casa antigua"
+     },
+     {
+      "concepto": "Concordancia",
+      "definicion": "es que el adjetivo tenga el mismo género y número que su sustantivo.",
+      "ejemplo": "calles mojadas"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ]
   },
   "2": {
    "objetivo": "Vas a reconocer las formas del verbo y distinguir sus modos: indicativo, subjuntivo e imperativo.",
@@ -424,7 +707,253 @@
      "Cantar.",
      "Gerundio."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es un verbo",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Oración",
+        "items": [
+         {
+          "nombre": "La tormenta",
+          "texto": "El viento {{sopló|Acción: algo que pasa.}} toda la noche y los chicos {{estaban|Estado: cómo estaban.}} asustados. A la mañana el cielo {{se despejó|Proceso: un cambio.}}.",
+          "cierre": "Los verbos expresan acciones, estados o procesos."
+         },
+         {
+          "nombre": "El recreo",
+          "texto": "Juan {{corre|Acción.}} por el patio, Ana {{parece|Estado.}} cansada y el hielo del bebedero {{se derrite|Proceso.}} al sol.",
+          "cierre": "En la oración, el verbo es la palabra que cambia según quién y cuándo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "marcar_x",
+       "p": {
+        "consigna": "Tocá solo los verbos.",
+        "items": [
+         {
+          "cons": "Oración: «Mi abuela cocina pan los domingos y lo reparte entre los vecinos.»",
+          "texto": "[[Mi|0]] [[abuela|0]] [[cocina|1]] [[pan|0]] [[los|0]] [[domingos|0]] [[y|0]] [[lo|0]] [[reparte|1]] [[entre|0]] [[los|0]] [[vecinos|0]]"
+         },
+         {
+          "cons": "Oración: «Llovió fuerte, pero igual salimos y jugamos en la plaza.»",
+          "texto": "[[Llovió|1]] [[fuerte|0]] [[pero|0]] [[igual|0]] [[salimos|1]] [[y|0]] [[jugamos|1]] [[en|0]] [[la|0]] [[plaza|0]]"
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Verbo",
+        "texto": "El verbo es la palabra que expresa acciones, estados o procesos y cambia su forma según la persona, el número, el tiempo y el modo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Todos los verbos tienen un nombre, el infinitivo, que termina en -ar, -er o -ir: así aparecen en el diccionario. Para reconocer un verbo en una oración, probá cambiarle el tiempo: «cocina» puede pasar a «cocinó» o «cocinará»; un sustantivo no puede hacer eso."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Primera conjugación: -ar (cantar).",
+         "Segunda: -er (comer). Tercera: -ir (vivir).",
+         "Si cambia con el tiempo, es un verbo."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Persona, número y tiempo",
+      "ejemplo": {
+       "motor": "conjugador",
+       "p": {
+        "verbos": [
+         "caminar",
+         "saltar",
+         "comer",
+         "correr",
+         "vivir",
+         "escribir"
+        ],
+        "tiempos": [
+         "presente",
+         "pretérito perfecto simple",
+         "futuro"
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "conjugar_x",
+       "p": {
+        "verbos": [
+         "caminar",
+         "saltar",
+         "comer",
+         "correr",
+         "vivir",
+         "escribir"
+        ],
+        "tiempos": [
+         "presente",
+         "pretérito perfecto simple",
+         "futuro"
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Accidentes del verbo",
+        "texto": "Los accidentes del verbo son los cambios de su terminación, la desinencia, que indican quién realiza la acción, cuántos son y cuándo ocurre."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Por eso alcanza con mirar la terminación para saber mucho: en «comimos» sabemos que fuimos nosotros, que éramos varios y que ya pasó. La parte que no cambia es la raíz y guarda el significado del verbo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Persona: primera (yo), segunda (vos) o tercera (él, ella).",
+         "Número: singular o plural.",
+         "Tiempo: presente, pasado o futuro."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Los modos del verbo",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Oración",
+        "items": [
+         {
+          "nombre": "Estudiar",
+          "texto": "{{Estudio|Indicativo: afirmo un hecho real.}} todas las tardes. {{Ojalá apruebe|Subjuntivo: expreso un deseo.}} el examen. {{Estudiá|Imperativo: doy una orden.}} vos también.",
+          "cierre": "El mismo verbo cambia de modo según la actitud de quien habla."
+         },
+         {
+          "nombre": "Llover",
+          "texto": "Mañana {{lloverá|Indicativo: lo doy como algo que va a pasar.}}. {{Quizás llueva|Subjuntivo: es una posibilidad.}} toda la semana. {{Llevá|Imperativo: un pedido.}} el paraguas.",
+          "cierre": "Hecho, deseo o duda, orden: tres modos."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿En qué modo está el verbo destacado?",
+        "cajas": [
+         "Indicativo",
+         "Subjuntivo",
+         "Imperativo"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Mi hermano TRABAJA en una panadería.",
+          0
+         ],
+         [
+          "Ayer VIMOS una película.",
+          0
+         ],
+         [
+          "El tren LLEGARÁ a las ocho.",
+          0
+         ],
+         [
+          "Ojalá GANE nuestro equipo.",
+          1
+         ],
+         [
+          "Quizás VENGAN mañana.",
+          1
+         ],
+         [
+          "Espero que te GUSTE el regalo.",
+          1
+         ],
+         [
+          "CERRÁ la ventana, por favor.",
+          2
+         ],
+         [
+          "TRAÉ las llaves.",
+          2
+         ],
+         [
+          "ESCUCHÁ esta canción.",
+          2
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Modo verbal",
+        "texto": "El modo verbal muestra la actitud de quien habla: si presenta algo como un hecho, como un deseo o una duda, o como una orden."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para reconocer el modo, preguntate qué está haciendo quien habla. Si afirma o cuenta algo que pasa, pasó o pasará, es indicativo. Si desea, duda o supone, es subjuntivo, que suele aparecer después de «ojalá», «quizás» o «que». Si pide u ordena, es imperativo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Indicativo: hechos reales.",
+         "Subjuntivo: deseos, dudas y posibilidades.",
+         "Imperativo: órdenes y pedidos."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Verbo",
+      "definicion": "expresa acciones, estados o procesos y cambia según persona, número, tiempo y modo.",
+      "ejemplo": "sopló, estaban, se despejó"
+     },
+     {
+      "concepto": "Infinitivo",
+      "definicion": "es el nombre del verbo y termina en -ar, -er o -ir, como aparece en el diccionario.",
+      "ejemplo": "cantar, comer, vivir"
+     },
+     {
+      "concepto": "Raíz y desinencia",
+      "definicion": "la raíz guarda el significado y la desinencia indica persona, número y tiempo.",
+      "ejemplo": "com-imos: raíz com, desinencia -imos"
+     },
+     {
+      "concepto": "Modo indicativo",
+      "definicion": "presenta la acción como un hecho real, pasado, presente o futuro.",
+      "ejemplo": "Estudio todas las tardes."
+     },
+     {
+      "concepto": "Modo subjuntivo",
+      "definicion": "expresa deseos, dudas o posibilidades, muchas veces después de ojalá o quizás.",
+      "ejemplo": "Ojalá apruebe."
+     },
+     {
+      "concepto": "Modo imperativo",
+      "definicion": "sirve para dar órdenes o hacer pedidos a quien escucha.",
+      "ejemplo": "Cerrá la ventana."
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ]
   },
   "3": {
    "objetivo": "Vas a reconocer adverbios y preposiciones y explicar qué función cumplen.",
@@ -609,7 +1138,280 @@
      "Preposición.",
      "No."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El adverbio",
+      "ejemplo": {
+       "motor": "clases",
+       "p": {
+        "items": [
+         {
+          "nombre": "La mudanza",
+          "texto": "{{Ayer|tiempo}} nos mudamos {{lejos|lugar}}. Los muebles llegaron {{bien|modo}}, pero tardamos {{mucho|cantidad}} en acomodarlos.",
+          "expl": {
+           "tiempo": "Adverbios de <b>tiempo</b>: responden ¿cuándo?",
+           "lugar": "De <b>lugar</b>: ¿dónde?",
+           "modo": "De <b>modo</b>: ¿cómo?",
+           "cantidad": "De <b>cantidad</b>: ¿cuánto?"
+          }
+         },
+         {
+          "nombre": "El partido",
+          "texto": "{{Hoy|tiempo}} jugamos {{afuera|lugar}}; corrimos {{rápido|modo}} y nos cansamos {{bastante|cantidad}}."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué indica cada adverbio?",
+        "cajas": [
+         "Lugar",
+         "Tiempo",
+         "Modo",
+         "Cantidad",
+         "Afirmación o negación"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "acá",
+          0
+         ],
+         [
+          "debajo",
+          0
+         ],
+         [
+          "mañana",
+          1
+         ],
+         [
+          "nunca",
+          1
+         ],
+         [
+          "despacio",
+          2
+         ],
+         [
+          "mal",
+          2
+         ],
+         [
+          "poco",
+          3
+         ],
+         [
+          "demasiado",
+          3
+         ],
+         [
+          "también",
+          4
+         ],
+         [
+          "tampoco",
+          4
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adverbio",
+        "texto": "El adverbio es una palabra invariable que agrega una circunstancia, como el lugar, el tiempo, el modo o la cantidad."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Invariable quiere decir que nunca cambia de género ni de número: decimos «ella corre rápido» y «ellos corren rápido». Una buena manera de encontrarlo es hacerle preguntas al verbo: ¿dónde?, ¿cuándo?, ¿cómo?, ¿cuánto?"
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "¿Dónde? Lugar (cerca, arriba).",
+         "¿Cuándo? Tiempo (hoy, siempre). ¿Cómo? Modo (bien, así).",
+         "¿Cuánto? Cantidad (muy, poco)."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Qué modifica el adverbio",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Oración",
+        "items": [
+         {
+          "nombre": "Al verbo",
+          "texto": "El caballo galopa {{velozmente|Modifica al verbo «galopa»: dice cómo.}}.",
+          "cierre": "Lo más común: el adverbio acompaña a un verbo."
+         },
+         {
+          "nombre": "Al adjetivo",
+          "texto": "La sopa está {{muy|Modifica al adjetivo «caliente»: dice cuánto.}} caliente.",
+          "cierre": "También puede intensificar un adjetivo."
+         },
+         {
+          "nombre": "A otro adverbio",
+          "texto": "Llegaste {{bastante|Modifica al adverbio «tarde».}} tarde.",
+          "cierre": "Y hasta a otro adverbio."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿A qué palabra modifica el adverbio en mayúsculas?",
+        "items": [
+         {
+          "cons": "El examen fue BASTANTE difícil.",
+          "ops": [
+           "A «difícil», un adjetivo",
+           "A «examen», un sustantivo",
+           "A «fue», el verbo"
+          ],
+          "ayuda": "¿Qué es «bastante»? Cuánto de difícil."
+         },
+         {
+          "cons": "Mi abuelo camina DESPACIO por la vereda.",
+          "ops": [
+           "A «camina», el verbo",
+           "A «abuelo», un sustantivo",
+           "A «vereda», un sustantivo"
+          ],
+          "ayuda": "¿Cómo camina?"
+         },
+         {
+          "cons": "Lo terminaste MUY rápido.",
+          "ops": [
+           "A «rápido», otro adverbio",
+           "A «terminaste», el verbo",
+           "A «lo», un pronombre"
+          ],
+          "ayuda": "«Muy» dice cuánto de rápido."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Función del adverbio",
+        "texto": "El adverbio modifica a un verbo, a un adjetivo o a otro adverbio, nunca a un sustantivo."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Esta regla ayuda a distinguirlo del adjetivo: en «un auto rápido», «rápido» acompaña a un sustantivo y concuerda con él, así que es adjetivo; en «maneja rápido», acompaña al verbo y no cambia, así que es adverbio."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Con un verbo: «corre lejos».",
+         "Con un adjetivo: «muy alto».",
+         "Con otro adverbio: «bastante tarde»."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La preposición",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Frase",
+        "items": [
+         {
+          "nombre": "La plaza",
+          "texto": "Nos sentamos {{bajo|Preposición: une «nos sentamos» con «el árbol».}} el árbol {{de|Preposición: une «árbol» con «la plaza».}} la plaza.",
+          "cierre": "La preposición siempre necesita una palabra después: su término."
+         },
+         {
+          "nombre": "El viaje",
+          "texto": "Viajé {{desde|Preposición: indica el origen.}} Salta {{hasta|Preposición: indica el final del recorrido.}} Ushuaia {{con|Preposición: indica compañía.}} mi tía.",
+          "cierre": "Cada preposición agrega una relación: origen, destino, compañía."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "completar_x",
+       "p": {
+        "consigna": "Elegí la preposición que corresponde.",
+        "items": [
+         {
+          "texto": "Guardé los libros [[en/con/hacia]] la mochila y salí [[hacia/sin/bajo]] la escuela."
+         },
+         {
+          "texto": "Hice la torta [[sin/por/ante]] azúcar y la decoré [[con/desde/tras]] frutillas."
+         },
+         {
+          "texto": "El gato duerme [[sobre/según/hasta]] el sillón [[desde/con/sin]] la mañana."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Preposición",
+        "texto": "La preposición es una palabra invariable que une una palabra con otra, llamada término, y muestra la relación entre ellas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "No tiene significado por sí sola: «desde» o «con» no dicen nada hasta que aparece su término. Las preposiciones son una lista cerrada y conviene conocerlas de memoria, porque más adelante ayudan a analizar las oraciones."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "a, ante, bajo, con, contra, de, desde, durante, en, entre",
+         "hacia, hasta, mediante, para, por, según, sin, sobre, tras",
+         "Siempre van seguidas de su término."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Adverbio",
+      "definicion": "es una palabra invariable que agrega circunstancias de lugar, tiempo, modo o cantidad.",
+      "ejemplo": "ayer, lejos, bien, mucho"
+     },
+     {
+      "concepto": "Invariable",
+      "definicion": "significa que no cambia de género ni de número aunque cambie la oración.",
+      "ejemplo": "ella corre rápido / ellos corren rápido"
+     },
+     {
+      "concepto": "Qué modifica",
+      "definicion": "el adverbio modifica a un verbo, a un adjetivo o a otro adverbio, nunca a un sustantivo.",
+      "ejemplo": "muy caliente"
+     },
+     {
+      "concepto": "Preposición",
+      "definicion": "es una palabra invariable que une una palabra con su término y marca la relación.",
+      "ejemplo": "bajo el árbol"
+     },
+     {
+      "concepto": "Término",
+      "definicion": "es la palabra o el grupo que va después de la preposición y la completa.",
+      "ejemplo": "desde Salta"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ]
   },
   "4": {
    "objetivo": "Vas a reconocer pronombres y conjunciones y usar cada uno para evitar repeticiones y unir ideas.",
@@ -808,174 +1610,638 @@
      "Demostrativo.",
      "Ella."
     ]
-   }
+   },
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "El pronombre",
+      "ejemplo": {
+       "motor": "transformar",
+       "p": {
+        "items": [
+         {
+          "nombre": "Lucía",
+          "antes": "Lucía llegó tarde. Lucía pidió disculpas y Lucía se sentó.",
+          "pasos": [
+           {
+            "v": "Lucía llegó tarde. {{Ella}} pidió disculpas y Lucía se sentó.",
+            "txt": "«Ella» reemplaza a «Lucía»: ya sabemos de quién se habla."
+           },
+           {
+            "v": "Lucía llegó tarde. Ella pidió disculpas y {{se sentó}}.",
+            "txt": "La tercera vez ni hace falta: el verbo ya dice que fue ella."
+           }
+          ],
+          "cierre": "El pronombre evita repetir el sustantivo."
+         },
+         {
+          "nombre": "La bici",
+          "antes": "Me regalaron una bici. Cuido la bici y guardo la bici en el garaje.",
+          "pasos": [
+           {
+            "v": "Me regalaron una bici. {{La}} cuido y {{la}} guardo en el garaje.",
+            "txt": "«La» reemplaza a «la bici» delante del verbo."
+           }
+          ],
+          "cierre": "Hay pronombres que se ubican pegados al verbo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "completar_banco_x",
+       "p": {
+        "consigna": "Llevá cada pronombre a su lugar para no repetir.",
+        "items": [
+         {
+          "texto": "Mi primo vino a casa. [[Él]] trajo un juego nuevo y [[lo]] probamos toda la tarde.",
+          "extra": [
+           "Ella",
+           "la"
+          ]
+         },
+         {
+          "texto": "Las vecinas organizaron una feria. [[Ellas]] vendieron tortas y [[las]] hicieron en una noche.",
+          "extra": [
+           "Ellos",
+           "los"
+          ]
+         },
+         {
+          "texto": "Encontré tu cuaderno. [[Lo]] dejé sobre la mesa. ¿Es [[tuyo]]?",
+          "extra": [
+           "La",
+           "mío"
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Pronombre",
+        "texto": "El pronombre es la palabra que ocupa el lugar de un sustantivo o señala a una persona o cosa sin nombrarla."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Sirve para no repetir y para que el texto avance más liviano. Pero tiene una condición: el lector tiene que saber a quién reemplaza. Si en la oración aparecen dos personas, un «ella» puede confundir, y conviene repetir el nombre."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Reemplaza a un sustantivo ya nombrado.",
+         "Evita repeticiones en el texto.",
+         "Tiene que quedar claro a quién se refiere."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Clases de pronombres",
+      "ejemplo": {
+       "motor": "clases",
+       "p": {
+        "items": [
+         {
+          "nombre": "Las llaves",
+          "texto": "—¿Estas llaves son {{tuyas|posesivo}}? —preguntó {{ella|personal}}. —No, las {{mías|posesivo}} son {{esas|demostrativo}} del llavero rojo.",
+          "expl": {
+           "posesivo": "Los <b>posesivos</b> indican de quién es algo.",
+           "personal": "Los <b>personales</b> nombran a las personas gramaticales: yo, vos, él…",
+           "demostrativo": "Los <b>demostrativos</b> señalan algo según la distancia."
+          }
+         },
+         {
+          "nombre": "El regalo",
+          "texto": "{{Nosotros|personal}} elegimos {{este|demostrativo}} y {{ustedes|personal}} eligieron {{aquel|demostrativo}}; el {{nuestro|posesivo}} era más grande."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué clase de pronombre es?",
+        "cajas": [
+         "Personal",
+         "Posesivo",
+         "Demostrativo"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "yo",
+          0
+         ],
+         [
+          "nosotras",
+          0
+         ],
+         [
+          "ellos",
+          0
+         ],
+         [
+          "mío",
+          1
+         ],
+         [
+          "tuyos",
+          1
+         ],
+         [
+          "suya",
+          1
+         ],
+         [
+          "este",
+          2
+         ],
+         [
+          "esa",
+          2
+         ],
+         [
+          "aquellos",
+          2
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Clases de pronombres",
+        "texto": "Los pronombres personales nombran a las personas gramaticales, los posesivos indican pertenencia y los demostrativos señalan según la distancia."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Ojo con una trampa frecuente: «este» o «mi» pueden ser adjetivos. En «este libro», «este» acompaña a un sustantivo y es adjetivo determinativo; en «quiero este», está solo, ocupando el lugar del sustantivo, y entonces es pronombre."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Personales: yo, vos, él, ella, nosotros, ustedes, ellos.",
+         "Posesivos: mío, tuyo, suyo, nuestro.",
+         "Demostrativos: este, ese, aquel (cerca, medio, lejos)."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La conjunción",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Oración",
+        "items": [
+         {
+          "nombre": "La salida",
+          "texto": "Quería ir al cine {{pero|Oposición: la segunda idea se opone a la primera.}} llovía, así que me quedé {{y|Suma: agrega otra acción.}} leí un libro.",
+          "cierre": "Las conjunciones unen y muestran la relación."
+         },
+         {
+          "nombre": "El postre",
+          "texto": "¿Querés helado {{o|Opción: hay que elegir una.}} flan? No como {{ni|Suma negativa.}} chocolate {{ni|Suma negativa.}} dulce de leche {{porque|Causa: explica el motivo.}} me duele la panza.",
+          "cierre": "Cada conjunción tiene un significado distinto."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "completar_x",
+       "p": {
+        "consigna": "Elegí la conjunción que da sentido a la oración.",
+        "items": [
+         {
+          "texto": "Estudié mucho [[pero/porque/ni]] la prueba fue difícil. Me fue bien [[porque/o/pero]] repasé todo."
+         },
+         {
+          "texto": "Podés venir hoy [[o/ni/porque]] mañana. Mi hermana [[e/y/u]] Inés también vienen."
+         },
+         {
+          "texto": "No tengo hambre [[ni/o/pero]] sed. Hay siete [[u/o/e]] ocho invitados."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Conjunción",
+        "texto": "La conjunción es una palabra invariable que une palabras u oraciones y muestra qué relación hay entre ellas."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Hay dos cambios que suenan raro pero son obligatorios: «y» se transforma en «e» delante de una palabra que empieza con el sonido i («padres e hijos»), y «o» pasa a «u» delante del sonido o («siete u ocho»). Así no se juntan dos vocales iguales."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Suma: y, e, ni.",
+         "Opción: o, u. Oposición: pero, aunque.",
+         "Causa: porque."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Pronombre",
+      "definicion": "ocupa el lugar de un sustantivo o señala a alguien sin nombrarlo, para no repetir.",
+      "ejemplo": "Lucía llegó. Ella se sentó."
+     },
+     {
+      "concepto": "Pronombre personal",
+      "definicion": "nombra a las personas gramaticales: quien habla, quien escucha y de quien se habla.",
+      "ejemplo": "yo, vos, ellos"
+     },
+     {
+      "concepto": "Pronombre posesivo",
+      "definicion": "indica a quién pertenece algo y aparece sin sustantivo al lado.",
+      "ejemplo": "Esas son mías."
+     },
+     {
+      "concepto": "Pronombre o adjetivo",
+      "definicion": "es adjetivo si acompaña a un sustantivo y pronombre si lo reemplaza.",
+      "ejemplo": "este libro / quiero este"
+     },
+     {
+      "concepto": "Conjunción",
+      "definicion": "une palabras u oraciones y muestra si se suman, se oponen, se elige o hay una causa.",
+      "ejemplo": "Quería ir, pero llovía."
+     },
+     {
+      "concepto": "Cambio de y por e",
+      "definicion": "ocurre delante del sonido i, y o pasa a u delante del sonido o.",
+      "ejemplo": "padres e hijos; siete u ocho"
+     }
+    ]
+   },
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "aplicar",
+    "aplicar"
+   ]
   }
  },
  "act": {
   "1": [
    {
+    "t": "classify",
+    "p": "Clasificá los sustantivos de esta oración: «Valentina sintió orgullo cuando subió al escenario del Teatro Colón».",
+    "o": {
+     "elementos": [
+      "Valentina",
+      "Teatro Colón",
+      "escenario",
+      "orgullo"
+     ],
+     "categorias": [
+      "Propio",
+      "Común concreto",
+      "Común abstracto"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Valentina": "Propio",
+      "Teatro Colón": "Propio",
+      "escenario": "Común concreto",
+      "orgullo": "Común abstracto"
+     }
+    },
+    "e": "Propios con mayúscula; abstractos: ideas o sentimientos.",
+    "n": "aplicar"
+   },
+   {
+    "t": "fill_blank",
+    "p": "Escribí el plural: «una luz → dos ___», «un camión → dos ___», «un mes → dos ___».",
+    "r": {
+     "huecos": [
+      [
+       "luces"
+      ],
+      [
+       "camiones"
+      ],
+      [
+       "meses"
+      ]
+     ]
+    },
+    "e": "z → ces; consonante → -es.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero escribió: «Las chicas llegaron cansado y contento». ¿Qué está mal?",
+    "o": [
+     "Los adjetivos no concuerdan con «chicas»",
+     "Falta un sustantivo propio",
+     "El verbo está en futuro"
+    ],
+    "r": {
+     "correcta": "Los adjetivos no concuerdan con «chicas»"
+    },
+    "e": "Tiene que ser «cansadas y contentas»: femenino plural.",
+    "n": "error"
+   },
+   {
     "t": "tap_text",
-    "p": "Tocá los adjetivos: «La casa grande tiene ventanas azules».",
+    "p": "Tocá los dos adjetivos: «Aquella torre antigua da miedo de noche».",
     "o": {
      "segmentos": [
-      "La",
-      "casa",
-      "grande",
-      "tiene",
-      "ventanas",
-      "azules"
+      "Aquella",
+      "torre",
+      "antigua",
+      "da",
+      "miedo",
+      "de",
+      "noche"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      0,
+      2
+     ]
+    },
+    "e": "«Aquella» es determinativo y «antigua», calificativo.",
+    "n": "analizar"
+   }
+  ],
+  "2": [
+   {
+    "t": "tap_text",
+    "p": "Tocá los tres verbos: «Los pájaros volaron alto, se posaron en el techo y cantaron».",
+    "o": {
+     "segmentos": [
+      "Los",
+      "pájaros",
+      "volaron",
+      "alto",
+      "se",
+      "posaron",
+      "en",
+      "el",
+      "techo",
+      "y",
+      "cantaron"
      ],
      "modo": "palabras"
     },
     "r": {
      "tocar": [
       2,
-      5
+      5,
+      10
      ]
     },
-    "e": "Grande y azules dicen cómo son."
+    "e": "Son las palabras que cambiarían con el tiempo.",
+    "n": "analizar"
    },
    {
-    "t": "classify",
-    "p": "¿Concreto o abstracto?",
-    "o": {
-     "elementos": [
-      "mesa",
-      "alegría",
-      "río",
-      "libertad"
-     ],
-     "categorias": [
-      "Concreto",
-      "Abstracto"
-     ]
-    },
-    "r": {
-     "categorias": {
-      "mesa": "Concreto",
-      "alegría": "Abstracto",
-      "río": "Concreto",
-      "libertad": "Abstracto"
-     }
-    },
-    "e": "Lo que se toca o ve es concreto."
-   }
-  ],
-  "2": [
-   {
     "t": "matching",
-    "p": "Uní cada modo con su expresión.",
+    "p": "Uní cada verbo con su persona, número y tiempo.",
     "o": {
      "izquierda": [
-      "Indicativo",
-      "Subjuntivo",
-      "Imperativo"
+      "cantaremos",
+      "comiste",
+      "viven",
+      "escribí"
      ],
      "derecha": [
-      "Hechos reales",
-      "Deseos y dudas",
-      "Órdenes"
+      "1.ª singular, pasado",
+      "3.ª plural, presente",
+      "2.ª singular, pasado",
+      "1.ª plural, futuro"
      ]
     },
     "r": {
      "pares": {
-      "Indicativo": "Hechos reales",
-      "Subjuntivo": "Deseos y dudas",
-      "Imperativo": "Órdenes"
+      "cantaremos": "1.ª plural, futuro",
+      "comiste": "2.ª singular, pasado",
+      "viven": "3.ª plural, presente",
+      "escribí": "1.ª singular, pasado"
      }
     },
-    "e": "Cada modo tiene su valor."
+    "e": "La desinencia lo dice todo.",
+    "n": "aplicar"
    },
-   {
-    "t": "fill_blank",
-    "p": "Cantar, cantando y cantado son formas ___ personales.",
-    "o": [],
-    "r": {
-     "huecos": [
-      [
-       "no"
-      ]
-     ]
-    },
-    "e": "No indican persona."
-   }
-  ],
-  "3": [
-   {
-    "t": "fill_blank",
-    "p": "«Hoy» es un adverbio de ___ .",
-    "o": [],
-    "r": {
-     "huecos": [
-      [
-       "tiempo"
-      ]
-     ]
-    },
-    "e": "Dice cuándo."
-   },
-   {
-    "t": "multi_select",
-    "p": "Marcá las preposiciones:",
-    "o": [
-     "con",
-     "rápido",
-     "sin",
-     "aquí",
-     "sobre"
-    ],
-    "r": {
-     "correctas": [
-      "con",
-      "sin",
-      "sobre"
-     ]
-    },
-    "e": "Rápido y aquí son adverbios."
-   }
-  ],
-  "4": [
    {
     "t": "classify",
-    "p": "¿Pronombre o conjunción?",
+    "p": "¿En qué modo está cada verbo?",
     "o": {
      "elementos": [
-      "ella",
-      "pero",
-      "yo",
-      "porque"
+      "Mañana viajamos a Córdoba.",
+      "Ojalá haga buen tiempo.",
+      "Prepará la valija.",
+      "Quizás llegue tarde."
      ],
      "categorias": [
-      "Pronombre",
-      "Conjunción"
+      "Indicativo",
+      "Subjuntivo",
+      "Imperativo"
      ]
     },
     "r": {
      "categorias": {
-      "ella": "Pronombre",
-      "pero": "Conjunción",
-      "yo": "Pronombre",
-      "porque": "Conjunción"
+      "Mañana viajamos a Córdoba.": "Indicativo",
+      "Ojalá haga buen tiempo.": "Subjuntivo",
+      "Prepará la valija.": "Imperativo",
+      "Quizás llegue tarde.": "Subjuntivo"
      }
     },
-    "e": "Reemplazar o unir."
+    "e": "Hecho, deseo o duda, orden.",
+    "n": "aplicar"
    },
    {
-    "t": "ordering",
-    "p": "Ordená para armar la oración.",
+    "t": "multiple_choice",
+    "p": "Sofía dice: «En \"Ojalá salga el sol\", el verbo está en indicativo porque habla del futuro». ¿Tiene razón?",
     "o": [
-     "se disculpó",
-     "Ella",
-     "llegó tarde y"
+     "No: es subjuntivo, expresa un deseo",
+     "Sí: todo lo que pasa en el futuro es indicativo",
+     "No: es imperativo"
     ],
     "r": {
-     "orden": [
-      "Ella",
-      "llegó tarde y",
-      "se disculpó"
+     "correcta": "No: es subjuntivo, expresa un deseo"
+    },
+    "e": "Después de «ojalá» va subjuntivo: no se afirma, se desea.",
+    "n": "error"
+   }
+  ],
+  "3": [
+   {
+    "t": "classify",
+    "p": "¿Qué indica cada adverbio?",
+    "o": {
+     "elementos": [
+      "afuera",
+      "todavía",
+      "claramente",
+      "demasiado"
+     ],
+     "categorias": [
+      "Lugar",
+      "Tiempo",
+      "Modo",
+      "Cantidad"
      ]
     },
-    "e": "Sujeto, verbo y conjunción."
+    "r": {
+     "categorias": {
+      "afuera": "Lugar",
+      "todavía": "Tiempo",
+      "claramente": "Modo",
+      "demasiado": "Cantidad"
+     }
+    },
+    "e": "Preguntá dónde, cuándo, cómo y cuánto.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En «Tenemos un perro tranquilo» y «El perro duerme tranquilo», ¿qué es «tranquilo» en cada caso?",
+    "o": [
+     "Adjetivo y después adverbio",
+     "Adverbio en los dos casos",
+     "Adjetivo en los dos casos"
+    ],
+    "r": {
+     "correcta": "Adjetivo y después adverbio"
+    },
+    "e": "En la primera acompaña al sustantivo; en la segunda dice cómo duerme.",
+    "n": "analizar"
+   },
+   {
+    "t": "fill_blank",
+    "p": "Completá con preposiciones: «Salimos ___ la mañana, caminamos ___ el río y volvimos ___ casa».",
+    "r": {
+     "huecos": [
+      [
+       "a",
+       "por",
+       "en",
+       "durante"
+      ],
+      [
+       "hasta",
+       "hacia",
+       "por"
+      ],
+      [
+       "a"
+      ]
+     ]
+    },
+    "e": "Cada preposición marca una relación.",
+    "n": "aplicar"
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá la preposición que está mal usada: «Me voy de vacaciones a la playa en mi familia».",
+    "o": {
+     "segmentos": [
+      "Me",
+      "voy",
+      "de",
+      "vacaciones",
+      "a",
+      "la",
+      "playa",
+      "en",
+      "mi",
+      "familia"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      7
+     ]
+    },
+    "e": "Para la compañía va «con»: «con mi familia».",
+    "n": "error"
+   }
+  ],
+  "4": [
+   {
+    "t": "fill_blank",
+    "p": "Reemplazá la repetición por un pronombre: «Martín perdió la pelota. ___ buscó por todo el patio y ___ encontró detrás del árbol».",
+    "r": {
+     "huecos": [
+      [
+       "Martín la",
+       "la"
+      ],
+      [
+       "la"
+      ]
+     ]
+    },
+    "e": "Delante del verbo, «la» reemplaza a «la pelota».",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "Clasificá las palabras destacadas: «ESTE cuaderno es MÍO; ESE es TUYO y AQUEL también».",
+    "o": {
+     "elementos": [
+      "ESTE (cuaderno)",
+      "MÍO",
+      "ESE",
+      "AQUEL"
+     ],
+     "categorias": [
+      "Adjetivo determinativo",
+      "Pronombre"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "ESTE (cuaderno)": "Adjetivo determinativo",
+      "MÍO": "Pronombre",
+      "ESE": "Pronombre",
+      "AQUEL": "Pronombre"
+     }
+    },
+    "e": "Si acompaña a un sustantivo, es adjetivo; si lo reemplaza, pronombre.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "«Llegaron Juan y Pedro. Él traía la torta.» ¿Qué problema tiene?",
+    "o": [
+     "No se sabe a quién se refiere «él»",
+     "Falta una conjunción",
+     "El verbo está mal conjugado"
+    ],
+    "r": {
+     "correcta": "No se sabe a quién se refiere «él»"
+    },
+    "e": "Con dos personas, el pronombre es ambiguo: conviene repetir el nombre.",
+    "n": "error"
+   },
+   {
+    "t": "fill_blank",
+    "p": "Completá con la conjunción correcta: «Invitamos a padres ___ hijos. Pueden venir siete ___ ocho personas por familia».",
+    "r": {
+     "huecos": [
+      [
+       "e"
+      ],
+      [
+       "u"
+      ]
+     ]
+    },
+    "e": "«y» pasa a «e» delante de i; «o» pasa a «u» delante de o.",
+    "n": "aplicar"
    }
   ],
   "5": [
@@ -991,7 +2257,8 @@
      "correcta": "Abstracto"
     },
     "e": "Un sentimiento.",
-    "tiempo": 20
+    "tiempo": 20,
+    "n": "recordar"
    },
    {
     "t": "true_false",
@@ -1004,7 +2271,8 @@
      "correcta": "Verdadero"
     },
     "e": "Expresa un deseo.",
-    "tiempo": 20
+    "tiempo": 20,
+    "n": "recordar"
    },
    {
     "t": "multiple_choice",
@@ -1018,7 +2286,8 @@
      "correcta": "Tiempo"
     },
     "e": "Cuándo.",
-    "tiempo": 20
+    "tiempo": 20,
+    "n": "recordar"
    },
    {
     "t": "true_false",
@@ -1031,7 +2300,8 @@
      "correcta": "Falso"
     },
     "e": "Reemplazan sustantivos.",
-    "tiempo": 20
+    "tiempo": 20,
+    "n": "recordar"
    }
   ]
  },
@@ -1039,225 +2309,293 @@
   [
    1,
    {
-    "t": "multiple_choice",
-    "p": "¿Qué palabra nombra personas, cosas o ideas?",
-    "o": [
-     "Sustantivo",
-     "Verbo",
-     "Adverbio",
-     "Preposición"
-    ],
-    "r": {
-     "correcta": "Sustantivo"
+    "t": "classify",
+    "p": "Clasificá: «Con mucha paciencia, Ramiro armó una maqueta del Obelisco».",
+    "o": {
+     "elementos": [
+      "Ramiro",
+      "Obelisco",
+      "maqueta",
+      "paciencia"
+     ],
+     "categorias": [
+      "Propio",
+      "Común concreto",
+      "Común abstracto"
+     ]
     },
-    "e": "Nombra."
+    "r": {
+     "categorias": {
+      "Ramiro": "Propio",
+      "Obelisco": "Propio",
+      "maqueta": "Común concreto",
+      "paciencia": "Común abstracto"
+     }
+    },
+    "e": "Mayúscula, objeto o idea.",
+    "n": "aplicar"
    }
   ],
   [
    1,
    {
     "t": "multiple_choice",
-    "p": "«Libertad» es un sustantivo…",
+    "p": "¿Cuál de estas frases tiene un error de concordancia?",
     "o": [
-     "Abstracto",
-     "Concreto",
-     "Propio",
-     "Plural"
+     "Unas flores amarillo",
+     "Unos zapatos nuevos",
+     "Una mesa redonda"
     ],
     "r": {
-     "correcta": "Abstracto"
+     "correcta": "Unas flores amarillo"
     },
-    "e": "Es una idea."
+    "e": "Tiene que ser «amarillas»: femenino plural.",
+    "n": "error"
    }
   ],
   [
    1,
    {
-    "t": "true_false",
-    "p": "El adjetivo concuerda con el sustantivo en género y número.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Verdadero"
-    },
-    "e": "Casas blancas."
-   }
-  ],
-  [
-   2,
-   {
-    "t": "multiple_choice",
-    "p": "El modo que expresa órdenes es…",
-    "o": [
-     "Imperativo",
-     "Indicativo",
-     "Subjuntivo",
-     "Gerundio"
-    ],
-    "r": {
-     "correcta": "Imperativo"
-    },
-    "e": "Cerrá la puerta."
-   }
-  ],
-  [
-   2,
-   {
-    "t": "multi_select",
-    "p": "Formas no personales del verbo:",
-    "o": [
-     "Infinitivo",
-     "Gerundio",
-     "Participio",
-     "Imperativo"
-    ],
-    "r": {
-     "correctas": [
-      "Infinitivo",
-      "Gerundio",
-      "Participio"
-     ]
-    },
-    "e": "El imperativo es un modo."
-   }
-  ],
-  [
-   2,
-   {
     "t": "fill_blank",
-    "p": "Los hechos reales se expresan en modo ___ .",
-    "o": [],
+    "p": "Escribí el plural de «nariz» y de «reloj».",
     "r": {
      "huecos": [
       [
-       "indicativo"
+       "narices"
+      ],
+      [
+       "relojes"
       ]
      ]
     },
-    "e": "Indicativo."
+    "e": "z → ces; consonante → -es.",
+    "n": "aplicar"
    }
   ],
   [
-   3,
+   2,
    {
-    "t": "multiple_choice",
-    "p": "«Aquí» es adverbio de…",
-    "o": [
-     "Lugar",
-     "Tiempo",
-     "Modo",
-     "Cantidad"
-    ],
-    "r": {
-     "correcta": "Lugar"
+    "t": "tap_text",
+    "p": "Tocá el verbo en subjuntivo: «Espero que mañana salga el sol y podamos ir al río».",
+    "o": {
+     "segmentos": [
+      "Espero",
+      "que",
+      "mañana",
+      "salga",
+      "el",
+      "sol",
+      "y",
+      "podamos",
+      "ir",
+      "al",
+      "río"
+     ],
+     "modo": "palabras"
     },
-    "e": "Dice dónde."
-   }
-  ],
-  [
-   3,
-   {
-    "t": "multi_select",
-    "p": "Preposiciones:",
-    "o": [
-     "con",
-     "sin",
-     "rápido",
-     "hacia"
-    ],
     "r": {
-     "correctas": [
-      "con",
-      "sin",
-      "hacia"
+     "tocar": [
+      3,
+      7
      ]
     },
-    "e": "Rápido es adverbio."
+    "e": "Después de «espero que» van deseos: subjuntivo.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "short_answer",
+    "p": "¿En qué persona y número está «escribimos»? (Respondé por ejemplo: primera plural).",
+    "r": {
+     "acepta": [
+      "primera plural",
+      "primera persona plural",
+      "1.ª plural",
+      "1a plural",
+      "primera del plural",
+      "nosotros"
+     ]
+    },
+    "e": "La desinencia -imos indica nosotros.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "Un chico dice: «En \"Cerrá la puerta\" no hay verbo porque no cuenta ninguna acción». ¿Qué le contestás?",
+    "o": [
+     "Sí hay: «cerrá» es un verbo en modo imperativo",
+     "Tiene razón: es una orden, no un verbo",
+     "El verbo es «puerta»"
+    ],
+    "r": {
+     "correcta": "Sí hay: «cerrá» es un verbo en modo imperativo"
+    },
+    "e": "Las órdenes también son verbos: modo imperativo.",
+    "n": "error"
    }
   ],
   [
    3,
    {
-    "t": "true_false",
-    "p": "Los adverbios cambian de género y número.",
-    "o": [
-     "Verdadero",
-     "Falso"
-    ],
-    "r": {
-     "correcta": "Falso"
-    },
-    "e": "Son invariables."
-   }
-  ],
-  [
-   4,
-   {
     "t": "multiple_choice",
-    "p": "El pronombre…",
+    "p": "En «Llegaste demasiado temprano», ¿a qué modifica «demasiado»?",
     "o": [
-     "Reemplaza a un sustantivo",
-     "Une oraciones",
-     "Nombra",
-     "Modifica al verbo"
+     "A «temprano», otro adverbio",
+     "A «llegaste», el verbo",
+     "A nada: es una preposición"
     ],
     "r": {
-     "correcta": "Reemplaza a un sustantivo"
+     "correcta": "A «temprano», otro adverbio"
     },
-    "e": "Evita repeticiones."
+    "e": "Dice cuánto de temprano.",
+    "n": "analizar"
    }
   ],
   [
-   4,
+   3,
    {
-    "t": "multiple_choice",
-    "p": "«Pero» es una conjunción de…",
-    "o": [
-     "Oposición",
-     "Suma",
-     "Opción",
-     "Causa"
-    ],
-    "r": {
-     "correcta": "Oposición"
+    "t": "classify",
+    "p": "¿Adverbio o preposición?",
+    "o": {
+     "elementos": [
+      "lejos",
+      "hacia",
+      "mañana (en «vuelvo mañana»)",
+      "sin"
+     ],
+     "categorias": [
+      "Adverbio",
+      "Preposición"
+     ]
     },
-    "e": "Contrasta ideas."
+    "r": {
+     "categorias": {
+      "lejos": "Adverbio",
+      "hacia": "Preposición",
+      "mañana (en «vuelvo mañana»)": "Adverbio",
+      "sin": "Preposición"
+     }
+    },
+    "e": "La preposición siempre necesita un término después.",
+    "n": "aplicar"
    }
   ],
   [
-   4,
+   3,
    {
     "t": "fill_blank",
-    "p": "La palabra que une ideas se llama ___ .",
-    "o": [],
+    "p": "Completá con una preposición: «Fuimos ___ Córdoba ___ auto».",
     "r": {
      "huecos": [
       [
-       "conjuncion",
-       "conjunción",
-       "nexo"
+       "a",
+       "hacia",
+       "hasta"
+      ],
+      [
+       "en"
       ]
      ]
     },
-    "e": "Une palabras u oraciones."
+    "e": "Destino y medio.",
+    "n": "aplicar"
    }
   ],
   [
    4,
    {
-    "t": "true_false",
-    "p": "«Este» puede ser un pronombre demostrativo.",
+    "t": "multi_select",
+    "p": "Elegí TODOS los pronombres: «Ella me dijo que el libro rojo es suyo y que aquel es nuestro».",
     "o": [
-     "Verdadero",
-     "Falso"
+     "Ella",
+     "rojo",
+     "suyo",
+     "aquel",
+     "nuestro",
+     "libro"
     ],
     "r": {
-     "correcta": "Verdadero"
+     "correctas": [
+      "Ella",
+      "suyo",
+      "aquel",
+      "nuestro"
+     ]
     },
-    "e": "Señala algo."
+    "e": "«Rojo» es adjetivo y «libro», sustantivo.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué conjunción completa bien? «Quería ir a la fiesta, ___ me quedé estudiando.»",
+    "o": [
+     "pero",
+     "porque",
+     "ni"
+    ],
+    "r": {
+     "correcta": "pero"
+    },
+    "e": "Las ideas se oponen.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál está bien escrita?",
+    "o": [
+     "Agua e hielo",
+     "Siete u ocho",
+     "Uno o otro"
+    ],
+    "r": {
+     "correcta": "Siete u ocho"
+    },
+    "e": "«o» pasa a «u» delante del sonido o.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Escribí dos oraciones sobre tu mascota o un animal que te guste: en la segunda usá un pronombre para no repetir su nombre y una conjunción para unir dos ideas.",
+    "o": {
+     "ayuda": "Por ejemplo: «… Ella duerme mucho y come poco»."
+    },
+    "r": {
+     "grupos": [
+      [
+       "él",
+       "ella",
+       "lo",
+       "la",
+       "le"
+      ],
+      [
+       "y",
+       "pero",
+       "porque",
+       "o",
+       "ni"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Pronombre para no repetir y conjunción para unir.",
+    "n": "aplicar"
    }
   ]
- ]
+ ],
+ "actualizar_preguntas": true
 }
