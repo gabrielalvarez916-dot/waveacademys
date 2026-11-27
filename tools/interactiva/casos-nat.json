@@ -1223,5 +1223,153 @@
   "p": {
    "medio": true
   }
+ },
+ {
+  "motor": "relieve",
+  "nombre": "s2-relieve",
+  "p": {}
+ },
+ {
+  "motor": "relieve_x",
+  "nombre": "s2-relieve_x",
+  "p": {}
+ },
+ {
+  "motor": "climograma",
+  "nombre": "s2-climograma",
+  "p": {}
+ },
+ {
+  "motor": "climograma_x",
+  "nombre": "s2-climograma_x",
+  "p": {}
+ },
+ {
+  "motor": "climograma_x",
+  "nombre": "s2-climograma_x-tipo",
+  "p": {
+   "modo": "tipo"
+  }
+ },
+ {
+  "motor": "biomas",
+  "nombre": "s2-biomas",
+  "p": {}
+ },
+ {
+  "motor": "biomas_x",
+  "nombre": "s2-biomas_x",
+  "p": {}
+ },
+ {
+  "motor": "cuenca",
+  "nombre": "s2-cuenca",
+  "p": {}
+ },
+ {
+  "motor": "cuenca_x",
+  "nombre": "s2-cuenca_x",
+  "p": {}
+ },
+ {
+  "motor": "placas",
+  "nombre": "s2-placas",
+  "p": {}
+ },
+ {
+  "motor": "placas_x",
+  "nombre": "s2-placas_x",
+  "p": {}
+ },
+ {
+  "motor": "tematico",
+  "nombre": "s2-tematico",
+  "p": {}
+ },
+ {
+  "motor": "tematico_x",
+  "nombre": "s2-tematico_x",
+  "p": {}
+ },
+ {
+  "motor": "mapa_historico",
+  "nombre": "s2-mapa_historico",
+  "p": {}
+ },
+ {
+  "motor": "mapa_historico",
+  "nombre": "s2-mapa_historico-ruta",
+  "p": {
+   "modo": "ruta"
+  }
+ },
+ {
+  "motor": "mapa_historico_x",
+  "nombre": "s2-mapa_historico_x",
+  "p": {}
+ },
+ {
+  "motor": "mapa_historico_x",
+  "nombre": "s2-mapa_historico_x-ruta",
+  "p": {
+   "modo": "ruta"
+  }
+ },
+ {
+  "motor": "periodos",
+  "nombre": "s2-periodos",
+  "p": {}
+ },
+ {
+  "motor": "periodos_x",
+  "nombre": "s2-periodos_x",
+  "p": {}
+ },
+ {
+  "motor": "argumento",
+  "nombre": "s2-argumento",
+  "p": {}
+ },
+ {
+  "motor": "argumento_x",
+  "nombre": "s2-argumento_x",
+  "p": {}
+ },
+ {
+  "motor": "falacias",
+  "nombre": "s2-falacias",
+  "p": {}
+ },
+ {
+  "motor": "falacias_x",
+  "nombre": "s2-falacias_x",
+  "p": {}
+ },
+ {
+  "motor": "corrientes",
+  "nombre": "s2-corrientes",
+  "p": {}
+ },
+ {
+  "motor": "corrientes_x",
+  "nombre": "s2-corrientes_x",
+  "p": {}
+ },
+ {
+  "motor": "constitucion",
+  "nombre": "s2-constitucion",
+  "p": {}
+ },
+ {
+  "motor": "constitucion",
+  "nombre": "s2-constitucion-garantias",
+  "p": {
+   "modo": "garantias"
+  }
+ },
+ {
+  "motor": "constitucion_x",
+  "nombre": "s2-constitucion_x",
+  "p": {}
  }
 ]

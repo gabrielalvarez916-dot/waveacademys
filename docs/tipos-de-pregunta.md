@@ -146,6 +146,14 @@ Solo actividades de nivel y generales, nunca examen. La marca va al principio de
 [[chequeo]]                         multi_select (señales de alerta)               · revisa la publicación con la lista de verificación
 [[sociedad:feudal]]                 ordering (grupos)                              · arma la pirámide social de arriba hacia abajo
 [[comparativa]]                     table_fill                                     · completa la tabla comparativa con encabezados ilustrados
+[[climograma:0]]                    numeric                                        · toca cada mes del climograma para leer temperatura y lluvia (0 Buenos Aires, 1 Ushuaia, 2 Manaos, 3 Mendoza)
+[[placas]]                          classify (Convergente / Divergente / Transformante) · ubica cada caso en el dibujo de su borde
+[[cuenca]]                          matching (izquierda: partes; opciones "1" a "7")  · toca la parte y después el número en el mapa del río
+[[argumento]]                       classify (Premisa / Conclusión)                · arma el esquema: premisas arriba, conclusión abajo
+[[falacia]]                         multiple_choice (nombres de falacias)          · el diálogo del enunciado como chat; la elegida queda como sello
+[[constitucion]]                    classify (ej. Derecho / Garantía, o Primera parte / Segunda parte) · ubica cada artículo en las páginas
+[[periodos:Colonia:Después de 1810]] classify (Cambio / Continuidad)               · puente entre los dos períodos
+[[bioma]]                           classify (nombres de biomas: Selva, Desierto, Pastizal, Bosque templado, Estepa, Tundra) · cada uno a su paisaje
 ```
 
 

@@ -7,7 +7,7 @@ import asyncio, json, pathlib, sys, html as H
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path('/tmp/prueba-act-' + (sys.argv[1] if len(sys.argv) > 1 else 'nat')); OUT.mkdir(exist_ok=True)
-SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js']
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/leccion-banco-soc2.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js']
 
 def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
 def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
@@ -117,6 +117,28 @@ ACCM = {
  'escuchar_en': ("b=>{b.querySelectorAll('.amd-dib')[1].click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", '🐶 dog'),
 }
 if len(sys.argv) > 1 and sys.argv[1] == 'medio': Q, ACC = QM, ACCM
+
+QS2 = [
+ ('climograma', preg(0, '[[climograma:3]] ¿Cuál es la amplitud térmica de Mendoza?', num(0))),
+ ('placas', preg(1, '[[placas]] ¿Qué borde es?', pares(1, ['Cordillera de los Andes', 'Dorsal del Atlántico', 'Falla de San Andrés'], ['Convergente', 'Divergente', 'Transformante']))),
+ ('cuenca', preg(2, '[[cuenca]] Ubicá cada parte.', pares(2, ['Naciente', 'Afluente', 'Desembocadura'], ['1', '2', '6']))),
+ ('argumento', preg(3, '[[argumento]] Armá el argumento.', pares(3, ['Todos los mamíferos tienen pulmones', 'La ballena es un mamífero', 'La ballena tiene pulmones'], ['Premisa', 'Conclusión']))),
+ ('falacia', preg(4, '[[falacia]] —Hay que cuidar el agua. —¿Y vos qué sabés, si sos un chico?', radios(4, ['Ad hominem (contra la persona)', 'Falso dilema', 'Falsa causa']))),
+ ('constitucion', preg(5, '[[constitucion]] ¿Derecho o garantía?', pares(5, ['Enseñar y aprender', 'Hábeas corpus'], ['Derecho', 'Garantía']))),
+ ('periodos', preg(6, '[[periodos:Colonia:Después de 1810]] ¿Cambio o continuidad?', pares(6, ['Gobierno', 'Religión oficial'], ['Cambio', 'Continuidad']))),
+ ('bioma', preg(7, '[[bioma]] ¿Dónde vive?', pares(7, ['Cactus', 'Mono aullador', 'Musgo y líquenes'], ['Desierto', 'Selva', 'Tundra']))),
+]
+ACCS2 = {
+ 'climograma': ("b=>{const s=b.querySelector('svg'),r=s.getBoundingClientRect();s.dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:r.left+r.width*(70/460),clientY:r.top+r.height/2}));return b.querySelector('.an-val').textContent}", 'Mes 1'),
+ 'placas': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Convergente'),
+ 'cuenca': ("b=>{b.querySelector('[data-sp]').click();[...b.querySelectorAll('[data-t]')].find(g=>g.textContent.trim()==='1').dispatchEvent(new MouseEvent('click',{bubbles:true}));return b.querySelector('select').value}", '1'),
+ 'argumento': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Premisa'),
+ 'falacia': ("b=>{b.querySelector('.soa-mir').click();return [b.querySelectorAll('.soc2-chat p').length, [...b.querySelectorAll('input[type=radio]')].filter(r=>r.checked).length].join(',')}", '2,1'),
+ 'constitucion': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Derecho'),
+ 'periodos': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value+b.querySelector('.soa-puente').textContent}", 'CambioColonia'),
+ 'bioma': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Desierto'),
+}
+if len(sys.argv) > 1 and sys.argv[1] == 'soc2': Q, ACC = QS2, ACCS2
 
 async def main():
     page = OUT / 'p.html'

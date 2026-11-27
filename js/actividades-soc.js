@@ -18,13 +18,21 @@
      [[dilema]]                          open o keywords                                · elige postura y la justifica desde una mirada ética
      [[chequeo]]                         multi_select (señales de alerta)               · revisa la publicación con la lista de verificación
      [[sociedad:feudal]]                 ordering (grupos)                              · arma la pirámide social de arriba hacia abajo
-     [[comparativa]]                     table_fill                                     · completa la tabla comparativa con encabezados ilustrados */
+     [[comparativa]]                     table_fill                                     · completa la tabla comparativa con encabezados ilustrados
+     [[climograma:0]]                    numeric                                        · toca cada mes del climograma para leer temperatura y lluvia (0 Buenos Aires, 1 Ushuaia, 2 Manaos, 3 Mendoza)
+     [[placas]]                          classify (Convergente / Divergente / Transformante) · ubica cada caso en el dibujo de su borde
+     [[cuenca]]                          matching (izquierda: partes; opciones "1" a "7")  · toca la parte y después el número en el mapa del río
+     [[argumento]]                       classify (Premisa / Conclusión)                · arma el esquema: premisas arriba, conclusión abajo
+     [[falacia]]                         multiple_choice (nombres de falacias)          · el diálogo del enunciado como chat; la elegida queda como sello
+     [[constitucion]]                    classify (ej. Derecho / Garantía, o Primera parte / Segunda parte) · ubica cada artículo en las páginas
+     [[periodos:Colonia:Después de 1810]] classify (Cambio / Continuidad)               · puente entre los dos períodos
+     [[bioma]]                           classify (nombres de biomas: Selva, Desierto, Pastizal, Bosque templado, Estepa, Tundra) · cada uno a su paisaje */
 (function () {
   'use strict';
-  var RE = /\[\[(cronologia|coordenadas|escala|husos|piramide|fuente|arbol|dhondt|ley|poderes|sectores|mercado|carrito|balanza|dilema|chequeo|sociedad|comparativa)(?::([^\]]*))?\]\]\s*/g;
+  var RE = /\[\[(cronologia|coordenadas|escala|husos|piramide|fuente|arbol|dhondt|ley|poderes|sectores|mercado|carrito|balanza|dilema|chequeo|sociedad|comparativa|climograma|placas|cuenca|argumento|falacia|constitucion|periodos|bioma)(?::([^\]]*))?\]\]\s*/g;
   var NOMBRE = { cronologia: ['🕰️', 'Ubicá en la línea de tiempo'], coordenadas: ['🌐', 'Encontrá el lugar'], escala: ['📏', 'Medí con la escala'], husos: ['🕒', '¿Qué hora es allá?'], piramide: ['👥', 'Leé la pirámide de población'], fuente: ['🔎', 'Detective de fuentes'],
     arbol: ['🌳', 'Árbol de causas y consecuencias'], dhondt: ['🗳️', 'Repartí las bancas'], ley: ['🏛️', 'El camino de una ley'], poderes: ['⚖️', 'Los tres poderes'], sectores: ['🏭', 'Sectores de la economía'], mercado: ['📈', 'Encontrá el equilibrio'], carrito: ['🛒', 'El carrito de la inflación'],
-    balanza: ['⚖️', 'Balanza de argumentos'], dilema: ['🤔', 'Dilema ético'], chequeo: ['📰', 'Chequeá la noticia'], sociedad: ['🔺', 'Armá la pirámide social'], comparativa: ['📊', 'Tabla comparativa'] };
+    balanza: ['⚖️', 'Balanza de argumentos'], dilema: ['🤔', 'Dilema ético'], chequeo: ['📰', 'Chequeá la noticia'], sociedad: ['🔺', 'Armá la pirámide social'], comparativa: ['📊', 'Tabla comparativa'], climograma: ['🌦️', 'Leé el climograma'], placas: ['🌋', 'Bordes de placas'], cuenca: ['🏞️', 'Partes de la cuenca'], argumento: ['🧩', 'Armá el argumento'], falacia: ['🪤', 'Cazá la falacia'], constitucion: ['📜', 'La Constitución'], periodos: ['🔁', 'Cambios y continuidades'], bioma: ['🌍', 'Cada uno en su bioma'] };
   var A = {};
   function N() { return window.WaveLeccionBanco && WaveLeccionBanco._h && WaveLeccionBanco._h.nat; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -168,6 +176,36 @@
   // 18) COMPARATIVA --------------------------------------------------------------------------------------
   A.comparativa = function (blk) { var t = blk.querySelector('table.mt-tabla'); if (!t) return; t.classList.add('soa-comp'); despues(blk, caja('Completá cada casillero comparando las dos columnas: mismo aspecto, fila por fila.')); var ths = t.querySelectorAll('thead th'), ic = ['🏷️', '🏛️', '🗺️', '⚔️', '💰', '🙏', '📜']; [].forEach.call(ths, function (th, i) { if (i) th.innerHTML = '<span class="soa-ic">' + ic[i % ic.length] + '</span>' + th.innerHTML; }); };
 
+
+  // ---------- SOCIALES (parte 2): geografía física, filosofía y Constitución ----------
+  function S2() { var n = N(); return n && n.soc2; }
+  A.climograma = function (blk, arg) { var n = N(), d = S2(), inp = campoNum(blk); if (!d || !inp) return; var c = d.CLI[+arg || 0] || d.CLI[0], w = caja('Tocá cada mes para leer su temperatura y su lluvia. Después respondé.'), vis = mk('div', '', d.climo(c, 2)), lab = mk('div', 'an-val', 'Tocá una barra');
+    vis.addEventListener('click', function (e) { var r = vis.querySelector('svg').getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 460, i = Math.floor((x - 50) / 30.5); if (i < 0 || i > 11) return; lab.innerHTML = 'Mes ' + (i + 1) + ': <b>' + String(c[1][i]).replace('.', ',') + ' °C</b> y <b>' + c[2][i] + ' mm</b>'; });
+    w.appendChild(mk('b', '', '📍 ' + c[0])); w.appendChild(vis); w.appendChild(lab); despues(blk, w); };
+  A.placas = function (blk) { var d = S2(); if (!d || !sels(blk).length) return; propio(blk); var w = caja('Tocá cada caso y llevalo al dibujo del borde que corresponde.'), K = { convergente: 'convergente', divergente: 'divergente', transformante: 'transformante' };
+    clasificar(blk, w, function (c) { var k = K[norm(c).split(' ')[0]]; return '<b>' + esc(c) + '</b>' + (k ? '<div class="soa-mini">' + d.placas(k, 2) + '</div>' : ''); }); despues(blk, w); };
+  A.cuenca = function (blk) { var d = S2(), S = sels(blk); if (!d || !S.length) return; propio(blk); var w = caja('Tocá el nombre de una parte y después su número en el mapa.'), vis = mk('div', '', d.cuenca(null, true)), pool = mk('div', 'an-fichas'), elegido = null;
+    function pintar() { pool.innerHTML = S.map(function (s) { var t = filaDe(s); return '<button type="button" class="an-ficha' + (elegido === t ? ' on' : '') + (s.value ? ' usada' : '') + '" data-sp="' + esc(t) + '">' + esc(t) + (s.value ? ' → ' + esc(s.options[s.selectedIndex].text) : '') + '</button>'; }).join(''); }
+    pool.addEventListener('click', function (e) { var f = e.target.closest('[data-sp]'); if (f) { elegido = f.getAttribute('data-sp'); pintar(); } });
+    vis.addEventListener('click', function (e) { var t = e.target.closest('[data-t]'); if (!t || !elegido) return; var num = t.textContent.trim(), s = selDe(blk, elegido), op = s && [].filter.call(s.options, function (o) { return o.value && (o.text.trim() === num || o.value === num || new RegExp('\\b' + num + '\\b').test(o.text)); })[0]; if (op) { setVal(s, op.value); sonar('bien'); } elegido = null; pintar(); });
+    w.appendChild(pool); w.appendChild(vis); pintar(); despues(blk, w); };
+  A.argumento = function (blk) { if (!sels(blk).length) return; propio(blk); var w = caja('Armá el esquema del argumento: las premisas arriba y la conclusión abajo.');
+    clasificar(blk, w, function (c) { return '<b>' + (/conc/i.test(c) ? '🎯 ' : '🧱 ') + esc(c) + '</b>'; }); var z = w.querySelector('.soa-zonas'); if (z) { z.classList.add('arbol', 'argu'); } despues(blk, w); };
+  A.falacia = function (blk) { var rs = [].slice.call(blk.querySelectorAll('.mt-op input[type=radio]')), p = enun(blk), d = S2(); if (!rs.length || !p) return; var txt = p.textContent, w = caja('Leé el diálogo y elegí la trampa que tiene.'), ch = mk('div', 'soc2-chat');
+    ch.innerHTML = txt.split(/\s*—\s*/).filter(Boolean).map(function (t, i) { return '<p class="' + (i % 2 ? 'der' : 'izq') + '">' + esc(t) + '</p>'; }).join('') + '<span class="soc2-sello" hidden></span>'; p.innerHTML = '<b>¿Qué falacia hay en este diálogo?</b>';
+    var ICO = {}; if (d) d.FAL.forEach(function (f) { ICO[norm(f[0]).split(' ')[0]] = f[1]; });
+    rs.forEach(function (r) { var op = r.closest('.mt-op'); if (op) ocultar(op); });
+    var cards = mk('div', 'soa-miradas', rs.map(function (r, i) { var t = (r.closest('.mt-op') || r.parentNode).textContent.trim(); return '<button type="button" class="soa-mir" data-i="' + i + '"><b>' + (ICO[norm(t).split(' ')[0]] || '🪤') + ' ' + esc(t) + '</b></button>'; }).join(''));
+    cards.addEventListener('click', function (e) { var b = e.target.closest('[data-i]'); if (!b) return; var r = rs[+b.getAttribute('data-i')]; r.checked = true; fire(r); [].forEach.call(cards.children, function (x) { x.classList.toggle('on', x === b); }); var sl = ch.querySelector('.soc2-sello'); sl.hidden = false; sl.textContent = b.textContent; sonar('bien'); });
+    w.appendChild(ch); w.appendChild(cards); despues(blk, w); };
+  A.constitucion = function (blk) { if (!sels(blk).length) return; propio(blk); var w = caja('Tocá cada caso y ubicalo en la página que corresponde de la Constitución.');
+    clasificar(blk, w, function (c, k) { return '<b>' + (/garant/i.test(c) ? '🛡️ ' : /derech/i.test(c) ? '🧑‍🤝‍🧑 ' : '📜 ') + esc(c) + '</b>'; }); var z = w.querySelector('.soa-zonas'); if (z) z.classList.add('libro'); despues(blk, w); };
+  A.periodos = function (blk, arg) { if (!sels(blk).length) return; propio(blk); var a = String(arg || '').split(':'), w = caja('Tocá cada aspecto y decidí: ¿cambió de un período al otro o continuó?');
+    w.appendChild(mk('div', 'soa-puente', '<b>' + esc(a[0] || 'Antes') + '</b><span>⟶</span><b>' + esc(a[1] || 'Después') + '</b>'));
+    clasificar(blk, w, function (c) { return '<b>' + (/contin/i.test(c) ? '= ' : '≠ ') + esc(c) + '</b>'; }); despues(blk, w); };
+  A.bioma = function (blk) { var d = S2(); if (!d || !sels(blk).length) return; propio(blk); var w = caja('Tocá cada planta o animal y llevalo a su bioma.');
+    clasificar(blk, w, function (c) { var b = d.BIO.filter(function (x) { return norm(x[0]) === norm(c); })[0]; return (b ? '<div class="soa-mini">' + d.paisaje(b, 1) + '</div>' : '') + '<b>' + esc(c) + '</b>'; }); despues(blk, w); };
+
   // ---------- Recorrido de la página ----------
   function quitar(root) { var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nn, L = []; while ((nn = tw.nextNode())) if (nn.nodeValue.indexOf('[[') >= 0) L.push(nn); L.forEach(function (x) { RE.lastIndex = 0; x.nodeValue = x.nodeValue.replace(RE, ''); }); RE.lastIndex = 0; }
   function recorrer() {
@@ -185,6 +223,7 @@
     '.soa-rango{width:100%;accent-color:#087E83}.soa-gondola{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}.soa-prod{padding:10px;border:2px solid #E3ECEA;border-bottom-width:4px;border-radius:14px;background:#fff;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:2px}.soa-prod.on{border-color:#087E83;background:#D7F0E9}.soa-prod span{font-size:.85rem}.soa-tot{margin-top:10px;font-size:1.05rem}',
     '.soa-miradas{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:8px 0}.soa-mir{padding:10px;border:2px solid #E3ECEA;border-radius:14px;background:#fff;font:inherit;cursor:pointer;text-align:left}.soa-mir small{display:block;color:#4b6a6c}.soa-mir.on{border-color:#087E83;background:#D7F0E9}.soa-razon{width:100%;box-sizing:border-box;padding:10px 12px;border:2px solid #E3ECEA;border-radius:14px;font:inherit}',
     '.soa-post{margin:6px auto;max-width:440px;padding:12px;border:1px solid #ddd;border-radius:14px;background:#fff;text-align:left;box-shadow:0 2px 6px rgba(0,0,0,.08)}.soa-post-h{color:#555;margin-bottom:6px}.soa-sellos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.soa-sellos span{padding:3px 8px;border-radius:8px;background:#FCE4EC;color:#c2416b;font-weight:800;font-size:.85rem}',
+    '.soa-mini svg{max-height:70px;width:100%}.soa-zonas.argu .soa-zona:last-child{border-color:#C2552E;background:#FFF8F0}.soa-zonas.argu{grid-template-columns:1fr}.soa-zonas.libro{background:#FFFDF5;border-left:8px solid #8D6E63;padding:8px;border-radius:6px 14px 14px 6px}.soa-puente{display:flex;justify-content:center;gap:10px;align-items:center;margin:6px 0}.soa-puente b{padding:6px 12px;border-radius:10px;background:#087E83;color:#fff}.soa-puente span{font-size:1.6rem;color:#C2552E}',
     '.soa-comp thead th{background:#087E83;color:#fff}.soa-ic{display:block;font-size:1.4rem}'].join('');
   document.head.appendChild(css);
   var pend = false;

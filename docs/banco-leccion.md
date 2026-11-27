@@ -259,3 +259,21 @@ Para primaria, sobre todo de 1.º a 3.º: dibujos grandes y poco texto. Cada mot
 | Ciudadanía | `derechos` / `derechos_x` | derechos de chicas y chicos |
 
 **Modo Medio en motores de secundaria (4.º a 6.º):** con `"medio": true` en `p`, los motores partes, ciclo, red_trofica, recorrido, clave, plato, particulas, mezclas, densidad, instrumento, grafico, experimento, circuito, fuerzas, palanca, energia, luz, calor, iman, tierra_luna, sistema_solar, linea_historica, coordenadas, escala_mapa, circuito_productivo, causas y fuente (y sus `_x`) se ven con letra y dibujo más grandes, y cada palabra técnica lleva al lado, la primera vez en cada paso, su explicación en palabras simples (glosario en js/leccion-banco-medio.js).
+
+## Sociales, parte 2 (js/leccion-banco-soc2.js) — 27/11/2026
+Geografía física, mapas históricos, períodos, Filosofía y Constitución. Cada uno con su práctica (`_x`).
+
+| Motor | Qué muestra | Parámetros (`p`) |
+|---|---|---|
+| `relieve` / `relieve_x` | curvas de nivel → corte A–B → perfil topográfico; práctica: curva más alta | `forma`: cerro, dos, asim |
+| `climograma` / `climograma_x` | barras de lluvia, línea de temperatura, amplitud y tipo de clima (valores aproximados) | práctica `modo`: (amplitud) o tipo |
+| `biomas` / `biomas_x` | paisaje: clima → vegetación → fauna | — |
+| `cuenca` / `cuenca_x` | partes de la cuenca y cursos del río; práctica: tocar en el mapa | — |
+| `placas` / `placas_x` | bordes convergente, divergente y transformante, con caso real | `borde` |
+| `tematico` / `tematico_x` | mapa coroplético: dato → rangos → colores → lectura | — |
+| `mapa_historico` / `mapa_historico_x` | territorio que cambia con los años (Imperio inca) o ruta (Cruce de los Andes) | `modo`: (expansión) o ruta |
+| `periodos` / `periodos_x` | comparar dos períodos por aspectos: cambios y continuidades | — |
+| `argumento` / `argumento_x` | premisas, conclusión, indicadores; deductivo e inductivo | — |
+| `falacias` / `falacias_x` | diálogo, sello con el nombre, la trampa y cómo responder | — |
+| `corrientes` / `corrientes_x` | mesa de debate: una pregunta, tres pensadores (ética, conocimiento, política) | — |
+| `constitucion` / `constitucion_x` | estructura de la Constitución; derechos y garantías | `modo`: (estructura) o garantias |
