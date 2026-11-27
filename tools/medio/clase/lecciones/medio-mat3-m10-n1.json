@@ -1,0 +1,118 @@
+{
+ "slug": "medio-mat3-m10-n1",
+ "step_id": "0bebe3ef-3c89-4537-9e46-32f83f766a4d",
+ "materia": "Matemática 3",
+ "titulo": "Armar la tabla pitagórica",
+ "sub": "Matemática 3 · Misión 10 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡Lucas encontró un mapa de números!",
+   "bajada": "Todas las tablas en un solo cuadro",
+   "emoji": "🗺️",
+   "titulo": "LA TABLA",
+   "sub": "pitagórica",
+   "voz": [
+    "¡Último momento: Lucas encontró un *mapa de números*!",
+    "Tiene todas las tablas en un solo cuadro.",
+    "Hoy: *armar la tabla pitagórica*."
+   ]
+  },
+  {
+   "t": "grilla",
+   "titulo": "EL MAPA DE LUCAS",
+   "filas": 10,
+   "cols": 10,
+   "resaltar": [
+    {
+     "fila": 2,
+     "col": 3,
+     "txt": "6"
+    },
+    {
+     "fila": 4,
+     "col": 7,
+     "txt": "28"
+    }
+   ],
+   "voz": [
+    "Este es el mapa: diez filas y diez columnas.",
+    "Fila del 2, columna del 3: *6*.",
+    "¡Fila del 4, columna del 7: *28*!"
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Tabla pitagórica",
+   "texto": "Un cuadro con todas las tablas: fila por columna.",
+   "emoji": "🔢",
+   "voz": [
+    "La *tabla pitagórica* tiene todas las tablas juntas.",
+    "Cada casillero es *fila por columna*."
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "COFRES DEL MAPA",
+   "candados": [
+    {
+     "p": "Fila 5, columna 6",
+     "r": "30"
+    },
+    {
+     "p": "Fila 3, columna 9",
+     "r": "27"
+    }
+   ],
+   "voz": [
+    "¡Escape! Dos cofres con candado.",
+    "Fila 5, columna 6: cinco por seis, *30*.",
+    "Fila 3, columna 9: tres por nueve, *27*.",
+    "¡Abrimos los cofres!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Fila 4, columna 7: 4 + 7 = 11",
+     "bien": "Fila 4, columna 7: 4 × 7 = 28"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En la tabla se *multiplica*, no se suma."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "FILA",
+     "un número"
+    ],
+    [
+     "COLUMNA",
+     "otro número"
+    ],
+    [
+     "CRUCE",
+     "fila por columna"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Buscamos la *fila* de un número.",
+    "Después la *columna* del otro.",
+    "Donde se cruzan está el resultado: *fila por columna*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

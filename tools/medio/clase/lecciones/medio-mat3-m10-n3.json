@@ -1,0 +1,140 @@
+{
+ "slug": "medio-mat3-m10-n3",
+ "step_id": "e3a4f91b-b697-4045-ba2c-06c631a5b711",
+ "materia": "Matemática 3",
+ "titulo": "Tablas del 3, 4 y 6",
+ "sub": "Matemática 3 · Misión 10 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "Lucas tiene 6 cofres con 4 monedas. ¿Cuántas monedas?",
+   "segundos": 8,
+   "respuesta": "¡24!",
+   "emoji": "💰",
+   "titulo": "TABLAS",
+   "sub": "del 3, 4 y 6",
+   "voz": [
+    "Desafío: 6 cofres con 4 monedas.",
+    "¿Cuántas monedas hay? ¡*24*!",
+    "Hoy: *las tablas del 3, del 4 y del 6*."
+   ]
+  },
+  {
+   "t": "escala",
+   "titulo": "LA TABLA DEL 3",
+   "items": [
+    {
+     "txt": "1 × 3 = 3",
+     "emoji": "💰",
+     "valor": 3
+    },
+    {
+     "txt": "2 × 3 = 6",
+     "emoji": "💰",
+     "valor": 6
+    },
+    {
+     "txt": "3 × 3 = 9",
+     "emoji": "💰",
+     "valor": 9
+    },
+    {
+     "txt": "4 × 3 = 12",
+     "emoji": "💰",
+     "valor": 12
+    }
+   ],
+   "voz": [
+    "Uno por tres: *3*.",
+    "Dos por tres: *6*.",
+    "Tres por tres: *9*.",
+    "¡Cuatro por tres: *12*!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "TRUCO DEL DOBLE",
+   "lineas": [
+    {
+     "txt": "6 × 2 = 12"
+    },
+    {
+     "txt": "6 × 4 = 24",
+     "color": "verde",
+     "marca": "subraya"
+    },
+    {
+     "txt": "7 × 3 = 21"
+    },
+    {
+     "txt": "7 × 6 = 42",
+     "color": "verde",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "6 por 2 es 12.",
+    "El doble: 6 por 4, *24*.",
+    "7 por 3 es 21.",
+    "El doble: 7 por 6, *42*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 8 × 4?",
+   "opciones": [
+    "32",
+    "12",
+    "36"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuánto es 8 por 4?",
+    "8 por 2 es 16, y el doble…",
+    "¡*32*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "6 × 4 = 22",
+     "bien": "6 × 4 = 24: el doble de 12"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Usá el truco del doble para *controlar*: 24."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DEL 3",
+     "de 3 en 3"
+    ],
+    [
+     "DEL 4",
+     "doble del 2"
+    ],
+    [
+     "DEL 6",
+     "doble del 3"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla del 3 va *de 3 en 3*.",
+    "La del 4 es el *doble* de la del 2.",
+    "La del 6, *doble* de la del 3.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

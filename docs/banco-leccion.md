@@ -129,3 +129,4 @@ Marcas en textos: `{{frase|explicación}}` (ejemplos) y `[[frase|etiqueta]]` / `
 - `primeros` / `primeros_x` (Mat3 m4 y m5): `dinero4` (que: contar | formar | caro | vuelto; vuelto con `pago: 10000`) y `sumar4` (que: redondos | descomp | estimar | dobles | falta1000).
 - `primeros` / `primeros_x` (Mat3 m6 y m7): `columna` acepta `cifras: 4` (cuentas de 4 cifras en columnas, con lleva, op resta, que estimar/control) y nuevo `problema4` (tipo: distancia | inicio (dir: quitar | mezcla) | pasos | inventar).
 - `primeros` / `primeros_x` (Mat3 m8 y m9): `calcu4` (que: estimar | control | rota | problema; calculadora con números de 4 cifras) y `serie_prop` (que: serie | tabla | problema; tablas de una cantidad que se repite).
+- `primeros` / `primeros_x` (Mat3 m10 y m11): `pitagorica` (que: armar | regular | tabla con min/max; ejercicio `solo`: lista de tablas) y `por10m` (de: 10 | 100 | 1000; que: redondos | problema).

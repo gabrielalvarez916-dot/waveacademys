@@ -2168,6 +2168,8 @@
         p.tipo === 'pasos' ? ctrl('a', 'TENÍA', 2000, 6000, 100, 3400) + ctrl('b', 'COMPRA', 100, 2000, 100, 1200) + ctrl('c', 'PRESTA', 100, 1500, 100, 800) : ctrl('a', 'PRIMER NÚMERO', 1000, 6000, 100, 2500) + ctrl('b', 'SEGUNDO NÚMERO', 100, 3000, 100, 1300),
       calcu4: p.que === 'rota' ? ctrl('m', 'MILES', 1, 9, 1, 3) + ctrl('k', 'TECLA QUE NO ANDA', 2, 9, 1, 5) : ctrl('a', 'PRIMER NÚMERO', 1000, 6999, 1, p.que === 'control' ? 2768 : 3890) + ctrl('b', 'SEGUNDO NÚMERO', 100, 2999, 1, p.que === 'control' ? 1455 : 2105),
       serie_prop: p.que === 'problema' ? ctrl('k', 'EN CADA PAQUETE', 2, 10, 1, 8) + ctrl('n', 'PAQUETES', 2, 10, 1, 6) : ctrl('k', 'EN CADA CAJA', 2, 10, 1, p.que === 'tabla' ? 6 : 5) + ctrl('n', 'CAJAS', 3, 10, 1, p.que === 'tabla' ? 8 : 6),
+      pitagorica: p.que === 'tabla' ? ctrl('n', 'TABLA DEL', p.min || 3, p.max || 6, 1, p.min || 3) : p.que === 'regular' ? ctrl('n', 'FILA', 1, 5, 1, 2) : ctrl('f', 'FILA', 1, 10, 1, 4) + ctrl('c', 'COLUMNA', 1, 10, 1, 7),
+      por10m: p.que === 'redondos' ? ctrl('a', 'NÚMERO', 2, 9, 1, 4) + ctrl('b', 'REDONDO', 20, 90, 10, 30) : p.que === 'problema' ? ctrl('a', 'CAJAS', 2, 9, 1, 6) + ctrl('b', 'EN CADA CAJA', 10, 90, 10, 40) : ctrl('n', 'NÚMERO', 1, p.de === 1000 ? 9 : p.max || 99, 1, p.de === 1000 ? 4 : 23),
       miles: ctrl('m', 'CAMIONES DE 1.000', p.min || 1, p.max || 9, 1, p.min || 2) + ctrl('c', 'CAJAS DE 100', 0, 9, 1, 3) + ctrl('d', 'PAQUETES DE 10', 0, 9, 1, 0) + ctrl('u', 'SUELTOS', 0, 9, 1, 5),
       saltos: ctrl('n', 'HASTA EL', (p.de || 2) * 3, (p.de || 2) * 10, p.de || 2, (p.de || 2) * 10),
       mayor_menor: ctrl('a', 'UN NÚMERO', 0, 20, 1, 12) + ctrl('b', 'OTRO NÚMERO', 0, 20, 1, 18) }[md];
@@ -2692,6 +2694,58 @@
         P.push({ vis: p1Big('RESPUESTA: ' + v.n * v.k + ' ESTAMPAS'), txt: 'RESPONDEMOS: TIENE <b>' + v.n * v.k + '</b> ESTAMPAS.' });
         return P;
       }
+      if (md === 'pitagorica') {
+        var qp9 = p.que || 'armar', GR = function (mx, hlF, hlC, show, mark) { var h = '<table class="lb2-tab lb2-tabc lb2-pit"><tr><th>×</th>', r2, c2; for (c2 = 1; c2 <= mx; c2++) h += '<th' + (c2 === hlC ? ' class="hc"' : '') + '>' + c2 + '</th>'; h += '</tr>';
+          for (r2 = 1; r2 <= mx; r2++) { h += '<tr><th' + (r2 === hlF ? ' class="hc"' : '') + '>' + r2 + '</th>'; for (c2 = 1; c2 <= mx; c2++) { var on2 = (r2 === hlF && c2 === hlC) || (mark && mark(r2, c2)), sh = show(r2, c2); h += '<td' + (on2 ? ' class="on"' : (r2 === hlF || c2 === hlC) && hlF && hlC ? ' class="ln"' : '') + '>' + (sh ? r2 * c2 : '') + '</td>'; } h += '</tr>'; } return h + '</table>'; };
+        if (qp9 === 'armar') {
+          P.push({ vis: GR(10, 0, 0, function (r, c) { return r === 1 || c === 1; }), txt: 'LA TABLA PITAGÓRICA TIENE LOS NÚMEROS DEL 1 AL 10 ARRIBA Y AL COSTADO.' });
+          P.push({ vis: GR(10, v.f, 0, function (r, c) { return r === 1 || c === 1; }), txt: 'BUSCAMOS LA <b>FILA DEL ' + v.f + '</b>.' });
+          P.push({ vis: GR(10, v.f, v.c, function (r, c) { return r === 1 || c === 1; }), txt: 'Y LA <b>COLUMNA DEL ' + v.c + '</b>. DONDE SE CRUZAN VA LA CUENTA.' });
+          P.push({ vis: GR(10, v.f, v.c, function (r, c) { return r === 1 || c === 1 || (r === v.f && c === v.c); }) + p1Big(v.f + ' × ' + v.c + ' = ' + v.f * v.c), txt: v.f + ' POR ' + v.c + ' ES <b>' + v.f * v.c + '</b>.' });
+          return P;
+        }
+        if (qp9 === 'regular') {
+          var dbl = v.n * 2;
+          P.push({ vis: GR(10, v.n, 0, function (r) { return r === v.n; }), txt: 'MIRAMOS LA FILA DEL <b>' + v.n + '</b>.' });
+          if (dbl <= 10) P.push({ vis: GR(10, 0, 0, function (r) { return r === v.n || r === dbl; }, function (r) { return r === dbl; }), txt: 'LA FILA DEL ' + dbl + ' ES EL <b>DOBLE</b> DE LA FILA DEL ' + v.n + '.' });
+          P.push({ vis: GR(10, 0, 0, function (r, c) { return r === v.n || c === v.n; }, function (r, c) { return c === v.n; }), txt: 'LA <b>COLUMNA</b> DEL ' + v.n + ' TIENE LOS MISMOS NÚMEROS QUE LA FILA.' });
+          P.push({ vis: p1Big(v.n + ' × 7 = 7 × ' + v.n + ' = ' + v.n * 7), txt: 'EL ORDEN NO CAMBIA EL RESULTADO: POR ESO LA TABLA ES <b>SIMÉTRICA</b>.' });
+          return P;
+        }
+        var TR = { 3: 'SUMAMOS 3 CADA VEZ', 4: 'ES EL DOBLE DE LA DEL 2', 6: 'ES EL DOBLE DE LA DEL 3', 7: 'SUMAMOS 7 CADA VEZ', 8: 'ES EL DOBLE DE LA DEL 4', 9: 'ES LA DEL 10 MENOS UNO CADA VEZ' }, Ls = [], j9;
+        for (j9 = 1; j9 <= 10; j9++) Ls.push(v.n * j9);
+        var Tt9 = function (k) { return '<div class="lb-p1-tren">' + Ls.map(function (x, i9) { return '<span class="lb-p1-vag' + (i9 < k ? (i9 === k - 1 ? ' on' : '') : ' oculto') + '">' + (i9 < k ? x : '?') + '</span>'; }).join('') + '</div>'; };
+        P.push({ vis: Tt9(1), txt: 'LA TABLA DEL <b>' + v.n + '</b>: 1 × ' + v.n + ' = ' + v.n + '.' });
+        P.push({ vis: Tt9(5), txt: 'SEGUIMOS: ' + TR[v.n] + '.' });
+        P.push({ vis: Tt9(10), txt: 'HASTA 10 × ' + v.n + ' = <b>' + 10 * v.n + '</b>.' });
+        P.push({ vis: Tt9(10) + p1Big(v.n === 9 ? '9 × 6 = 60 − 6 = 54' : v.n % 2 === 0 && v.n > 2 ? v.n + ' × 6 = ' + (v.n / 2) * 6 + ' + ' + (v.n / 2) * 6 + ' = ' + v.n * 6 : v.n + ' × 6 = ' + v.n * 6), txt: v.n === 9 ? 'TRUCO: POR 10 Y LE SACAMOS UNO.' : v.n % 2 === 0 ? 'TRUCO: EL DOBLE DE LA TABLA DE LA MITAD.' : 'SI NO TE ACORDÁS, SUMÁ DESDE UNO QUE SEPAS.' });
+        return P;
+      }
+      if (md === 'por10m') {
+        var q10 = p.que || 'regla';
+        if (q10 === 'redondos') {
+          var b1 = v.b / 10;
+          P.push({ vis: p1Big(v.a + ' × ' + v.b), txt: 'QUEREMOS <b>' + v.a + ' × ' + v.b + '</b>.' });
+          P.push({ vis: p1Big(v.a + ' × ' + b1 + ' × 10'), txt: 'EL ' + v.b + ' ES <b>' + b1 + ' × 10</b>.' });
+          P.push({ vis: p1Big(v.a + ' × ' + b1 + ' = ' + v.a * b1), txt: 'PRIMERO LA CUENTA CHICA: ' + v.a + ' × ' + b1 + ' = <b>' + v.a * b1 + '</b>.' });
+          P.push({ vis: p1Big(v.a * b1 + ' × 10 = ' + fmt(v.a * v.b)), txt: 'DESPUÉS POR 10: AGREGAMOS UN CERO. <b>' + fmt(v.a * v.b) + '</b>.' });
+          return P;
+        }
+        if (q10 === 'problema') {
+          P.push({ vis: '<div class="lb-p1-hist">HAY <b>' + v.a + '</b> CAJAS CON <b>' + v.b + '</b> ESTAMPAS CADA UNA.<br>¿CUÁNTAS ESTAMPAS HAY?</div>', txt: 'LEEMOS EL PROBLEMA.' });
+          P.push({ vis: p1Big(v.a + ' × ' + v.b), txt: 'SON GRUPOS IGUALES: <b>MULTIPLICAMOS</b>.' });
+          P.push({ vis: p1Big(v.a + ' × ' + v.b / 10 + ' = ' + v.a * v.b / 10), txt: 'LA CUENTA CHICA: ' + v.a + ' × ' + v.b / 10 + '.' });
+          P.push({ vis: p1Big(v.a + ' × ' + v.b + ' = ' + fmt(v.a * v.b)), txt: 'AGREGAMOS EL CERO: <b>' + fmt(v.a * v.b) + '</b>.' });
+          P.push({ vis: p1Big('RESPUESTA: ' + fmt(v.a * v.b) + ' ESTAMPAS'), txt: 'RESPONDEMOS CON UNA ORACIÓN.' });
+          return P;
+        }
+        var kk10 = [10, 100, 1000].indexOf(p.de || 10), K10 = [10, 100, 1000][kk10], Z = ['UN CERO', 'DOS CEROS', 'TRES CEROS'][kk10], r10 = v.n * K10;
+        P.push({ vis: p1CDUt(v.n), txt: 'TENEMOS EL <b>' + v.n + '</b>.' });
+        P.push({ vis: p1Big(v.n + ' × ' + fmt(K10)), txt: 'LO MULTIPLICAMOS POR <b>' + fmt(K10) + '</b>.' });
+        P.push({ vis: p1CDUt(r10, 9), txt: 'CADA CIFRA SE CORRE ' + (kk10 + 1) + ' LUGAR' + (kk10 ? 'ES' : '') + ' A LA IZQUIERDA.' });
+        P.push({ vis: p1CDUt(r10) + p1Big(v.n + ' × ' + fmt(K10) + ' = ' + fmt(r10)), txt: 'ES COMO AGREGAR <b>' + Z + '</b>: ' + fmt(r10) + '.' });
+        return P;
+      }
       if (md === 'sumar4') {
         var qs = p.que || 'falta1000', PT = function (n) { return [Math.floor(n / 1000) * 1000, Math.floor(n % 1000 / 100) * 100, Math.floor(n % 100 / 10) * 10, n % 10]; };
         if (qs === 'redondos') {
@@ -3156,6 +3210,18 @@
         if (qs7 === 'tabla') { var g = R(2, Math.floor(n / 2)), h = 2 * g;
           return { cons: 'CADA CAJA TIENE <b>' + k + '</b> LÁPICES. COMPLETÁ LA TABLA.', html: '<table class="lb2-tab"><tr><th>CAJAS</th><td>1</td><td>' + g + '</td><td>' + h + '</td></tr><tr><th>LÁPICES</th><td>' + k + '</td><td>?</td><td>?</td></tr></table>', campos: [{ lab: g + ' CAJAS', v: g * k }, { lab: h + ' CAJAS', v: h * k }], ayuda: h + ' CAJAS ES EL DOBLE DE ' + g + '.', bien: '¡MUY BIEN!' }; }
         return { cons: 'LA SERIE SUMA <b>' + k + '</b> CADA VEZ. ¿QUÉ NÚMERO FALTA?', html: '<div class="lb-p1-tren">' + L.map(function (x, i2) { return '<span class="lb-p1-vag' + (i2 === f - 1 ? ' oculto">?' : '">' + x) + '</span>'; }).join('') + '</div>', campos: [{ v: f * k }], ayuda: 'SUMÁ ' + k + ' AL NÚMERO DE ANTES.', bien: '¡MUY BIEN! ES ' + f * k + '.' }; }); }
+    if (md === 'pitagorica') { var qt9 = p.que || 'armar';
+      if (qt9 === 'regular') return p1Elegir(el, api, function () { var n = R(2, 5), k = R(2, 9), tipo = R(0, 1);
+        if (tipo === 0) return { cons: 'EN LA TABLA, <b>' + n + ' × ' + k + '</b> ES ' + n * k + '. ¿CUÁNTO ES <b>' + 2 * n + ' × ' + k + '</b>?', ops: mezclar([String(2 * n * k), String(n * k + 2), String(n * k + k)]), ok: String(2 * n * k), ayuda: 'LA FILA DEL ' + 2 * n + ' ES EL DOBLE DE LA DEL ' + n + '.', bien: '¡MUY BIEN! EL DOBLE.' };
+        return { cons: 'SI <b>' + n + ' × ' + k + ' = ' + n * k + '</b>, ¿CUÁNTO ES <b>' + k + ' × ' + n + '</b>?', ops: mezclar([String(n * k), String(n + k), String(n * k + 1)]), ok: String(n * k), ayuda: 'EL ORDEN NO CAMBIA EL RESULTADO.', bien: '¡MUY BIEN!' }; });
+      return respuesta(el, api, function () { var a = qt9 === 'tabla' ? R(p.min || 3, p.max || 6) : R(2, 10), b = R(2, 10); if (qt9 === 'tabla' && p.solo) a = pick(p.solo);
+        return { cons: '¿CUÁNTO ES <b>' + a + ' × ' + b + '</b>?', html: qt9 === 'armar' ? '<p class="lb-nota">BUSCÁ LA FILA DEL ' + a + ' Y LA COLUMNA DEL ' + b + '.</p>' : '', campos: [{ v: a * b }], ayuda: qt9 === 'tabla' ? 'CONTÁ DE ' + a + ' EN ' + a + ' O USÁ UN TRUCO: DOBLES O POR 10.' : 'DONDE SE CRUZAN LA FILA Y LA COLUMNA.', bien: '¡MUY BIEN! ES ' + a * b + '.' }; }); }
+    if (md === 'por10m') { var qm = p.que || 'regla';
+      return respuesta(el, api, function () { var a, b, c, h;
+        if (qm === 'redondos') { a = R(2, 9); b = 10 * R(2, 9); c = a * b; h = 'HACÉ ' + a + ' × ' + b / 10 + ' Y AGREGÁ UN CERO.'; }
+        else if (qm === 'problema') { a = R(2, 9); b = 10 * R(2, 9); c = a * b; return { cons: 'HAY <b>' + a + '</b> PAQUETES CON <b>' + b + '</b> HOJAS CADA UNO. ¿CUÁNTAS HOJAS HAY?', campos: [{ v: c }], ayuda: a + ' × ' + b / 10 + ' Y AGREGÁ UN CERO.', bien: '¡MUY BIEN! SON ' + fmt(c) + '.' }; }
+        else { var de = p.de || pick([10, 100, 1000]); a = de === 1000 ? R(1, 9) : de === 100 ? R(1, 99) : R(1, 999); b = de; c = a * b; h = 'AGREGÁ ' + (de === 10 ? 'UN CERO' : de === 100 ? 'DOS CEROS' : 'TRES CEROS') + '.'; }
+        return { cons: '¿CUÁNTO ES <b>' + fmt(a) + ' × ' + fmt(b) + '</b>?', campos: [{ v: c }], ayuda: h, bien: '¡MUY BIEN! ES ' + fmt(c) + '.' }; }); }
     if (md === 'sumar4') { var qx = p.que || 'falta1000';
       if (qx === 'estimar') return p1Elegir(el, api, function () { var a = R(1000, 6499), b = R(1000, 2499), r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; while (Math.abs(a - Math.round(a / 1000) * 1000) > 350 || Math.abs(b - Math.round(b / 1000) * 1000) > 350) { a = R(1000, 6499); b = R(1000, 2499); r = Math.round(a / 1000) * 1000 + Math.round(b / 1000) * 1000; }
         return { cons: '<b>' + fmt(a) + ' + ' + fmt(b) + '</b> DA MÁS O MENOS…', ops: mezclar([fmt(r), fmt(r + 2000), fmt(Math.max(1000, r - 2000))]), ok: fmt(r), ayuda: 'REDONDEÁ CADA NÚMERO AL MIL MÁS CERCANO.', bien: '¡MUY BIEN! LA CUENTA EXACTA DA ' + fmt(a + b) + '.' }; });
@@ -3260,7 +3326,7 @@
     '.lb2-svg .cT{fill:#7FD3C4;stroke:#253638}.lb2-svg .cL{fill:#087E83;stroke:#253638}.lb2-svg .cR{fill:#066A6E;stroke:#253638}.lb2-svg .fosf{stroke:#087E83;stroke-width:4;stroke-linecap:round}',
     '.lb2-svg .c0{fill:#fff;stroke:#9dbdb9}.lb2-svg .c1{fill:#D7F0E9;stroke:#9dbdb9}.lb2-svg .c2{fill:#087E83;stroke:#253638}.lb2-svg .pt{fill:#087E83}.lb2-svg .pt2{fill:none;stroke:#253638;stroke-width:2}.lb2-svg .graf{stroke:#087E83;stroke-width:3;fill:none}',
     '.lb2-svg text{font-size:12px;font-weight:800;fill:#253638;text-anchor:middle}.lb2-svg .ptx{font-size:13px;fill:#087E83;text-anchor:start}.lb2-svg .hit{fill:transparent;cursor:pointer}.lb2-svg .hit:hover{fill:rgba(8,126,131,.25)}.lb2-plano{max-width:260px}',
-    '.lb2-tab{border-collapse:collapse;margin:8px auto;background:#fff}.lb2-tab th,.lb2-tab td{border:2px solid #E3ECEA;padding:5px 9px;text-align:center;font-weight:700}.lb2-tab th{background:#F3FBF7}.lb2-tabc th,.lb2-tabc td{padding:4px 5px;font-size:15px}.lb2-tab td.on{background:#087E83;color:#fff}',
+    '.lb2-tab{border-collapse:collapse;margin:8px auto;background:#fff}.lb2-tab th,.lb2-tab td{border:2px solid #E3ECEA;padding:5px 9px;text-align:center;font-weight:700}.lb2-tab th{background:#F3FBF7}.lb2-tabc th,.lb2-tabc td{padding:4px 5px;font-size:15px}.lb2-pit th,.lb2-pit td{padding:2px 3px;font-size:12px;min-width:24px}.lb2-pit th.hc{background:#F6B93B}.lb2-pit td.ln{background:#E6F6F2}.lb2-tab td.on{background:#087E83;color:#fff}',
     '.lb2-bar{min-width:90px}.lb2-bar i{display:block;height:12px;border-radius:6px;background:#087E83}',
     '.lb2-barra{position:relative;height:34px;border-radius:10px;background:#E3ECEA;overflow:hidden}.lb2-barra i{display:block;height:100%;background:#087E83}.lb2-barra span{position:absolute;left:10px;top:7px;font-weight:900;color:#fff;text-shadow:0 0 3px #253638}.lb2-esc{display:flex;justify-content:space-between;font-size:.8rem;font-weight:700;color:#4b6a6c}',
     '.lb2-term{padding:2px 8px;border-radius:8px;font-weight:800}.lb2-term.t0{background:#253638;color:#fff}.lb2-term.t1{background:#087E83;color:#fff}.lb2-term.t2{background:#D7F0E9;color:#253638}',

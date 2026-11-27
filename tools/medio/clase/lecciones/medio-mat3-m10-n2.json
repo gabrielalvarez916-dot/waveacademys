@@ -1,0 +1,126 @@
+{
+ "slug": "medio-mat3-m10-n2",
+ "step_id": "f02ee849-bb4d-4dc2-98a8-c6007cf48113",
+ "materia": "Matemática 3",
+ "titulo": "Regularidades en la tabla pitagórica",
+ "sub": "Matemática 3 · Misión 10 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lucas",
+    "emoji": "🧭"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "¡El mapa tiene secretos!"
+    },
+    {
+     "yo": true,
+     "txt": "¿Qué secretos?"
+    },
+    {
+     "yo": false,
+     "txt": "Hay filas que se repiten distinto"
+    }
+   ],
+   "titulo": "SECRETOS",
+   "sub": "de la tabla",
+   "voz": [
+    "Lucas escribe: ¡el mapa tiene *secretos*!",
+    "¿Qué secretos?",
+    "Hay filas que se parecen mucho.",
+    "Hoy: *regularidades en la tabla pitagórica*."
+   ]
+  },
+  {
+   "t": "comparar",
+   "a": {
+    "cab": "FILA DEL 2",
+    "texto": "2, 4, 6, 8",
+    "emoji": "2️⃣"
+   },
+   "b": {
+    "cab": "FILA DEL 4",
+    "texto": "4, 8, 12, 16",
+    "emoji": "4️⃣"
+   },
+   "signo": "y",
+   "voz": [
+    "La fila del 2: 2, 4, 6, 8.",
+    "La fila del 4: 4, 8, 12, 16.",
+    "¡La del 4 es el *doble*!"
+   ]
+  },
+  {
+   "t": "datoloco",
+   "texto": "¡La tabla es como un espejo! 3 × 5 da lo mismo que 5 × 3",
+   "emoji": "🪞",
+   "numero": "15",
+   "voz": [
+    "¿Sabías que la tabla es como un *espejo*?",
+    "3 por 5 y 5 por 3: *15*."
+   ]
+  },
+  {
+   "t": "memoria",
+   "titulo": "LA FILA DEL 5",
+   "items": [
+    "5",
+    "10",
+    "15",
+    "20",
+    "25"
+   ],
+   "falta": 3,
+   "voz": [
+    "Mirá la fila del 5: terminan en 0 o 5.",
+    "Se tapan… ¿cuál desapareció?",
+    "¡Faltaba el *20*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "4 × 6 y 6 × 4 dan distinto",
+     "bien": "Dan lo mismo: 24"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Si damos vuelta la cuenta, da *lo mismo*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DOBLE",
+     "fila del 4 y del 2"
+    ],
+    [
+     "ESPEJO",
+     "3 × 5 = 5 × 3"
+    ],
+    [
+     "FILA DEL 5",
+     "termina en 0 o 5"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La fila del 4 es el *doble*.",
+    "La tabla es un *espejo*: el orden no cambia.",
+    "La fila del 5 termina en *0 o 5*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

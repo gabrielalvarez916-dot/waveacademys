@@ -1,0 +1,130 @@
+{
+ "slug": "medio-mat3-m10-n4",
+ "step_id": "a5af7d52-f1f6-4107-a4ba-2d3fc99e7121",
+ "materia": "Matemática 3",
+ "titulo": "Tablas del 7, 8 y 9",
+ "sub": "Matemática 3 · Misión 10 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "gancho",
+   "emoji": "🏴‍☠️",
+   "final": "🤔",
+   "titulo": "TABLAS",
+   "sub": "del 7, 8 y 9",
+   "voz": [
+    "Las tablas más difíciles guardan el *tesoro más grande*.",
+    "¿Cómo las aprendemos sin perdernos?",
+    "Hoy: *las tablas del 7, del 8 y del 9*."
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "TRUCO DEL 9",
+   "items": [
+    {
+     "frente": "6 × 9",
+     "dorso": "60 − 6 = 54"
+    },
+    {
+     "frente": "4 × 9",
+     "dorso": "40 − 4 = 36"
+    },
+    {
+     "frente": "8 × 9",
+     "dorso": "80 − 8 = 72"
+    }
+   ],
+   "voz": [
+    "6 por 9: 60 menos 6, *54*.",
+    "4 por 9: 40 menos 4, *36*.",
+    "¡8 por 9: 80 menos 8, *72*!"
+   ]
+  },
+  {
+   "t": "prediccion",
+   "pregunta": "7 × 4 = 28. ¿Cuánto es 7 × 8?",
+   "a": {
+    "txt": "56",
+    "emoji": "😎"
+   },
+   "b": {
+    "txt": "32",
+    "emoji": "🤔"
+   },
+   "correcta": "a",
+   "resultado": "¡56! El doble de 28",
+   "voz": [
+    "7 por 4 es 28. ¿Y 7 por 8?",
+    "El 8 es el doble del 4…",
+    "¡*56*, el doble de 28!"
+   ]
+  },
+  {
+   "t": "contrarreloj",
+   "titulo": "RONDA DEL 7",
+   "segundos": 20,
+   "items": [
+    {
+     "p": "7 × 2",
+     "r": "14"
+    },
+    {
+     "p": "7 × 5",
+     "r": "35"
+    },
+    {
+     "p": "7 × 7",
+     "r": "49"
+    }
+   ],
+   "voz": [
+    "¡Ronda rápida de la tabla del 7!",
+    "7 por 2 es *14*.",
+    "7 por 5 es *35*.",
+    "7 por 7 es *49*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "6 × 9 = 60",
+     "bien": "6 × 9 = 60 − 6 = 54"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "En el truco del 9, *sacamos* el número."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "DEL 7",
+     "de 7 en 7"
+    ],
+    [
+     "DEL 8",
+     "doble del 4"
+    ],
+    [
+     "DEL 9",
+     "por 10 menos uno"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "La tabla del 7 va *de 7 en 7*.",
+    "La del 8 es el *doble* de la del 4.",
+    "La del 9: por 10 y *sacamos una vez*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

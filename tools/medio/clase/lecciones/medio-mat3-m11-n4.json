@@ -1,0 +1,123 @@
+{
+ "slug": "medio-mat3-m11-n4",
+ "step_id": "eb1bb9cb-6e78-450f-a099-c5f275fefd43",
+ "materia": "Matemática 3",
+ "titulo": "Problemas con números redondos",
+ "sub": "Matemática 3 · Misión 11 · Nivel 4",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "reto",
+   "texto": "6 cajas con 40 cuadernos. ¿Cuántos cuadernos?",
+   "segundos": 8,
+   "respuesta": "¡240!",
+   "emoji": "📚",
+   "titulo": "PROBLEMAS",
+   "sub": "con redondos",
+   "voz": [
+    "Desafío: 6 cajas con 40 cuadernos cada una.",
+    "¿Cuántos cuadernos hay? ¡*240*!",
+    "Hoy: *problemas con números redondos*."
+   ]
+  },
+  {
+   "t": "flujo",
+   "titulo": "CÓMO LO RESOLVEMOS",
+   "items": [
+    {
+     "txt": "Grupos iguales",
+     "emoji": "📦"
+    },
+    {
+     "txt": "6 × 4 = 24",
+     "emoji": "✖️"
+    },
+    {
+     "txt": "Agrego el cero: 240",
+     "emoji": "0️⃣"
+    },
+    {
+     "txt": "Respondo",
+     "emoji": "✅"
+    }
+   ],
+   "voz": [
+    "Son *grupos iguales*: multiplicamos.",
+    "La cuenta chica: 6 por 4, *24*.",
+    "Agregamos el cero: *240*.",
+    "¡Respondemos: hay 240 cuadernos!"
+   ]
+  },
+  {
+   "t": "pistas",
+   "problema": "La imprenta hace 300 hojas por hora. ¿Cuántas en 3 horas?",
+   "pistas": [
+    "Son 3 grupos de 300",
+    "3 × 3 = 9, y dos ceros"
+   ],
+   "respuesta": "900",
+   "voz": [
+    "Hace 300 hojas por hora. ¿Y en 3 horas?",
+    "Pista: son *3 grupos de 300*.",
+    "Pista: 3 por 3 es 9, y agregamos *dos ceros*.",
+    "¡Son *900* hojas!"
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "8 paquetes de 50 hojas. ¿Cuántas hojas?",
+   "opciones": [
+    "400",
+    "58",
+    "4.000"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: 8 paquetes de 50 hojas cada uno.",
+    "8 por 5 es 40, y agregamos el cero…",
+    "¡*400* hojas!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "6 cajas de 40: 6 + 40 = 46",
+     "bien": "6 × 40 = 240"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Con grupos iguales, *multiplicamos*: no sumamos."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "GRUPOS",
+     "multiplicar"
+    ],
+    [
+     "CUENTA CHICA",
+     "y los ceros"
+    ],
+    [
+     "RESPONDER",
+     "con oración"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Con grupos iguales, *multiplicamos*.",
+    "Hacemos la cuenta chica y agregamos *los ceros*.",
+    "Y respondemos *con una oración*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

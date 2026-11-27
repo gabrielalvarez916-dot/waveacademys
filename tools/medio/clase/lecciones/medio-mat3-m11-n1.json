@@ -1,0 +1,137 @@
+{
+ "slug": "medio-mat3-m11-n1",
+ "step_id": "fe9aa1b6-1fe0-436d-922c-803b6f2326f4",
+ "materia": "Matemática 3",
+ "titulo": "Regularidad al multiplicar por 10, 100 y 1.000",
+ "sub": "Matemática 3 · Misión 11 · Nivel 1",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "historia",
+   "personaje": {
+    "nombre": "Valen",
+    "emoji": "🧑‍🔧"
+   },
+   "lugar": "🖨️",
+   "lineas": [
+    "Valen trabaja en una imprenta.",
+    "Arma paquetes de 10 hojas.",
+    "Hoy armó 23 paquetes."
+   ],
+   "titulo": "POR 10",
+   "sub": "la regularidad",
+   "voz": [
+    "Valen trabaja en una *imprenta*.",
+    "Arma paquetes de *10 hojas*.",
+    "Hoy armó 23 paquetes. ¿Cuántas hojas son?",
+    "Hoy: *multiplicar por 10, 100 y 1.000*."
+   ]
+  },
+  {
+   "t": "estante",
+   "numero": "230",
+   "cab": [
+    "CENTENAS",
+    "DECENAS",
+    "UNIDADES"
+   ],
+   "dig": [
+    "2",
+    "3",
+    "0"
+   ],
+   "val": [
+    "200",
+    "30",
+    "0"
+   ],
+   "destacar": 1,
+   "etiqueta": "23 × 10 = 230",
+   "voz": [
+    "23 por 10 es *230*.",
+    "El 2 y el 3 se corren un lugar.",
+    "El 3 pasa a las decenas.",
+    "El 2 pasa a las centenas.",
+    "¡Y en las unidades queda un *cero*!"
+   ]
+  },
+  {
+   "t": "pizarra",
+   "titulo": "LA REGLA",
+   "lineas": [
+    {
+     "txt": "7 × 10 = 70"
+    },
+    {
+     "txt": "7 × 100 = 700"
+    },
+    {
+     "txt": "7 × 1.000 = 7.000",
+     "color": "verde",
+     "marca": "subraya"
+    }
+   ],
+   "voz": [
+    "Mirá el 7: por 10 es *70*.",
+    "Por 100 es *700*.",
+    "¡Por 1.000 es *7.000*! Un cero, dos ceros, tres ceros."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "¿Cuánto es 45 × 10?",
+   "opciones": [
+    "450",
+    "4.500",
+    "55"
+   ],
+   "correcta": 0,
+   "voz": [
+    "Ahora vos: ¿cuánto es 45 por 10?",
+    "Agregamos *un cero*…",
+    "¡*450*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "23 × 10 = 33",
+     "bien": "23 × 10 = 230"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Multiplicar por 10 no es *sumar* 10."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "× 10",
+     "un cero"
+    ],
+    [
+     "× 100",
+     "dos ceros"
+    ],
+    [
+     "× 1.000",
+     "tres ceros"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Por 10, agregamos *un cero*.",
+    "Por 100, *dos ceros*.",
+    "Por 1.000, *tres ceros*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

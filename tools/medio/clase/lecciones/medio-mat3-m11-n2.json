@@ -1,0 +1,140 @@
+{
+ "slug": "medio-mat3-m11-n2",
+ "step_id": "d7116f69-70cb-4584-b77f-73a5a523fde5",
+ "materia": "Matemática 3",
+ "titulo": "Multiplicar por 100 y por 1.000",
+ "sub": "Matemática 3 · Misión 11 · Nivel 2",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "noticia",
+   "cinta": "ÚLTIMO MOMENTO",
+   "titular": "¡La imprenta recibió 8 pallets!",
+   "bajada": "Cada uno trae 1.000 hojas",
+   "emoji": "📦",
+   "titulo": "POR 100",
+   "sub": "y por 1.000",
+   "voz": [
+    "¡Último momento: la imprenta recibió *8 pallets*!",
+    "Cada pallet trae *1.000* hojas.",
+    "Hoy: *multiplicar por 100 y por 1.000*."
+   ]
+  },
+  {
+   "t": "agrupar",
+   "niveles": [
+    {
+     "nombre": "PAQUETE",
+     "valor": "10",
+     "icono": "pack"
+    },
+    {
+     "nombre": "CAJA",
+     "valor": "100",
+     "icono": "caja"
+    },
+    {
+     "nombre": "PALLET",
+     "valor": "1.000",
+     "icono": "camion"
+    }
+   ],
+   "salto": "×10",
+   "voz": [
+    "Un paquete de la imprenta tiene *10* hojas.",
+    "Diez paquetes forman una caja: *100*.",
+    "¡Diez cajas forman un pallet: *1.000*!"
+   ]
+  },
+  {
+   "t": "deslizador",
+   "titulo": "PALLETS DE 1.000",
+   "min": 0,
+   "max": 8000,
+   "emoji": "📦",
+   "paradas": [
+    {
+     "v": 2000,
+     "txt": "2 pallets"
+    },
+    {
+     "v": 5000,
+     "txt": "5 pallets"
+    },
+    {
+     "v": 8000,
+     "txt": "8 pallets"
+    }
+   ],
+   "voz": [
+    "Dos pallets: 2 por 1.000, *2.000*.",
+    "Cinco pallets: 5 por 1.000, *5.000*.",
+    "¡Ocho pallets: *8.000* hojas!"
+   ]
+  },
+  {
+   "t": "mazo",
+   "titulo": "POR 100",
+   "items": [
+    {
+     "frente": "4 × 100",
+     "dorso": "400"
+    },
+    {
+     "frente": "36 × 100",
+     "dorso": "3.600"
+    },
+    {
+     "frente": "50 × 100",
+     "dorso": "5.000"
+    }
+   ],
+   "voz": [
+    "4 por 100: agregamos dos ceros, *400*.",
+    "36 por 100 es *3.600*.",
+    "¡50 por 100 es *5.000*!"
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "36 × 100 = 3.610",
+     "bien": "36 × 100 = 3.600"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Por 100 agregamos *dos ceros* al final."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "× 100",
+     "dos ceros"
+    ],
+    [
+     "× 1.000",
+     "tres ceros"
+    ],
+    [
+     "LAS CIFRAS",
+     "se corren"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Por 100, agregamos *dos ceros*.",
+    "Por 1.000, agregamos *tres ceros*.",
+    "Las cifras se *corren* a la izquierda.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}

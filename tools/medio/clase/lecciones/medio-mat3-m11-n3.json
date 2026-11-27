@@ -1,0 +1,138 @@
+{
+ "slug": "medio-mat3-m11-n3",
+ "step_id": "6bff37bb-5bdc-4c56-af29-8a16d38570e6",
+ "materia": "Matemática 3",
+ "titulo": "Multiplicar por números redondos",
+ "sub": "Matemática 3 · Misión 11 · Nivel 3",
+ "estilo": "primeros",
+ "escenas": [
+  {
+   "t": "chat",
+   "contacto": {
+    "nombre": "Valen",
+    "emoji": "🧑‍🔧"
+   },
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Necesito 4 cajas de 30 sobres"
+    },
+    {
+     "yo": true,
+     "txt": "¿30 no está en la tabla?"
+    },
+    {
+     "yo": false,
+     "txt": "¡Pero es 3 por 10!"
+    }
+   ],
+   "titulo": "POR REDONDOS",
+   "sub": "20, 30, 40…",
+   "voz": [
+    "Valen escribe: necesito 4 cajas de *30 sobres*.",
+    "¿El 30 no está en la tabla?",
+    "¡Pero 30 es 3 por 10!",
+    "Hoy: *multiplicar por números redondos*."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "4 × 30",
+   "pasos": [
+    {
+     "txt": "4 × 30"
+    },
+    {
+     "txt": "4 × 3 = 12",
+     "nota": "la cuenta chica"
+    },
+    {
+     "txt": "12 × 10 = 120"
+    }
+   ],
+   "voz": [
+    "Queremos 4 por 30.",
+    "Primero la cuenta chica: 4 por 3, *12*.",
+    "Después por 10: agregamos un cero. ¡*120*!"
+   ]
+  },
+  {
+   "t": "escape",
+   "titulo": "CANDADOS REDONDOS",
+   "candados": [
+    {
+     "p": "6 × 20",
+     "r": "120"
+    },
+    {
+     "p": "5 × 40",
+     "r": "200"
+    },
+    {
+     "p": "7 × 30",
+     "r": "210"
+    }
+   ],
+   "voz": [
+    "¡Escape! Tres candados para abrir.",
+    "6 por 20: 6 por 2 es 12, *120*.",
+    "5 por 40: 5 por 4 es 20, *200*.",
+    "7 por 30: 7 por 3 es 21, *210*.",
+    "¡Escapamos!"
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "5 × 40 = 20",
+   "emoji": "🤔",
+   "verdadero": false,
+   "explicacion": "Es 200",
+   "voz": [
+    "¿Verdadero o falso? 5 por 40 es 20.",
+    "No te olvides del cero…",
+    "¡*Falso*! Es *200*."
+   ]
+  },
+  {
+   "t": "errores",
+   "items": [
+    {
+     "mal": "Olvidar el cero del final",
+     "bien": "Cuenta chica y después el cero"
+    }
+   ],
+   "voz": [
+    "Ojo con este error.",
+    "Después de la cuenta chica, *agregamos el cero*."
+   ]
+  },
+  {
+   "t": "resumen",
+   "items": [
+    [
+     "REDONDO",
+     "número por 10"
+    ],
+    [
+     "CUENTA CHICA",
+     "primero"
+    ],
+    [
+     "EL CERO",
+     "al final"
+    ]
+   ],
+   "fin": {
+    "titulo": "¡CLASE TERMINADA!",
+    "sub": "Ahora, a practicar 🚀"
+   },
+   "voz": [
+    "Repasemos lo que aprendimos.",
+    "Un redondo es un número *por 10*.",
+    "Primero hacemos la *cuenta chica*.",
+    "Y al final agregamos *el cero*.",
+    "¡Muy bien! Ahora, *a practicar*."
+   ]
+  }
+ ]
+}
