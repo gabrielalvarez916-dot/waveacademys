@@ -5,46 +5,137 @@
  "titulo": "Bienvenido a Matemática I",
  "sub": "Introducción · Nivel avanzado",
  "escenas": [
-  { "t": "gancho", "emoji": "🤔", "final": "🤯", "titulo": "MATEMÁTICA I", "sub": "nivel avanzado · primer año",
-    "voz": ["¿Cuántas veces usaste *matemática* hoy?",
-            "Seguro muchas más de las que creés: la hora, el vuelto, el celular… todo son *números*.",
-            "Bienvenido a *Matemática I*. Este año vas a aprender a dominarlos."] },
-
-  { "t": "causas", "causa": { "txt": "La matemática está en todos lados", "emoji": "🧮" },
-    "items": [ { "txt": "Compras y vuelto", "emoji": "🛒" }, { "txt": "Recetas", "emoji": "🍰" }, { "txt": "Deportes", "emoji": "⚽" }, { "txt": "Tu celular", "emoji": "📱" } ],
-    "voz": ["La matemática está *en todos lados*.",
-            "Cuando comprás algo y calculás el *vuelto*.",
-            "Cuando duplicás una *receta* para más gente.",
-            "Cuando sacás la cuenta de cuántos puntos le faltan a tu *equipo*.",
-            "Y en cada app de tu *celular*, que por dentro son puras cuentas."] },
-
-  { "t": "linea", "titulo": "TU VIAJE: 20 MISIONES",
-    "eventos": [ { "fecha": "Misión 1-7", "txt": "Números naturales", "emoji": "🔢" },
-                 { "fecha": "8-10", "txt": "Fracciones y decimales", "emoji": "🍕" },
-                 { "fecha": "11-13", "txt": "Números enteros", "emoji": "🌡️" },
-                 { "fecha": "14-16", "txt": "Proporción y álgebra", "emoji": "⚖️" },
-                 { "fecha": "17-20", "txt": "Geometría y estadística", "emoji": "📐" } ],
-    "voz": ["Tu viaje tiene *20 misiones*. Arrancás con los *números naturales*: sistemas, operaciones, múltiplos y primos.",
-            "Después vienen las *fracciones* y los decimales: partir, repartir y comparar.",
-            "Ahí aparecen los *números negativos*, como la temperatura bajo cero.",
-            "Siguen la *proporcionalidad*, los porcentajes y tus primeras *ecuaciones*.",
-            "Y cerrás con *geometría* y *estadística*: ángulos, áreas y probabilidades."] },
-
-  { "t": "pasos", "titulo": "CÓMO SE JUEGA CADA NIVEL",
-    "items": [ { "txt": "Mirá la clase animada", "emoji": "🎬" }, { "txt": "Leé el PDF con tu carpeta", "emoji": "📄" }, { "txt": "Resolvé las consignas y entregalas", "emoji": "✏️" }, { "txt": "Practicá con las actividades", "emoji": "🧩" } ],
-    "voz": ["¿Cómo se juega? Cada misión tiene *niveles*, y cada nivel tiene cuatro pasos.",
-            "Primero mirás una *clase animada*, como esta.",
-            "Después leés el *PDF*, con tu carpeta al lado.",
-            "Resolvés las consignas y las *entregás*.",
-            "Y practicás con *actividades* para sumar puntos."] },
-
-  { "t": "frase", "texto": "Al final de cada misión te espera el NIVEL JEFE", "emoji": "👑", "color": "#F4B63F",
-    "voz": ["Y al final de cada misión te espera el *nivel jefe*: el desafío para pasar a la siguiente."] },
-
-  { "t": "consejo", "titulo": "UN CONSEJO", "texto": "Tené tu carpeta a mano y no te saltees ningún paso", "emoji": "📒",
-    "voz": ["Un consejo: tené siempre tu *carpeta* a mano y no te saltees *ningún paso*."] },
-
-  { "t": "frase", "texto": "Misión 1: el sistema decimal. ¡Vamos!", "emoji": "🚀",
-    "voz": ["¿Listo? Tu primera misión te espera: el *sistema decimal*. ¡Vamos!"] }
+  {
+   "t": "gancho",
+   "emoji": "🤔",
+   "final": "🤯",
+   "titulo": "MATEMÁTICA I",
+   "sub": "nivel avanzado · primer año",
+   "voz": [
+    "¿Cuántas veces usaste *matemática* hoy?",
+    "Seguro muchas más de las que creés: la hora, el vuelto, el celular… todo son *números*.",
+    "Bienvenido a *Matemática I*. Este año vas a aprender a dominarlos."
+   ]
+  },
+  {
+   "t": "causas",
+   "causa": {
+    "txt": "La matemática está en todos lados",
+    "emoji": "🧮"
+   },
+   "items": [
+    {
+     "txt": "Compras y vuelto",
+     "emoji": "🛒"
+    },
+    {
+     "txt": "Recetas",
+     "emoji": "🍰"
+    },
+    {
+     "txt": "Deportes",
+     "emoji": "⚽"
+    },
+    {
+     "txt": "Tu celular",
+     "emoji": "📱"
+    }
+   ],
+   "voz": [
+    "La matemática está *en todos lados*.",
+    "Cuando comprás algo y calculás el *vuelto*.",
+    "Cuando duplicás una *receta* para más gente.",
+    "Cuando sacás la cuenta de cuántos puntos le faltan a tu *equipo*.",
+    "Y en cada app de tu *celular*, que por dentro son puras cuentas."
+   ]
+  },
+  {
+   "t": "linea",
+   "titulo": "TU VIAJE: 20 MISIONES",
+   "eventos": [
+    {
+     "fecha": "Misión 1-7",
+     "txt": "Números naturales",
+     "emoji": "🔢"
+    },
+    {
+     "fecha": "8-10",
+     "txt": "Fracciones y decimales",
+     "emoji": "🍕"
+    },
+    {
+     "fecha": "11-13",
+     "txt": "Números enteros",
+     "emoji": "🌡️"
+    },
+    {
+     "fecha": "14-16",
+     "txt": "Proporción y álgebra",
+     "emoji": "⚖️"
+    },
+    {
+     "fecha": "17-20",
+     "txt": "Geometría y estadística",
+     "emoji": "📐"
+    }
+   ],
+   "voz": [
+    "Tu viaje tiene *20 misiones*. Arrancás con los *números naturales*: sistemas, operaciones, múltiplos y primos.",
+    "Después vienen las *fracciones* y los decimales: partir, repartir y comparar.",
+    "Ahí aparecen los *números negativos*, como la temperatura bajo cero.",
+    "Siguen la *proporcionalidad*, los porcentajes y tus primeras *ecuaciones*.",
+    "Y cerrás con *geometría* y *estadística*: ángulos, áreas y probabilidades."
+   ]
+  },
+  {
+   "t": "pasos",
+   "titulo": "CÓMO SE JUEGA CADA NIVEL",
+   "items": [
+    {
+     "txt": "Mirá la clase animada",
+     "emoji": "🎬"
+    },
+    {
+     "txt": "Hacé la lección interactiva",
+     "emoji": "🧠"
+    },
+    {
+     "txt": "Practicá con las actividades",
+     "emoji": "🧩"
+    }
+   ],
+   "voz": [
+    "¿Cómo se juega? Cada misión tiene *niveles*.",
+    "Primero mirás una *clase animada*, como esta.",
+    "Después hacés la *lección interactiva*: explica, te muestra ejemplos paso a paso y te hace practicar.",
+    "Y resolvés las *actividades* para sumar puntos."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Al final de cada misión te espera el NIVEL JEFE",
+   "emoji": "👑",
+   "color": "#F4B63F",
+   "voz": [
+    "Y al final de cada misión te espera el *nivel jefe*: el desafío para pasar a la siguiente."
+   ]
+  },
+  {
+   "t": "consejo",
+   "titulo": "UN CONSEJO",
+   "texto": "Tené una hoja y un lápiz a mano y no te saltees ningún paso",
+   "emoji": "📒",
+   "voz": [
+    "Un consejo: tené siempre una *hoja y un lápiz* a mano, y no te saltees *ningún paso*."
+   ]
+  },
+  {
+   "t": "frase",
+   "texto": "Misión 1: el sistema decimal. ¡Vamos!",
+   "emoji": "🚀",
+   "voz": [
+    "¿Listo? Tu primera misión te espera: el *sistema decimal*. ¡Vamos!"
+   ]
+  }
  ]
 }
