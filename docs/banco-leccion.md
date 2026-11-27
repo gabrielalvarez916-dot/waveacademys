@@ -298,3 +298,37 @@ Explicación en castellano y ejemplos en inglés con audio 🔊. Cada uno con su
 | `lectura_en` / `lectura_en_x` | skimming, scanning y glosario sobre un texto corto | — |
 | `false_friends` / `false_friends_x` | falsos amigos: actually, embarrassed, carpet, library, exit… | — |
 Para Medio, además: `vocab`, `rutina` y `frase_en` (js/leccion-banco-medio.js).
+
+## Arte I · artes visuales (js/leccion-banco-arte.js) — 27/11/2026
+Dibujos propios (no se reproducen obras de otros artistas). Cada uno con su práctica (`_x`).
+
+| Motor | Qué muestra | Parámetros (`p`) |
+|---|---|---|
+| `mezcla_color` | mezcla de pigmentos con cantidades (sustractiva) o de luces RGB (aditiva) | `modo`: (pigmento) o luz |
+| `armonias` | círculo cromático: primarios, secundarios, terciarios, complementarios, análogos, cálidos y fríos; práctica: tocar el complementario | — |
+| `luz_sombra` | esfera con la luz que se mueve: brillo, sombra propia, proyectada, escala de valores | — |
+| `perspectiva` | horizonte, punto de fuga y líneas de fuga; práctica: tocar el punto de fuga | `modo`: 1 o 2 |
+| `composicion` | regla de los tercios, equilibrio simétrico y asimétrico | `modo`: tercios, simetrico, asimetrico |
+| `textura` | texturas táctiles y visuales, frotado | — |
+| `grabado` | matriz, tinta, presión y copia en espejo | — |
+| `leer_obra` | describir, analizar la forma, interpretar y valorar (obras propias del banco) | — |
+| `proporcion` | canon de 8 cabezas y proporciones del rostro; práctica: calcular la altura | `modo`: cuerpo, rostro |
+| `escultura` | relieve y bulto redondo; técnicas sustractiva, aditiva y constructiva | — |
+| `movimientos` | impresionismo, expresionismo, cubismo, surrealismo, abstracto y pop (dibujos de estilo) | — |
+| `muestra` | etapas para armar una muestra (curaduría) | — |
+
+## Arte II · música (js/leccion-banco-musica.js) — 27/11/2026
+Con sonido real (▶). Cada uno con su práctica (`_x`).
+
+| Motor | Qué muestra | Parámetros (`p`) |
+|---|---|---|
+| `sonido_param` | altura, duración, intensidad y timbre con onda y barras | — |
+| `ritmo` | pulso, compás (acento), figuras y un compás completo en pentagrama | `compas`: 2, 3, 4 |
+| `teclado` | teclado que suena: escalas mayor y menor, intervalos, melodía y su contorno | `modo`: escala, intervalo, melodia |
+| `acordes` | tríada: fundamental, tercera (mayor o menor) y quinta; carácter alegre o triste | — |
+| `forma_musical` | secciones con letras: AB, ABA, rondó, canción, que suenan | — |
+| `instrumentos` | familias y cómo producen el sonido, con un timbre parecido | — |
+| `estudio` | estudio digital: pistas por capas y mezcla con volúmenes que suenan | — |
+| `registros_voz` | soprano a bajo en una franja de notas | — |
+| `musica_imagen` | la misma escena con tres músicas: cambia el sentido (leitmotiv) | — |
+| `industria` | de la autoría al público: derechos de autor | — |

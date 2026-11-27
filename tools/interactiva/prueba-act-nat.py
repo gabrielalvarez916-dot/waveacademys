@@ -7,7 +7,7 @@ import asyncio, json, pathlib, sys, html as H
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path('/tmp/prueba-act-' + (sys.argv[1] if len(sys.argv) > 1 else 'nat')); OUT.mkdir(exist_ok=True)
-SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/leccion-banco-soc2.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js', 'js/actividades-ing.js']
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/leccion-banco-soc2.js', 'js/leccion-banco-arte.js', 'js/leccion-banco-musica.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js', 'js/actividades-ing.js', 'js/actividades-arte.js']
 
 def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
 def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
@@ -158,6 +158,26 @@ ACCI = {
 }
 for k in ACCI: ACCI[k] = (ACCI[k][0].replace('STUB;', "window.SpeechRecognition=class{start(){setTimeout(()=>this.onresult&&this.onresult({results:[[{transcript:window.__d}]]}),20)}};"), ACCI[k][1])
 if len(sys.argv) > 1 and sys.argv[1] == 'ing': Q, ACC = QI, ACCI
+
+QA = [
+ ('mezclar', preg(0, '[[mezclar:#F28C28]] ¿Qué mezcla da este naranja?', radios(0, ['1 rojo + 1 amarillo', '1 rojo + 1 azul', '1 amarillo + 1 azul']))),
+ ('paleta', preg(1, '[[paleta]] Marcá los tres colores primarios.', checks(1, ['Rojo', 'Amarillo', 'Azul', 'Verde', 'Naranja']))),
+ ('fuga', preg(2, '[[fuga]] ¿Dónde está el punto de fuga?', radios(2, ['A', 'B', 'C', 'D']))),
+ ('tercios', preg(3, '[[tercios]] ¿Dónde va el protagonista?', radios(3, ['A', 'B', 'C', 'D']))),
+ ('dictado', preg(4, '[[dictado:1,0.5,0.5,2]] Armá el ritmo.', txt(4))),
+ ('melodia', preg(5, '[[melodia:60,62,64,60]] Tocá la melodía.', txt(5))),
+ ('forma', preg(6, '[[forma:ABA]] ¿Qué forma tiene?', radios(6, ['AB', 'ABA', 'ABACA']))),
+]
+ACCA = {
+ 'mezclar': ("b=>{b.querySelector('.aar-mz').click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value+'|'+b.querySelector('.aar-mz span').style.background}", '1 rojo + 1 amarillo|rgb'),
+ 'paleta': ("b=>{const g=b.querySelector('[data-t=\"4\"]');g.dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('input[type=checkbox]')].filter(c=>c.checked).map(c=>c.value).join(',')}", 'Rojo'),
+ 'fuga': ("b=>{b.querySelector('[data-i=\"1\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", 'B'),
+ 'tercios': ("b=>{b.querySelector('[data-i=\"1\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", 'B'),
+ 'dictado': ("b=>{['1','0.5','0.5','2'].forEach(v=>b.querySelector('[data-v=\"'+v+'\"]').click());return b.querySelector('input.mt-txt').value}", 'negra corchea corchea blanca'),
+ 'melodia': ("b=>{['60','62','64','60'].forEach(v=>b.querySelector('[data-n=\"'+v+'\"]').click());return b.querySelector('input.mt-txt').value}", 'Do Re Mi Do'),
+ 'forma': ("b=>{b.querySelectorAll('.aar-fo')[1].click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", 'ABA'),
+}
+if len(sys.argv) > 1 and sys.argv[1] == 'arte': Q, ACC = QA, ACCA
 
 async def main():
     page = OUT / 'p.html'

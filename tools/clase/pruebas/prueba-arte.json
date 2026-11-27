@@ -1,0 +1,102 @@
+{
+ "slug": "prueba-arte",
+ "titulo": "Prueba arte",
+ "sub": "plantillas de arte",
+ "materia": "Arte y Comunicación I",
+ "escenas": [
+  {
+   "t": "mezcla",
+   "titulo": "MEZCLAR PIGMENTOS",
+   "a": {
+    "color": "#E53935",
+    "nombre": "Rojo"
+   },
+   "b": {
+    "color": "#FDD835",
+    "nombre": "Amarillo"
+   },
+   "resultado": {
+    "color": "#FB8C00",
+    "nombre": "¡Naranja!"
+   },
+   "voz": [
+    "Rojo.",
+    "Amarillo.",
+    "Naranja."
+   ]
+  },
+  {
+   "t": "circulo",
+   "voz": [
+    "Primarios.",
+    "Secundarios.",
+    "Terciarios."
+   ]
+  },
+  {
+   "t": "perspectiva",
+   "titulo": "UN PUNTO DE FUGA",
+   "fuga": 1,
+   "voz": [
+    "Horizonte.",
+    "Punto.",
+    "Líneas.",
+    "Volumen."
+   ]
+  },
+  {
+   "t": "perspectiva",
+   "fuga": 2,
+   "voz": [
+    "Horizonte.",
+    "Puntos.",
+    "Líneas.",
+    "Volumen."
+   ]
+  },
+  {
+   "t": "luz",
+   "titulo": "LUZ Y SOMBRA",
+   "voz": [
+    "Plana.",
+    "Luz.",
+    "Brillo.",
+    "Sombra."
+   ]
+  },
+  {
+   "t": "ritmo",
+   "titulo": "UN COMPÁS DE 4/4",
+   "compas": 4,
+   "figuras": [
+    1,
+    0.5,
+    0.5,
+    2
+   ],
+   "voz": [
+    "Pulso.",
+    "Negra.",
+    "Corchea.",
+    "Corchea.",
+    "Blanca."
+   ]
+  },
+  {
+   "t": "teclado",
+   "titulo": "DO MAYOR",
+   "notas": [
+    60,
+    64,
+    67
+   ],
+   "acorde": true,
+   "voz": [
+    "Teclado.",
+    "Do.",
+    "Mi.",
+    "Sol."
+   ]
+  }
+ ]
+}

@@ -179,3 +179,17 @@ Solo actividades de nivel y generales, nunca examen. Completan a `[[audio]]`, `[
 [[entrevista:What's your name?|How old are you?]] open o keywords                · la app pregunta en voz alta y el alumno contesta hablando
 [[trabalenguas:She sells seashells by the seashore]] short_answer (acepta el trabalenguas) · lo dice, con reloj, y prueba hacerlo más rápido
 ```
+
+
+## Actividades de Arte (js/actividades-arte.js)
+Solo actividades de nivel y generales, nunca examen. Usan los dibujos y sonidos del banco de la lección.
+
+```
+[[mezclar:#E07B39]]           multiple_choice (opciones: "1 rojo + 3 amarillo", "2 rojo + 1 azul"…) · cada opción muestra su mezcla al lado del color pedido
+[[paleta]]                    multi_select (nombres del círculo: Rojo, Verde, Azul violáceo…) · se marcan tocando el círculo cromático
+[[fuga]]                      multiple_choice (A, B, C, D)                · toca el punto donde convergen las líneas de fuga
+[[tercios]]                   multiple_choice (A, B, C, D)                · toca el punto fuerte para ubicar al protagonista
+[[dictado:1,0.5,0.5,2]]       short_answer (acepta: "negra corchea corchea blanca") · escucha el ritmo y lo arma con figuras
+[[melodia:60,62,64,60]]       short_answer (acepta: "Do Re Mi Do")         · escucha la melodía y la toca en el teclado
+[[forma:ABA]]                 multiple_choice (AB, ABA, ABACA…)           · escucha la obra y elige la forma en bloques de colores
+```

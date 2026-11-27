@@ -131,6 +131,12 @@ Una lección = **un archivo** `tools/clase/lecciones/<slug>.json`. Al subirlo a 
 | versus | 4 | titulo?, a:{txt, emoji, datos:[…] (1-3)}, b:{…}, gana:'a'\|'b'\|'empate', veredicto — **este o ese**: cara a cara con VS, datos de cada lado y corona al ganador |
 | jefe | 2 + preguntas | jefe:{nombre, emoji}, preguntas:[{p, r}] (2-4) — **jefe final** con barra de vida: cada respuesta le saca vida (ideal antes del resumen) |
 | historieta | vinetas | titulo?, vinetas:[{emojis:[…] (1-3), txt, quien?}] (2-4) — **historieta**: viñetas con globos de diálogo |
+| mezcla | 3 | titulo?, a:{color, nombre}, b:{color, nombre}, resultado:{color, nombre} — **ARTE**: dos colores que se juntan y se mezclan |
+| circulo | 3 | titulo? — **ARTE**: el círculo cromático se arma: primarios, secundarios y terciarios, y gira |
+| perspectiva | 4 | titulo?, fuga: 1 \| 2 — **ARTE**: horizonte, punto(s) de fuga, líneas de fuga y el volumen que aparece |
+| luz | 4 | titulo? — **ARTE**: esfera plana → luz → brillo y sombra propia → sombra proyectada (la luz se mueve) |
+| ritmo | 1 + figuras | titulo?, compas (2, 3 o 4), figuras:[4, 2, 1, .5] (redonda, blanca, negra, corchea) — **MÚSICA**: pentagrama y pulso que suenan; cada figura aparece y suena |
+| teclado | 1 + notas | titulo?, notas:[60, 64, 67] (60 = Do central), acorde? — **MÚSICA**: cada tecla se ilumina y suena; con acorde, al final suenan juntas |
 
 Ejemplo completo: `lecciones/leccion-mat1-m1-n1.json`. Todas las plantillas en uso: `pruebas/prueba-banco.json` (`python tools/clase/armar.py prueba-banco`).
 

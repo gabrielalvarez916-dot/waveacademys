@@ -18,7 +18,8 @@ N = {'gancho': lambda d: 3, 'historia': lambda d: len(d['lineas']) + 1, 'chat': 
      'memoria': lambda d: 3, 'unir': lambda d: 1 + len(d['pares']), 'mazo': lambda d: len(d['items']), 'tipeo': lambda d: len(d['items']), 'documental': lambda d: len(d['rotulos']),
      'escala': lambda d: len(d['items']), 'dilema': lambda d: 3, 'quiz4': lambda d: 3, 'transforma': lambda d: len(d['pasos']),
      'datoloco': lambda d: 2, 'ranking': lambda d: 1 + len(d['items']), 'escape': lambda d: 2 + len(d['candados']),
-     'vof': lambda d: 3, 'versus': lambda d: 4, 'jefe': lambda d: 2 + len(d['preguntas']), 'historieta': lambda d: len(d['vinetas'])}
+     'vof': lambda d: 3, 'versus': lambda d: 4, 'jefe': lambda d: 2 + len(d['preguntas']), 'historieta': lambda d: len(d['vinetas']),
+     'mezcla': lambda d: 3, 'circulo': lambda d: 3, 'perspectiva': lambda d: 4, 'luz': lambda d: 4, 'ritmo': lambda d: 1 + len(d['figuras']), 'teclado': lambda d: 1 + len(d['notas'])}
 def revisar(slug):
     p = os.path.join(AQUI, 'lecciones', slug + '.json'); out = []
     for k, e in enumerate(json.load(open(p, encoding='utf-8'))['escenas']):
