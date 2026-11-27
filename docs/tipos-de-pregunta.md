@@ -166,3 +166,16 @@ Solo actividades de nivel y generales, nunca examen.
 [[escuchar:PERRO]]        multiple_choice (opciones con dibujo: "🐶 PERRO", "🐱 GATO"…) · escucha la palabra y toca el dibujo
 [[escuchar:dog:en]]       igual, con voz en inglés
 ```
+
+
+## Actividades de Inglés para hablar (js/actividades-ing.js)
+Solo actividades de nivel y generales, nunca examen. Completan a `[[audio]]`, `[[hablar]]` y `[[memorama]]` (js/ingles-duo.js). Sin micrófono, el alumno escribe. Sirven también en Medio con frases cortas.
+
+```
+[[repetir:Where is the library?]]                 short_answer (acepta la frase)  · escucha, repite y ve palabra por palabra qué se le entendió
+[[dialogo:A: Hi! How are you?|B|A: Nice to meet you!|B]]  open o keywords      · role play: la app dice las líneas de A y el alumno responde las de B
+[[describir:🏖️ ☀️ 👨‍👩‍👧 ⚽]]                       open o keywords (palabras clave) · describe la imagen en voz alta
+[[pares:sheep]]                                   multiple_choice (ship / sheep)  · escucha la palabra, elige cuál es y después la dice
+[[entrevista:What's your name?|How old are you?]] open o keywords                · la app pregunta en voz alta y el alumno contesta hablando
+[[trabalenguas:She sells seashells by the seashore]] short_answer (acepta el trabalenguas) · lo dice, con reloj, y prueba hacerlo más rápido
+```

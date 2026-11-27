@@ -7,7 +7,7 @@ import asyncio, json, pathlib, sys, html as H
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path('/tmp/prueba-act-' + (sys.argv[1] if len(sys.argv) > 1 else 'nat')); OUT.mkdir(exist_ok=True)
-SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/leccion-banco-soc2.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js']
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/leccion-banco-soc2.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js', 'js/actividades-ing.js']
 
 def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
 def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
@@ -139,6 +139,25 @@ ACCS2 = {
  'bioma': ("b=>{b.querySelector('[data-sp]').click();b.querySelector('.soa-zona').click();return b.querySelector('select').value}", 'Desierto'),
 }
 if len(sys.argv) > 1 and sys.argv[1] == 'soc2': Q, ACC = QS2, ACCS2
+
+QI = [
+ ('repetir', preg(0, '[[repetir:Where is the library?]] Listen and repeat.', txt(0))),
+ ('dialogo', preg(1, '[[dialogo:A: Hi! How are you?|B|A: Nice!|B]] Role play.', '<textarea class="mt-txt" name="q1"></textarea>')),
+ ('describir', preg(2, '[[describir:🏖️ ☀️ ⚽]] Describe the picture.', '<textarea class="mt-txt" name="q2"></textarea>')),
+ ('pares', preg(3, '[[pares:sheep]] Which word?', radios(3, ['🚢 ship', '🐑 sheep']))),
+ ('entrevista', preg(4, "[[entrevista:What's your name?|How old are you?]] Interview.", '<textarea class="mt-txt" name="q4"></textarea>')),
+ ('trabalenguas', preg(5, '[[trabalenguas:She sells seashells]] Say it!', txt(5))),
+]
+ACCI = {
+ 'repetir': ("async b=>{STUB;window.__d='where is the library';b.querySelector('[data-mic]').click();await new Promise(r=>setTimeout(r,120));return b.querySelector('input.mt-txt').value+'|'+b.querySelectorAll('.ain-res .ok').length}", 'where is the library|4'),
+ 'dialogo': ("async b=>{const sig=b.querySelector('[data-sig]');window.speechSynthesis.speak=u=>setTimeout(()=>u.onend&&u.onend(),10);sig.click();await new Promise(r=>setTimeout(r,80));b.querySelector('.ain-esc').value='I am fine';b.querySelector('[data-ok]').click();await new Promise(r=>setTimeout(r,150));b.querySelector('.ain-esc').value='Thank you';b.querySelector('[data-ok]').click();await new Promise(r=>setTimeout(r,60));return b.querySelector('textarea.mt-txt').value.replace(/\\n/g,' / ')}", 'B: I am fine'),
+ 'describir': ("async b=>{STUB;window.__d='there is a ball';b.querySelector('[data-mic]').click();await new Promise(r=>setTimeout(r,120));return b.querySelector('textarea.mt-txt').value}", 'there is a ball'),
+ 'pares': ("b=>{b.querySelectorAll('.ain-par')[1].click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", '🐑 sheep'),
+ 'entrevista': ("async b=>{STUB;window.__d='my name is Leo';b.querySelector('[data-mic]').click();await new Promise(r=>setTimeout(r,120));return b.querySelector('textarea.mt-txt').value}", "What's your name? my name is Leo"),
+ 'trabalenguas': ("async b=>{STUB;window.__d='she sells seashells';b.querySelector('[data-mic]').click();await new Promise(r=>setTimeout(r,120));return b.querySelector('.ain-res').textContent}", '3 de 3'),
+}
+for k in ACCI: ACCI[k] = (ACCI[k][0].replace('STUB;', "window.SpeechRecognition=class{start(){setTimeout(()=>this.onresult&&this.onresult({results:[[{transcript:window.__d}]]}),20)}};"), ACCI[k][1])
+if len(sys.argv) > 1 and sys.argv[1] == 'ing': Q, ACC = QI, ACCI
 
 async def main():
     page = OUT / 'p.html'

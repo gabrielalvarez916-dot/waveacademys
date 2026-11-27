@@ -277,3 +277,24 @@ Geografía física, mapas históricos, períodos, Filosofía y Constitución. Ca
 | `falacias` / `falacias_x` | diálogo, sello con el nombre, la trampa y cómo responder | — |
 | `corrientes` / `corrientes_x` | mesa de debate: una pregunta, tres pensadores (ética, conocimiento, política) | — |
 | `constitucion` / `constitucion_x` | estructura de la Constitución; derechos y garantías | `modo`: (estructura) o garantias |
+
+## Inglés (js/leccion-banco-ing.js) — 27/11/2026
+Explicación en castellano y ejemplos en inglés con audio 🔊. Cada uno con su práctica (`_x`).
+
+| Motor | Qué muestra | Parámetros (`p`) |
+|---|---|---|
+| `tiempos_en` / `tiempos_en_x` | línea del tiempo: past simple y continuous, present perfect, present simple y continuous, future | — |
+| `conjugar_en` / `conjugar_en_x` | present simple: -s/-es/-ies, don't/doesn't, Do/Does, short answers | práctica `modo`: tercera, negativa |
+| `irregulares` / `irregulares_x` | tarjetas base → past → participle por patrón (A-A-A, A-B-B, A-B-C, A-B-A) | práctica `modo`: (past) o participio |
+| `comparar_en` / `comparar_en_x` | barras: comparativo + than, superlativo con the, reglas | práctica `modo`: comparativo, superlativo |
+| `preposiciones_en` / `preposiciones_en_x` | el gato y la caja: in, on, under, next to, behind, in front of, between | — |
+| `there_is` / `there_is_x` | habitación: there is/are, isn't/aren't, some/any, incontables | — |
+| `modales` / `modales_x` | carteles: can, must, mustn't, should, have to, don't have to | — |
+| `condicionales` / `condicionales_x` | cadena condición → resultado: zero, first, second | — |
+| `pasiva` / `pasiva_x` | los bloques de la oración cambian de lugar (be + participio, by) | — |
+| `reported` / `reported_x` | del globo al reported speech: un paso atrás en el tiempo | — |
+| `wh_preguntas` / `wh_preguntas_x` | de la respuesta a la pregunta: Wh + aux + sujeto + verbo | — |
+| `pronunciacion` / `pronunciacion_x` | pares mínimos con audio; terminación -ed (/t/, /d/, /ɪd/) | `modo`: (pares) o ed |
+| `lectura_en` / `lectura_en_x` | skimming, scanning y glosario sobre un texto corto | — |
+| `false_friends` / `false_friends_x` | falsos amigos: actually, embarrassed, carpet, library, exit… | — |
+Para Medio, además: `vocab`, `rutina` y `frase_en` (js/leccion-banco-medio.js).

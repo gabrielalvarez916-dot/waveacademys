@@ -1371,5 +1371,168 @@
   "motor": "constitucion_x",
   "nombre": "s2-constitucion_x",
   "p": {}
+ },
+ {
+  "motor": "tiempos_en",
+  "nombre": "in-tiempos_en",
+  "p": {}
+ },
+ {
+  "motor": "tiempos_en_x",
+  "nombre": "in-tiempos_en_x",
+  "p": {}
+ },
+ {
+  "motor": "conjugar_en",
+  "nombre": "in-conjugar_en",
+  "p": {}
+ },
+ {
+  "motor": "conjugar_en_x",
+  "nombre": "in-conjugar_en_x-tercera",
+  "p": {
+   "modo": "tercera"
+  }
+ },
+ {
+  "motor": "conjugar_en_x",
+  "nombre": "in-conjugar_en_x-negativa",
+  "p": {
+   "modo": "negativa"
+  }
+ },
+ {
+  "motor": "irregulares",
+  "nombre": "in-irregulares",
+  "p": {}
+ },
+ {
+  "motor": "irregulares_x",
+  "nombre": "in-irregulares_x",
+  "p": {}
+ },
+ {
+  "motor": "comparar_en",
+  "nombre": "in-comparar_en",
+  "p": {}
+ },
+ {
+  "motor": "comparar_en_x",
+  "nombre": "in-comparar_en_x",
+  "p": {}
+ },
+ {
+  "motor": "preposiciones_en",
+  "nombre": "in-preposiciones_en",
+  "p": {}
+ },
+ {
+  "motor": "preposiciones_en_x",
+  "nombre": "in-preposiciones_en_x",
+  "p": {}
+ },
+ {
+  "motor": "there_is",
+  "nombre": "in-there_is",
+  "p": {}
+ },
+ {
+  "motor": "there_is_x",
+  "nombre": "in-there_is_x",
+  "p": {}
+ },
+ {
+  "motor": "modales",
+  "nombre": "in-modales",
+  "p": {}
+ },
+ {
+  "motor": "modales_x",
+  "nombre": "in-modales_x",
+  "p": {}
+ },
+ {
+  "motor": "condicionales",
+  "nombre": "in-condicionales",
+  "p": {}
+ },
+ {
+  "motor": "condicionales_x",
+  "nombre": "in-condicionales_x",
+  "p": {}
+ },
+ {
+  "motor": "pasiva",
+  "nombre": "in-pasiva",
+  "p": {}
+ },
+ {
+  "motor": "pasiva_x",
+  "nombre": "in-pasiva_x",
+  "p": {}
+ },
+ {
+  "motor": "reported",
+  "nombre": "in-reported",
+  "p": {}
+ },
+ {
+  "motor": "reported_x",
+  "nombre": "in-reported_x",
+  "p": {}
+ },
+ {
+  "motor": "wh_preguntas",
+  "nombre": "in-wh_preguntas",
+  "p": {}
+ },
+ {
+  "motor": "wh_preguntas_x",
+  "nombre": "in-wh_preguntas_x",
+  "p": {}
+ },
+ {
+  "motor": "pronunciacion",
+  "nombre": "in-pronunciacion",
+  "p": {}
+ },
+ {
+  "motor": "pronunciacion",
+  "nombre": "in-pronunciacion-ed",
+  "p": {
+   "modo": "ed"
+  }
+ },
+ {
+  "motor": "pronunciacion_x",
+  "nombre": "in-pronunciacion_x",
+  "p": {}
+ },
+ {
+  "motor": "pronunciacion_x",
+  "nombre": "in-pronunciacion_x-ed",
+  "p": {
+   "modo": "ed"
+  }
+ },
+ {
+  "motor": "lectura_en",
+  "nombre": "in-lectura_en",
+  "p": {}
+ },
+ {
+  "motor": "lectura_en_x",
+  "nombre": "in-lectura_en_x",
+  "p": {}
+ },
+ {
+  "motor": "false_friends",
+  "nombre": "in-false_friends",
+  "p": {}
+ },
+ {
+  "motor": "false_friends_x",
+  "nombre": "in-false_friends_x",
+  "p": {}
  }
 ]
