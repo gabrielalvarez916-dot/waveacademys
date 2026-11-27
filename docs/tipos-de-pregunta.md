@@ -147,3 +147,14 @@ Solo actividades de nivel y generales, nunca examen. La marca va al principio de
 [[sociedad:feudal]]                 ordering (grupos)                              · arma la pirámide social de arriba hacia abajo
 [[comparativa]]                     table_fill                                     · completa la tabla comparativa con encabezados ilustrados
 ```
+
+
+## Actividades para los más chicos, Nivel Medio (js/actividades-medio.js)
+Solo actividades de nivel y generales, nunca examen.
+
+```
+[[armar:MANZANA:🍎]]      short_answer (acepta: MANZANA)     · arma la palabra tocando las letras mezcladas
+[[silabas:MARIPOSA:🦋]]   numeric (4)                         · dice la palabra y aplaude 👏 una vez por sílaba
+[[escuchar:PERRO]]        multiple_choice (opciones con dibujo: "🐶 PERRO", "🐱 GATO"…) · escucha la palabra y toca el dibujo
+[[escuchar:dog:en]]       igual, con voz en inglés
+```

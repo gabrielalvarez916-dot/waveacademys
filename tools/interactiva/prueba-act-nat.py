@@ -7,7 +7,7 @@ import asyncio, json, pathlib, sys, html as H
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path('/tmp/prueba-act-' + (sys.argv[1] if len(sys.argv) > 1 else 'nat')); OUT.mkdir(exist_ok=True)
-SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js']
+SCRIPTS = ['js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-banco-nat2.js', 'js/leccion-banco-nat3.js', 'js/leccion-banco-soc.js', 'js/actividades-plus.js', 'js/actividades-nat.js', 'js/actividades-soc.js', 'js/actividades-medio.js']
 
 def sel(i, k, ops): return '<select class="mt-sel" data-w="%d" data-k="%d"><option value="">Elegí…</option>%s</select>' % (i, k, ''.join('<option value="%s">%s</option>' % (H.escape(o), H.escape(o)) for o in ops))
 def pares(i, izq, der): return '<div class="mt-pares">' + ''.join('<div class="mt-par"><span>%s</span>%s</div>' % (H.escape(x), sel(i, k, der)) for k, x in enumerate(izq)) + '</div>'
@@ -103,6 +103,20 @@ ACCS = {
  'sociedad': ("b=>{b.querySelectorAll('[data-dest]')[1].dispatchEvent(new MouseEvent('click',{bubbles:true}));return [...b.querySelectorAll('li')][0].dataset.v}", 'Rey'),
 }
 if len(sys.argv) > 1 and sys.argv[1] == 'soc': Q, ACC = QS, ACCS
+
+QM = [
+ ('armar', preg(0, '[[armar:MANZANA:🍎]] Armá la palabra.', txt(0))),
+ ('silabas', preg(1, '[[silabas:MARIPOSA:🦋]] ¿Cuántas sílabas tiene?', num(1))),
+ ('escuchar', preg(2, '[[escuchar:PERRO]] Escuchá y tocá el dibujo.', radios(2, ['🐶 PERRO', '🐱 GATO', '🐟 PEZ']))),
+ ('escuchar_en', preg(3, '[[escuchar:dog:en]] Listen and tap.', radios(3, ['🐱 cat', '🐶 dog', '🐦 bird']))),
+]
+ACCM = {
+ 'armar': ("b=>{for(const c of 'MANZANA'){const l=[...b.querySelectorAll('[data-l]')].find(x=>!x.disabled&&x.textContent===c);l.click();}return b.querySelector('input.mt-txt').value}", 'MANZANA'),
+ 'silabas': ("b=>{for(let k=0;k<4;k++)b.querySelector('[data-c=\"1\"]').click();return b.querySelector('input.nu-in').value}", '4'),
+ 'escuchar': ("b=>{b.querySelectorAll('.amd-dib')[0].click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", '🐶 PERRO'),
+ 'escuchar_en': ("b=>{b.querySelectorAll('.amd-dib')[1].click();return [...b.querySelectorAll('input[type=radio]')].find(r=>r.checked).value}", '🐶 dog'),
+}
+if len(sys.argv) > 1 and sys.argv[1] == 'medio': Q, ACC = QM, ACCM
 
 async def main():
     page = OUT / 'p.html'

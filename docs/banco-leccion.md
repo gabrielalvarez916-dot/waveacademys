@@ -257,3 +257,5 @@ Para primaria, sobre todo de 1.º a 3.º: dibujos grandes y poco texto. Cada mot
 | Ciudadanía | `normas` / `normas_x` | acuerdos de convivencia |
 | Ciudadanía | `conflictos` / `conflictos_x` | semáforo: paro, pienso, actúo |
 | Ciudadanía | `derechos` / `derechos_x` | derechos de chicas y chicos |
+
+**Modo Medio en motores de secundaria (4.º a 6.º):** con `"medio": true` en `p`, los motores partes, ciclo, red_trofica, recorrido, clave, plato, particulas, mezclas, densidad, instrumento, grafico, experimento, circuito, fuerzas, palanca, energia, luz, calor, iman, tierra_luna, sistema_solar, linea_historica, coordenadas, escala_mapa, circuito_productivo, causas y fuente (y sus `_x`) se ven con letra y dibujo más grandes, y cada palabra técnica lleva al lado, la primera vez en cada paso, su explicación en palabras simples (glosario en js/leccion-banco-medio.js).

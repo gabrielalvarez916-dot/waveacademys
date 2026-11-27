@@ -1120,5 +1120,108 @@
   "motor": "derechos_x",
   "nombre": "md-derechos_x",
   "p": {}
+ },
+ {
+  "motor": "partes",
+  "nombre": "mm-partes",
+  "p": {
+   "figuras": [
+    "celula_animal",
+    "celula_vegetal",
+    "bacteria",
+    "virus",
+    "neurona"
+   ],
+   "medio": true
+  }
+ },
+ {
+  "motor": "ciclo",
+  "nombre": "mm-ciclo",
+  "p": {
+   "ciclos": [
+    "agua",
+    "carbono",
+    "nitrogeno",
+    "rana",
+    "mariposa",
+    "celular",
+    "rocas",
+    "planta"
+   ],
+   "medio": true
+  }
+ },
+ {
+  "motor": "recorrido",
+  "nombre": "mm-recorrido",
+  "p": {
+   "recorridos": [
+    "digestion",
+    "sangre",
+    "aire",
+    "savia",
+    "reflejo",
+    "orina"
+   ],
+   "medio": true
+  }
+ },
+ {
+  "motor": "mezclas",
+  "nombre": "mm-mezclas",
+  "p": {
+   "medio": true
+  }
+ },
+ {
+  "motor": "circuito",
+  "nombre": "mm-circuito",
+  "p": {
+   "medio": true
+  }
+ },
+ {
+  "motor": "tierra_luna",
+  "nombre": "mm-tierra_luna",
+  "p": {
+   "medio": true
+  }
+ },
+ {
+  "motor": "linea_historica",
+  "nombre": "mm-linea_historica",
+  "p": {
+   "medio": true
+  }
+ },
+ {
+  "motor": "coordenadas",
+  "nombre": "mm-coordenadas",
+  "p": {
+   "medio": true
+  }
+ },
+ {
+  "motor": "partes_x",
+  "nombre": "mm-partes_x",
+  "p": {
+   "figuras": [
+    "celula_animal",
+    "celula_vegetal",
+    "flor",
+    "ojo",
+    "corazon",
+    "neurona"
+   ],
+   "medio": true
+  }
+ },
+ {
+  "motor": "mezclas_x",
+  "nombre": "mm-mezclas_x",
+  "p": {
+   "medio": true
+  }
  }
 ]
