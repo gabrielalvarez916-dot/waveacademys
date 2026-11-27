@@ -3,134 +3,277 @@
  "step_id": "5b873e4d-3ac2-4900-a5d4-dcb3564d430e",
  "materia": "Lengua y Literatura I",
  "titulo": "Sustantivos y adjetivos",
- "sub": "Lengua y Literatura I · Misión 12 · Nivel 1",
+ "sub": "Lengua y Literatura I · Misión 3 · Nivel 1",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Lu",
+   "t": "historia",
+   "personaje": {
+    "nombre": "Sofi",
     "emoji": "👧"
    },
-   "mensajes": [
-    {
-     "yo": false,
-     "txt": "Alegría es un sustantivo 😄"
-    },
-    {
-     "yo": true,
-     "txt": "¿Y no se puede tocar?"
-    },
-    {
-     "yo": false,
-     "txt": "Justo: es abstracto"
-    }
+   "lugar": "📱",
+   "lineas": [
+    "Sofi recibe un mensaje: «Traé el… del… para la…».",
+    "No entiende nada: faltan las palabras que nombran.",
+    "Su amiga lo corrige: «Traé el mate del abuelo para la plaza»."
    ],
    "titulo": "SUSTANTIVOS Y ADJETIVOS",
-   "sub": "clases y concordancia",
+   "sub": "las palabras que nombran y describen",
    "voz": [
-    "Lu dice que alegría es un sustantivo.",
-    "Juan: ¿y no se puede tocar?",
-    "Lu: justo, es abstracto.",
-    "Hoy: *sustantivos y adjetivos*."
+    "Sofi recibe un mensaje: «Traé el… del… para la…».",
+    "No entiende nada, porque faltan justo las palabras que *nombran* las cosas.",
+    "Su amiga lo corrige: «Traé el mate del abuelo para la plaza». Ahora sí: mate, abuelo y plaza le dan sentido a todo.",
+    "Esas palabras son los *sustantivos*, y hoy vamos a aprender a reconocerlas y a acompañarlas con *adjetivos*."
    ]
   },
   {
-   "t": "comparar",
-   "a": {
-    "cab": "SUSTANTIVO",
-    "texto": "Nombra personas, cosas, lugares e ideas",
-    "emoji": "🏷️"
-   },
-   "b": {
-    "cab": "ADJETIVO",
-    "texto": "Dice cómo es el sustantivo",
-    "emoji": "🎨"
-   },
-   "signo": "vs",
+   "t": "definicion",
+   "palabra": "Sustantivo",
+   "texto": "Palabra que nombra personas, animales, objetos, lugares, ideas o sentimientos.",
+   "emoji": "🏷️",
    "voz": [
-    "Dos clases de palabras.",
-    "El *sustantivo* nombra personas, animales, cosas, lugares e ideas.",
-    "El *adjetivo* acompaña al sustantivo y dice cómo es."
+    "El *sustantivo* es la palabra que nombra: personas, animales, objetos y lugares, pero también ideas y sentimientos.",
+    "Mate, abuelo y plaza son sustantivos; amistad y miedo, también."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "CÓMO SE CLASIFICA",
-   "items": [
-    "Concreto: mesa, río",
-    "Abstracto: alegría, libertad"
+   "t": "pizarra",
+   "titulo": "LA PRUEBA DEL ARTÍCULO",
+   "lineas": [
+    {
+     "txt": "el mate · la plaza ✔",
+     "color": "verde",
+     "marca": "circulo"
+    },
+    {
+     "txt": "la alegría · el miedo ✔",
+     "color": "verde",
+     "marca": "circulo"
+    },
+    {
+     "txt": "el rápido · la correr ✘",
+     "color": "coral",
+     "marca": "subraya"
+    }
    ],
    "voz": [
-    "¿Concreto o abstracto?",
-    "*Mesa* y *río*: concretos.",
-    "*Alegría* y *libertad*: abstractos."
+    "Hay una prueba muy útil: si podés ponerle *el* o *la* delante y tiene sentido, es un sustantivo. El mate, la plaza: funcionan.",
+    "También funciona con lo que no se toca: la alegría, el miedo. Son sustantivos aunque no los veamos.",
+    "Pero «el rápido» o «la correr» suenan mal: rápido es adjetivo y correr es verbo. La prueba los deja afuera."
+   ]
+  },
+  {
+   "t": "matriz",
+   "titulo": "CLASES DE SUSTANTIVOS",
+   "celdas": [
+    {
+     "cab": "Común",
+     "txt": "cualquier ciudad: ciudad"
+    },
+    {
+     "cab": "Propio",
+     "txt": "una sola, con mayúscula: Rosario"
+    },
+    {
+     "cab": "Concreto",
+     "txt": "se percibe: mesa, río"
+    },
+    {
+     "cab": "Abstracto",
+     "txt": "idea o sentimiento: libertad"
+    }
+   ],
+   "voz": [
+    "Los sustantivos se clasifican de dos maneras.",
+    "El *común* nombra a cualquiera de su clase: ciudad.",
+    "El *propio* nombra a uno solo y va con mayúscula: Rosario.",
+    "El *concreto* nombra algo que se percibe con los sentidos: una mesa, un río.",
+    "Y el *abstracto*, una idea o un sentimiento: la libertad, la paciencia."
+   ]
+  },
+  {
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "Concreto",
+     "emoji": "🪨"
+    },
+    {
+     "cab": "Abstracto",
+     "emoji": "💭"
+    }
+   ],
+   "fichas": [
+    {
+     "txt": "guitarra",
+     "caja": 0
+    },
+    {
+     "txt": "perfume",
+     "caja": 0
+    },
+    {
+     "txt": "valentía",
+     "caja": 1
+    },
+    {
+     "txt": "nostalgia",
+     "caja": 1
+    }
+   ],
+   "voz": [
+    "Probemos con algunos.",
+    "Guitarra y perfume son *concretos*: uno se ve y se toca, el otro se huele.",
+    "Valentía y nostalgia son *abstractos*: existen, pero no se perciben con los sentidos."
+   ]
+  },
+  {
+   "t": "transforma",
+   "titulo": "DEL SINGULAR AL PLURAL",
+   "pasos": [
+    {
+     "txt": "casa → casas",
+     "nota": "termina en vocal: + s"
+    },
+    {
+     "txt": "canción → canciones",
+     "nota": "termina en consonante: + es"
+    },
+    {
+     "txt": "lápiz → lápices",
+     "nota": "termina en z: la z cambia por c"
+    }
+   ],
+   "voz": [
+    "Los sustantivos tienen *número*: singular o plural. Si terminan en vocal, se agrega *s*: casa, casas.",
+    "Si terminan en consonante, se agrega *es*: canción, canciones. Y fijate que la tilde se va.",
+    "Si terminan en *z*, la z se cambia por *c*: lápiz, lápices."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Adjetivo",
+   "texto": "Palabra que acompaña al sustantivo para decir cómo es o para precisarlo.",
+   "emoji": "🎨",
+   "voz": [
+    "Ahora, el compañero del sustantivo: el *adjetivo*. Acompaña al sustantivo para decir cómo es o para precisarlo.",
+    "No es lo mismo un mate que un mate *amargo*, ni una plaza que una plaza *vacía*: el adjetivo cambia lo que imaginamos."
+   ]
+  },
+  {
+   "t": "texto",
+   "oracion": "La plaza vacía tenía bancos viejos y faroles amarillos.",
+   "marcas": [
+    {
+     "desde": 1,
+     "hasta": 2,
+     "etiqueta": "SUST. + ADJ."
+    },
+    {
+     "desde": 4,
+     "hasta": 5,
+     "etiqueta": "SUST. + ADJ."
+    },
+    {
+     "desde": 7,
+     "hasta": 8,
+     "etiqueta": "SUST. + ADJ."
+    }
+   ],
+   "voz": [
+    "Leamos una oración y busquemos las parejas.",
+    "*Plaza vacía*: el sustantivo plaza y el adjetivo vacía, que dice cómo está.",
+    "*Bancos viejos*: el adjetivo describe a los bancos.",
+    "Y *faroles amarillos*: el color también es un adjetivo."
+   ]
+  },
+  {
+   "t": "completa",
+   "antes": "Las flores del patio eran",
+   "despues": "y perfumadas.",
+   "opciones": [
+    "blancas",
+    "blanco",
+    "blanca"
+   ],
+   "correcta": 0,
+   "voz": [
+    "El adjetivo tiene una regla de oro: *concuerda* con el sustantivo. Completá: las flores del patio eran…",
+    "Fijate en «flores»: es femenino y plural.",
+    "Entonces va *blancas*: mismo género y mismo número que el sustantivo."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Los niños cansada",
-     "bien": "Los niños cansados"
+     "mal": "«Los chicos estaban cansada»",
+     "bien": "«Los chicos estaban cansados»"
     },
     {
-     "mal": "Una casa grandes",
-     "bien": "Una casa grande"
+     "mal": "«Mendoza» con minúscula",
+     "bien": "Los propios van siempre con mayúscula"
     }
    ],
    "voz": [
-    "Errores de concordancia.",
-    "*Los niños cansada* debe ser *cansados*.",
-    "*Una casa grandes* debe ser *grande*."
+    "Dos errores muy comunes.",
+    "Romper la concordancia: los chicos estaban cansada. Si el sustantivo es masculino plural, el adjetivo también: *cansados*.",
+    "Y escribir un nombre propio con minúscula: Mendoza, Juana o Paraná van siempre con *mayúscula*."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "«Córdoba» es un sustantivo…",
+   "t": "quiz4",
+   "pregunta": "En «Sentí una alegría enorme», ¿qué es «alegría»?",
    "opciones": [
-    "Propio",
-    "Común",
-    "Abstracto"
+    "Sustantivo concreto",
+    "Sustantivo abstracto",
+    "Adjetivo",
+    "Verbo"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
-    "Te toca: «Córdoba» es un sustantivo…",
-    "¿Propio, común o abstracto?",
-    "*Propio*."
+    "Pregunta: en «sentí una alegría enorme», ¿qué es la palabra alegría?",
+    "Probá ponerle artículo y pensá si se puede tocar.",
+    "*Sustantivo abstracto*: acepta «la» y nombra un sentimiento. Enorme es el adjetivo que la acompaña."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *sustantivo* nombra.",
-    "Puede ser *común* o *propio*, *concreto* o *abstracto*.",
-    "El *adjetivo* dice cómo es.",
-    "Y *concuerda* en género y número.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "SUSTANTIVO",
-     "nombra"
+     "Sustantivo",
+     "nombra; acepta el o la delante"
     ],
     [
-     "CLASES",
-     "común, propio"
+     "Común y propio",
+     "cualquiera o uno solo, con mayúscula"
     ],
     [
-     "ADJETIVO",
-     "cómo es"
+     "Concreto y abstracto",
+     "se percibe o es una idea"
     ],
     [
-     "CONCORDANCIA",
-     "género y número"
+     "Número",
+     "singular y plural: s, es, z → ces"
+    ],
+    [
+     "Adjetivo",
+     "dice cómo es el sustantivo y concuerda con él"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "Sustantivos que nombran y adjetivos que describen.",
+    "El sustantivo nombra, y lo reconocés con la prueba del artículo.",
+    "Puede ser común o propio.",
+    "Concreto o abstracto.",
+    "Tiene número: singular y plural.",
+    "Y el adjetivo lo acompaña, concordando en género y número. ¡A practicar!"
+   ]
   }
  ],
  "rev": 1
