@@ -1,9 +1,1797 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 1,
- "practica": "Práctica general: volver a leer",
- "examen_titulo": "Nivel jefe: volver a leer",
- "niveles": {},
- "act": {},
- "examen": []
+ "practica": "Actividades generales",
+ "examen_titulo": "Nivel jefe: la comunicación y el lenguaje",
+ "niveles": {
+  "1": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Los elementos del circuito",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "El chat",
+          "raiz": "Mensaje: «Llego a las 8»",
+          "ramas": [
+           [
+            "Emisor",
+            [
+             "tu tía, que escribe"
+            ],
+            "Quien produce el mensaje."
+           ],
+           [
+            "Receptor",
+            [
+             "vos, que lo leés"
+            ],
+            "Quien lo recibe e interpreta."
+           ],
+           [
+            "Código",
+            [
+             "el español escrito"
+            ],
+            "El sistema de signos que comparten."
+           ],
+           [
+            "Canal",
+            [
+             "el celular e internet"
+            ],
+            "El medio por donde viaja."
+           ],
+           [
+            "Referente",
+            [
+             "la hora de llegada"
+            ],
+            "De qué se habla."
+           ],
+           [
+            "Contexto",
+            [
+             "un viernes a la tarde, ella en el colectivo"
+            ],
+            "La situación en que ocurre."
+           ]
+          ],
+          "cierre": "Si falla cualquiera de estos elementos, la comunicación se complica."
+         },
+         {
+          "nombre": "El aviso",
+          "raiz": "Mensaje: «Atención pasajeros: el vuelo se demora»",
+          "ramas": [
+           [
+            "Emisor",
+            [
+             "la empleada del aeropuerto"
+            ],
+            "Quien habla."
+           ],
+           [
+            "Receptor",
+            [
+             "los pasajeros"
+            ],
+            "Quienes escuchan."
+           ],
+           [
+            "Código",
+            [
+             "el español oral"
+            ],
+            "El idioma."
+           ],
+           [
+            "Canal",
+            [
+             "el aire y los parlantes"
+            ],
+            "Por donde viaja la voz."
+           ],
+           [
+            "Referente",
+            [
+             "la demora del vuelo"
+            ],
+            "El tema."
+           ],
+           [
+            "Contexto",
+            [
+             "la sala de espera, de noche"
+            ],
+            "La situación."
+           ]
+          ],
+          "cierre": "Los mismos elementos aparecen en cualquier mensaje."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "unir_x",
+       "p": {
+        "consigna": "Mensaje: el profe graba un audio para el grupo: «La prueba es el lunes». Uní cada elemento con su ejemplo.",
+        "items": [
+         {
+          "pares": [
+           [
+            "Emisor",
+            "el profe"
+           ],
+           [
+            "Receptor",
+            "los alumnos del grupo"
+           ],
+           [
+            "Canal",
+            "el celular"
+           ],
+           [
+            "Referente",
+            "la fecha de la prueba"
+           ]
+          ]
+         },
+         {
+          "pares": [
+           [
+            "Código",
+            "el español oral"
+           ],
+           [
+            "Mensaje",
+            "«La prueba es el lunes»"
+           ],
+           [
+            "Contexto",
+            "un jueves, antes del fin de semana"
+           ],
+           [
+            "Emisor",
+            "el profe"
+           ]
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Circuito de la comunicación",
+        "texto": "El circuito de la comunicación es el conjunto de elementos que intervienen cuando alguien transmite un mensaje a otra persona: emisor, receptor, mensaje, código, canal, referente y contexto."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Conviene no confundir dos pares que se parecen: el código es el sistema de signos, como el idioma, mientras que el canal es el medio físico por donde viaja, como el aire o el celular. Y el referente no es una persona, sino aquello de lo que se habla."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Emisor y receptor: quien produce y quien interpreta.",
+         "Código y canal: el sistema de signos y el medio.",
+         "Referente y contexto: el tema y la situación."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cuando el mensaje no llega: el ruido",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Situación",
+        "items": [
+         {
+          "nombre": "La videollamada",
+          "texto": "Lucía explica la tarea, pero {{la imagen se congela|Ruido del canal: falla el medio.}} y {{su voz llega entrecortada|Otro ruido del canal.}}. Al final dice: «{{Es para el ASAP|Ruido del código: una sigla en inglés que Juan no conoce.}}».",
+          "cierre": "Juan no entendió la consigna por culpa del ruido."
+         },
+         {
+          "nombre": "La radio",
+          "texto": "En la radio anuncian el pronóstico, pero {{la señal se pierde en el túnel|Ruido del canal.}}. Cuando vuelve, el locutor habla de una «{{ciclogénesis|Ruido del código: una palabra técnica que muchos no entienden.}}».",
+          "cierre": "Los dos tipos de ruido pueden aparecer juntos."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué tipo de ruido es?",
+        "cajas": [
+         "Ruido del canal",
+         "Ruido del código"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "El micrófono no funciona",
+          0
+         ],
+         [
+          "Hay mucho viento y no se escucha",
+          0
+         ],
+         [
+          "La batería del celular se agota",
+          0
+         ],
+         [
+          "El mensaje está escrito en alemán",
+          1
+         ],
+         [
+          "El médico usa palabras que no conocemos",
+          1
+         ],
+         [
+          "La letra es imposible de leer",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ruido",
+        "texto": "El ruido es todo lo que interfiere en la comunicación y hace que el mensaje no llegue o llegue mal al receptor."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Hay ruidos que vienen del canal, como una mala señal o un audio entrecortado, y otros que vienen del código, como una palabra que el receptor no conoce. En una escuela online los dos son frecuentes, por eso conviene comprobar que el otro entendió."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Del canal: falla el medio (señal, sonido, pantalla).",
+         "Del código: el receptor no comparte el idioma o las palabras.",
+         "Para evitarlo: comprobar, repetir, aclarar."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Emisor",
+      "definicion": "es quien produce el mensaje; el receptor es quien lo recibe y lo interpreta.",
+      "ejemplo": "tu tía escribe / vos leés"
+     },
+     {
+      "concepto": "Código",
+      "definicion": "es el sistema de signos que emisor y receptor comparten, como un idioma.",
+      "ejemplo": "el español escrito"
+     },
+     {
+      "concepto": "Canal",
+      "definicion": "es el medio físico por donde viaja el mensaje desde el emisor hasta el receptor.",
+      "ejemplo": "el celular, el aire, el papel"
+     },
+     {
+      "concepto": "Referente",
+      "definicion": "es aquello de lo que trata el mensaje, el tema del que se habla.",
+      "ejemplo": "la hora de llegada"
+     },
+     {
+      "concepto": "Contexto",
+      "definicion": "es la situación en que ocurre la comunicación: lugar, momento y circunstancias.",
+      "ejemplo": "un viernes, en el colectivo"
+     },
+     {
+      "concepto": "Ruido",
+      "definicion": "es cualquier interferencia que impide que el mensaje llegue bien, del canal o del código.",
+      "ejemplo": "un audio entrecortado"
+     }
+    ]
+   }
+  },
+  "2": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "La situación comunicativa",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Mensaje",
+        "items": [
+         {
+          "nombre": "El cartel",
+          "texto": "Cartel en la puerta de una farmacia: {{«Cerrado por inventario.|¿Quién? La farmacia. ¿A quién? A los clientes.}} {{Abrimos mañana a las 9»|¿Para qué? Para informar. ¿Dónde? En la puerta, donde lo ven quienes llegan.}}",
+          "cierre": "Las cuatro preguntas arman la situación comunicativa."
+         },
+         {
+          "nombre": "El audio",
+          "texto": "Audio de una abuela al nieto, un domingo a la mañana: {{«Hola, mi amor|¿A quién? A su nieto: por eso el tono cariñoso.}}, {{¿venís a comer los ravioles?»|¿Para qué? Para invitar, es decir, pedir algo.}}",
+          "cierre": "El tono cambia según a quién le hablamos."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "Leé la situación y elegí la respuesta.",
+        "items": [
+         {
+          "cons": "Un club publica en sus redes: «Inscripciones abiertas para fútbol infantil». ¿A quién va dirigido?",
+          "ops": [
+           "A familias con chicos que quieran jugar",
+           "A los jugadores profesionales del club",
+           "A los vecinos que se quejan del ruido"
+          ],
+          "ayuda": "Pensá quién puede inscribirse."
+         },
+         {
+          "cons": "Un mensaje dice «¡Perdón por llegar tarde!». ¿Para qué se escribió?",
+          "ops": [
+           "Para disculparse con alguien",
+           "Para informar el horario del tren",
+           "Para convencer de comprar algo"
+          ],
+          "ayuda": "Pensá qué busca quien lo escribe."
+         },
+         {
+          "cons": "La misma frase, «Ya está», la dice un médico al terminar una vacuna. ¿Qué significa en ese contexto?",
+          "ops": [
+           "Que la vacuna terminó",
+           "Que el paciente debe irse enojado",
+           "Que la vacuna no se pudo aplicar"
+          ],
+          "ayuda": "El contexto le da el sentido a la frase."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Situación comunicativa",
+        "texto": "La situación comunicativa es el conjunto de circunstancias en que se produce un texto: quién lo dice, a quién, dónde, cuándo y para qué."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "El contexto le da el sentido a lo que decimos: «¡qué genio!» puede ser un elogio o una burla según la situación. Por eso, para entender un texto, no alcanza con leer las palabras: hay que preguntarse en qué situación se produjo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "¿Quién habla y a quién?",
+         "¿Dónde y cuándo?",
+         "¿Para qué lo dice?"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La intención del texto",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Intención",
+        "items": [
+         {
+          "nombre": "Informar",
+          "texto": "{{Mañana llueve todo el día.|Da un dato: intención de informar.}}"
+         },
+         {
+          "nombre": "Pedir",
+          "texto": "{{¿Me prestás tu paraguas mañana?|Busca que el otro haga algo: pedir.}}"
+         },
+         {
+          "nombre": "Convencer",
+          "texto": "{{Mejor quedémonos: con lluvia el parque es un barrial.|Da una razón para que el otro piense igual: convencer.}}"
+         },
+         {
+          "nombre": "Expresar",
+          "texto": "{{¡Odio los días de lluvia!|Muestra un sentimiento: expresar.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué intención tiene cada texto?",
+        "cajas": [
+         "Informar",
+         "Pedir",
+         "Convencer",
+         "Expresar"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "El museo abre de martes a domingo.",
+          0
+         ],
+         [
+          "El agua hierve a cien grados.",
+          0
+         ],
+         [
+          "¿Me pasás la sal?",
+          1
+         ],
+         [
+          "Por favor, cerrá la puerta.",
+          1
+         ],
+         [
+          "Comprá esta zapatilla: dura el doble.",
+          2
+         ],
+         [
+          "Tenemos que reciclar, porque la basura no para de crecer.",
+          2
+         ],
+         [
+          "¡Estoy feliz de verte!",
+          3
+         ],
+         [
+          "Qué tristeza que te vayas.",
+          3
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Intención comunicativa",
+        "texto": "La intención comunicativa es lo que quien produce un texto busca lograr con él: informar, pedir, convencer o expresar lo que siente."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un mismo tema puede servir para cosas muy distintas: la lluvia puede ser un dato, un pedido, un argumento o una queja. Reconocer la intención ayuda a entender el texto y también a escribir mejor, porque cada intención pide una forma distinta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Informar: dar datos.",
+         "Pedir: que el otro haga algo. Convencer: que piense como vos.",
+         "Expresar: mostrar lo que sentís."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Adecuar el texto al contexto",
+      "ejemplo": {
+       "motor": "transformar",
+       "p": {
+        "items": [
+         {
+          "nombre": "A la profe",
+          "antes": "Che, no llego con la tarea, la mando mañana.",
+          "pasos": [
+           {
+            "v": "{{Hola, profe.}} No llego con la tarea, la mando mañana.",
+            "txt": "Un saludo adecuado al destinatario."
+           },
+           {
+            "v": "Hola, profe. {{No llego a terminar la tarea hoy. ¿Puedo enviarla mañana?}}",
+            "txt": "Se pide, no se impone."
+           },
+           {
+            "v": "Hola, profe. No llego a terminar la tarea hoy. ¿Puedo enviarla mañana? {{Gracias.}}",
+            "txt": "Un cierre cordial."
+           }
+          ],
+          "cierre": "Mismo mensaje, adecuado a la situación."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué mensaje es el adecuado para esta situación?",
+        "items": [
+         {
+          "cons": "Le escribís al club para preguntar el horario de natación.",
+          "ops": [
+           "Buenas tardes, quería consultar el horario de natación. Gracias.",
+           "Ey, ¿a qué hora es pile?",
+           "Natación horario ya."
+          ],
+          "ayuda": "Es una institución y no te conocen."
+         },
+         {
+          "cons": "Le avisás a tu mejor amiga que llegás tarde a la plaza.",
+          "ops": [
+           "Llego 10 min tarde, ¡esperame! 🙏",
+           "Estimada amiga: le informo que me retrasaré.",
+           "Por medio de la presente comunico mi demora."
+          ],
+          "ayuda": "Con una amiga, lo formal suena raro."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Adecuación",
+        "texto": "Adecuar un texto es elegir las palabras y el tono según a quién le hablamos y en qué situación, para que el mensaje cumpla su intención."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "No hay una forma correcta para todas las ocasiones: un mensaje informal es perfecto con un amigo y es un error con una institución. La pregunta que ordena todo es siempre la misma: ¿quién me va a leer y para qué le escribo?"
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Con desconocidos o instituciones: saludo, respeto y claridad.",
+         "Con amigos: más breve y relajado.",
+         "Siempre: que se entienda lo que querés."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Texto",
+      "definicion": "es toda unidad de comunicación completa, oral o escrita, que tiene una intención.",
+      "ejemplo": "un chat, un cartel, un cuento"
+     },
+     {
+      "concepto": "Situación comunicativa",
+      "definicion": "son las circunstancias de un texto: quién, a quién, dónde, cuándo y para qué.",
+      "ejemplo": "cartel de la farmacia para los clientes"
+     },
+     {
+      "concepto": "Intención comunicativa",
+      "definicion": "es lo que se busca lograr con el texto: informar, pedir, convencer o expresar.",
+      "ejemplo": "¿Me prestás tu paraguas? → pedir"
+     },
+     {
+      "concepto": "Adecuación",
+      "definicion": "es ajustar las palabras y el tono al destinatario y a la situación.",
+      "ejemplo": "Hola, profe… ¿Puedo enviarla mañana?"
+     }
+    ]
+   }
+  },
+  "3": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Funciones referencial y expresiva",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Mensaje",
+        "items": [
+         {
+          "nombre": "El frío",
+          "texto": "{{«Hoy la temperatura mínima fue de 2 grados.»|Referencial: informa un dato objetivo.}} {{«¡Me congelo, no siento los dedos!»|Expresiva: muestra lo que siente quien habla.}}",
+          "cierre": "Mismo tema, distinta función."
+         },
+         {
+          "nombre": "El partido",
+          "texto": "{{«Boca ganó 2 a 1.»|Referencial: el resultado.}} {{«¡Qué partidazo, estoy feliz!»|Expresiva: la emoción del hincha.}}",
+          "cierre": "La referencial informa; la expresiva siente."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Función referencial o expresiva?",
+        "cajas": [
+         "Referencial",
+         "Expresiva"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "La Luna tarda 28 días en dar la vuelta a la Tierra.",
+          0
+         ],
+         [
+          "El colectivo 60 pasa cada diez minutos.",
+          0
+         ],
+         [
+          "Córdoba tiene sierras.",
+          0
+         ],
+         [
+          "¡Qué miedo me dan las tormentas!",
+          1
+         ],
+         [
+          "Uf, estoy agotado.",
+          1
+         ],
+         [
+          "Me encanta este lugar.",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Función del lenguaje",
+        "texto": "Una función del lenguaje es el uso principal que se le da a un mensaje, según aquello en lo que se pone el foco: el tema, quien habla, quien escucha o el propio mensaje."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La función referencial pone el foco en el tema e informa de manera objetiva, por eso predomina en las noticias y en los textos de estudio. La expresiva pone el foco en quien habla: muestra emociones y opiniones, y suele tener exclamaciones y la primera persona."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Referencial: datos objetivos sobre el tema.",
+         "Expresiva: emociones de quien habla.",
+         "Pista expresiva: exclamaciones, «yo», «me»."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Funciones apelativa y poética",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Mensaje",
+        "items": [
+         {
+          "nombre": "Apelativa",
+          "texto": "{{«Lavate las manos antes de comer.»|Apelativa: busca que el receptor haga algo.}} {{«¿Me ayudás con la mudanza?»|También apelativa: un pedido.}}",
+          "cierre": "Foco en el receptor: órdenes, pedidos, consejos."
+         },
+         {
+          "nombre": "Poética",
+          "texto": "{{«Agua que no has de beber, déjala correr.»|Poética: el ritmo y la rima llaman la atención.}} {{«Mi casa es tu casa.»|Poética: la repetición hace que se recuerde.}}",
+          "cierre": "Foco en la forma del mensaje."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "Clasificá cada mensaje según su función principal.",
+        "cajas": [
+         "Referencial",
+         "Expresiva",
+         "Apelativa",
+         "Poética"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "El Paraná es uno de los ríos más largos de América.",
+          0
+         ],
+         [
+          "¡Qué emoción, me eligieron!",
+          1
+         ],
+         [
+          "No te olvides de cargar la SUBE.",
+          2
+         ],
+         [
+          "Respondé el formulario antes del viernes.",
+          2
+         ],
+         [
+          "Más vale pájaro en mano que cien volando.",
+          3
+         ],
+         [
+          "Lento, lento, viene el viento.",
+          3
+         ],
+         [
+          "Estoy tan cansada…",
+          1
+         ],
+         [
+          "El museo cierra a las 18.",
+          0
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Apelativa y poética",
+        "texto": "La función apelativa busca que el receptor haga, piense o sienta algo, y la poética llama la atención sobre la forma del mensaje: su ritmo, su sonido o sus imágenes."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La apelativa aparece en órdenes, pedidos, consejos y publicidades, muchas veces con verbos en imperativo. La poética no es solo de los poemas: también está en refranes, canciones, trabalenguas y eslóganes, que se recuerdan justamente por cómo suenan."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Apelativa: «hacé», «¿podés…?», publicidades.",
+         "Poética: rima, ritmo, repetición.",
+         "Refranes y eslóganes también son poéticos."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Funciones fática y metalingüística",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Diálogo",
+        "items": [
+         {
+          "nombre": "La videollamada",
+          "texto": "—{{¿Me escuchan? ¿Se ve la pantalla?|Fática: comprueba que el canal funcione.}} —Sí, profe. —Bien. {{¿Alguien sabe qué significa «inferir»?|Metalingüística: usa el idioma para hablar de una palabra.}}",
+          "cierre": "Una controla el canal; la otra habla del idioma."
+         },
+         {
+          "nombre": "El teléfono",
+          "texto": "—{{¿Hola? ¿Hola? ¿Estás ahí?|Fática: abre y verifica el contacto.}} —Sí. Che, {{¿«haber» va con hache?|Metalingüística: pregunta sobre la lengua.}}",
+          "cierre": "Funciones que usamos sin darnos cuenta."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué función predomina?",
+        "items": [
+         {
+          "cons": "«¿Se escucha bien? Si no, avísenme en el chat.»",
+          "ops": [
+           "Fática",
+           "Metalingüística",
+           "Poética"
+          ],
+          "ayuda": "Comprueba si el canal funciona."
+         },
+         {
+          "cons": "«\"Hiato\" es el encuentro de dos vocales que van en sílabas distintas.»",
+          "ops": [
+           "Metalingüística",
+           "Fática",
+           "Expresiva"
+          ],
+          "ayuda": "Usa el idioma para explicar un término del idioma."
+         },
+         {
+          "cons": "«Bueno… eh… ¿me seguís?»",
+          "ops": [
+           "Fática",
+           "Referencial",
+           "Apelativa"
+          ],
+          "ayuda": "Mantiene el contacto con quien escucha."
+         },
+         {
+          "cons": "«¿Cuál es el plural de \"lápiz\"?»",
+          "ops": [
+           "Metalingüística",
+           "Fática",
+           "Poética"
+          ],
+          "ayuda": "Pregunta sobre la lengua."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Fática y metalingüística",
+        "texto": "La función fática sirve para abrir, mantener o comprobar el contacto entre emisor y receptor, y la metalingüística usa el idioma para hablar del propio idioma."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La fática casi no transmite información: «¿hola?», «¿me escuchás?», «eh…» solo aseguran que el canal esté abierto. La metalingüística aparece cada vez que preguntamos qué significa una palabra o cómo se escribe. Un mensaje puede tener varias funciones, pero siempre hay una que predomina."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Fática: «¿hola?», «¿se escucha?».",
+         "Metalingüística: «¿qué significa…?», «¿lleva tilde?».",
+         "Siempre preguntate: ¿para qué se dijo?"
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Función referencial",
+      "definicion": "pone el foco en el tema e informa datos de manera objetiva.",
+      "ejemplo": "El colectivo pasa cada diez minutos."
+     },
+     {
+      "concepto": "Función expresiva",
+      "definicion": "pone el foco en quien habla y muestra sus emociones.",
+      "ejemplo": "¡Qué miedo me dan las tormentas!"
+     },
+     {
+      "concepto": "Función apelativa",
+      "definicion": "busca que el receptor haga, piense o sienta algo, con órdenes, pedidos o consejos.",
+      "ejemplo": "No te olvides de cargar la SUBE."
+     },
+     {
+      "concepto": "Función poética",
+      "definicion": "llama la atención sobre la forma del mensaje: ritmo, sonido o imágenes.",
+      "ejemplo": "Lento, lento, viene el viento."
+     },
+     {
+      "concepto": "Función fática",
+      "definicion": "abre, mantiene o comprueba el contacto entre quienes se comunican.",
+      "ejemplo": "¿Me escuchan?"
+     },
+     {
+      "concepto": "Función metalingüística",
+      "definicion": "usa el idioma para hablar del propio idioma, por ejemplo sobre palabras o reglas.",
+      "ejemplo": "¿«Haber» va con hache?"
+     }
+    ]
+   }
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Códigos verbales y no verbales",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Códigos",
+          "cols": [
+           "Código",
+           "Usa",
+           "Ejemplos"
+          ],
+          "filas": [
+           [
+            "Verbal oral",
+            "palabras habladas",
+            "un audio, una charla"
+           ],
+           [
+            "Verbal escrito",
+            "palabras escritas",
+            "un mail, un libro"
+           ],
+           [
+            "No verbal visual",
+            "imágenes, colores, formas",
+            "un semáforo, un ícono"
+           ],
+           [
+            "No verbal gestual",
+            "el cuerpo y la cara",
+            "un pulgar arriba, un guiño"
+           ],
+           [
+            "No verbal sonoro",
+            "sonidos",
+            "una sirena, un timbre"
+           ]
+          ],
+          "cierre": "Verbal = palabras; no verbal = cualquier otro signo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Qué código usa cada mensaje?",
+        "cajas": [
+         "Verbal",
+         "No verbal"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "un mensaje de texto",
+          0
+         ],
+         [
+          "una canción que escuchás",
+          0
+         ],
+         [
+          "una carta",
+          0
+         ],
+         [
+          "la luz roja del semáforo",
+          1
+         ],
+         [
+          "un aplauso",
+          1
+         ],
+         [
+          "la sirena de una ambulancia",
+          1
+         ],
+         [
+          "un guiño de ojo",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Código verbal",
+        "texto": "El código verbal usa palabras, habladas o escritas, mientras que el código no verbal comunica con otros signos, como imágenes, colores, gestos o sonidos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Los signos no verbales se entienden porque los aprendimos en nuestra cultura: el rojo del semáforo significa «pará» por un acuerdo, no por naturaleza. Por eso un gesto o un emoji puede significar cosas distintas en otro país."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Verbal: oral o escrito.",
+         "No verbal: visual, gestual o sonoro.",
+         "Los dos se aprenden en una cultura."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Textos mixtos",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Texto",
+        "items": [
+         {
+          "nombre": "El afiche",
+          "texto": "Afiche: {{un dibujo de una botella tachada|No verbal: la imagen ya dice «no».}} y {{la frase «Menos plástico, más planeta»|Verbal: explica y convence.}} {{en letras verdes|No verbal: el color se asocia con la naturaleza.}}.",
+          "cierre": "Los dos códigos juntos refuerzan el mensaje."
+         },
+         {
+          "nombre": "El chat",
+          "texto": "Mensaje: {{«Salimos a las 5»|Verbal: el dato.}} {{⚽🌳|No verbal: adónde y para qué.}} {{👍|No verbal: confirma.}}",
+          "cierre": "En los chats mezclamos códigos todo el tiempo."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "Leé el texto mixto y elegí la interpretación correcta.",
+        "items": [
+         {
+          "cons": "Cartel: dibujo de un perro con una bolsita y la frase «Tu perro, tu responsabilidad».",
+          "ops": [
+           "Pide que juntes lo que tu perro ensucia",
+           "Prohíbe los perros en la plaza",
+           "Vende bolsas para perros"
+          ],
+          "ayuda": "Uní la imagen con la frase."
+         },
+         {
+          "cons": "Mensaje: «¿Venís al cumple?» Respuesta: 😢🤒",
+          "ops": [
+           "No va porque está enfermo",
+           "Va pero llega tarde",
+           "Está feliz de ir"
+          ],
+          "ayuda": "Los emojis responden sin palabras."
+         },
+         {
+          "cons": "Señal: un rectángulo azul con una cama blanca dibujada, al costado de la ruta.",
+          "ops": [
+           "Hay un hotel o alojamiento cerca",
+           "Está prohibido dormir",
+           "Hay una mueblería"
+          ],
+          "ayuda": "Es un código visual que se aprende."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Texto mixto",
+        "texto": "Un texto mixto combina el código verbal con códigos no verbales, como imágenes, colores o sonidos, para comunicar un mensaje."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Afiches, publicidades, historietas, memes y videos son textos mixtos. Para entenderlos hay que leer las dos partes juntas: muchas veces la imagen dice algo que las palabras no dicen, o le cambia el sentido a la frase."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Afiches, memes, historietas, videos.",
+         "La imagen y la palabra se completan.",
+         "Leé siempre las dos partes juntas."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Código verbal",
+      "definicion": "es el que usa palabras, ya sea de forma oral o escrita.",
+      "ejemplo": "un audio, una carta"
+     },
+     {
+      "concepto": "Código no verbal",
+      "definicion": "comunica con signos que no son palabras: imágenes, colores, gestos o sonidos.",
+      "ejemplo": "el semáforo, un aplauso"
+     },
+     {
+      "concepto": "Signos culturales",
+      "definicion": "los signos no verbales se entienden por un acuerdo de cada cultura y pueden cambiar.",
+      "ejemplo": "🙏: gracias o por favor"
+     },
+     {
+      "concepto": "Texto mixto",
+      "definicion": "combina palabras con imágenes, colores o sonidos para comunicar un mismo mensaje.",
+      "ejemplo": "un afiche con dibujo y frase"
+     }
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "matching",
+    "p": "Situación: tu prima te manda un audio desde Mendoza contándote que nevó. Uní cada elemento.",
+    "o": {
+     "izquierda": [
+      "Emisor",
+      "Canal",
+      "Referente",
+      "Código"
+     ],
+     "derecha": [
+      "el español oral",
+      "la nevada",
+      "el celular",
+      "tu prima"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Emisor": "tu prima",
+      "Canal": "el celular",
+      "Referente": "la nevada",
+      "Código": "el español oral"
+     }
+    },
+    "e": "Cada elemento cumple una función.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Ruido del canal o del código?",
+    "o": {
+     "elementos": [
+      "Se corta la luz en medio de la clase online",
+      "El texto usa palabras en latín",
+      "Se escucha un eco que tapa la voz",
+      "El manual está en japonés"
+     ],
+     "categorias": [
+      "Canal",
+      "Código"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Se corta la luz en medio de la clase online": "Canal",
+      "El texto usa palabras en latín": "Código",
+      "Se escucha un eco que tapa la voz": "Canal",
+      "El manual está en japonés": "Código"
+     }
+    },
+    "e": "Medio físico o sistema de signos.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice: «En una carta, el canal es el español». ¿Qué le contestás?",
+    "o": [
+     "El español es el código; el canal es el papel",
+     "Tiene razón",
+     "El canal es quien la escribe"
+    ],
+    "r": {
+     "correcta": "El español es el código; el canal es el papel"
+    },
+    "e": "Código: sistema de signos; canal: medio.",
+    "n": "error"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Durante una videollamada, Juan pregunta: «¿Qué es una \"consigna\"?» y la profe se lo explica. ¿Qué ruido se resolvió?",
+    "o": [
+     "Un ruido del código",
+     "Un ruido del canal",
+     "No había ruido"
+    ],
+    "r": {
+     "correcta": "Un ruido del código"
+    },
+    "e": "Juan no conocía la palabra: el problema estaba en el código.",
+    "n": "analizar"
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "¿Qué intención tiene cada mensaje?",
+    "o": {
+     "elementos": [
+      "La biblioteca cierra a las 19.",
+      "¿Me ayudás con la valija?",
+      "Adoptá un perro: te va a cambiar la vida.",
+      "¡Estoy nerviosísima!"
+     ],
+     "categorias": [
+      "Informar",
+      "Pedir",
+      "Convencer",
+      "Expresar"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "La biblioteca cierra a las 19.": "Informar",
+      "¿Me ayudás con la valija?": "Pedir",
+      "Adoptá un perro: te va a cambiar la vida.": "Convencer",
+      "¡Estoy nerviosísima!": "Expresar"
+     }
+    },
+    "e": "Pensá qué busca cada uno.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "La frase «¡Qué inteligente!» dicha a alguien que acaba de chocar con una puerta, ¿qué sentido tiene?",
+    "o": [
+     "Es una burla: dice lo contrario",
+     "Es un elogio sincero",
+     "Es un pedido"
+    ],
+    "r": {
+     "correcta": "Es una burla: dice lo contrario"
+    },
+    "e": "El contexto le da el sentido a la frase.",
+    "n": "analizar"
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá las dos palabras que no son adecuadas en este mensaje a la directora: «Hola, che, quería pedirle una reunión, porfa».",
+    "o": {
+     "segmentos": [
+      "Hola,",
+      "che,",
+      "quería",
+      "pedirle",
+      "una",
+      "reunión,",
+      "porfa"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      1,
+      6
+     ]
+    },
+    "e": "Con una directora no van «che» ni «porfa».",
+    "n": "error"
+   },
+   {
+    "t": "keywords",
+    "p": "Escribí un mensaje para pedirle al club de tu barrio información sobre los horarios de básquet. Tiene que ser adecuado: saludo, pedido claro y despedida.",
+    "o": {
+     "ayuda": "Pensá quién te va a leer."
+    },
+    "r": {
+     "grupos": [
+      [
+       "hola",
+       "buenas",
+       "buen día",
+       "buenas tardes"
+      ],
+      [
+       "horario*"
+      ],
+      [
+       "gracias",
+       "saludos",
+       "atentamente"
+      ]
+     ],
+     "minimo": 3
+    },
+    "e": "Saludo, pedido claro y cierre cordial.",
+    "n": "aplicar"
+   }
+  ],
+  "3": [
+   {
+    "t": "classify",
+    "p": "¿Qué función predomina?",
+    "o": {
+     "elementos": [
+      "El Sol es una estrella.",
+      "¡Te extraño mucho!",
+      "Apagá la compu ya.",
+      "Tres tristes tigres tragaban trigo."
+     ],
+     "categorias": [
+      "Referencial",
+      "Expresiva",
+      "Apelativa",
+      "Poética"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El Sol es una estrella.": "Referencial",
+      "¡Te extraño mucho!": "Expresiva",
+      "Apagá la compu ya.": "Apelativa",
+      "Tres tristes tigres tragaban trigo.": "Poética"
+     }
+    },
+    "e": "Tema, emisor, receptor o forma.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada frase con su función.",
+    "o": {
+     "izquierda": [
+      "¿Me escuchás bien?",
+      "¿«Hay» lleva hache?",
+      "Llevá abrigo.",
+      "Hoy hay 30 grados."
+     ],
+     "derecha": [
+      "referencial",
+      "apelativa",
+      "metalingüística",
+      "fática"
+     ]
+    },
+    "r": {
+     "pares": {
+      "¿Me escuchás bien?": "fática",
+      "¿«Hay» lleva hache?": "metalingüística",
+      "Llevá abrigo.": "apelativa",
+      "Hoy hay 30 grados.": "referencial"
+     }
+    },
+    "e": "Pensá para qué se dijo cada una.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Sofía dice que «¿Hola? ¿Se corta?» tiene función apelativa porque es una pregunta. ¿Tiene razón?",
+    "o": [
+     "No: es fática, comprueba el canal",
+     "Sí: toda pregunta es apelativa",
+     "No: es poética"
+    ],
+    "r": {
+     "correcta": "No: es fática, comprueba el canal"
+    },
+    "e": "No pide que el otro haga algo: verifica el contacto.",
+    "n": "error"
+   },
+   {
+    "t": "multi_select",
+    "p": "El eslogan «Pensá verde, viví verde» repite palabras para que se recuerde y además invita a actuar. Elegí las DOS funciones que tiene.",
+    "o": [
+     "Poética",
+     "Apelativa",
+     "Referencial",
+     "Fática"
+    ],
+    "r": {
+     "correctas": [
+      "Poética",
+      "Apelativa"
+     ]
+    },
+    "e": "La repetición es poética; la invitación, apelativa.",
+    "n": "analizar"
+   }
+  ],
+  "4": [
+   {
+    "t": "classify",
+    "p": "Clasificá cada mensaje.",
+    "o": {
+     "elementos": [
+      "un audio de voz",
+      "un semáforo",
+      "un meme con imagen y frase",
+      "un pulgar arriba con la mano"
+     ],
+     "categorias": [
+      "Verbal",
+      "No verbal",
+      "Mixto"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "un audio de voz": "Verbal",
+      "un semáforo": "No verbal",
+      "un meme con imagen y frase": "Mixto",
+      "un pulgar arriba con la mano": "No verbal"
+     }
+    },
+    "e": "Palabras, otros signos o las dos cosas.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Cartel: un cigarrillo tachado con un círculo rojo. ¿Qué código usa y qué dice?",
+    "o": [
+     "No verbal visual: prohibido fumar",
+     "Verbal escrito: venta de cigarrillos",
+     "No verbal sonoro: alarma"
+    ],
+    "r": {
+     "correcta": "No verbal visual: prohibido fumar"
+    },
+    "e": "El círculo rojo tachado es un signo aprendido de prohibición.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un chico de otro país interpreta el gesto de «pulgar arriba» como un insulto. ¿Qué muestra eso?",
+    "o": [
+     "Que los signos no verbales dependen de la cultura",
+     "Que el chico no sabe comunicarse",
+     "Que los gestos no comunican nada"
+    ],
+    "r": {
+     "correcta": "Que los signos no verbales dependen de la cultura"
+    },
+    "e": "Los signos no verbales son acuerdos culturales.",
+    "n": "analizar"
+   },
+   {
+    "t": "keywords",
+    "p": "Describí un texto mixto que hayas visto hoy (un afiche, un meme, un cartel): qué dice con palabras y qué agrega la imagen o el color.",
+    "o": {
+     "ayuda": "Nombrá las dos partes."
+    },
+    "r": {
+     "grupos": [
+      [
+       "imagen",
+       "dibujo",
+       "foto",
+       "color",
+       "emoji"
+      ],
+      [
+       "dice",
+       "frase",
+       "palabra*",
+       "texto"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Un texto mixto se lee uniendo palabra e imagen.",
+    "n": "aplicar"
+   }
+  ],
+  "5": [
+   {
+    "t": "multiple_choice",
+    "p": "En «¿Me escuchan? Hoy vemos el circuito de la comunicación», ¿qué función tiene la primera pregunta?",
+    "o": [
+     "Fática",
+     "Apelativa",
+     "Expresiva"
+    ],
+    "r": {
+     "correcta": "Fática"
+    },
+    "e": "Comprueba el canal.",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "p": "Mandás un audio de WhatsApp a tu abuela. Clasificá cada cosa según su papel en el circuito.",
+    "o": {
+     "elementos": [
+      "el celular",
+      "el idioma español",
+      "internet",
+      "las palabras que usás"
+     ],
+     "categorias": [
+      "Canal",
+      "Código"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "el celular": "Canal",
+      "el idioma español": "Código",
+      "internet": "Canal",
+      "las palabras que usás": "Código"
+     }
+    },
+    "e": "Medio o sistema de signos.",
+    "n": "analizar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada situación con su intención.",
+    "o": {
+     "izquierda": [
+      "Un cartel de «Prohibido pasar»",
+      "Un parte meteorológico",
+      "Una publicidad de zapatillas",
+      "Un mensaje de «¡te quiero!»"
+     ],
+     "derecha": [
+      "expresar",
+      "convencer",
+      "informar",
+      "pedir u ordenar"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Un cartel de «Prohibido pasar»": "pedir u ordenar",
+      "Un parte meteorológico": "informar",
+      "Una publicidad de zapatillas": "convencer",
+      "Un mensaje de «¡te quiero!»": "expresar"
+     }
+    },
+    "e": "La intención es lo que se busca.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un afiche muestra una canilla goteando y dice «Cada gota cuenta». ¿Qué tipo de texto es y qué intención tiene?",
+    "o": [
+     "Mixto, para convencer de cuidar el agua",
+     "Verbal, para informar el precio del agua",
+     "No verbal, para expresar tristeza"
+    ],
+    "r": {
+     "correcta": "Mixto, para convencer de cuidar el agua"
+    },
+    "e": "Imagen y frase juntas, con intención de convencer.",
+    "n": "analizar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "matching",
+    "p": "Situación: la radio anuncia «Alerta por tormentas en Entre Ríos». Uní cada elemento.",
+    "o": {
+     "izquierda": [
+      "Emisor",
+      "Receptor",
+      "Canal",
+      "Referente"
+     ],
+     "derecha": [
+      "las tormentas",
+      "las ondas de radio",
+      "los oyentes",
+      "el locutor"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Emisor": "el locutor",
+      "Receptor": "los oyentes",
+      "Canal": "las ondas de radio",
+      "Referente": "las tormentas"
+     }
+    },
+    "e": "Cada elemento del circuito.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "Un médico le explica a un paciente su diagnóstico con palabras técnicas y el paciente no entiende. ¿Qué pasó?",
+    "o": [
+     "Hubo un ruido del código",
+     "Hubo un ruido del canal",
+     "Faltó el referente"
+    ],
+    "r": {
+     "correcta": "Hubo un ruido del código"
+    },
+    "e": "El paciente no comparte esas palabras.",
+    "n": "analizar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "true_false",
+    "p": "El canal es el sistema de signos que comparten emisor y receptor.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Ese es el código; el canal es el medio físico.",
+    "n": "recordar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "¿Qué intención tiene cada texto?",
+    "o": {
+     "elementos": [
+      "El tren a Tigre sale cada 15 minutos.",
+      "¿Podés bajar la música?",
+      "Elegí nuestra pizza: es la más rica del barrio.",
+      "¡Qué lindo día!"
+     ],
+     "categorias": [
+      "Informar",
+      "Pedir",
+      "Convencer",
+      "Expresar"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El tren a Tigre sale cada 15 minutos.": "Informar",
+      "¿Podés bajar la música?": "Pedir",
+      "Elegí nuestra pizza: es la más rica del barrio.": "Convencer",
+      "¡Qué lindo día!": "Expresar"
+     }
+    },
+    "e": "Lo que busca quien habla.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "multiple_choice",
+    "p": "¿Cuál es el mensaje adecuado para pedirle a la bibliotecaria de la escuela un libro?",
+    "o": [
+     "Buenos días, ¿tiene «La liga…»? Gracias.",
+     "Pasame el libro ese que tenés ahí.",
+     "Necesito el libro ya mismo, dámelo."
+    ],
+    "r": {
+     "correcta": "Buenos días, ¿tiene «La liga…»? Gracias."
+    },
+    "e": "Adecuado al destinatario y a la situación.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "La frase «Ya está» significa siempre lo mismo, sin importar la situación en que se dice.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "El contexto le da el sentido: terminar, aceptar, resignarse…",
+    "n": "analizar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "classify",
+    "p": "¿Qué función predomina?",
+    "o": {
+     "elementos": [
+      "El agua se congela a cero grados.",
+      "¡Qué susto me diste!",
+      "Cerrá la ventana.",
+      "Al que madruga, Dios lo ayuda."
+     ],
+     "categorias": [
+      "Referencial",
+      "Expresiva",
+      "Apelativa",
+      "Poética"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El agua se congela a cero grados.": "Referencial",
+      "¡Qué susto me diste!": "Expresiva",
+      "Cerrá la ventana.": "Apelativa",
+      "Al que madruga, Dios lo ayuda.": "Poética"
+     }
+    },
+    "e": "Para qué se dijo cada una.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "short_answer",
+    "p": "¿Qué función del lenguaje predomina en «¿Qué significa la palabra \"efímero\"?»?",
+    "r": {
+     "acepta": [
+      "metalingüística",
+      "metalinguistica",
+      "la metalingüística",
+      "funcion metalinguistica",
+      "función metalingüística"
+     ]
+    },
+    "e": "Usa el idioma para hablar del idioma.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice que la función poética solo aparece en los poemas. ¿Qué le contestás?",
+    "o": [
+     "También aparece en refranes, canciones y eslóganes",
+     "Tiene razón",
+     "Solo aparece en las noticias"
+    ],
+    "r": {
+     "correcta": "También aparece en refranes, canciones y eslóganes"
+    },
+    "e": "Donde la forma del mensaje llama la atención.",
+    "n": "error"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
+    "p": "¿Verbal, no verbal o mixto?",
+    "o": {
+     "elementos": [
+      "una carta escrita a mano",
+      "el timbre de la casa",
+      "una historieta",
+      "un saludo con la mano"
+     ],
+     "categorias": [
+      "Verbal",
+      "No verbal",
+      "Mixto"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "una carta escrita a mano": "Verbal",
+      "el timbre de la casa": "No verbal",
+      "una historieta": "Mixto",
+      "un saludo con la mano": "No verbal"
+     }
+    },
+    "e": "Palabras, otros signos o ambos.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Te mandan 🙏 después de que hiciste un favor. ¿Qué significa en ese contexto?",
+    "o": [
+     "Gracias",
+     "Por favor, ayudame",
+     "Estoy rezando"
+    ],
+    "r": {
+     "correcta": "Gracias"
+    },
+    "e": "El contexto define el sentido del signo.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "true_false",
+    "p": "Los signos no verbales significan lo mismo en todas las culturas.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Falso"
+    },
+    "e": "Son acuerdos culturales y pueden cambiar de un país a otro.",
+    "n": "recordar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Explicá con tus palabras por qué un meme es un texto mixto y qué hay que hacer para entenderlo.",
+    "o": {
+     "ayuda": "Nombrá los dos códigos."
+    },
+    "r": {
+     "grupos": [
+      [
+       "imagen",
+       "foto",
+       "dibujo"
+      ],
+      [
+       "palabra*",
+       "texto",
+       "frase",
+       "verbal"
+      ],
+      [
+       "junt*",
+       "las dos",
+       "ambos",
+       "combin*"
+      ]
+     ],
+     "minimo": 3
+    },
+    "e": "Combina imagen y palabras, y hay que leerlas juntas.",
+    "n": "aplicar"
+   }
+  ]
+ ],
+ "actualizar_preguntas": true
 }

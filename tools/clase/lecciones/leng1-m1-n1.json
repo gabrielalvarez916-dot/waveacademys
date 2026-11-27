@@ -2,229 +2,213 @@
  "slug": "leng1-m1-n1",
  "step_id": "766837fd-f800-48a1-b11f-57f3dc3c4e91",
  "materia": "Lengua y Literatura I",
- "titulo": "Lo que ya sé como lector",
+ "titulo": "El circuito de la comunicación",
  "sub": "Lengua y Literatura I · Misión 1 · Nivel 1",
  "escenas": [
   {
-   "t": "historia",
-   "personaje": {
-    "nombre": "Juan",
-    "emoji": "👦"
+   "t": "chat",
+   "contacto": {
+    "nombre": "Mamá",
+    "emoji": "👩"
    },
-   "lugar": "📦",
-   "lineas": [
-    "Ordenando la casa de su abuela, Juan encontró una caja llena de libros viejos.",
-    "Agarró uno sin ganas… y a las dos horas seguía leyendo.",
-    "Sin darse cuenta, usó todo lo que ya sabía para entenderlo."
-   ],
-   "titulo": "LO QUE YA SÉ",
-   "sub": "como lector",
-   "voz": [
-    "Ordenando la casa de su abuela, Juan encontró una caja llena de *libros viejos*.",
-    "Agarró uno sin ganas… y a las dos horas *seguía leyendo*.",
-    "Sin darse cuenta, usó un montón de cosas que *ya sabía* para entenderlo.",
-    "Hoy repasamos *lo que ya sabés como lector*."
-   ]
-  },
-  {
-   "t": "libro",
-   "titulo": "EL PARATEXTO",
-   "libro": {
-    "titulo": "El faro de los gatos",
-    "autor": "Ana Ríos",
-    "editorial": "Brújula",
-    "emoji": "🐈"
-   },
-   "partes": [
+   "mensajes": [
     {
-     "parte": "tapa",
-     "txt": "Tapa: título y autor"
+     "yo": false,
+     "txt": "¿Comiste?"
     },
     {
-     "parte": "contratapa",
-     "txt": "Contratapa: de qué trata"
+     "yo": true,
+     "txt": "Sí 👍"
     },
     {
-     "parte": "indice",
-     "txt": "Índice: los capítulos"
+     "yo": false,
+     "txt": "Bien. Llego a las 8"
     }
    ],
+   "titulo": "COMUNICARNOS",
+   "sub": "todo el tiempo",
    "voz": [
-    "Antes de leer la primera palabra, ya podés averiguar mucho.",
-    "La *tapa*: título, autor y una imagen.",
-    "La *contratapa*: un resumen de qué trata.",
-    "El *índice*: cómo está armado. Con eso podés *anticipar*."
+    "Mamá te escribe: *¿comiste?*",
+    "Vos contestás con un sí y un pulgar.",
+    "Ella avisa a qué hora llega.",
+    "En diez segundos se *comunicaron* dos personas. Hoy vemos cómo funciona eso."
    ]
   },
   {
    "t": "definicion",
+   "palabra": "Comunicación",
+   "texto": "Intercambio de información entre personas mediante un código que todos comparten.",
+   "emoji": "🔄",
    "voz": [
-    "Todo lo que rodea al texto se llama *paratexto*: tapa, contratapa, título, índice, imágenes.",
-    "Leerlo primero es como mirar el mapa antes de un viaje."
-   ],
-   "palabra": "Paratexto",
-   "texto": "Lo que acompaña al texto: tapa, contratapa, título, índice, imágenes",
-   "emoji": "📘"
-  },
-  {
-   "t": "pasos",
-   "titulo": "LEER EN TRES MOMENTOS",
-   "items": [
-    {
-     "txt": "Antes: anticipo con el paratexto",
-     "emoji": "🔮"
-    },
-    {
-     "txt": "Durante: me pregunto y deduzco",
-     "emoji": "🧐"
-    },
-    {
-     "txt": "Después: resumo y opino",
-     "emoji": "💬"
-    }
-   ],
-   "voz": [
-    "Un buen lector lee en *tres momentos*.",
-    "*Antes*: mira el paratexto y anticipa.",
-    "*Durante*: se hace preguntas y deduce lo que el texto no dice.",
-    "*Después*: resume con sus palabras y da su opinión."
+    "Comunicarse es *intercambiar información* entre personas.",
+    "Para que funcione, tienen que compartir un mismo *código*, como el idioma."
    ]
   },
   {
    "t": "flujo",
-   "titulo": "LA ESTRUCTURA DE UN RELATO",
+   "titulo": "EL CIRCUITO",
+   "items": [
+    "Emisor",
+    "Mensaje",
+    "Receptor"
+   ],
+   "voz": [
+    "El *emisor* es quien produce el mensaje: en el chat, tu mamá.",
+    "El *mensaje* es lo que se dice: ¿comiste?",
+    "El *receptor* es quien lo recibe e interpreta: vos."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "Y ADEMÁS…",
    "items": [
     {
-     "txt": "Situación inicial",
-     "emoji": "🏠"
+     "cab": "Código",
+     "txt": "el idioma español escrito"
     },
     {
-     "txt": "Conflicto",
-     "emoji": "⚡"
+     "cab": "Canal",
+     "txt": "el celular, por internet"
     },
     {
-     "txt": "Desenlace",
-     "emoji": "🏁"
+     "cab": "Referente",
+     "txt": "de qué se habla: la comida"
+    },
+    {
+     "cab": "Contexto",
+     "txt": "mediodía, ella en el trabajo"
     }
    ],
    "voz": [
-    "Casi todas las historias tienen tres partes. La *situación inicial*: quiénes son, dónde están, cómo viven.",
-    "El *conflicto*: algo pasa y rompe esa calma.",
-    "Y el *desenlace*: cómo se resuelve."
+    "Pero hay más elementos.",
+    "El *código*: el sistema de signos. Acá, el español escrito.",
+    "El *canal*: el medio físico por donde viaja. Acá, el celular.",
+    "El *referente*: de qué se habla. La comida.",
+    "Y el *contexto*: la situación. Es mediodía y ella está trabajando."
    ]
   },
   {
-   "t": "tabla",
-   "titulo": "UN EJEMPLO",
-   "columnas": [
-    "Parte",
-    "Qué pasa"
-   ],
-   "filas": [
-    [
-     "Situación inicial",
-     "Lara y su abuelo cuidan un faro"
-    ],
-    [
-     "Conflicto",
-     "Tormenta: el faro se apaga"
-    ],
-    [
-     "Desenlace",
-     "Lara enciende la luz a mano"
-    ]
-   ],
+   "t": "frase",
+   "texto": "¿Y si se corta internet?",
+   "emoji": "📵",
+   "color": "#F4B63F",
    "voz": [
-    "Un ejemplo.",
-    "*Situación inicial*: en un pueblo de la costa, Lara vive con su abuelo, el guardián del faro.",
-    "*Conflicto*: una noche de tormenta el faro se apaga, el abuelo está enfermo, y un barco se acerca a las rocas.",
-    "*Desenlace*: Lara sube los doscientos escalones y enciende la luz a mano, justo a tiempo."
+    "Ahora imaginá que justo se corta internet. ¿Qué pasa con el mensaje?"
    ]
   },
   {
-   "t": "comparar",
-   "a": {
-    "cab": "1.ª PERSONA",
-    "texto": "\"Subí los escalones temblando\"",
-    "emoji": "🙋"
-   },
-   "b": {
-    "cab": "3.ª PERSONA",
-    "texto": "\"Lara subió los escalones\"",
-    "emoji": "👀"
-   },
-   "signo": "vs",
+   "t": "definicion",
+   "palabra": "Ruido",
+   "texto": "Todo lo que interfiere y hace que el mensaje no llegue o llegue mal.",
+   "emoji": "📶",
    "voz": [
-    "¿Quién cuenta la historia? El *narrador*, que no es el autor.",
-    "En *primera persona*, el narrador es un personaje: subí los escalones temblando. Solo sabe lo que él vive.",
-    "En *tercera persona*, cuenta desde afuera: Lara subió los escalones. Si sabe todo, hasta lo que piensan los personajes, es *omnisciente*."
+    "Eso es un *ruido*: cualquier cosa que interfiere en la comunicación.",
+    "Puede ser técnico, como mala señal, o del código, como una palabra que no conocés."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "\"Al ver la carta, Tomás la guardó rápido y cambió de tema.\" ¿Qué inferís?",
-   "opciones": [
-    "No quiere que otros la lean",
-    "No sabe leer",
-    "La carta está en blanco"
+   "t": "clasificar",
+   "cajas": [
+    {
+     "cab": "Ruido del canal",
+     "emoji": "📶"
+    },
+    {
+     "cab": "Ruido del código",
+     "emoji": "🔤"
+    }
    ],
-   "correcta": 0,
+   "fichas": [
+    {
+     "txt": "audio cortado",
+     "caja": 0
+    },
+    {
+     "txt": "pantalla trabada",
+     "caja": 0
+    },
+    {
+     "txt": "otro idioma",
+     "caja": 1
+    },
+    {
+     "txt": "sigla rara",
+     "caja": 1
+    }
+   ],
    "voz": [
-    "Te toca leer entre líneas: al ver la carta, Tomás la guardó rápido y cambió de tema. ¿Qué inferís?",
-    "¿Que no quiere que otros la lean, que no sabe leer, o que la carta está en blanco?",
-    "Que *no quiere que otros la lean*: guardarla rápido y cambiar de tema muestra que esconde algo. Eso es *inferir*."
+    "Separemos: unos ruidos vienen del *canal* y otros del *código*.",
+    "Audio entrecortado o pantalla congelada: falla el canal.",
+    "Una palabra en otro idioma o una sigla desconocida: falla el código."
+   ]
+  },
+  {
+   "t": "vof",
+   "afirmacion": "En una videollamada, el emisor y el receptor nunca cambian de lugar.",
+   "emoji": "💻",
+   "verdadero": false,
+   "explicacion": "Se turnan: cuando contestás, pasás a ser emisor.",
+   "voz": [
+    "Verdadero o falso: en una videollamada, emisor y receptor nunca cambian.",
+    "Pensalo.",
+    "Falso: cuando vos respondés, pasás a ser *emisor*. Los papeles se turnan."
    ]
   },
   {
    "t": "errores",
-   "voz": [
-    "Errores típicos.",
-    "Empezar a leer *sin mirar* el paratexto.",
-    "Y confundir al *autor* con el *narrador*: el autor escribe; el narrador cuenta."
-   ],
    "items": [
     {
-     "mal": "Leer sin mirar la tapa",
-     "bien": "Anticipar primero"
+     "mal": "El canal es el idioma",
+     "bien": "El canal es el medio: celular, aire, papel"
     },
     {
-     "mal": "El autor es el narrador",
-     "bien": "El narrador cuenta"
+     "mal": "El referente es quien habla",
+     "bien": "El referente es de qué se habla"
     }
+   ],
+   "voz": [
+    "Dos confusiones típicas.",
+    "El canal no es el idioma: el idioma es el *código*; el canal es el medio.",
+    "Y el referente no es una persona: es el *tema* del mensaje."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Paratexto*: tapa, título, índice.",
-    "Leer en *tres momentos*: antes, durante y después.",
-    "*Estructura*: situación inicial, conflicto y desenlace.",
-    "Y el *narrador*, en primera o tercera persona.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "PARATEXTO",
-     "tapa, título, índice"
+     "Emisor y receptor",
+     "quien produce y quien interpreta"
     ],
     [
-     "3 MOMENTOS",
-     "antes, durante, después"
+     "Mensaje",
+     "lo que se dice"
     ],
     [
-     "ESTRUCTURA",
-     "inicio, conflicto, desenlace"
+     "Código y canal",
+     "el sistema de signos y el medio"
     ],
     [
-     "NARRADOR",
-     "1.ª o 3.ª persona"
+     "Referente y contexto",
+     "de qué se habla y en qué situación"
+    ],
+    [
+     "Ruido",
+     "lo que interfiere"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos el circuito.",
+    "Siete elementos y un enemigo.",
+    "Emisor y receptor.",
+    "El mensaje.",
+    "Código y canal.",
+    "Referente y contexto.",
+    "Y el ruido, que lo interrumpe. ¡A practicar!"
+   ]
   }
  ]
 }

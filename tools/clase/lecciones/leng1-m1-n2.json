@@ -2,251 +2,189 @@
  "slug": "leng1-m1-n2",
  "step_id": "e969a044-144e-4bab-afb6-eba01650594e",
  "materia": "Lengua y Literatura I",
- "titulo": "Mis géneros favoritos",
+ "titulo": "Texto y contexto",
  "sub": "Lengua y Literatura I · Misión 1 · Nivel 2",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Lu",
-    "emoji": "👧"
+   "t": "historia",
+   "personaje": {
+    "nombre": "Tomi",
+    "emoji": "👦"
    },
-   "mensajes": [
-    {
-     "yo": true,
-     "txt": "Recomendame algo para leer 📚"
-    },
-    {
-     "yo": false,
-     "txt": "¿De miedo, de detectives o de magia?"
-    },
-    {
-     "yo": true,
-     "txt": "Ni idea… ¿cuál es la diferencia? 🤔"
-    }
+   "lugar": "🏠",
+   "lineas": [
+    "Tomi escribe «¡qué genio!»",
+    "A su amigo, que hizo un gol.",
+    "Y a su hermano, que rompió la tele."
    ],
-   "titulo": "LOS GÉNEROS",
-   "sub": "encontrá tus favoritos",
+   "titulo": "LA MISMA FRASE",
+   "sub": "dos sentidos",
    "voz": [
-    "Marta le escribe a Lu: recomendame algo para leer.",
-    "Lu le contesta: ¿de miedo, de detectives o de magia?",
-    "Marta: ni idea… ¿cuál es la diferencia?",
-    "Hoy: *los géneros*, para encontrar tus favoritos."
+    "Tomi escribe *¡qué genio!*",
+    "Se lo manda a su amigo, que acaba de hacer un gol.",
+    "Y se lo manda a su hermano, que rompió la tele.",
+    "Mismas palabras, sentidos opuestos. ¿Qué cambió? El *contexto*."
    ]
   },
   {
    "t": "definicion",
+   "palabra": "Texto",
+   "texto": "Unidad de comunicación completa, oral o escrita, que tiene una intención y se entiende en una situación.",
+   "emoji": "📝",
    "voz": [
-    "Un *género* es una familia de textos que se parecen: en cómo están escritos y en lo que buscan.",
-    "Conocerlos te ayuda a elegir qué leer… y a saber qué esperar."
-   ],
-   "palabra": "Género",
-   "texto": "Familia de textos que se parecen en su forma y en lo que buscan",
-   "emoji": "🗂️"
-  },
-  {
-   "t": "matriz",
-   "titulo": "LAS GRANDES FAMILIAS",
-   "celdas": [
-    {
-     "cab": "NARRATIVO",
-     "txt": "cuenta una historia"
-    },
-    {
-     "cab": "POÉTICO",
-     "txt": "versos, ritmo y emociones"
-    },
-    {
-     "cab": "TEATRAL",
-     "txt": "diálogos para actuar"
-    },
-    {
-     "cab": "NO LITERARIO",
-     "txt": "informa o explica"
-    }
-   ],
-   "voz": [
-    "Las grandes familias.",
-    "*Narrativo*: cuenta una historia, como el cuento y la novela.",
-    "*Poético*: juega con versos, ritmo y emociones.",
-    "*Teatral*: diálogos escritos para ser actuados.",
-    "Y los *no literarios*: informan o explican, como la noticia o la enciclopedia."
+    "Un *texto* es cualquier unidad de comunicación completa, oral o escrita.",
+    "Un chat, un aviso o un cuento: todos son textos, porque buscan algo y se entienden en una situación."
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "SUBGÉNEROS NARRATIVOS",
-   "items": [
+   "t": "matriz",
+   "titulo": "LA SITUACIÓN COMUNICATIVA",
+   "celdas": [
     {
-     "cab": "MARAVILLOSO",
-     "txt": "magia, hadas, dragones"
+     "cab": "¿Quién?",
+     "txt": "el emisor"
     },
     {
-     "cab": "CIENCIA FICCIÓN",
-     "txt": "futuro y tecnología"
+     "cab": "¿A quién?",
+     "txt": "el destinatario"
     },
     {
-     "cab": "POLICIAL",
-     "txt": "un enigma y un detective"
+     "cab": "¿Dónde y cuándo?",
+     "txt": "el lugar y el momento"
     },
     {
-     "cab": "TERROR",
-     "txt": "busca dar miedo"
-    },
-    {
-     "cab": "REALISTA",
-     "txt": "hechos que podrían pasar"
+     "cab": "¿Para qué?",
+     "txt": "la intención"
     }
    ],
    "voz": [
-    "Dentro de las historias hay muchos mundos.",
-    "*Maravilloso*: magia, hadas y dragones.",
-    "*Ciencia ficción*: el futuro, naves y robots.",
-    "*Policial*: un enigma y un detective.",
-    "*Terror*: busca darte miedo.",
-    "*Realista*: lo que podría pasarte a vos."
+    "El contexto se arma con cuatro preguntas.",
+    "¿Quién habla?",
+    "¿A quién le habla?",
+    "¿Dónde y cuándo?",
+    "Y la más importante: *¿para qué?*"
    ]
   },
   {
    "t": "tabla",
-   "titulo": "HISTORIAS DE SIEMPRE",
+   "titulo": "INTENCIONES",
    "columnas": [
-    "Tipo",
-    "Qué tiene",
+    "Intención",
     "Ejemplo"
    ],
    "filas": [
     [
-     "Mito",
-     "dioses y el origen del mundo",
-     "Prometeo y el fuego"
+     "Informar",
+     "Mañana no hay clases"
     ],
     [
-     "Leyenda",
-     "origen de algo, lugar real",
-     "la yerba mate"
+     "Convencer",
+     "Votá por mi lista"
     ],
     [
-     "Fábula",
-     "animales y moraleja",
-     "la liebre y la tortuga"
+     "Pedir",
+     "¿Me prestás el cargador?"
     ],
     [
-     "Cuento",
-     "ficción breve",
-     "un cuento de terror"
+     "Expresar",
+     "¡Qué nervios tengo!"
     ]
    ],
    "voz": [
-    "Algunas historias vienen de muy lejos.",
-    "El *mito*: dioses y héroes que explican el origen del mundo.",
-    "La *leyenda*: explica el origen de algo, en un lugar real; como la leyenda de la yerba mate.",
-    "La *fábula*: animales que hablan y una *moraleja* al final.",
-    "Y el *cuento*: una ficción breve, de cualquier subgénero."
+    "Cada texto tiene una *intención*.",
+    "Informar: dar un dato.",
+    "Convencer: que el otro piense como vos.",
+    "Pedir: que el otro haga algo.",
+    "Expresar: mostrar lo que sentís."
    ]
   },
   {
-   "t": "clasificar",
+   "t": "comparar",
+   "a": {
+    "cab": "A la directora",
+    "texto": "Estimada directora: le escribo para solicitar…",
+    "emoji": "🏫"
+   },
+   "b": {
+    "cab": "A un amigo",
+    "texto": "Che, ¿me pasás la tarea?",
+    "emoji": "🧑"
+   },
+   "signo": "≠",
    "voz": [
-    "¿A qué subgénero pertenece?",
-    "Un dragón y un hechizo: *maravilloso*.",
-    "Robots en Marte: *ciencia ficción*.",
-    "Un robo y un detective: *policial*.",
-    "Un fantasma en el sótano: *terror*."
-   ],
-   "cajas": [
-    {
-     "cab": "MARAVILLOSO",
-     "emoji": "🐉"
-    },
-    {
-     "cab": "CIENCIA FICCIÓN",
-     "emoji": "🚀"
-    },
-    {
-     "cab": "POLICIAL",
-     "emoji": "🔍"
-    },
-    {
-     "cab": "TERROR",
-     "emoji": "👻"
-    }
-   ],
-   "fichas": [
-    {
-     "txt": "Dragón y hechizo",
-     "caja": 0
-    },
-    {
-     "txt": "Robots en Marte",
-     "caja": 1
-    },
-    {
-     "txt": "Robo y detective",
-     "caja": 2
-    },
-    {
-     "txt": "Fantasma en sótano",
-     "caja": 3
-    }
+    "Mismo pedido, distinto destinatario.",
+    "A la directora, un texto cuidado y respetuoso.",
+    "A un amigo, uno corto e informal. El contexto *cambia cómo escribimos*."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "Un relato del litoral explica por qué el hornero hace su nido de barro. ¿Qué es?",
+   "t": "dilema",
+   "situacion": "Le querés avisar a tu profe que no vas a poder entregar la tarea.",
+   "emoji": "✉️",
+   "a": {
+    "txt": "«ntp mañana la mando»",
+    "consecuencia": "no se entiende y suena descortés",
+    "emoji": "😬"
+   },
+   "b": {
+    "txt": "«Profe, no llego a entregarla hoy. ¿Puedo mandarla mañana?»",
+    "consecuencia": "se entiende y queda bien",
+    "emoji": "👍"
+   },
+   "voz": [
+    "Tenés que avisarle a tu profe que no llegás con la tarea.",
+    "Opción A: ntp mañana la mando. No se entiende y suena descortés.",
+    "Opción B: un mensaje claro y amable. Eso es *tener en cuenta el contexto*."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "«¿Me abrís la puerta?» ¿Qué intención tiene?",
    "opciones": [
-    "Leyenda",
-    "Mito",
-    "Fábula"
+    "Informar",
+    "Pedir",
+    "Expresar",
+    "Convencer"
    ],
-   "correcta": 0,
+   "correcta": 1,
    "voz": [
-    "Te toca: un relato del litoral cuenta *por qué el hornero* construye su nido de barro. ¿Qué es?",
-    "¿Leyenda, mito o fábula?",
-    "¡*Leyenda*! Explica el origen de algo de la naturaleza en un lugar real. No hay dioses creando el mundo ni una moraleja."
+    "Rápido: *¿me abrís la puerta?* ¿Qué intención tiene?",
+    "Pensá qué quiere lograr quien habla.",
+    "*Pedir*: quiere que el otro haga algo."
    ]
-  },
-  {
-   "t": "consejo",
-   "voz": [
-    "Truco: tené un género favorito, pero cada tanto *probá uno nuevo*. Muchos lectores descubren su libro preferido donde menos lo esperaban."
-   ],
-   "titulo": "PROBÁ UNO NUEVO",
-   "texto": "Tu próximo libro favorito puede estar en otro género",
-   "emoji": "🎲"
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "*Género*: una familia de textos.",
-    "*Familias*: narrativo, poético, teatral y no literario.",
-    "*Subgéneros*: maravilloso, ciencia ficción, policial, terror, realista.",
-    "Y las de siempre: *mito, leyenda y fábula*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "GÉNERO",
-     "familia de textos"
+     "Texto",
+     "unidad completa con intención"
     ],
     [
-     "FAMILIAS",
-     "narrativo, poético, teatral"
+     "Contexto",
+     "quién, a quién, dónde, cuándo"
     ],
     [
-     "SUBGÉNEROS",
-     "maravilloso, policial, terror…"
+     "Intención",
+     "informar, convencer, pedir, expresar"
     ],
     [
-     "DE SIEMPRE",
-     "mito, leyenda, fábula"
+     "Adecuarse",
+     "el contexto cambia cómo decimos"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Resumen.",
+    "Un texto es una unidad completa con una intención.",
+    "Texto.",
+    "Contexto.",
+    "Intención.",
+    "Y adecuarse: según el contexto, cambia cómo lo decimos."
+   ]
   }
  ]
 }

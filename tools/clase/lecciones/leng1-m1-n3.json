@@ -2,284 +2,198 @@
  "slug": "leng1-m1-n3",
  "step_id": "2c60844b-9366-4fd2-9030-09182b5a8160",
  "materia": "Lengua y Literatura I",
- "titulo": "Escribo mi punto de partida",
+ "titulo": "Funciones del lenguaje",
  "sub": "Lengua y Literatura I · Misión 1 · Nivel 3",
  "escenas": [
   {
    "t": "reto",
-   "texto": "¿Cuántas oraciones hay? \"Llegué tarde. Llovía y perdí el colectivo.\"",
+   "texto": "«¡Uy, qué frío!» ¿Para qué sirve esta frase?",
    "segundos": 5,
-   "respuesta": "Dos",
-   "emoji": "✍️",
-   "titulo": "ESCRIBIR",
-   "sub": "mi punto de partida",
+   "respuesta": "Para expresar lo que sentís",
+   "emoji": "🥶",
+   "titulo": "PARA QUÉ HABLAMOS",
+   "sub": "funciones",
    "voz": [
-    "Desafío: ¿cuántas oraciones hay en: llegué tarde. Llovía y perdí el colectivo? 5 segundos.",
-    "¡*Dos*! Cada oración empieza con mayúscula y termina en punto.",
-    "Hoy: *escribo mi punto de partida*."
-   ]
-  },
-  {
-   "t": "ciclo",
-   "titulo": "ESCRIBIR ES UN PROCESO",
-   "items": [
-    {
-     "txt": "Planificar",
-     "emoji": "🗒️"
-    },
-    {
-     "txt": "Escribir el borrador",
-     "emoji": "✍️"
-    },
-    {
-     "txt": "Revisar",
-     "emoji": "🔍"
-    },
-    {
-     "txt": "Pasar en limpio",
-     "emoji": "📄"
-    }
-   ],
-   "voz": [
-    "Nadie escribe bien de una. Escribir es un *proceso*.",
-    "*Planificar*: qué quiero decir y en qué orden.",
-    "Escribir un *borrador*, sin miedo a equivocarme.",
-    "*Revisar*: leer, corregir, mejorar.",
-    "Y *pasar en limpio*. Si hace falta, se vuelve a empezar."
-   ]
-  },
-  {
-   "t": "antesdespues",
-   "antes": {
-    "cab": "BORRADOR",
-    "emoji": "📝",
-    "texto": "desordenado, con errores"
-   },
-   "despues": {
-    "cab": "VERSIÓN FINAL",
-    "emoji": "📄",
-    "texto": "revisada y clara"
-   },
-   "voz": [
-    "El *primer borrador* casi nunca queda bien. No pasa nada: se relee y *se corrige*.",
-    "La *versión final* queda mucho mejor. Así escriben todos, hasta los escritores famosos."
+    "Reto: *¡uy, qué frío!* ¿Para qué sirve esta frase?",
+    "Cinco segundos.",
+    "Sirve para *expresar* lo que sentís. Esa es una función del lenguaje."
    ]
   },
   {
    "t": "definicion",
+   "palabra": "Función del lenguaje",
+   "texto": "Para qué se usa el lenguaje en un mensaje: informar, expresar, ordenar, jugar con las palabras…",
+   "emoji": "🎯",
    "voz": [
-    "Las ideas se ordenan en *párrafos*: cada párrafo desarrolla *una idea*.",
-    "Empieza con mayúscula, en otro renglón, y termina con punto y aparte."
-   ],
-   "palabra": "Párrafo",
-   "texto": "Grupo de oraciones sobre una misma idea; termina en punto y aparte",
-   "emoji": "📑"
-  },
-  {
-   "t": "parrafo",
-   "titulo": "UN PÁRRAFO, MARCADO",
-   "lineas": [
-    "Leo poco. Me cuesta concentrarme, pero",
-    "este año quiero leer más novelas,",
-    "sobre todo de misterio."
-   ],
-   "marcas": [
-    {
-     "linea": 0,
-     "pos": "sangria",
-     "txt": "sangría al empezar"
-    },
-    {
-     "linea": 0,
-     "pos": "inicio",
-     "txt": "mayúscula inicial"
-    },
-    {
-     "linea": 0,
-     "tras": "Leo poco.",
-     "txt": "punto seguido: otra oración"
-    },
-    {
-     "linea": 2,
-     "pos": "fin",
-     "txt": "punto y aparte: fin del párrafo"
-    }
-   ],
-   "voz": [
-    "Mirá un párrafo de verdad.",
-    "Empieza con una *sangría*: un pequeño espacio al principio.",
-    "La primera palabra va con *mayúscula*.",
-    "El *punto seguido* separa oraciones dentro del mismo párrafo.",
-    "Y el *punto y aparte* cierra el párrafo: la idea siguiente va en otro renglón."
+    "Una *función del lenguaje* es el uso que le damos en un mensaje.",
+    "Un mismo idioma sirve para informar, expresar, ordenar o jugar con las palabras."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "CONECTORES QUE UNEN IDEAS",
+   "t": "versus",
+   "a": {
+    "txt": "Referencial",
+    "emoji": "📊",
+    "datos": [
+     "informa datos",
+     "objetiva",
+     "«Hoy hace 3 grados»"
+    ]
+   },
+   "b": {
+    "txt": "Expresiva",
+    "emoji": "😍",
+    "datos": [
+     "muestra emociones",
+     "subjetiva",
+     "«¡Me muero de frío!»"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Mismo tema, distinta función",
+   "voz": [
+    "Cara a cara: la función *referencial*, que informa datos de manera objetiva.",
+    "Contra la *expresiva*, que muestra lo que siente quien habla.",
+    "Hoy hace tres grados, contra: ¡me muero de frío!",
+    "Mismo tema, distinta función."
+   ]
+  },
+  {
+   "t": "bloques",
+   "titulo": "DOS FUNCIONES MÁS",
    "items": [
     {
-     "txt": "Sumar: y, también, además",
-     "emoji": "🔹"
+     "cab": "Apelativa",
+     "txt": "busca que el otro haga algo: «Abrigate»"
     },
     {
-     "txt": "Oponer: pero, sin embargo",
-     "emoji": "🔸"
-    },
-    {
-     "txt": "Causa: porque, ya que",
-     "emoji": "🟣"
-    },
-    {
-     "txt": "Consecuencia: entonces, por eso",
-     "emoji": "🟡"
+     "cab": "Poética",
+     "txt": "juega con la forma: «Frío, frío, como el agua del río»"
     }
    ],
    "voz": [
-    "Para unir ideas usamos *conectores*.",
-    "Para *sumar*: y, también, además.",
-    "Para *oponer*: pero, sin embargo.",
-    "Para dar una *causa*: porque, ya que.",
-    "Para una *consecuencia*: entonces, por eso."
+    "Dos funciones más.",
+    "La *apelativa*: busca que el otro haga algo. Abrigate.",
+    "La *poética*: pone el foco en cómo suena y se ve el mensaje, como en las rimas y las canciones."
    ]
   },
   {
-   "t": "texto",
-   "oracion": "Leo poco, pero quiero leer más.",
-   "marcas": [
-    {
-     "desde": 0,
-     "hasta": 1,
-     "etiqueta": "cómo soy hoy",
-     "color": "#C3A8FF"
-    },
-    {
-     "desde": 2,
-     "hasta": 2,
-     "etiqueta": "conector",
-     "color": "#F4B63F"
-    },
-    {
-     "desde": 3,
-     "hasta": 5,
-     "etiqueta": "lo que quiero",
-     "color": "#8be38f"
-    }
-   ],
-   "voz": [
-    "Mirá esta oración de un texto de punto de partida.",
-    "*Leo poco*: cómo soy hoy como lector.",
-    "*Pero*: el conector que opone las dos ideas.",
-    "*Quiero leer más*: lo que quiero lograr este año."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "MI TEXTO DE PUNTO DE PARTIDA",
+   "t": "bloques",
+   "titulo": "Y DOS QUE PASAN DESAPERCIBIDAS",
    "items": [
     {
-     "txt": "Quién soy como lector",
-     "emoji": "🙋"
+     "cab": "Fática",
+     "txt": "abre o controla el canal: «¿Me escuchás?»"
     },
     {
-     "txt": "Un libro que me gustó y por qué",
-     "emoji": "❤️"
-    },
-    {
-     "txt": "Qué me cuesta al leer o escribir",
-     "emoji": "🧗"
-    },
-    {
-     "txt": "Qué quiero lograr este año",
-     "emoji": "🎯"
+     "cab": "Metalingüística",
+     "txt": "habla del idioma: «¿Frío lleva tilde?»"
     }
    ],
    "voz": [
-    "Tu texto de punto de partida tiene *cuatro párrafos*.",
-    "Uno: *quién sos* como lector.",
-    "Dos: un libro o una historia que *te gustó*, y por qué.",
-    "Tres: qué te *cuesta* al leer o al escribir.",
-    "Cuatro: qué querés *lograr* este año."
+    "Y dos que usamos sin darnos cuenta.",
+    "La *fática*: sirve para abrir o comprobar el canal. ¿Me escuchás? en una videollamada.",
+    "La *metalingüística*: usa el idioma para hablar del idioma. ¿Frío lleva tilde?"
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "Estudié toda la semana; ___, me fue mal en la prueba.",
-   "opciones": [
-    "sin embargo",
-    "por eso",
-    "además"
-   ],
-   "correcta": 0,
+   "t": "datoloco",
+   "texto": "Un mismo mensaje puede tener varias funciones a la vez, pero siempre hay una que manda.",
+   "emoji": "🤯",
    "voz": [
-    "Te toca: estudié toda la semana; ___, me fue mal en la prueba. ¿Qué conector va?",
-    "¿Sin embargo, por eso, o además?",
-    "*Sin embargo*: el resultado es lo contrario de lo esperado. Por eso indicaría que estudiar causó el mal resultado."
+    "¿Sabías que un mensaje puede tener varias funciones a la vez?",
+    "Pero siempre hay una que *predomina*: la que explica para qué se dijo."
+   ]
+  },
+  {
+   "t": "unir",
+   "titulo": "UNÍ",
+   "pares": [
+    [
+     "«El tren sale a las 9»",
+     "referencial"
+    ],
+    [
+     "«¡Qué alegría verte!»",
+     "expresiva"
+    ],
+    [
+     "«Apagá la luz»",
+     "apelativa"
+    ],
+    [
+     "«¿Hola? ¿Se corta?»",
+     "fática"
+    ]
+   ],
+   "voz": [
+    "Ahora uní cada frase con su función.",
+    "El tren sale a las nueve: informa, *referencial*.",
+    "Qué alegría verte: *expresiva*.",
+    "Apagá la luz: *apelativa*.",
+    "¿Se corta?: controla el canal, *fática*."
    ]
   },
   {
    "t": "errores",
-   "voz": [
-    "Errores típicos.",
-    "Escribir oraciones *larguísimas*, sin un solo punto.",
-    "Empezar *sin mayúscula*.",
-    "Y repetir *y entonces, y entonces*: mejor variar los conectores."
-   ],
    "items": [
     {
-     "mal": "Todo en una oración",
-     "bien": "Oraciones cortas"
+     "mal": "Toda pregunta es apelativa",
+     "bien": "«¿Me escuchás?» es fática: controla el canal"
     },
     {
-     "mal": "empezar en minúscula",
-     "bien": "Mayúscula inicial"
-    },
-    {
-     "mal": "y entonces, y entonces",
-     "bien": "Variar conectores"
+     "mal": "Solo los poemas tienen función poética",
+     "bien": "También los eslóganes y las canciones"
     }
-   ]
-  },
-  {
-   "t": "consejo",
-   "titulo": "TU TURNO",
-   "texto": "Escribí tu texto de punto de partida, en cuatro párrafos",
-   "emoji": "✍️",
+   ],
    "voz": [
-    "Ahora te toca a vos: escribí tu *texto de punto de partida*, en los cuatro párrafos que vimos. Lo escribís en las *actividades* de este nivel, y el tutor te lo corrige con pistas."
+    "Ojo con dos errores.",
+    "No toda pregunta es apelativa: ¿me escuchás? es *fática*.",
+    "Y la poética no es solo de los poemas: aparece en eslóganes y canciones."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "Escribir es un *proceso*: planificar, escribir y revisar.",
-    "Cada *párrafo*, una idea.",
-    "Los *conectores* unen ideas.",
-    "Y tu *punto de partida*: cuatro párrafos sobre vos como lector.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "PROCESO",
-     "planificar, escribir, revisar"
+     "Referencial",
+     "informa"
     ],
     [
-     "PÁRRAFO",
-     "una idea, punto y aparte"
+     "Expresiva",
+     "muestra emociones"
     ],
     [
-     "CONECTORES",
-     "y, pero, porque, por eso"
+     "Apelativa",
+     "busca que el otro haga algo"
     ],
     [
-     "MI TEXTO",
-     "4 párrafos sobre mí"
+     "Poética",
+     "juega con la forma"
+    ],
+    [
+     "Fática",
+     "controla el canal"
+    ],
+    [
+     "Metalingüística",
+     "habla del idioma"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Las seis funciones.",
+    "Siempre preguntate: *¿para qué se dijo?*",
+    "Referencial.",
+    "Expresiva.",
+    "Apelativa.",
+    "Poética.",
+    "Fática.",
+    "Y metalingüística. ¡A practicar!"
+   ]
   }
  ]
 }
