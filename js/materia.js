@@ -236,7 +236,7 @@
     if (p.pdf && D.interactiva && D.interactiva[l.id]) r.push('leccion'); // lección interactiva en lugar del PDF
     else if (p.pdf && p.pdf.tiene) r.push('pdf');
     // Paso a paso como paso del nivel: oculto (lo reemplaza la lección interactiva). Las filas step_by_step siguen en Supabase por si se quiere volver. // Paso a paso (solo en las lecciones que tienen ese paso en Supabase): después del PDF y antes de la carpeta
-    if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length && !(D.interactiva && D.interactiva[l.id])) r.push('carpeta'); // con lección interactiva el PDF (y su carpeta) va a Recursos
+    if (p.pdf && p.pdf.tiene && p.pdf.carpeta.length) r.push('carpeta');
     if (p.final && p.final.tiene) r.push('final');
     return r;
   }
