@@ -44,7 +44,7 @@
     [
      "Personales",
      "nombran a las personas",
-     "yo, vos, ella, nosotros, lo, me"
+     "yo, vos, ella, lo"
     ],
     [
      "Posesivos",
@@ -147,7 +147,7 @@
   },
   {
    "t": "vof",
-   "afirmacion": "En «Me lo dijo», «me» y «lo» son pronombres personales.",
+   "afirmacion": "En «Me lo dijo», «me» y «lo» son pronombres.",
    "emoji": "💬",
    "verdadero": true,
    "explicacion": "Son formas de los pronombres personales que van pegadas al verbo.",
@@ -161,12 +161,12 @@
    "t": "errores",
    "items": [
     {
-     "mal": "Usar un pronombre sin saber a quién se refiere",
-     "bien": "«Juan y Pedro vinieron; él trajo…»: ¿quién? Aclaralo"
+     "mal": "Un pronombre ambiguo",
+     "bien": "Aclarar a quién se refiere"
     },
     {
      "mal": "«Madre y hija»",
-     "bien": "«Madre e hija»: antes del sonido i, la y cambia por e"
+     "bien": "«Madre e hija»"
     }
    ],
    "voz": [
