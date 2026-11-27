@@ -5,39 +5,35 @@ Si la misión tiene libro, el libro va en el nivel 5 «Libro: …» (solo activi
 Mito, leyenda, teatro, poesía y cuentos breves: sin libro, la lección trabaja con fragmentos de obras reconocidas.
 Estas misiones llevan **clase animada nueva** (la actual está hecha sobre el libro o como taller de escritura).
 
-## Nivel Avanzado (secundaria)
+## Nivel Avanzado (secundaria) · estructura aprobada el 26/11/2026
+Un género por misión, sin repetir en la secundaria ni repetir lo que ya ve primaria (mitos, leyendas, poesía general, teatro general,
+aventuras, policial de enigma, fantástico, suspenso). Poesía: 2 misiones. Teatro: 2. Títulos ya cambiados en la base (respaldo en private.respaldo_titulos_20261126).
 
-| Materia | Misión actual | Género que enseña | Libro del nivel |
+| Materia | Misión | Género | Libro del nivel |
 |---|---|---|---|
-| Lengua I | 2 El cuento policial | Policial (enigma y negro) | La liga de los pelirrojos (Doyle) |
-| Lengua I | 6 El fantasma de Canterville, 1.ª parte | Relato fantástico y humorístico | El fantasma de Canterville (Wilde) |
-| Lengua I | 9 El fantasma de Canterville, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua I | 11 La poesía | Poesía | fragmentos |
-| Lengua I | 17 Teatro para leer y representar | Teatro | fragmentos |
-| Lengua II | 1 El humor: ironía, parodia y sátira | Humor literario | fragmentos |
-| Lengua II | 2 Cuentos de terror | Terror | a definir |
-| Lengua II | 3 Quiroga y sus cuentos | Cuento realista / de la naturaleza | Cuentos de Quiroga |
-| Lengua II | 6 Frankenstein, 1.ª parte | Novela gótica / ciencia ficción | Frankenstein (Shelley, adaptado) |
-| Lengua II | 9 Frankenstein, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua II | 15 Ciencia ficción | Ciencia ficción | fragmentos |
-| Lengua III | 3 Cuentos latinoamericanos | Realismo mágico y fantástico | fragmentos |
-| Lengua III | 6 Martín Fierro, 1.ª parte | Gauchesca | Martín Fierro (Hernández) |
-| Lengua III | 9 Martín Fierro, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua III | 13 Poesía de ayer y hoy | Poesía | fragmentos |
-| Lengua III | 15 Tragedia y teatro isabelino | Tragedia | fragmentos |
-| Lengua IV | 3 Borges y Cortázar | Cuento fantástico | fragmentos |
-| Lengua IV | 6 La metamorfosis, 1.ª parte | Lo absurdo / literatura del siglo XX | La metamorfosis (Kafka) |
-| Lengua IV | 9 La metamorfosis, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua IV | 11 Poesía del siglo XX | Poesía de vanguardia | fragmentos |
-| Lengua IV | 15 Lectura de ensayos breves | Ensayo | fragmentos |
-| Lengua V | 2 Literatura argentina del siglo XIX | Romanticismo argentino | fragmentos |
-| Lengua V | 3 El Quijote, 1.ª parte | Novela de caballería y parodia | El Quijote (selección) |
-| Lengua V | 6 El Quijote, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua V | 7 Realismo y naturalismo | Realismo | fragmentos |
-| Lengua V | 11 Poesía simbolista y vanguardista | Modernismo y vanguardia | fragmentos |
-| Lengua VI | 2 Narrativa argentina del siglo XX | Narrativa urbana y testimonial | fragmentos |
-| Lengua VI | 3 El túnel, 1.ª parte | Novela psicológica | El túnel (Sabato) — tiene derechos: Gabriel elige la edición |
-| Lengua VI | 6 El túnel, 2.ª parte | (se reemplaza: mismo libro en dos misiones) | — |
-| Lengua VI | 9 Poesía contemporánea | Poesía | fragmentos |
+| Lengua I | 2 | El policial: del enigma al negro | La liga de los pelirrojos |
+| Lengua I | 6 | Parodia y humor literario | El fantasma de Canterville |
+| Lengua I | 9 | La épica y sus héroes | fragmentos |
+| Lengua I | 11 | La ciencia ficción | fragmentos |
+| Lengua II | 2 | Terror y novela gótica | Frankenstein |
+| Lengua II | 3 | El cuento realista (Quiroga adulto) | fragmentos |
+| Lengua II | 6 | Microrrelato y cuento breve | fragmentos |
+| Lengua III | 3 | El realismo mágico | fragmentos |
+| Lengua III | 6 | La gauchesca y la poesía popular (poesía 1/2) | Martín Fierro |
+| Lengua III | 15 | La tragedia (teatro 1/2) | fragmentos |
+| Lengua IV | 3 | El fantástico moderno | fragmentos |
+| Lengua IV | 6 | Lo absurdo | La metamorfosis |
+| Lengua IV | 11 | Las vanguardias poéticas (poesía 2/2) | fragmentos |
+| Lengua IV | 15 | El ensayo literario | fragmentos |
+| Lengua V | 2 | El romanticismo | fragmentos |
+| Lengua V | 3 | La novela de caballería y el nacimiento de la novela | El Quijote |
+| Lengua V | 7 | Realismo y naturalismo | fragmentos |
+| Lengua V | 11 | El grotesco criollo (teatro 2/2) | fragmentos |
+| Lengua VI | 2 | No ficción y testimonio | fragmentos |
+| Lengua VI | 3 | La novela psicológica | El túnel (Gabriel elige la edición) |
+| Lengua VI | 6 | La distopía | fragmentos |
 
-Pendiente de decidir: misiones de primaria (Nivel Medio) armadas sobre un libro (La Cenicienta, El mago de Oz, Alicia, Tom Sawyer, Cuentos de la selva, Cuentos de misterio…).
+Lugares que quedan libres (antes eran 2.ª parte de libro, poesía o teatro repetidos): Lengua I 17 · Lengua II 1, 9, 15 · Lengua III 9, 13 · Lengua IV 9 · Lengua V 6 · Lengua VI 9.
+Misiones de taller de escritura a revisar con el mismo criterio (estudiante, no escritor): Lengua III 19, Lengua IV 19, Lengua VI 17.
+
+Pendiente de decidir: misiones de primaria (Nivel Medio) armadas sobre un libro.
