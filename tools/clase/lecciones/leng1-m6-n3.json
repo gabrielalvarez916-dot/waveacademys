@@ -2,199 +2,194 @@
  "slug": "leng1-m6-n3",
  "step_id": "0505a6fd-24ea-4323-9560-fc64e1ae3d6e",
  "materia": "Lengua y Literatura I",
- "titulo": "Humor e ironía",
+ "titulo": "La parodia",
  "sub": "Lengua y Literatura I · Misión 6 · Nivel 3",
  "escenas": [
   {
-   "t": "chat",
-   "contacto": {
-    "nombre": "Lu",
-    "emoji": "👧"
-   },
-   "mensajes": [
-    {
-     "yo": false,
-     "txt": "Un fantasma aparece y le ofrecen aceite 😂"
-    },
-    {
-     "yo": true,
-     "txt": "¿Aceite? ¿Para qué?"
-    },
-    {
-     "yo": false,
-     "txt": "Para sus cadenas ruidosas"
-    }
-   ],
-   "titulo": "HUMOR E IRONÍA",
-   "sub": "lo esperado y lo que pasa",
+   "t": "noticia",
+   "cinta": "INSÓLITO",
+   "titular": "Un fantasma pide que no lo asusten",
+   "bajada": "La familia nueva le ofreció aceite para sus cadenas",
+   "emoji": "👻",
+   "titulo": "LA PARODIA",
+   "sub": "imitar para burlarse",
    "voz": [
-    "Lu le cuenta a Juan que a un fantasma le ofrecen aceite.",
-    "Juan: ¿aceite? ¿Para qué?",
-    "Lu: para sus cadenas ruidosas.",
-    "Hoy: *humor e ironía*."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Ironía",
-   "texto": "Lo que ocurre es lo contrario de lo esperado",
-   "emoji": "🎭",
-   "voz": [
-    "La *ironía* muestra lo contrario de lo esperado.",
-    "Sirve para burlarse o señalar algo."
-   ]
-  },
-  {
-   "t": "unir",
-   "titulo": "ESPERADO Y REAL",
-   "pares": [
-    [
-     "FAMILIA ATERRADA",
-     "Le ofrecen aceite"
-    ],
-    [
-     "FANTASMA IMPONENTE",
-     "Se siente ridículo"
-    ],
-    [
-     "MISTERIO",
-     "Producto de limpieza"
-    ]
-   ],
-   "mezclar": false,
-   "voz": [
-    "El contraste.",
-    "Se espera una familia *aterrada*: le ofrecen *aceite*.",
-    "Se espera un fantasma *imponente*: se siente *ridículo*.",
-    "Se espera *misterio*: usan un *producto de limpieza*."
+    "Insólito: un fantasma se queja de que la familia nueva del castillo no le tiene miedo.",
+    "Y encima, le ofrecieron aceite para que sus cadenas no hagan ruido.",
+    "Conocemos tanto las historias de fantasmas que, cuando se dan vuelta, nos reímos. Eso es una *parodia*."
    ]
   },
   {
    "t": "definicion",
    "palabra": "Parodia",
-   "texto": "Imitar un género para burlarse",
-   "emoji": "🎪",
+   "texto": "Imitación burlesca de una obra, un estilo o un género conocido, que copia su forma pero cambia el tono para hacer reír.",
+   "emoji": "🎭",
    "voz": [
-    "Una *parodia* imita un género para burlarse de él.",
-    "El cuento parodia el *género gótico*."
+    "Una *parodia* imita una obra, un estilo o un género conocido.",
+    "Copia su forma, pero cambia el tono: lo que era serio se vuelve ridículo."
    ]
   },
   {
-   "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
-   "items": [
+   "t": "versus",
+   "a": {
+    "txt": "Relato de fantasmas",
+    "emoji": "🏚️",
+    "datos": [
+     "castillo oscuro",
+     "el fantasma asusta",
+     "los vivos huyen"
+    ]
+   },
+   "b": {
+    "txt": "Su parodia",
+    "emoji": "😂",
+    "datos": [
+     "el mismo castillo",
+     "la familia asusta al fantasma",
+     "el fantasma huye"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Misma forma, tono invertido",
+   "voz": [
+    "Compará. En el relato de fantasmas tradicional hay un castillo oscuro, el fantasma asusta y los vivos huyen.",
+    "En la parodia, el castillo es el mismo, pero la familia asusta al fantasma, y el que huye es él.",
+    "La forma se mantiene; lo que se invierte es el *tono*.",
+    "Por eso para disfrutar una parodia hay que conocer el original."
+   ]
+  },
+  {
+   "t": "historieta",
+   "titulo": "UNA ESCENA PARÓDICA",
+   "vinetas": [
     {
-     "cab": "HUMOR",
-     "txt": "Aceite para cadenas, Almohadas"
+     "emojis": [
+      "👻",
+      "⛓️"
+     ],
+     "txt": "¡Uuuh! ¡Temblad, mortales!",
+     "quien": "Fantasma"
     },
     {
-     "cab": "TERROR",
-     "txt": "Mancha de sangre"
+     "emojis": [
+      "🧒",
+      "🧴"
+     ],
+     "txt": "Señor, ¿quiere aceite para esas cadenas?",
+     "quien": "Niño"
+    },
+    {
+     "emojis": [
+      "👻",
+      "😤"
+     ],
+     "txt": "¡Esto es una falta de respeto!",
+     "quien": "Fantasma"
     }
    ],
    "voz": [
-    "¿Qué produce humor?",
-    "*Aceite para cadenas* y *almohadas*: humor.",
-    "*La mancha de sangre* sería terror."
+    "Mirá la escena. El fantasma aparece arrastrando cadenas y grita con voz terrorífica.",
+    "Un nene, sin miedo, le ofrece aceite para que las cadenas no rechinen.",
+    "Y el fantasma se ofende. Todos los elementos del terror están, pero dados vuelta."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "EXPLICAR",
-   "items": [
-    {
-     "txt": "Se espera miedo y reacciona con practicidad.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Trata el terror como un problema común.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Esa distancia entre lo esperado y lo que pasa produce humor e ironía.",
-     "emoji": "3️⃣"
-    }
+   "t": "tabla",
+   "titulo": "CÓMO SE ARMA UNA PARODIA",
+   "columnas": [
+    "Recurso",
+    "Qué hace"
+   ],
+   "filas": [
+    [
+     "Imitar",
+     "copia la forma del original"
+    ],
+    [
+     "Exagerar",
+     "agranda sus rasgos típicos"
+    ],
+    [
+     "Invertir",
+     "da vuelta lo esperado"
+    ]
    ],
    "voz": [
-    "Resolvamos un caso: ¿Por qué resulta gracioso que el señor Otis ofrezca aceite al fantasma?",
-    "Se espera miedo y reacciona con practicidad.",
-    "Trata el terror como un problema común.",
-    "Esa distancia entre lo esperado y lo que pasa produce humor e ironía."
+    "Tres recursos arman una parodia.",
+    "*Imitar*: copiar la forma reconocible del original.",
+    "*Exagerar*: agrandar sus rasgos típicos hasta volverlos ridículos.",
+    "*Invertir*: dar vuelta lo que el lector espera."
    ]
   },
   {
-   "t": "consejo",
-   "texto": "Para encontrar la ironía, compará lo que se espera con lo que ocurre.",
-   "emoji": "💡",
+   "t": "prediccion",
+   "pregunta": "Alguien que nunca leyó un cuento de caballeros lee una parodia de caballeros. ¿La disfruta igual?",
+   "a": {
+    "txt": "Sí, igual",
+    "emoji": "😄"
+   },
+   "b": {
+    "txt": "Se pierde gran parte",
+    "emoji": "🤷"
+   },
+   "correcta": "b",
+   "resultado": "Sin conocer el original, no reconoce qué se imita ni qué se da vuelta.",
    "voz": [
-    "Un consejo: Para encontrar la ironía, compará lo que se espera con lo que ocurre."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "Imitar un género para burlarse de él es una…",
-   "opciones": [
-    "Parodia",
-    "Fábula",
-    "Biografía"
-   ],
-   "correcta": 0,
-   "voz": [
-    "Te toca: imitar un género para burlarse de él.",
-    "¿Parodia, fábula o biografía?",
-    "Una *parodia*."
+    "¿Qué creés? Alguien que nunca leyó historias de caballeros lee una parodia de caballeros. ¿La disfruta igual?",
+    "Pensalo.",
+    "Se pierde gran parte: sin conocer el original, no reconoce qué se imita ni qué se da vuelta."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "La ironía es mentir",
-     "bien": "Es mostrar lo contrario de lo esperado"
+     "mal": "Una parodia es una copia",
+     "bien": "Imita la forma, pero cambia el tono para hacer reír"
     },
     {
-     "mal": "El humor es solo burla",
-     "bien": "También señala algo"
+     "mal": "La parodia se burla de las personas",
+     "bien": "Se burla de una obra, un estilo o un género"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Creer que la ironía es *mentir*.",
-    "Y pensar que el humor es *solo burla*."
+    "Dos confusiones.",
+    "Una parodia no es una copia: imita la forma, pero cambia el tono.",
+    "Y su blanco es una obra, un estilo o un género, no una persona."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "La *ironía* es lo contrario de lo esperado.",
-    "El *contraste* genera humor.",
-    "La *exageración* también.",
-    "Y el cuento es una *parodia* gótica.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "IRONÍA",
-     "contrario"
+     "Parodia",
+     "imitación burlesca de algo conocido"
     ],
     [
-     "CONTRASTE",
-     "esperado y real"
+     "Imitar",
+     "copiar la forma"
     ],
     [
-     "EXAGERAR",
-     "hace reír"
+     "Exagerar e invertir",
+     "agrandar y dar vuelta lo típico"
     ],
     [
-     "PARODIA",
-     "imita y se burla"
+     "Lector",
+     "tiene que conocer el original"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 3"
+   },
+   "voz": [
+    "Repasemos.",
+    "La parodia es un juego entre dos textos: el original y su imitación.",
+    "La parodia.",
+    "Imitar.",
+    "Exagerar e invertir.",
+    "Y un lector que conoce el original. ¡A practicar!"
+   ]
   }
  ]
 }

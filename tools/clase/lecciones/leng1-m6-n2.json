@@ -2,217 +2,161 @@
  "slug": "leng1-m6-n2",
  "step_id": "7c8e4668-4fda-412e-96a7-7706c24e7ec7",
  "materia": "Lengua y Literatura I",
- "titulo": "Un fantasma en apuros",
+ "titulo": "La ironía",
  "sub": "Lengua y Literatura I · Misión 6 · Nivel 2",
  "escenas": [
   {
    "t": "reto",
-   "texto": "¿Qué le ofrece el señor Otis al fantasma para sus cadenas?",
-   "segundos": 6,
-   "respuesta": "Aceite",
-   "emoji": "⛓️",
-   "titulo": "UN FANTASMA EN APUROS",
-   "sub": "intentos y respuestas",
+   "texto": "Está diluviando y tu hermana dice: «¡Qué lindo día para ir a la playa!». ¿Qué quiere decir?",
+   "segundos": 5,
+   "respuesta": "Lo contrario: que es un día horrible",
+   "emoji": "🌧️",
+   "titulo": "LA IRONÍA",
+   "sub": "decir lo contrario",
    "voz": [
-    "Desafío: ¿qué le ofrece el señor Otis al fantasma para sus cadenas? Seis segundos.",
-    "Aceite.",
-    "Hoy: *un fantasma en apuros*."
-   ]
-  },
-  {
-   "t": "bloques",
-   "titulo": "INTENTO Y RESPUESTA",
-   "items": [
-    {
-     "cab": "CADENAS RUIDOSAS",
-     "txt": "Le ofrecen aceite"
-    },
-    {
-     "cab": "MANCHA DE SANGRE",
-     "txt": "La limpian"
-    },
-    {
-     "cab": "APARECE DE NOCHE",
-     "txt": "Le tiran almohadas"
-    }
-   ],
-   "voz": [
-    "Cada intento tiene su respuesta.",
-    "Hace sonar *cadenas*: le ofrecen *aceite*.",
-    "Deja una *mancha*: la *limpian*.",
-    "Aparece de noche: le tiran *almohadas*."
+    "Reto: está diluviando y tu hermana dice: «¡qué lindo día para ir a la playa!».",
+    "Cinco segundos: ¿qué quiere decir en realidad?",
+    "Lo contrario: que es un día horrible. Eso es *ironía*."
    ]
   },
   {
    "t": "definicion",
-   "palabra": "Causa",
-   "texto": "Lo que provoca que algo pase",
-   "emoji": "🔗",
+   "palabra": "Ironía",
+   "texto": "Recurso que consiste en decir lo contrario de lo que se piensa, esperando que el otro entienda el verdadero sentido.",
+   "emoji": "😏",
    "voz": [
-    "La *causa* es lo que provoca que algo pase.",
-    "La *consecuencia* es lo que pasa después."
+    "La *ironía* consiste en decir lo contrario de lo que se piensa.",
+    "Funciona solo si el otro se da cuenta: el que habla confía en que vamos a entender el verdadero sentido."
    ]
   },
   {
-   "t": "causas",
-   "causa": {
-    "txt": "Nadie le tiene miedo",
-    "emoji": "👻"
+   "t": "comparar",
+   "a": {
+    "cab": "Lo que dice",
+    "texto": "«¡Qué puntual!»",
+    "emoji": "💬"
    },
-   "items": [
-    {
-     "txt": "Se siente humillado",
-     "emoji": "😞"
-    },
-    {
-     "txt": "Se esfuerza más",
-     "emoji": "💪"
-    },
-    {
-     "txt": "Pierde el orgullo",
-     "emoji": "📉"
-    }
-   ],
+   "b": {
+    "cab": "Lo que quiere decir",
+    "texto": "llegaste una hora tarde",
+    "emoji": "⏰"
+   },
+   "signo": "≠",
    "voz": [
-    "Una causa y varias consecuencias. Nadie le tiene miedo.",
-    "Entonces se siente *humillado*.",
-    "Se *esfuerza más*.",
-    "Y pierde el *orgullo*."
+    "Separemos las dos capas.",
+    "Lo que se dice: «¡qué puntual!».",
+    "Lo que se quiere decir: llegaste una hora tarde. En la ironía, esas dos capas no coinciden."
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "CAUSA",
-     "emoji": "🔗"
-    },
-    {
-     "cab": "CONSECUENCIA",
-     "emoji": "➡️"
-    }
+   "t": "pistas",
+   "problema": "¿Cómo sé que «¡Me encanta lavar platos!» es irónico?",
+   "pistas": [
+    "El contexto: hay una pila enorme de platos",
+    "El tono: suspira mientras lo dice",
+    "La exageración: «me encanta»"
    ],
-   "fichas": [
-    {
-     "txt": "Nadie se asusta",
-     "caja": 0
-    },
-    {
-     "txt": "Se siente humillado",
-     "caja": 1
-    },
-    {
-     "txt": "Deja una mancha",
-     "caja": 0
-    },
-    {
-     "txt": "La limpian",
-     "caja": 1
-    }
-   ],
+   "respuesta": "Las pistas muestran que piensa lo contrario",
    "voz": [
-    "¿Causa o consecuencia?",
-    "*Nadie se asusta* y *deja una mancha*: causas.",
-    "*Se siente humillado* y *la limpian*: consecuencias."
+    "¿Cómo nos damos cuenta de que alguien es irónico? Por ejemplo, alguien dice: «¡me encanta lavar platos!».",
+    "Por las pistas. Primera pista: el *contexto*, porque hay una pila enorme de platos.",
+    "Segunda: el *tono*, porque suspira mientras lo dice.",
+    "Tercera: la *exageración*: nadie dice «me encanta» de algo tan aburrido.",
+    "Las pistas muestran que piensa lo contrario de lo que dice."
    ]
   },
   {
-   "t": "pasos",
-   "titulo": "ENCADENAR",
-   "items": [
+   "t": "personaje",
+   "personaje": {
+    "nombre": "El narrador",
+    "emoji": "📖"
+   },
+   "lineas": [
     {
-     "txt": "b: primero ocurre el intento del fantasma.",
-     "emoji": "1️⃣"
+     "txt": "El rey era tan valiente…",
+     "animo": "feliz"
     },
     {
-     "txt": "a: la familia responde limpiando.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "c: por eso el fantasma queda humillado.",
-     "emoji": "3️⃣"
+     "txt": "…que se escondía bajo la cama cada vez que tronaba.",
+     "animo": "ojo"
     }
    ],
    "voz": [
-    "Resolvamos un caso: Ordená: a) La familia limpia la mancha. b) El fantasma deja una mancha. c) El fantasma se siente humillado.",
-    "b: primero ocurre el intento del fantasma.",
-    "a: la familia responde limpiando.",
-    "c: por eso el fantasma queda humillado."
+    "En los textos literarios, a veces el que es irónico es el *narrador*: «el rey era tan valiente»…",
+    "«…que se escondía bajo la cama cada vez que tronaba». El narrador elogia, pero en realidad se burla del rey."
    ]
   },
   {
-   "t": "consejo",
-   "texto": "Para encontrar causas y consecuencias, probá unir las oraciones con \"porque\" y \"entonces\".",
-   "emoji": "💡",
+   "t": "versus",
+   "a": {
+    "txt": "Ironía verbal",
+    "emoji": "💬",
+    "datos": [
+     "está en lo que se dice",
+     "«¡Qué día hermoso!» bajo la lluvia"
+    ]
+   },
+   "b": {
+    "txt": "Ironía de situación",
+    "emoji": "🎭",
+    "datos": [
+     "está en lo que pasa",
+     "el bombero cuya casa se incendia"
+    ]
+   },
+   "gana": "empate",
+   "veredicto": "Dos tipos de ironía",
    "voz": [
-    "Un consejo: Para encontrar causas y consecuencias, probá unir las oraciones con \"porque\" y \"entonces\"."
+    "Hay dos tipos de ironía. La *verbal* está en lo que se dice: elogiar un día de lluvia.",
+    "La *de situación* está en lo que pasa: lo contrario de lo esperable, como un bombero al que se le incendia la casa.",
+    "Una depende de las palabras; la otra, de los hechos.",
+    "Las dos rompen lo que esperamos."
    ]
   },
   {
-   "t": "pregunta",
-   "pregunta": "¿Cómo se siente el fantasma?",
-   "opciones": [
-    "Humillado",
-    "Orgulloso",
-    "Aliviado"
-   ],
-   "correcta": 0,
+   "t": "vof",
+   "afirmacion": "Si una frase irónica se lee al pie de la letra, se entiende igual.",
+   "emoji": "📏",
+   "verdadero": false,
+   "explicacion": "Al pie de la letra se entiende lo contrario de lo que se quiso decir.",
    "voz": [
-    "Te toca: ¿cómo se siente el fantasma?",
-    "¿Humillado, orgulloso o aliviado?",
-    "*Humillado*."
-   ]
-  },
-  {
-   "t": "errores",
-   "items": [
-    {
-     "mal": "Confundir causa y consecuencia",
-     "bien": "Probar con porque y entonces"
-    },
-    {
-     "mal": "El fantasma no siente nada",
-     "bien": "Se siente humillado"
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "*Confundir* causa y consecuencia.",
-    "Y creer que el fantasma *no siente nada*."
+    "Verdadero o falso: si una frase irónica se lee al pie de la letra, se entiende igual.",
+    "Pensalo con el ejemplo del día de playa.",
+    "Falso: leída al pie de la letra, se entiende justo lo contrario."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El fantasma *intenta* asustar.",
-    "La familia *responde* con practicidad.",
-    "La *causa* provoca la *consecuencia*.",
-    "Y el fantasma queda *humillado*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "INTENTOS",
-     "asustar"
+     "Ironía",
+     "decir lo contrario de lo que se piensa"
     ],
     [
-     "RESPUESTAS",
-     "prácticas"
+     "Pistas",
+     "contexto, tono y exageración"
     ],
     [
-     "CAUSA",
-     "lo que provoca"
+     "Ironía verbal",
+     "está en lo que se dice"
     ],
     [
-     "FANTASMA",
-     "humillado"
+     "Ironía de situación",
+     "está en lo que pasa"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 2"
+   },
+   "voz": [
+    "Repasemos.",
+    "La ironía pide un lector atento.",
+    "Decir lo contrario de lo que se piensa.",
+    "Reconocerla por el contexto, el tono y la exageración.",
+    "La ironía verbal.",
+    "Y la de situación. ¡A practicar!"
+   ]
   }
  ]
 }

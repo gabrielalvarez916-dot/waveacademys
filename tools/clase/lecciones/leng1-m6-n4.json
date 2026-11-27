@@ -2,245 +2,130 @@
  "slug": "leng1-m6-n4",
  "step_id": "5498e671-fda5-4d3e-af28-4376a962cc96",
  "materia": "Lengua y Literatura I",
- "titulo": "Opino sobre lo leído",
+ "titulo": "La sátira",
  "sub": "Lengua y Literatura I · Misión 6 · Nivel 4",
  "escenas": [
   {
-   "t": "reto",
-   "texto": "¿\"El fantasma es simpático\" es un hecho o una opinión?",
-   "segundos": 6,
-   "respuesta": "Una opinión",
-   "emoji": "💭",
-   "titulo": "OPINO SOBRE LO LEÍDO",
-   "sub": "hechos y opiniones",
+   "t": "historia",
+   "personaje": {
+    "nombre": "Doña Elvira",
+    "emoji": "👵"
+   },
+   "lugar": "🏙️",
+   "lineas": [
+    "En un cuento, una ciudad prohíbe la lluvia por decreto.",
+    "Los funcionarios cobran multas a las nubes."
+   ],
+   "titulo": "LA SÁTIRA",
+   "sub": "reírse para criticar",
    "voz": [
-    "Desafío: ¿el fantasma es simpático es un hecho o una opinión? Seis segundos.",
-    "Una opinión.",
-    "Hoy: *opino sobre lo leído*."
+    "En un cuento, el intendente de una ciudad prohíbe la lluvia por decreto.",
+    "Y sus funcionarios salen a cobrarles multas a las nubes.",
+    "Nos reímos, pero el cuento también dice algo: se burla de los gobernantes que creen que todo se arregla con un papel. Eso es *sátira*."
    ]
   },
   {
-   "t": "comparar",
-   "a": {
-    "cab": "HECHO",
-    "texto": "Ocurre en el texto",
-    "emoji": "📖"
-   },
-   "b": {
-    "cab": "OPINIÓN",
-    "texto": "Lo que pienso",
-    "emoji": "💭"
-   },
-   "signo": "vs",
+   "t": "definicion",
+   "palabra": "Sátira",
+   "texto": "Texto que usa el humor para criticar defectos de las personas, las costumbres o la sociedad.",
+   "emoji": "🎯",
    "voz": [
-    "No son lo mismo.",
-    "El *hecho* ocurre en el texto.",
-    "La *opinión* es lo que yo pienso."
+    "La *sátira* usa el humor para criticar.",
+    "Su blanco son los defectos de las personas, las costumbres o la sociedad: la risa tiene una intención."
    ]
   },
   {
    "t": "matriz",
-   "titulo": "ESTRUCTURA",
+   "titulo": "BLANCOS DE LA SÁTIRA",
    "celdas": [
     {
-     "cab": "TESIS",
-     "txt": "Dice lo que pienso"
+     "cab": "Costumbres",
+     "txt": "las modas, el qué dirán"
     },
     {
-     "cab": "ARGUMENTO",
-     "txt": "Explica por qué"
+     "cab": "Autoridades",
+     "txt": "los que mandan y abusan"
     },
     {
-     "cab": "EJEMPLO",
-     "txt": "Lo prueba con el texto"
+     "cab": "Defectos",
+     "txt": "la avaricia, la vanidad"
     },
     {
-     "cab": "CIERRE",
-     "txt": "Vuelve a la tesis"
+     "cab": "Grupos sociales",
+     "txt": "los nuevos ricos, los snobs"
     }
    ],
    "voz": [
-    "Una opinión tiene partes.",
-    "La *tesis* dice lo que pienso.",
-    "El *argumento* explica por qué.",
-    "El *ejemplo* lo prueba con el texto.",
-    "Y el *cierre* vuelve a la tesis."
+    "¿De qué se burla la sátira?",
+    "De las *costumbres*: las modas, el qué dirán.",
+    "De las *autoridades* que abusan de su poder.",
+    "De *defectos* humanos, como la avaricia o la vanidad.",
+    "Y de *grupos sociales* que se creen superiores."
    ]
   },
   {
-   "t": "clasificar",
-   "cajas": [
-    {
-     "cab": "HECHO",
-     "emoji": "📖"
-    },
-    {
-     "cab": "OPINIÓN",
-     "emoji": "💭"
-    }
+   "t": "venn",
+   "a": "Parodia",
+   "b": "Sátira",
+   "itemsA": [
+    "imita una obra o género"
    ],
-   "fichas": [
-    {
-     "txt": "Compran el castillo",
-     "caja": 0
-    },
-    {
-     "txt": "Es muy divertido",
-     "caja": 1
-    },
-    {
-     "txt": "Deja una mancha",
-     "caja": 0
-    },
-    {
-     "txt": "Es simpático",
-     "caja": 1
-    }
+   "itemsB": [
+    "critica la sociedad"
+   ],
+   "ambos": [
+    "usan el humor",
+    "exageran"
    ],
    "voz": [
-    "¿Hecho u opinión?",
-    "*Compran el castillo* y *deja una mancha*: hechos.",
-    "*Es muy divertido* y *es simpático*: opiniones."
-   ]
-  },
-  {
-   "t": "tabla",
-   "titulo": "CONECTORES",
-   "columnas": [
-    "Función",
-    "Ejemplo"
-   ],
-   "filas": [
-    [
-     "Opinar",
-     "en mi opinión"
-    ],
-    [
-     "Explicar",
-     "porque"
-    ],
-    [
-     "Ejemplificar",
-     "por ejemplo"
-    ],
-    [
-     "Cerrar",
-     "en conclusión"
-    ]
-   ],
-   "voz": [
-    "Conectores para opinar.",
-    "*En mi opinión* para opinar.",
-    "*Porque* para explicar.",
-    "*Por ejemplo* para ejemplificar.",
-    "Y *en conclusión* para cerrar."
+    "Parodia y sátira se parecen, pero no son lo mismo.",
+    "La parodia imita una obra o un género.",
+    "La sátira critica a la sociedad o a las personas.",
+    "Las dos usan el humor y la exageración, y muchas veces aparecen juntas en el mismo texto."
    ]
   },
   {
    "t": "quiz4",
-   "pregunta": "¿Qué conector sirve para dar un ejemplo?",
+   "pregunta": "Un cuento muestra a un millonario que compra un castillo y quiere arreglar todo con productos de marca. ¿Qué critica?",
    "opciones": [
-    "En conclusión",
-    "Por ejemplo",
-    "Pero"
+    "La confianza ciega en el dinero",
+    "Los castillos antiguos",
+    "La lluvia",
+    "Nada: es solo un cuento"
    ],
-   "correcta": 1,
+   "correcta": 0,
    "voz": [
-    "Te toca: ¿qué conector sirve para dar un ejemplo?",
-    "¿en conclusión, por ejemplo, o pero?",
-    "*Por ejemplo*."
-   ]
-  },
-  {
-   "t": "corrige",
-   "titulo": "ERRORES TÍPICOS",
-   "cambios": [
-    {
-     "antes": "Opinar sin explicar",
-     "despues": "Dar argumentos y ejemplos",
-     "motivo": ""
-    },
-    {
-     "antes": "Mezclar hecho y opinión",
-     "despues": "Separarlos",
-     "motivo": ""
-    }
-   ],
-   "voz": [
-    "Errores típicos.",
-    "*Opinar sin explicar*.",
-    "Y *mezclar* hechos con opiniones."
-   ]
-  },
-  {
-   "t": "pasos",
-   "titulo": "ARMAR UNA OPINIÓN",
-   "items": [
-    {
-     "txt": "Tesis: me parece que el fantasma es más gracioso que terrorífico.",
-     "emoji": "1️⃣"
-    },
-    {
-     "txt": "Argumento: porque se toma muy en serio y nadie le tiene miedo.",
-     "emoji": "2️⃣"
-    },
-    {
-     "txt": "Ejemplo: como cuando le ofrecen aceite para sus cadenas.",
-     "emoji": "3️⃣"
-    },
-    {
-     "txt": "Cierre: por eso el cuento hace reír en lugar de asustar.",
-     "emoji": "4️⃣"
-    }
-   ],
-   "voz": [
-    "Resolvamos un caso: Opinión: «El fantasma es más gracioso que terrorífico».",
-    "Tesis: me parece que el fantasma es más gracioso que terrorífico.",
-    "Argumento: porque se toma muy en serio y nadie le tiene miedo.",
-    "Ejemplo: como cuando le ofrecen aceite para sus cadenas.",
-    "Cierre: por eso el cuento hace reír en lugar de asustar."
+    "Pregunta: un cuento muestra a un millonario que compra un castillo y cree que todo se arregla con productos de marca. ¿Qué critica?",
+    "Pensá de qué se burla.",
+    "La confianza ciega en el dinero: esa es la *crítica* detrás del humor."
    ]
   },
   {
    "t": "consejo",
-   "texto": "Después de decir qué pensás, buscá una escena que lo pruebe.",
+   "titulo": "PARA LEER SÁTIRA",
+   "texto": "Después de reírte, preguntate: ¿de qué se está burlando este texto y por qué?",
    "emoji": "💡",
    "voz": [
-    "Un consejo: Después de decir qué pensás, buscá una escena que lo pruebe."
+    "Un consejo para leer sátira: después de reírte, preguntate de qué se está burlando el texto y por qué."
    ]
   },
   {
-   "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El *hecho* ocurre en el texto.",
-    "La *opinión* es lo que pienso.",
-    "Se arma con *tesis*, *argumentos* y *ejemplos*.",
-    "Y se cierra volviendo a la tesis.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
+   "t": "logro",
+   "titulo": "¡Misión cumplida!",
    "items": [
-    [
-     "HECHO",
-     "en el texto"
-    ],
-    [
-     "OPINIÓN",
-     "lo que pienso"
-    ],
-    [
-     "PARTES",
-     "tesis y ejemplos"
-    ],
-    [
-     "CIERRE",
-     "vuelve a la tesis"
-    ]
+    "Los recursos del humor",
+    "La ironía",
+    "La parodia",
+    "La sátira"
    ],
-   "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+   "xp": 100,
+   "voz": [
+    "¡Terminaste las clases de la misión!",
+    "Ya reconocés los recursos del humor.",
+    "Sabés leer la ironía.",
+    "Entendés cómo funciona una parodia.",
+    "Y descubrís la crítica que esconde la sátira. ¡A practicar!"
+   ]
   }
  ]
 }

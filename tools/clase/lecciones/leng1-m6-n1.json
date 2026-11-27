@@ -2,209 +2,181 @@
  "slug": "leng1-m6-n1",
  "step_id": "037ca438-4ffc-4546-bac5-2d85e92fa42b",
  "materia": "Lengua y Literatura I",
- "titulo": "Un castillo con historia",
+ "titulo": "Cómo funciona el humor",
  "sub": "Lengua y Literatura I · Misión 6 · Nivel 1",
  "escenas": [
   {
-   "t": "noticia",
-   "cinta": "EXTRA",
-   "titular": "Familia compra un castillo embrujado",
-   "bajada": "Y no cree en fantasmas",
-   "emoji": "🏰",
-   "titulo": "EL FANTASMA DE CANTERVILLE",
-   "sub": "un castillo con historia",
-   "voz": [
-    "Extra: una familia compra un castillo embrujado.",
-    "Y no cree en fantasmas.",
-    "Hoy: *El fantasma de Canterville*, de Oscar Wilde."
-   ]
-  },
-  {
-   "t": "matriz",
-   "titulo": "PERSONAJES",
-   "celdas": [
-    {
-     "cab": "LORD CANTERVILLE",
-     "txt": "El dueño"
-    },
-    {
-     "cab": "LOS OTIS",
-     "txt": "Prácticos y modernos"
-    },
-    {
-     "cab": "SIR SIMON",
-     "txt": "El fantasma"
-    },
-    {
-     "cab": "VIRGINIA",
-     "txt": "Sensible y amable"
-    }
-   ],
-   "voz": [
-    "Los personajes.",
-    "*Lord Canterville* es el dueño y avisa del fantasma.",
-    "Los *Otis* son una familia práctica y moderna.",
-    "*Sir Simon* es el fantasma.",
-    "Y *Virginia* es la hija, sensible y amable."
-   ]
-  },
-  {
-   "t": "pizarra",
-   "lineas": [
-    {
-     "txt": "Relato gótico",
-     "color": "sol",
-     "marca": "subraya"
-    },
-    {
-     "txt": "Misterio y terror en castillos antiguos"
-    }
-   ],
-   "voz": [
-    "Es un *relato gótico*: misterio y terror en un castillo antiguo.",
-    "Wilde juega con esos elementos."
-   ]
-  },
-  {
-   "t": "pizarra",
-   "lineas": [
-    {
-     "txt": "Narrador omnisciente",
-     "color": "sol",
-     "marca": "subraya"
-    },
-    {
-     "txt": "Cuenta en tercera persona y lo sabe todo"
-    }
-   ],
-   "voz": [
-    "El narrador es *omnisciente*.",
-    "Cuenta en tercera persona y conoce lo que sienten todos."
-   ]
-  },
-  {
-   "t": "comparar",
-   "a": {
-    "cab": "TRADICIÓN",
-    "texto": "El fantasma, siglos de historia",
-    "emoji": "👻"
+   "t": "chat",
+   "contacto": {
+    "nombre": "Lucas",
+    "emoji": "🧑"
    },
-   "b": {
-    "cab": "PRACTICIDAD",
-    "texto": "La familia, moderna y sin miedo",
-    "emoji": "🧼"
-   },
-   "signo": "vs",
+   "mensajes": [
+    {
+     "yo": false,
+     "txt": "Anoté todo en un papel para no olvidarme de nada"
+    },
+    {
+     "yo": true,
+     "txt": "¡Bien organizado!"
+    },
+    {
+     "yo": false,
+     "txt": "Ahora no me acuerdo dónde dejé el papel 🤦"
+    }
+   ],
+   "titulo": "EL HUMOR",
+   "sub": "por qué nos reímos",
    "voz": [
-    "El conflicto es un choque.",
-    "El fantasma representa la *tradición*.",
-    "La familia representa la *practicidad*."
+    "Lucas cuenta que anotó todo en un papel para no olvidarse de nada.",
+    "Vos lo felicitás por organizado.",
+    "Y él responde que no se acuerda dónde dejó el papel.",
+    "Te reíste, ¿no? Hoy vemos *por qué*: el humor tiene mecanismos que se pueden reconocer."
+   ]
+  },
+  {
+   "t": "definicion",
+   "palabra": "Incongruencia",
+   "texto": "Choque entre lo que esperábamos y lo que finalmente pasa. Es el motor de casi todo el humor.",
+   "emoji": "💥",
+   "voz": [
+    "El papel tenía que resolver el problema y terminó empeorándolo. Ese choque se llama *incongruencia*.",
+    "Es el motor de casi todo el humor: el texto arma una expectativa y después la rompe."
+   ]
+  },
+  {
+   "t": "antesdespues",
+   "antes": {
+    "cab": "Lo que esperamos",
+    "emoji": "🦸",
+    "texto": "El héroe entra al castillo, desenvaina la espada y…"
+   },
+   "despues": {
+    "cab": "Lo que pasa",
+    "emoji": "🤧",
+    "texto": "…estornuda por el polvo y se le cae la espada."
+   },
+   "voz": [
+    "Mirá cómo se arma. El héroe entra al castillo, desenvaina la espada, y esperamos una gran batalla.",
+    "Pero estornuda por el polvo y se le cae la espada. La expectativa se rompe, y aparece la risa."
    ]
   },
   {
    "t": "bloques",
-   "titulo": "CÓMO SE CLASIFICA",
+   "titulo": "TRES RECURSOS DEL HUMOR",
    "items": [
     {
-     "cab": "FANTASMA",
-     "txt": "Quiere asustar, Siglos de historia"
+     "cab": "Lo inesperado",
+     "txt": "un final que rompe lo previsto"
     },
     {
-     "cab": "FAMILIA",
-     "txt": "No cree en ellos"
+     "cab": "La exageración",
+     "txt": "agrandar algo hasta lo absurdo"
+    },
+    {
+     "cab": "El juego de palabras",
+     "txt": "aprovechar el doble sentido"
     }
    ],
    "voz": [
-    "¿Del fantasma o de la familia?",
-    "*Quiere asustar* y *siglos de historia*: el fantasma.",
-    "*No cree en ellos*: la familia."
+    "Los textos humorísticos usan tres recursos principales.",
+    "*Lo inesperado*: un final que rompe lo previsto.",
+    "La *exageración*: agrandar algo hasta volverlo absurdo.",
+    "Y el *juego de palabras*: aprovechar que una palabra tiene dos sentidos."
    ]
   },
   {
-   "t": "definicion",
-   "palabra": "Relato gótico",
-   "texto": "Historia de misterio y terror que suele ocurrir en castillos antiguos, con fantasmas y secretos.",
-   "emoji": "📘",
-   "voz": [
-    "Veamos *Relato gótico*.",
-    "Historia de misterio y terror que suele ocurrir en castillos antiguos, con fantasmas y secretos."
-   ]
-  },
-  {
-   "t": "definicion",
-   "palabra": "Narrador omnisciente",
-   "texto": "Narra en tercera persona y conoce los pensamientos y sentimientos de todos los personajes.",
-   "emoji": "📘",
-   "voz": [
-    "Veamos *Narrador omnisciente*.",
-    "Narra en tercera persona y conoce los pensamientos y sentimientos de todos los personajes."
-   ]
-  },
-  {
-   "t": "pregunta",
-   "pregunta": "¿Cómo se llama el fantasma?",
-   "opciones": [
-    "Sir Simon",
-    "Lord Canterville",
-    "Washington"
+   "t": "escala",
+   "titulo": "LA EXAGERACIÓN",
+   "items": [
+    {
+     "txt": "Tengo hambre",
+     "emoji": "🍽️",
+     "valor": 1
+    },
+    {
+     "txt": "Me comería una vaca",
+     "emoji": "🐄",
+     "valor": 3
+    },
+    {
+     "txt": "Me comería la cordillera con mostaza",
+     "emoji": "🏔️",
+     "valor": 6
+    }
    ],
-   "correcta": 0,
    "voz": [
-    "Te toca: ¿cómo se llama el fantasma?",
-    "¿Sir Simon, Lord Canterville o Washington?",
-    "*Sir Simon*."
+    "Mirá cómo crece una exageración. «Tengo hambre» es un dato.",
+    "«Me comería una vaca» ya exagera.",
+    "Y «me comería la cordillera con mostaza» lleva la exageración al absurdo, y por eso da risa."
+   ]
+  },
+  {
+   "t": "quiz4",
+   "pregunta": "«—¿Tu perro muerde? —No. —(El perro lo muerde.) —¡Este no es mi perro!» ¿Qué recurso usa?",
+   "opciones": [
+    "Exageración",
+    "Lo inesperado",
+    "Juego de palabras",
+    "Ninguno"
+   ],
+   "correcta": 1,
+   "voz": [
+    "Un clásico: alguien pregunta si el perro muerde, le dicen que no, el perro lo muerde, y el otro responde: «¡este no es mi perro!».",
+    "Pensá qué recurso hace reír.",
+    "*Lo inesperado*: el final cambia todo lo que creíamos."
    ]
   },
   {
    "t": "errores",
    "items": [
     {
-     "mal": "Es un cuento de terror común",
-     "bien": "Es una parodia gótica"
+     "mal": "El humor es solo para chistes",
+     "bien": "También aparece en cuentos, novelas y obras de teatro"
     },
     {
-     "mal": "El narrador es un personaje",
-     "bien": "Narra en tercera persona"
+     "mal": "Si no me río, no hay humor",
+     "bien": "El recurso está aunque a vos no te cause gracia"
     }
    ],
    "voz": [
-    "Errores típicos.",
-    "Creer que es *terror común*.",
-    "Y confundir al *narrador* con un personaje."
+    "Dos ideas equivocadas.",
+    "El humor no es solo cosa de chistes: hay cuentos, novelas y obras enteras construidas con humor.",
+    "Y que a vos algo no te haga reír no significa que no haya humor: el recurso está ahí y se puede analizar."
    ]
   },
   {
    "t": "resumen",
-   "voz": [
-    "Repasemos.",
-    "El autor es *Oscar Wilde*.",
-    "El escenario es un *castillo inglés*.",
-    "Los personajes son los *Otis* y *Sir Simon*.",
-    "Y el conflicto enfrenta *tradición* y *practicidad*.",
-    "¡Clase terminada! Ahora, *a practicar*."
-   ],
    "items": [
     [
-     "AUTOR",
-     "Wilde"
+     "Incongruencia",
+     "lo que esperamos choca con lo que pasa"
     ],
     [
-     "ESCENARIO",
-     "castillo"
+     "Lo inesperado",
+     "un final que sorprende"
     ],
     [
-     "PERSONAJES",
-     "Otis y Simon"
+     "Exageración",
+     "agrandar hasta lo absurdo"
     ],
     [
-     "CONFLICTO",
-     "tradición y práctica"
+     "Juego de palabras",
+     "el doble sentido"
     ]
    ],
    "fin": {
-    "titulo": "¡CLASE TERMINADA!",
-    "sub": "Ahora, a practicar 🚀"
-   }
+    "titulo": "¡A practicar!",
+    "sub": "Nivel 1"
+   },
+   "voz": [
+    "Repasemos.",
+    "El humor nace de un choque entre lo esperado y lo que pasa.",
+    "La incongruencia.",
+    "Lo inesperado.",
+    "La exageración.",
+    "Y el juego de palabras. ¡A practicar!"
+   ]
   }
  ]
 }

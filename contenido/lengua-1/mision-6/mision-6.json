@@ -1,11 +1,2060 @@
 {
  "subject_id": "e1b0726d-08aa-4d9e-9060-18489f529da2",
  "tema": 6,
- "practica": "Práctica general: El fantasma de Canterville",
- "examen_titulo": "Nivel jefe: El fantasma de Canterville",
- "niveles": {},
- "act": {},
- "examen": [],
+ "practica": "Actividades generales",
+ "examen_titulo": "Nivel jefe: parodia y humor",
+ "niveles": {
+  "1": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Lo inesperado: la incongruencia",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Escena",
+        "items": [
+         {
+          "nombre": "El héroe",
+          "texto": "{{El caballero entró al castillo, levantó la espada y gritó: «¡Que salga el dragón!»|Expectativa: todo anuncia una gran batalla.}} {{Salió una lagartija, lo miró y se fue a tomar sol|Giro: lo que pasa no tiene nada que ver con lo esperado.}}.",
+          "cierre": "El choque entre lo anunciado y lo que pasa produce la risa."
+         },
+         {
+          "nombre": "La mudanza",
+          "texto": "{{Para no perder nada en la mudanza, Ana guardó todo en cajas numeradas y anotó cada número en una lista|Expectativa: el orden va a resolver el problema.}}. {{Lo único que perdió fue la lista|Giro: la solución se vuelve el problema.}}.",
+          "cierre": "El texto prepara una expectativa y la rompe al final."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Dónde está el giro que hace reír?",
+        "items": [
+         {
+          "cons": "«El mago anunció su mejor truco: iba a hacer desaparecer un elefante. Lo único que desapareció fue el público.»",
+          "ops": [
+           "En que desaparece el público y no el elefante",
+           "En que el mago tiene un elefante",
+           "En que el mago anuncia un truco"
+          ],
+          "ayuda": "Buscá lo que no coincide con lo anunciado."
+         },
+         {
+          "cons": "«Después de un mes de dieta estricta, Raúl festejó los dos kilos perdidos con una torta de chocolate entera.»",
+          "ops": [
+           "En que festeja la dieta comiendo una torta",
+           "En que hizo dieta durante un mes",
+           "En que bajó dos kilos"
+          ],
+          "ayuda": "Pensá qué esperabas que hiciera."
+         },
+         {
+          "cons": "«El guardia más atento del museo vigiló toda la noche la puerta principal. El ladrón entró por la ventana.»",
+          "ops": [
+           "En que tanta vigilancia no sirvió de nada",
+           "En que el guardia era atento",
+           "En que el museo tiene una puerta"
+          ],
+          "ayuda": "La atención termina siendo inútil."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Incongruencia",
+        "texto": "La incongruencia es el choque entre lo que el lector espera y lo que finalmente ocurre en el texto; es el mecanismo básico del humor."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Un texto humorístico arma una expectativa con mucho cuidado, a veces con varias oraciones, y la rompe en el último momento. Si el giro llega demasiado pronto o se anuncia antes, el efecto se pierde: por eso el humor depende tanto del orden en que se cuentan las cosas."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Se arma una expectativa.",
+         "Se rompe con un giro inesperado.",
+         "El orden de lo que se cuenta es clave."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La exageración",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Versión",
+        "items": [
+         {
+          "nombre": "Dato",
+          "texto": "{{Mi tío habla bastante.|Información sin humor.}}"
+         },
+         {
+          "nombre": "Exagerada",
+          "texto": "{{Mi tío habla tanto que los loros del barrio le piden que se calle.|La exageración agranda el rasgo hasta lo absurdo.}}"
+         },
+         {
+          "nombre": "Dato",
+          "texto": "{{La casa era vieja.|Información sin humor.}}"
+         },
+         {
+          "nombre": "Exagerada",
+          "texto": "{{La casa era tan vieja que los fantasmas se quejaban de las goteras.|El rasgo se lleva al extremo y aparece la risa.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿La frase informa o exagera con humor?",
+        "cajas": [
+         "Informa",
+         "Exagera con humor"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "El colectivo tardó veinte minutos.",
+          0
+         ],
+         [
+          "Mi perro duerme muchas horas por día.",
+          0
+         ],
+         [
+          "La heladera estaba casi vacía.",
+          0
+         ],
+         [
+          "El colectivo tardó tanto que llegué con barba.",
+          1
+         ],
+         [
+          "Mi perro duerme tanto que el veterinario lo dio por jubilado.",
+          1
+         ],
+         [
+          "En la heladera había un eco.",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Exageración",
+        "texto": "La exageración, o hipérbole, es el recurso que agranda un rasgo, una situación o una cantidad mucho más allá de lo real para producir un efecto, como la risa."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La exageración humorística no busca engañar: todos saben que nadie llega con barba por esperar un colectivo. Funciona porque el lector reconoce el rasgo real que hay detrás, la demora, y disfruta de verlo llevado al absurdo."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Agranda un rasgo real.",
+         "Lo lleva hasta lo imposible.",
+         "El lector sabe que no es literal."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "El juego de palabras",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Chiste",
+        "items": [
+         {
+          "nombre": "El banco",
+          "texto": "—¿Por qué fuiste al banco de la plaza a pedir un préstamo? —{{Porque decía «banco»|Juego de palabras: «banco» es un asiento y también una entidad que presta dinero.}}.",
+          "cierre": "Una misma palabra, dos sentidos."
+         },
+         {
+          "nombre": "La planta",
+          "texto": "—Trabajo en una {{planta|Doble sentido: una fábrica o un vegetal.}}. —¿Y qué hacés? —{{La riego todos los días|El segundo sentido aparece y sorprende.}}.",
+          "cierre": "El humor nace del cambio de sentido."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "unir_x",
+       "p": {
+        "consigna": "Uní cada palabra con sus dos sentidos.",
+        "items": [
+         {
+          "pares": [
+           [
+            "Gato",
+            "animal / herramienta para levantar el auto"
+           ],
+           [
+            "Sierra",
+            "herramienta para cortar / cadena de montañas"
+           ],
+           [
+            "Cometa",
+            "juguete que vuela / astro con cola"
+           ],
+           [
+            "Muñeca",
+            "juguete / parte del brazo"
+           ]
+          ]
+         },
+         {
+          "pares": [
+           [
+            "Lima",
+            "fruta / herramienta para limar"
+           ],
+           [
+            "Vela",
+            "objeto que ilumina / tela de un barco"
+           ],
+           [
+            "Copa",
+            "vaso con pie / parte alta de un árbol"
+           ],
+           [
+            "Hoja",
+            "de un árbol / de papel"
+           ]
+          ]
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Juego de palabras",
+        "texto": "El juego de palabras es el recurso que aprovecha que una palabra o una frase tiene más de un sentido para producir humor o sorpresa."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Muchas palabras del español tienen varios significados, y el humor los hace chocar: la frase se entiende de una manera y, de golpe, aparece la otra. Para disfrutarlo hay que conocer los dos sentidos; por eso los juegos de palabras casi nunca se pueden traducir a otro idioma."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Una palabra con dos sentidos.",
+         "Se entiende uno y aparece el otro.",
+         "Es muy difícil de traducir."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Humor",
+      "definicion": "es un modo de contar o mirar las cosas que busca provocar risa, casi siempre rompiendo lo esperado.",
+      "ejemplo": "Anoté todo para no olvidarme y perdí el papel"
+     },
+     {
+      "concepto": "Incongruencia",
+      "definicion": "es el choque entre lo que el lector espera y lo que finalmente ocurre en el texto.",
+      "ejemplo": "El caballero espera un dragón y sale una lagartija"
+     },
+     {
+      "concepto": "Exageración",
+      "definicion": "es agrandar un rasgo o una situación mucho más allá de lo real para producir un efecto.",
+      "ejemplo": "Tardó tanto que llegué con barba"
+     },
+     {
+      "concepto": "Juego de palabras",
+      "definicion": "aprovecha que una palabra tiene dos sentidos para sorprender al lector.",
+      "ejemplo": "Pedir un préstamo en el banco de la plaza"
+     },
+     {
+      "concepto": "Giro final",
+      "definicion": "es el momento en que el texto rompe la expectativa que había armado, casi siempre al final.",
+      "ejemplo": "Lo único que desapareció fue el público"
+     }
+    ]
+   },
+   "carpeta": [
+    "En «Estudió toda la noche para la prueba y se quedó dormido en el examen», ¿qué recurso del humor aparece?",
+    "«Mi hermano come tanto que la heladera le pide vacaciones.» ¿Qué rasgo real exagera esa frase?",
+    "«—Trabajo en una planta. —¿Y qué hacés? —La riego.» ¿Qué palabra tiene doble sentido en el chiste?",
+    "Tomi dice que «tardó tanto que llegué con barba» es una mentira y por eso está mal escrito. ¿Qué recurso es en realidad?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "lo inesperado",
+     "inesperado",
+     "incongruencia"
+    ],
+    [
+     "que come mucho",
+     "come mucho",
+     "el apetito",
+     "apetito"
+    ],
+    [
+     "planta"
+    ],
+    [
+     "exageración",
+     "exageracion",
+     "una exageración",
+     "hipérbole"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Lo inesperado: el esfuerzo termina produciendo lo contrario de lo esperado.",
+     "Que come mucho: la exageración agranda un rasgo verdadero.",
+     "Planta: fábrica y vegetal.",
+     "Una exageración: no busca engañar, sino hacer reír."
+    ]
+   }
+  },
+  "2": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es la ironía",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Frase",
+        "items": [
+         {
+          "nombre": "Literal",
+          "texto": "{{«¡Qué rápido llegaste!»|Dicho a alguien que corrió y llegó primero: significa lo que dice.}}"
+         },
+         {
+          "nombre": "Irónica",
+          "texto": "{{«¡Qué rápido llegaste!»|Dicho a alguien que llegó dos horas tarde: significa lo contrario.}}"
+         },
+         {
+          "nombre": "Literal",
+          "texto": "{{«Gran idea»|Dicho después de una propuesta que salió bien.}}"
+         },
+         {
+          "nombre": "Irónica",
+          "texto": "{{«Gran idea»|Dicho después de que alguien propuso un picnic y se largó a llover.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué quiere decir en realidad quien habla?",
+        "items": [
+         {
+          "cons": "Tu hermano rompió el tercer vaso de la semana y tu mamá le dice: «Muy bien, seguí así».",
+          "ops": [
+           "Que deje de romper vasos",
+           "Que siga rompiendo vasos",
+           "Que está contenta con él"
+          ],
+          "ayuda": "Pensá en el contexto: tres vasos rotos."
+         },
+         {
+          "cons": "Llegás empapado y tu amigo te dice: «Veo que trajiste el paraguas».",
+          "ops": [
+           "Que no trajiste el paraguas",
+           "Que el paraguas es lindo",
+           "Que el paraguas funcionó"
+          ],
+          "ayuda": "Estás empapado: ¿lo trajiste?"
+         },
+         {
+          "cons": "El equipo perdió diez a cero y el técnico dice: «Fue un partido parejo».",
+          "ops": [
+           "Que fue una paliza",
+           "Que fue muy equilibrado",
+           "Que el árbitro ayudó"
+          ],
+          "ayuda": "Diez a cero no es parejo."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ironía",
+        "texto": "La ironía es el recurso que consiste en decir lo contrario de lo que se piensa, confiando en que el oyente o el lector entienda el verdadero sentido."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La ironía tiene dos capas: lo que se dice y lo que se quiere decir. Si el lector se queda con la primera, entiende justo lo contrario. Por eso es un recurso que pide complicidad: quien la usa confía en que el otro comparte el contexto y se va a dar cuenta."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Dice lo contrario de lo que piensa.",
+         "Tiene dos capas: lo dicho y lo querido.",
+         "Pide un lector cómplice."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Cómo se reconoce la ironía",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Texto",
+        "items": [
+         {
+          "nombre": "La fiesta",
+          "texto": "{{Llegamos a la fiesta a las diez y nos fuimos a las diez y cuarto|Contexto: la fiesta duró nada.}}. «{{¡Fue la noche más larga de mi vida!»|Lo dicho choca con el contexto: es irónico.}}, {{dijo Clara, bostezando|Tono: el bostezo muestra aburrimiento.}}.",
+          "cierre": "Contexto + tono revelan la ironía."
+         },
+         {
+          "nombre": "El narrador",
+          "texto": "El señor Gómez era {{generosísimo|Exageración: anuncia que algo no cierra.}}: {{una vez por año le prestaba un lápiz a su vecino, y se lo cobraba|Los hechos contradicen el elogio.}}.",
+          "cierre": "El narrador elogia, pero los hechos dicen lo contrario."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "marcar_x",
+       "p": {
+        "consigna": "Tocá solo las frases irónicas.",
+        "items": [
+         {
+          "cons": "Contexto: es el día más caluroso del año y se cortó la luz.",
+          "texto": "[[«¡Qué fresquito está hoy!»|1]] · [[«Qué calor insoportable.»|0]] · [[«Justo hoy, ideal para estar sin ventilador.»|1]] · [[«Voy a buscar agua fría.»|0]]"
+         },
+         {
+          "cons": "Contexto: el examen fue dificilísimo y casi nadie aprobó.",
+          "texto": "[[«Fue un examen regalado.»|1]] · [[«Me costó muchísimo.»|0]] · [[«El profe se lució con su generosidad.»|1]] · [[«Tengo que estudiar más.»|0]]"
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Pistas de la ironía",
+        "texto": "Las pistas de la ironía son las señales que avisan que una frase no se debe leer al pie de la letra: el contexto, el tono y la exageración."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "En la conversación, el tono de voz y los gestos ayudan mucho. En la escritura esas pistas desaparecen, y el lector tiene que fijarse en el contexto: si lo que se dice choca con lo que pasa, o si un elogio es tan exagerado que suena falso, probablemente sea ironía."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Contexto: lo dicho choca con lo que pasa.",
+         "Tono: un suspiro, un bostezo, un gesto.",
+         "Exageración: un elogio que suena falso."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "La ironía de situación",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "El bombero",
+          "raiz": "Ironía de situación: un bombero",
+          "ramas": [
+           [
+            "Lo esperable",
+            [
+             "que sepa evitar los incendios"
+            ],
+            "Es su trabajo."
+           ],
+           [
+            "Lo que pasa",
+            [
+             "se le quema la casa por dejar la pava al fuego"
+            ],
+            "Ocurre justo lo contrario."
+           ],
+           [
+            "El efecto",
+            [
+             "sorpresa y una sonrisa amarga"
+            ],
+            "La situación misma es irónica."
+           ]
+          ],
+          "cierre": "Nadie dice nada irónico: la ironía está en los hechos."
+         },
+         {
+          "nombre": "El reloj",
+          "raiz": "Ironía de situación: el relojero",
+          "ramas": [
+           [
+            "Lo esperable",
+            [
+             "que llegue siempre puntual"
+            ],
+            "Vive de los relojes."
+           ],
+           [
+            "Lo que pasa",
+            [
+             "es el único que llega tarde a todos lados"
+            ],
+            "Lo contrario de lo esperado."
+           ],
+           [
+            "El efecto",
+            [
+             "humor que nace de la situación"
+            ],
+            "No hace falta ningún comentario."
+           ]
+          ],
+          "cierre": "Los hechos contradicen lo esperable."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Ironía verbal o ironía de situación?",
+        "cajas": [
+         "Ironía verbal",
+         "Ironía de situación"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Bajo una tormenta, alguien dice: «Hermoso día para tomar sol».",
+          0
+         ],
+         [
+          "Al ver una nota de 2, el chico dice: «Soy un genio».",
+          0
+         ],
+         [
+          "Ante un plato quemado, la cocinera dice: «Me salió perfecto».",
+          0
+         ],
+         [
+          "El profesor de Lengua tiene una falta de ortografía en el cartel de su clase.",
+          1
+         ],
+         [
+          "El ladrón de autos denuncia que le robaron el auto.",
+          1
+         ],
+         [
+          "La campaña contra el ruido se lanza con una banda de música a todo volumen.",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Ironía de situación",
+        "texto": "La ironía de situación se produce cuando los hechos resultan lo contrario de lo esperable, aunque nadie diga nada irónico."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "En la ironía verbal, la contradicción está en las palabras; en la de situación, está en lo que pasa. Los cuentos humorísticos usan mucho la ironía de situación: preparan un personaje o un plan y hacen que todo salga al revés, justo de la manera que menos se esperaba."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Verbal: está en lo que se dice.",
+         "De situación: está en lo que pasa.",
+         "Las dos contradicen lo esperable."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Ironía",
+      "definicion": "es decir lo contrario de lo que se piensa, confiando en que el otro entienda el verdadero sentido.",
+      "ejemplo": "«¡Qué puntual!» a alguien que llegó una hora tarde"
+     },
+     {
+      "concepto": "Pistas de la ironía",
+      "definicion": "son el contexto, el tono y la exageración, que avisan que no hay que leer al pie de la letra.",
+      "ejemplo": "«¡Fue la noche más larga!», dicho bostezando"
+     },
+     {
+      "concepto": "Ironía verbal",
+      "definicion": "es la que está en lo que se dice: las palabras contradicen lo que se piensa.",
+      "ejemplo": "«Hermoso día para tomar sol» bajo una tormenta"
+     },
+     {
+      "concepto": "Ironía de situación",
+      "definicion": "es la que está en los hechos: ocurre lo contrario de lo esperable.",
+      "ejemplo": "Al bombero se le quema la casa"
+     },
+     {
+      "concepto": "Narrador irónico",
+      "definicion": "es el que elogia o comenta algo mientras los hechos muestran lo contrario.",
+      "ejemplo": "El señor Gómez era generosísimo: cobraba el lápiz"
+     }
+    ]
+   },
+   "carpeta": [
+    "Afuera llueve a cántaros y tu tío dice: «Ideal para tomar sol en la terraza». ¿Qué recurso usa?",
+    "El cerrajero del barrio quedó encerrado en su propio negocio toda la tarde. ¿Qué tipo de ironía es?",
+    "Clara dice «¡Qué noche tan divertida!» mientras bosteza en una fiesta aburrida. ¿Qué pista del tono muestra la ironía?",
+    "Lucía leyó «el señor era generosísimo: cobraba el lápiz que prestaba» y entendió que era generoso. ¿Qué tendría que haber notado?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "ironía",
+     "ironia",
+     "ironía verbal"
+    ],
+    [
+     "de situación",
+     "situacion",
+     "situación",
+     "ironía de situación"
+    ],
+    [
+     "el bostezo",
+     "bosteza",
+     "que bosteza"
+    ],
+    [
+     "la ironía",
+     "ironía",
+     "que es irónico",
+     "ironia"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "Ironía: dice lo contrario de lo que piensa.",
+     "De situación: los hechos son lo contrario de lo esperable.",
+     "El bostezo: muestra aburrimiento y contradice lo que dice.",
+     "La ironía: los hechos contradicen el elogio."
+    ]
+   }
+  },
+  "3": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es una parodia",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Original y parodia",
+          "cols": [
+           "",
+           "Original",
+           "Parodia"
+          ],
+          "filas": [
+           [
+            "Cuento de hadas",
+            "el príncipe rescata a la princesa",
+            "la princesa rescata al príncipe, que se cayó del caballo"
+           ],
+           [
+            "Noticiero",
+            "voz seria y datos importantes",
+            "voz seria y datos ridículos: «Un gato fue elegido intendente»"
+           ],
+           [
+            "Relato de terror",
+            "el monstruo asusta a todos",
+            "el monstruo le tiene miedo a la oscuridad"
+           ]
+          ],
+          "cierre": "La parodia conserva la forma reconocible y cambia el tono."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué se está parodiando?",
+        "items": [
+         {
+          "cons": "«Había una vez una princesa que esperó cien años a su príncipe. Cuando llegó, le dijo: \"Llegaste tarde, ya me arreglé sola\".»",
+          "ops": [
+           "Los cuentos de hadas",
+           "Las noticias",
+           "Las recetas de cocina"
+          ],
+          "ayuda": "Fijate en la fórmula «había una vez» y en los personajes."
+         },
+         {
+          "cons": "«Último momento: con lágrimas en los ojos, el ministro anunció que la medialuna de grasa será declarada patrimonio nacional.»",
+          "ops": [
+           "Los noticieros",
+           "Los poemas de amor",
+           "Las fábulas"
+          ],
+          "ayuda": "La forma es la de un informe urgente."
+         },
+         {
+          "cons": "«Ingredientes: un lunes, dos alarmas que no sonaron y una pizca de mal humor. Mezclar todo y servir a las 8.»",
+          "ops": [
+           "Las recetas de cocina",
+           "Los cuentos policiales",
+           "Las cartas formales"
+          ],
+          "ayuda": "Reconocé la forma del texto."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Parodia",
+        "texto": "La parodia es la imitación burlesca de una obra, un estilo o un género conocido: copia su forma reconocible, pero cambia el tono para producir humor."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Para que una parodia funcione, el lector tiene que reconocer el original: la gracia está en ver lo conocido dado vuelta. Por eso las parodias suelen elegir textos o géneros muy famosos, como los cuentos de hadas, los noticieros o las historias de terror."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Imita una forma conocida.",
+         "Cambia el tono: de serio a ridículo.",
+         "El lector tiene que conocer el original."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Parodiar un género",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Fragmento",
+        "items": [
+         {
+          "nombre": "El castillo",
+          "texto": "{{Era una noche oscura y tormentosa. En lo alto de la colina se alzaba el castillo maldito|Imita el comienzo típico del relato de terror.}}. {{El fantasma arrastró sus cadenas por el pasillo y lanzó un aullido espantoso|Rasgos del género: cadenas, aullidos, oscuridad.}}. {{Desde un cuarto, una voz soñolienta gritó: «¡Bajá el volumen, que mañana trabajo!»|Inversión: los vivos no se asustan, se molestan.}}.",
+          "cierre": "Todo el terror está, pero el efecto es risa."
+         },
+         {
+          "nombre": "El vampiro",
+          "texto": "{{El conde abrió el ataúd a medianoche y desplegó su capa negra|Imita el relato de vampiros.}}. {{Se miró en el espejo para arreglarse el peinado y, como siempre, no se vio|Exagera un rasgo del género hasta lo ridículo.}}. {{Salió a la noche despeinado y de mal humor|Lo terrorífico se vuelve cotidiano.}}.",
+          "cierre": "El rasgo del vampiro se convierte en problema doméstico."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Es un rasgo del relato de terror o un giro paródico?",
+        "cajas": [
+         "Rasgo del terror",
+         "Giro paródico"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Una casa abandonada en lo alto de una colina",
+          0
+         ],
+         [
+          "Pasos que se oyen en el pasillo a medianoche",
+          0
+         ],
+         [
+          "Un fantasma que arrastra cadenas",
+          0
+         ],
+         [
+          "El fantasma pide que le bajen la música",
+          1
+         ],
+         [
+          "La bruja se queja de que su escoba no tiene garantía",
+          1
+         ],
+         [
+          "El hombre lobo va al peluquero todos los meses",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Parodia de género",
+        "texto": "La parodia de género imita los rasgos típicos de un tipo de relato, como el terror, el policial o el cuento de hadas, y los exagera o los invierte para hacer reír."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cada género tiene rasgos que los lectores ya esperan: el castillo y las cadenas en el terror, el príncipe y el «había una vez» en los cuentos de hadas. La parodia los usa porque son reconocibles, y después los da vuelta. Así, además de hacer reír, muestra cuán repetidos pueden ser esos rasgos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Toma los rasgos típicos del género.",
+         "Los exagera o los invierte.",
+         "Muestra lo previsible del original."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Un clásico paródico: el Quijote",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Episodio",
+        "items": [
+         {
+          "nombre": "Los molinos",
+          "texto": "{{Don Quijote ha leído tantos libros de caballería que decide hacerse caballero andante|Imita al héroe de esos libros.}}. {{Al ver unos molinos de viento, cree que son gigantes y los ataca con su lanza|Exageración: confunde la realidad con las aventuras de los libros.}}. {{Un aspa lo levanta y lo tira al suelo, todo dolorido|Giro: el héroe termina golpeado y ridículo.}}.",
+          "cierre": "La novela de Cervantes (1605) parodia los libros de caballería."
+         },
+         {
+          "nombre": "La dama",
+          "texto": "{{Como todo caballero necesita una dama a quien dedicar sus hazañas|Imita una regla de los libros de caballería.}}, {{don Quijote elige a una campesina del pueblo vecino y la llama Dulcinea del Toboso|Inversión: la gran dama es una vecina común.}}.",
+          "cierre": "Los rasgos del género se vuelven ridículos en el mundo real."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "Pensá en cómo funciona la parodia en el Quijote.",
+        "items": [
+         {
+          "cons": "¿Qué género parodia «Don Quijote de la Mancha»?",
+          "ops": [
+           "Los libros de caballería",
+           "Las novelas policiales",
+           "Los relatos de terror"
+          ],
+          "ayuda": "Don Quijote quiere ser caballero andante."
+         },
+         {
+          "cons": "¿Por qué el ataque a los molinos es paródico?",
+          "ops": [
+           "Porque el héroe pelea contra enemigos imaginarios y pierde",
+           "Porque los molinos eran gigantes de verdad",
+           "Porque don Quijote gana la batalla"
+          ],
+          "ayuda": "Compará con lo que hace un caballero de los libros."
+         },
+         {
+          "cons": "Un lector de 1605 que conocía muchos libros de caballería, ¿qué disfrutaba más?",
+          "ops": [
+           "Reconocer las reglas del género dadas vuelta",
+           "Aprender a pelear con lanza",
+           "Conocer los molinos de La Mancha"
+          ],
+          "ayuda": "La parodia necesita un lector que conozca el original."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Don Quijote",
+        "texto": "Don Quijote de la Mancha, de Miguel de Cervantes, es una novela de 1605 que parodia los libros de caballería a través de un hidalgo que se cree caballero andante."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cervantes imita la forma de esos libros, con el héroe, la dama, los combates y las aventuras, pero los ubica en el mundo real, donde todo sale mal. Lo que empezó como una parodia terminó siendo una de las novelas más importantes de la literatura, porque además de hacer reír muestra el choque entre los sueños y la realidad."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Imita los libros de caballería.",
+         "Los pone en el mundo real, donde todo sale mal.",
+         "Es un clásico de la parodia."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Parodia",
+      "definicion": "es la imitación burlesca de una obra, un estilo o un género conocido, que cambia su tono para hacer reír.",
+      "ejemplo": "La princesa rescata al príncipe que se cayó del caballo"
+     },
+     {
+      "concepto": "Imitar",
+      "definicion": "es copiar la forma reconocible del original para que el lector la identifique.",
+      "ejemplo": "«Era una noche oscura y tormentosa…»"
+     },
+     {
+      "concepto": "Invertir",
+      "definicion": "es dar vuelta lo que el lector espera del original, como cambiar quién asusta a quién.",
+      "ejemplo": "El fantasma se asusta de la familia"
+     },
+     {
+      "concepto": "Parodia de género",
+      "definicion": "imita los rasgos típicos de un tipo de relato y los exagera o los invierte.",
+      "ejemplo": "El hombre lobo va al peluquero"
+     },
+     {
+      "concepto": "Lector de parodias",
+      "definicion": "tiene que conocer el original para reconocer qué se imita y qué se da vuelta.",
+      "ejemplo": "Sin conocer los libros de caballería, el Quijote pierde gracia"
+     },
+     {
+      "concepto": "Don Quijote",
+      "definicion": "es la novela de Cervantes de 1605 que parodia los libros de caballería.",
+      "ejemplo": "Ataca molinos creyendo que son gigantes"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un cuento dice: «Había una vez un dragón que se escondía cada vez que veía un caballero». ¿Qué género parodia?",
+    "En una parodia, el hombre lobo va al peluquero todos los meses para que no se le note. ¿Qué rasgo del terror se exagera?",
+    "Don Quijote ataca unos molinos de viento porque cree que son gigantes. ¿Qué tipo de libros está parodiando Cervantes?",
+    "Pedro dice que una parodia es copiar un texto tal cual. ¿Qué cambia la parodia respecto del original?"
+   ],
+   "carpeta_nivel": [
+    "aplicar",
+    "analizar",
+    "aplicar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "el cuento de hadas",
+     "cuento de hadas",
+     "cuentos de hadas",
+     "los cuentos de hadas"
+    ],
+    [
+     "el pelo",
+     "que le crece pelo",
+     "el pelo del hombre lobo"
+    ],
+    [
+     "libros de caballería",
+     "de caballería",
+     "caballería",
+     "caballeria"
+    ],
+    [
+     "el tono",
+     "tono"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "El cuento de hadas: imita la fórmula y da vuelta los papeles.",
+     "El pelo: un rasgo típico del monstruo se vuelve problema cotidiano.",
+     "Los libros de caballería, con sus combates heroicos.",
+     "El tono: imita la forma, pero vuelve ridículo lo serio."
+    ]
+   }
+  },
+  "4": {
+   "leccion": {
+    "temas": [
+     {
+      "titulo": "Qué es la sátira",
+      "ejemplo": {
+       "motor": "marcar",
+       "p": {
+        "rotulo": "Texto",
+        "items": [
+         {
+          "nombre": "El decreto",
+          "texto": "{{El intendente firmó un decreto que prohibía la lluvia los fines de semana|Exageración absurda.}}. {{Cuando llovió igual, multó a las nubes y anunció que el problema estaba resuelto|Burla de las autoridades que creen que todo se arregla con papeles.}}.",
+          "cierre": "Nos reímos, y a la vez el texto critica una forma de gobernar."
+         },
+         {
+          "nombre": "La selfie",
+          "texto": "{{Martina se sacó doscientas fotos en el atardecer más lindo del año|Exagera una costumbre actual.}}. {{Cuando terminó de elegir la mejor, ya era de noche y no había visto el atardecer|Critica: por mirar la pantalla, se perdió lo real.}}.",
+          "cierre": "La sátira apunta a una costumbre de la sociedad."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "elegir_x",
+       "p": {
+        "consigna": "¿Qué critica cada texto satírico?",
+        "items": [
+         {
+          "cons": "En un cuento, un empresario vende aire embotellado «de montaña» y la gente hace fila para comprarlo.",
+          "ops": [
+           "El consumo de cosas inútiles por moda",
+           "El cuidado del medio ambiente",
+           "El turismo en la montaña"
+          ],
+          "ayuda": "Pensá de quiénes se burla el cuento."
+         },
+         {
+          "cons": "Una historieta muestra una oficina donde para pedir un formulario hay que presentar el mismo formulario completo.",
+          "ops": [
+           "Los trámites absurdos y la burocracia",
+           "El trabajo en oficinas",
+           "El uso del papel"
+          ],
+          "ayuda": "La situación es imposible a propósito."
+         },
+         {
+          "cons": "Un relato cuenta que en un pueblo todos opinan sobre la vida de los vecinos, pero nadie limpia su propia vereda.",
+          "ops": [
+           "El chisme y la hipocresía",
+           "La limpieza de las calles",
+           "La vida en los pueblos"
+          ],
+          "ayuda": "Fijate en el defecto que muestra."
+         }
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Sátira",
+        "texto": "La sátira es el texto o el recurso que usa el humor, sobre todo la exageración y la ironía, para criticar defectos de las personas, las costumbres o la sociedad."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "La sátira se ríe, pero no solo para divertir: quiere mostrar algo que está mal. Por eso, para leerla bien, no alcanza con reírse; hay que preguntarse de qué se está burlando el texto y qué propone pensar. Sus blancos suelen ser las autoridades, las modas y los defectos humanos."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Usa el humor para criticar.",
+         "Blancos: autoridades, costumbres, defectos.",
+         "Preguntá: ¿de qué se burla y por qué?"
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Caricatura y estereotipo",
+      "ejemplo": {
+       "motor": "versiones",
+       "p": {
+        "rotulo": "Personaje",
+        "items": [
+         {
+          "nombre": "Realista",
+          "texto": "{{Don Aurelio es un comerciante cuidadoso con el dinero; ahorra para su vejez y a veces le cuesta gastar.|Un personaje con matices.}}"
+         },
+         {
+          "nombre": "Caricatura",
+          "texto": "{{Don Aurelio es tan tacaño que apaga la luz para no gastar mientras cuenta las monedas, y las cuenta de memoria para no gastar la vista.|Un solo rasgo, exagerado hasta el absurdo.}}"
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Personaje con matices o caricatura?",
+        "cajas": [
+         "Con matices",
+         "Caricatura"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Una abuela cariñosa que a veces pierde la paciencia con sus nietos",
+          0
+         ],
+         [
+          "Un profesor exigente que también sabe escuchar",
+          0
+         ],
+         [
+          "Una vecina curiosa, pero solidaria cuando hace falta",
+          0
+         ],
+         [
+          "Un millonario que pregunta el precio del aire antes de respirar",
+          1
+         ],
+         [
+          "Una estrella de cine que no sale de su casa sin cinco espejos",
+          1
+         ],
+         [
+          "Un político que promete un puente donde no hay río",
+          1
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Caricatura",
+        "texto": "La caricatura es el retrato de un personaje que exagera uno o dos de sus rasgos hasta volverlo ridículo; la sátira la usa para burlarse de un tipo de persona."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Muchas veces la caricatura representa un estereotipo: el avaro, el vanidoso, el político mentiroso. No es un personaje complejo, sino un tipo reconocible. Hay que leerla con cuidado: la buena sátira apunta a conductas y a quienes tienen poder, y no a burlarse de alguien por lo que es."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Exagera uno o dos rasgos.",
+         "Representa un tipo de persona.",
+         "La buena sátira apunta a conductas, no a quién es alguien."
+        ]
+       }
+      ]
+     },
+     {
+      "titulo": "Parodia y sátira juntas",
+      "ejemplo": {
+       "motor": "esquema",
+       "p": {
+        "items": [
+         {
+          "nombre": "Diferencias",
+          "cols": [
+           "",
+           "Parodia",
+           "Sátira"
+          ],
+          "filas": [
+           [
+            "¿Qué imita o critica?",
+            "una obra, un estilo o un género",
+            "personas, costumbres o la sociedad"
+           ],
+           [
+            "¿Para qué?",
+            "para jugar con lo conocido",
+            "para mostrar algo que está mal"
+           ],
+           [
+            "Recursos",
+            "imitar, exagerar, invertir",
+            "exagerar, ironía, caricatura"
+           ],
+           [
+            "Juntas",
+            "muchas obras parodian un género…",
+            "…y a la vez critican la sociedad"
+           ]
+          ],
+          "cierre": "Un mismo texto puede ser parodia y sátira a la vez."
+         }
+        ]
+       }
+      },
+      "ejercicio": {
+       "motor": "clasificar_x",
+       "p": {
+        "consigna": "¿Parodia, sátira o las dos?",
+        "cajas": [
+         "Parodia",
+         "Sátira",
+         "Las dos"
+        ],
+        "cuantos": 6,
+        "items": [
+         [
+          "Un cuento de hadas donde el lobo es vegetariano",
+          0
+         ],
+         [
+          "Un poema que imita a un poeta famoso para jugar con su estilo",
+          0
+         ],
+         [
+          "Una historieta sobre funcionarios que cobran por no trabajar",
+          1
+         ],
+         [
+          "Un cuento que se burla de los que gastan todo para aparentar",
+          1
+         ],
+         [
+          "Un falso noticiero que imita el formato del noticiero para criticar a los políticos",
+          2
+         ],
+         [
+          "Un relato de fantasmas donde una familia rica cree que todo se arregla comprando productos",
+          2
+         ]
+        ]
+       }
+      },
+      "explicacion": [
+       {
+        "tipo": "definicion",
+        "titulo": "Parodia y sátira",
+        "texto": "La parodia imita una obra o un género para jugar con él, y la sátira critica a las personas o la sociedad; muchas obras combinan las dos."
+       },
+       {
+        "tipo": "parrafo",
+        "texto": "Cuando un texto imita un género conocido y, además, usa esa imitación para burlarse de un grupo social o de una costumbre, es parodia y sátira al mismo tiempo. Reconocer las dos capas permite leer mejor: primero, qué se imita; después, qué se critica."
+       },
+       {
+        "tipo": "lista",
+        "items": [
+         "Parodia: juega con una obra o género.",
+         "Sátira: critica a la sociedad.",
+         "Muchas obras hacen las dos cosas."
+        ]
+       }
+      ]
+     }
+    ],
+    "recuerda": [
+     {
+      "concepto": "Sátira",
+      "definicion": "usa el humor, sobre todo la exageración y la ironía, para criticar defectos de las personas o la sociedad.",
+      "ejemplo": "El intendente que multa a las nubes"
+     },
+     {
+      "concepto": "Blancos de la sátira",
+      "definicion": "suelen ser las autoridades, las costumbres de una época y los defectos humanos.",
+      "ejemplo": "La burocracia, las modas, la avaricia"
+     },
+     {
+      "concepto": "Caricatura",
+      "definicion": "es un retrato que exagera uno o dos rasgos de un personaje hasta volverlo ridículo.",
+      "ejemplo": "El tacaño que cuenta monedas a oscuras"
+     },
+     {
+      "concepto": "Estereotipo",
+      "definicion": "es un tipo de persona reconocible y simplificado, como el avaro o el vanidoso.",
+      "ejemplo": "El político que promete un puente sin río"
+     },
+     {
+      "concepto": "Parodia y sátira",
+      "definicion": "la parodia imita una obra o un género; la sátira critica a la sociedad, y pueden aparecer juntas.",
+      "ejemplo": "Un falso noticiero que critica a los políticos"
+     }
+    ]
+   },
+   "carpeta": [
+    "Un cuento muestra a un intendente que prohíbe la lluvia por decreto y multa a las nubes. ¿De quiénes se burla la sátira?",
+    "Un personaje es tan tacaño que cuenta las monedas a oscuras para no gastar luz. ¿Cómo se llama ese retrato exagerado?",
+    "Un falso noticiero imita el formato real para burlarse de los políticos que no cumplen. ¿Es parodia, sátira o las dos?",
+    "Martín dice que la sátira solo sirve para hacer reír. ¿Qué otra intención tiene, además de la risa?"
+   ],
+   "carpeta_nivel": [
+    "analizar",
+    "aplicar",
+    "analizar",
+    "error"
+   ],
+   "respuestas_carpeta": [
+    [
+     "de las autoridades",
+     "autoridades",
+     "de los gobernantes",
+     "gobernantes"
+    ],
+    [
+     "caricatura",
+     "una caricatura"
+    ],
+    [
+     "las dos",
+     "ambas",
+     "parodia y sátira"
+    ],
+    [
+     "criticar",
+     "la crítica",
+     "critica",
+     "crítica"
+    ]
+   ],
+   "soluciones": {
+    "carpeta": [
+     "De las autoridades que creen que todo se arregla con papeles.",
+     "Caricatura: exagera un rasgo hasta lo ridículo.",
+     "Las dos: imita un género y critica a la sociedad.",
+     "Criticar: muestra un defecto de las personas o la sociedad."
+    ]
+   }
+  }
+ },
+ "act": {
+  "1": [
+   {
+    "t": "classify",
+    "p": "¿Qué recurso del humor usa cada frase?",
+    "o": {
+     "elementos": [
+      "Estudió toda la noche para la prueba y se quedó dormido en el examen",
+      "Mi abuela cocina tanto que los vecinos engordan por el olor",
+      "—¿Tenés hora? —Sí. —¿Me la decís? —No, es mía",
+      "El cerrajero quedó encerrado en su propio negocio"
+     ],
+     "categorias": [
+      "Lo inesperado",
+      "Exageración",
+      "Juego de palabras"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Estudió toda la noche para la prueba y se quedó dormido en el examen": "Lo inesperado",
+      "Mi abuela cocina tanto que los vecinos engordan por el olor": "Exageración",
+      "—¿Tenés hora? —Sí. —¿Me la decís? —No, es mía": "Juego de palabras",
+      "El cerrajero quedó encerrado en su propio negocio": "Lo inesperado"
+     }
+    },
+    "e": "Pensá qué hace reír en cada caso.",
+    "n": "aplicar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada frase con el rasgo real que exagera.",
+    "o": {
+     "izquierda": [
+      "Hacía tanto frío que los pingüinos pedían estufa",
+      "Habla tan bajo que los susurros le parecen gritos",
+      "Es tan alto que saluda a los aviones",
+      "El auto es tan viejo que tiene permiso de los dinosaurios"
+     ],
+     "derecha": [
+      "mucha antigüedad",
+      "gran altura",
+      "voz muy baja",
+      "mucho frío"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Hacía tanto frío que los pingüinos pedían estufa": "mucho frío",
+      "Habla tan bajo que los susurros le parecen gritos": "voz muy baja",
+      "Es tan alto que saluda a los aviones": "gran altura",
+      "El auto es tan viejo que tiene permiso de los dinosaurios": "mucha antigüedad"
+     }
+    },
+    "e": "Detrás de cada exageración hay un rasgo verdadero.",
+    "n": "aplicar"
+   },
+   {
+    "t": "odd_one_out",
+    "p": "Tres frases usan humor y una solo informa. ¿Cuál informa?",
+    "o": [
+     "El tren llegó cuarenta minutos tarde.",
+     "El tren tardó tanto que los pasajeros festejaron cumpleaños.",
+     "Esperé el tren hasta que me crecieron raíces.",
+     "El tren era tan lento que lo pasaban los caracoles."
+    ],
+    "r": {
+     "correcta": "El tren llegó cuarenta minutos tarde."
+    },
+    "e": "Las otras tres exageran el rasgo hasta el absurdo.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Un compañero dice: «En \"Esperé tanto que me salieron canas\" hay una mentira, así que es un error del texto». ¿Qué le contestás?",
+    "o": [
+     "Es una exageración: nadie la toma al pie de la letra",
+     "Tiene razón: es un error del autor",
+     "Es un juego de palabras con «canas»"
+    ],
+    "r": {
+     "correcta": "Es una exageración: nadie la toma al pie de la letra"
+    },
+    "e": "La exageración humorística no busca engañar.",
+    "n": "error"
+   }
+  ],
+  "2": [
+   {
+    "t": "classify",
+    "p": "Leé cada situación. ¿La frase es irónica o literal?",
+    "o": {
+     "elementos": [
+      "Tu equipo ganó 5 a 0 y decís: «¡Qué partidazo!»",
+      "Se te quema la comida y decís: «Soy un chef de primera»",
+      "Sacaste 10 y tu mamá dice: «¡Qué orgullo!»",
+      "Llueve en tu cumpleaños al aire libre y decís: «Día perfecto»"
+     ],
+     "categorias": [
+      "Irónica",
+      "Literal"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Tu equipo ganó 5 a 0 y decís: «¡Qué partidazo!»": "Literal",
+      "Se te quema la comida y decís: «Soy un chef de primera»": "Irónica",
+      "Sacaste 10 y tu mamá dice: «¡Qué orgullo!»": "Literal",
+      "Llueve en tu cumpleaños al aire libre y decís: «Día perfecto»": "Irónica"
+     }
+    },
+    "e": "Compará lo dicho con el contexto.",
+    "n": "aplicar"
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá las DOS pistas que muestran que la frase es irónica: «Juan llegó a las once a una cita de las nueve. \"¡Siempre tan puntual!\", dijo Sara, mirando el reloj y suspirando.»",
+    "o": {
+     "segmentos": [
+      "Juan llegó a las once",
+      "a una cita de las nueve.",
+      "«¡Siempre tan puntual!»,",
+      "dijo Sara,",
+      "mirando el reloj",
+      "y suspirando."
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      0,
+      5
+     ]
+    },
+    "e": "El contexto (llegó dos horas tarde) y el tono (el suspiro).",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Ironía verbal o de situación?",
+    "o": {
+     "elementos": [
+      "El dentista tiene todos los dientes picados",
+      "Ante una nota baja, alguien dice: «Soy un genio»",
+      "La escuela de manejo choca su propio auto",
+      "Ante una tormenta, alguien dice: «Lindo día»"
+     ],
+     "categorias": [
+      "Verbal",
+      "De situación"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El dentista tiene todos los dientes picados": "De situación",
+      "Ante una nota baja, alguien dice: «Soy un genio»": "Verbal",
+      "La escuela de manejo choca su propio auto": "De situación",
+      "Ante una tormenta, alguien dice: «Lindo día»": "Verbal"
+     }
+    },
+    "e": "En las palabras o en los hechos.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Sofía lee: «El señor era tan generoso que prestaba su lápiz una vez por año, y lo cobraba». Ella entiende que el señor era muy generoso. ¿Qué no tuvo en cuenta?",
+    "o": [
+     "Que el narrador es irónico: los hechos lo contradicen",
+     "Que el lápiz era muy caro",
+     "Que el señor no tenía lápiz"
+    ],
+    "r": {
+     "correcta": "Que el narrador es irónico: los hechos lo contradicen"
+    },
+    "e": "Leyó al pie de la letra un elogio irónico.",
+    "n": "error"
+   }
+  ],
+  "3": [
+   {
+    "t": "matching",
+    "p": "Uní cada parodia con el género que imita.",
+    "o": {
+     "izquierda": [
+      "«Había una vez un dragón que tenía miedo de los caballeros»",
+      "«Último momento: un perro fue elegido presidente del club»",
+      "«Ingredientes: dos lunes y una alarma rota»",
+      "«Era una noche oscura y el fantasma no encontraba sus cadenas»"
+     ],
+     "derecha": [
+      "relato de terror",
+      "receta",
+      "noticiero",
+      "cuento de hadas"
+     ]
+    },
+    "r": {
+     "pares": {
+      "«Había una vez un dragón que tenía miedo de los caballeros»": "cuento de hadas",
+      "«Último momento: un perro fue elegido presidente del club»": "noticiero",
+      "«Ingredientes: dos lunes y una alarma rota»": "receta",
+      "«Era una noche oscura y el fantasma no encontraba sus cadenas»": "relato de terror"
+     }
+    },
+    "e": "Reconocé la forma que se imita.",
+    "n": "aplicar"
+   },
+   {
+    "t": "classify",
+    "p": "En una parodia del relato de vampiros, ¿qué es un rasgo del género y qué es el giro paródico?",
+    "o": {
+     "elementos": [
+      "El conde duerme en un ataúd",
+      "El conde no puede dormir porque el ataúd le aprieta",
+      "Sale de noche con su capa negra",
+      "La capa se le engancha en la puerta y se cae"
+     ],
+     "categorias": [
+      "Rasgo del género",
+      "Giro paródico"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El conde duerme en un ataúd": "Rasgo del género",
+      "El conde no puede dormir porque el ataúd le aprieta": "Giro paródico",
+      "Sale de noche con su capa negra": "Rasgo del género",
+      "La capa se le engancha en la puerta y se cae": "Giro paródico"
+     }
+    },
+    "e": "Lo que se imita y lo que se da vuelta.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "¿Por qué el ataque de don Quijote a los molinos es un buen ejemplo de parodia?",
+    "o": [
+     "Imita los combates de los caballeros, pero sale ridículo",
+     "Cuenta un combate verdadero de la Edad Media",
+     "Explica cómo funcionan los molinos de viento"
+    ],
+    "r": {
+     "correcta": "Imita los combates de los caballeros, pero sale ridículo"
+    },
+    "e": "La forma del combate heroico se mantiene y el resultado se invierte.",
+    "n": "analizar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Lautaro dice que una parodia es lo mismo que copiar un texto. ¿Qué le falta entender?",
+    "o": [
+     "Que la parodia imita la forma, pero cambia el tono",
+     "Que la parodia nunca imita a nadie",
+     "Que la parodia siempre es más larga"
+    ],
+    "r": {
+     "correcta": "Que la parodia imita la forma, pero cambia el tono"
+    },
+    "e": "Copiar repite; parodiar transforma para hacer reír.",
+    "n": "error"
+   }
+  ],
+  "4": [
+   {
+    "t": "matching",
+    "p": "Uní cada texto satírico con lo que critica.",
+    "o": {
+     "izquierda": [
+      "Un empresario vende aire embotellado y la gente hace fila",
+      "Para pedir un formulario hay que entregar el mismo formulario",
+      "Un pueblo donde todos opinan de los vecinos, pero nadie barre su vereda",
+      "Un rey que se pone un traje invisible para no admitir que lo engañaron"
+     ],
+     "derecha": [
+      "la vanidad del poder",
+      "la hipocresía",
+      "la burocracia",
+      "el consumo por moda"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Un empresario vende aire embotellado y la gente hace fila": "el consumo por moda",
+      "Para pedir un formulario hay que entregar el mismo formulario": "la burocracia",
+      "Un pueblo donde todos opinan de los vecinos, pero nadie barre su vereda": "la hipocresía",
+      "Un rey que se pone un traje invisible para no admitir que lo engañaron": "la vanidad del poder"
+     }
+    },
+    "e": "Preguntá de qué se burla cada uno.",
+    "n": "analizar"
+   },
+   {
+    "t": "classify",
+    "p": "¿Personaje con matices o caricatura?",
+    "o": {
+     "elementos": [
+      "Una tía exigente que también es muy cariñosa",
+      "Un avaro que cobra entrada para ver su colección de monedas",
+      "Un vecino tímido que se anima a hablar en la reunión",
+      "Una influencer que no come si no puede sacarle foto al plato"
+     ],
+     "categorias": [
+      "Con matices",
+      "Caricatura"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Una tía exigente que también es muy cariñosa": "Con matices",
+      "Un avaro que cobra entrada para ver su colección de monedas": "Caricatura",
+      "Un vecino tímido que se anima a hablar en la reunión": "Con matices",
+      "Una influencer que no come si no puede sacarle foto al plato": "Caricatura"
+     }
+    },
+    "e": "Varios rasgos o uno solo exagerado.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multi_select",
+    "p": "Un falso noticiero imita la voz y el formato del noticiero para burlarse de los políticos que prometen y no cumplen. Elegí las DOS cosas que es.",
+    "o": [
+     "Parodia, porque imita el formato del noticiero",
+     "Sátira, porque critica a los políticos",
+     "Un noticiero real",
+     "Un texto sin humor"
+    ],
+    "r": {
+     "correctas": [
+      "Parodia, porque imita el formato del noticiero",
+      "Sátira, porque critica a los políticos"
+     ]
+    },
+    "e": "Imita un género y, a la vez, critica.",
+    "n": "analizar"
+   },
+   {
+    "t": "keywords",
+    "p": "Elegí una costumbre de hoy (por ejemplo, mirar el celular todo el tiempo) y explicá cómo la criticaría una sátira: qué exageraría y qué querría mostrar.",
+    "o": {
+     "ayuda": "Nombrá la costumbre, la exageración y la crítica."
+    },
+    "r": {
+     "grupos": [
+      [
+       "exager*",
+       "agrand*",
+       "absurd*"
+      ],
+      [
+       "critic*",
+       "mostrar",
+       "burl*",
+       "mal",
+       "problema"
+      ],
+      [
+       "celular",
+       "moda",
+       "costumbre",
+       "redes",
+       "consum*",
+       "foto*",
+       "pantalla*"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Por ejemplo: exageraría a alguien que se pierde un atardecer por sacarle fotos, para mostrar que miramos la pantalla y no la realidad.",
+    "n": "aplicar"
+   }
+  ],
+  "5": [
+   {
+    "t": "classify",
+    "p": "¿Qué recurso del humor predomina?",
+    "o": {
+     "elementos": [
+      "Tenía tanta sed que se tomó el río",
+      "Ante el examen imposible, dijo: «Facilísimo»",
+      "Un cuento de hadas donde la princesa rescata al dragón",
+      "Un relato que critica a los que compran todo para aparentar"
+     ],
+     "categorias": [
+      "Exageración",
+      "Ironía",
+      "Parodia",
+      "Sátira"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Tenía tanta sed que se tomó el río": "Exageración",
+      "Ante el examen imposible, dijo: «Facilísimo»": "Ironía",
+      "Un cuento de hadas donde la princesa rescata al dragón": "Parodia",
+      "Un relato que critica a los que compran todo para aparentar": "Sátira"
+     }
+    },
+    "e": "Repasá los cuatro recursos de la misión.",
+    "n": "analizar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená cómo se construye el humor en este chiste: «El mago prometió hacer desaparecer un elefante. Desapareció el público».",
+    "o": [
+     "Se arma la expectativa: un elefante va a desaparecer",
+     "Llega el giro: desaparece el público",
+     "El choque entre lo esperado y lo ocurrido produce la risa",
+     "Se presenta la situación: un mago y un truco"
+    ],
+    "r": {
+     "orden": [
+      "Se presenta la situación: un mago y un truco",
+      "Se arma la expectativa: un elefante va a desaparecer",
+      "Llega el giro: desaparece el público",
+      "El choque entre lo esperado y lo ocurrido produce la risa"
+     ]
+    },
+    "e": "Expectativa, giro y risa.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "En un cuento, un ladrón famoso por sus trucos cae preso porque se olvida la billetera con su documento en la escena del robo. ¿Qué tipo de ironía hay?",
+    "o": [
+     "De situación: le pasa lo contrario de lo esperable",
+     "Verbal: el ladrón dice lo contrario de lo que piensa",
+     "Ninguna: es un dato sin humor"
+    ],
+    "r": {
+     "correcta": "De situación: le pasa lo contrario de lo esperable"
+    },
+    "e": "La ironía está en los hechos.",
+    "n": "analizar"
+   },
+   {
+    "t": "tap_text",
+    "p": "Tocá las DOS partes que muestran que es una parodia del relato de terror: «Era una noche oscura y tormentosa. El fantasma lanzó un aullido. Desde el cuarto, una voz gritó: \"¡Bajá el volumen!\"».",
+    "o": {
+     "segmentos": [
+      "Era una noche oscura y tormentosa.",
+      "El fantasma lanzó un aullido.",
+      "Desde el cuarto,",
+      "una voz gritó:",
+      "«¡Bajá el volumen!»"
+     ],
+     "modo": "palabras"
+    },
+    "r": {
+     "tocar": [
+      0,
+      4
+     ]
+    },
+    "e": "Imita el comienzo típico del terror y después lo invierte.",
+    "n": "analizar"
+   }
+  ]
+ },
+ "examen": [
+  [
+   1,
+   {
+    "t": "classify",
+    "p": "¿Qué recurso usa cada frase?",
+    "o": {
+     "elementos": [
+      "El bombero tenía miedo de los fósforos",
+      "Era tan lento que lo pasaban las tortugas",
+      "—¿Por qué el libro de matemática está triste? —Porque tiene muchos problemas"
+     ],
+     "categorias": [
+      "Lo inesperado",
+      "Exageración",
+      "Juego de palabras"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El bombero tenía miedo de los fósforos": "Lo inesperado",
+      "Era tan lento que lo pasaban las tortugas": "Exageración",
+      "—¿Por qué el libro de matemática está triste? —Porque tiene muchos problemas": "Juego de palabras"
+     }
+    },
+    "e": "Los tres recursos del humor.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué es la incongruencia?",
+    "o": [
+     "El choque entre lo esperado y lo que ocurre",
+     "Una palabra que tiene dos significados",
+     "Un elogio que dice lo contrario"
+    ],
+    "r": {
+     "correcta": "El choque entre lo esperado y lo que ocurre"
+    },
+    "e": "Es el mecanismo básico del humor.",
+    "n": "recordar"
+   }
+  ],
+  [
+   1,
+   {
+    "t": "odd_one_out",
+    "p": "Tres frases exageran con humor y una no. ¿Cuál no exagera?",
+    "o": [
+     "Hacía frío y me puse una campera.",
+     "Hacía tanto frío que las palabras se congelaban.",
+     "El frío era tal que los osos pedían frazadas.",
+     "Tenía tanto frío que tiritaba hasta mi sombra."
+    ],
+    "r": {
+     "correcta": "Hacía frío y me puse una campera."
+    },
+    "e": "Las demás llevan el frío al absurdo.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "short_answer",
+    "p": "Llegás empapado por la lluvia y tu amigo dice: «Veo que trajiste paraguas». ¿Qué recurso usa? Escribí una palabra.",
+    "r": {
+     "acepta": [
+      "ironía",
+      "ironia",
+      "la ironía",
+      "ironía verbal"
+     ]
+    },
+    "e": "Dice lo contrario de lo que piensa.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "classify",
+    "p": "¿Ironía verbal o de situación?",
+    "o": {
+     "elementos": [
+      "El cerrajero queda encerrado en su casa",
+      "Ante un plato quemado: «Me salió perfecto»",
+      "El meteorólogo se moja porque no creyó en su pronóstico",
+      "Ante una nota de 2: «Soy un genio»"
+     ],
+     "categorias": [
+      "Verbal",
+      "De situación"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "El cerrajero queda encerrado en su casa": "De situación",
+      "Ante un plato quemado: «Me salió perfecto»": "Verbal",
+      "El meteorólogo se moja porque no creyó en su pronóstico": "De situación",
+      "Ante una nota de 2: «Soy un genio»": "Verbal"
+     }
+    },
+    "e": "En las palabras o en los hechos.",
+    "n": "analizar"
+   }
+  ],
+  [
+   2,
+   {
+    "t": "true_false",
+    "p": "Para reconocer la ironía en un texto escrito, hay que fijarse en el contexto, porque no se escucha el tono de voz.",
+    "o": [
+     "Verdadero",
+     "Falso"
+    ],
+    "r": {
+     "correcta": "Verdadero"
+    },
+    "e": "El contexto y la exageración reemplazan al tono.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "¿Qué es una parodia?",
+    "o": [
+     "Una imitación burlesca de una obra o un género",
+     "Un texto que copia otro sin cambiarlo",
+     "Una crítica a las autoridades sin humor"
+    ],
+    "r": {
+     "correcta": "Una imitación burlesca de una obra o un género"
+    },
+    "e": "Imita la forma y cambia el tono.",
+    "n": "recordar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "matching",
+    "p": "Uní cada parodia con lo que imita.",
+    "o": {
+     "izquierda": [
+      "El lobo es vegetariano y la abuela lo invita a cenar",
+      "El vampiro no se ve en el espejo y sale despeinado",
+      "Don Quijote ataca molinos creyendo que son gigantes"
+     ],
+     "derecha": [
+      "libros de caballería",
+      "relato de terror",
+      "cuento de hadas"
+     ]
+    },
+    "r": {
+     "pares": {
+      "El lobo es vegetariano y la abuela lo invita a cenar": "cuento de hadas",
+      "El vampiro no se ve en el espejo y sale despeinado": "relato de terror",
+      "Don Quijote ataca molinos creyendo que son gigantes": "libros de caballería"
+     }
+    },
+    "e": "Reconocé el original.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   3,
+   {
+    "t": "multiple_choice",
+    "p": "Alguien que nunca leyó cuentos de hadas lee una parodia de cuentos de hadas y no le encuentra la gracia. ¿Por qué?",
+    "o": [
+     "Porque no reconoce lo que se imita ni lo que se invierte",
+     "Porque las parodias no tienen humor",
+     "Porque los cuentos de hadas son tristes"
+    ],
+    "r": {
+     "correcta": "Porque no reconoce lo que se imita ni lo que se invierte"
+    },
+    "e": "La parodia necesita un lector que conozca el original.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "¿En qué se diferencia la sátira de la parodia?",
+    "o": [
+     "La sátira critica a la sociedad; la parodia imita una obra",
+     "La sátira no tiene humor; la parodia sí",
+     "La sátira imita géneros; la parodia critica personas"
+    ],
+    "r": {
+     "correcta": "La sátira critica a la sociedad; la parodia imita una obra"
+    },
+    "e": "Pueden aparecer juntas, pero apuntan a cosas distintas.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "classify",
+    "p": "¿Parodia, sátira o las dos?",
+    "o": {
+     "elementos": [
+      "Un cuento de hadas donde el príncipe se cae del caballo",
+      "Una historieta sobre funcionarios que duermen en la oficina",
+      "Un falso noticiero que imita el formato para criticar a los políticos"
+     ],
+     "categorias": [
+      "Parodia",
+      "Sátira",
+      "Las dos"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Un cuento de hadas donde el príncipe se cae del caballo": "Parodia",
+      "Una historieta sobre funcionarios que duermen en la oficina": "Sátira",
+      "Un falso noticiero que imita el formato para criticar a los políticos": "Las dos"
+     }
+    },
+    "e": "Imitar un género, criticar a la sociedad o ambas cosas.",
+    "n": "analizar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "multiple_choice",
+    "p": "Un personaje es tan vanidoso que no sale de su casa sin cinco espejos. ¿Qué recurso de la sátira es?",
+    "o": [
+     "Una caricatura: exagera un rasgo hasta lo ridículo",
+     "Un juego de palabras con «espejo»",
+     "Una ironía verbal del narrador"
+    ],
+    "r": {
+     "correcta": "Una caricatura: exagera un rasgo hasta lo ridículo"
+    },
+    "e": "La caricatura representa un tipo de persona.",
+    "n": "aplicar"
+   }
+  ],
+  [
+   4,
+   {
+    "t": "keywords",
+    "p": "Explicá con tus palabras qué diferencia hay entre parodia y sátira, y da un ejemplo de cada una.",
+    "o": {
+     "ayuda": "Nombrá las dos, qué hace cada una y un ejemplo."
+    },
+    "r": {
+     "grupos": [
+      [
+       "parodia"
+      ],
+      [
+       "sátira",
+       "satira"
+      ],
+      [
+       "imita*",
+       "género",
+       "obra",
+       "copia*"
+      ],
+      [
+       "critic*",
+       "socie*",
+       "costumbre*",
+       "burla*",
+       "defecto*"
+      ]
+     ],
+     "minimo": 4
+    },
+    "e": "Por ejemplo: la parodia imita una obra o un género para jugar con él (un cuento de hadas al revés); la sátira critica a la sociedad (un intendente que multa a las nubes).",
+    "n": "aplicar"
+   }
+  ]
+ ],
  "mudado": [
   {
    "de": "Lengua 1 · misión 6 · nivel 3",
@@ -3031,5 +5080,154 @@
     ]
    ]
   }
- ]
+ ],
+ "libro": {
+  "titulo": "El fantasma de Canterville",
+  "act": [
+   {
+    "t": "classify",
+    "p": "En «El fantasma de Canterville», ¿qué rasgos vienen del relato de terror y cuáles son el giro paródico?",
+    "o": {
+     "elementos": [
+      "Un castillo inglés antiguo con un fantasma",
+      "La familia Otis no se asusta del fantasma",
+      "Una mancha de sangre que reaparece en el piso",
+      "La familia limpia la mancha con un quitamanchas",
+      "El fantasma arrastra cadenas de noche",
+      "Le ofrecen aceite para las cadenas"
+     ],
+     "categorias": [
+      "Rasgo del terror",
+      "Giro paródico"
+     ]
+    },
+    "r": {
+     "categorias": {
+      "Un castillo inglés antiguo con un fantasma": "Rasgo del terror",
+      "La familia Otis no se asusta del fantasma": "Giro paródico",
+      "Una mancha de sangre que reaparece en el piso": "Rasgo del terror",
+      "La familia limpia la mancha con un quitamanchas": "Giro paródico",
+      "El fantasma arrastra cadenas de noche": "Rasgo del terror",
+      "Le ofrecen aceite para las cadenas": "Giro paródico"
+     }
+    },
+    "e": "Wilde imita el terror y lo invierte.",
+    "n": "analizar"
+   },
+   {
+    "t": "matching",
+    "p": "Uní cada personaje de la novela con su papel en la parodia.",
+    "o": {
+     "izquierda": [
+      "Sir Simon",
+      "El señor Otis",
+      "Los mellizos",
+      "Virginia"
+     ],
+     "derecha": [
+      "la única que lo trata con compasión",
+      "los que le hacen bromas al fantasma",
+      "el norteamericano práctico que todo lo resuelve comprando",
+      "el fantasma que ya no logra asustar"
+     ]
+    },
+    "r": {
+     "pares": {
+      "Sir Simon": "el fantasma que ya no logra asustar",
+      "El señor Otis": "el norteamericano práctico que todo lo resuelve comprando",
+      "Los mellizos": "los que le hacen bromas al fantasma",
+      "Virginia": "la única que lo trata con compasión"
+     }
+    },
+    "e": "Cada personaje cumple un papel en el humor.",
+    "n": "aplicar"
+   },
+   {
+    "t": "multiple_choice",
+    "p": "Los mellizos Otis le preparan trampas a Sir Simon y él termina escondido y asustado. ¿Qué recurso del humor usa Wilde?",
+    "o": [
+     "La inversión: el asustador termina asustado",
+     "El juego de palabras con «fantasma»",
+     "La exageración del tamaño del castillo"
+    ],
+    "r": {
+     "correcta": "La inversión: el asustador termina asustado"
+    },
+    "e": "Se dan vuelta los papeles típicos del terror.",
+    "n": "analizar"
+   },
+   {
+    "t": "multi_select",
+    "p": "En la novela, la familia Otis cree que todo se resuelve con productos comerciales, y los ingleses viven pendientes de sus tradiciones. Elegí las DOS cosas que critica la sátira de Wilde.",
+    "o": [
+     "El pragmatismo de los ricos norteamericanos",
+     "El apego de la aristocracia inglesa a sus tradiciones",
+     "La existencia de los fantasmas",
+     "Los castillos antiguos"
+    ],
+    "r": {
+     "correctas": [
+      "El pragmatismo de los ricos norteamericanos",
+      "El apego de la aristocracia inglesa a sus tradiciones"
+     ]
+    },
+    "e": "La sátira apunta a dos grupos sociales.",
+    "n": "analizar"
+   },
+   {
+    "t": "ordering",
+    "p": "Ordená estos momentos de la novela.",
+    "o": [
+     "El fantasma intenta asustarlos, sin éxito",
+     "Los mellizos le hacen bromas y Sir Simon se deprime",
+     "Virginia lo ayuda a encontrar descanso",
+     "La familia Otis compra el castillo de Canterville"
+    ],
+    "r": {
+     "orden": [
+      "La familia Otis compra el castillo de Canterville",
+      "El fantasma intenta asustarlos, sin éxito",
+      "Los mellizos le hacen bromas y Sir Simon se deprime",
+      "Virginia lo ayuda a encontrar descanso"
+     ]
+    },
+    "e": "El fantasma pasa de asustar a necesitar ayuda.",
+    "n": "aplicar"
+   },
+   {
+    "t": "keywords",
+    "p": "Al final, cuando Virginia ayuda a Sir Simon, la novela se vuelve más seria y emotiva. ¿Por qué creés que Wilde cambia el tono después de tanto humor? Justificá con lo aprendido.",
+    "o": {
+     "ayuda": "Pensá en el contraste entre humor y emoción."
+    },
+    "r": {
+     "grupos": [
+      [
+       "virginia",
+       "compasi*",
+       "ayud*",
+       "emoci*",
+       "serio",
+       "tierno",
+       "triste"
+      ],
+      [
+       "contraste",
+       "cambi*",
+       "humor",
+       "ironía",
+       "parodia",
+       "sátira",
+       "reír",
+       "risa"
+      ]
+     ],
+     "minimo": 2
+    },
+    "e": "Por ejemplo: el contraste hace que el final emocione más, y muestra que detrás de la parodia hay un personaje que sufre.",
+    "n": "analizar"
+   }
+  ]
+ },
+ "actualizar_preguntas": true
 }
