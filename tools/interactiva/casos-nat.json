@@ -1,0 +1,272 @@
+[
+ {
+  "motor": "partes",
+  "nombre": "partes-celulas",
+  "p": {
+   "figuras": [
+    "celula_animal",
+    "celula_vegetal",
+    "bacteria",
+    "virus",
+    "neurona"
+   ]
+  }
+ },
+ {
+  "motor": "partes",
+  "nombre": "partes-cuerpo",
+  "p": {
+   "figuras": [
+    "flor",
+    "planta",
+    "ojo",
+    "corazon",
+    "tierra",
+    "suelo"
+   ]
+  }
+ },
+ {
+  "motor": "partes",
+  "nombre": "partes-emoji",
+  "p": {
+   "items": [
+    {
+     "nombre": "Insecto",
+     "emoji": "🐜",
+     "partes": [
+      [
+       "Cabeza",
+       0.3,
+       0.5,
+       "tiene ojos y antenas"
+      ],
+      [
+       "Tórax",
+       0.5,
+       0.5,
+       "de él salen las 6 patas"
+      ],
+      [
+       "Abdomen",
+       0.72,
+       0.55,
+       "guarda los órganos"
+      ]
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "motor": "partes_x",
+  "p": {
+   "figuras": [
+    "celula_animal",
+    "celula_vegetal",
+    "flor",
+    "ojo",
+    "corazon",
+    "neurona"
+   ]
+  }
+ },
+ {
+  "motor": "recorrido",
+  "p": {
+   "recorridos": [
+    "digestion",
+    "sangre",
+    "aire",
+    "savia",
+    "reflejo",
+    "orina"
+   ]
+  }
+ },
+ {
+  "motor": "recorrido_x",
+  "p": {
+   "recorridos": [
+    "digestion",
+    "sangre",
+    "aire"
+   ]
+  }
+ },
+ {
+  "motor": "ciclo",
+  "p": {
+   "ciclos": [
+    "agua",
+    "carbono",
+    "nitrogeno",
+    "rana",
+    "mariposa",
+    "celular",
+    "rocas",
+    "planta"
+   ]
+  }
+ },
+ {
+  "motor": "ciclo_x",
+  "p": {
+   "ciclos": [
+    "agua",
+    "carbono",
+    "celular",
+    "rocas"
+   ]
+  }
+ },
+ {
+  "motor": "red_trofica",
+  "nombre": "red-pastizal",
+  "p": {
+   "red": "pastizal"
+  }
+ },
+ {
+  "motor": "red_trofica",
+  "nombre": "red-laguna",
+  "p": {
+   "red": "laguna"
+  }
+ },
+ {
+  "motor": "red_trofica_x",
+  "p": {
+   "redes": [
+    "pastizal",
+    "laguna",
+    "monte"
+   ]
+  }
+ },
+ {
+  "motor": "clave",
+  "p": {
+   "claves": [
+    "vertebrados",
+    "invertebrados",
+    "plantas",
+    "reinos"
+   ]
+  }
+ },
+ {
+  "motor": "clave_x",
+  "p": {
+   "claves": [
+    "vertebrados",
+    "invertebrados",
+    "plantas",
+    "reinos"
+   ]
+  }
+ },
+ {
+  "motor": "plato",
+  "p": {}
+ },
+ {
+  "motor": "plato_x",
+  "p": {}
+ },
+ {
+  "motor": "osmosis",
+  "p": {}
+ },
+ {
+  "motor": "osmosis_x",
+  "p": {}
+ },
+ {
+  "motor": "enzima",
+  "p": {}
+ },
+ {
+  "motor": "enzima_x",
+  "p": {}
+ },
+ {
+  "motor": "punnett",
+  "nombre": "punnett-arveja",
+  "p": {
+   "rasgo": "arveja"
+  }
+ },
+ {
+  "motor": "punnett",
+  "nombre": "punnett-flor",
+  "p": {
+   "rasgo": "flor"
+  }
+ },
+ {
+  "motor": "punnett",
+  "nombre": "punnett-grupo",
+  "p": {
+   "rasgo": "grupo"
+  }
+ },
+ {
+  "motor": "punnett",
+  "nombre": "punnett-dalt",
+  "p": {
+   "rasgo": "daltonismo"
+  }
+ },
+ {
+  "motor": "punnett_x",
+  "p": {
+   "rasgos": [
+    "arveja",
+    "flor",
+    "grupo",
+    "daltonismo"
+   ]
+  }
+ },
+ {
+  "motor": "adn",
+  "p": {}
+ },
+ {
+  "motor": "adn_x",
+  "p": {}
+ },
+ {
+  "motor": "mitosis",
+  "p": {}
+ },
+ {
+  "motor": "mitosis_x",
+  "p": {}
+ },
+ {
+  "motor": "tiempo_geo",
+  "p": {}
+ },
+ {
+  "motor": "tiempo_geo_x",
+  "p": {}
+ },
+ {
+  "motor": "poblacion",
+  "p": {}
+ },
+ {
+  "motor": "poblacion_x",
+  "p": {}
+ },
+ {
+  "motor": "epidemia",
+  "p": {}
+ },
+ {
+  "motor": "epidemia_x",
+  "p": {}
+ }
+]

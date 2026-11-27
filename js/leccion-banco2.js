@@ -449,6 +449,7 @@
     show();
   }
   H.pasoAPaso = pasoAPaso;   // también lo usan los ejemplos de js/leccion-banco.js
+  H.escena = escena; H.respuesta = respuesta; H.cajas = cajas; H.ctrl = ctrl;   // los usan los bancos de Naturales (js/leccion-banco-nat*.js)
   function entrada(el, lab, val, max, w) { el.innerHTML = '<div class="lb-in-f"><label>' + lab + '</label><input type="text" inputmode="numeric" class="lb-inp lb-vp-in" value="' + val + '" maxlength="' + max + '"' + (w ? ' style="width:' + w + 'ch!important"' : '') + '></div><div class="lb-vista"></div>'; return [el.querySelector('input'), el.querySelector('.lb-vista')]; }
   function soloNum(x) { return String(x).replace(/\D/g, '').replace(/^0+(?=\d)/, ''); }
   function unLetras(x) { return H.letras(x).replace(/veintiuno$/, 'veintiún').replace(/(^| )uno$/, '$1un'); }

@@ -132,3 +132,23 @@ Marcas en textos: `{{frase|explicación}}` (ejemplos) y `[[frase|etiqueta]]` / `
 - `primeros` / `primeros_x` (Mat3 m10 y m11): `pitagorica` (que: armar | regular | tabla con min/max; ejercicio `solo`: lista de tablas) y `por10m` (de: 10 | 100 | 1000; que: redondos | problema).
 - `primeros` / `primeros_x` (Mat3 m12 y m13): `mult1` (que: descomp | columna | lleva | estimar; multiplicar por una cifra) y `combina` (que: arreglo | grande | prendas | problema; organizaciones rectangulares y combinaciones).
 - `primeros` / `primeros_x` (Mat3 m14 y m15): `divide3` (que: grande | grupos | resto | restando | tabla | comprobar | problema; repartos, grupos y división con resto).
+
+## Naturales (todas las materias del área, secundaria y Nivel Medio) · `js/leccion-banco-nat.js` (27/11/2026)
+Regla del área: cada ejemplo tiene su propio formato visual (no se repite el mismo molde). Todos paso a paso. Prueba: `python3 tools/interactiva/prueba-nat.py` (casos en `tools/interactiva/casos-nat.json`).
+| Ejemplo | Ejercicio | Qué muestra | `p` |
+|---|---|---|---|
+| `partes` | `partes_x` (tocar el número) | dibujo con rótulos de a uno | `figura` o `figuras`: celula_animal, celula_vegetal, flor, planta, ojo, corazon, tierra, neurona, bacteria, virus, suelo · o `items` propios con emoji |
+| `recorrido` | `recorrido_x` (ordenar) | una ficha viaja por estaciones y se transforma | `recorrido(s)`: digestion, sangre, aire, savia, reflejo, orina |
+| `ciclo` | `ciclo_x` (etapa que falta) | rueda de etapas | `ciclo(s)`: agua, carbono, nitrogeno, rana, mariposa, celular, rocas, planta |
+| `red_trofica` | `red_trofica_x` (`que`: rol, energia, quitar) | niveles, flechas, regla del 10 %, quitar una especie | `red`: pastizal, laguna, monte |
+| `clave` | `clave_x` | clave dicotómica en escalera | `clave(s)`: vertebrados, invertebrados, plantas, reinos |
+| `plato` | `plato_x` (grupos de alimentos) | plato recomendado contra una comida | `items` opcional |
+| `osmosis` | `osmosis_x` | membrana, agua y célula que se hincha o arruga | `celula` |
+| `enzima` | `enzima_x` | llave y cerradura, curva de actividad | — |
+| `punnett` | `punnett_x` | gametos, cuadro y proporciones | `rasgo`: arveja, flor, grupo, daltonismo |
+| `adn` | `adn_x` (`que`: complementaria, arn, aminoacido) | replicación, transcripción, traducción, mutación | `secuencia`, `modo` |
+| `mitosis` | `mitosis_x` (`que`: orden, cuenta) | cromosomas fase por fase | `modo`: mitosis, meiosis |
+| `tiempo_geo` | `tiempo_geo_x` (ordenar) | historia de la Tierra en un día o en una cancha | `modo`: reloj, cancha |
+| `poblacion` | `poblacion_x` | curvas J y S | `modelo` |
+| `epidemia` | `epidemia_x` | cadena de contagios, R₀ y vacunación | — |
+Herramientas comunes en `H.nat` (dibujo SVG, elegir, ordenar, tocar) para los archivos que siguen: `leccion-banco-nat2.js` (materia y química) y `leccion-banco-nat3.js` (física, Tierra y espacio).

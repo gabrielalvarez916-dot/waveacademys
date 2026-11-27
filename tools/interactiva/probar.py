@@ -6,7 +6,7 @@ Uso: python3 tools/interactiva/probar.py contenido/<materia>/mision-N/mision-N.j
 import asyncio, json, os, sys, pathlib
 from playwright.async_api import async_playwright
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
-SCRIPTS = ['js/apoyos.js', 'js/wave-calc.js', 'js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-interactiva.js']
+SCRIPTS = ['js/apoyos.js', 'js/wave-calc.js', 'js/leccion-banco.js', 'js/leccion-banco2.js', 'js/leccion-banco-nat.js', 'js/leccion-interactiva.js']
 CSS = ['css/styles.css', 'css/apoyos.css']
 async def probar(pg, ruta, M, out):
     malos = []
